@@ -48,7 +48,7 @@ describe("Fortschritt", () => {
     expect(geloesteUebungen(daten.fortschritt, 2)).toBe(0);
   });
 
-  it("Übungsergebnis: gelöst mit Karte; „Lösung zeigen“ zählt nicht als gelöst (Q6)", () => {
+  it("Übungsergebnis: gelöst mit Karte; auch „Lösung zeigen“ zählt als gelöst (Q6)", () => {
     const uebung = { id: "ueb:droh-ignorieren", kapitel: 1 };
     const richtig = notiereUebungsergebnis(
       leereDaten(ERST),
@@ -62,7 +62,8 @@ describe("Fortschritt", () => {
       { ...uebung, ergebnis: "falsch" },
       ERST,
     );
-    expect(gezeigt.fortschritt.uebungen[uebung.id]?.geloest).toBe(false);
+    // Q6 (Autor): Auch nach „Lösung zeigen“ zählt die Übung als gelöst.
+    expect(gezeigt.fortschritt.uebungen[uebung.id]?.geloest).toBe(true);
     expect(gezeigt.karten["uebung:ueb:droh-ignorieren"]?.kasten).toBe(1);
     const hilfe = notiereUebungsergebnis(richtig, { ...uebung, ergebnis: "mitHilfe" }, DANN);
     expect(hilfe.karten["uebung:ueb:droh-ignorieren"]?.kasten).toBe(2);

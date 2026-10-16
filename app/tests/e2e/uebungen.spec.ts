@@ -53,7 +53,7 @@ test("Übung 1.40 auf dem Brett lösen: falscher Zug, Hinweise, richtiger Zug, E
   await expect(page.getByTestId("faellig")).toContainText("Als Nächstes am");
 });
 
-test("Lösung zeigen; Denkaufgabe mit Selbsteinschätzung", async ({ page }) => {
+test("Lösung zeigen zählt als gelöst; Denkaufgabe mit Selbsteinschätzung", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneKapitelUebungen(page, 1);
   await page
@@ -65,6 +65,11 @@ test("Lösung zeigen; Denkaufgabe mit Selbsteinschätzung", async ({ page }) => 
   await uebung.getByRole("button", { name: "Lösung zeigen" }).click();
   await expect(uebung).toContainText("Die Lösung des Buches steht auf dem Brett");
   await expect(page.getByTestId("uebung-erklaerung")).toBeVisible();
+  // Q6 (Autor): Auch nach „Lösung zeigen“ zählt die Übung als gelöst.
+  await page.getByRole("button", { name: "Zurück" }).click();
+  await expect(
+    page.getByTestId("kapitel-uebungen").getByRole("button", { name: /Abb\. 1\.41/ }),
+  ).toContainText("gelöst");
   // Kapitel 0: „Notation schreiben“ ist eine Denkaufgabe.
   await page
     .getByRole("navigation", { name: "Hauptbereiche" })

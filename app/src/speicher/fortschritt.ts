@@ -92,9 +92,11 @@ export function notiereUebung(
  *
  * Warum: Konzept 9.1. Richtig gelöst rückt die Karte einen Kasten weiter, mit Hinweisen gelöst
  * bleibt sie, falsch oder mit „Lösung zeigen“ geht sie zurück in Kasten 1.
- * Entscheidung (Q6, 16.10.2026): Mit Hinweisen gelöst zählt als gelöst; „Lösung zeigen“ zählt
- * nicht als gelöst.
- * Beispiel: erste richtige Lösung von „ueb:droh-ignorieren“ → gelöst, Karte in Kasten 2.
+ * Entscheidung des Autors (Q6, ENTSCHEIDUNGEN.md, Rückmeldung zu 0.2.31): Eine Übung zählt auch
+ * nach „Lösung anzeigen“ als gelöst. Deshalb gilt jede abgeschlossene Übung als gelöst; wie gut es
+ * ging, steckt in der Wiederholungskarte (Kasten und Verlauf).
+ * Beispiel: erste richtige Lösung von „ueb:droh-ignorieren“ → gelöst, Karte in Kasten 2;
+ * „Lösung zeigen“ → ebenfalls gelöst, Karte in Kasten 1 (morgen wieder fällig).
  */
 export function notiereUebungsergebnis(
   daten: Nutzerdaten,
@@ -103,7 +105,7 @@ export function notiereUebungsergebnis(
 ): Nutzerdaten {
   const mitVersuch = notiereUebung(
     daten,
-    { id: uebung.id, kapitel: uebung.kapitel, richtig: uebung.ergebnis !== "falsch" },
+    { id: uebung.id, kapitel: uebung.kapitel, richtig: true },
     jetzt,
   );
   const kennung = uebungskarte(uebung.id);

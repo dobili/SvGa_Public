@@ -86,3 +86,23 @@ test("Lösung zeigen zählt als gelöst; Denkaufgabe mit Selbsteinschätzung", a
   await uebung.getByRole("button", { name: "Teilweise" }).click();
   await expect(uebung).toContainText("Gespeichert");
 });
+
+test("Erst selbst denken „streng“: Hilfe erst nach dem ersten eigenen Zug", async ({ page }) => {
+  await starteImBrowser(page);
+  const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
+  await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("radio", { name: "streng" }).click();
+  await expect(page.getByText("erst, wenn du einen eigenen Zug gemacht hast")).toBeVisible();
+  await leiste.getByRole("button", { name: "Buch" }).click();
+  await oeffneKapitelUebungen(page, 1);
+  await page
+    .getByTestId("kapitel-uebungen")
+    .getByRole("button", { name: /Abb\. 1\.40/ })
+    .click();
+  const uebung = page.getByTestId("uebung");
+  await expect(uebung).toContainText("nach deinem ersten eigenen Zug");
+  await expect(uebung.getByRole("button", { name: "Ich habe nachgedacht" })).toHaveCount(0);
+  await feld(page, "b5").click();
+  await feld(page, "a7").click();
+  await expect(uebung.getByRole("button", { name: "Hinweis 1" })).toBeVisible();
+});

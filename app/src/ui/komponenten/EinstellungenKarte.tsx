@@ -6,8 +6,8 @@
  * Auflage des Buches, Strenge des Modus ‚Erst selbst denken‘“. Was es noch nicht zu wählen gibt,
  * steht mit „folgt“ da (Sprache). Die Auflage zeigt die Zeile „Datenstand“ darüber.
  * Seit 0.2.33 (Fragen des Autors vom 16.10.2026): Figurensatz (wie im Buch, kontrastreich) und Ton
- * (aus, an) sind wählbar. „Erst selbst denken“ ist ausgeblendet, bis die Trainer (AP 13) es
- * nutzen; der gespeicherte Wert bleibt erhalten.
+ * (aus, an) sind wählbar. „Erst selbst denken“ war bis AP 13 ausgeblendet; seit 0.2.37 wirkt es
+ * bei den Übungen des Buches (Hinweise und Lösung erst nach eigenem Nachdenken) und ist wählbar.
  * Nachtmodus (seit 0.2.31, Wunsch des Autors): wie das Gerät, aus oder an (app/farbschema.ts).
  * Ebenfalls seit 0.2.31: ausgeblendete Erklärkacheln von Zählen und Ziehen wieder anzeigen.
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, i18n.
@@ -18,6 +18,7 @@ import {
   useEinstellungen,
   type Brettfarben,
   type Figurensatz,
+  type Strenge,
   type Ton,
 } from "../../app/einstellungen";
 import {
@@ -34,6 +35,7 @@ import { zeigeErklaerungenWieder } from "./useErklaerung";
 const BRETTFARBEN: readonly Brettfarben[] = ["buch", "holz", "gruen"];
 const FIGURENSAETZE: readonly Figurensatz[] = ["buch", "kontrastreich"];
 const TOENE: readonly Ton[] = ["aus", "an"];
+const STRENGEN: readonly Strenge[] = ["locker", "streng"];
 const KOORDINATEN = ["an", "aus"] as const;
 type Koordinaten = (typeof KOORDINATEN)[number];
 
@@ -127,6 +129,14 @@ export function EinstellungenKarte() {
         beiWahl={(ton) => aendereEinstellungen({ ton })}
       />
       <p className="hinweis">{t("einstellungen.ton.hinweis")}</p>
+      <Auswahl
+        name={t("einstellungen.strenge")}
+        werte={STRENGEN}
+        gewaehlt={einstellungen.strenge}
+        text={(wert) => t(`einstellungen.strenge.${wert}`)}
+        beiWahl={(strenge) => aendereEinstellungen({ strenge })}
+      />
+      <p className="hinweis">{t(`einstellungen.strenge.${einstellungen.strenge}.text`)}</p>
       <ErklaerungenWahl />
       <dl className="einstellungen">
         <div className="einstellung">

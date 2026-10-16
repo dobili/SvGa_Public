@@ -1,35 +1,52 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 16.10.2026, Version 0.2.33 (Arbeitszweig `rueckmeldung-0.2.33`, noch nicht in `main`).
+Stand: 17.10.2026, Version 0.2.37 (AP 13 Teil 1 und 2: Übungen und erste Trainer).
 Hier steht **nur, was noch offen ist**. Erledigtes ist in `docs/ENTSCHEIDUNGEN.md` festgehalten.
 
 **Grundsatz:** Du musst keine Datei selbst bearbeiten. Du antwortest im Chat mit den Kürzeln (etwa
 „G3: so lassen“); Claude trägt alles ein. Bei Fehlern in der App hilft **Einstellungen (Zahnrad)
 › Fehler melden**.
 
-Reihenfolge nach Wichtigkeit: A (heute besprechen), B (testen), C (Rückfragen zu den neuen
-Regeln), D (Buch), E (vor der Veröffentlichung).
+Reihenfolge nach Wichtigkeit: B (testen), U (Rückfragen zu den Übungen und Trainern), C und K
+(Rückfragen zu Regeln und Engine), D (Buch), E (vor der Veröffentlichung).
+Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2026 erledigt:
+`dobili/SvGa_Public` ist öffentlich, die Prüfungen laufen bei jedem Push kostenlos.
 
 ---
 
-## A. Heute besprechen: Umschalten auf „öffentlich“
-
-- [ ] A1. **Budget für GitHub Actions** auf $0 setzen, falls noch nicht geschehen (Profilbild ›
-      Settings › Billing and licensing › Budgets and alerts › New budget, Produkt Actions, $0,
-      „Stop usage when budget limit is reached“).
-- [ ] A2. **Aufräumen und Veröffentlichen:** Vorschlag in `docs/VEROEFFENTLICHUNG.md` (alte
-      Zweige, Dateien mit zitiertem Buchtext, Umgang mit der Git-Geschichte; Empfehlung: neues
-      öffentliches Repository mit einem einzigen Anfangsstand). Löschen darf Claude erst nach
-      deiner ausdrücklichen Freigabe.
-- [ ] A3. **0.2.33 nach `main`:** Alles ist lokal geprüft (Komponententests, Pipeline,
-      Oberflächentests mit Chromium). Der Test mit WebKit (iPhone) läuft nur in GitHub Actions;
-      Claude veröffentlicht 0.2.33, sobald die Prüfung wieder laufen darf (öffentlich oder ab
-      November), oder auf deinen ausdrücklichen Wunsch auch ohne.
-
 ## B. Testen
 
-- [ ] B1. **Nachtest 0.2.33** nach `docs/TESTANLEITUNG.md` (N158 bis N174), sobald 0.2.33 in
-      `main` ist.
+- [ ] B1. **Nachtest 0.2.37** nach `docs/TESTANLEITUNG.md` (N182 bis N197: Übungen, erste
+      Trainer, neuer Buchstand).
+- [ ] B2. **Nachtest 0.2.33 und 0.2.36** (N158 bis N181), falls noch nicht geschehen.
+
+## U. Rückfragen zu den Übungen und Trainern (AP 13, Nacht zum 17.10.2026; plausibel entschieden)
+
+- [ ] U1. **„Mit Hilfe“:** Wer eine Übung erst nach einem falschen Zug oder einem Hinweis löst,
+      bekommt sie als gelöst, die Wiederholungskarte bleibt aber in ihrem Kasten (sie rückt nicht
+      vor). Ohne Fehler und ohne Hinweis rückt sie einen Kasten weiter. Einverstanden?
+- [ ] U2. **Denkaufgaben:** 23 Übungen haben keine Zugfolge ab ihrem Diagramm (Notation
+      schreiben, Planfragen). Dort liest der Leser nach „Ich habe nachgedacht“ die Erklärung und
+      schätzt sich selbst ein (gelöst, teilweise, nicht gelöst). Passt das?
+- [ ] U3. **Hinweise in drei Stufen:** 1 Motiv (aus der Erklärung), 2 welche Figur zieht,
+      3 der Zug als goldener Pfeil. Passt die Reihenfolge?
+- [ ] U4. **Röntgen-Trainer, Frage 3:** Die eigenen drohenden Züge muss der Leser nicht markieren
+      (es sind oft zehn und mehr); die App nennt nur ihre Anzahl. Markiert werden: deine Schachs,
+      deine Schläge (ohne die, die Material verlieren) und Schachs und Schläge des Gegners, als
+      wäre er am Zug. Einverstanden?
+- [ ] U5. **Sonderzüge mit eigenen Stellungen:** Für Rochade, en passant und Umwandlung im
+      Trainer „Koordinaten, Notation, Gangarten“ gibt es sieben kurze Stellungen, die nicht aus
+      dem Buch stammen (die Diagramme zeigen kaum en passant oder Umwandlung). Alles andere kommt
+      aus den Abbildungen. Freigeben?
+- [ ] U6. **Notation:** Ein fehlendes Schach- oder Mattzeichen zählt als richtig, mit dem Hinweis
+      „Denk an das Schachzeichen“. Englische Buchstaben (N, B, R, Q) zählen als falsch. So lassen?
+- [ ] U7. **Hängende Figur:** Eine Figur hängt, wenn der Gegner sie mit Gewinn schlagen kann
+      (Abtauschrechnung aus Kapitel 1, auch gedeckte Figuren, etwa ein Turm, den ein Bauer
+      angreift). Gabeln und Drohungen zählen nicht. Passt das?
+- [ ] U8. **Rundenlängen:** Feld finden 16, Röntgen 5, alle anderen 8 Aufgaben. Passt das?
+- [ ] U9. **Trainer in der Wiederholung:** Bisher kommen nur die Übungen des Buches in die
+      Wiederholung (fünf Kästen). Sollen auch Aufgaben der Trainer dort landen, etwa jede falsch
+      beantwortete Röntgen-Aufgabe?
 
 ## C. Rückfragen zu den neuen Regeln (kurz; Claude hat jeweils plausibel entschieden)
 
@@ -83,12 +100,11 @@ Regeln), D (Buch), E (vor der Veröffentlichung).
 
 ## D. Buch
 
-- [ ] D1. **Neue Buchfassung hochladen:** Deine Änderung an Abb. 4.45 (D.3) ist im privaten
-      Repository `dobili/schachbuch-quellen` noch nicht angekommen. Sobald sie dort liegt,
-      übernimmt Claude sie mit einem Datenlauf.
-- [x] D2. **Buchverweise (AP 16):** erledigt am 16.10.2026. QR-Code und App-Abschnitt in Kapitel 0,
-      die 13 Kästen „Training zu diesem Kapitel“ verweisen mit QR-Code auf die Trainingsseiten,
-      ohne Trainernamen (Entscheidungen T1 bis T3 in docs/ENTSCHEIDUNGEN.md).
+- [ ] D1. **Abb. 4.45 (D.3):** Der Buchstand vom 16.10.2026 ist vollständig übernommen. Stellung,
+      Pfeile, Feldmarkierungen und Bildunterschrift von 4.45 sind dabei unverändert geblieben
+      (nur die Zeile im LaTeX hat sich verschoben). Betraf deine Änderung den Text um die
+      Abbildung, ist alles drin; betraf sie die Stellung oder die Markierungen, fehlt sie noch im
+      privaten Repository. Bitte kurz bestätigen.
 
 ## E. Vor der Veröffentlichung der App (zurückgestellt, bis App und Website fertig sind)
 

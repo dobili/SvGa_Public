@@ -12,6 +12,65 @@ Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App).
 
 ---
 
+## Nachtest Version 0.2.37 (etwa 30 Minuten; AP 13 Übungen und erste Trainer)
+
+Neu: Die Übungen des Buches lassen sich in der App lösen, mit Wiederholung, dazu die ersten drei
+Trainer. **Vorher:** In den Einstellungen muss „App-Version 0.2.37“ stehen.
+
+**Übungen des Buches**
+
+- [ ] N182. **Übungen im Kapitel:** Buch › Kapitel 1: Unter den Trainern steht „Übungen“ mit allen
+      Übungen des Kapitels und „Übungen lösen (… offen von …)“. Eine Übung antippen: oben „Die
+      Aufgabe steht im Buch …“ mit Verweis auf die Abbildung, darunter das Brett.
+- [ ] N183. **Lösen auf dem Brett (Abb. 1.40):** „Ich habe nachgedacht“, dann „Hinweis 1“ (Motiv),
+      „Hinweis 2“ (welche Figur), „Hinweis 3“ (goldener Pfeil). Einen falschen Zug ziehen: „Das ist
+      nicht der Zug des Buches“, die Figur springt zurück. Den richtigen Zug ziehen: „Richtig!“,
+      darunter die Erklärung (1. Sc7+! …) und „Nächste Übung“.
+- [ ] N184. **Mehrzügige Lösung (Abb. 1.41):** Nach deinem richtigen Zug antwortet die App mit dem
+      Zug der Gegenseite aus der Lösung; du ziehst weiter, bis die Lösung zu Ende ist. Ein im Buch
+      genannter gleichwertiger Zug („akzeptiert“) zählt ebenfalls.
+- [ ] N185. **Lösung zeigen (Q6):** Bei einer anderen Übung „Lösung zeigen“: Die Lösung steht auf
+      dem Brett, darunter die Erklärung. Zurück im Kapitel trägt die Übung den Haken ✓ (deine
+      Entscheidung: zählt als gelöst).
+- [ ] N186. **Denkaufgabe (Kapitel 0, Abb. 0.27):** „… im Kopf oder auf Papier“, „Ich habe
+      nachgedacht“, Erklärung lesen, dann „Gelöst“, „Teilweise“ oder „Nicht gelöst“: „Gespeichert“.
+- [ ] N187. **Erst selbst denken:** Einstellungen: „Erst selbst denken“ steht wieder da (locker,
+      streng) mit einem erklärenden Satz. Mit „streng“ zeigt eine Zugaufgabe Hinweise und „Lösung
+      zeigen“ erst nach deinem ersten eigenen Zug, auch nach einem falschen.
+- [ ] N188. **Wiederholung:** Training: Oben „Fällige Wiederholungen“. Nach einigen Übungen steht
+      dort „Als Nächstes am …“ (morgen oder später, je nach Ergebnis). Am nächsten Tag: „Jetzt
+      wiederholen“ führt der Reihe nach durch die fälligen Übungen.
+
+**Erste Trainer** (Training › Kapitel 0 und 1 › „Trainieren“)
+
+- [ ] N189. **Koordinaten, Feld finden:** 16 Felder auf dem leeren Brett ohne Randbeschriftung,
+      die ersten acht mit Weiß unten, dann mit Schwarz unten. Ein richtiger Tipp führt sofort
+      weiter, ein falscher zeigt das gesuchte Feld rot. Am Ende „… von 16 richtig“ und die Zeit.
+- [ ] N190. **Zug aufschreiben und ausführen:** Ein goldener Pfeil zeigt einen Zug, du schreibst
+      ihn (S, L, T, D, K; „0-0“ geht auch). Fehlt nur das Schachzeichen, gilt es mit Erinnerung.
+      „Zug ausführen“: Der Zug steht in Notation da, du ziehst ihn; darunter auch Rochade,
+      en passant und Umwandlung (Auswahl der Figur).
+- [ ] N191. **Gangarten:** Die Figur ist hervorgehoben; alle Zielfelder antippen, „Prüfen“: gold
+      gefunden, rot übersehen, grau zu viel.
+- [ ] N192. **Zähltrainer, Bilanz zählen:** Feld rot markiert; Angreifer, Verteidiger und Gewinn
+      wählen, „Prüfen“: Danach stehen die Pfeile und der Satz des Werkzeugs „Zählen“ da.
+- [ ] N193. **Zähltrainer, hängende Figuren:** Alle hängenden Figuren beider Seiten antippen (oder
+      „Keine hängt“). Stimmen die Felder, die die App als hängend nennt?
+- [ ] N194. **Schach-Röntgen-Trainer:** Drei Schritte (deine Schachs, deine Schläge, was der
+      Gegner hätte). Pfeil setzen: Figur, dann Zielfeld; nochmals entfernt ihn. Nach „Prüfen“ gold
+      gefunden, rot übersehen. Ist die Aufgabe so verständlich und auf dem Handy bedienbar?
+- [ ] N195. **Fortschritt:** Nach einer ganzen Runde zeigt das Kapitel unter Fortschritt den
+      Trainer mit Durchgängen und richtigen Aufgaben.
+
+## Nachtest Version 0.2.35 (etwa 10 Minuten; neuer Buchstand vom 16.10.2026)
+
+- [ ] N196. **Getauschte Abbildungen:** Abb. 2.29 zeigt die Greco-Variante nach 10... d5!, Abb.
+      2.30 die Stellung nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5. Abb. 3.31 nach 12. Kh1, 3.32 nach
+      13. f4 (mit der Bilanz), 3.33 nach 7... Sxd4??, 3.34 nach 9. Lb5+!. Jeweils nachspielen: Die
+      Zugleiste führt genau zu dieser Stellung.
+- [ ] N197. **Neue Nummern der Übungen:** Kapitel 3 (Übungen 14 bis 18), Kapitel 4 (19 bis 22) und
+      Kapitel 12 (84 bis 86) stehen in der neuen Reihenfolge des Buches.
+
 ## Nachtest Version 0.2.36 (etwa 30 Minuten, mit Engine; AP 11 Kalibrierung)
 
 Neu: die kalibrierten Stufen und die Fehlerprofile der Engine (Konzept 8.2), dazu drei Befunde der
@@ -57,7 +116,7 @@ Regeln C1 und C2). **Vorher:** In den Einstellungen muss „App-Version 0.2.33�
       einer Partie steht nur das Ergebnis, kein „Ziel erreicht/verfehlt“.
 - [ ] N159. **Figurensatz und Ton:** Einstellungen: Figurensatz „kontrastreich“ zeigt überall die
       klassischen Figuren (weiß mit schwarzem Rand); Ton „an“: beim Ziehen klackt es, bei einem
-      Schlag kräftiger (Stummschalter aus). „Erst selbst denken“ steht nicht mehr da.
+      Schlag kräftiger (Stummschalter aus). („Erst selbst denken“ ist seit 0.2.37 wieder da, N187.)
 - [ ] N160. **Warum-Fragen:** Bei den Warum-Fragen steht kein „vorbereitet“ mehr.
 - [ ] N161. **Werkzeuge in der Partie:** Partie beginnen. Am Brett unten rechts: Zählen, Röntgen,
       W1–W7. Röntgen antippen: die Karte erscheint, ziehen geht weiter. Zählen antippen, dann ein

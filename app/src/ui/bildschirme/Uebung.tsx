@@ -32,10 +32,12 @@ function Hilfe({ s, uebung }: { s: Uebungssteuerung; uebung: UebungDaten }) {
   if (!s.hilfeFrei) {
     return (
       <div className="uebung-hilfe">
-        <p className="hinweis">{t("uebung.erstDenken")}</p>
-        <button type="button" className="knopf-zweit" onClick={s.nachgedacht}>
-          {t("uebung.nachgedacht")}
-        </button>
+        <p className="hinweis">{t(s.erstZug ? "uebung.erstZug" : "uebung.erstDenken")}</p>
+        {!s.erstZug && (
+          <button type="button" className="knopf-zweit" onClick={s.nachgedacht}>
+            {t("uebung.nachgedacht")}
+          </button>
+        )}
       </div>
     );
   }

@@ -243,8 +243,8 @@ test("Figurensatz und Ton in den Einstellungen (0.2.33): kontrastreiche Figuren 
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  // „Erst selbst denken“ ist ausgeblendet, bis die Trainer es nutzen.
-  await expect(page.getByRole("radiogroup", { name: "Erst selbst denken" })).toHaveCount(0);
+  // „Erst selbst denken“ ist seit 0.2.37 wieder da (wirkt bei den Übungen, AP 13).
+  await expect(page.getByRole("radiogroup", { name: "Erst selbst denken" })).toHaveCount(1);
   await page
     .getByRole("radiogroup", { name: "Figurensatz" })
     .getByRole("radio", { name: "kontrastreich" })

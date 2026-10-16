@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 16.10.2026 · **Version 0.2.36**, AP 11 Kalibrierung der Stufen und Fehlerprofile (Fable, Zweig `ap11-kalibrierung`; davor 0.2.35 mit dem neuen Buchstand vom 16.10.2026 (Opus) und 0.2.34 als erster Stand im öffentlichen Repository `dobili/SvGa_Public`, Veröffentlichung siehe `docs/VEROEFFENTLICHUNG.md`) · Nächstes: Nachtest N158 bis N181 und die Rückfragen C1 bis C9 und K1 bis K6 in `docs/AUFGABEN_AUTOR.md`; Website mit `/training/` und den QR-Zielen prüfen · Ältere Stände in den Abschnitten unten; die ganze Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 17.10.2026 · **Version 0.2.37**, AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N197, Rückfragen U1 bis U9 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1204,137 +1204,58 @@ gewinnt unter mehreren Anschlüssen aus früheren Kapiteln der, der genau in ein
 endet (`zugfolgen/anschluss.py`, Test in `test_zugfolgen.py`). Der falsche Entwurf ist gelöscht;
 die App-Daten ändern sich dadurch nicht.
 
+### AP 13 Teil 1 und 2: Übungen und erste Trainer – Version 0.2.37 (Zweig `nacht-ap13`, Opus, Nacht zum 17.10.2026)
+
+Vorher aufgeräumt: Zweig `pipeline-anschluss` (Anschluss an frühere Kapitel) ist zusammengeführt.
+
+**Teil 1, Übungen des Buches** (Konzept 9.1 und 9.2):
+
+- `training/uebungsaufgabe.ts`: Lösung aus der freigegebenen Erklärung (deutsche Notation) als
+  Linien, dazu „akzeptiert“; Prüfung eines Zuges (weiter, gelöst, falsch). 63 Zugaufgaben,
+  23 Denkaufgaben (Test an allen 86 Übungen).
+- `training/wiederholung.ts`: fünf Kästen (1/3/7/16/35 Tage), Karten mit Verlauf, fällige Karten.
+- `speicher/format.ts` Format 3 mit `karten`; `speicher/fortschritt.ts`,
+  `notiereUebungsergebnis` (Q6: auch „Lösung zeigen“ zählt als gelöst, Karte in Kasten 1).
+- Oberfläche: `ui/bildschirme/Uebung.tsx` mit `ui/komponenten/useUebung.ts` (Hinweise in drei
+  Stufen, „Lösung zeigen“, „Erst selbst denken“ locker oder streng, Erklärung, „Nächste Übung“),
+  `KapitelUebungen.tsx` (Liste im Kapitel), `FaelligeWiederholungen.tsx` (Training),
+  „Erst selbst denken“ wieder in den Einstellungen. Stil `ui/stil/uebung.css`.
+
+**Teil 2, erste Trainer** (ohne neue Daten, Aufgaben aus den Diagrammen des Buches):
+
+- Logik in `training/`: `zufall.ts` (wiederholbar in Tests), `buchstellungen.ts` (alle
+  regelgerechten Diagramme, je Stellung einmal), `zaehltrainer.ts`, `roentgentrainer.ts`,
+  `koordinatentrainer.ts`; Tests `trainerrunden.test.ts`.
+- Oberfläche: `ui/bildschirme/Trainer.tsx` (Übungsart wählen, Runde), `ui/trainer/`
+  (`useRunde.ts` Ablauf und Speichern, `Rundenrahmen.tsx`, `Trainerbrett.tsx`, je Trainer eine
+  Datei). `training/trainer.ts`: `zaehlen`, `roentgen`, `koordinaten` sind `fertig`; die
+  Trainerkarte zeigt dann „Trainieren“.
+- Oberflächentests `tests/e2e/uebungen.spec.ts` und `trainer.spec.ts`.
+
 ## Wartet auf den Autor
 
 **Alles Offene steht in `docs/AUFGABEN_AUTOR.md`** (seit 0.2.31 nur noch Offenes: Nachtest,
 Entscheidungen mit Wortlaut der Fragen, Buchhinweise, Freigaben, Rechtliches). Erledigte Nachtests
 (N1 bis N135), der Wiedereinstieg und die Vorschläge zu 0.2.26 liegen in
 `docs/archiv/stand-0.2.30/`. Offen aus den angenommenen Vorschlägen (Archiv,
-VORSCHLAEGE_0.2.26.md): D1 Leerfälle, D4 „Gegner?“ in einer Karte mit Vorbeugezug, E Regeln,
-G Eröffnungsliste, H Rückblick im Spielen.
+VORSCHLAEGE_0.2.26.md): D1 Leerfälle und H Rückblick im Spielen (D4 „Gegner?“ und G
+Eröffnungsliste sind seit 0.2.32 umgesetzt).
 
 ## Nächster Schritt
 
-1. Cloudflare baut trotz eingeschalteter Einstellungen keine Testadressen für Zweige (Previews,
-   open beta); bis das geklärt ist, gehen Testversionen mit erhöhter Versionsnummer direkt nach
-   `main` (erlaubt, siehe CLAUDE.md, Arbeitsablauf 4). Version 0.2.14 liegt in `main`.
-2. **AP 8 ist fertig (Version 0.2.14)**: Der Autor testet nach `docs/TESTANLEITUNG.md` (Nachtests
-   N21 bis N43) und entscheidet die offenen Punkte am Ende von AP 8 oben. Was er an AP 8 ändern
-   möchte, kommt als eigener Teilschritt (Autor, 14.10.2026).
-   **AP 9 ist fertig (Version 0.2.17, Zweig `ap9-werkzeuge`, in `main`).** Der Autor testet
-   nach `docs/TESTANLEITUNG.md` (Nachtests N44 bis N56) und entscheidet die offenen Punkte am
-   Ende von AP 9 oben. **AP 10 ist in Arbeit** (Zweig `ap10-werkzeuge`, Abschnitt oben):
-   **AP 10 ist fertig (Version 0.2.20, Zweig `ap10-werkzeuge`, in `main`).** Der Autor testet
-   nach `docs/TESTANLEITUNG.md` (Nachtests N57 bis N67) und entscheidet die offenen Punkte am
-   Ende von AP 10 oben.
-3. **Reihenfolge der nächsten Arbeitspakete (Konzept, Tabelle der Arbeitspakete; 15.10.2026):**
-   AP 11 (Engine-Dienst, Stufen, Fehlerprofile, Partie, Auswertung) ist für Fable vorgesehen und
-   setzt nur AP 1 und AP 7 voraus; die Wünsche des Autors dazu stehen oben unter AP 5, Punkt 7.
-   Unabhängig davon kann Opus jetzt **AP 12 Speicher** (Fortschritt, Export, Import, Umwandlung;
-   setzt AP 5 voraus; Zweig `ap12-speicher`) und danach **AP 14 Vorbereitete Texte** (setzt AP 8
-   bis 10 voraus) übernehmen. AP 13 (Trainer Stufe 2) braucht AP 8 bis 12, also auch AP 11.
-   **Stand für AP 12:** Es gibt noch kein Modul `src/speicher/`. Heute liegen nur Merker im
-   `localStorage` (`app/merker.ts`: „zuletzt“ geöffnete Abbildung, „koordinaten“;
-   `app/einstellungen.ts`: Brettfarben und Strenge; `app/lernstand.ts`: Haken der Gesamt-
-   Checkliste je Kapitel), dazu `app/loeschen.ts` (alles löschen, auch IndexedDB-Datenbanken).
-   Eigene Züge beim Weiterspielen (`ui/komponenten/useNachspielen.ts`) werden nicht gespeichert.
-   Konzept 6.4 nennt die Schnittstelle des Speichers (`lade`, `speichere`, `exportiere`,
-   `importiere`, `bitteUmDauerhaftenSpeicher`) und die Regeln: Speichern nach jeder Antwort,
-   beim ersten Start um dauerhaften Speicher bitten, Fehler dem Leser anzeigen, ältere Formate
-   umwandeln. Pflichtenheft 4, Stufe 2: „Fortschritt: je Kapitel angesehene Abbildungen,
-   gelöste Übungen, Stand der Trainer“ und „Datensicherung: Export und Import aller eigenen
-   Daten als eine Datei“; Abnahmepunkt „Export auf einem Gerät und Import auf einem anderen“.
+Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2.36) liegt im
+Archiv-Repository; was davon noch offen ist, steht hier.
 
-4. **AP 12 ist fertig (Versionen 0.2.21 und 0.2.22, Zweig `ap12-speicher`, in `main`).** Der
-   Autor testet nach `docs/TESTANLEITUNG.md` (Nachtests N68 bis N77) und beantwortet die offenen
-   Fragen Q1 bis Q6 am Ende von AP 12 oben. **AP 14 Vorbereitete Texte** ist in Arbeit (Zweig
-   `ap14-texte`, Version 0.2.25 in `main`): alle Kapitel als Entwurf, der Autor prüft (N78 bis
-   N84, Fragen T1 bis T4, Hinweise zum Buch und zu den Werkzeugen oben). **AP 16** ist als
-   Vorschlag vorbereitet (`docs/freigabe/buchverweise.md`, Fragen B1 bis B4).
-5. **AP 11 Handwerksteil ist fertig (Version 0.2.26, Zweig `ap11-partie`, in `main`).** Der
-   Autor testet nach `docs/TESTANLEITUNG.md` (Nachtests N85 bis N95) und beantwortet P1 bis P4.
-   Kalibrierung und Gegenprüfung mit Fable: erledigt in Version 0.2.36 (Abschnitt
-   „Kalibrierung und Gegenprüfung“ unter AP 11 oben).
-6. **Rückmeldung des Autors zu 0.2.26 (15.10.2026):** Nachtests bis N95 gemacht. Seine Punkte
-   (Perspektive, Ordnung der Werkzeuge nach der Denkroutine, Bündel, Leerfälle, Buchtexte,
-   Angriffsregel, Kandidaten, Ruhe-Fehler, Quadrat, Fortschritt nach 30 Sekunden, Eröffnungsliste,
-   Rückblick im Spielen) sind geordnet und mit Vorschlägen in `docs/archiv/stand-0.2.30/VORSCHLAEGE_0.2.26.md`
-   (Fragen R1 bis R15). Der Autor hat entschieden (Abschnitt „Entscheidungen des Autors“ dort).
-7. **Version 0.2.27 ist fertig und getestet (N96 bis N113), Kurzfassungen abgenommen.**
-   **Version 0.2.28** (Zweig `rueckmeldung-0.2.28`, in `main`) setzt die Rückmeldung dazu um,
-   **Version 0.2.29** (Zweig `rueckmeldung-0.2.29`, in `main`) die zu 0.2.28; der Autor testet
-   N114 bis N125. Vorgemerkt: Trainingskästen auf Website und App, sobald „Training“ dran ist. Teil F (Impressum usw.) erst, wenn App und Website fertig sind.
-8. **Version 0.2.30: Werkzeug-Umbau** (Zweig `rueckmeldung-0.2.30`, in `main`). Der Autor wollte
-   keinen Bildschirmentwurf vorab, sondern den Umbau gleich, und prüft ihn zusammen mit seinen
-   zwei Wünschen zu 0.2.29 (Tipp ohne Werkzeug tut nichts, Legende in jeder Karte). Umgesetzt:
-   Symbole am Brett (Ziehen, Engine, Röntgen, Warnsignale), Bündel je Kapitel in der Reihenfolge
-   der Denkroutine mit „◀ frühere“ und „spätere ▶“, Reiter im Bündel, gestufte Karten (D6),
-   Koordinaten unter „Ich“, „Skelett zeigen“ im Bündel, neue Namen (Erzwingende Züge, Kandidaten,
-   Turmendspiel). Entscheidungen: `docs/ENTSCHEIDUNGEN.md`, „Rückmeldung zu 0.2.29 und
-   Werkzeug-Umbau“. Code: `ui/komponenten/werkzeugordnung.ts` (Bündel, Reiter, Symbole),
-   `useWerkzeugwahl.ts` (Zustand), `Werkzeugleiste.tsx` (Leiste und Reiter), `Brettsymbole.tsx`,
-   `stufen.ts` (gestufte Karten), Legenden `werkzeug.<id>.legende` in `i18n/de.json`.
-   Der Autor hat N126 bis N135 getestet (alle Nachtests bis dahin erledigt).
-9. **Version 0.2.31** (Zweig `rueckmeldung-0.2.31`, in `main`): Rückmeldung zu 0.2.30. Zählen als
-   Symbol am Brett, Erklärkacheln von Zählen und Ziehen mit „Nicht mehr anzeigen“
-   (`Erklaerkarte.tsx`, `useErklaerung.ts`), Bündel in der Reihenfolge ihrer Einführung,
-   Engine-Karte mit „Beste Fortsetzung zeigen“ (Pfeil) und „Letzten Zug bewerten“
-   (`engine/letzterzug.ts`, `useZugurteil.ts`, `Zugurteil.tsx`), Nachtmodus
-   (`app/farbschema.ts`), Zahnrad statt „Ich“, Skelett-Schalter neben den Reitern, gekürzte
-   Erklärungen. Doku aufgeräumt (Archiv `docs/archiv/stand-0.2.30/`). Der Autor testet N136 bis
-   N146 und beantwortet `docs/AUFGABEN_AUTOR.md`.
-10. **Version 0.2.32** (Zweig `rueckmeldung-0.2.32`, in `main`): Rückmeldung zu 0.2.31
-   (`docs/ENTSCHEIDUNGEN.md`, „Rückmeldung zu 0.2.31“). Ohne „Markierungen des Buchs“, goldener
-   Pfeil für den besten Zug beim Bewerten (`useZugurteil.ts`), Kürzel +/x/D an den Taktik-Pfeilen
-   (`k7-erzwingend.ts`), Sicherheitsblick in der Partie entfernt, alle Warum-Fragen freigegeben,
-   Hinweis zur Datensicherung nach vier Stunden (`app/sicherungshinweis.ts`,
-   `SicherungsHinweis.tsx`), Zentrumsprüfung ohne Batterie (Abb. 2.128), Plakette „exakt“ weg,
-   Lichess-Eröffnungsliste (`pipeline/eroeffnungsliste.py`, `inhalte/lichess/`,
-   `schach/eroeffnungsnamen.ts`), „Gegner?“ in einer Karte mit Vorbeugezug
-   (`engine/vorbeugezug.ts`, `GegnerKarte.tsx`), zwei Beispiele im selben Kapitel
-   zusammengeführt. Erklärungen für den Autor: `docs/entscheidungshilfe/`. Der Autor testet N147
-   bis N157 und beantwortet `docs/AUFGABEN_AUTOR.md`.
-   **Genauer nächster Schritt:** Antworten des Autors einarbeiten. Dann, je nach seiner Wahl:
-   P1 Werkzeuge in der Partie (Opus; Vorschlag: zuerst Warnsignale, Röntgen und Zählen als
-   Symbole am Partie-Brett, dann die Bündel), B1 Erzwingende Züge bis zur Ruhe (Engine je
-   Kandidat), B3 Spielziel aus der Tablebase (Pipeline), B4 Vorlauf für 6.11 und 11.68, Q6 in
-   AP 13 (Übung gilt auch nach „Lösung anzeigen“ als gelöst). Die Regeländerungen aus C1 und C2
-   mit Fable (Kalibrierung, AP 9 und AP 11). Offen aus den Vorschlägen: H Rückblick im Spielen
-   (Opus), D1 Leerfälle.
-
-11. **Version 0.2.33** (Zweig `rueckmeldung-0.2.33`, nicht in `main`): Antworten des Autors vom
-   16.10.2026 (`docs/ENTSCHEIDUNGEN.md`, „Rückmeldung zu 0.2.32“). Spielziel entfernt, Plakette
-   „vorbereitet“ weg, „Erst selbst denken“ ausgeblendet, Figurensatz „kontrastreich“
-   (`ui/brett/Figur.tsx`) und Ton (`app/ton.ts`, `ui/brett/useZugton.ts`), Werkzeuge in der Partie
-   (`PartieWerkzeuge.tsx`, `partiewerkzeug.ts`: Symbole und Bündel), Vorlauf für 6.11 und 11.68,
-   7.10 mit 1. Sf7+. Die Regeln C1/C2 haben sechs Agenten in eigenen Arbeitskopien umgesetzt und
-   Claude zusammengeführt: Zielbilanz mit Engine-Nachrechnung (`engine/zentrumsschlag.ts`,
-   `ZentrumKarte.tsx`), Phase für beide Seiten, Faktorenbilanz bei Schach und Matt
-   (`analyse/faktorenschach.ts`), W2/W4/W5 (`schach/aufgaben.ts`), Skelett und Planfindung
-   (`analyse/skelett.ts`, `schach/figurenziel.ts`), Erzwingende Züge bis zur Ruhe
-   (`engine/kandidatenruhe.ts`, `ErzwingendKarte.tsx`, alle Engine-Teile der Karte in
-   `Werkzeugzusatz.tsx`), Motiv im Schach, Gabeln (`schach/gabeln.ts`), KPK-Endspieldatenbank
-   (`schach/kpk.ts`, `ergebnispruefung.ts`), Quadrat, Philidor, Läuferbilder
-   (`schach/laeuferbilder.ts`), Kandidaten und Sicherheitsblick in Kapitel 12.
-   GitHub Actions: Die freien Minuten waren verbraucht; Prüfungen nur noch von Hand
-   (`pruefen.yml`), Plan in `docs/VEROEFFENTLICHUNG.md`. Lokal laufen alle Prüfungen; mehrere
-   Arbeitskopien bekommen mit `PLAYWRIGHT_PORT` einen eigenen Vorschau-Server.
-   **Genauer nächster Schritt:** Mit dem Autor A1 bis A3 in `docs/AUFGABEN_AUTOR.md` klären
-   (Budget, Aufräumen, Veröffentlichen). Nach dem Umschalten: `pruefen.yml` wieder auf `push`
-   stellen, 0.2.33 mit voller Prüfung (WebKit) nach `main`. Dann seine Rückfragen C1 bis C9
-   einarbeiten und den Nachtest N158 bis N174 abwarten. Danach offen: Q6 in AP 13 (Übung gilt auch
-   nach „Lösung anzeigen“ als gelöst), H Rückblick im Spielen, D1 Leerfälle.
-
-12. **Version 0.2.36** (Zweig `ap11-kalibrierung`, Fable, 16.10.2026; davor 0.2.35 mit dem
-   neuen Buchstand, Abschnitt „Buchstand 16.10.2026“ oben): AP 11 Kalibrierung der
-   Stufen und Fehlerprofile, Gegenprüfung (Abschnitt unter AP 11 oben, Entscheidungen in
-   `docs/ENTSCHEIDUNGEN.md`). Die Verweise auf `docs/archiv`, `docs/freigabe` und
-   `docs/entscheidungshilfe` in dieser Datei zeigen auf Dateien, die nur noch im privaten
-   Archiv-Repository liegen.
-   **Genauer nächster Schritt:** Der Autor testet N158 bis N181 und beantwortet C1 bis C9 und
-   K1 bis K6 in `docs/AUFGABEN_AUTOR.md`; Antworten einarbeiten (Stufen nachstellen, falls die
-   Abstufung nicht passt: nur die Tabelle in `engine/stufen.ts`, danach `npm run messen:stufen`).
-   Danach wie oben: Q6 in AP 13, H Rückblick im Spielen, D1 Leerfälle.
+1. **Autor:** Nachtest N182 bis N197 (0.2.37) und, falls offen, N158 bis N181; Rückfragen U1 bis
+   U9, C1 bis C9, K1 bis K6 und D1 in `docs/AUFGABEN_AUTOR.md`. Antworten einarbeiten.
+2. **Fable, Zweig `trainerdaten`:** Pipeline `pipeline/trainer/`, Schemas `schemas/trainer*`,
+   Daten `inhalte/de/trainer/`, Notizen `docs/TRAINERDATEN.md`. Fable pusht weder `main` noch
+   `app/`. Sobald Fable fertig meldet und die Prüfung grün ist, führt Opus den Zweig zusammen und
+   trägt die Lizenz der Lichess-Daten (CC0) in `docs/LIZENZEN.md` ein.
+3. **Danach AP 13 weiter (Opus):** Taktiktrainer, Strukturerkenner und „Falle oder Köder“ auf
+   den Daten von Fable; Repertoire, Zielbilanz- und Faktorenbilanz-Trainer, Endspieltrainer;
+   Lichess-Aufgaben. Offene Frage U9 (Trainer in der Wiederholung) vorher klären.
+4. **Offen aus den Vorschlägen:** H Rückblick im Spielen, D1 Leerfälle.
 
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 

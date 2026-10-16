@@ -1019,3 +1019,35 @@ darunter. Die Fehlerquote je Stufe liegt im Sollbereich“), Übergabe von Opus 
   Partieende (Matt, Patt, Material, 50 Züge, Wiederholung, Zeit mit Remis bei zu wenig Material),
   Speicher (beschädigte Züge kürzen die Partie, fremde Stufen fallen weg).
 
+## AP 13 Teil 1 und 2: Übungen und erste Trainer (Nacht zum 17.10.2026, Opus, Version 0.2.37)
+
+Der Autor hat die Arbeit über Nacht freigegeben („Los“). Rückfragen dazu stehen in
+`docs/AUFGABEN_AUTOR.md`, Teil U.
+
+- **Aufräumen (A1 bis A3, D2):** Budget, Aufräumen und Veröffentlichen sind mit dem Umzug nach
+  `dobili/SvGa_Public` erledigt (16.10.2026); die Prüfungen laufen wieder bei jedem Push. D2
+  (Buchverweise, AP 16) erledigt am 16.10.2026.
+- **Q6 umgesetzt, wie entschieden:** Eine Übung zählt auch nach „Lösung zeigen“ als gelöst. Die
+  Wiederholungskarte geht dann zurück in Kasten 1 (morgen wieder fällig).
+- **Wiederholung (Konzept 9.1):** fünf Kästen mit 1, 3, 7, 16 und 35 Tagen. Ohne Fehler und
+  ohne Hinweis gelöst: ein Kasten weiter; mit Fehlversuch oder Hinweis: Kasten bleibt; „Lösung
+  zeigen“ oder „nicht gelöst“: Kasten 1. Speicherformat 3 ergänzt die Karten; ältere Formate
+  werden ohne Verlust übernommen.
+- **Übungen ohne Buchtext:** Die App zeigt nicht die Aufgabe des Buches, sondern verweist auf die
+  Abbildung (Entscheidung „keine Buchtexte in der App außer den Bildunterschriften“). Die
+  freigegebene Erklärung (`inhalte/de/texte/`) erscheint nach dem Lösen oder „Lösung zeigen“.
+- **Zugaufgaben und Denkaufgaben:** 63 Übungen haben eine Zugfolge ab ihrem Diagramm; der Leser
+  zieht seine Züge, die App antwortet mit der Gegenseite aus der Lösung. „akzeptiert“ zählt als
+  gleichwertig. Die übrigen 23 sind Denkaufgaben mit Selbsteinschätzung.
+- **„Erst selbst denken“** wirkt jetzt bei den Übungen und steht wieder in den Einstellungen:
+  locker nach „Ich habe nachgedacht“, streng nach dem ersten eigenen Zug (bei Denkaufgaben auch
+  streng nach „Ich habe nachgedacht“, weil es keinen Zug gibt).
+- **Erste Trainer** ohne neue Daten: Zähltrainer (Bilanz zählen, hängende Figuren),
+  Schach-Röntgen-Trainer (drei Schritte mit Pfeilen), „Koordinaten, Notation, Gangarten“ (Feld
+  finden, Zug aufschreiben, Zug ausführen, Gangarten). Aufgaben aus den Diagrammen des Buches;
+  nur die Sonderzüge (Rochade, en passant, Umwandlung) haben sieben eigene kurze Stellungen.
+  Rechnung wie in den Werkzeugen „Zählen“ und „Röntgen“, damit Trainer und Werkzeug nie
+  verschieden urteilen. Jede Runde zählt als Durchgang im Fortschritt.
+- **Warten auf Fable:** Taktiktrainer, Strukturerkenner und „Falle oder Köder“ brauchen die
+  Trainerdaten aus dem Zweig `trainerdaten` (noch in Arbeit).
+

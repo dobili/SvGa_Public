@@ -7,7 +7,8 @@
  * (richtig, mit Hilfe, falsch) geht einmal in Fortschritt und Wiederholungskarte
  * (speicher/fortschritt.ts, notiereUebungsergebnis).
  * „Erst selbst denken“ (Einstellung „Strenge“): locker – Hinweise und Lösung erst nach „Ich habe
- * nachgedacht“; streng – erst nach einem eigenen Zug.
+ * nachgedacht“; streng – bei Zugaufgaben erst nach einem eigenen Zug (Denkaufgaben haben keinen
+ * Zug, dort gilt auch bei „streng“ „Ich habe nachgedacht“).
  * Abhängigkeiten: training/uebungsaufgabe.ts, schach/weiterspielen.ts, speicher.
  */
 import { useState } from "react";
@@ -35,6 +36,8 @@ export interface Uebungssteuerung {
   readonly stufe: number;
   /** Darf der Leser Hinweise und Lösung sehen („Erst selbst denken“)? */
   readonly hilfeFrei: boolean;
+  /** Gibt erst ein eigener Zug die Hilfe frei (Strenge „streng“ bei einer Zugaufgabe)? */
+  readonly erstZug: boolean;
   /** Die Rolle der Figur, die als Nächstes zieht (für Hinweis 2), sonst null. */
   readonly naechsteFigur: Rolle | null;
   readonly markierungen: readonly Markierung[];
@@ -88,7 +91,8 @@ export function useUebung(
   const [gedacht, setzeGedacht] = useState(false);
   const [eingeschaetzt, setzeEingeschaetzt] = useState(false);
   const fen = stellungNach(startFen, zuege);
-  const hilfeFrei = strenge === "streng" ? fehler > 0 || zuege.length > 0 : gedacht;
+  const erstZug = strenge === "streng" && aufgabe.art === "zug";
+  const hilfeFrei = erstZug ? fehler > 0 || zuege.length > 0 : gedacht;
 
   const speichere = (ergebnis: Antwortergebnis) =>
     void aendere((daten) =>
@@ -132,6 +136,7 @@ export function useUebung(
     meldung,
     stufe,
     hilfeFrei,
+    erstZug,
     naechsteFigur: naechster ? rolleVon(naechster) : null,
     markierungen,
     spiele,

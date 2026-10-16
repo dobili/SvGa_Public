@@ -54,6 +54,9 @@ def test_in_gewonnener_stellung_sind_gewinnzuege_gleichwertig():
     urteil = beurteile(zuege, brett.parse_san("exd5"), [])
     assert urteil.urteil == "gleichwertig" and urteil.vorschlag_akzeptiert == ["cxd5"]
     assert [z.status for z in urteil.zuege] == ["gleichwertig", "buch", "widerlegt"]
+    # Ein gleichwertiger Gewinnzug schließt „einziger Zug“ aus, auch bei großem Abstand.
+    gewonnen = beurteile(zuege, brett.parse_san("cxd5"), [])
+    assert gewonnen.einziger_zug is False and gewonnen.abstand_zweiter == 2.2
 
 
 def test_akzeptierter_zug_der_schwaecher_ist_wird_gemeldet():

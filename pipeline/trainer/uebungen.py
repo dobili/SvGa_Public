@@ -11,7 +11,8 @@ Maßstab (Startwerte, wie bei der Engine-Prüfung der Zugzeichen):
     gleichwertig   höchstens 0,3 Bauerneinheiten schlechter als der beste Zug
     schwächer      bis 1,0 schlechter
     widerlegt      mehr als 1,0 schlechter, oder der beste Zug setzt matt und die Buchlösung nicht
-    einziger Zug   jeder andere Zug ist mindestens 1,0 schlechter (Matt gegen kein Matt zählt auch)
+    einziger Zug   jeder andere Zug ist mindestens 1,0 schlechter und keiner gilt als gleichwertig
+                   (Matt gegen kein Matt zählt auch)
     Ein Matt gilt nie als gleichwertig zu einem Zug ohne Matt; ein längeres Matt als das beste
     zählt je Zug mehr 0,5 Verlust (die Übungen fragen nach dem kürzesten Matt). In klar
     gewonnenen Stellungen (beide Züge mindestens +5, kein Matt) gelten Züge als gleichwertig,
@@ -175,7 +176,8 @@ def beurteile(zuege: list[Zugwert], buchzug: chess.Move, akzeptiert: list[chess.
         urteil = "haelt" if verlust_buch == 0 and status_buch == "gleichwertig" else status_buch
     andere = [u for u in urteile if u.status != "buch"]
     abstand = min((u.verlust for u in andere), default=None)
-    einziger = abstand is None or abstand >= EINZIGER_ZUG_AB
+    gleich_gute = [u for u in andere if u.status in ("gleichwertig", "akzeptiert")]
+    einziger = (abstand is None or abstand >= EINZIGER_ZUG_AB) and not gleich_gute
     if buch is not None and buch.verlust > 0:
         einziger = False
     vorschlag = (

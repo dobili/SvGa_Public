@@ -45,11 +45,18 @@ export interface Stufe {
   readonly rechenzeitMs: number;
 }
 
-/** Fehlerquoten aus Konzept 8.2: etwa jeder dritte, vierte, achte Zug; Stufe 4 „selten“. */
-const JEDER_DRITTE = 1 / 3;
-const JEDER_VIERTE = 1 / 4;
-const JEDER_ACHTE = 1 / 8;
-const JEDER_SECHZEHNTE = 1 / 16;
+/**
+ * Fehlerwürfe für die Sollquoten aus Konzept 8.2 (etwa jeder dritte, vierte, achte Zug; Stufe 4
+ * „selten“). Die Würfe liegen über dem Soll, weil die Fehlersuche nicht in jeder Stellung einen
+ * Zug in den Grenzen der Stufe findet (ohne Damenopfer, Höchstverlust): Gemessen trafen 1/3, 1/4,
+ * 1/8 und 1/16 nur 30 %, 18 %, 10 % und 5 % der Züge; mit 0,36, 0,33, 0,15 und 0,075 dann
+ * 36 %, 29 %, 13 % und 6 % (16.10.2026, `npm run messen:stufen`). Stufe 1 und 2 danach leicht
+ * gesenkt, erwartet etwa 34 % und 26 %.
+ */
+const JEDER_DRITTE = 0.34;
+const JEDER_VIERTE = 0.3;
+const JEDER_ACHTE = 0.15;
+const JEDER_SECHZEHNTE = 0.075;
 const NIE = 0;
 /** Höchstverluste in Bauerneinheiten (Faustwerte aus Kapitel 1). */
 const DAME = 9;

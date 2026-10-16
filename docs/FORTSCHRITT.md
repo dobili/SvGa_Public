@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 16.10.2026 · **Version 0.2.34**, erster Stand im öffentlichen Repository `dobili/SvGa_Public` (0.2.33 mit Rückmeldung zu 0.2.32, dazu die Trainingsseiten der Website; Veröffentlichung siehe `docs/VEROEFFENTLICHUNG.md`) · Nächstes: voller Lauf von GitHub Actions auf `main` (mit WebKit), Cloudflare auf das neue Repository umstellen, dann Website mit `/training/` und den QR-Zielen prüfen; danach Nachtest N158 bis N174 und Rückfragen C1 bis C9 in `docs/AUFGABEN_AUTOR.md` · Ältere Stände in den Abschnitten unten; die ganze Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 16.10.2026 · **Version 0.2.35**, AP 11 Kalibrierung der Stufen und Fehlerprofile (Fable, Zweig `ap11-kalibrierung`; davor 0.2.34 als erster Stand im öffentlichen Repository `dobili/SvGa_Public`, Veröffentlichung siehe `docs/VEROEFFENTLICHUNG.md`) · Nächstes: Nachtest N158 bis N181 und die Rückfragen C1 bis C9 und K1 bis K6 in `docs/AUFGABEN_AUTOR.md`; Website mit `/training/` und den QR-Zielen prüfen · Ältere Stände in den Abschnitten unten; die ganze Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1036,24 +1036,34 @@ Handwerksteil; Stufen und Fehlerprofile bekommen eine abgegrenzte Schnittstelle 
    Zug), grobe Patzer (mehr als zwei Bauern), absichtliche Fehler der Engine („Mit 12... Sf6 hat
    die Engine eine Figur hängen lassen (W1). Hast du es gesehen?“), PGN kopieren oder als Datei.
 
-**Übergabe an Fable (Kalibrierung und Gegenprüfung):**
+**Kalibrierung und Gegenprüfung (Fable, 16.10.2026, Zweig `ap11-kalibrierung`, Version 0.2.35)**
+– erledigt, Entscheidungen und Messergebnis in `docs/ENTSCHEIDUNGEN.md` („AP 11 Kalibrierung“):
 
-- `engine/stufen.ts`: Fehlerquoten, Höchstverluste, Rechenzeiten, Skill- und Elo-Werte sind
-  Startwerte. Ziel aus Konzept 8.2: grob kalibriert, Abstufung fühlt sich richtig an.
-- `engine/fehlerart.ts`: nur Figur hängen lassen (Antwort schlägt eine Figur ab 3), Schlagreflex
-  (Schlag mit Verlust ab 1), verfrühte Dame (zwei Leichtfiguren zu Hause), König in der Mitte
-  (ab Zug 10, Rochade möglich). **Fehlen:** „Taktik übersehen“ und „Drohung ignorieren“ (über die
-  Werkzeuge der Kapitel 1, 4 und 7). Alles andere heißt „ungenau“.
-- `engine/zugwahl.ts`: Die Fehlerzüge kommen nur aus den acht besten Kandidaten (MultiPV 8);
-  darin fehlen grobe Fehler oft. Vorschlag: Kandidaten breiter erzeugen (alle legalen Züge kurz
-  bewerten oder gezielt Fehlerzüge nach Art suchen). Buchtreue 0,85 und Mindestverlust 0,5 sind
-  Startwerte. Konzept 8.2 „Kein grundloses Damenopfer ab Stufe 2“ ist nur über den Höchstverlust
-  abgedeckt.
-- Gegenprüfen: `spiel/`, `speicher/partien.ts`, `ui/komponenten/usePartie.ts` (Engine-Zug,
-  Abbruch, Uhr), Auswertung (`spiel/auswertung.ts`, Grenzen, Matt auf ±10 begrenzt).
-- Nicht gebaut (später): Endspieldatenbank für KPK (Konzept 8.3, „exakte Endspielergebnisse“),
-  Übernahme in die Fehlerdatenbank (AP 15), Hinweis mit den Werkzeugen des passenden Kapitels
-  (Pflichtenheft 5.2; jetzt aus der Engine nach Wunsch des Autors).
+- `engine/stufen.ts`: Jede Stufe hat Grundstärke (Skill Level, geräteunabhängig: Stockfish wählt
+  den Zug an der Tiefe Level + 1), Fehlerquote und Höchstverlust. Stufe 1 bis 3 Skill 0 mit
+  jedem dritten, vierten, achten Zug ein Fehler (Dame, Turm, Leichtfigur), Stufe 4 Skill 3 mit
+  jedem sechzehnten Zug, Stufe 5 bis 7 Skill 6, 10, 15, Stufe 8 voll. Die Elo-Begrenzung nutzt
+  keine Stufe mehr (sie wäre schwächer als Skill 8 gewesen).
+- `engine/fehlerart.ts`: alle sechs Fehlerarten mit den Werkzeugen der Kapitel 1, 4 und 7
+  (Abtauschrechnung, Drohungen, Gabelgeometrie W6, gefährliche Linie W2, Motive), geprüft an
+  Buchstellungen (Abb. 1.8, 1.13, Zweispringerspiel).
+- `engine/fehlersuche.ts` (neu) und `engine/zugwahl.ts`: typische Fehlerzüge aus allen legalen
+  Zügen, bis zu sechs davon gezielt von der Engine bewertet (`searchmoves` im Engine-Dienst);
+  Mindestverlust 0,5 und Buchtreue 0,85 bleiben; ab Stufe 2 nie ein Damenopfer (Abtauschrechnung,
+  unabhängig von der Engine).
+- Messung: `npm run messen:stufen` (`skripte/messe-stufen.mjs`, `src/engine/stufen.messung.ts`),
+  Partien Stufe gegen Stufe mit der echten Engine; Ergebnisse nur lokal in
+  `buch/arbeit/stufenmessung/`. Ergebnis (10 Partien je
+  Paarung): Jede Stufe gewinnt die Mehrheit gegen die Stufe darunter (9:1, 9:1, 9:1, 10:0, 7:3,
+  8:2, 9:1); gemessene Fehlerquoten Stufe 1 bis 4 etwa 36 %, 29 %, 13 %, 6 %; Höchstverluste
+  eingehalten.
+- Gegenprüfung: drei Befunde behoben (Uhr nach Engine-Zug im Hintergrund, laufende Uhr nach dem
+  Laden, Auswertung nach unterbrochenem Auftrag); Rest geprüft und belassen.
+- Nicht gebaut (später): Endspieldatenbank für KPK (Konzept 8.3, „exakte Endspielergebnisse“;
+  `schach/kpk.ts` gibt es seit 0.2.33 für die Werkzeuge), Übernahme in die Fehlerdatenbank
+  (AP 15), Hinweis mit den Werkzeugen des passenden Kapitels (Pflichtenheft 5.2; jetzt aus der
+  Engine nach Wunsch des Autors).
+- Rückfragen K1 bis K6 in `docs/AUFGABEN_AUTOR.md`; Nachtests N175 bis N181.
 
 **Offene Fragen zu AP 11:**
 
@@ -1208,8 +1218,8 @@ G Eröffnungsliste, H Rückblick im Spielen.
    Vorschlag vorbereitet (`docs/freigabe/buchverweise.md`, Fragen B1 bis B4).
 5. **AP 11 Handwerksteil ist fertig (Version 0.2.26, Zweig `ap11-partie`, in `main`).** Der
    Autor testet nach `docs/TESTANLEITUNG.md` (Nachtests N85 bis N95) und beantwortet P1 bis P4.
-   **Genauer nächster Schritt (Fable):** Abschnitt „Übergabe an Fable“ unter AP 11 oben: Stufen
-   und Fehlerprofile kalibrieren, fehlende Fehlerarten, breitere Kandidaten, Gegenprüfung.
+   Kalibrierung und Gegenprüfung mit Fable: erledigt in Version 0.2.35 (Abschnitt
+   „Kalibrierung und Gegenprüfung“ unter AP 11 oben).
 6. **Rückmeldung des Autors zu 0.2.26 (15.10.2026):** Nachtests bis N95 gemacht. Seine Punkte
    (Perspektive, Ordnung der Werkzeuge nach der Denkroutine, Bündel, Leerfälle, Buchtexte,
    Angriffsregel, Kandidaten, Ruhe-Fehler, Quadrat, Fortschritt nach 30 Sekunden, Eröffnungsliste,
@@ -1279,6 +1289,16 @@ G Eröffnungsliste, H Rückblick im Spielen.
    stellen, 0.2.33 mit voller Prüfung (WebKit) nach `main`. Dann seine Rückfragen C1 bis C9
    einarbeiten und den Nachtest N158 bis N174 abwarten. Danach offen: Q6 in AP 13 (Übung gilt auch
    nach „Lösung anzeigen“ als gelöst), H Rückblick im Spielen, D1 Leerfälle.
+
+12. **Version 0.2.35** (Zweig `ap11-kalibrierung`, Fable, 16.10.2026): AP 11 Kalibrierung der
+   Stufen und Fehlerprofile, Gegenprüfung (Abschnitt unter AP 11 oben, Entscheidungen in
+   `docs/ENTSCHEIDUNGEN.md`). Die Verweise auf `docs/archiv`, `docs/freigabe` und
+   `docs/entscheidungshilfe` in dieser Datei zeigen auf Dateien, die nur noch im privaten
+   Archiv-Repository liegen.
+   **Genauer nächster Schritt:** Der Autor testet N158 bis N181 und beantwortet C1 bis C9 und
+   K1 bis K6 in `docs/AUFGABEN_AUTOR.md`; Antworten einarbeiten (Stufen nachstellen, falls die
+   Abstufung nicht passt: nur die Tabelle in `engine/stufen.ts`, danach `npm run messen:stufen`).
+   Danach wie oben: Q6 in AP 13, H Rückblick im Spielen, D1 Leerfälle.
 
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 

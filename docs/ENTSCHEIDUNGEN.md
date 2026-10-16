@@ -931,3 +931,91 @@ dabei:
   hat), der QR-Code schwarz statt in der Linkfarbe Gold (sonst schlecht lesbar). Der Abschnitt
   „Dein Werkzeugkasten“ bleibt im Buch (es soll ohne Internet vollständig sein) und bekommt nur
   einen Hinweis auf den aktuellen Stand im Netz. Vorschlag: `docs/freigabe/trainingsverweise.tex`.
+
+## AP 11 Kalibrierung der Stufen und Fehlerprofile (16.10.2026, Fable)
+
+Grundlage: Konzept 8.2 (Stufen, Fehlerarten, „Fehler bleiben plausibel … Ein grundloses
+Damenopfer gibt es ab Stufe 2 nicht“, Abnahme „Jede Stufe gewinnt die Mehrheit gegen die Stufe
+darunter. Die Fehlerquote je Stufe liegt im Sollbereich“), Übergabe von Opus in
+`docs/FORTSCHRITT.md` (AP 11). Zweig `ap11-kalibrierung`, Version 0.2.35.
+
+- **Wie Stockfish 19 sich begrenzt (gemessen):** Mit „Skill Level“ rechnet die Engine die ganze
+  Zeit mit vier Varianten, wählt den Zug aber an der Suchtiefe Level + 1 gewichtet zufällig unter
+  den vier besten (bis etwa einen Bauern schlechter). Die Stärke hängt also von der Tiefe ab, nicht
+  vom Gerät: ein langsames Handy spielt auf Stufe 4 bis 7 genauso stark wie dieser Rechner. Die
+  Elo-Begrenzung („UCI_Elo“, 1320 bis 3190) rechnet Stockfish selbst in ein Skill Level um
+  (1600 Elo ≈ Level 2, 2000 Elo ≈ Level 4). Die Startwerte hätten Stufe 6 („Elo 1600“) schwächer
+  gemacht als Stufe 5 („Skill 8“) und sogar als Stufe 4 („Skill 3“).
+- **Stufen (`engine/stufen.ts`):** Jede Stufe hat eine Grundstärke, eine Fehlerquote und einen
+  Höchstverlust. Stufe 1 bis 3: Skill Level 0 (die „flache Suche“ aus Konzept 8.2, Tiefe 1) mit
+  den Fehlerquoten des Konzepts (jeder dritte, vierte, achte Zug) und Höchstverlust Dame, Turm,
+  Leichtfigur. Stufe 4: Skill Level 3 und „selten ein typischer Fehler“ (jeder sechzehnte Zug,
+  höchstens eine Leichtfigur). Stufe 5 bis 7: Skill Level 6, 10 und 15 ohne Fehlerprofile.
+  Stufe 8: volle Stärke, 2 Sekunden. Die Elo-Begrenzung bleibt im Engine-Dienst verfügbar, wird
+  aber von keiner Stufe genutzt. Rechenzeiten 0,3 bis 2 Sekunden wie bisher; auf Stufe 1 bis 4
+  braucht ein Fehlerzug bis zu drei Aufträge (Kandidaten, gezielte Prüfung, normaler Zug).
+- **Fehlerarten (`engine/fehlerart.ts`), alle sechs aus Konzept 8.2 mit den Werkzeugen des
+  Buches:** Figur hängen lassen = nach dem Zug ist eine eigene Figur ab Leichtfigur laut
+  Abtauschrechnung (Kapitel 1) verloren (Gewinn des Gegners mindestens 2, also mehr als ein
+  Bauer), vorher nicht; Schlagreflex und Köder = ein Schlag mit negativer Abtauschbilanz oder
+  laut Engine mindestens einem Bauern Verlust (5... Sxd5?! im Zweispringerspiel gilt als Köder);
+  verfrühte Dame und König in der Mitte wie bisher (Regeln aus `schach/todsuenden.ts`);
+  **Taktik übersehen** = nach dem Zug hat der Gegner eine neue Gabel (W6 Gabelgeometrie,
+  `schach/gabeln.ts`), eine neue gefährliche Linie gegen die ziehende Seite (W2,
+  `analyse/k4-warnsignale.ts`), oder seine Antwort laut Engine ist ein Motiv aus Kapitel 7
+  (Gabel, Doppelangriff, Fesselung, Spieß, Abzug, Doppelschach; `schach/taktikmotive.ts`);
+  **Drohung ignorieren** = vor dem Zug drohte der Gegner Matt oder Materialgewinn ab einem Bauern
+  (Röntgen-Frage „Was droht mein Gegner?“, `schach/drohungen.ts`), und derselbe Schlag oder ein
+  Matt in einem Zug geht nach dem Zug noch. Reihenfolge bei mehreren Treffern: Mattdrohung oder
+  Drohung ab Leichtfigur, Schlagreflex, Figur hängen, kleinere Drohung, Taktik, Dame, König.
+- **Fehlersuche (`engine/fehlersuche.ts`), breiter als MultiPV 8:** Die Engine rechnet mit
+  voller Stärke acht Kandidaten (für den besten Wert); dazu prüfen die Werkzeuge alle legalen
+  Züge und liefern typische Fehlerzüge je Art; bis zu sechs davon (reihum je Art, konkrete Arten
+  zuerst) bewertet die Engine gezielt mit „searchmoves“ (neu im Engine-Dienst). Gewählt wird
+  zufällig unter den Zügen mit Verlust zwischen 0,5 (Mindestverlust, unverändert) und dem
+  Höchstverlust der Stufe, Züge mit erkannter Art bevorzugt. **Damenopfer:** Ab Stufe 2 fällt
+  jeder Zug weg, nach dem der Gegner laut Abtauschrechnung auf dem Feld einer eigenen Dame
+  mindestens Dame gegen Leichtfigur gewinnt, unabhängig davon, was die Engine dem Zug an Verlust
+  zuschreibt (Tests mit einer Engine, die den Verlust unterschätzt). Nur Stufe 1 darf die Dame
+  verschenken (Höchstverlust 9). Die Buchtreue 0,85 bleibt auf allen Stufen (Rückfrage K3).
+- **Messung (`npm run messen:stufen`):** `skripte/messe-stufen.mjs` startet je Paarung einen
+  Lauf von `src/engine/stufen.messung.ts` (eigene Vitest-Einstellung, nicht in der Prüfkette):
+  Partien Stufe gegen Stufe mit der echten Engine und der Zugwahl der App, Farben wechselnd,
+  Eröffnungen aus Kapitel 2 und 3 (zwei Halbzüge), höchstens 240 Halbzüge. Ergebnisse liegen nur
+  lokal in `buch/arbeit/stufenmessung/`. Ergebnis vom 16.10.2026 (10 Partien je Paarung):
+
+  | Paarung a-b | Punkte b : a | Fehlerquote a / b | Höchster Verlust a / b | Halbzüge | Dauer je Partie |
+  |---|---|---|---|---|---|
+  | 1-2 | 9 : 1 | 36 % / 29 % | 8,6 / 5,0 | 73 | 33 s |
+  | 2-3 | 9 : 1 | 30 % / 12 % | 5,0 / 3,0 | 74 | 40 s |
+  | 3-4 | 9 : 1 | 13 % / 7 % | 3,0 / 3,0 | 68 | 39 s |
+  | 4-5 | 10 : 0 | 6 % / 0 % | 3,0 / 0 | 85 | 58 s |
+  | 5-6 | 7 : 3 | 0 % / 0 % | 0 / 0 | 111 | 93 s |
+  | 6-7 | 8 : 2 | 0 % / 0 % | 0 / 0 | 123 | 147 s |
+  | 7-8 | 9 : 1 | 0 % / 0 % | 0 / 0 | 110 | 185 s |
+
+  Jede Stufe gewinnt die Mehrheit gegen die Stufe darunter (Abnahme aus Konzept 8.2). Die
+  Fehlerquoten sind die gemessenen Anteile absichtlicher Fehlerzüge; der höchste Verlust hält
+  die Grenzen (Dame 9, Turm 5, Leichtfigur 3) ein. Zwei Läufe: Mit den Würfen 1/3, 1/4, 1/8, 1/16
+  trafen nur 30 %, 18 %, 10 %, 5 % der Züge (die Fehlersuche findet nicht in jeder Stellung einen
+  Zug in den Grenzen); die Paarungen 1-2 bis 4-5 wurden mit angehobenen Würfen (0,36, 0,33, 0,15,
+  0,075) nachgemessen, 5-6 bis 7-8 stammen aus dem ersten Lauf (dort ohne Fehlerprofile, also
+  unverändert). Endgültige Würfe: 0,34, 0,30, 0,15, 0,075 (Stufe 1 und 2 leicht gesenkt, erwartet
+  etwa 34 % und 26 %). Häufigste Fehlerarten auf Stufe 1 und 2: Drohung ignoriert, Taktik
+  übersehen, Figur hängen lassen, Schlagreflex; „ungenau“ nur noch etwa jeder zehnte Fehlerzug.
+  Die Dauer je Partie gilt für diesen Rechner (ein Kern); auf Stufe 1 bis 7 hängt die Stärke
+  nicht von der Rechenzeit ab.
+
+- **Gegenprüfung** (`spiel/`, `speicher/partien.ts`, `ui/komponenten/usePartie.ts`,
+  `spiel/auswertung.ts`), drei Befunde behoben: (1) Zog die Engine, während die App im
+  Hintergrund war, startete ihr Zug die Uhr des Lesers, obwohl die Pause sie gerade angehalten
+  hatte; jetzt bleibt die Uhr nach dem Zug stehen und läuft bei der Rückkehr weiter. (2) Eine beim
+  Speichern laufende Uhr hätte nach dem Neuladen die ganze Abwesenheit abgezogen; jetzt steht sie
+  nach dem Laden mit der gespeicherten Restzeit. (3) Ein Werkzeug, das die Engine unterbrach,
+  ließ die Auswertung dauerhaft bei „läuft“ stehen; jetzt bewertet sie dieselbe Stellung noch
+  einmal. Geprüft und so belassen: Rücknahme während die Engine rechnet (ihr Zug fällt weg, weil
+  die Stellung nicht mehr passt), Zeitüberschreitung während die Engine rechnet (ihr Zug kommt zu
+  spät und wird abgelehnt), Grenzen der Auswertung (±10, Matt = 10, Zeichen ab 0,5 / 1,2 / 3),
+  Partieende (Matt, Patt, Material, 50 Züge, Wiederholung, Zeit mit Remis bei zu wenig Material),
+  Speicher (beschädigte Züge kürzen die Partie, fremde Stufen fallen weg).
+

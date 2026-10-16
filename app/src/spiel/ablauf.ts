@@ -15,13 +15,22 @@ import { abgelaufen, druecke, halte, neueUhr, starte } from "./uhr";
  *
  * Ausgabe: neue Partie oder null, wenn der Zug nicht geht. Beispiel: 15+10, Weiß zieht 1. e4 →
  * die Uhr von Schwarz läuft.
+ * Sonderfall: Ist die App gerade nicht sichtbar (die Engine zieht, während die App im
+ * Hintergrund ist), bleibt die Uhr danach stehen; sie läuft erst weiter, wenn der Leser
+ * zurückkommt (setzeUhrFort). Sonst liefe seine Zeit, ohne dass er es sieht.
  */
-export function zieheMitUhr(partie: Partie, zug: Partiezug, jetztMs: number): Partie | null {
+export function zieheMitUhr(
+  partie: Partie,
+  zug: Partiezug,
+  jetztMs: number,
+  appSichtbar = true,
+): Partie | null {
   const gezogen = amZug(partie);
   const danach = ziehe(partie, zug);
   if (!danach || !danach.uhr || !partie.einstellung.uhr) return danach;
   const gedrueckt = druecke(danach.uhr, partie.einstellung.uhr, gezogen, jetztMs);
-  return mitUhr(danach, danach.ende ? halte(gedrueckt, jetztMs) : gedrueckt);
+  const laeuftWeiter = !danach.ende && appSichtbar;
+  return mitUhr(danach, laeuftWeiter ? gedrueckt : halte(gedrueckt, jetztMs));
 }
 
 /** Beendet die Partie, wenn die Zeit der laufenden Seite abgelaufen ist; sonst unverändert. */

@@ -154,11 +154,17 @@ function uhreinstellungAus(roh: unknown): Uhreinstellung | null {
   return { grundzeitMs: roh.grundzeitMs, zuschlagMs: roh.zuschlagMs };
 }
 
+/**
+ * Ein Uhrstand aus Rohdaten. Eine Uhr, die beim Speichern lief, steht danach: Die App lief
+ * inzwischen nicht (Neuladen, Schließen), und die Zeit dazwischen soll dem Leser nicht fehlen
+ * (wie beim Wechsel in den Hintergrund). Beim Öffnen der Partie läuft sie weiter (spiel/ablauf.ts,
+ * setzeUhrFort); die Restzeit bleibt, wie sie beim Speichern war.
+ */
 function uhrstandAus(roh: unknown): Uhrstand | null {
   if (!istObjekt(roh) || !istObjekt(roh.restMs) || !istZahl(roh.seitMs)) return null;
   const { white, black } = roh.restMs;
   if (!istZahl(white) || !istZahl(black)) return null;
-  return { restMs: { white, black }, laeuft: farbeAus(roh.laeuft), seitMs: roh.seitMs };
+  return { restMs: { white, black }, laeuft: null, seitMs: roh.seitMs };
 }
 
 function partieendeAus(roh: unknown): Partieende | null {

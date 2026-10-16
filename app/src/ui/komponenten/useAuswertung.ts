@@ -23,13 +23,29 @@ export type Auswertungsstand =
   | { readonly art: "laeuft"; readonly erledigt: number; readonly gesamt: number }
   | { readonly art: "fehler"; readonly meldung: string };
 
-/** Wert (aus Sicht von Weiß) und bester Zug einer Stellung. */
-async function bewerteStellung(fen: string): Promise<{ wert: number; bester: string }> {
+/**
+ * Wert (aus Sicht von Weiß) und bester Zug einer Stellung.
+ *
+ * Sonderfall: Unterbricht ein anderer Auftrag die Engine (ein Werkzeug am Brett, ein Hinweis),
+ * wird dieselbe Stellung noch einmal bewertet, solange die Auswertung läuft; sonst bliebe sie
+ * bei „läuft“ stehen.
+ */
+async function bewerteStellung(
+  fen: string,
+  laeuft: () => boolean,
+): Promise<{ wert: number; bester: string } | null> {
   const ende = endwert(fen);
   if (ende !== null) return { wert: ende, bester: "" };
-  const bewertung = await engine.bewerte(fen, RECHENZEIT_MS, 1);
-  const wert = bewertung.varianten[0]?.wert;
-  return { wert: wert ? wertFuer(wert, true) : 0, bester: bewertung.besterZug ?? "" };
+  while (laeuft()) {
+    try {
+      const bewertung = await engine.bewerte(fen, RECHENZEIT_MS, 1);
+      const wert = bewertung.varianten[0]?.wert;
+      return { wert: wert ? wertFuer(wert, true) : 0, bester: bewertung.besterZug ?? "" };
+    } catch (grund: unknown) {
+      if (!(grund instanceof AuftragAbgebrochen)) throw grund;
+    }
+  }
+  return null;
 }
 
 /**
@@ -50,14 +66,15 @@ export function useAuswertung(eintrag: Partieeintrag | null): Auswertungsstand {
       for (const fen of alle) {
         if (!aktiv) return;
         setzeStand({ art: "laeuft", erledigt: werte.length, gesamt: alle.length });
-        const { wert, bester } = await bewerteStellung(fen);
-        werte.push(wert);
-        beste.push(bester);
+        const ergebnis = await bewerteStellung(fen, () => aktiv);
+        if (!ergebnis) return;
+        werte.push(ergebnis.wert);
+        beste.push(ergebnis.bester);
       }
       if (aktiv) void aendere((d) => ({ ...d, spiel: mitWerten(d.spiel, id, werte, beste) }));
     };
     weiter().catch((grund: unknown) => {
-      if (!aktiv || grund instanceof AuftragAbgebrochen) return;
+      if (!aktiv) return;
       console.error("Auswertung fehlgeschlagen:", grund);
       setzeStand({
         art: "fehler",

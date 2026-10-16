@@ -47,6 +47,22 @@ describe("Ablauf mit Uhr", () => {
     expect(p.uhr && restzeit(p.uhr, "black", 5 * SEKUNDE)).toBe(MINUTE - 3 * SEKUNDE);
   });
 
+  it("Zug der Engine, während die App im Hintergrund ist: die Uhr bleibt stehen", () => {
+    const eins = zug(partie(true), "e4", 0);
+    const engineZug: Partiezug = {
+      san: "e5",
+      von: "engine",
+      quelle: "engine",
+      fehler: null,
+      verlust: 0,
+    };
+    const p = zieheMitUhr(eins, engineZug, 5 * SEKUNDE, false);
+    expect(p?.uhr?.laeuft).toBeNull();
+    expect(p?.uhr && restzeit(p.uhr, "white", 9 * MINUTE)).toBe(MINUTE);
+    const weiter = setzeUhrFort(p ?? eins, 10 * MINUTE);
+    expect(weiter.uhr?.laeuft).toBe("white");
+  });
+
   it("Zeitüberschreitung beendet die Partie und hält die Uhr an", () => {
     const p = pruefeZeit(zug(partie(true), "e4", 0), MINUTE + 1);
     expect(p.ende).toEqual({ art: "zeit", sieger: "white" });

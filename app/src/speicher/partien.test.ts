@@ -107,6 +107,20 @@ describe("Lesen aus Rohdaten", () => {
     expect(wandleUm(durchJson(daten), JETZT)).toEqual({ ok: true, daten, vonVersion: 2 });
   });
 
+  it("eine laufende Uhr steht nach dem Laden, mit der gespeicherten Restzeit", () => {
+    const p = partie("a");
+    const laufend = {
+      ...p,
+      uhr: { restMs: { white: 5 * MINUTE, black: 4 * MINUTE }, laeuft: "white", seitMs: 1 },
+    };
+    const geladen = partieAus(durchJson(laufend));
+    expect(geladen?.uhr).toEqual({
+      restMs: { white: 5 * MINUTE, black: 4 * MINUTE },
+      laeuft: null,
+      seitMs: 1,
+    });
+  });
+
   it("ein unpassender Zug kürzt die Partie vor ihm", () => {
     const roh = durchJson(partie("a")) as { zuege: { san: string }[] };
     const zweiter = roh.zuege[1];

@@ -6,7 +6,8 @@
  * Uhrstand wird sofort geschrieben, damit die Partie ein Neuladen übersteht. Ist die Engine am
  * Zug, wählt sie ihren Zug nach der Stufe (spiel/enginezug.ts) mit den Buchzügen der Kapitel 2
  * und 3. Die Uhr hält an, sobald die App in den Hintergrund geht oder der Bildschirm verlassen
- * wird, und läuft bei der Rückkehr weiter.
+ * wird, und läuft bei der Rückkehr weiter; zieht die Engine im Hintergrund, bleibt die Uhr
+ * nach ihrem Zug stehen.
  * Abhängigkeiten: spiel/, speicher/, engine/, daten/laden.ts, schach/eroeffnungsindex.ts.
  */
 import { useEffect, useMemo, useState } from "react";
@@ -90,7 +91,9 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
         if (!aktiv || !jetzt || aktuelleFen(jetzt) !== fen) return;
         if (!zug) throw new Error(`Kein Zug der Engine in ${fen}`);
         setzeFehler(null);
-        aendereNeueste(id, (p) => zieheMitUhr(p, zug, Date.now()));
+        // Im Hintergrund bleibt die Uhr nach dem Zug stehen (sonst liefe die Zeit des Lesers).
+        const sichtbar = document.visibilityState !== "hidden";
+        aendereNeueste(id, (p) => zieheMitUhr(p, zug, Date.now(), sichtbar));
       })
       .catch((grund: unknown) => {
         if (grund instanceof AuftragAbgebrochen) {

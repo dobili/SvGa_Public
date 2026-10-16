@@ -24,7 +24,37 @@ unten). `einzigerZug` sagt, ob die App „Nur ein Zug führt zum Ziel“ anzeige
 `art` „ohneZug“ (Fragen, Bilanzen) oder „ohneStellung“ (mehrere oder keine Abbildung) bekommen
 nur den Stellungswert.
 
-ERGEBNIS_UEBUNGEN
+**Ergebnis (Lauf vom 16.10.2026, Stockfish 19 lite):** 86 Übungen, davon 63 mit Lösungszug und
+Stellung geprüft, 16 ohne Lösungszug (Fragen, Bilanzen: 7, 14, 16, 17, 23 bis 30, 33, 50, 72, 79;
+nur Stellungswert), 7 ohne eindeutige Stellung (1, 3, 18, 21, 22, 85, 86). Von den 63:
+
+- **56 halten** (der Buchzug ist der beste oder gleich gut), **6 gleichwertig** (ein anderer Zug
+  ist bis 0,3 besser), **1 schwächer**, **keine widerlegt**. Alle Buchlinien halten auch in den
+  weiteren eigenen Zügen (keine Abweichung über 0,3).
+- **37 Übungen haben nur einen Zug** (`einzigerZug`): 4, 8, 10, 19, 31, 32, 34 bis 38, 40 bis 47,
+  49, 53 bis 55, 57 bis 59, 62, 63, 68, 69, 74, 76 bis 78, 80 bis 82.
+- **Vorschläge für „akzeptiert“** (gleich gut laut Engine; der Autor entscheidet):
+  - Übung 2 (0.26, Buch 6... h6): a6, Le7, d6, a5 (alle etwa +0,1; die Übung fragt nach
+    Notation, nicht nach dem besten Zug).
+  - Übung 6 (1.42, Buch 4... Sf6, akzeptiert Lc5): dazu Df6, Lb4+, Sxd4.
+  - Übung 11 (2.151, Buch 4... h5, akzeptiert h6): dazu Dc7, Da5+, a6.
+  - Übung 15 (3.81, Buch 4... d5): dxc3, Sf6.
+  - Übung 39 (7.51, Buch 1. Sf4+): Sxf6+ gewinnt ebenfalls klar (Abzugsschach mit Schlag).
+  - Übung 60 (8.65, Buch 1. g5): Ke3, Kd4, Kd3, Kf3 gewinnen laut Engine genauso (+6,3); die
+    Übung lehrt eine Technik („Freibauer erst mit König davor“), Vorschlag: nicht annehmen.
+  - Übung 66 (9.47, Buch 1. Te4, akzeptiert Tc1): Te6, Td1, Tf1, Kd8, Kd7 gewinnen auch (Lucena,
+    alle über +5); Technikfrage wie bei 60.
+- **Technikfragen** (mehr als fünf gleichwertige Züge, kein Vorschlag): 13 (2.153, Zugumstellung,
+  18 Züge), 20 (4.55, 7 Züge), 61 (8.66, 8), 64 (9.45, 8), 84 (12.6, 23). Beim Lösen in der App
+  sollten dort nur Buchzug und akzeptierte Züge zählen.
+- **Befunde für den Autor:**
+  - Übung 83 (12.5, Kandidatenzüge): 1. Dc2 ist +1,17, 1. Te1 +1,61 (0,44 schwächer, „?!“ nach
+    dem Maßstab der Zugzeichen). Die Übung fragt nach der stärksten Antwort auf Kandidaten;
+    die Lösung bleibt vertretbar, nur zur Kenntnis.
+  - Übung 70 (9.51, akzeptiert 1... Ta1+): laut Engine 1,8 schlechter als 1... Tb8 (+6,41),
+    beide gewinnen aber (über +4,5). Vorschlag: so lassen.
+  - Übung 65 (9.46, Buch 1... Kg8): 1... Ta6+ ist 0,13 besser (beides remis); kein Handlungsbedarf.
+  - Übung 13 (2.153, Buch 7. Lg5): 18 gleichwertige Züge, Zugumstellung ist eine Wissensfrage.
 
 ## Aufgabe 2: Aufgaben für drei Trainer
 

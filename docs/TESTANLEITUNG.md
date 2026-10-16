@@ -12,6 +12,40 @@ Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App).
 
 ---
 
+## Nachtest Version 0.2.35 (etwa 30 Minuten, mit Engine; AP 11 Kalibrierung)
+
+Neu: die kalibrierten Stufen und die Fehlerprofile der Engine (Konzept 8.2), dazu drei Befunde der
+Gegenprüfung (Uhr, Auswertung). **Vorher:** In den Einstellungen muss „App-Version 0.2.35“ stehen.
+Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abstufung richtig anfühlt.“
+
+**Stufen und Fehlerprofile**
+
+- [ ] N175. **Stufe 1 (Einsteiger):** Spielen › Grundstellung, Stufe 1, ohne Uhr, etwa 15 Züge.
+      Die Engine spielt sichtbar schwach und macht etwa jeden dritten Zug einen Anfängerfehler
+      (hängende Figur, ignorierte Drohung, Dame zu früh). Nach dem Ende (oder Aufgeben) nennt die
+      Auswertung die Fehler der Engine mit Zugnummer und Art, darunter auch „eine Drohung
+      ignoriert“ oder „eine Taktik übersehen“ (neu). Stimmen die genannten Züge?
+- [ ] N176. **Stufe 2 (Anfänger), kein Damenopfer:** eine Partie auf Stufe 2 (etwa 20 Züge). Die
+      Engine verschenkt Bauern und Figuren, aber nie die Dame ohne Gegenwert (Konzept 8.2).
+- [ ] N177. **Abstufung:** je eine kurze Partie auf Stufe 3, 5 und 7. Fühlt sich die Abstufung
+      richtig an: Stufe 3 noch mit groben Fehlern (höchstens eine Leichtfigur), Stufe 5 ohne
+      absichtliche Fehler, aber schlagbar, Stufe 7 deutlich stärker? Die Engine braucht je Zug
+      höchstens 0,3 bis 2 Sekunden (Stufe 1 bis 8), auch auf dem Handy.
+- [ ] N178. **Eröffnung:** Grundstellung, Stufe 1, 1. e4: Die Engine antwortet einige Züge lang
+      mit den Eröffnungen aus Kapitel 2 und 3 (Zugliste), auch auf niedriger Stufe (Buchtreue
+      0,85 je Zug, siehe Rückfrage K3).
+
+**Gegenprüfung (Uhr und Auswertung)**
+
+- [ ] N179. **Uhr im Hintergrund:** Partie mit 5 + 3, einen Zug spielen und sofort zum
+      Startbildschirm des Handys wechseln, 20 Sekunden warten, zurück. Die Engine hat gezogen,
+      deine Uhr hat in der Zwischenzeit nicht gelaufen (sie läuft erst nach der Rückkehr weiter).
+- [ ] N180. **Uhr nach dem Neuladen:** laufende Partie mit Uhr, Seite neu laden (oder App
+      schließen und öffnen), Partie fortsetzen: Deine Restzeit ist die vom Moment des Verlassens.
+- [ ] N181. **Auswertung trotz Werkzeug:** Partie zu Ende spielen (oder aufgeben), während
+      „Auswertung läuft … von …“ steht, das Bündel „Taktik“ › „Erzwingende Züge“ öffnen (rechnet
+      mit der Engine). Die Auswertung läuft danach trotzdem zu Ende („Erste klare Abweichung …“).
+
 ## Nachtest Version 0.2.33 (etwa 25 Minuten, mit Engine)
 
 Neu: deine Antworten vom 16.10.2026 (Spielziel, Werkzeuge in der Partie, Figurensatz, Ton und die

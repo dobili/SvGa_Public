@@ -62,6 +62,25 @@ Regeln), D (Buch), E (vor der Veröffentlichung).
       Kandidaten gemacht. Claude ergänzt deshalb einen Zug, der ein drohendes Matt abwehrt (dort
       5... Sf6, wie in der Opernpartie). Einverstanden?
 
+## K. Rückfragen aus AP 11 Kalibrierung (16.10.2026, Fable; plausibel entschieden, bitte prüfen)
+
+- [ ] K1. **Abstufung:** Fühlt sich die Abstufung nach N175 bis N177 richtig an (Konzept 8.2)?
+      Wenn eine Stufe zu stark oder zu schwach ist: Welche? (Die Skill Level und Fehlerquoten
+      stehen in einer Tabelle in `app/src/engine/stufen.ts`.)
+- [ ] K2. **Damenopfer auf Stufe 1:** Nur Stufe 1 darf die Dame verschenken (Konzept: „ab Stufe
+      2 nicht“). Soll auch Stufe 1 die Dame behalten (dann höchstens ein Turm Verlust)?
+- [ ] K3. **Buchtreue:** Die Engine folgt auf allen Stufen zu 85 % je Zug den Eröffnungen aus
+      Kapitel 2 und 3, also auch der „Einsteiger“ einige Züge lang fehlerfrei. So lassen (der
+      Leser sieht die Eröffnungen des Buches), oder je Stufe weniger (etwa 50 % auf Stufe 1)?
+- [ ] K4. **Drohung ignoriert ab einem Bauern:** Nach der Röntgen-Regel (Kapitel 1) zählt jede
+      Drohung, Material zu gewinnen, also auch ein Bauer (2. Dh5 droht Dxe5+). Soll die Fehlerart
+      „Drohung ignoriert“ erst ab einer Leichtfigur heißen?
+- [ ] K5. **Verpasstes Matt in der Auswertung:** Werte sind auf ±10 begrenzt (Matt = 10). Wer
+      von „Matt in 2“ zu „+5“ wechselt, bekommt deshalb „??“ (Verlust 5). So lassen?
+- [ ] K6. **Stufen 4 bis 7 ohne Elo-Begrenzung:** Die Stufen nutzen Skill Level 3, 6, 10, 15
+      (geräteunabhängig, siehe `docs/ENTSCHEIDUNGEN.md`). Die Namen der Stufen bleiben; eine
+      Elo-Zahl zeigt die App nicht. Einverstanden?
+
 ## D. Buch
 
 - [ ] D1. **Neue Buchfassung hochladen:** Deine Änderung an Abb. 4.45 (D.3) ist im privaten

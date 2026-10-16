@@ -25,6 +25,8 @@ TIEFENKLASSEN = (2, 5, 9)
 LAENGENKLASSEN = (1, 2)
 # Höchste gemessene Tiefe; wer den Zug bis dahin nicht findet, bekommt diese Klasse.
 HOECHSTTIEFE = 16
+# So viele Lichess-Aufgaben braucht eine Messklasse, damit ihr Median zählt.
+MINDESTENS_JE_KLASSE = 5
 
 
 def stufe_von_wertung(wertung: int) -> int:
@@ -51,13 +53,16 @@ def klasse(m: Messung) -> str:
 def eiche(messungen: list[tuple[Messung, int]]) -> dict[str, int]:
     """Je Messklasse die Stufe aus dem Median der Lichess-Wertungen ihrer Aufgaben.
 
-    Eingaben: (Messung, Wertung) der Lichess-Aufgaben. Ausgabe: Klasse → Stufe. Klassen ohne
-    Aufgaben fehlen; ``stufe_von_messung`` greift dann auf die nächste Nachbarklasse zurück.
+    Eingaben: (Messung, Wertung) der Lichess-Aufgaben. Ausgabe: Klasse → Stufe. Klassen mit
+    weniger als MINDESTENS_JE_KLASSE Aufgaben fehlen (ein einzelner Wert eicht nichts);
+    ``stufe_von_messung`` greift dann auf die nächste Nachbarklasse zurück.
     """
     werte: dict[str, list[int]] = {}
     for m, wertung in messungen:
         werte.setdefault(klasse(m), []).append(wertung)
-    return {k: stufe_von_wertung(round(median(v))) for k, v in werte.items()}
+    return {
+        k: stufe_von_wertung(round(median(v))) for k, v in werte.items() if len(v) >= MINDESTENS_JE_KLASSE
+    }
 
 
 def stufe_von_messung(m: Messung, eichung: dict[str, int]) -> int:

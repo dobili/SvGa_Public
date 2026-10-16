@@ -61,7 +61,9 @@ def test_stufen_und_eichung():
         and klasse(Messung(None, 3)) == "t3-l2"
     )
     eichung = eiche(
-        [(Messung(1, 1), 900), (Messung(1, 1), 1100), (Messung(12, 2), 1700), (Messung(12, 2), 1900)]
+        [(Messung(1, 1), w) for w in (900, 950, 1000, 1100, 1150)]
+        + [(Messung(12, 2), w) for w in (1700, 1750, 1800, 1850, 1900)]
+        + [(Messung(5, 3), 2500)]  # eine einzelne Aufgabe eicht nichts
     )
     assert eichung == {"t0-l0": 2, "t3-l1": 4}
     assert stufe_von_messung(Messung(1, 1), eichung) == 2

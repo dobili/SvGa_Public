@@ -51,6 +51,8 @@ ZIELDATEI = TRAINERORDNER / "taktik.json"
 EINZIG_AB = 0.8
 GEWINN_AB = 1.5
 TIEFE_PRUEFUNG = 18
+# Übungen dieser Kapitel bleiben dem Endspieltrainer (Kapitel 8 und 9) vorbehalten.
+OHNE_KAPITEL = (8, 9)
 # Grundmotive nach der Nummer des Unterabschnitts in Kapitel 7 („1. Doppelangriff und Gabel“).
 MOTIV_JE_NUMMER = {
     1: "doppelangriff", 2: "fesselung", 3: "spiess", 4: "abzug", 5: "doppelschach",
@@ -192,9 +194,14 @@ def _aufgabe(
 
 
 def aus_abbildungen(engine: Engine, datenordner: Path = DATENORDNER) -> list[dict]:
-    """Aufgaben aus den Abbildungen in Kapitel 7 mit freigegebener Zugfolge."""
+    """Aufgaben aus den Abbildungen in Kapitel 7 mit freigegebener Zugfolge.
+
+    Übungsabbildungen (7.44 bis 7.61) haben keinen Unterabschnitt; ihr Motiv kommt aus dem
+    Motivtext der Übung (`motiv_aus_text`).
+    """
     daten = lies_json(datenordner / "kap07.json")
     beispiele = {b["id"]: b for b in daten["beispiele"]}
+    uebungen = {u.abbildung: u for u in lies_uebungen() if u.abbildung}
     aufgaben = []
     for a in daten["abbildungen"]:
         verweis = a.get("beispiel")
@@ -211,6 +218,12 @@ def aus_abbildungen(engine: Engine, datenordner: Path = DATENORDNER) -> list[dic
         akzeptiert, ziel = geprueft
         motiv, bild = motiv_aus_unterabschnitt(a.get("unterabschnitt"))
         herkunft = {"quelle": "buch", "abbildung": a["id"], "beispiel": verweis["id"]}
+        uebung = uebungen.get(a["id"])
+        if uebung is not None:
+            herkunft["uebung"] = uebung.kennung
+            if motiv is None and bild is None:
+                motiv, bild = motiv_aus_text(uebung.motiv)
+        motiv = _motiv_zum_ziel(motiv, ziel)
         aufgaben.append(
             {
                 "id": f"taktik-b-{a['id']}",
@@ -222,12 +235,26 @@ def aus_abbildungen(engine: Engine, datenordner: Path = DATENORDNER) -> list[dic
     return aufgaben
 
 
+def _motiv_zum_ziel(motiv: str | None, ziel: str) -> str | None:
+    """„Rettung“ heißt ein Motiv nur, wenn die Aufgabe wirklich rettet (Remis aus verlorener Lage).
+
+    Warum: Motivtexte wie „Turmmatt ohne Patt“ nennen das Patt als Gefahr, nicht als Rettung.
+    """
+    return None if motiv == "rettung" and ziel != "rettung" else motiv
+
+
 def aus_uebungen(engine: Engine, schon: set[str]) -> list[dict]:
-    """Aufgaben aus Übungen mit Lösungszug und taktischem Motivtext (Abbildungen ohne Doppel)."""
+    """Aufgaben aus Übungen mit Lösungszug und taktischem Motivtext (Abbildungen ohne Doppel).
+
+    Ohne die Endspielkapitel 8 und 9: Deren Übungen (Opposition, Umwandlung, Turmendspiel) gehören
+    zum Endspieltrainer, auch wenn ein Motivwort passt.
+    """
     aufgaben = []
     for u in lies_uebungen():
         motiv, bild = motiv_aus_text(u.motiv)
-        if u.fen is None or not u.loesung or (motiv is None and bild is None) or u.abbildung in schon:
+        if u.kapitel in OHNE_KAPITEL or u.fen is None or not u.loesung or u.abbildung in schon:
+            continue
+        if motiv is None and bild is None:
             continue
         linie = zuege_aus_text(u.loesung)
         brett = chess.Board(u.fen)
@@ -238,6 +265,7 @@ def aus_uebungen(engine: Engine, schon: set[str]) -> list[dict]:
         if geprueft is None:
             continue
         akzeptiert, ziel = geprueft
+        motiv = _motiv_zum_ziel(motiv, ziel)
         herkunft = {"quelle": "buch", "abbildung": u.abbildung, "uebung": u.kennung}
         aufgaben.append(
             {

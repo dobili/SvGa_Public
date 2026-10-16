@@ -9,7 +9,7 @@
  */
 import { useEffect, useState } from "react";
 import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
-import { wertFuer } from "../../engine/zugwahl";
+import { wertFuer } from "../../engine/spielbewerter";
 import { endwert } from "../../spiel/auswertung";
 import { stellungen } from "../../spiel/partie";
 import { mitWerten, type Partieeintrag } from "../../speicher/partien";

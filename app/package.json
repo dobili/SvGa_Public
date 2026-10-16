@@ -19,6 +19,7 @@
     "build": "npm run vorbereiten && tsc --noEmit && vite build && node skripte/pruefe-groesse.mjs",
     "vorschau": "vite preview --port 4173 --strictPort",
     "test:e2e": "playwright test",
+    "messen:stufen": "node skripte/messe-stufen.mjs",
     "deploy:probe": "wrangler deploy --dry-run"
   },
   "dependencies": {

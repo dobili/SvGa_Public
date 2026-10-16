@@ -189,14 +189,17 @@ export class EngineDienst {
    * Ausgabe: Bewertung, Werte immer aus Sicht von Weiß. Ein neuer Auftrag bricht diesen ab;
    * dann wird mit AuftragAbgebrochen abgelehnt.
    * Beispiel: Abb. 1.26 nach 2,5 s etwa „+0,3 · ausgeglichen“ mit 6. a3 oder 6. Le2.
-   * Sonderfall: Mit einer begrenzten Stärke (Spiel gegen die Engine, Stufen 4 bis 7) zählt vor
+   * Sonderfall: Mit einer begrenzten Stärke (Spiel gegen die Engine, Stufen 1 bis 7) zählt vor
    * allem „besterZug“; die Werte der Varianten sind dann weniger verlässlich.
+   * Sonderfall: Mit „nurZuege“ (UCI) rechnet die Engine nur diese Züge („searchmoves“), je Zug
+   * eine Variante; so bewerten die Fehlerprofile (engine/fehlersuche.ts) gezielt Fehlerzüge.
    */
   bewerte(
     fen: string,
     rechenzeitMs = STANDARD_RECHENZEIT_MS,
     varianten = STANDARD_VARIANTEN,
     staerke: Staerke = VOLLE_STAERKE,
+    nurZuege: readonly string[] = [],
   ): Promise<Bewertung> {
     this.neuesterAuftrag += 1;
     const nummer = this.neuesterAuftrag;
@@ -206,7 +209,7 @@ export class EngineDienst {
       if (nummer !== this.neuesterAuftrag) {
         throw new AuftragAbgebrochen();
       }
-      return this.fuehreAus(fen, rechenzeitMs, varianten, staerke);
+      return this.fuehreAus(fen, rechenzeitMs, varianten, staerke, nurZuege);
     });
     this.kette = ergebnis.then(
       () => undefined,
@@ -221,6 +224,7 @@ export class EngineDienst {
     rechenzeitMs: number,
     varianten: number,
     staerke: Staerke,
+    nurZuege: readonly string[],
   ): Promise<Bewertung> {
     const kanal = this.kanal;
     if (!kanal) {
@@ -239,9 +243,10 @@ export class EngineDienst {
       };
     });
     staerkebefehle(staerke).forEach((befehl) => kanal.senden(befehl));
-    kanal.senden(`setoption name MultiPV value ${varianten}`);
+    kanal.senden(`setoption name MultiPV value ${Math.max(varianten, nurZuege.length)}`);
     kanal.senden(`position fen ${fen}`);
-    kanal.senden(`go movetime ${rechenzeitMs}`);
+    const auswahl = nurZuege.length > 0 ? ` searchmoves ${nurZuege.join(" ")}` : "";
+    kanal.senden(`go movetime ${rechenzeitMs}${auswahl}`);
     return ergebnis;
   }
 

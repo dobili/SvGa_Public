@@ -1,6 +1,7 @@
 /**
  * Tests der Zugwahl (Konzept 8.1 „waehleZug“, 8.2 Stufen) mit vorgegebenen Kandidaten und festem
- * Zufall: Buchzug, bester Zug, Fehlerzug innerhalb der Verlustgrenze, Stärkebegrenzung ab Stufe 4.
+ * Zufall: Buchzug, Zug mit der Grundstärke der Stufe, Fehlerzug innerhalb der Verlustgrenze,
+ * Stärkebegrenzung ab Stufe 4.
  */
 import { describe, expect, it } from "vitest";
 import type { Bewertung, Staerke } from "./engineDienst";
@@ -23,13 +24,18 @@ const KANDIDATEN = [
   variante(4, 6.0, ["g7g6", "h5e5"]),
 ];
 
+/** Eine nachgestellte Engine: immer dieselben Kandidaten, mit „nurZuege“ nur die genannten. */
 function bewerter(varianten: readonly Variante[], besterZug: string | null = "b8c6") {
   const aufrufe: { varianten: number; staerke?: Staerke }[] = [];
   const b: Spielbewerter = {
-    bewerte: (_fen, _ms, anzahl, staerke) => {
+    bewerte: (_fen, _ms, anzahl, staerke, nurZuege = []) => {
       aufrufe.push({ varianten: anzahl, staerke });
+      const gewaehlt =
+        nurZuege.length > 0
+          ? varianten.filter((v) => nurZuege.includes(v.zuege[0] ?? ""))
+          : varianten;
       const ergebnis: Bewertung = {
-        varianten,
+        varianten: gewaehlt,
         tiefe: 10,
         knotenJeSekunde: 0,
         rechenzeitMs: 0,
@@ -62,11 +68,11 @@ describe("Zugwahl", () => {
     expect(aufrufe).toHaveLength(0);
   });
 
-  it("Stufe 1 ohne Fehlerwurf: der beste Zug", async () => {
-    const { b } = bewerter(KANDIDATEN);
+  it("Stufe 1 ohne Fehlerwurf: der Zug der Engine mit flacher Suche (Skill Level 0)", async () => {
+    const { b, aufrufe } = bewerter(KANDIDATEN);
     const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.9));
-    expect(wahl?.uci).toBe("b8c6");
-    expect(wahl?.quelle).toBe("engine");
+    expect(wahl).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
+    expect(aufrufe).toEqual([{ varianten: 1, staerke: { art: "skill", stufe: 0 } }]);
   });
 
   it("Stufe 1 mit Fehlerwurf: ein typischer Fehler bis zum Höchstverlust", async () => {
@@ -86,11 +92,24 @@ describe("Zugwahl", () => {
     }
   });
 
-  it("ab Stufe 4 begrenzt sich die Engine selbst", async () => {
-    const { b, aufrufe } = bewerter(KANDIDATEN, "d7d6");
-    const wahl = await waehleZug(b, FEN, stufe(6), [], folge(0.5));
+  it("Fehlerwurf ohne passenden Fehler: der normale Zug der Stufe", async () => {
+    const { b, aufrufe } = bewerter([variante(1, 0.3, ["b8c6"])], "d7d6");
+    const wahl = await waehleZug(b, FEN, stufe(3), [], folge(0.01, 0.5));
     expect(wahl).toEqual({ uci: "d7d6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(aufrufe[0]).toEqual({ varianten: 1, staerke: { art: "elo", elo: 1600 } });
+    expect(aufrufe.at(-1)).toEqual({ varianten: 1, staerke: { art: "skill", stufe: 0 } });
+  });
+
+  it("ab Stufe 5 nur die Grundstärke, kein Fehlerwurf", async () => {
+    const { b, aufrufe } = bewerter(KANDIDATEN, "d7d6");
+    const wahl = await waehleZug(b, FEN, stufe(6), [], folge(0.0001));
+    expect(wahl).toEqual({ uci: "d7d6", quelle: "engine", fehler: null, verlust: 0 });
+    expect(aufrufe).toEqual([{ varianten: 1, staerke: { art: "skill", stufe: 10 } }]);
+  });
+
+  it("Stufe 8 spielt voll", async () => {
+    const { b, aufrufe } = bewerter(KANDIDATEN, "b8c6");
+    await waehleZug(b, FEN, stufe(8), [], folge(0.5));
+    expect(aufrufe[0]?.staerke).toEqual({ art: "voll" });
   });
 
   it("ohne legalen Zug: null", async () => {

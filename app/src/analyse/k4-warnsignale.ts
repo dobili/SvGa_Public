@@ -31,7 +31,7 @@ import { aufzaehlung, farbname, figurenname } from "./texte";
 const WERTVOLLE_HINTEN = new Set(["king", "queen", "rook"]);
 
 /** Eine gefährliche Linie (W2): Langschrittfigur, vordere und hintere Figur, Art des Motivs. */
-interface GefaehrlicheLinie {
+export interface GefaehrlicheLinie {
   readonly von: Figurenstand;
   readonly vorn: Figurenstand;
   readonly hinten: Figurenstand;
@@ -107,12 +107,23 @@ function ungedecktHinten(
   return { von: { feld: strahl.von, figur: strahl.figur }, vorn, hinten, art: "weicht" };
 }
 
-/** Alle Warnsignale W1 bis W4 einer Seite (der bedrohten). */
-function signale(p: Stellungsprofil, farbe: Color): Signale {
-  const w2 = p
+/**
+ * Die gefährlichen Linien (W2) gegen eine Farbe.
+ *
+ * Warum eigenständig: Die Fehlerprofile der Engine (engine/fehlerart.ts, „Taktik übersehen“)
+ * fragen nach einer neuen gefährlichen Linie nach einem Zug, ohne den ganzen Befund.
+ * Beispiel: Abb. 4.8 für Schwarz: Läufer b2 – Dame e5 – Bauer g7 („weicht“).
+ */
+export function gefaehrlicheLinien(p: Stellungsprofil, farbe: Color): GefaehrlicheLinie[] {
+  return p
     .strahlen()
     .map((strahl) => gefaehrlicheLinie(strahl, p))
     .filter((linie): linie is GefaehrlicheLinie => linie?.hinten.figur.color === farbe);
+}
+
+/** Alle Warnsignale W1 bis W4 einer Seite (der bedrohten). */
+function signale(p: Stellungsprofil, farbe: Color): Signale {
+  const w2 = gefaehrlicheLinien(p, farbe);
   const umgebung = p.koenigsumgebung(farbe);
   const ohneLuft = umgebung !== null && umgebung.fluchtfelder.length === 0;
   return {

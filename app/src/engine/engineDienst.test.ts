@@ -74,6 +74,18 @@ describe("EngineDienst mit Stockfish", () => {
     },
     TESTFRIST_MS,
   );
+
+  it(
+    "rechnet mit „nurZuege“ genau die genannten Züge, je Zug eine Variante",
+    async () => {
+      const nur = ["a2a3", "h2h3"];
+      const bewertung = await dienst.bewerte(ABB_1_26, RECHENZEIT_MS, 1, { art: "voll" }, nur);
+      expect(bewertung.varianten).toHaveLength(2);
+      expect(bewertung.varianten.map((v) => v.zuege[0]).sort()).toEqual(nur);
+      expect(nur).toContain(bewertung.besterZug);
+    },
+    TESTFRIST_MS,
+  );
 });
 
 describe("staerkebefehle", () => {

@@ -103,6 +103,10 @@ class Anschlusssuche:
                 )
                 if treffer is not None:
                     return self._markiere(treffer, not streng)
+            elif len(vollstaendig) > 1 and vollstaendig[0].fremd:
+                treffer = self._fuehrt_zu_abbildung(vollstaendig, zugfolge)
+                if treffer is not None:
+                    return self._markiere(treffer, not streng)
             if vollstaendig:
                 return self._markiere(vollstaendig[0], not streng)
             teilweise = next(
@@ -112,6 +116,17 @@ class Anschlusssuche:
             if teilweise is not None:
                 return self._markiere(teilweise, not streng)
         return None
+
+    def _fuehrt_zu_abbildung(self, kandidaten: list[Anschluss], zugfolge: Zugfolge) -> Anschluss | None:
+        """Unter Anschlüssen aus früheren Kapiteln ohne genanntes Ziel der, der in einer Abbildung endet.
+
+        Warum: Steht die Abbildung erst nach dem Satz, kennt die Zugfolge ihr Ziel nicht. Dann ist
+        „8. d5 Se7“ (Kapitel 6) auch im Lettischen Gambit aus Kapitel 3 legal; gemeint ist die
+        Königsindische Hauptvariante aus Kapitel 2, die genau zu Abb. 6.20 führt.
+        Ausgabe: der erste solche Anschluss, sonst None (dann gilt die bisherige Reihenfolge).
+        """
+        stellungen = {abbildung.schluessel for abbildung in self.abbildungen}
+        return next((k for k in kandidaten if self._endschluessel(k, zugfolge) in stellungen), None)
 
     @staticmethod
     def _markiere(anschluss: Anschluss, nummer_weicht_ab: bool) -> Anschluss:

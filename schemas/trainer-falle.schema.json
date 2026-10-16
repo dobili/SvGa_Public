@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/trainer-falle.schema.json",
+  "title": "Aufgaben des Trainers „Falle oder Köder“",
+  "description": "Kapitel 4, Pflichtenheft 7: Die Engine (der Fallensteller) hat gezogen und bietet Material an. Der Leser markiert die Warnsignale (die App rechnet sie mit k4-warnsignale) und entscheidet, ob er nimmt. Antwort „falle“: Nehmen verliert; „geschenk“: Nehmen ist richtig.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "trainer", "erzeugt", "quellen", "massstab", "aufgaben"],
+  "allOf": [{ "$ref": "trainer-gemeinsam.schema.json#/$defs/kopf" }],
+  "properties": {
+    "schemaVersion": {},
+    "trainer": { "const": "falle" },
+    "erzeugt": {},
+    "quellen": {},
+    "massstab": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["falleAbVerlust", "geschenkBisVerlust", "tiefe"],
+      "properties": {
+        "falleAbVerlust": { "description": "Nehmen verliert mindestens so viel gegenüber dem besten Zug (Bauerneinheiten) → Falle", "type": "number" },
+        "geschenkBisVerlust": { "description": "Nehmen ist höchstens so viel schlechter als der beste Zug → Geschenk", "type": "number" },
+        "tiefe": { "type": "integer" }
+      }
+    },
+    "aufgaben": { "type": "array", "items": { "$ref": "#/$defs/aufgabe" } }
+  },
+  "$defs": {
+    "aufgabe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "fen", "amZug", "angebot", "antwort", "verlustBeimNehmen", "bester", "fortsetzung", "schwierigkeit", "herkunft", "messung"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^falle-(b|l)-[0-9A-Za-z.-]+$" },
+        "fen": { "$ref": "trainer-gemeinsam.schema.json#/$defs/fen" },
+        "amZug": { "description": "Die Seite des Lesers, die das Angebot nehmen könnte", "$ref": "trainer-gemeinsam.schema.json#/$defs/seite" },
+        "angebot": { "description": "Der Schlag, um den es geht", "$ref": "trainer-gemeinsam.schema.json#/$defs/san" },
+        "antwort": { "enum": ["falle", "geschenk"] },
+        "verlustBeimNehmen": { "description": "Was das Nehmen gegenüber dem besten Zug kostet (Bauerneinheiten, Matt als 100 minus Züge)", "type": "number" },
+        "bester": { "description": "Bester Zug laut Engine (bei einem Geschenk der Schlag selbst oder ein gleich guter Zug)", "$ref": "trainer-gemeinsam.schema.json#/$defs/san" },
+        "fortsetzung": { "description": "Bei einer Falle: die Widerlegung nach dem Nehmen (beginnt mit dem Angebot); bei einem Geschenk: der Schlag und die beste Fortsetzung", "type": "array", "minItems": 1, "items": { "$ref": "trainer-gemeinsam.schema.json#/$defs/san" } },
+        "schwierigkeit": { "$ref": "trainer-gemeinsam.schema.json#/$defs/schwierigkeit" },
+        "herkunft": { "$ref": "trainer-gemeinsam.schema.json#/$defs/herkunft" },
+        "messung": { "$ref": "trainer-gemeinsam.schema.json#/$defs/messung" }
+      }
+    }
+  }
+}

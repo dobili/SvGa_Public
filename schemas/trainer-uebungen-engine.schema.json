@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/trainer-uebungen-engine.schema.json",
+  "title": "Engine-Gegenprüfung der Übungen",
+  "description": "Für jede Übung des Buches: Hält die Buchlösung laut Stockfish, welche Züge sind gleich gut (Vorschlag für „akzeptiert“), wo führt nur ein Zug zum Ziel? Erzeugt von pipeline/trainer/uebungen.py; die Lösungstexte selbst bleiben in inhalte/de/texte/. Züge in englischer Kurznotation, Werte aus Sicht der Seite am Zug (Bauerneinheiten als „+1.20“, Matt als „M3“).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "engine", "massstab", "uebungen"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "engine": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "tiefe", "datum"],
+      "properties": {
+        "name": { "type": "string" },
+        "tiefe": { "type": "integer", "minimum": 1 },
+        "datum": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" }
+      }
+    },
+    "massstab": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gleichwertigBis", "schwaecherBis", "einzigerZugAb"],
+      "properties": {
+        "gleichwertigBis": { "type": "number" },
+        "schwaecherBis": { "type": "number" },
+        "einzigerZugAb": { "type": "number" }
+      }
+    },
+    "uebungen": { "type": "array", "items": { "$ref": "#/$defs/uebung" } }
+  },
+  "$defs": {
+    "wert": { "description": "„+1.20“, „-0.35“ oder „M3“ (Matt in 3), aus Sicht der Seite am Zug", "type": "string", "pattern": "^([+-][0-9]+\\.[0-9]{2}|M-?[0-9]+)$" },
+    "uebung": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["uebung", "nummer", "kapitel", "abbildung", "fen", "amZug", "art", "motiv", "buchloesung", "akzeptiertBuch"],
+      "properties": {
+        "uebung": { "type": "string", "pattern": "^ueb:" },
+        "nummer": { "type": "integer", "minimum": 1 },
+        "kapitel": { "type": "integer", "minimum": 0, "maximum": 12 },
+        "abbildung": { "type": ["string", "null"] },
+        "fen": { "type": ["string", "null"] },
+        "amZug": { "enum": ["w", "b", null] },
+        "art": { "description": "zug: Lösungszug geprüft; ohneZug: Übung ohne Lösungszug (Frage, Bilanz), nur Stellungswert; ohneStellung: keine eindeutige Abbildung", "enum": ["zug", "ohneZug", "ohneStellung"] },
+        "motiv": { "type": ["string", "null"] },
+        "buchloesung": { "description": "Lösungsangabe des Autors, wie sie in inhalte/de/texte steht", "type": ["string", "null"] },
+        "akzeptiertBuch": { "type": "array", "items": { "type": "string" } },
+        "besterZug": { "type": "string" },
+        "wert": { "$ref": "#/$defs/wert" },
+        "buchzug": { "type": "string" },
+        "urteil": { "enum": ["haelt", "gleichwertig", "schwaecher", "widerlegt"] },
+        "verlust": { "type": "number" },
+        "einzigerZug": { "type": "boolean" },
+        "abstandZweiter": { "type": ["number", "null"] },
+        "zuege": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["san", "wert", "verlust", "status"],
+            "properties": {
+              "san": { "type": "string" },
+              "wert": { "$ref": "#/$defs/wert" },
+              "verlust": { "type": "number" },
+              "status": { "enum": ["buch", "akzeptiert", "gleichwertig", "schwaecher", "widerlegt"] }
+            }
+          }
+        },
+        "vorschlagAkzeptiert": { "description": "Gleich gute Züge, die noch nicht akzeptiert sind (Vorschlag an den Autor)", "type": "array", "items": { "type": "string" } },
+        "akzeptiertFraglich": { "description": "Vom Autor akzeptierte Züge, die laut Engine mehr als „gleichwertigBis“ verlieren", "type": "array", "items": { "type": "string" } },
+        "linie": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["geprueft"],
+          "properties": {
+            "geprueft": { "type": "boolean" },
+            "grund": { "type": "string" },
+            "abweichung": {
+              "type": ["object", "null"],
+              "additionalProperties": false,
+              "required": ["halbzug", "zug", "verlust", "besser"],
+              "properties": {
+                "halbzug": { "type": "integer" },
+                "zug": { "type": "string" },
+                "verlust": { "type": "number" },
+                "besser": { "type": "string" }
+              }
+            }
+          }
+        },
+        "begruendung": { "type": "string" }
+      }
+    }
+  }
+}

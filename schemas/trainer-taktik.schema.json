@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/trainer-taktik.schema.json",
+  "title": "Aufgaben des Taktiktrainers",
+  "description": "Kapitel 7, Pflichtenheft 7: Aufgaben nach Motiv oder gemischt, gestufte Hilfen (Warnsignal, Motiv, Schlüsselfigur, Lösung), danach benennt der Leser das Motiv. Warnsignale rechnet die App mit dem Werkzeug k7-warnsignale aus der Stellung; die Schlüsselfigur ist die Figur, die den ersten Lösungszug macht.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "trainer", "erzeugt", "quellen", "eichung", "aufgaben"],
+  "allOf": [{ "$ref": "trainer-gemeinsam.schema.json#/$defs/kopf" }],
+  "properties": {
+    "schemaVersion": {},
+    "trainer": { "const": "taktik" },
+    "erzeugt": {},
+    "quellen": {},
+    "eichung": {
+      "description": "Messklasse → Stufe, aus den Lichess-Aufgaben geeicht (schwierigkeit.py)",
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 1, "maximum": 5 }
+    },
+    "aufgaben": { "type": "array", "items": { "$ref": "#/$defs/aufgabe" } }
+  },
+  "$defs": {
+    "motiv": {
+      "description": "Die zwölf Grundmotive aus Kapitel 7",
+      "enum": ["doppelangriff", "fesselung", "spiess", "abzug", "doppelschach", "hinlenkung", "beseitigung", "ueberlastung", "zwischenzug", "gefangen", "umwandlung", "rettung"]
+    },
+    "mattbild": {
+      "description": "Mattbilder wie in schach/mattbilder.ts der App",
+      "enum": ["erstickung", "grundreihe", "anastasia", "arabisch", "treppe", "boden", "damiano", "lolli", "h7", "g7"]
+    },
+    "aufgabe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "fen", "amZug", "loesung", "akzeptiert", "motiv", "mattbild", "schluesselfeld", "ziel", "schwierigkeit", "herkunft", "messung"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^taktik-(b|l)-[0-9A-Za-z.-]+$" },
+        "fen": { "$ref": "trainer-gemeinsam.schema.json#/$defs/fen" },
+        "amZug": { "$ref": "trainer-gemeinsam.schema.json#/$defs/seite" },
+        "loesung": { "description": "Eigene und gegnerische Züge im Wechsel, der erste ist der Schlüsselzug", "type": "array", "minItems": 1, "items": { "$ref": "trainer-gemeinsam.schema.json#/$defs/san" } },
+        "akzeptiert": { "description": "Weitere erste Züge, die laut Engine gleich gut sind", "type": "array", "items": { "$ref": "trainer-gemeinsam.schema.json#/$defs/san" } },
+        "motiv": { "oneOf": [{ "$ref": "#/$defs/motiv" }, { "type": "null" }] },
+        "mattbild": { "oneOf": [{ "$ref": "#/$defs/mattbild" }, { "type": "null" }] },
+        "schluesselfeld": { "description": "Feld der Figur, die den Schlüsselzug macht (Hilfe 3)", "$ref": "trainer-gemeinsam.schema.json#/$defs/feld" },
+        "ziel": { "description": "matt: die Lösung setzt matt; gewinn: Materialgewinn oder entscheidender Vorteil; rettung: Remis aus verlorener Lage", "enum": ["matt", "gewinn", "rettung"] },
+        "schwierigkeit": { "$ref": "trainer-gemeinsam.schema.json#/$defs/schwierigkeit" },
+        "herkunft": { "$ref": "trainer-gemeinsam.schema.json#/$defs/herkunft" },
+        "messung": { "$ref": "trainer-gemeinsam.schema.json#/$defs/messung" }
+      }
+    }
+  }
+}

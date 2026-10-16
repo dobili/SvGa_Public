@@ -54,6 +54,19 @@ Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2
 - [ ] U11. **Bewertungsbalken** nur nach der Partie (wie empfohlen, R13), nicht während der
       Partie. So lassen?
 
+- [ ] U12. **Leerfälle (D1, angenommen am 15.10.2026, noch offen):** Bestandsaufnahme vom
+      17.10.2026: 11 Werkzeuge haben schon einen Leerfall, aber jedes mit eigenem Text (und meist
+      mit dem Satz doppelt, als Befund und als Fazit). 15 Werkzeuge prüfen nicht, ob sie greifen,
+      und zeigen immer eine volle Karte: Angriffsregel, Todsünden, Zielbilanz, Faktorenbilanz,
+      die vier Skelett-Werkzeuge, Ruhe, Sechs Regeln, Opposition, Schlüsselfelder, Quadrat,
+      Turmendspiel (teils), Warnsignale Kapitel 7. Claude hat D1 über Nacht **nicht** umgesetzt,
+      weil es Ergebnisse ändert, die du gerade nachtestest (etwa die Faktorenbilanz an Abb. 3.6,
+      N166: Material gleich, also nur noch „Material gleich – hier hilft die Planfindung mehr“).
+      Vorschlag: einheitlich nur ein Satz (ohne leere Befunde), Bedingungen wie in der Tabelle
+      von damals; die Eröffnungsphase nach der Phasenregel der App (eine Seite hat noch zwei
+      Leichtfiguren zu Hause), nicht nach Zug 15. Soll Claude das so umsetzen, und gilt die
+      Faktorenbilanz dann auch in der Eröffnung bei gleichem Material (wie 3.6)?
+
 ## C. Rückfragen zu den neuen Regeln (kurz; Claude hat jeweils plausibel entschieden)
 
 - [ ] C1. **König im Schach in der Faktorenbilanz** (C1.6): Claude wertet ihn „teils“ (die

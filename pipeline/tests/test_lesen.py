@@ -57,6 +57,13 @@ def test_unbekannter_befehl_wird_gemeldet_nicht_geraten():
     assert "\\foo" in als_klartext(ergebnis.teile)
 
 
+def test_abstaende_werden_uebersprungen():
+    """\\vspace und \\vspace* sind nur Satz (Kapitel 4, vor den Übungen)."""
+    ergebnis = wandle_text("Vor \\vspace*{-0.5 cm}dem \\vspace{\\leerertitelausgleich}Brett", "test:8")
+    assert ergebnis.befunde == []
+    assert als_klartext(ergebnis.teile) == "Vor dem Brett"
+
+
 def test_kapitel_lesen():
     kapitel = lies_kapitel(BEISPIEL)
     assert kapitel.nummer == 9

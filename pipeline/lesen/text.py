@@ -69,6 +69,9 @@ _STUMME_BEFEHLE = {"glanker", "label", "abbziel", "color"}
 # Denkroutine nur die graue Erläuterung kursiv; die App setzt sie selbst ab.
 _STUMME_SCHALTER = {"ohnezugzeiger", "noindent", "smallskip", "medskip", "bigskip", "itshape"}
 
+# Abstände mit einem Maß als Argument, auch in der Sternform (\vspace*{-0.5 cm}); nur Satz.
+_ABSTAENDE = {"vspace", "hspace"}
+
 # Zustandszeichen der Ziel-, Faktoren- und Fallenbilanzen (preamble.tex) → (Zeichen, Anzeige).
 ZEICHEN = {
     "zielja": ("ja", "✓"),
@@ -207,6 +210,10 @@ def _verarbeite_befehl(latex: str, index: int, stil: str, ergebnis: Umwandlung, 
             return ende
         if name in _STUMME_BEFEHLE:
             _, ende = lies_gruppe(latex, nach_name)
+            return ende
+        if name in _ABSTAENDE:
+            stern = latex.startswith("*", nach_name)
+            _, ende = lies_gruppe(latex, nach_name + 1 if stern else nach_name)
             return ende
     except LatexFehler as fehler:
         ergebnis.befunde.append(Befund(Schwere.FEHLER, "latex-klammer", f"\\{name}: {fehler}", fundstelle))

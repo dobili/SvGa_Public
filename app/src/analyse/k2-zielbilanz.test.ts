@@ -128,11 +128,11 @@ describe("k2-zielbilanz an Buchabbildungen", () => {
     expect(auswertung.fazit).toBe("Erreichte Ziele: Weiß 2 von 3, Schwarz 1 von 3.");
   });
 
-  it("Abb. 2.30 (Greco): d5 ist angegriffen; dass er hängt (teils), sagt erst die Engine", () => {
-    const schwarz = zeilen(ergebnis("2.30"), "black");
+  it("Abb. 2.29 (Greco): d5 ist angegriffen; dass er hängt (teils), sagt erst die Engine", () => {
+    const schwarz = zeilen(ergebnis("2.29"), "black");
     expect(schwarz[0]).toBe("Zentrum: ja – Bauer im Zentrum: d5; d5 ist angegriffen");
     // Der weiße Bauer d4 ist ebenso angegriffen, aber Weiß ist am Zug.
-    expect(zeilen(ergebnis("2.30"), "white")[0]).toBe("Zentrum: ja – Bauer im Zentrum: d4");
+    expect(zeilen(ergebnis("2.29"), "white")[0]).toBe("Zentrum: ja – Bauer im Zentrum: d4");
   });
 
   // C1.1 und C1.2 (Entscheidung des Autors, 16.10.2026): Die Zählung auf dem Feld allein lädt

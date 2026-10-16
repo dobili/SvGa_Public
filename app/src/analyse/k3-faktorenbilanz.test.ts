@@ -178,7 +178,7 @@ describe("k3-faktorenbilanz an Buchabbildungen", () => {
     expect(ergebnis.fazit).toBe("Patt: Die Partie ist entschieden (remis).");
   });
 
-  it.each(["3.23", "3.32", "3.68"])(
+  it.each(["3.23", "3.34", "3.68"])(
     "Abb. %s (C1.6): im Schach erst der Hinweis, der König dort nicht „gut“",
     (nummer) => {
       const stellung = stellungVon(nummer);

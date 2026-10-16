@@ -7,7 +7,7 @@
  * Gewinn schlagen könnte, nur „angegriffen“. Danach rechnet die Engine kurz nach, ob der Schlag
  * auch nach der besten Antwort Material bringt (engine/zentrumsschlag.ts), und schreibt das
  * Ergebnis hierher: „Engine: Sxe4 gewinnt den Bauern e4 nicht: 3... Sxe4 4. De2 …“ (Abb. 2.40)
- * oder „Engine: Der Bauer d5 hängt wirklich: 11. Lxd5 …“ mit „Zentrum nur teils“ (Abb. 2.30).
+ * oder „Engine: Der Bauer d5 hängt wirklich: 11. Lxd5 …“ mit „Zentrum nur teils“ (Abb. 2.29).
  * Wie GegnerKarte als `zusatz` in der Werkzeugkarte, weil die Rechnung einige Sekunden dauert.
  * Abhängigkeiten: engine/zentrumsschlag.ts, engine/engineDienst.ts, schach/zielbilanz.ts,
  * schach/notation.ts, i18n.

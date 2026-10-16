@@ -1159,6 +1159,31 @@ Seite auf der Website, mit allen Inhalten aus dem Buch; im Buch bleiben QR-Code 
   Graustufen), Pipeline über eine geänderte Kopie des Buches ohne neue Befunde.
 - Prüfungen: pytest 90, Vitest 867, Playwright Chromium 77 (lokal; GitHub Actions nur von Hand).
 
+### Buchstand 16.10.2026: Abbildungen in Kapitel 2 und 3 getauscht – Version 0.2.35 (Zweig `buch-abbildungen-kap2-kap3`, Opus)
+
+Der Autor hat im Buch die Reihenfolge einiger Abbildungen getauscht und wollte **nur** diese
+Änderungen in der App (16.10.2026):
+
+- Kapitel 2: 2.29 = Greco-Variante nach 10... d5!, 2.30 = nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5;
+  dazu die Diagrammreihen 2.26/2.27 und 2.28/2.29, die Bilanz (jetzt an 2.29) und der Verweis in
+  der Lösung der Übung „Italienisch: Bilanz“.
+- Kapitel 3 (Milner-Barry): 3.31 = nach 12. Kh1, 3.32 = nach 13. f4 (mit der Bilanz),
+  3.33 = nach 7... Sxd4??, 3.34 = nach 9. Lb5+!.
+- Zugfolgen `k02-a18.pgn` und `k03-a28.pgn`, vorbereitete Texte (2.29, 3.33), Tests und Kommentare
+  auf die neuen Nummern umgestellt. Jede der Abbildungen geprüft: Die Zugfolge aus dem Text,
+  auch die Nebenvarianten, führt genau zur FEN der Abbildung.
+- Tabelle 2.2 gestrichen: Die App nutzt keine Tabellennummern aus Kapitel 2; nichts zu ändern.
+- Pipeline: `\vspace` und `\hspace` (auch mit Stern) werden übersprungen; der neue Buchstand
+  enthält sie, vorher brach der Datenlauf ab.
+
+**Befund, nicht übernommen (Wunsch des Autors: nur die Abbildungen):** Der neue Buchstand weicht
+noch an weiteren Stellen von den App-Daten ab: Abb. 0.6 (Bildunterschrift und Felder), Abb. 1.29
+(jetzt Fließtext statt Vorsicht-Kasten), neu gruppierte Diagrammreihen in Kapitel 1, 2, 9 und 11,
+neue Unterabschnitte (Abb. 2.41, 9.16, 9.17), Bilanztitel Nimzo-Indisch ohne „(Rubinstein)“,
+die Reihenfolge der Übungen in Kapitel 3, Änderungen an Übungen in Kapitel 4, 10 und 12, an den
+Fallenchecks in Kapitel 4 und im Glossar, dazu eine neue Zugfolge in Kapitel 6 (2... f5). Ein
+vollständiger Datenlauf würde all das übernehmen; Entscheidung beim Autor.
+
 ## Wartet auf den Autor
 
 **Alles Offene steht in `docs/AUFGABEN_AUTOR.md`** (seit 0.2.31 nur noch Offenes: Nachtest,

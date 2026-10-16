@@ -2052,150 +2052,6 @@
     "titel": "Das Milner-Barry-Gambit"
    },
    "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
-   "fen": "r1b1kbnr/pp3ppp/1q2p3/3pP3/3n4/3B1N2/PP3PPP/RNBQK2R w KQkq - 0 8",
-   "pfeile": [
-    {
-     "farbe": "rot",
-     "von": "f3",
-     "nach": "d4"
-    },
-    {
-     "farbe": "grau",
-     "von": "d1",
-     "nach": "d3"
-    }
-   ],
-   "felder": [],
-   "unterschrift": [
-    {
-     "art": "text",
-     "text": "Nach 6... cxd4 7. cxd4 Sxd4??, Weiß am Zug. Rot: Weiß schlägt zurück. Grau: Hinter dem Läufer d3 steht die Dame d1 auf der d-Linie.",
-     "stil": "normal"
-    }
-   ],
-   "art": "vorsicht",
-   "reihe": [
-    "3.32"
-   ],
-   "beispiel": {
-    "id": "k03-a28",
-    "pfad": [
-     "e4",
-     "e6",
-     "d4",
-     "d5",
-     "e5",
-     "c5",
-     "c3",
-     "Nc6",
-     "Nf3",
-     "Qb6",
-     "Bd3",
-     "cxd4",
-     "cxd4",
-     "Nxd4"
-    ]
-   },
-   "quelle": {
-    "datei": "kap03_gambits.tex",
-    "zeile": 949
-   },
-   "pruefsumme": "420004476cb438fb",
-   "vorbereitet": {
-    "status": "freigegeben",
-    "fragen": [
-     {
-      "zug": "8. Sxd4",
-      "frage": "Warum kann Weiß mit 8. Sxd4 ruhig zurückschlagen?",
-      "antworten": [
-       "Schwarz kann den Springer d4 nicht zurückschlagen.",
-       "Nach 8... Dxd4 folgt 9. Lb5+, und die Dame d1 schlägt die Dame d4.",
-       "Weiß hat danach eine Figur mehr."
-      ],
-      "richtig": 1,
-      "erklaerung": "Der Läufer d3 verdeckt die d-Linie. Zieht er mit Schach nach b5, greift die Dame d1 die Dame d4 an, und Schwarz muss zuerst das Schach abwehren."
-     }
-    ]
-   }
-  },
-  {
-   "id": "3.32",
-   "auflage": 1,
-   "kapitel": 3,
-   "abschnitt": {
-    "nummer": "3.7",
-    "label": "",
-    "titel": "Das Milner-Barry-Gambit"
-   },
-   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
-   "fen": "r1b1kbnr/pp3ppp/4p3/1B1pP3/3q4/8/PP3PPP/RNBQK2R b KQkq - 1 9",
-   "pfeile": [
-    {
-     "farbe": "rot",
-     "von": "b5",
-     "nach": "e8"
-    },
-    {
-     "farbe": "gold",
-     "von": "d1",
-     "nach": "d4"
-    }
-   ],
-   "felder": [
-    {
-     "farbe": "rot",
-     "feld": "d4"
-    }
-   ],
-   "unterschrift": [
-    {
-     "art": "text",
-     "text": "Die Stellung aus Kapitel 1 nach 8. Sxd4 Dxd4?? 9. Lb5+!, Schwarz am Zug. Rot: Schach vom Läufer; die Dame d4 ist verloren. Gold: Die Dame d1 schlägt sie im nächsten Zug.",
-     "stil": "normal"
-    }
-   ],
-   "art": "vorsicht",
-   "reihe": [
-    "3.31"
-   ],
-   "beispiel": {
-    "id": "k03-a28",
-    "pfad": [
-     "e4",
-     "e6",
-     "d4",
-     "d5",
-     "e5",
-     "c5",
-     "c3",
-     "Nc6",
-     "Nf3",
-     "Qb6",
-     "Bd3",
-     "cxd4",
-     "cxd4",
-     "Nxd4",
-     "Nxd4",
-     "Qxd4",
-     "Bb5+"
-    ]
-   },
-   "quelle": {
-    "datei": "kap03_gambits.tex",
-    "zeile": 950
-   },
-   "pruefsumme": "1e31ae6740adb1b4"
-  },
-  {
-   "id": "3.33",
-   "auflage": 1,
-   "kapitel": 3,
-   "abschnitt": {
-    "nummer": "3.7",
-    "label": "",
-    "titel": "Das Milner-Barry-Gambit"
-   },
-   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
    "fen": "r3kb1r/1p1bnppp/p3p3/3pP3/3q4/2NB4/PP2QPPP/R1B2R1K b kq - 3 12",
    "pfeile": [
     {
@@ -2219,7 +2075,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "3.34"
+    "3.32"
    ],
    "beispiel": {
     "id": "k03-a28",
@@ -2251,12 +2107,12 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 979
+    "zeile": 952
    },
    "pruefsumme": "1512d1f97b084749"
   },
   {
-   "id": "3.34",
+   "id": "3.32",
    "auflage": 1,
    "kapitel": 3,
    "abschnitt": {
@@ -2301,7 +2157,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "3.33"
+    "3.31"
    ],
    "beispiel": {
     "id": "k03-a28",
@@ -2335,9 +2191,153 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 980
+    "zeile": 953
    },
    "pruefsumme": "7a0b1a27b0bd5c55"
+  },
+  {
+   "id": "3.33",
+   "auflage": 1,
+   "kapitel": 3,
+   "abschnitt": {
+    "nummer": "3.7",
+    "label": "",
+    "titel": "Das Milner-Barry-Gambit"
+   },
+   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
+   "fen": "r1b1kbnr/pp3ppp/1q2p3/3pP3/3n4/3B1N2/PP3PPP/RNBQK2R w KQkq - 0 8",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "d3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 6... cxd4 7. cxd4 Sxd4??, Weiß am Zug. Rot: Weiß schlägt zurück. Grau: Hinter dem Läufer d3 steht die Dame d1 auf der d-Linie.",
+     "stil": "normal"
+    }
+   ],
+   "art": "vorsicht",
+   "reihe": [
+    "3.34"
+   ],
+   "beispiel": {
+    "id": "k03-a28",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Nxd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap03_gambits.tex",
+    "zeile": 1004
+   },
+   "pruefsumme": "420004476cb438fb",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "8. Sxd4",
+      "frage": "Warum kann Weiß mit 8. Sxd4 ruhig zurückschlagen?",
+      "antworten": [
+       "Schwarz kann den Springer d4 nicht zurückschlagen.",
+       "Nach 8... Dxd4 folgt 9. Lb5+, und die Dame d1 schlägt die Dame d4.",
+       "Weiß hat danach eine Figur mehr."
+      ],
+      "richtig": 1,
+      "erklaerung": "Der Läufer d3 verdeckt die d-Linie. Zieht er mit Schach nach b5, greift die Dame d1 die Dame d4 an, und Schwarz muss zuerst das Schach abwehren."
+     }
+    ]
+   }
+  },
+  {
+   "id": "3.34",
+   "auflage": 1,
+   "kapitel": 3,
+   "abschnitt": {
+    "nummer": "3.7",
+    "label": "",
+    "titel": "Das Milner-Barry-Gambit"
+   },
+   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
+   "fen": "r1b1kbnr/pp3ppp/4p3/1B1pP3/3q4/8/PP3PPP/RNBQK2R b KQkq - 1 9",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b5",
+     "nach": "e8"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Stellung aus Kapitel 1 nach 8. Sxd4 Dxd4?? 9. Lb5+!, Schwarz am Zug. Rot: Schach vom Läufer; die Dame d4 ist verloren. Gold: Die Dame d1 schlägt sie im nächsten Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "vorsicht",
+   "reihe": [
+    "3.33"
+   ],
+   "beispiel": {
+    "id": "k03-a28",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Nxd4",
+     "Nxd4",
+     "Qxd4",
+     "Bb5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap03_gambits.tex",
+    "zeile": 1005
+   },
+   "pruefsumme": "1e31ae6740adb1b4"
   },
   {
    "id": "3.35",
@@ -7166,7 +7166,7 @@
     }
    ],
    "abschnitt": "3.7",
-   "abbildung": "3.34",
+   "abbildung": "3.32",
    "bloecke": [
     {
      "art": "tabelle",
@@ -7304,7 +7304,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 983
+    "zeile": 956
    }
   },
   {
@@ -9574,7 +9574,7 @@
                                                  "zug": "Kh1",
                                                  "zeichen": "",
                                                  "abbildungen": [
-                                                  "3.33"
+                                                  "3.31"
                                                  ],
                                                  "weiter": [
                                                   {
@@ -9586,7 +9586,7 @@
                                                      "zug": "f4",
                                                      "zeichen": "",
                                                      "abbildungen": [
-                                                      "3.34"
+                                                      "3.32"
                                                      ],
                                                      "weiter": [
                                                       {
@@ -9673,7 +9673,7 @@
                                "zug": "Nxd4",
                                "zeichen": "??",
                                "abbildungen": [
-                                "3.31"
+                                "3.33"
                                ],
                                "weiter": [
                                 {
@@ -9690,7 +9690,7 @@
                                      "zug": "Bb5+",
                                      "zeichen": "!",
                                      "abbildungen": [
-                                      "3.32"
+                                      "3.34"
                                      ],
                                      "weiter": []
                                     }
@@ -9795,7 +9795,7 @@
      ]
     },
     {
-     "nummer": "3.33",
+     "nummer": "3.31",
      "pfad": [
       "e4",
       "e6",
@@ -9823,7 +9823,7 @@
      ]
     },
     {
-     "nummer": "3.34",
+     "nummer": "3.32",
      "pfad": [
       "e4",
       "e6",
@@ -9881,7 +9881,7 @@
      ]
     },
     {
-     "nummer": "3.31",
+     "nummer": "3.33",
      "pfad": [
       "e4",
       "e6",
@@ -9900,7 +9900,7 @@
      ]
     },
     {
-     "nummer": "3.32",
+     "nummer": "3.34",
      "pfad": [
       "e4",
       "e6",

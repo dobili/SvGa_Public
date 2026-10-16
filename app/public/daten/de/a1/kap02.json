@@ -1734,8 +1734,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.27",
-    "2.28"
+    "2.27"
    ],
    "beispiel": {
     "id": "k02-a18",
@@ -1806,8 +1805,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.26",
-    "2.28"
+    "2.26"
    ],
    "beispiel": {
     "id": "k02-a18",
@@ -1876,8 +1874,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.26",
-    "2.27"
+    "2.29"
    ],
    "beispiel": {
     "id": "k02-a18",
@@ -1911,62 +1908,6 @@
   },
   {
    "id": "2.29",
-   "auflage": 1,
-   "kapitel": 2,
-   "abschnitt": {
-    "nummer": "2.3",
-    "label": "",
-    "titel": "Die Italienische Partie (Giuoco Piano)"
-   },
-   "unterabschnitt": "Weitere Varianten: Die Greco-Variante mit dem Zentrumsstoß 5.\\,d4",
-   "fen": "r1bq1k1r/pppp1Bpp/2n5/6B1/3P4/1Q3N2/P4PPP/b4RK1 b - - 2 12",
-   "pfeile": [],
-   "felder": [],
-   "unterschrift": [
-    {
-     "art": "text",
-     "text": "Nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5 – Weiß hat einen Turm und einen Bauern weniger, aber der schwarze König kann für den Rest der Partie nicht mehr rochieren.",
-     "stil": "normal"
-    }
-   ],
-   "art": "vorsicht",
-   "reihe": [],
-   "beispiel": {
-    "id": "k02-a18",
-    "pfad": [
-     "e4",
-     "e5",
-     "Nf3",
-     "Nc6",
-     "Bc4",
-     "Bc5",
-     "c3",
-     "Nf6",
-     "d4",
-     "exd4",
-     "cxd4",
-     "Bb4+",
-     "Nc3",
-     "Nxe4",
-     "O-O",
-     "Nxc3",
-     "bxc3",
-     "Bxc3",
-     "Qb3",
-     "Bxa1",
-     "Bxf7+",
-     "Kf8",
-     "Bg5"
-    ]
-   },
-   "quelle": {
-    "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 606
-   },
-   "pruefsumme": "aa08f286a44408c6"
-  },
-  {
-   "id": "2.30",
    "auflage": 1,
    "kapitel": 2,
    "abschnitt": {
@@ -2025,7 +1966,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.28"
+   ],
    "beispiel": {
     "id": "k02-a18",
     "pfad": [
@@ -2053,7 +1996,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 615
+    "zeile": 600
    },
    "pruefsumme": "a33dd7fcddeb1235",
    "vorbereitet": {
@@ -2072,6 +2015,62 @@
      }
     ]
    }
+  },
+  {
+   "id": "2.30",
+   "auflage": 1,
+   "kapitel": 2,
+   "abschnitt": {
+    "nummer": "2.3",
+    "label": "",
+    "titel": "Die Italienische Partie (Giuoco Piano)"
+   },
+   "unterabschnitt": "Weitere Varianten: Die Greco-Variante mit dem Zentrumsstoß 5.\\,d4",
+   "fen": "r1bq1k1r/pppp1Bpp/2n5/6B1/3P4/1Q3N2/P4PPP/b4RK1 b - - 2 12",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5 – Weiß hat einen Turm und einen Bauern weniger, aber der schwarze König kann für den Rest der Partie nicht mehr rochieren.",
+     "stil": "normal"
+    }
+   ],
+   "art": "vorsicht",
+   "reihe": [],
+   "beispiel": {
+    "id": "k02-a18",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d4",
+     "exd4",
+     "cxd4",
+     "Bb4+",
+     "Nc3",
+     "Nxe4",
+     "O-O",
+     "Nxc3",
+     "bxc3",
+     "Bxc3",
+     "Qb3",
+     "Bxa1",
+     "Bxf7+",
+     "Kf8",
+     "Bg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap02_klassische_eroeffnungen.tex",
+    "zeile": 646
+   },
+   "pruefsumme": "aa08f286a44408c6"
   },
   {
    "id": "2.31",
@@ -10067,8 +10066,8 @@
     },
     {
      "art": "verweis",
-     "text": "Abb. 2.30",
-     "abbildung": "2.30"
+     "text": "Abb. 2.29",
+     "abbildung": "2.29"
     },
     {
      "art": "text",
@@ -12044,7 +12043,7 @@
     }
    ],
    "abschnitt": "2.3",
-   "abbildung": "2.30",
+   "abbildung": "2.29",
    "bloecke": [
     {
      "art": "tabelle",
@@ -12157,8 +12156,8 @@
       },
       {
        "art": "verweis",
-       "text": "Abb. 2.29",
-       "abbildung": "2.29"
+       "text": "Abb. 2.30",
+       "abbildung": "2.30"
       },
       {
        "art": "text",
@@ -12190,7 +12189,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 617
+    "zeile": 609
    }
   },
   {
@@ -18313,7 +18312,7 @@
                                            "zug": "d5",
                                            "zeichen": "!",
                                            "abbildungen": [
-                                            "2.30"
+                                            "2.29"
                                            ],
                                            "weiter": [
                                             {
@@ -18350,7 +18349,7 @@
                                                  "zug": "Bg5",
                                                  "zeichen": "",
                                                  "abbildungen": [
-                                                  "2.29"
+                                                  "2.30"
                                                  ],
                                                  "weiter": []
                                                 }
@@ -18590,7 +18589,7 @@
      ]
     },
     {
-     "nummer": "2.30",
+     "nummer": "2.29",
      "pfad": [
       "e4",
       "e5",
@@ -18615,7 +18614,7 @@
      ]
     },
     {
-     "nummer": "2.29",
+     "nummer": "2.30",
      "pfad": [
       "e4",
       "e5",

@@ -5,7 +5,8 @@
  * Fortsetzung, grobe Patzer markiert, Export als PGN“) und 5.2 („In Zug 12 hat die Engine eine
  * Figur hängen lassen (W1). Hast du es gesehen?“). Die Werte rechnet useAuswertung im
  * Hintergrund; die Urteile spiel/auswertung.ts. Ein Sprung zeigt die Stellung vor dem Zug mit
- * dem besseren Zug (gold) und dem gespielten (rot).
+ * dem besseren Zug (gold) und dem gespielten (rot). Darüber steht seit 0.2.38 die Verlaufskurve
+ * (Vorschlag H); ein Tipp darauf zeigt die Stellung mit Zeichen und besserem Zug.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/pgn.ts, speicher/partien.ts, i18n.
  */
 import { useState } from "react";
@@ -27,6 +28,7 @@ import { zugFelder } from "../../schach/weiterspielen";
 import type { Partieeintrag } from "../../speicher/partien";
 import { bieteDateiAn } from "./dateiAnbieten";
 import { Fortschrittsbalken } from "./Fortschrittsbalken";
+import { Verlaufskurve } from "./Verlaufskurve";
 import type { Auswertungsstand } from "./useAuswertung";
 
 /** Ein Sprung auf dem Brett: Stelle in der Partie und Markierungen dort. */
@@ -206,6 +208,11 @@ export function Auswertung({
       {stand.art === "fehler" && <p className="fehlertext">{stand.meldung}</p>}
       {urteile.length > 0 && (
         <>
+          <Verlaufskurve
+            werte={eintrag.werte}
+            urteile={urteile}
+            beiStelle={(stelle) => beiSprung({ stelle, marken: [] })}
+          />
           <Abweichung eintrag={eintrag} urteile={urteile} beiSprung={beiSprung} />
           <Patzer partie={eintrag.partie} urteile={urteile} />
         </>

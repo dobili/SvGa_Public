@@ -11,6 +11,9 @@
  * Seit 0.2.33 (Wunsch P1, Vorschlag B2): Zählen, Röntgen und Warnsignale W1–W7 als Symbole am
  * Brett, darunter die Bündel des Buches mit Reitern und Karten (PartieWerkzeuge.tsx); in der
  * ruhigen Ansicht ausgeblendet.
+ * Seit 0.2.38 (Vorschlag H, Rückblick): Nach der Auswertung trägt beim Nachspielen das Zielfeld
+ * des gezeigten Zuges sein Zeichen, ein goldener Pfeil zeigt den besseren Zug, links am Brett
+ * steht ein Bewertungsbalken (spiel/rueckblick.ts). Während der Partie bleibt das aus.
  * Abhängigkeiten: ui/komponenten/usePartie.ts, spiel/, i18n.
  */
 import { Eye, EyeOff } from "lucide-react";
@@ -23,8 +26,10 @@ import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import { leserAmZug, stellungen, type Partie as PartieDaten } from "../../spiel/partie";
 import { mitVorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
-import { zugurteile } from "../../spiel/auswertung";
+import { zugurteile, type Zugurteil } from "../../spiel/auswertung";
+import { rueckblickMarken } from "../../spiel/rueckblick";
 import { Auswertung, type Sprung } from "../komponenten/Auswertung";
+import { Bewertungsbalken } from "../komponenten/Bewertungsbalken";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { Partieende } from "../komponenten/Partieende";
@@ -117,6 +122,40 @@ interface Ansichtsstelle extends Sprung {
   readonly zuege: number;
 }
 
+/** Was der Rückblick nach der ausgewerteten Partie braucht (sonst null). */
+interface Rueckblick {
+  readonly werte: readonly number[];
+  readonly beste: readonly string[];
+  readonly urteile: readonly Zugurteil[];
+}
+
+/**
+ * Zeichen, besserer Zug und Balken für die gezeigte Stelle (Vorschlag H).
+ *
+ * Beispiel: Stelle 3 nach 1. e4 e5 2. Dh5?!: „?!“ auf h5, goldener Pfeil zum Zug der Engine.
+ */
+function rueckblickAn(
+  rueckblick: Rueckblick | null,
+  alle: readonly string[],
+  sans: readonly string[],
+  stelle: number,
+) {
+  if (!rueckblick) return { marken: [], leiste: null };
+  const index = stelle - 1;
+  const marken =
+    index >= 0
+      ? rueckblickMarken(
+          alle[index] ?? "",
+          sans[index] ?? "",
+          rueckblick.urteile[index],
+          rueckblick.beste[index] ?? "",
+        )
+      : [];
+  const wert = rueckblick.werte[stelle] ?? 0;
+  const leiste = (gedreht: boolean) => <Bewertungsbalken wert={wert} gedreht={gedreht} />;
+  return { marken, leiste };
+}
+
 /** Brett und Zugliste: das, was auch die ruhige Ansicht zeigt. */
 function Spielfeld({
   s,
@@ -127,8 +166,10 @@ function Spielfeld({
   zeichen,
   ruhig,
   werkzeug,
+  rueckblick,
 }: {
   werkzeug: Werkzeugwahlstand;
+  rueckblick: Rueckblick | null;
   s: Partiesteuerung;
   partie: PartieDaten;
   ruhig: boolean;
@@ -156,11 +197,13 @@ function Spielfeld({
   );
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
   const letzter = stelle > 0 ? zugFelder(alle[stelle - 1] ?? "", sans[stelle - 1] ?? "") : null;
+  const rb = rueckblickAn(rueckblick, alle, sans, stelle);
+  const gesprungen = gewaehlt && gewaehlt.marken.length > 0 ? gewaehlt.marken : null;
   const markierungen = rechnung.ergebnis
     ? rechnung.markierungen
     : amZug
       ? hinweis
-      : (gewaehlt?.marken ?? []);
+      : (gesprungen ?? rb.marken);
   // Zählen geht auch in früheren Stellungen; gezogen wird nur, wenn der Leser am Zug ist.
   const tippbar = amZug || wahl === "zaehlen";
   return (
@@ -183,6 +226,7 @@ function Spielfeld({
         anfangsGedreht={partie.einstellung.eigeneFarbe === "black"}
         werkzeugSymbole={ruhig ? null : <PartieSymbole werkzeug={werkzeug} />}
         zusatzSchalter={<RuhigSchalter ruhig={ruhig} />}
+        seitenleiste={rb.leiste}
       />
       <Uhr s={s} farbe={partie.einstellung.eigeneFarbe} />
       {!ruhig && <PartieLeiste werkzeug={werkzeug} />}
@@ -236,6 +280,11 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         zeichen={urteile.map((u) => u.zeichen)}
         ruhig={ruhig}
         werkzeug={werkzeug}
+        rueckblick={
+          partie.ende && eintrag && urteile.length > 0 && !ruhig
+            ? { werte: eintrag.werte, beste: eintrag.beste, urteile }
+            : null
+        }
       />
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
       {!ruhig && leser && (

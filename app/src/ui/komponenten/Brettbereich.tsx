@@ -72,7 +72,8 @@ function Umwandlung({ beiWahl }: { beiWahl: (rolle: Rolle | null) => void }) {
  * Eingaben: Stellung, Markierungen, ob sie aus dem Buch stammen, letzter Zug, Bedienung,
  * Beschriftung für Bildschirmleser, ob das Brett anfangs gedreht ist (Partie mit Schwarz),
  * Werkzeug-Symbole vor „Brett drehen“, weitere Schalter danach (Partie: ruhige Ansicht), ob die
- * Skelett-Ansicht an ist.
+ * Skelett-Ansicht an ist, eine schmale Leiste links neben dem Brett (Partie: Bewertungsbalken
+ * im Rückblick; sie erfährt, ob das Brett gedreht ist).
  */
 export function Brettbereich({
   stellung,
@@ -84,6 +85,7 @@ export function Brettbereich({
   werkzeugSymbole = null,
   zusatzSchalter = null,
   skelett = false,
+  seitenleiste = null,
 }: {
   stellung: Stellung;
   markierungen: readonly Markierung[];
@@ -94,6 +96,7 @@ export function Brettbereich({
   werkzeugSymbole?: React.ReactNode;
   zusatzSchalter?: React.ReactNode;
   skelett?: boolean;
+  seitenleiste?: ((gedreht: boolean) => React.ReactNode) | null;
 }) {
   const [gedreht, setzeGedreht] = useState(anfangsGedreht);
   // Die Koordinaten stellt man in den Einstellungen ein; der Bildschirm liest sie beim Öffnen.
@@ -101,17 +104,20 @@ export function Brettbereich({
   const amZug = farbkuerzel(stellung.amZug);
   return (
     <div className="brettbereich">
-      <Brett
-        fen={skelett ? skelettFen(stellung.fen) : stellung.fen}
-        markierungen={skelett ? [] : markierungen}
-        gedreht={gedreht}
-        koordinaten={koordinaten}
-        letzterZug={letzterZug}
-        ausgewaehlt={bedienung.ausgewaehlt}
-        ziele={bedienung.ziele}
-        beiFeld={bedienung.beiFeld}
-        beschriftung={`${beschriftung}, ${t(`abbildung.amZug.${amZug}`)}`}
-      />
+      <div className={seitenleiste ? "brett-mit-leiste" : undefined}>
+        {seitenleiste?.(gedreht)}
+        <Brett
+          fen={skelett ? skelettFen(stellung.fen) : stellung.fen}
+          markierungen={skelett ? [] : markierungen}
+          gedreht={gedreht}
+          koordinaten={koordinaten}
+          letzterZug={letzterZug}
+          ausgewaehlt={bedienung.ausgewaehlt}
+          ziele={bedienung.ziele}
+          beiFeld={bedienung.beiFeld}
+          beschriftung={`${beschriftung}, ${t(`abbildung.amZug.${amZug}`)}`}
+        />
+      </div>
       {bedienung.umwandlungOffen && <Umwandlung beiWahl={bedienung.waehleUmwandlung} />}
       <div className="brettzeile">
         <p className="am-zug">

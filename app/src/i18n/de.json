@@ -1739,6 +1739,8 @@
   "spielhinweis.art.ruhig": "Gesucht ist ein ruhiger Zug.",
   "spielhinweis.figur": "Die Figur, die ziehen sollte: {figur} auf {feld}.",
   "spielhinweis.zug": "Die Engine schlägt {zug} vor.",
+  "rueckblick.balken": "Bewertung: {wert} aus Sicht von Weiß",
+  "rueckblick.kurve": "Verlauf der Bewertung über die Partie; die Punkte markieren Fehler. Springen geht auch über die Zugliste.",
   "auswertung.titel": "Auswertung",
   "auswertung.laeuft": "Die Engine wertet die Partie aus: {erledigt} von {gesamt} Stellungen.",
   "auswertung.keineAbweichung": "Keine klare Abweichung von der besten Fortsetzung. Gut gespielt!",

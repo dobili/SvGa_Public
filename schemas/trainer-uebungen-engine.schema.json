@@ -21,11 +21,14 @@
     "massstab": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["gleichwertigBis", "schwaecherBis", "einzigerZugAb"],
+      "required": ["gleichwertigBis", "schwaecherBis", "einzigerZugAb", "wertGewonnen", "mattLaenger", "hoechstensVorschlaege"],
       "properties": {
         "gleichwertigBis": { "type": "number" },
         "schwaecherBis": { "type": "number" },
-        "einzigerZugAb": { "type": "number" }
+        "einzigerZugAb": { "type": "number" },
+        "wertGewonnen": { "description": "Ab diesem Wert gelten Züge in gewonnener Stellung als gleichwertig (Technik)", "type": "number" },
+        "mattLaenger": { "description": "Verlust je Zug, den ein Matt länger dauert als das kürzeste", "type": "number" },
+        "hoechstensVorschlaege": { "description": "Mehr gleichwertige Züge sind kein Vorschlag, sondern nur die Zahl in gleichwertigeZuege", "type": "integer" }
       }
     },
     "uebungen": { "type": "array", "items": { "$ref": "#/$defs/uebung" } }
@@ -68,7 +71,8 @@
             }
           }
         },
-        "vorschlagAkzeptiert": { "description": "Gleich gute Züge, die noch nicht akzeptiert sind (Vorschlag an den Autor)", "type": "array", "items": { "type": "string" } },
+        "vorschlagAkzeptiert": { "description": "Gleich gute Züge, die noch nicht akzeptiert sind (Vorschlag an den Autor); leer, wenn es mehr als hoechstensVorschlaege sind", "type": "array", "items": { "type": "string" } },
+        "gleichwertigeZuege": { "description": "Zahl der gleich guten Züge außer Buchzug und akzeptierten", "type": "integer" },
         "akzeptiertFraglich": { "description": "Vom Autor akzeptierte Züge, die laut Engine mehr als „gleichwertigBis“ verlieren", "type": "array", "items": { "type": "string" } },
         "linie": {
           "type": "object",

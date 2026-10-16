@@ -11,7 +11,9 @@ Wozu diese Datei da ist:
        Lösung mit dem Schlag beginnt; Fallen sind Stellungen, in denen ein Schlag Material zu
        gewinnen scheint (Faustwerte: mehr wert als der Schlagende, oder ungedeckt), die Engine
        ihn aber widerlegt. Die Lichess-Wertung gibt die Schwierigkeit.
-    Alles prüft die Engine: Nehmen gegen den besten Zug, Tiefe 18.
+    Alles prüft die Engine: Nehmen gegen den besten Zug, Tiefe 18. Falle ab 1,5 Bauerneinheiten
+    Verlust (das Buch gibt dem Schlag im Blackburne-Shilling-Gambit nur ein „?“, die Engine misst
+    dort 2,0), Geschenk bis 0,3.
 
 Aufruf (im Hauptordner):
     python -m pipeline.trainer.falle --lichess buch/arbeit/lichess/passende.pkl --je-stufe 12
@@ -36,7 +38,7 @@ from pipeline.trainer.schwierigkeit import HOECHSTTIEFE, Messung, klasse, stufe_
 
 SCHEMA = "trainer-falle.schema.json"
 ZIELDATEI = TRAINERORDNER / "falle.json"
-FALLE_AB = 2.0
+FALLE_AB = 1.5
 GESCHENK_BIS = 0.3
 TIEFE = 18
 FORTSETZUNG_HALBZUEGE = 6

@@ -12,10 +12,15 @@ Maßstab (Startwerte, wie bei der Engine-Prüfung der Zugzeichen):
     schwächer      bis 1,0 schlechter
     widerlegt      mehr als 1,0 schlechter, oder der beste Zug setzt matt und die Buchlösung nicht
     einziger Zug   jeder andere Zug ist mindestens 1,0 schlechter (Matt gegen kein Matt zählt auch)
-    Ein längeres Matt gilt als gleichwertig zu einem kürzeren (beide gewinnen); ein Matt gilt nie
-    als gleichwertig zu einem Zug ohne Matt. Erster Zug: erst Tiefe 14 über alle Züge, dann Tiefe
-    20 für Buchzug, akzeptierte Züge und alles, was höchstens 0,6 hinter dem besten liegt
-    („searchmoves“); die weiteren eigenen Züge der Buchlinie: Tiefe 18 gegen den besten Zug.
+    Ein Matt gilt nie als gleichwertig zu einem Zug ohne Matt; ein längeres Matt als das beste
+    zählt je Zug mehr 0,5 Verlust (die Übungen fragen nach dem kürzesten Matt). In klar
+    gewonnenen Stellungen (beide Züge mindestens +5, kein Matt) gelten Züge als gleichwertig,
+    weil die Engine dort nur Technik vergleicht (Lucena: 1. Te4 +6,7 und 1. Tc1 +8,9 gewinnen beide).
+    Mehr als fünf gleichwertige Züge sind kein Vorschlag, sondern ein Hinweis („gleichwertigeZuege“):
+    Die Übung fragt dann nach einer Technik, nicht nach dem einzigen Zug.
+    Erster Zug: erst Tiefe 14 über alle Züge, dann Tiefe 20 für Buchzug, akzeptierte Züge und
+    alles, was höchstens 0,6 hinter dem besten liegt („searchmoves“); die weiteren eigenen Züge
+    der Buchlinie: Tiefe 18 gegen den besten Zug.
     Ist die Buchlösung widerlegt oder schwächer, gibt es keinen Vorschlag für „akzeptiert“: Dann
     muss der Autor die Lösung selbst ansehen (der bessere Zug steht in der Begründung).
 
@@ -47,6 +52,12 @@ TIEFE_LINIE = 18
 GENAU_BIS = 0.6
 # So viele Züge je Übung kommen in die Datei (die besten, dazu immer Buchzug und akzeptierte).
 HOECHSTENS_ZUEGE = 6
+# Mehr gleichwertige Züge als das sind kein Vorschlag mehr (Technikfrage).
+HOECHSTENS_VORSCHLAEGE = 5
+# Ab diesem Wert gilt eine Stellung als klar gewonnen; Züge darüber sind untereinander gleichwertig.
+WERT_GEWONNEN = 5.0
+# Verlust je Zug, den ein Matt länger dauert als das kürzeste.
+MATT_LAENGER = 0.5
 SCHEMA = "trainer-uebungen-engine.schema.json"
 ZIELDATEI = TRAINERORDNER / "uebungen-engine.json"
 
@@ -121,15 +132,17 @@ def _gewinnt_matt(z: Zugwert) -> bool:
 
 
 def _verlust(bester: Zugwert, zug: Zugwert) -> float:
-    """Verlust gegenüber dem besten Zug; zwei Matts derselben Seite gelten als gleich gut."""
+    """Verlust gegenüber dem besten Zug; ein längeres Matt zählt je Zug mehr 0,5."""
     if _gewinnt_matt(bester) and _gewinnt_matt(zug):
-        return 0.0
+        return round(max(0, (zug.matt or 0) - (bester.matt or 0)) * MATT_LAENGER, 2)
     return round(bester.wert - zug.wert, 2)
 
 
 def _status(verlust: float, bester: Zugwert, zug: Zugwert) -> str:
     if _gewinnt_matt(bester) and not _gewinnt_matt(zug):
         return "widerlegt"
+    if not _gewinnt_matt(bester) and bester.wert >= WERT_GEWONNEN and zug.wert >= WERT_GEWONNEN:
+        return "gleichwertig"
     if verlust <= GLEICHWERTIG_BIS:
         return "gleichwertig"
     return "schwaecher" if verlust <= SCHWAECHER_BIS else "widerlegt"
@@ -170,8 +183,16 @@ def beurteile(zuege: list[Zugwert], buchzug: chess.Move, akzeptiert: list[chess.
         if urteil in ("haelt", "gleichwertig")
         else []
     )
-    fraglich = [u.san for u in urteile if u.status == "akzeptiert" and u.verlust > GLEICHWERTIG_BIS]
+    fraglich = [
+        u.san
+        for u in urteile
+        if u.status == "akzeptiert" and _status(u.verlust, bester, _zugwert(zuege, u.san)) != "gleichwertig"
+    ]
     return Urteil(urteil, verlust_buch, bester.san, einziger, abstand, urteile, vorschlag, fraglich)
+
+
+def _zugwert(zuege: list[Zugwert], san: str) -> Zugwert:
+    return next(z for z in zuege if z.san == san)
 
 
 def _nur_matt_fehlt(bester: Zugwert, u: Zugurteil) -> bool:
@@ -237,7 +258,9 @@ def _begruendung(brett: chess.Board, urteil: Urteil, zuege: list[Zugwert], buchz
         )
     elif urteil.urteil != "haelt":
         teile.append(f"besser {deutsch(brett, bester.zug)} ({_wert_text(bester.wert, bester.matt)})")
-    if urteil.vorschlag_akzeptiert:
+    if len(urteil.vorschlag_akzeptiert) > HOECHSTENS_VORSCHLAEGE:
+        teile.append(f"{len(urteil.vorschlag_akzeptiert)} gleichwertige Züge (Technikfrage, kein Vorschlag)")
+    elif urteil.vorschlag_akzeptiert:
         namen = ", ".join(deutsch(brett, brett.parse_san(san)) for san in urteil.vorschlag_akzeptiert)
         teile.append(f"gleichwertig: {namen}")
     if urteil.einziger_zug:
@@ -291,7 +314,10 @@ def pruefe_uebung(engine: Engine, u: Uebung) -> dict:
             {"san": z.san, "wert": _wert_text(z.wert, z.matt), "verlust": z.verlust, "status": z.status}
             for z in gezeigt
         ],
-        "vorschlagAkzeptiert": urteil.vorschlag_akzeptiert,
+        "vorschlagAkzeptiert": (
+            urteil.vorschlag_akzeptiert if len(urteil.vorschlag_akzeptiert) <= HOECHSTENS_VORSCHLAEGE else []
+        ),
+        "gleichwertigeZuege": len(urteil.vorschlag_akzeptiert),
         "akzeptiertFraglich": urteil.akzeptiert_fraglich,
         "linie": _pruefe_linie(engine, brett, zuege_aus_text(u.loesung or "")),
         "begruendung": _begruendung(brett, urteil, alle, brett.san(buchzug)),
@@ -317,6 +343,9 @@ def baue(ziel: Path = ZIELDATEI, nur: set[str] | None = None) -> dict:
             "gleichwertigBis": GLEICHWERTIG_BIS,
             "schwaecherBis": SCHWAECHER_BIS,
             "einzigerZugAb": EINZIGER_ZUG_AB,
+            "wertGewonnen": WERT_GEWONNEN,
+            "mattLaenger": MATT_LAENGER,
+            "hoechstensVorschlaege": HOECHSTENS_VORSCHLAEGE,
         },
         "uebungen": eintraege,
     }

@@ -35,14 +35,25 @@ def test_gleichwertiger_zug_wird_vorgeschlagen_und_einziger_zug_erkannt():
     assert beurteile(allein, brett.parse_san("cxd5"), []).einziger_zug is True
 
 
-def test_matt_schlaegt_alles_und_laengeres_matt_ist_gleichwertig():
+def test_matt_schlaegt_alles_und_laengeres_matt_ist_schwaecher():
     brett = chess.Board("6k1/5ppp/8/8/8/8/5PPP/R5K1 w - - 0 1")
     zuege = _werte(brett, [("Ra8#", 99.0, 1), ("Rb1", 3.0, None)])
     widerlegt = beurteile(zuege, brett.parse_san("Rb1"), [])
     assert widerlegt.urteil == "widerlegt"
     assert widerlegt.vorschlag_akzeptiert == []
     laenger = _werte(brett, [("Ra8#", 99.0, 1), ("Rb1", 97.0, 3)])
-    assert beurteile(laenger, brett.parse_san("Rb1"), []).urteil == "haelt"
+    zwei_laenger = beurteile(laenger, brett.parse_san("Rb1"), [])
+    assert zwei_laenger.urteil == "schwaecher" and zwei_laenger.verlust == 1.0
+    gleich_lang = _werte(brett, [("Ra8#", 99.0, 1), ("Rb1", 99.0, 1)])
+    assert beurteile(gleich_lang, brett.parse_san("Rb1"), []).vorschlag_akzeptiert == ["Ra8#"]
+
+
+def test_in_gewonnener_stellung_sind_gewinnzuege_gleichwertig():
+    brett = chess.Board(ABB_1_41)
+    zuege = _werte(brett, [("cxd5", 8.9, None), ("exd5", 6.7, None), ("e5", 0.3, None)])
+    urteil = beurteile(zuege, brett.parse_san("exd5"), [])
+    assert urteil.urteil == "gleichwertig" and urteil.vorschlag_akzeptiert == ["cxd5"]
+    assert [z.status for z in urteil.zuege] == ["gleichwertig", "buch", "widerlegt"]
 
 
 def test_akzeptierter_zug_der_schwaecher_ist_wird_gemeldet():

@@ -53,7 +53,31 @@ Buchdaten; die App schreibt sie deutsch.
 
 ### Taktiktrainer (`taktik.json`, Kapitel 7)
 
-ERGEBNIS_TAKTIK
+674 Aufgaben: 37 aus dem Buch, 637 aus der Lichess-Datenbank; `python -m pipeline.trainer.taktik
+--lichess <Stichprobe> --je-gruppe 8` (die Stichprobe entsteht aus der 300-MB-Datenbank mit
+`lichess.lies_datenbank`, nur lokal; Dauer des Baus etwa 45 Minuten).
+
+- **Buch:** Abbildungen aus Kapitel 7 mit freigegebener Zugfolge, deren Fortsetzung ab der
+  Abbildung laut Engine ein klarer Gewinnzug ist (bester Zug, zweitbester mindestens 0,8
+  schlechter oder höchstens zwei gleich gute, Gewinn mindestens 1,5 oder Matt oder Rettung), dazu
+  die Übungen mit Lösungszug und taktischem Motivtext (ohne Kapitel 8 und 9, die gehören zum
+  Endspieltrainer). Motiv aus dem Unterabschnitt („4. Batterie und Abzug“ → `abzug`) oder dem
+  Motivtext der Übung; Mattbild aus dem Titel. Abbildungen, die nur ein Motiv zeigen, ohne dass
+  die Seite am Zug gewinnt (etwa 7.1, 7.3), fallen weg; 10 Buchaufgaben haben nur ein Mattbild
+  und kein Grundmotiv.
+- **Lichess:** je Grundmotiv (11 der 12; für „Rettung“ hat Lichess kein Thema) und je Mattbild
+  (Grundreihe, Anastasia, Arabisch, Erstickung, Boden) und je Stufe 8 Aufgaben, höchstens drei
+  eigene Züge, genau ein Motiv der Buchtabelle unter den Themen. Lösungen sind dort eindeutig,
+  `akzeptiert` bleibt leer.
+- **Eichung** (Messklasse → Stufe, aus den 637 Lichess-Aufgaben): t0-l0 → 1, t0-l1 → 3,
+  t0-l2 → 4, t1-l1 → 3, t1-l2 → 4, t2-l1 → 4, t2-l2 → 5, t3-l2 → 4 (t = Tiefenklasse, l =
+  Längenklasse). Lesart: Die Länge der Lösung wiegt schwerer als die Tiefe, weil Stockfish
+  erzwingende Opfer schon bei Tiefe 1 sieht. Buchaufgaben: 8 × Stufe 1, 15 × Stufe 3, 14 × Stufe 4.
+- Felder je Aufgabe: `loesung` (eigene und gegnerische Züge im Wechsel), `akzeptiert`
+  (gleich gute erste Züge, nur Buch), `motiv`, `mattbild`, `schluesselfeld` (Figur des
+  Schlüsselzugs, Hilfe 3), `ziel` (matt, gewinn, rettung), `herkunft` (Abbildung, Übung,
+  Zugfolge; oder Lichess-Kennung, Wertung, Partie, Themen), `messung`. Das Warnsignal (Hilfe 1)
+  rechnet die App mit k7-warnsignale aus der Stellung.
 
 ### Falle oder Köder (`falle.json`, Kapitel 4)
 

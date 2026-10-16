@@ -15,9 +15,10 @@ import { parseSan } from "chessops/san";
 import { makeUci } from "chessops/util";
 import type { Fallencheck } from "../daten/generiert/kapitel";
 import { t } from "../i18n/sprache";
+import type { Role } from "chessops/types";
 import { gegner, type Stellung } from "../schach/stellung";
 import { profil } from "./stellungsprofil";
-import { zugtext } from "./texte";
+import { schlagtext, zugtext } from "./texte";
 import type { Befund, Werkzeug, Werkzeugergebnis } from "./werkzeug";
 
 /** Das Material im Angebot: ein Schlag der Seite am Zug. */
@@ -28,6 +29,8 @@ export interface Angebot {
   readonly herkunft: "buchzug" | "geschenk";
   /** Gewinn laut Abtauschrechnung, falls bekannt. */
   readonly bilanz: number | null;
+  /** Die geschlagene Figur, falls bekannt (für den Text „gewinnt den Läufer“). */
+  readonly geschlagen: Role | null;
 }
 
 /**
@@ -40,11 +43,17 @@ export function angebot(stellung: Stellung, geplant?: string): Angebot | null {
   if (!regeln) return null;
   const zug = geplant ? parseSan(regeln, geplant) : undefined;
   if (zug && "from" in zug && regeln.board[gegner(regeln.turn)].has(zug.to) && geplant) {
-    return { san: geplant, uci: makeUci(zug), herkunft: "buchzug", bilanz: null };
+    return { san: geplant, uci: makeUci(zug), herkunft: "buchzug", bilanz: null, geschlagen: null };
   }
   const bester = (profil(stellung).schlaegeVon(regeln.turn) ?? []).find((s) => s.bilanz > 0);
   return bester
-    ? { san: bester.san, uci: bester.uci, herkunft: "geschenk", bilanz: bester.bilanz }
+    ? {
+        san: bester.san,
+        uci: bester.uci,
+        herkunft: "geschenk",
+        bilanz: bester.bilanz,
+        geschlagen: bester.geschlagen,
+      }
     : null;
 }
 
@@ -71,7 +80,13 @@ function befundAngebot(a: Angebot | null): Befund {
     ? t("falle.keinAngebot")
     : a.herkunft === "buchzug"
       ? t("falle.angebotBuch", { zug: zugtext(a.san) })
-      : t("falle.angebotGeschenk", { zug: zugtext(a.san), wert: a.bilanz ?? 0 });
+      : t("falle.angebotGeschenk", {
+          zug: zugtext(a.san),
+          gewinn:
+            a.geschlagen && a.bilanz !== null
+              ? schlagtext({ geschlagen: a.geschlagen, bilanz: a.bilanz })
+              : t("text.gewinntMaterial"),
+        });
   return { kennung: "angebot", art: "E", titel: t("falle.angebot"), zeilen: [zeile], farbe: null };
 }
 

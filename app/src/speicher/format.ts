@@ -25,8 +25,11 @@ export const SCHEMA_VERSION = 3;
 
 export type Brettfarben = "buch" | "holz" | "gruen";
 export type Strenge = "locker" | "streng";
-/** „buch“: Figuren wie in den Diagrammen des Buches; „kontrastreich“: Figuren von Colin Burnett. */
-export type Figurensatz = "buch" | "kontrastreich";
+/**
+ * „buch“: Figuren wie in den Diagrammen des Buches; „klassisch“: Figuren von Colin Burnett (bis
+ * 0.2.38 „kontrastreich“ gespeichert, wird beim Lesen übernommen); „holz“: dieselben in Holzfarben.
+ */
+export type Figurensatz = "buch" | "klassisch" | "holz";
 export type Ton = "aus" | "an";
 
 export interface Einstellungen {
@@ -129,6 +132,12 @@ function alsZahl(wert: unknown): number {
  * Einstellungen aus Rohdaten; Unbekanntes ergibt den Standard (Format 0 und 1 gleich). Figurensatz
  * und Ton kamen in 0.2.33 ohne neue Formatversion dazu: Fehlen sie, gilt der Standard.
  */
+
+/** Der Figurensatz aus Rohdaten; „kontrastreich“ (bis 0.2.38) heißt jetzt „klassisch“. */
+function figurensatzAus(roh: unknown): Figurensatz {
+  if (roh === "klassisch" || roh === "kontrastreich") return "klassisch";
+  return roh === "holz" ? "holz" : "buch";
+}
 export function einstellungenAus(roh: unknown): Einstellungen {
   if (!istObjekt(roh)) return STANDARD_EINSTELLUNGEN;
   const farbe = roh.brettfarben;
@@ -138,7 +147,7 @@ export function einstellungenAus(roh: unknown): Einstellungen {
         ? farbe
         : STANDARD_EINSTELLUNGEN.brettfarben,
     strenge: roh.strenge === "streng" ? "streng" : "locker",
-    figurensatz: roh.figurensatz === "kontrastreich" ? "kontrastreich" : "buch",
+    figurensatz: figurensatzAus(roh.figurensatz),
     ton: roh.ton === "an" ? "an" : "aus",
   };
 }

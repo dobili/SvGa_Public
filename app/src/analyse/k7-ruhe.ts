@@ -15,7 +15,7 @@ import type { Drohung } from "../schach/drohungen";
 import { feldname, FIGURENWERT, gegner, type Stellung } from "../schach/stellung";
 import { felderText } from "./skelett";
 import { profil, type Stellungsprofil } from "./stellungsprofil";
-import { aufzaehlung, farbname, zugtext } from "./texte";
+import { aufzaehlung, farbname, schlagtext, zugtext } from "./texte";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
 
 /** So viele Zwischenschachs und Drohungen nennt die Karte höchstens. */
@@ -71,7 +71,7 @@ function abwehrfragen(p: Stellungsprofil, eigen: Color, drohung: Drohung): strin
       text:
         schlagen.length > 0
           ? t("ruhe.abwehr.schlagenJa", {
-              zuege: aufzaehlung(schlagen.map((s) => `${zugtext(s.san)} (${s.bilanz})`)),
+              zuege: aufzaehlung(schlagen.map((s) => `${zugtext(s.san)} (${schlagtext(s)})`)),
             })
           : t("ruhe.abwehr.schlagenNein", { figur: feldname(angreifer) }),
     }),
@@ -151,7 +151,7 @@ export function ruhe(stellung: Stellung, eigen: Color): Werkzeugergebnis {
             ? t("ruhe.drohtMatt", { zug: zugtext(drohung.zug.san) })
             : t("ruhe.drohtMaterial", {
                 zug: zugtext(drohung.zug.san),
-                bilanz: drohung.zug.bilanz,
+                gewinn: schlagtext(drohung.zug),
               }),
       }),
       zeilen: abwehrfragen(p, eigen, drohung),

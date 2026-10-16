@@ -38,7 +38,7 @@ const BAUSTEINE: readonly { name: string; lizenz: string; herkunft: string; text
     text: "/lizenzen/lppl-1.3c.txt",
   },
   {
-    name: "Figurensatz „kontrastreich“ (Colin M. L. Burnett)",
+    name: "Figurensätze „klassisch“ und „Holz“ (Colin M. L. Burnett; „Holz“ umgefärbt)",
     lizenz: "GNU GPL 2.0 oder neuer (hier unter GPL 3.0)",
     herkunft: "Wikimedia Commons, über Lichess (github.com/lichess-org/lila, Satz cburnett)",
     text: "/lizenzen/gpl-3.0.txt",

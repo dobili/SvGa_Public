@@ -13,11 +13,11 @@ import type { Chess } from "chessops/chess";
 import { makeSan, parseSan } from "chessops/san";
 import type { Color, NormalMove, Square } from "chessops/types";
 import { t } from "../i18n/sprache";
-import { erzwingendeZuege, type ErzwingendeZuege } from "../schach/drohungen";
+import { erzwingendeZuege, type ErzwingendeZuege, type Schlagzug } from "../schach/drohungen";
 import { koenigImFreien } from "../schach/koenigImFreien";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import { profil } from "./stellungsprofil";
-import { aufzaehlung, farbname, mitVorzeichen, zugtext } from "./texte";
+import { aufzaehlung, farbname, mitVorzeichen, schlagtext, zugtext } from "./texte";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
 
 /** Was der Sicherheitsblick zu einem Zug ergibt. */
@@ -31,9 +31,8 @@ interface Blick {
   readonly luft: readonly Square[];
   /** Angegriffene Nachbarfelder, wenn der König danach im Freien steht; sonst null (C1.29). */
   readonly imFreien: readonly Square[] | null;
-  /** Bilanz des Gegners, wenn er die gezogene Figur schlägt; null, wenn er sie nicht angreift. */
-  readonly schlagbilanz: number | null;
-  readonly schlagzug: string | null;
+  /** Der Schlag des Gegners auf die gezogene Figur mit seiner Bilanz; null, wenn er sie nicht angreift. */
+  readonly schlag: Schlagzug | null;
 }
 
 /** Die Stellung nach einem Zug als Stellung der App. */
@@ -69,8 +68,7 @@ function blick(stellung: Stellung, eigen: Color, san: string): Blick | null {
     gegner: e,
     luft: luftDesKoenigs(danach, eigen),
     imFreien: koenigImFreien(danach, eigen),
-    schlagbilanz: schlag ? schlag.bilanz : null,
-    schlagzug: schlag ? schlag.san : null,
+    schlag: schlag ?? null,
   };
 }
 
@@ -115,11 +113,11 @@ function frage1(b: Blick): string[] {
 
 /** Frage 2: Kann der Gegner die gezogene Figur sofort schlagen? */
 function frage2(b: Blick): string[] {
-  if (b.schlagbilanz === null || b.schlagzug === null)
-    return [t("sicher.figur.nein", { feld: feldname(b.zug.to) })];
-  const werte = { zug: zugtext(b.schlagzug), bilanz: mitVorzeichen(b.schlagbilanz) };
-  if (b.schlagbilanz > 0) return [t("sicher.figur.verliert", werte)];
-  return [t("sicher.figur.gedeckt", werte)];
+  if (b.schlag === null) return [t("sicher.figur.nein", { feld: feldname(b.zug.to) })];
+  const zug = zugtext(b.schlag.san);
+  if (b.schlag.bilanz > 0)
+    return [t("sicher.figur.verliert", { zug, gewinn: schlagtext(b.schlag) })];
+  return [t("sicher.figur.gedeckt", { zug, bilanz: mitVorzeichen(b.schlag.bilanz) })];
 }
 
 /** Frage 3: Erlaube ich ein Schach oder gar ein Matt? */
@@ -177,8 +175,8 @@ function fazit(b: Blick): string {
   if (b.danach.regeln?.isCheckmate()) return t("sicher.fazitMattGesetzt", { zug: zugtext(b.san) });
   const matt = b.gegner.schachs.find((s) => s.matt);
   if (matt) return t("sicher.fazitMatt", { zug: zugtext(b.san), matt: zugtext(matt.san) });
-  if (b.schlagbilanz !== null && b.schlagbilanz > 0 && b.schlagzug)
-    return t("sicher.fazitVerliert", { zug: zugtext(b.san), schlag: zugtext(b.schlagzug) });
+  if (b.schlag && b.schlag.bilanz > 0)
+    return t("sicher.fazitVerliert", { zug: zugtext(b.san), schlag: zugtext(b.schlag.san) });
   if (b.imFreien) return t("sicher.fazitImFreien", { zug: zugtext(b.san) });
   const schachs = b.gegner.schachs.length;
   if (schachs > 0)
@@ -252,7 +250,7 @@ export function sicherheitswarnung(
   const b = blick(stellung, eigen, zug);
   if (!b || b.danach.regeln?.isCheckmate()) return null;
   const matt = b.gegner.schachs.some((s) => s.matt);
-  const verliert = b.schlagbilanz !== null && b.schlagbilanz > 0;
+  const verliert = b.schlag !== null && b.schlag.bilanz > 0;
   if (!matt && !verliert) return null;
   return { art: matt ? "matt" : "figur", text: fazit(b), markierungen: markierungen(b) };
 }

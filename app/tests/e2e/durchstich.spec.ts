@@ -238,7 +238,7 @@ test("Nachtmodus in den Einstellungen: an, aus, wie das Gerät, auch nach dem Ne
   await expect(wurzel).not.toHaveAttribute("data-farbschema", /.*/);
 });
 
-test("Figurensatz und Ton in den Einstellungen (0.2.33): kontrastreiche Figuren am Brett", async ({
+test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am Brett", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -247,7 +247,7 @@ test("Figurensatz und Ton in den Einstellungen (0.2.33): kontrastreiche Figuren 
   await expect(page.getByRole("radiogroup", { name: "Erst selbst denken" })).toHaveCount(1);
   await page
     .getByRole("radiogroup", { name: "Figurensatz" })
-    .getByRole("radio", { name: "kontrastreich" })
+    .getByRole("radio", { name: "klassisch" })
     .click();
   const ton = page.getByRole("radiogroup", { name: "Ton" });
   await ton.getByRole("radio", { name: "an" }).click();

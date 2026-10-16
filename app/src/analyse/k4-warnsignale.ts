@@ -25,7 +25,7 @@ import { farbkuerzel, feldname, FIGURENWERT, gegner, type Stellung } from "../sc
 import { verlaesstLinie, type Strahl } from "../schach/strahlen";
 import { profil, type Stellungsprofil } from "./stellungsprofil";
 import type { Befund, Markierung, Markierungsfarbe, Werkzeug, Werkzeugergebnis } from "./werkzeug";
-import { aufzaehlung, farbname, figurenname } from "./texte";
+import { aufzaehlung, farbname, figurenname, schlagtext } from "./texte";
 
 /** Figuren, deren Stehen hinter einer anderen Figur W2 auslöst (Pflichtenheft 6.6). */
 const WERTVOLLE_HINTEN = new Set(["king", "queen", "rook"]);
@@ -296,7 +296,7 @@ function fazit(eigen: Color, mein: Signale, sein: Signale, w5: Geschenke): strin
 /** Drei Befunde: Gefahren der eigenen Seite (rot), Ziele beim Gegner (gold), W5 (gold). */
 function alleBefunde(eigen: Color, mein: Signale, sein: Signale, w5: Geschenke) {
   const w5Zeilen = [
-    ...w5.echt.map((schlag) => `${sanInSprache(schlag.san, sprache())} (+${schlag.bilanz})`),
+    ...w5.echt.map((schlag) => `${sanInSprache(schlag.san, sprache())} (${schlagtext(schlag)})`),
     ...w5.scheinbar.map(scheinbarZeile),
   ];
   const befunde: Befund[] = [

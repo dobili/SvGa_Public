@@ -19,7 +19,7 @@ import {
 } from "../schach/drohungen";
 import { feldname, type Stellung } from "../schach/stellung";
 import { profil } from "./stellungsprofil";
-import { farbname, zugtext } from "./texte";
+import { farbname, schlagtext, zugtext } from "./texte";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
 
 /** So viele Kandidaten bekommen eine Nummer am Brett (mehr wird unlesbar). */
@@ -36,7 +36,7 @@ export interface Kandidat {
 function drohungstext(d: Drohung): string {
   return d.art === "matt"
     ? t("erzwingend.droht.matt", { zug: zugtext(d.zug.san) })
-    : t("erzwingend.droht.material", { zug: zugtext(d.zug.san), bilanz: d.zug.bilanz });
+    : t("erzwingend.droht.material", { zug: zugtext(d.zug.san), gewinn: schlagtext(d.zug) });
 }
 
 /** Die Kandidaten in Rechenreihenfolge (Kapitel 7: Schachs, Schläge, Drohungen). */
@@ -51,7 +51,7 @@ function kandidaten(e: ErzwingendeZuege): Kandidat[] {
       nummer: liste.length + 1,
       zug: s,
       art: "schlag",
-      zusatz: t("erzwingend.bilanz", { bilanz: s.bilanz }),
+      zusatz: t("erzwingend.bilanz", { gewinn: schlagtext(s) }),
     });
   }
   for (const d of e.drohende) {

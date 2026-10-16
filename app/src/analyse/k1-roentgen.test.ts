@@ -37,9 +37,9 @@ describe("k1-roentgen an den Buchabbildungen", () => {
     expect(auswertung.fazit).toContain("Zuerst die Schachs prüfen");
   });
 
-  it("Abb. 1.30: Schwarz droht Sxd4 (+1), roter Pfeil c6–d4", () => {
+  it("Abb. 1.30: Schwarz droht Sxd4 (gewinnt den Bauern), roter Pfeil c6–d4", () => {
     const auswertung = ergebnis("1.30");
-    expect(zeilen(auswertung, "drohungen-gegner")).toEqual(["Sxd4 (+1)"]);
+    expect(zeilen(auswertung, "drohungen-gegner")).toEqual(["Sxd4 gewinnt den Bauern"]);
     expect(pfeile(auswertung.markierungen)).toContain("rot c6-d4");
     expect(auswertung.fazit).toContain("Schwarz droht: Sxd4");
   });
@@ -48,7 +48,7 @@ describe("k1-roentgen an den Buchabbildungen", () => {
     const auswertung = ergebnis("1.34");
     expect(zeilen(auswertung, "schachs")).toEqual(["Dxh7#"]);
     expect(auswertung.fazit).toBe("Weiß setzt mit Dxh7# matt.");
-    expect(zeilen(auswertung, "drohungen-gegner")).toEqual(["Sxd3 (+6)"]);
+    expect(zeilen(auswertung, "drohungen-gegner")).toEqual(["Sxd3 schlägt die Dame mit Gewinn"]);
     expect(pfeile(auswertung.markierungen)).toContain("rot b4-d3");
   });
 
@@ -59,7 +59,7 @@ describe("k1-roentgen an den Buchabbildungen", () => {
 
   it("ordnet drohende Züge nach der stärksten Drohung", () => {
     const drohende = zeilen(ergebnis("1.23"), "drohungen");
-    expect(drohende[0]).toMatch(/^c4 droht cxd5 \(\+8\)/);
+    expect(drohende[0]).toMatch(/^c4 droht cxd5 schlägt die Dame mit Gewinn/);
   });
 
   it("Abb. 1.24: Schwarz steht im Schach, die Fragen nach dem Gegner entfallen", () => {

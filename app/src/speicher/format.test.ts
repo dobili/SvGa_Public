@@ -4,6 +4,7 @@
  */
 import { describe, expect, it } from "vitest";
 import {
+  einstellungenAus,
   leereDaten,
   merkerAlsFormat0,
   SCHEMA_VERSION,
@@ -31,6 +32,12 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
     expect(ergebnis.daten.fortschritt).toEqual({ gesehen: {}, uebungen: {}, trainer: {} });
     expect(ergebnis.daten.angelegt).toBe(JETZT.toISOString());
+  });
+
+  it("liest den Figurensatz „kontrastreich“ (bis 0.2.38) als „klassisch“, Unbekanntes als „buch“", () => {
+    expect(einstellungenAus({ figurensatz: "kontrastreich" }).figurensatz).toBe("klassisch");
+    expect(einstellungenAus({ figurensatz: "holz" }).figurensatz).toBe("holz");
+    expect(einstellungenAus({ figurensatz: "bunt" }).figurensatz).toBe("buch");
   });
 
   it("übersteht kaputte und fehlende Merker", () => {

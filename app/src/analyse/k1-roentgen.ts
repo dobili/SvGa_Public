@@ -17,7 +17,7 @@ import { sanInSprache } from "../schach/notation";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import { profil } from "./stellungsprofil";
 import type { Befund, Markierung, Markierungsfarbe, Werkzeug, Werkzeugergebnis } from "./werkzeug";
-import { farbname } from "./texte";
+import { farbname, schlagtext } from "./texte";
 
 /** So viele drohende Züge nennt die Karte mit Namen, der Rest steht als Anzahl dabei. */
 const HOECHSTENS_DROHENDE = 6;
@@ -30,31 +30,25 @@ function zug(angabe: Zugangabe): string {
   return sanInSprache(angabe.san, sprache());
 }
 
-/** Bilanz eines Schlages ohne Verlust: „+3“ oder „Abtausch“ (Kapitel 1, „Noch geht nichts“). */
-function bilanztext(bilanz: number): string {
-  if (bilanz > 0) return t("roentgen.gewinn", { wert: bilanz });
-  return t("roentgen.abtausch");
-}
-
 function schachzeilen(liste: readonly Schachzug[] | null): string[] {
   if (liste === null) return [t("roentgen.entfaellt")];
   return liste.length > 0 ? liste.map(zug) : [t("roentgen.keine")];
 }
 
-/** Schläge ohne Verlust mit Bilanz; Schläge, die Material verlieren, nur als Anzahl. */
+/** Schläge ohne Verlust mit ihrem Ertrag in Worten; Schläge, die Material verlieren, nur als Anzahl. */
 function schlagzeilen(liste: readonly Schlagzug[] | null): string[] {
   if (liste === null) return [t("roentgen.entfaellt")];
   if (liste.length === 0) return [t("roentgen.keine")];
   const sinnvoll = liste.filter((schlag) => schlag.bilanz >= 0);
   const verlierend = liste.length - sinnvoll.length;
-  const zeilen = sinnvoll.map((schlag) => `${zug(schlag)}: ${bilanztext(schlag.bilanz)}`);
+  const zeilen = sinnvoll.map((schlag) => `${zug(schlag)}: ${schlagtext(schlag)}`);
   return verlierend > 0 ? [...zeilen, t("roentgen.verlierende", { anzahl: verlierend })] : zeilen;
 }
 
-/** Eine Drohung als Text: „Matt mit Dxh7#“ oder „Sxd4 (+1)“. */
+/** Eine Drohung als Text: „Matt mit Dxh7#“ oder „Sxd4 gewinnt den Bauern“. */
 function drohungstext(drohung: Drohung): string {
   if (drohung.art === "matt") return t("roentgen.mattMit", { zug: zug(drohung.zug) });
-  return `${zug(drohung.zug)} (+${drohung.zug.bilanz})`;
+  return `${zug(drohung.zug)} ${schlagtext(drohung.zug)}`;
 }
 
 /** Wert einer Drohung zum Ordnen: Matt vor jedem Materialgewinn. */

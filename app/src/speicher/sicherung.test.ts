@@ -32,7 +32,7 @@ describe("Rundreise", () => {
       einstellungen: {
         brettfarben: "gruen",
         strenge: "streng",
-        figurensatz: "kontrastreich",
+        figurensatz: "klassisch",
         ton: "an",
       },
       lernstand: { 1: [0, 2] },

@@ -20,7 +20,7 @@ import { gegenschlagtext, gegnerText, sichernFelder, unruhigesErgebnis } from ".
 import { planlage, type Planlage } from "./planlage";
 import { felderText, linienname } from "./skelett";
 import { profil, type Stellungsprofil } from "./stellungsprofil";
-import { aufzaehlung, farbname, figurenname, figurkurz, zugtext } from "./texte";
+import { aufzaehlung, farbname, figurenname, figurkurz, schlagtext, zugtext } from "./texte";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
 
 /** Ab so vielen Angreifern im Sektor um den eigenen König „läuft der Angriff schon“ (Faustregel: drei). */
@@ -30,7 +30,7 @@ const HOECHSTENS_DROHUNGEN = 4;
 
 function drohungstext(d: Drohung): string {
   if (d.art === "matt") return t("gegner.droht.matt", { zug: zugtext(d.zug.san) });
-  return t("gegner.droht.material", { zug: zugtext(d.zug.san), bilanz: d.zug.bilanz });
+  return t("gegner.droht.material", { zug: zugtext(d.zug.san), gewinn: schlagtext(d.zug) });
 }
 
 /** Was der Gegner jetzt droht (Schach-Röntgen, Frage 3), oder der Hinweis auf das Schach. */

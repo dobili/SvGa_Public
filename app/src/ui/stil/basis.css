@@ -449,6 +449,22 @@ a.knopf-zweit {
   font-size: 20px;
 }
 
+/* Der Titel der Abbildung als Knopf (Nummernsprung): sieht aus wie der Titel, Punkte deuten den Tipp an. */
+.knopf-titel {
+  font: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  padding: 0 4px;
+  min-height: var(--tippflaeche);
+  text-decoration: underline dotted;
+  text-underline-offset: 4px;
+}
+
+.nummernsprung {
+  margin-top: var(--raster);
+}
+
 .kopfzeile-rechts {
   justify-self: end;
   display: flex;

@@ -8,9 +8,10 @@
  * Bedienung: Anfangs ist nichts gewählt, das Brett zeigt die Markierungen des Buches. Mit
  * „Zählen“ zählt ein Tipp aufs Feld Angreifer und Verteidiger; Zählen und Ziehen zeigen dazu ihre
  * Erklärkachel (bis man sie ausblendet). Ein zweites Tippen auf ein Bündel oder Symbol wählt es
- * ab, ebenso ein Tipp auf den Hintergrund.
- * Abhängigkeiten: daten, analyse, engine, ui/brett, ui/komponenten (Werkzeugwahl), Navigation,
- * i18n.
+ * ab, ebenso ein Tipp auf den Hintergrund. Seit 0.2.39 ist der Titel „Abb. 7.12“ ein Knopf: Ein
+ * Tipp öffnet ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors).
+ * Abhängigkeiten: daten, analyse, engine, ui/brett, ui/komponenten (Werkzeugwahl, Nummernsprung),
+ * Navigation, i18n.
  */
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -29,6 +30,7 @@ import { EngineKarte } from "../komponenten/EngineKarte";
 import { FalleKarte } from "../komponenten/FalleKarte";
 import { RuheKarte } from "../komponenten/RuheKarte";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { Nummernfeld, Nummerntitel } from "../komponenten/Nummernsprung";
 import { Unterschrift } from "../komponenten/Unterschrift";
 import { useDaten } from "../komponenten/useDaten";
 import { useEroeffnungsindex } from "../komponenten/useEroeffnungsindex";
@@ -374,15 +376,19 @@ export function Abbildung({ nummer }: { nummer: string }) {
   const kapitel = useDaten(() => ladeKapitel(kapitelnummer), `kapitel-${kapitelnummer}`);
   const abbildung =
     kapitel.art === "fertig" ? kapitel.wert.abbildungen.find((a) => a.id === nummer) : undefined;
+  const [sprung, setzeSprung] = useState(false);
   return (
     <div className="bildschirm bildschirm-abbildung">
       <Kopfzeile
-        titel={t("abbildung.titel", { nummer })}
+        titel={
+          <Nummerntitel nummer={nummer} offen={sprung} beiTipp={() => setzeSprung((s) => !s)} />
+        }
         zurueckText={t("abbildung.zurueck")}
         rechts={
           kapitel.art === "fertig" ? <Blaettern kapitel={kapitel.wert} nummer={nummer} /> : null
         }
       />
+      {sprung && <Nummernfeld beiSchliessen={() => setzeSprung(false)} />}
       {kapitel.art === "laedt" && <p className="lade">…</p>}
       {kapitel.art === "fehler" && (
         <p className="fehlertext">{t("buch.ladefehler", { fehler: kapitel.meldung })}</p>

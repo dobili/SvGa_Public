@@ -19,13 +19,13 @@ import type { Verlauf } from "../schach/todsuenden";
 import { warnsignaleSieben } from "./k7-warnsignale";
 import { phasenzeilen, werkzeugzeilen } from "./k11-phase";
 import { profil } from "./stellungsprofil";
-import { aufzaehlung, farbname, zugtext } from "./texte";
+import { aufzaehlung, farbname, schlagtext, zugtext } from "./texte";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
 
-/** Eine Drohung als Zeile: „Sxe5 gewinnt +3“ oder „Dh7# setzt matt“. */
+/** Eine Drohung als Zeile: „Sxe5 gewinnt den Läufer“ oder „Dh7# setzt matt“. */
 function drohungstext(d: Drohung): string {
   if (d.art === "matt") return t("erfassen.drohtMatt", { zug: zugtext(d.zug.san) });
-  return t("erfassen.drohtMaterial", { zug: zugtext(d.zug.san), bilanz: d.zug.bilanz });
+  return t("erfassen.drohtMaterial", { zug: zugtext(d.zug.san), gewinn: schlagtext(d.zug) });
 }
 
 /** Zeilen zum letzten Zug und zu den Drohungen des Gegners. */

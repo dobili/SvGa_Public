@@ -33,7 +33,7 @@ describe("kandidatenzeile (Abb. 7.14)", () => {
       wert: { art: "bauern", bauern: 6.2 },
     });
     expect(TH8 && kandidatenzeile(STELLUNG, "white", TH8, ruhe)).toBe(
-      "2. Th8+ Kxh8 Sxf7+ Kg8 Sxd6 – bis zur Ruhe: +5 (gewinnt die Dame); Engine +6,20",
+      "2. Th8+ Kxh8 Sxf7+ Kg8 Sxd6 – Material bis zur Ruhe: +5 (gewinnt die Dame); Engine +6,20",
     );
   });
 
@@ -45,14 +45,14 @@ describe("kandidatenzeile (Abb. 7.14)", () => {
       wert: { art: "bauern", bauern: -1.5 },
     });
     expect(SXF7 && kandidatenzeile(STELLUNG, "white", SXF7, ruhe)).toContain(
-      "– bis zur Ruhe: −2 (verliert einen Springer)",
+      "– Material bis zur Ruhe: −2 (verliert einen Springer)",
     );
   });
 
   it("1. Te8+: Material gleich, noch nicht ruhig", () => {
     const ruhe = ergebnis({ zuege: ["e1e8", "a8e8"], ende: "offen" });
     expect(TE8 && kandidatenzeile(STELLUNG, "white", TE8, ruhe)).toBe(
-      "1. Te8+ Txe8 – bis zur Ruhe: 0 (Material gleich, noch nicht ruhig); Engine +0,00",
+      "1. Te8+ Txe8 – Material bis zur Ruhe: 0 (Material gleich, noch nicht ruhig); Engine +0,00",
     );
   });
 

@@ -8,7 +8,8 @@ import type { ReactNode } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 
 interface KopfzeileEigenschaften {
-  readonly titel: string;
+  /** Der Titel, meist Text; an der Abbildung ein Knopf (Nummernsprung, seit 0.2.39). */
+  readonly titel: ReactNode;
   /** Beschriftung des Zurück-Knopfs, etwa „Kapitel 1“. Ohne Angabe gibt es keinen Knopf. */
   readonly zurueckText?: string;
   readonly rechts?: ReactNode;

@@ -15,12 +15,12 @@ describe("k7-erzwingend", () => {
     const schachs = zeilen("7.11", "schach");
     expect(schachs).toContain("7. Sd6+");
     expect(schachs).toContain("8. Sf6+");
-    expect(zeilen("7.11", "schlag")).toEqual(["9. Dxh5 (5)"]);
+    expect(zeilen("7.11", "schlag")).toEqual(["9. Dxh5 (gewinnt den Turm)"]);
   });
 
   it("Abb. 7.14: Schachs zuerst (Te8+, Th8+), dann der Schlag Sxf7 mit Bilanz", () => {
     expect(zeilen("7.14", "schach")).toEqual(["1. Te8+", "2. Th8+"]);
-    expect(zeilen("7.14", "schlag")).toEqual(["3. Sxf7 (-2)"]);
+    expect(zeilen("7.14", "schlag")).toEqual(["3. Sxf7 (verliert Material)"]);
     const e = erzwingend(stellungVon("7.14"), "white");
     expect(e.markierungen).toContainEqual({ typ: "feld", farbe: "gold", feld: "h8", text: "2+" });
     expect(e.fazit).toBe(

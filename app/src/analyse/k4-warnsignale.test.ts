@@ -39,9 +39,9 @@ describe("k4-warnsignale an den Fallenchecks aus Kapitel 4", () => {
     expect(alle.some((zeile) => zeile.startsWith("W2"))).toBe(false);
   });
 
-  it("Abb. 4.11: W5 Lxf3 (+6), W3 König e8 ohne Luft, W2 Dame f3 auf b7 und a8", () => {
+  it("Abb. 4.11: W5 Lxf3 (schlägt die Dame mit Gewinn), W3 König e8 ohne Luft, W2 Dame f3 auf b7 und a8", () => {
     const auswertung = ergebnis("4.11");
-    expect(zeilen(auswertung, "w5")).toEqual(["Lxf3 (+6)"]);
+    expect(zeilen(auswertung, "w5")).toEqual(["Lxf3 (schlägt die Dame mit Gewinn)"]);
     const eigen = zeilen(auswertung, "eigen");
     expect(eigen).toContain("W3 Ohne Luft: König e8");
     expect(eigen).toContain("W2 Gefährliche Linie: Dame f3 – Bauer b7 – Turm a8 (Fesselung)");
@@ -58,15 +58,15 @@ describe("k4-warnsignale an den Fallenchecks aus Kapitel 4", () => {
     expect(zeilen(ergebnis("4.21"), "eigen")).toContain("W3 Ohne Luft: König e1");
   });
 
-  it("Abb. 4.24: W5 Sxe4 (+1) und W3 König e8", () => {
+  it("Abb. 4.24: W5 Sxe4 (gewinnt den Bauern) und W3 König e8", () => {
     const auswertung = ergebnis("4.24");
-    expect(zeilen(auswertung, "w5")).toEqual(["Sxe4 (+1)"]);
+    expect(zeilen(auswertung, "w5")).toEqual(["Sxe4 (gewinnt den Bauern)"]);
     expect(zeilen(auswertung, "eigen")).toContain("W3 Ohne Luft: König e8");
   });
 
-  it("Abb. 4.38: W5 fxe5 (+1) mit goldenem Pfeil", () => {
+  it("Abb. 4.38: W5 fxe5 (gewinnt den Bauern) mit goldenem Pfeil", () => {
     const auswertung = ergebnis("4.38");
-    expect(zeilen(auswertung, "w5")).toEqual(["fxe5 (+1)"]);
+    expect(zeilen(auswertung, "w5")).toEqual(["fxe5 (gewinnt den Bauern)"]);
     expect(auswertung.markierungen).toContainEqual({
       typ: "pfeil",
       farbe: "gold",

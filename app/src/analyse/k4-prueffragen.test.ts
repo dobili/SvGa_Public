@@ -90,7 +90,7 @@ describe("k4-prueffragen an den Fallenchecks aus Kapitel 4", () => {
   it("ohne geplanten Zug: F1 nennt scheinbare Geschenke, F3 nur die Stellung", () => {
     const auswertung = ergebnis("4.11", "");
     expect(zeilen(auswertung, "f1")).toEqual([
-      "Lxf3 gewinnt scheinbar 6: Warum lässt Weiß das zu?",
+      "Lxf3 scheint die Dame zu gewinnen: Warum lässt Weiß das zu?",
     ]);
     expect(auswertung.befunde.some((befund) => befund.kennung === "f3-nach")).toBe(false);
   });

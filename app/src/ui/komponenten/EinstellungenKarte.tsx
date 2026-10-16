@@ -5,7 +5,8 @@
  * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: Sprache, Brettfarben, Figurensatz, Ton,
  * Auflage des Buches, Strenge des Modus ‚Erst selbst denken‘“. Was es noch nicht zu wählen gibt,
  * steht mit „folgt“ da (Sprache). Die Auflage zeigt die Zeile „Datenstand“ darüber.
- * Seit 0.2.33 (Fragen des Autors vom 16.10.2026): Figurensatz (wie im Buch, kontrastreich) und Ton
+ * Seit 0.2.33 (Fragen des Autors vom 16.10.2026): Figurensatz (wie im Buch, klassisch, seit 0.2.39
+ * auch Holz) und Ton
  * (aus, an) sind wählbar. „Erst selbst denken“ war bis AP 13 ausgeblendet; seit 0.2.37 wirkt es
  * bei den Übungen des Buches (Hinweise und Lösung erst nach eigenem Nachdenken) und ist wählbar.
  * Nachtmodus (seit 0.2.31, Wunsch des Autors): wie das Gerät, aus oder an (app/farbschema.ts).
@@ -33,7 +34,7 @@ import { Auswahl } from "./Auswahl";
 import { zeigeErklaerungenWieder } from "./useErklaerung";
 
 const BRETTFARBEN: readonly Brettfarben[] = ["buch", "holz", "gruen"];
-const FIGURENSAETZE: readonly Figurensatz[] = ["buch", "kontrastreich"];
+const FIGURENSAETZE: readonly Figurensatz[] = ["buch", "klassisch", "holz"];
 const TOENE: readonly Ton[] = ["aus", "an"];
 const STRENGEN: readonly Strenge[] = ["locker", "streng"];
 const KOORDINATEN = ["an", "aus"] as const;

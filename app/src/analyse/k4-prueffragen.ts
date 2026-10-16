@@ -26,7 +26,7 @@ import { sanInSprache } from "../schach/notation";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import { profil } from "./stellungsprofil";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
-import { farbname, figurenname } from "./texte";
+import { farbname, figurenname, figurImWenfall } from "./texte";
 
 /** So viele scheinbare Geschenke nennt F1 höchstens. */
 const HOECHSTENS_GESCHENKE = 3;
@@ -86,11 +86,13 @@ function warumFrage(stellung: Stellung, eigen: Color, plan: GeplanterZug | null)
   if (plan?.schlaegt) return [t("prueffragen.f1.schlag", { zug: inSprache(plan.san), wer })];
   const geschenke = (profil(stellung).schlaegeVon(eigen) ?? []).filter((s) => s.bilanz > 0);
   if (geschenke.length === 0) return [];
-  return geschenke
-    .slice(0, HOECHSTENS_GESCHENKE)
-    .map((schlag) =>
-      t("prueffragen.f1.geschenk", { zug: inSprache(schlag.san), wert: schlag.bilanz, wer }),
-    );
+  return geschenke.slice(0, HOECHSTENS_GESCHENKE).map((schlag) =>
+    t("prueffragen.f1.geschenk", {
+      zug: inSprache(schlag.san),
+      figur: figurImWenfall(schlag.geschlagen),
+      wer,
+    }),
+  );
 }
 
 /** Zeilen des zweiten Teils von F3: Was ändert der geplante Zug an den Fesselungen? */

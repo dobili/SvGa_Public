@@ -14,6 +14,7 @@ import { t } from "../../i18n/sprache";
 import { kapitelfortschritt } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
 import { Fortschrittsbalken } from "../komponenten/Fortschrittsbalken";
+import { Fundmeldung } from "../komponenten/Nummernsprung";
 import { useDaten } from "../komponenten/useDaten";
 
 /** Kapitel 0 bis 12 des Buches. */
@@ -22,38 +23,6 @@ const ANZAHL_KAPITEL = 13;
 /** Alle Abbildungsnummern des Verzeichnisses. */
 function alleNummern(index: Datenverzeichnis): string[] {
   return index.kapitel.flatMap((kapitel) => kapitel.abbildungen);
-}
-
-function Meldung({
-  fund,
-  oeffne,
-}: {
-  fund: Fundergebnis | null;
-  oeffne: (nummer: string) => void;
-}) {
-  if (!fund || fund.art === "gefunden") return null;
-  if (fund.art === "ungueltig") {
-    return (
-      <p className="fehlertext" role="alert">
-        {t("buch.ungueltig")}
-      </p>
-    );
-  }
-  return (
-    <div role="alert">
-      <p className="fehlertext">{t("buch.nichtGefunden", { eingabe: fund.nummer })}</p>
-      {fund.vorschlaege.length > 0 && (
-        <p className="vorschlaege">
-          {t("buch.vorschlaege")}{" "}
-          {fund.vorschlaege.map((nummer) => (
-            <button key={nummer} type="button" className="chip" onClick={() => oeffne(nummer)}>
-              {nummer}
-            </button>
-          ))}
-        </p>
-      )}
-    </div>
-  );
 }
 
 function Nummernfeld({ index }: { index: Datenverzeichnis }) {
@@ -91,7 +60,7 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
           {t("buch.oeffnen")}
         </button>
       </div>
-      <Meldung fund={fund} oeffne={oeffne} />
+      <Fundmeldung fund={fund} oeffne={oeffne} />
       {zuletzt && (
         <button type="button" className="knopf-link links" onClick={() => oeffne(zuletzt)}>
           {t("buch.zuletzt")} <strong>Abb. {zuletzt}</strong>

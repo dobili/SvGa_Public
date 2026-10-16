@@ -13,8 +13,8 @@ function zeilen(nummer: string, kennung: string): readonly string[] {
 describe("k7-ruhe", () => {
   it("Abb. 7.27: Weiß droht Td8+ mit Matt; die Gegendrohung ist das Dauerschach De1+", () => {
     const e = ruhe(stellungVon("7.27"), "black");
-    // Td8+ ist eine Mattdrohung in zwei Zügen; die App sieht im nächsten Zug nur Txf7 (+1).
-    expect(e.befunde[1]?.titel).toBe("Weiß droht (Txf7, +1): die fünf Abwehrfragen");
+    // Td8+ ist eine Mattdrohung in zwei Zügen; die App sieht im nächsten Zug nur Txf7 (gewinnt den Bauern).
+    expect(e.befunde[1]?.titel).toBe("Weiß droht (Txf7 gewinnt den Bauern): die fünf Abwehrfragen");
     const abwehr = zeilen("7.27", "abwehr");
     expect(abwehr[0]).toBe("1. Schlagen: die drohende Figur auf d7 kannst du nicht schlagen");
     expect(abwehr[1]).toMatch(/^2\. Wegziehen:/);

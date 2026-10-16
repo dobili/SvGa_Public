@@ -21,7 +21,7 @@ describe("k12-sicherheitsblick", () => {
       "Der Gegner hat kein Schach: sicher.",
     ]);
     expect(e.befunde[1]?.zeilen).toEqual([
-      "Ja: Kxh7 gewinnt +3. Opfer oder Versehen? Rechne die Antwort zu Ende.",
+      "Ja: Kxh7 gewinnt den Läufer. Opfer oder Versehen? Rechne die Antwort zu Ende.",
     ]);
     expect(e.befunde[2]?.zeilen).toEqual(["Kein Schach möglich."]);
     expect(e.markierungen).toContainEqual({ typ: "pfeil", farbe: "rot", von: "g8", nach: "h7" });

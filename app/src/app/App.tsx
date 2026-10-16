@@ -20,6 +20,7 @@ import { Denkroutine } from "../ui/bildschirme/Denkroutine";
 import { Begriff, Glossar } from "../ui/bildschirme/Glossar";
 import { Nachschlagen } from "../ui/bildschirme/Nachschlagen";
 import { Training } from "../ui/bildschirme/Training";
+import { Uebung } from "../ui/bildschirme/Uebung";
 import { Partie } from "../ui/bildschirme/Partie";
 import { Spielen } from "../ui/bildschirme/Spielen";
 import { Lizenzen } from "../ui/bildschirme/Lizenzen";
@@ -62,6 +63,10 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
       return <Ich />;
     case "lizenzen":
       return <Lizenzen />;
+    case "uebung":
+      return (
+        <Uebung key={ansicht.id} kapitel={ansicht.kapitel} id={ansicht.id} reihe={ansicht.reihe} />
+      );
   }
 }
 

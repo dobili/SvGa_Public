@@ -13,6 +13,7 @@ import { ladeIndex } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { TRAINER, trainerZuKapitel, type Trainer } from "../../training/trainer";
 import { kapiteladresse } from "../../startseite/trainingsseiten";
+import { FaelligeWiederholungen } from "../komponenten/FaelligeWiederholungen";
 import { useDaten } from "../komponenten/useDaten";
 
 /** Ein Trainer als aufklappbarer Eintrag mit seinem Ablauf. */
@@ -71,7 +72,7 @@ export function Training() {
       </header>
       <section className="karte">
         <h2 className="karte-titel">{t("training.faellig")}</h2>
-        <p className="hinweis">{t("training.keineFaellig")}</p>
+        <FaelligeWiederholungen />
       </section>
       <section className="karte">
         <h2 className="karte-titel">{t("training.uebersicht.titel")}</h2>

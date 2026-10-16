@@ -1,0 +1,57 @@
+/*
+ * Stil der Übungen (AP 13): Bildschirm „Übung“, Liste im Kapitel, fällige Wiederholungen.
+ * Farben und Abstände aus basis.css.
+ */
+.uebung {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+}
+
+.knopfzeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.uebung-hilfe {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.uebung-hilfe p {
+  margin: 0;
+}
+
+.meldung {
+  margin: 0;
+  font-weight: 600;
+}
+
+.meldung.gut {
+  color: var(--gruen-text);
+}
+
+.meldung.schlecht {
+  color: var(--rot-text);
+}
+
+.uebung-loesung {
+  font-weight: 700;
+}
+
+.uebungsliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.uebung-zeichen {
+  display: inline-block;
+  width: 1.5em;
+  color: var(--gruen-text);
+}

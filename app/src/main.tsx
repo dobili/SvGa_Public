@@ -20,6 +20,7 @@ import "./ui/stil/nachschlagen.css";
 import "./ui/stil/speicher.css";
 import "./ui/stil/vorbereitet.css";
 import "./ui/stil/spiel.css";
+import "./ui/stil/uebung.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteOffline } from "./app/offline";

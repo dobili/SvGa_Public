@@ -22,6 +22,7 @@ import { t } from "../../i18n/sprache";
 import { Brett } from "../brett/Brett";
 import { buchmarkierungen } from "../komponenten/buchmarkierungen";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { KapitelUebungen } from "../komponenten/KapitelUebungen";
 import { useDaten } from "../komponenten/useDaten";
 import { Kapitelfortschritt } from "../komponenten/Kapitelfortschritt";
 import { setzeGesehen } from "../../speicher/fortschritt";
@@ -180,6 +181,7 @@ function Inhalt({ kapitel }: { kapitel: KapitelDaten }) {
       <Kapitelfortschritt kapitel={kapitel} />
       <AlleAbhaken kapitel={kapitel} />
       <KapitelTrainer nummer={kapitel.kapitel} />
+      <KapitelUebungen kapitel={kapitel} />
       {nachAbschnitten(kapitel).map((gruppe) => (
         <section key={gruppe.nummer || "vorn"} className="abschnitt">
           {gruppe.nummer && (

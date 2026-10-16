@@ -8,6 +8,7 @@
  * Abhängigkeiten: speicher/format.ts, training/trainer.ts.
  */
 import { trainerZuKapitel, type TrainerKennung } from "../training/trainer";
+import { beantworte, uebungskarte, type Antwortergebnis } from "../training/wiederholung";
 import type { Fortschritt, Nutzerdaten, Trainerstand } from "./format";
 
 /** Zähler „x von y“. */
@@ -84,6 +85,30 @@ export function notiereUebung(
   };
   const uebungen = { ...daten.fortschritt.uebungen, [uebung.id]: neu };
   return { ...daten, fortschritt: { ...daten.fortschritt, uebungen } };
+}
+
+/**
+ * Trägt das Ergebnis einer Übung ein: Versuch im Fortschritt und Wiederholungskarte (AP 13).
+ *
+ * Warum: Konzept 9.1. Richtig gelöst rückt die Karte einen Kasten weiter, mit Hinweisen gelöst
+ * bleibt sie, falsch oder mit „Lösung zeigen“ geht sie zurück in Kasten 1.
+ * Entscheidung (Q6, 16.10.2026): Mit Hinweisen gelöst zählt als gelöst; „Lösung zeigen“ zählt
+ * nicht als gelöst.
+ * Beispiel: erste richtige Lösung von „ueb:droh-ignorieren“ → gelöst, Karte in Kasten 2.
+ */
+export function notiereUebungsergebnis(
+  daten: Nutzerdaten,
+  uebung: { id: string; kapitel: number; ergebnis: Antwortergebnis },
+  jetzt: Date,
+): Nutzerdaten {
+  const mitVersuch = notiereUebung(
+    daten,
+    { id: uebung.id, kapitel: uebung.kapitel, richtig: uebung.ergebnis !== "falsch" },
+    jetzt,
+  );
+  const kennung = uebungskarte(uebung.id);
+  const karte = beantworte(daten.karten[kennung] ?? null, uebung.ergebnis, jetzt);
+  return { ...mitVersuch, karten: { ...daten.karten, [kennung]: karte } };
 }
 
 /** Notiert einen abgeschlossenen Durchgang eines Trainers (Aufgaben und richtige Antworten). */

@@ -98,13 +98,17 @@ describe("Lesen aus Rohdaten", () => {
     expect(partieAus(durchJson(p))).toEqual(p);
   });
 
-  it("Format 2 mit laufender und beendeter Partie bleibt beim Einspielen erhalten", () => {
+  it("Laufende und beendete Partie bleiben beim Einspielen erhalten", () => {
     const spiel = mitLaufender(
       mitWerten(legeAb(LEERER_SPIELSTAND, partie("a")), "a", [0, 1, 2, 3], ["a", "b", "c", ""]),
       partie("b"),
     );
     const daten = { ...leereDaten(JETZT), spiel };
-    expect(wandleUm(durchJson(daten), JETZT)).toEqual({ ok: true, daten, vonVersion: 2 });
+    expect(wandleUm(durchJson(daten), JETZT)).toEqual({
+      ok: true,
+      daten,
+      vonVersion: daten.schemaVersion,
+    });
   });
 
   it("eine laufende Uhr steht nach dem Laden, mit der gespeicherten Restzeit", () => {

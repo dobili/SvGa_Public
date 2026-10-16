@@ -46,7 +46,7 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
 });
 
 describe("Format 1", () => {
-  it("wird zu Format 2 ohne Partien, alles andere bleibt", () => {
+  it("wird zum aktuellen Format ohne Partien und Karten, alles andere bleibt", () => {
     const format1 = {
       schemaVersion: 1,
       angelegt: "2026-10-10T08:00:00.000Z",
@@ -70,6 +70,7 @@ describe("Format 1", () => {
         einstellungen: { ...format1.einstellungen, figurensatz: "buch", ton: "aus" },
         schemaVersion: SCHEMA_VERSION,
         spiel: LEERER_SPIELSTAND,
+        karten: {},
       },
       vonVersion: 1,
     });
@@ -112,5 +113,24 @@ describe("Abgelehnte Daten", () => {
     for (const roh of [null, "text", [1], { schemaVersion: "1" }, { schemaVersion: -1 }]) {
       expect(wandleUm(roh, JETZT)).toEqual({ ok: false, grund: "kaputt" });
     }
+  });
+});
+
+describe("Format 2", () => {
+  it("wird zu Format 3 mit leeren Wiederholungskarten, alles andere bleibt", () => {
+    const format2 = { ...leereDaten(JETZT), schemaVersion: 2 } as Record<string, unknown>;
+    delete format2.karten;
+    const ergebnis = wandleUm(JSON.parse(JSON.stringify(format2)), JETZT);
+    expect(ergebnis).toEqual({ ok: true, daten: leereDaten(JETZT), vonVersion: 2 });
+  });
+
+  it("Karten bleiben beim Lesen erhalten, kaputte fallen weg", () => {
+    const karte = { kasten: 2, faellig: "2026-10-19T20:00:00.000Z", verlauf: [] };
+    const roh = {
+      ...leereDaten(JETZT),
+      karten: { "uebung:ueb:a": karte, kaputt: { kasten: "x" } },
+    };
+    const ergebnis = wandleUm(JSON.parse(JSON.stringify(roh)), JETZT);
+    expect(ergebnis.ok && ergebnis.daten.karten).toEqual({ "uebung:ueb:a": karte });
   });
 });

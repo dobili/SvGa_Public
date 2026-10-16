@@ -7,6 +7,7 @@ import {
   markiereGesehen,
   notiereDurchgang,
   notiereUebung,
+  notiereUebungsergebnis,
   setzeGesehen,
 } from "./fortschritt";
 
@@ -45,6 +46,26 @@ describe("Fortschritt", () => {
     });
     expect(geloesteUebungen(daten.fortschritt, 1)).toBe(1);
     expect(geloesteUebungen(daten.fortschritt, 2)).toBe(0);
+  });
+
+  it("Übungsergebnis: gelöst mit Karte; „Lösung zeigen“ zählt nicht als gelöst (Q6)", () => {
+    const uebung = { id: "ueb:droh-ignorieren", kapitel: 1 };
+    const richtig = notiereUebungsergebnis(
+      leereDaten(ERST),
+      { ...uebung, ergebnis: "richtig" },
+      ERST,
+    );
+    expect(richtig.fortschritt.uebungen[uebung.id]?.geloest).toBe(true);
+    expect(richtig.karten["uebung:ueb:droh-ignorieren"]?.kasten).toBe(2);
+    const gezeigt = notiereUebungsergebnis(
+      leereDaten(ERST),
+      { ...uebung, ergebnis: "falsch" },
+      ERST,
+    );
+    expect(gezeigt.fortschritt.uebungen[uebung.id]?.geloest).toBe(false);
+    expect(gezeigt.karten["uebung:ueb:droh-ignorieren"]?.kasten).toBe(1);
+    const hilfe = notiereUebungsergebnis(richtig, { ...uebung, ergebnis: "mitHilfe" }, DANN);
+    expect(hilfe.karten["uebung:ueb:droh-ignorieren"]?.kasten).toBe(2);
   });
 
   it("summiert die Durchgänge eines Trainers", () => {

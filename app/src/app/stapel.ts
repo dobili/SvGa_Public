@@ -30,7 +30,18 @@ export type Ansicht =
   /** Eine Partie gegen die Engine, laufend oder beendet (mit Auswertung). */
   | { readonly bildschirm: "partie"; readonly id: string }
   | { readonly bildschirm: "ich" }
-  | { readonly bildschirm: "lizenzen" };
+  | { readonly bildschirm: "lizenzen" }
+  /** Eine Übung des Buches lösen (AP 13); mit Reihe, wenn „Nächste Übung“ weiterführt. */
+  | ({
+      readonly bildschirm: "uebung";
+      readonly reihe?: readonly Uebungsverweis[];
+    } & Uebungsverweis);
+
+/** Eine Übung: Kapitel (zum Laden) und Kennung wie im LaTeX („ueb:droh-ignorieren“). */
+export interface Uebungsverweis {
+  readonly kapitel: number;
+  readonly id: string;
+}
 
 /** Der Stapel: unten die Startansicht des Bereichs, oben die sichtbare Ansicht. */
 export interface Stapel {

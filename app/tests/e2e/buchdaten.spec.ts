@@ -81,9 +81,11 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await leiste.getByRole("button", { name: "Training" }).click();
   const zaehltrainer = page.getByTestId("trainer-zaehlen");
   await expect(zaehltrainer).toContainText("Zähltrainer");
-  await expect(zaehltrainer).toContainText("folgt mit einem Update");
-  await zaehltrainer.getByText("Zähltrainer").click();
   await expect(zaehltrainer).toContainText("Abtauschbilanz in Bauerneinheiten");
+  await expect(zaehltrainer.getByRole("button", { name: "Trainieren" })).toBeVisible();
+  // Noch nicht spielbare Trainer stehen aufklappbar mit „folgt mit einem Update“ da.
+  const taktik = page.getByTestId("trainer-taktik");
+  await expect(taktik).toContainText("folgt mit einem Update");
   await expect(page.getByTestId("trainer-denkroutine")).toContainText("Denkroutine-Trainer");
   // Jedes Kapitel hat seine Trainingsseite, auch Kapitel 9 (sein Trainer gehört auch zu Kapitel 8).
   const kastenlinks = page.getByRole("link", { name: "Training zu diesem Kapitel (Website)" });

@@ -4,8 +4,9 @@
  * Rolle im Gesamtbild: Die App wechselt Bildschirme intern; die Adresse im Browser bleibt gleich
  * (Konzept 6.6, „navigiere“ und „zurueck“). Diese Datei enthält nur die reine Logik des Stapels,
  * damit sie ohne Browser testbar ist. Die Verbindung zur Zurück-Taste steht in navigation.tsx.
- * Abhängigkeiten: keine.
+ * Abhängigkeiten: nur der Typ der Trainerkennungen (training/trainer.ts).
  */
+import type { TrainerKennung } from "../training/trainer";
 
 /** Die fünf Bereiche der Leiste unten. */
 export type Bereich = "buch" | "training" | "spielen" | "nachschlagen" | "ich";
@@ -35,7 +36,9 @@ export type Ansicht =
   | ({
       readonly bildschirm: "uebung";
       readonly reihe?: readonly Uebungsverweis[];
-    } & Uebungsverweis);
+    } & Uebungsverweis)
+  /** Ein Trainer: Übungsart wählen und Runden spielen (AP 13). */
+  | { readonly bildschirm: "trainer"; readonly kennung: TrainerKennung };
 
 /** Eine Übung: Kapitel (zum Laden) und Kennung wie im LaTeX („ueb:droh-ignorieren“). */
 export interface Uebungsverweis {

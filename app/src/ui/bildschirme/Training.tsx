@@ -16,8 +16,27 @@ import { kapiteladresse } from "../../startseite/trainingsseiten";
 import { FaelligeWiederholungen } from "../komponenten/FaelligeWiederholungen";
 import { useDaten } from "../komponenten/useDaten";
 
-/** Ein Trainer als aufklappbarer Eintrag mit seinem Ablauf. */
+/**
+ * Ein Trainer mit seinem Ablauf: spielbare Trainer als Karte mit „Trainieren“ (AP 13), die
+ * übrigen als aufklappbarer Eintrag mit „folgt mit einem Update“.
+ */
 export function Trainerkarte({ trainer }: { trainer: Trainer }) {
+  const { navigiere } = useNavigation();
+  if (trainer.fertig) {
+    return (
+      <div className="trainerkarte bereit" data-testid={`trainer-${trainer.kennung}`}>
+        <span className="trainer-name">{t(`trainer.${trainer.kennung}.name`)}</span>
+        <p>{t(`trainer.${trainer.kennung}.ablauf`)}</p>
+        <button
+          type="button"
+          className="knopf-zweit"
+          onClick={() => navigiere({ bildschirm: "trainer", kennung: trainer.kennung })}
+        >
+          {t("training.trainieren")}
+        </button>
+      </div>
+    );
+  }
   return (
     <details className="trainerkarte" data-testid={`trainer-${trainer.kennung}`}>
       <summary>

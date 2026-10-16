@@ -1,0 +1,95 @@
+/**
+ * Oberflächentests der ersten Trainer (AP 13 Teil 2): Koordinaten (Feld finden, Zug aufschreiben,
+ * Gangarten), Zähltrainer (Bilanz, hängende Figuren), Schach-Röntgen-Trainer. Die Aufgaben sind
+ * zufällig; die Tests lesen deshalb den Auftrag oder prüfen nur den Ablauf.
+ */
+import { expect, test, type Page } from "@playwright/test";
+import { starteImBrowser } from "./hilfen";
+
+async function oeffneTrainer(page: Page, kennung: string): Promise<void> {
+  await page
+    .getByRole("navigation", { name: "Hauptbereiche" })
+    .getByRole("button", { name: "Training" })
+    .click();
+  await page.getByTestId(`trainer-${kennung}`).getByRole("button", { name: "Trainieren" }).click();
+  await expect(page.getByTestId("trainer")).toBeVisible();
+}
+
+const feld = (page: Page, name: string) =>
+  page.getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
+
+test("Feld finden: sechzehn Felder aus beiden Perspektiven, Ergebnis mit Zeit", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "koordinaten");
+  await page.getByRole("button", { name: /Feld finden/ }).click();
+  const auftrag = page.getByTestId("feld-auftrag");
+  for (let i = 0; i < 16; i += 1) {
+    await expect(page.getByText(`Aufgabe ${i + 1} von 16`)).toBeVisible();
+    const text = (await auftrag.textContent()) ?? "";
+    const gesucht = text.replace("Tippe auf ", "").trim();
+    if (i === 8) await page.screenshot({ path: "test-results/bilder/trainer-felder.png" });
+    await feld(page, gesucht).click();
+  }
+  const ende = page.getByTestId("runde-ende");
+  await expect(ende).toContainText("16 von 16 Aufgaben richtig");
+  await expect(ende).toContainText("Sekunden");
+  await ende.getByRole("button", { name: "Andere Übung" }).click();
+  await expect(page.getByRole("button", { name: /Gangarten/ })).toBeVisible();
+});
+
+test("Zug aufschreiben: falsche Schreibweise, das Buch schreibt den Zug", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "koordinaten");
+  await page.getByRole("button", { name: /Zug aufschreiben/ }).click();
+  await page.getByRole("textbox", { name: "Zug in Notation" }).fill("Qa1");
+  await page.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("trainer")).toContainText("Das Buch schreibt");
+});
+
+test("Gangarten: Prüfen ohne Tipp zeigt die Zielfelder, Weiter zur zweiten Aufgabe", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "koordinaten");
+  await page.getByRole("button", { name: /Gangarten/ }).click();
+  await page.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("trainer")).toContainText("Zielfelder");
+  await page.getByRole("button", { name: "Weiter" }).click();
+  await expect(page.getByText("Aufgabe 2 von 8")).toBeVisible();
+});
+
+test("Zähltrainer: Bilanz zählen zeigt die Rechnung der App", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "zaehlen");
+  await page.getByRole("button", { name: /Bilanz zählen/ }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await runde
+    .getByRole("group", { name: "Angreifer", exact: true })
+    .getByRole("button", { name: "1", exact: true })
+    .click();
+  await runde
+    .getByRole("group", { name: "Verteidiger" })
+    .getByRole("button", { name: "1", exact: true })
+    .click();
+  await runde.getByRole("button", { name: "lohnt nicht" }).click();
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
+  await page.screenshot({ path: "test-results/bilder/trainer-zaehlen.png", fullPage: true });
+});
+
+test("Schach-Röntgen-Trainer: drei Schritte, dann Weiter", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "roentgen");
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Schritt 1 von 3");
+  for (const naechster of [true, true, false]) {
+    await runde.getByRole("button", { name: "Prüfen" }).click();
+    await expect(runde.getByRole("status")).toBeVisible();
+    if (naechster) await runde.getByRole("button", { name: "Nächster Schritt" }).click();
+  }
+  await page.screenshot({ path: "test-results/bilder/trainer-roentgen.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 5");
+});

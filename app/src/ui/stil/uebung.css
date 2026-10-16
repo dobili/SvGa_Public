@@ -1,5 +1,6 @@
 /*
- * Stil der Übungen (AP 13): Bildschirm „Übung“, Liste im Kapitel, fällige Wiederholungen.
+ * Stil der Übungen und Trainer (AP 13): Bildschirm „Übung“, Liste im Kapitel, fällige
+ * Wiederholungen, Bildschirm „Trainer“ mit Runden.
  * Farben und Abstände aus basis.css.
  */
 .uebung {
@@ -54,4 +55,67 @@
   display: inline-block;
   width: 1.5em;
   color: var(--gruen-text);
+}
+
+.uebung,
+.trainerrunde,
+.trainer-aufgabe {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+}
+
+.trainer-aufgabe p {
+  margin: 0;
+}
+
+.trainer-auftrag {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.zahlwahl {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.zahlwahl legend {
+  padding: 0;
+  margin-bottom: var(--raster);
+  font-weight: 600;
+}
+
+.uebungsarten {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.uebungsart {
+  width: 100%;
+  text-align: left;
+  border: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+.trainerkarte.bereit {
+  padding: calc(var(--raster) * 1.5) calc(var(--raster) * 2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--raster);
+}
+
+.trainerkarte.bereit p {
+  margin: 0;
 }

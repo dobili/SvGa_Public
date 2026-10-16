@@ -1193,8 +1193,16 @@ fünf Zugfolgen (k03-a81, k03-a83, k04-a54, k04-a55, k12-a6) zeigen die neuen Nu
 neu: Abb. 0.6 (Unterschrift, Felder), Abb. 1.29 (Fließtext statt Vorsicht-Kasten), Diagrammreihen
 in Kapitel 1, 2, 9 und 11, Unterabschnitte bei 2.41, 9.16 und 9.17, Bilanztitel Nimzo-Indisch,
 Fallenchecks in Kapitel 4, Aufgaben der Übungen 73 bis 78, 13 Glossareinträge. Neue Zugfolge in
-Kapitel 6 (2... f5) als Entwurf `k06-z-e4-e5-sf3.pgn`, Freigabe durch den Autor offen. Die
+Kapitel 6 als Entwurf `k06-z-e4-e5-sf3.pgn` war keine neue Zugfolge, sondern ein Fehler der Pipeline (siehe unten). Die
 Abbildungen selbst (FEN, Pfeile) sind außer 0.6 unverändert.
+
+**Pipeline: Anschluss an frühere Kapitel (16.10.2026).** Im neuen Buchstand steht Abb. 6.20 erst
+nach dem Satz „Zwischenstand nach 8. d5 Se7“. Ohne genanntes Ziel nahm die Pipeline die erste
+frühere Linie, in der die Züge legal sind: das Lettische Gambit aus Kapitel 3 statt der
+Königsindischen Hauptvariante aus Kapitel 2, und schrieb daraus einen falschen Entwurf. Jetzt
+gewinnt unter mehreren Anschlüssen aus früheren Kapiteln der, der genau in einer Abbildung
+endet (`zugfolgen/anschluss.py`, Test in `test_zugfolgen.py`). Der falsche Entwurf ist gelöscht;
+die App-Daten ändern sich dadurch nicht.
 
 ## Wartet auf den Autor
 

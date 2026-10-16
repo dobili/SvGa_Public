@@ -240,3 +240,46 @@ def test_stellung_aus_frueherem_kapitel_ohne_zuege_wird_kopiert(tmp_path):
     knoten = next(k for k in beispiel.knoten() if k.abbildungen == ["11.1"])
     assert knoten.pfad() == ["e4", "e5", "Nf3"]
     assert ergebnis.statistik.ohne_zugfolge == 0
+
+
+def _kapitel(tmp_path, name: str, text: str, fruehere):
+    pfad = tmp_path / name
+    pfad.write_text(text, encoding="utf-8")
+    quelle = Quelldatei(pfad.name, text)
+    return spiele_kapitel(quelle, lies_kapitel(pfad), baue_verzeichnis([quelle]), fruehere)
+
+
+def _fen_nach(zuege: list[str]) -> str:
+    brett = chess.Board()
+    for san in zuege:
+        brett.push_san(san)
+    return brett.fen()
+
+
+def test_ziel_erst_nach_dem_satz_waehlt_die_passende_fruehere_linie(tmp_path):
+    """Kapitel 6: „Zwischenstand nach 8. d5 Se7“, Abb. 6.20 folgt erst danach (Buch 16.10.2026).
+
+    Die Züge sind in zwei Linien früherer Kapitel legal; gemeint ist die, die in der Abbildung endet.
+    """
+    linie_a, linie_b = ["e4", "e5", "Nf3", "Nc6"], ["d4", "d5", "Nf3", "Nc6"]
+    frueher = _kapitel(
+        tmp_path,
+        "kap02_frueher.tex",
+        "\\chapter[Früher]{}\n\\kapitelauftakt{2}{Früher im Test}\n\n\\section{A}\n\n"
+        "Nach \\zugfolge{1. e4 e5 2. Sf3 Sc6} (\\abb{2.1}) ist alles ruhig.\n\n"
+        f"\\diagramm[\\abbziel{{2.1}}: Weiß am Zug.]{{{_fen_nach(linie_a)}}}\n\n\\section{{B}}\n\n"
+        "Nach \\zugfolge{1. d4 d5 2. Sf3 Sc6} (\\abb{2.2}) ebenso.\n\n"
+        f"\\diagramm[\\abbziel{{2.2}}: Weiß am Zug.]{{{_fen_nach(linie_b)}}}\n",
+        [],
+    ).beispiele
+    for ziel, linie in (("A", linie_a), ("B", linie_b)):
+        ergebnis = _kapitel(
+            tmp_path,
+            f"kap06_ziel{ziel}.tex",
+            "\\chapter[Später]{}\n\\kapitelauftakt{6}{Später im Test}\n\n\\section{Weiter}\n\n"
+            "Wir beginnen beim Zwischenstand nach \\zugfolge{3. Sc3 Sf6}, gleich als Diagramm.\n\n"
+            f"\\diagramm[\\abbziel{{6.1}}: Weiß am Zug.]{{{_fen_nach([*linie, 'Nc3', 'Nf6'])}}}\n",
+            frueher,
+        )
+        knoten = next(k for b in ergebnis.beispiele for k in b.knoten() if k.abbildungen == ["6.1"])
+        assert knoten.pfad() == [*linie, "Nc3", "Nf6"], ziel

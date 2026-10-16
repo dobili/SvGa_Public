@@ -1176,13 +1176,15 @@ Der Autor hat im Buch die Reihenfolge einiger Abbildungen getauscht und wollte *
 - Pipeline: `\vspace` und `\hspace` (auch mit Stern) werden übersprungen; der neue Buchstand
   enthält sie, vorher brach der Datenlauf ab.
 
-**Befund, nicht übernommen (Wunsch des Autors: nur die Abbildungen):** Der neue Buchstand weicht
-noch an weiteren Stellen von den App-Daten ab: Abb. 0.6 (Bildunterschrift und Felder), Abb. 1.29
-(jetzt Fließtext statt Vorsicht-Kasten), neu gruppierte Diagrammreihen in Kapitel 1, 2, 9 und 11,
-neue Unterabschnitte (Abb. 2.41, 9.16, 9.17), Bilanztitel Nimzo-Indisch ohne „(Rubinstein)“,
-die Reihenfolge der Übungen in Kapitel 3, Änderungen an Übungen in Kapitel 4, 10 und 12, an den
-Fallenchecks in Kapitel 4 und im Glossar, dazu eine neue Zugfolge in Kapitel 6 (2... f5). Ein
-vollständiger Datenlauf würde all das übernehmen; Entscheidung beim Autor.
+**Danach vollständiger Datenlauf (Wunsch des Autors, 16.10.2026):** Der ganze neue Buchstand ist
+übernommen. Neu nummeriert sind die Übungen in Kapitel 3 (14–18), Kapitel 4 (19–22) und Kapitel
+12 (84–86); der Fortschritt hängt an der Kennung der Übung und bleibt erhalten, die Kopfzeilen von
+fünf Zugfolgen (k03-a81, k03-a83, k04-a54, k04-a55, k12-a6) zeigen die neuen Nummern. Inhaltlich
+neu: Abb. 0.6 (Unterschrift, Felder), Abb. 1.29 (Fließtext statt Vorsicht-Kasten), Diagrammreihen
+in Kapitel 1, 2, 9 und 11, Unterabschnitte bei 2.41, 9.16 und 9.17, Bilanztitel Nimzo-Indisch,
+Fallenchecks in Kapitel 4, Aufgaben der Übungen 73 bis 78, 13 Glossareinträge. Neue Zugfolge in
+Kapitel 6 (2... f5) als Entwurf `k06-z-e4-e5-sf3.pgn`, Freigabe durch den Autor offen. Die
+Abbildungen selbst (FEN, Pfeile) sind außer 0.6 unverändert.
 
 ## Wartet auf den Autor
 

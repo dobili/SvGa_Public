@@ -1427,7 +1427,7 @@
    },
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 402
+    "zeile": 401
    },
    "pruefsumme": "61cf26ce3940e445"
   },
@@ -1459,7 +1459,7 @@
    },
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 407
+    "zeile": 408
    },
    "pruefsumme": "a6482f6eabe296f7"
   },
@@ -1491,7 +1491,7 @@
    },
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 412
+    "zeile": 415
    },
    "pruefsumme": "18c51f32455c91b3"
   },
@@ -1523,7 +1523,7 @@
    },
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 417
+    "zeile": 422
    },
    "pruefsumme": "a2ab19108e0a8d0e"
   },
@@ -1555,7 +1555,7 @@
    },
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 422
+    "zeile": 429
    },
    "pruefsumme": "14f9d8edb8309e8c"
   },
@@ -1587,7 +1587,7 @@
    },
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 427
+    "zeile": 436
    },
    "pruefsumme": "97a66f2666adb51e"
   }
@@ -1601,7 +1601,13 @@
    "abbildungen": [
     "10.23"
    ],
-   "aufgabe": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "stil": "normal"
+    }
+   ],
    "loesung": [
     {
      "art": "zug",
@@ -1624,7 +1630,7 @@
    ],
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 400
+    "zeile": 398
    },
    "erklaerung": {
     "loesung": "1. f8=S#",
@@ -1641,7 +1647,13 @@
    "abbildungen": [
     "10.24"
    ],
-   "aufgabe": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "stil": "normal"
+    }
+   ],
    "loesung": [
     {
      "art": "zug",
@@ -1717,7 +1729,13 @@
    "abbildungen": [
     "10.25"
    ],
-   "aufgabe": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "stil": "normal"
+    }
+   ],
    "loesung": [
     {
      "art": "zug",
@@ -1749,7 +1767,7 @@
    ],
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 410
+    "zeile": 412
    },
    "erklaerung": {
     "loesung": "1. Tc1!",
@@ -1766,7 +1784,13 @@
    "abbildungen": [
     "10.26"
    ],
-   "aufgabe": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "stil": "normal"
+    }
+   ],
    "loesung": [
     {
      "art": "zug",
@@ -1924,7 +1948,7 @@
    ],
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 415
+    "zeile": 419
    },
    "erklaerung": {
     "loesung": "1. Kg7!",
@@ -1941,7 +1965,13 @@
    "abbildungen": [
     "10.27"
    ],
-   "aufgabe": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "stil": "normal"
+    }
+   ],
    "loesung": [
     {
      "art": "zug",
@@ -1991,7 +2021,7 @@
    ],
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 420
+    "zeile": 426
    },
    "erklaerung": {
     "loesung": "1. Lb8!",
@@ -2008,7 +2038,13 @@
    "abbildungen": [
     "10.28"
    ],
-   "aufgabe": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "stil": "normal"
+    }
+   ],
    "loesung": [
     {
      "art": "zug",
@@ -2076,7 +2112,7 @@
    ],
    "quelle": {
     "datei": "kap10_studien.tex",
-    "zeile": 425
+    "zeile": 433
    },
    "erklaerung": {
     "loesung": "1. Ka6!",

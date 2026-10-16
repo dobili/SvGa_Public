@@ -28,7 +28,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 88
+    "zeile": 131
    },
    "pruefsumme": "7f1b6d1fcd7fc954"
   },
@@ -118,7 +118,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 102
+    "zeile": 145
    },
    "pruefsumme": "3269854d02382eb0"
   },
@@ -185,7 +185,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 138
+    "zeile": 180
    },
    "pruefsumme": "618bc009a2120bf3"
   },
@@ -322,7 +322,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 145
+    "zeile": 187
    },
    "pruefsumme": "726c3626f9fbee6e"
   },
@@ -366,20 +366,12 @@
     {
      "farbe": "gold",
      "feld": "e4"
-    },
-    {
-     "farbe": "rot",
-     "feld": "f4"
-    },
-    {
-     "farbe": "grau",
-     "feld": "d6"
     }
    ],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Turm d4. Der eigene Bauer d6 (grau) versperrt den Weg nach oben. Den schwarzen Springer f4 darf der Turm schlagen (rot), über ihn hinaus nach g4 und h4 kommt er nicht.",
+     "text": "Turm d4. Der Bauer versperrt den Weg nach oben. Den schwarzen Springer darf der Turm schlagen, über ihn hinaus nach g4 und h4 kommt er nicht.",
      "stil": "normal"
     }
    ],
@@ -391,9 +383,9 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 154
+    "zeile": 196
    },
-   "pruefsumme": "3e8841e4052baf16"
+   "pruefsumme": "1fae28bc4dd484c9"
   },
   {
    "id": "0.7",
@@ -472,7 +464,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 177
+    "zeile": 217
    },
    "pruefsumme": "d11a0ce2fb8a3edf"
   },
@@ -549,7 +541,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 184
+    "zeile": 224
    },
    "pruefsumme": "e2999dfe19c39785"
   },
@@ -594,7 +586,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 192
+    "zeile": 232
    },
    "pruefsumme": "e8efff799f9c1d1b"
   },
@@ -640,7 +632,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 220
+    "zeile": 260
    },
    "pruefsumme": "0862be38f22ab5cd"
   },
@@ -694,7 +686,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 229
+    "zeile": 269
    },
    "pruefsumme": "b55fdef6f2a06b99"
   },
@@ -744,7 +736,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 252
+    "zeile": 292
    },
    "pruefsumme": "c2aace00be504cb8"
   },
@@ -785,7 +777,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 259
+    "zeile": 299
    },
    "pruefsumme": "74a61b362750cc8d"
   },
@@ -840,7 +832,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 267
+    "zeile": 307
    },
    "pruefsumme": "93653a5c885babd8"
   },
@@ -881,7 +873,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 275
+    "zeile": 315
    },
    "pruefsumme": "99b0c9e0c6e05426"
   },
@@ -918,7 +910,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 302
+    "zeile": 342
    },
    "pruefsumme": "58512f84b43559cf"
   },
@@ -966,7 +958,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 308
+    "zeile": 348
    },
    "pruefsumme": "bfa4887ef7bbeeda"
   },
@@ -1005,7 +997,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 316
+    "zeile": 356
    },
    "pruefsumme": "20651a7c481d53d7"
   },
@@ -1041,7 +1033,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 334
+    "zeile": 374
    },
    "pruefsumme": "19abaeddce8ff91f"
   },
@@ -1079,7 +1071,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 340
+    "zeile": 380
    },
    "pruefsumme": "db01ee3b9ffaf170"
   },
@@ -1118,7 +1110,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 369
+    "zeile": 409
    },
    "pruefsumme": "c4515345021e27f5"
   },
@@ -1158,7 +1150,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 370
+    "zeile": 410
    },
    "pruefsumme": "c2db6920ad8e085f"
   },
@@ -1199,7 +1191,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 371
+    "zeile": 411
    },
    "pruefsumme": "f56e8f13bfe32b5c"
   },
@@ -1240,7 +1232,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 376
+    "zeile": 416
    },
    "pruefsumme": "681c75105f7b1478"
   },
@@ -1282,7 +1274,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 377
+    "zeile": 417
    },
    "pruefsumme": "d590e3e968693803"
   },
@@ -1322,7 +1314,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 532
+    "zeile": 572
    },
    "pruefsumme": "0e2144a4d93e099b"
   },
@@ -1356,7 +1348,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 551
+    "zeile": 591
    },
    "pruefsumme": "75428f06fe126931"
   },
@@ -1391,7 +1383,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 552
+    "zeile": 592
    },
    "pruefsumme": "4aac8ca4a6418d93"
   },
@@ -1427,7 +1419,7 @@
    },
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 553
+    "zeile": 593
    },
    "pruefsumme": "0c925c665ac31c05"
   }
@@ -1464,7 +1456,7 @@
    ],
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 520
+    "zeile": 560
    },
    "erklaerung": {
     "loesung": null,
@@ -1537,7 +1529,7 @@
    ],
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 527
+    "zeile": 567
    },
    "erklaerung": {
     "loesung": "6... h6 7. Lxf6 Dxf6",
@@ -1613,7 +1605,7 @@
    ],
    "quelle": {
     "datei": "kap00_notation.tex",
-    "zeile": 542
+    "zeile": 582
    },
    "erklaerung": {
     "loesung": "1. e4 d5 2. exd5 Dxd5",

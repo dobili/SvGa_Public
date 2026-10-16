@@ -473,7 +473,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 143
+    "zeile": 144
    },
    "pruefsumme": "0b5d77d8cd1bbb7b",
    "vorbereitet": {
@@ -533,7 +533,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 184
+    "zeile": 185
    },
    "pruefsumme": "450799a2cddab8f3"
   },
@@ -580,7 +580,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 185
+    "zeile": 186
    },
    "pruefsumme": "a9d0ab81e7cfe0bc"
   },
@@ -636,7 +636,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 189
+    "zeile": 190
    },
    "pruefsumme": "1fb56992bb329727",
    "vorbereitet": {
@@ -711,7 +711,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 190
+    "zeile": 191
    },
    "pruefsumme": "d7ab7cb77af5c501"
   },
@@ -751,7 +751,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 213
+    "zeile": 214
    },
    "pruefsumme": "cbf9c0ce798317fe",
    "vorbereitet": {
@@ -811,7 +811,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 214
+    "zeile": 215
    },
    "pruefsumme": "19c8f1cab7131e14"
   },
@@ -847,14 +847,17 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "9.16",
+    "9.17"
+   ],
    "beispiel": {
     "id": "k09-a15",
     "pfad": []
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 237
+    "zeile": 242
    },
    "pruefsumme": "35e935e4b311afb7",
    "vorbereitet": {
@@ -883,7 +886,7 @@
     "label": "",
     "titel": "Die Vancura-Stellung: Remis gegen den Randbauern"
    },
-   "unterabschnitt": "Warum der König auf g7 oder h7 gehört",
+   "unterabschnitt": null,
    "fen": "R7/P4k2/8/8/8/8/r7/6K1 w - - 0 1",
    "pfeile": [
     {
@@ -902,6 +905,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
+    "9.15",
     "9.17"
    ],
    "beispiel": {
@@ -910,7 +914,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 260
+    "zeile": 248
    },
    "pruefsumme": "a7fa88bb94b3c19c",
    "vorbereitet": {
@@ -939,7 +943,7 @@
     "label": "",
     "titel": "Die Vancura-Stellung: Remis gegen den Randbauern"
    },
-   "unterabschnitt": "Warum der König auf g7 oder h7 gehört",
+   "unterabschnitt": null,
    "fen": "8/r4k1R/8/8/8/8/8/6K1 b - - 1 2",
    "pfeile": [
     {
@@ -958,6 +962,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
+    "9.15",
     "9.16"
    ],
    "beispiel": {
@@ -970,7 +975,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 261
+    "zeile": 249
    },
    "pruefsumme": "d7c1f7936aebde3f"
   },
@@ -1008,7 +1013,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 297
+    "zeile": 301
    },
    "pruefsumme": "03ddc1e17a6e67d3"
   },
@@ -1054,7 +1059,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 298
+    "zeile": 302
    },
    "pruefsumme": "8a2ec037ef333260",
    "vorbereitet": {
@@ -1111,7 +1116,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 299
+    "zeile": 303
    },
    "pruefsumme": "d0a524dedf0e9d19"
   },
@@ -1151,7 +1156,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 314
+    "zeile": 312
    },
    "pruefsumme": "f11c64cc56b5643e",
    "vorbereitet": {
@@ -1210,7 +1215,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 315
+    "zeile": 313
    },
    "pruefsumme": "8835c9f1cef3d36e"
   },
@@ -1253,7 +1258,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 334
+    "zeile": 341
    },
    "pruefsumme": "0e89836d7c975072"
   },
@@ -1290,7 +1295,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 374
+    "zeile": 381
    },
    "pruefsumme": "6c521be5c4fbe05e"
   },
@@ -1332,7 +1337,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 375
+    "zeile": 382
    },
    "pruefsumme": "16799bfefafcb367",
    "vorbereitet": {
@@ -1487,7 +1492,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 408
+    "zeile": 417
    },
    "pruefsumme": "e9377a027a410808",
    "vorbereitet": {
@@ -1549,7 +1554,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 409
+    "zeile": 418
    },
    "pruefsumme": "fbed2abe2d729565"
   },
@@ -1597,7 +1602,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 410
+    "zeile": 419
    },
    "pruefsumme": "e87ec66fba651135"
   },
@@ -1638,7 +1643,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 441
+    "zeile": 450
    },
    "pruefsumme": "d2b7e15d56a10933"
   },
@@ -1684,7 +1689,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 442
+    "zeile": 451
    },
    "pruefsumme": "d4fb856a881db874",
    "vorbereitet": {
@@ -1750,7 +1755,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 443
+    "zeile": 452
    },
    "pruefsumme": "13cca42dbd13e6bc"
   },
@@ -1793,7 +1798,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 460
+    "zeile": 469
    },
    "pruefsumme": "b6ad777a2883a101",
    "vorbereitet": {
@@ -1852,7 +1857,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 502
+    "zeile": 511
    },
    "pruefsumme": "4b9d1083a4795d59",
    "vorbereitet": {
@@ -1908,7 +1913,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 503
+    "zeile": 512
    },
    "pruefsumme": "1901862b00f2f24b"
   },
@@ -1951,7 +1956,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 504
+    "zeile": 513
    },
    "pruefsumme": "6bb257ce4183806a"
   },
@@ -1994,7 +1999,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 522
+    "zeile": 531
    },
    "pruefsumme": "34c7ac5a194b1cd0",
    "vorbereitet": {
@@ -2046,7 +2051,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 545
+    "zeile": 554
    },
    "pruefsumme": "b4fa3dcdb28efcec"
   },
@@ -2091,7 +2096,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 546
+    "zeile": 555
    },
    "pruefsumme": "cf719411706599ff"
   },
@@ -2125,7 +2130,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 557
+    "zeile": 566
    },
    "pruefsumme": "3080cab4c22bf36a",
    "vorbereitet": {
@@ -2175,7 +2180,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 574
+    "zeile": 583
    },
    "pruefsumme": "da013f7644092a27"
   },
@@ -2220,7 +2225,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 598
+    "zeile": 607
    },
    "pruefsumme": "b9a9746105b62b67"
   },
@@ -2260,7 +2265,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 599
+    "zeile": 608
    },
    "pruefsumme": "cc77e1279c6de40e",
    "vorbereitet": {
@@ -2308,7 +2313,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 669
+    "zeile": 686
    },
    "pruefsumme": "863c677ee7dcf6c6"
   },
@@ -2340,7 +2345,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 677
+    "zeile": 694
    },
    "pruefsumme": "1196d794e0599dab"
   },
@@ -2372,7 +2377,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 685
+    "zeile": 702
    },
    "pruefsumme": "e52d17de034f49c7"
   },
@@ -2404,7 +2409,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 692
+    "zeile": 709
    },
    "pruefsumme": "25263779bb5a23df"
   },
@@ -2436,7 +2441,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 699
+    "zeile": 716
    },
    "pruefsumme": "51357bd410ef97dd"
   },
@@ -2468,7 +2473,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 706
+    "zeile": 723
    },
    "pruefsumme": "168dcbb3d19ad2ea"
   },
@@ -2500,7 +2505,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 713
+    "zeile": 730
    },
    "pruefsumme": "e97770ffe184a8b1"
   },
@@ -2532,7 +2537,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 721
+    "zeile": 738
    },
    "pruefsumme": "704fad8a96304cf9"
   },
@@ -2561,7 +2566,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 728
+    "zeile": 745
    },
    "pruefsumme": "ddabe6b6207c6ea1"
   }
@@ -2618,7 +2623,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 667
+    "zeile": 684
    },
    "erklaerung": {
     "loesung": "1... Th6!",
@@ -2714,7 +2719,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 675
+    "zeile": 692
    },
    "erklaerung": {
     "loesung": "1... Kg8 2. Tb8+ Kh7",
@@ -2771,7 +2776,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 683
+    "zeile": 700
    },
    "erklaerung": {
     "loesung": "1. Te4",
@@ -2842,7 +2847,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 690
+    "zeile": 707
    },
    "erklaerung": {
     "loesung": "1... Ta6!",
@@ -2918,7 +2923,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 697
+    "zeile": 714
    },
    "erklaerung": {
     "loesung": "1. Tb1!",
@@ -2982,7 +2987,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 704
+    "zeile": 721
    },
    "erklaerung": {
     "loesung": "1. Tg5!",
@@ -3060,7 +3065,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 711
+    "zeile": 728
    },
    "erklaerung": {
     "loesung": "1... Tb8!",
@@ -3135,7 +3140,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 719
+    "zeile": 736
    },
    "erklaerung": {
     "loesung": "1. Kc3!",
@@ -3168,7 +3173,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 726
+    "zeile": 743
    },
    "erklaerung": {
     "loesung": null,

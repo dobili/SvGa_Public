@@ -120,7 +120,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 115
+    "zeile": 118
    },
    "pruefsumme": "dfc121d64f406aba"
   },
@@ -177,7 +177,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 116
+    "zeile": 119
    },
    "pruefsumme": "5d559a77eaef9c66",
    "vorbereitet": {
@@ -259,7 +259,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 117
+    "zeile": 120
    },
    "pruefsumme": "dea4580526f44634"
   },
@@ -324,7 +324,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 139
+    "zeile": 142
    },
    "pruefsumme": "ca5e6ff6c13fafae",
    "vorbereitet": {
@@ -414,7 +414,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 140
+    "zeile": 143
    },
    "pruefsumme": "5839c5053c04c2a1",
    "vorbereitet": {
@@ -501,7 +501,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 141
+    "zeile": 144
    },
    "pruefsumme": "304956608451749e"
   },
@@ -576,7 +576,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 171
+    "zeile": 174
    },
    "pruefsumme": "b6b9e43742dc2775",
    "vorbereitet": {
@@ -670,7 +670,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 172
+    "zeile": 175
    },
    "pruefsumme": "d8b65f7f952c8aba"
   },
@@ -759,7 +759,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 173
+    "zeile": 176
    },
    "pruefsumme": "4f270707fde5183c"
   },
@@ -812,7 +812,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 222
+    "zeile": 225
    },
    "pruefsumme": "dba12f1f27bd2bc7"
   },
@@ -891,7 +891,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 223
+    "zeile": 226
    },
    "pruefsumme": "08afb3d01903144c",
    "vorbereitet": {
@@ -980,7 +980,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 224
+    "zeile": 227
    },
    "pruefsumme": "91f578c8b0e2892e",
    "vorbereitet": {
@@ -1073,7 +1073,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 245
+    "zeile": 248
    },
    "pruefsumme": "16cccd7a57e0310a"
   },
@@ -1154,7 +1154,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 246
+    "zeile": 249
    },
    "pruefsumme": "b4b9fa833e30e26f"
   },
@@ -1239,7 +1239,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 247
+    "zeile": 250
    },
    "pruefsumme": "8c3dd666f5d40ae2"
   },
@@ -1306,7 +1306,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 296
+    "zeile": 299
    },
    "pruefsumme": "921f8eb4e48373d4",
    "vorbereitet": {
@@ -1392,7 +1392,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 297
+    "zeile": 300
    },
    "pruefsumme": "94d8a0346e551eab"
   },
@@ -1469,7 +1469,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 298
+    "zeile": 301
    },
    "pruefsumme": "408efac0a89fb7ee",
    "vorbereitet": {
@@ -1557,7 +1557,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 312
+    "zeile": 315
    },
    "pruefsumme": "742f5aeada61340c"
   },
@@ -1631,7 +1631,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 313
+    "zeile": 316
    },
    "pruefsumme": "dd89b1a151820a18"
   },
@@ -1728,7 +1728,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 314
+    "zeile": 317
    },
    "pruefsumme": "8d917177cda751e9",
    "vorbereitet": {
@@ -1788,8 +1788,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.23",
-    "11.24"
+    "11.23"
    ],
    "beispiel": {
     "id": "k11-a22",
@@ -1809,7 +1808,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 382
+    "zeile": 377
    },
    "pruefsumme": "6e8c5d2b4b09f5e1",
    "vorbereitet": {
@@ -1866,8 +1865,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.22",
-    "11.24"
+    "11.22"
    ],
    "beispiel": {
     "id": "k11-a22",
@@ -1890,7 +1888,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 383
+    "zeile": 378
    },
    "pruefsumme": "2e1a8b134bf015ec"
   },
@@ -1927,8 +1925,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.22",
-    "11.23"
+    "11.25"
    ],
    "beispiel": {
     "id": "k11-a22",
@@ -1955,7 +1952,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 384
+    "zeile": 397
    },
    "pruefsumme": "906748204e7a03ee"
   },
@@ -2004,7 +2001,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "11.24"
+   ],
    "beispiel": {
     "id": "k11-a22",
     "pfad": [
@@ -2033,7 +2032,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 389
+    "zeile": 398
    },
    "pruefsumme": "343854350890b18a"
   },
@@ -2117,7 +2116,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 425
+    "zeile": 437
    },
    "pruefsumme": "c8c74ef57e7b686c",
    "vorbereitet": {
@@ -2220,7 +2219,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 481
+    "zeile": 495
    },
    "pruefsumme": "1fe76c2739e348f5"
   },
@@ -2312,7 +2311,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 482
+    "zeile": 496
    },
    "pruefsumme": "920c783248067ef0",
    "vorbereitet": {
@@ -2414,7 +2413,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 501
+    "zeile": 515
    },
    "pruefsumme": "bfb1d11539e478b8",
    "vorbereitet": {
@@ -2520,7 +2519,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 502
+    "zeile": 516
    },
    "pruefsumme": "67bb1b9193f4c200"
   },
@@ -2624,7 +2623,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 503
+    "zeile": 517
    },
    "pruefsumme": "03002e4e97706020"
   },
@@ -2696,7 +2695,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 559
+    "zeile": 573
    },
    "pruefsumme": "80f9c5460e9a42dd"
   },
@@ -2766,7 +2765,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 560
+    "zeile": 574
    },
    "pruefsumme": "5b9b009963de5023"
   },
@@ -2839,7 +2838,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 561
+    "zeile": 575
    },
    "pruefsumme": "6014b42f62910d5a",
    "vorbereitet": {
@@ -2931,7 +2930,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 595
+    "zeile": 609
    },
    "pruefsumme": "a06902ab9d5a6eaa",
    "vorbereitet": {
@@ -3027,7 +3026,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 596
+    "zeile": 610
    },
    "pruefsumme": "8193c4147b532654"
   },
@@ -3111,7 +3110,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 615
+    "zeile": 629
    },
    "pruefsumme": "016dd12615ac6dde",
    "vorbereitet": {
@@ -3219,7 +3218,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 616
+    "zeile": 630
    },
    "pruefsumme": "8229941550d6d44a"
   },
@@ -3312,7 +3311,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 638
+    "zeile": 652
    },
    "pruefsumme": "8228b03475d8c8e9",
    "vorbereitet": {
@@ -3420,7 +3419,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 639
+    "zeile": 653
    },
    "pruefsumme": "18fc20ec9202e0d4"
   },
@@ -3525,7 +3524,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 640
+    "zeile": 654
    },
    "pruefsumme": "13a2b6730fdb5147"
   },
@@ -3565,7 +3564,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 678
+    "zeile": 692
    },
    "pruefsumme": "227a7e50ca591d6e"
   },
@@ -3637,7 +3636,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 679
+    "zeile": 693
    },
    "pruefsumme": "c81e9b48f99b1dab"
   },
@@ -3708,7 +3707,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 718
+    "zeile": 732
    },
    "pruefsumme": "41d6dd0ae0747059",
    "vorbereitet": {
@@ -3798,7 +3797,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 719
+    "zeile": 733
    },
    "pruefsumme": "48c81503f1bd4293"
   },
@@ -3871,7 +3870,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 720
+    "zeile": 734
    },
    "pruefsumme": "d638b744a9bb6d5b"
   },
@@ -3953,7 +3952,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 736
+    "zeile": 750
    },
    "pruefsumme": "149fd1ef7a53d11f"
   },
@@ -4042,7 +4041,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 737
+    "zeile": 751
    },
    "pruefsumme": "e3c704c619793571"
   },
@@ -4133,7 +4132,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 738
+    "zeile": 752
    },
    "pruefsumme": "997d2bb80ebfdeab"
   },
@@ -4222,7 +4221,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 758
+    "zeile": 772
    },
    "pruefsumme": "3fe04addf85dcb0d",
    "vorbereitet": {
@@ -4326,7 +4325,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 759
+    "zeile": 773
    },
    "pruefsumme": "c74c8833215a544f",
    "vorbereitet": {
@@ -4431,7 +4430,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 760
+    "zeile": 774
    },
    "pruefsumme": "f46666eab64ad119"
   },
@@ -4539,7 +4538,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 786
+    "zeile": 800
    },
    "pruefsumme": "e74f5350742895ec"
   },
@@ -4651,7 +4650,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 787
+    "zeile": 801
    },
    "pruefsumme": "2aeb1344ba136bd5"
   },
@@ -4770,7 +4769,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 788
+    "zeile": 802
    },
    "pruefsumme": "512714a598cedda8"
   },
@@ -4807,7 +4806,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 822
+    "zeile": 843
    },
    "pruefsumme": "02a58804d606f796",
    "vorbereitet": {
@@ -4922,7 +4921,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 823
+    "zeile": 844
    },
    "pruefsumme": "9713a6b01e25d59f"
   },
@@ -5014,7 +5013,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 854
+    "zeile": 875
    },
    "pruefsumme": "b16343ca03a94cfc"
   },
@@ -5112,7 +5111,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 855
+    "zeile": 876
    },
    "pruefsumme": "4fdef7d44f1cc4ca",
    "vorbereitet": {
@@ -5225,7 +5224,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 870
+    "zeile": 891
    },
    "pruefsumme": "49d65526584cee17"
   },
@@ -5325,7 +5324,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 871
+    "zeile": 892
    },
    "pruefsumme": "1d7c99248c9c2be4"
   },
@@ -5426,7 +5425,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 872
+    "zeile": 893
    },
    "pruefsumme": "8391799fbf9e74c6",
    "vorbereitet": {
@@ -5558,7 +5557,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 889
+    "zeile": 910
    },
    "pruefsumme": "2c513c0b2ab5fc12"
   },
@@ -5678,7 +5677,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 890
+    "zeile": 911
    },
    "pruefsumme": "ffdb3d412b6e91d6"
   },
@@ -5803,7 +5802,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 905
+    "zeile": 926
    },
    "pruefsumme": "5ec4ba8b3c15d836"
   },
@@ -5937,7 +5936,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 906
+    "zeile": 927
    },
    "pruefsumme": "23022293120991d1"
   },
@@ -6070,7 +6069,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 907
+    "zeile": 928
    },
    "pruefsumme": "4ba66948963c12cd",
    "vorbereitet": {
@@ -6129,7 +6128,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.69"
+    "11.69",
+    "11.70"
    ],
    "beispiel": {
     "id": "k11-a68-london",
@@ -6156,7 +6156,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 952
+    "zeile": 975
    },
    "pruefsumme": "ee14da1c1effe3c7"
   },
@@ -6206,7 +6206,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.68"
+    "11.68",
+    "11.70"
    ],
    "beispiel": {
     "id": "k11-a68",
@@ -6239,7 +6240,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 953
+    "zeile": 976
    },
    "pruefsumme": "22b004a601050612",
    "vorbereitet": {
@@ -6295,7 +6296,10 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "11.68",
+    "11.69"
+   ],
    "beispiel": {
     "id": "k11-a68",
     "pfad": [
@@ -6331,7 +6335,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 959
+    "zeile": 977
    },
    "pruefsumme": "c5f436f7bf4e8388",
    "vorbereitet": {
@@ -6429,7 +6433,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1005
+    "zeile": 1030
    },
    "pruefsumme": "7e1270e071b0c8e5"
   },
@@ -6515,7 +6519,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1006
+    "zeile": 1031
    },
    "pruefsumme": "e2633cc3c97a47a1"
   },
@@ -6608,7 +6612,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1031
+    "zeile": 1056
    },
    "pruefsumme": "a53773a0e5e50e6c"
   },
@@ -6722,7 +6726,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1032
+    "zeile": 1057
    },
    "pruefsumme": "e36864744bd886c2"
   },
@@ -6792,7 +6796,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1078
+    "zeile": 1103
    },
    "pruefsumme": "7e8288160d67da8c"
   },
@@ -6868,7 +6872,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1079
+    "zeile": 1104
    },
    "pruefsumme": "a40d650b3e487646",
    "vorbereitet": {
@@ -6961,7 +6965,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1080
+    "zeile": 1105
    },
    "pruefsumme": "8756cd00f876db18"
   },
@@ -7054,7 +7058,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1100
+    "zeile": 1125
    },
    "pruefsumme": "59ee9c8399ff9a31",
    "vorbereitet": {
@@ -7165,7 +7169,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1101
+    "zeile": 1126
    },
    "pruefsumme": "8577d8e5b186e04a"
   },
@@ -7263,7 +7267,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1102
+    "zeile": 1127
    },
    "pruefsumme": "eaf292af3fc31a9d"
   },
@@ -7368,7 +7372,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1129
+    "zeile": 1154
    },
    "pruefsumme": "a72285dadbbd27e4"
   },
@@ -7497,7 +7501,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1130
+    "zeile": 1155
    },
    "pruefsumme": "8e68488c3654d2f3"
   },
@@ -7621,7 +7625,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1134
+    "zeile": 1159
    },
    "pruefsumme": "5454968e01bab25c"
   },
@@ -7759,7 +7763,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1135
+    "zeile": 1160
    },
    "pruefsumme": "e52f9ff54cad0b6d",
    "vorbereitet": {
@@ -7895,7 +7899,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1189
+    "zeile": 1214
    },
    "pruefsumme": "d1980feaadc99820",
    "vorbereitet": {
@@ -8030,7 +8034,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1190
+    "zeile": 1215
    },
    "pruefsumme": "440a2f9fb0918801"
   },
@@ -8154,7 +8158,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1191
+    "zeile": 1216
    },
    "pruefsumme": "eaeab4e723f15f93"
   },
@@ -8277,7 +8281,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1208
+    "zeile": 1233
    },
    "pruefsumme": "a59ad1e3e00267db",
    "vorbereitet": {
@@ -8420,7 +8424,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1209
+    "zeile": 1234
    },
    "pruefsumme": "3e0f1f790f3b3f14"
   },
@@ -8556,7 +8560,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1210
+    "zeile": 1235
    },
    "pruefsumme": "28ede214da458816"
   },
@@ -8593,7 +8597,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.92"
+    "11.92",
+    "11.93"
    ],
    "beispiel": {
     "id": "k11-a91",
@@ -8686,7 +8691,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1269
+    "zeile": 1299
    },
    "pruefsumme": "556ed256ddb404d8",
    "vorbereitet": {
@@ -8733,7 +8738,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.91"
+    "11.91",
+    "11.93"
    ],
    "beispiel": {
     "id": "k11-a91",
@@ -8830,7 +8836,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1270
+    "zeile": 1300
    },
    "pruefsumme": "5d8e6d7c46b3da65"
   },
@@ -8867,7 +8873,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.94"
+    "11.91",
+    "11.92"
    ],
    "beispiel": {
     "id": "k11-a91",
@@ -8967,7 +8974,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1282
+    "zeile": 1301
    },
    "pruefsumme": "d19e5deaf8898fa6",
    "vorbereitet": {
@@ -9025,7 +9032,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.93"
+    "11.95",
+    "11.96"
    ],
    "beispiel": {
     "id": "k11-a91",
@@ -9129,7 +9137,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1283
+    "zeile": 1314
    },
    "pruefsumme": "c8f135d8e30bfab2"
   },
@@ -9161,8 +9169,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.96",
-    "11.97"
+    "11.94",
+    "11.96"
    ],
    "beispiel": {
     "id": "k11-a91",
@@ -9270,7 +9278,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1297
+    "zeile": 1315
    },
    "pruefsumme": "2eee06b9546e5182"
   },
@@ -9302,8 +9310,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "11.95",
-    "11.97"
+    "11.94",
+    "11.95"
    ],
    "beispiel": {
     "id": "k11-a91",
@@ -9415,7 +9423,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1298
+    "zeile": 1316
    },
    "pruefsumme": "03b8e4ca7c08e6b3"
   },
@@ -9451,10 +9459,7 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [
-    "11.95",
-    "11.96"
-   ],
+   "reihe": [],
    "beispiel": {
     "id": "k11-a91",
     "pfad": [
@@ -9569,7 +9574,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1299
+    "zeile": 1328
    },
    "pruefsumme": "0c1d23d15017f248"
   },
@@ -9623,7 +9628,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1373
+    "zeile": 1404
    },
    "pruefsumme": "db92567473ab847d"
   },
@@ -9655,7 +9660,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1382
+    "zeile": 1413
    },
    "pruefsumme": "7fa566440ff8e3bd"
   },
@@ -9687,7 +9692,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1391
+    "zeile": 1422
    },
    "pruefsumme": "347d0c79473d1159"
   },
@@ -9719,7 +9724,7 @@
    },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1400
+    "zeile": 1431
    },
    "pruefsumme": "77d65f23ed0f686d"
   }
@@ -9813,7 +9818,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1371
+    "zeile": 1402
    },
    "erklaerung": {
     "loesung": null,
@@ -9905,7 +9910,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1380
+    "zeile": 1411
    },
    "erklaerung": {
     "loesung": "13... Kg8! 14. Dh5 Df6!",
@@ -10001,7 +10006,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1389
+    "zeile": 1420
    },
    "erklaerung": {
     "loesung": "23. dxc5!",
@@ -10075,7 +10080,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 1398
+    "zeile": 1429
    },
    "erklaerung": {
     "loesung": "34. Lxf5! gxf5 35. Kg3",
@@ -10236,7 +10241,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 397
+    "zeile": 409
    }
   },
   {
@@ -10382,7 +10387,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 433
+    "zeile": 445
    }
   },
   {
@@ -10514,7 +10519,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 564
+    "zeile": 578
    }
   },
   {
@@ -10678,7 +10683,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 682
+    "zeile": 696
    }
   },
   {
@@ -10851,7 +10856,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 826
+    "zeile": 847
    }
   },
   {
@@ -11024,7 +11029,7 @@
    ],
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
-    "zeile": 966
+    "zeile": 990
    }
   }
  ],

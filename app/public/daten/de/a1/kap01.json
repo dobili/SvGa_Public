@@ -396,7 +396,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "1.7"
+   ],
    "beispiel": {
     "id": "k01-a2",
     "pfad": [
@@ -473,7 +475,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "1.6"
+   ],
    "beispiel": {
     "id": "k01-a2",
     "pfad": [
@@ -498,7 +502,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 127
+    "zeile": 125
    },
    "pruefsumme": "27dbde75d322bb26"
   },
@@ -550,7 +554,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 189
+    "zeile": 187
    },
    "pruefsumme": "2663a47926d86e81",
    "vorbereitet": {
@@ -646,7 +650,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 194
+    "zeile": 192
    },
    "pruefsumme": "120b0dd6e17c5794",
    "vorbereitet": {
@@ -707,7 +711,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 202
+    "zeile": 200
    },
    "pruefsumme": "71db3d9dd95e2857"
   },
@@ -773,7 +777,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 203
+    "zeile": 201
    },
    "pruefsumme": "0d641bf6943b6b59",
    "vorbereitet": {
@@ -836,7 +840,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 240
+    "zeile": 238
    },
    "pruefsumme": "6f15f1ea001d23ca",
    "vorbereitet": {
@@ -894,7 +898,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "1.14"
+    "1.14",
+    "1.15"
    ],
    "beispiel": {
     "id": "k01-a13",
@@ -906,7 +911,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 292
+    "zeile": 291
    },
    "pruefsumme": "72fd84884d7fbe30",
    "vorbereitet": {
@@ -954,7 +959,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "1.13"
+    "1.13",
+    "1.15"
    ],
    "beispiel": {
     "id": "k01-a13",
@@ -967,7 +973,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 297
+    "zeile": 296
    },
    "pruefsumme": "feb877f777c45d3e"
   },
@@ -1008,7 +1014,10 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "1.13",
+    "1.14"
+   ],
    "beispiel": {
     "id": "k01-a13",
     "pfad": [
@@ -1021,7 +1030,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 305
+    "zeile": 301
    },
    "pruefsumme": "a44242182971d693",
    "vorbereitet": {
@@ -1090,7 +1099,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 320
+    "zeile": 316
    },
    "pruefsumme": "e6aafff942c181c8",
    "vorbereitet": {
@@ -1160,7 +1169,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 325
+    "zeile": 321
    },
    "pruefsumme": "0ccad69a08671529"
   },
@@ -1209,7 +1218,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 330
+    "zeile": 326
    },
    "pruefsumme": "fcbf443c38bfd984"
   },
@@ -1265,7 +1274,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 356
+    "zeile": 352
    },
    "pruefsumme": "7606ecc205db625f",
    "vorbereitet": {
@@ -1338,7 +1347,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 361
+    "zeile": 357
    },
    "pruefsumme": "4b8e61d011190906"
   },
@@ -1385,7 +1394,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 380
+    "zeile": 376
    },
    "pruefsumme": "5cd866d6cf0525c0"
   },
@@ -1434,7 +1443,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 381
+    "zeile": 377
    },
    "pruefsumme": "aebeb2ef45d7912e"
   },
@@ -1479,14 +1488,17 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "1.24",
+    "1.25"
+   ],
    "beispiel": {
     "id": "k01-a23",
     "pfad": []
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 433
+    "zeile": 432
    },
    "pruefsumme": "7952c5e1ea53475f",
    "vorbereitet": {
@@ -1544,6 +1556,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
+    "1.23",
     "1.25"
    ],
    "beispiel": {
@@ -1554,7 +1567,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 451
+    "zeile": 436
    },
    "pruefsumme": "32f179564ef65ef1"
   },
@@ -1580,6 +1593,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
+    "1.23",
     "1.24"
    ],
    "beispiel": {
@@ -1591,7 +1605,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 456
+    "zeile": 441
    },
    "pruefsumme": "42dddebc6da259e4"
   },
@@ -1672,7 +1686,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 539
+    "zeile": 534
    },
    "pruefsumme": "5b02efd3d986aee4",
    "vorbereitet": {
@@ -1745,7 +1759,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 544
+    "zeile": 539
    },
    "pruefsumme": "8218972e594af49a",
    "vorbereitet": {
@@ -1807,7 +1821,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "1.29"
+   ],
    "beispiel": {
     "id": "k01-a26",
     "pfad": [
@@ -1828,7 +1844,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 557
+    "zeile": 552
    },
    "pruefsumme": "3ceea0821c23c88e",
    "vorbereitet": {
@@ -1884,8 +1900,10 @@
      "stil": "normal"
     }
    ],
-   "art": "vorsicht",
-   "reihe": [],
+   "art": "fliesstext",
+   "reihe": [
+    "1.28"
+   ],
    "beispiel": {
     "id": "k01-a26",
     "pfad": [
@@ -1910,7 +1928,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 579
+    "zeile": 557
    },
    "pruefsumme": "fab5a62382673b0d"
   },
@@ -1974,7 +1992,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 596
+    "zeile": 586
    },
    "pruefsumme": "ef31dd4f084f3ca8",
    "vorbereitet": {
@@ -2043,7 +2061,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 601
+    "zeile": 591
    },
    "pruefsumme": "37a579c4c270144e"
   },
@@ -2102,7 +2120,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 646
+    "zeile": 636
    },
    "pruefsumme": "d35815a8fe4b5e05",
    "vorbereitet": {
@@ -2179,7 +2197,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 651
+    "zeile": 641
    },
    "pruefsumme": "abb1ba0096d82405"
   },
@@ -2238,7 +2256,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 688
+    "zeile": 678
    },
    "pruefsumme": "47353a6385e861c7",
    "vorbereitet": {
@@ -2290,7 +2308,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 693
+    "zeile": 683
    },
    "pruefsumme": "d37a619dd4723345"
   },
@@ -2330,14 +2348,16 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "1.37"
+   ],
    "beispiel": {
     "id": "k01-a36",
     "pfad": []
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 739
+    "zeile": 730
    },
    "pruefsumme": "2202086f1bfc5bd6",
    "vorbereitet": {
@@ -2399,14 +2419,16 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "1.36"
+   ],
    "beispiel": {
     "id": "k01-a37",
     "pfad": []
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 757
+    "zeile": 733
    },
    "pruefsumme": "cd83562e7767753a",
    "vorbereitet": {
@@ -2480,7 +2502,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 768
+    "zeile": 759
    },
    "pruefsumme": "685a53137b4ff0e2"
   },
@@ -2535,7 +2557,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 773
+    "zeile": 764
    },
    "pruefsumme": "ff132e4c4c6a9c03"
   },
@@ -2576,7 +2598,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 816
+    "zeile": 807
    },
    "pruefsumme": "582c2de0bb5e4ade"
   },
@@ -2608,7 +2630,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 826
+    "zeile": 817
    },
    "pruefsumme": "65b46f31e5b66e61"
   },
@@ -2648,7 +2670,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 836
+    "zeile": 827
    },
    "pruefsumme": "5b34b0d9a4f6028b"
   },
@@ -2680,7 +2702,7 @@
    },
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 846
+    "zeile": 837
    },
    "pruefsumme": "4ce519c281b60f86"
   }
@@ -2782,7 +2804,7 @@
    ],
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 814
+    "zeile": 805
    },
    "erklaerung": {
     "loesung": "1. Sc7+!",
@@ -2861,7 +2883,7 @@
    ],
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 824
+    "zeile": 815
    },
    "erklaerung": {
     "loesung": "1. cxd5! cxd5 2. exd5 exd5 3. Sxd5",
@@ -2960,7 +2982,7 @@
    ],
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 834
+    "zeile": 825
    },
    "erklaerung": {
     "loesung": "4... Sf6",
@@ -3060,7 +3082,7 @@
    ],
    "quelle": {
     "datei": "kap01_grundprinzipien.tex",
-    "zeile": 844
+    "zeile": 835
    },
    "erklaerung": {
     "loesung": null,

@@ -640,7 +640,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.10"
+    "2.10",
+    "2.11"
    ],
    "beispiel": {
     "id": "k02-a1",
@@ -673,7 +674,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 340
+    "zeile": 341
    },
    "pruefsumme": "d0928785eb83012b"
   },
@@ -719,7 +720,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.9"
+    "2.9",
+    "2.11"
    ],
    "beispiel": {
     "id": "k02-a1",
@@ -756,7 +758,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 341
+    "zeile": 342
    },
    "pruefsumme": "08d55a1b5b143195"
   },
@@ -790,7 +792,10 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.9",
+    "2.10"
+   ],
    "beispiel": {
     "id": "k02-a1",
     "pfad": [
@@ -830,7 +835,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 350
+    "zeile": 343
    },
    "pruefsumme": "7825f6a22d380085"
   },
@@ -856,7 +861,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.13"
+    "2.13",
+    "2.14"
    ],
    "beispiel": {
     "id": "k02-a1",
@@ -871,7 +877,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 391
+    "zeile": 394
    },
    "pruefsumme": "7d4cf8ac27aa25a8"
   },
@@ -903,7 +909,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.12"
+    "2.12",
+    "2.14"
    ],
    "beispiel": {
     "id": "k02-a1",
@@ -919,7 +926,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 392
+    "zeile": 395
    },
    "pruefsumme": "476048b8b05a1b93",
    "vorbereitet": {
@@ -967,7 +974,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.15"
+    "2.12",
+    "2.13"
    ],
    "beispiel": {
     "id": "k02-a1",
@@ -986,7 +994,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 405
+    "zeile": 396
    },
    "pruefsumme": "a0edd29ea67d5ffb"
   },
@@ -1018,7 +1026,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.14"
+    "2.16"
    ],
    "beispiel": {
     "id": "k02-a1",
@@ -1041,7 +1049,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 406
+    "zeile": 409
    },
    "pruefsumme": "f4c54c577aa9645c"
   },
@@ -1084,7 +1092,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.15"
+   ],
    "beispiel": {
     "id": "k02-a1",
     "pfad": [
@@ -1108,7 +1118,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 413
+    "zeile": 410
    },
    "pruefsumme": "08bab0152f5568a1",
    "vorbereitet": {
@@ -1186,7 +1196,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 431
+    "zeile": 435
    },
    "pruefsumme": "8f1e23ae8703b0bb",
    "vorbereitet": {
@@ -1251,7 +1261,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 478
+    "zeile": 482
    },
    "pruefsumme": "10326896c8a25d19"
   },
@@ -1304,7 +1314,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 479
+    "zeile": 483
    },
    "pruefsumme": "7dc87733a9478a3e",
    "vorbereitet": {
@@ -1372,7 +1382,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 480
+    "zeile": 484
    },
    "pruefsumme": "351ae58c1a4b82d3"
   },
@@ -1414,7 +1424,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.22"
+    "2.22",
+    "2.23"
    ],
    "beispiel": {
     "id": "k02-a18",
@@ -1433,7 +1444,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 515
+    "zeile": 520
    },
    "pruefsumme": "e1799b57d6e88fd6"
   },
@@ -1479,7 +1490,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.21"
+    "2.21",
+    "2.23"
    ],
    "beispiel": {
     "id": "k02-a18",
@@ -1502,7 +1514,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 516
+    "zeile": 521
    },
    "pruefsumme": "60945eb3ea6bec9f"
   },
@@ -1536,7 +1548,10 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.21",
+    "2.22"
+   ],
    "beispiel": {
     "id": "k02-a18",
     "pfad": [
@@ -1561,7 +1576,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 525
+    "zeile": 522
    },
    "pruefsumme": "b2c80e23d5251424"
   },
@@ -1622,7 +1637,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 558
+    "zeile": 564
    },
    "pruefsumme": "479c61a82d18998c",
    "vorbereitet": {
@@ -1692,7 +1707,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 559
+    "zeile": 565
    },
    "pruefsumme": "e6df41aede0c1861"
   },
@@ -1734,8 +1749,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.27",
-    "2.28"
+    "2.27"
    ],
    "beispiel": {
     "id": "k02-a18",
@@ -1759,7 +1773,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 582
+    "zeile": 587
    },
    "pruefsumme": "701d96e554adfc52",
    "vorbereitet": {
@@ -1806,8 +1820,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.26",
-    "2.28"
+    "2.26"
    ],
    "beispiel": {
     "id": "k02-a18",
@@ -1834,7 +1847,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 583
+    "zeile": 588
    },
    "pruefsumme": "6c3d1c89d5a6ca42"
   },
@@ -1876,8 +1889,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.26",
-    "2.27"
+    "2.29"
    ],
    "beispiel": {
     "id": "k02-a18",
@@ -1905,68 +1917,12 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 584
+    "zeile": 599
    },
    "pruefsumme": "34da54c87266149b"
   },
   {
    "id": "2.29",
-   "auflage": 1,
-   "kapitel": 2,
-   "abschnitt": {
-    "nummer": "2.3",
-    "label": "",
-    "titel": "Die Italienische Partie (Giuoco Piano)"
-   },
-   "unterabschnitt": "Weitere Varianten: Die Greco-Variante mit dem Zentrumsstoß 5.\\,d4",
-   "fen": "r1bq1k1r/pppp1Bpp/2n5/6B1/3P4/1Q3N2/P4PPP/b4RK1 b - - 2 12",
-   "pfeile": [],
-   "felder": [],
-   "unterschrift": [
-    {
-     "art": "text",
-     "text": "Nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5 – Weiß hat einen Turm und einen Bauern weniger, aber der schwarze König kann für den Rest der Partie nicht mehr rochieren.",
-     "stil": "normal"
-    }
-   ],
-   "art": "vorsicht",
-   "reihe": [],
-   "beispiel": {
-    "id": "k02-a18",
-    "pfad": [
-     "e4",
-     "e5",
-     "Nf3",
-     "Nc6",
-     "Bc4",
-     "Bc5",
-     "c3",
-     "Nf6",
-     "d4",
-     "exd4",
-     "cxd4",
-     "Bb4+",
-     "Nc3",
-     "Nxe4",
-     "O-O",
-     "Nxc3",
-     "bxc3",
-     "Bxc3",
-     "Qb3",
-     "Bxa1",
-     "Bxf7+",
-     "Kf8",
-     "Bg5"
-    ]
-   },
-   "quelle": {
-    "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 606
-   },
-   "pruefsumme": "aa08f286a44408c6"
-  },
-  {
-   "id": "2.30",
    "auflage": 1,
    "kapitel": 2,
    "abschnitt": {
@@ -2025,7 +1981,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.28"
+   ],
    "beispiel": {
     "id": "k02-a18",
     "pfad": [
@@ -2053,7 +2011,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 615
+    "zeile": 600
    },
    "pruefsumme": "a33dd7fcddeb1235",
    "vorbereitet": {
@@ -2072,6 +2030,62 @@
      }
     ]
    }
+  },
+  {
+   "id": "2.30",
+   "auflage": 1,
+   "kapitel": 2,
+   "abschnitt": {
+    "nummer": "2.3",
+    "label": "",
+    "titel": "Die Italienische Partie (Giuoco Piano)"
+   },
+   "unterabschnitt": "Weitere Varianten: Die Greco-Variante mit dem Zentrumsstoß 5.\\,d4",
+   "fen": "r1bq1k1r/pppp1Bpp/2n5/6B1/3P4/1Q3N2/P4PPP/b4RK1 b - - 2 12",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5 – Weiß hat einen Turm und einen Bauern weniger, aber der schwarze König kann für den Rest der Partie nicht mehr rochieren.",
+     "stil": "normal"
+    }
+   ],
+   "art": "vorsicht",
+   "reihe": [],
+   "beispiel": {
+    "id": "k02-a18",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d4",
+     "exd4",
+     "cxd4",
+     "Bb4+",
+     "Nc3",
+     "Nxe4",
+     "O-O",
+     "Nxc3",
+     "bxc3",
+     "Bxc3",
+     "Qb3",
+     "Bxa1",
+     "Bxf7+",
+     "Kf8",
+     "Bg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap02_klassische_eroeffnungen.tex",
+    "zeile": 646
+   },
+   "pruefsumme": "aa08f286a44408c6"
   },
   {
    "id": "2.31",
@@ -2119,7 +2133,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 671
+    "zeile": 678
    },
    "pruefsumme": "10326896c8a25d19"
   },
@@ -2171,7 +2185,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 672
+    "zeile": 679
    },
    "pruefsumme": "ab3beb1118aff328",
    "vorbereitet": {
@@ -2250,7 +2264,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 673
+    "zeile": 680
    },
    "pruefsumme": "5ffd0136a24da54a"
   },
@@ -2307,7 +2321,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 700
+    "zeile": 707
    },
    "pruefsumme": "8d52b00cf0d23c67",
    "vorbereitet": {
@@ -2383,7 +2397,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 701
+    "zeile": 708
    },
    "pruefsumme": "966a762488545557"
   },
@@ -2471,7 +2485,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 702
+    "zeile": 709
    },
    "pruefsumme": "89e901b537aaf484",
    "vorbereitet": {
@@ -2560,7 +2574,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 729
+    "zeile": 736
    },
    "pruefsumme": "940781758195366e"
   },
@@ -2628,7 +2642,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 730
+    "zeile": 737
    },
    "pruefsumme": "2cddd61b44a6a8e6"
   },
@@ -2665,8 +2679,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.40",
-    "2.41"
+    "2.40"
    ],
    "beispiel": {
     "id": "k02-a39",
@@ -2679,7 +2692,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 788
+    "zeile": 794
    },
    "pruefsumme": "f86b0523e085b7d4"
   },
@@ -2714,8 +2727,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.39",
-    "2.41"
+    "2.39"
    ],
    "beispiel": {
     "id": "k02-a39",
@@ -2729,7 +2741,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 789
+    "zeile": 795
    },
    "pruefsumme": "a2588615c50314c1",
    "vorbereitet": {
@@ -2758,7 +2770,7 @@
     "label": "",
     "titel": "Die Russische Verteidigung (Petroff)"
    },
-   "unterabschnitt": null,
+   "unterabschnitt": "Die Hauptvariante: So spielt Schwarz richtig",
    "fen": "rnbqkb1r/ppp2ppp/3p1n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 0 4",
    "pfeile": [
     {
@@ -2777,8 +2789,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.39",
-    "2.40"
+    "2.42"
    ],
    "beispiel": {
     "id": "k02-a39",
@@ -2793,7 +2804,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 790
+    "zeile": 811
    },
    "pruefsumme": "dc7176a2ce0ff903"
   },
@@ -2824,8 +2835,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.43",
-    "2.44"
+    "2.41"
    ],
    "beispiel": {
     "id": "k02-a39",
@@ -2842,7 +2852,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 807
+    "zeile": 812
    },
    "pruefsumme": "990278175dcf32ed"
   },
@@ -2883,7 +2893,6 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.42",
     "2.44"
    ],
    "beispiel": {
@@ -2903,7 +2912,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 808
+    "zeile": 815
    },
    "pruefsumme": "26d062d9ec9303a7"
   },
@@ -2971,7 +2980,6 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.42",
     "2.43"
    ],
    "beispiel": {
@@ -2995,7 +3003,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 809
+    "zeile": 816
    },
    "pruefsumme": "2d7020d1b2bd3bd8"
   },
@@ -3064,7 +3072,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 834
+    "zeile": 841
    },
    "pruefsumme": "c62f02e2e7f293fb"
   },
@@ -3133,7 +3141,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 835
+    "zeile": 842
    },
    "pruefsumme": "9f86f076d836dd64"
   },
@@ -3209,7 +3217,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 836
+    "zeile": 843
    },
    "pruefsumme": "688fef2ca4c48e15"
   },
@@ -3278,7 +3286,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 845
+    "zeile": 852
    },
    "pruefsumme": "259da2167575d4ce"
   },
@@ -3325,7 +3333,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 877
+    "zeile": 884
    },
    "pruefsumme": "8cf8f48ae68f18dc",
    "vorbereitet": {
@@ -3390,7 +3398,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 878
+    "zeile": 885
    },
    "pruefsumme": "5ee19c1a3d2a32fb",
    "vorbereitet": {
@@ -3462,7 +3470,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 879
+    "zeile": 886
    },
    "pruefsumme": "2a15855aefc84dc0"
   },
@@ -3508,7 +3516,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 935
+    "zeile": 942
    },
    "pruefsumme": "2106170aa81a1c8b",
    "vorbereitet": {
@@ -3569,7 +3577,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 936
+    "zeile": 943
    },
    "pruefsumme": "e6b08c9f14d6c938"
   },
@@ -3631,7 +3639,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 962
+    "zeile": 969
    },
    "pruefsumme": "ba4775b88617e391"
   },
@@ -3675,7 +3683,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 963
+    "zeile": 970
    },
    "pruefsumme": "1b872e701e823e05"
   },
@@ -3732,7 +3740,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1010
+    "zeile": 1017
    },
    "pruefsumme": "3c3619851a285398",
    "vorbereitet": {
@@ -3806,7 +3814,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1011
+    "zeile": 1018
    },
    "pruefsumme": "7683f63bbb702e67",
    "vorbereitet": {
@@ -3911,7 +3919,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1012
+    "zeile": 1019
    },
    "pruefsumme": "9b850256227baefc"
   },
@@ -3973,7 +3981,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1039
+    "zeile": 1046
    },
    "pruefsumme": "edad41665f3f4582"
   },
@@ -4016,7 +4024,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1087
+    "zeile": 1094
    },
    "pruefsumme": "82cc62a5caaf51dd"
   },
@@ -4077,7 +4085,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1088
+    "zeile": 1095
    },
    "pruefsumme": "146f1c2811179944"
   },
@@ -4119,7 +4127,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1134
+    "zeile": 1141
    },
    "pruefsumme": "ff934aa9ae2aeae7"
   },
@@ -4156,8 +4164,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.64",
-    "2.65"
+    "2.64"
    ],
    "beispiel": {
     "id": "k02-a62",
@@ -4173,7 +4180,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1154
+    "zeile": 1160
    },
    "pruefsumme": "8f2238cc4508e625",
    "vorbereitet": {
@@ -4226,8 +4233,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.63",
-    "2.65"
+    "2.63"
    ],
    "beispiel": {
     "id": "k02-a62",
@@ -4246,7 +4252,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1155
+    "zeile": 1161
    },
    "pruefsumme": "1a52adf8665eec72"
   },
@@ -4278,8 +4284,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.63",
-    "2.64"
+    "2.66"
    ],
    "beispiel": {
     "id": "k02-a62",
@@ -4302,7 +4307,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1156
+    "zeile": 1191
    },
    "pruefsumme": "34f38d4a71d89909"
   },
@@ -4336,7 +4341,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.65"
+   ],
    "beispiel": {
     "id": "k02-a62",
     "pfad": [
@@ -4433,7 +4440,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1239
+    "zeile": 1250
    },
    "pruefsumme": "c980c33837e31021",
    "vorbereitet": {
@@ -4492,7 +4499,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1249
+    "zeile": 1260
    },
    "pruefsumme": "58087441fd5fbc91"
   },
@@ -4538,7 +4545,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1250
+    "zeile": 1261
    },
    "pruefsumme": "5fdfe0a5587e70c6",
    "vorbereitet": {
@@ -4607,7 +4614,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1262
+    "zeile": 1273
    },
    "pruefsumme": "5c54b3a403f16cc5"
   },
@@ -4691,7 +4698,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1263
+    "zeile": 1274
    },
    "pruefsumme": "88c166e2b58b45b4"
   },
@@ -4727,7 +4734,10 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.73",
+    "2.74"
+   ],
    "beispiel": {
     "id": "k02-a62",
     "pfad": [
@@ -4739,7 +4749,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1277
+    "zeile": 1290
    },
    "pruefsumme": "c77445412308d76a"
   },
@@ -4776,6 +4786,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
+    "2.72",
     "2.74"
    ],
    "beispiel": {
@@ -4792,7 +4803,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1303
+    "zeile": 1291
    },
    "pruefsumme": "b07f2fcd2149b018"
   },
@@ -4829,6 +4840,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
+    "2.72",
     "2.73"
    ],
    "beispiel": {
@@ -4849,7 +4861,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1304
+    "zeile": 1292
    },
    "pruefsumme": "0b54d127a4f26166"
   },
@@ -4910,7 +4922,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1317
+    "zeile": 1328
    },
    "pruefsumme": "d86f7dfebb7e2535"
   },
@@ -4964,7 +4976,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1318
+    "zeile": 1329
    },
    "pruefsumme": "2cf7063b3d9ee564"
   },
@@ -5009,7 +5021,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1395
+    "zeile": 1406
    },
    "pruefsumme": "968efaf89d730d55",
    "vorbereitet": {
@@ -5074,7 +5086,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1396
+    "zeile": 1407
    },
    "pruefsumme": "875d504dae32cb2e"
   },
@@ -5124,7 +5136,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1397
+    "zeile": 1408
    },
    "pruefsumme": "83e29faf0ae213ec"
   },
@@ -5173,7 +5185,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1418
+    "zeile": 1429
    },
    "pruefsumme": "b9796b57133367e6",
    "vorbereitet": {
@@ -5248,7 +5260,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1419
+    "zeile": 1430
    },
    "pruefsumme": "e275300cf88a4025"
   },
@@ -5303,7 +5315,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1450
+    "zeile": 1461
    },
    "pruefsumme": "499d38cd62871983"
   },
@@ -5376,7 +5388,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1451
+    "zeile": 1462
    },
    "pruefsumme": "46eee6ae817c9cc6",
    "vorbereitet": {
@@ -5452,7 +5464,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1461
+    "zeile": 1472
    },
    "pruefsumme": "4e5db829db3e3cd0"
   },
@@ -5508,7 +5520,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1534
+    "zeile": 1545
    },
    "pruefsumme": "c4894e617b5cc723",
    "vorbereitet": {
@@ -5573,7 +5585,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1581
+    "zeile": 1592
    },
    "pruefsumme": "e5ae26d85e1bf617"
   },
@@ -5627,7 +5639,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1582
+    "zeile": 1593
    },
    "pruefsumme": "0ece4336c5d06c05"
   },
@@ -5688,7 +5700,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1611
+    "zeile": 1622
    },
    "pruefsumme": "b4d9f57aeb6e7cae"
   },
@@ -5753,7 +5765,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1612
+    "zeile": 1623
    },
    "pruefsumme": "131920560331982f",
    "vorbereitet": {
@@ -5854,7 +5866,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1613
+    "zeile": 1624
    },
    "pruefsumme": "153db58f35199f65"
   },
@@ -5915,7 +5927,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1632
+    "zeile": 1643
    },
    "pruefsumme": "8ad52c360c6255b8"
   },
@@ -5961,7 +5973,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1669
+    "zeile": 1680
    },
    "pruefsumme": "de0db65f77f2ba25"
   },
@@ -6013,7 +6025,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1670
+    "zeile": 1681
    },
    "pruefsumme": "cb4f088c4eea53b9"
   },
@@ -6069,7 +6081,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1671
+    "zeile": 1682
    },
    "pruefsumme": "2750e4bdc0363e8f"
   },
@@ -6121,7 +6133,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1699
+    "zeile": 1710
    },
    "pruefsumme": "dfa60c4e8624c75f"
   },
@@ -6181,7 +6193,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1700
+    "zeile": 1711
    },
    "pruefsumme": "616adb27c341a494"
   },
@@ -6234,7 +6246,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1795
+    "zeile": 1785
    },
    "pruefsumme": "41ef6d3f3d64e834",
    "vorbereitet": {
@@ -6303,7 +6315,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1812
+    "zeile": 1802
    },
    "pruefsumme": "aa2aca9f643f5d0a"
   },
@@ -6365,7 +6377,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1813
+    "zeile": 1803
    },
    "pruefsumme": "53516ef858e56be0"
   },
@@ -6461,7 +6473,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1822
+    "zeile": 1812
    },
    "pruefsumme": "72a46a197e864c1d"
   },
@@ -6531,7 +6543,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1823
+    "zeile": 1813
    },
    "pruefsumme": "fb13036e8942c755"
   },
@@ -6605,7 +6617,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1864
+    "zeile": 1854
    },
    "pruefsumme": "05547d7808f44d43"
   },
@@ -6675,7 +6687,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1865
+    "zeile": 1855
    },
    "pruefsumme": "6454401cb8732052"
   },
@@ -6700,7 +6712,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.105"
+   ],
    "beispiel": {
     "id": "k02-a104",
     "pfad": [
@@ -6712,7 +6726,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1926
+    "zeile": 1917
    },
    "pruefsumme": "a600a882051d2a76"
   },
@@ -6742,7 +6756,9 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.104"
+   ],
    "beispiel": {
     "id": "k02-a104",
     "pfad": [
@@ -6756,7 +6772,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1946
+    "zeile": 1922
    },
    "pruefsumme": "3724c394185bcdd7",
    "vorbereitet": {
@@ -6827,7 +6843,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1968
+    "zeile": 1960
    },
    "pruefsumme": "d032f6fc43d1a355"
   },
@@ -6905,7 +6921,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1969
+    "zeile": 1961
    },
    "pruefsumme": "461bae6198d239da"
   },
@@ -6973,7 +6989,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2001
+    "zeile": 1993
    },
    "pruefsumme": "03a4d6b1bd8932fa"
   },
@@ -7039,7 +7055,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2002
+    "zeile": 1994
    },
    "pruefsumme": "a5c22bb2598d2f9b"
   },
@@ -7085,7 +7101,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2068
+    "zeile": 2060
    },
    "pruefsumme": "17413b81b975aaa9"
   },
@@ -7133,7 +7149,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2069
+    "zeile": 2061
    },
    "pruefsumme": "85594222f5afd931"
   },
@@ -7182,7 +7198,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2070
+    "zeile": 2062
    },
    "pruefsumme": "09c83a0cba68bce2"
   },
@@ -7240,7 +7256,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2084
+    "zeile": 2076
    },
    "pruefsumme": "13727f085a3c5096",
    "vorbereitet": {
@@ -7326,7 +7342,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2085
+    "zeile": 2077
    },
    "pruefsumme": "d49cd2727f08633b"
   },
@@ -7392,7 +7408,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2121
+    "zeile": 2113
    },
    "pruefsumme": "1992547bf29d7aef"
   },
@@ -7471,7 +7487,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2122
+    "zeile": 2114
    },
    "pruefsumme": "bdb5087d20384ca1"
   },
@@ -7549,7 +7565,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2134
+    "zeile": 2126
    },
    "pruefsumme": "73582e1b50fb02ac"
   },
@@ -7622,7 +7638,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2135
+    "zeile": 2127
    },
    "pruefsumme": "8938f2003899fb03"
   },
@@ -7672,7 +7688,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2211
+    "zeile": 2203
    },
    "pruefsumme": "10326896c8a25d19"
   },
@@ -7726,7 +7742,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2212
+    "zeile": 2204
    },
    "pruefsumme": "d1610389320884c9",
    "vorbereitet": {
@@ -7794,7 +7810,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2213
+    "zeile": 2205
    },
    "pruefsumme": "4180ac7e7a329cb4"
   },
@@ -7826,7 +7842,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.123"
+    "2.123",
+    "2.124"
    ],
    "beispiel": {
     "id": "k02-a119",
@@ -7849,7 +7866,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2232
+    "zeile": 2225
    },
    "pruefsumme": "9807576ab21302d6"
   },
@@ -7881,7 +7898,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.122"
+    "2.122",
+    "2.124"
    ],
    "beispiel": {
     "id": "k02-a119",
@@ -7906,7 +7924,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2233
+    "zeile": 2226
    },
    "pruefsumme": "937bc48a38c5895e"
   },
@@ -7980,7 +7998,10 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.122",
+    "2.123"
+   ],
    "beispiel": {
     "id": "k02-a119",
     "pfad": [
@@ -8007,7 +8028,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2236
+    "zeile": 2227
    },
    "pruefsumme": "b01f82c506d39d60"
   },
@@ -8057,7 +8078,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.126"
+    "2.126",
+    "2.127"
    ],
    "beispiel": {
     "id": "k02-a119",
@@ -8089,7 +8111,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2277
+    "zeile": 2272
    },
    "pruefsumme": "dcc2c15ed4155aa7"
   },
@@ -8135,7 +8157,8 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "2.125"
+    "2.125",
+    "2.127"
    ],
    "beispiel": {
     "id": "k02-a119",
@@ -8171,7 +8194,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2278
+    "zeile": 2273
    },
    "pruefsumme": "3158b0a371bb766e"
   },
@@ -8216,7 +8239,10 @@
     }
    ],
    "art": "fliesstext",
-   "reihe": [],
+   "reihe": [
+    "2.125",
+    "2.126"
+   ],
    "beispiel": {
     "id": "k02-a119",
     "pfad": [
@@ -8255,7 +8281,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2291
+    "zeile": 2274
    },
    "pruefsumme": "e68a8eb905ecf98a"
   },
@@ -8330,7 +8356,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2294
+    "zeile": 2287
    },
    "pruefsumme": "8a8bc59979925f7d"
   },
@@ -8381,7 +8407,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2341
+    "zeile": 2334
    },
    "pruefsumme": "e637c3218dfbdae5"
   },
@@ -8440,7 +8466,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2342
+    "zeile": 2335
    },
    "pruefsumme": "c6d4f2df7aee6973"
   },
@@ -8486,7 +8512,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2358
+    "zeile": 2351
    },
    "pruefsumme": "49e6d7fae9178bce",
    "vorbereitet": {
@@ -8566,7 +8592,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2359
+    "zeile": 2352
    },
    "pruefsumme": "3bd48aa66b9b84ad"
   },
@@ -8647,7 +8673,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2360
+    "zeile": 2353
    },
    "pruefsumme": "61afeaa332ca3e5c"
   },
@@ -8705,7 +8731,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2394
+    "zeile": 2387
    },
    "pruefsumme": "99444850f455c96e"
   },
@@ -8751,7 +8777,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2475
+    "zeile": 2467
    },
    "pruefsumme": "7df936abbc140046"
   },
@@ -8803,7 +8829,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2476
+    "zeile": 2468
    },
    "pruefsumme": "b8bdad89b418d1b3",
    "vorbereitet": {
@@ -8872,7 +8898,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2477
+    "zeile": 2469
    },
    "pruefsumme": "e4b54bafb8aebba1"
   },
@@ -8926,7 +8952,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2541
+    "zeile": 2533
    },
    "pruefsumme": "135e70e03d58de9a"
   },
@@ -9003,7 +9029,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2542
+    "zeile": 2534
    },
    "pruefsumme": "2469e6803c28c263"
   },
@@ -9071,7 +9097,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2574
+    "zeile": 2566
    },
    "pruefsumme": "946fd90cfe30d279"
   },
@@ -9142,7 +9168,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2575
+    "zeile": 2567
    },
    "pruefsumme": "ed4d6cdbefc07960",
    "vorbereitet": {
@@ -9222,7 +9248,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2583
+    "zeile": 2575
    },
    "pruefsumme": "2bbecd2c93207fac"
   },
@@ -9267,7 +9293,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2641
+    "zeile": 2633
    },
    "pruefsumme": "52bd291686cdbe0b"
   },
@@ -9312,7 +9338,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2642
+    "zeile": 2634
    },
    "pruefsumme": "abdf02268ec27eb4"
   },
@@ -9363,7 +9389,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2643
+    "zeile": 2635
    },
    "pruefsumme": "7df24823495be2fd",
    "vorbereitet": {
@@ -9423,7 +9449,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2656
+    "zeile": 2648
    },
    "pruefsumme": "db4f97727658a035"
   },
@@ -9485,7 +9511,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2657
+    "zeile": 2649
    },
    "pruefsumme": "3d391aac14050a3b"
   },
@@ -9534,7 +9560,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2872
+    "zeile": 2864
    },
    "pruefsumme": "6eee15ade24b2976"
   },
@@ -9600,7 +9626,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2883
+    "zeile": 2875
    },
    "pruefsumme": "a7c0b5f2848e7190"
   },
@@ -9652,7 +9678,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2895
+    "zeile": 2887
    },
    "pruefsumme": "f51d3ec569b1bf24"
   },
@@ -9710,7 +9736,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2908
+    "zeile": 2900
    },
    "pruefsumme": "6c13f211ec7016b5"
   },
@@ -9759,7 +9785,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2920
+    "zeile": 2912
    },
    "pruefsumme": "8ea754b045ded48f"
   },
@@ -9804,7 +9830,7 @@
    },
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2931
+    "zeile": 2923
    },
    "pruefsumme": "010a0678a8a084d7"
   }
@@ -9926,7 +9952,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2869
+    "zeile": 2861
    },
    "erklaerung": {
     "loesung": "4... Dxg5",
@@ -10067,8 +10093,8 @@
     },
     {
      "art": "verweis",
-     "text": "Abb. 2.30",
-     "abbildung": "2.30"
+     "text": "Abb. 2.29",
+     "abbildung": "2.29"
     },
     {
      "art": "text",
@@ -10078,7 +10104,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2880
+    "zeile": 2872
    },
    "erklaerung": {
     "loesung": "8... d5!",
@@ -10232,7 +10258,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2892
+    "zeile": 2884
    },
    "erklaerung": {
     "loesung": "10... Dd4!",
@@ -10401,7 +10427,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2905
+    "zeile": 2897
    },
    "erklaerung": {
     "loesung": "4... h5",
@@ -10573,7 +10599,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2917
+    "zeile": 2909
    },
    "erklaerung": {
     "loesung": "4... Sxe4!",
@@ -10700,7 +10726,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2928
+    "zeile": 2920
    },
    "erklaerung": {
     "loesung": "7. Lg5",
@@ -10862,7 +10888,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 457
+    "zeile": 461
    }
   },
   {
@@ -10930,7 +10956,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 646
+    "zeile": 653
    }
   },
   {
@@ -11007,7 +11033,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 767
+    "zeile": 774
    }
   },
   {
@@ -11066,7 +11092,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 905
+    "zeile": 912
    }
   },
   {
@@ -11134,7 +11160,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1113
+    "zeile": 1120
    }
   },
   {
@@ -11211,7 +11237,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1371
+    "zeile": 1382
    }
   },
   {
@@ -11279,7 +11305,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1500
+    "zeile": 1511
    }
   },
   {
@@ -11347,7 +11373,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1777
+    "zeile": 1767
    }
   },
   {
@@ -11415,7 +11441,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1910
+    "zeile": 1900
    }
   },
   {
@@ -11501,7 +11527,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2036
+    "zeile": 2028
    }
   },
   {
@@ -11578,7 +11604,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2178
+    "zeile": 2170
    }
   },
   {
@@ -11673,7 +11699,7 @@
    ],
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2435
+    "zeile": 2427
    }
   }
  ],
@@ -11812,7 +11838,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 352
+    "zeile": 354
    }
   },
   {
@@ -11882,7 +11908,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 441
+    "zeile": 445
    }
   },
   {
@@ -12027,7 +12053,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 527
+    "zeile": 533
    }
   },
   {
@@ -12044,7 +12070,7 @@
     }
    ],
    "abschnitt": "2.3",
-   "abbildung": "2.30",
+   "abbildung": "2.29",
    "bloecke": [
     {
      "art": "tabelle",
@@ -12157,8 +12183,8 @@
       },
       {
        "art": "verweis",
-       "text": "Abb. 2.29",
-       "abbildung": "2.29"
+       "text": "Abb. 2.30",
+       "abbildung": "2.30"
       },
       {
        "art": "text",
@@ -12190,7 +12216,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 617
+    "zeile": 609
    }
   },
   {
@@ -12317,7 +12343,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 733
+    "zeile": 740
    }
   },
   {
@@ -12444,7 +12470,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 847
+    "zeile": 854
    }
   },
   {
@@ -12599,7 +12625,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1042
+    "zeile": 1049
    }
   },
   {
@@ -12744,7 +12770,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1194
+    "zeile": 1205
    }
   },
   {
@@ -13064,7 +13090,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1332
+    "zeile": 1343
    }
   },
   {
@@ -13190,7 +13216,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1463
+    "zeile": 1474
    }
   },
   {
@@ -13317,7 +13343,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1636
+    "zeile": 1647
    }
   },
   {
@@ -13454,7 +13480,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 1873
+    "zeile": 1863
    }
   },
   {
@@ -13581,7 +13607,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2005
+    "zeile": 1997
    }
   },
   {
@@ -13708,7 +13734,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2139
+    "zeile": 2131
    }
   },
   {
@@ -13845,7 +13871,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2299
+    "zeile": 2292
    }
   },
   {
@@ -13962,7 +13988,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2396
+    "zeile": 2389
    }
   },
   {
@@ -13970,7 +13996,7 @@
    "titel": [
     {
      "art": "text",
-     "text": "Nimzo-Indische Verteidigung: Hauptvariante (Rubinstein) nach ",
+     "text": "Nimzo-Indische Verteidigung: Hauptvariante nach ",
      "stil": "normal"
     },
     {
@@ -14089,7 +14115,7 @@
    "urteil": null,
    "quelle": {
     "datei": "kap02_klassische_eroeffnungen.tex",
-    "zeile": 2586
+    "zeile": 2578
    }
   }
  ],
@@ -18313,7 +18339,7 @@
                                            "zug": "d5",
                                            "zeichen": "!",
                                            "abbildungen": [
-                                            "2.30"
+                                            "2.29"
                                            ],
                                            "weiter": [
                                             {
@@ -18350,7 +18376,7 @@
                                                  "zug": "Bg5",
                                                  "zeichen": "",
                                                  "abbildungen": [
-                                                  "2.29"
+                                                  "2.30"
                                                  ],
                                                  "weiter": []
                                                 }
@@ -18590,7 +18616,7 @@
      ]
     },
     {
-     "nummer": "2.30",
+     "nummer": "2.29",
      "pfad": [
       "e4",
       "e5",
@@ -18615,7 +18641,7 @@
      ]
     },
     {
-     "nummer": "2.29",
+     "nummer": "2.30",
      "pfad": [
       "e4",
       "e5",

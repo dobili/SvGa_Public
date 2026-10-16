@@ -110,7 +110,7 @@ function haengt(wert: Wert, gewinn: number, farbe: Color): boolean {
  * „die berühmteste Falle“). Eingaben: Bewerter, Stellung (FEN, der Schläger ist am Zug), Feld
  * des Bauern, Rechenzeit. Ausgabe: Schlag, beste Folge, Materialgewinn und Urteil, oder null,
  * wenn keine Figur legal schlagen kann (etwa wegen einer Fesselung) oder die FEN ungültig ist.
- * Beispiel: Abb. 2.40, e4: 3... Sxe4 4. De2 De7 5. Dxe4 … → hängt nicht; Abb. 2.30, d5:
+ * Beispiel: Abb. 2.40, e4: 3... Sxe4 4. De2 De7 5. Dxe4 … → hängt nicht; Abb. 2.29, d5:
  * 11. Lxd5 … → hängt.
  * Sonderfälle: Gewertet wird das Material am ruhigen Ende der Hauptvariante; ein Matt für oder
  * gegen den Schläger entscheidet allein. Hat der Gegner nach dem Schlag keinen Zug (Matt oder

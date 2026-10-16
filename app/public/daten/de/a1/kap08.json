@@ -3046,7 +3046,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 821
+    "zeile": 831
    },
    "pruefsumme": "a9e02b2af69f86e5"
   },
@@ -3078,7 +3078,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 830
+    "zeile": 840
    },
    "pruefsumme": "176374dd0bd6b642"
   },
@@ -3110,7 +3110,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 838
+    "zeile": 848
    },
    "pruefsumme": "2c29d0a64b6d3814"
   },
@@ -3142,7 +3142,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 846
+    "zeile": 856
    },
    "pruefsumme": "3d777ce4635ae322"
   },
@@ -3174,7 +3174,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 854
+    "zeile": 864
    },
    "pruefsumme": "706068f64d142ede"
   },
@@ -3206,7 +3206,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 863
+    "zeile": 873
    },
    "pruefsumme": "1279c0742c864b20"
   },
@@ -3238,7 +3238,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 871
+    "zeile": 881
    },
    "pruefsumme": "36f7629d0ef3983e"
   },
@@ -3270,7 +3270,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 879
+    "zeile": 889
    },
    "pruefsumme": "d7d3671bdc8d1a49"
   },
@@ -3302,7 +3302,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 888
+    "zeile": 898
    },
    "pruefsumme": "513d5a168fe9ada2"
   },
@@ -3334,7 +3334,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 896
+    "zeile": 906
    },
    "pruefsumme": "5e7f97fc15b782d7"
   },
@@ -3366,7 +3366,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 904
+    "zeile": 914
    },
    "pruefsumme": "7c861a4fd464efad"
   },
@@ -3398,7 +3398,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 913
+    "zeile": 923
    },
    "pruefsumme": "2fb39a377cb7bf7d"
   },
@@ -3430,7 +3430,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 921
+    "zeile": 931
    },
    "pruefsumme": "5b991166e3d89e9e"
   },
@@ -3462,7 +3462,7 @@
    },
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 929
+    "zeile": 939
    },
    "pruefsumme": "36eeb4a59ebedf94"
   }
@@ -3520,7 +3520,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 819
+    "zeile": 829
    },
    "erklaerung": {
     "loesung": null,
@@ -3594,7 +3594,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 828
+    "zeile": 838
    },
    "erklaerung": {
     "loesung": "1. Ke5! Kh7 2. Kf6 Kh8 3. Dg7#",
@@ -3686,7 +3686,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 836
+    "zeile": 846
    },
    "erklaerung": {
     "loesung": "1. Tb6! Ka7 2. Kc7 Ka8 3. Ta6#",
@@ -3798,7 +3798,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 844
+    "zeile": 854
    },
    "erklaerung": {
     "loesung": "1... Kf6!",
@@ -3907,7 +3907,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 852
+    "zeile": 862
    },
    "erklaerung": {
     "loesung": "1... Kf6!",
@@ -3985,7 +3985,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 861
+    "zeile": 871
    },
    "erklaerung": {
     "loesung": "1. Kc3!",
@@ -4081,7 +4081,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 869
+    "zeile": 879
    },
    "erklaerung": {
     "loesung": "1. Kb6",
@@ -4215,7 +4215,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 877
+    "zeile": 887
    },
    "erklaerung": {
     "loesung": "1. Txe8! Kxe8 2. Kc5!",
@@ -4275,7 +4275,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 886
+    "zeile": 896
    },
    "erklaerung": {
     "loesung": "1. a4!",
@@ -4407,7 +4407,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 894
+    "zeile": 904
    },
    "erklaerung": {
     "loesung": "1. h7! a2 2. h8=D+",
@@ -4570,7 +4570,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 902
+    "zeile": 912
    },
    "erklaerung": {
     "loesung": "1. g5!",
@@ -4630,7 +4630,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 911
+    "zeile": 921
    },
    "erklaerung": {
     "loesung": "1. h5",
@@ -4733,7 +4733,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 919
+    "zeile": 929
    },
    "erklaerung": {
     "loesung": "1. c6!",
@@ -4825,7 +4825,7 @@
    ],
    "quelle": {
     "datei": "kap08_endspiel_fundament.tex",
-    "zeile": 927
+    "zeile": 937
    },
    "erklaerung": {
     "loesung": "1. a3!",

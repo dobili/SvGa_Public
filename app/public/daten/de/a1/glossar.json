@@ -352,7 +352,7 @@
      "anker": "abzugsschach-2",
      "kapitel": 2,
      "abschnitt": "2.5",
-     "abbildung": "2.42"
+     "abbildung": "2.41"
     },
     {
      "anker": "abzugsschach-7",
@@ -603,7 +603,7 @@
      "anker": "batterie-2",
      "kapitel": 2,
      "abschnitt": "2.3",
-     "abbildung": "2.29"
+     "abbildung": "2.28"
     },
     {
      "anker": "batterie-7",
@@ -1193,7 +1193,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Partien mit sehr kurzer Bedenkzeit, nach den Regeln der FIDE höchstens 10 Minuten je Seite. Eine Zeitgutschrift für 60 Züge wird dabei eingerechnet [3] (Kapitel 12, ",
+     "text": "Partien mit sehr kurzer Bedenkzeit, nach den Regeln der FIDE höchstens 10 Minuten je Seite. Eine Zeitgutschrift für 60 Züge wird dabei eingerechnet [2] (Kapitel 12, ",
      "stil": "normal"
     },
     {
@@ -1840,7 +1840,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Wertungszahl des Deutschen Schachbundes [2]. Wie die Elo-Zahl bekommst du sie über gewertete Turnierpartien (Kapitel 12, ",
+     "text": "Die Wertungszahl des Deutschen Schachbundes [1]. Wie die Elo-Zahl bekommst du sie über gewertete Turnierpartien (Kapitel 12, ",
      "stil": "normal"
     },
     {
@@ -1910,7 +1910,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Die internationale Wertungszahl des Weltschachbundes FIDE [4]. Sie drückt die Spielstärke in einer einzigen Zahl aus: je höher, desto stärker (Kapitel 0 und 12; ",
+     "text": "Die internationale Wertungszahl des Weltschachbundes FIDE [3]. Sie drückt die Spielstärke in einer einzigen Zahl aus: je höher, desto stärker (Kapitel 0 und 12; ",
      "stil": "normal"
     },
     {
@@ -3894,28 +3894,11 @@
    "text": [
     {
      "art": "text",
-     "text": "Du ziehst, ohne geprüft zu haben, ob du auf jedes Schach, jeden Schlag und jede Drohung des Gegners im nächsten Zug eine sichere Antwort hast. So nennt es der amerikanische Trainer Dan Heisman [6] (Kapitel 12, ",
-     "stil": "normal"
-    },
-    {
-     "art": "stelle",
-     "text": "Abschnitt 12.1",
-     "anker": "hoffnungsschach-12"
-    },
-    {
-     "art": "text",
-     "text": ").",
+     "text": "Du ziehst, ohne geprüft zu haben, ob du auf jedes Schach, jeden Schlag und jede Drohung des Gegners im nächsten Zug eine sichere Antwort hast. So nennt es der amerikanische Trainer Dan Heisman [5].",
      "stil": "normal"
     }
    ],
-   "stellen": [
-    {
-     "anker": "hoffnungsschach-12",
-     "kapitel": 12,
-     "abschnitt": "12.1",
-     "abbildung": "12.1"
-    }
-   ],
+   "stellen": [],
    "verweise": []
   },
   {
@@ -4288,7 +4271,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Partie mit langer Bedenkzeit, nach den Regeln der FIDE 60 Minuten und mehr je Seite [3] (Kapitel 12, ",
+     "text": "Eine Partie mit langer Bedenkzeit, nach den Regeln der FIDE 60 Minuten und mehr je Seite [2] (Kapitel 12, ",
      "stil": "normal"
     },
     {
@@ -4803,7 +4786,7 @@
     },
     {
      "art": "text",
-     "text": "), das der Großmeister Igor Smirnov lehrt [14]: Frage dich, welche deiner Figuren keine Aufgabe hat, und verbessere genau diese (Kapitel 6, ",
+     "text": "), das der Großmeister Igor Smirnov lehrt [12]: Frage dich, welche deiner Figuren keine Aufgabe hat, und verbessere genau diese (Kapitel 6, ",
      "stil": "normal"
     },
     {
@@ -5955,7 +5938,7 @@
      "anker": "planbilanz-6",
      "kapitel": 6,
      "abschnitt": "6.6",
-     "abbildung": "6.21"
+     "abbildung": "6.20"
     }
    ],
    "verweise": [
@@ -6025,7 +6008,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Einen Plan des Gegners verhindern, bevor er ihn ausführen kann. Den Begriff hat Aaron Nimzowitsch in die Schachlehre eingeführt [11] (Kapitel 6, ",
+     "text": "Einen Plan des Gegners verhindern, bevor er ihn ausführen kann. Den Begriff hat Aaron Nimzowitsch in die Schachlehre eingeführt [10] (Kapitel 6, ",
      "stil": "normal"
     },
     {
@@ -6907,7 +6890,7 @@
     },
     {
      "art": "text",
-     "text": " [3] (Kapitel 12, ",
+     "text": " [2] (Kapitel 12, ",
      "stil": "normal"
     },
     {
@@ -7190,7 +7173,7 @@
     },
     {
      "art": "text",
-     "text": "), beschrieben von den schwedischen Großmeistern Axel Smith und Hans Tikkanen [15]: Du löst denselben großen Satz von Aufgaben mehrmals hintereinander, jeden Durchgang schneller (Kapitel 12, ",
+     "text": "), beschrieben von den schwedischen Großmeistern Axel Smith und Hans Tikkanen [13]: Du löst denselben großen Satz von Aufgaben mehrmals hintereinander, jeden Durchgang schneller (Kapitel 12, ",
      "stil": "normal"
     },
     {
@@ -7542,7 +7525,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Türme gehören hinter Freibauern: hinter die eigenen, um sie zu unterstützen, und hinter die gegnerischen, um sie aufzuhalten. Die Regel geht auf Siegbert Tarrasch zurück [16] (Kapitel 9, ",
+     "text": "Türme gehören hinter Freibauern: hinter die eigenen, um sie zu unterstützen, und hinter die gegnerischen, um sie aufzuhalten. Die Regel geht auf Siegbert Tarrasch zurück [14] (Kapitel 9, ",
      "stil": "normal"
     },
     {

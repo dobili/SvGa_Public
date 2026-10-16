@@ -12,8 +12,17 @@
    "text": "Nach 1. Lxh7+? Kxh7 2. Sg5+ schlägt die Dame von d8 aus mit 2... Dxg5!, und Weiß hat zwei Figuren für einen Bauern gegeben. Prüfe bei der stärksten Antwort zuerst die Schlagzüge des Gegners; besser ist ein ruhiger Zug wie 1. Dc2."
   },
   {
-   "uebung": "ueb:fehlerprotokoll",
+   "uebung": "ueb:zeitnot-prinzipien",
    "nummer": 84,
+   "status": "freigegeben",
+   "loesung": "1. g3",
+   "akzeptiert": [],
+   "motiv": "Sicherheitsblick in Zeitnot",
+   "text": "Nach 1. Txd5?? zieht der Läufer mit Schach ab: 1... Lxh2+! 2. Kxh2 Txd5, und Schwarz gewinnt die Qualität. Die Frage nach den Schachs des Gegners entscheidet; 1. g3 schließt die Diagonale und droht erst dann Txd5."
+  },
+  {
+   "uebung": "ueb:fehlerprotokoll",
+   "nummer": 85,
    "status": "freigegeben",
    "loesung": null,
    "akzeptiert": [],
@@ -22,21 +31,12 @@
   },
   {
    "uebung": "ueb:trainingsplan",
-   "nummer": 85,
+   "nummer": 86,
    "status": "freigegeben",
    "loesung": null,
    "akzeptiert": [],
    "motiv": "Trainingsplan",
    "text": "Ein guter Plan mischt an sieben Tagen Taktik, Partien, Endspiele, Meisterpartien und die Analyse einer eigenen verlorenen Partie. Er nennt für jeden Tag konkrete Inhalte statt allgemeiner Vorsätze."
-  },
-  {
-   "uebung": "ueb:zeitnot-prinzipien",
-   "nummer": 86,
-   "status": "freigegeben",
-   "loesung": "1. g3",
-   "akzeptiert": [],
-   "motiv": "Sicherheitsblick in Zeitnot",
-   "text": "Nach 1. Txd5?? zieht der Läufer mit Schach ab: 1... Lxh2+! 2. Kxh2 Txd5, und Schwarz gewinnt die Qualität. Die Frage nach den Schachs des Gegners entscheidet; 1. g3 schließt die Diagonale und droht erst dann Txd5."
   }
  ]
 }

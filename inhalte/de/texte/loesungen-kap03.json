@@ -3,17 +3,8 @@
  "kapitel": 3,
  "erklaerungen": [
   {
-   "uebung": "ueb:echt-oder-schein",
-   "nummer": 14,
-   "status": "freigegeben",
-   "loesung": null,
-   "akzeptiert": [],
-   "motiv": "Echtes Opfer oder Scheinopfer",
-   "text": "Das Damengambit ist ein Scheinopfer, weil der Bauer mit e3 und Lxc4 zurückkommt. Dänisches und Smith-Morra-Gambit sind echte Opfer für Entwicklung und Linien; das Budapester Gambit liegt dazwischen, weil Schwarz den Bauern oft, aber nur mit genauem Spiel zurückgewinnt."
-  },
-  {
    "uebung": "ueb:smith-morra-kompensation",
-   "nummer": 15,
+   "nummer": 14,
    "status": "freigegeben",
    "loesung": null,
    "akzeptiert": [],
@@ -22,7 +13,7 @@
   },
   {
    "uebung": "ueb:goering",
-   "nummer": 16,
+   "nummer": 15,
    "status": "freigegeben",
    "loesung": "4... d5",
    "akzeptiert": [],
@@ -31,7 +22,7 @@
   },
   {
    "uebung": "ueb:wolga-bilanz",
-   "nummer": 17,
+   "nummer": 16,
    "status": "freigegeben",
    "loesung": null,
    "akzeptiert": [],
@@ -40,12 +31,21 @@
   },
   {
    "uebung": "ueb:elefant",
-   "nummer": 18,
+   "nummer": 17,
    "status": "freigegeben",
    "loesung": null,
    "akzeptiert": [],
    "motiv": "Fesselung auf der e-Linie",
    "text": "Nach 4. De2 ist der Bauer e4 absolut an den König gefesselt, darum ist 4... exf3 gar nicht erlaubt. Schwarz hat für den Bauern kaum etwas bekommen, und die Dame e2 ist nicht verfrüht, weil sie nicht mit Tempo gejagt werden kann und die Fesselung hält."
+  },
+  {
+   "uebung": "ueb:echt-oder-schein",
+   "nummer": 18,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Echtes Opfer oder Scheinopfer",
+   "text": "Das Damengambit ist ein Scheinopfer, weil der Bauer mit e3 und Lxc4 zurückkommt. Dänisches und Smith-Morra-Gambit sind echte Opfer für Entwicklung und Linien; das Budapester Gambit liegt dazwischen, weil Schwarz den Bauern oft, aber nur mit genauem Spiel zurückgewinnt."
   }
  ]
 }

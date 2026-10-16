@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 16.10.2026 · **Version 0.2.35**, AP 11 Kalibrierung der Stufen und Fehlerprofile (Fable, Zweig `ap11-kalibrierung`; davor 0.2.34 als erster Stand im öffentlichen Repository `dobili/SvGa_Public`, Veröffentlichung siehe `docs/VEROEFFENTLICHUNG.md`) · Nächstes: Nachtest N158 bis N181 und die Rückfragen C1 bis C9 und K1 bis K6 in `docs/AUFGABEN_AUTOR.md`; Website mit `/training/` und den QR-Zielen prüfen · Ältere Stände in den Abschnitten unten; die ganze Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 16.10.2026 · **Version 0.2.36**, AP 11 Kalibrierung der Stufen und Fehlerprofile (Fable, Zweig `ap11-kalibrierung`; davor 0.2.35 mit dem neuen Buchstand vom 16.10.2026 (Opus) und 0.2.34 als erster Stand im öffentlichen Repository `dobili/SvGa_Public`, Veröffentlichung siehe `docs/VEROEFFENTLICHUNG.md`) · Nächstes: Nachtest N158 bis N181 und die Rückfragen C1 bis C9 und K1 bis K6 in `docs/AUFGABEN_AUTOR.md`; Website mit `/training/` und den QR-Zielen prüfen · Ältere Stände in den Abschnitten unten; die ganze Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1036,7 +1036,7 @@ Handwerksteil; Stufen und Fehlerprofile bekommen eine abgegrenzte Schnittstelle 
    Zug), grobe Patzer (mehr als zwei Bauern), absichtliche Fehler der Engine („Mit 12... Sf6 hat
    die Engine eine Figur hängen lassen (W1). Hast du es gesehen?“), PGN kopieren oder als Datei.
 
-**Kalibrierung und Gegenprüfung (Fable, 16.10.2026, Zweig `ap11-kalibrierung`, Version 0.2.35)**
+**Kalibrierung und Gegenprüfung (Fable, 16.10.2026, Zweig `ap11-kalibrierung`, Version 0.2.36)**
 – erledigt, Entscheidungen und Messergebnis in `docs/ENTSCHEIDUNGEN.md` („AP 11 Kalibrierung“):
 
 - `engine/stufen.ts`: Jede Stufe hat Grundstärke (Skill Level, geräteunabhängig: Stockfish wählt
@@ -1169,6 +1169,33 @@ Seite auf der Website, mit allen Inhalten aus dem Buch; im Buch bleiben QR-Code 
   Graustufen), Pipeline über eine geänderte Kopie des Buches ohne neue Befunde.
 - Prüfungen: pytest 90, Vitest 867, Playwright Chromium 77 (lokal; GitHub Actions nur von Hand).
 
+### Buchstand 16.10.2026: Abbildungen in Kapitel 2 und 3 getauscht – Version 0.2.35 (Zweig `buch-abbildungen-kap2-kap3`, Opus)
+
+Der Autor hat im Buch die Reihenfolge einiger Abbildungen getauscht und wollte **nur** diese
+Änderungen in der App (16.10.2026):
+
+- Kapitel 2: 2.29 = Greco-Variante nach 10... d5!, 2.30 = nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5;
+  dazu die Diagrammreihen 2.26/2.27 und 2.28/2.29, die Bilanz (jetzt an 2.29) und der Verweis in
+  der Lösung der Übung „Italienisch: Bilanz“.
+- Kapitel 3 (Milner-Barry): 3.31 = nach 12. Kh1, 3.32 = nach 13. f4 (mit der Bilanz),
+  3.33 = nach 7... Sxd4??, 3.34 = nach 9. Lb5+!.
+- Zugfolgen `k02-a18.pgn` und `k03-a28.pgn`, vorbereitete Texte (2.29, 3.33), Tests und Kommentare
+  auf die neuen Nummern umgestellt. Jede der Abbildungen geprüft: Die Zugfolge aus dem Text,
+  auch die Nebenvarianten, führt genau zur FEN der Abbildung.
+- Tabelle 2.2 gestrichen: Die App nutzt keine Tabellennummern aus Kapitel 2; nichts zu ändern.
+- Pipeline: `\vspace` und `\hspace` (auch mit Stern) werden übersprungen; der neue Buchstand
+  enthält sie, vorher brach der Datenlauf ab.
+
+**Danach vollständiger Datenlauf (Wunsch des Autors, 16.10.2026):** Der ganze neue Buchstand ist
+übernommen. Neu nummeriert sind die Übungen in Kapitel 3 (14–18), Kapitel 4 (19–22) und Kapitel
+12 (84–86); der Fortschritt hängt an der Kennung der Übung und bleibt erhalten, die Kopfzeilen von
+fünf Zugfolgen (k03-a81, k03-a83, k04-a54, k04-a55, k12-a6) zeigen die neuen Nummern. Inhaltlich
+neu: Abb. 0.6 (Unterschrift, Felder), Abb. 1.29 (Fließtext statt Vorsicht-Kasten), Diagrammreihen
+in Kapitel 1, 2, 9 und 11, Unterabschnitte bei 2.41, 9.16 und 9.17, Bilanztitel Nimzo-Indisch,
+Fallenchecks in Kapitel 4, Aufgaben der Übungen 73 bis 78, 13 Glossareinträge. Neue Zugfolge in
+Kapitel 6 (2... f5) als Entwurf `k06-z-e4-e5-sf3.pgn`, Freigabe durch den Autor offen. Die
+Abbildungen selbst (FEN, Pfeile) sind außer 0.6 unverändert.
+
 ## Wartet auf den Autor
 
 **Alles Offene steht in `docs/AUFGABEN_AUTOR.md`** (seit 0.2.31 nur noch Offenes: Nachtest,
@@ -1218,7 +1245,7 @@ G Eröffnungsliste, H Rückblick im Spielen.
    Vorschlag vorbereitet (`docs/freigabe/buchverweise.md`, Fragen B1 bis B4).
 5. **AP 11 Handwerksteil ist fertig (Version 0.2.26, Zweig `ap11-partie`, in `main`).** Der
    Autor testet nach `docs/TESTANLEITUNG.md` (Nachtests N85 bis N95) und beantwortet P1 bis P4.
-   Kalibrierung und Gegenprüfung mit Fable: erledigt in Version 0.2.35 (Abschnitt
+   Kalibrierung und Gegenprüfung mit Fable: erledigt in Version 0.2.36 (Abschnitt
    „Kalibrierung und Gegenprüfung“ unter AP 11 oben).
 6. **Rückmeldung des Autors zu 0.2.26 (15.10.2026):** Nachtests bis N95 gemacht. Seine Punkte
    (Perspektive, Ordnung der Werkzeuge nach der Denkroutine, Bündel, Leerfälle, Buchtexte,
@@ -1290,7 +1317,8 @@ G Eröffnungsliste, H Rückblick im Spielen.
    einarbeiten und den Nachtest N158 bis N174 abwarten. Danach offen: Q6 in AP 13 (Übung gilt auch
    nach „Lösung anzeigen“ als gelöst), H Rückblick im Spielen, D1 Leerfälle.
 
-12. **Version 0.2.35** (Zweig `ap11-kalibrierung`, Fable, 16.10.2026): AP 11 Kalibrierung der
+12. **Version 0.2.36** (Zweig `ap11-kalibrierung`, Fable, 16.10.2026; davor 0.2.35 mit dem
+   neuen Buchstand, Abschnitt „Buchstand 16.10.2026“ oben): AP 11 Kalibrierung der
    Stufen und Fehlerprofile, Gegenprüfung (Abschnitt unter AP 11 oben, Entscheidungen in
    `docs/ENTSCHEIDUNGEN.md`). Die Verweise auf `docs/archiv`, `docs/freigabe` und
    `docs/entscheidungshilfe` in dieser Datei zeigen auf Dateien, die nur noch im privaten

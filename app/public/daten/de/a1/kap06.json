@@ -93,7 +93,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 30
+    "zeile": 33
    },
    "pruefsumme": "149f17f8a179c521"
   },
@@ -151,7 +151,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 135
+    "zeile": 138
    },
    "pruefsumme": "b89588f821b20022",
    "vorbereitet": {
@@ -241,7 +241,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 165
+    "zeile": 155
    },
    "pruefsumme": "2e0e1a92e412276b"
   },
@@ -286,7 +286,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 190
+    "zeile": 196
    },
    "pruefsumme": "726f893de07c265b"
   },
@@ -346,7 +346,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 204
+    "zeile": 210
    },
    "pruefsumme": "95ed33ab9b14d944",
    "vorbereitet": {
@@ -431,7 +431,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 253
+    "zeile": 259
    },
    "pruefsumme": "9195f9b4a98a82ae",
    "vorbereitet": {
@@ -507,7 +507,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 298
+    "zeile": 304
    },
    "pruefsumme": "d2b9a3700f06f725",
    "vorbereitet": {
@@ -561,7 +561,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 327
+    "zeile": 333
    },
    "pruefsumme": "c6d6bfbdadf625d7"
   },
@@ -599,7 +599,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 332
+    "zeile": 338
    },
    "pruefsumme": "ca75c0245fa6bb8f"
   },
@@ -644,7 +644,7 @@
    "beispiel": null,
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 337
+    "zeile": 343
    },
    "pruefsumme": "a98320081aade2ac",
    "vorbereitet": {
@@ -764,7 +764,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 375
+    "zeile": 381
    },
    "pruefsumme": "227d285e195fa6fe"
   },
@@ -821,7 +821,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 410
+    "zeile": 416
    },
    "pruefsumme": "ee298e48a7241cfc",
    "vorbereitet": {
@@ -893,7 +893,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 472
+    "zeile": 478
    },
    "pruefsumme": "f773546b74af0294",
    "vorbereitet": {
@@ -959,7 +959,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 473
+    "zeile": 479
    },
    "pruefsumme": "6707205faea828b8",
    "vorbereitet": {
@@ -1026,7 +1026,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 474
+    "zeile": 480
    },
    "pruefsumme": "fb247d181438d7c8"
   },
@@ -1092,7 +1092,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 514
+    "zeile": 520
    },
    "pruefsumme": "85c45490639979ad",
    "vorbereitet": {
@@ -1147,7 +1147,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 541
+    "zeile": 547
    },
    "pruefsumme": "aae024a30fedb3c2",
    "vorbereitet": {
@@ -1210,7 +1210,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 542
+    "zeile": 548
    },
    "pruefsumme": "d4331b271216a53b"
   },
@@ -1259,7 +1259,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 573
+    "zeile": 579
    },
    "pruefsumme": "f6e03f9b4ed74852"
   },
@@ -1324,7 +1324,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 584
+    "zeile": 603
    },
    "pruefsumme": "6cf9b6af51ce7faf",
    "vorbereitet": {
@@ -1407,7 +1407,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 645
+    "zeile": 655
    },
    "pruefsumme": "f730f3b104206118"
   },
@@ -1473,7 +1473,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 646
+    "zeile": 656
    },
    "pruefsumme": "cdff79ff30502c99",
    "vorbereitet": {
@@ -1557,7 +1557,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 647
+    "zeile": 657
    },
    "pruefsumme": "f5e0c842d9a44c20"
   },
@@ -1623,7 +1623,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 684
+    "zeile": 694
    },
    "pruefsumme": "bc78d220eb670586"
   },
@@ -1702,7 +1702,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 685
+    "zeile": 695
    },
    "pruefsumme": "f6628a51933dd2b8",
    "vorbereitet": {
@@ -1785,7 +1785,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 752
+    "zeile": 766
    },
    "pruefsumme": "4e3f2b150bb85b30"
   },
@@ -1825,7 +1825,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 781
+    "zeile": 795
    },
    "pruefsumme": "aa20019eb30620fc"
   },
@@ -1875,7 +1875,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 782
+    "zeile": 796
    },
    "pruefsumme": "47dfb86f9760a417"
   },
@@ -1920,7 +1920,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 799
+    "zeile": 813
    },
    "pruefsumme": "94868ce358754059",
    "vorbereitet": {
@@ -1989,7 +1989,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 800
+    "zeile": 814
    },
    "pruefsumme": "bce5cc35ab28ac6b"
   },
@@ -2027,7 +2027,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 816
+    "zeile": 830
    },
    "pruefsumme": "63bc99d458178614",
    "vorbereitet": {
@@ -2090,7 +2090,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 855
+    "zeile": 869
    },
    "pruefsumme": "b45c989efd93880b"
   },
@@ -2137,7 +2137,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 873
+    "zeile": 887
    },
    "pruefsumme": "54085a1e43188843",
    "vorbereitet": {
@@ -2184,7 +2184,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 956
+    "zeile": 970
    },
    "pruefsumme": "6a07e1ce29e81700"
   },
@@ -2228,7 +2228,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 967
+    "zeile": 981
    },
    "pruefsumme": "f8590f307299f12b"
   },
@@ -2293,7 +2293,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 979
+    "zeile": 993
    },
    "pruefsumme": "ef6127ab75876606"
   },
@@ -2355,7 +2355,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 989
+    "zeile": 1003
    },
    "pruefsumme": "2267089637eefcd1"
   },
@@ -2387,7 +2387,7 @@
    },
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 1000
+    "zeile": 1015
    },
    "pruefsumme": "6573dc0c1693c41b"
   }
@@ -2507,7 +2507,7 @@
    ],
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 954
+    "zeile": 968
    },
    "erklaerung": {
     "loesung": null,
@@ -2640,7 +2640,7 @@
    ],
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 965
+    "zeile": 979
    },
    "erklaerung": {
     "loesung": null,
@@ -2707,7 +2707,7 @@
    ],
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 977
+    "zeile": 991
    },
    "erklaerung": {
     "loesung": null,
@@ -2782,7 +2782,7 @@
    ],
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 987
+    "zeile": 1001
    },
    "erklaerung": {
     "loesung": null,
@@ -2846,7 +2846,7 @@
    ],
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 998
+    "zeile": 1012
    },
    "erklaerung": {
     "loesung": "1... gxh4+!",
@@ -3035,7 +3035,7 @@
    ],
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 605
+    "zeile": 615
    }
   },
   {
@@ -3172,7 +3172,7 @@
    ],
    "quelle": {
     "datei": "kap06_mittelspiel.tex",
-    "zeile": 825
+    "zeile": 839
    }
   }
  ],

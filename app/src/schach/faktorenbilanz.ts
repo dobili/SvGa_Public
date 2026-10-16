@@ -25,7 +25,7 @@ const STARTLINIEN: Readonly<Partial<Record<Role, readonly number[]>>> = {
   queen: [3],
 };
 const GRUNDREIHE: Readonly<Record<Color, number>> = { white: 0, black: 7 };
-/** Reihenfolge der Figuren im Spiel wie im Buch: „Sc3, Ld3, De2, Tf1“ (Abb. 3.34). */
+/** Reihenfolge der Figuren im Spiel wie im Buch: „Sc3, Ld3, De2, Tf1“ (Abb. 3.32). */
 const ZEITFOLGE: readonly Role[] = ["knight", "bishop", "queen", "rook"];
 /** Figuren in der Reihenfolge, in der das Buch Material aufzählt (Abb. 6.31). */
 const MATERIALFOLGE: readonly Role[] = ["queen", "rook", "bishop", "knight", "pawn"];

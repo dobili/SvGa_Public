@@ -2052,150 +2052,6 @@
     "titel": "Das Milner-Barry-Gambit"
    },
    "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
-   "fen": "r1b1kbnr/pp3ppp/1q2p3/3pP3/3n4/3B1N2/PP3PPP/RNBQK2R w KQkq - 0 8",
-   "pfeile": [
-    {
-     "farbe": "rot",
-     "von": "f3",
-     "nach": "d4"
-    },
-    {
-     "farbe": "grau",
-     "von": "d1",
-     "nach": "d3"
-    }
-   ],
-   "felder": [],
-   "unterschrift": [
-    {
-     "art": "text",
-     "text": "Nach 6... cxd4 7. cxd4 Sxd4??, Weiß am Zug. Rot: Weiß schlägt zurück. Grau: Hinter dem Läufer d3 steht die Dame d1 auf der d-Linie.",
-     "stil": "normal"
-    }
-   ],
-   "art": "vorsicht",
-   "reihe": [
-    "3.32"
-   ],
-   "beispiel": {
-    "id": "k03-a28",
-    "pfad": [
-     "e4",
-     "e6",
-     "d4",
-     "d5",
-     "e5",
-     "c5",
-     "c3",
-     "Nc6",
-     "Nf3",
-     "Qb6",
-     "Bd3",
-     "cxd4",
-     "cxd4",
-     "Nxd4"
-    ]
-   },
-   "quelle": {
-    "datei": "kap03_gambits.tex",
-    "zeile": 949
-   },
-   "pruefsumme": "420004476cb438fb",
-   "vorbereitet": {
-    "status": "freigegeben",
-    "fragen": [
-     {
-      "zug": "8. Sxd4",
-      "frage": "Warum kann Weiß mit 8. Sxd4 ruhig zurückschlagen?",
-      "antworten": [
-       "Schwarz kann den Springer d4 nicht zurückschlagen.",
-       "Nach 8... Dxd4 folgt 9. Lb5+, und die Dame d1 schlägt die Dame d4.",
-       "Weiß hat danach eine Figur mehr."
-      ],
-      "richtig": 1,
-      "erklaerung": "Der Läufer d3 verdeckt die d-Linie. Zieht er mit Schach nach b5, greift die Dame d1 die Dame d4 an, und Schwarz muss zuerst das Schach abwehren."
-     }
-    ]
-   }
-  },
-  {
-   "id": "3.32",
-   "auflage": 1,
-   "kapitel": 3,
-   "abschnitt": {
-    "nummer": "3.7",
-    "label": "",
-    "titel": "Das Milner-Barry-Gambit"
-   },
-   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
-   "fen": "r1b1kbnr/pp3ppp/4p3/1B1pP3/3q4/8/PP3PPP/RNBQK2R b KQkq - 1 9",
-   "pfeile": [
-    {
-     "farbe": "rot",
-     "von": "b5",
-     "nach": "e8"
-    },
-    {
-     "farbe": "gold",
-     "von": "d1",
-     "nach": "d4"
-    }
-   ],
-   "felder": [
-    {
-     "farbe": "rot",
-     "feld": "d4"
-    }
-   ],
-   "unterschrift": [
-    {
-     "art": "text",
-     "text": "Die Stellung aus Kapitel 1 nach 8. Sxd4 Dxd4?? 9. Lb5+!, Schwarz am Zug. Rot: Schach vom Läufer; die Dame d4 ist verloren. Gold: Die Dame d1 schlägt sie im nächsten Zug.",
-     "stil": "normal"
-    }
-   ],
-   "art": "vorsicht",
-   "reihe": [
-    "3.31"
-   ],
-   "beispiel": {
-    "id": "k03-a28",
-    "pfad": [
-     "e4",
-     "e6",
-     "d4",
-     "d5",
-     "e5",
-     "c5",
-     "c3",
-     "Nc6",
-     "Nf3",
-     "Qb6",
-     "Bd3",
-     "cxd4",
-     "cxd4",
-     "Nxd4",
-     "Nxd4",
-     "Qxd4",
-     "Bb5+"
-    ]
-   },
-   "quelle": {
-    "datei": "kap03_gambits.tex",
-    "zeile": 950
-   },
-   "pruefsumme": "1e31ae6740adb1b4"
-  },
-  {
-   "id": "3.33",
-   "auflage": 1,
-   "kapitel": 3,
-   "abschnitt": {
-    "nummer": "3.7",
-    "label": "",
-    "titel": "Das Milner-Barry-Gambit"
-   },
-   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
    "fen": "r3kb1r/1p1bnppp/p3p3/3pP3/3q4/2NB4/PP2QPPP/R1B2R1K b kq - 3 12",
    "pfeile": [
     {
@@ -2219,7 +2075,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "3.34"
+    "3.32"
    ],
    "beispiel": {
     "id": "k03-a28",
@@ -2251,12 +2107,12 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 979
+    "zeile": 952
    },
    "pruefsumme": "1512d1f97b084749"
   },
   {
-   "id": "3.34",
+   "id": "3.32",
    "auflage": 1,
    "kapitel": 3,
    "abschnitt": {
@@ -2301,7 +2157,7 @@
    ],
    "art": "fliesstext",
    "reihe": [
-    "3.33"
+    "3.31"
    ],
    "beispiel": {
     "id": "k03-a28",
@@ -2335,9 +2191,153 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 980
+    "zeile": 953
    },
    "pruefsumme": "7a0b1a27b0bd5c55"
+  },
+  {
+   "id": "3.33",
+   "auflage": 1,
+   "kapitel": 3,
+   "abschnitt": {
+    "nummer": "3.7",
+    "label": "",
+    "titel": "Das Milner-Barry-Gambit"
+   },
+   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
+   "fen": "r1b1kbnr/pp3ppp/1q2p3/3pP3/3n4/3B1N2/PP3PPP/RNBQK2R w KQkq - 0 8",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "d3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 6... cxd4 7. cxd4 Sxd4??, Weiß am Zug. Rot: Weiß schlägt zurück. Grau: Hinter dem Läufer d3 steht die Dame d1 auf der d-Linie.",
+     "stil": "normal"
+    }
+   ],
+   "art": "vorsicht",
+   "reihe": [
+    "3.34"
+   ],
+   "beispiel": {
+    "id": "k03-a28",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Nxd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap03_gambits.tex",
+    "zeile": 1004
+   },
+   "pruefsumme": "420004476cb438fb",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "8. Sxd4",
+      "frage": "Warum kann Weiß mit 8. Sxd4 ruhig zurückschlagen?",
+      "antworten": [
+       "Schwarz kann den Springer d4 nicht zurückschlagen.",
+       "Nach 8... Dxd4 folgt 9. Lb5+, und die Dame d1 schlägt die Dame d4.",
+       "Weiß hat danach eine Figur mehr."
+      ],
+      "richtig": 1,
+      "erklaerung": "Der Läufer d3 verdeckt die d-Linie. Zieht er mit Schach nach b5, greift die Dame d1 die Dame d4 an, und Schwarz muss zuerst das Schach abwehren."
+     }
+    ]
+   }
+  },
+  {
+   "id": "3.34",
+   "auflage": 1,
+   "kapitel": 3,
+   "abschnitt": {
+    "nummer": "3.7",
+    "label": "",
+    "titel": "Das Milner-Barry-Gambit"
+   },
+   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
+   "fen": "r1b1kbnr/pp3ppp/4p3/1B1pP3/3q4/8/PP3PPP/RNBQK2R b KQkq - 1 9",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b5",
+     "nach": "e8"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Stellung aus Kapitel 1 nach 8. Sxd4 Dxd4?? 9. Lb5+!, Schwarz am Zug. Rot: Schach vom Läufer; die Dame d4 ist verloren. Gold: Die Dame d1 schlägt sie im nächsten Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "vorsicht",
+   "reihe": [
+    "3.33"
+   ],
+   "beispiel": {
+    "id": "k03-a28",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Nxd4",
+     "Nxd4",
+     "Qxd4",
+     "Bb5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap03_gambits.tex",
+    "zeile": 1005
+   },
+   "pruefsumme": "1e31ae6740adb1b4"
   },
   {
    "id": "3.35",
@@ -2957,7 +2957,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1161
+    "zeile": 1162
    },
    "pruefsumme": "274f11c3f1f9c4ac"
   },
@@ -3008,7 +3008,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1194
+    "zeile": 1196
    },
    "pruefsumme": "f02f37cec18721f9"
   },
@@ -3059,7 +3059,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1218
+    "zeile": 1220
    },
    "pruefsumme": "b8ddef9823dda871"
   },
@@ -3107,7 +3107,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1219
+    "zeile": 1221
    },
    "pruefsumme": "9f42239b29ca3481",
    "vorbereitet": {
@@ -3198,7 +3198,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1220
+    "zeile": 1222
    },
    "pruefsumme": "9bd740600c34fc15",
    "vorbereitet": {
@@ -3259,7 +3259,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1278
+    "zeile": 1280
    },
    "pruefsumme": "fbadae5afd63fbbe"
   },
@@ -3307,7 +3307,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1279
+    "zeile": 1281
    },
    "pruefsumme": "e742be4743cdfcff"
   },
@@ -3362,7 +3362,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1280
+    "zeile": 1282
    },
    "pruefsumme": "f87f806716644357",
    "vorbereitet": {
@@ -3438,7 +3438,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1327
+    "zeile": 1329
    },
    "pruefsumme": "9ec27ba8575735ae",
    "vorbereitet": {
@@ -3519,7 +3519,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1328
+    "zeile": 1330
    },
    "pruefsumme": "19b0ba6f429fbd3b"
   },
@@ -3608,7 +3608,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1329
+    "zeile": 1331
    },
    "pruefsumme": "f826e2507248eccc"
   },
@@ -3657,7 +3657,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1391
+    "zeile": 1393
    },
    "pruefsumme": "18c9be5e522fb56d"
   },
@@ -3715,7 +3715,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1392
+    "zeile": 1394
    },
    "pruefsumme": "b8a4f3b6a876b64e"
   },
@@ -3770,7 +3770,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1393
+    "zeile": 1395
    },
    "pruefsumme": "4b74b5ab09403e97"
   },
@@ -3832,7 +3832,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1415
+    "zeile": 1417
    },
    "pruefsumme": "71081f04e0bef0de",
    "vorbereitet": {
@@ -3919,7 +3919,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1416
+    "zeile": 1418
    },
    "pruefsumme": "3ae7a622ea7c9cf7"
   },
@@ -3982,7 +3982,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1467
+    "zeile": 1469
    },
    "pruefsumme": "26983d282fa0042e"
   },
@@ -4044,7 +4044,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1468
+    "zeile": 1470
    },
    "pruefsumme": "446e3ca8735e5cb6"
   },
@@ -4095,7 +4095,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1517
+    "zeile": 1519
    },
    "pruefsumme": "5a085a3179aee197"
   },
@@ -4137,7 +4137,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1518
+    "zeile": 1520
    },
    "pruefsumme": "32a02d422c3f6f67"
   },
@@ -4182,7 +4182,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1519
+    "zeile": 1521
    },
    "pruefsumme": "7b530cf4170f9a86"
   },
@@ -4233,7 +4233,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1531
+    "zeile": 1533
    },
    "pruefsumme": "7c42978d6bf8288a"
   },
@@ -4299,7 +4299,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1532
+    "zeile": 1534
    },
    "pruefsumme": "af27ab9f4b470b1c"
   },
@@ -4362,7 +4362,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1557
+    "zeile": 1559
    },
    "pruefsumme": "082a77a22a8b0de4",
    "vorbereitet": {
@@ -4431,7 +4431,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1613
+    "zeile": 1615
    },
    "pruefsumme": "8d589ae9d39877e8",
    "vorbereitet": {
@@ -4503,7 +4503,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1614
+    "zeile": 1616
    },
    "pruefsumme": "e30ba14e9a5c9ebf",
    "vorbereitet": {
@@ -4577,7 +4577,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1615
+    "zeile": 1617
    },
    "pruefsumme": "3622b7c9c933615c"
   },
@@ -4628,7 +4628,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1642
+    "zeile": 1644
    },
    "pruefsumme": "56204fb857d313b7"
   },
@@ -4686,7 +4686,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1643
+    "zeile": 1645
    },
    "pruefsumme": "37df76798c16f69c",
    "vorbereitet": {
@@ -4762,7 +4762,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1644
+    "zeile": 1646
    },
    "pruefsumme": "2377aa9911f1796a"
   },
@@ -4826,7 +4826,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1664
+    "zeile": 1666
    },
    "pruefsumme": "c536bbbe5bfcc6ea"
   },
@@ -4889,7 +4889,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1665
+    "zeile": 1667
    },
    "pruefsumme": "8240c443d5f885f1"
   },
@@ -4956,7 +4956,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1678
+    "zeile": 1680
    },
    "pruefsumme": "4808d7487d489765"
   },
@@ -5026,7 +5026,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1679
+    "zeile": 1681
    },
    "pruefsumme": "068db791b114b282"
   },
@@ -5119,7 +5119,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1680
+    "zeile": 1682
    },
    "pruefsumme": "5e812fc32271aad1",
    "vorbereitet": {
@@ -5185,7 +5185,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1726
+    "zeile": 1728
    },
    "pruefsumme": "982029059c4e0511"
   },
@@ -5243,7 +5243,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1727
+    "zeile": 1729
    },
    "pruefsumme": "38c3522900e1e954",
    "vorbereitet": {
@@ -5309,7 +5309,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1868
+    "zeile": 1861
    },
    "pruefsumme": "961beade41beb0ae"
   },
@@ -5349,7 +5349,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1882
+    "zeile": 1875
    },
    "pruefsumme": "a73646f42508594a"
   },
@@ -5402,7 +5402,7 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1894
+    "zeile": 1887
    },
    "pruefsumme": "0ee4418808d03699"
   },
@@ -5439,163 +5439,15 @@
    },
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1910
+    "zeile": 1903
    },
    "pruefsumme": "72ce8546a97efc99"
   }
  ],
  "uebungen": [
   {
-   "id": "ueb:echt-oder-schein",
-   "nummer": 14,
-   "kapitel": 3,
-   "titel": null,
-   "abbildungen": [],
-   "aufgabe": [
-    {
-     "art": "text",
-     "text": "Ordne die folgenden vier Bauernangebote aus diesem Kapitel als ",
-     "stil": "normal"
-    },
-    {
-     "art": "text",
-     "text": "echtes Opfer",
-     "stil": "kursiv"
-    },
-    {
-     "art": "text",
-     "text": " oder ",
-     "stil": "normal"
-    },
-    {
-     "art": "text",
-     "text": "Scheinopfer",
-     "stil": "kursiv"
-    },
-    {
-     "art": "text",
-     "text": " ein und begründe jede Antwort in einem Satz: das Damengambit (",
-     "stil": "normal"
-    },
-    {
-     "art": "zug",
-     "text": "1. d4 d5 2. c4"
-    },
-    {
-     "art": "text",
-     "text": "), das Dänische Gambit (",
-     "stil": "normal"
-    },
-    {
-     "art": "verweis",
-     "text": "Abb. 3.20",
-     "abbildung": "3.20"
-    },
-    {
-     "art": "text",
-     "text": "), das Smith-Morra-Gambit (",
-     "stil": "normal"
-    },
-    {
-     "art": "verweis",
-     "text": "Abb. 3.25",
-     "abbildung": "3.25"
-    },
-    {
-     "art": "text",
-     "text": ") und das Budapester Gambit (",
-     "stil": "normal"
-    },
-    {
-     "art": "verweis",
-     "text": "Abb. 3.46",
-     "abbildung": "3.46"
-    },
-    {
-     "art": "text",
-     "text": ").",
-     "stil": "normal"
-    }
-   ],
-   "loesung": [
-    {
-     "art": "text",
-     "text": "Das ",
-     "stil": "normal"
-    },
-    {
-     "art": "text",
-     "text": "Damengambit",
-     "stil": "kursiv"
-    },
-    {
-     "art": "text",
-     "text": " ist ein Scheinopfer: Weiß holt den Bauern mit ",
-     "stil": "normal"
-    },
-    {
-     "art": "zug",
-     "text": "e3"
-    },
-    {
-     "art": "text",
-     "text": " und ",
-     "stil": "normal"
-    },
-    {
-     "art": "zug",
-     "text": "Lxc4"
-    },
-    {
-     "art": "text",
-     "text": " zurück. Das ",
-     "stil": "normal"
-    },
-    {
-     "art": "text",
-     "text": "Dänische Gambit",
-     "stil": "kursiv"
-    },
-    {
-     "art": "text",
-     "text": " ist echt: Zwei Bauern bleiben weg, solange Schwarz sie nicht freiwillig zurückgibt. Das ",
-     "stil": "normal"
-    },
-    {
-     "art": "text",
-     "text": "Smith-Morra-Gambit",
-     "stil": "kursiv"
-    },
-    {
-     "art": "text",
-     "text": " ist echt: Ein Bauer bleibt weg, Weiß spielt auf Entwicklung und offene Linien. Das ",
-     "stil": "normal"
-    },
-    {
-     "art": "text",
-     "text": "Budapester Gambit",
-     "stil": "kursiv"
-    },
-    {
-     "art": "text",
-     "text": " liegt dazwischen: Schwarz gewinnt den Bauern häufig zurück, muss dafür aber genau spielen und seine Figuren gezielt gegen e5 richten. Es ist also ein echtes Opfer mit guter Aussicht auf Rückgewinn. Merke dir: Frage bei jedem Bauernangebot zunächst, ob das Material von selbst zurückkommt.",
-     "stil": "normal"
-    }
-   ],
-   "quelle": {
-    "datei": "kap03_gambits.tex",
-    "zeile": 1857
-   },
-   "erklaerung": {
-    "loesung": null,
-    "akzeptiert": [],
-    "motiv": "Echtes Opfer oder Scheinopfer",
-    "text": "Das Damengambit ist ein Scheinopfer, weil der Bauer mit e3 und Lxc4 zurückkommt. Dänisches und Smith-Morra-Gambit sind echte Opfer für Entwicklung und Linien; das Budapester Gambit liegt dazwischen, weil Schwarz den Bauern oft, aber nur mit genauem Spiel zurückgewinnt."
-   }
-  },
-  {
    "id": "ueb:smith-morra-kompensation",
-   "nummer": 15,
+   "nummer": 14,
    "kapitel": 3,
    "titel": null,
    "abbildungen": [
@@ -5656,7 +5508,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1866
+    "zeile": 1859
    },
    "erklaerung": {
     "loesung": null,
@@ -5667,7 +5519,7 @@
   },
   {
    "id": "ueb:goering",
-   "nummer": 16,
+   "nummer": 15,
    "kapitel": 3,
    "titel": null,
    "abbildungen": [
@@ -5780,7 +5632,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1880
+    "zeile": 1873
    },
    "erklaerung": {
     "loesung": "4... d5",
@@ -5791,7 +5643,7 @@
   },
   {
    "id": "ueb:wolga-bilanz",
-   "nummer": 17,
+   "nummer": 16,
    "kapitel": 3,
    "titel": null,
    "abbildungen": [
@@ -5909,7 +5761,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1892
+    "zeile": 1885
    },
    "erklaerung": {
     "loesung": null,
@@ -5920,7 +5772,7 @@
   },
   {
    "id": "ueb:elefant",
-   "nummer": 18,
+   "nummer": 17,
    "kapitel": 3,
    "titel": null,
    "abbildungen": [
@@ -6117,13 +5969,161 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1908
+    "zeile": 1901
    },
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
     "motiv": "Fesselung auf der e-Linie",
     "text": "Nach 4. De2 ist der Bauer e4 absolut an den König gefesselt, darum ist 4... exf3 gar nicht erlaubt. Schwarz hat für den Bauern kaum etwas bekommen, und die Dame e2 ist nicht verfrüht, weil sie nicht mit Tempo gejagt werden kann und die Fesselung hält."
+   }
+  },
+  {
+   "id": "ueb:echt-oder-schein",
+   "nummer": 18,
+   "kapitel": 3,
+   "titel": null,
+   "abbildungen": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Ordne die folgenden vier Bauernangebote aus diesem Kapitel als ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "echtes Opfer",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Scheinopfer",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " ein und begründe jede Antwort in einem Satz: das Damengambit (",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 d5 2. c4"
+    },
+    {
+     "art": "text",
+     "text": "), das Dänische Gambit (",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 3.20",
+     "abbildung": "3.20"
+    },
+    {
+     "art": "text",
+     "text": "), das Smith-Morra-Gambit (",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 3.25",
+     "abbildung": "3.25"
+    },
+    {
+     "art": "text",
+     "text": ") und das Budapester Gambit (",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 3.46",
+     "abbildung": "3.46"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Das ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Damengambit",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " ist ein Scheinopfer: Weiß holt den Bauern mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "e3"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Lxc4"
+    },
+    {
+     "art": "text",
+     "text": " zurück. Das ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Dänische Gambit",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " ist echt: Zwei Bauern bleiben weg, solange Schwarz sie nicht freiwillig zurückgibt. Das ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Smith-Morra-Gambit",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " ist echt: Ein Bauer bleibt weg, Weiß spielt auf Entwicklung und offene Linien. Das ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Budapester Gambit",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " liegt dazwischen: Schwarz gewinnt den Bauern häufig zurück, muss dafür aber genau spielen und seine Figuren gezielt gegen e5 richten. Es ist also ein echtes Opfer mit guter Aussicht auf Rückgewinn. Merke dir: Frage bei jedem Bauernangebot zunächst, ob das Material von selbst zurückkommt.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap03_gambits.tex",
+    "zeile": 1916
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Echtes Opfer oder Scheinopfer",
+    "text": "Das Damengambit ist ein Scheinopfer, weil der Bauer mit e3 und Lxc4 zurückkommt. Dänisches und Smith-Morra-Gambit sind echte Opfer für Entwicklung und Linien; das Budapester Gambit liegt dazwischen, weil Schwarz den Bauern oft, aber nur mit genauem Spiel zurückgewinnt."
    }
   }
  ],
@@ -7166,7 +7166,7 @@
     }
    ],
    "abschnitt": "3.7",
-   "abbildung": "3.34",
+   "abbildung": "3.32",
    "bloecke": [
     {
      "art": "tabelle",
@@ -7304,7 +7304,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 983
+    "zeile": 956
    }
   },
   {
@@ -7578,7 +7578,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1163
+    "zeile": 1165
    }
   },
   {
@@ -7715,7 +7715,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1237
+    "zeile": 1239
    }
   },
   {
@@ -7852,7 +7852,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1334
+    "zeile": 1336
    }
   },
   {
@@ -7983,7 +7983,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1419
+    "zeile": 1421
    }
   },
   {
@@ -8129,7 +8129,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1566
+    "zeile": 1568
    }
   },
   {
@@ -8260,7 +8260,7 @@
    ],
    "quelle": {
     "datei": "kap03_gambits.tex",
-    "zeile": 1683
+    "zeile": 1685
    }
   }
  ],
@@ -9574,7 +9574,7 @@
                                                  "zug": "Kh1",
                                                  "zeichen": "",
                                                  "abbildungen": [
-                                                  "3.33"
+                                                  "3.31"
                                                  ],
                                                  "weiter": [
                                                   {
@@ -9586,7 +9586,7 @@
                                                      "zug": "f4",
                                                      "zeichen": "",
                                                      "abbildungen": [
-                                                      "3.34"
+                                                      "3.32"
                                                      ],
                                                      "weiter": [
                                                       {
@@ -9673,7 +9673,7 @@
                                "zug": "Nxd4",
                                "zeichen": "??",
                                "abbildungen": [
-                                "3.31"
+                                "3.33"
                                ],
                                "weiter": [
                                 {
@@ -9690,7 +9690,7 @@
                                      "zug": "Bb5+",
                                      "zeichen": "!",
                                      "abbildungen": [
-                                      "3.32"
+                                      "3.34"
                                      ],
                                      "weiter": []
                                     }
@@ -9795,7 +9795,7 @@
      ]
     },
     {
-     "nummer": "3.33",
+     "nummer": "3.31",
      "pfad": [
       "e4",
       "e6",
@@ -9823,7 +9823,7 @@
      ]
     },
     {
-     "nummer": "3.34",
+     "nummer": "3.32",
      "pfad": [
       "e4",
       "e6",
@@ -9881,7 +9881,7 @@
      ]
     },
     {
-     "nummer": "3.31",
+     "nummer": "3.33",
      "pfad": [
       "e4",
       "e6",
@@ -9900,7 +9900,7 @@
      ]
     },
     {
-     "nummer": "3.32",
+     "nummer": "3.34",
      "pfad": [
       "e4",
       "e6",
@@ -11934,7 +11934,7 @@
   {
    "id": "k03-a81",
    "kapitel": 3,
-   "abschnitt": "Übung 16",
+   "abschnitt": "Übung 15",
    "titel": "Überblick: solide oder zweifelhaft?",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
@@ -12062,7 +12062,7 @@
   {
    "id": "k03-a83",
    "kapitel": 3,
-   "abschnitt": "Übung 18",
+   "abschnitt": "Übung 17",
    "titel": "Überblick: solide oder zweifelhaft?",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [

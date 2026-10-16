@@ -12,10 +12,10 @@ Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App).
 
 ---
 
-## Nachtest Version 0.2.35 (etwa 30 Minuten, mit Engine; AP 11 Kalibrierung)
+## Nachtest Version 0.2.36 (etwa 30 Minuten, mit Engine; AP 11 Kalibrierung)
 
 Neu: die kalibrierten Stufen und die Fehlerprofile der Engine (Konzept 8.2), dazu drei Befunde der
-Gegenprüfung (Uhr, Auswertung). **Vorher:** In den Einstellungen muss „App-Version 0.2.35“ stehen.
+Gegenprüfung (Uhr, Auswertung). **Vorher:** In den Einstellungen muss „App-Version 0.2.36“ stehen.
 Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abstufung richtig anfühlt.“
 
 **Stufen und Fehlerprofile**

@@ -107,7 +107,7 @@ const OHNE_BATTERIE = false;
  * Abtauschrechnung auf dem Feld mit Gewinn schlagen könnte, nennt die App nur „angegriffen“:
  * Ob der Schlag auch nach der besten Antwort Material bringt, sieht die Zählung auf einem Feld
  * nicht (Abb. 2.40: 3... Sxe4?! 4. De2!; Abb. 2.24: 6... Sxe4? 7. dxc5). Das prüft danach die
- * Engine; hängt der Bauer wirklich, gilt das Zentrum nur als teils (zentrumMitEngine, Abb. 2.30:
+ * Engine; hängt der Bauer wirklich, gilt das Zentrum nur als teils (zentrumMitEngine, Abb. 2.29:
  * „Bauer d5 … kann aber gleich geschlagen werden“). Entscheidung des Autors zu C1.1 (16.10.2026).
  * Ohne Zentrumsbauern gilt Pflichtenheft 6.6: ja, wenn eigene Figuren mindestens zwei der vier
  * Zentrumsfelder mindestens so oft angreifen wie der Gegner; teils bei einem Feld; sonst nein.
@@ -144,11 +144,11 @@ function zentrumspruefung(
  * Die Wertung des Zentrums, nachdem die Engine die angegriffenen Bauern geprüft hat.
  *
  * Regel: Kapitel 2, Zentrumsprüfung: Ein Bauer, der „gleich geschlagen werden“ kann, zählt nur
- * als teils (Abb. 2.30). Warum eigene Funktion: Die Engine rechnet erst nach dem Werkzeug
+ * als teils (Abb. 2.29). Warum eigene Funktion: Die Engine rechnet erst nach dem Werkzeug
  * (ui/komponenten/ZentrumKarte.tsx); Karte und Kalibrierung setzen ihr Urteil gleich ein.
  * Eingaben: die Zentrumsprüfung, die Bauern, die laut Engine wirklich hängen.
  * Ausgabe: ja, solange mindestens ein Zentrumsbauer nicht hängt; sonst teils.
- * Beispiel: Abb. 2.30, Schwarz: d5 hängt (11. Lxd5) → teils. Abb. 2.24, Weiß: e4 hängt nicht
+ * Beispiel: Abb. 2.29, Schwarz: d5 hängt (11. Lxd5) → teils. Abb. 2.24, Weiß: e4 hängt nicht
  * (6... Sxe4? 7. dxc5) → ja mit d4 und e4.
  * Sonderfälle: Ohne Zentrumsbauern bleibt die Wertung der Figurenkontrolle unverändert.
  */

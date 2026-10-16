@@ -1,7 +1,7 @@
 /**
  * Zentrumsschlag mit der echten Engine (Stockfish lite, ein Kern) an den Abbildungen aus C1.1
  * und C1.2: Abb. 2.40 (3... Sxe4?! 4. De2!), 2.113 (7. dxe5 … Sxe4!), 2.24 (6... Sxe4? 7. dxc5)
- * gewinnen den Bauern nicht; in Abb. 2.30 hängt d5 wirklich (Zielbilanz des Buches: teils).
+ * gewinnen den Bauern nicht; in Abb. 2.29 hängt d5 wirklich (Zielbilanz des Buches: teils).
  */
 import { Chess } from "chessops/chess";
 import { parseFen } from "chessops/fen";
@@ -40,11 +40,11 @@ describe("Zentrumsschlag mit Stockfish", () => {
   );
 
   it(
-    "Abb. 2.30: Der Bauer d5 hängt wirklich (11. Lxd5)",
+    "Abb. 2.29: Der Bauer d5 hängt wirklich (11. Lxd5)",
     async () => {
       const pruefung = await pruefeZentrumsschlag(
         dienst,
-        abbildung("2.30").fen,
+        abbildung("2.29").fen,
         "d5",
         RECHENZEIT_MS,
       );

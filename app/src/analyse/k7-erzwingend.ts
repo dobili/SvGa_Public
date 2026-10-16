@@ -171,6 +171,20 @@ function imSchach(eigen: Color): Werkzeugergebnis {
   };
 }
 
+/** Lehrbild ohne beide Könige: nur das Fazit, dass es keine Züge zu prüfen gibt. */
+function ohneRegeln(eigen: Color): Werkzeugergebnis {
+  return {
+    werkzeug: "k7-erzwingend",
+    art: "E",
+    ueberschrift: t("erzwingend.titel"),
+    befunde: [],
+    fazit: t("kandidaten.ohneRegeln", { farbe: farbname(eigen) }),
+    markierungen: [],
+    stufen: [[], [], []],
+    regel: t("werkzeug.k7-erzwingend.regel"),
+  };
+}
+
 /** Die erzwingenden Züge für die eigene Seite (am Zug oder nach einem Nullzug des Gegners). */
 function zuegeFuer(stellung: Stellung, eigen: Color): ErzwingendeZuege | null {
   const { regeln } = stellung;
@@ -197,9 +211,12 @@ export function erzwingendeKandidaten(stellung: Stellung, eigen: Color): readonl
  * Eingaben: Stellung, eigene Seite (ist sie nicht am Zug, rechnet die App mit einem Nullzug des
  * Gegners, nicht im Schach). Ausgabe: drei Befunde (Schachs, Schläge, Drohungen) und das Fazit
  * mit der Zahl der Kandidaten. Beispiel: Abb. 7.11 (Weiß am Zug): Schachs 1. Sd6++, 2. Sf6++.
- * Sonderfälle: Ohne Regeln (Lehrbild) keine Kandidaten; im Schach die Abwehrfragen.
+ * Sonderfälle: Ohne Regeln (Lehrbild) nur ein Satz, keine Kandidaten; im Schach die Abwehrfragen.
  */
 export function erzwingend(stellung: Stellung, eigen: Color): Werkzeugergebnis {
+  // Ein Lehrbild ohne beide Könige hat keine Züge; die Abwehrfragen („steht im Schach“) wären
+  // dort falsch (Befund der Bestandsaufnahme zu D1, 17.10.2026).
+  if (!stellung.regeln) return ohneRegeln(eigen);
   const zuege = zuegeFuer(stellung, eigen);
   if (!zuege) return imSchach(eigen);
   const liste = kandidaten(zuege);

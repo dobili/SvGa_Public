@@ -59,7 +59,9 @@ describe("k7-erzwingend", () => {
     expect(e.markierungen).toEqual([]);
   });
 
-  it("Lehrbild ohne Regeln (Abb. 5.1): keine Kandidaten, nur die Abwehrfragen", () => {
-    expect(erzwingend(stellungVon("5.1"), "white").befunde[0]?.kennung).toBe("abwehr");
+  it("Lehrbild ohne Regeln (Abb. 5.1): keine Kandidaten, kein „steht im Schach“", () => {
+    const e = erzwingend(stellungVon("5.1"), "white");
+    expect(e.befunde).toEqual([]);
+    expect(e.fazit).toBe("Ohne beide Könige gibt es für Weiß keine Züge zu prüfen.");
   });
 });

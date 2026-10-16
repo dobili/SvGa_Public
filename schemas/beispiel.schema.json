@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/beispiel.schema.json",
+  "title": "Beispiel",
+  "description": "Eine Zugfolge des Buches als Variantenbaum (Konzept 4.2), aus einer PGN-Datei in inhalte/de/zugfolgen/. In der veröffentlichten App nur freigegebene; bis dahin auf Wunsch des Autors auch Entwürfe (Pipeline --mit-entwuerfen), damit er sie in der App prüfen kann.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "kapitel", "abschnitt", "titel", "startFen", "zuege", "abbildungen", "status"],
+  "properties": {
+    "id": { "description": "Stabile Kennung nach der ersten Abbildung (k02-a55 für Abb. 2.55) oder, ohne Abbildung, nach den ersten Zügen (k03-z-d4-d5-c4)", "type": "string", "pattern": "^k[0-9]{2}-[0-9a-z-]+$" },
+    "kapitel": { "type": "integer", "minimum": 0, "maximum": 12 },
+    "abschnitt": { "type": ["string", "null"] },
+    "titel": { "type": "string" },
+    "startFen": { "description": "Ausgangsstellung; die Grundstellung oder die Stellung einer Abbildung", "type": "string" },
+    "zuege": { "description": "Erste Züge; der erste Eintrag ist die Hauptvariante", "type": "array", "items": { "$ref": "#/$defs/knoten" } },
+    "abbildungen": {
+      "description": "Bei welchem Halbzug welche Abbildung steht: Pfad von der Startstellung in Kurznotation",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["nummer", "pfad"],
+        "properties": { "nummer": { "type": "string" }, "pfad": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
+    "status": { "description": "„entwurf“ zeigt die App mit dem Hinweis, dass der Autor noch nicht freigegeben hat", "enum": ["freigegeben", "entwurf"] }
+  },
+  "$defs": {
+    "knoten": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["zug", "zeichen", "abbildungen", "weiter"],
+      "properties": {
+        "zug": { "description": "Zug in englischer Kurznotation (PGN); die App schreibt ihn deutsch", "type": "string" },
+        "zeichen": { "enum": ["", "!", "?", "!!", "??", "!?", "?!"] },
+        "abbildungen": { "description": "Abbildungen, die diese Stellung zeigen", "type": "array", "items": { "type": "string" } },
+        "weiter": { "description": "Fortsetzungen; die erste ist die Hauptvariante", "type": "array", "items": { "$ref": "#/$defs/knoten" } }
+      }
+    }
+  }
+}

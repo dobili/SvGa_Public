@@ -1,0 +1,139 @@
+/**
+ * Karte „Darstellung und Training“ in den Einstellungen: Nachtmodus, Brettfarben, Figurensatz,
+ * Koordinaten, Ton, Erklärkacheln, dazu der Stand der Sprache.
+ *
+ * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: Sprache, Brettfarben, Figurensatz, Ton,
+ * Auflage des Buches, Strenge des Modus ‚Erst selbst denken‘“. Was es noch nicht zu wählen gibt,
+ * steht mit „folgt“ da (Sprache). Die Auflage zeigt die Zeile „Datenstand“ darüber.
+ * Seit 0.2.33 (Fragen des Autors vom 16.10.2026): Figurensatz (wie im Buch, kontrastreich) und Ton
+ * (aus, an) sind wählbar. „Erst selbst denken“ ist ausgeblendet, bis die Trainer (AP 13) es
+ * nutzen; der gespeicherte Wert bleibt erhalten.
+ * Nachtmodus (seit 0.2.31, Wunsch des Autors): wie das Gerät, aus oder an (app/farbschema.ts).
+ * Ebenfalls seit 0.2.31: ausgeblendete Erklärkacheln von Zählen und Ziehen wieder anzeigen.
+ * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, i18n.
+ */
+import { useState } from "react";
+import {
+  aendereEinstellungen,
+  useEinstellungen,
+  type Brettfarben,
+  type Figurensatz,
+  type Ton,
+} from "../../app/einstellungen";
+import {
+  FARBSCHEMATA,
+  liesFarbschema,
+  setzeFarbschema,
+  type Farbschema,
+} from "../../app/farbschema";
+import { liesMerker, schreibeMerker } from "../../app/merker";
+import { t } from "../../i18n/sprache";
+import { Auswahl } from "./Auswahl";
+import { zeigeErklaerungenWieder } from "./useErklaerung";
+
+const BRETTFARBEN: readonly Brettfarben[] = ["buch", "holz", "gruen"];
+const FIGURENSAETZE: readonly Figurensatz[] = ["buch", "kontrastreich"];
+const TOENE: readonly Ton[] = ["aus", "an"];
+const KOORDINATEN = ["an", "aus"] as const;
+type Koordinaten = (typeof KOORDINATEN)[number];
+
+/** Koordinaten am Brett, gemerkt auf dem Gerät. Beispiel: „aus“ blendet a–h und 1–8 aus. */
+function KoordinatenWahl() {
+  const [wert, setzeWert] = useState<Koordinaten>(
+    liesMerker("koordinaten") === "aus" ? "aus" : "an",
+  );
+  return (
+    <Auswahl
+      name={t("einstellungen.koordinaten")}
+      werte={KOORDINATEN}
+      gewaehlt={wert}
+      text={(w) => t(`einstellungen.koordinaten.${w}`)}
+      beiWahl={(neu) => {
+        schreibeMerker("koordinaten", neu);
+        setzeWert(neu);
+      }}
+    />
+  );
+}
+
+/** Nachtmodus: wie das Gerät, aus (hell) oder an (dunkel); gilt sofort. */
+function NachtmodusWahl() {
+  const [wert, setzeWert] = useState<Farbschema>(liesFarbschema);
+  return (
+    <Auswahl
+      name={t("einstellungen.nachtmodus")}
+      werte={FARBSCHEMATA}
+      gewaehlt={wert}
+      text={(w) => t(`einstellungen.nachtmodus.${w}`)}
+      beiWahl={(neu) => {
+        setzeFarbschema(neu);
+        setzeWert(neu);
+      }}
+    />
+  );
+}
+
+/** Holt die ausgeblendeten Erklärkacheln zurück und bestätigt es. */
+function ErklaerungenWahl() {
+  const [gezeigt, setzeGezeigt] = useState(false);
+  return (
+    <div className="einstellung-knopf">
+      <span>{t("einstellungen.erklaerungen")}</span>
+      <button
+        type="button"
+        className="knopf-zweit"
+        onClick={() => {
+          zeigeErklaerungenWieder();
+          setzeGezeigt(true);
+        }}
+      >
+        {t("einstellungen.erklaerungen.zeigen")}
+      </button>
+      {gezeigt && (
+        <p className="hinweis" role="status">
+          {t("einstellungen.erklaerungen.gezeigt")}
+        </p>
+      )}
+    </div>
+  );
+}
+
+export function EinstellungenKarte() {
+  const einstellungen = useEinstellungen();
+  return (
+    <section className="karte">
+      <h2 className="karte-titel">{t("einstellungen.titel")}</h2>
+      <NachtmodusWahl />
+      <Auswahl
+        name={t("einstellungen.brettfarben")}
+        werte={BRETTFARBEN}
+        gewaehlt={einstellungen.brettfarben}
+        text={(wert) => t(`einstellungen.brettfarben.${wert}`)}
+        beiWahl={(brettfarben) => aendereEinstellungen({ brettfarben })}
+      />
+      <Auswahl
+        name={t("einstellungen.figurensatz")}
+        werte={FIGURENSAETZE}
+        gewaehlt={einstellungen.figurensatz}
+        text={(wert) => t(`einstellungen.figurensatz.${wert}`)}
+        beiWahl={(figurensatz) => aendereEinstellungen({ figurensatz })}
+      />
+      <KoordinatenWahl />
+      <Auswahl
+        name={t("einstellungen.ton")}
+        werte={TOENE}
+        gewaehlt={einstellungen.ton}
+        text={(wert) => t(`einstellungen.ton.${wert}`)}
+        beiWahl={(ton) => aendereEinstellungen({ ton })}
+      />
+      <p className="hinweis">{t("einstellungen.ton.hinweis")}</p>
+      <ErklaerungenWahl />
+      <dl className="einstellungen">
+        <div className="einstellung">
+          <dt>{t("einstellungen.sprache")}</dt>
+          <dd>{t("einstellungen.sprache.wert")}</dd>
+        </div>
+      </dl>
+    </section>
+  );
+}

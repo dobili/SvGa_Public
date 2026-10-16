@@ -1,0 +1,222 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/abbildung.schema.json",
+  "title": "Abbildung",
+  "description": "Eine Abbildung des Buches: Stellung, Markierungen und Bildunterschrift. Schlüssel ist die Abbildungsnummer (Konzept 4.1).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "auflage",
+    "kapitel",
+    "abschnitt",
+    "fen",
+    "pfeile",
+    "felder",
+    "unterschrift",
+    "art",
+    "reihe",
+    "quelle",
+    "pruefsumme"
+  ],
+  "properties": {
+    "id": {
+      "description": "Abbildungsnummer wie im Buch, etwa 1.26",
+      "type": "string",
+      "pattern": "^[0-9]{1,2}\\.[0-9]{1,3}$"
+    },
+    "auflage": {
+      "description": "Auflage des Buches",
+      "type": "integer",
+      "minimum": 1
+    },
+    "kapitel": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    },
+    "abschnitt": {
+      "description": "Abschnitt, in dem die Abbildung steht. Fehlt vor dem ersten Abschnitt.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "$ref": "#/$defs/abschnitt"
+        }
+      ]
+    },
+    "unterabschnitt": {
+      "description": "Titel des ungezählten Unterabschnitts, falls vorhanden",
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "fen": {
+      "description": "Stellung in Forsyth-Edwards-Notation",
+      "type": "string",
+      "minLength": 15
+    },
+    "pfeile": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/pfeil"
+      }
+    },
+    "felder": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/feldmarke"
+      }
+    },
+    "unterschrift": {
+      "description": "Bildunterschrift eins zu eins, ohne „Abb. x.y:“",
+      "type": "array",
+      "items": {
+        "$ref": "text.schema.json#/$defs/textteil"
+      }
+    },
+    "art": {
+      "description": "In welchem Buchkasten die Abbildung steht",
+      "enum": [
+        "fliesstext",
+        "uebung",
+        "loesung",
+        "trainingskasten",
+        "vorsicht",
+        "tipp",
+        "merksatz"
+      ]
+    },
+    "reihe": {
+      "description": "Nachbarn in derselben Diagrammreihe",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "beispiel": {
+      "description": "Verbindung zur freigegebenen Zugfolge: Beispiel und Pfad bis zu dieser Stellung",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "id",
+            "pfad"
+          ],
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "pfad": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "quelle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "datei",
+        "zeile"
+      ],
+      "properties": {
+        "datei": {
+          "type": "string"
+        },
+        "zeile": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "pruefsumme": {
+      "description": "Erkennt Änderungen zwischen zwei Datenläufen",
+      "type": "string",
+      "pattern": "^[0-9a-f]{16}$"
+    },
+    "vorbereitet": {
+      "description": "Vorbereitete Texte (Art V, AP 14), nur freigegebene oder mit --mit-entwuerfen",
+      "$ref": "vorbereitet.schema.json#/$defs/fuerApp"
+    }
+  },
+  "$defs": {
+    "farbe": {
+      "enum": [
+        "gold",
+        "rot",
+        "grau"
+      ]
+    },
+    "feld": {
+      "type": "string",
+      "pattern": "^[a-h][1-8]$"
+    },
+    "pfeil": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "farbe",
+        "von",
+        "nach"
+      ],
+      "properties": {
+        "farbe": {
+          "$ref": "#/$defs/farbe"
+        },
+        "von": {
+          "$ref": "#/$defs/feld"
+        },
+        "nach": {
+          "$ref": "#/$defs/feld"
+        }
+      }
+    },
+    "feldmarke": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "farbe",
+        "feld"
+      ],
+      "properties": {
+        "farbe": {
+          "$ref": "#/$defs/farbe"
+        },
+        "feld": {
+          "$ref": "#/$defs/feld"
+        }
+      }
+    },
+    "abschnitt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "nummer",
+        "label",
+        "titel"
+      ],
+      "properties": {
+        "nummer": {
+          "type": "string"
+        },
+        "label": {
+          "type": "string"
+        },
+        "titel": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 11,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:morphy-kompensation",
+   "nummer": 79,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Faktorenbilanz eines Opfers",
+   "text": "Weiß hat einen Punkt Material weniger, aber mehr Figuren im Spiel, einen sicheren König und die offene d-Linie; der schwarze König steht im Schach in der Mitte, und alles, was das Schach abwehrt, wird gefesselt. Schwarz bekommt nicht die drei ruhigen Züge, die er bräuchte: Das Opfer lohnt sich."
+  },
+  {
+   "uebung": "ueb:colle-verteidigung",
+   "nummer": 80,
+   "status": "freigegeben",
+   "loesung": "13... Kg8! 14. Dh5 Df6!",
+   "akzeptiert": [],
+   "motiv": "Muster Figur für Figur vergleichen",
+   "text": "13... Kg8! 14. Dh5 Df6! hält: Die Dame deckt f7 und g7, und der König kann über f8 nach e7 fliehen. In der ähnlichen Stellung aus Kapitel 1 beherrscht ein Bauer e5 das Feld f6 und ein Turm steht auf f8, darum geht es dort nicht."
+  },
+  {
+   "uebung": "ueb:carlsen-linie",
+   "nummer": 81,
+   "status": "freigegeben",
+   "loesung": "23. dxc5!",
+   "akzeptiert": [],
+   "motiv": "Offene Linie für die bessere Figur",
+   "text": "Der Springer e5 ist stärker als der Läufer b7 hinter seinem eigenen Bauern. 23. dxc5! öffnet die d-Linie, und nach 23... bxc5 24. Td7 greift der Turm auf der siebten Reihe Läufer und f7 an; nach 23. Tf1 vertreibt ...f6 den Springer, und der Vorteil ist weg."
+  },
+  {
+   "uebung": "ueb:capablanca-tausch",
+   "nummer": 82,
+   "status": "freigegeben",
+   "loesung": "34. Lxf5! gxf5 35. Kg3",
+   "akzeptiert": [],
+   "motiv": "Tausch in ein besseres Endspiel",
+   "text": "34. Lxf5! gxf5 macht g5 zum Freibauern, nimmt Schwarz seine aktivste Figur und öffnet dem weißen König den Weg über h4. Nach 34. Kg4 zieht der Springer zurück, und vom Vorteil bleibt wenig."
+  }
+ ]
+}

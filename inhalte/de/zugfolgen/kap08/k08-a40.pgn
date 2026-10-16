@@ -1,0 +1,16 @@
+[Event "Kapitel 8: Das Bauernrennen zählen"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/8/1P6/7k/8/2K4p/8/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k08-a40"]
+[Kapitel "8"]
+[Abschnitt "8.7"]
+[Status "freigegeben"]
+[Abbildungen "8.40 8.41"]
+
+{ Abb. 8.40 } 1. b7 h2 2. b8=Q h1=Q { Abb. 8.41 } 3. Qh8+ Kg4 4. Qxh1 *

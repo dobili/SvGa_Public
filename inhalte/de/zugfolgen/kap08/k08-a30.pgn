@@ -1,0 +1,16 @@
+[Event "Kapitel 8: Schlüsselfelder: Wohin der König will"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "4k3/8/3KP3/8/8/8/8/8 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k08-a30"]
+[Kapitel "8"]
+[Abschnitt "8.6"]
+[Status "freigegeben"]
+[Abbildungen "8.30"]
+
+{ Abb. 8.30 } 1... Kd8 $1 2. e7+ Ke8 3. Ke6 *

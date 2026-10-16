@@ -1,0 +1,14 @@
+[Event "Kapitel 2: Zweispringerspiel"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k02-a119"]
+[Kapitel "2"]
+[Abschnitt "2.10"]
+[Status "freigegeben"]
+[Abbildungen "2.119 2.120 2.121 2.122 2.123 2.124 2.125 2.126 2.127 2.128 2.129 2.130"]
+
+1. e4 e5 2. Nf3 Nc6 { Abb. 2.119 } 3. Bc4 Nf6 4. Ng5 { Abb. 2.120 } ( 4. d3 ) 4... d5 5. exd5 Na5 $1 { Abb. 2.121 } ( 5... Nxd5 $6 { Abb. 2.129 } 6. Nxf7 $1 Kxf7 7. Qf3+ { Abb. 2.130 } 7... Ke6 ) 6. Bb5+ c6 7. dxc6 bxc6 { Abb. 2.122 } 8. Be2 h6 { Abb. 2.123 } 9. Nf3 e4 10. Ne5 { Abb. 2.124 } 10... Bd6 11. d4 exd3 12. Nxd3 { Abb. 2.125 } 12... Qc7 13. b3 ( 13. O-O Bxh2+ ) 13... O-O 14. Bb2 { Abb. 2.126 } 14... Bf5 15. h3 Rad8 16. O-O { Abb. 2.127 } 16... Rfe8 17. Nd2 { Abb. 2.128 } *

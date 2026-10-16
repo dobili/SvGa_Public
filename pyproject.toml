@@ -1,0 +1,17 @@
+# Einstellungen für die Python-Werkzeuge der Pipeline.
+[project]
+name = "schach-von-grund-auf-pipeline"
+version = "0.1.0"
+description = "Datengewinnung aus den LaTeX-Quellen des Buches für die Companion-App"
+requires-python = ">=3.12"
+
+[tool.pytest.ini_options]
+testpaths = ["pipeline/tests"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py312"
+
+[tool.ruff.lint]
+# Fehler, Stil, Importreihenfolge, häufige Fallstricke
+select = ["E", "F", "W", "I", "B", "UP"]

@@ -1,0 +1,266 @@
+/*
+ * Bereich Nachschlagen (AP 5, Teil 4): Einstiegsknöpfe, Glossarsuche, Denkroutine, Checkliste
+ * (Abhakliste der Lernziele je Kapitel, seit 0.2.2).
+ * Farben und Abstände aus basis.css; der Sicherheitsblick trägt das Warnrot wie im Buch.
+ */
+.nachschlage-eintrag {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 2);
+  width: 100%;
+  min-height: 64px;
+  padding: calc(var(--raster) * 1.5) calc(var(--raster) * 2);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  box-shadow: 0 0 0 1px var(--linie);
+  text-align: left;
+}
+
+.nachschlage-symbol {
+  color: var(--gold-text);
+  display: inline-flex;
+}
+
+.suchfeld {
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  font-size: 17px;
+}
+
+.begriffsliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--flaeche);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--linie);
+}
+
+.begriff-knopf {
+  width: 100%;
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 2);
+  border: none;
+  border-bottom: 1px solid var(--linie);
+  background: none;
+  text-align: left;
+}
+
+.schrittliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.schritt {
+  display: flex;
+  gap: calc(var(--raster) * 1.5);
+  align-items: flex-start;
+}
+
+.schritt p {
+  margin: 0;
+}
+
+.schritt-nummer {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: var(--creme);
+  font-weight: 700;
+}
+
+.sicherheitsblick {
+  border-left: 4px solid var(--rot-text);
+  padding-left: calc(var(--raster) * 1.5);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sicherheitsblick strong {
+  color: var(--rot-text);
+}
+
+.abschluss {
+  font-weight: 700;
+  color: var(--gruen-text);
+}
+
+.phase {
+  border-top: 1px solid var(--linie);
+  padding: var(--raster) 0;
+}
+
+.phase summary {
+  cursor: pointer;
+  min-height: var(--tippflaeche);
+}
+
+.phase-abschnitt h3 {
+  font-size: 15px;
+  margin-top: var(--raster);
+}
+
+.phase-abschnitt ul {
+  margin: 4px 0 0;
+  padding-left: calc(var(--raster) * 2.5);
+}
+
+/* ---------- Training und Einstellungen (AP 5, Teil 5) ---------- */
+
+.trainerkarte {
+  background: var(--flaeche);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--linie);
+  padding: 0 calc(var(--raster) * 2);
+}
+
+.trainerkarte summary {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--raster);
+  cursor: pointer;
+}
+
+.trainerkarte p {
+  margin: 0 0 calc(var(--raster) * 1.5);
+  font-size: 15px;
+}
+
+.trainer-name {
+  font-weight: 600;
+}
+
+.plakette-folgt {
+  flex: none;
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--grund);
+  color: var(--text-leise);
+}
+
+.einstellung-auswahl {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.einstellung-name {
+  font-weight: 600;
+}
+
+.chipreihe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+/* Gewählter Chip einer Auswahl (role="radio") sieht aus wie ein gedrückter Chip. */
+.chip[aria-checked="true"] {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--creme);
+  font-weight: 600;
+}
+
+/* Dunkel: Gerät dunkel und nicht „hell“ gewählt, oder „dunkel“ gewählt (seit 0.2.31). */
+@media (prefers-color-scheme: dark) {
+  :where(:root:not([data-farbschema="hell"])) .chip[aria-checked="true"] {
+    background: var(--creme);
+    border-color: var(--creme);
+    color: var(--navy);
+  }
+}
+
+:where(:root[data-farbschema="dunkel"]) .chip[aria-checked="true"] {
+  background: var(--creme);
+  border-color: var(--creme);
+  color: var(--navy);
+}
+
+/* ---------- Gesamt-Checkliste als Abhakliste (Lernziele je Kapitel) ---------- */
+
+.lernstand-gesamt {
+  font-weight: 600;
+  margin: 0;
+}
+
+.lernkarte {
+  background: var(--flaeche);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--linie);
+  padding: 0 calc(var(--raster) * 2) var(--raster);
+}
+
+.lernkarte summary {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  min-height: 64px;
+  cursor: pointer;
+}
+
+.lernkarte-frage {
+  flex: 1;
+  font-weight: 600;
+}
+
+.lernkarte-stand {
+  flex: none;
+  font-size: 14px;
+  color: var(--text-leise);
+}
+
+.kapitel-nummer.erledigt {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.lernziele {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Die ganze Zeile ist Tippfläche (mindestens 44 Punkte hoch, Pflichtenheft 8). */
+.lernziel {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--raster) * 1.5);
+  min-height: var(--tippflaeche);
+  padding: calc(var(--raster) * 0.75) 0;
+  border-top: 1px solid var(--linie);
+  cursor: pointer;
+}
+
+.lernziel input {
+  flex: none;
+  width: 22px;
+  height: 22px;
+  margin: 1px 0 0;
+  accent-color: var(--navy);
+}
+
+.lernkarte-werkzeug {
+  font-size: 15px;
+  margin: var(--raster) 0;
+}

@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/kapitel.schema.json",
+  "title": "Kapitel",
+  "description": "Alle Daten eines Kapitels, eine Datei je Kapitel (kap01.json): Abschnitte, Abbildungen, Übungen, Steckbriefe, Bilanzen und Fallenchecks.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kapitel",
+    "titel",
+    "abschnitte",
+    "abbildungen",
+    "uebungen",
+    "steckbriefe",
+    "bilanzen",
+    "fallenchecks",
+    "beispiele"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "kapitel": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    },
+    "titel": {
+      "type": "string"
+    },
+    "abschnitte": {
+      "type": "array",
+      "items": {
+        "$ref": "abbildung.schema.json#/$defs/abschnitt"
+      }
+    },
+    "abbildungen": {
+      "type": "array",
+      "items": {
+        "$ref": "abbildung.schema.json"
+      }
+    },
+    "uebungen": {
+      "type": "array",
+      "items": {
+        "$ref": "uebung.schema.json"
+      }
+    },
+    "steckbriefe": {
+      "type": "array",
+      "items": {
+        "$ref": "bilanz.schema.json#/$defs/steckbrief"
+      }
+    },
+    "bilanzen": {
+      "description": "Ziel-, Faktoren-, Skelett- und Planbilanzen in Buchreihenfolge",
+      "type": "array",
+      "items": {
+        "$ref": "bilanz.schema.json"
+      }
+    },
+    "fallenchecks": {
+      "description": "Fallenchecks in Buchreihenfolge (Kapitel 4), für das Werkzeug k4-falle",
+      "type": "array",
+      "items": {
+        "$ref": "bilanz.schema.json#/$defs/fallencheck"
+      }
+    },
+    "beispiele": {
+      "description": "Freigegebene Zugfolgen des Kapitels (AP 3/4)",
+      "type": "array",
+      "items": {
+        "$ref": "beispiel.schema.json"
+      }
+    }
+  }
+}

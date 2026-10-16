@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Rückblick: die Erkennungsbilder"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/8/8/8/6Q1/3K4/p7/k7 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a52"]
+[Kapitel "9"]
+[Abschnitt "Übung 71"]
+[Status "freigegeben"]
+[Abbildungen "9.52"]
+
+{ Abb. 9.52 } 1. Kc3 $1 ( 1. Kc2 $4 ) ( 1. Qb4 $4 ) 1... Kb1 2. Qg1# *

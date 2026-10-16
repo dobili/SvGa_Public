@@ -1,0 +1,16 @@
+[Event "Kapitel 10: Rückblick: Studien und Kuriositäten"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "7K/1k6/8/3P3p/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k10-a26"]
+[Kapitel "10"]
+[Abschnitt "Übung 76"]
+[Status "freigegeben"]
+[Abbildungen "10.26"]
+
+{ Abb. 10.26 } 1. Kg7 $1 ( 1. d6 $2 ) ( 1. Kh7 $2 ) 1... h4 ( 1... Kc7 2. Kf6 $1 h4 3. Ke7 h3 4. d6+ Kb7 5. d7 h2 6. d8=Q h1=Q ) ( 1... Kc8 2. Kf6 $1 ) ( 1... Kb6 2. Kf6 ) 2. Kf7 $1 ( 2. Kf8 h3 3. d6 h2 4. d7 h1=Q 5. d8=Q ) ( 2. Kf6 $2 h3 3. d6 h2 4. d7 h1=Q 5. d8=Q Qh4+ $1 ) 2... h3 3. d6 h2 4. d7 h1=Q 5. d8=Q *

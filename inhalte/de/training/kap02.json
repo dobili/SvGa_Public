@@ -1,0 +1,137 @@
+{
+  "kapitel": 2,
+  "titel": "Klassische Eröffnungssysteme",
+  "adresse": "/training/kap02/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Erst die Logik, dann die Datenbank.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele die Hauptvarianten deiner drei Eröffnungen im Analysebrett nach und benenne an jeder Verzweigung zuerst selbst, welches der drei Eröffnungsziele der Zug erfüllt. Erst im Anschluss öffnest du die Eröffnungsdatenbank mit der Datenbank „Masters“ und schaust, welche Züge dort am häufigsten gespielt werden.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Was deine Gegner wirklich spielen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Stelle die Eröffnungsdatenbank auf „Lichess“ und wähle unter „Durchschnittswertung“ den Bereich um deine eigene Wertung. Spiele die Hauptvarianten deiner Eröffnungen Zug für Zug ein und notiere überall, wo dein Gegner am Zug ist, seine zwei häufigsten Züge, die das Kapitel nicht zeigt.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Taktik aus deiner Eröffnung.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Unter „Aufgaben → Nach Eröffnungen“ findest du Taktikaufgaben, die aus einer bestimmten Eröffnung entstanden sind. Löse zu jeder deiner drei Eröffnungen zwanzig Aufgaben und achte darauf, welche Seite die Fehler macht.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die eigene Zielbilanz.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele eine eigene Partie im Analysebrett nach, halte nach dem zehnten Zug an und erstelle eine kleine Zielbilanz wie in diesem Kapitel: Zentrum, Entwicklung, Königssicherheit, und zwar für beide Seiten.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Nach jeder Partie die erste Abweichung suchen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Lade deine Partie mit „Partie importieren“ ins Analysebrett und finde den ersten Zug, zu dem die Eröffnungsdatenbank keine Partien mehr kennt, deinen oder den des Gegners. Notiere für diese eine Stellung, welcher Zug stattdessen üblich ist und warum. Mehr als eine Stellung pro Partie brauchst du nicht.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Eigene Varianten sammeln.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " In einer Studie kannst du Zugfolgen, Pfeile und eigene Notizen dauerhaft speichern. Lege pro Eröffnung eine Studie an und trage dort genau das ein, was du aus der vorigen Übung gelernt hast. Stellst du ein Kapitel der Studie auf „Interaktive Übung“, fragt sie dich die Züge ab. Die systematische Methode dahinter findest du in Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Am echten Brett.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue die Schlussstellung der Hauptvariante jeder deiner drei Eröffnungen aus dem Gedächtnis auf einem echten Brett auf, vergleiche mit dem Diagramm und gehe die drei Prüfungen laut durch.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap02_klassische_eroeffnungen.tex",
+    "zeile": 3030
+  },
+  "stand": "2026-10-16"
+}

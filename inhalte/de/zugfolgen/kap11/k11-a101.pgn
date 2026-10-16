@@ -1,0 +1,16 @@
+[Event "Kapitel 11: Rückblick: Die Werkzeuge in der ganzen Partie"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "5k2/p1p4R/1pr3p1/3p1nP1/P2P1P2/2PB1K2/8/8 w - - 3 34"]
+[SetUp "1"]
+[Beispiel "k11-a101"]
+[Kapitel "11"]
+[Abschnitt "Übung 82"]
+[Status "freigegeben"]
+[Abbildungen "11.101"]
+
+{ Abb. 11.101 } 34. Bxf5 $1 ( 34. Kg4 Ne7 ) 34... gxf5 35. Kg3 *

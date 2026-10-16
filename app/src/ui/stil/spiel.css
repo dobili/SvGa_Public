@@ -1,0 +1,129 @@
+/*
+ * Stil des Bereichs Spielen: Wahl der Partie, Uhren, Status, Sicherheitsfrage, Ergebnis.
+ * Rolle im Gesamtbild: Bildschirmentwurf „Partie“ (Uhren über und unter dem Brett, Zugliste
+ * darunter). Farben nur über die Variablen aus basis.css, damit der dunkle Modus mitzieht.
+ */
+
+.partie-untertitel {
+  margin: 0 0 var(--raster);
+  color: var(--text-leise);
+  text-align: center;
+}
+
+.partieuhr {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: var(--tippflaeche);
+  margin: var(--raster) 0;
+  padding: 0 calc(var(--raster) * 2);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  font-variant-numeric: tabular-nums;
+}
+
+.partieuhr[data-laeuft="true"] {
+  border-color: var(--gold);
+  box-shadow: inset 4px 0 0 var(--gold);
+}
+
+.partieuhr-zeit {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.partieuhr[data-knapp="true"] .partieuhr-zeit {
+  color: var(--rot-text);
+}
+
+.partiezuege {
+  margin-top: var(--raster);
+}
+
+.partiestatus {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  margin: calc(var(--raster) * 2) 0;
+}
+
+.partiestatus-text {
+  margin: 0;
+  font-weight: 600;
+}
+
+.startbrett {
+  max-width: 240px;
+  margin: 0 auto var(--raster);
+}
+
+.schalterzeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+}
+
+.schalterzeile input {
+  width: 22px;
+  height: 22px;
+  flex: none;
+}
+
+.fen-eingabe {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.fen-eingabe input {
+  width: 100%;
+  margin: var(--raster) 0;
+}
+
+.partienliste .begriff-knopf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: var(--raster);
+  padding-bottom: var(--raster);
+}
+
+.partienliste .begriff-knopf span {
+  color: var(--text-leise);
+  font-size: 14px;
+}
+
+.bildschirm-spielen > .knopf-haupt {
+  width: 100%;
+  margin: var(--raster) 0 calc(var(--raster) * 3);
+}
+
+.auswertung p {
+  margin: var(--raster) 0;
+}
+
+.grobe-patzer {
+  color: var(--rot-text);
+  font-weight: 600;
+}
+
+.enginefehler {
+  margin: var(--raster) 0;
+  padding-left: calc(var(--raster) * 2.5);
+}
+
+.enginefehler li {
+  margin-bottom: var(--raster);
+}
+
+.pgn {
+  margin-top: calc(var(--raster) * 2);
+}
+
+.pgn pre {
+  max-height: 200px;
+  overflow: auto;
+  white-space: pre-wrap;
+}

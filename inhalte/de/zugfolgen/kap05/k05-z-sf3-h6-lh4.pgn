@@ -1,0 +1,16 @@
+[Event "Kapitel 5: Grundstellung"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR w KQ - 1 6"]
+[SetUp "1"]
+[Beispiel "k05-z-sf3-h6-lh4"]
+[Kapitel "5"]
+[Abschnitt "5.2"]
+[Status "verworfen"]
+[Abbildungen ""]
+
+6. Nf3 h6 7. Bh4 b6 8. Bd3 Bb7 9. O-O Nbd7 10. cxd5 exd5 11. Rc1 c5 12. dxc5 bxc5 *

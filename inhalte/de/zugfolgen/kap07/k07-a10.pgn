@@ -1,0 +1,16 @@
+[Event "Kapitel 7: 4. Batterie und Abzug"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "rnbqk2r/pppp2pp/5n2/4N3/2B5/8/PPPP1PPP/R1BQR1K1 w kq - 0 1"]
+[SetUp "1"]
+[Beispiel "k07-a10"]
+[Kapitel "7"]
+[Abschnitt "7.2"]
+[Status "freigegeben"]
+[Abbildungen "7.10"]
+
+1. Nf7+ { Abb. 7.10 } 1... Kf8 ( 1... Qe7 2. Rxe7+ ) ( 1... Ne4 2. Rxe4+ ) 2. Nxd8 *

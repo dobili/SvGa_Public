@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Dame gegen Dame: das Dauerschach"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/P6k/8/8/8/5q2/6Q1/7K b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a34"]
+[Kapitel "9"]
+[Abschnitt "9.7"]
+[Status "freigegeben"]
+[Abbildungen "9.34"]
+
+{ Abb. 9.34 } 1... Qd1+ $1 ( 1... Qxg2+ $2 ) 2. Qg1 ( 2. Kh2 Qd6+ ) 2... Qf3+ 3. Qg2 *

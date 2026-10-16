@@ -1,0 +1,64 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 2,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:k2-italienisch-sg5",
+   "nummer": 8,
+   "status": "freigegeben",
+   "loesung": "4... Dxg5",
+   "akzeptiert": [],
+   "motiv": "Ungedeckte Figur",
+   "text": "Anders als im Zweispringerspiel steht kein Springer auf f6, also ist die Diagonale d8–g5 frei, und Schwarz schlägt mit 4... Dxg5 einfach den ungedeckten Springer. Ein Zug, der in einer Eröffnung stark ist, kann in einer ähnlichen Stellung ein grober Fehler sein."
+  },
+  {
+   "uebung": "ueb:k2-italienisch-bilanz",
+   "nummer": 9,
+   "status": "freigegeben",
+   "loesung": "8... d5!",
+   "akzeptiert": [
+    "8... Sxe4"
+   ],
+   "motiv": "Gegenstoß im Zentrum",
+   "text": "Schwarz besteht die Zentrumsprüfung am schlechtesten: Weiß hat d4 und e4, Schwarz keinen Zentrumsbauern. 8... d5! greift e4 und den Läufer c4 zugleich an und löst das weiße Bauernpaar auf; fast ebenso gut ist 8... Sxe4 9. Sxe4 d5."
+  },
+  {
+   "uebung": "ueb:k2-zweispringer-la4",
+   "nummer": 10,
+   "status": "freigegeben",
+   "loesung": "10... Dd4!",
+   "akzeptiert": [],
+   "motiv": "Doppelangriff auf Springer und Randläufer",
+   "text": "10... Dd4! greift den Springer e5 und den ungedeckten Läufer a4 zugleich an, und Weiß verliert eine Figur. In der Hauptvariante steht der Läufer auf e2 und ist gedeckt; am Rand wird er zum zweiten Ziel."
+  },
+  {
+   "uebung": "ueb:k2-carokann-h4",
+   "nummer": 11,
+   "status": "freigegeben",
+   "loesung": "4... h5",
+   "akzeptiert": [
+    "4... h6"
+   ],
+   "motiv": "Läufer ohne Rückzugsfeld",
+   "text": "Nach 4... e6?? 5. g4! hat der Läufer f5 kein sicheres Feld mehr und geht nach h5 und f3 verloren. Erst sichert Schwarz mit 4... h5 oder 4... h6 den Rückweg, dann folgt ...e6."
+  },
+  {
+   "uebung": "ueb:k2-nimzo-e4",
+   "nummer": 12,
+   "status": "freigegeben",
+   "loesung": "4... Sxe4!",
+   "akzeptiert": [],
+   "motiv": "Gefesselter Verteidiger",
+   "text": "Der Springer c3 ist an den König gefesselt und deckt e4 nicht, also gewinnt 4... Sxe4! einen Bauern. Auf 5. Dg4 folgt 5... Sxc3!, und nach 6. Dxg7 Se4+ deckt Schwarz mit Abzugsschach alles und behält Material mehr."
+  },
+  {
+   "uebung": "ueb:k2-zugumstellung-laeuferspiel",
+   "nummer": 13,
+   "status": "freigegeben",
+   "loesung": "7. Lg5",
+   "akzeptiert": [],
+   "motiv": "Zugumstellung",
+   "text": "Die Stellung ist das Giuoco Pianissimo der Italienischen Partie, nur über das Läuferspiel erreicht. In der Hauptvariante folgt 7. Lg5 h6 8. Lh4 Le6 9. Sbd2; prüfe nach einem ungewohnten Anfang, welche bekannte Stellung du erreichst."
+  }
+ ]
+}

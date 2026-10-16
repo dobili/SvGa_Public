@@ -1,0 +1,46 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 1,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:droh-ignorieren",
+   "nummer": 4,
+   "status": "freigegeben",
+   "loesung": "1. Sc7+!",
+   "akzeptiert": [],
+   "motiv": "Springergabel mit Schach",
+   "text": "Statt den angegriffenen Springer zu retten, gibt Weiß Schach: 1. Sc7+! gabelt König, Dame und Turm, und nach jedem Königszug fällt die Dame. Eine Drohung zählt nur, wenn der Gegner überhaupt dazu kommt, sie auszuführen."
+  },
+  {
+   "uebung": "ueb:zaehlen-vorstoss",
+   "nummer": 5,
+   "status": "freigegeben",
+   "loesung": "1. cxd5! cxd5 2. exd5 exd5 3. Sxd5",
+   "akzeptiert": [
+    "1. exd5"
+   ],
+   "motiv": "Zählen von Angreifern und Verteidigern",
+   "text": "Auf d5 greifen drei weiße Figuren an, nur zwei schwarze verteidigen; die Dame d8 zählt nicht, weil der Springer d7 sie verstellt. Darum gewinnt der Tausch mit 1. cxd5! einen Bauern, und der Springer d5 entkommt notfalls mit Schach nach e7."
+  },
+  {
+   "uebung": "ueb:spannung-halten",
+   "nummer": 6,
+   "status": "freigegeben",
+   "loesung": "4... Sf6",
+   "akzeptiert": [
+    "4... Lc5"
+   ],
+   "motiv": "Spannung halten",
+   "text": "Nach 4... Sxd4?! 5. Dxd4 steht die weiße Dame sicher im Zentrum, und Schwarz hat sie selbst entwickelt. Besser ist ein Entwicklungszug mit Angriff: 4... Sf6 auf e4 oder 4... Lc5 auf den Springer d4."
+  },
+  {
+   "uebung": "ueb:angriff-zaehlen",
+   "nummer": 7,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Läuferopfer auf h7 nachzählen",
+   "text": "1. Lxh7+?? funktioniert hier nicht: Auf h7 kommt nur der Läufer an, König und Springer f6 decken. Solange der Springer auf f6 steht, kommt die Dame nicht nach h5, und Weiß verliert einfach eine Figur."
+  }
+ ]
+}

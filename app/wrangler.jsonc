@@ -1,0 +1,14 @@
+// Cloudflare: die App als Worker mit statischen Dateien (Konzept 2 und 14).
+// Es gibt keinen Server-Code; Cloudflare liefert nur den Inhalt von dist/ aus.
+// Einrichtung durch den Autor: docs/CLOUDFLARE.md.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "schach-von-grund-auf",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./dist",
+    // Eine unbekannte Adresse liefert die Startseite des Buches aus (Entscheidung 15.10.2026:
+    // Startseite unter /, App unter /app/, beides auf derselben Domain).
+    "not_found_handling": "single-page-application",
+  },
+}

@@ -1,0 +1,14 @@
+[Event "Kapitel 3: Das Evans-Gambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k03-a11"]
+[Kapitel "3"]
+[Abschnitt "3.5"]
+[Status "freigegeben"]
+[Abbildungen "3.11 3.12 3.13 3.14 3.15 3.16 3.17"]
+
+1. e4 e5 2. Nf3 Nc6 { Abb. 3.11 } 3. Bc4 Bc5 4. b4 { Abb. 3.12 } 4... Bxb4 5. c3 Ba5 { Abb. 3.13 } 6. d4 { Abb. 3.14 } 6... d6 ( 6... exd4 7. O-O dxc3 ) 7. O-O ( 7. Qb3 Qd7 ) 7... Bb6 { Abb. 3.15 } 8. dxe5 dxe5 9. Qxd8+ Nxd8 { Abb. 3.16 } 10. Nxe5 Be6 { Abb. 3.17 } *

@@ -1,0 +1,16 @@
+[Event "Kapitel 8: Holt der König ihn ein? Die Regel des Quadrats"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/8/8/6k1/1P6/8/8/7K b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k08-a36"]
+[Kapitel "8"]
+[Abschnitt "8.7"]
+[Status "freigegeben"]
+[Abbildungen "8.36"]
+
+{ Abb. 8.36 } 1... Kf6 ( 1... Kf5 ) ( 1... Kf4 ) *

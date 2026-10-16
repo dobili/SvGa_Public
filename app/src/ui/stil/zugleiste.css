@@ -1,0 +1,143 @@
+/*
+ * Zugleiste (AP 5, Nachspielen): Knöpfe für Halbzüge, die Züge der Zeile als Tippflächen,
+ * Abbildungen als kleine Marken, Abzweigungen als Chips. Farben und Abstände aus basis.css.
+ */
+.zugleiste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  background: var(--flaeche);
+  border-radius: var(--radius);
+  box-shadow: 0 0 0 1px var(--linie);
+  padding: var(--raster);
+}
+
+.zugknoepfe {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  justify-items: center;
+}
+
+.zugknoepfe .knopf-symbol {
+  width: 100%;
+}
+
+/* Die Zeile wird bei langen Partien nicht endlos hoch: höchstens fünf Zeilen, dann blättern. */
+/* position: relative, damit die Zugknöpfe ihre Lage relativ zur Zeile melden (Scrollen). */
+.zugzeile {
+  position: relative;
+  margin: 0;
+  max-height: calc(var(--tippflaeche) * 4);
+  overflow-y: auto;
+  line-height: 2;
+  font-variant-numeric: tabular-nums;
+}
+
+.zug-gruppe {
+  white-space: nowrap;
+}
+
+.zug {
+  border: none;
+  background: none;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-weight: 400;
+}
+
+.zug[aria-current="step"] {
+  background: var(--navy);
+  color: var(--creme);
+  font-weight: 700;
+}
+
+/* Dunkel: Gerät dunkel und nicht „hell“ gewählt, oder „dunkel“ gewählt (seit 0.2.31). */
+@media (prefers-color-scheme: dark) {
+  :where(:root:not([data-farbschema="hell"])) .zug[aria-current="step"] {
+    background: var(--creme);
+    color: var(--navy);
+  }
+}
+
+:where(:root[data-farbschema="dunkel"]) .zug[aria-current="step"] {
+  background: var(--creme);
+  color: var(--navy);
+}
+
+.zug-abbildung {
+  border: 1px solid var(--gold);
+  background: none;
+  border-radius: 10px;
+  padding: 0 6px;
+  margin-left: 2px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--gold-text);
+}
+
+.abzweigungen {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+  font-size: 15px;
+  color: var(--text-leise);
+}
+
+/* ---------- Weiterspielen und Brettknöpfe (AP 5, Teil 2) ---------- */
+
+.brettzeile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--raster);
+}
+
+/* Werkzeug-Symbole und „Brett drehen“ (0.2.30); auf schmalen Geräten rechtsbündig umbrechen. */
+.brettschalter-gruppe {
+  display: flex;
+  margin-left: auto;
+}
+
+.brettschalter[aria-pressed="true"] {
+  color: var(--gold-text);
+  background: var(--flaeche);
+  border-radius: var(--radius);
+  box-shadow: inset 0 0 0 1px var(--gold);
+}
+
+.umwandlung {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+  padding: var(--raster);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.eigene-zuege {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-top: 1px solid var(--linie);
+  padding-top: var(--raster);
+}
+
+.eigene-titel {
+  font-size: 15px;
+  color: var(--text-leise);
+}
+
+.zug.eigen {
+  font-style: italic;
+}
+
+/* Neben den Brettknöpfen: „Weiß am Zug“ bleibt in einer Zeile. */
+.brettzeile .am-zug {
+  flex: 1;
+  min-width: 0;
+}

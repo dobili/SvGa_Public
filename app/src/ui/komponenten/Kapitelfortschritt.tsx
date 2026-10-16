@@ -1,0 +1,120 @@
+/**
+ * Karte „Dein Fortschritt“ in der Kapitelübersicht: Abbildungen, Übungen, Lernziele, Trainer.
+ *
+ * Rolle im Gesamtbild: Pflichtenheft 4, Stufe 2 „Fortschritt: je Kapitel angesehene Abbildungen,
+ * gelöste Übungen, Stand der Trainer“. Dazu die abgehakten Lernziele der Gesamt-Checkliste, weil
+ * sie den Stand des Kapitels aus Sicht des Lesers zeigen. Übungen und Trainer zeigen Zahlen,
+ * sobald es die Trainer gibt (AP 13); bis dahin ein ehrlicher Satz statt „0 von 12“.
+ * Abhängigkeiten: speicher, app/lernstand.ts, daten/laden.ts, Fortschrittsbalken, i18n.
+ */
+import type { ReactNode } from "react";
+import { abgehakt, useLernstand } from "../../app/lernstand";
+import { useNavigation } from "../../app/navigationsKontext";
+import { ladeNachschlagen, type Kapitel } from "../../daten/laden";
+import { t } from "../../i18n/sprache";
+import { kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
+import { useSpeicher } from "../../speicher/speicher";
+import { Fortschrittsbalken } from "./Fortschrittsbalken";
+import { useDaten } from "./useDaten";
+
+interface Zeilenangaben {
+  readonly name: string;
+  readonly anteil: Anteil;
+  readonly testid: string;
+  readonly children?: ReactNode;
+}
+
+/** Eine Zeile „Name: x von y“ mit Balken; Zusätze (etwa ein Sprung) stehen darunter. */
+export function Fortschrittszeile({ name, anteil, testid, children }: Zeilenangaben) {
+  const wert = t("fortschritt.anteil", { erreicht: anteil.erreicht, gesamt: anteil.gesamt });
+  return (
+    <div className="fortschritt-zeile">
+      <dt>{name}</dt>
+      <dd>
+        <span data-testid={testid}>{wert}</span>
+        <Fortschrittsbalken anteil={anteil} beschriftung={`${name}: ${wert}`} />
+        {children}
+      </dd>
+    </div>
+  );
+}
+
+/** Lernziele des Kapitels aus der Gesamt-Checkliste, mit Sprung dorthin. */
+function Lernziele({ kapitel }: { kapitel: number }) {
+  const { navigiere } = useNavigation();
+  const nachschlagen = useDaten(ladeNachschlagen, "nachschlagen");
+  const stand = useLernstand();
+  if (nachschlagen.art !== "fertig") return null;
+  const ziele = nachschlagen.wert.lernziele.find((eintrag) => eintrag.kapitel === kapitel);
+  if (!ziele || ziele.punkte.length === 0) return null;
+  const anteil = {
+    erreicht: abgehakt(stand, kapitel, ziele.punkte.length),
+    gesamt: ziele.punkte.length,
+  };
+  return (
+    <Fortschrittszeile
+      name={t("fortschritt.lernziele")}
+      anteil={anteil}
+      testid="fortschritt-lernziele"
+    >
+      <button
+        type="button"
+        className="knopf-link links"
+        onClick={() => navigiere({ bildschirm: "checkliste" })}
+      >
+        {t("fortschritt.zurCheckliste")}
+      </button>
+    </Fortschrittszeile>
+  );
+}
+
+/**
+ * Fortschritt eines geladenen Kapitels.
+ *
+ * Beispiel: Kapitel 1 nach dem Öffnen von Abb. 1.26 → „Abbildungen angesehen: 1 von 40“.
+ */
+export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
+  const fortschritt = useSpeicher((zustand) => zustand.daten.fortschritt);
+  const stand = kapitelfortschritt(
+    fortschritt,
+    kapitel.kapitel,
+    kapitel.abbildungen.map((abbildung) => abbildung.id),
+    kapitel.uebungen.map((uebung) => uebung.id),
+  );
+  const mitStand = stand.trainer.filter((eintrag) => eintrag.stand !== null);
+  return (
+    <section className="karte" data-testid="kapitelfortschritt">
+      <h2 className="karte-titel">{t("fortschritt.titel")}</h2>
+      <dl className="fortschritt-liste">
+        <Fortschrittszeile
+          name={t("fortschritt.abbildungen")}
+          anteil={stand.abbildungen}
+          testid="fortschritt-abbildungen"
+        />
+        {stand.uebungen.versucht > 0 && (
+          <Fortschrittszeile
+            name={t("fortschritt.uebungen")}
+            anteil={stand.uebungen}
+            testid="fortschritt-uebungen"
+          />
+        )}
+        <Lernziele kapitel={kapitel.kapitel} />
+      </dl>
+      {stand.uebungen.gesamt > 0 && stand.uebungen.versucht === 0 && (
+        <p className="hinweis">
+          {t("fortschritt.uebungenFolgen", { gesamt: stand.uebungen.gesamt })}
+        </p>
+      )}
+      {mitStand.map(({ kennung, stand: trainer }) => (
+        <p key={kennung} className="hinweis">
+          {t("fortschritt.trainerStand", {
+            name: t(`trainer.${kennung}.name`),
+            durchgaenge: trainer?.durchgaenge ?? 0,
+            richtig: trainer?.richtig ?? 0,
+            aufgaben: trainer?.aufgaben ?? 0,
+          })}
+        </p>
+      ))}
+    </section>
+  );
+}

@@ -1,0 +1,600 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 9,
+ "texte": [
+  {
+   "abbildung": "9.1",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-turmbegriffe",
+     "hinweise": [
+      "Prüfe, ob ein Turm den verteidigenden König vom Bauern trennt.",
+      "Schau auf die e-Linie zwischen dem König g6 und dem Bauern c5.",
+      "Der Turm e1 sperrt die e-Linie; zwischen König und Bauer liegen die d-, e- und f-Linie."
+     ],
+     "text": "Der schwarze König ist abgeschnitten: Drei Linien trennen ihn vom Bauern c5. Das ist ein großer Trumpf für Weiß."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist der Turm e1 für Weiß hier so wertvoll?",
+     "antworten": [
+      "Er deckt den Bauern c5 von hinten.",
+      "Er hält den schwarzen König jenseits der e-Linie fest, weit weg vom Bauern c5.",
+      "Er droht Matt auf der 8. Reihe."
+     ],
+     "richtig": 1,
+     "erklaerung": "Abschneiden heißt: Der Turm sperrt eine Linie zwischen König und Bauer. Je mehr Linien dazwischen liegen, desto besser für den Angreifer; ab drei reicht es oft."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.2",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Welche Seite des Bauern ist die kurze, welche die lange?",
+      "Zähle die Linien neben dem Bauern f5 bis zum Rand. Wo stehen König g8 und Turm a6?",
+      "König g8 auf der kurzen Seite, Turm a6 auf der langen mit vier Linien Abstand zum Bauern."
+     ],
+     "text": "Schwarz zeigt das Erkennungsbild „König auf die kurze Seite“: Der König steht rechts vom Bauern, der Turm links mit genug Schachdistanz."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum steht der schwarze Turm auf a6 gut?",
+     "antworten": [
+      "Er kann den Bauern f5 sofort schlagen.",
+      "Er schützt den eigenen König vor einem Matt auf der 8. Reihe.",
+      "Er hat genug Abstand: Geht der weiße König auf ihn zu, verlässt er seinen Bauern."
+     ],
+     "richtig": 2,
+     "erklaerung": "Zwischen a6 und f5 liegen vier Linien. Aus dieser Entfernung kann der Turm von der Seite Schach geben, ohne dass der König ihn erreicht."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.3",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Steht der verteidigende König vor dem Bauern?",
+      "Schau auf den König e8 und auf die 6. Reihe mit dem Turm h6.",
+      "König vor dem Bauern, Turm auf der 6. Reihe: Der weiße König kommt nicht nach vorn."
+     ],
+     "text": "Philidor-Stellung: Der König e8 steht vor dem Bauern, der Turm h6 sperrt die 6. Reihe. Erst wenn der Bauer auf die 6. Reihe zieht, wechselt der Turm nach hinten."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. e6",
+     "frage": "Warum ändert 1. e6 den Plan von Schwarz?",
+     "antworten": [
+      "Auf e6 findet der weiße König kein Versteck mehr: Der Turm geht nach hinten und gibt Schachs.",
+      "Jetzt kann Schwarz den Bauern e6 sofort mit dem König schlagen.",
+      "Schwarz muss jetzt die Türme tauschen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Solange der Bauer auf der 5. Reihe steht, hält der Turm die 6. Reihe. Nach e6 kann sich der König nicht mehr vor den Schachs von hinten verstecken."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.5",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-turmbegriffe",
+     "hinweise": [
+      "Prüfe die Schachdistanz des Turms.",
+      "Zähle die Linien zwischen dem Turm a8 und dem Bauern e6.",
+      "Drei Linien (b, c, d): genug Abstand für Schachs von der Seite."
+     ],
+     "text": "König g7 auf der kurzen Seite, Turm a8 auf der langen mit drei Linien Schachdistanz. Die Aufstellung stimmt, Schwarz muss sie aber sofort nutzen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... Ta7+",
+     "frage": "Warum hält nur 1... Ta7+?",
+     "antworten": [
+      "Der Turm fesselt den Bauern e6.",
+      "Das Schach von der Seite beginnt eine Serie; der weiße König entkommt ihr nicht, ohne den Bauern zu verlassen.",
+      "Schwarz bereitet den Turmtausch auf a7 vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Mit drei Linien Abstand reicht die Schachdistanz. Geht der König auf den Turm zu, bleibt der Bauer e6 allein zurück."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.6",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-turmbegriffe",
+     "hinweise": [
+      "Vergleiche den Turm b8 mit dem Turm a8 aus der vorigen Stellung.",
+      "Zähle die Linien zwischen dem Turm b8 und dem Bauern e6.",
+      "Nur zwei Linien (c, d): zu wenig Schachdistanz, der König kann auf den Turm zugehen."
+     ],
+     "text": "König und Turm stehen auf den richtigen Seiten, doch der Turm b8 hat nur zwei Linien Abstand. Diese eine fehlende Linie kostet Schwarz das Remis."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3. Kd7",
+     "frage": "Warum entkommt Weiß mit 3. Kd7 den Schachs?",
+     "antworten": [
+      "Kd7 droht sofort Matt auf der 8. Reihe.",
+      "Der König greift den schwarzen König an.",
+      "Der Turm b8 steht zu nah am Bauern: Der König läuft auf ihn zu, und die Schachs hören auf."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach 3... Tb7+ 4. Kc6 greift der König den Turm an. Mit dem Turm auf a8 wäre er dafür zu weit weg gewesen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.8",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Welches Erkennungsbild passt: Bauer auf der 7. Reihe, König davor?",
+      "Schau auf den König e8, den Bauern e7 und den Turm f1.",
+      "Lucena: König mit Schach weiter abdrängen, Turm auf die 4. Reihe, dann die Brücke bauen."
+     ],
+     "text": "Lucena-Stellung, Weiß gewinnt. Zuerst treibt ein Schach den schwarzen König eine Linie weiter weg, dann baut der Turm von der 4. Reihe die Brücke."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Tg1+",
+     "frage": "Warum beginnt Weiß mit 1. Tg1+?",
+     "antworten": [
+      "Der Turm will auf der g-Linie mattsetzen.",
+      "Weiß will den Turm gegen den Turm a2 tauschen.",
+      "Das Schach treibt den schwarzen König eine Linie weiter weg vom Bauern."
+     ],
+     "richtig": 2,
+     "erklaerung": "Auf g7 könnte der König den Bauern nach einem Turmtausch zurückgewinnen (Abb. 9.13). Auf h7 ist er dafür einen Schritt zu weit weg."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.11",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-turmbegriffe",
+     "hinweise": [
+      "Wie weit ist der schwarze König vom Bauern entfernt?",
+      "Schau auf den Turm g4 und die g-Linie.",
+      "Der Turm g4 sperrt die g-Linie: Der König h7 kommt nicht an den Bauern e7 heran."
+     ],
+     "text": "Der König h7 ist abgeschnitten. Weiß muss nur noch die Schachs des Turms d1 abfangen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6. Ke5",
+     "frage": "Warum geht der König nach e5?",
+     "antworten": [
+      "Von dort deckt er das Feld e4: Auf das nächste Schach stellt sich der Turm g4 dazwischen.",
+      "Er will den Turm d1 angreifen.",
+      "Auf e5 schützt ihn der Bauer e7 vor allen Schachs."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach 6... Te1+ folgt 7. Te4: Die Brücke steht, der König deckt den Turm. Das Umwandlungsfeld e8 ist nicht mehr zu halten."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.13",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-turmbegriffe",
+     "hinweise": [
+      "Wie nah ist der verteidigende König am Bauern?",
+      "Schau auf den König g7 und das Feld f7.",
+      "Kein Turm schneidet den König g7 ab: Nach dem Turmtausch erreicht er über f7 den Bauern e7."
+     ],
+     "text": "Der schwarze König ist nicht abgeschnitten und steht eine Linie neben dem Bauern. Darum kann Schwarz die Brücke einfach abtauschen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... Txe4+",
+     "frage": "Warum hält 1... Txe4+ hier remis?",
+     "antworten": [
+      "Nach dem Tausch steht Weiß patt.",
+      "Nach 2. Kxe4 geht der König nach f7 und schlägt den Bauern e7.",
+      "Der Turm e4 war ungedeckt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Brücke hilft nur, wenn der König des Verteidigers weit genug weg ist. Deshalb treibt Weiß ihn in der Lucena-Stellung zuerst mit Schach weiter weg."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.15",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Welches Erkennungsbild gehört zu einem weit vorgerückten Randbauern?",
+      "Schau auf den Turm f6 und den Bauern a6.",
+      "Vancura: Der Turm greift a6 von der Seite an, der König wartet auf g7."
+     ],
+     "text": "Vancura-Stellung, remis. Der Turm f6 greift den Bauern a6 von der Seite an, der weiße König muss ihn decken. Der schwarze König wartet auf g7."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... Tf5+",
+     "frage": "Warum gibt Schwarz mit 1... Tf5+ Schach?",
+     "antworten": [
+      "Er will den Turm gegen den Bauern tauschen.",
+      "Er bereitet ein Matt auf der 5. Reihe vor.",
+      "Der König muss weichen und beim Bauern bleiben; danach greift der Turm a6 wieder von der Seite an."
+     ],
+     "richtig": 2,
+     "erklaerung": "Schachs und seitliche Angriffe auf den Bauern wechseln sich ab. So kommt Weiß nicht weiter."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.16",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Steht der schwarze König auf seinem Wartefeld?",
+      "Schau auf den König f7 und die Felder h7 und h8.",
+      "Der König bewacht h7 und h8 nicht: Der Turm a8 kann die a-Linie verlassen."
+     ],
+     "text": "Kein Vancura: Der Turm a2 greift den Bauern nicht von der Seite an, und der König f7 bewacht h7 und h8 nicht. Weiß gewinnt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Th8",
+     "frage": "Warum gewinnt 1. Th8?",
+     "antworten": [
+      "Der Turm gibt Schach und treibt den König weg.",
+      "Er droht a8=D; schlägt Schwarz 1... Txa7, gewinnt 2. Th7+ den Turm durch einen Spieß.",
+      "Er schützt die eigene Grundreihe."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Turm macht dem Bauern Platz und lauert auf der h-Linie. Im Vancura-Bild steht der König deshalb auf g7 oder h7."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.19",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Turm gegen Bauer: Ist der König abgeschnitten? Wer gewinnt das Rennen?",
+      "Schau, welche Felder der schwarze König braucht, um seinen Bauern zu begleiten.",
+      "Der weiße König muss dem schwarzen das Feld d4 nehmen."
+     ],
+     "text": "Turm gegen Bauer: Der schwarze König ist nicht abgeschnitten und steht neben seinem Bauern. Es entscheidet das Rennen der Könige."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Kc5",
+     "frage": "Warum ist 1. Kc5 so stark?",
+     "antworten": [
+      "Der König greift den Bauern e4 direkt an.",
+      "Er deckt das Umwandlungsfeld e1.",
+      "Er nimmt dem schwarzen König das Feld d4 und kommt dem Bauern näher."
+     ],
+     "richtig": 2,
+     "erklaerung": "So gewinnt Weiß. Wäre Schwarz am Zug, hielte 1... Kd4 remis, weil sich der König dem weißen König in den Weg stellt (Abb. 9.20)."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.21",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Denke bei einem Bauern kurz vor der Umwandlung an alle Figuren, nicht nur an die Dame.",
+      "Schau, was nach 1... b1=D der Turm e2 auf der 1. Reihe kann.",
+      "Te1 wäre Matt; der Springer gibt dagegen selbst Schach."
+     ],
+     "text": "Turm gegen Bauer: Die Tabelle erinnert den Verteidiger an die Unterverwandlung. Hier rettet nur der Springer."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... b1=S+",
+     "frage": "Warum wandelt Schwarz in einen Springer um?",
+     "antworten": [
+      "Er gibt Schach, und nach 1... b1=D?? hätte 2. Te1 mattgesetzt.",
+      "Ein Springer ist im Endspiel stärker als eine Dame.",
+      "Der Springer greift den Turm e2 an."
+     ],
+     "richtig": 0,
+     "erklaerung": "Unterverwandlung: Mit Schach gewinnt Schwarz die Zeit, die gegen das Matt fehlt. Das Ergebnis ist remis."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.25",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Wo stehen die Türme im Verhältnis zum Freibauern?",
+      "Schau auf die a-Linie: Turm a1, Bauer a5, Turm a7.",
+      "Der Turm a1 steht hinter dem Freibauern, der Turm a7 davor und ist gebunden."
+     ],
+     "text": "Weiß hat die bessere Turmstellung: Der Turm a1 steht hinter dem Freibauern und wird mit jedem Bauernzug aktiver. Der schwarze Turm muss davor bleiben."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum steht der Turm a1 besser als der Turm a7?",
+     "antworten": [
+      "Er steht näher am eigenen König.",
+      "Er steht hinter dem Freibauern: Jeder Bauernzug gibt ihm mehr Raum, der Turm a7 blockiert nur.",
+      "Er schützt die 1. Reihe vor einem Grundreihenmatt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Türme gehören hinter Freibauern. Der Turm vor dem Bauern ist an die Blockade gebunden und wird mit jedem Bauernzug passiver."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.26",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. Txb8+",
+     "frage": "Warum tauscht Weiß mit 1. Txb8+ die Türme?",
+     "antworten": [
+      "Das Bauernendspiel ist gewonnen: Der entfernte Freibauer a4 bindet den schwarzen König.",
+      "Weiß will ein verlorenes Turmendspiel loswerden und remis halten.",
+      "Nach dem Tausch ist Schwarz sofort matt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Plan aus der Tabelle: ins gewonnene Bauernendspiel tauschen. Muss der schwarze König den a-Bauern aufhalten, hat der weiße König am anderen Flügel freie Bahn."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.28",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Auf welcher Linie steht der Bauer: Läufer-, Rand- oder Mittelbauer?",
+      "Der Bauer steht auf d2, der weiße König weit weg auf b8.",
+      "d-Bauer: Die Dame gewinnt, indem sie den König mit Schachs vor den Bauern zwingt."
+     ],
+     "text": "Dame gegen Bauer auf der d-Linie: gewonnen. Weiß zwingt den König mit Schachs nach d1 und nutzt jede Pause für einen Königszug."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. De4+",
+     "frage": "Was ist das Ziel der Schachserie, die mit 1. De4+ beginnt?",
+     "antworten": [
+      "Dauerschach, denn mehr als remis ist nicht drin.",
+      "Den Bauern d2 sofort zu schlagen.",
+      "Den schwarzen König auf d1 vor seinen Bauern zu zwingen, damit der weiße König Zeit zum Herankommen hat."
+     ],
+     "richtig": 2,
+     "erklaerung": "Steht der König vor dem Bauern, kann dieser nicht umwandeln. Jede solche Pause bringt den weißen König einen Schritt näher."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.32",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Läufer- oder Randbauer? Prüfe vor dem Schlag auf Patt.",
+      "Der Bauer f2 ist ein Läuferbauer, der König h1 steht in der Ecke.",
+      "Nach Dxf2 hat der König h1 kein Feld und steht nicht im Schach: patt."
+     ],
+     "text": "Dame gegen Läuferbauer, aber der weiße König e3 steht nah genug. Weiß gewinnt, wenn er vor dem Schlag auf f2 an das Patt denkt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Df3+",
+     "frage": "Warum spielt Weiß 1. Df3+ statt sofort 1. Dxf2?",
+     "antworten": [
+      "Der Bauer f2 ist von einer schwarzen Figur gedeckt.",
+      "1. Dxf2 wäre patt; nach 1. Df3+ Kg1 schlägt die Dame auf f2 mit Schach.",
+      "1. Df3+ setzt sofort matt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Pattalarm beim Läuferbauern: Erst das Zwischenschach holt den König aus der Ecke heraus. Dann ist der Schlag kein Patt mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.34",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Dame gegen Dame: Hat der Verteidiger Schachs?",
+      "Schau auf den Bauern a7 und auf das, was nach einem Damentausch passiert.",
+      "Nach dem Tausch wandelt a7 um; Schwarz muss Schach geben, statt zu tauschen."
+     ],
+     "text": "Dame gegen Dame mit einem Bauern auf der 7. Reihe. Schwarz rettet sich nur mit Schachs, der Damentausch verliert."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... Dd1+",
+     "frage": "Warum gibt Schwarz mit 1... Dd1+ Schach, statt die Damen zu tauschen?",
+     "antworten": [
+      "Ein Damentausch ist nicht erlaubt, solange ein Bauer auf der 7. Reihe steht.",
+      "1... Dd1+ setzt matt.",
+      "Nach 1... Dxg2+ 2. Kxg2 wandelt der Bauer a7 um; mit Schachs hält Schwarz dagegen remis."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Verteidiger rechnet zuerst seine Schachs. Nach Dd1+ Dg1 Df3+ Dg2 kommt Weiß nicht zum Umwandeln."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.35",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Gleiche oder ungleiche Läuferfarbe?",
+      "Vergleiche die Läufer f3 und d6 und schau auf das Feld c7.",
+      "Ungleichfarbig: Der König blockiert auf dem dunklen Feld c7, das der helle Läufer f3 nie erreicht."
+     ],
+     "text": "Ungleichfarbige Läufer: remis trotz Mehrbauer. Schwarz blockiert auf c7, einem Feld, das der weiße Läufer nicht angreifen kann."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum hält Schwarz hier trotz Minusbauer remis?",
+     "antworten": [
+      "Der Läufer d6 kann den Bauern c6 sofort schlagen.",
+      "Weiß ist am Zug und steht im Zugzwang.",
+      "Der König c7 blockiert auf einem dunklen Feld, das der helle Läufer f3 nie angreifen kann."
+     ],
+     "richtig": 2,
+     "erklaerung": "Das ist die Festung bei ungleichfarbigen Läufern: Blockade auf der Farbe, die der gegnerische Läufer nicht erreicht."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.38",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Gleiche oder ungleiche Läuferfarbe? Welcher Freibauer ist schneller?",
+      "Schau auf den Bauern a5 und die Diagonale vom Läufer f3 bis a8.",
+      "Der Läufer f3 beherrscht b7 und a8; der Bauer muss sofort laufen."
+     ],
+     "text": "Gleichfarbige Läufer: Hier entscheidet der Freibauer. Der Läufer f3 hält den Weg bis a8 frei."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. a6",
+     "frage": "Warum gewinnt 1. a6?",
+     "antworten": [
+      "Der Bauer läuft sofort; der Läufer f3 beherrscht b7 und a8, der schwarze König kommt nicht mehr vor ihn.",
+      "a6 sperrt dem Läufer d7 die Diagonale.",
+      "a6 bereitet einen Königsmarsch nach g5 vor."
+     ],
+     "richtig": 0,
+     "erklaerung": "Bei gleichfarbigen Läufern gibt es keine sichere Blockade auf der anderen Farbe. Wer seinen Freibauern schnell genug bringt, gewinnt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.41",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "Welche Farbe hat das Umwandlungsfeld, welche der Läufer?",
+      "Der Läufer c4 läuft auf hellen Feldern; schau auf h8.",
+      "Falscher Läufer: h8 ist dunkel, der König in der Ecke ist nicht zu vertreiben."
+     ],
+     "text": "Falscher Läufer mit Randbauer: remis. Der Läufer c4 kann das dunkle Feld h8 nie angreifen."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum gewinnt Weiß hier trotz Läufer und Mehrbauer nicht?",
+     "antworten": [
+      "Der Bauer h6 ist gefesselt.",
+      "Der Läufer c4 erreicht das dunkle Umwandlungsfeld h8 nie, und der König in der Ecke ist nicht zu vertreiben.",
+      "Weiß ist im Zugzwang und muss den Läufer hergeben."
+     ],
+     "richtig": 1,
+     "erklaerung": "Beim Randbauern braucht der Läufer die Farbe des Umwandlungsfeldes. Sonst bleibt der verteidigende König einfach in der Ecke stehen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "9.44",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k9-erkennungsbilder",
+     "hinweise": [
+      "In welcher Ecke steht der verteidigende König?",
+      "Vergleiche die Farbe von h8 mit der des Läufers g7.",
+      "h8 ist dunkel wie der Läufer: falsche Ecke. Th4+ zwingt Lh6, dann folgt Txh6#."
+     ],
+     "text": "Turm gegen Läufer in der falschen Ecke: Die Ecke h8 hat die Farbe des Läufers. Weiß setzt in zwei Zügen matt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Th4+",
+     "frage": "Warum entscheidet 1. Th4+ sofort?",
+     "antworten": [
+      "Der Turm greift den Läufer g7 an.",
+      "Der König h8 kann nach g8 ausweichen, und der Läufer geht verloren.",
+      "Schwarz muss 1... Lh6 dazwischenziehen, und 2. Txh6 ist matt."
+     ],
+     "richtig": 2,
+     "erklaerung": "In der falschen Ecke hat der König keinen Ausweg. Als Läuferseite gehört er in die Ecke der anderen Farbe (Abb. 9.43)."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

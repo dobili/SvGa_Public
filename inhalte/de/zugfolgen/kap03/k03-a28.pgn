@@ -1,0 +1,14 @@
+[Event "Kapitel 3: Das Milner-Barry-Gambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k03-a28"]
+[Kapitel "3"]
+[Abschnitt "3.7"]
+[Status "freigegeben"]
+[Abbildungen "3.28 3.29 3.30 3.33 3.34 3.35 3.31 3.32"]
+
+1. e4 e6 2. d4 d5 3. e5 c5 4. c3 Nc6 5. Nf3 Qb6 6. Bd3 { Abb. 3.28 } ( 6. Be2 ) 6... cxd4 7. cxd4 Bd7 $1 ( 7... Nxd4 $4 { Abb. 3.31 } 8. Nxd4 Qxd4 $4 9. Bb5+ $1 { Abb. 3.32 } ) 8. O-O { Abb. 3.29 } 8... Nxd4 9. Nxd4 Qxd4 10. Nc3 { Abb. 3.30 } 10... a6 $1 ( 10... Qxe5 $6 11. Re1 Qb8 12. Nxd5 $1 { Abb. 3.35 } ) 11. Qe2 Ne7 12. Kh1 { Abb. 3.33 } 12... Nc6 13. f4 { Abb. 3.34 } 13... Nb4 14. Rd1 Nxd3 15. Rxd3 *

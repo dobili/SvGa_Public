@@ -1,0 +1,202 @@
+{
+  "kapitel": 0,
+  "titel": "Dein Einstieg ins Schachbuch",
+  "adresse": "/training/kap00/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Grundaufstellung aus dem Gedächtnis.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue die Grundaufstellung auf einem echten Brett ohne Vorlage auf und prüfe sie mit den beiden Merkhilfen: helles Eckfeld rechts unten, Dame auf dem Feld ihrer Farbe. Wiederhole das an fünf Tagen, wonach es ohne Nachdenken gelingen sollte.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Felder treffen, auch von Schwarz aus.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Lichess ist die Schachplattform, die dieses Buch für die Online-Übungen benutzt. Ihr Koordinatentraining hat zwei Modi: Bei „Feld finden“ erscheint ein Feldname, und du klickst das Feld an, wohingegen bei „Feld benennen“ ein Feld markiert ist und du seinen Namen tippst. Übe eine Woche lang täglich zwei Minuten, die Hälfte der Läufe aus der Sicht von Schwarz.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Gangarten und Sonderzüge selbst ausführen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Gehe den Kurs unter „Lernen → Grundlagen“ durch und prüfe dich danach an ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 0.4",
+          "abbildung": "0.4"
+        },
+        {
+          "art": "text",
+          "text": " bis ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "0.9",
+          "abbildung": "0.9"
+        },
+        {
+          "art": "text",
+          "text": ": Kannst du für jede Figur alle Zielfelder zeigen, ohne auf die Markierungen zu schauen? Baue dann ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 0.12",
+          "abbildung": "0.12"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "0.16",
+          "abbildung": "0.16"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "0.19",
+          "abbildung": "0.19"
+        },
+        {
+          "art": "text",
+          "text": " mit „Stellung aufbauen“ nach und führe Rochade, en passant und Umwandlung im Analysebrett selbst aus, da es nur regelgerechte Züge zulässt. Stelle beim Aufbauen ein, wer am Zug ist und dass die Rochade noch erlaubt ist. Baue zuletzt ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 0.10",
+          "abbildung": "0.10"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "0.11",
+          "abbildung": "0.11"
+        },
+        {
+          "art": "text",
+          "text": " nach und überzeuge dich, dass Schwarz wirklich keinen Zug mehr hat.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Notation schreiben.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele eine langsame Online-Partie (etwa 15 Minuten plus 10 Sekunden pro Zug) und schreibe die ersten zehn Züge beider Seiten auf Papier mit. Vergleiche sie im Anschluss mit der Zugliste am Bildschirm. Lichess zeigt die Figuren dort als Symbole, und stellst du unter „Einstellungen → Anzeige → Zugnotation“ auf Buchstaben um, sind es die englischen, die der Hinweiskasten dieses Kapitels übersetzt. So bereitest du dich schon auf das Partieformular in deinem ersten Turnier vor.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Notation lesen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele Morphys Opernpartie aus Kapitel 11 nur aus der Zugliste auf einem echten Brett nach, ohne die Diagramme anzusehen, und vergleiche erst am Schluss mit dem letzten Diagramm.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Regeln im Wortlaut.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Der Deutsche Schachbund stellt die deutsche Fassung der FIDE-Regeln bereit (",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "schachbund.de",
+          "ziel": "https://www.schachbund.de"
+        },
+        {
+          "art": "text",
+          "text": "). Lies dort einmal die Artikel zu „berührt – geführt“ und zu den Remisregeln.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ", und wie aus solchen Übungen ein Trainingsplan wird, steht in Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 596
+  },
+  "stand": "2026-10-16"
+}

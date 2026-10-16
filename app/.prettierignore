@@ -1,0 +1,13 @@
+# Erzeugte oder fremde Dateien: nicht formatieren
+dist/
+dev-dist/
+node_modules/
+public/daten/
+public/engine/
+src/daten/generiert/
+src/ui/brett/figurenpfade.generiert.ts
+playwright-report/
+test-results/
+package-lock.json
+.wrangler/
+training/

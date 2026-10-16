@@ -1,0 +1,23 @@
+# Buchquellen: urheberrechtlich geschützt, nie ins Repository (CLAUDE.md, Regel 2)
+/buch/
+
+# Node und Build
+node_modules/
+app/dist/
+app/dev-dist/
+app/test-results/
+app/playwright-report/
+app/public/engine/
+app/src/daten/generiert/
+.wrangler/
+
+# Python
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+.venv/
+
+# Systemdateien
+.DS_Store
+app/training/

@@ -1,0 +1,14 @@
+[Event "Kapitel 0: Wie liest man Schachzüge?"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k00-a21"]
+[Kapitel "0"]
+[Abschnitt ""]
+[Status "freigegeben"]
+[Abbildungen "0.21 0.22 0.23 0.24 0.25"]
+
+1. e4 { Abb. 0.21 } 1... e5 { Abb. 0.22 } 2. Nf3 { Abb. 0.23 } 2... Nc6 { Abb. 0.24 } 3. Bb5 { Abb. 0.25 } *

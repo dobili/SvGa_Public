@@ -1,0 +1,16 @@
+[Event "Kapitel 10: Die Réti-Studie: ein Königsweg mit zwei Zielen"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "7K/8/k1P5/7p/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k10-a9"]
+[Kapitel "10"]
+[Abschnitt "10.3"]
+[Status "freigegeben"]
+[Abbildungen "10.9 10.10 10.11 10.12 10.13"]
+
+{ Abb. 10.9 } 1. Kg7 $1 h4 ( 1... Kb6 2. Kf6 h4 3. Ke5 ) 2. Kf6 $1 { Abb. 10.10 } 2... Kb6 ( 2... h3 3. Ke7 h2 4. c7 { Abb. 10.13 } 4... Kb7 5. Kd7 ) 3. Ke5 $1 { Abb. 10.11 } 3... Kxc6 ( 3... h3 4. Kd6 h2 5. c7 { Abb. 10.12 } 5... Kb7 6. Kd7 h1=Q 7. c8=Q+ ) 4. Kf4 *

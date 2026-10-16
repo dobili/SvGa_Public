@@ -1,0 +1,652 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 8,
+ "texte": [
+  {
+   "abbildung": "8.1",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-regeln",
+     "hinweise": [
+      "Welche Figur wird stärker, sobald die Damen vom Brett sind?",
+      "Schau auf den König g1 und das Feld d4 vor dem schwarzen Isolani d5.",
+      "Über f1, e2 und d3 erreicht der König d4 in vier sicheren Zügen."
+     ],
+     "text": "Ohne Damen muss der König kaum noch Matt fürchten. Regel 1: Er gehört ins Zentrum, am besten nach d4 vor den Isolani."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Kf1",
+     "frage": "Warum zieht Weiß den König, obwohl noch Türme am Brett stehen?",
+     "antworten": [
+      "Weiß bereitet die lange Rochade vor.",
+      "Ohne Damen steht der König sicher genug und wird im Zentrum zu einer starken Figur.",
+      "Der König soll den Turm d1 decken."
+     ],
+     "richtig": 1,
+     "erklaerung": "Mit dem Damentausch beginnt das Endspiel. Jetzt zählt jeder Zug, den der König früher im Zentrum ist."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.2",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-regeln",
+     "hinweise": [
+      "Wer hat mehr Material, und was heißt das für den Tausch?",
+      "Zähle die Bauern und schau auf die Damen d1 und d7.",
+      "Weiß hat einen Bauern mehr: Dxd7 tauscht die Damen und vereinfacht."
+     ],
+     "text": "Weiß hat einen Bauern mehr. Regel 4: Figuren tauschen, Bauern behalten. Ohne Damen zählt die Mehrheit am Damenflügel, drei gegen zwei."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Dxd7",
+     "frage": "Warum tauscht Weiß die Damen?",
+     "antworten": [
+      "Nach dem Tausch gewinnt Weiß sofort den Springer b6.",
+      "Mit Damen am Brett ist ein Mehrbauer mehr wert als ohne.",
+      "Die stärkere Seite tauscht Figuren: Im Endspiel wiegt der Mehrbauer schwerer."
+     ],
+     "richtig": 2,
+     "erklaerung": "Je weniger Figuren stehen, desto deutlicher zählt ein Bauer mehr. Am Damenflügel kann Weiß später einen Freibauern bilden."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.5",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-elementarmatt",
+     "hinweise": [
+      "Steht dein König schon nahe genug, um der Dame zu helfen?",
+      "Schau auf den König f5 und den Kasten auf der 7. und 8. Reihe.",
+      "Der König steht bereit: Jetzt darf die Dame den Kasten verkleinern, etwa mit Dc7+."
+     ],
+     "text": "Dem König g7 bleiben acht Felder auf der 7. und 8. Reihe. Der weiße König f5 steht nahe genug, also wird der Kasten jetzt kleiner."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3. Dc7+",
+     "frage": "Warum verkleinert die Dame den Kasten erst jetzt?",
+     "antworten": [
+      "Erst jetzt steht der weiße König nahe genug, um zu helfen.",
+      "Vorher war der Kasten schon klein genug.",
+      "Vorher hätte jeder Damenzug Patt gesetzt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Die Dame allein setzt nicht matt. Der König rückt zuerst nach, dann schrumpft der Kasten Schritt für Schritt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.6",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-elementarmatt",
+     "hinweise": [
+      "Suche ein Schach, das alle Fluchtfelder nimmt, und prüfe auch auf Patt.",
+      "Der König f6 deckt das Feld g7.",
+      "Dg7 setzt matt; Df7 dagegen wäre Patt."
+     ],
+     "text": "Der König h8 sitzt in der Ecke. Auf g7 ist die Dame vom König f6 gedeckt und setzt matt. Df7 nähme ihm nur die Felder, ohne Schach: Patt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "5. Dg7#",
+     "frage": "Warum ist Dg7 Matt und nicht nur Schach?",
+     "antworten": [
+      "Der König h8 darf eine Dame nie schlagen.",
+      "Der König h8 steht in der Ecke, und dort ist jedes Schach matt.",
+      "Der König f6 deckt die Dame, und dem König h8 bleibt kein freies Feld."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Matt am Rand braucht beide Figuren: Die Dame gibt Schach, der König schützt sie vor dem Schlagen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.11",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-elementarmatt",
+     "hinweise": [
+      "Stehen sich die Könige schon gegenüber? Wenn nicht: Wer sollte jetzt ziehen?",
+      "Der Turm e7 sperrt die 7. Reihe; welche Turmzüge bleiben auf dieser Reihe?",
+      "Ein Abwartezug wie Th7 lässt den Kasten gleich und gibt Schwarz den Zug."
+     ],
+     "text": "Dem König c8 bleiben vier Felder auf der 8. Reihe. Ein stiller Turmzug auf der 7. Reihe gibt Schwarz den Zug; geht er nach d8, steht er dem weißen König gegenüber."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Th7",
+     "frage": "Warum zieht der Turm von e7 nach h7?",
+     "antworten": [
+      "Er gibt so Schach.",
+      "Er wartet ab: Der Kasten bleibt gleich, und Schwarz muss ziehen.",
+      "Er greift den König von hinten an."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Turm bleibt auf der 7. Reihe und weit weg vom König. Nach Kd8 setzt Th8 matt, nach Kb8 rückt der weiße König nach."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.12",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-elementarmatt",
+     "hinweise": [
+      "Prüfe vor jedem Turmzug, ob dem König danach noch ein Zug bleibt.",
+      "Schau auf das Feld b7 neben dem König a8.",
+      "Tb7 wäre Patt; besser rückt der König mit Kb6 nach."
+     ],
+     "text": "Dem König a8 bleibt nur die 8. Reihe. Vorsicht: Tb7 nähme ihm jedes Feld ohne Schach, das wäre Patt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3. Kb6",
+     "frage": "Warum zieht Weiß den König nach b6?",
+     "antworten": [
+      "Er rückt nach: Nach Kb8 stehen sich die Könige gegenüber, und Th8 setzt matt.",
+      "Er setzt Schwarz patt.",
+      "Er schützt den Turm h7 vor dem schwarzen König."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der weiße König stellt sich dem schwarzen gegenüber. Dann reicht ein Turmschach auf der 8. Reihe zum Matt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.19",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-opposition",
+     "hinweise": [
+      "Stehen die Könige in Opposition, und wer ist am Zug?",
+      "Zwischen e4 und e6 liegt genau ein Feld: e5.",
+      "Schwarz hat die Opposition; Weiß am Zug muss weichen und kommt an kein Schlüsselfeld."
+     ],
+     "text": "Direkte Opposition auf der e-Linie, Weiß ist am Zug: Die Opposition hat Schwarz. Der weiße König muss weichen und erreicht d5, e5 und f5 nicht."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist die Stellung remis, obwohl Weiß einen Bauern mehr hat?",
+     "antworten": [
+      "Der Bauer e3 ist ein Randbauer.",
+      "Weiß ist patt.",
+      "Schwarz hat die Opposition: Weiß am Zug muss weichen und erreicht kein Schlüsselfeld."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der weiße König will auf d5, e5 oder f5. Solange Schwarz die Opposition hält, bleibt ihm dieser Weg versperrt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.20",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-opposition",
+     "hinweise": [
+      "Welcher Königszug stellt sich dem schwarzen König direkt gegenüber?",
+      "Schau auf die e-Linie: e5, e6 und e7.",
+      "Ke5 nimmt die direkte Opposition und bleibt auf einem Schlüsselfeld."
+     ],
+     "text": "Ke5 nimmt die direkte Opposition, mit e6 dazwischen. Der König bleibt dabei auf einem Schlüsselfeld des Bauern e3."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3. Ke5",
+     "frage": "Warum zieht Weiß 3. Ke5 und nicht den Bauern?",
+     "antworten": [
+      "Mit Ke5 nimmt Weiß die Opposition, und Schwarz muss den Weg nach vorn freigeben.",
+      "Der Bauer e3 ist gefesselt.",
+      "Der Bauer darf erst ziehen, wenn der König auf der 6. Reihe steht."
+     ],
+     "richtig": 0,
+     "erklaerung": "Erst der König, dann der Bauer. Schon 3. e4 würde hier den Gewinn verschenken."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.23",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-opposition",
+     "hinweise": [
+      "Zähle die Felder zwischen den Königen, wenn sie auf einer Linie stehen.",
+      "Der schwarze König steht auf f7; schau auf die f-Linie.",
+      "Kf3 lässt f4, f5 und f6 zwischen den Königen frei, und Schwarz muss ziehen."
+     ],
+     "text": "Kf3 nimmt die Fernopposition mit drei Feldern dazwischen. Das Werkzeug nennt auch Kf1, aber nur Kf3 rückt zugleich an die Schlüsselfelder c4, d4 und e4 heran."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Kf3",
+     "frage": "Warum gewinnt nur 1. Kf3?",
+     "antworten": [
+      "Er deckt den Bauern d2.",
+      "Er nimmt die Fernopposition und kommt den Schlüsselfeldern näher.",
+      "Er bedroht den König f7 direkt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Nach Kf3 ist Schwarz am Zug und muss weichen. Der weiße König folgt nach e4 und erreicht die Schlüsselfelder."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.24",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-opposition",
+     "hinweise": [
+      "Opposition gibt es nicht nur auf Linien und Reihen.",
+      "Der König f5 steht auf der Diagonale b1–h7; suche das Feld mit einem Feld dazwischen.",
+      "Kd3: Zwischen d3 und f5 liegt nur e4, und Schwarz ist am Zug."
+     ],
+     "text": "Kd3 nimmt die Diagonalopposition mit e4 dazwischen. Schwarz muss weichen, und Weiß kommt an die Schlüsselfelder d4, e4 und f4."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Kd3",
+     "frage": "Was macht 1. Kd3 zum einzigen Gewinnzug?",
+     "antworten": [
+      "Er stellt die Könige auf dieselbe Linie.",
+      "Er nimmt die Diagonalopposition: Nur e4 liegt zwischen den Königen.",
+      "Er greift den König f5 an."
+     ],
+     "richtig": 1,
+     "erklaerung": "Auch schräg gilt: Wer nach seinem Zug ein Feld zwischen den Königen lässt, zwingt den Gegner zum Weichen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.27",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-schluesselfelder",
+     "hinweise": [
+      "Wohin will der König vor einem Bauern auf der 2. Reihe?",
+      "Die Schlüsselfelder liegen zwei Reihen vor d2: c4, d4 und e4.",
+      "Jeder der Züge Kc4, Kd4 und Ke4 stellt den König auf ein Schlüsselfeld."
+     ],
+     "text": "Die Schlüsselfelder des Bauern d2 sind c4, d4 und e4. Weiß am Zug erreicht jedes davon in einem Zug und gewinnt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Kc4",
+     "frage": "Warum gewinnt 1. Kc4?",
+     "antworten": [
+      "Er nimmt die Opposition.",
+      "Er greift den König d6 an.",
+      "Der König steht auf einem Schlüsselfeld des Bauern d2, ganz gleich, wer danach zieht."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Schlüsselfeld ist mehr wert als die Opposition: Steht der König dort, gewinnt er, solange der Bauer nicht verloren geht."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.28",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-opposition",
+     "hinweise": [
+      "Der Verteidiger muss die Schlüsselfelder c4, d4 und e4 bewachen.",
+      "Schau auf das Feld d5 direkt vor dem weißen König.",
+      "Kd5 nimmt die direkte Opposition; Weiß kommt an kein Schlüsselfeld."
+     ],
+     "text": "Mit Kd5 nimmt Schwarz die direkte Opposition, d4 liegt dazwischen. Das Werkzeug zeigt auch Kd7, doch dann besetzt der weiße König ein Schlüsselfeld."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... Kd5",
+     "frage": "Warum hält nur 1... Kd5 das Remis?",
+     "antworten": [
+      "Mit der direkten Opposition versperrt er dem weißen König die Schlüsselfelder.",
+      "Er greift den Bauern d2 an.",
+      "Er zwingt Weiß, sofort mit dem Bauern zu ziehen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Dieselbe Stellung wie eben, nur mit Schwarz am Zug: Jetzt bekommt Schwarz die Opposition, und das reicht zum Remis."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.29",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-schluesselfelder",
+     "hinweise": [
+      "Bauer auf der 6. Reihe: Hier gilt ein Sonderfall.",
+      "Prüfe, ob der Bauer e6 ohne Schach nach e7 ziehen kann.",
+      "1. e7 kommt ohne Schach; dem König bleibt nur f7, und Kd7 deckt e8."
+     ],
+     "text": "Der Bauer e6 zieht ohne Schach nach e7. Danach bleibt dem König e8 nur f7, und Kd7 sichert die Umwandlung."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. e7",
+     "frage": "Warum gewinnt hier ein Bauernzug und kein Königszug?",
+     "antworten": [
+      "Der Bauer gibt Schach und gewinnt so ein Tempo.",
+      "Der Bauer kommt ohne Schach auf die 7. Reihe, und der weiße König deckt danach e8.",
+      "Jeder Königszug wäre Patt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Steht der Bauer auf der 6. Reihe, zählt, ob er ohne Schach weiterzieht. Dann verdrängt der König den Verteidiger vom Umwandlungsfeld."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.30",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-opposition",
+     "hinweise": [
+      "Welcher Königszug stellt sich direkt vor den weißen König?",
+      "Schau auf d8: Der König d6 steht auf derselben Linie.",
+      "Kd8 nimmt die Opposition. Folgt 2. e7+, geht der König nach e8, und 3. Ke6 lässt ihm keinen Zug."
+     ],
+     "text": "Kd8 nimmt die direkte Opposition, d7 liegt dazwischen. Das Werkzeug nennt auch Kf8, doch dann zieht Weiß Kd7 und wandelt um."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... Kd8",
+     "frage": "Was erreicht Schwarz mit 1... Kd8?",
+     "antworten": [
+      "Er greift den Bauern e6 an.",
+      "Er bereitet den Weg nach c7 vor, um den Bauern von hinten zu holen.",
+      "Nach 2. e7+ Ke8 3. Ke6 hat Schwarz keinen Zug mehr, steht aber nicht im Schach."
+     ],
+     "richtig": 2,
+     "erklaerung": "Weil der Bauer mit Schach auf die 7. Reihe kommt, muss der König in die Ecke vor dem Bauern. Am Ende hat Schwarz keinen Zug mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.31",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-schluesselfelder",
+     "hinweise": [
+      "Beim Randbauern zählt, ob der Verteidiger die Ecke erreicht.",
+      "Der König a8 steht genau auf dem Umwandlungsfeld.",
+      "Ka6 wäre Patt, und nach jedem anderen Königszug schlägt Schwarz auf a7."
+     ],
+     "text": "Der König a8 sitzt in der Ecke vor dem Randbauern. Weiß kann nur Patt setzen oder den Bauern hergeben, beides ist remis."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Ka6",
+     "frage": "Warum bringt 1. Ka6 Weiß nichts?",
+     "antworten": [
+      "Schwarz ist patt: Der König steht nicht im Schach und hat keinen Zug.",
+      "Schwarz schlägt danach den Bauern a7.",
+      "Schwarz muss danach mit dem König nach b8."
+     ],
+     "richtig": 0,
+     "erklaerung": "Beim Randbauern fehlt der Platz, um den König aus der Ecke zu drängen. Deshalb hält der Verteidiger oft remis."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.32",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-schluesselfelder",
+     "hinweise": [
+      "Vor dem Tausch der letzten Figur: Rechne das Bauernendspiel aus.",
+      "Die Schlüsselfelder des Bauern d4 liegen auf der 6. Reihe.",
+      "Nach 1. Txf8 Kxf8 2. Kd5 kommt der König nach c6."
+     ],
+     "text": "Die Schlüsselfelder des Bauern d4 sind c6, d6 und e6. Nach dem Turmtausch steht der schwarze König auf f8 zu weit weg, und Weiß erreicht eines davon über d5."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Txf8",
+     "frage": "Warum tauscht Weiß die Türme?",
+     "antworten": [
+      "Der Turm f4 ist gefesselt.",
+      "Ohne Türme kann Schwarz den Bauern d4 nicht mehr angreifen.",
+      "Im Bauernendspiel kommt der weiße König vor dem schwarzen an die Schlüsselfelder."
+     ],
+     "richtig": 2,
+     "erklaerung": "Regel 4 sagt: Figuren tauschen, wenn du vorn bist. Vorher rechnest du nach, ob das Bauernendspiel gewonnen ist."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.35",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-quadrat",
+     "hinweise": [
+      "Kann der König den Freibauern noch einholen? Zeichne das Quadrat.",
+      "Weiß ist am Zug: Zähle das Quadrat ab b5, nicht ab b4.",
+      "Nach 1. b5 reicht das Quadrat bis e8; der König g5 kommt nicht hinein."
+     ],
+     "text": "Weiß zieht zuerst, also zählt das Quadrat ab b5: von b5 bis e8. Der König g5 kommt nicht mehr hinein, und der Bauer wird zur Dame."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. b5",
+     "frage": "Warum gewinnt 1. b5?",
+     "antworten": [
+      "Der weiße König holt den Bauern rechtzeitig ab.",
+      "Der König g5 kann das Quadrat b5–e8 nicht mehr betreten.",
+      "Der Bauer ist auf b5 gedeckt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Mit dem Quadrat musst du nicht Zug für Zug zählen. Ein Blick genügt: Der König steht außerhalb."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.36",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-quadrat",
+     "hinweise": [
+      "Wer ist am Zug? Davon hängt das Quadrat ab.",
+      "Mit Schwarz am Zug endet das Quadrat des Bauern b4 an der f-Linie.",
+      "Ein Schritt auf die f-Linie genügt: Kf6, Kf5 oder Kf4."
+     ],
+     "text": "Schwarz am Zug: Das Quadrat reicht von b4 bis f8. Kf6, Kf5 und Kf4 führen hinein, der König fängt den Bauern ab."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... Kf6",
+     "frage": "Warum hält 1... Kf6 remis?",
+     "antworten": [
+      "Der König steht danach im Quadrat des Bauern.",
+      "Er nimmt die Opposition gegen den König h1.",
+      "Er deckt das Feld b8."
+     ],
+     "richtig": 0,
+     "erklaerung": "Ein Tempo mehr oder weniger entscheidet: Mit Weiß am Zug läuft der Bauer durch, mit Schwarz am Zug holt ihn der König ein."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.40",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-quadrat",
+     "hinweise": [
+      "Holt ein König einen der Freibauern ein? Prüfe beide Quadrate.",
+      "Zähle: von b6 bis b8 und von h3 bis h1 sind es je zwei Züge.",
+      "Beide Bauern laufen durch; Weiß wandelt zuerst um und hat danach Dh8+."
+     ],
+     "text": "Keiner der Könige erreicht das Quadrat des gegnerischen Bauern. Beide wandeln um, Weiß zuerst; dann entscheidet das erste Schach."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. b7",
+     "frage": "Warum darf Weiß das Rennen mit 1. b7 aufnehmen, obwohl Schwarz auch umwandelt?",
+     "antworten": [
+      "Schwarz kann nach 1. b7 nicht mehr umwandeln.",
+      "Die neue schwarze Dame steht sofort patt.",
+      "Weiß wandelt zuerst um, und Dh8+ spießt danach König h5 und Dame h1 auf."
+     ],
+     "richtig": 2,
+     "erklaerung": "Im Bauernrennen zählt nicht nur, wer zuerst umwandelt. Prüfe auch, was die neue Dame sofort mit Schach anrichtet."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.45",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. b6",
+     "frage": "Was bezweckt 1. b6?",
+     "antworten": [
+      "Ein Durchbruch: Nach den Schlägen wird ein weißer Bauer frei und läuft durch.",
+      "Er gibt Schach.",
+      "Er tauscht nur Bauern, um remis zu halten."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach axb6 folgt c6, nach cxb6 folgt a6. Der König h8 ist zu weit weg, um den neuen Freibauern einzuholen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.47",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-regeln",
+     "hinweise": [
+      "Welcher Bauer steht weit weg vom gegnerischen König?",
+      "Schau auf den Freibauern a5 am Rand.",
+      "Der a-Bauer zieht den König d7 zum Damenflügel, und der weiße König geht zum Königsflügel."
+     ],
+     "text": "Regel 3: Der entfernte Freibauer a5 ist die zweite Schwäche. Er lenkt den schwarzen König ab, während der weiße König die Bauern am Königsflügel angreift."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. a6",
+     "frage": "Warum schickt Weiß den a-Bauern los, obwohl der schwarze König ihn einholt?",
+     "antworten": [
+      "Der Bauer wandelt sicher um.",
+      "Er lenkt den schwarzen König ab; der weiße König greift am Königsflügel an.",
+      "Weiß will ihn gegen den Bauern h7 tauschen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein entfernter Freibauer muss nicht umwandeln, um zu gewinnen. Es reicht, wenn er den gegnerischen König weit weglockt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.51",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k8-opposition",
+     "hinweise": [
+      "Wer hat die Opposition, und wer möchte, dass der andere zieht?",
+      "Der König d5 kann über e5 und d4 nach d5 zurückkehren.",
+      "Nach Ke5, Kd4 und Kd5 ist die Stellung wieder dieselbe, nur muss nun Schwarz ziehen."
+     ],
+     "text": "Direkte Opposition auf der d-Linie, Weiß ist am Zug: Die Opposition hat Schwarz. Mit dem Dreieck d5–e5–d4 gibt Weiß das Zugrecht an Schwarz weiter."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Ke5",
+     "frage": "Warum zieht Weiß den König von d5 weg, obwohl er dort gut steht?",
+     "antworten": [
+      "Er will den Bauern b7 von e5 aus angreifen.",
+      "Er beginnt das Dreieck d5–e5–d4, um das Zugrecht an Schwarz zu geben.",
+      "Er nimmt damit sofort die Opposition."
+     ],
+     "richtig": 1,
+     "erklaerung": "Das ist Triangulation: Der König verliert absichtlich einen Zug. Kehrt er nach d5 zurück, muss Schwarz ziehen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "8.53",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. h4",
+     "frage": "Warum gewinnt nur 1. h4?",
+     "antworten": [
+      "Er greift den Bauern h5 an.",
+      "Er schafft einen Freibauern auf der h-Linie.",
+      "Der Bauernzug ist ein Reserve-Tempo: Jetzt muss Schwarz mit dem König ziehen und c5 aufgeben."
+     ],
+     "richtig": 2,
+     "erklaerung": "Beide Könige decken ihren Bauern, und wer zuerst weicht, lässt ihn im Stich. Der letzte freie Bauernzug schiebt diese Pflicht Schwarz zu."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

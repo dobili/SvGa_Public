@@ -1,0 +1,16 @@
+[Event "Kapitel 12: Zum Abschluss"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "3r2k1/pp3pp1/2nb3p/3p4/8/2P1BN2/PP3PPP/3R2K1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k12-a6"]
+[Kapitel "12"]
+[Abschnitt "Übung 86"]
+[Status "freigegeben"]
+[Abbildungen "12.6"]
+
+{ Abb. 12.6 } 1. g3 ( 1. Rxd5 $4 Bxh2+ $1 2. Kxh2 Rxd5 ) *

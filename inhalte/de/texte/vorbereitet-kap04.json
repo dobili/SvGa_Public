@@ -1,0 +1,594 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 4,
+ "texte": [
+  {
+   "abbildung": "4.1",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "Suche bei dir Bauern und Figuren, die niemand deckt (W1).",
+      "Schau auf den Bauern b5 und den weißen Bauern a4.",
+      "Der Bauer b5 ist ungedeckt und wird von a4 angegriffen."
+     ],
+     "text": "W1 bei Schwarz: Der Bauer b5 hat keinen Schutz und steht unter Beschuss. Ohne ihn fehlt dem Bauern c4 die Stütze."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum zielt Weiß mit 4. a4 gerade auf den Bauern b5?",
+     "antworten": [
+      "Der Bauer a4 wäre sonst selbst verloren.",
+      "b5 ist die Basis der Kette b5–c4: Fällt b5, verliert c4 seine Stütze.",
+      "Weiß bereitet damit die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Eine Bauernkette greift man an ihrer Basis an. Schwarz muss nun Zeit aufwenden, um b5 zu halten."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.2",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "W5 bietet dir einen Bauern an. Prüfe zuerst, was bei dir ungedeckt ist.",
+      "Schau auf den Turm a8 und die lange Diagonale a8–f3.",
+      "Nach cxb5 ist die Diagonale frei, und Df3 greift den ungedeckten Turm a8 an."
+     ],
+     "text": "W5 meldet cxb5 als Bauerngewinn, W1 den ungedeckten Turm a8. Noch sperrt der Bauer c6 die Diagonale zum Turm; schlägt er, öffnet er sie selbst."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 5... cxb5 hier ein schwerer Fehler?",
+     "antworten": [
+      "Der Bauer c6 gibt die Diagonale a8–f3 frei: Df3 greift den ungedeckten Turm a8 an.",
+      "Der Turm a1 schlägt auf b5 zurück.",
+      "Nach cxb5 setzt Weiß sofort matt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Bauer c6 stand als Sperre zwischen Turm und Diagonale. Wer ihn zum Schlagen benutzt, öffnet dem Gegner selbst den Weg."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.5",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-prueffragen",
+     "hinweise": [
+      "Stelle die Warum-Frage: Weiß lässt schon den dritten Bauern stehen.",
+      "Schau auf den Bauern c3 und auf den Läufer c4, der auf f7 zielt.",
+      "dxc3 bringt Material, kostet aber Zeit: Weiß hat rochiert und bekommt offene Linien gegen f7."
+     ],
+     "text": "F1: dxc3 nimmt Material. Weiß lässt das zu, weil jeder Bauernschlag ein Tempo ist, das Schwarz für die Entwicklung fehlt."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was spricht gegen 7... dxc3?",
+     "antworten": [
+      "Der Bauer c3 ist dreifach gedeckt.",
+      "Nach dxc3 ist der schwarze König sofort matt.",
+      "Schwarz holt den dritten Bauern mit einem weiteren Bauernzug, während Weiß entwickelt und Linien gegen f7 öffnet."
+     ],
+     "richtig": 2,
+     "erklaerung": "Weiß hat rochiert, Schwarz kaum etwas entwickelt. Nach Db3 zielen Dame und Läufer c4 gemeinsam auf f7."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.7",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-prueffragen",
+     "hinweise": [
+      "Prüfe beim Fesselungs-Check auch Linien, auf die der Gegner erst noch zieht.",
+      "Schau auf die e-Linie zwischen e1 und e8.",
+      "Die Linie ist offen, Dame e7 und König e8 stehen hintereinander: Te1 würde die Dame fesseln."
+     ],
+     "text": "Noch steht keine Fesselung auf dem Brett. Doch Dame und König stehen auf der offenen e-Linie, und ein weißer Turm auf e1 würde die Dame an den König fesseln."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist die offene e-Linie für Schwarz so gefährlich?",
+     "antworten": [
+      "Über die e-Linie kann der weiße König in den Angriff eingreifen.",
+      "Der Läufer c4 gibt über die e-Linie Schach auf e8.",
+      "Dame und König stehen hintereinander: Ein Turm auf e1 fesselt die Dame an den König."
+     ],
+     "richtig": 2,
+     "erklaerung": "Eine offene Linie vor dem eigenen König ist eine Einladung für die gegnerischen Türme. Darum gehört der König früh in Sicherheit."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.9",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "6. Le3",
+     "frage": "Warum ist 6. Le3 ein guter Zug?",
+     "antworten": [
+      "Er deckt den Bauern d4.",
+      "Er greift die Dame d4 an und bereitet die lange Rochade vor; die d-Linie ist schon offen.",
+      "Er droht sofort Matt auf f7."
+     ],
+     "richtig": 1,
+     "erklaerung": "Für zwei Bauern hat Weiß Zeit und offene Linien. Jeder weitere Damenzug von Schwarz schenkt Weiß ein Tempo für die Entwicklung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.10",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "Sieh dir W1 und W3 bei dir an: Was ist ungedeckt, wo fehlt dem König Luft?",
+      "Schau auf den König e8, das Feld c7 und die offene d-Linie.",
+      "Der König hat keine Luft, d7 und d8 beherrscht der Turm d1: Ein Springerschach auf c7 wäre Matt."
+     ],
+     "text": "Drei Warnsignale bei Schwarz: die ungedeckte Dame b4, die Fesselung b7–a8 und der König e8 ohne Luft. Jeder Zug muss den Weg des Springers über b5 nach c7 im Blick haben."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 7... Lg4 ein schwerer Fehler?",
+     "antworten": [
+      "Er greift zwar die Dame f3 an, doch nach Sb5 droht Sxc7 matt, und der Damengewinn kommt zu spät.",
+      "Der Läufer g4 ist ungedeckt und geht sofort verloren.",
+      "Mit Lg4 verliert Schwarz das Recht zu rochieren."
+     ],
+     "richtig": 0,
+     "erklaerung": "Weiß antwortet 8. Sb5!! und lässt die Dame stehen. Der König e8 hat kein Feld, d7 und d8 deckt der Turm d1."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.11",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum darf Schwarz die Dame f3 nicht nehmen?",
+     "antworten": [
+      "Weil Weiß dann mit Sxc7 matt setzt, ganz gleich, wie viel Material Schwarz vorher gewinnt.",
+      "Weil der Läufer g4 an den König gefesselt ist.",
+      "Weil die Dame b4 dann vom Läufer e3 angegriffen wird."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Springer c7 gibt Schach, und der König findet kein Feld: d7 und d8 beherrscht der Turm d1, die übrigen Felder sind besetzt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.13",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-prueffragen",
+     "hinweise": [
+      "Mach den Fesselungs-Check: Ist die Fesselung absolut oder relativ?",
+      "Schau auf die Linie g5–f6–d8.",
+      "Der Läufer g5 fesselt den Springer f6 nur an die Dame. Der Springer darf trotzdem ziehen, wenn Schwarz die Dame hergibt."
+     ],
+     "text": "F3: Läufer g5 fesselt Springer f6 an die Dame d8, eine relative Fesselung. Auf sie darf Weiß sich beim Schlag auf d5 nicht verlassen."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 6. Sxd5 ein Fehler, obwohl der Springer f6 gefesselt ist?",
+     "antworten": [
+      "Der Bauer d5 ist vom Läufer f8 gedeckt.",
+      "Der Bauer e6 schlägt den Springer d5 zurück.",
+      "Die Fesselung ist nur relativ: Schwarz schlägt zurück, gibt die Dame und holt sie mit Lb4+ zurück."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach 6... Sxd5! 7. Lxd8 Lb4+ bleibt Weiß nur 8. Dd2. Nach Lxd2+ Kxd2 Kxd8 hat Schwarz zwei Springer gegen einen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.15",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "8. Dd2",
+     "frage": "Warum zieht Weiß 8. Dd2?",
+     "antworten": [
+      "Die Dame deckt von d2 aus den Läufer d8.",
+      "Es ist der einzige legale Zug: Der König hat kein Feld, und nur die Dame kann das Schach auf d2 abfangen.",
+      "Weiß bereitet damit die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "d1, e2, f1 und f2 sind besetzt, d2 beherrscht der Läufer b4. Nach Lxd2+ Kxd2 Kxd8 bleibt Schwarz eine Figur vorn."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.17",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-prueffragen",
+     "hinweise": [
+      "Prüfe die Fesselung: Gegen den König oder gegen die Dame?",
+      "Schau auf die Linie g4–f3–d1 und auf den Läufer c4.",
+      "Die Fesselung ist nur relativ: Der Springer f3 darf ziehen, wenn Weiß die Dame opfert. Und Lc4 zielt schon auf f7."
+     ],
+     "text": "F3: Läufer g4 fesselt Springer f3 an die Dame d1, relativ. Der Springer darf also ziehen, wenn Weiß dafür mehr als die Dame bekommt."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 5... Lh5 gefährlich?",
+     "antworten": [
+      "Auf h5 ist der Läufer ungedeckt und wird von der Dame d1 geschlagen.",
+      "Weiß spielt 6. Sxe5 und bietet die Dame an: Nimmt Schwarz sie, folgt Matt mit Lxf7+ und Sd5.",
+      "Nach Lh5 kann Schwarz nicht mehr rochieren."
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Fesselung hielt den Springer f3 nur scheinbar fest. Nach 6. Sxe5!! Lxd1 7. Lxf7+ Ke7 8. Sd5 ist Schwarz matt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.18",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "W5 zeigt ein großes Geschenk. Frage sofort: Warum lässt Weiß das zu?",
+      "Schau auf die Dame d1 und auf das Feld f7.",
+      "Lxd1 gewinnt die Dame, doch Lxf7+ und Sd5 setzen den König matt."
+     ],
+     "text": "W5 meldet Lxd1 mit Damengewinn. Ein so großes Geschenk ist fast immer ein Köder: Läufer c4, Springer c3 und Springer e5 stehen für den Königsangriff bereit."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum darf Schwarz die Dame d1 nicht nehmen?",
+     "antworten": [
+      "Weil nach 7. Lxf7+ Ke7 8. Sd5 der schwarze König matt ist.",
+      "Weil der Läufer h5 an den König gefesselt ist.",
+      "Weil Weiß die Dame danach sofort zurückgewinnt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der König e7 hat kein Fluchtfeld: d7, e6, e8 und f6 sind gedeckt. Den Läufer f7 schützt der Springer e5."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.21",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-prueffragen",
+     "hinweise": [
+      "Mach den Fesselungs-Check, auch für verdeckte Fesselungen.",
+      "Schau auf die e-Linie: Dame e7, Springer e5, Bauer e2, König e1.",
+      "Zieht der Springer e5 weg, ist der Bauer e2 an den König gefesselt. Dann kann er einen Springer auf d3 nicht schlagen."
+     ],
+     "text": "F3 findet zwei Fesselungen: Lb4 fesselt den Springer d2 an den König, und hinter dem Springer e5 wartet eine verdeckte auf der e-Linie. Nimmt Weiß den Läufer, bleibt die zweite."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 8. axb4 ein Fehler?",
+     "antworten": [
+      "Weil der Bauer a3 dann den Läufer f4 nicht mehr deckt.",
+      "Weil Schwarz danach den Turm a1 gewinnt.",
+      "Weil Schwarz mit 8... Sd3 matt setzt: Der Bauer e2 darf den Springer nicht schlagen."
+     ],
+     "richtig": 2,
+     "erklaerung": "Sd3 gibt Schach, der König findet kein Feld, und e2 ist durch die Dame e7 gefesselt. Hinter der ersten Fesselung wartete eine zweite."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.24",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-prueffragen",
+     "hinweise": [
+      "Rechne beim Schlagzug die Antwort des Gegners mit: Entsteht danach eine Fesselung?",
+      "Schau auf die e-Linie: Was steht hinter e4, wenn dort der Springer steht?",
+      "Nach Sxe4 greift De2 den Springer an; zieht er weg, ist e7 an den König gefesselt und Sd6 setzt matt."
+     ],
+     "text": "F3 nach Sxe4: Mit De2 baut Weiß eine verdeckte Fesselung auf (Dame e2, Springer e4, Bauer e7, König e8). Der ungedeckte Bauer e4 ist ein Köder."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 7... Sxe4 ein Fehler?",
+     "antworten": [
+      "Weil der Bauer d5 den Springer e4 schlagen kann.",
+      "Weil Schwarz danach sofort die Dame d8 verliert.",
+      "Nach 8. De2 muss der Springer weg, dann ist e7 gefesselt und Sd6 setzt matt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach 8. De2 ist der Springer angegriffen. Zieht er nach f6, steht e7 gefesselt, und 9. Sd6 ist matt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.29",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum ist der Springer f3 jetzt so wichtig?",
+     "antworten": [
+      "Er deckt den Bauern e4.",
+      "Er ist neben dem König der einzige Verteidiger von h2, auf das Dame c7 und Springer g4 zielen.",
+      "Er verhindert, dass Schwarz lang rochiert."
+     ],
+     "richtig": 1,
+     "erklaerung": "Schwarz will den Springer weglocken. Nach 9. h3?? Sd4! greift der Springer die Dame an; schlägt Sxd4, ist Dh2 matt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.30",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "W5 zeigt zwei Springer als Geschenk. Frage: Warum lässt Schwarz das zu?",
+      "Schau auf h2 und auf den Springer f3.",
+      "Schlägt der Springer f3 auf d4, fehlt er als Verteidiger von h2: Dh2 ist matt."
+     ],
+     "text": "W5 meldet Sxd4 und hxg4 als Gewinn. Doch Sxd4 lockt den einzigen Verteidiger von h2 weg, und nach hxg4 schlägt der Springer d4 die Dame e2."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum darf der Springer f3 den Springer d4 nicht schlagen?",
+     "antworten": [
+      "Weil Schwarz dann mit Dh2 matt setzt: Der Springer g4 deckt die Dame, und f1, f2 und g2 sind besetzt.",
+      "Weil der Springer d4 von der Dame c7 gedeckt ist.",
+      "Weil die Dame e2 danach den Bauern e4 nicht mehr deckt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Springer f3 war der Verteidiger von h2. Wer ihn mit einem Köder weglockt, öffnet das Mattfeld."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.34",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "W5 zeigt einen Bauern zum Nehmen. Frage, warum Schwarz ihn hergibt.",
+      "Schau auf den Läufer b3 und die Bauern a6, b5 und c7.",
+      "Nach Dxd4 kommt c5 mit Tempo, danach c4: Dann hat der Läufer b3 kein Feld mehr."
+     ],
+     "text": "W5 meldet Dxd4 als Bauerngewinn. Doch der Läufer b3 steht hinter den Bauern a6 und b5, und der Bauer c7 kann mit Tempo vorrücken."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 8. Dxd4 ein Fehler?",
+     "antworten": [
+      "Die Dame wird mit c5 vertrieben, und danach sperrt c4 den Läufer b3 ein.",
+      "Der Bauer d4 ist vom Springer gedeckt.",
+      "Schwarz setzt nach Dxd4 sofort matt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach 8... c5! muss die Dame weichen, Le6 und Ld7 gewinnen Zeit, dann folgt c4. Der Bauer b5 deckt a4 und c4, der Läufer ist gefangen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.37",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "12. Lxc4",
+     "frage": "Warum schlägt Weiß mit 12. Lxc4 einen gedeckten Bauern?",
+     "antworten": [
+      "Der Bauer c4 ist an den König gefesselt.",
+      "Weiß gewinnt damit eine ganze Figur.",
+      "Der Läufer hat kein sicheres Feld mehr; so bekommt Weiß wenigstens zwei Bauern für ihn."
+     ],
+     "richtig": 2,
+     "erklaerung": "b5 deckt a4 und c4, auf a2 und c2 stehen eigene Bauern. Nach bxc4 Dxc4 hat Weiß zwei Bauern für den Läufer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.38",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "W5 bietet dir einen Bauern an. Prüfe, was danach mit deinem König ist.",
+      "Schau auf die Diagonale h4–e1 und auf den Turm h1.",
+      "Nach fxe5 gibt Dh4+ Schach; nach g3 schlägt die Dame auf e4 mit Schach und greift zugleich h1 an."
+     ],
+     "text": "W5 meldet fxe5 als Bauerngewinn. Doch die Diagonale h4–e1 ist offen: Nach Dh4+ und g3 trifft Dxe4+ König und Turm h1 zugleich."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 3. fxe5 ein Fehler?",
+     "antworten": [
+      "Weil der Läufer c5 dann den Turm h1 angreift.",
+      "Weil nach Dh4+ und g3 der Schlag Dxe4+ König und Turm h1 zugleich angreift.",
+      "Weil Schwarz den Bauern e5 mit dem Springer zurückschlägt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Eine Gabel mit Schach: Weiß muss zuerst den König schützen, danach nimmt die Dame den Turm h1."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.41",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-prueffragen",
+     "hinweise": [
+      "Stelle die Warum-Frage: Schwarz lässt den Bauern e5 ungedeckt.",
+      "Schau auf das Feld e5 nach dem Schlag und auf den Bauern g2.",
+      "Nach Sxe5 greift Dg5 den Springer e5 und den Bauern g2 zugleich an; beide sind ungedeckt."
+     ],
+     "text": "F1: Sxe5 nimmt einen Bauern. Schwarz lässt das zu, weil der Springer auf e5 ungedeckt steht und Dg5 ihn und den Bauern g2 zugleich angreift."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 4. Sxe5 riskant?",
+     "antworten": [
+      "Der Springer ist auf e5 an den König gefesselt.",
+      "Der Springer steht auf e5 ungedeckt, und Dg5 greift ihn und den Bauern g2 gleichzeitig an.",
+      "Nach Sxe5 gewinnt Schwarz sofort die Dame d1."
+     ],
+     "richtig": 1,
+     "erklaerung": "Weiß kann nicht beides decken. Rettet sich der Springer mit Sxf7, nimmt die Dame g2 und greift den Turm h1 an."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.43",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "6... Dxe4+",
+     "frage": "Warum schlägt Schwarz mit 6... Dxe4+ und lässt den Turm h8 stehen?",
+     "antworten": [
+      "Weil das Schach Zeit gewinnt: Nach Le2 setzt Sf3 matt.",
+      "Weil der Springer f7 gefesselt ist und h8 nicht schlagen darf.",
+      "Weil der Turm h8 gedeckt ist."
+     ],
+     "richtig": 0,
+     "erklaerung": "Mit Schach hat Weiß keine Zeit für Sxh8. Nach 7. Le2 Sf3 ist der König erstickt, denn die Dame e4 fesselt den Läufer e2."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.45",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "W5 zeigt einen Bauern zum Nehmen. Achte darauf, wo deine Dame danach steht.",
+      "Schau auf die g-Linie und auf das Feld f7.",
+      "Nach Dxg2 Tg1 Dh3 bringen Lxf7+ und Sg5+ König und Dame in eine Gabel."
+     ],
+     "text": "Die Dame g5 ist ungedeckt und angegriffen (W1). W5 lockt mit Dxg2, doch auf der g-Linie wird die Dame vom Turm verfolgt."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 6... Dxg2 ein Fehler?",
+     "antworten": [
+      "Der Bauer g2 ist vom Läufer f1 gedeckt.",
+      "Mit Dxg2 verliert Schwarz das Recht zu rochieren.",
+      "Die Dame wird danach gejagt: Tg1, Lxf7+ und Sg5 greifen mit Tempo an."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach 7. Tg1 Dh3 8. Lxf7+ ist die Dame in Gefahr: Schlägt der König den Läufer, gabelt Sg5+ König und Dame h3."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.48",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "W5 zeigt einen Bauern als Geschenk. Frage: Wohin kann deine Dame danach noch?",
+      "Schau auf b2 und auf den Springer c3, der nach a4 springen kann.",
+      "Nach Dxb2 Sa4 ist die Dame angegriffen, und jedes Feld, das sie erreicht, ist gedeckt."
+     ],
+     "text": "W5 meldet Dxb2 als Bauerngewinn. Auf b2 hat die Dame aber keinen Rückweg: Sa4 greift sie an, und alle Felder ringsum sind gedeckt."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 8... Dxb2 hier ein Fehler?",
+     "antworten": [
+      "Weil der Turm a1 den Bauern b2 deckt.",
+      "Weil Weiß danach lang rochiert.",
+      "Weil Sa4 die Dame angreift und sie kein sicheres Feld mehr findet."
+     ],
+     "richtig": 2,
+     "erklaerung": "Schwarz muss die Dame für einen Springer geben: 9... Dxd4 10. Dxd4. Danach ist die Partie verloren."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "4.51",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k4-warnsignale",
+     "hinweise": [
+      "Suche bei dir ungedeckte Bauern und Figuren (W1).",
+      "Schau auf den Bauern c7 und den Springer d5.",
+      "Der Springer greift die Dame f6 an und droht Sxc7+ mit Gabel auf König und Turm a8; c7 ist ungedeckt."
+     ],
+     "text": "W1 meldet bei Schwarz unter anderem den Bauern c7 und den Turm a8. Der Springer d5 trifft beide: Die Dame muss weichen und sollte dabei c7 im Blick behalten."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist 5... Dg6 ein Fehler?",
+     "antworten": [
+      "Auf g6 wird die Dame vom Läufer c4 angegriffen.",
+      "Die Dame rettet sich, deckt aber c7 nicht: Sxc7+ gabelt König und Turm a8.",
+      "Dg6 stellt den Läufer c5 ein."
+     ],
+     "richtig": 1,
+     "erklaerung": "Nach 6. Sxc7+ Kd8 7. Sxa8 hat Weiß einen Turm gewonnen. In Kapitel 1 deckte Dd8 das Feld c7."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+[Event "Kapitel 10: Die Saavedra-Studie: Unterverwandlung gegen Patt"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/2P5/8/1K1r4/8/8/8/k7 w - - 3 3"]
+[SetUp "1"]
+[Beispiel "k10-a2"]
+[Kapitel "10"]
+[Abschnitt "10.2"]
+[Status "verworfen"]
+[Abbildungen "10.2 10.3"]
+
+{ Abb. 10.2 } 3. Kb4 Rd4+ 4. Kb3 Rd3+ { Abb. 10.3 } 5. Kc2 *

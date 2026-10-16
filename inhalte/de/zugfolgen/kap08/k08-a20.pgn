@@ -1,0 +1,16 @@
+[Event "Kapitel 8: König und Bauer gegen König"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/8/4k3/8/4K3/4P3/8/8 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k08-a20"]
+[Kapitel "8"]
+[Abschnitt "8.5"]
+[Status "freigegeben"]
+[Abbildungen "8.20 8.21 8.22"]
+
+1... Kd6 ( 1... Kf6 2. Kd5 ) 2. Kf5 Ke7 { Abb. 8.20 } 3. Ke5 Kf7 4. Kd6 Kf6 5. e4 Kf7 6. e5 Ke8 { Abb. 8.21 } 7. Ke6 Kf8 8. Kd7 Kf7 { Abb. 8.22 } 9. e6+ Kf8 10. e7+ Kf7 11. e8=Q+ *

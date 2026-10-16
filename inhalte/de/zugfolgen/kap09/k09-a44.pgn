@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Turm gegen Läufer"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "7k/5Kb1/8/8/R7/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a44"]
+[Kapitel "9"]
+[Abschnitt "9.9"]
+[Status "freigegeben"]
+[Abbildungen "9.44"]
+
+{ Abb. 9.44 } 1. Rh4+ Bh6 2. Rxh6# *

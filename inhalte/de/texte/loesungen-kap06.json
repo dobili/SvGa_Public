@@ -1,0 +1,51 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 6,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:angriff-london",
+   "nummer": 27,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Bedingungen für den Königsangriff",
+   "text": "Keine der drei Bedingungen ist erfüllt: Das Zentrum ist offen, und der Springer f6 deckt h7 und h5. Nach 10. Lxh7+? Sxh7 fehlt Weiß einfach eine Figur; zuerst muss er über das Zentrum (e3-e4 oder Se5) den Springer f6 vertreiben."
+  },
+  {
+   "uebung": "ueb:prophylaxe-saemisch",
+   "nummer": 28,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Prophylaxe",
+   "text": "5. f3 verhindert ...Sg4, das den Läufer e3 angreifen und das Läuferpaar kosten würde. Zugleich deckt f3 den Bauern e4 und bereitet Dd2, lange Rochade und den Bauernsturm vor: gute Prophylaxe fördert auch den eigenen Plan."
+  },
+  {
+   "uebung": "ueb:lap-spanisch",
+   "nummer": 29,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Schlechteste Figur verbessern",
+   "text": "Bei Weiß hat der Springer d2 die wenigsten Aufgaben; er geht über f1 nach g3 und unterstützt den Königsflügel. Bei Schwarz ist es der Turm a8, der mit ...Tac8 in einem Zug auf die offene c-Linie kommt."
+  },
+  {
+   "uebung": "ueb:planbilanz-kid",
+   "nummer": 30,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Planbilanz nach dem Bauerntausch",
+   "text": "Nach 15. dxe6 ist d6 ein rückständiger Bauer auf halboffener Linie, der Keil e6 ist schwach, engt Schwarz aber ein. Weiß spielt gegen d6 und am Damenflügel, Schwarz über die f-Linie und gegen e6."
+  },
+  {
+   "uebung": "ueb:tausch-verwerten",
+   "nummer": 31,
+   "status": "freigegeben",
+   "loesung": "1... gxh4+!",
+   "akzeptiert": [],
+   "motiv": "Wer weniger Material hat, tauscht Bauern",
+   "text": "1... gxh4+! tauscht den letzten weißen Bauern; Turm und Springer gegen Turm ist ohne Bauern remis. Wäre Weiß am Zug, würde er selbst auf g5 schlagen und einen Bauern behalten."
+  }
+ ]
+}

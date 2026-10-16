@@ -1,0 +1,172 @@
+{
+  "kapitel": 4,
+  "titel": "Das Fallenkabinett",
+  "adresse": "/training/kap04/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Das Stopp-Ritual.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Stelle dir vor jedem Schlagzug auf angebotenes Material laut oder in Gedanken die Warum-Frage ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "F1",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": ", die dich drei Sekunden kostet und die meisten Fallen dieses Kapitels verhindert. Spiele dafür bewusst langsam (etwa 15 Minuten plus 10 Sekunden pro Zug).",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Fallencheck nach der Partie.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Bist du selbst in eine Falle getappt, gehe nach der Partie den Fallencheck durch: Welches Warnsignal war sichtbar, und welche Prüffrage hätte gereicht? So siehst du mit der Zeit, welche Frage du am häufigsten vergisst.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Fesselungen isoliert üben.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Löse unter „Aufgabenthemen“ zwanzig Aufgaben zum Thema „Fesselung“ am Stück und sprich bei jeder laut aus, ob die Fesselung absolut oder relativ ist, bevor du ziehst. Genau diese Unterscheidung entscheidet in den Fallen dieses Kapitels.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Fallen selbst nachstellen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue mit „Stellung aufbauen“ die Stellungen aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 4.13",
+          "abbildung": "4.13"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 4.17",
+          "abbildung": "4.17"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 4.21",
+          "abbildung": "4.21"
+        },
+        {
+          "art": "text",
+          "text": " nach, öffne sie im Analysebrett und spiele sie über „Von hier aus weiterspielen“ gegen den Computer von der Verteidigerseite: Wer die Stellung einmal selbst gehalten hat, tappt nicht mehr hinein. Im Blitz bleibt keine Zeit zum Rechnen, dort hilft nur ein Muster, das du sofort wiedererkennst. In einer Langpartie kannst du eine Falle auch durch ruhiges Nachrechnen entdecken.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die eigenen Patzer sammeln statt fremde Fallen zu lernen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Nach jeder Partie zeigt dir die Computer-Analyse deine groben Fehler („Computer-Analyse anfordern“). Notiere zu jedem nur eine Sache: Welches Motiv aus diesem Kapitel hättest du sehen müssen? Nach zwanzig Partien hast du deine persönliche Fallenliste, und die ist mehr wert als alle berühmten Fallen zusammen.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Am echten Brett.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele die Fallen, die dein Repertoire treffen, auf einem echten Brett bis zum Stopp-Moment nach und sprich die drei Prüffragen laut durch.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Wie du das in deinen Trainingsplan einbaust, zeigt Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap04_fallenkabinett.tex",
+    "zeile": 1389
+  },
+  "stand": "2026-10-16"
+}

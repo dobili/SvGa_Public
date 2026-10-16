@@ -1,0 +1,16 @@
+[Event "Kapitel 3: Weitere Varianten: Den Mehrbauern festhalten mit 3... g5"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "rnbqkbnr/pppp1p1p/8/6p1/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq - 0 4"]
+[SetUp "1"]
+[Beispiel "k03-a7"]
+[Kapitel "3"]
+[Abschnitt "3.4"]
+[Status "verworfen"]
+[Abbildungen "3.7 3.8"]
+
+{ Abb. 3.7 } 4. h4 g4 5. Ne5 { Abb. 3.8 } *

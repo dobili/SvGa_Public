@@ -1,0 +1,16 @@
+[Event "Kapitel 7: Übungen"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "3r1rk1/pp4pp/2n5/3q4/8/1P6/P1Q1BPPP/R3R1K1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k07-a50"]
+[Kapitel "7"]
+[Abschnitt "Übung 38"]
+[Status "freigegeben"]
+[Abbildungen "7.50"]
+
+{ Abb. 7.50 } 1. Bc4 $1 Qxc4 ( 1... Nd4 2. Bxd5+ ) ( 1... Nb4 2. Bxd5+ ) 2. Qxc4+ *

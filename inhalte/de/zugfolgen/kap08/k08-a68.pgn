@@ -1,0 +1,16 @@
+[Event "Kapitel 8: Rückblick: Endspiel-Fundament"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/8/p7/5pK1/4kP2/8/P7/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k08-a68"]
+[Kapitel "8"]
+[Abschnitt "Übung 63"]
+[Status "freigegeben"]
+[Abbildungen "8.68"]
+
+{ Abb. 8.68 } 1. a3 $1 ( 1. a4 $2 a5 $1 ) 1... a5 2. a4 *

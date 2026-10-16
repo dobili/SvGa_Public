@@ -1,0 +1,815 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 3,
+ "texte": [
+  {
+   "abbildung": "3.2",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Zähle zuerst das Material, dann die entwickelten Figuren.",
+      "Schau auf den Bauern f4: Wem gehört er, und was hat Weiß dafür?",
+      "Schwarz hat einen Bauern mehr, entwickelt ist noch niemand. Den Ausgleich muss Weiß sich erst erarbeiten."
+     ],
+     "text": "Schwarz hat einen Mehrbauern, bei Zeit, Königssicherheit und Aktivität steht es noch gleich. Weiß muss den Bauern jetzt mit schneller Entwicklung aufwiegen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3. Sf3",
+     "frage": "Warum spielt Weiß 3. Sf3?",
+     "antworten": [
+      "Er greift den Bauern f4 sofort an.",
+      "Er entwickelt eine Figur und nimmt der schwarzen Dame das Schach auf h4.",
+      "Er bereitet die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ohne f-Bauern ist die Diagonale h4–e1 offen. Der Springer f3 deckt h4 und kommt dabei auf sein bestes Feld."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.3",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Prüfe zuerst, was der Gegner angreift.",
+      "Schau auf den Bauern d5: Wer greift ihn an, wer deckt ihn?",
+      "Springer f6 und Dame d8 greifen d5 an, gedeckt ist er nicht. Weiß muss ihn decken oder hergeben."
+     ],
+     "text": "Das Material ist wieder gleich, doch Schwarz ist im Moment aktiver. Springer f6 und Dame d8 greifen den ungedeckten Bauern d5 an."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "5. Lc4",
+     "frage": "Warum ist 5. Lc4 eine gute Antwort?",
+     "antworten": [
+      "Er droht Lxf7+ mit Damengewinn.",
+      "Er bringt den Läufer aus dem Angriff des Springers f6.",
+      "Er entwickelt eine Figur, deckt d5 und bereitet die kurze Rochade vor."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Zug mit mehreren Aufgaben: Der Läufer kommt ins Spiel und hält d5. Danach fehlt Weiß nur noch die Rochade."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.4",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Vergleiche die Faktoren einzeln: Material, Zeit, König, Aktivität.",
+      "Zähle die entwickelten Figuren und schau, welcher König schon rochiert hat.",
+      "Weiß hat drei Figuren im Spiel und rochiert. Schwarz hat den Bauern f4 mehr, aber den König noch in der Mitte."
+     ],
+     "text": "Schwarz hat den Mehrbauern f4, Weiß führt bei Zeit, Königssicherheit und Aktivität. Dieser Vorsprung hält aber nur, bis Schwarz rochiert hat."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was zeigt die Bilanz in dieser Stellung?",
+     "antworten": [
+      "Weiß hat für den Bauern Zeit, Königssicherheit und Aktivität; Schwarz sollte schnell rochieren.",
+      "Schwarz steht in allen Faktoren besser.",
+      "Das Material ist ausgeglichen, Weiß hat nichts gegeben."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der weiße Vorsprung hält nur, bis Schwarz rochiert hat. Deshalb ist die Rochade für Schwarz der wichtigste nächste Schritt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.6",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Prüfe, ob der Mehrbauer überhaupt zu halten ist.",
+      "Schau auf den Bauern f4 und den Läufer c1.",
+      "f4 ist ungedeckt. Lxf4 holt den Bauern mit einem Entwicklungszug zurück."
+     ],
+     "text": "Schwarz hat rochiert und noch den Mehrbauern, Weiß hat mehr Figuren im Spiel. Der Bauer f4 ist aber ungedeckt und vom Läufer c1 angegriffen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "10. Lxf4",
+     "frage": "Warum ist 10. Lxf4 der natürliche Zug?",
+     "antworten": [
+      "Er droht Matt auf h7.",
+      "Der Läufer entwickelt sich und schlägt dabei den Gambitbauern.",
+      "Er öffnet der Dame die d-Linie."
+     ],
+     "richtig": 1,
+     "erklaerung": "Nach Lxf4 ist das Material gleich, und Weiß hat weiter mehr Figuren im Spiel. Das Gambit hat seinen Zweck erfüllt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.7",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Was kostet es Schwarz, den Mehrbauern zu halten?",
+      "Zähle die entwickelten Figuren und schau auf die Bauern f4 und g5.",
+      "Schwarz hat einen Bauern mehr, aber keine Figur draußen. Die Stütze von f4 ist der Bauer g5."
+     ],
+     "text": "Schwarz hält mit g5 am Mehrbauern fest, hat aber noch keine Figur entwickelt. Weiß führt bei Zeit und Aktivität."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "4. h4",
+     "frage": "Warum spielt Weiß 4. h4?",
+     "antworten": [
+      "Er greift den Bauern g5 an, der den Bauern f4 stützt.",
+      "Er deckt den Springer f3.",
+      "Er bereitet die kurze Rochade vor."
+     ],
+     "richtig": 0,
+     "erklaerung": "Schwarz muss sich entscheiden, was mit g5 geschieht. Nach g4 bekommt der Springer mit Se5 ein aktives Feld."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.8",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Wo steht die aktivste Figur auf dem Brett?",
+      "Schau auf den Springer e5 und seine Ziele, dann auf die Diagonale e1–h4.",
+      "Se5 greift f7 und g4 an. Dafür steht der weiße König auf der offenen Diagonale e1–h4."
+     ],
+     "text": "Schwarz hat einen Bauern mehr, Weiß den aktiven Springer e5, der f7 und g4 angreift. Der Preis: Ohne f-Bauern ist die Diagonale zum weißen König offen."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was ist der Preis der weißen Aktivität in dieser Stellung?",
+     "antworten": [
+      "Der Springer e5 kann sofort gefangen werden.",
+      "Weiß hat schon zwei Bauern weniger.",
+      "Die Diagonale e1–h4 zum weißen König ist offen."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der fehlende f-Bauer gibt der schwarzen Dame einen Weg zum König, etwa mit Dxh4+. Deshalb will Weiß schnell Lc4 und d4 folgen lassen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.9",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Was greift der letzte schwarze Zug an, und was tut Weiß dagegen?",
+      "Schau auf den Bauern g4 und den Springer f3.",
+      "g4 greift f3 an. Weiß opfert den Springer für Entwicklung, sicheren König und Druck auf f7."
+     ],
+     "text": "Weiß lässt den Springer f3 stehen und rochiert lieber. Er hat drei Figuren im Spiel und einen sicheren König, Schwarz noch keine Figur entwickelt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "5... gxf3",
+     "frage": "Warum schlägt Schwarz den Springer?",
+     "antworten": [
+      "Er muss schlagen, sonst ist er sofort matt.",
+      "Eine ganze Figur ist viel Material; Schwarz nimmt sie und muss danach den Angriff aushalten.",
+      "Er entwickelt damit eine Figur."
+     ],
+     "richtig": 1,
+     "erklaerung": "Material gegen Zeit in reinster Form: Schwarz hat danach eine Figur mehr, Weiß den großen Vorsprung in der Entwicklung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.14",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Prüfe, was Weiß mit seinem letzten Zug angreift.",
+      "Schau auf den Bauern e5: Wie oft greift Weiß ihn an, wie oft ist er gedeckt?",
+      "Sf3 und d4 greifen e5 an, nur Sc6 deckt. Schwarz muss e5 stützen oder tauschen."
+     ],
+     "text": "Für den b-Bauern hat Weiß ein breites Zentrum und mit dem Läufer c4 Druck gegen f7. Schwarz muss jetzt auf den Angriff gegen e5 antworten."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6... d6",
+     "frage": "Warum spielt Schwarz 6... d6?",
+     "antworten": [
+      "Er greift den Läufer c4 an.",
+      "Er bereitet die lange Rochade vor.",
+      "Er stützt e5 und öffnet dem Läufer c8 den Weg."
+     ],
+     "richtig": 2,
+     "erklaerung": "d6 deckt e5 ein zweites Mal und macht die Diagonale c8–h3 frei. Den Mehrbauern behält Schwarz vorerst."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.17",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Geh die vier Faktoren der Reihe nach durch.",
+      "Zähle die Bauern und die entwickelten Figuren beider Seiten.",
+      "Je sechs Bauern, je drei Figuren im Spiel, keine Damen: Kein Faktor liegt vorn."
+     ],
+     "text": "Alle vier Faktoren stehen gleich: gleiches Material, je drei Figuren im Spiel, beide Könige ohne Damen sicher. Schwarz deckt f7 mit Läufer e6 und Springer d8."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was ist in dieser Linie aus dem Evans-Gambit geworden?",
+     "antworten": [
+      "Weiß steht klar besser, weil er mehr entwickelt hat.",
+      "Schwarz behält den Mehrbauern bis ins Endspiel.",
+      "Weiß hat den Bauern zurückgewonnen, die Stellung ist ausgeglichen."
+     ],
+     "richtig": 2,
+     "erklaerung": "Weiß hat sein Material zurück, Schwarz hat in der Entwicklung aufgeholt. Kein Faktor liegt mehr vorn."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.20",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Zähle das Material und dann die Figuren im Spiel.",
+      "Schau auf die Diagonalen der Läufer b2 und c4.",
+      "Schwarz hat zwei Bauern mehr. Dafür zielen Lb2 auf g7 und Lc4 auf f7, und Schwarz hat nichts entwickelt."
+     ],
+     "text": "Schwarz hat zwei Bauern mehr, aber noch keine Figur entwickelt. Die weißen Läufer zielen schon auf g7 und f7, Sf3 und Sc3 folgen schnell."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Wofür hat Weiß zwei Bauern gegeben?",
+     "antworten": [
+      "Für ein schnelles Matt auf f7.",
+      "Für zwei Läufer auf starken Diagonalen und einen Vorsprung in der Entwicklung.",
+      "Für einen Mehrbauern im Endspiel."
+     ],
+     "richtig": 1,
+     "erklaerung": "Schwarz hat noch keine Figur entwickelt, Weiß zwei Läufer gegen g7 und f7. Schwarz sollte schnell Figuren ins Spiel bringen und darf dafür auch einen Bauern zurückgeben."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.23",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Prüfe zuerst das Schach und was nach jeder Antwort hängt.",
+      "Schau auf die Dame d8 und den Turm h8.",
+      "Nach jeder Antwort außer Dd2 schlägt der Turm h8 die Dame. Dd2 tauscht sie wenigstens gegen den Läufer."
+     ],
+     "text": "Auf dem Papier hat Weiß eine Dame mehr, doch sie steht auf d8 im Angriff des Turms h8, und Lb4+ ist Schach. Die Bilanz zählt nur, was steht; erst die Rechnung zeigt, dass die Dame nicht zu halten ist."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "9. Dd2",
+     "frage": "Warum stellt Weiß die Dame mit 9. Dd2 dazwischen?",
+     "antworten": [
+      "Sie bereitet die lange Rochade vor.",
+      "Sie greift den Läufer b4 an und gewinnt ihn.",
+      "Sie ist ohnehin verloren; auf d2 bekommt Weiß wenigstens den Läufer dafür."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach 9... Lxd2+ 10. Sxd2 ist das Material gleich. Nach jeder anderen Antwort nimmt der Turm h8 die Dame, und Schwarz hat eine Figur mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.27",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Wofür hat Weiß den Bauern gegeben? Zähle nach.",
+      "Schau auf die d-Linie und den Bauern d6.",
+      "Vier weiße Figuren gegen zwei, Weiß hat rochiert. Mit De2 und Td1 kommt Druck gegen d6."
+     ],
+     "text": "Weiß hat vier Figuren im Spiel und rochiert, Schwarz zwei Figuren und den König in der Mitte. Dafür hat Schwarz den Mehrbauern."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Welcher weiße Plan passt zu dieser Bilanz?",
+     "antworten": [
+      "Sofort die Damen tauschen, um ins Endspiel zu kommen.",
+      "Mit De2 und Td1 schnell Druck gegen d6 aufbauen.",
+      "Mit a4 und b4 die Bauern am Damenflügel vorrücken."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Vorsprung bei Zeit hält nur einige Züge. Weiß muss ihn in Druck umsetzen, sonst zählt am Ende der schwarze Mehrbauer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.29",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "8... Sxd4",
+     "frage": "Warum kann Schwarz jetzt 8... Sxd4 spielen?",
+     "antworten": [
+      "Weiß hat rochiert und kann deshalb nicht zurückschlagen.",
+      "Der Bauer d4 ist gar nicht mehr gedeckt.",
+      "Der Läufer d7 sperrt die Diagonale b5–e8; ein Schach auf b5 gibt es nicht mehr."
+     ],
+     "richtig": 2,
+     "erklaerung": "Zieht der Läufer d3 jetzt weg, ist es kein Schach. Die schwarze Dame kann dann zuerst die weiße schlagen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.30",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Vergleiche Material und Königssicherheit.",
+      "Schau auf das Feld b5 und den Bauern e5.",
+      "Ein Bauer mehr für Schwarz. Weiß droht Sb5 mit Angriff auf die Dame, und e5 ist ungedeckt."
+     ],
+     "text": "Schwarz hat einen Bauern mehr und eine aktive Dame, Weiß den sichereren König. Weiß droht Sb5, und der ungedeckte Bauer e5 lockt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "10... a6",
+     "frage": "Warum spielt Schwarz 10... a6?",
+     "antworten": [
+      "Er nimmt dem Springer c3 das Feld b5.",
+      "Er öffnet dem Turm a8 die a-Linie.",
+      "Er deckt den Bauern d5."
+     ],
+     "richtig": 0,
+     "erklaerung": "Sb5 hätte die Dame angegriffen und Sc7+ oder Sd6+ vorbereitet. Mit a6 ist das Feld b5 gesperrt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.31",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "8. Sxd4",
+     "frage": "Warum kann Weiß mit 8. Sxd4 ruhig zurückschlagen?",
+     "antworten": [
+      "Schwarz kann den Springer d4 nicht zurückschlagen.",
+      "Nach 8... Dxd4 folgt 9. Lb5+, und die Dame d1 schlägt die Dame d4.",
+      "Weiß hat danach eine Figur mehr."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Läufer d3 verdeckt die d-Linie. Zieht er mit Schach nach b5, greift die Dame d1 die Dame d4 an, und Schwarz muss zuerst das Schach abwehren."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.35",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Prüfe, welche schwarzen Figuren an den König gebunden sind.",
+      "Schau auf die e-Linie: Turm e1, Bauer e6, König e8.",
+      "Der Bauer e6 ist an den König gefesselt. exd5 ist nicht erlaubt, der Springer steht sicher."
+     ],
+     "text": "Schwarz hat noch einen Bauern mehr, doch sein König steht in der Mitte auf der e-Linie. Weil der Turm e1 den Bauern e6 fesselt, kann Schwarz den Springer d5 nicht schlagen."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was zeigt diese Stellung über den Bauerngewinn 10... Dxe5?",
+     "antworten": [
+      "Er hat sich gelohnt, denn Schwarz hat jetzt zwei Bauern mehr.",
+      "Er war harmlos, weil die Dame auf b8 sicher steht.",
+      "Er hat Zeit gekostet: Die e-Linie ist offen, und der König in der Mitte wird zum Ziel."
+     ],
+     "richtig": 2,
+     "erklaerung": "Für einen Bauern hat Schwarz mit der Dame mehrere Züge gemacht. Weiß nutzt die e-Linie gegen den König, der noch nicht rochiert hat."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.37",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-zaehlen",
+     "hinweise": [
+      "Um welchen Bauern geht es?",
+      "Zähle am Feld e4: Wer greift an, wer deckt?",
+      "Springer c3 und Bauer f3 greifen an, nur der Springer f6 deckt."
+     ],
+     "text": "Zwei Angreifer gegen einen Verteidiger: Den Bauern e4 kann Schwarz nicht halten."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "4... exf3",
+     "frage": "Warum schlägt Schwarz mit 4... exf3?",
+     "antworten": [
+      "e4 ist nicht zu halten; Schwarz tauscht ihn, statt ihn ohne Ersatz zu verlieren.",
+      "Er öffnet die e-Linie für seinen Turm.",
+      "Er entwickelt damit den Läufer c8."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach 5. Sxf3 bleibt Schwarz ein Bauer mehr. Weiß hat dafür die halboffene f-Linie und einen weiteren entwickelten Springer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.40",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Vergleiche, wer mehr Figuren im Spiel hat und wessen König sicherer steht.",
+      "Schau auf den Bauern e6 und den Läufer f5.",
+      "Sg5 und Lc4 greifen e6 an, der Turm f1 den Läufer f5. Der Läufer hängt an e6."
+     ],
+     "text": "Schwarz hat den Mehrbauern, Weiß vier Figuren im Spiel und den rochierten König. Sg5 und Lc4 greifen e6 an, der Turm f1 den Läufer f5."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "8... Lg6",
+     "frage": "Warum zieht Schwarz 8... Lg6?",
+     "antworten": [
+      "Er greift den Springer g5 an.",
+      "Der Läufer verlässt die f-Linie, auf der ihn der Turm angreift; e6 muss ihn dann nicht mehr decken.",
+      "Er bereitet die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Auf f5 war der Läufer nur durch e6 gedeckt, und e6 stand selbst unter Druck. Auf g6 ist er aus der Schusslinie."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.42",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Vergleiche, welcher König sicherer steht und wer mehr Figuren im Spiel hat.",
+      "Schau auf e6 und auf die f-Linie hinter dem Läufer f4.",
+      "Sg5 und Lc4 zielen auf e6, doch Lf4 versperrt dem Turm f1 den Weg. Schwarz steht nach der Rochade sicher."
+     ],
+     "text": "Schwarz hat rochiert und den Mehrbauern behalten; der Läufer g6 schützt den König. Weiß hat aktivere Figuren, doch der eigene Läufer f4 steht dem Turm f1 im Weg."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was hat Schwarz mit den letzten Zügen erreicht?",
+     "antworten": [
+      "Er hat die Damen getauscht.",
+      "Er hat den König in Sicherheit gebracht und den Mehrbauern behalten.",
+      "Er hat alle Figuren entwickelt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Zeit ist ein flüchtiger Vorteil: Hat der Gegner rochiert, verliert sie an Wert. Der Mehrbauer dagegen bleibt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.46",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "4. Lf4",
+     "frage": "Warum deckt Weiß den Bauern e5 mit 4. Lf4?",
+     "antworten": [
+      "Er greift den Springer g4 an.",
+      "Er droht Lxc7 mit Damengewinn.",
+      "Er entwickelt eine Figur und hält den Mehrbauern; dafür ist der Läufer an e5 gebunden."
+     ],
+     "richtig": 2,
+     "erklaerung": "Weiß deckt mit Figuren, nicht mit Bauern. Diese Figuren sind dann an e5 gebunden, und genau das will Schwarz mit seinem Gambit erreichen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.47",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Vergleiche den Mehrbauern mit der Aktivität der Figuren.",
+      "Schau, welche Figuren den Bauern e5 angreifen und welche ihn decken.",
+      "Weiß hat den Bauern e5 mehr; die schwarzen Springer c6 und g4 greifen ihn an, Sf3 und Lf4 müssen ihn decken."
+     ],
+     "text": "Weiß hat den Mehrbauern e5, Schwarz zwei aktive Springer, die ihn beide angreifen. Die weißen Figuren sind an die Deckung gebunden."
+    },
+    {
+     "werkzeug": "k1-zaehlen",
+     "hinweise": [
+      "Um welchen Bauern geht es?",
+      "Zähle am Feld e5: Angreifer gegen Verteidiger.",
+      "Angreifer: Springer c6 und g4. Verteidiger: Springer f3 und Läufer f4."
+     ],
+     "text": "Zwei Angreifer, zwei Verteidiger: Schlagen auf e5 bringt Schwarz im Moment nichts. Ein dritter Angreifer würde das ändern."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist ...De7 ein natürlicher nächster Schritt für Schwarz?",
+     "antworten": [
+      "Die Dame greift e5 als dritte Figur an.",
+      "Die Dame bereitet die kurze Rochade vor.",
+      "Die Dame deckt den Bauern c7."
+     ],
+     "richtig": 0,
+     "erklaerung": "Drei Angreifer gegen zwei Verteidiger: Dann muss Weiß e5 noch einmal decken oder den Bauern zurückgeben."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.50",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Frag dich, welcher schwarze Vorteil auch nach der weißen Entwicklung bleibt.",
+      "Schau auf die a- und die b-Linie.",
+      "Halboffene a- und b-Linie gegen die Bauern a2 und b2: ein Vorteil, der lange hält."
+     ],
+     "text": "Weiß hat einen Bauern mehr, aber noch keine Figur entwickelt. Schwarz hat Springer f6 und Läufer a6 im Spiel und dazu die halboffenen a- und b-Linien."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum hält der schwarze Ausgleich im Wolga-Gambit länger als in vielen anderen Gambits?",
+     "antworten": [
+      "Weil Schwarz schneller rochieren kann.",
+      "Weil Weiß den Bauern bald zurückgeben muss.",
+      "Weil halboffene Linien gegen feste Ziele wie a2 und b2 auch nach der Entwicklung bleiben."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Entwicklungsvorsprung verschwindet, sobald der Gegner aufholt. Offene Linien gegen feste Ziele wirken dagegen lange."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.51",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "8. Kxf1",
+     "frage": "Warum schlägt Weiß mit dem König zurück?",
+     "antworten": [
+      "Er will den König in die Mitte bringen.",
+      "Keine andere Figur kann auf f1 schlagen; sonst fehlte eine ganze Figur.",
+      "Der König steht auf f1 sicherer als nach der Rochade."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Preis ist das Rochaderecht. Weiß muss den König später mit g3 und Kg2 in Sicherheit bringen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.57",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-zaehlen",
+     "hinweise": [
+      "Was greift die schwarze Dame an, und was ist gedeckt?",
+      "Zähle am Feld c3: Wer greift an, wer deckt?",
+      "Die Dame greift c3 an, nur der Läufer d2 deckt. Ein zweiter Angreifer würde den Springer bedrohen."
+     ],
+     "text": "Springer c3 und Turm a1 sind angegriffen, aber beide gedeckt. Schwarz sucht einen zweiten Angreifer gegen c3."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6... Lb4",
+     "frage": "Warum spielt Schwarz 6... Lb4?",
+     "antworten": [
+      "Er bringt einen zweiten Angreifer gegen den Springer c3, der nur einmal gedeckt ist.",
+      "Er gibt Schach und gewinnt Zeit.",
+      "Er fesselt den Läufer d2 an die Dame d1."
+     ],
+     "richtig": 0,
+     "erklaerung": "Zwei Angreifer gegen einen Verteidiger: Schwarz droht, auf c3 eine Figur zu gewinnen. Weiß antwortet mit Tb1 und greift dabei die Dame an."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.66",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Prüfe zuerst Schachs und Mattdrohungen des Gegners.",
+      "Schau auf f2: Wer greift an, wer verteidigt?",
+      "Dh4 und Lc5 greifen f2 an, nur der König deckt: Dxf2 wäre Matt."
+     ],
+     "text": "Weiß hat eine Figur und einen Bauern mehr, steht aber unter Druck. Dame h4 und Läufer c5 zielen auf f2, und der Läufer g4 ist angegriffen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "8. Df3",
+     "frage": "Warum ist 8. Df3 hier die richtige Verteidigung?",
+     "antworten": [
+      "Die Dame greift den Läufer c5 an.",
+      "Sie bereitet die lange Rochade vor.",
+      "Sie deckt f2 gegen das Matt und schützt zugleich den Läufer g4."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Zug mit zwei Aufgaben. Zuerst kommt die Mattdrohung, erst danach zählt das Material."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.67",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "6... Sxe4",
+     "frage": "Warum darf Schwarz 6... Sxe4 spielen, obwohl der Springer vor der Dame steht?",
+     "antworten": [
+      "Der Springer e4 deckt danach die Dame d8.",
+      "Die Fesselung ist nur relativ: Nimmt Weiß die Dame, setzt Schwarz mit Lxf2+ und Lg4 matt.",
+      "Der Läufer g5 ist selbst gefesselt und darf nicht schlagen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Hinter dem Springer stand die Dame, nicht der König. Opfert Schwarz sie, wird der weiße König nach Lxf2+ Ke2 mit Lg4 matt gesetzt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.68",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "8. Ke2",
+     "frage": "Warum spielt Weiß 8. Ke2?",
+     "antworten": [
+      "Es ist der einzige erlaubte Zug: Der Springer e4 deckt f2 und d2.",
+      "Er will den König über e2 nach f3 in Sicherheit bringen.",
+      "Er bereitet die Rochade vor."
+     ],
+     "richtig": 0,
+     "erklaerung": "Ein Schach mit nur einem Ausweg ist gefährlich. Nach Ke2 setzt der bisher unentwickelte Läufer c8 auf g4 matt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.71",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Prüfe zuerst, was Schwarz angreift.",
+      "Schau auf den Springer e5 und den Bauern e4.",
+      "Df6 greift Se5 an, f5 greift e4 an. Weiß muss zuerst den Springer sichern."
+     ],
+     "text": "Weiß hat einen Bauern mehr, aber der Zug ist nicht frei. Die Dame f6 greift den ungedeckten Springer e5 an, der Bauer f5 den Bauern e4."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "4. d4",
+     "frage": "Warum spielt Weiß 4. d4?",
+     "antworten": [
+      "Er greift die Dame f6 an.",
+      "Er deckt den angegriffenen Springer e5 und baut das Zentrum aus.",
+      "Er öffnet dem Läufer f1 die Diagonale."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Springer ist jetzt gedeckt, und Weiß steht im Zentrum fest. Danach findet der Springer mit Sc4 ein sicheres Feld."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.77",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Wenn Material und Königssicherheit gleich sind, zählt die Entwicklung.",
+      "Schau auf die f-Linie und auf die Grundreihe von Schwarz.",
+      "Sechs weiße Figuren im Spiel gegen drei; Springer b8 und Läufer c8 stehen noch zu Hause."
+     ],
+     "text": "Material ist gleich, und ohne Damen stehen beide Könige sicher. Weiß hat aber alle Leichtfiguren und beide Türme im Spiel, Schwarz hat Springer b8 und Läufer c8 noch nicht bewegt."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Wie lange hält dieser weiße Vorsprung?",
+     "antworten": [
+      "Für immer, denn Entwicklung bleibt erhalten.",
+      "Gar nicht, denn ohne Damen zählt Entwicklung nichts.",
+      "Nur so lange, bis Schwarz seine letzten Figuren entwickelt hat, wenn Weiß ihn nicht nutzt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Zeit ist ein Vorteil auf Abruf. Weiß muss die offenen Linien nutzen, solange Schwarz noch zwei Figuren zu Hause hat."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "3.79",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k3-faktorenbilanz",
+     "hinweise": [
+      "Wessen König ist durch die Bauernzüge offener geworden?",
+      "Schau auf die Diagonale h5–e8.",
+      "Ohne f-Bauern ist die Diagonale zum schwarzen König offen; ein Schach von h5 geht vor dem Rückzug des Läufers."
+     ],
+     "text": "Material ist gleich, Weiß hat zwei Figuren im Spiel, Schwarz keine. Der Bauer d5 greift den Läufer c4 an, doch der schwarze König steht offen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "5. Dh5+",
+     "frage": "Warum gibt Weiß 5. Dh5+?",
+     "antworten": [
+      "Er nutzt die offene Diagonale zum König; Schwarz muss das Schach abwehren, statt den Läufer zu schlagen.",
+      "Es ist Matt.",
+      "Er deckt damit den Läufer c4."
+     ],
+     "richtig": 0,
+     "erklaerung": "Ohne f-Bauern steht der schwarze König offen. Das Schach kommt vor dem Rückzug des Läufers, so bleibt Weiß am Drücker."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

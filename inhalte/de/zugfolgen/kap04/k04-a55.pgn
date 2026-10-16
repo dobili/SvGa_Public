@@ -1,0 +1,14 @@
+[Event "Kapitel 4: Und wenn du selbst eine Falle stellst?"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k04-a55"]
+[Kapitel "4"]
+[Abschnitt "Übung 22"]
+[Status "freigegeben"]
+[Abbildungen "4.55"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Ne7 { Abb. 4.55 } 5. Nxe5 $2 ( 5. Nc3 ) ( 5. O-O ) 5... c6 $1 6. Ba4 ( 6. Bc4 Qa5+ $1 7. c3 Qxe5 ) ( 6. Nc4 cxb5 $4 ( 6... d6 ) 7. Nd6# ) 6... Qa5+ $1 7. c3 Qxe5 *

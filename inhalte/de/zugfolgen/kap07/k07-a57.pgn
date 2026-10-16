@@ -1,0 +1,16 @@
+[Event "Kapitel 7: Übungen"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r4rk1/pb2qppp/1p3n2/2p4Q/8/2NB1R2/PP3PPP/R5K1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k07-a57"]
+[Kapitel "7"]
+[Abschnitt "Übung 45"]
+[Status "freigegeben"]
+[Abbildungen "7.57"]
+
+{ Abb. 7.57 } 1. Rxf6 $1 ( 1. Qxh7+ $2 Nxh7 ) 1... gxf6 ( 1... Qxf6 2. Qxh7# ) ( 1... g6 2. Qh4 ) ( 1... h6 ) ( 1... Be4 ) 2. Qxh7# *

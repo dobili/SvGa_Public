@@ -1,0 +1,46 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 4,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:warnsignale-zuordnen",
+   "nummer": 19,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Warnsignale W1 bis W5",
+   "text": "Jedes Warnsignal zeigt sich an einer Figur oder Linie, etwa die ungedeckte Dame h3 im Dänischen Gambit (W1), die offene e-Linie in der Kieninger-Falle (W2) oder die Dame d1 als Geschenk in der Légal-Falle (W5). Ein Signal sagt nicht, was droht, aber wo du rechnen musst."
+  },
+  {
+   "uebung": "ueb:legal-verteidigung",
+   "nummer": 20,
+   "status": "freigegeben",
+   "loesung": "6... dxe5",
+   "akzeptiert": [
+    "6... Sxe5"
+   ],
+   "motiv": "Den billigsten Ausweg finden",
+   "text": "Statt 6... Lxd1?? holt Schwarz den Springer sofort zurück, etwa mit 6... dxe5. Weil die Fesselung weg ist, schlägt Weiß mit 7. Dxh5 den ungedeckten Läufer und hat einen Bauern mehr: ärgerlich, aber viel besser als ein Matt."
+  },
+  {
+   "uebung": "ueb:lasker-falle",
+   "nummer": 21,
+   "status": "freigegeben",
+   "loesung": "6. fxe3",
+   "akzeptiert": [],
+   "motiv": "Unterverwandlung mit Schach",
+   "text": "Nach 6. Lxb4?? exf2+ 7. Ke2 kommt 7... fxg1=S+!: Die Unterverwandlung gibt Schach, und Weiß verliert danach die Dame, oder sein König steht schutzlos im Freien. Richtig ist 6. fxe3; das Warnsignal war die offene d-Linie zwischen den Damen, sobald der Läufer d2 wegzieht."
+  },
+  {
+   "uebung": "ueb:mortimer-falle",
+   "nummer": 22,
+   "status": "freigegeben",
+   "loesung": "5. Sc3",
+   "akzeptiert": [
+    "5. O-O"
+   ],
+   "motiv": "Scheinbar freier Bauer",
+   "text": "Nach 5. Sxe5? c6! muss der Läufer weichen, und 6... Da5+ greift König und Springer e5 zugleich an. Weiß lässt den Bauern stehen und entwickelt mit 5. Sc3 oder 5. O-O; zieht der einzige Verteidiger freiwillig weg, ist der Bauer selten wirklich frei."
+  }
+ ]
+}

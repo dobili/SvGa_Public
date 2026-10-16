@@ -1,0 +1,78 @@
+<!doctype html>
+<!--
+  Startseite des Buches unter / (Entscheidung des Autors, 15.10.2026): Cover, kurze
+  Beschreibung, Shops, darunter der Installationsteil der App, unten Impressum, Datenschutz und
+  Lizenzen. Statisches HTML für Suchmaschinen und die Vorschau beim Teilen (Open Graph).
+  Die Texte in doppelten geschweiften Klammern setzt der Build aus src/i18n/de.json ein
+  (vite.config.ts, texteInHtml). Das kleine Skript im Kopf schickt die installierte App sofort
+  nach /app/; src/startseite/startseite.ts zeigt die passende Anleitung und den Offline-Stand.
+-->
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#16253D" />
+    <meta name="description" content="{{startseite.meta}}" />
+    <meta property="og:type" content="book" />
+    <meta property="og:title" content="{{app.titel}}" />
+    <meta property="og:description" content="{{startseite.meta}}" />
+    <meta property="og:image" content="https://schach-von-grund-auf.com/cover-teilen.jpg" />
+    <meta property="og:url" content="https://schach-von-grund-auf.com/" />
+    <meta property="og:locale" content="de_DE" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Schach" />
+    <link rel="canonical" href="https://schach-von-grund-auf.com/" />
+    <link rel="icon" href="/symbole/symbol.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/symbole/apple-touch-icon.png" />
+    <title>{{app.titel}} – {{startseite.untertitel}}</title>
+    <script>
+      // Die installierte App startet direkt in der App, auch wenn sie sich / gemerkt hat.
+      if (
+        window.matchMedia("(display-mode: standalone)").matches ||
+        window.navigator.standalone === true
+      ) {
+        window.location.replace("/app/");
+      }
+      document.documentElement.classList.add("js");
+    </script>
+    <script type="module" src="/src/startseite/startseite.ts"></script>
+  </head>
+  <body>
+    <div class="startseite">
+      <header class="startseite-kopf">
+        <img src="/cover.webp" alt="{{installation.cover}}" width="140" height="198" />
+        <div>
+          <h1>{{app.titel}}</h1>
+          <p class="startseite-untertitel">{{startseite.untertitel}}</p>
+        </div>
+      </header>
+      <main class="startseite-inhalt">
+        <section class="karte" aria-labelledby="buch-titel">
+          <h2 id="buch-titel" class="karte-titel">{{startseite.buch.titel}}</h2>
+          <p>{{startseite.buch.text1}}</p>
+          <p>{{startseite.buch.text2}}</p>
+        </section>
+        <section class="karte" aria-labelledby="shops-titel" data-testid="shops">
+          <h2 id="shops-titel" class="karte-titel">{{startseite.shops.titel}}</h2>
+          <ul class="shops">
+            <li><span class="shop shop-folgt">{{startseite.shops.buchhandel}}</span></li>
+            <li><span class="shop shop-folgt">{{startseite.shops.online}}</span></li>
+          </ul>
+          <p class="hinweis">{{startseite.shops.hinweis}}</p>
+        </section>
+        <section class="karte" aria-labelledby="training-titel" data-testid="training-karte">
+          <h2 id="training-titel" class="karte-titel">{{training.uebersicht.titel}}</h2>
+          <p>{{startseite.training.text}}</p>
+          <a class="knopf-zweit" href="/training/">{{startseite.training.link}}</a>
+        </section>
+        <!-- teil: installationsteil -->
+      </main>
+      <footer class="startseite-fuss">
+        <a class="knopf-link klein" href="/impressum/">{{installation.impressum}}</a>
+        <a class="knopf-link klein" href="/datenschutz/">{{installation.datenschutz}}</a>
+        <a class="knopf-link klein" href="/app/#lizenzen">{{installation.lizenzen}}</a>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,234 @@
+{
+  "kapitel": 5,
+  "titel": "Bauernstrukturen: Das Skelett des Schachbretts",
+  "adresse": "/training/kap05/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Das Skelett freilegen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue die Stellungen aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 5.3",
+          "abbildung": "5.3"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 5.17",
+          "abbildung": "5.17"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 5.22",
+          "abbildung": "5.22"
+        },
+        {
+          "art": "text",
+          "text": " mit „Stellung aufbauen“ auf und lösche ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "alle Figuren außer Königen und Bauern",
+          "stil": "kursiv"
+        },
+        {
+          "art": "text",
+          "text": ". Was übrig bleibt, ist das Skelett. Stelle dir an jedem Skelett die vier Leitfragen: Welche Felder kann kein Bauer mehr kontrollieren? Welche Bauern kann kein Bauer mehr decken? Wohin zeigt die Struktur? Welche Figuren passen dazu?",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Dieselbe Struktur zwanzigmal sehen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Stelle die Eröffnungsdatenbank im Analysebrett auf die Datenbank „Masters“. Spiele die Französische Vorstoßvariante (",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 5.3",
+          "abbildung": "5.3"
+        },
+        {
+          "art": "text",
+          "text": ") bis Zug 6 nach und klicke dich durch die Hauptzüge: In wenigen Minuten siehst du, wie Meister den schlechten Läufer c8 immer wieder mit denselben Ideen (",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "...b6"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "...Ld7-b5"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "...f6"
+        },
+        {
+          "art": "text",
+          "text": ") behandeln. Wiederhole das für die Isolani-Stellung.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Bauernmehrheit selbst umsetzen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue die Stellung aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 5.29",
+          "abbildung": "5.29"
+        },
+        {
+          "art": "text",
+          "text": " (3 gegen 2 am Damenflügel) mit „Stellung aufbauen“ auf, öffne sie im Analysebrett und spiele sie über „Von hier aus weiterspielen“ gegen den Computer, mit beiden Farben. Sieh dir die Partie im Anschluss im Analysebrett an: Die Tablebase zeigt dir bei jedem Zug, ob die Stellung noch gewonnen war.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Nach jeder eigenen Partie eine Strukturfrage.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Ab welchem Zug war die Bauernstruktur endgültig festgelegt, und was hat dieser Zug dauerhaft geschwächt? Röntge das Skelett an genau diesem Zug und vergleiche deinen Plan mit deinem Partiezug. Sammle solche Stellungen als dein Strukturheft in einer ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "Studie",
+          "stil": "kursiv"
+        },
+        {
+          "art": "text",
+          "text": ", ein Kapitel pro Struktur (Isolani, hängende Bauern, Minderheitsangriff, Französische Kette).",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Am echten Brett.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Stelle die Skelette aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 5.3",
+          "abbildung": "5.3"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 5.35",
+          "abbildung": "5.35"
+        },
+        {
+          "art": "text",
+          "text": " nur mit Bauern und Königen auf ein echtes Brett und zeige mit dem Finger: die Basis jeder Kette, den Hebel dagegen und den Flügel, auf dem jede Seite spielt.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Wie du diese Übungen in deinen Trainingsplan einbaust, zeigt Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap05_bauernstrukturen.tex",
+    "zeile": 1573
+  },
+  "stand": "2026-10-16"
+}

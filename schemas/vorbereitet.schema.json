@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/vorbereitet.schema.json",
+  "title": "Vorbereitet",
+  "description": "Vorbereitete Texte zu den Abbildungen eines Kapitels (AP 14, Art V), Datei inhalte/de/texte/vorbereitet-kapNN.json: je Abbildung kurze Einschätzungen je Werkzeug mit drei Hinweisstufen und Warum-Fragen mit Antwortauswahl (Pflichtenheft 3, Konzept 4.5). Entwürfe schreibt Claude, die Pipeline prüft sie (auch mit der Engine), der Autor gibt sie frei; nur freigegebene kommen als abbildung.vorbereitet in die App.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kapitel",
+    "texte"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "kapitel": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    },
+    "texte": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/eintrag"
+      }
+    }
+  },
+  "$defs": {
+    "einschaetzung": {
+      "description": "Einschätzung der Stellung mit einem Werkzeug des Buches",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "werkzeug",
+        "hinweise",
+        "text"
+      ],
+      "properties": {
+        "werkzeug": {
+          "description": "Kennung des Werkzeugs, etwa k1-zaehlen; freigeschaltet bis zum Kapitel der Abbildung",
+          "type": "string",
+          "pattern": "^k[0-9]{1,2}-[a-z0-9-]+$"
+        },
+        "hinweise": {
+          "description": "Drei Hinweisstufen (Pflichtenheft 6.1): 1 worauf achten, 2 wo auf dem Brett, 3 fast die Lösung",
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "text": {
+          "description": "Die Einschätzung in ein bis drei Sätzen",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "frage": {
+      "description": "Warum-Frage zur Stellung der Abbildung, optional zum nächsten Buchzug",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "frage",
+        "antworten",
+        "richtig",
+        "erklaerung"
+      ],
+      "properties": {
+        "zug": {
+          "description": "Der Zug, nach dem gefragt wird, in deutscher Notation mit Zugnummer wie im Buch (etwa 6. Ld3); ab der Stellung der Abbildung spielbar. Fehlt bei Fragen zur Stellung.",
+          "type": "string",
+          "minLength": 2
+        },
+        "frage": {
+          "type": "string",
+          "minLength": 1
+        },
+        "antworten": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "richtig": {
+          "description": "Position der richtigen Antwort, 0 = erste",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "erklaerung": {
+          "description": "Ein bis zwei Sätze nach der Antwort",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "fuerApp": {
+      "description": "Was die App an einer Abbildung zeigt (abbildung.vorbereitet): seit 0.2.27 nur die Warum-Fragen",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "fragen"
+      ],
+      "properties": {
+        "status": {
+          "description": "freigegeben; entwurf nur mit --mit-entwuerfen (die App kennzeichnet ihn)",
+          "enum": [
+            "entwurf",
+            "freigegeben"
+          ]
+        },
+        "fragen": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/frage"
+          }
+        }
+      }
+    },
+    "eintrag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "abbildung",
+        "status",
+        "einschaetzungen",
+        "fragen"
+      ],
+      "properties": {
+        "abbildung": {
+          "type": "string",
+          "pattern": "^[0-9]{1,2}\\.[0-9]{1,3}$"
+        },
+        "status": {
+          "enum": [
+            "entwurf",
+            "freigegeben"
+          ]
+        },
+        "einschaetzungen": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/einschaetzung"
+          }
+        },
+        "fragen": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/frage"
+          }
+        },
+        "engineGeprueft": {
+          "description": "Datum der letzten Engine-Prüfung durch Claude (Konzept 4.5)",
+          "type": "string",
+          "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+        }
+      }
+    }
+  }
+}

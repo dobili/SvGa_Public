@@ -1,0 +1,2070 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 0,
+ "titel": "Dein Einstieg ins Schachbuch",
+ "abschnitte": [],
+ "abbildungen": [
+  {
+   "id": "0.1",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": null,
+   "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Grundaufstellung. Weiß steht unten und zieht als erste Seite.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k00-a1",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 88
+   },
+   "pruefsumme": "7f1b6d1fcd7fc954"
+  },
+  {
+   "id": "0.3",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Das Koordinatensystem: Jedes Feld hat einen Namen",
+   "fen": "8/8/8/8/8/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e1"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e2"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e3"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "a4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "c4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "f4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "a8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Das leere Brett: Linien a–h von links nach rechts, Reihen 1–8 von unten nach oben. Weiß steht unten, Schwarz oben. Grau: die e-Linie und die 4. Reihe. Wo sie sich kreuzen, liegt e4 (gold). Das zweite goldene Feld ist a8, die Ecke oben links.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 102
+   },
+   "pruefsumme": "3269854d02382eb0"
+  },
+  {
+   "id": "0.4",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Wie die Figuren ziehen",
+   "fen": "4r3/8/8/8/3K4/8/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "e8",
+     "nach": "e3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "c3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d5"
+    },
+    {
+     "farbe": "rot",
+     "feld": "e3"
+    },
+    {
+     "farbe": "rot",
+     "feld": "e4"
+    },
+    {
+     "farbe": "rot",
+     "feld": "e5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "König d4. Gold: seine Zielfelder. Rot: e3, e4 und e5 – der schwarze Turm e8 greift sie an (grauer Pfeil), dorthin darf der König nicht ziehen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.5",
+    "0.6"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 138
+   },
+   "pruefsumme": "618bc009a2120bf3"
+  },
+  {
+   "id": "0.5",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Wie die Figuren ziehen",
+   "fen": "8/8/8/8/3Q4/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d1"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d2"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d6"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d7"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d8"
+    },
+    {
+     "farbe": "gold",
+     "feld": "a4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "b4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "f4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "g4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "h4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "a1"
+    },
+    {
+     "farbe": "gold",
+     "feld": "b2"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "f6"
+    },
+    {
+     "farbe": "gold",
+     "feld": "g7"
+    },
+    {
+     "farbe": "gold",
+     "feld": "h8"
+    },
+    {
+     "farbe": "gold",
+     "feld": "a7"
+    },
+    {
+     "farbe": "gold",
+     "feld": "b6"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "f2"
+    },
+    {
+     "farbe": "gold",
+     "feld": "g1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Dame d4. Sie zieht in alle acht Richtungen beliebig weit und erreicht hier 27 Felder.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.4",
+    "0.6"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 145
+   },
+   "pruefsumme": "726c3626f9fbee6e"
+  },
+  {
+   "id": "0.6",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Wie die Figuren ziehen",
+   "fen": "8/8/3P4/8/3R1n2/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d1"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d2"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "a4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "b4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    },
+    {
+     "farbe": "rot",
+     "feld": "f4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Turm d4. Der eigene Bauer d6 (grau) versperrt den Weg nach oben. Den schwarzen Springer f4 darf der Turm schlagen (rot), über ihn hinaus nach g4 und h4 kommt er nicht.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.4",
+    "0.5"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 154
+   },
+   "pruefsumme": "3e8841e4052baf16"
+  },
+  {
+   "id": "0.7",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Wie die Figuren ziehen",
+   "fen": "8/8/8/8/3B4/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "a1"
+    },
+    {
+     "farbe": "gold",
+     "feld": "b2"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "f6"
+    },
+    {
+     "farbe": "gold",
+     "feld": "g7"
+    },
+    {
+     "farbe": "gold",
+     "feld": "h8"
+    },
+    {
+     "farbe": "gold",
+     "feld": "a7"
+    },
+    {
+     "farbe": "gold",
+     "feld": "b6"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "f2"
+    },
+    {
+     "farbe": "gold",
+     "feld": "g1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Läufer d4. Er erreicht 13 Felder, alle dunkel: Ein Läufer wechselt nie die Feldfarbe.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.8",
+    "0.9"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 177
+   },
+   "pruefsumme": "d11a0ce2fb8a3edf"
+  },
+  {
+   "id": "0.8",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Wie die Figuren ziehen",
+   "fen": "8/8/8/3P4/2PNP3/3P4/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "b3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "b5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c2"
+    },
+    {
+     "farbe": "gold",
+     "feld": "c6"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e2"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e6"
+    },
+    {
+     "farbe": "gold",
+     "feld": "f3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "f5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "c4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d3"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Springer d4. Er erreicht acht Felder. Die eigenen Bauern c4, d3, d5 und e4 (grau) stören ihn nicht: Der Springer springt einfach über sie hinweg.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.7",
+    "0.9"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 184
+   },
+   "pruefsumme": "e2999dfe19c39785"
+  },
+  {
+   "id": "0.9",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Wie die Figuren ziehen",
+   "fen": "8/8/8/8/8/3p1p2/4P3/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "e3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    },
+    {
+     "farbe": "rot",
+     "feld": "d3"
+    },
+    {
+     "farbe": "rot",
+     "feld": "f3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Bauer e2. Er zieht geradeaus nach e3 oder – weil er noch auf seinem Startfeld steht – nach e4 (gold). Die schwarzen Bauern d3 und f3 schlägt er schräg vorwärts (rot).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.7",
+    "0.8"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 192
+   },
+   "pruefsumme": "e8efff799f9c1d1b"
+  },
+  {
+   "id": "0.10",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Schlagen, Schach, Matt und Patt",
+   "fen": "7k/6Q1/6K1/8/8/8/8/8 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "g7",
+     "nach": "h8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Matt. Schwarz am Zug. Die Dame g7 gibt Schach (roter Pfeil) und wird vom König g6 beschützt, darf also nicht geschlagen werden. Die Felder g8 und h7 (grau), auf die der König ausweichen könnte, sind angegriffen: Der König h8 (rot) kann weder ausweichen noch die Dame schlagen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.11"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 220
+   },
+   "pruefsumme": "0862be38f22ab5cd"
+  },
+  {
+   "id": "0.11",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Schlagen, Schach, Matt und Patt",
+   "fen": "7k/5Q2/6K1/8/8/8/8/8 b - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Patt. Schwarz am Zug. Gleiches Material, aber die Dame steht auf f7: Der König h8 (rot) steht ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "nicht",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " im Schach, doch g8, g7 und h7 (grau) sind angegriffen. Schwarz hat keinen legalen Zug – die Partie ist remis.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.10"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 229
+   },
+   "pruefsumme": "b55fdef6f2a06b99"
+  },
+  {
+   "id": "0.12",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Die Rochade",
+   "fen": "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e1",
+     "nach": "g1"
+    },
+    {
+     "farbe": "gold",
+     "von": "h1",
+     "nach": "f1"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "f1"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Vor der kurzen weißen Rochade, Weiß am Zug. Gold: die Wege von König und Turm. Grau: f1 und g1 müssen frei und unangegriffen sein.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.13"
+   ],
+   "beispiel": {
+    "id": "k00-a12",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 252
+   },
+   "pruefsumme": "c2aace00be504cb8"
+  },
+  {
+   "id": "0.13",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Die Rochade",
+   "fen": "r3k2r/8/8/8/8/8/8/R4RK1 b kq - 1 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "g1"
+    },
+    {
+     "farbe": "gold",
+     "feld": "f1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach der Rochade, Schwarz am Zug. Gold: Der König steht auf g1, der Turm auf f1.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.12"
+   ],
+   "beispiel": {
+    "id": "k00-a12",
+    "pfad": [
+     "O-O"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 259
+   },
+   "pruefsumme": "74a61b362750cc8d"
+  },
+  {
+   "id": "0.14",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Die Rochade",
+   "fen": "r3k2r/8/8/8/4b3/8/8/R3K2R w KQkq - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e1",
+     "nach": "c1"
+    },
+    {
+     "farbe": "gold",
+     "von": "a1",
+     "nach": "d1"
+    },
+    {
+     "farbe": "rot",
+     "von": "e4",
+     "nach": "b1"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "d1"
+    },
+    {
+     "farbe": "grau",
+     "feld": "c1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Vor der langen weißen Rochade, Weiß am Zug. Gold: die Wege von König und Turm. Grau: d1 und c1 müssen frei und unangegriffen sein. b1 muss nur frei sein: Der Läufer e4 greift das Feld an (roter Pfeil), trotzdem ist die Rochade erlaubt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.15"
+   ],
+   "beispiel": {
+    "id": "k00-a14",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 267
+   },
+   "pruefsumme": "93653a5c885babd8"
+  },
+  {
+   "id": "0.15",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Die Rochade",
+   "fen": "r3k2r/8/8/8/4b3/8/8/2KR3R b kq - 1 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "c1"
+    },
+    {
+     "farbe": "gold",
+     "feld": "d1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach der langen Rochade, Schwarz am Zug. Gold: Der König steht auf c1, der Turm auf d1.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.14"
+   ],
+   "beispiel": {
+    "id": "k00-a14",
+    "pfad": [
+     "O-O-O"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 275
+   },
+   "pruefsumme": "99b0c9e0c6e05426"
+  },
+  {
+   "id": "0.16",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "En passant",
+   "fen": "4k3/3p4/8/4P3/8/8/8/4K3 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d7",
+     "nach": "d5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug. Der Bauer d7 kann zwei Felder nach d5 ziehen (goldener Pfeil); Weiß besitzt einen Bauern auf e5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.17",
+    "0.18"
+   ],
+   "beispiel": {
+    "id": "k00-a16",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 302
+   },
+   "pruefsumme": "58512f84b43559cf"
+  },
+  {
+   "id": "0.17",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "En passant",
+   "fen": "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e5",
+     "nach": "d6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Der schwarze Bauer ist nach d5 gezogen, Weiß am Zug. Das rot markierte Feld d6 ist das Zielfeld des Schlages im Vorbeigehen – Weiß darf jetzt sofort mit dem Bauern e5 dorthin schlagen (goldener Pfeil), obwohl dort keine Figur steht. Vom Brett genommen wird der Bauer d5 (grau).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.16",
+    "0.18"
+   ],
+   "beispiel": {
+    "id": "k00-a16",
+    "pfad": [
+     "d5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 308
+   },
+   "pruefsumme": "bfa4887ef7bbeeda"
+  },
+  {
+   "id": "0.18",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "En passant",
+   "fen": "4k3/8/3P4/8/8/8/8/4K3 b - - 0 2",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "d5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach dem Schlag im Vorbeigehen, Schwarz am Zug. Der weiße Bauer steht auf d6; der schwarze Bauer d5 (graues Feld) wurde entfernt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.16",
+    "0.17"
+   ],
+   "beispiel": {
+    "id": "k00-a16",
+    "pfad": [
+     "d5",
+     "exd6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 316
+   },
+   "pruefsumme": "20651a7c481d53d7"
+  },
+  {
+   "id": "0.19",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Bauernumwandlung",
+   "fen": "4k3/P7/8/8/8/8/8/4K3 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a7",
+     "nach": "a8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Der weiße Bauer a7 erreicht im nächsten Zug die letzte Reihe (goldener Pfeil).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.20"
+   ],
+   "beispiel": {
+    "id": "k00-a19",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 334
+   },
+   "pruefsumme": "19abaeddce8ff91f"
+  },
+  {
+   "id": "0.20",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Bauernumwandlung",
+   "fen": "Q3k3/8/8/8/8/8/8/4K3 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "a8",
+     "nach": "e8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach der Umwandlung, Schwarz am Zug. Der Bauer ist auf a8 sofort zur Dame geworden und gibt entlang der achten Reihe Schach (roter Pfeil).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.19"
+   ],
+   "beispiel": {
+    "id": "k00-a19",
+    "pfad": [
+     "a8=Q+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 340
+   },
+   "pruefsumme": "db01ee3b9ffaf170"
+  },
+  {
+   "id": "0.21",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Bauernumwandlung",
+   "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e2",
+     "nach": "e4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. e4 (Schwarz am Zug)",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.22",
+    "0.23"
+   ],
+   "beispiel": {
+    "id": "k00-a21",
+    "pfad": [
+     "e4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 369
+   },
+   "pruefsumme": "c4515345021e27f5"
+  },
+  {
+   "id": "0.22",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Bauernumwandlung",
+   "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e7",
+     "nach": "e5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1... e5 (Weiß am Zug)",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.21",
+    "0.23"
+   ],
+   "beispiel": {
+    "id": "k00-a21",
+    "pfad": [
+     "e4",
+     "e5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 370
+   },
+   "pruefsumme": "c2db6920ad8e085f"
+  },
+  {
+   "id": "0.23",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Bauernumwandlung",
+   "fen": "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "g1",
+     "nach": "f3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 2. Sf3 (Schwarz am Zug)",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.21",
+    "0.22"
+   ],
+   "beispiel": {
+    "id": "k00-a21",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 371
+   },
+   "pruefsumme": "f56e8f13bfe32b5c"
+  },
+  {
+   "id": "0.24",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Bauernumwandlung",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b8",
+     "nach": "c6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 2... Sc6 (Weiß am Zug)",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.25"
+   ],
+   "beispiel": {
+    "id": "k00-a21",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 376
+   },
+   "pruefsumme": "681c75105f7b1478"
+  },
+  {
+   "id": "0.25",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Bauernumwandlung",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f1",
+     "nach": "b5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 3. Lb5 (Schwarz am Zug)",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "0.24"
+   ],
+   "beispiel": {
+    "id": "k00-a21",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bb5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 377
+   },
+   "pruefsumme": "d590e3e968693803"
+  },
+  {
+   "id": "0.26",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Sonderzeichen: Was ein Zug sonst noch verrät",
+   "fen": "r1bq1rk1/pppp1ppp/2n2n2/2b1p1B1/2B1P3/3P1N2/PPP2PPP/RN1Q1RK1 b - - 2 6",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Stellung nach 6. Lg5, Schwarz am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k00-a26",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "O-O",
+     "Nf6",
+     "d3",
+     "O-O",
+     "Bg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 532
+   },
+   "pruefsumme": "0e2144a4d93e099b"
+  },
+  {
+   "id": "0.27",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Sonderzeichen: Was ein Zug sonst noch verrät",
+   "fen": "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq d6 0 2",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Stellung A, Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [
+    "0.28",
+    "0.29"
+   ],
+   "beispiel": {
+    "id": "k00-a1",
+    "pfad": [
+     "e4",
+     "d5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 551
+   },
+   "pruefsumme": "75428f06fe126931"
+  },
+  {
+   "id": "0.28",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Sonderzeichen: Was ein Zug sonst noch verrät",
+   "fen": "rnbqkbnr/ppp1pppp/8/3P4/8/8/PPPP1PPP/RNBQKBNR b KQkq - 0 2",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Stellung B, Schwarz am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [
+    "0.27",
+    "0.29"
+   ],
+   "beispiel": {
+    "id": "k00-a1",
+    "pfad": [
+     "e4",
+     "d5",
+     "exd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 552
+   },
+   "pruefsumme": "4aac8ca4a6418d93"
+  },
+  {
+   "id": "0.29",
+   "auflage": 1,
+   "kapitel": 0,
+   "abschnitt": null,
+   "unterabschnitt": "Sonderzeichen: Was ein Zug sonst noch verrät",
+   "fen": "rnb1kbnr/ppp1pppp/8/3q4/8/8/PPPP1PPP/RNBQKBNR w KQkq - 0 3",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Stellung C, Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [
+    "0.27",
+    "0.28"
+   ],
+   "beispiel": {
+    "id": "k00-a1",
+    "pfad": [
+     "e4",
+     "d5",
+     "exd5",
+     "Qxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 553
+   },
+   "pruefsumme": "0c925c665ac31c05"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:notation-lesen-1",
+   "nummer": 1,
+   "kapitel": 0,
+   "titel": null,
+   "abbildungen": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Übersetze ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 Sc6 3. Lc4 Lc5"
+    },
+    {
+     "art": "text",
+     "text": " in einen vollständigen deutschen Satz oder spiele sie auf einem Schachbrett nach.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Zug 1: Weiß zieht den Bauern nach e4, Schwarz nach e5. Zug 2: Weiß zieht den Springer nach f3, Schwarz nach c6. Zug 3: Weiß zieht den Läufer nach c4, Schwarz nach c5. Merke dir: Der Buchstabe nennt die Figur, das Feld dahinter ihr Ziel, und ein Bauernzug hat keinen Buchstaben.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 520
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Notation lesen",
+    "text": "Jedes Zugpaar besteht aus einem weißen und einem schwarzen Zug: Bauern nach e4 und e5, Springer nach f3 und c6, Läufer nach c4 und c5. Der Großbuchstabe nennt die Figur, das Feld dahinter ihr Ziel; ein Bauernzug hat keinen Buchstaben."
+   }
+  },
+  {
+   "id": "ueb:notation-lesen-2",
+   "nummer": 2,
+   "kapitel": 0,
+   "titel": null,
+   "abbildungen": [
+    "0.26"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Die Partie aus Übung 1 wird mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. O-O Sf6 5. d3 O-O 6. Lg5"
+    },
+    {
+     "art": "text",
+     "text": " fortgesetzt.",
+     "stil": "normal"
+    },
+    {
+     "art": "absatz",
+     "text": "¶"
+    },
+    {
+     "art": "text",
+     "text": "Schreibe die nächsten drei Halbzüge mit Zugnummern auf: Schwarz zieht den Bauern von h7 nach h6, der weiße Läufer schlägt den Springer auf f6, und die schwarze Dame schlägt zurück. Danach will Weiß seinen Springer von b1 nach d2 ziehen. Warum genügt dafür die Schreibweise ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Sd2"
+    },
+    {
+     "art": "text",
+     "text": " nicht?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "6... h6 7. Lxf6 Dxf6"
+    },
+    {
+     "art": "text",
+     "text": ". Da die Zeile mit einem schwarzen Zug beginnt, stehen hinter der Zugnummer drei Punkte, und beide Schlagzüge tragen ein x. Nach d2 kann außer dem Springer b1 auch der Springer f3 ziehen, weswegen die Notation sagen muss, welcher gemeint ist: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Sbd2"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Können zwei gleiche Figuren auf dasselbe Feld ziehen, nennst du zusätzlich die Linie, von der die Figur kommt, und bei gleicher Linie die Reihe.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 527
+   },
+   "erklaerung": {
+    "loesung": "6... h6 7. Lxf6 Dxf6",
+    "akzeptiert": [],
+    "motiv": "Notation schreiben",
+    "text": "Ein Zug von Schwarz am Zeilenanfang bekommt drei Punkte hinter der Nummer, ein Schlagzug ein x. Weil beide Springer nach d2 ziehen könnten, heißt der Zug 8. Sbd2: Die Linie b sagt, welcher Springer gemeint ist."
+   }
+  },
+  {
+   "id": "ueb:notation-schreiben",
+   "nummer": 3,
+   "kapitel": 0,
+   "titel": null,
+   "abbildungen": [
+    "0.27",
+    "0.28",
+    "0.29"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Die drei Stellungen A, B und C entstehen nacheinander aus der Grundaufstellung (",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 0.1",
+     "abbildung": "0.1"
+    },
+    {
+     "art": "text",
+     "text": "). Schreibe die Zugfolge, die zu ihnen führt, mit Zugnummern in algebraischer Notation auf. Achte besonders darauf, wie ein Bauernschlag notiert wird.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. e4 d5 2. exd5 Dxd5"
+    },
+    {
+     "art": "text",
+     "text": ". Stellung A entsteht nach dem ersten Zugpaar: Beide Seiten haben einen Bauern um zwei Felder vorgerückt. In Stellung B hat der weiße Bauer von der e-Linie aus auf d5 geschlagen. Der Zug heißt deshalb ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. exd5"
+    },
+    {
+     "art": "text",
+     "text": " und nicht etwa ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. xd5"
+    },
+    {
+     "art": "text",
+     "text": ". In Stellung C hat die schwarze Dame auf d5 zurückgeschlagen (",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Dxd5"
+    },
+    {
+     "art": "text",
+     "text": "), und diese Eröffnung heißt Skandinavische Verteidigung. Merke dir: Schlägt ein Bauer, steht vor dem x die Linie, von der er kommt.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap00_notation.tex",
+    "zeile": 542
+   },
+   "erklaerung": {
+    "loesung": "1. e4 d5 2. exd5 Dxd5",
+    "akzeptiert": [],
+    "motiv": "Bauernschlag notieren",
+    "text": "Die Stellungen entstehen durch 1. e4 d5 2. exd5 Dxd5, die Skandinavische Verteidigung. Schlägt ein Bauer, steht vor dem x die Linie, von der er kommt: 2. exd5, nicht 2. xd5."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k00-a1",
+   "kapitel": 0,
+   "abschnitt": "Übung 3",
+   "titel": "Übung: Notation schreiben",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "d5",
+       "zeichen": "",
+       "abbildungen": [
+        "0.27"
+       ],
+       "weiter": [
+        {
+         "zug": "exd5",
+         "zeichen": "",
+         "abbildungen": [
+          "0.28"
+         ],
+         "weiter": [
+          {
+           "zug": "Qxd5",
+           "zeichen": "",
+           "abbildungen": [
+            "0.29"
+           ],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "0.1",
+     "pfad": []
+    },
+    {
+     "nummer": "0.27",
+     "pfad": [
+      "e4",
+      "d5"
+     ]
+    },
+    {
+     "nummer": "0.28",
+     "pfad": [
+      "e4",
+      "d5",
+      "exd5"
+     ]
+    },
+    {
+     "nummer": "0.29",
+     "pfad": [
+      "e4",
+      "d5",
+      "exd5",
+      "Qxd5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k00-a12",
+   "kapitel": 0,
+   "abschnitt": null,
+   "titel": "Die Rochade",
+   "startFen": "r3k2r/8/8/8/8/8/8/R3K2R w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "O-O",
+     "zeichen": "",
+     "abbildungen": [
+      "0.13"
+     ],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "0.12",
+     "pfad": []
+    },
+    {
+     "nummer": "0.13",
+     "pfad": [
+      "O-O"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k00-a14",
+   "kapitel": 0,
+   "abschnitt": null,
+   "titel": "Die Rochade",
+   "startFen": "r3k2r/8/8/8/4b3/8/8/R3K2R w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "O-O-O",
+     "zeichen": "",
+     "abbildungen": [
+      "0.15"
+     ],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "0.14",
+     "pfad": []
+    },
+    {
+     "nummer": "0.15",
+     "pfad": [
+      "O-O-O"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k00-a16",
+   "kapitel": 0,
+   "abschnitt": null,
+   "titel": "En passant",
+   "startFen": "4k3/3p4/8/4P3/8/8/8/4K3 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "d5",
+     "zeichen": "",
+     "abbildungen": [
+      "0.17"
+     ],
+     "weiter": [
+      {
+       "zug": "exd6",
+       "zeichen": "",
+       "abbildungen": [
+        "0.18"
+       ],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "0.16",
+     "pfad": []
+    },
+    {
+     "nummer": "0.17",
+     "pfad": [
+      "d5"
+     ]
+    },
+    {
+     "nummer": "0.18",
+     "pfad": [
+      "d5",
+      "exd6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k00-a19",
+   "kapitel": 0,
+   "abschnitt": null,
+   "titel": "Bauernumwandlung",
+   "startFen": "4k3/P7/8/8/8/8/8/4K3 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "a8=Q+",
+     "zeichen": "",
+     "abbildungen": [
+      "0.20"
+     ],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "0.19",
+     "pfad": []
+    },
+    {
+     "nummer": "0.20",
+     "pfad": [
+      "a8=Q+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k00-a21",
+   "kapitel": 0,
+   "abschnitt": null,
+   "titel": "Wie liest man Schachzüge?",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [
+      "0.21"
+     ],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [
+        "0.22"
+       ],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [
+          "0.23"
+         ],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [
+            "0.24"
+           ],
+           "weiter": [
+            {
+             "zug": "Bb5",
+             "zeichen": "",
+             "abbildungen": [
+              "0.25"
+             ],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "0.21",
+     "pfad": [
+      "e4"
+     ]
+    },
+    {
+     "nummer": "0.22",
+     "pfad": [
+      "e4",
+      "e5"
+     ]
+    },
+    {
+     "nummer": "0.23",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3"
+     ]
+    },
+    {
+     "nummer": "0.24",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6"
+     ]
+    },
+    {
+     "nummer": "0.25",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k00-a26",
+   "kapitel": 0,
+   "abschnitt": "Übung 2",
+   "titel": "Übung: Notation lesen",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "O-O",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "O-O",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Bg5",
+                         "zeichen": "",
+                         "abbildungen": [
+                          "0.26"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "h6",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bxf6",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Qxf6",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Nbd2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": []
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "0.26",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "O-O",
+      "Nf6",
+      "d3",
+      "O-O",
+      "Bg5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  }
+ ]
+}

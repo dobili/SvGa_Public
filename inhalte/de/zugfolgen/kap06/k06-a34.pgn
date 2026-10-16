@@ -1,0 +1,16 @@
+[Event "Kapitel 6: Übungen"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r4rk1/pp1b1ppp/2nqpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R2Q1RK1 w - - 4 10"]
+[SetUp "1"]
+[Beispiel "k06-a34"]
+[Kapitel "6"]
+[Abschnitt "Übung 27"]
+[Status "freigegeben"]
+[Abbildungen "6.34"]
+
+{ Abb. 6.34 } 10. Bxh7+ Nxh7 *

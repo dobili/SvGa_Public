@@ -1,0 +1,142 @@
+{
+  "kapitel": 9,
+  "titel": "Endspiel-Vertiefung",
+  "adresse": "/training/kap09/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Geführte Übungsreihen zunächst.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Unter „Lernen → Trainieren“ findest du die Übungsreihen „Grundlegende Turmendspiele“ bis „Praktische Turmendspiele“, darunter Lucena und Philidor. Spiele sie durch, bevor du die Bilder frei gegen den Computer ausspielst.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Bilder ausspielen, dann verschieben.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Gib nacheinander ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 9.3",
+          "abbildung": "9.3"
+        },
+        {
+          "art": "text",
+          "text": " (Philidor), 9.8 (Lucena), 9.15 (Vancura) und 9.28 (Dame gegen Bauer) mit „Stellung aufbauen“ ein und spiele jede mit „Von hier aus weiterspielen“ gegen den Computer zu Ende, einmal mit Weiß und einmal mit Schwarz. Prüfe beim Farbwechsel das Zugrecht. Mache im Anschluss die Verschiebeprobe: Setze den schwarzen König eine Linie weiter und prüfe, ob dein Plan noch trägt.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Am echten Brett zu zweit.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue mit einem Partner Philidor und Lucena auf einem echten Brett auf. Der Verteidiger darf nach jedem verlorenen Versuch zurücksetzen. Tauscht die Seiten, sobald jeder das Bild dreimal hintereinander gehalten oder gewonnen hat.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Nicht nur das Ergebnis, sondern den Zug.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Prüfe jede unsichere Stellung aus diesem Kapitel und aus deinen eigenen Partien mit der Tablebase im Analysebrett. Schau dabei nicht nur auf Gewinn oder Remis, sondern darauf, welche Züge halten und welche verlieren. Die Seite ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "syzygy-tables.info",
+          "ziel": "https://syzygy-tables.info"
+        },
+        {
+          "art": "text",
+          "text": " zeigt das für jeden Zug einzeln.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Aufgaben nach Endspieltyp.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Löse unter „Aufgabenthemen“ je einen Block „Turmendspiel“, „Damenendspiel“, „Läuferendspiel“ und „Springerendspiel“. Frage vor dem ersten Zug: Welches Erkennungsbild aus Tabelle 9.1 liegt vor?",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Zug erraten im Meisterendspiel.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Lade die Turmendspiele Capablanca–Tartakower und Botwinnik–Fischer aus Kapitel 11 mit „Partie importieren“ und rate ab dem Übergang ins Endspiel jeden Zug, bevor du ihn aufdeckst. Wie das Endspieltraining in deine Woche passt, steht in Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 820
+  },
+  "stand": "2026-10-16"
+}

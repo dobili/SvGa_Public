@@ -1,0 +1,14 @@
+[Event "Kapitel 4: Die Kieninger-Falle im Budapester Gambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k04-a20"]
+[Kapitel "4"]
+[Abschnitt "4.6"]
+[Status "freigegeben"]
+[Abbildungen "4.20 4.21 4.22"]
+
+1. d4 Nf6 2. c4 e5 3. dxe5 Ng4 4. Bf4 Nc6 5. Nf3 Bb4+ 6. Nbd2 { Abb. 4.20 } 6... Qe7 7. a3 Ngxe5 $1 { Abb. 4.21 } 8. axb4 $4 ( 8. e3 ) 8... Nd3# $1 { Abb. 4.22 } *

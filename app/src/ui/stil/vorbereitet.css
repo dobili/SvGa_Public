@@ -1,0 +1,104 @@
+/*
+ * Stil für vorbereitete Texte (AP 14): Plakette „Entwurf“ (seit 0.2.33 ohne „vorbereitet“),
+ * gestufte Hinweise (Spielhinweis), Warum-Frage zum Aufklappen mit Antwortknöpfen (0.2.27). Farben aus basis.css;
+ * richtig grün, falsch rot, jeweils mit Zeichen, damit es auch ohne Farbsehen lesbar bleibt
+ * (Konzept 10.3).
+ */
+
+.plakette-entwurf {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 10px;
+  white-space: nowrap;
+}
+
+.plakette-entwurf {
+  border: 1px dashed var(--rot-text);
+  color: var(--rot-text);
+}
+
+.hinweisliste {
+  margin: 0;
+  padding-left: calc(var(--raster) * 2.5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.antworten {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.antwort {
+  min-height: var(--tippflaeche);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 1.5px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+}
+
+.antwort:disabled {
+  opacity: 1;
+}
+
+.antwort-richtig {
+  border-color: var(--gruen-text);
+  color: var(--gruen-text);
+  font-weight: 700;
+}
+
+.antwort-richtig::before {
+  content: "✓ ";
+}
+
+.antwort-falsch {
+  border-color: var(--rot-text);
+  border-style: dashed;
+  color: var(--rot-text);
+}
+
+.antwort-falsch::before {
+  content: "✗ ";
+}
+
+/* Warum-Frage zugeklappt (Wunsch des Autors, 0.2.27): Die ganze Kopfzeile ist Tippfläche. */
+.warum-frage > summary {
+  min-height: var(--tippflaeche);
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Zugeklappt kein Abstand zum verborgenen Inhalt, sonst bleibt unten ein Rand stehen. */
+.warum-frage:not([open]) {
+  gap: 0;
+}
+
+.warum-frage > summary::-webkit-details-marker {
+  display: none;
+}
+
+.warum-frage > summary h2 {
+  flex: 1;
+}
+
+.warum-frage .aufklapper {
+  flex: none;
+  color: var(--text-leise);
+  transition: transform 0.15s ease;
+}
+
+.warum-frage[open] .aufklapper {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .warum-frage .aufklapper {
+    transition: none;
+  }
+}

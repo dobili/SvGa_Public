@@ -1,0 +1,199 @@
+{
+  "kapitel": 1,
+  "titel": "Grundprinzipien des Schachs",
+  "adresse": "/training/kap01/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Röntgen-Regel in der eigenen Partie.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele eine langsame Partie (mindestens 15 Minuten plus 10 Sekunden pro Zug) und sprich vor ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "jedem",
+          "stil": "kursiv"
+        },
+        {
+          "art": "text",
+          "text": " Zug innerlich die vier Punkte der Schach-Röntgen-Regel durch. Lass die Partie im Anschluss von der Computer-Analyse auswerten und zähle lediglich eine einzige Zahl: die Anzahl deiner groben Patzer. Schreibe zum schlimmsten auf, welche der vier Fragen ihn verhindert hätte.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Muster gezielt üben.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Löse unter „Aufgabenthemen“ je zwanzig Aufgaben zu „Hängende Figur“ (eine ungedeckte Figur), „Gabel“ und „Angriff auf f2 oder f7“, da zwanzig Aufgaben zu demselben Motiv das Bild schneller einprägen als zweihundert gemischte.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Zählen statt hoffen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele eine eigene Partie im Analysebrett nach und halte vor jedem Schlagabtausch auf einem umkämpften Feld an: Zähle Angreifer und Verteidiger, schreibe ihre Werte daneben und vergleiche erst dann mit dem, was in der Partie geschah.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Eröffnungsprinzipien überprüfen statt auswendig lernen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Die Eröffnungsdatenbank im Analysebrett (Datenbank „Lichess“) zeigt zu jeder Stellung, welche Züge in der Praxis gespielt werden. Spiele deine ersten zehn Züge aus einer eigenen Partie nach und prüfe bei jeder Abweichung von den häufigsten Zügen: Welches der drei Eröffnungsziele verletzt mein Zug?",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Schäfermatt und griechisches Geschenk von beiden Seiten.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue die Stellung aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 1.15",
+          "abbildung": "1.15"
+        },
+        {
+          "art": "text",
+          "text": " mit „Stellung aufbauen“ nach und spiele sie über „Von hier aus weiterspielen“ fünfmal gegen den Computer, von beiden Seiten, wonach dir diese Falle nicht mehr passieren kann. Führe im Anschluss das Opfer aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 1.37",
+          "abbildung": "1.37"
+        },
+        {
+          "art": "text",
+          "text": " gegen den Computer zu Ende und prüfe an ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 1.36",
+          "abbildung": "1.36"
+        },
+        {
+          "art": "text",
+          "text": ", dass der Angriff mit ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "1. Sg5"
+        },
+        {
+          "art": "text",
+          "text": " dort scheitert. Die Übungsreihe „Griechisches Geschenk“ unter „Lernen → Trainieren“ zeigt weitere Stellungen dieser Art.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Am echten Brett.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele den London-Aufbau bis ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "9. De2"
+        },
+        {
+          "art": "text",
+          "text": " (",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 1.7",
+          "abbildung": "1.7"
+        },
+        {
+          "art": "text",
+          "text": ") und die Abwehr ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "3... g6 4. Df3 Sf6"
+        },
+        {
+          "art": "text",
+          "text": " gegen das Schäfermatt je fünfmal auf einem echten Brett nach, ohne ins Buch zu schauen.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 916
+  },
+  "stand": "2026-10-16"
+}

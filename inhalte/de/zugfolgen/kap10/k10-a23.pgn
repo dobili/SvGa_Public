@@ -1,0 +1,16 @@
+[Event "Kapitel 10: Rückblick: Studien und Kuriositäten"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "7n/5P1k/4BKpp/8/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k10-a23"]
+[Kapitel "10"]
+[Abschnitt "Übung 73"]
+[Status "freigegeben"]
+[Abbildungen "10.23"]
+
+{ Abb. 10.23 } 1. f8=N# ( 1. f8=Q $2 ) *

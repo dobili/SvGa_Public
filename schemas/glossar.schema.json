@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/glossar.schema.json",
+  "title": "Glossar",
+  "description": "Das Glossar des Buches (Anhang) für den Bereich Nachschlagen (Konzept 4.4).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "eintraege"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "eintraege": { "type": "array", "items": { "$ref": "#/$defs/eintrag" } }
+  },
+  "$defs": {
+    "eintrag": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["begriff", "text", "stellen", "verweise"],
+      "properties": {
+        "begriff": { "description": "wie im Glossar, etwa „Bauernhebel (Hebel)“", "type": "string" },
+        "text": { "$ref": "text.schema.json#/$defs/textteile" },
+        "stellen": {
+          "description": "Stellen im Buch, die den Begriff erklären (aus \\glseite)",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["anker", "kapitel", "abschnitt", "abbildung"],
+            "properties": {
+              "anker": { "type": "string" },
+              "kapitel": { "type": "integer", "minimum": 0, "maximum": 12 },
+              "abschnitt": { "type": ["string", "null"] },
+              "abbildung": { "description": "nächste Abbildung an der Stelle, zum Öffnen in der App", "type": ["string", "null"] }
+            }
+          }
+        },
+        "verweise": { "description": "Querverweise (Pfeile) auf andere Einträge", "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

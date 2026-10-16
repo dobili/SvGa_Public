@@ -1,0 +1,249 @@
+{
+  "kapitel": 11,
+  "titel": "Beispielpartien: Wie die Konzepte zusammenwirken",
+  "adresse": "/training/kap11/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Zug erraten statt Zug lesen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Lege die Partien dieses Kapitels unter „Studien“ als Kapitel an: Gib die Züge am Analysebrett ein oder füge die Notation aus einer Partiendatenbank mit „Partie importieren“ ein. Stelle das Kapitel auf „Nächste Züge ausblenden“. Schreibe vor jedem Zug des Siegers deinen eigenen Vorschlag auf und blättere erst dann weiter. Beginne mit Fischer–Petrosjan ab ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 11.43",
+          "abbildung": "11.43"
+        },
+        {
+          "art": "text",
+          "text": ", denn dort gibt es wenig Taktik und viele Planzüge. Die Computerbewertung bleibt beim ersten Durchgang aus.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Schlüsselstellung selbst ausspielen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele mit „Von hier aus weiterspielen“ gegen den Computer: ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 11.57",
+          "abbildung": "11.57"
+        },
+        {
+          "art": "text",
+          "text": " mit Weiß (führe den Minderheitsangriff selbst durch), ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 11.70",
+          "abbildung": "11.70"
+        },
+        {
+          "art": "text",
+          "text": " mit Weiß (bringe den Springer nach e5 und öffne die f-Linie), ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 11.16",
+          "abbildung": "11.16"
+        },
+        {
+          "art": "text",
+          "text": " mit Weiß (setze ohne Hilfe matt) und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 11.91",
+          "abbildung": "11.91"
+        },
+        {
+          "art": "text",
+          "text": " mit Weiß (verteidige dich, diesmal mit ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "43. Tc7"
+        },
+        {
+          "art": "text",
+          "text": "). Weicht dein Plan vom Original ab, spiele die Partie bis zu dieser Stelle noch einmal nach.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Bilanz mitschreiben, am echten Brett.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele die Immergrüne Partie auf einem echten Brett nach und schreibe nach dem 11. Zug von Weiß und dem 16. Zug von Schwarz die Faktorenbilanz auf, bevor du ins Buch siehst. Stelle im Anschluss die Mattbilder aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 11.9",
+          "abbildung": "11.9"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "11.21",
+          "abbildung": "11.21"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "11.31",
+          "abbildung": "11.31"
+        },
+        {
+          "art": "text",
+          "text": " aus dem Gedächtnis auf und vergleiche sie mit dem Diagramm.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Tablebase als Schiedsrichter.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue im Analysebrett die Stellung nach ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "55. Txb5"
+        },
+        {
+          "art": "text",
+          "text": " aus Botwinnik–Fischer auf und die Stellung nach ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "47. Kxd5"
+        },
+        {
+          "art": "text",
+          "text": " aus der Variante zu ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 11.90",
+          "abbildung": "11.90"
+        },
+        {
+          "art": "text",
+          "text": ". Beide haben höchstens sieben Figuren, also kennt die Tablebase das Ergebnis: Remis im ersten Fall, Gewinn für Weiß im zweiten. Spiele die Gewinnführung gegen den Computer zu Ende.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Motive und Strukturen der Partien.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Passend zu den Partien findest du unter „Aufgabenthemen“: „Fesselung“ und „Ablenkung“ (Morphy), „Doppelschach“ und „Abzugsschach“ (Colle, Lasker, Anderssen), „Angriff auf den Königsflügel“ (Karpow–Kortschnoi) und „Turmendspiel“ (Capablanca, Botwinnik). Für die Pläne nimmst du die Eröffnungsdatenbank: Stelle ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 11.43",
+          "abbildung": "11.43"
+        },
+        {
+          "art": "text",
+          "text": " oder die Schlussstellung deiner Eröffnung aus Kapitel 2 im Analysebrett auf und wähle die Datenbank „Masters“, die Turnierpartien seit 1952 nennt, in denen genau diese Stellung vorkam. Spiele zwei davon nach und prüfe, ob der Sieger den Plan verfolgt, den dein Skelett-Röntgen vorhersagt.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die eigene Partie danebenlegen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Fordere für eine eigene Partie die Computer-Analyse an und gehe „Lerne aus deinen Fehlern“ durch. Für Brettpartien nimmst du dein Partieformular. Suche im Anschluss die Partie dieses Kapitels, deren Thema zu deinem größten Fehler passt, und spiele sie noch einmal nach. Wie du Meisterpartien in deine Trainingswoche einbaust, zeigt Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap11_beispielpartien.tex",
+    "zeile": 1475
+  },
+  "stand": "2026-10-16"
+}

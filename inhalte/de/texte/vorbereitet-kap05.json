@@ -1,0 +1,573 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 5,
+ "texte": [
+  {
+   "abbildung": "5.2",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Was hat der Bauer mit dem Zug e2–e4 hinten aufgegeben?",
+     "antworten": [
+      "Nichts: Er deckt jetzt einfach andere Felder.",
+      "Die Felder d3 und f3: Die deckt er nie wieder, denn Bauern ziehen nie zurück.",
+      "Die Felder d5 und f5."
+     ],
+     "richtig": 1,
+     "erklaerung": "Vorn gewinnt der Bauer d5 und f5, hinten verliert er d3 und f3 für immer. Jeder Bauernzug ist endgültig."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.3",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-richtung",
+     "hinweise": [
+      "Wohin zeigen die beiden Bauernketten?",
+      "Schau auf die Basis der weißen Kette d4–e5.",
+      "Die schwarze Kette e6–d5 zeigt zum Damenflügel; der Hebel c7–c5 trifft die Basis d4."
+     ],
+     "text": "Die schwarze Kette zeigt zum Damenflügel, also spielt Schwarz dort. Der passende Hebel ist c7–c5 gegen die ungestützte Basis d4."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3... c5",
+     "frage": "Warum greift Schwarz mit 3... c5 gerade den Bauern d4 an?",
+     "antworten": [
+      "d4 ist die Basis der weißen Kette: Fällt sie, verliert auch e5 seinen Halt.",
+      "Der Bauer c5 soll schnell zur Dame werden.",
+      "Der Zug öffnet dem Läufer c8 die Diagonale."
+     ],
+     "richtig": 0,
+     "erklaerung": "Ketten greift man an der Basis an. Dazu erobert c5 die Felder b4 und d4 und öffnet der Dame d8 den Weg."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.6",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-vorher",
+     "hinweise": [
+      "Was hat der letzte schwarze Bauernzug hinten aufgegeben?",
+      "Schau auf die Felder f6 und h6.",
+      "h6 kann kein schwarzer Bauer mehr decken; f6 deckt noch der Bauer e7."
+     ],
+     "text": "Mit ...g6 deckt der Bauer nun f5 und h5, gibt aber f6 und h6 auf. h6 wird zum Loch, f6 hält vorerst der Bauer e7. Dafür hat der Läufer f8 freie Bahn."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist h6 jetzt ein Loch, f6 aber nicht?",
+     "antworten": [
+      "Weil h6 am Rand liegt.",
+      "Weil Weiß h6 schon mit einem Bauern angreift.",
+      "Nur der g-Bauer konnte h6 je decken; f6 kann der Bauer e7 noch decken."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Loch ist ein Feld, das kein eigener Bauer mehr decken kann. Für h6 kam nur der g-Bauer in Frage."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.8",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-felder",
+     "hinweise": [
+      "Suche ein Feld im schwarzen Lager, das kein schwarzer Bauer mehr angreifen kann.",
+      "Schau auf das Feld d5 vor dem Bauern d6.",
+      "d5 ist ein Vorposten: Der Bauer e4 stützt ihn, kein schwarzer Bauer kann ihn vertreiben, der Springer c3 erreicht ihn."
+     ],
+     "text": "d5 ist ein Loch im schwarzen Lager und der Vorposten für Weiß. Der Bauer e4 stützt dort eine Figur, der Springer c3 kann hinziehen."
+    },
+    {
+     "werkzeug": "k5-bauern",
+     "hinweise": [
+      "Welcher schwarze Bauer besteht den Deckungstest nicht?",
+      "Schau auf die d-Linie.",
+      "d6 ist rückständig: Der c- und der e-Bauer stehen schon vor ihm, vor ihm liegt das Loch d5."
+     ],
+     "text": "Der Bauer d6 ist rückständig. Auf der halboffenen d-Linie ist er das Ziel für die weißen Türme."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist d5 für den Springer c3 ein so gutes Ziel?",
+     "antworten": [
+      "Auf d5 kann ihn keine schwarze Figur angreifen.",
+      "Kein schwarzer Bauer kann ihn dort je vertreiben, und e4 stützt ihn.",
+      "Von d5 aus setzt er sofort matt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Figuren kann Schwarz tauschen, aber keinen Bauern mehr gegen d5 schicken. Ein gestützter Springer dort bleibt lange stehen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.11",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-vorher",
+     "hinweise": [
+      "Prüfe, was der nächste weiße Bauernzug hinten aufgibt.",
+      "Schau auf die Felder f3 und h3 und auf die Diagonale e4–h1.",
+      "Nach g3 deckt kein Bauer mehr f3 und h3, und Dxe4+ trifft König und Turm h1."
+     ],
+     "text": "g3 wehrt das Schach ab, gibt aber f3 und h3 für immer auf. Die Diagonale zum Turm h1 ist dann offen: Dxe4+ greift König und Turm zugleich an."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "4. g3",
+     "frage": "Warum rettet 4. g3 Weiß nicht?",
+     "antworten": [
+      "Die Dame schlägt danach einfach den Bauern g3.",
+      "Nach 4... Dxe4+ greift die Dame König und Turm h1 zugleich an.",
+      "Schwarz setzt sofort mit dem Läufer auf f2 matt."
+     ],
+     "richtig": 1,
+     "erklaerung": "g3 sperrt die Diagonale h4–e1, öffnet aber die Diagonale e4–h1. Dxe4+ ist Schach, danach fällt der Turm h1."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.13",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-felder",
+     "hinweise": [
+      "Sieh dir die Bauern vor dem weißen König an.",
+      "Vergleiche mit dem Grundreihenmatt: Welcher Bauer ist gezogen?",
+      "h2–h3 hat dem König das Fluchtfeld h2 gegeben; zugleich kann h3 später ein Haken für ...g5–g4 werden."
+     ],
+     "text": "Das Luftloch h3 schützt vor dem Grundreihenmatt. Der Preis: Der vorgerückte Bauer h3 kann später zum Haken für einen gegnerischen Bauernangriff werden."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist der Turmzug nach e1 hier kein Matt?",
+     "antworten": [
+      "Der König kann den Turm e1 schlagen.",
+      "Der Bauer f2 kann sich dazwischenstellen.",
+      "Der Bauer h3 hat ein Luftloch geschaffen: Der König flieht nach h2."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ohne Luftloch sperren die eigenen Bauern den König ein. Mit h3 ist h2 frei, und aus dem Matt wird ein harmloses Schach."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.14",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-vorher",
+     "hinweise": [
+      "Prüfe beim nächsten Bauernzug, was er vorn gewinnt.",
+      "Schau auf das Feld b5.",
+      "a4 kontrolliert b5: Der Vorstoß ...b5 und danach ...b4 gegen den Springer c3 wird schwer."
+     ],
+     "text": "a4 erobert das Feld b5 und öffnet dem Turm a1 die a-Linie. Damit bremst Weiß den Vorstoß ...b5–b4, der den Wächter c3 von d5 vertreiben würde."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "11. a4",
+     "frage": "Warum spielt Weiß 11. a4?",
+     "antworten": [
+      "Um mit a4–a5 einen Freibauern zu bilden.",
+      "Um den Läufer e6 anzugreifen.",
+      "Es bremst ...b5 und ...b4, die den Springer c3 von d5 vertreiben würden."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Springer c3 bewacht den Vorposten d5. Mit a4 schützt Weiß diesen Wächter vor dem schwarzen b-Bauern."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.16",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-bauern",
+     "hinweise": [
+      "Mach den Deckungstest für die weißen Bauern am Damenflügel.",
+      "Schau auf die c-Linie und den Bauern a3.",
+      "c3 und c4 sind Doppelbauern, a3 ist isoliert: drei Schwächen."
+     ],
+     "text": "Weiß hat drei schwache Bauern: die Doppelbauern c3 und c4 und den Isolani a3. Dafür besitzt Weiß das Läuferpaar."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum nimmt Weiß die Doppelbauern in Kauf?",
+     "antworten": [
+      "Als Ausgleich hat Weiß das Läuferpaar.",
+      "Doppelbauern sind in der Eröffnung immer stark.",
+      "Schwarz kann diese Bauern nie angreifen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Schwarz hat seinen Läufer gegen den Springer c3 gegeben. Weiß tauscht eine Bauernschwäche gegen das Läuferpaar ein."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.17",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-bauern",
+     "hinweise": [
+      "Welcher weiße Bauer hat keine Nachbarn?",
+      "Schau auf die d-Linie.",
+      "d4 ist ein Isolani: Kein weißer Bauer kann ihn decken, und das Feld d5 davor kann kein weißer Bauer angreifen."
+     ],
+     "text": "Der Bauer d4 ist ein Isolani. Das Feld d5 davor ist für Schwarz sicher: Dort gehört eine schwarze Figur hin, am besten ein Springer."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Welches Feld ist für Schwarz gegen den Isolani besonders wertvoll?",
+     "antworten": [
+      "e5",
+      "c5",
+      "d5, das Feld direkt vor dem Isolani"
+     ],
+     "richtig": 2,
+     "erklaerung": "Kein weißer Bauer kann d5 angreifen. Eine Figur dort blockiert den Isolani und steht sicher; c5 und e5 greift der Bauer d4 dagegen an."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.21",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-vorher",
+     "hinweise": [
+      "Prüfe, was der nächste Bauernzug beim Gegner anrichtet.",
+      "Schau auf die schwarzen Bauern c5 und d5 nach dem Tausch.",
+      "Nach dxc5 bxc5 stehen c5 und d5 nebeneinander, ohne Bauern auf der b- und e-Linie: hängende Bauern."
+     ],
+     "text": "dxc5 erobert b6 und d6 und schafft eine Schwäche beim Gegner. Nach dem Zurückschlagen mit dem b-Bauern hängen c5 und d5."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "12. dxc5",
+     "frage": "Warum tauscht Weiß mit 12. dxc5?",
+     "antworten": [
+      "Um selbst einen Freibauern auf c5 zu behalten.",
+      "Um die Lage zu klären: Nach bxc5 hat Weiß die hängenden Bauern als Ziel.",
+      "Um die e-Linie für den Turm zu öffnen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Hängende Bauern decken sich nicht direkt. Weiß greift sie mit Figuren über die halboffenen c- und d-Linien an."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.22",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-bauern",
+     "hinweise": [
+      "Mach den Deckungstest für die schwarzen Bauern im Zentrum.",
+      "Schau auf c5 und d5 und auf den Bauern a7.",
+      "c5 und d5 sind hängende Bauern; dazu ist a7 isoliert."
+     ],
+     "text": "c5 und d5 bilden ein hängendes Paar: Sie stehen nebeneinander auf halboffenen Linien und decken sich nicht direkt. Dazu ist a7 ein Isolani."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum heißen c5 und d5 hängende Bauern?",
+     "antworten": [
+      "Sie stehen nebeneinander ohne Bauern auf der b- und e-Linie und decken sich nicht direkt.",
+      "Sie sind beide an den König gefesselt.",
+      "Sie stehen schon tief in der gegnerischen Hälfte."
+     ],
+     "richtig": 0,
+     "erklaerung": "Neben dem Paar steht kein eigener Bauer mehr. Rückt einer vor, bleibt der andere oft schwach zurück."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.23",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-figuren",
+     "hinweise": [
+      "Wo finden die schwarzen Türme Arbeit?",
+      "Schau auf die a- und die b-Linie.",
+      "Beide Linien sind für Schwarz halboffen; an ihrem Ende stehen die Ziele a2 und b2."
+     ],
+     "text": "Für den Bauern hat Schwarz die halboffenen a- und b-Linien bekommen. Die Türme gehören dorthin, Ziele sind a2 und b2."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was bekommt Schwarz im Wolga-Gambit für den geopferten Bauern?",
+     "antworten": [
+      "Ein schnelles Matt.",
+      "Einen Freibauern auf der c-Linie.",
+      "Halboffene Linien am Damenflügel mit den Zielen a2 und b2."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Bauerntausch am Damenflügel hat zwei Linien für Schwarz geöffnet. Dort üben Türme, Dame und Läufer lange Druck aus."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.25",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-bauern",
+     "hinweise": [
+      "Mach den Deckungstest für die Basis der weißen Kette.",
+      "Schau auf d4: Welcher Bauer hat es bisher gestützt?",
+      "Nach cxd4 fehlt die Stütze c3: d4 ist eine Kettenbasis ohne Bauerndeckung."
+     ],
+     "text": "Mit dem Tausch auf d4 ist die Stütze c3 verschwunden. Die Basis d4 müssen jetzt Figuren halten: zwei Angreifer gegen zwei Verteidiger."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "7... Sh6",
+     "frage": "Warum zieht der Springer mit 7... Sh6 an den Rand?",
+     "antworten": [
+      "Er greift den Läufer e2 an.",
+      "Er will über f5 als dritter Angreifer gegen d4 wirken; f6 nimmt ihm der Bauer e5.",
+      "Er bereitet die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der direkte Weg über f6 ist versperrt. Über h6 und f5 kommt der Springer trotzdem gegen d4 ins Spiel."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.27",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-richtung",
+     "hinweise": [
+      "Wohin zeigen die beiden Ketten?",
+      "Folge der weißen Kette e4–d5 und der schwarzen Kette d6–e5.",
+      "Weiß spielt am Damenflügel mit c4–c5, Schwarz am Königsflügel mit ...f7–f5."
+     ],
+     "text": "Die weiße Kette e4–d5 zeigt zum Damenflügel, dort bereitet Weiß c4–c5 vor. Die schwarze Kette zeigt zum Königsflügel: Schwarz spielt ...f7–f5."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Auf welchem Flügel sucht Schwarz sein Spiel?",
+     "antworten": [
+      "Am Königsflügel mit ...f7–f5, denn dorthin zeigt seine Kette.",
+      "Am Damenflügel, wo auch Weiß angreift.",
+      "Im Zentrum mit ...d6–d5."
+     ],
+     "richtig": 0,
+     "erklaerung": "Jede Seite spielt dort, wohin ihre Kette zeigt. ...f5 greift die Basis e4 der weißen Kette an."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.30",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-richtung",
+     "hinweise": [
+      "Wo hat Weiß mehr Bauern als Schwarz?",
+      "Zähle die Bauern auf der e- bis h-Linie.",
+      "Am Königsflügel steht es 4 gegen 3; Kandidat ist e5, der Plan f2–f5 und dann e5–e6."
+     ],
+     "text": "Weiß hat am Königsflügel eine gesunde Mehrheit von 4 gegen 3. Der Kandidat ist e5: Mit f2–f5 und e5–e6 soll ein Freibauer entstehen."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist die schwarze Mehrheit am Damenflügel weniger wert als die weiße am Königsflügel?",
+     "antworten": [
+      "Weil Bauern am Damenflügel langsamer ziehen.",
+      "Wegen der Doppelbauern c7 und c6 kann sie keinen Freibauern erzwingen.",
+      "Weil der schwarze König auf d8 steht."
+     ],
+     "richtig": 1,
+     "erklaerung": "Vier Bauern gegen drei sind nur dann eine echte Mehrheit, wenn sie gesund sind. Mit dem Doppelbauern zählt die schwarze Mehrheit kaum."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.32",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-richtung",
+     "hinweise": [
+      "Vergleiche die Bauernzahl auf beiden Flügeln.",
+      "Schau auf den Damenflügel von der a- bis zur c-Linie.",
+      "Weiß hat dort 2 gegen 3 Bauern; mit b2–b4–b5 greift die Minderheit den Bauern c6 an."
+     ],
+     "text": "Am Damenflügel ist Weiß in der Minderheit. Mit dem Minderheitsangriff b2–b4–b5 will Weiß dort eine Schwäche im schwarzen Lager erzeugen."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum stößt Weiß mit der Minderheit b2–b4 vor?",
+     "antworten": [
+      "Um einen Freibauern auf der b-Linie zu bekommen.",
+      "Um nach b5 und dem Tausch auf c6 schwache schwarze Bauern zu erzeugen.",
+      "Um den eigenen König zu schützen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Eine Minderheit bildet keinen Freibauern. Ihr Ziel ist eine Schwäche: ein rückständiger oder isolierter Bauer beim Gegner."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.34",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-bauern",
+     "hinweise": [
+      "Welche schwarzen Bauern bestehen den Deckungstest nicht?",
+      "Schau auf c6 und a7.",
+      "c6 ist rückständig auf der halboffenen c-Linie, a7 ist isoliert."
+     ],
+     "text": "Der Minderheitsangriff hat sein Ziel erreicht: c6 ist rückständig, a7 isoliert. Weiß hat mit a2 nur eine Schwäche, Schwarz zwei."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist der Bauer c6 ein gutes Ziel für Weiß?",
+     "antworten": [
+      "Er kann jederzeit zur Dame werden.",
+      "Er ist an den König gefesselt.",
+      "Er ist rückständig: Kein schwarzer Bauer kann ihn decken, und er steht auf der halboffenen c-Linie."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein rückständiger Bauer auf einer halboffenen Linie ist ein festes Ziel. Weiß richtet Türme und Figuren dagegen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.40",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-figuren",
+     "hinweise": [
+      "Vergleiche die Läufer beider Seiten.",
+      "Schau auf den Läufer f4 und den Läufer c8.",
+      "Lf4 steht außerhalb der weißen Pyramide und wirkt frei; Lc8 steckt hinter d5 und e6."
+     ],
+     "text": "Weiß hat seinen Damenläufer vor die Pyramide c3–d4–e3 gebracht, wo er frei wirkt. Der schwarze Läufer c8 steht dagegen hinter den eigenen Bauern d5 und e6."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6... Ld6",
+     "frage": "Warum spielt Schwarz 6... Ld6?",
+     "antworten": [
+      "Er bietet den Tausch gegen den aktiven Läufer f4 an.",
+      "Er greift den Bauern d4 an.",
+      "Er greift den Springer f3 an."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Läufer f4 wirkt frei vor der eigenen Pyramide. Mit dem Tauschangebot nimmt Schwarz Weiß diesen aktiven Läufer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.43",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-figuren",
+     "hinweise": [
+      "Welche Läufer sind gut, welche schlecht?",
+      "Vergleiche den Läufer d3 mit dem Läufer d7.",
+      "Ld3 hat keinen festgelegten eigenen Bauern auf seiner Farbe; Ld7 hat den Bauern d5 auf seiner Farbe, e6 sperrt ihn zusätzlich."
+     ],
+     "text": "Weiß hat den guten Läufer d3, Schwarz den schlechten Läufer d7. Die Hebel e3–e4 und ...e6–e5 entscheiden, welches Skelett entsteht."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "10. Te1",
+     "frage": "Warum spielt Weiß 10. Te1?",
+     "antworten": [
+      "Der Turm schützt den König vor einem Grundreihenmatt.",
+      "Der Turm greift den Bauern e6 an.",
+      "Der Turm stellt sich hinter den e-Bauern und bereitet den Hebel e3–e4 vor."
+     ],
+     "richtig": 2,
+     "erklaerung": "e3–e4 öffnet das Zentrum für den guten Läufer d3. Der Turm steht dann schon auf der Linie, die sich öffnet."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "5.44",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-bauern",
+     "hinweise": [
+      "Welcher weiße Bauer braucht Schutz durch Figuren?",
+      "Schau auf die Basis der weißen Kette.",
+      "d4 hat keine Bauernstütze mehr; die Springer c6 und f5 greifen sie an, Dame d2 und Springer f3 decken."
+     ],
+     "text": "Die Basis d4 ist die Schwäche im weißen Skelett: Kein Bauer stützt sie, zwei schwarze Springer greifen sie an. Dazu hat Schwarz den Hebel ...f6 gegen e5."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "14. Tfd1",
+     "frage": "Warum spielt Weiß 14. Tfd1?",
+     "antworten": [
+      "Um die Basis d4 über die d-Linie zusätzlich abzusichern.",
+      "Um den Turm auf die offene c-Linie zu bringen.",
+      "Um den Läufer d7 anzugreifen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Turm stellt sich hinter die Dame d2 auf die d-Linie. So hält Weiß die Basis d4 auch gegen weitere Angreifer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

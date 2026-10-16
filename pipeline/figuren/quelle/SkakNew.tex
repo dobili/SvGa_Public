@@ -1,0 +1,195 @@
+\documentclass{article}
+\usepackage[skaknew]{chessboard,skak}
+\usepackage{latexsym}
+\usepackage[LSBC1,LSBC2,LSBC4,T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{array}
+\font\logo=logo10
+\font\sknf=SkakNew-Figurine
+\font\sknfbx=SkakNew-FigurineBold
+\font\skndia=SkakNew-DiagramT
+\def\Metafont{\mbox{\logo METAFONT}}
+\frenchspacing
+
+\begin{document}
+\centerline{\textbf{The SkakNew fonts \& AlphaDia}}
+
+\centerline{\footnotesize\textcopyright\ Copyright 2004--2009, Ulrich Dirr}
+
+\bigskip
+\noindent
+This document describes the fonts \texttt{SkakNew} and \texttt{AlphaDia}. \texttt{AlphaDia} is based on the popular font \texttt{ChessAlpha} by Eric Bentzen. The \texttt{SkakNew} fonts are a set of PostScript\texttrademark{} \mbox{Type-1} fonts converted by \texttt{mftrace/autotrace} from \Metafont{} sources based on the \texttt{Skak} fonts by Torben Hoffmann and Dirk Bächle which themselves are based on \texttt{chess} by Piet Tutelaers.
+
+The conversion process was only the first step. A lot of work went into cleaning the outlines (reducing nodes, adding missing extremes, correcting wrong outline direction, etc.pp.). The next step included better glyph metrics both horizontally \& vertically, better sidebearings and consistent axis height (adapted to the values of \texttt{Computer Modern})~\ldots
+
+All files may be distributed and/or modified under the conditions of the LaTeX Project Public License, either version 1.2 of this license or (at your option) any later version. The latest version of this license is in
+
+\texttt{http://www.latex-project.org/lppl.txt}
+
+\noindent
+and version 1.2 or later is part of all distributions of LaTeX version 1999/12/01 or later.
+
+Further technical information in german on\newline \texttt{http://www.art-satz.de/portfolio/schriften.html}.
+
+\bigskip
+Package contents
+\begin{verbatim}
+README
+fonttables.pdf
+AlphaDia.{afm,inf,pfb,pfm,tfm}
+SkakNew-Diagram.{afm,inf,pfb,pfm,pl,tfm}
+SkakNew-DiagramT.{afm,inf,pfb,pfm,pl,tfm}
+SkakNew-Figurine.{afm,inf,pfb,pfm,tfm}
+SkakNew-FigurineBold.{afm,inf,pfb,pfm,tfm}
+SkakNew.map
+SkakNew.pdf
+SkakNew.tex
+SkakNew.ali
+install.vtex
+\end{verbatim}
+
+Installation directories for TDS-based systems:
+\begin{verbatim}
+/texmf/fonts/type1 for the *.pfb
+/texmf/fonts/tfm for the *.tfm
+/texmf/dvips/config for map file
+fd file where LaTeX can find it
+\end{verbatim}
+
+\newpage
+For diagrams in very small sizes there's a supplemental font\newline \texttt{SkakNew-DiagramT} with fewer \& thicker diagonal strokes.
+
+{\setlength{\extrarowheight}{2pt}
+\begin{tabular}[t]{@{}%
+    c>{\bgroup\skndia}c<{\egroup}c>{\bgroup\skndia}c<{\egroup\qquad}%
+    c>{\bgroup\sknf}c<{\egroup}c>{\bgroup\sknf}c<{\egroup}%
+    c>{\bgroup\sknf}c<{\egroup}c>{\bgroup\sknf}c<{\egroup}%
+    @{}}\hline
+\multicolumn{4}{@{}l}{SkakNew-Diagram}&
+\multicolumn{8}{@{}c@{}}{SkakNew-Figurine (regular \& bold)}\\\hline
+0 & 0 &   &   & + & + & M & M & d & d & r & r \\
+A & A & a & a & - & - & N & N & e & e & s & s \\
+B & B & b & b & A & A & O & O & f & f & t & t \\
+J & J & j & j & B & B & P & P & g & g & u & u \\
+K & K & k & k & C & C & Q & Q & h & h & v & v \\
+L & L & l & l & D & D & R & R & i & i & x & x \\
+M & M & m & m & E & E & S & S & j & j & y & y \\
+N & N & n & n & F & F & T & T & k & k &   &   \\
+O & O & o & o & G & G & U & U & l & l &   &   \\
+P & P & p & p & H & H & V & V & m & m &   &   \\
+Q & Q & q & q & I & I & X & X & n & n &   &   \\
+R & R & r & r & J & J & a & a & o & o &   &   \\
+S & S & s & s & K & K & b & b & p & p &   &   \\
+Z & Z &   &   & L & L & c & c & q & q &   &   \\\hline
+\end{tabular}}
+
+\bigskip
+\newgame
+\variation{%
+ 1. e4\wbetter{}      e6\bbetter{}
+ 2. d4\wbetter{}      d5\bbetter{}
+ 3. Nc3\wupperhand{}  Bb4\bupperhand{}
+ 4. e5\equal{}        c5\unclear{}
+ 5. a3\compensation{} Bxc3+\devadvantage{}
+ 6. bxc3\moreroom{}   Ne7\withattack{}
+ 7. Qg4\withinit{}    0-0\counterplay{}
+ 8. Bd3\zugzwang{}    f5\mate{}
+ 9. exf6\withidea{}   Rxf6\onlymove{}
+10. Bg5\betteris{}    Rf7\file{}
+11. Qh5\diagonal{}    g6\centre{}
+12. Qd1\kside{}       Qa5\qside{}
+13. Bd2\weakpt{}      Nbc6\ending{}
+14. Nf3\bishoppair{}  Qc7\opposbishops{}
+15. 0-0\samebishops{} e5\unitedpawns{}
+16. Ng5\seppawns{}    Rf8\doublepawns{}
+17. c4\passedpawn{}   exd4\morepawns{}
+18. Re1\timelimit{}   Bf5\novelty{}
+19. cxd5\comment{}    Nxd5\various{}
+20. Bc4\without{}     Rad8\with{}
+21. Qf3\etc{}         Qd6\chesssee{}
+22. Qb3\markera{}     b6\markerb{}
+23. Ne4}
+
+\newgame
+\mainline{%
+ 1. e4\wbetter{}      e6\bbetter{}
+ 2. d4\wbetter{}      d5\bbetter{}
+ 3. Nc3\wupperhand{}  Bb4\bupperhand{}
+ 4. e5\equal{}        c5\unclear{}
+ 5. a3\compensation{} Bxc3+\devadvantage{}
+ 6. bxc3\moreroom{}   Ne7\withattack{}
+ 7. Qg4\withinit{}    0-0\counterplay{}
+ 8. Bd3\zugzwang{}    f5\mate{}
+ 9. exf6\withidea{}   Rxf6\onlymove{}
+10. Bg5\betteris{}    Rf7\file{}
+11. Qh5\diagonal{}    g6\centre{}
+12. Qd1\kside{}       Qa5\qside{}
+13. Bd2\weakpt{}      Nbc6\ending{}
+14. Nf3\bishoppair{}  Qc7\opposbishops{}
+15. 0-0\samebishops{} e5\unitedpawns{}
+16. Ng5\seppawns{}    Rf8\doublepawns{}
+17. c4\passedpawn{}   exd4\morepawns{}
+18. Re1\timelimit{}   Bf5\novelty{}
+19. cxd5\comment{}    Nxd5\various{}
+20. Bc4\without{}     Rad8\with{}
+21. Qf3\etc{}         Qd6\chesssee{}
+22. Qb3\markera{}     b6\markerb{}
+23. Ne4}
+
+\newpage
+\newgame
+\centerline{\texttt{SkakNew-DiagramT} for sizes up to 16pt}
+
+\medskip
+\centerline{\smallboard\showboard}
+
+\bigskip
+\centerline{\texttt{SkakNew-Diagram} for sizes from 16pt up}
+
+\medskip
+\centerline{\normalboard\showboard}
+
+\bigskip
+\centerline{\texttt{AlphaDia}}
+
+\medskip
+\setboardfontfamily{AlphaDia}
+
+\centerline{\normalboard\showboard}
+
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setboardfontfamily{alphadia}
+\setchessboard{%
+   boardfontencoding=LSBC4,
+   boardfontsize=20bp,
+%   bordercolor=black,
+   labelleftwidth=4.5mm,
+   labelbottomlift=5mm,
+   marginwidth=14.4bp, marginbottomwidth=28.8bp,
+   labelfontsize=10bp,
+   border=false,
+   linewidth=0.15mm, padding=0.50mm, pgfborder,
+   linewidth=0.30mm, padding=1.15mm, pgfborder,
+   moverstyle=olmsarrow,
+   movershift=2mm,moverbottomlift=.5mm,
+   blackfieldmaskcolor=black!25,
+   setfontcolors
+}
+\chessboard[
+   setfen=3q1r1k/4N1pp/8/2p1R3/3n4/3Q4/5PPP/6K1 w - - 0 1,
+   pgfstyle=straightmove,
+%   arrow=to,
+   linewidth=0.2ex,
+   color=red,
+%   shortenend=0.5ex,
+   markmoves={d3-h7},
+   markstyle=border,
+   padding=0pt,
+   linewidth=0.3mm,
+   markfields={d3,h7},
+   pgfstyle=color,
+   opacity=0.2,
+   markfields={g8,g6}
+]
+\end{document}

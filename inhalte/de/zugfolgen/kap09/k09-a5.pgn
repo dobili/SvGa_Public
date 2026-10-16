@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Wenn Philidor nicht mehr geht: König auf die kurze Seite"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r7/4K1k1/4P3/8/8/8/8/3R4 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a5"]
+[Kapitel "9"]
+[Abschnitt "9.2"]
+[Status "freigegeben"]
+[Abbildungen "9.5"]
+
+{ Abb. 9.5 } 1... Ra7+ $1 2. Kd6 ( 2. Kd8 Ra8+ ) ( 2. Ke8 Kf6 $1 ( 2... Ra8+ $2 3. Rd8 ) ) ( 2. Rd7 Ra8 ) 2... Ra6+ *

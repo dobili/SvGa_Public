@@ -1,0 +1,14 @@
+[Event "Kapitel 2: Läuferspiel"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k02-a131"]
+[Kapitel "2"]
+[Abschnitt "2.10"]
+[Status "freigegeben"]
+[Abbildungen "2.131 2.132 2.133 2.134"]
+
+1. e4 e5 2. Bc4 Nf6 { Abb. 2.131 } ( 2... Bc5 ) ( 2... Nc6 3. Nf3 Bc5 ( 3... Nf6 ) ) 3. d3 c6 4. Nf3 d5 { Abb. 2.132 } 5. Bb3 Bd6 6. O-O O-O { Abb. 2.133 } 7. Bg5 ( 7. Nc3 ) 7... Be6 ( 7... dxe4 8. dxe4 h6 ) 8. Nbd2 Nbd7 { Abb. 2.134 } *

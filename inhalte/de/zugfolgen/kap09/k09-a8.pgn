@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Die Lucena-Stellung: Gewinn durch Brückenbau"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "4K3/4P1k1/8/8/8/8/r7/5R2 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a8"]
+[Kapitel "9"]
+[Abschnitt "9.3"]
+[Status "freigegeben"]
+[Abbildungen "9.8 9.9 9.10 9.11 9.12"]
+
+{ Abb. 9.8 } 1. Rg1+ ( 1. Kd7 Ra7+ $1 ) 1... Kh7 ( 1... Kf6 2. Kf8 ) 2. Rg4 { Abb. 9.9 } 2... Ra1 3. Kd7 Rd1+ { Abb. 9.10 } 4. Ke6 ( 4. Rd4 $4 Rxd4+ ) 4... Re1+ 5. Kd6 Rd1+ { Abb. 9.11 } 6. Ke5 Re1+ 7. Re4 { Abb. 9.12 } 7... Rxe4+ 8. Kxe4 *

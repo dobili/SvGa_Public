@@ -1,0 +1,16 @@
+[Event "Kapitel 2: Die Hauptvariante: Das Abgelehnte Damengambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "rnbq1rk1/ppp1bppp/4pn2/3p2B1/2PP4/2N1P3/PP3PPP/R2QKBNR w KQ - 1 6"]
+[SetUp "1"]
+[Beispiel "k02-a64"]
+[Kapitel "2"]
+[Abschnitt "2.7"]
+[Status "verworfen"]
+[Abbildungen "2.64 2.65 2.66 2.67"]
+
+{ Abb. 2.64 } 6. Nf3 h6 ( 6... Nbd7 7. Rc1 c6 { Abb. 2.67 } ) 7. Bh4 b6 { Abb. 2.65 } 8. Bd3 Bb7 9. O-O Nbd7 { Abb. 2.66 } *

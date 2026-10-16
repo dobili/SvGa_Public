@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Warum der König auf g7 oder h7 gehört"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "R7/P4k2/8/8/8/8/r7/6K1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a16"]
+[Kapitel "9"]
+[Abschnitt "9.4"]
+[Status "freigegeben"]
+[Abbildungen "9.16 9.17"]
+
+{ Abb. 9.16 } 1. Rh8 $1 Rxa7 2. Rh7+ { Abb. 9.17 } *

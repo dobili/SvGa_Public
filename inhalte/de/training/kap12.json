@@ -1,0 +1,202 @@
+{
+  "kapitel": 12,
+  "titel": "Trainingsmethodik und Checklisten",
+  "adresse": "/training/kap12/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Denkroutine unter Aufsicht (Abschnitt ",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": "12.1",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": ").",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Wähle unter „Aufgabenthemen“ ein Motiv und nimm dir pro Aufgabe eine feste Minute, bevor du ziehst. Schreibe in dieser Minute zwei Kandidatenzüge und die stärkste Antwort des Gegners auf. Zehn Aufgaben, so gelöst, trainieren die Routine besser als fünfzig schnell geklickte. Dieselbe Übung am echten Brett mit einem Partner: Einer denkt an ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 12.5",
+          "abbildung": "12.5"
+        },
+        {
+          "art": "text",
+          "text": " oder an einer Stellung aus Kapitel 11 die vier Schritte laut durch, der andere notiert jeden Kandidaten, zu dem keine stärkste Antwort genannt wurde. Zwei Stellungen pro Woche, dann Rollentausch.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Berechnung ohne Zeitdruck (Abschnitt ",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": "12.3",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": ").",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Stelle den „Schwierigkeitsgrad“ der Aufgaben auf „Schwieriger“ und löse zweimal pro Woche fünf Aufgaben mit mindestens fünf Minuten je Aufgabe. Die vollständige Variante mit der stärksten Verteidigung steht auf dem Papier, bevor du den ersten Zug ausführst, denn nur so gelöste Aufgaben zählen. Das Gegenstück ist Puzzle Storm, wo du nicht auf die Punktzahl achtest, sondern darauf, ob du vor jedem Zug die Schachs und Schläge beider Seiten geprüft hast.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Analyse in der richtigen Reihenfolge (Abschnitt ",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": "12.2",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": ").",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Markiere nach der Partie erst ohne Computer die unsichere Stelle und schreibe deinen Kandidatenzug als Kommentar dazu. Danach forderst du die Computer-Analyse an. Die Fehlerdatenbank führst du als Studie mit einem Kapitel je Fehlerart aus Tabelle 12.2: die Stellung des Fehlers ins passende Kapitel, dazu ein Satz als Kommentar. Nach zehn Partien ist das vollste Kapitel dein Thema für den nächsten Monat. Die „Aufgaben aus den Partien eines Spielers“ zeigen dir außerdem die Taktik, die in deinen eigenen Partien lag.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die eigene Statistik lesen (Abschnitt ",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": "12.2",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": "12.5",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": ").",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Öffne nach zehn gewerteten Partien die „Schach-Einblicke“ und die „Aufgabenübersicht“ und vergleiche beide mit deiner Fehlerdatenbank: Stimmt deine Einschätzung, in welcher Partiephase und bei welchem Motiv du verlierst? Sieh dir nach jeder langen Partie zusätzlich das Diagramm „Zugzeiten“ an und prüfe, ob die drei Züge mit der längsten Bedenkzeit kritische Momente waren oder ruhige Eröffnungszüge. Nach Turnierpartien notierst du auf dem Partieformular, wie viel Zeit dir an deinen Kontrollpunkten blieb.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Gegen den Computer mit festem Ziel (Abschnitt ",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": "12.4",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": ").",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Nimm die Schlussstellung deiner Hauptvariante aus Kapitel 2 und spiele sie zehnmal über „Von hier aus weiterspielen“ gegen den Computer. Notiere nach jeder Partie den ersten Zug, an dem du deinen Plan nicht mehr kanntest, denn genau dort ergänzt du deine Lernsammlung. Wer zugleich die Visualisierung üben will, spielt jede dritte dieser Partien mit der Einstellung „Blindschach“.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Wiederholen mit der Uhr (Abschnitt ",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": "12.3",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": ").",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Für die Specht-Methode sind die Übungen aus Kapitel 4 und 7 zu wenige. Das Prinzip kannst du an ihnen dennoch ausprobieren: Löse sie nach einigen Wochen noch einmal, stoppe die Zeit und notiere die Trefferquote. Einen Satz in der nötigen Größe liefern die Aufgabensammlungen aus „Zum Weiterlesen“, am Brett aufgestellt und ohne Bildschirm.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1293
+  },
+  "stand": "2026-10-16"
+}

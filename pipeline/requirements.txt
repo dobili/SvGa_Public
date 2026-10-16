@@ -1,0 +1,6 @@
+# Python-Pakete der Pipeline (Konzept Abschnitt 2). Python 3.12 oder neuer.
+chess==1.11.2
+jsonschema==4.26.0
+fonttools==4.65.0
+pytest==9.0.0
+ruff==0.14.0

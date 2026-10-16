@@ -1,0 +1,4969 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 9,
+ "titel": "Endspiel-Vertiefung",
+ "abschnitte": [
+  {
+   "nummer": "9.1",
+   "label": "sec:k9-begriffe",
+   "titel": "Dein Werkzeug: drei Begriffe für jedes Turmendspiel"
+  },
+  {
+   "nummer": "9.2",
+   "label": "",
+   "titel": "Die Philidor-Stellung: Remis durch Aktivität"
+  },
+  {
+   "nummer": "9.3",
+   "label": "",
+   "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau"
+  },
+  {
+   "nummer": "9.4",
+   "label": "",
+   "titel": "Die Vancura-Stellung: Remis gegen den Randbauern"
+  },
+  {
+   "nummer": "9.5",
+   "label": "sec:k9-turm-gegen-bauer",
+   "titel": "Turm gegen Bauer"
+  },
+  {
+   "nummer": "9.6",
+   "label": "",
+   "titel": "Turmendspiele mit mehreren Bauern"
+  },
+  {
+   "nummer": "9.7",
+   "label": "",
+   "titel": "Dame gegen Bauer"
+  },
+  {
+   "nummer": "9.8",
+   "label": "",
+   "titel": "Läufer- und Springerendspiele"
+  },
+  {
+   "nummer": "9.9",
+   "label": "",
+   "titel": "Turm gegen Läufer"
+  },
+  {
+   "nummer": "9.10",
+   "label": "",
+   "titel": "Rückblick: die Erkennungsbilder"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "9.1",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.1",
+    "label": "sec:k9-begriffe",
+    "titel": "Dein Werkzeug: drei Begriffe für jedes Turmendspiel"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/6k1/2P5/2K5/8/r7/4R3 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "e1",
+     "nach": "e8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Abschneiden, Weiß am Zug. Grauer Pfeil: Der Turm e1 sperrt die e-Linie; zwischen dem König g6 und dem Bauern c5 liegen drei Linien (d, e, f).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.2"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 56
+   },
+   "pruefsumme": "c8de17437886d477",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum ist der Turm e1 für Weiß hier so wertvoll?",
+      "antworten": [
+       "Er deckt den Bauern c5 von hinten.",
+       "Er hält den schwarzen König jenseits der e-Linie fest, weit weg vom Bauern c5.",
+       "Er droht Matt auf der 8. Reihe."
+      ],
+      "richtig": 1,
+      "erklaerung": "Abschneiden heißt: Der Turm sperrt eine Linie zwischen König und Bauer. Je mehr Linien dazwischen liegen, desto besser für den Angreifer; ab drei reicht es oft."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.2",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.1",
+    "label": "sec:k9-begriffe",
+    "titel": "Dein Werkzeug: drei Begriffe für jedes Turmendspiel"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/1R6/r7/4KP2/8/8/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "a6",
+     "nach": "f6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Kurze und lange Seite, Weiß am Zug. Der schwarze König steht auf der kurzen Seite (g-Linie), der Turm a6 auf der langen. Grauer Pfeil: Zwischen dem Turm und dem Bauern liegen vier Linien; das reicht für seine Schachs.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.1"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 57
+   },
+   "pruefsumme": "936b38c7ddf930b0",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum steht der schwarze Turm auf a6 gut?",
+      "antworten": [
+       "Er kann den Bauern f5 sofort schlagen.",
+       "Er schützt den eigenen König vor einem Matt auf der 8. Reihe.",
+       "Er hat genug Abstand: Geht der weiße König auf ihn zu, verlässt er seinen Bauern."
+      ],
+      "richtig": 2,
+      "erklaerung": "Zwischen a6 und f5 liegen vier Linien. Aus dieser Entfernung kann der Turm von der Seite Schach geben, ohne dass der König ihn erreicht."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.3",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.2",
+    "label": "",
+    "titel": "Die Philidor-Stellung: Remis durch Aktivität"
+   },
+   "unterabschnitt": null,
+   "fen": "4k3/1R6/7r/3KP3/8/8/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "h6",
+     "nach": "a6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Philidor-Stellung, Weiß am Zug. Grau: Der König e8 steht vor dem Bauern, der Turm h6 sperrt die 6. Reihe. Der weiße König kommt nicht nach d6, e6 oder f6.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.4"
+   ],
+   "beispiel": {
+    "id": "k09-a3",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 78
+   },
+   "pruefsumme": "65d22aa85704f443",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. e6",
+      "frage": "Warum ändert 1. e6 den Plan von Schwarz?",
+      "antworten": [
+       "Auf e6 findet der weiße König kein Versteck mehr: Der Turm geht nach hinten und gibt Schachs.",
+       "Jetzt kann Schwarz den Bauern e6 sofort mit dem König schlagen.",
+       "Schwarz muss jetzt die Türme tauschen."
+      ],
+      "richtig": 0,
+      "erklaerung": "Solange der Bauer auf der 5. Reihe steht, hält der Turm die 6. Reihe. Nach e6 kann sich der König nicht mehr vor den Schachs von hinten verstecken."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.4",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.2",
+    "label": "",
+    "titel": "Die Philidor-Stellung: Remis durch Aktivität"
+   },
+   "unterabschnitt": null,
+   "fen": "4k3/1R6/4P3/3K4/8/8/8/7r w - - 0 2",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "h1",
+     "nach": "d1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. e6 Th1, Weiß am Zug. Grauer Pfeil: Der Turm gibt jetzt von hinten Schach, und der Bauer e6 nimmt dem weißen König das Versteck.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.3"
+   ],
+   "beispiel": {
+    "id": "k09-a3",
+    "pfad": [
+     "e6",
+     "Rh1"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 79
+   },
+   "pruefsumme": "a480fa6b7b4e1cc5"
+  },
+  {
+   "id": "9.5",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.2",
+    "label": "",
+    "titel": "Die Philidor-Stellung: Remis durch Aktivität"
+   },
+   "unterabschnitt": "Wenn Philidor nicht mehr geht: König auf die kurze Seite",
+   "fen": "r7/4K1k1/4P3/8/8/8/8/3R4 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a8",
+     "nach": "a7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "König auf der kurzen Seite, Turm auf der langen; Schwarz am Zug. Goldener Pfeil: Nur 1... Ta7+! hält remis.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.6",
+    "9.7"
+   ],
+   "beispiel": {
+    "id": "k09-a5",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 121
+   },
+   "pruefsumme": "7c0138d8098b729e",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... Ta7+",
+      "frage": "Warum hält nur 1... Ta7+?",
+      "antworten": [
+       "Der Turm fesselt den Bauern e6.",
+       "Das Schach von der Seite beginnt eine Serie; der weiße König entkommt ihr nicht, ohne den Bauern zu verlassen.",
+       "Schwarz bereitet den Turmtausch auf a7 vor."
+      ],
+      "richtig": 1,
+      "erklaerung": "Mit drei Linien Abstand reicht die Schachdistanz. Geht der König auf den Turm zu, bleibt der Bauer e6 allein zurück."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.6",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.2",
+    "label": "",
+    "titel": "Die Philidor-Stellung: Remis durch Aktivität"
+   },
+   "unterabschnitt": "Wenn Philidor nicht mehr geht: König auf die kurze Seite",
+   "fen": "1r1K4/6k1/4P3/8/8/8/8/3R4 w - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b8",
+     "nach": "d8"
+    },
+    {
+     "farbe": "gold",
+     "von": "d8",
+     "nach": "d7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Mit dem Turm auf b8 statt a8, nach 1... Tb7+ 2. Kd8 Tb8+; Weiß am Zug. Roter Pfeil: das Schach. Goldener Pfeil: 3. Kd7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.5",
+    "9.7"
+   ],
+   "beispiel": {
+    "id": "k09-a6",
+    "pfad": [
+     "Rb7+",
+     "Kd8",
+     "Rb8+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 122
+   },
+   "pruefsumme": "b8b3211eed36f953",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "3. Kd7",
+      "frage": "Warum entkommt Weiß mit 3. Kd7 den Schachs?",
+      "antworten": [
+       "Kd7 droht sofort Matt auf der 8. Reihe.",
+       "Der König greift den schwarzen König an.",
+       "Der Turm b8 steht zu nah am Bauern: Der König läuft auf ihn zu, und die Schachs hören auf."
+      ],
+      "richtig": 2,
+      "erklaerung": "Nach 3... Tb7+ 4. Kc6 greift der König den Turm an. Mit dem Turm auf a8 wäre er dafür zu weit weg gewesen."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.7",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.2",
+    "label": "",
+    "titel": "Die Philidor-Stellung: Remis durch Aktivität"
+   },
+   "unterabschnitt": "Wenn Philidor nicht mehr geht: König auf die kurze Seite",
+   "fen": "8/1r4k1/2K1P3/8/8/8/8/3R4 b - - 6 4",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "b7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 3. Kd7 Tb7+ 4. Kc6, Schwarz am Zug. Roter Pfeil: Der König greift den Turm an; die Schachs sind zu Ende.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.5",
+    "9.6"
+   ],
+   "beispiel": {
+    "id": "k09-a6",
+    "pfad": [
+     "Rb7+",
+     "Kd8",
+     "Rb8+",
+     "Kd7",
+     "Rb7+",
+     "Kc6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 123
+   },
+   "pruefsumme": "744afd9ec6f013f4"
+  },
+  {
+   "id": "9.8",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.3",
+    "label": "",
+    "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau"
+   },
+   "unterabschnitt": null,
+   "fen": "4K3/4P1k1/8/8/8/8/r7/5R2 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "f1",
+     "nach": "f6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Grundbild der Lucena-Stellung, Weiß am Zug. Rot: Der König e8 steht vor seinem Bauern und kommt nicht heraus. Grauer Pfeil: Der Turm f1 schneidet den schwarzen König auf der f-Linie ab.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a8",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 143
+   },
+   "pruefsumme": "0b5d77d8cd1bbb7b",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Tg1+",
+      "frage": "Warum beginnt Weiß mit 1. Tg1+?",
+      "antworten": [
+       "Der Turm will auf der g-Linie mattsetzen.",
+       "Weiß will den Turm gegen den Turm a2 tauschen.",
+       "Das Schach treibt den schwarzen König eine Linie weiter weg vom Bauern."
+      ],
+      "richtig": 2,
+      "erklaerung": "Auf g7 könnte der König den Bauern nach einem Turmtausch zurückgewinnen (Abb. 9.13). Auf h7 ist er dafür einen Schritt zu weit weg."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.9",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.3",
+    "label": "",
+    "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau"
+   },
+   "unterabschnitt": "Der Brückenbau Zug für Zug",
+   "fen": "4K3/4P2k/8/8/6R1/8/r7/8 b - - 3 2",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g4",
+     "nach": "e4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Tg1+ Kh7 2. Tg4, Schwarz am Zug. Der schwarze König ist auf die h-Linie weggetrieben. Grauer Pfeil: Von g4 aus erreicht der Turm später das Brückenfeld e4.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.10"
+   ],
+   "beispiel": {
+    "id": "k09-a8",
+    "pfad": [
+     "Rg1+",
+     "Kh7",
+     "Rg4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 184
+   },
+   "pruefsumme": "450799a2cddab8f3"
+  },
+  {
+   "id": "9.10",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.3",
+    "label": "",
+    "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau"
+   },
+   "unterabschnitt": "Der Brückenbau Zug für Zug",
+   "fen": "8/3KP2k/8/8/6R1/8/8/3r4 w - - 6 4",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d1",
+     "nach": "d7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 2... Ta1 3. Kd7 Td1+, Weiß am Zug. Roter Pfeil: Der König hat e8 verlassen und bekommt Schach.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.9"
+   ],
+   "beispiel": {
+    "id": "k09-a8",
+    "pfad": [
+     "Rg1+",
+     "Kh7",
+     "Rg4",
+     "Ra1",
+     "Kd7",
+     "Rd1+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 185
+   },
+   "pruefsumme": "a9d0ab81e7cfe0bc"
+  },
+  {
+   "id": "9.11",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.3",
+    "label": "",
+    "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau"
+   },
+   "unterabschnitt": "Der Brückenbau Zug für Zug",
+   "fen": "8/4P2k/3K4/8/6R1/8/8/3r4 w - - 10 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d1",
+     "nach": "d6"
+    },
+    {
+     "farbe": "grau",
+     "von": "d6",
+     "nach": "e5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 4. Ke6 Te1+ 5. Kd6 Td1+, Weiß am Zug. Roter Pfeil: das Schach. Grauer Pfeil: Der König geht auf die Linie des Bauern, nach e5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.12"
+   ],
+   "beispiel": {
+    "id": "k09-a8",
+    "pfad": [
+     "Rg1+",
+     "Kh7",
+     "Rg4",
+     "Ra1",
+     "Kd7",
+     "Rd1+",
+     "Ke6",
+     "Re1+",
+     "Kd6",
+     "Rd1+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 189
+   },
+   "pruefsumme": "1fb56992bb329727",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6. Ke5",
+      "frage": "Warum geht der König nach e5?",
+      "antworten": [
+       "Von dort deckt er das Feld e4: Auf das nächste Schach stellt sich der Turm g4 dazwischen.",
+       "Er will den Turm d1 angreifen.",
+       "Auf e5 schützt ihn der Bauer e7 vor allen Schachs."
+      ],
+      "richtig": 0,
+      "erklaerung": "Nach 6... Te1+ folgt 7. Te4: Die Brücke steht, der König deckt den Turm. Das Umwandlungsfeld e8 ist nicht mehr zu halten."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.12",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.3",
+    "label": "",
+    "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau"
+   },
+   "unterabschnitt": "Der Brückenbau Zug für Zug",
+   "fen": "8/4P2k/8/4K3/4R3/8/8/4r3 b - - 13 7",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "e5",
+     "nach": "e4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 6. Ke5 Te1+ 7. Te4, Schwarz am Zug. Grauer Pfeil: Die Brücke steht, der König deckt den Turm e4. Rot: Das Umwandlungsfeld e8 ist nicht mehr zu halten.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.11"
+   ],
+   "beispiel": {
+    "id": "k09-a8",
+    "pfad": [
+     "Rg1+",
+     "Kh7",
+     "Rg4",
+     "Ra1",
+     "Kd7",
+     "Rd1+",
+     "Ke6",
+     "Re1+",
+     "Kd6",
+     "Rd1+",
+     "Ke5",
+     "Re1+",
+     "Re4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 190
+   },
+   "pruefsumme": "d7ab7cb77af5c501"
+  },
+  {
+   "id": "9.13",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.3",
+    "label": "",
+    "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau"
+   },
+   "unterabschnitt": "Warum erst wegtreiben?",
+   "fen": "8/4P1k1/8/4K3/4R3/8/8/4r3 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e1",
+     "nach": "e4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Warnbild: dieselbe Brücke, aber der schwarze König steht noch auf g7. Schwarz am Zug. Roter Pfeil: 1... Txe4+ hält remis.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.14"
+   ],
+   "beispiel": {
+    "id": "k09-a13",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 213
+   },
+   "pruefsumme": "cbf9c0ce798317fe",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... Txe4+",
+      "frage": "Warum hält 1... Txe4+ hier remis?",
+      "antworten": [
+       "Nach dem Tausch steht Weiß patt.",
+       "Nach 2. Kxe4 geht der König nach f7 und schlägt den Bauern e7.",
+       "Der Turm e4 war ungedeckt."
+      ],
+      "richtig": 1,
+      "erklaerung": "Die Brücke hilft nur, wenn der König des Verteidigers weit genug weg ist. Deshalb treibt Weiß ihn in der Lucena-Stellung zuerst mit Schach weiter weg."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.14",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.3",
+    "label": "",
+    "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau"
+   },
+   "unterabschnitt": "Warum erst wegtreiben?",
+   "fen": "8/4Pk2/8/8/4K3/8/8/8 w - - 1 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "e7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1... Txe4+ 2. Kxe4 Kf7, Weiß am Zug. Roter Pfeil: Der Bauer e7 fällt, remis.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.13"
+   ],
+   "beispiel": {
+    "id": "k09-a13",
+    "pfad": [
+     "Rxe4+",
+     "Kxe4",
+     "Kf7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 214
+   },
+   "pruefsumme": "19c8f1cab7131e14"
+  },
+  {
+   "id": "9.15",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.4",
+    "label": "",
+    "titel": "Die Vancura-Stellung: Remis gegen den Randbauern"
+   },
+   "unterabschnitt": null,
+   "fen": "R7/6k1/P4r2/1K6/8/8/8/8 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "a6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Vancura-Stellung, Schwarz am Zug. Roter Pfeil: Der Turm f6 greift den Bauern a6 von der Seite an. Der weiße König deckt den Bauern, der Turm a8 will wegziehen. Grau: Der schwarze König wartet auf g7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a15",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 237
+   },
+   "pruefsumme": "35e935e4b311afb7",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... Tf5+",
+      "frage": "Warum gibt Schwarz mit 1... Tf5+ Schach?",
+      "antworten": [
+       "Er will den Turm gegen den Bauern tauschen.",
+       "Er bereitet ein Matt auf der 5. Reihe vor.",
+       "Der König muss weichen und beim Bauern bleiben; danach greift der Turm a6 wieder von der Seite an."
+      ],
+      "richtig": 2,
+      "erklaerung": "Schachs und seitliche Angriffe auf den Bauern wechseln sich ab. So kommt Weiß nicht weiter."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.16",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.4",
+    "label": "",
+    "titel": "Die Vancura-Stellung: Remis gegen den Randbauern"
+   },
+   "unterabschnitt": "Warum der König auf g7 oder h7 gehört",
+   "fen": "R7/P4k2/8/8/8/8/r7/6K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a8",
+     "nach": "h8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Der König f7 bewacht weder h8 noch h7. Goldener Pfeil: Nur 1. Th8! gewinnt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.17"
+   ],
+   "beispiel": {
+    "id": "k09-a16",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 260
+   },
+   "pruefsumme": "a7fa88bb94b3c19c",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Th8",
+      "frage": "Warum gewinnt 1. Th8?",
+      "antworten": [
+       "Der Turm gibt Schach und treibt den König weg.",
+       "Er droht a8=D; schlägt Schwarz 1... Txa7, gewinnt 2. Th7+ den Turm durch einen Spieß.",
+       "Er schützt die eigene Grundreihe."
+      ],
+      "richtig": 1,
+      "erklaerung": "Der Turm macht dem Bauern Platz und lauert auf der h-Linie. Im Vancura-Bild steht der König deshalb auf g7 oder h7."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.17",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.4",
+    "label": "",
+    "titel": "Die Vancura-Stellung: Remis gegen den Randbauern"
+   },
+   "unterabschnitt": "Warum der König auf g7 oder h7 gehört",
+   "fen": "8/r4k1R/8/8/8/8/8/6K1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "a7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Th8 Txa7 2. Th7+, Schwarz am Zug. Roter Pfeil: der Spieß. Der König muss weichen, dann fällt der Turm a7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.16"
+   ],
+   "beispiel": {
+    "id": "k09-a16",
+    "pfad": [
+     "Rh8",
+     "Rxa7",
+     "Rh7+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 261
+   },
+   "pruefsumme": "d7c1f7936aebde3f"
+  },
+  {
+   "id": "9.18",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.5",
+    "label": "sec:k9-turm-gegen-bauer",
+    "titel": "Turm gegen Bauer"
+   },
+   "unterabschnitt": null,
+   "fen": "7K/8/8/8/1p2k3/8/8/3R4 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "d8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Abschneiden, Schwarz am Zug. Grauer Pfeil: Der Turm d1 sperrt die d-Linie.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.19",
+    "9.20"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 297
+   },
+   "pruefsumme": "03ddc1e17a6e67d3"
+  },
+  {
+   "id": "9.19",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.5",
+    "label": "sec:k9-turm-gegen-bauer",
+    "titel": "Turm gegen Bauer"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/1K6/4k3/4p3/8/8/7R w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b6",
+     "nach": "c5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug gewinnt, etwa mit 1. Kc5! (goldener Pfeil): Der König nimmt dem schwarzen König das Feld d4 (grau).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.18",
+    "9.20"
+   ],
+   "beispiel": {
+    "id": "k09-a19",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 298
+   },
+   "pruefsumme": "8a2ec037ef333260",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Kc5",
+      "frage": "Warum ist 1. Kc5 so stark?",
+      "antworten": [
+       "Der König greift den Bauern e4 direkt an.",
+       "Er deckt das Umwandlungsfeld e1.",
+       "Er nimmt dem schwarzen König das Feld d4 und kommt dem Bauern näher."
+      ],
+      "richtig": 2,
+      "erklaerung": "So gewinnt Weiß. Wäre Schwarz am Zug, hielte 1... Kd4 remis, weil sich der König dem weißen König in den Weg stellt (Abb. 9.20)."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.20",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.5",
+    "label": "sec:k9-turm-gegen-bauer",
+    "titel": "Turm gegen Bauer"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/1K6/4k3/4p3/8/8/7R b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e5",
+     "nach": "d4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug hält nur mit 1... Kd4! (goldener Pfeil): Der König stellt sich dem weißen König in den Weg. Remis.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.18",
+    "9.19"
+   ],
+   "beispiel": {
+    "id": "k09-a20",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 299
+   },
+   "pruefsumme": "d0a524dedf0e9d19"
+  },
+  {
+   "id": "9.21",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.5",
+    "label": "sec:k9-turm-gegen-bauer",
+    "titel": "Turm gegen Bauer"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/8/8/8/2K5/1p2R3/2k5 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b2",
+     "nach": "b1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug. Nach 1... b1=D?? setzt 2. Te1# matt. Goldener Pfeil: Nur 1... b1=S+! hält remis.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.22"
+   ],
+   "beispiel": {
+    "id": "k09-a21",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 314
+   },
+   "pruefsumme": "f11c64cc56b5643e",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... b1=S+",
+      "frage": "Warum wandelt Schwarz in einen Springer um?",
+      "antworten": [
+       "Er gibt Schach, und nach 1... b1=D?? hätte 2. Te1 mattgesetzt.",
+       "Ein Springer ist im Endspiel stärker als eine Dame.",
+       "Der Springer greift den Turm e2 an."
+      ],
+      "richtig": 0,
+      "erklaerung": "Unterverwandlung: Mit Schach gewinnt Schwarz die Zeit, die gegen das Matt fehlt. Das Ergebnis ist remis."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.22",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.5",
+    "label": "sec:k9-turm-gegen-bauer",
+    "titel": "Turm gegen Bauer"
+   },
+   "unterabschnitt": null,
+   "fen": "r6k/8/1PP5/8/8/8/8/7K b - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "b6"
+    },
+    {
+     "farbe": "rot",
+     "feld": "c6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Zwei verbundene Freibauern auf der 6. Reihe, Schwarz am Zug. Rot: Einer der beiden wird zur Dame, was der Turm auch versucht.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.21"
+   ],
+   "beispiel": {
+    "id": "k09-a22",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 315
+   },
+   "pruefsumme": "8835c9f1cef3d36e"
+  },
+  {
+   "id": "9.23",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.6",
+    "label": "",
+    "titel": "Turmendspiele mit mehreren Bauern"
+   },
+   "unterabschnitt": null,
+   "fen": "5rk1/pR3p2/6p1/7p/7P/6P1/5PK1/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b7",
+     "nach": "a7"
+    },
+    {
+     "farbe": "rot",
+     "von": "b7",
+     "nach": "f7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Rote Pfeile: Der Turm b7 greift auf der 7. Reihe die Bauern a7 und f7 an. Weiß gewinnt mit Txa7 den Bauern zurück; danach muss Schwarz den Bauern f7 weiter decken.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a23",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 334
+   },
+   "pruefsumme": "0e89836d7c975072"
+  },
+  {
+   "id": "9.24",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.6",
+    "label": "",
+    "titel": "Turmendspiele mit mehreren Bauern"
+   },
+   "unterabschnitt": "Einen Mehrbauern verwerten",
+   "fen": "8/6k1/1R3pp1/7p/4P2P/6P1/r4PK1/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "a2",
+     "nach": "f2"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Vier gegen drei auf dem Königsflügel, Weiß am Zug. Roter Pfeil: Der schwarze Turm a2 steht aktiv auf der 2. Reihe und greift f2 an. Solche Stellungen gelten als schwer zu gewinnen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.25"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 374
+   },
+   "pruefsumme": "6c521be5c4fbe05e"
+  },
+  {
+   "id": "9.25",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.6",
+    "label": "",
+    "titel": "Turmendspiele mit mehreren Bauern"
+   },
+   "unterabschnitt": "Einen Mehrbauern verwerten",
+   "fen": "8/r5k1/6p1/P7/8/6P1/6K1/R7 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a1",
+     "nach": "a4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "a7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Türme hinter Freibauern, Weiß am Zug. Goldener Pfeil: Der Turm a1 steht hinter dem Freibauern a5 und wird mit jedem Bauernzug aktiver. Grau: Der schwarze Turm a7 steht davor und ist gebunden.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.24"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 375
+   },
+   "pruefsumme": "16799bfefafcb367",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum steht der Turm a1 besser als der Turm a7?",
+      "antworten": [
+       "Er steht näher am eigenen König.",
+       "Er steht hinter dem Freibauern: Jeder Bauernzug gibt ihm mehr Raum, der Turm a7 blockiert nur.",
+       "Er schützt die 1. Reihe vor einem Grundreihenmatt."
+      ],
+      "richtig": 1,
+      "erklaerung": "Türme gehören hinter Freibauern. Der Turm vor dem Bauern ist an die Blockade gebunden und wird mit jedem Bauernzug passiver."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.26",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.6",
+    "label": "",
+    "titel": "Turmendspiele mit mehreren Bauern"
+   },
+   "unterabschnitt": "Einen Mehrbauern verwerten",
+   "fen": "1rk5/8/7p/8/P2K4/7P/8/1R6 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b1",
+     "nach": "b8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Goldener Pfeil: der Turmtausch 1. Txb8+.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.27"
+   ],
+   "beispiel": {
+    "id": "k09-a26",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 392
+   },
+   "pruefsumme": "095d97d54171e471",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Txb8+",
+      "frage": "Warum tauscht Weiß mit 1. Txb8+ die Türme?",
+      "antworten": [
+       "Das Bauernendspiel ist gewonnen: Der entfernte Freibauer a4 bindet den schwarzen König.",
+       "Weiß will ein verlorenes Turmendspiel loswerden und remis halten.",
+       "Nach dem Tausch ist Schwarz sofort matt."
+      ],
+      "richtig": 0,
+      "erklaerung": "Der Plan aus der Tabelle: ins gewonnene Bauernendspiel tauschen. Muss der schwarze König den a-Bauern aufhalten, hat der weiße König am anderen Flügel freie Bahn."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.27",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.6",
+    "label": "",
+    "titel": "Turmendspiele mit mehreren Bauern"
+   },
+   "unterabschnitt": "Einen Mehrbauern verwerten",
+   "fen": "1k6/8/7p/8/P2K4/7P/8/8 w - - 0 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a4",
+     "nach": "a8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Txb8+ Kxb8, Weiß am Zug. Goldener Pfeil: Der entfernte Freibauer a4 bindet den schwarzen König; das Bauernendspiel ist gewonnen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.26"
+   ],
+   "beispiel": {
+    "id": "k09-a26",
+    "pfad": [
+     "Rxb8+",
+     "Kxb8"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 393
+   },
+   "pruefsumme": "7ae090b381f6fd95"
+  },
+  {
+   "id": "9.28",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.7",
+    "label": "",
+    "titel": "Dame gegen Bauer"
+   },
+   "unterabschnitt": null,
+   "fen": "1K6/8/8/8/7Q/8/3pk3/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h4",
+     "nach": "e4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Der Bauer d2 steht kurz vor der Umwandlung, der weiße König ist weit weg. Goldener Pfeil: 1. De4+ beginnt die Schachserie.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.29",
+    "9.30"
+   ],
+   "beispiel": {
+    "id": "k09-a28",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 408
+   },
+   "pruefsumme": "e9377a027a410808",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. De4+",
+      "frage": "Was ist das Ziel der Schachserie, die mit 1. De4+ beginnt?",
+      "antworten": [
+       "Dauerschach, denn mehr als remis ist nicht drin.",
+       "Den Bauern d2 sofort zu schlagen.",
+       "Den schwarzen König auf d1 vor seinen Bauern zu zwingen, damit der weiße König Zeit zum Herankommen hat."
+      ],
+      "richtig": 2,
+      "erklaerung": "Steht der König vor dem Bauern, kann dieser nicht umwandeln. Jede solche Pause bringt den weißen König einen Schritt näher."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.29",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.7",
+    "label": "",
+    "titel": "Dame gegen Bauer"
+   },
+   "unterabschnitt": null,
+   "fen": "1K6/8/8/8/8/3Q4/3p4/4k3 w - - 4 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "e3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. De4+ Kf2 2. Dd3 Ke1, Weiß am Zug. Goldener Pfeil: 3. De3+ treibt den König nach d1, vor seinen Bauern.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.28",
+    "9.30"
+   ],
+   "beispiel": {
+    "id": "k09-a28",
+    "pfad": [
+     "Qe4+",
+     "Kf2",
+     "Qd3",
+     "Ke1"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 409
+   },
+   "pruefsumme": "fbed2abe2d729565"
+  },
+  {
+   "id": "9.30",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.7",
+    "label": "",
+    "titel": "Dame gegen Bauer"
+   },
+   "unterabschnitt": null,
+   "fen": "1K6/8/8/8/8/4Q3/3p4/3k4 w - - 6 4",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b8",
+     "nach": "c7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 3. De3+ Kd1, Weiß am Zug. Der König blockiert seinen Bauern. Goldener Pfeil: Die Pause nutzt der weiße König, 4. Kc7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.28",
+    "9.29"
+   ],
+   "beispiel": {
+    "id": "k09-a28",
+    "pfad": [
+     "Qe4+",
+     "Kf2",
+     "Qd3",
+     "Ke1",
+     "Qe3+",
+     "Kd1"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 410
+   },
+   "pruefsumme": "e87ec66fba651135"
+  },
+  {
+   "id": "9.31",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.7",
+    "label": "",
+    "titel": "Dame gegen Bauer"
+   },
+   "unterabschnitt": "Pattalarm: Läufer- und Randbauer",
+   "fen": "7K/8/8/8/8/1Q6/2p5/k7 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b3",
+     "nach": "c2"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Läuferbauer, Weiß am Zug: remis. Roter Pfeil: 1. Dxc2 setzt den König a1 patt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.32",
+    "9.33"
+   ],
+   "beispiel": {
+    "id": "k09-a31",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 441
+   },
+   "pruefsumme": "d2b7e15d56a10933"
+  },
+  {
+   "id": "9.32",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.7",
+    "label": "",
+    "titel": "Dame gegen Bauer"
+   },
+   "unterabschnitt": "Pattalarm: Läufer- und Randbauer",
+   "fen": "8/8/8/8/8/4K1Q1/5p2/7k w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "g3",
+     "nach": "f2"
+    },
+    {
+     "farbe": "gold",
+     "von": "g3",
+     "nach": "f3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug, der König e3 steht nahe genug. Roter Pfeil: der natürliche Schlag 1. Dxf2??. Goldener Pfeil: der richtige Weg, 1. Df3+.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.31",
+    "9.33"
+   ],
+   "beispiel": {
+    "id": "k09-a32",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 442
+   },
+   "pruefsumme": "d4fb856a881db874",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Df3+",
+      "frage": "Warum spielt Weiß 1. Df3+ statt sofort 1. Dxf2?",
+      "antworten": [
+       "Der Bauer f2 ist von einer schwarzen Figur gedeckt.",
+       "1. Dxf2 wäre patt; nach 1. Df3+ Kg1 schlägt die Dame auf f2 mit Schach.",
+       "1. Df3+ setzt sofort matt."
+      ],
+      "richtig": 1,
+      "erklaerung": "Pattalarm beim Läuferbauern: Erst das Zwischenschach holt den König aus der Ecke heraus. Dann ist der Schlag kein Patt mehr."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.33",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.7",
+    "label": "",
+    "titel": "Dame gegen Bauer"
+   },
+   "unterabschnitt": "Pattalarm: Läufer- und Randbauer",
+   "fen": "8/8/8/8/8/4K3/5Q2/7k b - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "g1"
+    },
+    {
+     "farbe": "rot",
+     "feld": "g2"
+    },
+    {
+     "farbe": "rot",
+     "feld": "h2"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Dxf2?? – patt. Der König h1 steht nicht im Schach, aber die Dame kontrolliert g1, g2 und h2 (rot).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.31",
+    "9.32"
+   ],
+   "beispiel": {
+    "id": "k09-a32",
+    "pfad": [
+     "Qxf2"
+    ]
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 443
+   },
+   "pruefsumme": "13cca42dbd13e6bc"
+  },
+  {
+   "id": "9.34",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.7",
+    "label": "",
+    "titel": "Dame gegen Bauer"
+   },
+   "unterabschnitt": "Dame gegen Dame: das Dauerschach",
+   "fen": "8/P6k/8/8/8/5q2/6Q1/7K b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f3",
+     "nach": "g2"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "d1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug. Roter Pfeil: Der Damentausch 1... Dxg2+? verliert. Goldener Pfeil: Nur 1... Dd1+! hält remis.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a34",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 460
+   },
+   "pruefsumme": "b6ad777a2883a101",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... Dd1+",
+      "frage": "Warum gibt Schwarz mit 1... Dd1+ Schach, statt die Damen zu tauschen?",
+      "antworten": [
+       "Ein Damentausch ist nicht erlaubt, solange ein Bauer auf der 7. Reihe steht.",
+       "1... Dd1+ setzt matt.",
+       "Nach 1... Dxg2+ 2. Kxg2 wandelt der Bauer a7 um; mit Schachs hält Schwarz dagegen remis."
+      ],
+      "richtig": 2,
+      "erklaerung": "Der Verteidiger rechnet zuerst seine Schachs. Nach Dd1+ Dg1 Df3+ Dg2 kommt Weiß nicht zum Umwandeln."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.35",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.8",
+    "label": "",
+    "titel": "Läufer- und Springerendspiele"
+   },
+   "unterabschnitt": "Ungleichfarbige Läufer: Das Festungsremis",
+   "fen": "8/2k5/2Pb4/1K6/8/5B2/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "f3",
+     "nach": "c6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "c7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Ungleichfarbige Läufer, Weiß am Zug: remis trotz Mehrbauer. Grau: Der König blockiert auf dem dunklen Feld c7; der weiße Läufer (Pfeil) kann es nie angreifen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.36",
+    "9.37"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 502
+   },
+   "pruefsumme": "4b9d1083a4795d59",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum hält Schwarz hier trotz Minusbauer remis?",
+      "antworten": [
+       "Der Läufer d6 kann den Bauern c6 sofort schlagen.",
+       "Weiß ist am Zug und steht im Zugzwang.",
+       "Der König c7 blockiert auf einem dunklen Feld, das der helle Läufer f3 nie angreifen kann."
+      ],
+      "richtig": 2,
+      "erklaerung": "Das ist die Festung bei ungleichfarbigen Läufern: Blockade auf der Farbe, die der gegnerische Läufer nicht erreicht."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.36",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.8",
+    "label": "",
+    "titel": "Läufer- und Springerendspiele"
+   },
+   "unterabschnitt": "Ungleichfarbige Läufer: Das Festungsremis",
+   "fen": "8/8/3k4/8/3PPb2/8/4K3/5B2 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "d5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Zwei verbundene Mehrbauern, Weiß am Zug: remis. Grau: König und Läufer beherrschen d5 und e5, die Felder vor den Bauern.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.35",
+    "9.37"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 503
+   },
+   "pruefsumme": "1901862b00f2f24b"
+  },
+  {
+   "id": "9.37",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.8",
+    "label": "",
+    "titel": "Läufer- und Springerendspiele"
+   },
+   "unterabschnitt": "Ungleichfarbige Läufer: Das Festungsremis",
+   "fen": "8/2bk4/8/1P4P1/4K3/8/4B3/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b5",
+     "nach": "b8"
+    },
+    {
+     "farbe": "gold",
+     "von": "g5",
+     "nach": "g8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Zwei getrennte Mehrbauern, Weiß am Zug: gewonnen. Goldene Pfeile: die Freibauern an beiden Flügeln.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.35",
+    "9.36"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 504
+   },
+   "pruefsumme": "6bb257ce4183806a"
+  },
+  {
+   "id": "9.38",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.8",
+    "label": "",
+    "titel": "Läufer- und Springerendspiele"
+   },
+   "unterabschnitt": "Gleichfarbige Läufer: Der Freibauer entscheidet",
+   "fen": "8/3b4/3k4/P5p1/3K2P1/5B2/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a5",
+     "nach": "a6"
+    },
+    {
+     "farbe": "grau",
+     "von": "f3",
+     "nach": "a8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Gleichfarbige Läufer (beide auf hellen Feldern), Weiß am Zug. Goldener Pfeil: Nur 1. a6! gewinnt. Grauer Pfeil: Der Läufer f3 beherrscht die Diagonale bis zum Umwandlungsfeld a8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a38",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 522
+   },
+   "pruefsumme": "34c7ac5a194b1cd0",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. a6",
+      "frage": "Warum gewinnt 1. a6?",
+      "antworten": [
+       "Der Bauer läuft sofort; der Läufer f3 beherrscht b7 und a8, der schwarze König kommt nicht mehr vor ihn.",
+       "a6 sperrt dem Läufer d7 die Diagonale.",
+       "a6 bereitet einen Königsmarsch nach g5 vor."
+      ],
+      "richtig": 0,
+      "erklaerung": "Bei gleichfarbigen Läufern gibt es keine sichere Blockade auf der anderen Farbe. Wer seinen Freibauern schnell genug bringt, gewinnt."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.39",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.8",
+    "label": "",
+    "titel": "Läufer- und Springerendspiele"
+   },
+   "unterabschnitt": "Springerendspiele: keine Fernwirkung",
+   "fen": "8/7P/4n3/8/8/8/k7/2K5 b - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug verliert. Rot: Kein Springerzug bewacht das Umwandlungsfeld h8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.40"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 545
+   },
+   "pruefsumme": "b4fa3dcdb28efcec"
+  },
+  {
+   "id": "9.40",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.8",
+    "label": "",
+    "titel": "Läufer- und Springerendspiele"
+   },
+   "unterabschnitt": "Springerendspiele: keine Fernwirkung",
+   "fen": "8/7P/8/4n3/8/8/k7/2K5 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e5",
+     "nach": "g6"
+    },
+    {
+     "farbe": "gold",
+     "von": "e5",
+     "nach": "f7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug hält remis. Goldene Pfeile: Nur 1... Sg6 oder 1... Sf7 bewacht h8 rechtzeitig.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.39"
+   ],
+   "beispiel": {
+    "id": "k09-a40",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 546
+   },
+   "pruefsumme": "cf719411706599ff"
+  },
+  {
+   "id": "9.41",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.8",
+    "label": "",
+    "titel": "Läufer- und Springerendspiele"
+   },
+   "unterabschnitt": "Der falsche Läufer",
+   "fen": "7k/8/5K1P/8/2B5/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Der falsche Läufer, Weiß am Zug. Der Läufer c4 läuft auf hellen Feldern, das Umwandlungsfeld h8 (rot) ist dunkel. Der schwarze König kann nicht vertrieben werden: remis.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 557
+   },
+   "pruefsumme": "3080cab4c22bf36a",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum gewinnt Weiß hier trotz Läufer und Mehrbauer nicht?",
+      "antworten": [
+       "Der Bauer h6 ist gefesselt.",
+       "Der Läufer c4 erreicht das dunkle Umwandlungsfeld h8 nie, und der König in der Ecke ist nicht zu vertreiben.",
+       "Weiß ist im Zugzwang und muss den Läufer hergeben."
+      ],
+      "richtig": 1,
+      "erklaerung": "Beim Randbauern braucht der Läufer die Farbe des Umwandlungsfeldes. Sonst bleibt der verteidigende König einfach in der Ecke stehen."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.42",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.8",
+    "label": "",
+    "titel": "Läufer- und Springerendspiele"
+   },
+   "unterabschnitt": "Läufer gegen Springer",
+   "fen": "8/p5p1/1p1n3p/4k3/8/1P1BK2P/P5P1/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d3",
+     "nach": "h7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Läufer gegen Springer mit Bauern auf beiden Flügeln, Weiß am Zug. Grauer Pfeil: Der Läufer d3 wirkt über die ganze Diagonale bis h7; der Springer d6 braucht mehrere Züge für jeden Flügelwechsel.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 574
+   },
+   "pruefsumme": "da013f7644092a27"
+  },
+  {
+   "id": "9.43",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.9",
+    "label": "",
+    "titel": "Turm gegen Läufer"
+   },
+   "unterabschnitt": null,
+   "fen": "k7/8/1K6/8/8/6b1/8/7R w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h1",
+     "nach": "h8"
+    },
+    {
+     "farbe": "grau",
+     "von": "g3",
+     "nach": "b8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die richtige Ecke, Weiß am Zug: remis. Der Läufer g3 läuft auf dunklen Feldern, die Ecke a8 ist hell. Roter Pfeil: das Schach 1. Th8+. Grauer Pfeil: 1... Lb8 fängt es ab.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.44"
+   ],
+   "beispiel": {
+    "id": "k09-a43",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 598
+   },
+   "pruefsumme": "b9a9746105b62b67"
+  },
+  {
+   "id": "9.44",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.9",
+    "label": "",
+    "titel": "Turm gegen Läufer"
+   },
+   "unterabschnitt": null,
+   "fen": "7k/5Kb1/8/8/R7/8/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a4",
+     "nach": "h4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die falsche Ecke, Weiß am Zug. Die Ecke h8 hat die Farbe des Läufers. Goldener Pfeil: 1. Th4+ Lh6 (einziger Zug) 2. Txh6#.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "9.43"
+   ],
+   "beispiel": {
+    "id": "k09-a44",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 599
+   },
+   "pruefsumme": "cc77e1279c6de40e",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Th4+",
+      "frage": "Warum entscheidet 1. Th4+ sofort?",
+      "antworten": [
+       "Der Turm greift den Läufer g7 an.",
+       "Der König h8 kann nach g8 ausweichen, und der Läufer geht verloren.",
+       "Schwarz muss 1... Lh6 dazwischenziehen, und 2. Txh6 ist matt."
+      ],
+      "richtig": 2,
+      "erklaerung": "In der falschen Ecke hat der König keinen Ausweg. Als Läuferseite gehört er in die Ecke der anderen Farbe (Abb. 9.43)."
+     }
+    ]
+   }
+  },
+  {
+   "id": "9.45",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "4k3/R7/8/3KP3/8/8/8/7r b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a45",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 669
+   },
+   "pruefsumme": "863c677ee7dcf6c6"
+  },
+  {
+   "id": "9.46",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "5k2/1R6/5K2/5P2/8/8/8/r7 b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a46",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 677
+   },
+   "pruefsumme": "1196d794e0599dab"
+  },
+  {
+   "id": "9.47",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "2K5/2P3k1/8/8/8/8/1r6/4R3 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a47",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 685
+   },
+   "pruefsumme": "e52d17de034f49c7"
+  },
+  {
+   "id": "9.48",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "R7/P5k1/5r2/8/8/8/8/1K6 b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a48",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 692
+   },
+   "pruefsumme": "25263779bb5a23df"
+  },
+  {
+   "id": "9.49",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/8/1R6/5k2/4p3/8/K7 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a49",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 699
+   },
+   "pruefsumme": "51357bd410ef97dd"
+  },
+  {
+   "id": "9.50",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "7K/8/2k5/1p6/8/8/8/6R1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a50",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 706
+   },
+   "pruefsumme": "168dcbb3d19ad2ea"
+  },
+  {
+   "id": "9.51",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "r6k/8/1P6/2P5/8/8/8/7K b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a51",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 713
+   },
+   "pruefsumme": "e97770ffe184a8b1"
+  },
+  {
+   "id": "9.52",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/8/8/6Q1/3K4/p7/k7 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k09-a52",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 721
+   },
+   "pruefsumme": "704fad8a96304cf9"
+  },
+  {
+   "id": "9.53",
+   "auflage": 1,
+   "kapitel": 9,
+   "abschnitt": {
+    "nummer": "9.10",
+    "label": "",
+    "titel": "Rückblick: die Erkennungsbilder"
+   },
+   "unterabschnitt": null,
+   "fen": "k7/8/8/P1K5/3B4/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 728
+   },
+   "pruefsumme": "ddabe6b6207c6ea1"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:philidor-reihenfolge",
+   "nummer": 64,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.45"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Der schwarze Turm steht schon auf der 1. Reihe. Soll Schwarz sofort von hinten Schach geben?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Nein. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Td1+? 2. Ke6!"
+    },
+    {
+     "art": "text",
+     "text": " schirmt der Bauer e5 den weißen König gegen Schachs von hinten ab, und es droht ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Ta8+ Td8 4. Txd8+ Kxd8 5. Kf7"
+    },
+    {
+     "art": "text",
+     "text": ": Der König steht dann auf einem Schlüsselfeld, und das Bauernendspiel ist gewonnen. Richtig ist ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Th6!"
+    },
+    {
+     "art": "text",
+     "text": ": Der Turm sperrt die 6. Reihe, und die Philidor-Stellung steht. Auch andere abwartende Züge halten remis, aber nur die Sperre auf der 6. Reihe macht die Verteidigung einfach. Merke dir: Erst die Reihe vor dem Bauern sperren. Nach hinten geht der Turm erst, wenn der Bauer vorgerückt ist.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 667
+   },
+   "erklaerung": {
+    "loesung": "1... Th6!",
+    "akzeptiert": [],
+    "motiv": "Philidor-Stellung",
+    "text": "Nach 1... Td1+? 2. Ke6! schirmt der Bauer e5 den König gegen Schachs von hinten ab, und Weiß droht den Turmtausch ins gewonnene Bauernendspiel. Richtig ist 1... Th6!: Der Turm sperrt die sechste Reihe, und erst wenn der Bauer vorrückt, geht er nach hinten."
+   }
+  },
+  {
+   "id": "ueb:kurze-seite",
+   "nummer": 65,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.46"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Weiß droht ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Tb8#"
+    },
+    {
+     "art": "text",
+     "text": ". Wie verteidigt sich Schwarz, und wohin gehört sein König?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Der König gehört nach g8, auf die kurze Seite: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kg8 2. Tb8+ Kh7"
+    },
+    {
+     "art": "text",
+     "text": ". Der Turm a1 steht auf der langen Seite und hat dort genug Schachdistanz: Auf ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Tf8"
+    },
+    {
+     "art": "text",
+     "text": " folgt zum Beispiel ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... Ta6+"
+    },
+    {
+     "art": "text",
+     "text": ", und Weiß kommt nicht weiter. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke8? 2. Tb8+ Kd7"
+    },
+    {
+     "art": "text",
+     "text": " steht der König dagegen auf der langen Seite und seinem eigenen Turm im Weg: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kg7"
+    },
+    {
+     "art": "text",
+     "text": ", und der f-Bauer läuft. Auch das Zwischenschach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ta6+"
+    },
+    {
+     "art": "text",
+     "text": " hält remis. Merke dir: König auf die kurze Seite, Turm auf die lange.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 675
+   },
+   "erklaerung": {
+    "loesung": "1... Kg8 2. Tb8+ Kh7",
+    "akzeptiert": [
+     "1... Ta6+"
+    ],
+    "motiv": "König auf die kurze Seite",
+    "text": "Der König gehört nach g8 auf die kurze Seite, der Turm bleibt auf der langen und hat dort genug Abstand für Schachs. Nach 1... Ke8? 2. Tb8+ Kd7 3. Kg7 steht der König auf der langen Seite seinem Turm im Weg, und der Bauer läuft."
+   }
+  },
+  {
+   "id": "ueb:lucena-c-bauer",
+   "nummer": 66,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.47"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Wie gewinnt Weiß? Beschreibe den Weg des Turms und den Weg des Königs.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Te4"
+    },
+    {
+     "art": "text",
+     "text": " bringt den Turm auf die 4. Reihe. Den König g7 muss Weiß nicht wegtreiben, da zwischen ihm und dem Bauern schon drei Linien liegen. Im Anschluss verlässt der weiße König das Umwandlungsfeld und geht im Zickzack nach unten, etwa ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Tb1 2. Kd7 Td1+ 3. Kc6 Tc1+ 4. Kd6 Td1+ 5. Kc5 Tc1+ 6. Tc4"
+    },
+    {
+     "art": "text",
+     "text": ", und die Brücke steht. Auch viele andere erste Züge gewinnen, zum Beispiel ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Tc1"
+    },
+    {
+     "art": "text",
+     "text": ": Der Turm deckt den Bauern von hinten, und der König geht dem schwarzen Turm entgegen. Merke dir: Turm auf die 4. Reihe, König im Zickzack heraus, Turm dazwischen.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 683
+   },
+   "erklaerung": {
+    "loesung": "1. Te4",
+    "akzeptiert": [
+     "1. Tc1"
+    ],
+    "motiv": "Lucena: Brückenbau",
+    "text": "1. Te4 stellt den Turm auf die vierte Reihe; der schwarze König steht schon weit genug weg. Dann verlässt der weiße König das Umwandlungsfeld im Zickzack, und auf das letzte Schach stellt sich der Turm mit Tc4 dazwischen."
+   }
+  },
+  {
+   "id": "ueb:vancura-a7",
+   "nummer": 67,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.48"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Weiß hat gerade a6–a7 gespielt. Was muss Schwarz jetzt tun?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Der Turm muss sofort auf die a-Linie: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ta6!"
+    },
+    {
+     "art": "text",
+     "text": " Er greift den Bauern an, und der weiße Turm kann a8 nicht mehr verlassen. Ebenso gut ist ein Zwischenschach (",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Tb6+"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Tf1+"
+    },
+    {
+     "art": "text",
+     "text": ") mit dem Turmzug auf die a-Linie im Anschluss. Der König bleibt dabei auf g7 oder h7. Jeder andere Zug verliert, zum Beispiel ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kh7? 2. Tb8 Ta6 3. a8=D Txa8 4. Txa8"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Steht der Randbauer auf der 7. Reihe, gehört der Turm hinter ihn und der König nach g7 oder h7.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 690
+   },
+   "erklaerung": {
+    "loesung": "1... Ta6!",
+    "akzeptiert": [
+     "1... Tb6+",
+     "1... Tf1+"
+    ],
+    "motiv": "Turm hinter den Randbauern",
+    "text": "1... Ta6! greift den Bauern an und bindet den weißen Turm an a8; der König bleibt auf g7 oder h7. Jeder andere Zug verliert, etwa 1... Kh7? 2. Tb8 Ta6 3. a8=D."
+   }
+  },
+  {
+   "id": "ueb:turm-gegen-bauer",
+   "nummer": 68,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.49"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Nur ein Zug gewinnt. Finde ihn.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Tb1!"
+    },
+    {
+     "art": "text",
+     "text": " Der Turm besetzt die Umwandlungsreihe, weit genug vom schwarzen König entfernt. Danach kommt der weiße König rechtzeitig, was Schwarz auch spielt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kf3 2. Kb2 e2 3. Kc2 Kf2 4. Kd2"
+    },
+    {
+     "art": "text",
+     "text": ", und der Bauer fällt. Auch auf ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke4"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... e2"
+    },
+    {
+     "art": "text",
+     "text": " folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Kb2"
+    },
+    {
+     "art": "text",
+     "text": ". Jeder andere erste Zug lässt den Bauern dagegen entkommen. Merke dir: Gegen einen weit vorgerückten Bauern gehört der Turm auf die Umwandlungsreihe, weit weg vom gegnerischen König.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 697
+   },
+   "erklaerung": {
+    "loesung": "1. Tb1!",
+    "akzeptiert": [],
+    "motiv": "Turm auf die Umwandlungsreihe",
+    "text": "1. Tb1! besetzt die Umwandlungsreihe weit weg vom schwarzen König, und der weiße König kommt über b2, c2 und d2 rechtzeitig. Jeder andere erste Zug lässt den Bauern entkommen."
+   }
+  },
+  {
+   "id": "ueb:abschneiden-reihe",
+   "nummer": 69,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.50"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Nur ein Zug gewinnt. Finde ihn und begründe ihn.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Tg5!"
+    },
+    {
+     "art": "text",
+     "text": " Der Turm sperrt die 5. Reihe: Der schwarze König kommt nur noch über den Umweg b6 und a5 vor seinen Bauern, und das dauert zu lange. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kb6 2. Kg7 Ka5 3. Kf6"
+    },
+    {
+     "art": "text",
+     "text": " ist der weiße König rechtzeitig zur Stelle. Läuft der Bauer allein, holt ihn der Turm ab, sobald er die 3. Reihe erreicht: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... b4 2. Kg7 b3 3. Tg3 b2 4. Tb3"
+    },
+    {
+     "art": "text",
+     "text": ". Vorher darf der Turm die 5. Reihe nicht verlassen: Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Tg4? Kb5"
+    },
+    {
+     "art": "text",
+     "text": " deckt der König seinen Bauern, und die Stellung ist remis. Merke dir: Abschneiden geht auch auf einer Reihe.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 704
+   },
+   "erklaerung": {
+    "loesung": "1. Tg5!",
+    "akzeptiert": [],
+    "motiv": "Abschneiden auf der Reihe",
+    "text": "1. Tg5! sperrt die fünfte Reihe, und der schwarze König kommt nur über einen Umweg vor seinen Bauern; bis dahin ist der weiße König da. Läuft der Bauer allein, holt ihn der Turm von hinten oder auf b3."
+   }
+  },
+  {
+   "id": "ueb:turm-gegen-zwei-bauern",
+   "nummer": 70,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.51"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Hält der Turm die beiden Bauern noch auf? Begründe deine Antwort mit einer Zugfolge.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Ja, da erst ein Bauer die 6. Reihe erreicht hat: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Tb8! 2. c6 Txb6 3. c7 Tc6"
+    },
+    {
+     "art": "text",
+     "text": ", und beide Bauern fallen, ebenso nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. b7 Txb7"
+    },
+    {
+     "art": "text",
+     "text": ". Auch ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ta1+"
+    },
+    {
+     "art": "text",
+     "text": " mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Tb1"
+    },
+    {
+     "art": "text",
+     "text": " gewinnt. Jeder andere Zug verliert, zum Beispiel ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Tc8? 2. b7"
+    },
+    {
+     "art": "text",
+     "text": ", und beide Bauern stehen zu weit vorn. Merke dir: Der Turm muss verbundene Freibauern aufhalten, bevor beide die 6. Reihe erreichen.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 711
+   },
+   "erklaerung": {
+    "loesung": "1... Tb8!",
+    "akzeptiert": [
+     "1... Ta1+"
+    ],
+    "motiv": "Turm gegen verbundene Freibauern",
+    "text": "Nur ein Bauer steht auf der sechsten Reihe, also hält der Turm noch: 1... Tb8! 2. c6 Txb6 3. c7 Tc6, und beide Bauern fallen. Nach 1... Tc8? 2. b7 stehen beide zu weit vorn."
+   }
+  },
+  {
+   "id": "ueb:dame-gegen-bauer",
+   "nummer": 71,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.52"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Wie gewinnt Weiß am schnellsten?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Kc3!"
+    },
+    {
+     "art": "text",
+     "text": " Der König nimmt b2 und lässt dem schwarzen König das Feld b1. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kb1"
+    },
+    {
+     "art": "text",
+     "text": " setzt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Dg1#"
+    },
+    {
+     "art": "text",
+     "text": " matt. Die naheliegenden Züge ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Kc2??"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Db4??"
+    },
+    {
+     "art": "text",
+     "text": " setzen dagegen patt, da der König a1 im Anschluss kein Feld hat und der Bauer a2 keinen Zug. Merke dir: Nimm dem König nie das letzte Feld, ohne Schach zu geben.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 719
+   },
+   "erklaerung": {
+    "loesung": "1. Kc3!",
+    "akzeptiert": [],
+    "motiv": "Matt statt Patt",
+    "text": "1. Kc3! nimmt dem König b2 und lässt ihm b1, sodass nach 1... Kb1 2. Dg1# matt folgt. Die naheliegenden Züge 1. Kc2?? und 1. Db4?? setzen patt."
+   }
+  },
+  {
+   "id": "ueb:falscher-laeufer",
+   "nummer": 72,
+   "kapitel": 9,
+   "titel": null,
+   "abbildungen": [
+    "9.53"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Kann Weiß gewinnen? Begründe deine Antwort.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Nein. Der Läufer d4 läuft auf dunklen Feldern, das Umwandlungsfeld a8 ist hell: Er ist der falsche Läufer. Bleibt der schwarze König in der Ecke a8, kann Weiß ihn nicht vertreiben, und die Partie endet remis. Merke dir: Beim Randbauern entscheidet die Farbe des Umwandlungsfeldes, ob der Läufer hilft.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap09_endspiel_vertiefung.tex",
+    "zeile": 726
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Falscher Läufer",
+    "text": "Der Läufer läuft auf dunklen Feldern, das Umwandlungsfeld a8 ist hell. Bleibt der schwarze König in der Ecke, kann Weiß ihn nicht vertreiben: remis."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k09-a13",
+   "kapitel": 9,
+   "abschnitt": "9.3",
+   "titel": "Warum erst wegtreiben?",
+   "startFen": "8/4P1k1/8/4K3/4R3/8/8/4r3 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rxe4+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxe4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf7",
+         "zeichen": "",
+         "abbildungen": [
+          "9.14"
+         ],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.13",
+     "pfad": []
+    },
+    {
+     "nummer": "9.14",
+     "pfad": [
+      "Rxe4+",
+      "Kxe4",
+      "Kf7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a15",
+   "kapitel": 9,
+   "abschnitt": "9.4",
+   "titel": "Die Vancura-Stellung: Remis gegen den Randbauern",
+   "startFen": "R7/6k1/P4r2/1K6/8/8/8/8 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rf5+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kb6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rf6+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.15",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a16",
+   "kapitel": 9,
+   "abschnitt": "9.4",
+   "titel": "Warum der König auf g7 oder h7 gehört",
+   "startFen": "R7/P4k2/8/8/8/8/r7/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh8",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxa7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rh7+",
+         "zeichen": "",
+         "abbildungen": [
+          "9.17"
+         ],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.16",
+     "pfad": []
+    },
+    {
+     "nummer": "9.17",
+     "pfad": [
+      "Rh8",
+      "Rxa7",
+      "Rh7+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a19",
+   "kapitel": 9,
+   "abschnitt": "9.5",
+   "titel": "Turm gegen Bauer",
+   "startFen": "8/8/1K6/4k3/4p3/8/8/7R w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Kc5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Rd1",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.19",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a20",
+   "kapitel": 9,
+   "abschnitt": "9.5",
+   "titel": "Turm gegen Bauer",
+   "startFen": "8/8/1K6/4k3/4p3/8/8/7R b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Kd4",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.20",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a21",
+   "kapitel": 9,
+   "abschnitt": "9.5",
+   "titel": "Turm gegen Bauer",
+   "startFen": "8/8/8/8/8/2K5/1p2R3/2k5 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "b1=N+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "b1=Q",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Re1#",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.21",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a22",
+   "kapitel": 9,
+   "abschnitt": "9.5",
+   "titel": "Turm gegen Bauer",
+   "startFen": "r6k/8/1PP5/8/8/8/8/7K b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rb8",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "c7",
+       "zeichen": "!",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxb6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "c8=Q+",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Rc8",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "b7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.22",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a23",
+   "kapitel": 9,
+   "abschnitt": "9.6",
+   "titel": "Turmendspiele mit mehreren Bauern",
+   "startFen": "5rk1/pR3p2/6p1/7p/7P/6P1/5PK1/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rxa7",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.23",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a26",
+   "kapitel": 9,
+   "abschnitt": "9.6",
+   "titel": "Einen Mehrbauern verwerten",
+   "startFen": "1rk5/8/7p/8/P2K4/7P/8/1R6 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rxb8+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxb8",
+       "zeichen": "",
+       "abbildungen": [
+        "9.27"
+       ],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.26",
+     "pfad": []
+    },
+    {
+     "nummer": "9.27",
+     "pfad": [
+      "Rxb8+",
+      "Kxb8"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a28",
+   "kapitel": 9,
+   "abschnitt": "9.7",
+   "titel": "Dame gegen Bauer",
+   "startFen": "1K6/8/8/8/7Q/8/3pk3/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qe4+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kf2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qd3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Ke1",
+           "zeichen": "",
+           "abbildungen": [
+            "9.29"
+           ],
+           "weiter": [
+            {
+             "zug": "Qe3+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Kd1",
+               "zeichen": "",
+               "abbildungen": [
+                "9.30"
+               ],
+               "weiter": [
+                {
+                 "zug": "Kc7",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.28",
+     "pfad": []
+    },
+    {
+     "nummer": "9.29",
+     "pfad": [
+      "Qe4+",
+      "Kf2",
+      "Qd3",
+      "Ke1"
+     ]
+    },
+    {
+     "nummer": "9.30",
+     "pfad": [
+      "Qe4+",
+      "Kf2",
+      "Qd3",
+      "Ke1",
+      "Qe3+",
+      "Kd1"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a3",
+   "kapitel": 9,
+   "abschnitt": "9.2",
+   "titel": "Die Philidor-Stellung: Remis durch Aktivität",
+   "startFen": "4k3/1R6/7r/3KP3/8/8/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "e6",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rh1",
+       "zeichen": "",
+       "abbildungen": [
+        "9.4"
+       ],
+       "weiter": [
+        {
+         "zug": "Kd6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rd1+",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.3",
+     "pfad": []
+    },
+    {
+     "nummer": "9.4",
+     "pfad": [
+      "e6",
+      "Rh1"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a31",
+   "kapitel": 9,
+   "abschnitt": "9.7",
+   "titel": "Pattalarm: Läufer- und Randbauer",
+   "startFen": "7K/8/8/8/8/1Q6/2p5/k7 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxc2",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.31",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a32",
+   "kapitel": 9,
+   "abschnitt": "9.7",
+   "titel": "Pattalarm: Läufer- und Randbauer",
+   "startFen": "8/8/8/8/8/4K1Q1/5p2/7k w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qf3+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kg1",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxf2+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kh2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxf2+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Kxf2",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Qxf2",
+     "zeichen": "??",
+     "abbildungen": [
+      "9.33"
+     ],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.32",
+     "pfad": []
+    },
+    {
+     "nummer": "9.33",
+     "pfad": [
+      "Qxf2"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a34",
+   "kapitel": 9,
+   "abschnitt": "9.7",
+   "titel": "Dame gegen Dame: das Dauerschach",
+   "startFen": "8/P6k/8/8/8/5q2/6Q1/7K b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qd1+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qg1",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qf3+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Qg2",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kh2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qd6+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Qxg2+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.34",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a38",
+   "kapitel": 9,
+   "abschnitt": "9.8",
+   "titel": "Gleichfarbige Läufer: Der Freibauer entscheidet",
+   "startFen": "8/3b4/3k4/P5p1/3K2P1/5B2/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "a6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kc7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "a7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Bc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.38",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a40",
+   "kapitel": 9,
+   "abschnitt": "9.8",
+   "titel": "Springerendspiele: keine Fernwirkung",
+   "startFen": "8/7P/8/4n3/8/8/k7/2K5 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ng6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Nf7",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.40",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a43",
+   "kapitel": 9,
+   "abschnitt": "9.9",
+   "titel": "Turm gegen Läufer",
+   "startFen": "k7/8/1K6/8/8/6b1/8/7R w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh8+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bb8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.43",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a44",
+   "kapitel": 9,
+   "abschnitt": "9.9",
+   "titel": "Turm gegen Läufer",
+   "startFen": "7k/5Kb1/8/8/R7/8/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh4+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bh6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxh6#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.44",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a45",
+   "kapitel": 9,
+   "abschnitt": "Übung 64",
+   "titel": "Rückblick: die Erkennungsbilder",
+   "startFen": "4k3/R7/8/3KP3/8/8/8/7r b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Rd1+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Ke6",
+       "zeichen": "!",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.45",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a46",
+   "kapitel": 9,
+   "abschnitt": "Übung 65",
+   "titel": "Rückblick: die Erkennungsbilder",
+   "startFen": "5k2/1R6/5K2/5P2/8/8/8/r7 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Kg8",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rb8+",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kh7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rf8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Ra6+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Ke8",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rb8+",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kd7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kg7",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Ra6+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.46",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a47",
+   "kapitel": 9,
+   "abschnitt": "Übung 66",
+   "titel": "Rückblick: die Erkennungsbilder",
+   "startFen": "2K5/2P3k1/8/8/8/8/1r6/4R3 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Re4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rb1",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kd7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rd1+",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Kc6",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rc1+",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Kd6",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Rd1+",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Kc5",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Rc1+",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Rc4",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": []
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Rc1",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.47",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a48",
+   "kapitel": 9,
+   "abschnitt": "Übung 67",
+   "titel": "Rückblick: die Erkennungsbilder",
+   "startFen": "R7/P5k1/5r2/8/8/8/8/1K6 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ra6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Rb6+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Rf1+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Kh7",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rb8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ra6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "a8=Q",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rxa8",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rxa8",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.48",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a49",
+   "kapitel": 9,
+   "abschnitt": "Übung 68",
+   "titel": "Rückblick: die Erkennungsbilder",
+   "startFen": "8/8/8/1R6/5k2/4p3/8/K7 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rb1",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kf3",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kb2",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "e2",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Kc2",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Kf2",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Kd2",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Ke4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kb2",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "e2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kb2",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.49",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a5",
+   "kapitel": 9,
+   "abschnitt": "9.2",
+   "titel": "Wenn Philidor nicht mehr geht: König auf die kurze Seite",
+   "startFen": "r7/4K1k1/4P3/8/8/8/8/3R4 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ra7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kd6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ra6+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ra8+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Ke8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf6",
+         "zeichen": "!",
+         "abbildungen": [],
+         "weiter": []
+        },
+        {
+         "zug": "Ra8+",
+         "zeichen": "?",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rd8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Rd7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ra8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.5",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a50",
+   "kapitel": 9,
+   "abschnitt": "Übung 69",
+   "titel": "Rückblick: die Erkennungsbilder",
+   "startFen": "7K/8/2k5/1p6/8/8/8/6R1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rg5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kb6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kg7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Ka5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Kf6",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "b4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kg7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "b3",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rg3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "b2",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Rb3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "zug": "Rg4",
+         "zeichen": "?",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kb5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.50",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a51",
+   "kapitel": 9,
+   "abschnitt": "Übung 70",
+   "titel": "Rückblick: die Erkennungsbilder",
+   "startFen": "r6k/8/1P6/2P5/8/8/8/7K b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rb8",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "c6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxb6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "c7",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rc6",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "b7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxb7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Ra1+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kg2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rb1",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Rc8",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "b7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.51",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a52",
+   "kapitel": 9,
+   "abschnitt": "Übung 71",
+   "titel": "Rückblick: die Erkennungsbilder",
+   "startFen": "8/8/8/8/6Q1/3K4/p7/k7 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Kc3",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kb1",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qg1#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Kc2",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Qb4",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.52",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a6",
+   "kapitel": 9,
+   "abschnitt": "9.2",
+   "titel": "Wenn Philidor nicht mehr geht: König auf die kurze Seite",
+   "startFen": "1r6/4K1k1/4P3/8/8/8/8/3R4 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rb7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kd8",
+       "zeichen": "!",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rb8+",
+         "zeichen": "",
+         "abbildungen": [
+          "9.6"
+         ],
+         "weiter": [
+          {
+           "zug": "Kd7",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rb7+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Kc6",
+               "zeichen": "",
+               "abbildungen": [
+                "9.7"
+               ],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kc7",
+           "zeichen": "?",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Ra8",
+             "zeichen": "!",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.6",
+     "pfad": [
+      "Rb7+",
+      "Kd8",
+      "Rb8+"
+     ]
+    },
+    {
+     "nummer": "9.7",
+     "pfad": [
+      "Rb7+",
+      "Kd8",
+      "Rb8+",
+      "Kd7",
+      "Rb7+",
+      "Kc6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k09-a8",
+   "kapitel": 9,
+   "abschnitt": "9.3",
+   "titel": "Die Lucena-Stellung: Gewinn durch Brückenbau",
+   "startFen": "4K3/4P1k1/8/8/8/8/r7/5R2 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rg1+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rg4",
+         "zeichen": "",
+         "abbildungen": [
+          "9.9"
+         ],
+         "weiter": [
+          {
+           "zug": "Ra1",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Kd7",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rd1+",
+               "zeichen": "",
+               "abbildungen": [
+                "9.10"
+               ],
+               "weiter": [
+                {
+                 "zug": "Ke6",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Re1+",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Kd6",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Rd1+",
+                       "zeichen": "",
+                       "abbildungen": [
+                        "9.11"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "Ke5",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Re1+",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Re4",
+                             "zeichen": "",
+                             "abbildungen": [
+                              "9.12"
+                             ],
+                             "weiter": [
+                              {
+                               "zug": "Rxe4+",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Kxe4",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": []
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "zug": "Rd4",
+                 "zeichen": "??",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Rxd4+",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": []
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Kd7",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Ra7+",
+       "zeichen": "!",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "9.8",
+     "pfad": []
+    },
+    {
+     "nummer": "9.9",
+     "pfad": [
+      "Rg1+",
+      "Kh7",
+      "Rg4"
+     ]
+    },
+    {
+     "nummer": "9.10",
+     "pfad": [
+      "Rg1+",
+      "Kh7",
+      "Rg4",
+      "Ra1",
+      "Kd7",
+      "Rd1+"
+     ]
+    },
+    {
+     "nummer": "9.11",
+     "pfad": [
+      "Rg1+",
+      "Kh7",
+      "Rg4",
+      "Ra1",
+      "Kd7",
+      "Rd1+",
+      "Ke6",
+      "Re1+",
+      "Kd6",
+      "Rd1+"
+     ]
+    },
+    {
+     "nummer": "9.12",
+     "pfad": [
+      "Rg1+",
+      "Kh7",
+      "Rg4",
+      "Ra1",
+      "Kd7",
+      "Rd1+",
+      "Ke6",
+      "Re1+",
+      "Kd6",
+      "Rd1+",
+      "Ke5",
+      "Re1+",
+      "Re4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  }
+ ]
+}

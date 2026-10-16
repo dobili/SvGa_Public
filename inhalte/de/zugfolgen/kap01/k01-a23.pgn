@@ -1,0 +1,16 @@
+[Event "Kapitel 1: Warum „Schach“ vor „Schlag“ steht"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "rnb1k2r/ppp2p1p/4p1p1/2bq4/4N3/3P4/PPP1BPPP/R1BQ1RK1 w kq - 0 1"]
+[SetUp "1"]
+[Beispiel "k01-a23"]
+[Kapitel "1"]
+[Abschnitt "1.4"]
+[Status "freigegeben"]
+[Abbildungen "1.23 1.24 1.25"]
+
+{ Abb. 1.23 } 1. Nf6+ $1 { Abb. 1.24 } ( 1. Nxc5 Qxc5 ) 1... Ke7 { Abb. 1.25 } ( 1... Kf8 ) ( 1... Kd8 ) 2. Nxd5+ *

@@ -1,0 +1,16 @@
+[Event "Kapitel 7: 8. Überlastung und Ablenkung"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "3r2k1/pp3ppp/1q6/3n4/8/1B6/PPQ2PPP/4R1K1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k07-a20"]
+[Kapitel "7"]
+[Abschnitt "7.2"]
+[Status "freigegeben"]
+[Abbildungen "7.20"]
+
+{ Abb. 7.20 } 1. Bxd5 $1 Rxd5 $4 2. Re8# *

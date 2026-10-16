@@ -1,0 +1,14 @@
+[Event "Kapitel 3: Das Dänische Gambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k03-a18"]
+[Kapitel "3"]
+[Abschnitt "3.6"]
+[Status "freigegeben"]
+[Abbildungen "3.18 3.19 3.20 3.21 3.22 3.23 3.24"]
+
+1. e4 e5 2. d4 { Abb. 3.18 } 2... exd4 3. c3 dxc3 { Abb. 3.19 } 4. Bc4 cxb2 5. Bxb2 { Abb. 3.20 } 5... d5 { Abb. 3.21 } ( 5... Qg5 $2 6. Nf3 Qxg2 $4 ) 6. Bxd5 Nf6 { Abb. 3.22 } 7. Bxf7+ Kxf7 8. Qxd8 Bb4+ $1 { Abb. 3.23 } 9. Qd2 Bxd2+ 10. Nxd2 { Abb. 3.24 } *

@@ -1,0 +1,16 @@
+[Event "Kapitel 7: 6. Köder, Hinlenkung und Räumung"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30"]
+[SetUp "1"]
+[Beispiel "k07-a16"]
+[Kapitel "7"]
+[Abschnitt "7.2"]
+[Status "freigegeben"]
+[Abbildungen "7.16"]
+
+{ Abb. 7.16 } 30. Qh8+ $1 Kxh8 31. Nxf7+ *

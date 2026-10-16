@@ -1,0 +1,6905 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 7,
+ "titel": "Taktik: Wie man aus kleinen Vorteilen Material gewinnt",
+ "abschnitte": [
+  {
+   "nummer": "7.1",
+   "label": "sec:k7-werkzeug",
+   "titel": "Dein Werkzeug: Taktik finden in drei Schritten"
+  },
+  {
+   "nummer": "7.2",
+   "label": "sec:k7-motive",
+   "titel": "Die zwölf Grundmotive"
+  },
+  {
+   "nummer": "7.3",
+   "label": "sec:k7-abtausch",
+   "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+  },
+  {
+   "nummer": "7.4",
+   "label": "sec:k7-mattbilder",
+   "titel": "Typische Mattbilder"
+  },
+  {
+   "nummer": "7.5",
+   "label": "",
+   "titel": "Rückblick: Taktik"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "7.1",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "1. Doppelangriff und Gabel",
+   "fen": "r5k1/p5pp/8/3Q4/8/8/5PPP/6K1 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "g8"
+    },
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "a8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Doppelangriff der Dame nach 1. Dd5+, Schwarz am Zug. Rot: Die Dame greift den König g8 und den ungedeckten Turm a8 zugleich an. Nach 1... Kh8 setzt 2. Dxa8# sogar matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a1",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 206
+   },
+   "pruefsumme": "a0a36117af8fde13"
+  },
+  {
+   "id": "7.2",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "1. Doppelangriff und Gabel",
+   "fen": "8/8/5k2/3N4/1q6/8/8/7K b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "b4"
+    },
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "f6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Springergabel, Schwarz am Zug. Rot: Der Springer d5 greift König f6 und Dame b4 zugleich an. Der König muss ausweichen, danach fällt die Dame.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.3"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 242
+   },
+   "pruefsumme": "5ea904421f9dba3a"
+  },
+  {
+   "id": "7.3",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "1. Doppelangriff und Gabel",
+   "fen": "r1bqkb1r/ppp2ppp/2n5/3pp3/2B1N3/5N2/PPPP1PPP/R1BQK2R w KQkq - 0 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "c4"
+    },
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "e4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Bauerngabel nach 5... d5, Weiß am Zug. Rot: Der Bauer d5 greift Läufer c4 und Springer e4 zugleich an.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.2"
+   ],
+   "beispiel": {
+    "id": "k07-a3",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Nc3",
+     "Nf6",
+     "Bc4",
+     "Nxe4",
+     "Nxe4",
+     "d5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 243
+   },
+   "pruefsumme": "84d58f3b8c53e0c3",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6. Ld3",
+      "frage": "Warum spielt Weiß 6. Ld3?",
+      "antworten": [
+       "Der Läufer greift den Bauern d5 ein zweites Mal an.",
+       "Der Läufer weicht aus und deckt dabei den Springer e4; nach dxe4 Lxe4 holt Weiß wenigstens den Bauern zurück.",
+       "Der Läufer bereitet einen Angriff auf h7 vor, der Springer ist dabei egal."
+      ],
+      "richtig": 1,
+      "erklaerung": "Gegen eine Gabel hilft oft ein Zug, der die eine Figur rettet und die andere deckt. Die Figur ist trotzdem weg, aber der Bauer kommt zurück."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.4",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "2. Die Fesselung",
+   "fen": "r1bqkbnr/ppp2ppp/2np4/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "b5",
+     "nach": "e8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "c6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Absolute Fesselung nach 1. e4 e5 2. Sf3 Sc6 3. Lb5 d6, Weiß am Zug. Grau: die Fesselung. Rot: Der Springer c6 darf nicht ziehen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.5"
+   ],
+   "beispiel": {
+    "id": "k07-a4",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bb5",
+     "d6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 257
+   },
+   "pruefsumme": "a781e62d424cc0a7"
+  },
+  {
+   "id": "7.5",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "2. Die Fesselung",
+   "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g5",
+     "nach": "d8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Relative Fesselung im Abgelehnten Damengambit aus Kapitel 2 nach 1. d4 d5 2. c4 e6 3. Sc3 Sf6 4. Lg5, Schwarz am Zug. Grau: die Fesselung. Rot: Zieht der Springer, schlägt der Läufer die Dame.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.4"
+   ],
+   "beispiel": {
+    "id": "k07-a5",
+    "pfad": [
+     "d4",
+     "d5",
+     "c4",
+     "e6",
+     "Nc3",
+     "Nf6",
+     "Bg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 258
+   },
+   "pruefsumme": "9a44f2acc3eaa721"
+  },
+  {
+   "id": "7.6",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "3. Der Spieß",
+   "fen": "7r/6k1/8/8/8/8/8/R3K3 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h8",
+     "nach": "h1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug. Gold: 1... Th1+.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.7"
+   ],
+   "beispiel": {
+    "id": "k07-a6",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 292
+   },
+   "pruefsumme": "788e9bedfa911b29",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... Th1+",
+      "frage": "Warum gewinnt 1... Th1+ den weißen Turm?",
+      "antworten": [
+       "Der König muss die erste Reihe verlassen, dann schlägt Schwarz den ungedeckten Turm a1.",
+       "Der Turm h1 setzt den weißen König matt.",
+       "Weiß muss den Turm a1 dazwischenstellen."
+      ],
+      "richtig": 0,
+      "erklaerung": "Jedes Feld des Königs auf der ersten Reihe beherrscht der Turm h1. Also zieht der König nach oben, und Txa1 folgt."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.7",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "3. Der Spieß",
+   "fen": "8/6k1/8/8/8/8/8/R3K2r w - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h1",
+     "nach": "e1"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "a1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1... Th1+, Weiß am Zug. Rot: das Schach. Grau: der ungedeckte Turm a1 hinter dem König.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.6"
+   ],
+   "beispiel": {
+    "id": "k07-a6",
+    "pfad": [
+     "Rh1+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 293
+   },
+   "pruefsumme": "f588d030822eeeaa"
+  },
+  {
+   "id": "7.8",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "4. Batterie und Abzug",
+   "fen": "r2q1rk1/pp2bppp/4pn2/8/3P2P1/2NQ4/PPB2P1P/R4RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Gold: die Batterie aus Dame d3 und Läufer c2, ihr Ziel ist h7. Rot: Außer dem König hält nur der Springer f6 das Feld h7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a8",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 315
+   },
+   "pruefsumme": "0a02bcfc0f7effe2"
+  },
+  {
+   "id": "7.9",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "4. Batterie und Abzug",
+   "fen": "5rk1/pp1qbppp/2n5/8/8/3BQN2/PP3PPP/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "d7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Abzugsangriff, Weiß am Zug. Grau: Der Turm d1 zielt durch den eigenen Läufer auf die Dame d7. Gold: Der Läufer zieht mit Schach ab.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.10"
+   ],
+   "beispiel": {
+    "id": "k07-a9",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 333
+   },
+   "pruefsumme": "784fd3ab3d7b8b3b",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Lxh7+",
+      "frage": "Warum ist 1. Lxh7+ so stark?",
+      "antworten": [
+       "Es ist ein Doppelschach, nur der König darf ziehen.",
+       "Weiß gewinnt einen Bauern und öffnet die h-Linie für den Turm.",
+       "Der Läufer gibt Schach und gibt zugleich die d-Linie frei: Nach dem Königszug schlägt Txd7 die Dame."
+      ],
+      "richtig": 2,
+      "erklaerung": "Ein Abzug mit Schach: Schwarz muss sich um den König kümmern. Danach nimmt der Turm d1 die Dame, die niemand zurückschlagen kann."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.10",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "4. Batterie und Abzug",
+   "fen": "rnbqk2r/pppp1Npp/5n2/8/2B5/8/PPPP1PPP/R1BQR1K1 b kq - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e1",
+     "nach": "e8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "d8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "h8"
+    },
+    {
+     "farbe": "grau",
+     "von": "c4",
+     "nach": "f7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Abzugsschach nach 1. Sf7+, Schwarz am Zug. Rot: Der Turm e1 gibt Schach, der Springer greift Dame und Turm an. Grau: Der Läufer c4 deckt f7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.9"
+   ],
+   "beispiel": {
+    "id": "k07-a10",
+    "pfad": [
+     "Nf7+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 334
+   },
+   "pruefsumme": "4852f9e9ba214d3f"
+  },
+  {
+   "id": "7.11",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "5. Das Doppelschach",
+   "fen": "4k3/pbpp1ppp/1q6/7r/4N3/8/PP3PPP/2BQR1K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e4",
+     "nach": "d6"
+    },
+    {
+     "farbe": "grau",
+     "von": "e1",
+     "nach": "e8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Grau: Der Springer e4 steht zwischen Turm e1 und König e8. Gold: 1. Sd6++.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.12",
+    "7.13"
+   ],
+   "beispiel": {
+    "id": "k07-a11",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 368
+   },
+   "pruefsumme": "a109c38be668b6e3",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Sd6++",
+      "frage": "Warum muss Schwarz nach 1. Sd6++ mit dem König ziehen?",
+      "antworten": [
+       "Weil alle anderen schwarzen Figuren gefesselt sind.",
+       "Zwei Figuren geben zugleich Schach; Schlagen oder Dazwischenstellen wehrt nur eines davon ab.",
+       "Weil Schwarz nach der Regel nie mit der Dame schlagen darf, wenn er im Schach steht."
+      ],
+      "richtig": 1,
+      "erklaerung": "Gegen ein Doppelschach hilft nur ein Königszug. Hier bleiben d8 und f8, und auf beiden Feldern folgt Te8#."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.12",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "5. Das Doppelschach",
+   "fen": "4k3/pbpp1ppp/1q1N4/7r/8/8/PP3PPP/2BQR1K1 b - - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e1",
+     "nach": "e8"
+    },
+    {
+     "farbe": "rot",
+     "von": "d6",
+     "nach": "e8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Sd6++, Schwarz am Zug. Rot: zwei Schachs zugleich.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.11",
+    "7.13"
+   ],
+   "beispiel": {
+    "id": "k07-a11",
+    "pfad": [
+     "Nd6+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 369
+   },
+   "pruefsumme": "843f432c48b7874e"
+  },
+  {
+   "id": "7.13",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "5. Das Doppelschach",
+   "fen": "4Rk2/pbpp1ppp/1q1N4/7r/8/8/PP3PPP/2BQ2K1 b - - 3 2",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d6",
+     "nach": "e8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e7"
+    },
+    {
+     "farbe": "rot",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1... Kf8 2. Te8#. Grau: Der Springer deckt den Turm. Rot: e7 und g8 beherrscht der Turm.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.11",
+    "7.12"
+   ],
+   "beispiel": {
+    "id": "k07-a11",
+    "pfad": [
+     "Nd6+",
+     "Kf8",
+     "Re8#"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 370
+   },
+   "pruefsumme": "56bffdcf9e5c6fb3"
+  },
+  {
+   "id": "7.14",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "6. Köder, Hinlenkung und Räumung",
+   "fen": "r5k1/pp3pp1/3q4/6N1/8/2P5/PP3PP1/4R1KR w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h1",
+     "nach": "h8"
+    },
+    {
+     "farbe": "rot",
+     "von": "g5",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Hinlenkung, Weiß am Zug. Grau: Der König deckt f7. Gold: 1. Th8+! Rot: die Gabel 2. Sxf7+.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.15",
+    "7.16"
+   ],
+   "beispiel": {
+    "id": "k07-a14",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 390
+   },
+   "pruefsumme": "15ed71baa72a28bd",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Th8+",
+      "frage": "Warum gibt Weiß mit 1. Th8+ einen Turm her?",
+      "antworten": [
+       "Der König muss nach h8; dann deckt er f7 nicht mehr, und Sxf7+ gabelt König und Dame.",
+       "Weiß will nach Kxh8 mit der Dame auf der h-Linie matt setzen.",
+       "Der Turm h1 ist ohnehin verloren, darum nimmt er noch etwas mit."
+      ],
+      "richtig": 0,
+      "erklaerung": "Der Turm ist der Köder. Für ihn bekommt Weiß den Bauern f7 und die Dame d6."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.15",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "6. Köder, Hinlenkung und Räumung",
+   "fen": "r6k/pp3Np1/3q4/8/8/2P5/PP3PP1/4R1K1 b - - 0 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "h8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "d6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Th8+ Kxh8 2. Sxf7+, Schwarz am Zug. Rot: Der Springer greift König und Dame zugleich an.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.14",
+    "7.16"
+   ],
+   "beispiel": {
+    "id": "k07-a14",
+    "pfad": [
+     "Rh8+",
+     "Kxh8",
+     "Nxf7+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 391
+   },
+   "pruefsumme": "77b563e078a7ff56"
+  },
+  {
+   "id": "7.16",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "6. Köder, Hinlenkung und Räumung",
+   "fen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b2",
+     "nach": "h8"
+    },
+    {
+     "farbe": "rot",
+     "von": "d6",
+     "nach": "f7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Petrosjan–Spasski (Moskau 1966) aus Kapitel 6, Weiß am Zug. Gold: 30. Dh8+! Rot: die Gabel 31. Sxf7+.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.14",
+    "7.15"
+   ],
+   "beispiel": {
+    "id": "k07-a16",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 392
+   },
+   "pruefsumme": "61f24ddcf2549ca5"
+  },
+  {
+   "id": "7.17",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "6. Köder, Hinlenkung und Räumung",
+   "fen": "r6k/1p3pRp/8/5N2/8/q7/P4P1P/6QK w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "g7",
+     "nach": "h7"
+    },
+    {
+     "farbe": "rot",
+     "von": "g1",
+     "nach": "g7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Räumung, Weiß am Zug. Rot: Die Dame g1 möchte nach g7. Grau: Dort steht der eigene Turm. Gold: 1. Txh7+!",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a17",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 413
+   },
+   "pruefsumme": "9ea57612e8851836",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Txh7+",
+      "frage": "Warum opfert Weiß den Turm mit 1. Txh7+?",
+      "antworten": [
+       "Er gewinnt den Bauern h7 und öffnet dem eigenen König Luft.",
+       "Er gewinnt den Bauern h7 und hofft, dass Schwarz nicht zurückschlägt.",
+       "Er räumt mit Schach das Feld g7, damit die Dame dort matt setzen kann."
+      ],
+      "richtig": 2,
+      "erklaerung": "Nach Kxh7 zieht die Dame über die freie g-Linie nach g7. Der Springer f5 deckt sie, der König hat kein Feld mehr."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.18",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "7. Beseitigung der Verteidigung",
+   "fen": "q1r3k1/pp1b1ppp/2n5/1B1N4/8/8/PPQ2PPP/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b5",
+     "nach": "c6"
+    },
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "e7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Rot: Der Springer c6 ist der einzige Verteidiger von e7. Gold: Der Läufer b5 kann ihn schlagen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.19"
+   ],
+   "beispiel": {
+    "id": "k07-a18",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 440
+   },
+   "pruefsumme": "0c6ba52d457eb30e",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Lxc6",
+      "frage": "Warum schlägt Weiß mit 1. Lxc6 zuerst den Springer?",
+      "antworten": [
+       "Weil Läufer und Springer gleich viel wert sind und Weiß vereinfachen will.",
+       "Er ist der einzige Verteidiger von e7; ohne ihn gabelt Se7+ König und Turm c8.",
+       "Um den Bauern b7 zu schwächen."
+      ],
+      "richtig": 1,
+      "erklaerung": "Erst fällt der Verteidiger, dann die Taktik. Wie Schwarz auch zurückschlägt, Se7+ gewinnt danach Material."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.19",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "7. Beseitigung der Verteidigung",
+   "fen": "q1r3k1/pp2Nppp/2b5/8/8/8/PPQ2PPP/3R2K1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e7",
+     "nach": "g8"
+    },
+    {
+     "farbe": "rot",
+     "von": "e7",
+     "nach": "c8"
+    },
+    {
+     "farbe": "rot",
+     "von": "e7",
+     "nach": "c6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Lxc6 Lxc6 2. Se7+, Schwarz am Zug. Rot: Der Springer greift König, Turm und Läufer zugleich an.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.18"
+   ],
+   "beispiel": {
+    "id": "k07-a18",
+    "pfad": [
+     "Bxc6",
+     "Bxc6",
+     "Ne7+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 441
+   },
+   "pruefsumme": "0959201e1d81df5a"
+  },
+  {
+   "id": "7.20",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "8. Überlastung und Ablenkung",
+   "fen": "3r2k1/pp3ppp/1q6/3n4/8/1B6/PPQ2PPP/4R1K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b3",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "d8",
+     "nach": "d5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Überlastung, Weiß am Zug. Grau: Der Turm d8 deckt den Springer d5. Rot: Zugleich muss er die Grundreihe gegen Te8 schützen. Gold: 1. Lxd5!",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a20",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 451
+   },
+   "pruefsumme": "b457e4f28321f18d",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Lxd5",
+      "frage": "Warum gewinnt 1. Lxd5 eine Figur?",
+      "antworten": [
+       "Schwarz steht nach dem Schlag im Schach.",
+       "Der Springer d5 war ohnehin ungedeckt.",
+       "Schlägt der Turm d8 zurück, verlässt er die Grundreihe, und Te8 setzt matt."
+      ],
+      "richtig": 2,
+      "erklaerung": "Der einzige Verteidiger des Springers ist der Turm d8, und der wird auf der Grundreihe gebraucht. Schwarz bleibt eine Figur weniger."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.21",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "9. Der Zwischenzug",
+   "fen": "r1bqk2r/ppp2ppp/2p2n2/2b3B1/4P3/3P4/PPP2PPP/RN1QKB1R b KQkq - 2 6",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g5",
+     "nach": "d8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Das Stafford-Gambit aus Kapitel 3 nach 1. e4 e5 2. Sf3 Sf6 3. Sxe5 Sc6 4. Sxc6 dxc6 5. d3 Lc5 6. Lg5??, Schwarz am Zug. Grau: die relative Fesselung.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.22"
+   ],
+   "beispiel": {
+    "id": "k07-a3",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nf6",
+     "Nxe5",
+     "Nc6",
+     "Nxc6",
+     "dxc6",
+     "d3",
+     "Bc5",
+     "Bg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 492
+   },
+   "pruefsumme": "9db403ef61560e20",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6... Sxe4",
+      "frage": "Warum darf Schwarz hier 6... Sxe4 spielen, obwohl die Dame d8 hängt?",
+      "antworten": [
+       "Nach Lxd8 folgen Lxf2+ und Lg4#: Das Matt ist mehr wert als die Dame.",
+       "Weil Weiß die Dame wegen einer Fesselung nicht schlagen darf.",
+       "Weil der Springer e4 danach den Läufer g5 und den Bauern c2 gabelt."
+      ],
+      "richtig": 0,
+      "erklaerung": "Nach Lxf2+ hat der König nur e2, denn der Springer e4 deckt d2 und f2. Dann setzt Lg4 matt."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.22",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "9. Der Zwischenzug",
+   "fen": "r1bBk2r/ppp2ppp/2p5/8/4n3/3P4/PPP2bPP/RN1QKB1R w KQkq - 0 8",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e4",
+     "nach": "f2"
+    },
+    {
+     "farbe": "rot",
+     "von": "e4",
+     "nach": "d2"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 6... Sxe4! 7. Lxd8?? Lxf2+!, Weiß am Zug. Rot: Der Springer e4 deckt f2 und d2.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.21"
+   ],
+   "beispiel": {
+    "id": "k07-a3",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nf6",
+     "Nxe5",
+     "Nc6",
+     "Nxc6",
+     "dxc6",
+     "d3",
+     "Bc5",
+     "Bg5",
+     "Nxe4",
+     "Bxd8",
+     "Bxf2+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 493
+   },
+   "pruefsumme": "307cb044ee0d3ef4"
+  },
+  {
+   "id": "7.23",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "9. Der Zwischenzug",
+   "fen": "r3r1k1/ppq2ppp/8/8/8/7P/P3QPP1/R1R3K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e8",
+     "nach": "e2"
+    },
+    {
+     "farbe": "grau",
+     "von": "c1",
+     "nach": "c7"
+    },
+    {
+     "farbe": "gold",
+     "von": "e2",
+     "nach": "e8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Desperado, Weiß am Zug. Rot: Der Turm e8 greift die Dame e2 an. Grau: Der Turm c1 greift die Dame c7 an. Gold: 1. Dxe8+!",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a23",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 512
+   },
+   "pruefsumme": "7755f605ed6d2b7c",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Dxe8+",
+      "frage": "Warum schlägt Weiß zuerst auf e8 und nicht sofort die Dame c7?",
+      "antworten": [
+       "Weil der Turm c1 an den König gefesselt ist.",
+       "Die eigene Dame ist ohnehin angegriffen; so nimmt sie vorher noch den Turm e8 mit.",
+       "Weil Dxe8 matt setzt."
+      ],
+      "richtig": 1,
+      "erklaerung": "Ein Desperado: Nach 1. Txc7 würde Schwarz einfach die Dame e2 nehmen. Mit Dxe8+ Txe8 Txc7 bleibt Weiß ein Turm mehr."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.24",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "10. Die gefangene Figur",
+   "fen": "4r1k1/1p3ppp/8/8/8/1P6/b1P2PPP/2KR4 b - - 0 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "c1",
+     "nach": "b2"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "a2"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b1"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1... Lxa2? 2. b3!, Schwarz am Zug. Rot: Der Läufer a2 ist eingesperrt. Grau: b1 deckt der König, b3 der Bauer c2. Gold: Weiß droht Kb2.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.25"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 530
+   },
+   "pruefsumme": "d7aa4c6f03d6ff5d"
+  },
+  {
+   "id": "7.25",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "10. Die gefangene Figur",
+   "fen": "r2qkbnr/3b1ppp/p2p4/1p1Q4/2p1P3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 12",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b5",
+     "nach": "a4"
+    },
+    {
+     "farbe": "rot",
+     "von": "b5",
+     "nach": "c4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "b3"
+    },
+    {
+     "farbe": "grau",
+     "feld": "a2"
+    },
+    {
+     "farbe": "grau",
+     "feld": "c2"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Arche-Noah-Falle aus Kapitel 4 nach 11. Dd5 c4!, Weiß am Zug. Rot: Der Bauer b5 deckt a4 und c4. Grau: a2 und c2 sind von eigenen Bauern besetzt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.24"
+   ],
+   "beispiel": {
+    "id": "k07-a25",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bb5",
+     "a6",
+     "Ba4",
+     "d6",
+     "d4",
+     "b5",
+     "Bb3",
+     "Nxd4",
+     "Nxd4",
+     "exd4",
+     "Qxd4",
+     "c5",
+     "Qd5",
+     "Be6",
+     "Qc6+",
+     "Bd7",
+     "Qd5",
+     "c4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 531
+   },
+   "pruefsumme": "c209712071611a05",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum ist der Läufer b3 nicht mehr zu retten?",
+      "antworten": [
+       "Er ist an den König gefesselt.",
+       "Weiß muss zuerst die angegriffene Dame d5 retten.",
+       "Alle Felder sind gedeckt oder von eigenen Bauern besetzt: Er ist eine gefangene Figur."
+      ],
+      "richtig": 2,
+      "erklaerung": "Eine Arche-Noah-Falle: Der Bauer b5 hält a4 und c4, die eigenen Bauern stehen auf a2 und c2. Für den Läufer bekommt Weiß nur noch Bauern."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.26",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "11. Taktik rund um die Umwandlung",
+   "fen": "8/pb2P1kp/5q2/8/8/B7/6PP/7K w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e7",
+     "nach": "e8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "f1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Rot: Schwarz droht Df1#. Gold: die Umwandlung auf e8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a26",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 548
+   },
+   "pruefsumme": "24c8469d9c90fee7",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. e8=S+",
+      "frage": "Warum wandelt Weiß mit 1. e8=S+ in einen Springer um?",
+      "antworten": [
+       "Ein Springer ist im Endspiel stärker als eine Dame.",
+       "Nach 1. e8=D könnte Schwarz die neue Dame sofort schlagen.",
+       "Nur der Springer gibt Schach und greift die Dame f6 an; nach e8=D setzt Schwarz mit Df1 matt."
+      ],
+      "richtig": 2,
+      "erklaerung": "Mit Schach hat Schwarz keine Zeit für Df1. Danach schlägt der Springer die Dame f6, und die Mattgefahr ist vorbei."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.27",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "12. Rettung durch Dauerschach und Patt",
+   "fen": "6k1/2QR1ppp/8/8/4q3/6P1/PP5P/6K1 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d7",
+     "nach": "d8"
+    },
+    {
+     "farbe": "gold",
+     "von": "e4",
+     "nach": "e1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug. Rot: Weiß droht Td8+ mit Matt. Gold: 1... De1+.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.28"
+   ],
+   "beispiel": {
+    "id": "k07-a27",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 567
+   },
+   "pruefsumme": "99851d3555e15bfc",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... De1+",
+      "frage": "Warum gibt Schwarz mit 1... De1+ ein Schach nach dem anderen?",
+      "antworten": [
+       "Er will den König auf die Grundreihe zurückdrängen und dort matt setzen.",
+       "Er steht auf Verlust und rettet mit Dauerschach ein Remis.",
+       "Er will den Bauern b2 mit Schach gewinnen."
+      ],
+      "richtig": 1,
+      "erklaerung": "Der weiße König findet kein Versteck vor den Damenschachs. Für Schwarz ist ein Remis hier das beste Ergebnis."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.28",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "12. Rettung durch Dauerschach und Patt",
+   "fen": "6k1/2QR1ppp/8/8/8/6P1/PP2q1KP/8 w - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g2",
+     "nach": "g1"
+    },
+    {
+     "farbe": "grau",
+     "von": "g2",
+     "nach": "h3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1... De1+ 2. Kg2 De2+, Weiß am Zug. Grau: Auf g1 und h3 wartet das nächste Schach.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.27"
+   ],
+   "beispiel": {
+    "id": "k07-a27",
+    "pfad": [
+     "Qe1+",
+     "Kg2",
+     "Qe2+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 568
+   },
+   "pruefsumme": "777236e9af7333da"
+  },
+  {
+   "id": "7.29",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "Die zwölf Grundmotive"
+   },
+   "unterabschnitt": "12. Rettung durch Dauerschach und Patt",
+   "fen": "5r1k/6pp/8/3Q4/3b4/7p/1q5P/7K w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d5",
+     "nach": "g8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g1"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g2"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Grau: g1 deckt der Läufer d4, g2 der Bauer h3, der Bauer h2 ist blockiert. Gold: 1. Dg8+!!",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a29",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 577
+   },
+   "pruefsumme": "da3c1d664c4ff89e",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Dg8+",
+      "frage": "Warum opfert Weiß mit 1. Dg8+ die Dame?",
+      "antworten": [
+       "Nach dem Schlag auf g8 hat Weiß keinen legalen Zug mehr: Patt, also Remis.",
+       "Nach Kxg8 gewinnt Weiß den Turm f8.",
+       "Die Dame setzt auf g8 matt."
+      ],
+      "richtig": 0,
+      "erklaerung": "Schwarz muss die Dame schlagen, mit König oder Turm. In beiden Fällen ist Weiß patt. Jeder andere Zug verliert, weil Schwarz bald matt setzt."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.30",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+   },
+   "unterabschnitt": null,
+   "fen": "3r2k1/p3bppp/4pn2/3p4/8/2N1P1P1/PP3PBP/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c3",
+     "nach": "d5"
+    },
+    {
+     "farbe": "rot",
+     "von": "g2",
+     "nach": "d5"
+    },
+    {
+     "farbe": "rot",
+     "von": "d1",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "e6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "d8",
+     "nach": "d5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Rot: Springer c3, Läufer g2 und Turm d1 greifen d5 dreimal an. Grau: Bauer e6, Springer f6 und Turm d8 verteidigen ihn dreimal.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.31",
+    "7.32"
+   ],
+   "beispiel": {
+    "id": "k07-a30",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 603
+   },
+   "pruefsumme": "1c3623c3ed736f7d",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum sollte Weiß hier nicht auf d5 schlagen?",
+      "antworten": [
+       "Weil der Bauer d5 vergiftet ist: Danach droht Matt.",
+       "Weil drei Verteidiger gegen drei Angreifer stehen und Schwarz mit dem billigeren Material schlägt.",
+       "Weil Weiß damit die Rochade verliert."
+      ],
+      "richtig": 1,
+      "erklaerung": "Gezählt wird nicht nur die Anzahl, sondern auch der Wert. Am Ende hat Weiß viel mehr Material gegeben als bekommen."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.31",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+   },
+   "unterabschnitt": null,
+   "fen": "3r2k1/p3bppp/8/3n4/8/4P1P1/PP3P1P/3R2K1 w - - 0 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d1",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "d8",
+     "nach": "d5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Sxd5? exd5 2. Lxd5 Sxd5, Weiß am Zug. Weiß hat zwei Leichtfiguren für zwei Bauern gegeben. Rot: Der Turm d1 greift noch an. Grau: Der Turm d8 deckt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.30",
+    "7.32"
+   ],
+   "beispiel": {
+    "id": "k07-a30",
+    "pfad": [
+     "Nxd5",
+     "exd5",
+     "Bxd5",
+     "Nxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 604
+   },
+   "pruefsumme": "e860b86dcff96320"
+  },
+  {
+   "id": "7.32",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/p3bppp/8/3r4/8/4P1P1/PP3P1P/6K1 w - - 0 4",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 3. Txd5 Txd5, Weiß am Zug. Die Bilanz: 5 gewonnen, 11 verloren.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.30",
+    "7.31"
+   ],
+   "beispiel": {
+    "id": "k07-a30",
+    "pfad": [
+     "Nxd5",
+     "exd5",
+     "Bxd5",
+     "Nxd5",
+     "Rxd5",
+     "Rxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 605
+   },
+   "pruefsumme": "d0a89361a345fae9"
+  },
+  {
+   "id": "7.33",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+   },
+   "unterabschnitt": "Figuren hinter Figuren zählen mit",
+   "fen": "r2r2k1/pp3ppp/5n2/3p4/8/2N4P/PP1R1PP1/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c3",
+     "nach": "d5"
+    },
+    {
+     "farbe": "rot",
+     "von": "d2",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "d8",
+     "nach": "d5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Rot: Springer c3 und Turm d2 greifen d5 an. Grau: Springer f6 und Turm d8 decken ihn. Gold: der Turm d1 hinter dem Turm d2, der dritte Angreifer.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.34"
+   ],
+   "beispiel": {
+    "id": "k07-a33",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 627
+   },
+   "pruefsumme": "39ce7695bab6af25",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Sxd5",
+      "frage": "Warum gewinnt 1. Sxd5 den Bauern d5?",
+      "antworten": [
+       "Der Turm d1 hinter dem Turm d2 ist ein dritter Angreifer, Schwarz hat nur zwei Verteidiger.",
+       "Der Bauer d5 ist gar nicht gedeckt.",
+       "Nach Sxd5 ist der Springer f6 gefesselt."
+      ],
+      "richtig": 0,
+      "erklaerung": "Nach Sxd5 Sxd5 Txd5 Txd5 Txd5 bleibt Weiß ein Bauer mehr. Wichtig ist, mit der billigsten Figur anzufangen."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.34",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+   },
+   "unterabschnitt": "Figuren hinter Figuren zählen mit",
+   "fen": "r2r2k1/pp3ppp/8/3R4/8/7P/PP3PP1/3R2K1 b - - 0 2",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "d5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Sxd5 Sxd5 2. Txd5, Schwarz am Zug. Grau: Der Turm d1 deckt den Turm d5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.33"
+   ],
+   "beispiel": {
+    "id": "k07-a33",
+    "pfad": [
+     "Nxd5",
+     "Nxd5",
+     "Rxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 628
+   },
+   "pruefsumme": "0101cbe0a86be2b3"
+  },
+  {
+   "id": "7.35",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Das Grundreihenmatt",
+   "fen": "6rk/p4Npp/1q6/8/8/8/5PPP/6K1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "h8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Erstickungsmatt nach 1. Dg8+ Txg8 2. Sf7#. Rot: das Schach. Grau: Felder, die eigene Figuren besetzen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.36"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 665
+   },
+   "pruefsumme": "f98de05c8fe87c11"
+  },
+  {
+   "id": "7.36",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Das Grundreihenmatt",
+   "fen": "4R1k1/5ppp/8/8/8/8/5PPP/6K1 b - - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e8",
+     "nach": "g8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f8"
+    },
+    {
+     "farbe": "rot",
+     "feld": "h8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "f7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Grundreihenmatt nach 1. Te8#. Rot: das Schach, f8 und h8 beherrscht der Turm. Grau: die eigenen Bauern.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.35"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 666
+   },
+   "pruefsumme": "5bd1f74ec4d4328c"
+  },
+  {
+   "id": "7.37",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Damenopfer auf h7 und Anastasia-Matt",
+   "fen": "1q3r1k/4Nppp/8/7Q/8/3R4/5PPP/6K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h5",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Gold: 1. Dxh7+!! Kxh7 (einziger Zug) und 2. Th3#. Grau: g6 und g8 sperrt der Springer e7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.38"
+   ],
+   "beispiel": {
+    "id": "k07-a37",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 680
+   },
+   "pruefsumme": "98936fda8e08db67",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Dxh7+",
+      "frage": "Warum gibt Weiß mit 1. Dxh7+ die Dame her?",
+      "antworten": [
+       "Um den Bauern h7 zu gewinnen und dann die Damen zu tauschen.",
+       "Weil die Dame h5 sonst verloren wäre.",
+       "Der König muss nach h7, und dort setzt Th3 matt; g6 und g8 sperrt der Springer."
+      ],
+      "richtig": 2,
+      "erklaerung": "Kxh7 ist der einzige Zug. Danach kommt der Turm über die dritte Reihe auf die h-Linie: Anastasia-Matt."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.38",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Damenopfer auf h7 und Anastasia-Matt",
+   "fen": "1q3r2/4Nppk/8/8/8/7R/5PPP/6K1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h3",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Das Anastasia-Matt. Grau: Der Springer e7 sperrt g6 und g8. Rot: Der Turm h3 beherrscht die h-Linie.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.37"
+   ],
+   "beispiel": {
+    "id": "k07-a37",
+    "pfad": [
+     "Qxh7+",
+     "Kxh7",
+     "Rh3#"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 681
+   },
+   "pruefsumme": "26724f6f01929a89"
+  },
+  {
+   "id": "7.39",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Arabisches Matt und Treppenmatt",
+   "fen": "r6k/ppp4R/5N2/8/8/8/PPP3PP/6K1 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "g7"
+    },
+    {
+     "farbe": "rot",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Arabisches Matt. Rot: g7 beherrscht der Turm h7, g8 der Springer. Grau: Der Springer deckt den Turm.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.40"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 694
+   },
+   "pruefsumme": "ea8d403efd9cae0f"
+  },
+  {
+   "id": "7.40",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Arabisches Matt und Treppenmatt",
+   "fen": "R3k3/1R6/6p1/7p/8/2K5/7r/8 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "a8",
+     "nach": "e8"
+    },
+    {
+     "farbe": "grau",
+     "von": "b7",
+     "nach": "h7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Treppenmatt. Grau: Der Turm b7 sperrt die 7. Reihe. Rot: Der Turm a8 gibt auf der 8. Reihe Schach.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.39"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 695
+   },
+   "pruefsumme": "4fb556b295761981"
+  },
+  {
+   "id": "7.41",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Drei Mattbilder gegen den Bauernschild",
+   "fen": "2kr4/3n4/B1p5/8/5B2/8/8/2K5 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "a6",
+     "nach": "c8"
+    },
+    {
+     "farbe": "grau",
+     "von": "f4",
+     "nach": "b8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Boden-Matt. Rot: Der Läufer a6 gibt Schach und beherrscht b7. Grau: Der Läufer f4 beherrscht c7 und b8. Auf d7 und d8 stehen eigene Figuren.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.42",
+    "7.43"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 721
+   },
+   "pruefsumme": "832da8488f657346"
+  },
+  {
+   "id": "7.42",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Drei Mattbilder gegen den Bauernschild",
+   "fen": "5rk1/5ppQ/6P1/8/8/8/8/6K1 b - - 2 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "g8"
+    },
+    {
+     "farbe": "grau",
+     "von": "g6",
+     "nach": "h7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Damiano-Matt. Rot: Die Dame gibt Schach und beherrscht h8. Grau: Der Bauer g6 deckt sie. Auf f7, g7 und f8 stehen eigene Figuren.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.41",
+    "7.43"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 722
+   },
+   "pruefsumme": "e33931d14cc24547"
+  },
+  {
+   "id": "7.43",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typische Mattbilder"
+   },
+   "unterabschnitt": "Drei Mattbilder gegen den Bauernschild",
+   "fen": "5rk1/5pQp/5Pp1/8/8/8/8/6K1 b - - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "g7",
+     "nach": "g8"
+    },
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "g7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Lolli-Matt. Rot: Die Dame gibt Schach und beherrscht h8. Grau: Der Bauer f6 deckt sie. Auf f7, h7 und f8 stehen eigene Figuren.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.41",
+    "7.42"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 723
+   },
+   "pruefsumme": "8eda511e6de378a5"
+  },
+  {
+   "id": "7.44",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "8/6k1/8/8/8/7p/1q3p1P/4R2K w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Schwarz droht fxe1=D#.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a44",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 785
+   },
+   "pruefsumme": "912d1f97b7b56ece"
+  },
+  {
+   "id": "7.45",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/pp3ppp/2n5/8/8/2N4P/1r3PP1/4R1K1 b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 793
+   },
+   "pruefsumme": "b985f9ba2901188f"
+  },
+  {
+   "id": "7.46",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a46",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 803
+   },
+   "pruefsumme": "ecd7f41afae51762"
+  },
+  {
+   "id": "7.47",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "r1b1k2r/pp1pqppp/5n2/1N2p3/2B1P3/8/PPP1QPPP/R4RK1 w kq - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug gewinnt Material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a47",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 818
+   },
+   "pruefsumme": "12dd484c37d6990c"
+  },
+  {
+   "id": "7.48",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/p4ppp/1p6/q3n3/8/1P2Q3/P1r2PPP/3R2K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a48",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 824
+   },
+   "pruefsumme": "89a003985006081c"
+  },
+  {
+   "id": "7.49",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "6q1/r7/4k3/1p2p3/8/8/2B2PPP/3R2K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug gewinnt Material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a49",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 830
+   },
+   "pruefsumme": "020e31763605a93c"
+  },
+  {
+   "id": "7.50",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "3r1rk1/pp4pp/2n5/3q4/8/1P6/P1Q1BPPP/R3R1K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug gewinnt Material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a50",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 836
+   },
+   "pruefsumme": "d6520f4fef592217"
+  },
+  {
+   "id": "7.51",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pp4pp/2n2n2/3N4/8/1B4Pq/PP3P1P/R2Q1RK1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug gewinnt die Dame.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a51",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 842
+   },
+   "pruefsumme": "adb2cfd76d988bc6"
+  },
+  {
+   "id": "7.52",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/pp3ppp/4q3/n2N4/8/8/PP2BPPP/2R3K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug gewinnt Material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a52",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 848
+   },
+   "pruefsumme": "8490a6e7365185dd"
+  },
+  {
+   "id": "7.53",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "3q2k1/ppn2ppp/8/8/6b1/8/PPQ2PPP/4R1K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug gewinnt Material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a53",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 854
+   },
+   "pruefsumme": "a0b6e878da7da982"
+  },
+  {
+   "id": "7.54",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "r1r4k/p1pR3p/1p6/8/4N3/8/2P2PPP/6K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a54",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 860
+   },
+   "pruefsumme": "ef12cf5b1e6165d7"
+  },
+  {
+   "id": "7.55",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "r3r2k/pp4pp/8/6N1/2Q5/q7/PP3PPP/6K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt in vier Zügen matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a55",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 866
+   },
+   "pruefsumme": "febbd7e7f0325d99"
+  },
+  {
+   "id": "7.56",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt in drei Zügen matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a56",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 872
+   },
+   "pruefsumme": "680ab6503f839b96"
+  },
+  {
+   "id": "7.57",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pb2qppp/1p3n2/2p4Q/8/2NB1R2/PP3PPP/R5K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug gewinnt mindestens eine Figur oder setzt matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a57",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 878
+   },
+   "pruefsumme": "5082e96d31bfbb7e"
+  },
+  {
+   "id": "7.58",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "rq3rk1/pb3ppp/8/3N1R1Q/8/8/PP3PPP/6K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt in drei Zügen matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a58",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 884
+   },
+   "pruefsumme": "023a4b15fa6f18ac"
+  },
+  {
+   "id": "7.59",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "2kr3r/pp1n1ppp/2n5/8/Q4B2/8/PP2BPPP/2KR4 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a59",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 890
+   },
+   "pruefsumme": "66fc1e69d9f7d1da"
+  },
+  {
+   "id": "7.60",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pp3pp1/2p3P1/3Q4/8/8/PP6/1K5R w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt in drei Zügen matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a60",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 896
+   },
+   "pruefsumme": "d75392a168b1b628"
+  },
+  {
+   "id": "7.61",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Rückblick: Taktik"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pp3p1p/5Pp1/8/8/8/PP1Q4/1K6 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a61",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 902
+   },
+   "pruefsumme": "e8a2fb080e894c05"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:taktik-rettung",
+   "nummer": 32,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.44"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Weiß steht auf Verlust. Finde den einzigen Zug, der remis hält, und erkläre, warum Schwarz ihm nicht entkommt.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Te7+!"
+    },
+    {
+     "art": "text",
+     "text": " Der Turm gibt ohne Pause Schach, etwa ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kf6 2. Te6+ Kf5 3. Te5+"
+    },
+    {
+     "art": "text",
+     "text": ". Schlägt Schwarz ihn, mit dem König oder der Dame, ist Weiß patt: g1 deckt der Bauer f2, g2 der Bauer h3, und der Bauer h2 ist blockiert. Weicht der König aus, folgt das nächste Schach. Weiß meidet dabei nur Felder, auf denen der Turm mit Schach geschlagen wird: die erste Reihe (dort schlägt die Dame oder der Bauer f2 mit Umwandlung) und das Feld b7. Alle anderen Züge verlieren, zum Beispiel ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Te8? f1=D#"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Tg1+? fxg1=D+ 2. Kxg1 Dg2#"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Hat dein König keinen Zug mehr, wird eine Figur, die Schach um Schach gibt, zu deiner Rettung.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 783
+   },
+   "erklaerung": {
+    "loesung": "1. Te7+!",
+    "akzeptiert": [],
+    "motiv": "Rasender Turm und Patt",
+    "text": "1. Te7+! gibt Schach um Schach; schlägt Schwarz den Turm, ist Weiß patt, weil sein König kein Feld hat. Weiß meidet nur die erste Reihe und das Feld b7, wo der Turm mit Schach geschlagen würde."
+   }
+  },
+  {
+   "id": "ueb:luftloch-verteidigung",
+   "nummer": 33,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.45"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Welcher weiße Zug droht in ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 7.45",
+     "abbildung": "7.45"
+    },
+    {
+     "art": "text",
+     "text": ", und warum wäre er matt? Nenne eine konkrete Bauernbewegung, mit der Schwarz das Matt verhindert, und erkläre, warum. Welchen vorbeugenden Zug hat Weiß selbst schon gespielt?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Weiß droht ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Te8#"
+    },
+    {
+     "art": "text",
+     "text": ", da die Bauern f7, g7 und h7 dem König alle Felder auf der 7. Reihe nehmen und keine schwarze Figur dann auf e8 schlagen oder sich auf f8 dazwischenstellen kann. Ein Bauernzug wie ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...h6"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...g6"
+    },
+    {
+     "art": "text",
+     "text": " schafft ein Luftloch: Der König geht nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Te8+"
+    },
+    {
+     "art": "text",
+     "text": " nach h7 oder g7. Auch ein Figurenzug hilft, etwa ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Se7"
+    },
+    {
+     "art": "text",
+     "text": ", der die e-Linie sperrt. Weiß selbst hat mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "h3"
+    },
+    {
+     "art": "text",
+     "text": " schon vorgebeugt: Kommt ein schwarzer Turm mit Schach auf die erste Reihe, hat der weiße König das Feld h2. Merke dir: Ein Luftloch kostet einen Bauernzug, das Grundreihenmatt kostet die Partie.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 791
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Grundreihenmatt verhindern",
+    "text": "Weiß droht Te8#, weil die eigenen Bauern dem schwarzen König die siebte Reihe versperren. Ein Luftloch wie ...h6 oder ...g6 oder ein Sperrzug wie ...Se7 verhindert das; Weiß hat mit h3 selbst schon vorgebeugt."
+   }
+  },
+  {
+   "id": "ueb:morphy-opfer-checkliste",
+   "nummer": 34,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.46"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Finde die Kombination. Beantworte im Anschluss für den ersten Zug die Fragen aus Schritt 2 und 3 deines Werkzeugs: Welche Art von erzwingendem Zug ist es? Hat Schwarz einen Zwischenzug? Welche Rolle spielt die Bilanz?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "16. Db8+!! Sxb8 17. Td8#"
+    },
+    {
+     "art": "text",
+     "text": ", und der Läufer g5 deckt den Turm. So endete Morphys berühmte Opernpartie (Paris 1858), die du in Kapitel 11 ganz nachspielst. Zu den Fragen: Der erste Zug ist ein ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Schach",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ": Schwarz muss reagieren. Ein Zwischenzug ist unmöglich, denn einem König im Schach muss sofort geholfen werden. Die einzige legale Antwort ist deshalb ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16... Sxb8"
+    },
+    {
+     "art": "text",
+     "text": ". Die Bilanz spielt keine Rolle: Weiß gibt zwar die Dame für einen Springer, das Matt beendet aber die Partie. Merke dir: Endet die Variante mit Matt, zählt kein Material.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 801
+   },
+   "erklaerung": {
+    "loesung": "16. Db8+!! Sxb8 17. Td8#",
+    "akzeptiert": [],
+    "motiv": "Damenopfer und Grundreihenmatt",
+    "text": "16. Db8+!! zwingt 16... Sxb8, danach setzt 17. Td8# matt, gedeckt vom Läufer g5. Auf ein Schach gibt es keinen Zwischenzug, und weil die Variante mit Matt endet, zählt das geopferte Material nicht."
+   }
+  },
+  {
+   "id": "ueb:taktik-a01",
+   "nummer": 35,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.47"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Gabel: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sc7+!"
+    },
+    {
+     "art": "text",
+     "text": " greift König e8 und Turm a8 an. Die Dame e7 kann c7 nicht schlagen, da der Bauer d7 im Weg steht. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd8"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kf8"
+    },
+    {
+     "art": "text",
+     "text": " folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sxa8"
+    },
+    {
+     "art": "text",
+     "text": ". Der Springer kommt aus der Ecke kaum wieder heraus. Doch selbst wenn Schwarz ihn später erobert, hat Weiß einen Turm für einen Springer bekommen, also die Qualität. Das ähnliche ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sd6+?"
+    },
+    {
+     "art": "text",
+     "text": " scheitert an ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dxd6"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Eine Gabel mit Schach lässt dem Gegner keine Zeit, das zweite Ziel zu retten.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 816
+   },
+   "erklaerung": {
+    "loesung": "1. Sc7+!",
+    "akzeptiert": [],
+    "motiv": "Springergabel",
+    "text": "1. Sc7+! greift König und Turm a8 an, und die Dame e7 kann c7 nicht schlagen, weil d7 im Weg steht. Nach dem Königszug gewinnt 2. Sxa8 mindestens die Qualität; 1. Sd6+? scheitert an 1... Dxd6."
+   }
+  },
+  {
+   "id": "ueb:taktik-a02",
+   "nummer": 36,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.48"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Grundreihenmatt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Td8#"
+    },
+    {
+     "art": "text",
+     "text": ". Keine schwarze Figur erreicht d8, e8 oder f8, und die Bauern f7, g7 und h7 versperren die Flucht. Die Dame a5 kommt nicht nach d8, weil der eigene Bauer b6 im Weg steht. Merke dir: Prüfe bei jedem Grundreihenzug, welche gegnerische Figur die Grundreihe noch erreicht.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 822
+   },
+   "erklaerung": {
+    "loesung": "1. Td8#",
+    "akzeptiert": [],
+    "motiv": "Grundreihenmatt",
+    "text": "1. Td8# setzt sofort matt: Keine schwarze Figur erreicht die Grundreihe, und die eigenen Bauern versperren die Flucht. Die Dame a5 kommt nicht nach d8, weil der Bauer b6 im Weg steht."
+   }
+  },
+  {
+   "id": "ueb:taktik-a03",
+   "nummer": 37,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.49"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Spieß: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lb3+!"
+    },
+    {
+     "art": "text",
+     "text": " gibt Schach, und König e6 und Dame g8 stehen auf derselben Diagonale. Der König muss ausweichen (d6 und d7 beherrscht der Turm d1, f7 liegt weiter auf der Diagonale), danach folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Lxg8"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Ein Spieß mit Schach ist der sicherste, da der König wegmuss.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 828
+   },
+   "erklaerung": {
+    "loesung": "1. Lb3+!",
+    "akzeptiert": [],
+    "motiv": "Spieß mit Schach",
+    "text": "1. Lb3+! greift den König e6 an, hinter dem auf derselben Diagonale die Dame g8 steht. Der König muss weichen, und 2. Lxg8 gewinnt die Dame."
+   }
+  },
+  {
+   "id": "ueb:taktik-a04",
+   "nummer": 38,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.50"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Fesselung: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lc4!"
+    },
+    {
+     "art": "text",
+     "text": " fesselt die Dame d5 an den König g8, und der Läufer ist vom Bauern b3 und von der Dame c2 gedeckt. Schwarz kann die Dame nur noch gegen den Läufer geben, etwa ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dxc4 2. Dxc4+"
+    },
+    {
+     "art": "text",
+     "text": ". Greift der Springer mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Sd4"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Sb4"
+    },
+    {
+     "art": "text",
+     "text": " die Dame c2 an, schlägt Weiß zunächst mit Schach (",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Lxd5+"
+    },
+    {
+     "art": "text",
+     "text": ") und kümmert sich erst im Anschluss um seine Dame. Merke dir: Gegen eine absolut gefesselte Dame genügt eine gedeckte Leichtfigur.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 834
+   },
+   "erklaerung": {
+    "loesung": "1. Lc4!",
+    "akzeptiert": [],
+    "motiv": "Fesselung der Dame",
+    "text": "1. Lc4! fesselt die Dame d5 an den König g8, und der Läufer ist von b3 und der Dame c2 gedeckt. Schwarz kann die Dame nur noch gegen den Läufer geben; greift ein Springer die Dame c2 an, schlägt Weiß zuerst mit Schach auf d5."
+   }
+  },
+  {
+   "id": "ueb:taktik-a05",
+   "nummer": 39,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.51"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Abzugsschach: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sf4+!"
+    },
+    {
+     "art": "text",
+     "text": " Der Springer gibt die Diagonale b3–g8 frei, der Läufer gibt Schach, und der Springer greift zugleich die Dame h3 an. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kh8"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Tf7"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Sd5"
+    },
+    {
+     "art": "text",
+     "text": " folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sxh3"
+    },
+    {
+     "art": "text",
+     "text": ". Stellt Schwarz die Dame mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... De6"
+    },
+    {
+     "art": "text",
+     "text": " dazwischen, schlägt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sxe6"
+    },
+    {
+     "art": "text",
+     "text": ". Auch ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sxf6+"
+    },
+    {
+     "art": "text",
+     "text": " gibt Schach, sogar Doppelschach, lässt die Dame allerdings stehen. Merke dir: Beim Abzugsschach hat die abziehende Figur einen freien Zug. Suche für sie das wertvollste Ziel.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 840
+   },
+   "erklaerung": {
+    "loesung": "1. Sf4+!",
+    "akzeptiert": [],
+    "motiv": "Abzugsschach",
+    "text": "1. Sf4+! öffnet die Diagonale des Läufers b3 mit Schach, und der Springer greift zugleich die Dame h3 an. Nach jedem Schutz gegen das Schach gewinnt Weiß die Dame; die abziehende Figur sucht sich das wertvollste Ziel."
+   }
+  },
+  {
+   "id": "ueb:taktik-a06",
+   "nummer": 40,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.52"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Hinlenkung und Gabel: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Tc8+!"
+    },
+    {
+     "art": "text",
+     "text": " lenkt die Dame nach c8. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dxc8"
+    },
+    {
+     "art": "text",
+     "text": " folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Se7+"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Sxc8"
+    },
+    {
+     "art": "text",
+     "text": ": Weiß gibt den Turm und gewinnt die Dame. Stellt sich die Dame mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... De8"
+    },
+    {
+     "art": "text",
+     "text": " dazwischen, setzt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Txe8#"
+    },
+    {
+     "art": "text",
+     "text": " matt. Das sofortige ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Se7+?"
+    },
+    {
+     "art": "text",
+     "text": " scheitert an ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dxe7"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Fehlt der Gabel ein zweites Ziel, lenke es mit Schach auf das richtige Feld.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 846
+   },
+   "erklaerung": {
+    "loesung": "1. Tc8+!",
+    "akzeptiert": [],
+    "motiv": "Hinlenkung und Gabel",
+    "text": "1. Tc8+! lenkt die Dame nach c8: Nach 1... Dxc8 gewinnt die Gabel 2. Se7+ die Dame, nach 1... De8 setzt 2. Txe8# matt. Das sofortige 1. Se7+? scheitert an 1... Dxe7."
+   }
+  },
+  {
+   "id": "ueb:taktik-a07",
+   "nummer": 41,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.53"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Überlastung: Die Dame d8 deckt den Springer c7 ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "und",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " das Feld e8. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxc7!"
+    },
+    {
+     "art": "text",
+     "text": ", und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dxc7?? 2. Te8#"
+    },
+    {
+     "art": "text",
+     "text": " wäre matt. Schwarz muss deshalb mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Df8"
+    },
+    {
+     "art": "text",
+     "text": " Dame und Grundreihe zugleich decken, und Weiß behält eine Figur mehr. Das sofortige ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Te8+?"
+    },
+    {
+     "art": "text",
+     "text": " scheitert an ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dxe8"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Sxe8"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Schlage zunächst, was der überlastete Verteidiger deckt, nicht den Verteidiger selbst.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 852
+   },
+   "erklaerung": {
+    "loesung": "1. Dxc7!",
+    "akzeptiert": [],
+    "motiv": "Überlastung",
+    "text": "Die Dame d8 muss den Springer c7 und das Feld e8 zugleich decken. Nach 1. Dxc7! kann sie nicht zurückschlagen, weil sonst 2. Te8# folgt, und Weiß behält eine Figur mehr."
+   }
+  },
+  {
+   "id": "ueb:taktik-a08",
+   "nummer": 42,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.54"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Arabisches Matt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sf6!"
+    },
+    {
+     "art": "text",
+     "text": " (ein ruhiger Zug) droht ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Txh7#"
+    },
+    {
+     "art": "text",
+     "text": ": Der schwarze König hat kein Feld (g8 deckt der Springer, g7 der Turm), und Schwarz kann h7 nicht zusätzlich decken, da der Bauer c7 dem Turm c8 den Weg zur 7. Reihe versperrt. Auf jeden schwarzen Zug folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Txh7#"
+    },
+    {
+     "art": "text",
+     "text": ", nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h6"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h5"
+    },
+    {
+     "art": "text",
+     "text": " ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Th7#"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Nicht jede Kombination beginnt mit Schach, denn eine unabwendbare Mattdrohung ist genauso zwingend.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 858
+   },
+   "erklaerung": {
+    "loesung": "1. Sf6!",
+    "akzeptiert": [],
+    "motiv": "Arabisches Matt",
+    "text": "Der ruhige Zug 1. Sf6! droht 2. Txh7#: Der Springer deckt g8, der Turm g7, und Schwarz kann h7 nicht mehr verteidigen. Eine unabwendbare Mattdrohung ist so zwingend wie ein Schach."
+   }
+  },
+  {
+   "id": "ueb:taktik-a09",
+   "nummer": 43,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.55"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Erstickungsmatt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sf7+ Kg8 2. Sh6++"
+    },
+    {
+     "art": "text",
+     "text": " (Doppelschach durch Springer und Dame c4) ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kh8"
+    },
+    {
+     "art": "text",
+     "text": " (nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kf8"
+    },
+    {
+     "art": "text",
+     "text": " setzt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Df7#"
+    },
+    {
+     "art": "text",
+     "text": " matt) ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Dg8+!! Txg8 4. Sf7#"
+    },
+    {
+     "art": "text",
+     "text": ". Der König darf die Dame nicht schlagen, weil der Springer h6 das Feld g8 deckt. Diese Zugfolge wird ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Philidors Vermächtnis",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " genannt. Merke dir: Das Damenopfer auf g8 zwingt den Turm, dem eigenen König das letzte Feld zu nehmen.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 864
+   },
+   "erklaerung": {
+    "loesung": "1. Sf7+ Kg8 2. Sh6++ Kh8 3. Dg8+!! Txg8 4. Sf7#",
+    "akzeptiert": [],
+    "motiv": "Erstickungsmatt (Philidors Vermächtnis)",
+    "text": "Nach 1. Sf7+ Kg8 2. Sh6++ Kh8 zwingt das Damenopfer 3. Dg8+!! den Turm, dem eigenen König das letzte Feld zu nehmen. 4. Sf7# ist Erstickungsmatt."
+   }
+  },
+  {
+   "id": "ueb:taktik-a10",
+   "nummer": 44,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.56"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Damenopfer und Doppelschach: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dd8+!! Kxd8 2. Lg5++"
+    },
+    {
+     "art": "text",
+     "text": " (Läufer g5 und Turm d1) ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kc7 3. Ld8#"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Ke8 3. Td8#"
+    },
+    {
+     "art": "text",
+     "text": ". Die Stellung stammt aus der Partie Réti–Tartakower, Wien 1910. Merke dir: Ein Doppelschach gegen einen König ohne Felder ist fast immer das Ende der Partie.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 870
+   },
+   "erklaerung": {
+    "loesung": "1. Dd8+!! Kxd8 2. Lg5++",
+    "akzeptiert": [],
+    "motiv": "Damenopfer und Doppelschach",
+    "text": "1. Dd8+!! Kxd8 2. Lg5++ gibt Doppelschach mit Läufer und Turm, und es folgt 3. Ld8# oder 3. Td8#. So endete Réti–Tartakower, Wien 1910."
+   }
+  },
+  {
+   "id": "ueb:taktik-a11",
+   "nummer": 45,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.57"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Beseitigung der Verteidigung: Außer dem König deckt nur der Springer f6 das Feld h7. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Txf6!"
+    },
+    {
+     "art": "text",
+     "text": " Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... gxf6"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dxf6"
+    },
+    {
+     "art": "text",
+     "text": " folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Dxh7#"
+    },
+    {
+     "art": "text",
+     "text": " (der Läufer d3 deckt die Dame). Verhindert Schwarz das Matt anders (etwa mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... g6"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h6"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Le4"
+    },
+    {
+     "art": "text",
+     "text": "), bleibt Weiß eine Figur vorn. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... g6"
+    },
+    {
+     "art": "text",
+     "text": " deckt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Dh4"
+    },
+    {
+     "art": "text",
+     "text": " den Turm. Das sofortige ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxh7+?"
+    },
+    {
+     "art": "text",
+     "text": " scheitert an ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Sxh7"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Ein Turm ist ein guter Preis für den einzigen Verteidiger des Königs.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 876
+   },
+   "erklaerung": {
+    "loesung": "1. Txf6!",
+    "akzeptiert": [],
+    "motiv": "Beseitigung der Verteidigung",
+    "text": "Nur der Springer f6 deckt h7 neben dem König. 1. Txf6! beseitigt ihn: Nach dem Zurückschlagen setzt 2. Dxh7# matt, sonst bleibt Weiß eine Figur vorn."
+   }
+  },
+  {
+   "id": "ueb:taktik-a12",
+   "nummer": 46,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.58"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Damenopfer und Anastasia-Matt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Se7+ Kh8 2. Dxh7+!! Kxh7 3. Th5#"
+    },
+    {
+     "art": "text",
+     "text": ". Der Springer e7 sperrt g6 und g8, der Turm beherrscht die h-Linie. Merke dir: Steht ein Springer auf e7, prüfe das Opfer auf h7.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 882
+   },
+   "erklaerung": {
+    "loesung": "1. Se7+ Kh8 2. Dxh7+!! Kxh7 3. Th5#",
+    "akzeptiert": [],
+    "motiv": "Anastasia-Matt",
+    "text": "Der Springer e7 nimmt dem König g6 und g8, also öffnet 2. Dxh7+!! die h-Linie für den Turm. 3. Th5# ist das Anastasia-Matt."
+   }
+  },
+  {
+   "id": "ueb:taktik-a13",
+   "nummer": 47,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.59"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Boden-Matt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxc6+! bxc6 2. La6#"
+    },
+    {
+     "art": "text",
+     "text": ". Schwarz muss mit dem Bauern schlagen, da der König kein Feld hat (b8 beherrscht der Läufer f4) und sich keine Figur auf c7 dazwischenstellen kann. Danach kreuzen sich die Diagonalen der Läufer: Der eine gibt auf a6 Schach und nimmt dem König b7, der andere nimmt ihm c7 und b8. Auf d7 und d8 steht Schwarz sich selbst im Weg. Merke dir: Hält nach der langen Rochade nur noch der b-Bauer die Diagonale a6–c8 geschlossen, prüfe das Opfer, das ihn wegzieht.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 888
+   },
+   "erklaerung": {
+    "loesung": "1. Dxc6+! bxc6 2. La6#",
+    "akzeptiert": [],
+    "motiv": "Boden-Matt",
+    "text": "1. Dxc6+! zwingt 1... bxc6 und öffnet die Diagonale a6–c8. Nach 2. La6# kreuzen sich die Diagonalen der beiden Läufer, und die eigenen Figuren auf d7 und d8 nehmen dem König die Flucht."
+   }
+  },
+  {
+   "id": "ueb:taktik-a14",
+   "nummer": 48,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.60"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Damiano-Matt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th8+! Kxh8 2. Dh5+"
+    },
+    {
+     "art": "text",
+     "text": " (oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Dh1+"
+    },
+    {
+     "art": "text",
+     "text": ") ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg8 3. Dh7#"
+    },
+    {
+     "art": "text",
+     "text": ". Das Turmopfer lenkt den König nach h8 (Hinlenkung, Motiv 6): Die Dame kommt mit Schach auf die h-Linie, und der Bauer g6 deckt das Mattfeld. Die Dame d5 ist vom Bauern c6 angegriffen, Schwarz kommt aber nie dazu, sie zu schlagen, denn jeder weiße Zug gibt Schach. Merke dir: Solange du Schach gibst, kommt keine Drohung des Gegners zum Zug.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 894
+   },
+   "erklaerung": {
+    "loesung": "1. Th8+! Kxh8 2. Dh5+ Kg8 3. Dh7#",
+    "akzeptiert": [
+     "1. Th8+! Kxh8 2. Dh1+"
+    ],
+    "motiv": "Damiano-Matt",
+    "text": "Das Turmopfer 1. Th8+! lenkt den König nach h8, die Dame kommt mit Schach auf die h-Linie, und 3. Dh7# ist matt, weil g6 das Mattfeld deckt. Weil jeder Zug Schach gibt, kommt Schwarz nie dazu, die Dame d5 zu schlagen."
+   }
+  },
+  {
+   "id": "ueb:taktik-a15",
+   "nummer": 49,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.61"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Lolli-Matt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dh6!"
+    },
+    {
+     "art": "text",
+     "text": " droht ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Dg7#"
+    },
+    {
+     "art": "text",
+     "text": ", und Schwarz kann das Feld g7 nicht mehr decken, da der Läufer fehlt, der es im Fianchetto bewacht. Wieder entscheidet ein ruhiger Zug wie in ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 7.54",
+     "abbildung": "7.54"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Ein Bauer auf f6 und ein Fianchetto ohne Läufer ergeben zusammen ein Mattbild.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 900
+   },
+   "erklaerung": {
+    "loesung": "1. Dh6!",
+    "akzeptiert": [],
+    "motiv": "Lolli-Matt",
+    "text": "1. Dh6! droht 2. Dg7#, und kein schwarzer Läufer verteidigt mehr g7. Ein Bauer auf f6 und ein Fianchetto ohne Läufer ergeben zusammen ein Mattbild."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k07-a1",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "1. Doppelangriff und Gabel",
+   "startFen": "r5k1/p5pp/8/3Q4/8/8/5PPP/6K1 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Kh8",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxa8#",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.1",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a10",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "4. Batterie und Abzug",
+   "startFen": "rnbqk2r/pppp2pp/5n2/4N3/2B5/8/PPPP1PPP/R1BQR1K1 w kq - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf7+",
+     "zeichen": "",
+     "abbildungen": [
+      "7.10"
+     ],
+     "weiter": [
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxd8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Qe7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxe7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Ne4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxe4+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.10",
+     "pfad": [
+      "Nf7+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a11",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "5. Das Doppelschach",
+   "startFen": "4k3/pbpp1ppp/1q6/7r/4N3/8/PP3PPP/2BQR1K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nd6+",
+     "zeichen": "",
+     "abbildungen": [
+      "7.12"
+     ],
+     "weiter": [
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [
+          "7.13"
+         ],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nf6+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.11",
+     "pfad": []
+    },
+    {
+     "nummer": "7.12",
+     "pfad": [
+      "Nd6+"
+     ]
+    },
+    {
+     "nummer": "7.13",
+     "pfad": [
+      "Nd6+",
+      "Kf8",
+      "Re8#"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a14",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "6. Köder, Hinlenkung und Räumung",
+   "startFen": "r5k1/pp3pp1/3q4/6N1/8/2P5/PP3PP1/4R1KR w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxf7+",
+         "zeichen": "",
+         "abbildungen": [
+          "7.15"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxd6",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nxf7",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxf7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.14",
+     "pfad": []
+    },
+    {
+     "nummer": "7.15",
+     "pfad": [
+      "Rh8+",
+      "Kxh8",
+      "Nxf7+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a16",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "6. Köder, Hinlenkung und Räumung",
+   "startFen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
+   "zuege": [
+    {
+     "zug": "Qh8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxf7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.16",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a17",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "6. Köder, Hinlenkung und Räumung",
+   "startFen": "r6k/1p3pRp/8/5N2/8/q7/P4P1P/6QK w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rxh7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qg7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.17",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a18",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "7. Beseitigung der Verteidigung",
+   "startFen": "q1r3k1/pp1b1ppp/2n5/1B1N4/8/8/PPQ2PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxc6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bxc6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ne7+",
+         "zeichen": "",
+         "abbildungen": [
+          "7.19"
+         ],
+         "weiter": [
+          {
+           "zug": "Kh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxc8",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "bxc6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ne7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Rxc6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ne7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.18",
+     "pfad": []
+    },
+    {
+     "nummer": "7.19",
+     "pfad": [
+      "Bxc6",
+      "Bxc6",
+      "Ne7+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a20",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "8. Überlastung und Ablenkung",
+   "startFen": "3r2k1/pp3ppp/1q6/3n4/8/1B6/PPQ2PPP/4R1K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxd5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxd5",
+       "zeichen": "??",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.20",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a23",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "9. Der Zwischenzug",
+   "startFen": "r3r1k1/ppq2ppp/8/8/8/7P/P3QPP1/R1R3K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxe8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxe8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxc7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Rxc7",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxe2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.23",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a25",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "10. Die gefangene Figur",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bb5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "a6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Ba4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "d6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "b5",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Bb3",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Nxd4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Nxd4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "exd4",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Qxd4",
+                                 "zeichen": "??",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "c5",
+                                   "zeichen": "!",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qd5",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Be6",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qc6+",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Bd7",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "Qd5",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "c4",
+                                               "zeichen": "!",
+                                               "abbildungen": [
+                                                "7.25"
+                                               ],
+                                               "weiter": []
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.25",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "a6",
+      "Ba4",
+      "d6",
+      "d4",
+      "b5",
+      "Bb3",
+      "Nxd4",
+      "Nxd4",
+      "exd4",
+      "Qxd4",
+      "c5",
+      "Qd5",
+      "Be6",
+      "Qc6+",
+      "Bd7",
+      "Qd5",
+      "c4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a26",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "11. Taktik rund um die Umwandlung",
+   "startFen": "8/pb2P1kp/5q2/8/8/B7/6PP/7K w - - 0 1",
+   "zuege": [
+    {
+     "zug": "e8=N+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kg6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxf6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "e8=Q",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qf1#",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.26",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a27",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "12. Rettung durch Dauerschach und Patt",
+   "startFen": "6k1/2QR1ppp/8/8/4q3/6P1/PP5P/6K1 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qe1+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kg2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qe2+",
+         "zeichen": "",
+         "abbildungen": [
+          "7.28"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg1",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qe1+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Kh3",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Kg2",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qe2+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kh1",
+           "zeichen": "??",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qf1#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.27",
+     "pfad": []
+    },
+    {
+     "nummer": "7.28",
+     "pfad": [
+      "Qe1+",
+      "Kg2",
+      "Qe2+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a29",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "12. Rettung durch Dauerschach und Patt",
+   "startFen": "5r1k/6pp/8/3Q4/3b4/7p/1q5P/7K w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qg8+",
+     "zeichen": "!!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxg8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Rxg8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.29",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a3",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "1. Doppelangriff und Gabel",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Bc4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nxe4",
+                   "zeichen": "!",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nxe4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "d5",
+                       "zeichen": "",
+                       "abbildungen": [
+                        "7.3"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "Bd3",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "dxe4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bxe4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": []
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "zug": "Bxd5",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Qxd5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": []
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Nf6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxe5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nc6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxc6",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "dxc6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Bc5",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Bg5",
+                         "zeichen": "??",
+                         "abbildungen": [
+                          "7.21"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "Nxe4",
+                           "zeichen": "!",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bxd8",
+                             "zeichen": "??",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Bxf2+",
+                               "zeichen": "!",
+                               "abbildungen": [
+                                "7.22"
+                               ],
+                               "weiter": [
+                                {
+                                 "zug": "Ke2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Bg4#",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": []
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.3",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Nc3",
+      "Nf6",
+      "Bc4",
+      "Nxe4",
+      "Nxe4",
+      "d5"
+     ]
+    },
+    {
+     "nummer": "7.21",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nf6",
+      "Nxe5",
+      "Nc6",
+      "Nxc6",
+      "dxc6",
+      "d3",
+      "Bc5",
+      "Bg5"
+     ]
+    },
+    {
+     "nummer": "7.22",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nf6",
+      "Nxe5",
+      "Nc6",
+      "Nxc6",
+      "dxc6",
+      "d3",
+      "Bc5",
+      "Bg5",
+      "Nxe4",
+      "Bxd8",
+      "Bxf2+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a30",
+   "kapitel": 7,
+   "abschnitt": "7.3",
+   "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld",
+   "startFen": "3r2k1/p3bppp/4pn2/3p4/8/2N1P1P1/PP3PBP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nxd5",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "exd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bxd5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nxd5",
+           "zeichen": "",
+           "abbildungen": [
+            "7.31"
+           ],
+           "weiter": [
+            {
+             "zug": "Rxd5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rxd5",
+               "zeichen": "",
+               "abbildungen": [
+                "7.32"
+               ],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.30",
+     "pfad": []
+    },
+    {
+     "nummer": "7.31",
+     "pfad": [
+      "Nxd5",
+      "exd5",
+      "Bxd5",
+      "Nxd5"
+     ]
+    },
+    {
+     "nummer": "7.32",
+     "pfad": [
+      "Nxd5",
+      "exd5",
+      "Bxd5",
+      "Nxd5",
+      "Rxd5",
+      "Rxd5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a33",
+   "kapitel": 7,
+   "abschnitt": "7.3",
+   "titel": "Figuren hinter Figuren zählen mit",
+   "startFen": "r2r2k1/pp3ppp/5n2/3p4/8/2N4P/PP1R1PP1/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nxd5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxd5",
+         "zeichen": "",
+         "abbildungen": [
+          "7.34"
+         ],
+         "weiter": [
+          {
+           "zug": "Rxd5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rxd5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.33",
+     "pfad": []
+    },
+    {
+     "nummer": "7.34",
+     "pfad": [
+      "Nxd5",
+      "Nxd5",
+      "Rxd5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a37",
+   "kapitel": 7,
+   "abschnitt": "7.4",
+   "titel": "Damenopfer auf h7 und Anastasia-Matt",
+   "startFen": "1q3r1k/4Nppp/8/7Q/8/3R4/5PPP/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxh7+",
+     "zeichen": "!!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rh3#",
+         "zeichen": "",
+         "abbildungen": [
+          "7.38"
+         ],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.37",
+     "pfad": []
+    },
+    {
+     "nummer": "7.38",
+     "pfad": [
+      "Qxh7+",
+      "Kxh7",
+      "Rh3#"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a4",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "2. Die Fesselung",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bb5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "d6",
+               "zeichen": "",
+               "abbildungen": [
+                "7.4"
+               ],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.4",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "d6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a44",
+   "kapitel": 7,
+   "abschnitt": "Übung 32",
+   "titel": "Übungen",
+   "startFen": "8/6k1/8/8/8/7p/1q3p1P/4R2K w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Re7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re6+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kf5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Re5+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Re8",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "f1=Q#",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    },
+    {
+     "zug": "Rg1+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "fxg1=Q+",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kxg1",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Qg2#",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.44",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a46",
+   "kapitel": 7,
+   "abschnitt": "Übung 34",
+   "titel": "Übungen",
+   "startFen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16",
+   "zuege": [
+    {
+     "zug": "Qb8+",
+     "zeichen": "!!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxb8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rd8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.46",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a47",
+   "kapitel": 7,
+   "abschnitt": "Übung 35",
+   "titel": "Übungen",
+   "startFen": "r1b1k2r/pp1pqppp/5n2/1N2p3/2B1P3/8/PPP1QPPP/R4RK1 w kq - 0 1",
+   "zuege": [
+    {
+     "zug": "Nc7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxa8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxa8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nd6+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxd6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.47",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a48",
+   "kapitel": 7,
+   "abschnitt": "Übung 36",
+   "titel": "Übungen",
+   "startFen": "6k1/p4ppp/1p6/q3n3/8/1P2Q3/P1r2PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rd8#",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.48",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a49",
+   "kapitel": 7,
+   "abschnitt": "Übung 37",
+   "titel": "Übungen",
+   "startFen": "6q1/r7/4k3/1p2p3/8/8/2B2PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bb3+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bxg8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.49",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a5",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "2. Die Fesselung",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "d5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "c4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "e6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Bg5",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "7.5"
+                 ],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.5",
+     "pfad": [
+      "d4",
+      "d5",
+      "c4",
+      "e6",
+      "Nc3",
+      "Nf6",
+      "Bg5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a50",
+   "kapitel": 7,
+   "abschnitt": "Übung 38",
+   "titel": "Übungen",
+   "startFen": "3r1rk1/pp4pp/2n5/3q4/8/1P6/P1Q1BPPP/R3R1K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bc4",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxc4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxc4+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Nd4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bxd5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Nb4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bxd5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.50",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a51",
+   "kapitel": 7,
+   "abschnitt": "Übung 39",
+   "titel": "Übungen",
+   "startFen": "r4rk1/pp4pp/2n2n2/3N4/8/1B4Pq/PP3P1P/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf4+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxh3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Rf7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxh3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Nd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxh3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Qe6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxe6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nxf6+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.51",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a52",
+   "kapitel": 7,
+   "abschnitt": "Übung 40",
+   "titel": "Übungen",
+   "startFen": "6k1/pp3ppp/4q3/n2N4/8/8/PP2BPPP/2R3K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rc8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxc8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ne7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kf8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxc8",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Qe8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxe8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Ne7+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxe7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.52",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a53",
+   "kapitel": 7,
+   "abschnitt": "Übung 41",
+   "titel": "Übungen",
+   "startFen": "3q2k1/ppn2ppp/8/8/6b1/8/PPQ2PPP/4R1K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxc7",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Qxc7",
+       "zeichen": "??",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Re8+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxe8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Nxe8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.53",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a54",
+   "kapitel": 7,
+   "abschnitt": "Übung 42",
+   "titel": "Übungen",
+   "startFen": "r1r4k/p1pR3p/1p6/8/4N3/8/2P2PPP/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "h6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "h5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.54",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a55",
+   "kapitel": 7,
+   "abschnitt": "Übung 43",
+   "titel": "Übungen",
+   "startFen": "r3r2k/pp4pp/8/6N1/2Q5/q7/PP3PPP/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kg8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nh6+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qg8+",
+             "zeichen": "!!",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rxg8",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nf7#",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kf8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qf7#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.55",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a56",
+   "kapitel": 7,
+   "abschnitt": "Übung 44",
+   "titel": "Übungen",
+   "startFen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
+   "zuege": [
+    {
+     "zug": "Qd8+",
+     "zeichen": "!!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bg5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kc7",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bd8#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Ke8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rd8#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.56",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a57",
+   "kapitel": 7,
+   "abschnitt": "Übung 45",
+   "titel": "Übungen",
+   "startFen": "r4rk1/pb2qppp/1p3n2/2p4Q/8/2NB1R2/PP3PPP/R5K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rxf6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "gxf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Qxf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "g6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qh4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "h6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Be4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    },
+    {
+     "zug": "Qxh7+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.57",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a58",
+   "kapitel": 7,
+   "abschnitt": "Übung 46",
+   "titel": "Übungen",
+   "startFen": "rq3rk1/pb3ppp/8/3N1R1Q/8/8/PP3PPP/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ne7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh7+",
+         "zeichen": "!!",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kxh7",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rh5#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.58",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a59",
+   "kapitel": 7,
+   "abschnitt": "Übung 47",
+   "titel": "Übungen",
+   "startFen": "2kr3r/pp1n1ppp/2n5/8/Q4B2/8/PP2BPPP/2KR4 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxc6+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "bxc6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ba6#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.59",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a6",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "3. Der Spieß",
+   "startFen": "7r/6k1/8/8/8/8/8/R3K3 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh1+",
+     "zeichen": "",
+     "abbildungen": [
+      "7.7"
+     ],
+     "weiter": [
+      {
+       "zug": "Kd2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxa1",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.6",
+     "pfad": []
+    },
+    {
+     "nummer": "7.7",
+     "pfad": [
+      "Rh1+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a60",
+   "kapitel": 7,
+   "abschnitt": "Übung 48",
+   "titel": "Übungen",
+   "startFen": "r4rk1/pp3pp1/2p3P1/3Q4/8/8/PP6/1K5R w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qh5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh7#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "zug": "Qh1+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh7#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.60",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a61",
+   "kapitel": 7,
+   "abschnitt": "Übung 49",
+   "titel": "Übungen",
+   "startFen": "r4rk1/pp3p1p/5Pp1/8/8/8/PP1Q4/1K6 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qh6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.61",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a8",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "4. Batterie und Abzug",
+   "startFen": "r2q1rk1/pp2bppp/4pn2/8/3P2P1/2NQ4/PPB2P1P/R4RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "g5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Ne4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxe4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "g6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "gxf6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Nd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.8",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a9",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "4. Batterie und Abzug",
+   "startFen": "5rk1/pp1qbppp/2n5/8/8/3BQN2/PP3PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxd7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxd7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.9",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  }
+ ]
+}

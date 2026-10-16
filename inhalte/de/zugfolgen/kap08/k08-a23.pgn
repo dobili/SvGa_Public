@@ -1,0 +1,16 @@
+[Event "Kapitel 8: Fern- und Diagonalopposition"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/5k2/8/8/8/8/3P2K1/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k08-a23"]
+[Kapitel "8"]
+[Abschnitt "8.5"]
+[Status "freigegeben"]
+[Abbildungen "8.23"]
+
+{ Abb. 8.23 } 1. Kf3 $1 Ke6 2. Ke4 *

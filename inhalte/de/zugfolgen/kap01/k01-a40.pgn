@@ -1,0 +1,16 @@
+[Event "Kapitel 1: Übung: Drohung ignorieren"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "rn2kb1r/1p3ppp/p3pn2/1Npq4/3P4/5N2/PPP2PPP/R1BQ1RK1 w kq - 0 1"]
+[SetUp "1"]
+[Beispiel "k01-a40"]
+[Kapitel "1"]
+[Abschnitt "Übung 4"]
+[Status "freigegeben"]
+[Abbildungen "1.40"]
+
+{ Abb. 1.40 } 1. Nc7+ $1 ( 1. Nc3 ) 1... Kd7 ( 1... Ke7 2. Nxd5+ ) ( 1... Kd8 2. Nxd5 ) 2. Nxd5 *

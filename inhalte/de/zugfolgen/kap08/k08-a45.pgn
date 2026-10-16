@@ -1,0 +1,16 @@
+[Event "Kapitel 8: Wie ein Freibauer entsteht: Mehrheit und Durchbruch"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "7k/ppp5/8/PPP5/8/8/8/7K w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k08-a45"]
+[Kapitel "8"]
+[Abschnitt "8.7"]
+[Status "freigegeben"]
+[Abbildungen "8.45 8.46"]
+
+{ Abb. 8.45 } 1. b6 $1 axb6 ( 1... cxb6 2. a6 $1 ) 2. c6 $1 bxc6 { Abb. 8.46 } 3. a6 *

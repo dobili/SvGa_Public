@@ -1,0 +1,906 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 2,
+ "texte": [
+  {
+   "abbildung": "2.2",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Ist die Eröffnung nach dem dritten weißen Zug schon entschieden?",
+      "Schau auf den Läufer b5 und den Springer c6.",
+      "Mit 3. Lb5 ist es die Spanische Partie: Der Läufer drückt auf den Springer, der e5 deckt."
+     ],
+     "text": "Spanische Partie, Hauptvariante. Weiß greift e5 nicht direkt an, sondern den Springer c6, der ihn deckt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3... a6",
+     "frage": "Warum spielt Schwarz 3... a6?",
+     "antworten": [
+      "Er deckt den Springer c6 ein zweites Mal.",
+      "Er stellt den Läufer b5 sofort zur Rede: Weiß muss tauschen oder zurückziehen.",
+      "Er bereitet die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Bauer a6 greift den Läufer an. Weiß zieht in der Hauptvariante nach a4 zurück und behält den Druck auf c6."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.6",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Hier trennen sich zwei Wege der Spanischen Partie.",
+      "Achte auf den schwarzen d-Bauern.",
+      "8... d6 führt in die ruhige Hauptvariante, 8... d5 in den Marshall-Angriff."
+     ],
+     "text": "Spanische Partie an der Weggabelung: Mit dem d-Bauern entscheidet Schwarz, ob es ruhig oder scharf weitergeht."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "8... d6",
+     "frage": "Warum wählt Schwarz mit 8... d6 den ruhigen Weg?",
+     "antworten": [
+      "Er stützt den Bauern e5 und gibt dem Läufer c8 das Feld d7 frei.",
+      "Er greift den Bauern e4 an.",
+      "Er bereitet ...d5 mit Bauerngewinn vor."
+     ],
+     "richtig": 0,
+     "erklaerung": "Mit d6 bleibt e5 fest gedeckt, und der letzte schwarze Läufer kommt ins Spiel. Kein Material wird hergegeben."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.8",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Prüfe für beide Seiten Zentrum, Entwicklung und Königssicherheit.",
+      "Schau auf die Felder b1, c1 und c8.",
+      "Beide haben einen Zentrumsbauern und rochiert. Es fehlen Springer b1 und Läufer c1 bei Weiß, Läufer c8 bei Schwarz."
+     ],
+     "text": "Beide Seiten haben zwei von drei Zielen erreicht. Offen ist nur die Entwicklung: bei Weiß Springer b1 und Läufer c1, bei Schwarz der Läufer c8."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "11. d4",
+     "frage": "Warum spielt Weiß jetzt 11. d4?",
+     "antworten": [
+      "Er deckt den Bauern e4.",
+      "Er greift den Springer a5 an.",
+      "Er stellt einen zweiten Bauern ins Zentrum und greift e5 und c5 an."
+     ],
+     "richtig": 2,
+     "erklaerung": "c3 hat diesen Vorstoß vorbereitet. Danach kann auch der Springer über d2 entwickelt werden."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.13",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Ist jeder Zentrumsbauer auch sicher?",
+      "Schau auf den weißen Bauern e4.",
+      "e4 steht im Zentrum, ist aber ungedeckt; der Springer f6 kann ihn schlagen."
+     ],
+     "text": "Weiß hat rochiert, aber das Zentrum ist nur teils erreicht: Der Bauer e4 ist ungedeckt und kann gleich geschlagen werden."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "4... Sxe4",
+     "frage": "Warum kann Schwarz hier 4... Sxe4 spielen?",
+     "antworten": [
+      "Der Läufer b5 ist gefesselt.",
+      "Der Springer f3 ist an die Dame gefesselt.",
+      "Keine weiße Figur deckt den Bauern e4."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Bauer ist ungedeckt. Weiß holt das Material mit d4 zurück, und es entsteht das Berliner Endspiel."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.16",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Vergleiche die Königsstellungen beider Seiten.",
+      "Schau auf den schwarzen König d8.",
+      "Der König steht auf d8 und kann nicht mehr rochieren; die Damen sind aber getauscht."
+     ],
+     "text": "Die Bilanz zeigt Weiß vorn, weil der schwarze König nicht rochiert hat. Ohne Damen wiegt das weniger schwer."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum gilt das Berliner Endspiel trotz Doppelbauer als sehr solide für Schwarz?",
+     "antworten": [
+      "Schwarz hat einen Bauern mehr.",
+      "Schwarz hat das Läuferpaar und keine Schwäche, über die Weiß schnell eindringen kann.",
+      "Der schwarze König kann noch rochieren."
+     ],
+     "richtig": 1,
+     "erklaerung": "Das Material ist ausgeglichen. Der Doppelbauer c7/c6 ist ein Nachteil, das Läuferpaar und das Fehlen von Schwächen gleichen ihn aus."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.17",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Ist das noch die ruhige Hauptvariante?",
+      "Schau auf den schwarzen Bauern d5.",
+      "8... d5 statt 8... d6: Das ist der Marshall-Angriff, eine Abzweigung der Spanischen Partie."
+     ],
+     "text": "Spanische Partie, Abzweigung im Buch: der Marshall-Angriff. Schwarz spielt nicht auf Sicherheit, sondern auf schnelles Figurenspiel."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was gibt Schwarz mit 8... d5 her?",
+     "antworten": [
+      "Den Bauern e5: Nach dem Tausch auf d5 kann der Springer f3 ihn schlagen.",
+      "Den Läufer e7.",
+      "Das Recht zu rochieren."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach exd5 Sxd5 nimmt Sxe5 den Bauern. Schwarz setzt dafür auf schnelles Figurenspiel."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.19",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Gehört die Stellung schon zu genau einer Eröffnung?",
+      "Achte darauf, welche Eröffnungen des Buches mit 3. Lc4 beginnen.",
+      "Noch offen: Italienische Partie oder Zweispringerspiel und Läuferspiel. Der nächste weiße Zug entscheidet."
+     ],
+     "text": "Die Eröffnung ist noch nicht entschieden. Mit 4. c3 wird daraus die Italienische Partie."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "4. c3",
+     "frage": "Wozu dient 4. c3?",
+     "antworten": [
+      "Er greift den Läufer c5 an.",
+      "Er bereitet den Zentrumsstoß d4 vor.",
+      "Er deckt den Läufer c4."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Bauer c3 kontrolliert d4. So kann Weiß später d4 spielen und nach einem Tausch mit einem Bauern zurückschlagen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.24",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "6... Lb4+",
+     "frage": "Warum zieht der Läufer mit 6... Lb4+ weg?",
+     "antworten": [
+      "Er schlägt dabei einen Bauern.",
+      "Er bereitet die lange Rochade vor.",
+      "Der Bauer d4 greift ihn an; er weicht mit Schach aus und gewinnt so Zeit."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Rückzug mit Schach zwingt Weiß zu antworten. So verliert Schwarz kein Tempo."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.26",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Wer hat mehr Ziele erreicht, obwohl Schwarz einen Bauern gewonnen hat?",
+      "Schau auf die Könige und auf den Bauern d4.",
+      "Weiß: Bauer d4 und rochierter König. Schwarz: König in der Mitte, kein Zentrumsfeld unter Kontrolle."
+     ],
+     "text": "Weiß hat zwei Ziele erreicht, Schwarz keines. Der Bauerngewinn hat Schwarz Zeit gekostet."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was hat sich durch die Rochade für den Springer c3 geändert?",
+     "antworten": [
+      "Er ist jetzt vom Turm f1 gedeckt.",
+      "Er kann nicht mehr angegriffen werden.",
+      "Er ist nicht mehr an den König gefesselt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Läufer b4 und der Springer e4 greifen ihn weiter an. Aber eine Fesselung an den König gibt es nicht mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.30",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Prüfe vor allem die Königssicherheit beider Seiten.",
+      "Schau auf den König e8 und den Läufer c8.",
+      "Schwarz hat kein Ziel erreicht: König in der Mitte, c8 zu Hause. Darum will er rochieren statt den Turm a1 zu nehmen."
+     ],
+     "text": "Weiß führt in der Bilanz mit zwei Zielen, Schwarz hat keines. Mit 10... d5 greift er den Läufer c4 an und will rochieren."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "11. Lxd5",
+     "frage": "Warum schlägt Weiß mit 11. Lxd5?",
+     "antworten": [
+      "Er gibt damit Schach.",
+      "Der Läufer c4 war angegriffen; auf d5 deckt ihn die Dame b3.",
+      "Er deckt damit den Turm a1."
+     ],
+     "richtig": 1,
+     "erklaerung": "Nimmt die Dame d8 zurück, schlägt die Dame b3 sie. Schwarz rochiert deshalb erst einmal."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.32",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Welche Eröffnung entsteht mit dem dritten weißen Zug?",
+      "Schau auf den Bauern d4.",
+      "3. d4 statt 3. Lb5 oder 3. Lc4: Das ist die Schottische Partie."
+     ],
+     "text": "Schottische Partie, Hauptvariante. Weiß öffnet sofort das Zentrum."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3... exd4",
+     "frage": "Warum tauscht Schwarz mit 3... exd4?",
+     "antworten": [
+      "Er greift damit den Springer f3 an.",
+      "Er gewinnt damit einen Bauern.",
+      "e5 ist zweimal angegriffen und nur vom Springer c6 gedeckt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Bauer d4 und Springer f3 greifen e5 an. Schwarz tauscht, und Weiß schlägt mit dem Springer zurück."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.34",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum ist der Bauer e4 in Gefahr?",
+     "antworten": [
+      "Sein einziger Verteidiger, der Springer c3, ist an den König gefesselt.",
+      "Die Dame d1 ist an den König gefesselt.",
+      "Der Bauer e4 ist ein Doppelbauer."
+     ],
+     "richtig": 0,
+     "erklaerung": "Ein gefesselter Springer deckt nur scheinbar. Weiß tauscht auf c6 und deckt e4 danach mit Ld3."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.36",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Welche Figuren stehen bei beiden noch auf dem Startfeld?",
+      "Schau auf c1 und c8.",
+      "Beide haben rochiert; es fehlen nur noch die Läufer c1 und c8. Schwarz hat zusätzlich den Zentrumsbauern d5."
+     ],
+     "text": "Schwarz hat zwei Ziele, Weiß eins: Weiß hat keinen Zentrumsbauern mehr. Bei beiden fehlt nur noch der Läufer der Damenseite."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "10. Lg5",
+     "frage": "Warum spielt Weiß 10. Lg5?",
+     "antworten": [
+      "Er greift den Bauern d5 an.",
+      "Er entwickelt den letzten Läufer und fesselt den Springer f6 an die Dame.",
+      "Er bereitet die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Läufer kommt mit Wirkung ins Spiel. Der Springer f6 deckt d5 und kann nun nicht ohne Weiteres ziehen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.40",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Welche Eröffnung entsteht mit 2... Sf6?",
+      "Schwarz deckt e5 nicht, sondern greift e4 an.",
+      "Das ist die Russische Verteidigung (Petroff), hier an der Weggabelung nach 3. Sxe5."
+     ],
+     "text": "Russische Verteidigung, Hauptvariante. Jetzt entscheidet sich, ob Schwarz sofort zurückschlägt oder erst den Springer vertreibt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3... d6",
+     "frage": "Warum spielt Schwarz zuerst 3... d6 statt sofort Sxe4?",
+     "antworten": [
+      "d6 greift den Bauern e4 an.",
+      "Er vertreibt erst den Springer von der e-Linie; danach ist Sxe4 gefahrlos.",
+      "d6 deckt den Bauern e5."
+     ],
+     "richtig": 1,
+     "erklaerung": "Steht der Springer auf e5, droht nach Sxe4 die Dame auf e2 mit gefährlichen Abzügen. Nach Sf3 ist das vorbei."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.49",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Prüfe die drei Ziele für beide Seiten.",
+      "Schau auf die e-Linie und die beiden Könige.",
+      "Keine Seite hat einen Zentrumsbauern, nichts ist entwickelt, beide Könige stehen auf der offenen e-Linie."
+     ],
+     "text": "Keine Seite hat ein Ziel erreicht. Gefährlich ist das für den, dessen Figur ungedeckt auf der e-Linie vor dem König steht."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "4. De2",
+     "frage": "Warum ist 4. De2 so stark?",
+     "antworten": [
+      "Die Dame droht Matt auf f7.",
+      "Weiß will lang rochieren.",
+      "Die Dame greift den Springer e4 an; zieht er weg, folgt ein Abzugsschach."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Springer e4 ist ungedeckt. Zieht er, öffnet sich die e-Linie, und der Springer e5 kann mit Schach abziehen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.50",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "5. Sc6+",
+     "frage": "Warum gewinnt 5. Sc6+ die Dame?",
+     "antworten": [
+      "Es ist Abzugsschach durch die Dame e2, und der Springer greift zugleich die Dame d8 an.",
+      "Der Springer gabelt König und Turm h8.",
+      "Der Springer setzt matt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Schwarz muss das Schach beantworten. Danach schlägt der Springer die Dame d8."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.52",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Zählt fürs Zentrum nur ein Bauer, der dort steht?",
+      "Schau, welches Zentrumsfeld der Bauer c5 angreift.",
+      "Schwarz hat keinen Zentrumsbauern, kontrolliert aber d4. Das ergibt beim Zentrum „teils“."
+     ],
+     "text": "Schwarz stellt keinen Bauern ins Zentrum, kämpft aber von der Seite um d4. Die Bilanz zeigt das als „teils“."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum antwortet Schwarz mit 1... c5 statt mit 1... e5?",
+     "antworten": [
+      "Er greift damit den Bauern e4 an.",
+      "Er bereitet die kurze Rochade vor.",
+      "Er sucht eine unsymmetrische Stellung und kämpft von der Seite um d4."
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Bauern stehen nicht mehr spiegelbildlich. Beide Seiten bekommen unterschiedliche Pläne."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.56",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Wozu dient 5... a6?",
+     "antworten": [
+      "Er deckt den Bauern b7.",
+      "Er nimmt den weißen Figuren das Feld b5 und bereitet ...b5 vor.",
+      "Er bereitet die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ohne a6 könnten ein weißer Läufer oder Springer nach b5 kommen. Mit a6 und später b5 gewinnt Schwarz Raum am Damenflügel."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.57",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Welches Ziel fehlt beiden Seiten noch?",
+      "Schau auf die Könige e1 und e8.",
+      "Beide haben einen Zentrumsbauern, aber noch nicht rochiert. Die Rochade ist der nächste Schritt."
+     ],
+     "text": "Je ein Ziel erreicht: Beide haben einen Zentrumsbauern, beide Könige stehen noch in der Mitte. Die Bilanz zeigt aber nicht das Loch auf d5."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist d5 nach ...e5 ein Loch für Schwarz?",
+     "antworten": [
+      "Weiß hat dort schon einen Bauern stehen.",
+      "Kein schwarzer Bauer kann das Feld d5 noch angreifen.",
+      "Der weiße Springer steht schon auf d5."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der c-Bauer ist getauscht, der e-Bauer steht schon auf e5. Eine weiße Figur auf d5 kann kein Bauer mehr vertreiben."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.63",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "4... Le7",
+     "frage": "Warum spielt Schwarz 4... Le7?",
+     "antworten": [
+      "Er greift den Läufer g5 an.",
+      "Er öffnet dem Läufer c8 den Weg.",
+      "Er entwickelt den Läufer und hebt die Fesselung des Springers f6 auf."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Läufer e7 steht jetzt zwischen Springer und Dame. Der Springer f6 kann wieder frei ziehen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.67",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Wer hat schon rochiert?",
+      "Schau auf die Könige und auf den Läufer f1.",
+      "Schwarz hat rochiert und führt mit zwei Zielen. Weiß fehlen Ld3 und die Rochade."
+     ],
+     "text": "Schwarz hat zwei Ziele erreicht, Weiß eins. Das Sorgenkind von Schwarz zeigt die Bilanz trotzdem: den Läufer c8."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was ist die größte Sorge in der schwarzen Stellung?",
+     "antworten": [
+      "Der Läufer c8 ist hinter den eigenen Bauern eingesperrt.",
+      "Der schwarze König steht noch in der Mitte.",
+      "Schwarz hat keinen Zentrumsbauern."
+     ],
+     "richtig": 0,
+     "erklaerung": "Die Bauern c6, d5 und e6 stehen auf hellen Feldern und sperren den hellfeldrigen Läufer ein. Ihn ins Spiel zu bringen, ist die Aufgabe der nächsten Züge."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.69",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Welche Form des Damengambits ist das?",
+      "Schau auf das Feld c4.",
+      "Schwarz hat auf c4 geschlagen: das Angenommene Damengambit, eine Abzweigung im Buch."
+     ],
+     "text": "Angenommenes Damengambit. Der Bauer c4 ist für Schwarz eher geliehen als gewonnen."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum muss sich Weiß um den Bauern c4 keine Sorgen machen?",
+     "antworten": [
+      "Der Bauer c4 ist gefesselt.",
+      "Nach e3 greift der Läufer f1 den Bauern an; Weiß gewinnt ihn in der Regel zurück.",
+      "Schwarz muss den Bauern sofort zurückgeben, sonst wird er matt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Weiß entwickelt einfach weiter und holt den Bauern nebenbei. Schwarz nutzt die Zeit für die eigene Entwicklung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.77",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Welches System spielt Weiß mit dem frühen Läuferzug?",
+      "Schau auf den Läufer f4.",
+      "2. Lf4 nach 1. d4 d5: das London-System."
+     ],
+     "text": "London-System, Hauptvariante. Weiß baut ruhig auf und spielt fast immer dieselben Züge."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum zieht Weiß den Läufer schon im zweiten Zug nach f4?",
+     "antworten": [
+      "Er greift den Bauern d5 an.",
+      "Er kommt heraus, bevor der Bauer e3 ihm den Weg versperrt.",
+      "Er fesselt den Springer g8."
+     ],
+     "richtig": 1,
+     "erklaerung": "Zieht Weiß zuerst e3, ist der Läufer c1 eingesperrt. Steht er schon auf f4, ist e3 kein Problem mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.80",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "5. c3",
+     "frage": "Wozu dient 5. c3?",
+     "antworten": [
+      "Er stützt den Bauern d4 gegen den Hebel ...c5.",
+      "Er greift den Bauern d5 an.",
+      "Er macht dem Springer b1 das Feld c3 frei."
+     ],
+     "richtig": 0,
+     "erklaerung": "Mit c3, d4 und e3 entsteht die typische London-Pyramide. Nach einem Tausch auf d4 kann Weiß mit dem Bauern zurückschlagen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.83",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Welche Seite hat schon alle drei Ziele?",
+      "Schau auf den Läufer c8.",
+      "Weiß hat alles erreicht. Bei Schwarz fehlt nur der Läufer c8."
+     ],
+     "text": "Weiß hat alle drei Ziele erreicht, Schwarz zwei. Ein einziger Läuferzug fehlt noch."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "9... Ld7",
+     "frage": "Warum spielt Schwarz 9... Ld7?",
+     "antworten": [
+      "Er greift den Bauern d4 an.",
+      "Er deckt den Springer f6.",
+      "Er entwickelt die letzte Leichtfigur; dann sind alle drei Ziele erreicht."
+     ],
+     "richtig": 2,
+     "erklaerung": "Mit Ld7 haben beide Seiten Zentrum, Entwicklung und Königssicherheit. Die Eröffnung ist abgeschlossen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.85",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum kann Schwarz nach Lxf6 nicht mit der Dame zurückschlagen?",
+     "antworten": [
+      "Auf f6 stünde die Dame im Schach.",
+      "Der eigene Bauer e7 versperrt der Dame den Weg nach f6.",
+      "Die Dame ist gefesselt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Solange e7 steht, schlägt Schwarz mit einem Bauern zurück und bekommt einen Doppelbauern. Nach ...e6 ginge Dxf6 (Abb. 2.96)."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.89",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "7... Le6",
+     "frage": "Warum spielt Schwarz 7... Le6?",
+     "antworten": [
+      "Er greift den Springer c3 an.",
+      "Er fesselt den Springer c3.",
+      "Er deckt den Bauern d5, den die Dame wegen des Läufers d6 nicht decken kann."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Springer c3 greift d5 an. Der Läufer d6 steht zwischen Dame und Bauer, deshalb muss eine andere Figur decken."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.97",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Welche Verteidigung gegen 1. e4 beginnt mit ...e6?",
+      "Schau auf die Bauern e6 und d5.",
+      "1. e4 e6 2. d4 d5: die Französische Verteidigung."
+     ],
+     "text": "Französische Verteidigung, Hauptvariante. Schwarz greift e4 an, sperrt aber den eigenen Läufer c8 ein."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3. e5",
+     "frage": "Warum spielt Weiß 3. e5?",
+     "antworten": [
+      "Er weicht dem Angriff auf e4 aus und gewinnt Raum.",
+      "Er schlägt den Bauern d5.",
+      "Er greift den Läufer f8 an."
+     ],
+     "richtig": 0,
+     "erklaerung": "Es entsteht eine Bauernkette d4–e5. Schwarz greift später ihre Basis d4 mit ...c5 an."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.105",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Welche Verteidigung beginnt mit 1... c6?",
+      "Vergleiche mit der Französischen Verteidigung: Wo steht der Läufer c8?",
+      "Caro-Kann-Verteidigung; der Läufer ist schon vor der Kette auf f5."
+     ],
+     "text": "Caro-Kann-Verteidigung, Hauptvariante. Anders als in der Französischen Verteidigung kommt der Läufer c8 heraus, bevor ...e6 folgt."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum spielt Schwarz ...Lf5, bevor er ...e6 zieht?",
+     "antworten": [
+      "Er deckt den Bauern d5.",
+      "Der Läufer soll vor die Bauernkette kommen, bevor e6 ihn einsperrt.",
+      "Er greift den Bauern e5 an."
+     ],
+     "richtig": 1,
+     "erklaerung": "Nach ...e6 wäre der Weg für den Läufer c8 zu. So steht er aktiv, und die Kette hinter ihm ist trotzdem fest."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.113",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Was ist der Sinn von 6... e5?",
+     "antworten": [
+      "Schwarz kämpft endlich mit einem Bauern um das Zentrum und greift d4 an.",
+      "Er bereitet die Rochade vor.",
+      "Er deckt den Springer f6."
+     ],
+     "richtig": 0,
+     "erklaerung": "In der Königsindischen Verteidigung überlässt Schwarz Weiß zuerst das Zentrum. Mit ...e5 fordert er es zur rechten Zeit heraus."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.120",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Welche Eröffnung entsteht nach 3. Lc4 Sf6?",
+      "Schau auf den Springer g5.",
+      "Zweispringerspiel: Weiß greift mit 4. Sg5 sofort f7 an."
+     ],
+     "text": "Zweispringerspiel, Hauptvariante. Weiß greift früh an, statt in Ruhe zu entwickeln."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "4... d5",
+     "frage": "Warum spielt Schwarz 4... d5?",
+     "antworten": [
+      "d5 deckt den Bauern f7.",
+      "d5 greift den Springer g5 an.",
+      "d5 sperrt die Diagonale des Läufers c4 nach f7 und greift ihn an."
+     ],
+     "richtig": 2,
+     "erklaerung": "f7 wird von Läufer und Springer angegriffen und nur vom König gedeckt. Der Bauer d5 nimmt den Läufer aus dem Spiel gegen f7."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.131",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "3. d3",
+     "frage": "Warum spielt Weiß 3. d3?",
+     "antworten": [
+      "Er deckt den angegriffenen Bauern e4.",
+      "Er greift den Bauern e5 an.",
+      "Er öffnet dem Läufer f1 die Diagonale."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Springer f6 greift e4 an, und keine weiße Figur deckt ihn. Der Bauer d3 deckt ihn und öffnet dem Läufer c1 den Weg."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.136",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Welche Eröffnung kann mit dem nächsten schwarzen Zug entstehen?",
+      "Schau auf den Springer c3 und das Feld b4.",
+      "Nach 3... Lb4 ist es die Nimzo-Indische Verteidigung."
+     ],
+     "text": "Nimzo-Indische Verteidigung, Hauptvariante. Erst der Springer c3 gibt dem Läufer f8 ein lohnendes Ziel."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3... Lb4",
+     "frage": "Warum spielt Schwarz 3... Lb4?",
+     "antworten": [
+      "Er greift den Bauern d4 an.",
+      "Er fesselt den Springer c3 an den König.",
+      "Er droht, den Turm a1 zu schlagen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der gefesselte Springer kontrolliert e4 nur noch scheinbar. So kämpft Schwarz mit Figuren um das Zentrum."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.141",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-zielbilanz",
+     "hinweise": [
+      "Prüfe das Zentrum von Schwarz genau.",
+      "Hat Schwarz noch einen Bauern auf d4, e4, d5 oder e5?",
+      "Kein schwarzer Zentrumsbauer, nur d5 unter Figurenkontrolle; außerdem steht der Läufer c8 noch zu Hause."
+     ],
+     "text": "Schwarz hat nur ein Ziel sicher: den rochierten König. Nach ...Lb7 ist die Entwicklung fertig, das Zentrum hält Weiß mit dem Bauern d4."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist der Bauer d4 ein isolierter Bauer?",
+     "antworten": [
+      "Er ist von keiner Figur gedeckt.",
+      "Weiß hat auf der c- und der e-Linie keine Bauern mehr, die ihn stützen können.",
+      "Er ist ein Doppelbauer."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein isolierter Bauer kann nur noch von Figuren gedeckt werden. Darum zielt Schwarz mit seinen Figuren auf d4."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "2.145",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k2-eroeffnung",
+     "hinweise": [
+      "Erkennt die App die Eröffnung an den Zügen oder an der Stellung?",
+      "Vergleiche Weg A und Weg B.",
+      "Beide Wege enden in derselben Stellung: Abgelehntes Damengambit."
+     ],
+     "text": "Abgelehntes Damengambit, egal ob über Weg A oder B. Die App vergleicht die Stellung, nicht die Zugfolge."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist es dieselbe Eröffnung, obwohl die Züge in anderer Reihenfolge kamen?",
+     "antworten": [
+      "Schwarz hat auf beiden Wegen dieselben Züge in derselben Reihenfolge gespielt.",
+      "Entscheidend ist die Stellung: Beide Wege führen zu denselben Figuren auf denselben Feldern.",
+      "Die Eröffnung richtet sich nur nach dem ersten Zug."
+     ],
+     "richtig": 1,
+     "erklaerung": "Das nennt man Zugumstellung. Wer das weiß, kann mit einem kleinen Repertoire viele Wege abdecken."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

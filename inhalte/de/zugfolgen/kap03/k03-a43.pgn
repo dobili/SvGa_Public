@@ -1,0 +1,16 @@
+[Event "Kapitel 3: Weitere Varianten"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "rnbqk2r/ppp1bppp/4pn2/6B1/3P4/2N2N2/PPP3PP/R2QKB1R w KQkq - 2 7"]
+[SetUp "1"]
+[Beispiel "k03-a43"]
+[Kapitel "3"]
+[Abschnitt "3.8"]
+[Status "verworfen"]
+[Abbildungen "3.43"]
+
+{ Abb. 3.43 } 7. Bd3 c5 8. dxc5 Qa5 *

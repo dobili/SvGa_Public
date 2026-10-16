@@ -1,0 +1,116 @@
+/**
+ * Tests für das Format der Nutzerdaten (Konzept 13: „Jedes frühere Format wird korrekt
+ * umgewandelt“).
+ */
+import { describe, expect, it } from "vitest";
+import {
+  leereDaten,
+  merkerAlsFormat0,
+  SCHEMA_VERSION,
+  STANDARD_EINSTELLUNGEN,
+  wandleUm,
+} from "./format";
+import { LEERER_SPIELSTAND } from "./partien";
+
+const JETZT = new Date("2026-10-15T10:00:00.000Z");
+
+describe("Format 0: Merker der Versionen 0.2.x", () => {
+  it("übernimmt Brettfarben, Strenge und Lernstand", () => {
+    const roh = merkerAlsFormat0('{"brettfarben":"holz","strenge":"streng"}', '{"1":[3,0],"8":[]}');
+    const ergebnis = wandleUm(roh, JETZT);
+    expect(ergebnis.ok).toBe(true);
+    if (!ergebnis.ok) return;
+    expect(ergebnis.vonVersion).toBe(0);
+    expect(ergebnis.daten.schemaVersion).toBe(SCHEMA_VERSION);
+    expect(ergebnis.daten.einstellungen).toEqual({
+      brettfarben: "holz",
+      strenge: "streng",
+      figurensatz: "buch",
+      ton: "aus",
+    });
+    expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
+    expect(ergebnis.daten.fortschritt).toEqual({ gesehen: {}, uebungen: {}, trainer: {} });
+    expect(ergebnis.daten.angelegt).toBe(JETZT.toISOString());
+  });
+
+  it("übersteht kaputte und fehlende Merker", () => {
+    const ergebnis = wandleUm(merkerAlsFormat0("kein json", '{"1":[0,"x",2],"2":"x"}'), JETZT);
+    expect(ergebnis.ok && ergebnis.daten.einstellungen).toEqual(STANDARD_EINSTELLUNGEN);
+    expect(ergebnis.ok && ergebnis.daten.lernstand).toEqual({ 1: [0, 2] });
+    expect(wandleUm(merkerAlsFormat0(null, null), JETZT)).toEqual({
+      ok: true,
+      daten: leereDaten(JETZT),
+      vonVersion: 0,
+    });
+  });
+});
+
+describe("Format 1", () => {
+  it("wird zu Format 2 ohne Partien, alles andere bleibt", () => {
+    const format1 = {
+      schemaVersion: 1,
+      angelegt: "2026-10-10T08:00:00.000Z",
+      einstellungen: { brettfarben: "gruen", strenge: "locker" },
+      lernstand: { 4: [1] },
+      fortschritt: {
+        gesehen: { "1.26": "2026-10-14T08:00:00.000Z" },
+        uebungen: {
+          "ueb:droh-ignorieren": { kapitel: 1, versuche: 2, geloest: true, zuletzt: "x" },
+        },
+        trainer: { roentgen: { durchgaenge: 1, aufgaben: 10, richtig: 8, zuletzt: "y" } },
+      },
+      letzteSicherung: "2026-10-01T00:00:00.000Z",
+    };
+    const ergebnis = wandleUm(JSON.parse(JSON.stringify(format1)), JETZT);
+    expect(ergebnis).toEqual({
+      ok: true,
+      daten: {
+        ...format1,
+        // Figurensatz und Ton (seit 0.2.33) fehlen in Format 1 und lesen sich als Standard.
+        einstellungen: { ...format1.einstellungen, figurensatz: "buch", ton: "aus" },
+        schemaVersion: SCHEMA_VERSION,
+        spiel: LEERER_SPIELSTAND,
+      },
+      vonVersion: 1,
+    });
+  });
+
+  it("bereinigt fremde und unpassende Einträge", () => {
+    const ergebnis = wandleUm(
+      {
+        schemaVersion: 1,
+        einstellungen: { brettfarben: "lila" },
+        fortschritt: {
+          gesehen: { "1.1": "a", "1.2": 3 },
+          uebungen: { u: { versuche: -2, geloest: "ja" } },
+          trainer: { unbekannt: { durchgaenge: 1 }, falle: "x" },
+        },
+      },
+      JETZT,
+    );
+    expect(ergebnis.ok).toBe(true);
+    if (!ergebnis.ok) return;
+    expect(ergebnis.daten.einstellungen.brettfarben).toBe("buch");
+    expect(ergebnis.daten.fortschritt.gesehen).toEqual({ "1.1": "a" });
+    expect(ergebnis.daten.fortschritt.uebungen).toEqual({
+      u: { kapitel: 0, versuche: 0, geloest: false, zuletzt: "" },
+    });
+    expect(ergebnis.daten.fortschritt.trainer).toEqual({});
+  });
+});
+
+describe("Abgelehnte Daten", () => {
+  it("lehnt Daten aus einer neueren App ab", () => {
+    expect(wandleUm({ schemaVersion: SCHEMA_VERSION + 1 }, JETZT)).toEqual({
+      ok: false,
+      grund: "neuer",
+      version: SCHEMA_VERSION + 1,
+    });
+  });
+
+  it("lehnt Nicht-Objekte und unsinnige Versionen ab", () => {
+    for (const roh of [null, "text", [1], { schemaVersion: "1" }, { schemaVersion: -1 }]) {
+      expect(wandleUm(roh, JETZT)).toEqual({ ok: false, grund: "kaputt" });
+    }
+  });
+});

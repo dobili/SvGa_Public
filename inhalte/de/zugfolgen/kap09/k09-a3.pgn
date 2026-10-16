@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Die Philidor-Stellung: Remis durch Aktivität"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "4k3/1R6/7r/3KP3/8/8/8/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a3"]
+[Kapitel "9"]
+[Abschnitt "9.2"]
+[Status "freigegeben"]
+[Abbildungen "9.3 9.4"]
+
+{ Abb. 9.3 } 1. e6 Rh1 { Abb. 9.4 } 2. Kd6 Rd1+ *

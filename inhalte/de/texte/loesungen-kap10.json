@@ -1,0 +1,60 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 10,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:unterverwandlung",
+   "nummer": 73,
+   "status": "freigegeben",
+   "loesung": "1. f8=S#",
+   "akzeptiert": [],
+   "motiv": "Unterverwandlung mit Matt",
+   "text": "1. f8=S# gibt Schach, und weil der Bauer f7 weg ist, deckt jetzt der Läufer e6 das Feld g8; g7 deckt der König. Nach 1. f8=D? gibt es kein Schach, und Schwarz hat noch Züge: Prüfe bei jeder Umwandlung alle vier Figuren."
+  },
+  {
+   "uebung": "ueb:pattfalle-umwandlung",
+   "nummer": 74,
+   "status": "freigegeben",
+   "loesung": "1. b8=T!",
+   "akzeptiert": [],
+   "motiv": "Unterverwandlung gegen Patt",
+   "text": "Eine neue Dame oder ein Läufer auf b8 deckt über die Diagonale h2, und Schwarz ist sofort patt. Nach 1. b8=T! bleibt dem König nur 1... Kh2, und 2. Th8# setzt matt."
+  },
+  {
+   "uebung": "ueb:stiller-turmzug",
+   "nummer": 75,
+   "status": "freigegeben",
+   "loesung": "1. Tc1!",
+   "akzeptiert": [],
+   "motiv": "Stiller Zug und Zugzwang",
+   "text": "1. Tc1! nimmt dem König c7 und c8, a7 und b7 deckt der König a6. Schwarz muss 1... Ka8 ziehen, und 2. Tc8# setzt matt."
+  },
+  {
+   "uebung": "ueb:reti-weg",
+   "nummer": 76,
+   "status": "freigegeben",
+   "loesung": "1. Kg7!",
+   "akzeptiert": [],
+   "motiv": "Réti-Manöver",
+   "text": "1. Kg7! läuft diagonal und nähert sich zugleich dem h-Bauern und dem eigenen Bauern. Nach 1... h4 hält nur 2. Kf7! oder 2. Kf8; das Réti-artige 2. Kf6? verliert, weil die neue weiße Dame später mit Dh4+ aufgespießt wird."
+  },
+  {
+   "uebung": "ueb:wegversperrung",
+   "nummer": 77,
+   "status": "freigegeben",
+   "loesung": "1. Lb8!",
+   "akzeptiert": [],
+   "motiv": "Wegversperrung",
+   "text": "Der Turm h8 bewacht das Umwandlungsfeld über die achte Reihe. 1. Lb8! versperrt ihm den Weg, gedeckt vom Bauern a7; nach 1... Txb8 2. axb8=D gewinnt Weiß, sonst wandelt der Bauer um."
+  },
+  {
+   "uebung": "ueb:pattreserve",
+   "nummer": 78,
+   "status": "freigegeben",
+   "loesung": "1. Ka6!",
+   "akzeptiert": [],
+   "motiv": "Pattreserve stehen lassen",
+   "text": "Nach 1. Dxc7? wäre Schwarz patt, denn der Bauer c7 ist seine einzige Zugreserve. 1. Ka6! lässt ihn stehen; jeder schwarze Zug wird mit 2. Dg8# beantwortet."
+  }
+ ]
+}

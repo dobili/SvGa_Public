@@ -1,0 +1,170 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 7,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:taktik-rettung",
+   "nummer": 32,
+   "status": "freigegeben",
+   "loesung": "1. Te7+!",
+   "akzeptiert": [],
+   "motiv": "Rasender Turm und Patt",
+   "text": "1. Te7+! gibt Schach um Schach; schlägt Schwarz den Turm, ist Weiß patt, weil sein König kein Feld hat. Weiß meidet nur die erste Reihe und das Feld b7, wo der Turm mit Schach geschlagen würde."
+  },
+  {
+   "uebung": "ueb:luftloch-verteidigung",
+   "nummer": 33,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Grundreihenmatt verhindern",
+   "text": "Weiß droht Te8#, weil die eigenen Bauern dem schwarzen König die siebte Reihe versperren. Ein Luftloch wie ...h6 oder ...g6 oder ein Sperrzug wie ...Se7 verhindert das; Weiß hat mit h3 selbst schon vorgebeugt."
+  },
+  {
+   "uebung": "ueb:morphy-opfer-checkliste",
+   "nummer": 34,
+   "status": "freigegeben",
+   "loesung": "16. Db8+!! Sxb8 17. Td8#",
+   "akzeptiert": [],
+   "motiv": "Damenopfer und Grundreihenmatt",
+   "text": "16. Db8+!! zwingt 16... Sxb8, danach setzt 17. Td8# matt, gedeckt vom Läufer g5. Auf ein Schach gibt es keinen Zwischenzug, und weil die Variante mit Matt endet, zählt das geopferte Material nicht."
+  },
+  {
+   "uebung": "ueb:taktik-a01",
+   "nummer": 35,
+   "status": "freigegeben",
+   "loesung": "1. Sc7+!",
+   "akzeptiert": [],
+   "motiv": "Springergabel",
+   "text": "1. Sc7+! greift König und Turm a8 an, und die Dame e7 kann c7 nicht schlagen, weil d7 im Weg steht. Nach dem Königszug gewinnt 2. Sxa8 mindestens die Qualität; 1. Sd6+? scheitert an 1... Dxd6."
+  },
+  {
+   "uebung": "ueb:taktik-a02",
+   "nummer": 36,
+   "status": "freigegeben",
+   "loesung": "1. Td8#",
+   "akzeptiert": [],
+   "motiv": "Grundreihenmatt",
+   "text": "1. Td8# setzt sofort matt: Keine schwarze Figur erreicht die Grundreihe, und die eigenen Bauern versperren die Flucht. Die Dame a5 kommt nicht nach d8, weil der Bauer b6 im Weg steht."
+  },
+  {
+   "uebung": "ueb:taktik-a03",
+   "nummer": 37,
+   "status": "freigegeben",
+   "loesung": "1. Lb3+!",
+   "akzeptiert": [],
+   "motiv": "Spieß mit Schach",
+   "text": "1. Lb3+! greift den König e6 an, hinter dem auf derselben Diagonale die Dame g8 steht. Der König muss weichen, und 2. Lxg8 gewinnt die Dame."
+  },
+  {
+   "uebung": "ueb:taktik-a04",
+   "nummer": 38,
+   "status": "freigegeben",
+   "loesung": "1. Lc4!",
+   "akzeptiert": [],
+   "motiv": "Fesselung der Dame",
+   "text": "1. Lc4! fesselt die Dame d5 an den König g8, und der Läufer ist von b3 und der Dame c2 gedeckt. Schwarz kann die Dame nur noch gegen den Läufer geben; greift ein Springer die Dame c2 an, schlägt Weiß zuerst mit Schach auf d5."
+  },
+  {
+   "uebung": "ueb:taktik-a05",
+   "nummer": 39,
+   "status": "freigegeben",
+   "loesung": "1. Sf4+!",
+   "akzeptiert": [],
+   "motiv": "Abzugsschach",
+   "text": "1. Sf4+! öffnet die Diagonale des Läufers b3 mit Schach, und der Springer greift zugleich die Dame h3 an. Nach jedem Schutz gegen das Schach gewinnt Weiß die Dame; die abziehende Figur sucht sich das wertvollste Ziel."
+  },
+  {
+   "uebung": "ueb:taktik-a06",
+   "nummer": 40,
+   "status": "freigegeben",
+   "loesung": "1. Tc8+!",
+   "akzeptiert": [],
+   "motiv": "Hinlenkung und Gabel",
+   "text": "1. Tc8+! lenkt die Dame nach c8: Nach 1... Dxc8 gewinnt die Gabel 2. Se7+ die Dame, nach 1... De8 setzt 2. Txe8# matt. Das sofortige 1. Se7+? scheitert an 1... Dxe7."
+  },
+  {
+   "uebung": "ueb:taktik-a07",
+   "nummer": 41,
+   "status": "freigegeben",
+   "loesung": "1. Dxc7!",
+   "akzeptiert": [],
+   "motiv": "Überlastung",
+   "text": "Die Dame d8 muss den Springer c7 und das Feld e8 zugleich decken. Nach 1. Dxc7! kann sie nicht zurückschlagen, weil sonst 2. Te8# folgt, und Weiß behält eine Figur mehr."
+  },
+  {
+   "uebung": "ueb:taktik-a08",
+   "nummer": 42,
+   "status": "freigegeben",
+   "loesung": "1. Sf6!",
+   "akzeptiert": [],
+   "motiv": "Arabisches Matt",
+   "text": "Der ruhige Zug 1. Sf6! droht 2. Txh7#: Der Springer deckt g8, der Turm g7, und Schwarz kann h7 nicht mehr verteidigen. Eine unabwendbare Mattdrohung ist so zwingend wie ein Schach."
+  },
+  {
+   "uebung": "ueb:taktik-a09",
+   "nummer": 43,
+   "status": "freigegeben",
+   "loesung": "1. Sf7+ Kg8 2. Sh6++ Kh8 3. Dg8+!! Txg8 4. Sf7#",
+   "akzeptiert": [],
+   "motiv": "Erstickungsmatt (Philidors Vermächtnis)",
+   "text": "Nach 1. Sf7+ Kg8 2. Sh6++ Kh8 zwingt das Damenopfer 3. Dg8+!! den Turm, dem eigenen König das letzte Feld zu nehmen. 4. Sf7# ist Erstickungsmatt."
+  },
+  {
+   "uebung": "ueb:taktik-a10",
+   "nummer": 44,
+   "status": "freigegeben",
+   "loesung": "1. Dd8+!! Kxd8 2. Lg5++",
+   "akzeptiert": [],
+   "motiv": "Damenopfer und Doppelschach",
+   "text": "1. Dd8+!! Kxd8 2. Lg5++ gibt Doppelschach mit Läufer und Turm, und es folgt 3. Ld8# oder 3. Td8#. So endete Réti–Tartakower, Wien 1910."
+  },
+  {
+   "uebung": "ueb:taktik-a11",
+   "nummer": 45,
+   "status": "freigegeben",
+   "loesung": "1. Txf6!",
+   "akzeptiert": [],
+   "motiv": "Beseitigung der Verteidigung",
+   "text": "Nur der Springer f6 deckt h7 neben dem König. 1. Txf6! beseitigt ihn: Nach dem Zurückschlagen setzt 2. Dxh7# matt, sonst bleibt Weiß eine Figur vorn."
+  },
+  {
+   "uebung": "ueb:taktik-a12",
+   "nummer": 46,
+   "status": "freigegeben",
+   "loesung": "1. Se7+ Kh8 2. Dxh7+!! Kxh7 3. Th5#",
+   "akzeptiert": [],
+   "motiv": "Anastasia-Matt",
+   "text": "Der Springer e7 nimmt dem König g6 und g8, also öffnet 2. Dxh7+!! die h-Linie für den Turm. 3. Th5# ist das Anastasia-Matt."
+  },
+  {
+   "uebung": "ueb:taktik-a13",
+   "nummer": 47,
+   "status": "freigegeben",
+   "loesung": "1. Dxc6+! bxc6 2. La6#",
+   "akzeptiert": [],
+   "motiv": "Boden-Matt",
+   "text": "1. Dxc6+! zwingt 1... bxc6 und öffnet die Diagonale a6–c8. Nach 2. La6# kreuzen sich die Diagonalen der beiden Läufer, und die eigenen Figuren auf d7 und d8 nehmen dem König die Flucht."
+  },
+  {
+   "uebung": "ueb:taktik-a14",
+   "nummer": 48,
+   "status": "freigegeben",
+   "loesung": "1. Th8+! Kxh8 2. Dh5+ Kg8 3. Dh7#",
+   "akzeptiert": [
+    "1. Th8+! Kxh8 2. Dh1+"
+   ],
+   "motiv": "Damiano-Matt",
+   "text": "Das Turmopfer 1. Th8+! lenkt den König nach h8, die Dame kommt mit Schach auf die h-Linie, und 3. Dh7# ist matt, weil g6 das Mattfeld deckt. Weil jeder Zug Schach gibt, kommt Schwarz nie dazu, die Dame d5 zu schlagen."
+  },
+  {
+   "uebung": "ueb:taktik-a15",
+   "nummer": 49,
+   "status": "freigegeben",
+   "loesung": "1. Dh6!",
+   "akzeptiert": [],
+   "motiv": "Lolli-Matt",
+   "text": "1. Dh6! droht 2. Dg7#, und kein schwarzer Läufer verteidigt mehr g7. Ein Bauer auf f6 und ein Fianchetto ohne Läufer ergeben zusammen ein Mattbild."
+  }
+ ]
+}

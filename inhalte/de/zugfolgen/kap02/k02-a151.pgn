@@ -1,0 +1,14 @@
+[Event "Kapitel 2: Übung: Caro-Kann mit 4. h4"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k02-a151"]
+[Kapitel "2"]
+[Abschnitt "Übung 11"]
+[Status "freigegeben"]
+[Abbildungen "2.151"]
+
+1. e4 c6 2. d4 d5 3. e5 Bf5 4. h4 { Abb. 2.151 } ( 4. Nf3 e6 ) 4... h5 ( 4... e6 $4 5. g4 $1 Bg6 ( 5... Be4 6. f3 Bg6 7. h5 ) 6. h5 Be4 7. f3 ) ( 4... h6 ) *

@@ -1,0 +1,14 @@
+[Event "Kapitel 4: Muster 3: Die Springergabel auf c7"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k04-a51"]
+[Kapitel "4"]
+[Abschnitt "4.10"]
+[Status "freigegeben"]
+[Abbildungen "4.51 4.52 4.53"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Qf6 $2 4. Nc3 Bc5 5. Nd5 { Abb. 4.51 } 5... Qg6 $4 ( 5... Qd8 ) 6. Nxc7+ $1 { Abb. 4.52 } 6... Kd8 7. Nxa8 { Abb. 4.53 } *

@@ -1,0 +1,14 @@
+[Event "Kapitel 5: Löcher vor dem eigenen König"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k05-a11"]
+[Kapitel "5"]
+[Abschnitt "5.3"]
+[Status "freigegeben"]
+[Abbildungen "5.11"]
+
+1. e4 e5 2. f4 Bc5 3. fxe5 $4 Qh4+ { Abb. 5.11 } 4. g3 ( 4. Ke2 Qxe4# ) 4... Qxe4+ *

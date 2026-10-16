@@ -1,0 +1,16 @@
+[Event "Kapitel 11: Rückblick: Die Werkzeuge in der ganzen Partie"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r1bqr3/pp1n1ppk/3bp3/6N1/3p4/2P5/PP3PPP/R1BQR1K1 b - - 1 13"]
+[SetUp "1"]
+[Beispiel "k11-a99"]
+[Kapitel "11"]
+[Abschnitt "Übung 80"]
+[Status "freigegeben"]
+[Abbildungen "11.99"]
+
+{ Abb. 11.99 } 13... Kg8 $1 ( 13... Kg6 $4 14. h4 $1 ) ( 13... Kh8 14. Qh5+ ) ( 13... Kh6 14. Nxf7+ ) ( 13... Qxg5 14. Bxg5 ) 14. Qh5 Qf6 $1 *

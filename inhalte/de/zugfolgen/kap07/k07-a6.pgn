@@ -1,0 +1,16 @@
+[Event "Kapitel 7: 3. Der Spieß"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "7r/6k1/8/8/8/8/8/R3K3 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k07-a6"]
+[Kapitel "7"]
+[Abschnitt "7.2"]
+[Status "freigegeben"]
+[Abbildungen "7.6 7.7"]
+
+{ Abb. 7.6 } 1... Rh1+ { Abb. 7.7 } 2. Kd2 Rxa1 *

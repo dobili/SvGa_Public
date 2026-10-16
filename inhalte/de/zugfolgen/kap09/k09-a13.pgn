@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Warum erst wegtreiben?"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/4P1k1/8/4K3/4R3/8/8/4r3 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a13"]
+[Kapitel "9"]
+[Abschnitt "9.3"]
+[Status "freigegeben"]
+[Abbildungen "9.13 9.14"]
+
+{ Abb. 9.13 } 1... Rxe4+ 2. Kxe4 Kf7 { Abb. 9.14 } *

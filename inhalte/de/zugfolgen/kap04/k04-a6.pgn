@@ -1,0 +1,14 @@
+[Event "Kapitel 4: Die kompromittierte Verteidigung im Evans-Gambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k04-a6"]
+[Kapitel "4"]
+[Abschnitt "4.3"]
+[Status "verworfen"]
+[Abbildungen "4.17 4.18 4.19 4.6 4.7 4.8 4.41 4.42 4.43 4.44 4.35 4.36 4.37 4.38 4.39 4.40 4.27 4.28 4.29 4.30 4.31"]
+
+1. e4 e5 ( 1... c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 e6 { Abb. 4.27 } 6. Bc4 Qc7 { Abb. 4.28 } 7. O-O Nf6 8. Qe2 Ng4 { Abb. 4.29 } 9. h3 $4 ( 9. Nb5 Qb8 ( 9... Nd4 $1 ) 10. h3 ) 9... Nd4 $1 { Abb. 4.30 } 10. Nxd4 $4 Qh2# { Abb. 4.31 } ) 2. Nf3 ( 2. c4 ) ( 2. f4 Bc5 { Abb. 4.38 } 3. fxe5 $4 ( 3. Nf3 ) 3... Qh4+ 4. Ke2 ( 4. g3 Qxe4+ { Abb. 4.39 } 5. Qe2 Qxh1 { Abb. 4.40 } ) 4... Qxe4# ) ( 2. d4 exd4 3. c3 dxc3 4. Bc4 cxb2 5. Bxb2 d5 ( 5... Qg5 $2 6. Nf3 ) 6. Nf3 ) 2... d6 ( 2... Nc6 3. Bc4 ( 3. Bb5 a6 4. Ba4 d6 5. d4 b5 6. Bb3 ( 6. Nxe5 $3 ) 6... Nxd4 7. Nxd4 ( 7. Rg1 ) 7... exd4 8. Qxd4 $4 ( 8. Bd5 ) 8... c5 $1 { Abb. 4.35 } 9. Qd5 Be6 10. Qc6+ Bd7 { Abb. 4.36 } 11. Qd5 c4 $1 { Abb. 4.37 } 12. Bxc4 bxc4 13. Qxc4 ) 3... Bc5 ( 3... Nd4 $6 { Abb. 4.41 } 4. Nxe5 $2 ( 4. Nxd4 exd4 5. O-O ( 5. d3 ) ) 4... Qg5 $1 { Abb. 4.42 } 5. Bxf7+ ( 5. Nxf7 $4 Qxg2 6. Rf1 { Abb. 4.43 } 6... Qxe4+ 7. Be2 Nf3# { Abb. 4.44 } ) 5... Kd8 6. O-O ) 4. b4 Bxb4 5. c3 Ba5 6. d4 exd4 ( 6... d6 ) 7. O-O dxc3 8. Qb3 Qe7 $2 ( 8... Qf6 ) 9. Nxc3 { Abb. 4.6 } 9... Nf6 $2 10. Nd5 $1 Nxd5 11. exd5 { Abb. 4.7 } 11... Ne5 12. Nxe5 Qxe5 13. Bb2 { Abb. 4.8 } ) 3. Bc4 Bg4 4. Nc3 Nc6 5. h3 { Abb. 4.17 } 5... Bh5 $2 ( 5... Bxf3 6. Qxf3 Nf6 ) 6. Nxe5 $3 { Abb. 4.18 } 6... Bxd1 $4 ( 6... dxe5 7. Qxh5 ) ( 6... Nxe5 7. Qxh5 ) 7. Bxf7+ Ke7 8. Nd5# { Abb. 4.19 } *

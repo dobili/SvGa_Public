@@ -1,0 +1,56 @@
+% Testkapitel für das Nachspielen der Zugfolgen. Eigener Text, kein Buchtext.
+\chapter[Zugfolgen]{}
+\kapitelauftakt{10}{Zugfolgen im Test}
+
+\section{Eine Eröffnung}
+\label{sec:k10-eroeffnung}
+
+Verfolge \zugfolge{1. e4 e5 2. Sf3 Sc6 3. Lb5} Schritt für Schritt (siehe \abb{10.1}--\abbnr{10.2}).
+Statt \zugfolge{2... Sc6} geht auch \zugfolge{2... d6}, die Philidor-Verteidigung.
+Ein Einzelzug wie \zugfolge{Sa3} ist nur eine Erwähnung, ebenso \zugfolge{9. Lc4?!} in einer Liste.
+
+\begin{diagrammreihe}
+\diagrammschritt{rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2}{\abbziel{10.1}: Nach 2. Sf3, Schwarz am Zug.}
+\diagrammschritt{r1bqkbnr/pppp1ppp/2n5/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3}{\abbziel{10.2}: Nach 3. Lb5 -- die Spanische Partie.}
+\end{diagrammreihe}
+
+Nach \zugfolge{3... a6 4. La4 Sf6 5. O-O} (\abb{10.3}) ist Weiß rochiert.
+
+\diagramm[\abbziel{10.3}: Nach 5. O-O, Schwarz am Zug.]{r1bqkb1r/1ppp1ppp/p1n2n2/4p3/B3P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 1 5}
+
+Eine Unterschrift darf nur den letzten Zug nennen, wenn der Text die Stellung danach erreicht.
+
+\diagramm[\abbziel{10.7}: Nach 4. Sxd4, Schwarz am Zug.]{rnbqkbnr/ppp2ppp/3p4/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4}
+
+Nach \zugfolge{2... d6} folgt \zugfolge{3. d4 exd4 4. Sxd4}.
+
+\diagramm[\abbziel{10.8}: Nach 4. Dxd4, Schwarz am Zug.]{rnbqkbnr/ppp2ppp/3p4/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4}
+
+\section{Eine Taktik}
+
+In \abb{10.4} gewinnt \zugfolge{1. Dxf7\#} sofort, wohingegen \zugfolge{1. Dxe5+??} den Turm verliert.
+Nach \zugfolge{1. Dxf7} ist es matt. Langsamer ist \zugfolge{1. Lxf7 Ke7}, auch mit Schach.
+
+\grossdiagrammtaktik[\abbziel{10.4}: Weiß am Zug.]{r1bqkb1r/pppp1ppp/2n2n2/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 0 1}{gold/h5-f7}{rot/f7}
+
+Diese Zugfolge hat keinen Anschluss: \zugfolge{1. Th8+ Kxh8 2. Dh7\#}.
+
+\begin{uebungenkasten}
+\begin{zugamzug}
+\label{ueb:k10-matt}
+\diagrammbox[\abbziel{10.5}: Weiß am Zug.]{6k1/5ppp/8/8/8/8/5PPP/3R2K1 w - - 0 1}
+Wie setzt Weiß matt?
+\end{zugamzug}
+
+\begin{zugamzug}
+\label{ueb:k10-relativ}
+\diagrammbox[\abbziel{10.6}: Weiß am Zug, Stellung aus einer Partie beim 20. Zug.]{2r3k1/5ppp/8/8/8/4R3/5PPP/4R1K1 w - - 0 20}
+Wie setzt Weiß in zwei Zügen matt?
+\end{zugamzug}
+\end{uebungenkasten}
+
+\begin{loesungen}
+\loesungeintrag{ueb:k10-matt}{\zugfolge{1. Td8\#} ist das Grundreihenmatt. \zugfolge{1. Td7?} wäre zu langsam.}
+\loesungeintrag{ueb:k10-relativ}{\zugfolge{1. Te8+!} erzwingt \zugfolge{1... Txe8}, und
+\zugfolge{2. Txe8\#} setzt matt. Die Lösung zählt ab der Übung, nicht ab Zug 20.}
+\end{loesungen}

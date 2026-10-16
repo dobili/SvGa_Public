@@ -1,0 +1,128 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/bilanz.schema.json",
+  "title": "Bilanz",
+  "description": "Zielbilanz (Kapitel 2), Faktorenbilanz (Kapitel 3, 6, 11), Skelettbilanz (Kapitel 5, 11) oder Planbilanz (Kapitel 6, 11) aus dem Buch. Grundlage der Anzeige und der Kalibrierung der Werkzeuge (Konzept 4.4 und 13).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["art", "titel", "abschnitt", "abbildung", "bloecke", "haltbarkeit", "urteil", "quelle"],
+  "properties": {
+    "art": { "enum": ["ziel", "faktor", "skelett", "plan"] },
+    "titel": { "$ref": "text.schema.json#/$defs/textteile" },
+    "abschnitt": { "description": "Abschnittsnummer wie 2.1, falls vorhanden", "type": ["string", "null"] },
+    "abbildung": { "description": "Abbildung, deren Stellung die Bilanz bewertet (im Titel genannt, über den Zug im Titel gefunden oder die letzte vor der Bilanz)", "type": ["string", "null"] },
+    "bloecke": {
+      "description": "Inhalt in Buchreihenfolge: Textabsätze und Tabellen",
+      "type": "array",
+      "items": {
+        "oneOf": [
+          {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["art", "text"],
+            "properties": { "art": { "const": "text" }, "text": { "$ref": "text.schema.json#/$defs/textteile" } }
+          },
+          { "$ref": "#/$defs/tabelle" }
+        ]
+      }
+    },
+    "haltbarkeit": { "oneOf": [{ "type": "null" }, { "$ref": "text.schema.json#/$defs/textteile" }] },
+    "urteil": { "description": "Urteil der Faktorenbilanz, „Was folgt daraus?“ der Skelettbilanz, „Plan in einem Satz“ der Planbilanz", "oneOf": [{ "type": "null" }, { "$ref": "text.schema.json#/$defs/textteile" }] },
+    "quelle": { "$ref": "abbildung.schema.json#/properties/quelle" }
+  },
+  "$defs": {
+    "tabelle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["art", "spalten", "zeilen"],
+      "properties": {
+        "art": { "const": "tabelle" },
+        "spalten": { "type": "array", "minItems": 2, "maxItems": 2, "items": { "type": "string" } },
+        "zeilen": { "type": "array", "items": { "$ref": "#/$defs/zeile" } }
+      }
+    },
+    "zeile": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "links", "rechts"],
+      "properties": {
+        "name": { "description": "Ziel, Faktor, Leitfrage oder Planfrage, etwa Zentrum, Zeit, Felder, Wo spiele ich?", "type": "string" },
+        "links": { "$ref": "#/$defs/zelle" },
+        "rechts": { "$ref": "#/$defs/zelle" }
+      }
+    },
+    "zelle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["wertung", "text"],
+      "properties": {
+        "wertung": {
+          "description": "Zeichen am Zellenanfang: ja ✓, teils ◐, nein ✗; Waage vornlinks, vornrechts, gleichstand",
+          "enum": [null, "ja", "teils", "nein", "entfaellt", "vornlinks", "vornrechts", "gleichstand", "plus", "minus", "gleich"]
+        },
+        "text": { "$ref": "text.schema.json#/$defs/textteile" }
+      }
+    },
+    "steckbrief": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "abschnitt", "zeilen", "quelle"],
+      "properties": {
+        "name": { "description": "Name der Eröffnung, etwa Spanische Partie", "type": "string" },
+        "abschnitt": { "type": ["string", "null"] },
+        "zeilen": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["frage", "antwort"],
+            "properties": { "frage": { "type": "string" }, "antwort": { "$ref": "text.schema.json#/$defs/textteile" } }
+          }
+        },
+        "quelle": { "$ref": "abbildung.schema.json#/properties/quelle" }
+      }
+    },
+    "fallencheck": {
+      "description": "Fallencheck aus Kapitel 4: wer hineintappt, Prüfzeilen (Warnsignale und Prüffragen), rettender Zug, Fallensteller-Test (Werkzeug k4-falle).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "wer", "stopp", "zeilen", "rettung", "fallensteller", "abschnitt", "quelle"],
+      "properties": {
+        "name": { "type": "string" },
+        "wer": { "$ref": "text.schema.json#/$defs/textteile" },
+        "stopp": { "description": "Abbildung des Stopp-Moments, etwa 4.2", "type": ["string", "null"] },
+        "zeilen": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kennung", "titel", "text", "wertung"],
+            "properties": {
+              "kennung": { "description": "W1 bis W5 oder F1 bis F3", "type": ["string", "null"] },
+              "titel": { "type": "string" },
+              "text": { "$ref": "text.schema.json#/$defs/textteile" },
+              "wertung": { "enum": [null, "ja", "teils", "nein", "entfaellt"] }
+            }
+          }
+        },
+        "rettung": { "oneOf": [{ "type": "null" }, { "$ref": "text.schema.json#/$defs/textteile" }] },
+        "fallensteller": {
+          "oneOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["wertung", "text"],
+              "properties": {
+                "wertung": { "enum": [null, "ja", "teils", "nein", "entfaellt"] },
+                "text": { "$ref": "text.schema.json#/$defs/textteile" }
+              }
+            }
+          ]
+        },
+        "abschnitt": { "type": ["string", "null"] },
+        "quelle": { "$ref": "abbildung.schema.json#/properties/quelle" }
+      }
+    }
+  }
+}

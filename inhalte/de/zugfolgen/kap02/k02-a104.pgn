@@ -1,0 +1,14 @@
+[Event "Kapitel 2: Caro-Kann-Verteidigung"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k02-a104"]
+[Kapitel "2"]
+[Abschnitt "2.10"]
+[Status "freigegeben"]
+[Abbildungen "2.104 2.105 2.106 2.107 2.108 2.109"]
+
+1. e4 c6 2. d4 d5 { Abb. 2.104 } 3. e5 ( 3. Nc3 ) ( 3. exd5 cxd5 ) 3... Bf5 { Abb. 2.105 } 4. Nf3 e6 5. Be2 c5 { Abb. 2.106 } 6. Be3 Nd7 7. O-O Ne7 { Abb. 2.107 } 8. c3 Nc6 9. Nbd2 cxd4 { Abb. 2.108 } 10. cxd4 ( 10. Nxd4 ) 10... Be7 11. Nb3 O-O { Abb. 2.109 } *

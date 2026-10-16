@@ -1,0 +1,433 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 6,
+ "texte": [
+  {
+   "abbildung": "6.2",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-wo",
+     "hinweise": [
+      "Prüfe zuerst das Zentrum: Sind die Bauern dort ineinander verkeilt?",
+      "Schau auf die weiße Kette e4–d5: Zu welchem Flügel zeigt ihre Spitze?",
+      "Die Kette zeigt zum Damenflügel; der Hebel c4–c5 greift die Basis d6 an."
+     ],
+     "text": "Das Zentrum ist geschlossen. Weiß spielt am Damenflügel, wohin seine Kette zeigt, und bereitet c4–c5 gegen die Basis d6 vor."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum spielen Weiß und Schwarz hier auf verschiedenen Flügeln?",
+     "antworten": [
+      "Weil Weiß am Königsflügel keine Bauern mehr hat.",
+      "Jede Seite spielt dorthin, wohin ihre eigene Kette zeigt, und greift die gegnerische Basis an.",
+      "Weil im geschlossenen Zentrum kein Bauer mehr ziehen darf."
+     ],
+     "richtig": 1,
+     "erklaerung": "Die weiße Kette e4–d5 zeigt zum Damenflügel, die schwarze d6–e5 zum Königsflügel. So beginnt ein Wettrennen: Wer zuerst durchbricht, bestimmt die Partie."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.5",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-lap",
+     "hinweise": [
+      "Welche weiße Leichtfigur steht noch auf ihrem Ausgangsfeld?",
+      "Der Läufer f1: Von welchem Feld aus wirkt er in die schwarze Hälfte?",
+      "Lf1–c4 entwickelt den Läufer und richtet ihn zugleich auf d5."
+     ],
+     "text": "Am wenigsten aktiv ist der Läufer f1, er steht noch zu Hause. Von c4 aus blickt er auf d5, das Feld des schwarzen Gegenschlags."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "9. Lc4",
+     "frage": "Warum spielt Weiß 9. Lc4 noch vor der langen Rochade?",
+     "antworten": [
+      "Er greift sofort den Springer f6 an.",
+      "Er will den Läufer gegen den Springer c6 tauschen.",
+      "Er bewacht d5: Jetzt stehen drei weiße Angreifer zwei schwarzen Verteidigern gegenüber, der Gegenschlag ...d5 geht nicht."
+     ],
+     "richtig": 2,
+     "erklaerung": "Vorher stand es auf d5 zwei gegen zwei: Bauer e4 und Springer c3 gegen Springer f6 und Dame d8. Wer am Flügel angreifen will, sichert zuerst das Zentrum."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.6",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-wo",
+     "hinweise": [
+      "Die Könige stehen auf verschiedenen Flügeln: Zähle die Bauernzüge bis zum ersten Hebel.",
+      "Vergleiche den weißen h-Bauern mit dem schwarzen a-Bauern.",
+      "Weiß braucht zwei Züge (h4, h5) bis zum Bauern g6, Schwarz mindestens drei (...a5, ...a4, ...a3)."
+     ],
+     "text": "Entgegengesetzte Rochaden: Es zählt, wer zuerst eine Linie öffnet. Weiß ist mit h4–h5 gegen g6 schneller als Schwarz mit ...a5–a3 gegen b2."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist der weiße Bauernsturm schneller als der schwarze?",
+     "antworten": [
+      "Weil der schwarze a-Bauer gefesselt ist.",
+      "Weil der vorgerückte Bauer g6 dem weißen h-Bauern ein nahes Ziel bietet.",
+      "Weil Schwarz am Damenflügel nicht mit Bauern angreifen darf."
+     ],
+     "richtig": 1,
+     "erklaerung": "Das Fianchetto ...g6 hat Weiß einen Haken geschenkt. Vor dem weißen König ist dagegen noch kein Bauer vorgerückt, deshalb braucht Schwarz einen Zug mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.7",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-wo",
+     "hinweise": [
+      "Gleichseitige Rochade: Prüfe die drei Bedingungen für einen Angriff mit Figuren.",
+      "Schau auf das Zentrum d4/e5, auf die weißen Figuren am Königsflügel und auf den Bauern h7.",
+      "Das Zentrum ist verriegelt, drei weißen Angreifern steht nur der König gegenüber, und h7 deckt nur der König."
+     ],
+     "text": "Alle drei Bedingungen sind erfüllt. Das Zentrum ist geschlossen, Läufer d3, Springer f3 und Dame d1 sind in der Überzahl, und h7 deckt nur der König."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Lxh7+",
+     "frage": "Warum funktioniert hier das Opfer 1. Lxh7+?",
+     "antworten": [
+      "Alle drei Bedingungen sind erfüllt: verriegeltes Zentrum, Überzahl am Königsflügel und ein Ziel, das nur der König deckt.",
+      "Weiß gewinnt mit dem Läufer sofort einen Turm.",
+      "Nach dem Schlag ist Schwarz sofort matt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Bauer e5 hat den Springer von f6 vertrieben, den wichtigsten Verteidiger. Nach dem Opfer kommen Springer und Dame über g5 und h5 schnell heran."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.10",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-wo",
+     "hinweise": [
+      "Kein Königsangriff in Sicht: Suche einen schwarzen Bauern, den kein Bauer mehr decken kann.",
+      "Schau auf den Bauern c6 und auf das Feld davor, c5.",
+      "c6 ist rückständig und fixiert: Der Bauer d4 bewacht c5, also kann c6 nicht weglaufen."
+     ],
+     "text": "Der Minderheitsangriff hat sein Ziel erreicht: c6 ist rückständig und fixiert, weil d4 das Feld c5 bewacht. Weiß spielt am Damenflügel gegen diese Schwäche."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist der Bauer c6 jetzt ein dauerhaftes Ziel?",
+     "antworten": [
+      "Weil Weiß auf der c-Linie mehr Bauern hat.",
+      "Weil er ein Doppelbauer ist.",
+      "Weil er nicht nach c5 vorrücken kann: Der Bauer d4 bewacht das Feld, und kein schwarzer Bauer kann ihn mehr stützen."
+     ],
+     "richtig": 2,
+     "erklaerung": "Erst fixieren, dann angreifen. Ein Bauer, der nicht weglaufen kann, ist ein Ziel für Türme auf der c-Linie und einen Springer auf e5."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.12",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "5. a3",
+     "frage": "Warum spielt Weiß den ruhigen Zug 5. a3?",
+     "antworten": [
+      "Er bereitet die lange Rochade vor.",
+      "Er verhindert ...Lb4: Der Läufer würde den Springer c3 fesseln, auf b4 könnte Weiß ihn jetzt einfach schlagen.",
+      "Er macht dem Turm a1 das Feld a2 frei."
+     ],
+     "richtig": 1,
+     "erklaerung": "Das ist Prophylaxe: Du nennst den gegnerischen Zug (...Lb4), verhinderst genau ihn und schwächst dabei nichts vor deinem König."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.13",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-planbilanz",
+     "hinweise": [
+      "Frage zuerst: Was will Weiß als Nächstes?",
+      "Der Läufer d3 zielt auf h7, das nur der König deckt.",
+      "Weiß droht Lxh7+; Schwarz muss h7 sichern, etwa indem er die Diagonale d3–h7 schließt."
+     ],
+     "text": "Die Planbilanz nennt für Schwarz, was zu sichern ist: e6 und h7. Akut ist h7, denn Lxh7+ droht. Das geht dem eigenen Spiel am Damenflügel vor."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... f5",
+     "frage": "Warum spielt Schwarz 1... f5?",
+     "antworten": [
+      "Er bereitet einen Bauernsturm gegen den weißen König vor.",
+      "Er greift den Läufer d3 an.",
+      "Der Bauer stellt sich zwischen den Läufer d3 und h7 und schließt die Diagonale."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach f5 ist die Diagonale zu. Schlägt Weiß en passant, kehrt der Springer nach f6 zurück und bewacht h7 wieder."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.14",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-wo",
+     "hinweise": [
+      "Jede Verteidigung kostet etwas: Welcher schwarze Bauer ist schwach geworden?",
+      "Schau auf e6 und auf das Feld davor, e5.",
+      "e6 kann kein Bauer mehr decken, und d4 bewacht e5: Der Bauer ist fixiert."
+     ],
+     "text": "Die Verteidigung hat einen Preis: e6 ist rückständig, und der Bauer d4 bewacht das Feld e5. Weiß spielt gegen diese fixierte Schwäche."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was hat Schwarz für die Rettung von h7 bezahlt?",
+     "antworten": [
+      "Den Bauern e6, den kein Bauer mehr decken kann.",
+      "Einen ganzen Springer.",
+      "Das Recht zu rochieren."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Springer f6 bewacht h7 wieder, doch e6 bleibt dauerhaft schwach. Verteidigen heißt abwägen, welche Bedingung du dem Angriff am billigsten nimmst."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.16",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-planbilanz",
+     "hinweise": [
+      "Stelle Frage 3 für Weiß: Welche Figur hat die wenigsten freien Felder?",
+      "Der Springer d2: Wohin kann er überhaupt ziehen?",
+      "Frei sind nur b1 und b3; sein Weg führt über f1 nach g3, nachdem der Turm f1 Platz gemacht hat."
+     ],
+     "text": "Für Weiß nennt die Planbilanz den Springer d2: Er soll über f1 nach g3. Vorher macht der Turm f1 Platz und stützt von e1 aus den Bauern e4."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist der Springer d2 die am wenigsten aktive weiße Figur?",
+     "antworten": [
+      "Er ist an den König gefesselt.",
+      "Eigene Figuren besetzen fast alle seine Felder; frei sind nur b1 und b3, beide ohne Aufgabe.",
+      "Er wird vom Bauern e5 angegriffen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Von g3 aus blickt der Springer auf f5 und h5 und deckt e4. Eine Umgruppierung verbessert hier zwei Figuren zugleich: Springer und Turm."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.17",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. Td7",
+     "frage": "Warum zieht Weiß jetzt 1. Td7?",
+     "antworten": [
+      "Er weicht einem Angriff des Turms c8 aus.",
+      "Er will den Turm c8 abtauschen.",
+      "Der Turm dringt auf der 7. Reihe ein und greift die Bauern b7 und f7 von der Seite an."
+     ],
+     "richtig": 2,
+     "erklaerung": "Erst die offene Linie besetzen, dann verdoppeln, dann eindringen. Auf der 7. Reihe decken sich die Bauern nicht gegenseitig; b7 hängt, f7 hält vorerst nur der König."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.20",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-planbilanz",
+     "hinweise": [
+      "Beantworte die drei Planfragen für beide Seiten.",
+      "Vergleiche die Ketten e4–d5 und d6–e5 und ihre Hebel c4–c5 und ...f5.",
+      "Weiß greift mit c4–c5 die Basis d6 an und sichert e4; Schwarz greift mit ...f5 die Basis e4 an und sichert d6."
+     ],
+     "text": "Ein Wettrennen: Weiß spielt am Damenflügel gegen d6, Schwarz am Königsflügel gegen e4. Die Planbilanz nennt auch die Aufgaben der Verteidigung: Weiß sichert e4, Schwarz d6."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "9. b4",
+     "frage": "Welche Planfrage beantwortet Weiß mit 9. b4?",
+     "antworten": [
+      "Frage 2: Er verhindert damit ...f5.",
+      "Frage 1: Er stößt am Damenflügel vor und bereitet c5 gegen die Basis d6 vor.",
+      "Frage 3: Er bringt den Läufer c1 ins Spiel."
+     ],
+     "richtig": 1,
+     "erklaerung": "b4 stützt den Hebel c5. Fast jeder Zug der Hauptvariante beantwortet eine Planfrage; Schwarz antwortet mit ...Sh5 und macht dem f-Bauern Platz."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.22",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-lap",
+     "hinweise": [
+      "Welche weiße Figur hat noch keine Aufgabe?",
+      "Der Läufer c1 steht noch auf seinem Ausgangsfeld.",
+      "Le3 bringt ihn ins Spiel; von e3 aus wirkt er in die schwarze Hälfte."
+     ],
+     "text": "Am wenigsten aktiv ist der Läufer c1, er steht noch zu Hause. Mit Le3 kommt die letzte weiße Figur ins Spiel."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "13. Le3",
+     "frage": "Warum spielt Weiß jetzt 13. Le3?",
+     "antworten": [
+      "Er bringt die letzte Figur ins Spiel, die noch zu Hause stand.",
+      "Er greift den Bauern e5 an.",
+      "Er bereitet die lange Rochade vor."
+     ],
+     "richtig": 0,
+     "erklaerung": "In der Planbilanz fehlte nur noch diese Figur. Danach ist Weiß fertig entwickelt, und der Springer g5 kann auf das Loch e6."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.25",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-planbilanz",
+     "hinweise": [
+      "Beide Ketten sind länger geworden: Wo greift jede Seite an?",
+      "Schau auf die Hebel c4–c5 und ...g5–g4.",
+      "Weiß zielt mit c5 auf d6 und muss f3 sichern; Schwarz zielt mit ...g4 auf f3 und muss d6 sichern."
+     ],
+     "text": "Jede Seite greift die Basis der anderen an: Weiß mit c4–c5 gegen d6, Schwarz mit ...g5–g4 gegen f3. Deshalb muss Weiß f3 sichern und Schwarz d6."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum darf Schwarz hier die Bauern vor dem eigenen König vorschieben?",
+     "antworten": [
+      "Weil Weiß keine Figur am Königsflügel hat.",
+      "Weil der weiße König noch nicht rochiert hat.",
+      "Weil das Zentrum verriegelt ist und Weiß dort keinen Hebel hat, um die Mitte zu öffnen."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nur bei verriegeltem Zentrum ist ein Bauernsturm vor dem eigenen König erlaubt. Weiß kommt am Damenflügel oft zuerst an, Schwarz spielt dafür um den höheren Preis."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.29",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-planbilanz",
+     "hinweise": [
+      "Bevor du auf den Läufer h3 reagierst: Was will Schwarz am Königsflügel?",
+      "Schau auf das Feld g2 und auf den Weg der schwarzen Dame über g5.",
+      "Nach fxe5 folgt Dg5+ Kh1 Dg2#; Weiß muss g2 im Blick behalten."
+     ],
+     "text": "Die Planbilanz nennt für Weiß, was zu sichern ist: g2. Deshalb darf Weiß den Springer e5 nicht nehmen, denn nach fxe5 Dg5+ Kh1 Dg2# ist er matt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "21. Se3",
+     "frage": "Warum lässt Petrosjan den Turm f1 stehen und spielt 21. Se3?",
+     "antworten": [
+      "Er übersieht, dass der Turm angegriffen ist.",
+      "Er gibt die Qualität für Dauerhaftes: Der letzte schwarze Läufer verschwindet, und der schwarze König steht fast ohne Bauernschild.",
+      "Der Turm f1 ist an den König gefesselt und kann nicht ausweichen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein Qualitätsopfer muss etwas Dauerhaftes kaufen. Hier sind es die hellen Felder ohne schwarzen Läufer und der entblößte König."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.31",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k6-wo",
+     "hinweise": [
+      "Gleichseitige Rochade: Sind alle drei Bedingungen für einen Figurenangriff erfüllt?",
+      "Die Dame b2 zielt über die lange Diagonale auf h8, der Springer d6 auf f7.",
+      "h8 deckt nur der König; Dh8+ lenkt ihn dorthin, wo der Springer auf f7 mit Schach gabelt."
+     ],
+     "text": "Alle drei Bedingungen sind erfüllt, Weiß hat am Königsflügel mehr Angreifer. Ziele sind h8, das nur der König deckt, und der Turm f7, den der Springer d6 angreift."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "30. Dh8+",
+     "frage": "Warum gibt Weiß mit 30. Dh8+ die Dame?",
+     "antworten": [
+      "Nach Kxh8 folgt Sxf7+ mit Gabel auf König und Dame g5; danach hat Weiß eine Figur mehr.",
+      "Er erzwingt ein Patt.",
+      "Nach Kxh8 ist Schwarz sofort matt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Kxh8 ist der einzige Zug. Nach Sxf7+ Kg7 Sxg5 hat Weiß die Kompensation in Material verwandelt: eine ganze Figur mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "6.33",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Weiß hat einen Springer mehr. Welche Tausche sollte er anstreben?",
+     "antworten": [
+      "Bauern tauschen und beide Springer behalten.",
+      "Gar nichts tauschen, denn jeder Tausch hilft dem Verteidiger.",
+      "Ein Springerpaar tauschen und die eigenen Bauern behalten."
+     ],
+     "richtig": 2,
+     "erklaerung": "Mit einem Springer und fünf Bauern gegen vier Bauern führt Weiß einen Bauern zur Dame. Zwei Springer gegen einen ohne Bauern wären dagegen meist remis."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

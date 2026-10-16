@@ -1,0 +1,16 @@
+[Event "Kapitel 10: Zwei Springer brauchen einen gegnerischen Bauern"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "7k/5K2/8/4N3/7p/7N/8/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k10-a19"]
+[Kapitel "10"]
+[Abschnitt "10.5"]
+[Status "freigegeben"]
+[Abbildungen "10.19"]
+
+{ Abb. 10.19 } 1. Ng5 $1 h3 2. Ng6# *

@@ -1,0 +1,14 @@
+[Event "Kapitel 2: Übung: Nimzo-Indisch mit 4. e4"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k02-a152"]
+[Kapitel "2"]
+[Abschnitt "Übung 12"]
+[Status "freigegeben"]
+[Abbildungen "2.152"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 Bb4 4. e4 { Abb. 2.152 } 4... Nxe4 $1 5. Qg4 ( 5. Qc2 Nxc3 6. bxc3 ) 5... Nxc3 $1 6. Qxg7 ( 6. bxc3 Bxc3+ ) ( 6. a3 Be7 7. bxc3 ) 6... Ne4+ 7. Ke2 Qf6 *

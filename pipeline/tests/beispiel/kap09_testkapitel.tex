@@ -1,0 +1,28 @@
+% Testkapitel für die Pipeline. Eigener Text, kein Buchtext.
+\chapter[Testkapitel]{}
+\kapitelauftakt{9}{Ein Testkapitel}
+
+\section{Erster Abschnitt}
+\label{sec:k9-erster}
+
+\grossdiagrammtaktik[\abbziel{9.1}: Nach 1. e4 -- \textbf{Ziel}: das Feld \glqq e4\grqq{} (gold).]
+{rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1}
+{gold/e2-e4}
+{gold/e4,grau/d5}
+
+\subsection*{Eine Reihe}
+
+\begin{diagrammreihe}
+\diagrammschritttaktik
+{rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2}
+{rot/e5-e4}
+{}
+{\abbziel{9.2}: Nach 1... e5, Weiß am Zug. Siehe \abb{9.1} und \abbnr{9.3}.}
+\diagrammschritt{rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2}{\abbziel{9.3}: Nach 2. Sf3 droht \zugfolge{Sxe5}.}
+\end{diagrammreihe}
+
+\section{Zweiter Abschnitt}
+
+\begin{vorsichtfalle}
+\diagrammbox[\abbziel{9.4}: Schwarz am Zug, $-$3 für Weiß.]{rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 1 2}
+\end{vorsichtfalle}

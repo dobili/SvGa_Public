@@ -1,0 +1,9002 @@
+{
+ "schemaVersion": 1,
+ "eintraege": [
+  {
+   "begriff": "50-Züge-Regel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Haben beide Seiten 50 Züge lang weder einen Bauern gezogen noch eine Figur geschlagen, kannst du Remis beanspruchen (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "50-zuege-regel-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "50-zuege-regel-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Abdrängen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Im Endspiel: Dein König stellt sich dem gegnerischen König in den Weg und hält ihn so von einem Bauern fern (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.5",
+     "anker": "abdraengen-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abdraengen-9",
+     "kapitel": 9,
+     "abschnitt": "9.5",
+     "abbildung": "9.18"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Ablenkung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Taktisches Motiv: Ein Verteidiger wird von seinem Posten weggelockt, weil er eine andere Aufgabe übernehmen muss. Das Feld oder die Figur, die er bewacht hat, ist danach schutzlos (Kapitel 4 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.7",
+     "anker": "ablenkung-4"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "ablenkung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "ablenkung-4",
+     "kapitel": 4,
+     "abschnitt": "4.7",
+     "abbildung": "4.27"
+    },
+    {
+     "anker": "ablenkung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.14"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Abschneiden",
+   "text": [
+    {
+     "art": "text",
+     "text": "Im Turmendspiel: Der Turm sperrt eine Linie oder Reihe, die der gegnerische König nicht überschreiten kann. Der König ist dann vom Bauern ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "abgeschnitten",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ". Faustregel: Liegen drei oder mehr Linien zwischen König und Bauer, reicht es häufig zum Gewinn (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.1",
+     "anker": "abschneiden-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abschneiden-9",
+     "kapitel": 9,
+     "abschnitt": "9.1",
+     "abbildung": "9.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Abtausch",
+   "text": [
+    {
+     "art": "text",
+     "text": "Beide Seiten schlagen nacheinander je eine Figur, oft von gleichem Wert, etwa Läufer gegen Springer. Ob sich ein Abtausch lohnt, klärt die → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Tauschfrage",
+     "begriff": "Tauschfrage"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Tauschfrage"
+   ]
+  },
+  {
+   "begriff": "Abwartezug",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Zug, der die eigene Stellung möglichst wenig verändert und nur dazu dient, dem Gegner den Zug zu überlassen, meist um ihn in → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Zugzwang",
+     "begriff": "Zugzwang"
+    },
+    {
+     "art": "text",
+     "text": " zu bringen (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.4",
+     "anker": "abwartezug-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abwartezug-8",
+     "kapitel": 8,
+     "abschnitt": "8.4",
+     "abbildung": "8.11"
+    }
+   ],
+   "verweise": [
+    "Zugzwang"
+   ]
+  },
+  {
+   "begriff": "Abwehrfragen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Fünf Fragen gegen eine Drohung, vom einfachsten Mittel zum riskantesten: schlagen, wegziehen, decken, dazwischenstellen, Gegendrohung (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "abwehrfragen-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abwehrfragen-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Abzug",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Abzugsangriff",
+     "begriff": "Abzugsangriff"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Abzugsangriff"
+   ]
+  },
+  {
+   "begriff": "Abzugsangriff",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur zieht weg und gibt dabei die Linie, Reihe oder Diagonale einer eigenen → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Langschrittfigur",
+     "begriff": "Langschrittfigur"
+    },
+    {
+     "art": "text",
+     "text": " frei, die nun angreift. Greift die abziehende Figur selbst auch etwas an, entstehen zwei Drohungen mit einem Zug (Kapitel 3 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.6",
+     "anker": "abzugsangriff-3"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "abzugsangriff-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abzugsangriff-3",
+     "kapitel": 3,
+     "abschnitt": "3.6",
+     "abbildung": "3.23"
+    },
+    {
+     "anker": "abzugsangriff-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.9"
+    }
+   ],
+   "verweise": [
+    "Langschrittfigur"
+   ]
+  },
+  {
+   "begriff": "Abzugsschach",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Abzugsangriff, bei dem die freigelegte Figur Schach gibt. Die abziehende Figur darf in dieser Zeit fast alles angreifen (Kapitel 2 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.5",
+     "anker": "abzugsschach-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "abzugsschach-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abzugsschach-2",
+     "kapitel": 2,
+     "abschnitt": "2.5",
+     "abbildung": "2.42"
+    },
+    {
+     "anker": "abzugsschach-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.9"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Aktiver Turm",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Turm, der angreift, statt nur zu bewachen: auf einer offenen Linie, hinter einem Freibauern oder auf der gegnerischen 7. Reihe, wo er mehrere Bauern zugleich bedroht. Im Endspiel ist er häufig mehr wert als ein Bauer (Kapitel 8 und 9; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.2",
+     "anker": "aktiver-turm-8"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.6",
+     "anker": "aktiver-turm-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "aktiver-turm-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    },
+    {
+     "anker": "aktiver-turm-9",
+     "kapitel": 9,
+     "abschnitt": "9.6",
+     "abbildung": "9.23"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Aktivität",
+   "text": [
+    {
+     "art": "text",
+     "text": "Was deine Figuren leisten: welche wichtigen Felder sie kontrollieren, welche Ziele sie angreifen und ob jede eine Aufgabe hat. Einer der vier Faktoren der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Faktorenbilanz",
+     "begriff": "Faktorenbilanz"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.2",
+     "anker": "aktivitaet-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "aktivitaet-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Faktorenbilanz"
+   ]
+  },
+  {
+   "begriff": "Algebraische Notation",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Schreibweise der Züge: Anfangsbuchstabe der Figur (K, D, T, L, S; beim Bauern keiner) und Zielfeld, etwa ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Sf3"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "algebraische-notation-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "algebraische-notation-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.21"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Anastasia-Matt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mattbild mit Springer und Turm: Der Springer auf e7 sperrt die Felder g6 und g8, der Turm setzt auf der h-Linie matt. Häufig geht ein Damenopfer auf h7 voraus (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "anastasia-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "anastasia-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.37"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Arabisches Matt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mattbild mit Turm und Springer: Der Turm gibt direkt neben dem König Schach, der Springer deckt den Turm und das letzte Fluchtfeld (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "arabisches-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "arabisches-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.39"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Basis",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Bauernkette",
+     "begriff": "Bauernkette"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Bauernkette"
+   ]
+  },
+  {
+   "begriff": "Batterie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwei eigene Langschrittfiguren hintereinander auf einer Linie, Reihe oder Diagonale. Die vordere schlägt zu, die hintere deckt sie, etwa zwei Türme auf einer offenen Linie oder Dame und Läufer auf einer Diagonale (Kapitel 2 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.3",
+     "anker": "batterie-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "batterie-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "batterie-2",
+     "kapitel": 2,
+     "abschnitt": "2.3",
+     "abbildung": "2.29"
+    },
+    {
+     "anker": "batterie-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.8"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bauernduo",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwei eigene Zentrumsbauern nebeneinander, etwa auf d4 und e4. Solange beide dort stehen, kontrollieren sie zusammen vier Felder der nächsten Reihe (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.6",
+     "anker": "bauernduo-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernduo-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bauerneinheit",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Figurenwerte",
+     "begriff": "Figurenwerte"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Figurenwerte"
+   ]
+  },
+  {
+   "begriff": "Bauernhebel (Hebel)",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauernzug, der einen gegnerischen Bauern angreift. Ob der Gegner schlägt, vorbeizieht oder den Bauern stehen lässt: Jede Antwort verändert die Bauernstruktur (Kapitel 1, 2 und 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.4",
+     "anker": "bauernhebel-1"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.8",
+     "anker": "bauernhebel-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "bauernhebel-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernhebel-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    },
+    {
+     "anker": "bauernhebel-2",
+     "kapitel": 2,
+     "abschnitt": "2.8",
+     "abbildung": "2.77"
+    },
+    {
+     "anker": "bauernhebel-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.27"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bauerninseln",
+   "text": [
+    {
+     "art": "text",
+     "text": "Gruppen eigener Bauern, die durch mindestens eine Linie ohne eigenen Bauern voneinander getrennt sind. Faustregel: Weniger Inseln bedeuten meist eine gesündere Struktur (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.4",
+     "anker": "bauerninseln-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauerninseln-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.20"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bauernkette",
+   "text": [
+    {
+     "art": "text",
+     "text": "Bauern, die schräg hintereinander stehen, und jeder deckt den nächsten. Der vorderste Bauer ist die ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Kettenspitze",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ", der hinterste die ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Basis",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ". Die Basis wird von keinem Bauern der Kette gedeckt, deshalb greifst du die Kette dort an (Kapitel 2, 4 und 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.8",
+     "anker": "bauernkette-2"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.4",
+     "anker": "bauernkette-4"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "bauernkette-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernkette-2",
+     "kapitel": 2,
+     "abschnitt": "2.8",
+     "abbildung": "2.80"
+    },
+    {
+     "anker": "bauernkette-4",
+     "kapitel": 4,
+     "abschnitt": "4.4",
+     "abbildung": "4.1"
+    },
+    {
+     "anker": "bauernkette-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.25"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bauernloch",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Loch",
+     "begriff": "Loch (Bauernloch)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Loch (Bauernloch)"
+   ]
+  },
+  {
+   "begriff": "Bauernmehrheit (Mehrheit)",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Seite hat auf einem Flügel oder im Zentrum mehr Bauern als die andere. Aus einer gesunden Mehrheit entsteht ein Freibauer: Zunächst zieht der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Kandidat",
+     "begriff": "Kandidat"
+    },
+    {
+     "art": "text",
+     "text": ", die übrigen Bauern unterstützen ihn. Doppelbauern können das verhindern (Kapitel 5, 6 und 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "bauernmehrheit-5"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.3",
+     "anker": "bauernmehrheit-6"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "bauernmehrheit-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernmehrheit-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.29"
+    },
+    {
+     "anker": "bauernmehrheit-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.6"
+    },
+    {
+     "anker": "bauernmehrheit-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.42"
+    }
+   ],
+   "verweise": [
+    "Kandidat"
+   ]
+  },
+  {
+   "begriff": "Bauernrennen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwei Freibauern laufen gleichzeitig zur Umwandlung. Es entscheidet, wer zuerst umwandelt und ob die neue Dame dabei Schach gibt oder das Umwandlungsfeld des Gegners kontrolliert (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "bauernrennen-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernrennen-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bauernschild",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die drei Bauern direkt vor dem rochierten König, nach der kurzen Rochade der f-, g- und h-Bauer (Kapitel 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 2",
+     "anker": "bauernschild-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernschild-2",
+     "kapitel": 2,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bauernstruktur (Skelett)",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Anordnung aller Bauern auf dem Brett. Da Bauern nie zurückziehen, bestimmt sie auf lange Sicht, welche Linien offen sind, welche Felder schwach werden und wohin die Figuren gehören. Deshalb heißt sie auch das Skelett der Partie (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 5",
+     "anker": "bauernstruktur-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernstruktur-5",
+     "kapitel": 5,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bauernsturm",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mehrere Bauern rücken auf einem Flügel gegen den gegnerischen König vor, um dort Linien zu öffnen (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.6",
+     "anker": "bauernsturm-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernsturm-6",
+     "kapitel": 6,
+     "abschnitt": "6.6",
+     "abbildung": "6.24"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bedenkzeit",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Zeit, die jeder Seite für ihre Züge zur Verfügung steht. Geschrieben wird sie als Minuten + Sekunden: 10+5 heißt 10 Minuten Grundzeit und 5 Sekunden → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Zeitgutschrift",
+     "begriff": "Zeitgutschrift"
+    },
+    {
+     "art": "text",
+     "text": " für jeden Zug (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "bedenkzeit-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bedenkzeit-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": [
+    "Zeitgutschrift"
+   ]
+  },
+  {
+   "begriff": "Befreiungszug",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauernvorstoß, der eine eingeengte Stellung öffnet oder eine Schwäche auflöst, etwa ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...d5"
+    },
+    {
+     "art": "text",
+     "text": " in der Sizilianischen Verteidigung (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.4",
+     "anker": "befreiungszug-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "befreiungszug-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Berührt – geführt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Turnierregel: Berührst du absichtlich eine eigene Figur, musst du mit ihr ziehen. Berührst du absichtlich eine gegnerische, musst du sie schlagen, jeweils sofern das regelgerecht möglich ist. Wer eine Figur nur zurechtrücken will, kündigt das vorher an (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "beruehrt-gefuehrt-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "beruehrt-gefuehrt-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Beseitigung der Verteidigung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Taktisches Motiv: Die Figur, die ein wichtiges Feld oder eine andere Figur deckt, wird geschlagen oder vertrieben (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "beseitigung-der-verteidigung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "beseitigung-der-verteidigung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.18"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Blitz",
+   "text": [
+    {
+     "art": "text",
+     "text": "Partien mit sehr kurzer Bedenkzeit, nach den Regeln der FIDE höchstens 10 Minuten je Seite. Eine Zeitgutschrift für 60 Züge wird dabei eingerechnet [3] (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "blitz-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "blitz-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Blockade",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur besetzt das Feld vor einem gegnerischen Bauern, meist einem Freibauern oder Isolani, und hält ihn dort fest; dieses Feld heißt Blockadefeld. Als Blockadefigur eignet sich am besten ein Springer (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "blockade-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "blockade-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.32"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Boden-Matt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mattbild mit zwei Läufern: Ihre Diagonalen kreuzen sich vor einem König, dem die eigenen Figuren die Flucht versperren. Häufig trifft es die lange Rochade (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "boden-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "boden-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.41"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Boleslawski-Struktur",
+   "text": [
+    {
+     "art": "text",
+     "text": "Bauernstruktur der Sizilianischen Verteidigung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...e5"
+    },
+    {
+     "art": "text",
+     "text": ": Schwarz nimmt das Loch auf d5 bewusst in Kauf und bekommt dafür Raum und aktives Figurenspiel (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.3",
+     "anker": "boleslawski-struktur-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "boleslawski-struktur-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.9"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Brückenbau",
+   "text": [
+    {
+     "art": "text",
+     "text": "Das Gewinnverfahren in der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Lucena-Stellung",
+     "begriff": "Lucena-Stellung"
+    },
+    {
+     "art": "text",
+     "text": ": Zunächst treibt ein Schach den gegnerischen König eine Linie weiter weg, dann geht der Turm auf die 4. Reihe, und der König tritt vor seinem Bauern heraus. Gegen die Schachs stellt sich der Turm dazwischen, auf ein Feld, das der eigene König deckt (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.3",
+     "anker": "brueckenbau-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "brueckenbau-9",
+     "kapitel": 9,
+     "abschnitt": "9.3",
+     "abbildung": "9.9"
+    }
+   ],
+   "verweise": [
+    "Lucena-Stellung"
+   ]
+  },
+  {
+   "begriff": "Carlsbad-Struktur",
+   "text": [
+    {
+     "art": "text",
+     "text": "Bauernstruktur, die im Abgelehnten Damengambit nach dem Tausch ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "cxd5 exd5"
+    },
+    {
+     "art": "text",
+     "text": " entsteht. Weiß hat am Damenflügel zwei Bauern gegen drei und spielt dort den → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Minderheitsangriff",
+     "begriff": "Minderheitsangriff"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "carlsbad-struktur-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "carlsbad-struktur-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.32"
+    }
+   ],
+   "verweise": [
+    "Minderheitsangriff"
+   ]
+  },
+  {
+   "begriff": "Damenflügel",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Flügel",
+     "begriff": "Flügel"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Flügel"
+   ]
+  },
+  {
+   "begriff": "Damiano-Matt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mattbild: Die Dame setzt auf h7 matt, gedeckt von einem Bauern auf g6. Häufig geht ein Turmopfer auf h8 voraus (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "damiano-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "damiano-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.41"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Dauerschach",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Seite kann ununterbrochen Schach geben, und der König entkommt den Schachs nicht. Dauerschach ist keine eigene Regel; die Partie endet durch Einigung oder dreifache Stellungswiederholung remis (Kapitel 0 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "dauerschach-0"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "dauerschach-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "dauerschach-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    },
+    {
+     "anker": "dauerschach-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.27"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Deckungstest",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Frage für jeden Bauern: Kann ihn ein eigener Bauer decken, jetzt oder nach einem Zug von ihm selbst oder einem Nachbarbauern? Lautet die Antwort nein, müssen Figuren ihn bewachen. Zwei Bauern nebeneinander ohne weitere Nachbarn bestehen den Test nur abwechselnd: Rückt einer vor, deckt ihn der andere, und dieser steht dann selbst ohne Bauernschutz (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.4",
+     "anker": "deckungstest-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "deckungstest-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.15"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Denkroutine",
+   "text": [
+    {
+     "art": "text",
+     "text": "Vier Schritte vor jedem Zug: Stellung und Phase der Partie erfassen, Kandidatenzüge sammeln, die stärkste Antwort suchen, am Ende bewerten und vergleichen. Die Phase entscheidet, welches Werkzeug du für einen ruhigen Zug heranziehst. Vor dem Ziehen folgt der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Sicherheitsblick",
+     "begriff": "Sicherheitsblick"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.1",
+     "anker": "denkroutine-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "denkroutine-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.1"
+    }
+   ],
+   "verweise": [
+    "Sicherheitsblick"
+   ]
+  },
+  {
+   "begriff": "Desperado",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur, die ohnehin geschlagen oder getauscht wird und daher vorher noch so viel wie möglich mitnimmt (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "desperado-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "desperado-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.23"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Diagonalopposition",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Opposition",
+     "begriff": "Opposition"
+    },
+    {
+     "art": "text",
+     "text": ", bei der die Könige auf einer Diagonale stehen, mit einem Feld oder drei Feldern dazwischen (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.5",
+     "anker": "diagonalopposition-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "diagonalopposition-8",
+     "kapitel": 8,
+     "abschnitt": "8.5",
+     "abbildung": "8.23"
+    }
+   ],
+   "verweise": [
+    "Opposition"
+   ]
+  },
+  {
+   "begriff": "Doppelangriff",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Zug, der zwei Ziele zugleich bedroht. Der Gegner kann meist nur eines retten. Jede Figur kann ihn ausführen (Kapitel 4 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.9",
+     "anker": "doppelangriff-4"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "doppelangriff-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "doppelangriff-4",
+     "kapitel": 4,
+     "abschnitt": "4.9",
+     "abbildung": "4.38"
+    },
+    {
+     "anker": "doppelangriff-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Doppelbauern",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwei eigene Bauern auf derselben Linie. Sie entstehen, wenn ein Bauer schlägt und dabei auf eine Linie zieht, auf der schon ein eigener Bauer steht (Kapitel 2 und 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.9",
+     "anker": "doppelbauern-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.4",
+     "anker": "doppelbauern-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "doppelbauern-2",
+     "kapitel": 2,
+     "abschnitt": "2.9",
+     "abbildung": "2.85"
+    },
+    {
+     "anker": "doppelbauern-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.15"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Doppelschach",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwei Figuren geben gleichzeitig Schach. Schlagen und Dazwischenstellen helfen dann nicht mehr, nur ein Königszug rettet (Kapitel 0 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "doppelschach-0"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "doppelschach-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "doppelschach-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.10"
+    },
+    {
+     "anker": "doppelschach-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.11"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Drohung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Zug droht etwas, wenn er im nächsten Zug Material gewinnen oder mattsetzen würde (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.4",
+     "anker": "drohung-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "drohung-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.23"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Durchbruch",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauernopfer, das einen Freibauern erzwingt, obwohl sich gleich viele Bauern gegenüberstehen. Das klassische Muster ist drei gegen drei (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "durchbruch-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "durchbruch-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.42"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "DWZ (Deutsche Wertungszahl)",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Wertungszahl des Deutschen Schachbundes [2]. Wie die Elo-Zahl bekommst du sie über gewertete Turnierpartien (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "dwz-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "dwz-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Einstellen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur so ziehen oder stehen lassen, dass der Gegner sie ohne Gegenwert schlagen kann.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Elementarmatt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Matt gegen den König, der allein übrig geblieben ist, etwa mit König und Dame oder mit König und Turm (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.3",
+     "anker": "elementarmatt-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "elementarmatt-8",
+     "kapitel": 8,
+     "abschnitt": "8.3",
+     "abbildung": "8.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Elo-Zahl",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die internationale Wertungszahl des Weltschachbundes FIDE [4]. Sie drückt die Spielstärke in einer einzigen Zahl aus: je höher, desto stärker (Kapitel 0 und 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "elo-zahl-0"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "elo-zahl-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "elo-zahl-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.1"
+    },
+    {
+     "anker": "elo-zahl-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Endspiel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Phase der Partie mit wenigen Figuren, meist ohne Damen. Der König wird jetzt zur aktiven Figur, und die Freibauern entscheiden (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.1",
+     "anker": "endspiel-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "endspiel-8",
+     "kapitel": 8,
+     "abschnitt": "8.1",
+     "abbildung": "8.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Endspieldatenbank",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Tablebase",
+     "begriff": "Tablebase"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Tablebase"
+   ]
+  },
+  {
+   "begriff": "Endspielregeln",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die sechs goldenen Endspielregeln: Aktiviere deinen König. Nutze Opposition und Zugzwang. Spiele geduldig. Tausche klug. Verteidige aktiv. Rechne bis zur Umwandlung (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.2",
+     "anker": "endspielregeln-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "endspielregeln-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Engine",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Schachprogramm wie das kostenlose Stockfish, das Stellungen berechnet und bewertet. Die Zahl, die es anzeigt, etwa +0,7, ist eine grobe Bewertung in Bauerneinheiten: Plus heißt Vorteil für Weiß, Minus Vorteil für Schwarz (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.2",
+     "anker": "engine-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "engine-12",
+     "kapitel": 12,
+     "abschnitt": "12.2",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "En passant",
+   "text": [
+    {
+     "art": "text",
+     "text": "Französisch für „im Vorbeigehen“. Zieht ein Bauer von seinem Startfeld zwei Felder vor und landet neben einem gegnerischen Bauern, darf dieser ihn im unmittelbar folgenden Zug so schlagen, als wäre er nur ein Feld vorgerückt (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "en-passant-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "en-passant-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.16"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Entfernter Freibauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Freibauer, der weit weg von den übrigen Bauern steht. Er zieht den gegnerischen König an den Rand, und währenddessen holt sich der eigene König die Bauern auf dem anderen Flügel (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "entfernter-freibauer-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "entfernter-freibauer-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.47"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Entgegengesetzte Rochaden",
+   "text": [
+    {
+     "art": "text",
+     "text": "Beide Seiten rochieren auf verschiedene Flügel. Beide können dann ihre Bauern gegen den gegnerischen König schicken, ohne den eigenen zu entblößen. Es zählt, wer zuerst eine Linie öffnet (Kapitel 2 und 6; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.6",
+     "anker": "entgegengesetzte-rochaden-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.3",
+     "anker": "entgegengesetzte-rochaden-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "entgegengesetzte-rochaden-2",
+     "kapitel": 2,
+     "abschnitt": "2.6",
+     "abbildung": "2.56"
+    },
+    {
+     "anker": "entgegengesetzte-rochaden-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.6"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Entwicklung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Figuren von der Grundreihe auf aktive Felder bringen. Sie ist eines der drei Ziele jeder → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Eröffnung",
+     "begriff": "Eröffnung"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 1 und 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "entwicklung-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 2",
+     "anker": "entwicklung-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "entwicklung-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    },
+    {
+     "anker": "entwicklung-2",
+     "kapitel": 2,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Eröffnung"
+   ]
+  },
+  {
+   "begriff": "Eröffnung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die ersten Züge der Partie. Sie hat drei Ziele: Zentrumskontrolle, Figurenentwicklung und Königssicherheit (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "eroeffnung-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "eroeffnung-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Eröffnungsdatenbank",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Sammlung vieler gespielter Partien. Sie zeigt, welche Züge in einer Stellung häufig gespielt werden, allerdings nicht, welcher der beste ist (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.4",
+     "anker": "eroeffnungsdatenbank-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "eroeffnungsdatenbank-12",
+     "kapitel": 12,
+     "abschnitt": "12.4",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Erstickungsmatt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Springer setzt einen König matt, dem die eigenen Figuren alle Fluchtfelder versperren (Kapitel 4 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.6",
+     "anker": "erstickungsmatt-4"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "erstickungsmatt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "erstickungsmatt-4",
+     "kapitel": 4,
+     "abschnitt": "4.6",
+     "abbildung": "4.23"
+    },
+    {
+     "anker": "erstickungsmatt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Erzwingender Zug",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Schach, ein Schlag oder eine Drohung: ein Zug, auf den der Gegner antworten muss (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "erzwingender-zug-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "erzwingender-zug-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Faktorenbilanz",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Tabelle, mit der das Buch ein Opfer bewertet. Sie vergleicht Material und Zeit und bewertet für jede Seite einzeln Königssicherheit und Aktivität. Darunter stehen die → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Haltbarkeit",
+     "begriff": "Haltbarkeit"
+    },
+    {
+     "art": "text",
+     "text": " der Kompensation und ein Urteil (Kapitel 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.3",
+     "anker": "faktorenbilanz-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "faktorenbilanz-3",
+     "kapitel": 3,
+     "abschnitt": "3.3",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Haltbarkeit"
+   ]
+  },
+  {
+   "begriff": "Falle",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Angebot, das so aussieht, als gewinne der Gegner etwas, und das ihn in Wahrheit Material, die Stellung oder die Partie kostet (Kapitel 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.1",
+     "anker": "falle-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "falle-4",
+     "kapitel": 4,
+     "abschnitt": "4.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Fallencheck",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Auswertung am Ende jeder Falle: wer hineintappt, welche Regel gereicht hätte und welcher Zug rettet. Dazu gehört der ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Fallensteller-Test",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ": Ist der Zug, der die Falle stellt, auch ohne Fehler des Gegners gut? (Kapitel 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.3",
+     "anker": "fallencheck-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fallencheck-4",
+     "kapitel": 4,
+     "abschnitt": "4.3",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Fallensteller-Test",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Fallencheck",
+     "begriff": "Fallencheck"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Fallencheck"
+   ]
+  },
+  {
+   "begriff": "Falscher Läufer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Läufer, der das Umwandlungsfeld des eigenen Randbauern nicht kontrolliert. Erreicht der verteidigende König die Ecke, ist die Partie remis (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.8",
+     "anker": "falscher-laeufer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "falscher-laeufer-9",
+     "kapitel": 9,
+     "abschnitt": "9.8",
+     "abbildung": "9.41"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Farbkomplex",
+   "text": [
+    {
+     "art": "text",
+     "text": "Alle Felder einer Farbe oder eine Gruppe davon. Ein ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "schwacher Farbkomplex",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " entsteht, wenn einer Seite der Läufer einer Farbe fehlt, während ihre Bauern auf Feldern der anderen Farbe stehen: Die Felder der einen Farbe gehören dann dem Gegner (Kapitel 6 und 9; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.5",
+     "anker": "farbkomplex-6"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.8",
+     "anker": "farbkomplex-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "farbkomplex-6",
+     "kapitel": 6,
+     "abschnitt": "6.5",
+     "abbildung": "6.19"
+    },
+    {
+     "anker": "farbkomplex-9",
+     "kapitel": 9,
+     "abschnitt": "9.8",
+     "abbildung": "9.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Fehlerdatenbank",
+   "text": [
+    {
+     "art": "text",
+     "text": "Deine persönliche Liste der Fehler aus eigenen Partien: Partie, Zug, Fehlerart, übersehene Idee, bessere Entscheidung und nächste Übung. Eine Vorlage zeigt Tabelle 12.1 (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.2",
+     "anker": "fehlerdatenbank-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fehlerdatenbank-12",
+     "kapitel": 12,
+     "abschnitt": "12.2",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Fernopposition",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Opposition",
+     "begriff": "Opposition"
+    },
+    {
+     "art": "text",
+     "text": " aus der Ferne: Die Könige stehen auf derselben Linie oder Reihe mit drei oder fünf Feldern dazwischen (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.5",
+     "anker": "fernopposition-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fernopposition-8",
+     "kapitel": 8,
+     "abschnitt": "8.5",
+     "abbildung": "8.23"
+    }
+   ],
+   "verweise": [
+    "Opposition"
+   ]
+  },
+  {
+   "begriff": "Fesselung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur steht zwischen einer gegnerischen → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Langschrittfigur",
+     "begriff": "Langschrittfigur"
+    },
+    {
+     "art": "text",
+     "text": " und einer wertvolleren eigenen Figur. Steht dahinter der König, ist die Fesselung absolut: Die Figur darf nicht ziehen. Steht dahinter eine andere Figur, ist sie relativ: Die Figur darf ziehen, es kostet aber meist Material (Kapitel 1, 2 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.2",
+     "anker": "fesselung-1"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.3",
+     "anker": "fesselung-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "fesselung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fesselung-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.12"
+    },
+    {
+     "anker": "fesselung-2",
+     "kapitel": 2,
+     "abschnitt": "2.3",
+     "abbildung": "2.26"
+    },
+    {
+     "anker": "fesselung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.4"
+    }
+   ],
+   "verweise": [
+    "Langschrittfigur"
+   ]
+  },
+  {
+   "begriff": "Festung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Stellung, in der der Verteidiger einen Bereich so vollständig verriegelt, dass der Gegner trotz Mehrmaterial nicht eindringen kann (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.8",
+     "anker": "festung-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "festung-9",
+     "kapitel": 9,
+     "abschnitt": "9.8",
+     "abbildung": "9.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Fianchetto",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Entwicklung eines Läufers auf die lange Diagonale, also nach b2 oder g2 (bei Schwarz nach b7 oder g7), nachdem der b- oder g-Bauer ein Feld vorgerückt ist (Kapitel 1 und 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "fianchetto-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.6",
+     "anker": "fianchetto-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fianchetto-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.2"
+    },
+    {
+     "anker": "fianchetto-2",
+     "kapitel": 2,
+     "abschnitt": "2.6",
+     "abbildung": "2.56"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "FIDE",
+   "text": [
+    {
+     "art": "text",
+     "text": "Der Weltschachbund. Er gibt die Schachregeln heraus und führt die Elo-Zahlen (Kapitel 0 und 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "fide-0"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "fide-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fide-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    },
+    {
+     "anker": "fide-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Figur",
+   "text": [
+    {
+     "art": "text",
+     "text": "Im weiten Sinn alles, was auf dem Brett steht, auch die Bauern. Im engeren Sinn meint das Buch Springer, Läufer, Türme und Dame; der Bauer wird dann getrennt genannt (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "figur-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "figur-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Figurenwerte",
+   "text": [
+    {
+     "art": "text",
+     "text": "Faustwerte in Bauerneinheiten: Bauer 1, Springer und Läufer je 3, Turm 5, Dame 9 (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.4",
+     "anker": "figurenwerte-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "figurenwerte-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Fixieren",
+   "text": [
+    {
+     "art": "text",
+     "text": "Einen schwachen Bauern festlegen, bevor du ihn angreifst. Fixiert ist er, wenn er nicht mehr vorrücken und sich tauschen kann, da das Feld vor ihm bewacht ist und kein eigener Bauer den Vorstoß stützt. Die Reihenfolge lautet: erst fixieren, dann angreifen (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.3",
+     "anker": "fixieren-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fixieren-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.11"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Flügel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die beiden Bretthälften: der Damenflügel mit den Linien a bis d und der Königsflügel mit den Linien e bis h (Kapitel 1 und 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "fluegel-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.1",
+     "anker": "fluegel-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fluegel-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    },
+    {
+     "anker": "fluegel-2",
+     "kapitel": 2,
+     "abschnitt": "2.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Freibauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer, den kein gegnerischer Bauer mehr aufhalten kann: Weder auf seiner Linie noch auf den beiden Nachbarlinien steht vor ihm ein gegnerischer Bauer (Kapitel 5 und 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "freibauer-5"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "freibauer-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "freibauer-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.29"
+    },
+    {
+     "anker": "freibauer-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Freie Partie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Partie, die außerhalb eines Turniers gespielt wird (Kapitel 11, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 11.4",
+     "anker": "freie-partie-11"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "freie-partie-11",
+     "kapitel": 11,
+     "abschnitt": "11.4",
+     "abbildung": "11.16"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Gabel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Doppelangriff",
+     "begriff": "Doppelangriff"
+    },
+    {
+     "art": "text",
+     "text": " einer einzelnen Figur auf zwei gegnerische Figuren, häufig ausgeführt von einem Springer oder einem Bauern (Kapitel 1 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.3",
+     "anker": "gabel-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "gabel-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gabel-1",
+     "kapitel": 1,
+     "abschnitt": "1.3",
+     "abbildung": "1.21"
+    },
+    {
+     "anker": "gabel-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.2"
+    }
+   ],
+   "verweise": [
+    "Doppelangriff"
+   ]
+  },
+  {
+   "begriff": "Gabeltrick",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur schlägt einen Bauern und lässt sich schlagen. Eine Bauerngabel holt die Figur dann zurück, etwa im Vierspringerspiel nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Lc4"
+    },
+    {
+     "art": "text",
+     "text": " mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Sxe4 5. Sxe4 d5"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "gabeltrick-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gabeltrick-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.2"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Gambit",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Eröffnung, in der eine Seite Material anbietet, meist einen Bauern, um dafür etwas anderes zu bekommen, etwa Zeit oder Zentrumskontrolle (Kapitel 2 und 3; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.7",
+     "anker": "gambit-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.1",
+     "anker": "gambit-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gambit-2",
+     "kapitel": 2,
+     "abschnitt": "2.7",
+     "abbildung": "2.63"
+    },
+    {
+     "anker": "gambit-3",
+     "kapitel": 3,
+     "abschnitt": "3.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Gedeckter Freibauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Freibauer, den ein eigener Bauer schützt. Der gegnerische König darf ihn nicht schlagen und muss ihn bewachen (Kapitel 5 und 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "gedeckter-freibauer-5"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "gedeckter-freibauer-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gedeckter-freibauer-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.32"
+    },
+    {
+     "anker": "gedeckter-freibauer-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.50"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Gefangene Figur",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur, die angegriffen ist und kein sicheres Feld mehr erreichen kann (Kapitel 4 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.8",
+     "anker": "gefangene-figur-4"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "gefangene-figur-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gefangene-figur-4",
+     "kapitel": 4,
+     "abschnitt": "4.8",
+     "abbildung": "4.32"
+    },
+    {
+     "anker": "gefangene-figur-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.24"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Gegenspiel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eigene Drohungen der Seite, die sich verteidigt. Wer Gegenspiel hat, zwingt den Angreifer, sich auch um die eigene Stellung zu kümmern.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Geisterfigur",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur, die du beim Rechnen im Kopf noch auf dem Feld siehst, das sie gerade verlassen hat (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.1",
+     "anker": "geisterfigur-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "geisterfigur-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Geschlossene Stellung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Im Zentrum stehen sich verkeilte Bauernpaare gegenüber. Springer sind hier häufig die besseren Leichtfiguren (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.6",
+     "anker": "geschlossene-stellung-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "geschlossene-stellung-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Gleichseitige Rochade",
+   "text": [
+    {
+     "art": "text",
+     "text": "Beide Seiten rochieren auf denselben Flügel. Ein Bauernsturm ist dann ein Risiko, da jeder vorgerückte Bauer im Anschluss vor dem eigenen König fehlt (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.3",
+     "anker": "gleichseitige-rochade-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gleichseitige-rochade-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.7"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Goldene Angriffsregel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Angriff gelingt nur, wenn deine Angreifer die Verteidiger im Zielbereich zahlenmäßig übertreffen (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.6",
+     "anker": "goldene-angriffsregel-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "goldene-angriffsregel-1",
+     "kapitel": 1,
+     "abschnitt": "1.6",
+     "abbildung": "1.36"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Goldene Verteidigungsregel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Bei angebotenem Material achtest du auf die → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Warnsignale",
+     "begriff": "Warnsignale"
+    },
+    {
+     "art": "text",
+     "text": " und stellst die drei → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Prüffragen",
+     "begriff": "Prüffragen"
+    },
+    {
+     "art": "text",
+     "text": ", bevor du zugreifst (Kapitel 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.2",
+     "anker": "goldene-verteidigungsregel-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "goldene-verteidigungsregel-4",
+     "kapitel": 4,
+     "abschnitt": "4.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Warnsignale",
+    "Prüffragen"
+   ]
+  },
+  {
+   "begriff": "Griechisches Geschenk",
+   "text": [
+    {
+     "art": "text",
+     "text": "Das Läuferopfer auf h7 (bei Schwarz auf h2) gegen den rochierten König. Es gelingt bloß, wenn genug weitere Angreifer bereitstehen, vor allem Springer und Dame (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.6",
+     "anker": "griechisches-geschenk-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "griechisches-geschenk-1",
+     "kapitel": 1,
+     "abschnitt": "1.6",
+     "abbildung": "1.36"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Grundgesetz der Bauern",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer deckt nur schräg nach vorn und kann nie zurück. Daraus entstehen die dauerhaften Schwächen einer Stellung (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.1",
+     "anker": "grundgesetz-der-bauern-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "grundgesetz-der-bauern-5",
+     "kapitel": 5,
+     "abschnitt": "5.1",
+     "abbildung": "5.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Grundreihe",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die erste Reihe für Weiß, die achte für Schwarz: die Reihe, auf der die Figuren zu Partiebeginn stehen (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "grundreihe-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "grundreihe-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Grundreihenmatt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Turm oder eine Dame gibt auf der Grundreihe Schach, und der König hat kein Fluchtfeld, da seine eigenen Bauern vor ihm stehen. Dagegen hilft ein → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Luftloch",
+     "begriff": "Luftloch"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 5 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.3",
+     "anker": "grundreihenmatt-5"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "grundreihenmatt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "grundreihenmatt-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.12"
+    },
+    {
+     "anker": "grundreihenmatt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.35"
+    }
+   ],
+   "verweise": [
+    "Luftloch"
+   ]
+  },
+  {
+   "begriff": "Guter Läufer",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Schlechter Läufer",
+     "begriff": "Schlechter Läufer"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Schlechter Läufer"
+   ]
+  },
+  {
+   "begriff": "Haken",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein vorgezogener Bauer vor dem eigenen König, etwa auf h3: ein Ziel, an dem der Gegner mit seinen Bauern einhaken kann (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.3",
+     "anker": "haken-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "haken-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.9"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Halboffene Linie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Linie, auf der nur noch gegnerische Bauern stehen. Halboffen ist sie für die Seite, die dort keinen Bauern mehr hat (Kapitel 1 und 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.2",
+     "anker": "halboffene-linie-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.4",
+     "anker": "halboffene-linie-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "halboffene-linie-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.12"
+    },
+    {
+     "anker": "halboffene-linie-2",
+     "kapitel": 2,
+     "abschnitt": "2.4",
+     "abbildung": "2.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Halbzug",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein einzelner Zug einer Seite. Ein nummerierter Zug wie ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5"
+    },
+    {
+     "art": "text",
+     "text": " besteht aus zwei Halbzügen (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "halbzug-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "halbzug-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.21"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Haltbarkeit",
+   "text": [
+    {
+     "art": "text",
+     "text": "Wie lange ein Vorteil hält. Material ist dauerhaft, ein Zeitvorsprung hält nur einige Züge, Königssicherheit und Aktivität liegen dazwischen (Kapitel 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.3",
+     "anker": "haltbarkeit-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "haltbarkeit-3",
+     "kapitel": 3,
+     "abschnitt": "3.3",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Hängen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur hängt, wenn sie angegriffen und nicht ausreichend gedeckt ist.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Hängende Bauern",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwei benachbarte Bauern, meist auf der c- und der d-Linie, die auf den Linien daneben keinen weiteren eigenen Bauern zur Unterstützung haben. Zusammen sind sie stark, einzeln schwach (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.4",
+     "anker": "haengende-bauern-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "haengende-bauern-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.20"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Hauptvariante",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die wichtigste Zugfolge einer Eröffnung. Von ihr zweigen die weiteren Varianten und Nebenwege ab (Kapitel 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.1",
+     "anker": "hauptvariante-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "hauptvariante-2",
+     "kapitel": 2,
+     "abschnitt": "2.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Hebel",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Bauernhebel",
+     "begriff": "Bauernhebel (Hebel)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Bauernhebel (Hebel)"
+   ]
+  },
+  {
+   "begriff": "Hinlenkung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Taktisches Motiv: Ein Köder zieht eine gegnerische Figur auf ein bestimmtes Feld, auf dem sie selbst Opfer einer Taktik wird (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "hinlenkung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "hinlenkung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.14"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Hoffnungsschach",
+   "text": [
+    {
+     "art": "text",
+     "text": "Du ziehst, ohne geprüft zu haben, ob du auf jedes Schach, jeden Schlag und jede Drohung des Gegners im nächsten Zug eine sichere Antwort hast. So nennt es der amerikanische Trainer Dan Heisman [6] (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.1",
+     "anker": "hoffnungsschach-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "hoffnungsschach-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Hypermodern",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Eröffnungsweise, die das Zentrum nicht sofort mit Bauern besetzt, sondern zunächst aus der Ferne mit Figuren kontrolliert (Kapitel 1 und 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "hypermodern-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.10",
+     "anker": "hypermodern-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "hypermodern-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.2"
+    },
+    {
+     "anker": "hypermodern-2",
+     "kapitel": 2,
+     "abschnitt": "2.10",
+     "abbildung": "2.110"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Initiative",
+   "text": [
+    {
+     "art": "text",
+     "text": "Das Vorrecht, mit Drohungen den Spielverlauf zu bestimmen: Der Gegner kommt nur noch zum Reagieren. Sie ist der vergänglichste aller Vorteile (Kapitel 1, 6 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.5",
+     "anker": "initiative-1"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.1",
+     "anker": "initiative-6"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "initiative-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "initiative-1",
+     "kapitel": 1,
+     "abschnitt": "1.5",
+     "abbildung": "1.35"
+    },
+    {
+     "anker": "initiative-6",
+     "kapitel": 6,
+     "abschnitt": "6.1",
+     "abbildung": "6.1"
+    },
+    {
+     "anker": "initiative-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Isolani (isolierter Bauer)",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer, der auf den beiden Nachbarlinien keine eigenen Bauern mehr hat. Im Mittelspiel kann er aktives Figurenspiel ermöglichen, im Endspiel ist er eine Schwäche (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.4",
+     "anker": "isolani-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "isolani-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Isolierter Bauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Isolani",
+     "begriff": "Isolani (isolierter Bauer)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Isolani (isolierter Bauer)"
+   ]
+  },
+  {
+   "begriff": "Kandidat",
+   "text": [
+    {
+     "art": "text",
+     "text": "In der Taktik die Kurzform für → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Kandidatenzug",
+     "begriff": "Kandidatenzug"
+    },
+    {
+     "art": "text",
+     "text": ". Sonst der Bauer einer → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Bauernmehrheit",
+     "begriff": "Bauernmehrheit (Mehrheit)"
+    },
+    {
+     "art": "text",
+     "text": ", vor dem auf seiner Linie kein gegnerischer Bauer steht. Nach der Kandidatenregel rückt er zuerst vor (Kapitel 5, 7 und 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "kandidat-5"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "kandidat-7"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "kandidat-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kandidat-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.29"
+    },
+    {
+     "anker": "kandidat-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    },
+    {
+     "anker": "kandidat-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.42"
+    }
+   ],
+   "verweise": [
+    "Kandidatenzug",
+    "Bauernmehrheit (Mehrheit)"
+   ]
+  },
+  {
+   "begriff": "Kandidatenzug",
+   "text": [
+    {
+     "art": "text",
+     "text": "Jeder Zug, den du ernsthaft prüfst. In der Taktik sind das die erzwingenden Züge. Sammle zunächst alle Kandidaten, bevor du den ersten rechnest (Kapitel 7 und 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "kandidatenzug-7"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.2",
+     "anker": "kandidatenzug-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kandidatenzug-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    },
+    {
+     "anker": "kandidatenzug-12",
+     "kapitel": 12,
+     "abschnitt": "12.2",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Kastenmethode",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mattführung mit König und Dame: Die Dame sperrt den gegnerischen König in einen Kasten, der eigene König rückt nach, die Dame verkleinert den Kasten, und am Rand setzt sie matt (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.3",
+     "anker": "kastenmethode-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kastenmethode-8",
+     "kapitel": 8,
+     "abschnitt": "8.3",
+     "abbildung": "8.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Kettenbasis",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Bauernkette",
+     "begriff": "Bauernkette"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Bauernkette"
+   ]
+  },
+  {
+   "begriff": "Kettenspitze",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Bauernkette",
+     "begriff": "Bauernkette"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Bauernkette"
+   ]
+  },
+  {
+   "begriff": "Klassische Partie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Partie mit langer Bedenkzeit, nach den Regeln der FIDE 60 Minuten und mehr je Seite [3] (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "klassische-partie-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "klassische-partie-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Köder",
+   "text": [
+    {
+     "art": "text",
+     "text": "Material, das absichtlich angeboten wird, damit der Gegner einen bestimmten Zug spielt (Kapitel 4 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.5",
+     "anker": "koeder-4"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "koeder-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "koeder-4",
+     "kapitel": 4,
+     "abschnitt": "4.5",
+     "abbildung": "4.19"
+    },
+    {
+     "anker": "koeder-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.14"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Kombination",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine erzwungene Zugfolge, die Material gewinnt oder zum Matt führt, auch gegen die beste Verteidigung (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 7",
+     "anker": "kombination-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kombination-7",
+     "kapitel": 7,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Kompensation",
+   "text": [
+    {
+     "art": "text",
+     "text": "Was die opfernde Seite für ihr Material bekommt. Gemessen wird sie mit der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Faktorenbilanz",
+     "begriff": "Faktorenbilanz"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.1",
+     "anker": "kompensation-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kompensation-3",
+     "kapitel": 3,
+     "abschnitt": "3.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Faktorenbilanz"
+   ]
+  },
+  {
+   "begriff": "Königsflügel",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Flügel",
+     "begriff": "Flügel"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Flügel"
+   ]
+  },
+  {
+   "begriff": "Königsjagd",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Angriff, der den König mit Schachs und Opfern aus seiner Deckung holt und über das Brett treibt, bis er matt ist. Ein Beispiel ist die Partie Lasker–Thomas (Kapitel 11, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 11.4",
+     "anker": "koenigsjagd-11"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "koenigsjagd-11",
+     "kapitel": 11,
+     "abschnitt": "11.4",
+     "abbildung": "11.16"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Königssicherheit",
+   "text": [
+    {
+     "art": "text",
+     "text": "Wie geschützt ein König steht. Sie ist eines der drei Ziele jeder Eröffnung und einer der vier Faktoren der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Faktorenbilanz",
+     "begriff": "Faktorenbilanz"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 1 und 3; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "koenigssicherheit-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.2",
+     "anker": "koenigssicherheit-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "koenigssicherheit-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    },
+    {
+     "anker": "koenigssicherheit-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Faktorenbilanz"
+   ]
+  },
+  {
+   "begriff": "Kontrollieren",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Feld kontrollierst du, wenn einer deiner Bauern oder eine deiner Figuren dort schlagen könnte, sobald eine gegnerische Figur es betritt (Kapitel 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 2",
+     "anker": "kontrollieren-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kontrollieren-2",
+     "kapitel": 2,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Kontrollpunkt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Zugnummer, für die du vor der Partie festlegst, wie viel Bedenkzeit du dort mindestens noch haben willst (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "kontrollpunkt-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kontrollpunkt-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Korrespondierende Felder",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwei Felder, die zusammengehören: Stehen beide Könige dort, ist im Nachteil, wer mit dem König ziehen muss. Die → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Opposition",
+     "begriff": "Opposition"
+    },
+    {
+     "art": "text",
+     "text": " ist der einfachste Fall (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.9",
+     "anker": "korrespondierende-felder-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "korrespondierende-felder-8",
+     "kapitel": 8,
+     "abschnitt": "8.9",
+     "abbildung": "8.54"
+    }
+   ],
+   "verweise": [
+    "Opposition"
+   ]
+  },
+  {
+   "begriff": "Kritischer Moment",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Stelle der Partie, an der sich viel entscheidet und für die du Bedenkzeit aufsparst: die Öffnung des Zentrums, ein Opfer, ein Abtausch, ein Königsangriff oder der Übergang ins Endspiel (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "kritischer-moment-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kritischer-moment-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Kurze und lange Seite",
+   "text": [
+    {
+     "art": "text",
+     "text": "Im Turmendspiel die beiden Seiten neben der Linie des Bauern: die kurze mit weniger Linien bis zum Rand, die lange mit mehr. Der Verteidiger stellt seinen König auf die kurze und seinen Turm auf die lange Seite (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.1",
+     "anker": "kurze-und-lange-seite-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kurze-und-lange-seite-9",
+     "kapitel": 9,
+     "abschnitt": "9.1",
+     "abbildung": "9.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Lange Partie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Partie mit mindestens 15 Minuten plus 10 Sekunden je Zug, die du im Anschluss gründlich analysierst. Nach den Grenzen der FIDE kann sie noch → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Schnellschach",
+     "begriff": "Schnellschach"
+    },
+    {
+     "art": "text",
+     "text": " sein (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.3",
+     "anker": "lange-partie-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lange-partie-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": [
+    "Schnellschach"
+   ]
+  },
+  {
+   "begriff": "Lange Seite",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Kurze und lange Seite",
+     "begriff": "Kurze und lange Seite"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Kurze und lange Seite"
+   ]
+  },
+  {
+   "begriff": "Langschrittfigur",
+   "text": [
+    {
+     "art": "text",
+     "text": "Läufer, Turm oder Dame: eine Figur, die über mehrere Felder hinweg wirkt (Kapitel 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.3",
+     "anker": "langschrittfigur-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "langschrittfigur-2",
+     "kapitel": 2,
+     "abschnitt": "2.3",
+     "abbildung": "2.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "LAP-Prinzip",
+   "text": [
+    {
+     "art": "text",
+     "text": "Das Prinzip der am wenigsten aktiven Figur (englisch ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Least Active Piece",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": "), das der Großmeister Igor Smirnov lehrt [14]: Frage dich, welche deiner Figuren keine Aufgabe hat, und verbessere genau diese (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.5",
+     "anker": "lap-prinzip-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lap-prinzip-6",
+     "kapitel": 6,
+     "abschnitt": "6.5",
+     "abbildung": "6.16"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Läuferbauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer auf der c- oder f-Linie (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.7",
+     "anker": "laeuferbauer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "laeuferbauer-9",
+     "kapitel": 9,
+     "abschnitt": "9.7",
+     "abbildung": "9.31"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Läuferopfer auf h7",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Griechisches Geschenk",
+     "begriff": "Griechisches Geschenk"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Griechisches Geschenk"
+   ]
+  },
+  {
+   "begriff": "Läuferpaar",
+   "text": [
+    {
+     "art": "text",
+     "text": "Beide Läufer einer Seite, die zusammen alle Felder erreichen. Ein Vorteil ist das Läuferpaar gegen Läufer und Springer oder gegen zwei Springer, vor allem in offenen Stellungen (Kapitel 1, 2 und 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.5",
+     "anker": "laeuferpaar-1"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.9",
+     "anker": "laeuferpaar-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.6",
+     "anker": "laeuferpaar-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "laeuferpaar-1",
+     "kapitel": 1,
+     "abschnitt": "1.5",
+     "abbildung": "1.34"
+    },
+    {
+     "anker": "laeuferpaar-2",
+     "kapitel": 2,
+     "abschnitt": "2.9",
+     "abbildung": "2.85"
+    },
+    {
+     "anker": "laeuferpaar-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.42"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Leichtfigur",
+   "text": [
+    {
+     "art": "text",
+     "text": "Springer oder Läufer (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.4",
+     "anker": "leichtfigur-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "leichtfigur-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Leitfragen",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Skelett-Röntgen",
+     "begriff": "Skelett-Röntgen"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Skelett-Röntgen"
+   ]
+  },
+  {
+   "begriff": "Lernsammlung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Sammlung deiner wichtigsten Stellungen, Varianten und Pläne, digital oder auf Karteikarten (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.4",
+     "anker": "lernsammlung-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lernsammlung-12",
+     "kapitel": 12,
+     "abschnitt": "12.4",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Linie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine senkrechte Spalte des Bretts, benannt mit den Buchstaben a bis h. Die waagerechten Zeilen heißen → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Reihe",
+     "begriff": "Reihe"
+    },
+    {
+     "art": "text",
+     "text": "n (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "linie-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "linie-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.3"
+    }
+   ],
+   "verweise": [
+    "Reihe"
+   ]
+  },
+  {
+   "begriff": "Loch (Bauernloch)",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Feld, das kein eigener Bauer mehr kontrollieren kann. Für den Gegner kann es ein → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "starkes Feld",
+     "begriff": "Starkes Feld"
+    },
+    {
+     "art": "text",
+     "text": " sein (Kapitel 2 und 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.6",
+     "anker": "loch-2"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.3",
+     "anker": "loch-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "loch-2",
+     "kapitel": 2,
+     "abschnitt": "2.6",
+     "abbildung": "2.56"
+    },
+    {
+     "anker": "loch-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.6"
+    }
+   ],
+   "verweise": [
+    "Starkes Feld"
+   ]
+  },
+  {
+   "begriff": "Lolli-Matt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mattbild: Ein Bauer steht auf f6, und die Dame setzt auf g7 matt. Es trifft das Fianchetto, dem der Läufer fehlt (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "lolli-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lolli-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.41"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Losgelassen ist gezogen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Turnierregel: Hast du eine Figur auf einem Feld losgelassen und ist der Zug regelgerecht, darfst du ihn nicht mehr ändern (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "losgelassen-ist-gezogen-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "losgelassen-ist-gezogen-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Lucena-Stellung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die wichtigste Gewinnstellung im Endspiel Turm und Bauer gegen Turm: Der Bauer steht auf der 7. Reihe, der eigene König auf dem Umwandlungsfeld, und der gegnerische König ist zur Seite gedrängt. Gewonnen wird mit dem → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Brückenbau",
+     "begriff": "Brückenbau"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.3",
+     "anker": "lucena-stellung-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lucena-stellung-9",
+     "kapitel": 9,
+     "abschnitt": "9.3",
+     "abbildung": "9.8"
+    }
+   ],
+   "verweise": [
+    "Brückenbau"
+   ]
+  },
+  {
+   "begriff": "Luftloch",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauernzug vor dem rochierten König, etwa ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "h3"
+    },
+    {
+     "art": "text",
+     "text": ", der ihm ein Fluchtfeld gegen das → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Grundreihenmatt",
+     "begriff": "Grundreihenmatt"
+    },
+    {
+     "art": "text",
+     "text": " verschafft (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.3",
+     "anker": "luftloch-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "luftloch-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.14"
+    }
+   ],
+   "verweise": [
+    "Grundreihenmatt"
+   ]
+  },
+  {
+   "begriff": "Material",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Figuren und Bauern, die eine Seite besitzt, gezählt nach den → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Figurenwerte",
+     "begriff": "Figurenwerte"
+    },
+    {
+     "art": "text",
+     "text": "n. Einer der vier Faktoren der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Faktorenbilanz",
+     "begriff": "Faktorenbilanz"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.2",
+     "anker": "material-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "material-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Figurenwerte",
+    "Faktorenbilanz"
+   ]
+  },
+  {
+   "begriff": "Matt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Der König steht im Schach, und keine erlaubte Antwort hilft: weder wegziehen noch schlagen noch dazwischenstellen. Die Partie ist beendet (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "matt-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "matt-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.10"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Mattbild",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine typische Aufstellung der Figuren, in der ein König matt ist, etwa das Grundreihenmatt oder das Erstickungsmatt (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "mattbild-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "mattbild-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Mehrbauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer, den eine Seite mehr hat als die andere.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Mehrheit",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Bauernmehrheit",
+     "begriff": "Bauernmehrheit (Mehrheit)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Bauernmehrheit (Mehrheit)"
+   ]
+  },
+  {
+   "begriff": "Minderheitsangriff",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Minderheit von Bauern rückt gegen eine gegnerische Mehrheit vor, nicht um einen Freibauern zu bilden, sondern um den Gegner zu einer dauerhaften Bauernschwäche zu zwingen. Typisch ist er in der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Carlsbad-Struktur",
+     "begriff": "Carlsbad-Struktur"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "minderheitsangriff-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "minderheitsangriff-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.32"
+    }
+   ],
+   "verweise": [
+    "Carlsbad-Struktur"
+   ]
+  },
+  {
+   "begriff": "Mittelbauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer auf der d- oder e-Linie (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.7",
+     "anker": "mittelbauer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "mittelbauer-9",
+     "kapitel": 9,
+     "abschnitt": "9.7",
+     "abbildung": "9.28"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Mittelspiel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Phase nach der Eröffnung. Sie beginnt, sobald beide Seiten entwickelt und rochiert haben (Kapitel 1 und 6; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "mittelspiel-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.1",
+     "anker": "mittelspiel-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "mittelspiel-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.7"
+    },
+    {
+     "anker": "mittelspiel-6",
+     "kapitel": 6,
+     "abschnitt": "6.1",
+     "abbildung": "6.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Motiv",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die wiederkehrende taktische Idee hinter einer Kombination oder Falle, etwa Fesselung, Ablenkung oder Doppelangriff (Kapitel 4 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.1",
+     "anker": "motiv-4"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "motiv-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "motiv-4",
+     "kapitel": 4,
+     "abschnitt": "4.1",
+     "abbildung": null
+    },
+    {
+     "anker": "motiv-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.21"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Notation",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Algebraische Notation",
+     "begriff": "Algebraische Notation"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Algebraische Notation"
+   ]
+  },
+  {
+   "begriff": "Offene Linie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Linie, auf der gar kein Bauer mehr steht. Sie ist der Platz für die Türme (Kapitel 1 und 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.2",
+     "anker": "offene-linie-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.2",
+     "anker": "offene-linie-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "offene-linie-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.12"
+    },
+    {
+     "anker": "offene-linie-2",
+     "kapitel": 2,
+     "abschnitt": "2.2",
+     "abbildung": "2.12"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Offene Stellung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Im Zentrum steht kein Bauer mehr, die d- und die e-Linie sind offen. Hier ist das Läuferpaar besonders stark (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.2",
+     "anker": "offene-stellung-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "offene-stellung-5",
+     "kapitel": 5,
+     "abschnitt": "5.2",
+     "abbildung": "5.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Opfer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Material freiwillig hergeben, um dafür etwas anderes zu bekommen, etwa einen Angriff auf den König (Kapitel 1 und 3; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.3",
+     "anker": "opfer-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.1",
+     "anker": "opfer-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "opfer-1",
+     "kapitel": 1,
+     "abschnitt": "1.3",
+     "abbildung": "1.21"
+    },
+    {
+     "anker": "opfer-3",
+     "kapitel": 3,
+     "abschnitt": "3.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Opposition",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Könige stehen sich auf einer Linie, Reihe oder Diagonale mit genau einem Feld Abstand gegenüber. Wer am Zug ist, muss weichen. Die Opposition hat also die Seite, die nicht am Zug ist (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.2",
+     "anker": "opposition-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "opposition-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Partieformular",
+   "text": [
+    {
+     "art": "text",
+     "text": "Das Blatt, auf dem du im Turnier alle Züge beider Seiten mitschreibst (Kapitel 0 und 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "partieformular-0"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.3",
+     "anker": "partieformular-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "partieformular-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    },
+    {
+     "anker": "partieformular-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Patt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Seite am Zug steht nicht im Schach, hat allerdings keinen regelgerechten Zug. Die Partie endet sofort remis (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "patt-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "patt-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.10"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pattreserve",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer des Verteidigers, der noch ziehen kann. Er verhindert, dass der eingesperrte König patt ist, und macht dadurch ein Matt erst möglich (Kapitel 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 10.5",
+     "anker": "pattreserve-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "pattreserve-10",
+     "kapitel": 10,
+     "abschnitt": "10.5",
+     "abbildung": "10.19"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Philidor-Stellung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die wichtigste Remisstellung im Endspiel Turm und Bauer gegen Turm: Der verteidigende König steht vor dem Bauern, und der Turm hält den gegnerischen König von der Reihe vor dem Bauern fern. Rückt der Bauer auf diese Reihe vor, gibt der Turm Schachs von hinten (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.2",
+     "anker": "philidor-stellung-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "philidor-stellung-9",
+     "kapitel": 9,
+     "abschnitt": "9.2",
+     "abbildung": "9.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Philidors Vermächtnis",
+   "text": [
+    {
+     "art": "text",
+     "text": "Das → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Erstickungsmatt",
+     "begriff": "Erstickungsmatt"
+    },
+    {
+     "art": "text",
+     "text": " nach einem Damenopfer auf g8: Der Turm muss die Dame schlagen und nimmt damit dem eigenen König das letzte Feld. Danach setzt der Springer auf f7 matt (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.5",
+     "anker": "philidors-vermaechtnis-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "philidors-vermaechtnis-7",
+     "kapitel": 7,
+     "abschnitt": "7.5",
+     "abbildung": "7.61"
+    }
+   ],
+   "verweise": [
+    "Erstickungsmatt"
+   ]
+  },
+  {
+   "begriff": "Planbilanz",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Tabelle, die für beide Seiten die drei → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Planfragen",
+     "begriff": "Planfragen"
+    },
+    {
+     "art": "text",
+     "text": " beantwortet. Darunter steht der Plan in einem Satz (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.6",
+     "anker": "planbilanz-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "planbilanz-6",
+     "kapitel": 6,
+     "abschnitt": "6.6",
+     "abbildung": "6.21"
+    }
+   ],
+   "verweise": [
+    "Planfragen"
+   ]
+  },
+  {
+   "begriff": "Planfragen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die drei Fragen, mit denen du im Mittelspiel einen Plan findest: Wo spiele ich? Was will mein Gegner? Welche Figur bringe ich dorthin? (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.2",
+     "anker": "planfragen-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "planfragen-6",
+     "kapitel": 6,
+     "abschnitt": "6.2",
+     "abbildung": "6.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Prinzip der zwei Schwächen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine einzige Schwäche kann der Verteidiger häufig halten. Deshalb schaffst du am anderen Flügel eine zweite, und er muss seine Figuren auf zwei Stellen verteilen (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.3",
+     "anker": "prinzip-der-zwei-schwaechen-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "prinzip-der-zwei-schwaechen-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.11"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Prophylaxe",
+   "text": [
+    {
+     "art": "text",
+     "text": "Einen Plan des Gegners verhindern, bevor er ihn ausführen kann. Den Begriff hat Aaron Nimzowitsch in die Schachlehre eingeführt [11] (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.4",
+     "anker": "prophylaxe-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "prophylaxe-6",
+     "kapitel": 6,
+     "abschnitt": "6.4",
+     "abbildung": "6.12"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Prüffragen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Drei Fragen gegen Fallen: ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "F1",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Warum lässt mein Gegner das zu? ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "F2",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Was passiert zwei Antworten weiter? ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "F3",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Ist die Fesselung absolut oder relativ, und entsteht eine zweite? (Kapitel 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.2",
+     "anker": "prueffragen-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "prueffragen-4",
+     "kapitel": 4,
+     "abschnitt": "4.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Quadratregel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ziehe vom Freibauern bis zum Umwandlungsfeld ein Quadrat, zur Seite des gegnerischen Königs hin. Kann der König es betreten, wenn er am Zug ist, holt er den Bauern ein (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "quadratregel-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "quadratregel-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.37"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Qualität",
+   "text": [
+    {
+     "art": "text",
+     "text": "Der Wertunterschied zwischen einem Turm und einer Leichtfigur. „Die Qualität gewinnen“ heißt, einen Turm für einen Springer oder Läufer zu bekommen (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.4",
+     "anker": "qualitaet-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "qualitaet-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Qualitätsopfer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Du gibst freiwillig einen Turm für eine Leichtfigur. Es lohnt sich nur für etwas, das lange hält: einen entblößten gegnerischen König, zerstörte Bauern oder einen Vorposten (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.7",
+     "anker": "qualitaetsopfer-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "qualitaetsopfer-6",
+     "kapitel": 6,
+     "abschnitt": "6.7",
+     "abbildung": "6.27"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Randbauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer auf der a- oder h-Linie (Kapitel 8 und 9; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.6",
+     "anker": "randbauer-8"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.4",
+     "anker": "randbauer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "randbauer-8",
+     "kapitel": 8,
+     "abschnitt": "8.6",
+     "abbildung": "8.25"
+    },
+    {
+     "anker": "randbauer-9",
+     "kapitel": 9,
+     "abschnitt": "9.4",
+     "abbildung": "9.15"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Raum",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Felder hinter deiner Bauernfront, auf denen deine Figuren stehen können, ohne von gegnerischen Bauern vertrieben zu werden. Wer mehr Raum hat, meidet den Abtausch (Kapitel 2, 3 und 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.2",
+     "anker": "raum-2"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.2",
+     "anker": "raum-3"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "raum-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "raum-2",
+     "kapitel": 2,
+     "abschnitt": "2.2",
+     "abbildung": "2.8"
+    },
+    {
+     "anker": "raum-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    },
+    {
+     "anker": "raum-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.24"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Räumung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Du opferst eine eigene Figur, nur um das Feld freizumachen, auf dem sie steht. Eine andere deiner Figuren entscheidet von dort aus die Partie (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "raeumung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "raeumung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Regel des Quadrats",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Quadratregel",
+     "begriff": "Quadratregel"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Quadratregel"
+   ]
+  },
+  {
+   "begriff": "Reihe",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine waagerechte Zeile des Bretts, nummeriert von 1 bis 8. Die senkrechten Spalten heißen → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Linie",
+     "begriff": "Linie"
+    },
+    {
+     "art": "text",
+     "text": "n (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "reihe-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "reihe-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.3"
+    }
+   ],
+   "verweise": [
+    "Linie"
+   ]
+  },
+  {
+   "begriff": "Remis",
+   "text": [
+    {
+     "art": "text",
+     "text": "Unentschieden. Eine Partie endet remis durch Patt, Einigung, eine tote Stellung, dreifache Stellungswiederholung oder die 50-Züge-Regel. Die beiden letzten musst du beanspruchen, da die Partie erst nach fünfmaliger Wiederholung oder 75 Zügen ohne Bauernzug und Schlag von selbst endet (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "remis-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "remis-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Repertoire",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Eröffnungen, die du mit Weiß und mit Schwarz regelmäßig spielst.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Reserve-Tempo",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein aufgesparter Bauernzug, mit dem du in einer Zugzwangstellung das Zugrecht abgibst, ohne deinen König zu verschlechtern (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.9",
+     "anker": "reserve-tempo-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "reserve-tempo-8",
+     "kapitel": 8,
+     "abschnitt": "8.9",
+     "abbildung": "8.53"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Rochade",
+   "text": [
+    {
+     "art": "text",
+     "text": "Der einzige Zug mit zwei eigenen Figuren: Der König zieht zwei Felder in Richtung eines Turms, und dieser Turm springt über ihn hinweg auf das Feld daneben. Kurz heißt die Rochade zum Königsflügel, lang die zum Damenflügel. Erlaubt ist sie nur, wenn König und Turm noch nicht gezogen haben, zwischen ihnen nichts steht und der König weder im Schach steht noch über oder auf ein angegriffenes Feld zieht (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "rochade-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "rochade-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.12"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Röntgen-Regel",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Schach-Röntgen-Regel",
+     "begriff": "Schach-Röntgen-Regel"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Schach-Röntgen-Regel"
+   ]
+  },
+  {
+   "begriff": "Rückständiger Bauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer, der hinter seinen Nachbarbauern zurückgeblieben ist: Sie stehen schon vor ihm und können ihn nicht mehr decken. Vor ihm liegt ein Loch (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.4",
+     "anker": "rueckstaendiger-bauer-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "rueckstaendiger-bauer-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Ruhe",
+   "text": [
+    {
+     "art": "text",
+     "text": "Der Punkt, bis zu dem du eine Variante rechnest: Kein Schach, kein Schlag und keine Drohung liegt mehr in der Luft (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "ruhe-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "ruhe-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schach",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur greift den König an. Der angegriffene Spieler muss sofort reagieren: den König wegziehen, die angreifende Figur schlagen oder eine Figur dazwischenstellen (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "schach-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schach-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.10"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schachdistanz",
+   "text": [
+    {
+     "art": "text",
+     "text": "Der Abstand, den ein Turm zum gegnerischen König braucht, um Schachs zu geben: Steht er zu nah, geht der König auf ihn zu, und die Schachs hören auf. Faustregel: mindestens drei Linien zwischen Turm und Bauer (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.1",
+     "anker": "schachdistanz-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schachdistanz-9",
+     "kapitel": 9,
+     "abschnitt": "9.1",
+     "abbildung": "9.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schachmatt",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Matt",
+     "begriff": "Matt"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Matt"
+   ]
+  },
+  {
+   "begriff": "Schach-Röntgen-Regel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Prüfung vor jedem Zug, in dieser Reihenfolge und für beide Seiten: Schachs, Schläge, Drohungen. Zwingt nichts davon, folgt die Optimierung: Welcher ruhige Zug verbessert meine Stellung am meisten? (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.4",
+     "anker": "schach-roentgen-regel-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schach-roentgen-regel-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.23"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schachuhr",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Uhr mit zwei Anzeigen. Es läuft immer die Zeit der Seite, die am Zug ist. Nach deinem Zug drückst du deinen Knopf (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "schachuhr-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schachuhr-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schäfermatt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Das Matt auf f7 im vierten Zug durch Dame und Läufer, etwa nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Dh5 Sc6 3. Lc4 Sf6 4. Dxf7#"
+    },
+    {
+     "art": "text",
+     "text": " (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.3",
+     "anker": "schaefermatt-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schaefermatt-1",
+     "kapitel": 1,
+     "abschnitt": "1.3",
+     "abbildung": "1.13"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Scharf",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Stellung oder Variante heißt scharf, wenn beide Seiten Risiken eingehen, genau rechnen müssen und ein einziger Fehler häufig die Partie entscheidet. Das Gegenteil ist ruhig.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Scheinopfer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Opfer, bei dem das Material nach wenigen Zügen zurückkommt, wie der Bauer im Damengambit (Kapitel 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.1",
+     "anker": "scheinopfer-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "scheinopfer-3",
+     "kapitel": 3,
+     "abschnitt": "3.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schlagreflex",
+   "text": [
+    {
+     "art": "text",
+     "text": "Der Drang, eine scheinbar ungedeckte Figur sofort zu schlagen. Auf ihm bauen fast alle Eröffnungsfallen auf (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.3",
+     "anker": "schlagreflex-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schlagreflex-1",
+     "kapitel": 1,
+     "abschnitt": "1.3",
+     "abbildung": "1.13"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schlechter Läufer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Läufer, dessen eigene Bauern auf Feldern seiner Farbe stehen und ihm die Wege versperren. Beim ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "guten Läufer",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " stehen sie auf der anderen Farbe. Es zählt auch, ob der Läufer vor oder hinter seinen Bauern steht (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.6",
+     "anker": "schlechter-laeufer-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schlechter-laeufer-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.40"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schlüsselfeld",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Feld vor dem eigenen Freibauern, das dein König erreichen will, da du gewinnst, wenn er es besetzt, gleich wer am Zug ist, solange der Bauer nicht sofort verloren geht. Bauer auf der 2., 3. oder 4. Reihe: die drei Felder zwei Reihen vor ihm. Bauer auf der 5. oder 6. Reihe: die sechs Felder eine und zwei Reihen vor ihm. Randbauer: die beiden letzten Felder der Nachbarlinie (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.6",
+     "anker": "schluesselfeld-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schluesselfeld-8",
+     "kapitel": 8,
+     "abschnitt": "8.6",
+     "abbildung": "8.25"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schnellschach",
+   "text": [
+    {
+     "art": "text",
+     "text": "Partien mit mittlerer Bedenkzeit, nach den Regeln der FIDE mehr als 10 und weniger als 60 Minuten je Seite, gerechnet wie beim → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Blitz",
+     "begriff": "Blitz"
+    },
+    {
+     "art": "text",
+     "text": " [3] (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "schnellschach-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schnellschach-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": [
+    "Blitz"
+   ]
+  },
+  {
+   "begriff": "Schwäche",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Feld, das kein eigener Bauer mehr kontrollieren kann, oder ein Bauer, den kein eigener Bauer mehr decken kann (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.1",
+     "anker": "schwaeche-5"
+    },
+    {
+     "art": "text",
+     "text": "). Im weiteren Sinn jede Stelle, die der Verteidiger bewachen muss: ein Bauer, ein Feld, eine Linie oder der König (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.3",
+     "anker": "schwaeche-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schwaeche-5",
+     "kapitel": 5,
+     "abschnitt": "5.1",
+     "abbildung": "5.2"
+    },
+    {
+     "anker": "schwaeche-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.11"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Schwerfigur",
+   "text": [
+    {
+     "art": "text",
+     "text": "Turm oder Dame (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.4",
+     "anker": "schwerfigur-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schwerfigur-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Sicherheitsblick",
+   "text": [
+    {
+     "art": "text",
+     "text": "Drei Fragen unmittelbar vor dem Ziehen: Steht mein König nach dem Zug sicher? Kann der Gegner die gezogene Figur sofort schlagen? Erlaube ich ihm ein Schach oder gar ein Matt? (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.1",
+     "anker": "sicherheitsblick-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "sicherheitsblick-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Skelett",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Bauernstruktur",
+     "begriff": "Bauernstruktur (Skelett)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Bauernstruktur (Skelett)"
+   ]
+  },
+  {
+   "begriff": "Skelettbilanz",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Tabelle, die für beide Seiten die Leitfragen des → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Skelett-Röntgen",
+     "begriff": "Skelett-Röntgen"
+    },
+    {
+     "art": "text",
+     "text": "s beantwortet, eine Zeile je Leitfrage (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.2",
+     "anker": "skelettbilanz-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "skelettbilanz-5",
+     "kapitel": 5,
+     "abschnitt": "5.2",
+     "abbildung": "5.5"
+    }
+   ],
+   "verweise": [
+    "Skelett-Röntgen"
+   ]
+  },
+  {
+   "begriff": "Skelett-Röntgen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Routine, mit der du eine Bauernstruktur liest. Vor jedem Bauernzug fragst du zunächst, was er vorn gewinnt und hinten aufgibt. Danach folgen vier Leitfragen: Felder (welche kann kein Bauer mehr kontrollieren?), Bauern (welche kann kein Bauer mehr decken?), Richtung (wohin zeigen die Ketten, wo liegen Raum und Mehrheit?) und Figuren (welche passen zu diesem Skelett?). Am Ende steht der Plan in einem Satz (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.2",
+     "anker": "skelett-roentgen-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "skelett-roentgen-5",
+     "kapitel": 5,
+     "abschnitt": "5.2",
+     "abbildung": "5.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Spannung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Tausch ist möglich, aber noch hat niemand geschlagen. Bei Bauern: Zwei gegnerische Bauern könnten einander schlagen. Wer die Spannung auflöst, legt die Bauernstruktur fest (Kapitel 1 und 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.5",
+     "anker": "spannung-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.5",
+     "anker": "spannung-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "spannung-1",
+     "kapitel": 1,
+     "abschnitt": "1.5",
+     "abbildung": "1.32"
+    },
+    {
+     "anker": "spannung-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.29"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Specht-Methode",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine strenge Form des Wiederholens (englisch ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Woodpecker Method",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": "), beschrieben von den schwedischen Großmeistern Axel Smith und Hans Tikkanen [15]: Du löst denselben großen Satz von Aufgaben mehrmals hintereinander, jeden Durchgang schneller (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.3",
+     "anker": "specht-methode-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "specht-methode-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Spieß",
+   "text": [
+    {
+     "art": "text",
+     "text": "Wie eine Fesselung, nur steht die wertvollere Figur vorn: Sie wird angegriffen und weicht aus, und die Figur dahinter fällt (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "spiess-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "spiess-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.6"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Springerbauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer auf der b- oder g-Linie (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.7",
+     "anker": "springerbauer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "springerbauer-9",
+     "kapitel": 9,
+     "abschnitt": "9.7",
+     "abbildung": "9.28"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Starkes Feld",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Feld in der gegnerischen Hälfte, das kein gegnerischer Bauer mehr angreifen kann (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.3",
+     "anker": "starkes-feld-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "starkes-feld-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.7"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Starterpaket",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine von vier Zusammenstellungen aus je einer Eröffnung mit Weiß, einer gegen ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4"
+    },
+    {
+     "art": "text",
+     "text": " und einer gegen ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4"
+    },
+    {
+     "art": "text",
+     "text": ", die einer gemeinsamen Idee folgen (Kapitel 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.1",
+     "anker": "starterpaket-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "starterpaket-2",
+     "kapitel": 2,
+     "abschnitt": "2.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Stellungswiederholung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Entsteht dieselbe Stellung zum dritten Mal, mit derselben Seite am Zug und denselben Zugmöglichkeiten, kannst du Remis beanspruchen (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "stellungswiederholung-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "stellungswiederholung-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Stiller Zug",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Zug, der kein Schach gibt und nichts schlägt. Häufig löst gerade er die Aufgabe, da er zwei Dinge zugleich vorbereitet oder dem Gegner das Zugrecht zuschiebt (Kapitel 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 10.1",
+     "anker": "stiller-zug-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "stiller-zug-10",
+     "kapitel": 10,
+     "abschnitt": "10.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Stopp-Moment",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Stelle in einer Falle, an der du die drei → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Prüffragen",
+     "begriff": "Prüffragen"
+    },
+    {
+     "art": "text",
+     "text": " durchgehst. In der Bildunterschrift ist sie als Stopp-Moment markiert (Kapitel 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.3",
+     "anker": "stopp-moment-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "stopp-moment-4",
+     "kapitel": 4,
+     "abschnitt": "4.3",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Prüffragen"
+   ]
+  },
+  {
+   "begriff": "Studie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine komponierte Stellung, die eine besondere Gewinn-, Remis- oder Pattidee möglichst klar zeigt (Kapitel 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 10.1",
+     "anker": "studie-10"
+    },
+    {
+     "art": "text",
+     "text": "). Auf Lichess heißt zusätzlich die Funktion so, in der du eigene Stellungen und Varianten sammelst (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.3",
+     "anker": "studie-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "studie-10",
+     "kapitel": 10,
+     "abschnitt": "10.1",
+     "abbildung": null
+    },
+    {
+     "anker": "studie-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tablebase",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Endspieldatenbank, die für jede Stellung mit höchstens sieben Figuren das bewiesene Ergebnis bei bestem Spiel angibt, und zwar für jeden möglichen Zug (Kapitel 8 und 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.10",
+     "anker": "tablebase-8"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.3",
+     "anker": "tablebase-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tablebase-8",
+     "kapitel": 8,
+     "abschnitt": "8.10",
+     "abbildung": "8.68"
+    },
+    {
+     "anker": "tablebase-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tarrasch-Regel",
+   "text": [
+    {
+     "art": "text",
+     "text": "Türme gehören hinter Freibauern: hinter die eigenen, um sie zu unterstützen, und hinter die gegnerischen, um sie aufzuhalten. Die Regel geht auf Siegbert Tarrasch zurück [16] (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.6",
+     "anker": "tarrasch-regel-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tarrasch-regel-9",
+     "kapitel": 9,
+     "abschnitt": "9.6",
+     "abbildung": "9.24"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tausch",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Abtausch",
+     "begriff": "Abtausch"
+    },
+    {
+     "art": "text",
+     "text": ", → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Tauschfrage",
+     "begriff": "Tauschfrage"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Abtausch",
+    "Tauschfrage"
+   ]
+  },
+  {
+   "begriff": "Tauschfrage",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Frage vor jedem Abtausch, wem er nützt. Wer die Schwäche hat, behält Figuren, wer sie angreift, tauscht. Auch wer mehr Raum hat, behält seine Figuren. Im Endspiel lautet sie: Welches Endspiel entsteht nach dem Tausch? (Kapitel 5, 6 und 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.6",
+     "anker": "tauschfrage-5"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.5",
+     "anker": "tauschfrage-6"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.2",
+     "anker": "tauschfrage-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tauschfrage-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.42"
+    },
+    {
+     "anker": "tauschfrage-6",
+     "kapitel": 6,
+     "abschnitt": "6.5",
+     "abbildung": "6.19"
+    },
+    {
+     "anker": "tauschfrage-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tempo",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Zug als Zeiteinheit. Ein Zug kommt „mit Tempo“, wenn der Gegner sofort reagieren muss, statt seinen eigenen Plan zu verfolgen. Ein ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Tempoverlust",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " ist ein Zug, der nichts einbringt, etwa wenn eine Figur hin- und wieder zurückzieht (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.2",
+     "anker": "tempo-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tempo-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.12"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Themenblock",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwanzig Aufgaben zu einem einzigen Motiv, etwa zur Gabel (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.3",
+     "anker": "themenblock-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "themenblock-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Todsünden",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die vier häufigsten Fehler in der Eröffnung: die verfrühte Dame, Materialgier vor Entwicklung, Passivität und der König, der in der Mitte bleibt (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.2",
+     "anker": "todsuenden-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "todsuenden-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.8"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tote Stellung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Stellung, in der keine Seite mehr mattsetzen kann, auch nicht bei schlechtester Gegenwehr, etwa König gegen König. Die Partie ist sofort remis (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "tote-stellung-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tote-stellung-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Treppenmatt",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mattführung mit zwei Schwerfiguren: Eine sperrt eine Reihe, die andere gibt auf der nächsten Schach, Stufe für Stufe, bis der König am Rand steht (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.4",
+     "anker": "treppenmatt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "treppenmatt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.39"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Triangulation",
+   "text": [
+    {
+     "art": "text",
+     "text": "Dein König läuft auf drei Feldern ein kleines Dreieck, während der gegnerische König nur zwischen zwei Feldern pendeln kann. Danach steht dieselbe Stellung auf dem Brett, aber mit dem Gegner am Zug (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.8",
+     "anker": "triangulation-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "triangulation-8",
+     "kapitel": 8,
+     "abschnitt": "8.8",
+     "abbildung": "8.51"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Troitzky-Linie",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Grenze im Endspiel zwei Springer gegen Bauer, benannt nach dem russischen Studienkomponisten Alexei Troizki (auch Troitzky geschrieben). Steht der Bauer auf seinem Grenzfeld oder weiter zurück und blockiert ihn ein Springer sicher, gewinnt die Seite mit den Springern. Manche dieser Gewinne dauern allerdings länger, als die 50-Züge-Regel erlaubt (Kapitel 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 10.5",
+     "anker": "troitzky-linie-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "troitzky-linie-10",
+     "kapitel": 10,
+     "abschnitt": "10.5",
+     "abbildung": "10.22"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Überlastung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur muss zwei Aufgaben zugleich erfüllen. Erzwingst du die eine, bleibt die andere unerledigt (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "ueberlastung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "ueberlastung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.20"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Umwandlung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Erreicht ein Bauer die letzte Reihe, wird er im selben Zug nach deiner Wahl zu einer Dame, einem Turm, Läufer oder Springer der eigenen Farbe (Kapitel 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "umwandlung-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "umwandlung-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.19"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Umwandlungsschach",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Umwandlung, bei der die neue Dame sofort Schach gibt. Sie gewinnt ein Tempo, da der Gegner erst seinen König ziehen muss (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "umwandlungsschach-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "umwandlungsschach-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Ungleichfarbige Läufer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Jede Seite hat einen Läufer, und die beiden laufen auf verschiedenen Feldfarben. Sie können einander nicht angreifen, was im Endspiel dem Verteidiger häufig eine → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Festung",
+     "begriff": "Festung"
+    },
+    {
+     "art": "text",
+     "text": " erleichtert. Laufen beide auf derselben Feldfarbe, heißen sie gleichfarbig (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.8",
+     "anker": "ungleichfarbige-laeufer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "ungleichfarbige-laeufer-9",
+     "kapitel": 9,
+     "abschnitt": "9.8",
+     "abbildung": "9.35"
+    }
+   ],
+   "verweise": [
+    "Festung"
+   ]
+  },
+  {
+   "begriff": "Unterverwandlung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Umwandlung in Turm, Läufer oder Springer statt in die Dame, etwa um ein Patt zu vermeiden oder mit dem Springer Schach zu geben (Kapitel 0, 7 und 10; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "unterverwandlung-0"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.2",
+     "anker": "unterverwandlung-7"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 10.1",
+     "anker": "unterverwandlung-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "unterverwandlung-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.19"
+    },
+    {
+     "anker": "unterverwandlung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.26"
+    },
+    {
+     "anker": "unterverwandlung-10",
+     "kapitel": 10,
+     "abschnitt": "10.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Vancura-Stellung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Remisstellung im Turmendspiel gegen einen Randbauern: Der verteidigende Turm greift den Bauern von der Seite an und gibt von dort Schachs, sobald sich der gegnerische König nähert. Der eigene König hält Abstand und wartet gegen den weißen a-Bauern auf g7 oder h7 (Kapitel 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 9.4",
+     "anker": "vancura-stellung-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "vancura-stellung-9",
+     "kapitel": 9,
+     "abschnitt": "9.4",
+     "abbildung": "9.15"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Variantenbaum",
+   "text": [
+    {
+     "art": "text",
+     "text": "Deine Kandidaten und die Antworten des Gegners: Jeder Kandidat ist ein Ast, jede Antwort eine Verzweigung. Du rechnest Ast für Ast (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "variantenbaum-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "variantenbaum-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Verbundene Freibauern",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwei Freibauern auf benachbarten Linien. Steht einer schräg hinter dem anderen, deckt er ihn. Schlägt der König den hinteren, läuft der vordere durch (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.7",
+     "anker": "verbundene-freibauern-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "verbundene-freibauern-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.50"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Verbundene Türme",
+   "text": [
+    {
+     "art": "text",
+     "text": "Zwischen den beiden Türmen steht keine Figur mehr, daher decken sie sich gegenseitig (Kapitel 1 und 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "verbundene-tuerme-1"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 2",
+     "anker": "verbundene-tuerme-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "verbundene-tuerme-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    },
+    {
+     "anker": "verbundene-tuerme-2",
+     "kapitel": 2,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Verdoppeln",
+   "text": [
+    {
+     "art": "text",
+     "text": "Beide Türme hintereinander auf dieselbe Linie stellen (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.5",
+     "anker": "verdoppeln-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "verdoppeln-6",
+     "kapitel": 6,
+     "abschnitt": "6.5",
+     "abbildung": "6.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Vergifteter Bauer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Bauer, dessen Eroberung einen versteckten Preis hat (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.2",
+     "anker": "vergifteter-bauer-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "vergifteter-bauer-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.8"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Visualisierung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Stellungen im Kopf sehen, ohne die Figuren zu ziehen: Nach jedem gedachten Zug steht die Figur nur noch auf dem Zielfeld (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.1",
+     "anker": "visualisierung-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "visualisierung-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Vorposten",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "starkes Feld",
+     "begriff": "Starkes Feld"
+    },
+    {
+     "art": "text",
+     "text": ", das eine eigene Figur dauerhaft und sicher besetzen kann. Am stärksten ist er, wenn ihn zusätzlich ein eigener Bauer stützt (Kapitel 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 5.3",
+     "anker": "vorposten-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "vorposten-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.7"
+    }
+   ],
+   "verweise": [
+    "Starkes Feld"
+   ]
+  },
+  {
+   "begriff": "Warnsignale",
+   "text": [
+    {
+     "art": "text",
+     "text": "Sieben Zeichen dafür, dass in der Stellung eine Taktik steckt: ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W1",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " ungedeckte Figur, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W2",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " gefährliche Linie, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W3",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " König ohne Luft, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W4",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " doppelte Aufgabe, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W5",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Geschenk (Kapitel 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.2",
+     "anker": "warnsignale-4"
+    },
+    {
+     "art": "text",
+     "text": "), dazu ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W6",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Gabelgeometrie und ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W7",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Figur am Rand (Kapitel 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "warnsignale-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "warnsignale-4",
+     "kapitel": 4,
+     "abschnitt": "4.2",
+     "abbildung": null
+    },
+    {
+     "anker": "warnsignale-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Warum-Frage",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Prüffragen",
+     "begriff": "Prüffragen"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Prüffragen"
+   ]
+  },
+  {
+   "begriff": "Wegversperrung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Figur oder ein Bauer gerät so auf eine Linie, Reihe oder Diagonale, dass eine andere Figur ihr Ziel nicht mehr erreicht (Kapitel 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 10.4",
+     "anker": "wegversperrung-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "wegversperrung-10",
+     "kapitel": 10,
+     "abschnitt": "10.4",
+     "abbildung": "10.14"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Wertungszahl",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Elo-Zahl",
+     "begriff": "Elo-Zahl"
+    },
+    {
+     "art": "text",
+     "text": ", → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "DWZ",
+     "begriff": "DWZ (Deutsche Wertungszahl)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Elo-Zahl",
+    "DWZ (Deutsche Wertungszahl)"
+   ]
+  },
+  {
+   "begriff": "Wettrennen",
+   "text": [
+    {
+     "art": "text",
+     "text": "Beide Seiten greifen auf verschiedenen Flügeln an. Wer zuerst durchbricht, gibt der Partie die Richtung vor (Kapitel 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.3",
+     "anker": "wettrennen-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "wettrennen-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.2"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zeit",
+   "text": [
+    {
+     "art": "text",
+     "text": "In der → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Faktorenbilanz",
+     "begriff": "Faktorenbilanz"
+    },
+    {
+     "art": "text",
+     "text": " die Zahl der Figuren, die schon im Spiel sind, verglichen mit dem Gegner. Im Mittelspiel lebt sie als → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Initiative",
+     "begriff": "Initiative"
+    },
+    {
+     "art": "text",
+     "text": " weiter (Kapitel 3 und 6; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.2",
+     "anker": "zeit-3"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 6.1",
+     "anker": "zeit-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zeit-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    },
+    {
+     "anker": "zeit-6",
+     "kapitel": 6,
+     "abschnitt": "6.1",
+     "abbildung": "6.1"
+    }
+   ],
+   "verweise": [
+    "Faktorenbilanz",
+    "Initiative"
+   ]
+  },
+  {
+   "begriff": "Zeitgutschrift",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die Sekunden, die du für jeden ausgeführten Zug zur Bedenkzeit hinzubekommst: bei 10+5 sind es 5 Sekunden. Auch die Zeit, die der Gegner nach einem regelwidrigen Zug als Ausgleich erhält, heißt so (Kapitel 0 und 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Kapitel 0",
+     "anker": "zeitgutschrift-0"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "zeitgutschrift-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zeitgutschrift-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    },
+    {
+     "anker": "zeitgutschrift-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zeitnot",
+   "text": [
+    {
+     "art": "text",
+     "text": "Dir bleibt nur noch wenig Zeit für die Züge, die du noch spielen musst (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "zeitnot-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zeitnot-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zeitüberschreitung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Deine Bedenkzeit ist abgelaufen. Du verlierst, es sei denn, der Gegner kann dich mit keiner regelgerechten Zugfolge mehr mattsetzen. Dann endet die Partie remis (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.5",
+     "anker": "zeitueberschreitung-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zeitueberschreitung-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zentrum",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die vier Felder e4, d4, e5 und d5. Von dort erreichen die Figuren beide Flügel. Die Kontrolle des Zentrums ist eines der drei Ziele jeder Eröffnung (Kapitel 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 1.1",
+     "anker": "zentrum-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zentrum-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.2"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zielbilanz",
+   "text": [
+    {
+     "art": "text",
+     "text": "Die kleine Tabelle am Ende einer Eröffnung: Sie fasst zusammen, wie beide Seiten in der Hauptvariante bei den drei Eröffnungszielen dastehen (Kapitel 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.1",
+     "anker": "zielbilanz-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zielbilanz-2",
+     "kapitel": 2,
+     "abschnitt": "2.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zug erraten",
+   "text": [
+    {
+     "art": "text",
+     "text": "Eine Meisterpartie nachspielen und vor jedem Zug des Siegers den eigenen Vorschlag aufschreiben, bevor du den Partiezug aufdeckst (Kapitel 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 12.2",
+     "anker": "zug-erraten-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zug-erraten-12",
+     "kapitel": 12,
+     "abschnitt": "12.2",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zugrecht",
+   "text": [
+    {
+     "art": "text",
+     "text": "Das Recht und die Pflicht, den nächsten Zug zu machen. Meist ist es ein Vorteil, im → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Zugzwang",
+     "begriff": "Zugzwang"
+    },
+    {
+     "art": "text",
+     "text": " ein Nachteil.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Zugzwang"
+   ]
+  },
+  {
+   "begriff": "Zugumstellung",
+   "text": [
+    {
+     "art": "text",
+     "text": "Dieselbe Stellung entsteht über eine andere Zugfolge (Kapitel 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 2.12",
+     "anker": "zugumstellung-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zugumstellung-2",
+     "kapitel": 2,
+     "abschnitt": "2.12",
+     "abbildung": "2.143"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zugzwang",
+   "text": [
+    {
+     "art": "text",
+     "text": "Du musst ziehen, obwohl jeder mögliche Zug deine Stellung verschlechtert. Wäre in derselben Stellung auch der Gegner im Nachteil, wenn er ziehen müsste, heißt der Zugzwang wechselseitig (Kapitel 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 8.2",
+     "anker": "zugzwang-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zugzwang-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Zwischenschach",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Zwischenzug",
+     "begriff": "Zwischenzug"
+    },
+    {
+     "art": "text",
+     "text": ", der Schach gibt (Kapitel 4 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 4.5",
+     "anker": "zwischenschach-4"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "zwischenschach-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zwischenschach-4",
+     "kapitel": 4,
+     "abschnitt": "4.5",
+     "abbildung": "4.17"
+    },
+    {
+     "anker": "zwischenschach-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Zwischenzug"
+   ]
+  },
+  {
+   "begriff": "Zwischenzug",
+   "text": [
+    {
+     "art": "text",
+     "text": "Ein Zug, der die erwartete Antwort, etwa ein Zurückschlagen, aufschiebt, da er eine noch dringendere Drohung stellt (Kapitel 3 und 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 3.10",
+     "anker": "zwischenzug-3"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Abschnitt 7.1",
+     "anker": "zwischenzug-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zwischenzug-3",
+     "kapitel": 3,
+     "abschnitt": "3.10",
+     "abbildung": "3.67"
+    },
+    {
+     "anker": "zwischenzug-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  }
+ ]
+}

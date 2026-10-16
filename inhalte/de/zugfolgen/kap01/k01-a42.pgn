@@ -1,0 +1,14 @@
+[Event "Kapitel 1: Übung: Spannung halten"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k01-a42"]
+[Kapitel "1"]
+[Abschnitt "Übung 6"]
+[Status "freigegeben"]
+[Abbildungen "1.42"]
+
+1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4 { Abb. 1.42 } 4... Nxd4 $6 ( 4... Nf6 ) ( 4... Bc5 ) 5. Qxd4 *

@@ -1,0 +1,353 @@
+/*
+ * Ergänzungen nach dem Handytest von AP 1 (14.10.2026), getrennt von basis.css, damit beide
+ * Dateien übersichtlich bleiben: Rahmen auf breiten Bildschirmen, Erklärung der Werkzeuge,
+ * Daten löschen. Farben und Abstände aus basis.css.
+ */
+:root {
+  /* Fläche neben der App auf breiten Bildschirmen, etwas dunkler als der Grund. */
+  --rand: #e6dfd0;
+}
+
+/* Dunkel: Gerät dunkel und nicht „hell“ gewählt, oder „dunkel“ gewählt (seit 0.2.31). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-farbschema="hell"]) {
+    --rand: var(--navy-tief);
+  }
+}
+
+:root[data-farbschema="dunkel"] {
+  --rand: var(--navy-tief);
+}
+
+/* ---------- Rahmen auf breiten Bildschirmen ---------- */
+
+/*
+ * Die App ist für Hochformat gebaut (höchstens 640 Pixel breit). Ab 672 Pixeln (640 plus je
+ * 16 Pixel Rand) trennt eine Linie mit leichtem Schatten die App von der leeren Fläche daneben.
+ * Wunsch des Autors beim Test am MacBook.
+ */
+@media (min-width: 672px) {
+  html,
+  body {
+    background: var(--rand);
+  }
+
+  .rahmen,
+  .startseite {
+    background: var(--grund);
+    box-shadow:
+      0 0 0 1px var(--linie-stark),
+      0 8px 32px rgba(11, 20, 36, 0.12);
+  }
+
+  .leiste {
+    box-shadow:
+      1px 0 0 var(--linie-stark),
+      -1px 0 0 var(--linie-stark);
+  }
+}
+
+/* ---------- Erklärung der Werkzeuge ---------- */
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip-symbol {
+  flex: none;
+}
+
+/* Werkzeugleiste: Ab drei Werkzeugen eines Kapitels (Kapitel 4) passen die Knöpfe nicht mehr in
+   eine Zeile; sie brechen um, statt gestaucht und abgeschnitten zu werden (Test von 0.2.7). */
+.werkzeugleiste {
+  flex-wrap: wrap;
+}
+
+.werkzeugleiste .chip {
+  flex: none;
+  white-space: nowrap;
+}
+
+/* „◀ frühere“ und „spätere ▶“ (0.2.30): leiser als die Bündel selbst; gedrückt wie ein Schalter. */
+.chip-leise {
+  border-style: dashed;
+  color: var(--text-leise);
+}
+
+.chip-leise[aria-pressed="true"] {
+  background: var(--linie);
+  border-color: var(--linie-stark);
+  color: var(--text);
+}
+
+/* Bündel späterer Kapitel als Vorschau: gestrichelt, mit Plakette „Kap. N“. */
+.chip-vorschau {
+  border-style: dashed;
+}
+
+.plakette-vorschau {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 8px;
+  background: var(--linie);
+  color: var(--text-leise);
+}
+
+/* Reiter eines Bündels über der Karte (0.2.30): die Teile in der Reihenfolge des Buches, der
+   gewählte mit goldener Linie. Beim Skelett-Röntgen steht der Schalter „Skelett“ rechts neben
+   dem letzten Reiter auf derselben Linie (seit 0.2.31, Wunsch des Autors). */
+.reiterbereich {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--raster);
+  border-bottom: 2px solid var(--linie);
+}
+
+.reiterleiste {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.chip-skelett {
+  flex: none;
+  margin-bottom: 4px;
+}
+
+.reiter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tippflaeche);
+  padding: 0 12px;
+  margin-bottom: -2px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--text-leise);
+  font: inherit;
+  cursor: pointer;
+}
+
+.reiter[aria-selected="true"] {
+  color: var(--text);
+  font-weight: 700;
+  border-bottom-color: var(--gold);
+}
+
+.erklaerung {
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.erklaerung .karte-kopf h2 {
+  font-size: 17px;
+}
+
+/* ---------- Daten löschen ---------- */
+
+.nachfrage {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.nachfrage p {
+  font-weight: 600;
+}
+
+.knopf-gefahr {
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 2);
+  border: 1px solid var(--rot-text);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--rot-text);
+  font-weight: 700;
+  text-align: left;
+}
+
+.anleitung summary {
+  min-height: var(--tippflaeche);
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.anleitung ul {
+  margin: 0;
+  padding-left: calc(var(--raster) * 2.5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  font-size: 15px;
+}
+
+/* Leiste und Erklärung bilden einen Bereich; Abstand wie zwischen den Karten. */
+.werkzeugbereich {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 2);
+}
+
+/* Waage der Faktorenbilanz (Kapitel 3): Seiten links und rechts, Text darunter. */
+.waage {
+  display: grid;
+  grid-template-columns: auto minmax(80px, 120px) auto;
+  align-items: end;
+  gap: 4px 8px;
+  margin: 4px 0 6px;
+}
+
+.waage svg {
+  width: 100%;
+  height: auto;
+}
+
+.waage-linien {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.waage-seite {
+  font-size: 13px;
+  color: var(--text-leise);
+}
+
+.waage-text {
+  grid-column: 1 / -1;
+  font-weight: 600;
+}
+
+/* ---------- Sicht-Schalter in der Werkzeugkarte (Entscheidung 15.10.2026) ---------- */
+
+/* Kopf der Werkzeugkarte: Name links, Plakette und Sicht-Schalter rechts (0.2.28). */
+.werkzeugkopf {
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.werkzeugkopf h2 {
+  flex: 1 1 7em;
+  min-width: 0;
+}
+
+.werkzeugkopf-rechts {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  margin-left: auto;
+}
+
+.sichtschalter {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 10px;
+  white-space: nowrap;
+}
+
+/* Zwei Zeilen im Schalter („Sicht: Weiß“, darunter klein „am Zug“), damit er schmal bleibt und
+   neben den Werkzeugnamen passt. */
+.sicht-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.15;
+}
+
+.sicht-zustand {
+  color: var(--text-leise);
+  font-size: 12px;
+}
+
+/* Legende der Markierungen in jeder Werkzeugkarte (0.2.30): klein und leise unter dem Fazit. */
+.legende {
+  font-size: 14px;
+  color: var(--text-leise);
+}
+
+/* Hinweis oben in einer Werkzeugkarte (seit 0.2.33), etwa „Nur Kandidaten“ bei den Todsünden:
+   gut sichtbar, mit goldenem Rand wie eine Randnotiz im Buch. */
+.werkzeug-hinweis {
+  margin: 0;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border-left: 4px solid var(--gold);
+  background: var(--grund);
+  border-radius: var(--radius);
+  font-size: 15px;
+}
+
+/* Nur für Bildschirmleser, etwa die Überschrift der Einstellungen (seit 0.2.31). */
+.nur-vorlesen {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Haken „Nicht mehr anzeigen“ in der Erklärkachel von Zählen und Ziehen (seit 0.2.31). */
+.haken-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+  font-size: 15px;
+  color: var(--text-leise);
+}
+
+.haken-zeile input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--gold);
+}
+
+/* Zeile mit Knopf in den Einstellungen, etwa „Erklärkacheln wieder anzeigen“ (seit 0.2.31). */
+.einstellung-knopf {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--raster);
+  margin: var(--raster) 0;
+}
+
+.einstellung-knopf > span {
+  font-weight: 600;
+}
+
+/* Hinweis auf die Datensicherung nach vier Stunden App-Zeit (seit 0.2.32): wie der
+   Update-Hinweis, aber untereinander, damit drei Bedienelemente auf das Handy passen. */
+.sicherungs-hinweis {
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.sicherungs-hinweis-knoepfe {
+  display: flex;
+  gap: var(--raster);
+}
+
+.update-hinweis button.leise {
+  background: none;
+  border: 1px solid var(--creme);
+  color: var(--creme);
+}
+
+.sicherungs-hinweis-haken {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+  font-weight: 400;
+}

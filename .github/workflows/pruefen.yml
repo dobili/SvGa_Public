@@ -1,0 +1,102 @@
+# Automatische Prüfungen bei jedem Push (Konzept Abschnitt 13 und 14).
+# Veröffentlicht wird nur ein Stand, bei dem alle drei Teile grün sind:
+#   1. Pipeline: Stil (ruff), Tests (pytest), eingecheckte Daten gegen die Schemas
+#   2. App: Typen, Stil, Komponententests, Build mit Größenbudget, Cloudflare-Probelauf
+#   3. Oberfläche: Playwright in Handygröße mit Chromium (Android) und WebKit (iPhone)
+# Die Buchquellen sind privat und fehlen hier absichtlich (CLAUDE.md, Regel 2).
+#
+# Seit der Veröffentlichung (16.10.2026) wieder bei jedem Push und Pull Request: In einem
+# öffentlichen Repository kosten die Läufe nichts. Davor lief die Prüfung nur von Hand, weil die
+# freien Minuten des privaten Repositorys verbraucht waren.
+name: Prüfen
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: pruefen-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    name: Pipeline
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: pipeline/requirements.txt
+      - name: Abhängigkeiten
+        run: pip install -r pipeline/requirements.txt
+      - name: Stil (ruff)
+        run: |
+          ruff check pipeline
+          ruff format --check pipeline
+      - name: Tests (pytest)
+        run: python -m pytest -q
+      - name: Daten gegen die Schemas
+        run: python -m pipeline.pruefen.daten app/public/daten/de/a1
+
+  app:
+    name: App
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Abhängigkeiten
+        run: npm ci
+      - name: Typen, Stil, Komponententests
+        run: npm run pruefen
+      - name: Build mit Größenbudget
+        run: npm run build
+      - name: Cloudflare-Probelauf
+        run: npx wrangler deploy --dry-run
+      - uses: actions/upload-artifact@v5
+        with:
+          name: app-dist
+          path: app/dist
+          retention-days: 7
+
+  oberflaeche:
+    name: Oberfläche (Playwright)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Abhängigkeiten
+        run: npm ci
+      - name: Browser
+        run: npx playwright install --with-deps chromium webkit
+      - name: Build
+        run: npm run build
+      - name: Playwright (Chromium und WebKit in Handygröße)
+        run: npm run test:e2e
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: playwright-bericht
+          path: |
+            app/playwright-report
+            app/test-results
+          retention-days: 7

@@ -1,0 +1,35 @@
+<!doctype html>
+<!--
+  Einstiegsseite der App unter /app/ (Entscheidung 15.10.2026: davor steht unter / die statische
+  Startseite des Buches). Lädt nur src/main.tsx; alles Weitere zeichnet React.
+  Die Farben im Kopf gelten für Statusleiste und Startbildschirm (Konzept Abschnitt 10.3).
+-->
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#16253D" />
+    <meta name="description" content="Die App zum Buch „Schach von Grund auf“" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Schach" />
+    <link rel="icon" href="/symbole/symbol.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/symbole/apple-touch-icon.png" />
+    <title>Schach von Grund auf</title>
+    <script>
+      // Nachtmodus vor dem ersten Zeichnen (src/app/farbschema.ts, Merker „svga.farbschema“).
+      try {
+        var farbschema = localStorage.getItem("svga.farbschema");
+        if (farbschema === "hell" || farbschema === "dunkel")
+          document.documentElement.dataset.farbschema = farbschema;
+      } catch (fehler) {
+        console.warn("Farbschema nicht lesbar:", fehler);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="wurzel"></div>
+    <noscript>Diese App braucht JavaScript.</noscript>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/training.schema.json",
+  "title": "Trainingsseite",
+  "description": "Ein Kasten „Training zu diesem Kapitel“ oder der Abschnitt „Dein Werkzeugkasten“ als Seite der Website (inhalte/de/training/, pipeline/training.py). Seit dem Umzug auf die Website die Quelle dieser Inhalte.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["titel", "adresse", "bloecke", "quelle", "stand"],
+  "properties": {
+    "kapitel": { "description": "Kapitel 0 bis 12; fehlt beim Werkzeugkasten", "type": "integer", "minimum": 0, "maximum": 12 },
+    "titel": { "description": "Kapiteltitel aus dem Buch bzw. „Dein Werkzeugkasten“", "type": "string", "minLength": 1 },
+    "adresse": { "description": "Feste Adresse der Seite, gedruckt im Buch", "type": "string", "pattern": "^/training/(kap[0-9]{2}|werkzeugkasten)/$" },
+    "bloecke": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/block" } },
+    "quelle": { "$ref": "abbildung.schema.json#/properties/quelle" },
+    "stand": { "description": "Datum des letzten Umwandlungs- oder Bearbeitungsstands", "type": "string", "format": "date" }
+  },
+  "$defs": {
+    "link": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["art", "text", "ziel"],
+      "properties": {
+        "art": { "const": "link" },
+        "text": { "type": "string", "minLength": 1 },
+        "ziel": { "description": "Adresse (https://… oder /training/…)", "type": "string", "pattern": "^(https://|/training/)" }
+      }
+    },
+    "teil": { "oneOf": [{ "$ref": "text.schema.json#/$defs/textteil" }, { "$ref": "#/$defs/link" }] },
+    "teile": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/teil" } },
+    "block": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "teile"],
+          "properties": { "art": { "enum": ["absatz", "klein"] }, "teile": { "$ref": "#/$defs/teile" } }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "punkte"],
+          "properties": { "art": { "const": "liste" }, "punkte": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/teile" } } }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["art", "kopf", "zeilen", "unterschrift"],
+          "properties": {
+            "art": { "const": "tabelle" },
+            "kopf": { "type": "array", "items": { "$ref": "#/$defs/teile" } },
+            "zeilen": { "type": "array", "minItems": 1, "items": { "type": "array", "items": { "$ref": "#/$defs/teile" } } },
+            "unterschrift": { "type": "array", "items": { "$ref": "#/$defs/teil" } }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1014 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 12,
+ "titel": "Trainingsmethodik und Checklisten",
+ "abschnitte": [
+  {
+   "nummer": "12.1",
+   "label": "sec:kandidatenzuege",
+   "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+  },
+  {
+   "nummer": "12.2",
+   "label": "sec:analyse",
+   "titel": "Partieanalyse ohne Selbsttäuschung"
+  },
+  {
+   "nummer": "12.3",
+   "label": "sec:plan",
+   "titel": "Der 30-Minuten-Trainingsplan"
+  },
+  {
+   "nummer": "12.4",
+   "label": "sec:saeulen",
+   "titel": "Eröffnungstraining: die vier Säulen"
+  },
+  {
+   "nummer": "12.5",
+   "label": "sec:zeitmanagement",
+   "titel": "Zeitmanagement und Turnierpraxis"
+  },
+  {
+   "nummer": "12.6",
+   "label": "sec:kopf",
+   "titel": "Kopf und Konzentration"
+  },
+  {
+   "nummer": "12.7",
+   "label": "sec:werkzeugkasten",
+   "titel": "Dein Werkzeugkasten"
+  },
+  {
+   "nummer": "12.8",
+   "label": "sec:weiter",
+   "titel": "Wie es weitergeht"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "12.1",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.1",
+    "label": "sec:kandidatenzuege",
+    "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+   },
+   "unterabschnitt": "Die Routine an einem Beispiel",
+   "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "grau",
+     "von": "a1",
+     "nach": "c1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Das griechische Geschenk aus Kapitel 1, Weiß am Zug. Gold: der Kandidat 1. Lxh7+. Grau: der ruhige Kandidat 1. Tc1.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "12.2",
+    "12.3"
+   ],
+   "beispiel": {
+    "id": "k12-a1",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 229
+   },
+   "pruefsumme": "7d9d07a83a1224dc",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Lxh7+",
+      "frage": "Warum prüfst du 1. Lxh7+ vor dem ruhigen 1. Tc1?",
+      "antworten": [
+       "Ruhige Züge sind in der Denkroutine nicht erlaubt.",
+       "Lxh7+ gewinnt ohne jede Rechnung einen Bauern.",
+       "Ein Schach lässt dem Gegner die wenigsten Antworten, darum rechnest du es zuerst."
+      ],
+      "richtig": 2,
+      "erklaerung": "Nach Lxh7+ hat Schwarz nur zwei Züge. Solche zwingenden Züge sind schnell zu Ende gerechnet und kommen deshalb zuerst."
+     }
+    ]
+   }
+  },
+  {
+   "id": "12.2",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.1",
+    "label": "sec:kandidatenzuege",
+    "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+   },
+   "unterabschnitt": "Die Routine an einem Beispiel",
+   "fen": "r1b2r2/ppqn1ppk/2n1p3/3pP1N1/3P4/2N5/PP3PPP/R2Q1RK1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "g8"
+    },
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "g6"
+    },
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "h6"
+    },
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "h8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 1. Lxh7+ Kxh7 2. Sg5+, Schwarz am Zug. Rot: die vier Königszüge, die du in Schritt 3 einzeln prüfst.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "12.1",
+    "12.3"
+   ],
+   "beispiel": {
+    "id": "k12-a1",
+    "pfad": [
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 230
+   },
+   "pruefsumme": "4b36437afdb47cf8",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum prüfst du hier jeden der vier Königszüge einzeln?",
+      "antworten": [
+       "Nur der König kann das Schach abwehren, und jeder Königszug erlaubt Weiß eine andere Fortsetzung.",
+       "Schwarz kann den Springer g5 auch einfach schlagen.",
+       "Ein Bauernzug nach f5 wehrt das Schach ebenfalls ab."
+      ],
+      "richtig": 0,
+      "erklaerung": "Schwarz hat genau vier legale Züge, alle mit dem König. Schritt 3 sucht für jeden die stärkste Antwort von Weiß."
+     }
+    ]
+   }
+  },
+  {
+   "id": "12.3",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.1",
+    "label": "sec:kandidatenzuege",
+    "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+   },
+   "unterabschnitt": "Die Routine an einem Beispiel",
+   "fen": "r1b2r2/ppqn1pp1/2n1p1k1/3pP1N1/3P4/2NQ4/PP3PPP/R4RK1 b - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "g6"
+    },
+    {
+     "farbe": "grau",
+     "von": "g5",
+     "nach": "e6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach 2... Kg6 3. Dd3+, Schwarz am Zug. Gold: das Schach 3. Dd3+. Grau: Nach 3... f5 folgt 4. Sxe6.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "12.1",
+    "12.2"
+   ],
+   "beispiel": {
+    "id": "k12-a1",
+    "pfad": [
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+",
+     "Kg6",
+     "Qd3+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 231
+   },
+   "pruefsumme": "1316b21eff5e7f3c",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "3... f5",
+      "frage": "Welche Folge hat 3... f5 für das Feld e6?",
+      "antworten": [
+       "e6 ist danach doppelt gedeckt.",
+       "Der Springer g5 ist danach gefesselt.",
+       "Der Bauer f7 deckt e6 nicht mehr: 4. Sxe6 greift Dame c7 und Turm f8 an."
+      ],
+      "richtig": 2,
+      "erklaerung": "f5 wehrt das Schach ab, gibt aber den letzten Schutz von e6 auf. Genau dort lag die Gabelgeometrie aus Schritt 1."
+     }
+    ]
+   }
+  },
+  {
+   "id": "12.4",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.1",
+    "label": "sec:kandidatenzuege",
+    "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+   },
+   "unterabschnitt": "Visualisierung: das Brett im Kopf",
+   "fen": "rn1qkbnr/ppp2ppp/8/4p3/2B1P3/5Q2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Die Opernpartie nach 6. Lc4, Schwarz am Zug (erst nach der Übung ansehen).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k12-a4",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "d6",
+     "d4",
+     "Bg4",
+     "dxe5",
+     "Bxf3",
+     "Qxf3",
+     "dxe5",
+     "Bc4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 321
+   },
+   "pruefsumme": "3a6c717b95f57a43",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Was muss Schwarz hier zuerst tun?",
+      "antworten": [
+       "Den Läufer c4 mit b5 angreifen.",
+       "Die Drohung Dxf7# abwehren.",
+       "Schnell lang rochieren."
+      ],
+      "richtig": 1,
+      "erklaerung": "Ein eigener Angriff hilft nichts, wenn der Gegner im nächsten Zug matt setzt. Schritt 1 fragt deshalb immer zuerst nach der Drohung."
+     }
+    ]
+   }
+  },
+  {
+   "id": "12.5",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.8",
+    "label": "sec:weiter",
+    "titel": "Wie es weitergeht"
+   },
+   "unterabschnitt": "Zum Abschluss",
+   "fen": "r1bq1rk1/pp1n1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k12-a5",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1204
+   },
+   "pruefsumme": "bd78a2b071ce0cda"
+  },
+  {
+   "id": "12.6",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.8",
+    "label": "sec:weiter",
+    "titel": "Wie es weitergeht"
+   },
+   "unterabschnitt": "Zum Abschluss",
+   "fen": "3r2k1/pp3pp1/2nb3p/3p4/8/2P1BN2/PP3PPP/3R2K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k12-a6",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1235
+   },
+   "pruefsumme": "cc72b94e763c0138"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:kandidatenzuege",
+   "nummer": 83,
+   "kapitel": 12,
+   "titel": null,
+   "abbildungen": [
+    "12.5"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Die Stellung gleicht dem Beispiel aus ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 12.1",
+     "abbildung": "12.1"
+    },
+    {
+     "art": "text",
+     "text": " bis auf eine Figur: Die schwarze Dame steht auf d8 statt auf c7. Gehe für den Kandidaten ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lxh7+"
+    },
+    {
+     "art": "text",
+     "text": " die vier Schritte der Denkroutine durch. Spielst du ihn?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Nein. Schritt 3 verlangt die stärkste Antwort, und dazu gehören nicht nur Königszüge. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lxh7+? Kxh7 2. Sg5+"
+    },
+    {
+     "art": "text",
+     "text": " schlägt die Dame den Springer: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Dxg5!"
+    },
+    {
+     "art": "text",
+     "text": ". Von d8 aus bewacht sie das Feld g5, und keine weiße Figur deckt den Springer. Weiß hat dann zwei Figuren für einen Bauern gegeben. Besser ist ein ruhiger Zug wie ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dc2"
+    },
+    {
+     "art": "text",
+     "text": ". Merke dir: Prüfe bei der stärksten Antwort zunächst die Schläge des Gegners, denn eine einzige Figur auf einem anderen Feld macht aus einem Gewinnopfer einen Fehler.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1202
+   },
+   "erklaerung": {
+    "loesung": "1. Dc2",
+    "akzeptiert": [],
+    "motiv": "Stärkste Antwort prüfen",
+    "text": "Nach 1. Lxh7+? Kxh7 2. Sg5+ schlägt die Dame von d8 aus mit 2... Dxg5!, und Weiß hat zwei Figuren für einen Bauern gegeben. Prüfe bei der stärksten Antwort zuerst die Schlagzüge des Gegners; besser ist ein ruhiger Zug wie 1. Dc2."
+   }
+  },
+  {
+   "id": "ueb:fehlerprotokoll",
+   "nummer": 84,
+   "kapitel": 12,
+   "titel": null,
+   "abbildungen": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Nimm eine eigene Partie und erstelle ein Fehlerprotokoll. Benenne genau einen taktischen und einen strategischen Fehler. Ordne beiden eine Fehlerart aus Tabelle 12.2 zu, formuliere je einen besseren Kandidatenzug oder Plan und überprüfe erst im Anschluss mit einer Engine, ob deine Analyse die Hauptidee getroffen hat. Falls du noch keine eigene Partie hast, nutze eine Partie aus Kapitel 11 und erstelle das Protokoll zu einer dort beschriebenen Schlüsselstelle.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Ein gutes Fehlerprotokoll nennt einen konkreten Zug statt eine vage Phase wie „meine Eröffnung war schlecht“. Beispiel: „Ich übersah nach meinem Zug die Springergabel auf d4 (Kapitel 7)“ und „ich tauschte meine aktive Figur gegen eine passive (Kapitel 6)“. Die Fehlerarten dazu heißen „Taktik übersehen“ und „Plan oder Figurenaktivität“. Die Beispielzeile in Tabelle 12.1 zeigt, wie du den ersten Fehler einträgst. Die Engine ist erst der Kontrollpartner, nicht der Ersatz für die eigene Analyse. Merke dir: Ein Fehler, den du in einem Satz benennen kannst, lässt sich gezielt trainieren.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1213
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Fehlerprotokoll",
+    "text": "Ein gutes Protokoll nennt einen konkreten Zug und ordnet ihn einer Fehlerart zu, etwa übersehene Taktik oder schwacher Plan. Erst danach prüft die Engine, ob die eigene Analyse die Hauptidee getroffen hat."
+   }
+  },
+  {
+   "id": "ueb:trainingsplan",
+   "nummer": 85,
+   "kapitel": 12,
+   "titel": null,
+   "abbildungen": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Entwirf einen konkreten Trainingsplan für sieben Tage. Lege für jeden Tag fest, welche Taktikaufgaben, welche Partieform und welches Kapitel du wiederholst. Sorge dafür, dass mindestens ein Tag die Analyse einer eigenen verlorenen Partie enthält.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Ein guter Plan ist konkret: etwa Montag Taktikaufgaben zu Gabeln plus eine Partie mit 10+0 (Partietag aus Tabelle 12.3), Dienstag die Philidor-Stellung aus Kapitel 9 im Analysebrett gegen den Computer verteidigen, Mittwoch eigene Partie analysieren, Donnerstag eine Meisterpartie zum Isolani nachspielen (Fischer, Kapitel 11), Freitag eine kurze Partie mit anschließender Fehlersuche spielen, Samstag zwei elementare Endspielstellungen wiederholen und Sonntag eine lange Partie (etwa 15+10) spielen, die Fehlerdatenbank ergänzen sowie die häufigste Fehlerart der Woche trainieren. Merke dir: Entscheidend ist die Mischung aus Spielen, Analyse und gezieltem Studium.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1224
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Trainingsplan",
+    "text": "Ein guter Plan mischt an sieben Tagen Taktik, Partien, Endspiele, Meisterpartien und die Analyse einer eigenen verlorenen Partie. Er nennt für jeden Tag konkrete Inhalte statt allgemeiner Vorsätze."
+   }
+  },
+  {
+   "id": "ueb:zeitnot-prinzipien",
+   "nummer": 86,
+   "kapitel": 12,
+   "titel": null,
+   "abbildungen": [
+    "12.6"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Du hast noch drei Minuten für zwölf Züge. Der Bauer d5 sieht ungedeckt aus, da zwischen ihm und dem Turm d8 der schwarze Läufer d6 steht. Schlägst du ihn mit dem Turm? Welche der drei Fragen des Sicherheitsblicks entscheidet?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Nein. Es entscheidet die dritte Frage: Erlaube ich ihm ein Schach? Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Txd5??"
+    },
+    {
+     "art": "text",
+     "text": " zieht der Läufer mit Schach ab und gibt dabei die d-Linie frei: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Lxh2+! 2. Kxh2 Txd5"
+    },
+    {
+     "art": "text",
+     "text": ". Schwarz hat die Qualität gewonnen und dafür nur den Bauern d5 gegeben. Das ist der Abzugsangriff aus Kapitel 7 (Motiv 4). Die Prüfung kostet wenige Sekunden, denn du suchst bloß die Schachs des Gegners, und hier gibt es genau eines. Richtig ist ein Zug wie ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. g3"
+    },
+    {
+     "art": "text",
+     "text": ", der die Diagonale nach h2 schließt. Erst dann droht ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Txd5"
+    },
+    {
+     "art": "text",
+     "text": " wirklich. Merke dir: Suche auch in Zeitnot vor jedem Schlag die Schachs des Gegners.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1233
+   },
+   "erklaerung": {
+    "loesung": "1. g3",
+    "akzeptiert": [],
+    "motiv": "Sicherheitsblick in Zeitnot",
+    "text": "Nach 1. Txd5?? zieht der Läufer mit Schach ab: 1... Lxh2+! 2. Kxh2 Txd5, und Schwarz gewinnt die Qualität. Die Frage nach den Schachs des Gegners entscheidet; 1. g3 schließt die Diagonale und droht erst dann Txd5."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k12-a1",
+   "kapitel": 12,
+   "abschnitt": "12.1",
+   "titel": "Die Routine an einem Beispiel",
+   "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5+",
+         "zeichen": "",
+         "abbildungen": [
+          "12.2"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qd3+",
+             "zeichen": "!",
+             "abbildungen": [
+              "12.3"
+             ],
+             "weiter": [
+              {
+               "zug": "f5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxe6",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              },
+              {
+               "zug": "Kh6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qh7+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              },
+              {
+               "zug": "Kh5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qh7+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              },
+              {
+               "zug": "Kxg5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "f4+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "zug": "Qg4",
+             "zeichen": "?",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "f5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Kh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Kg8",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qh7#",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kh6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qg4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nxd5",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Rc1",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "12.1",
+     "pfad": []
+    },
+    {
+     "nummer": "12.2",
+     "pfad": [
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+"
+     ]
+    },
+    {
+     "nummer": "12.3",
+     "pfad": [
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+",
+      "Kg6",
+      "Qd3+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k12-a4",
+   "kapitel": 12,
+   "abschnitt": "12.1",
+   "titel": "Visualisierung: das Brett im Kopf",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "d6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "d4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bg4",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "dxe5",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Bxf3",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Qxf3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "dxe5",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Bc4",
+                         "zeichen": "",
+                         "abbildungen": [
+                          "12.4"
+                         ],
+                         "weiter": []
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "12.4",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "d6",
+      "d4",
+      "Bg4",
+      "dxe5",
+      "Bxf3",
+      "Qxf3",
+      "dxe5",
+      "Bc4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k12-a5",
+   "kapitel": 12,
+   "abschnitt": "Übung 83",
+   "titel": "Zum Abschluss",
+   "startFen": "r1bq1rk1/pp1n1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qc2",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Bxh7+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Qxg5",
+           "zeichen": "!",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "12.5",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k12-a6",
+   "kapitel": 12,
+   "abschnitt": "Übung 86",
+   "titel": "Zum Abschluss",
+   "startFen": "3r2k1/pp3pp1/2nb3p/3p4/8/2P1BN2/PP3PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "g3",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Rxd5",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bxh2+",
+       "zeichen": "!",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kxh2",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rxd5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "12.6",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  }
+ ]
+}

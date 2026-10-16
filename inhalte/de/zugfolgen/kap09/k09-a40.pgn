@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Springerendspiele: keine Fernwirkung"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/7P/8/4n3/8/8/k7/2K5 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a40"]
+[Kapitel "9"]
+[Abschnitt "9.8"]
+[Status "freigegeben"]
+[Abbildungen "9.40"]
+
+{ Abb. 9.40 } 1... Ng6 $1 ( 1... Nf7 $1 ) *

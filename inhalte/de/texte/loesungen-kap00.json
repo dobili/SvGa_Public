@@ -1,0 +1,33 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 0,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:notation-lesen-1",
+   "nummer": 1,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Notation lesen",
+   "text": "Jedes Zugpaar besteht aus einem weißen und einem schwarzen Zug: Bauern nach e4 und e5, Springer nach f3 und c6, Läufer nach c4 und c5. Der Großbuchstabe nennt die Figur, das Feld dahinter ihr Ziel; ein Bauernzug hat keinen Buchstaben."
+  },
+  {
+   "uebung": "ueb:notation-lesen-2",
+   "nummer": 2,
+   "status": "freigegeben",
+   "loesung": "6... h6 7. Lxf6 Dxf6",
+   "akzeptiert": [],
+   "motiv": "Notation schreiben",
+   "text": "Ein Zug von Schwarz am Zeilenanfang bekommt drei Punkte hinter der Nummer, ein Schlagzug ein x. Weil beide Springer nach d2 ziehen könnten, heißt der Zug 8. Sbd2: Die Linie b sagt, welcher Springer gemeint ist."
+  },
+  {
+   "uebung": "ueb:notation-schreiben",
+   "nummer": 3,
+   "status": "freigegeben",
+   "loesung": "1. e4 d5 2. exd5 Dxd5",
+   "akzeptiert": [],
+   "motiv": "Bauernschlag notieren",
+   "text": "Die Stellungen entstehen durch 1. e4 d5 2. exd5 Dxd5, die Skandinavische Verteidigung. Schlägt ein Bauer, steht vor dem x die Linie, von der er kommt: 2. exd5, nicht 2. xd5."
+  }
+ ]
+}

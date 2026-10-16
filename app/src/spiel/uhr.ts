@@ -1,0 +1,103 @@
+/**
+ * Schachuhr für das Spiel gegen die Engine: Bedenkzeit je Seite mit Zuschlag je Zug.
+ *
+ * Rolle im Gesamtbild: Der Partie-Bildschirm zeigt die Uhren über und unter dem Brett
+ * (Bildschirmentwurf „Partie“). Die Uhr ist rein: Sie rechnet mit der übergebenen Zeit („jetzt“
+ * in Millisekunden) und hat keinen eigenen Takt; die Oberfläche fragt sie regelmäßig ab. So lässt
+ * sie sich speichern und nach einem Neuladen fortsetzen.
+ * Abhängigkeiten: keine.
+ */
+import type { Color } from "chessops/types";
+
+/** Bedenkzeit je Seite und Zuschlag je Zug (Fischer-Uhr), beides in Millisekunden. */
+export interface Uhreinstellung {
+  readonly grundzeitMs: number;
+  readonly zuschlagMs: number;
+}
+
+export interface Uhrstand {
+  /** Verbleibende Zeit je Seite zum Zeitpunkt „seitMs“. */
+  readonly restMs: Readonly<Record<Color, number>>;
+  /** Wessen Uhr läuft; null, solange die Uhr steht (vor dem ersten Zug, Pause, Partieende). */
+  readonly laeuft: Color | null;
+  /** Seit wann die laufende Uhr läuft. */
+  readonly seitMs: number;
+}
+
+const MINUTE_MS = 60_000;
+const SEKUNDE_MS = 1000;
+
+/** Auswahl im Spielen-Bildschirm: ohne Uhr und drei übliche Bedenkzeiten für Einsteiger. */
+export const UHR_VORGABEN: readonly (Uhreinstellung | null)[] = [
+  null,
+  { grundzeitMs: 30 * MINUTE_MS, zuschlagMs: 20 * SEKUNDE_MS },
+  { grundzeitMs: 15 * MINUTE_MS, zuschlagMs: 10 * SEKUNDE_MS },
+  { grundzeitMs: 5 * MINUTE_MS, zuschlagMs: 3 * SEKUNDE_MS },
+];
+
+/** Neue, stehende Uhr mit voller Bedenkzeit für beide Seiten. */
+export function neueUhr(einstellung: Uhreinstellung): Uhrstand {
+  const voll = einstellung.grundzeitMs;
+  return { restMs: { white: voll, black: voll }, laeuft: null, seitMs: 0 };
+}
+
+/** Restzeit einer Seite zum Zeitpunkt „jetzt“, nie unter null. */
+export function restzeit(stand: Uhrstand, farbe: Color, jetztMs: number): number {
+  const verbraucht = stand.laeuft === farbe ? jetztMs - stand.seitMs : 0;
+  return Math.max(0, stand.restMs[farbe] - verbraucht);
+}
+
+/** Startet die Uhr einer Seite (erster Zug, Fortsetzen nach Pause). Eine laufende Uhr hält vorher. */
+export function starte(stand: Uhrstand, farbe: Color, jetztMs: number): Uhrstand {
+  const gehalten = halte(stand, jetztMs);
+  return { ...gehalten, laeuft: farbe, seitMs: jetztMs };
+}
+
+/** Hält die Uhr an und schreibt die verbrauchte Zeit ab (Pause, Partieende, App im Hintergrund). */
+export function halte(stand: Uhrstand, jetztMs: number): Uhrstand {
+  const farbe = stand.laeuft;
+  if (!farbe) return stand;
+  const restMs = { ...stand.restMs, [farbe]: restzeit(stand, farbe, jetztMs) };
+  return { restMs, laeuft: null, seitMs: jetztMs };
+}
+
+/**
+ * Der Spieler am Zug drückt nach seinem Zug die Uhr: Seine Zeit steht, er bekommt den Zuschlag,
+ * die Uhr des Gegners läuft.
+ *
+ * Beispiel: 15+10, Weiß braucht 12 Sekunden für 1. e4 → Weiß 14:58, Schwarz läuft.
+ * Sonderfall: Steht die Uhr (erster Zug), startet nur die Uhr des Gegners, ohne Zuschlag.
+ */
+export function druecke(
+  stand: Uhrstand,
+  einstellung: Uhreinstellung,
+  gezogen: Color,
+  jetztMs: number,
+): Uhrstand {
+  const gegner: Color = gezogen === "white" ? "black" : "white";
+  if (stand.laeuft !== gezogen) return starte(stand, gegner, jetztMs);
+  const gehalten = halte(stand, jetztMs);
+  const mitZuschlag = gehalten.restMs[gezogen] + einstellung.zuschlagMs;
+  return {
+    restMs: { ...gehalten.restMs, [gezogen]: mitZuschlag },
+    laeuft: gegner,
+    seitMs: jetztMs,
+  };
+}
+
+/** Die Seite, deren Zeit abgelaufen ist, sonst null. */
+export function abgelaufen(stand: Uhrstand, jetztMs: number): Color | null {
+  const farbe = stand.laeuft;
+  return farbe && restzeit(stand, farbe, jetztMs) <= 0 ? farbe : null;
+}
+
+/** Restzeit als „m:ss“, unter zehn Sekunden mit Zehnteln („0:09,4“). */
+export function zeitAlsText(ms: number): string {
+  const ZEHNTEL_MS = 100;
+  const KNAPP_MS = 10 * SEKUNDE_MS;
+  const minuten = Math.floor(ms / MINUTE_MS);
+  const sekunden = Math.floor((ms % MINUTE_MS) / SEKUNDE_MS);
+  const text = `${minuten}:${String(sekunden).padStart(2, "0")}`;
+  if (ms >= KNAPP_MS) return text;
+  return `${text},${Math.floor((ms % SEKUNDE_MS) / ZEHNTEL_MS)}`;
+}

@@ -1,0 +1,16 @@
+[Event "Kapitel 7: 1. Doppelangriff und Gabel"]
+[Site "?"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r5k1/p5pp/8/3Q4/8/8/5PPP/6K1 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k07-a1"]
+[Kapitel "7"]
+[Abschnitt "7.2"]
+[Status "freigegeben"]
+[Abbildungen "7.1"]
+
+{ Abb. 7.1 } 1... Kh8 2. Qxa8# *

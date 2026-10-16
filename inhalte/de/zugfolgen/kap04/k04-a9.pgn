@@ -1,0 +1,14 @@
+[Event "Kapitel 4: Die Halosar-Falle im Blackmar-Diemer-Gambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k04-a9"]
+[Kapitel "4"]
+[Abschnitt "4.4"]
+[Status "freigegeben"]
+[Abbildungen "4.9 4.10 4.11"]
+
+1. d4 d5 2. e4 dxe4 3. Nc3 Nf6 4. f3 exf3 5. Qxf3 Qxd4 { Abb. 4.9 } ( 5... c6 ) 6. Be3 Qb4 ( 6... Qg4 ) 7. O-O-O { Abb. 4.10 } 7... Bg4 $4 ( 7... c6 ) 8. Nb5 $3 { Abb. 4.11 } 8... Bxf3 $4 ( 8... Na6 9. Qxb7 ) 9. Nxc7# *

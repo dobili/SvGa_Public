@@ -1,0 +1,138 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 8,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:pattfalle-vermeiden",
+   "nummer": 50,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Pattfalle",
+   "text": "Nach 1. Db6?? nimmt die Dame dem König a7, b7 und b8, ohne Schach zu geben: patt. Die Dame bleibt auf b3 und hält den König fest, bis der eigene König herangekommen ist."
+  },
+  {
+   "uebung": "ueb:damenmatt",
+   "nummer": 51,
+   "status": "freigegeben",
+   "loesung": "1. Ke5! Kh7 2. Kf6 Kh8 3. Dg7#",
+   "akzeptiert": [],
+   "motiv": "Damenmatt: erst der König",
+   "text": "Die Dame hält den Kasten auf der g-Linie, und nur 1. Ke5! bringt den König schnell genug heran; nach 2. Kf6 folgt Matt auf g7 oder g6. Der Damenzug 1. Dg6?? setzt patt."
+  },
+  {
+   "uebung": "ueb:turmmatt",
+   "nummer": 52,
+   "status": "freigegeben",
+   "loesung": "1. Tb6! Ka7 2. Kc7 Ka8 3. Ta6#",
+   "akzeptiert": [
+    "1. Tc7"
+   ],
+   "motiv": "Turmmatt ohne Patt",
+   "text": "1. Kb6?? und 1. Kc7?? setzen patt, weil der König kein Feld hat. Ein Turmzug gibt ihm genau ein Feld zurück: 1. Tb6! Ka7 2. Kc7 Ka8 3. Ta6#, ebenso gut 1. Tc7 mit Matt auf c8."
+  },
+  {
+   "uebung": "ueb:opposition-anwenden",
+   "nummer": 53,
+   "status": "freigegeben",
+   "loesung": "1... Kf6!",
+   "akzeptiert": [],
+   "motiv": "Opposition",
+   "text": "1... Kf6! nimmt die Opposition: Auf 2. Ke4 folgt 2... Ke6, auf 2. Kg4 2... Kg6, und Weiß erreicht kein Schlüsselfeld. Nach 1... Ke6? 2. Ke4 steht dieselbe Stellung mit Schwarz am Zug, und er muss weichen."
+  },
+  {
+   "uebung": "ueb:fernopposition",
+   "nummer": 54,
+   "status": "freigegeben",
+   "loesung": "1... Kf6!",
+   "akzeptiert": [],
+   "motiv": "Fernopposition",
+   "text": "Nach 1... Kf6! stehen die Könige mit drei Feldern Abstand auf der f-Linie, und Weiß ist am Zug: Fernopposition. Kommt der weiße König näher, wird daraus mit 2... Ke5 oder 2... Kf5 die direkte Opposition, und d4, e4 und f4 bleiben gesperrt."
+  },
+  {
+   "uebung": "ueb:schluesselfeld-finden",
+   "nummer": 55,
+   "status": "freigegeben",
+   "loesung": "1. Kc3!",
+   "akzeptiert": [],
+   "motiv": "Schlüsselfelder",
+   "text": "Die Schlüsselfelder des Bauern d3 sind c5, d5 und e5. 1. Kc3! geht auf der Seite vor, die der schwarze König nicht rechtzeitig sperrt, und nach 2. Kc4 Kd6 3. Kd4! hat Weiß die Opposition; nach 1. Ke3? hält 1... Ke5! remis."
+  },
+  {
+   "uebung": "ueb:randbauer-ecke",
+   "nummer": 56,
+   "status": "freigegeben",
+   "loesung": "1. Kb6",
+   "akzeptiert": [
+    "1. Kc6"
+   ],
+   "motiv": "Randbauer: die Ecke beherrschen",
+   "text": "Der weiße König geht über b6 oder c6 nach b7 und hält den schwarzen König von der Ecke fern, dann läuft der Bauer durch. Nach 1. a5? erreicht Schwarz mit 1... Kd7! und ...Kc8 die Ecke und hält remis."
+  },
+  {
+   "uebung": "ueb:tausch-bauernendspiel",
+   "nummer": 57,
+   "status": "freigegeben",
+   "loesung": "1. Txe8! Kxe8 2. Kc5!",
+   "akzeptiert": [],
+   "motiv": "Tausch ins gewonnene Bauernendspiel",
+   "text": "Nach 1. Txe8! Kxe8 2. Kc5! erreicht der weiße König mit der Opposition eines der Schlüsselfelder c6, d6 oder e6. Das naheliegende 2. Kd5? verschenkt den Sieg, weil dann Schwarz mit 2... Kd7! die Opposition hat."
+  },
+  {
+   "uebung": "ueb:quadrat-doppelschritt",
+   "nummer": 58,
+   "status": "freigegeben",
+   "loesung": "1. a4!",
+   "akzeptiert": [],
+   "motiv": "Quadratregel mit Doppelschritt",
+   "text": "Nach dem Doppelschritt 1. a4! reicht das Quadrat von a4 bis e8, und der König g5 kommt nicht mehr hinein. Nach 1. a3? holt er den Bauern ein; steht der Bauer auf seinem Ausgangsfeld, zeichnest du das Quadrat eine Reihe weiter vorn."
+  },
+  {
+   "uebung": "ueb:bauernrennen-schach",
+   "nummer": 59,
+   "status": "freigegeben",
+   "loesung": "1. h7! a2 2. h8=D+",
+   "akzeptiert": [],
+   "motiv": "Umwandlung mit Schach",
+   "text": "Weiß wandelt zuerst und mit Schach um, weil der König c3 auf der langen Diagonale steht; danach stellt sich die Dame mit Da1 vor den a-Bauern. Prüfe vor jedem Bauernrennen, ob ein König auf einer Linie der neuen Dame steht."
+  },
+  {
+   "uebung": "ueb:freibauer-bilden",
+   "nummer": 60,
+   "status": "freigegeben",
+   "loesung": "1. g5!",
+   "akzeptiert": [],
+   "motiv": "Freibauer erst mit König davor",
+   "text": "1. g5! legt den Bauern g6 fest, hält f5 als Hebel in Reserve, und der weiße König dringt mit der Opposition ein. Nach 1. f5+? gxf5+ 2. gxf5+ steht der König hinter seinem Freibauern und erreicht kein Schlüsselfeld: remis."
+  },
+  {
+   "uebung": "ueb:entfernter-freibauer",
+   "nummer": 61,
+   "status": "freigegeben",
+   "loesung": "1. h5",
+   "akzeptiert": [
+    "1. a4"
+   ],
+   "motiv": "Entfernter Freibauer",
+   "text": "Weiß schiebt den h-Bauern vor, bis der schwarze König ihn stoppen muss, und holt sich mit dem König unterdessen die Damenflügelbauern. Der entfernte Freibauer bindet den König, der eigene König erntet auf dem anderen Flügel."
+  },
+  {
+   "uebung": "ueb:durchbruch-ecke",
+   "nummer": 62,
+   "status": "freigegeben",
+   "loesung": "1. c6!",
+   "akzeptiert": [],
+   "motiv": "Bauernopfer statt Patt",
+   "text": "1. Kc7?? und 1. Kc8?? setzen patt. Das Opfer 1. c6! lässt Schwarz einen Bauernzug: Nach 1... bxc6 2. Kc7 c5 3. b7+ setzt Weiß bald matt, nach 1... Kb8 2. c7+ Ka8 3. c8=D#."
+  },
+  {
+   "uebung": "ueb:reserve-tempo",
+   "nummer": 63,
+   "status": "freigegeben",
+   "loesung": "1. a3!",
+   "akzeptiert": [],
+   "motiv": "Reserve-Tempo",
+   "text": "1. a3! behält einen Bauernzug in Reserve: Nach 1... a5 2. a4 muss Schwarz mit dem König ziehen und verliert f5. Der Doppelschritt 1. a4? verbraucht beide Tempi auf einmal, und nach 1... a5! muss Weiß selbst weichen."
+  }
+ ]
+}

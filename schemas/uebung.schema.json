@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/uebung.schema.json",
+  "title": "Uebung",
+  "description": "Eine Übung aus dem Kasten „Übungen zu diesem Kapitel“ mit der Lösung aus dem Buch (Konzept 4.3). Die knappe Erklärung (Lösungszüge, akzeptierte Züge, Motiv) kommt aus inhalte/de/texte/, sobald der Autor sie freigegeben hat.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "nummer", "kapitel", "titel", "abbildungen", "aufgabe", "loesung", "quelle"],
+  "properties": {
+    "id": { "description": "LaTeX-Label, etwa ueb:droh-ignorieren", "type": "string", "pattern": "^ueb:" },
+    "nummer": { "description": "„Übung 4“: im Buch durchgezählt", "type": "integer", "minimum": 1 },
+    "kapitel": { "type": "integer", "minimum": 0, "maximum": 12 },
+    "titel": { "description": "Zusatz hinter „Übung N —“, falls vorhanden", "type": ["string", "null"] },
+    "abbildungen": { "description": "Diagramme der Aufgabe; leer bei reinen Textübungen", "type": "array", "items": { "type": "string" } },
+    "aufgabe": { "$ref": "text.schema.json#/$defs/textteile" },
+    "loesung": { "description": "Lösung aus dem Lösungskasten des Kapitels", "$ref": "text.schema.json#/$defs/textteile" },
+    "quelle": { "$ref": "abbildung.schema.json#/properties/quelle" },
+    "erklaerung": { "description": "Vom Autor freigegebene knappe Erklärung (AP 6); fehlt, solange keine freigegeben ist", "$ref": "loesungstexte.schema.json#/$defs/erklaerung" }
+  }
+}

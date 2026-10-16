@@ -1,0 +1,16 @@
+[Event "Kapitel 6: Das Qualitätsopfer"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r2q1rk1/7p/p2p4/nppPn3/2P2P2/1P5b/PQ1NB2P/R2N1RK1 w - - 1 21"]
+[SetUp "1"]
+[Beispiel "k06-a29"]
+[Kapitel "6"]
+[Abschnitt "6.7"]
+[Status "freigegeben"]
+[Abbildungen "6.29 6.30"]
+
+{ Abb. 6.29 } 21. Ne3 ( 21. fxe5 Qg5+ 22. Kh1 Qg2# ) 21... Bxf1 22. Rxf1 { Abb. 6.30 } 22... Ng6 23. Bg4 Nxf4 24. Rxf4 *

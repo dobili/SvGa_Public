@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/nachschlagen.schema.json",
+  "title": "Nachschlagen",
+  "description": "Denkroutine (Kopiervorlage am Ende des Buches), Gesamt-Checkliste (Kapitel 12) und Lernziele je Kapitel für den Bereich Nachschlagen (nachschlagen.json, Pflichtenheft 4). Fehlt die Quelle (Testbuch), ist der Teil null.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "denkroutine", "checkliste", "lernziele"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "denkroutine": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["titel", "schritte", "sicherheitsblick", "zurueck", "abschluss", "phasenTitel", "phasen", "zuerst"],
+          "properties": {
+            "titel": { "description": "Titel von Karte 1, etwa „Vor jedem Zug: die Denkroutine“", "type": "string" },
+            "schritte": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["nummer", "titel", "text"],
+                "properties": { "nummer": { "type": "integer" }, "titel": { "type": "string" }, "text": { "type": "string" } }
+              }
+            },
+            "sicherheitsblick": { "$ref": "#/$defs/titelUndText" },
+            "zurueck": { "description": "Beschriftung des Rückwegs zu Schritt 2, etwa „widerlegt oder unsicher?“", "type": "string" },
+            "abschluss": { "description": "Letzter Schritt nach dem Sicherheitsblick, „Ziehen“", "type": "string" },
+            "phasenTitel": { "description": "Titel von Karte 2", "type": "string" },
+            "phasen": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name", "wann", "abschnitte"],
+                "properties": {
+                  "name": { "type": "string" },
+                  "wann": { "type": "string" },
+                  "abschnitte": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "required": ["titel", "punkte"],
+                      "properties": { "titel": { "type": "string" }, "punkte": { "type": "array", "items": { "type": "string" } } }
+                    }
+                  }
+                }
+              }
+            },
+            "zuerst": { "description": "Satz unter den Phasen, der für jede Phase gilt", "type": "string" }
+          }
+        }
+      ]
+    },
+    "checkliste": {
+      "oneOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["titel", "spalten", "zeilen"],
+          "properties": {
+            "titel": { "type": "string" },
+            "spalten": { "type": "array", "items": { "type": "string" } },
+            "zeilen": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["kapitel", "kernfrage", "werkzeug", "fehlerart"],
+                "properties": {
+                  "kapitel": { "type": "integer", "minimum": 0, "maximum": 12 },
+                  "kernfrage": { "type": "string" },
+                  "werkzeug": { "type": "string" },
+                  "fehlerart": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "lernziele": {
+      "description": "Je Kapitel die Liste „Bevor du weiterliest, solltest du Folgendes können“ (vor den Übungen); die App macht daraus die Abhakliste der Gesamt-Checkliste. Kapitel ohne Liste fehlen.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kapitel", "einleitung", "punkte"],
+        "properties": {
+          "kapitel": { "type": "integer", "minimum": 0, "maximum": 12 },
+          "einleitung": { "description": "Der Satz vor der Liste, etwa „Bevor du mit Kapitel 2 weiterliest, solltest du Folgendes sicher können:“", "type": "string" },
+          "punkte": { "description": "Die Punkte wörtlich aus dem Buch, ohne Semikolon am Ende", "type": "array", "minItems": 1, "items": { "type": "string" } }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "titelUndText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["titel", "text"],
+      "properties": { "titel": { "type": "string" }, "text": { "type": "string" } }
+    }
+  }
+}

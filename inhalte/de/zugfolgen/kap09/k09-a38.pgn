@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Gleichfarbige Läufer: Der Freibauer entscheidet"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/3b4/3k4/P5p1/3K2P1/5B2/8/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a38"]
+[Kapitel "9"]
+[Abschnitt "9.8"]
+[Status "freigegeben"]
+[Abbildungen "9.38"]
+
+{ Abb. 9.38 } 1. a6 $1 Kc7 2. a7 Bc6 *

@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/loesungstexte.schema.json",
+  "title": "Loesungstexte",
+  "description": "Knappe Lösungserklärungen zu den Übungen eines Kapitels (AP 6), Datei inhalte/de/texte/loesungen-kapNN.json. Entwürfe schreibt Claude, der Autor gibt sie frei; nur freigegebene kommen als uebung.erklaerung in die App.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "kapitel",
+    "erklaerungen"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "kapitel": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 12
+    },
+    "erklaerungen": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/eintrag"
+      }
+    }
+  },
+  "$defs": {
+    "felder": {
+      "description": "Die Felder einer Erklärung",
+      "type": "object",
+      "required": [
+        "loesung",
+        "akzeptiert",
+        "motiv",
+        "text"
+      ],
+      "properties": {
+        "loesung": {
+          "description": "Lösungszüge in deutscher Notation wie im Buch, null bei Übungen ohne Zug",
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "akzeptiert": {
+          "description": "Weitere Züge, die das Buch als gleichwertig nennt",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "motiv": {
+          "description": "Motiv oder Thema in wenigen Worten",
+          "type": "string",
+          "minLength": 1
+        },
+        "text": {
+          "description": "Zwei bis drei Sätze: Lösungszug, Motiv, Kern der Idee",
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "erklaerung": {
+      "description": "Was die App zeigt (auch in uebung.erklaerung).",
+      "$ref": "#/$defs/felder",
+      "unevaluatedProperties": false
+    },
+    "eintrag": {
+      "$ref": "#/$defs/felder",
+      "type": "object",
+      "required": [
+        "uebung",
+        "nummer",
+        "status"
+      ],
+      "properties": {
+        "uebung": {
+          "type": "string",
+          "pattern": "^ueb:"
+        },
+        "nummer": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "status": {
+          "enum": [
+            "entwurf",
+            "freigegeben"
+          ]
+        }
+      },
+      "unevaluatedProperties": false
+    }
+  }
+}

@@ -1,0 +1,14 @@
+[Event "Kapitel 4: Die Benko-Falle im Wolga-Gambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k04-a23"]
+[Kapitel "4"]
+[Abschnitt "4.6"]
+[Status "freigegeben"]
+[Abbildungen "4.23 4.24 4.25 4.26"]
+
+1. d4 Nf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. Nc3 { Abb. 4.23 } 5... axb5 6. e4 b4 7. Nb5 { Abb. 4.24 } 7... Nxe4 $4 ( 7... d6 ) 8. Qe2 $1 { Abb. 4.25 } 8... Nf6 9. Nd6# { Abb. 4.26 } *

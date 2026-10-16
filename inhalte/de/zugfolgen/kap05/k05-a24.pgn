@@ -1,0 +1,14 @@
+[Event "Kapitel 5: Offene, halboffene und geschlossene Stellungen"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k05-a24"]
+[Kapitel "5"]
+[Abschnitt "5.4"]
+[Status "verworfen"]
+[Abbildungen "5.37 5.24 5.44"]
+
+1. e4 e5 ( 1... e6 2. d4 d5 3. e5 { Abb. 5.24 } 3... c5 4. c3 Nc6 5. Nf3 Qb6 6. Be2 cxd4 7. cxd4 Nh6 8. Nc3 Nf5 9. Na4 Bb4+ 10. Bd2 Bxd2+ 11. Qxd2 Qa5 12. Nc3 O-O 13. O-O Bd7 { Abb. 5.44 } 14. Rfd1 Rac8 ( 14... f6 15. exf6 Rxf6 ) ) 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 $1 6. Bb5+ c6 7. dxc6 bxc6 8. Be2 h6 9. Nf3 e4 10. Ne5 Bd6 11. d4 exd3 12. Nxd3 { Abb. 5.37 } *

@@ -1,0 +1,65 @@
+<!--
+  Baustein „Installationsteil“ für die Startseite (/) und /installieren/: Fortschritt der
+  Offline-Vorbereitung, Anleitung je Gerät (src/startseite/startseite.ts zeigt die passende),
+  „Im Browser verwenden“. Der Build setzt ihn an der Stelle <!- - teil: installationsteil - -> ein
+  (vite.config.ts, texteInHtml).
+-->
+<section
+  id="installieren"
+  class="karte installationsteil"
+  aria-labelledby="app-titel"
+  data-testid="installationsteil"
+>
+  <h2 id="app-titel" class="karte-titel">{{startseite.app.titel}}</h2>
+  <p>{{installation.einleitung}}</p>
+  <div class="fortschritt" data-fortschritt hidden>
+    <div class="fortschritt-text">
+      <span data-fortschritt-text>{{installation.fortschritt}}</span>
+      <span class="zahl" data-fortschritt-zahl>0 %</span>
+    </div>
+    <div
+      class="fortschritt-balken"
+      role="progressbar"
+      aria-valuemin="0"
+      aria-valuemax="100"
+      aria-valuenow="0"
+      aria-label="{{installation.fortschritt}}"
+    >
+      <div data-fortschritt-balken style="width: 0%"></div>
+    </div>
+  </div>
+  <div data-anleitung="knopf">
+    <button type="button" class="knopf-haupt" data-installieren disabled>
+      {{installation.knopf}}
+    </button>
+    <p class="hinweis" data-android-hinweis>{{installation.android.hinweis}}</p>
+  </div>
+  <div data-anleitung="iphone">
+    <h3>{{installation.iphone.titel}}</h3>
+    <ol class="schritte">
+      <li class="schritt">
+        <span class="schritt-nummer" aria-hidden="true">1</span
+        ><span>{{installation.iphone.schritt1}}</span>
+      </li>
+      <li class="schritt">
+        <span class="schritt-nummer" aria-hidden="true">2</span
+        ><span>{{installation.iphone.schritt2}}</span>
+      </li>
+      <li class="schritt">
+        <span class="schritt-nummer" aria-hidden="true">3</span
+        ><span>{{installation.iphone.schritt3}}</span>
+      </li>
+    </ol>
+  </div>
+  <div data-anleitung="mac">
+    <h3>{{installation.mac.titel}}</h3>
+    <p>{{installation.mac.text}}</p>
+  </div>
+  <div data-anleitung="andere">
+    <h3>{{installation.andere.titel}}</h3>
+    <p>{{installation.andere.text}}</p>
+  </div>
+  <p data-anleitung="installiert">{{installation.installiert}}</p>
+  <a class="knopf-zweit im-browser" href="/app/">{{installation.imBrowser}}</a>
+  <p class="hinweis">{{startseite.imBrowser.hinweis}}</p>
+</section>

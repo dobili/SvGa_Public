@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/eroeffnungsliste.schema.json",
+  "title": "Eroeffnungsliste",
+  "description": "Benannte Eröffnungsstellungen außerhalb des Buches aus der freien Liste von Lichess (CC0), für das Werkzeug „Eröffnung“ (Vorschlag G, seit 0.2.32).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "quelle", "lizenz", "stellungen"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "quelle": { "description": "Herkunft der Liste mit Adresse", "type": "string" },
+    "lizenz": { "type": "string" },
+    "stellungen": {
+      "description": "Je Stellung: Schlüssel (Figurenstellung, Zugrecht, Rochaderechte wie im Eröffnungsindex der App), ECO-Schlüssel, Name (Familie auf Deutsch, Variante englisch)",
+      "type": "array",
+      "items": {
+        "type": "array",
+        "prefixItems": [
+          { "type": "string" },
+          { "type": "string", "pattern": "^[A-E][0-9]{2}$" },
+          { "type": "string" }
+        ],
+        "minItems": 3,
+        "maxItems": 3
+      }
+    }
+  }
+}

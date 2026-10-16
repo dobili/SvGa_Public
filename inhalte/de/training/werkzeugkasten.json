@@ -1,0 +1,1012 @@
+{
+  "titel": "Dein Werkzeugkasten",
+  "adresse": "/training/werkzeugkasten/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Alles Digitale, was du zum Üben mit diesem Buch brauchst, gibt es kostenlos. Die Angaben in diesem Abschnitt haben den Stand Oktober 2026. Online-Angebote ändern sich, prüfe Bezeichnungen und Adressen deshalb beim ersten Aufruf. Die Trainingskästen der einzelnen Kapitel nennen die Funktionen beim Namen, diese Übersicht zeigt den Weg dorthin. Wie du die Werkzeuge einsetzt, steht in den Abschnitten davor: die Denkroutine in Abschnitt 12.1 (als Merkseite im Buch, als Kopiervorlage im Buch), die Partieanalyse in Abschnitt 12.2 und der Trainingsplan in Abschnitt 12.3.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Drei Richtwerte setzen die Trainingskästen voraus: Ein Themenblock sind zwanzig Aufgaben zu einem Motiv, eine lange Partie hat mindestens 15 Minuten plus 10 Sekunden pro Zug, und die Computerstufe wählst du so, dass du etwa jede dritte Partie gewinnst.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Ein Werkzeug für fast alles: Lichess.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "lichess.org",
+          "ziel": "https://lichess.org"
+        },
+        {
+          "art": "text",
+          "text": " ist eine werbefreie, spendenfinanzierte Schachplattform, auch als App für Android und iOS. Stelle die Oberfläche auf Deutsch, denn die Tabelle unten nennt die Menüpunkte der deutschen Oberfläche. Die meisten Funktionen nutzt du ohne Konto. Unter der Tabelle steht, welche ein kostenloses Konto brauchen.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "tabelle",
+      "kopf": [
+        [
+          {
+            "art": "text",
+            "text": "Wofür",
+            "stil": "fett"
+          }
+        ],
+        [
+          {
+            "art": "text",
+            "text": "Funktion und Menüweg",
+            "stil": "fett"
+          }
+        ],
+        [
+          {
+            "art": "text",
+            "text": "Passt zu",
+            "stil": "fett"
+          }
+        ]
+      ],
+      "zeilen": [
+        [
+          [
+            {
+              "art": "text",
+              "text": "Brett und Koordinaten lernen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Lernen → Koordinaten",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Einstiegskapitel, Abschnitt 12.1",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Regeln interaktiv wiederholen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Lernen → Grundlagen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Einstiegskapitel",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Stellungen aufbauen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Werkzeuge → Stellung aufbauen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "alle Kapitel",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Stellungen untersuchen und gegen den Computer ausspielen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Werkzeuge → Analysebrett; dort „Von hier aus weiterspielen“ mit Computerstufe 1 bis 8",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "alle Kapitel, besonders 8 und 9",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Partien aus dem Buch oder eigene Partien einlesen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Werkzeuge → Partie importieren",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 2, 6, 9 und 11",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Welche Züge werden gespielt?",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Eröffnungsdatenbank im Analysebrett: Datenbank „Masters“ (Turnierpartien seit 1952) oder „Lichess“ (Partien der Plattform; beide Reiter heißen auch in der deutschen Oberfläche so; der Filter „Durchschnittswertung“ grenzt sie auf deine Spielstärke ein)",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 1, 2, 5, 6 und 11, Abschnitt 12.4",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Eigene Lernsammlung anlegen und abfragen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Lernen → Studien; Kapitelmodi „Interaktive Übung“ und „Nächste Züge ausblenden“",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 2, 5 bis 8, 10 und 11, Abschnitt 12.2 und 12.4",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Gemischte Taktikaufgaben",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Aufgaben; die Einstellung „Schwierigkeitsgrad“ macht sie leichter oder schwerer",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 7",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Taktik nach Motiv",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Aufgaben → Aufgabenthemen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 1, 3, 4 und 7 bis 11",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Taktik aus deiner Eröffnung",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Aufgaben → Nach Eröffnungen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 2",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Taktik aus deinen eigenen Partien",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Aufgaben aus den Partien eines Spielers (den eigenen Namen eingeben)",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Abschnitt 12.2",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Dein schwächstes Motiv finden",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Aufgaben → Aufgabenübersicht",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 7, Abschnitt 12.3",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Erst genau, dann schnell",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Puzzle Streak (ohne Uhr), Puzzle Storm (drei Minuten), Puzzle Racer (Wettrennen)",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 7, Abschnitt 12.3",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Geführte Übungsreihen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Lernen → Trainieren",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 1, 8 und 9",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Endspiel-Wahrheit",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Tablebase im Analysebrett (bis sieben Figuren); ",
+              "stil": "normal"
+            },
+            {
+              "art": "link",
+              "text": "syzygy-tables.info",
+              "ziel": "https://syzygy-tables.info"
+            },
+            {
+              "art": "text",
+              "text": " bewertet jeden Zug einzeln",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 5 und 8 bis 11",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Meisterpartien live verfolgen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Zuschauen → Übertragungen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 11, Abschnitt 12.2",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Eigene Partie auswerten",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "„Computer-Analyse anfordern“, danach „Lerne aus deinen Fehlern“; das Diagramm „Zugzeiten“ zeigt den Zeitverbrauch je Zug",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 1, 4, 6, 7 und 11, Abschnitt 12.2 und 12.5",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Eigene Muster erkennen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "„Schach-Einblicke“ (nur für deine eigenen Partien)",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Abschnitt 12.2",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Ohne Zeitdruck spielen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Fernschach (mehrere Tage Bedenkzeit je Zug)",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Kapitel 6",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Das Brett im Kopf üben",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Einstellungen → Anzeige → Blindschach",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Abschnitt 12.1",
+              "stil": "normal"
+            }
+          ]
+        ],
+        [
+          [
+            {
+              "art": "text",
+              "text": "Schreibweise der Zugliste wählen",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Einstellungen → Anzeige → Zugnotation (voreingestellt Figurensymbole, wahlweise englische Buchstaben)",
+              "stil": "normal"
+            }
+          ],
+          [
+            {
+              "art": "text",
+              "text": "Einstiegskapitel",
+              "stil": "normal"
+            }
+          ]
+        ]
+      ],
+      "unterschrift": [
+        {
+          "art": "text",
+          "text": "Lichess-Funktionen für das Training mit diesem Buch (Stand: Oktober 2026).",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Adressen, jeweils nach ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "lichess.org",
+          "ziel": "https://lichess.org"
+        },
+        {
+          "art": "text",
+          "text": ": ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/training/coordinate",
+          "ziel": "https://lichess.org/training/coordinate"
+        },
+        {
+          "art": "text",
+          "text": " (Koordinaten), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/learn",
+          "ziel": "https://lichess.org/learn"
+        },
+        {
+          "art": "text",
+          "text": " (Grundlagen), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/editor",
+          "ziel": "https://lichess.org/editor"
+        },
+        {
+          "art": "text",
+          "text": " (Stellung aufbauen), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/analysis",
+          "ziel": "https://lichess.org/analysis"
+        },
+        {
+          "art": "text",
+          "text": " (Analysebrett), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/paste",
+          "ziel": "https://lichess.org/paste"
+        },
+        {
+          "art": "text",
+          "text": " (Partie importieren), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/study",
+          "ziel": "https://lichess.org/study"
+        },
+        {
+          "art": "text",
+          "text": " (Studien), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/training",
+          "ziel": "https://lichess.org/training"
+        },
+        {
+          "art": "text",
+          "text": " (Aufgaben), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/training/themes",
+          "ziel": "https://lichess.org/training/themes"
+        },
+        {
+          "art": "text",
+          "text": " (Aufgabenthemen), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/training/openings",
+          "ziel": "https://lichess.org/training/openings"
+        },
+        {
+          "art": "text",
+          "text": " (Nach Eröffnungen), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/training/of-player",
+          "ziel": "https://lichess.org/training/of-player"
+        },
+        {
+          "art": "text",
+          "text": " (eigene Partien), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/training/dashboard",
+          "ziel": "https://lichess.org/training/dashboard"
+        },
+        {
+          "art": "text",
+          "text": " (Aufgabenübersicht), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/streak",
+          "ziel": "https://lichess.org/streak"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/storm",
+          "ziel": "https://lichess.org/storm"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/racer",
+          "ziel": "https://lichess.org/racer"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/practice",
+          "ziel": "https://lichess.org/practice"
+        },
+        {
+          "art": "text",
+          "text": " (Trainieren), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/broadcast",
+          "ziel": "https://lichess.org/broadcast"
+        },
+        {
+          "art": "text",
+          "text": " (Übertragungen), ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "/insights",
+          "ziel": "https://lichess.org/insights"
+        },
+        {
+          "art": "text",
+          "text": " (Schach-Einblicke). Ein Konto brauchst du für Studien, die Computer-Analyse, die Aufgabenübersicht, die Schach-Einblicke, Fernschach und die Seite „Einstellungen“ (Blindschach, Zugnotation).",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Lichess-Funktion für deine Lernsammlung heißt „Studien“. Mit den komponierten Studien aus Kapitel 10 hat sie nichts zu tun. Im Kapitelmodus „Nächste Züge ausblenden“ übst du die Zug-erraten-Methode an einer importierten Meisterpartie. Unter „Übertragungen“ übst du sie dagegen an laufenden Turnierpartien, deren Ausgang noch niemand kennt. Schalte dabei die Computerbewertung aus.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Partien zum Nachspielen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Die Notation der Partien aus Kapitel 11 findest du auf ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "chessgames.com",
+          "ziel": "https://chessgames.com"
+        },
+        {
+          "art": "text",
+          "text": " oder ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "365chess.com",
+          "ziel": "https://365chess.com"
+        },
+        {
+          "art": "text",
+          "text": ". Von dort kopierst du sie in „Partie importieren“. Neuere Meisterpartien stehen auch in der Datenbank „Masters“.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Wenn du mehr willst: kostenlos.",
+          "stil": "fett"
+        }
+      ]
+    },
+    {
+      "art": "liste",
+      "punkte": [
+        [
+          {
+            "art": "text",
+            "text": "Stockfish",
+            "stil": "fett"
+          },
+          {
+            "art": "text",
+            "text": " (",
+            "stil": "normal"
+          },
+          {
+            "art": "link",
+            "text": "stockfishchess.org",
+            "ziel": "https://stockfishchess.org"
+          },
+          {
+            "art": "text",
+            "text": ") ist die Engine, mit der auch das Lichess-Analysebrett rechnet. Für den eigenen Rechner brauchst du dazu eine Oberfläche, zum Beispiel En Croissant (",
+            "stil": "normal"
+          },
+          {
+            "art": "link",
+            "text": "encroissant.org",
+            "ziel": "https://encroissant.org"
+          },
+          {
+            "art": "text",
+            "text": ").",
+            "stil": "normal"
+          }
+        ],
+        [
+          {
+            "art": "text",
+            "text": "Lucas Chess",
+            "stil": "fett"
+          },
+          {
+            "art": "text",
+            "text": " (",
+            "stil": "normal"
+          },
+          {
+            "art": "link",
+            "text": "lucaschess.pythonanywhere.com",
+            "ziel": "https://lucaschess.pythonanywhere.com"
+          },
+          {
+            "art": "text",
+            "text": ") ist ein Trainingsprogramm mit deutscher Oberfläche, das ohne Internet läuft: Partien gegen Engines in vielen Stärken, Taktik- und Endspielübungen.",
+            "stil": "normal"
+          }
+        ],
+        [
+          {
+            "art": "text",
+            "text": "Listudy",
+            "stil": "fett"
+          },
+          {
+            "art": "text",
+            "text": " (",
+            "stil": "normal"
+          },
+          {
+            "art": "link",
+            "text": "listudy.org",
+            "ziel": "https://listudy.org"
+          },
+          {
+            "art": "text",
+            "text": ") fragt deine Eröffnungsvarianten in wachsenden Abständen ab.",
+            "stil": "normal"
+          }
+        ],
+        [
+          {
+            "art": "text",
+            "text": "Deutsche Seiten: ",
+            "stil": "normal"
+          },
+          {
+            "art": "link",
+            "text": "schachtraining.de",
+            "ziel": "https://schachtraining.de"
+          },
+          {
+            "art": "text",
+            "text": " (Taktikaufgaben in drei Stufen), ",
+            "stil": "normal"
+          },
+          {
+            "art": "link",
+            "text": "schach-tipps.de",
+            "ziel": "https://schach-tipps.de"
+          },
+          {
+            "art": "text",
+            "text": " (Mattaufgaben und Grundlagen) und ",
+            "stil": "normal"
+          },
+          {
+            "art": "link",
+            "text": "schachbund.de",
+            "ziel": "https://schachbund.de"
+          },
+          {
+            "art": "text",
+            "text": " (die Schachregeln auf Deutsch, Vereinssuche).",
+            "stil": "normal"
+          }
+        ]
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Kostenpflichtige Angebote.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "Chess.com",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " hat gute Lektionen und Brettübungen, ohne Abonnement sind aber nur wenige Aufgaben am Tag frei. ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "Chessable",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " bietet Eröffnungs- und Endspielkurse mit eingebauter Wiederholung, einige davon kostenlos. ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "ChessTempo",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " hat eine eigene Funktion für die Zug-erraten-Methode. ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "ChessBase",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "text",
+          "text": "Fritz",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " sind die verbreiteten Datenbank- und Trainingsprogramme mit deutscher Oberfläche.",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 955
+  },
+  "stand": "2026-10-16"
+}

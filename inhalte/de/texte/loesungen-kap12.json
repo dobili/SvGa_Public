@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 12,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:kandidatenzuege",
+   "nummer": 83,
+   "status": "freigegeben",
+   "loesung": "1. Dc2",
+   "akzeptiert": [],
+   "motiv": "Stärkste Antwort prüfen",
+   "text": "Nach 1. Lxh7+? Kxh7 2. Sg5+ schlägt die Dame von d8 aus mit 2... Dxg5!, und Weiß hat zwei Figuren für einen Bauern gegeben. Prüfe bei der stärksten Antwort zuerst die Schlagzüge des Gegners; besser ist ein ruhiger Zug wie 1. Dc2."
+  },
+  {
+   "uebung": "ueb:fehlerprotokoll",
+   "nummer": 84,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Fehlerprotokoll",
+   "text": "Ein gutes Protokoll nennt einen konkreten Zug und ordnet ihn einer Fehlerart zu, etwa übersehene Taktik oder schwacher Plan. Erst danach prüft die Engine, ob die eigene Analyse die Hauptidee getroffen hat."
+  },
+  {
+   "uebung": "ueb:trainingsplan",
+   "nummer": 85,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Trainingsplan",
+   "text": "Ein guter Plan mischt an sieben Tagen Taktik, Partien, Endspiele, Meisterpartien und die Analyse einer eigenen verlorenen Partie. Er nennt für jeden Tag konkrete Inhalte statt allgemeiner Vorsätze."
+  },
+  {
+   "uebung": "ueb:zeitnot-prinzipien",
+   "nummer": 86,
+   "status": "freigegeben",
+   "loesung": "1. g3",
+   "akzeptiert": [],
+   "motiv": "Sicherheitsblick in Zeitnot",
+   "text": "Nach 1. Txd5?? zieht der Läufer mit Schach ab: 1... Lxh2+! 2. Kxh2 Txd5, und Schwarz gewinnt die Qualität. Die Frage nach den Schachs des Gegners entscheidet; 1. g3 schließt die Diagonale und droht erst dann Txd5."
+  }
+ ]
+}

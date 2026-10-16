@@ -1,0 +1,248 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 10,
+ "texte": [
+  {
+   "abbildung": "10.1",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. c7",
+     "frage": "Warum zieht Weiß sofort 1. c7?",
+     "antworten": [
+      "Damit setzt Weiß den schwarzen König patt.",
+      "Der Bauer steht vor dem Ziel, und der Turm kann ihn nur noch mit Schachs stören.",
+      "Der Bauer deckt auf c7 den eigenen König."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein Turmzug nach d8 scheitert am Schlag cxd8. Schwarz bleibt nur, mit Schachs Zeit zu gewinnen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.3",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "5. Kc2",
+     "frage": "Warum geht der König jetzt nach c2?",
+     "antworten": [
+      "Weiß will die Stellung wiederholen und remis machen.",
+      "Er will den Bauern c7 von hinten decken.",
+      "Von c2 aus deckt er c3 und d2: Jedes weitere Schach kostet den Turm."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Turm hat keine sicheren Schachs mehr. Schwarz muss sich etwas Neues einfallen lassen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.4",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "3. c8=D",
+     "frage": "Warum ist 3. c8=D hier ein Fehler?",
+     "antworten": [
+      "Tc1+ spießt König c5 und Dame c8 auf der c-Linie auf.",
+      "Die neue Dame setzt den schwarzen König patt.",
+      "Der Turm d1 kann die Dame sofort schlagen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der König muss aus dem Schach, dann schlägt der Turm die Dame. Mit 2. Kc5? stand der König auf der falschen Linie."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.5",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum kommt Weiß hier nicht weiter?",
+     "antworten": [
+      "Der weiße König hat keine Felder mehr.",
+      "Schwarz droht Matt auf der a-Linie.",
+      "Der Turm d7 fesselt den Bauern c7 an den König b7."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Bauer darf nicht ziehen, solange er den eigenen König deckt. Zieht der König weg, schlägt der Turm den Bauern."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.6",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "6. c8=T",
+     "frage": "Warum wandelt Weiß in einen Turm um und nicht in eine Dame?",
+     "antworten": [
+      "Ein Turm auf c8 ist vor allen Schachs sicher.",
+      "Nach c8=D gibt Tc4+, und nach Dxc4 ist Schwarz patt.",
+      "Eine Dame auf c8 könnte Schwarz sofort schlagen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Die Dame auf c4 würde auch a2 decken. Ein Turm auf c4 deckt a2 nicht, also gibt es kein Patt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.8",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum gewinnt Weiß jetzt?",
+     "antworten": [
+      "Schwarz hat keinen legalen Zug mehr.",
+      "Weiß kann den c-Bauern noch einmal umwandeln.",
+      "Der Turm a4 ist angegriffen, und zieht er weg, setzt Tc1 matt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Doppelte Aufgabe für einen einzigen Turm: Er kann nicht zugleich fliehen und die erste Reihe schützen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.9",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. Kg7",
+     "frage": "Warum zieht der König nach g7?",
+     "antworten": [
+      "Er deckt von dort das Umwandlungsfeld h1.",
+      "Er nähert sich zugleich dem h-Bauern und dem eigenen c-Bauern.",
+      "Er will den schwarzen König patt setzen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein schräger Königszug zählt so viel wie ein gerader, deckt aber zwei Richtungen ab. So bleiben beide Ziele erreichbar."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.11",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum ist der Königszug nach e5 so stark?",
+     "antworten": [
+      "Von e5 erreicht er f4 im Quadrat des h-Bauern oder d6 neben dem c-Bauern.",
+      "Er setzt den schwarzen König in Zugzwang und gewinnt sofort.",
+      "Er deckt den Bauern c6 schon jetzt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Schlägt Schwarz auf c6, holt der König den h-Bauern ein. Läuft der h-Bauer, unterstützt der König den c-Bauern."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.14",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. La7",
+     "frage": "Warum spielt Weiß 1. La7?",
+     "antworten": [
+      "Der Läufer deckt von a7 das Feld h8.",
+      "Er greift den Läufer d4 an; schlägt dieser auf a7, verlässt er die lange Diagonale.",
+      "Er stellt den eigenen König vor Läuferschachs sicher."
+     ],
+     "richtig": 1,
+     "erklaerung": "Nach Lxa7 und h7 erreicht kein schwarzer Stein mehr h8. Ein sofortiges h7 dagegen beantwortet Schwarz mit e4."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.16",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum stellt Weiß den Läufer auf d4 ein?",
+     "antworten": [
+      "Er sperrt die Diagonale: Nach dem Schlag auf d4 bleibt der schwarze Läufer hinter einem Hindernis.",
+      "Er deckt von d4 aus das Feld h8 für den eigenen Bauern.",
+      "Nach dem Tausch hat Weiß einen Bauern mehr."
+     ],
+     "richtig": 0,
+     "erklaerung": "Ob Läufer oder Bauer auf d4 schlägt: Der weiße König hält die Sperre fest. Dann läuft der h-Bauer durch."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.19",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. Sg5",
+     "frage": "Warum ist 1. Sg5 so stark?",
+     "antworten": [
+      "Der Springer droht, den Bauern h4 zu schlagen.",
+      "Er setzt sofort matt.",
+      "Er nimmt dem König h7; Schwarz muss h3 ziehen, und Sg6 setzt matt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein stiller Zug bringt Schwarz in Zugzwang. Der Bauer, der Schwarz vor dem Patt rettet, wird ihm zum Verhängnis."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.20",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. Sg5",
+     "frage": "Warum ist 1. Sg5 hier ein Fehler?",
+     "antworten": [
+      "Der Springer auf g5 kann geschlagen werden.",
+      "Schwarz hat danach keinen legalen Zug und steht nicht im Schach: patt.",
+      "Schwarz kann nach g8 entkommen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Dieselbe Idee wie in der Stellung mit Bauer, aber ohne Pattreserve wird aus dem Zugzwang ein Patt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "10.22",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum hat Schwarz hier keinen Zug mehr?",
+     "antworten": [
+      "Der König steht im Schach und kann nicht ausweichen.",
+      "Die Dame e6 fesselt f6 und deckt f5 und f7, h4 deckt g5; alle anderen Steine sind blockiert.",
+      "Schwarz darf nicht ziehen, weil Weiß zuletzt Schach gegeben hat."
+     ],
+     "richtig": 1,
+     "erklaerung": "Kein Schach, kein legaler Zug: Das ist Patt. Wenige weiße Steine reichen, weil die schwarzen sich gegenseitig einsperren."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

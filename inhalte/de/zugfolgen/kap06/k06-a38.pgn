@@ -1,0 +1,16 @@
+[Event "Kapitel 6: Übungen"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/8/6k1/r5p1/7P/5NK1/4R3/8 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k06-a38"]
+[Kapitel "6"]
+[Abschnitt "Übung 31"]
+[Status "freigegeben"]
+[Abbildungen "6.38"]
+
+{ Abb. 6.38 } 1... gxh4+ $1 ( 1... g4 ) 2. Nxh4+ ( 2. Kxh4 ) *

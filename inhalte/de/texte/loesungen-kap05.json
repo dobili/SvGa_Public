@@ -1,0 +1,42 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 5,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:bauernloch-erkennen",
+   "nummer": 23,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Bauernzüge kosten Schutz",
+   "text": "Der Bauer h6 hat keinen Bauernschutz mehr und steht schon im Visier des Läufers c1; g6 hat mit h7 einen Beschützer verloren. 2... h6 erfüllt keinen der vier Gründe für einen Bauernzug."
+  },
+  {
+   "uebung": "ueb:deckungstest-inseln",
+   "nummer": 24,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Deckungstest und Bauerninseln",
+   "text": "a7 ist ein Isolani, c6 ein rückständiger Bauer; Schwarz hat drei Bauerninseln, Weiß zwei. Weiß steht strukturell besser, Schwarz hat dafür die halboffene b-Linie gegen b2 und aktive Läufer."
+  },
+  {
+   "uebung": "ueb:guter-schlechter-laeufer",
+   "nummer": 25,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Guter und schlechter Läufer",
+   "text": "Die schwarzen Bauern d6 und e5 stehen auf dunklen Feldern, also ist der dunkelfeldrige Läufer f8 der schlechte, c8 der gute. Bei Weiß stehen d3 und e4 auf hellen Feldern, deshalb ist der Läufer f1 der schlechte."
+  },
+  {
+   "uebung": "ueb:skelett-roentgen",
+   "nummer": 26,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Skelett-Röntgen",
+   "text": "Die weiße Basis d4 ist schwach und bindet Figuren, Weiß hat Raum am Königsflügel; Schwarz drückt über die offene c-Linie gegen d4. Anders als in der Französischen Vorstoßvariante hat Schwarz keinen eingesperrten Läufer, weil er ihn vor ...e6 entwickelt hat."
+  }
+ ]
+}

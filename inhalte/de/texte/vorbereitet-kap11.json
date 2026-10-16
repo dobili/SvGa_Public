@@ -1,0 +1,716 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 11,
+ "texte": [
+  {
+   "abbildung": "11.2",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k11-phase",
+     "hinweise": [
+      "Prüfe die drei Eröffnungsziele für Weiß.",
+      "Zentrum: der Bauer e4. Entwicklung: Nur die Dame f3 ist draußen. Der König steht noch auf e1.",
+      "Eröffnung: Entwicklung und Rochade fehlen. Gesucht ist ein Entwicklungszug, der zugleich droht."
+     ],
+     "text": "Eröffnung: Weiß hat das Zentrum, aber kaum Figuren im Spiel und noch nicht rochiert. Jetzt zählt jeder Entwicklungszug, am besten mit Drohung."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6. Lc4",
+     "frage": "Warum ist 6. Lc4 hier der richtige Entwicklungszug?",
+     "antworten": [
+      "Er deckt den Bauern e4 gegen einen Angriff des Springers g8.",
+      "Er bereitet die lange Rochade vor.",
+      "Er entwickelt mit Drohung: Läufer und Dame greifen f7 an, gedeckt ist f7 nur vom König."
+     ],
+     "richtig": 2,
+     "erklaerung": "Schwarz muss auf die Drohung gegen f7 antworten und gewinnt keine Zeit für die eigene Entwicklung. So holt Weiß mit jedem Zug einen Vorsprung heraus."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.4",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "10. Sxb5",
+     "frage": "Warum opfert Weiß mit 10. Sxb5 einen ganzen Springer?",
+     "antworten": [
+      "Er gewinnt den Bauern b5 und bleibt mit Material vorn.",
+      "Nach Sxb5 gabelt der Springer König und Turm.",
+      "Er öffnet Linien gegen den König in der Mitte, während die schwarzen Figuren gefesselt und unentwickelt sind."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach cxb5 Lxb5+ zielt der Läufer auf den König e8, und der Läufer g5 fesselt weiter den Springer f6. Schwarz hat mehr Material, Weiß hat die Figuren, die mitspielen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.5",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k11-phase",
+     "hinweise": [
+      "Welches Eröffnungsziel fehlt Weiß noch?",
+      "Der weiße König steht noch auf e1. Schau auf die d-Linie und den Springer d7.",
+      "Die lange Rochade sichert den König und stellt den Turm gegen den gefesselten Springer d7."
+     ],
+     "text": "Eröffnung: Weiß hat Zentrum und Entwicklung, nur die Königssicherheit fehlt. Die lange Rochade erfüllt das letzte Ziel und bringt den Turm sofort ins Spiel."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "12. O-O-O",
+     "frage": "Warum rochiert Weiß mit 12. O-O-O lang?",
+     "antworten": [
+      "Der König bringt sich in Sicherheit, und der Turm greift auf der d-Linie den gefesselten Springer d7 an.",
+      "Die lange Rochade verhindert, dass Schwarz noch rochieren kann.",
+      "Der Turm deckt von d1 aus den Läufer b5."
+     ],
+     "richtig": 0,
+     "erklaerung": "Ein Zug mit zwei Aufgaben: Königssicherheit und ein neuer Angreifer. Der Springer d7 ist an den König gefesselt und kann dem Druck nicht ausweichen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.7",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "15. Lxd7+",
+     "frage": "Warum ist 15. Lxd7+ der Auftakt zum Matt?",
+     "antworten": [
+      "Der Läufer d7 deckt danach das Feld c8 für die Dame.",
+      "Nach dem Rückschlag Sxd7 ist die Diagonale des Läufers g5 bis d8 frei; Db8+ und Td8# folgen.",
+      "Schwarz muss mit dem König zurückschlagen und gerät ins Schach des Turms d1."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Springer f6 stand auf der Diagonale g5–d8. Schlägt er zurück, deckt der Läufer e7 und d8, und nach dem Damenopfer setzt der Turm auf d8 matt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.11",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "12. Lxh7+",
+     "frage": "Warum lohnt sich hier das Läuferopfer 12. Lxh7+?",
+     "antworten": [
+      "Schwarz darf den Läufer nicht schlagen, weil er sonst matt ist.",
+      "Weiß wickelt mit dem Opfer in ein besseres Endspiel ab.",
+      "h7 ist nur vom König gedeckt, und Springer und Dame können sofort nachsetzen."
+     ],
+     "richtig": 2,
+     "erklaerung": "Das griechische Geschenk braucht die drei Angreifer Läufer, Springer und Dame. Das Muster zeigt dir, wo du suchst; ob es geht, entscheidet die Rechnung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.12",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "14. h4",
+     "frage": "Warum ist 14. h4 nach 13... Kg6 so stark?",
+     "antworten": [
+      "Es greift den Läufer d6 an.",
+      "Es droht h5+, und der König vor seinen Bauern findet kaum sichere Felder.",
+      "Es bereitet die Rochade des weißen Königs vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein König vor seinen Bauern ist ein Ziel. Jeder Bauernzug mit Schach treibt ihn weiter ins Freie, wo die weißen Figuren warten."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.16",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "11. Dxh7+",
+     "frage": "Warum opfert Lasker mit 11. Dxh7+ die Dame?",
+     "antworten": [
+      "Nach Kxh7 gibt Sxf6+ Doppelschach mit Springer und Läufer d3.",
+      "Die Dame h5 war angegriffen und musste ohnehin ziehen.",
+      "Weiß erzwingt so ein Endspiel mit einem Bauern mehr."
+     ],
+     "richtig": 0,
+     "erklaerung": "Gegen ein Doppelschach hilft nur ein Königszug. Von da an jagt Weiß den König mit Schach um Schach über das ganze Brett."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.18",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "14. h4+",
+     "frage": "Warum setzt Weiß die Jagd mit 14. h4+ fort?",
+     "antworten": [
+      "Der h-Bauer soll möglichst schnell umwandeln.",
+      "Weiß will den König zurück nach g8 treiben.",
+      "Jeder Zug ist Schach: Schwarz hat nie Zeit für eigene Drohungen."
+     ],
+     "richtig": 2,
+     "erklaerung": "Erzwingende Züge zuerst: Mit lauter Schachs bleibt die Rechnung kurz und sicher. Der König wird dabei immer tiefer ins weiße Lager getrieben."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.21",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum ist 18. Kd2 Matt, obwohl nur der weiße König zieht?",
+     "antworten": [
+      "Der König d2 greift selbst den König g1 an.",
+      "Der König gibt die erste Reihe frei: Der Turm a1 gibt Abzugsschach, und alle Fluchtfelder sind gedeckt.",
+      "Der Turm h2 gibt nach dem Königszug Schach."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein Abzugsschach: Ein Stein zieht weg, der Stein dahinter gibt Schach. Turm h2, Läufer e2 und Springer g4 decken die Felder um den König g1."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.22",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k11-phase",
+     "hinweise": [
+      "Prüfe die drei Eröffnungsziele für Schwarz.",
+      "Schau auf den König e8 und auf die Figuren, die noch auf der Grundreihe stehen.",
+      "Entwicklung erst teils, Rochade fehlt: Ein weiterer Bauer kostet Zeit. Prüfe ihn mit der Faktorenbilanz."
+     ],
+     "text": "Eröffnung: Schwarz ist erst teils entwickelt und hat nicht rochiert. Jeder weitere Bauerngewinn muss sich in der Faktorenbilanz lohnen: Material gegen Zeit."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6... exd4",
+     "frage": "Warum ist 6... exd4 kein reines Geschenk für Schwarz?",
+     "antworten": [
+      "Der Bauer d4 war ungedeckt; Schwarz gewinnt ihn ohne jede Folge.",
+      "Schwarz gewinnt Material, gibt Weiß aber Zeit und offene Linien gegen den König in der Mitte.",
+      "Schwarz zwingt Weiß so zum Damentausch."
+     ],
+     "richtig": 1,
+     "erklaerung": "Im Gambit zahlt Weiß mit Bauern für Zeit und Aktivität. Ob die Kompensation reicht, zeigt die Faktorenbilanz; sie ändert sich mit jedem Zug."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.26",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "17. Sf6+",
+     "frage": "Warum opfert Anderssen mit 17. Sf6+ den Springer?",
+     "antworten": [
+      "Nach gxf6 exf6 ist die e-Linie offen und der Springer e7 an den König gefesselt.",
+      "Der Springer deckt von f6 aus den Bauern e5.",
+      "Weiß will die Damen tauschen und ins Endspiel gehen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Das Schach greift zugleich die Dame h5 an, also nimmt Schwarz. Danach zielen Turm e1 und Bauer f6 auf e7, und der König steht noch immer in der Mitte."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.28",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-roentgen",
+     "hinweise": [
+      "Prüfe zuerst, was Weiß hätte, wenn er jetzt am Zug wäre.",
+      "Schau auf die e-Linie: Turm e1, Springer e7, König e8.",
+      "Weiß hat Txe7+; danach öffnen Opfer auf d7 die Wege für die Läufer."
+     ],
+     "text": "Weiß hat das Schach Txe7+ gegen den König in der Mitte. Bevor Schwarz auf f3 schlägt, muss er diese Drohung beantworten."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum verliert der natürliche Zug 19... Dxf3?",
+     "antworten": [
+      "Weiß schlägt mit gxf3 zurück und hat eine Figur mehr.",
+      "Die schwarze Dame ist auf f3 gefangen.",
+      "Weiß opfert auf e7 und d7 und setzt dann mit den Läufern über f5 und d7 matt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach Txe7+ Sxe7 Dxd7+ Kxd7 folgt Lf5+ mit Doppelschach und Matt auf e7. Besser hält 19... Dh3 die Stellung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.29",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-roentgen",
+     "hinweise": [
+      "Was droht Schwarz, wenn er jetzt am Zug wäre?",
+      "Schau auf die Dame f3, den Turm g8 und das Feld g2.",
+      "Schwarz droht Dxg2#. Weiß hat nur noch Zeit für Schachs, etwa Dxd7+."
+     ],
+     "text": "Schwarz droht Dxg2#. Weiß muss deshalb mit Schach weiterspielen; nur so bleibt keine Zeit für das schwarze Matt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "21. Dxd7+",
+     "frage": "Warum darf Weiß trotz der Mattdrohung auf g2 mit 21. Dxd7+ die Dame opfern?",
+     "antworten": [
+      "Die Dame deckt von d7 aus das Feld g2.",
+      "Jeder weitere weiße Zug ist Schach; Schwarz kommt nie dazu, auf g2 zu schlagen.",
+      "Nach Dxd7+ ist der Turm g8 gefesselt und kann nicht mehr helfen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Nach Kxd7 gibt Lf5+ Doppelschach von Läufer und Turm d1. Die Schachs reißen nicht ab bis Lxe7#."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.34",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "14. h5",
+     "frage": "Warum spielt Weiß 14. h5, obwohl der Bauer verloren geht?",
+     "antworten": [
+      "Der Hebel gegen g6 öffnet die h-Linie gegen den rochierten König.",
+      "Der Bauer greift den Springer f6 an.",
+      "Er schützt den eigenen König auf c1."
+     ],
+     "richtig": 0,
+     "erklaerung": "Bei entgegengesetzten Rochaden zählt das Tempo. Ein Bauer ist billig, wenn dafür die Linie zum gegnerischen König aufgeht."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.35",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "16. Sde2",
+     "frage": "Warum spielt Weiß 16. Sde2?",
+     "antworten": [
+      "Der Springer greift von e2 aus den Bauern d6 an.",
+      "Er bereitet die kurze Rochade vor.",
+      "Er deckt c3 ein zweites Mal mit einer Figur, damit das Qualitätsopfer Txc3 nicht mehr wirkt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Erst den Plan des Gegners stoppen, dann zuschlagen: Ohne das Opfer auf c3 hat Schwarz kein Gegenspiel gegen den weißen König."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.37",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "20. g5",
+     "frage": "Warum spielt Weiß 20. g5?",
+     "antworten": [
+      "Er öffnet die g-Linie für den Turm h1.",
+      "Er greift den Springer f6 an, der außer dem König als einziger h7 hält.",
+      "Er sichert dem Springer das Feld f4."
+     ],
+     "richtig": 1,
+     "erklaerung": "Verschwindet der Springer f6, wird h7 zum Einbruchsfeld für Dame und Turm h1. Dafür gibt Weiß gern einen Bauern."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.39",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "24. e5",
+     "frage": "Warum spielt Weiß 24. e5?",
+     "antworten": [
+      "Er deckt den Springer d5 ein zweites Mal.",
+      "Er öffnet die e-Linie für einen weißen Turm.",
+      "Er greift den Springer f6 an und sperrt die fünfte Reihe, sodass die Dame a5 nicht nach g5 kommt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der Läufer c6 greift den Springer d5 an. Mit dem Bauern auf e5 bleibt die Reihe trotzdem zu, und der Angriff auf h7 geht weiter."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.44",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k11-phase",
+     "hinweise": [
+      "Prüfe die Eröffnungsziele und die vier Endspielfragen für Weiß.",
+      "Die Damen stehen noch auf a4 und d7. Läufer c1 und Turm a1 stehen zu Hause.",
+      "Mittelspiel kurz vor dem Endspiel: Erst die letzten Figuren ins Spiel bringen, dann tauschen."
+     ],
+     "text": "Mittelspiel: Die Eröffnungsziele sind erfüllt, die Entwicklung erst teils. Kommen die Damen vom Brett, beginnt das Endspiel; dann zählt jede aktive Figur."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "13. Te1",
+     "frage": "Warum spielt Weiß zuerst 13. Te1, statt sofort die Damen zu tauschen?",
+     "antworten": [
+      "Er besetzt die offene e-Linie und fesselt den Läufer e7 an den König, der noch nicht rochiert hat.",
+      "Weiß will den Damentausch ganz vermeiden.",
+      "Der Turm deckt von e1 aus den Läufer d3."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach dem Damentausch zählt jede entwickelte Figur. Weiß holt den Turm mit Wirkung ins Spiel, bevor die Stellung ins Endspiel übergeht."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.50",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k11-phase",
+     "hinweise": [
+      "Prüfe die vier Endspielfragen.",
+      "Damen sind vom Brett, beide Könige sicher. Schau auf die Bauern d5 und a6.",
+      "Endspiel: Werkzeug sind die sechs Endspielregeln; die Ziele sind die schwachen Bauern d5 und a6."
+     ],
+     "text": "Endspiel: Alle vier Prüffragen ergeben Ja. Jetzt helfen die sechs Endspielregeln; Ziele sind die schwachen schwarzen Bauern."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "22. Sxd7+",
+     "frage": "Warum gibt Weiß mit 22. Sxd7+ seinen starken Springer c5?",
+     "antworten": [
+      "Der Springer c5 war angegriffen und musste ziehen.",
+      "Weiß will in ein reines Bauernendspiel abwickeln.",
+      "Der Läufer d7 wollte nach b5, um den weißen Läufer zu tauschen; so behält Weiß Läufer gegen Springer."
+     ],
+     "richtig": 2,
+     "erklaerung": "Auf b5 hätte der schwarze Läufer den Läufer d3 getauscht. Nach Sxd7+ bleibt Weiß der Läufer und Schwarz der Springer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.51",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "24. Tc7",
+     "frage": "Warum zieht der Turm mit 24. Tc7 auf die siebte Reihe?",
+     "antworten": [
+      "Er deckt den Bauern b4.",
+      "Über die freie c-Linie dringt er ein und greift von der Seite den Bauern f7 an.",
+      "Er bereitet Tc8+ mit Matt vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein Turm auf der siebten Reihe greift die Bauern von der Seite an und schnürt den König ein. Schwarz muss passiv decken."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.56",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum stößt Weiß in dieser Struktur mit dem b-Bauern vor, obwohl er am Damenflügel weniger Bauern hat?",
+     "antworten": [
+      "Weiß will am Damenflügel einen Freibauern bilden.",
+      "Nach b4–b5 und dem Tausch bleibt Schwarz ein schwacher Bauer zurück, etwa auf c6.",
+      "Der Vorstoß schützt den eigenen König."
+     ],
+     "richtig": 1,
+     "erklaerung": "Das ist der Minderheitsangriff: Zwei Bauern greifen drei an, damit eine Schwäche entsteht. Die Schwäche bindet Schwarz, gewonnen wird oft am anderen Flügel."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.59",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "27. b5",
+     "frage": "Warum spielt Weiß jetzt 27. b5?",
+     "antworten": [
+      "Der Hebel greift c6 an; nach dem Tausch behält Schwarz einen schwachen Bauern.",
+      "Der Bauer b5 deckt den Bauern a4.",
+      "Der Bauer will so schnell wie möglich umwandeln."
+     ],
+     "richtig": 0,
+     "erklaerung": "Mit a4 und b4 war der Hebel vorbereitet. Jetzt kann Schwarz seine Bauern am Damenflügel nicht mehr gesund halten."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.62",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k5-bauern",
+     "hinweise": [
+      "Welcher schwarze Bauer besteht den Deckungstest nicht?",
+      "Schau auf die c-Linie: Welche schwarzen Bauern stehen auf der b- und d-Linie?",
+      "Auf der b- und d-Linie steht kein schwarzer Bauer mehr: c6 ist ein Isolani."
+     ],
+     "text": "Der Bauer c6 ist ein Isolani auf der halboffenen c-Linie. Kein Bauer kann ihn mehr decken, also muss Schwarz Figuren dafür abstellen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "31. Tac1",
+     "frage": "Warum spielt Weiß 31. Tac1?",
+     "antworten": [
+      "Er bereitet den Vorstoß c4 vor.",
+      "Er greift den König g8 an.",
+      "Der Turm geht auf die halboffene c-Linie gegen den schwachen Bauern c6."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Bauer, den kein Bauer decken kann, braucht Figuren als Wächter. Jede Figur, die c6 deckt, fehlt Schwarz anderswo."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.67",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "44. e6",
+     "frage": "Warum ist 44. e6 so stark?",
+     "antworten": [
+      "Der Bauer öffnet die Diagonale des Läufers g4.",
+      "Der Freibauer ist nur noch zwei Schritte von e8 entfernt, gedeckt vom Läufer g4; der Springer d6 kontrolliert e8.",
+      "Der Bauer greift den Läufer d5 an."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein Freibauer muss laufen. Mit Läufer und Springer als Helfer ist er kaum noch aufzuhalten."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.69",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "13. Lxg6",
+     "frage": "Warum tauscht Weiß mit 13. Lxg6 und danach Lxd6 beide Läufer?",
+     "antworten": [
+      "Weiß will die h-Linie für seinen Turm öffnen.",
+      "Der Läufer d3 war angegriffen.",
+      "So verschwinden die beiden Figuren, die das Feld e5 bewachen; danach gehört e5 dem Springer."
+     ],
+     "richtig": 2,
+     "erklaerung": "Erst die Bewacher tauschen, dann das Feld besetzen: Springer g6 und Läufer d6 kontrollierten e5."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.70",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "15. Se5",
+     "frage": "Warum steht der Springer nach 15. Se5 so gut?",
+     "antworten": [
+      "Die Bewacher von e5 sind getauscht, der Bauer d4 stützt ihn, und der Läufer b7 hinter d5 spielt kaum mit.",
+      "Von e5 aus gibt er sofort Schach.",
+      "Er deckt von e5 aus den Bauern c3."
+     ],
+     "richtig": 0,
+     "erklaerung": "Weiß hat das Feld erst freigeräumt und dann besetzt. Der schwarze Läufer b7 steht hinter seinem eigenen Bauern und kann nicht helfen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.76",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum ist mit 13. d5 klar, auf welchem Flügel Weiß spielt?",
+     "antworten": [
+      "Das Zentrum ist offen, also greift Weiß direkt den König an.",
+      "Die Kette e4–d5 zeigt zum Damenflügel; dort spielt Weiß, etwa mit a4.",
+      "Weiß hat am Königsflügel mehr Bauern."
+     ],
+     "richtig": 1,
+     "erklaerung": "Im geschlossenen Zentrum spielt jede Seite dort, wohin ihre Kette zeigt. Karpow folgt mit a4 und öffnet die a-Linie."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.78",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "24. La7",
+     "frage": "Warum spielt Weiß 24. La7?",
+     "antworten": [
+      "Der Läufer greift den Turm a8 an und gewinnt ihn.",
+      "Er deckt den Bauern b4.",
+      "Er sperrt die a-Linie: Schwarz kann die Türme nicht mehr tauschen."
+     ],
+     "richtig": 2,
+     "erklaerung": "Prophylaxe: Schwarz hatte nur einen Plan, den Turmtausch auf der a-Linie. La7 nimmt ihm diesen Plan; der Turm a2 deckt den Läufer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.84",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum ist Schwarz in der Schlussstellung verloren?",
+     "antworten": [
+      "Es droht Dxg7#, und die schwarzen Figuren am Damenflügel kommen nicht rechtzeitig zum König.",
+      "Schwarz hat zu wenig Material, um sich zu wehren.",
+      "Der weiße a-Bauer läuft zur Dame."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Läufer a7 band die schwarzen Türme lange an den Damenflügel. Am Königsflügel fehlt Schwarz dann die Verteidigung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.85",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k11-phase",
+     "hinweise": [
+      "Prüfe die vier Endspielfragen.",
+      "Keine Damen, beide Könige sicher. Schau auf den Freibauern g5 und den Turm h7.",
+      "Endspiel: sechs Regeln und im Turmendspiel aktive Figuren; der weiße König will nach vorn."
+     ],
+     "text": "Endspiel: Alle vier Prüffragen ergeben Ja. Jetzt zählen die Endspielregeln und im Turmendspiel die Aktivität von König und Turm."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum darf Weiß hier Bauern hergeben?",
+     "antworten": [
+      "Die Stellung ist ohnehin remis, egal wie viele Bauern fallen.",
+      "Schwarz kann seinen Turm nicht bewegen.",
+      "Aktiver König, Turm auf der siebten Reihe und der Freibauer g5 wiegen die Bauern auf."
+     ],
+     "richtig": 2,
+     "erklaerung": "Schwarz holt sich mit Txc3+ Bauern, doch der weiße König läuft über h4 nach g5. Ein aktiver Turm mit aktivem König zählt mehr als ein Bauer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.88",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "41... Te8",
+     "frage": "Warum spielt Schwarz 41... Te8?",
+     "antworten": [
+      "Der Turm greift den Bauern g6 an.",
+      "Es droht Tc8+ mit Matt; der Turm muss die achte Reihe decken.",
+      "Er will den Bauern a4 holen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der schwarze Turm wird passiv. Weiß holt sich danach f5, und König, Turm und Freibauer arbeiten zusammen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.91",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum wäre 43. Tc7 stärker gewesen als der Partiezug 43. Ta3?",
+     "antworten": [
+      "Nach Tc7 kann Weiß sofort mattsetzen.",
+      "Der Turm auf der siebten Reihe greift a7 und h7 an, statt nur den Bauern a2 zu decken.",
+      "Ta3 stellt den Turm ein."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein aktiver Turm greift an, ein passiver deckt nur. Später versucht Weiß doch noch, über f7 auf die siebte Reihe zu kommen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "11.93",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "46... Ta5",
+     "frage": "Warum spielt Schwarz 46... Ta5?",
+     "antworten": [
+      "Er bietet den Turmtausch an.",
+      "Er verhindert Txh7.",
+      "Statt passiv zu decken, greift der Turm den Bauern a4 an."
+     ],
+     "richtig": 2,
+     "erklaerung": "Aktive Verteidigung: Schwarz gibt h7 und holt sich dafür a4. Wer schlechter steht, sucht Gegenspiel und tauscht Bauern."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

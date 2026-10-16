@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Turm gegen Bauer"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "8/8/8/8/8/2K5/1p2R3/2k5 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a21"]
+[Kapitel "9"]
+[Abschnitt "9.5"]
+[Status "freigegeben"]
+[Abbildungen "9.21"]
+
+{ Abb. 9.21 } 1... b1=N+ $1 ( 1... b1=Q $4 2. Re1# ) *

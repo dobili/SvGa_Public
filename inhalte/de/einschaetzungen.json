@@ -1,0 +1,134 @@
+{
+ "schemaVersion": 1,
+ "hinweis": "Von Hand geprüfte Einschätzungen zu Befunden der Pipeline (AP 4). Ein Eintrag passt zu einem Befund, wenn Datei und Kennung gleich sind und der Befundtext 'enthaelt' enthält. Die Prüfhilfe buch/arbeit/freigabe/ zeigt sie beim Befund an. Keine Buchsätze, nur Züge und Fundstellen.",
+ "einschaetzungen": [
+  {
+   "datei": "kap06_mittelspiel.tex",
+   "kennung": "schachzeichen",
+   "enthaelt": "„Dg2“",
+   "urteil": "Buchfehler (Notation)",
+   "begruendung": "Nach 21. fxe5 Dg5+ 22. Kh1 Dg2 ist Weiß matt (geprüft). Der Text sagt selbst „matt“, die Zugfolge trägt aber kein Mattzeichen.",
+   "vorschlag": "In der Zugfolge „21... Dg5+ 22. Kh1 Dg2“ (Abschnitt zu Abb. 6.29) das Mattzeichen ergänzen: \\zugfolge{21... Dg5+ 22. Kh1 Dg2\\#}."
+  },
+  {
+   "datei": "kap07_taktik.tex",
+   "kennung": "unterschrift-ohne-anschluss",
+   "enthaelt": "1... Lxa2? 2. b3!",
+   "urteil": "kein Buchfehler",
+   "begruendung": "Abb. 7.24 zeigt die Stellung nach 1... Lxa2? 2. b3!. Die Stellung davor zeigt das Buch nicht, also kann die Pipeline die Züge nicht nachspielen.",
+   "vorschlag": "Im Buch nichts ändern. Die App zeigt Abb. 7.24 als einzelne Stellung."
+  },
+  {
+   "datei": "kap09_endspiel_vertiefung.tex",
+   "kennung": "zugfolge-ohne-anschluss",
+   "enthaelt": "3. Ta8+ Td8 4. Txd8+",
+   "urteil": "kein Buchfehler",
+   "begruendung": "Die Lösung zu Abb. 9.45 beschreibt nach 1... Td1+? 2. Ke6! eine Drohung; der zweite Zug von Schwarz ist absichtlich ausgelassen. Ohne ihn lässt sich die Folge nicht nachspielen.",
+   "vorschlag": "Im Buch nichts ändern. Soll die Drohung in der App spielbar sein, im Entwurf von Abb. 9.45 nach 2. Ke6! einen passenden schwarzen Zug einfügen und 3. Ta8+ Td8 4. Txd8+ Kxd8 5. Kf7 dahinter anhängen."
+  },
+  {
+   "datei": "kap04_fallenkabinett.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„Sd4!“",
+   "urteil": "kein Buchfehler",
+   "begruendung": "Die Pipeline hat „9... Sd4!“ zusätzlich nach 9. Sb5 Db8 angehängt. Gemeint ist die Stellung nach 9. h3?? (Abb. 4.29 ff.), dort steht der Zug auch richtig im Baum.",
+   "vorschlag": "Im Buch nichts ändern. Im Entwurf mit Abb. 4.27 bis 4.29 die Abzweigung „9... Sd4!“ nach 9. Sb5 Db8 löschen."
+  },
+  {
+   "datei": "kap04_fallenkabinett.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„h3??“",
+   "urteil": "kein Buchfehler",
+   "begruendung": "„9. h3??“ stammt aus der Übersichtstabelle (Sibirische Falle). Die Pipeline hat den Zug an eine andere Stellung mit dem 9. Zug von Weiß gehängt (Najdorf-Baum nach 8... Le7). In der Sibirischen Falle steht 9. h3?? richtig.",
+   "vorschlag": "Im Buch nichts ändern. Im Entwurf mit Abb. 4.48 bis 4.50 die Abzweigung „8... Le7 9. h3??“ löschen."
+  },
+  {
+   "datei": "kap03_gambits.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„Ld2!“",
+   "urteil": "kein Buchfehler",
+   "begruendung": "„5. Ld2!“ aus der Zusammenfassung meint die Antwort auf 4. Lf4 Db4+ im Englund-Gambit. Die Pipeline hat ihn auch nach 4. Dd5 f6 angehängt, wo er nicht hingehört.",
+   "vorschlag": "Im Buch nichts ändern. Im Entwurf des Englund-Gambits die Abzweigung „5. Ld2!“ nach 4. Dd5 f6 löschen."
+  },
+  {
+   "datei": "kap02_klassische_eroeffnungen.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„Sg5??“",
+   "urteil": "kein Buchfehler",
+   "begruendung": "Das „??“ gehört zu 4. Sg5 nach 3... Lc5 (Übung zur Italienischen Partie). Die Pipeline hat es auch an 4. Sg5 nach 3... Sf6 gehängt; im Zweispringerspiel ist 4. Sg5 ein normaler Zug.",
+   "vorschlag": "Im Buch nichts ändern. Im Entwurf mit Abb. 2.148 bei 3... Sf6 4. Sg5 das Zugzeichen entfernen."
+  },
+  {
+   "datei": "kap10_studien.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„Td4!!“",
+   "urteil": "kein Buchfehler",
+   "begruendung": "Saavedra-Studie: Schwarz verliert in jeder Variante. 5... Td4!! stellt die Pattfalle und ist die Pointe der Studie; die Engine wertet nur, wie schnell Weiß gewinnt.",
+   "vorschlag": "Im Buch nichts ändern."
+  },
+  {
+   "datei": "kap10_studien.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„f8=D?“",
+   "urteil": "kein Buchfehler",
+   "begruendung": "Die Aufgabe verlangt ein Matt in einem Zug. 1. f8=D gewinnt laut Engine zwar auch, setzt aber nicht sofort matt; das „?“ ist im Sinn der Aufgabe richtig.",
+   "vorschlag": "Im Buch nichts ändern."
+  },
+  {
+   "datei": "kap10_studien.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„h7?“",
+   "urteil": "kein Buchfehler",
+   "begruendung": "Die Endspieldatenbank (Lichess, sechs Steine, abgefragt am 14.10.2026) bestätigt das Buch: 1. La7 ist der einzige Gewinnzug (Matt in 37), 1. h7 hält nur remis. Die Engine sah den tiefen Gewinn nicht und bewertete beide Züge gleich.",
+   "vorschlag": "Nichts ändern, „?“ bleibt."
+  },
+  {
+   "datei": "kap01_grundprinzipien.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„d4!“",
+   "urteil": "Entscheidung des Autors",
+   "begruendung": "Nach 5... Dd8 (Abb. 1.10) zieht die Engine 6. O-O um 0,5 Bauerneinheiten vor. 6. d4 ist gut und lehrreich, aber nicht klar der beste Zug.",
+   "vorschlag": "Buch bleibt unverändert (Entscheidung des Autors vom 14.10.2026). Die Engine-Erklärung in der App sagt, warum Buch und Engine abweichen können."
+  },
+  {
+   "datei": "kap01_grundprinzipien.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„Dg6??“",
+   "urteil": "Entscheidung des Autors",
+   "begruendung": "Nach 5... Dg6?? 6. Sxc7+ Kd8 7. Sxa8 verliert Schwarz die Qualität; die Engine bewertet das mit 1,3 Bauerneinheiten, weil der Springer a8 später fällt. Nach dem Maßstab passt „?“, ein Turmverlust in fünf Zügen rechtfertigt aber auch „??“.",
+   "vorschlag": "Buch bleibt unverändert (Entscheidung des Autors vom 14.10.2026). Die Engine-Erklärung in der App sagt, warum Buch und Engine abweichen können."
+  },
+  {
+   "datei": "kap04_fallenkabinett.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„Dg6??“",
+   "urteil": "Entscheidung des Autors",
+   "begruendung": "Dieselbe Stellung wie in Kapitel 1 (Abb. 4.51 ff.); die Engine sieht 1,3 Bauerneinheiten Verlust.",
+   "vorschlag": "Buch bleibt unverändert (Entscheidung des Autors vom 14.10.2026). Die Engine-Erklärung in der App sagt, warum Buch und Engine abweichen können."
+  },
+  {
+   "datei": "kap01_grundprinzipien.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„Ld3?!“",
+   "urteil": "Entscheidung des Autors",
+   "begruendung": "Die Engine sieht kaum einen Unterschied zu 6. Le2 (0,1). Der Punkt des Buches ist eine Lehre (die Dame verliert d3), kein Rechenfehler.",
+   "vorschlag": "Buch bleibt unverändert (Entscheidung des Autors vom 14.10.2026). Die Engine-Erklärung in der App sagt, warum Buch und Engine abweichen können."
+  },
+  {
+   "datei": "kap04_fallenkabinett.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„b5?“",
+   "urteil": "Entscheidung des Autors",
+   "begruendung": "Im Damengambit nach 3. e3 kostet 3... b5 laut Engine 0,7 Bauerneinheiten, knapp unter der Schwelle 0,8 für „?“.",
+   "vorschlag": "Buch bleibt unverändert (Entscheidung des Autors vom 14.10.2026). Die Engine-Erklärung in der App sagt, warum Buch und Engine abweichen können."
+  },
+  {
+   "datei": "kap11_beispielpartien.tex",
+   "kennung": "zugzeichen",
+   "enthaelt": "„Sde2!“",
+   "urteil": "Entscheidung des Autors",
+   "begruendung": "Die Engine zieht in dieser Partiestellung Kb1 um 0,5 vor. „!“ in Partiekommentaren bewertet oft den Plan, nicht nur die Rechnung.",
+   "vorschlag": "Buch bleibt unverändert (Entscheidung des Autors vom 14.10.2026). Die Engine-Erklärung in der App sagt, warum Buch und Engine abweichen können."
+  }
+ ]
+}

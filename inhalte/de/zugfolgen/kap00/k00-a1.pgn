@@ -1,0 +1,14 @@
+[Event "Kapitel 0: Übung: Notation schreiben"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k00-a1"]
+[Kapitel "0"]
+[Abschnitt "Übung 3"]
+[Status "freigegeben"]
+[Abbildungen "0.1 0.27 0.28 0.29"]
+
+{ Abb. 0.1 } 1. e4 d5 { Abb. 0.27 } 2. exd5 { Abb. 0.28 } 2... Qxd5 { Abb. 0.29 } *

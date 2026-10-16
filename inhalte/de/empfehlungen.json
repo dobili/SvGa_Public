@@ -1,0 +1,161 @@
+{
+ "schemaVersion": 1,
+ "hinweis": "Von Hand gepflegte Empfehlungen zur Freigabe (Claude). 'beispiele': was mit einem Beispiel geschehen soll; 'abbildungen': warum Abbildungen keine Zugfolge haben und was zu tun wäre. Die Prüfhilfe buch/arbeit/freigabe/ zeigt beides an. Keine Buchsätze. Stand 14.10.2026: Alle Empfehlungen zu Beispielen und alle Vorschläge „Zugfolge möglich“ sind umgesetzt (Status geprueft).",
+ "beispiele": [],
+ "abbildungen": [
+  {
+   "abbildungen": [
+    "0.3",
+    "0.4",
+    "0.5",
+    "0.6",
+    "0.7",
+    "0.8",
+    "0.9"
+   ],
+   "art": "Lehrbild",
+   "begruendung": "Brett und Gangarten der Figuren, ohne Könige.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "0.10",
+    "0.11"
+   ],
+   "art": "Lehrbild",
+   "begruendung": "Matt und Patt als Bild.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "5.1",
+    "5.2",
+    "5.9",
+    "5.10",
+    "5.12",
+    "5.13",
+    "5.29",
+    "5.31",
+    "5.41",
+    "8.37",
+    "8.42"
+   ],
+   "art": "Lehrbild",
+   "begruendung": "Schema zu Bauernzügen, Löchern, Mehrheiten oder Läufern, keine Partiestellung.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "5.38",
+    "5.39"
+   ],
+   "art": "Lehrbild",
+   "begruendung": "Das Bauernduo vor und nach dem Vorstoß.",
+   "vorschlag": "optional: 1. e5 führt von Abb. 5.38 zu Abb. 5.39"
+  },
+  {
+   "abbildungen": [
+    "5.15",
+    "5.30",
+    "8.44",
+    "5.27",
+    "6.2",
+    "5.35",
+    "5.32",
+    "5.33",
+    "5.34",
+    "6.8",
+    "6.9",
+    "6.10",
+    "11.56"
+   ],
+   "art": "Skelett",
+   "begruendung": "Nur Bauern (und Könige) einer Eröffnungsstruktur; die Folge b4, b5, bxc6 im Minderheitsangriff überspringt Figurenzüge.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "5.18",
+    "11.42"
+   ],
+   "art": "Partiestellung ohne Weg",
+   "begruendung": "Isolani-Stellung; das Buch nennt die Züge dorthin nicht.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "6.11",
+    "6.19"
+   ],
+   "art": "Partiestellung aus Kapitel 11",
+   "begruendung": "Die Partien Karpows folgen erst in Kapitel 11.",
+   "vorschlag": "nach der Freigabe von Kapitel 11 kann die App auf das Beispiel dort verweisen"
+  },
+  {
+   "abbildungen": [
+    "7.2",
+    "7.24"
+   ],
+   "art": "Taktik-Lehrbild",
+   "begruendung": "Stellung nach dem Motiv; die Ausgangsstellung steht nicht im Buch.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "7.35",
+    "7.36",
+    "7.39",
+    "7.40",
+    "7.41",
+    "7.42",
+    "7.43",
+    "8.7",
+    "8.8",
+    "8.10"
+   ],
+   "art": "Mattbild",
+   "begruendung": "Endbild eines Matt- oder Pattmusters.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "7.45",
+    "9.53"
+   ],
+   "art": "Übungsstellung",
+   "begruendung": "Die Lösung ist eine Erklärung in Worten.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "8.9",
+    "8.25",
+    "8.26",
+    "8.50",
+    "9.1",
+    "9.2",
+    "9.18",
+    "9.24",
+    "9.25",
+    "9.35",
+    "9.36",
+    "9.37",
+    "9.39",
+    "9.41",
+    "9.42",
+    "10.21"
+   ],
+   "art": "Endspiel-Lehrstellung",
+   "begruendung": "Bewertung oder Plan, kein bestimmter Zug; in der App mit Engine und Werkzeugen.",
+   "vorschlag": "keine Zugfolge nötig"
+  },
+  {
+   "abbildungen": [
+    "11.10"
+   ],
+   "art": "Partiestellung ohne Weg",
+   "begruendung": "Zeigt die Stellung aus Kapitel 1 (Abb. 1.37) erneut; auch dort ohne Vorgeschichte.",
+   "vorschlag": "keine Zugfolge nötig"
+  }
+ ]
+}

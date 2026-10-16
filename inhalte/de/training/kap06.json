@@ -1,0 +1,190 @@
+{
+  "kapitel": 6,
+  "titel": "Mittelspielstrategie",
+  "adresse": "/training/kap06/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Pläne bei Meistern abschauen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue die Stellung nach ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "8... Se7"
+        },
+        {
+          "art": "text",
+          "text": " (",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 6.20",
+          "abbildung": "6.20"
+        },
+        {
+          "art": "text",
+          "text": ") oder nach ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "10... Tc8"
+        },
+        {
+          "art": "text",
+          "text": " (",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 6.6",
+          "abbildung": "6.6"
+        },
+        {
+          "art": "text",
+          "text": ") im Analysebrett auf, stelle die Eröffnungsdatenbank auf „Masters“ und öffne fünf Partien. Spiele jede ab dem Diagramm nach und schreibe zu jedem der nächsten zehn Züge, welche der drei Planfragen er beantwortet. Zwei Stellungen pro Woche.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Zug erraten mit Planfrage.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Lade eine Meisterpartie mit einer Eröffnung aus deinem Repertoire über „Partie importieren“ in eine Studie, wähle den Kapitelmodus „Nächste Züge ausblenden“ und rate ab dem Ende der Eröffnung jeden Zug der Seite, die gewinnt. Ein Treffer zählt nur, wenn du vorher die Planfrage genannt hast. Eine Partie pro Woche, zwanzig Züge.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Planbilanz in eigenen Partien.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Suche nach jeder langen Partie den Moment, in dem beide Türme verbunden waren, und trage deine Planbilanz als Kommentar in eine Studie ein, ein Kapitel pro Partie. Fordere danach die Computer-Analyse an und prüfe nur eines: Hätte der Zug aus deiner Planbilanz mehr gebracht als der, den du gespielt hast? Die Antwort ist ein Eintrag für deine Fehlerdatenbank (Kapitel 12).",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Gegnerzug denken.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele zwei Fernschachpartien gleichzeitig und schreibe vor jedem eigenen Zug den gegnerischen Plan in einem Satz auf. Ohne Uhr fällt es leichter, den Plan des Gegners ernst zu nehmen, und in der nächsten Blitzpartie merkst du, ob die Gewohnheit hält.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Angriff und Verteidigung am echten Brett.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 6.13",
+          "abbildung": "6.13"
+        },
+        {
+          "art": "text",
+          "text": " auf einem echten Brett auf und spiele sie mit einem Partner aus, einmal mit Weiß am Zug, einmal mit Schwarz am Zug, danach mit vertauschten Farben. Der Verteidiger sagt vor seinem ersten Zug, welche der drei Bedingungen er dem Angriff nehmen will. Ohne Partner gibst du die Stellung über „Stellung aufbauen“ ein und spielst sie mit „Von hier aus weiterspielen“ gegen den Computer.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Qualitätsopfer und Verwertung.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 6.30",
+          "abbildung": "6.30"
+        },
+        {
+          "art": "text",
+          "text": " auf und entscheide ohne Computer, welche Seite du lieber hättest, mit einer Faktorenbilanz als Begründung. Spiele die Stellung dann über „Von hier aus weiterspielen“ gegen den Computer, einmal mit Weiß, einmal mit Schwarz. Danach ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 6.33",
+          "abbildung": "6.33"
+        },
+        {
+          "art": "text",
+          "text": ": Verwerte die Mehrfigur mit Weiß gegen den Computer und notiere, welche Figuren du getauscht hast.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 1100
+  },
+  "stand": "2026-10-16"
+}

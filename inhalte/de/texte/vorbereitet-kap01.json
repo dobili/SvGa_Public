@@ -1,0 +1,446 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 1,
+ "texte": [
+  {
+   "abbildung": "1.6",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-zaehlen",
+     "hinweise": [
+      "Um welchen Bauern im Zentrum geht es?",
+      "Zähle am Feld d4: Wer greift an, wer deckt?",
+      "Angreifer: Bauer c5 und Springer c6. Verteidiger: Bauern c3 und e3, Springer f3."
+     ],
+     "text": "Zwei Angreifer gegen drei Verteidiger: Schlagen auf d4 bringt Schwarz nichts. Weiß kann in Ruhe weiterentwickeln."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum muss Weiß den Bauern d4 im Moment nicht zusätzlich decken?",
+     "antworten": [
+      "Zwei Angreifer stehen drei Verteidigern gegenüber: Schlagen auf d4 gewinnt nichts.",
+      "Der Bauer d4 ist an den König gefesselt.",
+      "In der Eröffnung darf Schwarz keine Bauern schlagen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Gezählt wird am Feld: Solange die Verteidiger nicht weniger sind als die Angreifer, endet jeder Schlag auf d4 mit einem bloßen Abtausch."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.8",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "4. Sc3",
+     "frage": "Warum ist 4. Sc3 hier so wirkungsvoll?",
+     "antworten": [
+      "Er droht sofort Matt auf f7.",
+      "Er entwickelt eine Figur und bereitet Sd5 vor, das die Dame mit Tempo angreift.",
+      "Er bereitet die lange Rochade vor."
+     ],
+     "richtig": 1,
+     "erklaerung": "Die früh herausgekommene Dame wird zur Zielscheibe: Jeder weitere Angriff auf sie ist ein Entwicklungszug für Weiß und ein verlorenes Tempo für Schwarz."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.9",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-roentgen",
+     "hinweise": [
+      "Prüfe zuerst, was der Gegner nach seinem letzten Zug droht.",
+      "Schau auf den Springer d5: Welche Felder erreicht er?",
+      "Sd5 greift die Dame f6 an und droht Sxc7+, eine Gabel auf König und Turm a8."
+     ],
+     "text": "Schwarz muss zuerst die weißen Drohungen beantworten: Die Dame f6 ist angegriffen, und Sxc7+ gabelt König und Turm a8."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "5... Dd8",
+     "frage": "Warum zieht die Dame nach d8 zurück?",
+     "antworten": [
+      "Sie bereitet die lange Rochade vor.",
+      "Von d8 aus greift sie den Springer d5 an.",
+      "Sie weicht dem Angriff aus und deckt c7; die beiden Damenzüge waren damit umsonst."
+     ],
+     "richtig": 2,
+     "erklaerung": "d8 ist das einzige Feld, auf dem die Dame zugleich sicher steht und die Gabel auf c7 verhindert. Weiß hat dabei zwei Figuren entwickelt, Schwarz nur Züge verloren."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.11",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "frage": "Warum stört es Weiß nicht, dass Schwarz den Bauern d4 schlagen kann?",
+     "antworten": [
+      "Der Vorsprung in der Entwicklung ist mehr wert als ein Bauer.",
+      "Der Bauer d4 ist dreifach gedeckt.",
+      "Nach dem Schlag ist Schwarz sofort matt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Weiß hat ein breites Zentrum, drei entwickelte Figuren und rochiert gleich. Ein Bauer, den Schwarz mit weiteren Zügen derselben Figuren holt, vergrößert diesen Rückstand nur."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.12",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "11. Sxe4",
+     "frage": "Warum geht der schwarze Springer e4 verloren?",
+     "antworten": [
+      "Er hat kein freies Feld mehr.",
+      "Er ist an den König e8 gefesselt und wird zweimal angegriffen.",
+      "Weiß droht Matt auf e8."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der Turm e1 fesselt ihn an den König, der Springer c3 greift zusätzlich an. Ein König, der zu lange in der Mitte bleibt, macht solche Fesselungen erst möglich."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.13",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-roentgen",
+     "hinweise": [
+      "Was greift die Dame h5 an?",
+      "Zwei Ziele: der Bauer e5 und der Bauer f7.",
+      "Gedroht ist Dxe5+, ein Bauerngewinn mit Schach; f7 deckt im Moment noch der König."
+     ],
+     "text": "Weiß droht Dxe5+. Schwarz deckt den Bauern am besten mit einem Entwicklungszug; f7 ist nur einmal angegriffen und vom König gedeckt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "2... Sc6",
+     "frage": "Warum spielt Schwarz 2... Sc6?",
+     "antworten": [
+      "Er greift die Dame h5 an.",
+      "Er bereitet Sd4 mit Matt vor.",
+      "Er entwickelt eine Figur und deckt dabei den angegriffenen Bauern e5."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Zug, der zwei Aufgaben erfüllt: Entwicklung und Deckung. So kostet die Drohung von Weiß Schwarz kein Tempo."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.15",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-roentgen",
+     "hinweise": [
+      "Prüfe zuerst die Schachs und Drohungen des Gegners.",
+      "Dame h5 und Läufer c4 zielen beide auf dasselbe Feld.",
+      "Gedroht ist Dxf7#: Schwarz muss f7 decken oder die Dame vertreiben."
+     ],
+     "text": "Weiß droht Matt mit Dxf7#. Schwarz muss sofort handeln: die Dame mit Tempo vertreiben oder f7 ein zweites Mal decken."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3... g6",
+     "frage": "Warum ist 3... g6 eine gute Antwort?",
+     "antworten": [
+      "Es verhindert Dxf7# und greift die Dame mit Tempo an.",
+      "Es bereitet Lg7 vor und lässt f7 bewusst ungedeckt.",
+      "Es öffnet dem Turm h8 die h-Linie."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach g6 muss die Dame ziehen. Schwarz wehrt die Mattdrohung ab und gewinnt dabei Zeit für die eigene Entwicklung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.16",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "4. Df3",
+     "frage": "Warum zieht die Dame gerade nach f3?",
+     "antworten": [
+      "Sie bereitet die lange Rochade vor.",
+      "Sie bleibt auf f7 gerichtet und erneuert die Mattdrohung.",
+      "Sie greift den Springer c6 an."
+     ],
+     "richtig": 1,
+     "erklaerung": "Von f3 aus zielen Dame und Läufer c4 weiter auf f7. Schwarz muss erneut reagieren, diesmal am besten mit einem Entwicklungszug wie Sf6."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.19",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "6. Sxf7",
+     "frage": "Warum schlägt Weiß mit dem Springer auf f7?",
+     "antworten": [
+      "f7 ist ungedeckt, Weiß gewinnt einfach einen Bauern.",
+      "Danach ist die Dame d8 gefangen.",
+      "Der König muss zurückschlagen, verliert die Rochade und wird ins Zentrum gelockt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Das Opfer bringt den Springer zugleich aus dem Angriff der Dame d8. Nach Kxf7 Df3+ muss der König ins offene Zentrum."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.23",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-roentgen",
+     "hinweise": [
+      "Die Regel beginnt mit den Schachs.",
+      "Welche Springerzüge geben Schach?",
+      "Sf6+ gibt Schach und greift zugleich die Dame d5 an."
+     ],
+     "text": "Zuerst die Schachs: Sf6+ gabelt König und Dame und gewinnt die Dame. Der naheliegende Schlag Sxc5 ist nur ein Abtausch."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Sf6+",
+     "frage": "Warum ist 1. Sf6+ stärker als 1. Sxc5?",
+     "antworten": [
+      "Es gibt Schach und greift zugleich die Dame d5 an: Weiß gewinnt die Dame.",
+      "Es setzt matt.",
+      "Es deckt den eigenen König."
+     ],
+     "richtig": 0,
+     "erklaerung": "Wer zuerst die Schachs prüft, findet die Gabel. Sxc5 tauscht nur Springer gegen Läufer."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.26",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-zaehlen",
+     "hinweise": [
+      "Um welchen Bauern dreht sich alles?",
+      "Zähle an d4 auch die Figuren, die hinter anderen stehen.",
+      "Die Dame b6 steht hinter c5, die Dame d1 deckt über die d-Linie."
+     ],
+     "text": "Drei Angreifer gegen drei Verteidiger: Schwarz gewinnt auf d4 noch nichts. Jeder weiße Zug, der einen Verteidiger abschneidet, ändert das."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6. Ld3",
+     "frage": "Warum ist 6. Ld3 ungenau?",
+     "antworten": [
+      "Der Läufer steht auf d3 ungedeckt.",
+      "Der Läufer verstellt der Dame d1 die d-Linie: d4 hat nur noch zwei Verteidiger.",
+      "Weiß verliert damit das Rochaderecht."
+     ],
+     "richtig": 1,
+     "erklaerung": "Aus drei gegen drei wird drei gegen zwei. Ein einziger natürlich aussehender Entwicklungszug kippt die Zählung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.27",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-zaehlen",
+     "hinweise": [
+      "Zähle noch einmal am Feld d4.",
+      "Welche weiße Figur deckt d4 jetzt nicht mehr?",
+      "Der Läufer d3 verstellt die Dame d1: drei Angreifer, zwei Verteidiger."
+     ],
+     "text": "Drei Angreifer gegen zwei Verteidiger: Nach dem Abtausch auf d4 bleibt Schwarz ein Bauer mehr."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6... cxd4",
+     "frage": "Warum schlägt Schwarz jetzt auf d4?",
+     "antworten": [
+      "Der Bauer d4 ist gefesselt.",
+      "Sonst droht Weiß Matt.",
+      "Drei Angreifer gegen zwei Verteidiger: Am Ende des Abtauschs bleibt ein Bauer übrig."
+     ],
+     "richtig": 2,
+     "erklaerung": "Die Zählung entscheidet: Bei mehr Angreifern als Verteidigern gewinnt die angreifende Seite Material."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.28",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-zaehlen",
+     "hinweise": [
+      "Zähle wieder an d4, aber schau genau hin.",
+      "Welche weiße Figur deckt d4 nur scheinbar nicht?",
+      "Die Dame d1 steht hinter dem Läufer d3. Räumt er die d-Linie mit Schach, deckt sie d4 wieder."
+     ],
+     "text": "Zwei Angreifer gegen einen Verteidiger: d4 scheint zu fallen. Doch hinter dem Läufer d3 wartet die Dame d1."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "7... Ld7",
+     "frage": "Warum spielt Schwarz zuerst 7... Ld7 statt sofort Sxd4?",
+     "antworten": [
+      "Nach Sxd4 Sxd4 Dxd4 räumt Lb5+ die d-Linie, und die Dame d1 schlägt die Dame d4.",
+      "Ld7 bereitet die lange Rochade vor.",
+      "Sxd4 wäre ein Rückzug."
+     ],
+     "richtig": 0,
+     "erklaerung": "Erst Ld7 stellt einen Läufer zwischen b5 und den König. Dann ist Lb5 kein Schach mehr, und die Drohung gegen d4 wird echt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.30",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "8. Sc3",
+     "frage": "Warum ist 8. Sc3 ungenau?",
+     "antworten": [
+      "Es stellt den Springer ein.",
+      "Es tut nichts für d4: Schwarz gewinnt den Bauern, und Lb5 ist kein Schach mehr.",
+      "Es verhindert die eigene Rochade."
+     ],
+     "richtig": 1,
+     "erklaerung": "Nach Sxd4 Sxd4 Dxd4 hat Schwarz einen gesunden Bauern mehr. Die Falle mit Lb5+ funktioniert nicht mehr, weil Ld7 die Linie zum König verstellt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.32",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "7... Lxf3",
+     "frage": "Was spricht gegen 7... Lxf3?",
+     "antworten": [
+      "Der Läufer ist auf f3 gefangen.",
+      "Lxf3 verliert eine Figur.",
+      "Weiß nimmt mit der Dame zurück und hat sie damit kostenlos entwickelt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Abtausch ohne Not löst die Spannung zugunsten des Gegners: Die weiße Dame kommt mit Zeitgewinn ins Spiel und zielt auf f6 und f7."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.34",
+   "status": "freigegeben",
+   "einschaetzungen": [],
+   "fragen": [
+    {
+     "zug": "1. Dxh7#",
+     "frage": "Warum darf Weiß die beiden schwarzen Drohungen übergehen?",
+     "antworten": [
+      "Dxh7 setzt sofort matt, und ein Matt geht jeder Drohung vor.",
+      "Die Drohungen sind nur scheinbar.",
+      "Schwarz darf nach einem Schach nicht schlagen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Wer zuerst die Schachs prüft, sieht das Matt. Was der Gegner droht, spielt dann keine Rolle mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.36",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-angriffsregel",
+     "hinweise": [
+      "Zähle, welche Figuren das Ziel h7 überhaupt erreichen.",
+      "Welche Figur versperrt der Dame den Weg nach h5?",
+      "Nur der Springer f3 kommt nach vorn; der Läufer e2 steht der Dame auf der Diagonale d1–h5 im Weg."
+     ],
+     "text": "Zu wenige Angreifer: Im Kern erreicht nur der Springer f3 den Königsflügel. Weiß sollte zuerst die Figuren umstellen, statt den Angriff zu erzwingen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Sg5",
+     "frage": "Warum scheitert der Angriff mit 1. Sg5?",
+     "antworten": [
+      "Der Springer g5 geht sofort verloren.",
+      "Der Springer bleibt allein; die Dame kommt nicht nach h5, weil der Läufer e2 im Weg steht.",
+      "Schwarz setzt danach matt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein Angriff mit einer Figur gegen einen gut verteidigten König verpufft. Erst die Übermacht macht ihn gefährlich."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "1.37",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k1-angriffsregel",
+     "hinweise": [
+      "Zähle die Angreifer, die h7 erreichen.",
+      "Schau auf den Läufer d3 und auf die Diagonale d1–h5.",
+      "Läufer d3, Springer f3 und die Dame (sobald der Springer zieht) gegen den König allein."
+     ],
+     "text": "Drei Angreifer gegen einen Verteidiger: Die Übermacht steht, das Läuferopfer auf h7 ist berechtigt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Lxh7+",
+     "frage": "Warum funktioniert 1. Lxh7+ hier?",
+     "antworten": [
+      "Der Läufer kann auf h7 nicht geschlagen werden.",
+      "Schwarz hat schon rochiert und kann den König nicht mehr bewegen.",
+      "Drei Angreifer erreichen h7, und nur der König deckt: Die Übermacht trägt das Opfer."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach Kxh7 Sg5+ und Dh5 kommen Springer und Dame mit Tempo heran. Gegen drei Angreifer reicht ein einzelner Verteidiger nicht."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Dame gegen Bauer"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "1K6/8/8/8/7Q/8/3pk3/8 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a28"]
+[Kapitel "9"]
+[Abschnitt "9.7"]
+[Status "freigegeben"]
+[Abbildungen "9.28 9.29 9.30"]
+
+{ Abb. 9.28 } 1. Qe4+ Kf2 2. Qd3 Ke1 { Abb. 9.29 } 3. Qe3+ Kd1 { Abb. 9.30 } 4. Kc7 *

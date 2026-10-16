@@ -1,0 +1,14 @@
+[Event "Kapitel 2: Übung: Zweispringerspiel mit 8. La4"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k02-a150"]
+[Kapitel "2"]
+[Abschnitt "Übung 10"]
+[Status "freigegeben"]
+[Abbildungen "2.150"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Nf6 4. Ng5 d5 5. exd5 Na5 6. Bb5+ c6 7. dxc6 bxc6 8. Ba4 h6 9. Nf3 e4 10. Ne5 { Abb. 2.150 } 10... Qd4 $1 11. Nxc6 ( 11. Bxc6+ Nxc6 12. Nxc6 Qc5 ) ( 11. c3 Qxe5 ) ( 11. f4 Qxa4 ) 11... Qxa4 *

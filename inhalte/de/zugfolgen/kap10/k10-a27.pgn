@@ -1,0 +1,16 @@
+[Event "Kapitel 10: Rückblick: Studien und Kuriositäten"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "7r/P7/4k3/8/8/6B1/8/6K1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k10-a27"]
+[Kapitel "10"]
+[Abschnitt "Übung 77"]
+[Status "freigegeben"]
+[Abbildungen "10.27"]
+
+{ Abb. 10.27 } 1. Bb8 $1 ( 1. a8=Q $2 Rxa8 ) ( 1. Bf4 $2 Ra8 ) 1... Rxb8 2. axb8=Q *

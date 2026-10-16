@@ -1,0 +1,147 @@
+{
+  "kapitel": 7,
+  "titel": "Taktik: Wie man aus kleinen Vorteilen Material gewinnt",
+  "adresse": "/training/kap07/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Ein Motiv am Stück, in der Reihenfolge des Kapitels.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Stelle in den Aufgaben den „Schwierigkeitsgrad“ auf eine leichtere Stufe und löse unter „Aufgabenthemen“ je einen Themenblock: Gabel, Fesselung, Spieß, Abzugsangriff, Doppelschach, Hinlenkung, Räumung, Ablenkung, Zwischenzug, gefangene Figur, Unterverwandlung, im Anschluss die Mattbilder vom Erstickungsmatt (dort „Ersticktes Matt“) bis zum Boden-Matt. Schreibe zu jeder Aufgabe einen Satz: Welches Warnsignal hätte ich sehen müssen? Erst wenn die Blöcke sitzen, gehst du zurück zur normalen Stufe und zu gemischten Aufgaben.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Verteidigen üben.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Löse je einen Block „Verteidigungszug“ und „Ausgleich“ und gehe bei jeder Aufgabe die fünf Abwehrfragen aus Schritt 3 durch. Achte in den Ausgleich-Aufgaben auf Dauerschach und Patt (Motiv 12). Einmal pro Woche öffnest du die „Aufgabenübersicht“. Das Motiv mit deiner schlechtesten Trefferquote bekommt den nächsten Block.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Erst genau, dann schnell.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Puzzle Streak hat keine Uhr, die Aufgaben werden schwerer, und ein Fehler beendet den Lauf. Sammle vor dem ersten Zug alle Kandidaten und rechne jeden bis zur Ruhe: Das Ziel ist ein längerer Lauf, kein schnellerer. Puzzle Storm und Puzzle Racer spielst du höchstens einmal pro Woche. Dort zählt für dich nur die Liste der verpassten Aufgaben am Ende.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Eigene Partien als Aufgabenquelle.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Fordere nach jeder langen Partie die Computer-Analyse an und gehe „Lerne aus deinen Fehlern“ durch. Jede übersehene Taktik, deine und die des Gegners, kommt als Stellung in dein Motiv-Heft: eine Studie mit einem Kapitel pro Motiv, dazu der Satz zum Warnsignal.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Am echten Brett, ohne zu ziehen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue die fünfzehn Kombinationsaufgaben dieses Kapitels (",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 7.47",
+          "abbildung": "7.47"
+        },
+        {
+          "art": "text",
+          "text": " bis ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "7.61",
+          "abbildung": "7.61"
+        },
+        {
+          "art": "text",
+          "text": ") auf einem echten Brett auf und löse sie, ohne eine Figur zu berühren. Die Lösung führst du erst aus, wenn du auch die beste Verteidigung genannt hast. Für das Damiano- und das Lolli-Matt gibt es kein eigenes Aufgabenthema: Gib ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 7.60",
+          "abbildung": "7.60"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "7.61",
+          "abbildung": "7.61"
+        },
+        {
+          "art": "text",
+          "text": " mit „Stellung aufbauen“ ein, lass diesmal Schwarz beginnen und suche als Verteidiger die Rettung. Danach spielst du die Stellung mit „Von hier aus weiterspielen“ gegen den Computer aus.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 1051
+  },
+  "stand": "2026-10-16"
+}

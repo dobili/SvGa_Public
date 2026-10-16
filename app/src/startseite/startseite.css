@@ -1,0 +1,262 @@
+/*
+ * Stil der Startseite des Buches (/), des Installationsteils (/installieren/) und der Seiten
+ * Impressum und Datenschutz. Baut auf basis.css auf (Farben, Karten, Knöpfe); Bildschirmentwurf
+ * „Main“ (Kopf in Navy mit Cover).
+ */
+
+.startseite {
+  min-height: 100dvh;
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.startseite-kopf {
+  background: var(--navy);
+  color: var(--creme);
+  padding: calc(env(safe-area-inset-top) + 32px) 24px 28px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.startseite-kopf h1 {
+  margin: 0;
+}
+
+.startseite-kopf img {
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(245, 240, 230, 0.25);
+  object-fit: cover;
+}
+
+.startseite-kopf .ueberzeile {
+  color: var(--gold);
+}
+
+.startseite-untertitel {
+  margin: var(--raster) 0 0;
+  color: var(--gold);
+}
+
+.startseite-inhalt {
+  flex: 1;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.startseite-inhalt h1 {
+  font-family: var(--schrift-titel);
+  font-weight: 600;
+  margin: 0;
+}
+
+.installationsteil {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 2);
+}
+
+.installationsteil h3 {
+  margin: 0 0 var(--raster);
+  font-size: 18px;
+}
+
+.installationsteil p {
+  margin: 0;
+}
+
+.im-browser {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.shops {
+  list-style: none;
+  margin: 0 0 var(--raster);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.shop {
+  display: flex;
+  align-items: center;
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 2);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Platzhalter, bis die Shops feststehen: sichtbar, aber erkennbar noch ohne Ziel. */
+.shop-folgt {
+  border-style: dashed;
+  color: var(--text-leise);
+  font-weight: 400;
+}
+
+.startseite-fuss {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(var(--raster) * 2);
+  padding: 0 24px calc(env(safe-area-inset-bottom) + 24px);
+}
+
+/*
+ * Anleitungen je Gerät: Ohne JavaScript (Suchmaschinen) sind alle sichtbar; mit JavaScript nur
+ * die passende (Klasse „js“ setzt das Skript im Kopf, „sichtbar“ setzt startseite.ts).
+ */
+.js [data-anleitung] {
+  display: none;
+}
+
+.js [data-anleitung].sichtbar {
+  display: block;
+}
+
+.installationsteil [data-anleitung] > * + * {
+  margin-top: var(--raster);
+}
+
+/*
+ * Trainingsseiten (/training/, seit 16.10.2026): Kasten wie im Buch mit grünem Rand, Tabellen
+ * des Werkzeugkastens mit Querscrollen auf dem Handy, Züge und Abbildungsverweise hervorgehoben.
+ */
+.trainingskasten {
+  border-left: 4px solid var(--gruen-text);
+}
+
+.trainingskasten p,
+.trainingskasten ul {
+  margin: 0 0 calc(var(--raster) * 1.5);
+}
+
+.trainingskasten ul {
+  padding-left: calc(var(--raster) * 2.5);
+}
+
+.trainingsstand {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-leise);
+}
+
+.trainingsseite .zug {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.trainingsseite a {
+  color: var(--text);
+  text-decoration-color: var(--gold);
+  text-underline-offset: 2px;
+}
+
+.tabelle-rahmen {
+  overflow-x: auto;
+  margin: 0 0 calc(var(--raster) * 1.5);
+}
+
+.trainingstabelle {
+  border-collapse: collapse;
+  min-width: 560px;
+  font-size: 14px;
+}
+
+.tabellenunterschrift {
+  margin: var(--raster) 0 0;
+  color: var(--text-leise);
+  font-size: 13px;
+}
+
+.trainingstabelle th,
+.trainingstabelle td {
+  text-align: left;
+  vertical-align: top;
+  padding: 6px 8px;
+  border-bottom: 1px solid var(--linie);
+}
+
+.training-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+  justify-content: space-between;
+}
+
+.trainingsliste {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.trainingsliste a {
+  display: flex;
+  gap: calc(var(--raster) * 1.5);
+  align-items: baseline;
+  min-height: var(--tippflaeche);
+  padding: var(--raster) 0;
+  border-bottom: 1px solid var(--linie);
+  text-decoration: none;
+}
+
+.training-nummer {
+  min-width: 2ch;
+  font-weight: 700;
+  color: var(--gold-text);
+}
+
+/* Schmale Bildschirme: jede Tabellenzeile als Kärtchen, die Spaltennamen vor den Zellen. */
+@media (max-width: 600px) {
+  .trainingstabelle {
+    min-width: 0;
+  }
+
+  .trainingstabelle thead {
+    display: none;
+  }
+
+  .trainingstabelle,
+  .trainingstabelle tbody,
+  .trainingstabelle tr,
+  .trainingstabelle td {
+    display: block;
+  }
+
+  .trainingstabelle tr {
+    padding: var(--raster) 0;
+    border-bottom: 1px solid var(--linie);
+  }
+
+  .trainingstabelle td {
+    border: 0;
+    padding: 2px 0;
+  }
+
+  .trainingstabelle td::before {
+    content: attr(data-spalte) ": ";
+    font-weight: 600;
+    color: var(--text-leise);
+  }
+
+  .trainingstabelle td:first-child {
+    font-weight: 600;
+  }
+
+  .trainingstabelle td:first-child::before {
+    content: none;
+  }
+}

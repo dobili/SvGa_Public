@@ -1,0 +1,16 @@
+[Event "Kapitel 7: 9. Der Zwischenzug"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r3r1k1/ppq2ppp/8/8/8/7P/P3QPP1/R1R3K1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k07-a23"]
+[Kapitel "7"]
+[Abschnitt "7.2"]
+[Status "freigegeben"]
+[Abbildungen "7.23"]
+
+{ Abb. 7.23 } 1. Qxe8+ $1 ( 1. Rxc7 Rxe2 ) 1... Rxe8 2. Rxc7 *

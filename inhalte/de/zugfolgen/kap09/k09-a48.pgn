@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Rückblick: die Erkennungsbilder"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "R7/P5k1/5r2/8/8/8/8/1K6 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k09-a48"]
+[Kapitel "9"]
+[Abschnitt "Übung 67"]
+[Status "freigegeben"]
+[Abbildungen "9.48"]
+
+{ Abb. 9.48 } 1... Ra6 $1 ( 1... Rb6+ ) ( 1... Rf1+ ) ( 1... Kh7 $2 2. Rb8 Ra6 3. a8=Q Rxa8 4. Rxa8 ) *

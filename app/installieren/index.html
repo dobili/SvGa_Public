@@ -1,0 +1,53 @@
+<!doctype html>
+<!--
+  Installationsteil unter /installieren/: Ziel des QR-Codes im Buch (Entscheidung des Autors,
+  15.10.2026). Wie die Startseite, aber ohne Buchbeschreibung und ohne Shop-Links, denn wer den
+  QR-Code scannt, hat das Buch schon. Texte aus src/i18n/de.json (vite.config.ts, texteInHtml);
+  die installierte App springt sofort nach /app/.
+-->
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#16253D" />
+    <meta name="description" content="{{startseite.meta}}" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Schach" />
+    <link rel="canonical" href="https://schach-von-grund-auf.com/installieren/" />
+    <link rel="icon" href="/symbole/symbol.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/symbole/apple-touch-icon.png" />
+    <title>{{installation.knopf}} – {{app.titel}}</title>
+    <script>
+      // Die installierte App startet direkt in der App.
+      if (
+        window.matchMedia("(display-mode: standalone)").matches ||
+        window.navigator.standalone === true
+      ) {
+        window.location.replace("/app/");
+      }
+      document.documentElement.classList.add("js");
+    </script>
+    <script type="module" src="/src/startseite/startseite.ts"></script>
+  </head>
+  <body>
+    <div class="startseite">
+      <header class="startseite-kopf">
+        <img src="/cover.webp" alt="{{installation.cover}}" width="112" height="158" />
+        <div>
+          <p class="ueberzeile">{{app.untertitel}}</p>
+          <h1>{{app.titel}}</h1>
+        </div>
+      </header>
+      <main class="startseite-inhalt">
+        <!-- teil: installationsteil -->
+      </main>
+      <footer class="startseite-fuss">
+        <a class="knopf-link klein" href="/">{{startseite.zumBuch}}</a>
+        <a class="knopf-link klein" href="/impressum/">{{installation.impressum}}</a>
+        <a class="knopf-link klein" href="/datenschutz/">{{installation.datenschutz}}</a>
+        <a class="knopf-link klein" href="/app/#lizenzen">{{installation.lizenzen}}</a>
+      </footer>
+    </div>
+  </body>
+</html>

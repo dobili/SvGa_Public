@@ -1,0 +1,129 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 12,
+ "texte": [
+  {
+   "abbildung": "12.1",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k12-kandidaten",
+     "hinweise": [
+      "Schritt 2: Sammle zuerst Schachs, dann Schläge, dann Drohungen.",
+      "Welches Schach hat Weiß am Königsflügel?",
+      "Lxh7+ steht vorn. Nach Kxh7 fehlt ein Läufer, also rechne weiter, etwa mit Sg5+."
+     ],
+     "text": "Das Schach Lxh7+ kommt zuerst auf die Liste. Einen Zug tief kostet es den Läufer; ob das Opfer trägt, zeigt erst die Rechnung bis zur Ruhe."
+    },
+    {
+     "werkzeug": "k12-sicherheitsblick",
+     "hinweise": [
+      "Frag vor dem Ziehen: Kann der Gegner die gezogene Figur schlagen?",
+      "Schau, wer das Feld h7 nach dem Läuferzug deckt.",
+      "Der König schlägt auf h7. Das ist hier ein geplantes Opfer, kein Versehen."
+     ],
+     "text": "Der Sicherheitsblick meldet den Schlag Kxh7. Ein Opfer ist das nur, wenn du die Folge zu Ende gerechnet hast."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Lxh7+",
+     "frage": "Warum prüfst du 1. Lxh7+ vor dem ruhigen 1. Tc1?",
+     "antworten": [
+      "Ruhige Züge sind in der Denkroutine nicht erlaubt.",
+      "Lxh7+ gewinnt ohne jede Rechnung einen Bauern.",
+      "Ein Schach lässt dem Gegner die wenigsten Antworten, darum rechnest du es zuerst."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach Lxh7+ hat Schwarz nur zwei Züge. Solche zwingenden Züge sind schnell zu Ende gerechnet und kommen deshalb zuerst."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "12.2",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k12-sicherheitsblick",
+     "hinweise": [
+      "Prüfe für den Königszug: Welche Schachs erlaubt er?",
+      "Schau, von welchen Feldern die Dame d1 einen König auf g6 erreicht.",
+      "Nach Kg6 hat Weiß vier Damenschachs: Db1+, Dc2+, Dd3+ und Dh5+."
+     ],
+     "text": "Kg6 erlaubt vier Schachs der weißen Dame. Jedes davon musst du zu Ende rechnen, bevor du den Zug spielst."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum prüfst du hier jeden der vier Königszüge einzeln?",
+     "antworten": [
+      "Nur der König kann das Schach abwehren, und jeder Königszug erlaubt Weiß eine andere Fortsetzung.",
+      "Schwarz kann den Springer g5 auch einfach schlagen.",
+      "Ein Bauernzug nach f5 wehrt das Schach ebenfalls ab."
+     ],
+     "richtig": 0,
+     "erklaerung": "Schwarz hat genau vier legale Züge, alle mit dem König. Schritt 3 sucht für jeden die stärkste Antwort von Weiß."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "12.3",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k12-erfassen",
+     "hinweise": [
+      "Schritt 1: Suche die Warnsignale auf der schwarzen Seite.",
+      "Welche Felder erreicht der Springer g5 als Nächstes?",
+      "Über e6 träfe er Dame c7 und Turm f8 zugleich. Noch deckt der Bauer f7 das Feld e6."
+     ],
+     "text": "Das Werkzeug zeigt W6 für Schwarz: Der Springer g5 hat über e6 eine Gabel auf Dame c7 und Turm f8. Dazu stehen Dame c7 und Turm a8 ungedeckt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "3... f5",
+     "frage": "Welche Folge hat 3... f5 für das Feld e6?",
+     "antworten": [
+      "e6 ist danach doppelt gedeckt.",
+      "Der Springer g5 ist danach gefesselt.",
+      "Der Bauer f7 deckt e6 nicht mehr: 4. Sxe6 greift Dame c7 und Turm f8 an."
+     ],
+     "richtig": 2,
+     "erklaerung": "f5 wehrt das Schach ab, gibt aber den letzten Schutz von e6 auf. Genau dort lag die Gabelgeometrie aus Schritt 1."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "12.4",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k12-erfassen",
+     "hinweise": [
+      "Schritt 1: Was hat der letzte Zug von Weiß verändert?",
+      "Schau auf das Feld f7: Wer greift es an?",
+      "Dame f3 und Läufer c4 zielen auf f7: Dxf7# droht."
+     ],
+     "text": "Der letzte Zug Lc4 droht Dxf7# matt. Bevor du an eigene Pläne denkst, muss diese Drohung beantwortet sein."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Was muss Schwarz hier zuerst tun?",
+     "antworten": [
+      "Den Läufer c4 mit b5 angreifen.",
+      "Die Drohung Dxf7# abwehren.",
+      "Schnell lang rochieren."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein eigener Angriff hilft nichts, wenn der Gegner im nächsten Zug matt setzt. Schritt 1 fragt deshalb immer zuerst nach der Drohung."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

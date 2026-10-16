@@ -1,0 +1,14 @@
+[Event "Kapitel 4: Die Sibirische Falle"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k04-a27"]
+[Kapitel "4"]
+[Abschnitt "4.7"]
+[Status "freigegeben"]
+[Abbildungen "4.27 4.28 4.29 4.30 4.31"]
+
+1. e4 c5 2. d4 cxd4 3. c3 dxc3 4. Nxc3 Nc6 5. Nf3 e6 { Abb. 4.27 } 6. Bc4 Qc7 { Abb. 4.28 } 7. O-O Nf6 8. Qe2 Ng4 { Abb. 4.29 } 9. h3 $4 ( 9. Nb5 Qb8 10. h3 ) 9... Nd4 $1 { Abb. 4.30 } 10. Nxd4 $4 Qh2# { Abb. 4.31 } *

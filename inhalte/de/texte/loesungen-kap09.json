@@ -1,0 +1,96 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 9,
+ "erklaerungen": [
+  {
+   "uebung": "ueb:philidor-reihenfolge",
+   "nummer": 64,
+   "status": "freigegeben",
+   "loesung": "1... Th6!",
+   "akzeptiert": [],
+   "motiv": "Philidor-Stellung",
+   "text": "Nach 1... Td1+? 2. Ke6! schirmt der Bauer e5 den König gegen Schachs von hinten ab, und Weiß droht den Turmtausch ins gewonnene Bauernendspiel. Richtig ist 1... Th6!: Der Turm sperrt die sechste Reihe, und erst wenn der Bauer vorrückt, geht er nach hinten."
+  },
+  {
+   "uebung": "ueb:kurze-seite",
+   "nummer": 65,
+   "status": "freigegeben",
+   "loesung": "1... Kg8 2. Tb8+ Kh7",
+   "akzeptiert": [
+    "1... Ta6+"
+   ],
+   "motiv": "König auf die kurze Seite",
+   "text": "Der König gehört nach g8 auf die kurze Seite, der Turm bleibt auf der langen und hat dort genug Abstand für Schachs. Nach 1... Ke8? 2. Tb8+ Kd7 3. Kg7 steht der König auf der langen Seite seinem Turm im Weg, und der Bauer läuft."
+  },
+  {
+   "uebung": "ueb:lucena-c-bauer",
+   "nummer": 66,
+   "status": "freigegeben",
+   "loesung": "1. Te4",
+   "akzeptiert": [
+    "1. Tc1"
+   ],
+   "motiv": "Lucena: Brückenbau",
+   "text": "1. Te4 stellt den Turm auf die vierte Reihe; der schwarze König steht schon weit genug weg. Dann verlässt der weiße König das Umwandlungsfeld im Zickzack, und auf das letzte Schach stellt sich der Turm mit Tc4 dazwischen."
+  },
+  {
+   "uebung": "ueb:vancura-a7",
+   "nummer": 67,
+   "status": "freigegeben",
+   "loesung": "1... Ta6!",
+   "akzeptiert": [
+    "1... Tb6+",
+    "1... Tf1+"
+   ],
+   "motiv": "Turm hinter den Randbauern",
+   "text": "1... Ta6! greift den Bauern an und bindet den weißen Turm an a8; der König bleibt auf g7 oder h7. Jeder andere Zug verliert, etwa 1... Kh7? 2. Tb8 Ta6 3. a8=D."
+  },
+  {
+   "uebung": "ueb:turm-gegen-bauer",
+   "nummer": 68,
+   "status": "freigegeben",
+   "loesung": "1. Tb1!",
+   "akzeptiert": [],
+   "motiv": "Turm auf die Umwandlungsreihe",
+   "text": "1. Tb1! besetzt die Umwandlungsreihe weit weg vom schwarzen König, und der weiße König kommt über b2, c2 und d2 rechtzeitig. Jeder andere erste Zug lässt den Bauern entkommen."
+  },
+  {
+   "uebung": "ueb:abschneiden-reihe",
+   "nummer": 69,
+   "status": "freigegeben",
+   "loesung": "1. Tg5!",
+   "akzeptiert": [],
+   "motiv": "Abschneiden auf der Reihe",
+   "text": "1. Tg5! sperrt die fünfte Reihe, und der schwarze König kommt nur über einen Umweg vor seinen Bauern; bis dahin ist der weiße König da. Läuft der Bauer allein, holt ihn der Turm von hinten oder auf b3."
+  },
+  {
+   "uebung": "ueb:turm-gegen-zwei-bauern",
+   "nummer": 70,
+   "status": "freigegeben",
+   "loesung": "1... Tb8!",
+   "akzeptiert": [
+    "1... Ta1+"
+   ],
+   "motiv": "Turm gegen verbundene Freibauern",
+   "text": "Nur ein Bauer steht auf der sechsten Reihe, also hält der Turm noch: 1... Tb8! 2. c6 Txb6 3. c7 Tc6, und beide Bauern fallen. Nach 1... Tc8? 2. b7 stehen beide zu weit vorn."
+  },
+  {
+   "uebung": "ueb:dame-gegen-bauer",
+   "nummer": 71,
+   "status": "freigegeben",
+   "loesung": "1. Kc3!",
+   "akzeptiert": [],
+   "motiv": "Matt statt Patt",
+   "text": "1. Kc3! nimmt dem König b2 und lässt ihm b1, sodass nach 1... Kb1 2. Dg1# matt folgt. Die naheliegenden Züge 1. Kc2?? und 1. Db4?? setzen patt."
+  },
+  {
+   "uebung": "ueb:falscher-laeufer",
+   "nummer": 72,
+   "status": "freigegeben",
+   "loesung": null,
+   "akzeptiert": [],
+   "motiv": "Falscher Läufer",
+   "text": "Der Läufer läuft auf dunklen Feldern, das Umwandlungsfeld a8 ist hell. Bleibt der schwarze König in der Ecke, kann Weiß ihn nicht vertreiben: remis."
+  }
+ ]
+}

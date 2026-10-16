@@ -1,0 +1,152 @@
+{
+  "kapitel": 10,
+  "titel": "Studien und Kuriositäten",
+  "adresse": "/training/kap10/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Erst rechnen, dann ziehen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Studien wirken nur, wenn du sie selbst löst. Baue die Stellung deshalb auf einem echten Brett oder mit „Stellung aufbauen“ auf. Decke den Lösungstext ab, rechne, ohne eine Figur zu bewegen, und schreibe die Lösung samt der besten Verteidigung auf. Vergleiche erst im Anschluss. Beginne mit ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 10.1",
+          "abbildung": "10.1"
+        },
+        {
+          "art": "text",
+          "text": " (Saavedra), 10.9 (Réti) und 10.14 (Heuäcker).",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Beide Seiten spielen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele die Saavedra-Studie mit „Von hier aus weiterspielen“ gegen den Computer, zunächst als Schwarz: Findest du selbst die Pattidee mit dem Turm? Danach spielst du sie als Weiß, bis dir die Königswanderung sicher gelingt. Bei der Réti-Studie übernimmst du Schwarz und siehst zu, wie der Computer auf der höchsten Stufe den König über die Diagonale führt.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Gegen die Tablebase ausspielen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Alle drei Studien und die Stellungen mit den zwei Springern haben höchstens sieben Figuren: Die Tablebase im Analysebrett kennt die Wahrheit. Baue ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 10.21",
+          "abbildung": "10.21"
+        },
+        {
+          "art": "text",
+          "text": " auf und spiele die weißen Züge selbst. Die Seite ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "syzygy-tables.info",
+          "ziel": "https://syzygy-tables.info"
+        },
+        {
+          "art": "text",
+          "text": " zeigt nach jedem Zug, ob der Gewinn noch steht.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Motive gezielt üben.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Löse unter „Aufgabenthemen“ je einen Block „Unterverwandlung“, „Stiller Zug“ und „Zugzwang“. Im Thema „Ausgleich“ rettest du verlorene Stellungen ins Remis. Suche dort zunächst Patt und Dauerschach. Schreibe vor dem ersten Zug auf, welche der vier Prüfungen greift.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Eine eigene Pattfalle bauen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Stelle Dame gegen einen Läufer- oder Randbauern auf der vorletzten Reihe auf (Kapitel 9), suche für den Verteidiger die Pattfalle und prüfe sie mit der Tablebase. Drei Stellungen genügen: mit c-, f- und h-Bauer.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Ein eigenes Studienheft.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Lege unter „Studien“, der Lernsammlung von Lichess, je ein Kapitel für Patt, Unterverwandlung, Wegversperrung und Königsmanöver an. Trage jede gelöste Studie mit einem Satz zu ihrer Kernidee ein. Wie du Studien in deine Trainingswoche einbaust, zeigt Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 497
+  },
+  "stand": "2026-10-16"
+}

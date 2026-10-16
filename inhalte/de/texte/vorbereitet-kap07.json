@@ -1,0 +1,497 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 7,
+ "texte": [
+  {
+   "abbildung": "7.3",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-motiv",
+     "hinweise": [
+      "Was hat der letzte Zug von Schwarz angegriffen?",
+      "Schau auf den Bauern d5 und die Felder c4 und e4.",
+      "d5 greift Läufer c4 und Springer e4 zugleich an: Eine der beiden Figuren geht verloren."
+     ],
+     "text": "Der letzte Zug d5 ist eine Bauerngabel gegen Läufer c4 und Springer e4. Weiß kann nicht beide Figuren retten und sucht den Zug, der am wenigsten kostet."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6. Ld3",
+     "frage": "Warum spielt Weiß 6. Ld3?",
+     "antworten": [
+      "Der Läufer greift den Bauern d5 ein zweites Mal an.",
+      "Der Läufer weicht aus und deckt dabei den Springer e4; nach dxe4 Lxe4 holt Weiß wenigstens den Bauern zurück.",
+      "Der Läufer bereitet einen Angriff auf h7 vor, der Springer ist dabei egal."
+     ],
+     "richtig": 1,
+     "erklaerung": "Gegen eine Gabel hilft oft ein Zug, der die eine Figur rettet und die andere deckt. Die Figur ist trotzdem weg, aber der Bauer kommt zurück."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.6",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-motiv",
+     "hinweise": [
+      "Steht hinter dem König noch eine Figur auf derselben Linie?",
+      "Schau auf die erste Reihe: König e1 und Turm a1.",
+      "Th1+ treibt den König von der ersten Reihe, dann fällt der ungedeckte Turm a1."
+     ],
+     "text": "Ein Spieß: Vorne steht der wertvollere König, dahinter der ungedeckte Turm a1. Nach dem Schach muss der König weg, und der Turm dahinter geht verloren."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... Th1+",
+     "frage": "Warum gewinnt 1... Th1+ den weißen Turm?",
+     "antworten": [
+      "Der König muss die erste Reihe verlassen, dann schlägt Schwarz den ungedeckten Turm a1.",
+      "Der Turm h1 setzt den weißen König matt.",
+      "Weiß muss den Turm a1 dazwischenstellen."
+     ],
+     "richtig": 0,
+     "erklaerung": "Jedes Feld des Königs auf der ersten Reihe beherrscht der Turm h1. Also zieht der König nach oben, und Txa1 folgt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.9",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-warnsignale",
+     "hinweise": [
+      "Suche eine Linie, auf der eine eigene Figur einer Langschrittfigur im Weg steht.",
+      "Die d-Linie: Turm d1, Läufer d3, Dame d7.",
+      "Zieht der Läufer mit Schach weg, kann Schwarz nicht zugleich das Schach abwehren und die Dame retten."
+     ],
+     "text": "Das Warnsignal ist die gefährliche Linie d1–d3–d7: Der eigene Läufer verdeckt den Angriff des Turms auf die ungedeckte Dame. Zieht er mit Schach ab, ist die Dame verloren."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Lxh7+",
+     "frage": "Warum ist 1. Lxh7+ so stark?",
+     "antworten": [
+      "Es ist ein Doppelschach, nur der König darf ziehen.",
+      "Weiß gewinnt einen Bauern und öffnet die h-Linie für den Turm.",
+      "Der Läufer gibt Schach und gibt zugleich die d-Linie frei: Nach dem Königszug schlägt Txd7 die Dame."
+     ],
+     "richtig": 2,
+     "erklaerung": "Ein Abzug mit Schach: Schwarz muss sich um den König kümmern. Danach nimmt der Turm d1 die Dame, die niemand zurückschlagen kann."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.11",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-erzwingend",
+     "hinweise": [
+      "Prüfe zuerst alle Schachs, erst dann die Schläge.",
+      "Der Springer e4 steht zwischen Turm e1 und König e8.",
+      "Sd6 gibt Doppelschach. Danach setzt Te8 matt, egal wohin der König geht."
+     ],
+     "text": "Weiß hat viele Schachs und kann außerdem den ungedeckten Turm h5 mit der Dame nehmen. Die Reihenfolge lohnt sich: Das Doppelschach Sd6 führt in zwei Zügen zum Matt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Sd6++",
+     "frage": "Warum muss Schwarz nach 1. Sd6++ mit dem König ziehen?",
+     "antworten": [
+      "Weil alle anderen schwarzen Figuren gefesselt sind.",
+      "Zwei Figuren geben zugleich Schach; Schlagen oder Dazwischenstellen wehrt nur eines davon ab.",
+      "Weil Schwarz nach der Regel nie mit der Dame schlagen darf, wenn er im Schach steht."
+     ],
+     "richtig": 1,
+     "erklaerung": "Gegen ein Doppelschach hilft nur ein Königszug. Hier bleiben d8 und f8, und auf beiden Feldern folgt Te8#."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.14",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-motiv",
+     "hinweise": [
+      "Welche Figur deckt das Feld, auf dem dein Springer eine Gabel hätte?",
+      "Schau auf f7: Nur der König g8 deckt diesen Bauern.",
+      "Th8+ lockt den König nach h8; dann greift Sxf7+ König und Dame d6 zugleich an."
+     ],
+     "text": "Eine Hinlenkung: Das Turmopfer zieht den König auf h8. Dort wird er mit der Dame d6 zum Ziel einer Springergabel von f7 aus."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Th8+",
+     "frage": "Warum gibt Weiß mit 1. Th8+ einen Turm her?",
+     "antworten": [
+      "Der König muss nach h8; dann deckt er f7 nicht mehr, und Sxf7+ gabelt König und Dame.",
+      "Weiß will nach Kxh8 mit der Dame auf der h-Linie matt setzen.",
+      "Der Turm h1 ist ohnehin verloren, darum nimmt er noch etwas mit."
+     ],
+     "richtig": 0,
+     "erklaerung": "Der Turm ist der Köder. Für ihn bekommt Weiß den Bauern f7 und die Dame d6."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.17",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-warnsignale",
+     "hinweise": [
+      "Wie viele Fluchtfelder hat der schwarze König?",
+      "Der König h8 hat keine Luft. Schau auf das Feld g7.",
+      "Die Dame g1 möchte nach g7, dort steht der eigene Turm. Er muss das Feld mit Schach räumen."
+     ],
+     "text": "Der König h8 hat kein freies Feld. Ein Damenschach auf g7, gedeckt vom Springer f5, wäre Matt, doch der eigene Turm steht im Weg."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Txh7+",
+     "frage": "Warum opfert Weiß den Turm mit 1. Txh7+?",
+     "antworten": [
+      "Er gewinnt den Bauern h7 und öffnet dem eigenen König Luft.",
+      "Er gewinnt den Bauern h7 und hofft, dass Schwarz nicht zurückschlägt.",
+      "Er räumt mit Schach das Feld g7, damit die Dame dort matt setzen kann."
+     ],
+     "richtig": 2,
+     "erklaerung": "Nach Kxh7 zieht die Dame über die freie g-Linie nach g7. Der Springer f5 deckt sie, der König hat kein Feld mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.18",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-motiv",
+     "hinweise": [
+      "Welche schwarze Figur hat eine wichtige Aufgabe?",
+      "Schau auf e7: Wer hält dieses Feld gegen den Springer d5?",
+      "Nur der Springer c6 deckt e7. Lxc6 beseitigt ihn, dann folgt Se7+ mit Gabel."
+     ],
+     "text": "Der Springer c6 ist der einzige Verteidiger des Feldes e7. Schlägt Weiß ihn, kommt der Springer d5 mit Schach nach e7 und greift König und Turm c8 an."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Lxc6",
+     "frage": "Warum schlägt Weiß mit 1. Lxc6 zuerst den Springer?",
+     "antworten": [
+      "Weil Läufer und Springer gleich viel wert sind und Weiß vereinfachen will.",
+      "Er ist der einzige Verteidiger von e7; ohne ihn gabelt Se7+ König und Turm c8.",
+      "Um den Bauern b7 zu schwächen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Erst fällt der Verteidiger, dann die Taktik. Wie Schwarz auch zurückschlägt, Se7+ gewinnt danach Material."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.20",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-warnsignale",
+     "hinweise": [
+      "Hat eine schwarze Figur zwei Aufgaben zugleich?",
+      "Schau auf den Turm d8: Er deckt den Springer d5 und die Grundreihe.",
+      "Nimmt der Turm auf d5 zurück, setzt Te8 matt."
+     ],
+     "text": "Der Turm d8 ist überlastet: Er deckt den Springer d5 und hält die Grundreihe gegen Te8. Beide Aufgaben kann er nicht zugleich erfüllen."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Lxd5",
+     "frage": "Warum gewinnt 1. Lxd5 eine Figur?",
+     "antworten": [
+      "Schwarz steht nach dem Schlag im Schach.",
+      "Der Springer d5 war ohnehin ungedeckt.",
+      "Schlägt der Turm d8 zurück, verlässt er die Grundreihe, und Te8 setzt matt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Der einzige Verteidiger des Springers ist der Turm d8, und der wird auf der Grundreihe gebraucht. Schwarz bleibt eine Figur weniger."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.21",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-warnsignale",
+     "hinweise": [
+      "Welche schwarze Figur steht vor einer wertvolleren?",
+      "Der Läufer g5 zielt durch den Springer f6 auf die Dame d8.",
+      "Die Fesselung ist nur relativ: Zieht der Springer, kostet das die Dame, aber nicht die Partie."
+     ],
+     "text": "Der Läufer g5 fesselt den Springer f6 an die Dame. Weil dahinter nicht der König steht, darf der Springer trotzdem ziehen, wenn sich das lohnt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "6... Sxe4",
+     "frage": "Warum darf Schwarz hier 6... Sxe4 spielen, obwohl die Dame d8 hängt?",
+     "antworten": [
+      "Nach Lxd8 folgen Lxf2+ und Lg4#: Das Matt ist mehr wert als die Dame.",
+      "Weil Weiß die Dame wegen einer Fesselung nicht schlagen darf.",
+      "Weil der Springer e4 danach den Läufer g5 und den Bauern c2 gabelt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach Lxf2+ hat der König nur e2, denn der Springer e4 deckt d2 und f2. Dann setzt Lg4 matt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.23",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-erzwingend",
+     "hinweise": [
+      "Beide Damen sind angegriffen. Was rechnest du zuerst?",
+      "Unter deinen Kandidaten ist ein Schlag mit Schach auf e8.",
+      "Erst Dxe8+, dann Txc7: Die eigene Dame nimmt noch einen Turm mit."
+     ],
+     "text": "Zuerst kommen die Schachs: Dxe8+ steht vor dem Schlag Txc7. In dieser Reihenfolge gewinnt Weiß einen ganzen Turm."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Dxe8+",
+     "frage": "Warum schlägt Weiß zuerst auf e8 und nicht sofort die Dame c7?",
+     "antworten": [
+      "Weil der Turm c1 an den König gefesselt ist.",
+      "Die eigene Dame ist ohnehin angegriffen; so nimmt sie vorher noch den Turm e8 mit.",
+      "Weil Dxe8 matt setzt."
+     ],
+     "richtig": 1,
+     "erklaerung": "Ein Desperado: Nach 1. Txc7 würde Schwarz einfach die Dame e2 nehmen. Mit Dxe8+ Txe8 Txc7 bleibt Weiß ein Turm mehr."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.25",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-warnsignale",
+     "hinweise": [
+      "Hat eine weiße Figur noch ein sicheres Feld?",
+      "Schau auf den Läufer b3, den der Bauer c4 angreift.",
+      "a4 und c4 deckt der Bauer b5, a2 und c2 sind besetzt: Der Läufer ist gefangen."
+     ],
+     "text": "Der Läufer b3 ist angegriffen und erreicht kein sicheres Feld mehr. Die eigenen Bauern a2 und c2 versperren ihm den Rückweg."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum ist der Läufer b3 nicht mehr zu retten?",
+     "antworten": [
+      "Er ist an den König gefesselt.",
+      "Weiß muss zuerst die angegriffene Dame d5 retten.",
+      "Alle Felder sind gedeckt oder von eigenen Bauern besetzt: Er ist eine gefangene Figur."
+     ],
+     "richtig": 2,
+     "erklaerung": "Eine Arche-Noah-Falle: Der Bauer b5 hält a4 und c4, die eigenen Bauern stehen auf a2 und c2. Für den Läufer bekommt Weiß nur noch Bauern."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.26",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-warnsignale",
+     "hinweise": [
+      "Wie gefährlich ist die Lage des eigenen Königs?",
+      "Der Bauer g2 ist durch den Läufer b7 gefesselt, f1 ist ungedeckt.",
+      "Schwarz droht Df1#. Der Bauer e7 hilft nur, wenn er mit Schach umwandelt."
+     ],
+     "text": "Schwarz droht Df1#. Der Freibauer e7 auf der vorletzten Reihe ist die einzige Rettung, aber nur, wenn die Umwandlung Schach gibt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. e8=S+",
+     "frage": "Warum wandelt Weiß mit 1. e8=S+ in einen Springer um?",
+     "antworten": [
+      "Ein Springer ist im Endspiel stärker als eine Dame.",
+      "Nach 1. e8=D könnte Schwarz die neue Dame sofort schlagen.",
+      "Nur der Springer gibt Schach und greift die Dame f6 an; nach e8=D setzt Schwarz mit Df1 matt."
+     ],
+     "richtig": 2,
+     "erklaerung": "Mit Schach hat Schwarz keine Zeit für Df1. Danach schlägt der Springer die Dame f6, und die Mattgefahr ist vorbei."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.27",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-warnsignale",
+     "hinweise": [
+      "Wer steht hier materiell besser?",
+      "Schwarz hat einen Turm weniger, und Weiß droht Td8+.",
+      "Wer auf Verlust steht, sucht ein Dauerschach. Prüfe die Schachs der Dame."
+     ],
+     "text": "Schwarz steht auf Verlust: Ein Turm fehlt, und Weiß droht Td8+ mit Matt. Die Rettung liegt in Schachs, denen der weiße König nicht entkommt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1... De1+",
+     "frage": "Warum gibt Schwarz mit 1... De1+ ein Schach nach dem anderen?",
+     "antworten": [
+      "Er will den König auf die Grundreihe zurückdrängen und dort matt setzen.",
+      "Er steht auf Verlust und rettet mit Dauerschach ein Remis.",
+      "Er will den Bauern b2 mit Schach gewinnen."
+     ],
+     "richtig": 1,
+     "erklaerung": "Der weiße König findet kein Versteck vor den Damenschachs. Für Schwarz ist ein Remis hier das beste Ergebnis."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.29",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-warnsignale",
+     "hinweise": [
+      "Wie viele Züge hat Weiß außer mit der Dame?",
+      "Der König h1 hat kein Feld, der Bauer h2 ist blockiert.",
+      "Ist die Dame weg, hat Weiß keinen Zug mehr: Patt."
+     ],
+     "text": "Der weiße König hat keine Luft, und der Bauer h2 kann nicht ziehen. Wird Weiß die Dame los, ohne Schach zu stehen, ist es Patt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Dg8+",
+     "frage": "Warum opfert Weiß mit 1. Dg8+ die Dame?",
+     "antworten": [
+      "Nach dem Schlag auf g8 hat Weiß keinen legalen Zug mehr: Patt, also Remis.",
+      "Nach Kxg8 gewinnt Weiß den Turm f8.",
+      "Die Dame setzt auf g8 matt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Schwarz muss die Dame schlagen, mit König oder Turm. In beiden Fällen ist Weiß patt. Jeder andere Zug verliert, weil Schwarz bald matt setzt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.30",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-erzwingend",
+     "hinweise": [
+      "Rechne jeden Schlag bis zur Ruhe.",
+      "Zähle am Feld d5: drei Angreifer, drei Verteidiger.",
+      "Schwarz nimmt zuerst mit dem Bauern zurück und hat das letzte Wort: Jeder Schlag auf d5 verliert."
+     ],
+     "text": "Alle drei Schläge auf d5 kosten Weiß Material. Bei drei gegen drei hat Schwarz den letzten Schlag, und er schlägt zuerst mit dem billigen Bauern."
+    }
+   ],
+   "fragen": [
+    {
+     "frage": "Warum sollte Weiß hier nicht auf d5 schlagen?",
+     "antworten": [
+      "Weil der Bauer d5 vergiftet ist: Danach droht Matt.",
+      "Weil drei Verteidiger gegen drei Angreifer stehen und Schwarz mit dem billigeren Material schlägt.",
+      "Weil Weiß damit die Rochade verliert."
+     ],
+     "richtig": 1,
+     "erklaerung": "Gezählt wird nicht nur die Anzahl, sondern auch der Wert. Am Ende hat Weiß viel mehr Material gegeben als bekommen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.33",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-erzwingend",
+     "hinweise": [
+      "Welche Schläge hast du, und in welcher Reihenfolge?",
+      "Zähle am Feld d5 auch die Figur hinter dem Turm d2.",
+      "Der Turm d1 ist der dritte Angreifer. Schlage zuerst mit dem Springer."
+     ],
+     "text": "Drei Angreifer gegen zwei Verteidiger: Sxd5 holt den Bauern. Mit dem Turm zuerst zu schlagen verliert dagegen Material."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Sxd5",
+     "frage": "Warum gewinnt 1. Sxd5 den Bauern d5?",
+     "antworten": [
+      "Der Turm d1 hinter dem Turm d2 ist ein dritter Angreifer, Schwarz hat nur zwei Verteidiger.",
+      "Der Bauer d5 ist gar nicht gedeckt.",
+      "Nach Sxd5 ist der Springer f6 gefesselt."
+     ],
+     "richtig": 0,
+     "erklaerung": "Nach Sxd5 Sxd5 Txd5 Txd5 Txd5 bleibt Weiß ein Bauer mehr. Wichtig ist, mit der billigsten Figur anzufangen."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  },
+  {
+   "abbildung": "7.37",
+   "status": "freigegeben",
+   "einschaetzungen": [
+    {
+     "werkzeug": "k7-motiv",
+     "hinweise": [
+      "Wohin kann der schwarze König, und was sperrt ihn ein?",
+      "Der Springer e7 sperrt g6 und g8, der Turm d3 erreicht die h-Linie.",
+      "Dxh7+ zwingt den König nach h7, dann setzt Th3 matt."
+     ],
+     "text": "Eine Hinlenkung zum Anastasia-Matt: Das Damenopfer holt den König nach h7. Dort sperrt ihn der Springer e7 ein, und der Turm setzt auf der h-Linie matt."
+    }
+   ],
+   "fragen": [
+    {
+     "zug": "1. Dxh7+",
+     "frage": "Warum gibt Weiß mit 1. Dxh7+ die Dame her?",
+     "antworten": [
+      "Um den Bauern h7 zu gewinnen und dann die Damen zu tauschen.",
+      "Weil die Dame h5 sonst verloren wäre.",
+      "Der König muss nach h7, und dort setzt Th3 matt; g6 und g8 sperrt der Springer."
+     ],
+     "richtig": 2,
+     "erklaerung": "Kxh7 ist der einzige Zug. Danach kommt der Turm über die dritte Reihe auf die h-Linie: Anastasia-Matt."
+    }
+   ],
+   "engineGeprueft": "2026-10-15"
+  }
+ ]
+}

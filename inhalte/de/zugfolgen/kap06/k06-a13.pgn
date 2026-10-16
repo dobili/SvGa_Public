@@ -1,0 +1,16 @@
+[Event "Kapitel 6: Wenn der Angriff schon läuft: die Verteidigungsmittel"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 b - - 0 1"]
+[SetUp "1"]
+[Beispiel "k06-a13"]
+[Kapitel "6"]
+[Abschnitt "6.4"]
+[Status "freigegeben"]
+[Abbildungen "6.13 6.14 6.15"]
+
+{ Abb. 6.13 } 1... f5 ( 1... f6 2. Bxh7+ Kxh7 3. Ng5+ fxg5 { Abb. 6.15 } ) ( 1... h6 ) 2. exf6 Nxf6 { Abb. 6.14 } *

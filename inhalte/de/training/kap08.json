@@ -1,0 +1,157 @@
+{
+  "kapitel": 8,
+  "titel": "Endspiel-Fundament",
+  "adresse": "/training/kap08/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Elementarmatts, bis sie sitzen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele unter „Lernen → Trainieren“ die Übungsreihe „Figuren-Mattvarianten I“ durch (Dame, Turm, zwei Läufer). Gib im Anschluss mit „Stellung aufbauen“ Dame und König gegen einen König ein, erst wie in ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 8.4",
+          "abbildung": "8.4"
+        },
+        {
+          "art": "text",
+          "text": ", dann mit dem König in der Brettmitte, und spiele die Stellung mit „Von hier aus weiterspielen“ gegen den Computer zu Ende. Wiederhole das Damenmatt und das Turmmatt, bis jedes dreimal hintereinander ohne Patt und in weniger als zwanzig Zügen gelingt.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Zugrecht-Drill am echten Brett.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 8.19",
+          "abbildung": "8.19"
+        },
+        {
+          "art": "text",
+          "text": ", ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "8.27",
+          "abbildung": "8.27"
+        },
+        {
+          "art": "text",
+          "text": " und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "8.51",
+          "abbildung": "8.51"
+        },
+        {
+          "art": "text",
+          "text": " auf einem echten Brett auf und spiele jede Stellung zweimal aus, einmal mit Weiß und einmal mit Schwarz am Zug, mit einem Partner oder allein für beide Seiten. Sage vor jedem Zug laut: Wer hat die Opposition, und welches Schlüsselfeld ist erreichbar?",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Erst rechnen, dann nachschlagen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Nimm ein Bauernendspiel aus einer eigenen Partie, sobald höchstens sieben Figuren auf dem Brett stehen. Schreibe zunächst dein Urteil auf (Gewinn, Remis oder Verlust) und den Zug, den du spielen würdest. Öffne die Stellung danach im Analysebrett: Dort zeigt die Tablebase für jeden Zug das bewiesene Ergebnis. Suche den Zug, an dem die Partie gekippt ist. Dieselbe Auskunft gibt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "syzygy-tables.info",
+          "ziel": "https://syzygy-tables.info"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Aufgaben nach Thema.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Löse unter „Aufgabenthemen“ je einen Block „Bauernendspiel“, „Zugzwang“ und „Bauernumwandlung“. Bestimme bei jeder Aufgabe zunächst das Quadrat und die Schlüsselfelder, bevor du den ersten Zug suchst.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Das Endspielheft.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Lege unter „Studien“ ein Endspielheft mit sechs Kapiteln an: Opposition, Schlüsselfelder, Quadrat, Randbauer, Freibauer, Triangulation. Trage jede Stellung aus einer eigenen Partie ein, in der eines dieser Werkzeuge entschieden hat, und schreibe einen Satz dazu: Was hätte ich sehen müssen? Wie das Endspieltraining in deine Woche passt, steht in Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap08_endspiel_fundament.tex",
+    "zeile": 1085
+  },
+  "stand": "2026-10-16"
+}

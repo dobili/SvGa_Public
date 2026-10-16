@@ -1,0 +1,14 @@
+[Event "Kapitel 11: Anderssen–Dufresne: Die Faktorenbilanz läuft mit"]
+[Site "Schach von Grund auf"]
+[Date "1852.??.??"]
+[Round "?"]
+[White "Adolf Anderssen"]
+[Black "Jean Dufresne"]
+[Result "1-0"]
+[Beispiel "k11-a22"]
+[Kapitel "11"]
+[Abschnitt "11.5"]
+[Status "freigegeben"]
+[Abbildungen "11.22 11.23 11.24 11.25 11.26 11.27 11.28 11.29 11.30 11.31"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. b4 Bxb4 5. c3 Ba5 6. d4 { Abb. 11.22 } 6... exd4 7. O-O d3 { Abb. 11.23 } 8. Qb3 Qf6 9. e5 Qg6 { Abb. 11.24 } ( 9... Nxe5 $2 10. Re1 ) 10. Re1 Nge7 11. Ba3 { Abb. 11.25 } 11... b5 12. Qxb5 Rb8 13. Qa4 Bb6 14. Nbd2 Bb7 15. Ne4 Qf5 16. Bxd3 Qh5 { Abb. 11.26 } 17. Nf6+ ( 17. Rad1 ) 17... gxf6 18. exf6 Rg8 { Abb. 11.27 } 19. Rad1 { Abb. 11.28 } 19... Qxf3 $2 ( 19... Qh3 20. Bf1 Qf5 21. Bd3 Qh3 ) 20. Rxe7+ $1 Nxe7 { Abb. 11.29 } ( 20... Kd8 21. Rxd7+ $1 Kc8 ( 21... Kxd7 22. Bf5+ ) 22. Rd8+ $1 ) 21. Qxd7+ $3 Kxd7 ( 21... Kf8 22. Qxe7# ) 22. Bf5+ { Abb. 11.30 } 22... Ke8 ( 22... Kc6 23. Bd7# ) 23. Bd7+ Kf8 ( 23... Kd8 24. Bxe7# ) 24. Bxe7# { Abb. 11.31 } 1-0

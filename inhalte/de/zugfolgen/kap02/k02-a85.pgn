@@ -1,0 +1,14 @@
+[Event "Kapitel 2: Die Trompowsky-Eröffnung"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k02-a85"]
+[Kapitel "2"]
+[Abschnitt "2.9"]
+[Status "freigegeben"]
+[Abbildungen "2.85 2.86 2.88 2.89 2.90 2.91 2.87 2.92 2.93 2.94 2.95 2.96"]
+
+1. d4 Nf6 2. Bg5 { Abb. 2.85 } ( 2. c4 ) 2... d5 ( 2... Ne4 { Abb. 2.92 } 3. Bf4 { Abb. 2.93 } ( 3. Bh4 ) ( 3. h4 $5 ) 3... d5 ( 3... c5 ) 4. e3 { Abb. 2.94 } ) ( 2... e6 3. e4 h6 { Abb. 2.95 } 4. Bxf6 Qxf6 { Abb. 2.96 } 5. Nc3 ) 3. Bxf6 ( 3. e3 ) 3... exf6 { Abb. 2.86 } ( 3... gxf6 { Abb. 2.87 } ) 4. e3 Bd6 5. c4 c6 { Abb. 2.88 } 6. cxd5 cxd5 7. Nc3 { Abb. 2.89 } 7... Be6 8. Bd3 Nc6 { Abb. 2.90 } 9. Nge2 O-O 10. O-O { Abb. 2.91 } *

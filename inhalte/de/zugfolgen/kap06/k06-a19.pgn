@@ -1,0 +1,16 @@
+[Event "Kapitel 6: Angriff auf den rochierten König"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "5rk1/pp1bppbp/3p1np1/q7/2r1P1P1/2N1BP2/PPPQN3/2KR3R w - - 3 17"]
+[SetUp "1"]
+[Beispiel "k06-a19"]
+[Kapitel "6"]
+[Abschnitt "6.5"]
+[Status "freigegeben"]
+[Abbildungen "6.19"]
+
+17. Bh6 Bxh6 18. Qxh6 { Abb. 6.19 } *

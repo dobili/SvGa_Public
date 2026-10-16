@@ -1,0 +1,14 @@
+[Event "Kapitel 11: Karpow–Kortschnoi: Entgegengesetzte Rochaden"]
+[Site "Schach von Grund auf"]
+[Date "1974.??.??"]
+[Round "?"]
+[White "Anatoli Karpow"]
+[Black "Viktor Kortschnoi"]
+[Result "1-0"]
+[Beispiel "k11-a32"]
+[Kapitel "11"]
+[Abschnitt "11.6"]
+[Status "freigegeben"]
+[Abbildungen "11.33 11.34 11.35 11.36 11.37 11.38 11.39 11.40 11.41 11.32"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 g6 6. Be3 Bg7 7. f3 Nc6 8. Qd2 O-O 9. Bc4 Bd7 10. h4 ( 10. O-O-O Rc8 { Abb. 11.32 } ) 10... Rc8 11. Bb3 Ne5 12. O-O-O { Abb. 11.33 } 12... Nc4 13. Bxc4 Rxc4 { Abb. 11.34 } 14. h5 $1 Nxh5 15. g4 Nf6 { Abb. 11.35 } 16. Nde2 $1 ( 16. Bh6 Nxe4 $1 ) 16... Qa5 17. Bh6 Bxh6 { Abb. 11.36 } 18. Qxh6 Rfc8 19. Rd3 $1 R4c5 { Abb. 11.37 } 20. g5 $1 Rxg5 ( 20... Nh5 21. Nf4 ) 21. Rd5 $1 Rxd5 { Abb. 11.38 } 22. Nxd5 Re8 23. Nef4 Bc6 { Abb. 11.39 } 24. e5 $3 ( 24. Nxf6+ exf6 25. Nh5 Qg5+ ) 24... Bxd5 ( 24... dxe5 25. Nxf6+ exf6 26. Nh5 ) 25. exf6 exf6 { Abb. 11.40 } 26. Qxh7+ Kf8 27. Qh8+ { Abb. 11.41, Schwarz gab auf. Es folgt die Analyse aus dem Buch. } 27... Ke7 28. Nxd5+ Qxd5 29. Re1+ 1-0

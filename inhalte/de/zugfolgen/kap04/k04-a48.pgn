@@ -1,0 +1,14 @@
+[Event "Kapitel 4: Muster 1: Damenfang auf b2"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k04-a48"]
+[Kapitel "4"]
+[Abschnitt "4.10"]
+[Status "freigegeben"]
+[Abbildungen "4.48 4.49 4.50"]
+
+1. e4 c5 2. Nf3 d6 3. d4 cxd4 4. Nxd4 Nf6 5. Nc3 a6 6. Bg5 e6 7. f4 Qb6 8. a3 { Abb. 4.48 } 8... Qxb2 $4 ( 8... Nc6 ) ( 8... Nbd7 ) ( 8... Be7 ) 9. Na4 $1 { Abb. 4.49 } 9... Qxd4 ( 9... Qxa1 10. Qxa1 ) 10. Qxd4 { Abb. 4.50 } *

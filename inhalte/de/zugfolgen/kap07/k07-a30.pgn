@@ -1,0 +1,16 @@
+[Event "Kapitel 7: Rechnen statt hoffen: der Abtausch auf einem Feld"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "3r2k1/p3bppp/4pn2/3p4/8/2N1P1P1/PP3PBP/3R2K1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k07-a30"]
+[Kapitel "7"]
+[Abschnitt "7.3"]
+[Status "freigegeben"]
+[Abbildungen "7.30 7.31 7.32"]
+
+{ Abb. 7.30 } 1. Nxd5 $2 exd5 2. Bxd5 Nxd5 { Abb. 7.31 } 3. Rxd5 Rxd5 { Abb. 7.32 } *

@@ -1,0 +1,195 @@
+{
+  "kapitel": 3,
+  "titel": "Gambits: Zeit und Aktivität gegen Material",
+  "adresse": "/training/kap03/",
+  "bloecke": [
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Dein Repertoire zuerst.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Nimm dir aus der Gambit-Landkarte (Tabelle 3.3) die Gambits vor, die dein Repertoire aus Kapitel 2 treffen, und übe zunächst die Verteidigung: Baue die Stellung nach dem Gambitzug mit „Stellung aufbauen“ auf, öffne sie im Analysebrett und spiele sie über „Von hier aus weiterspielen“ mehrmals gegen den Computer.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Bilanz nach dem Gambit.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Ziehe nach jeder eigenen Partie mit einem Gambit – egal von welcher Seite – beim ersten ruhigen Moment schriftlich eine Faktorenbilanz: Was hast du gewonnen, was hast du bezahlt, und wie lange hat es gehalten?",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Kompensation messen statt fühlen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele die Stellungen aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 3.14",
+          "abbildung": "3.14"
+        },
+        {
+          "art": "text",
+          "text": " (Evans) und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 3.20",
+          "abbildung": "3.20"
+        },
+        {
+          "art": "text",
+          "text": " (Dänisch) im Analysebrett nach. Notiere erst deine eigene Einschätzung mit der Zählhilfe aus Tabelle 3.2, schalte dann die Engine zu und vergleiche. Nach zehn solchen Vergleichen bekommst du ein Gefühl dafür, wie viel Entwicklungsvorsprung ein Bauer tatsächlich wert ist.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Ein Gambit von beiden Seiten spielen.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Nimm dir genau ein Gambit aus diesem Kapitel vor und spiele es zunächst als Angreifer und im Anschluss als Verteidiger. Der Perspektivwechsel bringt mehr als jede Variantenliste, und die Verteidigerseite brauchst du im Turnier häufiger.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Die Motive gezielt üben.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Löse unter „Aufgabenthemen“ je zwanzig Aufgaben zu „Zwischenzug“, „Abzugsangriff“ und „Fesselung“, den Schlüsselmomenten dieses Kapitels.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Prüfen, ob der Bauer haltbar ist.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Baue die Stellung aus ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "Abb. 3.20",
+          "abbildung": "3.20"
+        },
+        {
+          "art": "text",
+          "text": " nach. Spiele sie gegen den Computer einmal mit ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "5... d5"
+        },
+        {
+          "art": "text",
+          "text": " und einmal mit dem gierigen ",
+          "stil": "normal"
+        },
+        {
+          "art": "zug",
+          "text": "5... Dg5?"
+        },
+        {
+          "art": "text",
+          "text": ". Der Unterschied nach zehn Zügen ist die Lektion aus diesem Kapitel in Reinform.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Am echten Brett.",
+          "stil": "fett"
+        },
+        {
+          "art": "text",
+          "text": " Spiele die sichere Antwort auf jedes Gambit, das dein Repertoire trifft, auf einem echten Brett bis zur Bilanzstellung nach, ohne ins Buch zu schauen.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "absatz",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Wie du diese Übungen in einen festen Trainingsplan einbaust, zeigt Kapitel 12.",
+          "stil": "normal"
+        }
+      ]
+    },
+    {
+      "art": "klein",
+      "teile": [
+        {
+          "art": "text",
+          "text": "Den Weg zu allen genannten Funktionen zeigt ",
+          "stil": "normal"
+        },
+        {
+          "art": "link",
+          "text": "die Tabelle „Werkzeugkasten“",
+          "ziel": "/training/werkzeugkasten/"
+        },
+        {
+          "art": "text",
+          "text": ".",
+          "stil": "normal"
+        }
+      ]
+    }
+  ],
+  "quelle": {
+    "datei": "kap03_gambits.tex",
+    "zeile": 2018
+  },
+  "stand": "2026-10-16"
+}

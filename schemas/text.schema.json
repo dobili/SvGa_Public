@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/text.schema.json",
+  "title": "Buchtext",
+  "description": "Text aus dem Buch als Folge von Teilen, damit Hervorhebungen, Züge, Verweise und Zeichen erhalten bleiben (pipeline/lesen/text.py).",
+  "type": "array",
+  "items": { "$ref": "#/$defs/textteil" },
+  "$defs": {
+    "textteil": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["art", "text"],
+      "properties": {
+        "art": {
+          "description": "text: Fließtext; zug: Zug oder Zugfolge; verweis: Abbildung; stelle: Glossarstelle im Buch; zeichen: Zustandszeichen der Bilanzen; begriff: Querverweis im Glossar; absatz: Absatzwechsel",
+          "enum": ["text", "zug", "verweis", "stelle", "zeichen", "begriff", "absatz"]
+        },
+        "text": { "type": "string", "minLength": 1 },
+        "stil": { "enum": ["normal", "fett", "kursiv"] },
+        "abbildung": { "description": "bei verweis: Abbildungsnummer", "type": "string" },
+        "anker": { "description": "bei stelle: Glossaranker wie abzug-7", "type": "string" },
+        "zeichen": {
+          "description": "bei zeichen: Bedeutung des Zeichens",
+          "enum": ["ja", "teils", "nein", "entfaellt", "vornlinks", "vornrechts", "gleichstand", "plus", "minus", "gleich"]
+        },
+        "begriff": { "description": "bei begriff: Glossareintrag, auf den verwiesen wird", "type": "string" }
+      }
+    },
+    "textteile": { "type": "array", "items": { "$ref": "#/$defs/textteil" } }
+  }
+}

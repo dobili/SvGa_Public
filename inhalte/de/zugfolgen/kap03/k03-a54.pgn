@@ -1,0 +1,14 @@
+[Event "Kapitel 3: Das Englund-Gambit"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k03-a54"]
+[Kapitel "3"]
+[Abschnitt "3.9"]
+[Status "freigegeben"]
+[Abbildungen "3.54 3.55 3.56 3.57 3.58 3.59 3.60"]
+
+1. d4 e5 { Abb. 3.54 } 2. dxe5 Nc6 3. Nf3 Qe7 { Abb. 3.55 } 4. Bf4 ( 4. Qd5 f6 5. exf6 Nxf6 ) 4... Qb4+ { Abb. 3.56 } 5. Bd2 $1 Qxb2 6. Nc3 $1 { Abb. 3.57 } ( 6. Bc3 $4 Bb4 $1 { Abb. 3.59 } 7. Bxb4 ( 7. Qd2 Bxc3 8. Nxc3 ( 8. Qxc3 Qc1# { Abb. 3.60 } ) 8... Qxa1+ ) 7... Nxb4 ) 6... Bb4 7. Rb1 Qa3 8. Nd5 $1 { Abb. 3.58 } *

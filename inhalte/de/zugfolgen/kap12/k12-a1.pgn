@@ -1,0 +1,16 @@
+[Event "Kapitel 12: Die Routine an einem Beispiel"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[FEN "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1"]
+[SetUp "1"]
+[Beispiel "k12-a1"]
+[Kapitel "12"]
+[Abschnitt "12.1"]
+[Status "freigegeben"]
+[Abbildungen "12.1 12.2 12.3"]
+
+{ Abb. 12.1 } 1. Bxh7+ ( 1. Nxd5 $2 ) ( 1. Rc1 ) 1... Kxh7 ( 1... Kh8 2. Ng5 ) 2. Ng5+ { Abb. 12.2 } 2... Kg6 ( 2... Kg8 3. Qh5 ) ( 2... Kh8 3. Qh5+ Kg8 4. Qh7# ) ( 2... Kh6 3. Qg4 ) 3. Qd3+ $1 { Abb. 12.3 } ( 3. Qg4 $2 f5 ) 3... f5 ( 3... Kh6 4. Qh7+ ) ( 3... Kh5 4. Qh7+ ) ( 3... Kxg5 4. f4+ ) 4. Nxe6 *

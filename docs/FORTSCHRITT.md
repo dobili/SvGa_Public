@@ -25,8 +25,9 @@ Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abs
 - GitHub: Konto `dobili`. Öffentliches Repository `dobili/SvGa_Public` (seit 16.10.2026, GPL),
   davor das private Repository des Autors (jetzt Archiv). Claude-GitHub-App für `dobili/SvGa_Public`
   und `dobili/schachbuch-quellen` (privat, Buchquellen).
-- Cloudflare: am 14.10.2026 vom Autor mit GitHub verbunden (Worker `schach-von-grund-auf`,
-  Root directory `app`, Produktionszweig `ap0-geruest`, Vorschau-Builds eingeschaltet).
+- Cloudflare: Worker `schach-von-grund-auf`, seit 16.10.2026 mit `dobili/SvGa_Public` verbunden
+  (Root directory `app`, Produktionszweig `main`, Vorschau-Builds an). Nach dem Verbinden baut
+  Cloudflare erst beim nächsten Push, nicht sofort.
 - **Domain:** Der Autor hat am 15.10.2026 `schach-von-grund-auf.com` bei Cloudflare registriert und
   mit dem Worker verbunden (App unter `https://schach-von-grund-auf.com/app/`, Startseite des
   Buches unter `/`, QR-Ziel `/installieren/`). Davor liefen die Tests über `*.workers.dev`.

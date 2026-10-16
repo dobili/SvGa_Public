@@ -12,6 +12,22 @@ Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App).
 
 ---
 
+## Nachtest Version 0.2.38 (etwa 5 Minuten, mit Engine; Rückblick nach der Partie)
+
+Neu: Vorschlag H, Rückblick nach der Partie. **Vorher:** In den Einstellungen muss „App-Version
+0.2.38“ stehen.
+
+- [ ] N198. **Zeichen und besserer Zug am Brett:** Eine kurze Partie mit einem klaren Fehler
+      spielen (etwa Spielen › eigene Stellung nach 1. f3 e5, dann 2. g4??). Nach dem Ende und der
+      Auswertung in der Zugliste auf „2. g4??“ tippen: Auf g4 steht „??“ (rot), ein goldener Pfeil
+      zeigt den besseren Zug (e3).
+- [ ] N199. **Bewertungsbalken:** Beim Nachspielen nach der Partie steht links am Brett ein
+      schmaler Balken mit Zahl (hier „−M“ für Matt durch Schwarz). Während einer laufenden Partie
+      ist er nicht zu sehen; in der ruhigen Ansicht auch nicht. Spielst du Schwarz, wächst Weiß
+      von oben.
+- [ ] N200. **Verlaufskurve:** Über der Auswertung eine Kurve (hell: Anteil von Weiß), Fehler als
+      rote Punkte. Ein Tipp auf die Kurve zeigt die Stellung an dieser Stelle.
+
 ## Nachtest Version 0.2.37 (etwa 30 Minuten; AP 13 Übungen und erste Trainer)
 
 Neu: Die Übungen des Buches lassen sich in der App lösen, mit Wiederholung, dazu die ersten drei

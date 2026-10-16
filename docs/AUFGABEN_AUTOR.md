@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.37 (AP 13 Teil 1 und 2: Übungen und erste Trainer).
+Stand: 17.10.2026, Version 0.2.38 (AP 13 Teil 1 und 2: Übungen und erste Trainer; H Rückblick).
 Hier steht **nur, was noch offen ist**. Erledigtes ist in `docs/ENTSCHEIDUNGEN.md` festgehalten.
 
 **Grundsatz:** Du musst keine Datei selbst bearbeiten. Du antwortest im Chat mit den Kürzeln (etwa
@@ -16,8 +16,8 @@ Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2
 
 ## B. Testen
 
-- [ ] B1. **Nachtest 0.2.37** nach `docs/TESTANLEITUNG.md` (N182 bis N197: Übungen, erste
-      Trainer, neuer Buchstand).
+- [ ] B1. **Nachtest 0.2.37 und 0.2.38** nach `docs/TESTANLEITUNG.md` (N182 bis N200: Übungen,
+      erste Trainer, neuer Buchstand, Rückblick nach der Partie).
 - [ ] B2. **Nachtest 0.2.33 und 0.2.36** (N158 bis N181), falls noch nicht geschehen.
 
 ## U. Rückfragen zu den Übungen und Trainern (AP 13, Nacht zum 17.10.2026; plausibel entschieden)
@@ -47,6 +47,12 @@ Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2
 - [ ] U9. **Trainer in der Wiederholung:** Bisher kommen nur die Übungen des Buches in die
       Wiederholung (fünf Kästen). Sollen auch Aufgaben der Trainer dort landen, etwa jede falsch
       beantwortete Röntgen-Aufgabe?
+
+- [ ] U10. **Rückblick, „!“:** Das Zeichen „!“ für den einzigen guten Zug fehlt noch. Dafür
+      rechnet die Auswertung je Stellung zwei Züge statt einen (etwa 0,7 statt 0,5 Sekunden je
+      Stellung), und die zweitbesten Werte kommen in den Speicher. Gewünscht?
+- [ ] U11. **Bewertungsbalken** nur nach der Partie (wie empfohlen, R13), nicht während der
+      Partie. So lassen?
 
 ## C. Rückfragen zu den neuen Regeln (kurz; Claude hat jeweils plausibel entschieden)
 

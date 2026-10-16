@@ -1050,4 +1050,8 @@ Der Autor hat die Arbeit über Nacht freigegeben („Los“). Rückfragen dazu s
   verschieden urteilen. Jede Runde zählt als Durchgang im Fortschritt.
 - **Warten auf Fable:** Taktiktrainer, Strukturerkenner und „Falle oder Köder“ brauchen die
   Trainerdaten aus dem Zweig `trainerdaten` (noch in Arbeit).
-
+- **H Rückblick nach der Partie (0.2.38):** Zeichen am Zielfeld (?! grau, ? und ?? rot), goldener
+  Pfeil für den besseren Zug, wenn der gespielte ein Zeichen hat und nicht selbst der beste war;
+  Bewertungsbalken links am Brett nur beim Nachspielen nach der Partie und nicht in der ruhigen
+  Ansicht; Verlaufskurve über der Auswertung (±5, Matt am Rand, Fehler „?“ und „??“ als Punkte).
+  „!“ fehlt noch (Rückfrage U10).

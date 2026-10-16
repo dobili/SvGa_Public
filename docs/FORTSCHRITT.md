@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 17.10.2026 · **Version 0.2.37**, AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N197, Rückfragen U1 bis U9 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 17.10.2026 · **Version 0.2.38**, H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1232,6 +1232,14 @@ Vorher aufgeräumt: Zweig `pipeline-anschluss` (Anschluss an frühere Kapitel) i
   Trainerkarte zeigt dann „Trainieren“.
 - Oberflächentests `tests/e2e/uebungen.spec.ts` und `trainer.spec.ts`.
 
+### H Rückblick nach der Partie – Version 0.2.38 (Zweig `rueckblick`, Opus, Nacht zum 17.10.2026)
+
+- `spiel/rueckblick.ts` (Zeichen und besserer Zug als Markierungen, Balkenanteil und -text,
+  Kurvenpunkte; Tests), `ui/komponenten/Bewertungsbalken.tsx`, `Verlaufskurve.tsx`,
+  `Brettbereich.tsx` mit optionaler `seitenleiste`, eingebunden in `Partie.tsx` und
+  `Auswertung.tsx`, Stil in `ui/stil/spiel.css`. Oberflächentest in `spielen.spec.ts` (2. g4??).
+- Offen: „!“ für den einzigen guten Zug (Rückfrage U10).
+
 ## Wartet auf den Autor
 
 **Alles Offene steht in `docs/AUFGABEN_AUTOR.md`** (seit 0.2.31 nur noch Offenes: Nachtest,
@@ -1246,8 +1254,8 @@ Eröffnungsliste sind seit 0.2.32 umgesetzt).
 Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2.36) liegt im
 Archiv-Repository; was davon noch offen ist, steht hier.
 
-1. **Autor:** Nachtest N182 bis N197 (0.2.37) und, falls offen, N158 bis N181; Rückfragen U1 bis
-   U9, C1 bis C9, K1 bis K6 und D1 in `docs/AUFGABEN_AUTOR.md`. Antworten einarbeiten.
+1. **Autor:** Nachtest N182 bis N200 (0.2.37 und 0.2.38) und, falls offen, N158 bis N181; Rückfragen U1 bis
+   U11, C1 bis C9, K1 bis K6 und D1 in `docs/AUFGABEN_AUTOR.md`. Antworten einarbeiten.
 2. **Fable, Zweig `trainerdaten`:** Pipeline `pipeline/trainer/`, Schemas `schemas/trainer*`,
    Daten `inhalte/de/trainer/`, Notizen `docs/TRAINERDATEN.md`. Fable pusht weder `main` noch
    `app/`. Sobald Fable fertig meldet und die Prüfung grün ist, führt Opus den Zweig zusammen und
@@ -1255,7 +1263,8 @@ Archiv-Repository; was davon noch offen ist, steht hier.
 3. **Danach AP 13 weiter (Opus):** Taktiktrainer, Strukturerkenner und „Falle oder Köder“ auf
    den Daten von Fable; Repertoire, Zielbilanz- und Faktorenbilanz-Trainer, Endspieltrainer;
    Lichess-Aufgaben. Offene Frage U9 (Trainer in der Wiederholung) vorher klären.
-4. **Offen aus den Vorschlägen:** H Rückblick im Spielen, D1 Leerfälle.
+4. **Offen aus den Vorschlägen:** D1 Leerfälle (Tabelle im Archiv, VORSCHLAEGE_0.2.26.md,
+   Abschnitt D: je Werkzeug „gilt, wenn …“ und ein Satz, warum nicht). H ist bis auf „!“ fertig.
 
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 

@@ -54,8 +54,8 @@ def test_taktik_loesungen_gehen():
     assert len(kennungen) == len(set(kennungen))
     for a in daten["aufgaben"]:
         brett = _spiele(a["fen"], a["loesung"])
-        if a["ziel"] == "matt":
-            assert brett.is_checkmate() or a["herkunft"]["quelle"] == "lichess", a["id"]
+        if brett.is_checkmate():
+            assert a["ziel"] == "matt", a["id"]
         start = chess.Board(a["fen"])
         assert chess.square_name(start.parse_san(a["loesung"][0]).from_square) == a["schluesselfeld"]
         for san in a["akzeptiert"]:

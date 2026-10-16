@@ -41,7 +41,7 @@
         "motiv": { "oneOf": [{ "$ref": "#/$defs/motiv" }, { "type": "null" }] },
         "mattbild": { "oneOf": [{ "$ref": "#/$defs/mattbild" }, { "type": "null" }] },
         "schluesselfeld": { "description": "Feld der Figur, die den Schlüsselzug macht (Hilfe 3)", "$ref": "trainer-gemeinsam.schema.json#/$defs/feld" },
-        "ziel": { "description": "matt: die Lösung setzt matt; gewinn: Materialgewinn oder entscheidender Vorteil; rettung: Remis aus verlorener Lage", "enum": ["matt", "gewinn", "rettung"] },
+        "ziel": { "description": "matt: die Lösung führt laut Engine zum Matt (die Linie kann vorher enden, etwa Lolli-Matt: 1. Dh6 droht Dg7#); gewinn: Materialgewinn oder entscheidender Vorteil; rettung: Remis aus verlorener Lage", "enum": ["matt", "gewinn", "rettung"] },
         "schwierigkeit": { "$ref": "trainer-gemeinsam.schema.json#/$defs/schwierigkeit" },
         "herkunft": { "$ref": "trainer-gemeinsam.schema.json#/$defs/herkunft" },
         "messung": { "$ref": "trainer-gemeinsam.schema.json#/$defs/messung" }

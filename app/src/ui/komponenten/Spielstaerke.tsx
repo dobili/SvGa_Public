@@ -85,8 +85,16 @@ export function Spielstaerke({
         <thead>
           <tr>
             <th scope="col">{t("spielstaerke.seite")}</th>
-            <th scope="col">{t("spielstaerke.du", { farbe: farbe(eigene) })}</th>
-            <th scope="col">{t("spielstaerke.engine", { farbe: farbe(andere) })}</th>
+            <th scope="col">
+              {partie.einstellung.gegner === "mensch"
+                ? farbe(eigene)
+                : t("spielstaerke.du", { farbe: farbe(eigene) })}
+            </th>
+            <th scope="col">
+              {partie.einstellung.gegner === "mensch"
+                ? farbe(andere)
+                : t("spielstaerke.engine", { farbe: farbe(andere) })}
+            </th>
           </tr>
         </thead>
         <tbody>

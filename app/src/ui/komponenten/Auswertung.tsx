@@ -148,10 +148,13 @@ function Pgn({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[
   const zeichen = new Map(
     urteile.flatMap((u) => (u.zeichen ? [[u.index, u.zeichen] as const] : [])),
   );
+  const mensch = partie.einstellung.gegner === "mensch";
   const kopf = {
-    ereignis: t("pgn.ereignis", { nummer: s.nummer, name: t(s.name) }),
-    leser: t("pgn.leser"),
-    engine: t("pgn.engine", { nummer: s.nummer }),
+    ereignis: mensch
+      ? t("pgn.ereignisMensch")
+      : t("pgn.ereignis", { nummer: s.nummer, name: t(s.name) }),
+    leser: mensch ? t("pgn.weiss") : t("pgn.leser"),
+    engine: mensch ? t("pgn.schwarz") : t("pgn.engine", { nummer: s.nummer }),
   };
   const text = alsPgn(partie, kopf, kommentare, zeichen);
   const kopiere = async () => {

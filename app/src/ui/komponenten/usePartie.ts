@@ -195,7 +195,10 @@ export function usePartie(id: string): Partiesteuerung {
   const partie = useSpeicher((z) => findePartie(z.daten.spiel, id));
   const fen = partie ? aktuelleFen(partie) : "";
   const amZugEngine =
-    partie !== null && partie.ende === null && amZug(partie) !== partie.einstellung.eigeneFarbe;
+    partie !== null &&
+    partie.ende === null &&
+    partie.einstellung.gegner === "engine" &&
+    amZug(partie) !== partie.einstellung.eigeneFarbe;
   const fehler = useEngineZug(partie, fen, amZugEngine);
   const jetztMs = useUhr(id, Boolean(partie?.uhr?.laeuft) && !partie?.ende, geladen);
   return {

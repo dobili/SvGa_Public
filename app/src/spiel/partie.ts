@@ -19,6 +19,17 @@ import { fenNach, regelstellung } from "./zuege";
 /** Wert von `eroeffnung`, wenn die Engine irgendeiner Variante des Buches folgen soll. */
 export const EROEFFNUNG_BUCH = "buch";
 
+/** Gegner: die Engine oder ein Mensch am selben Gerät (beide Seiten selbst spielen, 0.2.41). */
+export type Gegnerart = "engine" | "mensch";
+
+/** Spielhilfen während der Partie (0.2.41, vor der Partie zuschaltbar). */
+export interface Spielhilfen {
+  /** Die Symbole am Brett: Zählen, Röntgen, Warnsignale. */
+  readonly symbole: boolean;
+  /** Die Bündel mit den Werkzeugen unter dem Brett und der Hinweis. */
+  readonly werkzeuge: boolean;
+}
+
 export interface Partieeinstellung {
   readonly startFen: string;
   /** Die Seite des Lesers. */
@@ -35,6 +46,13 @@ export interface Partieeinstellung {
   readonly ruecknahmeErlaubt: boolean;
   /** Abbildungsnummer, wenn die Partie an einer Abbildung begann („1.26“), sonst null. */
   readonly abbildung: string | null;
+  /** Gegner (0.2.41): die Engine oder ein Mensch am selben Gerät. */
+  readonly gegner: Gegnerart;
+  /** Kennung eines vorgefertigten Gegners (engine/gegner.ts), sonst null (eigene Stufen). */
+  readonly bot: string | null;
+  readonly hilfen: Spielhilfen;
+  /** Zählt die Partie für die Wertung des Lesers (spiel/wertung.ts)? */
+  readonly gewertet: boolean;
   /**
    * Eröffnung, der die Engine folgen soll (Name aus dem Eröffnungsindex, seit 0.2.39);
    * EROEFFNUNG_BUCH: irgendeine Variante des Buches (Buchtreue 0,85); null: die Engine spielt die
@@ -115,7 +133,10 @@ export function amZug(partie: Partie): Color {
 
 /** Ist der Leser am Zug und läuft die Partie noch? */
 export function leserAmZug(partie: Partie): boolean {
-  return partie.ende === null && amZug(partie) === partie.einstellung.eigeneFarbe;
+  if (partie.ende) return false;
+  // Mensch gegen Mensch (0.2.41): Es zieht immer ein Mensch.
+  if (partie.einstellung.gegner === "mensch") return true;
+  return amZug(partie) === partie.einstellung.eigeneFarbe;
 }
 
 /**

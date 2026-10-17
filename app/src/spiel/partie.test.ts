@@ -33,6 +33,10 @@ const EINSTELLUNG: Partieeinstellung = {
   abbildung: null,
   eroeffnung: null,
   stufenJePhase: { eroeffnung: 1, mittelspiel: 1, endspiel: 1 },
+  gegner: "engine",
+  bot: null,
+  hilfen: { symbole: true, werkzeuge: true },
+  gewertet: true,
 };
 
 function enginezug(san: string, extra: Partial<Partiezug> = {}): Partiezug {

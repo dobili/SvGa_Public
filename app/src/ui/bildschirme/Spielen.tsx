@@ -5,7 +5,9 @@
  * Engine spielen“ an jeder Abbildung (Pflichtenheft 5.2: aus jeder Stellung zu Ende spielen,
  * Seite und Stufe wählen, Rücknahme abschaltbar; ein Spielziel gibt es seit 0.2.33 nicht mehr, Ziel ist
  * immer der Sieg). Die letzte Wahl merkt sich der
- * Speicher (Vorlieben). Seit 0.2.40 gibt es je Phase einen Regler für die Stufe (StufenWahl.tsx).
+ * Speicher (Vorlieben). Seit 0.2.40 gibt es je Phase einen Regler für die Stufe (StufenWahl.tsx);
+ * seit 0.2.41 die Wahl des Gegners (Engine mit vorgefertigten Gegnern oder Mensch am selben
+ * Gerät), die Spielhilfen und die Wertung (GegnerWahl.tsx).
  * Seit 0.2.39 lässt sich aus der Grundstellung eine Eröffnung des Buches
  * vorgeben, der die Engine folgt (EroeffnungsWahl.tsx, Rückmeldung des Autors zu N178). Darunter
  * die letzten Partien zum Nachlesen.
@@ -22,6 +24,8 @@ import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
 import { StufenWahl } from "../komponenten/StufenWahl";
+import { GegnerWahl, HilfenWahl } from "../komponenten/GegnerWahl";
+import { gegnerVon } from "../../engine/gegner";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
@@ -70,19 +74,39 @@ function Einstellungen({ wahl, setze }: { wahl: Wahl; setze: (wahl: Wahl) => voi
   const v = wahl.vorlieben;
   const mit = (teil: Partial<Spielvorlieben>) => setze({ ...wahl, vorlieben: { ...v, ...teil } });
   const uhrStellen = UHR_VORGABEN.map((_, stelle) => String(stelle));
+  const engine = v.gegner === "engine";
   return (
     <section className="karte spielwahl">
-      <Auswahl
-        name={t("spielen.seite")}
-        werte={["white", "black"] as const}
-        gewaehlt={wahl.farbe}
-        text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
-        beiWahl={(farbe) => setze({ ...wahl, farbe })}
+      <GegnerWahl
+        gegner={v.gegner}
+        bot={v.bot}
+        beiGegner={(gegner) => mit({ gegner, gewertet: gegner === "engine" })}
+        beiBot={(bot) => {
+          const g = gegnerVon(bot);
+          mit(
+            g
+              ? { bot, stufenJePhase: g.stufenJePhase, stufe: g.stufenJePhase.mittelspiel }
+              : { bot },
+          );
+        }}
       />
-      <StufenWahl
-        stufen={v.stufenJePhase}
-        beiWahl={(stufenJePhase) => mit({ stufenJePhase, stufe: stufenJePhase.mittelspiel })}
-      />
+      {engine && (
+        <Auswahl
+          name={t("spielen.seite")}
+          werte={["white", "black"] as const}
+          gewaehlt={wahl.farbe}
+          text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
+          beiWahl={(farbe) => setze({ ...wahl, farbe })}
+        />
+      )}
+      {engine && (
+        <StufenWahl
+          stufen={v.stufenJePhase}
+          beiWahl={(stufenJePhase) =>
+            mit({ stufenJePhase, stufe: stufenJePhase.mittelspiel, bot: null })
+          }
+        />
+      )}
       <Auswahl
         name={t("spielen.uhr")}
         werte={uhrStellen}
@@ -98,6 +122,12 @@ function Einstellungen({ wahl, setze }: { wahl: Wahl; setze: (wahl: Wahl) => voi
         />
         {t("spielen.ruecknahme")}
       </label>
+      <HilfenWahl
+        hilfen={v.hilfen}
+        gewertet={v.gewertet}
+        beiHilfen={(hilfen) => mit({ hilfen })}
+        beiGewertet={(gewertet) => mit({ gewertet })}
+      />
     </section>
   );
 }
@@ -163,7 +193,11 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       uhr: v.uhr,
       ruecknahmeErlaubt: v.ruecknahmeErlaubt,
       abbildung: abbildung ?? null,
-      eroeffnung: fen === GRUNDSTELLUNG ? wahl.eroeffnung : null,
+      eroeffnung: fen === GRUNDSTELLUNG && v.gegner === "engine" ? wahl.eroeffnung : null,
+      gegner: v.gegner,
+      bot: v.gegner === "engine" ? v.bot : null,
+      hilfen: v.hilfen,
+      gewertet: v.gewertet,
     };
     const partie = neuePartie(einstellung, neueKennung(), new Date().toISOString());
     if (!partie) return;
@@ -208,7 +242,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
       <Startstellung fen={fen} abbildung={abbildung} setzeFen={uebernimm} />
       {!ok && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
       <Einstellungen wahl={wahl} setze={setzeWahl} />
-      {fen === GRUNDSTELLUNG && (
+      {fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" && (
         <EroeffnungsWahl
           gewaehlt={wahl.eroeffnung}
           beiWahl={(eroeffnung) => setzeWahl({ ...wahl, eroeffnung })}

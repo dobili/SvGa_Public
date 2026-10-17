@@ -21,6 +21,7 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
+import { gegnerVon as botVon } from "../../engine/gegner";
 import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
@@ -61,17 +62,24 @@ function gegnerVon(farbe: Farbe): Farbe {
   return farbe === "white" ? "black" : "white";
 }
 
-/** „Stufe 1 · Einsteiger · du spielst Schwarz“ */
+/** „Stufe 1 · Einsteiger · du spielst Schwarz“, bei Mensch gegen Mensch „Beide Seiten selbst“. */
 function Untertitel({ partie }: { partie: PartieDaten }) {
   const s = stufe(partie.einstellung.stufe);
   const farbe = t(partie.einstellung.eigeneFarbe === "white" ? "farbe.w" : "farbe.b");
+  if (partie.einstellung.gegner === "mensch") {
+    return <p className="partie-untertitel">{t("partie.untertitelMensch")}</p>;
+  }
+  const bot = botVon(partie.einstellung.bot);
   const gewaehlt = partie.einstellung.eroeffnung;
   const eroeffnung = gewaehlt === EROEFFNUNG_BUCH ? t("partie.eroeffnungBuch") : gewaehlt;
   const je = partie.einstellung.stufenJePhase;
   const verschieden = je.eroeffnung !== je.mittelspiel || je.endspiel !== je.mittelspiel;
-  const stufentext = verschieden
+  const stufenText = verschieden
     ? t("partie.stufenJePhase", { e: je.eroeffnung, m: je.mittelspiel, s: je.endspiel })
     : t("partie.stufe", { nummer: s.nummer, name: t(s.name) });
+  const stufentext = bot
+    ? t("partie.gegnerBot", { name: bot.name, stufen: stufenText })
+    : stufenText;
   return (
     <p className="partie-untertitel">
       {eroeffnung
@@ -102,14 +110,19 @@ function RuhigSchalter({ ruhig }: { ruhig: boolean }) {
   );
 }
 
+/** Name einer Seite: „Du“ und „Engine“, bei Mensch gegen Mensch „Weiß“ und „Schwarz“. */
+function seitenname(partie: PartieDaten, farbe: Farbe): string {
+  if (partie.einstellung.gegner === "mensch") return t(farbe === "white" ? "farbe.w" : "farbe.b");
+  return t(farbe === partie.einstellung.eigeneFarbe ? "partie.du" : "partie.engine");
+}
+
 /** Uhr einer Seite, falls die Partie eine Uhr hat. */
 function Uhr({ s, farbe }: { s: Partiesteuerung; farbe: Farbe }) {
   const partie = s.partie;
   if (!partie?.uhr) return null;
-  const eigen = farbe === partie.einstellung.eigeneFarbe;
   return (
     <Partieuhr
-      name={t(eigen ? "partie.du" : "partie.engine")}
+      name={seitenname(partie, farbe)}
       farbe={farbe}
       uhr={partie.uhr}
       jetztMs={s.jetztMs}
@@ -169,7 +182,11 @@ function Spielfeld({
   const gewaehlt = ansicht?.zuege === sans.length ? ansicht : null;
   const stelle = gewaehlt?.stelle ?? sans.length;
   const gezeigt = alle[stelle] ?? s.fen;
-  const wahl = ruhig ? null : werkzeug.wahl;
+  // Spielhilfen (0.2.41): Symbole und Werkzeuge nur, wenn vor der Partie gewählt; die großen
+  // Werkzeuge verschwinden nach dem Ende, die Symbole bleiben.
+  const { hilfen } = partie.einstellung;
+  const mitWerkzeugen = hilfen.werkzeuge && !partie.ende;
+  const wahl = ruhig || !(hilfen.symbole || mitWerkzeugen) ? null : werkzeug.wahl;
   const bedienung = useLeserzug(s, gezeigt, wahl === "zaehlen");
   const amZug = stelle === sans.length && leserAmZug(partie);
   const stellung = useMemo(() => stellungAusFen(gezeigt), [gezeigt]);
@@ -210,13 +227,13 @@ function Spielfeld({
         bedienung={tippbar ? bedienung : { ...bedienung, ziele: [], beiFeld: () => undefined }}
         beschriftung={t("partie.titel")}
         anfangsGedreht={partie.einstellung.eigeneFarbe === "black"}
-        werkzeugSymbole={ruhig ? null : <PartieSymbole werkzeug={werkzeug} />}
+        werkzeugSymbole={ruhig || !hilfen.symbole ? null : <PartieSymbole werkzeug={werkzeug} />}
         zusatzSchalter={<RuhigSchalter ruhig={ruhig} />}
         seitenleiste={rb.leiste}
       />
       <Uhr s={s} farbe={partie.einstellung.eigeneFarbe} />
       {rb.karte}
-      {!ruhig && <PartieLeiste werkzeug={werkzeug} />}
+      {!ruhig && mitWerkzeugen && <PartieLeiste werkzeug={werkzeug} />}
       <PartieWerkzeugkarten
         wahl={wahl}
         ergebnis={rechnung.ergebnis}
@@ -279,7 +296,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         }
       />
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
-      {!ruhig && leser && (
+      {!ruhig && leser && partie.einstellung.hilfen.werkzeuge && (
         <SpielHinweis
           key={s.fen}
           fen={s.fen}

@@ -13,7 +13,14 @@ import { FEHLERARTEN } from "../engine/fehlerart";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 import type { Partieende } from "../spiel/ergebnis";
-import { spielbar, stellungen, type Partie, type Partiezug } from "../spiel/partie";
+import {
+  spielbar,
+  stellungen,
+  type Gegnerart,
+  type Partie,
+  type Partiezug,
+  type Spielhilfen,
+} from "../spiel/partie";
 import { neueUhr, type Uhreinstellung, type Uhrstand } from "../spiel/uhr";
 
 /** So viele beendete Partien bleiben gespeichert; ältere fallen weg. */
@@ -35,6 +42,11 @@ export interface Partieeintrag {
 
 /** Letzte Wahl im Spielen-Bildschirm. */
 export interface Spielvorlieben {
+  /** Gegner, vorgefertigter Gegner, Spielhilfen und Wertung (0.2.41). */
+  readonly gegner: Gegnerart;
+  readonly bot: string | null;
+  readonly hilfen: Spielhilfen;
+  readonly gewertet: boolean;
   /** Stufe im Mittelspiel. */
   readonly stufe: Stufennummer;
   /** Stufe je Phase (0.2.40); `mittelspiel` ist gleich `stufe`. */
@@ -53,6 +65,10 @@ export interface Spielstand {
 }
 
 export const STANDARD_VORLIEBEN: Spielvorlieben = {
+  gegner: "engine",
+  bot: null,
+  hilfen: { symbole: true, werkzeuge: true },
+  gewertet: true,
   stufe: 1,
   stufenJePhase: { eroeffnung: 1, mittelspiel: 1, endspiel: 1 },
   uhr: null,
@@ -204,6 +220,12 @@ function stufenJePhaseAus(
   return { eroeffnung: je("eroeffnung"), mittelspiel: je("mittelspiel"), endspiel: je("endspiel") };
 }
 
+/** Spielhilfen; ohne Angabe (vor 0.2.41) beide an. */
+function hilfenAus(roh: unknown): Spielhilfen {
+  if (!istObjekt(roh)) return { symbole: true, werkzeuge: true };
+  return { symbole: roh.symbole !== false, werkzeuge: roh.werkzeuge !== false };
+}
+
 function einstellungAus(roh: unknown): Partie["einstellung"] | null {
   if (!istObjekt(roh) || typeof roh.startFen !== "string" || !spielbar(roh.startFen)) return null;
   const eigeneFarbe = farbeAus(roh.eigeneFarbe);
@@ -218,6 +240,11 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
     ruecknahmeErlaubt: roh.ruecknahmeErlaubt !== false,
     abbildung: typeof roh.abbildung === "string" ? roh.abbildung : null,
     eroeffnung: typeof roh.eroeffnung === "string" ? roh.eroeffnung : null,
+    gegner: roh.gegner === "mensch" ? "mensch" : "engine",
+    bot: typeof roh.bot === "string" ? roh.bot : null,
+    hilfen: hilfenAus(roh.hilfen),
+    // Partien vor 0.2.41 zählen nicht für die Wertung.
+    gewertet: roh.gewertet === true,
   };
 }
 
@@ -257,6 +284,10 @@ function vorliebenAus(roh: unknown): Spielvorlieben {
   if (!istObjekt(roh)) return STANDARD_VORLIEBEN;
   const stufe = auswahl(STUFENNUMMERN, roh.stufe) ?? STANDARD_VORLIEBEN.stufe;
   return {
+    gegner: roh.gegner === "mensch" ? "mensch" : "engine",
+    bot: typeof roh.bot === "string" ? roh.bot : null,
+    hilfen: hilfenAus(roh.hilfen),
+    gewertet: roh.gewertet !== false,
     stufe,
     stufenJePhase: stufenJePhaseAus(roh.stufenJePhase, stufe),
     uhr: uhreinstellungAus(roh.uhr),

@@ -14,13 +14,13 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import { zugurteile } from "../../spiel/auswertung";
-import { spielstaerke } from "../../spiel/genauigkeit";
+import { spielstaerke, type Seitenbilanz } from "../../spiel/genauigkeit";
+import { gegnerVon } from "../../engine/gegner";
 import { stellungen, type Partie } from "../../spiel/partie";
 import { sanZuUci } from "../../spiel/zuege";
 import type { Partieeintrag } from "../../speicher/partien";
 import { Figur } from "../brett/Figur";
 import { BRETTFARBEN, FELD } from "../brett/masse";
-import { kurzergebnis } from "./partietexte";
 
 /** Größe der kleinen Figur in der Liste (Bildpunkte). */
 const FIGURGROESSE = 28;
@@ -28,55 +28,82 @@ const FIGURGROESSE = 28;
 /** So viele beendete Partien zeigt die Liste; gespeichert sind bis zu 50. */
 const SICHTBAR = 10;
 
-/** „15.10.2026 · Stufe 2 · 23 Züge“ */
+/** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie) */
 function zeile(partie: Partie): string {
   const datum = new Date(partie.begonnen).toLocaleDateString("de-DE");
   const zuege = Math.ceil(partie.zuege.length / 2);
   const s = stufe(partie.einstellung.stufe);
-  return t("spielen.partiezeile", { datum, stufe: t(s.name), zuege });
+  const gegner =
+    partie.einstellung.gegner === "mensch"
+      ? t("spielen.gegner.mensch")
+      : (gegnerVon(partie.einstellung.bot)?.name ?? t("spielen.partieStufe", { nummer: s.nummer }));
+  return t("spielen.partiezeile", { datum, stufe: gegner, zuege });
 }
 
-/** Der König in der Farbe, die der Leser gespielt hat, im gewählten Figurensatz. */
+/** Ergebnis in der Schreibweise des Schachs: „1–0“, „0–1“, „½–½“; „läuft“ ohne Ende. */
+function ergebniszeichen(partie: Partie): string {
+  const ende = partie.ende;
+  if (!ende) return t("spielen.laeuftKurz");
+  if (!("sieger" in ende)) return "½–½";
+  return ende.sieger === "white" ? "1–0" : "0–1";
+}
+
+/** Ein König im gewählten Figurensatz: die Farbe, die der Leser gespielt hat; beide bei Mensch gegen Mensch. */
 function Seitenfigur({ partie }: { partie: Partie }) {
   const einstellungen = useEinstellungen();
+  const mensch = partie.einstellung.gegner === "mensch";
   const weiss = partie.einstellung.eigeneFarbe === "white";
-  const farbe = t(weiss ? "farbe.w" : "farbe.b");
+  const zeichen = mensch ? ["K", "k"] : [weiss ? "K" : "k"];
+  const name = mensch
+    ? t("spielen.gegner.mensch")
+    : t("spielen.partieSeite", { farbe: t(weiss ? "farbe.w" : "farbe.b") });
   return (
     <svg
       className="seitenfigur"
-      viewBox={`0 0 ${FELD} ${FELD}`}
-      width={FIGURGROESSE}
+      viewBox={`0 0 ${FELD * zeichen.length} ${FELD}`}
+      width={FIGURGROESSE * zeichen.length}
       height={FIGURGROESSE}
       role="img"
-      aria-label={t("spielen.partieSeite", { farbe })}
+      aria-label={name}
     >
-      <Figur
-        zeichen={weiss ? "K" : "k"}
-        x={0}
-        y={0}
-        satz={einstellungen.figurensatz}
-        farbe={BRETTFARBEN[einstellungen.brettfarben].figur}
-      />
+      {zeichen.map((z, i) => (
+        <Figur
+          key={z}
+          zeichen={z}
+          x={i * FELD}
+          y={0}
+          satz={einstellungen.figurensatz}
+          farbe={BRETTFARBEN[einstellungen.brettfarben].figur}
+        />
+      ))}
     </svg>
   );
 }
 
-/** „du: etwa 1400“ oder „du: 78 % genau“; leer ohne Auswertung. */
+/** „etwa 1400“ oder „78 % genau“; leer ohne Zahl. */
+function seitenwert(b: Seitenbilanz): string {
+  if (b.spielstaerke !== null) return t("spielen.etwa", { wert: b.spielstaerke });
+  if (b.genauigkeit !== null) return t("spielen.genau", { wert: Math.round(b.genauigkeit) });
+  return "";
+}
+
+/** „du etwa 1400 · Engine etwa 1600“ oder bei zwei Menschen „Weiß … · Schwarz …“; leer ohne Auswertung. */
 function staerketext(eintrag: Partieeintrag): string {
   if (eintrag.werte.length === 0) return "";
   const p = eintrag.partie;
   const urteile = zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende);
   const alle = stellungen(p);
   const gespielte = p.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  const bilanz = spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte)[
-    p.einstellung.eigeneFarbe
-  ];
-  if (bilanz.spielstaerke !== null)
-    return t("spielen.partieStaerke", { wert: bilanz.spielstaerke });
-  if (bilanz.genauigkeit !== null) {
-    return t("spielen.partieGenauigkeit", { wert: Math.round(bilanz.genauigkeit) });
-  }
-  return "";
+  const staerke = spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte);
+  const weiss = seitenwert(staerke.white);
+  const schwarz = seitenwert(staerke.black);
+  if (!weiss && !schwarz) return "";
+  if (p.einstellung.gegner === "mensch") return t("spielen.staerkeMensch", { weiss, schwarz });
+  const eigene = p.einstellung.eigeneFarbe === "white";
+  return t("spielen.staerkeEngine", {
+    du: eigene ? weiss : schwarz,
+    engine: eigene ? schwarz : weiss,
+  });
 }
 
 export function LaufendePartie({ partie }: { partie: Partie }) {
@@ -115,7 +142,7 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
               >
                 <Seitenfigur partie={partie} />
                 <span className="partiezeile-text">
-                  <strong>{kurzergebnis(partie)}</strong>
+                  <strong>{ergebniszeichen(partie)}</strong>
                   <span>
                     {zeile(partie)}
                     {staerke && ` · ${staerke}`}

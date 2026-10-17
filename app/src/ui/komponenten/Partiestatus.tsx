@@ -9,12 +9,15 @@
  */
 import { useState } from "react";
 import { t } from "../../i18n/sprache";
-import type { Partie } from "../../spiel/partie";
+import { amZug, type Partie } from "../../spiel/partie";
 import { useSpeicher } from "../../speicher/speicher";
 import type { Partiesteuerung } from "./usePartie";
 
-function statustext(s: Partiesteuerung): string {
+function statustext(s: Partiesteuerung, partie: Partie): string {
   if (s.fehler) return t("partie.engineFehler", { fehler: s.fehler });
+  if (partie.einstellung.gegner === "mensch") {
+    return t(amZug(partie) === "white" ? "partie.weissAmZug" : "partie.schwarzAmZug");
+  }
   return t(s.engineDenkt ? "partie.engineDenkt" : "partie.duBistAmZug");
 }
 
@@ -40,7 +43,7 @@ export function Partiestatus({
       {/* Nach dem Ende steht das Ergebnis in der Karte darunter (Partieende). */}
       {!partie.ende && (
         <p className="partiestatus-text" role="status" data-testid="partiestatus">
-          {statustext(s)}
+          {statustext(s, partie)}
         </p>
       )}
       {!ruhig && !aufgeben && (

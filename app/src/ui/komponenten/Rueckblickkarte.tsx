@@ -77,7 +77,12 @@ export function Rueckblickkarte({
   const besterUci = rueckblick.beste[index] ?? "";
   const besterSan = besterUci ? uciZuSan(fen, besterUci) : null;
   const bester = besterSan ? `${nummer} ${sanInSprache(besterSan, "de")}` : "";
-  const seite = partie.zuege[index]?.von === "leser" ? t("partie.du") : t("partie.engine");
+  const seite =
+    partie.einstellung.gegner === "mensch"
+      ? t(fen.split(" ")[1] === "b" ? "farbe.b" : "farbe.w")
+      : partie.zuege[index]?.von === "leser"
+        ? t("partie.du")
+        : t("partie.engine");
   return (
     <section className="karte rueckblickkarte" data-testid="rueckblickkarte">
       <p className="rueckblick-urteil">

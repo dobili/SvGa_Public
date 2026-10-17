@@ -29,6 +29,8 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   await expect(page.getByRole("heading", { name: "Spielen" })).toBeVisible();
   await page.getByRole("radio", { name: "5 + 3" }).click();
+  // Gewertete Partien haben keine Rücknahme (S9); ungewertet ist sie da.
+  await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.getByRole("heading", { name: "Partie gegen die Engine" })).toBeVisible();
   await expect(page.getByText("Stufe 1 · Einsteiger · du spielst Weiß")).toBeVisible();
@@ -123,6 +125,7 @@ test("Werkzeuge in der Partie (0.2.33): Röntgen, W1–W7, Zählen am Brett, Bü
 }) => {
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   const werkzeuge = page.getByRole("group", { name: "Werkzeuge am Brett" });
   await werkzeuge.getByRole("button", { name: "Röntgen" }).click();
@@ -206,4 +209,16 @@ test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, sp
   await expect(page.getByTestId("eigene-gegner")).toContainText("Noch kein eigener Gegner");
   // Die gespielte Partie behält den Namen.
   await expect(page.getByTestId("laufende-partie")).toContainText("Rambo");
+});
+
+test("Gewertete Partie (S9): Rücknahme und Spielhilfen gesperrt", async ({ page }) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await expect(page.getByRole("checkbox", { name: /Gewertete Partie/ })).toBeChecked();
+  await expect(page.getByRole("checkbox", { name: /zurücknehmen erlauben/ })).toBeDisabled();
+  await expect(page.getByRole("checkbox", { name: /Symbole am Brett/ })).toBeDisabled();
+  await expect(page.getByText(/keine Zugrücknahme und keine Spielhilfen/)).toBeVisible();
+  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await expect(page.getByRole("button", { name: "Zurücknehmen" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: "Röntgen" })).toHaveCount(0);
 });

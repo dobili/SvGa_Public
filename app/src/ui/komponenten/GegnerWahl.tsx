@@ -103,13 +103,16 @@ export function HilfenWahl({
   beiHilfen: (hilfen: Spielhilfen) => void;
   beiGewertet: (gewertet: boolean) => void;
 }) {
+  // Gewertete Partien ohne Spielhilfen (S9): die Haken sind dann gesperrt und leer.
+  const gesperrt = wertbar && gewertet;
   return (
     <>
       <span className="einstellung-name">{t("spielen.hilfen")}</span>
       <label className="schalterzeile">
         <input
           type="checkbox"
-          checked={hilfen.symbole}
+          disabled={gesperrt}
+          checked={hilfen.symbole && !gesperrt}
           onChange={(e) => beiHilfen({ ...hilfen, symbole: e.target.checked })}
         />
         {t("spielen.hilfen.symbole")}
@@ -117,7 +120,8 @@ export function HilfenWahl({
       <label className="schalterzeile">
         <input
           type="checkbox"
-          checked={hilfen.werkzeuge}
+          disabled={gesperrt}
+          checked={hilfen.werkzeuge && !gesperrt}
           onChange={(e) => beiHilfen({ ...hilfen, werkzeuge: e.target.checked })}
         />
         {t("spielen.hilfen.werkzeuge")}
@@ -133,6 +137,7 @@ export function HilfenWahl({
             {t("spielen.gewertet")}
           </label>
           <p className="hinweis">{t("spielen.gewertetHinweis")}</p>
+          {gesperrt && <p className="hinweis">{t("spielen.gewertetOhneHilfen")}</p>}
         </>
       ) : (
         <p className="hinweis">{t("spielen.nichtWertbar")}</p>

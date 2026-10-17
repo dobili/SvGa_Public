@@ -137,7 +137,8 @@ function Einstellungen({
       <label className="schalterzeile">
         <input
           type="checkbox"
-          checked={v.ruecknahmeErlaubt}
+          checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
+          disabled={wirdGewertet(fen, v)}
           onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
         />
         {t("spielen.ruecknahme")}
@@ -260,20 +261,33 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       stufe: v.stufenJePhase.mittelspiel,
       stufenJePhase: v.stufenJePhase,
       uhr: v.uhr,
-      ruecknahmeErlaubt: v.ruecknahmeErlaubt,
+      // Gewertete Partien: keine Rücknahme und keine Spielhilfen (Wunsch des Autors zu S9).
+      ruecknahmeErlaubt: v.ruecknahmeErlaubt && !wirdGewertet(fen, v),
       abbildung: abbildung ?? null,
       eroeffnung: fen === GRUNDSTELLUNG && v.gegner === "engine" ? wahl.eroeffnung : null,
       gegner: v.gegner,
       bot,
-      hilfen: v.hilfen,
+      hilfen: wirdGewertet(fen, v) ? OHNE_HILFEN : v.hilfen,
       // Nur Partien gegen die Engine aus der Grundstellung zählen (Wunsch des Autors).
-      gewertet: v.gewertet && wertbar(fen, v),
+      gewertet: wirdGewertet(fen, v),
     };
     const partie = neuePartie(einstellung, neueKennung(), new Date().toISOString());
     if (!partie) return;
     void aendere((d) => ({ ...d, spiel: mitLaufender(mitVorlieben(d.spiel, v), partie) }));
     navigiere({ bildschirm: "partie", id: partie.id });
   };
+}
+
+/** Keine Spielhilfen: in gewerteten Partien (S9). */
+const OHNE_HILFEN = { symbole: false, werkzeuge: false } as const;
+
+/**
+ * Wird die Partie gewertet? Dann gibt es keine Zugrücknahme und keine Spielhilfen
+ * (Wunsch des Autors zu S9, 17.10.2026: wer zurücknehmen oder Werkzeuge nutzen kann, spielt
+ * stärker, als er ist).
+ */
+function wirdGewertet(fen: string, v: Parameters<typeof wertbar>[1]): boolean {
+  return v.gewertet && wertbar(fen, v);
 }
 
 /** Die Seite am Zug einer Stellung; Weiß, wenn sie nicht lesbar ist. */

@@ -3,8 +3,10 @@
  * Fehler melden), Daten auf diesem Gerät (sichern, einspielen, löschen).
  *
  * Rolle im Gesamtbild: Konzept 10.1. Fortschritt und Datensicherung kamen mit AP 12; die
- * Lernsammlung folgt mit den Trainern.
- * Abhängigkeiten: app/offline.ts, app/version.ts, daten/laden.ts, DatenLoeschen, Navigation, i18n.
+ * Lernsammlung folgt mit den Trainern. Seit 0.2.41 steht ganz oben die Wertung des Lesers aus den
+ * gewerteten Partien (Wertungskurve.tsx, Wunsch des Autors).
+ * Abhängigkeiten: app/offline.ts, app/version.ts, daten/laden.ts, speicher/, DatenLoeschen,
+ * Wertungskurve, Navigation, i18n.
  */
 import { useState } from "react";
 import { istInstalliert } from "../../app/geraet";
@@ -17,6 +19,8 @@ import { DatenLoeschen } from "../komponenten/DatenLoeschen";
 import { EinstellungenKarte } from "../komponenten/EinstellungenKarte";
 import { Fortschrittsuebersicht } from "../komponenten/Fortschrittsuebersicht";
 import { useDaten } from "../komponenten/useDaten";
+import { Wertungskurve } from "../komponenten/Wertungskurve";
+import { useSpeicher } from "../../speicher/speicher";
 
 /** Der Installationsteil der Startseite (Entscheidung 15.10.2026). */
 const INSTALLATIONSSEITE = "/installieren/";
@@ -65,6 +69,7 @@ function FehlerMelden({ angaben }: { angaben: string }) {
 export function Ich() {
   const { navigiere } = useNavigation();
   const offline = useOfflineStand();
+  const wertung = useSpeicher((z) => z.daten.spiel.wertung);
   const index = useDaten(ladeIndex, "index");
   const [updateMeldung, setzeUpdateMeldung] = useState<string | null>(null);
   const datenstand =
@@ -96,6 +101,7 @@ export function Ich() {
       {/* Keine sichtbare Überschrift (Wunsch des Autors, Test von 0.2.30); Bildschirmleser hören
           „Einstellungen“. */}
       <h1 className="nur-vorlesen">{t("ich.titel")}</h1>
+      <Wertungskurve punkte={wertung} />
       <Fortschrittsuebersicht />
       <section className="karte">
         <h2 className="karte-titel">{t("ich.einstellungen")}</h2>

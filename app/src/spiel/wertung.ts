@@ -1,0 +1,141 @@
+/**
+ * Wertung des Lesers aus den gewerteten Partien: ein Elo-System gegen die Engine-Schätzung des
+ * Gegners (Wunsch des Autors, 17.10.2026, Version 0.2.41).
+ *
+ * Rolle im Gesamtbild: Die Spielstärke je Partie (spiel/genauigkeit.ts) misst nur die Genauigkeit
+ * der Züge einer Partie. Die Wertung verbindet alle gewerteten Partien zu einer Zahl, die mit
+ * Siegen steigt und mit Niederlagen fällt, wie eine Elo-Zahl im Verein: Die erste gewertete
+ * Partie setzt die Wertung auf die Schätzung der Engine für den Leser; jede weitere zählt wie
+ * eine Partie gegen einen Spieler mit der Engine-Schätzung des Gegners (der Stärke, mit der die
+ * Engine in dieser Partie gespielt hat). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
+ * beim Weltschachbund für Spieler unter 2400). Jeder Punkt des Verlaufs merkt sich Zeit, Gegner
+ * und Ergebnis, damit die Kurve in den Einstellungen nach Partien oder nach Zeitraum zeigen kann.
+ * Gewertet werden nur beendete Partien gegen die Engine mit Haken „gewertete Partie“ und
+ * fertiger Auswertung; Partien mit zu wenigen Zügen für eine Schätzung zählen nicht.
+ * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
+ * speicher/partien.ts (Partieeintrag).
+ */
+import type { Partieeintrag } from "../speicher/partien";
+import { zugurteile } from "./auswertung";
+import { spielstaerke, type Spielstaerke } from "./genauigkeit";
+import { stellungen, type Partie } from "./partie";
+import { sanZuUci } from "./zuege";
+
+/** Ergebnis aus Sicht des Lesers: Sieg 1, Remis ½, Niederlage 0. */
+export type Punktwert = 0 | 0.5 | 1;
+
+/** Ein Punkt des Wertungsverlaufs: die Wertung nach dieser Partie. */
+export interface Wertungspunkt {
+  readonly partieId: string;
+  /** Beginn der Partie als ISO-Zeit. */
+  readonly zeit: string;
+  /** Engine-Schätzung des Gegners in dieser Partie. */
+  readonly gegner: number;
+  readonly ergebnis: Punktwert;
+  /** Die Wertung des Lesers nach der Partie, gerundet. */
+  readonly wertung: number;
+}
+
+/** K-Faktor in den ersten Partien (die Wertung findet schnell ihren Platz). */
+export const K_ANFANG = 32;
+/** So viele Partien gelten als Anfang. */
+export const ANFANGSPARTIEN = 10;
+/** K-Faktor danach. */
+export const K_DANACH = 20;
+/** Elo: 400 Punkte Unterschied bedeuten eine Erwartung von etwa 91 zu 9. */
+const ERWARTUNGSTEILER = 400;
+const ERWARTUNGSBASIS = 10;
+/** Höchstens so viele Punkte bleiben im Verlauf (die ältesten fallen weg). */
+export const MAX_WERTUNGSPUNKTE = 1000;
+
+/** Die Spielstärke beider Seiten einer ausgewerteten Partie; null ohne Auswertung. */
+export function staerkeDerPartie(eintrag: Partieeintrag): Spielstaerke | null {
+  if (eintrag.werte.length === 0) return null;
+  const p = eintrag.partie;
+  const urteile = zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende);
+  const alle = stellungen(p);
+  const gespielte = p.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
+  return spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte);
+}
+
+/** Das Ergebnis aus Sicht des Lesers; null, solange die Partie läuft. */
+export function ergebnisFuer(partie: Partie): Punktwert | null {
+  const ende = partie.ende;
+  if (!ende) return null;
+  if (!("sieger" in ende)) return 0.5;
+  return ende.sieger === partie.einstellung.eigeneFarbe ? 1 : 0;
+}
+
+/**
+ * Erwartete Punkte eines Spielers gegen einen Gegner nach der Elo-Formel.
+ * Beispiel: 1500 gegen 1500 → 0,5; 1500 gegen 1900 → etwa 0,09.
+ */
+export function erwartung(eigene: number, gegner: number): number {
+  return 1 / (1 + ERWARTUNGSBASIS ** ((gegner - eigene) / ERWARTUNGSTEILER));
+}
+
+/** Die aktuelle Wertung: die des letzten Punktes; null ohne gewertete Partie. */
+export function aktuelleWertung(punkte: readonly Wertungspunkt[]): number | null {
+  return punkte.at(-1)?.wertung ?? null;
+}
+
+/**
+ * Der Wertungspunkt zu einer Partie, oder null, wenn sie nicht zählt: nicht gewertet, gegen
+ * einen Menschen, nicht beendet, ohne Auswertung, schon gezählt, oder ohne Schätzung des
+ * Gegners (zu wenige Züge). Die erste Partie braucht auch die Schätzung für den Leser.
+ *
+ * Beispiel: erste Partie, Engine schätzt den Leser auf 1400 → Wertung 1400 (unabhängig vom
+ * Ergebnis); zweite Partie gegen eine Engine mit 1600 gewonnen → 1400 + 32 · (1 − 0,24) ≈ 1424.
+ */
+export function wertungspunktFuer(
+  punkte: readonly Wertungspunkt[],
+  eintrag: Partieeintrag,
+): Wertungspunkt | null {
+  const p = eintrag.partie;
+  const ergebnis = ergebnisFuer(p);
+  if (!p.einstellung.gewertet || p.einstellung.gegner !== "engine" || ergebnis === null) {
+    return null;
+  }
+  if (punkte.some((punkt) => punkt.partieId === p.id)) return null;
+  const staerke = staerkeDerPartie(eintrag);
+  if (!staerke) return null;
+  const engineFarbe = p.einstellung.eigeneFarbe === "white" ? "black" : "white";
+  const gegner = staerke[engineFarbe].spielstaerke;
+  if (gegner === null) return null;
+  const bisher = aktuelleWertung(punkte);
+  const eigene = bisher ?? staerke[p.einstellung.eigeneFarbe].spielstaerke;
+  if (eigene === null) return null;
+  const k = punkte.length < ANFANGSPARTIEN ? K_ANFANG : K_DANACH;
+  const neu = bisher === null ? eigene : eigene + k * (ergebnis - erwartung(eigene, gegner));
+  return { partieId: p.id, zeit: p.begonnen, gegner, ergebnis, wertung: Math.round(neu) };
+}
+
+/** Der Verlauf mit dieser Partie, falls sie zählt; sonst unverändert. */
+export function mitGewerteterPartie(
+  punkte: readonly Wertungspunkt[],
+  eintrag: Partieeintrag,
+): readonly Wertungspunkt[] {
+  const punkt = wertungspunktFuer(punkte, eintrag);
+  return punkt ? [...punkte, punkt].slice(-MAX_WERTUNGSPUNKTE) : punkte;
+}
+
+/** Ausschnitt der Kurve: die letzten N Partien oder ein Zeitraum bis jetzt. */
+export type Wertungsbereich =
+  | { readonly art: "partien"; readonly anzahl: number }
+  | { readonly art: "zeit"; readonly tage: number };
+
+const TAG_MS = 24 * 60 * 60 * 1000;
+
+/**
+ * Die Punkte im Bereich: die letzten N oder alle seit `jetzt` minus Tage. Beispiel: 30 Punkte,
+ * Bereich „letzte 10“ → die letzten zehn; Bereich „1 Woche“ → alle mit Zeit in den letzten 7 Tagen.
+ */
+export function imBereich(
+  punkte: readonly Wertungspunkt[],
+  bereich: Wertungsbereich,
+  jetzt: Date,
+): readonly Wertungspunkt[] {
+  if (bereich.art === "partien") return punkte.slice(-bereich.anzahl);
+  const ab = jetzt.getTime() - bereich.tage * TAG_MS;
+  return punkte.filter((p) => new Date(p.zeit).getTime() >= ab);
+}

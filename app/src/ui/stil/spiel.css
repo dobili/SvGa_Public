@@ -316,3 +316,52 @@
 .verlaufskurve-taste {
   fill: transparent;
 }
+
+/* Wertung des Lesers in den Einstellungen (0.2.41): Zahl groß, Kurve mit Punkten je Ergebnis. */
+.wertung-zahl {
+  font-family: var(--schrift-titel);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.wertung .einstellung-name {
+  display: block;
+  margin: var(--raster) 0 calc(var(--raster) / 2);
+}
+
+.wertungskurve {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: var(--raster);
+}
+
+.wertungskurve-raster line {
+  stroke: var(--linie-stark);
+  stroke-width: 0.5;
+}
+
+.wertungskurve-raster text,
+.wertungskurve-daten text {
+  fill: var(--text-leise);
+}
+
+.wertungskurve-linie {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+}
+
+.wertungskurve-sieg {
+  fill: var(--gruen-text);
+}
+
+.wertungskurve-remis {
+  fill: var(--text-leise);
+}
+
+.wertungskurve-niederlage {
+  fill: var(--rot-text);
+}

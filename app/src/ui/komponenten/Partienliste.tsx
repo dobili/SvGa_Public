@@ -13,11 +13,10 @@ import { useEinstellungen } from "../../app/einstellungen";
 import { useNavigation } from "../../app/navigationsKontext";
 import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
-import { zugurteile } from "../../spiel/auswertung";
-import { spielstaerke, type Seitenbilanz } from "../../spiel/genauigkeit";
+import type { Seitenbilanz } from "../../spiel/genauigkeit";
 import { gegnerVon } from "../../engine/gegner";
-import { stellungen, type Partie } from "../../spiel/partie";
-import { sanZuUci } from "../../spiel/zuege";
+import type { Partie } from "../../spiel/partie";
+import { staerkeDerPartie } from "../../spiel/wertung";
 import type { Partieeintrag } from "../../speicher/partien";
 import { Figur } from "../brett/Figur";
 import { BRETTFARBEN, FELD } from "../brett/masse";
@@ -89,12 +88,9 @@ function seitenwert(b: Seitenbilanz): string {
 
 /** „du etwa 1400 · Engine etwa 1600“ oder bei zwei Menschen „Weiß … · Schwarz …“; leer ohne Auswertung. */
 function staerketext(eintrag: Partieeintrag): string {
-  if (eintrag.werte.length === 0) return "";
+  const staerke = staerkeDerPartie(eintrag);
+  if (!staerke) return "";
   const p = eintrag.partie;
-  const urteile = zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende);
-  const alle = stellungen(p);
-  const gespielte = p.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  const staerke = spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte);
   const weiss = seitenwert(staerke.white);
   const schwarz = seitenwert(staerke.black);
   if (!weiss && !schwarz) return "";

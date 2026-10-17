@@ -6,7 +6,10 @@
  * Auswertung (Wert je Stellung) für den Rückblick und den PGN-Export, höchstens MAX_PARTIEN.
  * Die Vorlieben merken sich die letzte Wahl im Spielen-Bildschirm. Gespeicherte Partien werden
  * beim Laden Feld für Feld geprüft und Zug für Zug nachgespielt; was nicht passt, fällt weg.
- * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, engine/fehlerart.ts, engine/stufen.ts.
+ * Seit 0.2.41 liegt hier auch der Wertungsverlauf des Lesers (spiel/wertung.ts): Er wächst mit
+ * jeder fertig ausgewerteten gewerteten Partie und überlebt das Wegfallen alter Partien.
+ * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, spiel/wertung.ts, engine/fehlerart.ts,
+ * engine/stufen.ts.
  */
 import type { Color } from "chessops/types";
 import { FEHLERARTEN } from "../engine/fehlerart";
@@ -22,6 +25,12 @@ import {
   type Spielhilfen,
 } from "../spiel/partie";
 import { neueUhr, type Uhreinstellung, type Uhrstand } from "../spiel/uhr";
+import {
+  MAX_WERTUNGSPUNKTE,
+  mitGewerteterPartie,
+  type Punktwert,
+  type Wertungspunkt,
+} from "../spiel/wertung";
 
 /** So viele beendete Partien bleiben gespeichert; ältere fallen weg. */
 export const MAX_PARTIEN = 50;
@@ -62,6 +71,8 @@ export interface Spielstand {
   /** Neueste zuerst. */
   readonly partien: readonly Partieeintrag[];
   readonly vorlieben: Spielvorlieben;
+  /** Wertungsverlauf des Lesers, älteste zuerst (0.2.41). */
+  readonly wertung: readonly Wertungspunkt[];
 }
 
 export const STANDARD_VORLIEBEN: Spielvorlieben = {
@@ -80,6 +91,7 @@ export const LEERER_SPIELSTAND: Spielstand = {
   laufend: null,
   partien: [],
   vorlieben: STANDARD_VORLIEBEN,
+  wertung: [],
 };
 
 /** Die Partie mit dieser Kennung, laufend oder beendet; null, wenn es sie nicht (mehr) gibt. */
@@ -120,7 +132,10 @@ export function mitPartie(stand: Spielstand, partie: Partie): Spielstand {
   return { ...stand, laufend: partie, partien };
 }
 
-/** Schreibt die Auswertung einer abgelegten Partie: Werte, beste Züge und Abstände je Stellung. */
+/**
+ * Schreibt die Auswertung einer abgelegten Partie: Werte, beste Züge und Abstände je Stellung.
+ * Zählt die Partie für die Wertung, kommt zugleich ihr Wertungspunkt dazu (spiel/wertung.ts).
+ */
 export function mitWerten(
   stand: Spielstand,
   id: string,
@@ -131,7 +146,9 @@ export function mitWerten(
   const partien = stand.partien.map((e) =>
     e.partie.id === id ? { ...e, werte, beste, abstaende } : e,
   );
-  return { ...stand, partien };
+  const eintrag = partien.find((e) => e.partie.id === id);
+  const wertung = eintrag ? mitGewerteterPartie(stand.wertung, eintrag) : stand.wertung;
+  return { ...stand, partien, wertung };
 }
 
 export function mitVorlieben(stand: Spielstand, vorlieben: Spielvorlieben): Spielstand {
@@ -312,13 +329,34 @@ function eintragAus(roh: unknown): Partieeintrag | null {
   return { partie, werte, beste, abstaende: abstaende.length === werte.length ? abstaende : [] };
 }
 
+const ERGEBNISSE: readonly Punktwert[] = [0, 0.5, 1];
+
+/** Ein Wertungspunkt aus Rohdaten; null, wenn ein Feld fehlt oder nicht passt. */
+function wertungspunktAus(roh: unknown): Wertungspunkt | null {
+  if (!istObjekt(roh) || typeof roh.partieId !== "string" || typeof roh.zeit !== "string") {
+    return null;
+  }
+  if (!istZahl(roh.gegner) || !istZahl(roh.wertung)) return null;
+  const ergebnis = ERGEBNISSE.find((e) => e === roh.ergebnis);
+  if (ergebnis === undefined) return null;
+  return {
+    partieId: roh.partieId,
+    zeit: roh.zeit,
+    gegner: roh.gegner,
+    ergebnis,
+    wertung: roh.wertung,
+  };
+}
+
 /** Der Spielstand aus Rohdaten; ohne Daten (Format 0 und 1) leer. */
 export function spielstandAus(roh: unknown): Spielstand {
   if (!istObjekt(roh)) return LEERER_SPIELSTAND;
   const partien = Array.isArray(roh.partien) ? roh.partien.map(eintragAus) : [];
+  const wertung = Array.isArray(roh.wertung) ? roh.wertung.map(wertungspunktAus) : [];
   return {
     laufend: partieAus(roh.laufend),
     partien: partien.filter((e): e is Partieeintrag => e !== null).slice(0, MAX_PARTIEN),
     vorlieben: vorliebenAus(roh.vorlieben),
+    wertung: wertung.filter((w): w is Wertungspunkt => w !== null).slice(-MAX_WERTUNGSPUNKTE),
   };
 }

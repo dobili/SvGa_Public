@@ -274,3 +274,32 @@ test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", a
   await expect(page.getByTestId("repertoire-zuege")).toHaveText("1. e4 e5 2. Sf3 Sc6");
   await page.screenshot({ path: "test-results/bilder/trainer-repertoire.png", fullPage: true });
 });
+
+test("Studien lösen: Saavedra-Studie, 1. c7 und die Antwort aus dem Buch", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "studien");
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Die Saavedra-Studie");
+  await feld(page, "c6").click();
+  await feld(page, "c7").click();
+  await expect(page.getByTestId("repertoire-zuege")).toContainText("1. c7");
+  await page.screenshot({ path: "test-results/bilder/trainer-studien.png", fullPage: true });
+});
+
+test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "zugErraten");
+  const wahl = page.getByTestId("zugerraten-wahl");
+  await wahl.getByRole("button", { name: /^Morphys Opernpartie/ }).click();
+  await wahl.getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await feld(page, "e2").click();
+  await feld(page, "e4").click();
+  await expect(runde).toContainText("Getroffen!");
+  await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 1");
+  await feld(page, "d2").click();
+  await feld(page, "d4").click();
+  await expect(runde).toContainText("In der Partie geschah Sf3.");
+  await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 2");
+  await page.screenshot({ path: "test-results/bilder/trainer-zugerraten.png", fullPage: true });
+});

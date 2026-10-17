@@ -10,6 +10,8 @@ import {
   gangartrunde,
   pruefeAusfuehrung,
   pruefeNotation,
+  BUCHSONDERZUEGE,
+  buchsonderzugaufgaben,
   SONDERZUEGE,
   sonderzugaufgaben,
   zugrunde,
@@ -124,11 +126,25 @@ describe("Koordinaten, Notation, Gangarten", () => {
     expect(runde.every((a) => /^[a-h][1-8]$/.test(a.feld))).toBe(true);
   });
 
-  it("alle Sonderzüge sind in ihrer Stellung legal, die Rochade endet auf g1 oder c1", () => {
+  it("alle eigenen Sonderzüge sind in ihrer Stellung legal", () => {
     const aufgaben = sonderzugaufgaben();
     expect(aufgaben).toHaveLength(SONDERZUEGE.length);
-    expect(aufgaben.find((a) => a.san === "O-O-O")?.nach).toBe("c1");
-    expect(aufgaben.find((a) => a.san === "e8=Q+")).toBeDefined();
+    expect(aufgaben.map((a) => a.san)).toEqual(["exf3", "exd8=Q"]);
+  });
+
+  // U5 (Entscheidung des Autors, 17.10.2026): zuerst die Buchstellungen aus Kapitel 0.
+  it("Sonderzüge an Abb. 0.12 bis 0.19 sind legal; die Rochade endet auf g1, c1 oder c8", () => {
+    const stellungen = buchstellungenAus([ladeKapitel(0)]);
+    const aufgaben = buchsonderzugaufgaben(stellungen);
+    expect(aufgaben).toHaveLength(BUCHSONDERZUEGE.length);
+    expect(aufgaben.map((a) => [a.nummer, a.san, a.nach])).toEqual([
+      ["0.12", "O-O", "g1"],
+      ["0.14", "O-O-O", "c1"],
+      ["0.13", "O-O-O", "c8"],
+      ["0.15", "O-O", "g8"],
+      ["0.17", "exd6", "d6"],
+      ["0.19", "a8=Q+", "a8"],
+    ]);
   });
 
   const sf3: Zugaufgabe = {

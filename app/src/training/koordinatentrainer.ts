@@ -7,8 +7,9 @@
  *   notieren    gezeigten Zug in der Notation des Buches aufschreiben,
  *   ausfuehren  notierten Zug auf dem Brett ausführen (mit Rochade, en passant, Umwandlung),
  *   gangarten   alle Zielfelder einer Figur antippen.
- * Stellungen kommen aus dem Buch; nur die Sonderzüge haben eigene kurze Stellungen, weil die
- * Diagramme kaum en passant oder Umwandlung zeigen. Reine Funktionen.
+ * Stellungen kommen aus dem Buch, auch die Sonderzüge (Kapitel 0: Abb. 0.12 bis 0.19, U5,
+ * Entscheidung des Autors 17.10.2026); zwei eigene kurze Stellungen ergänzen, was dort fehlt
+ * (en passant für Schwarz, Umwandlung mit Schlag). Reine Funktionen.
  * Abhängigkeiten: chessops, schach/drohungen.ts, schach/weiterspielen.ts, training/zufall.ts.
  * Buchbezug: Kapitel 0, „Das Schachbrett“, „Wie ziehen die Figuren?“, „Wie liest man Schachzüge?“.
  */
@@ -33,6 +34,8 @@ const LINIEN = "abcdefgh";
 const REIHEN = 8;
 /** Anteil der Aufgaben „ausführen“, die einen Sonderzug verlangen. */
 const ANTEIL_SONDERZUEGE = 0.3;
+/** So oft kommt ein Sonderzug aus den eigenen Stellungen statt aus dem Buch (U5: ergänzend). */
+const ANTEIL_EIGENE_SONDERZUEGE = 0.25;
 /** Anteil der Aufgaben mit einem besonderen Zug (Schlag, Schach, Rochade, Umwandlung). */
 const ANTEIL_BESONDERE = 0.5;
 
@@ -65,16 +68,25 @@ export interface Zugaufgabe {
 }
 
 /**
- * Kurze Stellungen für Sonderzüge (keine Buchstellungen): kurze und lange Rochade, en passant,
- * Umwandlung mit und ohne Schlag.
+ * Sonderzüge an den Buchstellungen aus Kapitel 0 (U5): kurze und lange Rochade für beide
+ * Seiten (Abb. 0.12 bis 0.15), en passant (Abb. 0.17), Umwandlung (Abb. 0.19).
+ * Regel: Kapitel 0, Sonderzüge Rochade, Schlagen im Vorbeigehen und Umwandlung.
+ */
+export const BUCHSONDERZUEGE: readonly { nummer: string; san: string }[] = [
+  { nummer: "0.12", san: "O-O" },
+  { nummer: "0.14", san: "O-O-O" },
+  { nummer: "0.13", san: "O-O-O" },
+  { nummer: "0.15", san: "O-O" },
+  { nummer: "0.17", san: "exd6" },
+  { nummer: "0.19", san: "a8=Q" },
+];
+
+/**
+ * Eigene kurze Stellungen (keine Buchstellungen) nur für das, was Kapitel 0 nicht zeigt:
+ * en passant für Schwarz und Umwandlung mit Schlag.
  */
 export const SONDERZUEGE: readonly { fen: string; san: string }[] = [
-  { fen: "r3k2r/pppq1ppp/2npbn2/2b1p3/2B1P3/2NPBN2/PPPQ1PPP/R3K2R w KQkq - 0 1", san: "O-O" },
-  { fen: "r3k2r/pppq1ppp/2npbn2/2b1p3/2B1P3/2NPBN2/PPPQ1PPP/R3K2R w KQkq - 0 1", san: "O-O-O" },
-  { fen: "r3k2r/pppq1ppp/2npbn2/2b1p3/2B1P3/2NPBN2/PPPQ1PPP/R3K2R b KQkq - 0 1", san: "O-O" },
-  { fen: "rnbqkbnr/ppp1p1pp/8/3pPp2/8/8/PPPP1PPP/RNBQKBNR w KQkq f6 0 3", san: "exf6" },
   { fen: "rnbqkbnr/pppp1ppp/8/8/3PpP2/8/PPP1P1PP/RNBQKBNR b KQkq f3 0 3", san: "exf3" },
-  { fen: "6k1/4P3/8/8/8/8/5K2/8 w - - 0 1", san: "e8=Q+" },
   { fen: "3r4/4P1k1/8/8/8/8/5K2/8 w - - 0 1", san: "exd8=Q" },
 ];
 
@@ -101,23 +113,51 @@ function zugAusBuch(buch: Buchstellung, zufall: Zufall): Zugaufgabe | null {
 }
 
 /** Eine Sonderzug-Aufgabe; die Schreibweise kommt von chessops (mit Schachzeichen). */
-function sonderzug(eintrag: { fen: string; san: string }): Zugaufgabe | null {
+function sonderzug(eintrag: { nummer: string | null; fen: string; san: string }): Zugaufgabe | null {
   const regeln = regelstellung(eintrag.fen);
   const zug = regeln ? parseSan(regeln, eintrag.san) : undefined;
   if (!regeln || !zug) return null;
-  return zugaufgabe(null, eintrag.fen, makeSan(regeln, zug));
+  return zugaufgabe(eintrag.nummer, eintrag.fen, makeSan(regeln, zug));
 }
 
-/** Alle Sonderzug-Aufgaben (Rochade, en passant, Umwandlung). */
+const istAufgabe = (a: Zugaufgabe | null): a is Zugaufgabe => a !== null;
+
+/** Die eigenen Sonderzug-Aufgaben (en passant für Schwarz, Umwandlung mit Schlag). */
 export function sonderzugaufgaben(): Zugaufgabe[] {
-  return SONDERZUEGE.map(sonderzug).filter((a): a is Zugaufgabe => a !== null);
+  return SONDERZUEGE.map((e) => sonderzug({ nummer: null, ...e })).filter(istAufgabe);
+}
+
+/** Die Sonderzug-Aufgaben an den Buchstellungen aus Kapitel 0, soweit geladen. */
+export function buchsonderzugaufgaben(stellungen: readonly Buchstellung[]): Zugaufgabe[] {
+  return BUCHSONDERZUEGE.map(({ nummer, san }) => {
+    const buch = stellungen.find((b) => b.nummer === nummer);
+    return buch ? sonderzug({ nummer, fen: buch.stellung.fen, san }) : null;
+  }).filter(istAufgabe);
+}
+
+/** Sonderzüge für eine Runde: aus dem Buch, je Platz zu einem Viertel aus den eigenen. */
+function sonderzugauswahl(
+  stellungen: readonly Buchstellung[],
+  anzahl: number,
+  zufall: Zufall,
+): Zugaufgabe[] {
+  const buch = mische(buchsonderzugaufgaben(stellungen), zufall);
+  const eigene = mische(sonderzugaufgaben(), zufall);
+  const auswahl: Zugaufgabe[] = [];
+  for (let i = 0; i < anzahl; i++) {
+    const ergaenzend = zufall() < ANTEIL_EIGENE_SONDERZUEGE || buch.length === 0;
+    const naechste = (ergaenzend ? eigene.shift() : buch.shift()) ?? buch.shift() ?? eigene.shift();
+    if (naechste) auswahl.push(naechste);
+  }
+  return auswahl;
 }
 
 /**
  * Eine Runde Zugaufgaben („notieren“ oder „ausführen“).
  *
  * Eingaben: Buchstellungen, Anzahl, mit Sonderzügen (nur beim Ausführen), Zufall.
- * Ausgabe: Aufgaben; etwa ein Drittel Sonderzüge, wenn gewünscht.
+ * Ausgabe: Aufgaben; etwa ein Drittel Sonderzüge, wenn gewünscht, vor allem an den
+ * Buchstellungen aus Kapitel 0 (U5).
  */
 export function zugrunde(
   stellungen: readonly Buchstellung[],
@@ -126,7 +166,7 @@ export function zugrunde(
   zufall: Zufall,
 ): Zugaufgabe[] {
   const sonder = mitSonderzuegen
-    ? mische(sonderzugaufgaben(), zufall).slice(0, Math.round(anzahl * ANTEIL_SONDERZUEGE))
+    ? sonderzugauswahl(stellungen, Math.round(anzahl * ANTEIL_SONDERZUEGE), zufall)
     : [];
   const aus = mische(stellungen, zufall)
     .map((buch) => zugAusBuch(buch, zufall))

@@ -258,7 +258,8 @@ test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", asy
       .click();
   }
   await runde.getByRole("button", { name: "Prüfen" }).click();
-  await expect(runde.getByText(/^App: (Weiß|gleich|Schwarz)$/)).toHaveCount(4);
+  // Seit 0.2.61 (W9) mit „Buch:“, wenn die Abbildung eine Faktorenbilanz im Buch hat.
+  await expect(runde.getByText(/^(App|Buch): (Weiß|gleich|Schwarz)$/)).toHaveCount(4);
   await expect(page.getByTestId("faktoren-bilanz")).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/trainer-faktoren.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
@@ -420,4 +421,32 @@ test("Denkroutine: zwei Kandidaten mit Antwort, Vergleich mit der Engine", async
   await expect(vergleich).toContainText("Bester Zug laut Engine", { timeout: 30_000 });
   await expect(vergleich).toContainText("Dein Kandidat");
   await expect(runde.getByRole("button", { name: "Weiter" })).toBeVisible();
+});
+
+test("Planbilanz-Übung: Planfragen, LAP und Wettrennen", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "planbilanz");
+  await page.getByRole("button", { name: /Drei Planfragen/ }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 4");
+  for (const gruppe of await runde.locator(".antworten").all()) {
+    await gruppe.getByRole("button").first().click();
+  }
+  await expect(runde.getByRole("button", { name: "Weiter" })).toBeVisible();
+  await page.screenshot({ path: "test-results/bilder/trainer-planfragen.png", fullPage: true });
+  await page.getByRole("button", { name: "Training" }).first().click();
+  await oeffneTrainer(page, "planbilanz");
+  await page.getByRole("button", { name: /Wettrennen der Bauern/ }).click();
+  for (const seite of ["Weiß", "Schwarz"]) {
+    await runde.getByRole("group", { name: seite }).getByRole("button", { name: "2" }).click();
+  }
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(runde).toContainText(/schneller|gleich viele/);
+  await page.getByRole("button", { name: "Training" }).first().click();
+  await oeffneTrainer(page, "planbilanz");
+  await page.getByRole("button", { name: /LAP/ }).click();
+  await feld(page, "a1").click();
+  await feld(page, "h8").click();
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(runde).toContainText("Nach dem LAP-Prinzip");
 });

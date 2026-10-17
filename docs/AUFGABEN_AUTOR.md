@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.66. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.67. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.66“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.67“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,19 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.66“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.67“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.67 (etwa 15 Minuten; Planbilanz-Übung, Opus)
+
+- [ ] N303. **Planbilanz-Übung:** Training › Kapitel 6 › „Planbilanz-Übung“ › Trainieren. Drei
+      Übungsarten: „Drei Planfragen“ (Wo spiele ich? Was will mein Gegner? Welche Figur? Je drei
+      Antworten, nach der Wahl grün oder rot; dazwischen auch die Warum-Fragen zu Kapitel 6; bei
+      Abb. 6.20 und 11.34 danach der Verweis auf die Planbilanz im Buch), „LAP: am wenigsten aktive
+      Figur“ (erst die Figur antippen, dann ihr Zielfeld, „Prüfen“; die Lösung als goldener Pfeil)
+      und „Wettrennen der Bauern“ (bei entgegengesetzten Rochaden je Seite die Bauernzüge bis zum
+      ersten Hebel wählen; danach, wer schneller ist). Probe: Abb. 6.6 zählt die App Weiß 2,
+      Schwarz 3. Siehe F3.
 
 ### Neu in 0.2.66 (etwa 10 Minuten, mit Engine; Denkroutine-Trainer, Opus)
 
@@ -810,6 +821,17 @@ Regeln C1 und C2).
       regelgerechte Antwort steht und der bessere Kandidat höchstens 0,5 Bauern hinter dem Zug der
       Engine liegt; ob die Antwort die stärkste war, zeigt die App, zählt aber nicht.
       **Empfehlung:** so lassen. Schon umgesetzt in 0.2.66, Widerspruch genügt.
+
+- [ ] F3. **Planbilanz-Übung (0.2.67):** Die Antworten der Planfragen sind die Sätze, die die
+      Werkzeuge der App zu den drei Fragen rechnen, nicht die Texte deiner Planbilanzen (die zeigt
+      die App seit dem 15.10. nicht mehr). Falsche Antworten: derselbe Satz für die andere Seite
+      und der einer weit entfernten Stellung. Stellungen, in denen ein Satz nichts sagt („Noch
+      offen“, „noch kein erkennbarer Plan“, „keine Figur“), fallen weg. Die LAP-Lösung kommt aus
+      dem Werkzeug „Welche Figur?“, das Wettrennen aus dem schnellsten Sturm je Seite (bis sechs
+      Züge). Die Planfragen-Runde hat vier, LAP sechs, Wettrennen fünf Aufgaben.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.67, Widerspruch genügt. Wenn du lieber
+      deine eigenen Planbilanz-Sätze als Antworten hättest, bräuchte die App sie als freigegebenen
+      Text (sie sind Buchtext).
 
 ### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 

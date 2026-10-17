@@ -11,7 +11,7 @@
  * Abhängigkeiten: schach/phase.ts, analyse/stellungsprofil.ts, schach/stellung.ts, spiel/partie.ts.
  */
 import { profil } from "../analyse/stellungsprofil";
-import { phase, type Phase } from "../schach/phase";
+import { phase, type Phase, type Phasenbefund } from "../schach/phase";
 import { stellungAusFen } from "../schach/stellung";
 import { stellungen, type Partie } from "./partie";
 
@@ -26,10 +26,15 @@ export const PHASEN: readonly Phase[] = ["eroeffnung", "mittelspiel", "endspiel"
  * Beispiel: Grundstellung → Eröffnung; Abb. 8.1 (nur Könige und Bauern) → Endspiel.
  */
 export function phaseVon(fen: string): Phase | null {
+  return phasenbefundVon(fen)?.phase ?? null;
+}
+
+/** Der ganze Befund zur Phase einer Stellung (mit Grund); null bei unlesbarer Stellung. */
+export function phasenbefundVon(fen: string): Phasenbefund | null {
   const stellung = stellungAusFen(fen);
   if (!stellung.ok) return null;
   const p = profil(stellung.wert);
-  return phase(stellung.wert, p.angriffskarte, p.drohungen).phase;
+  return phase(stellung.wert, p.angriffskarte, p.drohungen);
 }
 
 /**

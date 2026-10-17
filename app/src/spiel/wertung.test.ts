@@ -81,8 +81,8 @@ describe("Wertung", () => {
     expect(verlauf).toHaveLength(1);
     expect(verlauf[0]?.wertung).toBe(schaetzung);
     expect(verlauf[0]?.ergebnis).toBe(0);
-    // Fehlerfrei in allen Phasen mit genug Zügen: Eröffnung geschätzt, Endspiel nie erreicht.
-    expect(verlauf[0]?.phasen.eroeffnung).toBe(schaetzung);
+    // Fehlerfrei: Mittelspiel (ab Zug 5, Schwarz entwickelt) geschätzt, Endspiel nie erreicht.
+    expect(verlauf[0]?.phasen.mittelspiel).toBe(schaetzung);
     expect(verlauf[0]?.phasen.endspiel).toBeNull();
     // Zweite Partie gewonnen gegen einen gleich starken Gegner: + 32 · (1 − ½) = 16.
     verlauf = mitGewerteterPartie(verlauf, eintrag("2", "white"));

@@ -62,12 +62,15 @@ export function Rueckblickkarte({
   fen,
   index,
   erklaerung,
+  phasenwechsel = null,
 }: {
   rueckblick: Rueckblick;
   partie: Partie;
   fen: string;
   index: number;
   erklaerung: Zugerklaerung | null;
+  /** Satz zur neuen Phase, wenn sie mit der Stellung nach diesem Zug beginnt (0.2.44). */
+  phasenwechsel?: string | null;
 }) {
   const urteil = rueckblick.urteile[index];
   const san = partie.zuege[index]?.san ?? "";
@@ -99,6 +102,11 @@ export function Rueckblickkarte({
       )}
       {bester && MIT_BESSEREM.has(urteil.klasse) && (
         <p>{t("rueckblick.besser", { zug: bester })}</p>
+      )}
+      {phasenwechsel && (
+        <p className="rueckblick-phase" data-testid="rueckblick-phase">
+          {t("rueckblick.phasenwechsel", { text: phasenwechsel })}
+        </p>
       )}
     </section>
   );

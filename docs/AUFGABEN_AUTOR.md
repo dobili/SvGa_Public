@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.43. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.44. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.43“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.44“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,29 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.43“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.44“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.44 (etwa 10 Minuten, mit Engine; deine Entscheidung vom 17.10.2026 abends)
+
+- [ ] N233. **Übergang ins Mittelspiel ohne Zugzahl:** Eine Partie gegen die Engine, in der du
+      absichtlich einen Springer oder Läufer zu Hause lässt. Sobald die Engine ihre Leichtfiguren
+      entwickelt hat (höchstens eine zu Hause), steht in der Zugliste das „M“, obwohl du nicht
+      fertig bist. Das Werkzeug „Phase“ sagt dann „Mittelspiel: Weiß (oder Schwarz) ist entwickelt
+      …; der Entwicklungsrückstand der anderen Seite ist ein Mittelspielthema.“ Zweiter Fall: Geht
+      früh eine Figur verloren, heißt es „Mittelspiel: Das Figurenmaterial ist um mindestens eine
+      Leichtfigur ungleich …“. Lassen beide Seiten je zwei Figuren zu Hause und es fällt nichts,
+      bleibt es Eröffnung, egal wie lange.
+- [ ] N234. **Erklärung am Phasenwechsel:** Nach dem Ende in der Zugliste auf den Zug tippen, vor
+      dem das „M“ oder „E“ steht: Die Karte unter dem Brett bekommt eine weitere Zeile „Neue Phase
+      ab hier. Mittelspiel: …“ oder „Neue Phase ab hier. Endspiel: …“, mit demselben Satz wie im
+      Werkzeug „Phase“ (bei der Speelman-Regel auch der Satz „Zusatzregel (nicht aus dem Buch)
+      …“). Bei allen anderen Zügen fehlt die Zeile.
+- [ ] N235. **Damenloses Mittelspiel bleibt Mittelspiel:** Stellung aufbauen oder spielen: nach
+      einem frühen Damentausch mit vielen Figuren (etwa die Berliner Verteidigung, 1. e4 e5 2. Sf3
+      Sc6 3. Lb5 Sf6 4. 0-0 Sxe4 5. d4 Sd6 6. Lxc6 dxc6 7. dxe5 Sf5 8. Dxd8+ Kxd8 9. Sc3) sagt das
+      Werkzeug „Phase“ jetzt „Mittelspiel“; die Frage „Bauern entscheiden“ heißt dort „nein“, weil
+      kein Freibauer steht und viel Figurenmaterial da ist.
 
 ### Neu in 0.2.43 (etwa 5 Minuten; deine Nachricht vom 17.10.2026 abends)
 
@@ -30,8 +51,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.43“, dann 
       besten bis ins Endspiel). In der Zugliste über dem Brett steht vor dem ersten Zug des
       Mittelspiels ein goldenes „M“ und vor dem ersten Zug des Endspiels ein „E“, an denselben
       Stellen wie die Linien in der Kurve der Auswertung. Ein Tipp auf das Kästchen nennt die
-      Phase. Die Zusatzregel „ab Zug 15 Mittelspiel“ ist gestrichen: Bleiben Leichtfiguren zu
-      Hause, bleibt es nach dem Buch Eröffnung, egal wie lange.
+      Phase. Die Zusatzregel „ab Zug 15 Mittelspiel“ ist gestrichen.
 
 ### Neu in 0.2.42 (etwa 20 Minuten, mit Engine; deine Ergänzungen vom 17.10.2026 abends)
 
@@ -440,26 +460,17 @@ Regeln C1 und C2).
       Phase je gewerteter Partie, und als Zahl den Durchschnitt im Ausschnitt. Partien ohne sechs
       eigene Züge in der Phase fehlen dort. So gemeint, oder lieber ein gleitender Durchschnitt
       als Linie?
-- [ ] S16. **Von der Eröffnung direkt ins Endspiel** (deine Beobachtung): Das passiert, weil die
-      App die Endspielfragen des Buches vor der Entwicklung prüft: Ergeben drei der vier Fragen
-      Ja, ist es Endspiel, auch wenn noch Leichtfiguren zu Hause stehen. Drei Ja gibt es früh,
-      sobald die Damen getauscht sind: „Damen vom Brett“ ja, „Könige vor Mattangriff sicher“ ja
-      (ohne Damen fast immer), und „Bauern entscheiden“ ja, sobald eine Seite irgendwo eine
-      Bauernmehrheit hat (das ist nach fast jedem frühen Abtausch der Fall) oder ein Freibauer
-      steht. Beispiel aus der Theorie: die Berliner Verteidigung, 1. e4 e5 2. Sf3 Sc6 3. Lb5 Sf6 4. 0-0 Sxe4 5. d4 Sd6 6. Lxc6 dxc6 7. dxe5 Sf5 8. Dxd8+ Kxd8: Die App sagt im 9. Zug
-      „Endspiel“ (drei Ja), obwohl Schwarz noch Lc8 und Lf8 zu Hause hat und je Seite 19 Punkte
-      Figuren stehen. Die Theorie nennt das „Berliner Endspiel“, Autoren wie Stefan Bücker
-      (New In Chess) und Bryan Smith (chess.com, „Endgame or Middlegame?“) halten „damenloses
-      Mittelspiel“ für treffender: Mit so vielen Figuren entscheiden noch Königssicherheit und
-      Figurenspiel, nicht die Bauern. Deine Vermutung (schneller Angriff nach Fehlern) trifft
-      einen zweiten Fall: Verliert der Gegner früh die Dame oder viel Material, zählt „Bauern
-      entscheiden“ über „wenig Figurenmaterial“ ebenfalls ja. Sinnvoll ist der Sprung nur, wenn
-      wirklich wenig übrig ist. Vorschlag (noch nicht gebaut): Die Frage „Bauern entscheiden“
-      zählt bei einer Bauernmehrheit nur noch ja, wenn jede Seite höchstens 13 Punkte an Figuren
-      hat (ohne Bauern) oder ein Freibauer steht; ein damenloses Mittelspiel mit vielen Figuren
-      bliebe so Mittelspiel, die Berliner Stellung auch. Das Buch sagt zu „Bauern entscheiden“
-      nichts Genaueres, es wäre also eine Lesart, keine Abweichung. Soll Claude das so umsetzen,
-      oder bleibt die Zählung wie bisher?
+- [ ] S17. **Abb. 11.4 wechselt die Phase** (Befund aus der neuen Lesart „eine Seite
+      entwickelt“): Die Opernpartie ist im Buch „Eröffnung bis Mattangriff“. Abb. 11.1 bis 11.3
+      bleiben Eröffnung, aber Abb. 11.4 (nach 9… b5, Weiß am Zug, 10. Sxb5 beginnt den
+      Mattangriff) sagt die App jetzt „Mittelspiel: Weiß ist entwickelt (höchstens eine
+      Leichtfigur noch auf dem Startfeld); der Entwicklungsrückstand der anderen Seite ist ein
+      Mittelspielthema.“ Weiß hat dort alle Leichtfiguren im Spiel, Schwarz noch Sb8 und Lf8 zu
+      Hause. Vorher stand bei allen vier Abbildungen „Eröffnung“. Alle anderen Abbildungen aus
+      Kapitel 1, 8, 11 und 12 behalten ihre Phase (Anderssen 11.22 bis 11.24 bleiben Eröffnung).
+      Ich finde das stimmig („bis Mattangriff“: Hier beginnt er), melde es aber, weil das Buch die
+      Partie als Eröffnung führt. Passt das, oder soll 11.4 Eröffnung bleiben (dann bräuchte die
+      Lesart eine Ausnahme, etwa „eine Seite entwickelt zählt erst nach dem ersten Figurentausch“)?
 
 ### R. Rückmeldung 0.2.38, umgesetzt in 0.2.39 (Fable; plausibel entschieden, bitte prüfen)
 

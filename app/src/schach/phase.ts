@@ -46,9 +46,25 @@ export interface Endspielfragen {
 /** Zusatzregel, die nicht aus dem Buch stammt (0.2.41). */
 export type Zusatzregel = "wenigMaterial";
 
+/**
+ * Warum die Phase gilt (0.2.44, für die Erklärung am Phasenwechsel): Eröffnung, weil Figuren zu
+ * Hause stehen; Mittelspiel, weil beide oder eine Seite entwickelt ist oder das Figurenmaterial
+ * ungleich ist; Endspiel nach den vier Fragen oder nach der Zusatzregel.
+ */
+export type Phasengrund =
+  | "zuHause"
+  | "beideEntwickelt"
+  | "eineEntwickelt"
+  | "materialUngleich"
+  | "fragen"
+  | "wenigMaterial";
+
 /** Die Phase mit ihren Gründen. */
 export interface Phasenbefund {
   readonly phase: Phase;
+  readonly grund: Phasengrund;
+  /** Bei „eineEntwickelt“: die entwickelte Seite. */
+  readonly entwickelt: Color | null;
   /** Die Phase allein nach den Regeln des Buches; weicht nur mit einer Zusatzregel ab. */
   readonly buchphase: Phase;
   /** Die Zusatzregel, die die Phase gegenüber dem Buch geändert hat, sonst null. */
@@ -69,6 +85,8 @@ const ZU_HAUSE_EROEFFNUNG = 2;
 const UEBERWIEGEND = 3;
 /** Figurenmaterial ohne Bauern je Seite, bis zu dem Angriffe selten noch entscheiden. */
 const WENIG_MATERIAL = 13;
+/** Mittelspiel, sobald das Figurenmaterial um eine Leichtfigur ungleich ist (Lesart, 0.2.44). */
+const UNGLEICH_AB = 3;
 /** Zusatzregel nach Speelman: Endspiel, wenn jede Seite höchstens so viele Punkte hat (ohne König). */
 export const ENDSPIEL_BIS_PUNKTE = 13;
 
@@ -136,7 +154,9 @@ function endspielfragen(
   const wenig =
     figurenmaterial(stellung, "white") <= WENIG_MATERIAL &&
     figurenmaterial(stellung, "black") <= WENIG_MATERIAL;
-  const bauernEntscheiden = damenWeg && (freibauern > 0 || mehrheiten > 0 || wenig);
+  // Lesart (S16, Entscheidung des Autors 17.10.2026): Eine bloße Bauernmehrheit zählt nur bei
+  // wenig Figurenmaterial; sonst ist es ein damenloses Mittelspiel (etwa die Berliner Verteidigung).
+  const bauernEntscheiden = damenWeg && (freibauern > 0 || (mehrheiten > 0 && wenig) || wenig);
   const koenigInsZentrum = weg !== null;
   const ja = [damenWeg, koenigeSicher, koenigInsZentrum, bauernEntscheiden].filter(Boolean).length;
   return {
@@ -152,8 +172,13 @@ function endspielfragen(
  * selbst heraus, indem du in Schritt 1 bestimmst, in welcher Phase der Partie du bist.“
  * Regel: Kapitel 12, Denkroutine Schritt 1: „Eröffnung, solange die drei Eröffnungsziele aus
  * Kapitel 1 nicht erfüllt sind … Mittelspiel, sobald die Ziele erfüllt sind“; Endspiel nach den
- * vier Prüffragen aus Kapitel 8. Die App liest „Ziele erfüllt“ als „entwickelt“: Eröffnung,
- * solange eine Seite noch mindestens zwei Leichtfiguren auf dem Startfeld hat (C1.27).
+ * vier Prüffragen aus Kapitel 8. Die App liest „Ziele erfüllt“ als „entwickelt“ (C1.27).
+ * Lesart seit 0.2.44 (Entscheidung des Autors, 17.10.2026, damit Anfänger mit einer Figur zu
+ * Hause nicht ewig in der „Eröffnung“ bleiben): Mittelspiel, sobald eine Seite entwickelt ist
+ * (höchstens eine Leichtfigur zu Hause; ihr Gegner hat dann ein Mittelspielthema, den
+ * Entwicklungsrückstand) oder das Figurenmaterial um mindestens eine Leichtfigur ungleich ist;
+ * Eröffnung nur, solange beide Seiten noch zwei oder mehr Leichtfiguren zu Hause haben und das
+ * Material gleich ist.
  * Eingaben: Stellung, Angriffskarte und Drohungen aus dem Profil.
  * Ausgabe: Phase, Eröffnungsziele beider Seiten, Prüffragen, Zentrumsweg.
  * Beispiel: Abb. 8.1 (Damen getauscht, zwei Türme und Leichtfigur je Seite) → Endspiel;
@@ -174,11 +199,30 @@ export function phase(
     black: zielbilanz(stellung.brett, karte, "black", stellung.amZug),
   };
   const { fragen, zentrumsweg } = endspielfragen(stellung, karte, drohungen);
-  const nochEroeffnung = [ziele.white, ziele.black].some(
-    (z) => z.entwicklung.offen.length >= ZU_HAUSE_EROEFFNUNG,
-  );
-  const buchphase: Phase =
-    fragen.ja >= UEBERWIEGEND ? "endspiel" : nochEroeffnung ? "eroeffnung" : "mittelspiel";
+  const vorEndspiel = fragen.ja >= UEBERWIEGEND ? null : mittelspielOderEroeffnung(stellung, ziele);
+  const buchphase: Phase = vorEndspiel ? vorEndspiel.phase : "endspiel";
   const { phase: ermittelt, zusatz } = mitZusatzregeln(buchphase, stellung);
-  return { phase: ermittelt, buchphase, zusatz, ziele, fragen, zentrumsweg };
+  const grund: Phasengrund = zusatz ?? vorEndspiel?.grund ?? "fragen";
+  const entwickelt = ermittelt === "mittelspiel" ? (vorEndspiel?.entwickelt ?? null) : null;
+  return { phase: ermittelt, grund, entwickelt, buchphase, zusatz, ziele, fragen, zentrumsweg };
+}
+
+/** Eröffnung oder Mittelspiel mit Grund, wenn die Endspielfragen nicht überwiegend Ja ergeben. */
+function mittelspielOderEroeffnung(
+  stellung: Stellung,
+  ziele: Readonly<Record<Color, Zielbilanz>>,
+): { phase: Phase; grund: Phasengrund; entwickelt: Color | null } {
+  const entwickelte = (["white", "black"] as const).filter(
+    (farbe) => ziele[farbe].entwicklung.offen.length < ZU_HAUSE_EROEFFNUNG,
+  );
+  if (entwickelte.length === 2) {
+    return { phase: "mittelspiel", grund: "beideEntwickelt", entwickelt: null };
+  }
+  const eine = entwickelte[0];
+  if (eine) return { phase: "mittelspiel", grund: "eineEntwickelt", entwickelt: eine };
+  const ungleich =
+    Math.abs(figurenmaterial(stellung, "white") - figurenmaterial(stellung, "black")) >=
+    UNGLEICH_AB;
+  if (ungleich) return { phase: "mittelspiel", grund: "materialUngleich", entwickelt: null };
+  return { phase: "eroeffnung", grund: "zuHause", entwickelt: null };
 }

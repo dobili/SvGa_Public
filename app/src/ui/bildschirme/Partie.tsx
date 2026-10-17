@@ -199,7 +199,7 @@ function Spielfeld({
     verlauf,
     partie.einstellung.eigeneFarbe,
   );
-  const rb = useRueckblick(rueckblick, partie, alle, sans, stelle);
+  const rb = useRueckblick(rueckblick, partie, alle, sans, stelle, phasen);
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
   const letzter = stelle > 0 ? zugFelder(alle[stelle - 1] ?? "", sans[stelle - 1] ?? "") : null;
   const gesprungen = gewaehlt && gewaehlt.marken.length > 0 ? gewaehlt.marken : null;

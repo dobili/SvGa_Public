@@ -6,11 +6,15 @@
  * („Nachspielen wie bei chess.com: Bewertung des aktuellen Zuges, beste Alternative mit
  * Markierungen, einfache Kommentare, warum ein Zug schlecht war“). Die Erklärung rechnet nur
  * für die gezeigte Stellung (spiel/erklaerung.ts, ohne Engine); während der Partie bleibt alles
- * aus.
- * Abhängigkeiten: spiel/rueckblick.ts, spiel/erklaerung.ts, Bewertungsbalken, Rueckblickkarte.
+ * aus. Beginnt mit der Stellung nach dem gezeigten Zug eine neue Phase, erklärt die Karte, warum
+ * (Wunsch des Autors, 0.2.44; analyse/phasentext.ts).
+ * Abhängigkeiten: spiel/rueckblick.ts, spiel/erklaerung.ts, spiel/phasen.ts, Bewertungsbalken,
+ * Rueckblickkarte.
  */
 import { useMemo, type ReactNode } from "react";
+import { phasensatz, zusatzsatz } from "../../analyse/phasentext";
 import type { Markierung } from "../../analyse/werkzeug";
+import { phasenbefundVon, type Phase } from "../../spiel/phasen";
 import type { Zugurteil } from "../../spiel/auswertung";
 import { erklaereZug, type Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
@@ -50,6 +54,21 @@ function erklaerungFuer(
   );
 }
 
+/** Die Erklärung des Phasenwechsels, wenn mit der Stellung nach dem Zug eine neue Phase beginnt. */
+function phasenwechselText(
+  phasen: readonly Phase[],
+  alle: readonly string[],
+  index: number,
+): string | null {
+  const vorher = phasen[index];
+  const nachher = phasen[index + 1];
+  if (!vorher || !nachher || vorher === nachher) return null;
+  const befund = phasenbefundVon(alle[index + 1] ?? "");
+  if (!befund) return null;
+  const zusatz = zusatzsatz(befund);
+  return zusatz ? `${phasensatz(befund)} ${zusatz}` : phasensatz(befund);
+}
+
 /**
  * Markierungen, Balken und Karte für die gezeigte Stelle.
  *
@@ -62,6 +81,7 @@ export function useRueckblick(
   alle: readonly string[],
   sans: readonly string[],
   stelle: number,
+  phasen: readonly Phase[] = [],
 ): {
   marken: readonly Markierung[];
   leiste: ((gedreht: boolean) => ReactNode) | null;
@@ -71,6 +91,10 @@ export function useRueckblick(
   const erklaerung = useMemo(
     () => (rueckblick && index >= 0 ? erklaerungFuer(rueckblick, alle, sans, index) : null),
     [rueckblick, alle, sans, index],
+  );
+  const phasenwechsel = useMemo(
+    () => (rueckblick && index >= 0 ? phasenwechselText(phasen, alle, index) : null),
+    [rueckblick, phasen, alle, index],
   );
   if (!rueckblick) return { marken: [], leiste: null, karte: null };
   const marken =
@@ -95,6 +119,7 @@ export function useRueckblick(
         fen={alle[index] ?? ""}
         index={index}
         erklaerung={erklaerung}
+        phasenwechsel={phasenwechsel}
       />
     ) : null;
   return { marken, leiste, karte };

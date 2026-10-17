@@ -1253,6 +1253,40 @@ Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `main`.
   Stärke je Phase (Streuung höchstens 2 um das Mittelspiel), Durchschnittswertung und Sortierung
   nach den Stufennamen; beides passt auf die jetzige Struktur (`stufenJePhase`, Fehlerprofil).
 
+## Phase: Lesart des Übergangs ins Mittelspiel und ins Endspiel (17.10.2026, Autor und Fable, Version 0.2.44)
+
+Entscheidung des Autors: S16 (Lesart „Bauern entscheiden“) umsetzen, dazu eine Regel für den
+Übergang ins Mittelspiel ohne Zugzahl („Anfänger lassen gern eine Figur zu Hause oder sichern
+nie ihren König; das kann nicht ewig Eröffnung bleiben“). Der Autor wählte aus drei Ideen
+(eine Seite entwickelt; Figurenmaterial ungleich; erster Figurentausch nach Suetin) die ersten
+beiden; die dritte wäre in der Berliner Verteidigung zu früh (6. Lxc6).
+
+- **Mittelspiel** (`schach/phase.ts`, `mittelspielOderEroeffnung`), sobald eine Seite entwickelt
+  ist (höchstens eine Leichtfigur zu Hause; der Rückstand des Gegners ist ein Mittelspielthema,
+  Gambitkapitel) oder das Figurenmaterial ohne Bauern um mindestens eine Leichtfigur (3 Punkte)
+  ungleich ist. **Eröffnung** nur, solange beide Seiten zwei oder mehr Leichtfiguren zu Hause
+  haben und das Material gleich ist. Die Rochade spielt für die Phase weiter keine Rolle (C1.27).
+  Lesart der Buchregel „Mittelspiel, sobald die Ziele erfüllt sind“, keine Zusatzregel.
+- **„Bauern entscheiden“** (vierte Endspielfrage) ist ja bei einem Freibauern oder bei wenig
+  Figurenmaterial (höchstens 13 Punkte je Seite ohne Bauern); eine bloße Bauernmehrheit reicht
+  nicht mehr. Damit ist die Berliner Verteidigung nach 8. Dxd8+ Kxd8 ein Mittelspiel (vorher
+  Endspiel), wie es Bücker und Smith beschreiben („damenloses Mittelspiel“).
+- **Grund im Befund** (`Phasenbefund.grund`, `entwickelt`): zuHause, beideEntwickelt,
+  eineEntwickelt (mit Farbe), materialUngleich, fragen, wenigMaterial. `analyse/phasentext.ts`
+  macht daraus den Satz, den das Werkzeug „Phase“ (erste Zeile) und die Rückblick-Karte teilen.
+- **Erklärung am Phasenwechsel** (Wunsch des Autors; `useRueckblick.tsx`, `phasenwechselText`;
+  `Rueckblickkarte.tsx`): Beginnt mit der Stellung nach dem gezeigten Zug eine neue Phase (nach
+  `phasenJeStellung`, nie rückwärts), steht in der Karte „Neue Phase ab hier. …“ mit dem Satz
+  zur Phase und, falls die Speelman-Regel griff, dem Satz zur Zusatzregel.
+- **Fehlerarten** (`engine/fehlerart-phasen.ts`): Tempoverlust und Bauernraub waren an die Phase
+  „Eröffnung“ gebunden; da die Phase jetzt Mittelspiel sein kann, obwohl die ziehende Seite noch
+  in der Entwicklung steckt, zählen sie nun, solange die ziehende Seite mindestens zwei
+  Leichtfiguren zu Hause hat (und kein Endspiel ist). Beispiel: 8… Dxb2 im vergifteten Bauern
+  bleibt Bauernraub.
+- **Befund an den Autor (S17):** Abb. 11.4 (Opernpartie, nach 9… b5) wird Mittelspiel (Weiß
+  entwickelt, Schwarz mit Sb8 und Lf8 zu Hause); 11.1 bis 11.3 bleiben Eröffnung, alle anderen
+  Referenzabbildungen unverändert. Referenztest angepasst, Entscheidung offen.
+
 ## Phase und Zugliste: Nachricht des Autors vom 17.10.2026 abends (Fable, Version 0.2.43)
 
 - **Zusatzregel „ab Zug 15 Mittelspiel“ gestrichen** (Entscheidung des Autors: Der Wechsel folgt

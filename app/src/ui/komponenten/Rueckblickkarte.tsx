@@ -12,7 +12,7 @@ import { sanInSprache } from "../../schach/notation";
 import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
 import type { Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
-import { balkentext } from "../../spiel/rueckblick";
+import { balkentext, variantentext } from "../../spiel/rueckblick";
 import { uciZuSan } from "../../spiel/zuege";
 import type { Rueckblick } from "./useRueckblick";
 
@@ -85,6 +85,8 @@ export function Rueckblickkarte({
   const besterUci = rueckblick.beste[index] ?? "";
   const besterSan = besterUci ? uciZuSan(fen, besterUci) : null;
   const bester = besterSan ? `${nummer} ${sanInSprache(besterSan, "de")}` : "";
+  // Die nächsten Züge nach dem besseren Zug (Empfehlung R5, 0.2.56); leer bei alten Auswertungen.
+  const folge = variantentext(fen, rueckblick.varianten?.[index] ?? []);
   const seite =
     partie.einstellung.gegner === "mensch"
       ? t(fen.split(" ")[1] === "b" ? "farbe.b" : "farbe.w")
@@ -106,7 +108,10 @@ export function Rueckblickkarte({
         </p>
       )}
       {bester && MIT_BESSEREM.has(urteil.klasse) && (
-        <p>{t("rueckblick.besser", { zug: bester })}</p>
+        <p>
+          {t("rueckblick.besser", { zug: bester })}
+          {folge && <> {t("rueckblick.variante", { folge })}</>}
+        </p>
       )}
       {phasenwechsel && (
         <p className="rueckblick-phase" data-testid="rueckblick-phase">

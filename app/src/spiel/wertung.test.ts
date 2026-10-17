@@ -55,7 +55,7 @@ function eintrag(
   const ende = sieger ? { art: "aufgabe" as const, sieger } : { art: "material" as const };
   const partie = { ...gespielt, ende };
   const werte = partie.zuege.map(() => 0).concat([0]);
-  return { partie, werte, beste: werte.map(() => ""), abstaende: [] };
+  return { partie, werte, beste: werte.map(() => ""), abstaende: [], varianten: [] };
 }
 
 describe("Wertung", () => {

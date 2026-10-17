@@ -302,7 +302,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         werkzeug={werkzeug}
         rueckblick={
           partie.ende && eintrag && urteile.length > 0 && !ruhig
-            ? { werte: eintrag.werte, beste: eintrag.beste, urteile }
+            ? { werte: eintrag.werte, beste: eintrag.beste, urteile, varianten: eintrag.varianten }
             : null
         }
       />

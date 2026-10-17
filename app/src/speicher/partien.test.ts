@@ -169,6 +169,31 @@ describe("Lesen aus Rohdaten", () => {
     expect(spielstandAus(durchJson(ohne)).partien[0]?.werte).toEqual([0, 1, 2, 3]);
   });
 
+  it("Hauptvarianten (0.2.56) bleiben erhalten; bei falscher Länge oder Unsinn sind sie leer", () => {
+    const varianten = [["e2e4", "e7e5"], ["g8f6"], ["d2d4", "d7d5", "c2c4"], []];
+    const mit = mitWerten(
+      legeAb(LEERER_SPIELSTAND, partie("a")),
+      "a",
+      [0, 1, 2, 3],
+      ["a", "b", "c", ""],
+      [],
+      varianten,
+    );
+    expect(spielstandAus(durchJson(mit)).partien[0]?.varianten).toEqual(varianten);
+    const kurz = mitWerten(
+      legeAb(LEERER_SPIELSTAND, partie("a")),
+      "a",
+      [0, 1, 2, 3],
+      ["a", "b", "c", ""],
+      [],
+      [["e2e4"]],
+    );
+    expect(spielstandAus(durchJson(kurz)).partien[0]?.varianten).toEqual([]);
+    const roh = JSON.parse(JSON.stringify(mit)) as { partien: Record<string, unknown>[] };
+    roh.partien[0] = { ...roh.partien[0], varianten: [[1], 2, 3, 4] };
+    expect(spielstandAus(roh).partien[0]?.varianten).toEqual([]);
+  });
+
   it("Werte, die nicht zur Partie passen, fallen weg", () => {
     const stand = mitWerten(legeAb(LEERER_SPIELSTAND, partie("a")), "a", [0], ["e2e4"]);
     expect(spielstandAus(durchJson(stand)).partien[0]?.werte).toEqual([]);

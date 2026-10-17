@@ -53,6 +53,12 @@ export interface Partieeintrag {
    * einzigen guten Zuges, seit 0.2.39); leer bei Auswertungen aus älteren Versionen.
    */
   readonly abstaende: readonly number[];
+  /**
+   * Hauptvariante der Engine je Stellung (UCI, bis sechs Halbzüge, beginnt mit dem besten Zug;
+   * für „Danach etwa …“ in der Rückblickkarte, Empfehlung R5, 0.2.56); leer bei älteren
+   * Auswertungen.
+   */
+  readonly varianten: readonly (readonly string[])[];
 }
 
 /** Letzte Wahl im Spielen-Bildschirm. */
@@ -122,7 +128,7 @@ export function mitLaufender(stand: Spielstand, partie: Partie | null): Spielsta
 export function legeAb(stand: Spielstand, partie: Partie): Spielstand {
   const andere = stand.partien.filter((e) => e.partie.id !== partie.id);
   const laufend = stand.laufend?.id === partie.id ? null : stand.laufend;
-  const partien = [{ partie, werte: [], beste: [], abstaende: [] }, ...andere].slice(
+  const partien = [{ partie, werte: [], beste: [], abstaende: [], varianten: [] }, ...andere].slice(
     0,
     MAX_PARTIEN,
   );
@@ -142,8 +148,9 @@ export function mitPartie(stand: Spielstand, partie: Partie): Spielstand {
 }
 
 /**
- * Schreibt die Auswertung einer abgelegten Partie: Werte, beste Züge und Abstände je Stellung.
- * Zählt die Partie für die Wertung, kommt zugleich ihr Wertungspunkt dazu (spiel/wertung.ts).
+ * Schreibt die Auswertung einer abgelegten Partie: Werte, beste Züge, Abstände und Hauptvarianten
+ * je Stellung. Zählt die Partie für die Wertung, kommt zugleich ihr Wertungspunkt dazu
+ * (spiel/wertung.ts).
  */
 export function mitWerten(
   stand: Spielstand,
@@ -151,9 +158,10 @@ export function mitWerten(
   werte: readonly number[],
   beste: readonly string[],
   abstaende: readonly number[] = [],
+  varianten: readonly (readonly string[])[] = [],
 ): Spielstand {
   const partien = stand.partien.map((e) =>
-    e.partie.id === id ? { ...e, werte, beste, abstaende } : e,
+    e.partie.id === id ? { ...e, werte, beste, abstaende, varianten } : e,
   );
   const eintrag = partien.find((e) => e.partie.id === id);
   const wertung = eintrag ? mitGewerteterPartie(stand.wertung, eintrag) : stand.wertung;
@@ -378,12 +386,29 @@ function eintragAus(roh: unknown): Partieeintrag | null {
     Array.isArray(roh.beste) && roh.beste.every((z) => typeof z === "string") ? roh.beste : [];
   // Werte und Züge gehören zusammen; passen sie nicht, wird neu ausgewertet.
   if (werte.length !== partie.zuege.length + 1 || beste.length !== werte.length) {
-    return { partie, werte: [], beste: [], abstaende: [] };
+    return { partie, werte: [], beste: [], abstaende: [], varianten: [] };
   }
   // Abstände gibt es erst seit 0.2.39; ohne sie bleibt die Auswertung gültig, nur ohne „!“.
   const abstaende =
     Array.isArray(roh.abstaende) && roh.abstaende.every(istZahl) ? roh.abstaende : [];
-  return { partie, werte, beste, abstaende: abstaende.length === werte.length ? abstaende : [] };
+  // Hauptvarianten seit 0.2.56; ohne sie fehlt nur „Danach etwa …“ in der Rückblickkarte.
+  const varianten = variantenAus(roh.varianten);
+  return {
+    partie,
+    werte,
+    beste,
+    abstaende: abstaende.length === werte.length ? abstaende : [],
+    varianten: varianten.length === werte.length ? varianten : [],
+  };
+}
+
+/** Hauptvarianten aus Rohdaten: eine Liste von Zuglisten (UCI); sonst leer. */
+function variantenAus(roh: unknown): string[][] {
+  if (!Array.isArray(roh)) return [];
+  const gueltig = roh.every(
+    (v): v is string[] => Array.isArray(v) && v.every((z) => typeof z === "string"),
+  );
+  return gueltig ? roh : [];
 }
 
 const ERGEBNISSE: readonly Punktwert[] = [0, 0.5, 1];

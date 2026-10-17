@@ -39,6 +39,8 @@ const RECHENZEIT_IM_SPIEL_MS = 2000;
 const NACHPRUEFUNG_MS = 2000;
 /** Zwei Varianten: die beste und die zweitbeste, für das „!“ des einzigen guten Zuges. */
 const VARIANTEN = 2;
+/** So viele Halbzüge der Hauptvariante bleiben gespeichert (Rückblickkarte „Danach etwa …“, R5). */
+const VARIANTE_HALBZUEGE = 6;
 /** So lange wartet die Hintergrund-Auswertung, wenn die Engine beschäftigt ist. */
 const WARTEZEIT_MS = 300;
 /** So lange nach einer Unterbrechung, bevor dieselbe Stellung noch einmal drankommt. */
@@ -55,6 +57,8 @@ interface Stellungswert {
   readonly wert: number;
   readonly bester: string;
   readonly abstand: number;
+  /** Hauptvariante der Engine (UCI, beginnt mit dem besten Zug), bis sechs Halbzüge. */
+  readonly variante: readonly string[];
 }
 
 /** Zwischenspeicher je Partie: je Stellung das Ergebnis, gültig, solange die FEN passt. */
@@ -76,7 +80,7 @@ async function bewerteStellung(
   rechenzeitMs = RECHENZEIT_MS,
 ): Promise<Stellungswert | null> {
   const ende = endwert(fen);
-  if (ende !== null) return { fen, wert: ende, bester: "", abstand: 0 };
+  if (ende !== null) return { fen, wert: ende, bester: "", abstand: 0, variante: [] };
   while (laeuft()) {
     if (engine.beschaeftigt()) {
       await pause(WARTEZEIT_MS);
@@ -93,6 +97,7 @@ async function bewerteStellung(
         wert: erste ? wertFuer(erste.wert, true) : 0,
         bester: bewertung.besterZug ?? "",
         abstand: Math.max(0, abstand),
+        variante: erste ? erste.zuege.slice(0, VARIANTE_HALBZUEGE) : [],
       };
     } catch (grund: unknown) {
       if (!(grund instanceof AuftragAbgebrochen)) throw grund;
@@ -137,6 +142,7 @@ function speichere(id: string, werte: readonly Stellungswert[]): void {
       werte.map((w) => w.wert),
       werte.map((w) => w.bester),
       werte.map((w) => w.abstand),
+      werte.map((w) => w.variante),
     ),
   }));
   zwischenspeicher.delete(id);

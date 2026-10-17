@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.55. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.56. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -21,8 +21,17 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.55“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.56“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.56 (etwa 5 Minuten, mit Engine; Engine-Variante im Rückblick, Empfehlung R5, Fable)
+
+- [ ] N275. **„Danach etwa …“ in der Rückblickkarte:** Eine neue Partie zu Ende spielen (ältere
+      Auswertungen haben die Zugfolge noch nicht), dann in der Zugliste auf einen Zug mit „?!“,
+      „?“ oder „??“ springen. Die Karte sagt wie bisher „Besser war 12. Sf3.“ und dahinter neu
+      „Danach etwa 12... Sc6 13. Lc4 Sf6 14. Sg5 d5.“ (die nächsten bis zu fünf Halbzüge der
+      Engine nach dem besseren Zug, deutsche Figurenbuchstaben). Bei einem Zug, der der beste war,
+      steht nichts dergleichen. Passt die Länge, oder lieber nur zwei bis drei Halbzüge?
 
 ### Neu in 0.2.55 (etwa 15 Minuten, mit Engine; Nachlesen im Buch, Opus)
 
@@ -899,9 +908,11 @@ Regeln C1 und C2).
       Engine (Drohung, hängende Figur, Gabel, gefährliche Linie, Motiv der Antwort, Schlagreflex,
       Dame, König). Ohne passende Regel steht nur „kostet etwa … Bauern. Besser war …“. Reicht
       das, oder soll die Engine-Variante (die nächsten Züge nach dem besseren Zug) dazu?
-      **Empfehlung:** vorerst so lassen. Für die Engine-Variante müsste die Auswertung je Stellung
-      die ganze Zugfolge speichern (heute nur den besten Zug); das lohnt sich erst, wenn die
-      Erklärungen in deinem Test nicht reichen.
+      **Empfehlung (geändert nach deinen Vergleichen mit chess.com, wo die Variante zu jedem Fehler
+      steht):** die Engine-Variante dazu.
+      **Schon umgesetzt in 0.2.56 (Nachtest N275): Die Auswertung speichert je Stellung die
+      Hauptvariante der Engine (bis sechs Halbzüge), die Karte nennt nach „Besser war …“ die
+      nächsten bis zu fünf Halbzüge als „Danach etwa …“. Widerspruch genügt.**
 
 ### W. Taktiktrainer, „Falle oder Köder“, Strukturerkenner (Opus, 0.2.45; plausibel entschieden)
 

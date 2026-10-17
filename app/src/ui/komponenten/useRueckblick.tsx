@@ -28,6 +28,8 @@ export interface Rueckblick {
   readonly werte: readonly number[];
   readonly beste: readonly string[];
   readonly urteile: readonly Zugurteil[];
+  /** Hauptvariante der Engine je Stellung (UCI); leer bei älteren Auswertungen (R5, 0.2.56). */
+  readonly varianten?: readonly (readonly string[])[];
 }
 
 /** Erklärung des gezeigten Zuges, nur wenn er ein Fehlerzeichen trägt. */

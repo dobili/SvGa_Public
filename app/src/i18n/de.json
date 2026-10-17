@@ -2135,6 +2135,7 @@
   "rueckblick.verpasst": "{zug} verpasst die Chance nach dem Fehler des Gegners: kostet etwa {verlust} Bauern.",
   "rueckblick.verlust": "{zug} kostet etwa {verlust} Bauern.",
   "rueckblick.besser": "Besser war {zug}.",
+  "rueckblick.variante": "Danach etwa {folge}.",
   "rueckblick.phasenwechsel": "Neue Phase ab hier. {text}",
   "rueckblick.bewertung": "Bewertung {vorher} → {nachher}.",
   "rueckblick.erklaerung": "{seite} {text}",

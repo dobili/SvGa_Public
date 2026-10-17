@@ -1553,6 +1553,24 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
+## R5: Engine-Variante im Rückblick (17.10.2026, Fable, Zweig `rueckblick-variante`, Version 0.2.56)
+
+Nach Regel 9 umgesetzt, mit geänderter Empfehlung: Die Vergleiche mit chess.com zeigten, dass dort
+zu jedem Fehler die Fortsetzung der Engine steht, und der Autor wollte die Auswertung daran messen.
+
+- **Speicher** (`speicher/partien.ts`): `Partieeintrag.varianten`, je Stellung die Hauptvariante der
+  Engine in UCI (bis sechs Halbzüge, beginnt mit dem besten Zug), geschrieben von `mitWerten`;
+  ältere Auswertungen haben eine leere Liste und bleiben gültig. Beim Einlesen muss die Länge zu
+  den Werten passen, sonst leer.
+- **Auswertung** (`useAuswertung.ts`): nimmt die Hauptvariante aus der ersten Variante der Engine
+  mit; keine zusätzliche Rechenzeit.
+- **Karte** (`spiel/rueckblick.ts`, `variantentext`; `Rueckblickkarte.tsx`): nach „Besser war 12.
+  Sf3.“ folgt „Danach etwa 12... Sc6 13. Lc4 Sf6 14. Sg5 d5.“, höchstens fünf Halbzüge nach dem
+  besseren Zug, deutsche Figurenbuchstaben; bei einem besten Zug nichts. Rückfrage zur Länge in
+  N275.
+- **Nebenbei bereinigt:** `docs/FORTSCHRITT.md` nannte R4 noch als wartend und Endspiel- und
+  Repertoire-Trainer als offen.
+
 ## Brillant am Prüfstand von chess.com (17.10.2026, Autor und Fable, Zweig `opfer-pruefstand`, Version 0.2.54)
 
 Der Autor hat beide Empfehlungen aus der Recherche zu den chess.com-Klassen angenommen: die 100

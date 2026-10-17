@@ -1,5 +1,6 @@
 /**
- * Strukturerkenner (Kapitel 5): schwache Bauern im Skelett finden, den passenden Plan wählen.
+ * Strukturerkenner (Kapitel 5): starke Felder und schwache Bauern im Skelett finden, den
+ * passenden Plan wählen (drei Schritte in der Reihenfolge der Leitfragen, W5).
  *
  * Rolle im Gesamtbild: Trainer „struktur“ (Pflichtenheft 7, AP 13). Die Aufgaben stammen aus
  * inhalte/de/trainer/struktur.json (Fable): Abbildungen des Buches mit Struktur, Seite am Zug,
@@ -7,10 +8,13 @@
  * Die Plan-Sätze stehen in i18n/de.json. Falsche Antworten kommen nur aus anderen
  * Strukturfamilien, damit kein ebenfalls passender Plan als falsch gilt (etwa „Kette an der
  * Basis angreifen“ neben „auf dem Flügel der Kette spielen“). Reine Funktionen.
- * Abhängigkeiten: training/zufall.ts.
+ * Abhängigkeiten: training/zufall.ts, schach/bauernprofil.ts (Löcher).
  * Buchbezug: Kapitel 5, „Skelett-Röntgen“ (Felder, Bauern, Richtung, Figuren).
  */
+import type { Color } from "chessops/types";
 import type { Strukturaufgabe } from "../daten/trainerdaten";
+import { bauernprofil, eigeneReihe } from "../schach/bauernprofil";
+import { feldname, gegner, stellungAusFen } from "../schach/stellung";
 import { mische, type Zufall } from "./zufall";
 
 export type Plan = Strukturaufgabe["plan"];
@@ -28,6 +32,10 @@ const FAMILIEN: readonly (readonly Plan[])[] = [
 ];
 /** So viele Plan-Sätze stehen zur Wahl. */
 export const PLAENE_ZUR_WAHL = 3;
+/** Die 5. und 6. Reihe aus Sicht der Seite am Zug (Index ab 0), wie die Checkliste zur Leitfrage 1. */
+const STARKE_REIHEN: readonly number[] = [4, 5];
+/** Mehr starke Felder fragt der Schritt nicht ab (Lehrbilder mit wenigen Bauern): Er entfällt. */
+export const HOECHSTENS_STARKE_FELDER = 4;
 
 function familieVon(plan: Plan): readonly Plan[] {
   return FAMILIEN.find((f) => f.includes(plan)) ?? [plan];
@@ -41,6 +49,31 @@ function familieVon(plan: Plan): readonly Plan[] {
 export function schwacheBauern(aufgabe: Strukturaufgabe): string[] {
   const m = aufgabe.merkmale;
   return [...new Set([...m.isolierte, ...m.doppelte, ...m.rueckstaendige])].sort();
+}
+
+/**
+ * Die starken Felder der Seite am Zug: Felder auf ihrer 5. und 6. Reihe, die kein gegnerischer
+ * Bauer mehr angreifen kann (Löcher des Gegners), ohne Bauern darauf. Allein aus dem Skelett.
+ *
+ * Warum: Leitfrage 1 kommt zuerst, weil man Felder sonst übersieht („da dort zumeist gar nichts
+ * steht“). Regel: Kapitel 5, Checkliste zur Leitfrage 1: „Gehe die Felder in der gegnerischen
+ * Hälfte durch, vor allem auf der 5. und 6. Reihe (von dir aus gezählt), und frage bei jedem:
+ * Kann ein gegnerischer Bauer es je wieder angreifen? Wenn nein, ist es ein Loch und damit ein
+ * starkes Feld für dich.“
+ * Ausgabe: Felder in Kurzform, sortiert; null, wenn es mehr als vier sind (der Schritt entfällt).
+ * Beispiel: Abb. 5.8 (Najdorf, Weiß am Zug) → b6 und d5.
+ */
+export function starkeFelder(aufgabe: Strukturaufgabe): string[] | null {
+  const gelesen = stellungAusFen(aufgabe.fen);
+  if (!gelesen.ok) return null;
+  const brett = gelesen.wert.brett;
+  const seite: Color = aufgabe.seite === "w" ? "white" : "black";
+  const felder = bauernprofil(brett, gegner(seite))
+    .loecher.filter((f) => STARKE_REIHEN.includes(eigeneReihe(f, seite)))
+    .filter((f) => brett.get(f)?.role !== "pawn")
+    .map(feldname)
+    .sort();
+  return felder.length > HOECHSTENS_STARKE_FELDER ? null : felder;
 }
 
 /**

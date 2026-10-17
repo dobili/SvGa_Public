@@ -35,7 +35,7 @@ import {
 import { mitVorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { zugurteile } from "../../spiel/auswertung";
-import { phasenJeStellung } from "../../spiel/phasen";
+import { phasenJeStellung, type Phase } from "../../spiel/phasen";
 import { buchzuegeAb } from "../../schach/eroeffnungsindex";
 import { useEroeffnungsindex } from "../komponenten/useEroeffnungsindex";
 import { Auswertung, type Sprung } from "../komponenten/Auswertung";
@@ -161,6 +161,7 @@ function Spielfeld({
   ansicht,
   beiAnsicht,
   zeichen,
+  phasen,
   ruhig,
   werkzeug,
   rueckblick,
@@ -174,6 +175,8 @@ function Spielfeld({
   ansicht: Ansichtsstelle | null;
   beiAnsicht: (ansicht: Ansichtsstelle) => void;
   zeichen: readonly (string | null)[];
+  /** Phase je Stellung für „M“ und „E“ in der Zugliste (0.2.43). */
+  phasen: readonly Phase[];
 }) {
   const alle = useMemo(() => stellungen(partie), [partie]);
   const sans = partie.zuege.map((z) => z.san);
@@ -215,6 +218,7 @@ function Spielfeld({
         zuege={sans}
         stelle={stelle}
         zeichen={zeichen}
+        phasen={phasen}
         beiStelle={(neu) => beiAnsicht({ zuege: sans.length, stelle: neu, marken: [] })}
       />
       <Uhr s={s} farbe={gegnerVon(partie.einstellung.eigeneFarbe)} />
@@ -285,6 +289,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         ansicht={ansicht}
         beiAnsicht={setzeAnsicht}
         zeichen={urteile.map((u) => u.zeichen)}
+        phasen={phasen}
         ruhig={ruhig}
         werkzeug={werkzeug}
         rueckblick={

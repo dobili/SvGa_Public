@@ -38,15 +38,16 @@ describe("Phasen", () => {
     expect(phaseVon("unsinn")).toBeNull();
   });
 
-  // Zusatzregeln (0.2.41, nicht aus dem Buch): Speelman (höchstens 13 Punkte je Seite) und Zug 15.
-  it("Damenendspiel ist Endspiel (Zusatzregel Speelman), Zug 15 mit Figuren zu Hause Mittelspiel", () => {
+  // Zusatzregel (0.2.41, nicht aus dem Buch): Speelman (höchstens 13 Punkte je Seite). Eine Regel
+  // nach der Zugzahl gibt es nicht mehr (Entscheidung des Autors, 17.10.2026).
+  it("Damenendspiel ist Endspiel (Zusatzregel Speelman); die Zugzahl ändert nichts", () => {
     // Dame, Turm und drei Bauern je Seite (17 Punkte): Mittelspiel; ohne Türme (12 Punkte): Endspiel.
     expect(phaseVon("3q1rk1/5ppp/8/8/8/8/5PPP/3QR1K1 w - - 0 40")).toBe("mittelspiel");
     expect(phaseVon("3q2k1/5ppp/8/8/8/8/5PPP/3Q2K1 w - - 0 40")).toBe("endspiel");
-    // Weiß hat Sb1 und Lc1 zu Hause: nach dem Buch Eröffnung, ab Zug 15 Mittelspiel.
+    // Weiß hat Sb1 und Lc1 zu Hause: nach dem Buch Eröffnung, auch in Zug 30.
     const zuHause = "r4rk1/ppp2ppp/2n2n2/3qp3/8/5N2/PPPP1PPP/RNBQ1RK1 w - - 0";
     expect(phaseVon(`${zuHause} 14`)).toBe("eroeffnung");
-    expect(phaseVon(`${zuHause} 15`)).toBe("mittelspiel");
+    expect(phaseVon(`${zuHause} 30`)).toBe("eroeffnung");
   });
 
   it("je Stellung eine Phase, die nie zurückspringt; Übergänge als Index", () => {

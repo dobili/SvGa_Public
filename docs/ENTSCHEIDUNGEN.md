@@ -1253,6 +1253,27 @@ Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `main`.
   Stärke je Phase (Streuung höchstens 2 um das Mittelspiel), Durchschnittswertung und Sortierung
   nach den Stufennamen; beides passt auf die jetzige Struktur (`stufenJePhase`, Fehlerprofil).
 
+## Phase und Zugliste: Nachricht des Autors vom 17.10.2026 abends (Fable, Version 0.2.43)
+
+- **Zusatzregel „ab Zug 15 Mittelspiel“ gestrichen** (Entscheidung des Autors: Der Wechsel folgt
+  der Stellung, nicht der Zugnummer). Es bleibt die Zusatzregel nach Speelman (höchstens 13
+  Punkte je Seite außer dem König → Endspiel); `Zusatzregel` ist nur noch `"wenigMaterial"`.
+- **„M“ und „E“ in der Zugliste** (`ui/komponenten/Partiezuege.tsx`, `phasenmarken`): vor dem
+  ersten Zug des Mittelspiels und des Endspiels ein goldenes Kästchen, an denselben Stellen wie
+  die Linien der Kurve (`spiel/phasen.ts`, `phasenwechsel`); auch während der Partie, weil die
+  Phase ohnehin die Stufe der Engine steuert und nichts von der Auswertung verrät.
+- **Beobachtung des Autors: Partien springen von der Eröffnung direkt ins Endspiel.** Ursache
+  geprüft (Probe am Code): `phase()` prüft die vier Endspielfragen vor der Entwicklung. Nach
+  einem frühen Damentausch sind „Damen vom Brett“ und „Könige sicher“ ja, und „Bauern
+  entscheiden“ ist ja, sobald eine Bauernmehrheit oder ein Freibauer existiert, unabhängig vom
+  Figurenmaterial. Die Berliner Verteidigung nach 8. Dxd8+ Kxd8 ergibt in Zug 9 „Endspiel“ (3
+  Ja) mit Lc8 und Lf8 zu Hause und 19 Punkten Figuren je Seite. Literatur: Bücker (New In Chess,
+  Berlin-Repertoire) und Smith (chess.com, „Endgame or Middlegame?“) nennen solche Stellungen
+  „damenloses Mittelspiel“; Smiths Faustregel: Endspiel erst, wenn so viel getauscht ist, dass
+  die Bauernstruktur entscheidet. Vorschlag an den Autor (S16): „Bauern entscheiden“ bei
+  Mehrheit nur ja, wenn jede Seite höchstens 13 Punkte Figuren (ohne Bauern) hat oder ein
+  Freibauer steht. Nicht gebaut, bis der Autor entscheidet.
+
 ## Spielen: Ergänzungen des Autors vom 17.10.2026 abends (Fable, Version 0.2.42)
 
 Grundlage: vier Nachrichten des Autors während der Arbeit an 0.2.41 (Wertung nur aus der
@@ -1313,8 +1334,8 @@ Stellungen aufbauen). Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `m
   mit dem Buch); die Eröffnung dauert „etwa die ersten 10 bis 15 Züge“. Endspiel nach Speelman,
   wenn jede Seite höchstens 13 Punkte an Steinen außer dem König hat; daneben „die Könige können
   aktiv werden“ und „die Damen sind getauscht“ (beides in den Endspielfragen des Buches).
-  Eingebaut: (1) ab Zug 15 (`MITTELSPIEL_AB_ZUG`) kein Eröffnungsurteil mehr, auch mit
-  Leichtfiguren zu Hause; (2) Endspiel, sobald jede Seite höchstens 13 Punkte hat
+  Eingebaut: (1) ab Zug 15 kein Eröffnungsurteil mehr, auch mit Leichtfiguren zu Hause (in
+  0.2.43 auf Wunsch des Autors wieder gestrichen); (2) Endspiel, sobald jede Seite höchstens 13 Punkte hat
   (`ENDSPIEL_BIS_PUNKTE`, Bauern mitgezählt), auch mit Damen (Damenendspiel). Beide greifen nur,
   wenn die Regeln des Buches nichts anderes sagen (das Endspiel des Buches geht vor); der Befund
   trägt `buchphase` und `zusatz`, das Werkzeug „Phase“ zeigt die Zusatzregel als zweite Zeile

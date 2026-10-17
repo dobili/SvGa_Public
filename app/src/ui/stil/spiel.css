@@ -41,6 +41,19 @@
   margin-top: var(--raster);
 }
 
+/* „M“ und „E“ vor dem ersten Zug des Mittelspiels und des Endspiels (0.2.43), wie in der Kurve. */
+.zugphase {
+  display: inline-block;
+  margin-right: 4px;
+  padding: 0 5px;
+  border-radius: 4px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+}
+
 .partiestatus {
   display: flex;
   flex-direction: column;

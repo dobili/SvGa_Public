@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.42. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.43. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.42“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.43“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,17 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.42“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.43“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.43 (etwa 5 Minuten; deine Nachricht vom 17.10.2026 abends)
+
+- [ ] N232. **„M“ und „E“ in der Zugliste:** Eine Partie spielen, die ins Mittelspiel kommt (am
+      besten bis ins Endspiel). In der Zugliste über dem Brett steht vor dem ersten Zug des
+      Mittelspiels ein goldenes „M“ und vor dem ersten Zug des Endspiels ein „E“, an denselben
+      Stellen wie die Linien in der Kurve der Auswertung. Ein Tipp auf das Kästchen nennt die
+      Phase. Die Zusatzregel „ab Zug 15 Mittelspiel“ ist gestrichen: Bleiben Leichtfiguren zu
+      Hause, bleibt es nach dem Buch Eröffnung, egal wie lange.
 
 ### Neu in 0.2.42 (etwa 20 Minuten, mit Engine; deine Ergänzungen vom 17.10.2026 abends)
 
@@ -89,9 +98,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.42“, dann 
 - [ ] N225. **Phase, Zusatzregeln:** Spielen › Stellung aufbauen › Brett leeren, dann K e1, D d1,
       k e8, d d8 setzen und übernehmen; in der Partie das Werkzeug „Phase“ (Kapitel 11) öffnen:
       „Endspiel …“ und als zweite Zeile „Zusatzregel (nicht aus dem Buch): Jede Seite hat höchstens
-      13 Punkte …“. Außerdem: In einer Partie aus der Grundstellung Springer b1 und Läufer c1
-      bis Zug 15 zu Hause lassen: Die Kurve setzt das „M“ spätestens bei Zug 15, das Werkzeug
-      „Phase“ nennt die Zusatzregel „Ab Zug 15 …“.
+      13 Punkte …“.
 - [ ] N226. **Stellung aufbauen, Figuren setzen:** Spielen › „Stellung aufbauen“: Wahl „Figuren
       setzen / Züge spielen“, das große Brett, die zwölf Steine als Kacheln, „Feld räumen“,
       „Am Zug: Weiß / Schwarz“, „Brett leeren“, „Grundstellung“. Brett leeren, einen Stein wählen,
@@ -380,18 +387,17 @@ Regeln C1 und C2).
       dem Mittelspiel; die Klasse ist der Stufenname zum gerundeten Durchschnitt. Namen, Stufen
       oder Sätze ändern? Die Abhakliste der Fehlerarten (dein zweiter Vorschlag) ist weiter nicht
       gebaut.
-- [ ] S8. **Zusatzregeln für die Phase** (deine Frage S2, Recherche): Eine allgemeingültige
+- [ ] S8. **Zusatzregel für die Phase** (deine Frage S2, Recherche): Eine allgemeingültige
       Grenze gibt es nicht; die Lehrbücher setzen das Mittelspiel, sobald die Entwicklung
-      abgeschlossen und der König in Sicherheit ist (das deckt sich mit dem Buch), und nennen für
-      die Eröffnung „etwa die ersten 10 bis 15 Züge“. Fürs Endspiel gilt verbreitet Speelman:
-      jede Seite höchstens 13 Punkte an Steinen außer dem König (Bauer 1, Leichtfigur 3, Turm 5,
-      Dame 9); daneben „die Könige können aktiv werden“ (deine vierte Frage) und „die Damen sind
-      getauscht“. Eingebaut sind zwei Zusatzregeln, die nur greifen, wenn das Buch nichts anderes
-      sagt, und die das Werkzeug „Phase“ und die Kurve ausdrücklich als „Zusatzregel (nicht aus
-      dem Buch)“ nennen: ab Zug 15 Mittelspiel, auch wenn noch Leichtfiguren zu Hause stehen;
-      Endspiel, sobald jede Seite höchstens 13 Punkte hat, auch mit Damen (Damenendspiel). Die
+      abgeschlossen und der König in Sicherheit ist (das deckt sich mit dem Buch). Fürs Endspiel
+      gilt verbreitet Speelman: jede Seite höchstens 13 Punkte an Steinen außer dem König (Bauer
+      1, Leichtfigur 3, Turm 5, Dame 9); daneben „die Könige können aktiv werden“ (deine vierte
+      Frage) und „die Damen sind getauscht“. Eingebaut ist eine Zusatzregel, die nur greift, wenn
+      das Buch nichts anderes sagt, und die das Werkzeug „Phase“ ausdrücklich als „Zusatzregel
+      (nicht aus dem Buch)“ nennt: Endspiel, sobald jede Seite höchstens 13 Punkte hat, auch mit
+      Damen (Damenendspiel). Die Regel nach der Zugzahl ist auf deinen Wunsch gestrichen. Die
       Regeln des Buches (zwei Leichtfiguren zu Hause, die vier Endspielfragen) bleiben vorrangig.
-      Passen die zwei Regeln und die Zahlen 15 und 13?
+      Passt die Zahl 13?
 - [ ] S9. **Wertung nach Elo:** Die erste gewertete Partie setzt die Wertung auf die Schätzung der
       Engine für dich; jede weitere zählt wie eine Partie gegen einen Spieler mit der Schätzung der
       Engine in dieser Partie (ihrer tatsächlichen Stärke, nicht der Stufe), mit K = 32 in den
@@ -434,6 +440,26 @@ Regeln C1 und C2).
       Phase je gewerteter Partie, und als Zahl den Durchschnitt im Ausschnitt. Partien ohne sechs
       eigene Züge in der Phase fehlen dort. So gemeint, oder lieber ein gleitender Durchschnitt
       als Linie?
+- [ ] S16. **Von der Eröffnung direkt ins Endspiel** (deine Beobachtung): Das passiert, weil die
+      App die Endspielfragen des Buches vor der Entwicklung prüft: Ergeben drei der vier Fragen
+      Ja, ist es Endspiel, auch wenn noch Leichtfiguren zu Hause stehen. Drei Ja gibt es früh,
+      sobald die Damen getauscht sind: „Damen vom Brett“ ja, „Könige vor Mattangriff sicher“ ja
+      (ohne Damen fast immer), und „Bauern entscheiden“ ja, sobald eine Seite irgendwo eine
+      Bauernmehrheit hat (das ist nach fast jedem frühen Abtausch der Fall) oder ein Freibauer
+      steht. Beispiel aus der Theorie: die Berliner Verteidigung, 1. e4 e5 2. Sf3 Sc6 3. Lb5 Sf6 4. 0-0 Sxe4 5. d4 Sd6 6. Lxc6 dxc6 7. dxe5 Sf5 8. Dxd8+ Kxd8: Die App sagt im 9. Zug
+      „Endspiel“ (drei Ja), obwohl Schwarz noch Lc8 und Lf8 zu Hause hat und je Seite 19 Punkte
+      Figuren stehen. Die Theorie nennt das „Berliner Endspiel“, Autoren wie Stefan Bücker
+      (New In Chess) und Bryan Smith (chess.com, „Endgame or Middlegame?“) halten „damenloses
+      Mittelspiel“ für treffender: Mit so vielen Figuren entscheiden noch Königssicherheit und
+      Figurenspiel, nicht die Bauern. Deine Vermutung (schneller Angriff nach Fehlern) trifft
+      einen zweiten Fall: Verliert der Gegner früh die Dame oder viel Material, zählt „Bauern
+      entscheiden“ über „wenig Figurenmaterial“ ebenfalls ja. Sinnvoll ist der Sprung nur, wenn
+      wirklich wenig übrig ist. Vorschlag (noch nicht gebaut): Die Frage „Bauern entscheiden“
+      zählt bei einer Bauernmehrheit nur noch ja, wenn jede Seite höchstens 13 Punkte an Figuren
+      hat (ohne Bauern) oder ein Freibauer steht; ein damenloses Mittelspiel mit vielen Figuren
+      bliebe so Mittelspiel, die Berliner Stellung auch. Das Buch sagt zu „Bauern entscheiden“
+      nichts Genaueres, es wäre also eine Lesart, keine Abweichung. Soll Claude das so umsetzen,
+      oder bleibt die Zählung wie bisher?
 
 ### R. Rückmeldung 0.2.38, umgesetzt in 0.2.39 (Fable; plausibel entschieden, bitte prüfen)
 

@@ -4,19 +4,38 @@
  * Rolle im Gesamtbild: Teil des Partie-Bildschirms (Bildschirmentwurf „Partie“, Zugliste unter
  * dem Brett). Ein Tipp auf einen Zug zeigt die Stellung danach; gezogen wird nur in der
  * aktuellen Stellung. Auch in der ruhigen Ansicht sichtbar (Wunsch des Autors: Brett,
- * Zugnavigation und gespielte Züge).
- * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), i18n, lucide-react.
+ * Zugnavigation und gespielte Züge). Seit 0.2.43 (Wunsch des Autors) steht vor dem ersten Zug
+ * des Mittelspiels ein „M“ und vor dem ersten Zug des Endspiels ein „E“, wie in der Kurve.
+ * Abhängigkeiten: schach/weiterspielen.ts (Züge mit Nummern), spiel/phasen.ts, i18n, lucide-react.
  */
 import { ChevronFirst, ChevronLast, StepBack, StepForward } from "lucide-react";
 import { Fragment } from "react";
 import { sprache, t } from "../../i18n/sprache";
 import { eigeneAlsText } from "../../schach/weiterspielen";
+import { phasenwechsel, type Phase } from "../../spiel/phasen";
 
 const SYMBOLGROESSE = 22;
+const PHASENBUCHSTABE: Readonly<Record<Phase, string>> = {
+  eroeffnung: "",
+  mittelspiel: "M",
+  endspiel: "E",
+};
+
+/** Je Halbzug (Index) die Phase, die mit der Stellung nach ihm beginnt, falls eine beginnt. */
+function phasenmarken(phasen: readonly Phase[]): ReadonlyMap<number, Phase> {
+  const wechsel = phasenwechsel(phasen);
+  const marken = new Map<number, Phase>();
+  for (const ph of ["mittelspiel", "endspiel"] as const) {
+    const stelle = wechsel[ph];
+    // Stelle ist der Index der ersten Stellung der Phase; der Zug davor hat den Index Stelle − 1.
+    if (stelle !== null && stelle > 0) marken.set(stelle - 1, ph);
+  }
+  return marken;
+}
 
 /**
  * Eingaben: Startstellung, Züge in SAN, gezeigte Stelle (Zahl der Halbzüge), Zugzeichen der
- * Auswertung je Halbzug (nach dem Ende), Wechsel der Stelle.
+ * Auswertung je Halbzug (nach dem Ende), Phase je Stellung (für „M“ und „E“), Wechsel der Stelle.
  * Beispiel: 1. e4 e5 2. Sf3, Stelle 3 → „2. Sf3“ hervorgehoben.
  */
 export function Partiezuege({
@@ -24,15 +43,18 @@ export function Partiezuege({
   zuege,
   stelle,
   zeichen = [],
+  phasen = [],
   beiStelle,
 }: {
   startFen: string;
   zuege: readonly string[];
   stelle: number;
   zeichen?: readonly (string | null)[];
+  phasen?: readonly Phase[];
   beiStelle: (stelle: number) => void;
 }) {
   const texte = eigeneAlsText(startFen, zuege, sprache());
+  const marken = phasenmarken(phasen);
   const knopf = (
     richtung: "anfang" | "zurueck" | "vor" | "ende",
     ziel: number,
@@ -54,6 +76,15 @@ export function Partiezuege({
         {texte.length === 0 && <span className="hinweis">{t("partie.nochKeineZuege")}</span>}
         {texte.map((text, index) => (
           <Fragment key={`${index}-${text}`}>
+            {marken.has(index) && (
+              <span
+                className="zugphase"
+                title={t(`phase.name.${marken.get(index) ?? "mittelspiel"}`)}
+                aria-label={t(`phase.name.${marken.get(index) ?? "mittelspiel"}`)}
+              >
+                {PHASENBUCHSTABE[marken.get(index) ?? "mittelspiel"]}
+              </span>
+            )}
             <button
               type="button"
               className="zug"

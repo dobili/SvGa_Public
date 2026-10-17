@@ -5,7 +5,9 @@
  * Engine spielen“ an jeder Abbildung (Pflichtenheft 5.2: aus jeder Stellung zu Ende spielen,
  * Seite und Stufe wählen, Rücknahme abschaltbar; ein Spielziel gibt es seit 0.2.33 nicht mehr, Ziel ist
  * immer der Sieg). Die letzte Wahl merkt sich der
- * Speicher (Vorlieben). Darunter die letzten Partien zum Nachlesen.
+ * Speicher (Vorlieben). Seit 0.2.39 lässt sich aus der Grundstellung eine Eröffnung des Buches
+ * vorgeben, der die Engine folgt (EroeffnungsWahl.tsx, Rückmeldung des Autors zu N178). Darunter
+ * die letzten Partien zum Nachlesen.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, engine/stufen.ts, speicher/, Navigation, i18n.
  */
 import { useState } from "react";
@@ -19,6 +21,7 @@ import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
+import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
 
@@ -57,6 +60,8 @@ function neueKennung(): string {
 interface Wahl {
   readonly farbe: Farbe;
   readonly vorlieben: Spielvorlieben;
+  /** Eröffnung für die Engine (nur aus der Grundstellung), sonst null. */
+  readonly eroeffnung: string | null;
 }
 
 /** Seite, Stufe, Uhr, Rücknahme. */
@@ -159,6 +164,7 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       uhr: v.uhr,
       ruecknahmeErlaubt: v.ruecknahmeErlaubt,
       abbildung: abbildung ?? null,
+      eroeffnung: fen === GRUNDSTELLUNG ? wahl.eroeffnung : null,
     };
     const partie = neuePartie(einstellung, neueKennung(), new Date().toISOString());
     if (!partie) return;
@@ -179,6 +185,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
   const [wahl, setzeWahl] = useState<Wahl>({
     farbe: seiteAmZug(fen),
     vorlieben: spiel.vorlieben,
+    eroeffnung: null,
   });
   // Eine eigene Stellung: Der Leser spielt zunächst die Seite am Zug.
   const uebernimm = (neu: string) => {
@@ -202,6 +209,12 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
       <Startstellung fen={fen} abbildung={abbildung} setzeFen={uebernimm} />
       {!ok && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
       <Einstellungen wahl={wahl} setze={setzeWahl} />
+      {fen === GRUNDSTELLUNG && (
+        <EroeffnungsWahl
+          gewaehlt={wahl.eroeffnung}
+          beiWahl={(eroeffnung) => setzeWahl({ ...wahl, eroeffnung })}
+        />
+      )}
       {laufend && ersetzen ? (
         <div className="nachfrage">
           <p>{t("spielen.ersetzenFrage")}</p>

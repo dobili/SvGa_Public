@@ -53,6 +53,23 @@
   font-weight: 600;
 }
 
+/* Eröffnung wählen (0.2.39): ein Auswahlfeld in der Schrift der App. */
+.eroeffnungswahl .einstellung-name {
+  display: block;
+  margin-bottom: calc(var(--raster) / 2);
+}
+
+.auswahlfeld {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1.5px solid var(--text);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+}
+
 .startbrett {
   max-width: 240px;
   margin: 0 auto var(--raster);
@@ -102,6 +119,43 @@
 
 .auswertung p {
   margin: var(--raster) 0;
+}
+
+/* Rückblick-Karte unter dem Brett (0.2.39): Urteil, Erklärung, besserer Zug. */
+.rueckblickkarte {
+  margin-top: var(--raster);
+}
+
+.rueckblickkarte p {
+  margin: 0 0 calc(var(--raster) / 2);
+}
+
+.rueckblick-erklaerung {
+  color: var(--rot-text);
+}
+
+/* Spielstärke-Tabelle (0.2.39): drei Spalten, Zahlen rechtsbündig. */
+.spielstaerke {
+  margin-top: calc(var(--raster) * 2);
+}
+
+.spielstaerke-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.spielstaerke-tabelle th,
+.spielstaerke-tabelle td {
+  padding: calc(var(--raster) / 2) var(--raster);
+  border-bottom: 1px solid var(--linie);
+  text-align: left;
+  vertical-align: top;
+}
+
+.spielstaerke-tabelle th[scope="row"] {
+  font-weight: 600;
+  color: var(--text-leise);
 }
 
 .grobe-patzer {

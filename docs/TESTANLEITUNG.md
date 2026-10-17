@@ -12,6 +12,54 @@ Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App).
 
 ---
 
+## Nachtest Version 0.2.39 (etwa 15 Minuten, mit Engine; Rückmeldung zum Nachtest bis N174)
+
+Neu: Figurensätze „klassisch“ und „Holz“, Nummernsprung in der Kopfzeile, Werkzeugtexte ohne
+„+9“, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung für die Engine. **Vorher:** In den
+Einstellungen muss „App-Version 0.2.39“ stehen.
+
+- [ ] N201. **Figurensätze:** Einstellungen › Figurensatz: „wie im Buch“, „klassisch“ (bis
+      0.2.38 „kontrastreich“; eine gespeicherte Wahl bleibt erhalten) und „Holz“. Mit Brettfarben
+      „Holz“ und Figurensatz „Holz“ in Abb. 1.26: helle Figuren elfenbeinfarben, dunkle fast
+      schwarz mit warmem Braunton, wie im Design „Dunkles Holz“ auf deinem Bild (die Formen
+      bleiben die klassischen). Passen die Farben? (Rückfrage R1.)
+- [ ] N202. **Nummernsprung:** In Abb. 1.26 auf den Titel „Abb. 1.26“ tippen: Unter der
+      Kopfzeile erscheint „Abbildung öffnen“. „1,28“ eintippen und „Öffnen“: Abb. 1.28 ist da,
+      „Zurück“ führt zum Kapitel. „1.99“: „Abbildung 1.99 gibt es nicht“ mit Vorschlägen.
+      Ein zweiter Tipp auf den Titel schließt das Feld.
+- [ ] N203. **Werkzeugtexte ohne Zahl:** Abb. 1.30, Röntgen: „Sxd4 gewinnt den Bauern“ (statt
+      „Sxd4 (+1)“). Abb. 4.11, Warnsignale: „W5 … Lxf3 (schlägt die Dame mit Gewinn)“. Abb. 7.14,
+      Erzwingende Züge nach der Engine: „Material bis zur Ruhe: +5 (gewinnt die Dame); Engine
+      +6,2“. Abb. 4.13, Prüffragen: „… scheint den Bauern zu gewinnen: Warum lässt … das zu?“.
+      Nur das Werkzeug „Zählen“ (Abtauschbilanz), die Faktorenbilanz (Material) und die
+      Kandidatenzeile zeigen weiter Zahlen, immer mit dem Wort „Material“ oder „Bilanz“ dabei.
+- [ ] N204. **Rückblick-Karte:** Eine kurze Partie mit klarem Fehler (Spielen › eigene Stellung
+      nach 1. f3 e5, dann 2. g4??). Nach der Auswertung in der Zugliste auf „2. g4??“ tippen:
+      Unter dem Brett steht eine Karte „2. g4?? kostet etwa 10,0 Bauern. Bewertung −0,4 → −M.“
+      und „Besser war 2. …“. Bei einem Zug ohne Zeichen: „… war der beste Zug“ oder „… ist in
+      Ordnung (0,2 hinter …)“.
+- [ ] N205. **Erklärung mit Markierung:** Spielen › Grundstellung, Stufe 1, als Schwarz: 1. e4 e5 2. Dh5 Sf6?? (du spielst absichtlich Sf6). Nach dem Ende und der Auswertung auf „2... Sf6??“
+      tippen: Karte „Du lässt die Drohung Dxe5+ stehen (gewinnt den Bauern).“, roter Pfeil h5–e5,
+      rotes Feld e5. Andere Fehlerarten lauten „lässt Läufer a3 ungedeckt hängen (W1)“ (rotes
+      Feld mit W1), „übersieht die Gabel: Springer g5 nach f7 trifft …“ (Pfeil und rote Felder),
+      „schlägt aus Schlagreflex (W5) …“, „zieht die Dame zu früh“, „lässt den König in der Mitte“.
+      Fehler der Engine bekommen dieselbe Karte („Engine …“).
+- [ ] N206. **„!“ für den einzigen guten Zug:** In derselben Partie trägt ein Zug, der der
+      beste war und mindestens 1,2 Bauern vor dem zweitbesten lag, in der Zugliste ein „!“, am
+      Brett ein goldenes „!“, auf der Karte „… war der einzige gute Zug.“ (Partien aus 0.2.38
+      ohne diese Angabe bleiben ohne „!“; sie werden nicht neu ausgewertet.)
+- [ ] N207. **Spielstärke:** Unter der Auswertung die Karte „Spielstärke“ mit zwei Spalten
+      („Du (Weiß)“, „Engine (Schwarz)“): Genauigkeit in Prozent, Spielstärke (geschätzt, „etwa
+      1400“, unter zehn Zügen „zu wenige Züge“), Verlust je Zug, beste Züge („5 von 12“),
+      Zeichen („! 1 · ?! 2 · ? 1 · ?? 0“). Darunter der Hinweis, wie gerechnet wird.
+- [ ] N208. **Eröffnung wählen:** Spielen (Grundstellung) › Karte „Eröffnung“: Liste der
+      Eröffnungen aus Kapitel 2 und 3; „Spanische Partie“ wählen, darunter „Hauptvariante: 1. e4
+      e5 2. Sf3 Sc6 3. Lb5 …“. Als Weiß beginnen, 1. e4: Die Engine antwortet e5; 2. Sf3: Sc6; 3. Lb5: a6 (oder die Buchantwort). Der Untertitel nennt die Eröffnung. Bei einer Abbildung
+      oder eigenen Stellung gibt es die Karte nicht.
+- [ ] N209. **Eröffnung verlassen:** Mit „Spanische Partie“ 1. d4 spielen: Die Engine antwortet
+      mit einer Buchantwort auf d4 oder selbst, ohne Fehler. Die Wahl „frei“ spielt wie bisher
+      (alle Varianten, Buchtreue 0,85).
+
 ## Nachtest Version 0.2.38 (etwa 5 Minuten, mit Engine; Rückblick nach der Partie)
 
 Neu: Vorschlag H, Rückblick nach der Partie. **Vorher:** In den Einstellungen muss „App-Version
@@ -81,8 +129,7 @@ Trainer. **Vorher:** In den Einstellungen muss „App-Version 0.2.37“ stehen.
 ## Nachtest Version 0.2.35 (etwa 10 Minuten; neuer Buchstand vom 16.10.2026)
 
 - [ ] N196. **Getauschte Abbildungen:** Abb. 2.29 zeigt die Greco-Variante nach 10... d5!, Abb.
-      2.30 die Stellung nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5. Abb. 3.31 nach 12. Kh1, 3.32 nach
-      13. f4 (mit der Bilanz), 3.33 nach 7... Sxd4??, 3.34 nach 9. Lb5+!. Jeweils nachspielen: Die
+      2.30 die Stellung nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5. Abb. 3.31 nach 12. Kh1, 3.32 nach 13. f4 (mit der Bilanz), 3.33 nach 7... Sxd4??, 3.34 nach 9. Lb5+!. Jeweils nachspielen: Die
       Zugleiste führt genau zu dieser Stellung.
 - [ ] N197. **Neue Nummern der Übungen:** Kapitel 3 (Übungen 14 bis 18), Kapitel 4 (19 bis 22) und
       Kapitel 12 (84 bis 86) stehen in der neuen Reihenfolge des Buches.
@@ -145,8 +192,7 @@ Regeln C1 und C2). **Vorher:** In den Einstellungen muss „App-Version 0.2.33�
 **Kapitel 1 bis 4**
 
 - [ ] N163. **Zielbilanz, Abb. 2.40:** „Zentrum: ja – … e4 ist angegriffen“ (grau, nicht rot);
-      nach ein paar Sekunden darunter „Engine: Sxe4 gewinnt den Bauern e4 nicht: 3... Sxe4
-      4. De2 …“. Abb. 2.24: „d4 und e4“.
+      nach ein paar Sekunden darunter „Engine: Sxe4 gewinnt den Bauern e4 nicht: 3... Sxe4 4. De2 …“. Abb. 2.24: „d4 und e4“.
 - [ ] N164. **Todsünden, Abb. 1.8:** Überschrift „Mögliche Todsünden“, oben der Hinweis „Nur
       Kandidaten …“, Zeile „3... Df6: mögliche verfrühte Dame“.
 - [ ] N165. **Phase:** Abb. 11.28 (Unsterbliche Partie): „Mittelspiel“, auch wenn du die Sicht
@@ -176,8 +222,7 @@ Regeln C1 und C2). **Vorher:** In den Einstellungen muss „App-Version 0.2.33�
 
 - [ ] N171. **Opposition:** Abb. 8.23: nur Kf3. Abb. 8.36: „Hier entscheidet nicht die
       Opposition, sondern das Quadrat …“. Abb. 8.53: „… das Reserve-Tempo h4 …“.
-- [ ] N172. **Schlüsselfelder und Quadrat:** Abb. 8.29: Fazit „Weiß gewinnt mit e7 (Sonderfall
-      6. Reihe).“ Abb. 8.50: „Die Quadratregel gilt nur für einen Bauern allein; verbundene
+- [ ] N172. **Schlüsselfelder und Quadrat:** Abb. 8.29: Fazit „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“ Abb. 8.50: „Die Quadratregel gilt nur für einen Bauern allein; verbundene
       Freibauern schützen sich gegenseitig …“. Abb. 8.46: „Nach a6 läuft der Bauer a6 durch …“.
 - [ ] N173. **Turmendspiel und Erkennungsbilder:** Abb. 9.3: „Philidor: Turm auf der 3. Reihe von
       dir aus, nach dem Bauernzug von hinten Schach geben.“ Abb. 9.23: „Mehrere Bauern am Brett“.

@@ -14,7 +14,12 @@ import { useEffect, useMemo, useState } from "react";
 import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
 import { stufe } from "../../engine/stufen";
 import { ladeKapitel } from "../../daten/laden";
-import { baueEroeffnungsindex, buchzuegeAb } from "../../schach/eroeffnungsindex";
+import {
+  baueEroeffnungsindex,
+  buchzuegeAb,
+  buchzuegeZu,
+  type Eroeffnungsindex,
+} from "../../schach/eroeffnungsindex";
 import {
   nimmZurueckMitUhr,
   pausiere,
@@ -22,6 +27,7 @@ import {
   setzeUhrFort,
   zieheMitUhr,
 } from "../../spiel/ablauf";
+import { BUCHTREUE, BUCHTREUE_VORGABE } from "../../engine/zugwahl";
 import { engineZug } from "../../spiel/enginezug";
 import { aktuelleFen, amZug, gibAuf, leserzug, type Partie } from "../../spiel/partie";
 import { findePartie, mitPartie } from "../../speicher/partien";
@@ -74,6 +80,23 @@ function useBuch() {
   return { bereit: daten.art !== "laedt", index };
 }
 
+/**
+ * Die Buchzüge für die Engine: bei vorgegebener Eröffnung (0.2.39) nur die, die in ihr bleiben,
+ * und dann mit Buchtreue 1; sonst alle Buchzüge mit der üblichen Buchtreue.
+ */
+function buchzuegeFuer(
+  index: Eroeffnungsindex | null,
+  fen: string,
+  eroeffnung: string | null,
+): { zuege: string[]; treue: number } {
+  if (!index) return { zuege: [], treue: BUCHTREUE };
+  if (eroeffnung) {
+    const inDerEroeffnung = buchzuegeZu(index, fen, eroeffnung);
+    if (inDerEroeffnung.length > 0) return { zuege: inDerEroeffnung, treue: BUCHTREUE_VORGABE };
+  }
+  return { zuege: buchzuegeAb(index, fen), treue: BUCHTREUE };
+}
+
 /** Lässt die Engine ziehen, solange sie am Zug ist. */
 function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) {
   const buch = useBuch();
@@ -81,11 +104,12 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
   const [versuch, setzeVersuch] = useState(0);
   const id = partie?.id ?? "";
   const stufennummer = partie?.einstellung.stufe ?? 1;
+  const eroeffnung = partie?.einstellung.eroeffnung ?? null;
   useEffect(() => {
     if (!amZugEngine || !buch.bereit) return;
     let aktiv = true;
-    const buchzuege = buch.index ? buchzuegeAb(buch.index, fen) : [];
-    engineZug(engine, fen, stufe(stufennummer), buchzuege, Math.random)
+    const buchzuege = buchzuegeFuer(buch.index, fen, eroeffnung);
+    engineZug(engine, fen, stufe(stufennummer), buchzuege.zuege, Math.random, buchzuege.treue)
       .then((zug) => {
         const jetzt = neueste(id);
         if (!aktiv || !jetzt || aktuelleFen(jetzt) !== fen) return;
@@ -107,7 +131,7 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
     return () => {
       aktiv = false;
     };
-  }, [id, fen, amZugEngine, buch.bereit, buch.index, stufennummer, versuch]);
+  }, [id, fen, amZugEngine, buch.bereit, buch.index, stufennummer, eroeffnung, versuch]);
   return fehler;
 }
 

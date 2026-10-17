@@ -9,10 +9,10 @@
  */
 import type { Fehlerart } from "../engine/fehlerart";
 import { stellungen, type Partie } from "./partie";
-import { regelstellung } from "./zuege";
+import { regelstellung, sanZuUci } from "./zuege";
 
-/** Zeichen eines Zuges nach dem Verlust (Konzept 8.3). */
-export type Zugzeichen = "??" | "?" | "?!";
+/** Zeichen eines Zuges nach dem Verlust (Konzept 8.3); „!“ für den einzigen guten Zug (seit 0.2.39). */
+export type Zugzeichen = "!" | "??" | "?" | "?!";
 
 /** Grenzen aus Konzept 8.3: Verlust ab 3 „??“, ab 1,2 „?“, ab 0,5 „?!“ (Bauerneinheiten). */
 const GRENZE_PATZER = 3;
@@ -67,21 +67,45 @@ export function endwert(fen: string): number | null {
 }
 
 /**
+ * War der Zug der einzige gute: der beste der Engine, und der zweitbeste liegt mindestens eine
+ * Fehlergrenze (1,2) dahinter? Dieselbe Regel wie in der Engine-Karte (engine/letzterzug.ts).
+ */
+function istEinziger(
+  fen: string,
+  san: string,
+  bester: string | undefined,
+  abstand: number | undefined,
+) {
+  if (!bester || abstand === undefined || abstand < GRENZE_FEHLER) return false;
+  return sanZuUci(fen, san) === bester;
+}
+
+/**
  * Urteil über jeden Halbzug.
  *
  * Eingaben: Partie, Werte je Stellung aus Sicht von Weiß (Startstellung bis Ende, also ein Wert
- * mehr als Züge). Ausgabe: je Halbzug Verlust und Zeichen; leer, wenn Werte fehlen.
- * Beispiel: 1. e4 (+0,3) e5 (+0,3) 2. Dh5 (−0,2): 2. Dh5 verliert 0,5 → „?!“.
+ * mehr als Züge); dazu seit 0.2.39 die besten Züge und die Abstände zum zweitbesten je Stellung
+ * (dürfen fehlen; dann gibt es kein „!“). Ausgabe: je Halbzug Verlust und Zeichen; leer, wenn
+ * Werte fehlen.
+ * Beispiel: 1. e4 (+0,3) e5 (+0,3) 2. Dh5 (−0,2): 2. Dh5 verliert 0,5 → „?!“. Nach 2. Dh5 ist
+ * 2... Sc6 bester Zug mit Abstand 2,5 zum zweitbesten → „!“.
  */
-export function zugurteile(partie: Partie, werte: readonly number[]): Zugurteil[] {
+export function zugurteile(
+  partie: Partie,
+  werte: readonly number[],
+  beste: readonly string[] = [],
+  abstaende: readonly number[] = [],
+): Zugurteil[] {
   if (werte.length !== partie.zuege.length + 1) return [];
   const alle = stellungen(partie);
-  return partie.zuege.map((_, index) => {
-    const weiss = alle[index]?.split(" ")[1] !== "b";
+  return partie.zuege.map((zug, index) => {
+    const fen = alle[index] ?? "";
+    const weiss = fen.split(" ")[1] !== "b";
     const vorher = begrenzt(werte[index] ?? 0);
     const nachher = begrenzt(werte[index + 1] ?? 0);
     const verlust = Math.max(0, weiss ? vorher - nachher : nachher - vorher);
-    return { index, verlust, zeichen: zeichenFuer(verlust) };
+    const einziger = verlust === 0 && istEinziger(fen, zug.san, beste[index], abstaende[index]);
+    return { index, verlust, zeichen: einziger ? "!" : zeichenFuer(verlust) };
   });
 }
 

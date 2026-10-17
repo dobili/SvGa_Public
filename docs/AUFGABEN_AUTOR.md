@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.38 (AP 13 Teil 1 und 2: Übungen und erste Trainer; H Rückblick).
+Stand: 17.10.2026, Version 0.2.39 (Rückmeldung zum Nachtest bis N174, Fable; davor AP 13 Teil 1 und 2, H Rückblick).
 Hier steht **nur, was noch offen ist**. Erledigtes ist in `docs/ENTSCHEIDUNGEN.md` festgehalten.
 
 **Grundsatz:** Du musst keine Datei selbst bearbeiten. Du antwortest im Chat mit den Kürzeln (etwa
@@ -116,6 +116,32 @@ Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2
 - [ ] K6. **Stufen 4 bis 7 ohne Elo-Begrenzung:** Die Stufen nutzen Skill Level 3, 6, 10, 15
       (geräteunabhängig, siehe `docs/ENTSCHEIDUNGEN.md`). Die Namen der Stufen bleiben; eine
       Elo-Zahl zeigt die App nicht. Einverstanden?
+
+## R. Rückfragen zur Rückmeldung 0.2.38 (Nacht zum 17.10.2026, Fable; plausibel entschieden)
+
+- [ ] R1. **Holzfiguren:** Vorbild ist dein Bild (chess.com, Design „Dunkles Holz“): helle
+      Figuren elfenbeinfarben, dunkle fast schwarz mit warmem Braunton. Die Formen bleiben die
+      von Colin Burnett (die Figuren von chess.com sind nicht frei); die Farben sind `#EEE1C6`
+      und `#2E2119` mit dunklem Rand (`app/public/figuren/holz/`, durch Umfärben erzeugt). Passt
+      das (N201)? Andere Werte sind in Minuten geändert.
+- [ ] R2. **„!“ (U10 damit umgesetzt):** „!“ bekommt ein Zug, der der beste der Engine war und
+      mindestens 1,2 Bauern vor dem zweitbesten lag (dieselbe Regel wie in der Engine-Karte).
+      Dafür bewertet die Auswertung jede Stellung jetzt mit zwei Varianten (gleiche Rechenzeit,
+      etwas weniger Tiefe). So lassen?
+- [ ] R3. **Spielstärke-Schätzung:** Die Zahl („etwa 1400“) kommt aus dem durchschnittlichen
+      Verlust je Zug über eine feste Tabelle (`app/src/spiel/genauigkeit.ts`, grobe
+      Erfahrungswerte, keine Wertungszahl eines Verbands); die Genauigkeit rechnet wie Lichess.
+      Soll die Zahl bleiben, nur die Genauigkeit stehen, oder ein anderes Wort als „Spielstärke“?
+- [ ] R4. **Stufen menschlicher machen:** In `docs/ENTSCHEIDUNGEN.md` (Abschnitt „Rückmeldung
+      zu 0.2.38“) steht, warum die Engine auf Stufe 1 bis 3 „dämlich und dann genial“ wirkt, wie
+      chess.com und Lichess ihre Gegner bauen und fünf Wege für die App. Empfehlung: Weg 1 bis 3
+      (gewichtete Zugwahl mit Temperatur, Tiefengrenze je Stufe, Fehlerneigung je Lage und
+      „Strähnen“) in einem eigenen Arbeitspaket mit Messung. Soll Claude das angehen, und mit
+      welcher Stufe soll es anfangen?
+- [ ] R5. **Erklärungen im Rückblick:** Die Karte erklärt Fehler mit den sechs Fehlerarten der
+      Engine (Drohung, hängende Figur, Gabel, gefährliche Linie, Motiv der Antwort, Schlagreflex,
+      Dame, König). Ohne passende Regel steht nur „kostet etwa … Bauern. Besser war …“. Reicht
+      das, oder soll die Engine-Variante (die nächsten Züge nach dem besseren Zug) dazu?
 
 ## D. Buch
 

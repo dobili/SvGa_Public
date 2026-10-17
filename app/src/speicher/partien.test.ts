@@ -29,6 +29,7 @@ function partie(id: string): Partie {
       uhr: { grundzeitMs: 15 * MINUTE, zuschlagMs: 10_000 },
       ruecknahmeErlaubt: true,
       abbildung: "1.26",
+      eroeffnung: null,
     },
     id,
     JETZT.toISOString(),
@@ -141,6 +142,25 @@ describe("Lesen aus Rohdaten", () => {
         einstellung: { ...roh.einstellung, startFen: "8/8/8/8/8/8/8/8 w - - 0 1" },
       }),
     ).toBeNull();
+  });
+
+  it("Abstände (0.2.39) bleiben erhalten; ohne sie oder bei falscher Länge sind sie leer", () => {
+    const mit = mitWerten(
+      legeAb(LEERER_SPIELSTAND, partie("a")),
+      "a",
+      [0, 1, 2, 3],
+      ["a", "b", "c", ""],
+      [0.5, 0, 2, 0],
+    );
+    expect(spielstandAus(durchJson(mit)).partien[0]?.abstaende).toEqual([0.5, 0, 2, 0]);
+    const ohne = mitWerten(
+      legeAb(LEERER_SPIELSTAND, partie("a")),
+      "a",
+      [0, 1, 2, 3],
+      ["a", "b", "c", ""],
+    );
+    expect(spielstandAus(durchJson(ohne)).partien[0]?.abstaende).toEqual([]);
+    expect(spielstandAus(durchJson(ohne)).partien[0]?.werte).toEqual([0, 1, 2, 3]);
   });
 
   it("Werte, die nicht zur Partie passen, fallen weg", () => {

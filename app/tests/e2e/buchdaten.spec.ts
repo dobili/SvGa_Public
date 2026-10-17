@@ -92,8 +92,13 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await expect(kastenlinks).toHaveCount(13);
   await expect(page.locator('a[href="/training/kap09/"]')).toBeVisible();
   await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await page.getByRole("radio", { name: "Holz" }).click();
-  await expect(page.getByRole("radio", { name: "Holz" })).toHaveAttribute("aria-checked", "true");
+  await page
+    .getByRole("radiogroup", { name: "Brettfarben" })
+    .getByRole("radio", { name: "Holz" })
+    .click();
+  await expect(
+    page.getByRole("radiogroup", { name: "Brettfarben" }).getByRole("radio", { name: "Holz" }),
+  ).toHaveAttribute("aria-checked", "true");
   await leiste.getByRole("button", { name: "Buch" }).click();
   await oeffneAbbildung(page, "1.26", "1.26");
   await expect(

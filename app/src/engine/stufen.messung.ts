@@ -120,6 +120,7 @@ async function spiele(
       uhr: null,
       ruecknahmeErlaubt: false,
       abbildung: null,
+      eroeffnung: null,
     },
     "messung",
     new Date().toISOString(),

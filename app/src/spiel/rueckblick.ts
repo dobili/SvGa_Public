@@ -21,6 +21,7 @@ const MATTWERT = 10;
 const FELDLAENGE = 2;
 
 const ZEICHENFARBE: Readonly<Record<Zugzeichen, Markierungsfarbe>> = {
+  "!": "gold",
   "??": "rot",
   "?": "rot",
   "?!": "grau",

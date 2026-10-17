@@ -124,8 +124,8 @@ test("Tipp auf den Hintergrund schaltet das Werkzeug ab (0.2.29: alles außer In
     page.locator(".am-zug"),
     page.locator(".unterschrift").first(),
     page.locator(".fundstelle"),
-    page.locator(".kopfzeile-titel"),
   ];
+  // Der Titel „Abb. 1.26“ ist seit 0.2.39 ein Knopf (Nummernsprung) und gehört nicht dazu.
   for (const flaeche of flaechen) {
     await roentgen.click();
     await expect(roentgen).toHaveAttribute("aria-pressed", "true");

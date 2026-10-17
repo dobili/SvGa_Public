@@ -985,14 +985,14 @@ darunter. Die Fehlerquote je Stufe liegt im Sollbereich“), Übergabe von Opus 
   lokal in `buch/arbeit/stufenmessung/`. Ergebnis vom 16.10.2026 (10 Partien je Paarung):
 
   | Paarung a-b | Punkte b : a | Fehlerquote a / b | Höchster Verlust a / b | Halbzüge | Dauer je Partie |
-  |---|---|---|---|---|---|
-  | 1-2 | 9 : 1 | 36 % / 29 % | 8,6 / 5,0 | 73 | 33 s |
-  | 2-3 | 9 : 1 | 30 % / 12 % | 5,0 / 3,0 | 74 | 40 s |
-  | 3-4 | 9 : 1 | 13 % / 7 % | 3,0 / 3,0 | 68 | 39 s |
-  | 4-5 | 10 : 0 | 6 % / 0 % | 3,0 / 0 | 85 | 58 s |
-  | 5-6 | 7 : 3 | 0 % / 0 % | 0 / 0 | 111 | 93 s |
-  | 6-7 | 8 : 2 | 0 % / 0 % | 0 / 0 | 123 | 147 s |
-  | 7-8 | 9 : 1 | 0 % / 0 % | 0 / 0 | 110 | 185 s |
+  | ----------- | ------------ | ----------------- | ---------------------- | -------- | --------------- |
+  | 1-2         | 9 : 1        | 36 % / 29 %       | 8,6 / 5,0              | 73       | 33 s            |
+  | 2-3         | 9 : 1        | 30 % / 12 %       | 5,0 / 3,0              | 74       | 40 s            |
+  | 3-4         | 9 : 1        | 13 % / 7 %        | 3,0 / 3,0              | 68       | 39 s            |
+  | 4-5         | 10 : 0       | 6 % / 0 %         | 3,0 / 0                | 85       | 58 s            |
+  | 5-6         | 7 : 3        | 0 % / 0 %         | 0 / 0                  | 111      | 93 s            |
+  | 6-7         | 8 : 2        | 0 % / 0 %         | 0 / 0                  | 123      | 147 s           |
+  | 7-8         | 9 : 1        | 0 % / 0 %         | 0 / 0                  | 110      | 185 s           |
 
   Jede Stufe gewinnt die Mehrheit gegen die Stufe darunter (Abnahme aus Konzept 8.2). Die
   Fehlerquoten sind die gemessenen Anteile absichtlicher Fehlerzüge; der höchste Verlust hält
@@ -1055,3 +1055,109 @@ Der Autor hat die Arbeit über Nacht freigegeben („Los“). Rückfragen dazu s
   Bewertungsbalken links am Brett nur beim Nachspielen nach der Partie und nicht in der ruhigen
   Ansicht; Verlaufskurve über der Auswertung (±5, Matt am Rand, Fehler „?“ und „??“ als Punkte).
   „!“ fehlt noch (Rückfrage U10).
+
+## Rückmeldung zu 0.2.38 (Nacht zum 17.10.2026, Fable, Version 0.2.39)
+
+Grundlage: Rückmeldung des Autors zum Nachtest bis N174 (Spielen, Auswertung, Stufen, Figuren,
+Abbildungsnummer, Werkzeugtexte). Zweig `rueckmeldung-0.2.39`. Opus arbeitet parallel an AP 13;
+Dateien unter `app/src/training/`, `Uebung*`, `Trainer*` sind unberührt.
+
+- **Werkzeugtexte ohne „+9“:** Ein Materialgewinn aus der Abtauschrechnung sah aus wie eine
+  Engine-Bewertung. Die Werkzeuge nennen jetzt die Figur (`analyse/texte.ts`, `schlagtext`):
+  „gewinnt den Läufer“ (Bilanz mindestens der Faustwert der geschlagenen Figur), „schlägt die
+  Dame mit Gewinn“ (Teilgewinn, etwa Dame gegen Läufer), „nur Abtausch“, „verliert Material“.
+  Betroffen: Röntgen, Warnsignale W5, Gegnerplan, Erzwingende Züge, Ruhe, Erfassen, Falle,
+  Prüffragen, Sicherheitsblick. Zahlen bleiben, wo das Buch selbst zählt: Zählen (Abtauschbilanz),
+  Faktorenbilanz (Material), Kandidatenzeile („Material bis zur Ruhe: +5“, jetzt mit dem Wort
+  „Material“ davor, damit es nicht wie die Engine-Zahl daneben aussieht).
+- **Figurensätze:** „kontrastreich“ heißt „klassisch“ (gespeicherte Stände werden beim Lesen
+  übernommen, `speicher/format.ts`); dritter Satz „Holz“ = dieselben Figuren von Colin Burnett in
+  Elfenbein und Dunkelbraun (fast schwarz) mit dunklem Rand, durch Umfärben der SVG-Dateien
+  erzeugt (Lizenz unverändert GPL). Vorbild ist das Bild des Autors (chess.com, Design „Dunkles
+  Holz“); die Figurenformen von chess.com sind nicht frei, deshalb nur die Farben (R1).
+- **Nummernsprung:** Der Titel „Abb. 7.12“ ist ein Knopf; ein Tipp öffnet unter der Kopfzeile
+  dasselbe Nummernfeld wie auf dem Buch-Bildschirm (`ui/komponenten/Nummernsprung.tsx`, Logik aus
+  `daten/finde.ts`). Die gefundene Nummer ersetzt die Ansicht im Stapel (wie das Blättern), damit
+  „Zurück“ weiter zum Kapitel führt.
+- **Rückblick-Karte (Nachspielen wie bei chess.com):** Beim Nachspielen einer ausgewerteten
+  Partie steht unter dem Brett eine Karte zum gezeigten Zug: Urteil („war der beste Zug“, „war
+  der einzige gute Zug“, „ist in Ordnung (0,3 hinter …)“, „kostet etwa 1,8 Bauern“), die
+  Bewertung davor und danach, der bessere Zug (goldener Pfeil wie bisher) und bei einem Zug mit
+  Zeichen die **Erklärung** nach den Regeln des Buches. Die Erklärung nutzt dieselben Regeln, mit
+  denen die Engine ihre absichtlichen Fehler einordnet (`engine/fehlerart.ts`, jetzt mit
+  Einzelheiten: `fehlerbefundIn` liefert die Drohung, das Feld der hängenden Figur, die Gabel,
+  die gefährliche Linie oder das Motiv der Antwort), damit Fehlersuche und Rückblick nie
+  verschieden urteilen. Texte und Markierungen in `spiel/erklaerung.ts`: Drohung (roter Pfeil,
+  rotes Zielfeld), hängende Figur (rotes Feld „W1“), Gabel (Pfeil und rote Zielfelder), Linie
+  (Pfeil), Motiv der Antwort und Schlagreflex (Pfeil der Antwort), verfrühte Dame und König in
+  der Mitte (nur Text). Gerechnet wird nur für die gezeigte Stellung, ohne Engine, erst beim
+  Nachspielen („nur auf Anfrage“). Als Antwort der Engine dient der gespeicherte beste Zug der
+  Folgestellung. Die Eröffnungsregeln stehen in `engine/fehlerart-eroeffnung.ts`, die
+  UCI-Schreibweise in `engine/engineZuege.ts` (Dateigrenze 400 Zeilen).
+- **„!“ (U10):** Die Auswertung bewertet jede Stellung mit zwei Varianten und speichert den
+  Abstand des besten zum zweitbesten Zug (`Partieeintrag.abstaende`). „!“ bekommt ein Zug, der
+  der beste war und mindestens 1,2 Bauern (Fehlergrenze) vor dem zweitbesten lag, dieselbe Regel
+  wie in der Engine-Karte (`engine/letzterzug.ts`). Ältere Auswertungen ohne Abstände bleiben
+  gültig, nur ohne „!“ (keine Neuauswertung, Speicherformat unverändert).
+- **Spielstärke (`spiel/genauigkeit.ts`, Karte in der Auswertung):** Genauigkeit nach der
+  offenen Rechnung von Lichess: Bewertung → Gewinnwahrscheinlichkeit (50 + 50 · (2 / (1 +
+  e^(−0,00368208 · Centibauern)) − 1)), Genauigkeit eines Zuges 103,1668 · e^(−0,04354 ·
+  verlorene Prozentpunkte) − 3,1669, Partie = Mittel über die eigenen Züge (Lichess gewichtet
+  zusätzlich nach Spannung; hier das einfache Mittel, nachvollziehbar). Spielstärke = Tabelle aus
+  dem durchschnittlichen Verlust je Zug (0,1 → 2600, 0,3 → 2000, 0,5 → 1650, 1,0 → 1100, 2,5 →
+  500, dazwischen linear, auf 50 gerundet), erst ab zehn eigenen Zügen; ausdrücklich eine grobe
+  Schätzung und so beschriftet (R3). Die Engine bekommt dieselbe Bewertung; auf niedrigen Stufen
+  macht sie absichtlich Fehler und landet entsprechend tief, was dem Leser die Stufen einordnet.
+  Dazu je Seite: Verlust je Zug, beste Züge, Zeichen („! 1 · ?! 2 · ? 1 · ?? 0“).
+- **Eröffnung für die Engine (N178):** Die Engine folgte schon immer den Buchvarianten (Buchtreue
+  0,85), aber zufällig unter allen; der Leser konnte keine wählen. Jetzt gibt es aus der
+  Grundstellung die Karte „Eröffnung“ (Liste der Eröffnungen aus Kapitel 2 und 3, Vorschau der
+  Hauptvariante). Mit Vorgabe spielt die Engine nur Buchzüge, die in dieser Eröffnung bleiben
+  (`schach/eroeffnungsindex.ts`, `buchzuegeZu`), mit Buchtreue 1; verlässt der Leser die
+  Eröffnung, gelten wieder alle Buchzüge mit 0,85, danach die Engine selbst. Gespeichert in der
+  Partieeinstellung (`eroeffnung`), angezeigt im Untertitel. Aus Abbildungen und eigenen
+  Stellungen gibt es die Karte nicht (dort ist die Eröffnung schon vorbei).
+- **Stufen: warum „dämlich und dann genial“, und wie andere es machen.** Die Stufen 1 bis 3
+  nutzen Stockfishs „Skill Level 0“ plus Fehlerwürfe (AP 11). Skill Level 0 wählt den Zug an
+  Suchtiefe 1 gewichtet zufällig unter den vier besten Varianten einer _vollen_ Suche: Alles,
+  was eine Tiefe von einem Zug sieht (jeder sofortige Schlag, jedes Matt in einem, jede Gabel,
+  die schon da ist), spielt die Engine fehlerfrei; alles Tiefere ist ihr egal. Die Fehlerwürfe
+  treffen zufällige Züge unabhängig von der Lage. Daraus entsteht genau der Eindruck des Autors:
+  Die Engine verschenkt in einem ruhigen Moment eine Figur (Fehlerwurf) und findet zwei Züge
+  später eine Kombination, weil sie in erzwungenen Stellungen trotzdem die Hauptvariante der
+  vollen Suche spielt. Ein Mensch auf 1000 Elo ist umgekehrt: gleichmäßig blind für Taktik ab
+  zwei Zügen Tiefe, selten grundlos verschenkend. **chess.com** baut seine Bots auf Komodo
+  (Dragon) mit „Persönlichkeiten“: je Bot eine Elo-Grenze, die die Suche begrenzt, dazu
+  Rauschen auf der Bewertung und Vorlieben (Angriff, Material, Bauernstruktur); die Fehler
+  kommen aus der verrauschten Bewertung, nicht aus getrennten Würfen, und sind deshalb
+  gleichmäßig. **Lichess** bietet Stockfish-Stufen (Skill Level mit Tiefen- und Zeitgrenze, also
+  dieselbe Art wie hier) und seit 2023 die **Maia**-Netze (University of Toronto), die aus
+  Millionen Menschenpartien je Spielstärkeklasse (1100 bis 1900) gelernt haben, welchen Zug ein
+  Mensch dieser Stärke _wahrscheinlich_ spielt, Fehler eingeschlossen; das ist der menschlichste
+  Gegner, aber ein Netz von einigen Megabyte, das im Browser eine eigene Laufzeit bräuchte.
+  **Fünf Wege für die App** (alle offline, mit der vorhandenen Engine):
+  1. _Gewichtete Zugwahl mit Temperatur statt Skill Level:_ MultiPV 6 bis 8 bei voller Suche,
+     Zugwahl nach e^(Wert/Temperatur) mit Temperatur je Stufe (etwa 1,5 Bauern auf Stufe 1, 0,2
+     auf Stufe 6). Schwäche gleichmäßig, Fehler meist klein, große Fehler nur mit kleiner
+     Wahrscheinlichkeit; kein „Genie“, weil auch in erzwungenen Lagen gewürfelt wird (dort ist
+     der Abstand groß, also bleibt der beste Zug sehr wahrscheinlich: menschlich).
+  2. _Tiefengrenze je Stufe_ („go depth 2 … 8“ statt Zeit) zusätzlich zu 1: Taktik jenseits der
+     Grenze sieht die Engine gar nicht, so wie ein Mensch einen Horizont hat. Geräteunabhängig.
+  3. _Fehlerneigung nach Lage und Strähnen:_ Fehlerwurf nicht gleichverteilt, sondern höher in
+     ruhigen Stellungen mit vielen Kandidaten, niedriger im Schach oder bei einem einzigen guten
+     Zug; nach einem Fehler für drei Züge erhöht („Tilt“), dazu eine „Tagesform“ je Partie
+     (Fehlerquote ±30 %). So entstehen Phasen, wie Menschen sie haben.
+  4. _Menschliche Blindstellen:_ Auf Stufe 1 bis 3 Kandidaten der Engine vorab filtern wie ein
+     Anfänger: Rückwärtszüge und lange Diagonalen seltener, Schläge und Schachs bevorzugt
+     (Schlagreflex), Springergabeln des Gegners „nicht gesehen“. Die Fehlerarten aus
+     `engine/fehlerart.ts` liefern die Prüfungen dafür schon.
+  5. _Stärken-Schwächen-Profile_ („Angreifer“, „Materialist“, „Verteidiger“, „Endspielkünstler“)
+     als Zuschlag auf die Bewertung der Kandidaten (Angreifer: +0,3 für Züge gegen den König,
+     −0,3 für Rückzüge; Materialist: Schläge +0,4, Opfer nie): kleine Verschiebungen, die über eine
+     Partie einen Charakter ergeben; auswählbar oder je Stufe fest.
+     Empfehlung: 1 bis 3 zusammen als eigenes Arbeitspaket mit der Messung aus AP 11
+     (`npm run messen:stufen`: jede Stufe gewinnt weiter die Mehrheit gegen die darunter); 4 und 5
+     danach. Heute Nacht nicht umgesetzt, weil AP 11 die Stufen gerade erst kalibriert hat und der
+     Autor die Richtung entscheiden soll (R4).
+- **Nicht angefasst:** `docs/FORTSCHRITT.md` nur um die Version und den nächsten Schritt
+  ergänzt; AP-13-Dateien von Opus unberührt; der Zweig `trainerdaten` läuft getrennt weiter.

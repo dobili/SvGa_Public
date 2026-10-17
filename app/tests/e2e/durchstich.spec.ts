@@ -238,6 +238,25 @@ test("Nachtmodus in den Einstellungen: an, aus, wie das Gerät, auch nach dem Ne
   await expect(wurzel).not.toHaveAttribute("data-farbschema", /.*/);
 });
 
+test("Nummernsprung (0.2.39): ein Tipp auf den Titel öffnet das Nummernfeld, „1.28“ wechselt die Abbildung", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneAbbildung(page, "1.26", "1.26");
+  await page.getByRole("button", { name: /^Abb\. 1\.26\./ }).click();
+  const feld = page.getByTestId("nummernsprung");
+  await feld.getByRole("textbox").fill("1.99");
+  await feld.getByRole("button", { name: "Öffnen" }).click();
+  await expect(feld).toContainText("Abbildung 1.99 gibt es nicht.");
+  await feld.getByRole("textbox").fill("1,28");
+  await feld.getByRole("button", { name: "Öffnen" }).click();
+  await expect(page.getByRole("button", { name: /^Abb\. 1\.28\./ })).toBeVisible();
+  await expect(page.getByTestId("nummernsprung")).toHaveCount(0);
+  // „Zurück“ führt dorthin, woher Abb. 1.26 kam (Buch), nicht zu Abb. 1.26: Die Nummer ersetzt die Ansicht.
+  await page.locator(".kopfzeile").getByRole("button", { name: "Zurück", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+});
+
 test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am Brett", async ({
   page,
 }) => {

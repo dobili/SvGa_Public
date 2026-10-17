@@ -18,7 +18,9 @@ export type { Spielbewerter, Zugwahl } from "./spielbewerter";
 export { wertFuer } from "./spielbewerter";
 
 /** Mit dieser Wahrscheinlichkeit bleibt die Engine im Buch, solange es Buchzüge gibt. */
-const BUCHTREUE = 0.85;
+export const BUCHTREUE = 0.85;
+/** Hat der Leser eine Eröffnung vorgegeben, folgt die Engine ihr immer (0.2.39). */
+export const BUCHTREUE_VORGABE = 1;
 
 function zufallsauswahl<T>(liste: readonly T[], zufall: () => number): T | undefined {
   return liste[Math.floor(zufall() * liste.length)];
@@ -29,7 +31,8 @@ function zufallsauswahl<T>(liste: readonly T[], zufall: () => number): T | undef
  *
  * Warum: Konzept 8.1 „waehleZug“: Stellung, Stufe, Verlauf → Zug und, falls absichtlich, die
  * Fehlerart. Eingaben: Bewerter, Stellung, Stufe, Buchzüge in UCI (leer außerhalb des Buches),
- * Zufallsquelle (für Tests fest). Ausgabe: Zug oder null, wenn es keinen legalen Zug gibt.
+ * Zufallsquelle (für Tests fest), Buchtreue (0,85, bei vorgegebener Eröffnung 1). Ausgabe: Zug
+ * oder null, wenn es keinen legalen Zug gibt.
  * Beispiel: Stufe 1 nach 1. e4 e5 2. Dh5: in etwa jedem dritten Zug ein Fehlerzug, sonst der
  * Zug der Engine mit Skill Level 0.
  * Sonderfall: Findet die Fehlersuche keinen Zug in den Grenzen der Stufe, zieht die Engine normal.
@@ -40,8 +43,9 @@ export async function waehleZug(
   stufe: Stufe,
   buchzuege: readonly string[],
   zufall: () => number,
+  buchtreue: number = BUCHTREUE,
 ): Promise<Zugwahl | null> {
-  if (buchzuege.length > 0 && zufall() < BUCHTREUE) {
+  if (buchzuege.length > 0 && zufall() < buchtreue) {
     const buchzug = zufallsauswahl(buchzuege, zufall);
     if (buchzug) return { uci: buchzug, quelle: "buch", fehler: null, verlust: 0 };
   }

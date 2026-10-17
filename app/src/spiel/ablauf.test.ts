@@ -21,6 +21,7 @@ function partie(mitUhr: boolean): Partie {
       uhr: mitUhr ? { grundzeitMs: MINUTE, zuschlagMs: 2 * SEKUNDE } : null,
       ruecknahmeErlaubt: true,
       abbildung: null,
+      eroeffnung: null,
     },
     "p",
     "2026-10-15T08:00:00.000Z",

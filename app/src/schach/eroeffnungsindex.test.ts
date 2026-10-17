@@ -4,7 +4,13 @@
  */
 import { describe, expect, it } from "vitest";
 import { ladeKapitel } from "./buchabbildungen.testhilfe";
-import { baueEroeffnungsindex, buchzuegeAb } from "./eroeffnungsindex";
+import {
+  baueEroeffnungsindex,
+  buchzuegeAb,
+  buchzuegeZu,
+  eroeffnungsnamen,
+  hauptlinieVon,
+} from "./eroeffnungsindex";
 
 const INDEX = baueEroeffnungsindex([ladeKapitel(2), ladeKapitel(3)]);
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -39,5 +45,27 @@ describe("buchzuegeAb", () => {
       const [stellung, san] = schluessel.split("|");
       expect(buchzuegeAb(INDEX, `${stellung} - 0 1`)).not.toContain(san);
     }
+  });
+});
+
+describe("Eröffnung vorgeben (0.2.39)", () => {
+  it("nennt die Eröffnungen des Buches, Spanisch darunter, ohne Doppelte", () => {
+    const namen = eroeffnungsnamen(INDEX);
+    expect(namen.some((n) => n.startsWith("Spanisch"))).toBe(true);
+    expect(new Set(namen).size).toBe(namen.length);
+  });
+
+  it("Spanisch: aus der Grundstellung nur e4, nach 1. e4 e5 2. Sf3 Sc6 nur Lb5", () => {
+    const spanisch = eroeffnungsnamen(INDEX).find((n) => n.startsWith("Spanisch")) ?? "";
+    expect(buchzuegeZu(INDEX, GRUNDSTELLUNG, spanisch)).toEqual(["e4"]);
+    const nachSc6 = "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3";
+    expect(buchzuegeZu(INDEX, nachSc6, spanisch)).toEqual(["Bb5"]);
+    // Außerhalb der Eröffnung gibt es keine Züge mehr.
+    expect(buchzuegeZu(INDEX, AUSSERHALB, spanisch)).toEqual([]);
+  });
+
+  it("die Hauptvariante von Spanisch beginnt mit 1. e4 e5 2. Sf3 Sc6 3. Lb5", () => {
+    const spanisch = eroeffnungsnamen(INDEX).find((n) => n.startsWith("Spanisch")) ?? "";
+    expect(hauptlinieVon(INDEX, spanisch).slice(0, 5)).toEqual(["e4", "e5", "Nf3", "Nc6", "Bb5"]);
   });
 });

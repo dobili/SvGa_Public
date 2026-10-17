@@ -68,6 +68,52 @@ export function buchzuegeAb(index: Eroeffnungsindex, fen: string): string[] {
   return zuege;
 }
 
+/**
+ * Die Buchzüge ab einer Stellung, die in einer bestimmten Eröffnung bleiben (englische
+ * Kurznotation); leer, wenn keiner dorthin führt.
+ *
+ * Warum: Seit 0.2.39 kann der Leser der Engine eine Eröffnung vorgeben (Rückmeldung des Autors
+ * zu N178). Beispiel: Grundstellung, „Spanische Partie“ → [„e4“]; nach 1. e4 e5 2. Sf3 Sc6 →
+ * [„Bb5“]. Sonderfall: Hat der Leser die Eröffnung verlassen, gibt es keine Züge mehr, und die
+ * Engine spielt die übrigen Buchzüge oder selbst.
+ */
+export function buchzuegeZu(index: Eroeffnungsindex, fen: string, name: string): string[] {
+  const start = startstellung(fen);
+  if (!start) return [];
+  return buchzuegeAb(index, fen).filter((san) => {
+    const zug = parseSan(start, san);
+    if (!zug) return false;
+    const danach = start.clone();
+    danach.play(zug);
+    const eintraege = index.stellungen.get(stellungsschluessel(makeFen(danach.toSetup()))) ?? [];
+    return eintraege.some((e) => e.name === name);
+  });
+}
+
+/** Die Namen aller Eröffnungen des Index in der Reihenfolge des Buches (ohne Doppelte). */
+export function eroeffnungsnamen(index: Eroeffnungsindex): string[] {
+  const namen: string[] = [];
+  for (const eintraege of index.stellungen.values()) {
+    for (const e of eintraege) if (!namen.includes(e.name)) namen.push(e.name);
+  }
+  return namen;
+}
+
+/**
+ * Die längste Hauptvariante einer Eröffnung (englische Kurznotation ab der Grundstellung), als
+ * Vorschau für den Leser. Beispiel: „Spanische Partie“ → [„e4“, „e5“, „Nf3“, „Nc6“, „Bb5“, …].
+ */
+export function hauptlinieVon(index: Eroeffnungsindex, name: string): readonly string[] {
+  let laengste: readonly string[] = [];
+  for (const eintraege of index.stellungen.values()) {
+    for (const e of eintraege) {
+      if (e.name === name && e.hauptvariante && e.zuege.length > laengste.length)
+        laengste = e.zuege;
+    }
+  }
+  return laengste;
+}
+
 /** Schlüssel einer Stellung: „rnbqkbnr/… w KQkq“. */
 export function stellungsschluessel(fen: string): string {
   return fen.trim().split(/\s+/).slice(0, SCHLUESSELFELDER).join(" ");

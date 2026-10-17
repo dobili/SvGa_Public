@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 17.10.2026 · **Version 0.2.38**, H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 17.10.2026 · **Version 0.2.39**, Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1254,8 +1254,11 @@ Eröffnungsliste sind seit 0.2.32 umgesetzt).
 Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2.36) liegt im
 Archiv-Repository; was davon noch offen ist, steht hier.
 
-1. **Autor:** Nachtest N182 bis N200 (0.2.37 und 0.2.38) und, falls offen, N158 bis N181; Rückfragen U1 bis
-   U11, C1 bis C9, K1 bis K6 und D1 in `docs/AUFGABEN_AUTOR.md`. Antworten einarbeiten.
+1. **Autor:** Nachtest N182 bis N209 (0.2.37 bis 0.2.39) und, falls offen, N158 bis N181; Rückfragen U1 bis
+   U11, R1 bis R5, C1 bis C9, K1 bis K6 und D1 in `docs/AUFGABEN_AUTOR.md`. Antworten einarbeiten.
+   Zweig `rueckmeldung-0.2.39` (Fable, Nacht zum 17.10.2026) nach grüner Prüfung und Freigabe in
+   `main` übernehmen; Entscheidungen in `docs/ENTSCHEIDUNGEN.md`, Abschnitt „Rückmeldung zu 0.2.38“.
+   U10 („!“) ist damit umgesetzt; R4 (Stufen menschlicher) wartet auf die Richtung des Autors.
 2. **Fable, Zweig `trainerdaten`:** Pipeline `pipeline/trainer/`, Schemas `schemas/trainer*`,
    Daten `inhalte/de/trainer/`, Notizen `docs/TRAINERDATEN.md`. Fable pusht weder `main` noch
    `app/`. Sobald Fable fertig meldet und die Prüfung grün ist, führt Opus den Zweig zusammen und

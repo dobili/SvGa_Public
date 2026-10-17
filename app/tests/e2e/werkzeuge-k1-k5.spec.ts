@@ -39,7 +39,7 @@ test("Werkzeug Warnsignale (Abb. 4.11): W5 Lxf3, W3 König e8, Kennungen am Bret
   await oeffneAbbildung(page, "4.11", "4.11");
   await waehleWerkzeug(page, "Warnsignale");
   const karte = page.getByTestId("werkzeugkarte");
-  await expect(karte).toContainText("Lxf3 (+6)");
+  await expect(karte).toContainText("Lxf3 (schlägt die Dame mit Gewinn)");
   await expect(karte).toContainText("W3 Ohne Luft: König e8");
   await expect(page.locator(".brett svg text", { hasText: "W5" })).toHaveCount(1);
   await page.screenshot({ path: "test-results/bilder/warnsignale.png", fullPage: true });

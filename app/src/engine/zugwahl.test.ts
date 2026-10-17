@@ -7,7 +7,7 @@ import { describe, expect, it } from "vitest";
 import type { Bewertung, Staerke } from "./engineDienst";
 import { stufe } from "./stufen";
 import type { Variante } from "./uci";
-import { waehleZug, wertFuer, type Spielbewerter } from "./zugwahl";
+import { BUCHTREUE_VORGABE, type Spielbewerter, waehleZug, wertFuer } from "./zugwahl";
 
 /** Abb. 1.13 (nach 2. Dh5), Schwarz am Zug. */
 const FEN = "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2";
@@ -65,6 +65,13 @@ describe("Zugwahl", () => {
     const { b, aufrufe } = bewerter(KANDIDATEN);
     const wahl = await waehleZug(b, FEN, stufe(5), ["b8c6", "g8f6"], folge(0.1, 0.9));
     expect(wahl).toEqual({ uci: "g8f6", quelle: "buch", fehler: null, verlust: 0 });
+    expect(aufrufe).toHaveLength(0);
+  });
+
+  it("mit vorgegebener Eröffnung (Buchtreue 1) immer im Buch, auch bei hohem Wurf", async () => {
+    const { b, aufrufe } = bewerter(KANDIDATEN);
+    const wahl = await waehleZug(b, FEN, stufe(5), ["b8c6"], folge(0.99, 0.5), BUCHTREUE_VORGABE);
+    expect(wahl).toEqual({ uci: "b8c6", quelle: "buch", fehler: null, verlust: 0 });
     expect(aufrufe).toHaveLength(0);
   });
 

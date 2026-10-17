@@ -69,7 +69,9 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
   });
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await expect(page.getByRole("radio", { name: "Holz" })).toHaveAttribute("aria-checked", "true");
+  await expect(
+    page.getByRole("radiogroup", { name: "Brettfarben" }).getByRole("radio", { name: "Holz" }),
+  ).toHaveAttribute("aria-checked", "true");
   await expect(page.getByTestId("ich-lernziele")).toHaveText(/^1 von \d+$/);
   const merker = await page.evaluate(() => [
     localStorage.getItem("svga.einstellungen"),
@@ -78,7 +80,9 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
   expect(merker).toEqual([null, null]);
   await page.reload();
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await expect(page.getByRole("radio", { name: "Holz" })).toHaveAttribute("aria-checked", "true");
+  await expect(
+    page.getByRole("radiogroup", { name: "Brettfarben" }).getByRole("radio", { name: "Holz" }),
+  ).toHaveAttribute("aria-checked", "true");
 });
 
 test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async ({

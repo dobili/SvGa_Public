@@ -25,6 +25,11 @@ export interface Partieeintrag {
   readonly werte: readonly number[];
   /** Bester Zug der Engine je Stellung (UCI, „“ in Endstellungen); leer wie „werte“. */
   readonly beste: readonly string[];
+  /**
+   * Abstand des besten zum zweitbesten Zug je Stellung in Bauerneinheiten (für das „!“ des
+   * einzigen guten Zuges, seit 0.2.39); leer bei Auswertungen aus älteren Versionen.
+   */
+  readonly abstaende: readonly number[];
 }
 
 /** Letzte Wahl im Spielen-Bildschirm. */
@@ -75,7 +80,10 @@ export function mitLaufender(stand: Spielstand, partie: Partie | null): Spielsta
 export function legeAb(stand: Spielstand, partie: Partie): Spielstand {
   const andere = stand.partien.filter((e) => e.partie.id !== partie.id);
   const laufend = stand.laufend?.id === partie.id ? null : stand.laufend;
-  const partien = [{ partie, werte: [], beste: [] }, ...andere].slice(0, MAX_PARTIEN);
+  const partien = [{ partie, werte: [], beste: [], abstaende: [] }, ...andere].slice(
+    0,
+    MAX_PARTIEN,
+  );
   return { ...stand, laufend, partien };
 }
 
@@ -91,14 +99,17 @@ export function mitPartie(stand: Spielstand, partie: Partie): Spielstand {
   return { ...stand, laufend: partie, partien };
 }
 
-/** Schreibt die Auswertung einer abgelegten Partie: Werte und beste Züge je Stellung. */
+/** Schreibt die Auswertung einer abgelegten Partie: Werte, beste Züge und Abstände je Stellung. */
 export function mitWerten(
   stand: Spielstand,
   id: string,
   werte: readonly number[],
   beste: readonly string[],
+  abstaende: readonly number[] = [],
 ): Spielstand {
-  const partien = stand.partien.map((e) => (e.partie.id === id ? { ...e, werte, beste } : e));
+  const partien = stand.partien.map((e) =>
+    e.partie.id === id ? { ...e, werte, beste, abstaende } : e,
+  );
   return { ...stand, partien };
 }
 
@@ -197,6 +208,7 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
     uhr: uhreinstellungAus(roh.uhr),
     ruecknahmeErlaubt: roh.ruecknahmeErlaubt !== false,
     abbildung: typeof roh.abbildung === "string" ? roh.abbildung : null,
+    eroeffnung: typeof roh.eroeffnung === "string" ? roh.eroeffnung : null,
   };
 }
 
@@ -250,9 +262,12 @@ function eintragAus(roh: unknown): Partieeintrag | null {
     Array.isArray(roh.beste) && roh.beste.every((z) => typeof z === "string") ? roh.beste : [];
   // Werte und Züge gehören zusammen; passen sie nicht, wird neu ausgewertet.
   if (werte.length !== partie.zuege.length + 1 || beste.length !== werte.length) {
-    return { partie, werte: [], beste: [] };
+    return { partie, werte: [], beste: [], abstaende: [] };
   }
-  return { partie, werte, beste };
+  // Abstände gibt es erst seit 0.2.39; ohne sie bleibt die Auswertung gültig, nur ohne „!“.
+  const abstaende =
+    Array.isArray(roh.abstaende) && roh.abstaende.every(istZahl) ? roh.abstaende : [];
+  return { partie, werte, beste, abstaende: abstaende.length === werte.length ? abstaende : [] };
 }
 
 /** Der Spielstand aus Rohdaten; ohne Daten (Format 0 und 1) leer. */

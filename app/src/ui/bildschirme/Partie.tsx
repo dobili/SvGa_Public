@@ -13,7 +13,9 @@
  * ruhigen Ansicht ausgeblendet.
  * Seit 0.2.38 (Vorschlag H, Rückblick): Nach der Auswertung trägt beim Nachspielen das Zielfeld
  * des gezeigten Zuges sein Zeichen, ein goldener Pfeil zeigt den besseren Zug, links am Brett
- * steht ein Bewertungsbalken (spiel/rueckblick.ts). Während der Partie bleibt das aus.
+ * steht ein Bewertungsbalken (spiel/rueckblick.ts); seit 0.2.39 dazu unter dem Brett die Karte
+ * zum Zug mit Urteil, besserem Zug und Erklärung des Fehlers (ui/komponenten/useRueckblick.tsx).
+ * Während der Partie bleibt das aus.
  * Abhängigkeiten: ui/komponenten/usePartie.ts, spiel/, i18n.
  */
 import { Eye, EyeOff } from "lucide-react";
@@ -26,10 +28,8 @@ import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import { leserAmZug, stellungen, type Partie as PartieDaten } from "../../spiel/partie";
 import { mitVorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
-import { zugurteile, type Zugurteil } from "../../spiel/auswertung";
-import { rueckblickMarken } from "../../spiel/rueckblick";
+import { zugurteile } from "../../spiel/auswertung";
 import { Auswertung, type Sprung } from "../komponenten/Auswertung";
-import { Bewertungsbalken } from "../komponenten/Bewertungsbalken";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { Partieende } from "../komponenten/Partieende";
@@ -38,6 +38,7 @@ import { Partieuhr } from "../komponenten/Partieuhr";
 import { Partiezuege } from "../komponenten/Partiezuege";
 import { PartieLeiste, PartieSymbole, PartieWerkzeugkarten } from "../komponenten/PartieWerkzeuge";
 import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partiewerkzeug";
+import { useRueckblick, type Rueckblick } from "../komponenten/useRueckblick";
 import { SpielHinweis } from "../komponenten/SpielHinweis";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { useAuswertung } from "../komponenten/useAuswertung";
@@ -54,9 +55,12 @@ function gegnerVon(farbe: Farbe): Farbe {
 function Untertitel({ partie }: { partie: PartieDaten }) {
   const s = stufe(partie.einstellung.stufe);
   const farbe = t(partie.einstellung.eigeneFarbe === "white" ? "farbe.w" : "farbe.b");
+  const eroeffnung = partie.einstellung.eroeffnung;
   return (
     <p className="partie-untertitel">
-      {t("partie.untertitel", { nummer: s.nummer, name: t(s.name), farbe })}
+      {eroeffnung
+        ? t("partie.untertitelEroeffnung", { nummer: s.nummer, name: t(s.name), farbe, eroeffnung })
+        : t("partie.untertitel", { nummer: s.nummer, name: t(s.name), farbe })}
     </p>
   );
 }
@@ -122,40 +126,6 @@ interface Ansichtsstelle extends Sprung {
   readonly zuege: number;
 }
 
-/** Was der Rückblick nach der ausgewerteten Partie braucht (sonst null). */
-interface Rueckblick {
-  readonly werte: readonly number[];
-  readonly beste: readonly string[];
-  readonly urteile: readonly Zugurteil[];
-}
-
-/**
- * Zeichen, besserer Zug und Balken für die gezeigte Stelle (Vorschlag H).
- *
- * Beispiel: Stelle 3 nach 1. e4 e5 2. Dh5?!: „?!“ auf h5, goldener Pfeil zum Zug der Engine.
- */
-function rueckblickAn(
-  rueckblick: Rueckblick | null,
-  alle: readonly string[],
-  sans: readonly string[],
-  stelle: number,
-) {
-  if (!rueckblick) return { marken: [], leiste: null };
-  const index = stelle - 1;
-  const marken =
-    index >= 0
-      ? rueckblickMarken(
-          alle[index] ?? "",
-          sans[index] ?? "",
-          rueckblick.urteile[index],
-          rueckblick.beste[index] ?? "",
-        )
-      : [];
-  const wert = rueckblick.werte[stelle] ?? 0;
-  const leiste = (gedreht: boolean) => <Bewertungsbalken wert={wert} gedreht={gedreht} />;
-  return { marken, leiste };
-}
-
 /** Brett und Zugliste: das, was auch die ruhige Ansicht zeigt. */
 function Spielfeld({
   s,
@@ -195,9 +165,9 @@ function Spielfeld({
     verlauf,
     partie.einstellung.eigeneFarbe,
   );
+  const rb = useRueckblick(rueckblick, partie, alle, sans, stelle);
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
   const letzter = stelle > 0 ? zugFelder(alle[stelle - 1] ?? "", sans[stelle - 1] ?? "") : null;
-  const rb = rueckblickAn(rueckblick, alle, sans, stelle);
   const gesprungen = gewaehlt && gewaehlt.marken.length > 0 ? gewaehlt.marken : null;
   const markierungen = rechnung.ergebnis
     ? rechnung.markierungen
@@ -229,6 +199,7 @@ function Spielfeld({
         seitenleiste={rb.leiste}
       />
       <Uhr s={s} farbe={partie.einstellung.eigeneFarbe} />
+      {rb.karte}
       {!ruhig && <PartieLeiste werkzeug={werkzeug} />}
       <PartieWerkzeugkarten
         wahl={wahl}
@@ -259,7 +230,8 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   );
   const stand = useAuswertung(eintrag);
   const urteile = useMemo(
-    () => (eintrag ? zugurteile(eintrag.partie, eintrag.werte) : []),
+    () =>
+      eintrag ? zugurteile(eintrag.partie, eintrag.werte, eintrag.beste, eintrag.abstaende) : [],
     [eintrag],
   );
   const ruhig = vorlieben.ruhigeAnsicht;

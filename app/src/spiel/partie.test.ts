@@ -31,6 +31,7 @@ const EINSTELLUNG: Partieeinstellung = {
   uhr: null,
   ruecknahmeErlaubt: true,
   abbildung: null,
+  eroeffnung: null,
 };
 
 function enginezug(san: string, extra: Partial<Partiezug> = {}): Partiezug {

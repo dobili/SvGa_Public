@@ -25,6 +25,8 @@ export interface Partieeinstellung {
   readonly ruecknahmeErlaubt: boolean;
   /** Abbildungsnummer, wenn die Partie an einer Abbildung begann („1.26“), sonst null. */
   readonly abbildung: string | null;
+  /** Eröffnung, der die Engine folgen soll (Name aus dem Eröffnungsindex, seit 0.2.39), sonst null. */
+  readonly eroeffnung: string | null;
 }
 
 /** Ein Halbzug der Partie. Bei Engine-Zügen mit Herkunft und, falls absichtlich, Fehlerart. */

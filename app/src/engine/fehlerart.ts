@@ -1,6 +1,9 @@
 /**
  * Welchen typischen Anfängerfehler ein Zug darstellt (Konzept 8.2, Tabelle „Fehlerarten“).
  *
+ * Seit 0.2.39 liefert fehlerbefundIn zu jeder Art auch die Einzelheiten (welche Drohung, welche
+ * Figur hängt, welche Gabel oder Linie), damit der Rückblick nach der Partie sie am Brett zeigen
+ * kann (spiel/erklaerung.ts). Die Eröffnungsregeln stehen in fehlerart-eroeffnung.ts.
  * Rolle im Gesamtbild: Die Fehlersuche der Stufen 1 bis 4 (engine/fehlersuche.ts) sucht unter
  * allen legalen Zügen und den Kandidaten der Engine einen typischen Fehlerzug und protokolliert
  * seine Art; die Auswertung nach der Partie nennt sie („Mit 12... Sf6 hat die Engine eine Figur
@@ -27,23 +30,22 @@
 import { Chess, normalizeMove } from "chessops/chess";
 import { makeFen, parseFen } from "chessops/fen";
 import { makeSanAndPlay } from "chessops/san";
-import type { NormalMove, Piece, Role } from "chessops/types";
-import { makeUci, opposite, parseUci, squareRank } from "chessops/util";
-import { gefaehrlicheLinien } from "../analyse/k4-warnsignale";
+import type { NormalMove, Piece, Role, Square } from "chessops/types";
+import { opposite, parseUci } from "chessops/util";
+import { gefaehrlicheLinien, type GefaehrlicheLinie } from "../analyse/k4-warnsignale";
 import { profil } from "../analyse/stellungsprofil";
 import { abtausch } from "../schach/abtausch";
 import {
   drohungenVon,
-  legaleZuege,
   schlaege,
   sofortigeGewinne,
   type Drohung,
   type Schlagzug,
 } from "../schach/drohungen";
-import { gabelfelder } from "../schach/gabeln";
+import { gabelfelder, type Gabelfeld } from "../schach/gabeln";
 import { FIGURENWERT, type Stellung } from "../schach/stellung";
 import { erkenneMotive, type Motiv } from "../schach/taktikmotive";
-import { leichtfigurenZuHause } from "../schach/todsuenden";
+import { istKoenigMitte, istVerfruehteDame } from "./fehlerart-eroeffnung";
 
 export type Fehlerart =
   | "figurHaengen"
@@ -53,6 +55,23 @@ export type Fehlerart =
   | "taktikUebersehen"
   | "drohungIgnoriert"
   | "ungenau";
+
+/** Die übersehene Taktik: eine neue Gabel (W6), eine neue gefährliche Linie (W2) oder ein Motiv der Antwort. */
+export type Taktikbefund =
+  | { readonly art: "gabel"; readonly gabel: Gabelfeld }
+  | { readonly art: "linie"; readonly linie: GefaehrlicheLinie }
+  | { readonly art: "motiv"; readonly motiv: Motiv };
+
+/** Die Fehlerart mit ihren Einzelheiten für den Rückblick (0.2.39). */
+export interface Fehlerbefund {
+  readonly art: Fehlerart;
+  /** Bei „drohungIgnoriert“: die Drohung, die stehen blieb. */
+  readonly drohung: Drohung | null;
+  /** Bei „figurHaengen“: das Feld der Figur, die der Zug hängen lässt. */
+  readonly haengt: Square | null;
+  /** Bei „taktikUebersehen“: was übersehen wurde. */
+  readonly taktik: Taktikbefund | null;
+}
 
 /** Faustwerte aus Kapitel 1. */
 const LEICHTFIGUR = 3;
@@ -67,17 +86,6 @@ const DROHUNG_AB = 1;
 const DAMENOPFER_AB = DAME - LEICHTFIGUR;
 /** Wert einer Mattdrohung beim Vergleich mit Materialdrohungen. */
 const MATTDROHUNG = 1000;
-/** Leichtfiguren zu Hause, ab denen ein Damenzug „verfrüht“ ist (wie k1-todsuenden). */
-const ZU_HAUSE_DAME = 2;
-/** Ab diesem Zug gilt eine ausgelassene mögliche Rochade als „König in der Mitte“. */
-const ROCHADE_SPAETESTENS = 10;
-const DAMENLINIE = 3;
-const GRUNDREIHE = { white: 0, black: 7 } as const;
-const AUF_REIHE = 8;
-const LETZTE_REIHEN = new Set([0, 7]);
-/** Linien des Königs nach der kurzen (g) und der langen (c) Rochade, in UCI der Engine. */
-const KOENIG_KURZ = 6;
-const KOENIG_LANG = 2;
 /** Motive aus Kapitel 7, die als „Taktik übersehen“ gelten. */
 const TAKTIKMOTIVE: ReadonlySet<Motiv> = new Set<Motiv>([
   "gabel",
@@ -104,7 +112,7 @@ export interface Lage {
 }
 
 /** Ein geprüfter Zug: der Zug, die Stellung danach und was er schlägt. */
-interface Zugprobe {
+export interface Zugprobe {
   readonly zug: NormalMove;
   readonly figur: Piece;
   readonly danach: Chess;
@@ -115,23 +123,25 @@ function stellungVon(regeln: Chess): Stellung {
   return { fen: makeFen(regeln.toSetup()), brett: regeln.board, amZug: regeln.turn, regeln };
 }
 
-/** Gabelfelder einer Farbe als Schlüssel (Figur, Feld, Ziele). */
-function gabelschluessel(stellung: Stellung, farbe: Piece["color"]): Set<string> {
-  const karte = profil(stellung).angriffskarte;
-  return new Set(
-    gabelfelder(stellung, karte, farbe).map(
-      (g) => `${g.figur.feld}-${g.feld}:${[...g.ziele].sort((a, b) => a - b).join(",")}`,
-    ),
-  );
+/** Schlüssel eines Gabelfelds (Figur, Feld, Ziele), um Gabeln vor und nach dem Zug zu vergleichen. */
+function gabelschluessel(g: Gabelfeld): string {
+  return `${g.figur.feld}-${g.feld}:${[...g.ziele].sort((a, b) => a - b).join(",")}`;
 }
 
-/** Gefährliche Linien gegen eine Farbe als Schlüssel (Art, Langschrittfigur, hintere Figur). */
-function linienschluessel(stellung: Stellung, farbe: Piece["color"]): Set<string> {
-  return new Set(
-    gefaehrlicheLinien(profil(stellung), farbe).map(
-      (l) => `${l.art}:${l.von.feld}-${l.hinten.feld}`,
-    ),
-  );
+/** Gabelfelder einer Farbe mit Schlüssel. */
+function gabelnVon(stellung: Stellung, farbe: Piece["color"]): Map<string, Gabelfeld> {
+  const karte = profil(stellung).angriffskarte;
+  return new Map(gabelfelder(stellung, karte, farbe).map((g) => [gabelschluessel(g), g]));
+}
+
+/** Schlüssel einer gefährlichen Linie (Art, Langschrittfigur, hintere Figur). */
+function linienschluessel(l: GefaehrlicheLinie): string {
+  return `${l.art}:${l.von.feld}-${l.hinten.feld}`;
+}
+
+/** Gefährliche Linien gegen eine Farbe mit Schlüssel. */
+function linienGegen(stellung: Stellung, farbe: Piece["color"]): Map<string, GefaehrlicheLinie> {
+  return new Map(gefaehrlicheLinien(profil(stellung), farbe).map((l) => [linienschluessel(l), l]));
 }
 
 /**
@@ -152,8 +162,8 @@ export function lageVon(fen: string): Lage | null {
     regeln,
     drohungen: drohungenVon(regeln, feind) ?? [],
     schlaege: schlaege(regeln),
-    gabeln: imSchach ? new Set() : gabelschluessel(stellung, feind),
-    linien: linienschluessel(stellung, regeln.turn),
+    gabeln: new Set(imSchach ? [] : gabelnVon(stellung, feind).keys()),
+    linien: new Set(linienGegen(stellung, regeln.turn).keys()),
   };
 }
 
@@ -178,41 +188,34 @@ function probe(lage: Lage, uci: string): Zugprobe | null {
   return { zug, figur, danach, geschlagen: geschlageneRolle(lage.regeln, zug) };
 }
 
-/**
- * Ein legaler Zug in der UCI-Schreibweise der Engine: Rochade als Königszug um zwei Felder
- * (chessops schreibt „König auf Turm“), Umwandlung immer in die Dame.
- */
-export function engineUci(regeln: Chess, zug: NormalMove): string {
-  const figur = regeln.board.get(zug.from);
-  if (figur?.role === "king" && regeln.board[regeln.turn].has(zug.to)) {
-    const reihe = zug.from - (zug.from % AUF_REIHE);
-    return makeUci({ from: zug.from, to: reihe + (zug.to > zug.from ? KOENIG_KURZ : KOENIG_LANG) });
-  }
-  if (figur?.role === "pawn" && LETZTE_REIHEN.has(squareRank(zug.to))) {
-    return makeUci({ ...zug, promotion: "queen" });
-  }
-  return makeUci(zug);
+export { alleZuege, engineUci } from "./engineZuege";
+
+/** Eine stehengelassene Drohung mit ihrem Wert (Matt als MATTDROHUNG, sonst Bauerneinheiten). */
+interface Stehengelassen {
+  readonly wert: number;
+  readonly drohung: Drohung | null;
 }
 
-/** Alle legalen Züge der Seite am Zug in der UCI-Schreibweise der Engine. */
-export function alleZuege(lage: Lage): string[] {
-  return legaleZuege(lage.regeln).map((zug) => engineUci(lage.regeln, zug));
-}
+const NICHTS: Stehengelassen = { wert: 0, drohung: null };
 
 /**
- * Wert der Drohung, die der Zug stehen lässt (Matt, sonst Bauerneinheiten); 0, wenn keine.
+ * Die stärkste Drohung, die der Zug stehen lässt; Wert 0 und keine Drohung, wenn keine.
  *
  * Regel: Kapitel 1, Röntgen-Frage 3 („Was droht mein Gegner?“): Eine Drohung von vorher gilt
  * noch, wenn der Gegner nach dem Zug denselben Schlag mit Gewinn oder ein Matt in einem Zug hat.
  * Gibt der Zug Schach, muss der Gegner erst darauf antworten; dann zählt nichts.
  */
-function stehengelasseneDrohung(lage: Lage, p: Zugprobe): number {
-  if (lage.drohungen.length === 0 || p.danach.isCheck()) return 0;
+function stehengelasseneDrohung(lage: Lage, p: Zugprobe): Stehengelassen {
+  if (lage.drohungen.length === 0 || p.danach.isCheck()) return NICHTS;
   const danach = sofortigeGewinne(p.danach);
-  let wert = 0;
+  let staerkste = NICHTS;
+  const merke = (wert: number, drohung: Drohung) => {
+    if (wert > staerkste.wert) staerkste = { wert, drohung };
+  };
   for (const alt of lage.drohungen) {
     if (alt.art === "matt") {
-      if (danach.some((d) => d.art === "matt")) wert = Math.max(wert, MATTDROHUNG);
+      const matt = danach.find((d) => d.art === "matt");
+      if (matt) merke(MATTDROHUNG, matt);
       continue;
     }
     if (alt.zug.bilanz < DROHUNG_AB) continue;
@@ -222,21 +225,21 @@ function stehengelasseneDrohung(lage: Lage, p: Zugprobe): number {
         neu.zug.nach === alt.zug.nach &&
         neu.zug.geschlagen === alt.zug.geschlagen &&
         neu.zug.bilanz >= DROHUNG_AB;
-      if (gleich) wert = Math.max(wert, neu.zug.bilanz);
+      if (gleich) merke(neu.zug.bilanz, neu);
     }
   }
-  return wert;
+  return staerkste;
 }
 
 /**
- * Größter Abtauschgewinn des Gegners an einer eigenen Figur (ab Leichtfigur), die erst durch
- * den Zug verloren geht; 0, wenn keine. Regel: Kapitel 4, W1, mit der Abtauschrechnung aus
- * Kapitel 1 (Fesselungen bleiben wie im Buch unberücksichtigt).
+ * Die eigene Figur (ab Leichtfigur), die erst durch den Zug verloren geht, mit dem größten
+ * Abtauschgewinn des Gegners; Wert 0 ohne Feld, wenn keine. Regel: Kapitel 4, W1, mit der
+ * Abtauschrechnung aus Kapitel 1 (Fesselungen bleiben wie im Buch unberücksichtigt).
  */
-function neuVerlorene(lage: Lage, p: Zugprobe): number {
-  if (p.danach.isCheck()) return 0;
+function neuVerlorene(lage: Lage, p: Zugprobe): { wert: number; feld: Square | null } {
+  if (p.danach.isCheck()) return { wert: 0, feld: null };
   const eigen = opposite(p.danach.turn);
-  let wert = 0;
+  let gefunden: { wert: number; feld: Square | null } = { wert: 0, feld: null };
   for (const feld of p.danach.board[eigen]) {
     const figur = p.danach.board.get(feld);
     if (!figur || figur.role === "king" || FIGURENWERT[figur.role] < LEICHTFIGUR) continue;
@@ -244,9 +247,9 @@ function neuVerlorene(lage: Lage, p: Zugprobe): number {
     if (!jetzt || jetzt.bilanz < VERLOREN_AB) continue;
     const vorher = abtausch(lage.regeln.board, feld === p.zug.to ? p.zug.from : feld);
     if (vorher && vorher.bilanz >= VERLOREN_AB) continue;
-    wert = Math.max(wert, jetzt.bilanz);
+    if (jetzt.bilanz > gefunden.wert) gefunden = { wert: jetzt.bilanz, feld };
   }
-  return wert;
+  return gefunden;
 }
 
 /** Schlagreflex (W5): ein Schlag mit negativer Abtauschbilanz oder laut Engine mit Verlust. */
@@ -257,9 +260,9 @@ function istSchlagreflex(lage: Lage, p: Zugprobe, verlust: number | null): boole
   return schlag !== undefined && schlag.bilanz < 0;
 }
 
-/** Ist die Antwort der Engine ein Motiv aus Kapitel 7 (Gabel, Fesselung, Spieß, Abzug, Doppelschach)? */
-function antwortIstMotiv(danach: Chess, antwort: readonly string[]): boolean {
-  if (antwort.length === 0) return false;
+/** Das Motiv aus Kapitel 7 in der Antwort der Engine (Gabel, Fesselung, Spieß, Abzug, Doppelschach), sonst null. */
+function antwortmotiv(danach: Chess, antwort: readonly string[]): Motiv | null {
+  if (antwort.length === 0) return null;
   const regeln = danach.clone();
   const san: string[] = [];
   for (const uci of antwort.slice(0, ANTWORT_HALBZUEGE)) {
@@ -270,86 +273,80 @@ function antwortIstMotiv(danach: Chess, antwort: readonly string[]): boolean {
     san.push(makeSanAndPlay(regeln, zug));
   }
   const befund = erkenneMotive(danach, san);
-  return befund?.motive.some((m) => TAKTIKMOTIVE.has(m)) ?? false;
+  return befund?.motive.find((m) => TAKTIKMOTIVE.has(m)) ?? null;
 }
 
 /**
  * Taktik übersehen (Kapitel 7): Nach dem Zug hat der Gegner eine neue Gabel (W6) oder eine neue
- * gefährliche Linie (W2) gegen die ziehende Seite, oder seine Antwort ist ein Motiv.
+ * gefährliche Linie (W2) gegen die ziehende Seite, oder seine Antwort ist ein Motiv; sonst null.
  */
-function istTaktikUebersehen(lage: Lage, p: Zugprobe, antwort: readonly string[]): boolean {
-  if (p.danach.isCheck()) return false;
+function uebersehneTaktik(
+  lage: Lage,
+  p: Zugprobe,
+  antwort: readonly string[],
+): Taktikbefund | null {
+  if (p.danach.isCheck()) return null;
   if (!lage.regeln.isCheck()) {
     const stellung = stellungVon(p.danach);
     const feind = p.danach.turn;
-    if ([...gabelschluessel(stellung, feind)].some((k) => !lage.gabeln.has(k))) return true;
-    const linien = linienschluessel(stellung, opposite(feind));
-    if ([...linien].some((k) => !lage.linien.has(k))) return true;
+    for (const [schluessel, gabel] of gabelnVon(stellung, feind)) {
+      if (!lage.gabeln.has(schluessel)) return { art: "gabel", gabel };
+    }
+    for (const [schluessel, linie] of linienGegen(stellung, opposite(feind))) {
+      if (!lage.linien.has(schluessel)) return { art: "linie", linie };
+    }
   }
-  return antwortIstMotiv(p.danach, antwort);
+  const motiv = antwortmotiv(p.danach, antwort);
+  return motiv ? { art: "motiv", motiv } : null;
 }
 
-/** Verfrühte Dame (Kapitel 1): vom Startfeld ohne Schlag, zwei Leichtfiguren noch zu Hause. */
-function istVerfruehteDame(lage: Lage, p: Zugprobe): boolean {
-  const startfeld = GRUNDREIHE[lage.regeln.turn] * AUF_REIHE + DAMENLINIE;
-  return (
-    p.figur.role === "queen" &&
-    p.zug.from === startfeld &&
-    p.geschlagen === null &&
-    leichtfigurenZuHause(lage.regeln.board, lage.regeln.turn) >= ZU_HAUSE_DAME
-  );
-}
-
-/** Kann die Seite am Zug jetzt rochieren (ein Königszug auf den eigenen Turm)? */
-function kannRochieren(regeln: Chess): boolean {
-  const koenig = regeln.board.kingOf(regeln.turn);
-  if (koenig === undefined) return false;
-  for (const ziel of regeln.dests(koenig)) {
-    const figur = regeln.board.get(ziel);
-    if (figur?.role === "rook" && figur.color === regeln.turn) return true;
-  }
-  return false;
-}
-
-/** König in der Mitte (Kapitel 1): ab Zug 10 eine mögliche Rochade ausgelassen. */
-function istKoenigMitte(lage: Lage, p: Zugprobe): boolean {
-  return (
-    lage.regeln.fullmoves >= ROCHADE_SPAETESTENS &&
-    p.figur.role !== "king" &&
-    kannRochieren(lage.regeln)
-  );
-}
+const OHNE_EINZELHEITEN = { drohung: null, haengt: null, taktik: null } as const;
 
 /**
- * Ordnet einem Zug seine Fehlerart zu.
+ * Ordnet einem Zug seine Fehlerart mit Einzelheiten zu.
  *
  * Eingaben: Lage vor dem Zug, Zug in UCI, die Antwort der Engine (UCI, darf leer sein) und
  * der Verlust des Zuges gegenüber dem besten in Bauerneinheiten (null, wenn noch unbekannt).
- * Ausgabe: Fehlerart, „ungenau“, wenn keine Regel passt oder der Zug nicht geht.
+ * Ausgabe: Befund mit Art; „ungenau“ ohne Einzelheiten, wenn keine Regel passt oder der Zug
+ * nicht geht.
  * Reihenfolge: Eine Mattdrohung oder eine Drohung ab Leichtfigur, die stehen bleibt, zuerst;
  * dann Schlagreflex, Figur hängen lassen, kleinere Drohungen, Taktik, Dame, König.
- * Beispiel: Abb. 1.13 nach 2. Dh5: 2... Sf6?? lässt Dxe5+ zu → „drohungIgnoriert“.
+ * Beispiel: Abb. 1.13 nach 2. Dh5: 2... Sf6?? lässt Dxe5+ zu → „drohungIgnoriert“ mit der
+ * Drohung Dxe5+ (gewinnt den Bauern e5).
  */
+export function fehlerbefundIn(
+  lage: Lage,
+  uci: string,
+  antwort: readonly string[],
+  verlust: number | null,
+): Fehlerbefund {
+  const p = probe(lage, uci);
+  if (!p) return { art: "ungenau", ...OHNE_EINZELHEITEN };
+  const drohung = stehengelasseneDrohung(lage, p);
+  const haengt = neuVerlorene(lage, p);
+  const ignoriert: Fehlerbefund = { art: "drohungIgnoriert", ...OHNE_EINZELHEITEN, ...drohung };
+  if (drohung.wert >= MATTDROHUNG || (drohung.wert >= LEICHTFIGUR && drohung.wert >= haengt.wert)) {
+    return ignoriert;
+  }
+  if (istSchlagreflex(lage, p, verlust)) return { art: "schlagreflex", ...OHNE_EINZELHEITEN };
+  if (haengt.feld !== null)
+    return { art: "figurHaengen", ...OHNE_EINZELHEITEN, haengt: haengt.feld };
+  if (drohung.wert > 0) return ignoriert;
+  const taktik = uebersehneTaktik(lage, p, antwort);
+  if (taktik) return { art: "taktikUebersehen", ...OHNE_EINZELHEITEN, taktik };
+  if (istVerfruehteDame(lage, p)) return { art: "verfruehteDame", ...OHNE_EINZELHEITEN };
+  if (istKoenigMitte(lage, p)) return { art: "koenigMitte", ...OHNE_EINZELHEITEN };
+  return { art: "ungenau", ...OHNE_EINZELHEITEN };
+}
+
+/** Nur die Fehlerart eines Zuges (für die Fehlersuche der Engine, engine/fehlersuche.ts). */
 export function fehlerartIn(
   lage: Lage,
   uci: string,
   antwort: readonly string[],
   verlust: number | null,
 ): Fehlerart {
-  const p = probe(lage, uci);
-  if (!p) return "ungenau";
-  const drohung = stehengelasseneDrohung(lage, p);
-  const haengt = neuVerlorene(lage, p);
-  if (drohung >= MATTDROHUNG || (drohung >= LEICHTFIGUR && drohung >= haengt)) {
-    return "drohungIgnoriert";
-  }
-  if (istSchlagreflex(lage, p, verlust)) return "schlagreflex";
-  if (haengt > 0) return "figurHaengen";
-  if (drohung > 0) return "drohungIgnoriert";
-  if (istTaktikUebersehen(lage, p, antwort)) return "taktikUebersehen";
-  if (istVerfruehteDame(lage, p)) return "verfruehteDame";
-  if (istKoenigMitte(lage, p)) return "koenigMitte";
-  return "ungenau";
+  return fehlerbefundIn(lage, uci, antwort, verlust).art;
 }
 
 /**

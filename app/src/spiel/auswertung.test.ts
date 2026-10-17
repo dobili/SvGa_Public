@@ -26,6 +26,7 @@ function partie(): Partie {
       uhr: null,
       ruecknahmeErlaubt: true,
       abbildung: null,
+      eroeffnung: null,
     },
     "p",
     "2026-10-15T08:00:00.000Z",
@@ -50,6 +51,26 @@ describe("Auswertung", () => {
     expect(zeichenFuer(0.5)).toBe("?!");
     expect(zeichenFuer(1.2)).toBe("?");
     expect(zeichenFuer(3)).toBe("??");
+  });
+
+  it("„!“ für den einzigen guten Zug: bester Zug und mindestens 1,2 Abstand zum zweitbesten", () => {
+    const p = partie();
+    const werte = [0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 10, 10];
+    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "f1c4", "g8f6", "h5f7", ""];
+    const abstaende = [0, 0, 0, 1.5, 1.1, 0, 5, 0];
+    const zeichen = zugurteile(p, werte, beste, abstaende).map((u) => u.zeichen);
+    // 2... Sc6: bester Zug mit Abstand 1,5 → „!“; 3. Lc4: Abstand 1,1 reicht nicht; 4. Dxf7# „!“.
+    expect(zeichen).toEqual([null, null, "?!", "!", null, "??", "!"]);
+    // Ohne Abstände (ältere Auswertung) gibt es kein „!“.
+    expect(zugurteile(p, werte).map((u) => u.zeichen)).toEqual([
+      null,
+      null,
+      "?!",
+      null,
+      null,
+      "??",
+      null,
+    ]);
   });
 
   it("Matt und Patt ohne Engine", () => {

@@ -6,7 +6,8 @@
  * Figur hängen lassen (W1). Hast du es gesehen?“). Die Werte rechnet useAuswertung im
  * Hintergrund; die Urteile spiel/auswertung.ts. Ein Sprung zeigt die Stellung vor dem Zug mit
  * dem besseren Zug (gold) und dem gespielten (rot). Darüber steht seit 0.2.38 die Verlaufskurve
- * (Vorschlag H); ein Tipp darauf zeigt die Stellung mit Zeichen und besserem Zug.
+ * (Vorschlag H); ein Tipp darauf zeigt die Stellung mit Zeichen und besserem Zug. Seit 0.2.39
+ * folgt die Karte „Spielstärke“ (Genauigkeit, Schätzung, Zeichen je Seite, Spielstaerke.tsx).
  * Abhängigkeiten: spiel/auswertung.ts, spiel/pgn.ts, speicher/partien.ts, i18n.
  */
 import { useState } from "react";
@@ -28,6 +29,7 @@ import { zugFelder } from "../../schach/weiterspielen";
 import type { Partieeintrag } from "../../speicher/partien";
 import { bieteDateiAn } from "./dateiAnbieten";
 import { Fortschrittsbalken } from "./Fortschrittsbalken";
+import { Spielstaerke } from "./Spielstaerke";
 import { Verlaufskurve } from "./Verlaufskurve";
 import type { Auswertungsstand } from "./useAuswertung";
 
@@ -219,6 +221,12 @@ export function Auswertung({
       )}
       <Enginefehler partie={eintrag.partie} beiSprung={beiSprung} />
       <Pgn partie={eintrag.partie} urteile={urteile} />
+      <Spielstaerke
+        partie={eintrag.partie}
+        werte={eintrag.werte}
+        urteile={urteile}
+        beste={eintrag.beste}
+      />
     </section>
   );
 }

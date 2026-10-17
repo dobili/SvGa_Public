@@ -38,7 +38,8 @@ function stufenAus(roh: unknown): Readonly<Record<Phase, Stufennummer>> {
   };
 }
 
-function fehlerartenAus(roh: unknown): readonly Fehlerart[] {
+/** Fehlerarten aus Rohdaten; ohne Liste alle (auch für die Abhakliste der Vorlieben, 0.2.60). */
+export function fehlerartenAus(roh: unknown): readonly Fehlerart[] {
   if (!Array.isArray(roh)) return FEHLERARTEN;
   return FEHLERARTEN.filter((art) => roh.includes(art));
 }

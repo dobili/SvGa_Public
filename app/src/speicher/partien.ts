@@ -16,7 +16,7 @@ import { BLINDE_FEHLERARTEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import { STIL_MAX, STIL_MIN } from "../engine/stil";
-import { blindeFleckenAus, eigeneGegnerAus } from "./gegner";
+import { blindeFleckenAus, eigeneGegnerAus, fehlerartenAus } from "./gegner";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 import type { Partieende } from "../spiel/ergebnis";
@@ -76,6 +76,11 @@ export interface Spielvorlieben {
   readonly ruecknahmeErlaubt: boolean;
   /** Ruhige Ansicht: nur Brett, Zugnavigation und gespielte Züge (Wunsch des Autors). */
   readonly ruhigeAnsicht: boolean;
+  /**
+   * Abhakliste der Fehlerarten (0.2.60, Rest aus S7): welche absichtlichen Fehler die
+   * Engine-Stufen 1 bis 4 und die vorgefertigten Gegner machen dürfen; Vorgabe alle.
+   */
+  readonly erlaubteFehlerarten: readonly Fehlerart[];
 }
 
 export interface Spielstand {
@@ -99,6 +104,7 @@ export const STANDARD_VORLIEBEN: Spielvorlieben = {
   uhr: null,
   ruecknahmeErlaubt: true,
   ruhigeAnsicht: false,
+  erlaubteFehlerarten: FEHLERARTEN,
 };
 
 export const LEERER_SPIELSTAND: Spielstand = {
@@ -375,6 +381,7 @@ function vorliebenAus(roh: unknown): Spielvorlieben {
     uhr: uhreinstellungAus(roh.uhr),
     ruecknahmeErlaubt: roh.ruecknahmeErlaubt !== false,
     ruhigeAnsicht: roh.ruhigeAnsicht === true,
+    erlaubteFehlerarten: fehlerartenAus(roh.erlaubteFehlerarten),
   };
 }
 

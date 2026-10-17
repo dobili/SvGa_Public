@@ -3,6 +3,7 @@
  * Lesen aus Rohdaten mit beschädigten Einträgen. Dazu der Weg durch JSON wie bei der Sicherung.
  */
 import { describe, expect, it } from "vitest";
+import { FEHLERARTEN } from "../engine/fehlerart";
 import { leserzug, neuePartie, ziehe, type Partie, type Partiezug } from "../spiel/partie";
 import { leereDaten, wandleUm } from "./format";
 import {
@@ -197,6 +198,17 @@ describe("Lesen aus Rohdaten", () => {
   it("Werte, die nicht zur Partie passen, fallen weg", () => {
     const stand = mitWerten(legeAb(LEERER_SPIELSTAND, partie("a")), "a", [0], ["e2e4"]);
     expect(spielstandAus(durchJson(stand)).partien[0]?.werte).toEqual([]);
+  });
+
+  it("Abhakliste der Fehlerarten (0.2.60): ohne Angabe alle, sonst nur bekannte Arten", () => {
+    const ohne = spielstandAus({ vorlieben: { stufe: 2 } });
+    expect(ohne.vorlieben.erlaubteFehlerarten).toEqual(FEHLERARTEN);
+    const mit = spielstandAus({
+      vorlieben: { erlaubteFehlerarten: ["figurHaengen", "unsinn", "bauernraub"] },
+    });
+    expect(mit.vorlieben.erlaubteFehlerarten).toEqual(["figurHaengen", "bauernraub"]);
+    const leer = spielstandAus({ vorlieben: { erlaubteFehlerarten: [] } });
+    expect(leer.vorlieben.erlaubteFehlerarten).toEqual([]);
   });
 
   it("Unsinn ergibt einen leeren Spielstand mit Standardvorlieben", () => {

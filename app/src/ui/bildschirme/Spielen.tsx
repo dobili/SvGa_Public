@@ -26,7 +26,8 @@ import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
 import { StufenWahl } from "../komponenten/StufenWahl";
 import { GegnerWahl, HilfenWahl } from "../komponenten/GegnerWahl";
-import { gegnerVon, type EigenerGegner } from "../../engine/gegner";
+import type { Fehlerart } from "../../engine/fehlerart";
+import { gegnerVon, unterAbhakliste, type EigenerGegner } from "../../engine/gegner";
 import { GegnerEditor } from "../komponenten/GegnerEditor";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
@@ -217,8 +218,16 @@ function Startstellung({
   );
 }
 
-/** Name, Fehlerarten, Stil und blinde Flecken des gewählten Gegners für die Partie (0.2.42, 0.2.46). */
-function gegnerprofil(bot: string | null, eigene: readonly EigenerGegner[]) {
+/**
+ * Name, Fehlerarten, Stil und blinde Flecken des gewählten Gegners für die Partie (0.2.42, 0.2.46).
+ * Die Abhakliste der Einstellungen (0.2.60) beschneidet die Fehlerarten der Engine-Stufen und der
+ * vorgefertigten Gegner; eigene Gegner haben ihre eigene Liste.
+ */
+function gegnerprofil(
+  bot: string | null,
+  eigene: readonly EigenerGegner[],
+  erlaubt: readonly Fehlerart[],
+) {
   const eigener = eigene.find((g) => g.kennung === bot);
   if (eigener) {
     return {
@@ -229,10 +238,10 @@ function gegnerprofil(bot: string | null, eigene: readonly EigenerGegner[]) {
     };
   }
   const vorgefertigt = gegnerVon(bot);
-  if (!vorgefertigt) return {};
+  if (!vorgefertigt) return { fehlerarten: unterAbhakliste(null, erlaubt) };
   return {
     botName: vorgefertigt.name,
-    fehlerarten: vorgefertigt.fehlerarten,
+    fehlerarten: unterAbhakliste(vorgefertigt.fehlerarten, erlaubt),
     blindeFlecken: vorgefertigt.blindeFlecken,
   };
 }
@@ -245,7 +254,7 @@ function useBeginne(fen: string, abbildung: string | undefined) {
     const v = wahl.vorlieben;
     const bot = v.gegner === "engine" ? v.bot : null;
     const einstellung = {
-      ...gegnerprofil(bot, eigene),
+      ...gegnerprofil(bot, eigene, v.erlaubteFehlerarten),
       startFen: fen,
       eigeneFarbe: wahl.farbe,
       stufe: v.stufenJePhase.mittelspiel,

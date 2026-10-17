@@ -1635,6 +1635,27 @@ ab; unsere Zahlen blieben sonst je Leser verschieden und schwerer erklärbar).
 - **Messlauf:** `app/src/spiel/opfer.messung.ts` (nicht in der CI) rechnet die Datei mit der
   Engine durch; Aufruf `npm run messen:opfer` im Ordner app, Ergebnis nur lokal.
 
+## Abhakliste der Fehlerarten (17.10.2026, Fable, Zweig `fehlerarten-abhakliste`, Version 0.2.60)
+
+Rest aus Rückfrage S7 (Vorschlag des Autors seit 0.2.40), nach Regel 9 ohne weitere Rückfrage
+gebaut, da der Rückbau einfach ist (eine Vorliebe, die beim Lesen fehlen darf).
+
+- **Was:** In den Einstellungen steht unter „Darstellung und Training“ die Karte „Absichtliche
+  Fehler der Engine“ (`ui/komponenten/FehlerartenKarte.tsx`): die 14 Fehlerarten als Haken, dazu
+  „Alle erlauben“, „Keine erlauben“ und die Zeile „n von 14 Arten erlaubt“. Die Liste liegt in den
+  Spielvorlieben (`Spielvorlieben.erlaubteFehlerarten`, Vorgabe alle; fehlt sie in alten Daten,
+  gelten alle).
+- **Wirkung:** Beim Anlegen einer Partie (`Spielen.tsx`, `gegnerprofil`) wird die Liste des
+  Gegners mit der Abhakliste geschnitten (`engine/gegner.ts`, `unterAbhakliste`): für die
+  Engine-Stufen 1 bis 4 (bisher alle Arten) und die vorgefertigten Gegner (ihre Persönlichkeit).
+  Sind alle Arten erlaubt, ändert sich nichts. Eine leere Liste heißt „keine absichtlichen
+  Fehler“, die Stufe spielt dann nur noch ihre Rechenstärke. Eigene Gegner behalten ihre eigene
+  Liste aus dem Editor (so in S7 und S14 festgehalten). Die Liste gilt ab der nächsten neuen
+  Partie, eine laufende Partie behält ihre Einstellung.
+- **Warum nicht je Stufe:** Eine Liste je Stufe hätte vier Karten gebraucht; wer das will, legt
+  einen eigenen Gegner an. Die allgemeine Liste ist für den Lesefortschritt gedacht („nur die
+  Fehler aus Kapitel 1 und 4“).
+
 ## Brillant, zweiter Schritt: Opfer wirklich annehmbar (17.10.2026, Fable, Zweig `brillant-annehmbar`, Version 0.2.59)
 
 Nach Regel 9 (Empfehlungen gleich umsetzen) gebaut, was in 0.2.54 noch „bei Bedarf später“

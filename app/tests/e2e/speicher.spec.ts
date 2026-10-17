@@ -207,3 +207,20 @@ test("Hinweis auf die Datensicherung nach vier Stunden App-Zeit, „Später“ u
   await page.clock.runFor(ZWEI_MINUTEN_MS);
   await expect(hinweis).toHaveCount(0);
 });
+
+test("Abhakliste der Fehlerarten (0.2.60): ein Haken weniger überlebt das Neuladen", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  const karte = page.getByTestId("fehlerarten-abhakliste");
+  await expect(karte.getByRole("status")).toHaveText("14 von 14 Arten erlaubt");
+  await karte.getByRole("checkbox", { name: /eine Figur hängen lassen/ }).uncheck();
+  await expect(karte.getByRole("status")).toHaveText("13 von 14 Arten erlaubt");
+  await page.reload();
+  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await expect(karte.getByRole("status")).toHaveText("13 von 14 Arten erlaubt");
+  await expect(karte.getByRole("checkbox", { name: /eine Figur hängen lassen/ })).not.toBeChecked();
+  await karte.getByRole("button", { name: "Keine erlauben" }).click();
+  await expect(karte.getByRole("status")).toHaveText("0 von 14 Arten erlaubt");
+});

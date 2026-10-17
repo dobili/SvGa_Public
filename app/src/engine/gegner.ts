@@ -7,11 +7,13 @@
  * nach Stärke sortiert. Die Stufen selbst (Skill Level, Fehlerprofile) stehen in stufen.ts. Seit
  * 0.2.46 hat jeder Gegner eine Persönlichkeit: eigene Fehlerliste und blinde Flecken
  * (engine/blindeFlecken.ts); die Stufen je Phase bleiben dem Leser verborgen (Wunsch des Autors).
+ * Seit 0.2.60 gilt dazu die allgemeine Abhakliste der Fehlerarten aus den Einstellungen
+ * (`unterAbhakliste`, Rest aus Rückfrage S7).
  * Abhängigkeiten: stufen.ts, blindeFlecken.ts, fehlerart.ts, schach/phase.ts, i18n.
  */
 import type { Textschluessel } from "../i18n/sprache";
 import type { BlinderFleck } from "./blindeFlecken";
-import type { Fehlerart } from "./fehlerart";
+import { FEHLERARTEN, type Fehlerart } from "./fehlerart";
 import type { Phase } from "../schach/phase";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
 
@@ -201,6 +203,25 @@ export function gegnername(
 ): string | null {
   if (botName) return botName;
   return gegnerVon(kennung)?.name ?? eigene.find((g) => g.kennung === kennung)?.name ?? null;
+}
+
+/**
+ * Die Fehlerarten einer Partie unter der allgemeinen Abhakliste (0.2.60, Rest aus Rückfrage S7).
+ *
+ * Warum: Die Liste in den Einstellungen sagt, welche absichtlichen Fehler die Engine-Stufen und
+ * die vorgefertigten Gegner überhaupt machen dürfen (eigene Gegner haben ihre eigene Liste).
+ * Eingaben: Liste des Gegners (null: alle Arten) und die erlaubten Arten. Ausgabe: null, wenn
+ * beides alles erlaubt (wie bisher); sonst der Schnitt, leer heißt „keine absichtlichen Fehler“.
+ * Beispiel: Max (Dame früh, Bauernraub, Figur hängen, Tempoverlust) ohne „Figur hängen“ in der
+ * Liste → Dame früh, Bauernraub, Tempoverlust.
+ */
+export function unterAbhakliste(
+  gegnerliste: readonly Fehlerart[] | null,
+  erlaubt: readonly Fehlerart[],
+): readonly Fehlerart[] | null {
+  const allesErlaubt = FEHLERARTEN.every((art) => erlaubt.includes(art));
+  if (allesErlaubt) return gegnerliste;
+  return (gegnerliste ?? FEHLERARTEN).filter((art) => erlaubt.includes(art));
 }
 
 /** Alle Gegner nach Durchschnitt sortiert, bei Gleichstand nach Mittelspiel. */

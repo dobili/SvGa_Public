@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.59. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.60. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.59“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.60“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 W, U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,20 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.59“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.60“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.60 (etwa 10 Minuten, mit Engine; Abhakliste der Fehlerarten aus S7, Fable)
+
+- [ ] N284. **Abhakliste der Fehlerarten:** Einstellungen (Zahnrad) › Karte „Absichtliche Fehler
+      der Engine“ unter „Darstellung und Training“: 14 Haken, alle gesetzt, darunter „Alle
+      erlauben“, „Keine erlauben“ und „14 von 14 Arten erlaubt“. Nimm alle Haken bis auf „eine
+      Figur hängen lassen (W1)“ heraus, dann Spielen › Stufe 2 (kein vorgefertigter Gegner), eine
+      Partie spielen. Im Rückblick sollten die Fehler der Engine nur noch „hat eine Figur hängen
+      lassen“ heißen (oder gar keine absichtlichen, wenn sich keiner anbot). Dann „Keine
+      erlauben“ und eine Partie gegen Paula: Sie macht keine absichtlichen Fehler mehr, ihre
+      blinden Flecken (Diagonalen, Rückzüge, Grundreihe) bleiben. Eigene Gegner behalten ihre
+      eigene Liste. Zum Schluss „Alle erlauben“.
 
 ### Neu in 0.2.59 (etwa 10 Minuten, mit Engine; Brillant, zweiter Schritt, Fable)
 
@@ -778,7 +790,8 @@ Regeln C1 und C2).
       Stufe 1 bis 4, blinde
       Flecken in jeder Stufe (er übersieht einen besten Zug dieser Art zu 70 %, Ersatz höchstens
       eine Leichtfigur schlechter). Namen, Stufen, Listen oder Sätze ändern? Die allgemeine
-      Abhakliste der Fehlerarten bleibt offen (eigene Gegner haben sie je Gegner).
+      Abhakliste der Fehlerarten gibt es seit 0.2.60 in den Einstellungen (N284); sie beschneidet
+      die Listen der vorgefertigten Gegner, eigene Gegner haben sie je Gegner.
       **Empfehlung:** so lassen und erst nach ein paar Partien (N241, N242) nachjustieren.
 
 - [ ] S8. **Zusatzregel für die Phase** (deine Frage S2, Recherche): Eine allgemeingültige
@@ -848,7 +861,8 @@ Regeln C1 und C2).
 - [ ] S14. **Eigene Gegner, Grenzen:** höchstens 20 eigene Gegner, Namen bis 24 Zeichen,
       Vorgabe beim Anlegen Stufe 3 · 3 · 3, alle Fehlerarten, ausgeglichen. Fehlerarten wirken nur
       in Stufe 1 bis 4 (darüber gibt es keine absichtlichen Fehler); eine Abhakliste je Stufe gibt
-      es damit für eigene Gegner, die allgemeine Abhakliste aus S7 bleibt offen. Reicht das?
+      es damit für eigene Gegner, die allgemeine Abhakliste aus S7 seit 0.2.60 in den
+      Einstellungen (N284). Reicht das?
       **Empfehlung:** reicht so.
 - [ ] S15. **Kurve je Phase:** Die Ansicht „Eröffnung/Mittelspiel/Endspiel“ zeigt nicht die Elo-
       Wertung (die gibt es nur je Partie), sondern die Schätzung der Engine für dich in dieser

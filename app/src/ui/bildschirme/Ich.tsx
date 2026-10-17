@@ -4,7 +4,8 @@
  *
  * Rolle im Gesamtbild: Konzept 10.1. Fortschritt und Datensicherung kamen mit AP 12; die
  * Lernsammlung folgt mit den Trainern. Seit 0.2.41 steht ganz oben die Wertung des Lesers aus den
- * gewerteten Partien (Wertungskurve.tsx, Wunsch des Autors).
+ * gewerteten Partien (Wertungskurve.tsx, Wunsch des Autors). Seit 0.2.60 steht unter der Karte
+ * „Darstellung und Training“ die Abhakliste der Fehlerarten (FehlerartenKarte.tsx, Rückfrage S7).
  * Abhängigkeiten: app/offline.ts, app/version.ts, daten/laden.ts, speicher/, DatenLoeschen,
  * Wertungskurve, Navigation, i18n.
  */
@@ -17,6 +18,7 @@ import { ladeIndex } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { DatenLoeschen } from "../komponenten/DatenLoeschen";
 import { EinstellungenKarte } from "../komponenten/EinstellungenKarte";
+import { FehlerartenKarte } from "../komponenten/FehlerartenKarte";
 import { Fortschrittsuebersicht } from "../komponenten/Fortschrittsuebersicht";
 import { useDaten } from "../komponenten/useDaten";
 import { Wertungskurve } from "../komponenten/Wertungskurve";
@@ -136,6 +138,7 @@ export function Ich() {
         )}
       </section>
       <EinstellungenKarte />
+      <FehlerartenKarte />
       <DatenLoeschen />
       <p className="hinweis">{t("ich.speicher")}</p>
     </div>

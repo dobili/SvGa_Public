@@ -1552,3 +1552,39 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Antwort legt eine Karte an (`notiereTrainerantwort`); eine vorhandene wandert mit jeder Antwort.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
+
+## AP 13: Endspieltrainer (17.10.2026, Fable, Zweig `endspieltrainer`, Version 0.2.48)
+
+Auftrag des Autors: Trainer „endspiel“ (Kapitel 8 und 9) auf eigenem Zweig, parallel zu Opus
+(Repertoire, Zielbilanz, Faktorenbilanz, 0.2.47); unberührt blieben spiel/auswertung.ts,
+spiel/wertung.ts, analyse/skelett.ts, analyse/k5-richtung.ts, training/wiederholung.ts,
+speicher/fortschritt.ts.
+
+- **Daten** (`pipeline/trainer/endspiel.py` → `inhalte/de/trainer/endspiel.json`, Schema
+  `trainer-endspiel.schema.json`, `trainer-gemeinsam` um „endspiel“ erweitert): 80 Kandidaten aus
+  den Abbildungen der Kapitel 8 und 9 mit Thema und Stichwort (Liste im Skript); die Engine
+  (Stockfish 19 lite, Tiefe 18) entscheidet Seite und Ziel: Gewinn ab +2,0, Remis bis ±0,8,
+  dazwischen ausgelassen. Erste Fassung mit allen Zügen in Tiefe 24 brauchte für fünf
+  Mattführungen 17 Minuten; jetzt eine Hauptvariante in Tiefe 18 und „einziger Zug“ mit allen
+  Zügen in Tiefe 12 (eine Minute für alles). Kein Buchtext, keine Merksätze in den Daten.
+- **Befunde** (Rückfrage X1): 9.41 unklar (+1,05, Theorie Remis), 9.23 Buch „Txa7 gewinnt“
+  gegen Engine Remis (+0,25), beide ausgelassen; 8.25 und 8.26 laut Engine Remis (Schwarz hält).
+  9.40: Seite per Vorgabe (Schwarz muss den Bauern aufhalten), weil die Regel „ärmere Seite hält“
+  dort die falsche Seite träfe.
+- **Ablauf** (`ui/trainer/useEndspielpartie.ts`): Leser zieht, Engine antwortet mit voller
+  Stärke (1,2 s); derselbe Auftrag liefert den Wert aus Sicht des Lesers. Kippen
+  (`training/endspieltrainer.ts`, `gekippt`): Gewinn unter gewinnAb − 0,5, Remis unter
+  −(remisBis + 0,7); dann „verfehlt“ mit dem besten Zug der vorigen Stellung als „Gehalten hätte
+  …“. Erreicht: Matt, Umwandlung bei gehaltener Gewinnstellung, Remis im Remisziel, zwölf
+  gehaltene eigene Züge (`HALTEN_ZUEGE`). Ist der Leser am Zug, rechnet die Engine 0,7 s den
+  besten Zug für die Hilfen (Hinweis 2 goldene Figur, Hinweis 3 goldener Pfeil); Hinweis 1 ist
+  der Merksatz zum Thema plus Stichwort (`endspiel.merksatz.*`, `endspiel.stichwort.*` in
+  de.json, Claudes Worte). „Aufgabe abbrechen“ zählt falsch. Richtig nur ohne Hilfe.
+- **Rahmen:** `Rundenablauf`, `Rundenrahmen`, `useRunde`, `Stufenwahl` wiederverwendet; sechs
+  Aufgaben je Runde; Gruppen Alles, Mattführung, Bauernendspiele, Turmendspiele, Dame gegen
+  Bauer, Leichtfiguren. `Trainer.tsx` nur um eine Zeile in EIGENE_BEREICHE ergänzt,
+  `training/trainer.ts` „endspiel“ fertig.
+- **Tests:** `training/endspieltrainer.test.ts` (Runde, Kippen, Ergebnis),
+  `training/endspiel.engine.test.ts` (echte Engine bestätigt fünf Stellungen),
+  `pipeline/tests/test_trainer_daten.py` (Schema, Spielbarkeit, Wert passt zum Ziel), e2e in
+  `trainer.spec.ts` (Mattführung Stufe 1, Merksatz, Abbrechen).

@@ -14,7 +14,7 @@
       "required": ["schemaVersion", "trainer", "erzeugt", "quellen"],
       "properties": {
         "schemaVersion": { "const": 1 },
-        "trainer": { "enum": ["taktik", "falle", "struktur"] },
+        "trainer": { "enum": ["taktik", "falle", "struktur", "endspiel"] },
         "erzeugt": {
           "type": "object",
           "additionalProperties": false,

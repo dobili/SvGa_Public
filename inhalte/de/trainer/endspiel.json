@@ -1,0 +1,1584 @@
+{
+ "schemaVersion": 1,
+ "trainer": "endspiel",
+ "erzeugt": {
+  "datum": "2026-10-17",
+  "engine": "Stockfish 19 lite (ein Kern)",
+  "skript": "pipeline/trainer/endspiel.py"
+ },
+ "quellen": [
+  {
+   "kennung": "buch",
+   "name": "Schach von Grund auf, Kapitel 8 und 9 (Endspiele)",
+   "lizenz": "Alle Rechte vorbehalten (nur Stellungen und Züge)",
+   "anzahl": 78
+  }
+ ],
+ "massstab": {
+  "gewinnAb": 2.0,
+  "remisBis": 0.8,
+  "tiefe": 18
+ },
+ "aufgaben": [
+  {
+   "id": "endspiel-b-8.4",
+   "fen": "8/4k3/2Q5/8/3K4/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenmatt",
+   "stichwort": "kasten",
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.4"
+   },
+   "pruefung": {
+    "wert": 94.0,
+    "mattIn": 6,
+    "bester": "Qg6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.55",
+   "fen": "k7/8/8/8/8/1Q6/8/7K w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenmatt",
+   "stichwort": "patt",
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.55"
+   },
+   "pruefung": {
+    "wert": 93.0,
+    "mattIn": 7,
+    "bester": "Kh2",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.56",
+   "fen": "7k/8/8/8/3K4/8/6Q1/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenmatt",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.56"
+   },
+   "pruefung": {
+    "wert": 97.0,
+    "mattIn": 3,
+    "bester": "Ke5",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.9",
+   "fen": "8/3k4/R7/4K3/8/8/8/8 b - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmmatt",
+   "stichwort": "kasten",
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.9"
+   },
+   "pruefung": {
+    "wert": 88.0,
+    "mattIn": 12,
+    "bester": "Kc7",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.11",
+   "fen": "2k5/4R3/3K4/8/8/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmmatt",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.11"
+   },
+   "pruefung": {
+    "wert": 96.0,
+    "mattIn": 4,
+    "bester": "Rf7",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.13",
+   "fen": "8/8/8/4k3/8/8/8/R3K3 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmmatt",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.13"
+   },
+   "pruefung": {
+    "wert": 4.65,
+    "mattIn": null,
+    "bester": "Kd2",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.57",
+   "fen": "k7/1R6/2K5/8/8/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmmatt",
+   "stichwort": "patt",
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.57"
+   },
+   "pruefung": {
+    "wert": 96.0,
+    "mattIn": 4,
+    "bester": "Rf7",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.16",
+   "fen": "6k1/8/5K2/4B3/4B3/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "laeuferpaar",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.16"
+   },
+   "pruefung": {
+    "wert": 96.0,
+    "mattIn": 4,
+    "bester": "Bd6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.19",
+   "fen": "8/8/4k3/8/4K3/4P3/8/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "opposition",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.19"
+   },
+   "pruefung": {
+    "wert": -0.0,
+    "mattIn": null,
+    "bester": "Kd4",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.23",
+   "fen": "8/5k2/8/8/8/8/3P2K1/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "opposition",
+   "stichwort": "fernopposition",
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.23"
+   },
+   "pruefung": {
+    "wert": 5.99,
+    "mattIn": null,
+    "bester": "Kf3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.24",
+   "fen": "8/8/8/5k2/8/8/2K1P3/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "opposition",
+   "stichwort": "diagonalopposition",
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.24"
+   },
+   "pruefung": {
+    "wert": 5.99,
+    "mattIn": null,
+    "bester": "Kd3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.25",
+   "fen": "4k3/8/8/8/4P3/8/4K3/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.25"
+   },
+   "pruefung": {
+    "wert": -0.22,
+    "mattIn": null,
+    "bester": "Ke3",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.26",
+   "fen": "2k5/8/8/4P3/8/2K5/8/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.26"
+   },
+   "pruefung": {
+    "wert": -0.0,
+    "mattIn": null,
+    "bester": "Kd4",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.27",
+   "fen": "8/8/3k4/8/8/3K4/3P4/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.27"
+   },
+   "pruefung": {
+    "wert": 5.89,
+    "mattIn": null,
+    "bester": "Kd4",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.28",
+   "fen": "8/8/3k4/8/8/3K4/3P4/8 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.28"
+   },
+   "pruefung": {
+    "wert": -0.02,
+    "mattIn": null,
+    "bester": "Kd5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.29",
+   "fen": "4k3/8/3KP3/8/8/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.29"
+   },
+   "pruefung": {
+    "wert": 6.25,
+    "mattIn": null,
+    "bester": "e7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.30",
+   "fen": "4k3/8/3KP3/8/8/8/8/8 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "schluesselfelder",
+   "stichwort": "patt",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.30"
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Kd8",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.31",
+   "fen": "k7/P7/1K6/8/8/8/8/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "randbauer",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.31"
+   },
+   "pruefung": {
+    "wert": -0.0,
+    "mattIn": null,
+    "bester": "Ka6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.32",
+   "fen": "5r2/4k3/8/8/3PKR2/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.32"
+   },
+   "pruefung": {
+    "wert": 5.99,
+    "mattIn": null,
+    "bester": "Rxf8",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.34",
+   "fen": "8/8/3k4/8/3P1K2/8/8/8 w - - 1 3",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.34"
+   },
+   "pruefung": {
+    "wert": -0.0,
+    "mattIn": null,
+    "bester": "Ke4",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.35",
+   "fen": "8/8/8/6k1/1P6/8/8/7K w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "quadrat",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.35"
+   },
+   "pruefung": {
+    "wert": 6.13,
+    "mattIn": null,
+    "bester": "b5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.36",
+   "fen": "8/8/8/6k1/1P6/8/8/7K b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "quadrat",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.36"
+   },
+   "pruefung": {
+    "wert": 0.01,
+    "mattIn": null,
+    "bester": "Kf6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.38",
+   "fen": "8/5k2/8/7p/P7/8/2K5/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernrennen",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.38"
+   },
+   "pruefung": {
+    "wert": 6.41,
+    "mattIn": null,
+    "bester": "a5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.40",
+   "fen": "8/8/1P6/7k/8/2K4p/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernrennen",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.40"
+   },
+   "pruefung": {
+    "wert": 7.12,
+    "mattIn": null,
+    "bester": "b7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.42",
+   "fen": "4k3/1pp5/8/8/8/8/PPP1K3/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "freibauer",
+   "stichwort": "mehrheit",
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.42"
+   },
+   "pruefung": {
+    "wert": 3.17,
+    "mattIn": null,
+    "bester": "Kd3",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.45",
+   "fen": "7k/ppp5/8/PPP5/8/8/8/7K w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "durchbruch",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.45"
+   },
+   "pruefung": {
+    "wert": 6.48,
+    "mattIn": null,
+    "bester": "b6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.47",
+   "fen": "8/3k3p/5pp1/P7/4K1P1/8/7P/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "freibauer",
+   "stichwort": "entfernterFreibauer",
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.47"
+   },
+   "pruefung": {
+    "wert": 6.3,
+    "mattIn": null,
+    "bester": "Kd5",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.50",
+   "fen": "8/8/4kP2/4P3/8/8/8/K7 b - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "freibauer",
+   "stichwort": "verbundene",
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.50"
+   },
+   "pruefung": {
+    "wert": 6.5,
+    "mattIn": null,
+    "bester": "Kxe5",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.51",
+   "fen": "8/1p1k4/1P6/2PK4/8/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "zugzwang",
+   "stichwort": "dreieck",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.51"
+   },
+   "pruefung": {
+    "wert": 6.32,
+    "mattIn": null,
+    "bester": "Kd4",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.53",
+   "fen": "8/8/8/1Kp4p/2Pk4/7P/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "zugzwang",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.53"
+   },
+   "pruefung": {
+    "wert": 7.08,
+    "mattIn": null,
+    "bester": "h4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.58",
+   "fen": "8/4k3/8/8/5K2/4P3/8/8 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "opposition",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.58"
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Kf6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.59",
+   "fen": "8/8/6k1/8/8/8/4PK2/8 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "opposition",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.59"
+   },
+   "pruefung": {
+    "wert": -0.05,
+    "mattIn": null,
+    "bester": "Kf6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.60",
+   "fen": "8/8/5k2/8/8/3P4/3K4/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.60"
+   },
+   "pruefung": {
+    "wert": 5.99,
+    "mattIn": null,
+    "bester": "Kc3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.61",
+   "fen": "8/8/4k3/2K5/P7/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "randbauer",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.61"
+   },
+   "pruefung": {
+    "wert": 6.08,
+    "mattIn": null,
+    "bester": "Kc6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.62",
+   "fen": "4r3/3k4/8/8/2KP4/8/8/4R3 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "schluesselfelder",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.62"
+   },
+   "pruefung": {
+    "wert": 5.96,
+    "mattIn": null,
+    "bester": "Rxe8",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.63",
+   "fen": "8/8/8/6k1/8/8/P7/7K w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "randbauer",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.63"
+   },
+   "pruefung": {
+    "wert": 6.12,
+    "mattIn": null,
+    "bester": "a4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.64",
+   "fen": "8/8/7P/8/6K1/p1k5/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernrennen",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.64"
+   },
+   "pruefung": {
+    "wert": 6.55,
+    "mattIn": null,
+    "bester": "h7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.65",
+   "fen": "8/8/4k1p1/8/4KPP1/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "freibauer",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.65"
+   },
+   "pruefung": {
+    "wert": 6.04,
+    "mattIn": null,
+    "bester": "g5",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.66",
+   "fen": "8/p7/1p6/3k4/7P/3K4/PP6/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "freibauer",
+   "stichwort": "entfernterFreibauer",
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.66"
+   },
+   "pruefung": {
+    "wert": 6.22,
+    "mattIn": null,
+    "bester": "h5",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.67",
+   "fen": "k7/1p1K4/1P6/2P5/8/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "zugzwang",
+   "stichwort": "dreieck",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.67"
+   },
+   "pruefung": {
+    "wert": 95.0,
+    "mattIn": 5,
+    "bester": "c6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-8.68",
+   "fen": "8/8/p7/5pK1/4kP2/8/P7/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "freibauer",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "8.68"
+   },
+   "pruefung": {
+    "wert": 7.29,
+    "mattIn": null,
+    "bester": "a3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.1",
+   "fen": "8/8/6k1/2P5/2K5/8/r7/4R3 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "abschneiden",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.1"
+   },
+   "pruefung": {
+    "wert": 4.73,
+    "mattIn": null,
+    "bester": "Rf1",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.2",
+   "fen": "6k1/1R6/r7/4KP2/8/8/8/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "kurzeSeite",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.2"
+   },
+   "pruefung": {
+    "wert": -0.05,
+    "mattIn": null,
+    "bester": "Rd7",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.3",
+   "fen": "4k3/1R6/7r/3KP3/8/8/8/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "philidor",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.3"
+   },
+   "pruefung": {
+    "wert": -0.12,
+    "mattIn": null,
+    "bester": "Rc7",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.5",
+   "fen": "r7/4K1k1/4P3/8/8/8/8/3R4 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "kurzeSeite",
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.5"
+   },
+   "pruefung": {
+    "wert": -0.2,
+    "mattIn": null,
+    "bester": "Ra7+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.8",
+   "fen": "4K3/4P1k1/8/8/8/8/r7/5R2 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "lucena",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.8"
+   },
+   "pruefung": {
+    "wert": 4.65,
+    "mattIn": null,
+    "bester": "Rg1+",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.15",
+   "fen": "R7/6k1/P4r2/1K6/8/8/8/8 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "vancura",
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.15"
+   },
+   "pruefung": {
+    "wert": -0.34,
+    "mattIn": null,
+    "bester": "Rf5+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.16",
+   "fen": "R7/P4k2/8/8/8/8/r7/6K1 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.16"
+   },
+   "pruefung": {
+    "wert": 4.81,
+    "mattIn": null,
+    "bester": "Rh8",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.18",
+   "fen": "7K/8/8/8/1p2k3/8/8/3R4 b - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "abschneiden",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.18"
+   },
+   "pruefung": {
+    "wert": 4.86,
+    "mattIn": null,
+    "bester": "Ke3",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.19",
+   "fen": "8/8/1K6/4k3/4p3/8/8/7R w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "abschneiden",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.19"
+   },
+   "pruefung": {
+    "wert": 5.83,
+    "mattIn": null,
+    "bester": "Kc5",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.20",
+   "fen": "8/8/1K6/4k3/4p3/8/8/7R b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "abschneiden",
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.20"
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Kd4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.21",
+   "fen": "8/8/8/8/8/2K5/1p2R3/2k5 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "unterverwandlung",
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.21"
+   },
+   "pruefung": {
+    "wert": -0.38,
+    "mattIn": null,
+    "bester": "b1=N+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.22",
+   "fen": "r6k/8/1PP5/8/8/8/8/7K b - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "verbundene",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.22"
+   },
+   "pruefung": {
+    "wert": 2.71,
+    "mattIn": null,
+    "bester": "Kg7",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.24",
+   "fen": "8/6k1/1R3pp1/7p/4P2P/6P1/r4PK1/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.24"
+   },
+   "pruefung": {
+    "wert": -0.16,
+    "mattIn": null,
+    "bester": "Kf3",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.25",
+   "fen": "8/r5k1/6p1/P7/8/6P1/6K1/R7 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "turmHinterFreibauer",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.25"
+   },
+   "pruefung": {
+    "wert": 5.4,
+    "mattIn": null,
+    "bester": "a6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.26",
+   "fen": "1rk5/8/7p/8/P2K4/7P/8/1R6 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "entfernterFreibauer",
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.26"
+   },
+   "pruefung": {
+    "wert": 6.0,
+    "mattIn": null,
+    "bester": "Rxb8+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.28",
+   "fen": "1K6/8/8/8/7Q/8/3pk3/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "dameGegenBauer",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.28"
+   },
+   "pruefung": {
+    "wert": 6.36,
+    "mattIn": null,
+    "bester": "Qe4+",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.31",
+   "fen": "7K/8/8/8/8/1Q6/2p5/k7 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "dameGegenBauer",
+   "stichwort": "laeuferbauer",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.31"
+   },
+   "pruefung": {
+    "wert": -0.0,
+    "mattIn": null,
+    "bester": "Qa4+",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.32",
+   "fen": "8/8/8/8/8/4K1Q1/5p2/7k w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "dameGegenBauer",
+   "stichwort": "patt",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.32"
+   },
+   "pruefung": {
+    "wert": 94.0,
+    "mattIn": 6,
+    "bester": "Qf3+",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.34",
+   "fen": "8/P6k/8/8/8/5q2/6Q1/7K b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "dameGegenBauer",
+   "stichwort": "patt",
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.34"
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Qd1+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.35",
+   "fen": "8/2k5/2Pb4/1K6/8/5B2/8/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": "ungleich",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.35"
+   },
+   "pruefung": {
+    "wert": -0.0,
+    "mattIn": null,
+    "bester": "Bg2",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.36",
+   "fen": "8/8/3k4/8/3PPb2/8/4K3/5B2 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": "ungleich",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.36"
+   },
+   "pruefung": {
+    "wert": -0.47,
+    "mattIn": null,
+    "bester": "Bh3",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.37",
+   "fen": "8/2bk4/8/1P4P1/4K3/8/4B3/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": "ungleich",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.37"
+   },
+   "pruefung": {
+    "wert": 6.34,
+    "mattIn": null,
+    "bester": "Kf5",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.38",
+   "fen": "8/3b4/3k4/P5p1/3K2P1/5B2/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.38"
+   },
+   "pruefung": {
+    "wert": 7.01,
+    "mattIn": null,
+    "bester": "a6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.39",
+   "fen": "8/7P/4n3/8/8/8/k7/2K5 b - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": "springer",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.39"
+   },
+   "pruefung": {
+    "wert": 6.33,
+    "mattIn": null,
+    "bester": "Kb3",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.40",
+   "fen": "8/7P/8/4n3/8/8/k7/2K5 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": "springer",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.40"
+   },
+   "pruefung": {
+    "wert": -0.01,
+    "mattIn": null,
+    "bester": "Nf7",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.42",
+   "fen": "8/p5p1/1p1n3p/4k3/8/1P1BK2P/P5P1/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.42"
+   },
+   "pruefung": {
+    "wert": -0.06,
+    "mattIn": null,
+    "bester": "g3",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.43",
+   "fen": "k7/8/1K6/8/8/6b1/8/7R w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": "falscherLaeufer",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.43"
+   },
+   "pruefung": {
+    "wert": -0.28,
+    "mattIn": null,
+    "bester": "Rh8+",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.44",
+   "fen": "7k/5Kb1/8/8/R7/8/8/8 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": "falscherLaeufer",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.44"
+   },
+   "pruefung": {
+    "wert": 98.0,
+    "mattIn": 2,
+    "bester": "Rh4+",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.45",
+   "fen": "4k3/R7/8/3KP3/8/8/8/7r b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "philidor",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.45"
+   },
+   "pruefung": {
+    "wert": -0.14,
+    "mattIn": null,
+    "bester": "Rb1",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.46",
+   "fen": "5k2/1R6/5K2/5P2/8/8/8/r7 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "kurzeSeite",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.46"
+   },
+   "pruefung": {
+    "wert": -0.01,
+    "mattIn": null,
+    "bester": "Ra6+",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.47",
+   "fen": "2K5/2P3k1/8/8/8/8/1r6/4R3 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "lucena",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.47"
+   },
+   "pruefung": {
+    "wert": 5.69,
+    "mattIn": null,
+    "bester": "Rc1",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.48",
+   "fen": "R7/P5k1/5r2/8/8/8/8/1K6 b - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": "vancura",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.48"
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Ra6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.49",
+   "fen": "8/8/8/1R6/5k2/4p3/8/K7 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "abschneiden",
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.49"
+   },
+   "pruefung": {
+    "wert": 4.79,
+    "mattIn": null,
+    "bester": "Rb1",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.50",
+   "fen": "7K/8/2k5/1p6/8/8/8/6R1 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "abschneiden",
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.50"
+   },
+   "pruefung": {
+    "wert": 4.95,
+    "mattIn": null,
+    "bester": "Rg5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.51",
+   "fen": "r6k/8/1P6/2P5/8/8/8/7K b - - 0 1",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": "verbundene",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.51"
+   },
+   "pruefung": {
+    "wert": 4.83,
+    "mattIn": null,
+    "bester": "Rb8",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.52",
+   "fen": "8/8/8/8/6Q1/3K4/p7/k7 w - - 0 1",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "dameGegenBauer",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.52"
+   },
+   "pruefung": {
+    "wert": 98.0,
+    "mattIn": 2,
+    "bester": "Kc3",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-b-9.53",
+   "fen": "k7/8/8/P1K5/3B4/8/8/8 w - - 0 1",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": "falscherLaeufer",
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "buch",
+    "abbildung": "9.53"
+   },
+   "pruefung": {
+    "wert": -0.74,
+    "mattIn": null,
+    "bester": "Kb6",
+    "einzigerZug": false,
+    "tiefe": 18
+   }
+  }
+ ]
+}

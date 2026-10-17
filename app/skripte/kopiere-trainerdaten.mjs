@@ -13,7 +13,13 @@ const QUELLE = resolve(HIER, "../../inhalte/de/trainer");
 const ZIEL = resolve(HIER, "../public/daten/de/trainer");
 
 /** Die Dateien, die die App braucht (Kennungen wie in src/daten/trainerdaten.ts). */
-const DATEIEN = ["taktik.json", "falle.json", "struktur.json", "uebungen-engine.json"];
+const DATEIEN = [
+  "taktik.json",
+  "falle.json",
+  "struktur.json",
+  "endspiel.json",
+  "uebungen-engine.json",
+];
 
 async function main() {
   await mkdir(ZIEL, { recursive: true });

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.47. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.48. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.47“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.48“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 W, U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,34 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.47“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.48“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.48 (etwa 25 Minuten, mit Engine; Endspieltrainer, Fable)
+
+- [ ] N250. **Endspieltrainer öffnen:** Training › Endspieltrainer (Kapitel 8 und 9) › „Trainieren“.
+      Auswahl „Was üben?“: Alles gemischt (78), Mattführung, Bauernendspiele, Turmendspiele, Dame
+      gegen Bauer, Leichtfiguren, je mit Anzahl; Schwierigkeit alle oder 1 bis 5; „Runde
+      starten“. Eine Runde hat sechs Stellungen, leichteste zuerst.
+- [ ] N251. **Mattführung gewinnen:** Mattführung, Stufe 1, Runde starten: Dame gegen König (Abb.
+      8.4, 8.55 oder 8.56). Oben „Weiß: Gewinne diese Stellung gegen die Engine.“, unten „Aus dem
+      Buch: Abb. … · Matt mit der Dame · Stufe 1 · Matt in höchstens N Zügen“. Du ziehst, die
+      Engine antwortet in voller Stärke (Status „Die Engine denkt“ / „Du bist am Zug“). Nach dem
+      Matt: „Richtig! Matt! Ziel erreicht.“ und „Weiter“. Setzt du patt: „Falsch. Remis. Der
+      Gewinn ist verfehlt.“
+- [ ] N252. **Hilfen und Kippen:** In einer Bauernendspiel-Aufgabe (etwa Abb. 8.23,
+      Fernopposition) „Hinweis 1“: der Merksatz zum Thema („Merksatz: Opposition: …“, dazu ein
+      Stichwort wie „Stichwort: Fernopposition.“); „Hinweis 2“: die goldene Figur, die ziehen
+      soll; „Hinweis 3“: der goldene Pfeil mit dem Zug der Engine. Mit Hilfe zählt die Aufgabe
+      nicht als richtig. Spiele absichtlich einen schlechten Königszug: „Falsch. Der Gewinn ist
+      weg: Die Stellung ist laut Engine gekippt. Gehalten hätte Kf3.“ Bitte alle Merksätze
+      kritisch lesen (Rückfrage X4); sie sind in Claudes Worten.
+- [ ] N253. **Remis halten:** Turmendspiele, Stufe 4 oder 5: Philidor (Abb. 9.3, du spielst
+      Schwarz, das Brett ist gedreht, die Engine zieht zuerst) oder Vancura (9.15). Oben
+      „Schwarz: Halte das Remis gegen die Engine.“ Hältst du zwölf eigene Züge durch oder endet
+      die Partie remis: „Richtig! Zwölf Züge gehalten …“ bzw. „Remis. Ziel erreicht.“ Verlierst
+      du den Faden: „Die Stellung ist laut Engine gekippt. Gehalten hätte …“. „Aufgabe abbrechen“
+      beendet eine Aufgabe als falsch und nennt den besten Zug.
 
 ### Neu in 0.2.47 (etwa 15 Minuten, mit Engine; Claudes Empfehlungen schon umgesetzt, Opus)
 
@@ -473,6 +499,48 @@ Regeln C1 und C2).
 ---
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
+
+### X. Endspieltrainer (Fable, 0.2.48; plausibel entschieden, bitte prüfen)
+
+- [ ] X1. **Stellungen:** 78 Abbildungen aus Kapitel 8 und 9, jede mit Stockfish geprüft (Tiefe
+      18, einziger Zug in Tiefe 12). Gewinn ab +2,0 für den Leser, Remis bis ±0,8; alles
+      dazwischen fällt weg. Weggefallen: Abb. 9.41 (falscher Läufer mit h-Bauer; die Engine sieht
+      in Tiefe 18 nur +1,05 statt des klaren Remis) und Abb. 9.23 (Turm auf der 7. Reihe: Das
+      Buch nennt 1. Txa7 gewinnend, die Engine sieht nur +0,25, also Remis; bitte prüfen, ob das
+      Buch dort einen Gewinn verspricht, den es nicht gibt, oder die Engine zu flach rechnet).
+      Zwei weitere Befunde: Abb. 8.25 (Bauer e4, König e2 gegen König e8, Weiß am Zug) und 8.26
+      (Bauer e5, König c3 gegen König c8) sind laut Engine Remis, obwohl beide die Schlüsselfelder
+      zeigen; im Trainer hält dort Schwarz. Passt das zum Buch? **Empfehlung:** 9.23 und 9.41
+      draußen lassen, bis du sie angesehen hast; 8.25 und 8.26 als Remis-Aufgaben lassen (die
+      Schlüsselfelder lehren gerade, dass Weiß ohne sie nicht gewinnt).
+- [ ] X2. **Wer spielt:** Bei Gewinnaufgaben die gewinnende Seite. Bei Remisaufgaben die Seite,
+      die halten muss: die mit weniger Material, bei gleichem Material die am Zug; eine Ausnahme
+      ist Abb. 9.40 (Springer gegen Bauer: Schwarz muss den Bauern aufhalten). Ist die andere
+      Seite am Zug, zieht die Engine zuerst. **Empfehlung:** so lassen.
+- [ ] X3. **Ziel erreicht oder verfehlt:** Erreicht bei Matt, bei Umwandlung mit weiter gewonnener
+      Stellung („der Rest ist Technik“), bei Remis (Patt, Material, 50 Züge, Wiederholung) im
+      Remisziel und nach zwölf gehaltenen eigenen Zügen. Verfehlt, wenn die Stellung laut Engine
+      kippt: Gewinn unter +1,5, Remis unter −1,5 (die Grenzen aus der Prüfung mit 0,5 bzw. 0,7
+      Spielraum, weil die Engine bei 1,2 Sekunden je Zug schwankt). Dann nennt die Karte den Zug,
+      der gehalten hätte (den besten Zug der vorigen Stellung). **Empfehlung:** so lassen; sind
+      zwölf Züge zu lang, auf acht kürzen.
+- [ ] X4. **Hilfen und Merksätze:** Hinweis 1 Merksatz zum Thema (14 Themen: Matt mit Dame,
+      Turm, Läuferpaar; Opposition; Schlüsselfelder; Quadrat; Bauernrennen; Durchbruch; Freibauern;
+      Zugzwang; Randbauer; Turmendspiel; Dame gegen Bauer; Leichtfiguren) plus Stichwort
+      (Philidor, Lucena, Vancura, Abschneiden, kurze Seite, Patt, Unterverwandlung, falscher
+      Läufer, ungleichfarbig, Springer, Kasten, Fern- und Diagonalopposition, Dreieck, entfernter
+      und verbundener Freibauer, Mehrheit, Turm hinter dem Freibauern, 7. Reihe); Hinweis 2 die
+      goldene Figur; Hinweis 3 der goldene Pfeil (der Zug der Engine). Die Merksätze sind Claudes
+      Worte, kein Buchtext; sie sollen zur Lehre des Buches passen. **Empfehlung:** in der App
+      lesen (N252) und Formulierungen, die nicht zu Kapitel 8 und 9 passen, mit Wortlaut melden.
+- [ ] X5. **Schwierigkeit:** Grundstufe je Thema (Dame 1, Quadrat 1, Turmmatt 2, Opposition 2,
+      Bauernrennen 2, Randbauer 2, Läuferpaar 3, Schlüsselfelder 3, Durchbruch 3, Freibauer 3,
+      Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
+      erste Zug der einzige ist. Nicht an Lichess geeicht (dort gibt es keine ausspielbaren
+      Endspiele). **Empfehlung:** so lassen und nach deinem Test nachjustieren.
+- [ ] X6. **Umfang der Runde:** sechs Stellungen (statt acht), weil ein Endspiel länger dauert;
+      die Engine rechnet 1,2 Sekunden je Zug mit voller Stärke, der Hilfezug 0,7 Sekunden.
+      **Empfehlung:** so lassen.
 
 ### S. Spielen, deine Wünsche vom 17.10.2026 (Fable, 0.2.41; plausibel entschieden, bitte prüfen)
 

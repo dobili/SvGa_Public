@@ -29,6 +29,7 @@ import { Roentgenaufgabe } from "../trainer/Roentgentrainer";
 import { Rundenablauf, type Darstellung } from "../trainer/Rundenablauf";
 import { FallenBereich } from "../trainer/FallenBereich";
 import { StrukturBereich } from "../trainer/StrukturBereich";
+import { EndspielBereich } from "../trainer/EndspielBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
 
@@ -146,6 +147,7 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   taktik: () => <TaktikBereich />,
   falle: () => <FallenBereich />,
   struktur: () => <StrukturBereich />,
+  endspiel: () => <EndspielBereich />,
 };
 
 export function Trainer({ kennung }: { kennung: TrainerKennung }) {

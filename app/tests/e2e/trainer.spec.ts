@@ -11,7 +11,12 @@ async function oeffneTrainer(page: Page, kennung: string): Promise<void> {
     .getByRole("navigation", { name: "Hauptbereiche" })
     .getByRole("button", { name: "Training" })
     .click();
-  await page.getByTestId(`trainer-${kennung}`).getByRole("button", { name: "Trainieren" }).click();
+  // Ein Trainer für zwei Kapitel (Endspieltrainer) steht zweimal in der Liste: die erste Karte.
+  await page
+    .getByTestId(`trainer-${kennung}`)
+    .first()
+    .getByRole("button", { name: "Trainieren" })
+    .click();
   await expect(page.getByTestId("trainer")).toBeVisible();
 }
 
@@ -180,4 +185,25 @@ test("Wiederholung (U9): falsch gelöste Taktikaufgabe kommt nach einem Tag wied
     .click();
   await page.getByTestId("trainer-wiederholung").getByRole("button").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
+});
+
+test("Endspieltrainer: Mattführung Stufe 1, Merksatz als Hinweis, Aufgabe abbrechen", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "endspiel");
+  const wahl = page.getByTestId("endspiel-wahl");
+  await wahl.getByRole("button", { name: /^Mattführung/ }).click();
+  await wahl.getByRole("button", { name: "1", exact: true }).click();
+  await wahl.getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 6");
+  await expect(page.getByTestId("endspiel-auftrag")).toContainText(/Gewinne|Halte/);
+  await runde.getByRole("button", { name: "Hinweis 1" }).click();
+  await expect(page.getByTestId("endspiel-merksatz")).toContainText("Merksatz:");
+  await page.screenshot({ path: "test-results/bilder/trainer-endspiel.png", fullPage: true });
+  await runde.getByRole("button", { name: "Aufgabe abbrechen" }).click();
+  await expect(runde.getByRole("status").last()).toContainText("Abgebrochen");
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 6");
 });

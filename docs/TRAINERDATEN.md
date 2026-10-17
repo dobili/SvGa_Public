@@ -157,6 +157,19 @@ Pipeline im Skelett gefunden hat (isolierte, doppelte, rückständige Bauern, Fr
 Die Plan-Sätze selbst (Texte zu den Schlüsseln `vorpostenBesetzen`, `isolaniBlockieren`, …) gehören
 in die App (`i18n/de.json`).
 
+### Endspieltrainer (`endspiel.json`, Kapitel 8 und 9; Fable, 0.2.48)
+
+Erzeugt mit `python -m pipeline.trainer.endspiel` (etwa eine Minute). 78 Abbildungen aus
+Kapitel 8 und 9, die sich ausspielen lassen (Lehrbilder, die nur eine Regel zeigen, und
+Zwischenstellungen einer Zugfolge fehlen). Je Stellung: Seite des Lesers, Ziel (Gewinn oder
+Remis), Thema, Stichwort, Schwierigkeit und die Engine-Prüfung (Wert aus Sicht des Lesers,
+Matt in N, bester Zug, einziger Zug, Tiefe). Maßstab: Gewinn ab +2,0, Remis bis ±0,8 (Tiefe 18,
+eine Hauptvariante); „einziger Zug“ mit allen Zügen in Tiefe 12. Seite des Lesers: bei Gewinn
+die gewinnende Seite, bei Remis die ärmere (bei gleichem Material die am Zug; Ausnahme 9.40 per
+Vorgabe). Schwierigkeit: Grundstufe je Thema plus eins bei einzigem Zug (nicht geeicht).
+Ausgelassen: 9.41 (Engine unklar, +1,05) und 9.23 (Buch „Txa7 gewinnt“, Engine Remis);
+Befunde beim Autor (Rückfrage X1).
+
 ## Lizenzen (Opus trägt sie in `docs/LIZENZEN.md` ein)
 
 | Teil                                                                                                                 | Lizenz                  | Hinweis                                                                                                                  |

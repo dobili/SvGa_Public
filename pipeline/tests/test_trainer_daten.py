@@ -18,6 +18,7 @@ DATEIEN = {
     "taktik.json": "trainer-taktik.schema.json",
     "falle.json": "trainer-falle.schema.json",
     "struktur.json": "trainer-struktur.schema.json",
+    "endspiel.json": "trainer-endspiel.schema.json",
 }
 
 
@@ -86,3 +87,18 @@ def test_uebungen_engine_zuege_gehen():
         for z in u["zuege"]:
             brett.parse_san(z["san"])
         assert any(z["status"] == "buch" for z in u["zuege"])
+
+
+def test_endspiel_stellungen_spielbar_und_stimmig():
+    daten = _lies("endspiel.json")
+    kennungen = [a["id"] for a in daten["aufgaben"]]
+    assert len(kennungen) == len(set(kennungen)) and len(kennungen) >= 40
+    for a in daten["aufgaben"]:
+        brett = chess.Board(a["fen"])
+        assert brett.is_valid() and not brett.is_game_over(), a["id"]
+        # Der beste Zug gehört der Seite am Zug; der Wert aus Sicht des Lesers passt zum Ziel.
+        brett.parse_san(a["pruefung"]["bester"])
+        if a["ziel"] == "gewinn":
+            assert a["pruefung"]["wert"] >= daten["massstab"]["gewinnAb"], a["id"]
+        else:
+            assert abs(a["pruefung"]["wert"]) <= daten["massstab"]["remisBis"], a["id"]

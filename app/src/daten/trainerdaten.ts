@@ -1,6 +1,6 @@
 /**
- * Laden der Trainerdaten: Taktiktrainer, „Falle oder Köder“, Strukturerkenner und die
- * Engine-Prüfung der Übungen.
+ * Laden der Trainerdaten: Taktiktrainer, „Falle oder Köder“, Strukturerkenner, Endspieltrainer
+ * und die Engine-Prüfung der Übungen.
  *
  * Rolle im Gesamtbild: Zuarbeit von Fable zu AP 13 (docs/TRAINERDATEN.md). Die Pipeline schreibt
  * die Aufgaben nach inhalte/de/trainer/; der Build kopiert sie nach public/daten/de/trainer/
@@ -8,6 +8,7 @@
  * Abhängigkeiten: erzeugte Typen aus den Schemas.
  */
 import type { AufgabenDesTrainersFalleOderKoder } from "./generiert/trainer-falle";
+import type { AufgabenDesEndspieltrainers } from "./generiert/trainer-endspiel";
 import type { AufgabenDesStrukturerkenners } from "./generiert/trainer-struktur";
 import type { AufgabenDesTaktiktrainers } from "./generiert/trainer-taktik";
 import type { EngineGegenprufungDerUbungen } from "./generiert/trainer-uebungen-engine";
@@ -15,10 +16,16 @@ import type { EngineGegenprufungDerUbungen } from "./generiert/trainer-uebungen-
 export type Taktikdaten = AufgabenDesTaktiktrainers;
 export type Fallendaten = AufgabenDesTrainersFalleOderKoder;
 export type Strukturdaten = AufgabenDesStrukturerkenners;
+export type Endspieldaten = AufgabenDesEndspieltrainers;
 export type Uebungspruefung = EngineGegenprufungDerUbungen;
 export type { Aufgabe as Taktikaufgabe } from "./generiert/trainer-taktik";
 export type { Aufgabe as Fallenaufgabe } from "./generiert/trainer-falle";
 export type { Aufgabe as Strukturaufgabe } from "./generiert/trainer-struktur";
+export type {
+  Aufgabe as Endspielaufgabe,
+  Thema as Endspielthema,
+  Stichwort as Endspielstichwort,
+} from "./generiert/trainer-endspiel";
 
 const ORDNER = "/daten/de/trainer";
 const geladen = new Map<string, Promise<unknown>>();
@@ -42,5 +49,7 @@ export const ladeTaktik = () => lade<Taktikdaten>("taktik.json");
 export const ladeFallen = () => lade<Fallendaten>("falle.json");
 /** Aufgaben des Strukturerkenners (Beispiel: „struktur-b-5.3“, Kette). */
 export const ladeStrukturen = () => lade<Strukturdaten>("struktur.json");
+/** Aufgaben des Endspieltrainers (Beispiel: „endspiel-b-8.19“, Opposition aus Abb. 8.19). */
+export const ladeEndspiele = () => lade<Endspieldaten>("endspiel.json");
 /** Engine-Prüfung der 86 Übungen (einziger Zug, gleichwertige Züge). */
 export const ladeUebungspruefung = () => lade<Uebungspruefung>("uebungen-engine.json");

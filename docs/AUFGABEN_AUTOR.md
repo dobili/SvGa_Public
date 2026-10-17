@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.52. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.53. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.49“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.53“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 W, U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,19 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.52“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.53“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.53 (etwa 10 Minuten; zwei Trainer der Stufe 3, Opus)
+
+- [ ] N266. **Studien lösen:** Training › „Studien lösen“ › Trainieren: zuerst die Saavedra-Studie,
+      Weiß am Zug. 1. c7 ziehen: Die App antwortet mit dem Zug des Buches, unter dem Brett steht
+      die Zugfolge. Ein falscher Zug zeigt den Zug der Lösung als goldenen Pfeil, du ziehst ihn
+      nach. Danach Réti, Heuäcker und die übrigen Studien des Kapitels. Rückfrage dazu: W11.
+- [ ] N267. **Zug erraten:** Training › „Zug erraten“ › Trainieren: Partie (etwa „Morphys
+      Opernpartie“) und Seite wählen. 1. e4 ziehen: „Getroffen!“, Stand „Getroffen: 1 von 1“. Dann
+      einen anderen Zug als 2. Sf3: „In der Partie geschah Sf3.“, der Partiezug steht auf dem Brett,
+      Stand „1 von 2“. Unter dem Brett die letzten acht Züge. Rückfrage dazu: W12.
 
 ### Neu in 0.2.52 (etwa 30 Minuten, mit Engine; Stufen 1 bis 3 menschlicher, Empfehlung R4, Fable)
 
@@ -873,6 +884,25 @@ Regeln C1 und C2).
       **Empfehlung:** so lassen und die Warum-Fragen nachrüsten, sobald die Texte zu Kapitel 2
       freigegeben sind. Die Seite selbst zu wählen ist nützlich, weil man jede Eröffnung auch als
       Gegner kennen sollte.
+- [ ] W11. **Studien lösen (0.2.53):** Studien sind die Zugfolgen der Abschnitte von Kapitel 10
+      (Saavedra, Réti, Heuäcker, die zwei Springer, das kürzeste Patt), ohne die Übungen 73 bis 78,
+      die schon als Übungen in der App sind. Der Leser spielt die Seite am Zug und muss die
+      Hauptvariante des Buches finden; die App antwortet mit dem Buchzug, nicht mit dem stärksten
+      Zug der Engine, wie im Pflichtenheft steht. Ein anderer, ebenfalls gewinnender Zug zählt als
+      Fehler. Die „vier Prüfungen“ als Erinnerung neben dem Brett fehlen, weil ich den Wortlaut
+      nicht erfinden will.
+      **Empfehlung:** so lassen. In Studien ist der Buchzug fast immer der einzige, der gewinnt,
+      und die Antwort aus dem Buch führt durch genau die Idee, die das Kapitel erklärt. Schon
+      umgesetzt in 0.2.53, Widerspruch genügt. Für die Erinnerung bräuchte ich die vier Prüfungen
+      als kurzen Satz von dir (oder die Freigabe, sie aus dem Kapitel zu übernehmen).
+- [ ] W12. **Zug erraten (0.2.53):** Partien sind die Meisterpartien der Abschnitte von Kapitel 11
+      (ab 30 Halbzügen, also ohne den London-Vorlauf und ohne Übungen). Du wählst Partie und Seite
+      selbst, die App weiß nicht, wer gewonnen hat. Jeder eigene Zug wird geraten; danach steht der
+      Partiezug auf dem Brett und die App spielt die Antwort. Gut geraten ab der Hälfte der Züge.
+      Die drei Minuten je Zug und der Satz „warum zog der Meister anders“ fehlen: Eine Uhr setzt
+      unter Druck, und einen Satz könnte die App nicht prüfen.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.53, Widerspruch genügt. Falls du den
+      Sieger vorgeben willst, genügt je Partie ein Wort (Weiß oder Schwarz).
 
 ### U. Übungen und erste Trainer (Opus, 0.2.37; plausibel entschieden)
 

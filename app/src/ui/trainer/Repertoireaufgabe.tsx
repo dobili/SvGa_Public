@@ -5,6 +5,7 @@
  * antwortet aus dem Buch. Ein falscher Zug zählt als Fehler; die App zeigt dann den Zug des
  * Buches als Pfeil, und der Leser zieht ihn nach. „Zug zeigen“ hilft ebenso und zählt ebenso.
  * Richtig ist die Variante, wenn sie ohne Fehler und ohne Hilfe gelingt.
+ * Auch „Studien lösen“ nutzt diese Aufgabe, mit eigenem Auftrag.
  * Abhängigkeiten: training/repertoiretrainer.ts, Brettbereich, useBrettbedienung, Rundenrahmen.
  */
 import { useMemo, useState } from "react";
@@ -33,7 +34,16 @@ function buchpfeil(aufgabe: Aufgabe, zuege: readonly string[]): Markierung[] {
   return felder ? [{ typ: "pfeil", farbe: "gold", von: felder.von, nach: felder.nach }] : [];
 }
 
-export function Repertoireaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+export function Repertoireaufgabe({
+  aufgabe,
+  runde,
+  auftrag,
+}: {
+  aufgabe: Aufgabe;
+  runde: Runde;
+  /** Eigener Auftrag (Studien); sonst der des Repertoire-Trainers. */
+  auftrag?: string;
+}) {
   const [zuege, setzeZuege] = useState<readonly string[]>(() => anfang(aufgabe));
   const [fehler, setzeFehler] = useState(0);
   const [zeige, setzeZeige] = useState(false);
@@ -67,10 +77,11 @@ export function Repertoireaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
   return (
     <>
       <p className="trainer-auftrag">
-        {t("repertoiretrainer.auftrag", {
-          titel: aufgabe.titel,
-          farbe: t(aufgabe.seite === "white" ? "farbe.w" : "farbe.b"),
-        })}
+        {auftrag ??
+          t("repertoiretrainer.auftrag", {
+            titel: aufgabe.titel,
+            farbe: t(aufgabe.seite === "white" ? "farbe.w" : "farbe.b"),
+          })}
       </p>
       {stellung.ok && (
         <Brettbereich

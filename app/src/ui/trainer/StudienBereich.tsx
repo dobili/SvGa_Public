@@ -1,0 +1,140 @@
+/**
+ * Trainer „Studien lösen“ (Kapitel 10) und „Zug erraten“ (Kapitel 11).
+ *
+ * Rolle im Gesamtbild: Beide laden ihr Kapitel (daten/laden.ts) und spielen die Zugfolgen des
+ * Buches im gemeinsamen Rundenablauf. Studien: alle Studien des Kapitels nacheinander, gelöst
+ * wie im Repertoire-Trainer. Zug erraten: Partie und Seite wählen, eine Partie je Runde.
+ * Abhängigkeiten: training/studientrainer.ts, Repertoireaufgabe, Zugerratenaufgabe, i18n.
+ */
+import type { Color } from "chessops/types";
+import { useState } from "react";
+import { ladeKapitel } from "../../daten/laden";
+import { t } from "../../i18n/sprache";
+import type { Repertoireaufgabe as Aufgabe } from "../../training/repertoiretrainer";
+import { partienAus, studienAus } from "../../training/studientrainer";
+import { useDaten } from "../komponenten/useDaten";
+import { Repertoireaufgabe } from "./Repertoireaufgabe";
+import { Rundenablauf } from "./Rundenablauf";
+import { Zugerratenaufgabe } from "./Zugerratenaufgabe";
+
+const KAPITEL_STUDIEN = 10;
+const KAPITEL_PARTIEN = 11;
+const SEITEN: readonly Color[] = ["white", "black"];
+
+/** Lädt ein Kapitel und zeigt Laden und Fehler wie die anderen Trainer. */
+function MitKapitel({
+  nummer,
+  inhalt,
+}: {
+  nummer: number;
+  inhalt: (kapitel: Parameters<typeof studienAus>[0]) => React.ReactNode;
+}) {
+  const daten = useDaten(() => ladeKapitel(nummer), `kapitel-${nummer}`);
+  if (daten.art === "laedt") return <p className="lade">…</p>;
+  if (daten.art === "fehler")
+    return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
+  return <>{inhalt(daten.wert)}</>;
+}
+
+function Studienrunde({ studien }: { studien: readonly Aufgabe[] }) {
+  const [durchlauf, setzeDurchlauf] = useState(0);
+  return (
+    <Rundenablauf
+      key={durchlauf}
+      kennung="studien"
+      erzeuge={() =>
+        studien.map((a) => (r) => (
+          <Repertoireaufgabe
+            aufgabe={a}
+            runde={r}
+            auftrag={t("studien.auftrag", {
+              titel: a.titel,
+              farbe: t(a.seite === "white" ? "farbe.w" : "farbe.b"),
+            })}
+          />
+        ))
+      }
+      nochmal={() => setzeDurchlauf(durchlauf + 1)}
+      zurAuswahl={null}
+    />
+  );
+}
+
+export function StudienBereich() {
+  return (
+    <MitKapitel nummer={KAPITEL_STUDIEN} inhalt={(k) => <Studienrunde studien={studienAus(k)} />} />
+  );
+}
+
+/** Auswahl von Partie und Seite für „Zug erraten“. */
+function Partiewahl({
+  partien,
+  starte,
+}: {
+  partien: (seite: Color) => readonly Aufgabe[];
+  starte: (aufgabe: Aufgabe) => void;
+}) {
+  const [seite, setzeSeite] = useState<Color>("white");
+  const liste = partien(seite);
+  const [index, setzeIndex] = useState(0);
+  const gewaehlt = liste[index] ?? null;
+  return (
+    <div className="trainerrunde" data-testid="zugerraten-wahl">
+      <fieldset className="zahlwahl">
+        <legend>{t("zugerraten.partie")}</legend>
+        {liste.map((p, i) => (
+          <button
+            key={p.titel}
+            type="button"
+            className="chip"
+            aria-pressed={i === index}
+            onClick={() => setzeIndex(i)}
+          >
+            {p.titel}
+          </button>
+        ))}
+      </fieldset>
+      <fieldset className="zahlwahl">
+        <legend>{t("repertoiretrainer.seite")}</legend>
+        {SEITEN.map((s) => (
+          <button
+            key={s}
+            type="button"
+            className="chip"
+            aria-pressed={seite === s}
+            onClick={() => setzeSeite(s)}
+          >
+            {t(s === "white" ? "farbe.w" : "farbe.b")}
+          </button>
+        ))}
+      </fieldset>
+      <button
+        type="button"
+        className="knopf-haupt"
+        disabled={gewaehlt === null}
+        onClick={() => gewaehlt && starte(gewaehlt)}
+      >
+        {t("taktiktrainer.starten")}
+      </button>
+    </div>
+  );
+}
+
+function Zugerraten({ kapitel }: { kapitel: Parameters<typeof partienAus>[0] }) {
+  const [partie, setzePartie] = useState<Aufgabe | null>(null);
+  const [durchlauf, setzeDurchlauf] = useState(0);
+  if (!partie) return <Partiewahl partien={(s) => partienAus(kapitel, s)} starte={setzePartie} />;
+  return (
+    <Rundenablauf
+      key={`${partie.titel}-${partie.seite}-${durchlauf}`}
+      kennung="zugErraten"
+      erzeuge={() => [(r) => <Zugerratenaufgabe aufgabe={partie} runde={r} />]}
+      nochmal={() => setzeDurchlauf(durchlauf + 1)}
+      zurAuswahl={() => setzePartie(null)}
+    />
+  );
+}
+
+export function ZugErratenBereich() {
+  return <MitKapitel nummer={KAPITEL_PARTIEN} inhalt={(k) => <Zugerraten kapitel={k} />} />;
+}

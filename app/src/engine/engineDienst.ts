@@ -36,7 +36,9 @@ export interface Bewertung {
 export type Staerke =
   | { readonly art: "voll" }
   | { readonly art: "skill"; readonly stufe: number }
-  | { readonly art: "elo"; readonly elo: number };
+  | { readonly art: "elo"; readonly elo: number }
+  /** Volle Stärke, aber nur bis zu dieser Suchtiefe (Stufen 1 bis 3 seit 0.2.52, engine/menschlich.ts). */
+  | { readonly art: "tiefe"; readonly tiefe: number };
 
 export const VOLLE_STAERKE: Staerke = { art: "voll" };
 /** Höchster „Skill Level“ von Stockfish (volle Stärke). */
@@ -262,7 +264,9 @@ export class EngineDienst {
     kanal.senden(`setoption name MultiPV value ${Math.max(varianten, nurZuege.length)}`);
     kanal.senden(`position fen ${fen}`);
     const auswahl = nurZuege.length > 0 ? ` searchmoves ${nurZuege.join(" ")}` : "";
-    kanal.senden(`go movetime ${rechenzeitMs}${auswahl}`);
+    // Mit Tiefengrenze hält die Engine an, sobald die Tiefe oder die Zeit erreicht ist.
+    const tiefe = staerke.art === "tiefe" ? `depth ${staerke.tiefe} ` : "";
+    kanal.senden(`go ${tiefe}movetime ${rechenzeitMs}${auswahl}`);
     return ergebnis;
   }
 

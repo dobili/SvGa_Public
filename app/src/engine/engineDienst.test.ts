@@ -76,6 +76,17 @@ describe("EngineDienst mit Stockfish", () => {
   );
 
   it(
+    "hält mit Tiefengrenze an der Tiefe an (Stufen 1 bis 3, 0.2.52)",
+    async () => {
+      const flach = await dienst.bewerte(ABB_1_26, RECHENZEIT_MS, 6, { art: "tiefe", tiefe: 4 });
+      expect(flach.tiefe).toBeLessThanOrEqual(4);
+      expect(flach.varianten.length).toBeGreaterThanOrEqual(2);
+      expect(flach.rechenzeitMs).toBeLessThan(RECHENZEIT_MS);
+    },
+    TESTFRIST_MS,
+  );
+
+  it(
     "rechnet mit „nurZuege“ genau die genannten Züge, je Zug eine Variante",
     async () => {
       const nur = ["a2a3", "h2h3"];
@@ -104,6 +115,11 @@ describe("staerkebefehle", () => {
   });
 
   it("Elo-Begrenzung mit Zahl", () => {
+    // Tiefengrenze (Stufen 1 bis 3, 0.2.52): volle Stärke, die Grenze setzt erst „go depth“.
+    expect(staerkebefehle({ art: "tiefe", tiefe: 5 })).toEqual([
+      "setoption name UCI_LimitStrength value false",
+      "setoption name Skill Level value 20",
+    ]);
     expect(staerkebefehle({ art: "elo", elo: 1600 })).toEqual([
       "setoption name UCI_LimitStrength value true",
       "setoption name Skill Level value 20",

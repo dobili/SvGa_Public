@@ -76,6 +76,7 @@ function gegner(kuerzel: string): Stufe {
     hoechstverlust: 0,
     damenopferErlaubt: false,
     rechenzeitMs: VERGLEICHS_RECHENZEIT_MS,
+    menschlich: null,
   };
   if (skill?.[1]) {
     return { ...vergleich, nummer: 8, staerke: { art: "skill", stufe: Number(skill[1]) } };

@@ -75,11 +75,16 @@ describe("Zugwahl", () => {
     expect(aufrufe).toHaveLength(0);
   });
 
-  it("Stufe 1 ohne Fehlerwurf: der Zug der Engine mit flacher Suche (Skill Level 0)", async () => {
+  it("Stufe 1 ohne Fehlerwurf: Kandidaten bis Tiefe 3, gewichtete Wahl (R4, 0.2.52)", async () => {
     const { b, aufrufe } = bewerter(KANDIDATEN);
-    const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.9));
+    // Fehlerwurf 0,9 trifft nicht; Wahl 0 → der beste Zug.
+    const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.9, 0));
     expect(wahl).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(aufrufe).toEqual([{ varianten: 1, staerke: { art: "skill", stufe: 0 } }]);
+    expect(aufrufe).toEqual([{ varianten: 6, staerke: { art: "tiefe", tiefe: 3 } }]);
+    // Hoher Wurf: ein schlechterer Kandidat mit seinem Verlust (Schwarz am Zug: d6 kostet 0,2).
+    const zweite = await waehleZug(b, FEN, stufe(1), [], folge(0.9, 0.7));
+    expect(zweite?.uci).toBe("d7d6");
+    expect(zweite?.verlust).toBeCloseTo(0.2, 5);
   });
 
   it("Stufe 1 mit Fehlerwurf: ein typischer Fehler bis zum Höchstverlust", async () => {
@@ -102,8 +107,13 @@ describe("Zugwahl", () => {
   it("Fehlerwurf ohne passenden Fehler: der normale Zug der Stufe", async () => {
     const { b, aufrufe } = bewerter([variante(1, 0.3, ["b8c6"])], "d7d6");
     const wahl = await waehleZug(b, FEN, stufe(3), [], folge(0.01, 0.5));
-    expect(wahl).toEqual({ uci: "d7d6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(aufrufe.at(-1)).toEqual({ varianten: 1, staerke: { art: "skill", stufe: 0 } });
+    expect(wahl).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
+    expect(aufrufe.at(-1)).toEqual({ varianten: 6, staerke: { art: "tiefe", tiefe: 7 } });
+    // Ab Stufe 4 weiter der beste Zug der Grundstärke.
+    const { b: b4, aufrufe: a4 } = bewerter([variante(1, 0.3, ["b8c6"])], "d7d6");
+    const wahl4 = await waehleZug(b4, FEN, stufe(4), [], folge(0.01, 0.5));
+    expect(wahl4).toEqual({ uci: "d7d6", quelle: "engine", fehler: null, verlust: 0 });
+    expect(a4.at(-1)).toEqual({ varianten: 1, staerke: { art: "skill", stufe: 3 } });
   });
 
   it("ab Stufe 5 nur die Grundstärke, kein Fehlerwurf", async () => {
@@ -125,7 +135,7 @@ describe("Zugwahl", () => {
     const keine = { fehlerarten: [], stil: 0, blindeFlecken: [] };
     const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0), BUCHTREUE_VORGABE, keine);
     expect(wahl?.quelle).toBe("engine");
-    expect(aufrufe).toEqual([{ varianten: 1, staerke: { art: "skill", stufe: 0 } }]);
+    expect(aufrufe).toEqual([{ varianten: 6, staerke: { art: "tiefe", tiefe: 3 } }]);
     const nurRaub = { fehlerarten: ["bauernraub" as const], stil: 0, blindeFlecken: [] };
     const ohne = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0), BUCHTREUE_VORGABE, nurRaub);
     expect(ohne?.fehler).toBeNull();

@@ -14,8 +14,12 @@
  *   ein langsames Handy spielt auf Stufe 4 bis 7 genauso stark wie ein PC. Die Elo-Begrenzung
  *   („UCI_Elo“) rechnet Stockfish selbst in ein Skill Level um (1600 Elo entspricht etwa Level 2,
  *   2000 Elo etwa Level 4); sie ist deshalb hier nicht nötig, der Engine-Dienst kann sie weiter.
- * - Stufe 1 bis 3: Skill Level 0 ist die „flache Suche“ aus Konzept 8.2 (Tiefe 1); dazu die
- *   Fehlerquoten des Konzepts (jeder dritte, vierte, achte Zug) mit fallendem Höchstverlust.
+ * - Stufe 1 bis 3 (seit 0.2.52, Empfehlung R4, engine/menschlich.ts): volle Stärke bis zu einer
+ *   Tiefengrenze (3, 5, 7 Halbzüge: Taktik dahinter sieht die Engine nicht) und gewichtete Wahl
+ *   unter den Kandidaten mit einer Temperatur (1,0, 0,7, 0,45 Bauerneinheiten: kleine Fehler
+ *   oft, große selten). Dazu die Fehlerprofile des Konzepts (jeder dritte, vierte, achte Zug)
+ *   mit fallendem Höchstverlust, die erklärbare Fehler liefern. Bis 0.2.51: Skill Level 0, die
+ *   „flache Suche“ aus Konzept 8.2 (Tiefe 1), die alles Einzügige fehlerfrei spielte.
  * - Stufe 4: Skill Level 3, „selten ein typischer Fehler“ (Konzept 8.2): jeder sechzehnte Zug.
  * - Stufe 5 bis 7: Skill Level 6, 10 und 15 ohne Fehlerprofile; Stufe 8 volle Stärke.
  * Wer hier ändert, ändert nur diese Tabelle; die Oberfläche liest Namen und Nummer.
@@ -23,6 +27,7 @@
  */
 import type { Textschluessel } from "../i18n/sprache";
 import { VOLLE_STAERKE, type Staerke } from "./engineDienst";
+import type { Menschlich } from "./menschlich";
 
 export type Stufennummer = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
 
@@ -43,6 +48,8 @@ export interface Stufe {
   readonly damenopferErlaubt: boolean;
   /** Rechenzeit je Zug in Millisekunden (Konzept 8.1: höchstens 2 bis 3 Sekunden). */
   readonly rechenzeitMs: number;
+  /** Gewichtete Zugwahl mit Temperatur (Stufen 1 bis 3); null: der beste Zug der Grundstärke. */
+  readonly menschlich: Menschlich | null;
 }
 
 /**
@@ -63,8 +70,24 @@ const DAME = 9;
 const TURM = 5;
 const LEICHTFIGUR = 3;
 
+/** Tiefengrenzen und Temperaturen der Stufen 1 bis 3 (engine/menschlich.ts). */
+const TIEFE_STUFE_1 = 3;
+const TIEFE_STUFE_2 = 5;
+const TIEFE_STUFE_3 = 7;
+const TEMPERATUR_STUFE_1 = 1.0;
+const TEMPERATUR_STUFE_2 = 0.7;
+const TEMPERATUR_STUFE_3 = 0.45;
+/** So viele Kandidaten rechnet die Engine für die gewichtete Wahl. */
+const KANDIDATEN_MENSCHLICH = 6;
+
+function menschlich(tiefe: number, temperatur: number): Pick<Stufe, "staerke" | "menschlich"> {
+  return {
+    staerke: { art: "tiefe", tiefe },
+    menschlich: { temperatur, kandidaten: KANDIDATEN_MENSCHLICH },
+  };
+}
+
 /** Die Skill Level von Stockfish je Stufe (0 bis 20; 20 ist die volle Stärke). */
-const SKILL_FLACH = 0;
 const SKILL_STUFE_4 = 3;
 const SKILL_STUFE_5 = 6;
 const SKILL_STUFE_6 = 10;
@@ -77,7 +100,7 @@ function skill(stufe: number): Staerke {
 const EINSTEIGER: Stufe = {
   nummer: 1,
   name: "stufe.1",
-  staerke: skill(SKILL_FLACH),
+  ...menschlich(TIEFE_STUFE_1, TEMPERATUR_STUFE_1),
   fehlerquote: JEDER_DRITTE,
   hoechstverlust: DAME,
   damenopferErlaubt: true,
@@ -89,7 +112,7 @@ export const STUFEN: readonly Stufe[] = [
   {
     nummer: 2,
     name: "stufe.2",
-    staerke: skill(SKILL_FLACH),
+    ...menschlich(TIEFE_STUFE_2, TEMPERATUR_STUFE_2),
     fehlerquote: JEDER_VIERTE,
     hoechstverlust: TURM,
     damenopferErlaubt: false,
@@ -98,7 +121,7 @@ export const STUFEN: readonly Stufe[] = [
   {
     nummer: 3,
     name: "stufe.3",
-    staerke: skill(SKILL_FLACH),
+    ...menschlich(TIEFE_STUFE_3, TEMPERATUR_STUFE_3),
     fehlerquote: JEDER_ACHTE,
     hoechstverlust: LEICHTFIGUR,
     damenopferErlaubt: false,
@@ -112,6 +135,7 @@ export const STUFEN: readonly Stufe[] = [
     hoechstverlust: LEICHTFIGUR,
     damenopferErlaubt: false,
     rechenzeitMs: 600,
+    menschlich: null,
   },
   {
     nummer: 5,
@@ -121,6 +145,7 @@ export const STUFEN: readonly Stufe[] = [
     hoechstverlust: 0,
     damenopferErlaubt: false,
     rechenzeitMs: 800,
+    menschlich: null,
   },
   {
     nummer: 6,
@@ -130,6 +155,7 @@ export const STUFEN: readonly Stufe[] = [
     hoechstverlust: 0,
     damenopferErlaubt: false,
     rechenzeitMs: 1000,
+    menschlich: null,
   },
   {
     nummer: 7,
@@ -139,6 +165,7 @@ export const STUFEN: readonly Stufe[] = [
     hoechstverlust: 0,
     damenopferErlaubt: false,
     rechenzeitMs: 1500,
+    menschlich: null,
   },
   {
     nummer: 8,
@@ -148,6 +175,7 @@ export const STUFEN: readonly Stufe[] = [
     hoechstverlust: 0,
     damenopferErlaubt: false,
     rechenzeitMs: 2000,
+    menschlich: null,
   },
 ];
 

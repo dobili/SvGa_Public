@@ -12,6 +12,7 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
+import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { phaseVon } from "../../spiel/phasen";
 import { ladeKapitel } from "../../daten/laden";
@@ -117,6 +118,19 @@ function stufeFuer(partie: Partie, fen: string): Stufennummer {
   return letzter?.stufe ? naechsteStufe(letzter.stufe, ziel) : ziel;
 }
 
+/** Eigene Züge mit Verlust (ab 0,5) unter den letzten drei Zügen der Engine: Strähne (0.2.52). */
+const STRAEHNE_ZUEGE = 3;
+const STRAEHNE_VERLUST_AB = 0.5;
+
+/** Der Verlauf der Partie für die Fehlerneigung der Stufen 1 bis 3 (engine/menschlich.ts). */
+function verlaufVon(partie: Partie): Verlauf {
+  const letzte = partie.zuege.filter((z) => z.von === "engine").slice(-STRAEHNE_ZUEGE);
+  return {
+    fehlerAnlauf: letzte.filter((z) => z.verlust >= STRAEHNE_VERLUST_AB).length,
+    tagesform: tagesform(partie.id),
+  };
+}
+
 /** Lässt die Engine ziehen, solange sie am Zug ist. */
 function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) {
   const buch = useBuch();
@@ -134,6 +148,7 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
       fehlerarten: jetzige?.einstellung.fehlerarten ?? null,
       stil: jetzige?.einstellung.stil ?? 0,
       blindeFlecken: jetzige?.einstellung.blindeFlecken ?? [],
+      verlauf: jetzige ? verlaufVon(jetzige) : undefined,
     };
     engineZug(
       engine,

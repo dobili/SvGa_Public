@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 17.10.2026 · **Version 0.2.39**, Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 17.10.2026 · **Version 0.2.39**, Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen) und die Trainerdaten (Fable, Zweig `trainerdaten`, zusammengeführt); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1254,20 +1254,23 @@ Eröffnungsliste sind seit 0.2.32 umgesetzt).
 Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2.36) liegt im
 Archiv-Repository; was davon noch offen ist, steht hier.
 
-1. **Autor:** Nachtest N182 bis N209 (0.2.37 bis 0.2.39) und, falls offen, N158 bis N181; Rückfragen U1 bis
-   U11, R1 bis R5, C1 bis C9, K1 bis K6 und D1 in `docs/AUFGABEN_AUTOR.md`. Antworten einarbeiten.
-   Zweig `rueckmeldung-0.2.39` (Fable, Nacht zum 17.10.2026) nach grüner Prüfung und Freigabe in
-   `main` übernehmen; Entscheidungen in `docs/ENTSCHEIDUNGEN.md`, Abschnitt „Rückmeldung zu 0.2.38“.
-   U10 („!“) ist damit umgesetzt; R4 (Stufen menschlicher) wartet auf die Richtung des Autors.
-2. **Fable, Zweig `trainerdaten`:** Pipeline `pipeline/trainer/`, Schemas `schemas/trainer*`,
-   Daten `inhalte/de/trainer/`, Notizen `docs/TRAINERDATEN.md`. Fable pusht weder `main` noch
-   `app/`. Sobald Fable fertig meldet und die Prüfung grün ist, führt Opus den Zweig zusammen und
-   trägt die Lizenz der Lichess-Daten (CC0) in `docs/LIZENZEN.md` ein.
-3. **Danach AP 13 weiter (Opus):** Taktiktrainer, Strukturerkenner und „Falle oder Köder“ auf
-   den Daten von Fable; Repertoire, Zielbilanz- und Faktorenbilanz-Trainer, Endspieltrainer;
-   Lichess-Aufgaben. Offene Frage U9 (Trainer in der Wiederholung) vorher klären.
+1. **Autor:** Nachtest N201 bis N209 (0.2.39), dann N182 bis N200 und, falls offen, N158 bis
+   N181 (alle Texte gelten für 0.2.39); Rückfragen R1 bis R5, U1 bis U9, U11, U12, T1 bis T5,
+   C1 bis C9, K1 bis K6 und D1 in `docs/AUFGABEN_AUTOR.md`. Antworten einarbeiten.
+   Entscheidungen der Nacht zum 17.10.2026 (Fable) in `docs/ENTSCHEIDUNGEN.md`, Abschnitt
+   „Rückmeldung zu 0.2.38“, und in `docs/TRAINERDATEN.md`. U10 („!“) ist umgesetzt; R4 (Stufen
+   menschlicher, fünf Wege mit Empfehlung) wartet auf die Richtung des Autors.
+2. **Trainerdaten (Fable) sind fertig und in `main`:** Pipeline `pipeline/trainer/`, Schemas
+   `schemas/trainer*`, Daten `inhalte/de/trainer/` (86 Übungen gegengeprüft, 674 Taktik-, 134
+   Struktur-, 132 Fallen-Aufgaben mit geeichter Schwierigkeit), Notizen und Rückfragen A1 bis A5
+   in `docs/TRAINERDATEN.md`; Lizenz der Lichess-Daten (CC0) steht in `docs/LIZENZEN.md`.
+3. **AP 13 weiter (Opus):** Taktiktrainer, Strukturerkenner und „Falle oder Köder“ auf diesen
+   Daten (Plan-Sätze und Motivnamen aus `i18n/de.json`, Hinweise für Opus am Ende von
+   `docs/TRAINERDATEN.md`); Repertoire, Zielbilanz- und Faktorenbilanz-Trainer, Endspieltrainer.
+   Offene Frage U9 (Trainer in der Wiederholung) vorher klären.
 4. **Offen aus den Vorschlägen:** D1 Leerfälle (Tabelle im Archiv, VORSCHLAEGE_0.2.26.md,
-   Abschnitt D: je Werkzeug „gilt, wenn …“ und ein Satz, warum nicht). H ist bis auf „!“ fertig.
+   Abschnitt D: je Werkzeug „gilt, wenn …“ und ein Satz, warum nicht; Rückfrage U12). H ist
+   seit 0.2.39 vollständig („!“).
 
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 

@@ -7,8 +7,10 @@ Hier steht **nur, was noch offen ist**. Erledigtes ist in `docs/ENTSCHEIDUNGEN.m
 „G3: so lassen“); Claude trägt alles ein. Bei Fehlern in der App hilft **Einstellungen (Zahnrad)
 › Fehler melden**.
 
-Reihenfolge nach Wichtigkeit: B (testen), U (Rückfragen zu den Übungen und Trainern), C und K
-(Rückfragen zu Regeln und Engine), D (Buch), E (vor der Veröffentlichung).
+Reihenfolge nach Wichtigkeit: B (testen), R (Rückmeldung 0.2.38, neu in 0.2.39), U (Übungen und
+Trainer), T (Trainerdaten), C und K (Regeln und Engine), D (Buch), E (vor der Veröffentlichung).
+Alle Nummern gelten für die aktuelle Version 0.2.39; frühere Versionen musst du nicht mehr
+getrennt testen.
 Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2026 erledigt:
 `dobili/SvGa_Public` ist öffentlich, die Prüfungen laufen bei jedem Push kostenlos.
 
@@ -16,9 +18,11 @@ Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2
 
 ## B. Testen
 
-- [ ] B1. **Nachtest 0.2.37 und 0.2.38** nach `docs/TESTANLEITUNG.md` (N182 bis N200: Übungen,
-      erste Trainer, neuer Buchstand, Rückblick nach der Partie).
-- [ ] B2. **Nachtest 0.2.33 und 0.2.36** (N158 bis N181), falls noch nicht geschehen.
+- [ ] B1. **Nachtest 0.2.39** nach `docs/TESTANLEITUNG.md` (N201 bis N209: Figurensätze,
+      Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung).
+- [ ] B2. **Nachtest 0.2.37 und 0.2.38** (N182 bis N200: Übungen, erste Trainer, neuer Buchstand,
+      Rückblick nach der Partie), falls noch nicht geschehen.
+- [ ] B3. **Nachtest 0.2.33 und 0.2.36** (N158 bis N181), falls noch nicht geschehen.
 
 ## U. Rückfragen zu den Übungen und Trainern (AP 13, Nacht zum 17.10.2026; plausibel entschieden)
 
@@ -48,9 +52,7 @@ Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2
       Wiederholung (fünf Kästen). Sollen auch Aufgaben der Trainer dort landen, etwa jede falsch
       beantwortete Röntgen-Aufgabe?
 
-- [ ] U10. **Rückblick, „!“:** Das Zeichen „!“ für den einzigen guten Zug fehlt noch. Dafür
-      rechnet die Auswertung je Stellung zwei Züge statt einen (etwa 0,7 statt 0,5 Sekunden je
-      Stellung), und die zweitbesten Werte kommen in den Speicher. Gewünscht?
+- [x] U10. **Rückblick, „!“:** erledigt in 0.2.39 (Fable), Regel und Rückfrage dazu unter R2.
 - [ ] U11. **Bewertungsbalken** nur nach der Partie (wie empfohlen, R13), nicht während der
       Partie. So lassen?
 
@@ -108,6 +110,8 @@ Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2
 - [ ] K3. **Buchtreue:** Die Engine folgt auf allen Stufen zu 85 % je Zug den Eröffnungen aus
       Kapitel 2 und 3, also auch der „Einsteiger“ einige Züge lang fehlerfrei. So lassen (der
       Leser sieht die Eröffnungen des Buches), oder je Stufe weniger (etwa 50 % auf Stufe 1)?
+      Seit 0.2.39 kannst du der Engine zusätzlich eine Eröffnung vorgeben (dann Buchtreue 1); die
+      Frage betrifft nur die Wahl „frei“.
 - [ ] K4. **Drohung ignoriert ab einem Bauern:** Nach der Röntgen-Regel (Kapitel 1) zählt jede
       Drohung, Material zu gewinnen, also auch ein Bauer (2. Dh5 droht Dxe5+). Soll die Fehlerart
       „Drohung ignoriert“ erst ab einer Leichtfigur heißen?
@@ -142,6 +146,23 @@ Teil A (Budget, Aufräumen, Veröffentlichen, 0.2.33 nach `main`) ist am 16.10.2
       Engine (Drohung, hängende Figur, Gabel, gefährliche Linie, Motiv der Antwort, Schlagreflex,
       Dame, König). Ohne passende Regel steht nur „kostet etwa … Bauern. Besser war …“. Reicht
       das, oder soll die Engine-Variante (die nächsten Züge nach dem besseren Zug) dazu?
+
+## T. Rückfragen zu den Trainerdaten (Fable, Nacht zum 17.10.2026; in 0.2.39 enthalten)
+
+Die Daten für Taktiktrainer, Strukturerkenner und „Falle oder Köder“ liegen in
+`inhalte/de/trainer/` (Opus baut die Trainer darauf). Die Rückfragen A1 bis A5 stehen mit allen
+Einzelheiten in `docs/TRAINERDATEN.md`, Abschnitt „Entscheidungen und Rückfragen“; kurz:
+
+- [ ] T1 (A1). **Übungen:** Vorschläge für zusätzlich „akzeptierte“ Züge bei den Übungen 2, 6,
+      11, 15 und 39 übernehmen? Übung 83 (Dc2 statt Te1, 0,44 schwächer) so lassen?
+- [ ] T2 (A2). **Menge der Lichess-Aufgaben:** 637 Taktik- und 120 Fallen-Aufgaben: genug, zu
+      viel, oder mehr für die Stufen 1 bis 3?
+- [ ] T3 (A3). **Stufe von Hand:** Soll es ein Feld geben, mit dem du die Stufe einzelner
+      Buchaufgaben selbst setzt?
+- [ ] T4 (A4). **Fallen aus Kapitel 2 und 3** (Zugfolgen mit „?“ nach einem Schlag) in den
+      Fallentrainer aufnehmen?
+- [ ] T5 (A5). **Strukturerkenner:** Tabelle der Strukturen je Abbildung aus Kapitel 5
+      (`pipeline/trainer/struktur.py`, `BUCHSTRUKTUREN`) und die Plan-Schlüssel durchsehen.
 
 ## D. Buch
 

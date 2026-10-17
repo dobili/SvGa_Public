@@ -1159,5 +1159,10 @@ Dateien unter `app/src/training/`, `Uebung*`, `Trainer*` sind unberührt.
      (`npm run messen:stufen`: jede Stufe gewinnt weiter die Mehrheit gegen die darunter); 4 und 5
      danach. Heute Nacht nicht umgesetzt, weil AP 11 die Stufen gerade erst kalibriert hat und der
      Autor die Richtung entscheiden soll (R4).
-- **Nicht angefasst:** `docs/FORTSCHRITT.md` nur um die Version und den nächsten Schritt
-  ergänzt; AP-13-Dateien von Opus unberührt; der Zweig `trainerdaten` läuft getrennt weiter.
+- **Zusammenführung (17.10.2026 früh, Freigabe des Autors im Chat):** `main` stand noch auf
+  0.2.38 (keine weiteren Pushes von Opus), der Zweig `rueckmeldung-0.2.39` baut darauf auf. Der
+  fertige Zweig `trainerdaten` (Prüfung grün) ist mit hineingeführt, die Lizenz der Lichess-Daten
+  in `docs/LIZENZEN.md` eingetragen; beides zusammen als 0.2.39 nach `main`. AP-13-Dateien von
+  Opus sind unberührt. Die Anleitungen (`TESTANLEITUNG`, `AUFGABEN_AUTOR`, `FORTSCHRITT`) sind auf
+  0.2.39 abgeglichen: alle Nachtest-Nummern gelten für die aktuelle Version, die Rückfragen
+  stehen in der Reihenfolge B, R, U, T, C, K, D, E.

@@ -1,7 +1,9 @@
 # Testanleitung für das Handy
 
 Hier steht nur, was noch zu testen ist. Alle früheren Prüfschritte (N1 bis N157) sind erledigt; sie liegen im privaten
-Archiv-Repository des Autors.
+Archiv-Repository des Autors. **Alle Abschnitte gelten für die aktuelle Version 0.2.39** (die Texte
+älterer Abschnitte sind an 0.2.39 angepasst), neueste zuerst; wer hinterher ist, nimmt sich am
+besten zuerst N201 bis N209 vor, dann der Reihe nach die älteren.
 
 Abhaken, was klappt; bei allem anderen bitte kurz notieren, **was** du getan hast und **was**
 passiert ist, am besten mit Bildschirmfoto. Dazu in der App **Einstellungen (Zahnrad) › Fehler
@@ -62,8 +64,7 @@ Einstellungen muss „App-Version 0.2.39“ stehen.
 
 ## Nachtest Version 0.2.38 (etwa 5 Minuten, mit Engine; Rückblick nach der Partie)
 
-Neu: Vorschlag H, Rückblick nach der Partie. **Vorher:** In den Einstellungen muss „App-Version
-0.2.38“ stehen.
+Neu: Vorschlag H, Rückblick nach der Partie.
 
 - [ ] N198. **Zeichen und besserer Zug am Brett:** Eine kurze Partie mit einem klaren Fehler
       spielen (etwa Spielen › eigene Stellung nach 1. f3 e5, dann 2. g4??). Nach dem Ende und der
@@ -79,7 +80,7 @@ Neu: Vorschlag H, Rückblick nach der Partie. **Vorher:** In den Einstellungen m
 ## Nachtest Version 0.2.37 (etwa 30 Minuten; AP 13 Übungen und erste Trainer)
 
 Neu: Die Übungen des Buches lassen sich in der App lösen, mit Wiederholung, dazu die ersten drei
-Trainer. **Vorher:** In den Einstellungen muss „App-Version 0.2.37“ stehen.
+Trainer.
 
 **Übungen des Buches**
 
@@ -137,7 +138,7 @@ Trainer. **Vorher:** In den Einstellungen muss „App-Version 0.2.37“ stehen.
 ## Nachtest Version 0.2.36 (etwa 30 Minuten, mit Engine; AP 11 Kalibrierung)
 
 Neu: die kalibrierten Stufen und die Fehlerprofile der Engine (Konzept 8.2), dazu drei Befunde der
-Gegenprüfung (Uhr, Auswertung). **Vorher:** In den Einstellungen muss „App-Version 0.2.36“ stehen.
+Gegenprüfung (Uhr, Auswertung).
 Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abstufung richtig anfühlt.“
 
 **Stufen und Fehlerprofile**
@@ -146,7 +147,8 @@ Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abs
       Die Engine spielt sichtbar schwach und macht etwa jeden dritten Zug einen Anfängerfehler
       (hängende Figur, ignorierte Drohung, Dame zu früh). Nach dem Ende (oder Aufgeben) nennt die
       Auswertung die Fehler der Engine mit Zugnummer und Art, darunter auch „eine Drohung
-      ignoriert“ oder „eine Taktik übersehen“ (neu). Stimmen die genannten Züge?
+      ignoriert“ oder „eine Taktik übersehen“; beim Nachspielen erklärt die Rückblick-Karte sie
+      (seit 0.2.39, N205). Stimmen die genannten Züge?
 - [ ] N176. **Stufe 2 (Anfänger), kein Damenopfer:** eine Partie auf Stufe 2 (etwa 20 Züge). Die
       Engine verschenkt Bauern und Figuren, aber nie die Dame ohne Gegenwert (Konzept 8.2).
 - [ ] N177. **Abstufung:** je eine kurze Partie auf Stufe 3, 5 und 7. Fühlt sich die Abstufung
@@ -155,7 +157,8 @@ Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abs
       höchstens 0,3 bis 2 Sekunden (Stufe 1 bis 8), auch auf dem Handy.
 - [ ] N178. **Eröffnung:** Grundstellung, Stufe 1, 1. e4: Die Engine antwortet einige Züge lang
       mit den Eröffnungen aus Kapitel 2 und 3 (Zugliste), auch auf niedriger Stufe (Buchtreue
-      0,85 je Zug, siehe Rückfrage K3).
+      0,85 je Zug, siehe Rückfrage K3). Seit 0.2.39 kannst du der Engine eine Eröffnung
+      vorgeben (N208).
 
 **Gegenprüfung (Uhr und Auswertung)**
 
@@ -171,14 +174,15 @@ Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abs
 ## Nachtest Version 0.2.33 (etwa 25 Minuten, mit Engine)
 
 Neu: deine Antworten vom 16.10.2026 (Spielziel, Werkzeuge in der Partie, Figurensatz, Ton und die
-Regeln C1 und C2). **Vorher:** In den Einstellungen muss „App-Version 0.2.33“ stehen.
+Regeln C1 und C2).
 
 **Spielen und Einstellungen**
 
 - [ ] N158. **Kein Spielziel:** Spielen: Es gibt keine Auswahl „Spielziel“ mehr. Nach dem Ende
       einer Partie steht nur das Ergebnis, kein „Ziel erreicht/verfehlt“.
-- [ ] N159. **Figurensatz und Ton:** Einstellungen: Figurensatz „kontrastreich“ zeigt überall die
-      klassischen Figuren (weiß mit schwarzem Rand); Ton „an“: beim Ziehen klackt es, bei einem
+- [ ] N159. **Figurensatz und Ton:** Einstellungen: Figurensatz „klassisch“ (bis 0.2.38
+      „kontrastreich“; „Holz“ seit 0.2.39, N201) zeigt überall die klassischen Figuren (weiß mit
+      schwarzem Rand); Ton „an“: beim Ziehen klackt es, bei einem
       Schlag kräftiger (Stummschalter aus). („Erst selbst denken“ ist seit 0.2.37 wieder da, N187.)
 - [ ] N160. **Warum-Fragen:** Bei den Warum-Fragen steht kein „vorbereitet“ mehr.
 - [ ] N161. **Werkzeuge in der Partie:** Partie beginnen. Am Brett unten rechts: Zählen, Röntgen,
@@ -214,7 +218,8 @@ Regeln C1 und C2). **Vorher:** In den Einstellungen muss „App-Version 0.2.33�
 - [ ] N169. **Planfindung:** Abb. 6.4 aus schwarzer Sicht, Wo?: „Der Gegenschlag ist schon da: d5
       greift e4 an“. Abb. 6.17, LAP: „Dringe mit Turm d2 nach d7 ein …“ (goldener Pfeil). Abb. 6.32
       (Schach): nur „Erst das Schach beantworten …“.
-- [ ] N170. **Taktik:** Abb. 7.14, Erzwingende Züge: nach und nach je Kandidat „bis zur Ruhe: …“;
+- [ ] N170. **Taktik:** Abb. 7.14, Erzwingende Züge: nach und nach je Kandidat „Material bis zur
+      Ruhe: …“;
       „Am stärksten: 2. Th8+“, am Brett „2+!“. Abb. 7.10, Motiv: „Sf7+: Abzug“ (die Zugfolge
       beginnt jetzt mit 1. Sf7+). Abb. 7.28: „De1+: Dauerschach.“ Übung 7.53: Überlastung.
 

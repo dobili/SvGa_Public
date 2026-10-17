@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.69. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.70. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.69“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.70“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,18 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.69“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.70“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.70 (etwa 10 Minuten, mit Engine; Abweichungsmodus, Opus)
+
+- [ ] N304. **Abweichungsmodus:** Training › Kapitel 2 › „Abweichungsmodus“ › Trainieren.
+      Eröffnung und Seite wählen (etwa Spanische Partie, Weiß), „Runde starten“. Die App spielt
+      einige Buchzüge, dann „Die Engine verlässt das Buch mit …“ (ein guter Zug, der in keiner
+      Zugfolge der Kapitel 2 und 3 steht). Du antwortest am Brett nach den Prinzipien. Danach:
+      „… ist eine gute Antwort“ (bis 0,5 Bauern hinter der Engine), „ungenau“ oder „ein Fehler“
+      mit dem besseren Zug, und darunter die Einschätzung nach den Prinzipien (Fazit von
+      Zielbilanz und Todsünden für deine Seite). Drei Aufgaben je Runde. Siehe F4.
 
 ### Neu in 0.2.69 (etwa 15 Minuten; Planbilanz-Übung, Opus)
 
@@ -879,6 +889,15 @@ Regeln C1 und C2).
       **Empfehlung:** so lassen. Schon umgesetzt in 0.2.69, Widerspruch genügt. Wenn du lieber
       deine eigenen Planbilanz-Sätze als Antworten hättest, bräuchte die App sie als freigegebenen
       Text (sie sind Buchtext).
+
+- [ ] F4. **Abweichungsmodus (0.2.70):** Die Eröffnungen und Varianten sind die aus Kapitel 2
+      (wie im Repertoire-Trainer). Die Engine weicht frühestens nach dem 4., spätestens nach dem
+      12. Halbzug ab, immer mit ihrem besten Zug, der kein Buchzug ist (Buch heißt: irgendeine
+      Zugfolge der Kapitel 2 und 3). Gut ist eine Antwort bis 0,5 Bauern hinter dem besten Zug,
+      ungenau bis 1,2, darüber ein Fehler (wie die Auswertung nach der Partie). Die Einschätzung
+      zeigt die Fazits der Werkzeuge Zielbilanz und Todsünden, keine vorbereiteten Texte, weil es
+      zu Stellungen außerhalb des Buches keine gibt.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.70, Widerspruch genügt.
 
 ### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 

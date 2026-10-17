@@ -5,7 +5,7 @@
  * Schach-Röntgen-Trainer, „Koordinaten, Notation, Gangarten“, Zielbilanz-Übung und
  * Faktorenbilanz-Trainer üben an den Buchstellungen;
  * Taktiktrainer, „Falle oder Köder“ und Strukturerkenner haben eigene Aufgaben aus den
- * Trainerdaten (ui/trainer/*Bereich.tsx). Die
+ * Trainerdaten, der Repertoire-Trainer die Zugfolgen aus Kapitel 2 (ui/trainer/*Bereich.tsx). Die
  * Aufgaben entstehen aus den Stellungen des Buches (training/buchstellungen.ts); eine Runde hat
  * je nach Übungsart 5 bis 16 Aufgaben und zählt am Ende als Durchgang im Fortschritt.
  * Abhängigkeiten: training/*, ui/trainer/*, Navigation, i18n.
@@ -31,6 +31,7 @@ import {
 import { Roentgenaufgabe } from "../trainer/Roentgentrainer";
 import { Rundenablauf, type Darstellung } from "../trainer/Rundenablauf";
 import { FallenBereich } from "../trainer/FallenBereich";
+import { RepertoireBereich } from "../trainer/RepertoireBereich";
 import { StrukturBereich } from "../trainer/StrukturBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
@@ -171,6 +172,7 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   taktik: () => <TaktikBereich />,
   falle: () => <FallenBereich />,
   struktur: () => <StrukturBereich />,
+  repertoire: () => <RepertoireBereich />,
 };
 
 export function Trainer({ kennung }: { kennung: TrainerKennung }) {

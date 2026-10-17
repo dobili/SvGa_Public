@@ -226,3 +226,25 @@ test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", asy
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
+
+test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "repertoire");
+  const wahl = page.getByTestId("repertoire-wahl");
+  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
+  await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
+  await wahl.getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von");
+  await feld(page, "e2").click();
+  await feld(page, "e4").click();
+  await expect(page.getByTestId("repertoire-zuege")).toHaveText("1. e4 e5");
+  // Falsch: 2. d4 statt 2. Sf3.
+  await feld(page, "d2").click();
+  await feld(page, "d4").click();
+  await expect(runde).toContainText("Nicht der Zug des Buches");
+  await feld(page, "g1").click();
+  await feld(page, "f3").click();
+  await expect(page.getByTestId("repertoire-zuege")).toHaveText("1. e4 e5 2. Sf3 Sc6");
+  await page.screenshot({ path: "test-results/bilder/trainer-repertoire.png", fullPage: true });
+});

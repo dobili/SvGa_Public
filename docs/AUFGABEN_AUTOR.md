@@ -24,7 +24,7 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.48“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.48 (etwa 10 Minuten; zwei neue Trainer, Opus)
+### Neu in 0.2.48 (etwa 15 Minuten; drei neue Trainer, Opus)
 
 - [ ] N250. **Zielbilanz-Übung:** Training › „Zielbilanz-Übung“ › Trainieren: Brett mit einer
       Eröffnungsstellung aus Kapitel 2 oder 3, darunter für Weiß und Schwarz je drei Zeilen
@@ -36,6 +36,13 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.48“, dann 
       Stellung aus Kapitel 3, je Faktor (Material, Zeit, Königssicherheit, Aktivität) „Weiß,
       gleich, Schwarz“. Nach „Prüfen“ je Zeile „App: …“ und darunter die ganze Faktorenbilanz mit
       Haltbarkeit und Fazit wie im Werkzeug. Rückfrage dazu: W9.
+- [ ] N252. **Repertoire-Trainer:** Training › „Repertoire-Trainer“ › Trainieren: Eröffnung
+      wählen (die Abschnitte von Kapitel 2 mit Steckbrief, etwa „Die Spanische Partie (Ruy
+      Lopez)“) und „Du spielst Weiß/Schwarz“. Du ziehst deine Züge, die App antwortet aus dem Buch;
+      unter dem Brett steht die Zugfolge („1. e4 e5 2. Sf3 Sc6“). Ein falscher Zug: „Nicht der Zug
+      des Buches“ und ein goldener Pfeil, den du nachziehst. Als Schwarz steht der erste weiße Zug
+      schon da und das Brett ist gedreht. Jede Variante des Buches (ab acht Halbzügen, höchstens
+      zwölf Züge je Seite) ist eine Aufgabe, höchstens sechs je Runde. Rückfrage dazu: W10.
 
 ### Neu in 0.2.47 (etwa 15 Minuten, mit Engine; Claudes Empfehlungen schon umgesetzt, Opus)
 
@@ -700,6 +707,15 @@ Regeln C1 und C2).
       **Empfehlung:** ja, aber erst mit den vorbereiteten Texten (AP 14): Dort steht je Abbildung
       ohnehin eine Einschätzung in eigenen Worten, die du freigibst. Bis dahin vergleicht der
       Trainer nur mit der Rechnung der App.
+- [ ] W10. **Repertoire-Trainer (0.2.48):** Varianten sind alle Wege durch die Zugfolge einer
+      Eröffnung in Kapitel 2 mit mindestens acht Halbzügen, gekürzt auf zwölf Züge je Seite. Du
+      wählst die Seite selbst (das Buch sagt im Steckbrief, wer die Eröffnung wählt, aber man
+      übt auch die Gegenseite). Eine Variante gilt als richtig, wenn sie ohne Fehler und ohne
+      „Zug zeigen“ gelingt. Die Warum-Fragen an Schlüsselzügen aus dem Pflichtenheft fehlen noch:
+      Sie brauchen die vorbereiteten Texte (AP 14), die du noch freigeben musst. So lassen?
+      **Empfehlung:** so lassen und die Warum-Fragen nachrüsten, sobald die Texte zu Kapitel 2
+      freigegeben sind. Die Seite selbst zu wählen ist nützlich, weil man jede Eröffnung auch als
+      Gegner kennen sollte.
 
 ### U. Übungen und erste Trainer (Opus, 0.2.37; plausibel entschieden)
 

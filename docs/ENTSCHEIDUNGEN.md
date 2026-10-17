@@ -1553,7 +1553,7 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
-## Zielbilanz-Übung und Faktorenbilanz-Trainer (Opus, 17.10.2026, Version 0.2.48)
+## Zielbilanz-Übung, Faktorenbilanz- und Repertoire-Trainer (Opus, 17.10.2026, Version 0.2.48)
 
 - **Zielbilanz-Übung** (`training/zielbilanztrainer.ts`): Buchstellungen der Kapitel 2 und 3
   mit Zugnummer 6 bis 20 und beiden Königen; ohne angegriffene Zentrumsbauern, weil dort im
@@ -1566,3 +1566,8 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Königssicherheit und Aktivität). Urteil des Buches und „annehmen oder ablehnen?“ fehlen noch
   (Rückfrage W9); der Ablauftext des Trainers sagt nur, was er kann.
 - Gemeinsame Auswahlzeile `ui/trainer/Wahlzeile.tsx` mit „App: …“ nach der Antwort.
+- **Repertoire-Trainer** (`training/repertoiretrainer.ts`): Eröffnungen sind die Zugfolgen
+  (`beispiele`) von Kapitel 2, deren Abschnitt einen Steckbrief hat. Varianten sind alle Wege
+  bis zu einem Blatt mit mindestens acht Halbzügen, gekürzt auf 24 Halbzüge, ohne Doppelte;
+  höchstens sechs je Runde. Falscher Zug oder „Zug zeigen“: goldener Pfeil, der Leser zieht nach,
+  die Variante zählt als falsch. Warum-Fragen fehlen bis zu den freigegebenen Texten (W10).

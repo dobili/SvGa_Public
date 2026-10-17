@@ -13,7 +13,13 @@
  */
 import type { Square } from "chessops/types";
 import { t, type Textschluessel } from "../i18n/sprache";
-import { phase, type Phase, type Phasenbefund } from "../schach/phase";
+import {
+  ENDSPIEL_BIS_PUNKTE,
+  MITTELSPIEL_AB_ZUG,
+  phase,
+  type Phase,
+  type Phasenbefund,
+} from "../schach/phase";
 import { feldname, type Stellung } from "../schach/stellung";
 import { profil } from "./stellungsprofil";
 import { farbname } from "./texte";
@@ -51,7 +57,8 @@ const WERKZEUGZEILEN: Readonly<Record<Phase, readonly Textschluessel[]>> = {
 
 /**
  * Zeilen zur Phase: das Urteil, die Leichtfiguren auf dem Startfeld, die drei Eröffnungsziele
- * beider Seiten (Weiß zuerst wie die Tabellen im Buch) und die vier Prüffragen.
+ * beider Seiten (Weiß zuerst wie die Tabellen im Buch) und die vier Prüffragen. Greift eine
+ * Zusatzregel, die nicht aus dem Buch stammt (0.2.41), steht das als zweite Zeile dabei.
  * Beispiel: Abb. 11.28 → „Mittelspiel: …“, „Leichtfiguren auf dem Startfeld: Weiß 0, Schwarz 0.“,
  * „Eröffnungsziele Schwarz: …, Königssicherheit nein.“
  */
@@ -65,8 +72,18 @@ export function phasenzeilen(p: Phasenbefund): string[] {
       entwicklung: w(z.entwicklung.wertung),
       koenig: w(z.koenig.wertung),
     });
+  const zusatz = p.zusatz
+    ? [
+        t(`phase.zusatz.${p.zusatz}`, {
+          zug: MITTELSPIEL_AB_ZUG,
+          punkte: ENDSPIEL_BIS_PUNKTE,
+          buch: t(`phase.name.${p.buchphase}`),
+        }),
+      ]
+    : [];
   return [
     t(`phase.ist.${p.phase}`),
+    ...zusatz,
     t("phase.zuHause", {
       weiss: p.ziele.white.entwicklung.offen.length,
       schwarz: p.ziele.black.entwicklung.offen.length,

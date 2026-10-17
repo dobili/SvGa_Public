@@ -5,6 +5,7 @@
  */
 import { describe, expect, it } from "vitest";
 import { stellungVon } from "../schach/buchabbildungen.testhilfe";
+import { stellungAusFen } from "../schach/stellung";
 import { k11Phase, werkzeugJePhase } from "./k11-phase";
 
 function phase(nummer: string, abschnitt?: string) {
@@ -105,6 +106,18 @@ describe("k11-phase", () => {
   ] as const)("Steckbrief %s", (_partie, nummern, erwartet) => {
     for (const nummer of nummern)
       expect(phase(nummer).erste, nummer).toMatch(new RegExp(`^${erwartet}`));
+  });
+
+  // 0.2.41: Zusatzregeln außerhalb des Buches stehen mit Namen in der zweiten Zeile.
+  it("Damenendspiel: Endspiel mit Zusatzregel Speelman als zweiter Zeile; Abb. 8.2 ohne Zusatz", () => {
+    const stellung = stellungAusFen("3q2k1/5ppp/8/8/8/8/5PPP/3Q2K1 w - - 0 40");
+    if (!stellung.ok) throw new Error(stellung.fehler);
+    const zeilen = werkzeugJePhase(stellung.wert).befunde[0]?.zeilen ?? [];
+    expect(zeilen[0]).toMatch(/^Endspiel/);
+    expect(zeilen[1]).toBe(
+      "Zusatzregel (nicht aus dem Buch): Jede Seite hat höchstens 13 Punkte an Steinen außer dem König (Bauer 1, Läufer und Springer 3, Turm 5, Dame 9). Solche Stellungen gelten allgemein als Endspiel (Speelman), auch mit Damen am Brett. Nach den vier Fragen des Buches wäre es Mittelspiel.",
+    );
+    expect(phase("8.2").zeilen[1]).toMatch(/^Leichtfiguren auf dem Startfeld/);
   });
 
   it("Beispielpartie (Abb. 11.2, Morphy): Thema, Werkzeug, die Lehre bleibt im Buch", () => {

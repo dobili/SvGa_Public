@@ -15,6 +15,11 @@
  * König, der nicht rochiert, ist nach der Entwicklung eine Frage der Königssicherheit, nicht der
  * Phase (die Unsterbliche Partie, Abb. 11.28 bis 11.31, ist Mittelspiel, obwohl der schwarze
  * König bis zum Matt in der Mitte steht).
+ * Zusatzregeln (0.2.41, Rückfrage S2, nicht aus dem Buch, in der Anzeige als solche genannt):
+ * Ab Zug 15 ist es Mittelspiel, auch wenn noch Leichtfiguren zu Hause stehen (die Eröffnung
+ * dauert nach allgemeiner Lehre etwa 10 bis 15 Züge); Endspiel, sobald jede Seite höchstens
+ * 13 Punkte an Steinen außer dem König hat (Speelman, „Endgame Preparation“, 1981), auch mit
+ * Damen am Brett, etwa im Damenendspiel.
  */
 import type { Color, Square } from "chessops/types";
 import type { Angriffskarte } from "./angriffskarte";
@@ -38,9 +43,16 @@ export interface Endspielfragen {
   readonly ja: number;
 }
 
+/** Zusatzregeln, die nicht aus dem Buch stammen (0.2.41). */
+export type Zusatzregel = "zugzahl" | "wenigMaterial";
+
 /** Die Phase mit ihren Gründen. */
 export interface Phasenbefund {
   readonly phase: Phase;
+  /** Die Phase allein nach den Regeln des Buches; weicht nur mit einer Zusatzregel ab. */
+  readonly buchphase: Phase;
+  /** Die Zusatzregel, die die Phase gegenüber dem Buch geändert hat, sonst null. */
+  readonly zusatz: Zusatzregel | null;
   /** Die Eröffnungsziele beider Seiten (Kapitel 1 und 2). */
   readonly ziele: Readonly<Record<Color, Zielbilanz>>;
   readonly fragen: Endspielfragen;
@@ -57,6 +69,12 @@ const ZU_HAUSE_EROEFFNUNG = 2;
 const UEBERWIEGEND = 3;
 /** Figurenmaterial ohne Bauern je Seite, bis zu dem Angriffe selten noch entscheiden. */
 const WENIG_MATERIAL = 13;
+/** Zusatzregel: ab dieser Zugnummer kein Eröffnungsurteil mehr. */
+export const MITTELSPIEL_AB_ZUG = 15;
+/** Zusatzregel nach Speelman: Endspiel, wenn jede Seite höchstens so viele Punkte hat (ohne König). */
+export const ENDSPIEL_BIS_PUNKTE = 13;
+/** Stelle der Zugnummer in der FEN. */
+const FEN_ZUGNUMMER = 5;
 
 /** Figurenwert einer Farbe ohne Bauern und König. */
 function figurenmaterial(stellung: Stellung, farbe: Color): number {
@@ -66,6 +84,43 @@ function figurenmaterial(stellung: Stellung, farbe: Color): number {
     if (figur && figur.role !== "king" && figur.role !== "pawn") summe += FIGURENWERT[figur.role];
   }
   return summe;
+}
+
+/** Alle Steine einer Farbe außer dem König in Punkten (Bauer 1, Leichtfigur 3, Turm 5, Dame 9). */
+function steinpunkte(stellung: Stellung, farbe: Color): number {
+  let summe = 0;
+  for (const feld of stellung.brett[farbe]) {
+    const figur = stellung.brett.get(feld);
+    if (figur && figur.role !== "king") summe += FIGURENWERT[figur.role];
+  }
+  return summe;
+}
+
+/** Die Zugnummer aus der FEN; 1, wenn sie fehlt oder nicht lesbar ist. */
+function zugnummer(stellung: Stellung): number {
+  const nummer = Number(stellung.fen.split(" ")[FEN_ZUGNUMMER]);
+  return Number.isFinite(nummer) && nummer > 0 ? nummer : 1;
+}
+
+/**
+ * Wendet die Zusatzregeln an, die nicht aus dem Buch stammen (0.2.41, Rückfrage S2).
+ * Endspiel nach Speelman geht vor; dann das Mittelspiel ab Zug 15. Das Endspiel des Buches
+ * bleibt unberührt. Beispiel: Damenendspiel (Dame und drei Bauern je Seite) → Endspiel,
+ * obwohl die Damen noch am Brett sind; 1. e4 … bis Zug 15 mit Sb1 und Lc1 zu Hause → Mittelspiel.
+ */
+function mitZusatzregeln(
+  buchphase: Phase,
+  stellung: Stellung,
+): { phase: Phase; zusatz: Zusatzregel | null } {
+  if (buchphase === "endspiel") return { phase: buchphase, zusatz: null };
+  const wenig =
+    steinpunkte(stellung, "white") <= ENDSPIEL_BIS_PUNKTE &&
+    steinpunkte(stellung, "black") <= ENDSPIEL_BIS_PUNKTE;
+  if (wenig) return { phase: "endspiel", zusatz: "wenigMaterial" };
+  if (buchphase === "eroeffnung" && zugnummer(stellung) >= MITTELSPIEL_AB_ZUG) {
+    return { phase: "mittelspiel", zusatz: "zugzahl" };
+  }
+  return { phase: buchphase, zusatz: null };
 }
 
 /** Droht einer Seite Matt in einem Zug? */
@@ -120,7 +175,8 @@ function endspielfragen(
  * Leichtfiguren bis auf Lc8 entwickelt) → Mittelspiel; Abb. 11.28 (Unsterbliche Partie, König e8)
  * → Mittelspiel; Abb. 1.26 → Eröffnung.
  * Sonderfall: Das Endspiel geht vor der Eröffnung (etwa ein Lehrbild mit wenigen Steinen, in dem
- * Leichtfiguren noch auf dem Startfeld stehen).
+ * Leichtfiguren noch auf dem Startfeld stehen). Zusatzregeln außerhalb des Buches (Zugzahl,
+ * wenig Material) stehen im Befund mit Namen, damit die Anzeige sie als solche nennt.
  */
 export function phase(
   stellung: Stellung,
@@ -135,7 +191,8 @@ export function phase(
   const nochEroeffnung = [ziele.white, ziele.black].some(
     (z) => z.entwicklung.offen.length >= ZU_HAUSE_EROEFFNUNG,
   );
-  const ermittelt: Phase =
+  const buchphase: Phase =
     fragen.ja >= UEBERWIEGEND ? "endspiel" : nochEroeffnung ? "eroeffnung" : "mittelspiel";
-  return { phase: ermittelt, ziele, fragen, zentrumsweg };
+  const { phase: ermittelt, zusatz } = mitZusatzregeln(buchphase, stellung);
+  return { phase: ermittelt, buchphase, zusatz, ziele, fragen, zentrumsweg };
 }

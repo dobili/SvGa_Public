@@ -55,6 +55,12 @@ const BAUSTEINE: readonly { name: string; lizenz: string; herkunft: string; text
     herkunft: "ambientCG.com; gedreht, aufgehellt, als WebP gespeichert",
   },
   {
+    name: "Porträts der vorgefertigten Gegner (Stil „Personas“ von Draftbit, über DiceBear)",
+    lizenz: "CC BY 4.0 (Zeichnungen); MIT (Code von Florian Körner)",
+    herkunft: "personas.draftbit.com, dicebear.com; je Gegner erzeugt, einheitlicher Hintergrund",
+    text: "/lizenzen/cc-by-4.0.txt",
+  },
+  {
     name: "Eröffnungsnamen außerhalb des Buches (chess-openings)",
     lizenz: "CC0 1.0 (gemeinfrei)",
     herkunft: "Lichess, github.com/lichess-org/chess-openings; Familiennamen übersetzt",

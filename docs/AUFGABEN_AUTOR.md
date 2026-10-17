@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.62. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.63. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.62“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.63“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (X, U,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,27 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.62“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.63“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.63 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
+
+- [ ] N285. **Gegnerwahl mit Porträts:** Spielen › Gegner „Engine“. Unter „Vorgefertigter Gegner“
+      steht oben eine Sprechblase mit Porträt, Name, Durchschnitt und Satz des gewählten Gegners;
+      darunter die Kachel „Eigene Stufen“, dann je Stufe 1 bis 8 eine Gruppe mit acht Porträts
+      (64 Gegner, die 18 bisherigen sind dabei). Antippen wählt, die Sprechblase wechselt, die
+      drei Regler unten springen auf seine Stufen (verborgen bleibt, welche). Ein eigener Gegner
+      erscheint als Kachel mit seinem Anfangsbuchstaben vor den Gruppen. Passen Porträts und
+      Namen zusammen, und ist die Auswahl auf dem Handy bequem?
+- [ ] N286. **Persönlichkeit spürbar:** Spiele je eine kurze Partie gegen Finn (Stufe 1, sehr
+      aggressiv: schlägt alles, holt Bauern, vergisst den König) und gegen Oma Gerda (Stufe 1,
+      sehr defensiv: zieht Figuren zweimal, lässt den König sitzen). Die beiden sollten sich
+      deutlich anders anfühlen; der Rückblick nennt ihre Fehler und blinden Flecken beim Namen.
+      Alle Bots haben jetzt einen Stil (aggressiv bis defensiv, Toleranz 0,3 wie bei eigenen
+      Gegnern seit 0.2.61) und ein bis drei blinde Flecken.
+- [ ] N287. **Stufe 8 mit Charakter:** Großmeister Grün bleibt ohne Schwäche; IM Vogt (sehr
+      aggressiv, übersieht ruhige Züge) oder IM Haas (sehr defensiv, übersieht die Grundreihe)
+      spielen in voller Stärke, aber mit Handschrift. Prüfe, dass sie trotzdem wie Stufe 8 wirken.
 
 ### Neu in 0.2.62 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
 
@@ -72,8 +91,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.62“, dann 
 - [ ] N292. **Warum-Fragen im Repertoire-Trainer (W10):** Spanische Partie, Seite Schwarz: Nach
       3... a6 erscheint unter dem Brett zugeklappt „Warum spielt Schwarz 3... a6?“. Die Fragen
       zählen nicht zur Wertung. 20 solche Fragen gibt es in den Varianten von Kapitel 2.
-- [ ] N293. **Zug erraten mit Vergleich (W12):** Opernpartie als Weiß, absichtlich 2. d4 statt
-      2. Sf3: Unter „In der Partie geschah Sf3.“ steht nach ein paar Sekunden, ob dein Zug laut
+- [ ] N293. **Zug erraten mit Vergleich (W12):** Opernpartie als Weiß, absichtlich 2. d4 statt 2. Sf3: Unter „In der Partie geschah Sf3.“ steht nach ein paar Sekunden, ob dein Zug laut
       Engine etwa gleich gut, schwächer oder stärker war, und dazu „Frag dich in einem Satz, warum
       der Meister anders zog.“
 

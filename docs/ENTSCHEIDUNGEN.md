@@ -1907,7 +1907,6 @@ Gewinn). Ergebnis je Rückfrage in `docs/AUFGABEN_AUTOR.md` („Nachgelesen im B
 - Offen beim Autor: S17 und C3 (Glossar „beide entwickelt und rochiert“ gegen die gewählte
   Lesart), W5 und U5 (Umbau nach Zustimmung), D1 (Bestätigung).
 
-
 ## Rückmeldung des Autors zu 0.2.56 (17.10.2026 abends, Opus, Version 0.2.61)
 
 Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diesen Änderungen:
@@ -2411,6 +2410,47 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
       Partie. So lassen?
       **Empfehlung:** so lassen. Ein Balken während der Partie verrät, wer besser steht, und nimmt
       dir das eigene Urteil ab.
+
+## 64 Gegner mit Porträts (18.10.2026 nachts, Fable, Zweig `bots-galerie`, Version 0.2.63)
+
+Wunsch des Autors (18.10.2026, mit Bildschirmfoto der Bot-Auswahl von chess.com): acht Bots je
+Spielstärke mit verschiedenen Stärken und Schwächen, Auswahl mit Porträts, freie Bilder in
+einheitlichem Stil, ungefähre Spielstärke gemessen. Seine Frage, ob die Bots die verschärfte
+Stil-Toleranz und die blinden Flecken schon berücksichtigen: blinde Flecken ja (seit 0.2.46, elf
+Arten seit 0.2.57); einen Stil hatten die vorgefertigten Gegner bis 0.2.62 gar nicht, nur eigene
+Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
+
+- **Liste** (`engine/gegnerliste1.ts` Stufen 1 bis 4, `gegnerliste2.ts` Stufen 5 bis 8,
+  `gegnerbau.ts` Typ und Helfer, `gegnerliste.ts` zusammengeführt; `engine/gegner.ts` behält die
+  Funktionen, neu `gegnerDerStufe`): 64 Gegner, je Stufe acht (Stufe = gerundeter Durchschnitt
+  der drei Phasen, Streuung höchstens zwei). Die 18 Gegner aus 0.2.46 bleiben unverändert, nur
+  ihr Stil ist neu. Je Stufe gibt es einen Eröffnungskenner (Eröffnung eine Stufe höher,
+  Endspiel eine tiefer), einen Endspielfuchs (umgekehrt), einen Mittelspielkämpfer, Gleichmäßige,
+  dazu Stile von −2 bis +2 und ein bis drei blinde Flecken; in Stufe 1 bis 4 außerdem je eine
+  eigene Fehlerliste (Kapitel 1 und 4 grob, 5 bis 8 fein). Stufe 8 spielt in voller Stärke, dort
+  unterscheiden nur Stil und blinde Flecken (Großmeister Grün ohne beides). Namen und Sätze in
+  `de.json` (`gegner.<kennung>`), Titel ab Stufe 7 (Trainer, Dr.) und 8 (FM, IM, WIM, WGM, GM).
+- **Stil der Bots** (`Gegner.stil`, in `Spielen.tsx` an die Partie weitergegeben wie bei
+  eigenen Gegnern): dieselbe Toleranz 0,3 je Reglerstufe wie seit S13 (0.2.61). Was der Stil
+  die Stärke kostet, zeigt die Messung unten; eine eigene Toleranz je Bot gibt es nicht.
+- **Porträts** (`app/public/gegner/<kennung>.svg`, 64 Dateien, zusammen 344 KB, im
+  Offline-Vorrat): aus DiceBear, Stil „Personas“ (Draftbit, CC BY 4.0; Code MIT), erzeugt mit
+  `app/skripte/erzeuge-gegnerbilder.mjs` deterministisch aus der Kennung, mit Vorgaben je Gegner
+  für Frisur, Bart und Haarfarbe (Oma, Opa, Doktor, GM grau; Kinder mit Käppi oder Zöpfen),
+  einheitlich dunkelblauer Hintergrund und Rundung. Geprüft wurden „Adventurer“ und „Big Smile“
+  (beide CC BY 4.0) und die CC0-Stile „Open Peeps“, „Lorelei“, „Notionists“; Personas kommt dem
+  Vorbild (bunte Köpfe mit Oberkörper) am nächsten. Die Pakete sind keine Abhängigkeit der App.
+  Namensnennung unter Einstellungen → Lizenzen und in `docs/LIZENZEN.md`, Lizenztext in
+  `app/public/lizenzen/cc-by-4.0.txt`. Keine Bilder von chess.com (nicht frei).
+- **Gegnerwahl** (`ui/komponenten/GegnerWahl.tsx`): statt des Auswahlfelds eine Sprechblase
+  (Porträt, Name, „⌀ 1,3 · Einsteiger“, Satz) und ein Gitter mit vier Kacheln je Zeile: zuerst
+  „Eigene Stufen“ und die eigenen Gegner (Anfangsbuchstabe), dann je Stufe eine Gruppe mit
+  Überschrift „Stufe 3 · Fortgeschrittener Anfänger“. Kacheln sind Radio-Knöpfe (Bildschirmleser:
+  „Vorgefertigter Gegner“, Name). Die Stufen je Phase bleiben verborgen.
+- **Messung** (`npm run messen:stufen -- 1@lotta-1 …`, das Kürzel `N@kennung` nimmt seit 0.2.63
+  das ganze Profil des Bots: Fehlerarten, Stil, blinde Flecken): alle 64 Bots gegen die reine
+  Stufe ihres Durchschnitts, sechs Partien je Paarung. Ergebnis folgt unten, sobald der Lauf
+  fertig ist (etwa zwei Stunden).
 
 ## Impressum und Datenschutz (17.10.2026 abends, Autor und Opus, Version 0.2.62)
 

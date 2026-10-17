@@ -197,7 +197,8 @@ test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, sp
   await page.getByRole("checkbox", { name: "eine Figur hängen lassen (W1)" }).uncheck();
   await karte.getByRole("button", { name: "Gegner speichern" }).click();
   await expect(karte).toContainText("Rambo · 3 · 3 · 3 · sehr aggressiv");
-  await page.getByLabel("Vorgefertigter Gegner").selectOption({ label: "Rambo" });
+  await page.getByRole("radio", { name: "Rambo" }).click();
+  await expect(page.getByTestId("gegner-sprechblase")).toContainText("Rambo");
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.locator(".partie-untertitel")).toContainText("Rambo");
   await ziehe(page, /^e2,/, "e4");

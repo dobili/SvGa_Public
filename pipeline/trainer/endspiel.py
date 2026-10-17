@@ -63,6 +63,10 @@ class Kandidat:
     # Seite des Lesers bei Remis, wenn die Regel „die ärmere Seite hält“ nicht die Lehre trifft
     # (Abb. 9.40: Der Springer muss den Bauern aufhalten).
     leser: str | None = None
+    # Urteil des Buches, falls die Engine in Tiefe 18 unklar bleibt (Regel 1: Das Buch ist die
+    # Quelle). Abb. 9.41: falscher Läufer, das Buch sagt „remis“; Stockfish ohne Endspieldatenbank
+    # sieht nur etwa +1, bleibt beim Ausspielen aber unter +1 (Prüfung 17.10.2026, Opus).
+    buch: str | None = None
 
 
 # Die Abbildungen der Kapitel 8 und 9, die sich ausspielen lassen (Lehrbilder mit Pfeilen, die
@@ -121,8 +125,9 @@ KANDIDATEN: list[Kandidat] = [
     Kandidat("9.20", "turmendspiel", "abschneiden"),
     Kandidat("9.21", "turmendspiel", "unterverwandlung"),
     Kandidat("9.22", "turmendspiel", "verbundene"),
-    # 9.23 (Turm auf der 7. Reihe) fehlt: Das Buch nennt Txa7 gewinnend, die Engine sieht in Tiefe 18
-    # nur Remis (+0,25); Befund an den Autor, bis er entscheidet.
+    # 9.23: Das Buch sagt nur, dass Weiß mit Txa7 den Bauern zurückgewinnt (Schwarz hat vorher einen
+    # Bauern mehr), keinen Gewinn; die Engine sieht Remis. Also eine Remisaufgabe für Weiß (X1).
+    Kandidat("9.23", "turmendspiel", "siebteReihe"),
     Kandidat("9.24", "turmendspiel"),
     Kandidat("9.25", "turmendspiel", "turmHinterFreibauer"),
     Kandidat("9.26", "turmendspiel", "entfernterFreibauer"),
@@ -136,7 +141,7 @@ KANDIDATEN: list[Kandidat] = [
     Kandidat("9.38", "leichtfiguren"),
     Kandidat("9.39", "leichtfiguren", "springer"),
     Kandidat("9.40", "leichtfiguren", "springer", leser="b"),
-    Kandidat("9.41", "leichtfiguren", "falscherLaeufer"),
+    Kandidat("9.41", "leichtfiguren", "falscherLaeufer", buch="remis"),
     Kandidat("9.42", "leichtfiguren"),
     Kandidat("9.43", "leichtfiguren", "falscherLaeufer"),
     Kandidat("9.44", "leichtfiguren", "falscherLaeufer"),
@@ -211,6 +216,8 @@ def pruefe(engine: Engine, kandidat: Kandidat) -> dict | None:
         print(f"  {kandidat.abbildung}: kein legaler Zug, ausgelassen", file=sys.stderr)
         return None
     entscheidung = seite_und_ziel(brett, bester.wert)
+    if entscheidung is None and kandidat.buch == "remis":
+        entscheidung = seite_und_ziel(brett, 0.0)
     if entscheidung is None:
         print(f"  {kandidat.abbildung}: unklar ({bester.wert:+.2f}), ausgelassen", file=sys.stderr)
         return None

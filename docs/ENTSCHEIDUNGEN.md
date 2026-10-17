@@ -1252,3 +1252,73 @@ Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `main`.
   in erweiterten Einstellungen (wenn die Profile stehen), vorgefertigte Gegner („Bots“) mit Namen,
   Stärke je Phase (Streuung höchstens 2 um das Mittelspiel), Durchschnittswertung und Sortierung
   nach den Stufennamen; beides passt auf die jetzige Struktur (`stufenJePhase`, Fehlerprofil).
+
+## Spielen: Antworten und Wünsche des Autors vom 17.10.2026 nachmittags (Fable, Version 0.2.41)
+
+Grundlage: Nachricht des Autors mit den Antworten zu S1, S2, S4, S5, S6 und neuen Wünschen
+(Spielhilfen zuschaltbar, Bots jetzt, Mensch gegen Mensch, Partienkachel, Wertung nach Elo,
+Stellungen aufbauen). Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `main`.
+
+- **S1 Zugklassen:** bleiben wie in 0.2.40 (Entscheidung des Autors).
+- **S2 Phase, Zusatzregeln** (`schach/phase.ts`, `mitZusatzregeln`; Recherche am 17.10.2026,
+  Quellen: Wikipedia „Chess endgame“ und „Chess middlegame“, chess.com „Opening, Middlegame,
+  Endgame“, Speelman „Endgame Preparation“ 1981): Eine allgemeingültige Grenze gibt es nicht.
+  Mittelspiel, sobald die Entwicklung abgeschlossen und der König in Sicherheit ist (deckt sich
+  mit dem Buch); die Eröffnung dauert „etwa die ersten 10 bis 15 Züge“. Endspiel nach Speelman,
+  wenn jede Seite höchstens 13 Punkte an Steinen außer dem König hat; daneben „die Könige können
+  aktiv werden“ und „die Damen sind getauscht“ (beides in den Endspielfragen des Buches).
+  Eingebaut: (1) ab Zug 15 (`MITTELSPIEL_AB_ZUG`) kein Eröffnungsurteil mehr, auch mit
+  Leichtfiguren zu Hause; (2) Endspiel, sobald jede Seite höchstens 13 Punkte hat
+  (`ENDSPIEL_BIS_PUNKTE`, Bauern mitgezählt), auch mit Damen (Damenendspiel). Beide greifen nur,
+  wenn die Regeln des Buches nichts anderes sagen (das Endspiel des Buches geht vor); der Befund
+  trägt `buchphase` und `zusatz`, das Werkzeug „Phase“ zeigt die Zusatzregel als zweite Zeile
+  „Zusatzregel (nicht aus dem Buch): …“ mit der Phase nach dem Buch. Die Lehrbilder des Buches
+  ändern ihre Phase nicht (Referenztests k11-phase unverändert); Mattführungen wie Dame gegen
+  König sind jetzt Endspiel statt Mittelspiel. Rückfrage S8 (Zahlen 15 und 13).
+- **S4 typische Fehler, S6 Eröffnung „frei“:** bestätigt.
+- **S5 Bots** (`engine/gegner.ts`, `ui/komponenten/GegnerWahl.tsx`): zwölf vorgefertigte Gegner
+  mit Kennung, Name, Satz und Stufen je Phase (Streuung höchstens 2, im Code geprüft): Lotta
+  1·1·1, Opa Hans 2·1·2, Max 1·2·1, Frieda 2·2·3, Herr Lehmann 3·2·2, Nina 3·3·3, Jonas 2·3·4,
+  Timo 5·4·3, Kurt 4·5·5, Lena 6·6·5, Doktor Berg 6·7·7, GM Grün 8·8·8. Auswahlfeld „Vorgefertigter
+  Gegner“ über den Reglern, sortiert nach Durchschnitt (bei Gleichstand Mittelspiel), Klasse =
+  Stufenname zum gerundeten Durchschnitt; die Wahl setzt die Regler, ein Regler löst die Wahl
+  (`bot: null`). `Partieeinstellung.bot` steht in Untertitel und Partienliste. Die Abhakliste der
+  Fehlerarten bleibt offen (Rückfrage S7).
+- **Spielhilfen zuschaltbar** (`Partieeinstellung.hilfen`, Haken in `GegnerWahl.tsx`): `symbole`
+  (Zählen, Röntgen, Warnsignale am Brett) und `werkzeuge` (Bündel, Werkzeugleiste, Hinweis).
+  Die großen Werkzeuge verschwinden mit dem Partieende (`mitWerkzeugen = werkzeuge && !ende`),
+  die Symbole dürfen bleiben (Wunsch des Autors). Vorgabe: beide an; die Vorlieben merken es.
+- **Mensch gegen Mensch** (`Partieeinstellung.gegner: "engine" | "mensch"`): Bei „mensch“ zieht
+  die Engine nie (`usePartie`, `amZugEngine`), `leserAmZug` gilt für beide Seiten, Aufgeben gilt
+  für die Seite am Zug (`gibAuf`), das Ergebnis nennt die Farben („Matt! Weiß hat gewonnen.“,
+  `partietexte.ts`), Status „Weiß am Zug.“ / „Schwarz am Zug.“, Überschrift „Partie zu zweit“,
+  Spielstärke, Rückblick und PGN mit „Weiß“ und „Schwarz“ (PGN-Kopf „Mensch gegen Mensch“).
+  Nicht gewertet, kein Bot, keine Eröffnungsvorgabe. Partienliste: beide Könige, „Mensch“,
+  „Weiß etwa … · Schwarz etwa …“. Rückfrage S11 (Brett nach jedem Zug drehen?).
+- **Partienkachel** (`ui/komponenten/Partienliste.tsx`): Ergebnis als „1–0“, „0–1“, „½–½“ oder
+  „läuft“ (`ergebniszeichen`), Name des Gegners statt des Stufennamens, Näherungswertung beider
+  Seiten („du etwa 1400 · Engine etwa 1600“, bei kurzen Partien „78 % genau“); die gemeinsame
+  Rechnung liegt in `spiel/wertung.ts` (`staerkeDerPartie`).
+- **Wertung des Lesers nach Elo** (`spiel/wertung.ts`, `Spielstand.wertung`,
+  `ui/komponenten/Wertungskurve.tsx` oben in den Einstellungen): Haken „Gewertete Partie“
+  (`Partieeinstellung.gewertet`, Vorgabe an bei Engine, nie bei Mensch; ältere Partien zählen
+  nicht). Sobald die Auswertung einer gewerteten, beendeten Partie gespeichert wird
+  (`mitWerten`), entsteht ein Wertungspunkt (Partie, Zeit, Schätzung des Gegners = Spielstärke der
+  Engine-Seite in dieser Partie, Ergebnis, Wertung danach). Erste Partie: Wertung = Schätzung des
+  Lesers; danach Elo mit Erwartung 1/(1+10^((Rg−R)/400)), K = 32 in den ersten zehn Partien, dann 20. Partien ohne Schätzung (unter zehn eigenen Zügen) zählen nicht. Der Verlauf liegt im
+  Speicher (höchstens 1000 Punkte) und überlebt das Wegfallen alter Partien (50). Karte: Zahl
+  groß, „N gewertete Partien, im Ausschnitt +16“, Auswahlfeld (letzte 10/25/50 Partien; 1 Woche,
+  4 Wochen, 3 Monate, halbes Jahr, 1 Jahr; Vorgabe 25 Partien), SVG-Kurve mit Rasterlinien auf
+  runden Wertungen, Punkte grün/rot/grau je Ergebnis mit Titel (Datum, Ergebnis, Gegner), bei
+  Zeiträumen liegt jede Partie an ihrer Zeit, rechter Rand „jetzt“. Rückfragen S9 (Alternativen:
+  gleitender Durchschnitt, Glicko; Rücknahmen) und S10 (Ausschnitte).
+- **Stellungen aufbauen** (`spiel/stellungsbau.ts`, `ui/komponenten/Stellungseditor.tsx`, Knopf
+  „Stellung aufbauen“ auf dem Spielen-Bildschirm, auch aus einer Abbildung): „Figuren setzen“
+  (zwölf Steine und „Feld räumen“ als Kacheln, Felder antippen, zweiter Tipp räumt, „Am Zug“,
+  „Brett leeren“, „Grundstellung“; beliebig viele Steine, Entscheidung des Autors) und „Züge
+  spielen“ (Züge nach den Regeln mit Zielfeldern und Umwandlungsfrage; die Umwandlungsfrage liegt
+  jetzt in `ui/komponenten/Umwandlung.tsx`, geteilt mit dem Brettbereich). Rochaderechte folgen
+  den Steinen auf den Startfeldern, kein En passant, Zähler 0/1. Übernehmen nur, wenn `spielbar`;
+  eine veränderte Abbildungsstellung zählt als eigene Stellung (`abbildungGilt`). Rückfrage S12.
+- **Speicher:** keine neue Formatversion; neue Felder (`gegner`, `bot`, `hilfen`, `gewertet`,
+  `wertung`) bekommen beim Lesen Vorgaben, ältere Partien gelten als Engine-Partien, ungewertet.

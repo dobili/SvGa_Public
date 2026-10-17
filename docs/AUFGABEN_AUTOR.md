@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.40. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.41. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.40“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.41“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,64 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.39“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.41“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.41 (etwa 30 Minuten, mit Engine; deine Wünsche vom 17.10.2026 nachmittags)
+
+- [ ] N219. **Gegner wählen:** Spielen: Oben die Wahl „Gegner: Engine / Mensch (beide Seiten
+      selbst)“, darunter bei Engine das Auswahlfeld „Vorgefertigter Gegner“ mit „eigene Stufen
+      (Regler unten)“ und zwölf Gegnern, etwa „Lotta · ⌀ 1 · Einsteiger (1 · 1 · 1)“ bis
+      „GM Grün · ⌀ 8 · Großmeister (8 · 8 · 8)“ (die Klammer: Eröffnung · Mittelspiel · Endspiel).
+      Einen Gegner wählen: Die drei Regler springen auf seine Stufen, und die Beschreibung steht
+      darunter. Einen Regler verschieben: Das Feld springt zurück auf „eigene Stufen“. In der Partie
+      steht der Name im Untertitel („Timo · Stufen 5 · 4 · 3 …“).
+- [ ] N220. **Spielhilfen zuschalten:** Spielen, unter „Züge zurücknehmen erlauben“: zwei Haken
+      „Symbole am Brett (Zählen, Röntgen, Warnsignale)“ und „Werkzeuge und Hinweis unter dem Brett
+      (bis zum Ende der Partie)“. Beide an: wie bisher. Nur Symbole: Die Symbole bleiben, Bündel,
+      Werkzeugleiste und Hinweis fehlen. Beide aus: nur Brett, Uhr, Zugliste. Nach dem Partieende
+      verschwinden die Bündel und der Hinweis in jedem Fall; die Symbole bleiben, wenn sie an waren.
+- [ ] N221. **Gewertete Partie:** Darunter der Haken „Gewertete Partie (zählt für deine
+      Spielstärke)“ mit dem Satz, dass die Wertung in den Einstellungen steht. Bei „Mensch“ fehlen
+      Seite, Stufen, Eröffnung und der Haken.
+- [ ] N222. **Zu zweit spielen:** Gegner „Mensch“, Partie beginnen: Überschrift „Partie zu zweit“,
+      Untertitel „Mensch gegen Mensch · beide Seiten am selben Gerät“, Status „Weiß am Zug.“ und
+      „Schwarz am Zug.“ im Wechsel, die Engine zieht nicht, beide Seiten lassen sich ziehen, die
+      Uhr läuft für beide. Ein Matt heißt „Matt! Weiß hat gewonnen.“; „Aufgeben“ gilt für die Seite
+      am Zug („Schwarz hat aufgegeben. Weiß hat gewonnen.“). Nach dem Ende die Auswertung wie
+      sonst, in der Karte „Spielstärke“ und im Rückblick heißen die Seiten „Weiß“ und „Schwarz“.
+- [ ] N223. **Partienliste:** Spielen › „Deine letzten Partien“: je Partie der König in deiner
+      Farbe (bei zwei Menschen beide Könige), das Ergebnis als „1–0“, „0–1“, „½–½“ (oder
+      „läuft“), in der Zeile der Name des Gegners („Timo“, „Mensch“ oder „Stufe 3“) und, sobald
+      die Auswertung da ist, „du etwa 1400 · Engine etwa 1600“ (bei zwei Menschen „Weiß … ·
+      Schwarz …“; bei kurzen Partien „78 % genau“).
+- [ ] N224. **Deine Wertung:** Einstellungen (Zahnrad), ganz oben die Karte „Deine Spielstärke“.
+      Vor der ersten gewerteten Partie ein Hinweis. Eine gewertete Partie gegen die Engine mit
+      mindestens zehn eigenen Zügen zu Ende spielen (auch aufgeben geht) und die Auswertung
+      abwarten: Die Karte zeigt die Wertung groß (erste Partie: die Schätzung der Engine für
+      dich), darunter „1 gewertete Partie …“, das Auswahlfeld „Ausschnitt“ (letzte 10, 25, 50
+      Partien; 1 Woche, 4 Wochen, 3 Monate, halbes Jahr, 1 Jahr) und die Kurve mit einem Punkt je
+      Partie (grün Sieg, rot Niederlage, grau Remis; ein Tipp oder langes Drücken auf den Punkt
+      nennt Datum, Ergebnis und Gegner). Nach einer zweiten Partie steigt oder fällt die Zahl
+      (Sieg gegen gleich stark: +16).
+- [ ] N225. **Phase, Zusatzregeln:** Spielen › Stellung aufbauen › Brett leeren, dann K e1, D d1,
+      k e8, d d8 setzen und übernehmen; in der Partie das Werkzeug „Phase“ (Kapitel 11) öffnen:
+      „Endspiel …“ und als zweite Zeile „Zusatzregel (nicht aus dem Buch): Jede Seite hat höchstens
+      13 Punkte …“. Außerdem: In einer Partie aus der Grundstellung Springer b1 und Läufer c1
+      bis Zug 15 zu Hause lassen: Die Kurve setzt das „M“ spätestens bei Zug 15, das Werkzeug
+      „Phase“ nennt die Zusatzregel „Ab Zug 15 …“.
+- [ ] N226. **Stellung aufbauen, Figuren setzen:** Spielen › „Stellung aufbauen“: Wahl „Figuren
+      setzen / Züge spielen“, das große Brett, die zwölf Steine als Kacheln, „Feld räumen“,
+      „Am Zug: Weiß / Schwarz“, „Brett leeren“, „Grundstellung“. Brett leeren, einen Stein wählen,
+      Felder antippen (ein zweiter Tipp mit demselben Stein räumt das Feld); „Stellung übernehmen“
+      bleibt grau, bis beide Könige stehen und die Stellung spielbar ist (der rote Satz erklärt,
+      was fehlt). Nach dem Übernehmen heißt die Karte „Aus einer eigenen Stellung“, die Seite am
+      Zug ist vorgewählt; von dort gegen die Engine oder zu zweit spielen. Auch aus einer Abbildung
+      („Gegen die Engine spielen“) lässt sich die Stellung ändern; sie zählt dann als eigene.
+- [ ] N227. **Stellung aufbauen, Züge spielen:** „Züge spielen“: Figur und Zielfeld antippen (nur
+      Züge nach den Regeln, Zielfelder als Punkte); ein Bauer auf der letzten Reihe fragt nach der
+      Figur. 1. e4 e5 2. Sf3 spielen, übernehmen: Die Partie beginnt in dieser Stellung mit Schwarz
+      am Zug (bei Engine spielst du Schwarz, änderbar).
 
 ### Neu in 0.2.40 (etwa 20 Minuten, mit Engine; deine Ideen zum Spielen vom 17.10.2026)
 
@@ -288,34 +344,51 @@ Regeln C1 und C2).
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
 
-### S. Spielen, deine Ideen vom 17.10.2026 (Fable, 0.2.40; plausibel entschieden, bitte prüfen)
+### S. Spielen, deine Wünsche vom 17.10.2026 (Fable, 0.2.41; plausibel entschieden, bitte prüfen)
 
-- [ ] S1. **Zugklassen:** Die Grenzen bleiben die der App (sehr gut unter 0,2, gut unter 0,5
-      Bauern hinter dem besten Zug; ungenau ab 0,5, Fehler ab 1,2, Patzer ab 3). „Brillant“ ist
-      ein bester Zug, der laut Abtauschrechnung mindestens eine Leichtfigur hergibt, solange die
-      Stellung nicht schon über +4 stand; „stark“ der einzige gute Zug oder der beste Zug direkt
-      nach einem Fehler des Gegners; „verpasst“ ein eigener Fehler direkt nach einem Fehler des
-      Gegners. Marken: ✓ grün (bester), ! gold, !! blau, ?! grau, ? und ?? rot. So lassen, oder
-      lieber nur die Zeichen ohne ✓ (weniger am Brett)?
-- [ ] S2. **Stufe je Phase:** Die Engine geht beim Phasenwechsel Zug für Zug um eine Stufe auf die
-      neue Stufe zu (dein Beispiel 1 → 2 → 3 → 4). Die Phase bestimmt die Regel des Werkzeugs
-      „Phase“ (Eröffnung, solange eine Seite zwei Leichtfiguren zu Hause hat; Endspiel, wenn die
-      Endspielfragen aus Kapitel 8 überwiegend Ja ergeben). Passt die Regel für den Wechsel, oder
-      soll zusätzlich eine Zugzahl gelten (etwa Mittelspiel spätestens ab Zug 12)?
 - [ ] S3. **Spielstärke je Phase** rechnet ab sechs Zügen je Phase (gesamt ab zehn). So lassen?
-- [ ] S4. **Typische Fehler:** Die Liste je Niveau (Einsteiger, Anfänger, Fortgeschrittene) steht
-      mit Quellen in `docs/ENTSCHEIDUNGEN.md`; umgesetzt sind sieben neue Fehlerarten
-      (Tempoverlust, Bauernraub, Königsschild, falscher Abtausch, passiver König, Bauernvorstoß,
-      Patt gesetzt) und ein Profil je Phase und Stufe, das die Fehlersuche gewichtet. Stufe 5 bis
-      7 bleiben ohne Profile (Fehler dieser Spieler sind mit Regeln kaum zu fassen). Einverstanden?
-      Fehlt dir eine Fehlerart, die das Buch nennt?
-- [ ] S5. **Abhakliste und Bots:** Beides ist vorbereitet, aber nicht gebaut: eine Abhakliste der
-      Fehlerarten in erweiterten Einstellungen und vorgefertigte Gegner mit Namen, Stärke je Phase
-      (Streuung höchstens 2), Durchschnittswertung und Sortierung nach den Stufennamen. Soll
-      Claude die Bots als Nächstes angehen (dann mit einer Liste von etwa zwölf Gegnern zur
-      Durchsicht)?
-- [ ] S6. **Eröffnung „frei“:** Vorgabe ist jetzt „frei (ohne Buch)“; wer die Buchvarianten will,
-      wählt „zufällig“ oder eine bestimmte Eröffnung. So gemeint?
+- [ ] S7. **Die zwölf Gegner** (Eröffnung · Mittelspiel · Endspiel, Streuung höchstens 2): Lotta
+      1 · 1 · 1, Opa Hans 2 · 1 · 2, Max 1 · 2 · 1, Frieda 2 · 2 · 3, Herr Lehmann 3 · 2 · 2, Nina
+      3 · 3 · 3, Jonas 2 · 3 · 4, Timo 5 · 4 · 3, Kurt 4 · 5 · 5, Lena 6 · 6 · 5, Doktor Berg
+      6 · 7 · 7, GM Grün 8 · 8 · 8; je ein Satz zur Art („spielt die Eröffnung nach Gefühl, rechnet
+      im Mittelspiel schon mit“). Die Liste ist nach dem Durchschnitt sortiert, bei Gleichstand nach
+      dem Mittelspiel; die Klasse ist der Stufenname zum gerundeten Durchschnitt. Namen, Stufen
+      oder Sätze ändern? Die Abhakliste der Fehlerarten (dein zweiter Vorschlag) ist weiter nicht
+      gebaut.
+- [ ] S8. **Zusatzregeln für die Phase** (deine Frage S2, Recherche): Eine allgemeingültige
+      Grenze gibt es nicht; die Lehrbücher setzen das Mittelspiel, sobald die Entwicklung
+      abgeschlossen und der König in Sicherheit ist (das deckt sich mit dem Buch), und nennen für
+      die Eröffnung „etwa die ersten 10 bis 15 Züge“. Fürs Endspiel gilt verbreitet Speelman:
+      jede Seite höchstens 13 Punkte an Steinen außer dem König (Bauer 1, Leichtfigur 3, Turm 5,
+      Dame 9); daneben „die Könige können aktiv werden“ (deine vierte Frage) und „die Damen sind
+      getauscht“. Eingebaut sind zwei Zusatzregeln, die nur greifen, wenn das Buch nichts anderes
+      sagt, und die das Werkzeug „Phase“ und die Kurve ausdrücklich als „Zusatzregel (nicht aus
+      dem Buch)“ nennen: ab Zug 15 Mittelspiel, auch wenn noch Leichtfiguren zu Hause stehen;
+      Endspiel, sobald jede Seite höchstens 13 Punkte hat, auch mit Damen (Damenendspiel). Die
+      Regeln des Buches (zwei Leichtfiguren zu Hause, die vier Endspielfragen) bleiben vorrangig.
+      Passen die zwei Regeln und die Zahlen 15 und 13?
+- [ ] S9. **Wertung nach Elo:** Die erste gewertete Partie setzt die Wertung auf die Schätzung der
+      Engine für dich; jede weitere zählt wie eine Partie gegen einen Spieler mit der Schätzung der
+      Engine in dieser Partie (ihrer tatsächlichen Stärke, nicht der Stufe), mit K = 32 in den
+      ersten zehn Partien und danach K = 20 (wie beim Weltschachbund unter 2400). Partien mit
+      weniger als zehn eigenen Zügen haben keine Schätzung und zählen nicht; Partien mit
+      Rücknahmen zählen (die Rücknahme steht in der Auswertung). Alternativen, falls dir das zu
+      sprunghaft ist: (a) die Wertung als gleitender Durchschnitt der Schätzungen der letzten zehn
+      Partien, ohne Sieg und Niederlage; (b) Glicko (Elo mit Unsicherheit, die mit jeder Partie
+      sinkt). Empfehlung: Elo lassen, weil Sieg und Niederlage zählen sollen. Sollen Partien mit
+      Rücknahmen ungewertet sein?
+- [ ] S10. **Ausschnitte der Kurve:** letzte 10, 25 oder 50 Partien; 1 Woche, 4 Wochen, 3 Monate,
+      halbes Jahr, 1 Jahr; Vorgabe „letzte 25 Partien“. Bei den Zeiträumen liegt jede Partie an
+      ihrer Zeit, der rechte Rand ist jetzt. Andere Stufen oder Vorgabe?
+- [ ] S11. **Zu zweit:** Das Brett bleibt aus der Sicht der Seite, die beim Start am Zug war; drehen
+      geht mit dem Schalter am Brett. Soll es sich nach jedem Zug von selbst drehen? Partien zu
+      zweit sind nie gewertet, ohne Gegnerwahl und ohne Eröffnungsvorgabe; Symbole und Werkzeuge
+      gelten für die Seite am Zug.
+- [ ] S12. **Stellung aufbauen:** Beliebig viele Steine (dein Wunsch), Rochaderechte ergeben sich
+      von selbst (König und Turm auf den Startfeldern), kein En passant, Zugzähler beginnt bei 1;
+      übernehmen geht nur, wenn sich eine Partie spielen lässt (beide Könige genau einmal, die
+      Seite ohne Zugrecht nicht im Schach, keine Bauern auf der ersten oder letzten Reihe, kein
+      Matt oder Patt). Passt das?
 
 ### R. Rückmeldung 0.2.38, umgesetzt in 0.2.39 (Fable; plausibel entschieden, bitte prüfen)
 

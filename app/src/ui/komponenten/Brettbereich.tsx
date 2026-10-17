@@ -16,8 +16,9 @@ import { useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { liesMerker } from "../../app/merker";
 import { t } from "../../i18n/sprache";
-import { farbkuerzel, ROLLENBUCHSTABE, type Rolle, type Stellung } from "../../schach/stellung";
-import { skelettFen, UMWANDLUNGEN } from "../../schach/weiterspielen";
+import { farbkuerzel, type Stellung } from "../../schach/stellung";
+import { skelettFen } from "../../schach/weiterspielen";
+import { Umwandlung } from "./Umwandlung";
 import { Brett } from "../brett/Brett";
 import type { Brettbedienung } from "./useBrettbedienung";
 
@@ -46,23 +47,6 @@ function Schalter({
     >
       {children}
     </button>
-  );
-}
-
-/** Auswahl der Figur bei der Umwandlung eines Bauern. */
-function Umwandlung({ beiWahl }: { beiWahl: (rolle: Rolle | null) => void }) {
-  return (
-    <div className="umwandlung" role="dialog" aria-label={t("zugleiste.umwandlung")}>
-      <span>{t("zugleiste.umwandlung")}</span>
-      {UMWANDLUNGEN.map((rolle) => (
-        <button key={rolle} type="button" className="chip" onClick={() => beiWahl(rolle)}>
-          {t(`figur.${ROLLENBUCHSTABE[rolle]}`)}
-        </button>
-      ))}
-      <button type="button" className="knopf-link klein" onClick={() => beiWahl(null)}>
-        {t("loeschen.nein")}
-      </button>
-    </div>
   );
 }
 

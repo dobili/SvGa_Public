@@ -148,3 +148,34 @@ test("Werkzeuge in der Partie (0.2.33): Röntgen, W1–W7, Zählen am Brett, Bü
   await ziehe(page, /^d2, Bauer/, "d4");
   await expect(page.getByTestId("partiezuege")).toContainText("2. d4");
 });
+
+// 0.2.41: Stellung aufbauen, Mensch gegen Mensch, Spielhilfen abgeschaltet, Ergebnis in der Liste.
+test("Stellung aufbauen (K e6, D a3 gegen K e8), zu zweit ohne Werkzeuge spielen, 1. De7 matt", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("button", { name: "Stellung aufbauen" }).click();
+  const editor = page.getByTestId("stellungseditor");
+  await editor.getByRole("button", { name: "Brett leeren" }).click();
+  await expect(editor.getByRole("button", { name: "Stellung übernehmen" })).toBeDisabled();
+  await editor.getByRole("radio", { name: "König (Weiß)" }).click();
+  await editor.getByRole("button", { name: "e6", exact: true }).click();
+  await editor.getByRole("radio", { name: "Dame (Weiß)" }).click();
+  await editor.getByRole("button", { name: "a3", exact: true }).click();
+  await editor.getByRole("radio", { name: "König (Schwarz)" }).click();
+  await editor.getByRole("button", { name: "e8", exact: true }).click();
+  await expect(editor.getByRole("button", { name: "e8, König (Schwarz)" })).toBeVisible();
+  await editor.getByRole("button", { name: "Stellung übernehmen" }).click();
+  await expect(page.getByRole("heading", { name: "Aus einer eigenen Stellung" })).toBeVisible();
+  await page.getByRole("radio", { name: "Mensch (beide Seiten selbst)" }).click();
+  await page.getByRole("checkbox", { name: /Werkzeuge und Hinweis/ }).uncheck();
+  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await expect(page.getByRole("heading", { name: "Partie zu zweit" })).toBeVisible();
+  await expect(page.getByTestId("partiestatus")).toHaveText("Weiß am Zug.");
+  await expect(page.getByTestId("spielhinweis")).toHaveCount(0);
+  await ziehe(page, /^a3,/, "e7");
+  await expect(page.getByTestId("partieende")).toContainText("Matt! Weiß hat gewonnen.");
+  await page.locator(".kopfzeile").getByRole("button", { name: "Spielen", exact: true }).click();
+  await expect(page.getByTestId("spielen")).toContainText("1–0");
+});

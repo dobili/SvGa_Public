@@ -9,15 +9,21 @@ import { t } from "../../i18n/sprache";
 import type { Partie } from "../../spiel/partie";
 
 /**
- * Das Ergebnis in einem Satz aus Sicht des Lesers.
+ * Das Ergebnis in einem Satz aus Sicht des Lesers; bei Mensch gegen Mensch (0.2.41) mit den
+ * Farben.
  *
  * Beispiel: Matt durch den Leser → „Matt! Du hast gewonnen.“; dreifache Wiederholung →
- * „Remis: dreimal dieselbe Stellung.“
+ * „Remis: dreimal dieselbe Stellung.“; zwei Menschen, Matt durch Weiß → „Matt! Weiß hat gewonnen.“
  */
 export function kurzergebnis(partie: Partie): string {
   const ende = partie.ende;
   if (!ende) return "";
   if ("sieger" in ende) {
+    if (partie.einstellung.gegner === "mensch") {
+      const sieger = t(ende.sieger === "white" ? "farbe.w" : "farbe.b");
+      const verlierer = t(ende.sieger === "white" ? "farbe.b" : "farbe.w");
+      return t(`partie.ende.${ende.art}.mensch`, { sieger, verlierer });
+    }
     const wer = ende.sieger === partie.einstellung.eigeneFarbe ? "leser" : "engine";
     return t(`partie.ende.${ende.art}.${wer}`);
   }

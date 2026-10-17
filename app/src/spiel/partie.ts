@@ -180,11 +180,13 @@ export function nimmZurueck(partie: Partie): Partie | null {
   };
 }
 
-/** Der Leser gibt auf; die Engine gewinnt. */
+/** Der Leser gibt auf; die Engine gewinnt. Bei Mensch gegen Mensch gibt die Seite am Zug auf. */
 export function gibAuf(partie: Partie): Partie {
   if (partie.ende) return partie;
-  const engineFarbe: Color = partie.einstellung.eigeneFarbe === "white" ? "black" : "white";
-  return { ...partie, ende: { art: "aufgabe", sieger: engineFarbe } };
+  const verlierer =
+    partie.einstellung.gegner === "mensch" ? amZug(partie) : partie.einstellung.eigeneFarbe;
+  const sieger: Color = verlierer === "white" ? "black" : "white";
+  return { ...partie, ende: { art: "aufgabe", sieger } };
 }
 
 /** Die Zeit einer Seite ist abgelaufen. */

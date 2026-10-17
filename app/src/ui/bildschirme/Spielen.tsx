@@ -9,8 +9,9 @@
  * seit 0.2.41 die Wahl des Gegners (Engine mit vorgefertigten Gegnern oder Mensch am selben
  * Gerät), die Spielhilfen und die Wertung (GegnerWahl.tsx).
  * Seit 0.2.39 lässt sich aus der Grundstellung eine Eröffnung des Buches
- * vorgeben, der die Engine folgt (EroeffnungsWahl.tsx, Rückmeldung des Autors zu N178). Darunter
- * die letzten Partien zum Nachlesen.
+ * vorgeben, der die Engine folgt (EroeffnungsWahl.tsx, Rückmeldung des Autors zu N178). Seit
+ * 0.2.41 lässt sich die Startstellung selbst aufbauen (Stellungseditor.tsx); eine veränderte
+ * Abbildungsstellung zählt dann als eigene Stellung. Darunter die letzten Partien zum Nachlesen.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, engine/stufen.ts, speicher/, Navigation, i18n.
  */
 import { useState } from "react";
@@ -29,6 +30,7 @@ import { gegnerVon } from "../../engine/gegner";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
+import { Stellungseditor } from "../komponenten/Stellungseditor";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 const MINUTE_MS = 60_000;
@@ -143,6 +145,7 @@ function Startstellung({
   setzeFen: (fen: string) => void;
 }) {
   const [eingabe, setzeEingabe] = useState("");
+  const [editor, setzeEditor] = useState(false);
   const gueltig = spielbar(eingabe.trim());
   const titel = abbildung
     ? t("spielen.abAbbildung", { nummer: abbildung })
@@ -152,10 +155,26 @@ function Startstellung({
   return (
     <section className="karte startstellung">
       <h2 className="karte-titel">{titel}</h2>
-      <div className="startbrett">
-        <Brett fen={fen} markierungen={[]} beschriftung={titel} koordinaten={false} />
-      </div>
-      {!abbildung && (
+      {editor ? (
+        <Stellungseditor
+          start={fen}
+          beiUebernehmen={(neu) => {
+            setzeFen(neu);
+            setzeEditor(false);
+          }}
+          beiAbbrechen={() => setzeEditor(false)}
+        />
+      ) : (
+        <>
+          <div className="startbrett">
+            <Brett fen={fen} markierungen={[]} beschriftung={titel} koordinaten={false} />
+          </div>
+          <button type="button" className="knopf-zweit" onClick={() => setzeEditor(true)}>
+            {t("spielen.aufbauen")}
+          </button>
+        </>
+      )}
+      {!editor && (
         <details className="fen-eingabe">
           <summary>{t("spielen.fenEingeben")}</summary>
           <input
@@ -226,7 +245,9 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
     setzeWahl({ ...wahl, farbe: seiteAmZug(neu) });
   };
   const [ersetzen, setzeErsetzen] = useState(false);
-  const beginne = useBeginne(fen, abbildung);
+  // Eine veränderte Abbildungsstellung ist eine eigene Stellung.
+  const abbildungGilt = fen === startFen ? abbildung : undefined;
+  const beginne = useBeginne(fen, abbildungGilt);
   const laufend = spiel.laufend;
   const ok = spielbar(fen);
   return (
@@ -239,7 +260,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
         </header>
       )}
       {laufend && <LaufendePartie partie={laufend} />}
-      <Startstellung fen={fen} abbildung={abbildung} setzeFen={uebernimm} />
+      <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />
       {!ok && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
       <Einstellungen wahl={wahl} setze={setzeWahl} />
       {fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" && (

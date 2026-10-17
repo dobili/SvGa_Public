@@ -319,9 +319,12 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
 
 export function Partie({ id }: { id: string }) {
   const s = usePartie(id);
+  const titel = t(
+    s.partie?.einstellung.gegner === "mensch" ? "partie.titelMensch" : "partie.titel",
+  );
   return (
     <div className="bildschirm bildschirm-partie" data-testid="partie">
-      <Kopfzeile titel={t("partie.titel")} zurueckText={t("partie.zurueck")} />
+      <Kopfzeile titel={titel} zurueckText={t("partie.zurueck")} />
       {!s.geladen && <p className="lade">…</p>}
       {s.geladen && !s.partie && <p className="fehlertext">{t("partie.nichtGefunden")}</p>}
       {s.partie && <Inhalt s={s} partie={s.partie} />}

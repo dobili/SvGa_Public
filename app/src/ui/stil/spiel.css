@@ -365,3 +365,34 @@
 .wertungskurve-niederlage {
   fill: var(--rot-text);
 }
+
+/* Stellungseditor (0.2.41): Steine als Chips mit Bild, Brett in voller Breite der Karte. */
+.stellungseditor {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.figurenwahl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+}
+
+.figurenwahl-stein {
+  min-height: var(--tippflaeche);
+  min-width: var(--tippflaeche);
+  padding: 4px;
+  border: 1.5px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.figurenwahl-stein[aria-checked="true"],
+.figurenwahl .chip[aria-checked="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--gold);
+}

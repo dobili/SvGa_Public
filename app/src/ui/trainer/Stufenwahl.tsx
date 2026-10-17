@@ -12,9 +12,12 @@ const STUFEN = [1, 2, 3, 4, 5] as const;
 export function Stufenwahl({
   stufe,
   setze,
+  erklaerung = t("taktiktrainer.stufenText"),
 }: {
   stufe: number | null;
   setze: (stufe: number | null) => void;
+  /** Wie die Stufen gemessen sind (Standard: an Lichess geeicht). */
+  erklaerung?: string;
 }) {
   return (
     <>
@@ -40,7 +43,7 @@ export function Stufenwahl({
           </button>
         ))}
       </fieldset>
-      <p className="hinweis">{t("taktiktrainer.stufenText")}</p>
+      <p className="hinweis">{erklaerung}</p>
     </>
   );
 }

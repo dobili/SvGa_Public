@@ -134,3 +134,18 @@ test("Falle oder Köder: Warnsignale prüfen, entscheiden, Auflösung", async ({
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
+
+test("Strukturerkenner: schwache Bauern prüfen, Plan wählen", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "struktur");
+  await page.getByTestId("struktur-wahl").getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Schritt 1 von 2");
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(runde).toContainText("Schritt 2 von 2");
+  await runde.locator(".plan-satz").first().click();
+  await expect(runde).toContainText("Struktur:");
+  await page.screenshot({ path: "test-results/bilder/trainer-struktur.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 8");
+});

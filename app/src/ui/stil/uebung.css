@@ -119,3 +119,14 @@
 .trainerkarte.bereit p {
   margin: 0;
 }
+
+.plan-satz {
+  text-align: left;
+  font-weight: 400;
+  padding: var(--raster) calc(var(--raster) * 2);
+  height: auto;
+}
+
+.plan-satz[aria-pressed="true"] {
+  font-weight: 700;
+}

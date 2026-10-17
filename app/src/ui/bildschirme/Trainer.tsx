@@ -1,8 +1,10 @@
 /**
  * Bildschirm „Trainer“: Übungsart wählen und eine Runde spielen (AP 13).
  *
- * Rolle im Gesamtbild: Konzept 9.2 (starte, naechste, antworte, beende) für die ersten drei
- * Trainer: Zähltrainer, Schach-Röntgen-Trainer und „Koordinaten, Notation, Gangarten“. Die
+ * Rolle im Gesamtbild: Konzept 9.2 (starte, naechste, antworte, beende). Zähltrainer,
+ * Schach-Röntgen-Trainer und „Koordinaten, Notation, Gangarten“ üben an den Buchstellungen;
+ * Taktiktrainer, „Falle oder Köder“ und Strukturerkenner haben eigene Aufgaben aus den
+ * Trainerdaten (ui/trainer/*Bereich.tsx). Die
  * Aufgaben entstehen aus den Stellungen des Buches (training/buchstellungen.ts); eine Runde hat
  * je nach Übungsart 5 bis 16 Aufgaben und zählt am Ende als Durchgang im Fortschritt.
  * Abhängigkeiten: training/*, ui/trainer/*, Navigation, i18n.
@@ -26,6 +28,7 @@ import {
 import { Roentgenaufgabe } from "../trainer/Roentgentrainer";
 import { Rundenablauf, type Darstellung } from "../trainer/Rundenablauf";
 import { FallenBereich } from "../trainer/FallenBereich";
+import { StrukturBereich } from "../trainer/StrukturBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
 
@@ -142,6 +145,7 @@ function MitBuchstellungen({ kennung }: { kennung: TrainerKennung }) {
 const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = {
   taktik: () => <TaktikBereich />,
   falle: () => <FallenBereich />,
+  struktur: () => <StrukturBereich />,
 };
 
 export function Trainer({ kennung }: { kennung: TrainerKennung }) {

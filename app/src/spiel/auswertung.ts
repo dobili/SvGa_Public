@@ -8,7 +8,8 @@
  * Seit 0.2.40 bekommt jeder Zug eine Klasse wie bei chess.com (brillant bis patzer).
  * Abhängigkeiten: spiel/partie.ts, engine/fehlerart.ts.
  */
-import { lageVon, opferwert, type Fehlerart } from "../engine/fehlerart";
+import { lageVon, type Fehlerart } from "../engine/fehlerart";
+import { opferwert } from "../engine/opfer";
 import { stellungen, type Partie } from "./partie";
 import { regelstellung, sanZuUci } from "./zuege";
 

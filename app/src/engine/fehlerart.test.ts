@@ -1,6 +1,6 @@
 /** Tests der Fehlerarten (Konzept 8.2) an Stellungen aus dem Buch, geprüft mit den Werkzeugen. */
 import { describe, expect, it } from "vitest";
-import { alleZuege, fehlerartVon, istDamenopfer, lageVon, opferwert } from "./fehlerart";
+import { alleZuege, fehlerartVon, istDamenopfer, lageVon } from "./fehlerart";
 
 /** Abb. 1.8 vor 3... Df6: Schwarz hat Springer g8 und Läufer c8, f8 zu Hause. */
 const VOR_DF6 = "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3";
@@ -83,29 +83,5 @@ describe("Züge in der Schreibweise der Engine", () => {
     expect(lage && alleZuege(lage)).not.toContain("e1h1");
     const umwandlung = lageVon("8/4P3/8/8/8/8/k7/4K3 w - - 0 1");
     expect(umwandlung && alleZuege(umwandlung)).toContain("e7e8q");
-  });
-});
-
-describe("Opferwert für die Zugklasse „brillant“ (0.2.51)", () => {
-  const OPERNPARTIE_VOR_16 = "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16";
-  const OPERNPARTIE_VOR_13 = "3rkb1r/p2nqppp/5n2/1B2p1B1/4P3/1Q6/PPP2PPP/2KR3R w k - 3 13";
-  const BERLIN_VOR_14 = "r3k3/ppp1bpp1/2p1b2r/4PnNp/5B2/2N3PP/PPP2P2/3R1RK1 b - - 0 14";
-  function wert(fen: string, uci: string): number {
-    const lage = lageVon(fen);
-    if (!lage) throw new Error("Stellung unlesbar");
-    return opferwert(lage, uci);
-  }
-  it("16. Db8+ in der Opernpartie (Abb. 11.4) gibt die Dame, auch mit Schach", () => {
-    expect(wert(OPERNPARTIE_VOR_16, "b3b8")).toBe(9);
-  });
-  it("10. Sxb5 gibt den Springer für zwei Bauern (cxb5, Lxb5): Netto 1", () => {
-    const vor10 = "rn2kb1r/p3qppp/2p2n2/1p2p1B1/2B1P3/1QN5/PPP2PPP/R3K2R w KQkq - 0 10";
-    expect(wert(vor10, "c3b5")).toBe(1);
-  });
-  it("13. Txd7 gibt den Turm für einen Springer: 5 − 3 = 2", () => {
-    expect(wert(OPERNPARTIE_VOR_13, "d1d7")).toBe(2);
-  });
-  it("ein Abtausch ist kein Opfer: 14... Lxg5 gegen den Springer, danach Lxg5", () => {
-    expect(wert(BERLIN_VOR_14, "e7g5")).toBe(0);
   });
 });

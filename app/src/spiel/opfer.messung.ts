@@ -9,8 +9,11 @@
  * `klasseVon`. Ausgabe: Treffer unter den 100 Brillanten, Fehlalarme (weitere Züge, die wir
  * brillant nennen) und die nicht erkannten Züge, als Bericht in den Ordner der Datei.
  * Start über `npm run messen:opfer` (Datei: MESSUNG_OPFER_DATEI, Vorgabe
- * ../buch/arbeit/chessigma/brillant.json; Rechenzeit MESSUNG_OPFER_MS, Vorgabe 500).
- * Abhängigkeiten: engine/nodeEngine.testhilfe.ts, engine/fehlerart.ts, spiel/auswertung.ts.
+ * ../buch/arbeit/chessigma/brillant.json; Rechenzeit MESSUNG_OPFER_MS, Vorgabe 500; Fassung der
+ * schon verlorenen Figuren MESSUNG_OPFER_ALT, Vorgabe die der App; der Bericht heißt
+ * bericht-<Fassung>.md und nennt auch die Fehlalarme).
+ * Abhängigkeiten: engine/nodeEngine.testhilfe.ts, engine/fehlerart.ts, engine/opfer.ts,
+ * spiel/auswertung.ts.
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -19,7 +22,8 @@ import { makeUci } from "chessops";
 import { makeFen } from "chessops/fen";
 import { parsePgn, startingPosition } from "chessops/pgn";
 import { parseSan } from "chessops/san";
-import { lageVon, opferwert } from "../engine/fehlerart";
+import { lageVon } from "../engine/fehlerart";
+import { OPFER_ALT_VERLORENE, opferwert, type AltVerlorene } from "../engine/opfer";
 import { nodeEngine } from "../engine/nodeEngine.testhilfe";
 import { wertFuer } from "../engine/spielbewerter";
 import { endwert, klasseVon, OPFER_AB, WERTGRENZE } from "./auswertung";
@@ -28,6 +32,8 @@ const DATEI =
   process.env.MESSUNG_OPFER_DATEI ??
   join(process.cwd(), "..", "buch", "arbeit", "chessigma", "brillant.json");
 const RECHENZEIT_MS = Number(process.env.MESSUNG_OPFER_MS ?? 500);
+const FASSUNGEN: readonly AltVerlorene[] = ["keine", "gezogene", "alle"];
+const FASSUNG = FASSUNGEN.find((f) => f === process.env.MESSUNG_OPFER_ALT) ?? OPFER_ALT_VERLORENE;
 const VARIANTEN = 2;
 const PROZENT = 100;
 
@@ -134,13 +140,14 @@ describe("Brillant am Prüfstand von chess.com", () => {
     let zuege = 0;
     const partienMitFehlalarm = new Set<number>();
     const nichtErkannt: string[] = [];
+    const fehlalarmZuege: string[] = [];
     for (const [nummer, eintrag] of eintraege.entries()) {
       const partie = zuegeVon(eintrag.pgn);
       for (let i = 0; i < partie.sans.length; i += 1) {
         zuege += 1;
         const chesscomBrillant = i === eintrag.ply - 1;
         const lage = lageVon(partie.fens[i] ?? "");
-        const opfer = lage ? opferwert(lage, partie.ucis[i] ?? "") : 0;
+        const opfer = lage ? opferwert(lage, partie.ucis[i] ?? "", FASSUNG) : 0;
         if (opfer < OPFER_AB) {
           if (chesscomBrillant)
             nichtErkannt.push(`${nummer}: ${partie.sans[i]} (kein Opfer, ${opfer})`);
@@ -153,12 +160,13 @@ describe("Brillant am Prüfstand von chess.com", () => {
         else if (brillant) {
           fehlalarme += 1;
           partienMitFehlalarm.add(nummer);
+          fehlalarmZuege.push(`${nummer}: ${partie.sans[i]} (Halbzug ${i + 1}, Opfer ${opfer})`);
         } else if (chesscomBrillant)
           nichtErkannt.push(`${nummer}: ${partie.sans[i]} (Opfer, aber nicht brillant)`);
       }
     }
     const bericht = [
-      `# Brillant am Prüfstand (${new Date().toISOString().slice(0, 10)}, ${RECHENZEIT_MS} ms je Stellung)`,
+      `# Brillant am Prüfstand (${new Date().toISOString().slice(0, 10)}, ${RECHENZEIT_MS} ms je Stellung, Fassung „${FASSUNG}“)`,
       "",
       `- Partien: ${eintraege.length}, Züge: ${zuege}, Opferkandidaten: ${kandidaten} (${((PROZENT * kandidaten) / zuege).toFixed(1)} %)`,
       `- Opfer erkannt: ${opferErkannt} von ${eintraege.length}`,
@@ -168,8 +176,11 @@ describe("Brillant am Prüfstand von chess.com", () => {
       "Nicht erkannt:",
       ...nichtErkannt.map((z) => `- ${z}`),
       "",
+      "Fehlalarme:",
+      ...fehlalarmZuege.map((z) => `- ${z}`),
+      "",
     ].join("\n");
-    writeFileSync(join(dirname(DATEI), "bericht.md"), bericht);
+    writeFileSync(join(dirname(DATEI), `bericht-${FASSUNG}.md`), bericht);
     console.log(bericht);
     expect(treffer).toBeGreaterThan(0);
   });

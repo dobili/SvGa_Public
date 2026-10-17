@@ -25,15 +25,15 @@
  * Alles andere heißt „ungenau“. Die Lage vor dem Zug (Drohungen, Gabeln, Linien) wird je
  * Stellung einmal berechnet, damit alle legalen Züge geprüft werden können.
  * Abhängigkeiten: chessops, schach/ (Abtausch, Drohungen, Gabeln, Motive, Todsünden),
- * analyse/k4-warnsignale.ts (W2), analyse/stellungsprofil.ts.
+ * analyse/k4-warnsignale.ts (W2), analyse/stellungsprofil.ts, engine/zugprobe.ts (Zug spielen),
+ * engine/opfer.ts (verlorene Figuren, seit 0.2.59 dort zusammen mit dem Opferwert).
  */
 import type { BlinderFleck } from "./blindeFlecken";
-import { Chess, normalizeMove } from "chessops/chess";
+import { Chess } from "chessops/chess";
 import { parseFen } from "chessops/fen";
-import type { NormalMove, Piece, Role, Square } from "chessops/types";
-import { opposite, parseUci } from "chessops/util";
+import type { Square } from "chessops/types";
+import { opposite } from "chessops/util";
 import { profil } from "../analyse/stellungsprofil";
-import { abtausch } from "../schach/abtausch";
 import {
   drohungenVon,
   schlaege,
@@ -41,7 +41,6 @@ import {
   type Drohung,
   type Schlagzug,
 } from "../schach/drohungen";
-import { FIGURENWERT } from "../schach/stellung";
 import { phase, type Phase } from "../schach/phase";
 import {
   gabelnVon,
@@ -51,7 +50,11 @@ import {
   type Taktikbefund,
 } from "./fehlerart-taktik";
 export type { Taktikbefund } from "./fehlerart-taktik";
+import { abtausch } from "../schach/abtausch";
 import { istKoenigMitte, istVerfruehteDame } from "./fehlerart-eroeffnung";
+import { neuVerlorene } from "./opfer";
+import { probe, type Zugprobe } from "./zugprobe";
+export type { Zugprobe } from "./zugprobe";
 import {
   istBauernraub,
   istBauernvorstoss,
@@ -115,8 +118,6 @@ const LEICHTFIGUR = 3;
 const DAME = 9;
 /** Ab so viel Verlust (Engine) gilt ein Schlag als Schlagreflex statt als Abtausch. */
 const SCHLAG_VERLUST = 1;
-/** Ab diesem Abtauschergebnis des Gegners gilt eine Figur als verloren (mehr als ein Bauer). */
-const VERLOREN_AB = 2;
 /** Eine Drohung zählt ab einem Bauern Gewinn (Kapitel 1: „Material gewinnen“). */
 const DROHUNG_AB = 1;
 /** Ein Damenopfer: Die Dame geht für höchstens eine Leichtfigur verloren. */
@@ -136,14 +137,6 @@ export interface Lage {
   readonly gabeln: ReadonlySet<string>;
   /** Schlüssel der gefährlichen Linien (W2) gegen die Seite am Zug vor dem Zug. */
   readonly linien: ReadonlySet<string>;
-}
-
-/** Ein geprüfter Zug: der Zug, die Stellung danach und was er schlägt. */
-export interface Zugprobe {
-  readonly zug: NormalMove;
-  readonly figur: Piece;
-  readonly danach: Chess;
-  readonly geschlagen: Role | null;
 }
 
 /**
@@ -169,27 +162,6 @@ export function lageVon(fen: string): Lage | null {
     gabeln: new Set(imSchach ? [] : gabelnVon(stellung, feind).keys()),
     linien: new Set(linienGegen(stellung, regeln.turn).keys()),
   };
-}
-
-/** Was der Zug schlägt (auch en passant), sonst null. */
-function geschlageneRolle(regeln: Chess, zug: NormalMove): Role | null {
-  const opfer = regeln.board.get(zug.to);
-  if (opfer && opfer.color !== regeln.turn) return opfer.role;
-  const bauer = regeln.board.get(zug.from);
-  return bauer?.role === "pawn" && zug.to === regeln.epSquare ? "pawn" : null;
-}
-
-/** Spielt einen Zug (UCI, Rochade wie die Engine sie schreibt) probeweise; null, wenn er nicht geht. */
-function probe(lage: Lage, uci: string): Zugprobe | null {
-  const roh = parseUci(uci);
-  if (!roh || !("from" in roh)) return null;
-  const zug = normalizeMove(lage.regeln, roh);
-  if (!("from" in zug) || !lage.regeln.isLegal(zug)) return null;
-  const figur = lage.regeln.board.get(zug.from);
-  if (!figur) return null;
-  const danach = lage.regeln.clone();
-  danach.play(zug);
-  return { zug, figur, danach, geschlagen: geschlageneRolle(lage.regeln, zug) };
 }
 
 export { alleZuege, engineUci } from "./engineZuege";
@@ -235,39 +207,6 @@ function stehengelasseneDrohung(lage: Lage, p: Zugprobe): Stehengelassen {
   return staerkste;
 }
 
-/**
- * Die eigene Figur (ab Leichtfigur), die erst durch den Zug verloren geht, mit dem größten
- * Abtauschgewinn des Gegners; Wert 0 ohne Feld, wenn keine. Regel: Kapitel 4, W1, mit der
- * Abtauschrechnung aus Kapitel 1 (Fesselungen bleiben wie im Buch unberücksichtigt).
- * Ein Schachgebot zählt für W1 nicht (der Gegner muss erst das Schach beantworten); für den
- * Opferwert zählt es (16. Db8+!! in der Opernpartie gibt die Dame, `mitSchach`). Eine Figur, die
- * schon vorher verloren war, zählt nicht, außer es ist die gezogene Figur selbst und der Aufrufer
- * erlaubt das (`gezogeneAuchAltVerloren`, Opferwert: Dxc6+ mit einer angegriffenen Dame bleibt ein
- * Opfer; ein Königszug neben einer längst hängenden Dame ist keins).
- */
-function neuVerlorene(
-  lage: Lage,
-  p: Zugprobe,
-  mitSchach = false,
-  gezogeneAuchAltVerloren = false,
-): { wert: number; feld: Square | null } {
-  if (!mitSchach && p.danach.isCheck()) return { wert: 0, feld: null };
-  const eigen = opposite(p.danach.turn);
-  let gefunden: { wert: number; feld: Square | null } = { wert: 0, feld: null };
-  for (const feld of p.danach.board[eigen]) {
-    const figur = p.danach.board.get(feld);
-    if (!figur || figur.role === "king" || FIGURENWERT[figur.role] < LEICHTFIGUR) continue;
-    const jetzt = abtausch(p.danach.board, feld);
-    if (!jetzt || jetzt.bilanz < VERLOREN_AB) continue;
-    const gezogene = feld === p.zug.to;
-    const vorher = abtausch(lage.regeln.board, gezogene ? p.zug.from : feld);
-    const altVerloren = vorher !== null && vorher.bilanz >= VERLOREN_AB;
-    if (altVerloren && !(gezogene && gezogeneAuchAltVerloren)) continue;
-    if (jetzt.bilanz > gefunden.wert) gefunden = { wert: jetzt.bilanz, feld };
-  }
-  return gefunden;
-}
-
 /** Schlagreflex (W5): ein Schlag mit negativer Abtauschbilanz oder laut Engine mit Verlust. */
 function istSchlagreflex(lage: Lage, p: Zugprobe, verlust: number | null): boolean {
   if (p.geschlagen === null) return false;
@@ -297,7 +236,7 @@ export function fehlerbefundIn(
   verlust: number | null,
   besterZug: string | null = null,
 ): Fehlerbefund {
-  const p = probe(lage, uci);
+  const p = probe(lage.regeln, uci);
   if (!p) return { art: "ungenau", ...OHNE_EINZELHEITEN };
   const drohung = stehengelasseneDrohung(lage, p);
   const haengt = neuVerlorene(lage, p);
@@ -337,22 +276,6 @@ function phasenfehler(
   return null;
 }
 
-/**
- * Was der Zug laut Abtauschrechnung hergibt: der größte Gewinn des Gegners an einer eigenen Figur
- * ab Leichtfigur, die erst durch den Zug verloren geht, abzüglich dessen, was der Zug selbst
- * schlägt; 0, wenn nichts. Für die Zugklasse „brillant“ im Rückblick (ein gutes Opfer, 0.2.40).
- * Beispiel: Abb. 7.14, 2. Th8+ gibt den Turm → 5; 10. Sxb5 in der Opernpartie (Springer für
- * zwei Bauern: cxb5, dann Lxb5) → 1. Sonderfall (0.2.51): Ein Abtausch ist kein Opfer: Lxg5
- * gegen einen Springer, danach Lxg5 → 3 − 3 = 0. Geprüft an 100 Brillant-Zügen von chess.com
- * (Chessigma-Vergleich, 0.2.54): alle 100 haben hier mindestens 1.
- */
-export function opferwert(lage: Lage, uci: string): number {
-  const p = probe(lage, uci);
-  if (!p) return 0;
-  const geschlagen = p.geschlagen === null ? 0 : FIGURENWERT[p.geschlagen];
-  return Math.max(0, neuVerlorene(lage, p, true, false).wert - geschlagen);
-}
-
 /** Nur die Fehlerart eines Zuges (für die Fehlersuche der Engine, engine/fehlersuche.ts). */
 export function fehlerartIn(
   lage: Lage,
@@ -387,7 +310,7 @@ export function fehlerartVon(fen: string, zuege: readonly string[], verlust: num
  * (Mindestverlust).
  */
 export function istDamenopfer(lage: Lage, uci: string): boolean {
-  const p = probe(lage, uci);
+  const p = probe(lage.regeln, uci);
   if (!p) return false;
   for (const feld of p.danach.board.pieces(opposite(p.danach.turn), "queen")) {
     const a = abtausch(p.danach.board, feld);

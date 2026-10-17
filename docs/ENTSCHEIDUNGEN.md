@@ -1630,11 +1630,42 @@ ab; unsere Zahlen blieben sonst je Leser verschieden und schwerer erklärbar).
   mindestens −1, nicht aus dem Schach heraus, der zweitbeste Zug gewinnt nicht ohnehin (Wert vor
   dem Zug minus Abstand zum zweitbesten unter +7); dafür reicht „bis 0,5 hinter dem besten“.
   Ergebnis am Prüfstand: Opfer erkannt 62 von 100 (38 Brillante lassen eine schon vorher angegriffene, nicht gezogene Figur stehen; die zählt nicht, siehe oben), brillant 46 von 100, 25 Fehlalarme in 100 Partien. Großzügigere Fassung (jede schon angegriffene Figur zählt als Opfer): 79 von 100, aber 98 Fehlalarme in 56 Partien, also etwa einer je Partie. Entschieden für die strenge Fassung: Ein grundlos vergebenes „!!“ lehrt den Leser Falsches, ein verpasstes schadet nicht (Rückfrage S19).
-- **Nicht übernommen:** chess.com prüft zusätzlich, ob die geopferte Figur „wirklich zu nehmen“
-  ist (Angreifer nicht gefesselt, Nehmen erlaubt kein Matt in einem). Das bräuchte je Opfer eine
-  weitere Suche; bei Bedarf später.
+- **Zunächst nicht übernommen (seit 0.2.59 doch, siehe unten):** chess.com prüft zusätzlich, ob
+  die geopferte Figur „wirklich zu nehmen“ ist.
 - **Messlauf:** `app/src/spiel/opfer.messung.ts` (nicht in der CI) rechnet die Datei mit der
   Engine durch; Aufruf `npm run messen:opfer` im Ordner app, Ergebnis nur lokal.
+
+## Brillant, zweiter Schritt: Opfer wirklich annehmbar (17.10.2026, Fable, Zweig `brillant-annehmbar`, Version 0.2.59)
+
+Nach Regel 9 (Empfehlungen gleich umsetzen) gebaut, was in 0.2.54 noch „bei Bedarf später“
+hieß. Die Opfererkennung liegt jetzt in `app/src/engine/opfer.ts` (vorher in `fehlerart.ts`, das
+über 400 Zeilen wuchs); das Spielen eines Zuges aus UCI in `engine/zugprobe.ts`.
+
+- **Wirklich zu nehmen:** Eine Figur zählt nur als Opfer, wenn der Gegner sie nach dem Zug legal
+  schlagen kann (`annehmbar`: ein legaler Zug auf ihr Feld). Das schließt aus: einen Angreifer, der
+  an den eigenen König gefesselt ist, und eine Figur, die stehen bleibt, während der Gegner ein
+  Schach beantworten muss, das nicht von ihr ausgeht. Die Abtauschrechnung des Buches kennt
+  Fesselungen nicht (Kapitel 1); hier geht es nur um die Frage „geopfert oder nicht“.
+- **Nicht übernommen:** „Nehmen erlaubt kein Matt in einem.“ Genau das ist 16. Db8+!! in der
+  Opernpartie (Sxb8 Td8#), und chess.com nennt es brillant. Die Regel wäre also falsch.
+- **Fassung der schon verlorenen Figuren** (`OPFER_ALT_VERLORENE`): Der Messlauf prüft drei
+  Fassungen, je mit der Nehmbarkeitsprüfung (100 Brillant-Züge, 500 ms je Stellung):
+
+  | Fassung                                                                                            | Opfer erkannt | Brillant erkannt | Fehlalarme       |
+  | -------------------------------------------------------------------------------------------------- | ------------- | ---------------- | ---------------- |
+  | „keine“ (nur, was erst durch den Zug verloren geht; Stand 0.2.54, dort ohne Nehmbarkeit 46 bei 25) | 61            | 50               | 20 in 18 Partien |
+  | „gezogene“ (dazu die gezogene Figur, auch wenn sie vorher schon angegriffen war)                   | 73            | 59               | 19 in 18 Partien |
+  | „alle“ (auch eine angegriffene Figur, die der Zug stehen lässt)                                    | 99            | 81               | 59 in 39 Partien |
+
+  Entschieden für **„gezogene“**: mehr Treffer als „keine“ bei gleich vielen Fehlalarmen (einer je
+  fünf Partien, vorher einer je vier). „Alle“ träfe 81, gäbe aber in jeder zweiten Partie ein
+  grundloses „!!“; das widerspricht S19 (lieber ein verpasstes als ein grundloses). Die Angabe in
+  der Entscheidung zu 0.2.54, die gezogene Figur zähle schon, stimmte für den Code nicht (der
+  Aufruf stand auf „keine“); jetzt stimmt sie. Die Opferkandidaten sinken von 7,5 % auf 3 % aller
+  Züge, die Auswertung wird dadurch eher schneller.
+
+- **Messlauf:** `MESSUNG_OPFER_ALT=keine|gezogene|alle npm run messen:opfer`, Bericht
+  `bericht-<Fassung>.md` neben der Datei, jetzt auch mit der Liste der Fehlalarme.
 
 ## R4: Stufen 1 bis 3 menschlicher (17.10.2026, Fable, Zweig `stufen-menschlich`, Version 0.2.52)
 

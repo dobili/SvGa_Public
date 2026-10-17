@@ -327,6 +327,7 @@ def baue(lichess_pfad: Path | None, je_stufe: int, ziel: Path = ZIELDATEI) -> di
             },
         ],
         "massstab": {"falleAbVerlust": FALLE_AB, "geschenkBisVerlust": GESCHENK_BIS, "tiefe": TIEFE},
+        "eichung": dict(sorted(eichung.items())),
         "aufgaben": buch + lichess,
     }
     schreibe_daten(ziel, daten, SCHEMA)

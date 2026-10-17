@@ -5,13 +5,18 @@
   "description": "Kapitel 4, Pflichtenheft 7: Die Engine (der Fallensteller) hat gezogen und bietet Material an. Der Leser markiert die Warnsignale (die App rechnet sie mit k4-warnsignale) und entscheidet, ob er nimmt. Antwort „falle“: Nehmen verliert; „geschenk“: Nehmen ist richtig.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "trainer", "erzeugt", "quellen", "massstab", "aufgaben"],
+  "required": ["schemaVersion", "trainer", "erzeugt", "quellen", "massstab", "eichung", "aufgaben"],
   "allOf": [{ "$ref": "trainer-gemeinsam.schema.json#/$defs/kopf" }],
   "properties": {
     "schemaVersion": {},
     "trainer": { "const": "falle" },
     "erzeugt": {},
     "quellen": {},
+    "eichung": {
+      "description": "Messklasse (Tiefe bis zum Urteil, Länge 1) → Stufe, aus den Lichess-Aufgaben geeicht (schwierigkeit.py)",
+      "type": "object",
+      "additionalProperties": { "type": "integer", "minimum": 1, "maximum": 5 }
+    },
     "massstab": {
       "type": "object",
       "additionalProperties": false,

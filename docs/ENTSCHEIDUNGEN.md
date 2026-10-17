@@ -2540,3 +2540,11 @@ Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `an
       Werkzeuge noch einmal mit vollen Karten siehst. Die Faktorenbilanz auch in der Eröffnung
       zeigen: Das Buch nutzt sie gerade bei den Gambits, also in der Eröffnung. (Abb. 3.6 gilt seit
       0.2.44 übrigens als Mittelspiel.)
+
+## Fehlerdatenbank (18.10.2026 nachts, Opus, Zweig `fehlerdatenbank`, Version 0.2.65)
+
+- Trainer „fehlerdatenbank“ fertig (AP 13, Stufe 3): `training/fehlerdatenbank.ts` (Einträge,
+  Auswertung je Fehlerart und Woche, Vorschlag), `ui/trainer/FehlerBereich.tsx`,
+  `ui/trainer/FehlerFormular.tsx`, Knopf „In die Fehlerdatenbank“ in der Rückblickkarte.
+- Nutzerdaten Format 4 mit dem Feld „fehler“; Format 3 und älter lesen sich mit leerer Liste.
+- Entscheidungen wie in F1 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.

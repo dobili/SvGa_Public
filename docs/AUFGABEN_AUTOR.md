@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.66. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.67. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,20 +11,20 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.66“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.67“ dasteht; sonst die App neu laden.
 
-Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (X, T,
-C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
+Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
+T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
 mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ---
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.66“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.67“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.66 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
+### Neu in 0.2.67 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
 
 - [ ] N288. **Isolani aus Besitzersicht und Sonderfall 6. Reihe:** Abb. 5.17, Werkzeug „Richtung“:
       Für Schwarz weiter „spielt gegen den Isolani d4: Blockiere das Feld davor (d5) …“; für Weiß
@@ -41,7 +41,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.66“, dann 
       gewählte Art fast nie passt. Vorher spielte so ein Gegner fast fehlerfrei und damit stärker
       als seine Stufe (Messbefund an den 64 Bots). Der Hinweis unter den Haken erklärt das.
 
-### Neu in 0.2.65 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
+### Neu in 0.2.66 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
 
 - [ ] N285. **Gegnerwahl mit Porträts:** Spielen › Gegner „Engine“. Unter „Vorgefertigter Gegner“
       steht oben eine Sprechblase mit Porträt, Name, Durchschnitt und Satz des gewählten Gegners;
@@ -59,6 +59,17 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.66“, dann 
 - [ ] N287. **Stufe 8 mit Charakter:** Großmeister Grün bleibt ohne Schwäche; IM Vogt (sehr
       aggressiv, übersieht ruhige Züge) oder IM Haas (sehr defensiv, übersieht die Grundreihe)
       spielen in voller Stärke, aber mit Handschrift. Prüfe, dass sie trotzdem wie Stufe 8 wirken.
+
+### Neu in 0.2.65 (etwa 10 Minuten; Fehlerdatenbank, Opus)
+
+- [ ] N301. **Fehlerdatenbank:** Training › Kapitel 12 › „Fehlerdatenbank“ › Trainieren. Oben
+      „Neuer Eintrag“: eine FEN einfügen (etwa nach 1. f3 e5 2. g4:
+      `rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2`), das Brett erscheint;
+      Fehlerart aus der Gesamt-Checkliste wählen, einen Satz schreiben, „In die Fehlerdatenbank“.
+      Darunter die Auswertung je Fehlerart (gesamt und die letzten acht Wochen) und der Vorschlag
+      für den passenden Trainer mit Knopf. Die Einträge lassen sich aufklappen (Brett, Satz) und
+      löschen. Im Rückblick einer beendeten Partie steht unter jeder Zugkarte „In die
+      Fehlerdatenbank“: Es öffnet dasselbe Formular mit der Stellung vor dem Zug. Siehe F1.
 
 ### Neu in 0.2.64 (etwa 10 Minuten; Leerfälle U12, Opus)
 
@@ -803,7 +814,7 @@ Regeln C1 und C2).
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
 
-### B. Buchbefunde aus der Textarbeit (Fable, 0.2.65; nur du änderst das Buch)
+### B. Buchbefunde aus der Textarbeit (Fable, 0.2.67; nur du änderst das Buch)
 
 - [ ] B6. **Zeit-Zählhilfe in Kapitel 3:** Die Faktorenbilanz der App sagt nach 1. e4 e5 2. f4
       (Abb. 3.1, ebenso 3.18 und 3.36) „Schwarz liegt vorn bei Zeit“, obwohl beide Seiten null
@@ -814,6 +825,18 @@ Regeln C1 und C2).
       **Empfehlung:** im Buch die Zählhilfe um „nie unter null“ ergänzen und die Tabelle zu 3.14
       auf „gleich“ setzen; dann ändere ich die App (ein Zeile) und die Kalibrierung. Bis dahin
       bleibt die App beim Buch (Regel 1).
+
+### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
+
+- [ ] F1. **Fehlerdatenbank (0.2.65):** Fehlerart ist je eine Zeile der Gesamt-Checkliste
+      (Kapitel 0 bis 12, gespeichert als Kapitelnummer, damit sich die Texte ändern dürfen).
+      Höchstens 500 Einträge, der älteste fällt dann weg. Der Vorschlag nimmt die häufigste
+      Fehlerart der letzten vier Wochen und den ersten fertigen Trainer zu ihrem Kapitel (Kapitel 1
+      → Schach-Röntgen-Trainer, 7 → Taktiktrainer); zu Kapitel 11 gibt es keinen eigenen Fehler-
+      Trainer, dann kommt die nächsthäufige Fehlerart. Der Knopf im Rückblick steht bei jedem Zug,
+      auch bei guten (ein Fehler zeigt sich manchmal erst einen Zug später). Die Einträge stehen in
+      deinen Nutzerdaten (Format 4) und kommen mit in die Datensicherung.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.65, Widerspruch genügt.
 
 ### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 

@@ -5,8 +5,12 @@
  * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38 („Nachspielen wie bei
  * chess.com: einfache Kommentare, warum ein Zug schlecht war“). Die Sätze folgen der Engine-Karte
  * (Zugurteil.tsx), die Erklärung kommt aus spiel/erklaerung.ts.
- * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n.
+ * Unten steht „In die Fehlerdatenbank“ (Kapitel 12, AP 13): Es öffnet das Formular mit der
+ * Stellung vor dem Zug und dem gespielten Zug.
+ * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n,
+ * ui/trainer/FehlerFormular.tsx.
  */
+import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
@@ -14,7 +18,24 @@ import type { Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
 import { balkentext, variantentext } from "../../spiel/rueckblick";
 import { uciZuSan } from "../../spiel/zuege";
+import { FehlerFormular } from "../trainer/FehlerFormular";
 import type { Rueckblick } from "./useRueckblick";
+
+/**
+ * Knopf und Formular „In die Fehlerdatenbank“ für den gezeigten Zug. Der Schlüssel (Stellung und
+ * Zug) setzt das Formular für jeden Zug zurück.
+ */
+function InDieFehlerdatenbank({ fen, zug }: { fen: string; zug: string }) {
+  const [offen, setzeOffen] = useState(false);
+  if (!offen) {
+    return (
+      <button type="button" className="knopf-link" onClick={() => setzeOffen(true)}>
+        {t("fehlerdb.ausRueckblick")}
+      </button>
+    );
+  }
+  return <FehlerFormular fen={fen} zug={zug} />;
+}
 
 /** Verlust mit einer Nachkommastelle und deutschem Komma. */
 /** Bis zu diesem Verlust ist ein Zug „so gut wie der beste“ (die Anzeige rundet auf 0,0). */
@@ -118,6 +139,7 @@ export function Rueckblickkarte({
           {t("rueckblick.phasenwechsel", { text: phasenwechsel })}
         </p>
       )}
+      <InDieFehlerdatenbank key={`${fen} ${san}`} fen={fen} zug={san} />
     </section>
   );
 }

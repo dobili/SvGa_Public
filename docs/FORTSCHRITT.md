@@ -1254,9 +1254,10 @@ Eröffnungsliste sind seit 0.2.32 umgesetzt).
 Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2.36) liegt im
 Archiv-Repository; was davon noch offen ist, steht hier.
 
-1. **Autor:** Nachtest N201 bis N209 (0.2.39), dann N182 bis N200 und, falls offen, N158 bis
-   N181 (alle Texte gelten für 0.2.39); Rückfragen R1 bis R5, U1 bis U9, U11, U12, T1 bis T5,
-   C1 bis C9, K1 bis K6 und D1 in `docs/AUFGABEN_AUTOR.md`. Antworten einarbeiten.
+1. **Autor:** alles in `docs/AUFGABEN_AUTOR.md` (einzige Datei für den Autor, Regel 8 in
+   `CLAUDE.md`): Teil 1 Nachtest N201 bis N209, dann N182 bis N200 und, falls offen, N158 bis
+   N181; Teil 2 Rückfragen R1 bis R5, U1 bis U9, U11, U12, T1 bis T5, C1 bis C9, K1 bis K6, D1.
+   Antworten einarbeiten, Erledigtes dort löschen.
    Entscheidungen der Nacht zum 17.10.2026 (Fable) in `docs/ENTSCHEIDUNGEN.md`, Abschnitt
    „Rückmeldung zu 0.2.38“, und in `docs/TRAINERDATEN.md`. U10 („!“) ist umgesetzt; R4 (Stufen
    menschlicher, fünf Wege mit Empfehlung) wartet auf die Richtung des Autors.

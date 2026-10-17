@@ -44,17 +44,22 @@ Grundlagen (Claude Docs, nur lesen):
 6. **Alles auf Deutsch:** Oberflächentexte (über `src/i18n/de.json`), Kommentare, Commit-Texte mit
    dem Warum.
 7. **Keine Zugangsdaten** im Chat oder im Repository. Verknüpfungen bestätigt der Autor selbst.
+8. **Eine Datei für den Autor:** Alles, was der Autor testen oder entscheiden soll, steht
+   vollständig in `docs/AUFGABEN_AUTOR.md` (Teil 1 Tests, Teil 2 Rückfragen), mit allen nötigen
+   Informationen im Text, ohne Verweise auf andere Dateien, und nur Offenes (Wunsch des Autors,
+   17.10.2026: Er liest auf dem Handy). Erledigtes wird dort gelöscht und in
+   `docs/ENTSCHEIDUNGEN.md` festgehalten. Eine eigene Testanleitung gibt es nicht mehr.
 
 ## Aufbau
 
-| Ordner | Inhalt |
-|---|---|
-| `app/` | TypeScript-App (React 19, Vite, vite-plugin-pwa, chessops) |
-| `pipeline/` | Python-Pipeline: LaTeX lesen, prüfen, Daten bauen |
-| `schemas/` | JSON-Schemas, Vertrag zwischen Pipeline und App |
-| `inhalte/de/` | Zugfolgen als PGN (Entwürfe der Pipeline, Freigabe durch den Autor), später Texte |
-| `docs/` | Architektur, Entscheidungen, Fortschritt, Testanleitung, Lizenzen |
-| `buch/a1/` | nur lokal, nie committen (siehe Regel 2) |
+| Ordner        | Inhalt                                                                                         |
+| ------------- | ---------------------------------------------------------------------------------------------- |
+| `app/`        | TypeScript-App (React 19, Vite, vite-plugin-pwa, chessops)                                     |
+| `pipeline/`   | Python-Pipeline: LaTeX lesen, prüfen, Daten bauen                                              |
+| `schemas/`    | JSON-Schemas, Vertrag zwischen Pipeline und App                                                |
+| `inhalte/de/` | Zugfolgen als PGN (Entwürfe der Pipeline, Freigabe durch den Autor), später Texte              |
+| `docs/`       | Architektur, Entscheidungen, Fortschritt, Aufgaben des Autors (Tests und Rückfragen), Lizenzen |
+| `buch/a1/`    | nur lokal, nie committen (siehe Regel 2)                                                       |
 
 ## Befehle
 
@@ -99,7 +104,7 @@ Netzzugang der Cloud-Umgebung: „Voll“. npm und PyPI sind erreichbar, es gilt
 
 1. Je Arbeitspaket ein eigener Zweig (`ap1-durchstich` usw.).
 2. Jeder Push löst die Prüfungen aus. Cloudflare baut aus jedem Zweig eine Testadresse.
-3. Der Autor prüft nach `docs/TESTANLEITUNG.md` auf dem Handy und gibt frei.
+3. Der Autor prüft nach `docs/AUFGABEN_AUTOR.md` (Teil 1) auf dem Handy und gibt frei.
 4. Nach der Freigabe wird der Zweig in `main` übernommen. `main` ist die veröffentlichte App.
    Der Autor erlaubt ausdrücklich (14.10.2026), jederzeit nach `main` zu pushen, wenn es sinnvoll
    ist (etwa Testversionen, solange Cloudflare keine Testadressen für Zweige baut). Vorher immer

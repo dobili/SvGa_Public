@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.41. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.42. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.41“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.42“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,33 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.41“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.42“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.42 (etwa 20 Minuten, mit Engine; deine Ergänzungen vom 17.10.2026 abends)
+
+- [ ] N228. **Wertung nur aus der Grundstellung:** Spielen aus einer Abbildung („Gegen die Engine
+      spielen“) oder nach „Stellung aufbauen“: Statt des Hakens „Gewertete Partie“ steht der Satz
+      „Diese Partie zählt nicht für deine Wertung …“. Aus der Grundstellung ist der Haken da. Auch
+      bei „Mensch“ fehlt er.
+- [ ] N229. **Wertung zurücksetzen:** Einstellungen › Karte „Deine Spielstärke“, unten „Wertung
+      zurücksetzen“: Nachfrage, dann „Ja, zurücksetzen“: Die Karte zeigt wieder den Hinweis vor der
+      ersten Partie; die Partien bleiben in der Liste, zählen aber dauerhaft nicht mehr (eine
+      danach fertig werdende Auswertung einer alten Partie ändert nichts).
+- [ ] N230. **Kurve je Phase:** In der Karte „Deine Spielstärke“ die Wahl „Ansicht: Wertung /
+      Eröffnung / Mittelspiel / Endspiel“. Bei einer Phase zeigt die große Zahl den Durchschnitt
+      der Schätzung in dieser Phase über den Ausschnitt, die Kurve je Partie einen Punkt (Partien
+      ohne genug Züge in der Phase fehlen, Endspiel oft). Erkennst du daran, wo Üben am meisten
+      bringt?
+- [ ] N231. **Eigene Gegner:** Spielen, Karte „Eigene Gegner“ (nur bei Gegner „Engine“): „Neuen
+      Gegner anlegen“, Name „Rambo“, die drei Regler, Regler „Spielstil“ von sehr defensiv bis
+      sehr aggressiv, Haken je Fehlerart (wirken in Stufe 1 bis 4; ohne Haken nie ein
+      absichtlicher Fehler), „Gegner speichern“. Er steht in der Liste („Rambo · 3 · 3 · 3 · sehr
+      aggressiv“) mit „Bearbeiten“ und „Löschen“ (Nachfrage) und im Auswahlfeld „Vorgefertigter
+      Gegner“ unter „Eigene Gegner“. Eine Partie gegen ihn: Untertitel „Rambo · …“, in der
+      Partienliste „Rambo“, auch nach dem Löschen. Spielt ein sehr aggressiver Gegner spürbar
+      anders (Züge in deine Hälfte, zu deinem König, Schläge, Schachs) als ein sehr defensiver?
+      Bleibt er dabei etwa gleich stark?
 
 ### Neu in 0.2.41 (etwa 30 Minuten, mit Engine; deine Wünsche vom 17.10.2026 nachmittags)
 
@@ -370,9 +395,10 @@ Regeln C1 und C2).
 - [ ] S9. **Wertung nach Elo:** Die erste gewertete Partie setzt die Wertung auf die Schätzung der
       Engine für dich; jede weitere zählt wie eine Partie gegen einen Spieler mit der Schätzung der
       Engine in dieser Partie (ihrer tatsächlichen Stärke, nicht der Stufe), mit K = 32 in den
-      ersten zehn Partien und danach K = 20 (wie beim Weltschachbund unter 2400). Partien mit
-      weniger als zehn eigenen Zügen haben keine Schätzung und zählen nicht; Partien mit
-      Rücknahmen zählen (die Rücknahme steht in der Auswertung). Alternativen, falls dir das zu
+      ersten zehn Partien und danach K = 20 (wie beim Weltschachbund unter 2400). Es zählen nur
+      Partien gegen die Engine aus der Grundstellung (dein Wunsch; nichts aus Abbildungen oder
+      aufgebauten Stellungen). Partien mit weniger als zehn eigenen Zügen haben keine Schätzung
+      und zählen nicht; Partien mit Rücknahmen zählen (die Rücknahme steht in der Auswertung). Alternativen, falls dir das zu
       sprunghaft ist: (a) die Wertung als gleitender Durchschnitt der Schätzungen der letzten zehn
       Partien, ohne Sieg und Niederlage; (b) Glicko (Elo mit Unsicherheit, die mit jeder Partie
       sinkt). Empfehlung: Elo lassen, weil Sieg und Niederlage zählen sollen. Sollen Partien mit
@@ -389,6 +415,25 @@ Regeln C1 und C2).
       übernehmen geht nur, wenn sich eine Partie spielen lässt (beide Könige genau einmal, die
       Seite ohne Zugrecht nicht im Schach, keine Bauern auf der ersten oder letzten Reihe, kein
       Matt oder Patt). Passt das?
+- [ ] S13. **Spielstil eigener Gegner:** Umsetzung deines Vorschlags: Der Gegner holt bei Stil
+      ungleich 0 vier Kandidaten der Engine (mit der Stärke seiner Stufe) und wählt unter denen,
+      die höchstens 0,15 Bauerneinheiten je Reglerstufe hinter dem besten liegen (bei „sehr
+      aggressiv“ also 0,3), den mit den meisten Stilpunkten: aggressiv je ein Punkt für ein
+      Zielfeld in deiner Bretthälfte und im Viertel deines Königs, ein halber für einen Schlag und
+      für ein Schach; defensiv je ein Punkt für die eigene Hälfte und das Viertel des eigenen
+      Königs, ein halber für „kein Schlag“. Bei Gleichstand der bessere Zug. Der Stil kostet so
+      nie mehr als eine kleine Ungenauigkeit je Zug und ändert die Stärke kaum. Alternative mit
+      mehr Wirkung: die Toleranz auf 0,3 je Stufe erhöhen (dann spielt ein sehr aggressiver
+      Gegner spürbar schlechter, etwa eine halbe Stufe). Passt die sanfte Fassung?
+- [ ] S14. **Eigene Gegner, Grenzen:** höchstens 20 eigene Gegner, Namen bis 24 Zeichen,
+      Vorgabe beim Anlegen Stufe 3 · 3 · 3, alle Fehlerarten, ausgeglichen. Fehlerarten wirken nur
+      in Stufe 1 bis 4 (darüber gibt es keine absichtlichen Fehler); eine Abhakliste je Stufe gibt
+      es damit für eigene Gegner, die allgemeine Abhakliste aus S7 bleibt offen. Reicht das?
+- [ ] S15. **Kurve je Phase:** Die Ansicht „Eröffnung/Mittelspiel/Endspiel“ zeigt nicht die Elo-
+      Wertung (die gibt es nur je Partie), sondern die Schätzung der Engine für dich in dieser
+      Phase je gewerteter Partie, und als Zahl den Durchschnitt im Ausschnitt. Partien ohne sechs
+      eigene Züge in der Phase fehlen dort. So gemeint, oder lieber ein gleitender Durchschnitt
+      als Linie?
 
 ### R. Rückmeldung 0.2.38, umgesetzt in 0.2.39 (Fable; plausibel entschieden, bitte prüfen)
 

@@ -1253,6 +1253,52 @@ Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `main`.
   Stärke je Phase (Streuung höchstens 2 um das Mittelspiel), Durchschnittswertung und Sortierung
   nach den Stufennamen; beides passt auf die jetzige Struktur (`stufenJePhase`, Fehlerprofil).
 
+## Spielen: Ergänzungen des Autors vom 17.10.2026 abends (Fable, Version 0.2.42)
+
+Grundlage: vier Nachrichten des Autors während der Arbeit an 0.2.41 (Wertung nur aus der
+Grundstellung, Wertung zurücksetzen, Frage nach der höchsten Stufe, eigene Gegner mit Stil,
+Kurve je Phase). Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `main`.
+
+- **Wertung nur aus der Grundstellung** (`spiel/wertung.ts`, `ausGrundstellung`; Spielen.tsx,
+  `wertbar`): Partien aus Abbildungen, aufgebauten oder per FEN eingegebenen Stellungen und
+  Partien zu zweit zählen nie; der Haken verschwindet dort zugunsten eines Satzes, und die
+  Wertung prüft die Startstellung noch einmal selbst (die ersten vier FEN-Felder).
+- **Wertung zurücksetzen** (`speicher/partien.ts`, `setzeWertungZurueck`; Knopf mit Nachfrage in
+  `Wertungskurve.tsx`): leert den Verlauf und setzt `gewertet` aller gespeicherten Partien
+  (auch der laufenden) dauerhaft auf falsch, damit eine später fertig werdende Auswertung sie
+  nicht wieder einrechnet. Die Partien selbst bleiben.
+- **Frage des Autors: Wie stark ist Stufe 8?** Stufe 8 ist Stockfish 19 (kleine NNUE-Fassung für
+  den Browser) mit voller Stärke und 2 Sekunden je Zug in einem Thread. Auf einem Handy erreicht
+  das Suchtiefen um 15 bis 20; gegen Menschen entspricht das deutlich über 3000 Elo; die
+  Begrenzung liegt nicht in der Engine, sondern nur in Rechenzeit und Gerät. Stufe 7 (Skill
+  Level 15) liegt nach der Skala von Stockfish bei etwa 2600 bis 2700, Stufe 6 (Level 10) bei
+  etwa 2300, Stufe 5 (Level 6) bei etwa 1900, Stufe 4 (Level 3, selten ein Fehler) bei etwa
+  1700; die Skala stammt aus Engine-gegen-Engine-Partien und überzeichnet gegenüber Menschen
+  eher. Die Spielstärke-Schätzung der App (Tabelle in `spiel/genauigkeit.ts`) reicht bis 2900
+  (0 Verlust je Zug); die Wertung nach Elo ist nach oben offen. Wunsch des Autors (bis 2500,
+  gern 3000) ist damit erfüllt; eine Messung gegen Menschen gibt es nicht.
+- **Eigene Gegner** (`engine/gegner.ts` `EigenerGegner`, `speicher/gegner.ts`,
+  `ui/komponenten/GegnerEditor.tsx`): Name (bis 24 Zeichen), Stufen je Phase, erlaubte
+  Fehlerarten (Haken je Art; wirken in Stufe 1 bis 4; leer: nie ein absichtlicher Fehler) und
+  Stil −2 bis 2. Höchstens 20, im Spielstand (`eigeneGegner`), anlegen, bearbeiten, löschen mit
+  Nachfrage; im Auswahlfeld eine eigene Gruppe. Die Partie merkt sich `botName`, `fehlerarten`
+  und `stil` (`Partieeinstellung`, wahlfrei, damit ältere Partien unverändert bleiben), so bleibt
+  der Name nach dem Löschen. Die Zugwahl (`engine/zugwahl.ts`, `Gegnerprofil`) reicht die
+  Fehlerarten an die Fehlersuche (Filter auf `art`) und entfällt ganz ohne erlaubte Arten.
+- **Spielstil** (`engine/stil.ts`, Vorschlag des Autors): bei Stil ungleich 0 holt die Engine
+  vier Kandidaten mit der Stärke der Stufe; unter denen bis 0,15 Bauerneinheiten je Reglerstufe
+  hinter dem besten gewinnt der höchste Stilwert. Aggressiv: Zielfeld in der gegnerischen Hälfte
+  (1), im Viertel des gegnerischen Königs (1), Schlag (0,5), Schach (0,5). Defensiv: eigene
+  Hälfte (1), Viertel des eigenen Königs (1), kein Schlag (0,5). Bewusst sanft, damit die Stufe
+  ihre Stärke behält (Rückfrage S13 mit der Alternative 0,3).
+- **Kurve je Phase** (`Wertungspunkt.phasen`, `Wertungskurve.tsx` Ansicht): Jeder Wertungspunkt
+  speichert die Schätzung der Engine für den Leser je Phase dieser Partie (`spielstaerkeJePhase`,
+  ab sechs Zügen je Phase, sonst null). Die Ansicht „Wertung“ zeigt die Elo-Kurve, „Eröffnung“,
+  „Mittelspiel“, „Endspiel“ die Schätzungen je Partie mit dem Durchschnitt im Ausschnitt als
+  Zahl. Eine Elo-Wertung je Phase gibt es nicht (Sieg und Niederlage gehören zur ganzen Partie).
+- **Umwandlungsfrage** liegt in `ui/komponenten/Umwandlung.tsx` (geteilt von Brettbereich und
+  Stellungseditor).
+
 ## Spielen: Antworten und Wünsche des Autors vom 17.10.2026 nachmittags (Fable, Version 0.2.41)
 
 Grundlage: Nachricht des Autors mit den Antworten zu S1, S2, S4, S5, S6 und neuen Wünschen

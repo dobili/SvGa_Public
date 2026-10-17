@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 17.10.2026 · **Version 0.2.39**, Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen) und die Trainerdaten (Fable, Zweig `trainerdaten`, zusammengeführt); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 17.10.2026 · **Version 0.2.40**, Spielen nach den Ideen des Autors (Fable: Zugklassen wie bei chess.com, Phasen in Kurve und Spielstärke, Auswertung im Hintergrund, Stufe je Phase, Fehlerprofile je Phase); davor 0.2.39 Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen) und die Trainerdaten (Fable, Zweig `trainerdaten`, zusammengeführt); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1255,8 +1255,9 @@ Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2
 Archiv-Repository; was davon noch offen ist, steht hier.
 
 1. **Autor:** alles in `docs/AUFGABEN_AUTOR.md` (einzige Datei für den Autor, Regel 8 in
-   `CLAUDE.md`): Teil 1 Nachtest N201 bis N209, dann N182 bis N200 und, falls offen, N158 bis
-   N181; Teil 2 Rückfragen R1 bis R5, U1 bis U9, U11, U12, T1 bis T5, C1 bis C9, K1 bis K6, D1.
+   `CLAUDE.md`): Teil 1 Nachtest N210 bis N218 und N201 bis N209, dann N182 bis N200 und, falls
+   offen, N158 bis N181; Teil 2 Rückfragen S1 bis S6, R1 bis R5, U1 bis U9, U11, U12, T1 bis T5,
+   C1 bis C9, K1 bis K6, D1. Offen aus S5: Abhakliste der Fehlerarten, vorgefertigte Bots.
    Antworten einarbeiten, Erledigtes dort löschen.
    Entscheidungen der Nacht zum 17.10.2026 (Fable) in `docs/ENTSCHEIDUNGEN.md`, Abschnitt
    „Rückmeldung zu 0.2.38“, und in `docs/TRAINERDATEN.md`. U10 („!“) ist umgesetzt; R4 (Stufen

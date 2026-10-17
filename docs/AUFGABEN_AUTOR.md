@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.39. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.40. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,10 +11,10 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.39“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.40“ dasteht; sonst die App neu laden.
 
-Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (R, U,
-T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
+Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
+U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
 mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ---
@@ -23,6 +23,44 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.39“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.40 (etwa 20 Minuten, mit Engine; deine Ideen zum Spielen vom 17.10.2026)
+
+- [ ] N210. **Stufe je Phase:** Spielen: Statt der Stufen-Chips drei Regler „Eröffnung“,
+      „Mittelspiel“, „Endspiel“ (1 bis 8), je mit Nummer und Name. Eröffnung 1, Mittelspiel 4,
+      Endspiel 2 einstellen, Partie beginnen: Der Untertitel sagt „Stufen 1 · 4 · 2 (Eröffnung ·
+      Mittelspiel · Endspiel) · du spielst Weiß“. Sind alle drei gleich, steht wie bisher „Stufe 4
+      · Gelegenheitsspieler“.
+- [ ] N211. **Eröffnung „frei“:** Spielen › Eröffnung: „frei (die Engine spielt selbst)“ ist
+      vorgewählt, darunter „eine Eröffnung des Buches (zufällig)“ und die einzelnen Eröffnungen.
+      Mit „frei“ spielt die Engine ohne Buch; mit „zufällig“ wie bisher aus Kapitel 2 und 3.
+- [ ] N212. **Auswertung ohne Wartezeit:** Eine Partie auf Stufe 1 mit etwa 20 Zügen, dabei vor
+      einigen Zügen ein paar Sekunden warten. Nach dem Ende steht die Auswertung fast sofort da
+      („läuft … von …“ nur für die letzten Stellungen). Während der Partie ist davon nichts zu
+      sehen. Auch nach einer Rücknahme läuft alles sauber weiter.
+- [ ] N213. **Zugklassen am Brett:** Beim Nachspielen trägt jeder Zug seine Marke am Zielfeld:
+      grünes „✓“ für den besten Zug, goldenes „!“ für den einzigen guten Zug oder die Strafe nach
+      einem Fehler, blaues „!!“ für ein gutes Opfer, graues „?!“, rotes „?“ und „??“; sehr gute,
+      gute und Buchzüge ohne Marke, dafür mit Satz in der Karte („… ist ein Zug aus den
+      Eröffnungen des Buches“, „… ist sehr gut (0,1 hinter …)“). Nach einem Fehler des Gegners
+      heißt ein eigener Fehler „verpasst die Chance …“.
+- [ ] N214. **Spielstärke je Phase und Züge nach Art:** In der Karte „Spielstärke“ stehen nach den
+      bisherigen Zeilen die Zeilen Eröffnung, Mittelspiel, Endspiel („82 % · etwa 1500 (12
+      Züge)“, „zu wenige Züge“ unter sechs, „–“ ohne Züge), darunter die Tabelle „Züge nach Art“
+      (brillant bis Patzer) für dich und die Engine.
+- [ ] N215. **Phasen in der Kurve:** Über der Auswertung trägt die Kurve goldene senkrechte
+      Linien mit „M“ (erster Zug des Mittelspiels) und „E“ (Endspiel), sofern die Partie so weit
+      kam.
+- [ ] N216. **Partienliste:** Spielen › „Deine letzten Partien“: vor jeder Partie der König in der
+      Farbe, die du gespielt hast (im gewählten Figurensatz), in der Zeile „… · du: etwa 1400“
+      (bei kurzen Partien „du: 78 % genau“).
+- [ ] N217. **Fehler der Engine je Phase:** Partien auf Stufe 1 bis 4 (gern Endspiele aus einer
+      Abbildung von Kapitel 8 oder 9): Die Auswertung nennt neben den bisherigen Fehlerarten auch
+      „ein Tempo verschenkt“, „auf Bauernraub gegangen“, „den Königsschild geschwächt“, „im
+      Rückstand abgetauscht“, „den König passiv gelassen“, „einen Bauern vorschnell vorgeschoben“
+      oder „patt gesetzt“, und die Rückblick-Karte erklärt sie. Wirken die Fehler menschlicher?
+      Fühlt sich der Wechsel der Stufe beim Phasenwechsel weich an?
+- [ ] N218. **Auswertung ohne Nachfrage:** Bei den Fehlern der Engine fehlt „Hast du es gesehen?“.
 
 ### Neu in 0.2.39 (etwa 15 Minuten, mit Engine; Rückmeldung zum Nachtest bis N174)
 
@@ -167,8 +205,8 @@ Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abs
       höchstens 0,3 bis 2 Sekunden (Stufe 1 bis 8), auch auf dem Handy.
 - [ ] N178. **Eröffnung:** Grundstellung, Stufe 1, 1. e4: Die Engine antwortet einige Züge lang
       mit den Eröffnungen aus Kapitel 2 und 3 (Zugliste), auch auf niedriger Stufe (Buchtreue
-      0,85 je Zug, siehe Rückfrage K3). Seit 0.2.39 kannst du der Engine eine Eröffnung
-      vorgeben (N208).
+      0,85 je Zug, siehe Rückfrage K3). Seit 0.2.40 gilt das nur mit der Wahl „eine Eröffnung des
+      Buches (zufällig)“; „frei“ spielt ohne Buch (N211).
 
 **Gegenprüfung (Uhr und Auswertung)**
 
@@ -249,6 +287,35 @@ Regeln C1 und C2).
 ---
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
+
+### S. Spielen, deine Ideen vom 17.10.2026 (Fable, 0.2.40; plausibel entschieden, bitte prüfen)
+
+- [ ] S1. **Zugklassen:** Die Grenzen bleiben die der App (sehr gut unter 0,2, gut unter 0,5
+      Bauern hinter dem besten Zug; ungenau ab 0,5, Fehler ab 1,2, Patzer ab 3). „Brillant“ ist
+      ein bester Zug, der laut Abtauschrechnung mindestens eine Leichtfigur hergibt, solange die
+      Stellung nicht schon über +4 stand; „stark“ der einzige gute Zug oder der beste Zug direkt
+      nach einem Fehler des Gegners; „verpasst“ ein eigener Fehler direkt nach einem Fehler des
+      Gegners. Marken: ✓ grün (bester), ! gold, !! blau, ?! grau, ? und ?? rot. So lassen, oder
+      lieber nur die Zeichen ohne ✓ (weniger am Brett)?
+- [ ] S2. **Stufe je Phase:** Die Engine geht beim Phasenwechsel Zug für Zug um eine Stufe auf die
+      neue Stufe zu (dein Beispiel 1 → 2 → 3 → 4). Die Phase bestimmt die Regel des Werkzeugs
+      „Phase“ (Eröffnung, solange eine Seite zwei Leichtfiguren zu Hause hat; Endspiel, wenn die
+      Endspielfragen aus Kapitel 8 überwiegend Ja ergeben). Passt die Regel für den Wechsel, oder
+      soll zusätzlich eine Zugzahl gelten (etwa Mittelspiel spätestens ab Zug 12)?
+- [ ] S3. **Spielstärke je Phase** rechnet ab sechs Zügen je Phase (gesamt ab zehn). So lassen?
+- [ ] S4. **Typische Fehler:** Die Liste je Niveau (Einsteiger, Anfänger, Fortgeschrittene) steht
+      mit Quellen in `docs/ENTSCHEIDUNGEN.md`; umgesetzt sind sieben neue Fehlerarten
+      (Tempoverlust, Bauernraub, Königsschild, falscher Abtausch, passiver König, Bauernvorstoß,
+      Patt gesetzt) und ein Profil je Phase und Stufe, das die Fehlersuche gewichtet. Stufe 5 bis
+      7 bleiben ohne Profile (Fehler dieser Spieler sind mit Regeln kaum zu fassen). Einverstanden?
+      Fehlt dir eine Fehlerart, die das Buch nennt?
+- [ ] S5. **Abhakliste und Bots:** Beides ist vorbereitet, aber nicht gebaut: eine Abhakliste der
+      Fehlerarten in erweiterten Einstellungen und vorgefertigte Gegner mit Namen, Stärke je Phase
+      (Streuung höchstens 2), Durchschnittswertung und Sortierung nach den Stufennamen. Soll
+      Claude die Bots als Nächstes angehen (dann mit einer Liste von etwa zwölf Gegnern zur
+      Durchsicht)?
+- [ ] S6. **Eröffnung „frei“:** Vorgabe ist jetzt „frei (ohne Buch)“; wer die Buchvarianten will,
+      wählt „zufällig“ oder eine bestimmte Eröffnung. So gemeint?
 
 ### R. Rückmeldung 0.2.38, umgesetzt in 0.2.39 (Fable; plausibel entschieden, bitte prüfen)
 
@@ -407,8 +474,8 @@ hat, mit Rückfrage:
 - [ ] K3. **Buchtreue:** Die Engine folgt auf allen Stufen zu 85 % je Zug den Eröffnungen aus
       Kapitel 2 und 3, also auch der „Einsteiger“ einige Züge lang fehlerfrei. So lassen (der
       Leser sieht die Eröffnungen des Buches), oder je Stufe weniger (etwa 50 % auf Stufe 1)?
-      Seit 0.2.39 kannst du der Engine zusätzlich eine Eröffnung vorgeben (dann Buchtreue 1); die
-      Frage betrifft nur die Wahl „frei“.
+      Seit 0.2.40 betrifft die Frage nur die Wahl „eine Eröffnung des Buches (zufällig)“; „frei“
+      spielt ohne Buch, eine bestimmte Eröffnung mit Buchtreue 1.
 - [ ] K4. **Drohung ignoriert ab einem Bauern:** Nach der Röntgen-Regel (Kapitel 1) zählt jede
       Drohung, Material zu gewinnen, also auch ein Bauer (2. Dh5 droht Dxe5+). Soll die Fehlerart
       „Drohung ignoriert“ erst ab einer Leichtfigur heißen?

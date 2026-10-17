@@ -1166,3 +1166,89 @@ Dateien unter `app/src/training/`, `Uebung*`, `Trainer*` sind unberührt.
   Opus sind unberührt. Die Anleitungen (`TESTANLEITUNG`, `AUFGABEN_AUTOR`, `FORTSCHRITT`) sind auf
   0.2.39 abgeglichen: alle Nachtest-Nummern gelten für die aktuelle Version, die Rückfragen
   stehen in der Reihenfolge B, R, U, T, C, K, D, E.
+
+## Spielen: Ideen des Autors vom 17.10.2026 (Fable, Version 0.2.40)
+
+Grundlage: Nachricht des Autors vom 17.10.2026 (Auswertung, Spielstärke je Phase, Zugklassen wie
+bei chess.com, Stufe je Phase, typische Fehler je Niveau, Partienliste, Eröffnung „frei“).
+Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `main`.
+
+- **Zugklassen wie bei chess.com** (`spiel/auswertung.ts`, `klasseVon`): chess.com ordnet jeden
+  Zug nach verlorenen „erwarteten Punkten“ ein (Best 0, Excellent bis 0,02, Good bis 0,05,
+  Inaccuracy bis 0,10, Mistake bis 0,20, Blunder darüber; dazu Great = kritischer Zug, Brilliant
+  = gutes Figurenopfer, das nicht in eine schlechte und nicht aus einer schon gewonnenen Stellung
+  kommt, Miss = Fehler des Gegners nicht genutzt, Book = Theoriezug; Quelle: Hilfeseiten von
+  chess.com, „How are moves classified“). Die App behält ihre Grenzen in Bauerneinheiten (0,5 /
+  1,2 / 3) und ergänzt: **brillant** = bester Zug, der laut Abtauschrechnung mindestens eine
+  Leichtfigur hergibt (`opferwert`), und die Stellung war vorher nicht schon klar gewonnen
+  (unter +4); **stark** = der einzige gute Zug (bester, zweitbester mindestens 1,2 dahinter) oder
+  der beste Zug direkt nach einem Fehler des Gegners (ab „?“); **bester**; **sehr gut** (unter
+  0,2 hinter dem besten); **gut** (unter 0,5); **Buch** = ein Zug aus den Eröffnungen des Buches
+  (Eröffnungsindex Kapitel 2 und 3), solange er kein Fehler ist; **ungenau**, **Fehler**,
+  **verpasst** (nach einem Fehler des Gegners mindestens 0,5 verloren, statt ungenau/Fehler),
+  **Patzer**. Marken am Brett (`spiel/rueckblick.ts`): „!!“ blau, „!“ gold, „✓“ grün für den
+  besten Zug, „?!“ grau, „?“ und „??“ rot; dafür zwei neue Markierungsfarben Grün und Blau nur
+  für den Rückblick (keine Buchfarben). Die Rückblick-Karte hat je Klasse einen Satz, die
+  Spielstärke zählt je Klasse. Zeichen in Zugliste und PGN: „!!“, „!“, „?!“, „?“, „??“.
+- **Phasen** (`spiel/phasen.ts`): die Regel des Werkzeugs „Welche Phase, welches Werkzeug?“
+  (Kapitel 11, `schach/phase.ts`), je Stellung, nie rückwärts. Verlaufskurve: senkrechte goldene
+  Linien mit „M“ und „E“ am ersten Zug des Mittelspiels und des Endspiels. Spielstärke-Karte:
+  je Phase Genauigkeit und Schätzung (ab sechs Zügen je Phase), beide Seiten.
+- **Auswertung im Hintergrund** (`ui/komponenten/useAuswertung.ts`): Während der Partie rechnet
+  die Engine die noch nicht bewerteten Stellungen, wenn der Leser am Zug ist und die Engine frei
+  ist (`EngineDienst.beschaeftigt`), 0,5 s je Stellung mit zwei Varianten; Ergebnisse liegen je
+  Partie in einem Zwischenspeicher je Stellung mit ihrer FEN. Nach einer Rücknahme passen die
+  Einträge jenseits der Rücknahme nicht mehr zur FEN und werden neu gerechnet; gleiche Stellungen
+  werden wiederverwendet. Hinweise, Werkzeuge und der Zug der Engine haben Vorrang: Sie
+  unterbrechen die Hintergrundrechnung, die danach die Stellung wiederholt. Am Ende fehlen meist
+  nur die letzten Stellungen; dann wird gespeichert wie bisher. Während der Partie zeigt die App
+  nichts davon. Wird die App mitten in der Partie geschlossen, geht nur der Zwischenspeicher
+  verloren (die Partie bleibt), nach dem Öffnen rechnet sie weiter.
+- **Stufe je Phase** (`Partieeinstellung.stufenJePhase`, Regler in `ui/komponenten/StufenWahl.tsx`):
+  drei gerasterte Regler (1 bis 8) für Eröffnung, Mittelspiel, Endspiel; „Stufe“ der Partie
+  bleibt die des Mittelspiels (Anzeige, PGN, Vorlieben). Vor jedem Zug der Engine bestimmt die
+  App die Phase der Stellung und geht von der Stufe des vorigen Engine-Zuges um höchstens eine
+  Stufe auf die Zielstufe zu (`engine/stufen.ts`, `naechsteStufe`; die Stufe steht am Engine-Zug
+  im Protokoll). Beispiel des Autors: Eröffnung 1, Mittelspiel 4 → im Mittelspiel 2, 3, 4. Ältere
+  gespeicherte Partien und Vorlieben bekommen überall ihre Stufe.
+- **Eröffnung „frei“** heißt ohne Buch (Frage des Autors): Die Engine spielt die Eröffnung selbst.
+  „eine Eröffnung des Buches (zufällig)“ ist das bisherige Verhalten (Buchtreue 0,85), eine
+  bestimmte Eröffnung wie in 0.2.39 (Buchtreue 1). Vorgabe beim Öffnen: frei.
+- **Partienliste:** je Partie der König in der gespielten Farbe (gewählter Figurensatz) und
+  „du: etwa 1400“ (oder „du: 78 % genau“ bei weniger als zehn Zügen), sobald die Auswertung
+  gespeichert ist.
+- **Auswertung:** „Hast du es gesehen?“ bei den Fehlern der Engine entfällt (Wunsch des Autors).
+- **Typische Fehler von Menschen je Niveau und Phase** (Recherche am 17.10.2026; Quellen:
+  thechessworld.com „Most Common Chess Mistakes by Rating (800–2000)“, Lichess-Blogs „3 mistakes
+  keeping you stuck at 400“ und „7 most common chess mistakes“, chess.com-Blog „Most common
+  beginner chess mistakes“, US Chess Academy „Addressing common mistakes“, rarepike.com „10
+  common chess mistakes“; dazu die Fehlerarten aus Konzept 8.2 und die Todsünden aus Kapitel 1):
+  - _Einsteiger (bis etwa 1000, Stufe 1 und 2):_ Figuren hängen lassen und Drohungen nicht
+    sehen (mit Abstand das häufigste), Dame zu früh herausziehen, nicht rochieren, Bauernraub mit
+    der Dame (b2/b7, g2/g7), Schlagreflex (jeden Schlag annehmen), Springer an den Rand, dieselbe
+    Figur mehrfach ziehen, im Endspiel den König nicht einsetzen, Patt setzen in gewonnener
+    Stellung, Bauernrennen falsch zählen.
+  - _Anfänger (1000 bis 1400, Stufe 3 und 4):_ Taktik über zwei bis drei Züge übersehen (Gabel,
+    Fesselung, Abzug), Bauern vor dem rochierten König ohne Not ziehen, ohne Plan entwickeln,
+    im Rückstand abtauschen, Bauernstruktur unterschätzen (Isolani, Doppelbauern durch eigene
+    Züge), Figuren passiv lassen, Zeitnot, im Endspiel Bauern vorschnell vorschieben, Turm nicht
+    hinter den Freibauern.
+  - _Fortgeschrittene (1400 bis 2000, Stufe 5 bis 7):_ falscher Plan, Prophylaxe vergessen,
+    Läuferpaar hergeben, Schwächen im eigenen Lager schaffen, Endspieltechnik (Opposition,
+    Schlüsselfelder, aktive Türme), Zeitnotfehler. Diese Fehler lassen sich mit den Regeln der
+    App schwer erkennen; die Stufen 5 bis 7 bleiben deshalb ohne Fehlerprofile (Skill Level).
+    Umgesetzt als sieben neue Fehlerarten (`engine/fehlerart-phasen.ts`, mit den Regeln des Buches):
+    Tempoverlust (Eröffnung: entwickelte Figur zieht noch einmal, zwei Leichtfiguren zu Hause, nicht
+    angegriffen), Bauernraub (Dame schlägt einen Bauern mit Verlust oder einen Köder auf b/g),
+    Königsschild (Bauer vor dem rochierten König zieht ohne Not), falscher Abtausch (gleicher
+    Abtausch ab Leichtfigur bei mindestens zwei Bauerneinheiten Rückstand), passiver König
+    (Endspiel: bester Zug ist ein Königszug, gespielt wird ein anderer), Bauernvorstoß (Endspiel:
+    Bauernzug mit Verlust), Patt gesetzt (in gewonnener Stellung). Dazu ein **Fehlerprofil je Phase
+    und Stufe** (`engine/fehlerprofil.ts`): Gewichte je Fehlerart; Einsteiger (Stufe 1 und 2) grobe
+    Fehler, Anfänger (Stufe 3 und 4) kleinere; die Fehlersuche prüft Arten mit hohem Gewicht zuerst
+    und wählt unter den gefundenen Fehlerzügen gewichtet. Die Fehlerquoten je Stufe (AP 11)
+    bleiben; die Messung `npm run messen:stufen` prüft weiter, dass jede Stufe die darunter schlägt.
+- **Noch nicht umgesetzt, Vorschläge des Autors für später:** eine Abhakliste der Fehlerarten
+  in erweiterten Einstellungen (wenn die Profile stehen), vorgefertigte Gegner („Bots“) mit Namen,
+  Stärke je Phase (Streuung höchstens 2 um das Mittelspiel), Durchschnittswertung und Sortierung
+  nach den Stufennamen; beides passt auf die jetzige Struktur (`stufenJePhase`, Fehlerprofil).

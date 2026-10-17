@@ -1488,3 +1488,39 @@ dass blinde Flecken die Stufe nicht um mehr als etwa eine halbe Stufe senken.
 - **Übungen:** „Nur dieser Zug führt zum Ziel“ nach Fables Engine-Prüfung; gleichwertige Züge
   aus der Prüfung bleiben aus, bis der Autor T1 beantwortet.
 - **Aufgabendatei:** Auf Wunsch des Autors hat jede offene Rückfrage eine begründete Empfehlung.
+
+## Bots mit Persönlichkeit (17.10.2026 abends, Autor und Fable, Version 0.2.46)
+
+Der Autor wollte die Vormerkung (Abschnitt „Vormerkung: Bots mit Persönlichkeit“) doch sofort.
+Umgesetzt nach dem dort beschriebenen Plan:
+
+- **Blinde Flecken** (`engine/blindeFlecken.ts`): acht Zugarten mit Prüfern auf der Stellung:
+  Rückzug (Figur außer Bauer und König zieht Richtung eigene Grundreihe, ohne Schlag), lange
+  Läuferdiagonale (mindestens vier Felder), Springer rückwärts, langer Damenzug (Königsabstand
+  mindestens vier), seitlicher Turmzug (entlang der Reihe, mindestens drei Felder), ruhiger Zug
+  (ohne Schlag und Schach, obwohl ein Schlag möglich wäre), Abzug (eine andere eigene
+  Langschrittfigur greift nach dem Zug König, Dame oder Turm des Gegners neu an), stiller
+  Bauernzug (ohne Schlag, Schach, Umwandlung). Noch nicht: Röntgen, Zwischenzug, Grundreihe.
+- **Zugwahl** (`engine/zugwahl.ts`, `Gegnerprofil.blindeFlecken`): Hat der Gegner blinde Flecken
+  oder einen Stil, holt die Engine vier Kandidaten mit der Stärke der Stufe. Gehört der beste Zug
+  zu einem blinden Fleck, übersieht ihn der Gegner mit 70 % (`BLINDHEIT`) und spielt den
+  nächstbesten Zug, der zu keinem seiner Flecke gehört und höchstens eine Leichtfigur kostet
+  (`BLIND_HOECHSTVERLUST` 3); sonst den besten. Das Protokoll trägt die Fehlerart
+  `blindRueckzug` usw. (`Fehlerart` um die blinden Flecken erweitert, `BLINDE_FEHLERARTEN`), die
+  Auswertung sagt „einen Rückzug nicht gesehen“. Blinde Flecken wirken in jeder Stufe; die
+  Fehlerarten weiter nur in Stufe 1 bis 4. Nicht gebaut: Blindheit gegenüber gegnerischen
+  Drohungen in der Fehlersuche (offen in FORTSCHRITT).
+- **18 vorgefertigte Gegner** (`engine/gegner.ts`): je Gegner eine feste Fehlerliste (grobe
+  Fehler der Einsteiger, feinere der Anfänger, gemischt) und ein bis zwei blinde Flecken, auch ab
+  Stufe 5 (Lena, Viktor, Doktor Berg nur blinde Flecken); sechs neue Gegner (Paula, Onkel Rudi,
+  Selin, Benno, Frau Ortega, Viktor), damit es für ähnliche Stärke verschiedene Persönlichkeiten
+  gibt. Die Liste steht als Rückfrage S7 beim Autor.
+- **Stufen verborgen** (Wunsch des Autors): Auswahlfeld und Untertitel zeigen bei vorgefertigten
+  Gegnern nur „⌀ 4 · Gelegenheitsspieler“; die drei Regler verschwinden, solange ein
+  vorgefertigter Gegner gewählt ist (`Spielen.tsx`). Die Stufen gelten unverändert im Hintergrund.
+- **Eigene Gegner** bekommen die blinden Flecken als Haken (`GegnerEditor.tsx`,
+  `EigenerGegner.blindeFlecken`, Speicher `speicher/gegner.ts`); die Partie merkt sich sie in
+  `Partieeinstellung.blindeFlecken` (wahlfrei, ältere Partien unverändert).
+- **Nicht gemessen:** Ob blinde Flecken die Stufe spürbar senken, prüft erst eine Stufenmessung
+  mit Profil (`npm run messen:stufen` kennt die Profile noch nicht); der Höchstverlust einer
+  Leichtfigur und die 70 % sind Schätzungen, Nachtest N242.

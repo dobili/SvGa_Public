@@ -21,7 +21,7 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
-import { gegnername } from "../../engine/gegner";
+import { durchschnitt, gegnername, gegnerVon as botVon, klasseVon } from "../../engine/gegner";
 import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
@@ -77,7 +77,15 @@ function Untertitel({ partie }: { partie: PartieDaten }) {
   const stufenText = verschieden
     ? t("partie.stufenJePhase", { e: je.eroeffnung, m: je.mittelspiel, s: je.endspiel })
     : t("partie.stufe", { nummer: s.nummer, name: t(s.name) });
-  const stufentext = bot ? t("partie.gegnerBot", { name: bot, stufen: stufenText }) : stufenText;
+  // Vorgefertigte Gegner verraten ihre Stufen je Phase nicht (0.2.46): nur Durchschnitt und Klasse.
+  const vorgefertigt = botVon(partie.einstellung.bot);
+  const botText = vorgefertigt
+    ? t("partie.gegnerSchnitt", {
+        schnitt: String(durchschnitt(vorgefertigt)).replace(".", ","),
+        klasse: t(klasseVon(vorgefertigt).name),
+      })
+    : stufenText;
+  const stufentext = bot ? t("partie.gegnerBot", { name: bot, stufen: botText }) : stufenText;
   return (
     <p className="partie-untertitel">
       {eroeffnung

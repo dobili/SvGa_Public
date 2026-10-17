@@ -9,6 +9,7 @@
  * Abhängigkeiten: chessops, spiel/zuege.ts, spiel/ergebnis.ts, spiel/uhr.ts, engine/fehlerart.ts.
  */
 import type { Color } from "chessops/types";
+import type { BlinderFleck } from "../engine/blindeFlecken";
 import type { Fehlerart } from "../engine/fehlerart";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
@@ -55,6 +56,8 @@ export interface Partieeinstellung {
   /** Eigener Gegner (0.2.42): erlaubte Fehlerarten (null oder fehlend: alle) und Stil (−2 bis 2). */
   readonly fehlerarten?: readonly Fehlerart[] | null;
   readonly stil?: number;
+  /** Blinde Flecken des Gegners (0.2.46, engine/blindeFlecken.ts); fehlend: keine. */
+  readonly blindeFlecken?: readonly BlinderFleck[];
   readonly hilfen: Spielhilfen;
   /** Zählt die Partie für die Wertung des Lesers (spiel/wertung.ts)? */
   readonly gewertet: boolean;

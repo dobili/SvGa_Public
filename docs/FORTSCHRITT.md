@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 17.10.2026 · **Version 0.2.45**, AP 13 Teil 3 (Opus): Taktiktrainer, „Falle oder Köder“ und Strukturerkenner auf Fables Trainerdaten, Hinweis „Nur dieser Zug“ bei Übungen, Empfehlungen zu allen offenen Rückfragen in `docs/AUFGABEN_AUTOR.md`; davor Lesart der Phase: Mittelspiel, sobald eine Seite entwickelt ist oder das Material ungleich ist; „Bauern entscheiden“ nur bei Freibauer oder wenig Material; Erklärung am Phasenwechsel im Rückblick (Befund S17: Abb. 11.4); davor 0.2.43 „M“ und „E“ in der Zugliste, Zusatzregel „Zug 15“ gestrichen; davor 0.2.42 Ergänzungen des Autors vom Abend (Fable: Wertung nur aus der Grundstellung, Wertung zurücksetzen, eigene Gegner mit Fehlerarten und Spielstil, Wertungskurve je Phase); davor 0.2.41 Spielen nach den Wünschen des Autors vom Nachmittag (Fable: zwölf vorgefertigte Gegner, Mensch gegen Mensch, Spielhilfen zuschaltbar, Partienkachel mit Ergebnis und Stärke beider Seiten, Wertung nach Elo mit Kurve in den Einstellungen, Zusatzregeln für die Phase, Stellungseditor); davor 0.2.40 Spielen nach den Ideen des Autors (Fable: Zugklassen wie bei chess.com, Phasen in Kurve und Spielstärke, Auswertung im Hintergrund, Stufe je Phase, Fehlerprofile je Phase); davor 0.2.39 Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen) und die Trainerdaten (Fable, Zweig `trainerdaten`, zusammengeführt); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 17.10.2026 · **Version 0.2.46**, Bots mit Persönlichkeit (Fable: blinde Flecken als Zugarten, die ein Gegner nicht sieht; 18 vorgefertigte Gegner mit eigener Fehlerliste und blinden Flecken; Stufen je Phase verborgen; blinde Flecken auch für eigene Gegner); davor 0.2.45 AP 13 Teil 3 (Opus): Taktiktrainer, „Falle oder Köder“ und Strukturerkenner auf Fables Trainerdaten, Hinweis „Nur dieser Zug“ bei Übungen, Empfehlungen zu allen offenen Rückfragen in `docs/AUFGABEN_AUTOR.md`; davor Lesart der Phase: Mittelspiel, sobald eine Seite entwickelt ist oder das Material ungleich ist; „Bauern entscheiden“ nur bei Freibauer oder wenig Material; Erklärung am Phasenwechsel im Rückblick (Befund S17: Abb. 11.4); davor 0.2.43 „M“ und „E“ in der Zugliste, Zusatzregel „Zug 15“ gestrichen; davor 0.2.42 Ergänzungen des Autors vom Abend (Fable: Wertung nur aus der Grundstellung, Wertung zurücksetzen, eigene Gegner mit Fehlerarten und Spielstil, Wertungskurve je Phase); davor 0.2.41 Spielen nach den Wünschen des Autors vom Nachmittag (Fable: zwölf vorgefertigte Gegner, Mensch gegen Mensch, Spielhilfen zuschaltbar, Partienkachel mit Ergebnis und Stärke beider Seiten, Wertung nach Elo mit Kurve in den Einstellungen, Zusatzregeln für die Phase, Stellungseditor); davor 0.2.40 Spielen nach den Ideen des Autors (Fable: Zugklassen wie bei chess.com, Phasen in Kurve und Spielstärke, Auswertung im Hintergrund, Stufe je Phase, Fehlerprofile je Phase); davor 0.2.39 Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen) und die Trainerdaten (Fable, Zweig `trainerdaten`, zusammengeführt); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1273,7 +1273,7 @@ Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2
 Archiv-Repository; was davon noch offen ist, steht hier.
 
 1. **Autor:** alles in `docs/AUFGABEN_AUTOR.md` (einzige Datei für den Autor, Regel 8 in
-   `CLAUDE.md`): Teil 1 Nachtest N236 bis N239 (0.2.45), N233 bis N235 (0.2.44), N232 (0.2.43), N228 bis N231 (0.2.42), N219 bis N227 (0.2.41),
+   `CLAUDE.md`): Teil 1 Nachtest N240 bis N243 (0.2.46), N236 bis N239 (0.2.45), N233 bis N235 (0.2.44), N232 (0.2.43), N228 bis N231 (0.2.42), N219 bis N227 (0.2.41),
    N210 bis N218, N201 bis N209, dann N182 bis N200 und, falls offen, N158 bis N181; Teil 2
    Rückfragen S3, S7 bis S15, S17 (Befund Abb. 11.4 zur neuen Lesart der Phase), R1 bis R5, W1 bis W7, U1 bis U9, U11, U12, T1 bis T5, C1 bis C9, K1 bis K6, D1. Offen aus S7:
    allgemeine Abhakliste der Fehlerarten (eigene Gegner haben sie je Gegner). Antworten
@@ -1295,23 +1295,12 @@ Archiv-Repository; was davon noch offen ist, steht hier.
 4. **Offen aus den Vorschlägen:** D1 Leerfälle (Tabelle im Archiv, VORSCHLAEGE_0.2.26.md,
    Abschnitt D: je Werkzeug „gilt, wenn …“ und ein Satz, warum nicht; Rückfrage U12). H ist
    seit 0.2.39 vollständig („!“).
-5. **Vormerkung des Autors (17.10.2026 abends, ausdrücklich erst später):** Bots mit
-   „Persönlichkeit“. (a) Blinde Flecken als weitere Fehlerarten für die Fehlerliste der Bots:
-   Züge einer bestimmten Art, die der Bot nicht „sieht“ (lange Läuferdiagonalen, Rückzüge,
-   Springerzüge rückwärts, lange Damenzüge, seitliche Turmzüge, ruhige Züge statt Schlag oder
-   Schach, Zwischenzüge, Abzüge, Röntgen, stille Bauernzüge als Falle, Grundreihe, en passant;
-   Recherche und Quellen in `docs/ENTSCHEIDUNGEN.md`, Abschnitt „Vormerkung: Bots mit
-   Persönlichkeit“). Umsetzung als Blindheit der Zugwahl: Ist der beste Zug der Engine von der
-   Art des blinden Flecks, spielt der Bot mit einer Wahrscheinlichkeit den zweitbesten Zug und
-   das Protokoll nennt den blinden Fleck; dazu Blindheit gegenüber gegnerischen Drohungen dieser
-   Art in der Fehlersuche. (b) Vorgefertigte Bots mit verschiedenen Fehlerlisten und blinden
-   Flecken statt „alle Fehlerarten an bis Stufe 4, danach keine“: je Bot eine eigene Auswahl
-   (zufällig verteilt, aber fest je Bot), sodass es für dieselbe Stärke verschiedene
-   Persönlichkeiten gibt; auch Bots ab Stufe 5 mit einzelnen blinden Flecken. (c) Bei
-   vorgefertigten Bots nur den Durchschnitt zeigen, nicht die Stufen je Phase (Überraschung);
-   die Regler springen dann nicht sichtbar, die Stufen bleiben verborgen in `engine/gegner.ts`.
-   Betroffen: `engine/gegner.ts`, `engine/fehlerart.ts` (neue Arten), `engine/zugwahl.ts`,
-   `engine/fehlersuche.ts`, `ui/komponenten/GegnerWahl.tsx`, `GegnerEditor.tsx`, Partienliste.
+5. **Bots mit Persönlichkeit (0.2.46, Fable) sind gebaut:** `engine/blindeFlecken.ts` (acht
+   Zugarten, `blindeWahl`), `engine/gegner.ts` (18 Gegner mit Fehlerliste und blinden Flecken,
+   Stufen verborgen), Haken im `GegnerEditor`. Offen davon: Blindheit gegenüber gegnerischen
+   Drohungen dieser Art in der Fehlersuche; Röntgen, Zwischenzug und Grundreihe als weitere
+   blinde Flecken; die Stufenmessung (`npm run messen:stufen`) mit blinden Flecken, um zu
+   prüfen, dass sie höchstens etwa eine halbe Stufe kosten. Nachtest N240 bis N243, Rückfrage S7.
 
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 

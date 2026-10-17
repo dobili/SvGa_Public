@@ -12,10 +12,11 @@
  * engine/stufen.ts.
  */
 import type { Color } from "chessops/types";
+import { BLINDE_FEHLERARTEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import { STIL_MAX, STIL_MIN } from "../engine/stil";
-import { eigeneGegnerAus } from "./gegner";
+import { blindeFleckenAus, eigeneGegnerAus } from "./gegner";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 import type { Partieende } from "../spiel/ergebnis";
@@ -254,7 +255,7 @@ function partiezugAus(roh: unknown): Partiezug | null {
   if (!istObjekt(roh) || typeof roh.san !== "string") return null;
   const von = roh.von === "engine" ? "engine" : "leser";
   const quelle = auswahl(QUELLEN, roh.quelle) ?? von;
-  const fehler = auswahl(FEHLERARTEN, roh.fehler) ?? null;
+  const fehler = auswahl([...FEHLERARTEN, ...BLINDE_FEHLERARTEN], roh.fehler) ?? null;
   const verlust = istZahl(roh.verlust) ? roh.verlust : 0;
   const stufe = auswahl(STUFENNUMMERN, roh.stufe);
   return stufe
@@ -301,9 +302,17 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
 }
 
 /** Name, Fehlerarten und Stil eines eigenen Gegners (0.2.42), nur wenn sie gespeichert sind. */
-function gegnerprofilAus(roh: Roh): Pick<Partieeinstellung, "botName" | "fehlerarten" | "stil"> {
+function gegnerprofilAus(
+  roh: Roh,
+): Pick<Partieeinstellung, "botName" | "fehlerarten" | "stil" | "blindeFlecken"> {
   // Nur gespeicherte Felder übernehmen, damit ältere Partien unverändert bleiben.
-  const profil: { botName?: string; fehlerarten?: readonly Fehlerart[]; stil?: number } = {};
+  const profil: {
+    botName?: string;
+    fehlerarten?: readonly Fehlerart[];
+    stil?: number;
+    blindeFlecken?: readonly BlinderFleck[];
+  } = {};
+  if (Array.isArray(roh.blindeFlecken)) profil.blindeFlecken = blindeFleckenAus(roh.blindeFlecken);
   if (typeof roh.botName === "string") profil.botName = roh.botName;
   if (Array.isArray(roh.fehlerarten)) {
     const roheArten: readonly unknown[] = roh.fehlerarten;

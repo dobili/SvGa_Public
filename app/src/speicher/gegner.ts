@@ -6,6 +6,7 @@
  * Beim Lesen wird jedes Feld geprüft; was nicht passt, fällt weg oder bekommt die Vorgabe.
  * Abhängigkeiten: engine/gegner.ts, engine/fehlerart.ts, engine/stufen.ts, engine/stil.ts.
  */
+import { BLINDE_FLECKEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../engine/stil";
@@ -42,6 +43,12 @@ function fehlerartenAus(roh: unknown): readonly Fehlerart[] {
   return FEHLERARTEN.filter((art) => roh.includes(art));
 }
 
+/** Blinde Flecken aus Rohdaten; ohne Angabe keine. */
+export function blindeFleckenAus(roh: unknown): readonly BlinderFleck[] {
+  if (!Array.isArray(roh)) return [];
+  return BLINDE_FLECKEN.filter((fleck) => roh.includes(fleck));
+}
+
 function stilAus(roh: unknown): number {
   if (typeof roh !== "number" || !Number.isFinite(roh)) return STIL_NEUTRAL;
   return Math.max(STIL_MIN, Math.min(STIL_MAX, Math.round(roh)));
@@ -60,6 +67,7 @@ export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
     stufenJePhase: stufenAus(roh.stufenJePhase),
     fehlerarten: fehlerartenAus(roh.fehlerarten),
     stil: stilAus(roh.stil),
+    blindeFlecken: blindeFleckenAus(roh.blindeFlecken),
   };
 }
 

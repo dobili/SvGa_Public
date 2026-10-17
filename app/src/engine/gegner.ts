@@ -4,11 +4,13 @@
  * Rolle im Gesamtbild: Wunsch des Autors (17.10.2026, Rückfrage S5): Gegner mit Namen, die in
  * Eröffnung, Mittelspiel und Endspiel verschieden stark sind (Streuung höchstens zwei Stufen um
  * das Mittelspiel), mit Durchschnittswertung und Einordnung nach den Stufennamen, auswählbar und
- * nach Stärke sortiert. Die Stufen selbst (Skill Level, Fehlerprofile) stehen in stufen.ts; ein
- * Gegner ist nur eine Vorgabe für die drei Regler. Die Liste ist ein Vorschlag zur Durchsicht.
- * Abhängigkeiten: stufen.ts (Stufennummer), schach/phase.ts (Phase), i18n (Beschreibungen).
+ * nach Stärke sortiert. Die Stufen selbst (Skill Level, Fehlerprofile) stehen in stufen.ts. Seit
+ * 0.2.46 hat jeder Gegner eine Persönlichkeit: eigene Fehlerliste und blinde Flecken
+ * (engine/blindeFlecken.ts); die Stufen je Phase bleiben dem Leser verborgen (Wunsch des Autors).
+ * Abhängigkeiten: stufen.ts, blindeFlecken.ts, fehlerart.ts, schach/phase.ts, i18n.
  */
 import type { Textschluessel } from "../i18n/sprache";
+import type { BlinderFleck } from "./blindeFlecken";
 import type { Fehlerart } from "./fehlerart";
 import type { Phase } from "../schach/phase";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
@@ -18,18 +20,44 @@ export interface Gegner {
   readonly name: string;
   readonly beschreibung: Textschluessel;
   readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
+  /** Erlaubte absichtliche Fehler (Stufe 1 bis 4); leer: keine (0.2.46, Persönlichkeit). */
+  readonly fehlerarten: readonly Fehlerart[];
+  /** Zugarten, die dieser Gegner nicht sieht (engine/blindeFlecken.ts), in jeder Stufe. */
+  readonly blindeFlecken: readonly BlinderFleck[];
 }
 
 /** Streuung um das Mittelspiel, höchstens zwei Stufen (Vorgabe des Autors). */
 const STREUUNG = 2;
 
+/** Die groben Fehler der Einsteiger (Kapitel 1 und 4). */
+const GROB: readonly Fehlerart[] = [
+  "figurHaengen",
+  "schlagreflex",
+  "drohungIgnoriert",
+  "verfruehteDame",
+  "koenigMitte",
+  "bauernraub",
+];
+/** Die feineren Fehler der Anfänger (Kapitel 5 bis 8). */
+const FEIN: readonly Fehlerart[] = [
+  "taktikUebersehen",
+  "tempoverlust",
+  "koenigsschild",
+  "falscherAbtausch",
+  "koenigPassiv",
+  "bauernvorstoss",
+  "pattGesetzt",
+  "ungenau",
+];
+
 function gegner(
   kennung: string,
   name: string,
-  eroeffnung: Stufennummer,
-  mittelspiel: Stufennummer,
-  endspiel: Stufennummer,
+  stufen: readonly [Stufennummer, Stufennummer, Stufennummer],
+  fehlerarten: readonly Fehlerart[],
+  blindeFlecken: readonly BlinderFleck[],
 ): Gegner {
+  const [eroeffnung, mittelspiel, endspiel] = stufen;
   if (
     Math.abs(eroeffnung - mittelspiel) > STREUUNG ||
     Math.abs(endspiel - mittelspiel) > STREUUNG
@@ -41,23 +69,83 @@ function gegner(
     name,
     beschreibung: `gegner.${kennung}` as Textschluessel,
     stufenJePhase: { eroeffnung, mittelspiel, endspiel },
+    fehlerarten,
+    blindeFlecken,
   };
 }
 
-/** Die vorgefertigten Gegner, nach Durchschnitt sortiert (durchschnitt). */
+/**
+ * Die vorgefertigten Gegner (Wunsch des Autors, 0.2.46: verschiedene Persönlichkeiten bei gleicher
+ * Stärke; jeder mit eigener Fehlerliste und ein bis zwei blinden Flecken, auch ab Stufe 5).
+ * Die Stufen je Phase zeigt die App nicht an (Überraschung), nur Durchschnitt und Klasse.
+ */
 export const GEGNER: readonly Gegner[] = [
-  gegner("lotta", "Lotta", 1, 1, 1),
-  gegner("opa-hans", "Opa Hans", 2, 1, 2),
-  gegner("max", "Max", 1, 2, 1),
-  gegner("frieda", "Frieda", 2, 2, 3),
-  gegner("herr-lehmann", "Herr Lehmann", 3, 2, 2),
-  gegner("nina", "Nina", 3, 3, 3),
-  gegner("jonas", "Jonas", 2, 3, 4),
-  gegner("timo", "Timo", 5, 4, 3),
-  gegner("kurt", "Kurt", 4, 5, 5),
-  gegner("lena", "Lena", 6, 6, 5),
-  gegner("doktor-berg", "Doktor Berg", 6, 7, 7),
-  gegner("gm-gruen", "Großmeister Grün", 8, 8, 8),
+  gegner("lotta", "Lotta", [1, 1, 1], [...GROB, ...FEIN], ["ruhig"]),
+  gegner("paula", "Paula", [1, 1, 2], GROB, ["diagonale", "rueckzug"]),
+  gegner(
+    "max",
+    "Max",
+    [1, 2, 1],
+    ["verfruehteDame", "bauernraub", "figurHaengen", "tempoverlust"],
+    ["rueckzug"],
+  ),
+  gegner(
+    "opa-hans",
+    "Opa Hans",
+    [2, 1, 2],
+    ["figurHaengen", "schlagreflex", "koenigMitte", "koenigPassiv", "bauernvorstoss"],
+    ["springer"],
+  ),
+  gegner(
+    "onkel-rudi",
+    "Onkel Rudi",
+    [2, 2, 1],
+    ["schlagreflex", "bauernraub", "verfruehteDame", "drohungIgnoriert"],
+    ["abzug"],
+  ),
+  gegner(
+    "frieda",
+    "Frieda",
+    [2, 2, 3],
+    ["drohungIgnoriert", "schlagreflex", "koenigsschild", "falscherAbtausch", "ungenau"],
+    ["diagonale"],
+  ),
+  gegner(
+    "herr-lehmann",
+    "Herr Lehmann",
+    [3, 2, 2],
+    ["koenigMitte", "tempoverlust", "koenigPassiv", "figurHaengen", "pattGesetzt"],
+    ["dame", "turm"],
+  ),
+  gegner(
+    "selin",
+    "Selin",
+    [3, 3, 2],
+    ["koenigsschild", "bauernvorstoss", "koenigPassiv", "ungenau"],
+    ["dame"],
+  ),
+  gegner("nina", "Nina", [3, 3, 3], ["taktikUebersehen", "drohungIgnoriert", "ungenau"], ["abzug"]),
+  gegner(
+    "jonas",
+    "Jonas",
+    [2, 3, 4],
+    ["bauernraub", "schlagreflex", "koenigsschild", "taktikUebersehen"],
+    ["bauer"],
+  ),
+  gegner("benno", "Benno", [4, 4, 4], ["taktikUebersehen", "ungenau"], ["ruhig", "springer"]),
+  gegner(
+    "timo",
+    "Timo",
+    [5, 4, 3],
+    ["taktikUebersehen", "falscherAbtausch", "bauernvorstoss", "ungenau"],
+    ["rueckzug", "diagonale"],
+  ),
+  gegner("kurt", "Kurt", [4, 5, 5], ["koenigsschild", "falscherAbtausch", "ungenau"], ["springer"]),
+  gegner("frau-ortega", "Frau Ortega", [5, 5, 4], ["ungenau"], ["rueckzug"]),
+  gegner("lena", "Lena", [6, 6, 5], [], ["ruhig"]),
+  gegner("viktor", "Viktor", [7, 6, 6], [], ["abzug", "bauer"]),
+  gegner("doktor-berg", "Doktor Berg", [6, 7, 7], [], ["turm"]),
+  gegner("gm-gruen", "Großmeister Grün", [8, 8, 8], [], []),
 ];
 
 /** Durchschnitt der drei Stufen, eine Nachkommastelle. Beispiel: Timo (5, 4, 3) → 4. */
@@ -88,6 +176,8 @@ export interface EigenerGegner {
   readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
   readonly fehlerarten: readonly Fehlerart[];
   readonly stil: number;
+  /** Zugarten, die der Gegner nicht sieht (0.2.46). */
+  readonly blindeFlecken: readonly BlinderFleck[];
 }
 
 /** Vorsilbe der Kennungen eigener Gegner (unterscheidet sie von den vorgefertigten). */

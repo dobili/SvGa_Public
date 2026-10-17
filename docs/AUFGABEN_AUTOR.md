@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.45. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.46. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.45“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.46“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 W, U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,31 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.45“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.46“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.46 (etwa 20 Minuten, mit Engine; Bots mit Persönlichkeit, dein Wunsch vom 17.10.2026 abends)
+
+- [ ] N240. **Gegnerliste ohne Stufen:** Spielen › „Vorgefertigter Gegner“: jetzt 18 Gegner, in
+      der Zeile nur Name, Durchschnitt und Klasse („Timo · ⌀ 4 · Gelegenheitsspieler“), ohne die
+      Stufen je Phase. Ist ein vorgefertigter Gegner gewählt, verschwinden die drei Regler
+      (Überraschung); bei „eigene Stufen“ und bei eigenen Gegnern sind sie da. Der Untertitel der
+      Partie sagt „Timo · ⌀ 4 · Gelegenheitsspieler · du spielst Weiß“.
+- [ ] N241. **Persönlichkeit:** Zwei Partien gegen Gegner gleicher Stärke, etwa Lotta und Paula
+      (beide ⌀ 1) oder Nina und Selin (⌀ 3): In der Auswertung stehen bei den Fehlern der Engine
+      verschiedene Arten, und dazu neue Sätze wie „einen Rückzug nicht gesehen“, „eine lange
+      Diagonale nicht gesehen“, „einen langen Damenzug nicht gesehen“, „den ruhigen Zug nicht
+      gesehen, nur die Schläge geprüft“, „einen Abzug nicht gesehen“, „einen stillen Bauernzug
+      nicht gesehen“. Die Beschreibung unter dem Auswahlfeld nennt die Schwächen des Gegners.
+- [ ] N242. **Blinde Flecken auch bei starken Gegnern:** Eine Partie gegen Viktor (⌀ 6,3) oder
+      Doktor Berg (⌀ 6,7): Er macht keine groben Fehler, aber gelegentlich steht „einen Abzug
+      nicht gesehen“ oder „einen seitlichen Turmzug nicht gesehen“ in der Auswertung; der Verlust
+      ist dabei höchstens eine Leichtfigur. Spielt er trotzdem etwa so stark wie vorher?
+- [ ] N243. **Eigene Gegner mit blinden Flecken:** „Eigene Gegner“ › Formular: unter den
+      Fehlerarten die Haken „Blinde Flecken“ (Rückzüge, lange Läuferdiagonalen, Springerzüge
+      rückwärts, lange Damenzüge, seitliche Turmzüge, ruhige Züge, Abzüge, stille Bauernzüge).
+      Einen Gegner Stufe 6 · 6 · 6 nur mit „lange Läuferdiagonalen“ anlegen: Er spielt stark und
+      übersieht ab und zu einen langen Läuferzug (Auswertung: „eine lange Diagonale nicht gesehen“).
 
 ### Neu in 0.2.45 (etwa 20 Minuten; drei Trainer auf Fables Daten, Opus)
 
@@ -423,17 +446,28 @@ Regeln C1 und C2).
 - [ ] S3. **Spielstärke je Phase** rechnet ab sechs Zügen je Phase (gesamt ab zehn). So lassen?
       **Empfehlung:** so lassen. Unter sechs Zügen bestimmt ein einzelner Patzer den Durchschnitt;
       die Schätzung würde von Partie zu Partie springen.
-- [ ] S7. **Die zwölf Gegner** (Eröffnung · Mittelspiel · Endspiel, Streuung höchstens 2): Lotta
-      1 · 1 · 1, Opa Hans 2 · 1 · 2, Max 1 · 2 · 1, Frieda 2 · 2 · 3, Herr Lehmann 3 · 2 · 2, Nina
-      3 · 3 · 3, Jonas 2 · 3 · 4, Timo 5 · 4 · 3, Kurt 4 · 5 · 5, Lena 6 · 6 · 5, Doktor Berg
-      6 · 7 · 7, GM Grün 8 · 8 · 8; je ein Satz zur Art („spielt die Eröffnung nach Gefühl, rechnet
-      im Mittelspiel schon mit“). Die Liste ist nach dem Durchschnitt sortiert, bei Gleichstand nach
-      dem Mittelspiel; die Klasse ist der Stufenname zum gerundeten Durchschnitt. Namen, Stufen
-      oder Sätze ändern? Die Abhakliste der Fehlerarten (dein zweiter Vorschlag) ist weiter nicht
-      gebaut.
-      **Empfehlung:** Stufen so lassen (sie steigen gleichmäßig von Lotta bis GM Grün), Namen und
-      Sätze nach deinem Geschmack ändern. Die allgemeine Abhakliste erst bauen, wenn du eigene
-      Gegner wirklich nutzt; dort gibt es sie schon.
+- [ ] S7. **Die 18 Gegner mit Persönlichkeit** (Stufen Eröffnung · Mittelspiel · Endspiel nur
+      hier für dich, in der App verborgen; dann erlaubte Fehlerarten und blinde Flecken): Lotta
+      1·1·1, alle Fehlerarten, ruhige Züge; Paula 1·1·2, grobe Fehler, Diagonalen und Rückzüge;
+      Max 1·2·1, Dame früh, Bauernraub, Figur hängen, Tempoverlust, Rückzüge; Opa Hans 2·1·2,
+      Figur hängen, Schlagreflex, König in der Mitte, passiver König, Bauernvorstoß, Springer
+      rückwärts; Onkel Rudi 2·2·1, Schlagreflex, Bauernraub, Dame früh, Drohung ignoriert, Abzüge;
+      Frieda 2·2·3, Drohung ignoriert, Schlagreflex, Königsschild, falscher Abtausch, ungenau,
+      Diagonalen; Herr Lehmann 3·2·2, König in der Mitte, Tempoverlust, passiver König, Figur
+      hängen, Patt, lange Damen- und seitliche Turmzüge; Selin 3·3·2, Königsschild, Bauernvorstoß,
+      passiver König, ungenau, lange Damenzüge; Nina 3·3·3, Taktik übersehen, Drohung ignoriert,
+      ungenau, Abzüge; Jonas 2·3·4, Bauernraub, Schlagreflex, Königsschild, Taktik übersehen,
+      stille Bauernzüge; Benno 4·4·4, Taktik übersehen, ungenau, ruhige Züge und Springer
+      rückwärts; Timo 5·4·3, Taktik übersehen, falscher Abtausch, Bauernvorstoß, ungenau, Rückzüge
+      und Diagonalen; Kurt 4·5·5, Königsschild, falscher Abtausch, ungenau, Springer rückwärts;
+      Frau Ortega 5·5·4, ungenau, Rückzüge; Lena 6·6·5, keine Fehler, ruhige Züge; Viktor 7·6·6,
+      keine Fehler, Abzüge und stille Bauernzüge; Doktor Berg 6·7·7, keine Fehler, seitliche
+      Turmzüge; Großmeister Grün 8·8·8, nichts. Fehlerarten wirken nur in Stufe 1 bis 4, blinde
+      Flecken in jeder Stufe (er übersieht einen besten Zug dieser Art zu 70 %, Ersatz höchstens
+      eine Leichtfigur schlechter). Namen, Stufen, Listen oder Sätze ändern? Die allgemeine
+      Abhakliste der Fehlerarten bleibt offen (eigene Gegner haben sie je Gegner).
+      **Empfehlung:** so lassen und erst nach ein paar Partien (N241, N242) nachjustieren.
+
 - [ ] S8. **Zusatzregel für die Phase** (deine Frage S2, Recherche): Eine allgemeingültige
       Grenze gibt es nicht; die Lehrbücher setzen das Mittelspiel, sobald die Entwicklung
       abgeschlossen und der König in Sicherheit ist (das deckt sich mit dem Buch). Fürs Endspiel

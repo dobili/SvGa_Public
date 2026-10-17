@@ -13,19 +13,28 @@
  * Engine den aggressivsten oder defensivsten wählt.
  * Abhängigkeiten: engine/fehlersuche.ts, engine/spielbewerter.ts, engine/stufen.ts, engine/stil.ts.
  */
+import { blindeWahl, type BlinderFleck } from "./blindeFlecken";
 import type { Fehlerart } from "./fehlerart";
 import { sucheFehlerzug } from "./fehlersuche";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
 import type { Stufe } from "./stufen";
 
-/** Profil eines eigenen Gegners: erlaubte Fehlerarten (null: alle) und Stil (−2 bis 2). */
+/**
+ * Profil eines Gegners: erlaubte Fehlerarten (null: alle), Stil (−2 bis 2) und blinde Flecken
+ * (Zugarten, die er nicht sieht; engine/blindeFlecken.ts, 0.2.46).
+ */
 export interface Gegnerprofil {
   readonly fehlerarten: readonly Fehlerart[] | null;
   readonly stil: number;
+  readonly blindeFlecken: readonly BlinderFleck[];
 }
 
-export const STANDARDPROFIL: Gegnerprofil = { fehlerarten: null, stil: STIL_NEUTRAL };
+export const STANDARDPROFIL: Gegnerprofil = {
+  fehlerarten: null,
+  stil: STIL_NEUTRAL,
+  blindeFlecken: [],
+};
 
 export type { Spielbewerter, Zugwahl } from "./spielbewerter";
 export { wertFuer } from "./spielbewerter";
@@ -70,9 +79,14 @@ export async function waehleZug(
     const fehler = await sucheFehlerzug(bewerter, fen, stufe, zufall, profil.fehlerarten);
     if (fehler) return fehler;
   }
-  if (profil.stil !== STIL_NEUTRAL) {
+  // Blinde Flecken und Stil brauchen mehrere Kandidaten der Engine (0.2.46).
+  if (profil.blindeFlecken.length > 0 || profil.stil !== STIL_NEUTRAL) {
     const mehrere = await bewerter.bewerte(fen, stufe.rechenzeitMs, STIL_KANDIDATEN, stufe.staerke);
-    const uci = stilwahl(fen, mehrere.varianten, profil.stil) ?? mehrere.besterZug;
+    const blind = blindeWahl(fen, mehrere.varianten, profil.blindeFlecken, zufall);
+    if (blind) return { ...blind, quelle: "fehler" };
+    const uci =
+      (profil.stil !== STIL_NEUTRAL ? stilwahl(fen, mehrere.varianten, profil.stil) : null) ??
+      mehrere.besterZug;
     return uci ? { uci, quelle: "engine", fehler: null, verlust: 0 } : null;
   }
   const bewertung = await bewerter.bewerte(fen, stufe.rechenzeitMs, 1, stufe.staerke);

@@ -16,6 +16,7 @@ const RAMBO: EigenerGegner = {
   stufenJePhase: { eroeffnung: 3, mittelspiel: 4, endspiel: 3 },
   fehlerarten: ["figurHaengen", "bauernraub"],
   stil: 2,
+  blindeFlecken: ["rueckzug"],
 };
 
 describe("Eigene Gegner", () => {
@@ -36,6 +37,7 @@ describe("Eigene Gegner", () => {
       stufenJePhase: { eroeffnung: 1, mittelspiel: 1, endspiel: 1 },
       fehlerarten: ["koenigPassiv"],
       stil: 2,
+      blindeFlecken: [],
     });
     expect(eigenerGegnerAus({ kennung: "a", name: "Alle" })?.fehlerarten).toEqual(FEHLERARTEN);
     expect(eigeneGegnerAus("unsinn")).toEqual([]);

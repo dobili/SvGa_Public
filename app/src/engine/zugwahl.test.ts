@@ -122,21 +122,40 @@ describe("Zugwahl", () => {
   // Eigene Gegner (0.2.42): Profil mit Fehlerarten und Stil.
   it("Profil ohne Fehlerarten: nie ein Fehlerwurf; nur erlaubte Arten zählen", async () => {
     const { b, aufrufe } = bewerter(KANDIDATEN);
-    const keine = { fehlerarten: [], stil: 0 };
+    const keine = { fehlerarten: [], stil: 0, blindeFlecken: [] };
     const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0), BUCHTREUE_VORGABE, keine);
     expect(wahl?.quelle).toBe("engine");
     expect(aufrufe).toEqual([{ varianten: 1, staerke: { art: "skill", stufe: 0 } }]);
-    const nurRaub = { fehlerarten: ["bauernraub" as const], stil: 0 };
+    const nurRaub = { fehlerarten: ["bauernraub" as const], stil: 0, blindeFlecken: [] };
     const ohne = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0), BUCHTREUE_VORGABE, nurRaub);
     expect(ohne?.fehler).toBeNull();
   });
 
   it("Profil mit Stil: mehrere Kandidaten der Stufe, Wahl nach dem Stil", async () => {
     const { b, aufrufe } = bewerter(KANDIDATEN);
-    const profil = { fehlerarten: null, stil: 2 };
+    const profil = { fehlerarten: null, stil: 2, blindeFlecken: [] };
     const wahl = await waehleZug(b, FEN, stufe(6), [], folge(0.9), BUCHTREUE_VORGABE, profil);
     expect(wahl).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
     expect(aufrufe).toEqual([{ varianten: 4, staerke: { art: "skill", stufe: 10 } }]);
+  });
+
+  it("Profil mit blindem Fleck: übersieht den besten Zug und spielt den nächsten anderer Art", async () => {
+    // Bester Zug Sc6 (b8c6) ist ein Springerzug vorwärts; blind für „bauer“: d6 ist still.
+    const { b, aufrufe } = bewerter(KANDIDATEN);
+    const blind = { fehlerarten: null, stil: 0, blindeFlecken: ["bauer" as const] };
+    const gesehen = await waehleZug(b, FEN, stufe(6), [], folge(0.9), BUCHTREUE_VORGABE, blind);
+    expect(gesehen).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
+    expect(aufrufe[0]?.varianten).toBe(4);
+    // Bester Zug d6 (still), Gegner blind dafür, niedriger Wurf: der nächste Zug anderer Art.
+    // Werte aus Sicht von Weiß; Schwarz am Zug: d6 (0,3) ist besser als Sc6 (0,5).
+    const { b: b2 } = bewerter([variante(1, 0.3, ["d7d6"]), variante(2, 0.5, ["b8c6"])]);
+    const uebersehen = await waehleZug(b2, FEN, stufe(6), [], folge(0.1), BUCHTREUE_VORGABE, blind);
+    expect(uebersehen).toEqual({
+      uci: "b8c6",
+      quelle: "fehler",
+      fehler: "blindBauer",
+      verlust: 0.2,
+    });
   });
 
   it("ohne legalen Zug: null", async () => {

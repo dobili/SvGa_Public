@@ -27,6 +27,7 @@
  * Abhängigkeiten: chessops, schach/ (Abtausch, Drohungen, Gabeln, Motive, Todsünden),
  * analyse/k4-warnsignale.ts (W2), analyse/stellungsprofil.ts.
  */
+import type { BlinderFleck } from "./blindeFlecken";
 import { Chess, normalizeMove } from "chessops/chess";
 import { parseFen } from "chessops/fen";
 import type { NormalMove, Piece, Role, Square } from "chessops/types";
@@ -76,9 +77,11 @@ export type Fehlerart =
   | "koenigPassiv"
   | "bauernvorstoss"
   | "pattGesetzt"
-  | "ungenau";
+  | "ungenau"
+  // Seit 0.2.46: blinde Flecken eines Gegners (engine/blindeFlecken.ts), nur im Protokoll.
+  | `blind${Capitalize<BlinderFleck>}`;
 
-/** Alle Fehlerarten, für Speicher und Oberfläche. */
+/** Die typischen Fehlerarten (ohne blinde Flecken), für Fehlerprofile, Speicher und Oberfläche. */
 export const FEHLERARTEN: readonly Fehlerart[] = [
   "figurHaengen",
   "schlagreflex",

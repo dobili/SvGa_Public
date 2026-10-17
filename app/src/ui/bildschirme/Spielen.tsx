@@ -117,7 +117,8 @@ function Einstellungen({
           beiWahl={(farbe) => setze({ ...wahl, farbe })}
         />
       )}
-      {engine && (
+      {/* Bei vorgefertigten Gegnern bleiben die Stufen je Phase verborgen (Wunsch des Autors). */}
+      {engine && gegnerVon(v.bot) === null && (
         <StufenWahl
           stufen={v.stufenJePhase}
           beiWahl={(stufenJePhase) =>
@@ -216,14 +217,24 @@ function Startstellung({
   );
 }
 
-/** Name, Fehlerarten und Stil des gewählten Gegners für die Partie (eigene Gegner, 0.2.42). */
+/** Name, Fehlerarten, Stil und blinde Flecken des gewählten Gegners für die Partie (0.2.42, 0.2.46). */
 function gegnerprofil(bot: string | null, eigene: readonly EigenerGegner[]) {
   const eigener = eigene.find((g) => g.kennung === bot);
   if (eigener) {
-    return { botName: eigener.name, fehlerarten: eigener.fehlerarten, stil: eigener.stil };
+    return {
+      botName: eigener.name,
+      fehlerarten: eigener.fehlerarten,
+      stil: eigener.stil,
+      blindeFlecken: eigener.blindeFlecken,
+    };
   }
   const vorgefertigt = gegnerVon(bot);
-  return vorgefertigt ? { botName: vorgefertigt.name } : {};
+  if (!vorgefertigt) return {};
+  return {
+    botName: vorgefertigt.name,
+    fehlerarten: vorgefertigt.fehlerarten,
+    blindeFlecken: vorgefertigt.blindeFlecken,
+  };
 }
 
 /** Legt die Partie an, merkt die Vorlieben und öffnet die Partie. */

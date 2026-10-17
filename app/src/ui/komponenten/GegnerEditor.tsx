@@ -9,6 +9,7 @@
  * Abhängigkeiten: engine/gegner.ts, engine/fehlerart.ts, engine/stil.ts, speicher/, StufenWahl, i18n.
  */
 import { useState } from "react";
+import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import { neueGegnerkennung, type EigenerGegner } from "../../engine/gegner";
 import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../../engine/stil";
@@ -37,6 +38,7 @@ function neuerGegner(): EigenerGegner {
     stufenJePhase: { eroeffnung: STUFE, mittelspiel: STUFE, endspiel: STUFE },
     fehlerarten: FEHLERARTEN,
     stil: STIL_NEUTRAL,
+    blindeFlecken: [],
   };
 }
 
@@ -58,6 +60,13 @@ function Formular({
 }) {
   const [g, setze] = useState(start);
   const name = g.name.trim();
+  const schalteFleck = (fleck: BlinderFleck, an: boolean) =>
+    setze({
+      ...g,
+      blindeFlecken: an
+        ? BLINDE_FLECKEN.filter((f) => f === fleck || g.blindeFlecken.includes(f))
+        : g.blindeFlecken.filter((f) => f !== fleck),
+    });
   const schalteArt = (art: Fehlerart, an: boolean) =>
     setze({
       ...g,
@@ -111,6 +120,20 @@ function Formular({
               onChange={(e) => schalteArt(art, e.target.checked)}
             />
             {t(`fehlerart.${art}`)}
+          </label>
+        ))}
+      </fieldset>
+      <fieldset className="fehlerartenwahl">
+        <legend className="einstellung-name">{t("spielen.eigene.blindeFlecken")}</legend>
+        <p className="hinweis">{t("spielen.eigene.blindeFleckenHinweis")}</p>
+        {BLINDE_FLECKEN.map((fleck) => (
+          <label key={fleck} className="schalterzeile">
+            <input
+              type="checkbox"
+              checked={g.blindeFlecken.includes(fleck)}
+              onChange={(e) => schalteFleck(fleck, e.target.checked)}
+            />
+            {t(`blind.${fleck}`)}
           </label>
         ))}
       </fieldset>

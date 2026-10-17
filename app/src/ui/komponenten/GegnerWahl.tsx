@@ -15,14 +15,12 @@ import { Auswahl } from "./Auswahl";
 
 const EIGENE = "";
 
-/** „Nina · ⌀ 3 · Fortgeschrittener Anfänger (3 · 3 · 3)“ */
+/** „Nina · ⌀ 3 · Fortgeschrittener Anfänger“ (die Stufen je Phase bleiben verborgen, 0.2.46). */
 function gegnertext(g: ReturnType<typeof gegnerSortiert>[number]): string {
-  const s = g.stufenJePhase;
   return t("spielen.gegnerZeile", {
     name: g.name,
     schnitt: String(durchschnitt(g)).replace(".", ","),
     klasse: t(klasseVon(g).name),
-    stufen: `${s.eroeffnung} · ${s.mittelspiel} · ${s.endspiel}`,
   });
 }
 

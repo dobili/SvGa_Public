@@ -1423,3 +1423,20 @@ Stellungen aufbauen). Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `m
   eine veränderte Abbildungsstellung zählt als eigene Stellung (`abbildungGilt`). Rückfrage S12.
 - **Speicher:** keine neue Formatversion; neue Felder (`gegner`, `bot`, `hilfen`, `gewertet`,
   `wertung`) bekommen beim Lesen Vorgaben, ältere Partien gelten als Engine-Partien, ungewertet.
+
+## AP 13 Teil 3: Taktiktrainer, „Falle oder Köder“, Strukturerkenner (Opus, 17.10.2026, Version 0.2.45)
+
+- **Daten:** Die Trainer lesen Fables Dateien aus `inhalte/de/trainer/`, die der Build nach
+  `public/daten/de/trainer/` kopiert. So gibt es nur eine Quelle, geprüft gegen die Schemas.
+- **Taktiktrainer:** Thema (gemischt, Mattbilder, eines der zwölf Motive) und Stufe 1 bis 5;
+  Runde aus acht Aufgaben, leichteste zuerst, Buchaufgaben vor Lichess. Hilfen in der Reihenfolge
+  des Pflichtenhefts. Richtig zählt nur ohne falschen Zug und ohne Hilfe; ein Matt löst immer.
+  Das Benennen des Motivs zählt nicht mit. Rückfragen W1, W2, W7.
+- **„Falle oder Köder“:** Angebot als grauer Pfeil, Warnsignale aus Kapitel 4 auf Wunsch statt
+  selbst markieren (W3), Runden je zur Hälfte Fallen und Geschenke (W4).
+- **Strukturerkenner:** zwei Schritte (schwache Bauern antippen, Plan wählen); die Struktur wird
+  nicht abgefragt, falsche Pläne nur aus anderen Familien (W5). 19 Plan-Sätze und 13
+  Strukturnamen von Claude (W6).
+- **Übungen:** „Nur dieser Zug führt zum Ziel“ nach Fables Engine-Prüfung; gleichwertige Züge
+  aus der Prüfung bleiben aus, bis der Autor T1 beantwortet.
+- **Aufgabendatei:** Auf Wunsch des Autors hat jede offene Rückfrage eine begründete Empfehlung.

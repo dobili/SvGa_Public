@@ -1,6 +1,6 @@
 # Fortschritt – Wiederaufsetzpunkt
 
-Stand: 17.10.2026 · **Version 0.2.44**, Lesart der Phase: Mittelspiel, sobald eine Seite entwickelt ist oder das Material ungleich ist; „Bauern entscheiden“ nur bei Freibauer oder wenig Material; Erklärung am Phasenwechsel im Rückblick (Befund S17: Abb. 11.4); davor 0.2.43 „M“ und „E“ in der Zugliste, Zusatzregel „Zug 15“ gestrichen; davor 0.2.42 Ergänzungen des Autors vom Abend (Fable: Wertung nur aus der Grundstellung, Wertung zurücksetzen, eigene Gegner mit Fehlerarten und Spielstil, Wertungskurve je Phase); davor 0.2.41 Spielen nach den Wünschen des Autors vom Nachmittag (Fable: zwölf vorgefertigte Gegner, Mensch gegen Mensch, Spielhilfen zuschaltbar, Partienkachel mit Ergebnis und Stärke beider Seiten, Wertung nach Elo mit Kurve in den Einstellungen, Zusatzregeln für die Phase, Stellungseditor); davor 0.2.40 Spielen nach den Ideen des Autors (Fable: Zugklassen wie bei chess.com, Phasen in Kurve und Spielstärke, Auswertung im Hintergrund, Stufe je Phase, Fehlerprofile je Phase); davor 0.2.39 Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen) und die Trainerdaten (Fable, Zweig `trainerdaten`, zusammengeführt); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
+Stand: 17.10.2026 · **Version 0.2.45**, AP 13 Teil 3 (Opus): Taktiktrainer, „Falle oder Köder“ und Strukturerkenner auf Fables Trainerdaten, Hinweis „Nur dieser Zug“ bei Übungen, Empfehlungen zu allen offenen Rückfragen in `docs/AUFGABEN_AUTOR.md`; davor Lesart der Phase: Mittelspiel, sobald eine Seite entwickelt ist oder das Material ungleich ist; „Bauern entscheiden“ nur bei Freibauer oder wenig Material; Erklärung am Phasenwechsel im Rückblick (Befund S17: Abb. 11.4); davor 0.2.43 „M“ und „E“ in der Zugliste, Zusatzregel „Zug 15“ gestrichen; davor 0.2.42 Ergänzungen des Autors vom Abend (Fable: Wertung nur aus der Grundstellung, Wertung zurücksetzen, eigene Gegner mit Fehlerarten und Spielstil, Wertungskurve je Phase); davor 0.2.41 Spielen nach den Wünschen des Autors vom Nachmittag (Fable: zwölf vorgefertigte Gegner, Mensch gegen Mensch, Spielhilfen zuschaltbar, Partienkachel mit Ergebnis und Stärke beider Seiten, Wertung nach Elo mit Kurve in den Einstellungen, Zusatzregeln für die Phase, Stellungseditor); davor 0.2.40 Spielen nach den Ideen des Autors (Fable: Zugklassen wie bei chess.com, Phasen in Kurve und Spielstärke, Auswertung im Hintergrund, Stufe je Phase, Fehlerprofile je Phase); davor 0.2.39 Rückmeldung zum Nachtest bis N174 (Fable, Zweig `rueckmeldung-0.2.39`: Figurensätze, Nummernsprung, Werkzeugtexte, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung wählen) und die Trainerdaten (Fable, Zweig `trainerdaten`, zusammengeführt); davor 0.2.38 H Rückblick nach der Partie (Zweig `rueckblick`); 0.2.37 AP 13 Teil 1 und 2: Übungen des Buches lösen, Wiederholung, erste Trainer (Opus, Zweig `nacht-ap13`; davor 0.2.36 AP 11 Kalibrierung (Fable), 0.2.35 neuer Buchstand, 0.2.34 erster Stand im öffentlichen Repository `dobili/SvGa_Public`) · Nächstes: Nachtest N182 bis N200, Rückfragen U1 bis U11 in `docs/AUFGABEN_AUTOR.md`; Trainerdaten von Fable zusammenführen · Die ganze ältere Arbeitsgeschichte (Prüfhilfen, Berichte, Archiv) liegt im früheren privaten Repository des Autors
 
 Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abschnitt
 „Nächster Schritt“ weiter.
@@ -1240,6 +1240,24 @@ Vorher aufgeräumt: Zweig `pipeline-anschluss` (Anschluss an frühere Kapitel) i
   `Auswertung.tsx`, Stil in `ui/stil/spiel.css`. Oberflächentest in `spielen.spec.ts` (2. g4??).
 - Offen: „!“ für den einzigen guten Zug (Rückfrage U10).
 
+### AP 13 Teil 3: Trainer auf Fables Daten – Version 0.2.45 (Zweig `ap13-trainer2`, Opus, 17.10.2026)
+
+- Trainerdaten in die App: `skripte/kopiere-trainerdaten.mjs` kopiert `inhalte/de/trainer/*.json`
+  bei jedem Build nach `public/daten/de/trainer/` (gitignored, eine Quelle);
+  `daten/trainerdaten.ts` lädt sie.
+- Taktiktrainer: `training/taktiktrainer.ts` (Thema, Stufe, Zugprüfung, Matt geht vor; Test spielt
+  alle 674 Lösungen), `ui/trainer/TaktikBereich.tsx`, `Taktikaufgabe.tsx` (Hilfen Warnsignal,
+  Motiv, Schlüsselfigur, Lösung; Motiv benennen).
+- „Falle oder Köder“: `training/fallentrainer.ts` (Runden je zur Hälfte Fallen und Geschenke),
+  `ui/trainer/FallenBereich.tsx`, `Fallenaufgabe.tsx` (Angebot grau, Warnsignale auf Wunsch).
+- Strukturerkenner: `training/strukturtrainer.ts` (schwache Bauern, Planwahl ohne Pläne derselben
+  Familie), `ui/trainer/StrukturBereich.tsx`, `Strukturaufgabe.tsx`; Plan-Sätze und
+  Strukturnamen `struktur.plan.*`, `struktur.art.*` in `i18n/de.json`.
+- Gemeinsam: `ui/trainer/Rundenablauf.tsx` (aus `Trainer.tsx` gelöst), `Stufenwahl.tsx`.
+- Übungen: `ui/komponenten/EinzigerZug.tsx` aus `uebungen-engine.json`.
+- `AUFGABEN_AUTOR.md`: jede offene Rückfrage hat jetzt eine begründete Empfehlung; neu N236 bis
+  N239 und W1 bis W7.
+
 ## Wartet auf den Autor
 
 **Alles Offene steht in `docs/AUFGABEN_AUTOR.md`** (seit 0.2.31 nur noch Offenes: Nachtest,
@@ -1255,9 +1273,9 @@ Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2
 Archiv-Repository; was davon noch offen ist, steht hier.
 
 1. **Autor:** alles in `docs/AUFGABEN_AUTOR.md` (einzige Datei für den Autor, Regel 8 in
-   `CLAUDE.md`): Teil 1 Nachtest N233 bis N235 (0.2.44), N232 (0.2.43), N228 bis N231 (0.2.42), N219 bis N227 (0.2.41),
+   `CLAUDE.md`): Teil 1 Nachtest N236 bis N239 (0.2.45), N233 bis N235 (0.2.44), N232 (0.2.43), N228 bis N231 (0.2.42), N219 bis N227 (0.2.41),
    N210 bis N218, N201 bis N209, dann N182 bis N200 und, falls offen, N158 bis N181; Teil 2
-   Rückfragen S3, S7 bis S15, S17 (Befund Abb. 11.4 zur neuen Lesart der Phase), R1 bis R5, U1 bis U9, U11, U12, T1 bis T5, C1 bis C9, K1 bis K6, D1. Offen aus S7:
+   Rückfragen S3, S7 bis S15, S17 (Befund Abb. 11.4 zur neuen Lesart der Phase), R1 bis R5, W1 bis W7, U1 bis U9, U11, U12, T1 bis T5, C1 bis C9, K1 bis K6, D1. Offen aus S7:
    allgemeine Abhakliste der Fehlerarten (eigene Gegner haben sie je Gegner). Antworten
    einarbeiten, Erledigtes dort löschen. Entscheidungen von 0.2.41 und 0.2.42 in
    `docs/ENTSCHEIDUNGEN.md`, Abschnitte „Spielen: Antworten und Wünsche des Autors vom 17.10.2026
@@ -1269,10 +1287,11 @@ Archiv-Repository; was davon noch offen ist, steht hier.
    `schemas/trainer*`, Daten `inhalte/de/trainer/` (86 Übungen gegengeprüft, 674 Taktik-, 134
    Struktur-, 132 Fallen-Aufgaben mit geeichter Schwierigkeit), Notizen und Rückfragen A1 bis A5
    in `docs/TRAINERDATEN.md`; Lizenz der Lichess-Daten (CC0) steht in `docs/LIZENZEN.md`.
-3. **AP 13 weiter (Opus):** Taktiktrainer, Strukturerkenner und „Falle oder Köder“ auf diesen
-   Daten (Plan-Sätze und Motivnamen aus `i18n/de.json`, Hinweise für Opus am Ende von
-   `docs/TRAINERDATEN.md`); Repertoire, Zielbilanz- und Faktorenbilanz-Trainer, Endspieltrainer.
-   Offene Frage U9 (Trainer in der Wiederholung) vorher klären.
+3. **AP 13 weiter (Opus):** Taktiktrainer, Strukturerkenner und „Falle oder Köder“ sind fertig
+   (0.2.45). Offen: Repertoire, Zielbilanz- und Faktorenbilanz-Trainer, Endspieltrainer,
+   Lichess-Aufgaben im Training; Trainer in der Wiederholung nach der Antwort auf U9 (Empfehlung:
+   nur Taktik und Fallen). Nach den Antworten zu T1 die freigegebenen Züge als „akzeptiert“ in
+   die Übungsprüfung übernehmen.
 4. **Offen aus den Vorschlägen:** D1 Leerfälle (Tabelle im Archiv, VORSCHLAEGE_0.2.26.md,
    Abschnitt D: je Werkzeug „gilt, wenn …“ und ein Satz, warum nicht; Rückfrage U12). H ist
    seit 0.2.39 vollständig („!“).

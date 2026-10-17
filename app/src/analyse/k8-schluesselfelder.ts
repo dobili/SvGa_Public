@@ -147,7 +147,11 @@ function fazit(stellung: Stellung, liste: readonly Fall[], eigen: Color): string
   const eigene = liste.filter((fall) => fall.eigen);
   const fremder = liste.find((fall) => !fall.eigen);
   if (eigene.length === 0) {
-    return fremder ? standzeile(fremder) : t("schluessel.fazitKeiner", { farbe: farbname(eigen) });
+    if (!fremder) return t("schluessel.fazitKeiner", { farbe: farbname(eigen) });
+    // Auch aus Sicht des Verteidigers gilt der Sonderfall 6. Reihe (Abb. 8.29, Schwarz, 0.2.66).
+    const zug = sechsteReiheZug(stellung, fremder);
+    const farbe = farbname(fremder.sf.farbe);
+    return zug ? t("schluessel.fazitSechste", { farbe, zug: zugtext(zug) }) : standzeile(fremder);
   }
   for (const fall of eigene) {
     const zug = sechsteReiheZug(stellung, fall);

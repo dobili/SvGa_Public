@@ -1,10 +1,26 @@
 /**
- * Tests der vorgefertigten Gegner: Streuung, Sortierung und seit 0.2.60 der Schnitt mit der
+ * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): acht je Stufe, eindeutige Kennungen,
+ * Text und Porträt zu jedem, Stil im erlaubten Bereich; dazu seit 0.2.60 der Schnitt mit der
  * allgemeinen Abhakliste der Fehlerarten (Rückfrage S7).
  */
+import { existsSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import de from "../i18n/de.json";
 import { FEHLERARTEN } from "./fehlerart";
-import { durchschnitt, GEGNER, gegnerSortiert, gegnerVon, unterAbhakliste } from "./gegner";
+import {
+  durchschnitt,
+  GEGNER,
+  gegnerDerStufe,
+  gegnerSortiert,
+  gegnerVon,
+  unterAbhakliste,
+} from "./gegner";
+import { STIL_MAX, STIL_MIN } from "./stil";
+import type { Stufennummer } from "./stufen";
+
+const JE_STUFE = 8;
+const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
 
 describe("vorgefertigte Gegner", () => {
   it("sind nach Durchschnitt sortiert, Großmeister Grün zuletzt", () => {
@@ -16,6 +32,23 @@ describe("vorgefertigte Gegner", () => {
       if (vorher && jetzt) expect(durchschnitt(vorher)).toBeLessThanOrEqual(durchschnitt(jetzt));
     }
     expect(sortiert.at(-1)?.stufenJePhase.mittelspiel).toBe(8);
+  });
+
+  it("acht je Stufe (0.2.65), Kennungen eindeutig, Stil im Bereich", () => {
+    for (const nummer of STUFENNUMMERN) expect(gegnerDerStufe(nummer)).toHaveLength(JE_STUFE);
+    expect(new Set(GEGNER.map((g) => g.kennung)).size).toBe(GEGNER.length);
+    for (const g of GEGNER) {
+      expect(g.stil).toBeGreaterThanOrEqual(STIL_MIN);
+      expect(g.stil).toBeLessThanOrEqual(STIL_MAX);
+    }
+  });
+
+  it("jeder Gegner hat einen Satz in de.json und ein Porträt in public/gegner", () => {
+    const texte: Record<string, string> = de;
+    for (const g of GEGNER) {
+      expect(texte[g.beschreibung], g.kennung).toBeTruthy();
+      expect(existsSync(join("public", "gegner", `${g.kennung}.svg`)), g.kennung).toBe(true);
+    }
   });
 });
 

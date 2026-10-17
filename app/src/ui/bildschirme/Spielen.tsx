@@ -243,6 +243,7 @@ function gegnerprofil(
   return {
     botName: vorgefertigt.name,
     fehlerarten: unterAbhakliste(vorgefertigt.fehlerarten, erlaubt),
+    stil: vorgefertigt.stil,
     blindeFlecken: vorgefertigt.blindeFlecken,
   };
 }

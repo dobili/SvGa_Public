@@ -168,6 +168,30 @@ async function geprueft(
   });
 }
 
+/** Ausweichfehler, wenn die Liste nicht passt: höchstens einen Bauern Verlust (Ungenauigkeit). */
+const AUSWEICH_VERLUST = 1;
+
+/**
+ * Wendet die Fehlerliste eines Gegners an (eigene Gegner seit 0.2.42, vorgefertigte seit 0.2.46,
+ * Abhakliste seit 0.2.60): null heißt alle Arten, leer heißt kein absichtlicher Fehler. Seit
+ * 0.2.66 bestimmt die Liste die Art, nicht die Menge: Bietet die Stellung keinen Fehler einer
+ * erlaubten Art, bleibt eine Ungenauigkeit der Stufe (bis zu einem Bauern, im Protokoll als
+ * „ungenau“), damit ein Gegner mit kurzer Liste nicht stärker spielt als seine Stufe (Messung
+ * 0.2.65: Bots mit vier Arten gewannen 5:1 gegen ihre Stufe, weil sie meist keinen Fehler fanden).
+ */
+function mitFehlerliste(
+  kandidaten: readonly Fehlerkandidat[],
+  erlaubteArten: readonly Fehlerart[] | null,
+): Fehlerkandidat[] {
+  if (erlaubteArten === null) return [...kandidaten];
+  if (erlaubteArten.length === 0) return [];
+  const passende = kandidaten.filter((k) => erlaubteArten.includes(k.art));
+  if (passende.length > 0) return passende;
+  return kandidaten
+    .filter((k) => k.verlust <= AUSWEICH_VERLUST)
+    .map((k) => ({ ...k, art: "ungenau" as const }));
+}
+
 /**
  * Sucht einen Fehlerzug für die Stufe.
  *
@@ -202,15 +226,10 @@ export async function sucheFehlerzug(
     ...ausEngine(lage, voll.varianten, bestwert, weissAmZug),
     ...(await geprueft(bewerter, fen, stufe, auswahl, bestwert, weissAmZug)),
   ];
-  // Eigene Gegner (0.2.42) erlauben nur bestimmte Fehlerarten.
-  const artErlaubt = (k: Fehlerkandidat) => erlaubteArten === null || erlaubteArten.includes(k.art);
-  const moegliche = kandidaten.filter(
-    (k) =>
-      k.verlust >= MINDESTVERLUST &&
-      k.verlust <= stufe.hoechstverlust &&
-      erlaubt(k.uci) &&
-      artErlaubt(k),
+  const inGrenzen = kandidaten.filter(
+    (k) => k.verlust >= MINDESTVERLUST && k.verlust <= stufe.hoechstverlust && erlaubt(k.uci),
   );
+  const moegliche = mitFehlerliste(inGrenzen, erlaubteArten);
   const mitArt = moegliche.filter((k) => k.art !== "ungenau");
   // Gewichtet nach dem Profil der Phase und Stufe (0.2.40); ohne erkannte Art gleichverteilt.
   const wahl =

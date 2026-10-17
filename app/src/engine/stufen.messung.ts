@@ -6,8 +6,8 @@
  * Rolle im Gesamtbild: Kein Test der Prüfkette, sondern ein Messlauf. Start über
  * `npm run messen:stufen` (skripte/messe-stufen.mjs). Umgebung: MESSUNG_PAARUNG („1-2“, auch
  * „3-s5“ für Skill Level 5, „4-e1600“ für die Elo-Begrenzung, „3b-3“ für Stufe 3 mit allen
- * blinden Flecken gegen Stufe 3 ohne, „3@nina-3“ für Stufe 3 mit den blinden Flecken des
- * Gegners „nina“, 0.2.57), MESSUNG_PARTIEN (Zahl, gerade;
+ * blinden Flecken gegen Stufe 3 ohne, „3@nina-3“ für Stufe 3 mit dem ganzen Profil des
+ * Gegners „nina“: Fehlerarten, Stil, blinde Flecken; 0.2.57 und 0.2.65), MESSUNG_PARTIEN (Zahl, gerade;
  * die Farben wechseln), MESSUNG_ZIEL (Ordner für die JSON-Ergebnisse, nur lokal: buch/arbeit/).
  * Jede Partie beginnt mit einer der Eröffnungen aus Kapitel 2 und 3 (zwei Halbzüge), damit die
  * Partien verschieden sind; danach spielt keine Seite aus dem Buch.
@@ -89,7 +89,12 @@ function spieler(kuerzel: string): Spieler {
   if (bot?.[1] && vorgefertigt) {
     return {
       stufe: gegner(bot[1]),
-      profil: { ...STANDARDPROFIL, blindeFlecken: vorgefertigt.blindeFlecken },
+      profil: {
+        ...STANDARDPROFIL,
+        fehlerarten: vorgefertigt.fehlerarten,
+        stil: vorgefertigt.stil,
+        blindeFlecken: vorgefertigt.blindeFlecken,
+      },
     };
   }
   return { stufe: gegner(kuerzel), profil: STANDARDPROFIL };

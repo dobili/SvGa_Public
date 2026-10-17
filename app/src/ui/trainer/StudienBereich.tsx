@@ -36,27 +36,51 @@ function MitKapitel({
   return <>{inhalt(daten.wert)}</>;
 }
 
+const PRUEFUNGEN = [
+  "studien.pruefung1",
+  "studien.pruefung2",
+  "studien.pruefung3",
+  "studien.pruefung4",
+] as const;
+
+/** Die vier Prüfungen aus Kapitel 10 als Erinnerung (Rückfrage W11, nach Nachlesen im Buch). */
+function Pruefungen() {
+  return (
+    <details className="karte" data-testid="studien-pruefungen">
+      <summary>{t("studien.pruefungenTitel")}</summary>
+      <ol>
+        {PRUEFUNGEN.map((k) => (
+          <li key={k}>{t(k)}</li>
+        ))}
+      </ol>
+    </details>
+  );
+}
+
 function Studienrunde({ studien }: { studien: readonly Aufgabe[] }) {
   const [durchlauf, setzeDurchlauf] = useState(0);
   return (
-    <Rundenablauf
-      key={durchlauf}
-      kennung="studien"
-      erzeuge={() =>
-        studien.map((a) => (r) => (
-          <Repertoireaufgabe
-            aufgabe={a}
-            runde={r}
-            auftrag={t("studien.auftrag", {
-              titel: a.titel,
-              farbe: t(a.seite === "white" ? "farbe.w" : "farbe.b"),
-            })}
-          />
-        ))
-      }
-      nochmal={() => setzeDurchlauf(durchlauf + 1)}
-      zurAuswahl={null}
-    />
+    <>
+      <Pruefungen />
+      <Rundenablauf
+        key={durchlauf}
+        kennung="studien"
+        erzeuge={() =>
+          studien.map((a) => (r) => (
+            <Repertoireaufgabe
+              aufgabe={a}
+              runde={r}
+              auftrag={t("studien.auftrag", {
+                titel: a.titel,
+                farbe: t(a.seite === "white" ? "farbe.w" : "farbe.b"),
+              })}
+            />
+          ))
+        }
+        nochmal={() => setzeDurchlauf(durchlauf + 1)}
+        zurAuswahl={null}
+      />
+    </>
   );
 }
 

@@ -1383,7 +1383,7 @@
   {
    "id": "endspiel-b-9.42",
    "fen": "8/p5p1/1p1n3p/4k3/8/1P1BK2P/P5P1/8 w - - 0 1",
-   "leser": "w",
+   "leser": "b",
    "ziel": "remis",
    "thema": "leichtfiguren",
    "stichwort": null,
@@ -1393,7 +1393,7 @@
     "abbildung": "9.42"
    },
    "pruefung": {
-    "wert": -0.06,
+    "wert": 0.06,
     "mattIn": null,
     "bester": "g3",
     "einzigerZug": false,

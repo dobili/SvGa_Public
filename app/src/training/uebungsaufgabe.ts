@@ -11,7 +11,6 @@
  * Abhängigkeiten: chessops (über schach/stellung und spiel/zuege).
  */
 import { makeFen } from "chessops/fen";
-import type { Uebungspruefung } from "../daten/trainerdaten";
 import { makeSanAndPlay, parseSan } from "chessops/san";
 import { regelstellung } from "../spiel/zuege";
 
@@ -101,22 +100,29 @@ export function aufgabeZu(
 }
 
 /**
- * Übungen, bei denen die App die gleich guten Züge der Engine-Prüfung zusätzlich gelten lässt
- * (Empfehlung T1, umgesetzt in 0.2.47): Übung 6 (Abb. 1.42), 11 (2.151), 15 (3.81), 39 (7.51).
- * Nicht bei den Technikübungen 60 und 66: Dort lehrt die Übung einen Weg.
+ * Zusätzlich akzeptierte erste Züge, die das Buch stützt und die laut Engine-Prüfung gleich gut
+ * sind (Rückfrage T1, nach Nachlesen im Buch). Übung 6 (Abb. 1.42): Das Buch empfiehlt „einen
+ * Entwicklungszug, der selbst etwas angreift“; 4... Lb4+ ist so einer. Übung 15 (Abb. 3.81):
+ * gesucht ist ein Zug, der dem Gambit die Kraft nimmt, „ohne weiteres Material zu nehmen“, und
+ * 4... d5 nennt das Buch nur „die einfachste Antwort“; 4... Sf6 gilt ebenso. Übung 83
+ * (Abb. 12.5): „ein ruhiger Zug wie 1. Dc2“; 1. Te1 ist laut Engine sogar besser.
+ * Nicht: Übung 11 („Richtig ist 4... h5 oder 4... h6“), Übung 39 (1. Sxf6+ „lässt die Dame
+ * allerdings stehen“), dazu keine frühen Damenzüge und kein 4... Sxd4 in Übung 6 (das Buch nennt
+ * ihn „?!“).
  */
-export const ENGINE_VORSCHLAEGE_UEBERNOMMEN: ReadonlySet<number> = new Set([6, 11, 15, 39]);
+const BUCHGESTUETZT: Readonly<Record<string, readonly string[]>> = {
+  "ueb:spannung-halten": ["Bb4+"],
+  "ueb:goering": ["Nf6"],
+  "ueb:kandidatenzuege": ["Re1"],
+};
 
 /**
- * Die zusätzlich akzeptierten ersten Züge einer Übung aus der Engine-Prüfung (englische
- * Kurznotation, etwa „Qf6“); leer ohne Prüfung oder außerhalb der übernommenen Übungen.
+ * Die zusätzlich akzeptierten ersten Züge einer Übung (englische Kurznotation); sonst leer.
  *
- * Beispiel: Übung 6 (4... Sf6, Buch akzeptiert 4... Lc5) → [„Qf6“, „Bb4+“, „Nxd4“].
+ * Beispiel: „ueb:spannung-halten“ (Übung 6) → [„Bb4+“].
  */
-export function engineAkzeptiert(pruefung: Uebungspruefung | null, uebung: string): string[] {
-  const eintrag = pruefung?.uebungen.find((u) => u.uebung === uebung);
-  if (!eintrag || !ENGINE_VORSCHLAEGE_UEBERNOMMEN.has(eintrag.nummer)) return [];
-  return [...(eintrag.vorschlagAkzeptiert ?? [])];
+export function zusaetzlichAkzeptiert(uebung: string): string[] {
+  return [...(BUCHGESTUETZT[uebung] ?? [])];
 }
 
 const ohneSchach = (san: string) => san.replace(/[+#]$/, "");

@@ -142,7 +142,9 @@ KANDIDATEN: list[Kandidat] = [
     Kandidat("9.39", "leichtfiguren", "springer"),
     Kandidat("9.40", "leichtfiguren", "springer", leser="b"),
     Kandidat("9.41", "leichtfiguren", "falscherLaeufer", buch="remis"),
-    Kandidat("9.42", "leichtfiguren"),
+    # 9.42: Das Buch nennt den weißen Läufer „im Vorteil“; die Engine sieht Remis. Halten muss also
+    # Schwarz mit dem Springer, nicht Weiß (X2, nachgelesen 17.10.2026).
+    Kandidat("9.42", "leichtfiguren", leser="b"),
     Kandidat("9.43", "leichtfiguren", "falscherLaeufer"),
     Kandidat("9.44", "leichtfiguren", "falscherLaeufer"),
     Kandidat("9.45", "turmendspiel", "philidor"),

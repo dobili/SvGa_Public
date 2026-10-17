@@ -139,13 +139,13 @@ describe("Koordinaten, Notation, Gangarten", () => {
     nach: "f3",
   };
 
-  it("Notation: deutsche Buchstaben, Schachzeichen nur als Erinnerung", () => {
-    expect(pruefeNotation(sf3, "Sf3").richtig).toBe(true);
-    expect(pruefeNotation(sf3, "Nf3").richtig).toBe(false);
+  it("Notation: deutsche Buchstaben, Schachzeichen und englische Buchstaben nur als Erinnerung", () => {
+    expect(pruefeNotation(sf3, "Sf3")).toEqual({ richtig: true, schachVergessen: false, englisch: false });
+    expect(pruefeNotation(sf3, "Nf3")).toEqual({ richtig: true, schachVergessen: false, englisch: true });
     expect(pruefeNotation(sf3, "f3").richtig).toBe(false);
     const schach = { ...sf3, san: "e8=Q+" };
-    expect(pruefeNotation(schach, "e8=D")).toEqual({ richtig: true, schachVergessen: true });
-    expect(pruefeNotation(schach, "e8=D+")).toEqual({ richtig: true, schachVergessen: false });
+    expect(pruefeNotation(schach, "e8=D").schachVergessen).toBe(true);
+    expect(pruefeNotation(schach, "e8=D+").schachVergessen).toBe(false);
     expect(pruefeNotation({ ...sf3, san: "O-O" }, "0-0").richtig).toBe(true);
     expect(pruefeNotation({ ...sf3, san: "exf6" }, "exf6 e.p.").richtig).toBe(true);
   });

@@ -122,9 +122,11 @@ export function Notieraufgabe({ aufgabe, runde }: { aufgabe: Zugaufgabe; runde: 
       </form>
       {pruefung && (
         <Antwortmeldung richtig={pruefung.richtig}>
-          {pruefung.schachVergessen
-            ? t("koordinatentrainer.schachVergessen", { zug: buchzug(aufgabe.san) })
-            : t("koordinatentrainer.loesung", { zug: buchzug(aufgabe.san) })}
+          {pruefung.englisch
+            ? t("koordinatentrainer.englisch", { zug: buchzug(aufgabe.san) })
+            : pruefung.schachVergessen
+              ? t("koordinatentrainer.schachVergessen", { zug: buchzug(aufgabe.san) })
+              : t("koordinatentrainer.loesung", { zug: buchzug(aufgabe.san) })}
         </Antwortmeldung>
       )}
     </>

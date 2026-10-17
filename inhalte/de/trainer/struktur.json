@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "trainer": "struktur",
  "erzeugt": {
-  "datum": "2026-10-16",
+  "datum": "2026-10-17",
   "engine": null,
   "skript": "pipeline/trainer/struktur.py"
  },
@@ -1128,7 +1128,7 @@
    "fen": "r4rk1/pp1b1ppp/2nqpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R2Q1RK1 w - - 4 10",
    "seite": "w",
    "struktur": "laeufer",
-   "plan": "gutenLaeuferBehalten",
+   "plan": "stellungOeffnen",
    "merkmale": {
     "isolierte": [],
     "doppelte": [],
@@ -1154,7 +1154,7 @@
    "fen": "r4rk1/pp1b1ppp/2n1p3/q2pPn2/3P4/2N2N2/PP1QBPPP/R4RK1 w - - 5 14",
    "seite": "w",
    "struktur": "kette",
-   "plan": "fluegelDerKette",
+   "plan": "raumNutzen",
    "merkmale": {
     "isolierte": [],
     "doppelte": [],
@@ -3615,8 +3615,8 @@
    "id": "struktur-b-11.70",
    "fen": "r4rk1/pb3pp1/1p1qpnp1/2pp4/3P4/2P1PN1P/PP1NQPP1/3RR1K1 w - - 0 15",
    "seite": "w",
-   "struktur": "doppelbauer",
-   "plan": "doppelbauerAngreifen",
+   "struktur": "vorposten",
+   "plan": "vorpostenBesetzen",
    "merkmale": {
     "isolierte": [],
     "doppelte": [

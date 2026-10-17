@@ -145,15 +145,18 @@ function ohneZeichen(san: string): string {
  *
  * Warum: Das Buch schreibt Züge mit deutschen Figurenbuchstaben (Kapitel 0). Schach- und
  * Mattzeichen gehören dazu; fehlen sie, gilt der Zug trotzdem als richtig, die App erinnert daran.
- * Beispiel: Grundstellung, Zug „Nf3“: „Sf3“ → richtig; „Nf3“ → falsch (englischer Buchstabe);
- * „f3“ → falsch. Rochade als „0-0“ oder „O-O“.
+ * Englische Buchstaben gelten ebenfalls als richtig, mit dem Hinweis auf S, L, T, D: Kapitel 0
+ * sagt selbst „Nf3 ist also dasselbe wie unser Sf3“ (Rückfrage U6, nachgelesen 17.10.2026).
+ * Beispiel: Grundstellung, Zug „Nf3“: „Sf3“ → richtig; „Nf3“ → richtig mit Hinweis; „f3“ → falsch.
+ * Rochade als „0-0“ oder „O-O“.
  */
 export function pruefeNotation(aufgabe: Zugaufgabe, eingabe: string) {
   const text = eingabe.trim().replace(/\s*e\.\s*p\.?$/i, "");
-  const englisch = /^[NBRQ]/.test(text) ? "" : (zuegeAusText(text)[0] ?? "");
-  const richtig = ohneZeichen(englisch) === ohneZeichen(aufgabe.san);
-  const schachVergessen = richtig && /[+#]$/.test(aufgabe.san) && !/[+#]$/.test(englisch);
-  return { richtig, schachVergessen };
+  const englischerBuchstabe = /^[NBRQ]/.test(text);
+  const zug = zuegeAusText(text)[0] ?? "";
+  const richtig = ohneZeichen(zug) === ohneZeichen(aufgabe.san);
+  const schachVergessen = richtig && /[+#]$/.test(aufgabe.san) && !/[+#]$/.test(zug);
+  return { richtig, schachVergessen, englisch: richtig && englischerBuchstabe };
 }
 
 /** Prüft einen ausgeführten Zug (SAN der App gegen SAN der Aufgabe). */

@@ -280,6 +280,11 @@ test("Studien lösen: Saavedra-Studie, 1. c7 und die Antwort aus dem Buch", asyn
   await oeffneTrainer(page, "studien");
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Die Saavedra-Studie");
+  await page
+    .getByTestId("studien-pruefungen")
+    .getByText(/vier Prüfungen/)
+    .click();
+  await expect(page.getByTestId("studien-pruefungen")).toContainText("Unterverwandlung");
   await feld(page, "c6").click();
   await feld(page, "c7").click();
   await expect(page.getByTestId("repertoire-zuege")).toContainText("1. c7");

@@ -14,11 +14,10 @@ import { useEinstellungen } from "../../app/einstellungen";
 import { useNavigation } from "../../app/navigationsKontext";
 import type { Uebungsverweis } from "../../app/stapel";
 import { ladeKapitel, type Kapitel } from "../../daten/laden";
-import { ladeUebungspruefung } from "../../daten/trainerdaten";
 import type { Uebung as UebungDaten } from "../../daten/generiert/uebung";
 import { t } from "../../i18n/sprache";
 import { ROLLENBUCHSTABE, stellungAusFen } from "../../schach/stellung";
-import { aufgabeZu, engineAkzeptiert } from "../../training/uebungsaufgabe";
+import { aufgabeZu, zusaetzlichAkzeptiert } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { EinzigerZug } from "../komponenten/EinzigerZug";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
@@ -162,12 +161,6 @@ function Inhalt({
   uebung: UebungDaten;
   reihe: readonly Uebungsverweis[];
 }) {
-  const pruefung = useDaten(ladeUebungspruefung, "uebungen-engine");
-  // Ohne Engine-Prüfung (noch nicht geladen oder offline) gelten nur die Züge des Buches.
-  // Als Text, damit die Aufgabe bei jedem Zeichnen dieselbe bleibt (useMemo vergleicht Werte).
-  const zusaetzlich = (
-    pruefung.art === "fertig" ? engineAkzeptiert(pruefung.wert, uebung.id) : []
-  ).join(" ");
   const { navigiere } = useNavigation();
   const { strenge } = useEinstellungen();
   const erste = uebung.abbildungen[0];
@@ -176,9 +169,9 @@ function Inhalt({
     () =>
       aufgabeZu(startFen, uebung.erklaerung?.loesung ?? null, [
         ...(uebung.erklaerung?.akzeptiert ?? []),
-        ...zusaetzlich.split(" ").filter((zug) => zug !== ""),
+        ...zusaetzlichAkzeptiert(uebung.id),
       ]),
-    [startFen, uebung, zusaetzlich],
+    [startFen, uebung],
   );
   const s = useUebung(uebung, aufgabe, startFen ?? "", strenge);
   const bedienung = useBrettbedienung(s, aufgabe.art === "zug" ? "ziehen" : null, OHNE_WAHL);

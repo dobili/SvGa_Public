@@ -84,8 +84,10 @@ BUCHSTRUKTUREN: dict[str, tuple[str, str, str]] = {
     "5.40": ("laeufer", "b", "schlechtenLaeuferTauschen"),
     "5.41": ("laeufer", "w", "gutenLaeuferBehalten"),
     "5.42": ("laeufer", "w", "gutenLaeuferBehalten"),
-    "5.43": ("laeufer", "w", "gutenLaeuferBehalten"),
-    "5.44": ("kette", "w", "fluegelDerKette"),
+    # 5.43 und 5.44 nach der Skelettfolgerung des Buches (W6/T5, nachgelesen 17.10.2026):
+    # „Beide Seiten wollen das Zentrum öffnen“ und „Weiß sichert d4 … und nutzt seinen Raum“.
+    "5.43": ("laeufer", "w", "stellungOeffnen"),
+    "5.44": ("kette", "w", "raumNutzen"),
     "5.45": ("loch", "w", "vorpostenBesetzen"),
     "5.46": ("isolani", "w", "isolaniBlockieren"),
     "5.47": ("laeufer", "w", "gutenLaeuferBehalten"),
@@ -326,6 +328,14 @@ def aus_kapitel_5(datenordner: Path = DATENORDNER) -> list[dict]:
     return aufgaben
 
 
+# Abbildungen anderer Kapitel, zu denen das Buch eine Skelettfolgerung mit Plan gibt; sie gehen der
+# Erkennung vor. 11.70 (Carlsen–Tomaschewski): „Weiß stellt einen Springer nach e5 und hält das
+# Zentrum geschlossen“; der Doppelbauer g ist gedeckt, also kein Ziel (T5).
+BUCHFOLGERUNGEN: dict[str, tuple[str, str, str]] = {
+    "11.70": ("vorposten", "w", "vorpostenBesetzen"),
+}
+
+
 def aus_weiteren_kapiteln(datenordner: Path = DATENORDNER) -> list[dict]:
     """Abbildungen anderer Kapitel mit einer klaren Struktur; der Plan gilt für die Seite am Zug."""
     aufgaben = []
@@ -337,21 +347,26 @@ def aus_weiteren_kapiteln(datenordner: Path = DATENORDNER) -> list[dict]:
             anzahl_bauern = len(brett.pieces(chess.PAWN, True)) + len(brett.pieces(chess.PAWN, False))
             if anzahl_bauern < MINDESTENS_BAUERN or schluessel in gesehen:
                 continue
-            erkannt = erkenne(brett)
-            if erkannt is None:
-                continue
-            struktur, besitzer = erkannt
-            am_zug = brett.turn
-            plan = (PLAN_BESITZER if am_zug == besitzer else PLAN_GEGNER).get(struktur)
-            if plan is None:
-                continue
+            if a["id"] in BUCHFOLGERUNGEN:
+                struktur, seite, plan = BUCHFOLGERUNGEN[a["id"]]
+            else:
+                erkannt = erkenne(brett)
+                if erkannt is None:
+                    continue
+                struktur, besitzer = erkannt
+                am_zug = brett.turn
+                seite = "w" if am_zug else "b"
+                gefunden = (PLAN_BESITZER if am_zug == besitzer else PLAN_GEGNER).get(struktur)
+                if gefunden is None:
+                    continue
+                plan = gefunden
             gesehen.add(schluessel)
             aufgaben.append(
                 _aufgabe(
                     f"struktur-b-{a['id']}",
                     brett,
                     struktur,
-                    "w" if am_zug else "b",
+                    seite,
                     plan,
                     {"quelle": "buch", "abbildung": a["id"]},
                 )

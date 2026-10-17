@@ -6,14 +6,12 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Datenverzeichnis } from "../daten/generiert/index";
 import type { Kapitel } from "../daten/generiert/kapitel";
-import type { Uebungspruefung } from "../daten/trainerdaten";
 import {
-  ENGINE_VORSCHLAEGE_UEBERNOMMEN,
   aufgabeZu,
-  engineAkzeptiert,
   pruefeZug,
   stellungNach,
   zuegeAusText,
+  zusaetzlichAkzeptiert,
   type Uebungsaufgabe,
 } from "./uebungsaufgabe";
 
@@ -91,26 +89,20 @@ describe("Übungsaufgaben", () => {
     expect(stellungNach(start, ["e5"])).toBe(start);
   });
 
-  it("T1: gleich gute Züge der Engine gelten in den Übungen 6, 11, 15 und 39", () => {
-    const datei = new URL("../../../inhalte/de/trainer/uebungen-engine.json", import.meta.url);
-    const pruefung = JSON.parse(readFileSync(datei, "utf8")) as Uebungspruefung;
-    for (const eintrag of pruefung.uebungen) {
-      const zusaetzlich = engineAkzeptiert(pruefung, eintrag.uebung);
-      if (!ENGINE_VORSCHLAEGE_UEBERNOMMEN.has(eintrag.nummer)) {
-        expect(zusaetzlich).toEqual([]);
-        continue;
-      }
-      expect(zusaetzlich.length).toBeGreaterThan(0);
-      const uebung = uebungen.find((u) => u.id === eintrag.uebung);
+  it("T1: vom Buch gestützte Alternativen lösen die Übungen 6, 15 und 83, nicht 11 und 39", () => {
+    for (const id of ["ueb:spannung-halten", "ueb:goering", "ueb:kandidatenzuege"]) {
+      const zusaetzlich = zusaetzlichAkzeptiert(id);
+      expect(zusaetzlich.length, id).toBeGreaterThan(0);
+      const uebung = uebungen.find((u) => u.id === id);
       const erste = uebung?.abbildungen[0];
       const a = aufgabeZu(erste ? fenVon(erste) : null, uebung?.erklaerung?.loesung ?? null, [
         ...(uebung?.erklaerung?.akzeptiert ?? []),
         ...zusaetzlich,
       ]);
-      if (a.art !== "zug") throw new Error(`${eintrag.uebung} ist keine Zugaufgabe`);
-      // Jeder Vorschlag ist spielbar und löst die Übung.
-      for (const zug of zusaetzlich) expect(pruefeZug(a, [], zug).art).toBe("geloest");
+      if (a.art !== "zug") throw new Error(`${id} ist keine Zugaufgabe`);
+      for (const zug of zusaetzlich) expect(pruefeZug(a, [], zug).art, `${id} ${zug}`).toBe("geloest");
     }
-    expect(engineAkzeptiert(null, "ueb:spannung-halten")).toEqual([]);
+    expect(zusaetzlichAkzeptiert("ueb:k2-carokann-h4")).toEqual([]);
+    expect(zusaetzlichAkzeptiert("ueb:taktik-a05")).toEqual([]);
   });
 });

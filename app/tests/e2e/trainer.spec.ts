@@ -450,3 +450,35 @@ test("Planbilanz-Übung: Planfragen, LAP und Wettrennen", async ({ page }) => {
   await runde.getByRole("button", { name: "Prüfen" }).click();
   await expect(runde).toContainText("Nach dem LAP-Prinzip");
 });
+
+test("Abweichungsmodus: Spanisch als Weiß, Engine verlässt das Buch, Antwort wird bewertet", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "abweichung");
+  const wahl = page.getByTestId("abweichung-wahl");
+  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
+  await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
+  await wahl.getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await expect(page.getByTestId("abweichung-zug")).toContainText("Die Engine verlässt das Buch", {
+    timeout: 30_000,
+  });
+  // Ein Randbauernzug ist in den Stellungen der Spanischen Partie nach wenigen Zügen fast immer
+  // möglich; geht h2–h3 nicht (Zufallsstellung), dann a2–a3.
+  const zuege = page.getByTestId("abweichung-zuege");
+  const vorher = (await zuege.textContent()) ?? "";
+  await feld(page, "h2").click();
+  await feld(page, "h3").click();
+  if ((await zuege.textContent()) === vorher) {
+    await feld(page, "a2").click();
+    await feld(page, "a3").click();
+  }
+  await expect(runde).toContainText(/[ha]3 ist (eine gute Antwort|ungenau|ein Fehler)/, {
+    timeout: 30_000,
+  });
+  await expect(page.getByTestId("abweichung-einschaetzung")).toContainText("Zielbilanz");
+  await page.screenshot({ path: "test-results/bilder/trainer-abweichung.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 3");
+});

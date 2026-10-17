@@ -2,7 +2,8 @@
  * Bildschirm „Trainer“: Übungsart wählen und eine Runde spielen (AP 13).
  *
  * Rolle im Gesamtbild: Konzept 9.2 (starte, naechste, antworte, beende). Zähltrainer,
- * Schach-Röntgen-Trainer und „Koordinaten, Notation, Gangarten“ üben an den Buchstellungen;
+ * Schach-Röntgen-Trainer, „Koordinaten, Notation, Gangarten“ und die Zielbilanz-Übung üben an
+ * den Buchstellungen;
  * Taktiktrainer, „Falle oder Köder“ und Strukturerkenner haben eigene Aufgaben aus den
  * Trainerdaten (ui/trainer/*Bereich.tsx). Die
  * Aufgaben entstehen aus den Stellungen des Buches (training/buchstellungen.ts); eine Runde hat
@@ -16,6 +17,7 @@ import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentra
 import { roentgenrunde } from "../../training/roentgentrainer";
 import type { TrainerKennung } from "../../training/trainer";
 import { haengerunde, zaehlrunde } from "../../training/zaehltrainer";
+import { zielbilanzrunde } from "../../training/zielbilanztrainer";
 import { ZUFALL } from "../../training/zufall";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { useDaten } from "../komponenten/useDaten";
@@ -31,15 +33,24 @@ import { FallenBereich } from "../trainer/FallenBereich";
 import { StrukturBereich } from "../trainer/StrukturBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
+import { Zielbilanzaufgabe } from "../trainer/Zielbilanzaufgabe";
 
 export type Uebungsart =
-  "bilanz" | "haengen" | "roentgen" | "felder" | "notieren" | "ausfuehren" | "gangarten";
+  | "bilanz"
+  | "haengen"
+  | "roentgen"
+  | "felder"
+  | "notieren"
+  | "ausfuehren"
+  | "gangarten"
+  | "zielbilanz";
 
 /** Die Übungsarten der spielbaren Trainer, in der Reihenfolge der Auswahl. */
 const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[]>>> = {
   zaehlen: ["bilanz", "haengen"],
   roentgen: ["roentgen"],
   koordinaten: ["felder", "notieren", "ausfuehren", "gangarten"],
+  zielbilanz: ["zielbilanz"],
 };
 
 /** Aufgaben je Runde: kurze Runden passen in eine Pause, „Feld finden“ geht schnell. */
@@ -51,6 +62,7 @@ const ANZAHL: Readonly<Record<Uebungsart, number>> = {
   notieren: 8,
   ausfuehren: 8,
   gangarten: 8,
+  zielbilanz: 5,
 };
 
 /** Erzeugt die Aufgaben einer Runde, jede schon mit ihrer Darstellung. */
@@ -82,6 +94,10 @@ function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstell
     case "gangarten":
       return gangartrunde(stellungen, n, ZUFALL).map((a) => (r) => (
         <Gangartaufgabe aufgabe={a} runde={r} />
+      ));
+    case "zielbilanz":
+      return zielbilanzrunde(stellungen, n, ZUFALL).map((a) => (r) => (
+        <Zielbilanzaufgabe aufgabe={a} runde={r} />
       ));
   }
 }

@@ -181,3 +181,29 @@ test("Wiederholung (U9): falsch gelöste Taktikaufgabe kommt nach einem Tag wied
   await page.getByTestId("trainer-wiederholung").getByRole("button").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
 });
+
+test("Zielbilanz-Übung: Tabelle für beide Seiten ausfüllen, App zeigt ihre Wertung", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "zielbilanz");
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 5");
+  const pruefen = runde.getByRole("button", { name: "Prüfen" });
+  await expect(pruefen).toBeDisabled();
+  for (const seite of ["white", "black"]) {
+    const tabelle = page.getByTestId(`zielbilanz-${seite}`);
+    for (const ziel of ["Zentrum", "Entwicklung", "Königssicherheit"]) {
+      await tabelle
+        .getByRole("group", { name: ziel })
+        .getByRole("button", { name: "ja", exact: true })
+        .click();
+    }
+  }
+  await pruefen.click();
+  await expect(runde.getByText(/^App: (ja|teils|nein)$/)).toHaveCount(6);
+  await expect(page.getByTestId("zielbilanz-begruendung")).toBeVisible();
+  await page.screenshot({ path: "test-results/bilder/trainer-zielbilanz.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 5");
+});

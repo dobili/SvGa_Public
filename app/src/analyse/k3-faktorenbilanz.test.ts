@@ -200,6 +200,14 @@ describe("k3-faktorenbilanz an Buchabbildungen", () => {
     expect(ergebnis.fazit).toMatch(/^Weiß steht im Schach: erst zu Ende rechnen\./);
   });
 
+  it("Abb. 3.68 (C1): nur 8. Ke2, dann Lg4# – „schlecht“, Weiß liegt nicht vorn", () => {
+    const ergebnis = faktorenbilanz(stellungVon("3.68"), "white");
+    expect(ergebnis.befunde.find((b) => b.kennung === "koenig")?.zeilen[0]).toBe(
+      "Weiß: schlecht – der König steht im Schach und hat nur einen Zug",
+    );
+    expect(ergebnis.fazit).not.toContain("Weiß liegt vorn bei Königssicherheit");
+  });
+
   it("Lehrbild ohne König: keine Fehler", () => {
     const ergebnis = faktorenbilanz(stellungAus("8/8/8/3N4/8/8/8/8 w - - 0 1"), "white");
     expect(ergebnis.befunde).toHaveLength(5);

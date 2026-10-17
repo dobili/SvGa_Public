@@ -58,6 +58,14 @@ describe("k4-warnsignale an den Fallenchecks aus Kapitel 4", () => {
     expect(zeilen(ergebnis("4.21"), "eigen")).toContain("W3 Ohne Luft: König e1");
   });
 
+  it("Abb. 4.21 (C2): nur g2 verteidigt f3 gegen Sxf3#, e2 ist dann an den König gefesselt", () => {
+    const eigen = zeilen(ergebnis("4.21"), "eigen");
+    expect(eigen).toContain(
+      "W4 Doppelte Aufgabe: Bauer g2, einziger Verteidiger von f3 gegen Sxf3# (Einschätzung)",
+    );
+    expect(eigen.some((z) => z.includes("Bauer e2, einziger Verteidiger"))).toBe(false);
+  });
+
   it("Abb. 4.24: W5 Sxe4 (gewinnt den Bauern) und W3 König e8", () => {
     const auswertung = ergebnis("4.24");
     expect(zeilen(auswertung, "w5")).toEqual(["Sxe4 (gewinnt den Bauern)"]);

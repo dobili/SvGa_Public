@@ -59,6 +59,17 @@ export interface Koenigsumgebung {
   readonly linienZumKoenig: readonly Koenigslinie[];
   /** Steht der König im Schach? */
   readonly imSchach: boolean;
+  /** Im Schach und am Zug: die Zahl der legalen Abwehrzüge; sonst null. */
+  readonly abwehrzuege: number | null;
+}
+
+/** Die Zahl der legalen Züge, wenn die Farbe am Zug im Schach steht; sonst null. */
+function abwehrzuegeVon(stellung: Stellung, farbe: Color): number | null {
+  const regeln = stellung.regeln;
+  if (!regeln || regeln.turn !== farbe || !regeln.isCheck()) return null;
+  let anzahl = 0;
+  for (const [, ziele] of regeln.allDests()) anzahl += ziele.size();
+  return anzahl;
 }
 
 /** Ob die Farbe noch ein Rochaderecht hat. */
@@ -170,6 +181,7 @@ export function koenigsumgebung(stellung: Stellung, farbe: Color): Koenigsumgebu
     schildUnberuehrt: bauernschild.filter((bauer) => eigeneReihe(bauer, farbe) <= 2).length,
     linienZumKoenig: linienZum(brett, koenig, farbe),
     imSchach,
+    abwehrzuege: abwehrzuegeVon(stellung, farbe),
   };
 }
 

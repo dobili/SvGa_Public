@@ -75,8 +75,22 @@ function aufgabenOhne(basis: Chess, figur: Figurenstand, vorher: ReadonlySet<str
     return [{ art: "koenig", ziel: koenig }];
   }
   return sofortigeGewinne(ohne)
-    .filter((drohung) => !vorher.has(schluessel(drohung)))
+    .filter((drohung) => !vorher.has(schluessel(drohung)) && wehrtMattAb(basis, figur, drohung))
     .map(aufgabeAus);
+}
+
+/**
+ * Wehrt die Figur ein Matt wirklich ab? Nach dem Mattzug auf dem echten Brett muss sie einen
+ * legalen Zug haben (im Schach sind das nur Abwehrzüge).
+ *
+ * Regel: Kapitel 4, Kieninger-Falle (Abb. 4.21, 4.22): Verlässt der Springer e5 die e-Linie, ist
+ * der Bauer e2 an den König gefesselt und darf nicht schlagen. Nach Sxf3+ verteidigt also nur g2
+ * das Feld f3, nicht e2 (Rückfrage C2, nach Nachlesen im Buch).
+ */
+function wehrtMattAb(basis: Chess, figur: Figurenstand, drohung: Drohung): boolean {
+  if (drohung.art !== "matt") return true;
+  const danach = gespielt(basis, { from: drohung.zug.von, to: drohung.zug.nach });
+  return legaleZuege(danach).some((zug) => zug.from === figur.feld);
 }
 
 function gespielt(regeln: Chess, zug: NormalMove): Chess {

@@ -127,6 +127,10 @@ describe("k7-motiv an den Abbildungen der Motive", () => {
     expect(ergebnis("7.22").fazit).toBe("Sxe4: Zwischenzug.");
   });
 
+  it("Abb. 9.34 (C5): ein Bauer weniger, aber die Schachs wiederholen die Stellung", () => {
+    expect(motivzeilen("9.34").join(" ")).toContain("Dauerschach");
+  });
+
   it("Abb. 10.3: Schachs der Seite, die nicht auf Verlust steht, sind kein Dauerschach", () => {
     expect(motivzeilen("10.3").join(" ")).not.toContain("Dauerschach");
   });

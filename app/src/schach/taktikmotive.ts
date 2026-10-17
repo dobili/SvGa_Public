@@ -19,6 +19,7 @@ import { doppelteAufgaben } from "./aufgaben";
 import { istGabelziel } from "./gabeln";
 import { nullzug, schlaege } from "./drohungen";
 import { fesselungen, linienmotive, type Linienmotiv } from "./linienmotive";
+import { materialstand, wiederholtMitSchach } from "./dauerschach";
 import { mattbild, type Mattbild } from "./mattbilder";
 import { sichereFelder } from "./sichereFelder";
 import { FIGURENWERT, gegner, stellungAusFen } from "./stellung";
@@ -292,26 +293,16 @@ function desperado(m1: Halbzug): boolean {
   );
 }
 
-/** Materialstand einer Farbe in Bauerneinheiten (ohne Könige). */
-function materialstand(pos: Chess, farbe: Color): number {
-  let summe = 0;
-  for (const feld of pos.board.occupied) {
-    const figur = pos.board.get(feld);
-    if (figur && figur.role !== "king")
-      summe += (figur.color === farbe ? 1 : -1) * FIGURENWERT[figur.role];
-  }
-  return summe;
-}
-
 /**
  * Dauerschach: alle eigenen Züge der Folge sind Schachs ohne Schlag, ohne Matt, und die Seite, die
  * Schach gibt, steht auf Verlust. Patt: Schlagen des Köders setzt patt.
  *
  * Regel: Kapitel 7, Motiv 12 („Wer klar verliert, sucht nach einem Remis“; Tabelle „Du stehst auf
- * Verlust: Rettung durch Dauerschach und Patt“). Präzisierung der App (16.10.2026): Schachs einer
- * Seite, die nicht mindestens eine Leichtfigur zurückliegt, sind kein Dauerschach (Abb. 10.3:
- * Schwarz hat den Turm gegen den Bauern, seine Schachs enden nach 5. Kc2). Beispiel: Abb. 7.28,
- * Schwarz mit Turm und Bauer weniger: 1... De1+ 2. Kg2 De2+.
+ * Verlust: Rettung durch Dauerschach und Patt“). Präzisierung der App: Schachs einer Seite, die
+ * mindestens eine Leichtfigur zurückliegt, oder Schachs, die die Stellung wiederholen (der König
+ * entkommt nicht; Glossar, Abb. 9.34 mit nur einem Bauern weniger, Rückfrage C5 nach Nachlesen).
+ * Sonst endet eine Schachserie meist (Abb. 10.3). Beispiel: Abb. 7.28, Schwarz mit Turm und
+ * Bauer weniger: 1... De1+ 2. Kg2 De2+.
  */
 function rettungsmotive(folge: readonly Halbzug[]): Motiv[] {
   const motive: Motiv[] = [];
@@ -321,7 +312,8 @@ function rettungsmotive(folge: readonly Halbzug[]): Motiv[] {
   const letzte = folge.at(-1);
   if (
     eigene.length >= DAUERSCHACH_AB &&
-    materialstand(m1.vorher, m1.figur.color) <= -VERLUST_AB &&
+    (materialstand(m1.vorher, m1.figur.color) <= -VERLUST_AB ||
+      wiederholtMitSchach([m1.vorher, ...folge.map((h) => h.nachher)], m1.figur.color)) &&
     eigene.every((h) => h.nachher.isCheck() && h.geschlagen === null) &&
     !letzte?.nachher.isCheckmate()
   )

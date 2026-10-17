@@ -41,6 +41,7 @@ export interface Koenigseinschaetzung {
     | "mitte"
     | "mitteOffen"
     | "imSchach"
+    | "imSchachEinzig"
     | "fehlt";
   /**
    * Bei „rochiertOhneBauer“ die Linien ohne eigenen Bauern, auf denen eine gegnerische
@@ -97,7 +98,9 @@ function rochierterKoenig(u: Koenigsumgebung): Koenigseinschaetzung {
  * (Abb. 6.31); sonst gut. In der Mitte: schlecht, wenn die Königslinie offen oder halboffen ist
  * und der Gegner ein Nachbarfeld angreift (Abb. 3.10, 3.20, 11.26); sonst teils.
  * Steht der König im Schach, ist er nie „gut“, höchstens „teils“ (C1.6, Entscheidung des Autors:
- * Abb. 3.23, Weiß im Schach durch Lb4+, hieß vorher „gut, ohne gegnerische Dame“).
+ * Abb. 3.23, Weiß im Schach durch Lb4+, hieß vorher „gut, ohne gegnerische Dame“). Hat er im
+ * Schach nur einen einzigen Zug, ist er „schlecht“ (Rückfrage C1 nach Nachlesen: Abb. 3.68,
+ * „Weiß ist schon verloren“, nach 8. Ke2 folgt Lg4#).
  * Eingaben: Königsumgebung (oder null) und ob der Gegner eine Dame hat.
  * Ausgabe: Wertung, Grund und bei Linien die betroffenen Linien und die Schwerfigur.
  * Beispiel: Abb. 3.6 (Königsgambit), Weiß: „teils – rochiert, aber ohne f-Bauern vor dem König“.
@@ -107,6 +110,7 @@ export function koenigssicherheit(
   gegnerHatDame: boolean,
 ): Koenigseinschaetzung {
   if (u === null) return { wertung: "schlecht", grund: "fehlt" };
+  if (u.abwehrzuege === 1) return { wertung: "schlecht", grund: "imSchachEinzig" };
   const ohneSchach = koenigOhneSchach(u, gegnerHatDame);
   if (u.imSchach && ohneSchach.wertung === "gut") return { wertung: "teils", grund: "imSchach" };
   return ohneSchach;

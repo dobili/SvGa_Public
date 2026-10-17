@@ -239,6 +239,7 @@
   "faktoren.koenig.mitteOffen": "König in der Mitte, die Linie vor ihm ist offen und der Gegner greift Felder neben ihm an",
   "faktoren.koenig.fehlt": "kein König auf dem Brett",
   "faktoren.koenig.imSchach": "der König steht im Schach",
+  "faktoren.koenig.imSchachEinzig": "der König steht im Schach und hat nur einen Zug",
   "faktoren.entschiedenTitel": "Partie entschieden",
   "faktoren.entschieden.matt": "Matt: Die Partie ist entschieden.",
   "faktoren.entschieden.patt": "Patt: Die Partie ist entschieden (remis).",

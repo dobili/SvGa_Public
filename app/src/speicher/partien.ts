@@ -155,6 +155,24 @@ export function mitVorlieben(stand: Spielstand, vorlieben: Spielvorlieben): Spie
   return { ...stand, vorlieben };
 }
 
+/**
+ * Setzt die Wertung zurück (Wunsch des Autors, 17.10.2026): Der Verlauf wird leer, und alle bis
+ * dahin gespielten Partien (auch die laufende) gelten dauerhaft als ungewertet, damit sie nicht
+ * beim nächsten Speichern einer Auswertung wieder zählen.
+ */
+export function setzeWertungZurueck(stand: Spielstand): Spielstand {
+  const ungewertet = (p: Partie): Partie => ({
+    ...p,
+    einstellung: { ...p.einstellung, gewertet: false },
+  });
+  return {
+    ...stand,
+    laufend: stand.laufend ? ungewertet(stand.laufend) : null,
+    partien: stand.partien.map((e) => ({ ...e, partie: ungewertet(e.partie) })),
+    wertung: [],
+  };
+}
+
 // ---------------------------------------------------------------------------------------------
 // Lesen aus Rohdaten (Laden, Einspielen einer Sicherung)
 // ---------------------------------------------------------------------------------------------

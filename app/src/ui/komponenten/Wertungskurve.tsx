@@ -7,11 +7,15 @@
  * grau Remis) und einem Auswahlfeld für den Ausschnitt: die letzten 10, 25 oder 50 Partien oder
  * ein Zeitraum (1 Woche, 4 Wochen, 3 Monate, halbes Jahr, Jahr). Bei den Partien steht jede
  * gleich weit von der nächsten; beim Zeitraum liegt jede Partie an ihrer Zeit, der rechte Rand ist
- * jetzt. Für Bildschirmleser trägt jeder Punkt Datum, Ergebnis, Gegner und Wertung.
- * Abhängigkeiten: spiel/wertung.ts, i18n.
+ * jetzt. Für Bildschirmleser trägt jeder Punkt Datum, Ergebnis, Gegner und Wertung. „Wertung
+ * zurücksetzen“ (nach Nachfrage) leert den Verlauf und macht alle bisherigen Partien dauerhaft
+ * ungewertet (speicher/partien.ts, setzeWertungZurueck).
+ * Abhängigkeiten: spiel/wertung.ts, speicher/, i18n.
  */
 import { useState } from "react";
 import { t, type Textschluessel } from "../../i18n/sprache";
+import { setzeWertungZurueck } from "../../speicher/partien";
+import { aendere } from "../../speicher/speicher";
 import {
   aktuelleWertung,
   imBereich,
@@ -186,6 +190,35 @@ function Kurve({
   );
 }
 
+/** Knopf „Wertung zurücksetzen“ mit Nachfrage. */
+function Zuruecksetzen() {
+  const [nachfrage, setzeNachfrage] = useState(false);
+  const zuruecksetzen = () => {
+    void aendere((d) => ({ ...d, spiel: setzeWertungZurueck(d.spiel) }));
+    setzeNachfrage(false);
+  };
+  if (!nachfrage) {
+    return (
+      <button type="button" className="knopf-zweit" onClick={() => setzeNachfrage(true)}>
+        {t("ich.wertung.zuruecksetzen")}
+      </button>
+    );
+  }
+  return (
+    <div className="nachfrage">
+      <p>{t("ich.wertung.zuruecksetzenFrage")}</p>
+      <div className="knopfreihe">
+        <button type="button" className="knopf-gefahr" onClick={zuruecksetzen}>
+          {t("ich.wertung.zuruecksetzenJa")}
+        </button>
+        <button type="button" className="knopf-zweit" onClick={() => setzeNachfrage(false)}>
+          {t("loeschen.nein")}
+        </button>
+      </div>
+    </div>
+  );
+}
+
 /** „+24“, „−12“ oder „±0“. */
 function vorzeichen(wert: number): string {
   if (wert > 0) return `+${wert}`;
@@ -250,6 +283,7 @@ export function Wertungskurve({
         <p className="hinweis">{t("ich.wertung.keineImBereich")}</p>
       )}
       <p className="hinweis">{t("ich.wertung.erklaerung")}</p>
+      <Zuruecksetzen />
     </section>
   );
 }

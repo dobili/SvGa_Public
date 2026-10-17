@@ -73,14 +73,21 @@ export function GegnerWahl({
 }
 
 /** Zwei Haken für die Spielhilfen und einer für die Wertung. */
+/**
+ * Die Spielhilfen und der Haken „Gewertete Partie“. `wertbar`: nur Partien gegen die Engine aus
+ * der Grundstellung zählen für die Wertung (Wunsch des Autors, 17.10.2026); sonst steht statt des
+ * Hakens ein Satz.
+ */
 export function HilfenWahl({
   hilfen,
   gewertet,
+  wertbar,
   beiHilfen,
   beiGewertet,
 }: {
   hilfen: Spielhilfen;
   gewertet: boolean;
+  wertbar: boolean;
   beiHilfen: (hilfen: Spielhilfen) => void;
   beiGewertet: (gewertet: boolean) => void;
 }) {
@@ -103,11 +110,21 @@ export function HilfenWahl({
         />
         {t("spielen.hilfen.werkzeuge")}
       </label>
-      <label className="schalterzeile">
-        <input type="checkbox" checked={gewertet} onChange={(e) => beiGewertet(e.target.checked)} />
-        {t("spielen.gewertet")}
-      </label>
-      <p className="hinweis">{t("spielen.gewertetHinweis")}</p>
+      {wertbar ? (
+        <>
+          <label className="schalterzeile">
+            <input
+              type="checkbox"
+              checked={gewertet}
+              onChange={(e) => beiGewertet(e.target.checked)}
+            />
+            {t("spielen.gewertet")}
+          </label>
+          <p className="hinweis">{t("spielen.gewertetHinweis")}</p>
+        </>
+      ) : (
+        <p className="hinweis">{t("spielen.nichtWertbar")}</p>
+      )}
     </>
   );
 }

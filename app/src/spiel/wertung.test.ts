@@ -8,6 +8,7 @@ import type { Partieeintrag } from "../speicher/partien";
 import { leserzug, neuePartie, ziehe, type Partie, type Partieeinstellung } from "./partie";
 import {
   ANFANGSPARTIEN,
+  ausGrundstellung,
   ergebnisFuer,
   erwartung,
   imBereich,
@@ -93,9 +94,19 @@ describe("Wertung", () => {
     expect(verlauf.at(-1)?.wertung).toBe(Math.round(erwartet));
   });
 
-  it("zählt nicht: ungewertet, gegen Mensch, laufend, ohne Auswertung, schon gezählt", () => {
+  it("zählt nicht: ungewertet, gegen Mensch, nicht aus der Grundstellung, laufend, ohne Auswertung, schon gezählt", () => {
     expect(wertungspunktFuer([], eintrag("a", "white", { gewertet: false }))).toBeNull();
     expect(wertungspunktFuer([], eintrag("b", "white", { gegner: "mensch" }))).toBeNull();
+    const abbildung = eintrag("x", "white");
+    const anders = {
+      ...abbildung.partie.einstellung,
+      startFen: "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
+    };
+    expect(ausGrundstellung({ ...abbildung.partie, einstellung: anders })).toBe(false);
+    expect(ausGrundstellung(abbildung.partie)).toBe(true);
+    expect(
+      wertungspunktFuer([], { ...abbildung, partie: { ...abbildung.partie, einstellung: anders } }),
+    ).toBeNull();
     const laufend = eintrag("c", "white");
     expect(
       wertungspunktFuer([], { ...laufend, partie: { ...laufend.partie, ende: null } }),

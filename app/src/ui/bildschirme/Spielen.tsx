@@ -71,8 +71,21 @@ interface Wahl {
   readonly eroeffnung: string | null;
 }
 
+/** Zählt eine Partie mit dieser Wahl für die Wertung? Nur gegen die Engine aus der Grundstellung. */
+function wertbar(fen: string, vorlieben: Spielvorlieben): boolean {
+  return fen === GRUNDSTELLUNG && vorlieben.gegner === "engine";
+}
+
 /** Seite, Stufe, Uhr, Rücknahme. */
-function Einstellungen({ wahl, setze }: { wahl: Wahl; setze: (wahl: Wahl) => void }) {
+function Einstellungen({
+  wahl,
+  fen,
+  setze,
+}: {
+  wahl: Wahl;
+  fen: string;
+  setze: (wahl: Wahl) => void;
+}) {
   const v = wahl.vorlieben;
   const mit = (teil: Partial<Spielvorlieben>) => setze({ ...wahl, vorlieben: { ...v, ...teil } });
   const uhrStellen = UHR_VORGABEN.map((_, stelle) => String(stelle));
@@ -127,6 +140,7 @@ function Einstellungen({ wahl, setze }: { wahl: Wahl; setze: (wahl: Wahl) => voi
       <HilfenWahl
         hilfen={v.hilfen}
         gewertet={v.gewertet}
+        wertbar={wertbar(fen, v)}
         beiHilfen={(hilfen) => mit({ hilfen })}
         beiGewertet={(gewertet) => mit({ gewertet })}
       />
@@ -216,7 +230,8 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       gegner: v.gegner,
       bot: v.gegner === "engine" ? v.bot : null,
       hilfen: v.hilfen,
-      gewertet: v.gewertet,
+      // Nur Partien gegen die Engine aus der Grundstellung zählen (Wunsch des Autors).
+      gewertet: v.gewertet && wertbar(fen, v),
     };
     const partie = neuePartie(einstellung, neueKennung(), new Date().toISOString());
     if (!partie) return;
@@ -262,7 +277,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
       {laufend && <LaufendePartie partie={laufend} />}
       <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />
       {!ok && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
-      <Einstellungen wahl={wahl} setze={setzeWahl} />
+      <Einstellungen wahl={wahl} fen={fen} setze={setzeWahl} />
       {fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" && (
         <EroeffnungsWahl
           gewaehlt={wahl.eroeffnung}

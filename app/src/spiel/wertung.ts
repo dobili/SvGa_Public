@@ -10,7 +10,8 @@
  * Engine in dieser Partie gespielt hat). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
  * beim Weltschachbund für Spieler unter 2400). Jeder Punkt des Verlaufs merkt sich Zeit, Gegner
  * und Ergebnis, damit die Kurve in den Einstellungen nach Partien oder nach Zeitraum zeigen kann.
- * Gewertet werden nur beendete Partien gegen die Engine mit Haken „gewertete Partie“ und
+ * Gewertet werden nur beendete Partien gegen die Engine aus der Grundstellung (Wunsch des
+ * Autors: nichts aus Abbildungen oder aufgebauten Stellungen) mit Haken „gewertete Partie“ und
  * fertiger Auswertung; Partien mit zu wenigen Zügen für eine Schätzung zählen nicht.
  * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
  * speicher/partien.ts (Partieeintrag).
@@ -20,6 +21,16 @@ import { zugurteile } from "./auswertung";
 import { spielstaerke, type Spielstaerke } from "./genauigkeit";
 import { stellungen, type Partie } from "./partie";
 import { sanZuUci } from "./zuege";
+
+/** Die Grundstellung ohne Zähler (Felder, Seite am Zug, Rochade, En passant). */
+const GRUNDSTELLUNG_KERN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq -";
+const FEN_KERNFELDER = 4;
+
+/** Begann die Partie in der Grundstellung? */
+export function ausGrundstellung(partie: Partie): boolean {
+  const kern = partie.einstellung.startFen.trim().split(/\s+/).slice(0, FEN_KERNFELDER).join(" ");
+  return kern === GRUNDSTELLUNG_KERN;
+}
 
 /** Ergebnis aus Sicht des Lesers: Sieg 1, Remis ½, Niederlage 0. */
 export type Punktwert = 0 | 0.5 | 1;
@@ -81,8 +92,9 @@ export function aktuelleWertung(punkte: readonly Wertungspunkt[]): number | null
 
 /**
  * Der Wertungspunkt zu einer Partie, oder null, wenn sie nicht zählt: nicht gewertet, gegen
- * einen Menschen, nicht beendet, ohne Auswertung, schon gezählt, oder ohne Schätzung des
- * Gegners (zu wenige Züge). Die erste Partie braucht auch die Schätzung für den Leser.
+ * einen Menschen, nicht aus der Grundstellung, nicht beendet, ohne Auswertung, schon gezählt,
+ * oder ohne Schätzung des Gegners (zu wenige Züge). Die erste Partie braucht auch die Schätzung
+ * für den Leser.
  *
  * Beispiel: erste Partie, Engine schätzt den Leser auf 1400 → Wertung 1400 (unabhängig vom
  * Ergebnis); zweite Partie gegen eine Engine mit 1600 gewonnen → 1400 + 32 · (1 − 0,24) ≈ 1424.
@@ -96,6 +108,7 @@ export function wertungspunktFuer(
   if (!p.einstellung.gewertet || p.einstellung.gegner !== "engine" || ergebnis === null) {
     return null;
   }
+  if (!ausGrundstellung(p)) return null;
   if (punkte.some((punkt) => punkt.partieId === p.id)) return null;
   const staerke = staerkeDerPartie(eintrag);
   if (!staerke) return null;

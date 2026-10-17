@@ -13,6 +13,7 @@ import {
   mitPartie,
   mitWerten,
   partieAus,
+  setzeWertungZurueck,
   spielstandAus,
 } from "./partien";
 
@@ -184,5 +185,27 @@ describe("Lesen aus Rohdaten", () => {
     expect(stand.partien).toEqual([]);
     expect(stand.vorlieben.stufe).toBe(4);
     expect(stand.vorlieben.ruecknahmeErlaubt).toBe(true);
+  });
+});
+
+describe("Wertung zurücksetzen (0.2.41)", () => {
+  it("leert den Verlauf und macht alle Partien dauerhaft ungewertet", () => {
+    const stand = {
+      ...mitLaufender(legeAb(LEERER_SPIELSTAND, partie("alt")), partie("laufend")),
+      wertung: [
+        {
+          partieId: "alt",
+          zeit: "2026-10-17T08:00:00.000Z",
+          gegner: 1500,
+          ergebnis: 1 as const,
+          wertung: 1516,
+        },
+      ],
+    };
+    const neu = setzeWertungZurueck(stand);
+    expect(neu.wertung).toEqual([]);
+    expect(neu.laufend?.einstellung.gewertet).toBe(false);
+    expect(neu.partien.map((e) => e.partie.einstellung.gewertet)).toEqual([false]);
+    expect(spielstandAus(durchJson(neu)).partien[0]?.partie.einstellung.gewertet).toBe(false);
   });
 });

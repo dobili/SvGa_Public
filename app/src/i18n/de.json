@@ -2112,6 +2112,7 @@
   "uebung.falsch": "Das ist nicht der Zug des Buches. Versuch es noch einmal.",
   "uebung.weiter": "Richtig. Die Gegenseite hat geantwortet, du bist wieder am Zug.",
   "uebung.ohneErklaerung": "Die Erklärung zu dieser Übung folgt.",
+  "uebung.einzigerZug": "Nur dieser Zug führt zum Ziel: Jeder andere erste Zug ist laut Engine mindestens eine Bauerneinheit schlechter.",
   "uebung.einschaetzen": "Wie lief es?",
   "uebung.selbstRichtig": "Gelöst",
   "uebung.selbstTeils": "Teilweise",

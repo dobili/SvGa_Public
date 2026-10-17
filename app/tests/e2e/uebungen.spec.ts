@@ -40,6 +40,8 @@ test("Übung 1.40 auf dem Brett lösen: falscher Zug, Hinweise, richtiger Zug, E
   await feld(page, "c7").click();
   await expect(uebung).toContainText("Richtig!");
   await expect(page.getByTestId("uebung-erklaerung")).toContainText("Sc7+");
+  // Engine-Prüfung der Übungen (Fable): 1. Sc7+ ist der einzige gute Zug.
+  await expect(page.getByTestId("einziger-zug")).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/uebung-1.40.png", fullPage: true });
   // Mit Hinweis gelöst: Die Karte bleibt in Kasten 1, also morgen fällig, heute noch nicht.
   await uebung

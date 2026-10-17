@@ -19,6 +19,7 @@ import { t } from "../../i18n/sprache";
 import { ROLLENBUCHSTABE, stellungAusFen } from "../../schach/stellung";
 import { aufgabeZu } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/Brettbereich";
+import { EinzigerZug } from "../komponenten/EinzigerZug";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { useDaten } from "../komponenten/useDaten";
@@ -76,6 +77,7 @@ function Erklaerung({ uebung }: { uebung: UebungDaten }) {
       <p>
         <strong>{e.motiv}.</strong> {e.text}
       </p>
+      <EinzigerZug uebung={uebung.id} />
     </section>
   );
 }

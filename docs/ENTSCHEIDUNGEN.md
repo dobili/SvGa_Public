@@ -1729,3 +1729,16 @@ speicher/fortschritt.ts.
   bis zu einem Blatt mit mindestens acht Halbzügen, gekürzt auf 24 Halbzüge, ohne Doppelte;
   höchstens sechs je Runde. Falscher Zug oder „Zug zeigen“: goldener Pfeil, der Leser zieht nach,
   die Variante zählt als falsch. Warum-Fragen fehlen bis zu den freigegebenen Texten (W10).
+
+## Studien lösen und Zug erraten (Opus, 17.10.2026, Version 0.2.53)
+
+- `training/studientrainer.ts`: Hauptvariante (je Knoten die erste Fortsetzung) der Zugfolgen
+  aus den Abschnitten eines Kapitels (`abschnitt` beginnt mit der Kapitelnummer, also ohne
+  Übungen). Studien: Kapitel 10, ab 3 Halbzügen, Seite am Zug der Startstellung, Ablauf wie im
+  Repertoire-Trainer (Buchzug finden, Pfeil bei Fehler). Abweichung vom Pflichtenheft: Die App
+  antwortet mit dem Buchzug statt dem stärksten Engine-Zug; die „vier Prüfungen“ als Erinnerung
+  fehlen (kein erfundener Wortlaut). Rückfrage W11.
+- Zug erraten: Kapitel 11, ab 30 Halbzügen; Partie und Seite wählt der Leser (der Sieger steht
+  nicht in den Daten). Jeder eigene Zug wird geraten, dann der Partiezug gesetzt; gut geraten ab
+  der Hälfte. Ohne Drei-Minuten-Uhr und ohne Satz zum Abweichen. Rückfrage W12.
+- Der Platzhalter-Test „folgt mit einem Update“ prüft jetzt die Planbilanz.

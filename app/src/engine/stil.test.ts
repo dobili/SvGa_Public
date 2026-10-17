@@ -32,8 +32,9 @@ describe("Spielstil", () => {
     const kandidaten = [v(1, -0.3, "g8f6"), v(2, -0.2, "d8h4"), v(3, 0.5, "a7a6")];
     expect(stilwahl(ITALIENISCH, kandidaten, 2)).toBe("d8h4");
     expect(stilwahl(ITALIENISCH, kandidaten, -2)).toBe("g8f6");
-    // Toleranz bei Stil 1 nur 0,15: Dh4 0,3 dahinter bleibt außen vor.
-    expect(stilwahl(ITALIENISCH, [v(1, -0.3, "g8f6"), v(2, 0, "d8h4")], 1)).toBe("g8f6");
+    // Toleranz bei Stil 1 ist 0,3 (S13): Dh4 0,3 dahinter zählt mit, 0,4 dahinter nicht.
+    expect(stilwahl(ITALIENISCH, [v(1, -0.3, "g8f6"), v(2, 0, "d8h4")], 1)).toBe("d8h4");
+    expect(stilwahl(ITALIENISCH, [v(1, -0.3, "g8f6"), v(2, 0.1, "d8h4")], 1)).toBe("g8f6");
     expect(stilwahl(ITALIENISCH, [], 2)).toBeNull();
   });
 });

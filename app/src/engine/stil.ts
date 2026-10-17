@@ -4,11 +4,12 @@
  *
  * Rolle im Gesamtbild: Ein Regler von −2 (sehr defensiv) bis +2 (sehr aggressiv). Statt des einen
  * besten Zuges holt die Zugwahl (engine/zugwahl.ts) mehrere Kandidaten der Engine und wählt unter
- * denen, die höchstens 0,15 Bauerneinheiten je Reglerstufe hinter dem besten liegen, den Zug, der
+ * denen, die höchstens 0,3 Bauerneinheiten je Reglerstufe hinter dem besten liegen, den Zug, der
  * dem Stil am meisten entspricht. Aggressiv (Vorschlag des Autors): Zielfeld in der gegnerischen
  * Bretthälfte, im Viertel des gegnerischen Königs, ein Schlag oder ein Schach. Defensiv: Zielfeld
- * in der eigenen Hälfte, im Viertel des eigenen Königs, kein Schlag. Der Stil kostet also nie mehr
- * als eine kleine Ungenauigkeit; die Stärke der Stufe bleibt.
+ * in der eigenen Hälfte, im Viertel des eigenen Königs, kein Schlag. Toleranz 0,3 je Reglerstufe
+ * (Entscheidung des Autors zu S13, vorher 0,15): Der Stil wird spürbar, und ein sehr aggressiver
+ * oder sehr defensiver Gegner spielt etwa eine halbe Stufe schwächer; die App sagt das dazu.
  * Abhängigkeiten: chessops, engine/spielbewerter.ts (wertFuer), engine/uci.ts (Variante).
  */
 import { Chess } from "chessops/chess";
@@ -22,7 +23,7 @@ export const STIL_MIN = -2;
 export const STIL_MAX = 2;
 export const STIL_NEUTRAL = 0;
 /** Erlaubter Verlust je Reglerstufe in Bauerneinheiten. */
-export const STIL_TOLERANZ = 0.15;
+export const STIL_TOLERANZ = 0.3;
 /** So viele Kandidaten holt die Zugwahl bei einem Stil ungleich 0. */
 export const STIL_KANDIDATEN = 4;
 /** Das Brett in zwei Hälften und vier Viertel: Linie und Reihe unter 4 oder ab 4. */
@@ -85,7 +86,7 @@ export function stilwert(fen: string, uci: string, stil: number): number {
  * Wählt unter den Kandidaten der Engine (beste zuerst) den Zug nach dem Stil: unter allen, die
  * höchstens STIL_TOLERANZ · |Stil| hinter dem besten liegen, der mit dem höchsten Stilwert; bei
  * Gleichstand der bessere. Ausgabe: UCI oder null ohne Kandidaten.
- * Beispiel: Stil +2 (Toleranz 0,3), Kandidaten e4 (+0,3), Sf3 (+0,25), a3 (−0,2) → e4 oder Sf3,
+ * Beispiel: Stil +1 (Toleranz 0,3), Kandidaten e4 (+0,3), Sf3 (+0,25), a3 (−0,2) → e4 oder Sf3,
  * je nach Stilwert; a3 liegt zu weit zurück.
  */
 export function stilwahl(fen: string, varianten: readonly Variante[], stil: number): string | null {

@@ -1998,7 +1998,7 @@
   "spielen.eigene.fehlerarten": "Erlaubte Fehlerarten",
   "spielen.eigene.fehlerartenHinweis": "Wirken in Stufe 1 bis 4: Nur angehakte Arten spielt der Gegner als absichtlichen Fehler; ohne Haken macht er keine absichtlichen Fehler.",
   "spielen.stil": "Spielstil",
-  "spielen.stilHinweis": "Aggressiv: Unter gleich guten Zügen bevorzugt der Gegner Züge in deine Bretthälfte, ins Viertel deines Königs, Schläge und Schachs. Defensiv: Züge in die eigene Hälfte, zum eigenen König, keine Schläge. Der Stil kostet höchstens eine kleine Ungenauigkeit je Zug.",
+  "spielen.stilHinweis": "Aggressiv: Unter gleich guten Zügen bevorzugt der Gegner Züge in deine Bretthälfte, ins Viertel deines Königs, Schläge und Schachs. Defensiv: Züge in die eigene Hälfte, zum eigenen König, keine Schläge. Achtung: Ein Stil kann die Spielstärke des Gegners deutlich senken, bei „sehr aggressiv“ oder „sehr defensiv“ etwa um eine halbe Stufe, weil er bis zu 0,6 Bauern schlechtere Züge wählt.",
   "spielen.stil.sehrDefensiv": "sehr defensiv",
   "spielen.stil.defensiv": "defensiv",
   "spielen.stil.ausgeglichen": "ausgeglichen",

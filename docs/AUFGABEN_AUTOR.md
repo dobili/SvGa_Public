@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.54. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.55. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.53“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.55“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 W, U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,36 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.54“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.55“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.55 (etwa 15 Minuten, mit Engine; Nachlesen im Buch, Opus)
+
+Alle Rückfragen mit Buchbezug sind gegen den aktuellen Buchstand nachgelesen (je Rückfrage in
+Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist es umgesetzt.
+
+- [ ] N269. **Endspieltrainer, 9.23 und 9.41:** Training › Endspieltrainer: Abb. 9.23 (Turm auf
+      der 7. Reihe) kommt als Remisaufgabe für Weiß; 1. Txa7 hält. Abb. 9.41 (falscher Läufer)
+      kommt als Remisaufgabe für Schwarz: Bleibt der König in der Ecke, ist die Aufgabe nach zwölf
+      Zügen geschafft. Abb. 9.42 (Läufer gegen Springer): Jetzt hältst du mit Schwarz.
+- [ ] N270. **Übungen mit Zügen, die das Buch stützt (T1):** Übung 6 (Abb. 1.42) mit 4... Lb4+
+      lösen: „Richtig! Auch dieser Zug ist gleich gut.“ 4... Df6 und 4... Sxd4 gelten nicht mehr.
+      Übung 15 (Abb. 3.81) mit 4... Sf6 und Übung 83 (Abb. 12.5) mit 1. Te1: ebenfalls richtig.
+      Übung 11 und 39 nur noch mit den Zügen des Buches.
+- [ ] N271. **Notation mit englischen Buchstaben (U6):** Koordinaten › Zug aufschreiben: den Zug
+      mit N, B, R oder Q statt S, L, T, D schreiben: richtig, mit dem Hinweis „Im Buch stehen
+      deutsche Buchstaben (S, L, T, D)“.
+- [ ] N272. **Strukturerkenner (W6, T5):** Die Plan-Sätze zu Isolani, hängenden Bauern und
+      Doppelbauer lesen sich jetzt wie Kapitel 5 („aktiv spielen, möglichst keine Figuren tauschen“,
+      „zusammenhalten, nur mit konkreter Drohung vorziehen“, „Figuren behalten, Bauernendspiel
+      meiden“). Abb. 5.43 hat jetzt den Plan „Stellung öffnen“, 5.44 „Raum nutzen“, 11.70
+      „Vorposten besetzen“.
+- [ ] N273. **Studien (W11):** Über der Studie die aufklappbare Zeile „Die vier Prüfungen für
+      Studien (Kapitel 10)“ mit den vier Prüfungen in kurzen Worten.
+- [ ] N274. **Werkzeuge (C1, C2, C5):** Abb. 3.68, Faktorenbilanz: „Weiß: schlecht – der König
+      steht im Schach und hat nur einen Zug“, kein „Weiß liegt vorn bei Königssicherheit“ mehr.
+      Abb. 4.21, Warnsignale: nur „Bauer g2, einziger Verteidiger von f3 gegen Sxf3#“, kein e2 mehr.
+      Abb. 9.34, Motiv: „Dauerschach“. Startseite: „in Richtung Elo 2000“ statt „etwa 2000 Elo“.
 
 ### Neu in 0.2.54 (etwa 10 Minuten, mit Engine; Brillant am Prüfstand von chess.com, Fable)
 
@@ -184,10 +212,6 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
       Minderheitsangriff“; das Fazit lautet „Schwarz spielt am Damenflügel: Dort bildet die
       Mehrheit einen Freibauern.“ Abb. 5.32 (Carlsbad)
       sagt für Weiß weiter „Minderheitsangriff“.
-- [ ] N248. **Gleich gute Züge in Übungen (T1):** Übung 6 (Abb. 1.42) mit 4... Df6 statt 4... Sf6
-      lösen: „Richtig! Auch dieser Zug ist gleich gut. Die Erklärung zeigt den Weg des Buches.“
-      Ebenso Übung 11 (Abb. 2.151) mit 4... Dc7, Übung 15 (3.81) mit 4... Sf6 und Übung 39 (7.51)
-      mit 1. Sxf6+. Mit dem Zug des Buches steht weiter „Das ist die Lösung des Buches“.
 - [ ] N249. **Wiederholung in Taktik und „Falle oder Köder“ (U9):** Im Taktiktrainer eine Aufgabe
       mit „Lösung zeigen“ beenden. Im Bereich Training steht unter „Fällige Wiederholungen“ ein
       Termin für morgen. Am nächsten Tag steht dort „Taktiktrainer: 1 fällig“; der Knopf führt in
@@ -624,10 +648,24 @@ Regeln C1 und C2).
       zeigen; im Trainer hält dort Schwarz. Passt das zum Buch? **Empfehlung:** 9.23 und 9.41
       draußen lassen, bis du sie angesehen hast; 8.25 und 8.26 als Remis-Aufgaben lassen (die
       Schlüsselfelder lehren gerade, dass Weiß ohne sie nicht gewinnt).
+      **Nachgelesen im Buch (17.10.2026):** 9.23: Das Buch sagt nur, dass Weiß mit Txa7 den Bauern
+      zurückgewinnt (Schwarz hat vorher einen Bauern mehr), nicht dass Weiß gewinnt. Buch und
+      Engine (Remis) stimmen also überein; 9.23 ist jetzt eine Remisaufgabe für Weiß, und der beste
+      Zug der Engine ist 1. Txa7 wie im Buch. 8.25 und 8.26: Das Buch zeigt dort nur, wo die
+      Schlüsselfelder liegen, nicht dass Weiß sie erreicht; erst 8.27 und 8.28 zeigen das
+      Erreichen. Kein Befund, beide bleiben Remisaufgaben für Schwarz. 9.41: Das Buch sagt „remis“
+      (falscher Läufer); Stockfish ohne Endspieldatenbank zeigt etwa +1, bleibt beim Ausspielen
+      über 14 Zugpaare aber unter +1 (wie du es bei chess.com gesehen hast). Ist die Engine unklar,
+      gilt jetzt das Urteil des Buches; 9.41 ist eine Remisaufgabe für Schwarz. Schon umgesetzt in
+      0.2.55 (Nachtest N269), Widerspruch genügt.
 - [ ] X2. **Wer spielt:** Bei Gewinnaufgaben die gewinnende Seite. Bei Remisaufgaben die Seite,
       die halten muss: die mit weniger Material, bei gleichem Material die am Zug; eine Ausnahme
       ist Abb. 9.40 (Springer gegen Bauer: Schwarz muss den Bauern aufhalten). Ist die andere
       Seite am Zug, zieht die Engine zuerst. **Empfehlung:** so lassen.
+      **Nachgelesen im Buch (17.10.2026):** 9.40 bestätigt (kap09: „Schwarz am Zug hält remis“).
+      Neu: In 9.42 (Läufer gegen Springer, gleiches Material) hätte nach der Regel Weiß halten
+      müssen; das Buch nennt aber gerade den weißen Läufer „im Vorteil“. Jetzt hält Schwarz mit dem
+      Springer. Schon umgesetzt in 0.2.55, Widerspruch genügt.
 - [ ] X3. **Ziel erreicht oder verfehlt:** Erreicht bei Matt, bei Umwandlung mit weiter gewonnener
       Stellung („der Rest ist Technik“), bei Remis (Patt, Material, 50 Züge, Wiederholung) im
       Remisziel und nach zwölf gehaltenen eigenen Zügen. Verfehlt, wenn die Stellung laut Engine
@@ -644,6 +682,12 @@ Regeln C1 und C2).
       goldene Figur; Hinweis 3 der goldene Pfeil (der Zug der Engine). Die Merksätze sind Claudes
       Worte, kein Buchtext; sie sollen zur Lehre des Buches passen. **Empfehlung:** in der App
       lesen (N255) und Formulierungen, die nicht zu Kapitel 8 und 9 passen, mit Wortlaut melden.
+      **Nachgelesen im Buch (17.10.2026):** Die Merksätze passen zu Kapitel 8 und 9 (Opposition,
+      Schlüsselfelder, Läuferpaar, Bauernrennen, Philidor, Dame gegen Bauer, Turm hinter dem
+      Freibauern, Randbauer). Zwei waren unscharf und sind jetzt nach dem Buch formuliert: Zugzwang
+      („wer ziehen muss, verschlechtert mit jedem Zug seine Stellung“ statt „verliert“) und
+      verbundene Freibauern („der hintere deckt den vorderen; schlägt der König den hinteren, läuft
+      der vordere durch; erst den König heranführen“). Schon umgesetzt in 0.2.55.
 - [ ] X5. **Schwierigkeit:** Grundstufe je Thema (Dame 1, Quadrat 1, Turmmatt 2, Opposition 2,
       Bauernrennen 2, Randbauer 2, Läuferpaar 3, Schlüsselfelder 3, Durchbruch 3, Freibauer 3,
       Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
@@ -693,6 +737,10 @@ Regeln C1 und C2).
       Passt die Zahl 13?
       **Empfehlung:** 13 lassen. Das ist Speelmans verbreitete Grenze; 12 oder 14 verschieben nur
       wenige Grenzfälle, und die Regeln des Buches gehen ohnehin vor.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 8 sagt „Mit Damen ist es fast immer noch
+      Mittelspiel“, und Kapitel 9 spricht selbst vom „Damenendspiel“ (Abb. 9.34, Erkennungstabelle
+      „Dame gegen Dame“). Die Regel „auch mit Damen“ widerspricht dem Buch also nicht; die Zahl 13
+      steht nicht im Buch und bleibt als Zusatzregel gekennzeichnet. Empfehlung bestätigt.
 - [ ] S9. **Wertung nach Elo:** Die erste gewertete Partie setzt die Wertung auf die Schätzung der
       Engine für dich; jede weitere zählt wie eine Partie gegen einen Spieler mit der Schätzung der
       Engine in dieser Partie (ihrer tatsächlichen Stärke, nicht der Stufe), mit K = 32 in den
@@ -766,6 +814,15 @@ Regeln C1 und C2).
       Lesart eine Ausnahme, etwa „eine Seite entwickelt zählt erst nach dem ersten Figurentausch“)?
       **Empfehlung:** so lassen (siehe oben). Eine Ausnahme nur für 11.4 würde die Regel für alle
       anderen Partien unklarer machen.
+      **Nachgelesen im Buch (17.10.2026):** Das Glossar sagt: Das Mittelspiel beginnt, „sobald
+      beide Seiten entwickelt und rochiert haben“; ebenso Kapitel 3 („spätestens wenn beide Seiten
+      entwickelt und rochiert sind, also wenn das Mittelspiel beginnt“), Kapitel 6 und 12. In 11.4
+      hat Weiß noch nicht rochiert (erst 12. O-O-O), Schwarz ist kaum entwickelt: nach dem Buch
+      also Eröffnung. Deine Lesart vom 17.10. („eine Seite entwickelt“, Rochade spielt keine Rolle)
+      weicht davon ab. Ich ändere sie nicht ohne dich, weil du sie bewusst gewählt hast (Anfänger
+      lassen gern eine Figur zu Hause). **Neue Empfehlung:** für die Abbildungen des Buches die
+      Regel des Glossars (beide entwickelt und rochiert), für eigene Partien deine Lesart behalten;
+      oder einheitlich das Glossar. Sag, was dir lieber ist.
 
 - [ ] S18. **Geschätzte Spielstärke bleibt beim Verlust je Zug** (deine Partie: „etwa 2250“ für
       dich trotz 4. e3). Die Zahl kommt aus dem durchschnittlichen Verlust in Bauern je Zug, und
@@ -869,12 +926,25 @@ Regeln C1 und C2).
       **Empfehlung:** so lassen. Löcher, Richtung und Läufer als eigene Schritte kommen dazu, sobald
       die Daten je Aufgabe die Antworten dazu enthalten (Fable kann sie mit den Werkzeugen aus
       Kapitel 5 ziehen).
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 5 stützt den Verzicht auf Strukturnamen („Du
+      musst dir keine hundert Bauernstrukturen merken“). Die Leitfragen beginnen aber mit den
+      Feldern (Löcher), weil man sie sonst übersieht. **Empfehlung angepasst:** Löcher als ersten
+      Schritt einbauen, dann schwache Bauern, dann den Plan; das baue ich, wenn du zustimmst
+      (größerer Umbau der Aufgabe).
 - [ ] W6. **Die 19 Plan-Sätze** hat Claude geschrieben (Fable hatte nur die Schlüssel geliefert),
       zum Beispiel „Den Isolani blockieren: eine Figur, am besten einen Springer, direkt vor ihn
       stellen und ihn dann angreifen.“ oder „Die Bauernkette an ihrer Basis angreifen, mit einem
       Bauernhebel.“ Falsche Wahlmöglichkeiten kommen nur aus anderen Strukturfamilien, damit kein
       ebenfalls passender Plan als falsch gilt. **Empfehlung:** in der App lesen (N238) und
       Formulierungen, die nicht nach deinem Buch klingen, mit Wortlaut melden.
+      **Nachgelesen im Buch (17.10.2026):** Vier Sätze widersprachen Kapitel 5 und sind jetzt nach
+      dem Buch formuliert: Isolani aus Sicht des Besitzers („aktiv spielen, möglichst keine Figuren
+      tauschen“ statt „vorstoßen“), hängende Bauern aus Sicht des Besitzers („zusammenhalten, nur
+      mit konkreter Drohung vorziehen“), Doppelbauer des Besitzers („Figuren behalten, offene Linie
+      und Läuferpaar nutzen, Bauernendspiel meiden“ statt „auflösen“), hängende Bauern angreifen
+      („das Feld vor dem zurückbleibenden Bauern wird zum Loch“). Dazu kleinere: Isolani blockieren
+      mit „Figuren tauschen“, schlechter Läufer „gegen einen guten gegnerischen Läufer“, Luftloch
+      „nicht auf Verdacht“. Schon umgesetzt in 0.2.55 (Nachtest N272).
 - [ ] W7. **Rundenlänge acht, leichteste zuerst, Buchaufgaben vor Lichess** bei gleicher Stufe.
       **Empfehlung:** so lassen. Acht Aufgaben passen in eine kurze Pause, und der Leser trifft
       zuerst auf die Stellungen aus seinem Buch.
@@ -914,6 +984,11 @@ Regeln C1 und C2).
       und die Antwort aus dem Buch führt durch genau die Idee, die das Kapitel erklärt. Schon
       umgesetzt in 0.2.53, Widerspruch genügt. Für die Erinnerung bräuchte ich die vier Prüfungen
       als kurzen Satz von dir (oder die Freigabe, sie aus dem Kapitel zu übernehmen).
+      **Nachgelesen im Buch (17.10.2026):** Die vier Prüfungen stehen in Kapitel 10 am Anfang: Was
+      will der Gegner (oft ein Patt)? Jede Umwandlung prüfen, auch die Unterverwandlung. Am Ende
+      jeder Variante das Patt prüfen. Stille Züge ernst nehmen. Sie stehen jetzt in eigenen kurzen
+      Worten als aufklappbare Erinnerung über den Studien. Schon umgesetzt in 0.2.55 (Nachtest
+      N273).
 - [ ] W12. **Zug erraten (0.2.53):** Partien sind die Meisterpartien der Abschnitte von Kapitel 11
       (ab 30 Halbzügen, also ohne den London-Vorlauf und ohne Übungen). Du wählst Partie und Seite
       selbst, die App weiß nicht, wer gewonnen hat. Jeder eigene Zug wird geraten; danach steht der
@@ -951,15 +1026,27 @@ Regeln C1 und C2).
       aus den Abbildungen. Freigeben?
       **Empfehlung:** freigeben. Regel 1 betrifft die Abbildungen des Buches; die Sonderzüge sind
       Regelwissen aus Kapitel 0, und die kurzen Stellungen geben nichts als eigene Buchstellung aus.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 0 hat zu jedem Sonderzug eine Buchstellung:
+      0.12 kurze Rochade, 0.14 lange Rochade, 0.16/0.17 en passant, 0.19 Umwandlung. Die Begründung
+      „die Diagramme zeigen kaum en passant oder Umwandlung“ stimmt also nicht. **Empfehlung
+      angepasst:** zuerst die Buchstellungen nehmen, die eigenen Stellungen nur ergänzend (schwarze
+      Rochade, en passant für Schwarz, Umwandlung mit Schlag). Baue ich nach deiner Zustimmung.
 - [ ] U6. **Notation:** Ein fehlendes Schach- oder Mattzeichen zählt als richtig, mit dem Hinweis
       „Denk an das Schachzeichen“. Englische Buchstaben (N, B, R, Q) zählen als falsch. So lassen?
       **Empfehlung:** so lassen. Das Schachzeichen ist Schreibweise, nicht Schachverständnis;
       englische Buchstaben sind dagegen ein echter Fehler gegen die Notation des Buches.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 0 sagt selbst „Nf3 ist also dasselbe wie unser
+      Sf3“, und die Zusatzzeichen machen Zugfolgen nur „besser lesbar“. Englische Buchstaben gelten
+      jetzt als richtig, mit dem Hinweis „Im Buch stehen deutsche Buchstaben (S, L, T, D)“. Schon
+      umgesetzt in 0.2.55 (Nachtest N271), Widerspruch genügt.
 - [ ] U7. **Hängende Figur:** Eine Figur hängt, wenn der Gegner sie mit Gewinn schlagen kann
       (Abtauschrechnung aus Kapitel 1, auch gedeckte Figuren, etwa ein Turm, den ein Bauer
       angreift). Gabeln und Drohungen zählen nicht. Passt das?
       **Empfehlung:** so lassen. Das ist genau die Zählregel aus Kapitel 1; Gabeln und Drohungen übt
       der Taktiktrainer.
+      **Nachgelesen im Buch (17.10.2026):** Glossar: „Eine Figur hängt, wenn sie angegriffen und
+      nicht ausreichend gedeckt ist“; Kapitel 1 vergleicht dazu die Gesamtwerte. Empfehlung
+      bestätigt.
 - [ ] U8. **Rundenlängen:** Feld finden 16, Röntgen 5, alle anderen 8 Aufgaben. Passt das?
       **Empfehlung:** so lassen. Feld finden geht in Sekunden, Röntgen dauert je Aufgabe am
       längsten.
@@ -1013,9 +1100,15 @@ hat, mit Rückfrage:
       Engine gleich guten Zug findet, soll nicht „falsch“ hören; die Erklärung zeigt danach ohnehin
       die Lösung des Buches. Übung 2 ist in der App eine Denkaufgabe (Notation schreiben), dort
       ändern die Vorschläge nichts. Übung 83 so lassen, beide Züge sind gut.
-      **Schon umgesetzt in 0.2.47 (Nachtest N248): Die Vorschläge für die Übungen 6, 11, 15 und 39
-      gelten; die Rückmeldung sagt dann „Auch dieser Zug ist gleich gut“. Übung 2, 60, 66 und 83
-      unverändert. Widerspruch genügt.**
+      **Nachgelesen im Buch (17.10.2026):** Das Buch spricht gegen mehrere Engine-Vorschläge,
+      deshalb ist die Umsetzung aus 0.2.47 geändert. Übung 6: Das Buch kritisiert 4... Sxd4?! und
+      empfiehlt „einen Entwicklungszug, der selbst etwas angreift“; dazu passt nur 4... Lb4+ (Df6
+      wäre die verfrühte Dame). Übung 11: „Richtig ist 4... h5 oder 4... h6“; kein Zusatz. Übung
+      15: gesucht ist ein Zug „ohne weiteres Material zu nehmen“, 4... d5 nur „die einfachste
+      Antwort“: 4... Sf6 gilt, dxc3 nicht. Übung 39: „Auch 1. Sxf6+ gibt Schach, … lässt die Dame
+      allerdings stehen“; kein Zusatz. Übung 83: „ein ruhiger Zug wie 1. Dc2“, also ist Dc2 nur ein
+      Beispiel: 1. Te1 gilt jetzt auch. Schon umgesetzt in 0.2.55 (Nachtest N270), Widerspruch
+      genügt.
 - [ ] T2. **Menge der Zusatzaufgaben von Lichess** (gemeinfrei, CC0): 637 Taktikaufgaben (je
       Motiv und Stufe 8) und 120 Fallen-Aufgaben (je Stufe 12 Fallen und 12 Geschenke), dazu 37
       Taktik- und 12 Fallenaufgaben aus dem Buch. Genug, zu viel, oder lieber mehr für die Stufen
@@ -1035,6 +1128,9 @@ hat, mit Rückfrage:
       tappen; die Pipeline kann sie mit wenig Aufwand gleich ziehen (Fable).
       **Schon umgesetzt in 0.2.51 (Nachtest N263): jeder Schlag mit Fragezeichen in den Zugfolgen
       der Kapitel 2 und 3, den die Engine als Falle bestätigt. Widerspruch genügt.**
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 4: Eine Falle sieht aus wie Gewinn und kostet
+      durch „eine sofortige taktische Möglichkeit“, anders als ein Gambit mit dauerhafter
+      Kompensation. Empfehlung bestätigt: nur Schläge mit sofortiger Widerlegung.
 - [ ] T5. **Strukturerkenner:** 134 Aufgaben, davon 46 aus Kapitel 5 mit Struktur, Seite und
       Plan nach dem Unterabschnitt, in dem das Buch die Abbildung zeigt, und 88 aus anderen
       Kapiteln mit einer klaren Struktur (Isolani, hängende Bauern, Minderheitsangriff,
@@ -1043,6 +1139,12 @@ hat, mit Rückfrage:
       Trainer da ist, oder willst du die Tabelle vorher als Liste im Chat sehen?
       **Empfehlung:** in der App durchsehen. Der Trainer ist seit 0.2.45 da (N238); auffällige
       Abbildungen und Sätze einfach mit Nummer melden.
+      **Nachgelesen im Buch (17.10.2026):** Das Buch liefert die Zuordnung selbst (Strukturtabelle,
+      Tabelle der Schwächen, Skelettbilanzen mit Folgerung). Drei Pläne wichen ab und folgen jetzt
+      der Folgerung des Buches: 5.43 „Stellung öffnen“ (statt guten Läufer behalten), 5.44 „Raum
+      nutzen“ (statt Flügel der Kette), 11.70 „Vorposten besetzen“ (Springer nach e5; der
+      Doppelbauer ist gedeckt und kein Ziel). 5.17 und 5.22 passen mit den neuen Plan-Sätzen (W6).
+      Schon umgesetzt in 0.2.55 (Nachtest N272).
 
 ### C. Neue Regeln der Werkzeuge (plausibel entschieden)
 
@@ -1052,17 +1154,32 @@ hat, mit Rückfrage:
       „schlecht“ heißen?
       **Empfehlung:** „teils“ lassen. Ein Schach ist oft nur vorübergehend; „schlecht“ wäre der
       König erst, wenn er dauerhaft ungeschützt steht.
+      **Nachgelesen im Buch (17.10.2026):** Abb. 3.68: Das Buch sagt „Weiß ist schon verloren“, es
+      bleibt nur 8. Ke2, dann Lg4#. Dort war „Weiß liegt vorn bei Königssicherheit“ falsch. Jetzt
+      heißt ein König im Schach mit nur einem einzigen Zug „schlecht – der König steht im Schach
+      und hat nur einen Zug“; sonst bleibt es bei „teils“ (3.23 hat mehrere Abwehrzüge, das Buch
+      gibt dort keine Bilanz). Schon umgesetzt in 0.2.55, Widerspruch genügt.
 - [ ] C2. **W4 in 4.21** (C1.7): Mit der neuen Regel (einziger Verteidiger gegen Matt) meldet die
       App dort zusätzlich die Bauern e2 und g2 als einzige Verteidiger von f3 gegen Sxf3#.
       Schachlich richtig, aber nicht das, was das Buch nennt. So lassen?
       **Empfehlung:** so lassen. Es ist schachlich richtig, und der Leser lernt dabei, wer f3
       wirklich verteidigt.
+      **Nachgelesen im Buch (17.10.2026):** Die Rückfrage war falsch gestellt: Nach Sxf3+ verlässt
+      der Springer e5 die e-Linie, dann fesselt die Dame e7 den Bauern e2 an den König, genau wie
+      das Buch es für 4.22 erklärt („exd3 ist illegal“). e2 verteidigt f3 also nicht. Jetzt zählt
+      ein Verteidiger gegen ein Matt nur, wenn er nach dem Mattzug legal ziehen darf; in 4.21
+      bleibt nur „Bauer g2, einziger Verteidiger von f3 gegen Sxf3#“. Schon umgesetzt in 0.2.55.
 - [ ] C3. **Phase in 11.43** (C1.27): Nach der neuen Regel (Eröffnung, solange eine Seite noch zwei
       Leichtfiguren zu Hause hat) sagt die App bei Fischer–Petrosjan im 11. Zug „Eröffnung“; dein
       Steckbrief nennt „Mittelspiel bis Endspiel“. So lassen, oder soll die Regel zusätzlich
       ab einer Zugzahl (etwa 10) „Mittelspiel“ sagen?
       **Empfehlung:** so lassen, ohne Zugzahl. Du hast die Regel „ab Zug 15“ am 17.10. gestrichen;
       dieselbe Begründung gilt hier. 11.43 heißt weiter „Eröffnung“.
+      **Nachgelesen im Buch (17.10.2026):** Das Buch ist sich hier selbst uneins (Befund an dich):
+      Der Steckbrief der Partie sagt „Phase: Mittelspiel bis Endspiel“, und an 11.43 steht die
+      Skelettbilanz, das Werkzeug des Mittelspiels; nach dem Glossar („beide entwickelt und
+      rochiert“) wäre 11.43 dagegen Eröffnung (Schwarz hat nicht rochiert, mehrere Leichtfiguren zu
+      Hause). Hängt mit S17 zusammen.
 - [ ] C4. **Gegenschlag zählen** (C1.13): Bei einem Hebel zählt die App weiter auf dem Zielfeld,
       weil du in 6.3 („drei gegen drei“) und 6.5 so zählst; nur bei schon bestehender Spannung auf
       dem Feld des angegriffenen Bauern. Einverstanden?
@@ -1072,14 +1189,28 @@ hat, mit Rückfrage:
       Schachs im Turmendspiel 9.6 Dauerschach. Einverstanden?
       **Empfehlung:** so lassen. Sonst würde jede Schachserie im Turmendspiel als Dauerschach
       gemeldet.
+      **Nachgelesen im Buch (17.10.2026):** Glossar und Kapitel 0: Dauerschach heißt, „der König
+      entkommt den Schachs nicht“; eine Materialbedingung gibt es nicht. Abb. 9.34: Schwarz liegt
+      nur einen Bauern zurück, und das Buch nennt die Rettung „das Dauerschach“. Jetzt zählt auch
+      eine Schachfolge, die die Stellung wiederholt (der König entkommt nicht); die
+      Leichtfigur-Regel bleibt für Schachserien ohne Wiederholung. 9.34 heißt damit Dauerschach.
+      Schon umgesetzt in 0.2.55 (Nachtest N274).
 - [ ] C6. **Gabel** (C2.12): Claude verlangt, dass jedes genannte Ziel für sich gewinnbar ist
       (König, wertvoller als der Gabler oder ungedeckt), sonst wäre König plus gedeckter Läufer
       auch eine Gabel. Passt das zu deinem „Eine Gabel sollte Material gewinnen“?
       **Empfehlung:** so lassen. Das ist genau dein Satz „Eine Gabel sollte Material gewinnen“.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 7: „Material gewinnt die Gabel allerdings nur,
+      wenn mindestens ein Ziel ungedeckt oder mehr wert ist als der Springer.“ Das ist eine
+      notwendige Bedingung. Die Regel der App (jedes genannte Ziel für sich gewinnbar, König zählt
+      immer) ist strenger, aber folgerichtig: Der Gegner rettet das wertvollere Ziel, also muss das
+      andere fallen können. Ein Satz „Eine Gabel sollte Material gewinnen“ steht so nicht im Buch,
+      das war deine Formulierung bei C2.12. Empfehlung: so lassen.
 - [ ] C7. **Abb. 7.10** (C1.18): Die Zugfolge beginnt jetzt eine Stellung früher mit 1. Sf7+
       (der Springer kann nur von e5 kommen). Damit nennt „Motiv“ das Abzugsschach. Freigeben?
       **Empfehlung:** freigeben. Die Zugfolge ist legal und führt zur Abbildung, und der Springer
       kann nur von e5 kommen.
+      **Nachgelesen im Buch (17.10.2026):** Die Bildunterschrift sagt „Abzugsschach nach 1. Sf7+“
+      mit dem Turm e1; das geht nur vom Feld e5 aus. Empfehlung bestätigt.
 - [ ] C8. **Berliner Endspiel aus schwarzer Sicht** (C1.9): Die App schlägt Schwarz dort einen
       Minderheitsangriff am Königsflügel vor; das Buch sagt dazu nichts. So lassen?
       **Empfehlung:** nicht mehr anzeigen. Im Berliner Endspiel spielt Schwarz in der Praxis mit dem
@@ -1097,6 +1228,9 @@ hat, mit Rückfrage:
       5... Sf6, wie in der Opernpartie). Einverstanden?
       **Empfehlung:** so lassen. Ohne den Abwehrzug wäre ein Damenschach mit −9 der „beste“
       Kandidat, was dem Leser offensichtlich falsch vorkäme.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 11: „6. Lc4 droht Matt auf f7“, und Schwarz
+      stellt mit 6... Sf6 den Springer dazwischen (es ist Zug 6..., nicht 5...). Empfehlung
+      bestätigt.
 
 ### K. Stufen der Engine (AP 11, Fable; plausibel entschieden)
 
@@ -1122,6 +1256,10 @@ hat, mit Rückfrage:
       „Drohung ignoriert“ erst ab einer Leichtfigur heißen?
       **Empfehlung:** so lassen. Das Buch zählt jede Drohung, Material zu gewinnen (Kapitel 1); auch
       ein verlorener Bauer ist ein Fehler, den der Leser sehen soll.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 1: Eine Drohung ist jeder Materialgewinn im
+      nächsten Zug, auch ein Bauer (Abb. 1.13). Empfehlung bestätigt. Kapitel 1 sagt aber auch,
+      dass man eine Drohung ignorieren darf, wenn die eigene größer ist; „Drohung ignoriert“ ist
+      ein Fehler nur, wenn die Engine den Verlust bestätigt (so ist es eingebaut).
 - [ ] K5. **Verpasstes Matt in der Auswertung:** Werte sind auf ±10 begrenzt (Matt = 10). Wer
       von „Matt in 2“ zu „+5“ wechselt, bekommt deshalb „??“ (Verlust 5). So lassen?
       **Empfehlung:** ändern. Wer von Matt in 2 zu +5 wechselt, steht weiter klar auf Gewinn; „??“
@@ -1147,6 +1285,10 @@ hat, mit Rückfrage:
       privaten Repository. Bitte kurz bestätigen.
       **Empfehlung:** Ein Wort genügt („Text“ oder „Stellung“); bei „Stellung“ die neue Fassung
       hochladen, Claude macht den Datenlauf.
+      **Nachgelesen im Buch (17.10.2026):** Im Buchstand vom 16.10. ist an der Stellung von 4.45
+      nichts geändert, wohl aber die Zeile F3 der Fallenprüfung „Damenfalle im Dänischen Gambit“
+      (jetzt: der Läufer b2 fesselt g7 relativ an den Turm h8, „teils“). Diese Zeile ist in der App
+      übernommen. Bitte nur bestätigen, dass du den Text meintest.
 
 ### E. Vor der Veröffentlichung der App (zurückgestellt, bis App und Website fertig sind)
 
@@ -1165,5 +1307,11 @@ hat, mit Rückfrage:
 - [ ] E3. **Buchbeschreibung** auf der Startseite: Entwurf bestätigen oder ersetzen.
       **Empfehlung:** denselben Text wie auf der Rückseite des Buches nehmen, dann stimmen Buch
       und Website überein.
+      **Nachgelesen im Buch (17.10.2026):** In den Buchquellen gibt es keinen Rückseitentext. Der
+      Untertitel lautet „Vom sicheren Einstieg zum strategischen Plan – Eröffnungen meistern,
+      Fallen durchschauen und souverän gewinnen“. Korrigiert: Die Startseite sagte „bis zu einer
+      Spielstärke von etwa 2000 Elo“; das Buch sagt „in Richtung Elo 2000“ und ausdrücklich „Allein
+      aus einem Buch heraus erreicht niemand 2000 Elo“. Jetzt: „bis zu den Ideen, die für den Weg
+      in Richtung Elo 2000 entscheidend sind“. Schon umgesetzt in 0.2.55.
 - [ ] E4. **Bezugsquellen:** ISBN und Shop-Links, sobald sie feststehen.
       **Empfehlung:** nachtragen, sobald die ISBN vergeben ist; bis dahin bleibt der Platz leer.

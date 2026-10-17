@@ -1771,3 +1771,32 @@ speicher/fortschritt.ts.
   nicht in den Daten). Jeder eigene Zug wird geraten, dann der Partiezug gesetzt; gut geraten ab
   der Hälfte. Ohne Drei-Minuten-Uhr und ohne Satz zum Abweichen. Rückfrage W12.
 - Der Platzhalter-Test „folgt mit einem Update“ prüft jetzt die Planbilanz.
+
+## Nachlesen im Buch zu allen Rückfragen (Opus, 17.10.2026, Version 0.2.55)
+
+Wunsch des Autors: Bei jedem offenen Punkt, der Buchinhalte berührt, im aktuellen Buchstand
+nachlesen, ob das Buch die Frage schon klärt (Anlass: Abb. 9.23, das Buch nennt dort keinen
+Gewinn). Ergebnis je Rückfrage in `docs/AUFGABEN_AUTOR.md` („Nachgelesen im Buch“). Umgesetzt:
+
+- **X1:** 9.23 Remisaufgabe für Weiß; 9.41 nach dem Urteil des Buches (`Kandidat.buch`, gilt nur,
+  wenn die Engine unklar bleibt), Remisaufgabe für Schwarz; Pipeline-Test lässt das zu.
+- **X2:** 9.42 hält Schwarz (das Buch nennt den weißen Läufer im Vorteil).
+- **X4:** Merksätze Zugzwang und verbundene Freibauern nach Kapitel 8.
+- **C1:** König im Schach mit genau einem legalen Zug heißt „schlecht“ (`imSchachEinzig`,
+  `Koenigsumgebung.abwehrzuege`); Abb. 3.68.
+- **C2:** Ein Verteidiger gegen ein Matt zählt nur, wenn er nach dem Mattzug legal ziehen darf
+  (`aufgaben.ts`, `wehrtMattAb`); Abb. 4.21: nur g2.
+- **C5:** Dauerschach auch bei Wiederholung der Stellung durch Schachs (`schach/dauerschach.ts`);
+  Abb. 9.34.
+- **T1:** Statt der Engine-Vorschläge nur vom Buch gestützte Alternativen
+  (`uebungsaufgabe.ts`, `zusaetzlichAkzeptiert`): Übung 6 Lb4+, 15 Sf6, 83 Te1.
+- **U6:** Englische Figurenbuchstaben richtig mit Hinweis (Kapitel 0: „Nf3 … dasselbe wie Sf3“).
+- **W6/T5:** Plan-Sätze nach Kapitel 5; 5.43, 5.44 und 11.70 nach der Skelettfolgerung
+  (`pipeline/trainer/struktur.py`, `BUCHFOLGERUNGEN`). Die Schlüssel `isolaniVorstossen`,
+  `haengendeVorstossen` und `doppelbauerAufloesen` heißen weiter so, meinen jetzt aber den Plan
+  des Besitzers nach dem Buch (aktiv spielen, zusammenhalten, Figuren behalten).
+- **W11:** Die vier Prüfungen aus Kapitel 10 als Erinnerung über den Studien.
+- **E3:** Startseite „in Richtung Elo 2000“ (Kapitel 0, Kapitel 12).
+- Bestätigt ohne Änderung: S8 (Kapitel 9 kennt das Damenendspiel), U7, T4, K4, C6, C7, C9.
+- Offen beim Autor: S17 und C3 (Glossar „beide entwickelt und rochiert“ gegen die gewählte
+  Lesart), W5 und U5 (Umbau nach Zustimmung), D1 (Bestätigung).

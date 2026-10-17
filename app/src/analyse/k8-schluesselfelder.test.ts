@@ -62,7 +62,7 @@ describe("k8-schluesselfelder", () => {
     expect(schluessel(stellungVon("8.29"), "white").fazit).toBe(
       "Weiß gewinnt mit e7 (Sonderfall 6. Reihe).",
     );
-    // Auch aus Sicht von Schwarz (0.2.65): Der Sonderfall gilt, nicht „die Opposition entscheidet“.
+    // Auch aus Sicht von Schwarz (0.2.66): Der Sonderfall gilt, nicht „die Opposition entscheidet“.
     expect(schluessel(stellungVon("8.29"), "black").fazit).toBe(
       "Weiß gewinnt mit e7 (Sonderfall 6. Reihe).",
     );

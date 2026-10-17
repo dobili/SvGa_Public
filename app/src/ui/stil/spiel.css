@@ -455,7 +455,7 @@
   padding: 0;
 }
 
-/* Gegnerwahl mit Porträts (0.2.64, Vorbild chess.com): Sprechblase oben, Gitter je Stufe. */
+/* Gegnerwahl mit Porträts (0.2.65, Vorbild chess.com): Sprechblase oben, Gitter je Stufe. */
 .gegner-sprechblase {
   display: flex;
   gap: var(--raster);

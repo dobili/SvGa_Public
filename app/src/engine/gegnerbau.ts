@@ -22,7 +22,7 @@ export interface Gegner {
   readonly fehlerarten: readonly Fehlerart[];
   /** Zugarten, die dieser Gegner nicht sieht (engine/blindeFlecken.ts), in jeder Stufe. */
   readonly blindeFlecken: readonly BlinderFleck[];
-  /** Spielstil von −2 (sehr defensiv) bis 2 (sehr aggressiv), engine/stil.ts (0.2.64). */
+  /** Spielstil von −2 (sehr defensiv) bis 2 (sehr aggressiv), engine/stil.ts (0.2.65). */
   readonly stil: number;
 }
 

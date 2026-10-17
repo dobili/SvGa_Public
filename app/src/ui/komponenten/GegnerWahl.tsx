@@ -1,11 +1,11 @@
 /**
  * Wahl des Gegners vor der Partie: Engine oder Mensch; bei der Engine ein vorgefertigter Gegner
- * (Porträtgitter je Stufe, 0.2.64), ein eigener Gegner oder eigene Stufen; dazu Spielhilfen und
+ * (Porträtgitter je Stufe, 0.2.65), ein eigener Gegner oder eigene Stufen; dazu Spielhilfen und
  * Wertung.
  *
  * Rolle im Gesamtbild: Wünsche des Autors vom 17.10.2026: beide Seiten selbst spielen (gegen
  * einen Menschen am selben Gerät), vorgefertigte Gegner mit Namen (engine/gegner.ts), Spielhilfen
- * vor der Partie zuschaltbar, ungewertete Partien. Seit 0.2.64 (Wunsch vom 18.10.2026, Vorbild
+ * vor der Partie zuschaltbar, ungewertete Partien. Seit 0.2.65 (Wunsch vom 18.10.2026, Vorbild
  * chess.com) stehen die 64 Gegner als Porträts in acht Gruppen je Stufe; der gewählte stellt sich
  * oben in einer Sprechblase vor. Die Auswahl eines Gegners setzt die drei Regler (StufenWahl.tsx);
  * wer danach einen Regler bewegt, spielt wieder mit eigenen Stufen (Kachel „Eigene Stufen“).

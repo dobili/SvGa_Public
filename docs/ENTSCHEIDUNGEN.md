@@ -2411,7 +2411,7 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
       **Empfehlung:** so lassen. Ein Balken während der Partie verrät, wer besser steht, und nimmt
       dir das eigene Urteil ab.
 
-## 64 Gegner mit Porträts (18.10.2026 nachts, Fable, Zweig `bots-galerie`, Version 0.2.64)
+## 64 Gegner mit Porträts (18.10.2026 nachts, Fable, Zweig `bots-galerie`, Version 0.2.65)
 
 Wunsch des Autors (18.10.2026, mit Bildschirmfoto der Bot-Auswahl von chess.com): acht Bots je
 Spielstärke mit verschiedenen Stärken und Schwächen, Auswahl mit Porträts, freie Bilder in
@@ -2447,15 +2447,23 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   „Eigene Stufen“ und die eigenen Gegner (Anfangsbuchstabe), dann je Stufe eine Gruppe mit
   Überschrift „Stufe 3 · Fortgeschrittener Anfänger“. Kacheln sind Radio-Knöpfe (Bildschirmleser:
   „Vorgefertigter Gegner“, Name). Die Stufen je Phase bleiben verborgen.
-- **Messung** (`npm run messen:stufen -- 1@lotta-1 …`, das Kürzel `N@kennung` nimmt seit 0.2.64
+- **Messung** (`npm run messen:stufen -- 1@lotta-1 …`, das Kürzel `N@kennung` nimmt seit 0.2.65
   das ganze Profil des Bots: Fehlerarten, Stil, blinde Flecken): alle 64 Bots gegen die reine
-  Stufe ihres Durchschnitts, sechs Partien je Paarung. Ergebnis folgt unten, sobald der Lauf
-  fertig ist (etwa zwei Stunden).
+  Stufe ihres Durchschnitts, sechs Partien je Paarung. **Erster Befund (Stufe 1 bis 4, 0.2.65):**
+  Bots mit kurzer Fehlerliste spielten stärker als ihre Stufe (Jonas 6:0, Pit 6:0, Timo 6:0,
+  zehn weitere 4,5:1,5 oder besser), weil die Fehlersuche mit vier erlaubten Arten in den meisten
+  Stellungen gar keinen Fehler fand und dann den besten Zug spielte. Deshalb seit 0.2.66
+  (`engine/fehlersuche.ts`, `mitFehlerliste`): Die Liste bestimmt die Art, nicht die Menge.
+  Passt keine erlaubte Art zur Stellung, bleibt eine Ungenauigkeit bis zu einem Bauern (im
+  Protokoll „ungenau“). Das gilt auch für eigene Gegner und die Abhakliste (Hinweistexte
+  angepasst); eine leere Liste heißt weiter „kein absichtlicher Fehler“. Die Messung der Stufen
+  1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
+  Abschnitts.
 
-## Werkzeugabweichungen aus der Textarbeit geprüft (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.65)
+## Werkzeugabweichungen aus der Textarbeit geprüft (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.66)
 
 Die Helfer der Textarbeit (AP 14, 15.10.2026, Stand 0.2.25) hatten zwölf Gruppen von
-Werkzeugausgaben notiert, die vom Buch abweichen (Liste bis 0.2.64 in FORTSCHRITT unter AP 14).
+Werkzeugausgaben notiert, die vom Buch abweichen (Liste bis 0.2.65 in FORTSCHRITT unter AP 14).
 Nach Regel 9 jetzt ohne Rückfrage geprüft: Jede genannte Abbildung durch das heutige Werkzeug
 gerechnet und mit dem Buch verglichen. Ergebnis: Von den zwölf Gruppen waren neun seit den
 Rückfragen C1 bis C9 und den Versionen 0.2.26 bis 0.2.62 schon erledigt, zwei fehlten noch und
@@ -2494,3 +2502,41 @@ Die Liste in FORTSCHRITT ist damit abgearbeitet und dort durch diesen Verweis er
   Repository.
 - Bekannt und vom Autor so gewollt: Name und Anschrift stehen damit dauerhaft im öffentlichen
   Repository.
+
+## U12: Leerfälle der Werkzeugkarten (18.10.2026 nachts, Opus, Zweig `leerfaelle`, Version 0.2.64)
+
+Nach Regel 9 umgesetzt, wie in U12 empfohlen (Wortlaut der Rückfrage unten). Umsetzung als
+Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `analyse/`
+(Fables Bereich) bleiben unverändert:
+
+- Ein Satz „{gilt} Hier nicht: {grund}“ statt leerer Befunde; ohne Markierungen und Legende.
+- Bedingungen: Angriffsregel und Zielbilanz nicht im Endspiel; Todsünden nur in der Eröffnung;
+  Faktorenbilanz in Eröffnung und Endspiel immer, im Mittelspiel nur, wenn ein Faktor vorn liegt;
+  die vier Skelett-Werkzeuge nur mit Bauern (Figuren zusätzlich mit Figuren); Ruhe nur mit Schach,
+  Schlag oder Drohung; Warnsignale Kapitel 7 nur mit Signal; Sechs Regeln nicht in der Eröffnung;
+  Opposition nur im Bauernendspiel, Schlüsselfelder und Quadrat dazu nur mit Bauern. Die Phase wie
+  im Werkzeug „Phase“ (Glossar an Buchstellungen, Lesart in Partien).
+- Abweichung von der Empfehlung: Die Zielbilanz ist auch im Mittelspiel voll, weil das Buch 14
+  Zielbilanzen an Mittelspiel-Stellungen hat (Kapitel 2); die Faktorenbilanz auch im Endspiel
+  (Abb. 3.24). Ein Test sorgt dafür, dass kein Leerfall eine Buchtabelle verdeckt.
+- Bei allen Werkzeugen fällt der Satz weg, der als Befund und als Fazit doppelt stand (gemessen an
+  allen Abbildungen: Planbilanz, Elementarmatt, Quadrat, Erkennungsbilder, Turmendspiel, LAP, Wo?,
+  Gegner?, Schlüsselfelder, Opposition, Faktorenbilanz). Das Turmendspiel hatte seine Leerfall-Sätze
+  schon. Nachtest N300.
+
+- [x] U12. **Leerfälle (D1, angenommen am 15.10.2026, noch offen):** Bestandsaufnahme vom
+      17.10.2026: 11 Werkzeuge haben schon einen Leerfall, aber jedes mit eigenem Text (und meist
+      mit dem Satz doppelt, als Befund und als Fazit). 15 Werkzeuge prüfen nicht, ob sie greifen,
+      und zeigen immer eine volle Karte: Angriffsregel, Todsünden, Zielbilanz, Faktorenbilanz,
+      die vier Skelett-Werkzeuge, Ruhe, Sechs Regeln, Opposition, Schlüsselfelder, Quadrat,
+      Turmendspiel (teils), Warnsignale Kapitel 7. Claude hat D1 über Nacht **nicht** umgesetzt,
+      weil es Ergebnisse ändert, die du gerade nachtestest (etwa die Faktorenbilanz an Abb. 3.6,
+      N166: Material gleich, also nur noch „Material gleich – hier hilft die Planfindung mehr“).
+      Vorschlag: einheitlich nur ein Satz (ohne leere Befunde), Bedingungen wie in der Tabelle
+      von damals; die Eröffnungsphase nach der Phasenregel der App (eine Seite hat noch zwei
+      Leichtfiguren zu Hause), nicht nach Zug 15. Soll Claude das so umsetzen, und gilt die
+      Faktorenbilanz dann auch in der Eröffnung bei gleichem Material (wie 3.6)?
+      **Empfehlung:** ja, umsetzen, aber erst nach deinem Nachtest N158 bis N174, damit du die
+      Werkzeuge noch einmal mit vollen Karten siehst. Die Faktorenbilanz auch in der Eröffnung
+      zeigen: Das Buch nutzt sie gerade bei den Gambits, also in der Eröffnung. (Abb. 3.6 gilt seit
+      0.2.44 übrigens als Mittelspiel.)

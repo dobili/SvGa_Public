@@ -9,7 +9,8 @@
  * (Entscheidung des Autors, 15.10.2026); er sagt auch, ob diese Seite am Zug ist. Unter „So
  * prüft die App“ stehen Erklärung und Regel des Werkzeugs und der Hinweis, dass die Werkzeuge
  * irren können und das Buch maßgeblich ist (SoPrueft.tsx). Darüber steht klein die Legende der
- * Markierungen am Brett (seit 0.2.30, Wunsch des Autors). Hat das Ergebnis einen Hinweis (etwa
+ * Markierungen am Brett (seit 0.2.30, Wunsch des Autors); im Leerfall (U12, ohne Befunde und
+ * Markierungen) fehlt sie. Hat das Ergebnis einen Hinweis (etwa
  * „Nur Kandidaten“ bei den Todsünden, seit 0.2.33), steht er hervorgehoben unter dem Namen.
  * Abhängigkeiten: analyse/werkzeug.ts, Waage.tsx, useSicht.ts, i18n, lucide-react.
  */
@@ -129,7 +130,7 @@ export function Werkzeugkarte({
         </button>
       )}
       <p className="fazit">{ergebnis.fazit}</p>
-      {legende && (
+      {legende && (ergebnis.befunde.length > 0 || ergebnis.markierungen.length > 0) && (
         <p className="legende">
           <strong>{t("werkzeug.legendeTitel")}</strong> {t(legende)}
         </p>

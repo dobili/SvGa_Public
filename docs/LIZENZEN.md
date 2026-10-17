@@ -44,7 +44,7 @@
 - **Lichess-Puzzle-Datenbank (seit 0.2.39, Trainerdaten):** https://database.lichess.org/#puzzles,
   CC0 1.0. In den Daten stehen je Aufgabe Stellung, Lösung, Kennung, Wertung und die Adresse der
   Partie; die Datenbank selbst (300 MB) bleibt lokal. Einzelheiten in `docs/TRAINERDATEN.md`.
-- **Porträts der Gegner (seit 0.2.64):** `app/public/gegner/<kennung>.svg`, erzeugt mit
+- **Porträts der Gegner (seit 0.2.65):** `app/public/gegner/<kennung>.svg`, erzeugt mit
   `app/skripte/erzeuge-gegnerbilder.mjs` aus DiceBear (https://dicebear.com, Code MIT, Florian
   Körner), Stil „Personas“ (https://personas.draftbit.com, Draftbit, CC BY 4.0). Je Gegner aus der
   Kennung erzeugt, mit Vorgaben für Frisur, Bart und Haarfarbe und einheitlichem Hintergrund. Die

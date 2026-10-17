@@ -137,6 +137,17 @@ describe("Fehlersuche", () => {
     }
   });
 
+  it("Fehlerliste (0.2.66): bestimmt die Art, nicht die Menge; leer heißt kein Fehler", async () => {
+    const { b } = bewerter();
+    const nurDrohung = await sucheFehlerzug(b, NACH_DH5, stufe(1), () => 0.5, ["drohungIgnoriert"]);
+    expect(nurDrohung?.fehler).toBe("drohungIgnoriert");
+    // Keine Art der Liste passt zur Stellung: eine Ungenauigkeit bis zu einem Bauern statt nichts.
+    const ausweich = await sucheFehlerzug(b, NACH_DH5, stufe(1), () => 0.5, ["pattGesetzt"]);
+    expect(ausweich?.fehler).toBe("ungenau");
+    expect(ausweich?.verlust).toBeLessThanOrEqual(1);
+    expect(await sucheFehlerzug(b, NACH_DH5, stufe(1), () => 0.5, [])).toBeNull();
+  });
+
   it("ohne Kandidaten in den Grenzen: null", async () => {
     const leer: Spielbewerter = {
       bewerte: () =>

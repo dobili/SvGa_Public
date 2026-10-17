@@ -24,7 +24,7 @@ describe("k5-richtung", () => {
     expect(e.markierungen).toContainEqual({ typ: "pfeil", farbe: "grau", von: "d4", nach: "e5" });
   });
 
-  it("Abb. 5.17: Schwarz spielt gegen den Isolani, Weiß spielt mit ihm (0.2.65)", () => {
+  it("Abb. 5.17: Schwarz spielt gegen den Isolani, Weiß spielt mit ihm (0.2.66)", () => {
     expect(richtung(stellungVon("5.17"), "black").fazit).toBe(
       "Schwarz spielt gegen den Isolani d4: Blockiere das Feld davor (d5) und greife ihn mit Figuren an.",
     );
@@ -99,7 +99,7 @@ describe("k5-richtung", () => {
 
   it("Abb. 11.43, Schwarz: Ein einzelner Bauer (a6) ist kein Minderheitsangriff", () => {
     expect(zeilen("11.43", "black")).toContain("Minderheit am Damenflügel (1 gegen 2)");
-    // Seit 0.2.65 gilt für den Besitzer des Isolani d5 der Plan des Buches (Petrosjan hätte
+    // Seit 0.2.66 gilt für den Besitzer des Isolani d5 der Plan des Buches (Petrosjan hätte
     // Figuren behalten sollen; Fischer tauschte sie ab).
     expect(richtung(stellungVon("11.43"), "black").fazit).toMatch(/^Schwarz hat den Isolani d5/);
   });

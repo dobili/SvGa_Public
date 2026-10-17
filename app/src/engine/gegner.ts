@@ -1,6 +1,6 @@
 /**
  * Vorgefertigte Gegner („Bots“): Durchschnitt, Klasse, Suche, Gruppen je Stufe; dazu die eigenen
- * Gegner des Lesers. Die Liste der 64 Gegner selbst steht in engine/gegnerliste.ts (0.2.64).
+ * Gegner des Lesers. Die Liste der 64 Gegner selbst steht in engine/gegnerliste.ts (0.2.65).
  *
  * Rolle im Gesamtbild: Wunsch des Autors (17.10.2026, Rückfrage S5): Gegner mit Namen, die in
  * Eröffnung, Mittelspiel und Endspiel verschieden stark sind (Streuung höchstens zwei Stufen um

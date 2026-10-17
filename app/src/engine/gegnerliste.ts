@@ -6,7 +6,7 @@
  * einem Satz zur Persönlichkeit (i18n `gegner.<kennung>`). Jeder Gegner hat Stufen je Phase
  * (Streuung höchstens zwei um das Mittelspiel, Durchschnitt gerundet ist seine Stufe), erlaubte
  * Fehlerarten (nur in Stufe 1 bis 4 wirksam), blinde Flecken (engine/blindeFlecken.ts, in jeder
- * Stufe) und seit 0.2.64 einen Spielstil (engine/stil.ts, −2 sehr defensiv bis +2 sehr
+ * Stufe) und seit 0.2.65 einen Spielstil (engine/stil.ts, −2 sehr defensiv bis +2 sehr
  * aggressiv). Die Stufen je Phase zeigt die App nicht (Überraschung); die Funktionen dazu stehen
  * in engine/gegner.ts. Gemessen mit `npm run messen:stufen -- 3@nina-3` je Gegner.
  * Abhängigkeiten: engine/gegnerbau.ts (Typ und Helfer), engine/gegnerliste1.ts, gegnerliste2.ts.

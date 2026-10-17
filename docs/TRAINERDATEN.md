@@ -157,7 +157,7 @@ Pipeline im Skelett gefunden hat (isolierte, doppelte, rückständige Bauern, Fr
 Die Plan-Sätze selbst (Texte zu den Schlüsseln `vorpostenBesetzen`, `isolaniBlockieren`, …) gehören
 in die App (`i18n/de.json`).
 
-### Endspieltrainer (`endspiel.json`, Kapitel 8 und 9; Fable, 0.2.48)
+### Endspieltrainer (`endspiel.json`, Kapitel 8 und 9; Fable, 0.2.49)
 
 Erzeugt mit `python -m pipeline.trainer.endspiel` (etwa eine Minute). 78 Abbildungen aus
 Kapitel 8 und 9, die sich ausspielen lassen (Lehrbilder, die nur eine Regel zeigen, und

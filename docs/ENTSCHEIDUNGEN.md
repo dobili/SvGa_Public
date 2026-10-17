@@ -1553,7 +1553,7 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
-## AP 13: Endspieltrainer (17.10.2026, Fable, Zweig `endspieltrainer`, Version 0.2.48)
+## AP 13: Endspieltrainer (17.10.2026, Fable, Zweig `endspieltrainer`, Version 0.2.49)
 
 Auftrag des Autors: Trainer „endspiel“ (Kapitel 8 und 9) auf eigenem Zweig, parallel zu Opus
 (Repertoire, Zielbilanz, Faktorenbilanz, 0.2.47); unberührt blieben spiel/auswertung.ts,
@@ -1588,3 +1588,22 @@ speicher/fortschritt.ts.
   `training/endspiel.engine.test.ts` (echte Engine bestätigt fünf Stellungen),
   `pipeline/tests/test_trainer_daten.py` (Schema, Spielbarkeit, Wert passt zum Ziel), e2e in
   `trainer.spec.ts` (Mattführung Stufe 1, Merksatz, Abbrechen).
+
+## Zielbilanz-Übung, Faktorenbilanz- und Repertoire-Trainer (Opus, 17.10.2026, Version 0.2.48)
+
+- **Zielbilanz-Übung** (`training/zielbilanztrainer.ts`): Buchstellungen der Kapitel 2 und 3
+  mit Zugnummer 6 bis 20 und beiden Königen; ohne angegriffene Zentrumsbauern, weil dort im
+  Werkzeug erst die Engine entscheidet (C1.1). Lösung aus `schach/zielbilanz.ts`; ein Test
+  vergleicht sie mit allen Bilanztabellen des Buches, die als Aufgabe taugen (Befund 2.71
+  Zentrum Schwarz wie im Werkzeug). Richtig nur, wenn alle sechs Felder stimmen (Rückfrage W8).
+- **Faktorenbilanz-Trainer** (`training/faktorentrainer.ts`): Buchstellungen aus Kapitel 3 mit
+  Regeln, ohne Schach und ohne Matt oder Patt. Je Faktor „Weiß, gleich, Schwarz“ aus
+  `faktorwertungen` (Waage für Material und Zeit, Einschätzung gut/teils/schlecht für
+  Königssicherheit und Aktivität). Urteil des Buches und „annehmen oder ablehnen?“ fehlen noch
+  (Rückfrage W9); der Ablauftext des Trainers sagt nur, was er kann.
+- Gemeinsame Auswahlzeile `ui/trainer/Wahlzeile.tsx` mit „App: …“ nach der Antwort.
+- **Repertoire-Trainer** (`training/repertoiretrainer.ts`): Eröffnungen sind die Zugfolgen
+  (`beispiele`) von Kapitel 2, deren Abschnitt einen Steckbrief hat. Varianten sind alle Wege
+  bis zu einem Blatt mit mindestens acht Halbzügen, gekürzt auf 24 Halbzüge, ohne Doppelte;
+  höchstens sechs je Runde. Falscher Zug oder „Zug zeigen“: goldener Pfeil, der Leser zieht nach,
+  die Variante zählt als falsch. Warum-Fragen fehlen bis zu den freigegebenen Texten (W10).

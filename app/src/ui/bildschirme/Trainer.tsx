@@ -2,9 +2,10 @@
  * Bildschirm „Trainer“: Übungsart wählen und eine Runde spielen (AP 13).
  *
  * Rolle im Gesamtbild: Konzept 9.2 (starte, naechste, antworte, beende). Zähltrainer,
- * Schach-Röntgen-Trainer und „Koordinaten, Notation, Gangarten“ üben an den Buchstellungen;
+ * Schach-Röntgen-Trainer, „Koordinaten, Notation, Gangarten“, Zielbilanz-Übung und
+ * Faktorenbilanz-Trainer üben an den Buchstellungen;
  * Taktiktrainer, „Falle oder Köder“ und Strukturerkenner haben eigene Aufgaben aus den
- * Trainerdaten (ui/trainer/*Bereich.tsx). Die
+ * Trainerdaten, der Repertoire-Trainer die Zugfolgen aus Kapitel 2 (ui/trainer/*Bereich.tsx). Die
  * Aufgaben entstehen aus den Stellungen des Buches (training/buchstellungen.ts); eine Runde hat
  * je nach Übungsart 5 bis 16 Aufgaben und zählt am Ende als Durchgang im Fortschritt.
  * Abhängigkeiten: training/*, ui/trainer/*, Navigation, i18n.
@@ -12,10 +13,12 @@
 import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { ladeBuchstellungen, type Buchstellung } from "../../training/buchstellungen";
+import { faktorenrunde } from "../../training/faktorentrainer";
 import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentrainer";
 import { roentgenrunde } from "../../training/roentgentrainer";
 import type { TrainerKennung } from "../../training/trainer";
 import { haengerunde, zaehlrunde } from "../../training/zaehltrainer";
+import { zielbilanzrunde } from "../../training/zielbilanztrainer";
 import { ZUFALL } from "../../training/zufall";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { useDaten } from "../komponenten/useDaten";
@@ -28,19 +31,32 @@ import {
 import { Roentgenaufgabe } from "../trainer/Roentgentrainer";
 import { Rundenablauf, type Darstellung } from "../trainer/Rundenablauf";
 import { FallenBereich } from "../trainer/FallenBereich";
+import { RepertoireBereich } from "../trainer/RepertoireBereich";
 import { StrukturBereich } from "../trainer/StrukturBereich";
 import { EndspielBereich } from "../trainer/EndspielBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
+import { Zielbilanzaufgabe } from "../trainer/Zielbilanzaufgabe";
+import { Faktorenaufgabe } from "../trainer/Faktorenaufgabe";
 
 export type Uebungsart =
-  "bilanz" | "haengen" | "roentgen" | "felder" | "notieren" | "ausfuehren" | "gangarten";
+  | "bilanz"
+  | "haengen"
+  | "roentgen"
+  | "felder"
+  | "notieren"
+  | "ausfuehren"
+  | "gangarten"
+  | "zielbilanz"
+  | "faktoren";
 
 /** Die Übungsarten der spielbaren Trainer, in der Reihenfolge der Auswahl. */
 const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[]>>> = {
   zaehlen: ["bilanz", "haengen"],
   roentgen: ["roentgen"],
   koordinaten: ["felder", "notieren", "ausfuehren", "gangarten"],
+  zielbilanz: ["zielbilanz"],
+  faktorenbilanz: ["faktoren"],
 };
 
 /** Aufgaben je Runde: kurze Runden passen in eine Pause, „Feld finden“ geht schnell. */
@@ -52,6 +68,8 @@ const ANZAHL: Readonly<Record<Uebungsart, number>> = {
   notieren: 8,
   ausfuehren: 8,
   gangarten: 8,
+  zielbilanz: 5,
+  faktoren: 5,
 };
 
 /** Erzeugt die Aufgaben einer Runde, jede schon mit ihrer Darstellung. */
@@ -83,6 +101,14 @@ function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstell
     case "gangarten":
       return gangartrunde(stellungen, n, ZUFALL).map((a) => (r) => (
         <Gangartaufgabe aufgabe={a} runde={r} />
+      ));
+    case "zielbilanz":
+      return zielbilanzrunde(stellungen, n, ZUFALL).map((a) => (r) => (
+        <Zielbilanzaufgabe aufgabe={a} runde={r} />
+      ));
+    case "faktoren":
+      return faktorenrunde(stellungen, n, ZUFALL).map((a) => (r) => (
+        <Faktorenaufgabe aufgabe={a} runde={r} />
       ));
   }
 }
@@ -148,6 +174,7 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   falle: () => <FallenBereich />,
   struktur: () => <StrukturBereich />,
   endspiel: () => <EndspielBereich />,
+  repertoire: () => <RepertoireBereich />,
 };
 
 export function Trainer({ kennung }: { kennung: TrainerKennung }) {

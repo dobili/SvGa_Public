@@ -207,3 +207,70 @@ test("Endspieltrainer: Mattführung Stufe 1, Merksatz als Hinweis, Aufgabe abbre
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 6");
 });
+
+test("Zielbilanz-Übung: Tabelle für beide Seiten ausfüllen, App zeigt ihre Wertung", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "zielbilanz");
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 5");
+  const pruefen = runde.getByRole("button", { name: "Prüfen" });
+  await expect(pruefen).toBeDisabled();
+  for (const seite of ["white", "black"]) {
+    const tabelle = page.getByTestId(`zielbilanz-${seite}`);
+    for (const ziel of ["Zentrum", "Entwicklung", "Königssicherheit"]) {
+      await tabelle
+        .getByRole("group", { name: ziel })
+        .getByRole("button", { name: "ja", exact: true })
+        .click();
+    }
+  }
+  await pruefen.click();
+  await expect(runde.getByText(/^App: (ja|teils|nein)$/)).toHaveCount(6);
+  await expect(page.getByTestId("zielbilanz-begruendung")).toBeVisible();
+  await page.screenshot({ path: "test-results/bilder/trainer-zielbilanz.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 5");
+});
+
+test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "faktorenbilanz");
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 5");
+  for (const faktor of ["Material", "Zeit", "Königssicherheit", "Aktivität"]) {
+    await runde
+      .getByRole("group", { name: faktor, exact: true })
+      .getByRole("button", { name: "gleich" })
+      .click();
+  }
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(runde.getByText(/^App: (Weiß|gleich|Schwarz)$/)).toHaveCount(4);
+  await expect(page.getByTestId("faktoren-bilanz")).toBeVisible();
+  await page.screenshot({ path: "test-results/bilder/trainer-faktoren.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 5");
+});
+
+test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "repertoire");
+  const wahl = page.getByTestId("repertoire-wahl");
+  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
+  await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
+  await wahl.getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von");
+  await feld(page, "e2").click();
+  await feld(page, "e4").click();
+  await expect(page.getByTestId("repertoire-zuege")).toHaveText("1. e4 e5");
+  // Falsch: 2. d4 statt 2. Sf3.
+  await feld(page, "d2").click();
+  await feld(page, "d4").click();
+  await expect(runde).toContainText("Nicht der Zug des Buches");
+  await feld(page, "g1").click();
+  await feld(page, "f3").click();
+  await expect(page.getByTestId("repertoire-zuege")).toHaveText("1. e4 e5 2. Sf3 Sc6");
+  await page.screenshot({ path: "test-results/bilder/trainer-repertoire.png", fullPage: true });
+});

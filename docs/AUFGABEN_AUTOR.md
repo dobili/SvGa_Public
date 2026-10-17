@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.48. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.49. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.48“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.49“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 W, U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,34 +21,54 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.48“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.49“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.48 (etwa 25 Minuten, mit Engine; Endspieltrainer, Fable)
+### Neu in 0.2.49 (etwa 25 Minuten, mit Engine; Endspieltrainer, Fable)
 
-- [ ] N250. **Endspieltrainer öffnen:** Training › Endspieltrainer (Kapitel 8 und 9) › „Trainieren“.
+- [ ] N253. **Endspieltrainer öffnen:** Training › Endspieltrainer (Kapitel 8 und 9) › „Trainieren“.
       Auswahl „Was üben?“: Alles gemischt (78), Mattführung, Bauernendspiele, Turmendspiele, Dame
       gegen Bauer, Leichtfiguren, je mit Anzahl; Schwierigkeit alle oder 1 bis 5; „Runde
       starten“. Eine Runde hat sechs Stellungen, leichteste zuerst.
-- [ ] N251. **Mattführung gewinnen:** Mattführung, Stufe 1, Runde starten: Dame gegen König (Abb.
+- [ ] N254. **Mattführung gewinnen:** Mattführung, Stufe 1, Runde starten: Dame gegen König (Abb.
       8.4, 8.55 oder 8.56). Oben „Weiß: Gewinne diese Stellung gegen die Engine.“, unten „Aus dem
       Buch: Abb. … · Matt mit der Dame · Stufe 1 · Matt in höchstens N Zügen“. Du ziehst, die
       Engine antwortet in voller Stärke (Status „Die Engine denkt“ / „Du bist am Zug“). Nach dem
       Matt: „Richtig! Matt! Ziel erreicht.“ und „Weiter“. Setzt du patt: „Falsch. Remis. Der
       Gewinn ist verfehlt.“
-- [ ] N252. **Hilfen und Kippen:** In einer Bauernendspiel-Aufgabe (etwa Abb. 8.23,
+- [ ] N255. **Hilfen und Kippen:** In einer Bauernendspiel-Aufgabe (etwa Abb. 8.23,
       Fernopposition) „Hinweis 1“: der Merksatz zum Thema („Merksatz: Opposition: …“, dazu ein
       Stichwort wie „Stichwort: Fernopposition.“); „Hinweis 2“: die goldene Figur, die ziehen
       soll; „Hinweis 3“: der goldene Pfeil mit dem Zug der Engine. Mit Hilfe zählt die Aufgabe
       nicht als richtig. Spiele absichtlich einen schlechten Königszug: „Falsch. Der Gewinn ist
       weg: Die Stellung ist laut Engine gekippt. Gehalten hätte Kf3.“ Bitte alle Merksätze
       kritisch lesen (Rückfrage X4); sie sind in Claudes Worten.
-- [ ] N253. **Remis halten:** Turmendspiele, Stufe 4 oder 5: Philidor (Abb. 9.3, du spielst
+- [ ] N256. **Remis halten:** Turmendspiele, Stufe 4 oder 5: Philidor (Abb. 9.3, du spielst
       Schwarz, das Brett ist gedreht, die Engine zieht zuerst) oder Vancura (9.15). Oben
       „Schwarz: Halte das Remis gegen die Engine.“ Hältst du zwölf eigene Züge durch oder endet
       die Partie remis: „Richtig! Zwölf Züge gehalten …“ bzw. „Remis. Ziel erreicht.“ Verlierst
       du den Faden: „Die Stellung ist laut Engine gekippt. Gehalten hätte …“. „Aufgabe abbrechen“
       beendet eine Aufgabe als falsch und nennt den besten Zug.
+
+### Neu in 0.2.48 (etwa 15 Minuten; drei neue Trainer, Opus)
+
+- [ ] N250. **Zielbilanz-Übung:** Training › „Zielbilanz-Übung“ › Trainieren: Brett mit einer
+      Eröffnungsstellung aus Kapitel 2 oder 3, darunter für Weiß und Schwarz je drei Zeilen
+      (Zentrum, Entwicklung, Königssicherheit) mit „ja, teils, nein“. „Prüfen“ geht erst, wenn
+      alle sechs gewählt sind. Danach steht neben jeder Zeile „App: …“ (grün, wenn deine Wahl
+      stimmt, sonst rot) und darunter die Begründung wie im Werkzeug „Zielbilanz“. Fünf Aufgaben
+      je Runde. Stimmen die Wertungen mit dem, was du im Buch lehrst?
+- [ ] N251. **Faktorenbilanz-Trainer:** Training › „Faktorenbilanz-Trainer“ › Trainieren:
+      Stellung aus Kapitel 3, je Faktor (Material, Zeit, Königssicherheit, Aktivität) „Weiß,
+      gleich, Schwarz“. Nach „Prüfen“ je Zeile „App: …“ und darunter die ganze Faktorenbilanz mit
+      Haltbarkeit und Fazit wie im Werkzeug. Rückfrage dazu: W9.
+- [ ] N252. **Repertoire-Trainer:** Training › „Repertoire-Trainer“ › Trainieren: Eröffnung
+      wählen (die Abschnitte von Kapitel 2 mit Steckbrief, etwa „Die Spanische Partie (Ruy
+      Lopez)“) und „Du spielst Weiß/Schwarz“. Du ziehst deine Züge, die App antwortet aus dem Buch;
+      unter dem Brett steht die Zugfolge („1. e4 e5 2. Sf3 Sc6“). Ein falscher Zug: „Nicht der Zug
+      des Buches“ und ein goldener Pfeil, den du nachziehst. Als Schwarz steht der erste weiße Zug
+      schon da und das Brett ist gedreht. Jede Variante des Buches (ab acht Halbzügen, höchstens
+      zwölf Züge je Seite) ist eine Aufgabe, höchstens sechs je Runde. Rückfrage dazu: W10.
 
 ### Neu in 0.2.47 (etwa 15 Minuten, mit Engine; Claudes Empfehlungen schon umgesetzt, Opus)
 
@@ -500,7 +520,7 @@ Regeln C1 und C2).
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
 
-### X. Endspieltrainer (Fable, 0.2.48; plausibel entschieden, bitte prüfen)
+### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 
 - [ ] X1. **Stellungen:** 78 Abbildungen aus Kapitel 8 und 9, jede mit Stockfish geprüft (Tiefe
       18, einziger Zug in Tiefe 12). Gewinn ab +2,0 für den Leser, Remis bis ±0,8; alles
@@ -532,7 +552,7 @@ Regeln C1 und C2).
       und verbundener Freibauer, Mehrheit, Turm hinter dem Freibauern, 7. Reihe); Hinweis 2 die
       goldene Figur; Hinweis 3 der goldene Pfeil (der Zug der Engine). Die Merksätze sind Claudes
       Worte, kein Buchtext; sie sollen zur Lehre des Buches passen. **Empfehlung:** in der App
-      lesen (N252) und Formulierungen, die nicht zu Kapitel 8 und 9 passen, mit Wortlaut melden.
+      lesen (N255) und Formulierungen, die nicht zu Kapitel 8 und 9 passen, mit Wortlaut melden.
 - [ ] X5. **Schwierigkeit:** Grundstufe je Thema (Dame 1, Quadrat 1, Turmmatt 2, Opposition 2,
       Bauernrennen 2, Randbauer 2, Läuferpaar 3, Schlüsselfelder 3, Durchbruch 3, Freibauer 3,
       Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
@@ -739,6 +759,31 @@ Regeln C1 und C2).
 - [ ] W7. **Rundenlänge acht, leichteste zuerst, Buchaufgaben vor Lichess** bei gleicher Stufe.
       **Empfehlung:** so lassen. Acht Aufgaben passen in eine kurze Pause, und der Leser trifft
       zuerst auf die Stellungen aus seinem Buch.
+- [ ] W8. **Zielbilanz-Übung (0.2.48):** Stellungen aus Kapitel 2 und 3 ab Zug 6 bis Zug 20,
+      fünf je Runde. Stellungen, in denen ein Zentrumsbauer angegriffen ist, kommen nicht dran,
+      weil dort im Werkzeug erst die Engine entscheidet, ob er hängt (die Übung soll ohne Engine
+      laufen und kein strittiges „teils“ abfragen). Richtig ist eine Aufgabe nur, wenn alle sechs
+      Felder stimmen. So lassen?
+      **Empfehlung:** so lassen. Sechs Felder sind schnell ausgefüllt, und die App zeigt je Feld,
+      was stimmte; „teilweise richtig“ würde die Zählung der Runde unscharf machen.
+- [ ] W9. **Faktorenbilanz-Trainer (0.2.48):** Stellungen aus Kapitel 3 (ohne Schach und ohne
+      entschiedene Stellung), je Faktor „Weiß, gleich, Schwarz“. Königssicherheit und Aktivität
+      vergleicht die App über ihre Einschätzung je Seite (gut, teils, schlecht); bei gleicher
+      Einschätzung heißt es „gleich“. Noch nicht drin: das Urteil des Buches zu Buchstellungen und
+      die Frage „annehmen oder ablehnen?“ aus dem Pflichtenheft. Dafür bräuchte die App je Gambit
+      einen Satz, ob man annimmt oder ablehnt, und den kann nur das Buch liefern. Soll das kommen?
+      **Empfehlung:** ja, aber erst mit den vorbereiteten Texten (AP 14): Dort steht je Abbildung
+      ohnehin eine Einschätzung in eigenen Worten, die du freigibst. Bis dahin vergleicht der
+      Trainer nur mit der Rechnung der App.
+- [ ] W10. **Repertoire-Trainer (0.2.48):** Varianten sind alle Wege durch die Zugfolge einer
+      Eröffnung in Kapitel 2 mit mindestens acht Halbzügen, gekürzt auf zwölf Züge je Seite. Du
+      wählst die Seite selbst (das Buch sagt im Steckbrief, wer die Eröffnung wählt, aber man
+      übt auch die Gegenseite). Eine Variante gilt als richtig, wenn sie ohne Fehler und ohne
+      „Zug zeigen“ gelingt. Die Warum-Fragen an Schlüsselzügen aus dem Pflichtenheft fehlen noch:
+      Sie brauchen die vorbereiteten Texte (AP 14), die du noch freigeben musst. So lassen?
+      **Empfehlung:** so lassen und die Warum-Fragen nachrüsten, sobald die Texte zu Kapitel 2
+      freigegeben sind. Die Seite selbst zu wählen ist nützlich, weil man jede Eröffnung auch als
+      Gegner kennen sollte.
 
 ### U. Übungen und erste Trainer (Opus, 0.2.37; plausibel entschieden)
 

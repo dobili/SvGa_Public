@@ -2427,3 +2427,41 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
   Repository.
 - Bekannt und vom Autor so gewollt: Name und Anschrift stehen damit dauerhaft im öffentlichen
   Repository.
+
+## U12: Leerfälle der Werkzeugkarten (18.10.2026 nachts, Opus, Zweig `leerfaelle`)
+
+Nach Regel 9 umgesetzt, wie in U12 empfohlen (Wortlaut der Rückfrage unten). Umsetzung als
+Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `analyse/`
+(Fables Bereich) bleiben unverändert:
+
+- Ein Satz „{gilt} Hier nicht: {grund}“ statt leerer Befunde; ohne Markierungen und Legende.
+- Bedingungen: Angriffsregel und Zielbilanz nicht im Endspiel; Todsünden nur in der Eröffnung;
+  Faktorenbilanz in Eröffnung und Endspiel immer, im Mittelspiel nur, wenn ein Faktor vorn liegt;
+  die vier Skelett-Werkzeuge nur mit Bauern (Figuren zusätzlich mit Figuren); Ruhe nur mit Schach,
+  Schlag oder Drohung; Warnsignale Kapitel 7 nur mit Signal; Sechs Regeln nicht in der Eröffnung;
+  Opposition nur im Bauernendspiel, Schlüsselfelder und Quadrat dazu nur mit Bauern. Die Phase wie
+  im Werkzeug „Phase“ (Glossar an Buchstellungen, Lesart in Partien).
+- Abweichung von der Empfehlung: Die Zielbilanz ist auch im Mittelspiel voll, weil das Buch 14
+  Zielbilanzen an Mittelspiel-Stellungen hat (Kapitel 2); die Faktorenbilanz auch im Endspiel
+  (Abb. 3.24). Ein Test sorgt dafür, dass kein Leerfall eine Buchtabelle verdeckt.
+- Bei allen Werkzeugen fällt der Satz weg, der als Befund und als Fazit doppelt stand (gemessen an
+  allen Abbildungen: Planbilanz, Elementarmatt, Quadrat, Erkennungsbilder, Turmendspiel, LAP, Wo?,
+  Gegner?, Schlüsselfelder, Opposition, Faktorenbilanz). Das Turmendspiel hatte seine Leerfall-Sätze
+  schon. Nachtest N300.
+
+- [x] U12. **Leerfälle (D1, angenommen am 15.10.2026, noch offen):** Bestandsaufnahme vom
+      17.10.2026: 11 Werkzeuge haben schon einen Leerfall, aber jedes mit eigenem Text (und meist
+      mit dem Satz doppelt, als Befund und als Fazit). 15 Werkzeuge prüfen nicht, ob sie greifen,
+      und zeigen immer eine volle Karte: Angriffsregel, Todsünden, Zielbilanz, Faktorenbilanz,
+      die vier Skelett-Werkzeuge, Ruhe, Sechs Regeln, Opposition, Schlüsselfelder, Quadrat,
+      Turmendspiel (teils), Warnsignale Kapitel 7. Claude hat D1 über Nacht **nicht** umgesetzt,
+      weil es Ergebnisse ändert, die du gerade nachtestest (etwa die Faktorenbilanz an Abb. 3.6,
+      N166: Material gleich, also nur noch „Material gleich – hier hilft die Planfindung mehr“).
+      Vorschlag: einheitlich nur ein Satz (ohne leere Befunde), Bedingungen wie in der Tabelle
+      von damals; die Eröffnungsphase nach der Phasenregel der App (eine Seite hat noch zwei
+      Leichtfiguren zu Hause), nicht nach Zug 15. Soll Claude das so umsetzen, und gilt die
+      Faktorenbilanz dann auch in der Eröffnung bei gleichem Material (wie 3.6)?
+      **Empfehlung:** ja, umsetzen, aber erst nach deinem Nachtest N158 bis N174, damit du die
+      Werkzeuge noch einmal mit vollen Karten siehst. Die Faktorenbilanz auch in der Eröffnung
+      zeigen: Das Buch nutzt sie gerade bei den Gambits, also in der Eröffnung. (Abb. 3.6 gilt seit
+      0.2.44 übrigens als Mittelspiel.)

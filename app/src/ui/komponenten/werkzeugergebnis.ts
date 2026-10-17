@@ -12,6 +12,8 @@ import type { Bilanz, Fallencheck, Uebung } from "../../daten/generiert/kapitel"
 import type { Eroeffnungsindex } from "../../schach/eroeffnungsindex";
 import type { Farbe, Stellung } from "../../schach/stellung";
 import type { Verlauf } from "../../schach/todsuenden";
+import { phasenregel } from "../../schach/phase";
+import { mitLeerfall } from "../werkzeuge/leerfall";
 import type { Werkzeugwahl } from "./Werkzeugleiste";
 
 /**
@@ -79,5 +81,8 @@ export function werkzeugergebnis(
   if (wahl === "zaehlen")
     return zaehlfeld ? wende("k1-zaehlen", { ...eingabe, feld: zaehlfeld }) : null;
   if (wahl === null || wahl === "ziehen" || wahl === "engine") return null;
-  return wende(wahl, eingabe);
+  const ergebnis = wende(wahl, eingabe);
+  // Leerfälle (U12): Greift das Werkzeug hier nicht, steht nur ein Satz in der Karte.
+  const regel = phasenregel(dazu.buchstellung, dazu.verlauf);
+  return ergebnis ? mitLeerfall(ergebnis, { stellung, regel }) : null;
 }

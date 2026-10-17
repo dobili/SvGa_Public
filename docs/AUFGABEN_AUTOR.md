@@ -13,8 +13,8 @@ mit Bildschirmfoto.
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
 Einstellungen prüfen, dass „App-Version 0.2.63“ dasteht; sonst die App neu laden.
 
-Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (X, U,
-T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
+Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (X, T,
+C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
 mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ---
@@ -23,6 +23,19 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.63“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in Opus-Paket „Leerfälle“ (etwa 10 Minuten; U12, Opus)
+
+- [ ] N300. **Leerfälle der Werkzeuge (U12):** Greift ein Werkzeug in einer Stellung nicht, steht
+      in der Karte nur noch ein Satz, wann es gilt und warum hier nicht, ohne leere Befunde und
+      ohne Legende. Probe: Abb. 8.2 (Damen am Brett), Werkzeug „Opposition“: „Die Opposition gilt
+      im Bauernendspiel, wenn außer Königen und Bauern nichts mehr am Brett steht. Hier nicht: Es
+      stehen noch Figuren außer Königen und Bauern am Brett.“ Ebenso Schlüsselfelder und Quadrat.
+      Abb. 1.26, „Sechs Regeln“: „… Hier nicht: Es ist Eröffnung.“ Abb. 8.1, Angriffsregel und
+      Zielbilanz: „Hier nicht: Es ist Endspiel.“ Bei Planbilanz, Elementarmatt, Quadrat,
+      Erkennungsbildern, Turmendspiel, LAP, Wo?, Gegner? und Schlüsselfeldern steht der Satz nicht
+      mehr doppelt (als Befund und als Fazit). Die Zielbilanz bleibt im Mittelspiel voll (das Buch
+      nutzt sie dort, Kapitel 2), die Faktorenbilanz in Eröffnung und Endspiel (Abb. 3.24).
 
 ### Neu in 0.2.63 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
 
@@ -762,25 +775,6 @@ Regeln C1 und C2).
       Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
       erste Zug der einzige ist. Nicht an Lichess geeicht (dort gibt es keine ausspielbaren
       Endspiele). **Empfehlung:** so lassen und nach deinem Test nachjustieren.
-
-### U. Übungen und erste Trainer (Opus, 0.2.37; plausibel entschieden)
-
-- [ ] U12. **Leerfälle (D1, angenommen am 15.10.2026, noch offen):** Bestandsaufnahme vom
-      17.10.2026: 11 Werkzeuge haben schon einen Leerfall, aber jedes mit eigenem Text (und meist
-      mit dem Satz doppelt, als Befund und als Fazit). 15 Werkzeuge prüfen nicht, ob sie greifen,
-      und zeigen immer eine volle Karte: Angriffsregel, Todsünden, Zielbilanz, Faktorenbilanz,
-      die vier Skelett-Werkzeuge, Ruhe, Sechs Regeln, Opposition, Schlüsselfelder, Quadrat,
-      Turmendspiel (teils), Warnsignale Kapitel 7. Claude hat D1 über Nacht **nicht** umgesetzt,
-      weil es Ergebnisse ändert, die du gerade nachtestest (etwa die Faktorenbilanz an Abb. 3.6,
-      N166: Material gleich, also nur noch „Material gleich – hier hilft die Planfindung mehr“).
-      Vorschlag: einheitlich nur ein Satz (ohne leere Befunde), Bedingungen wie in der Tabelle
-      von damals; die Eröffnungsphase nach der Phasenregel der App (eine Seite hat noch zwei
-      Leichtfiguren zu Hause, bei Buchabbildungen nach dem Glossar), nicht nach Zug 15. Soll Claude das so umsetzen, und gilt die
-      Faktorenbilanz dann auch in der Eröffnung bei gleichem Material (wie 3.6)?
-      **Empfehlung:** ja, umsetzen, aber erst nach deinem Nachtest N158 bis N174, damit du die
-      Werkzeuge noch einmal mit vollen Karten siehst. Die Faktorenbilanz auch in der Eröffnung
-      zeigen: Das Buch nutzt sie gerade bei den Gambits, also in der Eröffnung. (Abb. 3.6 gilt seit
-      0.2.61 nach dem Glossar wieder als Eröffnung, Weiß hat noch nicht rochiert.)
 
 ### T. Trainerdaten für Taktiktrainer, Strukturerkenner und „Falle oder Köder“ (Fable; plausibel entschieden)
 

@@ -13,7 +13,7 @@
 import type { Color } from "chessops/types";
 import { t } from "../i18n/sprache";
 import type { Drohung } from "../schach/drohungen";
-import { phase } from "../schach/phase";
+import { LESART, phase, phasenregel, type Phasenregel } from "../schach/phase";
 import { gegner, type Stellung } from "../schach/stellung";
 import type { Verlauf } from "../schach/todsuenden";
 import { warnsignaleSieben } from "./k7-warnsignale";
@@ -72,15 +72,21 @@ function mitSeite(signale: Werkzeugergebnis, kennung: string, seite: string): st
 /**
  * Erfasst die Stellung in drei Schritten: letzter Zug und Drohungen, Warnsignale, Phase.
  *
- * Eingaben: Stellung, eigene Seite, Verlauf (für den letzten Zug). Ausgabe: drei Befunde und
+ * Eingaben: Stellung, eigene Seite, Verlauf (für den letzten Zug), Phasenregel (Glossar für
+ * Stellungen des Buches, S17). Ausgabe: drei Befunde und
  * die Werkzeuge für Schritt 2.
  * Beispiel: Abb. 12.1 (griechisches Geschenk): Warnsignal W3 (König ohne Luft, Turm f8), Phase
  * Mittelspiel.
  */
-export function erfassen(stellung: Stellung, eigen: Color, verlauf?: Verlauf): Werkzeugergebnis {
+export function erfassen(
+  stellung: Stellung,
+  eigen: Color,
+  verlauf?: Verlauf,
+  regel: Phasenregel = LESART,
+): Werkzeugergebnis {
   const p = profil(stellung);
   const signale = warnsignaleSieben(stellung, eigen);
-  const ph = phase(stellung, p.angriffskarte, p.drohungen);
+  const ph = phase(stellung, p.angriffskarte, p.drohungen, regel);
   const befunde: Befund[] = [
     {
       kennung: "zug",
@@ -129,5 +135,6 @@ export const k12Erfassen: Werkzeug = {
   erklaerung: "werkzeug.k12-erfassen.erklaerung",
   art: "E",
   braucht: ["stellung", "verlauf"],
-  berechne: ({ stellung, perspektive, verlauf }) => erfassen(stellung, perspektive, verlauf),
+  berechne: ({ stellung, perspektive, verlauf, buchstellung }) =>
+    erfassen(stellung, perspektive, verlauf, phasenregel(buchstellung, verlauf)),
 };

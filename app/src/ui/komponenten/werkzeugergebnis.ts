@@ -60,6 +60,7 @@ export function werkzeugergebnis(
     fortsetzung: readonly string[];
     uebung: Uebung | undefined;
     abschnitt: string | undefined;
+    buchstellung?: boolean;
   },
 ): Werkzeugergebnis | null {
   const eingabe = {
@@ -73,6 +74,7 @@ export function werkzeugergebnis(
     fortsetzung: dazu.fortsetzung,
     uebung: dazu.uebung,
     abschnitt: dazu.abschnitt,
+    buchstellung: dazu.buchstellung,
   };
   if (wahl === "zaehlen")
     return zaehlfeld ? wende("k1-zaehlen", { ...eingabe, feld: zaehlfeld }) : null;

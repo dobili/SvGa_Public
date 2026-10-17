@@ -102,6 +102,11 @@ export interface Werkzeugeingabe {
   readonly uebung?: Uebung;
   /** Anker des Buchabschnitts der Abbildung, etwa „sec:k11-morphy“ (für k11-phase). */
   readonly abschnitt?: string;
+  /**
+   * Die Stellung stammt aus dem Buch (Abbildung oder Buchlinie, ohne eigene Züge): Die Phase
+   * folgt dann dem Glossar, sonst der Lesart für eigene Partien (S17).
+   */
+  readonly buchstellung?: boolean;
 }
 
 /** Welche Eingaben ein Werkzeug braucht. */

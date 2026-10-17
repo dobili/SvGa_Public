@@ -20,6 +20,9 @@
  * „Endgame Preparation“, 1981), auch mit Damen am Brett, etwa im Damenendspiel. Eine Regel nach
  * der Zugzahl gibt es nicht (Entscheidung des Autors, 17.10.2026: der Wechsel folgt der
  * Stellung, nicht der Zugnummer).
+ * Zwei Regeln für Eröffnung und Mittelspiel (S17, Entscheidung des Autors, 17.10.2026): Stellungen
+ * des Buches (Abbildungen und Buchlinien) folgen dem Glossar, damit App und Buch übereinstimmen;
+ * eigene Partien folgen der Lesart vom 17.10. (eine Seite entwickelt oder Material ungleich).
  */
 import type { Color, Square } from "chessops/types";
 import type { Angriffskarte } from "./angriffskarte";
@@ -27,7 +30,9 @@ import { bauernprofil } from "./bauernprofil";
 import { bauernschwaechen } from "./bauernschwaechen";
 import type { Drohung } from "./drohungen";
 import { koenigsweg } from "./koenigsweg";
+import { hatRochiert } from "./rochade";
 import { FIGURENWERT, type Stellung } from "./stellung";
+import type { Verlauf } from "./todsuenden";
 import { ZENTRUM, zielbilanz, type Zielbilanz } from "./zielbilanz";
 
 /** Die drei Phasen der Denkroutine. */
@@ -43,6 +48,21 @@ export interface Endspielfragen {
   readonly ja: number;
 }
 
+/**
+ * Welche Regel Eröffnung und Mittelspiel trennt (S17): das Glossar für Stellungen des Buches
+ * (mit den Zügen bis zur Stellung, damit „rochiert haben“ auch für einen gejagten König gilt),
+ * die Lesart für eigene Partien. Das Endspiel bestimmen in beiden Fällen die vier Prüffragen.
+ */
+export type Phasenregel =
+  { readonly art: "lesart" } | { readonly art: "glossar"; readonly verlauf?: Verlauf };
+
+export const LESART: Phasenregel = { art: "lesart" };
+
+/** Die Regel für eine Stellung: Glossar für Stellungen des Buches, sonst die Lesart (S17). */
+export function phasenregel(buchstellung: boolean | undefined, verlauf?: Verlauf): Phasenregel {
+  return buchstellung ? { art: "glossar", verlauf } : LESART;
+}
+
 /** Zusatzregel, die nicht aus dem Buch stammt (0.2.41). */
 export type Zusatzregel = "wenigMaterial";
 
@@ -56,8 +76,16 @@ export type Phasengrund =
   | "beideEntwickelt"
   | "eineEntwickelt"
   | "materialUngleich"
+  | "glossarMittelspiel"
+  | "glossarEroeffnung"
   | "fragen"
   | "wenigMaterial";
+
+/** Wie weit eine Seite nach dem Glossar ist: entwickelt und rochiert. */
+export interface Glossarstand {
+  readonly entwickelt: boolean;
+  readonly rochiert: boolean;
+}
 
 /** Die Phase mit ihren Gründen. */
 export interface Phasenbefund {
@@ -65,6 +93,8 @@ export interface Phasenbefund {
   readonly grund: Phasengrund;
   /** Bei „eineEntwickelt“: die entwickelte Seite. */
   readonly entwickelt: Color | null;
+  /** Nach dem Glossar (S17): je Seite entwickelt und rochiert; bei der Lesart null. */
+  readonly glossar: Readonly<Record<Color, Glossarstand>> | null;
   /** Die Phase allein nach den Regeln des Buches; weicht nur mit einer Zusatzregel ab. */
   readonly buchphase: Phase;
   /** Die Zusatzregel, die die Phase gegenüber dem Buch geändert hat, sonst null. */
@@ -179,7 +209,10 @@ function endspielfragen(
  * Entwicklungsrückstand) oder das Figurenmaterial um mindestens eine Leichtfigur ungleich ist;
  * Eröffnung nur, solange beide Seiten noch zwei oder mehr Leichtfiguren zu Hause haben und das
  * Material gleich ist.
- * Eingaben: Stellung, Angriffskarte und Drohungen aus dem Profil.
+ * Für Stellungen des Buches gilt stattdessen das Glossar (S17, Regel „glossar“): „Das
+ * Mittelspiel beginnt, sobald beide Seiten entwickelt und rochiert haben“ (Anhang, Glossar).
+ * Eingaben: Stellung, Angriffskarte und Drohungen aus dem Profil, die Regel (ohne Angabe die
+ * Lesart für eigene Partien).
  * Ausgabe: Phase, Eröffnungsziele beider Seiten, Prüffragen, Zentrumsweg.
  * Beispiel: Abb. 8.1 (Damen getauscht, zwei Türme und Leichtfigur je Seite) → Endspiel;
  * Abb. 8.2 (Damen am Brett) → Mittelspiel; Abb. 12.1 (griechisches Geschenk, beide rochiert,
@@ -193,18 +226,73 @@ export function phase(
   stellung: Stellung,
   karte: Angriffskarte,
   drohungen: (farbe: Color) => readonly Drohung[] | null,
+  regel: Phasenregel = LESART,
 ): Phasenbefund {
   const ziele = {
     white: zielbilanz(stellung.brett, karte, "white", stellung.amZug),
     black: zielbilanz(stellung.brett, karte, "black", stellung.amZug),
   };
   const { fragen, zentrumsweg } = endspielfragen(stellung, karte, drohungen);
-  const vorEndspiel = fragen.ja >= UEBERWIEGEND ? null : mittelspielOderEroeffnung(stellung, ziele);
+  const glossar = regel.art === "glossar" ? glossarstand(stellung, ziele, regel.verlauf) : null;
+  const vorEndspiel =
+    fragen.ja >= UEBERWIEGEND
+      ? null
+      : glossar
+        ? nachGlossar(glossar)
+        : mittelspielOderEroeffnung(stellung, ziele);
   const buchphase: Phase = vorEndspiel ? vorEndspiel.phase : "endspiel";
   const { phase: ermittelt, zusatz } = mitZusatzregeln(buchphase, stellung);
   const grund: Phasengrund = zusatz ?? vorEndspiel?.grund ?? "fragen";
   const entwickelt = ermittelt === "mittelspiel" ? (vorEndspiel?.entwickelt ?? null) : null;
-  return { phase: ermittelt, grund, entwickelt, buchphase, zusatz, ziele, fragen, zentrumsweg };
+  return {
+    phase: ermittelt,
+    grund,
+    entwickelt,
+    glossar,
+    buchphase,
+    zusatz,
+    ziele,
+    fragen,
+    zentrumsweg,
+  };
+}
+
+/** Ist diese Seite entwickelt (höchstens eine Leichtfigur zu Hause, C2.18)? */
+function istEntwickelt(ziele: Readonly<Record<Color, Zielbilanz>>, farbe: Color): boolean {
+  return ziele[farbe].entwicklung.offen.length < ZU_HAUSE_EROEFFNUNG;
+}
+
+/** Je Seite: entwickelt (C2.18) und rochiert (auch früher im Verlauf, rochade.ts)? */
+function glossarstand(
+  stellung: Stellung,
+  ziele: Readonly<Record<Color, Zielbilanz>>,
+  verlauf: Verlauf | undefined,
+): Record<Color, Glossarstand> {
+  const stand = (farbe: Color): Glossarstand => ({
+    entwickelt: istEntwickelt(ziele, farbe),
+    rochiert: hatRochiert(stellung, farbe, verlauf),
+  });
+  return { white: stand("white"), black: stand("black") };
+}
+
+/**
+ * Eröffnung oder Mittelspiel nach dem Glossar (S17): Mittelspiel erst, wenn beide Seiten
+ * entwickelt sind und rochiert haben. Regel: Anhang, Glossar „Mittelspiel“; ebenso Kapitel 3 und 6.
+ * „Rochiert haben“ gilt auch für einen König, der danach gejagt wurde (rochade.ts).
+ * Beispiel: Abb. 11.4 (Weiß entwickelt, aber nicht rochiert; Schwarz mit Sb8 und Lf8 zu Hause) →
+ * Eröffnung; Abb. 12.1 (beide rochiert, Lc8 allein zu Hause) → Mittelspiel.
+ */
+function nachGlossar(stand: Readonly<Record<Color, Glossarstand>>): {
+  phase: Phase;
+  grund: Phasengrund;
+  entwickelt: Color | null;
+} {
+  const fertig = (["white", "black"] as const).every(
+    (farbe) => stand[farbe].entwickelt && stand[farbe].rochiert,
+  );
+  return fertig
+    ? { phase: "mittelspiel", grund: "glossarMittelspiel", entwickelt: null }
+    : { phase: "eroeffnung", grund: "glossarEroeffnung", entwickelt: null };
 }
 
 /** Eröffnung oder Mittelspiel mit Grund, wenn die Endspielfragen nicht überwiegend Ja ergeben. */
@@ -212,9 +300,7 @@ function mittelspielOderEroeffnung(
   stellung: Stellung,
   ziele: Readonly<Record<Color, Zielbilanz>>,
 ): { phase: Phase; grund: Phasengrund; entwickelt: Color | null } {
-  const entwickelte = (["white", "black"] as const).filter(
-    (farbe) => ziele[farbe].entwicklung.offen.length < ZU_HAUSE_EROEFFNUNG,
-  );
+  const entwickelte = (["white", "black"] as const).filter((farbe) => istEntwickelt(ziele, farbe));
   if (entwickelte.length === 2) {
     return { phase: "mittelspiel", grund: "beideEntwickelt", entwickelt: null };
   }

@@ -198,6 +198,11 @@ function aufRochadelinie(koenig: Square, farbe: Color, schritte: number): boolea
   return squareRank(koenig) === reihe && ROCHADELINIEN.has(squareFile(koenig));
 }
 
+/** Steht der König dieser Seite rochiert (am Rand der Grundreihe oder eine Reihe davor)? */
+export function koenigRochiert(brett: Board, farbe: Color): boolean {
+  return koenigspruefung(brett, farbe).rochiert;
+}
+
 /**
  * Königsprüfung einer Seite.
  *

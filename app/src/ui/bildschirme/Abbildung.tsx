@@ -288,6 +288,7 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
     sicht: sicht.farbe,
     naechsterZug: nachspielen.naechsterZug,
     abschnitt: hier?.abschnitt?.label ?? undefined,
+    buchstellung: nachspielen.eigene.zuege.length === 0,
     verlauf: nachspielen.verlauf,
     eroeffnungen,
     fallencheck: hier ? kapitel.fallenchecks.find((f) => f.stopp === hier.id) : undefined,

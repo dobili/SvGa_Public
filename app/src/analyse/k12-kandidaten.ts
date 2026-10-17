@@ -24,7 +24,7 @@ import {
   nullzug,
   type ErzwingendeZuege,
 } from "../schach/drohungen";
-import { phase } from "../schach/phase";
+import { LESART, phase, phasenregel, type Phasenregel } from "../schach/phase";
 import { abwehrzuege, besteMattabwehr, type Abwehrart } from "../schach/schachabwehr";
 import { gegner, type Stellung } from "../schach/stellung";
 import { besterKandidat, staerksteAntwort, type Antwort } from "./k12-antwort";
@@ -155,10 +155,11 @@ function gewoehnlicheKandidaten(
   stellung: Stellung,
   fuer: Chess,
   eigen: Color,
-  buchzug?: string,
+  buchzug: string | undefined,
+  regel: Phasenregel,
 ): { liste: Kandidat[]; phasenwerkzeug: string } {
   const p = profil(stellung);
-  const ph = phase(stellung, p.angriffskarte, p.drohungen);
+  const ph = phase(stellung, p.angriffskarte, p.drohungen, regel);
   const e = p.erzwingend();
   const zuege = e && e.farbe === eigen ? e : erzwingendeZuege(fuer);
   const liste = sammeln(zuege, fuer, stellung.regeln?.turn === eigen ? buchzug : undefined);
@@ -178,14 +179,19 @@ function gewoehnlicheKandidaten(
  * Sonderfälle: Ein Kandidat, der mit Matt beantwortet wird, ist der schlechteste (C1.28); ist
  * die Seite matt, gibt es keine Kandidaten.
  */
-export function kandidaten(stellung: Stellung, eigen: Color, buchzug?: string): Werkzeugergebnis {
+export function kandidaten(
+  stellung: Stellung,
+  eigen: Color,
+  buchzug?: string,
+  regel: Phasenregel = LESART,
+): Werkzeugergebnis {
   const { regeln } = stellung;
   if (!regeln) return ohneRegeln(eigen);
   const imSchach = regeln.isCheck() && regeln.turn === eigen;
   const fuer = regeln.turn === eigen ? regeln : nullzug(regeln, eigen);
   const { liste, phasenwerkzeug } = imSchach
     ? { liste: abwehrkandidaten(regeln, buchzug), phasenwerkzeug: "" }
-    : gewoehnlicheKandidaten(stellung, fuer, eigen, buchzug);
+    : gewoehnlicheKandidaten(stellung, fuer, eigen, buchzug, regel);
   const antworten = liste.map((k) => staerksteAntwort(fuer, k.san, eigen));
   const befunde = kandidatenBefunde({
     eigen,
@@ -216,5 +222,6 @@ export const k12Kandidaten: Werkzeug = {
   erklaerung: "werkzeug.k12-kandidaten.erklaerung",
   art: "E",
   braucht: ["stellung", "zug"],
-  berechne: ({ stellung, perspektive, zug }) => kandidaten(stellung, perspektive, zug),
+  berechne: ({ stellung, perspektive, zug, buchstellung, verlauf }) =>
+    kandidaten(stellung, perspektive, zug, phasenregel(buchstellung, verlauf)),
 };

@@ -13,7 +13,14 @@
  */
 import type { Square } from "chessops/types";
 import { t, type Textschluessel } from "../i18n/sprache";
-import { phase, type Phase, type Phasenbefund } from "../schach/phase";
+import {
+  LESART,
+  phase,
+  phasenregel,
+  type Phase,
+  type Phasenbefund,
+  type Phasenregel,
+} from "../schach/phase";
 import { phasensatz, zusatzsatz } from "./phasentext";
 import { feldname, type Stellung } from "../schach/stellung";
 import { profil } from "./stellungsprofil";
@@ -132,14 +139,18 @@ function partiebefund(abschnitt: string | undefined): Befund | null {
  * Bestimmt die Phase und nennt das Werkzeug, das sie verlangt.
  *
  * Warum: „Erst die Beobachtung, dann das Werkzeug, dann der Plan“ (Kapitel 11) und Schritt 1 der
- * Denkroutine. Eingaben: Stellung, Abschnittsanker der Abbildung (für die Beispielpartien); die
- * Sicht spielt keine Rolle (C1.27). Ausgabe: Phase mit Gründen, Werkzeuge, Thema und Werkzeug
- * der Partie. Beispiel: Abb. 8.1 → Endspiel, „sechs Endspielregeln (Kapitel 8)“; Abb. 12.1 →
+ * Denkroutine. Eingaben: Stellung, Abschnittsanker der Abbildung (für die Beispielpartien), die
+ * Phasenregel (Glossar für Stellungen des Buches, S17); die Sicht spielt keine Rolle (C1.27).
+ * Ausgabe: Phase mit Gründen, Werkzeuge, Thema und Werkzeug der Partie. Beispiel: Abb. 8.1 → Endspiel, „sechs Endspielregeln (Kapitel 8)“; Abb. 12.1 →
  * Mittelspiel, „Skelett-Röntgen (Kapitel 5), drei Planfragen (Kapitel 6)“.
  */
-export function werkzeugJePhase(stellung: Stellung, abschnitt?: string): Werkzeugergebnis {
+export function werkzeugJePhase(
+  stellung: Stellung,
+  abschnitt?: string,
+  regel: Phasenregel = LESART,
+): Werkzeugergebnis {
   const p = profil(stellung);
-  const befund = phase(stellung, p.angriffskarte, p.drohungen);
+  const befund = phase(stellung, p.angriffskarte, p.drohungen, regel);
   const befunde: Befund[] = [
     {
       kennung: "phase",
@@ -180,5 +191,6 @@ export const k11Phase: Werkzeug = {
   erklaerung: "werkzeug.k11-phase.erklaerung",
   art: "N",
   braucht: ["stellung"],
-  berechne: ({ stellung, abschnitt }) => werkzeugJePhase(stellung, abschnitt),
+  berechne: ({ stellung, abschnitt, buchstellung, verlauf }) =>
+    werkzeugJePhase(stellung, abschnitt, phasenregel(buchstellung, verlauf)),
 };

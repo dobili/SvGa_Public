@@ -4,13 +4,14 @@
  * Steckbriefen (C1.27) und die Tabellenzeile einer Beispielpartie.
  */
 import { describe, expect, it } from "vitest";
-import { stellungVon } from "../schach/buchabbildungen.testhilfe";
+import { stellungVon, verlaufBis } from "../schach/buchabbildungen.testhilfe";
 import { stellungAusFen } from "../schach/stellung";
 import { k11Phase, werkzeugJePhase } from "./k11-phase";
 
+/** Die Phase einer Abbildung, wie die App sie dort zeigt: nach dem Glossar (S17). */
 function phase(nummer: string, abschnitt?: string) {
   const s = stellungVon(nummer);
-  const e = werkzeugJePhase(s, abschnitt);
+  const e = werkzeugJePhase(s, abschnitt, { art: "glossar", verlauf: verlaufBis(nummer) });
   return {
     erste: e.befunde[0]?.zeilen[0] ?? "",
     zeilen: e.befunde[0]?.zeilen ?? [],
@@ -58,15 +59,16 @@ describe("k11-phase", () => {
   it("Abb. 1.26: Eröffnung, Entwicklung und Rochade stehen aus", () => {
     const p = phase("1.26");
     expect(p.erste).toBe(
-      "Eröffnung: Beide Seiten haben noch zwei oder mehr Leichtfiguren auf dem Startfeld, und das Figurenmaterial ist gleich.",
+      "Eröffnung: Nach dem Glossar beginnt das Mittelspiel erst, wenn beide Seiten entwickelt sind und rochiert haben. Noch offen: Weiß muss noch entwickeln und rochieren; Schwarz muss noch entwickeln und rochieren.",
     );
     expect(p.werkzeuge[0]).toMatch(/^Dein Repertoire \(Kapitel 2\)/);
   });
 
-  // C1.27 (Entscheidung des Autors, 16.10.2026): Die Phase gilt für beide Seiten gleich; ein König
-  // in der Mitte hält die Stellung nach der Entwicklung nicht mehr in der „Eröffnung“.
+  // C1.27 (Entscheidung des Autors, 16.10.2026): Die Phase gilt für beide Seiten gleich. Nach der
+  // Lesart für eigene Partien (ohne „buchstellung“) hält ein König in der Mitte die Stellung nach
+  // der Entwicklung nicht mehr in der „Eröffnung“.
   it.each(["11.28", "11.29", "11.30", "11.31", "11.41", "11.82", "11.84"])(
-    "Abb. %s (König nicht rochiert, Königsangriff): Mittelspiel, aus beiden Sichten",
+    "Lesart eigener Partien, Stellung von Abb. %s (König nicht rochiert): Mittelspiel, aus beiden Sichten",
     (nummer) => {
       const stellung = stellungVon(nummer);
       for (const perspektive of ["white", "black"] as const) {
@@ -97,15 +99,29 @@ describe("k11-phase", () => {
       ["11.10", "11.11", "11.12", "11.13", "11.14", "11.15", "11.99"],
       "Mittelspiel",
     ],
-    ["Lasker (Mittelspiel)", ["11.16", "11.17", "11.18", "11.19", "11.20", "11.21"], "Mittelspiel"],
-    ["Unzicker (Mittelspiel)", ["11.75", "11.78", "11.80", "11.82", "11.84"], "Mittelspiel"],
+    [
+      "Unzicker (Mittelspiel, Schwarz hat rochiert)",
+      ["11.75", "11.78", "11.80", "11.82", "11.84"],
+      "Mittelspiel",
+    ],
+    ["Karpow–Kortschnoi 11.41 (Schwarz hat rochiert)", ["11.41"], "Mittelspiel"],
     ["Capablanca (Endspiel)", ["11.85", "11.87", "11.89", "11.101"], "Endspiel"],
     ["Botwinnik (Endspiel)", ["11.91", "11.93", "11.95", "11.97"], "Endspiel"],
-    // 0.2.44: Abb. 11.4 (nach 9… b5, Weiß fertig entwickelt, 10. Sxb5 beginnt den Mattangriff) ist
-    // nach der Lesart „eine Seite entwickelt“ Mittelspiel; Befund an den Autor (S17).
-    ["Opernpartie (Eröffnung bis Mattangriff)", ["11.1", "11.2", "11.3"], "Eröffnung"],
-    ["Opernpartie, Beginn des Mattangriffs", ["11.4"], "Mittelspiel: Weiß ist entwickelt"],
-    ["Anderssen (Eröffnung bis Mattangriff)", ["11.22", "11.23", "11.24"], "Eröffnung"],
+    // S17 (Entscheidung des Autors, 17.10.2026): Stellungen des Buches folgen dem Glossar; die
+    // Opernpartie bleibt bis zum Mattangriff Eröffnung, ebenso Anderssen (König e8 bis zum Matt).
+    [
+      "Opernpartie (Eröffnung bis Mattangriff)",
+      ["11.1", "11.2", "11.3", "11.4", "11.9"],
+      "Eröffnung",
+    ],
+    ["Anderssen (Eröffnung bis Mattangriff)", ["11.22", "11.24", "11.28", "11.31"], "Eröffnung"],
+    // Befund an den Autor (S17): Weiß rochiert in Lasker–Thomas erst im Mattzug; nach dem Glossar
+    // ist die Partie bis dahin Eröffnung, der Steckbrief sagt „Mittelspiel“.
+    [
+      "Lasker (nach dem Glossar)",
+      ["11.16", "11.18", "11.21"],
+      "Eröffnung: .*Weiß muss noch rochieren\\.",
+    ],
   ] as const)("Steckbrief %s", (_partie, nummern, erwartet) => {
     for (const nummer of nummern)
       expect(phase(nummer).erste, nummer).toMatch(new RegExp(`^${erwartet}`));

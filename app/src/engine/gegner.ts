@@ -1,5 +1,6 @@
 /**
- * Vorgefertigte Gegner („Bots“): Name, Stufe je Phase, Durchschnitt und Klasse.
+ * Vorgefertigte Gegner („Bots“): Durchschnitt, Klasse, Suche, Gruppen je Stufe; dazu die eigenen
+ * Gegner des Lesers. Die Liste der 64 Gegner selbst steht in engine/gegnerliste.ts (0.2.65).
  *
  * Rolle im Gesamtbild: Wunsch des Autors (17.10.2026, Rückfrage S5): Gegner mit Namen, die in
  * Eröffnung, Mittelspiel und Endspiel verschieden stark sind (Streuung höchstens zwei Stufen um
@@ -11,144 +12,12 @@
  * (`unterAbhakliste`, Rest aus Rückfrage S7).
  * Abhängigkeiten: stufen.ts, blindeFlecken.ts, fehlerart.ts, schach/phase.ts, i18n.
  */
-import type { Textschluessel } from "../i18n/sprache";
 import type { BlinderFleck } from "./blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "./fehlerart";
 import type { Phase } from "../schach/phase";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
-
-export interface Gegner {
-  readonly kennung: string;
-  readonly name: string;
-  readonly beschreibung: Textschluessel;
-  readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
-  /** Erlaubte absichtliche Fehler (Stufe 1 bis 4); leer: keine (0.2.46, Persönlichkeit). */
-  readonly fehlerarten: readonly Fehlerart[];
-  /** Zugarten, die dieser Gegner nicht sieht (engine/blindeFlecken.ts), in jeder Stufe. */
-  readonly blindeFlecken: readonly BlinderFleck[];
-}
-
-/** Streuung um das Mittelspiel, höchstens zwei Stufen (Vorgabe des Autors). */
-const STREUUNG = 2;
-
-/** Die groben Fehler der Einsteiger (Kapitel 1 und 4). */
-const GROB: readonly Fehlerart[] = [
-  "figurHaengen",
-  "schlagreflex",
-  "drohungIgnoriert",
-  "verfruehteDame",
-  "koenigMitte",
-  "bauernraub",
-];
-/** Die feineren Fehler der Anfänger (Kapitel 5 bis 8). */
-const FEIN: readonly Fehlerart[] = [
-  "taktikUebersehen",
-  "tempoverlust",
-  "koenigsschild",
-  "falscherAbtausch",
-  "koenigPassiv",
-  "bauernvorstoss",
-  "pattGesetzt",
-  "ungenau",
-];
-
-function gegner(
-  kennung: string,
-  name: string,
-  stufen: readonly [Stufennummer, Stufennummer, Stufennummer],
-  fehlerarten: readonly Fehlerart[],
-  blindeFlecken: readonly BlinderFleck[],
-): Gegner {
-  const [eroeffnung, mittelspiel, endspiel] = stufen;
-  if (
-    Math.abs(eroeffnung - mittelspiel) > STREUUNG ||
-    Math.abs(endspiel - mittelspiel) > STREUUNG
-  ) {
-    throw new Error(`Gegner ${kennung}: Streuung über ${STREUUNG} Stufen`);
-  }
-  return {
-    kennung,
-    name,
-    beschreibung: `gegner.${kennung}` as Textschluessel,
-    stufenJePhase: { eroeffnung, mittelspiel, endspiel },
-    fehlerarten,
-    blindeFlecken,
-  };
-}
-
-/**
- * Die vorgefertigten Gegner (Wunsch des Autors, 0.2.46: verschiedene Persönlichkeiten bei gleicher
- * Stärke; jeder mit eigener Fehlerliste und ein bis zwei blinden Flecken, auch ab Stufe 5).
- * Die Stufen je Phase zeigt die App nicht an (Überraschung), nur Durchschnitt und Klasse.
- */
-export const GEGNER: readonly Gegner[] = [
-  gegner("lotta", "Lotta", [1, 1, 1], [...GROB, ...FEIN], ["ruhig"]),
-  gegner("paula", "Paula", [1, 1, 2], GROB, ["diagonale", "rueckzug", "grundreihe"]),
-  gegner(
-    "max",
-    "Max",
-    [1, 2, 1],
-    ["verfruehteDame", "bauernraub", "figurHaengen", "tempoverlust"],
-    ["rueckzug"],
-  ),
-  gegner(
-    "opa-hans",
-    "Opa Hans",
-    [2, 1, 2],
-    ["figurHaengen", "schlagreflex", "koenigMitte", "koenigPassiv", "bauernvorstoss"],
-    ["springer", "grundreihe"],
-  ),
-  gegner(
-    "onkel-rudi",
-    "Onkel Rudi",
-    [2, 2, 1],
-    ["schlagreflex", "bauernraub", "verfruehteDame", "drohungIgnoriert"],
-    ["abzug"],
-  ),
-  gegner(
-    "frieda",
-    "Frieda",
-    [2, 2, 3],
-    ["drohungIgnoriert", "schlagreflex", "koenigsschild", "falscherAbtausch", "ungenau"],
-    ["diagonale", "roentgen"],
-  ),
-  gegner(
-    "herr-lehmann",
-    "Herr Lehmann",
-    [3, 2, 2],
-    ["koenigMitte", "tempoverlust", "koenigPassiv", "figurHaengen", "pattGesetzt"],
-    ["dame", "turm"],
-  ),
-  gegner(
-    "selin",
-    "Selin",
-    [3, 3, 2],
-    ["koenigsschild", "bauernvorstoss", "koenigPassiv", "ungenau"],
-    ["dame"],
-  ),
-  gegner("nina", "Nina", [3, 3, 3], ["taktikUebersehen", "drohungIgnoriert", "ungenau"], ["abzug"]),
-  gegner(
-    "jonas",
-    "Jonas",
-    [2, 3, 4],
-    ["bauernraub", "schlagreflex", "koenigsschild", "taktikUebersehen"],
-    ["bauer"],
-  ),
-  gegner("benno", "Benno", [4, 4, 4], ["taktikUebersehen", "ungenau"], ["ruhig", "springer"]),
-  gegner(
-    "timo",
-    "Timo",
-    [5, 4, 3],
-    ["taktikUebersehen", "falscherAbtausch", "bauernvorstoss", "ungenau"],
-    ["rueckzug", "diagonale", "zwischenzug"],
-  ),
-  gegner("kurt", "Kurt", [4, 5, 5], ["koenigsschild", "falscherAbtausch", "ungenau"], ["springer"]),
-  gegner("frau-ortega", "Frau Ortega", [5, 5, 4], ["ungenau"], ["rueckzug"]),
-  gegner("lena", "Lena", [6, 6, 5], [], ["ruhig", "zwischenzug"]),
-  gegner("viktor", "Viktor", [7, 6, 6], [], ["abzug", "bauer"]),
-  gegner("doktor-berg", "Doktor Berg", [6, 7, 7], [], ["turm"]),
-  gegner("gm-gruen", "Großmeister Grün", [8, 8, 8], [], []),
-];
+import { GEGNER, type Gegner } from "./gegnerliste";
+export { GEGNER, type Gegner } from "./gegnerliste";
 
 /** Durchschnitt der drei Stufen, eine Nachkommastelle. Beispiel: Timo (5, 4, 3) → 4. */
 export function durchschnitt(g: Gegner): number {
@@ -222,6 +91,11 @@ export function unterAbhakliste(
   const allesErlaubt = FEHLERARTEN.every((art) => erlaubt.includes(art));
   if (allesErlaubt) return gegnerliste;
   return (gegnerliste ?? FEHLERARTEN).filter((art) => erlaubt.includes(art));
+}
+
+/** Die Gegner einer Stufe (Klasse = gerundeter Durchschnitt), nach Durchschnitt sortiert. */
+export function gegnerDerStufe(nummer: Stufennummer): Gegner[] {
+  return gegnerSortiert().filter((g) => Math.round(durchschnitt(g)) === nummer);
 }
 
 /** Alle Gegner nach Durchschnitt sortiert, bei Gleichstand nach Mittelspiel. */

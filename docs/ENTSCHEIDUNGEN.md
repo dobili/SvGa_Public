@@ -1907,7 +1907,6 @@ Gewinn). Ergebnis je Rückfrage in `docs/AUFGABEN_AUTOR.md` („Nachgelesen im B
 - Offen beim Autor: S17 und C3 (Glossar „beide entwickelt und rochiert“ gegen die gewählte
   Lesart), W5 und U5 (Umbau nach Zustimmung), D1 (Bestätigung).
 
-
 ## Rückmeldung des Autors zu 0.2.56 (17.10.2026 abends, Opus, Version 0.2.61)
 
 Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diesen Änderungen:
@@ -2412,6 +2411,82 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
       **Empfehlung:** so lassen. Ein Balken während der Partie verrät, wer besser steht, und nimmt
       dir das eigene Urteil ab.
 
+## 64 Gegner mit Porträts (18.10.2026 nachts, Fable, Zweig `bots-galerie`, Version 0.2.67)
+
+Wunsch des Autors (18.10.2026, mit Bildschirmfoto der Bot-Auswahl von chess.com): acht Bots je
+Spielstärke mit verschiedenen Stärken und Schwächen, Auswahl mit Porträts, freie Bilder in
+einheitlichem Stil, ungefähre Spielstärke gemessen. Seine Frage, ob die Bots die verschärfte
+Stil-Toleranz und die blinden Flecken schon berücksichtigen: blinde Flecken ja (seit 0.2.46, elf
+Arten seit 0.2.57); einen Stil hatten die vorgefertigten Gegner bis 0.2.62 gar nicht, nur eigene
+Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
+
+- **Liste** (`engine/gegnerliste1.ts` Stufen 1 bis 4, `gegnerliste2.ts` Stufen 5 bis 8,
+  `gegnerbau.ts` Typ und Helfer, `gegnerliste.ts` zusammengeführt; `engine/gegner.ts` behält die
+  Funktionen, neu `gegnerDerStufe`): 64 Gegner, je Stufe acht (Stufe = gerundeter Durchschnitt
+  der drei Phasen, Streuung höchstens zwei). Die 18 Gegner aus 0.2.46 bleiben unverändert, nur
+  ihr Stil ist neu. Je Stufe gibt es einen Eröffnungskenner (Eröffnung eine Stufe höher,
+  Endspiel eine tiefer), einen Endspielfuchs (umgekehrt), einen Mittelspielkämpfer, Gleichmäßige,
+  dazu Stile von −2 bis +2 und ein bis drei blinde Flecken; in Stufe 1 bis 4 außerdem je eine
+  eigene Fehlerliste (Kapitel 1 und 4 grob, 5 bis 8 fein). Stufe 8 spielt in voller Stärke, dort
+  unterscheiden nur Stil und blinde Flecken (Großmeister Grün ohne beides). Namen und Sätze in
+  `de.json` (`gegner.<kennung>`), Titel ab Stufe 7 (Trainer, Dr.) und 8 (FM, IM, WIM, WGM, GM).
+- **Stil der Bots** (`Gegner.stil`, in `Spielen.tsx` an die Partie weitergegeben wie bei
+  eigenen Gegnern): dieselbe Toleranz 0,3 je Reglerstufe wie seit S13 (0.2.61). Was der Stil
+  die Stärke kostet, zeigt die Messung unten; eine eigene Toleranz je Bot gibt es nicht.
+- **Porträts** (`app/public/gegner/<kennung>.svg`, 64 Dateien, zusammen 344 KB, im
+  Offline-Vorrat): aus DiceBear, Stil „Personas“ (Draftbit, CC BY 4.0; Code MIT), erzeugt mit
+  `app/skripte/erzeuge-gegnerbilder.mjs` deterministisch aus der Kennung, mit Vorgaben je Gegner
+  für Frisur, Bart und Haarfarbe (Oma, Opa, Doktor, GM grau; Kinder mit Käppi oder Zöpfen),
+  einheitlich dunkelblauer Hintergrund und Rundung. Geprüft wurden „Adventurer“ und „Big Smile“
+  (beide CC BY 4.0) und die CC0-Stile „Open Peeps“, „Lorelei“, „Notionists“; Personas kommt dem
+  Vorbild (bunte Köpfe mit Oberkörper) am nächsten. Die Pakete sind keine Abhängigkeit der App.
+  Namensnennung unter Einstellungen → Lizenzen und in `docs/LIZENZEN.md`, Lizenztext in
+  `app/public/lizenzen/cc-by-4.0.txt`. Keine Bilder von chess.com (nicht frei).
+- **Gegnerwahl** (`ui/komponenten/GegnerWahl.tsx`): statt des Auswahlfelds eine Sprechblase
+  (Porträt, Name, „⌀ 1,3 · Einsteiger“, Satz) und ein Gitter mit vier Kacheln je Zeile: zuerst
+  „Eigene Stufen“ und die eigenen Gegner (Anfangsbuchstabe), dann je Stufe eine Gruppe mit
+  Überschrift „Stufe 3 · Fortgeschrittener Anfänger“. Kacheln sind Radio-Knöpfe (Bildschirmleser:
+  „Vorgefertigter Gegner“, Name). Die Stufen je Phase bleiben verborgen.
+- **Messung** (`npm run messen:stufen -- 1@lotta-1 …`, das Kürzel `N@kennung` nimmt seit 0.2.65
+  das ganze Profil des Bots: Fehlerarten, Stil, blinde Flecken): alle 64 Bots gegen die reine
+  Stufe ihres Durchschnitts, sechs Partien je Paarung. **Erster Befund (Stufe 1 bis 4, 0.2.65):**
+  Bots mit kurzer Fehlerliste spielten stärker als ihre Stufe (Jonas 6:0, Pit 6:0, Timo 6:0,
+  zehn weitere 4,5:1,5 oder besser), weil die Fehlersuche mit vier erlaubten Arten in den meisten
+  Stellungen gar keinen Fehler fand und dann den besten Zug spielte. Deshalb seit 0.2.68
+  (`engine/fehlersuche.ts`, `mitFehlerliste`): Die Liste bestimmt die Art, nicht die Menge.
+  Passt keine erlaubte Art zur Stellung, bleibt eine Ungenauigkeit bis zu einem Bauern (im
+  Protokoll „ungenau“). Das gilt auch für eigene Gegner und die Abhakliste (Hinweistexte
+  angepasst); eine leere Liste heißt weiter „kein absichtlicher Fehler“. Die Messung der Stufen
+  1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
+  Abschnitts.
+
+## Werkzeugabweichungen aus der Textarbeit geprüft (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.68)
+
+Die Helfer der Textarbeit (AP 14, 15.10.2026, Stand 0.2.25) hatten zwölf Gruppen von
+Werkzeugausgaben notiert, die vom Buch abweichen (Liste bis 0.2.67 in FORTSCHRITT unter AP 14).
+Nach Regel 9 jetzt ohne Rückfrage geprüft: Jede genannte Abbildung durch das heutige Werkzeug
+gerechnet und mit dem Buch verglichen. Ergebnis: Von den zwölf Gruppen waren neun seit den
+Rückfragen C1 bis C9 und den Versionen 0.2.26 bis 0.2.62 schon erledigt, zwei fehlten noch und
+sind jetzt umgesetzt, eine ist ein Befund an das Buch.
+
+| Werkzeug, Abbildungen                                                       | Stand heute                                                                                                                                                                                                                                                                                 |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| k2-zielbilanz 2.40, 2.113 („mit Gewinn schlagbar“), 2.24 (nur d4)           | erledigt seit 0.2.33 (C1.1): angegriffene Zentrumsbauern prüft die Engine; 2.24 nennt d4 und e4                                                                                                                                                                                             |
+| k2-eroeffnung 2.85 (Nimzo-Indisch)                                          | kein Fehler: Das Nimzo-Beispiel des Buches (k02-a135) enthält 2. Lg5 als Abweichung, das Werkzeug sagt „noch offen: Nimzo-Indisch oder Trompowsky“                                                                                                                                          |
+| k3-faktorenbilanz 3.6, 3.42 (Turm f8 „auf offener Linie“)                   | erledigt: Der Turm zählt nur bei der Zeit „im Spiel“, wie die Tabelle des Buches                                                                                                                                                                                                            |
+| k3-faktorenbilanz 3.23, 3.32, 3.60, 3.68, 3.69 (Taktik)                     | erledigt: im Schach „erst zu Ende rechnen“, Matt „Partie entschieden“; 3.32 stimmt mit der Tabelle des Buches überein                                                                                                                                                                       |
+| k3-faktorenbilanz 3.1, 3.18, 3.36 („Schwarz vorn bei Zeit“ bei 0:0)         | **Befund an das Buch** (Rückfrage B6): Die Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom weißen Vorsprung eine Figur ab“) und die Tabelle zu 3.14 (zwei gegen zwei, Schwarz +1) ergeben das so; die App folgt dem Buch (Regel 1). Vorschlag im Buch: „nie unter null“                |
+| k4-warnsignale 4.29 (h2 nur von Sf3 gedeckt), 4.8 (Lb2–De5–g7)              | erledigt (C2 und W2 seit 0.2.39)                                                                                                                                                                                                                                                            |
+| k5-richtung 5.15, 5.30, 5.21, 5.27, 5.35, 5.13; k5-figuren 5.40             | erledigt (C1.9, C1.10, Luftloch): gesunde Mehrheit vor Minderheitsangriff, Hebel gegen die Basis zuerst, „schlecht nach der Farbe, aber aktiv“                                                                                                                                              |
+| k5-richtung 5.17 (Weiß, Besitzer des Isolani)                               | **jetzt umgesetzt:** Fazit für den Besitzer eines zentralen Isolani im Mittelspiel nach Kapitel 5 („aktives Figurenspiel, Vorstoß d4–d5, keine Figuren tauschen“); nicht, wenn der Gegner das Feld davor blockiert (5.18) oder die Damen fehlen. Auch 11.43 (Petrosjan) bekommt diesen Satz |
+| k6-wo/k6-lap 6.4, 6.8 bis 6.10, 6.17, 6.32                                  | erledigt: Gegenschlag im Zentrum, Minderheitsangriff nur am Damenflügel, Td7 als Eindringen, im Schach keine Planfrage                                                                                                                                                                      |
+| k7-motiv 7.21, 7.10, 7.28                                                   | erledigt: 7.21 „Abzug, relative Fesselung durchbrochen“; 7.10 und 7.28 über den letzten Zug des Verlaufs (Abzug, Dauerschach)                                                                                                                                                               |
+| k8-opposition, k8-quadrat 8.19 bis 8.53                                     | erledigt (Endspieldatenbank, Patt, Quadrat, Reserve-Tempo, verbundene Freibauern, König vor dem Bauern)                                                                                                                                                                                     |
+| k8-schluesselfelder 8.29 aus Sicht von Schwarz                              | **jetzt umgesetzt:** Der Sonderfall 6. Reihe steht auch im Fazit des Verteidigers („Weiß gewinnt mit e7“), nicht mehr „die Opposition entscheidet“                                                                                                                                          |
+| k9 9.3, 9.4, 9.23 bis 9.26, 9.37; k11-phase 11.28 bis 11.84; k12 12.3, 12.4 | erledigt (X1, C3, C9 und die Endspielwerkzeuge seit 0.2.49: Philidor, Vancura nur mit einem Bauern, ungleichfarbige Läufer mit getrennten Freibauern „meist gewonnen“, Phase Mittelspiel, Matt scheidet aus, Sicherheitsblick „König im Freien“)                                            |
+
+Die Liste in FORTSCHRITT ist damit abgearbeitet und dort durch diesen Verweis ersetzt.
+
 ## Impressum und Datenschutz (17.10.2026 abends, Autor und Opus, Version 0.2.62)
 
 - Der Autor hat Name und Anschrift für das Impressum genannt (Hannover), bestätigt
@@ -2481,7 +2556,7 @@ Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `an
   (Engine nacheinander: bester Zug, nur die Kandidaten, je Kandidat die stärkste Antwort).
 - Entscheidungen wie in F2 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.
 
-## Planbilanz-Übung (18.10.2026 nachts, Opus, Zweig `planbilanz`, Version 0.2.67)
+## Planbilanz-Übung (18.10.2026 nachts, Opus, Zweig `planbilanz`, Version 0.2.69)
 
 - Trainer „planbilanz“ fertig (AP 13, Stufe 3) mit drei Übungsarten:
   `training/planbilanztrainer.ts`, `ui/trainer/Planaufgaben.tsx`.

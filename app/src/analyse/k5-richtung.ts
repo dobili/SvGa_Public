@@ -10,6 +10,7 @@
  * Richtung-Zeilen der Skelettbilanzen.
  */
 import type { Color } from "chessops/types";
+import { squareFile } from "chessops/util";
 import { t } from "../i18n/sprache";
 import type { Mehrheit } from "../schach/bauernprofil";
 import { feldVor } from "../schach/skelettfelder";
@@ -195,12 +196,40 @@ function schwaechefazit(farbe: Color, s: Zielschwaeche): string {
   });
 }
 
+/** Die Linien d und e: Nur dort gibt ein Isolani seinem Besitzer den Plan des Buches. */
+const ZENTRUMSLINIEN: readonly number[] = [3, 4];
+
+/**
+ * „Weiß hat den Isolani d4: Spiele aktiv mit den Figuren …“ (Kapitel 5, „Der Isolani: Eine
+ * Struktur mit zwei Gesichtern“): Im Mittelspiel sucht der Besitzer eines zentralen Isolani
+ * aktives Figurenspiel, den Vorstoß d4–d5 und tauscht keine Figuren; im Endspiel (ohne Damen)
+ * ist er nur noch eine Schwäche, dann gilt das nicht, ebenso wenig, wenn der Gegner das Feld davor
+ * schon blockiert (Abb. 5.18, 11.43: dann hat er den Plan des Buches schon umgesetzt).
+ * Beispiel: Abb. 5.17, Weiß. Null sonst.
+ */
+function isolanifazit(p: Stellungsprofil, farbe: Color): string | null {
+  const eigene = zielschwaeche(p, gegner(farbe));
+  if (!eigene || eigene.art !== "isolani" || !ZENTRUMSLINIEN.includes(squareFile(eigene.feld)))
+    return null;
+  const brett = p.stellung.brett;
+  if (brett.pieces(farbe, "queen").isEmpty() || brett.pieces(gegner(farbe), "queen").isEmpty())
+    return null;
+  const davor = feldVor(eigene.feld, farbe);
+  if (davor === null || brett.get(davor)?.color === gegner(farbe)) return null;
+  return t("richtung.fazitIsolani", {
+    farbe: farbname(farbe),
+    feld: feldname(eigene.feld),
+    vor: feldname(davor),
+  });
+}
+
 /**
  * Wo die Seite spielt, in dieser Reihenfolge (Entscheidung des Autors zu C1.9): die Richtung der
  * Kette (Abb. 5.26); eine gesunde eigene Mehrheit mit Kandidat, wenn die gegnerische keinen hat
  * (Abb. 5.30, Berliner Endspiel); eine gegnerische Bauernschwäche (Abb. 5.17, der Isolani d4);
- * der Minderheitsangriff gegen eine gesunde Mehrheit, vor dem eigenen König aber Gegenspiel mit
- * Figuren (Abb. 5.32, Carlsbad); zuletzt irgendeine eigene Mehrheit.
+ * seit 0.2.66 der eigene zentrale Isolani im Mittelspiel (Abb. 5.17, Weiß: aktives
+ * Figurenspiel); der Minderheitsangriff gegen eine gesunde Mehrheit, vor dem eigenen König aber
+ * Gegenspiel mit Figuren (Abb. 5.32, Carlsbad); zuletzt irgendeine eigene Mehrheit.
  */
 function fazit(p: Stellungsprofil, farbe: Color, r: Richtungsbefund): string {
   const kette = r.ketten.find((k) => k.zeigtNach !== null);
@@ -212,6 +241,8 @@ function fazit(p: Stellungsprofil, farbe: Color, r: Richtungsbefund): string {
   }
   const schwaeche = zielschwaeche(p, farbe);
   if (schwaeche) return schwaechefazit(farbe, schwaeche);
+  const isolani = isolanifazit(p, farbe);
+  if (isolani) return isolani;
   const minderheit = minderheitsplan(p, farbe, r);
   if (minderheit)
     return fluegelfazit(farbe, minderheit.fluegel, t(`richtung.grund.${minderheit.art}`));

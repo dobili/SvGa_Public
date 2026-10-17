@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.67. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.69. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.67“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.69“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,10 +21,10 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.67“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.69“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.67 (etwa 15 Minuten; Planbilanz-Übung, Opus)
+### Neu in 0.2.69 (etwa 15 Minuten; Planbilanz-Übung, Opus)
 
 - [ ] N303. **Planbilanz-Übung:** Training › Kapitel 6 › „Planbilanz-Übung“ › Trainieren. Drei
       Übungsarten: „Drei Planfragen“ (Wo spiele ich? Was will mein Gegner? Welche Figur? Je drei
@@ -34,6 +34,42 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.67“, dann 
       und „Wettrennen der Bauern“ (bei entgegengesetzten Rochaden je Seite die Bauernzüge bis zum
       ersten Hebel wählen; danach, wer schneller ist). Probe: Abb. 6.6 zählt die App Weiß 2,
       Schwarz 3. Siehe F3.
+
+### Neu in 0.2.68 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
+
+- [ ] N288. **Isolani aus Besitzersicht und Sonderfall 6. Reihe:** Abb. 5.17, Werkzeug „Richtung“:
+      Für Schwarz weiter „spielt gegen den Isolani d4: Blockiere das Feld davor (d5) …“; für Weiß
+      (Brett drehen oder Sicht wechseln) jetzt „Weiß hat den Isolani d4: Spiele aktiv mit den
+      Figuren (offene Linien für die Türme, Sprungbrett für den Königsangriff), bereite den
+      Vorstoß d4–d5 vor und tausche möglichst keine Figur.“ Abb. 5.18 (Isolani d5, vom Springer
+      blockiert): kein solcher Satz. Abb. 8.29, Werkzeug „Schlüsselfelder“ aus Sicht von Schwarz:
+      „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“ Die übrigen zwölf Gruppen der Helferliste
+      waren schon erledigt; die Zeit-Zählhilfe ist ein Befund an dich (B6).
+- [ ] N289. **Fehlerliste bestimmt die Art, nicht die Menge:** Lege einen eigenen Gegner mit
+      Stufe 2 · 2 · 2 und nur einem Haken an (etwa „patt gesetzt“) und spiele eine Partie. Er
+      sollte etwa so viele Fehler machen wie Stufe 2 (etwa jeder vierte Zug), im Rückblick meist
+      als „absichtlich ungenau gespielt“ (kleine Ungenauigkeiten bis zu einem Bauern), weil die
+      gewählte Art fast nie passt. Vorher spielte so ein Gegner fast fehlerfrei und damit stärker
+      als seine Stufe (Messbefund an den 64 Bots). Der Hinweis unter den Haken erklärt das.
+
+### Neu in 0.2.67 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
+
+- [ ] N285. **Gegnerwahl mit Porträts:** Spielen › Gegner „Engine“. Unter „Vorgefertigter Gegner“
+      steht oben eine Sprechblase mit Porträt, Name, Durchschnitt und Satz des gewählten Gegners;
+      darunter die Kachel „Eigene Stufen“, dann je Stufe 1 bis 8 eine Gruppe mit acht Porträts
+      (64 Gegner, die 18 bisherigen sind dabei). Antippen wählt, die Sprechblase wechselt, die
+      drei Regler unten springen auf seine Stufen (verborgen bleibt, welche). Ein eigener Gegner
+      erscheint als Kachel mit seinem Anfangsbuchstaben vor den Gruppen. Passen Porträts und
+      Namen zusammen, und ist die Auswahl auf dem Handy bequem?
+- [ ] N286. **Persönlichkeit spürbar:** Spiele je eine kurze Partie gegen Finn (Stufe 1, sehr
+      aggressiv: schlägt alles, holt Bauern, vergisst den König) und gegen Oma Gerda (Stufe 1,
+      sehr defensiv: zieht Figuren zweimal, lässt den König sitzen). Die beiden sollten sich
+      deutlich anders anfühlen; der Rückblick nennt ihre Fehler und blinden Flecken beim Namen.
+      Alle Bots haben jetzt einen Stil (aggressiv bis defensiv, Toleranz 0,3 wie bei eigenen
+      Gegnern seit 0.2.61) und ein bis drei blinde Flecken.
+- [ ] N287. **Stufe 8 mit Charakter:** Großmeister Grün bleibt ohne Schwäche; IM Vogt (sehr
+      aggressiv, übersieht ruhige Züge) oder IM Haas (sehr defensiv, übersieht die Grundreihe)
+      spielen in voller Stärke, aber mit Handschrift. Prüfe, dass sie trotzdem wie Stufe 8 wirken.
 
 ### Neu in 0.2.66 (etwa 10 Minuten, mit Engine; Denkroutine-Trainer, Opus)
 
@@ -85,41 +121,40 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.67“, dann 
 
 ### Neu in 0.2.61 (etwa 25 Minuten, mit Engine; deine Rückmeldung zu 0.2.56, Opus)
 
-- [ ] N285. **Gewertete Partie ohne Hilfen (S9):** Spielen, „Gewertete Partie“ angehakt: Die Haken
+- [ ] N310. **Gewertete Partie ohne Hilfen (S9):** Spielen, „Gewertete Partie“ angehakt: Die Haken
       „Züge zurücknehmen erlauben“, „Symbole am Brett“ und „Werkzeuge und Hinweis unter dem Brett“
       sind ausgegraut und leer, darunter der Satz, dass es in einer gewerteten Partie keine
       Zugrücknahme und keine Spielhilfen gibt. In der Partie gibt es weder „Zurücknehmen“ noch
       Werkzeuge. Haken weg: Alles ist wieder wählbar.
-- [ ] N286. **Unmögliche Stellungen (S12):** Stellung aufbauen mit drei weißen Damen und allen
+- [ ] N311. **Unmögliche Stellungen (S12):** Stellung aufbauen mit drei weißen Damen und allen
       acht weißen Bauern: „Partie beginnen“ geht nicht, der Hinweis nennt zu viele Steine für die
       Umwandlungen. Mit zwei Damen auf der Grundreihe und höchstens sieben Bauern geht es, und die
       Engine zieht.
-- [ ] N287. **Stil (S13):** Eigener Gegner › Stil: Unter dem Regler steht jetzt, dass ein Stil die
+- [ ] N312. **Stil (S13):** Eigener Gegner › Stil: Unter dem Regler steht jetzt, dass ein Stil die
       Spielstärke deutlich senken kann (bei „sehr aggressiv“ oder „sehr defensiv“ etwa eine halbe
       Stufe). Eine Partie gegen einen Gegner mit „sehr aggressiv“ fühlt sich spürbar wilder an.
-- [ ] N288. **Phase nach dem Glossar (S17):** Abb. 11.4, Werkzeug „Phase“: „Eröffnung: Nach dem
+- [ ] N313. **Phase nach dem Glossar (S17):** Abb. 11.4, Werkzeug „Phase“: „Eröffnung: Nach dem
       Glossar beginnt das Mittelspiel erst, wenn beide Seiten entwickelt sind und rochiert haben.
       Noch offen: Weiß muss noch rochieren; Schwarz muss noch entwickeln und rochieren.“ Abb. 11.12
       (Colle, schwarzer König gejagt): Mittelspiel. In einer eigenen Partie gilt weiter deine Lesart
       (eine Seite entwickelt genügt). Siehe auch D2.
-- [ ] N289. **Sonderzüge aus Kapitel 0 (U5):** Training › Koordinaten › „Zug ausführen“: Unter den
+- [ ] N314. **Sonderzüge aus Kapitel 0 (U5):** Training › Koordinaten › „Zug ausführen“: Unter den
       Sonderzügen stehen jetzt die Stellungen 0.12 bis 0.19 („aus Abb. 0.12“ usw.), mit kurzer und
       langer Rochade für beide Seiten, en passant und Umwandlung. Etwa jeder vierte Sonderzug kommt
       noch aus den zwei eigenen Stellungen (en passant für Schwarz, Umwandlung mit Schlag).
-- [ ] N290. **Strukturerkenner mit Feldern zuerst (W5):** Training › Strukturerkenner: Bei Abb. 5.8
+- [ ] N315. **Strukturerkenner mit Feldern zuerst (W5):** Training › Strukturerkenner: Bei Abb. 5.8
       (Najdorf) heißt es „Schritt 1 von 3: Welche Felder auf deiner 5. und 6. Reihe kann kein
       gegnerischer Bauer mehr angreifen?“ Richtig sind b6 und d5. Dann schwache Bauern, dann der
       Plan. Lehrbilder mit mehr als vier solchen Feldern haben nur zwei Schritte.
-- [ ] N291. **Faktorenbilanz-Trainer mit dem Urteil des Buches (W9):** Bei Abbildungen mit
+- [ ] N316. **Faktorenbilanz-Trainer mit dem Urteil des Buches (W9):** Bei Abbildungen mit
       Faktorenbilanz im Buch (etwa 3.6, 3.10, 3.14) steht nach „Prüfen“ „Buch: …“ statt „App: …“ und
       darunter „Verglichen mit der Faktorenbilanz des Buches zu Abb. 3.6“. Bei Abb. 3.6 sagt das
       Buch: Material Schwarz, Zeit Weiß, Königssicherheit Schwarz, Aktivität Weiß. Hat die
       Abbildung eine Warum-Frage, steht sie darunter.
-- [ ] N292. **Warum-Fragen im Repertoire-Trainer (W10):** Spanische Partie, Seite Schwarz: Nach
+- [ ] N317. **Warum-Fragen im Repertoire-Trainer (W10):** Spanische Partie, Seite Schwarz: Nach
       3... a6 erscheint unter dem Brett zugeklappt „Warum spielt Schwarz 3... a6?“. Die Fragen
       zählen nicht zur Wertung. 20 solche Fragen gibt es in den Varianten von Kapitel 2.
-- [ ] N293. **Zug erraten mit Vergleich (W12):** Opernpartie als Weiß, absichtlich 2. d4 statt
-      2. Sf3: Unter „In der Partie geschah Sf3.“ steht nach ein paar Sekunden, ob dein Zug laut
+- [ ] N318. **Zug erraten mit Vergleich (W12):** Opernpartie als Weiß, absichtlich 2. d4 statt 2. Sf3: Unter „In der Partie geschah Sf3.“ steht nach ein paar Sekunden, ob dein Zug laut
       Engine etwa gleich gut, schwächer oder stärker war, und dazu „Frag dich in einem Satz, warum
       der Meister anders zog.“
 
@@ -801,6 +836,18 @@ Regeln C1 und C2).
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
 
+### B. Buchbefunde aus der Textarbeit (Fable, 0.2.67; nur du änderst das Buch)
+
+- [ ] B6. **Zeit-Zählhilfe in Kapitel 3:** Die Faktorenbilanz der App sagt nach 1. e4 e5 2. f4
+      (Abb. 3.1, ebenso 3.18 und 3.36) „Schwarz liegt vorn bei Zeit“, obwohl beide Seiten null
+      Figuren im Spiel haben. Das folgt der Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom
+      weißen Vorsprung eine Figur ab“) und der Tabelle zu Abb. 3.14 (zwei gegen zwei, Schwarz am
+      Zug: Schwarz +1). Der Fließtext sagt dagegen nur „sein Vorsprung ist eine Figur kleiner“,
+      also nie unter null. Die Helfer der Textarbeit fanden das Ergebnis bei 0:0 falsch, ich auch.
+      **Empfehlung:** im Buch die Zählhilfe um „nie unter null“ ergänzen und die Tabelle zu 3.14
+      auf „gleich“ setzen; dann ändere ich die App (ein Zeile) und die Kalibrierung. Bis dahin
+      bleibt die App beim Buch (Regel 1).
+
 ### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 
 - [ ] F1. **Fehlerdatenbank (0.2.65):** Fehlerart ist je eine Zeile der Gesamt-Checkliste
@@ -822,14 +869,14 @@ Regeln C1 und C2).
       Engine liegt; ob die Antwort die stärkste war, zeigt die App, zählt aber nicht.
       **Empfehlung:** so lassen. Schon umgesetzt in 0.2.66, Widerspruch genügt.
 
-- [ ] F3. **Planbilanz-Übung (0.2.67):** Die Antworten der Planfragen sind die Sätze, die die
+- [ ] F3. **Planbilanz-Übung (0.2.69):** Die Antworten der Planfragen sind die Sätze, die die
       Werkzeuge der App zu den drei Fragen rechnen, nicht die Texte deiner Planbilanzen (die zeigt
       die App seit dem 15.10. nicht mehr). Falsche Antworten: derselbe Satz für die andere Seite
       und der einer weit entfernten Stellung. Stellungen, in denen ein Satz nichts sagt („Noch
       offen“, „noch kein erkennbarer Plan“, „keine Figur“), fallen weg. Die LAP-Lösung kommt aus
       dem Werkzeug „Welche Figur?“, das Wettrennen aus dem schnellsten Sturm je Seite (bis sechs
       Züge). Die Planfragen-Runde hat vier, LAP sechs, Wettrennen fünf Aufgaben.
-      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.67, Widerspruch genügt. Wenn du lieber
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.69, Widerspruch genügt. Wenn du lieber
       deine eigenen Planbilanz-Sätze als Antworten hättest, bräuchte die App sie als freigegebenen
       Text (sie sind Buchtext).
 

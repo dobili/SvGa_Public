@@ -454,3 +454,89 @@
   margin: 0;
   padding: 0;
 }
+
+/* Gegnerwahl mit Porträts (0.2.65, Vorbild chess.com): Sprechblase oben, Gitter je Stufe. */
+.gegner-sprechblase {
+  display: flex;
+  gap: var(--raster);
+  align-items: flex-start;
+  margin: calc(var(--raster) / 2) 0 var(--raster);
+}
+
+.gegner-sprechblase .gegner-portraet {
+  width: 64px;
+  height: 64px;
+  flex: none;
+}
+
+.gegner-blase {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1.5px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  font-size: 15px;
+}
+
+.gegner-blase p {
+  margin: 4px 0 0;
+}
+
+.gegner-klasse {
+  color: var(--text-leise);
+}
+
+.gegnerstufe-titel {
+  margin: var(--raster) 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-leise);
+}
+
+.gegnergitter {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.gegnerkachel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  border: 2px solid transparent;
+  border-radius: calc(var(--radius) + 2px);
+  background: none;
+  color: var(--text);
+  font: inherit;
+}
+
+.gegnerkachel[aria-checked="true"] {
+  border-color: var(--gold);
+  background: var(--flaeche);
+}
+
+.gegner-portraet {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: var(--radius);
+}
+
+.gegner-zeichen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: var(--creme);
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.gegnerkachel-name {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 12px;
+}

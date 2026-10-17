@@ -1295,6 +1295,23 @@ Archiv-Repository; was davon noch offen ist, steht hier.
 4. **Offen aus den Vorschlägen:** D1 Leerfälle (Tabelle im Archiv, VORSCHLAEGE_0.2.26.md,
    Abschnitt D: je Werkzeug „gilt, wenn …“ und ein Satz, warum nicht; Rückfrage U12). H ist
    seit 0.2.39 vollständig („!“).
+5. **Vormerkung des Autors (17.10.2026 abends, ausdrücklich erst später):** Bots mit
+   „Persönlichkeit“. (a) Blinde Flecken als weitere Fehlerarten für die Fehlerliste der Bots:
+   Züge einer bestimmten Art, die der Bot nicht „sieht“ (lange Läuferdiagonalen, Rückzüge,
+   Springerzüge rückwärts, lange Damenzüge, seitliche Turmzüge, ruhige Züge statt Schlag oder
+   Schach, Zwischenzüge, Abzüge, Röntgen, stille Bauernzüge als Falle, Grundreihe, en passant;
+   Recherche und Quellen in `docs/ENTSCHEIDUNGEN.md`, Abschnitt „Vormerkung: Bots mit
+   Persönlichkeit“). Umsetzung als Blindheit der Zugwahl: Ist der beste Zug der Engine von der
+   Art des blinden Flecks, spielt der Bot mit einer Wahrscheinlichkeit den zweitbesten Zug und
+   das Protokoll nennt den blinden Fleck; dazu Blindheit gegenüber gegnerischen Drohungen dieser
+   Art in der Fehlersuche. (b) Vorgefertigte Bots mit verschiedenen Fehlerlisten und blinden
+   Flecken statt „alle Fehlerarten an bis Stufe 4, danach keine“: je Bot eine eigene Auswahl
+   (zufällig verteilt, aber fest je Bot), sodass es für dieselbe Stärke verschiedene
+   Persönlichkeiten gibt; auch Bots ab Stufe 5 mit einzelnen blinden Flecken. (c) Bei
+   vorgefertigten Bots nur den Durchschnitt zeigen, nicht die Stufen je Phase (Überraschung);
+   die Regler springen dann nicht sichtbar, die Stufen bleiben verborgen in `engine/gegner.ts`.
+   Betroffen: `engine/gegner.ts`, `engine/fehlerart.ts` (neue Arten), `engine/zugwahl.ts`,
+   `engine/fehlersuche.ts`, `ui/komponenten/GegnerWahl.tsx`, `GegnerEditor.tsx`, Partienliste.
 
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.52. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.54. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -21,8 +21,18 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.52“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.54“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.54 (etwa 10 Minuten, mit Engine; Brillant am Prüfstand von chess.com, Fable)
+
+- [ ] N266. **Brillant wie bei chess.com:** Spiele die Opernpartie zu zweit nach (Züge bei N261).
+      Karte „Spielstärke“, Weiß: Brillant jetzt 3 (10. Sxb5, 13. Txd7, 16. Db8+; chess.com 3).
+      Neu: Ein Springer für zwei Bauern zählt als Opfer, ein Opfer aus dem Schach heraus nicht,
+      und ein Opfer ist nur brillant, wenn man danach nicht schlecht steht und der zweitbeste Zug
+      nicht ohnehin klar gewinnt. Geprüft an 100 Brillant-Zügen aus chess.com-Partien
+      (Chessigma-Vergleich): 46 von 100 erkannt, 25 Fehlalarme in 100 Partien (etwa einer je vier Partien; die freien Werkzeuge im selben Vergleich: 23 bis 45 Treffer bei einem Fehlalarm alle drei bis sechs Partien). In deinen eigenen Partien sollten „Brillant“
+      damit seltener grundlos auftauchen; melde Züge, die dir falsch vorkommen, mit PGN.
 
 ### Neu in 0.2.52 (etwa 30 Minuten, mit Engine; Stufen 1 bis 3 menschlicher, Empfehlung R4, Fable)
 
@@ -757,6 +767,15 @@ Regeln C1 und C2).
       900), sobald du nach ein paar Partien sagst, ob dir die Genauigkeit plausibel vorkommt.
       **Schon umgesetzt in 0.2.51 (Nachtest N260), auf deinen Wunsch vom 17.10.2026 nachmittags,
       Empfehlungen gleich umzusetzen. Widerspruch genügt.**
+
+- [ ] S19. **Brillant: streng oder großzügig?** Am Prüfstand mit 100 Brillant-Zügen aus
+      chess.com-Partien erkennt die App 46, mit 25 Fehlalarmen in 100 Partien (einer je vier
+      Partien). Eine großzügigere Fassung (auch eine schon angegriffene Figur, die man beim Zug
+      stehen lässt, zählt als Opfer) erkennt 79, gibt aber 98 Fehlalarme (einer je Partie).
+      chess.com selbst gibt null Fehlalarme (es ist der Maßstab). **Empfehlung:** streng lassen.
+      Ein grundlos vergebenes „!!“ lehrt den Leser Falsches, ein verpasstes schadet nicht; die
+      freien Werkzeuge im selben Vergleich liegen bei 23 bis 45 Treffern. **Schon so umgesetzt in
+      0.2.54 (Nachtest N266). Widerspruch genügt.**
 
 ### R. Rückmeldung 0.2.38, umgesetzt in 0.2.39 (Fable; plausibel entschieden, bitte prüfen)
 

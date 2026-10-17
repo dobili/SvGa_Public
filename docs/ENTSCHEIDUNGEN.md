@@ -1553,6 +1553,35 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
+## Brillant am Prüfstand von chess.com (17.10.2026, Autor und Fable, Zweig `opfer-pruefstand`, Version 0.2.54)
+
+Der Autor hat beide Empfehlungen aus der Recherche zu den chess.com-Klassen angenommen: die 100
+Brillant-Züge des Chessigma-Vergleichs (chess.com-Partien 2020 bis 2026, Datei mit PGN und Halbzug
+je Partie, liegt nur lokal in `buch/arbeit/chessigma/`, Lizenz ungeklärt) als Prüfstand für unsere
+Opfererkennung nutzen; die Gewinnchance nicht von der Spielstärke des Lesers abhängig machen (bei
+chess.com hängen erwartete Punkte und die Großzügigkeit bei Brillant und Großartig von der Wertung
+ab; unsere Zahlen blieben sonst je Leser verschieden und schwerer erklärbar).
+
+- **Opfererkennung** (`engine/fehlerart.ts`, `opferwert`): Von den 100 Brillanten erkannte die
+  Abtauschrechnung zuerst 56. Zwei Ursachen: Eine schon angegriffene Figur zählte nie als Opfer
+  (Dxc6+ mit einer angegriffenen Dame), jetzt zählt die gezogene Figur auch dann (andere Figuren
+  weiter nur, wenn sie erst durch den Zug hängen: ein Königszug neben einer längst hängenden Dame
+  ist kein Opfer); und die Grenze „Netto mindestens 2“ ließ einen Springer für zwei Bauern aus
+  (10. Sxb5 in der Opernpartie), jetzt Netto mindestens 1 (`OPFER_AB` in spiel/auswertung.ts).
+  Damit 100 von 100 erkannt; 7,5 % aller Züge der 100 Partien sind Opferkandidaten.
+- **Brillant-Regel** (`spiel/auswertung.ts`, `brillant`): Mit „bester oder bis 0,2 dahinter“
+  allein wären 73 der 100 erkannt, aber 230 weitere Züge brillant (zwei je Partie; chess.com
+  null). Die Fehlalarme lagen vor allem in verlorenen Stellungen (98 unter −1) und in schon
+  gewonnenen (67 über +5). Nach dem Nachbau „freechess“ (WintrCat) jetzt zusätzlich: nach dem Zug
+  mindestens −1, nicht aus dem Schach heraus, der zweitbeste Zug gewinnt nicht ohnehin (Wert vor
+  dem Zug minus Abstand zum zweitbesten unter +7); dafür reicht „bis 0,5 hinter dem besten“.
+  Ergebnis am Prüfstand: Opfer erkannt 62 von 100 (38 Brillante lassen eine schon vorher angegriffene, nicht gezogene Figur stehen; die zählt nicht, siehe oben), brillant 46 von 100, 25 Fehlalarme in 100 Partien. Großzügigere Fassung (jede schon angegriffene Figur zählt als Opfer): 79 von 100, aber 98 Fehlalarme in 56 Partien, also etwa einer je Partie. Entschieden für die strenge Fassung: Ein grundlos vergebenes „!!“ lehrt den Leser Falsches, ein verpasstes schadet nicht (Rückfrage S19).
+- **Nicht übernommen:** chess.com prüft zusätzlich, ob die geopferte Figur „wirklich zu nehmen“
+  ist (Angreifer nicht gefesselt, Nehmen erlaubt kein Matt in einem). Das bräuchte je Opfer eine
+  weitere Suche; bei Bedarf später.
+- **Messlauf:** `app/src/spiel/opfer.messung.ts` (nicht in der CI) rechnet die Datei mit der
+  Engine durch; Aufruf `npm run messen:opfer` im Ordner app, Ergebnis nur lokal.
+
 ## R4: Stufen 1 bis 3 menschlicher (17.10.2026, Fable, Zweig `stufen-menschlich`, Version 0.2.52)
 
 Nach Regel 9 (Empfehlungen gleich umsetzen) umgesetzt: Wege 1 bis 3 aus der Rückfrage R4.

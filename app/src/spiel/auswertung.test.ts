@@ -131,6 +131,8 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     opfer: false,
     vorherVerlust: 0,
     wertVorher: 0,
+    abstand: 0,
+    imSchach: false,
     buch: false,
   };
   it("nach Verlust: patzer, fehler, ungenau, gut, sehr gut; bester nur der Zug der Engine", () => {
@@ -157,9 +159,19 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     expect(klasseVon(0, { ...ruhig, warBester: true, vorherVerlust: 1.5 })).toBe("stark");
     expect(klasseVon(0, { ...ruhig, warBester: true, einziger: true })).toBe("stark");
     expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true })).toBe("brillant");
-    // Ein gutes Opfer bis 0,2 hinter dem besten Zug ist auch brillant (0.2.51), ab 0,2 nicht.
+    // Ein gutes Opfer bis 0,5 hinter dem besten Zug ist auch brillant (0.2.53), ab 0,5 nicht.
     expect(klasseVon(0.1, { ...ruhig, opfer: true })).toBe("brillant");
-    expect(klasseVon(0.3, { ...ruhig, opfer: true })).toBe("gut");
+    expect(klasseVon(0.3, { ...ruhig, opfer: true })).toBe("brillant");
+    expect(klasseVon(0.5, { ...ruhig, opfer: true })).toBe("ungenau");
+    // Kein brillant: danach schlecht, aus dem Schach heraus, oder der zweitbeste gewinnt ohnehin.
+    expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true, wertVorher: -2 })).toBe("bester");
+    expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true, imSchach: true })).toBe("bester");
+    expect(
+      klasseVon(0, { ...ruhig, warBester: true, opfer: true, wertVorher: 9, abstand: 1 }),
+    ).toBe("bester");
+    expect(
+      klasseVon(0, { ...ruhig, warBester: true, opfer: true, wertVorher: 9, abstand: 4 }),
+    ).toBe("brillant");
     // Nach dem Zug klar gewonnen (ab +5): kein „stark“ mehr, auch nicht als einziger Zug (0.2.51).
     expect(klasseVon(0, { ...ruhig, warBester: true, vorherVerlust: 1.5, wertVorher: 6 })).toBe(
       "bester",

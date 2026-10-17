@@ -1423,3 +1423,51 @@ Stellungen aufbauen). Zweig `rueckmeldung-0.2.39`, nach grüner Prüfung nach `m
   eine veränderte Abbildungsstellung zählt als eigene Stellung (`abbildungGilt`). Rückfrage S12.
 - **Speicher:** keine neue Formatversion; neue Felder (`gegner`, `bot`, `hilfen`, `gewertet`,
   `wertung`) bekommen beim Lesen Vorgaben, ältere Partien gelten als Engine-Partien, ungewertet.
+
+## Vormerkung: Bots mit Persönlichkeit (17.10.2026 abends, Autor; noch nicht umsetzen)
+
+Wunsch des Autors: Manche Spieler haben eine „Blindheit“ für bestimmte Züge (sein Beispiel: die
+langen Diagonalen der Läufer). Solche blinden Flecken sollen als Fehlerarten in die Fehlerliste
+der Bots, die vorgefertigten Bots sollen verschiedene Fehlerlisten bekommen (dieselbe Stärke,
+verschiedene Persönlichkeiten), und bei vorgefertigten Bots soll nur der Durchschnitt stehen,
+nicht die Stufen je Phase. Ausdrücklich erst später; hier die Recherche (17.10.2026) als Grundlage.
+
+**Bekannte blinde Flecken (Quellen: chess.com „The Unseeing Mind“; Substack „Blind Spots“ von
+Eugene Perel und „Mind The Gap“ von Nick Vasquez; Lichess-Blog „Causes of blunders in chess“;
+USCF Sales „Chess Blindness“; Ilyin-Zhenevsky 1928 „Psychologie der Schachfehler“, auf Lichess
+wiederveröffentlicht; Avni, „Danger in Chess“, 1994):**
+
+- **Rückzüge** („quiet retreating moves“; das berühmte Beispiel Christiansen–Karpov 1993, Karpov
+  übersah einen Rückzug, der die Figur gewann). Klassenspieler übersehen Rückzüge und ruhige Züge
+  besonders oft, wenn die Stellung „nach Aktion aussieht“.
+- **Lange Diagonalen** der Läufer aus der Ecke oder vom Rand (Beispiel des Autors); verwandt:
+  **lange Damenzüge** über das ganze Brett und **seitliche Turmzüge** (Perel nennt sie als seinen
+  eigenen blinden Fleck, mit einem Großmeisterbeispiel).
+- **Springerzüge rückwärts** und Springerzüge an den Rand (Springer „sieht“ man vor allem vorwärts).
+- **Röntgen-Angriffe** (Angriff durch eine eigene oder fremde Figur hindurch) tauchen laut Vasquez
+  „überraschend oft“ als übersehene Motive auf.
+- **Zwischenzüge** und **Abzüge** (Abzugsschach, Abzugsangriff): Der Spieler rechnet nur die
+  Zwangsfolge Schlag–Rückschlag.
+- **Stille Bauernzüge**, die eine Figur fangen oder ein Feld nehmen (Beispiel bei thechessworld:
+  ein Turm, den ein ruhiger Bauernzug einsperrt).
+- **„Verschwindendes Feld“** (Ilyin-Zhenevsky): Ein Feld, das eben noch gedeckt war, wird nach dem
+  eigenen Zug nicht mehr neu geprüft; verwandt mit „eine Figur zieht weg und deckt nicht mehr“.
+- **Gegnerische Drohungen nicht prüfen** (laut Lichess-Blog der häufigste Grund für Patzer);
+  Grundreihenmatt, en passant, Unterverwandlung als Sonderfälle.
+- Außerdem **Stilschwächen** statt Blindheit: ungern zurückziehen, ungern tauschen (oder zu gern),
+  Läufer oder Springer überschätzen, Opfer scheuen oder suchen; Avni beschreibt „Fehler des
+  Unterlassens“ (Gefahr nicht spüren). Diese Seite deckt der Stilregler teils schon ab.
+
+**Umsetzungsidee (noch nicht gebaut):** Blinde Flecken als eigene Liste neben den Fehlerarten
+(`engine/blindeFlecken.ts`): Für jede Art ein Prüfer „ist dieser Zug von dieser Art?“ (Rückzug:
+Figur zieht in Richtung eigener Grundreihe; lange Diagonale: Läuferzug über mindestens vier
+Felder; Springer rückwärts; Damenzug über mindestens fünf Felder; seitlicher Turmzug; ruhiger Zug
+ohne Schlag und Schach, während ein Schlag möglich wäre; Zwischenzug; Abzug; Bauernzug ohne
+Schlag). Zugwahl: Ist der beste Zug der Engine von einer Art, für die der Bot blind ist, spielt er
+mit einer Wahrscheinlichkeit (je Stufe) den nächstbesten Zug anderer Art; das Protokoll nennt den
+blinden Fleck (Auswertung: „hat den Rückzug nicht gesehen“). Fehlersuche: Drohungen des Gegners
+dieser Art gelten als nicht gesehen. Bots: je vorgefertigtem Bot eine feste Auswahl aus
+Fehlerarten und ein bis zwei blinde Flecken, auch ab Stufe 5 (dort nur blinde Flecken, keine
+groben Fehler); Anzeige nur mit Durchschnitt und Klasse. Eigene Gegner bekommen die blinden Flecken
+als Haken dazu. Schätzung: zwei bis drei Sitzungsschritte; die Stufenmessung muss dabei zeigen,
+dass blinde Flecken die Stufe nicht um mehr als etwa eine halbe Stufe senken.

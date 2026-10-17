@@ -5,7 +5,9 @@
  *
  * Rolle im Gesamtbild: Kein Test der Prüfkette, sondern ein Messlauf. Start über
  * `npm run messen:stufen` (skripte/messe-stufen.mjs). Umgebung: MESSUNG_PAARUNG („1-2“, auch
- * „3-s5“ für Skill Level 5 oder „4-e1600“ für die Elo-Begrenzung), MESSUNG_PARTIEN (Zahl, gerade;
+ * „3-s5“ für Skill Level 5, „4-e1600“ für die Elo-Begrenzung, „3b-3“ für Stufe 3 mit allen
+ * blinden Flecken gegen Stufe 3 ohne, „3@nina-3“ für Stufe 3 mit den blinden Flecken des
+ * Gegners „nina“, 0.2.57), MESSUNG_PARTIEN (Zahl, gerade;
  * die Farben wechseln), MESSUNG_ZIEL (Ordner für die JSON-Ergebnisse, nur lokal: buch/arbeit/).
  * Jede Partie beginnt mit einer der Eröffnungen aus Kapitel 2 und 3 (zwei Halbzüge), damit die
  * Partien verschieden sind; danach spielt keine Seite aus dem Buch.
@@ -14,9 +16,12 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
+import { BLINDE_FLECKEN } from "./blindeFlecken";
+import { GEGNER } from "./gegner";
 import type { Fehlerart } from "./fehlerart";
 import { nodeEngine } from "./nodeEngine.testhilfe";
 import { stufe, type Stufe } from "./stufen";
+import { BUCHTREUE, STANDARDPROFIL, type Gegnerprofil } from "./zugwahl";
 import { engineZug } from "../spiel/enginezug";
 import { leserAmZug, neuePartie, stellungen, ziehe, type Partie } from "../spiel/partie";
 import { fenNach } from "../spiel/zuege";
@@ -66,6 +71,30 @@ function zufallsquelle(saat: number): () => number {
   };
 }
 
+/** Ein Spieler der Messung: Stufe und Profil (blinde Flecken bei Kürzeln wie „3b“). */
+interface Spieler {
+  readonly stufe: Stufe;
+  readonly profil: Gegnerprofil;
+}
+
+/** Alle blinden Flecken, für Kürzel mit „b“ (etwa „3b“). */
+const ALLE_FLECKEN: Gegnerprofil = { ...STANDARDPROFIL, blindeFlecken: BLINDE_FLECKEN };
+
+/** Stufe und Profil aus dem Kürzel der Paarung. */
+function spieler(kuerzel: string): Spieler {
+  const blind = /^(\d)b$/.exec(kuerzel);
+  if (blind?.[1]) return { stufe: gegner(blind[1]), profil: ALLE_FLECKEN };
+  const bot = /^(\d)@([a-z-]+)$/.exec(kuerzel);
+  const vorgefertigt = bot?.[2] ? GEGNER.find((g) => g.kennung === bot[2]) : undefined;
+  if (bot?.[1] && vorgefertigt) {
+    return {
+      stufe: gegner(bot[1]),
+      profil: { ...STANDARDPROFIL, blindeFlecken: vorgefertigt.blindeFlecken },
+    };
+  }
+  return { stufe: gegner(kuerzel), profil: STANDARDPROFIL };
+}
+
 /** Eine Stufe oder ein Vergleichsgegner aus dem Kürzel der Paarung. */
 function gegner(kuerzel: string): Stufe {
   const skill = /^s(\d+)$/.exec(kuerzel);
@@ -104,8 +133,8 @@ function statistik(partie: Partie, farbe: "white" | "black"): Seitenstatistik {
 /** Spielt eine Partie zwischen zwei Stufen; beide Seiten ziehen über die Zugwahl der App. */
 async function spiele(
   engine: ReturnType<typeof nodeEngine>,
-  weiss: Stufe,
-  schwarz: Stufe,
+  weiss: Spieler,
+  schwarz: Spieler,
   anfang: readonly string[],
   zufall: () => number,
 ): Promise<Partie> {
@@ -117,15 +146,15 @@ async function spiele(
     {
       startFen: start ?? GRUNDSTELLUNG,
       eigeneFarbe: "black",
-      stufe: weiss.nummer,
+      stufe: weiss.stufe.nummer,
       uhr: null,
       ruecknahmeErlaubt: false,
       abbildung: null,
       eroeffnung: null,
       stufenJePhase: {
-        eroeffnung: weiss.nummer,
-        mittelspiel: weiss.nummer,
-        endspiel: weiss.nummer,
+        eroeffnung: weiss.stufe.nummer,
+        mittelspiel: weiss.stufe.nummer,
+        endspiel: weiss.stufe.nummer,
       },
       gegner: "engine",
       bot: null,
@@ -140,7 +169,7 @@ async function spiele(
   while (lauf.ende === null && lauf.zuege.length < HOECHSTENS_HALBZUEGE) {
     const amZug = leserAmZug(lauf) ? schwarz : weiss;
     const fen = stellungen(lauf).at(-1) ?? GRUNDSTELLUNG;
-    const zug = await engineZug(engine, fen, amZug, [], zufall);
+    const zug = await engineZug(engine, fen, amZug.stufe, [], zufall, BUCHTREUE, amZug.profil);
     if (!zug) break;
     const weiter = ziehe(lauf, { ...zug, von: "engine" });
     if (!weiter) throw new Error(`Zug geht nicht: ${zug.san} in ${fen}`);
@@ -168,8 +197,8 @@ describe(`Messung ${paarung}`, () => {
     const berichte: Partiebericht[] = [];
     for (let nummer = 0; nummer < partienZahl; nummer += 1) {
       const aWeiss = nummer % 2 === 0;
-      const weiss = aWeiss ? gegner(a) : gegner(b);
-      const schwarz = aWeiss ? gegner(b) : gegner(a);
+      const weiss = aWeiss ? spieler(a) : spieler(b);
+      const schwarz = aWeiss ? spieler(b) : spieler(a);
       const anfang = ANFAENGE[Math.floor(nummer / 2) % ANFAENGE.length] ?? [];
       const beginn = performance.now();
       const partie = await spiele(engine, weiss, schwarz, anfang, zufallsquelle(nummer + 1));

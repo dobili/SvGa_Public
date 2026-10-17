@@ -10,11 +10,14 @@
  * auf den Verlust einer Leichtfigur; das Protokoll nennt den blinden Fleck für die Auswertung
  * („einen Rückzug nicht gesehen“). Anders als die Fehlerarten (Stufe 1 bis 4) wirken blinde
  * Flecken in jeder Stufe; so bekommen auch starke Gegner eine Persönlichkeit.
+ * Seit 0.2.57 drei weitere Flecken (Röntgen, Zwischenzug, Grundreihe) und die Blindheit auch
+ * gegenüber gegnerischen Zügen dieser Art: Ein Gegner, der Abzüge nicht sieht, tappt in einen
+ * Zug, dessen Widerlegung ein Abzug ist (`blindeWahl`, zweiter Teil).
  * Abhängigkeiten: chessops, engine/spielbewerter.ts (wertFuer), engine/uci.ts (Variante).
  */
-import { attacks } from "chessops/attacks";
+import { attacks, rookAttacks, bishopAttacks, queenAttacks } from "chessops/attacks";
 import { Chess } from "chessops/chess";
-import { parseFen } from "chessops/fen";
+import { makeFen, parseFen } from "chessops/fen";
 import type { Color, Role, Square } from "chessops/types";
 import { opposite, parseUci, squareFile, squareRank } from "chessops/util";
 import type { Fehlerart } from "./fehlerart";
@@ -22,7 +25,17 @@ import { wertFuer } from "./spielbewerter";
 import type { Variante } from "./uci";
 
 export type BlinderFleck =
-  "rueckzug" | "diagonale" | "springer" | "dame" | "turm" | "ruhig" | "abzug" | "bauer";
+  | "rueckzug"
+  | "diagonale"
+  | "springer"
+  | "dame"
+  | "turm"
+  | "ruhig"
+  | "abzug"
+  | "bauer"
+  | "roentgen"
+  | "zwischenzug"
+  | "grundreihe";
 
 export const BLINDE_FLECKEN: readonly BlinderFleck[] = [
   "rueckzug",
@@ -33,6 +46,9 @@ export const BLINDE_FLECKEN: readonly BlinderFleck[] = [
   "ruhig",
   "abzug",
   "bauer",
+  "roentgen",
+  "zwischenzug",
+  "grundreihe",
 ];
 
 /** Die Fehlerart im Protokoll zu einem blinden Fleck („blindRueckzug“). */
@@ -47,6 +63,12 @@ export const BLINDE_FEHLERARTEN: readonly Fehlerart[] = BLINDE_FLECKEN.map(blind
 export const BLINDHEIT = 0.7;
 /** Höchstens so viel darf das Übersehen kosten (eine Leichtfigur), damit die Stufe hält. */
 export const BLIND_HOECHSTVERLUST = 3;
+/**
+ * Flecken, die als gegnerische Drohung nicht zählen: Fast jede Widerlegung ist ein ruhiger Zug
+ * oder ein stiller Bauernzug; zählten sie, tappte ein Gegner in jede zweite Falle (Messung
+ * 0.2.57: Lena auf Stufe 5 verlor 1,5:8,5 gegen Stufe 5 ohne Flecken).
+ */
+const KEINE_DROHUNGSFLECKEN: ReadonlySet<BlinderFleck> = new Set<BlinderFleck>(["ruhig", "bauer"]);
 /** Ab so vielen Feldern gilt eine Läuferdiagonale als lang. */
 const LANGE_DIAGONALE = 4;
 /** Ab so vielen Feldern (Königsabstand) gilt ein Damenzug als lang. */
@@ -56,6 +78,12 @@ const SEITLICHER_TURMZUG = 3;
 /** Figuren, deren neuer Angriff nach dem Zug einen Abzug anzeigt. */
 const ABZUGSZIELE: ReadonlySet<Role> = new Set<Role>(["king", "queen", "rook"]);
 const LANGSCHRITTLER: ReadonlySet<Role> = new Set<Role>(["queen", "rook", "bishop"]);
+/** Figuren, die hinter einem Stein als Röntgenziel zählen (Kapitel 7: Fesselung, Spieß). */
+const ROENTGENZIELE: ReadonlySet<Role> = new Set<Role>(["king", "queen", "rook"]);
+/** Figuren, die auf der gegnerischen Grundreihe ein Grundreihenmotiv anzeigen (Kapitel 7). */
+const GRUNDREIHENFIGUREN: ReadonlySet<Role> = new Set<Role>(["queen", "rook"]);
+const ERSTE_REIHE = 0;
+const LETZTE_REIHE = 7;
 
 interface Zugbild {
   readonly pos: Chess;
@@ -124,6 +152,72 @@ function istAbzug(z: Zugbild): boolean {
   return false;
 }
 
+/** Angriffsfelder einer Langschrittfigur auf einem Brett mit der gegebenen Belegung. */
+function strahlen(rolle: Role, feld: Square, belegt: Chess["board"]["occupied"]) {
+  if (rolle === "rook") return rookAttacks(feld, belegt);
+  if (rolle === "bishop") return bishopAttacks(feld, belegt);
+  return queenAttacks(feld, belegt);
+}
+
+/**
+ * Röntgen (Kapitel 7, Fesselung und Spieß): Die gezogene Langschrittfigur zielt durch den ersten
+ * Stein auf ihrer Linie hindurch auf König, Dame oder Turm des Gegners.
+ */
+function istRoentgen(z: Zugbild): boolean {
+  if (!LANGSCHRITTLER.has(z.rolle)) return false;
+  const gegner = opposite(z.farbe);
+  const brett = z.danach.board;
+  const erste = strahlen(z.rolle, z.nach, brett.occupied);
+  for (const block of erste) {
+    if (!brett.get(block)) continue;
+    const ohneBlock = brett.occupied.without(block);
+    for (const ziel of strahlen(z.rolle, z.nach, ohneBlock).diff(erste)) {
+      const figur = brett.get(ziel);
+      if (figur?.color === gegner && ROENTGENZIELE.has(figur.role)) return true;
+    }
+  }
+  return false;
+}
+
+/** Hängt eine eigene Figur (ab Leichtfigur) im Angriff des Gegners? */
+function eigeneFigurAngegriffen(pos: Chess, farbe: Color, ausser: Square): boolean {
+  for (const feld of pos.board[farbe]) {
+    const figur = pos.board.get(feld);
+    if (feld === ausser || !figur || figur.role === "pawn" || figur.role === "king") continue;
+    if (attackersAuf(pos, feld, opposite(farbe))) return true;
+  }
+  return false;
+}
+
+/** Greift die Seite `von` das Feld an? */
+function attackersAuf(pos: Chess, feld: Square, von: Color): boolean {
+  for (const angreifer of pos.board[von]) {
+    const figur = pos.board.get(angreifer);
+    if (figur && attacks(figur, angreifer, pos.board.occupied).has(feld)) return true;
+  }
+  return false;
+}
+
+/**
+ * Zwischenzug (Kapitel 7): Eine eigene Figur ist angegriffen, und statt sie zu retten gibt der
+ * Zug mit einer anderen Figur Schach.
+ */
+function istZwischenzug(z: Zugbild): boolean {
+  return z.danach.isCheck() && !z.schlag && eigeneFigurAngegriffen(z.pos, z.farbe, z.von);
+}
+
+/** Grundreihe (Kapitel 7): Dame oder Turm geht mit Schach auf die Grundreihe des Gegners. */
+function istGrundreihe(z: Zugbild): boolean {
+  const grundreihe = z.farbe === "white" ? LETZTE_REIHE : ERSTE_REIHE;
+  return GRUNDREIHENFIGUREN.has(z.rolle) && squareRank(z.nach) === grundreihe && z.danach.isCheck();
+}
+
+/** Die Stellung nach einem Zug (UCI) als FEN; null, wenn der Zug nicht geht. */
+export function fenNachUci(fen: string, uci: string): string | null {
+  const z = zugbild(fen, uci);
+  return z ? makeFen(z.danach.toSetup()) : null;
+}
+
 /**
  * Die blinden Flecken, zu denen ein Zug gehört (leer: ein Zug, den jeder sieht).
  * Beispiel: Grundstellung, „g1f3“ → []; Dame von d1 nach h5 → ["dame"]; ein Läufer von a1 nach
@@ -146,6 +240,9 @@ export function fleckeVon(fen: string, uci: string): BlinderFleck[] {
   if (!z.schlag && !schach && schlagMoeglich(z.pos)) flecke.push("ruhig");
   if (istAbzug(z)) flecke.push("abzug");
   if (z.rolle === "pawn" && !z.schlag && !schach && !z.umwandlung) flecke.push("bauer");
+  if (istRoentgen(z)) flecke.push("roentgen");
+  if (istZwischenzug(z)) flecke.push("zwischenzug");
+  if (istGrundreihe(z)) flecke.push("grundreihe");
   return flecke;
 }
 
@@ -160,26 +257,24 @@ export function uebersehenerFleck(
   return flecke.find((f) => arten.includes(f)) ?? null;
 }
 
-/**
- * Übersieht der Gegner den besten Zug? Dann der nächstbeste Zug, der zu keinem seiner blinden
- * Flecken gehört und höchstens eine Leichtfigur kostet; sonst null (er spielt den besten Zug).
- * Eingaben: Stellung, Kandidaten der Engine (beste zuerst), blinde Flecken, Zufall (für Tests
- * fest). Beispiel: bester Zug Lh1–a8 (lange Diagonale), Gegner blind dafür, Wurf 0,2 → der
- * zweitbeste Zug mit „blindDiagonale“ und seinem Verlust.
- */
-export function blindeWahl(
+/** Ein übersehener Zug mit der Art des Flecks und dem Verlust gegenüber dem besten Zug. */
+export interface Blindzug {
+  readonly uci: string;
+  readonly fehler: Fehlerart;
+  readonly verlust: number;
+}
+
+/** Übersieht der Gegner seinen besten Zug: der nächstbeste anderer Art, höchstens eine Leichtfigur. */
+function eigenenZugUebersehen(
   fen: string,
   varianten: readonly Variante[],
   flecke: readonly BlinderFleck[],
-  zufall: () => number,
-): { uci: string; fehler: Fehlerart; verlust: number } | null {
-  const beste = varianten[0];
-  const bester = beste?.zuege[0];
-  if (!beste || !bester) return null;
-  const fleck = uebersehenerFleck(fen, bester, flecke);
-  if (!fleck || zufall() >= BLINDHEIT) return null;
-  const weissAmZug = fen.split(" ")[1] !== "b";
-  const bestwert = wertFuer(beste.wert, weissAmZug);
+  bestwert: number,
+  weissAmZug: boolean,
+): Blindzug | null {
+  const bester = varianten[0]?.zuege[0];
+  const fleck = bester ? uebersehenerFleck(fen, bester, flecke) : null;
+  if (!fleck) return null;
   for (const v of varianten.slice(1)) {
     const uci = v.zuege[0];
     if (!uci || uebersehenerFleck(fen, uci, flecke)) continue;
@@ -188,4 +283,56 @@ export function blindeWahl(
     return { uci, fehler: blindeFehlerart(fleck), verlust: Math.max(0, verlust) };
   }
   return null;
+}
+
+/**
+ * Übersieht der Gegner die Widerlegung eines Kandidaten (0.2.57)? Der erste Kandidat nach dem
+ * besten, dessen Antwort der Engine zu einem blinden Fleck gehört und der höchstens eine
+ * Leichtfigur kostet: Der Gegner hält ihn für gut, weil er die Antwort nicht sieht.
+ */
+function drohungUebersehen(
+  fen: string,
+  varianten: readonly Variante[],
+  flecke: readonly BlinderFleck[],
+  bestwert: number,
+  weissAmZug: boolean,
+): Blindzug | null {
+  const drohungsflecken = flecke.filter((f) => !KEINE_DROHUNGSFLECKEN.has(f));
+  if (drohungsflecken.length === 0) return null;
+  for (const v of varianten.slice(1)) {
+    const [uci, antwort] = v.zuege;
+    if (!uci || !antwort) continue;
+    const danach = fenNachUci(fen, uci);
+    const fleck = danach ? uebersehenerFleck(danach, antwort, drohungsflecken) : null;
+    if (!fleck) continue;
+    const verlust = bestwert - wertFuer(v.wert, weissAmZug);
+    if (verlust > BLIND_HOECHSTVERLUST) continue;
+    return { uci, fehler: blindeFehlerart(fleck), verlust: Math.max(0, verlust) };
+  }
+  return null;
+}
+
+/**
+ * Übersieht der Gegner den besten Zug oder die Widerlegung eines anderen Kandidaten? Dann dieser
+ * andere Zug mit dem blinden Fleck und seinem Verlust (höchstens eine Leichtfigur); sonst null
+ * (er spielt den besten Zug). Der Wurf gegen BLINDHEIT fällt einmal je Stellung.
+ * Eingaben: Stellung, Kandidaten der Engine mit ihren Varianten (beste zuerst), blinde Flecken,
+ * Zufall (für Tests fest). Beispiel: bester Zug Lh1–a8 (lange Diagonale), Gegner blind dafür,
+ * Wurf 0,2 → der zweitbeste Zug mit „blindDiagonale“; oder bester Zug Kf1, Kandidat Th7 mit der
+ * Antwort La8–e4 (lange Diagonale), Gegner blind dafür → Th7 mit „blindDiagonale“.
+ */
+export function blindeWahl(
+  fen: string,
+  varianten: readonly Variante[],
+  flecke: readonly BlinderFleck[],
+  zufall: () => number,
+): Blindzug | null {
+  const beste = varianten[0];
+  if (!beste || flecke.length === 0 || zufall() >= BLINDHEIT) return null;
+  const weissAmZug = fen.split(" ")[1] !== "b";
+  const bestwert = wertFuer(beste.wert, weissAmZug);
+  return (
+    eigenenZugUebersehen(fen, varianten, flecke, bestwert, weissAmZug) ??
+    drohungUebersehen(fen, varianten, flecke, bestwert, weissAmZug)
+  );
 }

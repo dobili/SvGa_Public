@@ -1,6 +1,12 @@
 /** Tests der blinden Flecken (0.2.46): Zugarten erkennen, Übersehen mit festem Zufall. */
 import { describe, expect, it } from "vitest";
-import { blindeFehlerart, blindeWahl, fleckeVon, uebersehenerFleck } from "./blindeFlecken";
+import {
+  blindeFehlerart,
+  blindeWahl,
+  fenNachUci,
+  fleckeVon,
+  uebersehenerFleck,
+} from "./blindeFlecken";
 import type { Variante } from "./uci";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -21,7 +27,8 @@ describe("Blinde Flecken", () => {
   it("erkennt Rückzug, Springer rückwärts, langen Damenzug, Diagonale, Turm, Abzug, Bauer", () => {
     // Sxe5 wäre möglich, also ist Sg1 auch ein ruhiger Zug.
     expect(fleckeVon(OFFEN, "f3g1")).toEqual(["rueckzug", "springer", "ruhig"]);
-    expect(fleckeVon(OHNE_SCHLAG, "d1h5")).toEqual(["dame"]);
+    // Dh5 ist ein langer Damenzug und zielt durch f7 auf den König (Röntgen, 0.2.57).
+    expect(fleckeVon(OHNE_SCHLAG, "d1h5")).toEqual(["dame", "roentgen"]);
     expect(fleckeVon(OHNE_SCHLAG, "f1c4")).toEqual([]);
     expect(fleckeVon(GRUNDSTELLUNG, "e2e4")).toEqual(["bauer"]);
     expect(fleckeVon(DIAGONALE, "b1h7")).toEqual(["diagonale"]);
@@ -54,5 +61,47 @@ describe("Blinde Flecken", () => {
     ).toBeNull();
     expect(uebersehenerFleck(OFFEN, "f3g1", ["springer", "rueckzug"])).toBe("springer");
     expect(blindeFehlerart("rueckzug")).toBe("blindRueckzug");
+  });
+});
+
+describe("Blinde Flecken seit 0.2.57: Röntgen, Zwischenzug, Grundreihe, gegnerische Drohung", () => {
+  it("Röntgen: Dame zielt durch den Springer auf den König; Zwischenzug: Schach statt Rettung", () => {
+    // Weiß Kd1, Dh1; Schwarz Ke8, Se7: Dh1–e1 zielt durch e7 auf e8.
+    expect(fleckeVon("4k3/4n3/8/8/8/8/8/3K3Q w - - 0 1", "h1e1")).toContain("roentgen");
+    expect(fleckeVon("4k3/4n3/8/8/8/8/8/3K3Q w - - 0 1", "h1h2")).not.toContain("roentgen");
+    // Läufer c4 hängt (Bauer d5); Th1–h8+ gibt Schach, statt den Läufer zu retten.
+    expect(fleckeVon("4k3/8/8/3p4/2B5/8/8/4K2R w - - 0 1", "h1h8")).toContain("zwischenzug");
+    expect(fleckeVon("4k3/8/8/3p4/2B5/8/8/4K2R w - - 0 1", "c4b3")).not.toContain("zwischenzug");
+  });
+
+  it("Grundreihe: Turm mit Schach auf die Grundreihe des Gegners", () => {
+    const fen = "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1";
+    expect(fleckeVon(fen, "a1a8")).toContain("grundreihe");
+    expect(fleckeVon(fen, "a1a7")).not.toContain("grundreihe");
+    expect(fenNachUci(fen, "a1a8")).toBe("R5k1/5ppp/8/8/8/8/8/6K1 b - - 1 1");
+    expect(fenNachUci(fen, "a1a9")).toBeNull();
+  });
+
+  it("gegnerische Drohung übersehen: tappt in den Kandidaten, dessen Widerlegung ein blinder Zug ist", () => {
+    // Weiß Ke1, Th1; Schwarz Ke8, La8. Bester Zug Kf1; Th7 wird von La8–e4 (lange Diagonale) widerlegt.
+    const fen = "b3k3/8/8/8/8/8/8/4K2R w - - 0 1";
+    const kandidaten = [
+      { nummer: 1, wert: { art: "bauern" as const, bauern: 0.5 }, zuege: ["e1f1", "e8d7"] },
+      { nummer: 2, wert: { art: "bauern" as const, bauern: -0.5 }, zuege: ["h1h7", "a8e4"] },
+    ];
+    expect(blindeWahl(fen, kandidaten, ["diagonale"], () => 0.1)).toEqual({
+      uci: "h1h7",
+      fehler: "blindDiagonale",
+      verlust: 1,
+    });
+    // Nicht blind für Diagonalen, oder hoher Wurf: der beste Zug.
+    expect(blindeWahl(fen, kandidaten, ["turm"], () => 0.1)).toBeNull();
+    expect(blindeWahl(fen, kandidaten, ["diagonale"], () => 0.9)).toBeNull();
+    // Kostet die Falle mehr als eine Leichtfigur, fällt sie weg.
+    const teuer = [
+      { nummer: 1, wert: { art: "bauern" as const, bauern: 0.5 }, zuege: ["e1f1", "e8d7"] },
+      { nummer: 2, wert: { art: "bauern" as const, bauern: -4 }, zuege: ["h1h7", "a8e4"] },
+    ];
+    expect(blindeWahl(fen, teuer, ["diagonale"], () => 0.1)).toBeNull();
   });
 });

@@ -81,7 +81,7 @@ function gegner(
  */
 export const GEGNER: readonly Gegner[] = [
   gegner("lotta", "Lotta", [1, 1, 1], [...GROB, ...FEIN], ["ruhig"]),
-  gegner("paula", "Paula", [1, 1, 2], GROB, ["diagonale", "rueckzug"]),
+  gegner("paula", "Paula", [1, 1, 2], GROB, ["diagonale", "rueckzug", "grundreihe"]),
   gegner(
     "max",
     "Max",
@@ -94,7 +94,7 @@ export const GEGNER: readonly Gegner[] = [
     "Opa Hans",
     [2, 1, 2],
     ["figurHaengen", "schlagreflex", "koenigMitte", "koenigPassiv", "bauernvorstoss"],
-    ["springer"],
+    ["springer", "grundreihe"],
   ),
   gegner(
     "onkel-rudi",
@@ -108,7 +108,7 @@ export const GEGNER: readonly Gegner[] = [
     "Frieda",
     [2, 2, 3],
     ["drohungIgnoriert", "schlagreflex", "koenigsschild", "falscherAbtausch", "ungenau"],
-    ["diagonale"],
+    ["diagonale", "roentgen"],
   ),
   gegner(
     "herr-lehmann",
@@ -138,11 +138,11 @@ export const GEGNER: readonly Gegner[] = [
     "Timo",
     [5, 4, 3],
     ["taktikUebersehen", "falscherAbtausch", "bauernvorstoss", "ungenau"],
-    ["rueckzug", "diagonale"],
+    ["rueckzug", "diagonale", "zwischenzug"],
   ),
   gegner("kurt", "Kurt", [4, 5, 5], ["koenigsschild", "falscherAbtausch", "ungenau"], ["springer"]),
   gegner("frau-ortega", "Frau Ortega", [5, 5, 4], ["ungenau"], ["rueckzug"]),
-  gegner("lena", "Lena", [6, 6, 5], [], ["ruhig"]),
+  gegner("lena", "Lena", [6, 6, 5], [], ["ruhig", "zwischenzug"]),
   gegner("viktor", "Viktor", [7, 6, 6], [], ["abzug", "bauer"]),
   gegner("doktor-berg", "Doktor Berg", [6, 7, 7], [], ["turm"]),
   gegner("gm-gruen", "Großmeister Grün", [8, 8, 8], [], []),

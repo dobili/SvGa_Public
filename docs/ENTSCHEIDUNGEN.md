@@ -1553,6 +1553,25 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
+## Blinde Flecken vollständig (17.10.2026, Fable, Zweig `blinde-flecken-2`, Version 0.2.57)
+
+Der Rest aus 0.2.46, nach Regel 9 umgesetzt.
+
+- **Drei weitere Flecken** (`engine/blindeFlecken.ts`, `fleckeVon`): Röntgen (die gezogene
+  Langschrittfigur zielt durch den ersten Stein auf König, Dame oder Turm; Kapitel 7 Fesselung und
+  Spieß; auch Dh5 durch f7 auf e8), Zwischenzug (eine eigene Figur ist angegriffen, der Zug gibt
+  stattdessen mit einer anderen Figur Schach), Grundreihe (Dame oder Turm mit Schach auf die
+  Grundreihe des Gegners). Zugeteilt: Paula und Opa Hans Grundreihe, Frieda Röntgen, Timo und
+  Lena Zwischenzug.
+- **Blindheit gegenüber gegnerischen Zügen** (`blindeWahl`, zweiter Teil): Übersieht der Gegner
+  nicht seinen eigenen besten Zug, prüft die Wahl die weiteren Kandidaten der Engine: Der erste,
+  dessen Antwort in der Variante der Engine zu einem blinden Fleck gehört, wird gespielt, als
+  wäre er gut (höchstens eine Leichtfigur Verlust, derselbe Wurf gegen 70 %). Protokoll und
+  Auswertung nennen den Fleck wie bisher. Ruhige Züge und stille Bauernzüge zählen hier nicht als
+  Drohung (fast jede Widerlegung ist einer).
+- **Messung** (`npm run messen:stufen -- 3b-3 3b-2 5b-5`, Kürzel „b“ = alle elf Flecken):
+  alle elf Flecken zugleich: Stufe 3 blind 2:8 gegen Stufe 3, 10:0 gegen Stufe 2, Stufe 5 blind 4:6 gegen Stufe 5 (Fehlerquote 52 bis 61 %, Extremfall). Vorgefertigte Gegner gegen ihre Stufe ohne Flecken: Nina 4:6, Paula 6:4, Lena zuerst 1,5:8,5, weil fast jede Widerlegung ein ruhiger Zug ist; nach Ausschluss von „ruhig“ und „bauer“ aus dem Drohungsteil (`KEINE_DROHUNGSFLECKEN`) 5:5 bei 12 % Fehlerquote. Alle elf zugleich danach 1:9. Ziel „höchstens eine halbe Stufe je Gegner“ erreicht
+
 ## R5: Engine-Variante im Rückblick (17.10.2026, Fable, Zweig `rueckblick-variante`, Version 0.2.56)
 
 Nach Regel 9 umgesetzt, mit geänderter Empfehlung: Die Vergleiche mit chess.com zeigten, dass dort

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.56. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.57. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -21,8 +21,21 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.56“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.57“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.57 (etwa 15 Minuten, mit Engine; blinde Flecken vollständig, Fable)
+
+- [ ] N276. **Drei neue blinde Flecken:** Spielen › eigener Gegner › bearbeiten: In der Liste der
+      blinden Flecken stehen neu „Röntgenangriffe (Fesselung, Spieß)“, „Zwischenzüge“ und „die
+      Grundreihe“. Paula und Opa Hans übersehen jetzt die Grundreihe, Frieda Röntgenangriffe,
+      Timo und Lena Zwischenzüge (Liste bei S7).
+- [ ] N277. **Blind auch für Drohungen:** Ein Gegner mit blindem Fleck übersieht jetzt auch
+      Züge des Gegners dieser Art: Er tappt in eine Stellung, deren Widerlegung etwa ein Abzug
+      oder ein Grundreihenschach ist (höchstens eine Leichtfigur Verlust, zu 70 %). In der
+      Auswertung steht dann wie bisher „Mit 14… hat die Engine einen Abzug nicht gesehen.“ Spiele
+      ein paar Züge gegen Nina (blind für Abzüge) oder Paula (Grundreihe) und stelle ihr eine
+      solche Falle. Gemessen (je zehn Partien gegen dieselbe Stufe ohne Flecken): Nina (Abzüge) 4:6, Paula (Diagonalen, Rückzüge, Grundreihe) 6:4, Lena (ruhige Züge, Zwischenzüge) 5:5; also höchstens eine halbe Stufe. Alle elf Flecken zugleich kosten etwa eine Stufe (1:9), das hat aber kein Gegner.
 
 ### Neu in 0.2.56 (etwa 5 Minuten, mit Engine; Engine-Variante im Rückblick, Empfehlung R5, Fable)
 
@@ -727,7 +740,9 @@ Regeln C1 und C2).
       und Diagonalen; Kurt 4·5·5, Königsschild, falscher Abtausch, ungenau, Springer rückwärts;
       Frau Ortega 5·5·4, ungenau, Rückzüge; Lena 6·6·5, keine Fehler, ruhige Züge; Viktor 7·6·6,
       keine Fehler, Abzüge und stille Bauernzüge; Doktor Berg 6·7·7, keine Fehler, seitliche
-      Turmzüge; Großmeister Grün 8·8·8, nichts. Fehlerarten wirken nur in Stufe 1 bis 4, blinde
+      Turmzüge; Großmeister Grün 8·8·8, nichts. Seit 0.2.57 dazu: Paula und Opa Hans die
+      Grundreihe, Frieda Röntgenangriffe, Timo und Lena Zwischenzüge. Fehlerarten wirken nur in
+      Stufe 1 bis 4, blinde
       Flecken in jeder Stufe (er übersieht einen besten Zug dieser Art zu 70 %, Ersatz höchstens
       eine Leichtfigur schlechter). Namen, Stufen, Listen oder Sätze ändern? Die allgemeine
       Abhakliste der Fehlerarten bleibt offen (eigene Gegner haben sie je Gegner).

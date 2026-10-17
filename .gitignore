@@ -8,6 +8,7 @@ app/dev-dist/
 app/test-results/
 app/playwright-report/
 app/public/engine/
+app/public/daten/de/trainer/
 app/src/daten/generiert/
 .wrangler/
 

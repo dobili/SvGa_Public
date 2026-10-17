@@ -93,3 +93,28 @@ test("Schach-Röntgen-Trainer: drei Schritte, dann Weiter", async ({ page }) => 
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
+
+test("Taktiktrainer: Thema und Stufe wählen, Hilfen, Lösung zeigen, Motiv benennen", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "taktik");
+  const wahl = page.getByTestId("taktik-wahl");
+  await wahl.getByRole("button", { name: /^Spieß/ }).click();
+  await wahl.getByRole("button", { name: "2", exact: true }).click();
+  await wahl.getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 8");
+  await runde.getByRole("button", { name: "Hinweis 1" }).click();
+  await expect(runde).toContainText("Warnsignal:");
+  await runde.getByRole("button", { name: "Hinweis 2" }).click();
+  await expect(page.getByTestId("taktik-motiv")).toContainText("Spieß");
+  await runde.getByRole("button", { name: "Lösung zeigen" }).click();
+  await expect(runde).toContainText("Lösung:");
+  const benennen = page.getByTestId("motiv-benennen");
+  await benennen.getByRole("button", { name: "Spieß" }).click();
+  await expect(benennen).toContainText("Richtig!");
+  await page.screenshot({ path: "test-results/bilder/trainer-taktik.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 8");
+});

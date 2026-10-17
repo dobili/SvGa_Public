@@ -9,7 +9,7 @@
     "node": ">=22"
   },
   "scripts": {
-    "vorbereiten": "node skripte/erzeuge-typen.mjs && node skripte/kopiere-engine.mjs",
+    "vorbereiten": "node skripte/erzeuge-typen.mjs && node skripte/kopiere-engine.mjs && node skripte/kopiere-trainerdaten.mjs",
     "dev": "npm run vorbereiten && vite",
     "typen": "npm run vorbereiten && tsc --noEmit",
     "stil": "eslint . --max-warnings 0 && prettier --check .",

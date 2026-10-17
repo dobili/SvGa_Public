@@ -24,8 +24,8 @@ import {
   Notieraufgabe,
 } from "../trainer/Koordinatentrainer";
 import { Roentgenaufgabe } from "../trainer/Roentgentrainer";
-import { Rundenrahmen } from "../trainer/Rundenrahmen";
-import { useRunde, type Runde } from "../trainer/useRunde";
+import { Rundenablauf, type Darstellung } from "../trainer/Rundenablauf";
+import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
 
 export type Uebungsart =
@@ -48,9 +48,6 @@ const ANZAHL: Readonly<Record<Uebungsart, number>> = {
   ausfuehren: 8,
   gangarten: 8,
 };
-
-/** Eine Aufgabe, gleich welcher Art, mit ihrer Darstellung. */
-type Darstellung = (runde: Runde) => React.ReactNode;
 
 /** Erzeugt die Aufgaben einer Runde, jede schon mit ihrer Darstellung. */
 function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstellung[] {
@@ -83,33 +80,6 @@ function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstell
         <Gangartaufgabe aufgabe={a} runde={r} />
       ));
   }
-}
-
-/** Eine Runde: Aufgaben einmal erzeugen, dann der Reihe nach zeigen. */
-function Rundenablauf({
-  kennung,
-  art,
-  stellungen,
-  nochmal,
-  zurAuswahl,
-}: {
-  kennung: TrainerKennung;
-  art: Uebungsart;
-  stellungen: readonly Buchstellung[];
-  nochmal: () => void;
-  zurAuswahl: (() => void) | null;
-}) {
-  const [aufgaben] = useState(() => erzeuge(art, stellungen));
-  const runde = useRunde(kennung, aufgaben.length);
-  const aktuelle = aufgaben[runde.index];
-  if (!aktuelle) return <p className="hinweis">{t("trainer.keineAufgaben")}</p>;
-  return (
-    <Rundenrahmen runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl}>
-      <div key={runde.index} className="trainer-aufgabe">
-        {aktuelle(runde)}
-      </div>
-    </Rundenrahmen>
-  );
 }
 
 /** Auswahl der Übungsart. */
@@ -151,25 +121,34 @@ function Inhalt({
     <Rundenablauf
       key={`${art}-${durchlauf}`}
       kennung={kennung}
-      art={art}
-      stellungen={stellungen}
+      erzeuge={() => erzeuge(art, stellungen)}
       nochmal={() => setzeDurchlauf(durchlauf + 1)}
       zurAuswahl={einzige ? null : () => setzeArt(null)}
     />
   );
 }
 
-export function Trainer({ kennung }: { kennung: TrainerKennung }) {
+/** Trainer, die an den Buchstellungen üben (Zählen, Röntgen, Koordinaten). */
+function MitBuchstellungen({ kennung }: { kennung: TrainerKennung }) {
   const daten = useDaten(ladeBuchstellungen, "buchstellungen");
+  if (daten.art === "laedt") return <p className="lade">…</p>;
+  if (daten.art === "fehler")
+    return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
+  return <Inhalt kennung={kennung} stellungen={daten.wert} />;
+}
+
+/** Trainer mit eigenen Aufgaben aus den Trainerdaten (AP 13, Fable). */
+const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = {
+  taktik: () => <TaktikBereich />,
+};
+
+export function Trainer({ kennung }: { kennung: TrainerKennung }) {
+  const eigener = EIGENE_BEREICHE[kennung];
   return (
     <div className="bildschirm bildschirm-trainer" data-testid="trainer">
       <Kopfzeile titel={t(`trainer.${kennung}.name`)} zurueckText={t("trainer.zurueck")} />
       <p className="hinweis">{t(`trainer.${kennung}.ablauf`)}</p>
-      {daten.art === "laedt" && <p className="lade">…</p>}
-      {daten.art === "fehler" && (
-        <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>
-      )}
-      {daten.art === "fertig" && <Inhalt kennung={kennung} stellungen={daten.wert} />}
+      {eigener ? eigener() : <MitBuchstellungen kennung={kennung} />}
     </div>
   );
 }

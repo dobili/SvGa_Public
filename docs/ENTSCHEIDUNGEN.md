@@ -2411,3 +2411,16 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
       Partie. So lassen?
       **Empfehlung:** so lassen. Ein Balken während der Partie verrät, wer besser steht, und nimmt
       dir das eigene Urteil ab.
+
+## Impressum und Datenschutz (17.10.2026 abends, Autor und Opus, Version 0.2.62)
+
+- Der Autor hat Name und Anschrift für das Impressum genannt (Hannover), bestätigt
+  kontakt@schach-von-grund-auf.com, Cloudflare als Hoster, keine Web Analytics und das Postfach
+  ebenfalls über Cloudflare. Telefon und Umsatzsteuer-ID entfallen.
+- Impressum: Angaben nach § 5 DDG, Verantwortlicher nach § 18 Abs. 2 MStV, Hinweis auf GPL für den
+  Code und geschützte Buchinhalte. Datenschutz: Verantwortlicher, Cloudflare als
+  Auftragsverarbeiter (Art. 6 Abs. 1 lit. f DSGVO, Übermittlung in die USA nach dem EU-US Data
+  Privacy Framework), E-Mail, Rechte nach Art. 15 bis 21 DSGVO, Beschwerde bei der
+  Landesbeauftragten für den Datenschutz Niedersachsen. E1 und E2 erledigt, Nachtest N294.
+- Bekannt und vom Autor so gewollt: Name und Anschrift stehen damit dauerhaft im öffentlichen
+  Repository.

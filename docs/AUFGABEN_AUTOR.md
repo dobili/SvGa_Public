@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.61. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.62. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.61“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.62“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (X, U,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,21 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.61“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.62“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.62 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
+
+- [ ] N294. **Impressum und Datenschutz lesen:** <https://schach-von-grund-auf.com/impressum/> und
+      <https://schach-von-grund-auf.com/datenschutz/>. Das Impressum nennt deinen Namen, die
+      Anschrift in Hannover und kontakt@schach-von-grund-auf.com, dazu „Verantwortlich nach § 18
+      Abs. 2 MStV“ und einen Satz zu den Rechten (Code GPL, Buchinhalte geschützt). Der Datenschutz
+      nennt dich als Verantwortlichen, Cloudflare für Auslieferung und E-Mail (USA, EU-US Data
+      Privacy Framework), keine Web Analytics, deine Rechte nach Art. 15 bis 21 DSGVO und die
+      Aufsicht in Niedersachsen. Kein „Entwurf“ mehr. Stimmt alles? Claude ist kein Anwalt: Wer
+      sichergehen will, lässt beide Seiten einmal prüfen, etwa mit einem Generator wie dem von
+      e-recht24 vergleichen. Falls Cloudflare deine E-Mails an ein anderes Postfach weiterleitet
+      (etwa Gmail), sag Bescheid, dann kommt dieser Anbieter mit in den Datenschutz.
 
 ### Neu in 0.2.61 (etwa 25 Minuten, mit Engine; deine Rückmeldung zu 0.2.56, Opus)
 
@@ -988,18 +1001,6 @@ hat, mit Rückfrage:
 
 ### E. Vor der Veröffentlichung der App (zurückgestellt, bis App und Website fertig sind)
 
-- [ ] E1. **Impressum** (`app/impressum/index.html`): Name und Anschrift nach § 5 DDG. Kontakt ist
-      bekannt: kontakt@schach-von-grund-auf.com. Keine Zugangsdaten mitschicken.
-      **Empfehlung:** vor dem Druck erledigen. Nach § 5 DDG gehört eine ladungsfähige Anschrift
-      hinein, ein Postfach reicht nicht; wer die Privatadresse nicht zeigen will, nimmt einen
-      Impressums-Dienst mit Anschrift.
-- [ ] E2. **Datenschutz** (`app/datenschutz/index.html`): Entwurf prüfen (lassen), Verantwortlichen
-      ergänzen.
-      **Empfehlung:** Entwurf übernehmen, aber Cloudflare als Hoster nennen. Die App selbst sammelt
-      nichts und läuft offline; der Server speichert beim Laden jedoch wie jeder Webserver
-      Zugriffsdaten (IP-Adresse).
-      **Stand 0.2.47: Cloudflare steht schon im Entwurf (Abschnitt „Auslieferung der Website“).
-      Offen ist nur noch der Verantwortliche, den nur du eintragen kannst.**
 - [ ] E3. **Buchbeschreibung** auf der Startseite: Entwurf bestätigen oder ersetzen.
       **Empfehlung:** denselben Text wie auf der Rückseite des Buches nehmen, dann stimmen Buch
       und Website überein.

@@ -2452,6 +2452,33 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   Stufe ihres Durchschnitts, sechs Partien je Paarung. Ergebnis folgt unten, sobald der Lauf
   fertig ist (etwa zwei Stunden).
 
+## Werkzeugabweichungen aus der Textarbeit geprüft (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.65)
+
+Die Helfer der Textarbeit (AP 14, 15.10.2026, Stand 0.2.25) hatten zwölf Gruppen von
+Werkzeugausgaben notiert, die vom Buch abweichen (Liste bis 0.2.64 in FORTSCHRITT unter AP 14).
+Nach Regel 9 jetzt ohne Rückfrage geprüft: Jede genannte Abbildung durch das heutige Werkzeug
+gerechnet und mit dem Buch verglichen. Ergebnis: Von den zwölf Gruppen waren neun seit den
+Rückfragen C1 bis C9 und den Versionen 0.2.26 bis 0.2.62 schon erledigt, zwei fehlten noch und
+sind jetzt umgesetzt, eine ist ein Befund an das Buch.
+
+| Werkzeug, Abbildungen                                                       | Stand heute                                                                                                                                                                                                                                                                                 |
+| --------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| k2-zielbilanz 2.40, 2.113 („mit Gewinn schlagbar“), 2.24 (nur d4)           | erledigt seit 0.2.33 (C1.1): angegriffene Zentrumsbauern prüft die Engine; 2.24 nennt d4 und e4                                                                                                                                                                                             |
+| k2-eroeffnung 2.85 (Nimzo-Indisch)                                          | kein Fehler: Das Nimzo-Beispiel des Buches (k02-a135) enthält 2. Lg5 als Abweichung, das Werkzeug sagt „noch offen: Nimzo-Indisch oder Trompowsky“                                                                                                                                          |
+| k3-faktorenbilanz 3.6, 3.42 (Turm f8 „auf offener Linie“)                   | erledigt: Der Turm zählt nur bei der Zeit „im Spiel“, wie die Tabelle des Buches                                                                                                                                                                                                            |
+| k3-faktorenbilanz 3.23, 3.32, 3.60, 3.68, 3.69 (Taktik)                     | erledigt: im Schach „erst zu Ende rechnen“, Matt „Partie entschieden“; 3.32 stimmt mit der Tabelle des Buches überein                                                                                                                                                                       |
+| k3-faktorenbilanz 3.1, 3.18, 3.36 („Schwarz vorn bei Zeit“ bei 0:0)         | **Befund an das Buch** (Rückfrage B6): Die Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom weißen Vorsprung eine Figur ab“) und die Tabelle zu 3.14 (zwei gegen zwei, Schwarz +1) ergeben das so; die App folgt dem Buch (Regel 1). Vorschlag im Buch: „nie unter null“                |
+| k4-warnsignale 4.29 (h2 nur von Sf3 gedeckt), 4.8 (Lb2–De5–g7)              | erledigt (C2 und W2 seit 0.2.39)                                                                                                                                                                                                                                                            |
+| k5-richtung 5.15, 5.30, 5.21, 5.27, 5.35, 5.13; k5-figuren 5.40             | erledigt (C1.9, C1.10, Luftloch): gesunde Mehrheit vor Minderheitsangriff, Hebel gegen die Basis zuerst, „schlecht nach der Farbe, aber aktiv“                                                                                                                                              |
+| k5-richtung 5.17 (Weiß, Besitzer des Isolani)                               | **jetzt umgesetzt:** Fazit für den Besitzer eines zentralen Isolani im Mittelspiel nach Kapitel 5 („aktives Figurenspiel, Vorstoß d4–d5, keine Figuren tauschen“); nicht, wenn der Gegner das Feld davor blockiert (5.18) oder die Damen fehlen. Auch 11.43 (Petrosjan) bekommt diesen Satz |
+| k6-wo/k6-lap 6.4, 6.8 bis 6.10, 6.17, 6.32                                  | erledigt: Gegenschlag im Zentrum, Minderheitsangriff nur am Damenflügel, Td7 als Eindringen, im Schach keine Planfrage                                                                                                                                                                      |
+| k7-motiv 7.21, 7.10, 7.28                                                   | erledigt: 7.21 „Abzug, relative Fesselung durchbrochen“; 7.10 und 7.28 über den letzten Zug des Verlaufs (Abzug, Dauerschach)                                                                                                                                                               |
+| k8-opposition, k8-quadrat 8.19 bis 8.53                                     | erledigt (Endspieldatenbank, Patt, Quadrat, Reserve-Tempo, verbundene Freibauern, König vor dem Bauern)                                                                                                                                                                                     |
+| k8-schluesselfelder 8.29 aus Sicht von Schwarz                              | **jetzt umgesetzt:** Der Sonderfall 6. Reihe steht auch im Fazit des Verteidigers („Weiß gewinnt mit e7“), nicht mehr „die Opposition entscheidet“                                                                                                                                          |
+| k9 9.3, 9.4, 9.23 bis 9.26, 9.37; k11-phase 11.28 bis 11.84; k12 12.3, 12.4 | erledigt (X1, C3, C9 und die Endspielwerkzeuge seit 0.2.49: Philidor, Vancura nur mit einem Bauern, ungleichfarbige Läufer mit getrennten Freibauern „meist gewonnen“, Phase Mittelspiel, Matt scheidet aus, Sicherheitsblick „König im Freien“)                                            |
+
+Die Liste in FORTSCHRITT ist damit abgearbeitet und dort durch diesen Verweis ersetzt.
+
 ## Impressum und Datenschutz (17.10.2026 abends, Autor und Opus, Version 0.2.62)
 
 - Der Autor hat Name und Anschrift für das Impressum genannt (Hannover), bestätigt

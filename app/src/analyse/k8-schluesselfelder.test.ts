@@ -62,6 +62,10 @@ describe("k8-schluesselfelder", () => {
     expect(schluessel(stellungVon("8.29"), "white").fazit).toBe(
       "Weiß gewinnt mit e7 (Sonderfall 6. Reihe).",
     );
+    // Auch aus Sicht von Schwarz (0.2.65): Der Sonderfall gilt, nicht „die Opposition entscheidet“.
+    expect(schluessel(stellungVon("8.29"), "black").fazit).toBe(
+      "Weiß gewinnt mit e7 (Sonderfall 6. Reihe).",
+    );
     // Schwarz am Zug (Abb. 8.30): kein Gewinnzug für Weiß, das Fazit bleibt beim Stand.
     expect(schluessel(stellungVon("8.30"), "white").fazit).not.toMatch(/Sonderfall/);
     // Nicht im Turmendspiel (Abb. 9.4) und nicht beim Randbauern (Abb. 9.41, falscher Läufer).

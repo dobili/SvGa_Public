@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.64. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.65. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.64“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.65“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (X, U,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,19 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.64“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.65“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.65 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
+
+- [ ] N288. **Isolani aus Besitzersicht und Sonderfall 6. Reihe:** Abb. 5.17, Werkzeug „Richtung“:
+      Für Schwarz weiter „spielt gegen den Isolani d4: Blockiere das Feld davor (d5) …“; für Weiß
+      (Brett drehen oder Sicht wechseln) jetzt „Weiß hat den Isolani d4: Spiele aktiv mit den
+      Figuren (offene Linien für die Türme, Sprungbrett für den Königsangriff), bereite den
+      Vorstoß d4–d5 vor und tausche möglichst keine Figur.“ Abb. 5.18 (Isolani d5, vom Springer
+      blockiert): kein solcher Satz. Abb. 8.29, Werkzeug „Schlüsselfelder“ aus Sicht von Schwarz:
+      „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“ Die übrigen zwölf Gruppen der Helferliste
+      waren schon erledigt; die Zeit-Zählhilfe ist ein Befund an dich (B6).
 
 ### Neu in 0.2.64 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
 
@@ -772,6 +783,18 @@ Regeln C1 und C2).
 ---
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
+
+### B. Buchbefunde aus der Textarbeit (Fable, 0.2.65; nur du änderst das Buch)
+
+- [ ] B6. **Zeit-Zählhilfe in Kapitel 3:** Die Faktorenbilanz der App sagt nach 1. e4 e5 2. f4
+      (Abb. 3.1, ebenso 3.18 und 3.36) „Schwarz liegt vorn bei Zeit“, obwohl beide Seiten null
+      Figuren im Spiel haben. Das folgt der Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom
+      weißen Vorsprung eine Figur ab“) und der Tabelle zu Abb. 3.14 (zwei gegen zwei, Schwarz am
+      Zug: Schwarz +1). Der Fließtext sagt dagegen nur „sein Vorsprung ist eine Figur kleiner“,
+      also nie unter null. Die Helfer der Textarbeit fanden das Ergebnis bei 0:0 falsch, ich auch.
+      **Empfehlung:** im Buch die Zählhilfe um „nie unter null“ ergänzen und die Tabelle zu 3.14
+      auf „gleich“ setzen; dann ändere ich die App (ein Zeile) und die Kalibrierung. Bis dahin
+      bleibt die App beim Buch (Regel 1).
 
 ### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 

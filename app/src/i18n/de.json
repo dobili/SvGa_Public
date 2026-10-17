@@ -1047,6 +1047,7 @@
   "richtung.schwaeche.doppel": "den Doppelbauern {feld}",
   "richtung.schwaeche.basis": "die Kettenbasis {feld}",
   "richtung.schwaeche.ungesund": "den schwachen Bauern {feld}",
+  "richtung.fazitIsolani": "{farbe} hat den Isolani {feld}: Spiele aktiv mit den Figuren (offene Linien für die Türme, Sprungbrett für den Königsangriff), bereite den Vorstoß {feld}–{vor} vor und tausche möglichst keine Figur.",
   "richtung.fazitOffen": "Keine Kette gibt {farbe} die Richtung vor: Spiele gegen die Schwächen des Gegners.",
   "figuren.titel": "Leitfrage 4: Figuren",
   "figuren.typ": "Stellungstyp: {typ}",

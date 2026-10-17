@@ -24,6 +24,17 @@ describe("k5-richtung", () => {
     expect(e.markierungen).toContainEqual({ typ: "pfeil", farbe: "grau", von: "d4", nach: "e5" });
   });
 
+  it("Abb. 5.17: Schwarz spielt gegen den Isolani, Weiß spielt mit ihm (0.2.65)", () => {
+    expect(richtung(stellungVon("5.17"), "black").fazit).toBe(
+      "Schwarz spielt gegen den Isolani d4: Blockiere das Feld davor (d5) und greife ihn mit Figuren an.",
+    );
+    expect(richtung(stellungVon("5.17"), "white").fazit).toBe(
+      "Weiß hat den Isolani d4: Spiele aktiv mit den Figuren (offene Linien für die Türme, Sprungbrett für den Königsangriff), bereite den Vorstoß d4–d5 vor und tausche möglichst keine Figur.",
+    );
+    // Abb. 5.18: Isolani d5 in schwarzem Besitz, aber vom Springer d4 blockiert: kein Besitzer-Plan mehr.
+    expect(richtung(stellungVon("5.18"), "black").fazit).not.toMatch(/hat den Isolani/);
+  });
+
   it("Abb. 5.24: der Hebel ...c5 trifft die Basis d4 (rot)", () => {
     const e = richtung(stellungVon("5.24"), "black");
     expect(zeilen("5.24", "black")).toContain("Hebel c7–c5 gegen die Basis d4");
@@ -88,9 +99,9 @@ describe("k5-richtung", () => {
 
   it("Abb. 11.43, Schwarz: Ein einzelner Bauer (a6) ist kein Minderheitsangriff", () => {
     expect(zeilen("11.43", "black")).toContain("Minderheit am Damenflügel (1 gegen 2)");
-    expect(richtung(stellungVon("11.43"), "black").fazit).toBe(
-      "Keine Kette gibt Schwarz die Richtung vor: Spiele gegen die Schwächen des Gegners.",
-    );
+    // Seit 0.2.65 gilt für den Besitzer des Isolani d5 der Plan des Buches (Petrosjan hätte
+    // Figuren behalten sollen; Fischer tauschte sie ab).
+    expect(richtung(stellungVon("11.43"), "black").fazit).toMatch(/^Schwarz hat den Isolani d5/);
   });
 
   // C1.10: Der Hebel gegen die Basis steht vorn und ist als einziger gold.

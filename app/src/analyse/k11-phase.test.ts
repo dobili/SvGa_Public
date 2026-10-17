@@ -26,7 +26,7 @@ describe("k11-phase", () => {
     const p = phase("8.1");
     expect(p.erste).toBe("Endspiel: Die vier Prüffragen ergeben überwiegend Ja.");
     expect(p.zeilen[4]).toBe(
-      "Endspielfragen: Damen vom Brett ja; Könige vor Mattangriff sicher ja; König am Zug kann ins Zentrum ja; Bauern entscheiden ja (4 von 4).",
+      "Endspielfragen: Damen vom Brett ja; Könige vor Mattangriff sicher ja; König am Zug kann ins Zentrum ja; Bauern entscheiden (Freibauer, oder Mehrheit bei wenig Figurenmaterial) ja (4 von 4).",
     );
     expect(p.werkzeuge[0]).toMatch(/^Die sechs Endspielregeln \(Kapitel 8\)/);
     expect(p.markierungen[0]).toEqual({ typ: "pfeil", farbe: "gold", von: "g1", nach: "f1" });
@@ -58,7 +58,7 @@ describe("k11-phase", () => {
   it("Abb. 1.26: Eröffnung, Entwicklung und Rochade stehen aus", () => {
     const p = phase("1.26");
     expect(p.erste).toBe(
-      "Eröffnung: Mindestens eine Seite hat noch zwei oder mehr Leichtfiguren auf dem Startfeld.",
+      "Eröffnung: Beide Seiten haben noch zwei oder mehr Leichtfiguren auf dem Startfeld, und das Figurenmaterial ist gleich.",
     );
     expect(p.werkzeuge[0]).toMatch(/^Dein Repertoire \(Kapitel 2\)/);
   });
@@ -101,7 +101,10 @@ describe("k11-phase", () => {
     ["Unzicker (Mittelspiel)", ["11.75", "11.78", "11.80", "11.82", "11.84"], "Mittelspiel"],
     ["Capablanca (Endspiel)", ["11.85", "11.87", "11.89", "11.101"], "Endspiel"],
     ["Botwinnik (Endspiel)", ["11.91", "11.93", "11.95", "11.97"], "Endspiel"],
-    ["Opernpartie (Eröffnung bis Mattangriff)", ["11.1", "11.2", "11.3", "11.4"], "Eröffnung"],
+    // 0.2.44: Abb. 11.4 (nach 9… b5, Weiß fertig entwickelt, 10. Sxb5 beginnt den Mattangriff) ist
+    // nach der Lesart „eine Seite entwickelt“ Mittelspiel; Befund an den Autor (S17).
+    ["Opernpartie (Eröffnung bis Mattangriff)", ["11.1", "11.2", "11.3"], "Eröffnung"],
+    ["Opernpartie, Beginn des Mattangriffs", ["11.4"], "Mittelspiel: Weiß ist entwickelt"],
     ["Anderssen (Eröffnung bis Mattangriff)", ["11.22", "11.23", "11.24"], "Eröffnung"],
   ] as const)("Steckbrief %s", (_partie, nummern, erwartet) => {
     for (const nummer of nummern)

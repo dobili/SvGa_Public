@@ -70,7 +70,9 @@ function aufStartfeld(p: Zugprobe, farbe: Color): boolean {
  */
 export function istTempoverlust(lage: Lage, p: Zugprobe): boolean {
   const farbe = lage.regeln.turn;
-  if (lage.phase !== "eroeffnung" || !(p.figur.role in STARTLINIEN)) return false;
+  // Seit 0.2.44 kann die Phase Mittelspiel sein, obwohl diese Seite noch in der Entwicklung steckt;
+  // maßgeblich sind die eigenen Figuren zu Hause, nicht die Phase.
+  if (lage.phase === "endspiel" || !(p.figur.role in STARTLINIEN)) return false;
   if (p.geschlagen !== null || p.danach.isCheck() || aufStartfeld(p, farbe)) return false;
   if (leichtfigurenZuHause(lage.regeln.board, farbe) < ZU_HAUSE_TEMPO) return false;
   const karte = new Angriffskarte(lage.regeln.board);
@@ -83,9 +85,11 @@ export function istTempoverlust(lage: Lage, p: Zugprobe): boolean {
  * Beispiel: Dxb2 im Sizilianer, Dxg7 ohne Rechnung.
  */
 export function istBauernraub(lage: Lage, p: Zugprobe, verlust: number | null): boolean {
-  if (lage.phase !== "eroeffnung" || p.figur.role !== "queen" || p.geschlagen !== "pawn") {
+  if (lage.phase === "endspiel" || p.figur.role !== "queen" || p.geschlagen !== "pawn") {
     return false;
   }
+  // Bauernraub ist ein Eröffnungsfehler: Die raubende Seite hat noch Figuren zu Hause (0.2.44).
+  if (leichtfigurenZuHause(lage.regeln.board, lage.regeln.turn) < ZU_HAUSE_TEMPO) return false;
   return (verlust !== null && verlust >= VERLUST_AB) || KOEDERLINIEN.has(squareFile(p.zug.to));
 }
 

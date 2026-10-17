@@ -13,7 +13,8 @@
  */
 import type { Square } from "chessops/types";
 import { t, type Textschluessel } from "../i18n/sprache";
-import { ENDSPIEL_BIS_PUNKTE, phase, type Phase, type Phasenbefund } from "../schach/phase";
+import { phase, type Phase, type Phasenbefund } from "../schach/phase";
+import { phasensatz, zusatzsatz } from "./phasentext";
 import { feldname, type Stellung } from "../schach/stellung";
 import { profil } from "./stellungsprofil";
 import { farbname } from "./texte";
@@ -66,17 +67,10 @@ export function phasenzeilen(p: Phasenbefund): string[] {
       entwicklung: w(z.entwicklung.wertung),
       koenig: w(z.koenig.wertung),
     });
-  const zusatz = p.zusatz
-    ? [
-        t(`phase.zusatz.${p.zusatz}`, {
-          punkte: ENDSPIEL_BIS_PUNKTE,
-          buch: t(`phase.name.${p.buchphase}`),
-        }),
-      ]
-    : [];
+  const zusatz = zusatzsatz(p);
   return [
-    t(`phase.ist.${p.phase}`),
-    ...zusatz,
+    phasensatz(p),
+    ...(zusatz ? [zusatz] : []),
     t("phase.zuHause", {
       weiss: p.ziele.white.entwicklung.offen.length,
       schwarz: p.ziele.black.entwicklung.offen.length,

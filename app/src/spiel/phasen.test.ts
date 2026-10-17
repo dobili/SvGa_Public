@@ -44,10 +44,28 @@ describe("Phasen", () => {
     // Dame, Turm und drei Bauern je Seite (17 Punkte): Mittelspiel; ohne Türme (12 Punkte): Endspiel.
     expect(phaseVon("3q1rk1/5ppp/8/8/8/8/5PPP/3QR1K1 w - - 0 40")).toBe("mittelspiel");
     expect(phaseVon("3q2k1/5ppp/8/8/8/8/5PPP/3Q2K1 w - - 0 40")).toBe("endspiel");
-    // Weiß hat Sb1 und Lc1 zu Hause: nach dem Buch Eröffnung, auch in Zug 30.
-    const zuHause = "r4rk1/ppp2ppp/2n2n2/3qp3/8/5N2/PPPP1PPP/RNBQ1RK1 w - - 0";
-    expect(phaseVon(`${zuHause} 14`)).toBe("eroeffnung");
-    expect(phaseVon(`${zuHause} 30`)).toBe("eroeffnung");
+    // Die Zugzahl ändert nichts: Beide Seiten mit zwei Leichtfiguren zu Hause bleiben in der
+    // Eröffnung, auch in Zug 30.
+    const beideZuHause = "r1bqkb1r/pppp1ppp/2n2n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 4";
+    expect(phaseVon(`${beideZuHause} 4`)).toBe("eroeffnung");
+    expect(phaseVon(`${beideZuHause} 30`)).toBe("eroeffnung");
+  });
+
+  // Lesart 0.2.44 (Entscheidung des Autors): Mittelspiel, sobald eine Seite entwickelt ist oder
+  // das Figurenmaterial ungleich ist; Bauernmehrheit allein macht kein Endspiel.
+  it("eine entwickelte Seite oder ungleiches Material: Mittelspiel; Berliner Verteidigung kein Endspiel", () => {
+    // Schwarz ist entwickelt, Weiß hat Sb1 und Lc1 zu Hause.
+    expect(phaseVon("r4rk1/ppp2ppp/2n2n2/3qp3/8/5N2/PPPP1PPP/RNBQ1RK1 w - - 0 14")).toBe(
+      "mittelspiel",
+    );
+    // Beide mit Figuren zu Hause, aber Weiß hat einen Springer mehr.
+    expect(phaseVon("r1bqkb1r/pppp1ppp/5n2/4p3/4P3/2N2N2/PPPP1PPP/R1BQKB1R w KQkq - 0 5")).toBe(
+      "mittelspiel",
+    );
+    // Berliner Verteidigung nach 8. Dxd8+ Kxd8 9. Sc3: Damen weg, Mehrheiten, 19 Punkte Figuren.
+    expect(phaseVon("r1bk1b1r/ppp2ppp/2p5/4Pn2/8/2N2N2/PPP2PPP/R1B2RK1 b - - 1 9")).toBe(
+      "mittelspiel",
+    );
   });
 
   it("je Stellung eine Phase, die nie zurückspringt; Übergänge als Index", () => {

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.63. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.64. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.63“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.64“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (X, U,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,10 +21,10 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.63“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.64“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.63 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
+### Neu in 0.2.64 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
 
 - [ ] N285. **Gegnerwahl mit Porträts:** Spielen › Gegner „Engine“. Unter „Vorgefertigter Gegner“
       steht oben eine Sprechblase mit Porträt, Name, Durchschnitt und Satz des gewählten Gegners;
@@ -43,7 +43,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.63“, dann 
       aggressiv, übersieht ruhige Züge) oder IM Haas (sehr defensiv, übersieht die Grundreihe)
       spielen in voller Stärke, aber mit Handschrift. Prüfe, dass sie trotzdem wie Stufe 8 wirken.
 
-### Neu in 0.2.62 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
+### Neu in 0.2.63 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
 
 - [ ] N294. **Impressum und Datenschutz lesen:** <https://schach-von-grund-auf.com/impressum/> und
       <https://schach-von-grund-auf.com/datenschutz/>. Das Impressum nennt deinen Namen, die
@@ -53,8 +53,8 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.63“, dann 
       Privacy Framework), keine Web Analytics, deine Rechte nach Art. 15 bis 21 DSGVO und die
       Aufsicht in Niedersachsen. Kein „Entwurf“ mehr. Stimmt alles? Claude ist kein Anwalt: Wer
       sichergehen will, lässt beide Seiten einmal prüfen, etwa mit einem Generator wie dem von
-      e-recht24 vergleichen. Falls Cloudflare deine E-Mails an ein anderes Postfach weiterleitet
-      (etwa Gmail), sag Bescheid, dann kommt dieser Anbieter mit in den Datenschutz.
+      e-recht24 vergleichen. Die Weiterleitung an dein Postfach bei goneo steht seit 0.2.63 im
+      Datenschutz (Abschnitt „E-Mail“).
 
 ### Neu in 0.2.61 (etwa 25 Minuten, mit Engine; deine Rückmeldung zu 0.2.56, Opus)
 

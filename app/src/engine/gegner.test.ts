@@ -34,7 +34,7 @@ describe("vorgefertigte Gegner", () => {
     expect(sortiert.at(-1)?.stufenJePhase.mittelspiel).toBe(8);
   });
 
-  it("acht je Stufe (0.2.63), Kennungen eindeutig, Stil im Bereich", () => {
+  it("acht je Stufe (0.2.64), Kennungen eindeutig, Stil im Bereich", () => {
     for (const nummer of STUFENNUMMERN) expect(gegnerDerStufe(nummer)).toHaveLength(JE_STUFE);
     expect(new Set(GEGNER.map((g) => g.kennung)).size).toBe(GEGNER.length);
     for (const g of GEGNER) {

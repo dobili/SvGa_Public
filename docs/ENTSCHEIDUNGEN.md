@@ -2411,7 +2411,7 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
       **Empfehlung:** so lassen. Ein Balken während der Partie verrät, wer besser steht, und nimmt
       dir das eigene Urteil ab.
 
-## 64 Gegner mit Porträts (18.10.2026 nachts, Fable, Zweig `bots-galerie`, Version 0.2.63)
+## 64 Gegner mit Porträts (18.10.2026 nachts, Fable, Zweig `bots-galerie`, Version 0.2.64)
 
 Wunsch des Autors (18.10.2026, mit Bildschirmfoto der Bot-Auswahl von chess.com): acht Bots je
 Spielstärke mit verschiedenen Stärken und Schwächen, Auswahl mit Porträts, freie Bilder in
@@ -2447,7 +2447,7 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   „Eigene Stufen“ und die eigenen Gegner (Anfangsbuchstabe), dann je Stufe eine Gruppe mit
   Überschrift „Stufe 3 · Fortgeschrittener Anfänger“. Kacheln sind Radio-Knöpfe (Bildschirmleser:
   „Vorgefertigter Gegner“, Name). Die Stufen je Phase bleiben verborgen.
-- **Messung** (`npm run messen:stufen -- 1@lotta-1 …`, das Kürzel `N@kennung` nimmt seit 0.2.63
+- **Messung** (`npm run messen:stufen -- 1@lotta-1 …`, das Kürzel `N@kennung` nimmt seit 0.2.64
   das ganze Profil des Bots: Fehlerarten, Stil, blinde Flecken): alle 64 Bots gegen die reine
   Stufe ihres Durchschnitts, sechs Partien je Paarung. Ergebnis folgt unten, sobald der Lauf
   fertig ist (etwa zwei Stunden).
@@ -2462,5 +2462,8 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   Auftragsverarbeiter (Art. 6 Abs. 1 lit. f DSGVO, Übermittlung in die USA nach dem EU-US Data
   Privacy Framework), E-Mail, Rechte nach Art. 15 bis 21 DSGVO, Beschwerde bei der
   Landesbeauftragten für den Datenschutz Niedersachsen. E1 und E2 erledigt, Nachtest N294.
+- Nachtrag: Cloudflare leitet die E-Mails an ein Postfach bei goneo weiter (Angabe des Autors);
+  goneo steht als Auftragsverarbeiter im Datenschutz. Die Zieladresse selbst steht nicht im
+  Repository.
 - Bekannt und vom Autor so gewollt: Name und Anschrift stehen damit dauerhaft im öffentlichen
   Repository.

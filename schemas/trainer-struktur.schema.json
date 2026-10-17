@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/trainer-struktur.schema.json",
+  "title": "Aufgaben des Strukturerkenners",
+  "description": "Kapitel 5, Pflichtenheft 7: Nur das Skelett ist sichtbar. Der Leser beantwortet die vier Leitfragen durch Antippen (Löcher, schwache Bauern, Richtung, guter oder schlechter Läufer; die App vergleicht mit ihren Werkzeugen k5-felder, k5-bauern, k5-richtung, k5-figuren) und wählt den passenden Plan-Satz. Die Daten nennen die Struktur, die Seite und den Plan; die Sätze stehen in der App (i18n).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "trainer", "erzeugt", "quellen", "aufgaben"],
+  "allOf": [{ "$ref": "trainer-gemeinsam.schema.json#/$defs/kopf" }],
+  "properties": {
+    "schemaVersion": {},
+    "trainer": { "const": "struktur" },
+    "erzeugt": {},
+    "quellen": {},
+    "aufgaben": { "type": "array", "items": { "$ref": "#/$defs/aufgabe" } }
+  },
+  "$defs": {
+    "struktur": {
+      "description": "Strukturen aus Kapitel 5 (Leitfragen 1 bis 4)",
+      "enum": ["loch", "vorposten", "haken", "doppelbauer", "isolani", "haengendeBauern", "kette", "mehrheit", "minderheitsangriff", "raum", "offen", "geschlossen", "laeufer"]
+    },
+    "plan": {
+      "description": "Der Plan-Satz, den der Leser wählen soll (Schlüssel; Text in der App)",
+      "enum": ["vorpostenBesetzen", "lochVermeiden", "luftlochSchaffen", "doppelbauerAngreifen", "doppelbauerAufloesen", "isolaniBlockieren", "isolaniVorstossen", "haengendeAngreifen", "haengendeVorstossen", "kettenbasisAngreifen", "fluegelDerKette", "mehrheitVorstossen", "minderheitsangriff", "raumNutzen", "stellungOeffnen", "stellungSchliessen", "schlechtenLaeuferTauschen", "gutenLaeuferBehalten", "springerStattLaeufer"]
+    },
+    "aufgabe": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "fen", "seite", "struktur", "plan", "merkmale", "schwierigkeit", "herkunft", "messung"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^struktur-(b|l)-[0-9A-Za-z.-]+$" },
+        "fen": { "$ref": "trainer-gemeinsam.schema.json#/$defs/fen" },
+        "seite": { "description": "Die Seite, für die der Plan gilt", "$ref": "trainer-gemeinsam.schema.json#/$defs/seite" },
+        "struktur": { "$ref": "#/$defs/struktur" },
+        "plan": { "$ref": "#/$defs/plan" },
+        "merkmale": {
+          "description": "Was die Pipeline im Skelett gefunden hat (Felder); die App rechnet die Leitfragen selbst, dies dient der Nachvollziehbarkeit",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["isolierte", "doppelte", "rueckstaendige", "freibauern", "inseln"],
+          "properties": {
+            "isolierte": { "type": "array", "items": { "$ref": "trainer-gemeinsam.schema.json#/$defs/feld" } },
+            "doppelte": { "type": "array", "items": { "$ref": "trainer-gemeinsam.schema.json#/$defs/feld" } },
+            "rueckstaendige": { "type": "array", "items": { "$ref": "trainer-gemeinsam.schema.json#/$defs/feld" } },
+            "freibauern": { "type": "array", "items": { "$ref": "trainer-gemeinsam.schema.json#/$defs/feld" } },
+            "inseln": { "type": "object", "additionalProperties": false, "required": ["w", "b"], "properties": { "w": { "type": "integer" }, "b": { "type": "integer" } } }
+          }
+        },
+        "schwierigkeit": { "$ref": "trainer-gemeinsam.schema.json#/$defs/schwierigkeit" },
+        "herkunft": { "$ref": "trainer-gemeinsam.schema.json#/$defs/herkunft" },
+        "messung": {
+          "description": "Maß der Schwierigkeit: Zahl der Merkmale beider Seiten, Figuren außer Bauern und Königen (mehr Figuren verdecken das Skelett)",
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["merkmale", "figuren"],
+          "properties": { "merkmale": { "type": "integer" }, "figuren": { "type": "integer" } }
+        }
+      }
+    }
+  }
+}

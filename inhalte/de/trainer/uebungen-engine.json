@@ -1,0 +1,4457 @@
+{
+ "schemaVersion": 1,
+ "engine": {
+  "name": "Stockfish 19 lite (ein Kern)",
+  "tiefe": 20,
+  "datum": "2026-10-16"
+ },
+ "massstab": {
+  "gleichwertigBis": 0.3,
+  "schwaecherBis": 1.0,
+  "einzigerZugAb": 1.0,
+  "wertGewonnen": 5.0,
+  "mattLaenger": 0.5,
+  "hoechstensVorschlaege": 5
+ },
+ "uebungen": [
+  {
+   "uebung": "ueb:notation-lesen-1",
+   "nummer": 1,
+   "kapitel": 0,
+   "abbildung": null,
+   "fen": null,
+   "motiv": "Notation lesen",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "art": "ohneStellung",
+   "amZug": null
+  },
+  {
+   "uebung": "ueb:notation-lesen-2",
+   "nummer": 2,
+   "kapitel": 0,
+   "abbildung": "0.26",
+   "fen": "r1bq1rk1/pppp1ppp/2n2n2/2b1p1B1/2B1P3/3P1N2/PPP2PPP/RN1Q1RK1 b - - 2 6",
+   "motiv": "Notation schreiben",
+   "buchloesung": "6... h6 7. Lxf6 Dxf6",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "h6",
+   "wert": "+0.08",
+   "art": "zug",
+   "buchzug": "h6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.17,
+   "zuege": [
+    {
+     "san": "h6",
+     "wert": "+0.08",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "a6",
+     "wert": "-0.09",
+     "verlust": 0.17,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Be7",
+     "wert": "-0.09",
+     "verlust": 0.17,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "d6",
+     "wert": "-0.14",
+     "verlust": 0.22,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "a5",
+     "wert": "-0.22",
+     "verlust": 0.3,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Kh8",
+     "wert": "-0.30",
+     "verlust": 0.38,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [
+    "a6",
+    "Be7",
+    "d6",
+    "a5"
+   ],
+   "gleichwertigeZuege": 4,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch h6: +0.08; gleichwertig: a6, Le7, d6, a5"
+  },
+  {
+   "uebung": "ueb:notation-schreiben",
+   "nummer": 3,
+   "kapitel": 0,
+   "abbildung": null,
+   "fen": null,
+   "motiv": "Bauernschlag notieren",
+   "buchloesung": "1. e4 d5 2. exd5 Dxd5",
+   "akzeptiertBuch": [],
+   "art": "ohneStellung",
+   "amZug": null
+  },
+  {
+   "uebung": "ueb:droh-ignorieren",
+   "nummer": 4,
+   "kapitel": 1,
+   "abbildung": "1.40",
+   "fen": "rn2kb1r/1p3ppp/p3pn2/1Npq4/3P4/5N2/PPP2PPP/R1BQ1RK1 w kq - 0 1",
+   "motiv": "Springergabel mit Schach",
+   "buchloesung": "1. Sc7+!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Nc7+",
+   "wert": "+8.60",
+   "art": "zug",
+   "buchzug": "Nc7+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 8.25,
+   "zuege": [
+    {
+     "san": "Nc7+",
+     "wert": "+8.60",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "c4",
+     "wert": "+0.35",
+     "verlust": 8.25,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Nc3",
+     "wert": "+0.25",
+     "verlust": 8.35,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Na3",
+     "wert": "-0.45",
+     "verlust": 9.05,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Na7",
+     "wert": "-4.39",
+     "verlust": 12.99,
+     "status": "widerlegt"
+    },
+    {
+     "san": "b4",
+     "wert": "-4.90",
+     "verlust": 13.5,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Nc7+: +8.60; einziger Zug (8.2 Abstand)"
+  },
+  {
+   "uebung": "ueb:zaehlen-vorstoss",
+   "nummer": 5,
+   "kapitel": 1,
+   "abbildung": "1.41",
+   "fen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/2PPP3/2N5/PP2BPPP/R1BQ1RK1 w - - 0 1",
+   "motiv": "Zählen von Angreifern und Verteidigern",
+   "buchloesung": "1. cxd5! cxd5 2. exd5 exd5 3. Sxd5",
+   "akzeptiertBuch": [
+    "1. exd5"
+   ],
+   "amZug": "w",
+   "besterZug": "exd5",
+   "wert": "+1.10",
+   "art": "zug",
+   "buchzug": "cxd5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "exd5",
+     "wert": "+1.10",
+     "verlust": 0.0,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "cxd5",
+     "wert": "+1.10",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Bf4",
+     "wert": "+0.44",
+     "verlust": 0.66,
+     "status": "schwaecher"
+    },
+    {
+     "san": "b3",
+     "wert": "+0.43",
+     "verlust": 0.67,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qd3",
+     "wert": "+0.41",
+     "verlust": 0.69,
+     "status": "schwaecher"
+    },
+    {
+     "san": "e5",
+     "wert": "+0.40",
+     "verlust": 0.7,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch cxd5: +1.10"
+  },
+  {
+   "uebung": "ueb:spannung-halten",
+   "nummer": 6,
+   "kapitel": 1,
+   "abbildung": "1.42",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+   "motiv": "Spannung halten",
+   "buchloesung": "4... Sf6",
+   "akzeptiertBuch": [
+    "4... Lc5"
+   ],
+   "amZug": "b",
+   "besterZug": "Nf6",
+   "wert": "-0.24",
+   "art": "zug",
+   "buchzug": "Nf6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.05,
+   "zuege": [
+    {
+     "san": "Nf6",
+     "wert": "-0.24",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Bc5",
+     "wert": "-0.29",
+     "verlust": 0.05,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Qf6",
+     "wert": "-0.31",
+     "verlust": 0.07,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Bb4+",
+     "wert": "-0.46",
+     "verlust": 0.22,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Nxd4",
+     "wert": "-0.51",
+     "verlust": 0.27,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "d5",
+     "wert": "-0.55",
+     "verlust": 0.31,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [
+    "Qf6",
+    "Bb4+",
+    "Nxd4"
+   ],
+   "gleichwertigeZuege": 3,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Nf6: -0.24; gleichwertig: Df6, Lb4+, Sxd4"
+  },
+  {
+   "uebung": "ueb:angriff-zaehlen",
+   "nummer": 7,
+   "kapitel": 1,
+   "abbildung": "1.43",
+   "fen": "r1b2rk1/ppq2ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "motiv": "Läuferopfer auf h7 nachzählen",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "h3",
+   "wert": "+0.39",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:k2-italienisch-sg5",
+   "nummer": 8,
+   "kapitel": 2,
+   "abbildung": "2.148",
+   "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p1N1/2B1P3/8/PPPP1PPP/RNBQK2R b KQkq - 5 4",
+   "motiv": "Ungedeckte Figur",
+   "buchloesung": "4... Dxg5",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Qxg5",
+   "wert": "+5.67",
+   "art": "zug",
+   "buchzug": "Qxg5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 3.36,
+   "zuege": [
+    {
+     "san": "Qxg5",
+     "wert": "+5.67",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "d5",
+     "wert": "+2.31",
+     "verlust": 3.36,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bxf2+",
+     "wert": "+1.03",
+     "verlust": 4.64,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Nh6",
+     "wert": "-0.30",
+     "verlust": 5.97,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qf6",
+     "wert": "-0.40",
+     "verlust": 6.07,
+     "status": "widerlegt"
+    },
+    {
+     "san": "d6",
+     "wert": "-0.82",
+     "verlust": 6.49,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Qxg5: +5.67; einziger Zug (3.4 Abstand)"
+  },
+  {
+   "uebung": "ueb:k2-italienisch-bilanz",
+   "nummer": 9,
+   "kapitel": 2,
+   "abbildung": "2.149",
+   "fen": "r1bqk2r/pppp1ppp/2n2n2/8/2BPP3/5N2/PP1N1PPP/R2QK2R b KQkq - 0 8",
+   "motiv": "Gegenstoß im Zentrum",
+   "buchloesung": "8... d5!",
+   "akzeptiertBuch": [
+    "8... Sxe4"
+   ],
+   "amZug": "b",
+   "besterZug": "d5",
+   "wert": "-0.08",
+   "art": "zug",
+   "buchzug": "d5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.09,
+   "zuege": [
+    {
+     "san": "d5",
+     "wert": "-0.08",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Nxe4",
+     "wert": "-0.17",
+     "verlust": 0.09,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "O-O",
+     "wert": "-0.45",
+     "verlust": 0.37,
+     "status": "schwaecher"
+    },
+    {
+     "san": "d6",
+     "wert": "-0.52",
+     "verlust": 0.44,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Na5",
+     "wert": "-0.93",
+     "verlust": 0.85,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qe7",
+     "wert": "-1.23",
+     "verlust": 1.15,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch d5: -0.08"
+  },
+  {
+   "uebung": "ueb:k2-zweispringer-la4",
+   "nummer": 10,
+   "kapitel": 2,
+   "abbildung": "2.150",
+   "fen": "r1bqkb1r/p4pp1/2p2n1p/n3N3/B3p3/8/PPPP1PPP/RNBQK2R b KQkq - 1 10",
+   "motiv": "Doppelangriff auf Springer und Randläufer",
+   "buchloesung": "10... Dd4!",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Qd4",
+   "wert": "+4.60",
+   "art": "zug",
+   "buchzug": "Qd4",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 3.86,
+   "zuege": [
+    {
+     "san": "Qd4",
+     "wert": "+4.60",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Bd6",
+     "wert": "+0.74",
+     "verlust": 3.86,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qc7",
+     "wert": "+0.62",
+     "verlust": 3.98,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qb6",
+     "wert": "-0.18",
+     "verlust": 4.78,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bc5",
+     "wert": "-0.23",
+     "verlust": 4.83,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bb7",
+     "wert": "-0.34",
+     "verlust": 4.94,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Qd4: +4.60; einziger Zug (3.9 Abstand)"
+  },
+  {
+   "uebung": "ueb:k2-carokann-h4",
+   "nummer": 11,
+   "kapitel": 2,
+   "abbildung": "2.151",
+   "fen": "rn1qkbnr/pp2pppp/2p5/3pPb2/3P3P/8/PPP2PP1/RNBQKBNR b KQkq - 0 4",
+   "motiv": "Läufer ohne Rückzugsfeld",
+   "buchloesung": "4... h5",
+   "akzeptiertBuch": [
+    "4... h6"
+   ],
+   "amZug": "b",
+   "besterZug": "h5",
+   "wert": "-0.41",
+   "art": "zug",
+   "buchzug": "h5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.1,
+   "zuege": [
+    {
+     "san": "h5",
+     "wert": "-0.41",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "h6",
+     "wert": "-0.51",
+     "verlust": 0.1,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Qc7",
+     "wert": "-0.68",
+     "verlust": 0.27,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Qa5+",
+     "wert": "-0.70",
+     "verlust": 0.29,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "a6",
+     "wert": "-0.71",
+     "verlust": 0.3,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "c5",
+     "wert": "-0.86",
+     "verlust": 0.45,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [
+    "Qc7",
+    "Qa5+",
+    "a6"
+   ],
+   "gleichwertigeZuege": 3,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch h5: -0.41; gleichwertig: Dc7, Da5+, a6"
+  },
+  {
+   "uebung": "ueb:k2-nimzo-e4",
+   "nummer": 12,
+   "kapitel": 2,
+   "abbildung": "2.152",
+   "fen": "rnbqk2r/pppp1ppp/4pn2/8/1bPPP3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4",
+   "motiv": "Gefesselter Verteidiger",
+   "buchloesung": "4... Sxe4!",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Nxe4",
+   "wert": "+0.71",
+   "art": "zug",
+   "buchzug": "Nxe4",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.59,
+   "zuege": [
+    {
+     "san": "Nxe4",
+     "wert": "+0.71",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "c5",
+     "wert": "+0.12",
+     "verlust": 0.59,
+     "status": "schwaecher"
+    },
+    {
+     "san": "d5",
+     "wert": "-0.29",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "O-O",
+     "wert": "-0.29",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Bxc3+",
+     "wert": "-0.37",
+     "verlust": 1.08,
+     "status": "widerlegt"
+    },
+    {
+     "san": "e5",
+     "wert": "-0.38",
+     "verlust": 1.09,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Nxe4: +0.71"
+  },
+  {
+   "uebung": "ueb:k2-zugumstellung-laeuferspiel",
+   "nummer": 13,
+   "kapitel": 2,
+   "abbildung": "2.153",
+   "fen": "r1bq1rk1/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1N2/PP3PPP/RNBQ1RK1 w - - 2 7",
+   "motiv": "Zugumstellung",
+   "buchloesung": "7. Lg5",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "h3",
+   "wert": "+0.13",
+   "art": "zug",
+   "buchzug": "Bg5",
+   "urteil": "gleichwertig",
+   "verlust": 0.07,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "h3",
+     "wert": "+0.13",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Nbd2",
+     "wert": "+0.13",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Re1",
+     "wert": "+0.13",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "b4",
+     "wert": "+0.12",
+     "verlust": 0.01,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Bb3",
+     "wert": "+0.10",
+     "verlust": 0.03,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Bg5",
+     "wert": "+0.06",
+     "verlust": 0.07,
+     "status": "buch"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 18,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Bg5: +0.06; bester Zug laut Engine h3 (+0.13); 18 gleichwertige Züge (Technikfrage, kein Vorschlag)"
+  },
+  {
+   "uebung": "ueb:smith-morra-kompensation",
+   "nummer": 14,
+   "kapitel": 3,
+   "abbildung": "3.80",
+   "fen": "rnbqkbnr/pp1ppppp/8/8/4P3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4",
+   "motiv": "Faktorenbilanz eines Gambits",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Nc6",
+   "wert": "+0.14",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:goering",
+   "nummer": 15,
+   "kapitel": 3,
+   "abbildung": "3.81",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4",
+   "motiv": "Gegenstoß ...d5",
+   "buchloesung": "4... d5",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "d5",
+   "wert": "+0.14",
+   "art": "zug",
+   "buchzug": "d5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.01,
+   "zuege": [
+    {
+     "san": "d5",
+     "wert": "+0.14",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "dxc3",
+     "wert": "+0.13",
+     "verlust": 0.01,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Nf6",
+     "wert": "-0.09",
+     "verlust": 0.23,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Nge7",
+     "wert": "-0.20",
+     "verlust": 0.34,
+     "status": "schwaecher"
+    },
+    {
+     "san": "h6",
+     "wert": "-0.61",
+     "verlust": 0.75,
+     "status": "schwaecher"
+    },
+    {
+     "san": "d3",
+     "wert": "-0.68",
+     "verlust": 0.82,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [
+    "dxc3",
+    "Nf6"
+   ],
+   "gleichwertigeZuege": 2,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch d5: +0.14; gleichwertig: dxc3, Sf6"
+  },
+  {
+   "uebung": "ueb:wolga-bilanz",
+   "nummer": 16,
+   "kapitel": 3,
+   "abbildung": "3.82",
+   "fen": "rn1qkb1r/3ppppp/b4n2/2pP4/8/8/PP2PPPP/RNBQKBNR w KQkq - 0 6",
+   "motiv": "Kompensation aus der Struktur",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Nc3",
+   "wert": "+0.78",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:elefant",
+   "nummer": 17,
+   "kapitel": 3,
+   "abbildung": "3.83",
+   "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq d6 0 3",
+   "motiv": "Fesselung auf der e-Linie",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "exd5",
+   "wert": "+1.01",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:echt-oder-schein",
+   "nummer": 18,
+   "kapitel": 3,
+   "abbildung": null,
+   "fen": null,
+   "motiv": "Echtes Opfer oder Scheinopfer",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "art": "ohneStellung",
+   "amZug": null
+  },
+  {
+   "uebung": "ueb:lasker-falle",
+   "nummer": 19,
+   "kapitel": 4,
+   "abbildung": "4.54",
+   "fen": "rnbqk1nr/ppp2ppp/8/4P3/1bP5/4p3/PP1B1PPP/RN1QKBNR w KQkq - 0 6",
+   "motiv": "Unterverwandlung mit Schach",
+   "buchloesung": "6. fxe3",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "fxe3",
+   "wert": "-0.28",
+   "art": "zug",
+   "buchzug": "fxe3",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 1.6,
+   "zuege": [
+    {
+     "san": "fxe3",
+     "wert": "-0.28",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qa4+",
+     "wert": "-1.88",
+     "verlust": 1.6,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Nf3",
+     "wert": "-5.82",
+     "verlust": 5.54,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Be2",
+     "wert": "-6.01",
+     "verlust": 5.73,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h3",
+     "wert": "-6.05",
+     "verlust": 5.77,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Nc3",
+     "wert": "-6.06",
+     "verlust": 5.78,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch fxe3: -0.28; einziger Zug (1.6 Abstand)"
+  },
+  {
+   "uebung": "ueb:mortimer-falle",
+   "nummer": 20,
+   "kapitel": 4,
+   "abbildung": "4.55",
+   "fen": "r1bqkb1r/ppppnppp/5n2/1B2p3/4P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 1 5",
+   "motiv": "Scheinbar freier Bauer",
+   "buchloesung": "5. Sc3",
+   "akzeptiertBuch": [
+    "5. O-O"
+   ],
+   "amZug": "w",
+   "besterZug": "Nc3",
+   "wert": "+0.30",
+   "art": "zug",
+   "buchzug": "Nc3",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.03,
+   "zuege": [
+    {
+     "san": "Nc3",
+     "wert": "+0.30",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Bc4",
+     "wert": "+0.27",
+     "verlust": 0.03,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "d4",
+     "wert": "+0.27",
+     "verlust": 0.03,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "O-O",
+     "wert": "+0.16",
+     "verlust": 0.14,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "c3",
+     "wert": "+0.15",
+     "verlust": 0.15,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Ba4",
+     "wert": "+0.10",
+     "verlust": 0.2,
+     "status": "gleichwertig"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 7,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Nc3: +0.30; 7 gleichwertige Züge (Technikfrage, kein Vorschlag)"
+  },
+  {
+   "uebung": "ueb:warnsignale-zuordnen",
+   "nummer": 21,
+   "kapitel": 4,
+   "abbildung": null,
+   "fen": null,
+   "motiv": "Warnsignale W1 bis W5",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "art": "ohneStellung",
+   "amZug": null
+  },
+  {
+   "uebung": "ueb:legal-verteidigung",
+   "nummer": 22,
+   "kapitel": 4,
+   "abbildung": null,
+   "fen": null,
+   "motiv": "Den billigsten Ausweg finden",
+   "buchloesung": "6... dxe5",
+   "akzeptiertBuch": [
+    "6... Sxe5"
+   ],
+   "art": "ohneStellung",
+   "amZug": null
+  },
+  {
+   "uebung": "ueb:bauernloch-erkennen",
+   "nummer": 23,
+   "kapitel": 5,
+   "abbildung": "5.45",
+   "fen": "rnbqkbnr/pppppp2/6pp/8/3PP3/8/PPP2PPP/RNBQKBNR w KQkq - 0 3",
+   "motiv": "Bauernzüge kosten Schutz",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Nc3",
+   "wert": "+1.03",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:deckungstest-inseln",
+   "nummer": 24,
+   "kapitel": 5,
+   "abbildung": "5.46",
+   "fen": "r2q1rk1/p3bppp/2p1bn2/3p2B1/8/2NB1Q2/PPP2PPP/4RRK1 w - - 4 13",
+   "motiv": "Deckungstest und Bauerninseln",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "h3",
+   "wert": "+0.09",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:guter-schlechter-laeufer",
+   "nummer": 25,
+   "kapitel": 5,
+   "abbildung": "5.47",
+   "fen": "r1bqkb1r/ppp2ppp/2np1n2/4p3/4P3/2NP1N2/PPP2PPP/R1BQKB1R w KQkq - 0 5",
+   "motiv": "Guter und schlechter Läufer",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "d4",
+   "wert": "+0.16",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:skelett-roentgen",
+   "nummer": 26,
+   "kapitel": 5,
+   "abbildung": "5.48",
+   "fen": "r2q1rk1/pp1nbppp/2n1p3/3pPb2/3P4/1N2BN2/PP2BPPP/R2Q1RK1 w - - 3 12",
+   "motiv": "Skelett-Röntgen",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rc1",
+   "wert": "-0.10",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:angriff-london",
+   "nummer": 27,
+   "kapitel": 6,
+   "abbildung": "6.34",
+   "fen": "r4rk1/pp1b1ppp/2nqpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R2Q1RK1 w - - 4 10",
+   "motiv": "Bedingungen für den Königsangriff",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "dxc5",
+   "wert": "+0.16",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:prophylaxe-saemisch",
+   "nummer": 28,
+   "kapitel": 6,
+   "abbildung": "6.35",
+   "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N1BP2/PP4PP/R2QKBNR b KQ - 2 6",
+   "motiv": "Prophylaxe",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "c5",
+   "wert": "-0.20",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:lap-spanisch",
+   "nummer": 29,
+   "kapitel": 6,
+   "abbildung": "6.36",
+   "fen": "r4rk1/2qbbppp/2np1n2/1p2p3/p2PP3/4BN1P/PPBN1PP1/R2QR1K1 w - - 2 17",
+   "motiv": "Schlechteste Figur verbessern",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rc1",
+   "wert": "+0.30",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:planbilanz-kid",
+   "nummer": 30,
+   "kapitel": 6,
+   "abbildung": "6.37",
+   "fen": "r2q1rk1/pp2n1b1/2ppPnpp/4pp2/1PP1P3/2N1BB2/P4PPP/R2QR1K1 b - - 0 15",
+   "motiv": "Planbilanz nach dem Bauerntausch",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Nxe4",
+   "wert": "-0.21",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:tausch-verwerten",
+   "nummer": 31,
+   "kapitel": 6,
+   "abbildung": "6.38",
+   "fen": "8/8/6k1/r5p1/7P/5NK1/4R3/8 b - - 0 1",
+   "motiv": "Wer weniger Material hat, tauscht Bauern",
+   "buchloesung": "1... gxh4+!",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "gxh4+",
+   "wert": "-0.06",
+   "art": "zug",
+   "buchzug": "gxh4+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 4.78,
+   "zuege": [
+    {
+     "san": "gxh4+",
+     "wert": "-0.06",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "g4",
+     "wert": "-4.84",
+     "verlust": 4.78,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rd5",
+     "wert": "-5.47",
+     "verlust": 5.41,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh5",
+     "wert": "-5.62",
+     "verlust": 5.56,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf7",
+     "wert": "-5.65",
+     "verlust": 5.59,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rc5",
+     "wert": "-5.70",
+     "verlust": 5.64,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch gxh4+: -0.06; einziger Zug (4.8 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-rettung",
+   "nummer": 32,
+   "kapitel": 7,
+   "abbildung": "7.44",
+   "fen": "8/6k1/8/8/8/7p/1q3p1P/4R2K w - - 0 1",
+   "motiv": "Rasender Turm und Patt",
+   "buchloesung": "1. Te7+!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Re7+",
+   "wert": "+0.00",
+   "art": "zug",
+   "buchzug": "Re7+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 98.0,
+   "zuege": [
+    {
+     "san": "Re7+",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Rg1+",
+     "wert": "M-2",
+     "verlust": 98.0,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rd1",
+     "wert": "M-2",
+     "verlust": 98.0,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rf1",
+     "wert": "M-1",
+     "verlust": 99.0,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Re8",
+     "wert": "M-1",
+     "verlust": 99.0,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Re6",
+     "wert": "M-1",
+     "verlust": 99.0,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Re7+: +0.00; einziger Zug (98.0 Abstand)"
+  },
+  {
+   "uebung": "ueb:luftloch-verteidigung",
+   "nummer": 33,
+   "kapitel": 7,
+   "abbildung": "7.45",
+   "fen": "6k1/pp3ppp/2n5/8/8/2N4P/1r3PP1/4R1K1 b - - 0 1",
+   "motiv": "Grundreihenmatt verhindern",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "f5",
+   "wert": "+4.43",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:morphy-opfer-checkliste",
+   "nummer": 34,
+   "kapitel": 7,
+   "abbildung": "7.46",
+   "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16",
+   "motiv": "Damenopfer und Grundreihenmatt",
+   "buchloesung": "16. Db8+!! Sxb8 17. Td8#",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Qb8+",
+   "wert": "M2",
+   "art": "zug",
+   "buchzug": "Qb8+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 94.62,
+   "zuege": [
+    {
+     "san": "Qb8+",
+     "wert": "M2",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qb7",
+     "wert": "+3.38",
+     "verlust": 94.62,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qc3",
+     "wert": "+3.17",
+     "verlust": 94.83,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qb5",
+     "wert": "+0.35",
+     "verlust": 97.65,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rd5",
+     "wert": "+0.13",
+     "verlust": 97.87,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rxd7",
+     "wert": "+0.00",
+     "verlust": 98.0,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Qb8+: +98.00; einziger Zug (94.6 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a01",
+   "nummer": 35,
+   "kapitel": 7,
+   "abbildung": "7.47",
+   "fen": "r1b1k2r/pp1pqppp/5n2/1N2p3/2B1P3/8/PPP1QPPP/R4RK1 w kq - 0 1",
+   "motiv": "Springergabel",
+   "buchloesung": "1. Sc7+!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Nc7+",
+   "wert": "+5.79",
+   "art": "zug",
+   "buchzug": "Nc7+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 3.24,
+   "zuege": [
+    {
+     "san": "Nc7+",
+     "wert": "+5.79",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qd2",
+     "wert": "+2.55",
+     "verlust": 3.24,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qe3",
+     "wert": "+2.46",
+     "verlust": 3.33,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rad1",
+     "wert": "+2.38",
+     "verlust": 3.41,
+     "status": "widerlegt"
+    },
+    {
+     "san": "a4",
+     "wert": "+2.12",
+     "verlust": 3.67,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rfd1",
+     "wert": "+2.11",
+     "verlust": 3.68,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Nc7+: +5.79; einziger Zug (3.2 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a02",
+   "nummer": 36,
+   "kapitel": 7,
+   "abbildung": "7.48",
+   "fen": "6k1/p4ppp/1p6/q3n3/8/1P2Q3/P1r2PPP/3R2K1 w - - 0 1",
+   "motiv": "Grundreihenmatt",
+   "buchloesung": "1. Td8#",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rd8#",
+   "wert": "M1",
+   "art": "zug",
+   "buchzug": "Rd8#",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 95.74,
+   "zuege": [
+    {
+     "san": "Rd8#",
+     "wert": "M1",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qc3",
+     "wert": "+3.26",
+     "verlust": 95.74,
+     "status": "widerlegt"
+    },
+    {
+     "san": "b4",
+     "wert": "+1.12",
+     "verlust": 97.88,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qxe5",
+     "wert": "+0.50",
+     "verlust": 98.5,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h4",
+     "wert": "-4.56",
+     "verlust": 103.56,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h3",
+     "wert": "-5.17",
+     "verlust": 104.17,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rd8#: +99.00; einziger Zug (95.7 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a03",
+   "nummer": 37,
+   "kapitel": 7,
+   "abbildung": "7.49",
+   "fen": "6q1/r7/4k3/1p2p3/8/8/2B2PPP/3R2K1 w - - 0 1",
+   "motiv": "Spieß mit Schach",
+   "buchloesung": "1. Lb3+!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Bb3+",
+   "wert": "+6.44",
+   "art": "zug",
+   "buchzug": "Bb3+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 12.36,
+   "zuege": [
+    {
+     "san": "Bb3+",
+     "wert": "+6.44",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Bd3",
+     "wert": "-5.92",
+     "verlust": 12.36,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h4",
+     "wert": "-6.14",
+     "verlust": 12.58,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rb1",
+     "wert": "-6.16",
+     "verlust": 12.6,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rc1",
+     "wert": "-6.17",
+     "verlust": 12.61,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bb1",
+     "wert": "-6.29",
+     "verlust": 12.73,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Bb3+: +6.44; einziger Zug (12.4 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a04",
+   "nummer": 38,
+   "kapitel": 7,
+   "abbildung": "7.50",
+   "fen": "3r1rk1/pp4pp/2n5/3q4/8/1P6/P1Q1BPPP/R3R1K1 w - - 0 1",
+   "motiv": "Fesselung der Dame",
+   "buchloesung": "1. Lc4!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Bc4",
+   "wert": "+6.92",
+   "art": "zug",
+   "buchzug": "Bc4",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 4.05,
+   "zuege": [
+    {
+     "san": "Bc4",
+     "wert": "+6.92",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qc4",
+     "wert": "+2.87",
+     "verlust": 4.05,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rad1",
+     "wert": "+2.28",
+     "verlust": 4.64,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bf1",
+     "wert": "+2.08",
+     "verlust": 4.84,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qb2",
+     "wert": "+1.99",
+     "verlust": 4.93,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qc3",
+     "wert": "+1.70",
+     "verlust": 5.22,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Bc4: +6.92; einziger Zug (4.0 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a05",
+   "nummer": 39,
+   "kapitel": 7,
+   "abbildung": "7.51",
+   "fen": "r4rk1/pp4pp/2n2n2/3N4/8/1B4Pq/PP3P1P/R2Q1RK1 w - - 0 1",
+   "motiv": "Abzugsschach",
+   "buchloesung": "1. Sf4+!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Nf4+",
+   "wert": "+9.00",
+   "art": "zug",
+   "buchzug": "Nf4+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 3.74,
+   "zuege": [
+    {
+     "san": "Nf4+",
+     "wert": "+9.00",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Nxf6+",
+     "wert": "+5.26",
+     "verlust": 3.74,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Nc7+",
+     "wert": "+4.45",
+     "verlust": 4.55,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rc1",
+     "wert": "+3.25",
+     "verlust": 5.75,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qd3",
+     "wert": "+3.19",
+     "verlust": 5.81,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qe2",
+     "wert": "+3.13",
+     "verlust": 5.87,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [
+    "Nxf6+"
+   ],
+   "gleichwertigeZuege": 1,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Nf4+: +9.00; gleichwertig: Sxf6+"
+  },
+  {
+   "uebung": "ueb:taktik-a06",
+   "nummer": 40,
+   "kapitel": 7,
+   "abbildung": "7.52",
+   "fen": "6k1/pp3ppp/4q3/n2N4/8/8/PP2BPPP/2R3K1 w - - 0 1",
+   "motiv": "Hinlenkung und Gabel",
+   "buchloesung": "1. Tc8+!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rc8+",
+   "wert": "+5.80",
+   "art": "zug",
+   "buchzug": "Rc8+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 8.26,
+   "zuege": [
+    {
+     "san": "Rc8+",
+     "wert": "+5.80",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Ne3",
+     "wert": "-2.46",
+     "verlust": 8.26,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bg4",
+     "wert": "-2.58",
+     "verlust": 8.38,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Nf4",
+     "wert": "-2.60",
+     "verlust": 8.4,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bf3",
+     "wert": "-2.63",
+     "verlust": 8.43,
+     "status": "widerlegt"
+    },
+    {
+     "san": "b3",
+     "wert": "-2.79",
+     "verlust": 8.59,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rc8+: +5.80; einziger Zug (8.3 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a07",
+   "nummer": 41,
+   "kapitel": 7,
+   "abbildung": "7.53",
+   "fen": "3q2k1/ppn2ppp/8/8/6b1/8/PPQ2PPP/4R1K1 w - - 0 1",
+   "motiv": "Überlastung",
+   "buchloesung": "1. Dxc7!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Qxc7",
+   "wert": "+6.11",
+   "art": "zug",
+   "buchzug": "Qxc7",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 7.38,
+   "zuege": [
+    {
+     "san": "Qxc7",
+     "wert": "+6.11",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qe4",
+     "wert": "-1.27",
+     "verlust": 7.38,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qc5",
+     "wert": "-1.35",
+     "verlust": 7.46,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qa4",
+     "wert": "-1.39",
+     "verlust": 7.5,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qb3",
+     "wert": "-1.43",
+     "verlust": 7.54,
+     "status": "widerlegt"
+    },
+    {
+     "san": "f3",
+     "wert": "-2.00",
+     "verlust": 8.11,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Qxc7: +6.11; einziger Zug (7.4 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a08",
+   "nummer": 42,
+   "kapitel": 7,
+   "abbildung": "7.54",
+   "fen": "r1r4k/p1pR3p/1p6/8/4N3/8/2P2PPP/6K1 w - - 0 1",
+   "motiv": "Arabisches Matt",
+   "buchloesung": "1. Sf6!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Nf6",
+   "wert": "M2",
+   "art": "zug",
+   "buchzug": "Nf6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 100.25,
+   "zuege": [
+    {
+     "san": "Nf6",
+     "wert": "M2",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Ng5",
+     "wert": "-2.25",
+     "verlust": 100.25,
+     "status": "widerlegt"
+    },
+    {
+     "san": "g3",
+     "wert": "-3.85",
+     "verlust": 101.85,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h4",
+     "wert": "-3.89",
+     "verlust": 101.89,
+     "status": "widerlegt"
+    },
+    {
+     "san": "f4",
+     "wert": "-4.39",
+     "verlust": 102.39,
+     "status": "widerlegt"
+    },
+    {
+     "san": "g4",
+     "wert": "-4.71",
+     "verlust": 102.71,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Nf6: +98.00; einziger Zug (100.2 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a09",
+   "nummer": 43,
+   "kapitel": 7,
+   "abbildung": "7.55",
+   "fen": "r3r2k/pp4pp/8/6N1/2Q5/q7/PP3PPP/6K1 w - - 0 1",
+   "motiv": "Erstickungsmatt (Philidors Vermächtnis)",
+   "buchloesung": "1. Sf7+ Kg8 2. Sh6++ Kh8 3. Dg8+!! Txg8 4. Sf7#",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Nf7+",
+   "wert": "M4",
+   "art": "zug",
+   "buchzug": "Nf7+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 96.0,
+   "zuege": [
+    {
+     "san": "Nf7+",
+     "wert": "M4",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "g3",
+     "wert": "+0.00",
+     "verlust": 96.0,
+     "status": "widerlegt"
+    },
+    {
+     "san": "g4",
+     "wert": "-0.09",
+     "verlust": 96.09,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf1",
+     "wert": "-6.02",
+     "verlust": 102.02,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h3",
+     "wert": "-6.40",
+     "verlust": 102.4,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h4",
+     "wert": "-6.42",
+     "verlust": 102.42,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Nf7+: +96.00; einziger Zug (96.0 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a10",
+   "nummer": 44,
+   "kapitel": 7,
+   "abbildung": "7.56",
+   "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
+   "motiv": "Damenopfer und Doppelschach",
+   "buchloesung": "1. Dd8+!! Kxd8 2. Lg5++",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Qd8+",
+   "wert": "M3",
+   "art": "zug",
+   "buchzug": "Qd8+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 96.51,
+   "zuege": [
+    {
+     "san": "Qd8+",
+     "wert": "M3",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Re1",
+     "wert": "+0.49",
+     "verlust": 96.51,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Nf3",
+     "wert": "-1.92",
+     "verlust": 98.92,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qe2",
+     "wert": "-2.55",
+     "verlust": 99.55,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bb4",
+     "wert": "-2.93",
+     "verlust": 99.93,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Be3",
+     "wert": "-3.50",
+     "verlust": 100.5,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Qd8+: +97.00; einziger Zug (96.5 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a11",
+   "nummer": 45,
+   "kapitel": 7,
+   "abbildung": "7.57",
+   "fen": "r4rk1/pb2qppp/1p3n2/2p4Q/8/2NB1R2/PP3PPP/R5K1 w - - 0 1",
+   "motiv": "Beseitigung der Verteidigung",
+   "buchloesung": "1. Txf6!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rxf6",
+   "wert": "+4.72",
+   "art": "zug",
+   "buchzug": "Rxf6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 5.06,
+   "zuege": [
+    {
+     "san": "Rxf6",
+     "wert": "+4.72",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Bxh7+",
+     "wert": "-0.34",
+     "verlust": 5.06,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Nd5",
+     "wert": "-3.33",
+     "verlust": 8.05,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qh4",
+     "wert": "-4.32",
+     "verlust": 9.04,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qh3",
+     "wert": "-5.62",
+     "verlust": 10.34,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qf5",
+     "wert": "-5.83",
+     "verlust": 10.55,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rxf6: +4.72; einziger Zug (5.1 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a12",
+   "nummer": 46,
+   "kapitel": 7,
+   "abbildung": "7.58",
+   "fen": "rq3rk1/pb3ppp/8/3N1R1Q/8/8/PP3PPP/6K1 w - - 0 1",
+   "motiv": "Anastasia-Matt",
+   "buchloesung": "1. Se7+ Kh8 2. Dxh7+!! Kxh7 3. Th5#",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Ne7+",
+   "wert": "M3",
+   "art": "zug",
+   "buchzug": "Ne7+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 97.0,
+   "zuege": [
+    {
+     "san": "Ne7+",
+     "wert": "M3",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Nf6+",
+     "wert": "+0.00",
+     "verlust": 97.0,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qd1",
+     "wert": "-5.72",
+     "verlust": 102.72,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h3",
+     "wert": "-5.96",
+     "verlust": 102.96,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qe2",
+     "wert": "-5.99",
+     "verlust": 102.99,
+     "status": "widerlegt"
+    },
+    {
+     "san": "h4",
+     "wert": "-6.12",
+     "verlust": 103.12,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Ne7+: +97.00; einziger Zug (97.0 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a13",
+   "nummer": 47,
+   "kapitel": 7,
+   "abbildung": "7.59",
+   "fen": "2kr3r/pp1n1ppp/2n5/8/Q4B2/8/PP2BPPP/2KR4 w - - 0 1",
+   "motiv": "Boden-Matt",
+   "buchloesung": "1. Dxc6+! bxc6 2. La6#",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Qxc6+",
+   "wert": "M2",
+   "art": "zug",
+   "buchzug": "Qxc6+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 87.82,
+   "zuege": [
+    {
+     "san": "Qxc6+",
+     "wert": "M2",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qc4",
+     "wert": "+10.18",
+     "verlust": 87.82,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qc2",
+     "wert": "+9.29",
+     "verlust": 88.71,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bg4",
+     "wert": "+9.25",
+     "verlust": 88.75,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qe4",
+     "wert": "+8.89",
+     "verlust": 89.11,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kb1",
+     "wert": "+8.71",
+     "verlust": 89.29,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Qxc6+: +98.00; einziger Zug (87.8 Abstand)"
+  },
+  {
+   "uebung": "ueb:taktik-a14",
+   "nummer": 48,
+   "kapitel": 7,
+   "abbildung": "7.60",
+   "fen": "r4rk1/pp3pp1/2p3P1/3Q4/8/8/PP6/1K5R w - - 0 1",
+   "motiv": "Damiano-Matt",
+   "buchloesung": "1. Th8+! Kxh8 2. Dh5+ Kg8 3. Dh7#",
+   "akzeptiertBuch": [
+    "1. Th8+! Kxh8 2. Dh1+"
+   ],
+   "amZug": "w",
+   "besterZug": "Rh8+",
+   "wert": "M3",
+   "art": "zug",
+   "buchzug": "Rh8+",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.5,
+   "zuege": [
+    {
+     "san": "Rh8+",
+     "wert": "M3",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qc4",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qb3",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qf3",
+     "wert": "+10.79",
+     "verlust": 86.21,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qd6",
+     "wert": "+10.73",
+     "verlust": 86.27,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qd7",
+     "wert": "+10.71",
+     "verlust": 86.29,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rh8+: +97.00"
+  },
+  {
+   "uebung": "ueb:taktik-a15",
+   "nummer": 49,
+   "kapitel": 7,
+   "abbildung": "7.61",
+   "fen": "r4rk1/pp3p1p/5Pp1/8/8/8/PP1Q4/1K6 w - - 0 1",
+   "motiv": "Lolli-Matt",
+   "buchloesung": "1. Dh6!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Qh6",
+   "wert": "M2",
+   "art": "zug",
+   "buchzug": "Qh6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 100.85,
+   "zuege": [
+    {
+     "san": "Qh6",
+     "wert": "M2",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "a4",
+     "wert": "-2.85",
+     "verlust": 100.85,
+     "status": "widerlegt"
+    },
+    {
+     "san": "b4",
+     "wert": "-3.53",
+     "verlust": 101.53,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qc1",
+     "wert": "-3.55",
+     "verlust": 101.55,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qf4",
+     "wert": "-3.87",
+     "verlust": 101.87,
+     "status": "widerlegt"
+    },
+    {
+     "san": "a3",
+     "wert": "-4.03",
+     "verlust": 102.03,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Qh6: +98.00; einziger Zug (100.8 Abstand)"
+  },
+  {
+   "uebung": "ueb:pattfalle-vermeiden",
+   "nummer": 50,
+   "kapitel": 8,
+   "abbildung": "8.55",
+   "fen": "k7/8/8/8/8/1Q6/8/7K w - - 0 1",
+   "motiv": "Pattfalle",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Kg2",
+   "wert": "M6",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:damenmatt",
+   "nummer": 51,
+   "kapitel": 8,
+   "abbildung": "8.56",
+   "fen": "7k/8/8/8/3K4/8/6Q1/8 w - - 0 1",
+   "motiv": "Damenmatt: erst der König",
+   "buchloesung": "1. Ke5! Kh7 2. Kf6 Kh8 3. Dg7#",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Ke5",
+   "wert": "M3",
+   "art": "zug",
+   "buchzug": "Ke5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.5,
+   "zuege": [
+    {
+     "san": "Ke5",
+     "wert": "M3",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qb7",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Ke4",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Kd5",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qg4",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qg5",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Ke5: +97.00"
+  },
+  {
+   "uebung": "ueb:turmmatt",
+   "nummer": 52,
+   "kapitel": 8,
+   "abbildung": "8.57",
+   "fen": "k7/1R6/2K5/8/8/8/8/8 w - - 0 1",
+   "motiv": "Turmmatt ohne Patt",
+   "buchloesung": "1. Tb6! Ka7 2. Kc7 Ka8 3. Ta6#",
+   "akzeptiertBuch": [
+    "1. Tc7"
+   ],
+   "amZug": "w",
+   "besterZug": "Rb6",
+   "wert": "M3",
+   "art": "zug",
+   "buchzug": "Rb6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "Rb6",
+     "wert": "M3",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Rc7",
+     "wert": "M3",
+     "verlust": 0.0,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Re7",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Rg7",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Rf7",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Rb3",
+     "wert": "M4",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rb6: +97.00"
+  },
+  {
+   "uebung": "ueb:opposition-anwenden",
+   "nummer": 53,
+   "kapitel": 8,
+   "abbildung": "8.58",
+   "fen": "8/4k3/8/8/5K2/4P3/8/8 b - - 0 1",
+   "motiv": "Opposition",
+   "buchloesung": "1... Kf6!",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Kf6",
+   "wert": "+0.00",
+   "art": "zug",
+   "buchzug": "Kf6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 5.88,
+   "zuege": [
+    {
+     "san": "Kf6",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Ke6",
+     "wert": "-5.88",
+     "verlust": 5.88,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf8",
+     "wert": "-6.09",
+     "verlust": 6.09,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kd6",
+     "wert": "-6.19",
+     "verlust": 6.19,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kd7",
+     "wert": "-7.25",
+     "verlust": 7.25,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ke8",
+     "wert": "-7.28",
+     "verlust": 7.28,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Kf6: +0.00; einziger Zug (5.9 Abstand)"
+  },
+  {
+   "uebung": "ueb:fernopposition",
+   "nummer": 54,
+   "kapitel": 8,
+   "abbildung": "8.59",
+   "fen": "8/8/6k1/8/8/8/4PK2/8 b - - 0 1",
+   "motiv": "Fernopposition",
+   "buchloesung": "1... Kf6!",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Kf6",
+   "wert": "-0.01",
+   "art": "zug",
+   "buchzug": "Kf6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 7.43,
+   "zuege": [
+    {
+     "san": "Kf6",
+     "wert": "-0.01",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kf7",
+     "wert": "-7.44",
+     "verlust": 7.43,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf5",
+     "wert": "-8.48",
+     "verlust": 8.47,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kg5",
+     "wert": "-8.77",
+     "verlust": 8.76,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh5",
+     "wert": "-8.78",
+     "verlust": 8.77,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh6",
+     "wert": "-9.32",
+     "verlust": 9.31,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Kf6: -0.01; einziger Zug (7.4 Abstand)"
+  },
+  {
+   "uebung": "ueb:schluesselfeld-finden",
+   "nummer": 55,
+   "kapitel": 8,
+   "abbildung": "8.60",
+   "fen": "8/8/5k2/8/8/3P4/3K4/8 w - - 0 1",
+   "motiv": "Schlüsselfelder",
+   "buchloesung": "1. Kc3!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Kc3",
+   "wert": "+6.02",
+   "art": "zug",
+   "buchzug": "Kc3",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 5.23,
+   "zuege": [
+    {
+     "san": "Kc3",
+     "wert": "+6.02",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "d4",
+     "wert": "+0.79",
+     "verlust": 5.23,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ke3",
+     "wert": "+0.79",
+     "verlust": 5.23,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ke2",
+     "wert": "+0.33",
+     "verlust": 5.69,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ke1",
+     "wert": "+0.20",
+     "verlust": 5.82,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kc2",
+     "wert": "+0.18",
+     "verlust": 5.84,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Kc3: +6.02; einziger Zug (5.2 Abstand)"
+  },
+  {
+   "uebung": "ueb:randbauer-ecke",
+   "nummer": 56,
+   "kapitel": 8,
+   "abbildung": "8.61",
+   "fen": "8/8/4k3/2K5/P7/8/8/8 w - - 0 1",
+   "motiv": "Randbauer: die Ecke beherrschen",
+   "buchloesung": "1. Kb6",
+   "akzeptiertBuch": [
+    "1. Kc6"
+   ],
+   "amZug": "w",
+   "besterZug": "Kb6",
+   "wert": "+6.30",
+   "art": "zug",
+   "buchzug": "Kb6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.01,
+   "zuege": [
+    {
+     "san": "Kb6",
+     "wert": "+6.30",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kc6",
+     "wert": "+6.29",
+     "verlust": 0.01,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Kb5",
+     "wert": "+0.01",
+     "verlust": 6.29,
+     "status": "widerlegt"
+    },
+    {
+     "san": "a5",
+     "wert": "+0.01",
+     "verlust": 6.29,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kd4",
+     "wert": "+0.00",
+     "verlust": 6.3,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kc4",
+     "wert": "+0.00",
+     "verlust": 6.3,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Kb6: +6.30"
+  },
+  {
+   "uebung": "ueb:tausch-bauernendspiel",
+   "nummer": 57,
+   "kapitel": 8,
+   "abbildung": "8.62",
+   "fen": "4r3/3k4/8/8/2KP4/8/8/4R3 w - - 0 1",
+   "motiv": "Tausch ins gewonnene Bauernendspiel",
+   "buchloesung": "1. Txe8! Kxe8 2. Kc5!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rxe8",
+   "wert": "+6.07",
+   "art": "zug",
+   "buchzug": "Rxe8",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 5.83,
+   "zuege": [
+    {
+     "san": "Rxe8",
+     "wert": "+6.07",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Rb1",
+     "wert": "+0.24",
+     "verlust": 5.83,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ra1",
+     "wert": "+0.23",
+     "verlust": 5.84,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rh1",
+     "wert": "+0.19",
+     "verlust": 5.88,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rf1",
+     "wert": "+0.18",
+     "verlust": 5.89,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rg1",
+     "wert": "+0.16",
+     "verlust": 5.91,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rxe8: +6.07; einziger Zug (5.8 Abstand)"
+  },
+  {
+   "uebung": "ueb:quadrat-doppelschritt",
+   "nummer": 58,
+   "kapitel": 8,
+   "abbildung": "8.63",
+   "fen": "8/8/8/6k1/8/8/P7/7K w - - 0 1",
+   "motiv": "Quadratregel mit Doppelschritt",
+   "buchloesung": "1. a4!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "a4",
+   "wert": "+5.94",
+   "art": "zug",
+   "buchzug": "a4",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 5.91,
+   "zuege": [
+    {
+     "san": "a4",
+     "wert": "+5.94",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kg2",
+     "wert": "+0.03",
+     "verlust": 5.91,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh2",
+     "wert": "+0.03",
+     "verlust": 5.91,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kg1",
+     "wert": "+0.02",
+     "verlust": 5.92,
+     "status": "widerlegt"
+    },
+    {
+     "san": "a3",
+     "wert": "-0.03",
+     "verlust": 5.97,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch a4: +5.94; einziger Zug (5.9 Abstand)"
+  },
+  {
+   "uebung": "ueb:bauernrennen-schach",
+   "nummer": 59,
+   "kapitel": 8,
+   "abbildung": "8.64",
+   "fen": "8/8/7P/8/6K1/p1k5/8/8 w - - 0 1",
+   "motiv": "Umwandlung mit Schach",
+   "buchloesung": "1. h7! a2 2. h8=D+",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "h7",
+   "wert": "+6.24",
+   "art": "zug",
+   "buchzug": "h7",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 5.85,
+   "zuege": [
+    {
+     "san": "h7",
+     "wert": "+6.24",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kg3",
+     "wert": "+0.39",
+     "verlust": 5.85,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf3",
+     "wert": "+0.36",
+     "verlust": 5.88,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf5",
+     "wert": "+0.35",
+     "verlust": 5.89,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh4",
+     "wert": "+0.23",
+     "verlust": 6.01,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh5",
+     "wert": "+0.22",
+     "verlust": 6.02,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch h7: +6.24; einziger Zug (5.8 Abstand)"
+  },
+  {
+   "uebung": "ueb:freibauer-bilden",
+   "nummer": 60,
+   "kapitel": 8,
+   "abbildung": "8.65",
+   "fen": "8/8/4k1p1/8/4KPP1/8/8/8 w - - 0 1",
+   "motiv": "Freibauer erst mit König davor",
+   "buchloesung": "1. g5!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Ke3",
+   "wert": "+6.32",
+   "art": "zug",
+   "buchzug": "g5",
+   "urteil": "gleichwertig",
+   "verlust": 0.02,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "Ke3",
+     "wert": "+6.32",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Kd4",
+     "wert": "+6.32",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "g5",
+     "wert": "+6.30",
+     "verlust": 0.02,
+     "status": "buch"
+    },
+    {
+     "san": "Kd3",
+     "wert": "+6.30",
+     "verlust": 0.02,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Kf3",
+     "wert": "+6.30",
+     "verlust": 0.02,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "f5+",
+     "wert": "+0.38",
+     "verlust": 5.94,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [
+    "Ke3",
+    "Kd4",
+    "Kd3",
+    "Kf3"
+   ],
+   "gleichwertigeZuege": 4,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch g5: +6.30; bester Zug laut Engine Ke3 (+6.32); gleichwertig: Ke3, Kd4, Kd3, Kf3"
+  },
+  {
+   "uebung": "ueb:entfernter-freibauer",
+   "nummer": 61,
+   "kapitel": 8,
+   "abbildung": "8.66",
+   "fen": "8/p7/1p6/3k4/7P/3K4/PP6/8 w - - 0 1",
+   "motiv": "Entfernter Freibauer",
+   "buchloesung": "1. h5",
+   "akzeptiertBuch": [
+    "1. a4"
+   ],
+   "amZug": "w",
+   "besterZug": "Ke2",
+   "wert": "+8.82",
+   "art": "zug",
+   "buchzug": "h5",
+   "urteil": "gleichwertig",
+   "verlust": 0.07,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "Ke2",
+     "wert": "+8.82",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Ke3",
+     "wert": "+8.82",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Kc2",
+     "wert": "+8.80",
+     "verlust": 0.02,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Kd2",
+     "wert": "+8.79",
+     "verlust": 0.03,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "h5",
+     "wert": "+8.75",
+     "verlust": 0.07,
+     "status": "buch"
+    },
+    {
+     "san": "a4",
+     "wert": "+7.04",
+     "verlust": 1.78,
+     "status": "akzeptiert"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 8,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch h5: +8.75; bester Zug laut Engine Ke2 (+8.82); 8 gleichwertige Züge (Technikfrage, kein Vorschlag)"
+  },
+  {
+   "uebung": "ueb:durchbruch-ecke",
+   "nummer": 62,
+   "kapitel": 8,
+   "abbildung": "8.67",
+   "fen": "k7/1p1K4/1P6/2P5/8/8/8/8 w - - 0 1",
+   "motiv": "Bauernopfer statt Patt",
+   "buchloesung": "1. c6!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "c6",
+   "wert": "M5",
+   "art": "zug",
+   "buchzug": "c6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 1.0,
+   "zuege": [
+    {
+     "san": "c6",
+     "wert": "M5",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kd8",
+     "wert": "M7",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Ke7",
+     "wert": "M7",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Kd6",
+     "wert": "M7",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Ke6",
+     "wert": "M7",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Ke8",
+     "wert": "M7",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch c6: +95.00; einziger Zug (1.0 Abstand)"
+  },
+  {
+   "uebung": "ueb:reserve-tempo",
+   "nummer": 63,
+   "kapitel": 8,
+   "abbildung": "8.68",
+   "fen": "8/8/p7/5pK1/4kP2/8/P7/8 w - - 0 1",
+   "motiv": "Reserve-Tempo",
+   "buchloesung": "1. a3!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "a3",
+   "wert": "+6.19",
+   "art": "zug",
+   "buchzug": "a3",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 14.26,
+   "zuege": [
+    {
+     "san": "a3",
+     "wert": "+6.19",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "a4",
+     "wert": "-8.07",
+     "verlust": 14.26,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf6",
+     "wert": "-11.00",
+     "verlust": 17.19,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh5",
+     "wert": "-16.15",
+     "verlust": 22.34,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh4",
+     "wert": "-16.15",
+     "verlust": 22.34,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh6",
+     "wert": "-16.30",
+     "verlust": 22.49,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch a3: +6.19; einziger Zug (14.3 Abstand)"
+  },
+  {
+   "uebung": "ueb:philidor-reihenfolge",
+   "nummer": 64,
+   "kapitel": 9,
+   "abbildung": "9.45",
+   "fen": "4k3/R7/8/3KP3/8/8/8/7r b - - 0 1",
+   "motiv": "Philidor-Stellung",
+   "buchloesung": "1... Th6!",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Rb1",
+   "wert": "+0.00",
+   "art": "zug",
+   "buchzug": "Rh6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "Rh6",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Rb1",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Rg1",
+     "wert": "-0.17",
+     "verlust": 0.17,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Rh3",
+     "wert": "-0.17",
+     "verlust": 0.17,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Kf8",
+     "wert": "-0.17",
+     "verlust": 0.17,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Rh4",
+     "wert": "-0.17",
+     "verlust": 0.17,
+     "status": "gleichwertig"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 8,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rh6: +0.00; 8 gleichwertige Züge (Technikfrage, kein Vorschlag)"
+  },
+  {
+   "uebung": "ueb:kurze-seite",
+   "nummer": 65,
+   "kapitel": 9,
+   "abbildung": "9.46",
+   "fen": "5k2/1R6/5K2/5P2/8/8/8/r7 b - - 0 1",
+   "motiv": "König auf die kurze Seite",
+   "buchloesung": "1... Kg8 2. Tb8+ Kh7",
+   "akzeptiertBuch": [
+    "1... Ta6+"
+   ],
+   "amZug": "b",
+   "besterZug": "Ra6+",
+   "wert": "-0.01",
+   "art": "zug",
+   "buchzug": "Kg8",
+   "urteil": "gleichwertig",
+   "verlust": 0.13,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "Ra6+",
+     "wert": "-0.01",
+     "verlust": 0.0,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Kg8",
+     "wert": "-0.14",
+     "verlust": 0.13,
+     "status": "buch"
+    },
+    {
+     "san": "Ke8",
+     "wert": "-4.67",
+     "verlust": 4.66,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ra8",
+     "wert": "-4.70",
+     "verlust": 4.69,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Re1",
+     "wert": "-10.27",
+     "verlust": 10.26,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rb1",
+     "wert": "M-3",
+     "verlust": 96.99,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Kg8: -0.14; bester Zug laut Engine Ta6+ (-0.01)"
+  },
+  {
+   "uebung": "ueb:lucena-c-bauer",
+   "nummer": 66,
+   "kapitel": 9,
+   "abbildung": "9.47",
+   "fen": "2K5/2P3k1/8/8/8/8/1r6/4R3 w - - 0 1",
+   "motiv": "Lucena: Brückenbau",
+   "buchloesung": "1. Te4",
+   "akzeptiertBuch": [
+    "1. Tc1"
+   ],
+   "amZug": "w",
+   "besterZug": "Rc1",
+   "wert": "+8.92",
+   "art": "zug",
+   "buchzug": "Re4",
+   "urteil": "gleichwertig",
+   "verlust": 2.23,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "Rc1",
+     "wert": "+8.92",
+     "verlust": 0.0,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Re6",
+     "wert": "+8.92",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Rd1",
+     "wert": "+8.40",
+     "verlust": 0.52,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Rf1",
+     "wert": "+7.44",
+     "verlust": 1.48,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Re4",
+     "wert": "+6.69",
+     "verlust": 2.23,
+     "status": "buch"
+    },
+    {
+     "san": "Kd8",
+     "wert": "+5.87",
+     "verlust": 3.05,
+     "status": "gleichwertig"
+    }
+   ],
+   "vorschlagAkzeptiert": [
+    "Re6",
+    "Rd1",
+    "Rf1",
+    "Kd8",
+    "Kd7"
+   ],
+   "gleichwertigeZuege": 5,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Re4: +6.69; bester Zug laut Engine Tc1 (+8.92); gleichwertig: Te6, Td1, Tf1, Kd8, Kd7"
+  },
+  {
+   "uebung": "ueb:vancura-a7",
+   "nummer": 67,
+   "kapitel": 9,
+   "abbildung": "9.48",
+   "fen": "R7/P5k1/5r2/8/8/8/8/1K6 b - - 0 1",
+   "motiv": "Turm hinter den Randbauern",
+   "buchloesung": "1... Ta6!",
+   "akzeptiertBuch": [
+    "1... Tb6+",
+    "1... Tf1+"
+   ],
+   "amZug": "b",
+   "besterZug": "Rb6+",
+   "wert": "+0.00",
+   "art": "zug",
+   "buchzug": "Ra6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "Rb6+",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Ra6",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Rf1+",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Rf7",
+     "wert": "-2.75",
+     "verlust": 2.75,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rf5",
+     "wert": "-4.67",
+     "verlust": 4.67,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rf3",
+     "wert": "-4.67",
+     "verlust": 4.67,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Ra6: +0.00"
+  },
+  {
+   "uebung": "ueb:turm-gegen-bauer",
+   "nummer": 68,
+   "kapitel": 9,
+   "abbildung": "9.49",
+   "fen": "8/8/8/1R6/5k2/4p3/8/K7 w - - 0 1",
+   "motiv": "Turm auf die Umwandlungsreihe",
+   "buchloesung": "1. Tb1!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rb1",
+   "wert": "+5.88",
+   "art": "zug",
+   "buchzug": "Rb1",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 5.79,
+   "zuege": [
+    {
+     "san": "Rb1",
+     "wert": "+5.88",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Rb7",
+     "wert": "+0.09",
+     "verlust": 5.79,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rb6",
+     "wert": "+0.06",
+     "verlust": 5.82,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rb8",
+     "wert": "+0.01",
+     "verlust": 5.87,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rh5",
+     "wert": "+0.01",
+     "verlust": 5.87,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rb4+",
+     "wert": "+0.01",
+     "verlust": 5.87,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rb1: +5.88; einziger Zug (5.8 Abstand)"
+  },
+  {
+   "uebung": "ueb:abschneiden-reihe",
+   "nummer": 69,
+   "kapitel": 9,
+   "abbildung": "9.50",
+   "fen": "7K/8/2k5/1p6/8/8/8/6R1 w - - 0 1",
+   "motiv": "Abschneiden auf der Reihe",
+   "buchloesung": "1. Tg5!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rg5",
+   "wert": "+4.79",
+   "art": "zug",
+   "buchzug": "Rg5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 4.79,
+   "zuege": [
+    {
+     "san": "Rg5",
+     "wert": "+4.79",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kh7",
+     "wert": "+0.00",
+     "verlust": 4.79,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kg7",
+     "wert": "+0.00",
+     "verlust": 4.79,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rg7",
+     "wert": "+0.00",
+     "verlust": 4.79,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rb1",
+     "wert": "+0.00",
+     "verlust": 4.79,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kg8",
+     "wert": "+0.00",
+     "verlust": 4.79,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rg5: +4.79; einziger Zug (4.8 Abstand)"
+  },
+  {
+   "uebung": "ueb:turm-gegen-zwei-bauern",
+   "nummer": 70,
+   "kapitel": 9,
+   "abbildung": "9.51",
+   "fen": "r6k/8/1P6/2P5/8/8/8/7K b - - 0 1",
+   "motiv": "Turm gegen verbundene Freibauern",
+   "buchloesung": "1... Tb8!",
+   "akzeptiertBuch": [
+    "1... Ta1+"
+   ],
+   "amZug": "b",
+   "besterZug": "Rb8",
+   "wert": "+6.41",
+   "art": "zug",
+   "buchzug": "Rb8",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 1.8,
+   "zuege": [
+    {
+     "san": "Rb8",
+     "wert": "+6.41",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Ra1+",
+     "wert": "+4.61",
+     "verlust": 1.8,
+     "status": "akzeptiert"
+    },
+    {
+     "san": "Kg7",
+     "wert": "-2.62",
+     "verlust": 9.03,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kg8",
+     "wert": "-2.67",
+     "verlust": 9.08,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ra5",
+     "wert": "-2.68",
+     "verlust": 9.09,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rc8",
+     "wert": "-2.70",
+     "verlust": 9.11,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [
+    "Ra1+"
+   ],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rb8: +6.41; akzeptiert, aber schwächer: Ra1+"
+  },
+  {
+   "uebung": "ueb:dame-gegen-bauer",
+   "nummer": 71,
+   "kapitel": 9,
+   "abbildung": "9.52",
+   "fen": "8/8/8/8/6Q1/3K4/p7/k7 w - - 0 1",
+   "motiv": "Matt statt Patt",
+   "buchloesung": "1. Kc3!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Kc3",
+   "wert": "M2",
+   "art": "zug",
+   "buchzug": "Kc3",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.5,
+   "zuege": [
+    {
+     "san": "Kc3",
+     "wert": "M2",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qg2",
+     "wert": "M3",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qe2",
+     "wert": "M3",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qc4",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qc8",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Kd2",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Kc3: +98.00"
+  },
+  {
+   "uebung": "ueb:falscher-laeufer",
+   "nummer": 72,
+   "kapitel": 9,
+   "abbildung": "9.53",
+   "fen": "k7/8/8/P1K5/3B4/8/8/8 w - - 0 1",
+   "motiv": "Falscher Läufer",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Kb5",
+   "wert": "+1.04",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:unterverwandlung",
+   "nummer": 73,
+   "kapitel": 10,
+   "abbildung": "10.23",
+   "fen": "7n/5P1k/4BKpp/8/8/8/8/8 w - - 0 1",
+   "motiv": "Unterverwandlung mit Matt",
+   "buchloesung": "1. f8=S#",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "f8=N#",
+   "wert": "M1",
+   "art": "zug",
+   "buchzug": "f8=N#",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.5,
+   "zuege": [
+    {
+     "san": "f8=N#",
+     "wert": "M1",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "f8=Q",
+     "wert": "M2",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "f8=R",
+     "wert": "+10.67",
+     "verlust": 88.33,
+     "status": "widerlegt"
+    },
+    {
+     "san": "f8=B",
+     "wert": "+4.78",
+     "verlust": 94.22,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bf5",
+     "wert": "+0.34",
+     "verlust": 98.66,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bd5",
+     "wert": "+0.18",
+     "verlust": 98.82,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch f8=N#: +99.00"
+  },
+  {
+   "uebung": "ueb:pattfalle-umwandlung",
+   "nummer": 74,
+   "kapitel": 10,
+   "abbildung": "10.24",
+   "fen": "8/1P6/8/8/8/8/5K2/7k w - - 0 1",
+   "motiv": "Unterverwandlung gegen Patt",
+   "buchloesung": "1. b8=T!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "b8=R",
+   "wert": "M2",
+   "art": "zug",
+   "buchzug": "b8=R",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 1.0,
+   "zuege": [
+    {
+     "san": "b8=R",
+     "wert": "M2",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kg3",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Kf3",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Ke3",
+     "wert": "M5",
+     "verlust": 1.5,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ke2",
+     "wert": "M5",
+     "verlust": 1.5,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf1",
+     "wert": "M9",
+     "verlust": 3.5,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch b8=R: +98.00; einziger Zug (1.0 Abstand)"
+  },
+  {
+   "uebung": "ueb:stiller-turmzug",
+   "nummer": 75,
+   "kapitel": 10,
+   "abbildung": "10.25",
+   "fen": "1k6/8/K7/8/8/8/8/5R2 w - - 0 1",
+   "motiv": "Stiller Zug und Zugzwang",
+   "buchloesung": "1. Tc1!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Rc1",
+   "wert": "M2",
+   "art": "zug",
+   "buchzug": "Rc1",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": false,
+   "abstandZweiter": 0.5,
+   "zuege": [
+    {
+     "san": "Rc1",
+     "wert": "M2",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kb6",
+     "wert": "M3",
+     "verlust": 0.5,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Rd1",
+     "wert": "M7",
+     "verlust": 2.5,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kb5",
+     "wert": "M8",
+     "verlust": 3.0,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Ra1",
+     "wert": "+91.65",
+     "verlust": 6.35,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rb1+",
+     "wert": "+91.65",
+     "verlust": 6.35,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Rc1: +98.00"
+  },
+  {
+   "uebung": "ueb:reti-weg",
+   "nummer": 76,
+   "kapitel": 10,
+   "abbildung": "10.26",
+   "fen": "7K/1k6/8/3P3p/8/8/8/8 w - - 0 1",
+   "motiv": "Réti-Manöver",
+   "buchloesung": "1. Kg7!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Kg7",
+   "wert": "+0.00",
+   "art": "zug",
+   "buchzug": "Kg7",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 9.06,
+   "zuege": [
+    {
+     "san": "Kg7",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kg8",
+     "wert": "-9.06",
+     "verlust": 9.06,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh7",
+     "wert": "-9.27",
+     "verlust": 9.27,
+     "status": "widerlegt"
+    },
+    {
+     "san": "d6",
+     "wert": "-10.17",
+     "verlust": 10.17,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Kg7: +0.00; einziger Zug (9.1 Abstand)"
+  },
+  {
+   "uebung": "ueb:wegversperrung",
+   "nummer": 77,
+   "kapitel": 10,
+   "abbildung": "10.27",
+   "fen": "7r/P7/4k3/8/8/6B1/8/6K1 w - - 0 1",
+   "motiv": "Wegversperrung",
+   "buchloesung": "1. Lb8!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Bb8",
+   "wert": "+6.79",
+   "art": "zug",
+   "buchzug": "Bb8",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 6.79,
+   "zuege": [
+    {
+     "san": "Bb8",
+     "wert": "+6.79",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kf2",
+     "wert": "+0.00",
+     "verlust": 6.79,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bf2",
+     "wert": "-0.01",
+     "verlust": 6.8,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf1",
+     "wert": "-0.01",
+     "verlust": 6.8,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kg2",
+     "wert": "-0.01",
+     "verlust": 6.8,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Bh2",
+     "wert": "-0.01",
+     "verlust": 6.8,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Bb8: +6.79; einziger Zug (6.8 Abstand)"
+  },
+  {
+   "uebung": "ueb:pattreserve",
+   "nummer": 78,
+   "kapitel": 10,
+   "abbildung": "10.28",
+   "fen": "k7/2p5/8/K7/2Q5/8/8/8 w - - 0 1",
+   "motiv": "Pattreserve stehen lassen",
+   "buchloesung": "1. Ka6!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Ka6",
+   "wert": "M2",
+   "art": "zug",
+   "buchzug": "Ka6",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 1.0,
+   "zuege": [
+    {
+     "san": "Ka6",
+     "wert": "M2",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Qe4+",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qc6+",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qb5",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qa6+",
+     "wert": "M4",
+     "verlust": 1.0,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qb3",
+     "wert": "M5",
+     "verlust": 1.5,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Ka6: +98.00; einziger Zug (1.0 Abstand)"
+  },
+  {
+   "uebung": "ueb:morphy-kompensation",
+   "nummer": 79,
+   "kapitel": 11,
+   "abbildung": "11.98",
+   "fen": "rn2kb1r/p3qppp/5n2/1B2p1B1/4P3/1Q6/PPP2PPP/R3K2R b KQkq - 0 11",
+   "motiv": "Faktorenbilanz eines Opfers",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Kd8",
+   "wert": "-7.22",
+   "art": "ohneZug"
+  },
+  {
+   "uebung": "ueb:colle-verteidigung",
+   "nummer": 80,
+   "kapitel": 11,
+   "abbildung": "11.99",
+   "fen": "r1bqr3/pp1n1ppk/3bp3/6N1/3p4/2P5/PP3PPP/R1BQR1K1 b - - 1 13",
+   "motiv": "Muster Figur für Figur vergleichen",
+   "buchloesung": "13... Kg8! 14. Dh5 Df6!",
+   "akzeptiertBuch": [],
+   "amZug": "b",
+   "besterZug": "Kg8",
+   "wert": "+0.00",
+   "art": "zug",
+   "buchzug": "Kg8",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 3.63,
+   "zuege": [
+    {
+     "san": "Kg8",
+     "wert": "+0.00",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Kg6",
+     "wert": "-3.63",
+     "verlust": 3.63,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Qxg5",
+     "wert": "-6.68",
+     "verlust": 6.68,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh6",
+     "wert": "-7.48",
+     "verlust": 7.48,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kh8",
+     "wert": "M-5",
+     "verlust": 95.0,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Kg8: +0.00; einziger Zug (3.6 Abstand)"
+  },
+  {
+   "uebung": "ueb:carlsen-linie",
+   "nummer": 81,
+   "kapitel": 11,
+   "abbildung": "11.100",
+   "fen": "r4rk1/pb3pp1/1p2p3/2p1N3/3Pp2R/2P1P2P/PP4P1/3R2K1 w - - 0 23",
+   "motiv": "Offene Linie für die bessere Figur",
+   "buchloesung": "23. dxc5!",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "dxc5",
+   "wert": "+1.68",
+   "art": "zug",
+   "buchzug": "dxc5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 1.59,
+   "zuege": [
+    {
+     "san": "dxc5",
+     "wert": "+1.68",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "a3",
+     "wert": "+0.09",
+     "verlust": 1.59,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rf1",
+     "wert": "+0.05",
+     "verlust": 1.63,
+     "status": "widerlegt"
+    },
+    {
+     "san": "a4",
+     "wert": "+0.00",
+     "verlust": 1.68,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Rd2",
+     "wert": "+0.00",
+     "verlust": 1.68,
+     "status": "widerlegt"
+    },
+    {
+     "san": "b3",
+     "wert": "+0.00",
+     "verlust": 1.68,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch dxc5: +1.68; einziger Zug (1.6 Abstand)"
+  },
+  {
+   "uebung": "ueb:capablanca-tausch",
+   "nummer": 82,
+   "kapitel": 11,
+   "abbildung": "11.101",
+   "fen": "5k2/p1p4R/1pr3p1/3p1nP1/P2P1P2/2PB1K2/8/8 w - - 3 34",
+   "motiv": "Tausch in ein besseres Endspiel",
+   "buchloesung": "34. Lxf5! gxf5 35. Kg3",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Bxf5",
+   "wert": "+1.74",
+   "art": "zug",
+   "buchzug": "Bxf5",
+   "urteil": "haelt",
+   "verlust": 0.0,
+   "einzigerZug": true,
+   "abstandZweiter": 1.41,
+   "zuege": [
+    {
+     "san": "Bxf5",
+     "wert": "+1.74",
+     "verlust": 0.0,
+     "status": "buch"
+    },
+    {
+     "san": "Ke2",
+     "wert": "+0.33",
+     "verlust": 1.41,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kg4",
+     "wert": "+0.32",
+     "verlust": 1.42,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kf2",
+     "wert": "+0.04",
+     "verlust": 1.7,
+     "status": "widerlegt"
+    },
+    {
+     "san": "Kg2",
+     "wert": "+0.00",
+     "verlust": 1.74,
+     "status": "widerlegt"
+    },
+    {
+     "san": "c4",
+     "wert": "-0.31",
+     "verlust": 2.05,
+     "status": "widerlegt"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Bxf5: +1.74; einziger Zug (1.4 Abstand)"
+  },
+  {
+   "uebung": "ueb:kandidatenzuege",
+   "nummer": 83,
+   "kapitel": 12,
+   "abbildung": "12.5",
+   "fen": "r1bq1rk1/pp1n1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "motiv": "Stärkste Antwort prüfen",
+   "buchloesung": "1. Dc2",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "Re1",
+   "wert": "+1.61",
+   "art": "zug",
+   "buchzug": "Qc2",
+   "urteil": "schwaecher",
+   "verlust": 0.44,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "Re1",
+     "wert": "+1.61",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Rc1",
+     "wert": "+1.60",
+     "verlust": 0.01,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Bc2",
+     "wert": "+1.27",
+     "verlust": 0.34,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qd2",
+     "wert": "+1.25",
+     "verlust": 0.36,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Na4",
+     "wert": "+1.21",
+     "verlust": 0.4,
+     "status": "schwaecher"
+    },
+    {
+     "san": "Qc2",
+     "wert": "+1.17",
+     "verlust": 0.44,
+     "status": "buch"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 0,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch Qc2: +1.17; besser Te1 (+1.61)"
+  },
+  {
+   "uebung": "ueb:zeitnot-prinzipien",
+   "nummer": 84,
+   "kapitel": 12,
+   "abbildung": "12.6",
+   "fen": "3r2k1/pp3pp1/2nb3p/3p4/8/2P1BN2/PP3PPP/3R2K1 w - - 0 1",
+   "motiv": "Sicherheitsblick in Zeitnot",
+   "buchloesung": "1. g3",
+   "akzeptiertBuch": [],
+   "amZug": "w",
+   "besterZug": "g4",
+   "wert": "+0.23",
+   "art": "zug",
+   "buchzug": "g3",
+   "urteil": "gleichwertig",
+   "verlust": 0.08,
+   "einzigerZug": false,
+   "abstandZweiter": 0.0,
+   "zuege": [
+    {
+     "san": "g4",
+     "wert": "+0.23",
+     "verlust": 0.0,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "b4",
+     "wert": "+0.19",
+     "verlust": 0.04,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Kf1",
+     "wert": "+0.17",
+     "verlust": 0.06,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "g3",
+     "wert": "+0.15",
+     "verlust": 0.08,
+     "status": "buch"
+    },
+    {
+     "san": "Kh1",
+     "wert": "+0.15",
+     "verlust": 0.08,
+     "status": "gleichwertig"
+    },
+    {
+     "san": "Nd2",
+     "wert": "+0.15",
+     "verlust": 0.08,
+     "status": "gleichwertig"
+    }
+   ],
+   "vorschlagAkzeptiert": [],
+   "gleichwertigeZuege": 23,
+   "akzeptiertFraglich": [],
+   "linie": {
+    "geprueft": true,
+    "abweichung": null
+   },
+   "begruendung": "Buch g3: +0.15; bester Zug laut Engine g4 (+0.23); 23 gleichwertige Züge (Technikfrage, kein Vorschlag)"
+  },
+  {
+   "uebung": "ueb:fehlerprotokoll",
+   "nummer": 85,
+   "kapitel": 12,
+   "abbildung": null,
+   "fen": null,
+   "motiv": "Fehlerprotokoll",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "art": "ohneStellung",
+   "amZug": null
+  },
+  {
+   "uebung": "ueb:trainingsplan",
+   "nummer": 86,
+   "kapitel": 12,
+   "abbildung": null,
+   "fen": null,
+   "motiv": "Trainingsplan",
+   "buchloesung": null,
+   "akzeptiertBuch": [],
+   "art": "ohneStellung",
+   "amZug": null
+  }
+ ]
+}

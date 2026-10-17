@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://schach-von-grund-auf.com/schemas/trainer-gemeinsam.schema.json",
+  "title": "Gemeinsame Bausteine der Trainerdaten",
+  "description": "Bausteine für die Aufgabendateien der Trainer (inhalte/de/trainer/<kennung>.json, Pflichtenheft 7). Züge in englischer Kurznotation (die App schreibt sie deutsch), Stellungen als FEN, Felder wie „e4“.",
+  "$defs": {
+    "fen": { "type": "string", "pattern": "^([pnbrqkPNBRQK1-8]+/){7}[pnbrqkPNBRQK1-8]+ [wb] (-|[KQkq]{1,4}) (-|[a-h][36]) [0-9]+ [0-9]+$" },
+    "seite": { "enum": ["w", "b"] },
+    "feld": { "type": "string", "pattern": "^[a-h][1-8]$" },
+    "san": { "type": "string", "minLength": 2 },
+    "schwierigkeit": { "description": "1 leicht bis 5 schwer (schwierigkeit.py)", "type": "integer", "minimum": 1, "maximum": 5 },
+    "kopf": {
+      "type": "object",
+      "required": ["schemaVersion", "trainer", "erzeugt", "quellen"],
+      "properties": {
+        "schemaVersion": { "const": 1 },
+        "trainer": { "enum": ["taktik", "falle", "struktur"] },
+        "erzeugt": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["datum", "engine", "skript"],
+          "properties": {
+            "datum": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$" },
+            "engine": { "type": ["string", "null"] },
+            "skript": { "type": "string" }
+          }
+        },
+        "quellen": {
+          "description": "Woher die Aufgaben stammen, mit Lizenz (für docs/LIZENZEN.md)",
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kennung", "name", "lizenz", "anzahl"],
+            "properties": {
+              "kennung": { "enum": ["buch", "lichess"] },
+              "name": { "type": "string" },
+              "lizenz": { "type": "string" },
+              "adresse": { "type": "string" },
+              "anzahl": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "herkunft": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quelle", "abbildung"],
+          "properties": {
+            "quelle": { "const": "buch" },
+            "abbildung": { "type": "string" },
+            "uebung": { "description": "Kennung der Übung (ueb:…), falls die Aufgabe eine Übung ist", "type": "string" },
+            "beispiel": { "description": "Kennung der Zugfolge (k07-a14), aus der die Lösung stammt", "type": "string" },
+            "fallencheck": { "description": "Name des Fallenchecks im Buch", "type": "string" }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["quelle", "puzzle", "wertung"],
+          "properties": {
+            "quelle": { "const": "lichess" },
+            "puzzle": { "description": "Kennung in der Lichess-Puzzle-Datenbank (CC0)", "type": "string" },
+            "wertung": { "description": "Lichess-Wertung der Aufgabe (Elo-artig)", "type": "integer" },
+            "partie": { "description": "Adresse der Partie auf lichess.org", "type": "string" },
+            "themen": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      ]
+    },
+    "messung": {
+      "description": "Engine-Messung der Schwierigkeit: Suchtiefe, ab der Stockfish beim Lösungszug bleibt (null: bis zur Höchsttiefe nicht), Länge der Lösung in eigenen Zügen, Messklasse (schwierigkeit.py)",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["tiefe", "laenge", "klasse"],
+      "properties": {
+        "tiefe": { "type": ["integer", "null"] },
+        "laenge": { "type": "integer", "minimum": 1 },
+        "klasse": { "type": "string", "pattern": "^t[0-3]-l[0-2]$" }
+      }
+    }
+  }
+}

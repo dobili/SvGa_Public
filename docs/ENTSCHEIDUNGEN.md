@@ -1553,6 +1553,43 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
+## Genauigkeit und Zugklassen wie bei chess.com (17.10.2026, Autor und Fable, Version 0.2.50)
+
+Anlass: Der Autor verglich die Auswertung seiner Partie gegen Stufe 5 (1. d4 Sf6 2. Lg5 Sh5? 3. Sf3?
+Sf4?? 4. e3?? … 37. Tb1#) mit dem Game Review von chess.com: dort Genauigkeit 86,8 und 80,3, bei
+uns 97 % und 93 %; dort für Weiß 0 Patzer und 2 „Verpasst“, bei uns 1 Patzer (4. e3) und 1
+Verpasst; „Beste Züge 15 von 37“ neben „Bester Zug 26“; Platzhalter „{brillant}“ in der Zeile
+„Zeichen“. Frage: Rechnet chess.com nicht tief genug?
+
+- **Rechentiefe ist nicht die Ursache.** Nachgerechnet mit Stockfish 19 lite bei 500 ms je
+  Stellung (wie die App, Tiefe 15 bis 20) und bei 3 s (Tiefe 20 bis 25): Werte, Verluste und
+  Zeichen sind praktisch gleich (3... Sf4 −6,3 / −6,3, 4. e3 −6,0 / −5,9, 6... Sg5 −6,0 / −5,6).
+  chess.com rechnet eher tiefer als die App, kommt aber zu denselben Werten. Die Rechenzeit bleibt
+  bei 500 ms.
+- **Genauigkeit** (`spiel/genauigkeit.ts`): Die App nahm das einfache Mittel der Zuggenauigkeiten;
+  dreißig fehlerfreie Züge in gewonnener Stellung glichen den Fehler aus, der die Partie entschied.
+  Jetzt wie bei Lichess (offen dokumentiert): Mittel aus dem gewichteten Mittel (Gewicht = Schwankung
+  der Gewinnwahrscheinlichkeit in einem Fenster um den Zug, 0,5 bis 12; Fenster ein Zehntel der
+  Züge, 2 bis 8) und dem harmonischen Mittel (Zuggenauigkeit mindestens 1). Ergebnis für die
+  Partie: 88 % und 76 % (chess.com 86,8 und 80,3; chess.com ist zur verlierenden Seite etwas
+  milder, weil es Verluste in schon verlorener Stellung kaum zählt). Dieselbe Rechnung je Phase.
+- **Verpasst vor Patzer** (`spiel/auswertung.ts`, `klasseVon`): Nach einem Fehler des Gegners
+  (ab 1,2) ist ein Zug mit Verlust ab 0,5 „verpasst“, auch bei großem Verlust, solange er
+  höchstens zurückgibt, was der Gegner geschenkt hat (man steht nicht schlechter als vor dessen
+  Fehler). 4. e3 ist damit „verpasst“ mit „?“ wie bei chess.com; wer mehr zurückgibt, bleibt beim
+  Patzer. „Grobe Patzer“ in der Auswertung nennt den Zug weiter (Verlust über zwei Bauern).
+- **Bester nur der Zug der Engine:** Die Klasse „bester“ galt auch für gleichwertige Züge (unter
+  0,05 Verlust), die Zeile „Beste Züge“ zählte nur den Zug der Engine; daher 26 neben 15. Jetzt
+  ist „bester“ nur der Zug der Engine, gleichwertige Züge sind „sehr gut“ (chess.com „exzellent“);
+  die Rückblickkarte sagt dann „… ist so gut wie Sf3, der Zug der Engine.“ Für die Partie:
+  Bester 13, Sehr gut 21 (chess.com 13 und 17).
+- **Platzhalter:** Die Zeile „Zeichen“ bekam den Wert für „!!“ nicht übergeben; behoben.
+- **Nicht geändert:** Die Klassengrenzen bleiben in Bauerneinheiten (Konzept 8.3; Einsteiger
+  verstehen „kostet einen Bauern“ besser als Gewinnchancen), die geschätzte Spielstärke bleibt beim
+  Verlust je Zug (Rückfrage S18 mit Empfehlung), die Regel K5 (noch klar gewonnen → höchstens „?!“)
+  bleibt; für die verlierende Seite gibt es keine Milderung (ein hängender Läufer ist für den
+  Lernenden ein Patzer, chess.com sagt „gut“).
+
 ## AP 13: Endspieltrainer (17.10.2026, Fable, Zweig `endspieltrainer`, Version 0.2.49)
 
 Auftrag des Autors: Trainer „endspiel“ (Kapitel 8 und 9) auf eigenem Zweig, parallel zu Opus

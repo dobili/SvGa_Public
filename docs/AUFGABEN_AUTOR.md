@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.49. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.50. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -21,8 +21,30 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.49“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.50“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.50 (etwa 10 Minuten, mit Engine; Genauigkeit wie bei chess.com, Fable)
+
+- [ ] N257. **Genauigkeit wie bei chess.com:** Spiele eine Partie mit einem groben Fehler früh und
+      gewinne sie trotzdem klar (oder nimm deine Partie vom 17.10.2026 gegen Stufe 5 aus den
+      Partien). Karte „Spielstärke“: Die Genauigkeit liegt jetzt deutlich niedriger als vorher
+      (deine Partie: etwa 88 % statt 97 % für dich, etwa 76 % statt 93 % für die Engine;
+      chess.com: 86,8 und 80,3). Grund: Wie bei Lichess zählt ein grober Fehler jetzt mehr als
+      viele gute Züge in schon gewonnener Stellung (Mittel aus gewichtetem und harmonischem
+      Mittel statt einfachem Durchschnitt). Der Erklärtext unter der Karte sagt das.
+- [ ] N258. **Verpasst statt Patzer:** In derselben Partie heißt 4. e3 jetzt „verpasst“ mit „?“
+      (nicht mehr „??“): Nach 3... Sf4?? hing der Springer, 4. e3 nahm ihn nicht, aber Weiß stand
+      danach nicht schlechter als vor dem Fehler der Engine (so auch chess.com). Die Zeile
+      „Grobe Patzer“ in der Auswertung nennt 4. e3 weiter (kostet mehr als zwei Bauern), die
+      Rückblickkarte sagt „4. e3? verpasst die Chance nach dem Fehler des Gegners: kostet etwa
+      5,9 Bauern.“ Gibt ein Zug mehr zurück, als der Gegner geschenkt hat, bleibt es ein Patzer.
+- [ ] N259. **Beste Züge und Zugklassen passen zusammen:** Karte „Spielstärke“: Die Zeile „Beste
+      Züge“ (etwa „13 von 37“) ist jetzt dieselbe Zahl wie „Bester Zug (der Zug der Engine)“ in
+      „Züge nach Art“; gleichwertige Züge, die nicht der Zug der Engine waren, stehen unter „Sehr
+      gut“ (wie „Exzellent“ bei chess.com). Die Zeile „Zeichen“ beginnt mit „!! 0“ statt mit dem
+      Platzhalter „{brillant}“. In der Rückblickkarte heißt ein gleichwertiger Zug „… ist so gut
+      wie Sf3, der Zug der Engine.“
 
 ### Neu in 0.2.49 (etwa 25 Minuten, mit Engine; Endspieltrainer, Fable)
 
@@ -675,6 +697,17 @@ Regeln C1 und C2).
       Lesart eine Ausnahme, etwa „eine Seite entwickelt zählt erst nach dem ersten Figurentausch“)?
       **Empfehlung:** so lassen (siehe oben). Eine Ausnahme nur für 11.4 würde die Regel für alle
       anderen Partien unklarer machen.
+
+- [ ] S18. **Geschätzte Spielstärke bleibt beim Verlust je Zug** (deine Partie: „etwa 2250“ für
+      dich trotz 4. e3). Die Zahl kommt aus dem durchschnittlichen Verlust in Bauern je Zug, und
+      der ist mit 0,2 klein, weil dreißig fehlerfreie Züge in gewonnener Stellung den einen
+      großen Verlust verdünnen (Lichess rechnet seinen „Verlust je Zug“ genauso). Die Genauigkeit
+      zählt seit 0.2.50 den Fehler stärker (N257). Soll auch die geschätzte Spielstärke aus der
+      neuen Genauigkeit kommen (deine Partie läge dann grob bei 1900 statt 2250), oder beim
+      Verlust je Zug bleiben? **Empfehlung:** aus der Genauigkeit ableiten, mit einer neuen
+      Tabelle (etwa 95 % → 2500, 90 % → 2200, 85 % → 1900, 80 % → 1600, 70 % → 1200, 60 % →
+      900), sobald du nach ein paar Partien sagst, ob dir die Genauigkeit plausibel vorkommt;
+      bis dahin so lassen, damit die Wertungskurve nicht zweimal springt.
 
 ### R. Rückmeldung 0.2.38, umgesetzt in 0.2.39 (Fable; plausibel entschieden, bitte prüfen)
 

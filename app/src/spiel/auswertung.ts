@@ -18,10 +18,12 @@ export type Zugzeichen = "!!" | "!" | "??" | "?" | "?!";
 /**
  * Zugklasse wie bei chess.com (Wunsch des Autors, 0.2.40), mit den Grenzen der App: brillant = ein
  * gutes Opfer (bester Zug, gibt Material, Stellung noch nicht gewonnen); stark = der einzige gute
- * Zug oder der beste Zug nach einem Fehler des Gegners; bester; sehrGut (bis 0,2 hinter dem
- * besten); gut (bis 0,5); buch = ein Zug aus den Eröffnungen des Buches; ungenau (ab 0,5);
- * fehler (ab 1,2); verpasst = nach einem Fehler des Gegners nicht den Gewinn genommen (ab 0,5);
- * patzer (ab 3).
+ * Zug oder der beste Zug nach einem Fehler des Gegners; bester = der Zug der Engine (seit 0.2.50
+ * nur noch dieser, damit die Zahl zur Zeile „Beste Züge“ passt); sehrGut (bis 0,2 hinter dem
+ * besten, auch ein gleichwertiger Zug); gut (bis 0,5); buch = ein Zug aus den Eröffnungen des
+ * Buches; ungenau (ab 0,5); fehler (ab 1,2); verpasst = nach einem Fehler des Gegners nicht den
+ * Gewinn genommen (ab 0,5, seit 0.2.50 auch vor „patzer“, solange man nicht schlechter steht als
+ * vor dem Fehler des Gegners, wie „Verpasst“ bei chess.com); patzer (ab 3).
  */
 export type Zugklasse =
   | "brillant"
@@ -55,8 +57,7 @@ export const GRENZE_FEHLER = 1.2;
 const GRENZE_UNGENAU = 0.5;
 /** Pflichtenheft 5.3: Grobe Patzer (mehr als zwei Bauern) werden hervorgehoben. */
 export const GROBER_PATZER = 2;
-/** Unter diesem Verlust gilt ein Zug als so gut wie der beste, darunter „sehr gut“. */
-const GLEICHWERTIG_UNTER = 0.05;
+/** Bis zu diesem Verlust hinter dem besten Zug ist ein Zug „sehr gut“. */
 const SEHR_GUT_UNTER = 0.2;
 /** Ein Opfer ab einer Leichtfigur laut Abtauschrechnung (Gewinn des Gegners mindestens 2). */
 const OPFER_AB = 2;
@@ -132,23 +133,38 @@ export function endwert(fen: string): number | null {
 }
 
 /**
+ * Verpasst: Der Gegner hat gerade einen Fehler gemacht, und dieser Zug nutzt ihn nicht (Verlust ab
+ * 0,5), gibt aber höchstens zurück, was der Gegner geschenkt hat. Man steht also nicht schlechter
+ * als vor dem Fehler des Gegners; deshalb zählt das auch bei großem Verlust als „verpasst“ und
+ * nicht als „patzer“ (so auch chess.com: 4. e3 nach 3... Sf4?? mit hängendem Springer ist
+ * „verpasst“, kein Patzer; 0.2.50).
+ */
+function verpasst(verlust: number, u: Zugumstaende): boolean {
+  return (
+    u.vorherVerlust >= GRENZE_FEHLER && verlust >= GRENZE_UNGENAU && verlust <= u.vorherVerlust
+  );
+}
+
+/**
  * Die Klasse eines Zuges aus Verlust und Umständen (Reihenfolge: grobe Fehler zuerst).
  *
  * Beispiel: 2... Sf6?? nach 2. Dh5 verliert 3 → patzer; 3. Lc4 als bester Zug nach dem Patzer →
  * stark; 2. Th8+ in Abb. 7.14 (bester Zug, gibt den Turm, Stellung vorher nicht gewonnen) → brillant.
  * Sonderfall: Nach dem Zug noch mindestens +5 → höchstens „ungenau“ (Matt in 2 zu +5).
+ * Sonderfall: Ein Zug, der ohne Verlust nicht der Zug der Engine ist, ist „sehr gut“ (gleichwertig),
+ * nicht „bester“.
  */
 export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
   const nochKlarGewonnen = u.wertVorher - verlust >= KLAR_GEWONNEN;
   if (nochKlarGewonnen && verlust >= GRENZE_UNGENAU) return "ungenau";
+  if (verpasst(verlust, u)) return "verpasst";
   if (verlust >= GRENZE_PATZER) return "patzer";
-  if (u.vorherVerlust >= GRENZE_FEHLER && verlust >= GRENZE_UNGENAU) return "verpasst";
   if (verlust >= GRENZE_FEHLER) return "fehler";
   if (verlust >= GRENZE_UNGENAU) return "ungenau";
   if (u.buch) return "buch";
   if (u.warBester && u.opfer && u.wertVorher < SCHON_GEWONNEN) return "brillant";
   if (u.warBester && (u.einziger || u.vorherVerlust >= GRENZE_FEHLER)) return "stark";
-  if (u.warBester || verlust < GLEICHWERTIG_UNTER) return "bester";
+  if (u.warBester) return "bester";
   return verlust < SEHR_GUT_UNTER ? "sehrGut" : "gut";
 }
 

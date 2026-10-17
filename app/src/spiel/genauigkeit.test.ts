@@ -3,9 +3,11 @@ import { describe, expect, it } from "vitest";
 import { zugurteile } from "./auswertung";
 import {
   gewinnwahrscheinlichkeit,
+  partiegenauigkeit,
   spielstaerke,
   spielstaerkeAus,
   zuggenauigkeit,
+  zuggewichte,
 } from "./genauigkeit";
 import { leserzug, neuePartie, ziehe, type Partie, type Partiezug } from "./partie";
 
@@ -61,6 +63,35 @@ describe("Genauigkeit und Spielstärke", () => {
     expect(zuggenauigkeit(0)).toBeCloseTo(100, 3);
     expect(zuggenauigkeit(10)).toBeCloseTo(63.6, 0);
     expect(zuggenauigkeit(100)).toBe(0);
+  });
+
+  it("Gewichte (Lichess): ruhige Züge 0,5, Züge im Kampf bis 12; je Zug ein Gewicht", () => {
+    // 20 Halbzüge, Fenster 2: Das Gewicht ist die Schwankung der Gewinnwahrscheinlichkeit
+    // zwischen der Stellung vor und nach dem Zug (mindestens 0,5, höchstens 12).
+    const ruhig = Array.from({ length: 21 }, () => 0.2);
+    expect(zuggewichte(ruhig)).toHaveLength(20);
+    expect(zuggewichte(ruhig).every((g) => g === 0.5)).toBe(true);
+    const kampf = [...ruhig];
+    kampf[5] = 6;
+    const gewichte = zuggewichte(kampf);
+    expect(gewichte[4]).toBe(12);
+    expect(gewichte[5]).toBe(12);
+    expect(gewichte[6]).toBe(0.5);
+    expect(zuggewichte([0])).toEqual([]);
+  });
+
+  it("Genauigkeit der Partie (Lichess): ein Patzer drückt stärker als das einfache Mittel", () => {
+    const zuege = [
+      { genauigkeit: 100, gewicht: 0.5 },
+      { genauigkeit: 100, gewicht: 0.5 },
+      { genauigkeit: 100, gewicht: 0.5 },
+      { genauigkeit: 20, gewicht: 12 },
+    ];
+    // Einfaches Mittel wäre 80; gewichtet (150 + 240) / 13,5 = 28,9; harmonisch 4 / 0,08 = 50.
+    expect(partiegenauigkeit(zuege)).toBeCloseTo((28.9 + 50) / 2, 0);
+    expect(partiegenauigkeit([])).toBeNull();
+    // Eine Zuggenauigkeit 0 zählt im harmonischen Mittel als 1, nicht als Division durch 0.
+    expect(partiegenauigkeit([{ genauigkeit: 0, gewicht: 1 }])).toBeCloseTo(0.5, 5);
   });
 
   it("Schätzung aus dem Verlust je Zug: 0,4 → 1800, 1,0 → 1100, dazwischen linear, Mindestwert", () => {

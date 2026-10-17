@@ -5,7 +5,11 @@
  * Seiten, Anzahl der !, ?, ?! Züge, Genauigkeit wie bei chess.com“). Die Genauigkeit folgt der
  * Rechnung von Lichess (offen dokumentiert): Jede Bewertung wird in eine Gewinnwahrscheinlichkeit
  * umgerechnet, die Genauigkeit eines Zuges fällt mit dem Verlust an Gewinnwahrscheinlichkeit;
- * die Genauigkeit der Partie ist das Mittel über die eigenen Züge. Die Spielstärke ist eine grobe
+ * die Genauigkeit der Partie ist seit 0.2.50 wie bei Lichess das Mittel aus zwei Mitteln der
+ * eigenen Züge: dem nach der Schwankung der Partie gewichteten Mittel (ruhige, längst entschiedene
+ * Phasen zählen wenig, die Kämpfe viel) und dem harmonischen Mittel (ein grober Fehler drückt die
+ * Zahl spürbar). Vorher das einfache Mittel, das mit 97 % weit über chess.com (87 %) lag, weil die
+ * vielen fehlerfreien Züge in gewonnener Stellung alles ausglichen. Die Spielstärke ist eine grobe
  * Schätzung aus dem durchschnittlichen Verlust je Zug (Tabelle unten, aus Erfahrungswerten;
  * keine Wertungszahl eines Verbands). Reine Funktionen, die Werte kommen aus der Auswertung.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts.
@@ -45,6 +49,18 @@ const HALB = 50;
 const GENAUIGKEIT_FAKTOR = 103.1668;
 const GENAUIGKEIT_ABFALL = 0.04354;
 const GENAUIGKEIT_VERSATZ = 3.1669;
+/**
+ * Lichess: Das Gewicht eines Zuges ist die Standardabweichung der Gewinnwahrscheinlichkeit in einem
+ * Fenster, das mit der Stellung nach dem Zug endet; Fensterbreite ein Zehntel der Züge (2 bis 8),
+ * Gewicht 0,5 bis 12.
+ */
+const FENSTER_JE_ZUEGE = 10;
+const FENSTER_MINDESTENS = 2;
+const FENSTER_HOECHSTENS = 8;
+const GEWICHT_MINDESTENS = 0.5;
+const GEWICHT_HOECHSTENS = 12;
+/** Kleinste Genauigkeit eines Zuges im harmonischen Mittel; sonst teilt eine 0 alles weg. */
+const GENAUIGKEIT_MINDESTENS = 1;
 /** Unter so vielen Zügen ist eine Schätzung der Spielstärke nicht sinnvoll. */
 const MINDESTENS_ZUEGE = 10;
 /** Je Phase reichen weniger Züge für eine (noch gröbere) Schätzung. */
@@ -79,6 +95,62 @@ export function gewinnwahrscheinlichkeit(wert: number): number {
 export function zuggenauigkeit(verlustProzent: number): number {
   const roh = GENAUIGKEIT_FAKTOR * Math.exp(-GENAUIGKEIT_ABFALL * Math.max(0, verlustProzent));
   return Math.max(0, Math.min(PROZENT, roh - GENAUIGKEIT_VERSATZ));
+}
+
+/** Standardabweichung einer Reihe (Lichess: Schwankung der Gewinnwahrscheinlichkeit). */
+function standardabweichung(reihe: readonly number[]): number {
+  if (reihe.length === 0) return 0;
+  const mittel = reihe.reduce((summe, x) => summe + x, 0) / reihe.length;
+  const varianz = reihe.reduce((summe, x) => summe + (x - mittel) ** 2, 0) / reihe.length;
+  return Math.sqrt(varianz);
+}
+
+/**
+ * Gewicht je Halbzug für die Genauigkeit der Partie (Lichess): die Schwankung der
+ * Gewinnwahrscheinlichkeit im Fenster, das mit der Stellung nach dem Zug endet.
+ *
+ * Warum: In einer längst gewonnenen Stellung ist jeder Zug „genau“; ohne Gewichtung gleichen
+ * dreißig solcher Züge den Fehler aus, der die Partie entschieden hat.
+ * Eingabe: Werte je Stellung (Startstellung bis Ende). Ausgabe: ein Gewicht je Zug.
+ * Beispiel: Beispielpartie des Autors (17.10.2026, 1. d4 Sf6 2. Lg5 Sh5? 3. Sf3? Sf4?? 4. e3?? …,
+ * 73 Halbzüge), Fenster 7: die Züge 1 bis 8 (Werte zwischen 0 und +7)
+ * wiegen 12, die Züge ab 25 (Wert immer um +10) wiegen 0,5.
+ */
+export function zuggewichte(werte: readonly number[]): number[] {
+  const wahrscheinlichkeiten = werte.map(gewinnwahrscheinlichkeit);
+  const zuege = Math.max(0, werte.length - 1);
+  const fenster = Math.max(
+    FENSTER_MINDESTENS,
+    Math.min(FENSTER_HOECHSTENS, Math.floor(zuege / FENSTER_JE_ZUEGE)),
+  );
+  return Array.from({ length: zuege }, (_, i) => {
+    const ende = Math.min(wahrscheinlichkeiten.length, Math.max(fenster, i + 2));
+    const ausschnitt = wahrscheinlichkeiten.slice(Math.max(0, ende - fenster), ende);
+    const schwankung = standardabweichung(ausschnitt);
+    return Math.max(GEWICHT_MINDESTENS, Math.min(GEWICHT_HOECHSTENS, schwankung));
+  });
+}
+
+/**
+ * Genauigkeit einer Seite (Lichess): Mittel aus dem gewichteten Mittel und dem harmonischen Mittel
+ * der Zuggenauigkeiten; null ohne Züge.
+ * Beispiel: Beispielpartie des Autors (siehe zuggewichte), Weiß: einfaches Mittel 97, gewichtet 84, harmonisch 90 → 87 (chess.com
+ * 86,8). Sonderfall: Eine Zuggenauigkeit unter 1 zählt im harmonischen Mittel als 1.
+ */
+export function partiegenauigkeit(
+  zuege: readonly { readonly genauigkeit: number; readonly gewicht: number }[],
+): number | null {
+  if (zuege.length === 0) return null;
+  let gewichtet = 0;
+  let gewichte = 0;
+  let kehrwerte = 0;
+  for (const z of zuege) {
+    gewichtet += z.genauigkeit * z.gewicht;
+    gewichte += z.gewicht;
+    kehrwerte += 1 / Math.max(GENAUIGKEIT_MINDESTENS, z.genauigkeit);
+  }
+  const harmonisch = zuege.length / kehrwerte;
+  return (gewichtet / gewichte + harmonisch) / 2;
 }
 
 /** Spielstärke aus dem Verlust je Zug, linear zwischen den Stützstellen, auf 50 gerundet. */
@@ -118,26 +190,24 @@ const KEINE_KLASSEN: Readonly<Record<Zugklasse, number>> = {
 
 /** Bilanz einer Seite aus ihren Zügen. */
 function seitenbilanz(
-  eigene: readonly { urteil: Zugurteil; genauigkeit: number; bester: boolean }[],
+  eigene: readonly Zugbilanz[],
   mindestensZuege = MINDESTENS_ZUEGE,
 ): Seitenbilanz {
   const zuege = eigene.length;
   const zeichen = { ...KEINE_ZEICHEN };
   const klassen = { ...KEINE_KLASSEN };
   let verlust = 0;
-  let genauigkeit = 0;
   let beste = 0;
   for (const z of eigene) {
     if (z.urteil.zeichen) zeichen[z.urteil.zeichen] += 1;
     klassen[z.urteil.klasse] += 1;
     verlust += z.urteil.verlust;
-    genauigkeit += z.genauigkeit;
     if (z.bester) beste += 1;
   }
   const verlustJeZug = zuege > 0 ? verlust / zuege : 0;
   return {
     zuege,
-    genauigkeit: zuege > 0 ? genauigkeit / zuege : null,
+    genauigkeit: partiegenauigkeit(eigene),
     verlustJeZug,
     spielstaerke: zuege >= mindestensZuege ? spielstaerkeAus(verlustJeZug) : null,
     zeichen,
@@ -146,12 +216,13 @@ function seitenbilanz(
   };
 }
 
-/** Ein eingeordneter Zug mit Seite, Genauigkeit, „bester“ und der Phase seiner Stellung. */
+/** Ein eingeordneter Zug mit Seite, Genauigkeit, Gewicht, „bester“ und der Phase seiner Stellung. */
 interface Zugbilanz {
   readonly seite: Color;
   readonly phase: Phase | null;
   readonly urteil: Zugurteil;
   readonly genauigkeit: number;
+  readonly gewicht: number;
   readonly bester: boolean;
 }
 
@@ -165,6 +236,7 @@ function zugbilanzen(
   phasen: readonly Phase[],
 ): Zugbilanz[] {
   const alle = stellungen(partie);
+  const gewichte = zuggewichte(werte);
   return urteile.map((urteil) => {
     const fen = alle[urteil.index] ?? "";
     const seite: Color = fen.split(" ")[1] === "b" ? "black" : "white";
@@ -174,7 +246,8 @@ function zugbilanzen(
     const gespielt = gespielteUci[urteil.index] ?? null;
     const bester = gespielt !== null && gespielt !== "" && gespielt === beste[urteil.index];
     const phase = phasen[urteil.index] ?? null;
-    return { seite, phase, urteil, genauigkeit: zuggenauigkeit(verlustProzent), bester };
+    const gewicht = gewichte[urteil.index] ?? GEWICHT_MINDESTENS;
+    return { seite, phase, urteil, genauigkeit: zuggenauigkeit(verlustProzent), gewicht, bester };
   });
 }
 
@@ -211,8 +284,8 @@ export function spielstaerkeJePhase(
  * Eingaben: Partie, Werte je Stellung aus Sicht von Weiß, Urteile je Halbzug (spiel/auswertung.ts),
  * beste Züge je Stellung (UCI, dürfen fehlen). Ausgabe: je Seite Genauigkeit, Verlust je Zug,
  * geschätzte Spielstärke, Zeichen und beste Züge.
- * Beispiel: 20 eigene Züge mit durchschnittlich 0,4 Bauern Verlust → etwa 1800, Genauigkeit
- * etwa 80 %. Sonderfall: ohne Werte (Auswertung läuft noch) sind beide Seiten leer.
+ * Beispiel: 20 eigene Züge mit durchschnittlich 0,4 Bauern Verlust → etwa 1800; Genauigkeit wie
+ * bei Lichess (partiegenauigkeit), für die Beispielpartie des Autors 87 % und 76 % (chess.com: 86,8 und 80,3). Sonderfall: ohne Werte (Auswertung läuft noch) sind beide Seiten leer.
  */
 export function spielstaerke(
   partie: Partie,

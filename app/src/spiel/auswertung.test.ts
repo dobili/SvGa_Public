@@ -121,13 +121,23 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     wertVorher: 0,
     buch: false,
   };
-  it("nach Verlust: patzer, fehler, ungenau, gut, sehr gut, bester", () => {
+  it("nach Verlust: patzer, fehler, ungenau, gut, sehr gut; bester nur der Zug der Engine", () => {
     expect(klasseVon(3, ruhig)).toBe("patzer");
     expect(klasseVon(1.2, ruhig)).toBe("fehler");
     expect(klasseVon(0.5, ruhig)).toBe("ungenau");
     expect(klasseVon(0.3, ruhig)).toBe("gut");
     expect(klasseVon(0.1, ruhig)).toBe("sehrGut");
-    expect(klasseVon(0.02, ruhig)).toBe("bester");
+    // Gleichwertig, aber nicht der Zug der Engine: sehr gut (0.2.50, wie „exzellent“ bei chess.com).
+    expect(klasseVon(0, ruhig)).toBe("sehrGut");
+    expect(klasseVon(0, { ...ruhig, warBester: true })).toBe("bester");
+  });
+
+  it("verpasst vor patzer: nach 3... Sf4?? (Springer hängt, 6,3) ist 4. e3 (5,9) verpasst", () => {
+    // Weiß steht nach 4. e3 (+1,1) nicht schlechter als vor 3... Sf4 (+0,7): verpasst, kein Patzer.
+    expect(klasseVon(5.9, { ...ruhig, vorherVerlust: 6.3, wertVorher: 7 })).toBe("verpasst");
+    // Gibt der Zug mehr zurück, als der Gegner geschenkt hat, bleibt es ein Patzer.
+    expect(klasseVon(6.5, { ...ruhig, vorherVerlust: 6.3, wertVorher: 7 })).toBe("patzer");
+    expect(klasseVon(1.3, { ...ruhig, vorherVerlust: 1.2 })).toBe("fehler");
   });
 
   it("verpasst nach einem Fehler des Gegners, stark als Strafe oder einziger Zug, brillant als Opfer", () => {

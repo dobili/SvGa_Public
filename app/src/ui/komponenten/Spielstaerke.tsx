@@ -151,6 +151,7 @@ function Zeilen({
     t("spielstaerke.bauern", { wert: komma(b.verlustJeZug) }),
     t("spielstaerke.vonZuegen", { anzahl: b.beste, zuege: b.zuege }),
     t("spielstaerke.zeichenZeile", {
+      brillant: b.zeichen["!!"],
       einzige: b.zeichen["!"],
       ungenau: b.zeichen["?!"],
       fehler: b.zeichen["?"],

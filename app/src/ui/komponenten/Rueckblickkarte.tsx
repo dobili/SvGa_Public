@@ -17,6 +17,9 @@ import { uciZuSan } from "../../spiel/zuege";
 import type { Rueckblick } from "./useRueckblick";
 
 /** Verlust mit einer Nachkommastelle und deutschem Komma. */
+/** Bis zu diesem Verlust ist ein Zug „so gut wie der beste“ (die Anzeige rundet auf 0,0). */
+const GLEICHWERTIG_UNTER = 0.05;
+
 function bauern(verlust: number): string {
   return verlust.toFixed(1).replace(".", ",");
 }
@@ -33,7 +36,9 @@ function urteilssatz(zug: string, urteil: Zugurteil, bester: string): string {
     case "bester":
       return t("rueckblick.bester", { zug });
     case "sehrGut":
-      return t("rueckblick.sehrGut", { zug, verlust, bester });
+      return urteil.verlust < GLEICHWERTIG_UNTER
+        ? t("rueckblick.gleichwertig", { zug, bester })
+        : t("rueckblick.sehrGut", { zug, verlust, bester });
     case "gut":
       return t("rueckblick.gut", { zug, verlust, bester });
     case "buch":

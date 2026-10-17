@@ -1,5 +1,6 @@
 /**
- * Eine Zeile mit Auswahlknöpfen, nach der Antwort mit der Antwort der App daneben.
+ * Eine Zeile mit Auswahlknöpfen, nach der Antwort mit der Antwort der App (oder des Buches)
+ * daneben.
  *
  * Rolle im Gesamtbild: Gemeinsam für die Zielbilanz-Übung (ja, teils, nein) und den
  * Faktorenbilanz-Trainer (Weiß, gleich, Schwarz). Grün, wenn die eigene Wahl stimmt, sonst rot.
@@ -14,6 +15,7 @@ export function Wahlzeile<T extends string>({
   wert,
   setze,
   app,
+  quelle = "app",
 }: {
   titel: string;
   werte: readonly T[];
@@ -23,6 +25,8 @@ export function Wahlzeile<T extends string>({
   setze: (wert: T) => void;
   /** Die Antwort der App, sobald geprüft ist; sonst null. */
   app: T | null;
+  /** Woher die Antwort stammt: Rechnung der App oder Tabelle des Buches (W9). */
+  quelle?: "app" | "buch";
 }) {
   return (
     <fieldset className="zahlwahl">
@@ -41,7 +45,7 @@ export function Wahlzeile<T extends string>({
       ))}
       {app !== null && (
         <span className={`meldung ${app === wert ? "gut" : "schlecht"}`}>
-          {t("trainer.appSagt", { antwort: name(app) })}
+          {t(quelle === "buch" ? "trainer.buchSagt" : "trainer.appSagt", { antwort: name(app) })}
         </span>
       )}
     </fieldset>

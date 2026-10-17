@@ -50,3 +50,26 @@ describe("Repertoire-Trainer", () => {
     expect(mitAntwort(weiss, [])).toEqual(["e4", "e5"]);
   });
 });
+
+// W10: Warum-Fragen an Schlüsselzügen aus den vorbereiteten Texten zu Kapitel 2.
+describe("Warum-Fragen im Repertoire-Trainer", () => {
+  const kapitel = ladeKapitel(2);
+  const eroeffnungen = eroeffnungenAus(kapitel);
+  const alle = eroeffnungen.flatMap((e) =>
+    repertoirerunde(e, "white", 99, kapitel.abbildungen).flatMap((a) => a.fragen ?? []),
+  );
+
+  it("findet Fragen an Zügen vieler Varianten (gemessen 20 verschiedene)", () => {
+    const verschiedene = new Set(alle.map((f) => f.zug));
+    expect(verschiedene.size).toBeGreaterThanOrEqual(18);
+  });
+
+  it("Spanische Partie: „Warum spielt Schwarz 3... a6?“ nach dem sechsten Halbzug", () => {
+    const spanisch = eroeffnungen.find((e) => e.titel.includes("Spanische Partie"));
+    if (!spanisch) throw new Error("Spanische Partie fehlt");
+    const [erste] = repertoirerunde(spanisch, "black", 1, kapitel.abbildungen);
+    const frage = erste?.fragen?.find((f) => f.zug === "3... a6");
+    expect(frage?.stelle).toBe(5);
+    expect(erste?.linie[5]).toBe("a6");
+  });
+});

@@ -4,7 +4,8 @@
  * Rolle im Gesamtbild: Trainer „repertoire“ (AP 13). Der Leser zieht seine Züge, die App
  * antwortet aus dem Buch. Ein falscher Zug zählt als Fehler; die App zeigt dann den Zug des
  * Buches als Pfeil, und der Leser zieht ihn nach. „Zug zeigen“ hilft ebenso und zählt ebenso.
- * Richtig ist die Variante, wenn sie ohne Fehler und ohne Hilfe gelingt.
+ * Richtig ist die Variante, wenn sie ohne Fehler und ohne Hilfe gelingt. Hat ein gespielter Zug
+ * eine Warum-Frage (W10), steht sie unter dem Brett, zugeklappt; sie zählt nicht zur Wertung.
  * Auch „Studien lösen“ nutzt diese Aufgabe, mit eigenem Auftrag.
  * Abhängigkeiten: training/repertoiretrainer.ts, Brettbereich, useBrettbedienung, Rundenrahmen.
  */
@@ -21,6 +22,7 @@ import {
 } from "../../training/repertoiretrainer";
 import { stellungNach } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/Brettbereich";
+import { WarumFragenListe } from "../komponenten/WarumFrage";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
@@ -107,6 +109,11 @@ export function Repertoireaufgabe({
           {t("repertoiretrainer.fertig", { fehler })}
         </Antwortmeldung>
       )}
+      {(aufgabe.fragen ?? [])
+        .filter((f) => f.stelle < zuege.length)
+        .map((f) => (
+          <WarumFragenListe key={`${f.stelle} ${f.zug}`} vorbereitet={f.vorbereitet} nur={f.zug} />
+        ))}
     </>
   );
 }

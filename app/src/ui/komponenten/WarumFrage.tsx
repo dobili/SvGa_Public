@@ -10,7 +10,7 @@
  */
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { istRichtig, warumFragen, type Frage } from "../../analyse/warumfragen";
+import { istRichtig, warumFragen, type Frage, type Vorbereitet } from "../../analyse/warumfragen";
 import type { Abbildung } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { useSpeicher } from "../../speicher/speicher";
@@ -69,6 +69,30 @@ function WarumFrage({ frage, entwurf }: { frage: Frage; entwurf: boolean }) {
         </p>
       )}
     </details>
+  );
+}
+
+/**
+ * Die Warum-Fragen vorbereiteter Texte ohne Bedingung, etwa in einem Trainer nach der Antwort
+ * (W9, W10). Beispiel: Faktorenbilanz-Trainer an Abb. 3.2 → „Warum spielt Weiß 3. Sf3?“.
+ */
+export function WarumFragenListe({
+  vorbereitet,
+  nur,
+}: {
+  vorbereitet: Vorbereitet | undefined;
+  /** Nur die Frage zu diesem Zug (deutsche Kurznotation wie in den Daten), sonst alle. */
+  nur?: string;
+}) {
+  if (!vorbereitet) return null;
+  const entwurf = vorbereitet.status === "entwurf";
+  const fragen = warumFragen(vorbereitet).filter((f) => nur === undefined || f.zug === nur);
+  return (
+    <>
+      {fragen.map((frage) => (
+        <WarumFrage key={frage.frage} frage={frage} entwurf={entwurf} />
+      ))}
+    </>
   );
 }
 

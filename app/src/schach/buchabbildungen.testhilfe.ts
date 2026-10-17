@@ -7,10 +7,13 @@
  * Datei nicht als Testdatei sammelt.
  */
 import { readFileSync } from "node:fs";
-import type { Bilanz, Tabelle } from "../daten/generiert/bilanz";
+import type { Bilanz } from "../daten/generiert/bilanz";
+import { bilanzfaelleAus, type Bilanzfall } from "../training/buchbilanzen";
 import type { Abbildung, Kapitel } from "../daten/generiert/kapitel";
 import { feldAusName, stellungAusFen, type Feldindex, type Stellung } from "./stellung";
 import { fortsetzungen, hauptlinie } from "./variantenbaum";
+
+export type { Bilanzfall };
 
 const ORDNER = new URL("../../public/daten/de/a1/", import.meta.url);
 const kapitel = new Map<number, Kapitel>();
@@ -91,39 +94,12 @@ export function alleAbbildungen(): Abbildung[] {
   return Array.from({ length: 13 }, (_, n) => ladeKapitel(n).abbildungen).flat();
 }
 
-/** Eine Bilanztabelle des Buches mit der Abbildung, deren Stellung sie bewertet. */
-export interface Bilanzfall {
-  readonly abbildung: string;
-  readonly tabelle: Tabelle;
-}
-
-/** Die Abbildung zu einer Tabelle: der Verweis im Text davor, sonst die Abbildung der Bilanz. */
-function abbildungVor(bilanz: Bilanz, stelle: number): string | null {
-  for (let i = stelle - 1; i >= 0; i--) {
-    const block = bilanz.bloecke[i];
-    if (block?.art !== "text") continue;
-    const verweis = block.text.find((teil) => teil.art === "verweis" && teil.abbildung);
-    if (verweis?.abbildung) return verweis.abbildung;
-  }
-  return bilanz.abbildung;
-}
-
 /**
  * Alle Bilanztabellen einer Art („ziel“ oder „faktor“) aus allen Kapiteln, für die Kalibrierung
- * der Werkzeuge (Konzept 13). Bilanzen mit mehreren Tabellen (Abb. 2.76: Angenommenes
- * Damengambit und Orthodoxe Verteidigung) nennen die Abbildung im Text vor der Tabelle.
+ * der Werkzeuge (Konzept 13); die Zuordnung zur Abbildung macht training/buchbilanzen.ts.
  */
 export function bilanzfaelle(art: Bilanz["art"]): Bilanzfall[] {
-  const faelle: Bilanzfall[] = [];
-  for (let nummer = 0; nummer <= 12; nummer++) {
-    for (const bilanz of ladeKapitel(nummer).bilanzen.filter((b) => b.art === art)) {
-      const mehrere = bilanz.bloecke.filter((b) => b.art === "tabelle").length > 1;
-      bilanz.bloecke.forEach((block, stelle) => {
-        if (block.art !== "tabelle") return;
-        const abbildung = mehrere ? abbildungVor(bilanz, stelle) : bilanz.abbildung;
-        if (abbildung) faelle.push({ abbildung, tabelle: block });
-      });
-    }
-  }
-  return faelle;
+  return Array.from({ length: 13 }, (_, nummer) =>
+    bilanzfaelleAus(ladeKapitel(nummer), art),
+  ).flat();
 }

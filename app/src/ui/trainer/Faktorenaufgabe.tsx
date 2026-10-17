@@ -3,8 +3,9 @@
  *
  * Rolle im Gesamtbild: Trainer „faktorenbilanz“ (AP 13). Der Leser stellt die Waage für
  * Material und Zeit und vergleicht Königssicherheit und Aktivität (Weiß, gleich, Schwarz); nach
- * „Prüfen“ zeigt die App ihre Antwort je Faktor und darunter die Bilanz mit denselben Sätzen wie
- * das Werkzeug „Faktorenbilanz“ (k3-faktorenbilanz.ts).
+ * „Prüfen“ steht je Faktor die Antwort daneben (aus der Faktorenbilanz des Buches, wenn die
+ * Abbildung eine hat, W9), darunter die Bilanz mit denselben Sätzen wie das Werkzeug
+ * „Faktorenbilanz“ (k3-faktorenbilanz.ts) und die Warum-Fragen der Abbildung (AP 14).
  * Abhängigkeiten: training/faktorentrainer.ts, analyse/k3-faktorenbilanz.ts, Trainerbrett.
  */
 import { useMemo, useState } from "react";
@@ -20,6 +21,7 @@ import {
   type Faktorenaufgabe as Aufgabe,
   type Vorn,
 } from "../../training/faktorentrainer";
+import { WarumFragenListe } from "../komponenten/WarumFrage";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -75,6 +77,7 @@ export function Faktorenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: R
           wert={entwurf[faktor]}
           setze={(w) => setzeEntwurf({ ...entwurf, [faktor]: w })}
           app={beantwortet ? aufgabe.loesung[faktor] : null}
+          quelle={aufgabe.quelle}
         />
       ))}
       {!beantwortet && (
@@ -90,7 +93,13 @@ export function Faktorenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: R
         </button>
       )}
       {beantwortet && <Antwortmeldung richtig={runde.ergebnis === true} />}
+      {beantwortet && (
+        <p className="hinweis" data-testid="faktoren-quelle">
+          {t(`faktorentrainer.quelle.${aufgabe.quelle}`, { nummer: aufgabe.nummer })}
+        </p>
+      )}
       {beantwortet && <Bilanz fen={aufgabe.fen} />}
+      {beantwortet && <WarumFragenListe vorbereitet={aufgabe.vorbereitet} />}
     </>
   );
 }

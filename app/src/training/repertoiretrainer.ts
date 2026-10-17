@@ -5,14 +5,17 @@
  * den Zugfolgen des Buches (Kapitel 2, `beispiele`, ein Baum je Eröffnung); die Eröffnungen sind
  * die Abschnitte mit Steckbrief. Der Leser wählt Eröffnung und Seite und zieht seine Züge, die App
  * antwortet mit den Zügen der Gegenseite aus dem Buch. Jeder Weg vom Anfang bis zu einem Blatt
- * des Baumes ist eine Variante. Reine Funktionen.
- * Abhängigkeiten: training/uebungsaufgabe.ts (kanonischeLinie), erzeugte Typen.
+ * des Baumes ist eine Variante. An den Zügen, zu denen eine Abbildung des Kapitels eine Warum-Frage
+ * hat (vorbereitete Texte, AP 14), stellt der Trainer sie nach dem Zug (W10). Reine Funktionen.
+ * Abhängigkeiten: training/uebungsaufgabe.ts (kanonischeLinie, stellungNach, zuegeAusText),
+ * analyse/warumfragen.ts, erzeugte Typen.
  * Buchbezug: Kapitel 2, „Deine Entscheidung: Welche Eröffnungen spielst du?“.
  */
 import type { Color } from "chessops/types";
+import type { Vorbereitet } from "../analyse/warumfragen";
 import type { Beispiel, Knoten } from "../daten/generiert/beispiel";
-import type { Kapitel } from "../daten/generiert/kapitel";
-import { kanonischeLinie } from "./uebungsaufgabe";
+import type { Abbildung, Kapitel } from "../daten/generiert/kapitel";
+import { kanonischeLinie, stellungNach, zuegeAusText } from "./uebungsaufgabe";
 
 /** Kürzere Wege sind Seitenblicke im Text, keine Variante zum Üben. */
 export const MINDESTENS_HALBZUEGE = 8;
@@ -25,6 +28,15 @@ export interface Repertoireeroeffnung {
   readonly beispiel: Beispiel;
 }
 
+/** Eine Warum-Frage an einem Zug der Variante (W10). */
+export interface Schluesselfrage {
+  /** Halbzug der Linie (ab 0), nach dem die Frage kommt. */
+  readonly stelle: number;
+  /** Der Zug in der Schreibweise der Daten, etwa „3... a6“. */
+  readonly zug: string;
+  readonly vorbereitet: Vorbereitet;
+}
+
 export interface Repertoireaufgabe {
   readonly titel: string;
   readonly startFen: string;
@@ -32,6 +44,42 @@ export interface Repertoireaufgabe {
   readonly linie: readonly string[];
   /** Die Seite des Lesers. */
   readonly seite: Color;
+  /** Die Warum-Fragen an Zügen der Linie, nach Halbzug geordnet (W10). */
+  readonly fragen?: readonly Schluesselfrage[];
+}
+
+/** Brett und Seite am Zug einer FEN: daran erkennt der Trainer die Stellung einer Abbildung. */
+function stellungsschluessel(fen: string): string {
+  return fen.split(" ").slice(0, 2).join(" ");
+}
+
+/**
+ * Die Warum-Fragen an den Zügen einer Linie: Steht vor einem Zug die Stellung einer Abbildung,
+ * und gilt eine ihrer Fragen genau diesem Zug, kommt sie nach dem Zug.
+ *
+ * Warum: Pflichtenheft 7, Repertoire-Trainer: „Warum-Fragen an Schlüsselzügen“.
+ * Beispiel: Spanische Partie, Linie über Abb. 2.2 → nach 3... a6 „Warum spielt Schwarz 3... a6?“.
+ * Sonderfall: Fragen ohne Zug (zur Stellung) passen zu keinem Zug und fehlen hier.
+ */
+export function schluesselfragen(
+  startFen: string,
+  linie: readonly string[],
+  abbildungen: readonly Abbildung[],
+): Schluesselfrage[] {
+  const mitFragen = abbildungen.filter((a) => (a.vorbereitet?.fragen.length ?? 0) > 0);
+  const ohneSchachzeichen = (san: string) => san.replace(/[+#]$/, "");
+  return linie.flatMap((zug, stelle) => {
+    const schluessel = stellungsschluessel(stellungNach(startFen, linie.slice(0, stelle)));
+    return mitFragen
+      .filter((a) => stellungsschluessel(a.fen) === schluessel)
+      .flatMap((a) => {
+        const vorbereitet = a.vorbereitet;
+        if (!vorbereitet) return [];
+        return vorbereitet.fragen
+          .filter((f) => f.zug && ohneSchachzeichen(zuegeAusText(f.zug)[0] ?? "") === ohneSchachzeichen(zug))
+          .map((f) => ({ stelle, zug: f.zug ?? "", vorbereitet }));
+      });
+  });
 }
 
 /** Titel ohne LaTeX-Abstände („1.\,d4“ → „1. d4“). */
@@ -72,19 +120,25 @@ export function varianten(beispiel: Beispiel): string[][] {
     });
 }
 
-/** Die Aufgaben einer Runde: die Varianten der Eröffnung für die gewählte Seite. */
+/**
+ * Die Aufgaben einer Runde: die Varianten der Eröffnung für die gewählte Seite, mit den
+ * Warum-Fragen der Abbildungen des Kapitels an ihren Zügen (W10).
+ */
 export function repertoirerunde(
   eroeffnung: Repertoireeroeffnung,
   seite: Color,
   anzahl: number,
+  abbildungen: readonly Abbildung[] = [],
 ): Repertoireaufgabe[] {
+  const startFen = eroeffnung.beispiel.startFen;
   return varianten(eroeffnung.beispiel)
     .slice(0, anzahl)
     .map((linie) => ({
       titel: eroeffnung.titel,
-      startFen: eroeffnung.beispiel.startFen,
+      startFen,
       linie,
       seite,
+      fragen: schluesselfragen(startFen, linie, abbildungen),
     }));
 }
 

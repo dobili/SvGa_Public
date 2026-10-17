@@ -4,7 +4,7 @@
  * Rolle im Gesamtbild: Trainer „repertoire“ (Pflichtenheft 7: „Du wählst dein Starterpaket.
  * Die Hauptvarianten werden Zug für Zug abgefragt.“). Die Zugfolgen lädt das Kapitel 2
  * (daten/laden.ts); die Runde läuft im gemeinsamen Rundenablauf. Warum-Fragen an
- * Schlüsselzügen folgen mit den vorbereiteten Texten (Rückfrage W10).
+ * Schlüsselzügen kommen aus den vorbereiteten Texten der Abbildungen (Rückfrage W10).
  * Abhängigkeiten: training/repertoiretrainer.ts, Rundenablauf, Repertoireaufgabe, i18n.
  */
 import type { Color } from "chessops/types";
@@ -91,14 +91,15 @@ export function RepertoireBereich() {
   if (daten.art === "fehler")
     return <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>;
   if (!wahl) return <Auswahl eroeffnungen={eroeffnungenAus(daten.wert)} starte={setzeWahl} />;
+  const abbildungen = daten.wert.abbildungen;
   return (
     <Rundenablauf
       key={`${wahl.eroeffnung.id}-${wahl.seite}-${durchlauf}`}
       kennung="repertoire"
       erzeuge={() =>
-        repertoirerunde(wahl.eroeffnung, wahl.seite, VARIANTEN_JE_RUNDE).map((a) => (r) => (
-          <Repertoireaufgabe aufgabe={a} runde={r} />
-        ))
+        repertoirerunde(wahl.eroeffnung, wahl.seite, VARIANTEN_JE_RUNDE, abbildungen).map(
+          (a) => (r) => <Repertoireaufgabe aufgabe={a} runde={r} />,
+        )
       }
       nochmal={() => setzeDurchlauf(durchlauf + 1)}
       zurAuswahl={() => setzeWahl(null)}

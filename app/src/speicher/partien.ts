@@ -11,6 +11,7 @@
 import type { Color } from "chessops/types";
 import type { Fehlerart } from "../engine/fehlerart";
 import type { Stufennummer } from "../engine/stufen";
+import type { Phase } from "../schach/phase";
 import type { Partieende } from "../spiel/ergebnis";
 import { spielbar, stellungen, type Partie, type Partiezug } from "../spiel/partie";
 import { neueUhr, type Uhreinstellung, type Uhrstand } from "../spiel/uhr";
@@ -34,7 +35,10 @@ export interface Partieeintrag {
 
 /** Letzte Wahl im Spielen-Bildschirm. */
 export interface Spielvorlieben {
+  /** Stufe im Mittelspiel. */
   readonly stufe: Stufennummer;
+  /** Stufe je Phase (0.2.40); `mittelspiel` ist gleich `stufe`. */
+  readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
   readonly uhr: Uhreinstellung | null;
   readonly ruecknahmeErlaubt: boolean;
   /** Ruhige Ansicht: nur Brett, Zugnavigation und gespielte Züge (Wunsch des Autors). */
@@ -50,6 +54,7 @@ export interface Spielstand {
 
 export const STANDARD_VORLIEBEN: Spielvorlieben = {
   stufe: 1,
+  stufenJePhase: { eroeffnung: 1, mittelspiel: 1, endspiel: 1 },
   uhr: null,
   ruecknahmeErlaubt: true,
   ruhigeAnsicht: false,
@@ -193,7 +198,19 @@ function partiezugAus(roh: unknown): Partiezug | null {
   const quelle = auswahl(QUELLEN, roh.quelle) ?? von;
   const fehler = auswahl(FEHLERARTEN, roh.fehler) ?? null;
   const verlust = istZahl(roh.verlust) ? roh.verlust : 0;
-  return { san: roh.san, von, quelle, fehler, verlust };
+  const stufe = auswahl(STUFENNUMMERN, roh.stufe);
+  return stufe
+    ? { san: roh.san, von, quelle, fehler, verlust, stufe }
+    : { san: roh.san, von, quelle, fehler, verlust };
+}
+
+/** Stufen je Phase; ältere Stände (vor 0.2.40) ohne diese Angabe bekommen überall die Stufe. */
+function stufenJePhaseAus(
+  roh: unknown,
+  stufe: Stufennummer,
+): Readonly<Record<Phase, Stufennummer>> {
+  const je = (name: Phase) => (istObjekt(roh) ? auswahl(STUFENNUMMERN, roh[name]) : null) ?? stufe;
+  return { eroeffnung: je("eroeffnung"), mittelspiel: je("mittelspiel"), endspiel: je("endspiel") };
 }
 
 function einstellungAus(roh: unknown): Partie["einstellung"] | null {
@@ -205,6 +222,7 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
     startFen: roh.startFen,
     eigeneFarbe,
     stufe,
+    stufenJePhase: stufenJePhaseAus(roh.stufenJePhase, stufe),
     uhr: uhreinstellungAus(roh.uhr),
     ruecknahmeErlaubt: roh.ruecknahmeErlaubt !== false,
     abbildung: typeof roh.abbildung === "string" ? roh.abbildung : null,
@@ -246,8 +264,10 @@ export function partieAus(roh: unknown): Partie | null {
 
 function vorliebenAus(roh: unknown): Spielvorlieben {
   if (!istObjekt(roh)) return STANDARD_VORLIEBEN;
+  const stufe = auswahl(STUFENNUMMERN, roh.stufe) ?? STANDARD_VORLIEBEN.stufe;
   return {
-    stufe: auswahl(STUFENNUMMERN, roh.stufe) ?? STANDARD_VORLIEBEN.stufe,
+    stufe,
+    stufenJePhase: stufenJePhaseAus(roh.stufenJePhase, stufe),
     uhr: uhreinstellungAus(roh.uhr),
     ruecknahmeErlaubt: roh.ruecknahmeErlaubt !== false,
     ruhigeAnsicht: roh.ruhigeAnsicht === true,

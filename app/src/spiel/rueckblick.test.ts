@@ -9,7 +9,7 @@ describe("Rückblick", () => {
     const marken = rueckblickMarken(
       NACH_E4_E5,
       "Qh5",
-      { index: 2, verlust: 0.6, zeichen: "?!" },
+      { index: 2, verlust: 0.6, zeichen: "?!", klasse: "ungenau" },
       "g1f3",
     );
     expect(marken).toEqual([
@@ -18,14 +18,20 @@ describe("Rückblick", () => {
     ]);
   });
 
-  it("ohne Zeichen nichts; war der Zug der beste, kein Pfeil", () => {
+  it("der beste Zug bekommt ein grünes Häkchen und keinen Pfeil; ohne Urteil nichts", () => {
     expect(
-      rueckblickMarken(NACH_E4_E5, "Nf3", { index: 2, verlust: 0, zeichen: null }, "g1f3"),
-    ).toEqual([]);
+      rueckblickMarken(
+        NACH_E4_E5,
+        "Nf3",
+        { index: 2, verlust: 0, zeichen: null, klasse: "bester" },
+        "g1f3",
+      ),
+    ).toEqual([{ typ: "feld", farbe: "gruen", feld: "f3", text: "✓" }]);
+    expect(rueckblickMarken(NACH_E4_E5, "Nf3", undefined, "g1f3")).toEqual([]);
     const gleich = rueckblickMarken(
       NACH_E4_E5,
       "Nf3",
-      { index: 2, verlust: 1.5, zeichen: "?" },
+      { index: 2, verlust: 1.5, zeichen: "?", klasse: "fehler" },
       "g1f3",
     );
     expect(gleich).toEqual([{ typ: "feld", farbe: "rot", feld: "f3", text: "?" }]);

@@ -5,14 +5,14 @@
  * Engine spielen“ an jeder Abbildung (Pflichtenheft 5.2: aus jeder Stellung zu Ende spielen,
  * Seite und Stufe wählen, Rücknahme abschaltbar; ein Spielziel gibt es seit 0.2.33 nicht mehr, Ziel ist
  * immer der Sieg). Die letzte Wahl merkt sich der
- * Speicher (Vorlieben). Seit 0.2.39 lässt sich aus der Grundstellung eine Eröffnung des Buches
+ * Speicher (Vorlieben). Seit 0.2.40 gibt es je Phase einen Regler für die Stufe (StufenWahl.tsx).
+ * Seit 0.2.39 lässt sich aus der Grundstellung eine Eröffnung des Buches
  * vorgeben, der die Engine folgt (EroeffnungsWahl.tsx, Rückmeldung des Autors zu N178). Darunter
  * die letzten Partien zum Nachlesen.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, engine/stufen.ts, speicher/, Navigation, i18n.
  */
 import { useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
-import { STUFEN, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { neuePartie, spielbar } from "../../spiel/partie";
@@ -21,6 +21,7 @@ import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
+import { StufenWahl } from "../komponenten/StufenWahl";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
@@ -78,12 +79,9 @@ function Einstellungen({ wahl, setze }: { wahl: Wahl; setze: (wahl: Wahl) => voi
         text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
         beiWahl={(farbe) => setze({ ...wahl, farbe })}
       />
-      <Auswahl
-        name={t("spielen.stufe")}
-        werte={STUFEN.map((s) => String(s.nummer))}
-        gewaehlt={String(v.stufe)}
-        text={(nummer) => `${nummer} · ${t(`stufe.${nummer as `${Stufennummer}`}`)}`}
-        beiWahl={(nummer) => mit({ stufe: Number(nummer) as Stufennummer })}
+      <StufenWahl
+        stufen={v.stufenJePhase}
+        beiWahl={(stufenJePhase) => mit({ stufenJePhase, stufe: stufenJePhase.mittelspiel })}
       />
       <Auswahl
         name={t("spielen.uhr")}
@@ -160,7 +158,8 @@ function useBeginne(fen: string, abbildung: string | undefined) {
     const einstellung = {
       startFen: fen,
       eigeneFarbe: wahl.farbe,
-      stufe: v.stufe,
+      stufe: v.stufenJePhase.mittelspiel,
+      stufenJePhase: v.stufenJePhase,
       uhr: v.uhr,
       ruecknahmeErlaubt: v.ruecknahmeErlaubt,
       abbildung: abbildung ?? null,

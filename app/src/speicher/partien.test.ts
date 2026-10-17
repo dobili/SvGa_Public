@@ -30,6 +30,7 @@ function partie(id: string): Partie {
       ruecknahmeErlaubt: true,
       abbildung: "1.26",
       eroeffnung: null,
+      stufenJePhase: { eroeffnung: 2, mittelspiel: 2, endspiel: 2 },
     },
     id,
     JETZT.toISOString(),

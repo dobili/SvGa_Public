@@ -92,6 +92,8 @@ export class EngineDienst {
   private kette: Promise<void> = Promise.resolve();
   /** Nummer des neuesten Auftrags. Ältere, die noch nicht begonnen haben, entfallen. */
   private neuesterAuftrag = 0;
+  /** Aufträge, die angenommen und noch nicht abgeschlossen sind. */
+  private offene = 0;
   private wartendeZeilen: ((zeile: string) => boolean)[] = [];
 
   constructor(private readonly oeffneKanal: () => Kanal) {}
@@ -204,18 +206,32 @@ export class EngineDienst {
     this.neuesterAuftrag += 1;
     const nummer = this.neuesterAuftrag;
     this.stoppe();
-    const ergebnis = this.kette.then(async () => {
-      await this.starte();
-      if (nummer !== this.neuesterAuftrag) {
-        throw new AuftragAbgebrochen();
-      }
-      return this.fuehreAus(fen, rechenzeitMs, varianten, staerke, nurZuege);
-    });
+    this.offene += 1;
+    const ergebnis = this.kette
+      .then(async () => {
+        await this.starte();
+        if (nummer !== this.neuesterAuftrag) {
+          throw new AuftragAbgebrochen();
+        }
+        return this.fuehreAus(fen, rechenzeitMs, varianten, staerke, nurZuege);
+      })
+      .finally(() => {
+        this.offene -= 1;
+      });
     this.kette = ergebnis.then(
       () => undefined,
       () => undefined,
     );
     return ergebnis;
+  }
+
+  /**
+   * Rechnet die Engine gerade, oder wartet ein Auftrag? Die Auswertung im Hintergrund während der
+   * Partie (ui/komponenten/useAuswertung.ts, 0.2.40) fragt das vor jeder Stellung, damit sie keinen
+   * Auftrag des Lesers (Hinweis, Werkzeug, Zug der Engine) verdrängt.
+   */
+  beschaeftigt(): boolean {
+    return this.auftrag !== null || this.offene > 0;
   }
 
   /** Schickt einen Auftrag an die Engine; erfüllt bei „bestmove“. */

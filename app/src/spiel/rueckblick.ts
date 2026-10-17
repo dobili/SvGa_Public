@@ -11,7 +11,7 @@
  */
 import type { Markierung, Markierungsfarbe } from "../analyse/werkzeug";
 import { zugFelder } from "../schach/weiterspielen";
-import type { Zugurteil, Zugzeichen } from "./auswertung";
+import type { Zugklasse, Zugurteil } from "./auswertung";
 
 /** Der Balken und die Kurve reichen bis ±5 Bauern; mehr (auch Matt) steht am Rand. */
 export const ANZEIGEGRENZE = 5;
@@ -20,21 +20,41 @@ const MATTWERT = 10;
 /** UCI: zwei Zeichen Startfeld, zwei Zeichen Zielfeld. */
 const FELDLAENGE = 2;
 
-const ZEICHENFARBE: Readonly<Record<Zugzeichen, Markierungsfarbe>> = {
-  "!": "gold",
-  "??": "rot",
-  "?": "rot",
-  "?!": "grau",
+/** Marke am Zielfeld je Klasse (Text und Farbe); Klassen ohne Marke bleiben leer. */
+const MARKE_JE_KLASSE: Readonly<
+  Record<Zugklasse, { text: string; farbe: Markierungsfarbe } | null>
+> = {
+  brillant: { text: "!!", farbe: "blau" },
+  stark: { text: "!", farbe: "gold" },
+  bester: { text: "✓", farbe: "gruen" },
+  sehrGut: null,
+  gut: null,
+  buch: null,
+  ungenau: { text: "?!", farbe: "grau" },
+  fehler: { text: "?", farbe: "rot" },
+  verpasst: { text: "?", farbe: "rot" },
+  patzer: { text: "??", farbe: "rot" },
 };
 
+/** Bei diesen Klassen zeigt ein goldener Pfeil den besseren Zug. */
+const MIT_BESSEREM_ZUG: ReadonlySet<Zugklasse> = new Set<Zugklasse>([
+  "sehrGut",
+  "gut",
+  "ungenau",
+  "fehler",
+  "verpasst",
+  "patzer",
+]);
+
 /**
- * Markierungen für die Stellung nach einem Zug: Zeichen am Zielfeld, goldener Pfeil für den
- * besseren Zug der Engine (nur wenn der Zug ein Zeichen hat und nicht selbst der beste war).
+ * Markierungen für die Stellung nach einem Zug: Marke der Klasse am Zielfeld (seit 0.2.40 wie bei
+ * chess.com: „!!“ blau, „!“ gold, „✓“ grün für den besten Zug, „?!“ grau, „?“ und „??“ rot),
+ * goldener Pfeil für den besseren Zug der Engine bei allen Zügen, die nicht der beste waren.
  *
  * Eingaben: Stellung vor dem Zug (FEN), der Zug (SAN), sein Urteil, bester Zug der Engine (UCI).
  * Beispiel: 2. Dh5?! nach 1. e4 e5: Feld h5 mit „?!“ (grau), goldener Pfeil g1–f3, falls die
  * Engine 2. Sf3 vorzieht.
- * Sonderfälle: Ohne Zeichen keine Markierung; ohne gültigen Zug ebenfalls keine.
+ * Sonderfälle: Ohne Urteil keine Markierung; ohne gültigen Zug ebenfalls keine.
  */
 export function rueckblickMarken(
   vorher: string,
@@ -43,14 +63,17 @@ export function rueckblickMarken(
   bester: string,
 ): Markierung[] {
   const gespielt = zugFelder(vorher, san);
-  if (!gespielt || !urteil?.zeichen) return [];
-  const marken: Markierung[] = [
-    { typ: "feld", farbe: ZEICHENFARBE[urteil.zeichen], feld: gespielt.nach, text: urteil.zeichen },
-  ];
+  if (!gespielt || !urteil) return [];
+  const marke = MARKE_JE_KLASSE[urteil.klasse];
+  const marken: Markierung[] = marke
+    ? [{ typ: "feld", farbe: marke.farbe, feld: gespielt.nach, text: marke.text }]
+    : [];
   const von = bester.slice(0, FELDLAENGE);
   const nach = bester.slice(FELDLAENGE, 2 * FELDLAENGE);
   const gleich = von === gespielt.von && nach === gespielt.nach;
-  if (von && nach && !gleich) marken.push({ typ: "pfeil", farbe: "gold", von, nach });
+  if (von && nach && !gleich && MIT_BESSEREM_ZUG.has(urteil.klasse)) {
+    marken.push({ typ: "pfeil", farbe: "gold", von, nach });
+  }
   return marken;
 }
 

@@ -152,6 +152,16 @@ export const STUFEN: readonly Stufe[] = [
 ];
 
 /** Die Stufe zu einer Nummer; unbekannte Nummern (alte Daten) ergeben Stufe 1. */
+/**
+ * Der nächste Schritt von einer Stufe zur Zielstufe, um höchstens eine Stufe je Zug (Wunsch des
+ * Autors, 0.2.40: Beim Wechsel der Phase ändert sich die Stärke Zug für Zug, nicht ruckartig).
+ * Beispiel: Eröffnung Stufe 1, Mittelspiel Stufe 4 → im ersten Zug des Mittelspiels 2, dann 3, dann 4.
+ */
+export function naechsteStufe(von: Stufennummer, ziel: Stufennummer): Stufennummer {
+  if (von === ziel) return ziel;
+  return (von < ziel ? von + 1 : von - 1) as Stufennummer;
+}
+
 export function stufe(nummer: number): Stufe {
   return STUFEN.find((s) => s.nummer === nummer) ?? EINSTEIGER;
 }

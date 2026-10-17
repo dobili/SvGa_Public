@@ -339,6 +339,16 @@ export function fehlerbefundIn(
   return { art: "ungenau", ...OHNE_EINZELHEITEN };
 }
 
+/**
+ * Was der Zug laut Abtauschrechnung hergibt: der größte Gewinn des Gegners an einer eigenen Figur
+ * ab Leichtfigur, die erst durch den Zug verloren geht; 0, wenn nichts. Für die Zugklasse
+ * „brillant“ im Rückblick (ein gutes Opfer, 0.2.40). Beispiel: Abb. 7.14, 2. Th8+ gibt den Turm → 5.
+ */
+export function opferwert(lage: Lage, uci: string): number {
+  const p = probe(lage, uci);
+  return p ? neuVerlorene(lage, p).wert : 0;
+}
+
 /** Nur die Fehlerart eines Zuges (für die Fehlersuche der Engine, engine/fehlersuche.ts). */
 export function fehlerartIn(
   lage: Lage,

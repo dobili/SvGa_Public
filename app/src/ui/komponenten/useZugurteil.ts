@@ -23,6 +23,7 @@ const FELD_LAENGE = 2;
 
 /** Farbe des Zeichens am Brett: rot bei Fehlern, grau bei Ungenauigkeit, gold beim „!“. */
 const ZEICHENFARBE: Readonly<Record<Letztzeichen, Markierungsfarbe>> = {
+  "!!": "blau",
   "??": "rot",
   "?": "rot",
   "?!": "grau",

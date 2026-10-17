@@ -12,7 +12,8 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
-import { stufe } from "../../engine/stufen";
+import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
+import { phaseVon } from "../../spiel/phasen";
 import { ladeKapitel } from "../../daten/laden";
 import {
   baueEroeffnungsindex,
@@ -29,7 +30,14 @@ import {
 } from "../../spiel/ablauf";
 import { BUCHTREUE, BUCHTREUE_VORGABE } from "../../engine/zugwahl";
 import { engineZug } from "../../spiel/enginezug";
-import { aktuelleFen, amZug, gibAuf, leserzug, type Partie } from "../../spiel/partie";
+import {
+  aktuelleFen,
+  amZug,
+  EROEFFNUNG_BUCH,
+  gibAuf,
+  leserzug,
+  type Partie,
+} from "../../spiel/partie";
 import { findePartie, mitPartie } from "../../speicher/partien";
 import { aendere, speicherzustand, useSpeicher } from "../../speicher/speicher";
 import { useDaten } from "./useDaten";
@@ -81,20 +89,32 @@ function useBuch() {
 }
 
 /**
- * Die Buchzüge für die Engine: bei vorgegebener Eröffnung (0.2.39) nur die, die in ihr bleiben,
- * und dann mit Buchtreue 1; sonst alle Buchzüge mit der üblichen Buchtreue.
+ * Die Buchzüge für die Engine: ohne Vorgabe (null) keine, die Engine spielt selbst (0.2.40);
+ * „buch“: alle Buchzüge mit der üblichen Buchtreue; eine bestimmte Eröffnung (0.2.39): nur die
+ * Züge, die in ihr bleiben, mit Buchtreue 1, und nach dem Verlassen wieder alle Buchzüge.
  */
 function buchzuegeFuer(
   index: Eroeffnungsindex | null,
   fen: string,
   eroeffnung: string | null,
 ): { zuege: string[]; treue: number } {
-  if (!index) return { zuege: [], treue: BUCHTREUE };
-  if (eroeffnung) {
+  if (!index || eroeffnung === null) return { zuege: [], treue: BUCHTREUE };
+  if (eroeffnung !== EROEFFNUNG_BUCH) {
     const inDerEroeffnung = buchzuegeZu(index, fen, eroeffnung);
     if (inDerEroeffnung.length > 0) return { zuege: inDerEroeffnung, treue: BUCHTREUE_VORGABE };
   }
   return { zuege: buchzuegeAb(index, fen), treue: BUCHTREUE };
+}
+
+/**
+ * Die Stufe der Engine für diesen Zug (0.2.40): die Stufe der Phase der Stellung, erreicht Zug
+ * für Zug um höchstens eine Stufe von der Stufe des vorigen Engine-Zuges aus.
+ * Beispiel: Eröffnung 1, Mittelspiel 4: erster Zug im Mittelspiel 2, dann 3, dann 4.
+ */
+function stufeFuer(partie: Partie, fen: string): Stufennummer {
+  const ziel = partie.einstellung.stufenJePhase[phaseVon(fen) ?? "mittelspiel"];
+  const letzter = [...partie.zuege].reverse().find((z) => z.von === "engine" && z.stufe);
+  return letzter?.stufe ? naechsteStufe(letzter.stufe, ziel) : ziel;
 }
 
 /** Lässt die Engine ziehen, solange sie am Zug ist. */
@@ -103,7 +123,7 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
   const [fehler, setzeFehler] = useState<string | null>(null);
   const [versuch, setzeVersuch] = useState(0);
   const id = partie?.id ?? "";
-  const stufennummer = partie?.einstellung.stufe ?? 1;
+  const stufennummer = partie ? stufeFuer(partie, fen) : 1;
   const eroeffnung = partie?.einstellung.eroeffnung ?? null;
   useEffect(() => {
     if (!amZugEngine || !buch.bereit) return;
@@ -117,7 +137,8 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
         setzeFehler(null);
         // Im Hintergrund bleibt die Uhr nach dem Zug stehen (sonst liefe die Zeit des Lesers).
         const sichtbar = document.visibilityState !== "hidden";
-        aendereNeueste(id, (p) => zieheMitUhr(p, zug, Date.now(), sichtbar));
+        const mitStufe = { ...zug, stufe: stufennummer };
+        aendereNeueste(id, (p) => zieheMitUhr(p, mitStufe, Date.now(), sichtbar));
       })
       .catch((grund: unknown) => {
         if (grund instanceof AuftragAbgebrochen) {

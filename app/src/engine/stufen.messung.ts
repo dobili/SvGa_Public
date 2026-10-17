@@ -121,6 +121,11 @@ async function spiele(
       ruecknahmeErlaubt: false,
       abbildung: null,
       eroeffnung: null,
+      stufenJePhase: {
+        eroeffnung: weiss.nummer,
+        mittelspiel: weiss.nummer,
+        endspiel: weiss.nummer,
+      },
     },
     "messung",
     new Date().toISOString(),

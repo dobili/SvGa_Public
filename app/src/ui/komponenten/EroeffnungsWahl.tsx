@@ -5,11 +5,14 @@
  * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38 (N178: „Wie bringe ich die
  * Engine zu einer bestimmten Eröffnung?“). Die Engine folgt der gewählten Eröffnung mit Buchtreue
  * 1, solange der Leser ihre Züge spielt (usePartie.ts, buchzuegeZu); verlässt er sie, spielt
- * die Engine die übrigen Buchzüge oder selbst. Die Liste kommt aus dem Eröffnungsindex.
+ * die Engine die übrigen Buchzüge oder selbst. „frei“ heißt seit 0.2.40: ohne Buch, die Engine
+ * spielt die Eröffnung selbst (Wunsch des Autors); „eine Eröffnung des Buches (zufällig)“ ist das
+ * bisherige Verhalten mit Buchtreue 0,85. Die Liste kommt aus dem Eröffnungsindex.
  * Abhängigkeiten: schach/eroeffnungsindex.ts, useEroeffnungsindex, i18n.
  */
 import { t } from "../../i18n/sprache";
 import { eroeffnungsnamen, hauptlinieVon } from "../../schach/eroeffnungsindex";
+import { EROEFFNUNG_BUCH } from "../../spiel/partie";
 import { sanInSprache } from "../../schach/notation";
 import { useEroeffnungsindex } from "./useEroeffnungsindex";
 
@@ -39,7 +42,13 @@ export function EroeffnungsWahl({
   const index = useEroeffnungsindex(KAPITEL_MIT_EROEFFNUNGEN);
   if (!index) return null;
   const namen = eroeffnungsnamen(index);
-  const linie = gewaehlt ? hauptlinieVon(index, gewaehlt) : [];
+  const linie = gewaehlt && gewaehlt !== EROEFFNUNG_BUCH ? hauptlinieVon(index, gewaehlt) : [];
+  const hinweis =
+    gewaehlt === null
+      ? "spielen.eroeffnungFrei"
+      : gewaehlt === EROEFFNUNG_BUCH
+        ? "spielen.eroeffnungBuch"
+        : "spielen.eroeffnungHinweis";
   return (
     <section className="karte eroeffnungswahl" data-testid="eroeffnungswahl">
       <label className="einstellung-name" htmlFor="eroeffnung">
@@ -52,6 +61,7 @@ export function EroeffnungsWahl({
         onChange={(e) => beiWahl(e.target.value === FREI ? null : e.target.value)}
       >
         <option value={FREI}>{t("spielen.eroeffnung.frei")}</option>
+        <option value={EROEFFNUNG_BUCH}>{t("spielen.eroeffnung.buch")}</option>
         {namen.map((name) => (
           <option key={name} value={name}>
             {name}
@@ -61,9 +71,7 @@ export function EroeffnungsWahl({
       {gewaehlt && linie.length > 0 && (
         <p className="hinweis">{t("spielen.eroeffnungZuege", { zuege: zugfolge(linie) })}</p>
       )}
-      <p className="hinweis">
-        {t(gewaehlt ? "spielen.eroeffnungHinweis" : "spielen.eroeffnungFrei")}
-      </p>
+      <p className="hinweis">{t(hinweis)}</p>
     </section>
   );
 }

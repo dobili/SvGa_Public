@@ -22,6 +22,7 @@ function partie(mitUhr: boolean): Partie {
       ruecknahmeErlaubt: true,
       abbildung: null,
       eroeffnung: null,
+      stufenJePhase: { eroeffnung: 1, mittelspiel: 1, endspiel: 1 },
     },
     "p",
     "2026-10-15T08:00:00.000Z",

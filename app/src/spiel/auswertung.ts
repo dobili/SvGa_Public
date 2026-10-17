@@ -5,14 +5,49 @@
  * der Partie jede Stellung im Hintergrund (ui/komponenten/useAuswertung.ts); aus den Werten
  * rechnet diese Datei den Verlust jedes Zuges und sein Zeichen. Die absichtlichen Fehler der
  * Engine stehen im Protokoll der Partie (spiel/partie.ts, engine/zugwahl.ts).
+ * Seit 0.2.40 bekommt jeder Zug eine Klasse wie bei chess.com (brillant bis patzer).
  * Abhängigkeiten: spiel/partie.ts, engine/fehlerart.ts.
  */
-import type { Fehlerart } from "../engine/fehlerart";
+import { lageVon, opferwert, type Fehlerart } from "../engine/fehlerart";
 import { stellungen, type Partie } from "./partie";
 import { regelstellung, sanZuUci } from "./zuege";
 
-/** Zeichen eines Zuges nach dem Verlust (Konzept 8.3); „!“ für den einzigen guten Zug (seit 0.2.39). */
-export type Zugzeichen = "!" | "??" | "?" | "?!";
+/** Zeichen eines Zuges (Konzept 8.3); „!“ seit 0.2.39, „!!“ für ein gutes Opfer seit 0.2.40. */
+export type Zugzeichen = "!!" | "!" | "??" | "?" | "?!";
+
+/**
+ * Zugklasse wie bei chess.com (Wunsch des Autors, 0.2.40), mit den Grenzen der App: brillant = ein
+ * gutes Opfer (bester Zug, gibt Material, Stellung noch nicht gewonnen); stark = der einzige gute
+ * Zug oder der beste Zug nach einem Fehler des Gegners; bester; sehrGut (bis 0,2 hinter dem
+ * besten); gut (bis 0,5); buch = ein Zug aus den Eröffnungen des Buches; ungenau (ab 0,5);
+ * fehler (ab 1,2); verpasst = nach einem Fehler des Gegners nicht den Gewinn genommen (ab 0,5);
+ * patzer (ab 3).
+ */
+export type Zugklasse =
+  | "brillant"
+  | "stark"
+  | "bester"
+  | "sehrGut"
+  | "gut"
+  | "buch"
+  | "ungenau"
+  | "fehler"
+  | "verpasst"
+  | "patzer";
+
+/** Zeichen je Klasse; Klassen ohne Zeichen stehen nur in der Karte und in der Auswertung. */
+export const ZEICHEN_JE_KLASSE: Readonly<Record<Zugklasse, Zugzeichen | null>> = {
+  brillant: "!!",
+  stark: "!",
+  bester: null,
+  sehrGut: null,
+  gut: null,
+  buch: null,
+  ungenau: "?!",
+  fehler: "?",
+  verpasst: "?",
+  patzer: "??",
+};
 
 /** Grenzen aus Konzept 8.3: Verlust ab 3 „??“, ab 1,2 „?“, ab 0,5 „?!“ (Bauerneinheiten). */
 const GRENZE_PATZER = 3;
@@ -20,6 +55,13 @@ export const GRENZE_FEHLER = 1.2;
 const GRENZE_UNGENAU = 0.5;
 /** Pflichtenheft 5.3: Grobe Patzer (mehr als zwei Bauern) werden hervorgehoben. */
 export const GROBER_PATZER = 2;
+/** Unter diesem Verlust gilt ein Zug als so gut wie der beste, darunter „sehr gut“. */
+const GLEICHWERTIG_UNTER = 0.05;
+const SEHR_GUT_UNTER = 0.2;
+/** Ein Opfer ab einer Leichtfigur laut Abtauschrechnung (Gewinn des Gegners mindestens 2). */
+const OPFER_AB = 2;
+/** Ist die Stellung aus eigener Sicht schon so gut, zählt ein Opfer nicht mehr als brillant. */
+const SCHON_GEWONNEN = 4;
 /**
  * Werte jenseits dieser Grenze (Matt, klarer Gewinn) zählen wie die Grenze: Wer von „Matt in 3“
  * zu „+8“ wechselt, gewinnt weiter und soll kein „??“ bekommen.
@@ -34,6 +76,19 @@ export interface Zugurteil {
   /** Verlust gegenüber der Stellung davor, aus Sicht der ziehenden Seite (nie negativ). */
   readonly verlust: number;
   readonly zeichen: Zugzeichen | null;
+  readonly klasse: Zugklasse;
+}
+
+/** Was die Einordnung eines Zuges braucht, außer dem Verlust. */
+interface Zugumstaende {
+  readonly warBester: boolean;
+  readonly einziger: boolean;
+  readonly opfer: boolean;
+  /** Verlust des gegnerischen Zuges davor (0 beim ersten Zug). */
+  readonly vorherVerlust: number;
+  /** Wert vor dem Zug aus eigener Sicht. */
+  readonly wertVorher: number;
+  readonly buch: boolean;
 }
 
 export interface Enginefehler {
@@ -67,17 +122,50 @@ export function endwert(fen: string): number | null {
 }
 
 /**
- * War der Zug der einzige gute: der beste der Engine, und der zweitbeste liegt mindestens eine
- * Fehlergrenze (1,2) dahinter? Dieselbe Regel wie in der Engine-Karte (engine/letzterzug.ts).
+ * Die Klasse eines Zuges aus Verlust und Umständen (Reihenfolge: grobe Fehler zuerst).
+ *
+ * Beispiel: 2... Sf6?? nach 2. Dh5 verliert 3 → patzer; 3. Lc4 als bester Zug nach dem Patzer →
+ * stark; 2. Th8+ in Abb. 7.14 (bester Zug, gibt den Turm, Stellung vorher nicht gewonnen) → brillant.
  */
-function istEinziger(
+export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
+  if (verlust >= GRENZE_PATZER) return "patzer";
+  if (u.vorherVerlust >= GRENZE_FEHLER && verlust >= GRENZE_UNGENAU) return "verpasst";
+  if (verlust >= GRENZE_FEHLER) return "fehler";
+  if (verlust >= GRENZE_UNGENAU) return "ungenau";
+  if (u.buch) return "buch";
+  if (u.warBester && u.opfer && u.wertVorher < SCHON_GEWONNEN) return "brillant";
+  if (u.warBester && (u.einziger || u.vorherVerlust >= GRENZE_FEHLER)) return "stark";
+  if (u.warBester || verlust < GLEICHWERTIG_UNTER) return "bester";
+  return verlust < SEHR_GUT_UNTER ? "sehrGut" : "gut";
+}
+
+/** Prüft, ob ein Zug (SAN) ein Zug aus den Eröffnungen des Buches ist; ohne Index nie. */
+export type Buchpruefer = (fen: string, san: string) => boolean;
+
+/**
+ * Die Umstände eines Zuges: bester, einziger (bester mit mindestens 1,2 Abstand zum zweitbesten,
+ * wie in der Engine-Karte), Opfer (Abtauschrechnung), Buch.
+ */
+function umstaende(
   fen: string,
   san: string,
   bester: string | undefined,
   abstand: number | undefined,
-) {
-  if (!bester || abstand === undefined || abstand < GRENZE_FEHLER) return false;
-  return sanZuUci(fen, san) === bester;
+  vorherVerlust: number,
+  wertVorher: number,
+  buch: Buchpruefer | null,
+): Zugumstaende {
+  const uci = sanZuUci(fen, san);
+  const warBester = bester !== undefined && bester !== "" && uci === bester;
+  const lage = warBester && uci ? lageVon(fen) : null;
+  return {
+    warBester,
+    einziger: warBester && abstand !== undefined && abstand >= GRENZE_FEHLER,
+    opfer: lage !== null && uci !== null && opferwert(lage, uci) >= OPFER_AB,
+    vorherVerlust,
+    wertVorher,
+    buch: buch !== null && buch(fen, san),
+  };
 }
 
 /**
@@ -95,17 +183,30 @@ export function zugurteile(
   werte: readonly number[],
   beste: readonly string[] = [],
   abstaende: readonly number[] = [],
+  buch: Buchpruefer | null = null,
 ): Zugurteil[] {
   if (werte.length !== partie.zuege.length + 1) return [];
   const alle = stellungen(partie);
+  let vorherVerlust = 0;
   return partie.zuege.map((zug, index) => {
     const fen = alle[index] ?? "";
     const weiss = fen.split(" ")[1] !== "b";
     const vorher = begrenzt(werte[index] ?? 0);
     const nachher = begrenzt(werte[index + 1] ?? 0);
     const verlust = Math.max(0, weiss ? vorher - nachher : nachher - vorher);
-    const einziger = verlust === 0 && istEinziger(fen, zug.san, beste[index], abstaende[index]);
-    return { index, verlust, zeichen: einziger ? "!" : zeichenFuer(verlust) };
+    const wertVorher = weiss ? vorher : -vorher;
+    const u = umstaende(
+      fen,
+      zug.san,
+      beste[index],
+      abstaende[index],
+      vorherVerlust,
+      wertVorher,
+      buch,
+    );
+    vorherVerlust = verlust;
+    const klasse = klasseVon(verlust, u);
+    return { index, verlust, zeichen: ZEICHEN_JE_KLASSE[klasse], klasse };
   });
 }
 

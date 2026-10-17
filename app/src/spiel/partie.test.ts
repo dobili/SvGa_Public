@@ -32,6 +32,7 @@ const EINSTELLUNG: Partieeinstellung = {
   ruecknahmeErlaubt: true,
   abbildung: null,
   eroeffnung: null,
+  stufenJePhase: { eroeffnung: 1, mittelspiel: 1, endspiel: 1 },
 };
 
 function enginezug(san: string, extra: Partial<Partiezug> = {}): Partiezug {

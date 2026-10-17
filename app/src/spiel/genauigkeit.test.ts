@@ -26,6 +26,7 @@ function partie(): Partie {
       ruecknahmeErlaubt: true,
       abbildung: null,
       eroeffnung: null,
+      stufenJePhase: { eroeffnung: 1, mittelspiel: 1, endspiel: 1 },
     },
     "p",
     "2026-10-15T08:00:00.000Z",
@@ -75,7 +76,7 @@ describe("Genauigkeit und Spielstärke", () => {
     const s = spielstaerke(p, werte, urteile, beste, gespielte);
     expect(s.white.zuege).toBe(4);
     expect(s.white.beste).toBe(2);
-    expect(s.white.zeichen).toEqual({ "!": 1, "?!": 1, "?": 0, "??": 0 });
+    expect(s.white.zeichen).toEqual({ "!!": 0, "!": 1, "?!": 1, "?": 0, "??": 0 });
     expect(s.white.spielstaerke).toBeNull();
     expect(s.black.zeichen["??"]).toBe(1);
     expect(s.black.genauigkeit).toBeLessThan(s.white.genauigkeit ?? 0);

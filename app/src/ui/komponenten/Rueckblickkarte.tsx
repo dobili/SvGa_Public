@@ -13,28 +13,47 @@ import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
 import type { Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
 import { balkentext } from "../../spiel/rueckblick";
-import { sanZuUci, uciZuSan } from "../../spiel/zuege";
+import { uciZuSan } from "../../spiel/zuege";
 import type { Rueckblick } from "./useRueckblick";
-
-/** Unter diesem Verlust (gerundet 0,0) gilt ein Zug als so gut wie der beste. */
-const GLEICHWERTIG_UNTER = 0.05;
 
 /** Verlust mit einer Nachkommastelle und deutschem Komma. */
 function bauern(verlust: number): string {
   return verlust.toFixed(1).replace(".", ",");
 }
 
-/** Der erste Satz: bester, einziger, in Ordnung oder Verlust mit Zeichen. */
-function urteilssatz(zug: string, urteil: Zugurteil, bester: string, warBester: boolean): string {
-  if (urteil.zeichen === "!") return t("rueckblick.einziger", { zug: `${zug}!` });
-  if (warBester) return t("rueckblick.bester", { zug });
-  if (urteil.verlust < GLEICHWERTIG_UNTER) return t("rueckblick.bester", { zug });
-  if (!urteil.zeichen) return t("rueckblick.gut", { zug, verlust: bauern(urteil.verlust), bester });
-  return t("rueckblick.verlust", {
-    zug: `${zug}${urteil.zeichen}`,
-    verlust: bauern(urteil.verlust),
-  });
+/** Der erste Satz je Klasse (0.2.40 wie bei chess.com). */
+function urteilssatz(zug: string, urteil: Zugurteil, bester: string): string {
+  const mitZeichen = `${zug}${urteil.zeichen ?? ""}`;
+  const verlust = bauern(urteil.verlust);
+  switch (urteil.klasse) {
+    case "brillant":
+      return t("rueckblick.brillant", { zug: mitZeichen });
+    case "stark":
+      return t("rueckblick.stark", { zug: mitZeichen });
+    case "bester":
+      return t("rueckblick.bester", { zug });
+    case "sehrGut":
+      return t("rueckblick.sehrGut", { zug, verlust, bester });
+    case "gut":
+      return t("rueckblick.gut", { zug, verlust, bester });
+    case "buch":
+      return t("rueckblick.buch", { zug });
+    case "verpasst":
+      return t("rueckblick.verpasst", { zug: mitZeichen, verlust });
+    default:
+      return t("rueckblick.verlust", { zug: mitZeichen, verlust });
+  }
 }
+
+/** Bei diesen Klassen nennt die Karte den besseren Zug. */
+const MIT_BESSEREM: ReadonlySet<Zugurteil["klasse"]> = new Set([
+  "sehrGut",
+  "gut",
+  "ungenau",
+  "fehler",
+  "verpasst",
+  "patzer",
+]);
 
 /** Die Karte unter dem Brett zum gezeigten Zug. */
 export function Rueckblickkarte({
@@ -58,12 +77,11 @@ export function Rueckblickkarte({
   const besterUci = rueckblick.beste[index] ?? "";
   const besterSan = besterUci ? uciZuSan(fen, besterUci) : null;
   const bester = besterSan ? `${nummer} ${sanInSprache(besterSan, "de")}` : "";
-  const warBester = besterUci !== "" && sanZuUci(fen, san) === besterUci;
   const seite = partie.zuege[index]?.von === "leser" ? t("partie.du") : t("partie.engine");
   return (
     <section className="karte rueckblickkarte" data-testid="rueckblickkarte">
       <p className="rueckblick-urteil">
-        <strong>{urteilssatz(zug, urteil, bester, warBester)}</strong>{" "}
+        <strong>{urteilssatz(zug, urteil, bester)}</strong>{" "}
         {t("rueckblick.bewertung", {
           vorher: balkentext(rueckblick.werte[index] ?? 0),
           nachher: balkentext(rueckblick.werte[index + 1] ?? 0),
@@ -74,7 +92,7 @@ export function Rueckblickkarte({
           {t("rueckblick.erklaerung", { seite, text: erklaerung.text })}
         </p>
       )}
-      {!warBester && bester && urteil.verlust >= GLEICHWERTIG_UNTER && (
+      {bester && MIT_BESSEREM.has(urteil.klasse) && (
         <p>{t("rueckblick.besser", { zug: bester })}</p>
       )}
     </section>

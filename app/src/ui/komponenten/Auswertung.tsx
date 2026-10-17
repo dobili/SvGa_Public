@@ -23,6 +23,7 @@ import {
   type Zugurteil,
 } from "../../spiel/auswertung";
 import { stellungen, type Partie } from "../../spiel/partie";
+import { phasenwechsel, type Phase } from "../../spiel/phasen";
 import { alsPgn } from "../../spiel/pgn";
 import { uciZuSan } from "../../spiel/zuege";
 import { zugFelder } from "../../schach/weiterspielen";
@@ -110,9 +111,8 @@ function Enginefehler({ partie, beiSprung }: { partie: Partie; beiSprung: (s: Sp
   const fehler = enginefehler(partie);
   const ERSTE_STUFE_OHNE_PROFIL = 4;
   if (fehler.length === 0) {
-    return partie.einstellung.stufe < ERSTE_STUFE_OHNE_PROFIL ? (
-      <p>{t("auswertung.engineOhneFehler")}</p>
-    ) : null;
+    const niedrigste = Math.min(...Object.values(partie.einstellung.stufenJePhase));
+    return niedrigste < ERSTE_STUFE_OHNE_PROFIL ? <p>{t("auswertung.engineOhneFehler")}</p> : null;
   }
   return (
     <ul className="enginefehler" data-testid="enginefehler">
@@ -188,11 +188,14 @@ export function Auswertung({
   eintrag,
   stand,
   urteile,
+  phasen,
   beiSprung,
 }: {
   eintrag: Partieeintrag;
   stand: Auswertungsstand;
   urteile: readonly Zugurteil[];
+  /** Phase je Stellung (spiel/phasen.ts), für Kurve und Spielstärke je Phase. */
+  phasen: readonly Phase[];
   beiSprung: (sprung: Sprung) => void;
 }) {
   return (
@@ -213,6 +216,7 @@ export function Auswertung({
           <Verlaufskurve
             werte={eintrag.werte}
             urteile={urteile}
+            wechsel={phasenwechsel(phasen)}
             beiStelle={(stelle) => beiSprung({ stelle, marken: [] })}
           />
           <Abweichung eintrag={eintrag} urteile={urteile} beiSprung={beiSprung} />
@@ -226,6 +230,7 @@ export function Auswertung({
         werte={eintrag.werte}
         urteile={urteile}
         beste={eintrag.beste}
+        phasen={phasen}
       />
     </section>
   );

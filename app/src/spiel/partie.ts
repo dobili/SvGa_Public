@@ -11,21 +11,35 @@
 import type { Color } from "chessops/types";
 import type { Fehlerart } from "../engine/fehlerart";
 import type { Stufennummer } from "../engine/stufen";
+import type { Phase } from "../schach/phase";
 import { partieendeDurchZeit, partieendeNach, type Partieende } from "./ergebnis";
 import { neueUhr, type Uhreinstellung, type Uhrstand } from "./uhr";
 import { fenNach, regelstellung } from "./zuege";
+
+/** Wert von `eroeffnung`, wenn die Engine irgendeiner Variante des Buches folgen soll. */
+export const EROEFFNUNG_BUCH = "buch";
 
 export interface Partieeinstellung {
   readonly startFen: string;
   /** Die Seite des Lesers. */
   readonly eigeneFarbe: Color;
+  /** Stufe im Mittelspiel (zugleich die „Stufe“ der Partie in Anzeige und PGN). */
   readonly stufe: Stufennummer;
+  /**
+   * Stufe je Phase (Wunsch des Autors, 0.2.40): Die Engine folgt der Phase der Stellung
+   * (spiel/phasen.ts) und wechselt Zug für Zug um höchstens eine Stufe (engine/stufen.ts).
+   */
+  readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
   /** null: ohne Uhr. */
   readonly uhr: Uhreinstellung | null;
   readonly ruecknahmeErlaubt: boolean;
   /** Abbildungsnummer, wenn die Partie an einer Abbildung begann („1.26“), sonst null. */
   readonly abbildung: string | null;
-  /** Eröffnung, der die Engine folgen soll (Name aus dem Eröffnungsindex, seit 0.2.39), sonst null. */
+  /**
+   * Eröffnung, der die Engine folgen soll (Name aus dem Eröffnungsindex, seit 0.2.39);
+   * EROEFFNUNG_BUCH: irgendeine Variante des Buches (Buchtreue 0,85); null: die Engine spielt die
+   * Eröffnung selbst, ohne Buch (Wunsch des Autors, 0.2.40).
+   */
   readonly eroeffnung: string | null;
 }
 
@@ -37,6 +51,8 @@ export interface Partiezug {
   readonly fehler: Fehlerart | null;
   /** Verlust des absichtlichen Fehlers in Bauerneinheiten, sonst 0. */
   readonly verlust: number;
+  /** Bei Zügen der Engine: die Stufe, mit der sie diesen Zug gespielt hat (seit 0.2.40). */
+  readonly stufe?: Stufennummer;
 }
 
 export interface Partie {

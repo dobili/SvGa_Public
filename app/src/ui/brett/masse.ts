@@ -28,6 +28,9 @@ export const FARBEN = {
   gold: "#D9A514",
   rot: "#DC4444",
   grau: "#8A93A0",
+  /** Nur für die Zugklassen im Rückblick (bester Zug, starkes Opfer), kein Buchwert. */
+  gruen: "#2E8B57",
+  blau: "#2F6FD1",
   /**
    * Schimmer für ein angetipptes Feld und den letzten Zug: nie Gold, Rot oder Grau (Konzept
    * 10.2). Ein helles Blau, weil Weiß auf den hellen Feldern nicht zu sehen war (Test 0.2.0).

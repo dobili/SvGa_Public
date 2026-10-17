@@ -4,6 +4,7 @@ import {
   endwert,
   enginefehler,
   ersteAbweichung,
+  klasseVon,
   zeichenFuer,
   zugnummer,
   zugurteile,
@@ -27,6 +28,7 @@ function partie(): Partie {
       ruecknahmeErlaubt: true,
       abbildung: null,
       eroeffnung: null,
+      stufenJePhase: { eroeffnung: 1, mittelspiel: 1, endspiel: 1 },
     },
     "p",
     "2026-10-15T08:00:00.000Z",
@@ -101,5 +103,34 @@ describe("Auswertung", () => {
       { index: 5, nummer: "3...", fehler: "drohungIgnoriert" },
     ]);
     expect(zugnummer(partie(), 6)).toBe("4.");
+  });
+});
+
+describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
+  const ruhig = {
+    warBester: false,
+    einziger: false,
+    opfer: false,
+    vorherVerlust: 0,
+    wertVorher: 0,
+    buch: false,
+  };
+  it("nach Verlust: patzer, fehler, ungenau, gut, sehr gut, bester", () => {
+    expect(klasseVon(3, ruhig)).toBe("patzer");
+    expect(klasseVon(1.2, ruhig)).toBe("fehler");
+    expect(klasseVon(0.5, ruhig)).toBe("ungenau");
+    expect(klasseVon(0.3, ruhig)).toBe("gut");
+    expect(klasseVon(0.1, ruhig)).toBe("sehrGut");
+    expect(klasseVon(0.02, ruhig)).toBe("bester");
+  });
+
+  it("verpasst nach einem Fehler des Gegners, stark als Strafe oder einziger Zug, brillant als Opfer", () => {
+    expect(klasseVon(0.6, { ...ruhig, vorherVerlust: 1.5 })).toBe("verpasst");
+    expect(klasseVon(0, { ...ruhig, warBester: true, vorherVerlust: 1.5 })).toBe("stark");
+    expect(klasseVon(0, { ...ruhig, warBester: true, einziger: true })).toBe("stark");
+    expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true })).toBe("brillant");
+    // Schon klar gewonnen: ein Opfer ist dann nur noch der beste Zug.
+    expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true, wertVorher: 6 })).toBe("bester");
+    expect(klasseVon(0, { ...ruhig, buch: true })).toBe("buch");
   });
 });

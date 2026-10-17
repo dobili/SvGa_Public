@@ -11,9 +11,9 @@
  * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts.
  */
 import type { Color } from "chessops/types";
-import { WERTGRENZE, type Zugurteil, type Zugzeichen } from "./auswertung";
+import { WERTGRENZE, type Zugklasse, type Zugurteil, type Zugzeichen } from "./auswertung";
 import { stellungen, type Partie } from "./partie";
-
+import type { Phase } from "./phasen";
 export interface Seitenbilanz {
   /** Zahl der eigenen Züge. */
   readonly zuege: number;
@@ -25,6 +25,8 @@ export interface Seitenbilanz {
   readonly spielstaerke: number | null;
   /** Anzahl je Zeichen. */
   readonly zeichen: Readonly<Record<Zugzeichen, number>>;
+  /** Anzahl je Zugklasse (wie bei chess.com, 0.2.40). */
+  readonly klassen: Readonly<Record<Zugklasse, number>>;
   /** Züge, die der beste Zug der Engine waren. */
   readonly beste: number;
 }
@@ -45,6 +47,8 @@ const GENAUIGKEIT_ABFALL = 0.04354;
 const GENAUIGKEIT_VERSATZ = 3.1669;
 /** Unter so vielen Zügen ist eine Schätzung der Spielstärke nicht sinnvoll. */
 const MINDESTENS_ZUEGE = 10;
+/** Je Phase reichen weniger Züge für eine (noch gröbere) Schätzung. */
+const MINDESTENS_ZUEGE_PHASE = 6;
 /**
  * Stützstellen: durchschnittlicher Verlust je Zug in Bauerneinheiten → Spielstärke. Grobe
  * Erfahrungswerte (Meisterpartien etwa 0,1 bis 0,2, Vereinsspieler 0,3 bis 0,5, Einsteiger ab
@@ -92,19 +96,40 @@ export function spielstaerkeAus(verlustJeZug: number): number {
   return letzte[1];
 }
 
-const KEINE_ZEICHEN: Readonly<Record<Zugzeichen, number>> = { "!": 0, "?!": 0, "?": 0, "??": 0 };
+const KEINE_ZEICHEN: Readonly<Record<Zugzeichen, number>> = {
+  "!!": 0,
+  "!": 0,
+  "?!": 0,
+  "?": 0,
+  "??": 0,
+};
+const KEINE_KLASSEN: Readonly<Record<Zugklasse, number>> = {
+  brillant: 0,
+  stark: 0,
+  bester: 0,
+  sehrGut: 0,
+  gut: 0,
+  buch: 0,
+  ungenau: 0,
+  fehler: 0,
+  verpasst: 0,
+  patzer: 0,
+};
 
 /** Bilanz einer Seite aus ihren Zügen. */
 function seitenbilanz(
   eigene: readonly { urteil: Zugurteil; genauigkeit: number; bester: boolean }[],
+  mindestensZuege = MINDESTENS_ZUEGE,
 ): Seitenbilanz {
   const zuege = eigene.length;
   const zeichen = { ...KEINE_ZEICHEN };
+  const klassen = { ...KEINE_KLASSEN };
   let verlust = 0;
   let genauigkeit = 0;
   let beste = 0;
   for (const z of eigene) {
     if (z.urteil.zeichen) zeichen[z.urteil.zeichen] += 1;
+    klassen[z.urteil.klasse] += 1;
     verlust += z.urteil.verlust;
     genauigkeit += z.genauigkeit;
     if (z.bester) beste += 1;
@@ -114,10 +139,70 @@ function seitenbilanz(
     zuege,
     genauigkeit: zuege > 0 ? genauigkeit / zuege : null,
     verlustJeZug,
-    spielstaerke: zuege >= MINDESTENS_ZUEGE ? spielstaerkeAus(verlustJeZug) : null,
+    spielstaerke: zuege >= mindestensZuege ? spielstaerkeAus(verlustJeZug) : null,
     zeichen,
+    klassen,
     beste,
   };
+}
+
+/** Ein eingeordneter Zug mit Seite, Genauigkeit, „bester“ und der Phase seiner Stellung. */
+interface Zugbilanz {
+  readonly seite: Color;
+  readonly phase: Phase | null;
+  readonly urteil: Zugurteil;
+  readonly genauigkeit: number;
+  readonly bester: boolean;
+}
+
+/** Ordnet jeden Zug ein (Seite, Phase, Genauigkeit, bester). */
+function zugbilanzen(
+  partie: Partie,
+  werte: readonly number[],
+  urteile: readonly Zugurteil[],
+  beste: readonly string[],
+  gespielteUci: readonly (string | null)[],
+  phasen: readonly Phase[],
+): Zugbilanz[] {
+  const alle = stellungen(partie);
+  return urteile.map((urteil) => {
+    const fen = alle[urteil.index] ?? "";
+    const seite: Color = fen.split(" ")[1] === "b" ? "black" : "white";
+    const vorher = gewinnwahrscheinlichkeit(werte[urteil.index] ?? 0);
+    const nachher = gewinnwahrscheinlichkeit(werte[urteil.index + 1] ?? 0);
+    const verlustProzent = seite === "white" ? vorher - nachher : nachher - vorher;
+    const gespielt = gespielteUci[urteil.index] ?? null;
+    const bester = gespielt !== null && gespielt !== "" && gespielt === beste[urteil.index];
+    const phase = phasen[urteil.index] ?? null;
+    return { seite, phase, urteil, genauigkeit: zuggenauigkeit(verlustProzent), bester };
+  });
+}
+
+/**
+ * Die Spielstärke-Bewertung je Phase (Wunsch des Autors, 0.2.40): Eröffnung, Mittelspiel,
+ * Endspiel, jeweils beide Seiten; Schätzung ab sechs Zügen je Phase.
+ * Eingaben wie `spielstaerke`, dazu die Phase je Stellung (spiel/phasen.ts).
+ */
+export function spielstaerkeJePhase(
+  partie: Partie,
+  werte: readonly number[],
+  urteile: readonly Zugurteil[],
+  beste: readonly string[],
+  gespielteUci: readonly (string | null)[],
+  phasen: readonly Phase[],
+): Readonly<Record<Phase, Spielstaerke>> {
+  const alle = zugbilanzen(partie, werte, urteile, beste, gespielteUci, phasen);
+  const je = (ph: Phase): Spielstaerke => ({
+    white: seitenbilanz(
+      alle.filter((z) => z.phase === ph && z.seite === "white"),
+      MINDESTENS_ZUEGE_PHASE,
+    ),
+    black: seitenbilanz(
+      alle.filter((z) => z.phase === ph && z.seite === "black"),
+      MINDESTENS_ZUEGE_PHASE,
+    ),
+  });
+  return { eroeffnung: je("eroeffnung"), mittelspiel: je("mittelspiel"), endspiel: je("endspiel") };
 }
 
 /**
@@ -136,20 +221,9 @@ export function spielstaerke(
   beste: readonly string[] = [],
   gespielteUci: readonly (string | null)[] = [],
 ): Spielstaerke {
-  const alle = stellungen(partie);
-  const je: Record<Color, { urteil: Zugurteil; genauigkeit: number; bester: boolean }[]> = {
-    white: [],
-    black: [],
+  const alle = zugbilanzen(partie, werte, urteile, beste, gespielteUci, []);
+  return {
+    white: seitenbilanz(alle.filter((z) => z.seite === "white")),
+    black: seitenbilanz(alle.filter((z) => z.seite === "black")),
   };
-  for (const urteil of urteile) {
-    const fen = alle[urteil.index] ?? "";
-    const seite: Color = fen.split(" ")[1] === "b" ? "black" : "white";
-    const vorher = gewinnwahrscheinlichkeit(werte[urteil.index] ?? 0);
-    const nachher = gewinnwahrscheinlichkeit(werte[urteil.index + 1] ?? 0);
-    const verlustProzent = seite === "white" ? vorher - nachher : nachher - vorher;
-    const gespielt = gespielteUci[urteil.index] ?? null;
-    const bester = gespielt !== null && gespielt !== "" && gespielt === beste[urteil.index];
-    je[seite].push({ urteil, genauigkeit: zuggenauigkeit(verlustProzent), bester });
-  }
-  return { white: seitenbilanz(je.white), black: seitenbilanz(je.black) };
 }

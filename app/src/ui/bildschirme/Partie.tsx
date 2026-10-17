@@ -25,10 +25,18 @@ import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
-import { leserAmZug, stellungen, type Partie as PartieDaten } from "../../spiel/partie";
+import {
+  EROEFFNUNG_BUCH,
+  leserAmZug,
+  stellungen,
+  type Partie as PartieDaten,
+} from "../../spiel/partie";
 import { mitVorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { zugurteile } from "../../spiel/auswertung";
+import { phasenJeStellung } from "../../spiel/phasen";
+import { buchzuegeAb } from "../../schach/eroeffnungsindex";
+import { useEroeffnungsindex } from "../komponenten/useEroeffnungsindex";
 import { Auswertung, type Sprung } from "../komponenten/Auswertung";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
@@ -46,6 +54,8 @@ import { usePartie, type Partiesteuerung } from "../komponenten/usePartie";
 import { useWerkzeugwahl, type Werkzeugwahlstand } from "../komponenten/useWerkzeugwahl";
 
 const SYMBOLGROESSE = 20;
+/** Ab Kapitel 2 gibt es den Eröffnungsindex. */
+const KAPITEL_MIT_EROEFFNUNGEN = 2;
 
 function gegnerVon(farbe: Farbe): Farbe {
   return farbe === "white" ? "black" : "white";
@@ -55,12 +65,18 @@ function gegnerVon(farbe: Farbe): Farbe {
 function Untertitel({ partie }: { partie: PartieDaten }) {
   const s = stufe(partie.einstellung.stufe);
   const farbe = t(partie.einstellung.eigeneFarbe === "white" ? "farbe.w" : "farbe.b");
-  const eroeffnung = partie.einstellung.eroeffnung;
+  const gewaehlt = partie.einstellung.eroeffnung;
+  const eroeffnung = gewaehlt === EROEFFNUNG_BUCH ? t("partie.eroeffnungBuch") : gewaehlt;
+  const je = partie.einstellung.stufenJePhase;
+  const verschieden = je.eroeffnung !== je.mittelspiel || je.endspiel !== je.mittelspiel;
+  const stufentext = verschieden
+    ? t("partie.stufenJePhase", { e: je.eroeffnung, m: je.mittelspiel, s: je.endspiel })
+    : t("partie.stufe", { nummer: s.nummer, name: t(s.name) });
   return (
     <p className="partie-untertitel">
       {eroeffnung
-        ? t("partie.untertitelEroeffnung", { nummer: s.nummer, name: t(s.name), farbe, eroeffnung })
-        : t("partie.untertitel", { nummer: s.nummer, name: t(s.name), farbe })}
+        ? t("partie.untertitelEroeffnung", { stufe: stufentext, farbe, eroeffnung })
+        : t("partie.untertitel", { stufe: stufentext, farbe })}
     </p>
   );
 }
@@ -228,12 +244,16 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   const eintrag = useSpeicher(
     (z) => z.daten.spiel.partien.find((e) => e.partie.id === partie.id) ?? null,
   );
-  const stand = useAuswertung(eintrag);
-  const urteile = useMemo(
-    () =>
-      eintrag ? zugurteile(eintrag.partie, eintrag.werte, eintrag.beste, eintrag.abstaende) : [],
-    [eintrag],
-  );
+  // Seit 0.2.40 rechnet die Auswertung schon während der Partie, wenn der Leser am Zug ist.
+  const stand = useAuswertung(partie, eintrag, leserAmZug(partie) && partie.ende === null);
+  // Der Eröffnungsindex (Kapitel 2 und 3) erkennt Buchzüge für die Zugklasse „Buch“.
+  const index = useEroeffnungsindex(KAPITEL_MIT_EROEFFNUNGEN);
+  const urteile = useMemo(() => {
+    if (!eintrag) return [];
+    const buch = index ? (fen: string, san: string) => buchzuegeAb(index, fen).includes(san) : null;
+    return zugurteile(eintrag.partie, eintrag.werte, eintrag.beste, eintrag.abstaende, buch);
+  }, [eintrag, index]);
+  const phasen = useMemo(() => phasenJeStellung(partie), [partie]);
   const ruhig = vorlieben.ruhigeAnsicht;
   const leser = leserAmZug(partie);
   const springe = (sprung: Sprung) => {
@@ -268,7 +288,13 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
       )}
       {partie.ende && <Partieende partie={partie} />}
       {partie.ende && eintrag && !ruhig && (
-        <Auswertung eintrag={eintrag} stand={stand} urteile={urteile} beiSprung={springe} />
+        <Auswertung
+          eintrag={eintrag}
+          stand={stand}
+          urteile={urteile}
+          phasen={phasen}
+          beiSprung={springe}
+        />
       )}
     </>
   );

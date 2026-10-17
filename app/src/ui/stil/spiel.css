@@ -53,6 +53,32 @@
   font-weight: 600;
 }
 
+/* Stufe je Phase (0.2.40): drei Regler untereinander, Beschriftung mit Nummer und Name. */
+.stufenwahl {
+  margin: var(--raster) 0;
+}
+
+.stufenwahl .einstellung-name {
+  display: block;
+  margin-bottom: calc(var(--raster) / 2);
+}
+
+.stufenregler {
+  margin-bottom: var(--raster);
+}
+
+.stufenregler label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.stufenregler input[type="range"] {
+  width: 100%;
+  min-height: var(--tippflaeche);
+  accent-color: var(--gold);
+}
+
 /* Eröffnung wählen (0.2.39): ein Auswahlfeld in der Schrift der App. */
 .eroeffnungswahl .einstellung-name {
   display: block;
@@ -101,10 +127,25 @@
 
 .partienliste .begriff-knopf {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  gap: var(--raster);
   padding-top: var(--raster);
   padding-bottom: var(--raster);
+}
+
+.partiezeile-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.seitenfigur {
+  flex: none;
+}
+
+.spielstaerke-untertitel {
+  margin: calc(var(--raster) * 2) 0 var(--raster);
+  font-size: 16px;
 }
 
 .partienliste .begriff-knopf span {
@@ -233,6 +274,17 @@
   border-radius: var(--radius);
   box-shadow: 0 0 0 1px var(--linie);
   cursor: pointer;
+}
+
+.verlaufskurve-phase line {
+  stroke: var(--gold);
+  stroke-width: 1;
+  stroke-dasharray: 3 2;
+}
+
+.verlaufskurve-phase text {
+  fill: var(--gold);
+  font-weight: 700;
 }
 
 .verlaufskurve-schwarz {

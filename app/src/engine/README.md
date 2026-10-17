@@ -13,6 +13,7 @@
 | `fehlersuche.ts`   | Fehlerzug der Stufen 1 bis 4: Werkzeuge + gezielte Engine-Bewertung     |
 | `spielbewerter.ts` | Gemeinsame Typen der Zugwahl, Werte in Bauerneinheiten                  |
 | `zugwahl.ts`       | Zug der Engine je Stufe, Buchzüge, Fehlerprotokoll                      |
+| `menschlich.ts`    | Stufen 1 bis 3: Tiefengrenze, gewichtete Zugwahl mit Temperatur (R4)    |
 | `stufen.messung…`  | Messlauf Stufe gegen Stufe (`npm run messen:stufen`, nicht in der CI)   |
 
 Die Engine-Dateien kopiert `skripte/kopiere-engine.mjs` beim Build aus dem npm-Paket `stockfish`.

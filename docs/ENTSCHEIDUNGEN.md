@@ -1553,6 +1553,29 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
+## R4: Stufen 1 bis 3 menschlicher (17.10.2026, Fable, Zweig `stufen-menschlich`, Version 0.2.52)
+
+Nach Regel 9 (Empfehlungen gleich umsetzen) umgesetzt: Wege 1 bis 3 aus der Rückfrage R4.
+
+- **Warum:** Skill Level 0 (Tiefe 1) spielte alles Einzügige fehlerfrei und traf in erzwungenen
+  Lagen die Hauptvariante; die Fehlerwürfe trafen dagegen zufällige ruhige Züge („dämlich, dann
+  genial“). Ein Mensch um 1000 Elo ist gleichmäßig blind ab zwei Zügen Tiefe und verschenkt selten
+  grundlos.
+- **Tiefengrenze** (`engine/engineDienst.ts`, Stärke „tiefe“): volle Stärke, aber `go depth N`
+  (mit der Rechenzeit als Deckel). Stufe 1: 2, Stufe 2: 4, Stufe 3: 5 Halbzüge (die Ruhesuche
+  der Engine sieht Schlagfolgen trotzdem zu Ende; blind ist sie für stille Züge dahinter). Was dahinter liegt,
+  sieht die Engine gar nicht.
+- **Gewichtete Zugwahl** (`engine/menschlich.ts`): sechs Kandidaten der tiefenbegrenzten Suche,
+  Gewicht e^(−Verlust/Temperatur); Temperatur 1,0, 0,7, 0,5 Bauerneinheiten. Höchstverlust und
+  Damenopfer-Verbot der Stufe gelten weiter, der beste Zug bleibt immer wählbar. Temperatur nach
+  Lage: im Schach halb, bei 30 und mehr legalen Zügen ein Drittel mehr; Strähne: je eigenem Zug
+  mit Verlust ab 0,5 unter den letzten drei ein Viertel mehr; Tagesform je Partie 0,75 bis 1,25
+  (aus der Kennung der Partie). Der Verlauf kommt über das Gegnerprofil (`verlauf`), die Oberfläche
+  (`usePartie.ts`) rechnet ihn aus der Partie.
+- **Fehlerprofile bleiben** (Fehlerquote, erklärbare Fehler mit Art); blinde Flecken und Stil
+  wirken wie bisher (bei Stil-Gegnern wählt der Stil, nicht die Temperatur).
+- **Messung** (`npm run messen:stufen -- 1-2 2-3 3-4`, je 10 Partien): je 10 Partien, 17.10.2026: Erste Fassung (Tiefen 3, 5, 7) 1-2 10:0, 2-3 9:1, aber 3-4 5:5 (Stufe 3 mit Tiefe 7 so stark wie Skill Level 3); mit Tiefe 6 und Temperatur 0,55 weiter 5:5. Endfassung Tiefen 2, 4, 5, Temperaturen 1,0, 0,7, 0,5 und Stufe 4 auf Skill Level 4: 1-2 10:0, 2-3 10:0, 3-4 6,5:3,5, 4-5 10:0 (Punkte der höheren Stufe); Fehlerquoten 33 %, 27 %, 13 %, 8 % (Soll etwa 34, 26, 13, 6), höchster Verlust eines Fehlerzuges 8,8 / 4,9 / 3,0 / 2,8. Jede Stufe gewinnt die Mehrheit gegen die darunter (Abnahme Konzept 8.2).
+
 ## Vergleich mit chess.com an drei Partien, S18 und T4 umgesetzt (17.10.2026, Autor und Fable, Version 0.2.51)
 
 Der Autor hat drei Partien bei chess.com prüfen lassen (Opernpartie Morphy 1858, Lasker–Thomas 1912,

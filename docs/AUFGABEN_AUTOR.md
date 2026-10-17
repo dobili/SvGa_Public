@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.51. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.52. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -21,8 +21,23 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.51“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.52“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.52 (etwa 30 Minuten, mit Engine; Stufen 1 bis 3 menschlicher, Empfehlung R4, Fable)
+
+- [ ] N264. **Stufe 1 bis 3 spielen menschlicher:** Spiele je eine Partie gegen Stufe 1 und
+      Stufe 3 (Gegner „Stufe wählen“ oder ein eigener Gegner mit diesen Stufen). Erwartung: Die
+      Engine spielt nicht mehr „dämlich, dann genial“. Sie sieht einzügige Dinge (Schlag,
+      Drohung) meist, aber nicht alles zwei oder drei Züge tief; ihre Fehler sind meist klein,
+      grobe selten, und sie verschenkt kaum noch grundlos in erzwungenen Lagen. Die
+      absichtlichen, erklärten Fehler (Auswertung: „Mit 12… hat die Engine …“) gibt es weiter.
+      Fühlt sich Stufe 1 noch zu stark oder zu schwach an? Bitte Partie als PGN mitschicken.
+- [ ] N265. **Strähne und Tagesform:** Nach zwei eigenen Fehlern in Folge spielt die Engine auf
+      Stufe 1 bis 3 drei Züge lang etwas wackliger; im Schach spielt sie genauer. Je Partie gibt
+      es eine feste „Tagesform“ (dieselbe Partie, derselbe Gegner: mal etwas stärker, mal etwas
+      schwächer). Das ist nicht einzeln sichtbar, nur als Eindruck über mehrere Partien.
+      Gemessen (je zehn Partien Stufe gegen Stufe): Stufe 2 gewinnt 10:0 gegen 1, Stufe 3 10:0 gegen 2, Stufe 4 6,5:3,5 gegen 3, Stufe 5 10:0 gegen 4. Dafür hat Stufe 4 jetzt Skill Level 4 statt 3 (sonst war Stufe 3 ihr ebenbürtig). Fühlt sich der Sprung von 3 auf 4 jetzt richtig an (Rückfrage K1)?
 
 ### Neu in 0.2.51 (etwa 15 Minuten, mit Engine; Vergleich mit chess.com, Empfehlungen S18 und T4, Fable)
 
@@ -786,6 +801,13 @@ Regeln C1 und C2).
       und welche Stufe soll zuerst dran sein?
       **Empfehlung zur Reihenfolge: Stufe 1 bis 3 zuerst, denn dort fällt das „dämlich, dann genial“
       am meisten auf; ab Stufe 4 spielt die Engine ohne absichtliche Fehler.
+      **Schon umgesetzt in 0.2.52 (Nachtest N264, N265), Wege 1 bis 3 für Stufe 1 bis 3:
+      Tiefengrenze 2, 4, 5 Halbzüge; gewichtete Zugwahl mit Temperatur 1,0, 0,7, 0,5 Bauern;
+      Stufe 4 auf Skill Level 4 (statt 3), damit sie Stufe 3 schlägt;
+      im Schach halbe Temperatur, bei über 30 legalen Zügen ein Drittel mehr, je eigenem Fehler
+      unter den letzten drei Zügen ein Viertel mehr, Tagesform 0,75 bis 1,25 je Partie. Die
+      Fehlerprofile bleiben. Wege 4 und 5 sind seit 0.2.46 die blinden Flecken und der Spielstil.
+      Widerspruch genügt.**
 - [ ] R5. **Erklärungen im Rückblick:** Die Karte erklärt Fehler mit den sechs Fehlerarten der
       Engine (Drohung, hängende Figur, Gabel, gefährliche Linie, Motiv der Antwort, Schlagreflex,
       Dame, König). Ohne passende Regel steht nur „kostet etwa … Bauern. Besser war …“. Reicht

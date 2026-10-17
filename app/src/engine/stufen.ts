@@ -15,12 +15,14 @@
  *   („UCI_Elo“) rechnet Stockfish selbst in ein Skill Level um (1600 Elo entspricht etwa Level 2,
  *   2000 Elo etwa Level 4); sie ist deshalb hier nicht nötig, der Engine-Dienst kann sie weiter.
  * - Stufe 1 bis 3 (seit 0.2.52, Empfehlung R4, engine/menschlich.ts): volle Stärke bis zu einer
- *   Tiefengrenze (3, 5, 7 Halbzüge: Taktik dahinter sieht die Engine nicht) und gewichtete Wahl
- *   unter den Kandidaten mit einer Temperatur (1,0, 0,7, 0,45 Bauerneinheiten: kleine Fehler
+ *   Tiefengrenze (2, 4, 5 Halbzüge: Taktik dahinter sieht die Engine nicht) und gewichtete Wahl
+ *   unter den Kandidaten mit einer Temperatur (1,0, 0,7, 0,5 Bauerneinheiten: kleine Fehler
  *   oft, große selten). Dazu die Fehlerprofile des Konzepts (jeder dritte, vierte, achte Zug)
  *   mit fallendem Höchstverlust, die erklärbare Fehler liefern. Bis 0.2.51: Skill Level 0, die
  *   „flache Suche“ aus Konzept 8.2 (Tiefe 1), die alles Einzügige fehlerfrei spielte.
- * - Stufe 4: Skill Level 3, „selten ein typischer Fehler“ (Konzept 8.2): jeder sechzehnte Zug.
+ * - Stufe 4: Skill Level 4 (bis 0.2.51: 3; seit die Stufen 1 bis 3 Taktik sehen, musste Stufe 4
+ *   nachziehen, damit sie die Mehrheit gegen Stufe 3 gewinnt), „selten ein typischer Fehler“
+ *   (Konzept 8.2): jeder sechzehnte Zug.
  * - Stufe 5 bis 7: Skill Level 6, 10 und 15 ohne Fehlerprofile; Stufe 8 volle Stärke.
  * Wer hier ändert, ändert nur diese Tabelle; die Oberfläche liest Namen und Nummer.
  * Abhängigkeiten: engine/engineDienst.ts (Staerke), i18n (Namen).
@@ -71,12 +73,12 @@ const TURM = 5;
 const LEICHTFIGUR = 3;
 
 /** Tiefengrenzen und Temperaturen der Stufen 1 bis 3 (engine/menschlich.ts). */
-const TIEFE_STUFE_1 = 3;
-const TIEFE_STUFE_2 = 5;
-const TIEFE_STUFE_3 = 7;
+const TIEFE_STUFE_1 = 2;
+const TIEFE_STUFE_2 = 4;
+const TIEFE_STUFE_3 = 5;
 const TEMPERATUR_STUFE_1 = 1.0;
 const TEMPERATUR_STUFE_2 = 0.7;
-const TEMPERATUR_STUFE_3 = 0.45;
+const TEMPERATUR_STUFE_3 = 0.5;
 /** So viele Kandidaten rechnet die Engine für die gewichtete Wahl. */
 const KANDIDATEN_MENSCHLICH = 6;
 
@@ -88,7 +90,7 @@ function menschlich(tiefe: number, temperatur: number): Pick<Stufe, "staerke" | 
 }
 
 /** Die Skill Level von Stockfish je Stufe (0 bis 20; 20 ist die volle Stärke). */
-const SKILL_STUFE_4 = 3;
+const SKILL_STUFE_4 = 4;
 const SKILL_STUFE_5 = 6;
 const SKILL_STUFE_6 = 10;
 const SKILL_STUFE_7 = 15;

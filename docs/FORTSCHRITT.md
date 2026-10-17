@@ -915,7 +915,7 @@ Export und Import, Löschen erweitern, Tests; danach AP 14. Fragen sammeln statt
 einmal lokal knapp (50,9 ms bei voller Last). Der Test misst jetzt jede Abbildung dreimal und
 wertet die schnellste Messung; die Grenze selbst bleibt bei 50 ms.
 
-### AP 14 Vorbereitete Texte – Entwürfe fertig, Freigabe offen (Zweig `ap14-texte`, Opus)
+### AP 14 Vorbereitete Texte – fertig, alle 253 Texte freigegeben (E1, 16.10.2026; Zweig `ap14-texte`, Opus)
 
 Grundlagen: Pflichtenheft 3 („Für jede Buchstellung … Einschätzungen je Werkzeug, gestufte
 Hinweise und Warum-Fragen mit Antwortauswahl … mit Claude erstellt, mit der Engine geprüft und vom

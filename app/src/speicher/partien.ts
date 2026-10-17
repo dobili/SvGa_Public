@@ -9,7 +9,7 @@
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, engine/fehlerart.ts, engine/stufen.ts.
  */
 import type { Color } from "chessops/types";
-import type { Fehlerart } from "../engine/fehlerart";
+import { FEHLERARTEN } from "../engine/fehlerart";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 import type { Partieende } from "../spiel/ergebnis";
@@ -141,15 +141,6 @@ function farbeAus(wert: unknown): Color | null {
 }
 
 const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
-const FEHLERARTEN: readonly Fehlerart[] = [
-  "figurHaengen",
-  "schlagreflex",
-  "verfruehteDame",
-  "koenigMitte",
-  "taktikUebersehen",
-  "drohungIgnoriert",
-  "ungenau",
-];
 const QUELLEN: readonly Partiezug["quelle"][] = ["leser", "buch", "engine", "fehler"];
 const ENDEN_MIT_SIEGER = ["matt", "aufgabe", "zeit"] as const;
 const ENDEN_OHNE_SIEGER = [

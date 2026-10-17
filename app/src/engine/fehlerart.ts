@@ -28,11 +28,9 @@
  * analyse/k4-warnsignale.ts (W2), analyse/stellungsprofil.ts.
  */
 import { Chess, normalizeMove } from "chessops/chess";
-import { makeFen, parseFen } from "chessops/fen";
-import { makeSanAndPlay } from "chessops/san";
+import { parseFen } from "chessops/fen";
 import type { NormalMove, Piece, Role, Square } from "chessops/types";
 import { opposite, parseUci } from "chessops/util";
-import { gefaehrlicheLinien, type GefaehrlicheLinie } from "../analyse/k4-warnsignale";
 import { profil } from "../analyse/stellungsprofil";
 import { abtausch } from "../schach/abtausch";
 import {
@@ -42,10 +40,26 @@ import {
   type Drohung,
   type Schlagzug,
 } from "../schach/drohungen";
-import { gabelfelder, type Gabelfeld } from "../schach/gabeln";
-import { FIGURENWERT, type Stellung } from "../schach/stellung";
-import { erkenneMotive, type Motiv } from "../schach/taktikmotive";
+import { FIGURENWERT } from "../schach/stellung";
+import { phase, type Phase } from "../schach/phase";
+import {
+  gabelnVon,
+  linienGegen,
+  stellungVon,
+  uebersehneTaktik,
+  type Taktikbefund,
+} from "./fehlerart-taktik";
+export type { Taktikbefund } from "./fehlerart-taktik";
 import { istKoenigMitte, istVerfruehteDame } from "./fehlerart-eroeffnung";
+import {
+  istBauernraub,
+  istBauernvorstoss,
+  istFalscherAbtausch,
+  istKoenigPassiv,
+  istKoenigsschild,
+  istPattGesetzt,
+  istTempoverlust,
+} from "./fehlerart-phasen";
 
 export type Fehlerart =
   | "figurHaengen"
@@ -54,13 +68,33 @@ export type Fehlerart =
   | "koenigMitte"
   | "taktikUebersehen"
   | "drohungIgnoriert"
+  // Seit 0.2.40, typische Fehler je Phase (engine/fehlerart-phasen.ts, Liste in ENTSCHEIDUNGEN):
+  | "tempoverlust"
+  | "bauernraub"
+  | "koenigsschild"
+  | "falscherAbtausch"
+  | "koenigPassiv"
+  | "bauernvorstoss"
+  | "pattGesetzt"
   | "ungenau";
 
-/** Die übersehene Taktik: eine neue Gabel (W6), eine neue gefährliche Linie (W2) oder ein Motiv der Antwort. */
-export type Taktikbefund =
-  | { readonly art: "gabel"; readonly gabel: Gabelfeld }
-  | { readonly art: "linie"; readonly linie: GefaehrlicheLinie }
-  | { readonly art: "motiv"; readonly motiv: Motiv };
+/** Alle Fehlerarten, für Speicher und Oberfläche. */
+export const FEHLERARTEN: readonly Fehlerart[] = [
+  "figurHaengen",
+  "schlagreflex",
+  "verfruehteDame",
+  "koenigMitte",
+  "taktikUebersehen",
+  "drohungIgnoriert",
+  "tempoverlust",
+  "bauernraub",
+  "koenigsschild",
+  "falscherAbtausch",
+  "koenigPassiv",
+  "bauernvorstoss",
+  "pattGesetzt",
+  "ungenau",
+];
 
 /** Die Fehlerart mit ihren Einzelheiten für den Rückblick (0.2.39). */
 export interface Fehlerbefund {
@@ -86,21 +120,11 @@ const DROHUNG_AB = 1;
 const DAMENOPFER_AB = DAME - LEICHTFIGUR;
 /** Wert einer Mattdrohung beim Vergleich mit Materialdrohungen. */
 const MATTDROHUNG = 1000;
-/** Motive aus Kapitel 7, die als „Taktik übersehen“ gelten. */
-const TAKTIKMOTIVE: ReadonlySet<Motiv> = new Set<Motiv>([
-  "gabel",
-  "doppelangriff",
-  "fesselung",
-  "spiess",
-  "abzug",
-  "doppelschach",
-]);
-/** So viele Halbzüge der Engine-Antwort prüft die Motiverkennung. */
-const ANTWORT_HALBZUEGE = 3;
-
 /** Die Lage vor dem Zug, einmal je Stellung berechnet, damit viele Züge schnell geprüft sind. */
 export interface Lage {
   readonly regeln: Chess;
+  /** Phase der Stellung (Kapitel 11), für die Fehlerarten je Phase (0.2.40). */
+  readonly phase: Phase;
   /** Drohungen des Gegners, als wäre er am Zug (leer, wenn die Seite am Zug im Schach steht). */
   readonly drohungen: readonly Drohung[];
   /** Alle Schläge der Seite am Zug mit ihrer Abtauschbilanz. */
@@ -119,31 +143,6 @@ export interface Zugprobe {
   readonly geschlagen: Role | null;
 }
 
-function stellungVon(regeln: Chess): Stellung {
-  return { fen: makeFen(regeln.toSetup()), brett: regeln.board, amZug: regeln.turn, regeln };
-}
-
-/** Schlüssel eines Gabelfelds (Figur, Feld, Ziele), um Gabeln vor und nach dem Zug zu vergleichen. */
-function gabelschluessel(g: Gabelfeld): string {
-  return `${g.figur.feld}-${g.feld}:${[...g.ziele].sort((a, b) => a - b).join(",")}`;
-}
-
-/** Gabelfelder einer Farbe mit Schlüssel. */
-function gabelnVon(stellung: Stellung, farbe: Piece["color"]): Map<string, Gabelfeld> {
-  const karte = profil(stellung).angriffskarte;
-  return new Map(gabelfelder(stellung, karte, farbe).map((g) => [gabelschluessel(g), g]));
-}
-
-/** Schlüssel einer gefährlichen Linie (Art, Langschrittfigur, hintere Figur). */
-function linienschluessel(l: GefaehrlicheLinie): string {
-  return `${l.art}:${l.von.feld}-${l.hinten.feld}`;
-}
-
-/** Gefährliche Linien gegen eine Farbe mit Schlüssel. */
-function linienGegen(stellung: Stellung, farbe: Piece["color"]): Map<string, GefaehrlicheLinie> {
-  return new Map(gefaehrlicheLinien(profil(stellung), farbe).map((l) => [linienschluessel(l), l]));
-}
-
 /**
  * Die Lage vor dem Zug; null bei unlesbarer oder regelwidriger Stellung.
  *
@@ -158,8 +157,10 @@ export function lageVon(fen: string): Lage | null {
   const stellung = stellungVon(regeln);
   const feind = opposite(regeln.turn);
   const imSchach = regeln.isCheck();
+  const p = profil(stellung);
   return {
     regeln,
+    phase: phase(stellung, p.angriffskarte, p.drohungen).phase,
     drohungen: drohungenVon(regeln, feind) ?? [],
     schlaege: schlaege(regeln),
     gabeln: new Set(imSchach ? [] : gabelnVon(stellung, feind).keys()),
@@ -260,46 +261,6 @@ function istSchlagreflex(lage: Lage, p: Zugprobe, verlust: number | null): boole
   return schlag !== undefined && schlag.bilanz < 0;
 }
 
-/** Das Motiv aus Kapitel 7 in der Antwort der Engine (Gabel, Fesselung, Spieß, Abzug, Doppelschach), sonst null. */
-function antwortmotiv(danach: Chess, antwort: readonly string[]): Motiv | null {
-  if (antwort.length === 0) return null;
-  const regeln = danach.clone();
-  const san: string[] = [];
-  for (const uci of antwort.slice(0, ANTWORT_HALBZUEGE)) {
-    const roh = parseUci(uci);
-    if (!roh) break;
-    const zug = normalizeMove(regeln, roh);
-    if (!regeln.isLegal(zug)) break;
-    san.push(makeSanAndPlay(regeln, zug));
-  }
-  const befund = erkenneMotive(danach, san);
-  return befund?.motive.find((m) => TAKTIKMOTIVE.has(m)) ?? null;
-}
-
-/**
- * Taktik übersehen (Kapitel 7): Nach dem Zug hat der Gegner eine neue Gabel (W6) oder eine neue
- * gefährliche Linie (W2) gegen die ziehende Seite, oder seine Antwort ist ein Motiv; sonst null.
- */
-function uebersehneTaktik(
-  lage: Lage,
-  p: Zugprobe,
-  antwort: readonly string[],
-): Taktikbefund | null {
-  if (p.danach.isCheck()) return null;
-  if (!lage.regeln.isCheck()) {
-    const stellung = stellungVon(p.danach);
-    const feind = p.danach.turn;
-    for (const [schluessel, gabel] of gabelnVon(stellung, feind)) {
-      if (!lage.gabeln.has(schluessel)) return { art: "gabel", gabel };
-    }
-    for (const [schluessel, linie] of linienGegen(stellung, opposite(feind))) {
-      if (!lage.linien.has(schluessel)) return { art: "linie", linie };
-    }
-  }
-  const motiv = antwortmotiv(p.danach, antwort);
-  return motiv ? { art: "motiv", motiv } : null;
-}
-
 const OHNE_EINZELHEITEN = { drohung: null, haengt: null, taktik: null } as const;
 
 /**
@@ -319,6 +280,7 @@ export function fehlerbefundIn(
   uci: string,
   antwort: readonly string[],
   verlust: number | null,
+  besterZug: string | null = null,
 ): Fehlerbefund {
   const p = probe(lage, uci);
   if (!p) return { art: "ungenau", ...OHNE_EINZELHEITEN };
@@ -328,15 +290,36 @@ export function fehlerbefundIn(
   if (drohung.wert >= MATTDROHUNG || (drohung.wert >= LEICHTFIGUR && drohung.wert >= haengt.wert)) {
     return ignoriert;
   }
+  if (istPattGesetzt(lage, p)) return { art: "pattGesetzt", ...OHNE_EINZELHEITEN };
+  if (istBauernraub(lage, p, verlust)) return { art: "bauernraub", ...OHNE_EINZELHEITEN };
   if (istSchlagreflex(lage, p, verlust)) return { art: "schlagreflex", ...OHNE_EINZELHEITEN };
-  if (haengt.feld !== null)
+  // Vor „Figur hängen“: Beim gleichen Abtausch wird die schlagende Figur zurückgeschlagen.
+  if (istFalscherAbtausch(lage, p)) return { art: "falscherAbtausch", ...OHNE_EINZELHEITEN };
+  if (haengt.feld !== null) {
     return { art: "figurHaengen", ...OHNE_EINZELHEITEN, haengt: haengt.feld };
+  }
   if (drohung.wert > 0) return ignoriert;
   const taktik = uebersehneTaktik(lage, p, antwort);
   if (taktik) return { art: "taktikUebersehen", ...OHNE_EINZELHEITEN, taktik };
-  if (istVerfruehteDame(lage, p)) return { art: "verfruehteDame", ...OHNE_EINZELHEITEN };
-  if (istKoenigMitte(lage, p)) return { art: "koenigMitte", ...OHNE_EINZELHEITEN };
+  const phasenart = phasenfehler(lage, p, verlust, besterZug);
+  if (phasenart) return { art: phasenart, ...OHNE_EINZELHEITEN };
   return { art: "ungenau", ...OHNE_EINZELHEITEN };
+}
+
+/** Die Fehlerarten je Phase (0.2.40) in ihrer Reihenfolge; null, wenn keine passt. */
+function phasenfehler(
+  lage: Lage,
+  p: Zugprobe,
+  verlust: number | null,
+  besterZug: string | null,
+): Fehlerart | null {
+  if (istKoenigsschild(lage, p)) return "koenigsschild";
+  if (istKoenigPassiv(lage, p, besterZug)) return "koenigPassiv";
+  if (istBauernvorstoss(lage, p, verlust)) return "bauernvorstoss";
+  if (istVerfruehteDame(lage, p)) return "verfruehteDame";
+  if (istKoenigMitte(lage, p)) return "koenigMitte";
+  if (istTempoverlust(lage, p)) return "tempoverlust";
+  return null;
 }
 
 /**
@@ -355,8 +338,9 @@ export function fehlerartIn(
   uci: string,
   antwort: readonly string[],
   verlust: number | null,
+  besterZug: string | null = null,
 ): Fehlerart {
-  return fehlerbefundIn(lage, uci, antwort, verlust).art;
+  return fehlerbefundIn(lage, uci, antwort, verlust, besterZug).art;
 }
 
 /**

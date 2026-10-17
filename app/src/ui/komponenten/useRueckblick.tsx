@@ -40,7 +40,14 @@ function erklaerungFuer(
   if (!urteil?.zeichen || urteil.zeichen === "!" || !vorher || !danach || !san) return null;
   const uci = sanZuUci(vorher, san);
   if (!uci) return null;
-  return erklaereZug(vorher, danach, uci, rb.beste[index + 1] ?? "", urteil.verlust);
+  return erklaereZug(
+    vorher,
+    danach,
+    uci,
+    rb.beste[index + 1] ?? "",
+    urteil.verlust,
+    rb.beste[index] ?? null,
+  );
 }
 
 /**

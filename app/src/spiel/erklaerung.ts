@@ -13,7 +13,7 @@ import { makeSquare } from "chessops/util";
 import { figurenname, figurImWenfall, schlagtext, zugtext } from "../analyse/texte";
 import type { Markierung } from "../analyse/werkzeug";
 import { fehlerbefundIn, lageVon, type Fehlerbefund, type Taktikbefund } from "../engine/fehlerart";
-import { t } from "../i18n/sprache";
+import { t, type Textschluessel } from "../i18n/sprache";
 import { feldname } from "../schach/stellung";
 import { regelstellung, uciZuSan } from "./zuege";
 
@@ -25,6 +25,22 @@ export interface Zugerklaerung {
 
 /** UCI: zwei Zeichen Startfeld, zwei Zeichen Zielfeld. */
 const FELDLAENGE = 2;
+/** Die Sätze der Fehlerarten je Phase (0.2.40); Arten ohne Eintrag haben eigene Sätze oder keinen. */
+const PHASENTEXT: Readonly<Partial<Record<Fehlerbefund["art"], Textschluessel>>> = {
+  tempoverlust: "erklaerung.tempoverlust",
+  bauernraub: "erklaerung.bauernraub",
+  koenigsschild: "erklaerung.koenigsschild",
+  falscherAbtausch: "erklaerung.falscherAbtausch",
+  koenigPassiv: "erklaerung.koenigPassiv",
+  bauernvorstoss: "erklaerung.bauernvorstoss",
+  pattGesetzt: "erklaerung.pattGesetzt",
+};
+/** Fehlerarten je Phase, bei denen das Zielfeld des Zuges rot markiert wird. */
+const MIT_ZIELFELD: ReadonlySet<Fehlerbefund["art"]> = new Set([
+  "koenigsschild",
+  "bauernraub",
+  "bauernvorstoss",
+]);
 
 /** Roter Pfeil für einen Zug in UCI. */
 function pfeil(uci: string): Markierung {
@@ -94,6 +110,7 @@ function erklaerungZu(
   befund: Fehlerbefund,
   danachFen: string,
   antwort: string,
+  uci: string,
 ): Zugerklaerung | null {
   const { drohung } = befund;
   if (befund.art === "drohungIgnoriert" && drohung) {
@@ -129,14 +146,22 @@ function erklaerungZu(
   }
   if (befund.art === "verfruehteDame") return { text: t("erklaerung.dame"), marken: [] };
   if (befund.art === "koenigMitte") return { text: t("erklaerung.koenig"), marken: [] };
-  return null;
+  const schluessel = PHASENTEXT[befund.art];
+  if (!schluessel) return null;
+  // Die Fehlerarten je Phase (0.2.40): ein Satz, bei Zügen einer Figur ihr Zielfeld rot.
+  const zielfeld = uci.slice(FELDLAENGE, 2 * FELDLAENGE);
+  return {
+    text: t(schluessel),
+    marken: MIT_ZIELFELD.has(befund.art) ? [{ typ: "feld", farbe: "rot", feld: zielfeld }] : [],
+  };
 }
 
 /**
  * Erklärt einen Zug mit Zeichen: Fehlerart nach den Regeln des Buches, in Worten und am Brett.
  *
  * Eingaben: Stellung vor dem Zug (FEN), Stellung danach (FEN), der Zug (UCI), die beste Antwort
- * der Engine in der Stellung danach (UCI, darf leer sein), der Verlust in Bauerneinheiten.
+ * der Engine in der Stellung danach (UCI, darf leer sein), der Verlust in Bauerneinheiten, der
+ * beste Zug der Engine vor dem Zug (UCI, für „passiver König“).
  * Ausgabe: Satz und Markierungen, oder null, wenn keine Regel passt („ungenau“).
  * Beispiel: Abb. 1.13 nach 2. Dh5: 2... Sf6?? → „lässt die Drohung Dxe5+ stehen (gewinnt den
  * Bauern)“, roter Pfeil h5–e5, rotes Feld e5.
@@ -148,11 +173,12 @@ export function erklaereZug(
   uci: string,
   antwort: string,
   verlust: number,
+  bester: string | null = null,
 ): Zugerklaerung | null {
   const lage = lageVon(vorherFen);
   if (!lage) return null;
-  const befund = fehlerbefundIn(lage, uci, antwort ? [antwort] : [], verlust);
-  return erklaerungZu(befund, danachFen, antwort);
+  const befund = fehlerbefundIn(lage, uci, antwort ? [antwort] : [], verlust, bester);
+  return erklaerungZu(befund, danachFen, antwort, uci);
 }
 
 /** Die Fehlerart in Worten, wie das Buch sie nennt („eine Drohung ignoriert“), für Tests und PGN. */

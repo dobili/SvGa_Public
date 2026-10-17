@@ -8,7 +8,8 @@
  * fehlerart.ts) zusätzlich alle legalen Züge mit den Werkzeugen des Buches und lassen die Engine
  * einige typische Fehlerzüge gezielt bewerten („searchmoves“). Gewählt wird ein Zug, dessen
  * Verlust zwischen Mindest- und Höchstverlust der Stufe liegt, am liebsten einer mit erkannter
- * Art. Ab Stufe 2 ist ein grundloses Damenopfer ausdrücklich ausgeschlossen (Abtauschrechnung),
+ * Art, seit 0.2.40 gewichtet nach dem Fehlerprofil der Phase und Stufe (engine/fehlerprofil.ts).
+ * Ab Stufe 2 ist ein grundloses Damenopfer ausdrücklich ausgeschlossen (Abtauschrechnung),
  * unabhängig davon, was die Engine dem Zug an Verlust zuschreibt.
  * Abhängigkeiten: engine/engineDienst.ts, engine/fehlerart.ts, engine/spielbewerter.ts,
  * engine/stufen.ts.
@@ -22,6 +23,7 @@ import {
   type Fehlerart,
   type Lage,
 } from "./fehlerart";
+import { gewicht, gewichteteWahl } from "./fehlerprofil";
 import { wertFuer, type Spielbewerter, type Zugwahl } from "./spielbewerter";
 import type { Stufe } from "./stufen";
 import type { Variante } from "./uci";
@@ -32,14 +34,21 @@ const KANDIDATEN = 8;
 export const MINDESTVERLUST = 0.5;
 /** So viele typische Fehlerzüge aus den Werkzeugen bewertet die Engine gezielt. */
 const HOECHSTENS_GEPRUEFT = 6;
-/** Reihenfolge, in der die Arten zur Prüfung kommen: konkrete Fehler vor allgemeinen. */
-const VORRANG: readonly Fehlerart[] = [
+/** Alle Arten, die zur Prüfung kommen; die Reihenfolge ergibt das Gewicht im Profil der Phase. */
+const PRUEFBARE: readonly Fehlerart[] = [
   "drohungIgnoriert",
   "figurHaengen",
   "schlagreflex",
   "taktikUebersehen",
   "verfruehteDame",
   "koenigMitte",
+  "tempoverlust",
+  "bauernraub",
+  "koenigsschild",
+  "falscherAbtausch",
+  "koenigPassiv",
+  "bauernvorstoss",
+  "pattGesetzt",
 ];
 
 /** Ein Fehlerzug mit Art und Verlust gegenüber dem besten Zug. */
@@ -82,11 +91,19 @@ export function typischeFehlerzuege(lage: Lage): Typischer[] {
 }
 
 /**
- * Wählt bis zu HOECHSTENS_GEPRUEFT Züge zur Prüfung: reihum je Art ein Zug, konkrete Arten
- * zuerst, innerhalb einer Art zufällig.
+ * Wählt bis zu HOECHSTENS_GEPRUEFT Züge zur Prüfung: reihum je Art ein Zug, Arten mit höherem
+ * Gewicht im Profil der Phase und Stufe zuerst, innerhalb einer Art zufällig.
  */
-function zurPruefung(typische: readonly Typischer[], zufall: () => number): Typischer[] {
-  const gruppen = VORRANG.map((art) =>
+function zurPruefung(
+  typische: readonly Typischer[],
+  stufe: Stufe,
+  phase: Lage["phase"],
+  zufall: () => number,
+): Typischer[] {
+  const arten = [...PRUEFBARE].sort(
+    (a, b) => gewicht(phase, stufe.nummer, b) - gewicht(phase, stufe.nummer, a),
+  );
+  const gruppen = arten.map((art) =>
     gemischt(
       typische.filter((k) => k.art === art),
       zufall,
@@ -116,11 +133,13 @@ function ausEngine(
   bestwert: number,
   weissAmZug: boolean,
 ): Fehlerkandidat[] {
+  const besterZug = varianten[0]?.zuege[0] ?? null;
   return varianten.slice(1).flatMap((v) => {
     const uci = v.zuege[0];
     if (!uci) return [];
     const verlust = verlustVon(v, bestwert, weissAmZug);
-    return [{ uci, art: fehlerartIn(lage, uci, v.zuege.slice(1), verlust), verlust }];
+    const art = fehlerartIn(lage, uci, v.zuege.slice(1), verlust, besterZug);
+    return [{ uci, art, verlust }];
   });
 }
 
@@ -177,7 +196,7 @@ export async function sucheFehlerzug(
   const erlaubt = (uci: string) => stufe.damenopferErlaubt || !istDamenopfer(lage, uci);
   const bekannt = new Set(voll.varianten.map((v) => v.zuege[0]));
   const typische = typischeFehlerzuege(lage).filter((k) => !bekannt.has(k.uci) && erlaubt(k.uci));
-  const auswahl = zurPruefung(typische, zufall);
+  const auswahl = zurPruefung(typische, stufe, lage.phase, zufall);
   const kandidaten = [
     ...ausEngine(lage, voll.varianten, bestwert, weissAmZug),
     ...(await geprueft(bewerter, fen, stufe, auswahl, bestwert, weissAmZug)),
@@ -186,6 +205,10 @@ export async function sucheFehlerzug(
     (k) => k.verlust >= MINDESTVERLUST && k.verlust <= stufe.hoechstverlust && erlaubt(k.uci),
   );
   const mitArt = moegliche.filter((k) => k.art !== "ungenau");
-  const wahl = zufallsauswahl(mitArt.length > 0 ? mitArt : moegliche, zufall);
+  // Gewichtet nach dem Profil der Phase und Stufe (0.2.40); ohne erkannte Art gleichverteilt.
+  const wahl =
+    mitArt.length > 0
+      ? gewichteteWahl(mitArt, (k) => gewicht(lage.phase, stufe.nummer, k.art), zufall)
+      : zufallsauswahl(moegliche, zufall);
   return wahl ? { uci: wahl.uci, quelle: "fehler", fehler: wahl.art, verlust: wahl.verlust } : null;
 }

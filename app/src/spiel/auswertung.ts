@@ -17,8 +17,9 @@ export type Zugzeichen = "!!" | "!" | "??" | "?" | "?!";
 
 /**
  * Zugklasse wie bei chess.com (Wunsch des Autors, 0.2.40), mit den Grenzen der App: brillant = ein
- * gutes Opfer (bester Zug, gibt Material, Stellung noch nicht gewonnen); stark = der einzige gute
- * Zug oder der beste Zug nach einem Fehler des Gegners; bester = der Zug der Engine (seit 0.2.50
+ * gutes Opfer (bester oder fast bester Zug, gibt Material laut Abtauschrechnung); stark = der
+ * einzige gute Zug oder der beste Zug nach einem Fehler des Gegners, solange die Stellung danach
+ * nicht klar gewonnen ist; bester = der Zug der Engine (seit 0.2.50
  * nur noch dieser, damit die Zahl zur Zeile „Beste Züge“ passt); sehrGut (bis 0,2 hinter dem
  * besten, auch ein gleichwertiger Zug); gut (bis 0,5); buch = ein Zug aus den Eröffnungen des
  * Buches; ungenau (ab 0,5); fehler (ab 1,2); verpasst = nach einem Fehler des Gegners nicht den
@@ -61,8 +62,6 @@ export const GROBER_PATZER = 2;
 const SEHR_GUT_UNTER = 0.2;
 /** Ein Opfer ab einer Leichtfigur laut Abtauschrechnung (Gewinn des Gegners mindestens 2). */
 const OPFER_AB = 2;
-/** Ist die Stellung aus eigener Sicht schon so gut, zählt ein Opfer nicht mehr als brillant. */
-const SCHON_GEWONNEN = 4;
 /**
  * Steht die ziehende Seite nach dem Zug noch mindestens so gut, bekommt der Zug höchstens „?!“
  * (Empfehlung K5, umgesetzt in 0.2.47): Wer von „Matt in 2“ zu „+5“ wechselt, gewinnt weiter.
@@ -152,7 +151,10 @@ function verpasst(verlust: number, u: Zugumstaende): boolean {
  * stark; 2. Th8+ in Abb. 7.14 (bester Zug, gibt den Turm, Stellung vorher nicht gewonnen) → brillant.
  * Sonderfall: Nach dem Zug noch mindestens +5 → höchstens „ungenau“ (Matt in 2 zu +5).
  * Sonderfall: Ein Zug, der ohne Verlust nicht der Zug der Engine ist, ist „sehr gut“ (gleichwertig),
- * nicht „bester“.
+ * nicht „bester“. Brillant darf seit 0.2.51 auch ein Opfer sein, das bis 0,2 hinter dem besten Zug
+ * liegt, und auch in gewonnener Stellung (chess.com gibt 16. Db8+!! in der Opernpartie, Abb. 11.4,
+ * ebenso); „stark“ gibt es nur, solange die Stellung nach dem Zug nicht klar gewonnen ist (sonst
+ * bekäme in einem Mattangriff jeder Zug ein „!“: Opernpartie neun statt eins bei chess.com).
  */
 export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
   const nochKlarGewonnen = u.wertVorher - verlust >= KLAR_GEWONNEN;
@@ -162,8 +164,10 @@ export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
   if (verlust >= GRENZE_FEHLER) return "fehler";
   if (verlust >= GRENZE_UNGENAU) return "ungenau";
   if (u.buch) return "buch";
-  if (u.warBester && u.opfer && u.wertVorher < SCHON_GEWONNEN) return "brillant";
-  if (u.warBester && (u.einziger || u.vorherVerlust >= GRENZE_FEHLER)) return "stark";
+  const fastBester = u.warBester || verlust < SEHR_GUT_UNTER;
+  if (fastBester && u.opfer) return "brillant";
+  const bestraft = u.vorherVerlust >= GRENZE_FEHLER;
+  if (u.warBester && (u.einziger || bestraft) && !nochKlarGewonnen) return "stark";
   if (u.warBester) return "bester";
   return verlust < SEHR_GUT_UNTER ? "sehrGut" : "gut";
 }
@@ -237,6 +241,30 @@ export function zugurteile(
     const klasse = klasseVon(verlust, u);
     return { index, verlust, zeichen: ZEICHEN_JE_KLASSE[klasse], klasse };
   });
+}
+
+/** Ein Sprung des Wertes ab dieser Größe, der sofort zurückspringt, ist verdächtig (0.2.51). */
+const AUSREISSER_AB = 3;
+
+/**
+ * Stellungen, deren Wert verdächtig ist: Er springt gegenüber der Stellung davor um mindestens 3
+ * und springt bei der nächsten Stellung in die Gegenrichtung ebenso weit zurück. Das sieht aus wie
+ * ein Patzer, den der Gegner sofort zurückgibt, ist bei kurzer Rechenzeit aber meist ein Fehler
+ * der Engine (Opernpartie, 15. Lxd7+ „??“ mit 7,4 bei 500 ms unter Last).
+ *
+ * Eingabe: Werte je Stellung aus Sicht von Weiß. Ausgabe: Indizes, die die Auswertung mit mehr
+ * Rechenzeit nachprüft (ui/komponenten/useAuswertung.ts). Beispiel: [10, 10, 2.6, 10] → [2].
+ */
+export function ausreisser(werte: readonly number[]): number[] {
+  const verdaechtig: number[] = [];
+  for (let i = 1; i + 1 < werte.length; i += 1) {
+    const hin = begrenzt(werte[i] ?? 0) - begrenzt(werte[i - 1] ?? 0);
+    const zurueck = begrenzt(werte[i + 1] ?? 0) - begrenzt(werte[i] ?? 0);
+    if (Math.abs(hin) >= AUSREISSER_AB && Math.abs(zurueck) >= AUSREISSER_AB && hin * zurueck < 0) {
+      verdaechtig.push(i);
+    }
+  }
+  return verdaechtig;
 }
 
 /**

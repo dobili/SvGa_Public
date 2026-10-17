@@ -239,9 +239,15 @@ function stehengelasseneDrohung(lage: Lage, p: Zugprobe): Stehengelassen {
  * Die eigene Figur (ab Leichtfigur), die erst durch den Zug verloren geht, mit dem größten
  * Abtauschgewinn des Gegners; Wert 0 ohne Feld, wenn keine. Regel: Kapitel 4, W1, mit der
  * Abtauschrechnung aus Kapitel 1 (Fesselungen bleiben wie im Buch unberücksichtigt).
+ * Ein Schachgebot zählt für W1 nicht (der Gegner muss erst das Schach beantworten); für den
+ * Opferwert zählt es (16. Db8+!! in der Opernpartie gibt die Dame, `mitSchach`).
  */
-function neuVerlorene(lage: Lage, p: Zugprobe): { wert: number; feld: Square | null } {
-  if (p.danach.isCheck()) return { wert: 0, feld: null };
+function neuVerlorene(
+  lage: Lage,
+  p: Zugprobe,
+  mitSchach = false,
+): { wert: number; feld: Square | null } {
+  if (!mitSchach && p.danach.isCheck()) return { wert: 0, feld: null };
   const eigen = opposite(p.danach.turn);
   let gefunden: { wert: number; feld: Square | null } = { wert: 0, feld: null };
   for (const feld of p.danach.board[eigen]) {
@@ -327,12 +333,16 @@ function phasenfehler(
 
 /**
  * Was der Zug laut Abtauschrechnung hergibt: der größte Gewinn des Gegners an einer eigenen Figur
- * ab Leichtfigur, die erst durch den Zug verloren geht; 0, wenn nichts. Für die Zugklasse
- * „brillant“ im Rückblick (ein gutes Opfer, 0.2.40). Beispiel: Abb. 7.14, 2. Th8+ gibt den Turm → 5.
+ * ab Leichtfigur, die erst durch den Zug verloren geht, abzüglich dessen, was der Zug selbst
+ * schlägt; 0, wenn nichts. Für die Zugklasse „brillant“ im Rückblick (ein gutes Opfer, 0.2.40).
+ * Beispiel: Abb. 7.14, 2. Th8+ gibt den Turm → 5. Sonderfall (0.2.51): Ein Abtausch ist kein
+ * Opfer: Lxg5 gegen einen Springer, danach Lxg5 → 3 − 3 = 0.
  */
 export function opferwert(lage: Lage, uci: string): number {
   const p = probe(lage, uci);
-  return p ? neuVerlorene(lage, p).wert : 0;
+  if (!p) return 0;
+  const geschlagen = p.geschlagen === null ? 0 : FIGURENWERT[p.geschlagen];
+  return Math.max(0, neuVerlorene(lage, p, true).wert - geschlagen);
 }
 
 /** Nur die Fehlerart eines Zuges (für die Fehlersuche der Engine, engine/fehlersuche.ts). */

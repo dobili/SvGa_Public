@@ -8,6 +8,7 @@ import {
   zeichenFuer,
   zugnummer,
   zugurteile,
+  ausreisser,
 } from "./auswertung";
 import { leserzug, neuePartie, ziehe, type Partie, type Partiezug } from "./partie";
 
@@ -67,8 +68,9 @@ describe("Auswertung", () => {
     const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "f1c4", "g8f6", "h5f7", ""];
     const abstaende = [0, 0, 0, 1.5, 1.1, 0, 5, 0];
     const zeichen = zugurteile(p, werte, beste, abstaende).map((u) => u.zeichen);
-    // 2... Sc6: bester Zug mit Abstand 1,5 → „!“; 3. Lc4: Abstand 1,1 reicht nicht; 4. Dxf7# „!“.
-    expect(zeichen).toEqual([null, null, "?!", "!", null, "??", "!"]);
+    // 2... Sc6: bester Zug mit Abstand 1,5 → „!“; 3. Lc4: Abstand 1,1 reicht nicht; 4. Dxf7# ist
+    // einziger Zug, aber danach klar gewonnen: kein „!“ mehr (0.2.51).
+    expect(zeichen).toEqual([null, null, "?!", "!", null, "??", null]);
     // Ohne Abstände (ältere Auswertung) gibt es kein „!“.
     expect(zugurteile(p, werte).map((u) => u.zeichen)).toEqual([
       null,
@@ -112,6 +114,16 @@ describe("Auswertung", () => {
   });
 });
 
+describe("Ausreißer der Auswertung (0.2.51)", () => {
+  it("ein Sprung um 3, der sofort zurückspringt, ist verdächtig; ein echter Patzer nicht", () => {
+    expect(ausreisser([10, 10, 2.6, 10, 10])).toEqual([2]);
+    expect(ausreisser([0.3, 0.3, -6, -6.2, -7])).toEqual([]);
+    expect(ausreisser([0, 2.9, 0])).toEqual([]);
+    expect(ausreisser([0, 4, 8])).toEqual([]);
+    expect(ausreisser([])).toEqual([]);
+  });
+});
+
 describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
   const ruhig = {
     warBester: false,
@@ -145,8 +157,23 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     expect(klasseVon(0, { ...ruhig, warBester: true, vorherVerlust: 1.5 })).toBe("stark");
     expect(klasseVon(0, { ...ruhig, warBester: true, einziger: true })).toBe("stark");
     expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true })).toBe("brillant");
-    // Schon klar gewonnen: ein Opfer ist dann nur noch der beste Zug.
-    expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true, wertVorher: 6 })).toBe("bester");
+    // Ein gutes Opfer bis 0,2 hinter dem besten Zug ist auch brillant (0.2.51), ab 0,2 nicht.
+    expect(klasseVon(0.1, { ...ruhig, opfer: true })).toBe("brillant");
+    expect(klasseVon(0.3, { ...ruhig, opfer: true })).toBe("gut");
+    // Nach dem Zug klar gewonnen (ab +5): kein „stark“ mehr, auch nicht als einziger Zug (0.2.51).
+    expect(klasseVon(0, { ...ruhig, warBester: true, vorherVerlust: 1.5, wertVorher: 6 })).toBe(
+      "bester",
+    );
+    expect(klasseVon(0, { ...ruhig, warBester: true, einziger: true, wertVorher: 6 })).toBe(
+      "bester",
+    );
+    expect(klasseVon(0, { ...ruhig, warBester: true, vorherVerlust: 1.5, wertVorher: 4 })).toBe(
+      "stark",
+    );
+    // Auch in gewonnener Stellung bleibt ein Opfer brillant (16. Db8+!! in der Opernpartie).
+    expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true, wertVorher: 6 })).toBe(
+      "brillant",
+    );
     expect(klasseVon(0, { ...ruhig, buch: true })).toBe("buch");
   });
 

@@ -109,9 +109,9 @@ Buchdaten; die App schreibt sie deutsch.
   Zugfolge; oder Lichess-Kennung, Wertung, Partie, Themen), `messung`. Das Warnsignal (Hilfe 1)
   rechnet die App mit k7-warnsignale aus der Stellung.
 
-### Falle oder Köder (`falle.json`, Kapitel 4)
+### Falle oder Köder (`falle.json`, Kapitel 2 bis 4)
 
-132 Aufgaben: 12 aus dem Buch, 120 aus der Lichess-Datenbank; `python -m pipeline.trainer.falle
+137 Aufgaben: 17 aus dem Buch (12 Fallenchecks, 5 aus den Zugfolgen der Kapitel 2 und 3), 120 aus der Lichess-Datenbank; `python -m pipeline.trainer.falle
 --lichess <Stichprobe> --je-stufe 12` (Dauer etwa zwei Stunden, die Engine siebt dreimal so viele
 Kandidaten wie gebraucht).
 
@@ -120,7 +120,10 @@ Kandidaten wie gebraucht).
   Bauerneinheiten gegenüber dem besten Zug (`verlustBeimNehmen`, `bester`, die Widerlegung in
   `fortsetzung`); **Geschenk** = Nehmen ist bis 0,3 hinter dem besten Zug. Dazwischen keine
   Aufgabe (Maßstab in der Datei).
-- **Buch:** die Fallenchecks aus Kapitel 4, jeweils der erste Schlag mit Fragezeichen in der
+- **Buch:** seit 0.2.51 (T4) auch jeder Schlag mit Fragezeichen in den Zugfolgen der Kapitel 2
+  und 3 (alle Äste, von der Engine als Falle bestätigt, Doppelte zu den Fallenchecks weggelassen;
+  `--bisherige` behält die Lichess-Aufgaben, wenn die lokale Lichess-Datei fehlt), dazu die
+  Fallenchecks aus Kapitel 4, jeweils der erste Schlag mit Fragezeichen in der
   Zugfolge des Beispiels, die Widerlegung ist die Fortsetzung des Buches: Klammerfalle (4.2),
   Halosar (4.10), Elefantenfalle (4.13), Légal (4.17), Kieninger (4.21), Benko (4.24), Sibirische
   Falle (4.29), Arche Noah (4.34), abgelehntes Königsgambit (4.38), Blackburne-Shilling (4.41,

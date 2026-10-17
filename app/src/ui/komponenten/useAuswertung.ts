@@ -18,13 +18,18 @@
 import { useEffect, useState } from "react";
 import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
 import { wertFuer } from "../../engine/spielbewerter";
-import { endwert } from "../../spiel/auswertung";
+import { ausreisser, endwert } from "../../spiel/auswertung";
 import { stellungen, type Partie } from "../../spiel/partie";
 import { mitWerten, type Partieeintrag } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
 
 /** Rechenzeit je Stellung: 40 Züge brauchen so etwa 40 Sekunden. */
 const RECHENZEIT_MS = 500;
+/**
+ * Nachprüfung verdächtiger Stellungen (spiel/auswertung.ts, ausreisser) mit mehr Rechenzeit: Ein
+ * Wert, der um 3 springt und sofort zurückspringt, ist bei 500 ms meist ein Fehler der Engine.
+ */
+const NACHPRUEFUNG_MS = 2000;
 /** Zwei Varianten: die beste und die zweitbeste, für das „!“ des einzigen guten Zuges. */
 const VARIANTEN = 2;
 /** So lange wartet die Hintergrund-Auswertung, wenn die Engine beschäftigt ist. */
@@ -58,7 +63,11 @@ function pause(ms: number): Promise<void> {
  * Wert (aus Sicht von Weiß), bester Zug und Abstand zum zweitbesten Zug einer Stellung; null,
  * wenn die Auswertung inzwischen nicht mehr laufen soll.
  */
-async function bewerteStellung(fen: string, laeuft: () => boolean): Promise<Stellungswert | null> {
+async function bewerteStellung(
+  fen: string,
+  laeuft: () => boolean,
+  rechenzeitMs = RECHENZEIT_MS,
+): Promise<Stellungswert | null> {
   const ende = endwert(fen);
   if (ende !== null) return { fen, wert: ende, bester: "", abstand: 0 };
   while (laeuft()) {
@@ -67,7 +76,7 @@ async function bewerteStellung(fen: string, laeuft: () => boolean): Promise<Stel
       continue;
     }
     try {
-      const bewertung = await engine.bewerte(fen, RECHENZEIT_MS, VARIANTEN);
+      const bewertung = await engine.bewerte(fen, rechenzeitMs, VARIANTEN);
       const [erste, zweite] = bewertung.varianten;
       const weissAmZug = fen.split(" ")[1] !== "b";
       const abstand =
@@ -84,6 +93,25 @@ async function bewerteStellung(fen: string, laeuft: () => boolean): Promise<Stel
     }
   }
   return null;
+}
+
+/**
+ * Prüft verdächtige Werte (Sprung und sofortiger Rücksprung) mit mehr Rechenzeit nach und ersetzt
+ * sie; bricht ab, wenn die Auswertung nicht mehr laufen soll.
+ */
+async function nachpruefen(
+  werte: (Stellungswert | undefined)[],
+  laeuft: () => boolean,
+): Promise<boolean> {
+  const verdaechtig = ausreisser(werte.map((w) => w?.wert ?? 0));
+  for (const i of verdaechtig) {
+    const fen = werte[i]?.fen;
+    if (!fen) continue;
+    const ergebnis = await bewerteStellung(fen, laeuft, NACHPRUEFUNG_MS);
+    if (!ergebnis) return false;
+    werte[i] = ergebnis;
+  }
+  return true;
 }
 
 /** Die gültigen Einträge des Zwischenspeichers zu den Stellungen der Partie. */
@@ -139,6 +167,7 @@ export function useAuswertung(
         if (!ergebnis) return;
         werte[i] = ergebnis;
       }
+      if (nachher && !(await nachpruefen(werte, () => aktiv))) return;
       const fertig = werte.flatMap((w) => (w ? [w] : []));
       if (aktiv && nachher && fertig.length === alle.length) speichere(id, fertig);
     };

@@ -49,6 +49,12 @@ Grundlagen (Claude Docs, nur lesen):
    Informationen im Text, ohne Verweise auf andere Dateien, und nur Offenes (Wunsch des Autors,
    17.10.2026: Er liest auf dem Handy). Erledigtes wird dort gelöscht und in
    `docs/ENTSCHEIDUNGEN.md` festgehalten. Eine eigene Testanleitung gibt es nicht mehr.
+9. **Empfehlungen gleich umsetzen** (Wunsch des Autors, 17.10.2026 nachmittags, auch an Opus):
+   Zu jeder Rückfrage eine fundierte Empfehlung erarbeiten, sie in `docs/AUFGABEN_AUTOR.md`
+   festhalten und dann sofort umsetzen („Schon umgesetzt in …, Widerspruch genügt“). Widerspricht
+   der Autor später, wird es zurückgebaut. Nur warten, wenn Umsetzen und späterer Rückbau
+   verwickelte Probleme machen könnten (etwa Datenformate im Speicher der Leser, Löschen von
+   Buchdaten, Veröffentlichung).
 
 ## Aufbau
 

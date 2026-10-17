@@ -10,8 +10,8 @@
  * Phasen zählen wenig, die Kämpfe viel) und dem harmonischen Mittel (ein grober Fehler drückt die
  * Zahl spürbar). Vorher das einfache Mittel, das mit 97 % weit über chess.com (87 %) lag, weil die
  * vielen fehlerfreien Züge in gewonnener Stellung alles ausglichen. Die Spielstärke ist eine grobe
- * Schätzung aus dem durchschnittlichen Verlust je Zug (Tabelle unten, aus Erfahrungswerten;
- * keine Wertungszahl eines Verbands). Reine Funktionen, die Werte kommen aus der Auswertung.
+ * Schätzung aus dieser Genauigkeit (Tabelle unten, aus Erfahrungswerten von Lichess und chess.com;
+ * keine Wertungszahl eines Verbands; bis 0.2.50 aus dem Verlust je Zug, Empfehlung S18). Reine Funktionen, die Werte kommen aus der Auswertung.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts.
  */
 import type { Color } from "chessops/types";
@@ -66,22 +66,23 @@ const MINDESTENS_ZUEGE = 10;
 /** Je Phase reichen weniger Züge für eine (noch gröbere) Schätzung. */
 const MINDESTENS_ZUEGE_PHASE = 6;
 /**
- * Stützstellen: durchschnittlicher Verlust je Zug in Bauerneinheiten → Spielstärke. Grobe
- * Erfahrungswerte (Meisterpartien etwa 0,1 bis 0,2, Vereinsspieler 0,3 bis 0,5, Einsteiger ab
- * 1,0); dazwischen wird linear gerechnet.
+ * Stützstellen: Genauigkeit der Partie → Spielstärke, absteigend. Grobe Erfahrungswerte aus den
+ * Durchschnitten bei Lichess und chess.com (Meister über 92 %, Vereinsspieler um 85 %, Einsteiger
+ * um 70 %); dazwischen wird linear gerechnet. Der Verlust je Zug taugte nicht: Dreißig Züge in
+ * gewonnener Stellung verdünnten jeden Fehler (deine Partie mit 4. e3: „etwa 2250“).
  */
 const STUETZSTELLEN: readonly (readonly [number, number])[] = [
-  [0, 2900],
-  [0.1, 2600],
-  [0.2, 2250],
-  [0.3, 2000],
-  [0.4, 1800],
-  [0.5, 1650],
-  [0.6, 1500],
-  [0.8, 1300],
-  [1.0, 1100],
-  [1.5, 800],
-  [2.5, 500],
+  [100, 2900],
+  [97, 2700],
+  [95, 2500],
+  [90, 2200],
+  [85, 1900],
+  [80, 1600],
+  [75, 1400],
+  [70, 1200],
+  [60, 900],
+  [50, 600],
+  [40, 500],
 ];
 const RUNDUNG = 50;
 
@@ -153,15 +154,18 @@ export function partiegenauigkeit(
   return (gewichtet / gewichte + harmonisch) / 2;
 }
 
-/** Spielstärke aus dem Verlust je Zug, linear zwischen den Stützstellen, auf 50 gerundet. */
-export function spielstaerkeAus(verlustJeZug: number): number {
+/**
+ * Spielstärke aus der Genauigkeit der Partie, linear zwischen den Stützstellen, auf 50 gerundet.
+ * Beispiel: 88 % → etwa 2100; 76 % → etwa 1450; unter 40 % → 500.
+ */
+export function spielstaerkeAus(genauigkeit: number): number {
   const letzte = STUETZSTELLEN.at(-1) ?? [0, 0];
-  if (verlustJeZug >= letzte[0]) return letzte[1];
+  if (genauigkeit <= letzte[0]) return letzte[1];
   for (let i = 1; i < STUETZSTELLEN.length; i += 1) {
     const [x0, y0] = STUETZSTELLEN[i - 1] ?? [0, 0];
     const [x1, y1] = STUETZSTELLEN[i] ?? [0, 0];
-    if (verlustJeZug <= x1) {
-      const anteil = (verlustJeZug - x0) / (x1 - x0);
+    if (genauigkeit >= x1) {
+      const anteil = (x0 - genauigkeit) / (x0 - x1);
       return Math.round((y0 + anteil * (y1 - y0)) / RUNDUNG) * RUNDUNG;
     }
   }
@@ -205,11 +209,13 @@ function seitenbilanz(
     if (z.bester) beste += 1;
   }
   const verlustJeZug = zuege > 0 ? verlust / zuege : 0;
+  const genauigkeit = partiegenauigkeit(eigene);
   return {
     zuege,
-    genauigkeit: partiegenauigkeit(eigene),
+    genauigkeit,
     verlustJeZug,
-    spielstaerke: zuege >= mindestensZuege ? spielstaerkeAus(verlustJeZug) : null,
+    spielstaerke:
+      zuege >= mindestensZuege && genauigkeit !== null ? spielstaerkeAus(genauigkeit) : null,
     zeichen,
     klassen,
     beste,
@@ -284,8 +290,8 @@ export function spielstaerkeJePhase(
  * Eingaben: Partie, Werte je Stellung aus Sicht von Weiß, Urteile je Halbzug (spiel/auswertung.ts),
  * beste Züge je Stellung (UCI, dürfen fehlen). Ausgabe: je Seite Genauigkeit, Verlust je Zug,
  * geschätzte Spielstärke, Zeichen und beste Züge.
- * Beispiel: 20 eigene Züge mit durchschnittlich 0,4 Bauern Verlust → etwa 1800; Genauigkeit wie
- * bei Lichess (partiegenauigkeit), für die Beispielpartie des Autors 87 % und 76 % (chess.com: 86,8 und 80,3). Sonderfall: ohne Werte (Auswertung läuft noch) sind beide Seiten leer.
+ * Beispiel: Genauigkeit wie bei Lichess (partiegenauigkeit), für die Beispielpartie des Autors
+ * 88 % und 76 % (chess.com: 86,8 und 80,3), daraus etwa 2100 und 1450. Sonderfall: ohne Werte (Auswertung läuft noch) sind beide Seiten leer.
  */
 export function spielstaerke(
   partie: Partie,

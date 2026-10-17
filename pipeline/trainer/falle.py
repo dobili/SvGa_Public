@@ -7,6 +7,9 @@ Wozu diese Datei da ist:
     Falle ist (Nehmen verliert) oder ein Geschenk (Nehmen ist richtig). Zwei Quellen:
     1. Die Fallenchecks des Buches (Kapitel 4): Vom Stopp-Moment an die erste Zugfolge des Buches
        entlang bis zu dem Schlag mit Fragezeichen; die Widerlegung ist die Fortsetzung des Buches.
+       Dazu seit 0.2.51 (Empfehlung T4) jeder Schlag mit Fragezeichen in den Zugfolgen der
+       Eröffnungskapitel 2 und 3 (etwa 7... Sxd4?? im Schottischen Gambit, Abb. 3.33), sofern
+       er nicht schon ein Fallencheck ist.
     2. Lichess-Puzzles (CC0): Geschenke sind Aufgaben mit dem Thema „hangingPiece“, deren
        Lösung mit dem Schlag beginnt; Fallen sind Stellungen, in denen ein Schlag Material zu
        gewinnen scheint (Faustwerte: mehr wert als der Schlagende, oder ungedeckt), die Engine
@@ -17,6 +20,8 @@ Wozu diese Datei da ist:
 
 Aufruf (im Hauptordner):
     python -m pipeline.trainer.falle --lichess buch/arbeit/lichess/passende.pkl --je-stufe 12
+    python -m pipeline.trainer.falle --bisherige   # ohne Lichess-Datei: die Lichess-Aufgaben aus
+                                                   # der vorhandenen falle.json behalten
 """
 
 from __future__ import annotations
@@ -43,6 +48,7 @@ GESCHENK_BIS = 0.3
 TIEFE = 18
 FORTSETZUNG_HALBZUEGE = 6
 STARTWERT = 20261016
+EROEFFNUNGSKAPITEL = ("kap02", "kap03")
 FAUSTWERTE = {chess.PAWN: 1, chess.KNIGHT: 3, chess.BISHOP: 3, chess.ROOK: 5, chess.QUEEN: 9, chess.KING: 0}
 
 
@@ -179,6 +185,71 @@ def _schlag_mit_fragezeichen(beispiel: dict, pfad: list[str], brett: chess.Board
     return None
 
 
+def _schlaege_mit_fragezeichen(beispiel: dict) -> list[tuple[chess.Board, chess.Move, list[str], str]]:
+    """Alle Schläge mit „?“ in einer Zugfolge (alle Äste).
+
+    Ausgabe je Fund: (Brett vor dem Schlag, Schlag, Fortsetzung des Buches ab dem Schlag, die
+    letzte Abbildung davor in diesem Ast; ohne eine solche die erste des Beispiels oder „“).
+    Beispiel: k03-a28 (Schottisches Gambit): 7... Sxd4?? mit Abb. 3.33.
+    """
+    funde: list[tuple[chess.Board, chess.Move, list[str], str]] = []
+    erste = next(iter(beispiel.get("abbildungen", [])), "")
+
+    def lauf(knoten: list[dict], brett: chess.Board, abbildung: str) -> None:
+        for k in knoten:
+            zug = brett.parse_san(k["zug"])
+            hier = k["abbildungen"][0] if k["abbildungen"] else abbildung
+            if "?" in k["zeichen"] and brett.is_capture(zug):
+                fortsetzung = [k["zug"]]
+                weiter = k["weiter"]
+                while weiter and len(fortsetzung) < FORTSETZUNG_HALBZUEGE:
+                    fortsetzung.append(weiter[0]["zug"])
+                    weiter = weiter[0]["weiter"]
+                funde.append((brett.copy(), zug, fortsetzung, hier))
+            kopie = brett.copy()
+            kopie.push(zug)
+            lauf(k["weiter"], kopie, hier)
+
+    lauf(beispiel["zuege"], chess.Board(beispiel["startFen"]), erste)
+    return funde
+
+
+def aus_eroeffnungen(
+    engine: Engine, schon_da: set[tuple[str, str]], datenordner: Path = DATENORDNER
+) -> list[dict]:
+    """Aufgaben aus den Zugfolgen der Kapitel 2 und 3: jeder Schlag mit „?“, den die Engine als
+    Falle bestätigt und der nicht schon aus einem Fallencheck stammt (Stellung und Schlag gleich).
+    """
+    aufgaben = []
+    for kapitel in EROEFFNUNGSKAPITEL:
+        daten = lies_json(datenordner / f"{kapitel}.json")
+        for beispiel in daten["beispiele"]:
+            for brett, schlag, buchlinie, abbildung in _schlaege_mit_fragezeichen(beispiel):
+                schluessel = (brett.fen(), brett.san(schlag))
+                if schluessel in schon_da:
+                    continue
+                antwort, verlust, bester, _ = urteil(engine, brett, schlag)
+                if antwort != "falle":
+                    print(
+                        f"{beispiel['id']} {brett.fullmove_number}. {brett.san(schlag)}: "
+                        f"Engine sieht keine Falle (Verlust {verlust})",
+                        file=sys.stderr,
+                    )
+                    continue
+                schon_da.add(schluessel)
+                herkunft = {"quelle": "buch", "abbildung": abbildung, "beispiel": beispiel["id"]}
+                tiefe = tiefe_bis_urteil(engine, brett, schlag, antwort)
+                seite = "w" if brett.turn else "b"
+                aufgaben.append(
+                    {
+                        "id": f"falle-b-{beispiel['id']}-{brett.fullmove_number}{seite}",
+                        **_aufgabe(brett, schlag, antwort, verlust, bester, buchlinie, herkunft, tiefe),
+                        "schwierigkeit": 0,
+                    }
+                )
+    return aufgaben
+
+
 def aus_fallenchecks(engine: Engine, datenordner: Path = DATENORDNER) -> list[dict]:
     """Aufgaben aus den Fallenchecks in Kapitel 4 (nur solche mit einem Schlag als Fehlzug)."""
     daten = lies_json(datenordner / "kap04.json")
@@ -293,13 +364,22 @@ def aus_lichess(
     return aufgaben
 
 
-def baue(lichess_pfad: Path | None, je_stufe: int, ziel: Path = ZIELDATEI) -> dict:
+def bisherige_lichess(ziel: Path = ZIELDATEI) -> list[dict]:
+    """Die Lichess-Aufgaben aus der vorhandenen Datei (wenn die Lichess-Datei lokal fehlt)."""
+    if not ziel.exists():
+        return []
+    return [a for a in lies_json(ziel)["aufgaben"] if a["herkunft"]["quelle"] == "lichess"]
+
+
+def baue(lichess_pfad: Path | None, je_stufe: int, ziel: Path = ZIELDATEI, bisherige: bool = False) -> dict:
     from pipeline.trainer.schwierigkeit import eiche, stufe_von_messung
 
     puzzles: list[Puzzle] = pickle.load(lichess_pfad.open("rb")) if lichess_pfad else []
     with Engine() as engine:
         buch = aus_fallenchecks(engine)
-        lichess = aus_lichess(engine, puzzles, je_stufe)
+        schon_da = {(a["fen"], a["angebot"]) for a in buch}
+        buch += aus_eroeffnungen(engine, schon_da)
+        lichess = bisherige_lichess(ziel) if bisherige else aus_lichess(engine, puzzles, je_stufe)
     eichung = eiche([(Messung(a["messung"]["tiefe"], 1), a["herkunft"]["wertung"]) for a in lichess])
     for a in buch:
         a["schwierigkeit"] = stufe_von_messung(Messung(a["messung"]["tiefe"], 1), eichung)
@@ -314,7 +394,7 @@ def baue(lichess_pfad: Path | None, je_stufe: int, ziel: Path = ZIELDATEI) -> di
         "quellen": [
             {
                 "kennung": "buch",
-                "name": "Schach von Grund auf, Kapitel 4 (Fallenchecks)",
+                "name": "Schach von Grund auf, Kapitel 2 bis 4 (Fallenchecks und Zugfolgen der Eröffnungen)",
                 "lizenz": "Alle Rechte vorbehalten (nur Stellungen und Züge)",
                 "anzahl": len(buch),
             },
@@ -340,6 +420,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Aufgaben für „Falle oder Köder“ bauen")
     parser.add_argument("--lichess", type=Path)
     parser.add_argument("--je-stufe", type=int, default=12)
+    parser.add_argument("--bisherige", action="store_true")
     args = parser.parse_args()
-    ergebnis = baue(args.lichess, args.je_stufe)
+    ergebnis = baue(args.lichess, args.je_stufe, bisherige=args.bisherige)
     print(f"{len(ergebnis['aufgaben'])} Aufgaben")

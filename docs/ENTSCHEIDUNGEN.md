@@ -1553,6 +1553,51 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
+## Vergleich mit chess.com an drei Partien, S18 und T4 umgesetzt (17.10.2026, Autor und Fable, Version 0.2.51)
+
+Der Autor hat drei Partien bei chess.com prüfen lassen (Opernpartie Morphy 1858, Lasker–Thomas 1912,
+eine ruhige Berliner Partie mit Remis) und die Screenshots geschickt; dazu seine neue Arbeitsregel
+(CLAUDE.md, Regel 9): Empfehlungen gleich umsetzen, Widerspruch genügt.
+
+- **Befund Genauigkeit:** Für die Gewinner stimmen App und chess.com nach 0.2.50 auf ein bis drei
+  Punkte überein (Oper 95 zu 96,1; Lasker 90 zu 92,8; Berlin 97 zu 97,9 und 95 zu 95,0). Für die
+  Verlierer weicht es in beide Richtungen ab (Oper 82 zu 63,2; Lasker 58 zu 73,3): chess.com
+  rechnet mit einer eigenen, nicht veröffentlichten Formel; unsere folgt Lichess. Nicht geändert.
+- **Befund Brillant:** Die App vergab in der ruhigen Partie vier „Brillant“ für Abtausche (Lxg5
+  gegen einen Springer, danach Lxg5), chess.com null. Ursache: `opferwert` (engine/fehlerart.ts)
+  zählte, was der Gegner nach dem Zug gewinnen kann, ohne abzuziehen, was der Zug selbst schlägt.
+  Behoben: Opfer = Verlust laut Abtauschrechnung minus geschlagene Figur. Dazu ist brillant jetzt
+  auch ein Opfer bis 0,2 hinter dem besten Zug und auch in gewonnener Stellung (chess.com gibt 16. Db8+!! in der Opernpartie); die Grenze „ab +4 kein brillant“ ist weg. Zweiter Fehler: Ein
+  Zug mit Schach zählte nie als Opfer (die Prüfung „Figur hängen lassen“, W1, lässt Schachgebote
+  aus, und `opferwert` nutzte dieselbe Rechnung); 16. Db8+ und das Beispiel 2. Th8+ (Abb. 7.14)
+  konnten also nie brillant sein. Jetzt rechnet der Opferwert auch mit Schach. Opernpartie: zwei
+  Brillant (13. Txd7, 16. Db8+; chess.com drei, dazu 10. Sxb5, ein Springer für zwei Bauern, den
+  die Abtauschrechnung nicht als Opfer ab einer Leichtfigur zählt).
+- **Befund Rechenzeit:** Bei 500 ms je Stellung unter Last (ein zweiter Stockfish lief parallel)
+  bewertete die Engine eine Stellung der Opernpartie mit +2,6 statt Matt; daraus wurde „15. Lxd7+??“
+  mit 7,4 und „15... Sxd7?“ als verpasst. Ein Wert, der um mindestens 3 springt und sofort
+  zurückspringt, gilt jetzt als verdächtig (`ausreisser` in spiel/auswertung.ts) und wird nach dem
+  ersten Durchgang mit 2 s nachgeprüft (useAuswertung.ts). Ein echter Patzer, den der Gegner nicht
+  nutzt, sieht genauso aus und bekommt damit nur eine zweite, längere Rechnung.
+- **Befund Stark:** Die App gab in der Opernpartie acht „!“ (jeder Zug im Mattangriff ist
+  „einziger Zug“ oder „bestraft einen Fehler“), chess.com ein „Großartig“. Jetzt gibt es „stark“
+  nur, solange die Stellung nach dem Zug nicht klar gewonnen ist (ab +5, dieselbe Grenze wie K5);
+  das Matt 4. Dxf7# bekommt damit kein „!“ mehr.
+- **S18 umgesetzt:** Die geschätzte Spielstärke kommt aus der Genauigkeit (Stützstellen 100 → 2900,
+  97 → 2700, 95 → 2500, 90 → 2200, 85 → 1900, 80 → 1600, 75 → 1400, 70 → 1200, 60 → 900, 50 → 600,
+  darunter 500; Erfahrungswerte aus den Durchschnitten bei Lichess und chess.com). Beispielpartie
+  des Autors: 2100 und 1450 statt 2250 und 1700. Die Elo-Wertung (spiel/wertung.ts) nutzt die neue
+  Zahl ab der nächsten gewerteten Partie; gespeicherte Wertungspunkte bleiben.
+- **T4 umgesetzt:** `pipeline/trainer/falle.py` zieht zusätzlich jeden Schlag mit Fragezeichen aus
+  den Zugfolgen der Kapitel 2 und 3 (alle Äste), prüft ihn mit der Engine (Falle ab 1,5) und
+  lässt Doppelte zu den Fallenchecks weg; Herkunft „buch“ mit Beispiel und der letzten Abbildung
+  davor. Neue Option `--bisherige`: ohne die lokale Lichess-Datei bleiben die 120 Lichess-Aufgaben
+  aus der vorhandenen falle.json erhalten. Buchaufgaben jetzt 17 statt 12.
+- **Offen geblieben (eigene Arbeitspakete):** R4 (Stufen 1 bis 3 menschlicher: gewichtete Zugwahl,
+  Tiefengrenze, Fehlerneigung nach Lage, mit der Messung aus AP 11) folgt als Nächstes; U12
+  (Leerfälle der Werkzeuge) und W9/W10 (Texte aus AP 14) liegen bei Opus beziehungsweise warten
+  auf die Texte.
+
 ## Genauigkeit und Zugklassen wie bei chess.com (17.10.2026, Autor und Fable, Version 0.2.50)
 
 Anlass: Der Autor verglich die Auswertung seiner Partie gegen Stufe 5 (1. d4 Sf6 2. Lg5 Sh5? 3. Sf3?

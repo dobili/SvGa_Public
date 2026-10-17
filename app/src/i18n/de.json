@@ -2126,7 +2126,7 @@
   "rueckblick.erklaerung": "{seite} {text}",
   "rueckblick.zugnummer": "Zug {nummer}",
   "spielstaerke.titel": "Spielstärke",
-  "spielstaerke.erklaerung": "Genauigkeit wie bei Lichess und chess.com (100 % heißt: jeder Zug der beste; ein grober Fehler zählt mehr als viele gute Züge in schon gewonnener Stellung). Die geschätzte Spielstärke ist eine grobe Zahl aus dem durchschnittlichen Verlust je Zug (keine Wertungszahl eines Verbands), ab zehn Zügen; die Engine auf niedriger Stufe macht absichtlich Fehler und bekommt entsprechend wenig.",
+  "spielstaerke.erklaerung": "Genauigkeit wie bei Lichess und chess.com (100 % heißt: jeder Zug der beste; ein grober Fehler zählt mehr als viele gute Züge in schon gewonnener Stellung). Die geschätzte Spielstärke ist eine grobe Zahl aus dieser Genauigkeit (keine Wertungszahl eines Verbands), ab zehn Zügen; die Engine auf niedriger Stufe macht absichtlich Fehler und bekommt entsprechend wenig.",
   "spielstaerke.seite": "Seite",
   "spielstaerke.du": "Du ({farbe})",
   "spielstaerke.engine": "Engine ({farbe})",

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.50. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.51. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -21,8 +21,30 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.50“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.51“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.51 (etwa 15 Minuten, mit Engine; Vergleich mit chess.com, Empfehlungen S18 und T4, Fable)
+
+- [ ] N260. **Geschätzte Spielstärke aus der Genauigkeit** (S18): Karte „Spielstärke“ deiner Partie
+      vom 17.10.2026 gegen Stufe 5: „etwa 2100“ für dich (vorher 2250) und „etwa 1450“ für die
+      Engine (vorher 1700). Die Zahl kommt jetzt aus der Genauigkeit (95 % → 2500, 90 % → 2200,
+      85 % → 1900, 80 % → 1600, 70 % → 1200, 60 % → 900), nicht mehr aus dem Verlust je Zug. Der
+      Erklärtext unter der Karte sagt das. Die Wertung in den Einstellungen nimmt für neue Partien
+      diese Zahl; alte Partien behalten ihre Werte.
+- [ ] N261. **Brillant und Stark wie bei chess.com:** Spiele die Opernpartie zu zweit nach (1. e4 e5 2. Sf3 d6 3. d4 Lg4 4. dxe5 Lxf3 5. Dxf3 dxe5 6. Lc4 Sf6 7. Db3 De7 8. Sc3 c6 9. Lg5 b5 10. Sxb5 cxb5 11. Lxb5+ Sbd7 12. 0-0-0 Td8 13. Txd7 Txd7 14. Td1 De6 15. Lxd7+ Sxd7 16. Db8+ Sxb8 17. Td8#). Karte „Spielstärke“, Weiß: Brillant 2 (13. Txd7 und 16. Db8+; chess.com
+      gibt 3, dazu 10. Sxb5, das unsere Engine 0,7 schlechter sieht), Stark 2 (vorher 8; chess.com
+      „Großartig“ 1), Genauigkeit etwa 95 bis 99 je nach Rechenlauf (chess.com 96,1). Ein Abtausch (Läufer schlägt
+      Springer, wird zurückgeschlagen) ist kein Opfer mehr; in einer Partie ohne Opfer steht
+      „Brillant 0“ (vorher bis zu 4 für Abtausche). Ein Opfer mit Schach zählte bisher nie; jetzt
+      schon. Sieht die Engine in einer Stellung kurz etwas ganz anderes als davor und danach
+      (Sprung um drei Bauern hin und sofort zurück), rechnet die Auswertung diese Stellung am Ende
+      noch einmal vier Sekunden lang nach; die Anzeige „läuft … von …“ dauert dann etwas länger.
+- [ ] N262. **Fallen aus den Eröffnungskapiteln** (T4): Training › „Falle oder Köder“ › Runde. Neben
+      den zwölf Fallenchecks aus Kapitel 4 kommen jetzt auch die Schläge mit Fragezeichen aus den
+      Zugfolgen der Kapitel 2 und 3 dran (zum Beispiel 7… Sxd4?? im Schottischen Gambit, Abb.
+      3.33, oder 10… Lxa1? nach 9… Lxc3?! in Kapitel 2). Unten steht wie bisher „Aus dem Buch: Abb.
+      …“. Zahl der Buchaufgaben: 17 (vorher 12).
 
 ### Neu in 0.2.50 (etwa 10 Minuten, mit Engine; Genauigkeit wie bei chess.com, Fable)
 
@@ -706,8 +728,9 @@ Regeln C1 und C2).
       neuen Genauigkeit kommen (deine Partie läge dann grob bei 1900 statt 2250), oder beim
       Verlust je Zug bleiben? **Empfehlung:** aus der Genauigkeit ableiten, mit einer neuen
       Tabelle (etwa 95 % → 2500, 90 % → 2200, 85 % → 1900, 80 % → 1600, 70 % → 1200, 60 % →
-      900), sobald du nach ein paar Partien sagst, ob dir die Genauigkeit plausibel vorkommt;
-      bis dahin so lassen, damit die Wertungskurve nicht zweimal springt.
+      900), sobald du nach ein paar Partien sagst, ob dir die Genauigkeit plausibel vorkommt.
+      **Schon umgesetzt in 0.2.51 (Nachtest N260), auf deinen Wunsch vom 17.10.2026 nachmittags,
+      Empfehlungen gleich umzusetzen. Widerspruch genügt.**
 
 ### R. Rückmeldung 0.2.38, umgesetzt in 0.2.39 (Fable; plausibel entschieden, bitte prüfen)
 
@@ -928,6 +951,8 @@ hat, mit Rückfrage:
       Damengambit)? Die Pipeline könnte sie genauso ziehen.
       **Empfehlung:** ja. Fallen aus den Eröffnungen des Buches sind genau die, in die Leser später
       tappen; die Pipeline kann sie mit wenig Aufwand gleich ziehen (Fable).
+      **Schon umgesetzt in 0.2.51 (Nachtest N262): jeder Schlag mit Fragezeichen in den Zugfolgen
+      der Kapitel 2 und 3, den die Engine als Falle bestätigt. Widerspruch genügt.**
 - [ ] T5. **Strukturerkenner:** 134 Aufgaben, davon 46 aus Kapitel 5 mit Struktur, Seite und
       Plan nach dem Unterabschnitt, in dem das Buch die Abbildung zeigt, und 88 aus anderen
       Kapiteln mit einer klaren Struktur (Isolani, hängende Bauern, Minderheitsangriff,

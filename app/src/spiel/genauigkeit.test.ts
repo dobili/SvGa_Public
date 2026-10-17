@@ -94,11 +94,12 @@ describe("Genauigkeit und Spielstärke", () => {
     expect(partiegenauigkeit([{ genauigkeit: 0, gewicht: 1 }])).toBeCloseTo(0.5, 5);
   });
 
-  it("Schätzung aus dem Verlust je Zug: 0,4 → 1800, 1,0 → 1100, dazwischen linear, Mindestwert", () => {
-    expect(spielstaerkeAus(0.4)).toBe(1800);
-    expect(spielstaerkeAus(1.0)).toBe(1100);
-    expect(spielstaerkeAus(0.46)).toBe(1700);
-    expect(spielstaerkeAus(9)).toBe(500);
+  it("Schätzung aus der Genauigkeit (S18): 90 → 2200, 70 → 1200, dazwischen linear, Mindestwert", () => {
+    expect(spielstaerkeAus(90)).toBe(2200);
+    expect(spielstaerkeAus(70)).toBe(1200);
+    expect(spielstaerkeAus(88)).toBe(2100);
+    expect(spielstaerkeAus(100)).toBe(2900);
+    expect(spielstaerkeAus(10)).toBe(500);
   });
 
   it("Bilanz je Seite: Zeichen, beste Züge, Genauigkeit; Schätzung erst ab zehn Zügen", () => {
@@ -111,7 +112,8 @@ describe("Genauigkeit und Spielstärke", () => {
     const s = spielstaerke(p, werte, urteile, beste, gespielte);
     expect(s.white.zuege).toBe(4);
     expect(s.white.beste).toBe(2);
-    expect(s.white.zeichen).toEqual({ "!!": 0, "!": 1, "?!": 1, "?": 0, "??": 0 });
+    // 4. Dxf7# ist einziger Zug, aber danach klar gewonnen: kein „!“ (0.2.51).
+    expect(s.white.zeichen).toEqual({ "!!": 0, "!": 0, "?!": 1, "?": 0, "??": 0 });
     expect(s.white.spielstaerke).toBeNull();
     expect(s.black.zeichen["??"]).toBe(1);
     expect(s.black.genauigkeit).toBeLessThan(s.white.genauigkeit ?? 0);

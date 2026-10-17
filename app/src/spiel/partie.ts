@@ -14,6 +14,7 @@ import type { Fehlerart } from "../engine/fehlerart";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 import { partieendeDurchZeit, partieendeNach, type Partieende } from "./ergebnis";
+import { steineMoeglich } from "./umwandlung";
 import { neueUhr, type Uhreinstellung, type Uhrstand } from "./uhr";
 import { fenNach, regelstellung } from "./zuege";
 
@@ -111,8 +112,20 @@ export function neuePartie(
   return { id, begonnen, einstellung, zuege: [], ruecknahmen: 0, uhr, ende: null };
 }
 
-/** Kann man aus dieser Stellung eine Partie beginnen (legal, mit Zügen, beide Könige)? */
+/**
+ * Kann man aus dieser Stellung eine Partie beginnen (legal, mit Zügen, beide Könige, und nicht
+ * mehr Figuren, als durch Umwandlung entstehen können; sonst verweigert Stockfish die Stellung)?
+ */
 export function spielbar(fen: string): boolean {
+  const pos = ladbar(fen) ? regelstellung(fen) : null;
+  return pos !== null && steineMoeglich(pos.board, "white") && steineMoeglich(pos.board, "black");
+}
+
+/**
+ * Lässt sich eine gespeicherte Partie mit dieser Startstellung laden? Wie spielbar, aber ohne
+ * die Prüfung der Umwandlungen, damit ältere Partien eines Lesers nicht verloren gehen.
+ */
+export function ladbar(fen: string): boolean {
   const pos = regelstellung(fen);
   return pos !== null && !pos.isEnd();
 }

@@ -21,7 +21,7 @@ import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 import type { Partieende } from "../spiel/ergebnis";
 import {
-  spielbar,
+  ladbar,
   stellungen,
   type Gegnerart,
   type Partie,
@@ -293,7 +293,7 @@ function hilfenAus(roh: unknown): Spielhilfen {
 }
 
 function einstellungAus(roh: unknown): Partie["einstellung"] | null {
-  if (!istObjekt(roh) || typeof roh.startFen !== "string" || !spielbar(roh.startFen)) return null;
+  if (!istObjekt(roh) || typeof roh.startFen !== "string" || !ladbar(roh.startFen)) return null;
   const eigeneFarbe = farbeAus(roh.eigeneFarbe);
   const stufe = auswahl(STUFENNUMMERN, roh.stufe);
   if (!eigeneFarbe || !stufe) return null;

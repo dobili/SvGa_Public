@@ -166,3 +166,15 @@
   text-align: right;
   white-space: nowrap;
 }
+
+/* Denkroutine-Trainer: Kandidat und Antwort nebeneinander, auch auf schmalen Geräten. */
+.denkzeile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(var(--raster) / 2);
+}
+
+.denkzeile .suchfeld {
+  width: 100%;
+  min-width: 0;
+}

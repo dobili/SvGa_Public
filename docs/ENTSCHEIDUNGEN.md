@@ -2411,7 +2411,7 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
       **Empfehlung:** so lassen. Ein Balken während der Partie verrät, wer besser steht, und nimmt
       dir das eigene Urteil ab.
 
-## 64 Gegner mit Porträts (18.10.2026 nachts, Fable, Zweig `bots-galerie`, Version 0.2.65)
+## 64 Gegner mit Porträts (18.10.2026 nachts, Fable, Zweig `bots-galerie`, Version 0.2.67)
 
 Wunsch des Autors (18.10.2026, mit Bildschirmfoto der Bot-Auswahl von chess.com): acht Bots je
 Spielstärke mit verschiedenen Stärken und Schwächen, Auswahl mit Porträts, freie Bilder in
@@ -2452,7 +2452,7 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   Stufe ihres Durchschnitts, sechs Partien je Paarung. **Erster Befund (Stufe 1 bis 4, 0.2.65):**
   Bots mit kurzer Fehlerliste spielten stärker als ihre Stufe (Jonas 6:0, Pit 6:0, Timo 6:0,
   zehn weitere 4,5:1,5 oder besser), weil die Fehlersuche mit vier erlaubten Arten in den meisten
-  Stellungen gar keinen Fehler fand und dann den besten Zug spielte. Deshalb seit 0.2.66
+  Stellungen gar keinen Fehler fand und dann den besten Zug spielte. Deshalb seit 0.2.68
   (`engine/fehlersuche.ts`, `mitFehlerliste`): Die Liste bestimmt die Art, nicht die Menge.
   Passt keine erlaubte Art zur Stellung, bleibt eine Ungenauigkeit bis zu einem Bauern (im
   Protokoll „ungenau“). Das gilt auch für eigene Gegner und die Abhakliste (Hinweistexte
@@ -2460,10 +2460,10 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
   Abschnitts.
 
-## Werkzeugabweichungen aus der Textarbeit geprüft (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.66)
+## Werkzeugabweichungen aus der Textarbeit geprüft (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.68)
 
 Die Helfer der Textarbeit (AP 14, 15.10.2026, Stand 0.2.25) hatten zwölf Gruppen von
-Werkzeugausgaben notiert, die vom Buch abweichen (Liste bis 0.2.65 in FORTSCHRITT unter AP 14).
+Werkzeugausgaben notiert, die vom Buch abweichen (Liste bis 0.2.67 in FORTSCHRITT unter AP 14).
 Nach Regel 9 jetzt ohne Rückfrage geprüft: Jede genannte Abbildung durch das heutige Werkzeug
 gerechnet und mit dem Buch verglichen. Ergebnis: Von den zwölf Gruppen waren neun seit den
 Rückfragen C1 bis C9 und den Versionen 0.2.26 bis 0.2.62 schon erledigt, zwei fehlten noch und
@@ -2548,3 +2548,10 @@ Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `an
   `ui/trainer/FehlerFormular.tsx`, Knopf „In die Fehlerdatenbank“ in der Rückblickkarte.
 - Nutzerdaten Format 4 mit dem Feld „fehler“; Format 3 und älter lesen sich mit leerer Liste.
 - Entscheidungen wie in F1 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.
+
+## Denkroutine-Trainer (18.10.2026 nachts, Opus, Zweig `denkroutine`, Version 0.2.66)
+
+- Trainer „denkroutine“ fertig (AP 13, Stufe 3): `training/denkroutinetrainer.ts` (Stellungen,
+  Lesen der Eingaben, Urteil), `ui/trainer/Denkroutineaufgabe.tsx`, `ui/trainer/useDenkvergleich.ts`
+  (Engine nacheinander: bester Zug, nur die Kandidaten, je Kandidat die stärkste Antwort).
+- Entscheidungen wie in F2 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.

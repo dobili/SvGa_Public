@@ -13,6 +13,7 @@
 import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { ladeBuchstellungen, type Buchstellung } from "../../training/buchstellungen";
+import { denkrunde } from "../../training/denkroutinetrainer";
 import { faktorenrunde } from "../../training/faktorentrainer";
 import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentrainer";
 import { roentgenrunde } from "../../training/roentgentrainer";
@@ -40,6 +41,7 @@ import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
 import { Zielbilanzaufgabe } from "../trainer/Zielbilanzaufgabe";
 import { Faktorenaufgabe } from "../trainer/Faktorenaufgabe";
+import { Denkroutineaufgabe } from "../trainer/Denkroutineaufgabe";
 
 export type Uebungsart =
   | "bilanz"
@@ -50,7 +52,8 @@ export type Uebungsart =
   | "ausfuehren"
   | "gangarten"
   | "zielbilanz"
-  | "faktoren";
+  | "faktoren"
+  | "denkroutine";
 
 /** Die Übungsarten der spielbaren Trainer, in der Reihenfolge der Auswahl. */
 const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[]>>> = {
@@ -59,6 +62,7 @@ const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[
   koordinaten: ["felder", "notieren", "ausfuehren", "gangarten"],
   zielbilanz: ["zielbilanz"],
   faktorenbilanz: ["faktoren"],
+  denkroutine: ["denkroutine"],
 };
 
 /** Aufgaben je Runde: kurze Runden passen in eine Pause, „Feld finden“ geht schnell. */
@@ -72,6 +76,8 @@ const ANZAHL: Readonly<Record<Uebungsart, number>> = {
   gangarten: 8,
   zielbilanz: 5,
   faktoren: 5,
+  // Je Stellung eine Minute Denkzeit und die Rechnung der Engine: drei Stellungen je Runde.
+  denkroutine: 3,
 };
 
 /** Erzeugt die Aufgaben einer Runde, jede schon mit ihrer Darstellung. */
@@ -111,6 +117,10 @@ function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstell
     case "faktoren":
       return faktorenrunde(stellungen, n, ZUFALL).map((a) => (r) => (
         <Faktorenaufgabe aufgabe={a} runde={r} />
+      ));
+    case "denkroutine":
+      return denkrunde(stellungen, n, ZUFALL).map((a) => (r) => (
+        <Denkroutineaufgabe aufgabe={a} runde={r} />
       ));
   }
 }

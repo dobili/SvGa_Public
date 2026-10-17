@@ -3,7 +3,11 @@
  * Gangarten), Zähltrainer (Bilanz, hängende Figuren), Schach-Röntgen-Trainer. Die Aufgaben sind
  * zufällig; die Tests lesen deshalb den Auftrag oder prüfen nur den Ablauf.
  */
+import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
+import { Chess } from "chessops/chess";
+import { parseFen } from "chessops/fen";
+import { makeSan } from "chessops/san";
 import { starteImBrowser } from "./hilfen";
 
 async function oeffneTrainer(page: Page, kennung: string): Promise<void> {
@@ -345,4 +349,75 @@ test("Fehlerdatenbank: Eintrag mit FEN, Auswertung mit Vorschlag, Löschen", asy
   });
   await eintrag.getByRole("button", { name: "Eintrag löschen" }).click();
   await expect(page.getByTestId("fehlerdb-leer")).toBeVisible();
+});
+
+test("Denkroutine: eine Minute, dann Eingabe; ohne Antwort unvollständig", async ({ page }) => {
+  await page.clock.install();
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "denkroutine");
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 3");
+  const weiter = page.getByTestId("denk-weiter");
+  await expect(weiter).toBeDisabled();
+  await expect(weiter).toContainText("Sekunden nachdenken");
+  await page.clock.fastForward(61_000);
+  // Danach läuft die Zeit normal weiter (sonst warten Klicks auf Animationsbilder).
+  await page.clock.resume();
+  await expect(weiter).toBeEnabled();
+  await weiter.click();
+  await runde.getByLabel("Kandidat 1", { exact: true }).fill("Zz9");
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("denk-pruefung")).toContainText("ist hier kein regelgerechter Zug");
+  await expect(page.getByTestId("denk-pruefung")).toContainText("Kandidat 2 fehlt.");
+  await expect(runde).toContainText("Zu jedem Kandidaten gehört die stärkste Antwort");
+  await page.screenshot({ path: "test-results/bilder/trainer-denkroutine.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 3");
+});
+
+/** Zwei regelgerechte Kandidaten mit je einer Antwort für eine Abbildung (aus den Buchdaten). */
+function kandidatenFuer(nummer: string): [string, string][] {
+  const datei = `public/daten/de/a1/kap${nummer.split(".")[0]?.padStart(2, "0")}.json`;
+  const kapitel = JSON.parse(readFileSync(datei, "utf8")) as {
+    abbildungen: { id: string; fen: string }[];
+  };
+  const fen = kapitel.abbildungen.find((a) => a.id === nummer)?.fen ?? "";
+  const pos = Chess.fromSetup(parseFen(fen).unwrap()).unwrap();
+  const paare: [string, string][] = [];
+  for (const [von, ziele] of pos.allDests()) {
+    for (const nach of ziele) {
+      const zug = { from: von, to: nach };
+      const danach = pos.clone();
+      const san = makeSan(pos, zug);
+      danach.play(zug);
+      const antwort = [...danach.allDests()].flatMap(([v, z]) =>
+        [...z].map((n) => ({ from: v, to: n })),
+      )[0];
+      if (antwort && !san.includes("=")) paare.push([san, makeSan(danach, antwort)]);
+      if (paare.length === 2) return paare;
+    }
+  }
+  return paare;
+}
+
+test("Denkroutine: zwei Kandidaten mit Antwort, Vergleich mit der Engine", async ({ page }) => {
+  await page.clock.install();
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "denkroutine");
+  const runde = page.getByTestId("trainerrunde");
+  const brett = runde.getByRole("img", { name: /^Stellung aus Abb\. / });
+  const nummer = ((await brett.getAttribute("aria-label")) ?? "").replace("Stellung aus Abb. ", "");
+  await page.clock.fastForward(61_000);
+  await page.clock.resume();
+  await page.getByTestId("denk-weiter").click();
+  for (const [i, [kandidat, antwort]] of kandidatenFuer(nummer).entries()) {
+    await runde.getByLabel(`Kandidat ${i + 1}`, { exact: true }).fill(kandidat);
+    await runde.getByLabel(`Stärkste Antwort auf Kandidat ${i + 1}`).fill(antwort);
+  }
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("denk-pruefung")).toContainText("vollständig");
+  const vergleich = page.getByTestId("denk-vergleich");
+  await expect(vergleich).toContainText("Bester Zug laut Engine", { timeout: 30_000 });
+  await expect(vergleich).toContainText("Dein Kandidat");
+  await expect(runde.getByRole("button", { name: "Weiter" })).toBeVisible();
 });

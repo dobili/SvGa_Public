@@ -2473,3 +2473,10 @@ Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `an
   `ui/trainer/FehlerFormular.tsx`, Knopf „In die Fehlerdatenbank“ in der Rückblickkarte.
 - Nutzerdaten Format 4 mit dem Feld „fehler“; Format 3 und älter lesen sich mit leerer Liste.
 - Entscheidungen wie in F1 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.
+
+## Denkroutine-Trainer (18.10.2026 nachts, Opus, Zweig `denkroutine`, Version 0.2.66)
+
+- Trainer „denkroutine“ fertig (AP 13, Stufe 3): `training/denkroutinetrainer.ts` (Stellungen,
+  Lesen der Eingaben, Urteil), `ui/trainer/Denkroutineaufgabe.tsx`, `ui/trainer/useDenkvergleich.ts`
+  (Engine nacheinander: bester Zug, nur die Kandidaten, je Kandidat die stärkste Antwort).
+- Entscheidungen wie in F2 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.

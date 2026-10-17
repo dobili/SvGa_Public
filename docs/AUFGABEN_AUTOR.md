@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.65. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.66. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.65“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.66“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,19 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.65“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.66“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.66 (etwa 10 Minuten, mit Engine; Denkroutine-Trainer, Opus)
+
+- [ ] N302. **Denkroutine-Trainer:** Training › Kapitel 12 › „Denkroutine-Trainer“ › Trainieren.
+      Eine Stellung aus Kapitel 7, 11 oder 12; der Knopf zählt eine Minute herunter („Noch 59
+      Sekunden nachdenken“) und öffnet erst danach die Eingabe. Zwei Kandidaten mit je der
+      stärksten Antwort eintippen (in Buchnotation, etwa „Lxh7+“ und „Kxh7“), „Prüfen“. Fehlt eine
+      Antwort oder ist ein Zug nicht regelgerecht, sagt die App das. Sonst rechnet die Engine:
+      bester Zug mit Wert, je Kandidat sein Wert und die stärkste Antwort („wie du sie gesehen
+      hast“ oder „du hattest …“). Drei Stellungen je Runde. Auf dem Handy stehen Kandidat und
+      Antwort nebeneinander, ohne über den Rand zu laufen. Siehe F2.
 
 ### Neu in 0.2.65 (etwa 10 Minuten; Fehlerdatenbank, Opus)
 
@@ -790,6 +801,15 @@ Regeln C1 und C2).
       auch bei guten (ein Fehler zeigt sich manchmal erst einen Zug später). Die Einträge stehen in
       deinen Nutzerdaten (Format 4) und kommen mit in die Datensicherung.
       **Empfehlung:** so lassen. Schon umgesetzt in 0.2.65, Widerspruch genügt.
+
+- [ ] F2. **Denkroutine-Trainer (0.2.66):** Stellungen aus Kapitel 7, 11 und 12 (Taktik,
+      Meisterpartien, Denkroutine), ohne Schach, mit mindestens zehn Steinen und acht Zügen zur
+      Wahl; drei je Runde. Die Minute ist fest, ohne Abkürzung. Die Eingabe ist Text in
+      Buchnotation (englische Buchstaben gehen auch), weil zwei Kandidaten und zwei Antworten auf
+      dem Brett schwer auseinanderzuhalten sind. Gelöst, wenn zu beiden Kandidaten eine
+      regelgerechte Antwort steht und der bessere Kandidat höchstens 0,5 Bauern hinter dem Zug der
+      Engine liegt; ob die Antwort die stärkste war, zeigt die App, zählt aber nicht.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.66, Widerspruch genügt.
 
 ### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 

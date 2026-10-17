@@ -110,10 +110,10 @@ function begrenzt(wert: number): number {
 
 /**
  * Zeichen zu einem Verlust; unter 0,5 keins. Mit dem Wert nach dem Zug (eigene Sicht): ab +5
- * höchstens „?!“ (K5, wie in klasseVon).
+ * höchstens „?!“, und das erst ab 3 (K5, wie in klasseVon).
  */
 export function zeichenFuer(verlust: number, wertNachher = 0): Zugzeichen | null {
-  if (wertNachher >= KLAR_GEWONNEN && verlust >= GRENZE_UNGENAU) return "?!";
+  if (wertNachher >= KLAR_GEWONNEN) return verlust >= GRENZE_PATZER ? "?!" : null;
   if (verlust >= GRENZE_PATZER) return "??";
   if (verlust >= GRENZE_FEHLER) return "?";
   return verlust >= GRENZE_UNGENAU ? "?!" : null;
@@ -149,16 +149,21 @@ function verpasst(verlust: number, u: Zugumstaende): boolean {
  *
  * Beispiel: 2... Sf6?? nach 2. Dh5 verliert 3 → patzer; 3. Lc4 als bester Zug nach dem Patzer →
  * stark; 2. Th8+ in Abb. 7.14 (bester Zug, gibt den Turm, Stellung vorher nicht gewonnen) → brillant.
- * Sonderfall: Nach dem Zug noch mindestens +5 → höchstens „ungenau“ (Matt in 2 zu +5).
+ * Sonderfall: Nach dem Zug noch mindestens +5 → höchstens „ungenau“ (Matt in 2 zu +5), und das
+ * erst ab 3 Verlust; darunter „gut“ (seit 0.2.51: In der Stufe-3-Partie des Autors bekam Weiß 15
+ * „?!“ in gewonnener Stellung, chess.com zwei, weil die Gewinnchance dort kaum sinkt).
  * Sonderfall: Ein Zug, der ohne Verlust nicht der Zug der Engine ist, ist „sehr gut“ (gleichwertig),
  * nicht „bester“. Brillant darf seit 0.2.51 auch ein Opfer sein, das bis 0,2 hinter dem besten Zug
  * liegt, und auch in gewonnener Stellung (chess.com gibt 16. Db8+!! in der Opernpartie, Abb. 11.4,
- * ebenso); „stark“ gibt es nur, solange die Stellung nach dem Zug nicht klar gewonnen ist (sonst
- * bekäme in einem Mattangriff jeder Zug ein „!“: Opernpartie neun statt eins bei chess.com).
+ * ebenso); „stark“ gibt es nur, solange die Stellung nach dem Zug nicht entschieden ist (ab ±5; sonst
+ * bekäme in einem Mattangriff jeder Zug ein „!“, Opernpartie neun statt eins bei chess.com, und
+ * die verlierende Seite für jeden einzigen Zug, der nicht sofort verliert: acht „!“ statt null).
  */
 export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
-  const nochKlarGewonnen = u.wertVorher - verlust >= KLAR_GEWONNEN;
-  if (nochKlarGewonnen && verlust >= GRENZE_UNGENAU) return "ungenau";
+  const wertNachher = u.wertVorher - verlust;
+  const nochKlarGewonnen = wertNachher >= KLAR_GEWONNEN;
+  if (nochKlarGewonnen && verlust >= GRENZE_PATZER) return "ungenau";
+  if (nochKlarGewonnen && verlust >= GRENZE_UNGENAU) return "gut";
   if (verpasst(verlust, u)) return "verpasst";
   if (verlust >= GRENZE_PATZER) return "patzer";
   if (verlust >= GRENZE_FEHLER) return "fehler";
@@ -167,7 +172,8 @@ export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
   const fastBester = u.warBester || verlust < SEHR_GUT_UNTER;
   if (fastBester && u.opfer) return "brillant";
   const bestraft = u.vorherVerlust >= GRENZE_FEHLER;
-  if (u.warBester && (u.einziger || bestraft) && !nochKlarGewonnen) return "stark";
+  const entschieden = Math.abs(wertNachher) >= KLAR_GEWONNEN;
+  if (u.warBester && (u.einziger || bestraft) && !entschieden) return "stark";
   if (u.warBester) return "bester";
   return verlust < SEHR_GUT_UNTER ? "sehrGut" : "gut";
 }

@@ -180,7 +180,13 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
   it("noch klar gewonnen (ab +5 nach dem Zug): höchstens ungenau (Empfehlung K5)", () => {
     // Matt in 2 (Wert 10) zu +5: Verlust 5, aber weiter klar gewonnen.
     expect(klasseVon(5, { ...ruhig, wertVorher: 10 })).toBe("ungenau");
-    expect(klasseVon(1.5, { ...ruhig, wertVorher: 10, vorherVerlust: 2 })).toBe("ungenau");
+    // Unter 3 Verlust in klar gewonnener Stellung nur „gut“ (0.2.51, Vergleich mit chess.com).
+    expect(klasseVon(1.5, { ...ruhig, wertVorher: 10, vorherVerlust: 2 })).toBe("gut");
+    expect(klasseVon(3, { ...ruhig, wertVorher: 10 })).toBe("ungenau");
+    // Klar verloren nach dem Zug: der einzige Zug ist nur „bester“, kein „!“.
+    expect(klasseVon(0, { ...ruhig, warBester: true, einziger: true, wertVorher: -6 })).toBe(
+      "bester",
+    );
     // Von +10 auf +4,9 ist der Gewinn nicht mehr sicher: weiter „??“.
     expect(klasseVon(5.1, { ...ruhig, wertVorher: 10 })).toBe("patzer");
     expect(klasseVon(0.1, { ...ruhig, wertVorher: 10 })).toBe("sehrGut");

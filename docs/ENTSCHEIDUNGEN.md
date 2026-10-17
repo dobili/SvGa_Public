@@ -1583,6 +1583,23 @@ eine ruhige Berliner Partie mit Remis) und die Screenshots geschickt; dazu seine
   „einziger Zug“ oder „bestraft einen Fehler“), chess.com ein „Großartig“. Jetzt gibt es „stark“
   nur, solange die Stellung nach dem Zug nicht klar gewonnen ist (ab +5, dieselbe Grenze wie K5);
   das Matt 4. Dxf7# bekommt damit kein „!“ mehr.
+- **Rechenzeit während der Partie:** Der Autor hat bei chess.com (Diamant) „Maximal“ statt
+  „Standard“ probiert: seine Stufe-3-Partie 77,2 statt 76,1 und 68,6 statt 67,8, die drei
+  Vergleichspartien ebenso um ein bis zwei Punkte; mehr Tiefe ändert die Zahlen also kaum, nur
+  einzelne Fehlurteile. Weil die Auswertung während der Partie läuft, solange der Leser nachdenkt,
+  rechnet sie dort jetzt 2 s je Stellung (statt 0,5 s); nach dem Ende bleiben 0,5 s, damit die
+  restlichen Stellungen schnell fertig sind. Ein Auftrag des Lesers bricht die Hintergrundrechnung
+  wie bisher ab.
+- **Stufe-3-Partie des Autors (52 Züge, geblitzt auf 0.2.49):** chess.com 76,1 und 67,8
+  (Maximal 77,2 und 68,6), die App 76 bis 79 und 76 bis 77 je Rechenlauf. Zwei Abweichungen in
+  den Klassen: Weiß bekam 15 „?!“ in klar gewonnener Stellung (chess.com zwei), weil K5 jeden
+  Verlust ab 0,5 dort als „ungenau“ zählte, obwohl die Gewinnchance bei +8 kaum sinkt; jetzt
+  gibt es in klar gewonnener Stellung (ab +5 nach dem Zug) „?!“ erst ab 3 Verlust, darunter
+  „gut“ (auch in der Engine-Karte, zeichenFuer). Und die Engine bekam acht „!“ (chess.com null),
+  weil in verlorener Stellung jeder Zug, der nicht sofort noch mehr verliert, „einziger Zug“ ist;
+  „stark“ gibt es jetzt nur, solange die Stellung nach dem Zug nicht entschieden ist (ab ±5).
+  Danach: Weiß ungenau 2, verpasst 3, Patzer 1 (chess.com 2, 3, 1); Schwarz Fehler 7, verpasst
+  4 (chess.com 8, 4).
 - **S18 umgesetzt:** Die geschätzte Spielstärke kommt aus der Genauigkeit (Stützstellen 100 → 2900,
   97 → 2700, 95 → 2500, 90 → 2200, 85 → 1900, 80 → 1600, 75 → 1400, 70 → 1200, 60 → 900, 50 → 600,
   darunter 500; Erfahrungswerte aus den Durchschnitten bei Lichess und chess.com). Beispielpartie

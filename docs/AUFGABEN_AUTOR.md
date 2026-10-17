@@ -40,7 +40,18 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.51“, dann 
       schon. Sieht die Engine in einer Stellung kurz etwas ganz anderes als davor und danach
       (Sprung um drei Bauern hin und sofort zurück), rechnet die Auswertung diese Stellung am Ende
       noch einmal vier Sekunden lang nach; die Anzeige „läuft … von …“ dauert dann etwas länger.
-- [ ] N262. **Fallen aus den Eröffnungskapiteln** (T4): Training › „Falle oder Köder“ › Runde. Neben
+      Während der Partie rechnet die Auswertung im Hintergrund jetzt 2 s je Stellung (dein
+      Wunsch nach dem Versuch mit „Maximal“ bei chess.com); das Handy wird dabei etwas wärmer, und
+      nach dem Ende fehlen meist nur die letzten Stellungen.
+- [ ] N262. **Weniger „?!“ und „!“ in entschiedener Stellung:** Deine geblitzte Stufe-3-Partie
+      vom 17.10.2026 (1. d4 Sf6 2. Lg5 Se4 3. h4 …, 52 Züge) hätte dir bisher 15 „?!“ gegeben
+      (chess.com 2), weil in klar gewonnener Stellung jeder Verlust ab 0,5 Bauern ein „?!“ war.
+      Jetzt gibt es dort „?!“ erst ab drei Bauern, darunter „gut“; Karte „Spielstärke“: Ungenau
+      2, Verpasst 3, Patzer 1 (chess.com 2, 3, 1), Genauigkeit etwa 76 bis 79 (chess.com 76,1,
+      mit „Maximal“ 77,2). Die Engine bekommt in verlorener Stellung kein „!“ mehr für den
+      einzigen Zug, der nicht sofort noch mehr verliert (vorher 8, chess.com 0). Die Rückblickkarte
+      sagt bei solchen Zügen „… ist in Ordnung (1,5 hinter …)“ statt „?!“.
+- [ ] N263. **Fallen aus den Eröffnungskapiteln** (T4): Training › „Falle oder Köder“ › Runde. Neben
       den zwölf Fallenchecks aus Kapitel 4 kommen jetzt auch die Schläge mit Fragezeichen aus den
       Zugfolgen der Kapitel 2 und 3 dran (zum Beispiel 7… Sxd4?? im Schottischen Gambit, Abb.
       3.33, oder 10… Lxa1? nach 9… Lxc3?! in Kapitel 2). Unten steht wie bisher „Aus dem Buch: Abb.
@@ -951,7 +962,7 @@ hat, mit Rückfrage:
       Damengambit)? Die Pipeline könnte sie genauso ziehen.
       **Empfehlung:** ja. Fallen aus den Eröffnungen des Buches sind genau die, in die Leser später
       tappen; die Pipeline kann sie mit wenig Aufwand gleich ziehen (Fable).
-      **Schon umgesetzt in 0.2.51 (Nachtest N262): jeder Schlag mit Fragezeichen in den Zugfolgen
+      **Schon umgesetzt in 0.2.51 (Nachtest N263): jeder Schlag mit Fragezeichen in den Zugfolgen
       der Kapitel 2 und 3, den die Engine als Falle bestätigt. Widerspruch genügt.**
 - [ ] T5. **Strukturerkenner:** 134 Aufgaben, davon 46 aus Kapitel 5 mit Struktur, Seite und
       Plan nach dem Unterabschnitt, in dem das Buch die Abbildung zeigt, und 88 aus anderen

@@ -23,8 +23,15 @@ import { stellungen, type Partie } from "../../spiel/partie";
 import { mitWerten, type Partieeintrag } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
 
-/** Rechenzeit je Stellung: 40 Züge brauchen so etwa 40 Sekunden. */
+/**
+ * Rechenzeit je Stellung nach dem Ende der Partie: 40 Züge brauchen so etwa 40 Sekunden.
+ * Während der Partie, solange der Leser nachdenkt, rechnet die Engine länger (Wunsch des Autors,
+ * 17.10.2026: Die Zeit ist ohnehin da; chess.com „Maximal“ ändert die Zahlen nur um einen Punkt,
+ * aber einzelne Fehlurteile bei kurzer Rechenzeit werden seltener). Braucht der Leser die Engine
+ * (Hinweis, Werkzeug, Zug der Engine), bricht der Auftrag ab und die Stellung kommt später dran.
+ */
 const RECHENZEIT_MS = 500;
+const RECHENZEIT_IM_SPIEL_MS = 2000;
 /**
  * Nachprüfung verdächtiger Stellungen (spiel/auswertung.ts, ausreisser) mit mehr Rechenzeit: Ein
  * Wert, der um 3 springt und sofort zurückspringt, ist bei 500 ms meist ein Fehler der Engine.
@@ -163,7 +170,8 @@ export function useAuswertung(
         if (!aktiv) return;
         if (werte[i]) continue;
         if (nachher) setzeStand({ art: "laeuft", erledigt: i, gesamt: alle.length });
-        const ergebnis = await bewerteStellung(alle[i] ?? "", () => aktiv);
+        const rechenzeit = nachher ? RECHENZEIT_MS : RECHENZEIT_IM_SPIEL_MS;
+        const ergebnis = await bewerteStellung(alle[i] ?? "", () => aktiv, rechenzeit);
         if (!ergebnis) return;
         werte[i] = ergebnis;
       }

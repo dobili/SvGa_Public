@@ -2422,5 +2422,8 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
   Auftragsverarbeiter (Art. 6 Abs. 1 lit. f DSGVO, Übermittlung in die USA nach dem EU-US Data
   Privacy Framework), E-Mail, Rechte nach Art. 15 bis 21 DSGVO, Beschwerde bei der
   Landesbeauftragten für den Datenschutz Niedersachsen. E1 und E2 erledigt, Nachtest N294.
+- Nachtrag: Cloudflare leitet die E-Mails an ein Postfach bei goneo weiter (Angabe des Autors);
+  goneo steht als Auftragsverarbeiter im Datenschutz. Die Zieladresse selbst steht nicht im
+  Repository.
 - Bekannt und vom Autor so gewollt: Name und Anschrift stehen damit dauerhaft im öffentlichen
   Repository.

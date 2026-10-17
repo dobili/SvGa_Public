@@ -4,8 +4,11 @@
  * Rolle im Gesamtbild: Trainer „zugErraten“ (AP 13, Stufe 3). Der Leser zieht für seine Seite;
  * die App sagt „getroffen“ oder nennt den Partiezug, stellt ihn aufs Brett und spielt den
  * nächsten Zug der Gegenseite. Am Ende zählt die Runde die Partie als gut geraten, wenn
- * mindestens die Hälfte der Züge getroffen ist.
- * Abhängigkeiten: training/studientrainer.ts, training/repertoiretrainer.ts, Brettbereich.
+ * mindestens die Hälfte der Züge getroffen ist. Nach einem verfehlten Zug vergleicht die Engine
+ * den eigenen Zug mit dem Partiezug und erinnert an die Frage des Buches, warum der Meister anders
+ * zog (W12, Kapitel 12: „erst selbst denken und dann vergleichen“).
+ * Abhängigkeiten: training/studientrainer.ts, training/repertoiretrainer.ts, useRatevergleich,
+ * Brettbereich.
  */
 import { useMemo, useState } from "react";
 import { sprache, t } from "../../i18n/sprache";
@@ -23,6 +26,7 @@ import { stellungNach } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
+import { useRatevergleich, type Fehlversuch, type Vergleichsstand } from "./useRatevergleich";
 import type { Runde } from "./useRunde";
 
 const KEINE_WAHL = () => undefined;
@@ -32,10 +36,28 @@ const SICHTBARE_ZUEGE = 8;
 /** Meldung zum letzten Rateversuch: getroffen oder der Partiezug. */
 type Meldung = { readonly getroffen: true } | { readonly getroffen: false; readonly zug: string };
 
+/** Die Zeile zum Vergleich: rechnet, gleichwertig, schwächer oder stärker, dazu die Warum-Frage. */
+function Vergleich({ stand }: { stand: Vergleichsstand | null }) {
+  if (!stand) return null;
+  const urteil = stand.art === "fertig" ? stand.urteil : null;
+  return (
+    <p className="hinweis" data-testid="zugerraten-vergleich">
+      {stand.art === "rechnet" && t("zugerraten.vergleich.rechnet")}
+      {urteil &&
+        t(`zugerraten.vergleich.${urteil.art}`, {
+          unterschied: urteil.unterschied.toFixed(1).replace(".", ","),
+        })}{" "}
+      {t("zugerraten.warum")}
+    </p>
+  );
+}
+
 export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   const [zuege, setzeZuege] = useState<readonly string[]>(() => anfang(aufgabe));
   const [stand, setzeStand] = useState<Ratestand>({ versuche: 0, treffer: 0 });
   const [meldung, setzeMeldung] = useState<Meldung | null>(null);
+  const [fehlversuch, setzeFehlversuch] = useState<Fehlversuch | null>(null);
+  const vergleich = useRatevergleich(fehlversuch);
   const fen = stellungNach(aufgabe.startFen, zuege);
   const fertig = runde.ergebnis !== null;
   const spiele = (von: string, nach: string, umwandlung?: Rolle) => {
@@ -52,6 +74,7 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
     setzeStand(neuerStand);
     setzeZuege(neu);
     setzeMeldung(getroffen ? { getroffen } : { getroffen, zug: partiezug });
+    setzeFehlversuch(getroffen ? null : { vorherFen: fen, eigen: versuch.san, partie: partiezug });
     if (neu.length >= aufgabe.linie.length) runde.beantworte(gutGeraten(neuerStand));
     return "gespielt" as const;
   };
@@ -91,6 +114,7 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
             : t("zugerraten.partiezug", { zug: sanInSprache(meldung.zug, sprache()) })}
         </p>
       )}
+      {meldung && !meldung.getroffen && <Vergleich stand={vergleich} />}
       <p data-testid="zugerraten-stand">{t("zugerraten.stand", { ...stand })}</p>
       {fertig && (
         <Antwortmeldung richtig={runde.ergebnis === true}>{t("zugerraten.ende")}</Antwortmeldung>

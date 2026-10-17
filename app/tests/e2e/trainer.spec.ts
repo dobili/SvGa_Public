@@ -314,5 +314,9 @@ test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", a
   await feld(page, "d4").click();
   await expect(runde).toContainText("In der Partie geschah Sf3.");
   await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 2");
+  // W12: Die Engine vergleicht 2. d4 mit 2. Sf3, dazu die Frage aus Kapitel 12.
+  const vergleich = page.getByTestId("zugerraten-vergleich");
+  await expect(vergleich).toContainText("warum der Meister anders zog");
+  await expect(vergleich).toContainText(/Dein Zug ist laut Engine/, { timeout: 20_000 });
   await page.screenshot({ path: "test-results/bilder/trainer-zugerraten.png", fullPage: true });
 });

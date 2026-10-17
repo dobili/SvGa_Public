@@ -19,10 +19,10 @@ import {
 import { ZUFALL } from "../../training/zufall";
 import { useDaten } from "../komponenten/useDaten";
 import { Rundenablauf } from "./Rundenablauf";
+import { Stufenwahl } from "./Stufenwahl";
 import { Taktikaufgabe } from "./Taktikaufgabe";
 
 const AUFGABEN_JE_RUNDE = 8;
-const STUFEN = [1, 2, 3, 4, 5] as const;
 const THEMEN: readonly Taktikthema[] = ["gemischt", "mattbilder", ...MOTIVE];
 
 function themenname(thema: Taktikthema): string {
@@ -57,29 +57,7 @@ function Wahl({
           </button>
         ))}
       </fieldset>
-      <fieldset className="zahlwahl">
-        <legend>{t("taktiktrainer.stufeWahl")}</legend>
-        <button
-          type="button"
-          className="chip"
-          aria-pressed={stufe === null}
-          onClick={() => setzeStufe(null)}
-        >
-          {t("taktiktrainer.alleStufen")}
-        </button>
-        {STUFEN.map((s) => (
-          <button
-            key={s}
-            type="button"
-            className="chip"
-            aria-pressed={stufe === s}
-            onClick={() => setzeStufe(s)}
-          >
-            {s}
-          </button>
-        ))}
-      </fieldset>
-      <p className="hinweis">{t("taktiktrainer.stufenText")}</p>
+      <Stufenwahl stufe={stufe} setze={setzeStufe} />
       <button type="button" className="knopf-haupt" onClick={() => starte({ thema, stufe })}>
         {t("taktiktrainer.starten")}
       </button>

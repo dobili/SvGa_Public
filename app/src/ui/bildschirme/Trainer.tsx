@@ -25,6 +25,7 @@ import {
 } from "../trainer/Koordinatentrainer";
 import { Roentgenaufgabe } from "../trainer/Roentgentrainer";
 import { Rundenablauf, type Darstellung } from "../trainer/Rundenablauf";
+import { FallenBereich } from "../trainer/FallenBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
 
@@ -140,6 +141,7 @@ function MitBuchstellungen({ kennung }: { kennung: TrainerKennung }) {
 /** Trainer mit eigenen Aufgaben aus den Trainerdaten (AP 13, Fable). */
 const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = {
   taktik: () => <TaktikBereich />,
+  falle: () => <FallenBereich />,
 };
 
 export function Trainer({ kennung }: { kennung: TrainerKennung }) {

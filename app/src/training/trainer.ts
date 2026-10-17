@@ -45,7 +45,7 @@ export const TRAINER: readonly Trainer[] = [
   { kennung: "zielbilanz", kapitel: [2], stufe: 2, fertig: false },
   { kennung: "abweichung", kapitel: [2, 3], stufe: 3, fertig: false },
   { kennung: "faktorenbilanz", kapitel: [3], stufe: 2, fertig: false },
-  { kennung: "falle", kapitel: [4], stufe: 2, fertig: false },
+  { kennung: "falle", kapitel: [4], stufe: 2, fertig: true },
   { kennung: "struktur", kapitel: [5], stufe: 2, fertig: false },
   { kennung: "planbilanz", kapitel: [6], stufe: 3, fertig: false },
   { kennung: "taktik", kapitel: [7], stufe: 2, fertig: true },

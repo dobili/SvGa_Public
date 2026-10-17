@@ -9,6 +9,7 @@
  * Abhängigkeiten: stufen.ts (Stufennummer), schach/phase.ts (Phase), i18n (Beschreibungen).
  */
 import type { Textschluessel } from "../i18n/sprache";
+import type { Fehlerart } from "./fehlerart";
 import type { Phase } from "../schach/phase";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
 
@@ -74,6 +75,42 @@ export function klasseVon(g: Gegner): Stufe {
 /** Der Gegner zu einer Kennung, sonst null. */
 export function gegnerVon(kennung: string | null): Gegner | null {
   return GEGNER.find((g) => g.kennung === kennung) ?? null;
+}
+
+/**
+ * Ein eigener Gegner des Lesers (0.2.42, Wunsch des Autors): Name, Stufen je Phase, erlaubte
+ * Fehlerarten (nur in Stufe 1 bis 4 wirksam; leer: nie ein absichtlicher Fehler) und Stil von −2
+ * (sehr defensiv) bis 2 (sehr aggressiv, engine/stil.ts). Liegt im Speicher (speicher/gegner.ts).
+ */
+export interface EigenerGegner {
+  readonly kennung: string;
+  readonly name: string;
+  readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
+  readonly fehlerarten: readonly Fehlerart[];
+  readonly stil: number;
+}
+
+/** Vorsilbe der Kennungen eigener Gegner (unterscheidet sie von den vorgefertigten). */
+export const EIGENE_VORSILBE = "eigen-";
+
+/** Eine neue, eindeutige Kennung für einen eigenen Gegner. */
+export function neueGegnerkennung(): string {
+  const BASIS = 36;
+  const STELLEN = 5;
+  const zufall = Math.random()
+    .toString(BASIS)
+    .slice(2, 2 + STELLEN);
+  return `${EIGENE_VORSILBE}${Date.now().toString(BASIS)}-${zufall}`;
+}
+
+/** Der Name eines Gegners zur Anzeige: gespeicherter Name, sonst der vorgefertigte; sonst null. */
+export function gegnername(
+  kennung: string | null,
+  botName: string | null | undefined,
+  eigene: readonly EigenerGegner[] = [],
+): string | null {
+  if (botName) return botName;
+  return gegnerVon(kennung)?.name ?? eigene.find((g) => g.kennung === kennung)?.name ?? null;
 }
 
 /** Alle Gegner nach Durchschnitt sortiert, bei Gleichstand nach Mittelspiel. */

@@ -12,7 +12,10 @@
  * engine/stufen.ts.
  */
 import type { Color } from "chessops/types";
-import { FEHLERARTEN } from "../engine/fehlerart";
+import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
+import type { EigenerGegner } from "../engine/gegner";
+import { STIL_MAX, STIL_MIN } from "../engine/stil";
+import { eigeneGegnerAus } from "./gegner";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 import type { Partieende } from "../spiel/ergebnis";
@@ -21,6 +24,7 @@ import {
   stellungen,
   type Gegnerart,
   type Partie,
+  type Partieeinstellung,
   type Partiezug,
   type Spielhilfen,
 } from "../spiel/partie";
@@ -28,6 +32,7 @@ import { neueUhr, type Uhreinstellung, type Uhrstand } from "../spiel/uhr";
 import {
   MAX_WERTUNGSPUNKTE,
   mitGewerteterPartie,
+  OHNE_PHASEN,
   type Punktwert,
   type Wertungspunkt,
 } from "../spiel/wertung";
@@ -73,6 +78,8 @@ export interface Spielstand {
   readonly vorlieben: Spielvorlieben;
   /** Wertungsverlauf des Lesers, älteste zuerst (0.2.41). */
   readonly wertung: readonly Wertungspunkt[];
+  /** Eigene Gegner des Lesers (0.2.42, speicher/gegner.ts). */
+  readonly eigeneGegner: readonly EigenerGegner[];
 }
 
 export const STANDARD_VORLIEBEN: Spielvorlieben = {
@@ -92,6 +99,7 @@ export const LEERER_SPIELSTAND: Spielstand = {
   partien: [],
   vorlieben: STANDARD_VORLIEBEN,
   wertung: [],
+  eigeneGegner: [],
 };
 
 /** Die Partie mit dieser Kennung, laufend oder beendet; null, wenn es sie nicht (mehr) gibt. */
@@ -153,6 +161,14 @@ export function mitWerten(
 
 export function mitVorlieben(stand: Spielstand, vorlieben: Spielvorlieben): Spielstand {
   return { ...stand, vorlieben };
+}
+
+/** Schreibt die Liste der eigenen Gegner (speicher/gegner.ts rechnet sie aus). */
+export function mitEigenenGegnern(
+  stand: Spielstand,
+  eigeneGegner: readonly EigenerGegner[],
+): Spielstand {
+  return { ...stand, eigeneGegner };
 }
 
 /**
@@ -280,7 +296,21 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
     hilfen: hilfenAus(roh.hilfen),
     // Partien vor 0.2.41 zählen nicht für die Wertung.
     gewertet: roh.gewertet === true,
+    ...gegnerprofilAus(roh),
   };
+}
+
+/** Name, Fehlerarten und Stil eines eigenen Gegners (0.2.42), nur wenn sie gespeichert sind. */
+function gegnerprofilAus(roh: Roh): Pick<Partieeinstellung, "botName" | "fehlerarten" | "stil"> {
+  // Nur gespeicherte Felder übernehmen, damit ältere Partien unverändert bleiben.
+  const profil: { botName?: string; fehlerarten?: readonly Fehlerart[]; stil?: number } = {};
+  if (typeof roh.botName === "string") profil.botName = roh.botName;
+  if (Array.isArray(roh.fehlerarten)) {
+    const roheArten: readonly unknown[] = roh.fehlerarten;
+    profil.fehlerarten = FEHLERARTEN.filter((art) => roheArten.includes(art));
+  }
+  if (istZahl(roh.stil)) profil.stil = Math.max(STIL_MIN, Math.min(STIL_MAX, Math.round(roh.stil)));
+  return profil;
 }
 
 /**
@@ -357,12 +387,19 @@ function wertungspunktAus(roh: unknown): Wertungspunkt | null {
   if (!istZahl(roh.gegner) || !istZahl(roh.wertung)) return null;
   const ergebnis = ERGEBNISSE.find((e) => e === roh.ergebnis);
   if (ergebnis === undefined) return null;
+  const ph = istObjekt(roh.phasen) ? roh.phasen : {};
+  const zahlOderNull = (w: unknown) => (istZahl(w) ? w : null);
   return {
     partieId: roh.partieId,
     zeit: roh.zeit,
     gegner: roh.gegner,
     ergebnis,
     wertung: roh.wertung,
+    phasen: {
+      eroeffnung: zahlOderNull(ph.eroeffnung) ?? OHNE_PHASEN.eroeffnung,
+      mittelspiel: zahlOderNull(ph.mittelspiel) ?? OHNE_PHASEN.mittelspiel,
+      endspiel: zahlOderNull(ph.endspiel) ?? OHNE_PHASEN.endspiel,
+    },
   };
 }
 
@@ -376,5 +413,6 @@ export function spielstandAus(roh: unknown): Spielstand {
     partien: partien.filter((e): e is Partieeintrag => e !== null).slice(0, MAX_PARTIEN),
     vorlieben: vorliebenAus(roh.vorlieben),
     wertung: wertung.filter((w): w is Wertungspunkt => w !== null).slice(-MAX_WERTUNGSPUNKTE),
+    eigeneGegner: eigeneGegnerAus(roh.eigeneGegner),
   };
 }

@@ -21,7 +21,7 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
-import { gegnerVon as botVon } from "../../engine/gegner";
+import { gegnername } from "../../engine/gegner";
 import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
@@ -69,7 +69,7 @@ function Untertitel({ partie }: { partie: PartieDaten }) {
   if (partie.einstellung.gegner === "mensch") {
     return <p className="partie-untertitel">{t("partie.untertitelMensch")}</p>;
   }
-  const bot = botVon(partie.einstellung.bot);
+  const bot = gegnername(partie.einstellung.bot, partie.einstellung.botName);
   const gewaehlt = partie.einstellung.eroeffnung;
   const eroeffnung = gewaehlt === EROEFFNUNG_BUCH ? t("partie.eroeffnungBuch") : gewaehlt;
   const je = partie.einstellung.stufenJePhase;
@@ -77,9 +77,7 @@ function Untertitel({ partie }: { partie: PartieDaten }) {
   const stufenText = verschieden
     ? t("partie.stufenJePhase", { e: je.eroeffnung, m: je.mittelspiel, s: je.endspiel })
     : t("partie.stufe", { nummer: s.nummer, name: t(s.name) });
-  const stufentext = bot
-    ? t("partie.gegnerBot", { name: bot.name, stufen: stufenText })
-    : stufenText;
+  const stufentext = bot ? t("partie.gegnerBot", { name: bot, stufen: stufenText }) : stufenText;
   return (
     <p className="partie-untertitel">
       {eroeffnung

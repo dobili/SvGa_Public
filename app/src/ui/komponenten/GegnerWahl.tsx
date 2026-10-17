@@ -8,7 +8,7 @@
  * Regler (StufenWahl.tsx); wer danach einen Regler bewegt, spielt wieder mit eigenen Stufen.
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, spiel/partie.ts (Typen), i18n.
  */
-import { durchschnitt, gegnerSortiert, klasseVon } from "../../engine/gegner";
+import { durchschnitt, gegnerSortiert, klasseVon, type EigenerGegner } from "../../engine/gegner";
 import { t } from "../../i18n/sprache";
 import type { Gegnerart, Spielhilfen } from "../../spiel/partie";
 import { Auswahl } from "./Auswahl";
@@ -29,11 +29,14 @@ function gegnertext(g: ReturnType<typeof gegnerSortiert>[number]): string {
 export function GegnerWahl({
   gegner,
   bot,
+  eigene,
   beiGegner,
   beiBot,
 }: {
   gegner: Gegnerart;
   bot: string | null;
+  /** Eigene Gegner des Lesers (0.2.42), als eigene Gruppe im Auswahlfeld. */
+  eigene: readonly EigenerGegner[];
   beiGegner: (gegner: Gegnerart) => void;
   beiBot: (bot: string | null) => void;
 }) {
@@ -59,11 +62,22 @@ export function GegnerWahl({
             onChange={(e) => beiBot(e.target.value === EIGENE ? null : e.target.value)}
           >
             <option value={EIGENE}>{t("spielen.bot.eigene")}</option>
-            {gegnerSortiert().map((g) => (
-              <option key={g.kennung} value={g.kennung}>
-                {gegnertext(g)}
-              </option>
-            ))}
+            <optgroup label={t("spielen.bot.vorgefertigt")}>
+              {gegnerSortiert().map((g) => (
+                <option key={g.kennung} value={g.kennung}>
+                  {gegnertext(g)}
+                </option>
+              ))}
+            </optgroup>
+            {eigene.length > 0 && (
+              <optgroup label={t("spielen.eigene.titel")}>
+                {eigene.map((g) => (
+                  <option key={g.kennung} value={g.kennung}>
+                    {g.name}
+                  </option>
+                ))}
+              </optgroup>
+            )}
           </select>
           {gewaehlt && <p className="hinweis">{t(gewaehlt.beschreibung)}</p>}
         </div>

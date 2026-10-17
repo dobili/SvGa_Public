@@ -185,6 +185,7 @@ export async function sucheFehlerzug(
   fen: string,
   stufe: Stufe,
   zufall: () => number,
+  erlaubteArten: readonly Fehlerart[] | null = null,
 ): Promise<Zugwahl | null> {
   const lage = lageVon(fen);
   if (!lage) return null;
@@ -201,8 +202,14 @@ export async function sucheFehlerzug(
     ...ausEngine(lage, voll.varianten, bestwert, weissAmZug),
     ...(await geprueft(bewerter, fen, stufe, auswahl, bestwert, weissAmZug)),
   ];
+  // Eigene Gegner (0.2.42) erlauben nur bestimmte Fehlerarten.
+  const artErlaubt = (k: Fehlerkandidat) => erlaubteArten === null || erlaubteArten.includes(k.art);
   const moegliche = kandidaten.filter(
-    (k) => k.verlust >= MINDESTVERLUST && k.verlust <= stufe.hoechstverlust && erlaubt(k.uci),
+    (k) =>
+      k.verlust >= MINDESTVERLUST &&
+      k.verlust <= stufe.hoechstverlust &&
+      erlaubt(k.uci) &&
+      artErlaubt(k),
   );
   const mitArt = moegliche.filter((k) => k.art !== "ungenau");
   // Gewichtet nach dem Profil der Phase und Stufe (0.2.40); ohne erkannte Art gleichverteilt.

@@ -129,7 +129,20 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
     if (!amZugEngine || !buch.bereit) return;
     let aktiv = true;
     const buchzuege = buchzuegeFuer(buch.index, fen, eroeffnung);
-    engineZug(engine, fen, stufe(stufennummer), buchzuege.zuege, Math.random, buchzuege.treue)
+    const jetzige = neueste(id);
+    const profil = {
+      fehlerarten: jetzige?.einstellung.fehlerarten ?? null,
+      stil: jetzige?.einstellung.stil ?? 0,
+    };
+    engineZug(
+      engine,
+      fen,
+      stufe(stufennummer),
+      buchzuege.zuege,
+      Math.random,
+      buchzuege.treue,
+      profil,
+    )
       .then((zug) => {
         const jetzt = neueste(id);
         if (!aktiv || !jetzt || aktuelleFen(jetzt) !== fen) return;

@@ -199,6 +199,7 @@ describe("Wertung zurücksetzen (0.2.41)", () => {
           gegner: 1500,
           ergebnis: 1 as const,
           wertung: 1516,
+          phasen: { eroeffnung: 1500, mittelspiel: null, endspiel: null },
         },
       ],
     };

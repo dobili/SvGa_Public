@@ -18,18 +18,21 @@ function stufentext(nummer: Stufennummer): string {
   return `${nummer} · ${t(`stufe.${nummer}`)}`;
 }
 
+/** `praefix` macht die Kennungen eindeutig, wenn zwei Reglergruppen auf einer Seite stehen. */
 export function StufenWahl({
   stufen,
+  praefix = "stufe",
   beiWahl,
 }: {
   stufen: Readonly<Record<Phase, Stufennummer>>;
+  praefix?: string;
   beiWahl: (stufen: Readonly<Record<Phase, Stufennummer>>) => void;
 }) {
   return (
     <div className="stufenwahl" role="group" aria-label={t("spielen.stufe")}>
       <span className="einstellung-name">{t("spielen.stufe")}</span>
       {PHASEN.map((ph) => {
-        const id = `stufe-${ph}`;
+        const id = `${praefix}-${ph}`;
         return (
           <div key={ph} className="stufenregler">
             <label htmlFor={id}>

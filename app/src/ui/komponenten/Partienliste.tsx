@@ -14,7 +14,7 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Seitenbilanz } from "../../spiel/genauigkeit";
-import { gegnerVon } from "../../engine/gegner";
+import { gegnername } from "../../engine/gegner";
 import type { Partie } from "../../spiel/partie";
 import { staerkeDerPartie } from "../../spiel/wertung";
 import type { Partieeintrag } from "../../speicher/partien";
@@ -35,7 +35,8 @@ function zeile(partie: Partie): string {
   const gegner =
     partie.einstellung.gegner === "mensch"
       ? t("spielen.gegner.mensch")
-      : (gegnerVon(partie.einstellung.bot)?.name ?? t("spielen.partieStufe", { nummer: s.nummer }));
+      : (gegnername(partie.einstellung.bot, partie.einstellung.botName) ??
+        t("spielen.partieStufe", { nummer: s.nummer }));
   return t("spielen.partiezeile", { datum, stufe: gegner, zuege });
 }
 

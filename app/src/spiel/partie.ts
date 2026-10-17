@@ -48,8 +48,13 @@ export interface Partieeinstellung {
   readonly abbildung: string | null;
   /** Gegner (0.2.41): die Engine oder ein Mensch am selben Gerät. */
   readonly gegner: Gegnerart;
-  /** Kennung eines vorgefertigten Gegners (engine/gegner.ts), sonst null (eigene Stufen). */
+  /** Kennung eines vorgefertigten oder eigenen Gegners (engine/gegner.ts), sonst null. */
   readonly bot: string | null;
+  /** Name des Gegners zur Zeit der Partie (0.2.42; eigene Gegner lassen sich löschen). */
+  readonly botName?: string | null;
+  /** Eigener Gegner (0.2.42): erlaubte Fehlerarten (null oder fehlend: alle) und Stil (−2 bis 2). */
+  readonly fehlerarten?: readonly Fehlerart[] | null;
+  readonly stil?: number;
   readonly hilfen: Spielhilfen;
   /** Zählt die Partie für die Wertung des Lesers (spiel/wertung.ts)? */
   readonly gewertet: boolean;

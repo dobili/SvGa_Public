@@ -26,7 +26,8 @@ import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
 import { StufenWahl } from "../komponenten/StufenWahl";
 import { GegnerWahl, HilfenWahl } from "../komponenten/GegnerWahl";
-import { gegnerVon } from "../../engine/gegner";
+import { gegnerVon, type EigenerGegner } from "../../engine/gegner";
+import { GegnerEditor } from "../komponenten/GegnerEditor";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
@@ -87,6 +88,7 @@ function Einstellungen({
   setze: (wahl: Wahl) => void;
 }) {
   const v = wahl.vorlieben;
+  const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
   const mit = (teil: Partial<Spielvorlieben>) => setze({ ...wahl, vorlieben: { ...v, ...teil } });
   const uhrStellen = UHR_VORGABEN.map((_, stelle) => String(stelle));
   const engine = v.gegner === "engine";
@@ -95,9 +97,10 @@ function Einstellungen({
       <GegnerWahl
         gegner={v.gegner}
         bot={v.bot}
+        eigene={eigene}
         beiGegner={(gegner) => mit({ gegner, gewertet: gegner === "engine" })}
         beiBot={(bot) => {
-          const g = gegnerVon(bot);
+          const g = gegnerVon(bot) ?? eigene.find((e) => e.kennung === bot) ?? null;
           mit(
             g
               ? { bot, stufenJePhase: g.stufenJePhase, stufe: g.stufenJePhase.mittelspiel }
@@ -213,12 +216,25 @@ function Startstellung({
   );
 }
 
+/** Name, Fehlerarten und Stil des gewählten Gegners für die Partie (eigene Gegner, 0.2.42). */
+function gegnerprofil(bot: string | null, eigene: readonly EigenerGegner[]) {
+  const eigener = eigene.find((g) => g.kennung === bot);
+  if (eigener) {
+    return { botName: eigener.name, fehlerarten: eigener.fehlerarten, stil: eigener.stil };
+  }
+  const vorgefertigt = gegnerVon(bot);
+  return vorgefertigt ? { botName: vorgefertigt.name } : {};
+}
+
 /** Legt die Partie an, merkt die Vorlieben und öffnet die Partie. */
 function useBeginne(fen: string, abbildung: string | undefined) {
   const { navigiere } = useNavigation();
+  const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
   return (wahl: Wahl) => {
     const v = wahl.vorlieben;
+    const bot = v.gegner === "engine" ? v.bot : null;
     const einstellung = {
+      ...gegnerprofil(bot, eigene),
       startFen: fen,
       eigeneFarbe: wahl.farbe,
       stufe: v.stufenJePhase.mittelspiel,
@@ -228,7 +244,7 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       abbildung: abbildung ?? null,
       eroeffnung: fen === GRUNDSTELLUNG && v.gegner === "engine" ? wahl.eroeffnung : null,
       gegner: v.gegner,
-      bot: v.gegner === "engine" ? v.bot : null,
+      bot,
       hilfen: v.hilfen,
       // Nur Partien gegen die Engine aus der Grundstellung zählen (Wunsch des Autors).
       gewertet: v.gewertet && wertbar(fen, v),
@@ -278,6 +294,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
       <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />
       {!ok && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
       <Einstellungen wahl={wahl} fen={fen} setze={setzeWahl} />
+      {wahl.vorlieben.gegner === "engine" && <GegnerEditor />}
       {fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" && (
         <EroeffnungsWahl
           gewaehlt={wahl.eroeffnung}

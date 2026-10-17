@@ -179,3 +179,31 @@ test("Stellung aufbauen (K e6, D a3 gegen K e8), zu zweit ohne Werkzeuge spielen
   await page.locator(".kopfzeile").getByRole("button", { name: "Spielen", exact: true }).click();
   await expect(page.getByTestId("spielen")).toContainText("1–0");
 });
+
+// 0.2.42: eigene Gegner anlegen, wählen, im Untertitel sehen, löschen.
+test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, spielen, löschen", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const karte = page.getByTestId("eigene-gegner");
+  await karte.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
+  await page.getByLabel("Name").fill("Rambo");
+  await page.getByLabel(/^Spielstil/).fill("2");
+  await expect(page.getByLabel(/^Spielstil/)).toHaveValue("2");
+  await page.getByRole("checkbox", { name: "eine Figur hängen lassen (W1)" }).uncheck();
+  await karte.getByRole("button", { name: "Gegner speichern" }).click();
+  await expect(karte).toContainText("Rambo · 3 · 3 · 3 · sehr aggressiv");
+  await page.getByLabel("Vorgefertigter Gegner").selectOption({ label: "Rambo" });
+  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await expect(page.locator(".partie-untertitel")).toContainText("Rambo");
+  await ziehe(page, /^e2,/, "e4");
+  await warteAufLeser(page);
+  await page.locator(".kopfzeile").getByRole("button", { name: "Spielen", exact: true }).click();
+  await expect(page.getByTestId("spielen")).toContainText("Rambo");
+  await page.getByRole("button", { name: "Rambo löschen" }).click();
+  await page.getByRole("button", { name: "Ja, löschen" }).click();
+  await expect(page.getByTestId("eigene-gegner")).toContainText("Noch kein eigener Gegner");
+  // Die gespielte Partie behält den Namen.
+  await expect(page.getByTestId("laufende-partie")).toContainText("Rambo");
+});

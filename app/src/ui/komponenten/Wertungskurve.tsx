@@ -7,7 +7,10 @@
  * grau Remis) und einem Auswahlfeld für den Ausschnitt: die letzten 10, 25 oder 50 Partien oder
  * ein Zeitraum (1 Woche, 4 Wochen, 3 Monate, halbes Jahr, Jahr). Bei den Partien steht jede
  * gleich weit von der nächsten; beim Zeitraum liegt jede Partie an ihrer Zeit, der rechte Rand ist
- * jetzt. Für Bildschirmleser trägt jeder Punkt Datum, Ergebnis, Gegner und Wertung. „Wertung
+ * jetzt. Umschalter „Ansicht“ (Wunsch des Autors): „Wertung“ zeigt die Elo-Wertung, „Eröffnung“,
+ * „Mittelspiel“ und „Endspiel“ die Schätzung der Engine für den Leser in dieser Phase je Partie
+ * (Durchschnitt im Ausschnitt als Zahl), damit sichtbar wird, wo das Üben am meisten bringt.
+ * Für Bildschirmleser trägt jeder Punkt Datum, Ergebnis, Gegner und Wertung. „Wertung
  * zurücksetzen“ (nach Nachfrage) leert den Verlauf und macht alle bisherigen Partien dauerhaft
  * ungewertet (speicher/partien.ts, setzeWertungZurueck).
  * Abhängigkeiten: spiel/wertung.ts, speicher/, i18n.
@@ -16,6 +19,7 @@ import { useState } from "react";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import { setzeWertungZurueck } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
+import { PHASEN, type Phase } from "../../spiel/phasen";
 import {
   aktuelleWertung,
   imBereich,
@@ -23,6 +27,30 @@ import {
   type Wertungsbereich,
   type Wertungspunkt,
 } from "../../spiel/wertung";
+import { Auswahl } from "./Auswahl";
+
+/** Was die Kurve zeigt: die Wertung oder die Schätzung je Phase. */
+type Ansicht = "gesamt" | Phase;
+const ANSICHTEN: readonly Ansicht[] = ["gesamt", ...PHASEN];
+
+/** Der Wert eines Punktes in dieser Ansicht; null, wenn die Phase in der Partie fehlte. */
+function wertIn(punkt: Wertungspunkt, ansicht: Ansicht): number | null {
+  return ansicht === "gesamt" ? punkt.wertung : punkt.phasen[ansicht];
+}
+
+/** Die Punkte mit Wert in dieser Ansicht, der Wert an die Stelle der Wertung gesetzt. */
+function inAnsicht(punkte: readonly Wertungspunkt[], ansicht: Ansicht): Wertungspunkt[] {
+  return punkte.flatMap((p) => {
+    const wert = wertIn(p, ansicht);
+    return wert === null ? [] : [{ ...p, wertung: wert }];
+  });
+}
+
+/** Durchschnitt der Werte, gerundet; null ohne Punkte. */
+function durchschnitt(punkte: readonly Wertungspunkt[]): number | null {
+  if (punkte.length === 0) return null;
+  return Math.round(punkte.reduce((s, p) => s + p.wertung, 0) / punkte.length);
+}
 
 /** Zeichenfläche in SVG-Einheiten; das Bild passt sich der Breite an. */
 const BREITE = 300;
@@ -238,6 +266,7 @@ export function Wertungskurve({
   jetzt?: Date;
 }) {
   const [kennung, setzeKennung] = useState(STANDARD_AUSSCHNITT);
+  const [ansicht, setzeAnsicht] = useState<Ansicht>("gesamt");
   const ausschnitt = AUSSCHNITTE.find((a) => a.kennung === kennung) ?? AUSSCHNITTE[0];
   const aktuell = aktuelleWertung(punkte);
   if (aktuell === null || !ausschnitt) {
@@ -248,19 +277,32 @@ export function Wertungskurve({
       </section>
     );
   }
-  const sichtbar = imBereich(punkte, ausschnitt.bereich, jetzt);
+  const sichtbar = inAnsicht(imBereich(punkte, ausschnitt.bereich, jetzt), ansicht);
   const start = sichtbar[0];
+  const schnitt = durchschnitt(sichtbar);
   return (
     <section className="karte wertung" data-testid="wertung">
       <h2 className="karte-titel">{t("ich.wertung.titel")}</h2>
+      <Auswahl
+        name={t("ich.wertung.ansicht")}
+        werte={ANSICHTEN}
+        gewaehlt={ansicht}
+        text={(a) => t(a === "gesamt" ? "ich.wertung.ansicht.gesamt" : `phase.name.${a}`)}
+        beiWahl={setzeAnsicht}
+      />
       <p className="wertung-zahl" data-testid="wertung-zahl">
-        {aktuell}
+        {ansicht === "gesamt" ? aktuell : (schnitt ?? "–")}
       </p>
       <p className="hinweis">
-        {t("ich.wertung.stand", {
-          anzahl: punkte.length,
-          aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
-        })}
+        {ansicht === "gesamt"
+          ? t("ich.wertung.stand", {
+              anzahl: punkte.length,
+              aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
+            })
+          : t("ich.wertung.phasenstand", {
+              phase: t(`phase.name.${ansicht}`),
+              anzahl: sichtbar.length,
+            })}
       </p>
       <label className="einstellung-name" htmlFor="wertung-bereich">
         {t("ich.wertung.bereich")}

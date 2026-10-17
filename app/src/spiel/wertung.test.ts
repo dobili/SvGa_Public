@@ -81,6 +81,9 @@ describe("Wertung", () => {
     expect(verlauf).toHaveLength(1);
     expect(verlauf[0]?.wertung).toBe(schaetzung);
     expect(verlauf[0]?.ergebnis).toBe(0);
+    // Fehlerfrei in allen Phasen mit genug Zügen: Eröffnung geschätzt, Endspiel nie erreicht.
+    expect(verlauf[0]?.phasen.eroeffnung).toBe(schaetzung);
+    expect(verlauf[0]?.phasen.endspiel).toBeNull();
     // Zweite Partie gewonnen gegen einen gleich starken Gegner: + 32 · (1 − ½) = 16.
     verlauf = mitGewerteterPartie(verlauf, eintrag("2", "white"));
     expect(verlauf[1]?.wertung).toBe((schaetzung ?? 0) + K_ANFANG / 2);
@@ -124,6 +127,7 @@ describe("Wertung", () => {
       gegner: 1500,
       ergebnis: 1,
       wertung: 1500,
+      phasen: { eroeffnung: null, mittelspiel: null, endspiel: null },
     });
     const punkte = [
       punkt("a", "2026-09-01T10:00:00.000Z"),

@@ -9,7 +9,10 @@
  * eine Partie gegen einen Spieler mit der Engine-Schätzung des Gegners (der Stärke, mit der die
  * Engine in dieser Partie gespielt hat). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
  * beim Weltschachbund für Spieler unter 2400). Jeder Punkt des Verlaufs merkt sich Zeit, Gegner
- * und Ergebnis, damit die Kurve in den Einstellungen nach Partien oder nach Zeitraum zeigen kann.
+ * und Ergebnis, damit die Kurve in den Einstellungen nach Partien oder nach Zeitraum zeigen kann;
+ * dazu die Schätzung der Engine für den Leser je Phase dieser Partie (Wunsch des Autors: die Kurve
+ * nach Eröffnung, Mittelspiel und Endspiel umschalten, um zu sehen, wo das Üben am meisten
+ * bringt).
  * Gewertet werden nur beendete Partien gegen die Engine aus der Grundstellung (Wunsch des
  * Autors: nichts aus Abbildungen oder aufgebauten Stellungen) mit Haken „gewertete Partie“ und
  * fertiger Auswertung; Partien mit zu wenigen Zügen für eine Schätzung zählen nicht.
@@ -18,8 +21,9 @@
  */
 import type { Partieeintrag } from "../speicher/partien";
 import { zugurteile } from "./auswertung";
-import { spielstaerke, type Spielstaerke } from "./genauigkeit";
+import { spielstaerke, spielstaerkeJePhase, type Spielstaerke } from "./genauigkeit";
 import { stellungen, type Partie } from "./partie";
+import { phasenJeStellung, type Phase } from "./phasen";
 import { sanZuUci } from "./zuege";
 
 /** Die Grundstellung ohne Zähler (Felder, Seite am Zug, Rochade, En passant). */
@@ -45,7 +49,16 @@ export interface Wertungspunkt {
   readonly ergebnis: Punktwert;
   /** Die Wertung des Lesers nach der Partie, gerundet. */
   readonly wertung: number;
+  /** Schätzung der Engine für den Leser je Phase dieser Partie; null bei zu wenigen Zügen. */
+  readonly phasen: Readonly<Record<Phase, number | null>>;
 }
+
+/** Ohne Schätzung je Phase (ältere Punkte). */
+export const OHNE_PHASEN: Readonly<Record<Phase, number | null>> = {
+  eroeffnung: null,
+  mittelspiel: null,
+  endspiel: null,
+};
 
 /** K-Faktor in den ersten Partien (die Wertung findet schnell ihren Platz). */
 export const K_ANFANG = 32;
@@ -67,6 +80,29 @@ export function staerkeDerPartie(eintrag: Partieeintrag): Spielstaerke | null {
   const alle = stellungen(p);
   const gespielte = p.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
   return spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte);
+}
+
+/** Die Schätzung je Phase für den Leser (Spielstärke je Phase, ab sechs Zügen je Phase). */
+export function phasenstaerke(eintrag: Partieeintrag): Readonly<Record<Phase, number | null>> {
+  if (eintrag.werte.length === 0) return OHNE_PHASEN;
+  const p = eintrag.partie;
+  const urteile = zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende);
+  const alle = stellungen(p);
+  const gespielte = p.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
+  const je = spielstaerkeJePhase(
+    p,
+    eintrag.werte,
+    urteile,
+    eintrag.beste,
+    gespielte,
+    phasenJeStellung(p),
+  );
+  const farbe = p.einstellung.eigeneFarbe;
+  return {
+    eroeffnung: je.eroeffnung[farbe].spielstaerke,
+    mittelspiel: je.mittelspiel[farbe].spielstaerke,
+    endspiel: je.endspiel[farbe].spielstaerke,
+  };
 }
 
 /** Das Ergebnis aus Sicht des Lesers; null, solange die Partie läuft. */
@@ -120,7 +156,14 @@ export function wertungspunktFuer(
   if (eigene === null) return null;
   const k = punkte.length < ANFANGSPARTIEN ? K_ANFANG : K_DANACH;
   const neu = bisher === null ? eigene : eigene + k * (ergebnis - erwartung(eigene, gegner));
-  return { partieId: p.id, zeit: p.begonnen, gegner, ergebnis, wertung: Math.round(neu) };
+  return {
+    partieId: p.id,
+    zeit: p.begonnen,
+    gegner,
+    ergebnis,
+    wertung: Math.round(neu),
+    phasen: phasenstaerke(eintrag),
+  };
 }
 
 /** Der Verlauf mit dieser Partie, falls sie zählt; sonst unverändert. */

@@ -8,7 +8,13 @@
  * Abhängigkeiten: engine/zugwahl.ts, engine/stufen.ts, spiel/zuege.ts.
  */
 import type { Stufe } from "../engine/stufen";
-import { BUCHTREUE, waehleZug, type Spielbewerter } from "../engine/zugwahl";
+import {
+  BUCHTREUE,
+  STANDARDPROFIL,
+  waehleZug,
+  type Gegnerprofil,
+  type Spielbewerter,
+} from "../engine/zugwahl";
 import type { Partiezug } from "./partie";
 import { sanZuUci, uciZuSan } from "./zuege";
 
@@ -16,7 +22,8 @@ import { sanZuUci, uciZuSan } from "./zuege";
  * Wählt und schreibt den Zug der Engine.
  *
  * Eingaben: Bewerter (der Engine-Dienst), Stellung, Stufe, Buchzüge in SAN (leer außerhalb des
- * Buches oder ohne Eröffnungsindex), Zufallsquelle, Buchtreue (1 bei vorgegebener Eröffnung).
+ * Buches oder ohne Eröffnungsindex), Zufallsquelle, Buchtreue (1 bei vorgegebener Eröffnung),
+ * Profil eines eigenen Gegners (Fehlerarten, Stil; 0.2.42).
  * Ausgabe: Partiezug oder null, wenn es keinen legalen Zug gibt.
  * Beispiel: Grundstellung, Buchzüge [„e4“, „d4“] → meist „e4“ oder „d4“ mit Quelle „buch“.
  * Sonderfall: Ein Buchzug, der in der Stellung nicht geht, fällt still weg (die Daten sind
@@ -29,11 +36,12 @@ export async function engineZug(
   buchzuege: readonly string[],
   zufall: () => number,
   buchtreue: number = BUCHTREUE,
+  profil: Gegnerprofil = STANDARDPROFIL,
 ): Promise<Partiezug | null> {
   const buchUci = buchzuege
     .map((san) => sanZuUci(fen, san))
     .filter((uci): uci is string => uci !== null);
-  const wahl = await waehleZug(bewerter, fen, stufe, buchUci, zufall, buchtreue);
+  const wahl = await waehleZug(bewerter, fen, stufe, buchUci, zufall, buchtreue, profil);
   const san = wahl ? uciZuSan(fen, wahl.uci) : null;
   if (!wahl || !san) return null;
   return { san, von: "engine", quelle: wahl.quelle, fehler: wahl.fehler, verlust: wahl.verlust };

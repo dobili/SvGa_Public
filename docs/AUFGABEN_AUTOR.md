@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.57. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.58. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -21,8 +21,30 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.57“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.58“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.58 (etwa 15 Minuten, mit Engine; deine Anmerkungen vom 17.10.2026 abends, Fable)
+
+- [ ] N278. **Töne für Schach, Matt und Remis:** Einstellungen › Ton „an“. Spiele eine Partie:
+      Ein Schach klingt nach dem Klacken als heller Ton, ein Matt als drei fallende Töne, ein
+      Patt oder Remis als zwei gleiche Töne. Beim Nachspielen klingt es genauso.
+- [ ] N279. **Warnton und roter Hinweis bei gesperrter Figur:** Tippe in einer Partie eine eigene
+      Figur an, die gerade nicht ziehen darf. Das Feld leuchtet kurz rot, ein tiefer Warnton
+      erklingt (bei Ton „an“), und unter dem Brett steht je nach Grund „Dein König steht im
+      Schach: Erst das Schach beantworten.“, „Diese Figur ist gefesselt: Sie deckt deinen König.“
+      oder „Diese Figur hat gerade keinen Zug.“ (etwa Lc1 in der Grundstellung). Nach knapp einer
+      Sekunde verschwindet beides wieder.
+- [ ] N280. **Schlagring statt Punkt:** Wähle eine Figur, die etwas schlagen kann. Auf der
+      schlagbaren Figur liegt jetzt ein goldener Ring mit dunklem Rand statt des kleinen Punktes,
+      auch auf einem schwarzen Bauern gut zu sehen. Leere Zielfelder behalten den Punkt.
+- [ ] N281. **Figurensatz „Holz“ mit eigenen Formen:** Einstellungen › Figurensatz „Holz“: Die
+      Figuren sind jetzt die Merida-Figuren (von Lichess, GPL) in Elfenbein und dunklem Nussbaum,
+      also andere Formen als „klassisch“ (Burnett) und „wie im Buch“. Gefallen dir Formen und
+      Farben? Andere Farbwerte sind in Minuten geändert.
+- [ ] N282. **Stern für gewertete Partien:** Spielen › „Deine letzten Partien“: Hinter dem Ergebnis
+      („1–0“) steht bei gewerteten Partien ein kleiner goldener Stern; ungewertete Partien (zu
+      zweit, aus Abbildungen, mit Rücknahme) haben keinen.
 
 ### Neu in 0.2.57 (etwa 15 Minuten, mit Engine; blinde Flecken vollständig, Fable)
 

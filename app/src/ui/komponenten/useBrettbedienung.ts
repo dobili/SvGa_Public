@@ -6,12 +6,18 @@
  * (Konzept 10.2, „Tippen auf Figur und Zielfeld“). Eine Wahl gilt nur für die Stellung, in der sie
  * getroffen wurde: Nach einem Schritt in der Zugleiste ist sie von selbst aufgehoben.
  * Seit 0.2.29 ist anfangs kein Werkzeug gewählt (Wunsch des Autors); seit 0.2.30 bewirkt ein Tipp
- * aufs Brett dann nichts.
- * Abhängigkeiten: schach/weiterspielen.ts, useNachspielen.ts.
+ * aufs Brett dann nichts. Seit 0.2.58: Ein Tipp auf eine eigene Figur, die nicht ziehen darf
+ * (Schach, Fesselung, blockiert), leuchtet kurz rot auf, mit Warnton und Satz unter dem Brett.
+ * Abhängigkeiten: schach/weiterspielen.ts, useNachspielen.ts, app/ton.ts.
  */
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { useEinstellungen } from "../../app/einstellungen";
+import { spieleKlang } from "../../app/ton";
 import type { Rolle } from "../../schach/stellung";
-import { legaleZiele } from "../../schach/weiterspielen";
+import { legaleZiele, zugsperre, type Zugsperre } from "../../schach/weiterspielen";
+
+/** So lange leuchtet eine gesperrte Figur rot (ms). */
+const SPERRE_SICHTBAR_MS = 900;
 import type { Nachspielstand } from "./useNachspielen";
 import type { Werkzeugwahl } from "./Werkzeugleiste";
 
@@ -28,6 +34,8 @@ export interface Brettbedienung {
   readonly ausgewaehlt: string | null;
   /** Zielfelder der gewählten Figur. */
   readonly ziele: readonly string[];
+  /** Zuletzt angetippte Figur, die nicht ziehen darf, mit Grund; null nach kurzer Zeit. */
+  readonly gesperrt: { readonly feld: string; readonly grund: Zugsperre } | null;
   /** Offene Umwandlung: Der Bauer steht vor der letzten Reihe, die Figur fehlt noch. */
   readonly umwandlungOffen: boolean;
   readonly beiFeld: (feld: string) => void;
@@ -52,6 +60,13 @@ export function useBrettbedienung(
   const [gezaehlt, setzeGezaehlt] = useState<Gemerkt | null>(null);
   const [gewaehlt, setzeGewaehlt] = useState<Gemerkt | null>(null);
   const [umwandlung, setzeUmwandlung] = useState<(Gemerkt & { nach: string }) | null>(null);
+  const [gesperrt, setzeGesperrt] = useState<(Gemerkt & { grund: Zugsperre }) | null>(null);
+  const { ton } = useEinstellungen();
+  useEffect(() => {
+    if (!gesperrt) return;
+    const zeit = setTimeout(() => setzeGesperrt(null), SPERRE_SICHTBAR_MS);
+    return () => clearTimeout(zeit);
+  }, [gesperrt]);
   const hier = (gemerkt: Gemerkt | null) => (gemerkt?.fen === stand.fen ? gemerkt.feld : null);
   const zaehlfeld = wahl === "zaehlen" ? hier(gezaehlt) : null;
   const figur = wahl === "ziehen" ? hier(gewaehlt) : null;
@@ -67,6 +82,11 @@ export function useBrettbedienung(
     }
     const eigeneFigur = legaleZiele(stand.fen, feld).length > 0;
     setzeGewaehlt(eigeneFigur && feld !== figur ? { fen: stand.fen, feld } : null);
+    const grund = eigeneFigur ? null : zugsperre(stand.fen, feld);
+    if (grund) {
+      setzeGesperrt({ fen: stand.fen, feld, grund });
+      if (ton === "an") spieleKlang("warnung");
+    }
   };
   const beiFeld = (feld: string) => {
     if (wahl === "ziehen") {
@@ -93,6 +113,7 @@ export function useBrettbedienung(
     zaehlfeld,
     ausgewaehlt: zaehlfeld ?? figur,
     ziele,
+    gesperrt: gesperrt?.fen === stand.fen ? { feld: gesperrt.feld, grund: gesperrt.grund } : null,
     umwandlungOffen: umwandlung?.fen === stand.fen,
     beiFeld,
     vergiss,

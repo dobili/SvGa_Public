@@ -98,11 +98,17 @@ export function Brettbereich({
           letzterZug={letzterZug}
           ausgewaehlt={bedienung.ausgewaehlt}
           ziele={bedienung.ziele}
+          gesperrt={bedienung.gesperrt?.feld ?? null}
           beiFeld={bedienung.beiFeld}
           beschriftung={`${beschriftung}, ${t(`abbildung.amZug.${amZug}`)}`}
         />
       </div>
       {bedienung.umwandlungOffen && <Umwandlung beiWahl={bedienung.waehleUmwandlung} />}
+      {bedienung.gesperrt && (
+        <p className="brett-sperre" role="status" data-testid="brett-sperre">
+          {t(`brett.sperre.${bedienung.gesperrt.grund}`)}
+        </p>
+      )}
       <div className="brettzeile">
         <p className="am-zug">
           <span className={`am-zug-marke am-zug-${amZug}`} aria-hidden="true" />

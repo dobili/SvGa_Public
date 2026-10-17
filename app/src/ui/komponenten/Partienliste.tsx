@@ -9,6 +9,7 @@
  * Abhängigkeiten: spiel/partie.ts, spiel/auswertung.ts, spiel/genauigkeit.ts, speicher/partien.ts,
  * engine/stufen.ts, ui/brett (Figur), Navigation, i18n.
  */
+import { Star } from "lucide-react";
 import { useEinstellungen } from "../../app/einstellungen";
 import { useNavigation } from "../../app/navigationsKontext";
 import { stufe } from "../../engine/stufen";
@@ -26,6 +27,8 @@ const FIGURGROESSE = 28;
 
 /** So viele beendete Partien zeigt die Liste; gespeichert sind bis zu 50. */
 const SICHTBAR = 10;
+/** Größe des Sterns für eine gewertete Partie (0.2.58, Wunsch des Autors). */
+const WERTUNGSSYMBOL = 14;
 
 /** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie) */
 function zeile(partie: Partie): string {
@@ -139,7 +142,17 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
               >
                 <Seitenfigur partie={partie} />
                 <span className="partiezeile-text">
-                  <strong>{ergebniszeichen(partie)}</strong>
+                  <strong>
+                    {ergebniszeichen(partie)}
+                    {partie.einstellung.gewertet && (
+                      <Star
+                        className="partiezeile-wertung"
+                        size={WERTUNGSSYMBOL}
+                        aria-label={t("spielen.partieGewertet")}
+                        role="img"
+                      />
+                    )}
+                  </strong>
                   <span>
                     {zeile(partie)}
                     {staerke && ` · ${staerke}`}

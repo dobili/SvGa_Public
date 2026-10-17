@@ -7,6 +7,7 @@ import {
   skelettFen,
   spieleZug,
   zugFelder,
+  zugsperre,
 } from "./weiterspielen";
 
 const GRUND = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -54,5 +55,23 @@ describe("Weiterspielen", () => {
 
   it("blendet in der Skelett-Ansicht alle Figuren außer Bauern und Königen aus", () => {
     expect(skelettFen(GRUND).split(" ")[0]).toBe("4k3/pppppppp/8/8/8/8/PPPPPPPP/4K3");
+  });
+});
+
+describe("Zugsperre (0.2.58): warum eine Figur gerade nicht ziehen darf", () => {
+  it("Schach, Fesselung, blockiert; null für Figuren, die ziehen können", () => {
+    // Grundstellung: Lc1 ist eingebaut, der Bauer e2 kann ziehen, e7 gehört dem Gegner.
+    const grund = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+    expect(zugsperre(grund, "c1")).toBe("blockiert");
+    expect(zugsperre(grund, "e2")).toBeNull();
+    expect(zugsperre(grund, "e7")).toBeNull();
+    expect(zugsperre(grund, "e4")).toBeNull();
+    // Weiß im Schach durch Dh4+ (nach 1. f3 e5 2. g4 Dh4#): kein Zug hilft, Sg1 ist gesperrt.
+    expect(zugsperre("rnb1kbnr/pppp1ppp/8/4p3/6Pq/5P2/PPPPP2P/RNBQKBNR w KQkq - 1 3", "g1")).toBe(
+      "schach",
+    );
+    // Fesselung: Weiß Ke1, Sd2 gegen Schwarz Ke8, Ta1: der Springer deckt nicht, aber Le2 gegen La6? Einfacher:
+    // Weiß Ke1, Le2; Schwarz Ke8, Ta1? Der Turm auf e-Linie: Ke1, Se2 gegen Te8 → Se2 gefesselt.
+    expect(zugsperre("4r2k/8/8/8/8/8/4N3/4K3 w - - 0 1", "e2")).toBe("gefesselt");
   });
 });

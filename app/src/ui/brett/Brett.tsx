@@ -51,6 +51,8 @@ interface BrettEigenschaften {
   readonly letzterZug?: { von: string; nach: string } | null;
   /** Mögliche Zielfelder der gewählten Figur beim Weiterspielen, als kleine Punkte. */
   readonly ziele?: readonly string[];
+  /** Feld einer angetippten Figur, die nicht ziehen darf: leuchtet rot (0.2.58). */
+  readonly gesperrt?: string | null;
 }
 
 /** Heller Schimmer über einem Feld: angetippt oder letzter Zug, nie Gold, Rot oder Grau. */
@@ -61,6 +63,37 @@ function Schimmer({ feld, gedreht, farbe }: { feld: string; gedreht: boolean; fa
 
 /** Anteil der Feldbreite für den Punkt auf einem möglichen Zielfeld. */
 const ZIELPUNKT_RADIUS = 0.14 * FELD;
+/** Ring um eine schlagbare Figur (0.2.58: der Punkt war auf dunklen Figuren kaum zu sehen). */
+const ZIELRING_RADIUS = 0.42 * FELD;
+const ZIELRING_BREITE = 0.07 * FELD;
+/** Rot mit Durchsicht für eine angetippte Figur, die nicht ziehen darf (0.2.58). */
+const SPERRFARBE = "rgba(220, 68, 68, 0.45)";
+
+/** Ring um eine Figur, die geschlagen werden kann: Gold mit dunklem Rand, auf jeder Figur sichtbar. */
+function Zielring({ feld, gedreht }: { feld: string; gedreht: boolean }) {
+  const ecke = feldEcke(feld, gedreht);
+  if (!ecke) return null;
+  const mitte = { cx: ecke.x + FELD / 2, cy: ecke.y + FELD / 2 };
+  return (
+    <g pointerEvents="none">
+      <circle
+        {...mitte}
+        r={ZIELRING_RADIUS}
+        fill="none"
+        stroke={FARBEN.navy}
+        strokeWidth={ZIELRING_BREITE * 1.6}
+        strokeOpacity={0.5}
+      />
+      <circle
+        {...mitte}
+        r={ZIELRING_RADIUS}
+        fill="none"
+        stroke={FARBEN.gold}
+        strokeWidth={ZIELRING_BREITE}
+      />
+    </g>
+  );
+}
 
 /** Kleiner Punkt in der Feldmitte für ein mögliches Zielfeld. */
 function Zielpunkt({ feld, gedreht }: { feld: string; gedreht: boolean }) {
@@ -257,6 +290,7 @@ export function Brett({
   koordinaten = true,
   letzterZug = null,
   ziele = [],
+  gesperrt = null,
 }: BrettEigenschaften) {
   const { brettfarben, figurensatz, ton } = useEinstellungen();
   const farben = BRETTFARBEN[brettfarben];
@@ -269,6 +303,7 @@ export function Brett({
     letzterZug ? `${letzterZug.von}${letzterZug.nach}` : null,
     figuren.size,
     ton === "an" && beiFeld !== undefined,
+    fen,
   );
   const felder = alleFelder(gedreht);
   const pfeile = markierungen.filter(
@@ -285,6 +320,7 @@ export function Brett({
           <Schimmer feld={letzterZug.nach} gedreht={gedreht} farbe={farben.schimmer} />
         )}
         {ausgewaehlt && <Schimmer feld={ausgewaehlt} gedreht={gedreht} farbe={farben.schimmer} />}
+        {gesperrt && <Schimmer feld={gesperrt} gedreht={gedreht} farbe={SPERRFARBE} />}
         {koordinaten && <Koordinaten gedreht={gedreht} farben={farben} />}
         {markierungen.map((m, i) =>
           m.typ === "feld" ? (
@@ -306,9 +342,13 @@ export function Brett({
             )
           );
         })}
-        {ziele.map((feld) => (
-          <Zielpunkt key={`z${feld}`} feld={feld} gedreht={gedreht} />
-        ))}
+        {ziele.map((feld) =>
+          figuren.has(feld) ? (
+            <Zielring key={`z${feld}`} feld={feld} gedreht={gedreht} />
+          ) : (
+            <Zielpunkt key={`z${feld}`} feld={feld} gedreht={gedreht} />
+          ),
+        )}
         {pfeile.map((m, i) => (
           <Pfeil
             key={`p${i}`}

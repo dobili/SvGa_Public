@@ -1553,6 +1553,23 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
 
+## Anmerkungen des Autors vom 17.10.2026 abends: Töne, gesperrte Figur, Schlagring, Holzfiguren, Wertungsstern (Fable, Version 0.2.58)
+
+- **Töne** (`app/ton.ts`, `spiel/zugton.ts`, `ui/brett/useZugton.ts`): Schach (ein Sinuston 880 Hz),
+  Matt (drei fallende Töne), Remis bei Patt oder zu wenig Material (zwei gleiche Töne), jeweils
+  kurz nach dem Klacken des Zuges; Warnung (tiefer Ton 220 Hz). Weiter ohne Tondateien, alles im
+  Browser erzeugt. Die Tonart kommt aus der Stellung nach dem Zug (`tonartNach`).
+- **Gesperrte Figur** (`schach/weiterspielen.ts` `zugsperre`, `useBrettbedienung.ts`): Ein Tipp
+  auf eine eigene Figur ohne legalen Zug leuchtet 0,9 s rot (`gesperrt` am Brett), spielt den
+  Warnton und zeigt unter dem Brett den Grund: Schach (der König steht im Schach), gefesselt
+  (die Figur steht in den „blockers“ von chessops, deckt also den König), sonst blockiert.
+- **Schlagring** (`Brett.tsx` `Zielring`): Auf besetzten Zielfeldern ein goldener Ring mit dunklem
+  Rand statt des Punktes, der auf dunklen Figuren unterging.
+- **Figurensatz „Holz“:** jetzt Merida (Armando Hernandez Marroquin, über Lichess, GPLv2+) in
+  Elfenbein und Nussbaum statt der umgefärbten Burnett-Figuren; damit haben die drei Sätze
+  verschiedene Formen (`docs/LIZENZEN.md`).
+- **Wertungsstern** (`Partienliste.tsx`): goldener Stern hinter dem Ergebnis gewerteter Partien.
+
 ## Blinde Flecken vollständig (17.10.2026, Fable, Zweig `blinde-flecken-2`, Version 0.2.57)
 
 Der Rest aus 0.2.46, nach Regel 9 umgesetzt.

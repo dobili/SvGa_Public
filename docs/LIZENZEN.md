@@ -8,7 +8,8 @@
 | Stockfish 19 (Stockfish.js von Nathan Rugg / Chess.com)                                                                | GNU GPL 3.0               | `/engine/LIZENZ-stockfish.txt` (beim Build aus dem npm-Paket) |
 | chessops (Lichess, Niklas Fiekas)                                                                                      | GNU GPL 3.0               | wie oben                                                      |
 | Figurenschrift SkakNew-Diagram (Ulrich Dirr)                                                                           | LPPL 1.2 oder neuer       | `app/public/lizenzen/lppl-1.3c.txt`                           |
-| Figurensätze „klassisch“ und „Holz“ (Colin M. L. Burnett, über Lichess; „Holz“ umgefärbt)                              | GNU GPL 2.0 oder neuer    | wie der Code (GPL 3.0)                                        |
+| Figurensatz „klassisch“ (Colin M. L. Burnett, über Lichess)                                                            | GNU GPL 2.0 oder neuer    | wie der Code (GPL 3.0)                                        |
+| Figurensatz „Holz“ (Merida von Armando Hernandez Marroquin, über Lichess; umgefärbt)                                   | GNU GPL 2.0 oder neuer    | wie der Code (GPL 3.0)                                        |
 | Trainer-Aufgaben aus der Lichess-Puzzle-Datenbank (`inhalte/de/trainer/taktik.json`, `falle.json`, Herkunft `lichess`) | CC0 1.0 (gemeinfrei)      | – (keine Pflichten; Herkunft in `docs/TRAINERDATEN.md`)       |
 | Source Sans 3, Source Serif 4 (Adobe)                                                                                  | SIL Open Font License 1.1 | `app/public/lizenzen/ofl-*.txt`                               |
 | Holzbilder der Brettfarbe „Holz“ (ambientCG, Wood095 und Wood026)                                                      | CC0 1.0 (gemeinfrei)      | – (keine Pflichten; Herkunft unter Hinweise)                  |
@@ -31,12 +32,14 @@
   erzeugten Daten der Abbildungen (Stellung, Markierungen, Bildunterschrift).
 - In der App stehen alle Angaben unter **Einstellungen (Zahnrad) → Lizenzen** bzw. auf der Installationsseite unter
   „Lizenzen“.
-- **Figurensätze „klassisch“ (seit 0.2.33, bis 0.2.38 „kontrastreich“) und „Holz“ (seit 0.2.39):**
-  `app/public/figuren/klassisch/*.svg`, unverändert aus `lichess-org/lila`, Ordner
-  `public/piece/cburnett` (laut `COPYING.md` dort: Colin M. L. Burnett, GPLv2+);
-  `app/public/figuren/holz/*.svg` sind dieselben Dateien mit anderen Farben (Elfenbein und
-  Dunkelbraun, Umfärbung mit einem Skript, 17.10.2026). Die App ist GPL 3.0 oder neuer; „GPLv2 oder
-  neuer“ erlaubt die Weitergabe unter GPL 3.0.
+- **Figurensatz „klassisch“ (seit 0.2.33, bis 0.2.38 „kontrastreich“):** `app/public/figuren/klassisch/*.svg`,
+  unverändert aus `lichess-org/lila`, Ordner `public/piece/cburnett` (laut `COPYING.md` dort:
+  Colin M. L. Burnett, GPLv2+).
+- **Figurensatz „Holz“ (seit 0.2.58 Merida; 0.2.39 bis 0.2.57 die klassischen Figuren umgefärbt):**
+  `app/public/figuren/holz/*.svg` aus `lichess-org/lila`, Ordner `public/piece/merida` (laut
+  `COPYING.md` dort: Armando Hernandez Marroquin, GPLv2+), mit anderen Farben (Elfenbein und
+  dunkles Nussbaum, Wunsch des Autors: eigene Formen je Figurensatz). GPLv2+ ist mit der GPL 3.0
+  des Codes verträglich.
 - **Lichess-Puzzle-Datenbank (seit 0.2.39, Trainerdaten):** https://database.lichess.org/#puzzles,
   CC0 1.0. In den Daten stehen je Aufgabe Stellung, Lösung, Kennung, Wertung und die Adresse der
   Partie; die Datenbank selbst (300 MB) bleibt lokal. Einzelheiten in `docs/TRAINERDATEN.md`.

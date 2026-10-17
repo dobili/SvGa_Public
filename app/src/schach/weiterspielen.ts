@@ -65,6 +65,28 @@ export function legaleZiele(fen: string, von: string): string[] {
   return [...pos.dests(feld)].map((ziel) => makeSquare(rochadeziel(pos, feld, ziel)));
 }
 
+/** Warum eine eigene Figur gerade nicht ziehen darf (0.2.58, Wunsch des Autors). */
+export type Zugsperre = "schach" | "gefesselt" | "blockiert";
+
+/**
+ * Ist auf dem Feld eine eigene Figur, die keinen legalen Zug hat, und warum?
+ *
+ * Eingaben: Stellung, Feld. Ausgabe: „schach“ (der eigene König steht im Schach und der Zug hülfe
+ * nicht), „gefesselt“ (die Figur deckt den König gegen eine Langschrittfigur), „blockiert“ (alle
+ * Felder besetzt oder keine Zugmöglichkeit); null für ein leeres Feld, eine gegnerische Figur oder
+ * eine Figur, die ziehen kann. Beispiel: Abb. 1.26 nach einem Schach auf e1: Sf3 hat keinen Zug →
+ * „schach“; in der Grundstellung Lc1 → „blockiert“.
+ */
+export function zugsperre(fen: string, feld: string): Zugsperre | null {
+  const pos = stellung(fen);
+  const platz = parseSquare(feld);
+  if (!pos || platz === undefined) return null;
+  const figur = pos.board.get(platz);
+  if (!figur || figur.color !== pos.turn || pos.dests(platz).nonEmpty()) return null;
+  if (pos.isCheck()) return "schach";
+  return pos.ctx().blockers.has(platz) ? "gefesselt" : "blockiert";
+}
+
 /** Ergebnis eines Zugversuchs. */
 export type Zugversuch =
   | { readonly art: "gespielt"; readonly san: string; readonly fen: string }

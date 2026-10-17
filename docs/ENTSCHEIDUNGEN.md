@@ -1552,3 +1552,17 @@ zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
   Antwort legt eine Karte an (`notiereTrainerantwort`); eine vorhandene wandert mit jeder Antwort.
   Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
 - **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.
+
+## Zielbilanz-Übung und Faktorenbilanz-Trainer (Opus, 17.10.2026, Version 0.2.48)
+
+- **Zielbilanz-Übung** (`training/zielbilanztrainer.ts`): Buchstellungen der Kapitel 2 und 3
+  mit Zugnummer 6 bis 20 und beiden Königen; ohne angegriffene Zentrumsbauern, weil dort im
+  Werkzeug erst die Engine entscheidet (C1.1). Lösung aus `schach/zielbilanz.ts`; ein Test
+  vergleicht sie mit allen Bilanztabellen des Buches, die als Aufgabe taugen (Befund 2.71
+  Zentrum Schwarz wie im Werkzeug). Richtig nur, wenn alle sechs Felder stimmen (Rückfrage W8).
+- **Faktorenbilanz-Trainer** (`training/faktorentrainer.ts`): Buchstellungen aus Kapitel 3 mit
+  Regeln, ohne Schach und ohne Matt oder Patt. Je Faktor „Weiß, gleich, Schwarz“ aus
+  `faktorwertungen` (Waage für Material und Zeit, Einschätzung gut/teils/schlecht für
+  Königssicherheit und Aktivität). Urteil des Buches und „annehmen oder ablehnen?“ fehlen noch
+  (Rückfrage W9); der Ablauftext des Trainers sagt nur, was er kann.
+- Gemeinsame Auswahlzeile `ui/trainer/Wahlzeile.tsx` mit „App: …“ nach der Antwort.

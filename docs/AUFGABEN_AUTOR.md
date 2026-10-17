@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.47. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.48. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.47“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.48“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 W, U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,21 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.47“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.48“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.48 (etwa 10 Minuten; zwei neue Trainer, Opus)
+
+- [ ] N250. **Zielbilanz-Übung:** Training › „Zielbilanz-Übung“ › Trainieren: Brett mit einer
+      Eröffnungsstellung aus Kapitel 2 oder 3, darunter für Weiß und Schwarz je drei Zeilen
+      (Zentrum, Entwicklung, Königssicherheit) mit „ja, teils, nein“. „Prüfen“ geht erst, wenn
+      alle sechs gewählt sind. Danach steht neben jeder Zeile „App: …“ (grün, wenn deine Wahl
+      stimmt, sonst rot) und darunter die Begründung wie im Werkzeug „Zielbilanz“. Fünf Aufgaben
+      je Runde. Stimmen die Wertungen mit dem, was du im Buch lehrst?
+- [ ] N251. **Faktorenbilanz-Trainer:** Training › „Faktorenbilanz-Trainer“ › Trainieren:
+      Stellung aus Kapitel 3, je Faktor (Material, Zeit, Königssicherheit, Aktivität) „Weiß,
+      gleich, Schwarz“. Nach „Prüfen“ je Zeile „App: …“ und darunter die ganze Faktorenbilanz mit
+      Haltbarkeit und Fazit wie im Werkzeug. Rückfrage dazu: W9.
 
 ### Neu in 0.2.47 (etwa 15 Minuten, mit Engine; Claudes Empfehlungen schon umgesetzt, Opus)
 
@@ -671,6 +684,22 @@ Regeln C1 und C2).
 - [ ] W7. **Rundenlänge acht, leichteste zuerst, Buchaufgaben vor Lichess** bei gleicher Stufe.
       **Empfehlung:** so lassen. Acht Aufgaben passen in eine kurze Pause, und der Leser trifft
       zuerst auf die Stellungen aus seinem Buch.
+- [ ] W8. **Zielbilanz-Übung (0.2.48):** Stellungen aus Kapitel 2 und 3 ab Zug 6 bis Zug 20,
+      fünf je Runde. Stellungen, in denen ein Zentrumsbauer angegriffen ist, kommen nicht dran,
+      weil dort im Werkzeug erst die Engine entscheidet, ob er hängt (die Übung soll ohne Engine
+      laufen und kein strittiges „teils“ abfragen). Richtig ist eine Aufgabe nur, wenn alle sechs
+      Felder stimmen. So lassen?
+      **Empfehlung:** so lassen. Sechs Felder sind schnell ausgefüllt, und die App zeigt je Feld,
+      was stimmte; „teilweise richtig“ würde die Zählung der Runde unscharf machen.
+- [ ] W9. **Faktorenbilanz-Trainer (0.2.48):** Stellungen aus Kapitel 3 (ohne Schach und ohne
+      entschiedene Stellung), je Faktor „Weiß, gleich, Schwarz“. Königssicherheit und Aktivität
+      vergleicht die App über ihre Einschätzung je Seite (gut, teils, schlecht); bei gleicher
+      Einschätzung heißt es „gleich“. Noch nicht drin: das Urteil des Buches zu Buchstellungen und
+      die Frage „annehmen oder ablehnen?“ aus dem Pflichtenheft. Dafür bräuchte die App je Gambit
+      einen Satz, ob man annimmt oder ablehnt, und den kann nur das Buch liefern. Soll das kommen?
+      **Empfehlung:** ja, aber erst mit den vorbereiteten Texten (AP 14): Dort steht je Abbildung
+      ohnehin eine Einschätzung in eigenen Worten, die du freigibst. Bis dahin vergleicht der
+      Trainer nur mit der Rechnung der App.
 
 ### U. Übungen und erste Trainer (Opus, 0.2.37; plausibel entschieden)
 

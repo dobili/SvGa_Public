@@ -207,3 +207,22 @@ test("Zielbilanz-Übung: Tabelle für beide Seiten ausfüllen, App zeigt ihre We
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
+
+test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "faktorenbilanz");
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 5");
+  for (const faktor of ["Material", "Zeit", "Königssicherheit", "Aktivität"]) {
+    await runde
+      .getByRole("group", { name: faktor, exact: true })
+      .getByRole("button", { name: "gleich" })
+      .click();
+  }
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(runde.getByText(/^App: (Weiß|gleich|Schwarz)$/)).toHaveCount(4);
+  await expect(page.getByTestId("faktoren-bilanz")).toBeVisible();
+  await page.screenshot({ path: "test-results/bilder/trainer-faktoren.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Aufgabe 2 von 5");
+});

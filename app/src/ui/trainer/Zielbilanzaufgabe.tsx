@@ -24,6 +24,7 @@ import {
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
+import { Wahlzeile } from "./Wahlzeile";
 
 type Entwurf = Record<Color, Partial<Record<Ziel, Wertung>>>;
 
@@ -38,42 +39,6 @@ function vollstaendig(entwurf: Entwurf): Tabelle | null {
   const weiss = zeile("white");
   const schwarz = zeile("black");
   return weiss && schwarz ? { white: weiss, black: schwarz } : null;
-}
-
-/** Eine Zeile der Tabelle: drei Knöpfe, nach der Antwort mit der Wertung der App. */
-function Zeile({
-  ziel,
-  wert,
-  setze,
-  app,
-}: {
-  ziel: Ziel;
-  wert: Wertung | undefined;
-  setze: (w: Wertung) => void;
-  app: Wertung | null;
-}) {
-  return (
-    <fieldset className="zahlwahl">
-      <legend>{t(`zielbilanz.ziel.${ziel}`)}</legend>
-      {WERTUNGEN.map((w) => (
-        <button
-          key={w}
-          type="button"
-          className="chip"
-          aria-pressed={wert === w}
-          disabled={app !== null}
-          onClick={() => setze(w)}
-        >
-          {t(`zielbilanz.wertung.${w}`)}
-        </button>
-      ))}
-      {app !== null && (
-        <span className={`meldung ${app === wert ? "gut" : "schlecht"}`}>
-          {t("zielbilanztrainer.app", { wertung: t(`zielbilanz.wertung.${app}`) })}
-        </span>
-      )}
-    </fieldset>
-  );
 }
 
 /** Die Begründung der App, wie im Werkzeug „Zielbilanz“. */
@@ -114,9 +79,11 @@ export function Zielbilanzaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
         <section key={seite} data-testid={`zielbilanz-${seite}`}>
           <h3 className="karte-titel">{t(`zielbilanztrainer.seite.${seite}`)}</h3>
           {ZIELE.map((ziel) => (
-            <Zeile
+            <Wahlzeile
               key={ziel}
-              ziel={ziel}
+              titel={t(`zielbilanz.ziel.${ziel}`)}
+              werte={WERTUNGEN}
+              name={(w) => t(`zielbilanz.wertung.${w}`)}
               wert={entwurf[seite][ziel]}
               setze={setze(seite, ziel)}
               app={beantwortet ? aufgabe.loesung[seite][ziel] : null}

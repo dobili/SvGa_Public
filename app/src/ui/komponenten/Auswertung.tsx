@@ -96,10 +96,14 @@ function Abweichung({
   );
 }
 
-/** Grobe Patzer des Lesers (mehr als zwei Bauern). */
+/**
+ * Grobe Patzer des Lesers (mehr als zwei Bauern); ohne Züge, nach denen er weiter klar gewinnt
+ * (K5: die haben nur „?!“).
+ */
 function Patzer({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[] }) {
   const grobe = urteile.filter(
-    (u) => partie.zuege[u.index]?.von === "leser" && u.verlust > GROBER_PATZER,
+    (u) =>
+      partie.zuege[u.index]?.von === "leser" && u.verlust > GROBER_PATZER && u.klasse !== "ungenau",
   );
   if (grobe.length === 0) return null;
   const liste = grobe.map((u) => zugtext(partie, u.index, u.zeichen ?? "")).join(", ");

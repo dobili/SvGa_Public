@@ -19,6 +19,7 @@ import { pruefeEntscheidung } from "../../training/fallentrainer";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
+import { antworteMitKarte } from "./kartenantwort";
 
 const buchzug = (san: string) => sanInSprache(san, sprache());
 
@@ -96,14 +97,18 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
           <button
             type="button"
             className="knopf-haupt"
-            onClick={() => runde.beantworte(pruefeEntscheidung(aufgabe, true))}
+            onClick={() =>
+              antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, true))
+            }
           >
             {t("fallentrainer.nehmen", { zug: buchzug(aufgabe.angebot) })}
           </button>
           <button
             type="button"
             className="knopf-haupt"
-            onClick={() => runde.beantworte(pruefeEntscheidung(aufgabe, false))}
+            onClick={() =>
+              antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, false))
+            }
           >
             {t("fallentrainer.nichtNehmen")}
           </button>

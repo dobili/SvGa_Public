@@ -1,11 +1,13 @@
 /** Tests für den Fortschritt je Kapitel (Pflichtenheft 4, Stufe 2). */
 import { describe, expect, it } from "vitest";
+import { aufgabenAusKarten, faellige, trainerkarte } from "../training/wiederholung";
 import { leereDaten } from "./format";
 import {
   geloesteUebungen,
   kapitelfortschritt,
   markiereGesehen,
   notiereDurchgang,
+  notiereTrainerantwort,
   notiereUebung,
   notiereUebungsergebnis,
   setzeGesehen,
@@ -98,5 +100,18 @@ describe("Fortschritt", () => {
       ["roentgen", null],
       ["zaehlen", 1],
     ]);
+  });
+
+  it("U9: nur eine falsche Antwort legt eine Trainerkarte an, danach wandert sie", () => {
+    const karte = trainerkarte("taktik", "taktik-b-7.6");
+    const leer = leereDaten(ERST);
+    expect(notiereTrainerantwort(leer, karte, true, ERST)).toBe(leer);
+    const falsch = notiereTrainerantwort(leer, karte, false, ERST);
+    expect(falsch.karten[karte]?.kasten).toBe(1);
+    expect(faellige(falsch.karten, DANN)).toEqual([karte]);
+    expect(aufgabenAusKarten(faellige(falsch.karten, DANN), "taktik")).toEqual(["taktik-b-7.6"]);
+    expect(aufgabenAusKarten(faellige(falsch.karten, DANN), "falle")).toEqual([]);
+    const richtig = notiereTrainerantwort(falsch, karte, true, DANN);
+    expect(richtig.karten[karte]?.kasten).toBe(2);
   });
 });

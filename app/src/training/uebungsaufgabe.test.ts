@@ -6,7 +6,16 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import type { Datenverzeichnis } from "../daten/generiert/index";
 import type { Kapitel } from "../daten/generiert/kapitel";
-import { aufgabeZu, pruefeZug, stellungNach, zuegeAusText, type Uebungsaufgabe } from "./uebungsaufgabe";
+import type { Uebungspruefung } from "../daten/trainerdaten";
+import {
+  ENGINE_VORSCHLAEGE_UEBERNOMMEN,
+  aufgabeZu,
+  engineAkzeptiert,
+  pruefeZug,
+  stellungNach,
+  zuegeAusText,
+  type Uebungsaufgabe,
+} from "./uebungsaufgabe";
 
 const ORDNER = new URL("../../public/daten/de/a1/", import.meta.url);
 const lies = <T>(datei: string): T => JSON.parse(readFileSync(new URL(datei, ORDNER), "utf8")) as T;
@@ -80,5 +89,28 @@ describe("Übungsaufgaben", () => {
       "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
     );
     expect(stellungNach(start, ["e5"])).toBe(start);
+  });
+
+  it("T1: gleich gute Züge der Engine gelten in den Übungen 6, 11, 15 und 39", () => {
+    const datei = new URL("../../../inhalte/de/trainer/uebungen-engine.json", import.meta.url);
+    const pruefung = JSON.parse(readFileSync(datei, "utf8")) as Uebungspruefung;
+    for (const eintrag of pruefung.uebungen) {
+      const zusaetzlich = engineAkzeptiert(pruefung, eintrag.uebung);
+      if (!ENGINE_VORSCHLAEGE_UEBERNOMMEN.has(eintrag.nummer)) {
+        expect(zusaetzlich).toEqual([]);
+        continue;
+      }
+      expect(zusaetzlich.length).toBeGreaterThan(0);
+      const uebung = uebungen.find((u) => u.id === eintrag.uebung);
+      const erste = uebung?.abbildungen[0];
+      const a = aufgabeZu(erste ? fenVon(erste) : null, uebung?.erklaerung?.loesung ?? null, [
+        ...(uebung?.erklaerung?.akzeptiert ?? []),
+        ...zusaetzlich,
+      ]);
+      if (a.art !== "zug") throw new Error(`${eintrag.uebung} ist keine Zugaufgabe`);
+      // Jeder Vorschlag ist spielbar und löst die Übung.
+      for (const zug of zusaetzlich) expect(pruefeZug(a, [], zug).art).toBe("geloest");
+    }
+    expect(engineAkzeptiert(null, "ueb:spannung-halten")).toEqual([]);
   });
 });

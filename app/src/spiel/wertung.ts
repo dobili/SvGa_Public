@@ -14,8 +14,8 @@
  * nach Eröffnung, Mittelspiel und Endspiel umschalten, um zu sehen, wo das Üben am meisten
  * bringt).
  * Gewertet werden nur beendete Partien gegen die Engine aus der Grundstellung (Wunsch des
- * Autors: nichts aus Abbildungen oder aufgebauten Stellungen) mit Haken „gewertete Partie“ und
- * fertiger Auswertung; Partien mit zu wenigen Zügen für eine Schätzung zählen nicht.
+ * Autors: nichts aus Abbildungen oder aufgebauten Stellungen) ohne Rücknahme mit Haken
+ * „gewertete Partie“ und fertiger Auswertung; Partien mit zu wenigen Zügen für eine Schätzung zählen nicht.
  * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
  * speicher/partien.ts (Partieeintrag).
  */
@@ -128,8 +128,9 @@ export function aktuelleWertung(punkte: readonly Wertungspunkt[]): number | null
 
 /**
  * Der Wertungspunkt zu einer Partie, oder null, wenn sie nicht zählt: nicht gewertet, gegen
- * einen Menschen, nicht aus der Grundstellung, nicht beendet, ohne Auswertung, schon gezählt,
- * oder ohne Schätzung des Gegners (zu wenige Züge). Die erste Partie braucht auch die Schätzung
+ * einen Menschen, nicht aus der Grundstellung, mit Rücknahme, nicht beendet, ohne Auswertung,
+ * schon gezählt, oder ohne Schätzung des Gegners (zu wenige Züge). Rücknahmen: Empfehlung S9,
+ * umgesetzt in 0.2.47 (wer einen Patzer zurücknimmt, spielt stärker, als er ist). Die erste Partie braucht auch die Schätzung
  * für den Leser.
  *
  * Beispiel: erste Partie, Engine schätzt den Leser auf 1400 → Wertung 1400 (unabhängig vom
@@ -144,7 +145,7 @@ export function wertungspunktFuer(
   if (!p.einstellung.gewertet || p.einstellung.gegner !== "engine" || ergebnis === null) {
     return null;
   }
-  if (!ausGrundstellung(p)) return null;
+  if (!ausGrundstellung(p) || p.ruecknahmen > 0) return null;
   if (punkte.some((punkt) => punkt.partieId === p.id)) return null;
   const staerke = staerkeDerPartie(eintrag);
   if (!staerke) return null;

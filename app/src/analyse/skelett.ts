@@ -10,7 +10,7 @@
  */
 import type { Color, Square } from "chessops/types";
 import { t } from "../i18n/sprache";
-import { squareFile } from "chessops/util";
+import { squareFile, squareRank } from "chessops/util";
 import { vonBauerGedeckt, type Mehrheit } from "../schach/bauernprofil";
 import { felderbefund, feldVor, type Felderbefund } from "../schach/skelettfelder";
 import {
@@ -185,6 +185,15 @@ export function zielschwaeche(p: Stellungsprofil, farbe: Color): Zielschwaeche |
   return kandidaten.sort((a, b) => zielrang(a) - zielrang(b))[0] ?? null;
 }
 
+/** Reihen der weißen Hälfte (1 bis 4, gezählt ab 0). */
+const LETZTE_REIHE_WEISSE_HAELFTE = 3;
+
+/** Steht das Feld in der Hälfte dieser Farbe (Weiß: Reihe 1 bis 4, Schwarz: 5 bis 8)? */
+function inEigenerHaelfte(feld: Square, farbe: Color): boolean {
+  const weisseHaelfte = squareRank(feld) <= LETZTE_REIHE_WEISSE_HAELFTE;
+  return farbe === "white" ? weisseHaelfte : !weisseHaelfte;
+}
+
 /** Der Plan einer Minderheit: Angriff mit den Bauern oder, vor dem eigenen König, Gegenspiel mit Figuren. */
 export interface Minderheitsplan {
   readonly art: "angriff" | "gegenspiel";
@@ -202,7 +211,10 @@ export interface Minderheitsplan {
  * Königsflügel“ (Abb. 5.32, Schwarz).
  * Eingaben: Profil, Farbe, Richtungsbefund der Farbe. Ausgabe: Plan oder null.
  * Beispiel: Abb. 6.8, Weiß: Angriff am Damenflügel (b2–b4–b5); Schwarz: Gegenspiel am
- * Königsflügel. Sonderfall: Lehrbilder ohne König kennen kein Gegenspiel.
+ * Königsflügel. Sonderfall: Lehrbilder ohne König kennen kein Gegenspiel. Steht der Kandidat der
+ * gegnerischen Mehrheit schon in der eigenen Hälfte (Abb. 5.30, Berliner Endspiel: e5), gibt es
+ * keinen Minderheitsangriff (Empfehlung C8, umgesetzt in 0.2.47): Dort geht es darum, den
+ * vorgerückten Kandidaten aufzuhalten, und das Buch nennt für Schwarz keinen Minderheitsangriff.
  */
 export function minderheitsplan(
   p: Stellungsprofil,
@@ -213,7 +225,8 @@ export function minderheitsplan(
   const koenig = p.stellung.brett.kingOf(farbe);
   for (const m of r.minderheiten) {
     if (m.eigene < MINDERHEIT_MINDESTENS) continue;
-    if (!gesund(gegnerMehrheiten.find((g) => g.fluegel === m.fluegel))) continue;
+    const ziel = gegnerMehrheiten.find((g) => g.fluegel === m.fluegel);
+    if (!gesund(ziel) || inEigenerHaelfte(ziel.kandidat, farbe)) continue;
     if (!r.hebel.some((h) => fluegelVon(h.von) === m.fluegel)) continue;
     const vorDemKoenig = koenig !== undefined && fluegelVon(koenig) === m.fluegel;
     return { art: vorDemKoenig ? "gegenspiel" : "angriff", fluegel: m.fluegel };

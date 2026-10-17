@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 17.10.2026, Version 0.2.46. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 17.10.2026, Version 0.2.47. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.46“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.47“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (S, R,
 W, U, T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,41 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.46“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.47“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.47 (etwa 15 Minuten, mit Engine; Claudes Empfehlungen schon umgesetzt, Opus)
+
+Sechs Empfehlungen aus Teil 2 sind schon eingebaut, weil sie sich leicht zurücknehmen lassen:
+S9, K5, R3, C8, T1, U9 (E2 stand schon so im Entwurf). Gefällt dir etwas nicht, genügt ein
+Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
+
+- [ ] N244. **Rücknahme macht die Partie ungewertet (S9):** Eine gewertete Partie gegen die Engine
+      aus der Grundstellung spielen, dabei einmal „Zug zurück“ nehmen, zu Ende spielen. In den
+      Einstellungen bei „Deine Spielstärke“ kommt kein neuer Punkt dazu. Der Hinweis unter dem
+      Haken „Gewertete Partie“ sagt: „Nimmst du einen Zug zurück, zählt die Partie nicht.“
+- [ ] N245. **Kein „??“ bei klarem Gewinn (K5):** Eine Partie, in der du klar gewinnst (etwa
+      Dame mehr), und statt eines Matts in zwei einen anderen gewinnenden Zug spielen. Der Zug
+      bekommt höchstens „?!“ (ungenau), nicht mehr „??“, und steht nicht unter „Grobe Patzer“. In
+      der Engine-Karte steht bei der Regel zu den Zeichen der neue Satz „Steht die ziehende Seite
+      danach noch mit +5 oder besser, gibt es höchstens „?!““.
+- [ ] N246. **Geschätzte Spielstärke (R3):** In der Karte „Spielstärke“ unter der Auswertung
+      heißt die Zeile jetzt „Geschätzte Spielstärke“, der Wert „etwa 1400“. Die Erklärung sagt
+      „keine Wertungszahl eines Verbands“.
+- [ ] N247. **Berliner Endspiel (C8):** Abb. 5.30 › Werkzeug „Richtung“ aus schwarzer Sicht: Die
+      Zeile heißt nur noch „Minderheit am Königsflügel (3 gegen 4)“ ohne „Ziel ist ein
+      Minderheitsangriff“; das Fazit lautet „Schwarz spielt am Damenflügel: Dort bildet die
+      Mehrheit einen Freibauern.“ Abb. 5.32 (Carlsbad)
+      sagt für Weiß weiter „Minderheitsangriff“.
+- [ ] N248. **Gleich gute Züge in Übungen (T1):** Übung 6 (Abb. 1.42) mit 4... Df6 statt 4... Sf6
+      lösen: „Richtig! Auch dieser Zug ist gleich gut. Die Erklärung zeigt den Weg des Buches.“
+      Ebenso Übung 11 (Abb. 2.151) mit 4... Dc7, Übung 15 (3.81) mit 4... Sf6 und Übung 39 (7.51)
+      mit 1. Sxf6+. Mit dem Zug des Buches steht weiter „Das ist die Lösung des Buches“.
+- [ ] N249. **Wiederholung in Taktik und „Falle oder Köder“ (U9):** Im Taktiktrainer eine Aufgabe
+      mit „Lösung zeigen“ beenden. Im Bereich Training steht unter „Fällige Wiederholungen“ ein
+      Termin für morgen. Am nächsten Tag steht dort „Taktiktrainer: 1 fällig“; der Knopf führt in
+      den Trainer, oben steht „Wiederholen: 1 Aufgabe ist fällig“ und startet eine Runde nur mit
+      dieser Aufgabe. Richtig gelöste neue Aufgaben kommen nicht in die Wiederholung.
 
 ### Neu in 0.2.46 (etwa 20 Minuten, mit Engine; Bots mit Persönlichkeit, dein Wunsch vom 17.10.2026 abends)
 
@@ -487,7 +520,7 @@ Regeln C1 und C2).
       ersten zehn Partien und danach K = 20 (wie beim Weltschachbund unter 2400). Es zählen nur
       Partien gegen die Engine aus der Grundstellung (dein Wunsch; nichts aus Abbildungen oder
       aufgebauten Stellungen). Partien mit weniger als zehn eigenen Zügen haben keine Schätzung
-      und zählen nicht; Partien mit Rücknahmen zählen (die Rücknahme steht in der Auswertung). Alternativen, falls dir das zu
+      und zählen nicht; Partien mit Rücknahmen zählten bis 0.2.46 (seit 0.2.47 nicht mehr, siehe unten). Alternativen, falls dir das zu
       sprunghaft ist: (a) die Wertung als gleitender Durchschnitt der Schätzungen der letzten zehn
       Partien, ohne Sieg und Niederlage; (b) Glicko (Elo mit Unsicherheit, die mit jeder Partie
       sinkt). Empfehlung: Elo lassen, weil Sieg und Niederlage zählen sollen. Sollen Partien mit
@@ -495,6 +528,8 @@ Regeln C1 und C2).
       **Empfehlung zu den Rücknahmen: Partien mit Rücknahme ungewertet lassen. Wer einen Patzer
       zurücknehmen kann, spielt stärker, als er ist; Lichess und chess.com werten solche Partien aus
       demselben Grund nicht.
+      **Schon umgesetzt in 0.2.47 (Nachtest N244): Partien mit Rücknahme zählen nicht. Widerspruch
+      genügt.**
 - [ ] S10. **Ausschnitte der Kurve:** letzte 10, 25 oder 50 Partien; 1 Woche, 4 Wochen, 3 Monate,
       halbes Jahr, 1 Jahr; Vorgabe „letzte 25 Partien“. Bei den Zeiträumen liegt jede Partie an
       ihrer Zeit, der rechte Rand ist jetzt. Andere Stufen oder Vorgabe?
@@ -574,6 +609,8 @@ Regeln C1 und C2).
       Soll die Zahl bleiben, nur die Genauigkeit stehen, oder ein anderes Wort als „Spielstärke“?
       **Empfehlung:** Zahl behalten, aber als „geschätzte Spielstärke“ mit dem Wort „etwa“. Eine
       Zahl motiviert mehr als eine Prozentangabe; das „etwa“ sagt ehrlich, dass sie grob ist.
+      **Schon umgesetzt in 0.2.47 (Nachtest N246): „Geschätzte Spielstärke“, Wert „etwa 1400“.
+      Widerspruch genügt.**
 - [ ] R4. **Stufen menschlicher machen.** Warum die Engine auf Stufe 1 bis 3 „dämlich und dann
       genial“ wirkt: Sie nutzt Stockfishs „Skill Level 0“ plus zufällige Fehlerwürfe. Skill
       Level 0 würfelt an Suchtiefe 1 unter den vier besten Zügen einer vollen Suche. Alles, was
@@ -681,6 +718,8 @@ Regeln C1 und C2).
       **Empfehlung:** ja, aber nur für Taktiktrainer und „Falle oder Köder“. Deren Aufgaben haben
       feste Kennungen; eine falsch gelöste Aufgabe kommt als Karte wieder. Zähltrainer, Röntgen und
       Koordinaten erzeugen ihre Aufgaben zufällig, dort ergibt eine Wiederholung keinen Sinn.
+      **Schon umgesetzt in 0.2.47 (Nachtest N249): Eine falsch gelöste Aufgabe (auch „Lösung
+      zeigen“) wird zur Karte; richtig gelöste neue Aufgaben nicht. Widerspruch genügt.**
 
 - [ ] U11. **Bewertungsbalken** nur nach der Partie (wie empfohlen, R13), nicht während der
       Partie. So lassen?
@@ -723,6 +762,9 @@ hat, mit Rückfrage:
       Engine gleich guten Zug findet, soll nicht „falsch“ hören; die Erklärung zeigt danach ohnehin
       die Lösung des Buches. Übung 2 ist in der App eine Denkaufgabe (Notation schreiben), dort
       ändern die Vorschläge nichts. Übung 83 so lassen, beide Züge sind gut.
+      **Schon umgesetzt in 0.2.47 (Nachtest N248): Die Vorschläge für die Übungen 6, 11, 15 und 39
+      gelten; die Rückmeldung sagt dann „Auch dieser Zug ist gleich gut“. Übung 2, 60, 66 und 83
+      unverändert. Widerspruch genügt.**
 - [ ] T2. **Menge der Zusatzaufgaben von Lichess** (gemeinfrei, CC0): 637 Taktikaufgaben (je
       Motiv und Stufe 8) und 120 Fallen-Aufgaben (je Stufe 12 Fallen und 12 Geschenke), dazu 37
       Taktik- und 12 Fallenaufgaben aus dem Buch. Genug, zu viel, oder lieber mehr für die Stufen
@@ -790,6 +832,12 @@ hat, mit Rückfrage:
       **Empfehlung:** nicht mehr anzeigen. Im Berliner Endspiel spielt Schwarz in der Praxis mit dem
       Läuferpaar und der Mehrheit am Damenflügel, nicht mit einem Minderheitsangriff am
       Königsflügel; ein Rat, den das Buch nicht stützt, verwirrt eher.
+      **Schon umgesetzt in 0.2.47 (Nachtest N247): Steht der Kandidat der gegnerischen Mehrheit
+      schon in der eigenen Hälfte (im Berliner Endspiel e5), nennt die App keinen
+      Minderheitsangriff. Schwarz bekommt dann die allgemeine Regel „Schwarz spielt am
+      Damenflügel: Dort bildet die Mehrheit einen Freibauern.“ (die Mehrheit ist durch den
+      Doppelbauern c7/c6 krank; das Läuferpaar sieht das Werkzeug nicht, es schaut nur auf die
+      Bauern). Carlsbad (5.32 bis 5.34, 6.8) bleibt unverändert. Widerspruch genügt.**
 
 - [ ] C9. **Kandidaten in 12.4** (C1.28): Nur „Matt scheidet aus“ hätte Dd1+ (−9) zum besten
       Kandidaten gemacht. Claude ergänzt deshalb einen Zug, der ein drohendes Matt abwehrt (dort
@@ -827,6 +875,10 @@ hat, mit Rückfrage:
       ist dafür zu hart. Lichess und chess.com rechnen die Bewertung vorher in eine Gewinnchance um;
       dann kostet dieser Zug fast nichts. Vorschlag: Verlust über die Gewinnchance messen, ab +5 nie
       mehr als „?!“.
+      **Schon umgesetzt in 0.2.47 (Nachtest N245): Steht die ziehende Seite nach dem Zug noch bei
+      +5 oder besser, gibt es höchstens „?!“, auch in der Engine-Karte und ohne Eintrag unter
+      „Grobe Patzer“. Der Verlust je Zug bleibt in Bauern (die Genauigkeit rechnet ohnehin über die
+      Gewinnchance). Widerspruch genügt.**
 - [ ] K6. **Stufen 4 bis 7 ohne Elo-Begrenzung:** Die Stufen nutzen Skill Level 3, 6, 10, 15
       (geräteunabhängig: Die Stärke hängt von der Suchtiefe ab, nicht vom Gerät). Die Namen der Stufen bleiben; eine
       Elo-Zahl zeigt die App nicht. Einverstanden?
@@ -855,6 +907,8 @@ hat, mit Rückfrage:
       **Empfehlung:** Entwurf übernehmen, aber Cloudflare als Hoster nennen. Die App selbst sammelt
       nichts und läuft offline; der Server speichert beim Laden jedoch wie jeder Webserver
       Zugriffsdaten (IP-Adresse).
+      **Stand 0.2.47: Cloudflare steht schon im Entwurf (Abschnitt „Auslieferung der Website“).
+      Offen ist nur noch der Verantwortliche, den nur du eintragen kannst.**
 - [ ] E3. **Buchbeschreibung** auf der Startseite: Entwurf bestätigen oder ersetzen.
       **Empfehlung:** denselben Text wie auf der Rückseite des Buches nehmen, dann stimmen Buch
       und Website überein.

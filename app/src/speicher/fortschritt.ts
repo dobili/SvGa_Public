@@ -113,6 +113,26 @@ export function notiereUebungsergebnis(
   return { ...mitVersuch, karten: { ...daten.karten, [kennung]: karte } };
 }
 
+/**
+ * Notiert die Antwort auf eine Trainer-Aufgabe in ihrer Wiederholungskarte (Empfehlung U9).
+ *
+ * Warum: Eine falsch gelöste Aufgabe soll wiederkommen; jede richtig gelöste neue Aufgabe als
+ * Karte würde die Wiederholung mit Bekanntem füllen. Deshalb legt nur eine falsche Antwort eine
+ * Karte an; eine vorhandene Karte wandert mit jeder Antwort (richtig weiter, falsch zurück).
+ * Beispiel: „taktik:taktik-b-7.6“ falsch → Kasten 1, morgen fällig; später richtig → Kasten 2.
+ */
+export function notiereTrainerantwort(
+  daten: Nutzerdaten,
+  karte: string,
+  richtig: boolean,
+  jetzt: Date,
+): Nutzerdaten {
+  const alt = daten.karten[karte] ?? null;
+  if (alt === null && richtig) return daten;
+  const neu = beantworte(alt, richtig ? "richtig" : "falsch", jetzt);
+  return { ...daten, karten: { ...daten.karten, [karte]: neu } };
+}
+
 /** Notiert einen abgeschlossenen Durchgang eines Trainers (Aufgaben und richtige Antworten). */
 export function notiereDurchgang(
   daten: Nutzerdaten,

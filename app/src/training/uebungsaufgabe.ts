@@ -11,6 +11,7 @@
  * Abhängigkeiten: chessops (über schach/stellung und spiel/zuege).
  */
 import { makeFen } from "chessops/fen";
+import type { Uebungspruefung } from "../daten/trainerdaten";
 import { makeSanAndPlay, parseSan } from "chessops/san";
 import { regelstellung } from "../spiel/zuege";
 
@@ -97,6 +98,25 @@ export function aufgabeZu(
     return { art: "denken" };
   }
   return { art: "zug", fen, linien };
+}
+
+/**
+ * Übungen, bei denen die App die gleich guten Züge der Engine-Prüfung zusätzlich gelten lässt
+ * (Empfehlung T1, umgesetzt in 0.2.47): Übung 6 (Abb. 1.42), 11 (2.151), 15 (3.81), 39 (7.51).
+ * Nicht bei den Technikübungen 60 und 66: Dort lehrt die Übung einen Weg.
+ */
+export const ENGINE_VORSCHLAEGE_UEBERNOMMEN: ReadonlySet<number> = new Set([6, 11, 15, 39]);
+
+/**
+ * Die zusätzlich akzeptierten ersten Züge einer Übung aus der Engine-Prüfung (englische
+ * Kurznotation, etwa „Qf6“); leer ohne Prüfung oder außerhalb der übernommenen Übungen.
+ *
+ * Beispiel: Übung 6 (4... Sf6, Buch akzeptiert 4... Lc5) → [„Qf6“, „Bb4+“, „Nxd4“].
+ */
+export function engineAkzeptiert(pruefung: Uebungspruefung | null, uebung: string): string[] {
+  const eintrag = pruefung?.uebungen.find((u) => u.uebung === uebung);
+  if (!eintrag || !ENGINE_VORSCHLAEGE_UEBERNOMMEN.has(eintrag.nummer)) return [];
+  return [...(eintrag.vorschlagAkzeptiert ?? [])];
 }
 
 const ohneSchach = (san: string) => san.replace(/[+#]$/, "");

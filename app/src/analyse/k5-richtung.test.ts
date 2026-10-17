@@ -117,6 +117,9 @@ describe("k5-richtung", () => {
   it("Abb. 5.30 (Berliner Endspiel): Weiß vier gegen drei am Königsflügel, Kandidat e5", () => {
     expect(zeilen("5.30", "white")).toContain("Mehrheit am Königsflügel (4 gegen 3), Kandidat e5");
     expect(zeilen("5.30", "black")).toContain("Mehrheit am Damenflügel (4 gegen 3)");
+    // C8: kein Minderheitsangriff gegen den schon vorgerückten Kandidaten e5.
+    expect(zeilen("5.30", "black")).toContain("Minderheit am Königsflügel (3 gegen 4)");
+    expect(richtung(stellungVon("5.30"), "black").fazit).not.toContain("Minderheitsangriff");
   });
 
   it("Abb. 6.20 (Königsindisch): c4–c5 gegen die Basis d6; ...f5 muss der Springer f6 Platz machen", () => {

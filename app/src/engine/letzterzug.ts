@@ -91,7 +91,7 @@ export function urteilUeberLetztenZug(
   const einziger =
     warBester && zweite !== undefined && sicht(beste) - sicht(zweite) >= GRENZE_FEHLER;
   return {
-    zeichen: einziger ? "!" : zeichenFuer(verlust),
+    zeichen: einziger ? "!" : zeichenFuer(verlust, gespielterWert),
     verlust,
     besterZug: beste.zuege[0] ?? null,
     warBester,

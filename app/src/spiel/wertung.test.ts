@@ -97,7 +97,7 @@ describe("Wertung", () => {
     expect(verlauf.at(-1)?.wertung).toBe(Math.round(erwartet));
   });
 
-  it("zählt nicht: ungewertet, gegen Mensch, nicht aus der Grundstellung, laufend, ohne Auswertung, schon gezählt", () => {
+  it("zählt nicht: ungewertet, gegen Mensch, nicht aus der Grundstellung, mit Rücknahme, laufend, ohne Auswertung, schon gezählt", () => {
     expect(wertungspunktFuer([], eintrag("a", "white", { gewertet: false }))).toBeNull();
     expect(wertungspunktFuer([], eintrag("b", "white", { gegner: "mensch" }))).toBeNull();
     const abbildung = eintrag("x", "white");
@@ -109,6 +109,10 @@ describe("Wertung", () => {
     expect(ausGrundstellung(abbildung.partie)).toBe(true);
     expect(
       wertungspunktFuer([], { ...abbildung, partie: { ...abbildung.partie, einstellung: anders } }),
+    ).toBeNull();
+    const zurueck = eintrag("r", "white");
+    expect(
+      wertungspunktFuer([], { ...zurueck, partie: { ...zurueck.partie, ruecknahmen: 1 } }),
     ).toBeNull();
     const laufend = eintrag("c", "white");
     expect(

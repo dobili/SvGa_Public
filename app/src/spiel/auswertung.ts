@@ -63,6 +63,12 @@ const OPFER_AB = 2;
 /** Ist die Stellung aus eigener Sicht schon so gut, zählt ein Opfer nicht mehr als brillant. */
 const SCHON_GEWONNEN = 4;
 /**
+ * Steht die ziehende Seite nach dem Zug noch mindestens so gut, bekommt der Zug höchstens „?!“
+ * (Empfehlung K5, umgesetzt in 0.2.47): Wer von „Matt in 2“ zu „+5“ wechselt, gewinnt weiter.
+ * Lichess und chess.com rechnen dafür in eine Gewinnchance um, die ab +5 kaum noch steigt.
+ */
+const KLAR_GEWONNEN = 5;
+/**
  * Werte jenseits dieser Grenze (Matt, klarer Gewinn) zählen wie die Grenze: Wer von „Matt in 3“
  * zu „+8“ wechselt, gewinnt weiter und soll kein „??“ bekommen.
  */
@@ -102,8 +108,12 @@ function begrenzt(wert: number): number {
   return Math.max(-WERTGRENZE, Math.min(WERTGRENZE, wert));
 }
 
-/** Zeichen zu einem Verlust; unter 0,5 keins. */
-export function zeichenFuer(verlust: number): Zugzeichen | null {
+/**
+ * Zeichen zu einem Verlust; unter 0,5 keins. Mit dem Wert nach dem Zug (eigene Sicht): ab +5
+ * höchstens „?!“ (K5, wie in klasseVon).
+ */
+export function zeichenFuer(verlust: number, wertNachher = 0): Zugzeichen | null {
+  if (wertNachher >= KLAR_GEWONNEN && verlust >= GRENZE_UNGENAU) return "?!";
   if (verlust >= GRENZE_PATZER) return "??";
   if (verlust >= GRENZE_FEHLER) return "?";
   return verlust >= GRENZE_UNGENAU ? "?!" : null;
@@ -126,8 +136,11 @@ export function endwert(fen: string): number | null {
  *
  * Beispiel: 2... Sf6?? nach 2. Dh5 verliert 3 → patzer; 3. Lc4 als bester Zug nach dem Patzer →
  * stark; 2. Th8+ in Abb. 7.14 (bester Zug, gibt den Turm, Stellung vorher nicht gewonnen) → brillant.
+ * Sonderfall: Nach dem Zug noch mindestens +5 → höchstens „ungenau“ (Matt in 2 zu +5).
  */
 export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
+  const nochKlarGewonnen = u.wertVorher - verlust >= KLAR_GEWONNEN;
+  if (nochKlarGewonnen && verlust >= GRENZE_UNGENAU) return "ungenau";
   if (verlust >= GRENZE_PATZER) return "patzer";
   if (u.vorherVerlust >= GRENZE_FEHLER && verlust >= GRENZE_UNGENAU) return "verpasst";
   if (verlust >= GRENZE_FEHLER) return "fehler";

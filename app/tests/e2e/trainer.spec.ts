@@ -149,3 +149,35 @@ test("Strukturerkenner: schwache Bauern prüfen, Plan wählen", async ({ page })
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
+
+test("Wiederholung (U9): falsch gelöste Taktikaufgabe kommt nach einem Tag wieder", async ({
+  page,
+}) => {
+  await page.clock.install();
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "taktik");
+  await expect(page.getByTestId("trainer-wiederholung")).toHaveCount(0);
+  await page.getByTestId("taktik-wahl").getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await runde.getByRole("button", { name: "Hinweis 1" }).click();
+  await runde.getByRole("button", { name: "Hinweis 2" }).click();
+  await runde.getByRole("button", { name: "Lösung zeigen" }).click();
+  await expect(runde).toContainText("Lösung:");
+  const training = page
+    .getByRole("navigation", { name: "Hauptbereiche" })
+    .getByRole("button", { name: "Training" });
+  await training.click();
+  await expect(page.getByTestId("faellig")).toContainText("Als Nächstes am");
+  await page.clock.fastForward("48:00:00");
+  await page
+    .getByRole("navigation", { name: "Hauptbereiche" })
+    .getByRole("button", { name: "Buch" })
+    .click();
+  await training.click();
+  await page
+    .getByTestId("faellig")
+    .getByRole("button", { name: /Taktiktrainer: 1 fällig/ })
+    .click();
+  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
+});

@@ -21,6 +21,7 @@ import { Brettbereich } from "../komponenten/Brettbereich";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
+import { antworteMitKarte } from "./kartenantwort";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -128,13 +129,14 @@ export function Taktikaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
     }
     const neu = [...zuege, versuch.san, ...(pruefung.antwort ? [pruefung.antwort] : [])];
     setzeZuege(neu);
-    if (pruefung.art === "geloest") runde.beantworte(!fehler && stufe === 0);
+    if (pruefung.art === "geloest")
+      antworteMitKarte(runde, "taktik", aufgabe.id, !fehler && stufe === 0);
     return "gespielt" as const;
   };
   const zeigeLoesung = () => {
     setzeGezeigt(true);
     setzeZuege(zugaufgabe?.linien[0] ?? []);
-    runde.beantworte(false);
+    antworteMitKarte(runde, "taktik", aufgabe.id, false);
   };
   const bedienung = useBrettbedienung({ fen, spiele }, fertig ? null : "ziehen", KEINE_WAHL);
   const stellung = useMemo(() => stellungAusFen(fen), [fen]);

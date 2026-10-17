@@ -108,3 +108,20 @@ test("Erst selbst denken „streng“: Hilfe erst nach dem ersten eigenen Zug", 
   await feld(page, "a7").click();
   await expect(uebung.getByRole("button", { name: "Hinweis 1" })).toBeVisible();
 });
+
+test("T1: ein laut Engine gleich guter Zug löst Übung 6 (Abb. 1.42) ebenfalls", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneKapitelUebungen(page, 1);
+  await page
+    .getByTestId("kapitel-uebungen")
+    .getByRole("button", { name: /Abb\. 1\.42/ })
+    .click();
+  const uebung = page.getByTestId("uebung");
+  await expect(uebung).toBeVisible();
+  // Buch: 4... Sf6; die Engine hält 4... Df6 für gleich gut.
+  await feld(page, "d8").click();
+  await feld(page, "f6").click();
+  await expect(uebung).toContainText("Auch dieser Zug ist gleich gut");
+});

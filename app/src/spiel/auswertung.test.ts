@@ -57,6 +57,8 @@ describe("Auswertung", () => {
     expect(zeichenFuer(0.5)).toBe("?!");
     expect(zeichenFuer(1.2)).toBe("?");
     expect(zeichenFuer(3)).toBe("??");
+    expect(zeichenFuer(5, 5)).toBe("?!");
+    expect(zeichenFuer(5, 4.9)).toBe("??");
   });
 
   it("„!“ für den einzigen guten Zug: bester Zug und mindestens 1,2 Abstand zum zweitbesten", () => {
@@ -136,5 +138,14 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     // Schon klar gewonnen: ein Opfer ist dann nur noch der beste Zug.
     expect(klasseVon(0, { ...ruhig, warBester: true, opfer: true, wertVorher: 6 })).toBe("bester");
     expect(klasseVon(0, { ...ruhig, buch: true })).toBe("buch");
+  });
+
+  it("noch klar gewonnen (ab +5 nach dem Zug): höchstens ungenau (Empfehlung K5)", () => {
+    // Matt in 2 (Wert 10) zu +5: Verlust 5, aber weiter klar gewonnen.
+    expect(klasseVon(5, { ...ruhig, wertVorher: 10 })).toBe("ungenau");
+    expect(klasseVon(1.5, { ...ruhig, wertVorher: 10, vorherVerlust: 2 })).toBe("ungenau");
+    // Von +10 auf +4,9 ist der Gewinn nicht mehr sicher: weiter „??“.
+    expect(klasseVon(5.1, { ...ruhig, wertVorher: 10 })).toBe("patzer");
+    expect(klasseVon(0.1, { ...ruhig, wertVorher: 10 })).toBe("sehrGut");
   });
 });

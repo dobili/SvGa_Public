@@ -25,8 +25,8 @@ import type { Antwortergebnis } from "../../training/wiederholung";
 export const HOECHSTE_STUFE = 3;
 
 export type Uebungsstatus = "offen" | "geloest" | "gezeigt";
-/** Rückmeldung zum letzten Zug. */
-export type Meldung = "richtig" | "weiter" | "falsch" | null;
+/** Rückmeldung zum letzten Zug; „anders“: gelöst mit einem akzeptierten Zug statt dem des Buches. */
+export type Meldung = "richtig" | "anders" | "weiter" | "falsch" | null;
 
 export interface Uebungssteuerung {
   readonly fen: string;
@@ -124,7 +124,7 @@ export function useUebung(
     }
     setzeZuege([...zuege, versuch.san]);
     setzeStatus("geloest");
-    setzeMeldung("richtig");
+    setzeMeldung(pruefung.linie === 0 ? "richtig" : "anders");
     speichere(fehler === 0 && stufe === 0 ? "richtig" : "mitHilfe");
     return "gespielt" as const;
   };

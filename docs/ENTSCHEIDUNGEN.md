@@ -1524,3 +1524,31 @@ Umgesetzt nach dem dort beschriebenen Plan:
 - **Nicht gemessen:** Ob blinde Flecken die Stufe spürbar senken, prüft erst eine Stufenmessung
   mit Profil (`npm run messen:stufen` kennt die Profile noch nicht); der Höchstverlust einer
   Leichtfigur und die 70 % sind Schätzungen, Nachtest N242.
+
+## Empfehlungen vorab umgesetzt (Opus, 17.10.2026, Version 0.2.47)
+
+Der Autor erlaubt (17.10.2026), Claudes Empfehlungen aus `docs/AUFGABEN_AUTOR.md` Teil 2 schon
+umzusetzen, wo sie sich leicht zurücknehmen lassen. Die Rückfragen bleiben offen, bis er
+zustimmt; ein Widerspruch genügt, um sie wieder auszubauen.
+
+- **S9:** Partien mit Rücknahme sind ungewertet (`spiel/wertung.ts`, `wertungspunktFuer`).
+  Texte `ich.wertung.erklaerung` und `spielen.gewertetHinweis` sagen es.
+- **K5:** Steht die ziehende Seite nach dem Zug noch bei +5 oder besser, ist der Zug höchstens
+  „ungenau“ (`spiel/auswertung.ts`, `KLAR_GEWONNEN`; ebenso `zeichenFuer` für die Engine-Karte
+  und die Liste „Grobe Patzer“). Der Verlust bleibt in Bauern; nur die Einordnung ist gedeckelt,
+  damit Genauigkeit und Spielstärke-Schätzung unverändert bleiben.
+- **R3:** „Geschätzte Spielstärke“ statt „Spielstärke (geschätzt)“; Erklärung „keine Wertungszahl
+  eines Verbands“.
+- **C8:** Kein Minderheitsangriff gegen eine Mehrheit, deren Kandidat schon in der eigenen Hälfte
+  steht (`analyse/skelett.ts`, `minderheitsplan`). Allgemeine Regel statt Sonderfall für Abb.
+  5.30: Gegen einen vorgerückten Kandidaten geht es ums Aufhalten, nicht ums Aufbrechen.
+  Carlsbad (5.32 bis 5.34, 6.8) unverändert.
+- **T1:** Die gleich guten Züge der Engine-Prüfung gelten in den Übungen 6, 11, 15, 39
+  (`training/uebungsaufgabe.ts`, `ENGINE_VORSCHLAEGE_UEBERNOMMEN`), geladen aus
+  `uebungen-engine.json`; ohne geladene Prüfung gelten nur die Buchzüge. Neue Rückmeldung
+  „Auch dieser Zug ist gleich gut“ für jede Linie außer der des Buches (auch für die schon
+  vorher akzeptierten Züge aus der Erklärung).
+- **U9:** Karten „taktik:<id>“ und „falle:<id>“ (`training/wiederholung.ts`). Nur eine falsche
+  Antwort legt eine Karte an (`notiereTrainerantwort`); eine vorhandene wandert mit jeder Antwort.
+  Fällige Aufgaben: Knopf „Wiederholen“ in der Auswahl des Trainers, Hinweis im Bereich Training.
+- **E2:** Cloudflare stand schon im Entwurf der Datenschutzseite; offen bleibt der Verantwortliche.

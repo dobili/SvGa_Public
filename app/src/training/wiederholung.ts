@@ -1,7 +1,8 @@
 /**
  * Wiederholungssystem mit fünf Kästen (Konzept 9.1).
  *
- * Rolle im Gesamtbild: Alle Trainer und die Übungen des Buches teilen sich diese Karten. Eine
+ * Rolle im Gesamtbild: Die Übungen des Buches, der Taktiktrainer und „Falle oder Köder“ teilen
+ * sich diese Karten. Eine
  * Karte wandert bei richtiger Antwort einen Kasten weiter, bei falscher zurück in Kasten 1; nur
  * mit Hilfe gelöst bleibt sie, wo sie ist. Der Bereich „Training“ zeigt, wie viele Karten fällig
  * sind. Reine Funktionen; gespeichert werden die Karten in den Nutzerdaten (speicher/format.ts,
@@ -43,6 +44,28 @@ export function uebungskarte(uebungsId: string): string {
 /** Die Übung zu einer Kartenkennung, sonst null (Karten anderer Trainer). */
 export function uebungAusKarte(kennung: string): string | null {
   return kennung.startsWith("uebung:") ? kennung.slice("uebung:".length) : null;
+}
+
+/**
+ * Trainer, deren Aufgaben in die Wiederholung kommen (Empfehlung U9, umgesetzt in 0.2.47): Ihre
+ * Aufgaben haben feste Kennungen. Zähltrainer, Röntgen und Koordinaten erzeugen ihre Aufgaben
+ * zufällig; dort ergibt eine Wiederholung keinen Sinn.
+ */
+export const WIEDERHOLTE_TRAINER = ["taktik", "falle"] as const;
+export type WiederholterTrainer = (typeof WIEDERHOLTE_TRAINER)[number];
+
+/** Kennung der Karte zu einer Trainer-Aufgabe („taktik:taktik-b-7.6“). */
+export function trainerkarte(trainer: WiederholterTrainer, aufgabe: string): string {
+  return `${trainer}:${aufgabe}`;
+}
+
+/** Die Aufgaben eines Trainers aus Kartenkennungen, in derselben Reihenfolge. */
+export function aufgabenAusKarten(
+  kennungen: readonly string[],
+  trainer: WiederholterTrainer,
+): string[] {
+  const vorsatz = `${trainer}:`;
+  return kennungen.filter((k) => k.startsWith(vorsatz)).map((k) => k.slice(vorsatz.length));
 }
 
 function plusTage(jetzt: Date, tage: number): string {

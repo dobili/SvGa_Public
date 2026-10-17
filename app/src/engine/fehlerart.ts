@@ -240,12 +240,16 @@ function stehengelasseneDrohung(lage: Lage, p: Zugprobe): Stehengelassen {
  * Abtauschgewinn des Gegners; Wert 0 ohne Feld, wenn keine. Regel: Kapitel 4, W1, mit der
  * Abtauschrechnung aus Kapitel 1 (Fesselungen bleiben wie im Buch unberücksichtigt).
  * Ein Schachgebot zählt für W1 nicht (der Gegner muss erst das Schach beantworten); für den
- * Opferwert zählt es (16. Db8+!! in der Opernpartie gibt die Dame, `mitSchach`).
+ * Opferwert zählt es (16. Db8+!! in der Opernpartie gibt die Dame, `mitSchach`). Eine Figur, die
+ * schon vorher verloren war, zählt nicht, außer es ist die gezogene Figur selbst und der Aufrufer
+ * erlaubt das (`gezogeneAuchAltVerloren`, Opferwert: Dxc6+ mit einer angegriffenen Dame bleibt ein
+ * Opfer; ein Königszug neben einer längst hängenden Dame ist keins).
  */
 function neuVerlorene(
   lage: Lage,
   p: Zugprobe,
   mitSchach = false,
+  gezogeneAuchAltVerloren = false,
 ): { wert: number; feld: Square | null } {
   if (!mitSchach && p.danach.isCheck()) return { wert: 0, feld: null };
   const eigen = opposite(p.danach.turn);
@@ -255,8 +259,10 @@ function neuVerlorene(
     if (!figur || figur.role === "king" || FIGURENWERT[figur.role] < LEICHTFIGUR) continue;
     const jetzt = abtausch(p.danach.board, feld);
     if (!jetzt || jetzt.bilanz < VERLOREN_AB) continue;
-    const vorher = abtausch(lage.regeln.board, feld === p.zug.to ? p.zug.from : feld);
-    if (vorher && vorher.bilanz >= VERLOREN_AB) continue;
+    const gezogene = feld === p.zug.to;
+    const vorher = abtausch(lage.regeln.board, gezogene ? p.zug.from : feld);
+    const altVerloren = vorher !== null && vorher.bilanz >= VERLOREN_AB;
+    if (altVerloren && !(gezogene && gezogeneAuchAltVerloren)) continue;
     if (jetzt.bilanz > gefunden.wert) gefunden = { wert: jetzt.bilanz, feld };
   }
   return gefunden;
@@ -335,14 +341,16 @@ function phasenfehler(
  * Was der Zug laut Abtauschrechnung hergibt: der größte Gewinn des Gegners an einer eigenen Figur
  * ab Leichtfigur, die erst durch den Zug verloren geht, abzüglich dessen, was der Zug selbst
  * schlägt; 0, wenn nichts. Für die Zugklasse „brillant“ im Rückblick (ein gutes Opfer, 0.2.40).
- * Beispiel: Abb. 7.14, 2. Th8+ gibt den Turm → 5. Sonderfall (0.2.51): Ein Abtausch ist kein
- * Opfer: Lxg5 gegen einen Springer, danach Lxg5 → 3 − 3 = 0.
+ * Beispiel: Abb. 7.14, 2. Th8+ gibt den Turm → 5; 10. Sxb5 in der Opernpartie (Springer für
+ * zwei Bauern: cxb5, dann Lxb5) → 1. Sonderfall (0.2.51): Ein Abtausch ist kein Opfer: Lxg5
+ * gegen einen Springer, danach Lxg5 → 3 − 3 = 0. Geprüft an 100 Brillant-Zügen von chess.com
+ * (Chessigma-Vergleich, 0.2.54): alle 100 haben hier mindestens 1.
  */
 export function opferwert(lage: Lage, uci: string): number {
   const p = probe(lage, uci);
   if (!p) return 0;
   const geschlagen = p.geschlagen === null ? 0 : FIGURENWERT[p.geschlagen];
-  return Math.max(0, neuVerlorene(lage, p, true).wert - geschlagen);
+  return Math.max(0, neuVerlorene(lage, p, true, false).wert - geschlagen);
 }
 
 /** Nur die Fehlerart eines Zuges (für die Fehlersuche der Engine, engine/fehlersuche.ts). */

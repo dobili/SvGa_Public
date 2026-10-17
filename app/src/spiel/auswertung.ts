@@ -60,8 +60,23 @@ const GRENZE_UNGENAU = 0.5;
 export const GROBER_PATZER = 2;
 /** Bis zu diesem Verlust hinter dem besten Zug ist ein Zug „sehr gut“. */
 const SEHR_GUT_UNTER = 0.2;
-/** Ein Opfer ab einer Leichtfigur laut Abtauschrechnung (Gewinn des Gegners mindestens 2). */
-const OPFER_AB = 2;
+/**
+ * Brillant nur, wenn man nach dem Opfer nicht schlecht steht (ab −1) und der zweitbeste Zug nicht
+ * ohnehin klar gewinnt (unter +7; sonst ist das Opfer nur Zierde). Beides wie bei chess.com
+ * (Nachbau „freechess“) und geprüft an den 100 Brillant-Zügen des Chessigma-Vergleichs (0.2.54):
+ * ohne die Bedingungen 73 erkannt bei 230 Fehlalarmen in 100 Partien, mit ihnen 79 bei etwa
+ * einem Fehlalarm je Partie.
+ */
+const BRILLANT_NICHT_SCHLECHTER_ALS = -1;
+const BRILLANT_ZWEITBESTER_UNTER = 7;
+/**
+ * Ein Opfer laut Abtauschrechnung: Der Gegner gewinnt eine Figur ab Leichtfigur und bekommt dafür
+ * höchstens zwei Bauern (Nettowert mindestens 1; bis 0.2.52 mindestens 2, womit ein Springer für
+ * zwei Bauern wie 10. Sxb5 in der Opernpartie kein Opfer war). Geprüft an den 100 Brillant-Zügen
+ * des Chessigma-Vergleichs (chess.com-Partien, 17.10.2026, 0.2.54): 100 von 100 erkannt, 7,5 % aller
+ * Züge sind Opferkandidaten.
+ */
+export const OPFER_AB = 1;
 /**
  * Steht die ziehende Seite nach dem Zug noch mindestens so gut, bekommt der Zug höchstens „?!“
  * (Empfehlung K5, umgesetzt in 0.2.47): Wer von „Matt in 2“ zu „+5“ wechselt, gewinnt weiter.
@@ -86,7 +101,7 @@ export interface Zugurteil {
 }
 
 /** Was die Einordnung eines Zuges braucht, außer dem Verlust. */
-interface Zugumstaende {
+export interface Zugumstaende {
   readonly warBester: boolean;
   readonly einziger: boolean;
   readonly opfer: boolean;
@@ -94,6 +109,10 @@ interface Zugumstaende {
   readonly vorherVerlust: number;
   /** Wert vor dem Zug aus eigener Sicht. */
   readonly wertVorher: number;
+  /** Abstand des besten zum zweitbesten Zug (0, wenn unbekannt). */
+  readonly abstand: number;
+  /** Stand die ziehende Seite vor dem Zug im Schach? */
+  readonly imSchach: boolean;
   readonly buch: boolean;
 }
 
@@ -145,6 +164,24 @@ function verpasst(verlust: number, u: Zugumstaende): boolean {
 }
 
 /**
+ * Ist ein Opfer brillant? Bester oder fast bester Zug (bis 0,5 dahinter; chess.com: „fast der
+ * beste“), danach nicht schlecht, nicht aus dem Schach heraus (eine Figur, die man im Schach
+ * stehen lässt, ist kein Opfer), und der zweitbeste Zug gewinnt nicht ohnehin klar.
+ * Beispiel: 16. Db8+ in der Opernpartie: Opfer, bester Zug, danach Matt → brillant.
+ */
+function brillant(verlust: number, u: Zugumstaende): boolean {
+  const fastBester = u.warBester || verlust < GRENZE_UNGENAU;
+  const nachher = u.wertVorher - verlust;
+  return (
+    u.opfer &&
+    fastBester &&
+    nachher >= BRILLANT_NICHT_SCHLECHTER_ALS &&
+    !u.imSchach &&
+    u.wertVorher - u.abstand < BRILLANT_ZWEITBESTER_UNTER
+  );
+}
+
+/**
  * Die Klasse eines Zuges aus Verlust und Umständen (Reihenfolge: grobe Fehler zuerst).
  *
  * Beispiel: 2... Sf6?? nach 2. Dh5 verliert 3 → patzer; 3. Lc4 als bester Zug nach dem Patzer →
@@ -153,9 +190,9 @@ function verpasst(verlust: number, u: Zugumstaende): boolean {
  * erst ab 3 Verlust; darunter „gut“ (seit 0.2.51: In der Stufe-3-Partie des Autors bekam Weiß 15
  * „?!“ in gewonnener Stellung, chess.com zwei, weil die Gewinnchance dort kaum sinkt).
  * Sonderfall: Ein Zug, der ohne Verlust nicht der Zug der Engine ist, ist „sehr gut“ (gleichwertig),
- * nicht „bester“. Brillant darf seit 0.2.51 auch ein Opfer sein, das bis 0,2 hinter dem besten Zug
- * liegt, und auch in gewonnener Stellung (chess.com gibt 16. Db8+!! in der Opernpartie, Abb. 11.4,
- * ebenso); „stark“ gibt es nur, solange die Stellung nach dem Zug nicht entschieden ist (ab ±5; sonst
+ * nicht „bester“. Brillant darf seit 0.2.51 auch ein Opfer sein, das hinter dem besten Zug liegt
+ * (seit 0.2.54 bis 0,5), und auch in gewonnener Stellung (chess.com gibt 16. Db8+!! in der
+ * Opernpartie, Abb. 11.4, ebenso), siehe `brillant`; „stark“ gibt es nur, solange die Stellung nach dem Zug nicht entschieden ist (ab ±5; sonst
  * bekäme in einem Mattangriff jeder Zug ein „!“, Opernpartie neun statt eins bei chess.com, und
  * die verlierende Seite für jeden einzigen Zug, der nicht sofort verliert: acht „!“ statt null).
  */
@@ -169,8 +206,7 @@ export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
   if (verlust >= GRENZE_FEHLER) return "fehler";
   if (verlust >= GRENZE_UNGENAU) return "ungenau";
   if (u.buch) return "buch";
-  const fastBester = u.warBester || verlust < SEHR_GUT_UNTER;
-  if (fastBester && u.opfer) return "brillant";
+  if (brillant(verlust, u)) return "brillant";
   const bestraft = u.vorherVerlust >= GRENZE_FEHLER;
   const entschieden = Math.abs(wertNachher) >= KLAR_GEWONNEN;
   if (u.warBester && (u.einziger || bestraft) && !entschieden) return "stark";
@@ -196,13 +232,15 @@ function umstaende(
 ): Zugumstaende {
   const uci = sanZuUci(fen, san);
   const warBester = bester !== undefined && bester !== "" && uci === bester;
-  const lage = warBester && uci ? lageVon(fen) : null;
+  const lage = uci ? lageVon(fen) : null;
   return {
     warBester,
     einziger: warBester && abstand !== undefined && abstand >= GRENZE_FEHLER,
     opfer: lage !== null && uci !== null && opferwert(lage, uci) >= OPFER_AB,
     vorherVerlust,
     wertVorher,
+    abstand: abstand ?? 0,
+    imSchach: lage?.regeln.isCheck() ?? false,
     buch: buch !== null && buch(fen, san),
   };
 }

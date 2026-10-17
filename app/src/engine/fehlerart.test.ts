@@ -98,6 +98,10 @@ describe("Opferwert für die Zugklasse „brillant“ (0.2.51)", () => {
   it("16. Db8+ in der Opernpartie (Abb. 11.4) gibt die Dame, auch mit Schach", () => {
     expect(wert(OPERNPARTIE_VOR_16, "b3b8")).toBe(9);
   });
+  it("10. Sxb5 gibt den Springer für zwei Bauern (cxb5, Lxb5): Netto 1", () => {
+    const vor10 = "rn2kb1r/p3qppp/2p2n2/1p2p1B1/2B1P3/1QN5/PPP2PPP/R3K2R w KQkq - 0 10";
+    expect(wert(vor10, "c3b5")).toBe(1);
+  });
   it("13. Txd7 gibt den Turm für einen Springer: 5 − 3 = 2", () => {
     expect(wert(OPERNPARTIE_VOR_13, "d1d7")).toBe(2);
   });

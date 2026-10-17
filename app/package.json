@@ -1,7 +1,7 @@
 {
   "name": "schach-von-grund-auf",
   "private": true,
-  "version": "0.2.53",
+  "version": "0.2.54",
   "description": "Companion-App zum Buch „Schach von Grund auf“",
   "license": "GPL-3.0-or-later",
   "type": "module",
@@ -20,6 +20,7 @@
     "vorschau": "vite preview --port 4173 --strictPort",
     "test:e2e": "playwright test",
     "messen:stufen": "node skripte/messe-stufen.mjs",
+    "messen:opfer": "vitest run --config vitest.messung.config.ts src/spiel/opfer.messung.ts",
     "deploy:probe": "wrangler deploy --dry-run"
   },
   "dependencies": {

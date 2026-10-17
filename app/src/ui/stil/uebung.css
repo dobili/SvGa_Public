@@ -130,3 +130,39 @@
 .plan-satz[aria-pressed="true"] {
   font-weight: 700;
 }
+
+/* Fehlerdatenbank (Kapitel 12, AP 13): Formular und Auswertung. */
+.fehlerformular {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+}
+
+.textfeld {
+  width: 100%;
+  min-height: var(--tippflaeche);
+  padding: calc(var(--raster) / 2) calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  resize: vertical;
+}
+
+.fehlertabelle {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.fehlertabelle th,
+.fehlertabelle td {
+  padding: calc(var(--raster) / 2);
+  border-bottom: 1px solid var(--linie);
+  text-align: left;
+  vertical-align: top;
+}
+
+.fehlertabelle .zahl {
+  text-align: right;
+  white-space: nowrap;
+}

@@ -12,16 +12,18 @@
  * - Format 2 (ab AP 11): dazu „spiel“ mit laufender Partie, beendeten Partien und Vorlieben
  *   (speicher/partien.ts).
  * - Format 3 (ab AP 13): dazu „karten“, die Wiederholungskarten (training/wiederholung.ts).
- *   Fehlerdatenbank, Lernsammlung und „Zug erraten“ aus Konzept 4.7 kommen mit AP 15 hinzu.
+ * - Format 4 (ab 0.2.65): dazu „fehler“, die Fehlerdatenbank (training/fehlerdatenbank.ts).
+ *   Lernsammlung aus Konzept 4.7 kommt später hinzu.
  * Abhängigkeiten: training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
- * speicher/partien.ts.
+ * training/fehlerdatenbank (Fehler), speicher/partien.ts.
  */
+import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
 import { LEERER_SPIELSTAND, spielstandAus, type Spielstand } from "./partien";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
-export const SCHEMA_VERSION = 3;
+export const SCHEMA_VERSION = 4;
 
 export type Brettfarben = "buch" | "holz" | "gruen";
 export type Strenge = "locker" | "streng";
@@ -88,6 +90,8 @@ export interface Nutzerdaten {
   readonly spiel: Spielstand;
   /** Wiederholungskarten aller Trainer und der Übungen (ab Format 3, Konzept 9.1). */
   readonly karten: Karten;
+  /** Fehlerdatenbank des Lesers (ab Format 4, Kapitel 12). */
+  readonly fehler: readonly Fehlereintrag[];
 }
 
 /** Ergebnis einer Prüfung: umgewandelte Daten oder ein Grund für den Leser. */
@@ -111,6 +115,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     letzteSicherung: null,
     spiel: LEERER_SPIELSTAND,
     karten: {},
+    fehler: [],
   };
 }
 
@@ -218,6 +223,7 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     letzteSicherung: typeof roh.letzteSicherung === "string" ? roh.letzteSicherung : null,
     spiel: spielstandAus(roh.spiel),
     karten: kartenAus(roh.karten),
+    fehler: fehlerAus(roh.fehler),
   };
 }
 
@@ -249,7 +255,7 @@ export function merkerAlsFormat0(einstellungen: string | null, lernstand: string
  * Eingaben: Rohdaten (aus IndexedDB oder einer Sicherungsdatei), Zeitpunkt für Fehlendes.
  * Ausgabe: umgewandelte Daten mit der Ausgangsversion, oder der Grund der Ablehnung.
  * Beispiel: {einstellungen:{brettfarben:"holz"}} ohne schemaVersion (Format 0) → Format 2 mit
- * Holzbrett; Format 1 → ohne Partien; Format 2 → ohne Karten.
+ * Holzbrett; Format 1 → ohne Partien; Format 2 → ohne Karten; Format 3 → ohne Fehler.
  * Sonderfälle: Eine höhere Version als SCHEMA_VERSION stammt aus einer neueren App und wird
  * abgelehnt („neuer“), damit nichts verloren geht; Nicht-Objekte sind „kaputt“.
  */
@@ -261,6 +267,7 @@ export function wandleUm(roh: unknown, jetzt: Date): Pruefergebnis {
   }
   if (version > SCHEMA_VERSION) return { ok: false, grund: "neuer", version };
   // Jedes ältere Format ist eine Teilmenge des neueren: Format 0 (Merker) ohne Fortschritt und
-  // Version, Format 1 ohne „spiel“, Format 2 ohne „karten“. Fehlende Teile ergänzt das Lesen leer.
+  // Version, Format 1 ohne „spiel“, Format 2 ohne „karten“, Format 3 ohne „fehler“. Fehlende Teile
+  // ergänzt das Lesen leer.
   return { ok: true, daten: aktuellesFormatAus(roh, jetzt), vonVersion: version };
 }

@@ -320,3 +320,29 @@ test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", a
   await expect(vergleich).toContainText(/Dein Zug ist laut Engine/, { timeout: 20_000 });
   await page.screenshot({ path: "test-results/bilder/trainer-zugerraten.png", fullPage: true });
 });
+
+test("Fehlerdatenbank: Eintrag mit FEN, Auswertung mit Vorschlag, Löschen", async ({ page }) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "fehlerdatenbank");
+  await expect(page.getByTestId("fehlerdb-leer")).toBeVisible();
+  const neu = page.getByTestId("fehlerdb-neu");
+  await neu
+    .getByLabel("Stellung vor dem Fehler (FEN)")
+    .fill("rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2");
+  await neu.getByLabel(/^Fehlerart/).selectOption({ index: 2 });
+  await neu.getByLabel(/^Ein Satz/).fill("Nach f3 und g4 nicht an Dh4 gedacht.");
+  await neu.getByRole("button", { name: "In die Fehlerdatenbank" }).click();
+  const auswertung = page.getByTestId("fehlerdb-auswertung");
+  await expect(auswertung).toContainText("Kapitel 1");
+  await expect(auswertung.getByRole("button")).toHaveCount(1);
+  const eintrag = page.getByTestId("fehlerdb-eintrag");
+  await expect(eintrag).toHaveCount(1);
+  await eintrag.locator("summary").click();
+  await expect(eintrag).toContainText("Nach f3 und g4 nicht an Dh4 gedacht.");
+  await page.screenshot({
+    path: "test-results/bilder/trainer-fehlerdatenbank.png",
+    fullPage: true,
+  });
+  await eintrag.getByRole("button", { name: "Eintrag löschen" }).click();
+  await expect(page.getByTestId("fehlerdb-leer")).toBeVisible();
+});

@@ -78,9 +78,34 @@ describe("Format 1", () => {
         schemaVersion: SCHEMA_VERSION,
         spiel: LEERER_SPIELSTAND,
         karten: {},
+        fehler: [],
       },
       vonVersion: 1,
     });
+  });
+
+  it("Format 3 → 4: Die Fehlerdatenbank ist leer, alles andere bleibt", () => {
+    const format3 = { ...leereDaten(JETZT), schemaVersion: 3 } as Record<string, unknown>;
+    delete format3.fehler;
+    const ergebnis = wandleUm(format3, JETZT);
+    expect(ergebnis.ok && ergebnis.daten.fehler).toEqual([]);
+    expect(ergebnis.ok && ergebnis.vonVersion).toBe(3);
+  });
+
+  it("Format 4 liest die Fehlerdatenbank, Unlesbares fällt weg", () => {
+    const eintrag = {
+      id: "f1",
+      datum: "2026-10-18T08:00:00.000Z",
+      fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      satz: "Schach übersehen",
+      fehlerart: 1,
+    };
+    const roh = {
+      ...leereDaten(JETZT),
+      fehler: [eintrag, { id: 2 }, { ...eintrag, fehlerart: 99 }],
+    };
+    const ergebnis = wandleUm(roh, JETZT);
+    expect(ergebnis.ok && ergebnis.daten.fehler).toEqual([eintrag]);
   });
 
   it("bereinigt fremde und unpassende Einträge", () => {

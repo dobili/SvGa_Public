@@ -35,6 +35,7 @@ import { RepertoireBereich } from "../trainer/RepertoireBereich";
 import { StrukturBereich } from "../trainer/StrukturBereich";
 import { StudienBereich, ZugErratenBereich } from "../trainer/StudienBereich";
 import { EndspielBereich } from "../trainer/EndspielBereich";
+import { FehlerBereich } from "../trainer/FehlerBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
 import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
 import { Zielbilanzaufgabe } from "../trainer/Zielbilanzaufgabe";
@@ -178,6 +179,7 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   repertoire: () => <RepertoireBereich />,
   studien: () => <StudienBereich />,
   zugErraten: () => <ZugErratenBereich />,
+  fehlerdatenbank: () => <FehlerBereich />,
 };
 
 export function Trainer({ kennung }: { kennung: TrainerKennung }) {

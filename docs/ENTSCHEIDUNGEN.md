@@ -2428,7 +2428,7 @@ Der Autor hat X, S, R, W und U durchgesehen. Angenommen wie empfohlen, mit diese
 - Bekannt und vom Autor so gewollt: Name und Anschrift stehen damit dauerhaft im öffentlichen
   Repository.
 
-## U12: Leerfälle der Werkzeugkarten (18.10.2026 nachts, Opus, Zweig `leerfaelle`)
+## U12: Leerfälle der Werkzeugkarten (18.10.2026 nachts, Opus, Zweig `leerfaelle`, Version 0.2.64)
 
 Nach Regel 9 umgesetzt, wie in U12 empfohlen (Wortlaut der Rückfrage unten). Umsetzung als
 Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `analyse/`

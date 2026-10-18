@@ -4,6 +4,7 @@ import {
   eigeneAlsText,
   fenNachZuegen,
   legaleZiele,
+  ziehbareFelder,
   skelettFen,
   spieleZug,
   zugFelder,
@@ -17,6 +18,13 @@ describe("Weiterspielen", () => {
   it("kennt die legalen Ziele einer Figur", () => {
     expect(legaleZiele(GRUND, "g1").sort()).toEqual(["f3", "h3"]);
     expect(legaleZiele(GRUND, "e7")).toEqual([]);
+  });
+
+  it("nennt die Felder mit ziehbaren Figuren (Ziehen per Wischen)", () => {
+    expect(ziehbareFelder(GRUND).sort()).toEqual(
+      ["a2", "b1", "b2", "c2", "d2", "e2", "f2", "g1", "g2", "h2"].sort(),
+    );
+    expect(ziehbareFelder("8/8/8/8/8/8/8/8 w - - 0 1")).toEqual([]);
   });
 
   it("spielt 6. Ld3 in Abb. 1.26 und lehnt Unmögliches ab", () => {

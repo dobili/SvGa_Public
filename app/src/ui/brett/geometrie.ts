@@ -13,6 +13,7 @@ export interface Punkt {
 }
 
 const LINIEN = "abcdefgh";
+const FELDER_JE_REIHE = 8;
 
 /**
  * Linke obere Ecke eines Feldes.
@@ -36,6 +37,26 @@ export function feldEcke(feld: string, gedreht: boolean): Punkt | null {
 export function feldMitte(feld: string, gedreht: boolean): Punkt | null {
   const ecke = feldEcke(feld, gedreht);
   return ecke ? { x: ecke.x + FELD / 2, y: ecke.y + FELD / 2 } : null;
+}
+
+/**
+ * Das Feld unter einem Punkt des Brettes, Gegenstück zu feldEcke.
+ *
+ * Warum: Beim Ziehen per Wischen (seit 0.2.90) zeigt der Finger auf einen Punkt, nicht auf einen
+ * Knopf; der Zug braucht das Feld darunter.
+ * Eingaben: Punkt in Einheiten des Brettes (0 bis 8000), ob das Brett gedreht ist.
+ * Ausgabe: Feldname oder null, wenn der Punkt neben dem Brett liegt.
+ * Beispiel: (3500, 4500) normal → „d4“; gedreht → „e5“.
+ */
+export function feldAnPunkt(punkt: Punkt, gedreht: boolean): string | null {
+  const spalte = Math.floor(punkt.x / FELD);
+  const zeile = Math.floor(punkt.y / FELD);
+  if (spalte < 0 || zeile < 0 || spalte >= FELDER_JE_REIHE || zeile >= FELDER_JE_REIHE) {
+    return null;
+  }
+  const linie = gedreht ? FELDER_JE_REIHE - 1 - spalte : spalte;
+  const reihe = gedreht ? zeile + 1 : FELDER_JE_REIHE - zeile;
+  return `${LINIEN.charAt(linie)}${reihe}`;
 }
 
 /** Alle 64 Felder von a8 bis h1 in Leserichtung (bei gedrehtem Brett von h1 bis a8). */

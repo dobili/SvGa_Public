@@ -30,6 +30,23 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann der Reihe nach die
 älteren Abschnitte.
 
+### Neu in 0.2.90 (etwa 5 Minuten; Ziehen per Wischen, Opus)
+
+- [ ] N550. **Figuren per Wischen ziehen:** Beginne eine Partie (Spielen › Partie beginnen) und
+      ziehe den Bauern e2 mit dem Finger nach e4, ohne loszulassen. Die Figur hängt groß unter
+      dem Finger, auf ihrem Feld bleibt sie blass, das Feld unter dem Finger schimmert. Beim
+      Loslassen auf einem erlaubten Feld ist der Zug gespielt; auf einem verbotenen Feld oder
+      neben dem Brett bleibt die Figur gewählt (die Zielpunkte sind zu sehen). Antippen von Figur
+      und Zielfeld geht wie bisher. Das gilt überall, wo „Ziehen“ wirkt: Partie, Abbildungen mit
+      dem Werkzeug „Ziehen“, Übungen und Trainer.
+- [ ] N551. **Scrollen bleibt frei:** Lege den Finger auf ein leeres Feld oder eine gegnerische
+      Figur und wische nach oben: Die Seite scrollt wie bisher. Nur auf einer eigenen Figur, die
+      ziehen darf, nimmt der Finger die Figur. Auf Brettern ohne „Ziehen“ (Abbildung ohne
+      Werkzeug, Zählen) scrollt die Seite überall.
+- [ ] N552. **Abschalten:** Einstellungen › Brett › „Figuren per Wischen ziehen: aus“. Öffne
+      danach ein Brett neu: Wischen bewegt keine Figur mehr, Antippen schon. Die Einstellung gilt
+      nur auf diesem Gerät (wie die Koordinaten), weil sie von Gerät und Hand abhängt.
+
 ### Neu in 0.2.89 (etwa 2 Minuten; gleich große Kacheln, Opus)
 
 - [ ] N349. **Gleich große Kacheln in der Gegnerwahl:** Dein Bildschirmfoto zeigte in Stufe 8

@@ -1330,6 +1330,18 @@ Archiv-Repository; was davon noch offen ist, steht hier.
    Kurve, Kontrollpartien, Streuung über zehn), Messlauf `npm run messen:eichung`
    (`spiel/eichung.messung.ts`, schreibt `bericht.md` und `ergebnis.json` lokal).
 
+7. **Drei Funktionen (Opus, Auftrag vom 18.10.2026, Nummern N550 bis N599, Rückfragen LS1 …),
+   je ein Zweig:**
+   a. Ziehen per Wischen (Zweig `ziehen-wischen`): fertig, `ui/brett/useZiehen.ts`, Schalter
+   in den Einstellungen (Merker `wischen`), Oberflächentest `wischen.spec.ts`; Nachtest N550 bis
+   N552.
+   b. Lernsammlung (Zweig `lernsammlung`, AP 15): offen. Vor dem Ändern von
+   `speicher/format.ts` main einmergen (Chat A erweitert das Format parallel), Formatnummer erst
+   beim Push festlegen.
+   c. Technik für die englische Fassung (Zweig `sprache-technik`, AP 18 ohne Übersetzung):
+   offen. Sprachwahl, `<html lang>`, feste Texte nach de.json, Züge im Klartext der
+   Bildunterschriften in der Pipeline.
+
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 
 ## Offene Punkte

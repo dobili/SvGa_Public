@@ -258,7 +258,9 @@ function Spielfeld({
         stellung={stellung.wert}
         markierungen={markierungen}
         letzterZug={letzter}
-        bedienung={tippbar ? bedienung : { ...bedienung, ziele: [], beiFeld: () => undefined }}
+        bedienung={
+          tippbar ? bedienung : { ...bedienung, ziele: [], beiFeld: () => undefined, ziehen: null }
+        }
         beschriftung={t("partie.titel")}
         anfangsGedreht={partie.einstellung.eigeneFarbe === "black"}
         werkzeugSymbole={

@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Konstruierte Partie zu Abb. 9.39"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k09-a39-k"]
+[Kapitel "9"]
+[Abschnitt "9.8"]
+[Status "konstruiert"]
+[Abbildungen "9.39"]
+[Opening "Queen's Gambit Declined: Exchange Variation"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. cxd5 exd5 5. Bg5 a6 6. Bxf6 Qxf6 7. Nxd5 Qd8 8. Nc3 c5 9. dxc5 Qxd1+ 10. Rxd1 Bxc5 11. Nh3 Bxh3 12. gxh3 Nd7 13. e3 Bb4 14. h4 Ke7 15. h5 Bxc3+ 16. bxc3 g6 17. hxg6 hxg6 18. h4 Rac8 19. h5 Rxc3 20. h6 Nc5 21. Bg2 Ke6 22. a4 Nxa4 23. Bxb7 Ke5 24. Bxa6 Nc5 25. f4+ Ke4 26. Kd2 Rxe3 27. Bc4 Ra3 28. Bxf7 Kxf4 29. Bxg6 Rd8+ 30. Kc1 Rxd1+ 31. Rxd1 Ne6 32. Rf1+ Ke5 33. Rf5+ Kd4 34. Bf7 Rh3 35. Rh5 Rxh5 36. Bxh5 Nf8 37. Bg6 Nxg6 38. Kc2 Nf8 39. Kc1 Kc3 40. Kd1 Kb3 41. Kd2 Ka2 42. Kc1 Nh7 43. Kc2 Ng5 44. Kc1 Kb3 45. Kd1 Ka2 46. Kc2 Nh7 47. Kc1 Kb3 48. Kd2 Ka2 49. Ke2 Nf8 50. Kd1 Ka1 51. Kc1 Nh7 52. Kd1 Ng5 53. Kd2 Nf7 54. Kc1 Nd8 55. Kc2 Ka2 56. Kc1 Ka3 57. Kd1 Ka2 58. Kc2 Ka3 59. Kc1 Kb4 60. Kd2 Kb3 61. Ke1 Ka2 62. Kf1 Kb3 63. Ke2 Ne6 64. Kd1 Nf4 65. Kd2 Ka2 66. Kc1 Kb3 67. Kd1 Ka3 68. Kc1 Kb4 69. Kd2 Kc4 70. Kc1 Kc3 71. Kb1 Kb4 72. Kc1 Ka4 73. Kc2 Kb4 74. Kb1 Ka3 75. Kc2 Ng6 76. Kc1 Kb3 77. Kd1 Ka2 78. Kc1 Ne5 79. Kd2 Nf7 80. Kc2 Ne5 81. Kc1 Ka3 82. Kd1 Ng6 83. Kd2 Nf8 84. Kc3 Ka2 85. Kd3 Ka1 86. Kd2 Kb1 87. Kd1 Ne6 88. h7 Ka2 89. Kc1 { Abb. 9.39 } *

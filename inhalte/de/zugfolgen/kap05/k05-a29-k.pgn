@@ -1,0 +1,16 @@
+[Event "Kapitel 5: Konstruierte Partie zu Abb. 5.29"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k05-a29-k"]
+[Kapitel "5"]
+[Abschnitt "5.5"]
+[Status "konstruiert"]
+[Abbildungen "5.29"]
+[Opening "Italian Game: Giuoco Piano"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d4 Bxd4 5. Nxd4 Nxd4 6. Be3 d6 7. Bxd4 exd4 8. Qxd4 Qf6 9. Qxf6 gxf6 10. Ke2 f5 11. exf5 Bxf5 12. Re1 Ne7 13. Bd3 Bxd3+ 14. Kxd3 f5 15. Ke2 f4 16. Nd2 Rf8 17. g4 fxg3 18. hxg3 h5 19. Ne4 h4 20. gxh4 Rf4 21. Ng3 Rxh4 22. Rh1 Rxh1 23. Rxh1 Rd8 24. Rh7 d5 25. f4 Rd6 26. Rxe7+ Kxe7 27. Nf5+ Kd7 28. Nxd6 Kxd6 29. Ke3 Ke6 30. Kd4 Kf5 31. Kxd5 Kxf4 32. Kd4 Kf5 33. Ke3 Ke6 34. Ke2 Kd7 35. Kd3 Ke8 36. Kc4 Ke7 37. Kc5 Ke8 38. Kb5 a5 39. Kxa5 Ke7 40. Kb5 Ke8 41. Kc4 Kd8 42. Kc5 Ke7 43. Kc4 Ke8 44. Kc3 Kd8 45. Kd4 Kd7 46. Kd3 Ke7 47. Ke3 Kd7 48. Kf2 Ke8 49. Ke3 Ke7 50. Kd3 Kd7 51. Kc3 Ke8 52. Kd3 Kd8 53. Ke2 Ke8 { Abb. 5.29 } *

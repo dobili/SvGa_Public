@@ -92,6 +92,8 @@ python -m pipeline.bauen ... --text-entwuerfe   # nur Entwürfe der vorbereitete
 python -m pytest pipeline/tests
 python -m pipeline.pruefen.daten app/public/daten/de/a1   # Daten gegen Schemas, ohne Buchquellen
 python -m pipeline.eroeffnungsliste   # Eröffnungsnamen von Lichess (inhalte/lichess) für das Werkzeug „Eröffnung“
+python -m pipeline.zugfolgen.konstruieren --engine PFAD   # konstruierte Partien zu Abbildungen ohne Zugfolge (schnelle UCI-Engine, nur lokal)
+python -m pipeline.pruefen.tablebase   # Endspielabbildungen bis 7 Steine gegen die Lichess-Tablebase (Netz, Zwischenspeicher in buch/arbeit)
 ```
 
 ## Arbeitsumgebung (Stand 13.10.2026, abends)

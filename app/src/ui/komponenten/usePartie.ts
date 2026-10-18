@@ -204,8 +204,13 @@ function useUhr(id: string, laeuft: boolean, geladen: boolean): number {
     if (!geladen) return;
     const fortsetzen = () => aendereNeueste(id, (p) => setzeUhrFort(p, Date.now()));
     const anhalten = () => aendereNeueste(id, (p) => pausiere(p, Date.now()));
-    const beiSichtbarkeit = () =>
-      document.visibilityState === "hidden" ? anhalten() : fortsetzen();
+    const beiSichtbarkeit = () => {
+      if (document.visibilityState === "hidden") return anhalten();
+      // Die Anzeige rechnet mit jetztMs; ohne Auffrischen zeigte sie nach der Rückkehr einen
+      // Takt lang die Zeit im Hintergrund als Guthaben (Befund beim Prüfen von N179).
+      setzeJetzt(Date.now());
+      fortsetzen();
+    };
     fortsetzen();
     document.addEventListener("visibilitychange", beiSichtbarkeit);
     return () => {

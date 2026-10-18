@@ -3094,7 +3094,7 @@ als ihren Inhalt, und die Namen standen ohne Umbruch. Jetzt `minmax(0, 1fr)`, di
 schrumpfen, Namen brechen mittig um (statt abgeschnitten zu werden). Der Oberflächentest misst
 die acht Porträts der Stufe 8; mit dem alten Stil wichen sie um 24 Pixel ab.
 
-## Aufgabenseite: „Zurück zu den Aufgaben“ führt wieder zum Punkt (18.10.2026, Opus, Zweig `aufgaben-zurueck`, Version 0.2.90)
+## Befunde aus dem Durchprüfen der Aufgabenliste (18.10.2026, Opus, Zweig `aufgaben-zurueck`, Version 0.2.90)
 
 Gefunden beim Durchprüfen der Aufgabenliste (N307): Nach einem Link und „‹ Zurück zu den
 Aufgaben“ stand die Seite oben statt beim angetippten Punkt. Ursache: Die Seite merkte sich den
@@ -3103,3 +3103,30 @@ lief, und im Merker blieb `zuletzt: null`. Jetzt schreibt `aendere` den Merker s
 neuesten Stand (Referenz, die sich nur dort ändert). Ein neuer Oberflächentest öffnet einen
 Abschnitt weit unten, folgt einem Link und prüft, dass der Punkt nach der Rückkehr im Bild ist;
 mit dem alten Stand schlug er fehl.
+
+Weitere Fehler, die das Durchprüfen von Teil 1 mit Playwright fand, alle behoben:
+
+- **Endspieltrainer, Hinweis 2 und 3 (N254 bis N256):** Goldene Figur und goldener Pfeil fehlten
+  bei Figurenzügen. Die Engine liefert den Zug in UCI („b3b7“), die Markierung erwartete SAN;
+  nur Bauernzüge las der SAN-Leser zufällig richtig. Jetzt wird erst umgewandelt. Der
+  Oberflächentest des Endspieltrainers prüft den Pfeil bei der Mattführung (mit dem alten Stand
+  rot). Danach ließen sich Mattführung bis „Matt! Ziel erreicht.“ und ein Turmendspiel bis
+  „Zwölf Züge gehalten“ mit den Hinweisen ausspielen.
+- **„..“ nach „Warum?“ (N320):** Der Text „Warum: Der Zug {text}.“ setzte einen zweiten Punkt
+  hinter die Erklärung, die schon mit Punkt endet.
+- **Uhr nach der Rückkehr aus dem Hintergrund (N179):** Die Anzeige rechnete einen Takt lang mit
+  der alten Uhrzeit und zeigte die Zeit im Hintergrund kurz als Guthaben (5:21 statt 5:00).
+  Jetzt frischt die Rückkehr die Uhrzeit der Anzeige sofort auf.
+- **Einzahl:** „1 Durchgang“ (Fortschritt im Kapitel, N195), „1 gewertete Partie“ (Deine
+  Wertung, N224), „aus 1 Partie“ (Deine Spielstärke, N326).
+- **„Aus dem Buch: Abb. 0.12“ beim Zug ausführen (N314):** Die Sonderzüge an den Buchstellungen
+  nannten ihre Abbildung nicht, obwohl der Nachtest das versprach; jetzt steht sie unter dem
+  Brett wie in den anderen Trainern.
+- **Nicht behoben, bleibt als Befund bei N180:** Beim schnellen Neuladen am Rechner ging die
+  Bedenkzeit seit dem letzten Zug verloren (die Uhr stand danach wieder auf der Zeit beim
+  letzten Engine-Zug). Das Anhalten beim Verlassen wird zwar gespeichert, aber das Schreiben in
+  die Datenbank wird beim Neuladen abgebrochen. Eine sichere Lösung bräuchte einen zweiten,
+  sofortigen Speicherweg für die Uhr; auf dem Handy (App wechseln, dann schließen) bleibt
+  meist genug Zeit zum Schreiben. Der Autor prüft das auf dem Handy.
+- Kein Fehler: Die Rochade heißt im Trainer „O-O“ mit Buchstaben O, wie im Buch (190-mal O-O,
+  nie 0-0).

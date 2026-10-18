@@ -213,6 +213,13 @@ test("Endspieltrainer: Mattführung Stufe 1, Merksatz als Hinweis, Aufgabe abbre
   await expect(page.getByTestId("endspiel-auftrag")).toContainText(/Gewinne|Halte/);
   await runde.getByRole("button", { name: "Hinweis 1" }).click();
   await expect(page.getByTestId("endspiel-merksatz")).toContainText("Merksatz:");
+  // Hinweis 3 zeigt den Zug der Engine als goldenen Pfeil, auch bei Figurenzügen (Dame, König):
+  // Die Engine liefert UCI, der Pfeil braucht die Felder (Befund beim Prüfen von N255, 0.2.90).
+  await runde.getByRole("button", { name: "Hinweis 2" }).click();
+  await runde.getByRole("button", { name: "Hinweis 3" }).click();
+  await expect(page.locator(".trainerrunde .brett svg polygon")).not.toHaveCount(0, {
+    timeout: 30_000,
+  });
   await page.screenshot({ path: "test-results/bilder/trainer-endspiel.png", fullPage: true });
   await runde.getByRole("button", { name: "Aufgabe abbrechen" }).click();
   await expect(runde.getByRole("status").last()).toContainText("Abgebrochen");

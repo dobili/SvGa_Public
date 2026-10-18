@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.68. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.71. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,18 +11,44 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.68“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.71“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
-T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
+T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
 mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ---
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.68“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.71“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.71 (etwa 10 Minuten, mit Engine; Spielbewertung an deinen chess.com-Partien geeicht, Fable)
+
+- [ ] N290. **Geschätzte Spielstärke etwa 500 Punkte niedriger, wie bei chess.com:** Öffne eine
+      ausgewertete Partie (Partienliste) oder spiele eine neue. Karte „Spielstärke“: Die Zahlen
+      liegen jetzt deutlich tiefer. Deine Partie vom 17.10.2026 gegen Stufe 5 (88 % und 76 %)
+      ergibt „etwa 1500“ und „etwa 750“ statt 2100 und 1450. Grund: Ich habe deine sieben
+      chess.com-Partien mit unserer Auswertung durchgerechnet (14 Seiten). Unsere Genauigkeit
+      liegt bei schwachem Spiel 10 bis 19 Punkte über der von chess.com, bei starkem 1 bis 3; die
+      alte Tabelle (90 % → 2200) kam aus Durchschnittswerten und lag damit 450 bis 1150 über der
+      Spielbewertung von chess.com. Die neue Tabelle (95 % → 2100, 92 % → 1750, 89 % → 1550,
+      86 % → 1350, 83 % → 1100, 80 % → 900, 75 % → 700, 70 % → 500) trifft chess.com bei deinen
+      14 Seiten im Mittel genau, die größte Abweichung ist 450 (chess.com schwankt selbst: 94 %
+      ergibt dort einmal 1500, einmal 2000). Der Erklärtext unter der Karte sagt das. Dieser
+      Schritt ersetzt N260.
+- [ ] N291. **Urteilswort je Phase und Mittelspiel nach Taktik und Strategie:** In derselben Karte
+      steht vor jeder Phase eine farbige Marke: Hervorragend (ab 95 %), Sehr gut (ab 88 %), Gut
+      (ab 78 %), Ungenau (ab 68 %), Fehlerhaft (ab 55 %), Schwach. Unter „Mittelspiel“ stehen
+      eingerückt „Taktik“ und „Strategie“ mit eigener Genauigkeit, Schätzung und Zugzahl. Taktik
+      sind die Züge aus Stellungen, in denen etwas los ist (Schach, Drohung des Gegners, Schlag
+      mit Gewinn, Matt möglich; Sicherheitsblick aus Kapitel 12), Strategie die aus ruhigen
+      Stellungen. Beispiel deine Partie gegen den 1700er-Bot von chess.com, unsere Rechnung mit
+      0,5 s je Stellung, du als Weiß: Eröffnung „Sehr gut · 2100“, Taktik „Sehr gut · 2000
+      (11 Züge)“, Strategie „Sehr gut · 1550 (9 Züge)“, Endspiel „Hervorragend · 2600 (25 Züge)“;
+      chess.com: Eröffnung Großartig, Taktik Exzellent, Strategie Gut, Endspiel Gut. Prüfe, ob
+      die Marken auf dem Handy in eine Zeile passen und die Farben lesbar sind.
 
 ### Neu in 0.2.68 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
 
@@ -278,14 +304,8 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
       schwächer). Das ist nicht einzeln sichtbar, nur als Eindruck über mehrere Partien.
       Gemessen (je zehn Partien Stufe gegen Stufe): Stufe 2 gewinnt 10:0 gegen 1, Stufe 3 10:0 gegen 2, Stufe 4 6,5:3,5 gegen 3, Stufe 5 10:0 gegen 4. Dafür hat Stufe 4 jetzt Skill Level 4 statt 3 (sonst war Stufe 3 ihr ebenbürtig). Fühlt sich der Sprung von 3 auf 4 jetzt richtig an (Rückfrage K1)?
 
-### Neu in 0.2.51 (etwa 15 Minuten, mit Engine; Vergleich mit chess.com, Empfehlungen S18 und T4, Fable)
+### Neu in 0.2.51 (etwa 15 Minuten, mit Engine; Vergleich mit chess.com, Empfehlung T4, Fable; N260 durch N290 ersetzt)
 
-- [ ] N260. **Geschätzte Spielstärke aus der Genauigkeit** (S18): Karte „Spielstärke“ deiner Partie
-      vom 17.10.2026 gegen Stufe 5: „etwa 2100“ für dich (vorher 2250) und „etwa 1450“ für die
-      Engine (vorher 1700). Die Zahl kommt jetzt aus der Genauigkeit (95 % → 2500, 90 % → 2200,
-      85 % → 1900, 80 % → 1600, 70 % → 1200, 60 % → 900), nicht mehr aus dem Verlust je Zug. Der
-      Erklärtext unter der Karte sagt das. Die Wertung in den Einstellungen nimmt für neue Partien
-      diese Zahl; alte Partien behalten ihre Werte.
 - [ ] N261. **Brillant und Stark wie bei chess.com:** Spiele die Opernpartie zu zweit nach (1. e4 e5 2. Sf3 d6 3. d4 Lg4 4. dxe5 Lxf3 5. Dxf3 dxe5 6. Lc4 Sf6 7. Db3 De7 8. Sc3 c6 9. Lg5 b5 10. Sxb5 cxb5 11. Lxb5+ Sbd7 12. 0-0-0 Td8 13. Txd7 Txd7 14. Td1 De6 15. Lxd7+ Sxd7 16. Db8+ Sxb8 17. Td8#). Karte „Spielstärke“, Weiß: Brillant 2 (13. Txd7 und 16. Db8+; chess.com
       gibt 3, dazu 10. Sxb5, das unsere Engine 0,7 schlechter sieht), Stark 2 (vorher 8; chess.com
       „Großartig“ 1), Genauigkeit etwa 95 bis 99 je nach Rechenlauf (chess.com 96,1). Ein Abtausch (Läufer schlägt
@@ -836,6 +856,30 @@ Regeln C1 und C2).
       **Empfehlung:** im Buch die Zählhilfe um „nie unter null“ ergänzen und die Tabelle zu 3.14
       auf „gleich“ setzen; dann ändere ich die App (ein Zeile) und die Kalibrierung. Bis dahin
       bleibt die App beim Buch (Regel 1).
+
+### S. Spielbewertung (Fable, 0.2.71; schon umgesetzt, Widerspruch genügt)
+
+- [ ] S20. **Eichung an deinen chess.com-Partien und deine Wertung:** Die neue Tabelle (N290) ist
+      an deinen sieben Partien geeicht; mehr Partien machen sie genauer. Wenn du weitere Partien
+      mit chess.com-Bewertung hast, schicke PGN und Bildschirmfoto, ich rechne sie nach. Die
+      Wertung in den Einstellungen (Elo-System aus deinen gewerteten Partien) hat bisher mit den
+      alten, zu hohen Schätzungen gerechnet; alte Punkte bleiben, neue Partien bringen die
+      niedrigeren Schätzungen des Gegners, die Wertung sinkt also mit den nächsten Partien um
+      einige hundert Punkte. **Empfehlung:** einmal „Wertung zurücksetzen“ in den Einstellungen,
+      dann baut sie sich aus den neuen Schätzungen auf. Andere Leser gibt es noch nicht, deshalb
+      kein automatisches Umrechnen (es wäre eine Änderung an gespeicherten Daten).
+- [ ] S21. **Urteilswort statt Symbole, Taktik und Strategie nach dem Buch:** chess.com
+      veröffentlicht nicht, wie die Symbole je Phase entstehen. Aus deinen 13 Bewertungen
+      lässt sich ablesen: „Strategie“ war alle 13 Male „Gut“, „Endspiel“ auch bei 95 %
+      Genauigkeit nur „Gut“, „Eröffnung“ meist „Bester“. Das passt zu einem Durchschnitt der
+      Zugklassen je Phase (in der Eröffnung sind viele Züge Buch oder bester Zug, in ruhigen
+      Stellungen und gewonnenen Endspielen sind gleich gute Züge nur „Gut“), nicht zu einer
+      Genauigkeit. Das sagt dem Leser wenig. **Empfehlung (umgesetzt):** Unser Wort je Phase
+      kommt aus der Genauigkeit der Phase mit denselben Grenzen wie die Spielstärke, und Taktik
+      gegen Strategie trennt die Regel des Sicherheitsblicks (Kapitel 12): Schach, Drohung,
+      Schlag mit Gewinn oder Matt möglich heißt Taktik. Beides ist im Erklärtext der Karte
+      beschrieben. Sag Bescheid, wenn du lieber die Wörter von chess.com (Bester, Exzellent, Gut,
+      Ungenauigkeit, Fehler) oder Symbole statt Wörter möchtest.
 
 ### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 

@@ -22,9 +22,16 @@ import { parseSan } from "chessops/san";
 import { nodeEngine } from "../engine/nodeEngine.testhilfe";
 import { wertFuer } from "../engine/spielbewerter";
 import { endwert, zugurteile, type Zugklasse } from "./auswertung";
-import { spielstaerke, spielstaerkeJePhase, type Seitenbilanz } from "./genauigkeit";
+import {
+  phasenurteil,
+  spielstaerke,
+  spielstaerkeImMittelspiel,
+  spielstaerkeJePhase,
+  type Seitenbilanz,
+} from "./genauigkeit";
 import { leserzug, neuePartie, stellungen, ziehe, type Partie } from "./partie";
 import { phasenJeStellung, type Phase } from "./phasen";
+import { zugartJeStellung } from "./taktik";
 
 const DATEI =
   process.env.MESSUNG_VERGLEICH_DATEI ??
@@ -97,6 +104,12 @@ function zahl(wert: number | null | undefined): string {
   return wert === null || wert === undefined ? "–" : String(Math.round(wert * 10) / 10);
 }
 
+/** „1750 sehrGut (12)“ oder „–“. */
+function phasenzelle(b: Seitenbilanz): string {
+  if (b.zuege === 0 || b.genauigkeit === null) return "–";
+  return `${zahl(b.spielstaerke)} ${phasenurteil(b.genauigkeit)} (${b.zuege})`;
+}
+
 function klassenzeile(b: Seitenbilanz): string {
   return KLASSEN.map((k) => `${k} ${b.klassen[k]}`).join(", ");
 }
@@ -136,8 +149,8 @@ describe("Vergleich mit chess.com", () => {
     const zeilen = [
       `# Vergleich mit chess.com (${new Date().toISOString().slice(0, 10)}, ${RECHENZEIT_MS} ms je Stellung)`,
       "",
-      "| Partie | Seite | Genauigkeit chess.com / App | Spielbewertung chess.com / App | App je Phase E / M / End | chess.com Phasen |",
-      "|---|---|---|---|---|---|",
+      "| Partie | Seite | Genauigkeit chess.com / App | Spielbewertung chess.com / App | App Eröffnung | App Taktik / Strategie (Mittelspiel) | App Endspiel | chess.com Phasen |",
+      "|---|---|---|---|---|---|---|---|",
     ];
     const klassen: string[] = [];
     for (const e of eintraege) {
@@ -148,12 +161,25 @@ describe("Vergleich mit chess.com", () => {
       const bilanz = spielstaerke(partie, werte, urteile, beste, gespielte);
       const phasen = phasenJeStellung(partie);
       const jePhase = spielstaerkeJePhase(partie, werte, urteile, beste, gespielte, phasen);
+      const zugarten = zugartJeStellung(partie);
+      const imMittelspiel = spielstaerkeImMittelspiel(
+        partie,
+        werte,
+        urteile,
+        beste,
+        gespielte,
+        phasen,
+        zugarten,
+      );
       for (const [farbe, seite] of [
         ["white", "weiss"],
         ["black", "schwarz"],
       ] as const) {
         const b = bilanz[farbe];
-        const ph = PHASEN.map((p) => zahl(jePhase[p][farbe].spielstaerke)).join(" / ");
+        const [eroeffnung, mittelspiel, endspiel] = PHASEN.map((p) =>
+          phasenzelle(jePhase[p][farbe]),
+        );
+        const mitte = `${phasenzelle(imMittelspiel.taktik[farbe])} / ${phasenzelle(imMittelspiel.strategie[farbe])} · gesamt ${mittelspiel}`;
         const cc = e.chesscom.phasen?.[seite];
         const ccText = cc
           ? Object.entries(cc)
@@ -161,7 +187,7 @@ describe("Vergleich mit chess.com", () => {
               .join(", ")
           : "–";
         zeilen.push(
-          `| ${e.name} | ${seite === "weiss" ? e.weiss : e.schwarz} | ${e.chesscom.genauigkeit[seite]} / ${zahl(b.genauigkeit)} | ${e.chesscom.spielbewertung[seite]} / ${zahl(b.spielstaerke)} | ${ph} | ${ccText} |`,
+          `| ${e.name} | ${seite === "weiss" ? e.weiss : e.schwarz} | ${e.chesscom.genauigkeit[seite]} / ${zahl(b.genauigkeit)} | ${e.chesscom.spielbewertung[seite]} / ${zahl(b.spielstaerke)} | ${eroeffnung} | ${mitte} | ${endspiel} | ${ccText} |`,
         );
         const ccK = e.chesscom.klassen?.[seite];
         klassen.push(

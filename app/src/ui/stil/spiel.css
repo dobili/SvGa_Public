@@ -229,6 +229,49 @@
   font-weight: 600;
 }
 
+/* Urteilswort je Phase (0.2.71), farbige Marke wie die Symbole je Phase bei chess.com. */
+.phasenurteil {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 8px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  background: #6b7280;
+  white-space: nowrap;
+}
+
+.phasenurteil-hervorragend {
+  background: #1f7a3a;
+}
+
+.phasenurteil-sehrGut {
+  background: #3b9a52;
+}
+
+.phasenurteil-gut {
+  background: #7fa33a;
+}
+
+.phasenurteil-ungenau {
+  background: #c9a227;
+}
+
+.phasenurteil-fehlerhaft {
+  background: #d9742b;
+}
+
+.phasenurteil-schwach {
+  background: #b33a3a;
+}
+
+/* Taktik und Strategie als eingerückte Zeilen unter dem Mittelspiel. */
+.spielstaerke-unterzeile th[scope="row"] {
+  padding-left: calc(var(--raster) * 2.5);
+  font-weight: 400;
+}
+
 .enginefehler {
   margin: var(--raster) 0;
   padding-left: calc(var(--raster) * 2.5);

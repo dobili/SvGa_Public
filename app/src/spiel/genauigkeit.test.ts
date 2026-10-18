@@ -4,12 +4,16 @@ import { zugurteile } from "./auswertung";
 import {
   gewinnwahrscheinlichkeit,
   partiegenauigkeit,
+  phasenurteil,
   spielstaerke,
+  spielstaerkeImMittelspiel,
   spielstaerkeAus,
   zuggenauigkeit,
   zuggewichte,
 } from "./genauigkeit";
 import { leserzug, neuePartie, ziehe, type Partie, type Partiezug } from "./partie";
+import type { Phase } from "./phasen";
+import type { Zugart } from "./taktik";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
@@ -94,12 +98,22 @@ describe("Genauigkeit und Spielstärke", () => {
     expect(partiegenauigkeit([{ genauigkeit: 0, gewicht: 1 }])).toBeCloseTo(0.5, 5);
   });
 
-  it("Schätzung aus der Genauigkeit (S18): 90 → 2200, 70 → 1200, dazwischen linear, Mindestwert", () => {
-    expect(spielstaerkeAus(90)).toBe(2200);
-    expect(spielstaerkeAus(70)).toBe(1200);
-    expect(spielstaerkeAus(88)).toBe(2100);
-    expect(spielstaerkeAus(100)).toBe(2900);
-    expect(spielstaerkeAus(10)).toBe(500);
+  it("Schätzung aus der Genauigkeit (S18, geeicht 0.2.71): 90 → 1600, 70 → 500, linear, Mindestwert", () => {
+    expect(spielstaerkeAus(90)).toBe(1600);
+    expect(spielstaerkeAus(70)).toBe(500);
+    expect(spielstaerkeAus(88)).toBe(1500);
+    expect(spielstaerkeAus(95)).toBe(2100);
+    expect(spielstaerkeAus(100)).toBe(2800);
+    expect(spielstaerkeAus(10)).toBe(250);
+  });
+
+  it("Urteilswort je Phase: 96 hervorragend, 90 sehr gut, 80 gut, 70 ungenau, 60 fehlerhaft, 40 schwach", () => {
+    expect(phasenurteil(96)).toBe("hervorragend");
+    expect(phasenurteil(90)).toBe("sehrGut");
+    expect(phasenurteil(80)).toBe("gut");
+    expect(phasenurteil(70)).toBe("ungenau");
+    expect(phasenurteil(60)).toBe("fehlerhaft");
+    expect(phasenurteil(40)).toBe("schwach");
   });
 
   it("Bilanz je Seite: Zeichen, beste Züge, Genauigkeit; Schätzung erst ab zehn Zügen", () => {
@@ -118,5 +132,37 @@ describe("Genauigkeit und Spielstärke", () => {
     expect(s.black.zeichen["??"]).toBe(1);
     expect(s.black.genauigkeit).toBeLessThan(s.white.genauigkeit ?? 0);
     expect(s.black.verlustJeZug).toBeCloseTo(10.3 / 3, 5);
+  });
+
+  it("Mittelspiel nach Zugart: nur Züge des Mittelspiels, getrennt nach Taktik und Strategie", () => {
+    const p = partie();
+    const werte = [0.3, 0.3, 0.3, -0.3, -0.3, -0.3, 10, 10];
+    const beste = ["e2e4", "e7e5", "g1f3", "b8c6", "g1f3", "g8f6", "h5f7", ""];
+    const urteile = zugurteile(p, werte, beste, [0, 0, 0, 0, 0, 0, 5, 0]);
+    const phasen: Phase[] = [
+      "eroeffnung",
+      "eroeffnung",
+      "eroeffnung",
+      "mittelspiel",
+      "mittelspiel",
+      "mittelspiel",
+      "mittelspiel",
+      "mittelspiel",
+    ];
+    const zugarten: Zugart[] = [
+      "strategie",
+      "strategie",
+      "strategie",
+      "strategie",
+      "taktik",
+      "taktik",
+      "taktik",
+      "taktik",
+    ];
+    const je = spielstaerkeImMittelspiel(p, werte, urteile, beste, [], phasen, zugarten);
+    expect(je.strategie.black.zuege).toBe(1);
+    expect(je.taktik.white.zuege).toBe(2);
+    expect(je.taktik.black.zuege).toBe(1);
+    expect(je.taktik.white.spielstaerke).toBeNull();
   });
 });

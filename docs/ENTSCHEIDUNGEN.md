@@ -2460,6 +2460,72 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
   Abschnitts.
 
+## Spielbewertung an chess.com geeicht, Urteil je Phase, Taktik und Strategie (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.71)
+
+Der Autor schickte sieben eigene Partien von chess.com (drei gegen Bots, vier gegen Menschen,
+15 bis 87 Züge) mit Genauigkeit, Spielbewertung, Zugklassen und den Symbolen je Phase aus der
+Partieanalyse von chess.com, mit dem Wunsch, Spielbewertung und Phasen genauer zu justieren.
+Der neue Messlauf `npm run messen:vergleich` (Datei nur lokal in `buch/arbeit/chesscom/`,
+500 ms und zwei Varianten je Stellung) rechnet die Partien durch die Auswertung der App.
+
+**Befund Genauigkeit:** Unsere Genauigkeit (Rechnung wie bei Lichess) liegt über der von
+chess.com, bei schwachem Spiel um 10 bis 19 Punkte, bei starkem um 1 bis 3. chess.com rechnet
+tiefer und mit eigener Formel; die Rechnung bleibt, weil sie offen dokumentiert ist und in der
+App dieselbe Engine die Werte liefert. Zwei Läufe mit 0,5 s je Stellung schwanken um bis zu
+4 Punkte; in der App rechnet die Auswertung 2 s.
+
+**Entscheidung Spielstärke:** Die Tabelle Genauigkeit → Spielstärke war aus Durchschnittswerten
+(Meister über 92 %) und lag an 14 Seiten 450 bis 1150 über der Spielbewertung von chess.com. Neue
+Stützstellen: 100 → 2800, 97 → 2350, 95 → 2100, 92 → 1750, 89 → 1550, 86 → 1350, 83 → 1100,
+80 → 900, 75 → 700, 70 → 500, 60 → 350, 50 → 250. Ergebnis an den 14 Seiten (Genauigkeit
+chess.com / App, Spielbewertung chess.com / App alt / App neu):
+
+| Partie                | Seite  | Genauigkeit | Spielbewertung chess.com | App alt | App neu |
+| --------------------- | ------ | ----------- | ------------------------ | ------- | ------- |
+| 1, gegen Bot, 58 Züge | Autor  | 80,1 / 88,1 | 1650                     | 2100    | 1500    |
+|                       | Gegner | 70,6 / 82,5 | 650                      | 1800    | 1050    |
+| 2, gegen Bot 1575, 87 | Autor  | 74,9 / 85,3 | 1350                     | 1850    | 1300    |
+|                       | Gegner | 71,5 / 81,0 | 900                      | 1650    | 950     |
+| 3, gegen Mensch, 15   | Autor  | 91,6 / 93,5 | 1700                     | 2450    | 1900    |
+|                       | Gegner | 56,7 / 74,8 | 800                      | 1400    | 700     |
+| 4, gegen Mensch, 26   | Gegner | 70,8 / 83,6 | 1000                     | 1900    | 1150    |
+|                       | Autor  | 90,3 / 90,8 | 1700                     | 2300    | 1650    |
+| 5, gegen Mensch, 23   | Autor  | 91,4 / 90,4 | 1500                     | 2450    | 1650    |
+|                       | Gegner | 74,1 / 80,3 | 1000                     | 1800    | 900     |
+| 6, gegen Mensch, 19   | Gegner | 61,6 / 68,4 | 450                      | 1300    | 500     |
+|                       | Autor  | 84,9 / 81,5 | 1450                     | 1950    | 1000    |
+| 7, gegen Bot 1700, 51 | Autor  | 92,4 / 94,6 | 2000                     | 2450    | 2050    |
+|                       | Gegner | 83,9 / 88,9 | 1600                     | 2150    | 1550    |
+
+Abweichung neu zu chess.com: im Mittel 0, Median 0, höchstens 450 (Partie 6, Autor; chess.com
+schwankt selbst, 94 % ergibt dort 1500 und 2000). Die Wertung des Lesers (Elo-System) rechnet ab
+jetzt mit den neuen Schätzungen; alte Punkte bleiben (keine Umrechnung gespeicherter Daten,
+Rückfrage S20 empfiehlt dem Autor einmal „Wertung zurücksetzen“).
+
+**Phasen-Symbole von chess.com:** nicht veröffentlicht. Aus den 13 Bewertungen des Autors:
+„Strategie“ immer „Gut“, „Endspiel“ auch bei 95 % nur „Gut“, „Eröffnung“ meist „Bester“, einmal
+„Großartig“, „Taktik“ „Exzellent“ oder „Gut“. Das spricht für einen Durchschnitt der Zugklassen
+je Phase (Eröffnung: viele Buch- und beste Züge; ruhige Stellungen und gewonnene Endspiele: viele
+gleich gute Züge, also „Gut“), nicht für eine Genauigkeit. Als Information für den Leser taugt
+das wenig. **Entscheidung:** eigenes Urteilswort je Phase aus der Genauigkeit der Phase, Grenzen
+aus der Spielstärke-Tabelle (hervorragend ab 95 %, sehr gut ab 88 %, gut ab 78 %, ungenau ab
+68 %, fehlerhaft ab 55 %, sonst schwach), als farbige Marke vor den Zahlen (`phasenurteil` in
+`spiel/genauigkeit.ts`, Marke `.phasenurteil` in `spiel.css`).
+
+**Taktik und Strategie:** Das Mittelspiel steht zusätzlich getrennt nach Zugart (`spiel/taktik.ts`,
+`spielstaerkeImMittelspiel`): Eine Stellung ist taktisch nach der Regel des Sicherheitsblicks
+(Kapitel 12) und der erzwingenden Züge (Kapitel 7), wenn die Seite am Zug im Schach steht, der
+Gegner Material oder Matt droht, sie selbst mit Gewinn schlagen oder Matt setzen kann; sonst
+ruhig (Strategie). Eröffnung und Endspiel bleiben ungeteilt wie bei chess.com. In den sieben
+Partien liegt die Taktik des Autors meist über seiner Strategie (Partie 4: 2200 gegen 750,
+Partie 7: 2000 gegen 1550), wie bei chess.com (Taktik „Exzellent“, Strategie „Gut“).
+
+**Zugklassen im Vergleich** (nicht geändert, zur Beobachtung): „bester“ und „sehr gut“ zusammen
+treffen chess.com „Bester“ plus „Exzellent“ gut; unser „stark“ (einziger guter Zug oder Fehler
+bestraft) ist häufiger als „Großartig“ bei chess.com (Partie 7: 6 gegen 0); unser „patzer“ ab
+drei Bauern ist häufiger als dort (Partie 2, Gegner: 5 gegen 2); „buch“ bleibt 0, weil nur die
+Eröffnungen des Buches zählen. Prüfschritt N260 (alte Zahlen) ist durch N290 ersetzt.
+
 ## Werkzeugabweichungen aus der Textarbeit geprüft (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.68)
 
 Die Helfer der Textarbeit (AP 14, 15.10.2026, Stand 0.2.25) hatten zwölf Gruppen von

@@ -10,14 +10,22 @@
  * Phasen zählen wenig, die Kämpfe viel) und dem harmonischen Mittel (ein grober Fehler drückt die
  * Zahl spürbar). Vorher das einfache Mittel, das mit 97 % weit über chess.com (87 %) lag, weil die
  * vielen fehlerfreien Züge in gewonnener Stellung alles ausglichen. Die Spielstärke ist eine grobe
- * Schätzung aus dieser Genauigkeit (Tabelle unten, aus Erfahrungswerten von Lichess und chess.com;
- * keine Wertungszahl eines Verbands; bis 0.2.50 aus dem Verlust je Zug, Empfehlung S18). Reine Funktionen, die Werte kommen aus der Auswertung.
- * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts.
+ * Schätzung aus dieser Genauigkeit (Tabelle unten; keine Wertungszahl eines Verbands; bis 0.2.50
+ * aus dem Verlust je Zug, Empfehlung S18). Seit 0.2.71 ist die Tabelle an sieben Partien des
+ * Autors mit der Spielbewertung von chess.com geeicht: Vorher lag unsere Schätzung 450 bis 1150
+ * Punkte darüber, weil die Tabelle aus Durchschnittswerten stammte (Meister über 92 %), unsere
+ * Genauigkeit aber systematisch über der von chess.com liegt (bei schwachem Spiel um 10 bis 19
+ * Punkte, bei starkem um 1 bis 3; chess.com bewertet mit tieferer Rechnung und eigener Formel).
+ * Dazu seit 0.2.71 ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com) und die
+ * Spielstärke im Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Reine
+ * Funktionen, die Werte kommen aus der Auswertung.
+ * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts, spiel/phasen.ts, spiel/taktik.ts.
  */
 import type { Color } from "chessops/types";
 import { WERTGRENZE, type Zugklasse, type Zugurteil, type Zugzeichen } from "./auswertung";
 import { stellungen, type Partie } from "./partie";
 import type { Phase } from "./phasen";
+import type { Zugart } from "./taktik";
 export interface Seitenbilanz {
   /** Zahl der eigenen Züge. */
   readonly zuege: number;
@@ -66,25 +74,56 @@ const MINDESTENS_ZUEGE = 10;
 /** Je Phase reichen weniger Züge für eine (noch gröbere) Schätzung. */
 const MINDESTENS_ZUEGE_PHASE = 6;
 /**
- * Stützstellen: Genauigkeit der Partie → Spielstärke, absteigend. Grobe Erfahrungswerte aus den
- * Durchschnitten bei Lichess und chess.com (Meister über 92 %, Vereinsspieler um 85 %, Einsteiger
- * um 70 %); dazwischen wird linear gerechnet. Der Verlust je Zug taugte nicht: Dreißig Züge in
- * gewonnener Stellung verdünnten jeden Fehler (deine Partie mit 4. e3: „etwa 2250“).
+ * Stützstellen: Genauigkeit der Partie → Spielstärke, absteigend; dazwischen wird linear
+ * gerechnet. Geeicht (0.2.71) an sieben Partien des Autors bei chess.com, 14 Seiten mit unserer
+ * Genauigkeit und der Spielbewertung von chess.com (etwa: 73 % → 450, 75 % → 800, 81 % → 900,
+ * 83 % → 650 bis 1000, 85 % → 1000 bis 1450, 89 % → 1600, 92 % → 1700, 94 % → 1500 bis 2000).
+ * Mittlere Abweichung der Tabelle dazu etwa +90 Punkte, die Streuung von chess.com selbst ist
+ * größer (94 % → 1500 und 2000). Vor 0.2.71 (90 → 2200, 85 → 1900, 70 → 1200) lagen wir 450
+ * bis 1150 darüber. Der Verlust je Zug taugte nicht: Dreißig Züge in gewonnener Stellung
+ * verdünnten jeden Fehler (deine Partie mit 4. e3: „etwa 2250“).
  */
 const STUETZSTELLEN: readonly (readonly [number, number])[] = [
-  [100, 2900],
-  [97, 2700],
-  [95, 2500],
-  [90, 2200],
-  [85, 1900],
-  [80, 1600],
-  [75, 1400],
-  [70, 1200],
-  [60, 900],
-  [50, 600],
-  [40, 500],
+  [100, 2800],
+  [97, 2350],
+  [95, 2100],
+  [92, 1750],
+  [89, 1550],
+  [86, 1350],
+  [83, 1100],
+  [80, 900],
+  [75, 700],
+  [70, 500],
+  [60, 350],
+  [50, 250],
 ];
 const RUNDUNG = 50;
+
+/**
+ * Urteilswort je Phase aus der Genauigkeit der Phase (wie die Symbole je Phase bei chess.com,
+ * Wunsch des Autors 18.10.2026). Die Grenzen folgen der Tabelle oben: hervorragend ab 95 %
+ * (etwa 2100), sehr gut ab 88 % (etwa 1500), gut ab 78 % (etwa 800), ungenau ab 68 % (etwa 450),
+ * fehlerhaft ab 55 %, sonst schwach.
+ */
+export type Phasenurteil =
+  "hervorragend" | "sehrGut" | "gut" | "ungenau" | "fehlerhaft" | "schwach";
+const URTEILSGRENZEN: readonly (readonly [number, Phasenurteil])[] = [
+  [95, "hervorragend"],
+  [88, "sehrGut"],
+  [78, "gut"],
+  [68, "ungenau"],
+  [55, "fehlerhaft"],
+];
+const URTEIL_SONST: Phasenurteil = "schwach";
+
+/**
+ * Das Urteilswort zu einer Genauigkeit.
+ * Beispiel: Partie des Autors gegen einen 1700er-Bot, Eröffnung 96 % → hervorragend;
+ * Mittelspiel 85 % → gut.
+ */
+export function phasenurteil(genauigkeit: number): Phasenurteil {
+  return URTEILSGRENZEN.find(([grenze]) => genauigkeit >= grenze)?.[1] ?? URTEIL_SONST;
+}
 
 /** Gewinnwahrscheinlichkeit von Weiß in Prozent aus dem Wert in Bauerneinheiten. */
 export function gewinnwahrscheinlichkeit(wert: number): number {
@@ -156,7 +195,7 @@ export function partiegenauigkeit(
 
 /**
  * Spielstärke aus der Genauigkeit der Partie, linear zwischen den Stützstellen, auf 50 gerundet.
- * Beispiel: 88 % → etwa 2100; 76 % → etwa 1450; unter 40 % → 500.
+ * Beispiel: 88 % → etwa 1500; 76 % → etwa 750; unter 50 % → 250.
  */
 export function spielstaerkeAus(genauigkeit: number): number {
   const letzte = STUETZSTELLEN.at(-1) ?? [0, 0];
@@ -285,13 +324,49 @@ export function spielstaerkeJePhase(
 }
 
 /**
+ * Die Spielstärke im Mittelspiel getrennt nach Zugart (Taktik: Stellungen mit Schach, Drohung
+ * oder Schlag mit Gewinn; Strategie: ruhige Stellungen, spiel/taktik.ts), beide Seiten, Schätzung
+ * ab sechs Zügen. Eröffnung und Endspiel bleiben ungeteilt (wie bei chess.com).
+ * Eingaben wie `spielstaerkeJePhase`, dazu die Zugart je Stellung.
+ * Beispiel: Partie des Autors gegen einen 1700er-Bot: Taktik 12 Züge, Strategie 20 Züge.
+ */
+export function spielstaerkeImMittelspiel(
+  partie: Partie,
+  werte: readonly number[],
+  urteile: readonly Zugurteil[],
+  beste: readonly string[],
+  gespielteUci: readonly (string | null)[],
+  phasen: readonly Phase[],
+  zugarten: readonly (Zugart | null)[],
+): Readonly<Record<Zugart, Spielstaerke>> {
+  const mittelspiel = zugbilanzen(partie, werte, urteile, beste, gespielteUci, phasen).filter(
+    (z) => z.phase === "mittelspiel",
+  );
+  const je = (art: Zugart): Spielstaerke => {
+    const passende = mittelspiel.filter((z) => zugarten[z.urteil.index] === art);
+    return {
+      white: seitenbilanz(
+        passende.filter((z) => z.seite === "white"),
+        MINDESTENS_ZUEGE_PHASE,
+      ),
+      black: seitenbilanz(
+        passende.filter((z) => z.seite === "black"),
+        MINDESTENS_ZUEGE_PHASE,
+      ),
+    };
+  };
+  return { taktik: je("taktik"), strategie: je("strategie") };
+}
+
+/**
  * Die Spielstärke-Bewertung beider Seiten.
  *
  * Eingaben: Partie, Werte je Stellung aus Sicht von Weiß, Urteile je Halbzug (spiel/auswertung.ts),
  * beste Züge je Stellung (UCI, dürfen fehlen). Ausgabe: je Seite Genauigkeit, Verlust je Zug,
  * geschätzte Spielstärke, Zeichen und beste Züge.
  * Beispiel: Genauigkeit wie bei Lichess (partiegenauigkeit), für die Beispielpartie des Autors
- * 88 % und 76 % (chess.com: 86,8 und 80,3), daraus etwa 2100 und 1450. Sonderfall: ohne Werte (Auswertung läuft noch) sind beide Seiten leer.
+ * 88 % und 76 % (chess.com: 86,8 und 80,3), daraus etwa 1500 und 750. Sonderfall: ohne Werte
+ * (Auswertung läuft noch) sind beide Seiten leer.
  */
 export function spielstaerke(
   partie: Partie,

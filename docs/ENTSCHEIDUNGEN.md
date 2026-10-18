@@ -2713,3 +2713,33 @@ Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `an
   zeigte noch auf das alte, private Repository und zeigt jetzt auf `github.com/dobili/SvGa_Public`.
 - X5 (Schwierigkeit im Endspieltrainer): Verteilung geprüft, Empfehlung „so lassen“ nach Regel 9
   als umgesetzt vermerkt (`docs/AUFGABEN_AUTOR.md`, X5).
+
+## Aufgabenseite in der App (18.10.2026 morgens, Opus, Zweig `autor-aufgaben`, Version 0.2.75; vorbereitet als 0.2.74, Fable hatte die Nummer zuerst)
+
+Wunsch des Autors: Die Aufgabendatei `docs/AUFGABEN_AUTOR.md` in der App, geöffnet über drei
+Sekunden Druck auf das Zahnrad, mit Links zu Abbildungen, Spielen und Trainern, Haken je Punkt und
+einem Knopf, der den Stand für den Chat in die Zwischenablage legt.
+
+- Die Datei kommt beim Bauen als eigener, nachgeladener Teil in die App (`?raw`-Import, etwa
+  36 kB gepackt, offline im Service Worker). Sie ist damit so neu wie die App; eine eigene Kopie
+  gibt es nicht. Sie ist ohnehin öffentlich (Repository).
+- `autor/aufgabendatei.ts` liest „##“- und „###“-Abschnitte und Punkte „- [ ] N307. …“ mit
+  eingerückten Folgezeilen; `autor/verweise.ts` findet Links: „Abb. 6.20“ (auch Ketten wie
+  „6.20 und 11.34“, „0.12 bis 0.19“), Trainernamen in „…“, Spielen, Partienliste, Einstellungen,
+  Nachschlagen, Glossar, Gesamt-Checkliste, Lizenzen und „Training ›“. „Kapitel 12“ ist kein
+  Link (in „Training › Kapitel 12“ wäre das Buchkapitel das falsche Ziel).
+- `autor/abhakstand.ts`: Haken, Notizen, aufgeklappte Abschnitte und der zuletzt angetippte Punkt
+  liegen als Merker `svga.autorAufgaben` auf dem Gerät, nicht in den Nutzerdaten (gehört zur
+  Arbeit am Buch, nicht zum Lesen; zieht nicht mit der Datensicherung um). Text für den Chat:
+  „N306 ok“, „N305: Notiz“, „F5 ok: Notiz“, in der Reihenfolge der Datei, mit App-Version und
+  Version der Datei in der Kopfzeile.
+- Langer Druck: `ui/komponenten/useLangerDruck.ts` (3 s, Kontextmenü des Handys unterdrückt);
+  ein kurzer Tipp bleibt der Wechsel zu den Einstellungen. Am Rechner `/app/#aufgaben`.
+- Rückweg: Nach einem Link steht über der Leiste „‹ Zurück zu den Aufgaben“
+  (`ui/komponenten/AufgabenRueckweg.tsx`), weil eine installierte App auf dem iPhone keine
+  Zurück-Taste hat und etwa die Einstellungen keinen eigenen „Zurück“-Knopf.
+- Links im Fließtext sind echte Links (`<a>`), keine Knöpfe: Knöpfe haben 44 Pixel Mindesthöhe
+  und brechen nicht mit dem Satz um.
+- Folge für alle Sitzungen (CLAUDE.md, Regel 8): Das Format der Punkte in
+  `docs/AUFGABEN_AUTOR.md` bleibt „- [ ] Kennung. Text“ mit eingerückten Folgezeilen, sonst sieht
+  die App sie nicht (ein Test liest die echte Datei).

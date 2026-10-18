@@ -2486,5 +2486,20 @@
   "dreissig.bereich.endspiel": "Endspiel",
   "dreissig.bereich.strategie": "Strategie",
   "dreissig.bereich.eroeffnung": "Eröffnung",
-  "dreissig.bereichHinweis": "Die vier Bereiche kommen im Wechsel dran. Nimm dir nur ein Mini-Ziel vor, etwa zwei Oppositionsstellungen oder fünf Aufgaben desselben Motivs."
+  "dreissig.bereichHinweis": "Die vier Bereiche kommen im Wechsel dran. Nimm dir nur ein Mini-Ziel vor, etwa zwei Oppositionsstellungen oder fünf Aufgaben desselben Motivs.",
+  "autor.titel": "Aufgaben des Autors",
+  "autor.stand": "Aufgabendatei {datei}, App {app}.",
+  "autor.zaehlung": "{erledigt} von {gesamt} abgehakt.",
+  "autor.kopieren": "Stand in die Zwischenablage",
+  "autor.kopiert": "In der Zwischenablage. Jetzt in den Chat einfügen.",
+  "autor.vonHand": "Die Zwischenablage ist hier gesperrt. Bitte den Text unten markieren und kopieren.",
+  "autor.textAnsehen": "Text für den Chat ansehen",
+  "autor.nurOffene": "Nur offene Punkte zeigen",
+  "autor.loeschen": "Haken und Notizen löschen",
+  "autor.loeschenFrage": "Alle Haken und Notizen dieser Seite löschen?",
+  "autor.erledigt": "{id} erledigt",
+  "autor.notiz": "Notiz zu {id}",
+  "autor.notizSchreiben": "Notiz",
+  "autor.notizPlatzhalter": "Was ist dir aufgefallen?",
+  "autor.rueckweg": "‹ Zurück zu den Aufgaben"
 }

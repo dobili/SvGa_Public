@@ -2460,7 +2460,7 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
   Abschnitts.
 
-## Messung aller 64 Bots, Stil-Fehler gefunden und behoben (18.10.2026, Fable und Opus, Zweig `werkzeuge-textarbeit`, Versionen 0.2.74 bis 0.2.78)
+## Messung aller 64 Bots, Stil-Fehler gefunden und behoben (18.10.2026, Fable und Opus, Zweig `werkzeuge-textarbeit`, Versionen 0.2.74 bis 0.2.81)
 
 Jeder Bot spielt sechs Partien gegen die reine Stufe seiner Nummer (`npm run messen:stufen --
 3@jonas-3 …`, Ergebnisse nur lokal in `buch/arbeit/stufenmessung/`), dazu bei Bedarf gegen die
@@ -2488,23 +2488,64 @@ soll gegen seine Stufe mindestens 1,5 von 6 Punkten holen und gegen die nächsth
    unter den Kandidaten der Stufe. Damit ändert er den Charakter, aber im Mittel kaum die Stärke.
    Der Hinweis zum Stil in der App ist angepasst. S13 (Toleranz 0,3) bleibt.
 
-**Folgen für die Bots:** Die Anpassungen gegen „zu stark“ aus Schritt 1 bekämpften nur die
-Folgen dieses Fehlers und sind zurückgenommen (Stufen 1 bis 5 wieder wie in 0.2.67, auch die
-Sprechblasen). Behalten sind die Korrekturen der zu schwachen Bots, deren Ursache teure blinde
-Flecken waren: „rueckzug“ ab Stufe 5 (Hanna, Elif, Yara: 80 bis 90 blinde Züge in sechs
-Partien) und „turm“ (Paul).
+**Folgen für die Bots (0.2.78):** Die Anpassungen gegen „zu stark“ aus Schritt 1 bekämpften nur
+die Folgen dieses Fehlers und sind zurückgenommen (Stufen 1 bis 5 wieder wie in 0.2.67, auch die
+Sprechblasen). Mit dem korrigierten Stil holen die 20 Bots der Stufen 1 bis 4 mit Stil im Mittel
+3,05 von 6 Punkten gegen ihre Stufe, genauso viel wie die Bots ohne Stil (3,06).
 
-| Stufe | Bot   | vorher | Änderung                                                   | nachher (alter Stil) |
-| ----- | ----- | ------ | ---------------------------------------------------------- | -------------------- |
-| 5     | Hanna | 1,5    | Endspiel 4 → 5                                             | 2,5                  |
-| 5     | Paul  | 1      | Mittelspiel 4 → 5, Flecken „zwischenzug“, „turm“ → „abzug“ | 3                    |
-| 6     | Elif  | 1      | Mittelspiel 6 → 7, Fleck „ruhig“ statt „rueckzug“          | 2,5                  |
-| 7     | Yara  | 1      | Fleck „ruhig“ statt „rueckzug“                             | noch nicht gemessen  |
+4. **Endmessung (0.2.81)** mit festen Regeln, damit das Nachjustieren nicht endlos wird. Sechs
+   Partien streuen um etwa ±1,2 Punkte; deshalb gilt ein Bot erst als Ausreißer, wenn zwei
+   unabhängige Stichproben (zwölf Partien, zweite mit anderen Saaten über `MESSUNG_SAAT_AB`)
+   unter 25 % oder über 75 % liegen, oder wenn ein schon bekannter Mechanismus vorliegt (teurer
+   blinder Fleck). Jeder Bot bekommt höchstens eine Anpassung; wer danach knapp daneben liegt,
+   bleibt als Grenzfall. Ab Stufe 5 gibt es keine absichtlichen Fehler mehr, ein Bot ist dort die
+   reine Stufe minus blinde Flecken und Stil und damit eher schwächer. Die oberen Stufen liegen
+   näher beieinander (Stufe 6 gegen 5: 7 : 3, 7 gegen 6: 8 : 2, 8 gegen 7: 9 : 1). Für die
+   Stufen 5 bis 8 gilt deshalb als Prüfstein zusätzlich: Ein Bot, der gegen seine Stufe wenig
+   holt, soll gegen die Stufe darunter mindestens die Hälfte holen, also zwischen beiden liegen.
 
-Gültig gemessen und vom Stil-Fehler nicht betroffen (Stil 0, ohne Bindestrich; Punkte des Bots
-gegen seine Stufe): Lotta 3, Mia 3, Karl 4, Selin 2, Nina 3, Ida 3,5, Benno 3, Amira 3,5, Kurt 2,
-Lena 5 (Grenzfall), Matteo 3,5. Die übrigen 53 Bots werden mit dem korrigierten Stil neu
-gemessen; das Ergebnis wird hier nachgetragen.
+Angepasst in der Endmessung (Begründung, Ergebnis danach):
+
+| Stufe | Bot          | Änderung                                                    | Ergebnis gegen die eigene Stufe                            |
+| ----- | ------------ | ----------------------------------------------------------- | ---------------------------------------------------------- |
+| 2     | Ayşe         | „figurHaengen“ statt „koenigsschild“ (nur billige Arten)    | vorher 10 : 2, jetzt 8 : 4 (12)                            |
+| 2     | Sophie       | „figurHaengen“ statt „ungenau“ (nur billige Arten)          | vorher 10 : 2, jetzt 8 : 4 (12)                            |
+| 5     | Hanna        | Fleck „ruhig“ statt „rueckzug“ (wie 0.2.67 sonst)           | vorher 0,5 : 5,5, jetzt 7 : 5 (12)                         |
+| 5     | Paul         | Fleck nur „abzug“ (statt „zwischenzug“, „turm“)             | 2,5 : 3,5                                                  |
+| 5     | Frau Kaya    | Fleck „springer“ gestrichen                                 | vorher 1 : 5, jetzt 5 : 7 (12)                             |
+| 5     | Herr Weber   | Eröffnung 4 → 5                                             | vorher 1 : 5, jetzt 4,5 : 7,5 (12)                         |
+| 6     | Elif         | Mittelspiel 6 → 7, Fleck „ruhig“ statt „rueckzug“           | 3 : 3                                                      |
+| 7     | Yara         | Fleck „ruhig“ statt „rueckzug“                              | 1 : 5, gegen Stufe 6 4 : 2                                 |
+| 7     | Frau Dr. Ahl | Fleck „zwischenzug“ statt „bauer“                           | vorher 2,5 : 8,5, jetzt 1,5 : 4,5, gegen Stufe 6 4,5 : 1,5 |
+| 8     | WGM Sato     | Fleck „ruhig“ statt „rueckzug“                              | vorher 0 : 6, jetzt 2 : 4                                  |
+| 8     | IM Haas      | Stil −1 statt −2 (Stufe 8 kann der Stil nur verschlechtern) | 0 : 6, gegen Stufe 7 vorher 1,5 : 4,5, jetzt 5,5 : 0,5     |
+
+Ergebnis aller 64 Bots in der Fassung von 0.2.81 (Punkte des Bots gegen die reine Stufe seiner
+Nummer, sechs Partien, „(12)“ zwei Stichproben):
+
+| Stufe | Bots                                                                                                                                                                                                                                                                     |
+| ----- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 1     | Lotta 3 : 3; Paula 2,5 : 3,5; Max 2 : 4; Finn 3 : 3; Oma Gerda 3 : 9 (12); Leon 4 : 2; Mia 3 : 3; Emil 4 : 8 (12)                                                                                                                                                        |
+| 2     | Opa Hans 3 : 3; Onkel Rudi 8 : 4 (12); Frieda 2 : 4; Herr Lehmann 2,5 : 3,5; Ayşe 8 : 4 (12); Pit 4 : 2; Sophie 8 : 4 (12); Karl 4 : 2                                                                                                                                   |
+| 3     | Selin 2 : 4; Nina 3 : 3; Jonas 3,5 : 2,5; Tobias 3 : 3; Greta 4 : 2; Herr Nowak 3 : 9 (12); Ida 3,5 : 2,5; Omar 3 : 3                                                                                                                                                    |
+| 4     | Benno 3 : 3; Timo 4 : 2; Frau Berger 2,5 : 3,5; Lukas 4,5 : 1,5; Zoë 2 : 4; Herr Schmitt 5,5 : 6,5 (12); Amira 3,5 : 2,5; Jan 4 : 2                                                                                                                                      |
+| 5     | Kurt 2 : 4; Frau Ortega 2,5 : 3,5; Nils 1,5 : 4,5; Hanna 7 : 5 (12); Herr Weber 4,5 : 7,5 (12); Lea 2,5 : 3,5; Paul 2,5 : 3,5; Frau Kaya 5 : 7 (12)                                                                                                                      |
+| 6     | Lena 7,5 : 4,5 (12); Viktor 2,5 : 3,5; Sara 3 : 3; Herr Fischer 2 : 4; Elif 3 : 3; Matteo 3,5 : 2,5; Frau Lind 1,5 : 4,5; Ben 2 : 4                                                                                                                                      |
+| 7     | Doktor Berg 4 : 2; Trainer Koch 1 : 5, gegen Stufe 6 3 : 3; Yara 1 : 5, gegen Stufe 6 4 : 2; Herr Brandt 1,5 : 4,5, gegen Stufe 6 3,5 : 2,5; Noah 3,5 : 8,5 (12), gegen Stufe 6 5 : 1; Frau Stein 2,5 : 3,5; Ravi 2 : 4; Frau Dr. Ahl 1,5 : 4,5, gegen Stufe 6 4,5 : 1,5 |
+| 8     | Großmeister Grün 3 : 3; IM Vogt 1,5 : 4,5; WGM Sato 2 : 4; FM Ortiz 2,5 : 3,5; GM Petrova 1 : 5, gegen Stufe 7 3,5 : 2,5; IM Haas 0 : 6 vor der Anpassung, jetzt gegen Stufe 7 5,5 : 0,5; WIM Nkemelu 1,5 : 4,5; GM Lindqvist 2 : 4                                      |
+
+Grenzfälle, die so bleiben: Oma Gerda und Herr Nowak (je 3 : 9, beide sehr defensiv, genau an
+der Grenze), Nils, Frau Lind, Herr Brandt, Frau Dr. Ahl, IM Vogt und WIM Nkemelu (je 1,5 von 6).
+Leon, Lukas und Herr Schmitt liegen am oberen, Trainer Koch (gegen Stufe 6 3 : 3) am unteren Rand.
+Großmeister Grün, identisch mit der reinen Stufe 8, holt 3 : 3 und bestätigt damit, dass die
+Messung selbst nicht verzerrt.
+
+**Stufe 8 mit Stil:** IM Haas (sehr defensiv, Endspiel 7) holte gegen die volle Engine 0 : 6
+und gegen Stufe 7 nur 1,5 : 4,5, GM Petrova (defensiv) 1 : 5 und gegen Stufe 7 3,5 : 2,5. Auf
+Stufe 8 ist der Zug der Stufe der beste, der Stil kann dort nur schwächere Züge wählen (bis 0,3
+je Stilstufe). IM Haas spielt deshalb jetzt mit Stil −1 statt −2 und schlägt Stufe 7 mit
+5,5 : 0,5; GM Petrova bleibt. Der Hinweis zum Stil in der App sagt, dass ein Stil auf Stufe 8
+schwächer macht, sehr aggressiv oder sehr defensiv etwa um eine Stufe.
 
 ## Spielbewertung an chess.com geeicht, Urteil je Phase, Taktik und Strategie (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.72)
 
@@ -2781,3 +2822,57 @@ nutzen) Zahlen bekommen, die zu beiden passen. Entschieden (alle Punkte vom Auto
 10. **Zuständigkeit:** Fables Kontingent ist verbraucht; Opus macht alles, auch die Teile in
     `spiel/` und `engine/` (Ausnahme von der Aufteilung vom 18.10.2026). Vor dem Einbau `main`
     einmergen, weil die Bot-Eichung noch läuft.
+
+## Einstellungen, Kapitelseiten und Spielen neu geordnet (18.10.2026 mittags, Opus, Zweig `layout-einstellungen`, Version 0.2.80)
+
+Wunsch des Autors vom 18.10.2026 (Layout in drei Teilen: Einstellungen, Kapitelseiten, Spielen).
+Einstellungen:
+
+1. **Neue Bausteine** in `ui/komponenten/`: `Reiter` (Tabs nebeneinander, kleine Schrift, mit
+   Symbol), `MitInfo` (kurze Zeile mit Fragezeichen im Kreis, Erklärung anfangs eingeklappt),
+   `Kreisanzeige` und `Ring` (Fortschritt als goldener Ring mit Prozentzahl statt Balken),
+   `Vorschauwahl` mit `Brettausschnitt` (vier Felder mit Figuren, gezeichnet wie auf dem Brett).
+   Stil in `ui/stil/bausteine.css`.
+2. **Wertungskurve:** Gesamt und Phasen als Reiter; die Erklärung zum Elo-System hinter dem
+   Fragezeichen.
+3. **Fortschritt:** Ringe in „Dein Fortschritt“ und auf den Kapitelseiten (gemeinsame
+   `Fortschrittszeile`), je Kapitel ein kleiner Ring.
+4. **Update:** Ist eine neue Version gefunden, ersetzt „Jetzt aktualisieren“ den Knopf „Nach
+   Update suchen“.
+5. **Darstellung und Training:** Reiter Brett, Figuren, Anzeige, Ton, Training mit Symbolen;
+   Brettfarben und Figurensätze als Kacheln mit Vorschau (die Vorschau der einen Wahl zeigt die
+   jeweils andere aktuelle Wahl mit).
+6. **Daten auf diesem Gerät:** kurzer Satz, Einzelheiten (auch iPhone und Safari) hinter dem
+   Fragezeichen; ebenso die Datensicherung.
+7. **Absichtliche Fehler der Engine** stehen nicht mehr in den Einstellungen, sondern unter
+   Spielen bei einer Stufe ohne vorgefertigten Gegner (aufklappbar, Stand in der Überschrift).
+   Sie gilt seitdem nur für die eigene Stufe, nicht mehr für vorgefertigte Bots (Empfehlung nach
+   Regel 9, Rückfrage S22): Die Bots sind mit ihrer eigenen Liste gemessen und beschrieben, und
+   eine unsichtbare Liste, die heimlich wirkt, wäre verwirrend.
+
+Kapitelseiten:
+
+8. Ringe statt Balken auch in der Kapitelliste des Buches (kleiner Ring).
+9. Trainer und Übungen in einer Karte „Training und Übungen“.
+10. „Alle abhaken“ und „Alle zurücksetzen“ direkt über der Galerie (Kopf „Abbildungen“ mit der
+    30-Sekunden-Erklärung hinter dem Fragezeichen); Galerie in `Abbildungsgalerie.tsx`.
+11. Abschnitte aufklappbar mit Ring, Stand und eigenem Knopf „Abschnitt 1.4 abhaken“ / „Haken
+    in 1.4 lösen“ (ohne Rückfrage, weil ein Abschnitt klein ist und der Knopf sich selbst
+    umkehrt). Anfangs offen sind nur Abschnitte mit offenen Abbildungen (Empfehlung nach Regel
+    9); die kleinen Bretter entstehen erst beim Aufklappen.
+
+Spielen:
+
+12. Gegnerwahl mit drei Kacheln (Eigene Stufe, Vorgefertigte Bots, Eigene Bots); darunter nur
+    der Inhalt der gewählten. Der Wechsel wählt gleich einen passenden Gegner
+    (`gegnerkategorie.ts`), damit die Partie zur sichtbaren Wahl passt; „Eigene Bots“ ohne
+    gewählten Bot sperrt „Partie beginnen“. Die Verwaltung eigener Bots ist keine eigene Karte
+    mehr, sondern Teil von „Eigene Bots“.
+13. Die Eröffnungswahl gilt für alle drei Kategorien (Engine aus der Grundstellung) und bleibt
+    deshalb unten, wie der Autor es für diesen Fall wollte.
+14. Engine-Knopf in der Partie statt der gestuften Hinweise (`SpielEngine.tsx`,
+    `spielEngineSchritte.ts`): 1. Bewertung, 2. Zeichen des eigenen letzten Zuges ohne
+    Erklärung, 3. „Warum?“ nur bei ?!, ? und ?? (Regel des Buches aus `spiel/erklaerung.ts`,
+    besserer Zug), 4. bester Zug jetzt mit goldenem Pfeil. Je Stellung 1,5 Sekunden Rechenzeit
+    (Konzept 8.1); Schritt 2 rechnet die Stellungen vor und nach dem eigenen Zug. In gewerteten
+    Partien fehlt der Knopf wie vorher der Hinweis (S9).

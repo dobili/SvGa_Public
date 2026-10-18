@@ -53,6 +53,7 @@ test("ohne Werkzeug zu Beginn; zweites Tippen wählt ab; Erklärkacheln von Zäh
   await expect(erklaerung).toContainText("So geht „Zählen“");
   // Die Einstellungen holen die Kachel von „Ziehen“ zurück.
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Anzeige" }).click();
   await page.getByRole("button", { name: "Wieder anzeigen" }).click();
   await expect(page.getByText("Die Erklärkacheln erscheinen wieder.")).toBeVisible();
   await page.getByRole("button", { name: "Buch", exact: true }).click();

@@ -5,7 +5,8 @@
  * (Auftrag des Autors zu AP 12). Pflichtenheft 4, Stufe 2: Export und Import als eine Datei;
  * Konzept 9.4: sanfter Hinweis alle vier Wochen. Vor dem Einspielen fragt die App nach und
  * nennt, was in der Sicherung steckt, denn das Einspielen ersetzt alle Daten auf dem Gerät.
- * Abhängigkeiten: speicher/sicherung.ts, speicher/speicher.ts, app/version.ts, i18n.
+ * Seit 0.2.80 mit Fragezeichen neben der Überschrift (Erklärung anfangs eingeklappt).
+ * Abhängigkeiten: speicher/sicherung.ts, speicher/speicher.ts, app/version.ts, InfoKnopf, i18n.
  */
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { APP_VERSION } from "../../app/version";
@@ -21,6 +22,7 @@ import {
 } from "../../speicher/sicherung";
 import { useSpeicher } from "../../speicher/speicher";
 import { bieteDateiAn } from "./dateiAnbieten";
+import { MitInfo } from "./InfoKnopf";
 
 /** So lange bleibt die Datei zum Herunterladen im Speicher. */
 type Gepruefte = Extract<Sicherungspruefung, { ok: true }>;
@@ -144,7 +146,11 @@ export function Datensicherung() {
 
   return (
     <div className="datensicherung">
-      <h3 className="einstellung-name">{t("sicherung.titel")}</h3>
+      <MitInfo
+        zeile={<h3 className="einstellung-name">{t("sicherung.titel")}</h3>}
+        erklaerung={t("sicherung.erklaerung")}
+        thema={t("sicherung.titel")}
+      />
       <Sicherungsstand />
       <div className="knopfreihe">
         <button type="button" className="knopf-zweit" onClick={() => void sichere()}>

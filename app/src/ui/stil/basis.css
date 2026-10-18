@@ -381,6 +381,16 @@ a.knopf-zweit {
   .ladepunkt {
     animation: none;
   }
+
+  /* Wer am Gerät „Bewegung reduzieren“ gewählt hat, sieht Balken, Pfeile und Klappen ohne
+     Gleiten (DS15, WCAG 2.3.3); vorher galt das nur für zwei Stellen. */
+  *,
+  ::before,
+  ::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 /* ---------- Leiste unten ---------- */

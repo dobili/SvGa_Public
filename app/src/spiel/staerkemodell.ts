@@ -150,18 +150,14 @@ export function staerkeAusGenauigkeit(innen: number): Staerkeschaetzung {
 }
 
 /**
- * Spielstärke über mehrere Partien (höchstens die letzten zehn; die Messung der Stufen nimmt mit
- * `hoechstens` alle): je Skala das Mittel aus dem
+ * Spielstärke über mehrere Partien (höchstens die letzten zehn): je Skala das Mittel aus dem
  * Schnitt der Einzelschätzungen und der umgekehrten Kurve am Schnitt der Genauigkeiten; die
  * Spanne wird mit der Zahl der Partien enger. Null ohne Partien.
  * Beispiel: zehn Partien mit je 75 % → chess.com etwa 1350, Lichess etwa 1450, Mitte 1400
  * (1150 bis 1650).
  */
-export function staerkeUeberPartien(
-  innen: readonly number[],
-  hoechstens: number = ZEHN,
-): Staerkeschaetzung | null {
-  const letzte = innen.slice(-hoechstens);
+export function staerkeUeberPartien(innen: readonly number[]): Staerkeschaetzung | null {
+  const letzte = innen.slice(-ZEHN);
   if (letzte.length === 0) return null;
   const schnitt = letzte.reduce((s, x) => s + x, 0) / letzte.length;
   const je = (vor: Kurve, umkehr: Kurve) => {

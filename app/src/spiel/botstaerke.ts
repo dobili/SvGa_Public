@@ -3,11 +3,10 @@
  * wie „Deine Spielstärke“ (Rückfrage S23, umgesetzt in 0.2.85).
  *
  * Rolle im Gesamtbild: Wie bei den Bots von chess.com steht an jeder Stufe und an jedem Bot eine
- * Zahl. Gemessen mit spiel/botstaerke.messung.ts: Jede Stufe spielt 16 Partien gegen sich selbst
- * (gleich starker Gegner wie in den gewerteten Partien, an denen die Kurven geeicht sind); jede
- * Stellung mit Tiefe 18 nachgerechnet, die Genauigkeit aller Seiten durch dieselbe Rechnung wie
- * die Spielstärke des Lesers über mehrere Partien (spiel/staerkemodell.ts). Bots und eigene Stufen
- * je Phase liegen dazwischen: Wert am Durchschnitt ihrer drei Stufen, linear zwischen den Stufen.
+ * Zahl. Die Zahlen je Stufe liefert die Bot-Messung des anderen Arbeitsstrangs (Partien der
+ * Stufen mit Tiefe 18 nachgerechnet, durch dieselbe Rechnung wie die Spielstärke des Lesers,
+ * spiel/staerkemodell.ts); bis dahin stehen hier Platzhalter. Bots und eigene Stufen je Phase
+ * liegen dazwischen: Wert am Durchschnitt ihrer drei Stufen, linear zwischen den Stufen.
  * Seit 0.2.85 rechnet die Wertung des Lesers mit dieser Zahl als Stärke des Gegners (wie im Verein
  * die Wertungszahl des Gegners) statt mit seiner Genauigkeit in der einzelnen Partie.
  * Abhängigkeiten: engine/stufen.ts (Stufennummer), schach/phase.ts (Phase).
@@ -16,8 +15,8 @@ import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 
 /**
- * Wertungszahl je Stufe, Messung vom 18.10.2026 (Ergebnis nur lokal in
- * `buch/arbeit/botstaerke/ergebnis.json`), gerundet auf 50 und aufsteigend.
+ * Wertungszahl je Stufe, gerundet auf 50 und aufsteigend. PLATZHALTER: Die gemessenen Werte
+ * trägt die Bot-Messung ein (Rückfrage S23); vorher kommt dieser Stand nicht nach main.
  */
 export const STAERKE_DER_STUFE: Readonly<Record<Stufennummer, number>> = {
   1: 600,

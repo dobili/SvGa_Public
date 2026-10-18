@@ -59,3 +59,26 @@ describe("Erklärung im Rückblick", () => {
     expect(erklaereZug("unsinn", "unsinn", "e2e4", "", 0)).toBeNull();
   });
 });
+
+describe("Ausgelassener Schlag (0.2.85)", () => {
+  // Partie des Autors gegen Mia: 9... Sxf4 und 10. Tab1?? statt exf4.
+  const ZUEGE = "d4 d6 Bf4 Qd7 e3 e6 Nf3 b6 c3 Ba6 Bxa6 Nxa6 Nbd2 Nb4 O-O Nd3 Qc2 Nxf4".split(" ");
+  const GRUND = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+  const vorher = ZUEGE.reduce<string>((fen, san) => fenNach(fen, san) ?? fen, GRUND);
+  const danach = fenNach(vorher, "Rab1") ?? "";
+
+  it("nach dem Schlag des Gegners: „schlägt nicht zurück“, rotes Feld f4", () => {
+    const e = erklaereZug(vorher, danach, "a1b1", "f4g6", 6.2, "e3f4", "Nxf4");
+    expect(e?.text).toBe(
+      "schlägt nicht zurück: exf4 nahm den Springer f4 wieder, so fehlt das Material (Kapitel 1, Abtausch).",
+    );
+    expect(e?.marken).toEqual([{ typ: "feld", farbe: "rot", feld: "f4" }]);
+  });
+
+  it("ohne vorigen Schlag und bei kleinem Verlust kein Satz zum Schlag", () => {
+    const klein = erklaereZug(vorher, danach, "a1b1", "f4g6", 0.6, "e3f4", "Nxf4");
+    expect(klein?.text ?? "").not.toContain("schlägt nicht zurück");
+    const ohne = erklaereZug(vorher, danach, "a1b1", "f4g6", 6.2, "e3f4", null);
+    expect(ohne?.text ?? "").not.toContain("schlägt nicht zurück");
+  });
+});

@@ -53,6 +53,7 @@ function erklaerungFuer(
     rb.beste[index + 1] ?? "",
     urteil.verlust,
     rb.beste[index] ?? null,
+    sans[index - 1] ?? null,
   );
 }
 
@@ -75,7 +76,7 @@ function phasenwechselText(
  * Markierungen, Balken und Karte für die gezeigte Stelle.
  *
  * Beispiel: Stelle 3 nach 1. e4 e5 2. Dh5?!: „?!“ auf h5, goldener Pfeil zum Zug der Engine,
- * Karte „2. Dh5?! kostet etwa 0,5 Bauern. Besser war 2. Sf3.“
+ * Karte „2. Dh5?!: Die Gewinnchance von Weiß fällt von 54 % auf 48 %. Besser war 2. Sf3.“
  */
 export function useRueckblick(
   rueckblick: Rueckblick | null,

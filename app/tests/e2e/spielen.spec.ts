@@ -106,7 +106,10 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   await expect(page.getByTestId("bewertungsbalken")).toHaveAttribute("aria-label", /−M/);
   // Seit 0.2.39: Karte zum Zug unter dem Brett (Urteil, besserer Zug) und die Spielstärke.
   const karte = page.getByTestId("rueckblickkarte");
-  await expect(karte).toContainText("2. g4?? kostet etwa");
+  // Seit 0.2.85 mit der Gewinnchance statt der Bauerneinheiten der Engine.
+  await expect(karte).toContainText(
+    /2\. g4\?\?: Die Gewinnchance von Weiß fällt von \d+ % auf \d+ %/,
+  );
   await expect(karte).toContainText("Besser war 2.");
   // Seit 0.2.83 mit dem Modus (Standard Mittelweg).
   await expect(page.getByTestId("spielstaerke")).toContainText("Genauigkeit (Mittelweg)");

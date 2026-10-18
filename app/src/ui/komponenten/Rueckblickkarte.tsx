@@ -7,6 +7,10 @@
  * (Zugurteil.tsx), die Erklärung kommt aus spiel/erklaerung.ts.
  * Unten steht „In die Fehlerdatenbank“ (Kapitel 12, AP 13): Es öffnet das Formular mit der
  * Stellung vor dem Zug und dem gespielten Zug.
+ * Seit 0.2.85 (Rückmeldung des Autors) nennt der Satz zu einem Fehler die Gewinnchance vorher und
+ * nachher statt der Bauerneinheiten der Engine: Stockfish rechnet seine Zahl aus der Gewinnchance,
+ * eine Figur mehr ergibt dort 5 bis 7 „Bauern“, chess.com zeigt kleinere Zahlen. Die Gewinnchance
+ * hängt weniger an der Skala; das Material nennt die Erklärung nach den Werten des Buches.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n,
  * ui/trainer/FehlerFormular.tsx.
  */
@@ -14,11 +18,13 @@ import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
+import { gewinnwahrscheinlichkeit } from "../../spiel/genauigkeit";
 import type { Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
 import { balkentext, variantentext } from "../../spiel/rueckblick";
 import { uciZuSan } from "../../spiel/zuege";
 import { FehlerFormular } from "../trainer/FehlerFormular";
+import { MitInfo } from "./InfoKnopf";
 import type { Rueckblick } from "./useRueckblick";
 
 /**
@@ -45,8 +51,29 @@ function bauern(verlust: number): string {
   return verlust.toFixed(1).replace(".", ",");
 }
 
+/** Gewinnchance einer Seite vor und nach dem Zug, in ganzen Prozent. */
+interface Chance {
+  readonly seite: string;
+  readonly vorher: number;
+  readonly nachher: number;
+}
+
+/** Die Gewinnchance der ziehenden Seite vor und nach dem Zug (Werte aus Sicht von Weiß). */
+function chanceDesZuges(werte: readonly number[], index: number, weissZieht: boolean): Chance {
+  const fuer = (wert: number) => {
+    const weiss = gewinnwahrscheinlichkeit(wert);
+    return Math.round(weissZieht ? weiss : PROZENT - weiss);
+  };
+  return {
+    seite: t(weissZieht ? "farbe.w" : "farbe.b"),
+    vorher: fuer(werte[index] ?? 0),
+    nachher: fuer(werte[index + 1] ?? 0),
+  };
+}
+const PROZENT = 100;
+
 /** Der erste Satz je Klasse (0.2.40 wie bei chess.com). */
-function urteilssatz(zug: string, urteil: Zugurteil, bester: string): string {
+function urteilssatz(zug: string, urteil: Zugurteil, bester: string, chance: Chance): string {
   const mitZeichen = `${zug}${urteil.zeichen ?? ""}`;
   const verlust = bauern(urteil.verlust);
   switch (urteil.klasse) {
@@ -65,9 +92,9 @@ function urteilssatz(zug: string, urteil: Zugurteil, bester: string): string {
     case "buch":
       return t("rueckblick.buch", { zug });
     case "verpasst":
-      return t("rueckblick.verpasst", { zug: mitZeichen, verlust });
+      return t("rueckblick.verpasst", { zug: mitZeichen, ...chance });
     default:
-      return t("rueckblick.verlust", { zug: mitZeichen, verlust });
+      return t("rueckblick.verlust", { zug: mitZeichen, ...chance });
   }
 }
 
@@ -116,13 +143,26 @@ export function Rueckblickkarte({
         : t("partie.engine");
   return (
     <section className="karte rueckblickkarte" data-testid="rueckblickkarte">
-      <p className="rueckblick-urteil">
-        <strong>{urteilssatz(zug, urteil, bester)}</strong>{" "}
-        {t("rueckblick.bewertung", {
-          vorher: balkentext(rueckblick.werte[index] ?? 0),
-          nachher: balkentext(rueckblick.werte[index + 1] ?? 0),
-        })}
-      </p>
+      <MitInfo
+        zeile={
+          <p className="rueckblick-urteil">
+            <strong>
+              {urteilssatz(
+                zug,
+                urteil,
+                bester,
+                chanceDesZuges(rueckblick.werte, index, fen.split(" ")[1] !== "b"),
+              )}
+            </strong>{" "}
+            {t("rueckblick.bewertung", {
+              vorher: balkentext(rueckblick.werte[index] ?? 0),
+              nachher: balkentext(rueckblick.werte[index + 1] ?? 0),
+            })}
+          </p>
+        }
+        erklaerung={<p>{t("rueckblick.balkenInfo")}</p>}
+        thema={t("rueckblick.balkenThema")}
+      />
       {erklaerung && (
         <p className="rueckblick-erklaerung">
           {t("rueckblick.erklaerung", { seite, text: erklaerung.text })}

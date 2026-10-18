@@ -4,7 +4,8 @@
  * echten Engine unter Node, mit der Zugwahl der App (engine/zugwahl.ts, spiel/enginezug.ts).
  *
  * Rolle im Gesamtbild: Kein Test der Prüfkette, sondern ein Messlauf. Start über
- * `npm run messen:stufen` (skripte/messe-stufen.mjs). Umgebung: MESSUNG_PAARUNG („1-2“, auch
+ * `npm run messen:stufen` (skripte/messe-stufen.mjs). Umgebung: MESSUNG_SAAT_AB (zweite Stichprobe),
+ * MESSUNG_PAARUNG („1-2“, auch
  * „3-s5“ für Skill Level 5, „4-e1600“ für die Elo-Begrenzung, „3b-3“ für Stufe 3 mit allen
  * blinden Flecken gegen Stufe 3 ohne, „3@nina-3“ für Stufe 3 mit dem ganzen Profil des
  * Gegners „nina“: Fehlerarten, Stil, blinde Flecken; 0.2.57 und 0.2.65), MESSUNG_PARTIEN (Zahl, gerade;
@@ -190,6 +191,11 @@ function ergebnisVon(partie: Partie): Partiebericht["ergebnis"] {
 
 const paarung = process.env.MESSUNG_PAARUNG ?? "1-2";
 const partienZahl = Number(process.env.MESSUNG_PARTIEN ?? STANDARD_PARTIEN);
+/**
+ * Verschiebung der Zufallssaaten (Vorgabe 0: Saaten 1 bis N). Eine zweite Stichprobe derselben
+ * Paarung braucht andere Saaten, sonst wiederholt sie dieselben Partien (0.2.78).
+ */
+const saatAb = Number(process.env.MESSUNG_SAAT_AB ?? 0);
 const ziel =
   process.env.MESSUNG_ZIEL ?? join(process.cwd(), "..", "buch", "arbeit", "stufenmessung");
 /**
@@ -216,7 +222,13 @@ describe(`Messung ${paarung}`, () => {
       const schwarz = aWeiss ? spieler(b) : spieler(a);
       const anfang = ANFAENGE[Math.floor(nummer / 2) % ANFAENGE.length] ?? [];
       const beginn = performance.now();
-      const partie = await spiele(engine, weiss, schwarz, anfang, zufallsquelle(nummer + 1));
+      const partie = await spiele(
+        engine,
+        weiss,
+        schwarz,
+        anfang,
+        zufallsquelle(saatAb + nummer + 1),
+      );
       berichte.push({
         weiss: aWeiss ? a : b,
         schwarz: aWeiss ? b : a,

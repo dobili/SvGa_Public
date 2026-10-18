@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.80. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.81. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.80“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.81“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,29 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.80“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.81“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
+
+- [ ] N295. **Bots passen zu ihrer Stufe:** Jeder der 64 Bots hat gegen die reine Engine seiner
+      Stufe gespielt, Grenzfälle zweimal. Dabei kamen zwei Fehler ans Licht, beide behoben. Ein
+      Bot mit Stil (aggressiv oder defensiv) wählte nahe am besten Zug der Engine statt nahe an
+      dem Zug, den seine Stufe spielen würde; damit spielten Bots mit Stil in den Stufen 1 bis 4
+      fast so gut wie die Engine. Jetzt wählt der Stil um den Zug der Stufe herum, nach oben wie
+      nach unten. Er ändert den Charakter, kaum die Stärke; nur auf Stufe 8, wo der Zug der Stufe
+      der beste ist, macht ein Stil schwächer. Der Hinweis beim Stil der eigenen Gegner sagt das.
+      Außerdem hatte das Messwerkzeug 25 Bots falsch gemessen. Ergebnis: Alle Bots der Stufen 1
+      bis 4 holen gegen ihre Stufe zwischen einem Viertel und drei Vierteln der Punkte. Ab
+      Stufe 5 sind Bots eher etwas schwächer als die reine Stufe, liegen aber über der Stufe
+      darunter. Geändert gegenüber 0.2.67 sind elf Bots, die Sprechblasen der zehn mit neuem Fleck oder neuer Fehlerart sagen es: Ayşe und
+      Sophie (Stufe 2) lassen jetzt auch Figuren hängen; Hanna, Elif, Yara und WGM Sato übersehen
+      ruhige Züge statt Rückzügen (Rückzüge zu übersehen war viel zu teuer); Paul übersieht nur
+      noch Abzüge; Frau Kaya nur noch Fesselungen; Herr Weber spielt die Eröffnung stärker; Frau
+      Dr. Ahl übersieht Zwischenzüge statt stiller Bauernzüge; IM Haas (Stufe 8) spielt etwas weniger defensiv, weil der Stil auf Stufe 8 nur schwächer machen kann. **So prüfen:** Spiele gegen einen
+      Bot der Stufe 2 mit Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv). Er sollte
+      etwa so viele Fehler machen wie die Stufe 2 selbst und deutlich mehr als vor 0.2.78. Sieh
+      in der Gegnerwahl die Sprechblasen der geänderten Bots an.
 
 ### Neu in 0.2.80 (etwa 25 Minuten, mit Engine; Einstellungen, Kapitelseiten und Spielen neu geordnet, dein Wunsch vom 18.10.2026, Opus)
 
@@ -78,24 +99,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.80“, dann 
       für den Zug, den die Engine jetzt spielen würde. Probiere einmal absichtlich einen
       schlechten Zug (etwa die Dame einstellen), damit du Schritt 3 siehst. In gewerteten
       Partien gibt es den Knopf nicht (wie vorher den Hinweis).
-
-### Neu in 0.2.78 (etwa 15 Minuten, mit Engine; Bots mit Stil spielen so stark wie ihre Stufe, Opus)
-
-- [ ] N295. **Stil macht Bots nicht mehr stärker:** Die Messung aller 64 Bots fand einen Fehler:
-      Ein Bot mit Stil (aggressiv oder defensiv) wählte unter den Zügen nahe am besten Zug der
-      Engine, statt nahe an dem Zug, den seine Stufe spielen würde. Damit spielte er in den
-      Stufen 1 bis 4 fast so gut wie die Engine; Bots mit Stil holten gegen ihre eigene Stufe im
-      Mittel 4,8 von 6 Punkten, Bots ohne Stil 3,1. Jetzt wählt der Stil um den Zug der Stufe
-      herum, nach oben wie nach unten. Er ändert also den Charakter, kaum die Stärke; der
-      Hinweis beim Stil der eigenen Gegner sagt das jetzt so. Die Bots der Stufen 1 bis 5 sind
-      dafür wieder wie in 0.2.67 (die Zwischenversuche 0.2.74 bis 0.2.76 sind zurückgenommen).
-      Geändert bleiben nur vier Bots mit einem zu teuren blinden Fleck: Hanna (Stufe 5) mit
-      stärkerem Endspiel, Paul (5) sieht jetzt nur Abzüge nicht, Elif (6) und Yara (7) übersehen
-      ruhige Züge statt Rückzügen; ihre Sprechblasen sagen das. **So prüfen:** Spiele gegen
-      einen Bot der Stufe 2 mit Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv): Er
-      sollte jetzt etwa so viele Fehler machen wie die Stufe 2 selbst und deutlich mehr als
-      vorher. Die Messung aller Bots mit dem neuen Stil läuft noch; Ausreißer werden danach
-      einzeln angepasst.
 
 ### Neu in 0.2.75 (etwa 5 Minuten; diese Datei in der App, Opus)
 
@@ -1009,7 +1012,6 @@ Regeln C1 und C2).
       Schlag mit Gewinn oder Matt möglich heißt Taktik. Beides ist im Erklärtext der Karte
       beschrieben. Sag Bescheid, wenn du lieber die Wörter von chess.com (Bester, Exzellent, Gut,
       Ungenauigkeit, Fehler) oder Symbole statt Wörter möchtest.
-
 - [ ] S22. **Absichtliche Fehler nur für die eigene Stufe (Opus, 0.2.80):** Die Liste „Absichtliche
       Fehler der Engine“ stand bisher in den Einstellungen und beschnitt auch die vorgefertigten
       Bots. Seit deinem Wunsch steht sie unter Spielen bei „Eigene Stufe“. Dort sieht man sie bei
@@ -1018,6 +1020,17 @@ Regeln C1 und C2).
       **Empfehlung (umgesetzt):** Die Liste gilt nur für die eigene Stufe; vorgefertigte und
       eigene Bots spielen immer mit ihrer eigenen Liste. Sag Bescheid, wenn die Liste auch die
       vorgefertigten Bots beschneiden soll; dann zeige ich sie auch dort.
+- [ ] S23. **Elo-Angaben der Bot-Stufen:** Deine Frage aus dem anderen Chat. Im Moment zeigt die
+      App bei den Bots keine Elo-Zahl, nur „⌀ 2,3 · Anfänger“ je Bot und „Stufe 2 · Anfänger“ je
+      Gruppe. Die Stärke des Gegners in deiner Wertung wird je Partie aus seiner Genauigkeit
+      berechnet, mit derselben Tabelle wie deine eigene Schätzung; sie folgt einer neuen Eichung
+      also von selbst. Es gibt deshalb heute nichts nachzukorrigieren. **Empfehlung:** Die
+      Elo-Angaben je Stufe (wie bei den Bots von chess.com) führen wir mit dem Einbau der neuen
+      Eichung ein: Für jede Stufe einige Partien spielen lassen (die Bot-Messung speichert dafür
+      künftig auch die Züge), sie durch die neue Spielstärke-Rechnung schicken und den
+      Mittelwert als „etwa 1100“ an die Stufe schreiben. Vorher wären es Zahlen
+      auf der alten Skala, die gleich wieder geändert werden müssten. Ist im Plan der Eichung als
+      Schritt vermerkt; Widerspruch genügt.
 
 ### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 

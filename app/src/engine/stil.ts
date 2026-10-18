@@ -14,8 +14,9 @@
  * in der eigenen Hälfte, im Viertel des eigenen Königs, kein Schlag. Toleranz 0,3 je Reglerstufe
  * (Entscheidung des Autors zu S13, vorher 0,15): Der Stil wird spürbar. Weil er um den Zug der
  * Stufe herum nach oben wie nach unten wählen darf, ändert er die Stärke im Mittel wenig; nur auf
- * Stufe 8 (der Zug der Stufe ist der beste) spielt ein sehr aggressiver oder sehr defensiver
- * Gegner etwas schwächer.
+ * Stufe 8 (der Zug der Stufe ist der beste) kann er nur schlechter wählen: IM Haas mit Stil −2
+ * holte gegen Stufe 7 nur 1,5 von 6 Punkten (Messung 0.2.81), sehr aggressiv oder sehr
+ * defensiv kostet dort etwa eine Stufe.
  * Abhängigkeiten: chessops, engine/spielbewerter.ts (wertFuer), engine/uci.ts (Variante).
  */
 import { Chess } from "chessops/chess";

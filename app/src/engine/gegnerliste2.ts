@@ -49,17 +49,17 @@ const STUFE_7: readonly Gegner[] = [
   gegner("noah", "Noah", [7, 8, 6], [], ["grundreihe"], 1),
   gegner("frau-stein", "Frau Stein", [7, 7, 7], [], ["zwischenzug", "dame"], 0),
   gegner("ravi", "Ravi", [7, 6, 8], [], ["diagonale"], 1),
-  gegner("frau-doktor-ahl", "Frau Dr. Ahl", [8, 7, 7], [], ["bauer"], -1),
+  gegner("frau-doktor-ahl", "Frau Dr. Ahl", [8, 7, 7], [], ["zwischenzug"], -1),
 ];
 
 /** Stufe 8, Experten: volle Stärke, nur blinde Flecken und Stil unterscheiden sie. */
 const STUFE_8: readonly Gegner[] = [
   gegner("gm-gruen", "Großmeister Grün", [8, 8, 8], [], [], 0),
   gegner("im-vogt", "IM Vogt", [8, 8, 8], [], ["ruhig"], 2),
-  gegner("wgm-sato", "WGM Sato", [8, 8, 8], [], ["rueckzug"], 1),
+  gegner("wgm-sato", "WGM Sato", [8, 8, 8], [], ["ruhig"], 1),
   gegner("fm-ortiz", "FM Ortiz", [7, 8, 8], [], ["abzug"], 0),
   gegner("gm-petrova", "GM Petrova", [8, 8, 8], [], ["zwischenzug"], -1),
-  gegner("im-haas", "IM Haas", [8, 8, 7], [], ["grundreihe"], -2),
+  gegner("im-haas", "IM Haas", [8, 8, 7], [], ["grundreihe"], -1),
   gegner("wim-nkemelu", "WIM Nkemelu", [8, 7, 8], [], ["diagonale"], 1),
   gegner("gm-lindqvist", "GM Lindqvist", [8, 8, 8], [], ["bauer"], 0),
 ];

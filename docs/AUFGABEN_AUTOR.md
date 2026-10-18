@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.79. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.80. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.79“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.80“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,57 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.78“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.80“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.80 (etwa 25 Minuten, mit Engine; Einstellungen, Kapitelseiten und Spielen neu geordnet, dein Wunsch vom 18.10.2026, Opus)
+
+- [ ] N308. **Einstellungen neu geordnet:** Zahnrad öffnen. „Dein Fortschritt“ zeigt Abbildungen,
+      Übungen und Trainer als goldene Ringe mit Prozentzahl, je Kapitel ein kleiner Ring. Die
+      Karte „Darstellung und Training“ hat oben Reiter mit Symbolen: Brett, Figuren, Anzeige, Ton,
+      Training. Unter „Brett“ und „Figuren“ siehst du jede Wahl als kleinen Brettausschnitt mit
+      vier Feldern und Figuren; tippe „Holz“ und dann den Reiter „Figuren“: Die Vorschau der
+      Figuren steht jetzt auf Holz. Nachtmodus, Erklärkacheln und Sprache stehen unter „Anzeige“,
+      „Erst selbst denken“ unter „Training“. In „Daten auf diesem Gerät“ steht nur ein kurzer
+      Satz mit einem Fragezeichen im Kreis daneben; ein Tipp darauf klappt die ganze Erklärung auf,
+      auch die zum iPhone und zu Safari. Dasselbe bei „Datensicherung“. Bei der Wertungskurve
+      (erst sichtbar nach gewerteten Partien) sind Gesamt, Eröffnung, Mittelspiel und Endspiel
+      Reiter nebeneinander in kleiner Schrift, die Erklärung zum Elo-System steht hinter dem
+      Fragezeichen. Findet „Nach Update suchen“ eine neue Version, erscheint an seiner Stelle
+      „Jetzt aktualisieren“. Die Karte „Absichtliche Fehler der Engine“ ist aus den Einstellungen
+      verschwunden: Sie steht jetzt unter Spielen, wenn du eine Stufe ohne vorgefertigten Gegner
+      wählst, eingeklappt mit dem Stand („14 von 14 Arten erlaubt“) in der Überschrift.
+
+- [ ] N309. **Kapitelseiten:** Buch › Kapitel 1. In der Buchliste steht bei angesehenen Kapiteln
+      ein kleiner Ring statt des Balkens. Auf der Kapitelseite oben „Dein Fortschritt“ mit Ringen,
+      darunter eine Karte „Training und Übungen“ (erst die Trainer, dann die Übungen aus dem
+      Buch). Darunter „Abbildungen“ mit Fragezeichen (Erklärung zu den 30 Sekunden) und direkt
+      darunter „Alle abhaken“ und „Alle zurücksetzen“. Jeder Abschnitt (1.1, 1.2 …) hat eine
+      Zeile mit kleinem Ring, Titel und „x von y“ und lässt sich auf- und zuklappen. Im
+      aufgeklappten Abschnitt steht „Abschnitt 1.4 abhaken“; danach heißt der Knopf „Haken in 1.4
+      lösen“. Beim Öffnen des Kapitels sind nur die Abschnitte aufgeklappt, in denen noch etwas
+      fehlt; fertige sind zu (Empfehlung nach Regel 9, damit du gleich siehst, wo du weitermachst;
+      Widerspruch genügt, dann sind wieder alle offen).
+
+- [ ] N319. **Gegnerwahl in drei Kategorien:** Spielen › Gegner „Engine“. Unter „Art des
+      Gegners“ drei Kacheln mit Symbol: „Eigene Stufe“ (Regler), „Vorgefertigte Bots“ (Roboter)
+      und „Eigene Bots“ (Person mit Stift). Darunter steht nur, was zur gewählten Kachel gehört:
+      bei „Eigene Stufe“ die drei Regler und „Absichtliche Fehler der Engine“; bei
+      „Vorgefertigte Bots“ die 64 Porträts (der Wechsel wählt gleich den ersten Bot der Stufe,
+      die im Mittelspiel eingestellt war); bei „Eigene Bots“ deine Bots und darunter „Eigene Bots
+      verwalten“ zum Anlegen, Ändern und Löschen. Ohne gewählten eigenen Bot ist „Partie
+      beginnen“ gesperrt, mit einem Satz dazu. Seite, Bedenkzeit, Rücknahme, Spielhilfen und die
+      Eröffnung gelten für alle drei und stehen darunter wie bisher.
+
+- [ ] N320. **Engine-Knopf in der Partie:** Ungewertete Partie gegen Stufe 1 beginnen, einen Zug
+      spielen und warten, bis du wieder am Zug bist. Unter dem Brett steht statt „Hinweis 1“ jetzt
+      „Engine: Stellung bewerten“. Jeder Tipp verrät etwas mehr: 1. die Bewertung („+0,36 Weiß
+      steht leicht besser“), 2. „Deinen letzten Zug bewerten“: das Zeichen deines Zuges (!, ?!, ?,
+      ??) am Brett und als Satz, ohne Erklärung, 3. „Warum?“ (nur bei ?!, ? und ??): die Regel
+      des Buches, die verletzt war, und der bessere Zug, 4. „Besten Zug zeigen“: goldener Pfeil
+      für den Zug, den die Engine jetzt spielen würde. Probiere einmal absichtlich einen
+      schlechten Zug (etwa die Dame einstellen), damit du Schritt 3 siehst. In gewerteten
+      Partien gibt es den Knopf nicht (wie vorher den Hinweis).
 
 ### Neu in 0.2.78 (etwa 15 Minuten, mit Engine; Bots mit Stil spielen so stark wie ihre Stufe, Opus)
 
@@ -255,15 +304,15 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.78“, dann 
 
 ### Neu in 0.2.60 (etwa 10 Minuten, mit Engine; Abhakliste der Fehlerarten aus S7, Fable)
 
-- [ ] N284. **Abhakliste der Fehlerarten:** Einstellungen (Zahnrad) › Karte „Absichtliche Fehler
-      der Engine“ unter „Darstellung und Training“: 14 Haken, alle gesetzt, darunter „Alle
+- [ ] N284. **Abhakliste der Fehlerarten:** Spielen › eine Stufe ohne vorgefertigten Gegner ›
+      „Absichtliche Fehler der Engine“ aufklappen (seit 0.2.80 hier statt in den Einstellungen): 14 Haken, alle gesetzt, darunter „Alle
       erlauben“, „Keine erlauben“ und „14 von 14 Arten erlaubt“. Nimm alle Haken bis auf „eine
       Figur hängen lassen (W1)“ heraus, dann Spielen › Stufe 2 (kein vorgefertigter Gegner), eine
       Partie spielen. Im Rückblick sollten die Fehler der Engine nur noch „hat eine Figur hängen
       lassen“ heißen (oder gar keine absichtlichen, wenn sich keiner anbot). Dann „Keine
-      erlauben“ und eine Partie gegen Paula: Sie macht keine absichtlichen Fehler mehr, ihre
-      blinden Flecken (Diagonalen, Rückzüge, Grundreihe) bleiben. Eigene Gegner behalten ihre
-      eigene Liste. Zum Schluss „Alle erlauben“.
+      erlauben“ und noch eine Partie mit eigener Stufe: Die Engine macht keine absichtlichen Fehler
+      mehr. Seit 0.2.80 gilt die Liste nur für die eigene Stufe; vorgefertigte und eigene Bots
+      behalten ihre eigene Liste (siehe S22). Zum Schluss „Alle erlauben“.
 
 ### Neu in 0.2.59 (etwa 10 Minuten, mit Engine; Brillant, zweiter Schritt, Fable)
 
@@ -960,6 +1009,15 @@ Regeln C1 und C2).
       Schlag mit Gewinn oder Matt möglich heißt Taktik. Beides ist im Erklärtext der Karte
       beschrieben. Sag Bescheid, wenn du lieber die Wörter von chess.com (Bester, Exzellent, Gut,
       Ungenauigkeit, Fehler) oder Symbole statt Wörter möchtest.
+
+- [ ] S22. **Absichtliche Fehler nur für die eigene Stufe (Opus, 0.2.80):** Die Liste „Absichtliche
+      Fehler der Engine“ stand bisher in den Einstellungen und beschnitt auch die vorgefertigten
+      Bots. Seit deinem Wunsch steht sie unter Spielen bei „Eigene Stufe“. Dort sieht man sie bei
+      einem vorgefertigten Bot nicht mehr; sie heimlich weiter wirken zu lassen, wäre verwirrend,
+      und die Bots sind mit ihrer eigenen Liste gemessen und beschrieben (Sprechblase).
+      **Empfehlung (umgesetzt):** Die Liste gilt nur für die eigene Stufe; vorgefertigte und
+      eigene Bots spielen immer mit ihrer eigenen Liste. Sag Bescheid, wenn die Liste auch die
+      vorgefertigten Bots beschneiden soll; dann zeige ich sie auch dort.
 
 ### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 

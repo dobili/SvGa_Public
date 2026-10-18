@@ -93,6 +93,8 @@ test("Erst selbst denken „streng“: Hilfe erst nach dem ersten eigenen Zug", 
   await starteImBrowser(page);
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  // Seit 0.2.80 im Reiter „Training“ der Karte „Darstellung und Training“.
+  await page.getByRole("tab", { name: "Training" }).click();
   await page.getByRole("radio", { name: "streng" }).click();
   await expect(page.getByText("erst, wenn du einen eigenen Zug gemacht hast")).toBeVisible();
   await leiste.getByRole("button", { name: "Buch" }).click();

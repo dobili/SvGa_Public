@@ -5,20 +5,22 @@
  * Rolle im Gesamtbild: Konzept 10.1. Fortschritt und Datensicherung kamen mit AP 12; die
  * Lernsammlung folgt mit den Trainern. Seit 0.2.41 steht ganz oben die Wertung des Lesers aus den
  * gewerteten Partien (Wertungskurve.tsx, Wunsch des Autors). Seit 0.2.60 steht unter der Karte
- * „Darstellung und Training“ die Abhakliste der Fehlerarten (FehlerartenKarte.tsx, Rückfrage S7).
+ * „Darstellung und Training“ die Abhakliste der Fehlerarten (FehlerartenKarte.tsx, Rückfrage S7);
+ * seit 0.2.80 steht sie beim Spielen (Wunsch des Autors: dort stellt man die Engine ein). Ebenfalls
+ * seit 0.2.80: Liegt eine neue Version bereit, wird „Nach Update suchen“ an derselben Stelle zu
+ * „Jetzt aktualisieren“ (vorher stand der Knopf nur ganz oben).
  * Abhängigkeiten: app/offline.ts, app/version.ts, daten/laden.ts, speicher/, DatenLoeschen,
  * Wertungskurve, Navigation, i18n.
  */
 import { useState } from "react";
 import { istInstalliert } from "../../app/geraet";
 import { useNavigation } from "../../app/navigationsKontext";
-import { sucheUpdate, useOfflineStand } from "../../app/offline";
+import { aktualisiereJetzt, sucheUpdate, useOfflineStand } from "../../app/offline";
 import { APP_VERSION } from "../../app/version";
 import { ladeIndex } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { DatenLoeschen } from "../komponenten/DatenLoeschen";
 import { EinstellungenKarte } from "../komponenten/EinstellungenKarte";
-import { FehlerartenKarte } from "../komponenten/FehlerartenKarte";
 import { Fortschrittsuebersicht } from "../komponenten/Fortschrittsuebersicht";
 import { useDaten } from "../komponenten/useDaten";
 import { Wertungskurve } from "../komponenten/Wertungskurve";
@@ -95,7 +97,7 @@ export function Ich() {
 
   const suche = async () => {
     const gefunden = await sucheUpdate();
-    setzeUpdateMeldung(gefunden ? t("update.text") : t("ich.updateKeins"));
+    setzeUpdateMeldung(gefunden ? t("ich.updateLaedt") : t("ich.updateKeins"));
   };
 
   return (
@@ -113,9 +115,15 @@ export function Ich() {
           <Zeile name={t("ich.offline")} wert={offlineText} testid="offline-stand" />
         </dl>
         <div className="knopfreihe">
-          <button type="button" className="knopf-zweit" onClick={() => void suche()}>
-            {t("ich.updateSuchen")}
-          </button>
+          {offline.updateVerfuegbar ? (
+            <button type="button" className="knopf-haupt" onClick={() => void aktualisiereJetzt()}>
+              {t("update.knopf")}
+            </button>
+          ) : (
+            <button type="button" className="knopf-zweit" onClick={() => void suche()}>
+              {t("ich.updateSuchen")}
+            </button>
+          )}
           <FehlerMelden angaben={angaben} />
           {/* Die Installation erklärt die Startseite des Buches; installiert braucht es sie nicht. */}
           {!istInstalliert() && (
@@ -131,16 +139,14 @@ export function Ich() {
             {t("installation.lizenzen")}
           </button>
         </div>
-        {updateMeldung && (
+        {updateMeldung && !offline.updateVerfuegbar && (
           <p className="hinweis" role="status">
             {updateMeldung}
           </p>
         )}
       </section>
       <EinstellungenKarte />
-      <FehlerartenKarte />
       <DatenLoeschen />
-      <p className="hinweis">{t("ich.speicher")}</p>
     </div>
   );
 }

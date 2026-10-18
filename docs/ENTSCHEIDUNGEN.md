@@ -2781,3 +2781,57 @@ nutzen) Zahlen bekommen, die zu beiden passen. Entschieden (alle Punkte vom Auto
 10. **Zuständigkeit:** Fables Kontingent ist verbraucht; Opus macht alles, auch die Teile in
     `spiel/` und `engine/` (Ausnahme von der Aufteilung vom 18.10.2026). Vor dem Einbau `main`
     einmergen, weil die Bot-Eichung noch läuft.
+
+## Einstellungen, Kapitelseiten und Spielen neu geordnet (18.10.2026 mittags, Opus, Zweig `layout-einstellungen`, Version 0.2.80)
+
+Wunsch des Autors vom 18.10.2026 (Layout in drei Teilen: Einstellungen, Kapitelseiten, Spielen).
+Einstellungen:
+
+1. **Neue Bausteine** in `ui/komponenten/`: `Reiter` (Tabs nebeneinander, kleine Schrift, mit
+   Symbol), `MitInfo` (kurze Zeile mit Fragezeichen im Kreis, Erklärung anfangs eingeklappt),
+   `Kreisanzeige` und `Ring` (Fortschritt als goldener Ring mit Prozentzahl statt Balken),
+   `Vorschauwahl` mit `Brettausschnitt` (vier Felder mit Figuren, gezeichnet wie auf dem Brett).
+   Stil in `ui/stil/bausteine.css`.
+2. **Wertungskurve:** Gesamt und Phasen als Reiter; die Erklärung zum Elo-System hinter dem
+   Fragezeichen.
+3. **Fortschritt:** Ringe in „Dein Fortschritt“ und auf den Kapitelseiten (gemeinsame
+   `Fortschrittszeile`), je Kapitel ein kleiner Ring.
+4. **Update:** Ist eine neue Version gefunden, ersetzt „Jetzt aktualisieren“ den Knopf „Nach
+   Update suchen“.
+5. **Darstellung und Training:** Reiter Brett, Figuren, Anzeige, Ton, Training mit Symbolen;
+   Brettfarben und Figurensätze als Kacheln mit Vorschau (die Vorschau der einen Wahl zeigt die
+   jeweils andere aktuelle Wahl mit).
+6. **Daten auf diesem Gerät:** kurzer Satz, Einzelheiten (auch iPhone und Safari) hinter dem
+   Fragezeichen; ebenso die Datensicherung.
+7. **Absichtliche Fehler der Engine** stehen nicht mehr in den Einstellungen, sondern unter
+   Spielen bei einer Stufe ohne vorgefertigten Gegner (aufklappbar, Stand in der Überschrift).
+   Sie gilt seitdem nur für die eigene Stufe, nicht mehr für vorgefertigte Bots (Empfehlung nach
+   Regel 9, Rückfrage S22): Die Bots sind mit ihrer eigenen Liste gemessen und beschrieben, und
+   eine unsichtbare Liste, die heimlich wirkt, wäre verwirrend.
+
+Kapitelseiten:
+
+8. Ringe statt Balken auch in der Kapitelliste des Buches (kleiner Ring).
+9. Trainer und Übungen in einer Karte „Training und Übungen“.
+10. „Alle abhaken“ und „Alle zurücksetzen“ direkt über der Galerie (Kopf „Abbildungen“ mit der
+    30-Sekunden-Erklärung hinter dem Fragezeichen); Galerie in `Abbildungsgalerie.tsx`.
+11. Abschnitte aufklappbar mit Ring, Stand und eigenem Knopf „Abschnitt 1.4 abhaken“ / „Haken
+    in 1.4 lösen“ (ohne Rückfrage, weil ein Abschnitt klein ist und der Knopf sich selbst
+    umkehrt). Anfangs offen sind nur Abschnitte mit offenen Abbildungen (Empfehlung nach Regel
+    9); die kleinen Bretter entstehen erst beim Aufklappen.
+
+Spielen:
+
+12. Gegnerwahl mit drei Kacheln (Eigene Stufe, Vorgefertigte Bots, Eigene Bots); darunter nur
+    der Inhalt der gewählten. Der Wechsel wählt gleich einen passenden Gegner
+    (`gegnerkategorie.ts`), damit die Partie zur sichtbaren Wahl passt; „Eigene Bots“ ohne
+    gewählten Bot sperrt „Partie beginnen“. Die Verwaltung eigener Bots ist keine eigene Karte
+    mehr, sondern Teil von „Eigene Bots“.
+13. Die Eröffnungswahl gilt für alle drei Kategorien (Engine aus der Grundstellung) und bleibt
+    deshalb unten, wie der Autor es für diesen Fall wollte.
+14. Engine-Knopf in der Partie statt der gestuften Hinweise (`SpielEngine.tsx`,
+    `spielEngineSchritte.ts`): 1. Bewertung, 2. Zeichen des eigenen letzten Zuges ohne
+    Erklärung, 3. „Warum?“ nur bei ?!, ? und ?? (Regel des Buches aus `spiel/erklaerung.ts`,
+    besserer Zug), 4. bester Zug jetzt mit goldenem Pfeil. Je Stellung 1,5 Sekunden Rechenzeit
+    (Konzept 8.1); Schritt 2 rechnet die Stellungen vor und nach dem eigenen Zug. In gewerteten
+    Partien fehlt der Knopf wie vorher der Hinweis (S9).

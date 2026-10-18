@@ -1,7 +1,8 @@
 /**
  * Eigene Gegner anlegen, ändern und löschen (Wunsch des Autors, 17.10.2026, Version 0.2.42).
  *
- * Rolle im Gesamtbild: Karte auf dem Spielen-Bildschirm unter der Gegnerwahl. Ein eigener Gegner
+ * Rolle im Gesamtbild: Teil der Kategorie „Eigene Bots“ in der Gegnerwahl (seit 0.2.80; vorher
+ * eine Karte unter der Gegnerwahl). Ein eigener Gegner
  * hat Name, Stufen je Phase (StufenWahl.tsx), erlaubte Fehlerarten (Haken; wirksam in Stufe 1
  * bis 4, ohne Haken nie ein absichtlicher Fehler) und einen Stil von sehr defensiv bis sehr
  * aggressiv (engine/stil.ts). Gespeichert wird im Spielstand (speicher/gegner.ts); gelöschte
@@ -198,15 +199,18 @@ function Zeile({
   );
 }
 
-/** Die Karte „Eigene Gegner“: Liste, neuer Gegner, Formular. */
+/**
+ * Eigene Gegner verwalten: Liste, neuer Gegner, Formular. Seit 0.2.80 keine eigene Karte mehr,
+ * sondern Teil der Kategorie „Eigene Bots“ in der Gegnerwahl.
+ */
 export function GegnerEditor() {
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
   const [offen, setzeOffen] = useState<EigenerGegner | null>(null);
   const schreibe = (liste: readonly EigenerGegner[]) =>
     void aendere((d) => ({ ...d, spiel: mitEigenenGegnern(d.spiel, liste) }));
   return (
-    <section className="karte eigene-gegner" data-testid="eigene-gegner">
-      <h2 className="karte-titel">{t("spielen.eigene.titel")}</h2>
+    <div className="eigene-gegner" data-testid="eigene-gegner">
+      <h3 className="unterteil-titel">{t("spielen.eigene.verwalten")}</h3>
       {eigene.length === 0 && !offen && <p className="hinweis">{t("spielen.eigene.leer")}</p>}
       {eigene.length > 0 && (
         <ul className="gegnerliste">
@@ -235,6 +239,6 @@ export function GegnerEditor() {
           {t("spielen.eigene.neu")}
         </button>
       )}
-    </section>
+    </div>
   );
 }

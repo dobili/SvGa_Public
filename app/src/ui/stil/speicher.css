@@ -146,7 +146,9 @@
 }
 
 .kapitel-zusatz {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .fortschritt-zeile dd {

@@ -222,6 +222,7 @@ test("Nachtmodus in den Einstellungen: an, aus, wie das Gerät, auch nach dem Ne
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Anzeige" }).click();
   const nacht = page.getByRole("radiogroup", { name: "Nachtmodus" });
   const wurzel = page.locator("html");
   await nacht.getByRole("radio", { name: "an" }).click();
@@ -231,6 +232,7 @@ test("Nachtmodus in den Einstellungen: an, aus, wie das Gerät, auch nach dem Ne
   await page.reload();
   await expect(wurzel).toHaveAttribute("data-farbschema", "dunkel");
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Anzeige" }).click();
   await nacht.getByRole("radio", { name: "aus" }).click();
   await expect(wurzel).toHaveAttribute("data-farbschema", "hell");
   expect(await grund()).toBe("rgb(245, 240, 230)");
@@ -262,12 +264,16 @@ test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am B
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  // „Erst selbst denken“ ist seit 0.2.37 wieder da (wirkt bei den Übungen, AP 13).
+  // „Erst selbst denken“ ist seit 0.2.37 wieder da (wirkt bei den Übungen, AP 13); seit 0.2.80
+  // stehen die Bereiche der Darstellung auf Reitern.
+  await page.getByRole("tab", { name: "Training" }).click();
   await expect(page.getByRole("radiogroup", { name: "Erst selbst denken" })).toHaveCount(1);
+  await page.getByRole("tab", { name: "Figuren" }).click();
   await page
     .getByRole("radiogroup", { name: "Figurensatz" })
     .getByRole("radio", { name: "klassisch" })
     .click();
+  await page.getByRole("tab", { name: "Ton" }).click();
   const ton = page.getByRole("radiogroup", { name: "Ton" });
   await ton.getByRole("radio", { name: "an" }).click();
   await expect(ton.getByRole("radio", { name: "an" })).toBeChecked();

@@ -13,7 +13,9 @@
  * Für Bildschirmleser trägt jeder Punkt Datum, Ergebnis, Gegner und Wertung. „Wertung
  * zurücksetzen“ (nach Nachfrage) leert den Verlauf und macht alle bisherigen Partien dauerhaft
  * ungewertet (speicher/partien.ts, setzeWertungZurueck).
- * Abhängigkeiten: spiel/wertung.ts, speicher/, i18n.
+ * Seit 0.2.80 (Wunsch des Autors) ist die Ansicht eine Reiterzeile statt umbrechender Knöpfe,
+ * und die Erklärung des Elo-Systems steht hinter einem Fragezeichen (anfangs eingeklappt).
+ * Abhängigkeiten: spiel/wertung.ts, speicher/, Reiter, InfoKnopf, i18n.
  */
 import { useState } from "react";
 import { t, type Textschluessel } from "../../i18n/sprache";
@@ -27,7 +29,8 @@ import {
   type Wertungsbereich,
   type Wertungspunkt,
 } from "../../spiel/wertung";
-import { Auswahl } from "./Auswahl";
+import { MitInfo } from "./InfoKnopf";
+import { Reiter } from "./Reiter";
 
 /** Was die Kurve zeigt: die Wertung oder die Schätzung je Phase. */
 type Ansicht = "gesamt" | Phase;
@@ -283,11 +286,13 @@ export function Wertungskurve({
   return (
     <section className="karte wertung" data-testid="wertung">
       <h2 className="karte-titel">{t("ich.wertung.titel")}</h2>
-      <Auswahl
+      <Reiter
         name={t("ich.wertung.ansicht")}
-        werte={ANSICHTEN}
+        eintraege={ANSICHTEN.map((a) => ({
+          wert: a,
+          text: t(a === "gesamt" ? "ich.wertung.ansicht.gesamt" : `phase.name.${a}`),
+        }))}
         gewaehlt={ansicht}
-        text={(a) => t(a === "gesamt" ? "ich.wertung.ansicht.gesamt" : `phase.name.${a}`)}
         beiWahl={setzeAnsicht}
       />
       <p className="wertung-zahl" data-testid="wertung-zahl">
@@ -324,7 +329,11 @@ export function Wertungskurve({
       ) : (
         <p className="hinweis">{t("ich.wertung.keineImBereich")}</p>
       )}
-      <p className="hinweis">{t("ich.wertung.erklaerung")}</p>
+      <MitInfo
+        zeile={<p className="hinweis">{t("ich.wertung.kurz")}</p>}
+        erklaerung={t("ich.wertung.erklaerung")}
+        thema={t("ich.wertung.titel")}
+      />
       <Zuruecksetzen />
     </section>
   );

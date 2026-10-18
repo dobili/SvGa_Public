@@ -24,8 +24,14 @@ import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
+import { FehlerartenKarte } from "../komponenten/FehlerartenKarte";
 import { StufenWahl } from "../komponenten/StufenWahl";
 import { GegnerWahl, HilfenWahl } from "../komponenten/GegnerWahl";
+import {
+  botFuerKategorie,
+  kategorieVon,
+  type Gegnerkategorie,
+} from "../komponenten/gegnerkategorie";
 import type { Fehlerart } from "../../engine/fehlerart";
 import { gegnerVon, unterAbhakliste, type EigenerGegner } from "../../engine/gegner";
 import { GegnerEditor } from "../komponenten/GegnerEditor";
@@ -78,36 +84,56 @@ function wertbar(fen: string, vorlieben: Spielvorlieben): boolean {
   return fen === GRUNDSTELLUNG && vorlieben.gegner === "engine";
 }
 
-/** Seite, Stufe, Uhr, Rücknahme. */
+/** Gegner mit Kategorie, Seite, Stufe, Uhr, Rücknahme. */
 function Einstellungen({
   wahl,
   fen,
   setze,
+  kategorie,
+  setzeKategorie,
 }: {
   wahl: Wahl;
   fen: string;
   setze: (wahl: Wahl) => void;
+  kategorie: Gegnerkategorie;
+  setzeKategorie: (kategorie: Gegnerkategorie) => void;
 }) {
   const v = wahl.vorlieben;
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
   const mit = (teil: Partial<Spielvorlieben>) => setze({ ...wahl, vorlieben: { ...v, ...teil } });
   const uhrStellen = UHR_VORGABEN.map((_, stelle) => String(stelle));
   const engine = v.gegner === "engine";
+  // Ein Gegner bringt seine Stufen je Phase mit; ohne Gegner bleiben die Regler, wie sie sind.
+  const waehleBot = (bot: string | null) => {
+    const g = gegnerVon(bot) ?? eigene.find((e) => e.kennung === bot) ?? null;
+    mit(g ? { bot, stufenJePhase: g.stufenJePhase, stufe: g.stufenJePhase.mittelspiel } : { bot });
+  };
   return (
     <section className="karte spielwahl">
       <GegnerWahl
         gegner={v.gegner}
         bot={v.bot}
         eigene={eigene}
+        kategorie={kategorie}
         beiGegner={(gegner) => mit({ gegner, gewertet: gegner === "engine" })}
-        beiBot={(bot) => {
-          const g = gegnerVon(bot) ?? eigene.find((e) => e.kennung === bot) ?? null;
-          mit(
-            g
-              ? { bot, stufenJePhase: g.stufenJePhase, stufe: g.stufenJePhase.mittelspiel }
-              : { bot },
-          );
+        beiBot={waehleBot}
+        beiKategorie={(neu) => {
+          setzeKategorie(neu);
+          waehleBot(botFuerKategorie(neu, v.bot, eigene, v.stufenJePhase.mittelspiel));
         }}
+        stufeninhalt={
+          <>
+            <StufenWahl
+              stufen={v.stufenJePhase}
+              beiWahl={(stufenJePhase) =>
+                mit({ stufenJePhase, stufe: stufenJePhase.mittelspiel, bot: null })
+              }
+            />
+            {/* Seit 0.2.80 hier statt in den Einstellungen (Wunsch des Autors). */}
+            <FehlerartenKarte />
+          </>
+        }
+        editor={<GegnerEditor />}
       />
       {engine && (
         <Auswahl
@@ -116,15 +142,6 @@ function Einstellungen({
           gewaehlt={wahl.farbe}
           text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
           beiWahl={(farbe) => setze({ ...wahl, farbe })}
-        />
-      )}
-      {/* Bei vorgefertigten Gegnern bleiben die Stufen je Phase verborgen (Wunsch des Autors). */}
-      {engine && gegnerVon(v.bot) === null && (
-        <StufenWahl
-          stufen={v.stufenJePhase}
-          beiWahl={(stufenJePhase) =>
-            mit({ stufenJePhase, stufe: stufenJePhase.mittelspiel, bot: null })
-          }
         />
       )}
       <Auswahl
@@ -221,8 +238,10 @@ function Startstellung({
 
 /**
  * Name, Fehlerarten, Stil und blinde Flecken des gewählten Gegners für die Partie (0.2.42, 0.2.46).
- * Die Abhakliste der Einstellungen (0.2.60) beschneidet die Fehlerarten der Engine-Stufen und der
- * vorgefertigten Gegner; eigene Gegner haben ihre eigene Liste.
+ * Die Abhakliste (0.2.60) beschneidet nur die Fehlerarten der eigenen Stufe: Seit 0.2.80 steht
+ * sie dort und nicht mehr in den Einstellungen, und vorgefertigte Gegner sind mit ihrer eigenen
+ * Liste gemessen und beschrieben (Empfehlung nach Regel 9, Wunsch des Autors vom 18.10.2026);
+ * eigene Gegner haben ihre eigene Liste.
  */
 function gegnerprofil(
   bot: string | null,
@@ -242,7 +261,7 @@ function gegnerprofil(
   if (!vorgefertigt) return { fehlerarten: unterAbhakliste(null, erlaubt) };
   return {
     botName: vorgefertigt.name,
-    fehlerarten: unterAbhakliste(vorgefertigt.fehlerarten, erlaubt),
+    fehlerarten: vorgefertigt.fehlerarten,
     stil: vorgefertigt.stil,
     blindeFlecken: vorgefertigt.blindeFlecken,
   };
@@ -311,11 +330,19 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
     setzeWahl({ ...wahl, farbe: seiteAmZug(neu) });
   };
   const [ersetzen, setzeErsetzen] = useState(false);
+  const [kategorie, setzeKategorie] = useState<Gegnerkategorie>(() =>
+    kategorieVon(spiel.vorlieben.bot, spiel.eigeneGegner),
+  );
+  // „Eigene Bots“ ohne gewählten eigenen Bot: erst anlegen oder wählen, dann beginnen.
+  const ohneEigenenBot =
+    wahl.vorlieben.gegner === "engine" &&
+    kategorie === "eigene" &&
+    !spiel.eigeneGegner.some((g) => g.kennung === wahl.vorlieben.bot);
   // Eine veränderte Abbildungsstellung ist eine eigene Stellung.
   const abbildungGilt = fen === startFen ? abbildung : undefined;
   const beginne = useBeginne(fen, abbildungGilt);
   const laufend = spiel.laufend;
-  const ok = spielbar(fen);
+  const ok = spielbar(fen) && !ohneEigenenBot;
   return (
     <div className="bildschirm bildschirm-spielen" data-testid="spielen">
       {startFen ? (
@@ -327,9 +354,14 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
       )}
       {laufend && <LaufendePartie partie={laufend} />}
       <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />
-      {!ok && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
-      <Einstellungen wahl={wahl} fen={fen} setze={setzeWahl} />
-      {wahl.vorlieben.gegner === "engine" && <GegnerEditor />}
+      {!spielbar(fen) && <p className="fehlertext">{t("spielen.nichtSpielbar")}</p>}
+      <Einstellungen
+        wahl={wahl}
+        fen={fen}
+        setze={setzeWahl}
+        kategorie={kategorie}
+        setzeKategorie={setzeKategorie}
+      />
       {fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" && (
         <EroeffnungsWahl
           gewaehlt={wahl.eroeffnung}
@@ -358,6 +390,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
           {t("spielen.beginnen")}
         </button>
       )}
+      {ohneEigenenBot && <p className="hinweis">{t("spielen.eigene.erstWaehlen")}</p>}
       <Partienliste partien={spiel.partien} />
     </div>
   );

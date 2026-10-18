@@ -5,7 +5,9 @@
  * Stufe 2 den Fortschritt je Kapitel. Die Summen kommen aus dem Datenverzeichnis (Abbildungen je
  * Kapitel) und aus nachschlagen.json (Lernziele), damit Ich keine Kapiteldateien laden muss.
  * Gelöste Übungen und Trainer-Durchgänge erscheinen, sobald es welche gibt (AP 13).
- * Abhängigkeiten: speicher, app/lernstand.ts, daten/laden.ts, Kapitelfortschritt, i18n.
+ * Seit 0.2.80 Kreisanzeigen statt Balken, je Kapitel ein kleiner Ring (Wunsch des Autors).
+ * Abhängigkeiten: speicher, app/lernstand.ts, daten/laden.ts, Kapitelfortschritt, Kreisanzeige,
+ * i18n.
  */
 import { abgehakt, useLernstand } from "../../app/lernstand";
 import { useNavigation } from "../../app/navigationsKontext";
@@ -14,15 +16,15 @@ import { t } from "../../i18n/sprache";
 import type { Fortschritt } from "../../speicher/format";
 import { geloesteUebungen, kapitelfortschritt } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
-import { Fortschrittsbalken } from "./Fortschrittsbalken";
 import { Fortschrittszeile } from "./Kapitelfortschritt";
+import { Ring } from "./Kreisanzeige";
 import { useDaten } from "./useDaten";
 
 function summe(zahlen: readonly number[]): number {
   return zahlen.reduce((gesamt, zahl) => gesamt + zahl, 0);
 }
 
-/** Je Kapitel eine Zeile mit Balken; ein Tipp öffnet die Kapitelübersicht. */
+/** Je Kapitel eine Zeile mit kleinem Ring; ein Tipp öffnet die Kapitelübersicht. */
 function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschritt: Fortschritt }) {
   const { navigiere } = useNavigation();
   return (
@@ -44,6 +46,7 @@ function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschrit
           });
           return (
             <li key={kapitel.kapitel}>
+              <Ring anteil={anteil} beschriftung={text} klein />
               <button
                 type="button"
                 className="knopf-link links"
@@ -51,7 +54,6 @@ function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschrit
               >
                 {text}
               </button>
-              <Fortschrittsbalken anteil={anteil} beschriftung={text} />
             </li>
           );
         })}
@@ -95,30 +97,34 @@ export function Fortschrittsuebersicht() {
   return (
     <section className="karte" data-testid="ich-fortschritt">
       <h2 className="karte-titel">{t("fortschritt.titel")}</h2>
-      <dl className="fortschritt-liste">
+      <div className="kreisreihe">
         <Fortschrittszeile
           name={t("fortschritt.abbildungen")}
           anteil={abbildungen}
           testid="ich-abbildungen"
         />
         <AlleLernziele />
-        {uebungen.length > 0 && (
-          <div className="fortschritt-zeile">
-            <dt>{t("fortschritt.uebungen")}</dt>
-            <dd>
-              {t("fortschritt.uebungenGesamt", {
-                geloest: uebungen.filter((s) => s.geloest).length,
-              })}
-            </dd>
-          </div>
-        )}
-        {durchgaenge > 0 && (
-          <div className="fortschritt-zeile">
-            <dt>{t("fortschritt.trainerDurchgaenge")}</dt>
-            <dd>{durchgaenge}</dd>
-          </div>
-        )}
-      </dl>
+      </div>
+      {(uebungen.length > 0 || durchgaenge > 0) && (
+        <dl className="fortschritt-liste">
+          {uebungen.length > 0 && (
+            <div className="fortschritt-zeile">
+              <dt>{t("fortschritt.uebungen")}</dt>
+              <dd>
+                {t("fortschritt.uebungenGesamt", {
+                  geloest: uebungen.filter((s) => s.geloest).length,
+                })}
+              </dd>
+            </div>
+          )}
+          {durchgaenge > 0 && (
+            <div className="fortschritt-zeile">
+              <dt>{t("fortschritt.trainerDurchgaenge")}</dt>
+              <dd>{durchgaenge}</dd>
+            </div>
+          )}
+        </dl>
+      )}
       <JeKapitel index={index.wert} fortschritt={fortschritt} />
     </section>
   );

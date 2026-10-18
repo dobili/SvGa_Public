@@ -63,3 +63,66 @@
   line-height: 1.3;
   color: var(--text-leise);
 }
+
+/* ---------- Seit 0.2.80: Training und Übungen in einer Karte, Galerie mit Abschnitten ---------- */
+
+.kapitel-trainer,
+.kapitel-uebungen {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.kapitel-uebungen {
+  border-top: 1px solid var(--linie);
+  padding-top: calc(var(--raster) * 1.5);
+}
+
+.kapitel-training .trainerkarte {
+  box-shadow: none;
+  background: none;
+  border-radius: 0;
+  border-top: 1px solid var(--linie);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.galeriekopf {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.abschnittsklappe {
+  border-top: 1px solid var(--linie);
+}
+
+.abschnittsklappe > summary {
+  min-height: var(--tippflaeche);
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  padding: 0 var(--raster);
+  cursor: pointer;
+}
+
+.abschnittsklappe-titel {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.abschnittsklappe-stand {
+  font-size: 13px;
+  color: var(--text-leise);
+  white-space: nowrap;
+}
+
+.abschnittsklappe[open] > .kachelraster {
+  margin-top: var(--raster);
+  margin-bottom: calc(var(--raster) * 2);
+}
+
+.abschnitt-haken {
+  margin-left: auto;
+}

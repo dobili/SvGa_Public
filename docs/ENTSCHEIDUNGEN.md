@@ -2582,3 +2582,15 @@ Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `an
   Vorgabe der Uhr in der Ansicht „spielen“, damit der Plan die Partie mit 10+0 starten kann.
 - Der Oberflächentest „Training zeigt alle Trainer“ prüft jetzt, dass kein Trainer mehr „folgt
   mit einem Update“ trägt.
+
+## Lichess-Aufgaben im Training, Lizenzen, X5 (18.10.2026 nachts, Opus, Zweig `lichess-lizenzen`, Version 0.2.72)
+
+- Geprüft: Die Lichess-Aufgaben aus `inhalte/de/trainer/` sind im Training angeschlossen.
+  Taktiktrainer 637 von 674 Aufgaben, „Falle oder Köder“ 120 von 137; Strukturerkenner und
+  Endspieltrainer haben nur Buchstellungen. `skripte/kopiere-trainerdaten.mjs` kopiert die Dateien
+  beim Bauen nach `public/daten/de/trainer/` (gleich mit `inhalte/`); jede Aufgabe zeigt ihre
+  Herkunft („Aus der freien Lichess-Datenbank (Wertung …)“). Nichts mehr offen.
+- Lizenzen-Bildschirm: Eintrag für die Lichess-Puzzle-Datenbank (CC0) ergänzt; der Link der App
+  zeigte noch auf das alte, private Repository und zeigt jetzt auf `github.com/dobili/SvGa_Public`.
+- X5 (Schwierigkeit im Endspieltrainer): Verteilung geprüft, Empfehlung „so lassen“ nach Regel 9
+  als umgesetzt vermerkt (`docs/AUFGABEN_AUTOR.md`, X5).

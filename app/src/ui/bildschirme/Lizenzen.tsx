@@ -16,7 +16,7 @@ const BAUSTEINE: readonly { name: string; lizenz: string; herkunft: string; text
   {
     name: "Schach von Grund auf (App)",
     lizenz: "GNU GPL 3.0 oder neuer",
-    herkunft: "github.com/dobili/schach_von_grund_auf",
+    herkunft: "github.com/dobili/SvGa_Public",
     text: "/lizenzen/gpl-3.0.txt",
   },
   {
@@ -64,6 +64,11 @@ const BAUSTEINE: readonly { name: string; lizenz: string; herkunft: string; text
     name: "Eröffnungsnamen außerhalb des Buches (chess-openings)",
     lizenz: "CC0 1.0 (gemeinfrei)",
     herkunft: "Lichess, github.com/lichess-org/chess-openings; Familiennamen übersetzt",
+  },
+  {
+    name: "Aufgaben aus der Lichess-Puzzle-Datenbank (Taktiktrainer, „Falle oder Köder“)",
+    lizenz: "CC0 1.0 (gemeinfrei)",
+    herkunft: "database.lichess.org; Motiv und Schwierigkeit neu bestimmt, mit Stockfish geprüft",
   },
   { name: "React", lizenz: "MIT", herkunft: "react.dev" },
   { name: "Workbox, vite-plugin-pwa", lizenz: "MIT", herkunft: "Google, Vite PWA" },

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.71. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.72. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.71“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.72“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,16 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.71“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.72“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.72 (etwa 2 Minuten; Lizenzen, Opus)
+
+- [ ] N306. **Lizenzen:** Einstellungen › Lizenzen. Neu der Eintrag „Aufgaben aus der
+      Lichess-Puzzle-Datenbank (Taktiktrainer, „Falle oder Köder“)“ mit CC0 1.0. Beim Eintrag
+      „Schach von Grund auf (App)“ steht jetzt das öffentliche Repository
+      „github.com/dobili/SvGa_Public“ (vorher der Name des alten, privaten Repositorys, den
+      Fremde nicht öffnen können; die GPL verlangt, dass der Quelltext erreichbar ist).
 
 ### Neu in 0.2.71 (etwa 15 Minuten, mit Engine; 30-Minuten-Plan, Opus)
 
@@ -935,7 +943,12 @@ Regeln C1 und C2).
       Bauernrennen 2, Randbauer 2, Läuferpaar 3, Schlüsselfelder 3, Durchbruch 3, Freibauer 3,
       Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
       erste Zug der einzige ist. Nicht an Lichess geeicht (dort gibt es keine ausspielbaren
-      Endspiele). **Empfehlung:** so lassen und nach deinem Test nachjustieren.
+      Endspiele). Verteilung der 80 Stellungen: Stufe 1 viermal, 2 achtmal, 3 19-mal, 4 38-mal,
+      5 elfmal. Das Gewicht bei 4 und 5 kommt von den Turmendspielen (23) und Leichtfiguren (11)
+      aus Kapitel 9 und folgt damit dem Buch (Kapitel 8 Grundlagen, Kapitel 9 schwerer). Wer eine
+      Stufe wählt, von der es wenige gibt, bekommt die Nachbarstufen dazu; eine Runde hat sechs
+      Stellungen. **Empfehlung (Opus, 18.10.):** so lassen und nach deinem Test nachjustieren.
+      Schon umgesetzt (so in der App seit 0.2.49), Widerspruch genügt.
 
 ### T. Trainerdaten für Taktiktrainer, Strukturerkenner und „Falle oder Köder“ (Fable; plausibel entschieden)
 

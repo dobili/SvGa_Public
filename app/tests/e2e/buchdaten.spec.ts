@@ -82,6 +82,9 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await leiste.getByRole("button", { name: "Training" }).click();
   const zaehltrainer = page.getByTestId("trainer-zaehlen");
   await expect(zaehltrainer).toContainText("Zähltrainer");
+  // Seit 0.2.85 steht der Ablauf hinter dem Fragezeichen.
+  await expect(zaehltrainer).not.toContainText("Abtauschbilanz in Bauerneinheiten");
+  await zaehltrainer.getByRole("button", { name: /Erklärung/ }).click();
   await expect(zaehltrainer).toContainText("Abtauschbilanz in Bauerneinheiten");
   await expect(zaehltrainer.getByRole("button", { name: "Trainieren" })).toBeVisible();
   // Alle Trainer sind spielbar (seit 0.2.71 auch der 30-Minuten-Plan), keiner „folgt“ mehr.

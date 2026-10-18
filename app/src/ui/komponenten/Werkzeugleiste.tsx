@@ -7,10 +7,14 @@
  * man in der Karte wie Reiter um (Reiterleiste unten). Zählen, Ziehen, Engine, Röntgen und
  * Warnsignale sitzen als Symbole am Brett (Brettsymbole.tsx; Zählen seit 0.2.31).
  * Bedienung: Ein Tipp wählt ein Bündel, ein zweiter wählt es wieder ab (Kreuz im Knopf).
+ * Seit 0.2.85 (Wunsch des Autors) eine waagerecht scrollbare Reihe statt umbrechender Zeilen; jedes
+ * Bündel trägt ein Symbol (buendelsymbole.ts), „frühere“ und „spätere“ stehen als Schalter mit
+ * Symbol am Anfang und am Ende derselben Reihe.
  * Abhängigkeiten: werkzeugordnung.ts, useWerkzeugwahl.ts, i18n, lucide-react.
  */
-import { Bone, X } from "lucide-react";
+import { Bone, X, type LucideIcon } from "lucide-react";
 import { t, type Textschluessel } from "../../i18n/sprache";
+import { BUENDELSYMBOL, FRUEHERE_SYMBOL, SPAETERE_SYMBOL } from "./buendelsymbole";
 import type { Werkzeugwahlstand } from "./useWerkzeugwahl";
 import {
   buendelname,
@@ -32,16 +36,18 @@ function Wahlsymbol() {
   return <X className="chip-symbol" size={SYMBOLGROESSE} aria-hidden="true" />;
 }
 
-/** „◀ frühere“ oder „spätere ▶“: schaltet Bündel anderer Kapitel zu. */
+/** „frühere“ oder „spätere“ mit Symbol: schaltet Bündel anderer Kapitel zu. */
 function Zuschalter({
   an,
   text,
   name,
+  Symbol,
   beiKlick,
 }: {
   an: boolean;
   text: Textschluessel;
   name: Textschluessel;
+  Symbol: LucideIcon;
   beiKlick: () => void;
 }) {
   return (
@@ -53,7 +59,43 @@ function Zuschalter({
       title={t(name)}
       onClick={beiKlick}
     >
+      <Symbol className="chip-symbol" size={SYMBOLGROESSE} aria-hidden="true" />
       {t(text)}
+    </button>
+  );
+}
+
+/** Ein Bündel als Knopf: Symbol, Name, bei Vorschau die Plakette „Kap. N“, gewählt ein Kreuz. */
+export function Buendelknopf({
+  kennung,
+  name,
+  gewaehlt,
+  vorschau = null,
+  beiKlick,
+}: {
+  kennung: Buendelkennung;
+  name: string;
+  gewaehlt: boolean;
+  /** Kapitel der Einführung bei Bündeln späterer Kapitel, sonst null. */
+  vorschau?: number | null;
+  beiKlick: () => void;
+}) {
+  const Symbol = BUENDELSYMBOL[kennung];
+  return (
+    <button
+      type="button"
+      className={vorschau !== null ? "chip chip-vorschau" : "chip"}
+      aria-pressed={gewaehlt}
+      onClick={beiKlick}
+    >
+      <Symbol className="chip-symbol" size={SYMBOLGROESSE} aria-hidden="true" />
+      {name}
+      {vorschau !== null && (
+        <span className="plakette-vorschau">
+          {t("werkzeug.vorschauKapitel", { kapitel: vorschau })}
+        </span>
+      )}
+      {gewaehlt && <Wahlsymbol />}
     </button>
   );
 }
@@ -88,34 +130,26 @@ export function Werkzeugleiste({
           an={werkzeug.frueher}
           text="werkzeug.frueher"
           name="werkzeug.frueherName"
+          Symbol={FRUEHERE_SYMBOL}
           beiKlick={werkzeug.schalteFrueher}
         />
       )}
-      {buendel.map((b) => {
-        const gewaehlt = werkzeug.buendel === b.kennung;
-        return (
-          <button
-            key={b.kennung}
-            type="button"
-            className={b.vorschau ? "chip chip-vorschau" : "chip"}
-            aria-pressed={gewaehlt}
-            onClick={() => werkzeug.tippeBuendel(b.kennung)}
-          >
-            {t(b.name)}
-            {b.vorschau && (
-              <span className="plakette-vorschau">
-                {t("werkzeug.vorschauKapitel", { kapitel: b.einfuehrung })}
-              </span>
-            )}
-            {gewaehlt && <Wahlsymbol />}
-          </button>
-        );
-      })}
+      {buendel.map((b) => (
+        <Buendelknopf
+          key={b.kennung}
+          kennung={b.kennung}
+          name={t(b.name)}
+          gewaehlt={werkzeug.buendel === b.kennung}
+          vorschau={b.vorschau ? b.einfuehrung : null}
+          beiKlick={() => werkzeug.tippeBuendel(b.kennung)}
+        />
+      ))}
       {hatSpaetere && (
         <Zuschalter
           an={werkzeug.spaeter}
           text="werkzeug.spaeter"
           name="werkzeug.spaeterName"
+          Symbol={SPAETERE_SYMBOL}
           beiKlick={werkzeug.schalteSpaeter}
         />
       )}

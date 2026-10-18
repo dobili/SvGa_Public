@@ -269,3 +269,81 @@
   font-weight: 700;
   margin: 0;
 }
+
+/* ---------- Trainingsseite und Übungen des Kapitels (seit 0.2.85) ---------- */
+
+.trainingskapitel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.trainingskapitel-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+}
+
+.kapitelnummer {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--gold);
+  color: #16253d;
+  font-weight: 700;
+}
+
+.trainerliste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.mit-symbol {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Übungen als Raster kleiner Nummern: offen, angefangen (halb), gelöst (grün mit Haken). */
+.uebungsraster {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(44px, 1fr));
+  gap: 6px;
+}
+
+.uebungsnummer {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+}
+
+.uebungsnummer-angefangen {
+  background: linear-gradient(135deg, var(--flaeche) 50%, var(--linie) 50%);
+}
+
+.uebungsnummer-geloest {
+  border-color: #3f8f4a;
+  background: #3f8f4a;
+  color: #ffffff;
+}

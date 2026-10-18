@@ -6,47 +6,22 @@
  * (Pflichtenheft 7); unfertige tragen „folgt mit einem Update“. Ein Tipp zeigt den Ablauf.
  * Seit 16.10.2026 führt je Kapitel ein Link zur Trainingsseite der Website (/training/kapNN/),
  * dem früheren Kasten „Training zu diesem Kapitel“ des Buches; sie ist offline vorhanden.
+ * Seit 0.2.85 (Wunsch des Autors: viel Text) je Kapitel eine Karte mit Nummer, die Trainer als
+ * Zeilen mit Symbol (Trainerkarte.tsx), Erklärungen hinter dem Fragezeichen.
  * Abhängigkeiten: training/trainer.ts, daten/laden.ts, Navigation, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeIndex } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { TRAINER, trainerZuKapitel, type Trainer } from "../../training/trainer";
+import { TRAINER, trainerZuKapitel } from "../../training/trainer";
 import { kapiteladresse } from "../../startseite/trainingsseiten";
+import { ExternalLink, Globe } from "lucide-react";
 import { FaelligeWiederholungen } from "../komponenten/FaelligeWiederholungen";
+import { Trainerkarte } from "../komponenten/Trainerkarte";
+import { MitInfo } from "../komponenten/InfoKnopf";
 import { useDaten } from "../komponenten/useDaten";
 
-/**
- * Ein Trainer mit seinem Ablauf: spielbare Trainer als Karte mit „Trainieren“ (AP 13), die
- * übrigen als aufklappbarer Eintrag mit „folgt mit einem Update“.
- */
-export function Trainerkarte({ trainer }: { trainer: Trainer }) {
-  const { navigiere } = useNavigation();
-  if (trainer.fertig) {
-    return (
-      <div className="trainerkarte bereit" data-testid={`trainer-${trainer.kennung}`}>
-        <span className="trainer-name">{t(`trainer.${trainer.kennung}.name`)}</span>
-        <p>{t(`trainer.${trainer.kennung}.ablauf`)}</p>
-        <button
-          type="button"
-          className="knopf-zweit"
-          onClick={() => navigiere({ bildschirm: "trainer", kennung: trainer.kennung })}
-        >
-          {t("training.trainieren")}
-        </button>
-      </div>
-    );
-  }
-  return (
-    <details className="trainerkarte" data-testid={`trainer-${trainer.kennung}`}>
-      <summary>
-        <span className="trainer-name">{t(`trainer.${trainer.kennung}.name`)}</span>
-        {!trainer.fertig && <span className="plakette-folgt">{t("training.folgt")}</span>}
-      </summary>
-      <p>{t(`trainer.${trainer.kennung}.ablauf`)}</p>
-    </details>
-  );
-}
+const LINKSYMBOL = 16;
 
 /**
  * Jedes Kapitel mit seinen Trainern und dem Link zur Trainingsseite der Website.
@@ -63,18 +38,26 @@ function JeKapitel() {
   return (
     <>
       {kapitel.map((nummer) => (
-        <section key={nummer} className="abschnitt">
+        <section key={nummer} className="karte trainingskapitel">
           <button
             type="button"
-            className="knopf-link links"
+            className="trainingskapitel-kopf"
             onClick={() => navigiere({ bildschirm: "kapitel", nummer })}
           >
-            {t("training.kapitel", { nummer })} · {titel(nummer)}
+            <span className="kapitelnummer" aria-hidden="true">
+              {nummer}
+            </span>
+            <span>
+              {t("training.kapitel", { nummer })} · {titel(nummer)}
+            </span>
           </button>
-          {trainerZuKapitel(nummer).map((trainer) => (
-            <Trainerkarte key={trainer.kennung} trainer={trainer} />
-          ))}
-          <a className="knopf-link klein" href={kapiteladresse(nummer)}>
+          <div className="trainerliste">
+            {trainerZuKapitel(nummer).map((trainer) => (
+              <Trainerkarte key={trainer.kennung} trainer={trainer} />
+            ))}
+          </div>
+          <a className="knopf-link klein mit-symbol" href={kapiteladresse(nummer)}>
+            <ExternalLink size={LINKSYMBOL} aria-hidden="true" />
             {t("training.kasten")}
           </a>
         </section>
@@ -94,8 +77,15 @@ export function Training() {
         <FaelligeWiederholungen />
       </section>
       <section className="karte">
-        <h2 className="karte-titel">{t("training.uebersicht.titel")}</h2>
-        <p>{t("training.kastenText")}</p>
+        <MitInfo
+          zeile={
+            <h2 className="karte-titel mit-symbol">
+              <Globe size={LINKSYMBOL} aria-hidden="true" /> {t("training.uebersicht.titel")}
+            </h2>
+          }
+          erklaerung={<p>{t("training.kastenText")}</p>}
+          thema={t("training.uebersicht.titel")}
+        />
         <a className="knopf-zweit" href="/training/">
           {t("training.seite.uebersicht")}
         </a>

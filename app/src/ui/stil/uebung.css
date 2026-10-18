@@ -108,18 +108,6 @@
   cursor: pointer;
 }
 
-.trainerkarte.bereit {
-  padding: calc(var(--raster) * 1.5) calc(var(--raster) * 2);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--raster);
-}
-
-.trainerkarte.bereit p {
-  margin: 0;
-}
-
 .plan-satz {
   text-align: left;
   font-weight: 400;

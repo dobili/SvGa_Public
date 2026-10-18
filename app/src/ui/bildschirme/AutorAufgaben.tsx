@@ -10,7 +10,7 @@
  * Abhängigkeiten: autor/*, app/merker.ts, app/version.ts, training/trainer.ts, Aufgabenpunkt,
  * Kopfzeile, useDaten, i18n.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { APP_VERSION } from "../../app/version";
 import {
@@ -60,12 +60,15 @@ function useAbhakstand(
     if (gemerkt === null && erster) return { ...LEERER_ABHAKSTAND, offen: [erster] };
     return abhakstandAus(gemerkt);
   });
+  // Gleich merken, nicht erst im Updater: Ein Link baut die Seite ab, bevor React den Updater
+  // ausführt; dann ging „zuletzt“ verloren, und „Zurück zu den Aufgaben“ landete oben (N307).
+  // Der Stand ändert sich nur hier; die Referenz ist deshalb immer der neueste Stand.
+  const aktuell = useRef(stand);
   const aendere = (aendern: (alt: Abhakstand) => Abhakstand) => {
-    setzeStand((alt) => {
-      const neu = aendern(alt);
-      schreibeMerker(MERKER, JSON.stringify(neu));
-      return neu;
-    });
+    const neu = aendern(aktuell.current);
+    aktuell.current = neu;
+    schreibeMerker(MERKER, JSON.stringify(neu));
+    setzeStand(neu);
   };
   return [stand, aendere];
 }

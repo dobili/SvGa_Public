@@ -3093,3 +3093,13 @@ größer. Ursache: `grid-template-columns: repeat(4, 1fr)` lässt eine Spalte ni
 als ihren Inhalt, und die Namen standen ohne Umbruch. Jetzt `minmax(0, 1fr)`, die Kachel darf
 schrumpfen, Namen brechen mittig um (statt abgeschnitten zu werden). Der Oberflächentest misst
 die acht Porträts der Stufe 8; mit dem alten Stil wichen sie um 24 Pixel ab.
+
+## Aufgabenseite: „Zurück zu den Aufgaben“ führt wieder zum Punkt (18.10.2026, Opus, Zweig `aufgaben-zurueck`, Version 0.2.90)
+
+Gefunden beim Durchprüfen der Aufgabenliste (N307): Nach einem Link und „‹ Zurück zu den
+Aufgaben“ stand die Seite oben statt beim angetippten Punkt. Ursache: Die Seite merkte sich den
+Punkt („zuletzt“) erst im State-Updater von React; der Link baute die Seite ab, bevor der Updater
+lief, und im Merker blieb `zuletzt: null`. Jetzt schreibt `aendere` den Merker sofort aus dem
+neuesten Stand (Referenz, die sich nur dort ändert). Ein neuer Oberflächentest öffnet einen
+Abschnitt weit unten, folgt einem Link und prüft, dass der Punkt nach der Rückkehr im Bild ist;
+mit dem alten Stand schlug er fehl.

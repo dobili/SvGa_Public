@@ -2636,3 +2636,15 @@ Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `an
   `ui/trainer/AbweichungBereich.tsx`, `ui/trainer/Abweichungsaufgabe.tsx`,
   `ui/trainer/useAbweichung.ts` (Engine nacheinander: Abweichzug, dann Bewertung der Antwort).
 - Entscheidungen wie in F4 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.
+
+## 30-Minuten-Plan (18.10.2026 nachts, Opus, Zweig `dreissig-minuten`, Version 0.2.71)
+
+- Trainer „dreissigMinuten“ fertig (AP 13, Stufe 3); damit sind alle Trainer des Pflichtenhefts
+  spielbar. `training/dreissigminuten.ts` (Plan, Wechsel, Uhr, gemerkter Stand),
+  `ui/trainer/DreissigMinutenBereich.tsx`, `ui/trainer/Planschritte.tsx`,
+  `ui/trainer/usePlanstand.ts` (Merker `svga.dreissigMinuten` im Gerätespeicher).
+- Entscheidungen wie in F5 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.
+- Anfrage an Fable: Bedenkzeit 10+0 in `spiel/uhr.ts` (`UHR_VORGABEN`) und auf Wunsch eine
+  Vorgabe der Uhr in der Ansicht „spielen“, damit der Plan die Partie mit 10+0 starten kann.
+- Der Oberflächentest „Training zeigt alle Trainer“ prüft jetzt, dass kein Trainer mehr „folgt
+  mit einem Update“ trägt.

@@ -50,6 +50,21 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.72“, dann 
       chess.com: Eröffnung Großartig, Taktik Exzellent, Strategie Gut, Endspiel Gut. Prüfe, ob
       die Marken auf dem Handy in eine Zeile passen und die Farben lesbar sind.
 
+### Neu in 0.2.71 (etwa 15 Minuten, mit Engine; 30-Minuten-Plan, Opus)
+
+- [ ] N305. **30-Minuten-Plan:** Training › Kapitel 12 › „30-Minuten-Plan“ › Trainieren. Oben der
+      Plan beider Tage als Tabelle (Tag A Partietag: 5 Min. Taktik, 20 Min. Partie, 5 Min. kurze
+      Analyse; Tag B Studientag: 5 Min. Taktik, 15 Min. Thema, 10 Min. Analyse der Vortagespartie)
+      und „Im Wechsel ist heute dran: Tag A“. „Tag A: Partietag starten“: Oben stehen Schritt 1
+      von 3 und die Restzeit (läuft sekündlich, nach Ablauf rot „… über der Zeit“), darunter zwei
+      leichte Taktikaufgaben. „Schritt erledigt“ führt zur Partie („Zum Spielen“; ohne Uhr
+      spielen, die Uhr des Plans zählt die 20 Minuten), „Zurück“ bringt dich wieder zum Plan, der
+      weiterläuft (auch nach Neuladen der App). Schritt 3 öffnet mit „Letzte Partie ansehen“ den
+      Rückblick. „Einheit abschließen“: „Einheit geschafft. Beim nächsten Mal ist Tag B dran.“
+      Danach Tag B: Im Schritt „Thema“ ist ein Bereich vorgewählt (Taktik, Endspiel, Strategie,
+      Eröffnung im Wechsel), darunter die Trainer des Bereichs als Knöpfe. Schritt 3 hat dazu
+      „Zur Fehlerdatenbank“. Siehe F5.
+
 ### Neu in 0.2.70 (etwa 10 Minuten, mit Engine; Abweichungsmodus, Opus)
 
 - [ ] N304. **Abweichungsmodus:** Training › Kapitel 2 › „Abweichungsmodus“ › Trainieren.
@@ -941,6 +956,21 @@ Regeln C1 und C2).
       zeigt die Fazits der Werkzeuge Zielbilanz und Todsünden, keine vorbereiteten Texte, weil es
       zu Stellungen außerhalb des Buches keine gibt.
       **Empfehlung:** so lassen. Schon umgesetzt in 0.2.70, Widerspruch genügt.
+
+- [ ] F5. **30-Minuten-Plan (0.2.71):** Eine geführte Einheit mit den drei Schritten deiner
+      Tabelle in Kapitel 12; die Uhr zeigt die Restzeit des Schritts und läuft über die Zeit
+      weiter, statt abzubrechen (das Buch nennt Richtzeiten). Die Taktikaufgaben sind zwei
+      gemischte der leichtesten Stufe; die Partie spielst du im normalen Spielen-Bildschirm, die
+      Analyse im Rückblick der letzten Partie; am Studientag führen Knöpfe zu den Trainern des
+      Bereichs (Taktik: Taktiktrainer, Studien; Endspiel: Endspieltrainer; Strategie: Zug
+      erraten, Planbilanz, Strukturerkenner; Eröffnung: Repertoire, Abweichungsmodus,
+      Zielbilanz, Faktorenbilanz). Tag und Bereich wechseln nach jeder abgeschlossenen Einheit,
+      ein Abbruch schaltet nicht weiter. Der Stand liegt nur auf dem Gerät (nicht in der
+      Datensicherung); eine Einheit, die drei Stunden liegt, verfällt. Eine abgeschlossene
+      Einheit zählt als Durchgang im Fortschritt. Die Bedenkzeit 10+0 bietet der
+      Spielen-Bildschirm noch nicht an (Fables Bereich, ist bei Fable angefragt); bis dahin
+      steht im Plan „ohne Uhr spielen“.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.71, Widerspruch genügt.
 
 ### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 

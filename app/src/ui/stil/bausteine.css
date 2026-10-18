@@ -105,7 +105,9 @@
 
 .kreisreihe {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  /* In em, damit die Ringe bei großer Systemschrift untereinander rücken, statt die Wörter
+     daneben zu zerhacken (DS1). Bei Standardschrift wie bisher etwa 140 Pixel. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.25em), 1fr));
   gap: calc(var(--raster) * 1.5);
 }
 
@@ -113,9 +115,13 @@
   display: flex;
   align-items: center;
   gap: var(--raster);
+  min-width: 0;
 }
 
 .kreisanzeige-text {
+  min-width: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
   display: flex;
   flex-direction: column;
   gap: 2px;

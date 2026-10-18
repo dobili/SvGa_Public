@@ -98,6 +98,8 @@
 /* Werkzeug-Symbole und „Brett drehen“ (0.2.30); auf schmalen Geräten rechtsbündig umbrechen. */
 .brettschalter-gruppe {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
   gap: 2px;
   margin-left: auto;
 }

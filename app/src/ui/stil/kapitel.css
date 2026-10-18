@@ -127,6 +127,7 @@
 }
 
 .abschnittsklappe-stand {
+  flex: none;
   font-size: var(--groesse-fein);
   color: var(--text-leise);
   white-space: nowrap;

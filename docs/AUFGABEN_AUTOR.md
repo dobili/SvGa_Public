@@ -1205,7 +1205,7 @@ Regeln C1 und C2).
 ### G. Design-Überprüfung (Opus, 18.10.2026; schon umgesetzt auf dem Zweig, Widerspruch genügt)
 
 - [ ] G1. **Vorschläge DS1 bis DS18 annehmen oder verwerfen:** Im Artifact „Design-Überprüfung“
-      (Link folgt im Chat und hier) stehen je Vorschlag Vorher-nachher-Bilder und ein Satz zum
+      (<https://claude.ai/artifact/8HuxsERV6rwM2YyXvyfRii>, privat) stehen je Vorschlag Vorher-nachher-Bilder und ein Satz zum
       Warum, dazu jeder Bildschirm hell und dunkel bei 360 und 430 Pixeln und auf dem Tablet quer.
       Schreib je Nummer „ja“ oder „verwerfen“. Danach baue ich Verworfenes zurück, übernehme
       main, erhöhe die Version und bringe den Rest nach main. Grundlage der Bewertung: Apple

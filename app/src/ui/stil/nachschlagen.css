@@ -171,8 +171,18 @@
 /* Lange Namen („Abweichungsmodus“) umbrechen statt unter den Knopf zu laufen (0.2.87). */
 .trainerkarte-text .mitinfo-text {
   min-width: 0;
-  overflow-wrap: anywhere;
+  /* Nur zur Not mitten im Wort trennen, dann mit Trennstrich (DS4, vorher „Abweichungsm|odus“). */
+  overflow-wrap: break-word;
   hyphens: auto;
+}
+
+/* Trainer in der Kapitelkarte als Zeilen mit Trennlinie statt als Karte in der Karte (DS4):
+   Das spart Rand, und der Name bekommt Platz für eine Zeile. */
+.trainingskapitel .trainerkarte {
+  padding: var(--raster) 0 0;
+  border-radius: 0;
+  box-shadow: none;
+  border-top: 1px solid var(--linie);
 }
 
 .trainer-name {

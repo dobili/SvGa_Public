@@ -5,7 +5,7 @@
  * fünfte Bereich hieß bis 0.2.30 „Ich“; auf Wunsch des Autors (Test von 0.2.30) steht dort nur
  * ein Zahnrad ohne Beschriftung, denn letztlich sind es Einstellungen. Bildschirmleser lesen
  * „Einstellungen“ vor. Intern heißt der Bereich weiter „ich“ (Navigation, Speicher). Drei
- * Sekunden Druck auf das Zahnrad öffnen die Aufgabenseite des Autors (seit 0.2.74).
+ * Sekunden Druck auf das Zahnrad öffnen die Aufgabenseite des Autors (seit 0.2.75).
  * Abhängigkeiten: Navigation, i18n, Lucide-Symbole, useLangerDruck.
  */
 import { BookOpen, Crosshair, Search, Settings, Swords, type LucideIcon } from "lucide-react";

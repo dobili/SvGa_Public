@@ -1,5 +1,5 @@
 /**
- * Oberflächentests der Aufgabenseite des Autors (seit 0.2.74): drei Sekunden auf dem Zahnrad
+ * Oberflächentests der Aufgabenseite des Autors (seit 0.2.75): drei Sekunden auf dem Zahnrad
  * öffnen sie, ein kurzer Tipp nicht; Haken und Notiz landen im Text für den Chat; ein Link
  * öffnet seinen Bildschirm, „Zurück“ führt mit erhaltenem Stand zurück. Die Punkte ändern sich
  * mit jeder Version der Aufgabendatei; der Test nimmt deshalb den ersten Punkt, den es gibt.

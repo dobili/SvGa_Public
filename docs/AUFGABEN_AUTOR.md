@@ -1,10 +1,10 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.74. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.75. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
-**In der App (seit 0.2.74):** Halte das Zahnrad unten rechts drei Sekunden gedrückt (am Rechner:
+**In der App (seit 0.2.75):** Halte das Zahnrad unten rechts drei Sekunden gedrückt (am Rechner:
 Adresse `/app/#aufgaben`). Dann öffnet sich diese Datei als Seite: Abbildungen, Trainer,
 Spielen, Einstellungen und Nachschlagen im Text sind Links, jeder Punkt hat einen Haken und eine
 Notiz. „Stand in die Zwischenablage“ legt alles Abgehakte und Notierte als Text ab („N306 ok“,
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.74“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.75“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,10 +27,10 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.74“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.75“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.74 (etwa 5 Minuten; diese Datei in der App, Opus)
+### Neu in 0.2.75 (etwa 5 Minuten; diese Datei in der App, Opus)
 
 - [ ] N307. **Aufgabenseite:** Zahnrad unten rechts drei Sekunden gedrückt halten (ein kurzer
       Tipp öffnet wie bisher die Einstellungen). Es öffnet sich „Aufgaben des Autors“ mit dieser
@@ -41,6 +41,20 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.74“, dann 
       den Chat ein. „Nur offene Punkte zeigen“ blendet Abgehaktes aus. Haken und Notizen bleiben
       auf dem Handy, auch nach einem Update; Punkte, die in einer neuen Version fehlen (weil
       erledigt), fallen aus dem Text heraus.
+
+### Neu in 0.2.74 (etwa 15 Minuten, mit Engine; 64 Bots nachgemessen, Fable und Opus)
+
+- [ ] N292. **Ausreißer unter den Bots angepasst:** Jeder der 64 Bots spielte sechs Partien gegen
+      die reine Stufe seiner Nummer. Zwölf waren zu stark (meist 6 : 0, etwa Leon, Ayşe, Sophie,
+      Jonas, Zoë), vier zu schwach (Frau Berger, Hanna, Paul, Elif). Muster: Wer nur billige
+      Fehlerarten in der Liste hat („ungenau“, „Königsschild“, „Bauernvorstoß“), spielt stärker
+      als seine Stufe. Die Ausreißer haben jetzt eine Phasenstufe weniger oder mehr und, wo das
+      nicht reichte, eine teure Fehlerart (Figur hängen lassen, Drohung übersehen) in der Liste;
+      ihre Beschreibungen in der Sprechblase nennen das. Spiele eine Partie gegen Zoë (Stufe 4)
+      und eine gegen Jonas (Stufe 3): Sie sollten sich wie ihre Stufe anfühlen, nicht mehr eine
+      Klasse stärker. Leon (Stufe 1), Ayşe und Sophie (2) sowie Greta (3) bleiben trotz der
+      Anpassung etwas stärker als ihre Stufe; das wird noch untersucht. Die Stufen 6 bis 8 werden
+      noch gemessen; dort folgt höchstens eine kleine Anpassung einzelner Bots.
 
 ### Neu in 0.2.73 (etwa 2 Minuten; Lizenzen, Opus)
 

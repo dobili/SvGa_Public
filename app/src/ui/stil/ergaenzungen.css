@@ -352,7 +352,7 @@
   font-weight: 400;
 }
 
-/* Aufgabenseite des Autors (seit 0.2.74): Zahnrad ohne Kontextmenü beim langen Druck, Punkte mit
+/* Aufgabenseite des Autors (seit 0.2.75): Zahnrad ohne Kontextmenü beim langen Druck, Punkte mit
    Haken links, Links im Fließtext, Text für den Chat umbrochen. */
 .leiste-knopf-halten {
   -webkit-touch-callout: none;

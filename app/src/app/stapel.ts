@@ -32,7 +32,7 @@ export type Ansicht =
   | { readonly bildschirm: "partie"; readonly id: string }
   | { readonly bildschirm: "ich" }
   | { readonly bildschirm: "lizenzen" }
-  /** Aufgabenseite des Autors (langer Druck aufs Zahnrad, seit 0.2.74). */
+  /** Aufgabenseite des Autors (langer Druck aufs Zahnrad, seit 0.2.75). */
   | { readonly bildschirm: "autoraufgaben" }
   /** Eine Übung des Buches lösen (AP 13); mit Reihe, wenn „Nächste Übung“ weiterführt. */
   | ({

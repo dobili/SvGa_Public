@@ -79,7 +79,7 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
 
 /** Sprungziel in der Adresse, das gleich eine Ansicht öffnet (Fußzeile der Startseite). */
 const SPRUNG_LIZENZEN = "#lizenzen";
-/** Aufgabenseite des Autors am Rechner, wo es keinen langen Druck gibt (seit 0.2.74). */
+/** Aufgabenseite des Autors am Rechner, wo es keinen langen Druck gibt (seit 0.2.75). */
 const SPRUNG_AUFGABEN = "#aufgaben";
 /** Sprung zu einer Abbildung von den Trainingsseiten der Website, etwa „#abb-6.20“ (16.10.2026). */
 const SPRUNG_ABBILDUNG = /^#abb-(\d{1,2}\.\d{1,3})$/;

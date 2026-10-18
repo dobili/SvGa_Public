@@ -149,6 +149,16 @@ describe("Zugwahl", () => {
     expect(aufrufe).toEqual([{ varianten: 4, staerke: { art: "skill", stufe: 10 } }]);
   });
 
+  it("Stufe 1 mit Stil (0.2.78): der schwache Zug der Stufe bleibt, der Stil hebt ihn nicht an", async () => {
+    const { b } = bewerter(KANDIDATEN);
+    const profil = { fehlerarten: [], stil: 2, blindeFlecken: [] };
+    // Hoher Wurf: Die gewichtete Wahl nimmt einen der schwachen Züge (La3 oder g6).
+    const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.999), BUCHTREUE_VORGABE, profil);
+    expect(wahl?.uci).not.toBe("b8c6");
+    expect(wahl?.uci).not.toBe("d7d6");
+    expect(wahl?.verlust ?? 0).toBeGreaterThan(2);
+  });
+
   it("Profil mit blindem Fleck: übersieht den besten Zug und spielt den nächsten anderer Art", async () => {
     // Bester Zug Sc6 (b8c6) ist ein Springerzug vorwärts; blind für „bauer“: d6 ist still.
     const { b, aufrufe } = bewerter(KANDIDATEN);

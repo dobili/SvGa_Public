@@ -62,8 +62,10 @@ function zufallsauswahl<T>(liste: readonly T[], zufall: () => number): T | undef
 }
 
 /**
- * Der Zug der Stufen 1 bis 3: Kandidaten der tiefenbegrenzten Suche, blinde Flecken und Stil wie
- * bei den anderen Stufen, sonst die gewichtete Wahl mit der Temperatur der Lage.
+ * Der Zug der Stufen 1 bis 3: Kandidaten der tiefenbegrenzten Suche, blinde Flecken wie bei den
+ * anderen Stufen, sonst die gewichtete Wahl mit der Temperatur der Lage; der Stil wählt danach um
+ * diesen Zug herum (seit 0.2.78, vorher ersetzte er die gewichtete Wahl und machte Bots mit Stil
+ * fast so stark wie die Engine).
  * Beispiel: Stufe 1 nach 1. e4 e5 2. Dh5 (Schwarz): Kandidaten Sc6 (0), d6 (0,2), Sf6 (1,0) →
  * Gewichte 1, 0,82, 0,37: Sf6 in etwa jedem sechsten Fall.
  */
@@ -83,10 +85,6 @@ async function menschlicherZug(
   );
   const blind = blindeWahl(fen, mehrere.varianten, profil.blindeFlecken, zufall);
   if (blind) return { ...blind, quelle: "fehler" };
-  if (profil.stil !== STIL_NEUTRAL) {
-    const uci = stilwahl(fen, mehrere.varianten, profil.stil) ?? mehrere.besterZug;
-    return uci ? { uci, quelle: "engine", fehler: null, verlust: 0 } : null;
-  }
   const kandidaten = kandidatenAus(
     fen,
     mehrere.varianten,
@@ -95,7 +93,13 @@ async function menschlicherZug(
   );
   const temperatur = temperaturFuer(fen, einstellung.temperatur, profil.verlauf ?? RUHIGER_VERLAUF);
   const wahl = gewichteteZugwahl(kandidaten, temperatur, zufall);
-  return wahl ? { uci: wahl.uci, quelle: "engine", fehler: null, verlust: wahl.verlust } : null;
+  if (!wahl) return null;
+  if (profil.stil === STIL_NEUTRAL) return { ...wahl, quelle: "engine", fehler: null };
+  // Stil um den gewählten Zug herum, nur unter den Kandidaten der Stufe (0.2.78).
+  const erlaubt = mehrere.varianten.filter((v) => kandidaten.some((k) => k.uci === v.zuege[0]));
+  const uci = stilwahl(fen, erlaubt, profil.stil, wahl.uci) ?? wahl.uci;
+  const verlust = kandidaten.find((k) => k.uci === uci)?.verlust ?? wahl.verlust;
+  return { uci, quelle: "engine", fehler: null, verlust };
 }
 
 /**
@@ -109,7 +113,7 @@ async function menschlicherZug(
  * Zug der Engine mit Skill Level 0.
  * Sonderfall: Findet die Fehlersuche keinen Zug in den Grenzen der Stufe, zieht die Engine normal.
  * Profil (0.2.42): ohne erlaubte Fehlerarten entfällt der Fehlerwurf; mit Stil holt die Engine
- * mehrere Kandidaten, und engine/stil.ts wählt.
+ * mehrere Kandidaten, und engine/stil.ts wählt um den Zug der Stufe herum (0.2.78).
  */
 export async function waehleZug(
   bewerter: Spielbewerter,
@@ -136,9 +140,12 @@ export async function waehleZug(
     const mehrere = await bewerter.bewerte(fen, stufe.rechenzeitMs, STIL_KANDIDATEN, stufe.staerke);
     const blind = blindeWahl(fen, mehrere.varianten, profil.blindeFlecken, zufall);
     if (blind) return { ...blind, quelle: "fehler" };
+    // Bezug des Stils ist der Zug der Stufe (Skill Level), nicht die erste Variante (0.2.78).
+    const bezug = mehrere.besterZug ?? undefined;
     const uci =
-      (profil.stil !== STIL_NEUTRAL ? stilwahl(fen, mehrere.varianten, profil.stil) : null) ??
-      mehrere.besterZug;
+      (profil.stil !== STIL_NEUTRAL
+        ? stilwahl(fen, mehrere.varianten, profil.stil, bezug)
+        : null) ?? mehrere.besterZug;
     return uci ? { uci, quelle: "engine", fehler: null, verlust: 0 } : null;
   }
   const bewertung = await bewerter.bewerte(fen, stufe.rechenzeitMs, 1, stufe.staerke);

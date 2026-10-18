@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.77. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.78. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.77“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.78“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,28 +27,26 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.77“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.78“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.77 (etwa 2 Minuten; Messfehler bei 25 Bots behoben, Opus)
+### Neu in 0.2.78 (etwa 15 Minuten, mit Engine; Bots mit Stil spielen so stark wie ihre Stufe, Opus)
 
-- [ ] N294. **Frau Berger, Frau Ortega und Yara:** Das Messwerkzeug hatte bei allen Bots mit
-      Bindestrich im Namen (etwa Frau Berger, Onkel Rudi, alle der Stufe 8) die falschen Gegner
-      gegeneinander spielen lassen; diese Zahlen galten nicht. Behoben, die 25 Bots werden neu
-      gemessen. Frau Berger (Stufe 4) und Frau Ortega (Stufe 5) sind deshalb wieder wie in
-      0.2.67, ihre Sprechblasen auch. Yara (Stufe 7) übersah Rückzüge und war damit deutlich zu
-      schwach (1 : 5); jetzt übersieht sie ruhige Züge, die Sprechblase sagt das. Prüfe in der
-      Gegnerwahl die Sprechblasen von Frau Ortega und Yara.
-
-### Neu in 0.2.76 (etwa 10 Minuten, mit Engine; vier Bots nachgebessert, Opus)
-
-- [ ] N293. **Greta, Paul, Hanna und Elif nachgebessert:** Diese vier lagen nach 0.2.74 noch
-      daneben und stimmen jetzt mit ihrer Stufe überein (je sechs Partien gegen die reine Stufe:
-      3 : 3, 3 : 3, 2,5 : 3,5, 2,5 : 3,5). Greta (Stufe 3) spielt die Eröffnung schwächer und
-      lässt Figuren stehen; vorher schlug sie sogar Stufe 4. Paul (Stufe 5) sieht statt seitlicher
-      Turmzüge jetzt nur Abzüge nicht und war vorher zu schwach. Elif (Stufe 6) übersieht statt
-      Rückzügen jetzt ruhige Züge. Prüfe in der Gegnerwahl, dass die Sprechblasen von Greta,
-      Paul und Elif das sagen, und spiele eine Partie gegen Greta.
+- [ ] N295. **Stil macht Bots nicht mehr stärker:** Die Messung aller 64 Bots fand einen Fehler:
+      Ein Bot mit Stil (aggressiv oder defensiv) wählte unter den Zügen nahe am besten Zug der
+      Engine, statt nahe an dem Zug, den seine Stufe spielen würde. Damit spielte er in den
+      Stufen 1 bis 4 fast so gut wie die Engine; Bots mit Stil holten gegen ihre eigene Stufe im
+      Mittel 4,8 von 6 Punkten, Bots ohne Stil 3,1. Jetzt wählt der Stil um den Zug der Stufe
+      herum, nach oben wie nach unten. Er ändert also den Charakter, kaum die Stärke; der
+      Hinweis beim Stil der eigenen Gegner sagt das jetzt so. Die Bots der Stufen 1 bis 5 sind
+      dafür wieder wie in 0.2.67 (die Zwischenversuche 0.2.74 bis 0.2.76 sind zurückgenommen).
+      Geändert bleiben nur vier Bots mit einem zu teuren blinden Fleck: Hanna (Stufe 5) mit
+      stärkerem Endspiel, Paul (5) sieht jetzt nur Abzüge nicht, Elif (6) und Yara (7) übersehen
+      ruhige Züge statt Rückzügen; ihre Sprechblasen sagen das. **So prüfen:** Spiele gegen
+      einen Bot der Stufe 2 mit Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv): Er
+      sollte jetzt etwa so viele Fehler machen wie die Stufe 2 selbst und deutlich mehr als
+      vorher. Die Messung aller Bots mit dem neuen Stil läuft noch; Ausreißer werden danach
+      einzeln angepasst.
 
 ### Neu in 0.2.75 (etwa 5 Minuten; diese Datei in der App, Opus)
 
@@ -61,23 +59,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.77“, dann 
       den Chat ein. „Nur offene Punkte zeigen“ blendet Abgehaktes aus. Haken und Notizen bleiben
       auf dem Handy, auch nach einem Update; Punkte, die in einer neuen Version fehlen (weil
       erledigt), fallen aus dem Text heraus.
-
-### Neu in 0.2.74 (etwa 15 Minuten, mit Engine; 64 Bots nachgemessen, Fable und Opus)
-
-- [ ] N292. **Ausreißer unter den Bots angepasst:** Jeder der 64 Bots spielte sechs Partien gegen
-      die reine Stufe seiner Nummer. Elf waren zu stark (meist 6 : 0, etwa Leon, Ayşe, Sophie,
-      Jonas, Zoë), drei zu schwach (Hanna, Paul, Elif). Muster: Wer nur billige
-      Fehlerarten in der Liste hat („ungenau“, „Königsschild“, „Bauernvorstoß“), spielt stärker
-      als seine Stufe; ein häufiger blinder Fleck wie „Rückzug“ macht ab Stufe 5 deutlich schwächer. Die Ausreißer haben jetzt eine Phasenstufe weniger oder mehr und, wo das
-      nicht reichte, eine teure Fehlerart (Figur hängen lassen, Drohung übersehen) in der Liste;
-      ihre Beschreibungen in der Sprechblase nennen das. Spiele eine Partie gegen Zoë (Stufe 4)
-      und eine gegen Jonas (Stufe 3): Sie sollten sich wie ihre Stufe anfühlen, nicht mehr eine
-      Klasse stärker. Leon (Stufe 1), Ayşe und Sophie (Stufe 2) bleiben die Stärksten ihrer
-      Stufe: Sie schlagen die reine Stufe klar, verlieren aber gegen die nächsthöhere (Leon 0 : 6,
-      Ayşe und Sophie 2 : 4). Weil zwei benachbarte Stufen 10 : 0 auseinanderliegen, ist das kein
-      Fehler, sondern Streuung innerhalb der Stufe wie bei chess.com; sie bleiben so (Widerspruch
-      genügt). Die Stufen 7 und 8 werden noch gemessen; dort folgt höchstens eine kleine
-      Anpassung einzelner Bots.
 
 ### Neu in 0.2.73 (etwa 2 Minuten; Lizenzen, Opus)
 

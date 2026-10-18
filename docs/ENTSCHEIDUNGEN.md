@@ -2460,67 +2460,51 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
   Abschnitts.
 
-## Ergebnis der Messung aller 64 Bots und Anpassung der Ausreißer (18.10.2026, Fable und Opus, Zweig `werkzeuge-textarbeit`, Versionen 0.2.74 bis 0.2.77)
+## Messung aller 64 Bots, Stil-Fehler gefunden und behoben (18.10.2026, Fable und Opus, Zweig `werkzeuge-textarbeit`, Versionen 0.2.74 bis 0.2.78)
 
-Jeder Bot spielte sechs Partien gegen die reine Stufe seiner Nummer (`npm run messen:stufen --
-3@jonas-3 …`, Ergebnisse nur lokal in `buch/arbeit/stufenmessung/`). Erwartung: etwa 3 : 3;
-unter 1,5 Punkten „zu schwach“, über 4,5 „zu stark“. Sechs Partien sind wenig; ein Ergebnis
-gilt erst, wenn es sich in einer zweiten Messung bestätigt. Die Stufen 1 bis 6 sind gemessen
-(Matteo und Ben noch offen), die Stufen 7 und 8 laufen noch (15 bis 25 Minuten je Paarung).
+Jeder Bot spielt sechs Partien gegen die reine Stufe seiner Nummer (`npm run messen:stufen --
+3@jonas-3 …`, Ergebnisse nur lokal in `buch/arbeit/stufenmessung/`), dazu bei Bedarf gegen die
+nächsthöhere Stufe (`3@jonas-4`). Zwei benachbarte reine Stufen trennen 10 : 0 (Messung 0.2.52,
+außer 3 gegen 4 mit 6,5 : 3,5); eine Stufe ist also ein großer Schritt. Maßstab deshalb: Ein Bot
+soll gegen seine Stufe mindestens 1,5 von 6 Punkten holen und gegen die nächsthöhere verlieren.
 
-**Messfehler bis 0.2.76:** Das Messwerkzeug trennte eine Paarung am ersten Bindestrich. Bei den
-25 Kennungen mit Bindestrich (Oma Gerda, Opa Hans, Onkel Rudi, Herr Lehmann, Herr Nowak, Frau
-Berger, Herr Schmitt, Frau Ortega, Herr Weber, Frau Kaya, Herr Fischer, Frau Lind, Doktor Berg,
-Trainer Koch, Herr Brandt, Frau Stein, Frau Doktor Ahl und alle acht der Stufe 8) spielte also
-etwa „4@frau“ gegen „berger“, zwei unbekannte Stufen gegeneinander; diese Zahlen gelten nicht.
-Aufgefallen ist es, weil Bots der Stufen 7 und 8 absichtliche Fehler machten, die es dort nicht
-gibt. Behoben in 0.2.77 (Trennung am letzten Bindestrich, `stufen.messung.ts` und
-`messe-stufen.mjs`). Die Anpassungen von Frau Berger und Frau Ortega beruhten auf den ungültigen
-Zahlen und sind zurückgenommen. Die 25 Bots werden neu gemessen.
+**Verlauf:**
 
-**Maßstab:** Zwei benachbarte reine Stufen trennen 10 : 0 (Messung 0.2.52, außer 3 gegen 4 mit
-6,5 : 3,5). Eine Stufe ist also ein großer Schritt. Ein Bot, der seine Stufe 6 : 0 schlägt,
-ist deshalb nicht gleich eine Stufe stärker: Leon verliert gegen die reine Stufe 2 mit 0 : 6,
-Ayşe und Sophie holen gegen Stufe 3 je 2 : 4. Sie liegen am oberen Rand ihrer Stufe, zwischen
-ihr und der nächsten. Das ist gewollt (auch bei chess.com streuen die Bots einer Gruppe), sie
-bleiben so. Greta dagegen schlug in ihrer ersten Fassung sogar Stufe 4 mit 5 : 1 und wurde
-weiter angepasst.
+1. Erste Messung (0.2.73 und 0.2.74): Zwölf Bots der Stufen 1 bis 5 schlugen ihre Stufe klar,
+   vier verloren klar. Versuch, die starken über eine Phasenstufe weniger und teurere Fehlerarten
+   zu bremsen: half bei manchen, bei anderen (Leon, Ayşe, Sophie, Greta) gar nicht.
+2. Messfehler (behoben in 0.2.77): Das Messwerkzeug trennte eine Paarung am ersten Bindestrich.
+   Bei den 25 Kennungen mit Bindestrich spielte also etwa „4@frau“ gegen „berger“, zwei
+   unbekannte Stufen; diese Zahlen galten nicht. Jetzt Trennung am letzten Bindestrich
+   (`stufen.messung.ts`, `messe-stufen.mjs`).
+3. **Ursache** (behoben in 0.2.78): Alle Bots, die zu stark waren, haben einen Stil ungleich 0.
+   Gültige Messungen der Stufen 1 bis 4: Stil 0 im Mittel 3,1 von 6 Punkten gegen die eigene
+   Stufe (9 Bots), Stil ungleich 0 im Mittel 4,8 (23 Bots). Der Stil wählte unter den Zügen, die
+   höchstens 0,3 je Stilstufe hinter dem **besten Zug der Engine** liegen. In den Stufen 1 bis 3
+   ersetzte das die gewichtete, absichtlich schwächere Zugwahl ganz; ab Stufe 4 ersetzte es den
+   Zug, den die Engine mit Skill Level gewählt hätte. Ein Bot mit Stil spielte damit fast immer
+   nahe am besten Zug. Jetzt wählt der Stil um den **Zug der Stufe** herum (`stilwahl` mit Bezug,
+   `engine/stil.ts`, `engine/zugwahl.ts`), nach oben wie nach unten, in den Stufen 1 bis 3 nur
+   unter den Kandidaten der Stufe. Damit ändert er den Charakter, aber im Mittel kaum die Stärke.
+   Der Hinweis zum Stil in der App ist angepasst. S13 (Toleranz 0,3) bleibt.
 
-**Muster:** Zu stark waren Bots, deren Fehlerliste nur billige Fehlerarten enthält („ungenau“,
-„taktikUebersehen“, „koenigsschild“, „bauernvorstoss“, „koenigPassiv“, „tempoverlust“): Die
-Fehlerliste bestimmt seit 0.2.68 die Art, nicht die Menge, und billige Fehler kosten weniger als
-die Mischung der reinen Stufe. Bots mit „figurHaengen“ oder „drohungIgnoriert“ stimmten. Eine
-teure Art hilft aber nur, wenn ihre Gelegenheit oft kommt (Greta ließ in sechs Partien nur
-viermal eine Figur hängen). Der blinde Fleck „rueckzug“ ist ab Stufe 5 teuer (Hanna, Elif: über
-80 blinde Züge in sechs Partien), ein häufiger Fleck wie „turm“ kostet auf Stufe 5 ebenfalls viel.
+**Folgen für die Bots:** Die Anpassungen gegen „zu stark“ aus Schritt 1 bekämpften nur die
+Folgen dieses Fehlers und sind zurückgenommen (Stufen 1 bis 5 wieder wie in 0.2.67, auch die
+Sprechblasen). Behalten sind die Korrekturen der zu schwachen Bots, deren Ursache teure blinde
+Flecken waren: „rueckzug“ ab Stufe 5 (Hanna, Elif, Yara: 80 bis 90 blinde Züge in sechs
+Partien) und „turm“ (Paul).
 
-| Stufe | Bot    | vorher    | Änderung                                                                                                | nachher                    |
-| ----- | ------ | --------- | ------------------------------------------------------------------------------------------------------- | -------------------------- |
-| 1     | Leon   | 6 : 0     | Mittelspiel 2 → 1, „figurHaengen“ statt „ungenau“                                                       | 6 : 0, gegen Stufe 2 0 : 6 |
-| 2     | Ayşe   | 6 : 0     | Mittelspiel 3 → 2, „figurHaengen“ statt „koenigsschild“                                                 | 6 : 0, gegen Stufe 3 2 : 4 |
-| 2     | Sophie | 6 : 0     | Eröffnung 3 → 2, „figurHaengen“ statt „ungenau“                                                         | 5 : 1, gegen Stufe 3 2 : 4 |
-| 2     | Pit    | 5 : 1     | „figurHaengen“ statt „falscherAbtausch“                                                                 | 3,5 : 2,5                  |
-| 3     | Greta  | 5 : 1     | Stufen 3 · 4 · 3 → 2 · 3 · 3, „drohungIgnoriert“ und „figurHaengen“ statt „koenigsschild“ und „ungenau“ | 3 : 3                      |
-| 3     | Jonas  | 6 : 0     | Mittelspiel 3 → 2                                                                                       | 4 : 2                      |
-| 3     | Omar   | 5 : 1     | „figurHaengen“ statt „koenigsschild“                                                                    | 3 : 3                      |
-| 3     | Tobias | 4,5 : 1,5 | Eröffnung 4 → 3                                                                                         | 4 : 2                      |
-| 4     | Timo   | 4,5 : 1,5 | „drohungIgnoriert“ statt „bauernvorstoss“, Eröffnung 5 → 4                                              | 3 : 3                      |
-| 4     | Zoë    | 6 : 0     | Mittelspiel 4 → 3                                                                                       | 3,5 : 2,5                  |
-| 5     | Lea    | 5,5 : 0,5 | Mittelspiel 6 → 5                                                                                       | 3,5 : 2,5                  |
-| 5     | Hanna  | 1,5 : 4,5 | Endspiel 4 → 5 (Mittelspiel 6 schlug auf 5 : 1 um)                                                      | 2,5 : 3,5                  |
-| 5     | Paul   | 1 : 5     | Mittelspiel 4 → 5, Flecken „zwischenzug“ und „turm“ durch „abzug“ ersetzt                               | 3 : 3                      |
-| 6     | Elif   | 1 : 5     | Mittelspiel 6 → 7, Fleck „ruhig“ statt „rueckzug“                                                       | 2,5 : 3,5                  |
+| Stufe | Bot   | vorher | Änderung                                                   | nachher (alter Stil) |
+| ----- | ----- | ------ | ---------------------------------------------------------- | -------------------- |
+| 5     | Hanna | 1,5    | Endspiel 4 → 5                                             | 2,5                  |
+| 5     | Paul  | 1      | Mittelspiel 4 → 5, Flecken „zwischenzug“, „turm“ → „abzug“ | 3                    |
+| 6     | Elif  | 1      | Mittelspiel 6 → 7, Fleck „ruhig“ statt „rueckzug“          | 2,5                  |
+| 7     | Yara  | 1      | Fleck „ruhig“ statt „rueckzug“                             | noch nicht gemessen  |
 
-Bei Leon, Ayşe und Sophie änderte keiner der beiden Hebel allein etwas; sie behalten beide, weil
-genau diese Fassung gegen die nächsthöhere Stufe gemessen ist. Yara (Stufe 7, 1 : 5, 91 blinde
-Rückzüge in sechs Partien) sieht jetzt ruhige Züge nicht statt Rückzügen, wie Elif.
-
-Gültig gemessen, unverändert und im Rahmen (Punkte des Bots): Stufe 1 Lotta 3, Paula 3, Max 3,
-Finn 4, Mia 3, Emil 4; Stufe 2 Frieda 4, Karl 4; Stufe 3 Selin 2, Nina 3, Ida 3,5; Stufe 4
-Benno 3, Lukas 4, Amira 3,5, Jan 2; Stufe 5 Kurt 2, Nils 3; Stufe 6 Lena 5 (Grenzfall, bleibt),
-Sara 2,5, Viktor 2, Matteo 3,5, Ben 2,5; Stufe 7 Noah 3,5, Ravi 2,5. Die Beschreibungen der
-geänderten Bots in `de.json` nennen die neue Fehlerart oder den neuen Fleck. Die Stil-Toleranz
-bleibt bei 0,3 (S13). Die Ergebnisse der 25 neu gemessenen Bots werden hier nachgetragen.
+Gültig gemessen und vom Stil-Fehler nicht betroffen (Stil 0, ohne Bindestrich; Punkte des Bots
+gegen seine Stufe): Lotta 3, Mia 3, Karl 4, Selin 2, Nina 3, Ida 3,5, Benno 3, Amira 3,5, Kurt 2,
+Lena 5 (Grenzfall), Matteo 3,5. Die übrigen 53 Bots werden mit dem korrigierten Stil neu
+gemessen; das Ergebnis wird hier nachgetragen.
 
 ## Spielbewertung an chess.com geeicht, Urteil je Phase, Taktik und Strategie (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.72)
 

@@ -23,7 +23,7 @@ const STUFE_5: readonly Gegner[] = [
   gegner("nils", "Nils", [5, 5, 5], [], ["ruhig", "abzug"], 2),
   gegner("hanna", "Hanna", [6, 5, 5], [], ["rueckzug"], 1),
   gegner("herr-weber", "Herr Weber", [4, 5, 6], [], ["dame", "diagonale"], -2),
-  gegner("lea", "Lea", [5, 5, 4], [], ["grundreihe", "bauer"], 1),
+  gegner("lea", "Lea", [5, 6, 4], [], ["grundreihe", "bauer"], 1),
   gegner("paul", "Paul", [5, 5, 6], [], ["abzug"], 0),
   gegner("frau-kaya", "Frau Kaya", [5, 5, 5], [], ["roentgen", "springer"], -1),
 ];

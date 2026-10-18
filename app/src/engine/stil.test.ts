@@ -37,4 +37,16 @@ describe("Spielstil", () => {
     expect(stilwahl(ITALIENISCH, [v(1, -0.3, "g8f6"), v(2, 0.1, "d8h4")], 1)).toBe("g8f6");
     expect(stilwahl(ITALIENISCH, [], 2)).toBeNull();
   });
+
+  it("Bezug ist der Zug der Stufe (0.2.78): der Stil hebt einen schwachen Zug nicht an", () => {
+    // Werte aus Sicht von Weiß, Schwarz am Zug: Sf6 bester, Dh4 aggressiv, a6 einen Bauern schwächer.
+    const kandidaten = [v(1, -0.3, "g8f6"), v(2, 0, "d8h4"), v(3, 1.0, "a7a6")];
+    expect(stilwahl(ITALIENISCH, kandidaten, 2, "a7a6")).toBe("a7a6");
+    expect(stilwahl(ITALIENISCH, kandidaten, 2, "g8f6")).toBe("d8h4");
+    // Nach oben wie nach unten: Bezug a6, Dh4 nur 0,2 besser → Dh4.
+    const nah = [v(1, -0.3, "g8f6"), v(2, 0.2, "d8h4"), v(3, 0.4, "a7a6")];
+    expect(stilwahl(ITALIENISCH, nah, 2, "a7a6")).toBe("d8h4");
+    // Bezugszug nicht unter den Kandidaten: er bleibt.
+    expect(stilwahl(ITALIENISCH, kandidaten, 2, "h7h6")).toBe("h7h6");
+  });
 });

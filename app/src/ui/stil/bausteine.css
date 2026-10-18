@@ -217,10 +217,11 @@
 }
 
 .unterabschnitt > summary {
-  min-height: var(--tippflaeche);
-  display: flex;
-  align-items: center;
-  gap: 6px;
+  /* Als Listenpunkt mit dem Dreieck ▶ wie die übrigen Aufklappzeilen (DS11): Mit display: flex
+     fehlte das Dreieck, „Absichtliche Fehler der Engine“ sah aus wie eine Überschrift, und der
+     Zusatz in Klammern stand als eigene Spalte daneben. */
+  display: list-item;
+  padding-block: 10px;
   font-weight: 600;
   cursor: pointer;
 }

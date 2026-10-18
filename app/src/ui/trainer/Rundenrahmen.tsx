@@ -7,6 +7,7 @@
  * Abhängigkeiten: useRunde.ts, i18n.
  */
 import { t } from "../../i18n/sprache";
+import { Fortschrittsbalken } from "../komponenten/Fortschrittsbalken";
 import type { Runde } from "./useRunde";
 
 /** Rückmeldung zu einer Antwort, grün oder rot. */
@@ -74,6 +75,11 @@ export function Rundenrahmen({
           richtig: runde.richtig,
         })}
       </p>
+      {/* Wie weit die Runde ist, auf einen Blick (DS6); der Satz darüber bleibt für Vorleser. */}
+      <Fortschrittsbalken
+        anteil={{ erreicht: runde.index, gesamt: runde.anzahl }}
+        beschriftung={t("trainer.rundenfortschritt")}
+      />
       {children}
       {runde.ergebnis !== null && (
         <div className="knopfzeile">

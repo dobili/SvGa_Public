@@ -608,6 +608,7 @@
   "trainer.stand": "Aufgabe {nummer} von {anzahl} · {richtig} richtig",
   "trainer.weiter": "Weiter",
   "trainer.auswerten": "Runde auswerten",
+  "trainer.rundenfortschritt": "Fortschritt der Runde",
   "trainer.pruefen": "Prüfen",
   "trainer.rundeFertig": "Runde geschafft",
   "trainer.ergebnis": "{richtig} von {anzahl} Aufgaben richtig.",

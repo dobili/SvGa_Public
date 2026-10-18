@@ -238,7 +238,7 @@ export function Trainer({ kennung }: { kennung: TrainerKennung }) {
   return (
     <div className="bildschirm bildschirm-trainer" data-testid="trainer">
       <Kopfzeile titel={t(`trainer.${kennung}.name`)} zurueckText={t("trainer.zurueck")} />
-      <p className="hinweis">{t(`trainer.${kennung}.ablauf`)}</p>
+      <p className="hinweis trainer-ablauf">{t(`trainer.${kennung}.ablauf`)}</p>
       {eigener ? eigener() : <MitBuchstellungen kennung={kennung} />}
     </div>
   );

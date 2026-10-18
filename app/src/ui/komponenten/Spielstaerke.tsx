@@ -10,8 +10,8 @@
  * spiel/genauigkeit.ts; hier nur die Tabellen mit zwei Spalten, der Leser zuerst.
  * Seit 0.2.83 (Eichung): Genauigkeit im gewählten Modus (Einstellungen), Spielstärke als Mitte mit
  * Spanne, die Werte für chess.com und Lichess hinter dem Fragezeichen; das Urteilswort je Phase an
- * der inneren Genauigkeit. Seit 0.2.84 (S23) über der Tabelle die feste Zahl des Gegners neben
- * seiner Leistung in dieser Partie („Leon (etwa 650) hat in dieser Partie wie etwa 800 gespielt“).
+ * der inneren Genauigkeit. Seit 0.2.85 (S23) über der Tabelle die feste Zahl des Gegners neben
+ * seiner Leistung in dieser Partie („Leon (etwa 1300) hat in dieser Partie wie etwa 1450 gespielt“).
  * Abhängigkeiten: engine/botstaerke.ts, staerkeangabe.ts, spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/taktik.ts, app/einstellungen.ts,
  * InfoKnopf, i18n.
  */
@@ -75,7 +75,7 @@ function komma(zahl: number): string {
 /**
  * Feste Zahl des Gegners und seine Leistung in dieser Partie; null gegen einen Menschen oder ohne
  * Schätzung (zu wenige Züge).
- * Beispiel: Leon (etwa 650), Engine spielte mit 82 % → „Leon (etwa 650) hat in dieser Partie wie
+ * Beispiel: Leon (etwa 1300), Engine spielte mit 82 % → „Leon (etwa 1300) hat in dieser Partie wie
  * etwa 1500 gespielt.“
  */
 function gegnerzeile(partie: Partie, engine: Seitenbilanz): string | null {

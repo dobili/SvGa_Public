@@ -7,7 +7,7 @@
  * Siegen steigt und mit Niederlagen fällt, wie eine Elo-Zahl im Verein: Die erste gewertete
  * Partie setzt die Wertung auf die Schätzung der Engine für den Leser; jede weitere zählt wie
  * eine Partie gegen einen Spieler mit der festen Zahl des Gegners aus der Gegnerwahl
- * (engine/botstaerke.ts, seit 0.2.84, Rückfrage S23; vorher die Stärke, mit der die Engine in
+ * (engine/botstaerke.ts, seit 0.2.85, Rückfrage S23; vorher die Stärke, mit der die Engine in
  * dieser Partie gespielt hat, die um etwa ±400 streute und nach oben bei etwa 1750 endete). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
  * beim Weltschachbund für Spieler unter 2400). Jeder Punkt des Verlaufs merkt sich Zeit, Gegner
  * und Ergebnis, damit die Kurve in den Einstellungen nach Partien oder nach Zeitraum zeigen kann;

@@ -87,7 +87,7 @@ describe("Wertung", () => {
     // Fehlerfrei: Mittelspiel (ab Zug 5, Schwarz entwickelt) geschätzt, Endspiel nie erreicht.
     expect(verlauf[0]?.phasen.mittelspiel).toBe(schaetzung);
     expect(verlauf[0]?.phasen.endspiel).toBeNull();
-    // Zweite Partie gewonnen; Gegnerwertung ist seit 0.2.84 die feste Zahl der Stufe 3.
+    // Zweite Partie gewonnen; Gegnerwertung ist seit 0.2.85 die feste Zahl der Stufe 3.
     verlauf = mitGewerteterPartie(verlauf, eintrag("2", "white"));
     const stufe3 = Math.round(staerkeDerStufe(3));
     expect(verlauf[1]?.gegner).toBe(stufe3);

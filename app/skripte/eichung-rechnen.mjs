@@ -11,7 +11,7 @@
 //   node skripte/eichung-rechnen.mjs                     # alle Partien, vier Läufe, höchstens 110 Minuten
 //   node skripte/eichung-rechnen.mjs --parallel 2 --minuten 30
 //   node skripte/eichung-rechnen.mjs --ordner ../buch/arbeit/botanker --quellen stufen
-//     (seit 0.2.84: Partien der Bot-Messung, Datei stufen.jsonl, für die Elo-Zahl der Stufen)
+//     (seit 0.2.85: Partien der Bot-Messung, Datei stufen.jsonl, für die Elo-Zahl der Stufen)
 //
 // Fortsetzbar: Jeder Lauf k schreibt nach buch/arbeit/eichung/bewertet-<k>.jsonl; schon bewertete
 // Partien werden übersprungen. Die Rohdaten bleiben lokal (nie ins Repository).

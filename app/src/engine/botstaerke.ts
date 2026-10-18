@@ -36,7 +36,7 @@ export type Staerkeangabe =
   | { readonly art: "ueber"; readonly wert: number }
   | { readonly art: "unter"; readonly wert: number };
 
-/** Die Zahl einer reinen Stufe (gemessen). Beispiel: Stufe 3 → etwa 1000. */
+/** Die Zahl einer reinen Stufe (gemessen). Beispiel: Stufe 3 → 1911 (angezeigt „etwa 1900“). */
 export function staerkeDerStufe(nummer: Stufennummer): number {
   return STUFEN_STAERKE[nummer];
 }
@@ -64,7 +64,7 @@ export function staerkeAusStufen(stufen: Readonly<Record<Phase, Stufennummer>>):
 /**
  * Die feste Gegnerwertung einer Partie gegen die Engine: der gemessene Bot, sonst die Schätzung
  * aus den Stufen je Phase.
- * Beispiel: Bot „ayse“ → ihre gemessene Zahl; eigene Stufen 5 · 5 · 5 → die Zahl der Stufe 5.
+ * Beispiel: Bot „ayse“ → 1553; eigene Stufen 5 · 5 · 5 → die Zahl der Stufe 5.
  */
 export function gegnerstaerke(einstellung: {
   readonly bot: string | null;
@@ -92,7 +92,7 @@ function stufeVon(stufen: Readonly<Record<Phase, Stufennummer>>): number {
  * Der Bereich einer Stufe: kleinste und größte Zahl ihrer acht vorgefertigten Bots (ohne
  * gemessene Bots die Zahl der reinen Stufe für beide Enden). Benachbarte Stufen dürfen sich
  * überschneiden, denn die Bots einer Stufe streuen.
- * Beispiel: Stufe 3 mit Bots von 930 bis 1260 → { von: 930, bis: 1260 }.
+ * Beispiel: Stufe 1 mit Bots von 1042 (Oma Gerda) bis 1301 (Leon) → { von: 1042, bis: 1301 }.
  */
 export function bereichDerStufe(nummer: Stufennummer): {
   readonly von: number;

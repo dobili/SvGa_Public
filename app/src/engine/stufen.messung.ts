@@ -62,7 +62,7 @@ interface Partiebericht {
   readonly dauerMs: number;
   readonly statistik: Record<"weiss" | "schwarz", Seitenstatistik>;
   /**
-   * Alle Züge ab der Grundstellung in SAN, einschließlich der zwei Eröffnungszüge (seit 0.2.84):
+   * Alle Züge ab der Grundstellung in SAN, einschließlich der zwei Eröffnungszüge (seit 0.2.85):
    * Damit lassen sich die Partien später in Tiefe 18 nachrechnen und die Elo-Zahl der Stufen an
    * der Skala von „Deine Spielstärke“ verankern (skripte/eichung-rechnen.mjs, --quellen).
    */

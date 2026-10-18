@@ -19,8 +19,8 @@ export function staerketext(wert: number): string {
 }
 
 /**
- * Der Bereich einer Stufe als Text. Beispiel: 930 bis 1260 → „etwa 950 bis 1250“; 1900 bis
- * 2650 → „etwa 1900 bis über 2200“; gleiche Enden → „etwa 1100“.
+ * Der Bereich einer Stufe als Text. Beispiel: 1042 bis 1301 → „etwa 1050 bis 1300“; 2200 bis
+ * 2409 → „etwa 2200 bis über 2200“; gleiche Enden → „etwa 1100“.
  */
 export function bereichstext(nummer: Stufennummer): string {
   const { von, bis } = bereichDerStufe(nummer);

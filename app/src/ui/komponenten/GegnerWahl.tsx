@@ -12,7 +12,7 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026) drei Kategorien als Kacheln mit Symbol: eigene
  * Stufe, vorgefertigte Bots, eigene Bots. Die gewählte zeigt direkt darunter nur ihren Inhalt
  * (Regler und Fehlerarten, Porträtgitter, eigene Bots mit Editor); der Rest bleibt verborgen.
- * Seit 0.2.84 (Rückfrage S23) steht an jeder Stufe, jeder Kachel und in der Sprechblase die
+ * Seit 0.2.85 (Rückfrage S23) steht an jeder Stufe, jeder Kachel und in der Sprechblase die
  * Elo-Zahl auf der Skala von „Deine Spielstärke“ (engine/botstaerke.ts), mit Erklärung hinter
  * dem Fragezeichen; eigene Stufen und eigene Bots mit dem Zusatz „geschätzt“.
  * Abhängigkeiten: engine/gegner.ts, engine/botstaerke.ts, engine/stufen.ts, spiel/partie.ts
@@ -59,7 +59,7 @@ function Kachel({
   kinder,
 }: {
   name: string;
-  /** „etwa 650“ (0.2.84); fehlt bei Kacheln ohne Messung. */
+  /** „etwa 1300“ (0.2.85); fehlt bei Kacheln ohne Messung. */
   staerke?: string;
   gewaehlt: boolean;
   beiWahl: () => void;
@@ -81,7 +81,7 @@ function Kachel({
 }
 
 /**
- * Die Zeile mit der Zahl: „etwa 950 (Stufe 2)“ für vorgefertigte Bots, „etwa 1150 (geschätzt)“
+ * Die Zeile mit der Zahl: „etwa 1550 (Stufe 2)“ für vorgefertigte Bots, „etwa 1700 (geschätzt)“
  * für eigene Bots, „Deine Einstellung 3 · 4 · 3 · etwa 1250 (geschätzt)“ für eigene Stufen.
  */
 function staerkezeile(
@@ -241,7 +241,7 @@ export function GegnerWahl({
 }: {
   gegner: Gegnerart;
   bot: string | null;
-  /** Die Stufen je Phase der Regler (für die geschätzte Zahl der eigenen Stufe, 0.2.84). */
+  /** Die Stufen je Phase der Regler (für die geschätzte Zahl der eigenen Stufe, 0.2.85). */
   stufen: Stufenwahl;
   /** Eigene Gegner des Lesers (0.2.42). */
   eigene: readonly EigenerGegner[];

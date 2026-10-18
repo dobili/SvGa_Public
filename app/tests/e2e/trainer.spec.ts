@@ -249,3 +249,29 @@ test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", asy
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
+
+test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners kommt wieder", async ({
+  page,
+}) => {
+  await page.clock.install();
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "struktur");
+  await page.getByTestId("struktur-wahl").getByRole("button", { name: "Runde starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  // Ohne angetippte Felder ist die Leitfrage falsch beantwortet, die Aufgabe also nicht gelöst.
+  const dreiSchritte = (await runde.textContent())?.includes("Schritt 1 von 3") ?? false;
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  if (dreiSchritte) await runde.getByRole("button", { name: "Prüfen" }).click();
+  await runde.locator(".plan-satz").first().click();
+  await expect(runde).toContainText("Struktur:");
+  await page.clock.fastForward("48:00:00");
+  const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
+  await leiste.getByRole("button", { name: "Buch" }).click();
+  await leiste.getByRole("button", { name: "Training" }).click();
+  await page
+    .getByTestId("faellig")
+    .getByRole("button", { name: /Strukturerkenner: 1 fällig/ })
+    .click();
+  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
+});

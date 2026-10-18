@@ -54,6 +54,15 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
       „Daten sichern (Datei)“ steht auf dem Handy „Sicherung teilen (Mail, Dateien)“. Er öffnet
       das Teilen-Menü; schick dir die Datei per Mail. Am Rechner fehlt der Knopf, wenn der
       Browser keine Dateien teilen kann.
+- [ ] N406. **Wiederholung auch im Strukturerkenner und Endspieltrainer:** Löse im
+      Strukturerkenner ein Skelett falsch (oder schaffe im Endspieltrainer eine Stellung nicht).
+      Am nächsten Tag steht im Bereich Training unter „Fällige Wiederholungen“
+      „Strukturerkenner: 1 fällig“ (bzw. Endspieltrainer), und im Trainer startet „Wiederholen“
+      genau diese Aufgabe, wie bisher bei Taktik und „Falle oder Köder“.
+- [ ] N407. **Zug erraten merkt sich die Trefferzahl:** Spiele eine Partie bei „Zug erraten“
+      ganz durch. Beim nächsten Mal steht unter „Getroffen: …“ die Zeile „Beim letzten Mal
+      (Datum): 7 von 12 getroffen.“ zum Vergleich. Der Verlauf steckt in der Datensicherung,
+      ebenso jetzt der Stand des 30-Minuten-Plans (welcher Tag als Nächstes dran ist).
 - [ ] N405. **Erst selbst denken auch vor Werkzeugen (dein Wunsch vom 18.10.2026):**
       Einstellungen › Reiter „Training“ › „Auch vor Werkzeugen und Engine“ auf „an“. Öffne
       Abb. 1.26: Statt Werkzeugleiste und Engine steht die Karte „Erst selbst denken“ mit „Weiß

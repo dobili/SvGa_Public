@@ -660,6 +660,7 @@
   "zugerraten.getroffen": "Getroffen!",
   "zugerraten.partiezug": "In der Partie geschah {zug}.",
   "zugerraten.stand": "Getroffen: {treffer} von {versuche}",
+  "zugerraten.frueher": "Beim letzten Mal ({datum}): {treffer} von {versuche} getroffen.",
   "zugerraten.vergleich.rechnet": "Die Engine vergleicht deinen Zug mit dem Partiezug …",
   "zugerraten.vergleich.gleichwertig": "Dein Zug ist laut Engine etwa gleich gut wie der Partiezug.",
   "zugerraten.vergleich.schwaecher": "Dein Zug ist laut Engine um etwa {unterschied} Bauern schwächer als der Partiezug.",

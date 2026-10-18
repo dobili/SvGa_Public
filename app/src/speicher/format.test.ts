@@ -101,6 +101,8 @@ describe("Format 1", () => {
         spiel: LEERER_SPIELSTAND,
         karten: {},
         fehler: [],
+        zugErraten: {},
+        planstand: null,
       },
       vonVersion: 1,
     });

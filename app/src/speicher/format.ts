@@ -26,6 +26,7 @@ import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
 import { LEERER_SPIELSTAND, spielstandAus, type Spielstand } from "./partien";
+import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
 export const SCHEMA_VERSION = 4;
@@ -144,6 +145,10 @@ export interface Nutzerdaten {
   readonly karten: Karten;
   /** Fehlerdatenbank des Lesers (ab Format 4, Kapitel 12). */
   readonly fehler: readonly Fehlereintrag[];
+  /** Seit 0.2.90: Trefferzahlen bei „Zug erraten“ je Partie (speicher/trainerverlauf.ts). */
+  readonly zugErraten: Rateverlauf;
+  /** Seit 0.2.90: Stand des 30-Minuten-Plans als JSON, damit er in der Sicherung steckt. */
+  readonly planstand: string | null;
 }
 
 /** Ergebnis einer Prüfung: umgewandelte Daten oder ein Grund für den Leser. */
@@ -168,6 +173,8 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     spiel: LEERER_SPIELSTAND,
     karten: {},
     fehler: [],
+    zugErraten: {},
+    planstand: null,
   };
 }
 
@@ -289,6 +296,8 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     spiel: spielstandAus(roh.spiel),
     karten: kartenAus(roh.karten),
     fehler: fehlerAus(roh.fehler),
+    zugErraten: rateverlaufAus(roh.zugErraten),
+    planstand: planstandTextAus(roh.planstand),
   };
 }
 

@@ -4,16 +4,26 @@
  *
  * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38 („Elo-Schätzung für beide
  * Seiten, Anzahl der !, ?, ?! Züge, Genauigkeit wie bei chess.com“), seit 0.2.40 dazu je Phase
- * (Eröffnung, Mittelspiel, Endspiel) und die Züge nach Klasse wie bei chess.com. Die Rechnung
- * steht in spiel/genauigkeit.ts; hier nur die Tabellen mit zwei Spalten, der Leser zuerst.
- * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, i18n.
+ * (Eröffnung, Mittelspiel, Endspiel) und die Züge nach Klasse wie bei chess.com; seit 0.2.72 je
+ * Phase ein Urteilswort als farbige Marke (wie die Symbole je Phase bei chess.com) und das
+ * Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Die Rechnung steht in
+ * spiel/genauigkeit.ts; hier nur die Tabellen mit zwei Spalten, der Leser zuerst.
+ * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/taktik.ts, i18n.
  */
 import type { Color } from "chessops/types";
+import { Fragment, useMemo } from "react";
 import { t } from "../../i18n/sprache";
 import type { Zugklasse, Zugurteil } from "../../spiel/auswertung";
-import { spielstaerke, spielstaerkeJePhase, type Seitenbilanz } from "../../spiel/genauigkeit";
+import {
+  phasenurteil,
+  spielstaerke,
+  spielstaerkeImMittelspiel,
+  spielstaerkeJePhase,
+  type Seitenbilanz,
+} from "../../spiel/genauigkeit";
 import { stellungen, type Partie } from "../../spiel/partie";
 import { PHASEN, type Phase } from "../../spiel/phasen";
+import { ZUGARTEN, zugartJeStellung } from "../../spiel/taktik";
 import { sanZuUci } from "../../spiel/zuege";
 
 /** Reihenfolge der Klassen in der Tabelle, wie bei chess.com von oben nach unten. */
@@ -63,11 +73,21 @@ export function Spielstaerke({
   beste: readonly string[];
   phasen: readonly Phase[];
 }) {
+  const zugarten = useMemo(() => zugartJeStellung(partie), [partie]);
   if (urteile.length === 0) return null;
   const alle = stellungen(partie);
   const gespielte = partie.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
   const bilanz = spielstaerke(partie, werte, urteile, beste, gespielte);
   const jePhase = spielstaerkeJePhase(partie, werte, urteile, beste, gespielte, phasen);
+  const imMittelspiel = spielstaerkeImMittelspiel(
+    partie,
+    werte,
+    urteile,
+    beste,
+    gespielte,
+    phasen,
+    zugarten,
+  );
   const eigene: Color = partie.einstellung.eigeneFarbe;
   const andere: Color = eigene === "white" ? "black" : "white";
   const farbe = (seite: Color) => t(seite === "white" ? "farbe.w" : "farbe.b");
@@ -100,11 +120,23 @@ export function Spielstaerke({
         <tbody>
           <Zeilen zeilen={zeilen} eigene={bilanz[eigene]} andere={bilanz[andere]} />
           {PHASEN.map((ph) => (
-            <tr key={ph}>
-              <th scope="row">{t(`phase.name.${ph}`)}</th>
-              <td>{phasentext(jePhase[ph][eigene])}</td>
-              <td>{phasentext(jePhase[ph][andere])}</td>
-            </tr>
+            <Fragment key={ph}>
+              <Phasenzeile
+                name={t(`phase.name.${ph}`)}
+                eigene={jePhase[ph][eigene]}
+                andere={jePhase[ph][andere]}
+              />
+              {ph === "mittelspiel" &&
+                ZUGARTEN.map((art) => (
+                  <Phasenzeile
+                    key={art}
+                    name={t(`spielstaerke.zugart.${art}`)}
+                    unterzeile
+                    eigene={imMittelspiel[art][eigene]}
+                    andere={imMittelspiel[art][andere]}
+                  />
+                ))}
+            </Fragment>
           ))}
         </tbody>
       </table>
@@ -125,14 +157,47 @@ export function Spielstaerke({
   );
 }
 
-/** Eine Phase in einer Zelle: „82 % · etwa 1500 (12 Züge)“ oder „–“ ohne Züge. */
-function phasentext(b: Seitenbilanz): string {
-  if (b.zuege === 0) return "–";
-  return t("spielstaerke.phase", {
-    genauigkeit: genauigkeitstext(b),
-    staerke: staerketext(b),
-    zuege: b.zuege,
-  });
+/** Eine Zeile je Phase oder Zugart (Taktik, Strategie eingerückt), beide Seiten. */
+function Phasenzeile({
+  name,
+  unterzeile = false,
+  eigene,
+  andere,
+}: {
+  name: string;
+  unterzeile?: boolean;
+  eigene: Seitenbilanz;
+  andere: Seitenbilanz;
+}) {
+  return (
+    <tr className={unterzeile ? "spielstaerke-unterzeile" : undefined}>
+      <th scope="row">{name}</th>
+      <td>
+        <Phasenzelle b={eigene} />
+      </td>
+      <td>
+        <Phasenzelle b={andere} />
+      </td>
+    </tr>
+  );
+}
+
+/** Eine Phase in einer Zelle: Marke „Sehr gut“, dann „82 % · etwa 1500 (12 Züge)“; „–“ ohne Züge. */
+function Phasenzelle({ b }: { b: Seitenbilanz }) {
+  if (b.zuege === 0 || b.genauigkeit === null) return <>–</>;
+  const urteil = phasenurteil(b.genauigkeit);
+  return (
+    <>
+      <span className={`phasenurteil phasenurteil-${urteil}`}>
+        {t(`spielstaerke.urteil.${urteil}`)}
+      </span>
+      {t("spielstaerke.phase", {
+        genauigkeit: genauigkeitstext(b),
+        staerke: staerketext(b),
+        zuege: b.zuege,
+      })}
+    </>
+  );
 }
 
 /** Die Zeilen der Tabelle: je Kennzahl eine Zeile mit beiden Seiten. */

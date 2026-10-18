@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.76. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.77. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.76“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.77“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,18 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.76“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.77“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.77 (etwa 2 Minuten; Messfehler bei 25 Bots behoben, Opus)
+
+- [ ] N294. **Frau Berger, Frau Ortega und Yara:** Das Messwerkzeug hatte bei allen Bots mit
+      Bindestrich im Namen (etwa Frau Berger, Onkel Rudi, alle der Stufe 8) die falschen Gegner
+      gegeneinander spielen lassen; diese Zahlen galten nicht. Behoben, die 25 Bots werden neu
+      gemessen. Frau Berger (Stufe 4) und Frau Ortega (Stufe 5) sind deshalb wieder wie in
+      0.2.67, ihre Sprechblasen auch. Yara (Stufe 7) übersah Rückzüge und war damit deutlich zu
+      schwach (1 : 5); jetzt übersieht sie ruhige Züge, die Sprechblase sagt das. Prüfe in der
+      Gegnerwahl die Sprechblasen von Frau Ortega und Yara.
 
 ### Neu in 0.2.76 (etwa 10 Minuten, mit Engine; vier Bots nachgebessert, Opus)
 
@@ -55,8 +65,8 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.76“, dann 
 ### Neu in 0.2.74 (etwa 15 Minuten, mit Engine; 64 Bots nachgemessen, Fable und Opus)
 
 - [ ] N292. **Ausreißer unter den Bots angepasst:** Jeder der 64 Bots spielte sechs Partien gegen
-      die reine Stufe seiner Nummer. Zwölf waren zu stark (meist 6 : 0, etwa Leon, Ayşe, Sophie,
-      Jonas, Zoë), vier zu schwach (Frau Berger, Hanna, Paul, Elif). Muster: Wer nur billige
+      die reine Stufe seiner Nummer. Elf waren zu stark (meist 6 : 0, etwa Leon, Ayşe, Sophie,
+      Jonas, Zoë), drei zu schwach (Hanna, Paul, Elif). Muster: Wer nur billige
       Fehlerarten in der Liste hat („ungenau“, „Königsschild“, „Bauernvorstoß“), spielt stärker
       als seine Stufe; ein häufiger blinder Fleck wie „Rückzug“ macht ab Stufe 5 deutlich schwächer. Die Ausreißer haben jetzt eine Phasenstufe weniger oder mehr und, wo das
       nicht reichte, eine teure Fehlerart (Figur hängen lassen, Drohung übersehen) in der Liste;

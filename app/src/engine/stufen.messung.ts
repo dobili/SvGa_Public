@@ -192,7 +192,17 @@ const paarung = process.env.MESSUNG_PAARUNG ?? "1-2";
 const partienZahl = Number(process.env.MESSUNG_PARTIEN ?? STANDARD_PARTIEN);
 const ziel =
   process.env.MESSUNG_ZIEL ?? join(process.cwd(), "..", "buch", "arbeit", "stufenmessung");
-const [a = "1", b = "2"] = paarung.split("-");
+/**
+ * Die beiden Kürzel einer Paarung, getrennt am letzten Bindestrich: Kennungen der Gegner enthalten
+ * selbst Bindestriche („4@frau-berger-4“ ist Frau Berger gegen Stufe 4). Bis 0.2.76 wurde am
+ * ersten getrennt, dann spielte „4@frau“ gegen „berger“ und die Messung galt nicht.
+ */
+function kuerzelDerPaarung(text: string): readonly [string, string] {
+  const trenner = text.lastIndexOf("-");
+  if (trenner <= 0) throw new Error(`Paarung ohne Bindestrich: ${text}`);
+  return [text.slice(0, trenner), text.slice(trenner + 1)];
+}
+const [a, b] = kuerzelDerPaarung(paarung);
 
 describe(`Messung ${paarung}`, () => {
   const engine = nodeEngine();

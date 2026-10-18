@@ -203,7 +203,7 @@ const STUFE_4: readonly Gegner[] = [
     ["rueckzug", "diagonale", "zwischenzug"],
     1,
   ),
-  gegner("frau-berger", "Frau Berger", [3, 5, 5], ["ungenau", "koenigPassiv"], ["dame"], -1),
+  gegner("frau-berger", "Frau Berger", [4, 4, 5], ["ungenau", "koenigPassiv"], ["dame"], -1),
   gegner(
     "lukas",
     "Lukas",

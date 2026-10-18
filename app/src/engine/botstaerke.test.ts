@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   ANGABE_HOECHSTENS,
   ANGABE_MINDESTENS,
+  bereichDerSpassbots,
   gegnerstaerke,
   staerkeangabe,
   staerkeAusStufen,
@@ -20,7 +21,14 @@ describe("Elo-Zahl der Bots", () => {
     }
   });
 
-  it("alle 64 vorgefertigten Bots haben eine gemessene Zahl", () => {
+  it("Spaß-Bots (0.2.87) liegen unter Stufe 1, ihr Bereich umfasst alle vier", () => {
+    const bereich = bereichDerSpassbots();
+    expect(bereich).not.toBeNull();
+    expect(bereich?.bis ?? Infinity).toBeLessThan(staerkeDerStufe(1));
+    expect(bereich?.von ?? 0).toBeLessThan(bereich?.bis ?? 0);
+  });
+
+  it("alle vorgefertigten Bots (64 und die vier Spaß-Bots) haben eine gemessene Zahl", () => {
     for (const g of GEGNER) expect(staerkeDesBots(g.kennung), g.kennung).not.toBeNull();
     expect(staerkeDesBots(null)).toBeNull();
     expect(staerkeDesBots("eigen-123")).toBeNull();

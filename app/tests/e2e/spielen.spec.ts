@@ -263,11 +263,13 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(gitter.getByRole("radio", { checked: true })).toHaveCount(1);
   // Seit 0.2.85: Stufen aufklappbar, anfangs die des gewählten Bots offen; die App merkt sich
   // die Wahl. „Partie beginnen“ steht über dem Gitter, direkt unter den drei Kacheln.
+  // Seit 0.2.87 steht vor Stufe 1 die Gruppe „Zum Spaß“ (anfangs zu).
   const stufen = page.locator("details.gegnerstufe");
-  await expect(stufen.nth(0)).toHaveAttribute("open", "");
-  await expect(stufen.nth(1)).not.toHaveAttribute("open", "");
-  await stufen.nth(1).locator("summary").click();
+  await expect(stufen.nth(0)).not.toHaveAttribute("open", "");
   await expect(stufen.nth(1)).toHaveAttribute("open", "");
+  await expect(stufen.nth(2)).not.toHaveAttribute("open", "");
+  await stufen.nth(2).locator("summary").click();
+  await expect(stufen.nth(2)).toHaveAttribute("open", "");
   const knopf = await page.getByRole("button", { name: "Partie beginnen" }).boundingBox();
   const gitterBox = await gitter.boundingBox();
   expect((knopf?.y ?? Infinity) < (gitterBox?.y ?? 0)).toBe(true);
@@ -280,6 +282,13 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(staerke).toContainText(/(etwa|unter|über) \d+ \(Stufe 1\)/);
   await page.getByRole("button", { name: "Erklärung: Stärke der Bots" }).click();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Elo-Leiter");
+  // Spaß-Bots (0.2.87): eigene Gruppe mit Bereich, Sprechblase „(zum Spaß)“.
+  await stufen.nth(0).locator("summary").click();
+  await expect(
+    gitter.getByRole("heading", { name: /^Zum Spaß · etwa \d+ bis \d+$/ }),
+  ).toBeVisible();
+  await gitter.getByRole("radio", { name: /Fritzi/ }).click();
+  await expect(staerke).toContainText(/etwa \d+ \(zum Spaß\)/);
   await page.screenshot({ path: "test-results/bilder/spielen-kategorien.png", fullPage: true });
   await page.getByRole("radio", { name: "Eigene Stufe" }).click();
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
@@ -289,7 +298,7 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await page.getByRole("navigation").getByRole("button", { name: "Buch" }).click();
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
-  await expect(stufen.nth(1)).toHaveAttribute("open", "");
+  await expect(stufen.nth(2)).toHaveAttribute("open", "");
 });
 
 test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.80)", async ({

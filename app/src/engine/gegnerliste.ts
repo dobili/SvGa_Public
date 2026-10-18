@@ -14,11 +14,16 @@
  */
 import type { Gegner } from "./gegnerbau";
 export type { Gegner } from "./gegnerbau";
+import { SPASSBOTS } from "./gegnerliste0";
 import { GEGNER_STUFE_1_BIS_4 } from "./gegnerliste1";
 import { GEGNER_STUFE_5_BIS_8 } from "./gegnerliste2";
 
 /**
- * Alle vorgefertigten Gegner: 64 (acht je Stufe), in der Reihenfolge der Teildateien. Die
- * Spaß-Bots (engine/gegnerliste0.ts) kommen hinzu, sobald sie gemessen sind.
+ * Alle vorgefertigten Gegner: 64 (acht je Stufe) und am Ende die vier Spaß-Bots (0.2.87), in der
+ * Reihenfolge der Teildateien.
  */
-export const GEGNER: readonly Gegner[] = [...GEGNER_STUFE_1_BIS_4, ...GEGNER_STUFE_5_BIS_8];
+export const GEGNER: readonly Gegner[] = [
+  ...GEGNER_STUFE_1_BIS_4,
+  ...GEGNER_STUFE_5_BIS_8,
+  ...SPASSBOTS,
+];

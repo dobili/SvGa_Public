@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.85. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.87. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.85“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.87“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,28 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.86“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.87“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.87 (etwa 15 Minuten, mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
+
+- [ ] N344. **Gruppe „Zum Spaß“:** Spielen › „Vorgefertigte Bots“. Ganz oben steht jetzt die
+      aufklappbare Gruppe „Zum Spaß · etwa 600 bis 1100“ mit vier Bots, vom schwächsten zum
+      stärksten: Fritzi (etwa 600), Onkel Willi (etwa 800), Tante Trude (etwa 900), Bruno (etwa
+      1100). Sie spielen wie Stufe 1 und ziehen dazu in einem Teil ihrer Züge irgendeinen legalen
+      Zug: Fritzi in 60 %, Willi in 38 %, Trude in 25 %, Bruno in 15 %. In der Sprechblase steht
+      „etwa 600 (zum Spaß)“. Gemessen in drei Runden (je 20 Partien gegen Stufe 1 und
+      gegeneinander). Bruno liegt mit etwa 1100 etwas über deinem Wunsch (500 bis 1000); ich habe
+      nach zwei Anpassungen aufgehört, damit es kein endloses Nachstellen wird. **So prüfen:**
+      Spiele eine Partie gegen Fritzi. Sie sollte oft ganz sinnlose Züge machen und trotzdem ab und
+      zu eine Figur schlagen, die du hängen lässt.
+- [ ] N345. **Stufe 5 bis 8 mit eigener Zahl:** Bisher stand ab Stufe 5 überall „über 2200“, weil
+      die Eichung von „Deine Spielstärke“ dort endet. Die Bots selbst waren aber schon klar
+      getrennt; die Ergebnisse gegeneinander zeigen etwa 2350, 2600, 2900 und 3200 für die reinen
+      Stufen 5 bis 8. Jetzt zeigt die App diese Zahlen: Stufe 5 etwa 2200 bis 2400, Stufe 6 etwa
+      2450 bis 2650, Stufe 7 etwa 2650 bis 3000, Stufe 8 etwa 3000 bis 3200. Das Fragezeichen in
+      der Sprechblase erklärt, dass die Zahl über 2200 allein aus Ergebnissen kommt und
+      ungenauer ist (etwa ±200).
 
 ### Neu in 0.2.86 (etwa 25 Minuten, mit Engine; Auswertung, Werkzeuge, Training, Opus)
 
@@ -74,8 +94,8 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.86“, dann 
       jetzt den Bereich ihrer acht Bots, etwa „Stufe 1 · Einsteiger · etwa 1050 bis 1300“, und
       jede Kachel unter dem Namen die Zahl des Bots („etwa 1300“). Gemessen sind: Stufe 1 etwa
       1050 bis 1300, Stufe 2 etwa 1400 bis 1700, Stufe 3 etwa 1900 bis 2100, Stufe 4 etwa 1850
-      bis 2150, Stufe 5 „etwa 2200 bis über 2200“, Stufe 6 bis 8 „über 2200“. Über 2200 und unter
-      400 hat die Spielstärke-Rechnung keine Eichdaten, deshalb steht dort nur die Grenze. Die
+      bis 2150, Stufe 5 etwa 2200 bis 2400, Stufe 6 etwa 2450 bis 2650, Stufe 7 etwa 2650 bis
+      3000, Stufe 8 etwa 3000 bis 3200 (seit 0.2.87; siehe N345). Die
       Bereiche von Stufe 3 und 4 überschneiden sich stark: Jan (Stufe 4, etwa 1850) ist der
       schwächste Bot seiner Stufe und liegt unter allen Bots der Stufe 3; die reine Stufe 4 ist
       aber klar stärker als die reine Stufe 3 (17 : 3).
@@ -1149,24 +1169,21 @@ Regeln C1 und C2).
       **Empfehlung (umgesetzt):** Die Liste gilt nur für die eigene Stufe; vorgefertigte und
       eigene Bots spielen immer mit ihrer eigenen Liste. Sag Bescheid, wenn die Liste auch die
       vorgefertigten Bots beschneiden soll; dann zeige ich sie auch dort.
-- [ ] S24. **Die Bots sind auf der Skala von „Deine Spielstärke“ stärker als ihre Namen (Opus,
-      0.2.85):** Gemessen ist Stufe 1 („Einsteiger“) etwa 1200, Stufe 2 („Anfänger“) etwa 1550,
-      Stufe 3 etwa 1900, Stufe 4 etwa 2100; Stufe 5 bis 8 liegen über 2200 und zeigen alle nur
-      „über 2200“. So kam es: Die Abstände stammen aus über 800 Partien der Bots und Stufen
-      gegeneinander. Die Lage stammt aus Partien der Stufen 1, 2 und 3 gegen sich selbst: Ihre
-      Genauigkeit (70 %, 77 % und 83 %) ergibt über dieselbe Rechnung wie „Deine Spielstärke“
-      etwa 1190, 1560 und 1890. Diese drei Anker und die Abstände aus den Ergebnissen passen auf
-      etwa 30 Punkte zusammen, die Rechnung ist also in sich stimmig. Ab Stufe 4 ist die
-      Genauigkeit zu hoch für die Eichung (die Kurven enden bei etwa 83 %); diese Stufen
-      verankern nicht, ihre Zahl kommt allein aus den Ergebnissen. Unsicher bleibt, ob ein Bot
-      mit 70 % so spielt wie ein Mensch mit 70 %: Bots machen seltene grobe Fehler zwischen
-      vielen guten Zügen, Menschen viele mittlere. Folge: Für Leser unter etwa 1000 gibt es
-      keinen passenden Gegner, und die Stufen 5 bis 8 lassen sich an der Zahl nicht
-      unterscheiden. **Empfehlung:** Erst deinen Test N335 abwarten. Bestätigt er die Zahlen,
-      schlage ich vor, die Stufen 1 bis 4 schwächer zu machen, damit Stufe 1 bei etwa 600 bis 800
-      beginnt und die acht Stufen etwa 600 bis 2400 abdecken, und dann alle 64 Bots neu zu
-      messen (einige Stunden Rechenzeit). Die Namen der Stufen bleiben bis dahin. Noch nicht
-      umgesetzt, weil das alle 64 Bots und die Abstufung aus Konzept 8.2 ändert.
+- [ ] S24. **Namen der Stufen und Lage der Skala (Opus, 0.2.85, Stand 0.2.87):** Gemessen ist
+      Stufe 1 („Einsteiger“) etwa 1200, Stufe 2 („Anfänger“) etwa 1550, Stufe 3 etwa 1900,
+      Stufe 4 etwa 2100, Stufe 5 („Vereinsanfänger“) etwa 2350 bis Stufe 8 etwa 3200. Die
+      Abstände stammen aus über 800 Partien der Bots gegeneinander, die Lage aus Partien der
+      Stufen 1 bis 3 gegen sich selbst: Ihre Genauigkeit (70 %, 77 %, 83 %) ergibt über dieselbe
+      Rechnung wie „Deine Spielstärke“ etwa 1190, 1560 und 1890, und diese drei Anker passen auf
+      etwa 30 Punkte zu den Ergebnissen. Unsicher bleibt, ob ein Bot mit 70 % so spielt wie ein
+      Mensch mit 70 % (Bots machen seltene grobe Fehler, Menschen viele mittlere); das zeigt erst
+      dein Test N335. Seit 0.2.87 gibt es für schwache Leser die Gruppe „Zum Spaß“ (etwa 600 bis
+      1100), damit ist der frühere Vorschlag, die Stufen 1 bis 4 schwächer zu machen, vom Tisch.
+      Offen sind nur die Namen: „Vereinsanfänger“ bei etwa 2350 passt nicht. **Empfehlung:** Nach
+      N335 entscheiden. Bestätigt dein Test die Zahlen, schlage ich neue Namen vor (etwa
+      Gelegenheitsspieler, Vereinsspieler, Starker Vereinsspieler, Experte, Meister, Großmeister,
+      Weltklasse, Engine); liegen die Zahlen zu hoch, verschiebe ich die ganze Skala. Noch nicht
+      umgesetzt, weil beides an deinem Test hängt.
 
 ### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 

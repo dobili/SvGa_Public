@@ -23,7 +23,7 @@
 import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
 import type { ReactNode } from "react";
 import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
-import { gegnerVon, klasseVon, type EigenerGegner } from "../../engine/gegner";
+import { gegnerVon, klasseVon, type EigenerGegner, istSpassbot } from "../../engine/gegner";
 import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Phase } from "../../schach/phase";
@@ -57,6 +57,9 @@ function staerkezeile(
   const vorgefertigt = gegnerVon(bot);
   const gemessen = staerkeDesBots(bot);
   if (vorgefertigt && gemessen !== null) {
+    // Spaß-Bots (0.2.87) stehen in keiner Stufe, sondern in der Gruppe „Zum Spaß“.
+    if (istSpassbot(vorgefertigt))
+      return t("spielen.bot.blaseSpass", { staerke: staerketext(gemessen) });
     const nummer = String(klasseVon(vorgefertigt).nummer);
     return t("spielen.bot.blase", { staerke: staerketext(gemessen), nummer });
   }

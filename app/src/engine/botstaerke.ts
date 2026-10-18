@@ -20,9 +20,9 @@ import type { Stufennummer } from "./stufen";
 
 /**
  * Bereich, in dem die Zahl eine Bedeutung hat. Unten: Die Eichung von „Deine Spielstärke“ beruht
- * auf Partien ab 400; darunter zeigt die App „unter 400“. Oben: Bis 0.2.85 stand über 2200 (Ende
+ * auf Partien ab 400; darunter zeigt die App „unter 400“. Oben: Bis 0.2.86 stand über 2200 (Ende
  * der Eichdaten) nur „über 2200“; damit sahen Stufe 5 bis 8 gleich aus, obwohl die Ergebnisse sie
- * klar trennen (Rückmeldung des Autors, 18.10.2026 abends). Seit 0.2.86 zeigt die App auch darüber
+ * klar trennen (Rückmeldung des Autors, 18.10.2026 abends). Seit 0.2.87 zeigt die App auch darüber
  * die Zahl der Elo-Leiter: Sie kommt dort allein aus den Ergebnissen gegen die tieferen, an der
  * Skala verankerten Stufen. Die Grenze liegt über der vollen Engine (Stufe 8, etwa 3200), weil es
  * darüber nichts mehr zu messen gibt.
@@ -114,7 +114,7 @@ function gemesseneZahlen(bots: readonly { readonly kennung: string }[]): number[
 }
 
 /**
- * Der Bereich der Spaß-Bots (0.2.86, eigene Gruppe unter Stufe 1); null, solange keiner gemessen
+ * Der Bereich der Spaß-Bots (0.2.87, eigene Gruppe unter Stufe 1); null, solange keiner gemessen
  * ist. Beispiel: vier Bots von 520 bis 940 → { von: 520, bis: 940 }.
  */
 export function bereichDerSpassbots(): { readonly von: number; readonly bis: number } | null {

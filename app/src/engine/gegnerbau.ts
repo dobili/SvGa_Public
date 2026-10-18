@@ -26,7 +26,7 @@ export interface Gegner {
   readonly stil: number;
   /**
    * Anteil der Züge, die ein beliebiger legaler Zug sind (engine/zufallszug.ts); nur bei den
-   * Spaß-Bots (0.2.86), die anderen haben keinen.
+   * Spaß-Bots (0.2.87), die anderen haben keinen.
    */
   readonly zufallszuege?: number;
 }
@@ -59,7 +59,7 @@ export const FEIN: readonly Fehlerart[] = [
 const ZUFALL_HOECHSTENS = 0.9;
 
 /**
- * Baut einen Spaß-Bot (Wunsch des Autors, 0.2.86): Stufe 1 in allen Phasen und dazu ein Anteil
+ * Baut einen Spaß-Bot (Wunsch des Autors, 0.2.87): Stufe 1 in allen Phasen und dazu ein Anteil
  * an Zufallszügen. Beispiel: spassbot("fritzi", "Fritzi", 0.6, GROB, [], 1).
  * Sonderfall: ein Anteil über 0,9 oder unter 0 ist ein Programmierfehler und wirft.
  */

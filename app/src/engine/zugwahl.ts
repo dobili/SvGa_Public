@@ -42,7 +42,7 @@ export interface Gegnerprofil {
   readonly stil: number;
   readonly blindeFlecken: readonly BlinderFleck[];
   readonly verlauf?: Verlauf;
-  /** Anteil der Züge, die ein beliebiger legaler Zug sind (Spaß-Bots, 0.2.86); fehlend: keine. */
+  /** Anteil der Züge, die ein beliebiger legaler Zug sind (Spaß-Bots, 0.2.87); fehlend: keine. */
   readonly zufallszuege?: number;
 }
 
@@ -117,7 +117,7 @@ async function menschlicherZug(
  * Sonderfall: Findet die Fehlersuche keinen Zug in den Grenzen der Stufe, zieht die Engine normal.
  * Profil (0.2.42): ohne erlaubte Fehlerarten entfällt der Fehlerwurf; mit Stil holt die Engine
  * mehrere Kandidaten, und engine/stil.ts wählt um den Zug der Stufe herum (0.2.78). Spaß-Bots
- * (0.2.86) ziehen mit ihrem Anteil an Zufallszügen irgendeinen legalen Zug (engine/zufallszug.ts).
+ * (0.2.87) ziehen mit ihrem Anteil an Zufallszügen irgendeinen legalen Zug (engine/zufallszug.ts).
  */
 export async function waehleZug(
   bewerter: Spielbewerter,
@@ -128,7 +128,7 @@ export async function waehleZug(
   buchtreue: number = BUCHTREUE,
   profil: Gegnerprofil = STANDARDPROFIL,
 ): Promise<Zugwahl | null> {
-  // Spaß-Bots (0.2.86): der Zufallszug kommt vor allem anderen, auch vor dem Buch.
+  // Spaß-Bots (0.2.87): der Zufallszug kommt vor allem anderen, auch vor dem Buch.
   if (profil.zufallszuege && zufall() < profil.zufallszuege) {
     const zug = zufallszug(fen, zufall);
     if (zug) return zug;

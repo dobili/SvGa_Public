@@ -3043,3 +3043,31 @@ Wünsche und Rückmeldungen des Autors vom Abend, nach Regel 9 gleich umgesetzt.
   aufklappbar mit Merker auf dem Gerät; Kacheln „Über die App“ und „Einstellungen“, Vorschau
   2 × 2; Trainer als Zeilen mit Symbol, Übungen als Nummernraster.
 
+
+## Spaß-Bots und Zahlen über 2200 (18.10.2026 abends, Opus, Zweig `spass-bots`, Version 0.2.87)
+
+Rückmeldung des Autors zu 0.2.85: Ab Stufe 5 stand überall „über 2200“, obwohl die Kalibrierung
+die Stufen klar trennen sollte; er erwartete oben etwa 2700 und mehr. Dazu wünschte er eine
+Spaßkategorie unter den Einsteigern mit vier Bots um 500 bis 1000.
+
+- **Obere Stufen:** Die Bots waren getrennt (Leiter: Stufe 5 bis 8 etwa 2360, 2600, 2910, 3220),
+  nur die Anzeige hörte bei 2200 auf, weil dort die Eichdaten von „Deine Spielstärke“ enden.
+  Seit 0.2.87 zeigt die App die Zahl der Leiter auch darüber; die Grenze liegt erst bei 3300
+  (über der vollen Engine). Die Erklärung sagt, dass die Zahl über 2200 allein aus Ergebnissen
+  gegen die verankerten tieferen Stufen kommt und ungenauer ist (etwa ±200).
+- **Spaß-Bots:** neue Eigenschaft „Anteil an Zufallszügen“ (`engine/zufallszug.ts`, Würfel in
+  `waehleZug` vor allem anderen, Umwandlung immer in eine Dame), sonst Stufe 1 mit den groben
+  Fehlern. Die Partie liest den Anteil zur Laufzeit aus der Liste der Bots, das Speicherformat
+  bleibt unverändert. Eigene Gruppe „Zum Spaß“ vor Stufe 1 (Schlüssel 0 im Merker der offenen
+  Gruppen), Sprechblase „(zum Spaß)“. Kennungen ohne Bindestrich (`willi`, `trude`), weil der
+  Messlauf Paarungen am letzten Bindestrich trennt.
+- **Messung (je Runde neu, alte Daten nach `buch/arbeit/botelo/veraltet/`):** Runde 1 mit 75, 50,
+  35, 20 %: etwa 300 bis 1050, Willi und Trude gleich. Runde 2 mit 60, 42, 32, 25 %: 550 bis 870.
+  Runde 3 mit 60, 38, 25, 15 % (je 20 Partien gegen Stufe 1, gegen den Nachbarn und den
+  übernächsten): Fritzi 584, Onkel Willi 777, Tante Trude 883, Bruno 1081 (je etwa ±70 bis 90).
+  Nach zwei Anpassungen Schluss (Regel gegen endloses Nachjustieren aus der Messung der 64 Bots);
+  Bruno liegt etwas über dem Wunsch.
+- **Folge für S24:** Der Vorschlag, Stufe 1 bis 4 schwächer zu machen, entfällt, weil die
+  Spaß-Bots den unteren Bereich abdecken. Offen bleiben die Namen der Stufen, abhängig von N335.
+- **Beobachtung:** `engine/zentrumsschlag.test.ts` (echte Engine) schlug einmal im vollen Lauf fehl
+  und lief allein und im zweiten vollen Lauf grün; vermutlich knappe Rechenzeit unter Last.

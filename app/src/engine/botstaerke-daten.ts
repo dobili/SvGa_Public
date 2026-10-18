@@ -21,6 +21,10 @@ export const STUFEN_STAERKE: Readonly<Record<Stufennummer, number>> = {
 };
 
 export const BOT_STAERKE: Readonly<Record<string, number>> = {
+  fritzi: 584,
+  willi: 777,
+  trude: 883,
+  bruno: 1081,
   lotta: 1237,
   paula: 1168,
   max: 1092,

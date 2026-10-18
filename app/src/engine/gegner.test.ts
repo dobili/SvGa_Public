@@ -15,6 +15,8 @@ import {
   gegnerSortiert,
   gegnerVon,
   unterAbhakliste,
+  istSpassbot,
+  spassbots,
 } from "./gegner";
 import { STIL_MAX, STIL_MIN } from "./stil";
 import type { Stufennummer } from "./stufen";
@@ -49,6 +51,18 @@ describe("vorgefertigte Gegner", () => {
       expect(texte[g.beschreibung], g.kennung).toBeTruthy();
       expect(existsSync(join("public", "gegner", `${g.kennung}.svg`)), g.kennung).toBe(true);
     }
+  });
+});
+
+describe("Spaß-Bots (0.2.87)", () => {
+  it("vier, schwächster zuerst, mit Zufallszügen und nicht in der Gruppe der Stufe 1", () => {
+    const spass = spassbots();
+    expect(spass.map((g) => g.kennung)).toEqual(["fritzi", "willi", "trude", "bruno"]);
+    for (let i = 1; i < spass.length; i += 1) {
+      expect(spass[i]?.zufallszuege ?? 0).toBeLessThan(spass[i - 1]?.zufallszuege ?? 0);
+    }
+    expect(gegnerDerStufe(1).some(istSpassbot)).toBe(false);
+    expect(GEGNER.filter((g) => !istSpassbot(g))).toHaveLength(STUFENNUMMERN.length * JE_STUFE);
   });
 });
 

@@ -6,7 +6,8 @@
  * die Stufen aufklappbar, damit nicht immer alle 64 Porträts zu sehen sind; die App merkt sich auf
  * dem Gerät, welche Stufen offen waren (app/merker.ts, eine Bequemlichkeit, die verloren gehen
  * darf). Ohne Merker ist die Stufe des gewählten Gegners offen. An Stufe und Kachel steht seit 0.2.85
- * die Elo-Zahl (engine/botstaerke.ts, Rückfrage S23).
+ * die Elo-Zahl (engine/botstaerke.ts, Rückfrage S23). Seit 0.2.87 steht vor Stufe 1 die Gruppe
+ * „Zum Spaß“ mit den Spaß-Bots (Wunsch des Autors).
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, engine/botstaerke.ts, staerkeangabe.ts,
  * app/merker.ts, lucide, i18n.
  */
@@ -14,11 +15,11 @@ import { ChevronRight } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
-import { gegnerDerStufe } from "../../engine/gegner";
+import { gegnerDerStufe, spassbots, type Gegner } from "../../engine/gegner";
 import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
-import { offeneStufenAnfangs, portraet, STUFENNUMMERN } from "./gegnerportraet";
-import { bereichstext, staerketext } from "./staerkeangabe";
+import { offeneStufenAnfangs, portraet, SPASSGRUPPE, STUFENNUMMERN } from "./gegnerportraet";
+import { bereichstext, spassbereichstext, staerketext } from "./staerkeangabe";
 
 /** Merker der offenen Stufen, als Liste der Nummern („1,3“). */
 const MERKER_OFFEN = "gegnerstufenOffen";
@@ -73,25 +74,19 @@ export function VorgefertigteGitter({
   };
   return (
     <div role="radiogroup" aria-label={t("spielen.bot")}>
-      {STUFENNUMMERN.map((nummer) => (
+      {gruppen().map((gruppe) => (
         <details
-          key={nummer}
+          key={gruppe.schluessel}
           className="gegnerstufe"
-          open={offen.has(nummer)}
-          onToggle={(e) => umschalten(nummer, e.currentTarget.open)}
+          open={offen.has(gruppe.schluessel)}
+          onToggle={(e) => umschalten(gruppe.schluessel, e.currentTarget.open)}
         >
           <summary>
             <ChevronRight className="klappzeichen" size={PFEIL_GROESSE} aria-hidden="true" />
-            <h4 className="gegnerstufe-titel">
-              {t("spielen.bot.stufeMitStaerke", {
-                nummer: String(nummer),
-                name: t(stufe(nummer).name),
-                staerke: bereichstext(nummer),
-              })}
-            </h4>
+            <h4 className="gegnerstufe-titel">{gruppe.titel}</h4>
           </summary>
           <div className="gegnergitter">
-            {gegnerDerStufe(nummer).map((g) => (
+            {gruppe.bots.map((g) => (
               <Kachel
                 key={g.kennung}
                 name={g.name}
@@ -108,4 +103,32 @@ export function VorgefertigteGitter({
       ))}
     </div>
   );
+}
+
+/** Eine aufklappbare Gruppe: Schlüssel für den Merker, Überschrift, Bots. */
+interface Gruppe {
+  readonly schluessel: number;
+  readonly titel: string;
+  readonly bots: readonly Gegner[];
+}
+
+/**
+ * Die Gruppen der Gegnerwahl: zuerst „Zum Spaß“ (die Spaß-Bots, 0.2.87, Wunsch des Autors), dann
+ * die acht Stufen. Beispiel: „Zum Spaß · etwa 600 bis 1100“, „Stufe 1 · Einsteiger · etwa 1050
+ * bis 1300“.
+ */
+function gruppen(): Gruppe[] {
+  const stufen = STUFENNUMMERN.map((nummer) => ({
+    schluessel: nummer,
+    titel: t("spielen.bot.stufeMitStaerke", {
+      nummer: String(nummer),
+      name: t(stufe(nummer).name),
+      staerke: bereichstext(nummer),
+    }),
+    bots: gegnerDerStufe(nummer),
+  }));
+  const spass = spassbots();
+  if (spass.length === 0) return stufen;
+  const titel = t("spielen.bot.spassMitStaerke", { staerke: spassbereichstext() });
+  return [{ schluessel: SPASSGRUPPE, titel, bots: spass }, ...stufen];
 }

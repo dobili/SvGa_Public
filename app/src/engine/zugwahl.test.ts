@@ -7,7 +7,13 @@ import { describe, expect, it } from "vitest";
 import type { Bewertung, Staerke } from "./engineDienst";
 import { stufe } from "./stufen";
 import type { Variante } from "./uci";
-import { BUCHTREUE_VORGABE, type Spielbewerter, waehleZug, wertFuer } from "./zugwahl";
+import {
+  BUCHTREUE_VORGABE,
+  STANDARDPROFIL,
+  type Spielbewerter,
+  waehleZug,
+  wertFuer,
+} from "./zugwahl";
 
 /** Abb. 1.13 (nach 2. Dh5), Schwarz am Zug. */
 const FEN = "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2";
@@ -55,6 +61,17 @@ function folge(...zahlen: number[]): () => number {
 }
 
 describe("Zugwahl", () => {
+  it("Spaß-Bot (0.2.87): mit seinem Anteil ein Zufallszug ohne Engine, sonst wie die Stufe", async () => {
+    const profil = { ...STANDARDPROFIL, zufallszuege: 0.5 };
+    const { b, aufrufe } = bewerter(KANDIDATEN);
+    const zufaellig = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0), 0, profil);
+    expect(zufaellig?.quelle).toBe("fehler");
+    expect(zufaellig?.fehler).toBeNull();
+    expect(aufrufe).toHaveLength(0);
+    const normal = await waehleZug(b, FEN, stufe(5), [], folge(0.9), 0, profil);
+    expect(normal?.quelle).toBe("engine");
+  });
+
   it("rechnet Matt als großen Wert aus Sicht der Seite am Zug", () => {
     expect(wertFuer({ art: "bauern", bauern: 1.5 }, false)).toBe(-1.5);
     expect(wertFuer({ art: "matt", zuege: 2 }, true)).toBe(98);

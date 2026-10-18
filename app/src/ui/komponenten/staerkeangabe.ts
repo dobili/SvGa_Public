@@ -6,7 +6,7 @@
  * engine/botstaerke.ts.
  * Abhängigkeiten: engine/botstaerke.ts, i18n.
  */
-import { bereichDerStufe, staerkeangabe } from "../../engine/botstaerke";
+import { bereichDerSpassbots, bereichDerStufe, staerkeangabe } from "../../engine/botstaerke";
 import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 
@@ -23,7 +23,16 @@ export function staerketext(wert: number): string {
  * 3400 → „etwa 3000 bis über 3300“; gleiche Enden → „etwa 1100“.
  */
 export function bereichstext(nummer: Stufennummer): string {
-  const { von, bis } = bereichDerStufe(nummer);
+  return alsBereich(bereichDerStufe(nummer));
+}
+
+/** Der Bereich der Spaß-Bots als Text (0.2.87); ohne Messung leer. */
+export function spassbereichstext(): string {
+  const bereich = bereichDerSpassbots();
+  return bereich ? alsBereich(bereich) : "";
+}
+
+function alsBereich({ von, bis }: { readonly von: number; readonly bis: number }): string {
   const a = staerkeangabe(von);
   const b = staerkeangabe(bis);
   if (a.art === b.art && a.wert === b.wert) return staerketext(von);

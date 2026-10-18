@@ -28,7 +28,7 @@
   border: 1px solid var(--linie-stark);
   border-radius: var(--radius);
   background: var(--flaeche);
-  font-size: 17px;
+  font-size: var(--groesse-grund);
 }
 
 .begriffsliste {
@@ -113,7 +113,7 @@
 }
 
 .phase-abschnitt h3 {
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
   margin-top: var(--raster);
 }
 
@@ -142,7 +142,7 @@
 
 .trainerkarte-text .mitinfo-erklaerung p {
   margin: 0;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .trainersymbol {
@@ -181,7 +181,7 @@
 
 .plakette-folgt {
   flex: none;
-  font-size: 12px;
+  font-size: var(--groesse-fein);
   padding: 2px 8px;
   border-radius: 10px;
   background: var(--grund);
@@ -256,7 +256,7 @@
 
 .lernkarte-stand {
   flex: none;
-  font-size: 14px;
+  font-size: var(--groesse-klein);
   color: var(--text-leise);
 }
 
@@ -291,6 +291,6 @@
 }
 
 .lernkarte-werkzeug {
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
   margin: var(--raster) 0;
 }

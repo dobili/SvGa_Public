@@ -70,7 +70,7 @@
 }
 
 .trainer-auftrag {
-  font-size: 22px;
+  font-size: var(--groesse-titel-gross);
   font-weight: 700;
   text-align: center;
 }

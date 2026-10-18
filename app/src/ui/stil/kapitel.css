@@ -8,7 +8,7 @@
   padding: 0 var(--raster);
   font-family: var(--schrift-titel);
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--groesse-titel);
 }
 
 .abschnitt {
@@ -18,7 +18,7 @@
 }
 
 .abschnitt-titel {
-  font-size: 17px;
+  font-size: var(--groesse-grund);
   font-weight: 700;
   padding: 0 var(--raster);
 }
@@ -55,11 +55,11 @@
 
 .kachel-nummer {
   font-weight: 700;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .kachel-text {
-  font-size: 13px;
+  font-size: var(--groesse-fein);
   line-height: 1.3;
   color: var(--text-leise);
 }
@@ -108,12 +108,12 @@
 
 .abschnittsklappe-titel {
   flex: 1;
-  font-size: 17px;
+  font-size: var(--groesse-grund);
   font-weight: 700;
 }
 
 .abschnittsklappe-stand {
-  font-size: 13px;
+  font-size: var(--groesse-fein);
   color: var(--text-leise);
   white-space: nowrap;
 }

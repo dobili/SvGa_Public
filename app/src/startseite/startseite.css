@@ -62,7 +62,7 @@
 
 .installationsteil h3 {
   margin: 0 0 var(--raster);
-  font-size: 18px;
+  font-size: var(--groesse-gross);
 }
 
 .installationsteil p {
@@ -148,7 +148,7 @@
 
 .trainingsstand {
   margin: 0;
-  font-size: 13px;
+  font-size: var(--groesse-fein);
   color: var(--text-leise);
 }
 
@@ -171,13 +171,13 @@
 .trainingstabelle {
   border-collapse: collapse;
   min-width: 560px;
-  font-size: 14px;
+  font-size: var(--groesse-klein);
 }
 
 .tabellenunterschrift {
   margin: var(--raster) 0 0;
   color: var(--text-leise);
-  font-size: 13px;
+  font-size: var(--groesse-fein);
 }
 
 .trainingstabelle th,

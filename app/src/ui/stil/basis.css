@@ -3,6 +3,11 @@
  * Farben aus dem Buch, Abstände in Schritten von 8 Pixeln, Ecken mit 8 Pixeln Radius,
  * Tippflächen mindestens 44 × 44 Pixel. Dunkler Modus: dunkles Navy, Text Creme; das Brett und die
  * Markierungen bleiben wie im Buch.
+ *
+ * Schriftgrößen (Design-Überprüfung 18.10.2026): nur noch die Stufen --groesse-*, alle in rem.
+ * 1 rem entspricht bei Standardeinstellung 17 Pixeln (Grundschrift wie Apple „Body“) und folgt
+ * der Schriftgröße des Geräts: auf dem iPhone über „-apple-system-body“ (Dynamic Type), in Chrome
+ * auf Android über das Meta-Tag „text-scale“ in index.html. Abstände bleiben in Pixeln.
  */
 :root {
   --navy: #16253d;
@@ -23,6 +28,18 @@
   --radius: 8px;
   --tippflaeche: 44px;
   --leiste-hoehe: 64px;
+  /* Schriftstufen; die Pixelwerte gelten bei Standardschrift des Geräts. Kleiner als 13 px gibt
+     es nicht mehr (ältere Leser), Fließtext hat 17 px. */
+  --groesse-fein: 0.765rem; /* 13 px: Plaketten, Kleingedrucktes */
+  --groesse-klein: 0.824rem; /* 14 px: Zusätze, Fundstellen */
+  --groesse-mittel: 0.882rem; /* 15 px: Hinweise, Listen in Karten */
+  --groesse-grund: 1rem; /* 17 px: Fließtext */
+  --groesse-gross: 1.059rem; /* 18 px: Hauptknöpfe */
+  --groesse-titel: 1.176rem; /* 20 px: Titel in der Kopfzeile */
+  --groesse-titel-gross: 1.294rem; /* 22 px: Aufträge, Uhr */
+  --groesse-zahl: 1.647rem; /* 28 px: große Zahlen */
+  --groesse-seite: 1.765rem; /* 30 px: Seitentitel */
+  --groesse-riesig: 2.353rem; /* 40 px: Wertungszahl */
   --schrift: "Source Sans 3", system-ui, sans-serif;
   --schrift-titel: "Source Serif 4", Georgia, serif;
   color-scheme: light;
@@ -67,7 +84,7 @@ body {
   background: var(--grund);
   color: var(--text);
   font-family: var(--schrift);
-  font-size: 17px;
+  font-size: var(--groesse-grund);
   line-height: 1.45;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
@@ -140,13 +157,13 @@ h3 {
 .startseite-kopf h1 {
   font-family: var(--schrift-titel);
   font-weight: 600;
-  font-size: 30px;
+  font-size: var(--groesse-seite);
   line-height: 1.1;
 }
 
 .ueberzeile {
   margin: 0 0 4px;
-  font-size: 13px;
+  font-size: var(--groesse-fein);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -178,7 +195,7 @@ h3 {
 
 .karte-kopf h2,
 .karte-titel {
-  font-size: 17px;
+  font-size: var(--groesse-grund);
   font-weight: 700;
 }
 
@@ -189,7 +206,7 @@ h3 {
   border-radius: var(--radius);
   background: var(--navy);
   color: var(--creme);
-  font-size: 18px;
+  font-size: var(--groesse-gross);
   font-weight: 600;
 }
 
@@ -247,7 +264,7 @@ a.knopf-zweit {
 }
 
 .knopf-link.klein {
-  font-size: 14px;
+  font-size: var(--groesse-klein);
   font-weight: 400;
   color: var(--text-leise);
 }
@@ -260,7 +277,7 @@ a.knopf-zweit {
   display: inline-flex;
   align-items: center;
   gap: 2px;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .knopf-symbol {
@@ -286,7 +303,7 @@ a.knopf-zweit {
   border-radius: 20px;
   border: 1px solid var(--linie-stark);
   background: var(--flaeche);
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .chip[aria-pressed="true"] {
@@ -313,7 +330,7 @@ a.knopf-zweit {
 
 .hinweis {
   margin: 0;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
   color: var(--text-leise);
 }
 
@@ -385,6 +402,7 @@ a.knopf-zweit {
   flex-direction: column;
   align-items: center;
   gap: 3px;
+  /* Fest wie die Tab-Leiste auf dem iPhone: „Nachschlagen“ passt sonst bei 360 Pixeln nicht. */
   font-size: 12px;
   color: var(--text-leise);
 }
@@ -446,7 +464,7 @@ a.knopf-zweit {
 .kopfzeile-titel {
   font-family: var(--schrift-titel);
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--groesse-titel);
 }
 
 /* Der Titel der Abbildung als Knopf (Nummernsprung): sieht aus wie der Titel, Punkte deuten den Tipp an. */
@@ -479,7 +497,7 @@ a.knopf-zweit {
 .fortschritt-text {
   display: flex;
   justify-content: space-between;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
   color: var(--text-leise);
 }
 
@@ -509,7 +527,7 @@ a.knopf-zweit {
   display: flex;
   gap: 12px;
   align-items: flex-start;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .schritt-nummer {
@@ -519,7 +537,7 @@ a.knopf-zweit {
   border-radius: 12px;
   background: var(--gold);
   color: var(--navy);
-  font-size: 14px;
+  font-size: var(--groesse-klein);
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -541,7 +559,7 @@ a.knopf-zweit {
   border: 1.5px solid var(--text);
   border-radius: var(--radius);
   background: var(--flaeche);
-  font-size: 20px;
+  font-size: var(--groesse-titel);
 }
 
 .vorschlaege {
@@ -599,7 +617,7 @@ a.knopf-zweit {
 }
 
 .kapitel-zusatz {
-  font-size: 13px;
+  font-size: var(--groesse-fein);
   color: var(--text-leise);
 }
 
@@ -660,7 +678,7 @@ a.knopf-zweit {
   display: flex;
   align-items: center;
   gap: var(--raster);
-  font-size: 14px;
+  font-size: var(--groesse-klein);
   color: var(--text-leise);
 }
 
@@ -692,7 +710,7 @@ a.knopf-zweit {
 
 .unterschrift {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--groesse-grund);
 }
 
 .verweis {
@@ -708,7 +726,7 @@ a.knopf-zweit {
 
 .fundstelle {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--groesse-klein);
   color: var(--text-leise);
 }
 
@@ -722,11 +740,11 @@ a.knopf-zweit {
   list-style: none;
   margin: 4px 0 0;
   padding: 0;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .befund-titel {
-  font-size: 14px;
+  font-size: var(--groesse-klein);
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -767,23 +785,23 @@ a.knopf-zweit {
 }
 
 .regeltext {
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
   color: var(--text-leise);
 }
 
 .engine-wert {
-  font-size: 18px;
+  font-size: var(--groesse-gross);
   font-weight: 600;
 }
 
 .varianten {
   margin: 0;
   padding-left: 20px;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .messung {
-  font-size: 13px;
+  font-size: var(--groesse-fein);
   color: var(--text-leise);
 }
 
@@ -820,5 +838,5 @@ a.knopf-zweit {
   display: flex;
   flex-direction: column;
   gap: var(--raster);
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }

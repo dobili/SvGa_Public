@@ -77,7 +77,7 @@
 }
 
 .fortschritt-zeile dt {
-  font-size: 14px;
+  font-size: var(--groesse-klein);
   color: var(--text-leise);
 }
 
@@ -113,7 +113,7 @@
   border: none;
   background: none;
   color: var(--text-leise);
-  font-size: 13px;
+  font-size: var(--groesse-fein);
 }
 
 .kachel-haken::before {
@@ -167,7 +167,7 @@
 }
 
 .fortschritt-kapitel .knopf-link {
-  font-size: 14px;
+  font-size: var(--groesse-klein);
 }
 
 /* ---------- Datensicherung ---------- */
@@ -183,7 +183,7 @@
 
 .datensicherung h3 {
   margin: 0;
-  font-size: 16px;
+  font-size: var(--groesse-grund);
   font-weight: 700;
 }
 

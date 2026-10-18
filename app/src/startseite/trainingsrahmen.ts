@@ -26,6 +26,7 @@ function kopf(titel: string, adresse: string, beschreibung: string): string {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="text-scale" content="scale" />
     <meta name="theme-color" content="#16253D" />
     <meta name="description" content="${maskiere(beschreibung)}" />
     <link rel="canonical" href="${WEBSITE}${adresse}" />

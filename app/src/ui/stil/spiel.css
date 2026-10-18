@@ -29,7 +29,7 @@
 }
 
 .partieuhr-zeit {
-  font-size: 22px;
+  font-size: var(--groesse-titel-gross);
   font-weight: 700;
 }
 
@@ -49,7 +49,7 @@
   border-radius: 4px;
   background: var(--gold);
   color: var(--navy);
-  font-size: 12px;
+  font-size: var(--groesse-fein);
   font-weight: 700;
   line-height: 18px;
 }
@@ -83,7 +83,7 @@
 .stufenregler label {
   display: block;
   margin-bottom: 4px;
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .stufenregler input[type="range"] {
@@ -161,7 +161,7 @@
 .brett-sperre {
   margin: var(--raster) 0 0;
   color: var(--rot-text);
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .seitenfigur {
@@ -170,12 +170,12 @@
 
 .spielstaerke-untertitel {
   margin: calc(var(--raster) * 2) 0 var(--raster);
-  font-size: 16px;
+  font-size: var(--groesse-grund);
 }
 
 .partienliste .begriff-knopf span {
   color: var(--text-leise);
-  font-size: 14px;
+  font-size: var(--groesse-klein);
 }
 
 .bildschirm-spielen > .knopf-haupt {
@@ -211,7 +211,7 @@
   width: 100%;
   table-layout: fixed;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: var(--groesse-klein);
 }
 
 .spielstaerke-tabelle th,
@@ -249,7 +249,7 @@
   margin-right: 6px;
   padding: 0 8px;
   border-radius: 10px;
-  font-size: 13px;
+  font-size: var(--groesse-fein);
   font-weight: 600;
   color: #fff;
   background: #6b7280;
@@ -343,6 +343,7 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-90deg);
+  /* Fest, weil die Zahl quer in den 18 Pixel breiten Balken passen muss. */
   font-size: 11px;
   font-weight: 700;
   color: var(--gold);
@@ -402,7 +403,7 @@
 /* Wertung des Lesers in den Einstellungen (0.2.41): Zahl groß, Kurve mit Punkten je Ergebnis. */
 .wertung-zahl {
   font-family: var(--schrift-titel);
-  font-size: 40px;
+  font-size: var(--groesse-riesig);
   font-weight: 700;
   line-height: 1.1;
   margin: 0;
@@ -532,7 +533,7 @@
   border: 1.5px solid var(--linie-stark);
   border-radius: var(--radius);
   background: var(--flaeche);
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
 }
 
 .gegner-blase p {
@@ -545,7 +546,7 @@
 
 .gegnerstufe-titel {
   margin: 0;
-  font-size: 14px;
+  font-size: var(--groesse-klein);
   font-weight: 600;
   color: var(--text-leise);
 }
@@ -621,13 +622,13 @@
   justify-content: center;
   background: var(--navy);
   color: var(--creme);
-  font-size: 28px;
+  font-size: var(--groesse-zahl);
   font-weight: 700;
 }
 
 .gegnerkachel-name {
   max-width: 100%;
-  font-size: 12px;
+  font-size: var(--groesse-fein);
   line-height: 1.25;
   text-align: center;
   overflow-wrap: break-word;
@@ -656,7 +657,7 @@
   height: 22px;
   border-radius: 50%;
   color: #ffffff;
-  font-size: 11px;
+  font-size: var(--groesse-fein);
   font-weight: 700;
   line-height: 1;
 }
@@ -776,7 +777,7 @@
 
 /* Elo-Zahl unter dem Namen (0.2.85). */
 .gegnerkachel-staerke {
-  font-size: 11px;
+  font-size: var(--groesse-fein);
   color: var(--text-leise);
   white-space: nowrap;
 }
@@ -785,6 +786,6 @@
 .spielstaerke-tabelle .phasenurteil {
   max-width: 100%;
   padding: 0 6px;
-  font-size: 12px;
+  font-size: var(--groesse-fein);
   white-space: normal;
 }

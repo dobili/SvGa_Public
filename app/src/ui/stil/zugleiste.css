@@ -70,7 +70,7 @@
   border-radius: 10px;
   padding: 0 6px;
   margin-left: 2px;
-  font-size: 13px;
+  font-size: var(--groesse-fein);
   font-weight: 600;
   color: var(--gold-text);
 }
@@ -81,7 +81,7 @@
   flex-wrap: wrap;
   align-items: center;
   gap: var(--raster);
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
   color: var(--text-leise);
 }
 
@@ -128,7 +128,7 @@
 }
 
 .eigene-titel {
-  font-size: 15px;
+  font-size: var(--groesse-mittel);
   color: var(--text-leise);
 }
 

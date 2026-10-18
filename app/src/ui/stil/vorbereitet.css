@@ -6,7 +6,7 @@
  */
 
 .plakette-entwurf {
-  font-size: 12px;
+  font-size: var(--groesse-fein);
   font-weight: 700;
   padding: 2px 8px;
   border-radius: 10px;

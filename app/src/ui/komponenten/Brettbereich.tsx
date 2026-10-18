@@ -28,11 +28,14 @@ const SYMBOLGROESSE = 20;
 function Schalter({
   an,
   name,
+  kurz,
   beiKlick,
   children,
 }: {
   an: boolean;
   name: string;
+  /** Kurzes Wort unter dem Symbol (DS5). */
+  kurz: string;
   beiKlick: () => void;
   children: React.ReactNode;
 }) {
@@ -46,6 +49,9 @@ function Schalter({
       onClick={beiKlick}
     >
       {children}
+      <span className="brettschalter-text" aria-hidden="true">
+        {kurz}
+      </span>
     </button>
   );
 }
@@ -120,7 +126,12 @@ export function Brettbereich({
           aria-label={t("abbildung.brettwerkzeuge")}
         >
           {werkzeugSymbole}
-          <Schalter an={gedreht} name={t("brett.drehen")} beiKlick={() => setzeGedreht(!gedreht)}>
+          <Schalter
+            an={gedreht}
+            name={t("brett.drehen")}
+            kurz={t("brett.drehenKurz")}
+            beiKlick={() => setzeGedreht(!gedreht)}
+          >
             <RotateCw size={SYMBOLGROESSE} aria-hidden="true" />
           </Schalter>
           {zusatzSchalter}

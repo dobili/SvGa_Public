@@ -43,6 +43,7 @@ export function Brettsymbole({
       {brettsymbole(kapitel, mitRegeln).map((symbol) => {
         const Bild = bildVon(symbol.wahl);
         const name = t(symbol.name);
+        const kurz = t(symbol.kurz);
         const gewaehlt = werkzeug.buendel === null && werkzeug.wahl === symbol.wahl;
         return (
           <button
@@ -55,6 +56,9 @@ export function Brettsymbole({
             onClick={() => werkzeug.tippeSymbol(symbol.wahl)}
           >
             <Bild size={SYMBOLGROESSE} aria-hidden="true" />
+            <span className="brettschalter-text" aria-hidden="true">
+              {kurz}
+            </span>
           </button>
         );
       })}

@@ -38,13 +38,35 @@ const SYMBOLGROESSE = 20;
 const SYMBOLE: readonly {
   wahl: Werkzeugwahl;
   name: Textschluessel;
+  kurz: Textschluessel;
   Bild: LucideIcon;
   engine?: true;
 }[] = [
-  { wahl: "zaehlen", name: "werkzeug.k1-zaehlen.name", Bild: Calculator },
-  { wahl: "engine", name: "werkzeug.engine.name", Bild: Cpu, engine: true },
-  { wahl: "k1-roentgen", name: "werkzeug.k1-roentgen.name", Bild: ScanEye },
-  { wahl: "k7-warnsignale", name: "werkzeug.k7-warnsignale.name", Bild: TriangleAlert },
+  {
+    wahl: "zaehlen",
+    name: "werkzeug.k1-zaehlen.name",
+    kurz: "werkzeug.k1-zaehlen.kurz",
+    Bild: Calculator,
+  },
+  {
+    wahl: "engine",
+    name: "werkzeug.engine.name",
+    kurz: "werkzeug.engine.kurz",
+    Bild: Cpu,
+    engine: true,
+  },
+  {
+    wahl: "k1-roentgen",
+    name: "werkzeug.k1-roentgen.name",
+    kurz: "werkzeug.k1-roentgen.kurz",
+    Bild: ScanEye,
+  },
+  {
+    wahl: "k7-warnsignale",
+    name: "werkzeug.k7-warnsignale.name",
+    kurz: "werkzeug.k7-warnsignale.kurz",
+    Bild: TriangleAlert,
+  },
 ];
 
 /**
@@ -64,7 +86,7 @@ export function PartieSymbole({
   if (sichtbar.length === 0) return null;
   return (
     <>
-      {sichtbar.map(({ wahl, name, Bild }) => (
+      {sichtbar.map(({ wahl, name, kurz, Bild }) => (
         <button
           key={wahl}
           type="button"
@@ -75,6 +97,9 @@ export function PartieSymbole({
           onClick={() => werkzeug.tippeSymbol(wahl)}
         >
           <Bild size={SYMBOLGROESSE} aria-hidden="true" />
+          <span className="brettschalter-text" aria-hidden="true">
+            {t(kurz)}
+          </span>
         </button>
       ))}
     </>

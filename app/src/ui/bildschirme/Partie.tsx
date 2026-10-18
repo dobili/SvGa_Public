@@ -116,6 +116,9 @@ function RuhigSchalter({ ruhig }: { ruhig: boolean }) {
       onClick={schalte}
     >
       {ruhig ? <EyeOff size={SYMBOLGROESSE} /> : <Eye size={SYMBOLGROESSE} />}
+      <span className="brettschalter-text" aria-hidden="true">
+        {t("partie.ruhigKurz")}
+      </span>
     </button>
   );
 }

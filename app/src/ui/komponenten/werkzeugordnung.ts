@@ -266,6 +266,8 @@ export function buendelMit(wahl: Werkzeugwahl): Buendelkennung[] {
 export interface Brettsymbol {
   readonly wahl: Werkzeugwahl;
   readonly name: Textschluessel;
+  /** Kurzes Wort unter dem Symbol (DS5), Teil des Namens für Bildschirmleser. */
+  readonly kurz: Textschluessel;
 }
 
 /**
@@ -275,18 +277,34 @@ export interface Brettsymbol {
  * Lehrbild ohne König → nur Zählen.
  */
 export function brettsymbole(kapitel: number, mitRegeln: boolean): Brettsymbol[] {
-  const zaehlen: Brettsymbol = { wahl: "zaehlen", name: "werkzeug.k1-zaehlen.name" };
+  const zaehlen: Brettsymbol = {
+    wahl: "zaehlen",
+    name: "werkzeug.k1-zaehlen.name",
+    kurz: "werkzeug.k1-zaehlen.kurz",
+  };
   if (!mitRegeln) return [zaehlen];
   const symbole: Brettsymbol[] = [
     zaehlen,
-    { wahl: "ziehen", name: "werkzeug.ziehen.name" },
-    { wahl: "engine", name: "werkzeug.engine.name" },
+    { wahl: "ziehen", name: "werkzeug.ziehen.name", kurz: "werkzeug.ziehen.kurz" },
+    { wahl: "engine", name: "werkzeug.engine.name", kurz: "werkzeug.engine.kurz" },
   ];
   if (kapitel >= ROENTGEN_AB)
-    symbole.push({ wahl: "k1-roentgen", name: "werkzeug.k1-roentgen.name" });
+    symbole.push({
+      wahl: "k1-roentgen",
+      name: "werkzeug.k1-roentgen.name",
+      kurz: "werkzeug.k1-roentgen.kurz",
+    });
   if (kapitel >= SIEBEN_SIGNALE_AB)
-    symbole.push({ wahl: "k7-warnsignale", name: "werkzeug.k7-warnsignale.name" });
+    symbole.push({
+      wahl: "k7-warnsignale",
+      name: "werkzeug.k7-warnsignale.name",
+      kurz: "werkzeug.k7-warnsignale.kurz",
+    });
   else if (kapitel >= WARNSIGNALE_AB)
-    symbole.push({ wahl: "k4-warnsignale", name: "werkzeug.k4-warnsignale.name" });
+    symbole.push({
+      wahl: "k4-warnsignale",
+      name: "werkzeug.k4-warnsignale.name",
+      kurz: "werkzeug.k4-warnsignale.kurz",
+    });
   return symbole;
 }

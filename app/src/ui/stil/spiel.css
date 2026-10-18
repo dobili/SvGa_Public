@@ -242,6 +242,38 @@
   width: 36%;
 }
 
+/* Schmale Handys (DS17): Die Zeilenbeschriftung („Genauigkeit (App)“, „Geschätzte Spielstärke“)
+   steht über den beiden Werten statt als dritte, schmale Spalte daneben. Vorher stieß sie an
+   den Wert („Genauigkeit13 %“) oder brach Wort für Wort um. */
+@media (max-width: 479px) {
+  .spielstaerke-tabelle:not(.spielstaerke-klassen),
+  .spielstaerke-tabelle:not(.spielstaerke-klassen) thead,
+  .spielstaerke-tabelle:not(.spielstaerke-klassen) tbody {
+    display: block;
+  }
+
+  .spielstaerke-tabelle:not(.spielstaerke-klassen) tr {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-bottom: 1px solid var(--linie);
+  }
+
+  .spielstaerke-tabelle:not(.spielstaerke-klassen) th,
+  .spielstaerke-tabelle:not(.spielstaerke-klassen) td {
+    border-bottom: none;
+  }
+
+  .spielstaerke-tabelle:not(.spielstaerke-klassen) thead th:first-child {
+    display: none;
+  }
+
+  .spielstaerke-tabelle:not(.spielstaerke-klassen) th[scope="row"] {
+    grid-column: 1 / -1;
+    width: auto;
+    padding-bottom: 0;
+  }
+}
+
 /* Zugklassen: die Zahlen brauchen wenig Platz, der Name mehr. */
 .spielstaerke-klassen th[scope="row"] {
   width: 64%;

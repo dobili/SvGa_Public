@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "hinweis": "Abbildungen ohne Zugfolge im Buch: Kann die Stellung aus einer realistischen Partie erwachsen? Bei „ja“ baut Claude eine Partie ab der Grundstellung (pipeline/zugfolgen/konstruieren.py, Status „konstruiert“). Entscheidung des Autors vom 18.10.2026.",
+  "abbildungen": [
+    {
+      "nummer": "0.3",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "0.4",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "0.5",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "0.6",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "0.7",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "0.8",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "0.9",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "0.10",
+      "realistisch": true,
+      "grund": "Matt mit Dame gegen König: Endpunkt eines gewöhnlichen Damenendspiels."
+    },
+    {
+      "nummer": "0.11",
+      "realistisch": true,
+      "grund": "Patt mit Dame gegen König: Endpunkt eines Damenendspiels, wie es in Partien vorkommt."
+    },
+    {
+      "nummer": "5.1",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "5.2",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "5.9",
+      "realistisch": true,
+      "grund": "Bauernendspiel drei gegen drei am Königsflügel."
+    },
+    {
+      "nummer": "5.10",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.12",
+      "realistisch": false,
+      "grund": "Schema der Grundreihe (Turm gegen König und drei Bauern), die übrigen Steine sind weggelassen."
+    },
+    {
+      "nummer": "5.13",
+      "realistisch": false,
+      "grund": "Schema der Grundreihe (Turm gegen König und drei Bauern), die übrigen Steine sind weggelassen."
+    },
+    {
+      "nummer": "5.15",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.18",
+      "realistisch": true,
+      "grund": "Mittelspielstellung nach einer Damengambit-Eröffnung (Isolani).",
+      "eroeffnungen": [
+        "Semi-Tarrasch-Verteidigung|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e3 Nc6 Bb5 cxd4 Nxd4 Be7 Nxd5 exd5 O-O O-O b3 Bf6 Bb2 Be7 Qe2"
+      ]
+    },
+    {
+      "nummer": "5.27",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.29",
+      "realistisch": true,
+      "grund": "Bauernendspiel mit Mehrheit am Damenflügel (drei gegen zwei)."
+    },
+    {
+      "nummer": "5.30",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.31",
+      "realistisch": false,
+      "grund": "Schema der Blockade (Springer vor dem Isolani); Weiß hätte ohne Ausgleich eine Figur weniger."
+    },
+    {
+      "nummer": "5.32",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.33",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.34",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.35",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.38",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.39",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "5.41",
+      "realistisch": true,
+      "grund": "Läuferpaar gegen Läufer und Springer mit Bauern; typisches Endspiel."
+    },
+    {
+      "nummer": "6.2",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "6.8",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "6.9",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "6.10",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "7.2",
+      "realistisch": false,
+      "grund": "Lehrbild der Springergabel (Springer gegen Dame, sonst nichts); konstruierte Lage."
+    },
+    {
+      "nummer": "7.24",
+      "realistisch": true,
+      "grund": "Endspiel mit Turm und Läufer gegen Turm; Partiestellung."
+    },
+    {
+      "nummer": "7.35",
+      "realistisch": false,
+      "grund": "Mattmuster mit wenigen Steinen; die übrigen sind weggelassen, die Materialverteilung wäre in einer Partie unrealistisch."
+    },
+    {
+      "nummer": "7.36",
+      "realistisch": false,
+      "grund": "Mattmuster mit wenigen Steinen; die übrigen sind weggelassen, die Materialverteilung wäre in einer Partie unrealistisch."
+    },
+    {
+      "nummer": "7.39",
+      "realistisch": false,
+      "grund": "Mattmuster mit wenigen Steinen; die übrigen sind weggelassen, die Materialverteilung wäre in einer Partie unrealistisch."
+    },
+    {
+      "nummer": "7.40",
+      "realistisch": false,
+      "grund": "Mattmuster mit wenigen Steinen; die übrigen sind weggelassen, die Materialverteilung wäre in einer Partie unrealistisch."
+    },
+    {
+      "nummer": "7.41",
+      "realistisch": false,
+      "grund": "Mattmuster mit wenigen Steinen; die übrigen sind weggelassen, die Materialverteilung wäre in einer Partie unrealistisch."
+    },
+    {
+      "nummer": "7.42",
+      "realistisch": false,
+      "grund": "Mattmuster mit wenigen Steinen; die übrigen sind weggelassen, die Materialverteilung wäre in einer Partie unrealistisch."
+    },
+    {
+      "nummer": "7.43",
+      "realistisch": false,
+      "grund": "Mattmuster mit wenigen Steinen; die übrigen sind weggelassen, die Materialverteilung wäre in einer Partie unrealistisch."
+    },
+    {
+      "nummer": "7.45",
+      "realistisch": true,
+      "grund": "Turm und Springer auf beiden Seiten mit Bauern; Partiestellung."
+    },
+    {
+      "nummer": "8.7",
+      "realistisch": true,
+      "grund": "Patt mit Dame gegen König: Endpunkt eines Damenendspiels."
+    },
+    {
+      "nummer": "8.8",
+      "realistisch": true,
+      "grund": "Matt mit Dame gegen König (wie Abb. 0.10)."
+    },
+    {
+      "nummer": "8.9",
+      "realistisch": true,
+      "grund": "Turm gegen König: gewöhnliches Endspiel nach Abtausch."
+    },
+    {
+      "nummer": "8.10",
+      "realistisch": true,
+      "grund": "Matt mit Turm gegen König: Endpunkt des Turmendspiels."
+    },
+    {
+      "nummer": "8.25",
+      "realistisch": true,
+      "grund": "Bauer gegen König: gewöhnliches Endspiel nach Abtausch."
+    },
+    {
+      "nummer": "8.26",
+      "realistisch": true,
+      "grund": "Bauer gegen König: gewöhnliches Endspiel nach Abtausch."
+    },
+    {
+      "nummer": "8.37",
+      "realistisch": false,
+      "grund": "Lehrbild ohne beide Könige (Brett, Gangart oder Bauernzug); keine Partiestellung."
+    },
+    {
+      "nummer": "8.42",
+      "realistisch": true,
+      "grund": "Bauernendspiel mit Mehrheit am Damenflügel (wie Abb. 5.29)."
+    },
+    {
+      "nummer": "8.44",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    },
+    {
+      "nummer": "9.1",
+      "realistisch": true,
+      "grund": "Turmendspiel mit Bauer gegen Turm."
+    },
+    {
+      "nummer": "9.2",
+      "realistisch": true,
+      "grund": "Turmendspiel mit Bauer gegen Turm."
+    },
+    {
+      "nummer": "9.18",
+      "realistisch": true,
+      "grund": "Turm gegen Bauer."
+    },
+    {
+      "nummer": "9.24",
+      "realistisch": true,
+      "grund": "Turmendspiel mit Bauern auf einem Flügel."
+    },
+    {
+      "nummer": "9.25",
+      "realistisch": true,
+      "grund": "Turmendspiel mit zwei gegen einen Bauern."
+    },
+    {
+      "nummer": "9.35",
+      "realistisch": true,
+      "grund": "Läuferendspiel mit ungleichfarbigen Läufern."
+    },
+    {
+      "nummer": "9.36",
+      "realistisch": true,
+      "grund": "Läuferendspiel mit ungleichfarbigen Läufern und zwei Bauern."
+    },
+    {
+      "nummer": "9.37",
+      "realistisch": true,
+      "grund": "Läuferendspiel mit ungleichfarbigen Läufern und zwei Bauern."
+    },
+    {
+      "nummer": "9.39",
+      "realistisch": true,
+      "grund": "Springer gegen Bauer."
+    },
+    {
+      "nummer": "9.41",
+      "realistisch": true,
+      "grund": "Läufer und Randbauer gegen König (falscher Läufer)."
+    },
+    {
+      "nummer": "9.42",
+      "realistisch": true,
+      "grund": "Läufer gegen Springer mit Bauern."
+    },
+    {
+      "nummer": "9.53",
+      "realistisch": true,
+      "grund": "Läufer und Randbauer gegen König."
+    },
+    {
+      "nummer": "10.21",
+      "realistisch": true,
+      "grund": "Zwei Springer gegen Bauer (Troitzky); kommt in Partien vor."
+    },
+    {
+      "nummer": "11.10",
+      "realistisch": true,
+      "grund": "Mittelspielstellung der Französischen Verteidigung.",
+      "eroeffnungen": [
+        "Französische Verteidigung, klassisch|e4 e6 d4 d5 Nc3 Nf6 Bg5 Be7 e5 Nfd7 Bxe7 Qxe7 Nce2 c5 c3 Nc6 Nf3 cxd4 cxd4 O-O Nc3 Qd8 Bd3 Qb6 O-O Qc7"
+      ]
+    },
+    {
+      "nummer": "11.42",
+      "realistisch": true,
+      "grund": "Mittelspielstellung nach einer Damengambit-Eröffnung (wie Abb. 5.18).",
+      "eroeffnungen": [
+        "Semi-Tarrasch-Verteidigung|d4 d5 c4 e6 Nc3 Nf6 Nf3 c5 cxd5 Nxd5 e3 Nc6 Bb5 cxd4 Nxd4 Be7 Nxd5 exd5 O-O O-O b3 Bf6 Bb2 Be7 Qe2"
+      ]
+    },
+    {
+      "nummer": "11.56",
+      "realistisch": false,
+      "grund": "Bauernskelett mit nur Königen und vielen Bauern: Alle Figuren wären getauscht, ohne dass sich an den Bauern etwas geändert hätte; als Partiestellung unrealistisch."
+    }
+  ]
+}

@@ -24,7 +24,7 @@ import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
-import { FehlerartenKarte } from "../komponenten/FehlerartenKarte";
+import { BlindeFleckenKarte, FehlerartenKarte } from "../komponenten/FehlerartenKarte";
 import { StufenWahl } from "../komponenten/StufenWahl";
 import { GegnerWahl, HilfenWahl } from "../komponenten/GegnerWahl";
 import {
@@ -32,7 +32,6 @@ import {
   kategorieVon,
   type Gegnerkategorie,
 } from "../komponenten/gegnerkategorie";
-import type { Fehlerart } from "../../engine/fehlerart";
 import { gegnerVon, unterAbhakliste, type EigenerGegner } from "../../engine/gegner";
 import { GegnerEditor } from "../komponenten/GegnerEditor";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
@@ -131,6 +130,7 @@ function Einstellungen({
             />
             {/* Seit 0.2.80 hier statt in den Einstellungen (Wunsch des Autors). */}
             <FehlerartenKarte />
+            <BlindeFleckenKarte />
           </>
         }
         editor={<GegnerEditor />}
@@ -241,12 +241,13 @@ function Startstellung({
  * Die Abhakliste (0.2.60) beschneidet nur die Fehlerarten der eigenen Stufe: Seit 0.2.80 steht
  * sie dort und nicht mehr in den Einstellungen, und vorgefertigte Gegner sind mit ihrer eigenen
  * Liste gemessen und beschrieben (Empfehlung nach Regel 9, Wunsch des Autors vom 18.10.2026);
- * eigene Gegner haben ihre eigene Liste.
+ * eigene Gegner haben ihre eigene Liste. Ebenso gelten die blinden Flecken der Vorlieben (0.2.81)
+ * nur für die eigene Stufe.
  */
 function gegnerprofil(
   bot: string | null,
   eigene: readonly EigenerGegner[],
-  erlaubt: readonly Fehlerart[],
+  v: Pick<Spielvorlieben, "erlaubteFehlerarten" | "blindeFlecken">,
 ) {
   const eigener = eigene.find((g) => g.kennung === bot);
   if (eigener) {
@@ -258,7 +259,12 @@ function gegnerprofil(
     };
   }
   const vorgefertigt = gegnerVon(bot);
-  if (!vorgefertigt) return { fehlerarten: unterAbhakliste(null, erlaubt) };
+  if (!vorgefertigt) {
+    return {
+      fehlerarten: unterAbhakliste(null, v.erlaubteFehlerarten),
+      blindeFlecken: v.blindeFlecken,
+    };
+  }
   return {
     botName: vorgefertigt.name,
     fehlerarten: vorgefertigt.fehlerarten,
@@ -275,7 +281,7 @@ function useBeginne(fen: string, abbildung: string | undefined) {
     const v = wahl.vorlieben;
     const bot = v.gegner === "engine" ? v.bot : null;
     const einstellung = {
-      ...gegnerprofil(bot, eigene, v.erlaubteFehlerarten),
+      ...gegnerprofil(bot, eigene, v),
       startFen: fen,
       eigeneFarbe: wahl.farbe,
       stufe: v.stufenJePhase.mittelspiel,

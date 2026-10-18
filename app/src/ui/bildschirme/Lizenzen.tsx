@@ -38,10 +38,40 @@ const BAUSTEINE: readonly { name: string; lizenz: string; herkunft: string; text
     text: "/lizenzen/lppl-1.3c.txt",
   },
   {
-    name: "Figurensätze „klassisch“ und „Holz“ (Colin M. L. Burnett; „Holz“ umgefärbt)",
+    name: "Figurensätze Cburnett (Colin M. L. Burnett) und Merida (Armando Hernandez Marroquin)",
     lizenz: "GNU GPL 2.0 oder neuer (hier unter GPL 3.0)",
-    herkunft: "Wikimedia Commons, über Lichess (github.com/lichess-org/lila, Satz cburnett)",
+    herkunft: "über Lichess (github.com/lichess-org/lila, public/piece)",
     text: "/lizenzen/gpl-3.0.txt",
+  },
+  {
+    name: "Figurensatz Mpchess (Maxime Chupin)",
+    lizenz: "GNU GPL 3.0 oder neuer",
+    herkunft: "über Lichess (github.com/lichess-org/lila, public/piece/mpchess)",
+    text: "/lizenzen/gpl-3.0.txt",
+  },
+  {
+    name: "Figurensatz Chessnut (Alexis Luengas, Copyright 2015)",
+    lizenz: "Apache License 2.0",
+    herkunft: "github.com/LexLuengas/chessnut-pieces",
+    text: "/lizenzen/apache-2.0-chessnut.txt",
+  },
+  {
+    name: "Figurensätze Celtic und Spatial (Maurizio Monge)",
+    lizenz: "MIT",
+    herkunft: "github.com/maurimo/chess-art",
+    text: "/lizenzen/mit-chess-art.txt",
+  },
+  {
+    name: "Holzfiguren Eiche & Mahagoni (nach Fantasy von Maurizio Monge, mit Holzmaserung)",
+    lizenz: "MIT",
+    herkunft: "github.com/maurimo/chess-art; bearbeitet von Dominik Bilitewski, 2026",
+    text: "/lizenzen/mit-chess-art.txt",
+  },
+  {
+    name: "Holzfiguren Kiefer & Kirsche, Esche & Ebenholz (nach RhosGFX und Livius)",
+    lizenz: "CC0 1.0 (gemeinfrei)",
+    herkunft:
+      "rhosgfx.itch.io, github.com/kmar/chess_svg_piece_sets (Martin Sedlák); mit Holzmaserung bearbeitet",
   },
   {
     name: "Source Sans 3, Source Serif 4",

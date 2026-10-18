@@ -271,7 +271,7 @@ test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am B
   await page.getByRole("tab", { name: "Figuren" }).click();
   await page
     .getByRole("radiogroup", { name: "Figurensatz" })
-    .getByRole("radio", { name: "klassisch" })
+    .getByRole("radio", { name: "Chessnut" })
     .click();
   await page.getByRole("tab", { name: "Ton" }).click();
   const ton = page.getByRole("radiogroup", { name: "Ton" });
@@ -279,7 +279,8 @@ test("Figurensatz und Ton in den Einstellungen (0.2.33): klassische Figuren am B
   await expect(ton.getByRole("radio", { name: "an" })).toBeChecked();
   await page.getByRole("button", { name: "Buch" }).click();
   await oeffneAbbildung(page, "1.26", "1.26");
-  const bilder = page.locator(".brettbereich .brett svg image[href$='wK.svg']");
+  // Seit 0.2.81 neun Bildsätze; Chessnut steht in der Gruppe „Klassisch“.
+  const bilder = page.locator(".brettbereich .brett svg image[href$='klassisch-chessnut/wK.svg']");
   await expect(bilder).toHaveCount(1);
   // Ein Zug mit Ton an läuft ohne Fehler (der Ton selbst ist im Test nicht hörbar).
   await page.getByRole("button", { name: "Ziehen" }).click();

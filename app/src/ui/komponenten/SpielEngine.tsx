@@ -8,11 +8,13 @@
  * Auswertung (!, ?!, ?, ??) ohne Erklärung, 3. warum er schlecht war (Regeln des Buches,
  * spiel/erklaerung.ts), 4. der beste Zug jetzt als goldener Pfeil. Schritte, die nichts zu sagen
  * haben, fallen weg (kein eigener Zug bisher; ein guter Zug braucht kein „Warum“).
- * Die Engine rechnet erst beim Tipp, mit voller Stärke.
+ * Die Engine rechnet erst beim Tipp, mit voller Stärke. Seit 0.2.81 (Rückmeldung des Autors) ist
+ * der Einstieg das Engine-Symbol am Brett wie bei den Abbildungen: Die Karte erscheint mit der
+ * Bewertung, die weiteren Schritte sind kleine Schaltflächen statt großer Knöpfe.
  * Abhängigkeiten: engine/engineDienst.ts, engine/letzterzug.ts, spiel/erklaerung.ts,
  * ui/komponenten/useZugurteil.ts, i18n.
  */
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { AuftragAbgebrochen, engine, type Bewertung } from "../../engine/engineDienst";
 import { urteilUeberLetztenZug, wertNachDemZug } from "../../engine/letzterzug";
@@ -145,8 +147,31 @@ export function SpielEngine({
   beiMarkierungen: (markierungen: readonly Markierung[]) => void;
 }) {
   const [stand, setzeStand] = useState<Stand>({ schritt: 0, jetzt: null, eigenes: null });
-  const [laedt, setzeLaedt] = useState(false);
+  const [laedt, setzeLaedt] = useState(true);
   const [fehler, setzeFehler] = useState<string | null>(null);
+  const rueckruf = useRef(beiMarkierungen);
+  useEffect(() => {
+    rueckruf.current = beiMarkierungen;
+  });
+  // Schritt 1 gleich beim Erscheinen: das Symbol am Brett ist schon der erste Tipp.
+  useEffect(() => {
+    let aktiv = true;
+    rechne(1, { schritt: 0, jetzt: null, eigenes: null }, fen, [], fen)
+      .then((neu) => {
+        if (!aktiv) return;
+        setzeStand(neu);
+        rueckruf.current(markierungen(neu));
+      })
+      .catch((grund: unknown) => {
+        if (!aktiv || grund instanceof AuftragAbgebrochen) return;
+        console.error("Engine während der Partie fehlgeschlagen:", grund);
+        setzeFehler(grund instanceof Error ? grund.message : String(grund));
+      })
+      .finally(() => aktiv && setzeLaedt(false));
+    return () => {
+      aktiv = false;
+    };
+  }, [fen]);
   const naechster = naechsterSchritt(
     stand.schritt,
     eigenerLetzterZug(startFen, zuege),
@@ -158,7 +183,7 @@ export function SpielEngine({
     rechne(naechster, stand, fen, zuege, startFen)
       .then((neu) => {
         setzeStand(neu);
-        beiMarkierungen(markierungen(neu));
+        rueckruf.current(markierungen(neu));
       })
       .catch((grund: unknown) => {
         if (grund instanceof AuftragAbgebrochen) return;
@@ -171,10 +196,17 @@ export function SpielEngine({
     <section className="karte spielengine" data-testid="spielengine">
       {stand.schritt > 0 && <Saetze stand={stand} fen={fen} />}
       {fehler && <p className="fehlertext">{t("engine.fehler", { fehler })}</p>}
-      {naechster !== null && (
-        <button type="button" className="knopf-zweit" disabled={laedt} onClick={weiter}>
-          {laedt ? t("spielengine.rechnet") : t(`spielengine.knopf.${naechster}`)}
-        </button>
+      {laedt && (
+        <p className="lade">
+          <span className="ladepunkt" aria-hidden="true" /> {t("spielengine.rechnet")}
+        </p>
+      )}
+      {!laedt && naechster !== null && (
+        <div className="chipreihe">
+          <button type="button" className="chip" onClick={weiter}>
+            {t(`spielengine.knopf.${naechster}`)}
+          </button>
+        </div>
       )}
     </section>
   );

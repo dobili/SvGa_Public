@@ -9,8 +9,11 @@
  * verbieten, die ihn nicht weiterbringt. Eigene Gegner haben ihre eigene Liste (GegnerEditor.tsx)
  * und bleiben unberührt. Die Liste liegt in den Spielvorlieben (speicher/partien.ts) und greift
  * bei der nächsten neuen Partie (Spielen.tsx, `gegnerprofil`).
- * Abhängigkeiten: engine/fehlerart.ts, speicher/partien.ts, speicher/speicher.ts, InfoKnopf, i18n.
+ * Seit 0.2.81 (Wunsch des Autors) daneben „Blinde Flecken der Engine“ für die eigene Stufe, wie
+ * bei den eigenen Gegnern (GegnerEditor.tsx), gespeichert in den Spielvorlieben.
+ * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, speicher/partien.ts, speicher/speicher.ts, InfoKnopf, i18n.
  */
+import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import { t } from "../../i18n/sprache";
 import { mitVorlieben } from "../../speicher/partien";
@@ -71,6 +74,55 @@ export function FehlerartenKarte() {
       <p className="hinweis" role="status">
         {stand}
       </p>
+    </details>
+  );
+}
+
+/** Schreibt die blinden Flecken der eigenen Stufe in die Spielvorlieben. */
+function setzeFlecken(flecken: readonly BlinderFleck[]): void {
+  void aendere((d) => ({
+    ...d,
+    spiel: mitVorlieben(d.spiel, { ...d.spiel.vorlieben, blindeFlecken: flecken }),
+  }));
+}
+
+/**
+ * Abschnitt „Blinde Flecken der Engine“ für die eigene Stufe: Zugarten, die die Engine oft nicht
+ * sieht (engine/blindeFlecken.ts). Vorgabe keine; der Stand steht in der Überschrift.
+ * Beispiel: „Rückzüge“ angehakt → die Engine übersieht oft, dass ein Rückzug der beste Zug ist.
+ */
+export function BlindeFleckenKarte() {
+  const flecken = useSpeicher((z) => z.daten.spiel.vorlieben.blindeFlecken);
+  const schalte = (fleck: BlinderFleck, an: boolean) =>
+    setzeFlecken(
+      an
+        ? BLINDE_FLECKEN.filter((f) => f === fleck || flecken.includes(f))
+        : flecken.filter((f) => f !== fleck),
+    );
+  const stand = t("spielen.flecken.stand", { anzahl: String(flecken.length) });
+  return (
+    <details className="unterabschnitt" data-testid="blinde-flecken">
+      <summary>
+        {t("spielen.flecken.titel")} <span className="hinweis">({stand})</span>
+      </summary>
+      <MitInfo
+        zeile={<p className="hinweis">{t("spielen.flecken.kurz")}</p>}
+        erklaerung={t("spielen.eigene.blindeFleckenHinweis")}
+        thema={t("spielen.flecken.titel")}
+      />
+      <fieldset className="fehlerartenwahl">
+        <legend className="nur-vorlesen">{t("spielen.flecken.titel")}</legend>
+        {BLINDE_FLECKEN.map((fleck) => (
+          <label key={fleck} className="schalterzeile">
+            <input
+              type="checkbox"
+              checked={flecken.includes(fleck)}
+              onChange={(e) => schalte(fleck, e.target.checked)}
+            />
+            {t(`blind.${fleck}`)}
+          </label>
+        ))}
+      </fieldset>
     </details>
   );
 }

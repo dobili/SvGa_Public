@@ -5,12 +5,9 @@
  * Autors nach dem versprochenen zweiten Satz) gibt es mehrere Sätze:
  * - „buch“: die Figuren der Buchdiagramme (SkakNew, Pfade aus figurenpfade.generiert.ts), mit
  *   cremefarbenem Schattenriss und Figur in der Farbe des Brettes;
- * - „klassisch“ (bis 0.2.38 „kontrastreich“, umbenannt auf Wunsch des Autors): die Figuren von
- *   Colin M. L. Burnett (GPLv2 oder neuer, wie bei Lichess), weiß mit schwarzem Rand und schwarz,
- *   gut zu unterscheiden auch auf kleinen Handys;
- * - „holz“ (seit 0.2.39, Wunsch des Autors: passend zum Holzbrett): dieselben Figuren in
- *   Holzfarben, helles Ahorn und dunkles Nussbaum mit braunem Rand (public/figuren/holz/,
- *   erzeugt durch Umfärben der klassischen Dateien).
+ * - seit 0.2.81 neun Bildsätze nach Wahl des Autors, je drei klassisch, modern und aus Holz
+ *   (speicher/format.ts, BILDSAETZE; Herkunft und Lizenz in pipeline/figuren/saetze/LIZENZEN.md).
+ *   Sie ersetzen die früheren Sätze „klassisch“ und „Holz“.
  * Die SVG-Dateien liegen in public/figuren/<satz>/ und gehören zum Offline-Speicher (Muster *.svg).
  * Abhängigkeiten: figurenpfade.generiert.ts, masse.ts.
  */
@@ -36,7 +33,7 @@ function dateiname(zeichen: string): string {
  *
  * Eingaben: FEN-Zeichen, Ecke, Figurensatz, Farbe der Buchfiguren (je nach Brettfarben).
  * Beispiel: Abb. 1.26, weißer Springer f3: im Buchsatz Schattenriss und Navy-Figur, im
- * klassischen Satz das Bild figuren/klassisch/wN.svg. Sonderfall: unbekanntes Zeichen zeichnet nichts.
+ * Satz „klassisch-cburnett“ das Bild figuren/klassisch-cburnett/wN.svg. Sonderfall: unbekanntes Zeichen zeichnet nichts.
  */
 export function Figur({
   zeichen,

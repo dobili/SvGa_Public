@@ -32,7 +32,7 @@ describe("Rundreise", () => {
       einstellungen: {
         brettfarben: "gruen",
         strenge: "streng",
-        figurensatz: "klassisch",
+        figurensatz: "klassisch-cburnett",
         ton: "an",
       },
       lernstand: { 1: [0, 2] },

@@ -34,9 +34,13 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
     expect(ergebnis.daten.angelegt).toBe(JETZT.toISOString());
   });
 
-  it("liest den Figurensatz „kontrastreich“ (bis 0.2.38) als „klassisch“, Unbekanntes als „buch“", () => {
-    expect(einstellungenAus({ figurensatz: "kontrastreich" }).figurensatz).toBe("klassisch");
-    expect(einstellungenAus({ figurensatz: "holz" }).figurensatz).toBe("holz");
+  it("übernimmt alte Figurensätze (kontrastreich, klassisch, holz), Unbekanntes als „buch“", () => {
+    expect(einstellungenAus({ figurensatz: "kontrastreich" }).figurensatz).toBe(
+      "klassisch-cburnett",
+    );
+    expect(einstellungenAus({ figurensatz: "klassisch" }).figurensatz).toBe("klassisch-cburnett");
+    expect(einstellungenAus({ figurensatz: "holz" }).figurensatz).toBe("holz-kiefer-kirsche");
+    expect(einstellungenAus({ figurensatz: "modern-celtic" }).figurensatz).toBe("modern-celtic");
     expect(einstellungenAus({ figurensatz: "bunt" }).figurensatz).toBe("buch");
   });
 

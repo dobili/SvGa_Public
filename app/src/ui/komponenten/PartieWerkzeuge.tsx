@@ -15,7 +15,7 @@
  * Abhängigkeiten: partiewerkzeug.ts, useWerkzeugwahl.ts, Werkzeugleiste.tsx (Reiter),
  * Werkzeugkarte.tsx, Werkzeugzusatz.tsx, RuheKarte.tsx, i18n, lucide-react.
  */
-import { Calculator, ScanEye, TriangleAlert, type LucideIcon } from "lucide-react";
+import { Calculator, Cpu, ScanEye, TriangleAlert, type LucideIcon } from "lucide-react";
 import type { Werkzeugergebnis } from "../../analyse/werkzeug";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import type { Farbe, Stellung } from "../../schach/stellung";
@@ -30,18 +30,41 @@ import { Werkzeugzusatz } from "./Werkzeugzusatz";
 
 const SYMBOLGROESSE = 20;
 
-/** Die Symbole in der Reihenfolge am Brett, wie an den Abbildungen ab Kapitel 7. */
-const SYMBOLE: readonly { wahl: Werkzeugwahl; name: Textschluessel; Bild: LucideIcon }[] = [
+/**
+ * Die Symbole in der Reihenfolge am Brett, wie an den Abbildungen ab Kapitel 7. Die Engine
+ * (seit 0.2.81 als Symbol statt Knopf unter dem Brett, Wunsch des Autors) gehört zu den
+ * Werkzeugen, die übrigen zu den Symbolen der Spielhilfen.
+ */
+const SYMBOLE: readonly {
+  wahl: Werkzeugwahl;
+  name: Textschluessel;
+  Bild: LucideIcon;
+  engine?: true;
+}[] = [
   { wahl: "zaehlen", name: "werkzeug.k1-zaehlen.name", Bild: Calculator },
+  { wahl: "engine", name: "werkzeug.engine.name", Bild: Cpu, engine: true },
   { wahl: "k1-roentgen", name: "werkzeug.k1-roentgen.name", Bild: ScanEye },
   { wahl: "k7-warnsignale", name: "werkzeug.k7-warnsignale.name", Bild: TriangleAlert },
 ];
 
-/** Die drei Symbole als Knöpfe für die Brettzeile (aria-pressed, Name für Bildschirmleser). */
-export function PartieSymbole({ werkzeug }: { werkzeug: Werkzeugwahlstand }) {
+/**
+ * Die Symbole als Knöpfe für die Brettzeile (aria-pressed, Name für Bildschirmleser).
+ * `mitSymbolen`: Zählen, Röntgen, Warnsignale; `mitEngine`: das Engine-Symbol.
+ */
+export function PartieSymbole({
+  werkzeug,
+  mitSymbolen,
+  mitEngine,
+}: {
+  werkzeug: Werkzeugwahlstand;
+  mitSymbolen: boolean;
+  mitEngine: boolean;
+}) {
+  const sichtbar = SYMBOLE.filter((s) => (s.engine ? mitEngine : mitSymbolen));
+  if (sichtbar.length === 0) return null;
   return (
     <>
-      {SYMBOLE.map(({ wahl, name, Bild }) => (
+      {sichtbar.map(({ wahl, name, Bild }) => (
         <button
           key={wahl}
           type="button"

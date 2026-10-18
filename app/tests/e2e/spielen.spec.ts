@@ -235,6 +235,10 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   // Anfangs „Eigene Stufe“: Regler und Fehlerarten, keine Porträts.
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
   await expect(page.getByTestId("fehlerarten-abhakliste")).toBeVisible();
+  // Seit 0.2.81 auch die blinden Flecken der eigenen Stufe.
+  await page.getByTestId("blinde-flecken").locator("summary").click();
+  await page.getByRole("checkbox", { name: /Rückzüge/ }).check();
+  await expect(page.getByTestId("blinde-flecken").locator("summary")).toContainText("1 gewählt");
   await expect(page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" })).toHaveCount(0);
   await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
   await expect(page.getByLabel(/^Mittelspiel:/)).toHaveCount(0);
@@ -257,8 +261,10 @@ test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await ziehe(page, /^e2, Bauer/, "e4");
   await warteAufLeser(page);
+  // Seit 0.2.81 das Symbol „Engine“ am Brett statt eines Knopfes darunter.
+  await expect(page.getByTestId("spielengine")).toHaveCount(0);
+  await page.getByRole("button", { name: "Engine", exact: true }).click();
   const karte = page.getByTestId("spielengine");
-  await karte.getByRole("button", { name: "Engine: Stellung bewerten" }).click();
   await expect(karte.locator(".engine-wert")).toBeVisible({ timeout: ENGINE_FRIST });
   await karte.getByRole("button", { name: "Deinen letzten Zug bewerten" }).click();
   await expect(page.getByTestId("spielengine-urteil")).toContainText("1. e4", {

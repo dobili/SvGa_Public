@@ -28,10 +28,24 @@ export const SCHEMA_VERSION = 4;
 export type Brettfarben = "buch" | "holz" | "gruen";
 export type Strenge = "locker" | "streng";
 /**
- * „buch“: Figuren wie in den Diagrammen des Buches; „klassisch“: Figuren von Colin Burnett (bis
- * 0.2.38 „kontrastreich“ gespeichert, wird beim Lesen übernommen); „holz“: dieselben in Holzfarben.
+ * Die Bildsätze der Figuren (seit 0.2.81, Auswahl des Autors vom 18.10.2026), je Gruppe drei:
+ * Klassisch, Modern, Holz. Die Dateien liegen in public/figuren/<satz>/, Herkunft und Lizenz in
+ * pipeline/figuren/saetze/LIZENZEN.md.
  */
-export type Figurensatz = "buch" | "klassisch" | "holz";
+export const BILDSAETZE = [
+  "klassisch-cburnett",
+  "klassisch-merida",
+  "klassisch-chessnut",
+  "modern-mpchess",
+  "modern-celtic",
+  "modern-spatial",
+  "holz-kiefer-kirsche",
+  "holz-eiche-mahagoni",
+  "holz-esche-ebenholz",
+] as const;
+export type Bildsatz = (typeof BILDSAETZE)[number];
+/** „buch“: Figuren wie in den Diagrammen des Buches; sonst ein Bildsatz. */
+export type Figurensatz = "buch" | Bildsatz;
 export type Ton = "aus" | "an";
 
 export interface Einstellungen {
@@ -138,10 +152,23 @@ function alsZahl(wert: unknown): number {
  * und Ton kamen in 0.2.33 ohne neue Formatversion dazu: Fehlen sie, gilt der Standard.
  */
 
-/** Der Figurensatz aus Rohdaten; „kontrastreich“ (bis 0.2.38) heißt jetzt „klassisch“. */
+/**
+ * Alte Namen der Figurensätze und ihr Nachfolger: „kontrastreich“ (bis 0.2.38) und „klassisch“
+ * (bis 0.2.80) waren die Figuren von Colin Burnett; „holz“ (bis 0.2.80, umgefärbte Merida-Figuren)
+ * wird der erste neue Holzsatz, damit der Leser weiter Holzfiguren sieht.
+ */
+const ALTE_SAETZE: ReadonlyMap<string, Bildsatz> = new Map([
+  ["kontrastreich", "klassisch-cburnett"],
+  ["klassisch", "klassisch-cburnett"],
+  ["holz", "holz-kiefer-kirsche"],
+]);
+
+/** Der Figurensatz aus Rohdaten; alte Namen werden übernommen, Unbekanntes ist „buch“. */
 function figurensatzAus(roh: unknown): Figurensatz {
-  if (roh === "klassisch" || roh === "kontrastreich") return "klassisch";
-  return roh === "holz" ? "holz" : "buch";
+  if (typeof roh !== "string") return "buch";
+  const alt = ALTE_SAETZE.get(roh);
+  if (alt) return alt;
+  return BILDSAETZE.find((satz) => satz === roh) ?? "buch";
 }
 export function einstellungenAus(roh: unknown): Einstellungen {
   if (!istObjekt(roh)) return STANDARD_EINSTELLUNGEN;

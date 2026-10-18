@@ -8,6 +8,10 @@
 .reiterzeile {
   display: flex;
   overflow-x: auto;
+  /* Nur waagerecht scrollen (0.2.81, Rückmeldung des Autors): Mit overflow-x: auto wird die
+     andere Richtung sonst ebenfalls scrollbar, und die 3 px Unterstrich ließen die Zeile wackeln. */
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
   border-bottom: 1px solid var(--linie);
   scrollbar-width: none;
 }
@@ -227,4 +231,18 @@
   gap: var(--raster);
   border-top: 1px solid var(--linie);
   padding-top: calc(var(--raster) * 1.5);
+}
+
+/* ---------- Gruppen in der Vorschauwahl (Figurensätze, seit 0.2.81) ---------- */
+
+.vorschaugruppe {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.vorschaugruppe-titel {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-leise);
 }

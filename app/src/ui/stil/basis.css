@@ -473,6 +473,11 @@ a.knopf-zweit {
   font-family: var(--schrift-titel);
   font-weight: 600;
   font-size: var(--groesse-titel);
+  /* Lange Titel („Koordinaten, Notation, Gangarten“) brechen mittig und mit Luft nach oben um
+     (DS9); vorher klebte die erste Zeile am oberen Rand. */
+  line-height: 1.2;
+  text-align: center;
+  padding-block: 6px;
 }
 
 /* Der Titel der Abbildung als Knopf (Nummernsprung): sieht aus wie der Titel, Punkte deuten den Tipp an. */

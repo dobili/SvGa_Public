@@ -132,16 +132,8 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       des Gegners, nicht mehr mit seiner Leistung in der Partie. Erwartung: Ein Sieg gegen einen
       Bot, dessen Zahl weit über deiner Wertung liegt, bringt viel, eine Niederlage gegen ihn
       kostet wenig, und umgekehrt. Die Erklärung hinter dem Fragezeichen der Wertung sagt es.
-- [ ] N334. **Stufe 3 etwas schwächer:** Die reine Stufe 3 war so stark wie Stufe 4 (12 : 8 für
-      Stufe 3 in 20 Partien). Konzept 8.2 verlangt, dass jede Stufe die Mehrheit gegen die Stufe
-      darunter gewinnt. Stufe 3 macht deshalb jetzt in etwa jedem fünften Zug einen Fehler
-      (vorher etwa jedem siebten) und wählt ihre Züge etwas lockerer. Neu gemessen: Stufe 4 gegen
-      Stufe 3 17 : 3, Stufe 3 gegen Stufe 2 19,5 : 0,5. Die 18 Bots mit einer Phase auf Stufe 3
-      sind neu gemessen (je sechs Partien gegen ihre Stufe): Die meisten holen zwischen einem
-      Viertel und drei Vierteln der Punkte, Pit und Sophie (Stufe 2) 5 : 1, Frieda (Stufe 2) und
-      Jan (Stufe 4) 1 : 5. Ich habe sie nicht nachgestellt; ihre Zahl in der Gegnerwahl kommt aus
-      allen ihren Partien und zeigt, wo sie stehen. **So prüfen:** eine Partie gegen
-      „Eigene Stufe“ 3 · 3 · 3. Sie sollte merklich mehr Fehler machen als Stufe 4.
+- [ ] N334. **Stufe 3 gegen Stufe 4:** Je eine Partie gegen „Eigene Stufe“ 3 · 3 · 3 und 4 · 4 · 4.
+      Macht Stufe 3 merklich mehr Fehler (etwa jeder fünfte Zug; gemessen 17 : 3 für Stufe 4)?
 - [ ] N335. **Passt die Zahl zu dir?** Das ist der wichtigste Test, denn nur du kannst die Lage
       der Skala an einem echten Menschen prüfen. Spiele zwei oder drei gewertete Partien gegen
       einen Bot, dessen Zahl nahe an deiner Spielstärke bei chess.com oder Lichess liegt. Gehen
@@ -210,24 +202,10 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 
 ### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
 
-- [ ] N295. **Bots passen zu ihrer Stufe:** Jeder der 64 Bots hat gegen die reine Engine seiner
-      Stufe gespielt, Grenzfälle zweimal. Dabei kamen zwei Fehler ans Licht, beide behoben. Ein
-      Bot mit Stil (aggressiv oder defensiv) wählte nahe am besten Zug der Engine statt nahe an
-      dem Zug, den seine Stufe spielen würde; damit spielten Bots mit Stil in den Stufen 1 bis 4
-      fast so gut wie die Engine. Jetzt wählt der Stil um den Zug der Stufe herum, nach oben wie
-      nach unten. Er ändert den Charakter, kaum die Stärke; nur auf Stufe 8, wo der Zug der Stufe
-      der beste ist, macht ein Stil schwächer. Der Hinweis beim Stil der eigenen Gegner sagt das.
-      Außerdem hatte das Messwerkzeug 25 Bots falsch gemessen. Ergebnis: Alle Bots der Stufen 1
-      bis 4 holen gegen ihre Stufe zwischen einem Viertel und drei Vierteln der Punkte. Ab
-      Stufe 5 sind Bots eher etwas schwächer als die reine Stufe, liegen aber über der Stufe
-      darunter. Geändert gegenüber 0.2.67 sind elf Bots, die Sprechblasen der zehn mit neuem Fleck oder neuer Fehlerart sagen es: Ayşe und
-      Sophie (Stufe 2) lassen jetzt auch Figuren hängen; Hanna, Elif, Yara und WGM Sato übersehen
-      ruhige Züge statt Rückzügen (Rückzüge zu übersehen war viel zu teuer); Paul übersieht nur
-      noch Abzüge; Frau Kaya nur noch Fesselungen; Herr Weber spielt die Eröffnung stärker; Frau
-      Dr. Ahl übersieht Zwischenzüge statt stiller Bauernzüge; IM Haas (Stufe 8) spielt etwas weniger defensiv, weil der Stil auf Stufe 8 nur schwächer machen kann. **So prüfen:** Spiele gegen einen
-      Bot der Stufe 2 mit Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv). Er sollte
-      etwa so viele Fehler machen wie die Stufe 2 selbst und deutlich mehr als vor 0.2.78. Sieh
-      in der Gegnerwahl die Sprechblasen der geänderten Bots an.
+- [ ] N295. **Bots mit Stil passen zu ihrer Stufe:** Eine Partie gegen einen Bot der Stufe 2 mit
+      Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv). Er sollte etwa so viele Fehler
+      machen wie die Stufe 2 selbst (gemessen: alle Bots der Stufen 1 bis 4 holen gegen ihre Stufe
+      ein Viertel bis drei Viertel der Punkte). Passt das?
 
 ### Neu in 0.2.80 (etwa 25 Minuten, mit Engine; Einstellungen, Kapitelseiten und Spielen neu geordnet, dein Wunsch vom 18.10.2026, Opus)
 
@@ -344,31 +322,21 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       blockiert): kein solcher Satz. Abb. 8.29, Werkzeug „Schlüsselfelder“ aus Sicht von Schwarz:
       „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“ Die übrigen zwölf Gruppen der Helferliste
       waren schon erledigt; die Zeit-Zählhilfe ist ein Befund an dich (B6).
-- [ ] N289. **Fehlerliste bestimmt die Art, nicht die Menge:** Lege einen eigenen Gegner mit
-      Stufe 2 · 2 · 2 und nur einem Haken an (etwa „patt gesetzt“) und spiele eine Partie. Er
-      sollte etwa so viele Fehler machen wie Stufe 2 (etwa jeder vierte Zug), im Rückblick meist
-      als „absichtlich ungenau gespielt“ (kleine Ungenauigkeiten bis zu einem Bauern), weil die
-      gewählte Art fast nie passt. Vorher spielte so ein Gegner fast fehlerfrei und damit stärker
-      als seine Stufe (Messbefund an den 64 Bots). Der Hinweis unter den Haken erklärt das.
+- [ ] N289. **Eigener Bot mit nur einer Fehlerart:** Einen eigenen Bot 2 · 2 · 2 mit nur dem Haken
+      „patt gesetzt“ anlegen und spielen. Er sollte etwa so viele Fehler machen wie Stufe 2 (etwa
+      jeder vierte Zug), meist kleine Ungenauigkeiten, weil die gewählte Art fast nie passt.
+      Fühlt es sich so an?
 
 ### Neu in 0.2.67 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
 
-- [ ] N285. **Gegnerwahl mit Porträts:** Spielen › Gegner „Engine“. Unter „Vorgefertigter Gegner“
-      steht oben eine Sprechblase mit Porträt, Name, Durchschnitt und Satz des gewählten Gegners;
-      darunter die Kachel „Eigene Stufen“, dann je Stufe 1 bis 8 eine Gruppe mit acht Porträts
-      (64 Gegner, die 18 bisherigen sind dabei). Antippen wählt, die Sprechblase wechselt, die
-      drei Regler unten springen auf seine Stufen (verborgen bleibt, welche). Ein eigener Gegner
-      erscheint als Kachel mit seinem Anfangsbuchstaben vor den Gruppen. Passen Porträts und
-      Namen zusammen, und ist die Auswahl auf dem Handy bequem?
-- [ ] N286. **Persönlichkeit spürbar:** Spiele je eine kurze Partie gegen Finn (Stufe 1, sehr
-      aggressiv: schlägt alles, holt Bauern, vergisst den König) und gegen Oma Gerda (Stufe 1,
-      sehr defensiv: zieht Figuren zweimal, lässt den König sitzen). Die beiden sollten sich
-      deutlich anders anfühlen; der Rückblick nennt ihre Fehler und blinden Flecken beim Namen.
-      Alle Bots haben jetzt einen Stil (aggressiv bis defensiv, Toleranz 0,3 wie bei eigenen
-      Gegnern seit 0.2.61) und ein bis drei blinde Flecken.
-- [ ] N287. **Stufe 8 mit Charakter:** Großmeister Grün bleibt ohne Schwäche; IM Vogt (sehr
-      aggressiv, übersieht ruhige Züge) oder IM Haas (sehr defensiv, übersieht die Grundreihe)
-      spielen in voller Stärke, aber mit Handschrift. Prüfe, dass sie trotzdem wie Stufe 8 wirken.
+- [ ] N285. **Porträts:** Spielen › „Vorgefertigte Bots“: Passen Porträts und Namen zusammen, und
+      ist die Auswahl auf dem Handy bequem? (Die Bedienung hat Claude geprüft.)
+- [ ] N286. **Persönlichkeit spürbar:** Je eine kurze Partie gegen Finn (Stufe 1, sehr aggressiv:
+      schlägt alles, vergisst den König) und Oma Gerda (Stufe 1, sehr defensiv: zieht Figuren
+      zweimal, lässt den König sitzen). Fühlen sie sich deutlich verschieden an?
+- [ ] N287. **Stufe 8 mit Charakter:** Eine Partie gegen IM Vogt (sehr aggressiv, übersieht ruhige
+      Züge) oder IM Haas (sehr defensiv, übersieht die Grundreihe): Wirken sie trotz Handschrift wie
+      Stufe 8?
 
 ### Neu in 0.2.66 (etwa 10 Minuten, mit Engine; Denkroutine-Trainer, Opus)
 
@@ -407,16 +375,11 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 
 ### Neu in 0.2.63 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
 
-- [ ] N294. **Impressum und Datenschutz lesen:** <https://schach-von-grund-auf.com/impressum/> und
-      <https://schach-von-grund-auf.com/datenschutz/>. Das Impressum nennt deinen Namen, die
-      Anschrift in Hannover und kontakt@schach-von-grund-auf.com, dazu „Verantwortlich nach § 18
-      Abs. 2 MStV“ und einen Satz zu den Rechten (Code GPL, Buchinhalte geschützt). Der Datenschutz
-      nennt dich als Verantwortlichen, Cloudflare für Auslieferung und E-Mail (USA, EU-US Data
-      Privacy Framework), keine Web Analytics, deine Rechte nach Art. 15 bis 21 DSGVO und die
-      Aufsicht in Niedersachsen. Kein „Entwurf“ mehr. Stimmt alles? Claude ist kein Anwalt: Wer
-      sichergehen will, lässt beide Seiten einmal prüfen, etwa mit einem Generator wie dem von
-      e-recht24 vergleichen. Die Weiterleitung an dein Postfach bei goneo steht seit 0.2.63 im
-      Datenschutz (Abschnitt „E-Mail“).
+- [ ] N294. **Impressum und Datenschutz:** <https://schach-von-grund-auf.com/impressum/> und
+      <https://schach-von-grund-auf.com/datenschutz/> lesen: Stimmen deine Angaben (Name,
+      Anschrift in Hannover, kontakt@schach-von-grund-auf.com), Cloudflare und die Weiterleitung an
+      goneo? Claude ist kein Anwalt; wer sichergehen will, vergleicht einmal mit einem Generator wie
+      dem von e-recht24.
 
 ### Neu in 0.2.61 (etwa 25 Minuten, mit Engine; deine Rückmeldung zu 0.2.56, Opus)
 
@@ -482,9 +445,10 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 
 ### Neu in 0.2.58 (etwa 15 Minuten, mit Engine; deine Anmerkungen vom 17.10.2026 abends, Fable)
 
-- [ ] N278. **Töne für Schach, Matt und Remis:** Einstellungen › Ton „an“. Spiele eine Partie:
-      Ein Schach klingt nach dem Klacken als heller Ton, ein Matt als drei fallende Töne, ein
-      Patt oder Remis als zwei gleiche Töne. Beim Nachspielen klingt es genauso.
+- [ ] N278. **Töne:** Einstellungen › Ton „an“, eine Partie spielen: Klacken beim Zug (beim
+      Schlag kräftiger), danach ein heller Ton bei Schach, drei fallende Töne bei Matt, zwei gleiche
+      bei Patt oder Remis, ein tiefer Warnton beim Antippen einer Figur, die nicht ziehen darf.
+      Klingt alles gut und passend?
 - [ ] N279. **Warnton und roter Hinweis bei gesperrter Figur:** Tippe in einer Partie eine eigene
       Figur an, die gerade nicht ziehen darf. Das Feld leuchtet kurz rot, ein tiefer Warnton
       erklingt (bei Ton „an“), und unter dem Brett steht je nach Grund „Dein König steht im
@@ -555,24 +519,17 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
 
 ### Neu in 0.2.52 (etwa 30 Minuten, mit Engine; Stufen 1 bis 3 menschlicher, Empfehlung R4, Fable)
 
-- [ ] N264. **Stufe 1 bis 3 spielen menschlicher:** Spiele je eine Partie gegen Stufe 1 und
-      Stufe 3 (Gegner „Stufe wählen“ oder ein eigener Gegner mit diesen Stufen). Erwartung: Die
-      Engine spielt nicht mehr „dämlich, dann genial“. Sie sieht einzügige Dinge (Schlag,
-      Drohung) meist, aber nicht alles zwei oder drei Züge tief; ihre Fehler sind meist klein,
-      grobe selten, und sie verschenkt kaum noch grundlos in erzwungenen Lagen. Die
-      absichtlichen, erklärten Fehler (Auswertung: „Mit 12… hat die Engine …“) gibt es weiter.
-      Fühlt sich Stufe 1 noch zu stark oder zu schwach an? Bitte Partie als PGN mitschicken.
+- [ ] N264. **Stufe 1 bis 3 menschlich?** Je eine Partie gegen „Eigene Stufe“ 1 · 1 · 1 und
+      3 · 3 · 3. Die Engine sollte einzügige Dinge (Schlag, Drohung) meist sehen, aber nicht alles
+      zwei, drei Züge tief, mit meist kleinen Fehlern, nicht „dämlich, dann genial“. Zu stark oder
+      zu schwach? Gern die PGN mitschicken.
 
 ### Neu in 0.2.51 (etwa 15 Minuten, mit Engine; Vergleich mit chess.com, Empfehlung T4, Fable; N260 durch N290 ersetzt)
 
-- [ ] N262. **Weniger „?!“ und „!“ in entschiedener Stellung:** Deine geblitzte Stufe-3-Partie
-      vom 17.10.2026 (1. d4 Sf6 2. Lg5 Se4 3. h4 …, 52 Züge) hätte dir bisher 15 „?!“ gegeben
-      (chess.com 2), weil in klar gewonnener Stellung jeder Verlust ab 0,5 Bauern ein „?!“ war.
-      Jetzt gibt es dort „?!“ erst ab drei Bauern, darunter „gut“; Karte „Spielstärke“: Ungenau
-      2, Verpasst 3, Patzer 1 (chess.com 2, 3, 1), Genauigkeit etwa 76 bis 79 (chess.com 76,1,
-      mit „Maximal“ 77,2). Die Engine bekommt in verlorener Stellung kein „!“ mehr für den
-      einzigen Zug, der nicht sofort noch mehr verliert (vorher 8, chess.com 0). Die Rückblickkarte
-      sagt bei solchen Zügen „… ist in Ordnung (1,5 hinter …)“ statt „?!“.
+- [ ] N262. **Zeichen in entschiedener Stellung:** In klar gewonnener Stellung gibt es „?!“ erst
+      ab drei Bauern Verlust, und die Engine bekommt in verlorener Stellung kein „!“ mehr für den
+      einzigen haltbaren Zug (deine Stufe-3-Partie vom 17.10. hatte vorher 15 „?!“, chess.com 2).
+      Sieh dir eine klar gewonnene Partie im Rückblick an: Wirken die Zeichen jetzt passend?
 - [ ] N263. **Fallen aus den Eröffnungskapiteln** (T4): Training › „Falle oder Köder“ › Runde. Neben
       den zwölf Fallenchecks aus Kapitel 4 kommen jetzt auch die Schläge mit Fragezeichen aus den
       Zugfolgen der Kapitel 2 und 3 dran (zum Beispiel 7… Sxd4?? im Schottischen Gambit, Abb.
@@ -606,13 +563,9 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
       Engine antwortet in voller Stärke (Status „Die Engine denkt“ / „Du bist am Zug“). Nach dem
       Matt: „Richtig! Matt! Ziel erreicht.“ und „Weiter“. Setzt du patt: „Falsch. Remis. Der
       Gewinn ist verfehlt.“
-- [ ] N255. **Hilfen und Kippen:** In einer Bauernendspiel-Aufgabe (etwa Abb. 8.23,
-      Fernopposition) „Hinweis 1“: der Merksatz zum Thema („Merksatz: Opposition: …“, dazu ein
-      Stichwort wie „Stichwort: Fernopposition.“); „Hinweis 2“: die goldene Figur, die ziehen
-      soll; „Hinweis 3“: der goldene Pfeil mit dem Zug der Engine. Mit Hilfe zählt die Aufgabe
-      nicht als richtig. Spiele absichtlich einen schlechten Königszug: „Falsch. Der Gewinn ist
-      weg: Die Stellung ist laut Engine gekippt. Gehalten hätte Kf3.“ Bitte alle Merksätze
-      kritisch lesen (Rückfrage X4); sie sind in Claudes Worten.
+- [ ] N255. **Merksätze im Endspieltrainer:** Training › Endspieltrainer, in einigen Aufgaben
+      „Hinweis 1“: Die Merksätze zum Thema sind in Claudes Worten. Lies sie kritisch und melde einen,
+      der nicht zum Buch passt, mit dem Thema. (Hilfen und Kippen hat Claude geprüft.)
 - [ ] N256. **Remis halten:** Turmendspiele, Stufe 4 oder 5: Philidor (Abb. 9.3, du spielst
       Schwarz, das Brett ist gedreht, die Engine zieht zuerst) oder Vancura (9.15). Oben
       „Schwarz: Halte das Remis gegen die Engine.“ Hältst du zwölf eigene Züge durch oder endet
@@ -622,12 +575,9 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
 
 ### Neu in 0.2.48 (etwa 15 Minuten; drei neue Trainer, Opus)
 
-- [ ] N250. **Zielbilanz-Übung:** Training › „Zielbilanz-Übung“ › Trainieren: Brett mit einer
-      Eröffnungsstellung aus Kapitel 2 oder 3, darunter für Weiß und Schwarz je drei Zeilen
-      (Zentrum, Entwicklung, Königssicherheit) mit „ja, teils, nein“. „Prüfen“ geht erst, wenn
-      alle sechs gewählt sind. Danach steht neben jeder Zeile „App: …“ (grün, wenn deine Wahl
-      stimmt, sonst rot) und darunter die Begründung wie im Werkzeug „Zielbilanz“. Fünf Aufgaben
-      je Runde. Stimmen die Wertungen mit dem, was du im Buch lehrst?
+- [ ] N250. **Zielbilanz-Übung:** Training › „Zielbilanz-Übung“: Stimmen die Wertungen der App
+      (ja, teils, nein für Zentrum, Entwicklung, Königssicherheit) mit dem, was du im Buch lehrst?
+      (Den Ablauf hat Claude geprüft.)
 - [ ] N251. **Faktorenbilanz-Trainer:** Training › „Faktorenbilanz-Trainer“ › Trainieren:
       Stellung aus Kapitel 3, je Faktor (Material, Zeit, Königssicherheit, Aktivität) „Weiß,
       gleich, Schwarz“. Nach „Prüfen“ je Zeile „App: …“ und darunter die ganze Faktorenbilanz mit
@@ -734,11 +684,8 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
       zurücksetzen“: Nachfrage, dann „Ja, zurücksetzen“: Die Karte zeigt wieder den Hinweis vor der
       ersten Partie; die Partien bleiben in der Liste, zählen aber dauerhaft nicht mehr (eine
       danach fertig werdende Auswertung einer alten Partie ändert nichts).
-- [ ] N230. **Kurve je Phase:** In der Karte „Deine Spielstärke“ die Wahl „Ansicht: Wertung /
-      Eröffnung / Mittelspiel / Endspiel“. Bei einer Phase zeigt die große Zahl den Durchschnitt
-      der Schätzung in dieser Phase über den Ausschnitt, die Kurve je Partie einen Punkt (Partien
-      ohne genug Züge in der Phase fehlen, Endspiel oft). Erkennst du daran, wo Üben am meisten
-      bringt?
+- [ ] N230. **Kurve je Phase:** Einstellungen › „Deine Wertung“, Reiter Eröffnung, Mittelspiel,
+      Endspiel (erst nach gewerteten Partien da): Erkennst du daran, wo Üben am meisten bringt?
 
 ### Neu in 0.2.41 (etwa 30 Minuten, mit Engine; deine Wünsche vom 17.10.2026 nachmittags)
 
@@ -903,11 +850,10 @@ Trainer.
       gefunden, rot übersehen, grau zu viel.
 - [ ] N192. **Zähltrainer, Bilanz zählen:** Feld rot markiert; Angreifer, Verteidiger und Gewinn
       wählen, „Prüfen“: Danach stehen die Pfeile und der Satz des Werkzeugs „Zählen“ da.
-- [ ] N193. **Zähltrainer, hängende Figuren:** Alle hängenden Figuren beider Seiten antippen (oder
-      „Keine hängt“). Stimmen die Felder, die die App als hängend nennt?
-- [ ] N194. **Schach-Röntgen-Trainer:** Drei Schritte (deine Schachs, deine Schläge, was der
-      Gegner hätte). Pfeil setzen: Figur, dann Zielfeld; nochmals entfernt ihn. Nach „Prüfen“ gold
-      gefunden, rot übersehen. Ist die Aufgabe so verständlich und auf dem Handy bedienbar?
+- [ ] N193. **Zähltrainer, hängende Figuren:** Training › Zähltrainer › „Hängende Figuren“:
+      Stimmen die Felder, die die App als hängend nennt? (Den Ablauf hat Claude geprüft.)
+- [ ] N194. **Schach-Röntgen-Trainer:** Ist die Aufgabe (drei Schritte, Pfeile setzen: Figur,
+      dann Zielfeld) verständlich und auf dem Handy gut bedienbar? (Den Ablauf hat Claude geprüft.)
 - [ ] N195. **Fortschritt:** Nach einer ganzen Runde zeigt das Kapitel unter Fortschritt den
       Trainer mit Durchgängen und richtigen Aufgaben.
 

@@ -93,6 +93,20 @@
   gap: var(--raster);
 }
 
+/* „Alle abhaken“ und „Alle zurücksetzen“ nebeneinander und leiser (DS13): Als zwei breite
+   Balken über den Abschnitten wirkten sie wie die Hauptsache der Seite, dabei braucht man sie
+   selten. Die Nachfrage vor dem Ausführen bleibt. */
+.galeriekopf > .knopfreihe {
+  flex-direction: row;
+}
+
+.galeriekopf > .knopfreihe > .knopf-zweit {
+  flex: 1;
+  text-align: center;
+  font-size: var(--groesse-mittel);
+  font-weight: 400;
+}
+
 .abschnittsklappe {
   border-top: 1px solid var(--linie);
 }

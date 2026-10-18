@@ -250,10 +250,25 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   const gitter = page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" });
   // Der Wechsel wählt gleich den ersten Bot der Stufe im Mittelspiel (anfangs Stufe 1).
   await expect(gitter.getByRole("radio", { checked: true })).toHaveCount(1);
+  // Seit 0.2.85: Stufen aufklappbar, anfangs die des gewählten Bots offen; die App merkt sich
+  // die Wahl. „Partie beginnen“ steht über dem Gitter, direkt unter den drei Kacheln.
+  const stufen = page.locator("details.gegnerstufe");
+  await expect(stufen.nth(0)).toHaveAttribute("open", "");
+  await expect(stufen.nth(1)).not.toHaveAttribute("open", "");
+  await stufen.nth(1).locator("summary").click();
+  await expect(stufen.nth(1)).toHaveAttribute("open", "");
+  const knopf = await page.getByRole("button", { name: "Partie beginnen" }).boundingBox();
+  const gitterBox = await gitter.boundingBox();
+  expect((knopf?.y ?? Infinity) < (gitterBox?.y ?? 0)).toBe(true);
   await page.screenshot({ path: "test-results/bilder/spielen-kategorien.png", fullPage: true });
   await page.getByRole("radio", { name: "Eigene Stufe" }).click();
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Eigene Stufen");
+  // Anderer Bereich und zurück: Das Gitter entsteht neu und liest den Merker.
+  await page.getByRole("navigation").getByRole("button", { name: "Buch" }).click();
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
+  await expect(stufen.nth(1)).toHaveAttribute("open", "");
 });
 
 test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.80)", async ({

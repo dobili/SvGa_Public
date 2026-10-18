@@ -190,9 +190,11 @@
   border-color: var(--gold);
 }
 
+/* 2 × 2 Felder (seit 0.2.85): 70 % der Kachelbreite, je Feld 40 % größer als die frühere Reihe
+   aus vier Feldern über die ganze Breite. */
 .brettausschnitt {
-  width: 100%;
-  aspect-ratio: 4 / 1;
+  width: 70%;
+  aspect-ratio: 1;
   display: block;
   border-radius: 4px;
 }

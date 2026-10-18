@@ -32,7 +32,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.84“, dann 
 
 ### Neu in 0.2.84 (etwa 5 Minuten; neue Bretter, Opus)
 
-- [ ] N328. **Bretter in drei Gruppen:** Einstellungen › „Darstellung und Training“ › Reiter
+- [ ] N328. **Bretter in drei Gruppen:** Zahnrad › Karte „Einstellungen“ › Reiter
       „Brett“. Unter „Farben“: Wie im Buch, Grün, Braun, Blau, Sand, Koralle, Lavendel, Nacht.
       Unter „Holz“: Ahorn & Nussbaum (das bisherige „Holz“, nur umbenannt; wer es gewählt hatte,
       behält es). Unter „Material“: Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (ganze
@@ -46,7 +46,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.84“, dann 
 
 ### Neu in 0.2.83 (etwa 20 Minuten, mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 
-- [ ] N324. **Genauigkeit wie:** Einstellungen › „Darstellung und Training“ › Reiter „Training“.
+- [ ] N324. **Genauigkeit wie:** Zahnrad › Karte „Einstellungen“ › Reiter „Training“.
       Oben „Genauigkeit wie“ mit Lichess, Mittelweg (vorgewählt) und nahe chess.com, darunter ein
       Satz, was der Modus tut. Lichess rechnet wie Lichess (trifft Lichess im Mittel auf 2 bis 3
       Prozentpunkte), nahe chess.com lässt Züge in längst entschiedener Stellung kaum zählen
@@ -80,7 +80,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.84“, dann 
       gegen die eigene Stufe beginnen: Die Engine übersieht dann oft Rückzüge. Die Wahl bleibt
       gespeichert; vorgefertigte und eigene Bots behalten ihre eigenen Flecken.
 
-- [ ] N322. **Neue Figurensätze:** Einstellungen › „Darstellung und Training“ › Reiter „Figuren“.
+- [ ] N322. **Neue Figurensätze:** Zahnrad › Karte „Einstellungen“ › Reiter „Figuren“.
       Oben „wie im Buch“, darunter drei Gruppen mit je drei Sätzen und Vorschau: Klassisch
       (Cburnett, Merida, Chessnut), Modern (Mpchess, Celtic, Spatial) und Holz (Kiefer &
       Kirsche, Eiche & Mahagoni, Esche & Ebenholz). Die bisherigen Sätze „klassisch“ und „Holz“
@@ -89,7 +89,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.84“, dann 
       erscheinen im neuen Satz. Unter Einstellungen › Lizenzen stehen Urheber und Lizenz jedes
       Satzes.
 
-- [ ] N323. **Reiter ohne Wackeln:** Einstellungen › „Darstellung und Training“: Die Reiterzeile
+- [ ] N323. **Reiter ohne Wackeln:** Zahnrad › Karte „Einstellungen“: Die Reiterzeile
       lässt sich nur noch waagerecht schieben, nicht mehr ein Stück senkrecht.
 
 ### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
@@ -117,7 +117,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.84“, dann 
 
 - [ ] N308. **Einstellungen neu geordnet:** Zahnrad öffnen. „Dein Fortschritt“ zeigt Abbildungen,
       Übungen und Trainer als goldene Ringe mit Prozentzahl, je Kapitel ein kleiner Ring. Die
-      Karte „Darstellung und Training“ hat oben Reiter mit Symbolen: Brett, Figuren, Anzeige, Ton,
+      Karte „Einstellungen“ hat oben Reiter mit Symbolen: Brett, Figuren, Anzeige, Ton,
       Training. Unter „Brett“ und „Figuren“ siehst du jede Wahl als kleinen Brettausschnitt mit
       vier Feldern und Figuren; tippe „Holz“ und dann den Reiter „Figuren“: Die Vorschau der
       Figuren steht jetzt auf Holz. Nachtmodus, Erklärkacheln und Sprache stehen unter „Anzeige“,

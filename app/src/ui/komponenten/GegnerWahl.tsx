@@ -12,6 +12,8 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026) drei Kategorien als Kacheln mit Symbol: eigene
  * Stufe, vorgefertigte Bots, eigene Bots. Die gewählte zeigt direkt darunter nur ihren Inhalt
  * (Regler und Fehlerarten, Porträtgitter, eigene Bots mit Editor); der Rest bleibt verborgen.
+ * Seit 0.2.85 (Wunsch des Autors) steht „Partie beginnen“ direkt unter den drei Kacheln, damit man
+ * nicht weit scrollen muss; die Stufen der vorgefertigten Bots sind aufklappbar (Gegnerstufen.tsx).
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, spiel/partie.ts (Typen), Vorschauwahl,
  * lucide, i18n.
  */
@@ -19,33 +21,24 @@ import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
 import type { ReactNode } from "react";
 import {
   durchschnitt,
-  gegnerDerStufe,
   gegnerVon,
   klasseVon,
   type EigenerGegner,
   type Gegner,
 } from "../../engine/gegner";
-import { stufe, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Gegnerart, Spielhilfen } from "../../spiel/partie";
 import { Auswahl } from "./Auswahl";
 import type { Gegnerkategorie } from "./gegnerkategorie";
+import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
+import { portraet } from "./gegnerportraet";
 import { Vorschauwahl } from "./Vorschauwahl";
 
-const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
 /** Größe der Symbole auf den Kategorie-Kacheln. */
 const KATEGORIE_SYMBOL = 28;
 
 const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
 const KATEGORIE_SYMBOLE = { stufe: SlidersHorizontal, vorgefertigt: Bot, eigene: UserPen };
-
-/** Ordner der Porträts (app/public/gegner/, erzeugt von skripte/erzeuge-gegnerbilder.mjs). */
-const PORTRAETS = "gegner/";
-
-/** Adresse des Porträts eines vorgefertigten Gegners. */
-function portraet(kennung: string): string {
-  return `${import.meta.env.BASE_URL}${PORTRAETS}${kennung}.svg`;
-}
 
 /** „⌀ 3 · Fortgeschrittener Anfänger“ (die Stufen je Phase bleiben verborgen, 0.2.46). */
 function klassentext(g: Gegner): string {
@@ -53,32 +46,6 @@ function klassentext(g: Gegner): string {
     schnitt: String(durchschnitt(g)).replace(".", ","),
     klasse: t(klasseVon(g).name),
   });
-}
-
-/** Eine Kachel des Gitters: Porträt oder Zeichen, Name darunter; gewählt mit goldenem Rand. */
-function Kachel({
-  name,
-  gewaehlt,
-  beiWahl,
-  kinder,
-}: {
-  name: string;
-  gewaehlt: boolean;
-  beiWahl: () => void;
-  kinder: React.ReactNode;
-}) {
-  return (
-    <button
-      type="button"
-      role="radio"
-      aria-checked={gewaehlt}
-      className="gegnerkachel"
-      onClick={beiWahl}
-    >
-      {kinder}
-      <span className="gegnerkachel-name">{name}</span>
-    </button>
-  );
 }
 
 /** Die Sprechblase des gewählten Gegners: Porträt, Name, Klasse und sein Satz. */
@@ -105,38 +72,6 @@ function Sprechblase({ bot, eigene }: { bot: string | null; eigene: readonly Eig
         {vorgefertigt && <span className="gegner-klasse"> · {klassentext(vorgefertigt)}</span>}
         <p>{text}</p>
       </div>
-    </div>
-  );
-}
-
-/** Die vorgefertigten Gegner: je Stufe acht Porträts. */
-function VorgefertigteGitter({
-  bot,
-  beiBot,
-}: {
-  bot: string | null;
-  beiBot: (bot: string | null) => void;
-}) {
-  return (
-    <div role="radiogroup" aria-label={t("spielen.bot")}>
-      {STUFENNUMMERN.map((nummer) => (
-        <section key={nummer} className="gegnerstufe">
-          <h4 className="gegnerstufe-titel">
-            {t("spielen.bot.stufe", { nummer: String(nummer), name: t(stufe(nummer).name) })}
-          </h4>
-          <div className="gegnergitter">
-            {gegnerDerStufe(nummer).map((g) => (
-              <Kachel
-                key={g.kennung}
-                name={g.name}
-                gewaehlt={bot === g.kennung}
-                beiWahl={() => beiBot(g.kennung)}
-                kinder={<img className="gegner-portraet" src={portraet(g.kennung)} alt="" />}
-              />
-            ))}
-          </div>
-        </section>
-      ))}
     </div>
   );
 }
@@ -173,7 +108,8 @@ function EigeneGitter({
 
 /**
  * Gegner, Kategorie und der Inhalt der gewählten Kategorie.
- * `stufeninhalt`: Regler und Fehlerarten (eigene Stufe); `editor`: Karte der eigenen Gegner.
+ * `stufeninhalt`: Regler und Fehlerarten (eigene Stufe); `editor`: Karte der eigenen Gegner;
+ * `beginnen`: der Knopf „Partie beginnen“ (unter den Kategorien, beim Menschen unter der Wahl).
  */
 export function GegnerWahl({
   gegner,
@@ -185,6 +121,7 @@ export function GegnerWahl({
   beiKategorie,
   stufeninhalt,
   editor,
+  beginnen,
 }: {
   gegner: Gegnerart;
   bot: string | null;
@@ -196,6 +133,7 @@ export function GegnerWahl({
   beiKategorie: (kategorie: Gegnerkategorie) => void;
   stufeninhalt: ReactNode;
   editor: ReactNode;
+  beginnen: ReactNode;
 }) {
   return (
     <>
@@ -206,6 +144,7 @@ export function GegnerWahl({
         text={(w) => t(`spielen.gegner.${w}`)}
         beiWahl={beiGegner}
       />
+      {gegner === "mensch" && beginnen}
       {gegner === "engine" && (
         <div className="gegnerwahl">
           <Vorschauwahl
@@ -219,6 +158,7 @@ export function GegnerWahl({
             }}
             beiWahl={beiKategorie}
           />
+          {beginnen}
           {(kategorie !== "eigene" || eigene.some((g) => g.kennung === bot)) && (
             <Sprechblase bot={bot} eigene={eigene} />
           )}

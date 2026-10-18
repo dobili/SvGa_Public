@@ -1,5 +1,5 @@
 /**
- * Karte „Darstellung und Training“ in den Einstellungen: Nachtmodus, Brettfarben, Figurensatz,
+ * Karte „Einstellungen“ (bis 0.2.84 „Darstellung und Training“): Nachtmodus, Brettfarben, Figurensatz,
  * Koordinaten, Ton, Erklärkacheln, dazu der Stand der Sprache.
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: Sprache, Brettfarben, Figurensatz, Ton,

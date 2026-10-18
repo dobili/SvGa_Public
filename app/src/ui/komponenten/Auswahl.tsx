@@ -1,7 +1,7 @@
 /**
  * Eine Reihe von Chips, von denen genau einer gewählt ist (Einstellungen, Spielen).
  *
- * Rolle im Gesamtbild: Gemeinsame Auswahl für die Karte „Darstellung und Training“ und den
+ * Rolle im Gesamtbild: Gemeinsame Auswahl für die Karte „Einstellungen“ und den
  * Spielen-Bildschirm (Seite, Stufe, Ziel, Uhr). Für Bildschirmleser eine Gruppe von Radioknöpfen.
  * Abhängigkeiten: React.
  */

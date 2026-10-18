@@ -196,7 +196,14 @@ function Spielfeld({
   const sans = partie.zuege.map((z) => z.san);
   const gewaehlt = ansicht?.zuege === sans.length ? ansicht : null;
   const stelle = gewaehlt?.stelle ?? sans.length;
-  const gezeigt = alle[stelle] ?? s.fen;
+  // Nebenzweig „Besser war …“ (0.2.85): gilt nur für die Stelle, an der er gewählt wurde.
+  const [zweig, setzeZweig] = useState<{ stelle: number; schritt: number } | null>(null);
+  const zweigwahl = {
+    schritt: zweig?.stelle === stelle ? zweig.schritt : null,
+    setze: (schritt: number | null) => setzeZweig(schritt === null ? null : { stelle, schritt }),
+  };
+  const rb = useRueckblick(rueckblick, partie, alle, sans, stelle, phasen, zweigwahl);
+  const gezeigt = rb.zweigzug?.nachher ?? alle[stelle] ?? s.fen;
   // Spielhilfen (0.2.41): Symbole und Werkzeuge nur, wenn vor der Partie gewählt; die großen
   // Werkzeuge verschwinden nach dem Ende, die Symbole bleiben.
   const { hilfen } = partie.einstellung;
@@ -213,15 +220,20 @@ function Spielfeld({
     verlauf,
     partie.einstellung.eigeneFarbe,
   );
-  const rb = useRueckblick(rueckblick, partie, alle, sans, stelle, phasen);
   if (!stellung.ok) return <p className="fehlertext">{stellung.fehler}</p>;
-  const letzter = stelle > 0 ? zugFelder(alle[stelle - 1] ?? "", sans[stelle - 1] ?? "") : null;
+  const letzter = rb.zweigzug
+    ? zugFelder(rb.zweigzug.vorher, rb.zweigzug.san)
+    : stelle > 0
+      ? zugFelder(alle[stelle - 1] ?? "", sans[stelle - 1] ?? "")
+      : null;
   const gesprungen = gewaehlt && gewaehlt.marken.length > 0 ? gewaehlt.marken : null;
   const markierungen = rechnung.ergebnis
     ? rechnung.markierungen
     : amZug
       ? hinweis
-      : (gesprungen ?? rb.marken);
+      : rb.zweigzug
+        ? []
+        : (gesprungen ?? rb.marken);
   // Zählen geht auch in früheren Stellungen; gezogen wird nur, wenn der Leser am Zug ist.
   const tippbar = amZug || wahl === "zaehlen";
   return (

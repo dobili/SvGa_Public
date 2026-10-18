@@ -102,7 +102,7 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   // Rückblick (Vorschlag H, 0.2.38): Kurve über der Auswertung, Balken links am Brett. Nach
   // 2. g4?? setzt Schwarz matt: Der Balken zeigt „−M“.
   await expect(page.getByTestId("verlaufskurve")).toBeVisible();
-  await page.getByRole("button", { name: "2. g4??" }).click();
+  await page.getByTestId("partiezuege").getByRole("button", { name: "2. g4??" }).click();
   await expect(page.getByTestId("bewertungsbalken")).toHaveAttribute("aria-label", /−M/);
   // Seit 0.2.39: Karte zum Zug unter dem Brett (Urteil, besserer Zug) und die Spielstärke.
   const karte = page.getByTestId("rueckblickkarte");
@@ -111,11 +111,19 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
     /2\. g4\?\?: Die Gewinnchance von Weiß fällt von \d+ % auf \d+ %/,
   );
   await expect(karte).toContainText("Besser war 2.");
+  // Seit 0.2.85 ist die Variante ein Nebenzweig: Ein Tipp zeigt sie am Brett, dann zurück.
+  const zweig = page.getByTestId("nebenzweig");
+  await zweig.locator(".zweigzug").first().click();
+  await expect(zweig.locator(".zweigzug").first()).toHaveAttribute("aria-pressed", "true");
+  await zweig.getByRole("button", { name: "Zurück zur Partie" }).click();
+  await expect(zweig.getByRole("button", { name: "Zurück zur Partie" })).toHaveCount(0);
   // Seit 0.2.83 mit dem Modus (Standard Mittelweg).
   await expect(page.getByTestId("spielstaerke")).toContainText("Genauigkeit (Mittelweg)");
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
-  await expect(page.getByRole("button", { name: "2. g4??" })).not.toHaveAttribute("aria-current");
+  await expect(
+    page.getByTestId("partiezuege").getByRole("button", { name: "2. g4??" }),
+  ).not.toHaveAttribute("aria-current");
   await auswertung.getByRole("button", { name: "PGN kopieren" }).click();
   await expect(auswertung).toContainText(/PGN/);
   await page.screenshot({ path: "test-results/bilder/auswertung.png", fullPage: true });

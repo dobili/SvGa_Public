@@ -18,13 +18,15 @@ import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
-import { gewinnwahrscheinlichkeit } from "../../spiel/genauigkeit";
 import type { Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
-import { balkentext, variantentext } from "../../spiel/rueckblick";
+import type { Zweigzug } from "../../spiel/nebenzweig";
+import { balkentext } from "../../spiel/rueckblick";
 import { uciZuSan } from "../../spiel/zuege";
 import { FehlerFormular } from "../trainer/FehlerFormular";
+import { gewinnchanceVorNach, type Chance } from "./gewinnchance";
 import { MitInfo } from "./InfoKnopf";
+import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
 import type { Rueckblick } from "./useRueckblick";
 
 /**
@@ -50,27 +52,6 @@ const GLEICHWERTIG_UNTER = 0.05;
 function bauern(verlust: number): string {
   return verlust.toFixed(1).replace(".", ",");
 }
-
-/** Gewinnchance einer Seite vor und nach dem Zug, in ganzen Prozent. */
-interface Chance {
-  readonly seite: string;
-  readonly vorher: number;
-  readonly nachher: number;
-}
-
-/** Die Gewinnchance der ziehenden Seite vor und nach dem Zug (Werte aus Sicht von Weiß). */
-function chanceDesZuges(werte: readonly number[], index: number, weissZieht: boolean): Chance {
-  const fuer = (wert: number) => {
-    const weiss = gewinnwahrscheinlichkeit(wert);
-    return Math.round(weissZieht ? weiss : PROZENT - weiss);
-  };
-  return {
-    seite: t(weissZieht ? "farbe.w" : "farbe.b"),
-    vorher: fuer(werte[index] ?? 0),
-    nachher: fuer(werte[index + 1] ?? 0),
-  };
-}
-const PROZENT = 100;
 
 /** Der erste Satz je Klasse (0.2.40 wie bei chess.com). */
 function urteilssatz(zug: string, urteil: Zugurteil, bester: string, chance: Chance): string {
@@ -116,6 +97,8 @@ export function Rueckblickkarte({
   index,
   erklaerung,
   phasenwechsel = null,
+  zweig,
+  zweigZuege,
 }: {
   rueckblick: Rueckblick;
   partie: Partie;
@@ -124,6 +107,10 @@ export function Rueckblickkarte({
   erklaerung: Zugerklaerung | null;
   /** Satz zur neuen Phase, wenn sie mit der Stellung nach diesem Zug beginnt (0.2.44). */
   phasenwechsel?: string | null;
+  /** Gezeigter Zug des Nebenzweigs „Besser war …“ (0.2.85). */
+  zweig: Zweigwahl;
+  /** Der bessere Zug und die nächsten Züge der Engine (useRueckblick.tsx). */
+  zweigZuege: readonly Zweigzug[];
 }) {
   const urteil = rueckblick.urteile[index];
   const san = partie.zuege[index]?.san ?? "";
@@ -133,8 +120,6 @@ export function Rueckblickkarte({
   const besterUci = rueckblick.beste[index] ?? "";
   const besterSan = besterUci ? uciZuSan(fen, besterUci) : null;
   const bester = besterSan ? `${nummer} ${sanInSprache(besterSan, "de")}` : "";
-  // Die nächsten Züge nach dem besseren Zug (Empfehlung R5, 0.2.56); leer bei alten Auswertungen.
-  const folge = variantentext(fen, rueckblick.varianten?.[index] ?? []);
   const seite =
     partie.einstellung.gegner === "mensch"
       ? t(fen.split(" ")[1] === "b" ? "farbe.b" : "farbe.w")
@@ -151,7 +136,7 @@ export function Rueckblickkarte({
                 zug,
                 urteil,
                 bester,
-                chanceDesZuges(rueckblick.werte, index, fen.split(" ")[1] !== "b"),
+                gewinnchanceVorNach(rueckblick.werte, index, fen.split(" ")[1] !== "b"),
               )}
             </strong>{" "}
             {t("rueckblick.bewertung", {
@@ -168,12 +153,7 @@ export function Rueckblickkarte({
           {t("rueckblick.erklaerung", { seite, text: erklaerung.text })}
         </p>
       )}
-      {bester && MIT_BESSEREM.has(urteil.klasse) && (
-        <p>
-          {t("rueckblick.besser", { zug: bester })}
-          {folge && <> {t("rueckblick.variante", { folge })}</>}
-        </p>
-      )}
+      {bester && MIT_BESSEREM.has(urteil.klasse) && <Nebenzweig zuege={zweigZuege} wahl={zweig} />}
       {phasenwechsel && (
         <p className="rueckblick-phase" data-testid="rueckblick-phase">
           {t("rueckblick.phasenwechsel", { text: phasenwechsel })}

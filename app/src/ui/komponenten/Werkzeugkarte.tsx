@@ -12,17 +12,17 @@
  * Markierungen am Brett (seit 0.2.30, Wunsch des Autors); im Leerfall (U12, ohne Befunde und
  * Markierungen) fehlt sie. Hat das Ergebnis einen Hinweis (etwa
  * „Nur Kandidaten“ bei den Todsünden, seit 0.2.33), steht er hervorgehoben unter dem Namen.
+ * Seit 0.2.85 (Wunsch des Autors) zeigt die Karte immer alle Befunde; das gestufte Aufklappen mit
+ * „Mehr …“ (0.2.30 bis 0.2.84) ist entfallen, etwa die zweite Seite bei der Angriffsregel.
  * Abhängigkeiten: analyse/werkzeug.ts, Waage.tsx, useSicht.ts, i18n, lucide-react.
  */
 import { ArrowLeftRight } from "lucide-react";
-import { useState } from "react";
 import { erklaerungVon, legendeVon } from "../../analyse/register";
 import type { Befund, Werkzeugergebnis } from "../../analyse/werkzeug";
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 import { farbkuerzel } from "../../schach/stellung";
 import { SoPrueft } from "./SoPrueft";
-import { stufenansicht } from "./stufen";
 import type { Sicht } from "./useSicht";
 import { Waage } from "./Waage";
 
@@ -79,10 +79,8 @@ function Befundblock({ befund }: { befund: Befund }) {
 }
 
 /**
- * Die Ergebniskarte eines Werkzeugs. Gestuft (seit 0.2.30): zuerst Stufe 1, „Mehr …“ zeigt die
- * nächste; das Fazit und die Legende stehen immer da. Für ein anderes Werkzeug legt der
- * Bildschirm die Karte neu an (key), dann beginnt sie wieder bei Stufe 1.
- * Beispiel: Prüffragen an Abb. 4.2 → F1, „Mehr …“ → F1 und F2, „Mehr …“ → dazu F3.
+ * Die Ergebniskarte eines Werkzeugs: alle Befunde, Fazit, Legende und „So prüft die App“.
+ * Beispiel: Prüffragen an Abb. 4.2 → F1, F2 und F3 untereinander.
  */
 export function Werkzeugkarte({
   ergebnis,
@@ -95,8 +93,7 @@ export function Werkzeugkarte({
   /** Weiterer Inhalt nach den Befunden, etwa die Engine bei „Gegner?“ (seit 0.2.32). */
   zusatz?: React.ReactNode;
 }) {
-  const [stufe, setzeStufe] = useState(0);
-  const ansicht = stufenansicht(ergebnis, stufe);
+  const befunde = ergebnis.befunde;
   const erklaerung = erklaerungVon(ergebnis.werkzeug);
   const legende = legendeVon(ergebnis.werkzeug);
   return (
@@ -112,23 +109,14 @@ export function Werkzeugkarte({
           {ergebnis.hinweis}
         </p>
       )}
-      {ansicht.befunde.length > 0 && (
+      {befunde.length > 0 && (
         <div className="befunde">
-          {ansicht.befunde.map((befund) => (
+          {befunde.map((befund) => (
             <Befundblock key={befund.kennung} befund={befund} />
           ))}
         </div>
       )}
       {zusatz}
-      {ansicht.naechste !== null && (
-        <button
-          type="button"
-          className="knopf-link"
-          onClick={() => setzeStufe(ansicht.naechste ?? stufe)}
-        >
-          {t("werkzeug.stufeMehr")}
-        </button>
-      )}
       <p className="fazit">{ergebnis.fazit}</p>
       {legende && (ergebnis.befunde.length > 0 || ergebnis.markierungen.length > 0) && (
         <p className="legende">

@@ -1,12 +1,6 @@
 /** Tests des Rückblicks nach der Partie (Vorschlag H): Zeichen, besserer Zug, Balken, Kurve. */
 import { describe, expect, it } from "vitest";
-import {
-  balkenanteil,
-  balkentext,
-  kurvenpunkte,
-  rueckblickMarken,
-  variantentext,
-} from "./rueckblick";
+import { balkenanteil, balkentext, kurvenpunkte, rueckblickMarken } from "./rueckblick";
 
 const NACH_E4_E5 = "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2";
 
@@ -41,20 +35,6 @@ describe("Rückblick", () => {
       "g1f3",
     );
     expect(gleich).toEqual([{ typ: "feld", farbe: "rot", feld: "f3", text: "?" }]);
-  });
-
-  it("Hauptvariante als Zugfolge ohne den ersten Zug, deutsche Buchstaben, höchstens fünf", () => {
-    // Nach 1. e4 e5, Weiß am Zug: Variante Sf3 Sc6 Lc4 Sf6 Sg5 d5 d4.
-    const fen = "rnbqkbnr/pppp1ppp/8/4p3/4P3/8/PPPP1PPP/RNBQKBNR w KQkq e6 0 2";
-    const variante = ["g1f3", "b8c6", "f1c4", "g8f6", "f3g5", "d7d5", "d2d4"];
-    expect(variantentext(fen, variante)).toBe("2... Sc6 3. Lc4 Sf6 4. Sg5 d5");
-    // Schwarz am Zug: der Anfang bekommt „…“, dann normale Nummern.
-    const schwarz = "rnbqkbnr/pppp1ppp/8/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2";
-    expect(variantentext(schwarz, ["b8c6", "f1c4", "g8f6"])).toBe("3. Lc4 Sf6");
-    // Ohne Fortsetzung oder mit einem unmöglichen Zug: leer beziehungsweise abgebrochen.
-    expect(variantentext(fen, ["g1f3"])).toBe("");
-    expect(variantentext(fen, ["g1f3", "a7a3"])).toBe("");
-    expect(variantentext(fen, [])).toBe("");
   });
 
   it("Balken: Anteil von Weiß und Zahl mit Komma", () => {

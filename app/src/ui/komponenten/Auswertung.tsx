@@ -8,6 +8,9 @@
  * dem besseren Zug (gold) und dem gespielten (rot). Darüber steht seit 0.2.38 die Verlaufskurve
  * (Vorschlag H); ein Tipp darauf zeigt die Stellung mit Zeichen und besserem Zug. Seit 0.2.39
  * folgt die Karte „Spielstärke“ (Genauigkeit, Schätzung, Zeichen je Seite, Spielstaerke.tsx).
+ * Seit 0.2.85 (Wünsche des Autors): die erste Abweichung mit der Gewinnchance statt Bauern, grobe
+ * Patzer beider Seiten mit einem Bauern in der Farbe der Seite und Sprung zur Stellung, von den
+ * absichtlichen Fehlern der Engine zuerst nur drei („Alle zeigen“ klappt den Rest auf).
  * Abhängigkeiten: spiel/auswertung.ts, spiel/pgn.ts, speicher/partien.ts, i18n.
  */
 import { useState } from "react";
@@ -29,10 +32,15 @@ import { uciZuSan } from "../../spiel/zuege";
 import { zugFelder } from "../../schach/weiterspielen";
 import type { Partieeintrag } from "../../speicher/partien";
 import { bieteDateiAn } from "./dateiAnbieten";
+import { Seitenfigur } from "./Auswertungssymbole";
 import { Fortschrittsbalken } from "./Fortschrittsbalken";
+import { gewinnchanceVorNach } from "./gewinnchance";
 import { Spielstaerke } from "./Spielstaerke";
 import { Verlaufskurve } from "./Verlaufskurve";
 import type { Auswertungsstand } from "./useAuswertung";
+
+/** So viele absichtliche Fehler der Engine stehen zuerst da (0.2.85, Wunsch des Autors). */
+const ERSTE_ENGINEFEHLER = 3;
 
 /** Ein Sprung auf dem Brett: Stelle in der Partie und Markierungen dort. */
 export interface Sprung {
@@ -43,10 +51,6 @@ export interface Sprung {
 function zugtext(partie: Partie, index: number, zeichen = ""): string {
   const san = partie.zuege[index]?.san ?? "";
   return `${zugnummer(partie, index)} ${sanInSprache(san, "de")}${zeichen}`;
-}
-
-function bauern(verlust: number): string {
-  return verlust.toFixed(1).replace(".", ",");
 }
 
 /** Gold der bessere Zug, rot der gespielte, in der Stellung vor dem Zug. */
@@ -81,7 +85,7 @@ function Abweichung({
       <p>
         {t("auswertung.abweichung", {
           zug: zugtext(p, erste.index, erste.zeichen ?? ""),
-          verlust: bauern(erste.verlust),
+          ...gewinnchanceVorNach(eintrag.werte, erste.index, fen.split(" ")[1] !== "b"),
         })}
         {bester && ` ${t("auswertung.besser", { zug: sanInSprache(bester, "de") })}`}
       </p>
@@ -97,45 +101,81 @@ function Abweichung({
 }
 
 /**
- * Grobe Patzer des Lesers (mehr als zwei Bauern); ohne Züge, nach denen er weiter klar gewinnt
- * (K5: die haben nur „?!“).
+ * Grobe Patzer beider Seiten (mehr als zwei Bauern laut Engine), je mit einem Bauern in der Farbe
+ * der Seite und Sprung zur Stellung; ohne Züge, nach denen die Seite weiter klar gewinnt (K5: die
+ * haben nur „?!“). Beispiel: „♙ 10. Tb1??“ für Weiß.
  */
-function Patzer({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[] }) {
-  const grobe = urteile.filter(
-    (u) =>
-      partie.zuege[u.index]?.von === "leser" && u.verlust > GROBER_PATZER && u.klasse !== "ungenau",
-  );
+function Patzer({
+  eintrag,
+  urteile,
+  beiSprung,
+}: {
+  eintrag: Partieeintrag;
+  urteile: readonly Zugurteil[];
+  beiSprung: (sprung: Sprung) => void;
+}) {
+  const partie = eintrag.partie;
+  const alle = stellungen(partie);
+  const grobe = urteile.filter((u) => u.verlust > GROBER_PATZER && u.klasse !== "ungenau");
   if (grobe.length === 0) return null;
-  const liste = grobe.map((u) => zugtext(partie, u.index, u.zeichen ?? "")).join(", ");
-  return <p className="grobe-patzer">{t("auswertung.patzer", { zuege: liste })}</p>;
+  return (
+    <div className="grobe-patzer" data-testid="grobe-patzer">
+      <span>{t("auswertung.patzer")}</span>
+      <ul className="patzerliste">
+        {grobe.map((u) => (
+          <li key={u.index}>
+            <button
+              type="button"
+              className="knopf-link"
+              onClick={() => beiSprung(sprungZu(eintrag, u.index))}
+            >
+              <Seitenfigur farbe={alle[u.index]?.split(" ")[1] === "b" ? "black" : "white"} />{" "}
+              {zugtext(partie, u.index, u.zeichen ?? "")}
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 }
 
 /** Die absichtlichen Fehler der Engine aus dem Protokoll. */
 function Enginefehler({ partie, beiSprung }: { partie: Partie; beiSprung: (s: Sprung) => void }) {
+  const [alleZeigen, setzeAlleZeigen] = useState(false);
   const fehler = enginefehler(partie);
+  const sichtbar = alleZeigen ? fehler : fehler.slice(0, ERSTE_ENGINEFEHLER);
   const ERSTE_STUFE_OHNE_PROFIL = 4;
   if (fehler.length === 0) {
     const niedrigste = Math.min(...Object.values(partie.einstellung.stufenJePhase));
     return niedrigste < ERSTE_STUFE_OHNE_PROFIL ? <p>{t("auswertung.engineOhneFehler")}</p> : null;
   }
   return (
-    <ul className="enginefehler" data-testid="enginefehler">
-      {fehler.map((f) => (
-        <li key={f.index}>
-          {t("auswertung.engineFehler", {
-            zug: zugtext(partie, f.index),
-            fehler: t(`fehlerart.${f.fehler}`),
-          })}{" "}
-          <button
-            type="button"
-            className="knopf-link"
-            onClick={() => beiSprung({ stelle: f.index + 1, marken: [] })}
-          >
-            {t("auswertung.zeigen")}
-          </button>
-        </li>
-      ))}
-    </ul>
+    <div className="enginefehler" data-testid="enginefehler">
+      <ul>
+        {sichtbar.map((f) => (
+          <li key={f.index}>
+            {t("auswertung.engineFehler", {
+              zug: zugtext(partie, f.index),
+              fehler: t(`fehlerart.${f.fehler}`),
+            })}{" "}
+            <button
+              type="button"
+              className="knopf-link"
+              onClick={() => beiSprung({ stelle: f.index + 1, marken: [] })}
+            >
+              {t("auswertung.zeigen")}
+            </button>
+          </li>
+        ))}
+      </ul>
+      {fehler.length > ERSTE_ENGINEFEHLER && (
+        <button type="button" className="knopf-link" onClick={() => setzeAlleZeigen(!alleZeigen)}>
+          {alleZeigen
+            ? t("auswertung.engineWeniger")
+            : t("auswertung.engineAlle", { anzahl: fehler.length })}
+        </button>
+      )}
+    </div>
   );
 }
 
@@ -227,7 +267,7 @@ export function Auswertung({
             beiStelle={(stelle) => beiSprung({ stelle, marken: [] })}
           />
           <Abweichung eintrag={eintrag} urteile={urteile} beiSprung={beiSprung} />
-          <Patzer partie={eintrag.partie} urteile={urteile} />
+          <Patzer eintrag={eintrag} urteile={urteile} beiSprung={beiSprung} />
         </>
       )}
       <Enginefehler partie={eintrag.partie} beiSprung={beiSprung} />

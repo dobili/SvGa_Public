@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.90. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.91. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.90“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.91“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -29,6 +29,18 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst den neuesten Abschnitt, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.91 (etwa 5 Minuten; Endspiel-Kurzübungen, Opus)
+
+Dazu im Hintergrund: Die Ergebnisse aller Werkzeuge an allen Abbildungen sind festgehalten; ändert
+ein Umbau etwas daran, schlägt ein Test an. Für dich ändert sich dadurch nichts.
+
+- [ ] N408. **Endspiel-Kurzübungen:** Training › Endspieltrainer › unten „Kurzübungen starten“.
+      Acht schnelle Fragen ohne Engine, reihum: „Holt der schwarze König den Bauern ein?“
+      (Quadrat), „Wer hat die Opposition?“, „Welches Feld ist ein Schlüsselfeld?“ und „Welches
+      Erkennungsbild ist das?“ (Buchstellungen aus Kapitel 8 und 9). Nach der Antwort steht die
+      Regel des Buches; beim Quadrat und bei den Schlüsselfeldern leuchtet die Lösung gold am
+      Brett. Prüfe an zwei, drei Aufgaben, ob die Antwort der App schachlich stimmt.
 
 ### Neu in 0.2.90 (etwa 10 Minuten, mit Engine; Nachtarbeit Chat A, Opus)
 

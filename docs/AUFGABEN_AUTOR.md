@@ -20,15 +20,18 @@ Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vo
 Einstellungen prüfen, dass „App-Version 0.2.89“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
-bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
-mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
+bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
+Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht mehr getrennt testen.
 
 ---
 
-## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
+## Teil 1: Testen auf dem Handy (etwa eineinhalb Stunden, meist Partien gegen die Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann der Reihe nach die
-älteren Abschnitte.
+Alles, was sich ohne dich prüfen lässt (Knopf öffnet etwas, Text oder Zahl steht da, Ablauf
+klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygröße, hell und
+dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
+noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
+sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 
 ### Neu in 0.2.88 (etwa 15 Minuten, mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
@@ -87,18 +90,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       machen wie die Stufe 2 selbst (gemessen: alle Bots der Stufen 1 bis 4 holen gegen ihre Stufe
       ein Viertel bis drei Viertel der Punkte). Passt das?
 
-### Neu in 0.2.75 (etwa 5 Minuten; diese Datei in der App, Opus)
-
-- [ ] N307. **Aufgabenseite:** Zahnrad unten rechts drei Sekunden gedrückt halten (ein kurzer
-      Tipp öffnet wie bisher die Einstellungen). Es öffnet sich „Aufgaben des Autors“ mit dieser
-      Datei, der neueste Abschnitt ist aufgeklappt. Tippe in einem Punkt auf einen unterstrichenen
-      Link (etwa „Einstellungen“, „Abb. 6.20“ oder einen Trainernamen): Der Bildschirm öffnet sich, über
-      der Leiste steht „‹ Zurück zu den Aufgaben“ und bringt dich an dieselbe Stelle zurück. Hake einen Punkt ab, schreib bei
-      einem anderen eine Notiz („Notiz“), dann „Stand in die Zwischenablage“ und füge den Text in
-      den Chat ein. „Nur offene Punkte zeigen“ blendet Abgehaktes aus. Haken und Notizen bleiben
-      auf dem Handy, auch nach einem Update; Punkte, die in einer neuen Version fehlen (weil
-      erledigt), fallen aus dem Text heraus.
-
 ### Neu in 0.2.68 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
 
 - [ ] N289. **Eigener Bot mit nur einer Fehlerart:** Einen eigenen Bot 2 · 2 · 2 mit nur dem Haken
@@ -125,13 +116,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       goneo? Claude ist kein Anwalt; wer sichergehen will, vergleicht einmal mit einem Generator wie
       dem von e-recht24.
 
-### Neu in 0.2.61 (etwa 25 Minuten, mit Engine; deine Rückmeldung zu 0.2.56, Opus)
-
-- [ ] N314. **Sonderzüge aus Kapitel 0 (U5):** Training › Koordinaten › „Zug ausführen“: Unter den
-      Sonderzügen stehen jetzt die Stellungen 0.12 bis 0.19 („aus Abb. 0.12“ usw.), mit kurzer und
-      langer Rochade für beide Seiten, en passant und Umwandlung. Etwa jeder vierte Sonderzug kommt
-      noch aus den zwei eigenen Stellungen (en passant für Schwarz, Umwandlung mit Schlag).
-
 ### Neu in 0.2.58 (etwa 15 Minuten, mit Engine; deine Anmerkungen vom 17.10.2026 abends, Fable)
 
 - [ ] N278. **Töne:** Einstellungen › Ton „an“, eine Partie spielen: Klacken beim Zug (beim
@@ -155,21 +139,9 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 
 ### Neu in 0.2.49 (etwa 25 Minuten, mit Engine; Endspieltrainer, Fable)
 
-- [ ] N254. **Mattführung gewinnen:** Mattführung, Stufe 1, Runde starten: Dame gegen König (Abb.
-      8.4, 8.55 oder 8.56). Oben „Weiß: Gewinne diese Stellung gegen die Engine.“, unten „Aus dem
-      Buch: Abb. … · Matt mit der Dame · Stufe 1 · Matt in höchstens N Zügen“. Du ziehst, die
-      Engine antwortet in voller Stärke (Status „Die Engine denkt“ / „Du bist am Zug“). Nach dem
-      Matt: „Richtig! Matt! Ziel erreicht.“ und „Weiter“. Setzt du patt: „Falsch. Remis. Der
-      Gewinn ist verfehlt.“
 - [ ] N255. **Merksätze im Endspieltrainer:** Training › Endspieltrainer, in einigen Aufgaben
       „Hinweis 1“: Die Merksätze zum Thema sind in Claudes Worten. Lies sie kritisch und melde einen,
       der nicht zum Buch passt, mit dem Thema. (Hilfen und Kippen hat Claude geprüft.)
-- [ ] N256. **Remis halten:** Turmendspiele, Stufe 4 oder 5: Philidor (Abb. 9.3, du spielst
-      Schwarz, das Brett ist gedreht, die Engine zieht zuerst) oder Vancura (9.15). Oben
-      „Schwarz: Halte das Remis gegen die Engine.“ Hältst du zwölf eigene Züge durch oder endet
-      die Partie remis: „Richtig! Zwölf Züge gehalten …“ bzw. „Remis. Ziel erreicht.“ Verlierst
-      du den Faden: „Die Stellung ist laut Engine gekippt. Gehalten hätte …“. „Aufgabe abbrechen“
-      beendet eine Aufgabe als falsch und nennt den besten Zug.
 
 ### Neu in 0.2.48 (etwa 15 Minuten; drei neue Trainer, Opus)
 
@@ -203,8 +175,6 @@ Trainer.
       Stimmen die Felder, die die App als hängend nennt? (Den Ablauf hat Claude geprüft.)
 - [ ] N194. **Schach-Röntgen-Trainer:** Ist die Aufgabe (drei Schritte, Pfeile setzen: Figur,
       dann Zielfeld) verständlich und auf dem Handy gut bedienbar? (Den Ablauf hat Claude geprüft.)
-- [ ] N195. **Fortschritt:** Nach einer ganzen Runde zeigt das Kapitel unter Fortschritt den
-      Trainer mit Durchgängen und richtigen Aufgaben.
 
 ### Neu in 0.2.36 (etwa 30 Minuten, mit Engine; AP 11 Kalibrierung)
 
@@ -213,9 +183,6 @@ Gegenprüfung (Uhr, Auswertung).
 Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abstufung richtig anfühlt.“
 
 **Stufen und Fehlerprofile**
-
-- [ ] N176. **Stufe 2 (Anfänger), kein Damenopfer:** eine Partie auf Stufe 2 (etwa 20 Züge). Die
-      Engine verschenkt Bauern und Figuren, aber nie die Dame ohne Gegenwert (Konzept 8.2).
 
 **Gegenprüfung (Uhr und Auswertung)**
 

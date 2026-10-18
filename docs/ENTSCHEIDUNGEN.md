@@ -3246,6 +3246,43 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N336** (Fehler im Rückblick): von Claude geprüft am 18.10.2026: „4... h6??: Die Gewinnchance von Schwarz fällt von 50 % auf 9 %.“, „schlägt nicht zurück: dxc6 nahm den Läufer c6 wieder …“ mit rotem Feld; Fragezeichen erklärt Balken und Gewinnchance
 - **N337** (Nebenzweige): von Claude geprüft am 18.10.2026: „Besser war …“ und „So wird der Fehler bestraft: …“ antippbar, Stellung am Brett, Zug für Zug weiter, „Zurück zur Partie“; bei gutem Zug keine Strafe
 - **N338** (Auswertung): von Claude geprüft am 18.10.2026: Schalter „Genauigkeit wie“, Symbole je Zeile, Marken je Klasse, Erklärungen hinter Fragezeichen; Patzer mit Bauer in Seitenfarbe, Tipp springt hin; Fehler der Engine erst 3, „Alle 8 zeigen“; „Noch einmal aus derselben Stellung“ nur bei eigener Stellung. Der Erklärtext nannte noch „Mittelweg“ und die Einstellungen; nachgeführt in 0.2.90
+- **N176** (Stufe 2 (Anfänger), kein Damenopfer): von Claude geprüft am 18.10.2026: nicht über eine Partie, sondern an der Regel: Absichtliche Fehler ab Stufe 2 schließen ein Damenopfer aus (`damenopferErlaubt` nur bei Stufe 1, Filter in der Fehlersuche und bei den menschlichen Zügen), Komponententest „Damenopfer (Konzept 8.2)“
+- **N195** (Fortschritt): von Claude geprüft am 18.10.2026: nach einer ganzen Runde zeigt Kapitel 0 den Trainer mit Durchgängen und richtigen Aufgaben; „1 Durchgänge“ heißt seit 0.2.94 „1 Durchgang“
+- **N254** (Mattführung gewinnen): von Claude geprüft am 18.10.2026: Mattführung Stufe 1: Auftrag, Herkunftszeile und Status wie beschrieben. Hinweis 2 und 3 zeigten bei Damen- und Königszügen weder Figur noch Pfeil; behoben in 0.2.94, danach mit den Hinweisen bis „Richtig! Matt! Ziel erreicht.“ ausgespielt
+- **N256** (Remis halten): von Claude geprüft am 18.10.2026: Turmendspiel als Schwarz: Brett gedreht, Engine zieht zuerst, „Aufgabe abbrechen“ nennt den besten Zug; nach der Behebung in 0.2.94 mit den Hinweisen bis „Richtig! Zwölf Züge gehalten … Ziel erreicht.“ ausgespielt
+- **N307** (Aufgabenseite): von Claude geprüft am 18.10.2026: langer Druck, Link, Haken, Notiz, „Stand in die Zwischenablage“, „Nur offene Punkte zeigen“, Erhalt nach dem Neuladen gingen; „‹ Zurück zu den Aufgaben“ landete aber oben statt beim Punkt. Behoben in 0.2.94 (auch für Safari); ein Oberflächentest prüft es in Chromium und WebKit
+- **N314** (Sonderzüge aus Kapitel 0 (U5)): von Claude geprüft am 18.10.2026: Sonderzüge an den Buchstellungen 0.12 bis 0.19 (Rochaden, en passant, Umwandlung) kommen; die Abbildung stand nicht dabei, seit 0.2.94 „Aus dem Buch: Abb. 0.14“ usw. unter dem Brett
+
+### Teil 1: durch spätere Versionen überholte Punkte (gelöscht)
+
+Diese Punkte beschrieben einen Stand, den eine spätere Version geändert hat; der neuere Punkt
+prüft dasselbe am aktuellen Stand. Die Nummern bleiben frei (die App speichert Haken je Nummer).
+
+- **N159** (Figurensatz und Ton): überholt durch N322 (neue Figurensätze seit 0.2.82) und N278 (Töne einschließlich Klacken).
+- **N175** (Stufe 1 (Einsteiger)): überholt durch N264 (Stufen 1 bis 3 menschlicher, 0.2.52) und N336 bis N338 (Fehler im Rückblick).
+- **N177** (Abstufung): überholt durch N334 und N348 (Abstufung gemessen, Elo-Zahl je Stufe) und N335.
+- **N178** (Eröffnung): überholt durch N211 (Eröffnung „frei“ oder „eine Eröffnung des Buches (zufällig)“, 0.2.40).
+- **N201** (Figurensätze): überholt durch N322 (Figurensätze „klassisch“ und „Holz“ seit 0.2.82 ersetzt).
+- **N204** (Rückblick-Karte): überholt durch N336 und N337 (Gewinnchance statt Bauern, Nebenzweige, 0.2.86).
+- **N207** (Spielstärke): überholt durch N324, N325 und N338 (Karte „Spielstärke“ neu geeicht und neu geordnet).
+- **N214** (Spielstärke je Phase und Züge nach Art): überholt durch N291 (Urteilswort je Phase) und N338 (Züge nach Art mit Marken).
+- **N216** (Partienliste): überholt durch N223 (Partienliste mit Ergebnis und Stärke beider Seiten, 0.2.41).
+- **N217** (Fehler der Engine je Phase): überholt durch N264 und N286 (ob die Fehler der Engine menschlich wirken).
+- **N219** (Gegner wählen): überholt durch N319 (Gegnerwahl in drei Kategorien, 0.2.80) und N330 (Porträts mit Zahl).
+- **N231** (Eigene Gegner): überholt durch N319 („Eigene Bots verwalten“) und N312 (Stil spürbar); der Oberflächentest „Eigener Gegner Rambo“ prüft Anlegen, Spielen, Löschen.
+- **N240** (Gegnerliste ohne Stufen): überholt durch N319 und N330 (Gegnerwahl mit Porträts, Regler nur bei „Eigene Stufe“).
+- **N241** (Persönlichkeit): überholt durch N286 (Persönlichkeit spürbar, 64 Bots seit 0.2.67).
+- **N242** (Blinde Flecken auch bei starken Gegnern): überholt durch N287 und N295 (starke Bots mit Charakter, alle 64 gemessen).
+- **N244** (Rücknahme macht die Partie ungewertet (S9)): überholt durch N310 (gewertete Partie hat seit 0.2.61 gar keine Rücknahme).
+- **N257** (Genauigkeit wie bei chess.com): überholt durch N324 und N325 (Genauigkeit und Spielstärke neu geeicht, 0.2.83; die Zahlen im Punkt stimmen nicht mehr).
+- **N261** (Brillant und Stark wie bei chess.com): überholt durch N283 (Opernpartie: Brillant 3 seit 0.2.54/0.2.59).
+- **N265** (Strähne und Tagesform): überholt durch N334 (Stufe 3 und 4 neu gemessen, 0.2.85); das Gefühl bleibt bei N264.
+- **N268** (Brillant wie bei chess.com): überholt durch N283 (Brillant, zweiter Schritt).
+- **N277** (Blind auch für Drohungen): überholt durch N286 und N295 (blinde Flecken aller 64 Bots gemessen, Sprechblasen nennen sie).
+- **N281** (Figurensatz „Holz“ mit eigenen Formen): überholt durch N322 („Holz“ seit 0.2.82 durch drei Holzsätze ersetzt).
+- **N291** (Urteilswort je Phase und Mittelspiel nach Taktik und Strategie): überholt durch N344 (Urteilswörter dürfen zweizeilig werden) und N338 (Karte neu geordnet).
+- **N181**: überholt durch N220 (seit 0.2.41 verschwinden Werkzeugleiste und Bündel nach dem Partieende; den Ablauf gibt es so nicht mehr). Geprüft: Die Auswertung läuft mit geöffnetem Werkzeug zu Ende.
+- **N312**: überholt durch N295 (der Hinweis unter dem Stil sagt seit 0.2.81: im Mittel etwa gleich stark, nur auf Stufe 8 schwächer); das Gefühl prüft der Autor bei N286 und N295.
 
 ### Teil 2 im Wortlaut vor dem Umbau
 
@@ -3608,34 +3645,3 @@ hat, mit Rückfrage:
       in Richtung Elo 2000 entscheidend sind“. Schon umgesetzt in 0.2.55.
 - E4. **Bezugsquellen:** ISBN und Shop-Links, sobald sie feststehen.
       **Empfehlung:** nachtragen, sobald die ISBN vergeben ist; bis dahin bleibt der Platz leer.
-
-### Teil 1: durch spätere Versionen überholte Punkte (gelöscht)
-
-Diese Punkte beschrieben einen Stand, den eine spätere Version geändert hat; der neuere Punkt
-prüft dasselbe am aktuellen Stand. Die Nummern bleiben frei (die App speichert Haken je Nummer).
-
-- **N159** (Figurensatz und Ton): überholt durch N322 (neue Figurensätze seit 0.2.82) und N278 (Töne einschließlich Klacken).
-- **N175** (Stufe 1 (Einsteiger)): überholt durch N264 (Stufen 1 bis 3 menschlicher, 0.2.52) und N336 bis N338 (Fehler im Rückblick).
-- **N177** (Abstufung): überholt durch N334 und N348 (Abstufung gemessen, Elo-Zahl je Stufe) und N335.
-- **N178** (Eröffnung): überholt durch N211 (Eröffnung „frei“ oder „eine Eröffnung des Buches (zufällig)“, 0.2.40).
-- **N201** (Figurensätze): überholt durch N322 (Figurensätze „klassisch“ und „Holz“ seit 0.2.82 ersetzt).
-- **N204** (Rückblick-Karte): überholt durch N336 und N337 (Gewinnchance statt Bauern, Nebenzweige, 0.2.86).
-- **N207** (Spielstärke): überholt durch N324, N325 und N338 (Karte „Spielstärke“ neu geeicht und neu geordnet).
-- **N214** (Spielstärke je Phase und Züge nach Art): überholt durch N291 (Urteilswort je Phase) und N338 (Züge nach Art mit Marken).
-- **N216** (Partienliste): überholt durch N223 (Partienliste mit Ergebnis und Stärke beider Seiten, 0.2.41).
-- **N217** (Fehler der Engine je Phase): überholt durch N264 und N286 (ob die Fehler der Engine menschlich wirken).
-- **N219** (Gegner wählen): überholt durch N319 (Gegnerwahl in drei Kategorien, 0.2.80) und N330 (Porträts mit Zahl).
-- **N231** (Eigene Gegner): überholt durch N319 („Eigene Bots verwalten“) und N312 (Stil spürbar); der Oberflächentest „Eigener Gegner Rambo“ prüft Anlegen, Spielen, Löschen.
-- **N240** (Gegnerliste ohne Stufen): überholt durch N319 und N330 (Gegnerwahl mit Porträts, Regler nur bei „Eigene Stufe“).
-- **N241** (Persönlichkeit): überholt durch N286 (Persönlichkeit spürbar, 64 Bots seit 0.2.67).
-- **N242** (Blinde Flecken auch bei starken Gegnern): überholt durch N287 und N295 (starke Bots mit Charakter, alle 64 gemessen).
-- **N244** (Rücknahme macht die Partie ungewertet (S9)): überholt durch N310 (gewertete Partie hat seit 0.2.61 gar keine Rücknahme).
-- **N257** (Genauigkeit wie bei chess.com): überholt durch N324 und N325 (Genauigkeit und Spielstärke neu geeicht, 0.2.83; die Zahlen im Punkt stimmen nicht mehr).
-- **N261** (Brillant und Stark wie bei chess.com): überholt durch N283 (Opernpartie: Brillant 3 seit 0.2.54/0.2.59).
-- **N265** (Strähne und Tagesform): überholt durch N334 (Stufe 3 und 4 neu gemessen, 0.2.85); das Gefühl bleibt bei N264.
-- **N268** (Brillant wie bei chess.com): überholt durch N283 (Brillant, zweiter Schritt).
-- **N277** (Blind auch für Drohungen): überholt durch N286 und N295 (blinde Flecken aller 64 Bots gemessen, Sprechblasen nennen sie).
-- **N281** (Figurensatz „Holz“ mit eigenen Formen): überholt durch N322 („Holz“ seit 0.2.82 durch drei Holzsätze ersetzt).
-- **N291** (Urteilswort je Phase und Mittelspiel nach Taktik und Strategie): überholt durch N344 (Urteilswörter dürfen zweizeilig werden) und N338 (Karte neu geordnet).
-- **N181**: überholt durch N220 (seit 0.2.41 verschwinden Werkzeugleiste und Bündel nach dem Partieende; den Ablauf gibt es so nicht mehr). Geprüft: Die Auswertung läuft mit geöffnetem Werkzeug zu Ende.
-- **N312**: überholt durch N295 (der Hinweis unter dem Stil sagt seit 0.2.81: im Mittel etwa gleich stark, nur auf Stufe 8 schwächer); das Gefühl prüft der Autor bei N286 und N295.

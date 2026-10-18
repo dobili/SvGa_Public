@@ -54,6 +54,14 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
       „Daten sichern (Datei)“ steht auf dem Handy „Sicherung teilen (Mail, Dateien)“. Er öffnet
       das Teilen-Menü; schick dir die Datei per Mail. Am Rechner fehlt der Knopf, wenn der
       Browser keine Dateien teilen kann.
+- [ ] N405. **Erst selbst denken auch vor Werkzeugen (dein Wunsch vom 18.10.2026):**
+      Einstellungen › Reiter „Training“ › „Auch vor Werkzeugen und Engine“ auf „an“. Öffne
+      Abb. 1.26: Statt Werkzeugleiste und Engine steht die Karte „Erst selbst denken“ mit „Weiß
+      besser | gleich | Schwarz besser“ und „Ich habe nachgedacht“. Danach erscheinen die
+      Werkzeuge, darüber „Deine Einschätzung: …“ zum Vergleich mit der Engine. Mit „streng“ geht
+      es erst nach einer Einschätzung weiter. Prüfe auch: Übungen (etwa Übung an Abb. 1.40) und
+      Trainer funktionieren mit „an“ wie bisher (dort gilt ihr eigenes „Erst selbst denken“).
+      Voreinstellung ist „aus“ (siehe Rückfrage NA1).
 - [ ] N404. **Bewertungsbalken lesbar:** Nach einer Partie im Rückblick: Die Zahl am schmalen
       Balken links steht jetzt auf dunklem Grund, auch wenn der weiße Teil bis zur Mitte reicht.
 
@@ -1169,6 +1177,14 @@ Regeln C1 und C2).
 ---
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
+
+### NA. Nachtarbeit Chat A (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
+
+- [ ] NA1. **Voreinstellung von „Erst selbst denken auch vor Werkzeugen“:** Empfehlung **aus**.
+      Schon umgesetzt in 0.2.90. Grund: Wer beim Lesen eine Abbildung öffnet, will meist
+      nachprüfen, was im Buch steht; eine Pflichtkarte an jeder der 765 Abbildungen bremst
+      dabei. Wer üben will, schaltet sie in den Einstellungen ein (Reiter „Training“). Sagst du
+      „an“, wird sie für alle die Voreinstellung.
 
 ### B. Buchbefunde aus der Textarbeit (Fable, 0.2.67; nur du änderst das Buch)
 

@@ -51,6 +51,8 @@ export const BRETTARTEN = [
 ] as const;
 export type Brettfarben = (typeof BRETTARTEN)[number];
 export type Strenge = "locker" | "streng";
+/** „Erst selbst denken“ auch vor Werkzeugen und Engine an den Abbildungen (seit 0.2.90). */
+export type VorWerkzeugen = "aus" | "an";
 /**
  * Die Bildsätze der Figuren (seit 0.2.82, Auswahl des Autors vom 18.10.2026), je Gruppe drei:
  * Klassisch, Modern, Holz. Die Dateien liegen in public/figuren/<satz>/, Herkunft und Lizenz in
@@ -85,6 +87,11 @@ export interface Einstellungen {
    * (spiel/staerkemodell.ts); ältere Stände ohne diesen Eintrag lesen sich als „mittelweg“.
    */
   readonly genauigkeitsmodus: Genauigkeitsmodus;
+  /**
+   * Seit 0.2.90 (Wunsch des Autors, Pflichtenheft 4 und 5.1): An den Abbildungen erst selbst
+   * einschätzen, dann Werkzeuge und Engine. Ältere Stände ohne diesen Eintrag lesen sich als „aus“.
+   */
+  readonly vorWerkzeugen: VorWerkzeugen;
 }
 
 export const STANDARD_EINSTELLUNGEN: Einstellungen = {
@@ -93,6 +100,7 @@ export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   figurensatz: "buch",
   ton: "aus",
   genauigkeitsmodus: STANDARD_GENAUIGKEITSMODUS,
+  vorWerkzeugen: "aus",
 };
 
 /** Je Kapitelnummer die Positionen der abgehakten Lernziele (0 = erster Punkt der Buchliste). */
@@ -210,6 +218,7 @@ export function einstellungenAus(roh: unknown): Einstellungen {
     ton: roh.ton === "an" ? "an" : "aus",
     genauigkeitsmodus:
       GENAUIGKEITSMODI.find((m) => m === roh.genauigkeitsmodus) ?? STANDARD_GENAUIGKEITSMODUS,
+    vorWerkzeugen: roh.vorWerkzeugen === "an" ? "an" : "aus",
   };
 }
 

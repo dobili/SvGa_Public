@@ -9,7 +9,9 @@
  * „Zählen“ zählt ein Tipp aufs Feld Angreifer und Verteidiger; Zählen und Ziehen zeigen dazu ihre
  * Erklärkachel (bis man sie ausblendet). Ein zweites Tippen auf ein Bündel oder Symbol wählt es
  * ab, ebenso ein Tipp auf den Hintergrund. Seit 0.2.39 ist der Titel „Abb. 7.12“ ein Knopf: Ein
- * Tipp öffnet ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors).
+ * Tipp öffnet ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors). Seit
+ * 0.2.90 kann „Erst selbst denken“ Werkzeuge und Engine zurückhalten, bis der Leser die Stellung
+ * eingeschätzt hat (SelbstDenken.tsx, Einstellung „Auch vor Werkzeugen und Engine“).
  * Abhängigkeiten: daten, analyse, engine, ui/brett, ui/komponenten (Werkzeugwahl, Nummernsprung),
  * Navigation, i18n.
  */
@@ -17,43 +19,31 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { schreibeMerker } from "../../app/merker";
 import { useNavigation } from "../../app/navigationsKontext";
-import type { Werkzeugergebnis } from "../../analyse/werkzeug";
-import { letzterZugAus, type LetzterZug } from "../../engine/letzterzug";
+import { letzterZugAus } from "../../engine/letzterzug";
 import { hauptlinie } from "../../schach/variantenbaum";
-import { spielbar } from "../../spiel/partie";
 import { ladeKapitel, type Abbildung as AbbildungDaten, type Kapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { stellungAusFen, type Stellung } from "../../schach/stellung";
+import { stellungAusFen } from "../../schach/stellung";
 import { Brettbereich } from "../komponenten/Brettbereich";
-import { AntwortenKarte } from "../komponenten/AntwortenKarte";
-import { EngineKarte } from "../komponenten/EngineKarte";
-import { FalleKarte } from "../komponenten/FalleKarte";
-import { RuheKarte } from "../komponenten/RuheKarte";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { EigeneEinschaetzung, SelbstDenkenKarte } from "../komponenten/SelbstDenken";
+import { useSelbstDenken } from "../komponenten/useSelbstDenken";
+import { Karten } from "./AbbildungKarten";
 import { Nummernfeld, Nummerntitel } from "../komponenten/Nummernsprung";
-import { Unterschrift } from "../komponenten/Unterschrift";
 import { useDaten } from "../komponenten/useDaten";
 import { useEroeffnungsindex } from "../komponenten/useEroeffnungsindex";
-import {
-  useEngineMarkierungen,
-  type Enginemarkierungen,
-} from "../komponenten/useEngineMarkierungen";
-import { useFalle, type Fallenstand } from "../komponenten/useFalle";
+import { useEngineMarkierungen } from "../komponenten/useEngineMarkierungen";
+import { useFalle } from "../komponenten/useFalle";
 import { useGesehen } from "../komponenten/useGesehen";
-import { Erklaerkarte } from "../komponenten/Erklaerkarte";
-import { useErklaerung } from "../komponenten/useErklaerung";
 import { useHintergrundTipp } from "../komponenten/useHintergrundTipp";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { useNachspielen } from "../komponenten/useNachspielen";
 import { buchmarkierungen } from "../komponenten/buchmarkierungen";
-import { Werkzeugkarte } from "../komponenten/Werkzeugkarte";
-import { Werkzeugzusatz } from "../komponenten/Werkzeugzusatz";
-import { hatSicht, werkzeugergebnis } from "../komponenten/werkzeugergebnis";
-import { useSicht, type Sicht } from "../komponenten/useSicht";
+import { werkzeugergebnis } from "../komponenten/werkzeugergebnis";
+import { useSicht } from "../komponenten/useSicht";
 import { Brettsymbole } from "../komponenten/Brettsymbole";
-import { Reiterleiste, Werkzeugleiste, type Werkzeugwahl } from "../komponenten/Werkzeugleiste";
+import { Reiterleiste, Werkzeugleiste } from "../komponenten/Werkzeugleiste";
 import { useWerkzeugwahl } from "../komponenten/useWerkzeugwahl";
-import { WarumFragen } from "../komponenten/WarumFrage";
 import { Zugleiste } from "../komponenten/Zugleiste";
 
 /** Knöpfe für die vorige und nächste Abbildung im selben Kapitel. */
@@ -88,143 +78,6 @@ function Blaettern({ kapitel, nummer }: { kapitel: Kapitel; nummer: string }) {
 
 /** So viele Halbzüge der Hauptvariante bekommt k7-motiv (Schlüsselzug und Fortsetzung). */
 const FORTSETZUNG_HALBZUEGE = 8;
-
-/**
- * Karten unter dem Brett: zuerst die Kacheln des gewählten Werkzeugs (Werkzeugergebnis und die
- * Engine-Kacheln), dann die Warum-Fragen, dann Unterschrift und Fundstelle (Wunsch des Autors
- * nach dem Test von 0.2.26).
- */
-function Karten({
-  kapitel,
-  abbildung,
-  hier,
-  stellung,
-  wahl,
-  ergebnis,
-  falle,
-  gegnerplan,
-  erzwingend,
-  ruhe,
-  enginebrett,
-  letzterZug,
-  naechsterZug,
-  sicht,
-}: {
-  kapitel: Kapitel;
-  abbildung: AbbildungDaten;
-  hier: AbbildungDaten | null;
-  stellung: Stellung;
-  wahl: Werkzeugwahl | null;
-  ergebnis: Werkzeugergebnis | null;
-  falle: Fallenstand;
-  gegnerplan: Enginemarkierungen;
-  erzwingend: Enginemarkierungen;
-  ruhe: Enginemarkierungen;
-  enginebrett: Enginemarkierungen;
-  letzterZug: LetzterZug | null;
-  naechsterZug: string | null;
-  sicht: Sicht;
-}) {
-  const { navigiere } = useNavigation();
-  const erklaerung = useErklaerung(wahl);
-  return (
-    <div className="abbildung-karten">
-      {erklaerung.sichtbar && (wahl === "zaehlen" || wahl === "ziehen") && (
-        <Erklaerkarte werkzeug={wahl} ausblenden={erklaerung.ausblenden} />
-      )}
-      {wahl === "zaehlen" && !ergebnis && !erklaerung.sichtbar && (
-        <p className="hinweis">{t("abbildung.tippeFeld")}</p>
-      )}
-      {ergebnis && (
-        <Werkzeugkarte
-          key={ergebnis.werkzeug}
-          ergebnis={ergebnis}
-          sicht={hatSicht(ergebnis.werkzeug) ? sicht : null}
-          zusatz={
-            // Engine in derselben Karte: „Gegner?“ (Vorschlag D4), „Erzwingende Züge“ (B1),
-            // Nachrechnung der Zentrumsbauern bei der Zielbilanz (C1.1).
-            <Werkzeugzusatz
-              wahl={wahl}
-              stellung={stellung}
-              eigen={sicht.farbe}
-              beiGegnerplan={gegnerplan.setzeMarkierungen}
-              beiErzwingend={erzwingend.setzeMarkierungen}
-            />
-          }
-        />
-      )}
-      {!stellung.regeln && <p className="hinweis">{t("abbildung.lehrbild")}</p>}
-      {wahl === "engine" && stellung.regeln && (
-        <EngineKarte
-          key={stellung.fen}
-          stellung={stellung}
-          letzterZug={letzterZug}
-          beiMarkierungen={enginebrett.setzeMarkierungen}
-        />
-      )}
-      {wahl === "k4-prueffragen" && stellung.regeln && naechsterZug && (
-        <AntwortenKarte
-          key={`${stellung.fen} ${naechsterZug}`}
-          stellung={stellung}
-          geplant={naechsterZug}
-        />
-      )}
-      {wahl === "k7-ruhe" && stellung.regeln && (
-        <RuheKarte
-          key={stellung.fen}
-          stellung={stellung}
-          beiMarkierungen={ruhe.setzeMarkierungen}
-        />
-      )}
-      {falle.angebot && (
-        <FalleKarte
-          key={`${stellung.fen} ${falle.angebot.uci}`}
-          stellung={stellung}
-          angebot={falle.angebot}
-          beiMarkierungen={falle.setzeMarkierungen}
-        />
-      )}
-      <WarumFragen hier={hier} />
-      {stellung.regeln && spielbar(stellung.fen) && (
-        <button
-          type="button"
-          className="knopf-zweit"
-          onClick={() =>
-            navigiere({
-              bildschirm: "spielen",
-              startFen: stellung.fen,
-              ...(hier ? { abbildung: hier.id } : {}),
-            })
-          }
-        >
-          {t("abbildung.gegenEngine")}
-        </button>
-      )}
-      {hier && hier.id !== abbildung.id && (
-        <button
-          type="button"
-          className="knopf-zweit"
-          onClick={() => navigiere({ bildschirm: "abbildung", nummer: hier.id })}
-        >
-          {t("abbildung.andereOeffnen", { nummer: hier.id })}
-        </button>
-      )}
-      <Unterschrift
-        nummer={abbildung.id}
-        teile={abbildung.unterschrift}
-        beiVerweis={(nummer) => navigiere({ bildschirm: "abbildung", nummer })}
-      />
-      {abbildung.abschnitt && (
-        <p className="fundstelle">
-          {t("abbildung.fundstelle", {
-            kapitel: kapitel.kapitel,
-            abschnitt: `${abbildung.abschnitt.nummer} ${abbildung.abschnitt.titel}`,
-          })}
-        </p>
-      )}
-    </div>
-  );
-}
 
 /**
  * Inhalt des Bildschirms: Zugleiste (falls die Abbildung eine Zugfolge hat), Brett, Werkzeuge.
@@ -272,6 +125,9 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
     () => letzterZugAus(startFen, zugschluessel ? zugschluessel.split(" ") : []),
     [startFen, zugschluessel],
   );
+
+  // Erst selbst denken (seit 0.2.90, Einstellung „Auch vor Werkzeugen und Engine“): je Abbildung.
+  const denken = useSelbstDenken(nachspielen.abbildungHier?.id ?? abbildung.id);
 
   // Tipp auf den Hintergrund: kein Werkzeug, also wieder die Markierungen des Buches.
   useHintergrundTipp(wahl !== null, werkzeug.abwaehlen);
@@ -334,13 +190,19 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
         bedienung={bedienung}
         beschriftung={hier ? t("abbildung.titel", { nummer: hier.id }) : t("zugleiste.stellung")}
         werkzeugSymbole={
-          <Brettsymbole kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
+          denken.gesperrt ? null : (
+            <Brettsymbole kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
+          )
         }
         skelett={skelettAn}
       />
+      {denken.gesperrt && <SelbstDenkenKarte stand={denken} />}
+      {!denken.gesperrt && <EigeneEinschaetzung einschaetzung={denken.einschaetzung} />}
       {/* Lehrbilder ohne König (Kapitel 0 und 5): keine Bündel, am Brett nur „Zählen“. */}
-      <Werkzeugleiste kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
-      {werkzeug.buendel && (
+      {!denken.gesperrt && (
+        <Werkzeugleiste kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />
+      )}
+      {!denken.gesperrt && werkzeug.buendel && (
         <Reiterleiste
           kennung={werkzeug.buendel}
           kapitel={kapitel.kapitel}

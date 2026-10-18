@@ -5,6 +5,7 @@
  */
 import { describe, expect, it } from "vitest";
 import type { Partieeintrag } from "../speicher/partien";
+import { staerkeDerStufe } from "./botstaerke";
 import { staerkeUeberPartien } from "./staerkemodell";
 import { leserzug, neuePartie, ziehe, type Partie, type Partieeinstellung } from "./partie";
 import {
@@ -86,9 +87,17 @@ describe("Wertung", () => {
     // Fehlerfrei: Mittelspiel (ab Zug 5, Schwarz entwickelt) geschätzt, Endspiel nie erreicht.
     expect(verlauf[0]?.phasen.mittelspiel).toBe(schaetzung);
     expect(verlauf[0]?.phasen.endspiel).toBeNull();
-    // Zweite Partie gewonnen gegen einen gleich starken Gegner: + 32 · (1 − ½) = 16.
+    // Zweite Partie gewonnen gegen Stufe 3: Gegner ist die Zahl der Stufe (0.2.85, S23).
     verlauf = mitGewerteterPartie(verlauf, eintrag("2", "white"));
-    expect(verlauf[1]?.wertung).toBe((schaetzung ?? 0) + K_ANFANG / 2);
+    const gegner = staerkeDerStufe(3);
+    expect(verlauf[1]?.gegner).toBe(gegner);
+    const zweite = (schaetzung ?? 0) + K_ANFANG * (1 - erwartung(schaetzung ?? 0, gegner));
+    expect(verlauf[1]?.wertung).toBe(Math.round(zweite));
+    // Gleich starker Gegner: + 32 · (1 − ½) = 16.
+    const erster = verlauf[0];
+    if (!erster) throw new Error("erste Partie fehlt");
+    const gleich = mitGewerteterPartie([{ ...erster, wertung: gegner }], eintrag("g", "white"));
+    expect(gleich[1]?.wertung).toBe(gegner + K_ANFANG / 2);
     for (let i = 3; i <= ANFANGSPARTIEN; i += 1) {
       verlauf = mitGewerteterPartie(verlauf, eintrag(String(i), null));
     }

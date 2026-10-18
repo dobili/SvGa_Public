@@ -38,6 +38,7 @@ import {
 import { mitVorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { zugurteile } from "../../spiel/auswertung";
+import { staerkeDerStufe, staerkeDerStufen } from "../../spiel/botstaerke";
 import { phasenJeStellung, type Phase } from "../../spiel/phasen";
 import { buchzuegeAb } from "../../schach/eroeffnungsindex";
 import { useEroeffnungsindex } from "../komponenten/useEroeffnungsindex";
@@ -79,13 +80,14 @@ function Untertitel({ partie }: { partie: PartieDaten }) {
   const verschieden = je.eroeffnung !== je.mittelspiel || je.endspiel !== je.mittelspiel;
   const stufenText = verschieden
     ? t("partie.stufenJePhase", { e: je.eroeffnung, m: je.mittelspiel, s: je.endspiel })
-    : t("partie.stufe", { nummer: s.nummer, name: t(s.name) });
+    : t("partie.stufe", { nummer: s.nummer, name: t(s.name), staerke: staerkeDerStufe(s.nummer) });
   // Vorgefertigte Gegner verraten ihre Stufen je Phase nicht (0.2.46): nur Durchschnitt und Klasse.
   const vorgefertigt = botVon(partie.einstellung.bot);
   const botText = vorgefertigt
     ? t("partie.gegnerSchnitt", {
         schnitt: String(durchschnitt(vorgefertigt)).replace(".", ","),
         klasse: t(klasseVon(vorgefertigt).name),
+        staerke: staerkeDerStufen(vorgefertigt.stufenJePhase),
       })
     : stufenText;
   const stufentext = bot ? t("partie.gegnerBot", { name: bot, stufen: botText }) : stufenText;

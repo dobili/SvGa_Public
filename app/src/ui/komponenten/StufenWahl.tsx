@@ -3,11 +3,13 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (17.10.2026): „einen gerasterten Regler je Phase“. Die
  * Engine folgt der Phase der Stellung und wechselt Zug für Zug um höchstens eine Stufe
- * (usePartie.ts, stufeFuer). Jeder Regler zeigt Nummer und Namen der Stufe.
- * Abhängigkeiten: engine/stufen.ts, spiel/phasen.ts (PHASEN), i18n.
+ * (usePartie.ts, stufeFuer). Jeder Regler zeigt Nummer und Namen der Stufe; darunter seit 0.2.85
+ * die Spielstärke der Einstellung als Wertungszahl (Rückfrage S23, spiel/botstaerke.ts).
+ * Abhängigkeiten: engine/stufen.ts, spiel/phasen.ts (PHASEN), spiel/botstaerke.ts, i18n.
  */
 import { STUFEN, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
+import { staerkeDerStufen } from "../../spiel/botstaerke";
 import { PHASEN, type Phase } from "../../spiel/phasen";
 
 const ERSTE = STUFEN[0]?.nummer ?? 1;
@@ -50,6 +52,9 @@ export function StufenWahl({
           </div>
         );
       })}
+      <p className="hinweis" data-testid="stufen-staerke">
+        {t("spielen.stufenStaerke", { staerke: staerkeDerStufen(stufen) })}
+      </p>
       <p className="hinweis">{t("spielen.stufenHinweis")}</p>
     </div>
   );

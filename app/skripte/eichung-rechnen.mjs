@@ -10,6 +10,7 @@
 // Aufruf (im Ordner app/):
 //   node skripte/eichung-rechnen.mjs                     # alle Partien, vier Läufe, höchstens 110 Minuten
 //   node skripte/eichung-rechnen.mjs --parallel 2 --minuten 30
+//   node skripte/eichung-rechnen.mjs --ordner ../buch/arbeit/botstaerke --plattformen stufe-1,stufe-2
 //
 // Fortsetzbar: Jeder Lauf k schreibt nach buch/arbeit/eichung/bewertet-<k>.jsonl; schon bewertete
 // Partien werden übersprungen. Die Rohdaten bleiben lokal (nie ins Repository).
@@ -43,6 +44,8 @@ function argumente(argv) {
     parallel: wert("--parallel", STANDARD_PARALLEL),
     minuten: wert("--minuten", STANDARD_MINUTEN),
     lauf: wert("--lauf", -1),
+    // Auch für die Partien der Stufen (spiel/botstaerke.messung.ts, Rückfrage S23).
+    plattformen: text("--plattformen", PLATTFORMEN.join(",")).split(","),
   };
 }
 
@@ -56,8 +59,8 @@ function liesZeilen(datei) {
 }
 
 /** Alle gesammelten Partien beider Plattformen, in fester Reihenfolge. */
-function allePartien(ordner) {
-  return PLATTFORMEN.flatMap((plattform) => liesZeilen(resolve(ordner, `${plattform}.jsonl`)));
+function allePartien(ordner, plattformen) {
+  return plattformen.flatMap((plattform) => liesZeilen(resolve(ordner, `${plattform}.jsonl`)));
 }
 
 /** Schlüssel aller schon bewerteten Partien, aus allen Läufen (auch mit anderer Aufteilung). */
@@ -145,11 +148,11 @@ function auswerten(zeile, bester) {
 }
 
 /** Ein Lauf: bewertet jede n-te Partie, die noch in keiner Ausgabe steht. */
-async function lauf(ordner, nummer, anzahl, ende) {
+async function lauf(ordner, nummer, anzahl, ende, plattformen) {
   const ausgabe = resolve(ordner, `bewertet-${nummer}.jsonl`);
   const fertig = schonBewertet(ordner);
   const sf = await engine();
-  const meine = allePartien(ordner).filter((_, i) => i % anzahl === nummer);
+  const meine = allePartien(ordner, plattformen).filter((_, i) => i % anzahl === nummer);
   for (const partie of meine) {
     if (Date.now() > ende) break;
     if (fertig.has(schluessel(partie))) continue;
@@ -173,10 +176,10 @@ function main() {
   const a = argumente(process.argv.slice(2));
   const ende = Date.now() + a.minuten * MS_JE_MINUTE;
   if (a.lauf >= 0) {
-    lauf(a.ordner, a.lauf, a.parallel, ende).then(() => process.exit(0));
+    lauf(a.ordner, a.lauf, a.parallel, ende, a.plattformen).then(() => process.exit(0));
     return;
   }
-  const gesamt = allePartien(a.ordner).length;
+  const gesamt = allePartien(a.ordner, a.plattformen).length;
   console.log(
     `${gesamt} Partien, ${a.parallel} Läufe, Tiefe ${TIEFE}, höchstens ${a.minuten} Minuten`,
   );
@@ -190,6 +193,8 @@ function main() {
       String(a.minuten),
       "--ordner",
       a.ordner,
+      "--plattformen",
+      a.plattformen.join(","),
     ]);
   }
 }

@@ -6,8 +6,9 @@
  * der Züge einer Partie. Die Wertung verbindet alle gewerteten Partien zu einer Zahl, die mit
  * Siegen steigt und mit Niederlagen fällt, wie eine Elo-Zahl im Verein: Die erste gewertete
  * Partie setzt die Wertung auf die Schätzung der Engine für den Leser; jede weitere zählt wie
- * eine Partie gegen einen Spieler mit der Engine-Schätzung des Gegners (der Stärke, mit der die
- * Engine in dieser Partie gespielt hat). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
+ * eine Partie gegen einen Spieler mit der Stärke des Gegners: seit 0.2.85 die gemessene Zahl
+ * seiner Stufen (spiel/botstaerke.ts, Rückfrage S23), vorher die Engine-Schätzung aus seinen
+ * Zügen in dieser Partie. K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
  * beim Weltschachbund für Spieler unter 2400). Jeder Punkt des Verlaufs merkt sich Zeit, Gegner
  * und Ergebnis, damit die Kurve in den Einstellungen nach Partien oder nach Zeitraum zeigen kann;
  * dazu die Schätzung der Engine für den Leser je Phase dieser Partie (Wunsch des Autors: die Kurve
@@ -16,10 +17,11 @@
  * Gewertet werden nur beendete Partien gegen die Engine aus der Grundstellung (Wunsch des
  * Autors: nichts aus Abbildungen oder aufgebauten Stellungen) ohne Rücknahme mit Haken
  * „gewertete Partie“ und fertiger Auswertung; Partien mit zu wenigen Zügen für eine Schätzung zählen nicht.
- * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
+ * Abhängigkeiten: spiel/genauigkeit.ts, spiel/botstaerke.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
  * speicher/partien.ts (Partieeintrag).
  */
 import type { Partieeintrag } from "../speicher/partien";
+import { staerkeDerStufen } from "./botstaerke";
 import { zugurteile } from "./auswertung";
 import { spielstaerke, spielstaerkeJePhase, type Spielstaerke } from "./genauigkeit";
 import {
@@ -50,7 +52,7 @@ export interface Wertungspunkt {
   readonly partieId: string;
   /** Beginn der Partie als ISO-Zeit. */
   readonly zeit: string;
-  /** Engine-Schätzung des Gegners in dieser Partie. */
+  /** Stärke des Gegners: seit 0.2.85 die Zahl seiner Stufen, vorher seine Engine-Schätzung. */
   readonly gegner: number;
   readonly ergebnis: Punktwert;
   /** Die Wertung des Lesers nach der Partie, gerundet. */
@@ -164,12 +166,12 @@ export function aktuelleWertung(punkte: readonly Wertungspunkt[]): number | null
 /**
  * Der Wertungspunkt zu einer Partie, oder null, wenn sie nicht zählt: nicht gewertet, gegen
  * einen Menschen, nicht aus der Grundstellung, mit Rücknahme, nicht beendet, ohne Auswertung,
- * schon gezählt, oder ohne Schätzung des Gegners (zu wenige Züge). Rücknahmen: Empfehlung S9,
+ * schon gezählt. Rücknahmen: Empfehlung S9,
  * umgesetzt in 0.2.47 (wer einen Patzer zurücknimmt, spielt stärker, als er ist). Die erste Partie braucht auch die Schätzung
  * für den Leser.
  *
  * Beispiel: erste Partie, Engine schätzt den Leser auf 1400 → Wertung 1400 (unabhängig vom
- * Ergebnis); zweite Partie gegen eine Engine mit 1600 gewonnen → 1400 + 32 · (1 − 0,24) ≈ 1424.
+ * Ergebnis); zweite Partie gegen einen Gegner mit 1600 gewonnen → 1400 + 32 · (1 − 0,24) ≈ 1424.
  */
 export function wertungspunktFuer(
   punkte: readonly Wertungspunkt[],
@@ -184,9 +186,10 @@ export function wertungspunktFuer(
   if (punkte.some((punkt) => punkt.partieId === p.id)) return null;
   const staerke = staerkeDerPartie(eintrag);
   if (!staerke) return null;
-  const engineFarbe = p.einstellung.eigeneFarbe === "white" ? "black" : "white";
-  const gegner = staerke[engineFarbe].spielstaerke;
-  if (gegner === null) return null;
+  // Stärke des Gegners: die gemessene Zahl seiner Stufen (seit 0.2.85, Rückfrage S23) wie die
+  // Wertungszahl eines Gegners im Verein; bis 0.2.84 seine Genauigkeit in dieser Partie, die je
+  // Partie um etwa ±450 streut.
+  const gegner = staerkeDerStufen(p.einstellung.stufenJePhase);
   const bisher = aktuelleWertung(punkte);
   const eigene = bisher ?? staerke[p.einstellung.eigeneFarbe].spielstaerke;
   if (eigene === null) return null;

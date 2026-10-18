@@ -33,7 +33,7 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.getByRole("heading", { name: "Partie gegen die Engine" })).toBeVisible();
-  await expect(page.getByText("Stufe 1 · Einsteiger · du spielst Weiß")).toBeVisible();
+  await expect(page.getByText(/^Stufe 1 · Einsteiger · etwa \d+ · du spielst Weiß$/)).toBeVisible();
   await expect(page.getByTestId("uhr-white")).toContainText("5:00");
   await ziehe(page, /^e2, Bauer/, "e4");
   await expect(page.getByTestId("partiezuege")).toContainText("1. e4");
@@ -203,6 +203,8 @@ test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, sp
   await expect(karte).toContainText("Rambo · 3 · 3 · 3 · sehr aggressiv");
   await page.getByRole("radio", { name: "Rambo" }).click();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Rambo");
+  // Spielstärke als Zahl (0.2.85, S23), auch bei eigenen Bots.
+  await expect(page.getByTestId("gegner-sprechblase")).toContainText(/etwa \d+/);
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.locator(".partie-untertitel")).toContainText("Rambo");
   await ziehe(page, /^e2,/, "e4");
@@ -251,6 +253,11 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await page.getByRole("radio", { name: "Eigene Stufe" }).click();
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Eigene Stufen");
+  await expect(page.getByTestId("stufen-staerke")).toContainText(/etwa \d+/);
+  await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
+  await expect(
+    page.getByRole("heading", { name: /^Stufe 1 · Einsteiger · etwa \d+$/ }),
+  ).toBeVisible();
 });
 
 test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.80)", async ({

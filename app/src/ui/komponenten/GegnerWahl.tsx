@@ -27,6 +27,7 @@ import {
 } from "../../engine/gegner";
 import { stufe, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
+import { staerkeDerStufe, staerkeDerStufen } from "../../spiel/botstaerke";
 import type { Gegnerart, Spielhilfen } from "../../spiel/partie";
 import { Auswahl } from "./Auswahl";
 import type { Gegnerkategorie } from "./gegnerkategorie";
@@ -47,11 +48,15 @@ function portraet(kennung: string): string {
   return `${import.meta.env.BASE_URL}${PORTRAETS}${kennung}.svg`;
 }
 
-/** „⌀ 3 · Fortgeschrittener Anfänger“ (die Stufen je Phase bleiben verborgen, 0.2.46). */
+/**
+ * „⌀ 3 · Fortgeschrittener Anfänger · etwa 1000“ (die Stufen je Phase bleiben verborgen, 0.2.46;
+ * die Zahl seit 0.2.85, Rückfrage S23).
+ */
 function klassentext(g: Gegner): string {
   return t("spielen.gegnerKlasse", {
     schnitt: String(durchschnitt(g)).replace(".", ","),
     klasse: t(klasseVon(g).name),
+    staerke: staerkeDerStufen(g.stufenJePhase),
   });
 }
 
@@ -103,6 +108,12 @@ function Sprechblase({ bot, eigene }: { bot: string | null; eigene: readonly Eig
       <div className="gegner-blase">
         <strong>{name}</strong>
         {vorgefertigt && <span className="gegner-klasse"> · {klassentext(vorgefertigt)}</span>}
+        {eigener && (
+          <span className="gegner-klasse">
+            {" · "}
+            {t("spielen.eigenerStaerke", { staerke: staerkeDerStufen(eigener.stufenJePhase) })}
+          </span>
+        )}
         <p>{text}</p>
       </div>
     </div>
@@ -122,7 +133,11 @@ function VorgefertigteGitter({
       {STUFENNUMMERN.map((nummer) => (
         <section key={nummer} className="gegnerstufe">
           <h4 className="gegnerstufe-titel">
-            {t("spielen.bot.stufe", { nummer: String(nummer), name: t(stufe(nummer).name) })}
+            {t("spielen.bot.stufe", {
+              nummer: String(nummer),
+              name: t(stufe(nummer).name),
+              staerke: staerkeDerStufe(nummer),
+            })}
           </h4>
           <div className="gegnergitter">
             {gegnerDerStufe(nummer).map((g) => (

@@ -13,7 +13,7 @@ import { ladeIndex, type Datenverzeichnis } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { kapitelfortschritt } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
-import { Fortschrittsbalken } from "../komponenten/Fortschrittsbalken";
+import { Ring } from "../komponenten/Kreisanzeige";
 import { Fundmeldung } from "../komponenten/Nummernsprung";
 import { useDaten } from "../komponenten/useDaten";
 
@@ -70,7 +70,10 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
   );
 }
 
-/** Zusatzzeile eines Kapitels: Anzahl der Abbildungen, nach dem ersten Ansehen mit Balken. */
+/**
+ * Zusatzzeile eines Kapitels: Anzahl der Abbildungen, nach dem ersten Ansehen mit kleinem Ring
+ * (seit 0.2.80 statt des Balkens, Wunsch des Autors vom 18.10.2026).
+ */
 function Kapitelzusatz({
   nummer,
   abbildungen,
@@ -91,8 +94,10 @@ function Kapitelzusatz({
       : t("buch.abbildungen", { anzahl: anteil.gesamt });
   return (
     <span className="kapitel-zusatz">
-      {t("buch.kapitel", { nummer })} · {text}
-      {anteil.erreicht > 0 && <Fortschrittsbalken anteil={anteil} beschriftung={text} />}
+      {anteil.erreicht > 0 && <Ring anteil={anteil} beschriftung={text} klein />}
+      <span>
+        {t("buch.kapitel", { nummer })} · {text}
+      </span>
     </span>
   );
 }

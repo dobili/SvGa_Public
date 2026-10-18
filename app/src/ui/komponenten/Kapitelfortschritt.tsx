@@ -5,7 +5,8 @@
  * gelöste Übungen, Stand der Trainer“. Dazu die abgehakten Lernziele der Gesamt-Checkliste, weil
  * sie den Stand des Kapitels aus Sicht des Lesers zeigen. Übungen und Trainer zeigen Zahlen,
  * sobald es die Trainer gibt (AP 13); bis dahin ein ehrlicher Satz statt „0 von 12“.
- * Abhängigkeiten: speicher, app/lernstand.ts, daten/laden.ts, Fortschrittsbalken, i18n.
+ * Seit 0.2.80 als Kreisanzeigen statt Balken (Wunsch des Autors, 18.10.2026).
+ * Abhängigkeiten: speicher, app/lernstand.ts, daten/laden.ts, Kreisanzeige, i18n.
  */
 import type { ReactNode } from "react";
 import { abgehakt, useLernstand } from "../../app/lernstand";
@@ -14,7 +15,7 @@ import { ladeNachschlagen, type Kapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
-import { Fortschrittsbalken } from "./Fortschrittsbalken";
+import { Kreisanzeige } from "./Kreisanzeige";
 import { useDaten } from "./useDaten";
 
 interface Zeilenangaben {
@@ -24,18 +25,12 @@ interface Zeilenangaben {
   readonly children?: ReactNode;
 }
 
-/** Eine Zeile „Name: x von y“ mit Balken; Zusätze (etwa ein Sprung) stehen darunter. */
+/** Eine Kreisanzeige „Name, x von y“; Zusätze (etwa ein Sprung) stehen darunter. */
 export function Fortschrittszeile({ name, anteil, testid, children }: Zeilenangaben) {
-  const wert = t("fortschritt.anteil", { erreicht: anteil.erreicht, gesamt: anteil.gesamt });
   return (
-    <div className="fortschritt-zeile">
-      <dt>{name}</dt>
-      <dd>
-        <span data-testid={testid}>{wert}</span>
-        <Fortschrittsbalken anteil={anteil} beschriftung={`${name}: ${wert}`} />
-        {children}
-      </dd>
-    </div>
+    <Kreisanzeige name={name} anteil={anteil} testid={testid}>
+      {children}
+    </Kreisanzeige>
   );
 }
 
@@ -85,7 +80,7 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
   return (
     <section className="karte" data-testid="kapitelfortschritt">
       <h2 className="karte-titel">{t("fortschritt.titel")}</h2>
-      <dl className="fortschritt-liste">
+      <div className="kreisreihe">
         <Fortschrittszeile
           name={t("fortschritt.abbildungen")}
           anteil={stand.abbildungen}
@@ -99,7 +94,7 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
           />
         )}
         <Lernziele kapitel={kapitel.kapitel} />
-      </dl>
+      </div>
       {stand.uebungen.gesamt > 0 && stand.uebungen.versucht === 0 && (
         <p className="hinweis">
           {t("fortschritt.uebungenFolgen", { gesamt: stand.uebungen.gesamt })}

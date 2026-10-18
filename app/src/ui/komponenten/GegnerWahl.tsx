@@ -9,9 +9,14 @@
  * chess.com) stehen die 64 Gegner als Porträts in acht Gruppen je Stufe; der gewählte stellt sich
  * oben in einer Sprechblase vor. Die Auswahl eines Gegners setzt die drei Regler (StufenWahl.tsx);
  * wer danach einen Regler bewegt, spielt wieder mit eigenen Stufen (Kachel „Eigene Stufen“).
- * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, spiel/partie.ts (Typen), lucide, i18n.
+ * Seit 0.2.80 (Wunsch des Autors, 18.10.2026) drei Kategorien als Kacheln mit Symbol: eigene
+ * Stufe, vorgefertigte Bots, eigene Bots. Die gewählte zeigt direkt darunter nur ihren Inhalt
+ * (Regler und Fehlerarten, Porträtgitter, eigene Bots mit Editor); der Rest bleibt verborgen.
+ * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, spiel/partie.ts (Typen), Vorschauwahl,
+ * lucide, i18n.
  */
-import { SlidersHorizontal } from "lucide-react";
+import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
+import type { ReactNode } from "react";
 import {
   durchschnitt,
   gegnerDerStufe,
@@ -24,8 +29,16 @@ import { stufe, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Gegnerart, Spielhilfen } from "../../spiel/partie";
 import { Auswahl } from "./Auswahl";
+import type { Gegnerkategorie } from "./gegnerkategorie";
+import { Vorschauwahl } from "./Vorschauwahl";
 
 const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
+/** Größe der Symbole auf den Kategorie-Kacheln. */
+const KATEGORIE_SYMBOL = 28;
+
+const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
+const KATEGORIE_SYMBOLE = { stufe: SlidersHorizontal, vorgefertigt: Bot, eigene: UserPen };
+
 /** Ordner der Porträts (app/public/gegner/, erzeugt von skripte/erzeuge-gegnerbilder.mjs). */
 const PORTRAETS = "gegner/";
 
@@ -96,43 +109,16 @@ function Sprechblase({ bot, eigene }: { bot: string | null; eigene: readonly Eig
   );
 }
 
-/** Das Gitter: eigene Stufen, eigene Gegner, dann je Stufe acht vorgefertigte. */
-function Gegnergitter({
+/** Die vorgefertigten Gegner: je Stufe acht Porträts. */
+function VorgefertigteGitter({
   bot,
-  eigene,
   beiBot,
 }: {
   bot: string | null;
-  eigene: readonly EigenerGegner[];
   beiBot: (bot: string | null) => void;
 }) {
   return (
     <div role="radiogroup" aria-label={t("spielen.bot")}>
-      <div className="gegnergitter">
-        <Kachel
-          name={t("spielen.bot.eigene")}
-          gewaehlt={bot === null}
-          beiWahl={() => beiBot(null)}
-          kinder={
-            <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
-              <SlidersHorizontal size={28} />
-            </span>
-          }
-        />
-        {eigene.map((g) => (
-          <Kachel
-            key={g.kennung}
-            name={g.name}
-            gewaehlt={bot === g.kennung}
-            beiWahl={() => beiBot(g.kennung)}
-            kinder={
-              <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
-                {g.name.slice(0, 1)}
-              </span>
-            }
-          />
-        ))}
-      </div>
       {STUFENNUMMERN.map((nummer) => (
         <section key={nummer} className="gegnerstufe">
           <h4 className="gegnerstufe-titel">
@@ -155,19 +141,61 @@ function Gegnergitter({
   );
 }
 
+/** Die eigenen Gegner des Lesers als Kacheln mit dem Anfangsbuchstaben. */
+function EigeneGitter({
+  bot,
+  eigene,
+  beiBot,
+}: {
+  bot: string | null;
+  eigene: readonly EigenerGegner[];
+  beiBot: (bot: string | null) => void;
+}) {
+  if (eigene.length === 0) return null;
+  return (
+    <div role="radiogroup" aria-label={t("spielen.eigene.titel")} className="gegnergitter">
+      {eigene.map((g) => (
+        <Kachel
+          key={g.kennung}
+          name={g.name}
+          gewaehlt={bot === g.kennung}
+          beiWahl={() => beiBot(g.kennung)}
+          kinder={
+            <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
+              {g.name.slice(0, 1)}
+            </span>
+          }
+        />
+      ))}
+    </div>
+  );
+}
+
+/**
+ * Gegner, Kategorie und der Inhalt der gewählten Kategorie.
+ * `stufeninhalt`: Regler und Fehlerarten (eigene Stufe); `editor`: Karte der eigenen Gegner.
+ */
 export function GegnerWahl({
   gegner,
   bot,
   eigene,
+  kategorie,
   beiGegner,
   beiBot,
+  beiKategorie,
+  stufeninhalt,
+  editor,
 }: {
   gegner: Gegnerart;
   bot: string | null;
-  /** Eigene Gegner des Lesers (0.2.42), als eigene Kacheln vor den vorgefertigten. */
+  /** Eigene Gegner des Lesers (0.2.42). */
   eigene: readonly EigenerGegner[];
+  kategorie: Gegnerkategorie;
   beiGegner: (gegner: Gegnerart) => void;
   beiBot: (bot: string | null) => void;
+  beiKategorie: (kategorie: Gegnerkategorie) => void;
+  stufeninhalt: ReactNode;
+  editor: ReactNode;
 }) {
   return (
     <>
@@ -180,16 +208,34 @@ export function GegnerWahl({
       />
       {gegner === "engine" && (
         <div className="gegnerwahl">
-          <span className="einstellung-name">{t("spielen.bot")}</span>
-          <Sprechblase bot={bot} eigene={eigene} />
-          <Gegnergitter bot={bot} eigene={eigene} beiBot={beiBot} />
+          <Vorschauwahl
+            name={t("spielen.kategorie")}
+            werte={KATEGORIEN}
+            gewaehlt={kategorie}
+            text={(k) => t(`spielen.kategorie.${k}`)}
+            vorschau={(k) => {
+              const Symbol = KATEGORIE_SYMBOLE[k];
+              return <Symbol size={KATEGORIE_SYMBOL} aria-hidden="true" />;
+            }}
+            beiWahl={beiKategorie}
+          />
+          {(kategorie !== "eigene" || eigene.some((g) => g.kennung === bot)) && (
+            <Sprechblase bot={bot} eigene={eigene} />
+          )}
+          {kategorie === "stufe" && stufeninhalt}
+          {kategorie === "vorgefertigt" && <VorgefertigteGitter bot={bot} beiBot={beiBot} />}
+          {kategorie === "eigene" && (
+            <>
+              <EigeneGitter bot={bot} eigene={eigene} beiBot={beiBot} />
+              {editor}
+            </>
+          )}
         </div>
       )}
     </>
   );
 }
 
-/** Zwei Haken für die Spielhilfen und einer für die Wertung. */
 /**
  * Die Spielhilfen und der Haken „Gewertete Partie“. `wertbar`: nur Partien gegen die Engine aus
  * der Grundstellung zählen für die Wertung (Wunsch des Autors, 17.10.2026); sonst steht statt des

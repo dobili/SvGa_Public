@@ -60,6 +60,24 @@ test("Abhaken von Hand in der Kapitelübersicht: einzeln, alle, alle zurücksetz
   await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0 von \d+$/);
 });
 
+test("Abschnitte der Kapitelübersicht: einzeln abhaken, Haken lösen, zuklappen (0.2.80)", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("button", { name: /Grundprinzipien/ }).click();
+  const haken = page.getByRole("button", { name: "Abb. 1.26 als angesehen abhaken" });
+  await page.getByRole("button", { name: "Abschnitt 1.4 abhaken" }).click();
+  await expect(haken).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByTestId("fortschritt-abbildungen")).not.toHaveText(/^0 von/);
+  await page.screenshot({ path: "test-results/bilder/kapitel-abschnitte.png", fullPage: true });
+  await page.getByRole("button", { name: "Haken in 1.4 lösen" }).click();
+  await expect(haken).toHaveAttribute("aria-pressed", "false");
+  await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0 von \d+$/);
+  // Zuklappen blendet die kleinen Bretter des Abschnitts aus.
+  await page.locator("summary", { hasText: "1.4" }).click();
+  await expect(haken).toBeHidden();
+});
+
 test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) => {
   await page.addInitScript(() => {
     if (sessionStorage.getItem("test.vorbelegt")) return;
@@ -212,13 +230,17 @@ test("Abhakliste der Fehlerarten (0.2.60): ein Haken weniger überlebt das Neula
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  // Seit 0.2.80 beim Spielen unter den Stufenreglern, aufklappbar.
+  const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
+  await leiste.getByRole("button", { name: "Spielen" }).click();
   const karte = page.getByTestId("fehlerarten-abhakliste");
+  await karte.locator("summary").click();
   await expect(karte.getByRole("status")).toHaveText("14 von 14 Arten erlaubt");
   await karte.getByRole("checkbox", { name: /eine Figur hängen lassen/ }).uncheck();
   await expect(karte.getByRole("status")).toHaveText("13 von 14 Arten erlaubt");
   await page.reload();
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await leiste.getByRole("button", { name: "Spielen" }).click();
+  await karte.locator("summary").click();
   await expect(karte.getByRole("status")).toHaveText("13 von 14 Arten erlaubt");
   await expect(karte.getByRole("checkbox", { name: /eine Figur hängen lassen/ })).not.toBeChecked();
   await karte.getByRole("button", { name: "Keine erlauben" }).click();

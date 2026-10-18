@@ -1,5 +1,5 @@
 /**
- * Partie-Bildschirm: gegen die Engine zu Ende spielen, mit Uhr, Rücknahme und Hinweis.
+ * Partie-Bildschirm: gegen die Engine zu Ende spielen, mit Uhr, Rücknahme und Engine-Knopf.
  *
  * Rolle im Gesamtbild: Bildschirmentwurf „Partie“ und Pflichtenheft 5.2. Oben die Zugliste mit
  * Navigation (wie bei den Abbildungen), darunter die Uhr der Engine, das Brett (bei Schwarz
@@ -16,6 +16,9 @@
  * steht ein Bewertungsbalken (spiel/rueckblick.ts); seit 0.2.39 dazu unter dem Brett die Karte
  * zum Zug mit Urteil, besserem Zug und Erklärung des Fehlers (ui/komponenten/useRueckblick.tsx).
  * Während der Partie bleibt das aus.
+ * Seit 0.2.80 (Wunsch des Autors, 18.10.2026) steht statt der gestuften Hinweise ein Knopf
+ * „Engine“ unter dem Brett, der Schritt für Schritt Bewertung, Urteil über den eigenen letzten
+ * Zug, Erklärung und besten Zug zeigt (SpielEngine.tsx).
  * Abhängigkeiten: ui/komponenten/usePartie.ts, spiel/, i18n.
  */
 import { Eye, EyeOff } from "lucide-react";
@@ -48,7 +51,7 @@ import { Partiezuege } from "../komponenten/Partiezuege";
 import { PartieLeiste, PartieSymbole, PartieWerkzeugkarten } from "../komponenten/PartieWerkzeuge";
 import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partiewerkzeug";
 import { useRueckblick, type Rueckblick } from "../komponenten/useRueckblick";
-import { SpielHinweis } from "../komponenten/SpielHinweis";
+import { SpielEngine } from "../komponenten/SpielEngine";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { useAuswertung } from "../komponenten/useAuswertung";
 import { usePartie, type Partiesteuerung } from "../komponenten/usePartie";
@@ -308,9 +311,11 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
       />
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
       {!ruhig && leser && partie.einstellung.hilfen.werkzeuge && (
-        <SpielHinweis
+        <SpielEngine
           key={s.fen}
           fen={s.fen}
+          zuege={partie.zuege.map((z) => z.san)}
+          startFen={partie.einstellung.startFen}
           beiMarkierungen={(marken) => setzeHinweis({ fen: s.fen, marken })}
         />
       )}

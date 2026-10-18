@@ -5,13 +5,17 @@
  * Rolle im Gesamtbild: Teil des Bereichs Ich. Löschen braucht eine Bestätigung im zweiten Schritt,
  * weil später auch Trainingsfortschritt dazugehört. Die Anleitung erklärt, wie das Symbol vom
  * Startbildschirm verschwindet; das kann eine Web-App nicht selbst.
- * Abhängigkeiten: app/loeschen.ts, speicher/speicher.ts, Datensicherung, i18n.
+ * Seit 0.2.80 (Wunsch des Autors): oben eine kurze Zeile mit Fragezeichen; dahinter die
+ * Erklärung, auch dass auf dem iPhone App und Safari-Tab getrennte Speicher haben (stand vorher
+ * lose unter der Seite).
+ * Abhängigkeiten: app/loeschen.ts, speicher/speicher.ts, Datensicherung, InfoKnopf, i18n.
  */
 import { useState } from "react";
 import { loescheAlleDaten } from "../../app/loeschen";
 import { t } from "../../i18n/sprache";
 import { vergiss } from "../../speicher/speicher";
 import { Datensicherung } from "./Datensicherung";
+import { MitInfo } from "./InfoKnopf";
 
 type Stand = "ruhe" | "nachfrage" | "laeuft" | "fertig" | "teilweise";
 
@@ -45,7 +49,16 @@ export function DatenLoeschen() {
   return (
     <section className="karte">
       <h2 className="karte-titel">{t("loeschen.titel")}</h2>
-      <p className="hinweis">{t("loeschen.erklaerung")}</p>
+      <MitInfo
+        zeile={<p>{t("loeschen.kurz")}</p>}
+        erklaerung={
+          <>
+            <p>{t("loeschen.erklaerung")}</p>
+            <p>{t("ich.speicher")}</p>
+          </>
+        }
+        thema={t("loeschen.titel")}
+      />
       <Datensicherung />
       {stand === "ruhe" && (
         <button type="button" className="knopf-zweit" onClick={() => setzeStand("nachfrage")}>

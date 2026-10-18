@@ -1,0 +1,230 @@
+/*
+ * Bausteine seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter, Info-Knopf, Kreisanzeige,
+ * Vorschau-Kacheln, aufklappbare Unterabschnitte.
+ */
+
+/* ---------- Reiter: nebeneinander, kleine Schrift, kein Umbruch ---------- */
+
+.reiterzeile {
+  display: flex;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--linie);
+  scrollbar-width: none;
+}
+
+.reiter {
+  flex: 1 1 0;
+  min-width: max-content;
+  min-height: var(--tippflaeche);
+  padding: 0 10px;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  color: var(--text-leise);
+  font-size: 14px;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.reiter[aria-selected="true"] {
+  border-bottom-color: var(--gold);
+  color: var(--text);
+  font-weight: 600;
+}
+
+.reiterinhalt {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+  padding-top: var(--raster);
+}
+
+/* ---------- Info-Knopf ---------- */
+
+.mitinfo-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.mitinfo-text {
+  flex: 1;
+}
+
+.mitinfo-text > * {
+  margin: 0;
+}
+
+.infoknopf {
+  flex: none;
+  width: var(--tippflaeche);
+  height: var(--tippflaeche);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  color: var(--text-leise);
+}
+
+.infoknopf[aria-expanded="true"] {
+  color: var(--gold-text);
+}
+
+.mitinfo-erklaerung {
+  margin-top: calc(var(--raster) / 2);
+  padding: var(--raster);
+  border-left: 3px solid var(--gold);
+}
+
+.mitinfo-erklaerung p {
+  margin: 0 0 var(--raster);
+}
+
+.mitinfo-erklaerung p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Kreisanzeige ---------- */
+
+.kreisreihe {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: calc(var(--raster) * 1.5);
+}
+
+.kreisanzeige {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.kreisanzeige-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 14px;
+}
+
+.kreisanzeige-name {
+  font-weight: 600;
+}
+
+.ring {
+  width: 56px;
+  height: 56px;
+  flex: none;
+}
+
+.ring-klein {
+  width: 24px;
+  height: 24px;
+}
+
+.ring-grund {
+  fill: none;
+  stroke: var(--linie);
+}
+
+.ring-fuellung {
+  fill: none;
+  stroke: var(--gold);
+  stroke-linecap: round;
+}
+
+.ring-zahl {
+  fill: var(--text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.fortschritt-kapitel li {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+/* ---------- Vorschau-Kacheln (Brettfarben, Figurensätze) ---------- */
+
+.vorschaureihe {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--raster);
+}
+
+.vorschaukachel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px;
+  border: 2px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.vorschaukachel[aria-checked="true"] {
+  border-color: var(--navy);
+  font-weight: 600;
+}
+
+.brettausschnitt {
+  width: 100%;
+  aspect-ratio: 4 / 1;
+  display: block;
+  border-radius: 4px;
+}
+
+/* ---------- Aufklappbarer Unterabschnitt in einer Karte ---------- */
+
+.unterabschnitt {
+  border-top: 1px solid var(--linie);
+  padding-top: var(--raster);
+}
+
+.unterabschnitt > summary {
+  min-height: var(--tippflaeche);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.unterabschnitt[open] > :not(summary) {
+  margin-top: var(--raster);
+}
+
+/* ---------- Untertitel innerhalb einer Karte ---------- */
+
+.unterteil-titel {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-leise);
+  margin: 0;
+}
+
+/* ---------- Gegnerwahl mit Kategorien (seit 0.2.80) ---------- */
+
+.gegnerwahl {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+}
+
+.gegnerwahl .vorschaukachel {
+  padding: 10px 6px;
+}
+
+.eigene-gegner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  border-top: 1px solid var(--linie);
+  padding-top: calc(var(--raster) * 1.5);
+}

@@ -63,7 +63,7 @@ test("Abb. 1.26: gegen die Engine mit Schwarz, ruhige Ansicht, Aufgeben", async 
   await expect(page.getByTestId("partiezuege")).toContainText("6.");
   await page.getByRole("button", { name: "Ruhige Ansicht" }).click();
   await expect(page.getByRole("button", { name: "Aufgeben" })).toHaveCount(0);
-  await expect(page.getByTestId("spielhinweis")).toHaveCount(0);
+  await expect(page.getByTestId("spielengine")).toHaveCount(0);
   await page.getByRole("button", { name: "Ruhige Ansicht" }).click();
   await page.getByRole("button", { name: "Aufgeben" }).click();
   await page.getByRole("button", { name: "Ja, aufgeben" }).click();
@@ -172,11 +172,11 @@ test("Stellung aufbauen (K e6, D a3 gegen K e8), zu zweit ohne Werkzeuge spielen
   await editor.getByRole("button", { name: "Stellung übernehmen" }).click();
   await expect(page.getByRole("heading", { name: "Aus einer eigenen Stellung" })).toBeVisible();
   await page.getByRole("radio", { name: "Mensch (beide Seiten selbst)" }).click();
-  await page.getByRole("checkbox", { name: /Werkzeuge und Hinweis/ }).uncheck();
+  await page.getByRole("checkbox", { name: /Werkzeuge und Engine/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.getByRole("heading", { name: "Partie zu zweit" })).toBeVisible();
   await expect(page.getByTestId("partiestatus")).toHaveText("Weiß am Zug.");
-  await expect(page.getByTestId("spielhinweis")).toHaveCount(0);
+  await expect(page.getByTestId("spielengine")).toHaveCount(0);
   await ziehe(page, /^a3,/, "e7");
   await expect(page.getByTestId("partieende")).toContainText("Matt! Weiß hat gewonnen.");
   await page.locator(".kopfzeile").getByRole("button", { name: "Spielen", exact: true }).click();
@@ -189,6 +189,9 @@ test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, sp
 }) => {
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  // Seit 0.2.80 unter der Kategorie „Eigene Bots“; ohne gewählten eigenen Bot kein Beginnen.
+  await page.getByRole("radio", { name: "Eigene Bots" }).click();
+  await expect(page.getByRole("button", { name: "Partie beginnen" })).toBeDisabled();
   const karte = page.getByTestId("eigene-gegner");
   await karte.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
   await page.getByLabel("Name").fill("Rambo");
@@ -222,4 +225,50 @@ test("Gewertete Partie (S9): Rücknahme und Spielhilfen gesperrt", async ({ page
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.getByRole("button", { name: "Zurücknehmen" })).toHaveCount(0);
   await expect(page.getByRole("button", { name: "Röntgen" })).toHaveCount(0);
+});
+
+test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen (0.2.80)", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  // Anfangs „Eigene Stufe“: Regler und Fehlerarten, keine Porträts.
+  await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
+  await expect(page.getByTestId("fehlerarten-abhakliste")).toBeVisible();
+  await expect(page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" })).toHaveCount(0);
+  await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
+  await expect(page.getByLabel(/^Mittelspiel:/)).toHaveCount(0);
+  await expect(page.getByTestId("fehlerarten-abhakliste")).toHaveCount(0);
+  const gitter = page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" });
+  // Der Wechsel wählt gleich den ersten Bot der Stufe im Mittelspiel (anfangs Stufe 1).
+  await expect(gitter.getByRole("radio", { checked: true })).toHaveCount(1);
+  await page.screenshot({ path: "test-results/bilder/spielen-kategorien.png", fullPage: true });
+  await page.getByRole("radio", { name: "Eigene Stufe" }).click();
+  await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
+  await expect(page.getByTestId("gegner-sprechblase")).toContainText("Eigene Stufen");
+});
+
+test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.80)", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
+  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await ziehe(page, /^e2, Bauer/, "e4");
+  await warteAufLeser(page);
+  const karte = page.getByTestId("spielengine");
+  await karte.getByRole("button", { name: "Engine: Stellung bewerten" }).click();
+  await expect(karte.locator(".engine-wert")).toBeVisible({ timeout: ENGINE_FRIST });
+  await karte.getByRole("button", { name: "Deinen letzten Zug bewerten" }).click();
+  await expect(page.getByTestId("spielengine-urteil")).toContainText("1. e4", {
+    timeout: ENGINE_FRIST,
+  });
+  // 1. e4 ist kein Fehler: kein „Warum?“, gleich der beste Zug.
+  await expect(karte.getByRole("button", { name: "Warum?" })).toHaveCount(0);
+  await karte.getByRole("button", { name: "Besten Zug zeigen" }).click();
+  await expect(karte).toContainText("Die Engine schlägt jetzt", { timeout: ENGINE_FRIST });
+  await expect(karte).not.toContainText("Besser war");
+  await page.screenshot({ path: "test-results/bilder/spielengine.png", fullPage: true });
+  await expect(karte.getByRole("button")).toHaveCount(0);
 });

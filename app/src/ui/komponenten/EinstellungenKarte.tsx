@@ -11,8 +11,13 @@
  * bei den Übungen des Buches (Hinweise und Lösung erst nach eigenem Nachdenken) und ist wählbar.
  * Nachtmodus (seit 0.2.31, Wunsch des Autors): wie das Gerät, aus oder an (app/farbschema.ts).
  * Ebenfalls seit 0.2.31: ausgeblendete Erklärkacheln von Zählen und Ziehen wieder anzeigen.
- * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, i18n.
+ * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
+ * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
+ * als Kacheln mit Vorschau.
+ * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
+ * i18n.
  */
+import { Brain, Crown, Grid3x3, Palette, Volume2, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 import {
   aendereEinstellungen,
@@ -29,8 +34,10 @@ import {
   type Farbschema,
 } from "../../app/farbschema";
 import { liesMerker, schreibeMerker } from "../../app/merker";
-import { t } from "../../i18n/sprache";
+import { t, type Textschluessel } from "../../i18n/sprache";
 import { Auswahl } from "./Auswahl";
+import { Reiter } from "./Reiter";
+import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
 import { zeigeErklaerungenWieder } from "./useErklaerung";
 
 const BRETTFARBEN: readonly Brettfarben[] = ["buch", "holz", "gruen"];
@@ -101,27 +108,68 @@ function ErklaerungenWahl() {
   );
 }
 
-export function EinstellungenKarte() {
+type Bereich = "brett" | "figuren" | "anzeige" | "ton" | "training";
+const BEREICHE: readonly { wert: Bereich; text: Textschluessel; symbol: LucideIcon }[] = [
+  { wert: "brett", text: "einstellungen.reiter.brett", symbol: Grid3x3 },
+  { wert: "figuren", text: "einstellungen.reiter.figuren", symbol: Crown },
+  { wert: "anzeige", text: "einstellungen.reiter.anzeige", symbol: Palette },
+  { wert: "ton", text: "einstellungen.reiter.ton", symbol: Volume2 },
+  { wert: "training", text: "einstellungen.reiter.training", symbol: Brain },
+];
+
+/** Brett: Farben mit Vorschau, Koordinaten. */
+function BrettBereich() {
   const einstellungen = useEinstellungen();
   return (
-    <section className="karte">
-      <h2 className="karte-titel">{t("einstellungen.titel")}</h2>
-      <NachtmodusWahl />
-      <Auswahl
+    <>
+      <Vorschauwahl
         name={t("einstellungen.brettfarben")}
         werte={BRETTFARBEN}
         gewaehlt={einstellungen.brettfarben}
         text={(wert) => t(`einstellungen.brettfarben.${wert}`)}
+        vorschau={(wert) => <Brettausschnitt farben={wert} satz={einstellungen.figurensatz} />}
         beiWahl={(brettfarben) => aendereEinstellungen({ brettfarben })}
       />
-      <Auswahl
-        name={t("einstellungen.figurensatz")}
-        werte={FIGURENSAETZE}
-        gewaehlt={einstellungen.figurensatz}
-        text={(wert) => t(`einstellungen.figurensatz.${wert}`)}
-        beiWahl={(figurensatz) => aendereEinstellungen({ figurensatz })}
-      />
       <KoordinatenWahl />
+    </>
+  );
+}
+
+/** Figuren: Sätze mit Vorschau auf dem gewählten Brett. */
+function FigurenBereich() {
+  const einstellungen = useEinstellungen();
+  return (
+    <Vorschauwahl
+      name={t("einstellungen.figurensatz")}
+      werte={FIGURENSAETZE}
+      gewaehlt={einstellungen.figurensatz}
+      text={(wert) => t(`einstellungen.figurensatz.${wert}`)}
+      vorschau={(wert) => <Brettausschnitt farben={einstellungen.brettfarben} satz={wert} />}
+      beiWahl={(figurensatz) => aendereEinstellungen({ figurensatz })}
+    />
+  );
+}
+
+/** Anzeige: Nachtmodus, Erklärkacheln, Sprache. */
+function AnzeigeBereich() {
+  return (
+    <>
+      <NachtmodusWahl />
+      <ErklaerungenWahl />
+      <dl className="einstellungen">
+        <div className="einstellung">
+          <dt>{t("einstellungen.sprache")}</dt>
+          <dd>{t("einstellungen.sprache.wert")}</dd>
+        </div>
+      </dl>
+    </>
+  );
+}
+
+function TonBereich() {
+  const einstellungen = useEinstellungen();
+  return (
+    <>
       <Auswahl
         name={t("einstellungen.ton")}
         werte={TOENE}
@@ -130,6 +178,14 @@ export function EinstellungenKarte() {
         beiWahl={(ton) => aendereEinstellungen({ ton })}
       />
       <p className="hinweis">{t("einstellungen.ton.hinweis")}</p>
+    </>
+  );
+}
+
+function TrainingBereich() {
+  const einstellungen = useEinstellungen();
+  return (
+    <>
       <Auswahl
         name={t("einstellungen.strenge")}
         werte={STRENGEN}
@@ -138,13 +194,32 @@ export function EinstellungenKarte() {
         beiWahl={(strenge) => aendereEinstellungen({ strenge })}
       />
       <p className="hinweis">{t(`einstellungen.strenge.${einstellungen.strenge}.text`)}</p>
-      <ErklaerungenWahl />
-      <dl className="einstellungen">
-        <div className="einstellung">
-          <dt>{t("einstellungen.sprache")}</dt>
-          <dd>{t("einstellungen.sprache.wert")}</dd>
-        </div>
-      </dl>
+    </>
+  );
+}
+
+const INHALT: Readonly<Record<Bereich, () => React.ReactNode>> = {
+  brett: () => <BrettBereich />,
+  figuren: () => <FigurenBereich />,
+  anzeige: () => <AnzeigeBereich />,
+  ton: () => <TonBereich />,
+  training: () => <TrainingBereich />,
+};
+
+export function EinstellungenKarte() {
+  const [bereich, setzeBereich] = useState<Bereich>("brett");
+  return (
+    <section className="karte" data-testid="darstellung">
+      <h2 className="karte-titel">{t("einstellungen.titel")}</h2>
+      <Reiter
+        name={t("einstellungen.titel")}
+        eintraege={BEREICHE.map((b) => ({ ...b, text: t(b.text) }))}
+        gewaehlt={bereich}
+        beiWahl={setzeBereich}
+      />
+      <div className="reiterinhalt" role="tabpanel">
+        {INHALT[bereich]()}
+      </div>
     </section>
   );
 }

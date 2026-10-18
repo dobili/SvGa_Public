@@ -1,9 +1,9 @@
 /**
  * Die Übungen eines Kapitels mit ihrem Stand und dem Einstieg zum Lösen (AP 13).
  *
- * Rolle im Gesamtbild: Abschnitt im Kapitel-Bildschirm. Jede Übung öffnet den Bildschirm „Übung“;
- * „Übungen lösen“ geht alle Übungen des Kapitels der Reihe nach durch, die noch nicht gelösten
- * zuerst. Der Stand kommt aus dem Fortschritt (speicher/format.ts, „uebungen“).
+ * Rolle im Gesamtbild: Teil der Karte „Training und Übungen“ im Kapitel-Bildschirm (seit
+ * 0.2.80). Jede Übung öffnet den Bildschirm „Übung“; „Übungen lösen“ geht alle Übungen des
+ * Kapitels der Reihe nach durch, die noch nicht gelösten zuerst. Der Stand kommt aus dem Fortschritt (speicher/format.ts, „uebungen“).
  * Abhängigkeiten: Navigation, Speicher, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";
@@ -23,8 +23,8 @@ export function KapitelUebungen({ kapitel }: { kapitel: Kapitel }) {
   );
   const erste = reihe[0];
   return (
-    <section className="abschnitt" data-testid="kapitel-uebungen">
-      <h2 className="abschnitt-titel">{t("kapitel.uebungen")}</h2>
+    <div className="kapitel-uebungen" data-testid="kapitel-uebungen">
+      <h3 className="unterteil-titel">{t("kapitel.uebungen")}</h3>
       {erste && (
         <button
           type="button"
@@ -60,6 +60,6 @@ export function KapitelUebungen({ kapitel }: { kapitel: Kapitel }) {
           );
         })}
       </ul>
-    </section>
+    </div>
   );
 }

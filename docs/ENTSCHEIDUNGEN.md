@@ -2460,6 +2460,59 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
   Abschnitts.
 
+## Ergebnis der Messung aller 64 Bots und Anpassung der Ausreißer (18.10.2026, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.73)
+
+Jeder Bot spielte sechs Partien gegen die reine Stufe seiner Nummer (`npm run messen:stufen --
+3@jonas-3 …`, Ergebnisse nur lokal in `buch/arbeit/stufenmessung/`). Erwartung: etwa 3 : 3;
+unter 1,5 Punkten „zu schwach“, über 4,5 „zu stark“. Sechs Partien sind wenig, 6 : 0 zweimal
+hintereinander ist aber ein klarer Befund. Die Stufen 1 bis 5 sind vollständig gemessen, die
+Stufen 6 bis 8 laufen noch (etwa 15 bis 25 Minuten je Paarung); ihr Ergebnis folgt.
+
+**Muster:** Zu stark waren Bots, deren Fehlerliste nur billige Fehlerarten enthält („ungenau“,
+„taktikUebersehen“, „koenigsschild“, „bauernvorstoss“, „koenigPassiv“, „tempoverlust“): Die
+Fehlerliste bestimmt seit 0.2.68 die Art, nicht die Menge, und billige Fehler kosten weniger als
+die Mischung der reinen Stufe. Bots mit „figurHaengen“ oder „drohungIgnoriert“ stimmten. Der
+blinde Fleck „rueckzug“ ist ab Stufe 5 teuer (Hanna, Elif: über 80 blinde Züge in sechs
+Partien). Eine Phasenstufe weniger allein reichte bei den stärksten Ausreißern nicht, eine
+teure Fehlerart allein auch nicht; erst beides zusammen (Leon, Ayşe, Sophie, Greta, Timo).
+
+| Stufe | Bot         | vorher    | Änderung                                                       | nachher                                                                                  |
+| ----- | ----------- | --------- | -------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| 1     | Leon        | 6 : 0     | Mittelspiel 2 → 1 und „figurHaengen“ statt „ungenau“           | 6 : 0 (bleibt zu stark)                                                                  |
+| 2     | Ayşe        | 6 : 0     | Mittelspiel 3 → 2 und „figurHaengen“ statt „koenigsschild“     | 6 : 0 (bleibt zu stark)                                                                  |
+| 2     | Sophie      | 6 : 0     | Eröffnung 3 → 2 und „figurHaengen“ statt „ungenau“             | 5 : 1 (noch zu stark)                                                                    |
+| 2     | Pit         | 5 : 1     | „figurHaengen“ statt „falscherAbtausch“                        | 3,5 : 2,5                                                                                |
+| 3     | Greta       | 5 : 1     | Mittelspiel 4 → 3 und „drohungIgnoriert“ statt „koenigsschild“ | 5 : 1 (noch zu stark)                                                                    |
+| 3     | Jonas       | 6 : 0     | Mittelspiel 3 → 2                                              | 4 : 2                                                                                    |
+| 3     | Omar        | 5 : 1     | „figurHaengen“ statt „koenigsschild“                           | 3 : 3                                                                                    |
+| 3     | Tobias      | 4,5 : 1,5 | Eröffnung 4 → 3                                                | 4 : 2                                                                                    |
+| 4     | Timo        | 4,5 : 1,5 | Eröffnung 5 → 4 und „drohungIgnoriert“ statt „bauernvorstoss“  | 3 : 3                                                                                    |
+| 4     | Zoë         | 6 : 0     | Mittelspiel 4 → 3                                              | 3,5 : 2,5                                                                                |
+| 4     | Frau Berger | 1 : 5     | Eröffnung 4 → 3, Mittelspiel 4 → 5                             | 2 : 4                                                                                    |
+| 5     | Frau Ortega | 5 : 1     | „drohungIgnoriert“ dazu                                        | 2 : 4                                                                                    |
+| 5     | Lea         | 5,5 : 0,5 | Mittelspiel 6 → 5                                              | 3,5 : 2,5                                                                                |
+| 5     | Hanna       | 1,5 : 4,5 | Mittelspiel 5 → 6                                              | 5 : 1, umgeschlagen; daher Endspiel 4 → 5 statt Mittelspiel ([6, 5, 5], ungemessen)      |
+| 5     | Paul        | 1 : 5     | Mittelspiel 4 → 5                                              | 1,5 : 4,5, noch zu schwach; daher zusätzlich Fleck „zwischenzug“ gestrichen (ungemessen) |
+| 6     | Elif        | 1 : 5     | Mittelspiel 6 → 7                                              | 1 : 5, noch zu schwach; daher zusätzlich Fleck „ruhig“ statt „rueckzug“ (ungemessen)     |
+
+Unverändert und im Rahmen (Punkte des Bots): Stufe 1 Lotta 3, Paula 3, Max 3, Finn 4, Oma Gerda
+2, Mia 3, Emil 4; Stufe 2 Opa Hans 2, Onkel Rudi 4, Frieda 4, Herr Lehmann 3, Karl 4; Stufe 3
+Selin 2, Nina 3, Herr Nowak 4, Ida 3,5; Stufe 4 Benno 3, Lukas 4, Herr Schmitt 4, Amira 3,5,
+Jan 2; Stufe 5 Kurt 2, Nils 3, Herr Weber 2, Frau Kaya 4; Stufe 6 bisher Frau Lind 2, Herr
+Fischer 4, Lena 5 (Grenzfall, bleibt), Sara 2,5, Viktor 2. Die Beschreibungen der geänderten
+Bots in `de.json` nennen die neue Fehlerart. Die Stil-Toleranz bleibt bei 0,3 (S13).
+
+**Offen:** Leon, Ayşe, Sophie und Greta bleiben trotz beider Hebel zu stark (6 : 0, 6 : 0,
+5 : 1, 5 : 1). Gemeinsam ist ihnen nichts Offensichtliches (Stil +1, +1, −1, +2; blinde Flecken
+mit wenigen Auslösern). Vermutung: Die reine Stufe als Maßstab spielt mit der vollständigen
+Fehlerliste, also auch den teuersten Fehlern in voller Häufigkeit, und ist damit schwächer als
+ein Bot mit kurzer Liste; dann wäre nicht der Bot zu stark, sondern der Maßstab zu schwach.
+Nächster Schritt (Opus oder nächste Sitzung): zwölf statt sechs Partien für diese vier, dazu je
+ein Lauf Bot gegen Stufe N+1; wenn der Bot dort etwa 3 : 3 holt, Beschreibung („spielt eine
+Klasse stärker“) statt weiterer Eingriffe. Elif, Paul und die Stufen 6 bis 8 werden noch
+gemessen; das Ergebnis wird hier nachgetragen. Hanna, Paul und Elif in ihrer letzten Fassung
+ebenso.
+
 ## Spielbewertung an chess.com geeicht, Urteil je Phase, Taktik und Strategie (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.72)
 
 Der Autor schickte sieben eigene Partien von chess.com (drei gegen Bots, vier gegen Menschen,

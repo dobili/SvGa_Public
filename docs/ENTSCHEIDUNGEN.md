@@ -2460,7 +2460,7 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
   Abschnitts.
 
-## Ergebnis der Messung aller 64 Bots und Anpassung der Ausreißer (18.10.2026, Fable und Opus, Zweig `werkzeuge-textarbeit`, Versionen 0.2.74 und 0.2.75)
+## Ergebnis der Messung aller 64 Bots und Anpassung der Ausreißer (18.10.2026, Fable und Opus, Zweig `werkzeuge-textarbeit`, Versionen 0.2.74 und 0.2.76)
 
 Jeder Bot spielte sechs Partien gegen die reine Stufe seiner Nummer (`npm run messen:stufen --
 3@jonas-3 …`, Ergebnisse nur lokal in `buch/arbeit/stufenmessung/`). Erwartung: etwa 3 : 3;

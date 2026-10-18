@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.90. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.92. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.90“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.92“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,64 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst den neuesten Abschnitt, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.91 (etwa 5 Minuten; Endspiel-Kurzübungen, Opus)
+
+Dazu im Hintergrund: Die Ergebnisse aller Werkzeuge an allen Abbildungen sind festgehalten; ändert
+ein Umbau etwas daran, schlägt ein Test an. Für dich ändert sich dadurch nichts.
+
+- [ ] N408. **Endspiel-Kurzübungen:** Training › Endspieltrainer › unten „Kurzübungen starten“.
+      Acht schnelle Fragen ohne Engine, reihum: „Holt der schwarze König den Bauern ein?“
+      (Quadrat), „Wer hat die Opposition?“, „Welches Feld ist ein Schlüsselfeld?“ und „Welches
+      Erkennungsbild ist das?“ (Buchstellungen aus Kapitel 8 und 9). Nach der Antwort steht die
+      Regel des Buches; beim Quadrat und bei den Schlüsselfeldern leuchtet die Lösung gold am
+      Brett. Prüfe an zwei, drei Aufgaben, ob die Antwort der App schachlich stimmt.
+
+### Neu in 0.2.90 (etwa 10 Minuten, mit Engine; Nachtarbeit Chat A, Opus)
+
+Dazu im Hintergrund: Engine-Tests mit fester Tiefe (scheiterten ab und zu ohne Grund),
+Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmodus, ein Test bei
+360 px Breite. Die Trainingsseiten der Website werden nicht mehr zwischengespeichert.
+
+- [ ] N400. **Bedenkzeit 10 + 0:** Training › 30-Minuten-Plan › Tag A starten, „Schritt
+      erledigt“, dann „Zum Spielen“. Unter „Bedenkzeit“ ist jetzt „10 + 0“ gewählt (neu neben
+      30 + 20, 15 + 10 und 5 + 3). Du kannst sie dort noch ändern.
+- [ ] N401. **Gewinnchance statt Bauerneinheiten im Zugurteil:** Abb. 1.26 öffnen, „Engine“,
+      dann „Letzten Zug bewerten“. Bei einem Zug mit Zeichen lautet der Satz jetzt „5... Db6?!:
+      Die Gewinnchance von Schwarz fällt von … % auf … %. Besser: … (goldener Pfeil)“, wie im
+      Rückblick nach der Partie; ohne Zeichen „ist gut: Die Gewinnchance … sinkt nur von … auf …“. Nur wenn sich die Gewinnchance kaum ändert (klar gewonnene Stellung), nennt er
+      weiter Bauerneinheiten. Ebenso das Werkzeug „Falle?“ (Abb. 4.21): „Falle: Nach axb4 …“
+      nennt die Gewinnchance nach dem Schlag und nach der Rettung.
+- [ ] N402. **Gabel mit Figurennamen:** Spiele eine Partie und stelle eine Figur in eine
+      Springergabel (etwa Dame und König). Im Rückblick steht jetzt „übersieht die Gabel:
+      Springer g5 nach f7 trifft König h8 und Dame d6. Der König muss ziehen, Dame d6 geht
+      verloren.“ statt nur der Felder. Bei anderen Motiven nennt der Satz, was die Antwort
+      schlägt (etwa „… schlägt Turm e8“).
+- [ ] N403. **Datensicherung teilen (Handy):** Einstellungen › Daten auf diesem Gerät. Neben
+      „Daten sichern (Datei)“ steht auf dem Handy „Sicherung teilen (Mail, Dateien)“. Er öffnet
+      das Teilen-Menü; schick dir die Datei per Mail. Am Rechner fehlt der Knopf, wenn der
+      Browser keine Dateien teilen kann.
+- [ ] N406. **Wiederholung auch im Strukturerkenner und Endspieltrainer:** Löse im
+      Strukturerkenner ein Skelett falsch (oder schaffe im Endspieltrainer eine Stellung nicht).
+      Am nächsten Tag steht im Bereich Training unter „Fällige Wiederholungen“
+      „Strukturerkenner: 1 fällig“ (bzw. Endspieltrainer), und im Trainer startet „Wiederholen“
+      genau diese Aufgabe, wie bisher bei Taktik und „Falle oder Köder“.
+- [ ] N407. **Zug erraten merkt sich die Trefferzahl:** Spiele eine Partie bei „Zug erraten“
+      ganz durch. Beim nächsten Mal steht unter „Getroffen: …“ die Zeile „Beim letzten Mal
+      (Datum): 7 von 12 getroffen.“ zum Vergleich. Der Verlauf steckt in der Datensicherung,
+      ebenso jetzt der Stand des 30-Minuten-Plans (welcher Tag als Nächstes dran ist).
+- [ ] N405. **Erst selbst denken auch vor Werkzeugen (dein Wunsch vom 18.10.2026):**
+      Einstellungen › Reiter „Training“ › „Auch vor Werkzeugen und Engine“ auf „an“. Öffne
+      Abb. 1.26: Statt Werkzeugleiste und Engine steht die Karte „Erst selbst denken“ mit „Weiß
+      besser | gleich | Schwarz besser“ und „Ich habe nachgedacht“. Danach erscheinen die
+      Werkzeuge, darüber „Deine Einschätzung: …“ zum Vergleich mit der Engine. Mit „streng“ geht
+      es erst nach einer Einschätzung weiter. Prüfe auch: Übungen (etwa Übung an Abb. 1.40) und
+      Trainer funktionieren mit „an“ wie bisher (dort gilt ihr eigenes „Erst selbst denken“).
+      Voreinstellung ist „aus“ (siehe Rückfrage NA1).
+- [ ] N404. **Bewertungsbalken lesbar:** Nach einer Partie im Rückblick: Die Zahl am schmalen
+      Balken links steht jetzt auf dunklem Grund, auch wenn der weiße Teil bis zur Mitte reicht.
 
 ### Neu in 0.2.89 (etwa 2 Minuten; gleich große Kacheln, Opus)
 
@@ -1142,6 +1198,14 @@ Regeln C1 und C2).
 ---
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
+
+### NA. Nachtarbeit Chat A (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
+
+- [ ] NA1. **Voreinstellung von „Erst selbst denken auch vor Werkzeugen“:** Empfehlung **aus**.
+      Schon umgesetzt in 0.2.90. Grund: Wer beim Lesen eine Abbildung öffnet, will meist
+      nachprüfen, was im Buch steht; eine Pflichtkarte an jeder der 765 Abbildungen bremst
+      dabei. Wer üben will, schaltet sie in den Einstellungen ein (Reiter „Training“). Sagst du
+      „an“, wird sie für alle die Voreinstellung.
 
 ### B. Buchbefunde aus der Textarbeit (Fable, 0.2.67; nur du änderst das Buch)
 

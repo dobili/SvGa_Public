@@ -27,6 +27,7 @@ import {
   type Brettfarben,
   type Figurensatz,
   type Strenge,
+  type VorWerkzeugen,
   type Ton,
 } from "../../app/einstellungen";
 import {
@@ -72,6 +73,7 @@ const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figuren
 ];
 const TOENE: readonly Ton[] = ["aus", "an"];
 const STRENGEN: readonly Strenge[] = ["locker", "streng"];
+const VOR_WERKZEUGEN: readonly VorWerkzeugen[] = ["aus", "an"];
 const KOORDINATEN = ["an", "aus"] as const;
 type Koordinaten = (typeof KOORDINATEN)[number];
 
@@ -227,6 +229,14 @@ function TrainingBereich() {
         beiWahl={(strenge) => aendereEinstellungen({ strenge })}
       />
       <p className="hinweis">{t(`einstellungen.strenge.${einstellungen.strenge}.text`)}</p>
+      <Auswahl
+        name={t("einstellungen.vorWerkzeugen")}
+        werte={VOR_WERKZEUGEN}
+        gewaehlt={einstellungen.vorWerkzeugen}
+        text={(wert) => t(`einstellungen.vorWerkzeugen.${wert}`)}
+        beiWahl={(vorWerkzeugen) => aendereEinstellungen({ vorWerkzeugen })}
+      />
+      <p className="hinweis">{t("einstellungen.vorWerkzeugen.text")}</p>
     </>
   );
 }

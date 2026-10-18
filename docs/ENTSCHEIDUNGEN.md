@@ -3094,7 +3094,7 @@ als ihren Inhalt, und die Namen standen ohne Umbruch. Jetzt `minmax(0, 1fr)`, di
 schrumpfen, Namen brechen mittig um (statt abgeschnitten zu werden). Der Oberflächentest misst
 die acht Porträts der Stufe 8; mit dem alten Stil wichen sie um 24 Pixel ab.
 
-## Befunde aus dem Durchprüfen der Aufgabenliste (18.10.2026, Opus, Zweig `aufgaben-zurueck`, Version 0.2.90)
+## Befunde aus dem Durchprüfen der Aufgabenliste (18.10.2026, Opus, Zweig `aufgaben-zurueck`, Version 0.2.92)
 
 Gefunden beim Durchprüfen der Aufgabenliste (N307): Nach einem Link und „‹ Zurück zu den
 Aufgaben“ stand die Seite oben statt beim angetippten Punkt. Ursache: Die Seite merkte sich den

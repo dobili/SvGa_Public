@@ -8,16 +8,16 @@ import { parseFen } from "chessops/fen";
 import { parseSquare } from "chessops/util";
 import { afterAll, describe, expect, it } from "vitest";
 import { abbildung } from "../schach/buchabbildungen.testhilfe";
-import { nodeEngine } from "./nodeEngine.testhilfe";
+import { festeTiefe, nodeEngine, ZEIT_UNBEACHTET_MS } from "./nodeEngine.testhilfe";
 import { billigsterSchlag, materialFuer, pruefeZentrumsschlag } from "./zentrumsschlag";
 
-/** Rechenzeit je Prüfung; wie bei der Fallenprüfung stabil auch auf ausgelasteten Rechnern. */
-const RECHENZEIT_MS = 2_000;
 const TESTFRIST_MS = 60_000;
 
 describe("Zentrumsschlag mit Stockfish", () => {
   const dienst = nodeEngine();
   afterAll(() => dienst.beendeEngine());
+  // Feste Tiefe statt fester Zeit: gleiches Ergebnis auf jedem Rechner (nodeEngine.testhilfe.ts).
+  const bewerter = festeTiefe(dienst);
 
   it.each([
     ["2.40", "e4", "f6e4"],
@@ -27,10 +27,10 @@ describe("Zentrumsschlag mit Stockfish", () => {
     "Abb. %s: Der Schlag auf %s gewinnt den Bauern nicht",
     async (nummer, feld, schlag) => {
       const pruefung = await pruefeZentrumsschlag(
-        dienst,
+        bewerter,
         abbildung(nummer).fen,
         feld,
-        RECHENZEIT_MS,
+        ZEIT_UNBEACHTET_MS,
       );
       expect(pruefung?.schlag).toBe(schlag);
       expect(pruefung?.haengt).toBe(false);
@@ -43,10 +43,10 @@ describe("Zentrumsschlag mit Stockfish", () => {
     "Abb. 2.29: Der Bauer d5 hängt wirklich (11. Lxd5)",
     async () => {
       const pruefung = await pruefeZentrumsschlag(
-        dienst,
+        bewerter,
         abbildung("2.29").fen,
         "d5",
-        RECHENZEIT_MS,
+        ZEIT_UNBEACHTET_MS,
       );
       expect(pruefung?.schlag).toBe("c4d5");
       expect(pruefung?.haengt).toBe(true);

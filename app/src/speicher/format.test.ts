@@ -29,6 +29,7 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       figurensatz: "buch",
       ton: "aus",
       genauigkeitsmodus: "mittelweg",
+      vorWerkzeugen: "aus",
     });
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
     expect(ergebnis.daten.fortschritt).toEqual({ gesehen: {}, uebungen: {}, trainer: {} });
@@ -49,6 +50,9 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
     expect(einstellungenAus({ genauigkeitsmodus: "chesscom" }).genauigkeitsmodus).toBe("chesscom");
     expect(einstellungenAus({}).genauigkeitsmodus).toBe("mittelweg");
     expect(einstellungenAus({ genauigkeitsmodus: "fide" }).genauigkeitsmodus).toBe("mittelweg");
+    // Seit 0.2.90: „Erst selbst denken“ vor Werkzeugen, ältere Stände lesen sich als „aus“.
+    expect(einstellungenAus({}).vorWerkzeugen).toBe("aus");
+    expect(einstellungenAus({ vorWerkzeugen: "an" }).vorWerkzeugen).toBe("an");
   });
 
   it("übersteht kaputte und fehlende Merker", () => {
@@ -91,11 +95,14 @@ describe("Format 1", () => {
           figurensatz: "buch",
           ton: "aus",
           genauigkeitsmodus: "mittelweg",
+          vorWerkzeugen: "aus",
         },
         schemaVersion: SCHEMA_VERSION,
         spiel: LEERER_SPIELSTAND,
         karten: {},
         fehler: [],
+        zugErraten: {},
+        planstand: null,
       },
       vonVersion: 1,
     });

@@ -27,11 +27,21 @@ export interface Uhrstand {
 const MINUTE_MS = 60_000;
 const SEKUNDE_MS = 1000;
 
-/** Auswahl im Spielen-Bildschirm: ohne Uhr und drei übliche Bedenkzeiten für Einsteiger. */
+/**
+ * Bedenkzeit des Partietags im 30-Minuten-Plan: 10 Minuten je Seite ohne Zuschlag, zusammen höchstens
+ * die 20 Minuten des Plans (Regel: Kapitel 12, „Der 30-Minuten-Trainingsplan“, Tag A).
+ */
+export const UHR_PARTIETAG: Uhreinstellung = { grundzeitMs: 10 * MINUTE_MS, zuschlagMs: 0 };
+
+/**
+ * Auswahl im Spielen-Bildschirm: ohne Uhr und übliche Bedenkzeiten für Einsteiger; seit 0.2.91
+ * auch 10 + 0 für den Partietag des 30-Minuten-Plans.
+ */
 export const UHR_VORGABEN: readonly (Uhreinstellung | null)[] = [
   null,
   { grundzeitMs: 30 * MINUTE_MS, zuschlagMs: 20 * SEKUNDE_MS },
   { grundzeitMs: 15 * MINUTE_MS, zuschlagMs: 10 * SEKUNDE_MS },
+  UHR_PARTIETAG,
   { grundzeitMs: 5 * MINUTE_MS, zuschlagMs: 3 * SEKUNDE_MS },
 ];
 

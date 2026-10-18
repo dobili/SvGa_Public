@@ -9,7 +9,7 @@
  */
 import { afterAll, describe, expect, it } from "vitest";
 import type { Color } from "chessops/types";
-import { nodeEngine } from "../engine/nodeEngine.testhilfe";
+import { festeTiefe, nodeEngine, ZEIT_UNBEACHTET_MS } from "../engine/nodeEngine.testhilfe";
 import { pruefeZentrumsschlag } from "../engine/zentrumsschlag";
 import { Angriffskarte } from "../schach/angriffskarte";
 import { bilanzfaelle, stellungAus, stellungVon } from "../schach/buchabbildungen.testhilfe";
@@ -25,11 +25,11 @@ const BEFUNDE = new Set([
   "2.71 Zentrum Schwarz",
 ]);
 
-/** Rechenzeit je Engine-Prüfung eines angegriffenen Zentrumsbauern (wie zentrumsschlag.test.ts). */
-const RECHENZEIT_MS = 2_000;
 const TESTFRIST_MS = 60_000;
 const dienst = nodeEngine();
 afterAll(() => dienst.beendeEngine());
+/** Feste Tiefe statt fester Zeit: gleiches Ergebnis auf jedem Rechner (nodeEngine.testhilfe.ts). */
+const bewerter = festeTiefe(dienst);
 
 /** Die Zielbilanz einer Seite mit der Zentrumswertung nach der Nachrechnung der Engine. */
 async function mitEngine(stellung: Stellung, farbe: Color): Promise<Zielbilanz> {
@@ -41,7 +41,12 @@ async function mitEngine(stellung: Stellung, farbe: Color): Promise<Zielbilanz> 
   );
   const haengen = [];
   for (const feld of bilanz.zentrum.angegriffen) {
-    const p = await pruefeZentrumsschlag(dienst, stellung.fen, feldname(feld), RECHENZEIT_MS);
+    const p = await pruefeZentrumsschlag(
+      bewerter,
+      stellung.fen,
+      feldname(feld),
+      ZEIT_UNBEACHTET_MS,
+    );
     if (p?.haengt) haengen.push(feld);
   }
   const wertung = zentrumMitEngine(bilanz.zentrum, haengen);

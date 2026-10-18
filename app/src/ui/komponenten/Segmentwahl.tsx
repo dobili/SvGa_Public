@@ -21,7 +21,8 @@ export function Segmentwahl<T extends string>({
 }: {
   name: string;
   werte: readonly T[];
-  gewaehlt: T;
+  /** null: noch nichts gewählt (seit 0.2.90 für „Erst selbst denken“). */
+  gewaehlt: T | null;
   text: (wert: T) => string;
   beiWahl: (wert: T) => void;
 }) {

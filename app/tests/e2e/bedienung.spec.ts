@@ -186,13 +186,12 @@ test("Werkzeug-Umbau (0.2.30): Bündel des Kapitels, frühere und spätere, Reit
   // Ein Tipp zwischen die Reiter ist kein Tipp auf den Hintergrund.
   await page.locator(".reiterleiste").evaluate((element) => (element as HTMLElement).click());
   await expect(reiter.first()).toHaveAttribute("aria-selected", "true");
-  // Gestufte Karte: zuerst Stufe 1, „Mehr …“ zeigt mehr; Legende der Markierungen immer da.
+  // Seit 0.2.85 zeigt die Karte gleich alles (kein „Mehr …“); Legende der Markierungen immer da.
   await page.getByRole("tab", { name: "Planbilanz" }).click();
   const karte = page.getByTestId("werkzeugkarte");
   await expect(karte).toContainText("Am Brett:");
-  await expect(karte).not.toContainText("Vergleiche deine Planbilanz");
-  await karte.getByRole("button", { name: "Mehr …" }).click();
   await expect(karte).toContainText("Vergleiche deine Planbilanz");
+  await expect(karte.getByRole("button", { name: "Mehr …" })).toHaveCount(0);
   await page.screenshot({ path: "test-results/bilder/werkzeug-umbau.png", fullPage: true });
   // Zweites Tippen aufs Bündel wählt ab.
   await leiste.getByRole("button", { name: "Planfindung" }).click();

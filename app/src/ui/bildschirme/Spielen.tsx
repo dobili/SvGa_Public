@@ -14,7 +14,7 @@
  * Abbildungsstellung zählt dann als eigene Stellung. Darunter die letzten Partien zum Nachlesen.
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, engine/stufen.ts, speicher/, Navigation, i18n.
  */
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
@@ -26,6 +26,7 @@ import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
 import { BlindeFleckenKarte, FehlerartenKarte } from "../komponenten/FehlerartenKarte";
 import { StufenWahl } from "../komponenten/StufenWahl";
+import { BeginnenKnopf } from "../komponenten/BeginnenKnopf";
 import { GegnerWahl, HilfenWahl } from "../komponenten/GegnerWahl";
 import {
   botFuerKategorie,
@@ -90,12 +91,14 @@ function Einstellungen({
   setze,
   kategorie,
   setzeKategorie,
+  beginnen,
 }: {
   wahl: Wahl;
   fen: string;
   setze: (wahl: Wahl) => void;
   kategorie: Gegnerkategorie;
   setzeKategorie: (kategorie: Gegnerkategorie) => void;
+  beginnen: ReactNode;
 }) {
   const v = wahl.vorlieben;
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
@@ -135,6 +138,7 @@ function Einstellungen({
           </>
         }
         editor={<GegnerEditor />}
+        beginnen={beginnen}
       />
       {engine && (
         <Auswahl
@@ -336,7 +340,6 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
     setzeFen(neu);
     setzeWahl({ ...wahl, farbe: seiteAmZug(neu) });
   };
-  const [ersetzen, setzeErsetzen] = useState(false);
   const [kategorie, setzeKategorie] = useState<Gegnerkategorie>(() =>
     kategorieVon(spiel.vorlieben.bot, spiel.eigeneGegner),
   );
@@ -368,6 +371,14 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
         setze={setzeWahl}
         kategorie={kategorie}
         setzeKategorie={setzeKategorie}
+        beginnen={
+          <BeginnenKnopf
+            laufend={laufend !== null}
+            moeglich={ok}
+            hinweis={ohneEigenenBot ? t("spielen.eigene.erstWaehlen") : null}
+            beiBeginn={() => beginne(wahl)}
+          />
+        }
       />
       {fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" && (
         <EroeffnungsWahl
@@ -375,29 +386,6 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
           beiWahl={(eroeffnung) => setzeWahl({ ...wahl, eroeffnung })}
         />
       )}
-      {laufend && ersetzen ? (
-        <div className="nachfrage">
-          <p>{t("spielen.ersetzenFrage")}</p>
-          <div className="knopfreihe">
-            <button type="button" className="knopf-gefahr" onClick={() => beginne(wahl)}>
-              {t("spielen.ersetzenJa")}
-            </button>
-            <button type="button" className="knopf-zweit" onClick={() => setzeErsetzen(false)}>
-              {t("loeschen.nein")}
-            </button>
-          </div>
-        </div>
-      ) : (
-        <button
-          type="button"
-          className="knopf-haupt"
-          disabled={!ok}
-          onClick={() => (laufend ? setzeErsetzen(true) : beginne(wahl))}
-        >
-          {t("spielen.beginnen")}
-        </button>
-      )}
-      {ohneEigenenBot && <p className="hinweis">{t("spielen.eigene.erstWaehlen")}</p>}
       <Partienliste partien={spiel.partien} />
     </div>
   );

@@ -7,6 +7,10 @@
  * (Zugurteil.tsx), die Erklärung kommt aus spiel/erklaerung.ts.
  * Unten steht „In die Fehlerdatenbank“ (Kapitel 12, AP 13): Es öffnet das Formular mit der
  * Stellung vor dem Zug und dem gespielten Zug.
+ * Seit 0.2.85 (Rückmeldung des Autors) nennt der Satz zu einem Fehler die Gewinnchance vorher und
+ * nachher statt der Bauerneinheiten der Engine: Stockfish rechnet seine Zahl aus der Gewinnchance,
+ * eine Figur mehr ergibt dort 5 bis 7 „Bauern“, chess.com zeigt kleinere Zahlen. Die Gewinnchance
+ * hängt weniger an der Skala; das Material nennt die Erklärung nach den Werten des Buches.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n,
  * ui/trainer/FehlerFormular.tsx.
  */
@@ -16,9 +20,13 @@ import { sanInSprache } from "../../schach/notation";
 import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
 import type { Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
-import { balkentext, variantentext } from "../../spiel/rueckblick";
+import type { Zweigzug } from "../../spiel/nebenzweig";
+import { balkentext } from "../../spiel/rueckblick";
 import { uciZuSan } from "../../spiel/zuege";
 import { FehlerFormular } from "../trainer/FehlerFormular";
+import { gewinnchanceVorNach, type Chance } from "./gewinnchance";
+import { MitInfo } from "./InfoKnopf";
+import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
 import type { Rueckblick } from "./useRueckblick";
 
 /**
@@ -46,7 +54,7 @@ function bauern(verlust: number): string {
 }
 
 /** Der erste Satz je Klasse (0.2.40 wie bei chess.com). */
-function urteilssatz(zug: string, urteil: Zugurteil, bester: string): string {
+function urteilssatz(zug: string, urteil: Zugurteil, bester: string, chance: Chance): string {
   const mitZeichen = `${zug}${urteil.zeichen ?? ""}`;
   const verlust = bauern(urteil.verlust);
   switch (urteil.klasse) {
@@ -65,9 +73,9 @@ function urteilssatz(zug: string, urteil: Zugurteil, bester: string): string {
     case "buch":
       return t("rueckblick.buch", { zug });
     case "verpasst":
-      return t("rueckblick.verpasst", { zug: mitZeichen, verlust });
+      return t("rueckblick.verpasst", { zug: mitZeichen, ...chance });
     default:
-      return t("rueckblick.verlust", { zug: mitZeichen, verlust });
+      return t("rueckblick.verlust", { zug: mitZeichen, ...chance });
   }
 }
 
@@ -81,6 +89,9 @@ const MIT_BESSEREM: ReadonlySet<Zugurteil["klasse"]> = new Set([
   "patzer",
 ]);
 
+/** Bei diesen Klassen zeigt die Karte, wie der Gegner den Fehler bestraft (seit 0.2.85). */
+const MIT_STRAFE: ReadonlySet<Zugurteil["klasse"]> = new Set(["fehler", "patzer"]);
+
 /** Die Karte unter dem Brett zum gezeigten Zug. */
 export function Rueckblickkarte({
   rueckblick,
@@ -89,6 +100,9 @@ export function Rueckblickkarte({
   index,
   erklaerung,
   phasenwechsel = null,
+  zweig,
+  zweigZuege,
+  strafZuege,
 }: {
   rueckblick: Rueckblick;
   partie: Partie;
@@ -97,6 +111,12 @@ export function Rueckblickkarte({
   erklaerung: Zugerklaerung | null;
   /** Satz zur neuen Phase, wenn sie mit der Stellung nach diesem Zug beginnt (0.2.44). */
   phasenwechsel?: string | null;
+  /** Gezeigter Zug des Nebenzweigs „Besser war …“ (0.2.85). */
+  zweig: Zweigwahl;
+  /** Der bessere Zug und die nächsten Züge der Engine (useRueckblick.tsx). */
+  zweigZuege: readonly Zweigzug[];
+  /** Wie der Gegner den Fehler bestraft: Variante der Engine nach dem Zug (0.2.85). */
+  strafZuege: readonly Zweigzug[];
 }) {
   const urteil = rueckblick.urteile[index];
   const san = partie.zuege[index]?.san ?? "";
@@ -106,8 +126,6 @@ export function Rueckblickkarte({
   const besterUci = rueckblick.beste[index] ?? "";
   const besterSan = besterUci ? uciZuSan(fen, besterUci) : null;
   const bester = besterSan ? `${nummer} ${sanInSprache(besterSan, "de")}` : "";
-  // Die nächsten Züge nach dem besseren Zug (Empfehlung R5, 0.2.56); leer bei alten Auswertungen.
-  const folge = variantentext(fen, rueckblick.varianten?.[index] ?? []);
   const seite =
     partie.einstellung.gegner === "mensch"
       ? t(fen.split(" ")[1] === "b" ? "farbe.b" : "farbe.w")
@@ -116,23 +134,34 @@ export function Rueckblickkarte({
         : t("partie.engine");
   return (
     <section className="karte rueckblickkarte" data-testid="rueckblickkarte">
-      <p className="rueckblick-urteil">
-        <strong>{urteilssatz(zug, urteil, bester)}</strong>{" "}
-        {t("rueckblick.bewertung", {
-          vorher: balkentext(rueckblick.werte[index] ?? 0),
-          nachher: balkentext(rueckblick.werte[index + 1] ?? 0),
-        })}
-      </p>
+      <MitInfo
+        zeile={
+          <p className="rueckblick-urteil">
+            <strong>
+              {urteilssatz(
+                zug,
+                urteil,
+                bester,
+                gewinnchanceVorNach(rueckblick.werte, index, fen.split(" ")[1] !== "b"),
+              )}
+            </strong>{" "}
+            {t("rueckblick.bewertung", {
+              vorher: balkentext(rueckblick.werte[index] ?? 0),
+              nachher: balkentext(rueckblick.werte[index + 1] ?? 0),
+            })}
+          </p>
+        }
+        erklaerung={<p>{t("rueckblick.balkenInfo")}</p>}
+        thema={t("rueckblick.balkenThema")}
+      />
       {erklaerung && (
         <p className="rueckblick-erklaerung">
           {t("rueckblick.erklaerung", { seite, text: erklaerung.text })}
         </p>
       )}
+      {MIT_STRAFE.has(urteil.klasse) && <Nebenzweig zuege={strafZuege} art="strafe" wahl={zweig} />}
       {bester && MIT_BESSEREM.has(urteil.klasse) && (
-        <p>
-          {t("rueckblick.besser", { zug: bester })}
-          {folge && <> {t("rueckblick.variante", { folge })}</>}
-        </p>
+        <Nebenzweig zuege={zweigZuege} art="besser" wahl={zweig} />
       )}
       {phasenwechsel && (
         <p className="rueckblick-phase" data-testid="rueckblick-phase">

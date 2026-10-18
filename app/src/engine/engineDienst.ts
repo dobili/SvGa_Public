@@ -4,6 +4,11 @@
  * Rolle im Gesamtbild: Einzige Stelle, die mit der Engine spricht (Konzept Abschnitt 8). Die
  * Engine läuft in einem Web Worker, damit die Oberfläche nie hängt. Sie wird erst beim ersten
  * Bedarf gestartet. Es läuft immer nur ein Auftrag: Ein neuer Auftrag bricht den alten ab.
+ * Seit 0.2.85 wacht ein Wachhund über jeden Auftrag: Meldet die Engine lange nach der Rechenzeit
+ * kein „bestmove“ (der Worker ist abgestürzt oder wurde vom Handy im Hintergrund beendet), startet
+ * der Dienst die Engine neu und lehnt den Auftrag als abgebrochen ab; die Aufrufer versuchen es
+ * dann wie nach jeder Unterbrechung noch einmal (Fehlerbericht des Autors: Auswertung startete
+ * nach einer Partie nicht).
  * Abhängigkeiten: uci.ts. Die Verbindung zur Engine ist austauschbar (Kanal), damit Tests die
  * Engine auch unter Node starten können.
  */
@@ -72,6 +77,11 @@ export const STANDARD_VARIANTEN = 3;
 const HASH_MB = 16;
 /** So lange darf die Engine zum Starten brauchen, bevor ein Fehler gemeldet wird. */
 const STARTFRIST_MS = 30_000;
+/**
+ * Zuschlag zur Rechenzeit, nach dem ein Auftrag als hängend gilt. Jeder Auftrag hat „movetime“,
+ * die Engine meldet also spätestens kurz nach der Rechenzeit; 10 s lassen langsamen Handys Luft.
+ */
+const WACHHUND_ZUSCHLAG_MS = 10_000;
 
 interface LaufenderAuftrag {
   readonly weissAmZug: boolean;
@@ -80,6 +90,8 @@ interface LaufenderAuftrag {
   tiefe: number;
   knotenJeSekunde: number;
   abgebrochen: boolean;
+  /** Zeitgeber des Wachhunds (seit 0.2.85). */
+  wachhund?: ReturnType<typeof setTimeout>;
   readonly erfuellen: (bewertung: Bewertung) => void;
   readonly ablehnen: (fehler: Error) => void;
 }
@@ -169,6 +181,7 @@ export class EngineDienst {
 
   /** Schließt einen Auftrag ab, sobald die Engine „bestmove“ meldet. */
   private beende(auftrag: LaufenderAuftrag, besterZug: string | null): void {
+    clearTimeout(auftrag.wachhund);
     this.auftrag = null;
     if (auftrag.abgebrochen) {
       auftrag.ablehnen(new AuftragAbgebrochen());
@@ -267,7 +280,28 @@ export class EngineDienst {
     // Mit Tiefengrenze hält die Engine an, sobald die Tiefe oder die Zeit erreicht ist.
     const tiefe = staerke.art === "tiefe" ? `depth ${staerke.tiefe} ` : "";
     kanal.senden(`go ${tiefe}movetime ${rechenzeitMs}${auswahl}`);
+    const auftrag = this.auftrag;
+    if (auftrag) {
+      auftrag.wachhund = setTimeout(
+        () => this.starteNeu(auftrag),
+        rechenzeitMs + WACHHUND_ZUSCHLAG_MS,
+      );
+    }
     return ergebnis;
+  }
+
+  /**
+   * Die Engine antwortet nicht mehr: Worker beenden, beim nächsten Auftrag neu starten, den
+   * hängenden Auftrag als abgebrochen ablehnen (die Aufrufer versuchen es dann noch einmal).
+   */
+  private starteNeu(auftrag: LaufenderAuftrag): void {
+    if (this.auftrag !== auftrag) return;
+    console.warn("Die Engine antwortet nicht mehr und wird neu gestartet.");
+    this.auftrag = null;
+    this.kanal?.beenden();
+    this.kanal = null;
+    this.bereit = null;
+    auftrag.ablehnen(new AuftragAbgebrochen());
   }
 
   /** Bricht den laufenden Auftrag ab (Konzept 8.1, „stoppe“). Ohne Auftrag passiert nichts. */

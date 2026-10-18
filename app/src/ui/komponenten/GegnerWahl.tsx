@@ -15,70 +15,35 @@
  * Seit 0.2.85 (Rückfrage S23) steht an jeder Stufe, jeder Kachel und in der Sprechblase die
  * Elo-Zahl auf der Skala von „Deine Spielstärke“ (engine/botstaerke.ts), mit Erklärung hinter
  * dem Fragezeichen; eigene Stufen und eigene Bots mit dem Zusatz „geschätzt“.
+ * Seit 0.2.86 (Wunsch des Autors) steht „Partie beginnen“ direkt unter den drei Kacheln, damit man
+ * nicht weit scrollen muss; die Stufen der vorgefertigten Bots sind aufklappbar (Gegnerstufen.tsx).
  * Abhängigkeiten: engine/gegner.ts, engine/botstaerke.ts, engine/stufen.ts, spiel/partie.ts
  * (Typen), Vorschauwahl, InfoKnopf, staerkeangabe.ts, lucide, i18n.
  */
 import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
 import type { ReactNode } from "react";
 import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
-import { gegnerDerStufe, gegnerVon, klasseVon, type EigenerGegner } from "../../engine/gegner";
-import { stufe, type Stufennummer } from "../../engine/stufen";
+import { gegnerVon, klasseVon, type EigenerGegner } from "../../engine/gegner";
+import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Phase } from "../../schach/phase";
 import type { Gegnerart, Spielhilfen } from "../../spiel/partie";
 import { Auswahl } from "./Auswahl";
 import type { Gegnerkategorie } from "./gegnerkategorie";
+import { portraet } from "./gegnerportraet";
+import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { MitInfo } from "./InfoKnopf";
-import { bereichstext, staerketext } from "./staerkeangabe";
+import { staerketext } from "./staerkeangabe";
 import { Vorschauwahl } from "./Vorschauwahl";
 
-const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
 /** Größe der Symbole auf den Kategorie-Kacheln. */
 const KATEGORIE_SYMBOL = 28;
 
 const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
 const KATEGORIE_SYMBOLE = { stufe: SlidersHorizontal, vorgefertigt: Bot, eigene: UserPen };
 
-/** Ordner der Porträts (app/public/gegner/, erzeugt von skripte/erzeuge-gegnerbilder.mjs). */
-const PORTRAETS = "gegner/";
-
-/** Adresse des Porträts eines vorgefertigten Gegners. */
-function portraet(kennung: string): string {
-  return `${import.meta.env.BASE_URL}${PORTRAETS}${kennung}.svg`;
-}
-
 /** Stufen je Phase, wie die Regler sie halten. */
 type Stufenwahl = Readonly<Record<Phase, Stufennummer>>;
-
-/** Eine Kachel des Gitters: Porträt oder Zeichen, Name und Zahl darunter; gewählt mit goldenem Rand. */
-function Kachel({
-  name,
-  staerke,
-  gewaehlt,
-  beiWahl,
-  kinder,
-}: {
-  name: string;
-  /** „etwa 1300“ (0.2.85); fehlt bei Kacheln ohne Messung. */
-  staerke?: string;
-  gewaehlt: boolean;
-  beiWahl: () => void;
-  kinder: React.ReactNode;
-}) {
-  return (
-    <button
-      type="button"
-      role="radio"
-      aria-checked={gewaehlt}
-      className="gegnerkachel"
-      onClick={beiWahl}
-    >
-      {kinder}
-      <span className="gegnerkachel-name">{name}</span>
-      {staerke && <span className="gegnerkachel-staerke">{staerke}</span>}
-    </button>
-  );
-}
 
 /**
  * Die Zeile mit der Zahl: „etwa 1550 (Stufe 2)“ für vorgefertigte Bots, „etwa 1700 (geschätzt)“
@@ -154,45 +119,6 @@ function Sprechblase({
   );
 }
 
-/** Die vorgefertigten Gegner: je Stufe acht Porträts. */
-function VorgefertigteGitter({
-  bot,
-  beiBot,
-}: {
-  bot: string | null;
-  beiBot: (bot: string | null) => void;
-}) {
-  return (
-    <div role="radiogroup" aria-label={t("spielen.bot")}>
-      {STUFENNUMMERN.map((nummer) => (
-        <section key={nummer} className="gegnerstufe">
-          <h4 className="gegnerstufe-titel">
-            {t("spielen.bot.stufeMitStaerke", {
-              nummer: String(nummer),
-              name: t(stufe(nummer).name),
-              staerke: bereichstext(nummer),
-            })}
-          </h4>
-          <div className="gegnergitter">
-            {gegnerDerStufe(nummer).map((g) => (
-              <Kachel
-                key={g.kennung}
-                name={g.name}
-                staerke={staerketext(
-                  staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase),
-                )}
-                gewaehlt={bot === g.kennung}
-                beiWahl={() => beiBot(g.kennung)}
-                kinder={<img className="gegner-portraet" src={portraet(g.kennung)} alt="" />}
-              />
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
-  );
-}
-
 /** Die eigenen Gegner des Lesers als Kacheln mit dem Anfangsbuchstaben. */
 function EigeneGitter({
   bot,
@@ -225,7 +151,8 @@ function EigeneGitter({
 
 /**
  * Gegner, Kategorie und der Inhalt der gewählten Kategorie.
- * `stufeninhalt`: Regler und Fehlerarten (eigene Stufe); `editor`: Karte der eigenen Gegner.
+ * `stufeninhalt`: Regler und Fehlerarten (eigene Stufe); `editor`: Karte der eigenen Gegner;
+ * `beginnen`: der Knopf „Partie beginnen“ (unter den Kategorien, beim Menschen unter der Wahl).
  */
 export function GegnerWahl({
   gegner,
@@ -238,6 +165,7 @@ export function GegnerWahl({
   beiKategorie,
   stufeninhalt,
   editor,
+  beginnen,
 }: {
   gegner: Gegnerart;
   bot: string | null;
@@ -251,6 +179,7 @@ export function GegnerWahl({
   beiKategorie: (kategorie: Gegnerkategorie) => void;
   stufeninhalt: ReactNode;
   editor: ReactNode;
+  beginnen: ReactNode;
 }) {
   return (
     <>
@@ -261,6 +190,7 @@ export function GegnerWahl({
         text={(w) => t(`spielen.gegner.${w}`)}
         beiWahl={beiGegner}
       />
+      {gegner === "mensch" && beginnen}
       {gegner === "engine" && (
         <div className="gegnerwahl">
           <Vorschauwahl
@@ -274,6 +204,7 @@ export function GegnerWahl({
             }}
             beiWahl={beiKategorie}
           />
+          {beginnen}
           {(kategorie !== "eigene" || eigene.some((g) => g.kennung === bot)) && (
             <Sprechblase bot={bot} eigene={eigene} stufen={stufen} />
           )}

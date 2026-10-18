@@ -3017,3 +3017,29 @@ je Bot eine eigene Zahl. Die Bewertungen eines anderen Chats (Zweig `botstaerke`
   70 % (Bots machen seltene grobe Fehler, Menschen viele mittlere); das prüft nur ein Mensch
   (N335). Vorschlag an den Autor: nach N335 die Stufen 1 bis 4 schwächer machen und alle Bots neu
   messen. Nicht vorab umgesetzt, weil es alle 64 Bots und die Abstufung aus Konzept 8.2 ändert.
+
+## Auswertung, Werkzeuge und Training übersichtlicher (18.10.2026 abends, Opus, Zweig `auswertung-ausbau`, Version 0.2.86)
+
+Wünsche und Rückmeldungen des Autors vom Abend, nach Regel 9 gleich umgesetzt.
+
+- **Gewinnchance statt Bauerneinheiten im Rückblick:** Stockfish rechnet seine Zahl seit 15.1
+  aus der Gewinnchance; eine Figur mehr ergibt 5 bis 7, chess.com zeigt kleinere Zahlen
+  (nachgerechnet: 10. Tab1?? −5,8 lite, −7,1 volles Netz, chess.com −3,28). Die Karte nennt die
+  Gewinnchance vorher und nachher (Lichess-Formel), das Material die Erklärung nach dem Buch.
+  Neue Regel „schlägt nicht zurück“ (Kapitel 1, Abtausch): Der beste Zug schlug auf dem Feld, auf
+  dem der Gegner gerade geschlagen hatte, der gespielte nicht.
+- **Nebenzweige:** „Besser war …“ (Hauptvariante vor dem Zug) und „So wird der Fehler bestraft“
+  (Hauptvariante nach dem Zug, bei „?“ und „??“) als antippbare Züge am Brett, aus den
+  gespeicherten Varianten der Auswertung (höchstens sechs Halbzüge).
+- **Engine-Wachhund:** Kommt lange nach der Rechenzeit (plus 10 s) kein „bestmove“, startet der
+  Dienst die Engine neu und lehnt den Auftrag als abgebrochen ab; Partie und Auswertung versuchen
+  es dann erneut. Grund: Fehlerbericht „Auswertung startet nicht“; ein vom Handy beendeter Worker
+  ließ den Auftrag ewig offen.
+- **Werkzeugkarten ohne „Mehr …“:** Die Stufen von 0.2.30 (Vorschlag D6) sind entfallen; jede
+  Karte zeigt alle Befunde. Werkzeugleiste waagerecht scrollbar mit Symbol je Bündel.
+- **Auswertung:** Schalter „Genauigkeit wie“ in der Karte, Symbole je Zeile, Marken je Zugklasse,
+  grobe Patzer beider Seiten mit Farbe, drei Engine-Fehler und „Alle zeigen“.
+- **Spielen, Einstellungen, Training:** „Partie beginnen“ unter den Kategorien, Stufen
+  aufklappbar mit Merker auf dem Gerät; Kacheln „Über die App“ und „Einstellungen“, Vorschau
+  2 × 2; Trainer als Zeilen mit Symbol, Übungen als Nummernraster.
+

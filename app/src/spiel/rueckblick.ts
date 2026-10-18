@@ -8,45 +8,13 @@
  * das alles aus (es verriete zu viel). Reine Funktionen; die Werte kommen aus
  * ui/komponenten/useAuswertung.ts, die Zeichen aus spiel/auswertung.ts.
  * Seit 0.2.56 (Empfehlung R5) nennt die Karte nach „Besser war …“ auch die nächsten Züge der
- * Hauptvariante der Engine („Danach etwa …“, `variantentext`).
- * Abhängigkeiten: analyse/werkzeug.ts (Markierung), schach/weiterspielen.ts, schach/notation.ts,
+ * Hauptvariante der Engine; seit 0.2.85 als antippbarer Nebenzweig (spiel/nebenzweig.ts).
+ * Abhängigkeiten: analyse/werkzeug.ts (Markierung), schach/weiterspielen.ts,
  * spiel/auswertung.ts, spiel/zuege.ts.
  */
 import type { Markierung, Markierungsfarbe } from "../analyse/werkzeug";
-import { sanInSprache } from "../schach/notation";
 import { zugFelder } from "../schach/weiterspielen";
 import type { Zugklasse, Zugurteil } from "./auswertung";
-import { fenNach, uciZuSan } from "./zuege";
-
-/** So viele Halbzüge der Hauptvariante nennt die Karte nach dem besseren Zug. */
-const VARIANTE_ANZEIGE = 5;
-
-/**
- * Die Hauptvariante der Engine als lesbare Zugfolge, ohne ihren ersten Zug (den nennt die Karte
- * schon als „Besser war …“): „2... Sc6 3. Lc4 Sf6“, deutsche Figurenbuchstaben, höchstens fünf
- * Halbzüge. Eingaben: Stellung vor dem Zug (FEN), Variante in UCI (beginnt mit dem besseren Zug).
- * Ausgabe: Text, leer ohne Fortsetzung oder bei einem Zug, der in der Stellung nicht geht.
- * Beispiel: nach 1. e4 e5 2. Dh5?! mit Variante [g1f3, b8c6, f1c4] → „2... Sc6 3. Lc4“.
- */
-export function variantentext(fen: string, variante: readonly string[]): string {
-  const teile: string[] = [];
-  let stellung = fen;
-  for (const [i, uci] of variante.slice(0, VARIANTE_ANZEIGE + 1).entries()) {
-    const san = uciZuSan(stellung, uci);
-    const naechste = san ? fenNach(stellung, san) : null;
-    if (!san || !naechste) break;
-    if (i > 0) teile.push(mitZugnummer(stellung, sanInSprache(san, "de"), teile.length === 0));
-    stellung = naechste;
-  }
-  return teile.join(" ");
-}
-
-/** „2. Sf3“ für Weiß, „2... Sc6“ für Schwarz; bei Schwarz nur am Anfang mit Nummer. */
-function mitZugnummer(fen: string, san: string, erster: boolean): string {
-  const [, seite = "w", , , , nummer = "1"] = fen.split(" ");
-  if (seite === "w") return `${nummer}. ${san}`;
-  return erster ? `${nummer}... ${san}` : san;
-}
 
 /** Der Balken und die Kurve reichen bis ±5 Bauern; mehr (auch Matt) steht am Rand. */
 export const ANZEIGEGRENZE = 5;

@@ -59,10 +59,21 @@
   flex: none;
 }
 
-/* Werkzeugleiste: Ab drei Werkzeugen eines Kapitels (Kapitel 4) passen die Knöpfe nicht mehr in
-   eine Zeile; sie brechen um, statt gestaucht und abgeschnitten zu werden (Test von 0.2.7). */
+/* Werkzeugleiste: seit 0.2.85 (Wunsch des Autors) eine waagerecht scrollbare Reihe statt
+   umbrechender Zeilen (bis 0.2.84, Test von 0.2.7); nur waagerecht, wie die Reiterzeile. Der
+   Verlauf am rechten Rand zeigt, dass es weitergeht. */
 .werkzeugleiste {
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding-bottom: 2px;
+  mask-image: linear-gradient(to right, #000 calc(100% - 24px), transparent);
+}
+
+.werkzeugleiste::-webkit-scrollbar {
+  display: none;
 }
 
 .werkzeugleiste .chip {

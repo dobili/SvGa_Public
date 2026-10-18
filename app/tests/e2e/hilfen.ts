@@ -77,8 +77,7 @@ const BUENDEL_DES_WERKZEUGS: Readonly<Record<string, string>> = {
 
 /**
  * Wählt ein Werkzeug wie ein Leser: Symbol am Brett oder Bündel in der Leiste (falls nötig über
- * „◀ frühere“ oder „spätere ▶“), dann den Reiter. Klappt die Karte danach ganz auf („Mehr …“),
- * damit die Tests alle Befunde sehen.
+ * „◀ frühere“ oder „spätere ▶“), dann den Reiter. Seit 0.2.85 zeigt die Karte gleich alle Befunde.
  * Beispiel: waehleWerkzeug(seite, "Planbilanz") → „Planfindung“, Reiter „Planbilanz“.
  */
 export async function waehleWerkzeug(seite: Page, name: string): Promise<void> {
@@ -99,19 +98,6 @@ export async function waehleWerkzeug(seite: Page, name: string): Promise<void> {
     if ((await knopf.getAttribute("aria-pressed")) !== "true") await knopf.click();
     const reiter = seite.getByRole("tab", { name, exact: false });
     if ((await reiter.count()) > 0) await reiter.first().click();
-  }
-  await zeigeAlles(seite);
-}
-
-/** Eine Karte hat drei Stufen, „Mehr …“ steht also höchstens zweimal da (ui/komponenten/stufen.ts). */
-const HOECHSTENS_MEHR = 2;
-
-/** Klappt die Werkzeugkarte ganz auf: „Mehr …“, bis alle Stufen zu sehen sind. */
-export async function zeigeAlles(seite: Page): Promise<void> {
-  const mehr = seite.getByTestId("werkzeugkarte").getByRole("button", { name: "Mehr …" });
-  for (let stufe = 0; stufe < HOECHSTENS_MEHR; stufe += 1) {
-    if ((await mehr.count()) === 0) return;
-    await mehr.click();
   }
 }
 

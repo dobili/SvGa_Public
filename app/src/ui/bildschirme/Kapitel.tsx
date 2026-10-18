@@ -17,7 +17,7 @@ import { KapitelUebungen } from "../komponenten/KapitelUebungen";
 import { useDaten } from "../komponenten/useDaten";
 import { Kapitelfortschritt } from "../komponenten/Kapitelfortschritt";
 import { trainerZuKapitel } from "../../training/trainer";
-import { Trainerkarte } from "./Training";
+import { Trainerkarte } from "../komponenten/Trainerkarte";
 
 /**
  * Trainer und Übungen des Kapitels in einer Karte (Konzept 10.1: „Trainer des Kapitels“; seit

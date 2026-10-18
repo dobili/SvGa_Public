@@ -34,27 +34,30 @@ export function KapitelUebungen({ kapitel }: { kapitel: Kapitel }) {
           {t("kapitel.uebungenLoesen", { offen: offen.length, gesamt: kapitel.uebungen.length })}
         </button>
       )}
-      <ul className="uebungsliste">
+      {/* Seit 0.2.85 (Wunsch des Autors) ein Raster kleiner Nummern statt einer langen Liste:
+          gelöst grün mit Haken, angefangen halb; der volle Name steht für Bildschirmleser da. */}
+      <ul className="uebungsraster">
         {kapitel.uebungen.map((uebung) => {
           const stand = staende[uebung.id];
-          const zeichen = stand?.geloest ? "✓" : stand ? "◐" : "";
+          const zustand = stand?.geloest ? "geloest" : stand ? "angefangen" : "offen";
+          const name =
+            t("uebung.titel", { nummer: uebung.nummer }) +
+            (uebung.abbildungen[0]
+              ? ` · ${t("abbildung.titel", { nummer: uebung.abbildungen[0] })}`
+              : "");
           return (
             <li key={uebung.id}>
               <button
                 type="button"
-                className="knopf-link links"
+                className={`uebungsnummer uebungsnummer-${zustand}`}
+                title={name}
                 onClick={() => navigiere({ bildschirm: "uebung", ...verweis(uebung.id), reihe })}
               >
-                <span className="uebung-zeichen" aria-hidden="true">
-                  {zeichen}
+                <span aria-hidden="true">{uebung.nummer}</span>
+                <span className="nur-vorlesen">
+                  {name}
+                  {stand?.geloest && ` ${t("kapitel.uebungGeloest")}`}
                 </span>
-                {t("uebung.titel", { nummer: uebung.nummer })}
-                {uebung.abbildungen[0]
-                  ? ` · ${t("abbildung.titel", { nummer: uebung.abbildungen[0] })}`
-                  : ""}
-                {stand?.geloest && (
-                  <span className="nur-vorlesen"> {t("kapitel.uebungGeloest")}</span>
-                )}
               </button>
             </li>
           );

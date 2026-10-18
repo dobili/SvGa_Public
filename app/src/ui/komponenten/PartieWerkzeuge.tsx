@@ -23,7 +23,7 @@ import { PARTIEBUENDEL, PARTIEKAPITEL } from "./partiewerkzeug";
 import { RuheKarte } from "./RuheKarte";
 import type { Enginemarkierungen } from "./useEngineMarkierungen";
 import type { Werkzeugwahlstand } from "./useWerkzeugwahl";
-import { Reiterleiste, type Werkzeugwahl } from "./Werkzeugleiste";
+import { Buendelknopf, Reiterleiste, type Werkzeugwahl } from "./Werkzeugleiste";
 import { Werkzeugkarte } from "./Werkzeugkarte";
 import { buendelname } from "./werkzeugordnung";
 import { Werkzeugzusatz } from "./Werkzeugzusatz";
@@ -90,15 +90,13 @@ export function PartieLeiste({ werkzeug }: { werkzeug: Werkzeugwahlstand }) {
     <>
       <div className="werkzeugleiste" role="toolbar" aria-label={t("abbildung.werkzeuge")}>
         {PARTIEBUENDEL.map((kennung) => (
-          <button
+          <Buendelknopf
             key={kennung}
-            type="button"
-            className="chip"
-            aria-pressed={werkzeug.buendel === kennung}
-            onClick={() => werkzeug.tippeBuendel(kennung)}
-          >
-            {t(buendelname(kennung))}
-          </button>
+            kennung={kennung}
+            name={t(buendelname(kennung))}
+            gewaehlt={werkzeug.buendel === kennung}
+            beiKlick={() => werkzeug.tippeBuendel(kennung)}
+          />
         ))}
       </div>
       {werkzeug.buendel && (

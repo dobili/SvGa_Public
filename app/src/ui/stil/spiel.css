@@ -530,10 +530,38 @@
 }
 
 .gegnerstufe-titel {
-  margin: var(--raster) 0 6px;
+  margin: 0;
   font-size: 14px;
   font-weight: 600;
   color: var(--text-leise);
+}
+
+/* Aufklappbare Stufen der vorgefertigten Bots (0.2.85): Pfeil vorn wie in der Kapitelübersicht. */
+.gegnerstufe > summary {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tippflaeche);
+  cursor: pointer;
+}
+
+.gegnerstufe > summary::-webkit-details-marker {
+  display: none;
+}
+
+.gegnerstufe[open] > summary .klappzeichen {
+  transform: rotate(90deg);
+}
+
+.gegnerstufe[open] > .gegnergitter {
+  margin-bottom: var(--raster);
+}
+
+.beginnen {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
 }
 
 .gegnergitter {
@@ -582,6 +610,147 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   font-size: 12px;
+}
+
+/* ---------- Symbole der Auswertung (0.2.85, Wunsch des Autors) ---------- */
+
+.zeilenname {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.zeilensymbol {
+  flex: none;
+  color: var(--text-leise);
+}
+
+/* Farbige Marke je Zugklasse, Farben wie bei chess.com (Weiß auf Farbe, gut lesbar). */
+.klassenmarke {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.klassenmarke-brillant {
+  background: #1baca6;
+}
+
+.klassenmarke-stark {
+  background: #5c8bb0;
+}
+
+.klassenmarke-bester {
+  background: #81b64c;
+}
+
+.klassenmarke-sehrGut {
+  background: #96bc4b;
+}
+
+.klassenmarke-gut {
+  background: #96af8b;
+}
+
+.klassenmarke-buch {
+  background: #a88865;
+}
+
+.klassenmarke-ungenau {
+  background: #d9a300;
+}
+
+.klassenmarke-fehler {
+  background: #e58f2a;
+}
+
+.klassenmarke-verpasst {
+  background: #db6b55;
+}
+
+.klassenmarke-patzer {
+  background: #ca3431;
+}
+
+/* Bauer in der Farbe der Seite: weiß mit dunklem Rand, schwarz gefüllt. */
+.seitenfigur {
+  flex: none;
+  vertical-align: -3px;
+  stroke: #1d2433;
+}
+
+.seitenfigur-white {
+  fill: #ffffff;
+}
+
+.seitenfigur-black {
+  fill: #1d2433;
+  stroke: #8a93a6;
+}
+
+.patzerliste {
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 12px;
+}
+
+.patzerliste .knopf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--rot-text);
+  font-weight: 600;
+}
+
+.enginefehler ul {
+  margin: 0;
+}
+
+/* Nebenzweig „Besser war …“ (0.2.85): Züge als kleine Knöpfe, der gezeigte hervorgehoben. */
+.nebenzweig p {
+  margin: 0;
+  line-height: 2;
+}
+
+.zweigzug {
+  margin: 0 2px;
+  padding: 2px 8px;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-weight: 600;
+}
+
+.zweigzug[aria-pressed="true"] {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: #1d2433;
+}
+
+.zweigsteuerung {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  margin-top: calc(var(--raster) / 2);
+}
+
+.zweigsteuerung .knopf-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 /* Elo-Zahl unter dem Namen (0.2.85). */

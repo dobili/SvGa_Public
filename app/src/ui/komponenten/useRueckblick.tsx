@@ -17,10 +17,12 @@ import type { Markierung } from "../../analyse/werkzeug";
 import { phasenbefundVon, type Phase } from "../../spiel/phasen";
 import type { Zugurteil } from "../../spiel/auswertung";
 import { erklaereZug, type Zugerklaerung } from "../../spiel/erklaerung";
+import { zweigzuege, type Zweigzug } from "../../spiel/nebenzweig";
 import type { Partie } from "../../spiel/partie";
 import { rueckblickMarken } from "../../spiel/rueckblick";
 import { sanZuUci } from "../../spiel/zuege";
 import { Bewertungsbalken } from "./Bewertungsbalken";
+import type { Zweigwahl } from "./Nebenzweig";
 import { Rueckblickkarte } from "./Rueckblickkarte";
 
 /** Was der Rückblick nach der ausgewerteten Partie braucht. */
@@ -53,6 +55,7 @@ function erklaerungFuer(
     rb.beste[index + 1] ?? "",
     urteil.verlust,
     rb.beste[index] ?? null,
+    sans[index - 1] ?? null,
   );
 }
 
@@ -75,7 +78,7 @@ function phasenwechselText(
  * Markierungen, Balken und Karte für die gezeigte Stelle.
  *
  * Beispiel: Stelle 3 nach 1. e4 e5 2. Dh5?!: „?!“ auf h5, goldener Pfeil zum Zug der Engine,
- * Karte „2. Dh5?! kostet etwa 0,5 Bauern. Besser war 2. Sf3.“
+ * Karte „2. Dh5?!: Die Gewinnchance von Weiß fällt von 54 % auf 48 %. Besser war 2. Sf3.“
  */
 export function useRueckblick(
   rueckblick: Rueckblick | null,
@@ -83,11 +86,14 @@ export function useRueckblick(
   alle: readonly string[],
   sans: readonly string[],
   stelle: number,
-  phasen: readonly Phase[] = [],
+  phasen: readonly Phase[],
+  zweig: Zweigwahl,
 ): {
   marken: readonly Markierung[];
   leiste: ((gedreht: boolean) => ReactNode) | null;
   karte: ReactNode;
+  /** Der gezeigte Zug des Nebenzweigs (seit 0.2.85), sonst null. */
+  zweigzug: Zweigzug | null;
 } {
   const index = stelle - 1;
   const erklaerung = useMemo(
@@ -98,7 +104,23 @@ export function useRueckblick(
     () => (rueckblick && index >= 0 ? phasenwechselText(phasen, alle, index) : null),
     [rueckblick, phasen, alle, index],
   );
-  if (!rueckblick) return { marken: [], leiste: null, karte: null };
+  const zweigZuege = useMemo(() => {
+    if (!rueckblick || index < 0) return [];
+    // Der bessere Zug und die Hauptvariante danach (R5, 0.2.56); alte Auswertungen ohne Variante
+    // haben nur den besseren Zug.
+    const variante = rueckblick.varianten?.[index] ?? [];
+    const bester = rueckblick.beste[index] ?? "";
+    return zweigzuege(alle[index] ?? "", variante.length > 0 ? variante : bester ? [bester] : []);
+  }, [rueckblick, alle, index]);
+  // Die Strafe (0.2.85): die Hauptvariante der Engine in der Stellung nach dem Zug.
+  const strafZuege = useMemo(
+    () =>
+      rueckblick && index >= 0
+        ? zweigzuege(alle[index + 1] ?? "", rueckblick.varianten?.[index + 1] ?? [])
+        : [],
+    [rueckblick, alle, index],
+  );
+  if (!rueckblick) return { marken: [], leiste: null, karte: null, zweigzug: null };
   const marken =
     index >= 0
       ? [
@@ -122,7 +144,12 @@ export function useRueckblick(
         index={index}
         erklaerung={erklaerung}
         phasenwechsel={phasenwechsel}
+        zweig={zweig}
+        zweigZuege={zweigZuege}
+        strafZuege={strafZuege}
       />
     ) : null;
-  return { marken, leiste, karte };
+  const gewaehlt = zweig.art === "strafe" ? strafZuege : zweigZuege;
+  const zweigzug = zweig.schritt !== null ? (gewaehlt[zweig.schritt - 1] ?? null) : null;
+  return { marken, leiste, karte, zweigzug };
 }

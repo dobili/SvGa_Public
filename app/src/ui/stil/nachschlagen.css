@@ -124,25 +124,44 @@
 
 /* ---------- Training und Einstellungen (AP 5, Teil 5) ---------- */
 
+/* Trainer als Zeile mit Symbol (seit 0.2.85): Symbol, Name mit Fragezeichen, „Trainieren“. */
 .trainerkarte {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  padding: var(--raster) calc(var(--raster) * 1.5);
   background: var(--flaeche);
   border-radius: var(--radius);
   box-shadow: 0 0 0 1px var(--linie);
-  padding: 0 calc(var(--raster) * 2);
 }
 
-.trainerkarte summary {
-  min-height: 52px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--raster);
-  cursor: pointer;
+.trainerkarte-text {
+  flex: 1;
+  min-width: 0;
 }
 
-.trainerkarte p {
-  margin: 0 0 calc(var(--raster) * 1.5);
+.trainerkarte-text .mitinfo-erklaerung p {
+  margin: 0;
   font-size: 15px;
+}
+
+.trainersymbol {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--linie);
+  color: var(--gold-text);
+}
+
+.trainieren {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .trainer-name {

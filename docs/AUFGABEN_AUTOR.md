@@ -27,8 +27,46 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.85“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.86“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.86 (etwa 25 Minuten, mit Engine; Auswertung, Werkzeuge, Training, Opus)
+
+- [ ] N336. **Fehler im Rückblick:** Spiele eine Partie mit einem groben Fehler (etwa eine Figur
+      nicht zurückschlagen) und tippe ihn in der Zugliste an. Die Karte sagt jetzt „Die
+      Gewinnchance von Weiß fällt von 51 % auf 10 %“ statt „kostet etwa 6,2 Bauern“ (die Zahl der
+      Engine ist ihre eigene Einheit; eine Figur ergibt dort 5 bis 7). Lässt du einen Rückschlag
+      aus, steht dabei „schlägt nicht zurück: exf4 nahm den Springer f4 wieder …“ mit rotem Feld.
+      Das Fragezeichen neben dem Satz erklärt den Balken links am Brett und die Gewinnchance.
+- [ ] N337. **Nebenzweige:** In derselben Karte sind „Besser war …, danach etwa …“ und neu „So
+      wird der Fehler bestraft: …“ antippbare Züge. Ein Tipp zeigt die Stellung nach diesem Zug am
+      Brett, die Pfeile gehen Zug für Zug weiter, „Zurück zur Partie“ verlässt den Zweig. Die
+      Strafe steht bei „?“ und „??“ und zeigt, wie der Gegner Material gewinnt.
+- [ ] N338. **Auswertung:** Unter der Partie: in der Karte „Spielstärke“ oben der Schalter
+      „Genauigkeit wie“ (Lichess, Mittelweg, nahe chess.com), vor jeder Zeile ein Symbol, vor
+      jeder Zugklasse ihre farbige Marke; die Erklärungen stehen zusammen hinter einem
+      Fragezeichen. Grobe Patzer beider Seiten mit kleinem Bauern in der Farbe der Seite, ein Tipp
+      springt hin. Von den absichtlichen Fehlern der Engine stehen zuerst drei, „Alle N zeigen“
+      klappt den Rest auf. Bei Partien aus der Grundstellung fehlt „Noch einmal aus derselben
+      Stellung“.
+- [ ] N339. **Auswertung startet immer:** Hängt die Engine (etwa weil das Handy die App im
+      Hintergrund angehalten hat), startet die App sie nach spätestens etwa 15 Sekunden neu und
+      macht weiter. Bitte melden, wenn eine Auswertung trotzdem stehen bleibt.
+- [ ] N340. **Spielen:** „Partie beginnen“ steht direkt unter den drei Kacheln (Eigene Stufe,
+      Vorgefertigte Bots, Eigene Bots). Die Stufen der vorgefertigten Bots sind aufklappbar
+      (anfangs die Stufe des gewählten Bots); die App merkt sich, welche offen waren.
+- [ ] N341. **Werkzeuge:** Die Leiste unter dem Brett ist eine waagerecht scrollbare Reihe, jedes
+      Bündel mit Symbol (Eröffnung Tür, Angriffsregel Fadenkreuz, Fallencheck Schild, Skelett
+      Knochen, Planfindung Karte, Taktik Blitz, Endspiel Fahne, Denkroutine Gehirn), „frühere“
+      und „spätere“ am Anfang und Ende. Die Karten zeigen immer alles, „Mehr …“ gibt es nicht
+      mehr (etwa die zweite Seite bei der Angriffsregel).
+- [ ] N342. **Einstellungen:** Die Kachel mit Version, Update und Lizenzen heißt „Über die App“,
+      die mit Brett, Figuren und Training „Einstellungen“. Die Vorschau der Bretter und Figuren
+      zeigt 2 × 2 Felder, je Feld 40 % größer. Die Wertungskarte heißt „Deine Wertung“ (sie
+      zählt Ergebnisse); „Deine Spielstärke“ beim Spielen misst nur die Genauigkeit.
+- [ ] N343. **Training:** Die Trainingsseite zeigt je Kapitel eine Karte mit Nummer, jeder
+      Trainer als Zeile mit Symbol, Fragezeichen (Ablauf) und „Trainieren“. Im Kapitel stehen die
+      Übungen als Raster kleiner Nummern (grün gelöst, halb angefangen).
 
 ### Neu in 0.2.85 (etwa 20 Minuten, mit Engine; Elo-Zahl der Bots, Opus)
 
@@ -74,7 +112,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.85“, dann 
 
 ### Neu in 0.2.84 (etwa 5 Minuten; neue Bretter, Opus)
 
-- [ ] N328. **Bretter in drei Gruppen:** Einstellungen › „Darstellung und Training“ › Reiter
+- [ ] N328. **Bretter in drei Gruppen:** Zahnrad › Karte „Einstellungen“ › Reiter
       „Brett“. Unter „Farben“: Wie im Buch, Grün, Braun, Blau, Sand, Koralle, Lavendel, Nacht.
       Unter „Holz“: Ahorn & Nussbaum (das bisherige „Holz“, nur umbenannt; wer es gewählt hatte,
       behält es). Unter „Material“: Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (ganze
@@ -88,7 +126,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.85“, dann 
 
 ### Neu in 0.2.83 (etwa 20 Minuten, mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 
-- [ ] N324. **Genauigkeit wie:** Einstellungen › „Darstellung und Training“ › Reiter „Training“.
+- [ ] N324. **Genauigkeit wie:** Zahnrad › Karte „Einstellungen“ › Reiter „Training“.
       Oben „Genauigkeit wie“ mit Lichess, Mittelweg (vorgewählt) und nahe chess.com, darunter ein
       Satz, was der Modus tut. Lichess rechnet wie Lichess (trifft Lichess im Mittel auf 2 bis 3
       Prozentpunkte), nahe chess.com lässt Züge in längst entschiedener Stellung kaum zählen
@@ -122,7 +160,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.85“, dann 
       gegen die eigene Stufe beginnen: Die Engine übersieht dann oft Rückzüge. Die Wahl bleibt
       gespeichert; vorgefertigte und eigene Bots behalten ihre eigenen Flecken.
 
-- [ ] N322. **Neue Figurensätze:** Einstellungen › „Darstellung und Training“ › Reiter „Figuren“.
+- [ ] N322. **Neue Figurensätze:** Zahnrad › Karte „Einstellungen“ › Reiter „Figuren“.
       Oben „wie im Buch“, darunter drei Gruppen mit je drei Sätzen und Vorschau: Klassisch
       (Cburnett, Merida, Chessnut), Modern (Mpchess, Celtic, Spatial) und Holz (Kiefer &
       Kirsche, Eiche & Mahagoni, Esche & Ebenholz). Die bisherigen Sätze „klassisch“ und „Holz“
@@ -131,7 +169,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.85“, dann 
       erscheinen im neuen Satz. Unter Einstellungen › Lizenzen stehen Urheber und Lizenz jedes
       Satzes.
 
-- [ ] N323. **Reiter ohne Wackeln:** Einstellungen › „Darstellung und Training“: Die Reiterzeile
+- [ ] N323. **Reiter ohne Wackeln:** Zahnrad › Karte „Einstellungen“: Die Reiterzeile
       lässt sich nur noch waagerecht schieben, nicht mehr ein Stück senkrecht.
 
 ### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
@@ -159,7 +197,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.85“, dann 
 
 - [ ] N308. **Einstellungen neu geordnet:** Zahnrad öffnen. „Dein Fortschritt“ zeigt Abbildungen,
       Übungen und Trainer als goldene Ringe mit Prozentzahl, je Kapitel ein kleiner Ring. Die
-      Karte „Darstellung und Training“ hat oben Reiter mit Symbolen: Brett, Figuren, Anzeige, Ton,
+      Karte „Einstellungen“ hat oben Reiter mit Symbolen: Brett, Figuren, Anzeige, Ton,
       Training. Unter „Brett“ und „Figuren“ siehst du jede Wahl als kleinen Brettausschnitt mit
       vier Feldern und Figuren; tippe „Holz“ und dann den Reiter „Figuren“: Die Vorschau der
       Figuren steht jetzt auf Holz. Nachtmodus, Erklärkacheln und Sprache stehen unter „Anzeige“,

@@ -102,17 +102,31 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   // Rückblick (Vorschlag H, 0.2.38): Kurve über der Auswertung, Balken links am Brett. Nach
   // 2. g4?? setzt Schwarz matt: Der Balken zeigt „−M“.
   await expect(page.getByTestId("verlaufskurve")).toBeVisible();
-  await page.getByRole("button", { name: "2. g4??" }).click();
+  await page.getByTestId("partiezuege").getByRole("button", { name: "2. g4??" }).click();
   await expect(page.getByTestId("bewertungsbalken")).toHaveAttribute("aria-label", /−M/);
   // Seit 0.2.39: Karte zum Zug unter dem Brett (Urteil, besserer Zug) und die Spielstärke.
   const karte = page.getByTestId("rueckblickkarte");
-  await expect(karte).toContainText("2. g4?? kostet etwa");
+  // Seit 0.2.85 mit der Gewinnchance statt der Bauerneinheiten der Engine.
+  await expect(karte).toContainText(
+    /2\. g4\?\?: Die Gewinnchance von Weiß fällt von \d+ % auf \d+ %/,
+  );
   await expect(karte).toContainText("Besser war 2.");
+  // Seit 0.2.85 ist die Variante ein Nebenzweig: Ein Tipp zeigt sie am Brett, dann zurück.
+  const zweig = page.getByTestId("nebenzweig-besser");
+  await zweig.locator(".zweigzug").first().click();
+  await expect(zweig.locator(".zweigzug").first()).toHaveAttribute("aria-pressed", "true");
+  await zweig.getByRole("button", { name: "Zurück zur Partie" }).click();
+  await expect(zweig.getByRole("button", { name: "Zurück zur Partie" })).toHaveCount(0);
+  // Dazu die Strafe: 2... Dh4# als eigener Zweig.
+  await expect(page.getByTestId("nebenzweig-strafe")).toContainText("So wird der Fehler bestraft");
+  await expect(page.getByTestId("nebenzweig-strafe")).toContainText("Dh4#");
   // Seit 0.2.83 mit dem Modus (Standard Mittelweg).
   await expect(page.getByTestId("spielstaerke")).toContainText("Genauigkeit (Mittelweg)");
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
-  await expect(page.getByRole("button", { name: "2. g4??" })).not.toHaveAttribute("aria-current");
+  await expect(
+    page.getByTestId("partiezuege").getByRole("button", { name: "2. g4??" }),
+  ).not.toHaveAttribute("aria-current");
   await auswertung.getByRole("button", { name: "PGN kopieren" }).click();
   await expect(auswertung).toContainText(/PGN/);
   await page.screenshot({ path: "test-results/bilder/auswertung.png", fullPage: true });
@@ -247,6 +261,16 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   const gitter = page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" });
   // Der Wechsel wählt gleich den ersten Bot der Stufe im Mittelspiel (anfangs Stufe 1).
   await expect(gitter.getByRole("radio", { checked: true })).toHaveCount(1);
+  // Seit 0.2.85: Stufen aufklappbar, anfangs die des gewählten Bots offen; die App merkt sich
+  // die Wahl. „Partie beginnen“ steht über dem Gitter, direkt unter den drei Kacheln.
+  const stufen = page.locator("details.gegnerstufe");
+  await expect(stufen.nth(0)).toHaveAttribute("open", "");
+  await expect(stufen.nth(1)).not.toHaveAttribute("open", "");
+  await stufen.nth(1).locator("summary").click();
+  await expect(stufen.nth(1)).toHaveAttribute("open", "");
+  const knopf = await page.getByRole("button", { name: "Partie beginnen" }).boundingBox();
+  const gitterBox = await gitter.boundingBox();
+  expect((knopf?.y ?? Infinity) < (gitterBox?.y ?? 0)).toBe(true);
   // Elo-Zahl an Stufe, Kachel und Sprechblase (0.2.84, S23), mit Erklärung hinter dem Fragezeichen.
   await expect(
     gitter.getByRole("heading", { name: /^Stufe 1 · Einsteiger · (etwa|unter) \d+( bis .*\d+)?$/ }),
@@ -261,6 +285,11 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Eigene Stufen");
   await expect(staerke).toContainText(/Deine Einstellung \d · \d · \d · .*\(geschätzt\)/);
+  // Anderer Bereich und zurück: Das Gitter entsteht neu und liest den Merker.
+  await page.getByRole("navigation").getByRole("button", { name: "Buch" }).click();
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
+  await expect(stufen.nth(1)).toHaveAttribute("open", "");
 });
 
 test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.80)", async ({

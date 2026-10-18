@@ -12,12 +12,16 @@
  * Spanne, die Werte für chess.com und Lichess hinter dem Fragezeichen; das Urteilswort je Phase an
  * der inneren Genauigkeit. Seit 0.2.85 (S23) über der Tabelle die feste Zahl des Gegners neben
  * seiner Leistung in dieser Partie („Leon (etwa 1300) hat in dieser Partie wie etwa 1450 gespielt“).
- * Abhängigkeiten: engine/botstaerke.ts, staerkeangabe.ts, spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/taktik.ts, app/einstellungen.ts,
+ * Seit 0.2.86 (Wunsch des Autors): oben der Schalter „Genauigkeit wie“ (derselbe wie in den
+ * Einstellungen, zum schnellen Vergleich), vor jeder Zeile ein Symbol und vor jeder Zugklasse ihre
+ * farbige Marke (Auswertungssymbole.tsx).
+ * Abhängigkeiten: engine/botstaerke.ts, staerkeangabe.ts, spiel/genauigkeit.ts, spiel/auswertung.ts,
+ * spiel/taktik.ts, app/einstellungen.ts,
  * InfoKnopf, i18n.
  */
 import type { Color } from "chessops/types";
 import { Fragment, useMemo } from "react";
-import { useEinstellungen } from "../../app/einstellungen";
+import { aendereEinstellungen, useEinstellungen } from "../../app/einstellungen";
 import { gegnerstaerke } from "../../engine/botstaerke";
 import { t } from "../../i18n/sprache";
 import type { Zugklasse, Zugurteil } from "../../spiel/auswertung";
@@ -31,9 +35,13 @@ import {
 import { stellungen, type Partie } from "../../spiel/partie";
 import { PHASEN, type Phase } from "../../spiel/phasen";
 import { ZUGARTEN, zugartJeStellung } from "../../spiel/taktik";
+import { GENAUIGKEITSMODI } from "../../spiel/staerkemodell";
 import { sanZuUci } from "../../spiel/zuege";
+import { Auswahl } from "./Auswahl";
+import { Klassenmarke, Zeilenname } from "./Auswertungssymbole";
 import { MitInfo } from "./InfoKnopf";
 import { staerketext as angabetext } from "./staerkeangabe";
+import { KENNZAHLSYMBOLE, PHASENSYMBOLE } from "./zeilensymbole";
 
 /** Reihenfolge der Klassen in der Tabelle, wie bei chess.com von oben nach unten. */
 const KLASSEN: readonly Zugklasse[] = [
@@ -131,6 +139,13 @@ export function Spielstaerke({
   return (
     <section className="karte spielstaerke" data-testid="spielstaerke">
       <h2 className="karte-titel">{t("spielstaerke.titel")}</h2>
+      <Auswahl
+        name={t("einstellungen.genauigkeit")}
+        werte={GENAUIGKEITSMODI}
+        gewaehlt={modus}
+        text={(wert) => t(`einstellungen.genauigkeit.${wert}`)}
+        beiWahl={(genauigkeitsmodus) => aendereEinstellungen({ genauigkeitsmodus })}
+      />
       {gegnerzeile(partie, bilanz[andere]) && (
         <p className="hinweis" data-testid="gegner-heute">
           {gegnerzeile(partie, bilanz[andere])}
@@ -157,6 +172,7 @@ export function Spielstaerke({
           {PHASEN.map((ph) => (
             <Fragment key={ph}>
               <Phasenzeile
+                art={ph}
                 name={t(`phase.name.${ph}`)}
                 eigene={jePhase[ph][eigene]}
                 andere={jePhase[ph][andere]}
@@ -165,6 +181,7 @@ export function Spielstaerke({
                 ZUGARTEN.map((art) => (
                   <Phasenzeile
                     key={art}
+                    art={art}
                     name={t(`spielstaerke.zugart.${art}`)}
                     unterzeile
                     eigene={imMittelspiel[art][eigene]}
@@ -180,45 +197,58 @@ export function Spielstaerke({
         <tbody>
           {KLASSEN.map((k) => (
             <tr key={k}>
-              <th scope="row">{t(`zugklasse.${k}`)}</th>
+              <th scope="row">
+                <span className="zeilenname">
+                  <Klassenmarke klasse={k} />
+                  <span>{t(`zugklasse.${k}`)}</span>
+                </span>
+              </th>
               <td>{bilanz[eigene].klassen[k]}</td>
               <td>{bilanz[andere].klassen[k]}</td>
             </tr>
           ))}
         </tbody>
       </table>
-      <Skalen b={bilanz[eigene]} />
-      <p className="hinweis">{t("spielstaerke.erklaerung")}</p>
+      <Erklaerung b={bilanz[eigene]} />
     </section>
   );
 }
 
-/** Die Werte des Lesers auf beiden Skalen hinter dem Fragezeichen (seit 0.2.83). */
-function Skalen({ b }: { b: Seitenbilanz }) {
-  if (!b.schaetzung) return null;
+/**
+ * Erklärung der Karte hinter einem Fragezeichen: die Werte des Lesers auf beiden Skalen (seit
+ * 0.2.83) und wie die Zahlen entstehen (seit 0.2.85 zusammen, Wunsch des Autors).
+ */
+function Erklaerung({ b }: { b: Seitenbilanz }) {
   return (
     <MitInfo
-      zeile={<p className="hinweis">{t("spielstaerke.skalenKurz")}</p>}
+      zeile={<p className="hinweis">{t("spielstaerke.erklaerungKurz")}</p>}
       erklaerung={
-        <p>
-          {t("spielstaerke.skalen", {
-            chesscom: b.schaetzung.chesscom,
-            lichess: b.schaetzung.lichess,
-          })}
-        </p>
+        <>
+          {b.schaetzung && (
+            <p>
+              {t("spielstaerke.skalen", {
+                chesscom: b.schaetzung.chesscom,
+                lichess: b.schaetzung.lichess,
+              })}
+            </p>
+          )}
+          <p>{t("spielstaerke.erklaerung")}</p>
+        </>
       }
-      thema={t("spielstaerke.staerke")}
+      thema={t("spielstaerke.titel")}
     />
   );
 }
 
 /** Eine Zeile je Phase oder Zugart (Taktik, Strategie eingerückt), beide Seiten. */
 function Phasenzeile({
+  art,
   name,
   unterzeile = false,
   eigene,
   andere,
 }: {
+  art: keyof typeof PHASENSYMBOLE;
   name: string;
   unterzeile?: boolean;
   eigene: Seitenbilanz;
@@ -226,7 +256,9 @@ function Phasenzeile({
 }) {
   return (
     <tr className={unterzeile ? "spielstaerke-unterzeile" : undefined}>
-      <th scope="row">{name}</th>
+      <th scope="row">
+        <Zeilenname Symbol={PHASENSYMBOLE[art]} kinder={name} />
+      </th>
       <td>
         <Phasenzelle b={eigene} />
       </td>
@@ -284,7 +316,12 @@ function Zeilen({
     <>
       {zeilen.map((name, i) => (
         <tr key={name}>
-          <th scope="row">{name}</th>
+          <th scope="row">
+            {(() => {
+              const Symbol = KENNZAHLSYMBOLE[i];
+              return Symbol ? <Zeilenname Symbol={Symbol} kinder={name} /> : name;
+            })()}
+          </th>
           <td>{links[i]}</td>
           <td>{rechts[i]}</td>
         </tr>

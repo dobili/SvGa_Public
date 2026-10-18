@@ -1,10 +1,11 @@
 /**
  * Auswahl mit Vorschau: Brettfarben und Figurensätze als Kacheln mit kleinem Brettausschnitt.
  *
- * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): In der Karte „Darstellung und Training“
- * soll man sehen, wie Brett und Figuren aussehen, bevor man wählt. Jede Kachel zeigt vier Felder
- * (hell, dunkel, hell, dunkel) mit weißem König und Springer und schwarzem Springer und Bauern,
- * gezeichnet wie auf dem Brett (Figur.tsx, Holzfelder.tsx). Für Bildschirmleser eine Gruppe von
+ * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026): In der Karte „Einstellungen“
+ * soll man sehen, wie Brett und Figuren aussehen, bevor man wählt. Jede Kachel zeigt die Ecke a8
+ * bis b7 (2 × 2 Felder, seit 0.2.85 quadratisch und je Feld 40 % größer als die frühere Reihe aus
+ * vier Feldern, Wunsch des Autors) mit weißem König und Springer und schwarzem Springer und
+ * Bauern, gezeichnet wie auf dem Brett (Figur.tsx, Holzfelder.tsx). Für Bildschirmleser eine Gruppe von
  * Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck (aria-hidden). Seit 0.2.82 lassen sich
  * die Kacheln in Gruppen mit Überschrift teilen (Figurensätze: Klassisch, Modern, Holz).
  * Abhängigkeiten: app/einstellungen.ts (Typen), ui/brett/Figur.tsx, Holzfelder.tsx, masse.ts.
@@ -15,13 +16,15 @@ import { Figur } from "../brett/Figur";
 import { Brettbild, Holzfelder } from "../brett/Holzfelder";
 import { BRETTFARBEN, FELD, holzmuster } from "../brett/masse";
 
-/** Die vier Felder der Vorschau mit ihren Figuren (FEN-Zeichen). */
-const FELDER: readonly { hell: boolean; figur: string }[] = [
-  { hell: true, figur: "K" },
-  { hell: false, figur: "N" },
-  { hell: true, figur: "n" },
-  { hell: false, figur: "p" },
+/** Die vier Felder der Vorschau (a8, b8, a7, b7) mit ihren Figuren (FEN-Zeichen). */
+const FELDER: readonly { hell: boolean; figur: string; spalte: number; reihe: number }[] = [
+  { hell: true, figur: "K", spalte: 0, reihe: 0 },
+  { hell: false, figur: "N", spalte: 1, reihe: 0 },
+  { hell: false, figur: "n", spalte: 0, reihe: 1 },
+  { hell: true, figur: "p", spalte: 1, reihe: 1 },
 ];
+/** Seitenlänge der Vorschau in Feldern. */
+const SEITE = 2;
 
 /**
  * Ein Brettausschnitt aus vier Feldern mit Figuren.
@@ -35,17 +38,31 @@ export function Brettausschnitt({ farben, satz }: { farben: Brettfarben; satz: F
   return (
     <svg
       className="brettausschnitt"
-      viewBox={`0 0 ${FELDER.length * FELD} ${FELD}`}
+      viewBox={`0 0 ${SEITE * FELD} ${SEITE * FELD}`}
       aria-hidden="true"
     >
       {farben === "holz" && <Holzfelder kennung={kennung} />}
       {FELDER.map((f, i) => (
-        <rect key={i} x={i * FELD} y={0} width={FELD} height={FELD} fill={fuellung(f.hell)} />
+        <rect
+          key={i}
+          x={f.spalte * FELD}
+          y={f.reihe * FELD}
+          width={FELD}
+          height={FELD}
+          fill={fuellung(f.hell)}
+        />
       ))}
-      {/* Die obere linke Ecke des Brettbildes: a8 bis d8, hell, dunkel, hell, dunkel. */}
+      {/* Die obere linke Ecke des Brettbildes: a8, b8, a7, b7. */}
       {palette.bild && <Brettbild pfad={palette.bild} />}
       {FELDER.map((f, i) => (
-        <Figur key={i} zeichen={f.figur} x={i * FELD} y={0} satz={satz} farbe={palette.figur} />
+        <Figur
+          key={i}
+          zeichen={f.figur}
+          x={f.spalte * FELD}
+          y={f.reihe * FELD}
+          satz={satz}
+          farbe={palette.figur}
+        />
       ))}
     </svg>
   );

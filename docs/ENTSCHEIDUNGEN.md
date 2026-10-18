@@ -2506,18 +2506,19 @@ Sprechblasen). Mit dem korrigierten Stil holen die 20 Bots der Stufen 1 bis 4 mi
 
 Angepasst in der Endmessung (Begründung, Ergebnis danach):
 
-| Stufe | Bot          | Änderung                                                 | Ergebnis gegen die eigene Stufe                            |
-| ----- | ------------ | -------------------------------------------------------- | ---------------------------------------------------------- |
-| 2     | Ayşe         | „figurHaengen“ statt „koenigsschild“ (nur billige Arten) | vorher 10 : 2, jetzt 8 : 4 (12)                            |
-| 2     | Sophie       | „figurHaengen“ statt „ungenau“ (nur billige Arten)       | vorher 10 : 2, jetzt 8 : 4 (12)                            |
-| 5     | Hanna        | Fleck „ruhig“ statt „rueckzug“ (wie 0.2.67 sonst)        | vorher 0,5 : 5,5, jetzt 7 : 5 (12)                         |
-| 5     | Paul         | Fleck nur „abzug“ (statt „zwischenzug“, „turm“)          | 2,5 : 3,5                                                  |
-| 5     | Frau Kaya    | Fleck „springer“ gestrichen                              | vorher 1 : 5, jetzt 5 : 7 (12)                             |
-| 5     | Herr Weber   | Eröffnung 4 → 5                                          | vorher 1 : 5, jetzt 4,5 : 7,5 (12)                         |
-| 6     | Elif         | Mittelspiel 6 → 7, Fleck „ruhig“ statt „rueckzug“        | 3 : 3                                                      |
-| 7     | Yara         | Fleck „ruhig“ statt „rueckzug“                           | 1 : 5, gegen Stufe 6 4 : 2                                 |
-| 7     | Frau Dr. Ahl | Fleck „zwischenzug“ statt „bauer“                        | vorher 2,5 : 8,5, jetzt 1,5 : 4,5, gegen Stufe 6 4,5 : 1,5 |
-| 8     | WGM Sato     | Fleck „ruhig“ statt „rueckzug“                           | vorher 0 : 6, jetzt 2 : 4                                  |
+| Stufe | Bot          | Änderung                                                    | Ergebnis gegen die eigene Stufe                            |
+| ----- | ------------ | ----------------------------------------------------------- | ---------------------------------------------------------- |
+| 2     | Ayşe         | „figurHaengen“ statt „koenigsschild“ (nur billige Arten)    | vorher 10 : 2, jetzt 8 : 4 (12)                            |
+| 2     | Sophie       | „figurHaengen“ statt „ungenau“ (nur billige Arten)          | vorher 10 : 2, jetzt 8 : 4 (12)                            |
+| 5     | Hanna        | Fleck „ruhig“ statt „rueckzug“ (wie 0.2.67 sonst)           | vorher 0,5 : 5,5, jetzt 7 : 5 (12)                         |
+| 5     | Paul         | Fleck nur „abzug“ (statt „zwischenzug“, „turm“)             | 2,5 : 3,5                                                  |
+| 5     | Frau Kaya    | Fleck „springer“ gestrichen                                 | vorher 1 : 5, jetzt 5 : 7 (12)                             |
+| 5     | Herr Weber   | Eröffnung 4 → 5                                             | vorher 1 : 5, jetzt 4,5 : 7,5 (12)                         |
+| 6     | Elif         | Mittelspiel 6 → 7, Fleck „ruhig“ statt „rueckzug“           | 3 : 3                                                      |
+| 7     | Yara         | Fleck „ruhig“ statt „rueckzug“                              | 1 : 5, gegen Stufe 6 4 : 2                                 |
+| 7     | Frau Dr. Ahl | Fleck „zwischenzug“ statt „bauer“                           | vorher 2,5 : 8,5, jetzt 1,5 : 4,5, gegen Stufe 6 4,5 : 1,5 |
+| 8     | WGM Sato     | Fleck „ruhig“ statt „rueckzug“                              | vorher 0 : 6, jetzt 2 : 4                                  |
+| 8     | IM Haas      | Stil −1 statt −2 (Stufe 8 kann der Stil nur verschlechtern) | 0 : 6, gegen Stufe 7 vorher 1,5 : 4,5, jetzt 5,5 : 0,5     |
 
 Ergebnis aller 64 Bots in der Fassung von 0.2.81 (Punkte des Bots gegen die reine Stufe seiner
 Nummer, sechs Partien, „(12)“ zwei Stichproben):
@@ -2531,7 +2532,7 @@ Nummer, sechs Partien, „(12)“ zwei Stichproben):
 | 5     | Kurt 2 : 4; Frau Ortega 2,5 : 3,5; Nils 1,5 : 4,5; Hanna 7 : 5 (12); Herr Weber 4,5 : 7,5 (12); Lea 2,5 : 3,5; Paul 2,5 : 3,5; Frau Kaya 5 : 7 (12)                                                                                                                      |
 | 6     | Lena 7,5 : 4,5 (12); Viktor 2,5 : 3,5; Sara 3 : 3; Herr Fischer 2 : 4; Elif 3 : 3; Matteo 3,5 : 2,5; Frau Lind 1,5 : 4,5; Ben 2 : 4                                                                                                                                      |
 | 7     | Doktor Berg 4 : 2; Trainer Koch 1 : 5, gegen Stufe 6 3 : 3; Yara 1 : 5, gegen Stufe 6 4 : 2; Herr Brandt 1,5 : 4,5, gegen Stufe 6 3,5 : 2,5; Noah 3,5 : 8,5 (12), gegen Stufe 6 5 : 1; Frau Stein 2,5 : 3,5; Ravi 2 : 4; Frau Dr. Ahl 1,5 : 4,5, gegen Stufe 6 4,5 : 1,5 |
-| 8     | Großmeister Grün 3 : 3; IM Vogt 1,5 : 4,5; WGM Sato 2 : 4; FM Ortiz 2,5 : 3,5; GM Petrova 1 : 5; IM Haas 0 : 6; WIM Nkemelu 1,5 : 4,5; GM Lindqvist 2 : 4                                                                                                                |
+| 8     | Großmeister Grün 3 : 3; IM Vogt 1,5 : 4,5; WGM Sato 2 : 4; FM Ortiz 2,5 : 3,5; GM Petrova 1 : 5, gegen Stufe 7 3,5 : 2,5; IM Haas 0 : 6 vor der Anpassung, jetzt gegen Stufe 7 5,5 : 0,5; WIM Nkemelu 1,5 : 4,5; GM Lindqvist 2 : 4                                      |
 
 Grenzfälle, die so bleiben: Oma Gerda und Herr Nowak (je 3 : 9, beide sehr defensiv, genau an
 der Grenze), Nils, Frau Lind, Herr Brandt, Frau Dr. Ahl, IM Vogt und WIM Nkemelu (je 1,5 von 6).
@@ -2539,10 +2540,12 @@ Leon, Lukas und Herr Schmitt liegen am oberen, Trainer Koch (gegen Stufe 6 3 : 3
 Großmeister Grün, identisch mit der reinen Stufe 8, holt 3 : 3 und bestätigt damit, dass die
 Messung selbst nicht verzerrt.
 
-**Stufe 8 mit Stil:** IM Haas (sehr defensiv, Endspiel 7) 0 : 6 und GM Petrova (defensiv) 1 : 5
-gegen die volle Engine. Auf Stufe 8 ist der Zug der Stufe der beste, der Stil kann dort nur
-schwächere Züge wählen (bis 0,3 je Stilstufe); gegen Stufe 7: IM Haas HAAS7, GM Petrova PETROVA7.
-Der Hinweis zum Stil in der App sagt deshalb, dass ein Stil auf Stufe 8 schwächer macht.
+**Stufe 8 mit Stil:** IM Haas (sehr defensiv, Endspiel 7) holte gegen die volle Engine 0 : 6
+und gegen Stufe 7 nur 1,5 : 4,5, GM Petrova (defensiv) 1 : 5 und gegen Stufe 7 3,5 : 2,5. Auf
+Stufe 8 ist der Zug der Stufe der beste, der Stil kann dort nur schwächere Züge wählen (bis 0,3
+je Stilstufe). IM Haas spielt deshalb jetzt mit Stil −1 statt −2 und schlägt Stufe 7 mit
+5,5 : 0,5; GM Petrova bleibt. Der Hinweis zum Stil in der App sagt, dass ein Stil auf Stufe 8
+schwächer macht, sehr aggressiv oder sehr defensiv etwa um eine Stufe.
 
 ## Spielbewertung an chess.com geeicht, Urteil je Phase, Taktik und Strategie (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.72)
 

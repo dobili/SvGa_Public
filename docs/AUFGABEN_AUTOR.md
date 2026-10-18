@@ -31,6 +31,26 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.81“, dann 
 älteren Abschnitte.
 
 ### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
+
+- [ ] N295. **Bots passen zu ihrer Stufe:** Jeder der 64 Bots hat gegen die reine Engine seiner
+      Stufe gespielt, Grenzfälle zweimal. Dabei kamen zwei Fehler ans Licht, beide behoben. Ein
+      Bot mit Stil (aggressiv oder defensiv) wählte nahe am besten Zug der Engine statt nahe an
+      dem Zug, den seine Stufe spielen würde; damit spielten Bots mit Stil in den Stufen 1 bis 4
+      fast so gut wie die Engine. Jetzt wählt der Stil um den Zug der Stufe herum, nach oben wie
+      nach unten. Er ändert den Charakter, kaum die Stärke; nur auf Stufe 8, wo der Zug der Stufe
+      der beste ist, macht ein Stil schwächer. Der Hinweis beim Stil der eigenen Gegner sagt das.
+      Außerdem hatte das Messwerkzeug 25 Bots falsch gemessen. Ergebnis: Alle Bots der Stufen 1
+      bis 4 holen gegen ihre Stufe zwischen einem Viertel und drei Vierteln der Punkte. Ab
+      Stufe 5 sind Bots eher etwas schwächer als die reine Stufe, liegen aber über der Stufe
+      darunter. Geändert gegenüber 0.2.67 sind elf Bots, die Sprechblasen der zehn mit neuem Fleck oder neuer Fehlerart sagen es: Ayşe und
+      Sophie (Stufe 2) lassen jetzt auch Figuren hängen; Hanna, Elif, Yara und WGM Sato übersehen
+      ruhige Züge statt Rückzügen (Rückzüge zu übersehen war viel zu teuer); Paul übersieht nur
+      noch Abzüge; Frau Kaya nur noch Fesselungen; Herr Weber spielt die Eröffnung stärker; Frau
+      Dr. Ahl übersieht Zwischenzüge statt stiller Bauernzüge; IM Haas (Stufe 8) spielt etwas weniger defensiv, weil der Stil auf Stufe 8 nur schwächer machen kann. **So prüfen:** Spiele gegen einen
+      Bot der Stufe 2 mit Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv). Er sollte
+      etwa so viele Fehler machen wie die Stufe 2 selbst und deutlich mehr als vor 0.2.78. Sieh
+      in der Gegnerwahl die Sprechblasen der geänderten Bots an.
+
 ### Neu in 0.2.80 (etwa 25 Minuten, mit Engine; Einstellungen, Kapitelseiten und Spielen neu geordnet, dein Wunsch vom 18.10.2026, Opus)
 
 - [ ] N308. **Einstellungen neu geordnet:** Zahnrad öffnen. „Dein Fortschritt“ zeigt Abbildungen,
@@ -79,27 +99,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.81“, dann 
       für den Zug, den die Engine jetzt spielen würde. Probiere einmal absichtlich einen
       schlechten Zug (etwa die Dame einstellen), damit du Schritt 3 siehst. In gewerteten
       Partien gibt es den Knopf nicht (wie vorher den Hinweis).
-
-### Neu in 0.2.78 (etwa 15 Minuten, mit Engine; Bots mit Stil spielen so stark wie ihre Stufe, Opus)
-
-- [ ] N295. **Bots passen zu ihrer Stufe:** Jeder der 64 Bots hat gegen die reine Engine seiner
-      Stufe gespielt, Grenzfälle zweimal. Dabei kamen zwei Fehler ans Licht, beide behoben. Ein
-      Bot mit Stil (aggressiv oder defensiv) wählte nahe am besten Zug der Engine statt nahe an
-      dem Zug, den seine Stufe spielen würde; damit spielten Bots mit Stil in den Stufen 1 bis 4
-      fast so gut wie die Engine. Jetzt wählt der Stil um den Zug der Stufe herum, nach oben wie
-      nach unten. Er ändert den Charakter, kaum die Stärke; nur auf Stufe 8, wo der Zug der Stufe
-      der beste ist, macht ein Stil schwächer. Der Hinweis beim Stil der eigenen Gegner sagt das.
-      Außerdem hatte das Messwerkzeug 25 Bots falsch gemessen. Ergebnis: Alle Bots der Stufen 1
-      bis 4 holen gegen ihre Stufe zwischen einem Viertel und drei Vierteln der Punkte. Ab
-      Stufe 5 sind Bots eher etwas schwächer als die reine Stufe, liegen aber über der Stufe
-      darunter. Geändert gegenüber 0.2.67 sind zehn Bots, ihre Sprechblasen sagen es: Ayşe und
-      Sophie (Stufe 2) lassen jetzt auch Figuren hängen; Hanna, Elif, Yara und WGM Sato übersehen
-      ruhige Züge statt Rückzügen (Rückzüge zu übersehen war viel zu teuer); Paul übersieht nur
-      noch Abzüge; Frau Kaya nur noch Fesselungen; Herr Weber spielt die Eröffnung stärker; Frau
-      Dr. Ahl übersieht Zwischenzüge statt stiller Bauernzüge. **So prüfen:** Spiele gegen einen
-      Bot der Stufe 2 mit Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv). Er sollte
-      etwa so viele Fehler machen wie die Stufe 2 selbst und deutlich mehr als vor 0.2.78. Sieh
-      in der Gegnerwahl die Sprechblasen der zehn geänderten Bots an.
 
 ### Neu in 0.2.75 (etwa 5 Minuten; diese Datei in der App, Opus)
 

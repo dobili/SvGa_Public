@@ -3131,6 +3131,28 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N344** (Auswertung auf dem Handy): von Claude geprüft am 18.10.2026: Partie zu zweit (24 Halbzüge, aufgegeben): Karte „Spielstärke“ 348 px breit, Tabellen innerhalb, kein Überlauf der Seite; „Genauigkeit wie“ in einer Zeile mit Fragezeichen
 - **N345** (Trainer): von Claude geprüft am 18.10.2026: alle 19 „Trainieren“-Knöpfe rund mit Abspielsymbol, kein Name abgeschnitten oder vom Fragezeichen verdeckt
 - **N346** (Bretter): von Claude geprüft am 18.10.2026: Gruppe „Holz und Material“ da, „Genauigkeit wie“ fehlt unter Einstellungen › Training
+- **N160** (Warum-Fragen): von Claude geprüft am 18.10.2026: Warum-Fragen an 1.26, 2.2 und 5.17 nach 30 s aufgeklappt, nirgends „vorbereitet“
+- **N162** (Vorlauf): von Claude geprüft am 18.10.2026: Zugfolgen von 6.11 (61 Halbzüge) und 11.68 (18) führen von der Grundstellung genau zur Stellung der Abbildung; in der App von „Zum Anfang“ Halbzug für Halbzug bis zum Brett der Abbildung
+- **N163** (Zielbilanz, Abb. 2.40): von Claude geprüft am 18.10.2026: 2.40: „Zentrum: ja – … e4 ist angegriffen“, e4 grau umrahmt (Sicht Weiß), darunter „Sxe4 gewinnt den Bauern e4 nicht: 3... Sxe4 4. De2 …“; 2.24: „d4 und e4“
+- **N164** (Todsünden, Abb. 1.8): von Claude geprüft am 18.10.2026: 1.8: Überschrift „Mögliche Todsünden“, Hinweis „Nur Kandidaten …“, „3... Df6: mögliche verfrühte Dame“
+- **N165** (Phase): von Claude geprüft am 18.10.2026: 11.28: „Eröffnung … Schwarz muss noch rochieren“, auch nach Wechsel der Sicht (über Röntgen; die Karte „Phase“ hat keinen eigenen Schalter); 12.2: Mittelspiel
+- **N166** (Faktorenbilanz): von Claude geprüft am 18.10.2026: 3.6 „Weiß: teils – rochiert, aber ohne f-Bauern vor dem König“; 3.60 nur „Matt: Die Partie ist entschieden.“; 3.23 beginnt mit „Erst das Schach und die Taktik zu Ende rechnen …“
+- **N167** (Warnsignale): von Claude geprüft am 18.10.2026: die drei Sätze an 4.29 (W4), 4.8 (W2) und 4.13 (W5) wörtlich
+- **N168** (Skelett-Röntgen): von Claude geprüft am 18.10.2026: 5.30 Richtung für Weiß; 5.27 Hebel c4–c5 gold, weitere Hebel grau; 5.40 Läufer f4 mit goldenem Rahmen in Sicht Weiß; 5.13 „Luftloch h3: der König hat Luft auf h2“
+- **N169** (Planfindung): von Claude geprüft am 18.10.2026: 6.4 in Sicht Schwarz „Der Gegenschlag ist schon da: d5 greift e4 an“; 6.17 LAP „Dringe mit Turm d2 nach d7 ein“ mit goldenem Pfeil; 6.32 nur „Erst das Schach beantworten …“
+- **N170** (Taktik): von Claude geprüft am 18.10.2026: 7.14 alle Kandidaten mit „Material bis zur Ruhe“, „Am stärksten: 2. Th8+“, am Brett „2+!“; 7.10 „Sf7+: Abzug.“; 7.28 „De1+: Dauerschach.“; Übung an 7.53 „Dxc7: Überlastung.“
+- **N171** (Opposition): von Claude geprüft am 18.10.2026: 8.23 nur Kf3, 8.36 der Quadrat-Satz, 8.53 „Reserve-Tempo h4“
+- **N172** (Schlüsselfelder und Quadrat): von Claude geprüft am 18.10.2026: 8.29 „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“, 8.50 Satz zu verbundenen Freibauern, 8.46 „Nach a6 läuft der Bauer a6 durch“
+- **N173** (Turmendspiel und Erkennungsbilder): von Claude geprüft am 18.10.2026: 9.3 Philidor-Satz, 9.23 „Mehrere Bauern am Brett“, 9.37 „getrennte Freibauern b5 und g5: meist gewonnen“
+- **N174** (Kandidaten): von Claude geprüft am 18.10.2026: 12.4: „Auf b5: Dxf7# (Matt) – scheidet aus“, b5 nicht bester Kandidat; 12.3: „Auf f5: Sxe6 …“
+- **N196** (Getauschte Abbildungen): von Claude geprüft am 18.10.2026: 2.29, 2.30, 3.31 bis 3.34 von „Zum Anfang“ nachgespielt (an Abzweigen über „Andere Züge hier“): Das Brett stimmt jeweils mit der Abbildung überein
+- **N202** (Nummernsprung): von Claude geprüft am 18.10.2026: Tipp auf den Titel öffnet und schließt „Abbildung öffnen“, „1,28“ öffnet 1.28, „1.99“ meldet „gibt es nicht“ mit Vorschlägen, „Zurück“ führt zurück
+- **N203** (Werkzeugtexte ohne Zahl): von Claude geprüft am 18.10.2026: 1.30 „Sxd4: gewinnt den Bauern“, 4.11 „Lxf3 (schlägt die Dame mit Gewinn)“, 7.14 „+5 (gewinnt die Dame); Engine +6,5“. An 4.13 lautet die Prüffrage „Sxd5 nimmt Material: Warum lässt Schwarz das zu?“, weil der nächste Buchzug selbst schlägt (so gewollt)
+- **N247** (Berliner Endspiel (C8)): von Claude geprüft am 18.10.2026: 5.30 in Sicht Schwarz „Minderheit am Königsflügel (3 gegen 4)“ ohne Minderheitsangriff, Fazit „Schwarz spielt am Damenflügel …“; 5.32 für Weiß „Minderheitsangriff“
+- **N274** (Werkzeuge (C1, C2, C5)): von Claude geprüft am 18.10.2026: 3.68 „Weiß: schlecht – der König steht im Schach und hat nur einen Zug“; 4.21 nur g2; 9.34 „Dauerschach“; Startseite „in Richtung Elo 2000“
+- **N288** (Isolani aus Besitzersicht und Sonderfall 6. Reihe): von Claude geprüft am 18.10.2026: 5.17 Satz gegen den Isolani für Schwarz und Besitzer-Satz für Weiß; 5.18 ohne Isolani-Satz; 8.29 aus Sicht Schwarz „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“
+- **N300** (Leerfälle der Werkzeuge (U12)): von Claude geprüft am 18.10.2026: die Leer-Sätze an 8.2 (Opposition, Schlüsselfelder, Quadrat), 1.26 (Sechs Regeln) und 8.1 (Zielbilanz, Angriffsregel) wörtlich und je einmal, ohne Legende; Zielbilanz im Mittelspiel (12.2) und Faktorenbilanz an 3.24 voll
+- **N313** (Phase nach dem Glossar (S17)): von Claude geprüft am 18.10.2026: 11.4 zeigt den Glossar-Satz wörtlich, 11.12 Mittelspiel; die eigene Lesart in Partien prüfte die Gruppe Spielen (N233)
 
 ### Teil 2 im Wortlaut vor dem Umbau
 

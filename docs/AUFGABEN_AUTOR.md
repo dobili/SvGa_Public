@@ -244,14 +244,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 
 ### Neu in 0.2.68 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
 
-- [ ] N288. **Isolani aus Besitzersicht und Sonderfall 6. Reihe:** Abb. 5.17, Werkzeug „Richtung“:
-      Für Schwarz weiter „spielt gegen den Isolani d4: Blockiere das Feld davor (d5) …“; für Weiß
-      (Brett drehen oder Sicht wechseln) jetzt „Weiß hat den Isolani d4: Spiele aktiv mit den
-      Figuren (offene Linien für die Türme, Sprungbrett für den Königsangriff), bereite den
-      Vorstoß d4–d5 vor und tausche möglichst keine Figur.“ Abb. 5.18 (Isolani d5, vom Springer
-      blockiert): kein solcher Satz. Abb. 8.29, Werkzeug „Schlüsselfelder“ aus Sicht von Schwarz:
-      „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“ Die übrigen zwölf Gruppen der Helferliste
-      waren schon erledigt; die Zeit-Zählhilfe ist ein Befund an dich (B6).
 - [ ] N289. **Eigener Bot mit nur einer Fehlerart:** Einen eigenen Bot 2 · 2 · 2 mit nur dem Haken
       „patt gesetzt“ anlegen und spielen. Er sollte etwa so viele Fehler machen wie Stufe 2 (etwa
       jeder vierte Zug), meist kleine Ungenauigkeiten, weil die gewählte Art fast nie passt.
@@ -290,19 +282,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       löschen. Im Rückblick einer beendeten Partie steht unter jeder Zugkarte „In die
       Fehlerdatenbank“: Es öffnet dasselbe Formular mit der Stellung vor dem Zug. Siehe F1.
 
-### Neu in 0.2.64 (etwa 10 Minuten; Leerfälle U12, Opus)
-
-- [ ] N300. **Leerfälle der Werkzeuge (U12):** Greift ein Werkzeug in einer Stellung nicht, steht
-      in der Karte nur noch ein Satz, wann es gilt und warum hier nicht, ohne leere Befunde und
-      ohne Legende. Probe: Abb. 8.2 (Damen am Brett), Werkzeug „Opposition“: „Die Opposition gilt
-      im Bauernendspiel, wenn außer Königen und Bauern nichts mehr am Brett steht. Hier nicht: Es
-      stehen noch Figuren außer Königen und Bauern am Brett.“ Ebenso Schlüsselfelder und Quadrat.
-      Abb. 1.26, „Sechs Regeln“: „… Hier nicht: Es ist Eröffnung.“ Abb. 8.1, Angriffsregel und
-      Zielbilanz: „Hier nicht: Es ist Endspiel.“ Bei Planbilanz, Elementarmatt, Quadrat,
-      Erkennungsbildern, Turmendspiel, LAP, Wo?, Gegner? und Schlüsselfeldern steht der Satz nicht
-      mehr doppelt (als Befund und als Fazit). Die Zielbilanz bleibt im Mittelspiel voll (das Buch
-      nutzt sie dort, Kapitel 2), die Faktorenbilanz in Eröffnung und Endspiel (Abb. 3.24).
-
 ### Neu in 0.2.63 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
 
 - [ ] N294. **Impressum und Datenschutz:** <https://schach-von-grund-auf.com/impressum/> und
@@ -325,11 +304,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 - [ ] N312. **Stil (S13):** Eigener Gegner › Stil: Unter dem Regler steht jetzt, dass ein Stil die
       Spielstärke deutlich senken kann (bei „sehr aggressiv“ oder „sehr defensiv“ etwa eine halbe
       Stufe). Eine Partie gegen einen Gegner mit „sehr aggressiv“ fühlt sich spürbar wilder an.
-- [ ] N313. **Phase nach dem Glossar (S17):** Abb. 11.4, Werkzeug „Phase“: „Eröffnung: Nach dem
-      Glossar beginnt das Mittelspiel erst, wenn beide Seiten entwickelt sind und rochiert haben.
-      Noch offen: Weiß muss noch rochieren; Schwarz muss noch entwickeln und rochieren.“ Abb. 11.12
-      (Colle, schwarzer König gejagt): Mittelspiel. In einer eigenen Partie gilt weiter deine Lesart
-      (eine Seite entwickelt genügt). Siehe auch D2.
 - [ ] N314. **Sonderzüge aus Kapitel 0 (U5):** Training › Koordinaten › „Zug ausführen“: Unter den
       Sonderzügen stehen jetzt die Stellungen 0.12 bis 0.19 („aus Abb. 0.12“ usw.), mit kurzer und
       langer Rochade für beide Seiten, en passant und Umwandlung. Etwa jeder vierte Sonderzug kommt
@@ -422,10 +396,6 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
       „Vorposten besetzen“.
 - [ ] N273. **Studien (W11):** Über der Studie die aufklappbare Zeile „Die vier Prüfungen für
       Studien (Kapitel 10)“ mit den vier Prüfungen in kurzen Worten.
-- [ ] N274. **Werkzeuge (C1, C2, C5):** Abb. 3.68, Faktorenbilanz: „Weiß: schlecht – der König
-      steht im Schach und hat nur einen Zug“, kein „Weiß liegt vorn bei Königssicherheit“ mehr.
-      Abb. 4.21, Warnsignale: nur „Bauer g2, einziger Verteidiger von f3 gegen Sxf3#“, kein e2 mehr.
-      Abb. 9.34, Motiv: „Dauerschach“. Startseite: „in Richtung Elo 2000“ statt „etwa 2000 Elo“.
 
 ### Neu in 0.2.53 (etwa 10 Minuten; zwei Trainer der Stufe 3, Opus)
 
@@ -525,11 +495,6 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
 - [ ] N246. **Geschätzte Spielstärke (R3):** In der Karte „Spielstärke“ unter der Auswertung
       heißt die Zeile jetzt „Geschätzte Spielstärke“, der Wert „etwa 1400“. Die Erklärung sagt
       „keine Wertungszahl eines Verbands“.
-- [ ] N247. **Berliner Endspiel (C8):** Abb. 5.30 › Werkzeug „Richtung“ aus schwarzer Sicht: Die
-      Zeile heißt nur noch „Minderheit am Königsflügel (3 gegen 4)“ ohne „Ziel ist ein
-      Minderheitsangriff“; das Fazit lautet „Schwarz spielt am Damenflügel: Dort bildet die
-      Mehrheit einen Freibauern.“ Abb. 5.32 (Carlsbad)
-      sagt für Weiß weiter „Minderheitsangriff“.
 - [ ] N249. **Wiederholung in Taktik und „Falle oder Köder“ (U9):** Im Taktiktrainer eine Aufgabe
       mit „Lösung zeigen“ beenden. Im Bereich Training steht unter „Fällige Wiederholungen“ ein
       Termin für morgen. Am nächsten Tag steht dort „Taktiktrainer: 1 fällig“; der Knopf führt in
@@ -686,16 +651,6 @@ Neu: Figurensätze „klassisch“ und „Holz“, Nummernsprung in der Kopfzeil
 „+9“, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung für die Engine. **Vorher:** In den
 Einstellungen muss „App-Version 0.2.39“ stehen.
 
-- [ ] N202. **Nummernsprung:** In Abb. 1.26 auf den Titel „Abb. 1.26“ tippen: Unter der
-      Kopfzeile erscheint „Abbildung öffnen“. „1,28“ eintippen und „Öffnen“: Abb. 1.28 ist da,
-      „Zurück“ führt zum Kapitel. „1.99“: „Abbildung 1.99 gibt es nicht“ mit Vorschlägen.
-      Ein zweiter Tipp auf den Titel schließt das Feld.
-- [ ] N203. **Werkzeugtexte ohne Zahl:** Abb. 1.30, Röntgen: „Sxd4 gewinnt den Bauern“ (statt
-      „Sxd4 (+1)“). Abb. 4.11, Warnsignale: „W5 … Lxf3 (schlägt die Dame mit Gewinn)“. Abb. 7.14,
-      Erzwingende Züge nach der Engine: „Material bis zur Ruhe: +5 (gewinnt die Dame); Engine
-      +6,2“. Abb. 4.13, Prüffragen: „… scheint den Bauern zu gewinnen: Warum lässt … das zu?“.
-      Nur das Werkzeug „Zählen“ (Abtauschbilanz), die Faktorenbilanz (Material) und die
-      Kandidatenzeile zeigen weiter Zahlen, immer mit dem Wort „Material“ oder „Bilanz“ dabei.
 - [ ] N205. **Erklärung mit Markierung:** Spielen › Grundstellung, Stufe 1, als Schwarz: 1. e4 e5 2. Dh5 Sf6?? (du spielst absichtlich Sf6). Nach dem Ende und der Auswertung auf „2... Sf6??“
       tippen: Karte „Du lässt die Drohung Dxe5+ stehen (gewinnt den Bauern).“, roter Pfeil h5–e5,
       rotes Feld e5. Andere Fehlerarten lauten „lässt Läufer a3 ungedeckt hängen (W1)“ (rotes
@@ -780,9 +735,6 @@ Trainer.
 
 ### Neu in 0.2.35 (etwa 10 Minuten; neuer Buchstand vom 16.10.2026)
 
-- [ ] N196. **Getauschte Abbildungen:** Abb. 2.29 zeigt die Greco-Variante nach 10... d5!, Abb.
-      2.30 die Stellung nach 10... Lxa1? 11. Lxf7+ Kf8 12. Lg5. Abb. 3.31 nach 12. Kh1, 3.32 nach 13. f4 (mit der Bilanz), 3.33 nach 7... Sxd4??, 3.34 nach 9. Lb5+!. Jeweils nachspielen: Die
-      Zugleiste führt genau zu dieser Stellung.
 - [ ] N197. **Neue Nummern der Übungen:** Kapitel 3 (Übungen 14 bis 18), Kapitel 4 (19 bis 22) und
       Kapitel 12 (84 bis 86) stehen in der neuen Reihenfolge des Buches.
 
@@ -817,57 +769,17 @@ Regeln C1 und C2).
 
 - [ ] N158. **Kein Spielziel:** Spielen: Es gibt keine Auswahl „Spielziel“ mehr. Nach dem Ende
       einer Partie steht nur das Ergebnis, kein „Ziel erreicht/verfehlt“.
-- [ ] N160. **Warum-Fragen:** Bei den Warum-Fragen steht kein „vorbereitet“ mehr.
 - [ ] N161. **Werkzeuge in der Partie:** Partie beginnen. Am Brett unten rechts: Zählen, Röntgen,
       W1–W7. Röntgen antippen: die Karte erscheint, ziehen geht weiter. Zählen antippen, dann ein
       Feld: Es wird gezählt statt gezogen; Zählen abwählen, dann wird wieder gezogen. Unter dem
       Brett die Bündel (Eröffnung prüfen bis Denkroutine) mit Reitern, etwa Taktik › Erzwingende
       Züge (die Engine rechnet die Kandidaten durch). In der ruhigen Ansicht (Auge) ist alles weg.
-- [ ] N162. **Vorlauf:** Abb. 6.11 und Abb. 11.68 lassen sich jetzt von der Grundstellung an
-      nachspielen (Karpow–Unzicker bzw. London-System).
 
 **Kapitel 1 bis 4**
 
-- [ ] N163. **Zielbilanz, Abb. 2.40:** „Zentrum: ja – … e4 ist angegriffen“ (grau, nicht rot);
-      nach ein paar Sekunden darunter „Engine: Sxe4 gewinnt den Bauern e4 nicht: 3... Sxe4 4. De2 …“. Abb. 2.24: „d4 und e4“.
-- [ ] N164. **Todsünden, Abb. 1.8:** Überschrift „Mögliche Todsünden“, oben der Hinweis „Nur
-      Kandidaten …“, Zeile „3... Df6: mögliche verfrühte Dame“.
-- [ ] N165. **Phase:** Abb. 11.28 (Anderssen–Dufresne): seit 0.2.61 nach dem Glossar „Eröffnung“
-      (Schwarz hat nicht rochiert), auch wenn du die Sicht wechselst. Abb. 12.2: Mittelspiel.
-- [ ] N166. **Faktorenbilanz:** Abb. 3.6: „Weiß: teils – rochiert, aber ohne f-Bauern vor dem
-      König“. Abb. 3.60 (Weiß matt): nur „Matt: Die Partie ist entschieden.“ Abb. 3.23 (Schach):
-      oben „Erst das Schach und die Taktik zu Ende rechnen …“.
-- [ ] N167. **Warnsignale:** Abb. 4.29: W4 „Springer f3, einziger Verteidiger von h2 gegen
-      Dxh2#“. Abb. 4.8: W2 „Läufer b2 – Dame e5 – Bauer g7 (weicht die Dame, fällt g7)“.
-      Abb. 4.13: W5 „scheinbar: Bauer d5, nur von der gefesselten Figur f6 gedeckt …“.
-
 **Kapitel 5 bis 7**
 
-- [ ] N168. **Skelett-Röntgen:** Abb. 5.30 (Berliner Endspiel), Richtung: „Weiß spielt am
-      Königsflügel: Dort bildet die gesunde Mehrheit mit dem Kandidaten e5 einen Freibauern …“.
-      Abb. 5.27: „Hebel c4–c5 gegen die Basis d6“ gold, darunter „Weitere Hebel“ grau. Abb. 5.40,
-      Figuren: „Läufer f4: schlecht nach der Farbe, aber aktiv …“, f4 gold. Abb. 5.13, Felder:
-      „Luftloch h3: der König hat Luft auf h2“.
-- [ ] N169. **Planfindung:** Abb. 6.4 aus schwarzer Sicht, Wo?: „Der Gegenschlag ist schon da: d5
-      greift e4 an“. Abb. 6.17, LAP: „Dringe mit Turm d2 nach d7 ein …“ (goldener Pfeil). Abb. 6.32
-      (Schach): nur „Erst das Schach beantworten …“.
-- [ ] N170. **Taktik:** Abb. 7.14, Erzwingende Züge: nach und nach je Kandidat „Material bis zur
-      Ruhe: …“;
-      „Am stärksten: 2. Th8+“, am Brett „2+!“. Abb. 7.10, Motiv: „Sf7+: Abzug“ (die Zugfolge
-      beginnt jetzt mit 1. Sf7+). Abb. 7.28: „De1+: Dauerschach.“ Übung 7.53: Überlastung.
-
 **Kapitel 8, 9 und 12**
-
-- [ ] N171. **Opposition:** Abb. 8.23: nur Kf3. Abb. 8.36: „Hier entscheidet nicht die
-      Opposition, sondern das Quadrat …“. Abb. 8.53: „… das Reserve-Tempo h4 …“.
-- [ ] N172. **Schlüsselfelder und Quadrat:** Abb. 8.29: Fazit „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“ Abb. 8.50: „Die Quadratregel gilt nur für einen Bauern allein; verbundene
-      Freibauern schützen sich gegenseitig …“. Abb. 8.46: „Nach a6 läuft der Bauer a6 durch …“.
-- [ ] N173. **Turmendspiel und Erkennungsbilder:** Abb. 9.3: „Philidor: Turm auf der 3. Reihe von
-      dir aus, nach dem Bauernzug von hinten Schach geben.“ Abb. 9.23: „Mehrere Bauern am Brett“.
-      Abb. 9.37: „… getrennte Freibauern b5 und g5: meist gewonnen …“.
-- [ ] N174. **Kandidaten:** Abb. 12.4: b5 ist nicht mehr der beste Kandidat (nach b5 folgt Dxf7#,
-      der Kandidat scheidet aus). Abb. 12.3: Die App prüft die Abwehrzüge und findet auf 3... f5
-      die Antwort 4. Sxe6.
 
 ---
 

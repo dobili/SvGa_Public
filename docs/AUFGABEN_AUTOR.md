@@ -27,8 +27,19 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.86“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.87“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.87 (etwa 5 Minuten; Rückmeldung zu 0.2.86, Opus)
+
+- [ ] N344. **Auswertung auf dem Handy:** Die Tabellen der Karte „Spielstärke“ bleiben in der
+      Karte (vorher liefen sie nach rechts über); lange Wörter brechen in der Zelle um, die
+      Urteilswörter je Phase dürfen zweizeilig werden. „Genauigkeit wie“ ist eine Leiste in einer
+      Zeile (Lichess | App | chess.com) mit Fragezeichen.
+- [ ] N345. **Trainer:** Der Knopf „Trainieren“ ist jetzt ein runder Knopf mit Abspielsymbol;
+      lange Namen wie „Abweichungsmodus“ und das Fragezeichen werden nicht mehr verdeckt.
+- [ ] N346. **Bretter:** Holz und Material sind eine Gruppe „Holz und Material“. In den
+      Einstellungen › Training steht „Genauigkeit wie“ nicht mehr (siehe N324).
 
 ### Neu in 0.2.86 (etwa 25 Minuten, mit Engine; Auswertung, Werkzeuge, Training, Opus)
 
@@ -43,7 +54,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.86“, dann 
       Brett, die Pfeile gehen Zug für Zug weiter, „Zurück zur Partie“ verlässt den Zweig. Die
       Strafe steht bei „?“ und „??“ und zeigt, wie der Gegner Material gewinnt.
 - [ ] N338. **Auswertung:** Unter der Partie: in der Karte „Spielstärke“ oben der Schalter
-      „Genauigkeit wie“ (Lichess, Mittelweg, nahe chess.com), vor jeder Zeile ein Symbol, vor
+      „Genauigkeit wie“ (Lichess, App, chess.com), vor jeder Zeile ein Symbol, vor
       jeder Zugklasse ihre farbige Marke; die Erklärungen stehen zusammen hinter einem
       Fragezeichen. Grobe Patzer beider Seiten mit kleinem Bauern in der Farbe der Seite, ein Tipp
       springt hin. Von den absichtlichen Fehlern der Engine stehen zuerst drei, „Alle N zeigen“
@@ -112,10 +123,10 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.86“, dann 
 
 ### Neu in 0.2.84 (etwa 5 Minuten; neue Bretter, Opus)
 
-- [ ] N328. **Bretter in drei Gruppen:** Zahnrad › Karte „Einstellungen“ › Reiter
+- [ ] N328. **Bretter in zwei Gruppen (seit 0.2.87):** Zahnrad › Karte „Einstellungen“ › Reiter
       „Brett“. Unter „Farben“: Wie im Buch, Grün, Braun, Blau, Sand, Koralle, Lavendel, Nacht.
-      Unter „Holz“: Ahorn & Nussbaum (das bisherige „Holz“, nur umbenannt; wer es gewählt hatte,
-      behält es). Unter „Material“: Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (ganze
+      Unter „Holz und Material“: Ahorn & Nussbaum (das bisherige „Holz“, nur umbenannt; wer es
+      gewählt hatte, behält es), Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (ganze
       Brettbilder von Lichess). Jede Kachel zeigt einen Ausschnitt mit Figuren. Wähle je eins aus
       jeder Gruppe und öffne eine Abbildung: Die Felder, der Schimmer des letzten Zuges
       (gelbgrün auf den Holz- und dunklen Brettern, blau auf den hellen) und die Figuren müssen
@@ -126,14 +137,12 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.86“, dann 
 
 ### Neu in 0.2.83 (etwa 20 Minuten, mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 
-- [ ] N324. **Genauigkeit wie:** Zahnrad › Karte „Einstellungen“ › Reiter „Training“.
-      Oben „Genauigkeit wie“ mit Lichess, Mittelweg (vorgewählt) und nahe chess.com, darunter ein
-      Satz, was der Modus tut. Lichess rechnet wie Lichess (trifft Lichess im Mittel auf 2 bis 3
-      Prozentpunkte), nahe chess.com lässt Züge in längst entschiedener Stellung kaum zählen
-      (trifft chess.com im Mittel auf etwa 6 Punkte, chess.com veröffentlicht seine Rechnung
-      nicht), Mittelweg liegt dazwischen. Öffne eine ausgewertete Partie: In der Karte
-      „Spielstärke“ heißt die erste Zeile „Genauigkeit (Mittelweg)“. Stelle auf „nahe
-      chess.com“: Bei Partien, die lange entschieden waren, sinkt die Zahl; Spielstärke und
+- [ ] N324. **Genauigkeit wie:** Öffne eine ausgewertete Partie. In der Karte „Spielstärke“
+      steht oben „Genauigkeit wie“ mit Fragezeichen und darunter eine Leiste Lichess | App |
+      chess.com (seit 0.2.87 nur noch hier, nicht mehr in den Einstellungen; „App“ hieß vorher
+      „Mittelweg“, „chess.com“ vorher „nahe chess.com“). Das Fragezeichen erklärt die drei
+      Rechnungen. Die erste Zeile heißt „Genauigkeit (App)“. Stelle auf „chess.com“: Bei
+      Partien, die lange entschieden waren, steigt oder sinkt die Zahl; Spielstärke und
       Urteilswörter bleiben gleich (sie hängen nicht am Schalter).
 - [ ] N325. **Spielstärke mit Spanne:** In derselben Karte steht bei „Geschätzte Spielstärke“
       etwa „etwa 1550 (1150–1950)“. Darunter „Mitte aus chess.com und Lichess“ mit Fragezeichen:

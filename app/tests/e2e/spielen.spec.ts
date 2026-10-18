@@ -120,8 +120,17 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   // Dazu die Strafe: 2... Dh4# als eigener Zweig.
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("So wird der Fehler bestraft");
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("Dh4#");
-  // Seit 0.2.83 mit dem Modus (Standard Mittelweg).
-  await expect(page.getByTestId("spielstaerke")).toContainText("Genauigkeit (Mittelweg)");
+  // Seit 0.2.83 mit dem Modus (Standard „App“, bis 0.2.86 „Mittelweg“); seit 0.2.87 schaltet
+  // man ihn nur hier um, mit Erklärung hinter dem Fragezeichen.
+  const spielstaerke = page.getByTestId("spielstaerke");
+  await expect(spielstaerke).toContainText("Genauigkeit (App)");
+  const modus = spielstaerke.getByRole("radiogroup", { name: "Genauigkeit wie" });
+  await expect(modus.getByRole("radio", { name: "App" })).toHaveAttribute("aria-checked", "true");
+  await modus.getByRole("radio", { name: "chess.com" }).click();
+  await expect(spielstaerke).toContainText("Genauigkeit (chess.com)");
+  await spielstaerke.getByRole("button", { name: "Erklärung: Genauigkeit wie" }).click();
+  await expect(spielstaerke).toContainText("Züge in entschiedener Stellung zählen kaum");
+  await modus.getByRole("radio", { name: "App" }).click();
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
   await expect(
@@ -319,22 +328,11 @@ test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.
   await expect(karte.getByRole("button")).toHaveCount(0);
 });
 
-test("Genauigkeit wie (0.2.83): Mittelweg vorgewählt, Wechsel zu „nahe chess.com“ bleibt", async ({
+test("Genauigkeit wie: seit 0.2.87 nur in der Auswertung, nicht mehr in den Einstellungen", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
   await page.getByRole("tab", { name: "Training" }).click();
-  const wahl = page.getByRole("radiogroup", { name: "Genauigkeit wie" });
-  await expect(wahl.getByRole("radio", { name: "Mittelweg" })).toBeChecked();
-  await wahl.getByRole("radio", { name: "nahe chess.com" }).click();
-  await expect(page.getByText(/Züge in entschiedener Stellung zählen kaum/)).toBeVisible();
-  await page.reload();
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await page.getByRole("tab", { name: "Training" }).click();
-  await expect(
-    page.getByRole("radiogroup", { name: "Genauigkeit wie" }).getByRole("radio", {
-      name: "nahe chess.com",
-    }),
-  ).toBeChecked();
+  await expect(page.getByRole("radiogroup", { name: "Genauigkeit wie" })).toHaveCount(0);
 });

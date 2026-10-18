@@ -205,18 +205,32 @@
   margin-top: calc(var(--raster) * 2);
 }
 
+/* Feste Spaltenbreiten (seit 0.2.87, Rückmeldung des Autors): Die Tabelle lief auf dem Handy nach
+   rechts über; jetzt bricht der Text in den Zellen um, die Tabelle bleibt in der Karte. */
 .spielstaerke-tabelle {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .spielstaerke-tabelle th,
 .spielstaerke-tabelle td {
-  padding: calc(var(--raster) / 2) var(--raster);
+  padding: calc(var(--raster) / 2) 4px;
   border-bottom: 1px solid var(--linie);
   text-align: left;
   vertical-align: top;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.spielstaerke-tabelle th[scope="row"] {
+  width: 36%;
+}
+
+/* Zugklassen: die Zahlen brauchen wenig Platz, der Name mehr. */
+.spielstaerke-klassen th[scope="row"] {
+  width: 64%;
 }
 
 .spielstaerke-tabelle th[scope="row"] {
@@ -758,4 +772,12 @@
   font-size: 11px;
   color: var(--text-leise);
   white-space: nowrap;
+}
+
+/* In der schmalen Tabellenspalte darf das Urteilswort umbrechen statt überzustehen (0.2.87). */
+.spielstaerke-tabelle .phasenurteil {
+  max-width: 100%;
+  padding: 0 6px;
+  font-size: 12px;
+  white-space: normal;
 }

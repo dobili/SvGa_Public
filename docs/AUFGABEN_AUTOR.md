@@ -38,6 +38,14 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.74“, dann 
       Anpassung etwas stärker als ihre Stufe; das wird noch untersucht. Die Stufen 6 bis 8 werden
       noch gemessen; dort folgt höchstens eine kleine Anpassung einzelner Bots.
 
+### Neu in 0.2.73 (etwa 2 Minuten; Lizenzen, Opus)
+
+- [ ] N306. **Lizenzen:** Einstellungen › Lizenzen. Neu der Eintrag „Aufgaben aus der
+      Lichess-Puzzle-Datenbank (Taktiktrainer, „Falle oder Köder“)“ mit CC0 1.0. Beim Eintrag
+      „Schach von Grund auf (App)“ steht jetzt das öffentliche Repository
+      „github.com/dobili/SvGa_Public“ (vorher der Name des alten, privaten Repositorys, den
+      Fremde nicht öffnen können; die GPL verlangt, dass der Quelltext erreichbar ist).
+
 ### Neu in 0.2.72 (etwa 10 Minuten, mit Engine; Spielbewertung an deinen chess.com-Partien geeicht, Fable)
 
 - [ ] N290. **Geschätzte Spielstärke etwa 500 Punkte niedriger, wie bei chess.com:** Öffne eine
@@ -992,7 +1000,12 @@ Regeln C1 und C2).
       Bauernrennen 2, Randbauer 2, Läuferpaar 3, Schlüsselfelder 3, Durchbruch 3, Freibauer 3,
       Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
       erste Zug der einzige ist. Nicht an Lichess geeicht (dort gibt es keine ausspielbaren
-      Endspiele). **Empfehlung:** so lassen und nach deinem Test nachjustieren.
+      Endspiele). Verteilung der 80 Stellungen: Stufe 1 viermal, 2 achtmal, 3 19-mal, 4 38-mal,
+      5 elfmal. Das Gewicht bei 4 und 5 kommt von den Turmendspielen (23) und Leichtfiguren (11)
+      aus Kapitel 9 und folgt damit dem Buch (Kapitel 8 Grundlagen, Kapitel 9 schwerer). Wer eine
+      Stufe wählt, von der es wenige gibt, bekommt die Nachbarstufen dazu; eine Runde hat sechs
+      Stellungen. **Empfehlung (Opus, 18.10.):** so lassen und nach deinem Test nachjustieren.
+      Schon umgesetzt (so in der App seit 0.2.49), Widerspruch genügt.
 
 ### T. Trainerdaten für Taktiktrainer, Strukturerkenner und „Falle oder Köder“ (Fable; plausibel entschieden)
 

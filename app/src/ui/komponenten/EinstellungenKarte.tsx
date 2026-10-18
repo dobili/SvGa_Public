@@ -14,7 +14,8 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
  * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
  * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz;
- * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material.
+ * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.92 unter „Brett“
+ * der Schalter „Figuren per Wischen ziehen“ (Merker auf dem Gerät wie die Koordinaten).
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * i18n.
  */
@@ -39,6 +40,7 @@ import {
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { sprachname, t, verfuegbareSprachen, type Textschluessel } from "../../i18n/sprache";
 import { useSprache, waehleSprache } from "../../app/sprachwahl";
+import { MERKER_WISCHEN } from "../brett/useZiehen";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
 import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
@@ -78,19 +80,27 @@ const VOR_WERKZEUGEN: readonly VorWerkzeugen[] = ["aus", "an"];
 const KOORDINATEN = ["an", "aus"] as const;
 type Koordinaten = (typeof KOORDINATEN)[number];
 
-/** Koordinaten am Brett, gemerkt auf dem Gerät. Beispiel: „aus“ blendet a–h und 1–8 aus. */
-function KoordinatenWahl() {
-  const [wert, setzeWert] = useState<Koordinaten>(
-    liesMerker("koordinaten") === "aus" ? "aus" : "an",
-  );
+/**
+ * Ein Schalter an/aus, gemerkt auf dem Gerät (Voreinstellung: an).
+ * Beispiel: Merker „koordinaten“ auf „aus“ blendet a–h und 1–8 aus; Merker „wischen“ auf „aus“
+ * lässt Figuren nur noch antippen.
+ */
+function MerkerWahl({
+  merker,
+  schluessel,
+}: {
+  merker: string;
+  schluessel: "einstellungen.koordinaten" | "einstellungen.wischen";
+}) {
+  const [wert, setzeWert] = useState<Koordinaten>(liesMerker(merker) === "aus" ? "aus" : "an");
   return (
     <Auswahl
-      name={t("einstellungen.koordinaten")}
+      name={t(schluessel)}
       werte={KOORDINATEN}
       gewaehlt={wert}
-      text={(w) => t(`einstellungen.koordinaten.${w}`)}
+      text={(w) => t(`${schluessel}.${w}`)}
       beiWahl={(neu) => {
-        schreibeMerker("koordinaten", neu);
+        schreibeMerker(merker, neu);
         setzeWert(neu);
       }}
     />
@@ -148,7 +158,7 @@ const BEREICHE: readonly { wert: Bereich; text: Textschluessel; symbol: LucideIc
   { wert: "training", text: "einstellungen.reiter.training", symbol: Brain },
 ];
 
-/** Brett: Farben mit Vorschau, Koordinaten. */
+/** Brett: Farben mit Vorschau, Koordinaten, Ziehen per Wischen. */
 function BrettBereich() {
   const einstellungen = useEinstellungen();
   return (
@@ -161,7 +171,9 @@ function BrettBereich() {
         vorschau={(wert) => <Brettausschnitt farben={wert} satz={einstellungen.figurensatz} />}
         beiWahl={(brettfarben) => aendereEinstellungen({ brettfarben })}
       />
-      <KoordinatenWahl />
+      <MerkerWahl merker="koordinaten" schluessel="einstellungen.koordinaten" />
+      <MerkerWahl merker={MERKER_WISCHEN} schluessel="einstellungen.wischen" />
+      <p className="hinweis">{t("einstellungen.wischen.hinweis")}</p>
     </>
   );
 }

@@ -3094,6 +3094,64 @@ als ihren Inhalt, und die Namen standen ohne Umbruch. Jetzt `minmax(0, 1fr)`, di
 schrumpfen, Namen brechen mittig um (statt abgeschnitten zu werden). Der Oberflächentest misst
 die acht Porträts der Stufe 8; mit dem alten Stil wichen sie um 24 Pixel ab.
 
+## Ziehen per Wischen (18.10.2026 abends, Opus, Zweig `ziehen-wischen`, Version 0.2.92)
+
+Auftrag des Autors (abgesegnet am 18.10.2026): Figuren mit Finger oder Maus ziehen, zusätzlich
+zum Antippen, in den Einstellungen abschaltbar (Voreinstellung an), ohne dass das Scrollen der
+Seite leidet.
+
+- **Wo es gilt:** überall, wo die Brettbedienung „Ziehen“ wirkt (`useBrettbedienung`), also
+  Partie, Abbildungen mit „Ziehen“, Übungen und alle Trainer mit Zügen. Stellungseditor,
+  Zähl- und Koordinatentrainer bleiben beim Antippen.
+- **Scrollen:** `touch-action: none` nur auf den Knöpfen der Felder mit ziehbarer Figur
+  (`ziehbareFelder` in `schach/weiterspielen.ts`); alle anderen Felder behalten `manipulation`
+  des Brettes. Ein Wischen beginnt erst nach 6 Bildpunkten Bewegung, darunter bleibt es ein Tipp.
+- **Ablegen:** regelgerechtes Feld → Zug (mit Umwandlungswahl wie beim Tippen); Startfeld,
+  verbotenes Feld oder neben dem Brett → die Figur bleibt gewählt. Der Klick nach dem Ablegen
+  wird 400 ms gesperrt, sonst wählte er die Figur gleich wieder ab.
+- **Einstellung:** Merker `wischen` auf dem Gerät statt im Speicherformat, wie die Koordinaten:
+  hängt von Gerät und Hand ab, nicht vom Lernstand; außerdem bleibt das Speicherformat für die
+  parallel laufende Erweiterung frei.
+- **Aufbau:** `ui/brett/useZiehen.ts` (Zeiger-Ereignisse), `geometrie.ts` `feldAnPunkt`,
+  Marken aus `Brett.tsx` nach `Brettmarken.tsx` (Datei unter 400 Zeilen). Oberflächentest
+  `tests/e2e/wischen.spec.ts`: Maus, Finger (Touch über CDP, nur Chromium), Scrollen und
+  Abschalten.
+
+## Lernsammlung (18.10.2026 nachts, Opus, Zweig `lernsammlung`, Version 0.2.93, Format 5)
+
+Auftrag des Autors (abgesegnet am 18.10.2026): eigene Stellungen aus Abbildung, Partie oder
+Trainer mit Notiz und einem Plan-Satz speichern, nach Eröffnung geordnet, PGN-Export für
+Lichess-Studien, in der Datensicherung enthalten (Pflichtenheft Stufe 3, AP 15, Konzept 4.7).
+
+- **Format 5:** neues Feld `sammlung` in den Nutzerdaten (`training/lernsammlung.ts`,
+  `sammlungAus`). Anders als die stillen Ergänzungen ohne neue Nummer (Figurensatz, 0.2.90
+  Trefferzahl und Plan) erhöht die Sammlung die Formatnummer: Eine ältere App würde das
+  unbekannte Feld beim nächsten Speichern verwerfen, und eigene Notizen sind zu wertvoll dafür.
+  Format 4 und älter lesen sich mit leerer Sammlung; Tests in `format.test.ts` und
+  `sicherung.test.ts` (Rundreise).
+- **Eintrag:** Stellung, Herkunft (Abbildung, Partie, Trainer, eigene FEN) mit Fundstelle,
+  Eröffnung, Plan (höchstens 200 Zeichen), Notiz (1000), wenn bekannt der Weg (Start und Züge).
+  Höchstens 1000 Einträge.
+- **Eröffnung:** beim Speichern vorgeschlagen, änderbar: Buchvarianten der Kapitel 2 und 3
+  (die Stellung, sonst die letzte Buchstellung des Weges), sonst die Familie aus der
+  Lichess-Liste ohne Variante (damit die Gruppen nicht zu fein werden), sonst leer.
+- **Wo man sammelt:** Lesezeichen am Brett der Abbildung (neben „Brett drehen“, ein Symbol statt
+  einer Zeile, weil der Autor Platz sparen will); Rückblick einer Partie unter dem Zug; nach
+  jeder beantworteten Trainer-Aufgabe (die Aufgabe meldet ihre Stellung über
+  `ui/trainer/sammelstellung.ts`; bei Taktik und Endspiel die Ausgangsstellung, bei Repertoire,
+  Zug erraten und Abweichung die erreichte Stellung).
+- **Bildschirm:** eigener Bildschirm „Lernsammlung“ mit Karte im Training (die Sammlung gehört
+  zum Lernen, nicht zu den Einstellungen; sie ist kein Trainer des Pflichtenhefts, deshalb kein
+  neuer Eintrag in der Trainerliste, deren Namen ins Buch kommen).
+- **Abfrage:** zufällige Folge, „Plan zeigen“ deckt auf; ohne Speichern. Eine Wiederholung nach
+  Kästen wäre der nächste Schritt, falls der Autor sie möchte.
+- **PGN:** je Eintrag eine Partie; Lichess benennt Kapitel nach „Weiß – Schwarz“, daher Weiß =
+  Eröffnung, Schwarz = Fundstelle, dazu `ChapterName`. Mit Weg: Züge ab dem Start, sonst
+  `[SetUp]`/`[FEN]`. Plan und Notiz als Kommentar am Ende. Ganze Sammlung oder je Gruppe,
+  kopieren oder als Datei.
+- **Oberflächentest:** `tests/e2e/lernsammlung.spec.ts` (Abb. 2.2 sammeln, Neuladen, Gruppe,
+  Abfrage, PGN-Datei, Löschen).
+
 ## Technik für die englische Fassung (18.10.2026 nachts, Opus, Zweig `sprache-technik`, Version 0.2.94)
 
 Auftrag des Autors (abgesegnet am 18.10.2026, AP 18 ohne Übersetzung).

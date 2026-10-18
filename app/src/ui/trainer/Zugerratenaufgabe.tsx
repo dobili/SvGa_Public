@@ -32,6 +32,7 @@ import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { useRatevergleich, type Fehlversuch, type Vergleichsstand } from "./useRatevergleich";
 import type { Runde } from "./useRunde";
+import { useSammelstellung } from "./sammelstellung";
 
 const KEINE_WAHL = () => undefined;
 /** So viele letzte Züge zeigt die Zeile unter dem Brett (lange Partien bleiben lesbar). */
@@ -94,6 +95,7 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
   const verlauf = useSpeicher((z) => z.daten.zugErraten[partieKennung(aufgabe)]);
   const [frueher] = useState(() => verlauf?.at(-1));
   const fen = stellungNach(aufgabe.startFen, zuege);
+  useSammelstellung(fen);
   const fertig = runde.ergebnis !== null;
   const spiele = (von: string, nach: string, umwandlung?: Rolle) => {
     if (fertig) return "ungueltig" as const;

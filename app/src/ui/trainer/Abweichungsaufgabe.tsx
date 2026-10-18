@@ -27,6 +27,7 @@ import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { useAbweichzug, useAntwortbewertung } from "./useAbweichung";
 import type { Runde } from "./useRunde";
+import { useSammelstellung } from "./sammelstellung";
 
 const KEINE_WAHL = () => undefined;
 const de = (san: string) => sanInSprache(san, "de");
@@ -74,6 +75,7 @@ export function Abweichungsaufgabe({
   const fertig = runde.ergebnis !== null;
   const zuege = [...aufgabe.buchzuege, ...(abw ? [abw] : []), ...(eigen ? [eigen] : [])];
   const fen = stellungNach(aufgabe.startFen, zuege);
+  useSammelstellung(fen);
   useEffect(() => {
     if (fertig) return;
     if (abweichung?.art === "fertig" && abweichung.wert === null) runde.beantworte(true);

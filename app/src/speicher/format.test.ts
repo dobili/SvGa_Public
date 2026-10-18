@@ -101,6 +101,7 @@ describe("Format 1", () => {
         spiel: LEERER_SPIELSTAND,
         karten: {},
         fehler: [],
+        sammlung: [],
         zugErraten: {},
         planstand: null,
       },
@@ -130,6 +131,34 @@ describe("Format 1", () => {
     };
     const ergebnis = wandleUm(roh, JETZT);
     expect(ergebnis.ok && ergebnis.daten.fehler).toEqual([eintrag]);
+  });
+
+  it("Format 4 → 5: Die Lernsammlung ist leer, alles andere bleibt", () => {
+    const format4 = { ...leereDaten(JETZT), schemaVersion: 4, lernstand: { 2: [0] } } as Record<
+      string,
+      unknown
+    >;
+    delete format4.sammlung;
+    const ergebnis = wandleUm(format4, JETZT);
+    expect(ergebnis.ok && ergebnis.daten.sammlung).toEqual([]);
+    expect(ergebnis.ok && ergebnis.daten.lernstand).toEqual({ 2: [0] });
+    expect(ergebnis.ok && ergebnis.daten.schemaVersion).toBe(5);
+    expect(ergebnis.ok && ergebnis.vonVersion).toBe(4);
+  });
+
+  it("Format 5 liest die Lernsammlung, Unlesbares fällt weg", () => {
+    const eintrag = {
+      id: "s1",
+      datum: "2026-10-18T08:00:00.000Z",
+      fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      herkunft: "abbildung",
+      quelle: "2.2",
+      eroeffnung: "Spanische Partie",
+      plan: "Druck auf e5",
+      notiz: "",
+    };
+    const ergebnis = wandleUm({ ...leereDaten(JETZT), sammlung: [eintrag, { id: 3 }] }, JETZT);
+    expect(ergebnis.ok && ergebnis.daten.sammlung).toEqual([eintrag]);
   });
 
   it("bereinigt fremde und unpassende Einträge", () => {

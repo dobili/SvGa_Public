@@ -11,7 +11,8 @@
  * ab, ebenso ein Tipp auf den Hintergrund. Seit 0.2.39 ist der Titel „Abb. 7.12“ ein Knopf: Ein
  * Tipp öffnet ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors). Seit
  * 0.2.90 kann „Erst selbst denken“ Werkzeuge und Engine zurückhalten, bis der Leser die Stellung
- * eingeschätzt hat (SelbstDenken.tsx, Einstellung „Auch vor Werkzeugen und Engine“).
+ * eingeschätzt hat (SelbstDenken.tsx, Einstellung „Auch vor Werkzeugen und Engine“). Seit 0.2.93
+ * legt das Lesezeichen am Brett die gezeigte Stellung in die Lernsammlung (SammelFormular.tsx).
  * Abhängigkeiten: daten, analyse, engine, ui/brett, ui/komponenten (Werkzeugwahl, Nummernsprung),
  * Navigation, i18n.
  */
@@ -26,6 +27,7 @@ import { t } from "../../i18n/sprache";
 import { stellungAusFen } from "../../schach/stellung";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { SammelFormular, SammelSchalter } from "../komponenten/SammelFormular";
 import { EigeneEinschaetzung, SelbstDenkenKarte } from "../komponenten/SelbstDenken";
 import { useSelbstDenken } from "../komponenten/useSelbstDenken";
 import { Karten } from "./AbbildungKarten";
@@ -99,6 +101,7 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
   }, [bedienung.vergiss]);
   // Skelett-Ansicht: nur im Bündel „Skelett-Röntgen“ (früher das Knochensymbol am Brett).
   const [skelett, setzeSkelett] = useState(false);
+  const [sammeln, setzeSammeln] = useState(false);
   const skelettAn = skelett && werkzeug.buendel === "skelett";
   const stellung = useMemo(() => stellungAusFen(nachspielen.fen), [nachspielen.fen]);
   const sicht = useSicht(nachspielen.fen);
@@ -195,7 +198,19 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
           )
         }
         skelett={skelettAn}
+        zusatzSchalter={<SammelSchalter an={sammeln} beiKlick={() => setzeSammeln(!sammeln)} />}
       />
+      {sammeln && (
+        <SammelFormular
+          key={nachspielen.fen}
+          fen={nachspielen.fen}
+          herkunft={{
+            herkunft: "abbildung",
+            quelle: hier?.id ?? abbildung.id,
+            verlauf: nachspielen.verlauf,
+          }}
+        />
+      )}
       {denken.gesperrt && <SelbstDenkenKarte stand={denken} />}
       {!denken.gesperrt && <EigeneEinschaetzung einschaetzung={denken.einschaetzung} />}
       {/* Lehrbilder ohne König (Kapitel 0 und 5): keine Bündel, am Brett nur „Zählen“. */}

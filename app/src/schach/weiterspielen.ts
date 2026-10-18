@@ -65,6 +65,22 @@ export function legaleZiele(fen: string, von: string): string[] {
   return [...pos.dests(feld)].map((ziel) => makeSquare(rochadeziel(pos, feld, ziel)));
 }
 
+/**
+ * Felder mit Figuren der Seite am Zug, die mindestens einen legalen Zug haben.
+ *
+ * Warum: Beim Ziehen per Wischen (seit 0.2.92) darf nur auf diesen Feldern ein Wischen beginnen;
+ * überall sonst bleibt das Scrollen der Seite frei.
+ * Beispiel: Grundstellung → die acht Bauern und beide Springer. Sonderfall: Stellung ohne Regeln
+ * (Lehrbild ohne König) → leere Liste.
+ */
+export function ziehbareFelder(fen: string): string[] {
+  const pos = stellung(fen);
+  if (!pos) return [];
+  return [...pos.allDests()]
+    .filter(([, ziele]) => ziele.nonEmpty())
+    .map(([feld]) => makeSquare(feld));
+}
+
 /** Warum eine eigene Figur gerade nicht ziehen darf (0.2.58, Wunsch des Autors). */
 export type Zugsperre = "schach" | "gefesselt" | "blockiert";
 

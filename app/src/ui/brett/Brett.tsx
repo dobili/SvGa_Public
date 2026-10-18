@@ -4,29 +4,24 @@
  * Rolle im Gesamtbild: Zeigt jede Abbildung und jedes Werkzeugergebnis (Konzept 10.2). Ebenen in
  * dieser Reihenfolge: Felder, Feldmarkierungen, Figuren, Pfeile, Beschriftungen.
  * Bedienung: Über dem Bild liegen 64 unsichtbare Knöpfe, einer je Feld. Das ist zuverlässig auf
- * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar.
- * Abhängigkeiten: masse.ts, geometrie.ts, Figur.tsx (Figurensatz), useZugton.ts (Ton), i18n.
+ * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar. Seit 0.2.92
+ * lassen sich Figuren auf derselben Schicht auch per Wischen ziehen (useZiehen.ts).
+ * Abhängigkeiten: masse.ts, geometrie.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
+ * useZugton.ts (Ton), useZiehen.ts, i18n.
  */
-import { Fragment, useId } from "react";
-import type { Markierung, Markierungsfarbe } from "../../analyse/werkzeug";
+import { Fragment, useId, useState } from "react";
+import type { Markierung } from "../../analyse/werkzeug";
 import { t } from "../../i18n/sprache";
 import { Beschriftungen } from "./Beschriftung";
 import { Figur } from "./Figur";
 import { useZugton } from "./useZugton";
 import { Brettbild, Holzfelder } from "./Holzfelder";
-import { alleFelder, feldEcke, figurenAusFen, pfeilform } from "./geometrie";
+import { alleFelder, feldEcke, figurenAusFen } from "./geometrie";
+import { Feldmarke, Pfeil, Schimmer, SPERRFARBE, Zielpunkt, Zielring } from "./Brettmarken";
+import { useZiehen, wischenAn, type Ziehbedienung, type Ziehstand } from "./useZiehen";
 import { querversaetze } from "./versatz";
-import { useEinstellungen } from "../../app/einstellungen";
-import {
-  BRETT,
-  BRETTFARBEN,
-  FARBEN,
-  FELD,
-  holzmuster,
-  KOORDINATEN_GROESSE,
-  PFEIL,
-  RAHMEN,
-} from "./masse";
+import { useEinstellungen, type Figurensatz } from "../../app/einstellungen";
+import { BRETT, BRETTFARBEN, FELD, holzmuster, KOORDINATEN_GROESSE, PFEIL } from "./masse";
 
 /** Helle und dunkle Feldfarbe aus den Einstellungen, dazu Schimmer und Figurenfarbe. */
 interface Feldfarben {
@@ -53,61 +48,8 @@ interface BrettEigenschaften {
   readonly ziele?: readonly string[];
   /** Feld einer angetippten Figur, die nicht ziehen darf: leuchtet rot (0.2.58). */
   readonly gesperrt?: string | null;
-}
-
-/** Heller Schimmer über einem Feld: angetippt oder letzter Zug, nie Gold, Rot oder Grau. */
-function Schimmer({ feld, gedreht, farbe }: { feld: string; gedreht: boolean; farbe: string }) {
-  const ecke = feldEcke(feld, gedreht);
-  return ecke ? <rect {...ecke} width={FELD} height={FELD} fill={farbe} /> : null;
-}
-
-/** Anteil der Feldbreite für den Punkt auf einem möglichen Zielfeld. */
-const ZIELPUNKT_RADIUS = 0.14 * FELD;
-/** Ring um eine schlagbare Figur (0.2.58: der Punkt war auf dunklen Figuren kaum zu sehen). */
-const ZIELRING_RADIUS = 0.42 * FELD;
-const ZIELRING_BREITE = 0.07 * FELD;
-/** Rot mit Durchsicht für eine angetippte Figur, die nicht ziehen darf (0.2.58). */
-const SPERRFARBE = "rgba(220, 68, 68, 0.45)";
-
-/** Ring um eine Figur, die geschlagen werden kann: Gold mit dunklem Rand, auf jeder Figur sichtbar. */
-function Zielring({ feld, gedreht }: { feld: string; gedreht: boolean }) {
-  const ecke = feldEcke(feld, gedreht);
-  if (!ecke) return null;
-  const mitte = { cx: ecke.x + FELD / 2, cy: ecke.y + FELD / 2 };
-  return (
-    <g pointerEvents="none">
-      <circle
-        {...mitte}
-        r={ZIELRING_RADIUS}
-        fill="none"
-        stroke={FARBEN.navy}
-        strokeWidth={ZIELRING_BREITE * 1.6}
-        strokeOpacity={0.5}
-      />
-      <circle
-        {...mitte}
-        r={ZIELRING_RADIUS}
-        fill="none"
-        stroke={FARBEN.gold}
-        strokeWidth={ZIELRING_BREITE}
-      />
-    </g>
-  );
-}
-
-/** Kleiner Punkt in der Feldmitte für ein mögliches Zielfeld. */
-function Zielpunkt({ feld, gedreht }: { feld: string; gedreht: boolean }) {
-  const ecke = feldEcke(feld, gedreht);
-  if (!ecke) return null;
-  return (
-    <circle
-      cx={ecke.x + FELD / 2}
-      cy={ecke.y + FELD / 2}
-      r={ZIELPUNKT_RADIUS}
-      fill={FARBEN.navy}
-      fillOpacity={0.35}
-    />
-  );
+  /** Ziehen per Wischen (seit 0.2.92); ohne diese Angabe nur Antippen. */
+  readonly ziehen?: Ziehbedienung | null;
 }
 
 /** Name einer Figur für Bildschirmleser, etwa „weißer Springer“. */
@@ -115,106 +57,6 @@ function figurenname(zeichen: string): string {
   const farbe = zeichen === zeichen.toUpperCase() ? t("farbe.w") : t("farbe.b");
   const rolle = zeichen.toLowerCase() as "p" | "n" | "b" | "r" | "q" | "k";
   return `${t(`figur.${rolle}`)} (${farbe})`;
-}
-
-/** Strichmuster je Farbe: Gold durchgezogen, Rot gestrichelt, Grau gepunktet (Buch, Teil 1). */
-function strichmuster(farbe: Markierungsfarbe, art: "pfeil" | "rahmen"): string | undefined {
-  const masse = art === "pfeil" ? PFEIL : RAHMEN;
-  if (farbe === "rot") return masse.strichRot.join(" ");
-  if (farbe === "grau") return masse.punktGrau.join(" ");
-  return undefined;
-}
-
-/** Ein Feldrahmen (Rot, Grau) oder vier Ecken (Gold), jeweils mit dünner Navy-Kontur. */
-function Feldmarke({
-  feld,
-  farbe,
-  gedreht,
-}: {
-  feld: string;
-  farbe: Markierungsfarbe;
-  gedreht: boolean;
-}) {
-  const ecke = feldEcke(feld, gedreht);
-  if (!ecke) return null;
-  const halb = RAHMEN.breite / 2;
-  const x0 = ecke.x + halb;
-  const y0 = ecke.y + halb;
-  const x1 = ecke.x + FELD - halb;
-  const y1 = ecke.y + FELD - halb;
-  const s = RAHMEN.eckschenkel;
-  const pfad =
-    farbe === "gold"
-      ? `M${x0} ${y0 + s}V${y0}H${x0 + s} M${x1 - s} ${y0}H${x1}V${y0 + s} M${x1} ${y1 - s}V${y1}H${x1 - s} M${x0 + s} ${y1}H${x0}V${y1 - s}`
-      : `M${x0} ${y0}H${x1}V${y1}H${x0}Z`;
-  const kappe = farbe === "grau" ? "round" : "butt";
-  return (
-    <g fill="none" strokeLinecap={kappe} strokeLinejoin="miter">
-      <path
-        d={pfad}
-        stroke={FARBEN.navy}
-        strokeWidth={RAHMEN.breite + 2 * PFEIL.kontur}
-        strokeDasharray={strichmuster(farbe, "rahmen")}
-      />
-      <path
-        d={pfad}
-        stroke={FARBEN[farbe]}
-        strokeWidth={RAHMEN.breite}
-        strokeDasharray={strichmuster(farbe, "rahmen")}
-      />
-    </g>
-  );
-}
-
-/** Ein Pfeil im Stil des Buches, mit Kontur. */
-function Pfeil({
-  von,
-  nach,
-  farbe,
-  gedreht,
-  versatz,
-}: {
-  von: string;
-  nach: string;
-  farbe: Markierungsfarbe;
-  gedreht: boolean;
-  versatz: number;
-}) {
-  const form = pfeilform(von, nach, gedreht, versatz);
-  if (!form) return null;
-  const spitze = form.spitze.map((p) => `${p.x},${p.y}`).join(" ");
-  const kappe = farbe === "rot" ? "butt" : "round";
-  const muster = strichmuster(farbe, "pfeil");
-  const linie = {
-    x1: form.schaftVon.x,
-    y1: form.schaftVon.y,
-    x2: form.schaftBis.x,
-    y2: form.schaftBis.y,
-  };
-  return (
-    <g>
-      <line
-        {...linie}
-        stroke={FARBEN.navy}
-        strokeWidth={PFEIL.breite + 2 * PFEIL.kontur}
-        strokeLinecap={kappe}
-        strokeDasharray={muster}
-      />
-      <polygon
-        points={spitze}
-        fill={FARBEN[farbe]}
-        stroke={FARBEN.navy}
-        strokeWidth={PFEIL.kontur}
-      />
-      <line
-        {...linie}
-        stroke={FARBEN[farbe]}
-        strokeWidth={PFEIL.breite}
-        strokeLinecap={kappe}
-        strokeDasharray={muster}
-      />
-    </g>
-  );
 }
 
 /** Die 64 Felder, schlicht in den Feldfarben oder mit den Holzbildern (Holzfelder.tsx). */
@@ -274,6 +116,109 @@ function Koordinaten({ gedreht, farben }: { gedreht: boolean; farben: Feldfarben
   );
 }
 
+/** Anteil der Feldbreite, um den eine gezogene Figur unter dem Finger größer erscheint. */
+const GEZOGEN_GROESSER = 1.15;
+/** Durchsicht der Figur auf ihrem Startfeld, solange sie gezogen wird. */
+const GEZOGEN_SCHATTEN = 0.35;
+
+/**
+ * Die Figuren der Stellung; eine gerade gezogene Figur blass auf ihrem Feld und groß unter dem
+ * Zeiger (seit 0.2.92). Die große Figur kommt in Brett zuletzt, über Pfeile und Beschriftung.
+ */
+function Figuren({
+  figuren,
+  gedreht,
+  satz,
+  farbe,
+  gezogen,
+}: {
+  figuren: ReadonlyMap<string, string>;
+  gedreht: boolean;
+  satz: Figurensatz;
+  farbe: string;
+  gezogen: Ziehstand | null;
+}) {
+  return [...figuren].map(([feld, zeichen]) => {
+    const ecke = feldEcke(feld, gedreht);
+    if (!ecke) return null;
+    const figur = <Figur zeichen={zeichen} x={ecke.x} y={ecke.y} satz={satz} farbe={farbe} />;
+    return gezogen?.von === feld ? (
+      <g key={feld} opacity={GEZOGEN_SCHATTEN}>
+        {figur}
+      </g>
+    ) : (
+      <Fragment key={feld}>{figur}</Fragment>
+    );
+  });
+}
+
+/** Die gezogene Figur unter dem Zeiger, etwas größer, damit der Finger sie nicht ganz verdeckt. */
+function GezogeneFigur({
+  zeichen,
+  gezogen,
+  satz,
+  farbe,
+}: {
+  zeichen: string;
+  gezogen: Ziehstand;
+  satz: Figurensatz;
+  farbe: string;
+}) {
+  const { x, y } = gezogen.punkt;
+  const halb = FELD / 2;
+  return (
+    <g
+      pointerEvents="none"
+      transform={`translate(${x} ${y}) scale(${GEZOGEN_GROESSER}) translate(${-halb} ${-halb})`}
+    >
+      <Figur zeichen={zeichen} x={0} y={0} satz={satz} farbe={farbe} />
+    </g>
+  );
+}
+
+/**
+ * Die 64 unsichtbaren Knöpfe über dem Bild. Felder mit ziehbaren Figuren bekommen beim Wischen
+ * touch-action „none“, damit der Finger dort die Figur nimmt statt die Seite zu scrollen; alle
+ * anderen Felder lassen das Scrollen frei.
+ */
+function Knopfschicht({
+  felder,
+  figuren,
+  ausgewaehlt,
+  beiFeld,
+  greifbar,
+  wischen,
+}: {
+  felder: readonly string[];
+  figuren: ReadonlyMap<string, string>;
+  ausgewaehlt: string | null;
+  beiFeld: (feld: string) => void;
+  greifbar: readonly string[];
+  wischen: Omit<ReturnType<typeof useZiehen>, "gezogen">;
+}) {
+  const { ereignisse, klickGilt } = wischen;
+  return (
+    <div className="brett-tasten" {...ereignisse}>
+      {felder.map((feld) => {
+        const figur = figuren.get(feld);
+        const name = figur ? `${feld}, ${figurenname(figur)}` : feld;
+        return (
+          <button
+            key={feld}
+            type="button"
+            aria-label={name}
+            aria-pressed={feld === ausgewaehlt}
+            className={greifbar.includes(feld) ? "greifbar" : undefined}
+            onClick={() => {
+              if (klickGilt()) beiFeld(feld);
+            }}
+          />
+        );
+      })}
+    </div>
+  );
+}
+
 /**
  * Zeichnet ein Brett mit Stellung und Markierungen.
  *
@@ -291,6 +236,7 @@ export function Brett({
   letzterZug = null,
   ziele = [],
   gesperrt = null,
+  ziehen = null,
 }: BrettEigenschaften) {
   const { brettfarben, figurensatz, ton } = useEinstellungen();
   const farben = BRETTFARBEN[brettfarben];
@@ -312,6 +258,11 @@ export function Brett({
     (m): m is Extract<Markierung, { typ: "pfeil" }> => m.typ === "pfeil",
   );
   const versaetze = querversaetze(pfeile, PFEIL.versatz);
+  // Abgeschaltet in den Einstellungen (Merker auf dem Gerät); gelesen beim Öffnen des Bildschirms.
+  const [wischenErlaubt] = useState(wischenAn);
+  const zieh = beiFeld && wischenErlaubt ? ziehen : null;
+  const { gezogen, ...wischen } = useZiehen(zieh, gedreht);
+  const gezogenesZeichen = gezogen ? figuren.get(gezogen.von) : undefined;
   return (
     <div className="brett">
       <svg viewBox={`0 0 ${BRETT} ${BRETT}`} role="img" aria-label={beschriftung}>
@@ -330,21 +281,16 @@ export function Brett({
             <Feldmarke key={`f${i}`} feld={m.feld} farbe={m.farbe} gedreht={gedreht} />
           ) : null,
         )}
-        {[...figuren].map(([feld, zeichen]) => {
-          const ecke = feldEcke(feld, gedreht);
-          return (
-            ecke && (
-              <Figur
-                key={feld}
-                zeichen={zeichen}
-                x={ecke.x}
-                y={ecke.y}
-                satz={figurensatz}
-                farbe={farben.figur}
-              />
-            )
-          );
-        })}
+        {gezogen?.ueber && (
+          <Schimmer feld={gezogen.ueber} gedreht={gedreht} farbe={farben.schimmer} />
+        )}
+        <Figuren
+          figuren={figuren}
+          gedreht={gedreht}
+          satz={figurensatz}
+          farbe={farben.figur}
+          gezogen={gezogen}
+        />
         {ziele.map((feld) =>
           figuren.has(feld) ? (
             <Zielring key={`z${feld}`} feld={feld} gedreht={gedreht} />
@@ -363,23 +309,24 @@ export function Brett({
           />
         ))}
         <Beschriftungen markierungen={markierungen} gedreht={gedreht} />
+        {gezogen && gezogenesZeichen && (
+          <GezogeneFigur
+            zeichen={gezogenesZeichen}
+            gezogen={gezogen}
+            satz={figurensatz}
+            farbe={farben.figur}
+          />
+        )}
       </svg>
       {beiFeld && (
-        <div className="brett-tasten">
-          {felder.map((feld) => {
-            const figur = figuren.get(feld);
-            const name = figur ? `${feld}, ${figurenname(figur)}` : feld;
-            return (
-              <button
-                key={feld}
-                type="button"
-                aria-label={name}
-                aria-pressed={feld === ausgewaehlt}
-                onClick={() => beiFeld(feld)}
-              />
-            );
-          })}
-        </div>
+        <Knopfschicht
+          felder={felder}
+          figuren={figuren}
+          ausgewaehlt={ausgewaehlt}
+          beiFeld={beiFeld}
+          greifbar={zieh?.felder ?? []}
+          wischen={wischen}
+        />
       )}
     </div>
   );

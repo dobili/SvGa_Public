@@ -10,6 +10,8 @@
 // Aufruf (im Ordner app/):
 //   node skripte/eichung-rechnen.mjs                     # alle Partien, vier Läufe, höchstens 110 Minuten
 //   node skripte/eichung-rechnen.mjs --parallel 2 --minuten 30
+//   node skripte/eichung-rechnen.mjs --ordner ../buch/arbeit/botanker --quellen stufen
+//     (seit 0.2.85: Partien der Bot-Messung, Datei stufen.jsonl, für die Elo-Zahl der Stufen)
 //
 // Fortsetzbar: Jeder Lauf k schreibt nach buch/arbeit/eichung/bewertet-<k>.jsonl; schon bewertete
 // Partien werden übersprungen. Die Rohdaten bleiben lokal (nie ins Repository).
@@ -25,7 +27,7 @@ import { makeUci } from "chessops/util";
 const HIER = dirname(fileURLToPath(import.meta.url));
 const STANDARD_ORDNER = resolve(HIER, "../../buch/arbeit/eichung");
 const AUSGABE = /^bewertet-\d+\.jsonl$/;
-const PLATTFORMEN = ["chesscom", "lichess"];
+const STANDARD_QUELLEN = "chesscom,lichess";
 const TIEFE = 18;
 const STANDARD_PARALLEL = 4;
 const STANDARD_MINUTEN = 110;
@@ -43,6 +45,7 @@ function argumente(argv) {
     parallel: wert("--parallel", STANDARD_PARALLEL),
     minuten: wert("--minuten", STANDARD_MINUTEN),
     lauf: wert("--lauf", -1),
+    quellen: text("--quellen", STANDARD_QUELLEN).split(","),
   };
 }
 
@@ -55,9 +58,9 @@ function liesZeilen(datei) {
     .map((z) => JSON.parse(z));
 }
 
-/** Alle gesammelten Partien beider Plattformen, in fester Reihenfolge. */
-function allePartien(ordner) {
-  return PLATTFORMEN.flatMap((plattform) => liesZeilen(resolve(ordner, `${plattform}.jsonl`)));
+/** Alle gesammelten Partien der Quellen (je Quelle eine Datei <quelle>.jsonl), in fester Reihenfolge. */
+function allePartien(ordner, quellen) {
+  return quellen.flatMap((quelle) => liesZeilen(resolve(ordner, `${quelle}.jsonl`)));
 }
 
 /** Schlüssel aller schon bewerteten Partien, aus allen Läufen (auch mit anderer Aufteilung). */
@@ -145,11 +148,11 @@ function auswerten(zeile, bester) {
 }
 
 /** Ein Lauf: bewertet jede n-te Partie, die noch in keiner Ausgabe steht. */
-async function lauf(ordner, nummer, anzahl, ende) {
+async function lauf(ordner, nummer, anzahl, ende, quellen) {
   const ausgabe = resolve(ordner, `bewertet-${nummer}.jsonl`);
   const fertig = schonBewertet(ordner);
   const sf = await engine();
-  const meine = allePartien(ordner).filter((_, i) => i % anzahl === nummer);
+  const meine = allePartien(ordner, quellen).filter((_, i) => i % anzahl === nummer);
   for (const partie of meine) {
     if (Date.now() > ende) break;
     if (fertig.has(schluessel(partie))) continue;
@@ -173,10 +176,10 @@ function main() {
   const a = argumente(process.argv.slice(2));
   const ende = Date.now() + a.minuten * MS_JE_MINUTE;
   if (a.lauf >= 0) {
-    lauf(a.ordner, a.lauf, a.parallel, ende).then(() => process.exit(0));
+    lauf(a.ordner, a.lauf, a.parallel, ende, a.quellen).then(() => process.exit(0));
     return;
   }
-  const gesamt = allePartien(a.ordner).length;
+  const gesamt = allePartien(a.ordner, a.quellen).length;
   console.log(
     `${gesamt} Partien, ${a.parallel} Läufe, Tiefe ${TIEFE}, höchstens ${a.minuten} Minuten`,
   );
@@ -190,6 +193,8 @@ function main() {
       String(a.minuten),
       "--ordner",
       a.ordner,
+      "--quellen",
+      a.quellen.join(","),
     ]);
   }
 }

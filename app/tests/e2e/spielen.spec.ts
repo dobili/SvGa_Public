@@ -271,10 +271,20 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   const knopf = await page.getByRole("button", { name: "Partie beginnen" }).boundingBox();
   const gitterBox = await gitter.boundingBox();
   expect((knopf?.y ?? Infinity) < (gitterBox?.y ?? 0)).toBe(true);
+  // Elo-Zahl an Stufe, Kachel und Sprechblase (0.2.84, S23), mit Erklärung hinter dem Fragezeichen.
+  await expect(
+    gitter.getByRole("heading", { name: /^Stufe 1 · Einsteiger · (etwa|unter) \d+( bis .*\d+)?$/ }),
+  ).toBeVisible();
+  await expect(gitter.getByRole("radio", { checked: true })).toContainText(/etwa|unter|über/);
+  const staerke = page.getByTestId("gegner-staerke");
+  await expect(staerke).toContainText(/(etwa|unter|über) \d+ \(Stufe 1\)/);
+  await page.getByRole("button", { name: "Erklärung: Stärke der Bots" }).click();
+  await expect(page.getByTestId("gegner-sprechblase")).toContainText("Elo-Leiter");
   await page.screenshot({ path: "test-results/bilder/spielen-kategorien.png", fullPage: true });
   await page.getByRole("radio", { name: "Eigene Stufe" }).click();
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Eigene Stufen");
+  await expect(staerke).toContainText(/Deine Einstellung \d · \d · \d · .*\(geschätzt\)/);
   // Anderer Bereich und zurück: Das Gitter entsteht neu und liest den Merker.
   await page.getByRole("navigation").getByRole("button", { name: "Buch" }).click();
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();

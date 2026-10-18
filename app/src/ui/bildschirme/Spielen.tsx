@@ -115,6 +115,7 @@ function Einstellungen({
       <GegnerWahl
         gegner={v.gegner}
         bot={v.bot}
+        stufen={v.stufenJePhase}
         eigene={eigene}
         kategorie={kategorie}
         beiGegner={(gegner) => mit({ gegner, gewertet: gegner === "engine" })}

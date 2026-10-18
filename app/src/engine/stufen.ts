@@ -64,8 +64,14 @@ export interface Stufe {
  */
 const JEDER_DRITTE = 0.34;
 const JEDER_VIERTE = 0.3;
-const JEDER_ACHTE = 0.15;
 const JEDER_SECHZEHNTE = 0.075;
+/**
+ * Stufe 3 seit 0.2.85: 0,2 statt 0,15 und Temperatur 0,6 statt 0,5. Die Elo-Leiter der Bots
+ * (Rückfrage S23) zeigte, dass Stufe 3 so stark war wie Stufe 4 (20 Partien: 12 : 8 für Stufe 3,
+ * Abnahme Konzept 8.2 verletzt). Mit der schwächeren Fassung: gegen Stufe 4 3 : 17, gegen Stufe 2
+ * 19,5 : 0,5.
+ */
+const FEHLER_STUFE_3 = 0.2;
 const NIE = 0;
 /** Höchstverluste in Bauerneinheiten (Faustwerte aus Kapitel 1). */
 const DAME = 9;
@@ -78,7 +84,7 @@ const TIEFE_STUFE_2 = 4;
 const TIEFE_STUFE_3 = 5;
 const TEMPERATUR_STUFE_1 = 1.0;
 const TEMPERATUR_STUFE_2 = 0.7;
-const TEMPERATUR_STUFE_3 = 0.5;
+const TEMPERATUR_STUFE_3 = 0.6; // seit 0.2.85, siehe FEHLER_STUFE_3
 /** So viele Kandidaten rechnet die Engine für die gewichtete Wahl. */
 const KANDIDATEN_MENSCHLICH = 6;
 
@@ -124,7 +130,7 @@ export const STUFEN: readonly Stufe[] = [
     nummer: 3,
     name: "stufe.3",
     ...menschlich(TIEFE_STUFE_3, TEMPERATUR_STUFE_3),
-    fehlerquote: JEDER_ACHTE,
+    fehlerquote: FEHLER_STUFE_3,
     hoechstverlust: LEICHTFIGUR,
     damenopferErlaubt: false,
     rechenzeitMs: 500,

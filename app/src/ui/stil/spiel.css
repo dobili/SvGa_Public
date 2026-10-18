@@ -752,3 +752,10 @@
   align-items: center;
   gap: 4px;
 }
+
+/* Elo-Zahl unter dem Namen (0.2.85). */
+.gegnerkachel-staerke {
+  font-size: 11px;
+  color: var(--text-leise);
+  white-space: nowrap;
+}

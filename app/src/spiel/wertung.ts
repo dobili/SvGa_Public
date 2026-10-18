@@ -6,8 +6,9 @@
  * der Züge einer Partie. Die Wertung verbindet alle gewerteten Partien zu einer Zahl, die mit
  * Siegen steigt und mit Niederlagen fällt, wie eine Elo-Zahl im Verein: Die erste gewertete
  * Partie setzt die Wertung auf die Schätzung der Engine für den Leser; jede weitere zählt wie
- * eine Partie gegen einen Spieler mit der Engine-Schätzung des Gegners (der Stärke, mit der die
- * Engine in dieser Partie gespielt hat). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
+ * eine Partie gegen einen Spieler mit der festen Zahl des Gegners aus der Gegnerwahl
+ * (engine/botstaerke.ts, seit 0.2.85, Rückfrage S23; vorher die Stärke, mit der die Engine in
+ * dieser Partie gespielt hat, die um etwa ±400 streute und nach oben bei etwa 1750 endete). K-Faktor 32 in den ersten zehn Partien, danach 20 (wie
  * beim Weltschachbund für Spieler unter 2400). Jeder Punkt des Verlaufs merkt sich Zeit, Gegner
  * und Ergebnis, damit die Kurve in den Einstellungen nach Partien oder nach Zeitraum zeigen kann;
  * dazu die Schätzung der Engine für den Leser je Phase dieser Partie (Wunsch des Autors: die Kurve
@@ -19,6 +20,7 @@
  * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
  * speicher/partien.ts (Partieeintrag).
  */
+import { gegnerstaerke } from "../engine/botstaerke";
 import type { Partieeintrag } from "../speicher/partien";
 import { zugurteile } from "./auswertung";
 import { spielstaerke, spielstaerkeJePhase, type Spielstaerke } from "./genauigkeit";
@@ -169,7 +171,9 @@ export function aktuelleWertung(punkte: readonly Wertungspunkt[]): number | null
  * für den Leser.
  *
  * Beispiel: erste Partie, Engine schätzt den Leser auf 1400 → Wertung 1400 (unabhängig vom
- * Ergebnis); zweite Partie gegen eine Engine mit 1600 gewonnen → 1400 + 32 · (1 − 0,24) ≈ 1424.
+ * Ergebnis); zweite Partie gegen einen Bot mit der Zahl 1600 gewonnen → 1400 + 32 · (1 − 0,24)
+ * ≈ 1424. Die Gegnerwertung ist die feste Zahl des Bots oder, bei eigenen Stufen und eigenen
+ * Bots, die Schätzung aus den Stufen je Phase (engine/botstaerke.ts).
  */
 export function wertungspunktFuer(
   punkte: readonly Wertungspunkt[],
@@ -185,8 +189,9 @@ export function wertungspunktFuer(
   const staerke = staerkeDerPartie(eintrag);
   if (!staerke) return null;
   const engineFarbe = p.einstellung.eigeneFarbe === "white" ? "black" : "white";
-  const gegner = staerke[engineFarbe].spielstaerke;
-  if (gegner === null) return null;
+  // Zu wenige Züge des Gegners: die Partie zählt weiterhin nicht (wie bis 0.2.83).
+  if (staerke[engineFarbe].spielstaerke === null) return null;
+  const gegner = Math.round(gegnerstaerke(p.einstellung));
   const bisher = aktuelleWertung(punkte);
   const eigene = bisher ?? staerke[p.einstellung.eigeneFarbe].spielstaerke;
   if (eigene === null) return null;

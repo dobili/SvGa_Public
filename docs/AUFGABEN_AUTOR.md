@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.83. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.85. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.83“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.85“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,88 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.84“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.86“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.86 (etwa 25 Minuten, mit Engine; Auswertung, Werkzeuge, Training, Opus)
+
+- [ ] N336. **Fehler im Rückblick:** Spiele eine Partie mit einem groben Fehler (etwa eine Figur
+      nicht zurückschlagen) und tippe ihn in der Zugliste an. Die Karte sagt jetzt „Die
+      Gewinnchance von Weiß fällt von 51 % auf 10 %“ statt „kostet etwa 6,2 Bauern“ (die Zahl der
+      Engine ist ihre eigene Einheit; eine Figur ergibt dort 5 bis 7). Lässt du einen Rückschlag
+      aus, steht dabei „schlägt nicht zurück: exf4 nahm den Springer f4 wieder …“ mit rotem Feld.
+      Das Fragezeichen neben dem Satz erklärt den Balken links am Brett und die Gewinnchance.
+- [ ] N337. **Nebenzweige:** In derselben Karte sind „Besser war …, danach etwa …“ und neu „So
+      wird der Fehler bestraft: …“ antippbare Züge. Ein Tipp zeigt die Stellung nach diesem Zug am
+      Brett, die Pfeile gehen Zug für Zug weiter, „Zurück zur Partie“ verlässt den Zweig. Die
+      Strafe steht bei „?“ und „??“ und zeigt, wie der Gegner Material gewinnt.
+- [ ] N338. **Auswertung:** Unter der Partie: in der Karte „Spielstärke“ oben der Schalter
+      „Genauigkeit wie“ (Lichess, Mittelweg, nahe chess.com), vor jeder Zeile ein Symbol, vor
+      jeder Zugklasse ihre farbige Marke; die Erklärungen stehen zusammen hinter einem
+      Fragezeichen. Grobe Patzer beider Seiten mit kleinem Bauern in der Farbe der Seite, ein Tipp
+      springt hin. Von den absichtlichen Fehlern der Engine stehen zuerst drei, „Alle N zeigen“
+      klappt den Rest auf. Bei Partien aus der Grundstellung fehlt „Noch einmal aus derselben
+      Stellung“.
+- [ ] N339. **Auswertung startet immer:** Hängt die Engine (etwa weil das Handy die App im
+      Hintergrund angehalten hat), startet die App sie nach spätestens etwa 15 Sekunden neu und
+      macht weiter. Bitte melden, wenn eine Auswertung trotzdem stehen bleibt.
+- [ ] N340. **Spielen:** „Partie beginnen“ steht direkt unter den drei Kacheln (Eigene Stufe,
+      Vorgefertigte Bots, Eigene Bots). Die Stufen der vorgefertigten Bots sind aufklappbar
+      (anfangs die Stufe des gewählten Bots); die App merkt sich, welche offen waren.
+- [ ] N341. **Werkzeuge:** Die Leiste unter dem Brett ist eine waagerecht scrollbare Reihe, jedes
+      Bündel mit Symbol (Eröffnung Tür, Angriffsregel Fadenkreuz, Fallencheck Schild, Skelett
+      Knochen, Planfindung Karte, Taktik Blitz, Endspiel Fahne, Denkroutine Gehirn), „frühere“
+      und „spätere“ am Anfang und Ende. Die Karten zeigen immer alles, „Mehr …“ gibt es nicht
+      mehr (etwa die zweite Seite bei der Angriffsregel).
+- [ ] N342. **Einstellungen:** Die Kachel mit Version, Update und Lizenzen heißt „Über die App“,
+      die mit Brett, Figuren und Training „Einstellungen“. Die Vorschau der Bretter und Figuren
+      zeigt 2 × 2 Felder, je Feld 40 % größer. Die Wertungskarte heißt „Deine Wertung“ (sie
+      zählt Ergebnisse); „Deine Spielstärke“ beim Spielen misst nur die Genauigkeit.
+- [ ] N343. **Training:** Die Trainingsseite zeigt je Kapitel eine Karte mit Nummer, jeder
+      Trainer als Zeile mit Symbol, Fragezeichen (Ablauf) und „Trainieren“. Im Kapitel stehen die
+      Übungen als Raster kleiner Nummern (grün gelöst, halb angefangen).
+
+### Neu in 0.2.85 (etwa 20 Minuten, mit Engine; Elo-Zahl der Bots, Opus)
+
+- [ ] N330. **Zahlen in der Gegnerwahl:** Spielen › „Vorgefertigte Bots“. Jede Überschrift zeigt
+      jetzt den Bereich ihrer acht Bots, etwa „Stufe 1 · Einsteiger · etwa 1050 bis 1300“, und
+      jede Kachel unter dem Namen die Zahl des Bots („etwa 1300“). Gemessen sind: Stufe 1 etwa
+      1050 bis 1300, Stufe 2 etwa 1400 bis 1700, Stufe 3 etwa 1900 bis 2100, Stufe 4 etwa 1850
+      bis 2150, Stufe 5 „etwa 2200 bis über 2200“, Stufe 6 bis 8 „über 2200“. Über 2200 und unter
+      400 hat die Spielstärke-Rechnung keine Eichdaten, deshalb steht dort nur die Grenze. Die
+      Bereiche von Stufe 3 und 4 überschneiden sich stark: Jan (Stufe 4, etwa 1850) ist der
+      schwächste Bot seiner Stufe und liegt unter allen Bots der Stufe 3; die reine Stufe 4 ist
+      aber klar stärker als die reine Stufe 3 (17 : 3).
+- [ ] N331. **Sprechblase und Erklärung:** Tippe auf einen Bot, etwa Ayşe. In der Sprechblase
+      steht „etwa 1550 (Stufe 2)“ mit einem Fragezeichen. Das Fragezeichen erklärt, woher die
+      Zahl kommt (Elo-Leiter aus den Ergebnissen, an der Skala von „Deine Spielstärke“
+      verankert, etwa ±150 genau, keine Zahl je Phase). Unter „Eigene Bots“ steht bei einem
+      eigenen Bot „etwa … (geschätzt)“; unter „Eigene Stufe“ steht „Deine Einstellung 3 · 4 · 3 ·
+      etwa … (geschätzt)“ und ändert sich, wenn du die Regler bewegst.
+- [ ] N332. **Gegner in der Karte „Spielstärke“:** Spiele eine kurze Partie gegen Leon (Stufe 1)
+      bis zum Ende und öffne den Rückblick. Über der Tabelle steht „Leon (etwa 1300) hat in
+      dieser Partie wie etwa … gespielt.“ Die feste Zahl und die Leistung in dieser einen Partie
+      dürfen deutlich auseinanderliegen; die Leistung einer Partie streut um etwa ±400.
+- [ ] N333. **Wertung mit fester Gegnerzahl:** Eine gewertete Partie gegen einen Bot rechnet in
+      deiner Wertung (Einstellungen › Wertung) jetzt mit der festen Zahl des Bots als Wertung
+      des Gegners, nicht mehr mit seiner Leistung in der Partie. Erwartung: Ein Sieg gegen einen
+      Bot, dessen Zahl weit über deiner Wertung liegt, bringt viel, eine Niederlage gegen ihn
+      kostet wenig, und umgekehrt. Die Erklärung hinter dem Fragezeichen der Wertung sagt es.
+- [ ] N334. **Stufe 3 etwas schwächer:** Die reine Stufe 3 war so stark wie Stufe 4 (12 : 8 für
+      Stufe 3 in 20 Partien). Konzept 8.2 verlangt, dass jede Stufe die Mehrheit gegen die Stufe
+      darunter gewinnt. Stufe 3 macht deshalb jetzt in etwa jedem fünften Zug einen Fehler
+      (vorher etwa jedem siebten) und wählt ihre Züge etwas lockerer. Neu gemessen: Stufe 4 gegen
+      Stufe 3 17 : 3, Stufe 3 gegen Stufe 2 19,5 : 0,5. Die 18 Bots mit einer Phase auf Stufe 3
+      sind neu gemessen (je sechs Partien gegen ihre Stufe): Die meisten holen zwischen einem
+      Viertel und drei Vierteln der Punkte, Pit und Sophie (Stufe 2) 5 : 1, Frieda (Stufe 2) und
+      Jan (Stufe 4) 1 : 5. Ich habe sie nicht nachgestellt; ihre Zahl in der Gegnerwahl kommt aus
+      allen ihren Partien und zeigt, wo sie stehen. **So prüfen:** eine Partie gegen
+      „Eigene Stufe“ 3 · 3 · 3. Sie sollte merklich mehr Fehler machen als Stufe 4.
+- [ ] N335. **Passt die Zahl zu dir?** Das ist der wichtigste Test, denn nur du kannst die Lage
+      der Skala an einem echten Menschen prüfen. Spiele zwei oder drei gewertete Partien gegen
+      einen Bot, dessen Zahl nahe an deiner Spielstärke bei chess.com oder Lichess liegt. Gehen
+      sie etwa ausgeglichen aus, stimmt die Lage. Gewinnst du fast immer, sind die Zahlen zu hoch
+      (oder umgekehrt); schreib dann, gegen wen und wie die Partien ausgingen (siehe auch S24).
 
 ### Neu in 0.2.84 (etwa 5 Minuten; neue Bretter, Opus)
 
@@ -1069,18 +1149,24 @@ Regeln C1 und C2).
       **Empfehlung (umgesetzt):** Die Liste gilt nur für die eigene Stufe; vorgefertigte und
       eigene Bots spielen immer mit ihrer eigenen Liste. Sag Bescheid, wenn die Liste auch die
       vorgefertigten Bots beschneiden soll; dann zeige ich sie auch dort.
-- [ ] S23. **Elo-Angaben der Bot-Stufen:** Deine Frage aus dem anderen Chat. Im Moment zeigt die
-      App bei den Bots keine Elo-Zahl, nur „⌀ 2,3 · Anfänger“ je Bot und „Stufe 2 · Anfänger“ je
-      Gruppe. Die Stärke des Gegners in deiner Wertung wird je Partie aus seiner Genauigkeit
-      berechnet, mit derselben Tabelle wie deine eigene Schätzung; sie folgt einer neuen Eichung
-      also von selbst. Es gibt deshalb heute nichts nachzukorrigieren. **Empfehlung:** Die
-      Elo-Angaben je Stufe (wie bei den Bots von chess.com) führen wir mit dem Einbau der neuen
-      Eichung ein: Für jede Stufe einige Partien spielen lassen (die Bot-Messung speichert dafür
-      künftig auch die Züge), sie durch die neue Spielstärke-Rechnung schicken und den
-      Mittelwert als „etwa 1100“ an die Stufe schreiben. Vorher wären es Zahlen
-      auf der alten Skala, die gleich wieder geändert werden müssten. Ist im Plan der Eichung als
-      Schritt vermerkt; Widerspruch genügt. Stand 0.2.83: Die neue Skala ist eingebaut; offen ist
-      nur noch, dass die Bot-Messung die Züge speichert (Messskripte, anderer Chat).
+- [ ] S24. **Die Bots sind auf der Skala von „Deine Spielstärke“ stärker als ihre Namen (Opus,
+      0.2.85):** Gemessen ist Stufe 1 („Einsteiger“) etwa 1200, Stufe 2 („Anfänger“) etwa 1550,
+      Stufe 3 etwa 1900, Stufe 4 etwa 2100; Stufe 5 bis 8 liegen über 2200 und zeigen alle nur
+      „über 2200“. So kam es: Die Abstände stammen aus über 800 Partien der Bots und Stufen
+      gegeneinander. Die Lage stammt aus Partien der Stufen 1, 2 und 3 gegen sich selbst: Ihre
+      Genauigkeit (70 %, 77 % und 83 %) ergibt über dieselbe Rechnung wie „Deine Spielstärke“
+      etwa 1190, 1560 und 1890. Diese drei Anker und die Abstände aus den Ergebnissen passen auf
+      etwa 30 Punkte zusammen, die Rechnung ist also in sich stimmig. Ab Stufe 4 ist die
+      Genauigkeit zu hoch für die Eichung (die Kurven enden bei etwa 83 %); diese Stufen
+      verankern nicht, ihre Zahl kommt allein aus den Ergebnissen. Unsicher bleibt, ob ein Bot
+      mit 70 % so spielt wie ein Mensch mit 70 %: Bots machen seltene grobe Fehler zwischen
+      vielen guten Zügen, Menschen viele mittlere. Folge: Für Leser unter etwa 1000 gibt es
+      keinen passenden Gegner, und die Stufen 5 bis 8 lassen sich an der Zahl nicht
+      unterscheiden. **Empfehlung:** Erst deinen Test N335 abwarten. Bestätigt er die Zahlen,
+      schlage ich vor, die Stufen 1 bis 4 schwächer zu machen, damit Stufe 1 bei etwa 600 bis 800
+      beginnt und die acht Stufen etwa 600 bis 2400 abdecken, und dann alle 64 Bots neu zu
+      messen (einige Stunden Rechenzeit). Die Namen der Stufen bleiben bis dahin. Noch nicht
+      umgesetzt, weil das alle 64 Bots und die Abstufung aus Konzept 8.2 ändert.
 
 ### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 
@@ -1294,7 +1380,7 @@ hat, mit Rückfrage:
 
 - [ ] K1. **Abstufung:** Fühlt sich die Abstufung nach N175 bis N177 richtig an (Konzept 8.2)?
       Wenn eine Stufe zu stark oder zu schwach ist: Welche? (Stufe 1 bis 3: Skill Level 0 mit
-      Fehlerquote jeder dritte, vierte, achte Zug; Stufe 4: Skill 3, jeder sechzehnte; Stufe 5 bis 7:
+      Fehlerquote jeder dritte, vierte, fünfte Zug (Stufe 3 seit 0.2.85, vorher etwa jeder siebte); Stufe 4: Skill 3, jeder sechzehnte; Stufe 5 bis 7:
       Skill 6, 10, 15 ohne Fehler; Stufe 8 volle Stärke.)
       **Empfehlung:** erst nach deinem Test entscheiden. Wirkt eine Stufe zu sprunghaft, ist das
       eher ein Fall für R4 (Stufen menschlicher, seit 0.2.52) als für andere Zahlen.

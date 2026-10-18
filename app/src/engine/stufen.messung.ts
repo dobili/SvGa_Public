@@ -61,6 +61,12 @@ interface Partiebericht {
   readonly halbzuege: number;
   readonly dauerMs: number;
   readonly statistik: Record<"weiss" | "schwarz", Seitenstatistik>;
+  /**
+   * Alle Züge ab der Grundstellung in SAN, einschließlich der zwei Eröffnungszüge (seit 0.2.85):
+   * Damit lassen sich die Partien später in Tiefe 18 nachrechnen und die Elo-Zahl der Stufen an
+   * der Skala von „Deine Spielstärke“ verankern (skripte/eichung-rechnen.mjs, --quellen).
+   */
+  readonly zuege: readonly string[];
 }
 
 /** Fester Zufall (LCG), damit der Fehlerwurf je Partie nachvollziehbar ist. */
@@ -237,6 +243,7 @@ describe(`Messung ${paarung}`, () => {
         halbzuege: partie.zuege.length,
         dauerMs: Math.round(performance.now() - beginn),
         statistik: { weiss: statistik(partie, "white"), schwarz: statistik(partie, "black") },
+        zuege: [...anfang, ...partie.zuege.map((z) => z.san)],
       });
       mkdirSync(ziel, { recursive: true });
       writeFileSync(join(ziel, `${paarung}.json`), JSON.stringify({ paarung, berichte }, null, 1));

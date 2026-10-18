@@ -2964,3 +2964,82 @@ Auswahl des Autors (Zip „figurensaetze_fuer_repo“ mit `bretter/`, Werte in
   Autors mit Bildschirmfoto: Navy auf dunklem Grund kaum zu sehen), gleiche Regel wie beim
   gewählten Reiter und bei den Chips.
 
+
+## Elo-Zahl der Bots (18.10.2026 abends, Opus, Zweig `bot-elo`, Version 0.2.85)
+
+Rückfrage S23 (Elo-Angaben der Bot-Stufen), nach Rücksprache mit dem Autor: Er wollte Zahlen auf
+der Skala von „Deine Spielstärke“, je Stufe einen Bereich (leichte Überschneidungen erlaubt) und
+je Bot eine eigene Zahl. Die Bewertungen eines anderen Chats (Zweig `botstaerke`) gelten nicht
+(„Es zählt am Ende dein Plan“); der Zweig wird nicht übernommen.
+
+- **Verfahren:** Die Genauigkeit einer Bot-Partie taugt nicht als Maß je Bot (sie hängt vom
+  Gegner ab, die Kurven ziehen zur Mitte). Deshalb kommen die **Abstände aus Ergebnissen**: eine
+  Elo-Leiter nach Bradley und Terry mit einem gedachten Remis je Begegnung (`engine/eloleiter.ts`)
+  aus 806 Partien: reine Stufen gegen ihre Nachbarn, jeder Bot gegen seine Stufe und gegen die
+  Stufe darüber (Stufe 1 bis 4), dazu die gültigen Partien der Messung aus 0.2.81. Die **Lage**
+  kommt aus Ankern: Stufen spielen 20 Partien gegen sich selbst, die Züge werden in Tiefe 18
+  bewertet, und die innere Genauigkeit beider Seiten geht in Blöcken zu zehn durch dieselbe
+  Rechnung wie „Deine Spielstärke“ (`staerkeUeberPartien`). Eine gemeinsame Verschiebung legt die
+  Leiter auf die Anker; die Abstände bleiben die der Ergebnisse. Messlauf
+  `engine/botstaerke.messung.ts` (Daten nur lokal in `buch/arbeit/botelo/`), Ausgabe
+  `engine/botstaerke-daten.ts`.
+- **Anker:** Stufe 1: 70,3 % → 1188; Stufe 2: 77,2 % → 1563; Stufe 3: 82,7 % → 1888. Die Leiter
+  trifft sie auf +8, −31 und +23 Punkte, Ergebnisse und Genauigkeit passen also zusammen. Stufe 4
+  bis 6 (86 bis 92 %) liegen über dem Ende der Eichkurven (die umgekehrte Lichess-Kurve endet bei
+  83,4 %) und ergeben alle 2000 bis 2100; sie gelten als gesättigt und verankern nicht (Grenze
+  83 % im Messlauf).
+- **Ergebnis:** Stufe 1 bis 8: 1195, 1532, 1911, 2080, 2359, 2595, 2912, 3223. Bots je Stufe:
+  1042 bis 1301, 1392 bis 1688, 1887 bis 2075, 1870 bis 2161 (Jan 1870), 2200 bis 2409, 2436 bis
+  2671, 2630 bis 3014, 2976 bis 3223. Unsicherheit je Bot durch Nachziehen der Ergebnisse
+  (200 Durchgänge): Median ±118, höchstens ±234; die Erklärung in der App sagt „etwa ±150“.
+  GM Grün (wie Stufe 8 eingestellt) landet auf derselben Zahl wie Stufe 8, eine Probe des
+  Verfahrens.
+- **Anzeige:** auf 50 gerundet, über 2200 nur „über 2200“, unter 400 nur „unter 400“ (dort hat
+  die Eichung keine Partien). Überschrift je Stufe: Bereich ihrer acht Bots (Stufe eines Bots =
+  gerundeter Durchschnitt seiner Phasen). Kachel: Zahl des Bots. Sprechblase: „etwa 1550
+  (Stufe 2)“ mit Erklärung hinter dem Fragezeichen. Eigene Bots und eigene Stufen: aus dem
+  Mittel der drei Stufen je Phase zwischen den reinen Stufen linear geschätzt, „(geschätzt)“.
+  Keine Zahl je Phase. Karte „Spielstärke“ im Rückblick: „Leon (etwa 1300) hat in dieser Partie
+  wie etwa … gespielt.“
+- **Wertung:** Eine gewertete Partie rechnet jetzt mit der festen Zahl des Bots (oder der
+  Schätzung bei eigenen Stufen) als Gegnerwertung statt mit seiner Leistung in der Partie (die
+  streut um etwa ±400 und ist nach oben gedeckelt). Gespeicherte Wertungspunkte bleiben, das
+  Format ändert sich nicht.
+- **Stufe 3 schwächer:** Die reine Stufe 3 war so stark wie Stufe 4 (12 : 8 für Stufe 3) und
+  verletzte damit Konzept 8.2 („Jede Stufe gewinnt die Mehrheit gegen die Stufe darunter“).
+  Fehlerquote 0,2 statt 0,15, Temperatur 0,6 statt 0,5. Neu gemessen: 3 : 17 gegen Stufe 4,
+  19,5 : 0,5 gegen Stufe 2. Die 18 Bots mit einer Phase auf Stufe 3 und alle Brücken der Stufe 2
+  sind neu gemessen. Pit und Sophie holen 5 : 1 gegen Stufe 2, Frieda 1 : 5; Jan (Stufe 4) 1 : 5
+  gegen Stufe 4. Ein Versuch, Jan mit [4, 4, 5] zu stärken, änderte nichts (1 : 5) und ist
+  zurückgenommen; Jan bleibt Grenzfall und schwächster Bot der Stufe 4.
+- **Offen (S24):** Auf dieser Skala sind die Bots stärker als ihre Namen (Stufe 1 etwa 1200,
+  Stufe 5 bis 8 über 2200). Unklar bleibt, ob ein Bot mit 70 % so spielt wie ein Mensch mit
+  70 % (Bots machen seltene grobe Fehler, Menschen viele mittlere); das prüft nur ein Mensch
+  (N335). Vorschlag an den Autor: nach N335 die Stufen 1 bis 4 schwächer machen und alle Bots neu
+  messen. Nicht vorab umgesetzt, weil es alle 64 Bots und die Abstufung aus Konzept 8.2 ändert.
+
+## Auswertung, Werkzeuge und Training übersichtlicher (18.10.2026 abends, Opus, Zweig `auswertung-ausbau`, Version 0.2.86)
+
+Wünsche und Rückmeldungen des Autors vom Abend, nach Regel 9 gleich umgesetzt.
+
+- **Gewinnchance statt Bauerneinheiten im Rückblick:** Stockfish rechnet seine Zahl seit 15.1
+  aus der Gewinnchance; eine Figur mehr ergibt 5 bis 7, chess.com zeigt kleinere Zahlen
+  (nachgerechnet: 10. Tab1?? −5,8 lite, −7,1 volles Netz, chess.com −3,28). Die Karte nennt die
+  Gewinnchance vorher und nachher (Lichess-Formel), das Material die Erklärung nach dem Buch.
+  Neue Regel „schlägt nicht zurück“ (Kapitel 1, Abtausch): Der beste Zug schlug auf dem Feld, auf
+  dem der Gegner gerade geschlagen hatte, der gespielte nicht.
+- **Nebenzweige:** „Besser war …“ (Hauptvariante vor dem Zug) und „So wird der Fehler bestraft“
+  (Hauptvariante nach dem Zug, bei „?“ und „??“) als antippbare Züge am Brett, aus den
+  gespeicherten Varianten der Auswertung (höchstens sechs Halbzüge).
+- **Engine-Wachhund:** Kommt lange nach der Rechenzeit (plus 10 s) kein „bestmove“, startet der
+  Dienst die Engine neu und lehnt den Auftrag als abgebrochen ab; Partie und Auswertung versuchen
+  es dann erneut. Grund: Fehlerbericht „Auswertung startet nicht“; ein vom Handy beendeter Worker
+  ließ den Auftrag ewig offen.
+- **Werkzeugkarten ohne „Mehr …“:** Die Stufen von 0.2.30 (Vorschlag D6) sind entfallen; jede
+  Karte zeigt alle Befunde. Werkzeugleiste waagerecht scrollbar mit Symbol je Bündel.
+- **Auswertung:** Schalter „Genauigkeit wie“ in der Karte, Symbole je Zeile, Marken je Zugklasse,
+  grobe Patzer beider Seiten mit Farbe, drei Engine-Fehler und „Alle zeigen“.
+- **Spielen, Einstellungen, Training:** „Partie beginnen“ unter den Kategorien, Stufen
+  aufklappbar mit Merker auf dem Gerät; Kacheln „Über die App“ und „Einstellungen“, Vorschau
+  2 × 2; Trainer als Zeilen mit Symbol, Übungen als Nummernraster.
+

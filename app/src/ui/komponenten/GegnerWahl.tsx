@@ -12,26 +12,28 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026) drei Kategorien als Kacheln mit Symbol: eigene
  * Stufe, vorgefertigte Bots, eigene Bots. Die gewählte zeigt direkt darunter nur ihren Inhalt
  * (Regler und Fehlerarten, Porträtgitter, eigene Bots mit Editor); der Rest bleibt verborgen.
- * Seit 0.2.85 (Wunsch des Autors) steht „Partie beginnen“ direkt unter den drei Kacheln, damit man
+ * Seit 0.2.85 (Rückfrage S23) steht an jeder Stufe, jeder Kachel und in der Sprechblase die
+ * Elo-Zahl auf der Skala von „Deine Spielstärke“ (engine/botstaerke.ts), mit Erklärung hinter
+ * dem Fragezeichen; eigene Stufen und eigene Bots mit dem Zusatz „geschätzt“.
+ * Seit 0.2.86 (Wunsch des Autors) steht „Partie beginnen“ direkt unter den drei Kacheln, damit man
  * nicht weit scrollen muss; die Stufen der vorgefertigten Bots sind aufklappbar (Gegnerstufen.tsx).
- * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, spiel/partie.ts (Typen), Vorschauwahl,
- * lucide, i18n.
+ * Abhängigkeiten: engine/gegner.ts, engine/botstaerke.ts, engine/stufen.ts, spiel/partie.ts
+ * (Typen), Vorschauwahl, InfoKnopf, staerkeangabe.ts, lucide, i18n.
  */
 import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
 import type { ReactNode } from "react";
-import {
-  durchschnitt,
-  gegnerVon,
-  klasseVon,
-  type EigenerGegner,
-  type Gegner,
-} from "../../engine/gegner";
+import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
+import { gegnerVon, klasseVon, type EigenerGegner } from "../../engine/gegner";
+import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
+import type { Phase } from "../../schach/phase";
 import type { Gegnerart, Spielhilfen } from "../../spiel/partie";
 import { Auswahl } from "./Auswahl";
 import type { Gegnerkategorie } from "./gegnerkategorie";
-import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { portraet } from "./gegnerportraet";
+import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
+import { MitInfo } from "./InfoKnopf";
+import { staerketext } from "./staerkeangabe";
 import { Vorschauwahl } from "./Vorschauwahl";
 
 /** Größe der Symbole auf den Kategorie-Kacheln. */
@@ -40,16 +42,46 @@ const KATEGORIE_SYMBOL = 28;
 const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
 const KATEGORIE_SYMBOLE = { stufe: SlidersHorizontal, vorgefertigt: Bot, eigene: UserPen };
 
-/** „⌀ 3 · Fortgeschrittener Anfänger“ (die Stufen je Phase bleiben verborgen, 0.2.46). */
-function klassentext(g: Gegner): string {
-  return t("spielen.gegnerKlasse", {
-    schnitt: String(durchschnitt(g)).replace(".", ","),
-    klasse: t(klasseVon(g).name),
+/** Stufen je Phase, wie die Regler sie halten. */
+type Stufenwahl = Readonly<Record<Phase, Stufennummer>>;
+
+/**
+ * Die Zeile mit der Zahl: „etwa 1550 (Stufe 2)“ für vorgefertigte Bots, „etwa 1700 (geschätzt)“
+ * für eigene Bots, „Deine Einstellung 3 · 4 · 3 · etwa 1250 (geschätzt)“ für eigene Stufen.
+ */
+function staerkezeile(
+  bot: string | null,
+  eigener: EigenerGegner | null,
+  stufen: Stufenwahl,
+): string {
+  const vorgefertigt = gegnerVon(bot);
+  const gemessen = staerkeDesBots(bot);
+  if (vorgefertigt && gemessen !== null) {
+    const nummer = String(klasseVon(vorgefertigt).nummer);
+    return t("spielen.bot.blase", { staerke: staerketext(gemessen), nummer });
+  }
+  if (eigener) {
+    const staerke = staerketext(staerkeAusStufen(eigener.stufenJePhase));
+    return t("spielen.bot.blaseGeschaetzt", { staerke });
+  }
+  return t("spielen.bot.blaseStufen", {
+    eroeffnung: String(stufen.eroeffnung),
+    mittelspiel: String(stufen.mittelspiel),
+    endspiel: String(stufen.endspiel),
+    staerke: staerketext(staerkeAusStufen(stufen)),
   });
 }
 
-/** Die Sprechblase des gewählten Gegners: Porträt, Name, Klasse und sein Satz. */
-function Sprechblase({ bot, eigene }: { bot: string | null; eigene: readonly EigenerGegner[] }) {
+/** Die Sprechblase des gewählten Gegners: Porträt, Name, Zahl mit Erklärung und sein Satz. */
+function Sprechblase({
+  bot,
+  eigene,
+  stufen,
+}: {
+  bot: string | null;
+  eigene: readonly EigenerGegner[];
+  stufen: Stufenwahl;
+}) {
   const vorgefertigt = gegnerVon(bot);
   const eigener = eigene.find((g) => g.kennung === bot) ?? null;
   const name = vorgefertigt?.name ?? eigener?.name ?? t("spielen.bot.eigene");
@@ -68,8 +100,19 @@ function Sprechblase({ bot, eigene }: { bot: string | null; eigene: readonly Eig
         </span>
       )}
       <div className="gegner-blase">
-        <strong>{name}</strong>
-        {vorgefertigt && <span className="gegner-klasse"> · {klassentext(vorgefertigt)}</span>}
+        <MitInfo
+          thema={t("botstaerke.thema")}
+          zeile={
+            <>
+              <strong>{name}</strong>
+              <span className="gegner-klasse" data-testid="gegner-staerke">
+                {" · "}
+                {staerkezeile(bot, eigener, stufen)}
+              </span>
+            </>
+          }
+          erklaerung={t("botstaerke.erklaerung")}
+        />
         <p>{text}</p>
       </div>
     </div>
@@ -114,6 +157,7 @@ function EigeneGitter({
 export function GegnerWahl({
   gegner,
   bot,
+  stufen,
   eigene,
   kategorie,
   beiGegner,
@@ -125,6 +169,8 @@ export function GegnerWahl({
 }: {
   gegner: Gegnerart;
   bot: string | null;
+  /** Die Stufen je Phase der Regler (für die geschätzte Zahl der eigenen Stufe, 0.2.85). */
+  stufen: Stufenwahl;
   /** Eigene Gegner des Lesers (0.2.42). */
   eigene: readonly EigenerGegner[];
   kategorie: Gegnerkategorie;
@@ -160,7 +206,7 @@ export function GegnerWahl({
           />
           {beginnen}
           {(kategorie !== "eigene" || eigene.some((g) => g.kennung === bot)) && (
-            <Sprechblase bot={bot} eigene={eigene} />
+            <Sprechblase bot={bot} eigene={eigene} stufen={stufen} />
           )}
           {kategorie === "stufe" && stufeninhalt}
           {kategorie === "vorgefertigt" && <VorgefertigteGitter bot={bot} beiBot={beiBot} />}

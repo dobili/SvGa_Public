@@ -145,7 +145,9 @@ class Abstand:
 SCHLAGWEG_HOECHSTENS = 4
 # Nur im Endspiel, wenn höchstens so viel Überzähliges (Bauerneinheiten, beide Seiten) bleibt;
 # vorher lockt der Schlagweg Figuren zu früh auf Materialjagd (gemessen an Abb. 8.25 und 9.24).
-SCHLAGWEG_AB = 4
+# 12 statt 4: Zwei überzählige Türme sollen sich zum Tausch suchen (Abb. 8.26 schob sie sonst
+# fünfzig Züge hin und her).
+SCHLAGWEG_AB = 12
 
 
 def abstand(brett: chess.Board, ziel: chess.Board) -> Abstand:

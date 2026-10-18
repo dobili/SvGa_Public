@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Konstruierte Partie zu Abb. 9.1"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k09-a1-k"]
+[Kapitel "9"]
+[Abschnitt "9.1"]
+[Status "konstruiert"]
+[Abbildungen "9.1"]
+[Opening "Ruy Lopez: Exchange Variation"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. Nc3 f6 6. d4 exd4 7. Nxd4 c5 8. Nf5 Qxd1+ 9. Nxd1 h5 10. c4 Bxf5 11. exf5 Bd6 12. Bd2 Kf7 13. Ke2 Ne7 14. Ne3 Rhe8 15. Kd3 h4 16. Rae1 Bf4 17. g3 Bxe3 18. Bxe3 Nxf5 19. Bxc5 b6 20. Rxe8 Kxe8 21. Be3 Nxe3 22. Kxe3 hxg3 23. hxg3 Kf7 24. c5 Kg6 25. Kd4 f5 26. Kc4 f4 27. b4 fxg3 28. fxg3 bxc5 29. bxc5 Rd8 30. g4 Rd2 31. a3 Ra2 32. Re1 Kf7 33. g5 Kg6 34. Re3 c6 35. Re1 Kf5 36. g6 a5 37. Re7 Kf6 38. Re8 a4 39. Re3 Kf5 40. Re7 Kf6 41. Re8 Kf5 42. Re3 Kf6 43. Rd3 Kg5 44. Rd1 Kh5 45. Rb1 Kg5 46. Rg1+ Kf5 47. Rb1 Kf6 48. Rc1 Kxg6 49. Re1 Rxa3 50. Re6+ Kf5 51. Rxc6 Ra2 52. Rc7 Kg5 53. Rxg7+ Kf5 54. Re7 Kf6 55. Re1 Kg6 56. Kb5 a3 57. Kc4 Rd2 58. Kb3 Rg2 59. Kxa3 Rc2 60. Kb4 Rb2+ 61. Kc4 Ra2 { Abb. 9.1 } *

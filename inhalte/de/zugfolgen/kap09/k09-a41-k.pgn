@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Konstruierte Partie zu Abb. 9.41"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k09-a41-k"]
+[Kapitel "9"]
+[Abschnitt "9.8"]
+[Status "konstruiert"]
+[Abbildungen "9.41"]
+[Opening "Queen's Gambit Declined: Exchange Variation"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. cxd5 Nxd5 5. h4 Nxc3 6. bxc3 e5 7. h5 exd4 8. Qxd4 Qxd4 9. cxd4 Be6 10. h6 c5 11. dxc5 Nd7 12. e3 Nxc5 13. Bb2 Rg8 14. Bxg7 Bf5 15. Bxf8 Kxf8 16. Nh3 Rc8 17. Nf4 Ne6 18. f3 Nxf4 19. exf4 Be6 20. Rb1 Bxa2 21. Rxb7 Bc4 22. g4 Bd5 23. Rxa7 Bxf3 24. Rh4 Rxg4 25. Rxg4 Bxg4 26. Kd2 Kg8 27. Kd3 Kh8 28. Kd4 Rd8+ 29. Ke5 f6+ 30. Kxf6 Rd6+ 31. Kf7 Rd7+ 32. Rxd7 Bxd7 33. Bc4 Bf5 34. Kf6 Be4 35. f5 Bxf5 36. Bg8 Be6 37. Bxh7 Bf5 38. Bxf5 Kg8 39. Bd3 Kh8 40. Ba6 Kh7 41. Bc4 Kh8 { Abb. 9.41 } *

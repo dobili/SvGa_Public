@@ -1,0 +1,16 @@
+[Event "Kapitel 9: Konstruierte Partie zu Abb. 9.53"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k09-a53-k"]
+[Kapitel "9"]
+[Abschnitt "9.10"]
+[Status "konstruiert"]
+[Abbildungen "9.53"]
+[Opening "Ruy Lopez: Exchange Variation"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. d4 exd4 6. Qxd4 Bg4 7. Qxd8+ Kxd8 8. a4 Bxf3 9. gxf3 f5 10. Be3 fxe4 11. Nd2 exf3 12. Bd4 Kc8 13. Nxf3 b6 14. Rg1 Kb7 15. Rxg7 Bxg7 16. Bxg7 Ne7 17. Bxh8 Rf8 18. a5 Rxf3 19. Ke2 Rf5 20. Bd4 Rh5 21. Kd3 Rxh2 22. axb6 cxb6 23. b4 Nf5 24. f3 Rxc2 25. f4 Rg2 26. Rh1 a5 27. bxa5 Rg4 28. Bxb6 Rxf4 29. Kc3 c5 30. Bxc5 Ka8 31. Bd4 Rf3+ 32. Kc4 Rf4 33. Kc5 Rh4 34. Rxh4 Nxh4 35. Bf2 h6 36. Bxh4 Ka7 37. Bf6 Ka8 38. Bg7 Ka7 39. Bxh6 Ka8 40. Bg7 Kb8 41. Bd4 Ka8 { Abb. 9.53 } *

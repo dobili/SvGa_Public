@@ -238,3 +238,100 @@ def suche(ziel_fen: str, eroeffnung: str, start: list[str], pruefer: Pruefer) ->
         if not strahl:
             return None
     return None
+
+
+# Höchstens so viele Anläufe der Breitensuche, wenn die Engine einen Königszug verwirft.
+VERKUERZEN_ANLAEUFE = 20
+
+
+def verkuerze(ergebnis: Ergebnis, ziel_fen: str, pruefer: Pruefer) -> Ergebnis:
+    """Kürzt eine gefundene Partie: Sobald nur noch die Könige falsch stehen, der kürzeste Weg.
+
+    Warum: Die Strahlsuche lässt die Könige am Ende oft lange wandern (Abb. 8.26 nach 210
+    Halbzügen). Ab der ersten Stellung, in der alle anderen Steine wie im Ziel stehen, sucht eine
+    Breitensuche über Königszüge ohne Schlagen den kürzesten Weg; jeder Zug muss die Engine-Prüfung
+    bestehen. Ausgabe: die kürzere Partie, sonst die alte.
+    """
+    ziel = chess.Board(ziel_fen)
+    brett = chess.Board()
+    for i, zug in enumerate([*ergebnis.zuege, None]):
+        if _ohne_koenige(brett) == _ohne_koenige(ziel) and brett.castling_rights == ziel.castling_rights:
+            gefunden = _koenigsweg(brett, ziel, len(ergebnis.zuege) - i - 1, pruefer)
+            if gefunden is not None:
+                weg, verluste = gefunden
+                return Ergebnis(
+                    [*ergebnis.zuege[:i], *weg], [*ergebnis.verluste[:i], *verluste], ergebnis.eroeffnung
+                )
+        if zug is not None:
+            brett.push(zug)
+    return ergebnis
+
+
+def _ohne_koenige(brett: chess.Board) -> dict[int, chess.Piece]:
+    return {feld: stein for feld, stein in brett.piece_map().items() if stein.piece_type != chess.KING}
+
+
+def _koenigsweg(
+    start: chess.Board, ziel: chess.Board, hoechstens: int, pruefer: Pruefer
+) -> tuple[list[chess.Move], list[float]] | None:
+    """Kürzester von der Engine gebilligter Weg nur mit Königszügen und seine Verluste; sonst None."""
+    verboten: set[tuple[str, chess.Move]] = set()
+    for _ in range(VERKUERZEN_ANLAEUFE):
+        weg = _breitensuche(start, genauer_schluessel(ziel), hoechstens, verboten)
+        if weg is None:
+            return None
+        abgelehnt, verluste = _pruefe_weg(start, weg, pruefer)
+        if abgelehnt is None:
+            return weg, verluste
+        verboten.add(abgelehnt)
+    return None
+
+
+def _breitensuche(
+    start: chess.Board, ziel: str, hoechstens: int, verboten: set[tuple[str, chess.Move]]
+) -> list[chess.Move] | None:
+    vorgaenger: dict[str, tuple[str, chess.Move] | None] = {genauer_schluessel(start): None}
+    rand = [start]
+    for _ in range(hoechstens):
+        naechste = []
+        for brett in rand:
+            for zug in brett.legal_moves:
+                if brett.piece_type_at(zug.from_square) != chess.KING or brett.is_capture(zug):
+                    continue
+                if (genauer_schluessel(brett), zug) in verboten:
+                    continue
+                kind = brett.copy(stack=False)
+                kind.push(zug)
+                schluessel = genauer_schluessel(kind)
+                if schluessel in vorgaenger:
+                    continue
+                vorgaenger[schluessel] = (genauer_schluessel(brett), zug)
+                if schluessel == ziel:
+                    return _rueckweg(vorgaenger, schluessel)
+                naechste.append(kind)
+        rand = naechste
+    return None
+
+
+def _rueckweg(vorgaenger: dict[str, tuple[str, chess.Move] | None], schluessel: str) -> list[chess.Move]:
+    weg = []
+    while (eintrag := vorgaenger[schluessel]) is not None:
+        schluessel, zug = eintrag
+        weg.append(zug)
+    return weg[::-1]
+
+
+def _pruefe_weg(
+    start: chess.Board, weg: list[chess.Move], pruefer: Pruefer
+) -> tuple[tuple[str, chess.Move] | None, list[float]]:
+    """Erster Zug, der zu viel verschenkt (der Zug ins Ziel gilt immer), und die Verluste davor."""
+    brett = start.copy(stack=False)
+    verluste = []
+    for i, zug in enumerate(weg):
+        urteil = pruefer.urteile(brett, [zug]).get(zug)
+        verlust = urteil.verlust if urteil else math.inf
+        if i < len(weg) - 1 and verlust > pruefer.einstellung.grenze:
+            return (genauer_schluessel(brett), zug), verluste
+        verluste.append(verlust)
+        brett.push(zug)
+    return None, verluste

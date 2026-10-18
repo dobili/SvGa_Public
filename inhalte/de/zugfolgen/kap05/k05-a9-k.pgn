@@ -1,0 +1,16 @@
+[Event "Kapitel 5: Konstruierte Partie zu Abb. 5.9"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k05-a9-k"]
+[Kapitel "5"]
+[Abschnitt "5.3"]
+[Status "konstruiert"]
+[Abbildungen "5.9"]
+[Opening "Sicilian Defense: Open"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 c5 2. Nf3 Nc6 3. d4 cxd4 4. Nxd4 g6 5. Nxc6 dxc6 6. Qxd8+ Kxd8 7. Bc4 Bh6 8. O-O Bxc1 9. Rxc1 Ke8 10. e5 Kf8 11. h3 g5 12. a4 Bf5 13. Nc3 e6 14. Bd3 Bxd3 15. cxd3 Rd8 16. Ra3 Rxd3 17. a5 Ne7 18. Rb3 b6 19. axb6 axb6 20. Rxb6 Nd5 21. Nxd5 Rxd5 22. Rbxc6 Rxe5 23. b3 Kg7 24. R6c5 Rxc5 25. Rxc5 Rb8 26. Re5 Rxb3 27. Re2 Kg8 28. Ra2 Rb8 29. Ra7 Rb6 30. Rc7 Rb4 31. Re7 Rb8 32. Rc7 Rb2 33. Rc6 Rb3 34. Rc1 e5 35. Rc7 Rb5 36. Re7 Rc5 37. Ra7 Rc6 38. Ra5 Re6 39. Ra7 Rh6 40. Ra3 Rf6 41. Rg3 Rg6 42. Rb3 Rh6 43. Rd3 Rf6 44. Rd5 Re6 45. Rd7 Ra6 46. Re7 e4 47. Rb7 Rd6 48. Rb1 Rg6 49. Rb2 Rh6 50. Rb3 Rd6 51. Ra3 Rd8 52. Ra1 Rf8 53. Ra6 Rb8 54. Ra4 Re8 55. Ra3 Rf8 56. Ra7 Re8 57. Ra6 Re6 58. Ra2 Rf6 59. Rc2 Ra6 60. Rc4 e3 61. Rc2 Rh6 62. Re2 Rb6 63. Rc2 Ra6 64. Rb2 Rg6 65. Ra2 Rh6 66. Ra1 Rd6 67. Ra2 Rg6 68. Rb2 Re6 69. Rb1 Ra6 70. Rd1 Rd6 71. Rxd6 Kf8 72. Rd1 Kg8 73. Rd5 Kg7 74. Re5 Kg8 75. Re8+ Kg7 76. Rxe3 Kg8 77. Re4 Kg7 78. Re1 Kg8 79. Rc1 Kg7 80. Rc2 Kg8 81. Rd2 Kg7 82. Rb2 Kg8 83. Ra2 Kg7 84. Ra1 Kg8 85. Ra6 Kg7 86. Rb6 Kg8 87. Rb7 Kf8 88. Rb6 Kg7 89. Rc6 Kg8 90. Rh6 Kg7 91. Rd6 Kg8 92. Rd8+ Kg7 93. Rd2 Kg8 94. Rd6 Kh8 95. Rf6 Kg7 96. Rf3 Kg8 97. Rb3 Kg7 98. Rb4 Kf8 99. Rg4 Kg8 100. Rc4 Kf8 101. Rc8+ Kg7 102. Rg8+ Kxg8 { Abb. 5.9 } *

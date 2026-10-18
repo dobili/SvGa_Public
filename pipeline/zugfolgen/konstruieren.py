@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import re
 import time
 from dataclasses import dataclass
 from pathlib import Path
@@ -26,7 +27,7 @@ import chess
 import chess.engine
 import chess.pgn
 
-from pipeline.zugfolgen.konstruktion import Einstellung, Ergebnis, Pruefer, suche
+from pipeline.zugfolgen.konstruktion import Einstellung, Ergebnis, Pruefer, suche, verkuerze
 from pipeline.zugfolgen.pgn import STATUS_KONSTRUIERT
 
 HAUPTORDNER = Path(__file__).resolve().parents[2]
@@ -121,6 +122,8 @@ def baue(abbildung: Abbildung, pruefer: Pruefer) -> Ergebnis | None:
     for name in abbildung.eroeffnungen:
         beginn = time.time()
         ergebnis = suche(abbildung.fen, name.split("|", 1)[0], eroeffnungszuege(name), pruefer)
+        if ergebnis:
+            ergebnis = verkuerze(ergebnis, abbildung.fen, pruefer)
         _protokolliere(abbildung, name, ergebnis, time.time() - beginn)
         if ergebnis:
             return ergebnis
@@ -161,6 +164,40 @@ def fuer_bewertung(ordner: Path) -> int:
     return len(zeilen)
 
 
+def verkuerze_vorhandene(gewuenscht: list[str], pruefer: Pruefer) -> None:
+    """Kürzt schon abgelegte konstruierte Partien (Königswege am Ende) und schreibt sie neu."""
+    for abbildung in offene_abbildungen(gewuenscht or _abgelegte()):
+        pfad = ZUGFOLGEN / f"kap{abbildung.kapitel:02d}" / f"{kennung(abbildung)}.pgn"
+        if not pfad.exists():
+            continue
+        with pfad.open(encoding="utf-8") as datei:
+            spiel = chess.pgn.read_game(datei)
+        if spiel is None:
+            continue
+        alt = list(spiel.mainline_moves())
+        vorher = Ergebnis(alt, [0.0] * len(alt), spiel.headers.get("Opening", ""))
+        ergebnis = verkuerze(vorher, abbildung.fen, pruefer)
+        if len(ergebnis.zuege) < len(alt):
+            pfad.write_text(str(als_pgn(abbildung, ergebnis)) + "\n", encoding="utf-8")
+            print(f"Abb. {abbildung.nummer}: {len(alt)} → {len(ergebnis.zuege)} Halbzüge")
+
+
+def _halbzuege(pfad: Path) -> int:
+    with pfad.open(encoding="utf-8") as datei:
+        spiel = chess.pgn.read_game(datei)
+    return len(list(spiel.mainline_moves())) if spiel else 0
+
+
+def _abgelegte() -> list[str]:
+    """Die Nummern der Abbildungen, zu denen schon eine konstruierte Partie liegt."""
+    ergebnis = []
+    for pfad in ZUGFOLGEN.glob("kap*/*-k.pgn"):
+        treffer = re.search(r'\[Abbildungen "([^"]*)"\]', pfad.read_text(encoding="utf-8"))
+        if treffer:
+            ergebnis.append(treffer.group(1))
+    return ergebnis
+
+
 def main() -> None:
     teiler = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     teiler.add_argument("--engine", type=Path)
@@ -168,6 +205,8 @@ def main() -> None:
     teiler.add_argument(
         "--fuer-bewertung", type=Path, help="nur konstruiert.jsonl in diesen Ordner schreiben"
     )
+    teiler.add_argument("--verkuerzen", action="store_true", help="vorhandene konstruierte Partien kürzen")
+    teiler.add_argument("--nur-kuerzer", action="store_true", help="nur schreiben, wenn kürzer als vorhanden")
     argumente = teiler.parse_args()
     if argumente.fuer_bewertung:
         print(f"{fuer_bewertung(argumente.fuer_bewertung)} Partien für die Bewertung")
@@ -178,12 +217,18 @@ def main() -> None:
     motor.configure({"Threads": 1, "Hash": 64})
     pruefer = Pruefer(motor, Einstellung())
     try:
+        if argumente.verkuerzen:
+            verkuerze_vorhandene(argumente.abbildung, pruefer)
+            return
         for abbildung in offene_abbildungen(argumente.abbildung):
             ergebnis = baue(abbildung, pruefer)
             if ergebnis is None:
                 print(f"Abb. {abbildung.nummer}: keine Partie gefunden")
                 continue
             pfad = ZUGFOLGEN / f"kap{abbildung.kapitel:02d}" / f"{kennung(abbildung)}.pgn"
+            if argumente.nur_kuerzer and pfad.exists() and _halbzuege(pfad) <= len(ergebnis.zuege):
+                print(f"Abb. {abbildung.nummer}: {len(ergebnis.zuege)} Halbzüge, vorhandene Partie bleibt")
+                continue
             pfad.parent.mkdir(parents=True, exist_ok=True)
             pfad.write_text(str(als_pgn(abbildung, ergebnis)) + "\n", encoding="utf-8")
             print(f"Abb. {abbildung.nummer}: {len(ergebnis.zuege)} Halbzüge → {pfad.name}")

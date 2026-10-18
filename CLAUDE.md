@@ -48,7 +48,11 @@ Grundlagen (Claude Docs, nur lesen):
    vollständig in `docs/AUFGABEN_AUTOR.md` (Teil 1 Tests, Teil 2 Rückfragen), mit allen nötigen
    Informationen im Text, ohne Verweise auf andere Dateien, und nur Offenes (Wunsch des Autors,
    17.10.2026: Er liest auf dem Handy). Erledigtes wird dort gelöscht und in
-   `docs/ENTSCHEIDUNGEN.md` festgehalten. Eine eigene Testanleitung gibt es nicht mehr.
+   `docs/ENTSCHEIDUNGEN.md` festgehalten. Eine eigene Testanleitung gibt es nicht mehr. Die App
+   zeigt die Datei als Aufgabenseite (drei Sekunden auf das Zahnrad, seit 0.2.74) und liest dafür
+   die Punkte im Format „- [ ] N307. Text“ mit eingerückten Folgezeilen: Dieses Format bleibt.
+   Der Autor schickt seinen Stand als Text („N306 ok“, „N305: Notiz“); den einarbeiten wie
+   jede Antwort.
 9. **Empfehlungen gleich umsetzen** (Wunsch des Autors, 17.10.2026 nachmittags, auch an Opus):
    Zu jeder Rückfrage eine fundierte Empfehlung erarbeiten, sie in `docs/AUFGABEN_AUTOR.md`
    festhalten und dann sofort umsetzen („Schon umgesetzt in …, Widerspruch genügt“). Widerspricht

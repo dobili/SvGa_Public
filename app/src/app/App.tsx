@@ -7,7 +7,7 @@
  * Schachlogik. Die App liegt unter /app/ und startet immer direkt; Installation und Buch stellt
  * die statische Startseite unter / vor (Entscheidung 15.10.2026). Die Adresse /app/#lizenzen
  * (Fußzeile der Startseite) öffnet gleich die Lizenzen, /app/#abb-6.20 (Trainingsseiten der
- * Website, seit 16.10.2026) gleich die Abbildung.
+ * Website, seit 16.10.2026) gleich die Abbildung, /app/#aufgaben die Aufgabenseite des Autors.
  * Abhängigkeiten: Navigation, Bildschirme, Komponenten.
  */
 import { useEffect } from "react";
@@ -25,6 +25,8 @@ import { Uebung } from "../ui/bildschirme/Uebung";
 import { Partie } from "../ui/bildschirme/Partie";
 import { Spielen } from "../ui/bildschirme/Spielen";
 import { Lizenzen } from "../ui/bildschirme/Lizenzen";
+import { AutorAufgaben } from "../ui/bildschirme/AutorAufgaben";
+import { AufgabenRueckweg } from "../ui/komponenten/AufgabenRueckweg";
 import { Leiste } from "../ui/komponenten/Leiste";
 import { Speicherhinweis } from "../ui/komponenten/Speicherhinweis";
 import { SicherungsHinweis } from "../ui/komponenten/SicherungsHinweis";
@@ -64,6 +66,8 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
       return <Ich />;
     case "lizenzen":
       return <Lizenzen />;
+    case "autoraufgaben":
+      return <AutorAufgaben />;
     case "uebung":
       return (
         <Uebung key={ansicht.id} kapitel={ansicht.kapitel} id={ansicht.id} reihe={ansicht.reihe} />
@@ -75,12 +79,15 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
 
 /** Sprungziel in der Adresse, das gleich eine Ansicht öffnet (Fußzeile der Startseite). */
 const SPRUNG_LIZENZEN = "#lizenzen";
+/** Aufgabenseite des Autors am Rechner, wo es keinen langen Druck gibt (seit 0.2.74). */
+const SPRUNG_AUFGABEN = "#aufgaben";
 /** Sprung zu einer Abbildung von den Trainingsseiten der Website, etwa „#abb-6.20“ (16.10.2026). */
 const SPRUNG_ABBILDUNG = /^#abb-(\d{1,2}\.\d{1,3})$/;
 
 /** Die Ansicht zu einem Sprungziel der Adresse, oder null. Beispiel: „#abb-6.20“ → Abb. 6.20. */
 function ansichtZumSprung(hash: string): Ansicht | null {
   if (hash === SPRUNG_LIZENZEN) return { bildschirm: "lizenzen" };
+  if (hash === SPRUNG_AUFGABEN) return { bildschirm: "autoraufgaben" };
   const abbildung = SPRUNG_ABBILDUNG.exec(hash)?.[1];
   return abbildung ? { bildschirm: "abbildung", nummer: abbildung } : null;
 }
@@ -114,6 +121,7 @@ function Hauptrahmen() {
       <main className="inhalt">
         <Bildschirm ansicht={ansicht} />
       </main>
+      <AufgabenRueckweg />
       <Leiste />
     </div>
   );

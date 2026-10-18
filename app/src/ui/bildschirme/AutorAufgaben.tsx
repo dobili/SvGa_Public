@@ -1,0 +1,240 @@
+/**
+ * Aufgabenseite des Autors: `docs/AUFGABEN_AUTOR.md` in der App, mit Links, Haken, Notizen und
+ * einem Knopf, der den Stand für den Chat in die Zwischenablage legt.
+ *
+ * Rolle im Gesamtbild: Wunsch des Autors vom 18.10.2026, damit die Nachtests auf dem Handy
+ * schneller gehen. Erreichbar über einen langen Druck (drei Sekunden) auf das Zahnrad der Leiste
+ * oder über die Adresse /app/#aufgaben; Leser stoßen nicht zufällig darauf. Die Datei kommt beim
+ * Bauen als eigener Teil der App mit (nachgeladen, offline vorhanden) und ist damit so neu wie
+ * die App. Haken und Notizen liegen als Merker auf dem Gerät.
+ * Abhängigkeiten: autor/*, app/merker.ts, app/version.ts, training/trainer.ts, Aufgabenpunkt,
+ * Kopfzeile, useDaten, i18n.
+ */
+import { useEffect, useState } from "react";
+import { liesMerker, schreibeMerker } from "../../app/merker";
+import { APP_VERSION } from "../../app/version";
+import {
+  abhakstandAus,
+  alleKennungen,
+  LEERER_ABHAKSTAND,
+  meldung,
+  mitAbschnitt,
+  mitHaken,
+  mitNotiz,
+  type Abhakstand,
+} from "../../autor/abhakstand";
+import {
+  liesAufgabendatei,
+  type Aufgabenabschnitt,
+  type Aufgabendatei,
+} from "../../autor/aufgabendatei";
+import type { Trainername } from "../../autor/verweise";
+import { t } from "../../i18n/sprache";
+import { TRAINER } from "../../training/trainer";
+import { Aufgabenpunkt, Aufgabentext } from "../komponenten/Aufgabenpunkt";
+import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { useDaten } from "../komponenten/useDaten";
+
+const MERKER = "autorAufgaben";
+
+/** Lädt die Aufgabendatei (eigener Teil der App, erst beim ersten Öffnen geladen). */
+async function ladeAufgabendatei(): Promise<Aufgabendatei> {
+  const modul = await import("../../../../docs/AUFGABEN_AUTOR.md?raw");
+  return liesAufgabendatei(modul.default);
+}
+
+const TRAINERNAMEN: readonly Trainername[] = TRAINER.map(({ kennung }) => ({
+  kennung,
+  name: t(`trainer.${kennung}.name`),
+}));
+
+/**
+ * Der gemerkte Stand und eine Funktion, die ihn ändert und gleich merkt. Beim allerersten Öffnen
+ * (noch nichts gemerkt) ist der neueste Abschnitt aufgeklappt.
+ */
+function useAbhakstand(
+  erster: string | null,
+): [Abhakstand, (aendern: (alt: Abhakstand) => Abhakstand) => void] {
+  const [stand, setzeStand] = useState(() => {
+    const gemerkt = liesMerker(MERKER);
+    if (gemerkt === null && erster) return { ...LEERER_ABHAKSTAND, offen: [erster] };
+    return abhakstandAus(gemerkt);
+  });
+  const aendere = (aendern: (alt: Abhakstand) => Abhakstand) => {
+    setzeStand((alt) => {
+      const neu = aendern(alt);
+      schreibeMerker(MERKER, JSON.stringify(neu));
+      return neu;
+    });
+  };
+  return [stand, aendere];
+}
+
+/** Kopfkarte: Zählung, Kopieren, Filter, Löschen und der Text zum Ansehen. */
+function Steuerung({
+  datei,
+  stand,
+  nurOffene,
+  setzeNurOffene,
+  loesche,
+}: {
+  datei: Aufgabendatei;
+  stand: Abhakstand;
+  nurOffene: boolean;
+  setzeNurOffene: (an: boolean) => void;
+  loesche: () => void;
+}) {
+  const [kopiert, setzeKopiert] = useState<"ja" | "vonHand" | null>(null);
+  const text = meldung(datei, stand, APP_VERSION);
+  const kennungen = alleKennungen(datei);
+  const erledigt = kennungen.filter((id) => stand.haken.includes(id)).length;
+  const kopiere = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setzeKopiert("ja");
+    } catch (fehler) {
+      console.warn("Zwischenablage nicht erreichbar:", fehler);
+      setzeKopiert("vonHand");
+    }
+  };
+  return (
+    <section className="karte" data-testid="autor-steuerung">
+      <p className="hinweis">
+        {t("autor.stand", { datei: datei.version ?? "?", app: APP_VERSION })}{" "}
+        {t("autor.zaehlung", { erledigt, gesamt: kennungen.length })}
+      </p>
+      <button type="button" className="knopf-haupt" onClick={() => void kopiere()}>
+        {t("autor.kopieren")}
+      </button>
+      {kopiert && (
+        <p className="meldung" role="status">
+          {t(kopiert === "ja" ? "autor.kopiert" : "autor.vonHand")}
+        </p>
+      )}
+      <details open={kopiert === "vonHand"}>
+        <summary>{t("autor.textAnsehen")}</summary>
+        <pre className="autortext" data-testid="autor-text">
+          {text}
+        </pre>
+      </details>
+      <label className="schalterzeile">
+        <input
+          type="checkbox"
+          checked={nurOffene}
+          onChange={(e) => setzeNurOffene(e.target.checked)}
+        />
+        {t("autor.nurOffene")}
+      </label>
+      <button
+        type="button"
+        className="knopf-link klein"
+        onClick={() => window.confirm(t("autor.loeschenFrage")) && loesche()}
+      >
+        {t("autor.loeschen")}
+      </button>
+    </section>
+  );
+}
+
+/** Ein Abschnitt „###“: aufklappbar, mit Zählung im Titel. */
+function Abschnitt({
+  abschnitt,
+  stand,
+  aendere,
+  nurOffene,
+}: {
+  abschnitt: Aufgabenabschnitt;
+  stand: Abhakstand;
+  aendere: (aendern: (alt: Abhakstand) => Abhakstand) => void;
+  nurOffene: boolean;
+}) {
+  const { titel, punkte } = abschnitt;
+  const erledigt = punkte.filter((p) => stand.haken.includes(p.id)).length;
+  const sichtbar = nurOffene ? punkte.filter((p) => !stand.haken.includes(p.id)) : punkte;
+  return (
+    <details
+      className="karte aufgabenabschnitt"
+      open={stand.offen.includes(titel)}
+      onToggle={(e) => {
+        const offen = e.currentTarget.open;
+        if (offen !== stand.offen.includes(titel))
+          aendere((alt) => mitAbschnitt(alt, titel, offen));
+      }}
+    >
+      <summary>
+        {titel} ({erledigt}/{punkte.length})
+      </summary>
+      {abschnitt.absaetze.map((a) => (
+        <p key={a} className="hinweis">
+          <Aufgabentext text={a} namen={TRAINERNAMEN} />
+        </p>
+      ))}
+      <ul className="aufgabenliste">
+        {sichtbar.map((p) => (
+          <Aufgabenpunkt
+            key={`${titel}-${p.id}`}
+            punkt={p}
+            namen={TRAINERNAMEN}
+            erledigt={stand.haken.includes(p.id)}
+            notiz={stand.notizen[p.id] ?? ""}
+            setzeHaken={(an) => aendere((alt) => mitHaken(alt, p.id, an))}
+            setzeNotiz={(n) => aendere((alt) => mitNotiz(alt, p.id, n))}
+            merke={() => aendere((alt) => ({ ...alt, zuletzt: p.id }))}
+          />
+        ))}
+      </ul>
+    </details>
+  );
+}
+
+function Inhalt({ datei }: { datei: Aufgabendatei }) {
+  const erster = datei.abschnitte.find((a) => a.ebene === 3)?.titel ?? null;
+  const [stand, aendere] = useAbhakstand(erster);
+  const [nurOffene, setzeNurOffene] = useState(false);
+  // Beim Zurückkommen von einem Link zum zuletzt angetippten Punkt scrollen (nur beim Öffnen).
+  useEffect(() => {
+    if (stand.zuletzt)
+      document.getElementById(`aufgabe-${stand.zuletzt}`)?.scrollIntoView({ block: "center" });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  return (
+    <>
+      <Steuerung
+        datei={datei}
+        stand={stand}
+        nurOffene={nurOffene}
+        setzeNurOffene={setzeNurOffene}
+        loesche={() => aendere(() => LEERER_ABHAKSTAND)}
+      />
+      {datei.abschnitte.map((a) =>
+        a.ebene === 2 ? (
+          <h2 key={a.titel} className="abschnitt-titel">
+            {a.titel}
+          </h2>
+        ) : (
+          <Abschnitt
+            key={a.titel}
+            abschnitt={a}
+            stand={stand}
+            aendere={aendere}
+            nurOffene={nurOffene}
+          />
+        ),
+      )}
+    </>
+  );
+}
+
+export function AutorAufgaben() {
+  const daten = useDaten(ladeAufgabendatei, "autor-aufgaben");
+  return (
+    <div className="bildschirm bildschirm-autor" data-testid="autor-aufgaben">
+      <Kopfzeile titel={t("autor.titel")} zurueckText={t("abbildung.zurueck")} />
+      {daten.art === "laedt" && <p className="lade">…</p>}
+      {daten.art === "fehler" && (
+        <p className="fehlertext">{t("buch.ladefehler", { fehler: daten.meldung })}</p>
+      )}
+      {daten.art === "fertig" && <Inhalt datei={daten.wert} />}
+    </div>
+  );
+}

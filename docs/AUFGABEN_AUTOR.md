@@ -1,8 +1,14 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.73. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.74. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
+
+**In der App (seit 0.2.74):** Halte das Zahnrad unten rechts drei Sekunden gedrückt (am Rechner:
+Adresse `/app/#aufgaben`). Dann öffnet sich diese Datei als Seite: Abbildungen, Trainer,
+Spielen, Einstellungen und Nachschlagen im Text sind Links, jeder Punkt hat einen Haken und eine
+Notiz. „Stand in die Zwischenablage“ legt alles Abgehakte und Notierte als Text ab („N306 ok“,
+„N305: Pfeil fehlt“), den du in den Chat einfügst.
 
 **So antwortest du:** im Chat mit den Kürzeln, etwa „N203 ok“, „N205 falscher Pfeil“, „X5: so
 lassen“, „T1: Vorschläge übernehmen“. Claude trägt alles ein. Bei Fehlern in der App hilft
@@ -11,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.73“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.74“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +27,20 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.73“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.74“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.74 (etwa 5 Minuten; diese Datei in der App, Opus)
+
+- [ ] N307. **Aufgabenseite:** Zahnrad unten rechts drei Sekunden gedrückt halten (ein kurzer
+      Tipp öffnet wie bisher die Einstellungen). Es öffnet sich „Aufgaben des Autors“ mit dieser
+      Datei, der neueste Abschnitt ist aufgeklappt. Tippe in einem Punkt auf einen unterstrichenen
+      Link (etwa „Einstellungen“, „Abb. 6.20“ oder einen Trainernamen): Der Bildschirm öffnet sich, über
+      der Leiste steht „‹ Zurück zu den Aufgaben“ und bringt dich an dieselbe Stelle zurück. Hake einen Punkt ab, schreib bei
+      einem anderen eine Notiz („Notiz“), dann „Stand in die Zwischenablage“ und füge den Text in
+      den Chat ein. „Nur offene Punkte zeigen“ blendet Abgehaktes aus. Haken und Notizen bleiben
+      auf dem Handy, auch nach einem Update; Punkte, die in einer neuen Version fehlen (weil
+      erledigt), fallen aus dem Text heraus.
 
 ### Neu in 0.2.73 (etwa 2 Minuten; Lizenzen, Opus)
 

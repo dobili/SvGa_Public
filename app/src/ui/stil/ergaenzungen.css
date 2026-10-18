@@ -351,3 +351,73 @@
   min-height: var(--tippflaeche);
   font-weight: 400;
 }
+
+/* Aufgabenseite des Autors (seit 0.2.74): Zahnrad ohne Kontextmenü beim langen Druck, Punkte mit
+   Haken links, Links im Fließtext, Text für den Chat umbrochen. */
+.leiste-knopf-halten {
+  -webkit-touch-callout: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.aufgabenliste {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.aufgabenpunkt {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: calc(var(--raster) / 2);
+  padding: calc(var(--raster) / 2) 0;
+  border-bottom: 1px solid var(--linie);
+}
+
+.aufgabenpunkt-erledigt .aufgabentext {
+  opacity: 0.6;
+}
+
+.aufgabenhaken {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--raster) / 4);
+}
+
+.aufgabentext .textfeld {
+  display: block;
+  width: 100%;
+  margin-top: calc(var(--raster) / 2);
+}
+
+.aufgabenlink {
+  color: var(--text);
+}
+
+.autortext {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.aufgabenhaken input {
+  width: 22px;
+  height: 22px;
+  margin: 0;
+}
+
+/* Rückweg zur Aufgabenseite: schwebt über der Leiste, mittig. */
+.aufgaben-rueckweg {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(var(--leiste-hoehe) + env(safe-area-inset-bottom) + var(--raster));
+  z-index: 11;
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 2);
+  border: none;
+  border-radius: var(--radius);
+  background: var(--gold);
+  color: var(--navy);
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}

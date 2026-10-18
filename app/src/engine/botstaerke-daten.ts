@@ -1,0 +1,88 @@
+/**
+ * Elo-Zahl der Stufen und der vorgefertigten Bots (erzeugt vom Messlauf
+ * engine/botstaerke.messung.ts am 2026-10-18, nicht von Hand ändern).
+ *
+ * Rolle im Gesamtbild: Daten für engine/botstaerke.ts. Elo-Leiter aus den Ergebnissen der
+ * Bot-Messung, verankert an Stufen, die gegen sich selbst spielten, über die Rechnung von
+ * „Deine Spielstärke“. Herleitung und Unsicherheit: docs/ENTSCHEIDUNGEN.md, „Elo-Zahl der Bots“.
+ * Abhängigkeiten: engine/stufen.ts (Typ).
+ */
+import type { Stufennummer } from "./stufen";
+
+export const STUFEN_STAERKE: Readonly<Record<Stufennummer, number>> = {
+  1: 1226,
+  2: 1562,
+  3: 1941,
+  4: 2111,
+  5: 2390,
+  6: 2626,
+  7: 2943,
+  8: 3254,
+};
+
+export const BOT_STAERKE: Readonly<Record<string, number>> = {
+  lotta: 1267,
+  paula: 1199,
+  max: 1122,
+  finn: 1199,
+  "oma-gerda": 1073,
+  leon: 1332,
+  mia: 1267,
+  emil: 1168,
+  "opa-hans": 1547,
+  "onkel-rudi": 1636,
+  frieda: 1423,
+  "herr-lehmann": 1686,
+  ayse: 1583,
+  pit: 1719,
+  sophie: 1686,
+  karl: 1686,
+  selin: 2106,
+  nina: 2000,
+  jonas: 1973,
+  tobias: 1946,
+  greta: 2026,
+  "herr-nowak": 1918,
+  ida: 2026,
+  omar: 2052,
+  benno: 2100,
+  timo: 2192,
+  "frau-berger": 2100,
+  lukas: 2031,
+  zoe: 2100,
+  "herr-schmitt": 2104,
+  amira: 2162,
+  jan: 1900,
+  kurt: 2288,
+  "frau-ortega": 2340,
+  nils: 2231,
+  hanna: 2440,
+  "herr-weber": 2314,
+  lea: 2340,
+  paul: 2340,
+  "frau-kaya": 2340,
+  lena: 2701,
+  viktor: 2576,
+  sara: 2626,
+  "herr-fischer": 2524,
+  elif: 2626,
+  matteo: 2676,
+  "frau-lind": 2467,
+  ben: 2524,
+  "doktor-berg": 3045,
+  "trainer-koch": 2660,
+  yara: 2723,
+  "herr-brandt": 2723,
+  noah: 2824,
+  "frau-stein": 2893,
+  ravi: 2841,
+  "frau-doktor-ahl": 2784,
+  "gm-gruen": 3254,
+  "im-vogt": 3095,
+  "wgm-sato": 3152,
+  "fm-ortiz": 3204,
+  "gm-petrova": 3007,
+  "im-haas": 3254,
+  "wim-nkemelu": 3095,
+  "gm-lindqvist": 3152,
+};

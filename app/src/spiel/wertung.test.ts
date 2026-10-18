@@ -3,6 +3,7 @@
  * Wertung auf die Schätzung, weitere Partien ändern sie nach Elo, was nicht zählt, und die
  * Ausschnitte für die Kurve.
  */
+import { staerkeDerStufe } from "../engine/botstaerke";
 import { describe, expect, it } from "vitest";
 import type { Partieeintrag } from "../speicher/partien";
 import { staerkeUeberPartien } from "./staerkemodell";
@@ -86,9 +87,13 @@ describe("Wertung", () => {
     // Fehlerfrei: Mittelspiel (ab Zug 5, Schwarz entwickelt) geschätzt, Endspiel nie erreicht.
     expect(verlauf[0]?.phasen.mittelspiel).toBe(schaetzung);
     expect(verlauf[0]?.phasen.endspiel).toBeNull();
-    // Zweite Partie gewonnen gegen einen gleich starken Gegner: + 32 · (1 − ½) = 16.
+    // Zweite Partie gewonnen; Gegnerwertung ist seit 0.2.84 die feste Zahl der Stufe 3.
     verlauf = mitGewerteterPartie(verlauf, eintrag("2", "white"));
-    expect(verlauf[1]?.wertung).toBe((schaetzung ?? 0) + K_ANFANG / 2);
+    const stufe3 = Math.round(staerkeDerStufe(3));
+    expect(verlauf[1]?.gegner).toBe(stufe3);
+    expect(verlauf[1]?.wertung).toBe(
+      Math.round((schaetzung ?? 0) + K_ANFANG * (1 - erwartung(schaetzung ?? 0, stufe3))),
+    );
     for (let i = 3; i <= ANFANGSPARTIEN; i += 1) {
       verlauf = mitGewerteterPartie(verlauf, eintrag(String(i), null));
     }

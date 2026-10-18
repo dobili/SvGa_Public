@@ -10,13 +10,15 @@
  * spiel/genauigkeit.ts; hier nur die Tabellen mit zwei Spalten, der Leser zuerst.
  * Seit 0.2.83 (Eichung): Genauigkeit im gewählten Modus (Einstellungen), Spielstärke als Mitte mit
  * Spanne, die Werte für chess.com und Lichess hinter dem Fragezeichen; das Urteilswort je Phase an
- * der inneren Genauigkeit.
- * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/taktik.ts, app/einstellungen.ts,
+ * der inneren Genauigkeit. Seit 0.2.84 (S23) über der Tabelle die feste Zahl des Gegners neben
+ * seiner Leistung in dieser Partie („Leon (etwa 650) hat in dieser Partie wie etwa 800 gespielt“).
+ * Abhängigkeiten: engine/botstaerke.ts, staerkeangabe.ts, spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/taktik.ts, app/einstellungen.ts,
  * InfoKnopf, i18n.
  */
 import type { Color } from "chessops/types";
 import { Fragment, useMemo } from "react";
 import { useEinstellungen } from "../../app/einstellungen";
+import { gegnerstaerke } from "../../engine/botstaerke";
 import { t } from "../../i18n/sprache";
 import type { Zugklasse, Zugurteil } from "../../spiel/auswertung";
 import {
@@ -31,6 +33,7 @@ import { PHASEN, type Phase } from "../../spiel/phasen";
 import { ZUGARTEN, zugartJeStellung } from "../../spiel/taktik";
 import { sanZuUci } from "../../spiel/zuege";
 import { MitInfo } from "./InfoKnopf";
+import { staerketext as angabetext } from "./staerkeangabe";
 
 /** Reihenfolge der Klassen in der Tabelle, wie bei chess.com von oben nach unten. */
 const KLASSEN: readonly Zugklasse[] = [
@@ -67,6 +70,21 @@ function genauigkeitstext(b: Seitenbilanz): string {
 /** Zahl mit deutschem Komma und einer Nachkommastelle. */
 function komma(zahl: number): string {
   return zahl.toFixed(1).replace(".", ",");
+}
+
+/**
+ * Feste Zahl des Gegners und seine Leistung in dieser Partie; null gegen einen Menschen oder ohne
+ * Schätzung (zu wenige Züge).
+ * Beispiel: Leon (etwa 650), Engine spielte mit 82 % → „Leon (etwa 650) hat in dieser Partie wie
+ * etwa 1500 gespielt.“
+ */
+function gegnerzeile(partie: Partie, engine: Seitenbilanz): string | null {
+  if (partie.einstellung.gegner !== "engine" || engine.schaetzung === null) return null;
+  return t("spielstaerke.gegnerHeute", {
+    name: partie.einstellung.botName ?? t("spielstaerke.gegnerName"),
+    staerke: angabetext(gegnerstaerke(partie.einstellung)),
+    heute: angabetext(engine.schaetzung.mitte),
+  });
 }
 
 /** Die Tabelle: Zeilen sind die Kennzahlen, Spalten die Seiten (Leser zuerst). */
@@ -113,6 +131,11 @@ export function Spielstaerke({
   return (
     <section className="karte spielstaerke" data-testid="spielstaerke">
       <h2 className="karte-titel">{t("spielstaerke.titel")}</h2>
+      {gegnerzeile(partie, bilanz[andere]) && (
+        <p className="hinweis" data-testid="gegner-heute">
+          {gegnerzeile(partie, bilanz[andere])}
+        </p>
+      )}
       <table className="spielstaerke-tabelle">
         <thead>
           <tr>

@@ -247,10 +247,20 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   const gitter = page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" });
   // Der Wechsel wählt gleich den ersten Bot der Stufe im Mittelspiel (anfangs Stufe 1).
   await expect(gitter.getByRole("radio", { checked: true })).toHaveCount(1);
+  // Elo-Zahl an Stufe, Kachel und Sprechblase (0.2.84, S23), mit Erklärung hinter dem Fragezeichen.
+  await expect(
+    gitter.getByRole("heading", { name: /^Stufe 1 · Einsteiger · (etwa|unter) \d+( bis .*\d+)?$/ }),
+  ).toBeVisible();
+  await expect(gitter.getByRole("radio", { checked: true })).toContainText(/etwa|unter|über/);
+  const staerke = page.getByTestId("gegner-staerke");
+  await expect(staerke).toContainText(/(etwa|unter|über) \d+ \(Stufe 1\)/);
+  await page.getByRole("button", { name: "Erklärung: Stärke der Bots" }).click();
+  await expect(page.getByTestId("gegner-sprechblase")).toContainText("Elo-Leiter");
   await page.screenshot({ path: "test-results/bilder/spielen-kategorien.png", fullPage: true });
   await page.getByRole("radio", { name: "Eigene Stufe" }).click();
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Eigene Stufen");
+  await expect(staerke).toContainText(/Deine Einstellung \d · \d · \d · .*\(geschätzt\)/);
 });
 
 test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.80)", async ({

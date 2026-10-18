@@ -200,7 +200,8 @@ def aus_abbildungen(engine: Engine, datenordner: Path = DATENORDNER) -> list[dic
     Motivtext der Übung (`motiv_aus_text`).
     """
     daten = lies_json(datenordner / "kap07.json")
-    beispiele = {b["id"]: b for b in daten["beispiele"]}
+    # Konstruierte Partien (0.2.90) enden an ihrer Abbildung und sind keine Buchzüge: nie Aufgaben.
+    beispiele = {b["id"]: b for b in daten["beispiele"] if b.get("status") != "konstruiert"}
     uebungen = {u.abbildung: u for u in lies_uebungen() if u.abbildung}
     aufgaben = []
     for a in daten["abbildungen"]:

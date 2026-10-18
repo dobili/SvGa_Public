@@ -4,6 +4,7 @@ from pathlib import Path
 
 import chess
 
+from pipeline.befunde import Schwere
 from pipeline.lesen.diagramme import lies_kapitel
 from pipeline.lesen.quellen import Quelldatei
 from pipeline.lesen.verzeichnis import baue_verzeichnis
@@ -158,6 +159,34 @@ def test_pgn_meldet_falsche_abbildung(tmp_path):
     fen = {d.nummer: d.fen for d in lies_kapitel(TESTKAPITEL).diagramme if d.nummer}
     (freigegeben,) = lies_freigegebene(tmp_path, 10, fen)
     assert [b.kennung for b in freigegeben.befunde] == ["pgn-stellung"]
+
+
+_KONSTRUIERT = """[Event "Kapitel 10: Spanisch"]
+[Beispiel "k10-a1-k"]
+[Kapitel "10"]
+[Status "konstruiert"]
+[Abbildungen "10.1"]
+
+1. e4 e5 2. Nf3 { Abb. 10.1 } *
+"""
+
+
+def test_konstruierte_partie_immer_in_den_daten_und_exakt_geprueft(tmp_path):
+    fen = {d.nummer: d.fen for d in lies_kapitel(TESTKAPITEL).diagramme if d.nummer}
+    pfad = tmp_path / "kap10" / "k10-a1-k.pgn"
+    pfad.parent.mkdir(parents=True)
+    pfad.write_text(_KONSTRUIERT, encoding="utf-8")
+    (konstruiert,) = lies_freigegebene(tmp_path, 10, fen)
+    assert konstruiert.befunde == []
+    assert konstruiert.daten["status"] == "konstruiert"
+    assert konstruiert.verknuepfungen["10.1"] == ["e4", "e5", "Nf3"]
+    # Die Pipeline löscht und überschreibt sie nie, wie eine freigegebene Datei.
+    assert raeume_entwuerfe_auf(tmp_path, 10, set()) == []
+    # Endet sie vor der Abbildung, ist das ein Fehler (nicht nur eine Warnung wie bei Buchzugfolgen).
+    pfad.write_text(_KONSTRUIERT.replace("2. Nf3 { Abb. 10.1 }", "2. Nc3 { Abb. 10.1 }"), encoding="utf-8")
+    (falsch,) = lies_freigegebene(tmp_path, 10, fen)
+    fehler = [b for b in falsch.befunde if b.kennung == "konstruiert"]
+    assert len(fehler) == 1 and fehler[0].schwere == Schwere.FEHLER
 
 
 def test_veraltete_entwuerfe_werden_geloescht_freigegebene_bleiben(tmp_path):

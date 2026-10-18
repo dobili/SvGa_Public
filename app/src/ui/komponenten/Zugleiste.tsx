@@ -202,6 +202,12 @@ export function Zugleiste({ stand }: { stand: Nachspielstand }) {
         </button>
       )}
       {beispiel?.status === "entwurf" && <p className="hinweis">{t("zugleiste.entwurf")}</p>}
+      {/* Regel 1: Das Buch ist die einzige Quelle; konstruierte Partien deutlich kennzeichnen (0.2.90). */}
+      {beispiel?.status === "konstruiert" && (
+        <p className="hinweis" data-testid="zugfolge-konstruiert">
+          {t("zugleiste.konstruiert")}
+        </p>
+      )}
       <Knoepfe stand={stand} />
     </section>
   );

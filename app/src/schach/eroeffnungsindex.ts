@@ -16,6 +16,7 @@ import { parseSan } from "chessops/san";
 import type { Beispiel, Knoten } from "../daten/generiert/beispiel";
 import type { Kapitel, Steckbrief } from "../daten/generiert/kapitel";
 import type { Eroeffnungsnamen } from "./eroeffnungsnamen";
+import { buchbeispiele } from "../daten/buchbeispiele";
 
 /** Felder der FEN, die eine Stellung für den Vergleich ausmachen (Figuren, Zugrecht, Rochade). */
 const SCHLUESSELFELDER = 3;
@@ -213,7 +214,7 @@ export function baueEroeffnungsindex(
   const stellungen = new Map<string, Eroeffnungseintrag[]>();
   const buchzuege = new Map<string, string>();
   for (const kapitel of kapitelListe) {
-    for (const beispiel of kapitel.beispiele) {
+    for (const beispiel of buchbeispiele(kapitel)) {
       const steckbrief = steckbriefZu(beispiel, kapitel.steckbriefe);
       const name = nameZu(kapitel, beispiel, steckbrief);
       const start = startstellung(beispiel.startFen);

@@ -190,3 +190,65 @@ export function zehnerFehler(
   }
   return fehler;
 }
+
+/**
+ * Umgekehrte Kurve für Mittelwerte: je Wertungsband die mittlere Genauigkeit, steigend
+ * ausgeglichen, dann als Kurve Genauigkeit → Wertung gelesen.
+ *
+ * Warum: Die Kurve „Genauigkeit → mittlere Wertung“ (monotoneKurve) ist für eine einzelne
+ * Partie die beste Schätzung, zieht aber jede Schätzung zur Mitte (Regression zur Mitte). Über
+ * zehn Partien mittelt sich der Zufall heraus, die Verzerrung bleibt: Ein Spieler mit 600 käme
+ * immer bei etwa 1000 heraus. Die umgekehrte Kurve (Wertung → mittlere Genauigkeit, dann
+ * aufgelöst) hat diese Verzerrung nicht und passt deshalb für den Schnitt über zehn Partien.
+ * Beispiel: Band 600 mit mittlerer Genauigkeit 61, Band 800 mit 66 → Schnitt 63,5 ergibt 700.
+ */
+export function umkehrKurve(
+  punkte: readonly { readonly x: number; readonly y: number }[],
+  bandbreite: number,
+): Kurve {
+  const baender = [...new Set(punkte.map((p) => Math.floor(p.y / bandbreite)))].sort(
+    (a, b) => a - b,
+  );
+  const mitte = baender.map((b) => {
+    const im = punkte.filter((p) => Math.floor(p.y / bandbreite) === b);
+    return { y: mittel(im.map((p) => p.y)), x: mittel(im.map((p) => p.x)), n: im.length };
+  });
+  const xs = steigend(
+    mitte.map((m) => m.x),
+    mitte.map((m) => m.n),
+  );
+  // Gleiche Genauigkeit nach dem Ausgleich: eine Stützstelle mit mittlerer Wertung.
+  const kurve: [number, number][] = [];
+  xs.forEach((x, i) => {
+    const y = mitte[i]?.y ?? 0;
+    const letzte = kurve.at(-1);
+    if (letzte && letzte[0] === x) letzte[1] = (letzte[1] + y) / 2;
+    else kurve.push([x, y]);
+  });
+  return kurve;
+}
+
+/**
+ * Fehler der Schätzung aus dem Schnitt von je zehn Seiten desselben Bandes: Mittel der
+ * Genauigkeiten, daraus die Schätzung, gegen das Mittel der echten Zahlen.
+ */
+export function zehnerFehlerAusMittel(
+  paare: readonly { readonly x: number; readonly wertung: number; readonly band: number }[],
+  schaetze: (mittlereGenauigkeit: number) => number,
+  durchgaenge: number,
+  je: number,
+): number[] {
+  const zufall = festerZufall(durchgaenge);
+  const baender = [...new Set(paare.map((p) => p.band))];
+  const fehler: number[] = [];
+  for (let d = 0; d < durchgaenge; d += 1) {
+    const band = baender[d % baender.length];
+    const auswahl = mische(
+      paare.filter((p) => p.band === band),
+      zufall,
+    ).slice(0, je);
+    if (auswahl.length < je) continue;
+    fehler.push(schaetze(mittel(auswahl.map((p) => p.x))) - mittel(auswahl.map((p) => p.wertung)));
+  }
+  return fehler;
+}

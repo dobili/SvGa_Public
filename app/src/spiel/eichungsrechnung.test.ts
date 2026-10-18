@@ -9,8 +9,10 @@ import {
   kurvenwert,
   monotoneKurve,
   streuung,
+  umkehrKurve,
   werteAusEngine,
   zehnerFehler,
+  zehnerFehlerAusMittel,
   type Eichseite,
 } from "./eichungsrechnung";
 import { LICHESS_REGLER, seitengenauigkeit } from "./genauigkeitsmodell";
@@ -93,5 +95,31 @@ describe("Eichrechnung", () => {
     const fehler = zehnerFehler(paare, 50, 10);
     expect(fehler.length).toBe(50);
     expect(streuung(fehler)).toBeLessThan(300);
+  });
+
+  it("liest die umgekehrte Kurve von der Wertung zur Genauigkeit", () => {
+    const punkte = [
+      { x: 60, y: 610 },
+      { x: 62, y: 690 },
+      { x: 70, y: 1010 },
+      { x: 72, y: 1090 },
+    ];
+    const kurve = umkehrKurve(punkte, 200);
+    expect(kurve).toEqual([
+      [61, 650],
+      [71, 1050],
+    ]);
+    expect(kurvenwert(kurve, 66)).toBe(850);
+  });
+
+  it("schätzt über zehn Partien aus dem Schnitt der Genauigkeit", () => {
+    const paare = Array.from({ length: 20 }, (_, i) => ({
+      x: 60 + (i % 2),
+      wertung: 800,
+      band: 800,
+    }));
+    const fehler = zehnerFehlerAusMittel(paare, (x) => (x - 60.5) * 100 + 800, 5, 10);
+    expect(fehler.length).toBe(5);
+    fehler.forEach((f) => expect(Math.abs(f)).toBeLessThan(60));
   });
 });

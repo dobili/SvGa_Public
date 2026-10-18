@@ -23,7 +23,9 @@ import {
   monotoneKurve,
   streuung,
   werteAusEngine,
+  umkehrKurve,
   zehnerFehler,
+  zehnerFehlerAusMittel,
   type Eichseite,
   type Kurve,
   type Rohwert,
@@ -31,7 +33,12 @@ import {
 import { LICHESS_REGLER, mittelweg, seitengenauigkeit, type Regler } from "./genauigkeitsmodell";
 
 const ORDNER = process.env.EICHUNG_ORDNER ?? join(process.cwd(), "..", "buch", "arbeit", "eichung");
-const ABFAELLE = [LICHESS_REGLER.abfall, ...Array.from({ length: 31 }, (_, i) => 0.05 + i * 0.005)];
+// Unter und über dem Lichess-Wert: Die erste Runde lag am unteren Rand (18.10.2026).
+const ABFAELLE = [
+  ...Array.from({ length: 8 }, (_, i) => 0.025 + i * 0.0025),
+  LICHESS_REGLER.abfall,
+  ...Array.from({ length: 31 }, (_, i) => 0.05 + i * 0.005),
+];
 const POLSTER = Array.from({ length: 11 }, (_, i) => 1 - i * 0.1);
 const SEITEN_JE_GRUPPE = 15;
 const HOECHSTENS_GRUPPEN = 12;
@@ -115,17 +122,32 @@ function kurveAus(seiten: readonly Eichseite[], regler: Regler): Kurve {
   );
 }
 
-/** Fehler der Schätzung je Partie und über zehn Partien (Kontrollseiten). */
+/** Umgekehrte Kurve (Wertung → mittlere Genauigkeit) aus den Eichseiten. */
+function umkehrAus(seiten: readonly Eichseite[], regler: Regler): Kurve {
+  const punkte = seiten.flatMap((s) => {
+    const x = seitengenauigkeit(s.werte, s.seite, regler);
+    return x === null ? [] : [{ x, y: s.wertung }];
+  });
+  return umkehrKurve(punkte, BANDBREITE);
+}
+
+/**
+ * Fehler der Schätzung je Partie und über zehn Partien (Kontrollseiten). `ausMittel` schätzt aus
+ * dem Schnitt der zehn Genauigkeiten (umgekehrte Kurve); ohne ihn gilt der Schnitt der zehn
+ * Einzelschätzungen.
+ */
 function schaetzfehler(
   seiten: readonly Eichseite[],
   regler: Regler,
   schaetze: (x: number) => number,
+  ausMittel?: (x: number) => number,
 ) {
   const paare = seiten.flatMap((s) => {
     const x = seitengenauigkeit(s.werte, s.seite, regler);
     if (x === null) return [];
     return [
       {
+        x,
         schaetzung: schaetze(x),
         wertung: s.wertung,
         band: Math.floor(s.wertung / BANDBREITE) * BANDBREITE,
@@ -133,13 +155,16 @@ function schaetzfehler(
     ];
   });
   const einzel = paare.map((p) => p.schaetzung - p.wertung);
-  const zehn = zehnerFehler(paare, DURCHGAENGE, JE_ZEHN);
+  const zehn = ausMittel
+    ? zehnerFehlerAusMittel(paare, ausMittel, DURCHGAENGE, JE_ZEHN)
+    : zehnerFehler(paare, DURCHGAENGE, JE_ZEHN);
   return {
     anzahl: paare.length,
     mittel: mittel(einzel),
     betrag: mittel(einzel.map(Math.abs)),
     streuung: streuung(einzel),
     zehn: streuung(zehn),
+    zehnBetrag: mittel(zehn.map(Math.abs)),
   };
 }
 
@@ -159,11 +184,28 @@ describe("Eichung von Genauigkeit und Spielstärke", () => {
     const kurveMitte: Kurve = RASTER.map(
       (x) => [x, (kurvenwert(kurveCc, x) + kurvenwert(kurveLi, x)) / 2] as const,
     );
+    const umkehrCc = umkehrAus(ccEich, innen);
+    const umkehrLi = umkehrAus(liEich, innen);
+    const umkehrMitte = (x: number) => (kurvenwert(umkehrCc, x) + kurvenwert(umkehrLi, x)) / 2;
     const fehler = {
       chesscomEigene: schaetzfehler(ccKontrolle, innen, (x) => kurvenwert(kurveCc, x)),
       lichessEigene: schaetzfehler(liKontrolle, innen, (x) => kurvenwert(kurveLi, x)),
       mitteGegenChesscom: schaetzfehler(ccKontrolle, innen, (x) => kurvenwert(kurveMitte, x)),
       mitteGegenLichess: schaetzfehler(liKontrolle, innen, (x) => kurvenwert(kurveMitte, x)),
+      umkehrChesscom: schaetzfehler(
+        ccKontrolle,
+        innen,
+        (x) => kurvenwert(umkehrCc, x),
+        (x) => kurvenwert(umkehrCc, x),
+      ),
+      umkehrLichess: schaetzfehler(
+        liKontrolle,
+        innen,
+        (x) => kurvenwert(umkehrLi, x),
+        (x) => kurvenwert(umkehrLi, x),
+      ),
+      umkehrMitteGegenChesscom: schaetzfehler(ccKontrolle, innen, umkehrMitte, umkehrMitte),
+      umkehrMitteGegenLichess: schaetzfehler(liKontrolle, innen, umkehrMitte, umkehrMitte),
     };
     const zeilenGenau = [
       "| Modus gegen Plattform | Seiten | Mittel | Betrag | Streuung |",
@@ -176,7 +218,7 @@ describe("Eichung von Genauigkeit und Spielstärke", () => {
     ];
     const zeilenElo = Object.entries(fehler).map(
       ([name, f]) =>
-        `| ${name} | ${f.anzahl} | ${r0(f.mittel)} | ${r0(f.betrag)} | ${r0(f.streuung)} | ${r0(f.zehn)} |`,
+        `| ${name} | ${f.anzahl} | ${r0(f.mittel)} | ${r0(f.betrag)} | ${r0(f.streuung)} | ${r0(f.zehnBetrag)} | ${r0(f.zehn)} |`,
     );
     const kurven = RASTER.map(
       (x) =>
@@ -192,8 +234,8 @@ describe("Eichung von Genauigkeit und Spielstärke", () => {
       ...zeilenGenau,
       "",
       "## Spielstärke (Schätzung − echte Wertungszahl, Kontrollseiten)",
-      "| Kurve gegen Wertung | Seiten | Mittel | Betrag | Streuung je Partie | Streuung über zehn |",
-      "|---|---|---|---|---|---|",
+      "| Kurve gegen Wertung | Seiten | Mittel | Betrag | Streuung je Partie | Betrag über zehn | Streuung über zehn |",
+      "|---|---|---|---|---|---|---|",
       ...zeilenElo,
       "",
       "## Kurven (innere Genauigkeit = Lichess-Formel)",
@@ -204,7 +246,11 @@ describe("Eichung von Genauigkeit und Spielstärke", () => {
     writeFileSync(join(ORDNER, "bericht.md"), bericht + "\n");
     writeFileSync(
       join(ORDNER, "ergebnis.json"),
-      JSON.stringify({ nahe, mitte, kurveCc, kurveLi, kurveMitte, fehler }, null, 2),
+      JSON.stringify(
+        { nahe, mitte, kurveCc, kurveLi, kurveMitte, umkehrCc, umkehrLi, fehler },
+        null,
+        2,
+      ),
     );
     console.log(bericht);
   });

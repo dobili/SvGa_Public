@@ -27,8 +27,22 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.83“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.84“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.84 (etwa 5 Minuten; neue Bretter, Opus)
+
+- [ ] N328. **Bretter in drei Gruppen:** Einstellungen › „Darstellung und Training“ › Reiter
+      „Brett“. Unter „Farben“: Wie im Buch, Grün, Braun, Blau, Sand, Koralle, Lavendel, Nacht.
+      Unter „Holz“: Ahorn & Nussbaum (das bisherige „Holz“, nur umbenannt; wer es gewählt hatte,
+      behält es). Unter „Material“: Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (ganze
+      Brettbilder von Lichess). Jede Kachel zeigt einen Ausschnitt mit Figuren. Wähle je eins aus
+      jeder Gruppe und öffne eine Abbildung: Die Felder, der Schimmer des letzten Zuges
+      (gelbgrün auf den Holz- und dunklen Brettern, blau auf den hellen) und die Figuren müssen
+      gut lesbar sein. Unter Einstellungen › Lizenzen stehen die Materialbretter mit AGPL 3.0.
+- [ ] N329. **Rahmen der gewählten Kachel im Dunkelmodus:** Stelle den Nachtmodus auf dunkel.
+      Die gewählte Kachel bei Brett, Figuren und bei der Gegnerwahl hat jetzt einen goldenen
+      Rahmen wie der gewählte Reiter (vorher Navy, kaum zu sehen). Im hellen Modus bleibt Navy.
 
 ### Neu in 0.2.83 (etwa 20 Minuten, mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 

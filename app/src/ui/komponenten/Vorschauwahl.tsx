@@ -12,7 +12,7 @@
 import { useId } from "react";
 import type { Brettfarben, Figurensatz } from "../../app/einstellungen";
 import { Figur } from "../brett/Figur";
-import { Holzfelder } from "../brett/Holzfelder";
+import { Brettbild, Holzfelder } from "../brett/Holzfelder";
 import { BRETTFARBEN, FELD, holzmuster } from "../brett/masse";
 
 /** Die vier Felder der Vorschau mit ihren Figuren (FEN-Zeichen). */
@@ -40,10 +40,12 @@ export function Brettausschnitt({ farben, satz }: { farben: Brettfarben; satz: F
     >
       {farben === "holz" && <Holzfelder kennung={kennung} />}
       {FELDER.map((f, i) => (
-        <g key={i}>
-          <rect x={i * FELD} y={0} width={FELD} height={FELD} fill={fuellung(f.hell)} />
-          <Figur zeichen={f.figur} x={i * FELD} y={0} satz={satz} farbe={palette.figur} />
-        </g>
+        <rect key={i} x={i * FELD} y={0} width={FELD} height={FELD} fill={fuellung(f.hell)} />
+      ))}
+      {/* Die obere linke Ecke des Brettbildes: a8 bis d8, hell, dunkel, hell, dunkel. */}
+      {palette.bild && <Brettbild pfad={palette.bild} />}
+      {FELDER.map((f, i) => (
+        <Figur key={i} zeichen={f.figur} x={i * FELD} y={0} satz={satz} farbe={palette.figur} />
       ))}
     </svg>
   );

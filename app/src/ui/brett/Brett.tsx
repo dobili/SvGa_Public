@@ -13,7 +13,7 @@ import { t } from "../../i18n/sprache";
 import { Beschriftungen } from "./Beschriftung";
 import { Figur } from "./Figur";
 import { useZugton } from "./useZugton";
-import { Holzfelder } from "./Holzfelder";
+import { Brettbild, Holzfelder } from "./Holzfelder";
 import { alleFelder, feldEcke, figurenAusFen, pfeilform } from "./geometrie";
 import { querversaetze } from "./versatz";
 import { useEinstellungen } from "../../app/einstellungen";
@@ -296,6 +296,8 @@ export function Brett({
   const farben = BRETTFARBEN[brettfarben];
   // Holzbilder nur auf bedienbaren Brettern; kleine Bretter in Übersichten bleiben schlicht.
   const holz = brettfarben === "holz" && beiFeld !== undefined;
+  // Ebenso die Materialbretter (seit 0.2.84): ein ganzes Brettbild über den schlichten Feldern.
+  const bild = beiFeld !== undefined ? farben.bild : undefined;
   const kennung = useId().replace(/:/g, "");
   const figuren = figurenAusFen(fen);
   // Töne nur auf bedienbaren Brettern; die kleinen Bretter der Übersichten bleiben still.
@@ -315,6 +317,7 @@ export function Brett({
       <svg viewBox={`0 0 ${BRETT} ${BRETT}`} role="img" aria-label={beschriftung}>
         {holz && <Holzfelder kennung={kennung} />}
         <Felder gedreht={gedreht} farben={farben} holzkennung={holz ? kennung : null} />
+        {bild && <Brettbild pfad={bild} />}
         {letzterZug && <Schimmer feld={letzterZug.von} gedreht={gedreht} farbe={farben.schimmer} />}
         {letzterZug && (
           <Schimmer feld={letzterZug.nach} gedreht={gedreht} farbe={farben.schimmer} />

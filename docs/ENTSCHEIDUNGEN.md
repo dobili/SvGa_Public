@@ -2940,3 +2940,27 @@ am Schalter.
 **Ersetzt:** die Tabelle von 0.2.72 (sieben Partien des Autors, N290 und die alte S20 sind damit
 erledigt; S20 fragt jetzt nur noch nach dem Zurücksetzen der Wertung). Offen bleibt S23 (Elo je
 Bot-Stufe): braucht die Züge aus der Bot-Messung, die der andere Chat betreut.
+
+## Neue Bretter und Rahmen im Dunkelmodus (18.10.2026 abends, Opus, Zweig `bretter`, Version 0.2.84)
+
+Auswahl des Autors (Zip „figurensaetze_fuer_repo“ mit `bretter/`, Werte in
+`pipeline/bretter/farben.json`, Herkunft in `pipeline/bretter/LIZENZEN.md`).
+
+- **Brettfarben in drei Gruppen:** Farben (Wie im Buch, Grün, dazu neu Braun, Blau, Sand, Koralle,
+  Lavendel, Nacht), Holz (das bisherige „Holz“, jetzt „Ahorn & Nussbaum“; gespeicherter Wert
+  `holz` bleibt, keine Umwandlung nötig), Material (Intarsie Ahorn & Kirsche, Holz klassisch,
+  Marmor grün). Die gespeicherten Werte sind die Kennungen aus `farben.json`; unbekannte Werte
+  fallen wie bisher auf „Wie im Buch“ zurück.
+- **Schimmer des letzten Zuges je Brett:** Gelbgrün (`rgba(155, 199, 0, 0.45)`, wie Lichess) auf
+  Holz und dunklen Farben (Braun, Blau, Lavendel, Nacht, Ahorn & Nussbaum, Intarsie, Holz
+  klassisch), sonst das Blau der App. Figurenfarbe Schwarz überall.
+- **Materialbretter als Bild:** ein ganzes Brettbild (8 × 8 Felder) über den Feldfarben, unter
+  Markierungen und Figuren (`Brettbild` in `ui/brett/Holzfelder.tsx`); die Feldfarben darunter
+  sind die gemessenen Mittelwerte der Bilder und gelten für Vorschau, Markierungen und Ränder.
+  Bei gedrehtem Brett bleibt das Bild stehen (die Felder sind gleich gefärbt, a1 dunkel). Die
+  Bilder sind von Lichess (AGPLv3 oder neuer), in der App als WebP (Qualität 82), weil der
+  Offline-Speicher keine JPEG-Dateien vorhält; Lizenztext unter `/lizenzen/agpl-3.0.txt`.
+- **Rahmen der gewählten Vorschaukachel im Dunkelmodus:** Gold statt Navy (Rückmeldung des
+  Autors mit Bildschirmfoto: Navy auf dunklem Grund kaum zu sehen), gleiche Regel wie beim
+  gewählten Reiter und bei den Chips.
+

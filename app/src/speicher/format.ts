@@ -30,7 +30,26 @@ import { LEERER_SPIELSTAND, spielstandAus, type Spielstand } from "./partien";
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
 export const SCHEMA_VERSION = 4;
 
-export type Brettfarben = "buch" | "holz" | "gruen";
+/**
+ * Die Bretter zur Wahl (seit 0.2.84 Auswahl des Autors vom 18.10.2026): acht Farben, das Holzbrett
+ * und drei Materialbretter (ganze Brettbilder von Lichess). Werte und Herkunft in
+ * pipeline/bretter/ (farben.json, LIZENZEN.md) und ui/brett/masse.ts.
+ */
+export const BRETTARTEN = [
+  "buch",
+  "gruen",
+  "braun",
+  "blau",
+  "sand",
+  "koralle",
+  "lavendel",
+  "nacht",
+  "holz",
+  "intarsie-ahorn",
+  "holz-klassisch",
+  "marmor-gruen",
+] as const;
+export type Brettfarben = (typeof BRETTARTEN)[number];
 export type Strenge = "locker" | "streng";
 /**
  * Die Bildsätze der Figuren (seit 0.2.82, Auswahl des Autors vom 18.10.2026), je Gruppe drei:
@@ -185,10 +204,7 @@ export function einstellungenAus(roh: unknown): Einstellungen {
   if (!istObjekt(roh)) return STANDARD_EINSTELLUNGEN;
   const farbe = roh.brettfarben;
   return {
-    brettfarben:
-      farbe === "buch" || farbe === "holz" || farbe === "gruen"
-        ? farbe
-        : STANDARD_EINSTELLUNGEN.brettfarben,
+    brettfarben: BRETTARTEN.find((art) => art === farbe) ?? STANDARD_EINSTELLUNGEN.brettfarben,
     strenge: roh.strenge === "streng" ? "streng" : "locker",
     figurensatz: figurensatzAus(roh.figurensatz),
     ton: roh.ton === "an" ? "an" : "aus",

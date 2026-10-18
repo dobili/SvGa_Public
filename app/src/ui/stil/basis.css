@@ -727,6 +727,10 @@ a.knopf-zweit {
   display: flex;
   gap: var(--raster);
   overflow-x: auto;
+  /* Rechts blendet die Leiste aus (DS12): So sieht man, dass es seitlich weitergeht; der Rand
+     am Ende sorgt dafür, dass das letzte Bündel ganz sichtbar wird. */
+  padding-right: calc(var(--raster) * 4);
+  mask-image: linear-gradient(to right, #000 calc(100% - var(--raster) * 4), transparent);
 }
 
 .abbildung-karten {

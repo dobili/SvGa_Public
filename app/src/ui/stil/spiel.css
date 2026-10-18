@@ -355,6 +355,9 @@
 .brett-mit-leiste {
   display: flex;
   gap: 6px;
+  /* Volle Breite wie ein Brett ohne Balken; mit „margin: auto“ allein schrumpfte die Zeile auf
+     die Eigengröße des SVG (etwa 300 Pixel), im Querformat sehr sichtbar (DS2). */
+  width: 100%;
   max-width: 480px;
   margin: 0 auto;
 }

@@ -3,7 +3,9 @@
 Warum: Die Buchquellen liegen nie im Repository (CLAUDE.md, Regel 2). Die automatischen
 Prüfungen auf GitHub können den Datenlauf deshalb nicht wiederholen. Sie prüfen stattdessen,
 ob die eingecheckten Daten in ``app/public/daten/`` zum Vertrag (``schemas/``) passen und ob
-Verzeichnis und Kapiteldateien zusammenpassen.
+Verzeichnis und Kapiteldateien zusammenpassen. Seit 0.2.90 auch die Trainerdaten neben dem
+Datenordner (``app/public/daten/de/trainer/``): Schema und Gleichheit mit ``inhalte/de/trainer/``,
+damit eine vergessene Kopie auffällt.
 
 Aufruf (im Hauptordner):
 
@@ -19,6 +21,16 @@ import sys
 from pathlib import Path
 
 from pipeline.bauen.__main__ import pruefe_schema
+
+HAUPTORDNER = Path(__file__).resolve().parents[2]
+#: Trainerdateien der App und ihre Schemas (Quelle: pipeline/trainer/).
+TRAINERSCHEMAS = {
+    "uebungen-engine.json": "trainer-uebungen-engine.schema.json",
+    "taktik.json": "trainer-taktik.schema.json",
+    "falle.json": "trainer-falle.schema.json",
+    "struktur.json": "trainer-struktur.schema.json",
+    "endspiel.json": "trainer-endspiel.schema.json",
+}
 
 
 def pruefe_datenordner(ordner: Path) -> list[str]:
@@ -63,12 +75,42 @@ def _pruefe_kapitel(ordner: Path, eintrag: dict) -> list[str]:
     return fehler
 
 
+def pruefe_trainerordner(ordner: Path, quelle: Path | None = None) -> list[str]:
+    """Prüft die Trainerdateien der App gegen ihre Schemas und gegen die Quelle in ``inhalte``.
+
+    Warum: Die App lädt die Trainer aus ``app/public/daten/<sprache>/trainer/``; die Pipeline
+    schreibt nach ``inhalte/<sprache>/trainer/`` und kopiert. Bisher prüfte nur der Pytest die
+    Quelle, nicht die Kopie, die wirklich ausgeliefert wird.
+    Eingaben: Trainerordner der App, Quellordner (ohne Angabe: ``inhalte/<sprache>/trainer``).
+    Ausgabe: Fehlermeldungen (leer = gültig). Fehlt der Ordner, gibt es nichts zu prüfen.
+    Beispiel: ``app/public/daten/de/trainer`` mit ``taktik.json`` (637 Aufgaben) und vier weiteren.
+    """
+    if not ordner.is_dir():
+        return []
+    if quelle is None:
+        quelle = HAUPTORDNER / "inhalte" / ordner.parent.name / "trainer"
+    fehler: list[str] = []
+    for name, schema in TRAINERSCHEMAS.items():
+        datei = ordner / name
+        if not datei.exists():
+            fehler.append(f"trainer/{name}: fehlt")
+            continue
+        text = datei.read_text(encoding="utf-8")
+        fehler += [f"trainer/{name}: {m}" for m in pruefe_schema(json.loads(text), schema)]
+        vorlage = quelle / name
+        if vorlage.exists() and vorlage.read_text(encoding="utf-8") != text:
+            fehler.append(f"trainer/{name}: weicht von {vorlage} ab (Kopie vergessen?)")
+    return fehler
+
+
 def main(argumente: list[str] | None = None) -> int:
     ordner = [Path(a) for a in (argumente if argumente is not None else sys.argv[1:])]
     if not ordner:
         print("Aufruf: python -m pipeline.pruefen.daten <datenordner> …")
         return 1
     fehler = [meldung for o in ordner for meldung in pruefe_datenordner(o)]
+    for trainer in sorted({o.parent / "trainer" for o in ordner}):
+        fehler += pruefe_trainerordner(trainer)
     for meldung in fehler:
         print(meldung)
     print("Daten passen zu den Schemas." if not fehler else f"{len(fehler)} Fehler.")

@@ -35,8 +35,8 @@ Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abs
   mit dem Worker verbunden (App unter `https://schach-von-grund-auf.com/app/`, Startseite des
   Buches unter `/`, QR-Ziel `/installieren/`). Davor liefen die Tests über `*.workers.dev`.
 - **E-Mail:** `kontakt@schach-von-grund-auf.com` (vom Autor eingerichtet, 15.10.2026). Gedacht für
-  Impressum, Datenschutz, „Fehler melden“ und die Startseite; eingetragen wird sie mit den übrigen
-  Impressumsangaben (`docs/AUFGABEN_AUTOR.md`, F1).
+  Impressum, Datenschutz, „Fehler melden“ und die Startseite; seit 0.2.62 mit den übrigen
+  Impressumsangaben eingetragen.
 - Netzzugang der Cloud-Umgebung: am 13.10.2026 um 22:04 vom Autor auf „Voll“ gestellt (beide
   Umgebungen „Default“). Gilt für Sitzungen, die danach starten. Die Sitzung davor hatte nur GitHub.
 - Ein Testzweig `probe-ci` liegt noch im Repository (ließ sich über den Proxy nicht löschen).
@@ -202,7 +202,7 @@ Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abs
   schließt sich bei jedem Tippen daneben (nicht beim Scrollen); übereinanderliegende Pfeile werden
   leicht versetzt gezeichnet (Abb. 1.26: b6–d4 neben c5–d4), nur Darstellung, Buchdaten unverändert.
 
-### AP 5 Kernoberfläche – in Arbeit (Zweig `ap5-oberflaeche`, Opus)
+### AP 5 Kernoberfläche – fertig, freigegeben 14.10.2026 (Zweig `ap5-oberflaeche`, Opus)
 
 Inhalt laut Konzept 15.1: Navigation, Nummernfeld, Kapitel, Abbildung, Nachspielen, Weiterspielen,
 Skelett-Ansicht, Glossar, Denkroutine, Checkliste, Einstellungen, Installationsseite, Impressum,
@@ -758,7 +758,7 @@ Autors aus AP 9, gesammelt: Stellungstyp „offen“ (6.6) und „Vorher“ (6.3
 anpassen; Befunde 5.43 und 11.43; LAP-Reihenfolge (Abb. 6.16); Planwissen in 11.34 als Grenze;
 W4 in Übung 7.53 (AP 8-Nacharbeit); die Präzisierungen der App in den Punkten 2 bis 4.
 
-### AP 10 Werkzeuge Kapitel 8 bis 12 – in Arbeit (Zweig `ap10-werkzeuge`, Fable)
+### AP 10 Werkzeuge Kapitel 8 bis 12 – fertig, Abnahme offen (Zweig `ap10-werkzeuge`, Fable)
 
 Der Autor (14.10.2026, abwesend) hat erlaubt, nach AP 9 selbstständig mit AP 10 weiterzumachen,
 obwohl es für Opus vorgesehen war. Reihenfolge nach Konzept 7.3: k8-regeln, k8-opposition,
@@ -1245,92 +1245,49 @@ Eröffnungsliste sind seit 0.2.32 umgesetzt).
 
 ## Nächster Schritt
 
-Stand 17.10.2026 früh. Die nummerierte Liste früherer Schritte (0.2.14 bis 0.2.36) liegt im
-Archiv-Repository; was davon noch offen ist, steht hier.
+Stand 18.10.2026 nachts (0.2.89). Die frühere lange Liste (bis 0.2.83) liegt in der Geschichte
+dieser Datei; was daraus offen ist, steht hier oder in `docs/AUFGABEN_AUTOR.md`.
 
-1. **Autor:** alles in `docs/AUFGABEN_AUTOR.md` (einzige Datei für den Autor, Regel 8 in
-   `CLAUDE.md`): Teil 1 Nachtest N307 (0.2.75), N292 (0.2.74, Fable), N306 (0.2.73), N290 und N291 (0.2.72, Fable), N305 (0.2.71), N304 (0.2.70), N303 (0.2.69), N288 und N289 (0.2.68, Fable), N285 bis N287 (0.2.67, Fable), N302 (0.2.66), N301 (0.2.65), N300 (0.2.64), N294 (0.2.63), N310 bis N318 (0.2.61, vorher N285 bis N293), N284 (0.2.60), N283 (0.2.59), N278 bis N282 (0.2.58), N276 und N277 (0.2.57), N275 (0.2.56), N269 bis N274 (0.2.55), N268 (0.2.54), N266 und N267 (0.2.53), N264 bis N265 (0.2.52), N260 bis N263 (0.2.51), N257 bis N259 (0.2.50), N253 bis N256 (0.2.49), N250 bis N252 (0.2.48), N244 bis N249 (0.2.47), N240 bis N243 (0.2.46), N236 bis N239 (0.2.45), N233 bis N235 (0.2.44), N232 (0.2.43), N228 bis N231 (0.2.42), N219 bis N227 (0.2.41),
-   N210 bis N218, N201 bis N209, dann N182 bis N200 und, falls offen, N158 bis N181; Teil 2
-   Rückfragen F1 bis F5, X5, T1 bis T5, C1, C2, C4 bis C9, K1 bis K6, D1, D2 (Glossar gegen
-   Steckbriefe), E3 und E4 (Impressum und Datenschutz seit 0.2.62 fertig). X, S, R, W
-   und U sind sonst am 17.10. abends entschieden (`docs/ENTSCHEIDUNGEN.md`, „Rückmeldung des
-   Autors zu 0.2.56“). Die
-   allgemeine Abhakliste der Fehlerarten aus S7 ist seit 0.2.60 gebaut. Antworten
-   einarbeiten, Erledigtes dort löschen. Entscheidungen von 0.2.41 und 0.2.42 in
-   `docs/ENTSCHEIDUNGEN.md`, Abschnitte „Spielen: Antworten und Wünsche des Autors vom 17.10.2026
-   nachmittags“ und „Spielen: Ergänzungen des Autors vom 17.10.2026 abends“.
-   Entscheidungen der Nacht zum 17.10.2026 (Fable) in `docs/ENTSCHEIDUNGEN.md`, Abschnitt
-   „Rückmeldung zu 0.2.38“, und in `docs/TRAINERDATEN.md`. U10 („!“) ist umgesetzt; R4 (Stufen
-   menschlicher) seit 0.2.52 und R5 (Engine-Variante im Rückblick) seit 0.2.56 ebenso.
-2. **Trainerdaten (Fable) sind fertig und in `main`:** Pipeline `pipeline/trainer/`, Schemas
-   `schemas/trainer*`, Daten `inhalte/de/trainer/` (86 Übungen gegengeprüft, 674 Taktik-, 134
-   Struktur-, 132 Fallen-Aufgaben mit geeichter Schwierigkeit), Notizen und Rückfragen A1 bis A5
-   in `docs/TRAINERDATEN.md`; Lizenz der Lichess-Daten (CC0) steht in `docs/LIZENZEN.md`.
-3. **AP 13 ist fertig (Opus und Fable):** Alle 17 Trainer des Pflichtenhefts sind spielbar, keiner
-   trägt mehr „folgt mit einem Update“. Stufe 2: Koordinaten, Röntgen, Zählen (0.2.37), Taktik,
-   „Falle oder Köder“, Struktur (0.2.45), Repertoire, Zielbilanz, Faktorenbilanz (0.2.48),
-   Endspiel (0.2.49, Fable). Stufe 3: Studien, Zug erraten (0.2.53), Fehlerdatenbank (0.2.65),
-   Denkroutine (0.2.66), Planbilanz (0.2.69), Abweichungsmodus (0.2.70), 30-Minuten-Plan
-   (0.2.71). Die Lichess-Aufgaben sind angeschlossen (Taktik 637, Falle 120; geprüft 0.2.72).
-   Rückfragen F1 bis F5 und X5 sind nach Regel 9 umgesetzt. U9, T1, S9, K5, R3, C8 seit 0.2.47
-   vorab umgesetzt (Abschnitt „Empfehlungen vorab umgesetzt“ in `docs/ENTSCHEIDUNGEN.md`).
-   Widerspricht der Autor, dort nachsehen, was zurückzubauen ist. **Für Fable:** Bedenkzeit 10+0
-   in `spiel/uhr.ts` (`UHR_VORGABEN`) für den Partietag des 30-Minuten-Plans, auf Wunsch eine
-   Vorgabe der Uhr in der Ansicht „spielen“; der Engine-Test `engine/zentrumsschlag.test.ts`
-   (Abb. 2.113) schlug am 18.10. einmal in der CI fehl und lief beim nächsten Lauf grün
-   (Rechenzeit unter Last), lokal dreimal grün.
-   3b. **Endspieltrainer (Fable, 0.2.49, Zweig `endspieltrainer`) ist fertig:**
-   `pipeline/trainer/endspiel.py` → `inhalte/de/trainer/endspiel.json` (78 Stellungen aus Kapitel
-   8 und 9, Stockfish-geprüft), `training/endspieltrainer.ts`, `ui/trainer/Endspiel*`,
-   `useEndspielpartie.ts`. Rückfragen X1 bis X6, Befunde 8.25, 8.26, 9.23, 9.41 (Buch und
-   Engine uneins). Nachtest N253 bis N256.
-4. **Aus den Vorschlägen ist nichts mehr offen:** D1 Leerfälle (Rückfrage U12) seit 0.2.64
-   (`ui/werkzeuge/leerfall.ts`: ein Satz „gilt, wenn …; hier nicht, weil …“ statt leerer
-   Befunde), H seit 0.2.39 vollständig („!“).
-5. **Bots mit Persönlichkeit (0.2.46, Fable) sind gebaut:** `engine/blindeFlecken.ts` (acht
-   Zugarten, `blindeWahl`), `engine/gegner.ts` (18 Gegner mit Fehlerliste und blinden Flecken,
-   Stufen verborgen), Haken im `GegnerEditor`. Seit 0.2.57 vollständig: elf Flecken (dazu
-   Röntgen, Zwischenzug, Grundreihe), Blindheit auch gegenüber gegnerischen Zügen dieser Art
-   (`blindeWahl`, zweiter Teil), Messung mit „3b-3“ (alle Flecken gegen ohne). Nachtest N240 bis
-   N243, N276, N277, Rückfrage S7 (Abhakliste der Fehlerarten seit 0.2.60 in den Einstellungen, N284).
+1. **Autor:** alles in `docs/AUFGABEN_AUTOR.md` (Regel 8): Teil 1 Tests, Teil 2 Rückfragen.
+2. **Nachtplan vom 18.10.2026 (vom Autor abgesegnet), verteilt auf mehrere Chats.** Damit sich
+   nichts überschneidet, hat jeder Chat einen eigenen Bereich und eigene Nummern:
+   - **Chat A (Opus):** 0.2.90 Stabilität (Engine-Tests mit fester Tiefe, Prüfung der
+     Trainerdaten, axe auf weiteren Bildschirmen, 360 px, `_headers` für `/training/*`,
+     Aufräumen); 0.2.91 kleine Lücken (Uhr 10+0, Gewinnchance im Zugurteil und in der Falle,
+     klarere Motiv-Erklärungen, Sicherung über „Teilen“); Endspieltrainer mit Quiz
+     „Welches Erkennungsbild?“ und Kurzübungen Quadrat, Opposition, Schlüsselfelder;
+     festgehaltene Werkzeug-Ergebnisse je Abbildung; Wiederholung für alle Trainer,
+     Trefferzahl bei „Zug erraten“, 30-Minuten-Plan in der Datensicherung; „Erst selbst denken“
+     auch vor den Werkzeugen. Nummern N400–N449. Nicht: Engine-Variante schrittweise (der Autor
+     findet die heutige Fassung besser).
+   - **Chat B (Opus):** Design-Überprüfung auf dem Zweig `design-ueberarbeitung` mit Querformat
+     und Schriftgröße nach der Systemeinstellung; nicht nach `main` vor dem Absegnen (DS1 …).
+     Nummern N450–N499.
+   - **Chat C (Opus):** Testliste des Autors vorprüfen und kürzen, Rückfragen zum Abhaken
+     aufbereiten (nur `AUFGABEN_AUTOR.md` und `ENTSCHEIDUNGEN.md`).
+   - **Chat D:** Zugfolgen für alle Abbildungen, die aus einer realistischen Partie erwachsen
+     können (Entscheidung des Autors 18.10.2026), gekennzeichnet als „konstruiert“; Tablebase
+     für 8.25, 8.26, 9.23, 9.41. Nummern N500–N549, Rückfragen ZF.
+   - **Chat E (Opus):** Ziehen per Wischen (abschaltbar), Lernsammlung, Technik für Englisch.
+     Nummern N550–N599, Rückfragen LS.
+   - **Bot-Chat:** Bot-Dateien (Gegner, Bot-Stärke, Elo-Leiter, Messungen); Nummern N350–N399.
+     Kein anderer Chat fasst seine Dateien an.
 
-6. **Genauigkeit und Spielstärke neu eichen (Opus, Plan vom 18.10.2026, alle Entscheidungen in
-   `docs/ENTSCHEIDUNGEN.md`, Abschnitt „Genauigkeit und Spielstärke neu eichen“).** Eigener Zweig
-   `eichung`. Schritte:
-   a. Sammelskript (`pipeline/eichung/`): Partien von chess.com und Lichess holen (Schnellschach,
-   gewertet, je 200-Punkte-Band 400 bis 2400 gleich viele, zuerst 300 je Plattform), Kennung
-   nur „schach-von-grund-auf.com“, Anfragen nacheinander, Rohdaten nach `buch/arbeit/eichung/`.
-   b. Nachrechnen mit der App-Engine (Stockfish 19 lite, Node, `app/public/engine/`), Tiefe 18,
-   vier Läufe parallel (vier Kerne), Zwischenstände je Partie, Läufe unter zwei Stunden.
-   c. Eichen: Regler für „nahe chess.com“ und „Mittelweg“, Prüfung des Lichess-Modus, Kurven
-   Genauigkeit → chess.com- und Lichess-Wertungszahl, Mitte; Kontrolle an zurückgelegten
-   Partien. Ergebnis als Zahlen (TypeScript-Konstanten) und Zusammenfassung ins Repository.
-   d. Einbau nach Merge von `main`: Schalter in den Einstellungen (Standard Mittelweg), feste
-   Tiefe 18 in der Auswertung, Spielstärke als Mitte mit beiden Einzelwerten in der
-   Erklärung, Spielstärke über die letzten zehn Partien, Urteilswörter an der inneren
-   Genauigkeit; Elo-Angaben der Bot-Stufen neu einführen (heute zeigt die App keine; je Stufe
-   Partien spielen lassen, dafür speichert die Bot-Messung künftig die Züge, durch die neue
-   Spielstärke-Rechnung schicken, Mittelwert anzeigen, S23); Tests, Doku, Nachtest, Version.
-   **Fertig (0.2.83):** a, b, c und d erledigt; Ergebnis und Einbau in `docs/ENTSCHEIDUNGEN.md`,
-   „Genauigkeit und Spielstärke neu geeicht“. Offen: Elo je Bot-Stufe (S23).
-   Stand: a gebaut (`pipeline/eichung/`: `auswahl.py` Bänder und Prüfung, `netz.py` Abfragen,
-   `chesscom.py` mit Länder- und Titellisten, `lichess.py` mit Teams, `sammeln.py` fortsetzbar,
-   Tests `pipeline/tests/test_eichung_auswahl.py`). **a fertig (18.10.2026, 10:50):** je
-   Plattform 300 Partien, alle zehn Bänder 400 bis 2399 mit je 30 Partien. chess.com: 2677
-   Spieler durchgesehen (Länder- und Titellisten), Bedenkzeit meist 10+0; die Bänder 1200 bis
-   1999 füllten sich am langsamsten (dort lassen weniger Spieler ihre Partien auswerten).
-   Lichess: in drei Minuten voll, meist 10+0 und 10+5. Keine Abfrage gescheitert.
-   b gebaut: `app/skripte/eichung-rechnen.mjs` (npm-Paket „stockfish“ 19.0.1 lite-single = Engine
-   der App, Tiefe 18, vier Läufe, Ausgabe `buch/arbeit/eichung/bewertet-<k>.jsonl`, überspringt
-   Bewertetes; Aufruf im Ordner app/: `node skripte/eichung-rechnen.mjs --minuten 110`). Rochade
-   für Stockfish als Königszug um zwei Felder (wie `sanZuUci`). Etwa 1 s je Stellung und Lauf,
-   etwa 2,5 Partien je Minute mit vier Läufen; zweiter Durchgang über alle 600 läuft (109 fertig).
-   c vorbereitet: `spiel/genauigkeitsmodell.ts` (Genauigkeit mit Abfall und Polster; Lichess-
-   Regler = heutige Rechnung, getestet), `spiel/eichungsrechnung.ts` (Rastersuche, monotone
-   Kurve, Kontrollpartien, Streuung über zehn), Messlauf `npm run messen:eichung`
-   (`spiel/eichung.messung.ts`, schreibt `bericht.md` und `ergebnis.json` lokal).
+## Offene Punkte
 
-Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
+- Bildunterschriften: Züge sind nur markiert, wenn im LaTeX `\zugfolge` steht. In Unterschriften
+  stehen Züge meist als Klartext („Nach 2. Lf4“). Erkennung im Klartext für die englische Fassung
+  (Chat E, AP 18).
+- Zugfolgen: 125 Abbildungen ohne Zugfolge. Entscheidung des Autors (18.10.2026): Jede, die aus
+  einer realistischen Partie erwachsen kann, bekommt eine, mit vernünftiger Genauigkeit beider
+  Seiten (Chat D).
+- Zugfolgen, die eine im Buch nicht gezeigte Ausgangsstellung brauchen („Stünde der Turm auf b8 …“,
+  Kapitel 9), bleiben ohne Anschluss; falls gewünscht, als freigegebene PGN mit `[FEN]` anlegen.
+- Gleiche Startstellungen: Nach der Regel des Autors (nur im selben Kapitel zusammenführen) sind
+  die zwei Paare zusammengeführt (0.2.32); über Kapitelgrenzen bleibt alles getrennt.
+- Endspieldaten mit Tablebase (Konzept 5, Schritt 7): Chat D.
+
+
 
 ## Offene Punkte
 

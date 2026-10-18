@@ -1,7 +1,7 @@
 # Kopfzeilen für Cloudflare (Workers mit statischen Dateien).
-# Der Service Worker und die Seiten (Startseite, App, Installationsteil, Impressum, Datenschutz)
-# dürfen nie zwischengespeichert werden, sonst sehen Leser neue Versionen erst spät
-# (Konzept 11.3).
+# Der Service Worker und die Seiten (Startseite, App, Installationsteil, Trainingsseiten,
+# Impressum, Datenschutz) dürfen nie zwischengespeichert werden, sonst sehen Leser neue
+# Versionen erst spät (Konzept 11.3).
 /sw.js
   Cache-Control: no-cache
 /
@@ -11,6 +11,8 @@
 /app/*
   Cache-Control: no-cache
 /installieren/*
+  Cache-Control: no-cache
+/training/*
   Cache-Control: no-cache
 /impressum/*
   Cache-Control: no-cache

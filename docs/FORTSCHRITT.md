@@ -1234,6 +1234,43 @@ Vorher aufgeräumt: Zweig `pipeline-anschluss` (Anschluss an frühere Kapitel) i
 - `AUFGABEN_AUTOR.md`: jede offene Rückfrage hat jetzt eine begründete Empfehlung; neu N236 bis
   N239 und W1 bis W7.
 
+### Design-Überprüfung – umgesetzt auf dem Zweig, wartet auf „ja/verwerfen“ (Zweig `design-ueberarbeitung`, Opus, 18.10.2026)
+
+Auftrag des Autors vom 18.10.2026 (Nummernbereich N450–N499, Vorschläge DS1, DS2, …). NICHT auf
+main, bis der Autor je Nummer „ja“ oder „verwerfen“ sagt (Rückfrage G1, Testpunkte N450–N467).
+
+- **Kriterien** (Websuche): Apple HIG (44 pt, Body 17 pt, Sidebar ab iPad), Material 3 (48 dp,
+  Fensterklassen ab 600 dp, Navigation Rail, „supporting pane“), WCAG 2.2 (Kontrast, 1.4.4
+  Textgröße 200 %, 1.4.10 Reflow, 2.5.5 Tippfläche 44 px, 2.3.3 Bewegung), Lern-Apps (eine
+  Hauptaktion, schrittweise aufdecken, sofortige Rückmeldung), Lichess (Brett links im
+  Querformat), chess.com, ChessKid. Systemschrift im Web: iOS über `font: -apple-system-body`
+  (nur mit `-webkit-touch-callout`, sonst 13 px am Mac), Chrome Android über
+  `<meta name="text-scale" content="scale">` (seit Chrome 146).
+- **Bestandsaufnahme:** Playwright-Skript (nur im Scratchpad der Sitzung, nicht im Repository,
+  weil die Bilder Buchinhalte zeigen): 62 Bildschirme × 6 Ansichten (hell/dunkel × 360/430,
+  Tablet quer 1024), dazu Prüfung aller Tippflächen und ein Lauf mit 200 % Schrift.
+- **Umgesetzt, je Vorschlag ein Commit** (Rückbau mit `git revert`, Folge-Commits mit gleicher
+  Nummer im Betreff): DS1 Schriftstufen `--groesse-*` in rem, 1 rem = 17 px, folgt der
+  Systemschrift, nichts unter 13 px, 200 % ohne Überlauf; DS2 `ui/stil/breit.css`: ab 600 px quer
+  Schiene links, Brett links in voller Höhe (jeder Behälter mit `.brettbereich` als Kind wird
+  zweispaltig), Lesespalte 760 px, Tablet hoch 720 px; DS3 runde Marke „am Zug“; DS4
+  Trainerzeilen ohne Karte in der Karte; DS5 Wörter unter den Brettsymbolen (neue Schlüssel
+  `*.kurz`); DS6 Trainerrunde ohne Beschreibung, mit Fortschrittsbalken, Auftrag linksbündig;
+  DS7 Reiter mit Symbol über dem Wort; DS8 Chips und Aufklappzeilen 44 px; DS9 lange Titel der
+  Kopfzeile; DS10 „Aufgeben“ klein rechts; DS11 Aufklappzeilen in Spielen mit Dreieck; DS12
+  Werkzeugleiste blendet rechts aus; DS13 „Alle abhaken/zurücksetzen“ nebeneinander; DS14 „Über
+  die App“ ans Ende der Einstellungen; DS15 „Bewegung reduzieren“ überall; DS16 Knöpfe unter
+  den Trainingsseiten der Website; DS17 Spielstärke-Tabelle unter 480 px umgebaut; DS18
+  Kapitelnummern im Training wie im Buch.
+- Nicht angefasst: Gegnerwahl und Bot-Logik (gehören dem Bot-Chat), Seitentitel der
+  Einstellungen (Wunsch des Autors 0.2.30: keiner sichtbar), Werkzeugleiste bleibt waagerecht
+  scrollbar (Wunsch 0.2.86).
+- **Nächster Schritt:** Antwort des Autors zu G1 abwarten; verworfene DS mit `git revert`
+  zurückbauen, `git fetch origin main` und main einmergen, nächste freie Versionsnummer in
+  `app/package.json`, Abschnitt „Neu in der Design-Überprüfung“ in `docs/AUFGABEN_AUTOR.md` auf
+  die Versionsnummer umbenennen und Verworfenes dort löschen, alle Prüfungen, CI grün, dann
+  nach main. Erledigtes in `docs/ENTSCHEIDUNGEN.md` festhalten.
+
 ## Wartet auf den Autor
 
 **Alles Offene steht in `docs/AUFGABEN_AUTOR.md`** (seit 0.2.31 nur noch Offenes: Nachtest,

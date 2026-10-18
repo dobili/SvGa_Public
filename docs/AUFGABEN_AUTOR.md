@@ -30,6 +30,65 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann der Reihe nach die
 älteren Abschnitte.
 
+### Neu in der Design-Überprüfung (etwa 25 Minuten; Zweig `design-ueberarbeitung`, Versionsnummer beim Übernehmen nach main, Opus)
+
+Noch nicht auf main. Zu testen auf der Vorschau des Zweigs:
+<https://design-ueberarbeitung-schach-von-grund-auf.bilitewski-d.workers.dev/app/> (geht die
+Adresse nicht: Cloudflare › Worker „schach-von-grund-auf“ › Deployments, Zweig
+design-ueberarbeitung). Jeder Punkt gehört zu einem Vorschlag DS1 bis DS18 (Teil 2, „DS“); was
+dir nicht gefällt, schreib „DS7 verwerfen“, dann baue ich genau das zurück.
+
+- [ ] N450. **DS1 Schriftgröße des Geräts:** Stell am Handy die Schriftgröße größer (iPhone:
+      Einstellungen › Anzeige & Helligkeit › Textgröße; Android: Einstellungen › Anzeige ›
+      Schriftgröße), öffne die App neu. Text, Knöpfe und Titel werden mit größer, das Brett
+      bleibt so groß wie der Bildschirm erlaubt. Bei Standardgröße sieht alles fast aus wie
+      vorher; nichts ist mehr kleiner als 13 Pixel (vorher bis 11).
+- [ ] N451. **DS2 Querformat und Tablet:** Dreh das Handy quer (oder nimm ein Tablet quer).
+      Die Leiste steht als Schiene links, das Brett links in voller Höhe, Zugleiste, Werkzeuge
+      und Text rechts; rechts scrollt, das Brett bleibt stehen. Prüfe Abbildung 1.26, eine
+      Übung, eine Trainerrunde, eine Partie und die Auswertung. Buch, Training und Einstellungen
+      bleiben eine Spalte in Lesebreite. Hochkant ist alles wie gewohnt.
+- [ ] N452. **DS3 Marke „am Zug“:** Unter jedem Brett steht vor „Weiß am Zug“ jetzt ein runder
+      Stein statt eines Quadrats (das wie ein Kästchen zum Abhaken aussah); im dunklen Modus hat
+      der schwarze Stein einen hellen Rand.
+- [ ] N453. **DS4 Trainerliste:** Training: Die Trainer stehen als Zeilen mit Trennlinie in der
+      Kapitelkarte, nicht mehr als Karte in der Karte. „Abweichungsmodus“ und „Strukturerkenner“
+      stehen ungebrochen in einer Zeile.
+- [ ] N454. **DS5 Wörter unter den Brettsymbolen:** Abb. 7.10: Unter den Symbolen am Brett
+      stehen Zählen, Ziehen, Engine, Röntgen, W1–W7, Drehen; in der Partie dazu „Ruhig“. Alle
+      passen bei schmalem Handy in eine Zeile.
+- [ ] N455. **DS6 Trainerrunde:** Zähltrainer › Bilanz zählen: Während der Runde ist die
+      Beschreibung des Trainers weg, unter „Aufgabe 1 von 8“ läuft ein goldener Balken mit, und
+      der Auftrag steht linksbündig und halbfett. Zurück auf der Auswahl ist die Beschreibung
+      wieder da.
+- [ ] N456. **DS7 Reiter der Einstellungen:** Alle fünf Reiter (Brett, Figuren, Anzeige, Ton,
+      Training) stehen nebeneinander, Symbol über dem Wort; nichts muss gewischt werden.
+- [ ] N457. **DS8 Tippflächen:** Chips (Weiß/Schwarz, Bedenkzeit, Zahlen im Zähltrainer) sind
+      etwas höher (44 statt 40 Pixel), „Eigene Stellung eingeben (FEN)“ lässt sich leichter
+      antippen.
+- [ ] N458. **DS9 Lange Titel:** Training › Koordinaten, Notation, Gangarten: Der zweizeilige
+      Titel steht mittig mit etwas Luft nach oben.
+- [ ] N459. **DS10 Aufgeben:** In einer Partie stehen „Zurücknehmen“ und „Aufgeben“ nebeneinander;
+      „Aufgeben“ ist klein und grau rechts. Die Nachfrage kommt wie bisher.
+- [ ] N460. **DS11 Aufklappzeilen in Spielen:** „Absichtliche Fehler der Engine“ und „Blinde
+      Flecken der Engine“ haben ein Dreieck ▶ und lassen sich erkennbar aufklappen.
+- [ ] N461. **DS12 Werkzeugleiste:** Unter dem Brett blendet die Leiste der Werkzeugbündel rechts
+      weich aus; nach dem Wischen ist das letzte Bündel ganz sichtbar.
+- [ ] N462. **DS13 Kapitelseite:** „Alle abhaken“ und „Alle zurücksetzen“ stehen klein
+      nebeneinander statt als zwei breite Balken.
+- [ ] N463. **DS14 Einstellungen:** Nach Wertung und Fortschritt kommen gleich die
+      Einstellungen, „Über die App“ (Version, Update, Lizenzen) steht am Ende.
+- [ ] N464. **DS15 Bewegung reduzieren:** Mit „Bewegung reduzieren“ am Gerät (iPhone: Bedienungs-
+      hilfen › Bewegung) gleiten Balken und Klappen nicht mehr, sie springen.
+- [ ] N465. **DS16 Trainingsseiten der Website:** <https://schach-von-grund-auf.com/training/kap01/>
+      auf der Vorschau: Unten stehen „← Kapitel 0“, „Alle Kapitel“, „Kapitel → 2“ gleich breit in
+      einer Zeile.
+- [ ] N466. **DS17 Auswertung:** Nach einer Partie, Karte „Spielstärke“: Auf dem Handy steht jede
+      Zeilenbeschriftung („Genauigkeit (App)“, „Geschätzte Spielstärke“) über den beiden Werten;
+      nichts stößt mehr aneinander.
+- [ ] N467. **DS18 Kapitelnummern:** Im Training stehen die Kapitelnummern in runden Navy-Kreisen
+      wie im Buch, nicht mehr in goldenen Quadraten.
+
 ### Neu in 0.2.89 (etwa 2 Minuten; gleich große Kacheln, Opus)
 
 - [ ] N349. **Gleich große Kacheln in der Gegnerwahl:** Dein Bildschirmfoto zeigte in Stufe 8
@@ -1142,6 +1201,17 @@ Regeln C1 und C2).
 ---
 
 ## Teil 2: Entscheiden (Claude hat jeweils plausibel entschieden; du bestätigst oder änderst)
+
+### G. Design-Überprüfung (Opus, 18.10.2026; schon umgesetzt auf dem Zweig, Widerspruch genügt)
+
+- [ ] G1. **Vorschläge DS1 bis DS18 annehmen oder verwerfen:** Im Artifact „Design-Überprüfung“
+      (Link folgt im Chat und hier) stehen je Vorschlag Vorher-nachher-Bilder und ein Satz zum
+      Warum, dazu jeder Bildschirm hell und dunkel bei 360 und 430 Pixeln und auf dem Tablet quer.
+      Schreib je Nummer „ja“ oder „verwerfen“. Danach baue ich Verworfenes zurück, übernehme
+      main, erhöhe die Version und bringe den Rest nach main. Grundlage der Bewertung: Apple
+      Human Interface Guidelines, Material 3, WCAG 2.2 (Kontrast, Tippflächen 44 Pixel,
+      Textgröße bis 200 %), Regeln für Lern-Apps (eine Hauptaktion je Bildschirm, schrittweise
+      aufdecken, sofortige Rückmeldung) und der Vergleich mit Lichess, chess.com und ChessKid.
 
 ### B. Buchbefunde aus der Textarbeit (Fable, 0.2.67; nur du änderst das Buch)
 

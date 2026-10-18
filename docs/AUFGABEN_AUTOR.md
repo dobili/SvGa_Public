@@ -33,14 +33,14 @@ dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. 
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 
-### Neu in 0.2.88 (etwa 15 Minuten, mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
+### Neu in 0.2.88 (mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
 - [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, etwa 600): Macht
       sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende Figur? Bruno liegt mit
       etwa 1100 etwas über deinem Wunsch (500 bis 1000); so lassen? (Gruppe, Zahlen und
       Sprechblase hat Claude geprüft.)
 
-### Neu in 0.2.85 (etwa 20 Minuten, mit Engine; Elo-Zahl der Bots, Opus)
+### Neu in 0.2.85 (mit Engine; Elo-Zahl der Bots, Opus)
 
 - [ ] N334. **Stufe 3 gegen Stufe 4:** Je eine Partie gegen „Eigene Stufe“ 3 · 3 · 3 und 4 · 4 · 4.
       Macht Stufe 3 merklich mehr Fehler (etwa jeder fünfte Zug; gemessen 17 : 3 für Stufe 4)?
@@ -50,7 +50,7 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
       sie etwa ausgeglichen aus, stimmt die Lage. Gewinnst du fast immer, sind die Zahlen zu hoch
       (oder umgekehrt); schreib dann, gegen wen und wie die Partien ausgingen (siehe auch S24).
 
-### Neu in 0.2.84 (etwa 5 Minuten; neue Bretter, Opus)
+### Neu in 0.2.84 (neue Bretter, Opus)
 
 - [ ] N328. **Bretter gut lesbar?** Einstellungen › Karte „Einstellungen“ › Reiter „Brett“: je ein
       Brett aus „Farben“ und aus „Holz und Material“ wählen und eine Abbildung öffnen. Sind Felder,
@@ -59,7 +59,7 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
       den dunklen Feldern von „Wie im Buch“ und „Marmor grün“ (blau auf einem dunklen Brett).
       (Gruppen, Kacheln und Lizenzen hat Claude geprüft.)
 
-### Neu in 0.2.83 (etwa 20 Minuten, mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
+### Neu in 0.2.83 (mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 
 - [ ] N324. **Genauigkeit wie:** Öffne eine ausgewertete Partie. In der Karte „Spielstärke“
       steht oben „Genauigkeit wie“ mit Fragezeichen und darunter eine Leiste Lichess | App |
@@ -83,21 +83,21 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
       Auswertung (Tiefe 18, Fortschritt unter dem Ergebnis) in vertretbarer Zeit fertig? Am Rechner
       waren beim Ende schon 15 von 23 Stellungen fertig, der Rest dauerte 23 Sekunden.
 
-### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
+### Neu in 0.2.81 (mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
 
 - [ ] N295. **Bots mit Stil passen zu ihrer Stufe:** Eine Partie gegen einen Bot der Stufe 2 mit
       Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv). Er sollte etwa so viele Fehler
       machen wie die Stufe 2 selbst (gemessen: alle Bots der Stufen 1 bis 4 holen gegen ihre Stufe
       ein Viertel bis drei Viertel der Punkte). Passt das?
 
-### Neu in 0.2.68 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
+### Neu in 0.2.68 (Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
 
 - [ ] N289. **Eigener Bot mit nur einer Fehlerart:** Einen eigenen Bot 2 · 2 · 2 mit nur dem Haken
       „patt gesetzt“ anlegen und spielen. Er sollte etwa so viele Fehler machen wie Stufe 2 (etwa
       jeder vierte Zug), meist kleine Ungenauigkeiten, weil die gewählte Art fast nie passt.
       Fühlt es sich so an?
 
-### Neu in 0.2.67 (etwa 20 Minuten, mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
+### Neu in 0.2.67 (mit Engine; 64 Gegner mit Porträts, dein Wunsch vom 18.10.2026 nachts, Fable)
 
 - [ ] N285. **Porträts:** Spielen › „Vorgefertigte Bots“: Passen Porträts und Namen zusammen, und
       ist die Auswahl auf dem Handy bequem? (Die Bedienung hat Claude geprüft.)
@@ -108,7 +108,7 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
       Züge) oder IM Haas (sehr defensiv, übersieht die Grundreihe): Wirken sie trotz Handschrift wie
       Stufe 8?
 
-### Neu in 0.2.63 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
+### Neu in 0.2.63 (Impressum und Datenschutz mit deinen Angaben, Opus)
 
 - [ ] N294. **Impressum und Datenschutz:** <https://schach-von-grund-auf.com/impressum/> und
       <https://schach-von-grund-auf.com/datenschutz/> lesen: Stimmen deine Angaben (Name,
@@ -116,45 +116,45 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
       goneo? Claude ist kein Anwalt; wer sichergehen will, vergleicht einmal mit einem Generator wie
       dem von e-recht24.
 
-### Neu in 0.2.58 (etwa 15 Minuten, mit Engine; deine Anmerkungen vom 17.10.2026 abends, Fable)
+### Neu in 0.2.58 (mit Engine; deine Anmerkungen vom 17.10.2026 abends, Fable)
 
 - [ ] N278. **Töne:** Einstellungen › Ton „an“, eine Partie spielen: Klacken beim Zug (beim
       Schlag kräftiger), danach ein heller Ton bei Schach, drei fallende Töne bei Matt, zwei gleiche
       bei Patt oder Remis, ein tiefer Warnton beim Antippen einer Figur, die nicht ziehen darf.
       Klingt alles gut und passend?
 
-### Neu in 0.2.52 (etwa 30 Minuten, mit Engine; Stufen 1 bis 3 menschlicher, Empfehlung R4, Fable)
+### Neu in 0.2.52 (mit Engine; Stufen 1 bis 3 menschlicher, Empfehlung R4, Fable)
 
 - [ ] N264. **Stufe 1 bis 3 menschlich?** Je eine Partie gegen „Eigene Stufe“ 1 · 1 · 1 und
       3 · 3 · 3. Die Engine sollte einzügige Dinge (Schlag, Drohung) meist sehen, aber nicht alles
       zwei, drei Züge tief, mit meist kleinen Fehlern, nicht „dämlich, dann genial“. Zu stark oder
       zu schwach? Gern die PGN mitschicken.
 
-### Neu in 0.2.51 (etwa 15 Minuten, mit Engine; Vergleich mit chess.com, Empfehlung T4, Fable; N260 durch N290 ersetzt)
+### Neu in 0.2.51 (mit Engine; Vergleich mit chess.com, Empfehlung T4, Fable; N260 durch N290 ersetzt)
 
 - [ ] N262. **Zeichen in entschiedener Stellung:** In klar gewonnener Stellung gibt es „?!“ erst
       ab drei Bauern Verlust, und die Engine bekommt in verlorener Stellung kein „!“ mehr für den
       einzigen haltbaren Zug (deine Stufe-3-Partie vom 17.10. hatte vorher 15 „?!“, chess.com 2).
       Sieh dir eine klar gewonnene Partie im Rückblick an: Wirken die Zeichen jetzt passend?
 
-### Neu in 0.2.49 (etwa 25 Minuten, mit Engine; Endspieltrainer, Fable)
+### Neu in 0.2.49 (mit Engine; Endspieltrainer, Fable)
 
 - [ ] N255. **Merksätze im Endspieltrainer:** Training › Endspieltrainer, in einigen Aufgaben
       „Hinweis 1“: Die Merksätze zum Thema sind in Claudes Worten. Lies sie kritisch und melde einen,
       der nicht zum Buch passt, mit dem Thema. (Hilfen und Kippen hat Claude geprüft.)
 
-### Neu in 0.2.48 (etwa 15 Minuten; drei neue Trainer, Opus)
+### Neu in 0.2.48 (drei neue Trainer, Opus)
 
 - [ ] N250. **Zielbilanz-Übung:** Training › „Zielbilanz-Übung“: Stimmen die Wertungen der App
       (ja, teils, nein für Zentrum, Entwicklung, Königssicherheit) mit dem, was du im Buch lehrst?
       (Den Ablauf hat Claude geprüft.)
 
-### Neu in 0.2.42 (etwa 20 Minuten, mit Engine; deine Ergänzungen vom 17.10.2026 abends)
+### Neu in 0.2.42 (mit Engine; deine Ergänzungen vom 17.10.2026 abends)
 
 - [ ] N230. **Kurve je Phase:** Einstellungen › „Deine Wertung“, Reiter Eröffnung, Mittelspiel,
       Endspiel (erst nach gewerteten Partien da): Erkennst du daran, wo Üben am meisten bringt?
 
-### Neu in 0.2.41 (etwa 30 Minuten, mit Engine; deine Wünsche vom 17.10.2026 nachmittags)
+### Neu in 0.2.41 (mit Engine; deine Wünsche vom 17.10.2026 nachmittags)
 
 - [ ] N223. **Partienliste:** Spielen › „Deine letzten Partien“: je Partie der König in deiner
       Farbe (bei zwei Menschen beide Könige), das Ergebnis als „1–0“, „0–1“, „½–½“ (oder
@@ -162,29 +162,14 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
       die Auswertung da ist, „du etwa 1400 · Engine etwa 1600“ (bei zwei Menschen „Weiß … ·
       Schwarz …“; bei kurzen Partien „78 % genau“).
 
-### Neu in 0.2.37 (etwa 30 Minuten; AP 13 Übungen und erste Trainer)
-
-Neu: Die Übungen des Buches lassen sich in der App lösen, mit Wiederholung, dazu die ersten drei
-Trainer.
-
-**Übungen des Buches**
-
-**Erste Trainer** (Training › Kapitel 0 und 1 › „Trainieren“)
+### Neu in 0.2.37 (AP 13 Übungen und erste Trainer)
 
 - [ ] N193. **Zähltrainer, hängende Figuren:** Training › Zähltrainer › „Hängende Figuren“:
       Stimmen die Felder, die die App als hängend nennt? (Den Ablauf hat Claude geprüft.)
 - [ ] N194. **Schach-Röntgen-Trainer:** Ist die Aufgabe (drei Schritte, Pfeile setzen: Figur,
       dann Zielfeld) verständlich und auf dem Handy gut bedienbar? (Den Ablauf hat Claude geprüft.)
 
-### Neu in 0.2.36 (etwa 30 Minuten, mit Engine; AP 11 Kalibrierung)
-
-Neu: die kalibrierten Stufen und die Fehlerprofile der Engine (Konzept 8.2), dazu drei Befunde der
-Gegenprüfung (Uhr, Auswertung).
-Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abstufung richtig anfühlt.“
-
-**Stufen und Fehlerprofile**
-
-**Gegenprüfung (Uhr und Auswertung)**
+### Neu in 0.2.36 (mit Engine; AP 11 Kalibrierung)
 
 - [ ] N180. **Uhr nach dem Schließen:** Laufende Partie mit Uhr, eine Weile nachdenken, dann zu einer
       anderen App wechseln, die App schließen und wieder öffnen, Partie fortsetzen: Ist deine
@@ -192,6 +177,14 @@ Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abs
       Bedenkzeit seit dem letzten Zug verloren (das Speichern wird dabei abgebrochen); auf dem
       Handy bleibt beim App-Wechsel meist genug Zeit zum Speichern. Bitte melden, wenn es bei dir
       auch passiert; dann baut Claude einen sofortigen Speicherweg für die Uhr.
+
+---
+
+## Teil 2: Entscheiden
+
+Oben die Rückfragen, bei denen Claude schon entschieden hat (meist schon umgesetzt): Antworte mit
+„alle ok“ oder „alle ok außer K3, S21“; bei einem Widerspruch baut Claude es zurück. Darunter die
+Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entscheidung brauchen.
 
 ### Nur bestätigen (je eine Zeile; Widerspruch genügt)
 

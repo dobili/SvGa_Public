@@ -42,7 +42,7 @@ export function feldMitte(feld: string, gedreht: boolean): Punkt | null {
 /**
  * Das Feld unter einem Punkt des Brettes, Gegenstück zu feldEcke.
  *
- * Warum: Beim Ziehen per Wischen (seit 0.2.91) zeigt der Finger auf einen Punkt, nicht auf einen
+ * Warum: Beim Ziehen per Wischen (seit 0.2.92) zeigt der Finger auf einen Punkt, nicht auf einen
  * Knopf; der Zug braucht das Feld darunter.
  * Eingaben: Punkt in Einheiten des Brettes (0 bis 8000), ob das Brett gedreht ist.
  * Ausgabe: Feldname oder null, wenn der Punkt neben dem Brett liegt.

@@ -25,7 +25,8 @@ import {
 import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
-import { LEERER_SPIELSTAND, spielstandAus, type Spielstand } from "./partien";
+import { LEERER_SPIELSTAND, type Spielstand } from "./partien";
+import { spielstandAus } from "./partienLesen";
 import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */

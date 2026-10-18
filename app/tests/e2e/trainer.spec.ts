@@ -275,3 +275,21 @@ test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners 
   await page.getByTestId("trainer-wiederholung").getByRole("button").click();
   await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
 });
+
+test("Endspiel-Kurzübungen (0.2.90): Frage beantworten, Regel des Buches, acht Aufgaben", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneTrainer(page, "endspiel");
+  await page.getByRole("button", { name: "Kurzübungen starten" }).click();
+  const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Aufgabe 1 von 8");
+  await expect(runde).toContainText("Holt der schwarze König den Bauern ein?");
+  await runde.getByRole("button", { name: "Ja, er holt ihn ein" }).click();
+  await expect(page.getByTestId("drill-regel")).toContainText("Regel: Kapitel 8, die Quadratregel");
+  await page.screenshot({ path: "test-results/bilder/trainer-kurzuebung.png", fullPage: true });
+  await runde.getByRole("button", { name: "Weiter" }).click();
+  await expect(runde).toContainText("Wer hat die Opposition?");
+  await runde.getByRole("button", { name: "Keiner" }).click();
+  await expect(page.getByTestId("drill-regel")).toContainText("die Opposition");
+});

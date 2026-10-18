@@ -14,7 +14,7 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
  * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
  * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz;
- * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.91 unter „Brett“
+ * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.92 unter „Brett“
  * der Schalter „Figuren per Wischen ziehen“ (Merker auf dem Gerät wie die Koordinaten).
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * i18n.

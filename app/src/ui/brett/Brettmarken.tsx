@@ -1,7 +1,7 @@
 /**
  * Marken auf dem Brett: Schimmer, Zielpunkte und -ringe, Feldrahmen und Pfeile im Stil des Buches.
  *
- * Rolle im Gesamtbild: Bausteine für Brett.tsx, seit 0.2.91 in einer eigenen Datei, damit das
+ * Rolle im Gesamtbild: Bausteine für Brett.tsx, seit 0.2.92 in einer eigenen Datei, damit das
  * Brett mit dem Ziehen per Wischen unter 400 Zeilen bleibt.
  * Abhängigkeiten: analyse/werkzeug.ts (Markierungsfarben), geometrie.ts, masse.ts.
  */

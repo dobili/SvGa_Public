@@ -3,7 +3,8 @@
  *
  * Rolle im Gesamtbild: Trainer „endspiel“ (Pflichtenheft 7, Kapitel 8 und 9). Die Aufgaben lädt
  * die Datei endspiel.json (daten/trainerdaten.ts); die Runde läuft im gemeinsamen Rundenablauf.
- * Seit 0.2.90 kommen nicht geschaffte Stellungen in die Wiederholung (Knopf über der Wahl).
+ * Seit 0.2.90 kommen nicht geschaffte Stellungen in die Wiederholung (Knopf über der Wahl), und
+ * unter der Wahl stehen die Kurzübungen ohne Engine (Drillaufgabe.tsx, training/endspieldrills.ts).
  * Abhängigkeiten: training/endspieltrainer.ts, Rundenablauf, Endspielaufgabe, Stufenwahl, i18n.
  */
 import { useState, type ReactNode } from "react";
@@ -16,8 +17,10 @@ import {
   type Endspielgruppe,
   type Endspielwahl,
 } from "../../training/endspieltrainer";
+import { drillrunde } from "../../training/endspieldrills";
 import { ZUFALL } from "../../training/zufall";
 import { useDaten } from "../komponenten/useDaten";
+import { Drillaufgabe } from "./Drillaufgabe";
 import { Endspielaufgabe } from "./Endspielaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Stufenwahl } from "./Stufenwahl";
@@ -26,16 +29,20 @@ import { Wiederholungsknopf } from "./Wiederholungsknopf";
 
 /** Endspiele dauern länger als Taktikaufgaben: weniger je Runde. */
 const AUFGABEN_JE_RUNDE = 6;
+/** Kurzübungen gehen schnell: zwei je Art. */
+const DRILLS_JE_RUNDE = 8;
 
 /** Wahl von Gruppe und Stufe. */
 function Wahl({
   anzahl,
   starte,
   wiederholung,
+  kurz,
 }: {
   anzahl: Map<Endspielgruppe, number>;
   starte: (wahl: Endspielwahl) => void;
   wiederholung: ReactNode;
+  kurz: () => void;
 }) {
   const [gruppe, setzeGruppe] = useState<Endspielgruppe>("alle");
   const [stufe, setzeStufe] = useState<number | null>(null);
@@ -61,6 +68,11 @@ function Wahl({
       <button type="button" className="knopf-haupt" onClick={() => starte({ gruppe, stufe })}>
         {t("taktiktrainer.starten")}
       </button>
+      <h3>{t("endspiel.kurz.titel")}</h3>
+      <p className="hinweis">{t("endspiel.kurz.text")}</p>
+      <button type="button" className="knopf-zweit" onClick={kurz}>
+        {t("endspiel.kurz.starten")}
+      </button>
     </div>
   );
 }
@@ -71,6 +83,7 @@ export function EndspielBereich() {
   const faellig = useFaelligeAufgaben("endspiel");
   /** Die fälligen Stellungen, wenn der Leser „Wiederholen“ gewählt hat. */
   const [wiederholt, setzeWiederholt] = useState<readonly string[] | null>(null);
+  const [kurz, setzeKurz] = useState(false);
   const [durchlauf, setzeDurchlauf] = useState(0);
   if (daten.art === "laedt") return <p className="lade">…</p>;
   if (daten.art === "fehler")
@@ -80,7 +93,24 @@ export function EndspielBereich() {
   const zurAuswahl = () => {
     setzeWahl(null);
     setzeWiederholt(null);
+    setzeKurz(false);
   };
+  if (kurz)
+    return (
+      <Rundenablauf
+        key={`kurz-${durchlauf}`}
+        kennung="endspiel"
+        erzeuge={() =>
+          drillrunde(
+            aufgaben.map((a) => a.fen),
+            DRILLS_JE_RUNDE,
+            ZUFALL,
+          ).map((d) => (r) => <Drillaufgabe drill={d} runde={r} />)
+        }
+        nochmal={() => setzeDurchlauf(durchlauf + 1)}
+        zurAuswahl={zurAuswahl}
+      />
+    );
   if (!wahl && !wiederholt)
     return (
       <Wahl
@@ -89,6 +119,7 @@ export function EndspielBereich() {
         wiederholung={
           <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeWiederholt(vorhanden)} />
         }
+        kurz={() => setzeKurz(true)}
       />
     );
   const runde = () =>

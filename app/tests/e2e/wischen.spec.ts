@@ -1,5 +1,5 @@
 /**
- * Oberflächentests für das Ziehen per Wischen (seit 0.2.91): Figur mit der Maus von e2 nach e4
+ * Oberflächentests für das Ziehen per Wischen (seit 0.2.92): Figur mit der Maus von e2 nach e4
  * ziehen, das Scrollen bleibt auf Feldern ohne ziehbare Figur frei, und in den Einstellungen
  * abgeschaltet zieht nur noch das Antippen.
  */

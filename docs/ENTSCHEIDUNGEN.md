@@ -3113,6 +3113,25 @@ T1, T3, T4 und T5.
   der Elo-Leiter (Abschnitt „Elo-Zahl der Bots“); die offene Frage zu Namen und Lage der Skala
   ist S24.
 
+### Teil 1: von Claude geprüft am 18.10.2026 (gelöscht)
+
+Geprüft mit Playwright an der gebauten App (Chromium, Pixel 7 mit 412 px Breite, hell und dunkel,
+mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
+
+- **N279** (Warnton und roter Hinweis bei gesperrter Figur): von Claude geprüft am 18.10.2026: in einer Partie zu zweit Lc1 in der Grundstellung („hat gerade keinen Zug“), h7 im Schach nach 3. Lb5+ („Erst das Schach beantworten“) und Sc6 gefesselt nach 4. a3: je der Satz und das rote Feld, beides nach unter 3 s weg. Den Warnton prüft der Autor bei N278
+- **N280** (Schlagring statt Punkt): von Claude geprüft am 18.10.2026: Sf3 angetippt: auf e5 ein goldener Ring mit Navy-Rand, auf leeren Zielfeldern Punkte
+- **N306** (Lizenzen): von Claude geprüft am 18.10.2026: Einstellungen › Lizenzen: Lichess-Puzzle-Eintrag mit CC0 1.0, beim Eintrag der App github.com/dobili/SvGa_Public
+- **N308** (Einstellungen neu geordnet): von Claude geprüft am 18.10.2026: Reiter mit Symbolen, Holz-Vorschau unter Figuren, Anzeige und Training wie beschrieben, Erklärungen hinter den Fragezeichen von „Daten auf diesem Gerät“ (mit iPhone und Safari) und „Datensicherung“, keine Fehlerarten-Karte mehr. Abweichung im Text: Ringe gibt es für Abbildungen und Lernziele, Übungen und Trainer stehen als Zeilen, sobald es welche gibt
+- **N309** (Kapitelseiten): von Claude geprüft am 18.10.2026: Kapitel 1: Fortschritt, „Training und Übungen“ (Trainer vor Übungen), Abbildungen mit Erklärung, „Alle abhaken“/„Alle zurücksetzen“, Abschnitte anfangs zu mit Pfeil und „0 von 7“, „Abschnitt 1.1 abhaken“ wird zu „Haken in 1.1 lösen“, Ring in der Buchliste
+- **N322** (Neue Figurensätze): von Claude geprüft am 18.10.2026: drei Gruppen mit je drei Sätzen und „wie im Buch“; Kiefer & Kirsche und Spatial erscheinen am Brett von Abb. 1.26; alle Sätze mit Lizenz unter Lizenzen
+- **N323** (Reiter ohne Wackeln): von Claude geprüft am 18.10.2026: Reiterzeile mit overflow-x auto und overflow-y hidden (nur waagerecht verschiebbar)
+- **N329** (Rahmen der gewählten Kachel im Dunkelmodus): von Claude geprüft am 18.10.2026: gewählte Brett- und Figurenkachel dunkel Gold (201, 162, 39), hell Navy. Abweichung im Text: Die gewählte Gegnerkachel ist auch hell golden
+- **N342** (Einstellungen): von Claude geprüft am 18.10.2026: Karten „Über die App“, „Einstellungen“ und „Deine Wertung“; Vorschau 2 × 2 Felder (je 66 px)
+- **N343** (Training): von Claude geprüft am 18.10.2026: 13 Kapitelkarten mit Nummer, 19 Trainerzeilen mit Symbol, Fragezeichen und „Trainieren“; Übungen als Nummernraster, gelöste grün. „Halb angefangen“ ließ sich mit einem falschen Zug nicht auslösen (bleibt offen); nicht weiter verfolgt
+- **N344** (Auswertung auf dem Handy): von Claude geprüft am 18.10.2026: Partie zu zweit (24 Halbzüge, aufgegeben): Karte „Spielstärke“ 348 px breit, Tabellen innerhalb, kein Überlauf der Seite; „Genauigkeit wie“ in einer Zeile mit Fragezeichen
+- **N345** (Trainer): von Claude geprüft am 18.10.2026: alle 19 „Trainieren“-Knöpfe rund mit Abspielsymbol, kein Name abgeschnitten oder vom Fragezeichen verdeckt
+- **N346** (Bretter): von Claude geprüft am 18.10.2026: Gruppe „Holz und Material“ da, „Genauigkeit wie“ fehlt unter Einstellungen › Training
+
 ### Teil 2 im Wortlaut vor dem Umbau
 
 Damit beim Rückbau nach einem Widerspruch nichts fehlt, hier der ganze alte Text der Rückfragen.

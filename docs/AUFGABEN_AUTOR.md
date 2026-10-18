@@ -57,17 +57,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       der Sprechblase erklärt, dass die Zahl über 2200 allein aus Ergebnissen kommt und
       ungenauer ist (etwa ±200).
 
-### Neu in 0.2.87 (etwa 5 Minuten; Rückmeldung zu 0.2.86, Opus)
-
-- [ ] N344. **Auswertung auf dem Handy:** Die Tabellen der Karte „Spielstärke“ bleiben in der
-      Karte (vorher liefen sie nach rechts über); lange Wörter brechen in der Zelle um, die
-      Urteilswörter je Phase dürfen zweizeilig werden. „Genauigkeit wie“ ist eine Leiste in einer
-      Zeile (Lichess | App | chess.com) mit Fragezeichen.
-- [ ] N345. **Trainer:** Der Knopf „Trainieren“ ist jetzt ein runder Knopf mit Abspielsymbol;
-      lange Namen wie „Abweichungsmodus“ und das Fragezeichen werden nicht mehr verdeckt.
-- [ ] N346. **Bretter:** Holz und Material sind eine Gruppe „Holz und Material“. In den
-      Einstellungen › Training steht „Genauigkeit wie“ nicht mehr (siehe N324).
-
 ### Neu in 0.2.86 (etwa 25 Minuten, mit Engine; Auswertung, Werkzeuge, Training, Opus)
 
 - [ ] N336. **Fehler im Rückblick:** Spiele eine Partie mit einem groben Fehler (etwa eine Figur
@@ -98,13 +87,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       Knochen, Planfindung Karte, Taktik Blitz, Endspiel Fahne, Denkroutine Gehirn), „frühere“
       und „spätere“ am Anfang und Ende. Die Karten zeigen immer alles, „Mehr …“ gibt es nicht
       mehr (etwa die zweite Seite bei der Angriffsregel).
-- [ ] N342. **Einstellungen:** Die Kachel mit Version, Update und Lizenzen heißt „Über die App“,
-      die mit Brett, Figuren und Training „Einstellungen“. Die Vorschau der Bretter und Figuren
-      zeigt 2 × 2 Felder, je Feld 40 % größer. Die Wertungskarte heißt „Deine Wertung“ (sie
-      zählt Ergebnisse); „Deine Spielstärke“ beim Spielen misst nur die Genauigkeit.
-- [ ] N343. **Training:** Die Trainingsseite zeigt je Kapitel eine Karte mit Nummer, jeder
-      Trainer als Zeile mit Symbol, Fragezeichen (Ablauf) und „Trainieren“. Im Kapitel stehen die
-      Übungen als Raster kleiner Nummern (grün gelöst, halb angefangen).
 
 ### Neu in 0.2.85 (etwa 20 Minuten, mit Engine; Elo-Zahl der Bots, Opus)
 
@@ -142,17 +124,11 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 
 ### Neu in 0.2.84 (etwa 5 Minuten; neue Bretter, Opus)
 
-- [ ] N328. **Bretter in zwei Gruppen (seit 0.2.87):** Zahnrad › Karte „Einstellungen“ › Reiter
-      „Brett“. Unter „Farben“: Wie im Buch, Grün, Braun, Blau, Sand, Koralle, Lavendel, Nacht.
-      Unter „Holz und Material“: Ahorn & Nussbaum (das bisherige „Holz“, nur umbenannt; wer es
-      gewählt hatte, behält es), Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (ganze
-      Brettbilder von Lichess). Jede Kachel zeigt einen Ausschnitt mit Figuren. Wähle je eins aus
-      jeder Gruppe und öffne eine Abbildung: Die Felder, der Schimmer des letzten Zuges
-      (gelbgrün auf den Holz- und dunklen Brettern, blau auf den hellen) und die Figuren müssen
-      gut lesbar sein. Unter Einstellungen › Lizenzen stehen die Materialbretter mit AGPL 3.0.
-- [ ] N329. **Rahmen der gewählten Kachel im Dunkelmodus:** Stelle den Nachtmodus auf dunkel.
-      Die gewählte Kachel bei Brett, Figuren und bei der Gegnerwahl hat jetzt einen goldenen
-      Rahmen wie der gewählte Reiter (vorher Navy, kaum zu sehen). Im hellen Modus bleibt Navy.
+- [ ] N328. **Bretter gut lesbar?** Einstellungen › Karte „Einstellungen“ › Reiter „Brett“: je ein
+      Brett aus „Farben“ und aus „Holz und Material“ wählen und eine Abbildung öffnen. Sind Felder,
+      Schimmer des letzten Zuges und Figuren gut lesbar? Gemessen am schwächsten: der Schimmer auf
+      den dunklen Feldern von „Wie im Buch“ und „Marmor grün“ (blau auf einem dunklen Brett).
+      (Gruppen, Kacheln und Lizenzen hat Claude geprüft.)
 
 ### Neu in 0.2.83 (etwa 20 Minuten, mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 
@@ -188,18 +164,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       gegen die eigene Stufe beginnen: Die Engine übersieht dann oft Rückzüge. Die Wahl bleibt
       gespeichert; vorgefertigte und eigene Bots behalten ihre eigenen Flecken.
 
-- [ ] N322. **Neue Figurensätze:** Zahnrad › Karte „Einstellungen“ › Reiter „Figuren“.
-      Oben „wie im Buch“, darunter drei Gruppen mit je drei Sätzen und Vorschau: Klassisch
-      (Cburnett, Merida, Chessnut), Modern (Mpchess, Celtic, Spatial) und Holz (Kiefer &
-      Kirsche, Eiche & Mahagoni, Esche & Ebenholz). Die bisherigen Sätze „klassisch“ und „Holz“
-      sind ersetzt: Wer „klassisch“ gewählt hatte, sieht jetzt Cburnett (dieselben Figuren), wer
-      „Holz“ hatte, Kiefer & Kirsche. Einen Satz wählen und eine Abbildung öffnen: Die Figuren
-      erscheinen im neuen Satz. Unter Einstellungen › Lizenzen stehen Urheber und Lizenz jedes
-      Satzes.
-
-- [ ] N323. **Reiter ohne Wackeln:** Zahnrad › Karte „Einstellungen“: Die Reiterzeile
-      lässt sich nur noch waagerecht schieben, nicht mehr ein Stück senkrecht.
-
 ### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
 
 - [ ] N295. **Bots mit Stil passen zu ihrer Stufe:** Eine Partie gegen einen Bot der Stufe 2 mit
@@ -208,32 +172,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       ein Viertel bis drei Viertel der Punkte). Passt das?
 
 ### Neu in 0.2.80 (etwa 25 Minuten, mit Engine; Einstellungen, Kapitelseiten und Spielen neu geordnet, dein Wunsch vom 18.10.2026, Opus)
-
-- [ ] N308. **Einstellungen neu geordnet:** Zahnrad öffnen. „Dein Fortschritt“ zeigt Abbildungen,
-      Übungen und Trainer als goldene Ringe mit Prozentzahl, je Kapitel ein kleiner Ring. Die
-      Karte „Einstellungen“ hat oben Reiter mit Symbolen: Brett, Figuren, Anzeige, Ton,
-      Training. Unter „Brett“ und „Figuren“ siehst du jede Wahl als kleinen Brettausschnitt mit
-      vier Feldern und Figuren; tippe „Holz“ und dann den Reiter „Figuren“: Die Vorschau der
-      Figuren steht jetzt auf Holz. Nachtmodus, Erklärkacheln und Sprache stehen unter „Anzeige“,
-      „Erst selbst denken“ unter „Training“. In „Daten auf diesem Gerät“ steht nur ein kurzer
-      Satz mit einem Fragezeichen im Kreis daneben; ein Tipp darauf klappt die ganze Erklärung auf,
-      auch die zum iPhone und zu Safari. Dasselbe bei „Datensicherung“. Bei der Wertungskurve
-      (erst sichtbar nach gewerteten Partien) sind Gesamt, Eröffnung, Mittelspiel und Endspiel
-      Reiter nebeneinander in kleiner Schrift, die Erklärung zum Elo-System steht hinter dem
-      Fragezeichen. Findet „Nach Update suchen“ eine neue Version, erscheint an seiner Stelle
-      „Jetzt aktualisieren“. Die Karte „Absichtliche Fehler der Engine“ ist aus den Einstellungen
-      verschwunden: Sie steht jetzt unter Spielen, wenn du eine Stufe ohne vorgefertigten Gegner
-      wählst, eingeklappt mit dem Stand („14 von 14 Arten erlaubt“) in der Überschrift.
-
-- [ ] N309. **Kapitelseiten:** Buch › Kapitel 1. In der Buchliste steht bei angesehenen Kapiteln
-      ein kleiner Ring statt des Balkens. Auf der Kapitelseite oben „Dein Fortschritt“ mit Ringen,
-      darunter eine Karte „Training und Übungen“ (erst die Trainer, dann die Übungen aus dem
-      Buch). Darunter „Abbildungen“ mit Fragezeichen (Erklärung zu den 30 Sekunden) und direkt
-      darunter „Alle abhaken“ und „Alle zurücksetzen“. Jeder Abschnitt (1.1, 1.2 …) hat eine
-      Zeile mit Pfeil, kleinem Ring, Titel und „x von y“ und lässt sich auf- und zuklappen; seit
-      0.2.82 sind anfangs alle zu, der Pfeil zeigt nach rechts (zu) oder unten (auf). Im
-      aufgeklappten Abschnitt steht „Abschnitt 1.4 abhaken“; danach heißt der Knopf „Haken in 1.4
-      lösen“.
 
 - [ ] N319. **Gegnerwahl in drei Kategorien:** Spielen › Gegner „Engine“. Unter „Art des
       Gegners“ drei Kacheln mit Symbol: „Eigene Stufe“ (Regler), „Vorgefertigte Bots“ (Roboter)
@@ -267,14 +205,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       den Chat ein. „Nur offene Punkte zeigen“ blendet Abgehaktes aus. Haken und Notizen bleiben
       auf dem Handy, auch nach einem Update; Punkte, die in einer neuen Version fehlen (weil
       erledigt), fallen aus dem Text heraus.
-
-### Neu in 0.2.73 (etwa 2 Minuten; Lizenzen, Opus)
-
-- [ ] N306. **Lizenzen:** Einstellungen › Lizenzen. Neu der Eintrag „Aufgaben aus der
-      Lichess-Puzzle-Datenbank (Taktiktrainer, „Falle oder Köder“)“ mit CC0 1.0. Beim Eintrag
-      „Schach von Grund auf (App)“ steht jetzt das öffentliche Repository
-      „github.com/dobili/SvGa_Public“ (vorher der Name des alten, privaten Repositorys, den
-      Fremde nicht öffnen können; die GPL verlangt, dass der Quelltext erreichbar ist).
 
 ### Neu in 0.2.71 (etwa 15 Minuten, mit Engine; 30-Minuten-Plan, Opus)
 
@@ -449,15 +379,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       Schlag kräftiger), danach ein heller Ton bei Schach, drei fallende Töne bei Matt, zwei gleiche
       bei Patt oder Remis, ein tiefer Warnton beim Antippen einer Figur, die nicht ziehen darf.
       Klingt alles gut und passend?
-- [ ] N279. **Warnton und roter Hinweis bei gesperrter Figur:** Tippe in einer Partie eine eigene
-      Figur an, die gerade nicht ziehen darf. Das Feld leuchtet kurz rot, ein tiefer Warnton
-      erklingt (bei Ton „an“), und unter dem Brett steht je nach Grund „Dein König steht im
-      Schach: Erst das Schach beantworten.“, „Diese Figur ist gefesselt: Sie deckt deinen König.“
-      oder „Diese Figur hat gerade keinen Zug.“ (etwa Lc1 in der Grundstellung). Nach knapp einer
-      Sekunde verschwindet beides wieder.
-- [ ] N280. **Schlagring statt Punkt:** Wähle eine Figur, die etwas schlagen kann. Auf der
-      schlagbaren Figur liegt jetzt ein goldener Ring mit dunklem Rand statt des kleinen Punktes,
-      auch auf einem schwarzen Bauern gut zu sehen. Leere Zielfelder behalten den Punkt.
 - [ ] N282. **Stern für gewertete Partien:** Spielen › „Deine letzten Partien“: Hinter dem Ergebnis
       („1–0“) steht bei gewerteten Partien ein kleiner goldener Stern; ungewertete Partien (zu
       zweit, aus Abbildungen, mit Rücknahme) haben keinen.

@@ -36,6 +36,7 @@ import { NavigationsRahmen } from "./navigation";
 import { useNavigation } from "./navigationsKontext";
 import type { Ansicht } from "./stapel";
 import { entsperreTon } from "./ton";
+import { useSprache } from "./sprachwahl";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
 function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
@@ -127,9 +128,14 @@ function Hauptrahmen() {
   );
 }
 
+/**
+ * Die App. Ein Sprachwechsel (seit 0.2.94) baut die ganze Oberfläche neu auf: Jeder Text und
+ * jede geladene Datei gehört zur Sprache, und so bleibt nichts von der alten stehen.
+ */
 export function App() {
+  const sprachcode = useSprache();
   return (
-    <NavigationsRahmen start="buch">
+    <NavigationsRahmen key={sprachcode} start="buch">
       <Hauptrahmen />
     </NavigationsRahmen>
   );

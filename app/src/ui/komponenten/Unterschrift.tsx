@@ -10,7 +10,8 @@
  * Abhängigkeiten: erzeugte Datentypen, i18n.
  */
 import type { Textteil } from "../../daten/laden";
-import { t } from "../../i18n/sprache";
+import { sprache, t } from "../../i18n/sprache";
+import { buchzugInSprache } from "../../schach/notation";
 
 interface UnterschriftEigenschaften {
   readonly nummer: string;
@@ -63,6 +64,8 @@ function Teil({ teil, aktionen }: { teil: Textteil; aktionen: Textaktionen }) {
       </span>
     );
   }
+  // Züge aus dem Klartext (seit 0.2.94) in der Notation der Sprache; auf Deutsch wie im Buch.
+  if (teil.art === "zug") return <>{buchzugInSprache(teil.text, sprache())}</>;
   if (teil.stil === "fett") return <strong>{teil.text}</strong>;
   if (teil.stil === "kursiv") return <em>{teil.text}</em>;
   return <>{teil.text}</>;

@@ -30,6 +30,21 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst den neuesten Abschnitt, dann der Reihe nach die
 älteren Abschnitte.
 
+### Neu in 0.2.94 (etwa 3 Minuten; Technik für die englische Fassung, Opus)
+
+Dazu im Hintergrund: Die App kann jetzt mehrere Sprachen tragen (Sprache des Geräts als
+Voreinstellung, Wechsel lädt Texte und Buchdaten neu, `<html lang>` folgt). Übersetzt ist noch
+nichts. Die Pipeline erkennt die Züge im Klartext der Bildunterschriften („Nach 2. Lf4“, 697
+Stellen); die englische Fassung zeigt sie später als „2. Bf4“.
+
+- [ ] N559. **Nichts hat sich verändert:** Öffne Abb. 1.2: Die Unterschrift lautet wie im Buch
+      „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ steht weiter
+      „Deutsch (Englisch folgt mit der englischen Ausgabe)“; eine Auswahl erscheint erst, wenn
+      es eine zweite Sprache gibt.
+- [ ] N560. **Lizenzen:** Einstellungen › „Lizenzen“ (oder Fußzeile der Startseite): Die Seite
+      sieht aus wie vorher (alle Bausteine mit Lizenz, Herkunft und „Lizenztext“). Die Texte
+      stehen jetzt in der Sprachdatei, damit die englische Fassung sie übersetzen kann.
+
 ### Neu in 0.2.91 (etwa 5 Minuten; Endspiel-Kurzübungen, Opus)
 
 Dazu im Hintergrund: Die Ergebnisse aller Werkzeuge an allen Abbildungen sind festgehalten; ändert

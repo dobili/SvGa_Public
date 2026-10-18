@@ -3093,3 +3093,29 @@ größer. Ursache: `grid-template-columns: repeat(4, 1fr)` lässt eine Spalte ni
 als ihren Inhalt, und die Namen standen ohne Umbruch. Jetzt `minmax(0, 1fr)`, die Kachel darf
 schrumpfen, Namen brechen mittig um (statt abgeschnitten zu werden). Der Oberflächentest misst
 die acht Porträts der Stufe 8; mit dem alten Stil wichen sie um 24 Pixel ab.
+
+## Technik für die englische Fassung (18.10.2026 nachts, Opus, Zweig `sprache-technik`, Version 0.2.94)
+
+Auftrag des Autors (abgesegnet am 18.10.2026, AP 18 ohne Übersetzung).
+
+- **Sprachwahl:** `i18n/sprache.ts` (verfügbare Sprachen = eingetragene Sprachdateien,
+  `startsprache`, Wechsel mit Benachrichtigung), `app/sprachwahl.ts` (Start, Wahl, `useSprache`).
+  Die Wahl liegt als Merker `sprache` auf dem Gerät, nicht in den Nutzerdaten: Sie muss beim
+  Start sofort da sein, bevor IndexedDB geladen ist, und ohne Wahl gilt die Sprache des Geräts
+  (`navigator.languages`, erste verfügbare, sonst Deutsch). In den Einstellungen (Reiter
+  Anzeige) erscheint eine Auswahl erst ab zwei Sprachen.
+- **Wechsel:** vergisst geladene Buch- und Trainerdaten (`vergissBuchdaten`,
+  `vergissTrainerdaten`), die Datenordner hängen an der Sprache (`/daten/<sprache>/a1`,
+  `/daten/<sprache>/trainer`), `App.tsx` baut die Oberfläche mit `key` neu auf;
+  `document.documentElement.lang` folgt (Start in `main.tsx`).
+- **Feste Texte:** Lizenzen (alle Bausteine, Überschriften), die Angaben unter „Fehler melden“
+  und der Kopf der Meldung auf der Aufgabenseite stehen jetzt in `de.json`. Die Namen der
+  Bot-Gegner bleiben Eigennamen (Dateien des Bot-Chats).
+- **Klartextzüge:** `pipeline/lesen/klartextzuege.py` markiert Zugfolgen mit Zugnummer in den
+  Bildunterschriften als Teil `zug` (697 Stellen, nur was `lies_zuege` liest, nur normaler
+  Stil). Die App zeigt sie mit `buchzugInSprache` (auf Deutsch unverändert, auf Englisch
+  „Lf4“ → „Bf4“, „=D“ → „=Q“). Die Kapiteldaten sind nur um diese Markierung ergänzt; die
+  Buchquellen sind neuer als die Daten (Literaturnummern im Glossar, Kapitel 1 und 11) und
+  werden beim nächsten vollen Datenlauf übernommen, nicht in diesem Zweig.
+- **Tests:** `i18n/sprache.test.ts`, `schach/notation.test.ts`, `pipeline/tests/test_klartextzuege.py`,
+  Oberflächentest `tests/e2e/sprache.spec.ts`.

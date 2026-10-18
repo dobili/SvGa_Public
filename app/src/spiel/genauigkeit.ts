@@ -11,12 +11,12 @@
  * Zahl spürbar). Vorher das einfache Mittel, das mit 97 % weit über chess.com (87 %) lag, weil die
  * vielen fehlerfreien Züge in gewonnener Stellung alles ausglichen. Die Spielstärke ist eine grobe
  * Schätzung aus dieser Genauigkeit (Tabelle unten; keine Wertungszahl eines Verbands; bis 0.2.50
- * aus dem Verlust je Zug, Empfehlung S18). Seit 0.2.71 ist die Tabelle an sieben Partien des
+ * aus dem Verlust je Zug, Empfehlung S18). Seit 0.2.72 ist die Tabelle an sieben Partien des
  * Autors mit der Spielbewertung von chess.com geeicht: Vorher lag unsere Schätzung 450 bis 1150
  * Punkte darüber, weil die Tabelle aus Durchschnittswerten stammte (Meister über 92 %), unsere
  * Genauigkeit aber systematisch über der von chess.com liegt (bei schwachem Spiel um 10 bis 19
  * Punkte, bei starkem um 1 bis 3; chess.com bewertet mit tieferer Rechnung und eigener Formel).
- * Dazu seit 0.2.71 ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com) und die
+ * Dazu seit 0.2.72 ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com) und die
  * Spielstärke im Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Reine
  * Funktionen, die Werte kommen aus der Auswertung.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts, spiel/phasen.ts, spiel/taktik.ts.
@@ -75,11 +75,11 @@ const MINDESTENS_ZUEGE = 10;
 const MINDESTENS_ZUEGE_PHASE = 6;
 /**
  * Stützstellen: Genauigkeit der Partie → Spielstärke, absteigend; dazwischen wird linear
- * gerechnet. Geeicht (0.2.71) an sieben Partien des Autors bei chess.com, 14 Seiten mit unserer
+ * gerechnet. Geeicht (0.2.72) an sieben Partien des Autors bei chess.com, 14 Seiten mit unserer
  * Genauigkeit und der Spielbewertung von chess.com (etwa: 73 % → 450, 75 % → 800, 81 % → 900,
  * 83 % → 650 bis 1000, 85 % → 1000 bis 1450, 89 % → 1600, 92 % → 1700, 94 % → 1500 bis 2000).
  * Mittlere Abweichung der Tabelle dazu etwa +90 Punkte, die Streuung von chess.com selbst ist
- * größer (94 % → 1500 und 2000). Vor 0.2.71 (90 → 2200, 85 → 1900, 70 → 1200) lagen wir 450
+ * größer (94 % → 1500 und 2000). Vor 0.2.72 (90 → 2200, 85 → 1900, 70 → 1200) lagen wir 450
  * bis 1150 darüber. Der Verlust je Zug taugte nicht: Dreißig Züge in gewonnener Stellung
  * verdünnten jeden Fehler (deine Partie mit 4. e3: „etwa 2250“).
  */

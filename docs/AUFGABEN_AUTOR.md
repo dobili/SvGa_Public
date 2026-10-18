@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.71. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.72. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.71“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.72“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,10 +21,10 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.71“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.72“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.71 (etwa 10 Minuten, mit Engine; Spielbewertung an deinen chess.com-Partien geeicht, Fable)
+### Neu in 0.2.72 (etwa 10 Minuten, mit Engine; Spielbewertung an deinen chess.com-Partien geeicht, Fable)
 
 - [ ] N290. **Geschätzte Spielstärke etwa 500 Punkte niedriger, wie bei chess.com:** Öffne eine
       ausgewertete Partie (Partienliste) oder spiele eine neue. Karte „Spielstärke“: Die Zahlen
@@ -878,7 +878,7 @@ Regeln C1 und C2).
       auf „gleich“ setzen; dann ändere ich die App (ein Zeile) und die Kalibrierung. Bis dahin
       bleibt die App beim Buch (Regel 1).
 
-### S. Spielbewertung (Fable, 0.2.71; schon umgesetzt, Widerspruch genügt)
+### S. Spielbewertung (Fable, 0.2.72; schon umgesetzt, Widerspruch genügt)
 
 - [ ] S20. **Eichung an deinen chess.com-Partien und deine Wertung:** Die neue Tabelle (N290) ist
       an deinen sieben Partien geeicht; mehr Partien machen sie genauer. Wenn du weitere Partien

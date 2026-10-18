@@ -229,7 +229,7 @@
   font-weight: 600;
 }
 
-/* Urteilswort je Phase (0.2.71), farbige Marke wie die Symbole je Phase bei chess.com. */
+/* Urteilswort je Phase (0.2.72), farbige Marke wie die Symbole je Phase bei chess.com. */
 .phasenurteil {
   display: inline-block;
   margin-right: 6px;

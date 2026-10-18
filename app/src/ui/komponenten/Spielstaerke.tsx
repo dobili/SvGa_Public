@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38 („Elo-Schätzung für beide
  * Seiten, Anzahl der !, ?, ?! Züge, Genauigkeit wie bei chess.com“), seit 0.2.40 dazu je Phase
- * (Eröffnung, Mittelspiel, Endspiel) und die Züge nach Klasse wie bei chess.com; seit 0.2.71 je
+ * (Eröffnung, Mittelspiel, Endspiel) und die Züge nach Klasse wie bei chess.com; seit 0.2.72 je
  * Phase ein Urteilswort als farbige Marke (wie die Symbole je Phase bei chess.com) und das
  * Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Die Rechnung steht in
  * spiel/genauigkeit.ts; hier nur die Tabellen mit zwei Spalten, der Leser zuerst.

@@ -2460,7 +2460,7 @@ Gegner (die Toleranz 0,3 kam mit S13 in 0.2.61). Jetzt hat jeder Bot einen Stil.
   1 bis 4 wird danach wiederholt; das Ergebnis aller 64 Bots steht in der nächsten Fassung dieses
   Abschnitts.
 
-## Spielbewertung an chess.com geeicht, Urteil je Phase, Taktik und Strategie (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.71)
+## Spielbewertung an chess.com geeicht, Urteil je Phase, Taktik und Strategie (18.10.2026 nachts, Fable, Zweig `werkzeuge-textarbeit`, Version 0.2.72)
 
 Der Autor schickte sieben eigene Partien von chess.com (drei gegen Bots, vier gegen Menschen,
 15 bis 87 Züge) mit Genauigkeit, Spielbewertung, Zugklassen und den Symbolen je Phase aus der

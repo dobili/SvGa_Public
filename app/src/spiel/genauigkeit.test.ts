@@ -98,7 +98,7 @@ describe("Genauigkeit und Spielstärke", () => {
     expect(partiegenauigkeit([{ genauigkeit: 0, gewicht: 1 }])).toBeCloseTo(0.5, 5);
   });
 
-  it("Schätzung aus der Genauigkeit (S18, geeicht 0.2.71): 90 → 1600, 70 → 500, linear, Mindestwert", () => {
+  it("Schätzung aus der Genauigkeit (S18, geeicht 0.2.72): 90 → 1600, 70 → 500, linear, Mindestwert", () => {
     expect(spielstaerkeAus(90)).toBe(1600);
     expect(spielstaerkeAus(70)).toBe(500);
     expect(spielstaerkeAus(88)).toBe(1500);

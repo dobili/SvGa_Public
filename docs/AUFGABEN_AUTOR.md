@@ -206,42 +206,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       auf dem Handy, auch nach einem Update; Punkte, die in einer neuen Version fehlen (weil
       erledigt), fallen aus dem Text heraus.
 
-### Neu in 0.2.71 (etwa 15 Minuten, mit Engine; 30-Minuten-Plan, Opus)
-
-- [ ] N305. **30-Minuten-Plan:** Training › Kapitel 12 › „30-Minuten-Plan“ › Trainieren. Oben der
-      Plan beider Tage als Tabelle (Tag A Partietag: 5 Min. Taktik, 20 Min. Partie, 5 Min. kurze
-      Analyse; Tag B Studientag: 5 Min. Taktik, 15 Min. Thema, 10 Min. Analyse der Vortagespartie)
-      und „Im Wechsel ist heute dran: Tag A“. „Tag A: Partietag starten“: Oben stehen Schritt 1
-      von 3 und die Restzeit (läuft sekündlich, nach Ablauf rot „… über der Zeit“), darunter zwei
-      leichte Taktikaufgaben. „Schritt erledigt“ führt zur Partie („Zum Spielen“; ohne Uhr
-      spielen, die Uhr des Plans zählt die 20 Minuten), „Zurück“ bringt dich wieder zum Plan, der
-      weiterläuft (auch nach Neuladen der App). Schritt 3 öffnet mit „Letzte Partie ansehen“ den
-      Rückblick. „Einheit abschließen“: „Einheit geschafft. Beim nächsten Mal ist Tag B dran.“
-      Danach Tag B: Im Schritt „Thema“ ist ein Bereich vorgewählt (Taktik, Endspiel, Strategie,
-      Eröffnung im Wechsel), darunter die Trainer des Bereichs als Knöpfe. Schritt 3 hat dazu
-      „Zur Fehlerdatenbank“. Siehe F5.
-
-### Neu in 0.2.70 (etwa 10 Minuten, mit Engine; Abweichungsmodus, Opus)
-
-- [ ] N304. **Abweichungsmodus:** Training › Kapitel 2 › „Abweichungsmodus“ › Trainieren.
-      Eröffnung und Seite wählen (etwa Spanische Partie, Weiß), „Runde starten“. Die App spielt
-      einige Buchzüge, dann „Die Engine verlässt das Buch mit …“ (ein guter Zug, der in keiner
-      Zugfolge der Kapitel 2 und 3 steht). Du antwortest am Brett nach den Prinzipien. Danach:
-      „… ist eine gute Antwort“ (bis 0,5 Bauern hinter der Engine), „ungenau“ oder „ein Fehler“
-      mit dem besseren Zug, und darunter die Einschätzung nach den Prinzipien (Fazit von
-      Zielbilanz und Todsünden für deine Seite). Drei Aufgaben je Runde. Siehe F4.
-
-### Neu in 0.2.69 (etwa 15 Minuten; Planbilanz-Übung, Opus)
-
-- [ ] N303. **Planbilanz-Übung:** Training › Kapitel 6 › „Planbilanz-Übung“ › Trainieren. Drei
-      Übungsarten: „Drei Planfragen“ (Wo spiele ich? Was will mein Gegner? Welche Figur? Je drei
-      Antworten, nach der Wahl grün oder rot; dazwischen auch die Warum-Fragen zu Kapitel 6; bei
-      Abb. 6.20 und 11.34 danach der Verweis auf die Planbilanz im Buch), „LAP: am wenigsten aktive
-      Figur“ (erst die Figur antippen, dann ihr Zielfeld, „Prüfen“; die Lösung als goldener Pfeil)
-      und „Wettrennen der Bauern“ (bei entgegengesetzten Rochaden je Seite die Bauernzüge bis zum
-      ersten Hebel wählen; danach, wer schneller ist). Probe: Abb. 6.6 zählt die App Weiß 2,
-      Schwarz 3. Siehe F3.
-
 ### Neu in 0.2.68 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
 
 - [ ] N289. **Eigener Bot mit nur einer Fehlerart:** Einen eigenen Bot 2 · 2 · 2 mit nur dem Haken
@@ -259,28 +223,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 - [ ] N287. **Stufe 8 mit Charakter:** Eine Partie gegen IM Vogt (sehr aggressiv, übersieht ruhige
       Züge) oder IM Haas (sehr defensiv, übersieht die Grundreihe): Wirken sie trotz Handschrift wie
       Stufe 8?
-
-### Neu in 0.2.66 (etwa 10 Minuten, mit Engine; Denkroutine-Trainer, Opus)
-
-- [ ] N302. **Denkroutine-Trainer:** Training › Kapitel 12 › „Denkroutine-Trainer“ › Trainieren.
-      Eine Stellung aus Kapitel 7, 11 oder 12; der Knopf zählt eine Minute herunter („Noch 59
-      Sekunden nachdenken“) und öffnet erst danach die Eingabe. Zwei Kandidaten mit je der
-      stärksten Antwort eintippen (in Buchnotation, etwa „Lxh7+“ und „Kxh7“), „Prüfen“. Fehlt eine
-      Antwort oder ist ein Zug nicht regelgerecht, sagt die App das. Sonst rechnet die Engine:
-      bester Zug mit Wert, je Kandidat sein Wert und die stärkste Antwort („wie du sie gesehen
-      hast“ oder „du hattest …“). Drei Stellungen je Runde. Auf dem Handy stehen Kandidat und
-      Antwort nebeneinander, ohne über den Rand zu laufen. Siehe F2.
-
-### Neu in 0.2.65 (etwa 10 Minuten; Fehlerdatenbank, Opus)
-
-- [ ] N301. **Fehlerdatenbank:** Training › Kapitel 12 › „Fehlerdatenbank“ › Trainieren. Oben
-      „Neuer Eintrag“: eine FEN einfügen (etwa nach 1. f3 e5 2. g4:
-      `rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2`), das Brett erscheint;
-      Fehlerart aus der Gesamt-Checkliste wählen, einen Satz schreiben, „In die Fehlerdatenbank“.
-      Darunter die Auswertung je Fehlerart (gesamt und die letzten acht Wochen) und der Vorschlag
-      für den passenden Trainer mit Knopf. Die Einträge lassen sich aufklappen (Brett, Satz) und
-      löschen. Im Rückblick einer beendeten Partie steht unter jeder Zugkarte „In die
-      Fehlerdatenbank“: Es öffnet dasselbe Formular mit der Stellung vor dem Zug. Siehe F1.
 
 ### Neu in 0.2.63 (etwa 5 Minuten; Impressum und Datenschutz mit deinen Angaben, Opus)
 
@@ -308,21 +250,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       Sonderzügen stehen jetzt die Stellungen 0.12 bis 0.19 („aus Abb. 0.12“ usw.), mit kurzer und
       langer Rochade für beide Seiten, en passant und Umwandlung. Etwa jeder vierte Sonderzug kommt
       noch aus den zwei eigenen Stellungen (en passant für Schwarz, Umwandlung mit Schlag).
-- [ ] N315. **Strukturerkenner mit Feldern zuerst (W5):** Training › Strukturerkenner: Bei Abb. 5.8
-      (Najdorf) heißt es „Schritt 1 von 3: Welche Felder auf deiner 5. und 6. Reihe kann kein
-      gegnerischer Bauer mehr angreifen?“ Richtig sind b6 und d5. Dann schwache Bauern, dann der
-      Plan. Lehrbilder mit mehr als vier solchen Feldern haben nur zwei Schritte.
-- [ ] N316. **Faktorenbilanz-Trainer mit dem Urteil des Buches (W9):** Bei Abbildungen mit
-      Faktorenbilanz im Buch (etwa 3.6, 3.10, 3.14) steht nach „Prüfen“ „Buch: …“ statt „App: …“ und
-      darunter „Verglichen mit der Faktorenbilanz des Buches zu Abb. 3.6“. Bei Abb. 3.6 sagt das
-      Buch: Material Schwarz, Zeit Weiß, Königssicherheit Schwarz, Aktivität Weiß. Hat die
-      Abbildung eine Warum-Frage, steht sie darunter.
-- [ ] N317. **Warum-Fragen im Repertoire-Trainer (W10):** Spanische Partie, Seite Schwarz: Nach
-      3... a6 erscheint unter dem Brett zugeklappt „Warum spielt Schwarz 3... a6?“. Die Fragen
-      zählen nicht zur Wertung. 20 solche Fragen gibt es in den Varianten von Kapitel 2.
-- [ ] N318. **Zug erraten mit Vergleich (W12):** Opernpartie als Weiß, absichtlich 2. d4 statt 2. Sf3: Unter „In der Partie geschah Sf3.“ steht nach ein paar Sekunden, ob dein Zug laut
-      Engine etwa gleich gut, schwächer oder stärker war, und dazu „Frag dich in einem Satz, warum
-      der Meister anders zog.“
 
 ### Neu in 0.2.60 (etwa 10 Minuten, mit Engine; Abhakliste der Fehlerarten aus S7, Fable)
 
@@ -373,41 +300,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       Engine nach dem besseren Zug, deutsche Figurenbuchstaben). Bei einem Zug, der der beste war,
       steht nichts dergleichen. Passt die Länge, oder lieber nur zwei bis drei Halbzüge?
 
-### Neu in 0.2.55 (etwa 15 Minuten, mit Engine; Nachlesen im Buch, Opus)
-
-Alle Rückfragen mit Buchbezug sind gegen den aktuellen Buchstand nachgelesen (je Rückfrage in
-Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist es umgesetzt.
-
-- [ ] N269. **Endspieltrainer, 9.23 und 9.41:** Training › Endspieltrainer: Abb. 9.23 (Turm auf
-      der 7. Reihe) kommt als Remisaufgabe für Weiß; 1. Txa7 hält. Abb. 9.41 (falscher Läufer)
-      kommt als Remisaufgabe für Schwarz: Bleibt der König in der Ecke, ist die Aufgabe nach zwölf
-      Zügen geschafft. Abb. 9.42 (Läufer gegen Springer): Jetzt hältst du mit Schwarz.
-- [ ] N270. **Übungen mit Zügen, die das Buch stützt (T1):** Übung 6 (Abb. 1.42) mit 4... Lb4+
-      lösen: „Richtig! Auch dieser Zug ist gleich gut.“ 4... Df6 und 4... Sxd4 gelten nicht mehr.
-      Übung 15 (Abb. 3.81) mit 4... Sf6 und Übung 83 (Abb. 12.5) mit 1. Te1: ebenfalls richtig.
-      Übung 11 und 39 nur noch mit den Zügen des Buches.
-- [ ] N271. **Notation mit englischen Buchstaben (U6):** Koordinaten › Zug aufschreiben: den Zug
-      mit N, B, R oder Q statt S, L, T, D schreiben: richtig, mit dem Hinweis „Im Buch stehen
-      deutsche Buchstaben (S, L, T, D)“.
-- [ ] N272. **Strukturerkenner (W6, T5):** Die Plan-Sätze zu Isolani, hängenden Bauern und
-      Doppelbauer lesen sich jetzt wie Kapitel 5 („aktiv spielen, möglichst keine Figuren tauschen“,
-      „zusammenhalten, nur mit konkreter Drohung vorziehen“, „Figuren behalten, Bauernendspiel
-      meiden“). Abb. 5.43 hat jetzt den Plan „Stellung öffnen“, 5.44 „Raum nutzen“, 11.70
-      „Vorposten besetzen“.
-- [ ] N273. **Studien (W11):** Über der Studie die aufklappbare Zeile „Die vier Prüfungen für
-      Studien (Kapitel 10)“ mit den vier Prüfungen in kurzen Worten.
-
-### Neu in 0.2.53 (etwa 10 Minuten; zwei Trainer der Stufe 3, Opus)
-
-- [ ] N266. **Studien lösen:** Training › „Studien lösen“ › Trainieren: zuerst die Saavedra-Studie,
-      Weiß am Zug. 1. c7 ziehen: Die App antwortet mit dem Zug des Buches, unter dem Brett steht
-      die Zugfolge. Ein falscher Zug zeigt den Zug der Lösung als goldenen Pfeil, du ziehst ihn
-      nach. Danach Réti, Heuäcker und die übrigen Studien des Kapitels. Rückfrage dazu: W11.
-- [ ] N267. **Zug erraten:** Training › „Zug erraten“ › Trainieren: Partie (etwa „Morphys
-      Opernpartie“) und Seite wählen. 1. e4 ziehen: „Getroffen!“, Stand „Getroffen: 1 von 1“. Dann
-      einen anderen Zug als 2. Sf3: „In der Partie geschah Sf3.“, der Partiezug steht auf dem Brett,
-      Stand „1 von 2“. Unter dem Brett die letzten acht Züge. Rückfrage dazu: W12.
-
 ### Neu in 0.2.52 (etwa 30 Minuten, mit Engine; Stufen 1 bis 3 menschlicher, Empfehlung R4, Fable)
 
 - [ ] N264. **Stufe 1 bis 3 menschlich?** Je eine Partie gegen „Eigene Stufe“ 1 · 1 · 1 und
@@ -421,11 +313,6 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
       ab drei Bauern Verlust, und die Engine bekommt in verlorener Stellung kein „!“ mehr für den
       einzigen haltbaren Zug (deine Stufe-3-Partie vom 17.10. hatte vorher 15 „?!“, chess.com 2).
       Sieh dir eine klar gewonnene Partie im Rückblick an: Wirken die Zeichen jetzt passend?
-- [ ] N263. **Fallen aus den Eröffnungskapiteln** (T4): Training › „Falle oder Köder“ › Runde. Neben
-      den zwölf Fallenchecks aus Kapitel 4 kommen jetzt auch die Schläge mit Fragezeichen aus den
-      Zugfolgen der Kapitel 2 und 3 dran (zum Beispiel 7… Sxd4?? im Schottischen Gambit, Abb.
-      3.33, oder 10… Lxa1? nach 9… Lxc3?! in Kapitel 2). Unten steht wie bisher „Aus dem Buch: Abb.
-      …“. Zahl der Buchaufgaben: 17 (vorher 12).
 
 ### Neu in 0.2.50 (etwa 10 Minuten, mit Engine; Genauigkeit wie bei chess.com, Fable)
 
@@ -444,10 +331,6 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
 
 ### Neu in 0.2.49 (etwa 25 Minuten, mit Engine; Endspieltrainer, Fable)
 
-- [ ] N253. **Endspieltrainer öffnen:** Training › Endspieltrainer (Kapitel 8 und 9) › „Trainieren“.
-      Auswahl „Was üben?“: Alles gemischt (78), Mattführung, Bauernendspiele, Turmendspiele, Dame
-      gegen Bauer, Leichtfiguren, je mit Anzahl; Schwierigkeit alle oder 1 bis 5; „Runde
-      starten“. Eine Runde hat sechs Stellungen, leichteste zuerst.
 - [ ] N254. **Mattführung gewinnen:** Mattführung, Stufe 1, Runde starten: Dame gegen König (Abb.
       8.4, 8.55 oder 8.56). Oben „Weiß: Gewinne diese Stellung gegen die Engine.“, unten „Aus dem
       Buch: Abb. … · Matt mit der Dame · Stufe 1 · Matt in höchstens N Zügen“. Du ziehst, die
@@ -469,17 +352,6 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
 - [ ] N250. **Zielbilanz-Übung:** Training › „Zielbilanz-Übung“: Stimmen die Wertungen der App
       (ja, teils, nein für Zentrum, Entwicklung, Königssicherheit) mit dem, was du im Buch lehrst?
       (Den Ablauf hat Claude geprüft.)
-- [ ] N251. **Faktorenbilanz-Trainer:** Training › „Faktorenbilanz-Trainer“ › Trainieren:
-      Stellung aus Kapitel 3, je Faktor (Material, Zeit, Königssicherheit, Aktivität) „Weiß,
-      gleich, Schwarz“. Nach „Prüfen“ je Zeile „App: …“ und darunter die ganze Faktorenbilanz mit
-      Haltbarkeit und Fazit wie im Werkzeug. Rückfrage dazu: W9.
-- [ ] N252. **Repertoire-Trainer:** Training › „Repertoire-Trainer“ › Trainieren: Eröffnung
-      wählen (die Abschnitte von Kapitel 2 mit Steckbrief, etwa „Die Spanische Partie (Ruy
-      Lopez)“) und „Du spielst Weiß/Schwarz“. Du ziehst deine Züge, die App antwortet aus dem Buch;
-      unter dem Brett steht die Zugfolge („1. e4 e5 2. Sf3 Sc6“). Ein falscher Zug: „Nicht der Zug
-      des Buches“ und ein goldener Pfeil, den du nachziehst. Als Schwarz steht der erste weiße Zug
-      schon da und das Brett ist gedreht. Jede Variante des Buches (ab acht Halbzügen, höchstens
-      zwölf Züge je Seite) ist eine Aufgabe, höchstens sechs je Runde. Rückfrage dazu: W10.
 
 ### Neu in 0.2.47 (etwa 15 Minuten, mit Engine; Claudes Empfehlungen schon umgesetzt, Opus)
 
@@ -495,11 +367,6 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
 - [ ] N246. **Geschätzte Spielstärke (R3):** In der Karte „Spielstärke“ unter der Auswertung
       heißt die Zeile jetzt „Geschätzte Spielstärke“, der Wert „etwa 1400“. Die Erklärung sagt
       „keine Wertungszahl eines Verbands“.
-- [ ] N249. **Wiederholung in Taktik und „Falle oder Köder“ (U9):** Im Taktiktrainer eine Aufgabe
-      mit „Lösung zeigen“ beenden. Im Bereich Training steht unter „Fällige Wiederholungen“ ein
-      Termin für morgen. Am nächsten Tag steht dort „Taktiktrainer: 1 fällig“; der Knopf führt in
-      den Trainer, oben steht „Wiederholen: 1 Aufgabe ist fällig“ und startet eine Runde nur mit
-      dieser Aufgabe. Richtig gelöste neue Aufgaben kommen nicht in die Wiederholung.
 
 ### Neu in 0.2.46 (etwa 20 Minuten, mit Engine; Bots mit Persönlichkeit, dein Wunsch vom 17.10.2026 abends)
 
@@ -508,28 +375,6 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
       rückwärts, lange Damenzüge, seitliche Turmzüge, ruhige Züge, Abzüge, stille Bauernzüge).
       Einen Gegner Stufe 6 · 6 · 6 nur mit „lange Läuferdiagonalen“ anlegen: Er spielt stark und
       übersieht ab und zu einen langen Läuferzug (Auswertung: „eine lange Diagonale nicht gesehen“).
-
-### Neu in 0.2.45 (etwa 20 Minuten; drei Trainer auf Fables Daten, Opus)
-
-- [ ] N236. **Taktiktrainer:** Training › Kapitel 7 › Taktiktrainer › „Trainieren“. Oben Thema
-      (Gemischt, Mattbilder oder eines der Motive, mit Anzahl) und Schwierigkeit (alle, 1 bis 5)
-      wählen, „Runde starten“. Acht Aufgaben, leichteste zuerst; bei Schwarz am Zug ist das Brett
-      gedreht. Ziehen wie bei den Übungen; die App antwortet mit der Gegenseite. „Hinweis 1“ nennt
-      ein Warnsignal, „Hinweis 2“ das Motiv, „Hinweis 3“ markiert die Figur gold, „Lösung zeigen“
-      spielt alles vor. Danach „Welches Motiv war es?“. Unten steht, ob die Aufgabe aus dem Buch
-      (Abb.) oder von Lichess kommt, und ihre Stufe.
-- [ ] N237. **Falle oder Köder:** Training › Kapitel 4 › „Trainieren“, Stufe wählen, „Runde
-      starten“. Ein grauer Pfeil zeigt das Angebot. „Erst die Warnsignale prüfen“ zeigt W1 bis W5
-      am Brett. Dann „Nehmen“ oder „Nicht nehmen“: Danach steht, ob es eine Falle war (mit der
-      Widerlegung und dem besseren Zug als goldenem Pfeil) oder ein Geschenk. Etwa die Hälfte der
-      Angebote sind Geschenke. Die Klammerfalle (Abb. 4.2) gehört zu den schweren Aufgaben (Stufe 5).
-- [ ] N238. **Strukturerkenner:** Training › Kapitel 5 › „Trainieren“. Das Brett zeigt nur Bauern
-      und Könige. Schritt 1: alle schwachen Bauern beider Seiten antippen (gold), „Prüfen“: gold
-      gefunden, rot übersehen, grau zu viel. Schritt 2: einen von drei Plan-Sätzen wählen; danach
-      stehen Struktur und richtiger Plan da. Bitte die Plan-Sätze kritisch lesen (Rückfrage W6).
-- [ ] N239. **„Nur dieser Zug“ bei Übungen:** Übung zu Abb. 1.40 lösen: Unter der Erklärung steht
-      „Nur dieser Zug führt zum Ziel …“ (aus Fables Engine-Prüfung). Bei Übungen mit mehreren
-      guten Zügen fehlt der Satz.
 
 ### Neu in 0.2.44 (etwa 10 Minuten, mit Engine; deine Entscheidung vom 17.10.2026 abends)
 
@@ -691,52 +536,14 @@ Trainer.
 
 **Übungen des Buches**
 
-- [ ] N182. **Übungen im Kapitel:** Buch › Kapitel 1: Unter den Trainern steht „Übungen“ mit allen
-      Übungen des Kapitels und „Übungen lösen (… offen von …)“. Eine Übung antippen: oben „Die
-      Aufgabe steht im Buch …“ mit Verweis auf die Abbildung, darunter das Brett.
-- [ ] N183. **Lösen auf dem Brett (Abb. 1.40):** „Ich habe nachgedacht“, dann „Hinweis 1“ (Motiv),
-      „Hinweis 2“ (welche Figur), „Hinweis 3“ (goldener Pfeil). Einen falschen Zug ziehen: „Das ist
-      nicht der Zug des Buches“, die Figur springt zurück. Den richtigen Zug ziehen: „Richtig!“,
-      darunter die Erklärung (1. Sc7+! …) und „Nächste Übung“.
-- [ ] N184. **Mehrzügige Lösung (Abb. 1.41):** Nach deinem richtigen Zug antwortet die App mit dem
-      Zug der Gegenseite aus der Lösung; du ziehst weiter, bis die Lösung zu Ende ist. Ein im Buch
-      genannter gleichwertiger Zug („akzeptiert“) zählt ebenfalls.
-- [ ] N185. **Lösung zeigen (Q6):** Bei einer anderen Übung „Lösung zeigen“: Die Lösung steht auf
-      dem Brett, darunter die Erklärung. Zurück im Kapitel trägt die Übung den Haken ✓ (deine
-      Entscheidung: zählt als gelöst).
-- [ ] N186. **Denkaufgabe (Kapitel 0, Abb. 0.27):** „… im Kopf oder auf Papier“, „Ich habe
-      nachgedacht“, Erklärung lesen, dann „Gelöst“, „Teilweise“ oder „Nicht gelöst“: „Gespeichert“.
-- [ ] N187. **Erst selbst denken:** Einstellungen: „Erst selbst denken“ steht wieder da (locker,
-      streng) mit einem erklärenden Satz. Mit „streng“ zeigt eine Zugaufgabe Hinweise und „Lösung
-      zeigen“ erst nach deinem ersten eigenen Zug, auch nach einem falschen.
-- [ ] N188. **Wiederholung:** Training: Oben „Fällige Wiederholungen“. Nach einigen Übungen steht
-      dort „Als Nächstes am …“ (morgen oder später, je nach Ergebnis). Am nächsten Tag: „Jetzt
-      wiederholen“ führt der Reihe nach durch die fälligen Übungen.
-
 **Erste Trainer** (Training › Kapitel 0 und 1 › „Trainieren“)
 
-- [ ] N189. **Koordinaten, Feld finden:** 16 Felder auf dem leeren Brett ohne Randbeschriftung,
-      die ersten acht mit Weiß unten, dann mit Schwarz unten. Ein richtiger Tipp führt sofort
-      weiter, ein falscher zeigt das gesuchte Feld rot. Am Ende „… von 16 richtig“ und die Zeit.
-- [ ] N190. **Zug aufschreiben und ausführen:** Ein goldener Pfeil zeigt einen Zug, du schreibst
-      ihn (S, L, T, D, K; „0-0“ geht auch). Fehlt nur das Schachzeichen, gilt es mit Erinnerung.
-      „Zug ausführen“: Der Zug steht in Notation da, du ziehst ihn; darunter auch Rochade,
-      en passant und Umwandlung (Auswahl der Figur).
-- [ ] N191. **Gangarten:** Die Figur ist hervorgehoben; alle Zielfelder antippen, „Prüfen“: gold
-      gefunden, rot übersehen, grau zu viel.
-- [ ] N192. **Zähltrainer, Bilanz zählen:** Feld rot markiert; Angreifer, Verteidiger und Gewinn
-      wählen, „Prüfen“: Danach stehen die Pfeile und der Satz des Werkzeugs „Zählen“ da.
 - [ ] N193. **Zähltrainer, hängende Figuren:** Training › Zähltrainer › „Hängende Figuren“:
       Stimmen die Felder, die die App als hängend nennt? (Den Ablauf hat Claude geprüft.)
 - [ ] N194. **Schach-Röntgen-Trainer:** Ist die Aufgabe (drei Schritte, Pfeile setzen: Figur,
       dann Zielfeld) verständlich und auf dem Handy gut bedienbar? (Den Ablauf hat Claude geprüft.)
 - [ ] N195. **Fortschritt:** Nach einer ganzen Runde zeigt das Kapitel unter Fortschritt den
       Trainer mit Durchgängen und richtigen Aufgaben.
-
-### Neu in 0.2.35 (etwa 10 Minuten; neuer Buchstand vom 16.10.2026)
-
-- [ ] N197. **Neue Nummern der Übungen:** Kapitel 3 (Übungen 14 bis 18), Kapitel 4 (19 bis 22) und
-      Kapitel 12 (84 bis 86) stehen in der neuen Reihenfolge des Buches.
 
 ### Neu in 0.2.36 (etwa 30 Minuten, mit Engine; AP 11 Kalibrierung)
 

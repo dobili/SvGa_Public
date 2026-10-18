@@ -3153,6 +3153,43 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N288** (Isolani aus Besitzersicht und Sonderfall 6. Reihe): von Claude geprüft am 18.10.2026: 5.17 Satz gegen den Isolani für Schwarz und Besitzer-Satz für Weiß; 5.18 ohne Isolani-Satz; 8.29 aus Sicht Schwarz „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“
 - **N300** (Leerfälle der Werkzeuge (U12)): von Claude geprüft am 18.10.2026: die Leer-Sätze an 8.2 (Opposition, Schlüsselfelder, Quadrat), 1.26 (Sechs Regeln) und 8.1 (Zielbilanz, Angriffsregel) wörtlich und je einmal, ohne Legende; Zielbilanz im Mittelspiel (12.2) und Faktorenbilanz an 3.24 voll
 - **N313** (Phase nach dem Glossar (S17)): von Claude geprüft am 18.10.2026: 11.4 zeigt den Glossar-Satz wörtlich, 11.12 Mittelspiel; die eigene Lesart in Partien prüfte die Gruppe Spielen (N233)
+- **N182** (Übungen im Kapitel): von Claude geprüft am 18.10.2026: Kapitel 1 zeigt „Übungen lösen (… offen von …)“ und die Übungen 1.40 bis 1.42; eine Übung öffnet mit „Die Aufgabe steht im Buch … Abb. 1.40“ und Brett
+- **N183** (Lösen auf dem Brett (Abb. 1.40)): von Claude geprüft am 18.10.2026: Hinweis 1 (Motiv), 2 (Figur), 3 (goldener Pfeil b5–c7, aus dem SVG gelesen); falscher Zug abgewiesen, Springer zurück auf b5; richtiger Zug „Richtig!“, Erklärung mit Sc7+, „Nächste Übung“
+- **N184** (Mehrzügige Lösung (Abb. 1.41)): von Claude geprüft am 18.10.2026: 1.41: nach cxd5 antwortet die App, bis die Lösung mit „Richtig!“ endet; der akzeptierte erste Zug exd5 zählt ebenfalls
+- **N185** (Lösung zeigen (Q6)): von Claude geprüft am 18.10.2026: „Lösung zeigen“ stellt die Lösung aufs Brett mit Erklärung; im Kapitel trägt 1.41 „gelöst“
+- **N186** (Denkaufgabe (Kapitel 0, Abb. 0.27)): von Claude geprüft am 18.10.2026: 0.27: „im Kopf oder auf Papier“, Erklärung, drei Knöpfe, „Gespeichert“
+- **N187** (Erst selbst denken): von Claude geprüft am 18.10.2026: „Erst selbst denken“ locker und streng mit Satz; bei „streng“ Hinweise und „Lösung zeigen“ erst nach dem ersten (auch falschen) Zug
+- **N188** (Wiederholung): von Claude geprüft am 18.10.2026: „Als Nächstes am …“ unter „Fällige Wiederholungen“; mit Uhr +48 h fällig, „Jetzt wiederholen“ öffnet die Übung
+- **N189** (Koordinaten, Feld finden): von Claude geprüft am 18.10.2026: 16 Felder aus beiden Richtungen mit Zeit (Oberflächentest), falscher Tipp zeigt das gesuchte Feld rot
+- **N190** (Zug aufschreiben und ausführen): von Claude geprüft am 18.10.2026: Zug aufschreiben ohne Schachzeichen gilt; „Zug ausführen“ mit Rochade, en passant und Umwandlung samt Figurenwahl
+- **N191** (Gangarten): von Claude geprüft am 18.10.2026: nach „Prüfen“ „Die Figur hat N Zielfelder“ mit Markierungen
+- **N192** (Zähltrainer, Bilanz zählen): von Claude geprüft am 18.10.2026: nach „Prüfen“ Rechnung und Pfeile des Werkzeugs „Zählen“ am Brett
+- **N197** (Neue Nummern der Übungen): von Claude geprüft am 18.10.2026: Kapitelseiten: Kapitel 3 Übungen 14 bis 18, Kapitel 4 19 bis 22, Kapitel 12 83 bis 86
+- **N236** (Taktiktrainer): von Claude geprüft am 18.10.2026: Thema und Stufe wählbar, „Aufgabe 1 von 8“, Quelle (Buch oder Lichess) und Stufe, Hinweise 1 bis 3, „Lösung zeigen“, Motivfrage (Oberflächentest), bei Schwarz am Zug gedrehtes Brett
+- **N237** (Falle oder Köder): von Claude geprüft am 18.10.2026: grauer Pfeil, Warnsignale, „Nehmen“/„Nicht nehmen“ führen zu „Eine Falle“ oder „Ein Geschenk“ mit Fortsetzung
+- **N238** (Strukturerkenner): von Claude geprüft am 18.10.2026: Brett nur mit Bauern und Königen, Schritt 1 starke Felder bzw. schwache Bauern mit gold/rot/grau, danach der Plan
+- **N239** („Nur dieser Zug“ bei Übungen): von Claude geprüft am 18.10.2026: 1.40 mit „Nur dieser Zug führt zum Ziel …“, 1.42 mit Lb4+ ohne den Satz
+- **N249** (Wiederholung in Taktik und „Falle oder Köder“ (U9)): von Claude geprüft am 18.10.2026: „Lösung zeigen“ setzt einen Termin; mit Uhr +30 h „Taktiktrainer: 1 fällig“ und eine Runde nur mit dieser Aufgabe
+- **N251** (Faktorenbilanz-Trainer): von Claude geprüft am 18.10.2026: vier Faktoren, je Zeile „App:“ bzw. „Buch:“, darunter die ganze Bilanz
+- **N252** (Repertoire-Trainer): von Claude geprüft am 18.10.2026: als Schwarz steht 1. e4 schon da, Brett gedreht; als Weiß falscher Zug mit Pfeil (Oberflächentest)
+- **N253** (Endspieltrainer öffnen): von Claude geprüft am 18.10.2026: Auswahl mit Gruppen und Anzahl (alles gemischt 80, nicht mehr 78), Stufen alle und 1 bis 5, Runde mit sechs Aufgaben
+- **N263** (Fallen aus den Eröffnungskapiteln): von Claude geprüft am 18.10.2026: 17 Buchaufgaben in den Fallendaten (darunter 2.27, 2.28, 3.33, 3.67), „Aus dem Buch: Abb. …“ in der Runde
+- **N266** (Studien lösen): von Claude geprüft am 18.10.2026: Saavedra: 1. c7 mit Buchantwort; falscher Zug zeigt goldenen Pfeil, nachgezogen geht es weiter
+- **N267** (Zug erraten): von Claude geprüft am 18.10.2026: Opernpartie: „Getroffen: 1 von 1“, „In der Partie geschah Sf3.“, „1 von 2“ (Oberflächentest)
+- **N269** (Endspieltrainer, 9.23 und 9.41): von Claude geprüft am 18.10.2026: Endspieldaten: 9.23 Remis für Weiß, 9.41 und 9.42 Remis für Schwarz
+- **N270** (Übungen mit Zügen, die das Buch stützt (T1)): von Claude geprüft am 18.10.2026: Übung 6: Df6 und Sxd4 abgewiesen, Lb4+ „gleich gut“; 15: dxc3 abgewiesen, Sf6 gilt; 83: Te1 gilt; 11: Dc7 abgewiesen; 39: Sxf6+ abgewiesen
+- **N271** (Notation mit englischen Buchstaben (U6)): von Claude geprüft am 18.10.2026: Zug mit englischem Figurenbuchstaben gilt mit „Im Buch stehen deutsche Buchstaben (S, L, T, D)“
+- **N272** (Strukturerkenner (W6, T5)): von Claude geprüft am 18.10.2026: Daten: 5.43 „Stellung öffnen“, 5.44 „Raum nutzen“, 11.70 „Vorposten besetzen“; Plan-Sätze wie beschrieben
+- **N273** (Studien (W11)): von Claude geprüft am 18.10.2026: aufklappbare Zeile „Die vier Prüfungen für Studien (Kapitel 10)“
+- **N301** (Fehlerdatenbank): von Claude geprüft am 18.10.2026: Eintrag mit FEN, Auswertung, Vorschlag, Löschen (Oberflächentest); aus dem Rückblick einer Partie öffnet „In die Fehlerdatenbank“ das Formular mit der Stellung vor dem Zug
+- **N302** (Denkroutine-Trainer): von Claude geprüft am 18.10.2026: Minute zählt herunter, Kandidat und Antwort nebeneinander ohne Überlauf, Vergleich mit der Engine (Oberflächentest)
+- **N303** (Planbilanz-Übung): von Claude geprüft am 18.10.2026: Planfragen mit Antworten, LAP-Lösung als goldener Pfeil, Wettrennen (Oberflächentest); 6.6 Weiß 2, Schwarz 3 (Werkzeugtest „Wo?“)
+- **N304** (Abweichungsmodus): von Claude geprüft am 18.10.2026: Engine verlässt das Buch, Urteil, Einschätzung, drei Aufgaben (Oberflächentest)
+- **N305** (30-Minuten-Plan): von Claude geprüft am 18.10.2026: Tabelle beider Tage, Uhr, „Schritt erledigt“, Neuladen (Oberflächentest); „Letzte Partie ansehen“ öffnet den Rückblick, „Einheit geschafft …“, Tag B mit „Zur Fehlerdatenbank“
+- **N315** (Strukturerkenner mit Feldern zuerst (W5)): von Claude geprüft am 18.10.2026: „Schritt 1 von 3: Welche Felder …“ wörtlich; 5.8 ergibt b6 und d5 (Komponententest, die Oberfläche wählt Aufgaben zufällig)
+- **N316** (Faktorenbilanz-Trainer mit dem Urteil des Buches (W9)): von Claude geprüft am 18.10.2026: Buchaufgabe 3.77: vier Zeilen „Buch: …“ und „Verglichen mit der Faktorenbilanz des Buches zu Abb. 3.77.“; ohne Buchbilanz „App:“
+- **N317** (Warum-Fragen im Repertoire-Trainer (W10)): von Claude geprüft am 18.10.2026: Spanisch als Schwarz: nach 3... a6 zugeklappt die Warum-Frage „Warum spielt Schwarz 3... a6?“
+- **N318** (Zug erraten mit Vergleich (W12)): von Claude geprüft am 18.10.2026: Opernpartie 2. d4 statt Sf3: Vergleich der Engine und „warum der Meister anders zog“ (Oberflächentest)
 
 ### Teil 2 im Wortlaut vor dem Umbau
 

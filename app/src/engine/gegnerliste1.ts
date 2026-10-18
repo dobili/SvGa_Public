@@ -161,8 +161,8 @@ const STUFE_3: readonly Gegner[] = [
   gegner(
     "greta",
     "Greta",
-    [3, 3, 3],
-    ["ungenau", "drohungIgnoriert", "bauernvorstoss"],
+    [2, 3, 3],
+    ["figurHaengen", "drohungIgnoriert", "bauernvorstoss"],
     ["dame", "turm"],
     2,
   ),

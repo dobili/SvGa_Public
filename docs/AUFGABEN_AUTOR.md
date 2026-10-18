@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.74. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.75. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.74“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.75“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,18 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.74“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.75“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.75 (etwa 10 Minuten, mit Engine; vier Bots nachgebessert, Opus)
+
+- [ ] N293. **Greta, Paul, Hanna und Elif nachgebessert:** Diese vier lagen nach 0.2.74 noch
+      daneben und stimmen jetzt mit ihrer Stufe überein (je sechs Partien gegen die reine Stufe:
+      3 : 3, 3 : 3, 2,5 : 3,5, 2,5 : 3,5). Greta (Stufe 3) spielt die Eröffnung schwächer und
+      lässt Figuren stehen; vorher schlug sie sogar Stufe 4. Paul (Stufe 5) sieht statt seitlicher
+      Turmzüge jetzt nur Abzüge nicht und war vorher zu schwach. Elif (Stufe 6) übersieht statt
+      Rückzügen jetzt ruhige Züge. Prüfe in der Gegnerwahl, dass die Sprechblasen von Greta,
+      Paul und Elif das sagen, und spiele eine Partie gegen Greta.
 
 ### Neu in 0.2.74 (etwa 15 Minuten, mit Engine; 64 Bots nachgemessen, Fable und Opus)
 
@@ -30,13 +40,16 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.74“, dann 
       die reine Stufe seiner Nummer. Zwölf waren zu stark (meist 6 : 0, etwa Leon, Ayşe, Sophie,
       Jonas, Zoë), vier zu schwach (Frau Berger, Hanna, Paul, Elif). Muster: Wer nur billige
       Fehlerarten in der Liste hat („ungenau“, „Königsschild“, „Bauernvorstoß“), spielt stärker
-      als seine Stufe. Die Ausreißer haben jetzt eine Phasenstufe weniger oder mehr und, wo das
+      als seine Stufe; ein häufiger blinder Fleck wie „Rückzug“ macht ab Stufe 5 deutlich schwächer. Die Ausreißer haben jetzt eine Phasenstufe weniger oder mehr und, wo das
       nicht reichte, eine teure Fehlerart (Figur hängen lassen, Drohung übersehen) in der Liste;
       ihre Beschreibungen in der Sprechblase nennen das. Spiele eine Partie gegen Zoë (Stufe 4)
       und eine gegen Jonas (Stufe 3): Sie sollten sich wie ihre Stufe anfühlen, nicht mehr eine
-      Klasse stärker. Leon (Stufe 1), Ayşe und Sophie (2) sowie Greta (3) bleiben trotz der
-      Anpassung etwas stärker als ihre Stufe; das wird noch untersucht. Die Stufen 6 bis 8 werden
-      noch gemessen; dort folgt höchstens eine kleine Anpassung einzelner Bots.
+      Klasse stärker. Leon (Stufe 1), Ayşe und Sophie (Stufe 2) bleiben die Stärksten ihrer
+      Stufe: Sie schlagen die reine Stufe klar, verlieren aber gegen die nächsthöhere (Leon 0 : 6,
+      Ayşe und Sophie 2 : 4). Weil zwei benachbarte Stufen 10 : 0 auseinanderliegen, ist das kein
+      Fehler, sondern Streuung innerhalb der Stufe wie bei chess.com; sie bleiben so (Widerspruch
+      genügt). Die Stufen 7 und 8 werden noch gemessen; dort folgt höchstens eine kleine
+      Anpassung einzelner Bots.
 
 ### Neu in 0.2.73 (etwa 2 Minuten; Lizenzen, Opus)
 

@@ -2905,3 +2905,38 @@ Lizenztexte für MIT (chess-art) und Apache 2.0 (Chessnut, mit Copyright-Datei) 
 Zip-Datei wurden nur Figuren, Lizenzen und Skript übernommen; die beigelegten Fassungen von
 `docs/ENTSCHEIDUNGEN.md`, `FORTSCHRITT.md` und `LIZENZEN.md` waren ein alter Stand (0.2.32) und
 hätten Neueres überschrieben.
+
+## Genauigkeit und Spielstärke neu geeicht: Ergebnis und Einbau (18.10.2026 nachmittags, Opus, Zweig `eichung`, Version 0.2.83)
+
+Umsetzung des Plans „Genauigkeit und Spielstärke neu eichen“ (Abschnitt oben), Schritt d nach
+Freigabe des Autors („Ja, bau es so“). Rohdaten und Bericht nur lokal (`buch/arbeit/eichung/`).
+
+**Daten:** je 300 gewertete Schnellschach-Partien von chess.com und Lichess, je 30 in jedem
+200-Punkte-Band von 400 bis 2200 (600 Seiten je Plattform), mit der Engine der App nachgerechnet
+(Stockfish 19 lite, Tiefe 18). Etwa 20 % der Seiten blieben als Kontrolle außen vor.
+
+**Genauigkeit (Kontrolle, Abweichung in Prozentpunkten):** Lichess-Rechnung gegen Lichess im
+Mittel −1,1, Betrag 2,4 (alle 600 Seiten). Gegen chess.com: Lichess-Rechnung +2,4/6,9, Mittelweg
++1,7 bis +2,6/6,3 bis 6,5, nahe chess.com +0,9 bis +2,7/5,4 bis 5,8 (zwei Läufe mit erweitertem
+Raster). chess.com veröffentlicht seine Rechnung nicht; näher als etwa ±6 kommt man an eine
+einzelne Partie nicht heran. Eingebaut: Polster 1 (Lichess), 0,55 (Mittelweg, Standard), 0,1 (nahe
+chess.com), Abfall überall 0,04354 (0,040 passte auf den Eichpartien etwas besser, auf der
+Kontrolle schlechter, also Rauschen).
+
+**Spielstärke (Kontrolle, Schätzung minus echte Wertung):** je Partie im Betrag 370 bis 480,
+Streuung 440 bis 560; über zehn Partien 240 bis 440 (die umgekehrte Kurve hilft auf der
+chess.com-Seite: 438 → 370, auf der Lichess-Seite nicht: 257 → 285). Die Genauigkeit einer
+Partie sagt wenig über die Wertung; sie hängt stark vom Gegner und vom Verlauf ab. Eingebaut
+(`spiel/staerkemodell.ts`): je Partie die Mitte der beiden Kurven Genauigkeit → Wertung
+(chess.com, Lichess) mit Spanne ±400, beide Einzelwerte hinter dem Fragezeichen; über die letzten
+höchstens zehn Partien je Skala das Mittel aus Einzelschätzungen und umgekehrter Kurve, Spanne
+von ±400 (eine Partie) bis ±250 (zehn Partien), Karte „Deine Spielstärke“ im Bereich Spielen.
+Spielstärke und Urteilswort je Phase hängen an der inneren Genauigkeit (Lichess-Rechnung), nicht
+am Schalter.
+
+**Auswertung in der App:** feste Tiefe 18 wie bei der Eichung (Zeitgrenze 4 s nach der Partie,
+8 s während der Partie), Nachprüfung verdächtiger Werte mit Tiefe 22.
+
+**Ersetzt:** die Tabelle von 0.2.72 (sieben Partien des Autors, N290 und die alte S20 sind damit
+erledigt; S20 fragt jetzt nur noch nach dem Zurücksetzen der Wertung). Offen bleibt S23 (Elo je
+Bot-Stufe): braucht die Züge aus der Bot-Messung, die der andere Chat betreut.

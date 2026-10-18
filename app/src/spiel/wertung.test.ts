@@ -5,6 +5,7 @@
  */
 import { describe, expect, it } from "vitest";
 import type { Partieeintrag } from "../speicher/partien";
+import { staerkeUeberPartien } from "./staerkemodell";
 import { leserzug, neuePartie, ziehe, type Partie, type Partieeinstellung } from "./partie";
 import {
   ANFANGSPARTIEN,
@@ -16,6 +17,7 @@ import {
   K_DANACH,
   mitGewerteterPartie,
   staerkeDerPartie,
+  staerkeLetzterPartien,
   wertungspunktFuer,
   type Wertungspunkt,
 } from "./wertung";
@@ -151,5 +153,17 @@ describe("Wertung", () => {
       "c",
     ]);
     expect(imBereich(punkte, { art: "zeit", tage: 365 }, jetzt)).toHaveLength(3);
+  });
+
+  it("Spielstärke über die letzten zehn Partien (0.2.83): nur gegen die Engine, höchstens zehn", () => {
+    const engine = Array.from({ length: 12 }, (_, i) => eintrag(`p${i}`, "white"));
+    const mensch = eintrag("m", "white", { gegner: "mensch" });
+    const schaetzung = staerkeLetzterPartien([mensch, ...engine]);
+    expect(schaetzung?.partien).toBe(10);
+    // Fehlerfreie Partien: innere Genauigkeit 100 % in jeder.
+    expect(schaetzung?.mitte).toBe(
+      staerkeUeberPartien(Array.from({ length: 10 }, () => 100))?.mitte,
+    );
+    expect(staerkeLetzterPartien([mensch])).toBeNull();
   });
 });

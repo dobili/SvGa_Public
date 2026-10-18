@@ -108,7 +108,8 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   const karte = page.getByTestId("rueckblickkarte");
   await expect(karte).toContainText("2. g4?? kostet etwa");
   await expect(karte).toContainText("Besser war 2.");
-  await expect(page.getByTestId("spielstaerke")).toContainText("Genauigkeit");
+  // Seit 0.2.83 mit dem Modus (Standard Mittelweg).
+  await expect(page.getByTestId("spielstaerke")).toContainText("Genauigkeit (Mittelweg)");
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
   await expect(page.getByRole("button", { name: "2. g4??" })).not.toHaveAttribute("aria-current");
@@ -277,4 +278,24 @@ test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.
   await expect(karte).not.toContainText("Besser war");
   await page.screenshot({ path: "test-results/bilder/spielengine.png", fullPage: true });
   await expect(karte.getByRole("button")).toHaveCount(0);
+});
+
+test("Genauigkeit wie (0.2.83): Mittelweg vorgewählt, Wechsel zu „nahe chess.com“ bleibt", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Training" }).click();
+  const wahl = page.getByRole("radiogroup", { name: "Genauigkeit wie" });
+  await expect(wahl.getByRole("radio", { name: "Mittelweg" })).toBeChecked();
+  await wahl.getByRole("radio", { name: "nahe chess.com" }).click();
+  await expect(page.getByText(/Züge in entschiedener Stellung zählen kaum/)).toBeVisible();
+  await page.reload();
+  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Training" }).click();
+  await expect(
+    page.getByRole("radiogroup", { name: "Genauigkeit wie" }).getByRole("radio", {
+      name: "nahe chess.com",
+    }),
+  ).toBeChecked();
 });

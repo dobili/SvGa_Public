@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.82. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.83. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.82“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.83“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,36 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.82“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.83“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.83 (etwa 20 Minuten, mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
+
+- [ ] N324. **Genauigkeit wie:** Einstellungen › „Darstellung und Training“ › Reiter „Training“.
+      Oben „Genauigkeit wie“ mit Lichess, Mittelweg (vorgewählt) und nahe chess.com, darunter ein
+      Satz, was der Modus tut. Lichess rechnet wie Lichess (trifft Lichess im Mittel auf 2 bis 3
+      Prozentpunkte), nahe chess.com lässt Züge in längst entschiedener Stellung kaum zählen
+      (trifft chess.com im Mittel auf etwa 6 Punkte, chess.com veröffentlicht seine Rechnung
+      nicht), Mittelweg liegt dazwischen. Öffne eine ausgewertete Partie: In der Karte
+      „Spielstärke“ heißt die erste Zeile „Genauigkeit (Mittelweg)“. Stelle auf „nahe
+      chess.com“: Bei Partien, die lange entschieden waren, sinkt die Zahl; Spielstärke und
+      Urteilswörter bleiben gleich (sie hängen nicht am Schalter).
+- [ ] N325. **Spielstärke mit Spanne:** In derselben Karte steht bei „Geschätzte Spielstärke“
+      etwa „etwa 1550 (1150–1950)“. Darunter „Mitte aus chess.com und Lichess“ mit Fragezeichen:
+      Ein Tipp zeigt beide Werte, etwa „chess.com etwa 1500, Lichess etwa 1550“. Grundlage sind
+      je 300 gewertete Schnellschach-Partien von chess.com und Lichess (alle Bänder von 400 bis
+      2200), mit der Engine der App nachgerechnet; eine einzelne Partie liegt oft 400 Punkte
+      daneben, deshalb die Spanne.
+- [ ] N326. **Deine Spielstärke über zehn Partien:** Spielen, über „Letzte Partien“: Karte „Deine
+      Spielstärke“ mit großer Zahl („etwa 1400“) und darunter „1050 bis 1750, aus 3 Partien“. Sie
+      erscheint, sobald eine ausgewertete Partie gegen die Engine mit mindestens zehn eigenen
+      Zügen da ist, und nimmt höchstens die letzten zehn. Mit jeder Partie wird die Spanne enger
+      (bei zehn Partien ±250). Das Fragezeichen erklärt es und nennt beide Skalen.
+- [ ] N327. **Auswertung mit Tiefe 18:** Die Engine bewertet jede Stellung jetzt bis Tiefe 18
+      (wie bei der Eichung) statt eine feste Zeit; auf dem Handy dauert die Auswertung nach einer
+      Partie deshalb etwas länger, wenn du schnell gezogen hast (während du nachdenkst, rechnet
+      sie schon im Hintergrund). Bitte einmal eine Partie zu Ende spielen und schauen, ob die
+      Auswertung in vertretbarer Zeit fertig wird (Fortschritt unter dem Ergebnis).
 
 ### Neu in 0.2.82 (etwa 10 Minuten; deine Rückmeldung zu 0.2.80 und neue Figurensätze, Opus)
 
@@ -142,18 +170,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.82“, dann 
 
 ### Neu in 0.2.72 (etwa 10 Minuten, mit Engine; Spielbewertung an deinen chess.com-Partien geeicht, Fable)
 
-- [ ] N290. **Geschätzte Spielstärke etwa 500 Punkte niedriger, wie bei chess.com:** Öffne eine
-      ausgewertete Partie (Partienliste) oder spiele eine neue. Karte „Spielstärke“: Die Zahlen
-      liegen jetzt deutlich tiefer. Deine Partie vom 17.10.2026 gegen Stufe 5 (88 % und 76 %)
-      ergibt „etwa 1500“ und „etwa 750“ statt 2100 und 1450. Grund: Ich habe deine sieben
-      chess.com-Partien mit unserer Auswertung durchgerechnet (14 Seiten). Unsere Genauigkeit
-      liegt bei schwachem Spiel 10 bis 19 Punkte über der von chess.com, bei starkem 1 bis 3; die
-      alte Tabelle (90 % → 2200) kam aus Durchschnittswerten und lag damit 450 bis 1150 über der
-      Spielbewertung von chess.com. Die neue Tabelle (95 % → 2100, 92 % → 1750, 89 % → 1550,
-      86 % → 1350, 83 % → 1100, 80 % → 900, 75 % → 700, 70 % → 500) trifft chess.com bei deinen
-      14 Seiten im Mittel genau, die größte Abweichung ist 450 (chess.com schwankt selbst: 94 %
-      ergibt dort einmal 1500, einmal 2000). Der Erklärtext unter der Karte sagt das. Dieser
-      Schritt ersetzt N260.
 - [ ] N291. **Urteilswort je Phase und Mittelspiel nach Taktik und Strategie:** In derselben Karte
       steht vor jeder Phase eine farbige Marke: Hervorragend (ab 95 %), Sehr gut (ab 88 %), Gut
       (ab 78 %), Ungenau (ab 68 %), Fehlerhaft (ab 55 %), Schwach. Unter „Mittelspiel“ stehen
@@ -1011,15 +1027,14 @@ Regeln C1 und C2).
 
 ### S. Spielbewertung (Fable, 0.2.72; schon umgesetzt, Widerspruch genügt)
 
-- [ ] S20. **Eichung an deinen chess.com-Partien und deine Wertung:** Die neue Tabelle (N290) ist
-      an deinen sieben Partien geeicht; mehr Partien machen sie genauer. Wenn du weitere Partien
-      mit chess.com-Bewertung hast, schicke PGN und Bildschirmfoto, ich rechne sie nach. Die
-      Wertung in den Einstellungen (Elo-System aus deinen gewerteten Partien) hat bisher mit den
-      alten, zu hohen Schätzungen gerechnet; alte Punkte bleiben, neue Partien bringen die
-      niedrigeren Schätzungen des Gegners, die Wertung sinkt also mit den nächsten Partien um
-      einige hundert Punkte. **Empfehlung:** einmal „Wertung zurücksetzen“ in den Einstellungen,
-      dann baut sie sich aus den neuen Schätzungen auf. Andere Leser gibt es noch nicht, deshalb
-      kein automatisches Umrechnen (es wäre eine Änderung an gespeicherten Daten).
+- [ ] S20. **Deine Wertung nach der neuen Eichung (0.2.83):** Die Wertung in den Einstellungen
+      (Elo-System aus deinen gewerteten Partien) rechnet mit der geschätzten Stärke des Gegners.
+      Die stammt jetzt aus den neuen Kurven: Bei niedriger Genauigkeit liegt sie höher als vorher
+      (die alte Tabelle aus deinen sieben Partien ging bis 250 hinunter, die neue fängt bei etwa
+      1000 an, weil echte Spieler mit 50 % meist um 1000 stehen). Alte Punkte bleiben, die
+      Wertung wandert mit den nächsten Partien. **Empfehlung:** einmal „Wertung zurücksetzen“ in
+      den Einstellungen, dann baut sie sich auf der neuen Skala auf. Ich ändere gespeicherte
+      Daten nicht selbst (Regel 9: Daten im Speicher der Leser).
 - [ ] S21. **Urteilswort statt Symbole, Taktik und Strategie nach dem Buch:** chess.com
       veröffentlicht nicht, wie die Symbole je Phase entstehen. Aus deinen 13 Bewertungen
       lässt sich ablesen: „Strategie“ war alle 13 Male „Gut“, „Endspiel“ auch bei 95 %
@@ -1050,7 +1065,8 @@ Regeln C1 und C2).
       künftig auch die Züge), sie durch die neue Spielstärke-Rechnung schicken und den
       Mittelwert als „etwa 1100“ an die Stufe schreiben. Vorher wären es Zahlen
       auf der alten Skala, die gleich wieder geändert werden müssten. Ist im Plan der Eichung als
-      Schritt vermerkt; Widerspruch genügt.
+      Schritt vermerkt; Widerspruch genügt. Stand 0.2.83: Die neue Skala ist eingebaut; offen ist
+      nur noch, dass die Bot-Messung die Züge speichert (Messskripte, anderer Chat).
 
 ### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 

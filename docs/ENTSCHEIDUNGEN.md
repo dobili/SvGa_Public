@@ -3128,5 +3128,11 @@ Weitere Fehler, die das Durchprüfen von Teil 1 mit Playwright fand, alle behobe
   die Datenbank wird beim Neuladen abgebrochen. Eine sichere Lösung bräuchte einen zweiten,
   sofortigen Speicherweg für die Uhr; auf dem Handy (App wechseln, dann schließen) bleibt
   meist genug Zeit zum Schreiben. Der Autor prüft das auf dem Handy.
+- **Partie zu zweit (N222):** Die Auswertung sagte „Die Engine hat in dieser Partie keinen
+  absichtlichen Fehler gemacht.“, obwohl keine Engine mitspielte. Der Abschnitt fehlt jetzt bei
+  Mensch gegen Mensch; der Oberflächentest „Stellung aufbauen … zu zweit“ prüft es.
+- **Erklärung der Karte „Spielstärke“:** nannte noch „in den Einstellungen (wie Lichess,
+  Mittelweg oder nahe chess.com)“; seit 0.2.87 steht der Schalter nur in der Karte und heißt
+  „Lichess, App, chess.com“.
 - Kein Fehler: Die Rochade heißt im Trainer „O-O“ mit Buchstaben O, wie im Buch (190-mal O-O,
   nie 0-0).

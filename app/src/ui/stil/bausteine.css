@@ -316,9 +316,11 @@
   justify-content: center;
   width: 32px;
   height: 32px;
-  border-radius: 8px;
-  background: var(--gold);
-  color: #16253d;
+  /* Runder Navy-Kreis wie die Kapitelnummern im Buch (DS18). Gold heißt in der Checkliste
+     „Kapitel erledigt“; goldene Quadrate im Training ließen das vermuten. */
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--creme);
   font-weight: 700;
 }
 

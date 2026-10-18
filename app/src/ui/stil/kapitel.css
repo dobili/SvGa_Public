@@ -126,3 +126,7 @@
 .abschnitt-haken {
   margin-left: auto;
 }
+
+h2.abschnittsklappe-titel {
+  margin: 0;
+}

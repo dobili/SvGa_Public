@@ -214,9 +214,9 @@ function Abschnitt({ gruppe }: { gruppe: Gruppe }) {
     >
       <summary>
         <Ring anteil={anteil} beschriftung={stand} klein />
-        <span className="abschnittsklappe-titel">
+        <h2 className="abschnittsklappe-titel">
           {gruppe.nummer} {gruppe.titel}
-        </span>
+        </h2>
         <span className="abschnittsklappe-stand">{stand}</span>
       </summary>
       {offen && (

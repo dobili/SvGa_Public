@@ -8,33 +8,43 @@
  * die Genauigkeit der Partie ist seit 0.2.50 wie bei Lichess das Mittel aus zwei Mitteln der
  * eigenen Züge: dem nach der Schwankung der Partie gewichteten Mittel (ruhige, längst entschiedene
  * Phasen zählen wenig, die Kämpfe viel) und dem harmonischen Mittel (ein grober Fehler drückt die
- * Zahl spürbar). Vorher das einfache Mittel, das mit 97 % weit über chess.com (87 %) lag, weil die
- * vielen fehlerfreien Züge in gewonnener Stellung alles ausglichen. Die Spielstärke ist eine grobe
- * Schätzung aus dieser Genauigkeit (Tabelle unten; keine Wertungszahl eines Verbands; bis 0.2.50
- * aus dem Verlust je Zug, Empfehlung S18). Seit 0.2.72 ist die Tabelle an sieben Partien des
- * Autors mit der Spielbewertung von chess.com geeicht: Vorher lag unsere Schätzung 450 bis 1150
- * Punkte darüber, weil die Tabelle aus Durchschnittswerten stammte (Meister über 92 %), unsere
- * Genauigkeit aber systematisch über der von chess.com liegt (bei schwachem Spiel um 10 bis 19
- * Punkte, bei starkem um 1 bis 3; chess.com bewertet mit tieferer Rechnung und eigener Formel).
- * Dazu seit 0.2.72 ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com) und die
- * Spielstärke im Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Reine
+ * Zahl spürbar). Seit 0.2.72 ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com)
+ * und die Spielstärke im Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Reine
  * Funktionen, die Werte kommen aus der Auswertung.
- * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts, spiel/phasen.ts, spiel/taktik.ts.
+ * Seit 0.2.83 (Eichung vom 18.10.2026, staerkemodell.ts): Die gezeigte Genauigkeit folgt dem
+ * Schalter „Genauigkeit wie“ (Lichess, Mittelweg, nahe chess.com: Züge in entschiedener Stellung
+ * zählen voll, halb oder kaum); Spielstärke und Urteilswort hängen an der inneren Genauigkeit
+ * (Lichess-Rechnung). Die Spielstärke kommt aus den Kurven der Eichung statt aus der Tabelle von
+ * 0.2.72, mit Spanne und den Werten für chess.com und Lichess.
+ * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts, spiel/phasen.ts, spiel/taktik.ts,
+ * spiel/staerkemodell.ts.
  */
 import type { Color } from "chessops/types";
 import { WERTGRENZE, type Zugklasse, type Zugurteil, type Zugzeichen } from "./auswertung";
 import { stellungen, type Partie } from "./partie";
 import type { Phase } from "./phasen";
+import {
+  POLSTER,
+  STANDARD_GENAUIGKEITSMODUS,
+  staerkeAusGenauigkeit,
+  type Genauigkeitsmodus,
+  type Staerkeschaetzung,
+} from "./staerkemodell";
 import type { Zugart } from "./taktik";
+
 export interface Seitenbilanz {
   /** Zahl der eigenen Züge. */
   readonly zuege: number;
-  /** Genauigkeit 0 bis 100, wie bei Lichess und chess.com; null ohne Züge. */
+  /** Genauigkeit 0 bis 100 im gewählten Modus (Lichess, Mittelweg, nahe chess.com); null ohne Züge. */
   readonly genauigkeit: number | null;
+  /** Innere Genauigkeit (Lichess-Rechnung) für Spielstärke und Urteilswort; null ohne Züge. */
+  readonly innen: number | null;
   /** Durchschnittlicher Verlust je Zug in Bauerneinheiten. */
   readonly verlustJeZug: number;
-  /** Geschätzte Spielstärke (Elo-ähnlich); null bei zu wenigen Zügen. */
+  /** Geschätzte Spielstärke (Mitte der Eichkurven); null bei zu wenigen Zügen. */
   readonly spielstaerke: number | null;
+  /** Dieselbe Schätzung mit Spanne und den Werten für chess.com und Lichess. */
+  readonly schaetzung: Staerkeschaetzung | null;
   /** Anzahl je Zeichen. */
   readonly zeichen: Readonly<Record<Zugzeichen, number>>;
   /** Anzahl je Zugklasse (wie bei chess.com, 0.2.40). */
@@ -74,36 +84,17 @@ const MINDESTENS_ZUEGE = 10;
 /** Je Phase reichen weniger Züge für eine (noch gröbere) Schätzung. */
 const MINDESTENS_ZUEGE_PHASE = 6;
 /**
- * Stützstellen: Genauigkeit der Partie → Spielstärke, absteigend; dazwischen wird linear
- * gerechnet. Geeicht (0.2.72) an sieben Partien des Autors bei chess.com, 14 Seiten mit unserer
- * Genauigkeit und der Spielbewertung von chess.com (etwa: 73 % → 450, 75 % → 800, 81 % → 900,
- * 83 % → 650 bis 1000, 85 % → 1000 bis 1450, 89 % → 1600, 92 % → 1700, 94 % → 1500 bis 2000).
- * Mittlere Abweichung der Tabelle dazu etwa +90 Punkte, die Streuung von chess.com selbst ist
- * größer (94 % → 1500 und 2000). Vor 0.2.72 (90 → 2200, 85 → 1900, 70 → 1200) lagen wir 450
- * bis 1150 darüber. Der Verlust je Zug taugte nicht: Dreißig Züge in gewonnener Stellung
- * verdünnten jeden Fehler (deine Partie mit 4. e3: „etwa 2250“).
+ * Entschieden ist eine Stellung, wenn die Gewinnwahrscheinlichkeit der ziehenden Seite vor dem Zug
+ * über 90 % oder unter 10 % liegt (etwa sechs Bauern Vorsprung oder Rückstand); solche Züge zählen
+ * je nach Modus weniger (staerkemodell.ts, POLSTER).
  */
-const STUETZSTELLEN: readonly (readonly [number, number])[] = [
-  [100, 2800],
-  [97, 2350],
-  [95, 2100],
-  [92, 1750],
-  [89, 1550],
-  [86, 1350],
-  [83, 1100],
-  [80, 900],
-  [75, 700],
-  [70, 500],
-  [60, 350],
-  [50, 250],
-];
-const RUNDUNG = 50;
+export const ENTSCHIEDEN_AB = 90;
 
 /**
- * Urteilswort je Phase aus der Genauigkeit der Phase (wie die Symbole je Phase bei chess.com,
- * Wunsch des Autors 18.10.2026). Die Grenzen folgen der Tabelle oben: hervorragend ab 95 %
- * (etwa 2100), sehr gut ab 88 % (etwa 1500), gut ab 78 % (etwa 800), ungenau ab 68 % (etwa 450),
- * fehlerhaft ab 55 %, sonst schwach.
+ * Urteilswort je Phase aus der inneren Genauigkeit der Phase (wie die Symbole je Phase bei
+ * chess.com, Wunsch des Autors 18.10.2026): hervorragend ab 95 %, sehr gut ab 88 %, gut ab 78 %,
+ * ungenau ab 68 %, fehlerhaft ab 55 %, sonst schwach. Seit 0.2.83 an der inneren Genauigkeit,
+ * damit der Schalter „Genauigkeit wie“ die Wörter nicht verschiebt.
  */
 export type Phasenurteil =
   "hervorragend" | "sehrGut" | "gut" | "ungenau" | "fehlerhaft" | "schwach";
@@ -173,42 +164,32 @@ export function zuggewichte(werte: readonly number[]): number[] {
 
 /**
  * Genauigkeit einer Seite (Lichess): Mittel aus dem gewichteten Mittel und dem harmonischen Mittel
- * der Zuggenauigkeiten; null ohne Züge.
+ * der Zuggenauigkeiten; null ohne Züge. Mit `polster` unter 1 zählen Züge in entschiedener
+ * Stellung (`entschieden`) in beiden Mitteln nur mit diesem Faktor (seit 0.2.83, Modus).
  * Beispiel: Beispielpartie des Autors (siehe zuggewichte), Weiß: einfaches Mittel 97, gewichtet 84, harmonisch 90 → 87 (chess.com
  * 86,8). Sonderfall: Eine Zuggenauigkeit unter 1 zählt im harmonischen Mittel als 1.
  */
 export function partiegenauigkeit(
-  zuege: readonly { readonly genauigkeit: number; readonly gewicht: number }[],
+  zuege: readonly {
+    readonly genauigkeit: number;
+    readonly gewicht: number;
+    readonly entschieden?: boolean;
+  }[],
+  polster = 1,
 ): number | null {
-  if (zuege.length === 0) return null;
   let gewichtet = 0;
   let gewichte = 0;
+  let anzahl = 0;
   let kehrwerte = 0;
   for (const z of zuege) {
-    gewichtet += z.genauigkeit * z.gewicht;
-    gewichte += z.gewicht;
-    kehrwerte += 1 / Math.max(GENAUIGKEIT_MINDESTENS, z.genauigkeit);
+    const faktor = z.entschieden ? polster : 1;
+    gewichtet += z.genauigkeit * z.gewicht * faktor;
+    gewichte += z.gewicht * faktor;
+    anzahl += faktor;
+    kehrwerte += faktor / Math.max(GENAUIGKEIT_MINDESTENS, z.genauigkeit);
   }
-  const harmonisch = zuege.length / kehrwerte;
-  return (gewichtet / gewichte + harmonisch) / 2;
-}
-
-/**
- * Spielstärke aus der Genauigkeit der Partie, linear zwischen den Stützstellen, auf 50 gerundet.
- * Beispiel: 88 % → etwa 1500; 76 % → etwa 750; unter 50 % → 250.
- */
-export function spielstaerkeAus(genauigkeit: number): number {
-  const letzte = STUETZSTELLEN.at(-1) ?? [0, 0];
-  if (genauigkeit <= letzte[0]) return letzte[1];
-  for (let i = 1; i < STUETZSTELLEN.length; i += 1) {
-    const [x0, y0] = STUETZSTELLEN[i - 1] ?? [0, 0];
-    const [x1, y1] = STUETZSTELLEN[i] ?? [0, 0];
-    if (genauigkeit >= x1) {
-      const anteil = (x0 - genauigkeit) / (x0 - x1);
-      return Math.round((y0 + anteil * (y1 - y0)) / RUNDUNG) * RUNDUNG;
-    }
-  }
-  return letzte[1];
+  if (gewichte <= 0 || kehrwerte <= 0) return null;
+  return (gewichtet / gewichte + anzahl / kehrwerte) / 2;
 }
 
 const KEINE_ZEICHEN: Readonly<Record<Zugzeichen, number>> = {
@@ -234,6 +215,7 @@ const KEINE_KLASSEN: Readonly<Record<Zugklasse, number>> = {
 /** Bilanz einer Seite aus ihren Zügen. */
 function seitenbilanz(
   eigene: readonly Zugbilanz[],
+  modus: Genauigkeitsmodus,
   mindestensZuege = MINDESTENS_ZUEGE,
 ): Seitenbilanz {
   const zuege = eigene.length;
@@ -248,13 +230,16 @@ function seitenbilanz(
     if (z.bester) beste += 1;
   }
   const verlustJeZug = zuege > 0 ? verlust / zuege : 0;
-  const genauigkeit = partiegenauigkeit(eigene);
+  const innen = partiegenauigkeit(eigene);
+  const schaetzung =
+    zuege >= mindestensZuege && innen !== null ? staerkeAusGenauigkeit(innen) : null;
   return {
     zuege,
-    genauigkeit,
+    genauigkeit: partiegenauigkeit(eigene, POLSTER[modus]),
+    innen,
     verlustJeZug,
-    spielstaerke:
-      zuege >= mindestensZuege && genauigkeit !== null ? spielstaerkeAus(genauigkeit) : null,
+    spielstaerke: schaetzung?.mitte ?? null,
+    schaetzung,
     zeichen,
     klassen,
     beste,
@@ -269,6 +254,8 @@ interface Zugbilanz {
   readonly genauigkeit: number;
   readonly gewicht: number;
   readonly bester: boolean;
+  /** Stellung vor dem Zug entschieden (siehe ENTSCHIEDEN_AB). */
+  readonly entschieden: boolean;
 }
 
 /** Ordnet jeden Zug ein (Seite, Phase, Genauigkeit, bester). */
@@ -288,11 +275,21 @@ function zugbilanzen(
     const vorher = gewinnwahrscheinlichkeit(werte[urteil.index] ?? 0);
     const nachher = gewinnwahrscheinlichkeit(werte[urteil.index + 1] ?? 0);
     const verlustProzent = seite === "white" ? vorher - nachher : nachher - vorher;
+    const eigeneChance = seite === "white" ? vorher : PROZENT - vorher;
+    const entschieden = eigeneChance >= ENTSCHIEDEN_AB || eigeneChance <= PROZENT - ENTSCHIEDEN_AB;
     const gespielt = gespielteUci[urteil.index] ?? null;
     const bester = gespielt !== null && gespielt !== "" && gespielt === beste[urteil.index];
     const phase = phasen[urteil.index] ?? null;
     const gewicht = gewichte[urteil.index] ?? GEWICHT_MINDESTENS;
-    return { seite, phase, urteil, genauigkeit: zuggenauigkeit(verlustProzent), gewicht, bester };
+    return {
+      seite,
+      phase,
+      urteil,
+      genauigkeit: zuggenauigkeit(verlustProzent),
+      gewicht,
+      bester,
+      entschieden,
+    };
   });
 }
 
@@ -308,15 +305,18 @@ export function spielstaerkeJePhase(
   beste: readonly string[],
   gespielteUci: readonly (string | null)[],
   phasen: readonly Phase[],
+  modus: Genauigkeitsmodus = STANDARD_GENAUIGKEITSMODUS,
 ): Readonly<Record<Phase, Spielstaerke>> {
   const alle = zugbilanzen(partie, werte, urteile, beste, gespielteUci, phasen);
   const je = (ph: Phase): Spielstaerke => ({
     white: seitenbilanz(
       alle.filter((z) => z.phase === ph && z.seite === "white"),
+      modus,
       MINDESTENS_ZUEGE_PHASE,
     ),
     black: seitenbilanz(
       alle.filter((z) => z.phase === ph && z.seite === "black"),
+      modus,
       MINDESTENS_ZUEGE_PHASE,
     ),
   });
@@ -338,6 +338,7 @@ export function spielstaerkeImMittelspiel(
   gespielteUci: readonly (string | null)[],
   phasen: readonly Phase[],
   zugarten: readonly (Zugart | null)[],
+  modus: Genauigkeitsmodus = STANDARD_GENAUIGKEITSMODUS,
 ): Readonly<Record<Zugart, Spielstaerke>> {
   const mittelspiel = zugbilanzen(partie, werte, urteile, beste, gespielteUci, phasen).filter(
     (z) => z.phase === "mittelspiel",
@@ -347,10 +348,12 @@ export function spielstaerkeImMittelspiel(
     return {
       white: seitenbilanz(
         passende.filter((z) => z.seite === "white"),
+        modus,
         MINDESTENS_ZUEGE_PHASE,
       ),
       black: seitenbilanz(
         passende.filter((z) => z.seite === "black"),
+        modus,
         MINDESTENS_ZUEGE_PHASE,
       ),
     };
@@ -374,10 +377,17 @@ export function spielstaerke(
   urteile: readonly Zugurteil[],
   beste: readonly string[] = [],
   gespielteUci: readonly (string | null)[] = [],
+  modus: Genauigkeitsmodus = STANDARD_GENAUIGKEITSMODUS,
 ): Spielstaerke {
   const alle = zugbilanzen(partie, werte, urteile, beste, gespielteUci, []);
   return {
-    white: seitenbilanz(alle.filter((z) => z.seite === "white")),
-    black: seitenbilanz(alle.filter((z) => z.seite === "black")),
+    white: seitenbilanz(
+      alle.filter((z) => z.seite === "white"),
+      modus,
+    ),
+    black: seitenbilanz(
+      alle.filter((z) => z.seite === "black"),
+      modus,
+    ),
   };
 }

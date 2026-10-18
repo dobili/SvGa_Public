@@ -34,6 +34,7 @@ describe("Rundreise", () => {
         strenge: "streng",
         figurensatz: "klassisch",
         ton: "an",
+        genauigkeitsmodus: "lichess",
       },
       lernstand: { 1: [0, 2] },
     }));

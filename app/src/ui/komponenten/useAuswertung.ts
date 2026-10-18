@@ -16,7 +16,7 @@
  * Abhängigkeiten: engine/engineDienst.ts, engine/spielbewerter.ts (wertFuer), spiel/, speicher/.
  */
 import { useEffect, useState } from "react";
-import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
+import { AuftragAbgebrochen, engine, type Staerke } from "../../engine/engineDienst";
 import { wertFuer } from "../../engine/spielbewerter";
 import { ausreisser, endwert } from "../../spiel/auswertung";
 import { stellungen, type Partie } from "../../spiel/partie";
@@ -24,19 +24,23 @@ import { mitWerten, type Partieeintrag } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
 
 /**
- * Rechenzeit je Stellung nach dem Ende der Partie: 40 Züge brauchen so etwa 40 Sekunden.
- * Während der Partie, solange der Leser nachdenkt, rechnet die Engine länger (Wunsch des Autors,
- * 17.10.2026: Die Zeit ist ohnehin da; chess.com „Maximal“ ändert die Zahlen nur um einen Punkt,
- * aber einzelne Fehlurteile bei kurzer Rechenzeit werden seltener). Braucht der Leser die Engine
- * (Hinweis, Werkzeug, Zug der Engine), bricht der Auftrag ab und die Stellung kommt später dran.
+ * Feste Suchtiefe statt fester Zeit (seit 0.2.83, Plan der Eichung, Entscheidung 7): Die Eichung
+ * an je 300 Partien von chess.com und Lichess hat mit Tiefe 18 gerechnet; mit derselben Tiefe
+ * passen App und Eichung zusammen, und alte wie neue Handys kommen auf dieselben Zahlen. Die
+ * Zeitgrenzen sind nur die Sicherung für langsame Geräte; während der Partie, solange der Leser
+ * nachdenkt, darf es länger dauern (die Zeit ist ohnehin da, Wunsch des Autors vom 17.10.2026).
+ * Braucht der Leser die Engine (Engine-Symbol, Werkzeug, Zug der Engine), bricht der Auftrag ab
+ * und die Stellung kommt später dran.
  */
-const RECHENZEIT_MS = 500;
-const RECHENZEIT_IM_SPIEL_MS = 2000;
+const AUSWERTUNG: Staerke = { art: "tiefe", tiefe: 18 };
+const RECHENZEIT_MS = 4000;
+const RECHENZEIT_IM_SPIEL_MS = 8000;
 /**
- * Nachprüfung verdächtiger Stellungen (spiel/auswertung.ts, ausreisser) mit mehr Rechenzeit: Ein
- * Wert, der um 3 springt und sofort zurückspringt, ist bei 500 ms meist ein Fehler der Engine.
+ * Nachprüfung verdächtiger Stellungen (spiel/auswertung.ts, ausreisser) tiefer: Ein Wert, der um
+ * 3 springt und sofort zurückspringt, ist meist ein Fehler der Engine.
  */
-const NACHPRUEFUNG_MS = 2000;
+const NACHPRUEFUNG: Staerke = { art: "tiefe", tiefe: 22 };
+const NACHPRUEFUNG_MS = 6000;
 /** Zwei Varianten: die beste und die zweitbeste, für das „!“ des einzigen guten Zuges. */
 const VARIANTEN = 2;
 /** So viele Halbzüge der Hauptvariante bleiben gespeichert (Rückblickkarte „Danach etwa …“, R5). */
@@ -78,6 +82,7 @@ async function bewerteStellung(
   fen: string,
   laeuft: () => boolean,
   rechenzeitMs = RECHENZEIT_MS,
+  staerke: Staerke = AUSWERTUNG,
 ): Promise<Stellungswert | null> {
   const ende = endwert(fen);
   if (ende !== null) return { fen, wert: ende, bester: "", abstand: 0, variante: [] };
@@ -87,7 +92,7 @@ async function bewerteStellung(
       continue;
     }
     try {
-      const bewertung = await engine.bewerte(fen, rechenzeitMs, VARIANTEN);
+      const bewertung = await engine.bewerte(fen, rechenzeitMs, VARIANTEN, staerke);
       const [erste, zweite] = bewertung.varianten;
       const weissAmZug = fen.split(" ")[1] !== "b";
       const abstand =
@@ -119,7 +124,7 @@ async function nachpruefen(
   for (const i of verdaechtig) {
     const fen = werte[i]?.fen;
     if (!fen) continue;
-    const ergebnis = await bewerteStellung(fen, laeuft, NACHPRUEFUNG_MS);
+    const ergebnis = await bewerteStellung(fen, laeuft, NACHPRUEFUNG_MS, NACHPRUEFUNG);
     if (!ergebnis) return false;
     werte[i] = ergebnis;
   }

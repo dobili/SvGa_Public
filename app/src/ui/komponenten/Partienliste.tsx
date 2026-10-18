@@ -5,7 +5,8 @@
  * hier geht es mit einem Tipp weiter. Beendete Partien öffnen den Partie-Bildschirm mit Ergebnis,
  * Auswertung und PGN (Pflichtenheft 5.3).
  * Seit 0.2.40 (Wunsch des Autors): je Partie eine kleine Figur in der gespielten Farbe (König im
- * gewählten Figurensatz) und die erreichte Spielstärke oder Genauigkeit des Lesers.
+ * gewählten Figurensatz) und die erreichte Spielstärke oder Genauigkeit des Lesers. Seit 0.2.83
+ * darüber die Karte „Deine Spielstärke“ über die letzten zehn Partien (LetzteSpielstaerke.tsx).
  * Abhängigkeiten: spiel/partie.ts, spiel/auswertung.ts, spiel/genauigkeit.ts, speicher/partien.ts,
  * engine/stufen.ts, ui/brett (Figur), Navigation, i18n.
  */
@@ -21,6 +22,8 @@ import { staerkeDerPartie } from "../../spiel/wertung";
 import type { Partieeintrag } from "../../speicher/partien";
 import { Figur } from "../brett/Figur";
 import { BRETTFARBEN, FELD } from "../brett/masse";
+import { LetzteSpielstaerke } from "./LetzteSpielstaerke";
+import type { Genauigkeitsmodus } from "../../spiel/staerkemodell";
 
 /** Größe der kleinen Figur in der Liste (Bildpunkte). */
 const FIGURGROESSE = 28;
@@ -91,8 +94,8 @@ function seitenwert(b: Seitenbilanz): string {
 }
 
 /** „du etwa 1400 · Engine etwa 1600“ oder bei zwei Menschen „Weiß … · Schwarz …“; leer ohne Auswertung. */
-function staerketext(eintrag: Partieeintrag): string {
-  const staerke = staerkeDerPartie(eintrag);
+function staerketext(eintrag: Partieeintrag, modus: Genauigkeitsmodus): string {
+  const staerke = staerkeDerPartie(eintrag, modus);
   if (!staerke) return "";
   const p = eintrag.partie;
   const weiss = seitenwert(staerke.white);
@@ -125,44 +128,48 @@ export function LaufendePartie({ partie }: { partie: Partie }) {
 
 export function Partienliste({ partien }: { partien: readonly Partieeintrag[] }) {
   const { navigiere } = useNavigation();
+  const modus = useEinstellungen().genauigkeitsmodus;
   if (partien.length === 0) return null;
   return (
-    <section className="abschnitt partienliste">
-      <h2 className="abschnitt-titel">{t("spielen.partien")}</h2>
-      <ul className="begriffsliste">
-        {partien.slice(0, SICHTBAR).map((eintrag) => {
-          const { partie } = eintrag;
-          const staerke = staerketext(eintrag);
-          return (
-            <li key={partie.id}>
-              <button
-                type="button"
-                className="begriff-knopf partiezeile"
-                onClick={() => navigiere({ bildschirm: "partie", id: partie.id })}
-              >
-                <Seitenfigur partie={partie} />
-                <span className="partiezeile-text">
-                  <strong>
-                    {ergebniszeichen(partie)}
-                    {partie.einstellung.gewertet && (
-                      <Star
-                        className="partiezeile-wertung"
-                        size={WERTUNGSSYMBOL}
-                        aria-label={t("spielen.partieGewertet")}
-                        role="img"
-                      />
-                    )}
-                  </strong>
-                  <span>
-                    {zeile(partie)}
-                    {staerke && ` · ${staerke}`}
+    <>
+      <LetzteSpielstaerke partien={partien} />
+      <section className="abschnitt partienliste">
+        <h2 className="abschnitt-titel">{t("spielen.partien")}</h2>
+        <ul className="begriffsliste">
+          {partien.slice(0, SICHTBAR).map((eintrag) => {
+            const { partie } = eintrag;
+            const staerke = staerketext(eintrag, modus);
+            return (
+              <li key={partie.id}>
+                <button
+                  type="button"
+                  className="begriff-knopf partiezeile"
+                  onClick={() => navigiere({ bildschirm: "partie", id: partie.id })}
+                >
+                  <Seitenfigur partie={partie} />
+                  <span className="partiezeile-text">
+                    <strong>
+                      {ergebniszeichen(partie)}
+                      {partie.einstellung.gewertet && (
+                        <Star
+                          className="partiezeile-wertung"
+                          size={WERTUNGSSYMBOL}
+                          aria-label={t("spielen.partieGewertet")}
+                          role="img"
+                        />
+                      )}
+                    </strong>
+                    <span>
+                      {zeile(partie)}
+                      {staerke && ` · ${staerke}`}
+                    </span>
                   </span>
-                </span>
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    </>
   );
 }

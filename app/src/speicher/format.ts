@@ -17,6 +17,11 @@
  * Abhängigkeiten: training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
  * training/fehlerdatenbank (Fehler), speicher/partien.ts.
  */
+import {
+  GENAUIGKEITSMODI,
+  STANDARD_GENAUIGKEITSMODUS,
+  type Genauigkeitsmodus,
+} from "../spiel/staerkemodell";
 import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
@@ -42,6 +47,11 @@ export interface Einstellungen {
   readonly figurensatz: Figurensatz;
   /** Seit 0.2.33; ältere Stände ohne diesen Eintrag lesen sich als „aus“. */
   readonly ton: Ton;
+  /**
+   * Seit 0.2.83: Genauigkeit wie Lichess, als Mittelweg oder nahe chess.com
+   * (spiel/staerkemodell.ts); ältere Stände ohne diesen Eintrag lesen sich als „mittelweg“.
+   */
+  readonly genauigkeitsmodus: Genauigkeitsmodus;
 }
 
 export const STANDARD_EINSTELLUNGEN: Einstellungen = {
@@ -49,6 +59,7 @@ export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   strenge: "locker",
   figurensatz: "buch",
   ton: "aus",
+  genauigkeitsmodus: STANDARD_GENAUIGKEITSMODUS,
 };
 
 /** Je Kapitelnummer die Positionen der abgehakten Lernziele (0 = erster Punkt der Buchliste). */
@@ -154,6 +165,8 @@ export function einstellungenAus(roh: unknown): Einstellungen {
     strenge: roh.strenge === "streng" ? "streng" : "locker",
     figurensatz: figurensatzAus(roh.figurensatz),
     ton: roh.ton === "an" ? "an" : "aus",
+    genauigkeitsmodus:
+      GENAUIGKEITSMODI.find((m) => m === roh.genauigkeitsmodus) ?? STANDARD_GENAUIGKEITSMODUS,
   };
 }
 

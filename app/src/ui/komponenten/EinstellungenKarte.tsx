@@ -34,6 +34,7 @@ import {
   type Farbschema,
 } from "../../app/farbschema";
 import { liesMerker, schreibeMerker } from "../../app/merker";
+import { GENAUIGKEITSMODI } from "../../spiel/staerkemodell";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
@@ -182,10 +183,24 @@ function TonBereich() {
   );
 }
 
+/**
+ * Training: „Erst selbst denken“ und seit 0.2.83 der Schalter „Genauigkeit wie“ (Lichess,
+ * Mittelweg, nahe chess.com) für die Auswertung der Partien (spiel/staerkemodell.ts).
+ */
 function TrainingBereich() {
   const einstellungen = useEinstellungen();
   return (
     <>
+      <Auswahl
+        name={t("einstellungen.genauigkeit")}
+        werte={GENAUIGKEITSMODI}
+        gewaehlt={einstellungen.genauigkeitsmodus}
+        text={(wert) => t(`einstellungen.genauigkeit.${wert}`)}
+        beiWahl={(genauigkeitsmodus) => aendereEinstellungen({ genauigkeitsmodus })}
+      />
+      <p className="hinweis">
+        {t(`einstellungen.genauigkeit.${einstellungen.genauigkeitsmodus}.text`)}
+      </p>
       <Auswahl
         name={t("einstellungen.strenge")}
         werte={STRENGEN}

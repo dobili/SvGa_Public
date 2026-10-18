@@ -28,6 +28,7 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       strenge: "streng",
       figurensatz: "buch",
       ton: "aus",
+      genauigkeitsmodus: "mittelweg",
     });
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
     expect(ergebnis.daten.fortschritt).toEqual({ gesehen: {}, uebungen: {}, trainer: {} });
@@ -38,6 +39,12 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
     expect(einstellungenAus({ figurensatz: "kontrastreich" }).figurensatz).toBe("klassisch");
     expect(einstellungenAus({ figurensatz: "holz" }).figurensatz).toBe("holz");
     expect(einstellungenAus({ figurensatz: "bunt" }).figurensatz).toBe("buch");
+  });
+
+  it("liest den Genauigkeitsmodus (0.2.83), ohne Angabe oder unbekannt „mittelweg“", () => {
+    expect(einstellungenAus({ genauigkeitsmodus: "chesscom" }).genauigkeitsmodus).toBe("chesscom");
+    expect(einstellungenAus({}).genauigkeitsmodus).toBe("mittelweg");
+    expect(einstellungenAus({ genauigkeitsmodus: "fide" }).genauigkeitsmodus).toBe("mittelweg");
   });
 
   it("übersteht kaputte und fehlende Merker", () => {
@@ -73,8 +80,14 @@ describe("Format 1", () => {
       ok: true,
       daten: {
         ...format1,
-        // Figurensatz und Ton (seit 0.2.33) fehlen in Format 1 und lesen sich als Standard.
-        einstellungen: { ...format1.einstellungen, figurensatz: "buch", ton: "aus" },
+        // Figurensatz und Ton (seit 0.2.33) und der Genauigkeitsmodus (0.2.83) fehlen in Format 1
+        // und lesen sich als Standard.
+        einstellungen: {
+          ...format1.einstellungen,
+          figurensatz: "buch",
+          ton: "aus",
+          genauigkeitsmodus: "mittelweg",
+        },
         schemaVersion: SCHEMA_VERSION,
         spiel: LEERER_SPIELSTAND,
         karten: {},

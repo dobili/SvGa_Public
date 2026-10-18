@@ -10,7 +10,12 @@
  * Abhängigkeiten: spiel/genauigkeit.ts (Gewinnwahrscheinlichkeit, Gewichte nach Lichess).
  */
 import type { Color } from "chessops/types";
-import { gewinnwahrscheinlichkeit, zuggewichte } from "./genauigkeit";
+import {
+  ENTSCHIEDEN_AB,
+  gewinnwahrscheinlichkeit,
+  partiegenauigkeit,
+  zuggewichte,
+} from "./genauigkeit";
 
 export interface Regler {
   /** Abfall der Zugkurve je Prozentpunkt Verlust (Lichess 0,04354). */
@@ -25,14 +30,6 @@ export const LICHESS_REGLER: Regler = { abfall: 0.04354, polster: 1 };
 const FAKTOR = 103.1668;
 const VERSATZ = 3.1669;
 const PROZENT = 100;
-/** Kleinste Zuggenauigkeit im harmonischen Mittel (wie in genauigkeit.ts). */
-const MINDESTENS = 1;
-/**
- * Entschieden ist eine Stellung, wenn die Gewinnwahrscheinlichkeit der ziehenden Seite vor dem Zug
- * über 90 % oder unter 10 % liegt (etwa sechs Bauern Vorsprung oder Rückstand).
- */
-const ENTSCHIEDEN_AB = 90;
-
 /** Genauigkeit eines Zuges (0 bis 100) aus dem Verlust an Gewinnwahrscheinlichkeit. */
 export function zuggenauigkeitMit(verlustProzent: number, abfall: number): number {
   const roh = FAKTOR * Math.exp(-abfall * Math.max(0, verlustProzent)) - VERSATZ;
@@ -82,19 +79,7 @@ export function zugwerte(
  * Beispiel: Polster 1 → genau partiegenauigkeit aus genauigkeit.ts.
  */
 export function genauigkeitAus(zuege: readonly Zugwert[], polster: number): number | null {
-  let gewichtet = 0;
-  let gewichte = 0;
-  let anzahl = 0;
-  let kehrwerte = 0;
-  for (const z of zuege) {
-    const faktor = z.entschieden ? polster : 1;
-    gewichtet += z.genauigkeit * z.gewicht * faktor;
-    gewichte += z.gewicht * faktor;
-    anzahl += faktor;
-    kehrwerte += faktor / Math.max(MINDESTENS, z.genauigkeit);
-  }
-  if (gewichte <= 0 || kehrwerte <= 0) return null;
-  return (gewichtet / gewichte + anzahl / kehrwerte) / 2;
+  return partiegenauigkeit(zuege, polster);
 }
 
 /** Genauigkeit einer Seite mit den gegebenen Reglern; null ohne Züge. */

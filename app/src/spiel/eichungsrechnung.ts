@@ -12,6 +12,9 @@ import type { Color } from "chessops/types";
 import { WERTGRENZE } from "./auswertung";
 import { genauigkeitAus, zugwerte, type Regler } from "./genauigkeitsmodell";
 import { festerZufall, mische } from "../training/zufall";
+import { kurvenwert, type Kurve } from "./staerkemodell";
+
+export { kurvenwert, type Kurve };
 
 /** Rohe Bewertung einer Stellung aus Sicht der Seite am Zug (Ausgabe von eichung-rechnen.mjs). */
 export interface Rohwert {
@@ -99,24 +102,6 @@ export function besteRegler(
     }
   }
   return bestes;
-}
-
-/** Eine Kurve als Stützstellen [Genauigkeit, Wertungszahl], aufsteigend. */
-export type Kurve = readonly (readonly [number, number])[];
-
-/** Wert der Kurve an einer Stelle, linear dazwischen, außerhalb der Randwert. */
-export function kurvenwert(kurve: Kurve, x: number): number {
-  const erste = kurve[0];
-  const letzte = kurve.at(-1);
-  if (!erste || !letzte) return Number.NaN;
-  if (x <= erste[0]) return erste[1];
-  if (x >= letzte[0]) return letzte[1];
-  for (let i = 1; i < kurve.length; i += 1) {
-    const [x0, y0] = kurve[i - 1] ?? erste;
-    const [x1, y1] = kurve[i] ?? letzte;
-    if (x <= x1) return y0 + ((x - x0) / (x1 - x0)) * (y1 - y0);
-  }
-  return letzte[1];
 }
 
 /** Ausgleich zu einer steigenden Folge (Pool-Adjacent-Violators), gewichtet nach Anzahl. */

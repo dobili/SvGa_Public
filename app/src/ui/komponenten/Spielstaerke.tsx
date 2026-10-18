@@ -8,10 +8,15 @@
  * Phase ein Urteilswort als farbige Marke (wie die Symbole je Phase bei chess.com) und das
  * Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Die Rechnung steht in
  * spiel/genauigkeit.ts; hier nur die Tabellen mit zwei Spalten, der Leser zuerst.
- * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/taktik.ts, i18n.
+ * Seit 0.2.83 (Eichung): Genauigkeit im gewählten Modus (Einstellungen), Spielstärke als Mitte mit
+ * Spanne, die Werte für chess.com und Lichess hinter dem Fragezeichen; das Urteilswort je Phase an
+ * der inneren Genauigkeit.
+ * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/taktik.ts, app/einstellungen.ts,
+ * InfoKnopf, i18n.
  */
 import type { Color } from "chessops/types";
 import { Fragment, useMemo } from "react";
+import { useEinstellungen } from "../../app/einstellungen";
 import { t } from "../../i18n/sprache";
 import type { Zugklasse, Zugurteil } from "../../spiel/auswertung";
 import {
@@ -25,6 +30,7 @@ import { stellungen, type Partie } from "../../spiel/partie";
 import { PHASEN, type Phase } from "../../spiel/phasen";
 import { ZUGARTEN, zugartJeStellung } from "../../spiel/taktik";
 import { sanZuUci } from "../../spiel/zuege";
+import { MitInfo } from "./InfoKnopf";
 
 /** Reihenfolge der Klassen in der Tabelle, wie bei chess.com von oben nach unten. */
 const KLASSEN: readonly Zugklasse[] = [
@@ -40,11 +46,15 @@ const KLASSEN: readonly Zugklasse[] = [
   "patzer",
 ];
 
-/** „etwa 1400“ oder „zu wenige Züge“. */
+/** „etwa 1400 (1000–1800)“ oder „zu wenige Züge“. */
 function staerketext(b: Seitenbilanz): string {
-  return b.spielstaerke === null
+  return b.schaetzung === null
     ? t("spielstaerke.zuWenig")
-    : t("spielstaerke.etwa", { wert: b.spielstaerke });
+    : t("spielstaerke.spanne", {
+        mitte: b.schaetzung.mitte,
+        von: b.schaetzung.von,
+        bis: b.schaetzung.bis,
+      });
 }
 
 /** „82 %“ oder „–“. */
@@ -74,11 +84,12 @@ export function Spielstaerke({
   phasen: readonly Phase[];
 }) {
   const zugarten = useMemo(() => zugartJeStellung(partie), [partie]);
+  const modus = useEinstellungen().genauigkeitsmodus;
   if (urteile.length === 0) return null;
   const alle = stellungen(partie);
   const gespielte = partie.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  const bilanz = spielstaerke(partie, werte, urteile, beste, gespielte);
-  const jePhase = spielstaerkeJePhase(partie, werte, urteile, beste, gespielte, phasen);
+  const bilanz = spielstaerke(partie, werte, urteile, beste, gespielte, modus);
+  const jePhase = spielstaerkeJePhase(partie, werte, urteile, beste, gespielte, phasen, modus);
   const imMittelspiel = spielstaerkeImMittelspiel(
     partie,
     werte,
@@ -87,12 +98,13 @@ export function Spielstaerke({
     gespielte,
     phasen,
     zugarten,
+    modus,
   );
   const eigene: Color = partie.einstellung.eigeneFarbe;
   const andere: Color = eigene === "white" ? "black" : "white";
   const farbe = (seite: Color) => t(seite === "white" ? "farbe.w" : "farbe.b");
   const zeilen = [
-    t("spielstaerke.genauigkeit"),
+    t("spielstaerke.genauigkeit", { modus: t(`einstellungen.genauigkeit.${modus}`) }),
     t("spielstaerke.staerke"),
     t("spielstaerke.verlust"),
     t("spielstaerke.beste"),
@@ -152,8 +164,28 @@ export function Spielstaerke({
           ))}
         </tbody>
       </table>
+      <Skalen b={bilanz[eigene]} />
       <p className="hinweis">{t("spielstaerke.erklaerung")}</p>
     </section>
+  );
+}
+
+/** Die Werte des Lesers auf beiden Skalen hinter dem Fragezeichen (seit 0.2.83). */
+function Skalen({ b }: { b: Seitenbilanz }) {
+  if (!b.schaetzung) return null;
+  return (
+    <MitInfo
+      zeile={<p className="hinweis">{t("spielstaerke.skalenKurz")}</p>}
+      erklaerung={
+        <p>
+          {t("spielstaerke.skalen", {
+            chesscom: b.schaetzung.chesscom,
+            lichess: b.schaetzung.lichess,
+          })}
+        </p>
+      }
+      thema={t("spielstaerke.staerke")}
+    />
   );
 }
 
@@ -184,8 +216,8 @@ function Phasenzeile({
 
 /** Eine Phase in einer Zelle: Marke „Sehr gut“, dann „82 % · etwa 1500 (12 Züge)“; „–“ ohne Züge. */
 function Phasenzelle({ b }: { b: Seitenbilanz }) {
-  if (b.zuege === 0 || b.genauigkeit === null) return <>–</>;
-  const urteil = phasenurteil(b.genauigkeit);
+  if (b.zuege === 0 || b.genauigkeit === null || b.innen === null) return <>–</>;
+  const urteil = phasenurteil(b.innen);
   return (
     <>
       <span className={`phasenurteil phasenurteil-${urteil}`}>

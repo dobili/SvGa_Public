@@ -7,7 +7,6 @@ import {
   phasenurteil,
   spielstaerke,
   spielstaerkeImMittelspiel,
-  spielstaerkeAus,
   zuggenauigkeit,
   zuggewichte,
 } from "./genauigkeit";
@@ -98,13 +97,15 @@ describe("Genauigkeit und Spielstärke", () => {
     expect(partiegenauigkeit([{ genauigkeit: 0, gewicht: 1 }])).toBeCloseTo(0.5, 5);
   });
 
-  it("Schätzung aus der Genauigkeit (S18, geeicht 0.2.72): 90 → 1600, 70 → 500, linear, Mindestwert", () => {
-    expect(spielstaerkeAus(90)).toBe(1600);
-    expect(spielstaerkeAus(70)).toBe(500);
-    expect(spielstaerkeAus(88)).toBe(1500);
-    expect(spielstaerkeAus(95)).toBe(2100);
-    expect(spielstaerkeAus(100)).toBe(2800);
-    expect(spielstaerkeAus(10)).toBe(250);
+  it("Polster (0.2.83): Züge in entschiedener Stellung zählen weniger", () => {
+    const zuege = [
+      { genauigkeit: 40, gewicht: 1, entschieden: false },
+      { genauigkeit: 100, gewicht: 1, entschieden: true },
+    ];
+    const voll = partiegenauigkeit(zuege) ?? 0;
+    const kaum = partiegenauigkeit(zuege, 0.1) ?? 0;
+    expect(kaum).toBeLessThan(voll);
+    expect(partiegenauigkeit([{ genauigkeit: 90, gewicht: 1, entschieden: true }], 0)).toBeNull();
   });
 
   it("Urteilswort je Phase: 96 hervorragend, 90 sehr gut, 80 gut, 70 ungenau, 60 fehlerhaft, 40 schwach", () => {

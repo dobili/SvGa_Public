@@ -22,6 +22,12 @@
 import type { Partieeintrag } from "../speicher/partien";
 import { zugurteile } from "./auswertung";
 import { spielstaerke, spielstaerkeJePhase, type Spielstaerke } from "./genauigkeit";
+import {
+  STANDARD_GENAUIGKEITSMODUS,
+  staerkeUeberPartien,
+  type Genauigkeitsmodus,
+  type Staerkeschaetzung,
+} from "./staerkemodell";
 import { stellungen, type Partie } from "./partie";
 import { phasenJeStellung, type Phase } from "./phasen";
 import { sanZuUci } from "./zuege";
@@ -73,13 +79,42 @@ const ERWARTUNGSBASIS = 10;
 export const MAX_WERTUNGSPUNKTE = 1000;
 
 /** Die Spielstärke beider Seiten einer ausgewerteten Partie; null ohne Auswertung. */
-export function staerkeDerPartie(eintrag: Partieeintrag): Spielstaerke | null {
+export function staerkeDerPartie(
+  eintrag: Partieeintrag,
+  modus: Genauigkeitsmodus = STANDARD_GENAUIGKEITSMODUS,
+): Spielstaerke | null {
   if (eintrag.werte.length === 0) return null;
   const p = eintrag.partie;
   const urteile = zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende);
   const alle = stellungen(p);
   const gespielte = p.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  return spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte);
+  return spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte, modus);
+}
+
+/** Höchstens so viele Partien gehen in die Spielstärke über mehrere Partien ein. */
+const LETZTE_PARTIEN = 10;
+
+/**
+ * Die Spielstärke des Lesers über seine letzten zehn ausgewerteten Partien gegen die Engine
+ * (Eichung 0.2.83, Wunsch des Autors: eine einzelne Partie streut erwartbar um etwa ±450).
+ * Es zählen nur Partien mit genug eigenen Zügen für eine Schätzung; die Liste ist neueste zuerst.
+ * Ausgabe: Schätzung mit Spanne und Zahl der Partien; null ohne passende Partie.
+ * Beispiel: drei Partien mit 70, 80 und 75 % → etwa 1400 (1050 bis 1750), aus 3 Partien.
+ */
+export function staerkeLetzterPartien(
+  partien: readonly Partieeintrag[],
+): (Staerkeschaetzung & { readonly partien: number }) | null {
+  const innen: number[] = [];
+  for (const eintrag of partien) {
+    if (innen.length >= LETZTE_PARTIEN) break;
+    if (eintrag.partie.einstellung.gegner !== "engine") continue;
+    const seite = staerkeDerPartie(eintrag)?.[eintrag.partie.einstellung.eigeneFarbe];
+    if (seite?.spielstaerke !== null && seite?.innen !== null && seite?.innen !== undefined) {
+      innen.push(seite.innen);
+    }
+  }
+  const schaetzung = staerkeUeberPartien(innen);
+  return schaetzung ? { ...schaetzung, partien: innen.length } : null;
 }
 
 /** Die Schätzung je Phase für den Leser (Spielstärke je Phase, ab sechs Zügen je Phase). */

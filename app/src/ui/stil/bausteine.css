@@ -228,3 +228,11 @@
   border-top: 1px solid var(--linie);
   padding-top: calc(var(--raster) * 1.5);
 }
+
+/* ---------- Karte „Deine Spielstärke“ (Eichung, seit 0.2.83) ---------- */
+
+.letzte-spielstaerke-wert {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+}

@@ -3219,6 +3219,33 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N341** (Werkzeuge): von Claude geprüft am 18.10.2026: in der Partie eine waagerecht scrollbare Leiste, jedes Bündel mit Symbol; an Abb. 5.17 „frühere“ und „spätere“ am Anfang und Ende; Angriffsregel an 1.37 ohne „Mehr …“
 - **N348** (Stufe 5 bis 8 mit eigener Zahl): von Claude geprüft am 18.10.2026: Stufe 5 bis 8 mit den Bereichen wie im Punkt, Fragezeichen „über 2200 … ungenauer (etwa ±200)“
 - **N349** (Gleich große Kacheln in der Gegnerwahl): von Claude geprüft am 18.10.2026: Porträts in Stufe 7 und 8 alle 72,5 px breit, hell und dunkel
+- **N158** (Kein Spielziel): von Claude geprüft am 18.10.2026: keine Auswahl „Spielziel“, nach dem Ende kein „Ziel erreicht/verfehlt“
+- **N198** (Zeichen und besserer Zug am Brett): von Claude geprüft am 18.10.2026: zu zweit nach 1. f3 e5 2. g4?? Dh4#: auf g4 ein rotes „??“, goldener Pfeil zum besseren Zug (laut Engine 2. e4, nicht e3 wie im alten Text)
+- **N199** (Bewertungsbalken): von Claude geprüft am 18.10.2026: Balken nur nach dem Ende, „−M“ nach Dh4#, als Schwarz gedreht; in der ruhigen Ansicht nicht (Oberflächentest)
+- **N200** (Verlaufskurve): von Claude geprüft am 18.10.2026: Kurve über der Auswertung, Fehler als rote Punkte, ein Tipp springt zur Stelle
+- **N205** (Erklärung mit Markierung): von Claude geprüft am 18.10.2026: Das alte Beispiel 2... Sf6 ist laut Engine kein Fehler; mit 2... a6?! geprüft: Karte „… lässt die Drohung Dxe5+ stehen (gewinnt den Bauern).“, roter Pfeil h5–e5, rotes Feld e5; gegen die Engine heißt es „Du …“
+- **N206** („!“ für den einzigen guten Zug): von Claude geprüft am 18.10.2026: goldenes „!“ am Brett, Karte „… ist stark: der einzige gute Zug oder die Strafe für den Fehler davor.“ (Wortlaut neuer als im Punkt)
+- **N213** (Zugklassen am Brett): von Claude geprüft am 18.10.2026: Marken am Zielfeld: !! blau, ! gold, ✓ grün, ?! grau, ? und ?? rot; gut und Buch ohne Marke, mit Satz. Die Lesbarkeit von „?!“ im Dunkelmodus fragt N328
+- **N215** (Phasen in der Kurve): von Claude geprüft am 18.10.2026: goldene Linie „M“ in der Kurve
+- **N218** (Auswertung ohne Nachfrage): von Claude geprüft am 18.10.2026: „Hast du es gesehen?“ kommt nicht vor (Partie gegen Stufe 1)
+- **N222** (Zu zweit spielen): von Claude geprüft am 18.10.2026: Überschrift „Partie zu zweit“, Untertitel, Status im Wechsel, „Matt! Weiß hat gewonnen.“, Aufgeben für die Seite am Zug, Uhr für beide, Spalten Weiß und Schwarz. Dabei gefunden: Die Auswertung nannte „keinen absichtlichen Fehler der Engine“; behoben in 0.2.90
+- **N225** (Phase, Zusatzregeln): von Claude geprüft am 18.10.2026: K + D gegen K + D aufgebaut: „Endspiel …“ und „Zusatzregel (nicht aus dem Buch): Jede Seite hat höchstens 13 Punkte …“
+- **N226** (Stellung aufbauen, Figuren setzen): von Claude geprüft am 18.10.2026: 12 Steine, „Feld räumen“, „Am Zug“, „Brett leeren“, „Grundstellung“; zweiter Tipp räumt; „Stellung übernehmen“ gesperrt mit rotem Satz bis zu zwei Königen; Seite am Zug vorgewählt; aus Abb. 1.26 geändert „Aus einer eigenen Stellung“
+- **N227** (Stellung aufbauen, Züge spielen): von Claude geprüft am 18.10.2026: Züge mit Zielpunkten, Umwandlungsfrage mit vier Figuren; nach 1. e4 e5 2. Sf3 spielt der Leser Schwarz
+- **N232** („M“ und „E“ in der Zugliste): von Claude geprüft am 18.10.2026: goldenes „M“ vor dem ersten Mittelspielzug mit Titel „Mittelspiel“
+- **N233** (Übergang ins Mittelspiel ohne Zugzahl): von Claude geprüft am 18.10.2026: alle drei Fälle mit den Sätzen aus dem Punkt (entwickelt, Material ungleich, je zwei Figuren zu Hause bleibt Eröffnung über 14 Züge)
+- **N234** (Erklärung am Phasenwechsel): von Claude geprüft am 18.10.2026: „Neue Phase ab hier. Mittelspiel: …“ nur beim Zug mit dem „M“
+- **N235** (Damenloses Mittelspiel bleibt Mittelspiel): von Claude geprüft am 18.10.2026: Berliner Linie bis 9. Sc3: „Mittelspiel“, „Bauern entscheiden … nein“
+- **N245** (Kein „??“ bei klarem Gewinn (K5)): von Claude geprüft am 18.10.2026: Matt in 1 auf dem Brett, gespielt 1. h3 (+M → +8,3): kein Zeichen, nicht unter „Grobe Patzer“; der Satz zu „+5 oder besser“ steht in der Engine-Karte
+- **N246** (Geschätzte Spielstärke (R3)): von Claude geprüft am 18.10.2026: Zeile „Geschätzte Spielstärke“ mit „etwa … (…–…)“; die Erklärung sagt jetzt „gehört zu keiner echten Liste“
+- **N258** (Verpasst statt Patzer): von Claude geprüft am 18.10.2026: 1. e4 e5 2. Sf3 Dg5?? 3. a3?: „3. a3? verpasst die Chance nach dem Fehler des Gegners …“, unter „Grobe Patzer“ beide, „Verpasst“ 1
+- **N259** (Beste Züge und Zugklassen passen zusammen): von Claude geprüft am 18.10.2026: „!! 0“ am Anfang der Zeile „Zeichen“, „… ist so gut wie …, der Zug der Engine“. Anders als im Punkt: „Beste Züge“ zählt jeden Zug gleich dem der Engine (auch !!, ! und Buchzüge), „Bester Zug“ unter „Züge nach Art“ nur die übrigen; beide Zahlen sind deshalb nicht gleich
+- **N275** („Danach etwa …“ in der Rückblickkarte): von Claude geprüft am 18.10.2026: „Besser war …, danach etwa …“ mit fünf Halbzügen, beim besten Zug ohne. Die Länge bleibt nach Regel 9 bei fünf Halbzügen; Widerspruch genügt
+- **N283** (Brillant nur bei wirklich nehmbarem Opfer): von Claude geprüft am 18.10.2026: Opernpartie zu zweit: Weiß „!! 3“ (10. Sxb5, 13. Txd7, 16. Db8+), in drei Läufen gleich
+- **N311** (Unmögliche Stellungen (S12)): von Claude geprüft am 18.10.2026: drei Damen und acht Bauern: schon „Stellung übernehmen“ gesperrt mit dem Satz zu den Umwandlungen; zwei Damen und sieben Bauern gehen, die Engine zieht
+- **N336** (Fehler im Rückblick): von Claude geprüft am 18.10.2026: „4... h6??: Die Gewinnchance von Schwarz fällt von 50 % auf 9 %.“, „schlägt nicht zurück: dxc6 nahm den Läufer c6 wieder …“ mit rotem Feld; Fragezeichen erklärt Balken und Gewinnchance
+- **N337** (Nebenzweige): von Claude geprüft am 18.10.2026: „Besser war …“ und „So wird der Fehler bestraft: …“ antippbar, Stellung am Brett, Zug für Zug weiter, „Zurück zur Partie“; bei gutem Zug keine Strafe
+- **N338** (Auswertung): von Claude geprüft am 18.10.2026: Schalter „Genauigkeit wie“, Symbole je Zeile, Marken je Klasse, Erklärungen hinter Fragezeichen; Patzer mit Bauer in Seitenfarbe, Tipp springt hin; Fehler der Engine erst 3, „Alle 8 zeigen“; „Noch einmal aus derselben Stellung“ nur bei eigener Stellung. Der Erklärtext nannte noch „Mittelweg“ und die Einstellungen; nachgeführt in 0.2.90
 
 ### Teil 2 im Wortlaut vor dem Umbau
 

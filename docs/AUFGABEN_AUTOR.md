@@ -298,20 +298,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       „github.com/dobili/SvGa_Public“ (vorher der Name des alten, privaten Repositorys, den
       Fremde nicht öffnen können; die GPL verlangt, dass der Quelltext erreichbar ist).
 
-### Neu in 0.2.72 (etwa 10 Minuten, mit Engine; Spielbewertung an deinen chess.com-Partien geeicht, Fable)
-
-- [ ] N291. **Urteilswort je Phase und Mittelspiel nach Taktik und Strategie:** In derselben Karte
-      steht vor jeder Phase eine farbige Marke: Hervorragend (ab 95 %), Sehr gut (ab 88 %), Gut
-      (ab 78 %), Ungenau (ab 68 %), Fehlerhaft (ab 55 %), Schwach. Unter „Mittelspiel“ stehen
-      eingerückt „Taktik“ und „Strategie“ mit eigener Genauigkeit, Schätzung und Zugzahl. Taktik
-      sind die Züge aus Stellungen, in denen etwas los ist (Schach, Drohung des Gegners, Schlag
-      mit Gewinn, Matt möglich; Sicherheitsblick aus Kapitel 12), Strategie die aus ruhigen
-      Stellungen. Beispiel deine Partie gegen den 1700er-Bot von chess.com, unsere Rechnung mit
-      0,5 s je Stellung, du als Weiß: Eröffnung „Sehr gut · 2100“, Taktik „Sehr gut · 2000
-      (11 Züge)“, Strategie „Sehr gut · 1550 (9 Züge)“, Endspiel „Hervorragend · 2600 (25 Züge)“;
-      chess.com: Eröffnung Großartig, Taktik Exzellent, Strategie Gut, Endspiel Gut. Prüfe, ob
-      die Marken auf dem Handy in eine Zeile passen und die Farben lesbar sind.
-
 ### Neu in 0.2.71 (etwa 15 Minuten, mit Engine; 30-Minuten-Plan, Opus)
 
 - [ ] N305. **30-Minuten-Plan:** Training › Kapitel 12 › „30-Minuten-Plan“ › Trainieren. Oben der
@@ -508,10 +494,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 - [ ] N280. **Schlagring statt Punkt:** Wähle eine Figur, die etwas schlagen kann. Auf der
       schlagbaren Figur liegt jetzt ein goldener Ring mit dunklem Rand statt des kleinen Punktes,
       auch auf einem schwarzen Bauern gut zu sehen. Leere Zielfelder behalten den Punkt.
-- [ ] N281. **Figurensatz „Holz“ mit eigenen Formen:** Einstellungen › Figurensatz „Holz“: Die
-      Figuren sind jetzt die Merida-Figuren (von Lichess, GPL) in Elfenbein und dunklem Nussbaum,
-      also andere Formen als „klassisch“ (Burnett) und „wie im Buch“. Gefallen dir Formen und
-      Farben? Andere Farbwerte sind in Minuten geändert.
 - [ ] N282. **Stern für gewertete Partien:** Spielen › „Deine letzten Partien“: Hinter dem Ergebnis
       („1–0“) steht bei gewerteten Partien ein kleiner goldener Stern; ungewertete Partien (zu
       zweit, aus Abbildungen, mit Rücknahme) haben keinen.
@@ -522,12 +504,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       blinden Flecken stehen neu „Röntgenangriffe (Fesselung, Spieß)“, „Zwischenzüge“ und „die
       Grundreihe“. Paula und Opa Hans übersehen jetzt die Grundreihe, Frieda Röntgenangriffe,
       Timo und Lena Zwischenzüge (Liste bei S7).
-- [ ] N277. **Blind auch für Drohungen:** Ein Gegner mit blindem Fleck übersieht jetzt auch
-      Züge des Gegners dieser Art: Er tappt in eine Stellung, deren Widerlegung etwa ein Abzug
-      oder ein Grundreihenschach ist (höchstens eine Leichtfigur Verlust, zu 70 %). In der
-      Auswertung steht dann wie bisher „Mit 14… hat die Engine einen Abzug nicht gesehen.“ Spiele
-      ein paar Züge gegen Nina (blind für Abzüge) oder Paula (Grundreihe) und stelle ihr eine
-      solche Falle. Gemessen (je zehn Partien gegen dieselbe Stufe ohne Flecken): Nina (Abzüge) 4:6, Paula (Diagonalen, Rückzüge, Grundreihe) 6:4, Lena (ruhige Züge, Zwischenzüge) 5:5; also höchstens eine halbe Stufe. Alle elf Flecken zugleich kosten etwa eine Stufe (1:9), das hat aber kein Gegner.
 
 ### Neu in 0.2.56 (etwa 5 Minuten, mit Engine; Engine-Variante im Rückblick, Empfehlung R5, Fable)
 
@@ -566,16 +542,6 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
       Abb. 4.21, Warnsignale: nur „Bauer g2, einziger Verteidiger von f3 gegen Sxf3#“, kein e2 mehr.
       Abb. 9.34, Motiv: „Dauerschach“. Startseite: „in Richtung Elo 2000“ statt „etwa 2000 Elo“.
 
-### Neu in 0.2.54 (etwa 10 Minuten, mit Engine; Brillant am Prüfstand von chess.com, Fable)
-
-- [ ] N268. **Brillant wie bei chess.com:** Spiele die Opernpartie zu zweit nach (Züge bei N261).
-      Karte „Spielstärke“, Weiß: Brillant jetzt 3 (10. Sxb5, 13. Txd7, 16. Db8+; chess.com 3).
-      Neu: Ein Springer für zwei Bauern zählt als Opfer, ein Opfer aus dem Schach heraus nicht,
-      und ein Opfer ist nur brillant, wenn man danach nicht schlecht steht und der zweitbeste Zug
-      nicht ohnehin klar gewinnt. Geprüft an 100 Brillant-Zügen aus chess.com-Partien
-      (Chessigma-Vergleich): 46 von 100 erkannt, 25 Fehlalarme in 100 Partien (etwa einer je vier Partien; die freien Werkzeuge im selben Vergleich: 23 bis 45 Treffer bei einem Fehlalarm alle drei bis sechs Partien). In deinen eigenen Partien sollten „Brillant“
-      damit seltener grundlos auftauchen; melde Züge, die dir falsch vorkommen, mit PGN.
-
 ### Neu in 0.2.53 (etwa 10 Minuten; zwei Trainer der Stufe 3, Opus)
 
 - [ ] N266. **Studien lösen:** Training › „Studien lösen“ › Trainieren: zuerst die Saavedra-Studie,
@@ -596,25 +562,9 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
       grobe selten, und sie verschenkt kaum noch grundlos in erzwungenen Lagen. Die
       absichtlichen, erklärten Fehler (Auswertung: „Mit 12… hat die Engine …“) gibt es weiter.
       Fühlt sich Stufe 1 noch zu stark oder zu schwach an? Bitte Partie als PGN mitschicken.
-- [ ] N265. **Strähne und Tagesform:** Nach zwei eigenen Fehlern in Folge spielt die Engine auf
-      Stufe 1 bis 3 drei Züge lang etwas wackliger; im Schach spielt sie genauer. Je Partie gibt
-      es eine feste „Tagesform“ (dieselbe Partie, derselbe Gegner: mal etwas stärker, mal etwas
-      schwächer). Das ist nicht einzeln sichtbar, nur als Eindruck über mehrere Partien.
-      Gemessen (je zehn Partien Stufe gegen Stufe): Stufe 2 gewinnt 10:0 gegen 1, Stufe 3 10:0 gegen 2, Stufe 4 6,5:3,5 gegen 3, Stufe 5 10:0 gegen 4. Dafür hat Stufe 4 jetzt Skill Level 4 statt 3 (sonst war Stufe 3 ihr ebenbürtig). Fühlt sich der Sprung von 3 auf 4 jetzt richtig an (Rückfrage K1)?
 
 ### Neu in 0.2.51 (etwa 15 Minuten, mit Engine; Vergleich mit chess.com, Empfehlung T4, Fable; N260 durch N290 ersetzt)
 
-- [ ] N261. **Brillant und Stark wie bei chess.com:** Spiele die Opernpartie zu zweit nach (1. e4 e5 2. Sf3 d6 3. d4 Lg4 4. dxe5 Lxf3 5. Dxf3 dxe5 6. Lc4 Sf6 7. Db3 De7 8. Sc3 c6 9. Lg5 b5 10. Sxb5 cxb5 11. Lxb5+ Sbd7 12. 0-0-0 Td8 13. Txd7 Txd7 14. Td1 De6 15. Lxd7+ Sxd7 16. Db8+ Sxb8 17. Td8#). Karte „Spielstärke“, Weiß: Brillant 2 (13. Txd7 und 16. Db8+; chess.com
-      gibt 3, dazu 10. Sxb5, das unsere Engine 0,7 schlechter sieht), Stark 2 (vorher 8; chess.com
-      „Großartig“ 1), Genauigkeit etwa 95 bis 99 je nach Rechenlauf (chess.com 96,1). Ein Abtausch (Läufer schlägt
-      Springer, wird zurückgeschlagen) ist kein Opfer mehr; in einer Partie ohne Opfer steht
-      „Brillant 0“ (vorher bis zu 4 für Abtausche). Ein Opfer mit Schach zählte bisher nie; jetzt
-      schon. Sieht die Engine in einer Stellung kurz etwas ganz anderes als davor und danach
-      (Sprung um drei Bauern hin und sofort zurück), rechnet die Auswertung diese Stellung am Ende
-      noch einmal vier Sekunden lang nach; die Anzeige „läuft … von …“ dauert dann etwas länger.
-      Während der Partie rechnet die Auswertung im Hintergrund jetzt 2 s je Stellung (dein
-      Wunsch nach dem Versuch mit „Maximal“ bei chess.com); das Handy wird dabei etwas wärmer, und
-      nach dem Ende fehlen meist nur die letzten Stellungen.
 - [ ] N262. **Weniger „?!“ und „!“ in entschiedener Stellung:** Deine geblitzte Stufe-3-Partie
       vom 17.10.2026 (1. d4 Sf6 2. Lg5 Se4 3. h4 …, 52 Züge) hätte dir bisher 15 „?!“ gegeben
       (chess.com 2), weil in klar gewonnener Stellung jeder Verlust ab 0,5 Bauern ein „?!“ war.
@@ -631,13 +581,6 @@ Teil 2 ein Absatz „Nachgelesen im Buch“). Wo das Buch die Frage klärt, ist 
 
 ### Neu in 0.2.50 (etwa 10 Minuten, mit Engine; Genauigkeit wie bei chess.com, Fable)
 
-- [ ] N257. **Genauigkeit wie bei chess.com:** Spiele eine Partie mit einem groben Fehler früh und
-      gewinne sie trotzdem klar (oder nimm deine Partie vom 17.10.2026 gegen Stufe 5 aus den
-      Partien). Karte „Spielstärke“: Die Genauigkeit liegt jetzt deutlich niedriger als vorher
-      (deine Partie: etwa 88 % statt 97 % für dich, etwa 76 % statt 93 % für die Engine;
-      chess.com: 86,8 und 80,3). Grund: Wie bei Lichess zählt ein grober Fehler jetzt mehr als
-      viele gute Züge in schon gewonnener Stellung (Mittel aus gewichtetem und harmonischem
-      Mittel statt einfachem Durchschnitt). Der Erklärtext unter der Karte sagt das.
 - [ ] N258. **Verpasst statt Patzer:** In derselben Partie heißt 4. e3 jetzt „verpasst“ mit „?“
       (nicht mehr „??“): Nach 3... Sf4?? hing der Springer, 4. e3 nahm ihn nicht, aber Weiß stand
       danach nicht schlechter als vor dem Fehler der Engine (so auch chess.com). Die Zeile
@@ -703,10 +646,6 @@ Sechs Empfehlungen aus Teil 2 sind schon eingebaut, weil sie sich leicht zurück
 S9, K5, R3, C8, T1, U9 (E2 stand schon so im Entwurf). Gefällt dir etwas nicht, genügt ein
 Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
 
-- [ ] N244. **Rücknahme macht die Partie ungewertet (S9):** Eine gewertete Partie gegen die Engine
-      aus der Grundstellung spielen, dabei einmal „Zug zurück“ nehmen, zu Ende spielen. In den
-      Einstellungen bei „Deine Spielstärke“ kommt kein neuer Punkt dazu. Der Hinweis unter dem
-      Haken „Gewertete Partie“ sagt: „Nimmst du einen Zug zurück, zählt die Partie nicht.“
 - [ ] N245. **Kein „??“ bei klarem Gewinn (K5):** Eine Partie, in der du klar gewinnst (etwa
       Dame mehr), und statt eines Matts in zwei einen anderen gewinnenden Zug spielen. Der Zug
       bekommt höchstens „?!“ (ungenau), nicht mehr „??“, und steht nicht unter „Grobe Patzer“. In
@@ -728,21 +667,6 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
 
 ### Neu in 0.2.46 (etwa 20 Minuten, mit Engine; Bots mit Persönlichkeit, dein Wunsch vom 17.10.2026 abends)
 
-- [ ] N240. **Gegnerliste ohne Stufen:** Spielen › „Vorgefertigter Gegner“: jetzt 18 Gegner, in
-      der Zeile nur Name, Durchschnitt und Klasse („Timo · ⌀ 4 · Gelegenheitsspieler“), ohne die
-      Stufen je Phase. Ist ein vorgefertigter Gegner gewählt, verschwinden die drei Regler
-      (Überraschung); bei „eigene Stufen“ und bei eigenen Gegnern sind sie da. Der Untertitel der
-      Partie sagt „Timo · ⌀ 4 · Gelegenheitsspieler · du spielst Weiß“.
-- [ ] N241. **Persönlichkeit:** Zwei Partien gegen Gegner gleicher Stärke, etwa Lotta und Paula
-      (beide ⌀ 1) oder Nina und Selin (⌀ 3): In der Auswertung stehen bei den Fehlern der Engine
-      verschiedene Arten, und dazu neue Sätze wie „einen Rückzug nicht gesehen“, „eine lange
-      Diagonale nicht gesehen“, „einen langen Damenzug nicht gesehen“, „den ruhigen Zug nicht
-      gesehen, nur die Schläge geprüft“, „einen Abzug nicht gesehen“, „einen stillen Bauernzug
-      nicht gesehen“. Die Beschreibung unter dem Auswahlfeld nennt die Schwächen des Gegners.
-- [ ] N242. **Blinde Flecken auch bei starken Gegnern:** Eine Partie gegen Viktor (⌀ 6,3) oder
-      Doktor Berg (⌀ 6,7): Er macht keine groben Fehler, aber gelegentlich steht „einen Abzug
-      nicht gesehen“ oder „einen seitlichen Turmzug nicht gesehen“ in der Auswertung; der Verlust
-      ist dabei höchstens eine Leichtfigur. Spielt er trotzdem etwa so stark wie vorher?
 - [ ] N243. **Eigene Gegner mit blinden Flecken:** „Eigene Gegner“ › Formular: unter den
       Fehlerarten die Haken „Blinde Flecken“ (Rückzüge, lange Läuferdiagonalen, Springerzüge
       rückwärts, lange Damenzüge, seitliche Turmzüge, ruhige Züge, Abzüge, stille Bauernzüge).
@@ -815,25 +739,9 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
       der Schätzung in dieser Phase über den Ausschnitt, die Kurve je Partie einen Punkt (Partien
       ohne genug Züge in der Phase fehlen, Endspiel oft). Erkennst du daran, wo Üben am meisten
       bringt?
-- [ ] N231. **Eigene Gegner:** Spielen, Karte „Eigene Gegner“ (nur bei Gegner „Engine“): „Neuen
-      Gegner anlegen“, Name „Rambo“, die drei Regler, Regler „Spielstil“ von sehr defensiv bis
-      sehr aggressiv, Haken je Fehlerart (wirken in Stufe 1 bis 4; ohne Haken nie ein
-      absichtlicher Fehler), „Gegner speichern“. Er steht in der Liste („Rambo · 3 · 3 · 3 · sehr
-      aggressiv“) mit „Bearbeiten“ und „Löschen“ (Nachfrage) und im Auswahlfeld „Vorgefertigter
-      Gegner“ unter „Eigene Gegner“. Eine Partie gegen ihn: Untertitel „Rambo · …“, in der
-      Partienliste „Rambo“, auch nach dem Löschen. Spielt ein sehr aggressiver Gegner spürbar
-      anders (Züge in deine Hälfte, zu deinem König, Schläge, Schachs) als ein sehr defensiver?
-      Bleibt er dabei etwa gleich stark?
 
 ### Neu in 0.2.41 (etwa 30 Minuten, mit Engine; deine Wünsche vom 17.10.2026 nachmittags)
 
-- [ ] N219. **Gegner wählen:** Spielen: Oben die Wahl „Gegner: Engine / Mensch (beide Seiten
-      selbst)“, darunter bei Engine das Auswahlfeld „Vorgefertigter Gegner“ mit „eigene Stufen
-      (Regler unten)“ und zwölf Gegnern, etwa „Lotta · ⌀ 1 · Einsteiger (1 · 1 · 1)“ bis
-      „GM Grün · ⌀ 8 · Großmeister (8 · 8 · 8)“ (die Klammer: Eröffnung · Mittelspiel · Endspiel).
-      Einen Gegner wählen: Die drei Regler springen auf seine Stufen, und die Beschreibung steht
-      darunter. Einen Regler verschieben: Das Feld springt zurück auf „eigene Stufen“. In der Partie
-      steht der Name im Untertitel („Timo · Stufen 5 · 4 · 3 …“).
 - [ ] N220. **Spielhilfen zuschalten:** Spielen, unter „Züge zurücknehmen erlauben“: zwei Haken
       „Symbole am Brett (Zählen, Röntgen, Warnsignale)“ und „Werkzeuge und Hinweis unter dem Brett
       (bis zum Ende der Partie)“. Beide an: wie bisher. Nur Symbole: Die Symbole bleiben, Bündel,
@@ -899,22 +807,9 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
       gute und Buchzüge ohne Marke, dafür mit Satz in der Karte („… ist ein Zug aus den
       Eröffnungen des Buches“, „… ist sehr gut (0,1 hinter …)“). Nach einem Fehler des Gegners
       heißt ein eigener Fehler „verpasst die Chance …“.
-- [ ] N214. **Spielstärke je Phase und Züge nach Art:** In der Karte „Spielstärke“ stehen nach den
-      bisherigen Zeilen die Zeilen Eröffnung, Mittelspiel, Endspiel („82 % · etwa 1500 (12
-      Züge)“, „zu wenige Züge“ unter sechs, „–“ ohne Züge), darunter die Tabelle „Züge nach Art“
-      (brillant bis Patzer) für dich und die Engine.
 - [ ] N215. **Phasen in der Kurve:** Über der Auswertung trägt die Kurve goldene senkrechte
       Linien mit „M“ (erster Zug des Mittelspiels) und „E“ (Endspiel), sofern die Partie so weit
       kam.
-- [ ] N216. **Partienliste:** Spielen › „Deine letzten Partien“: vor jeder Partie der König in der
-      Farbe, die du gespielt hast (im gewählten Figurensatz), in der Zeile „… · du: etwa 1400“
-      (bei kurzen Partien „du: 78 % genau“).
-- [ ] N217. **Fehler der Engine je Phase:** Partien auf Stufe 1 bis 4 (gern Endspiele aus einer
-      Abbildung von Kapitel 8 oder 9): Die Auswertung nennt neben den bisherigen Fehlerarten auch
-      „ein Tempo verschenkt“, „auf Bauernraub gegangen“, „den Königsschild geschwächt“, „im
-      Rückstand abgetauscht“, „den König passiv gelassen“, „einen Bauern vorschnell vorgeschoben“
-      oder „patt gesetzt“, und die Rückblick-Karte erklärt sie. Wirken die Fehler menschlicher?
-      Fühlt sich der Wechsel der Stufe beim Phasenwechsel weich an?
 - [ ] N218. **Auswertung ohne Nachfrage:** Bei den Fehlern der Engine fehlt „Hast du es gesehen?“.
 
 ### Neu in 0.2.39 (etwa 15 Minuten, mit Engine; Rückmeldung zum Nachtest bis N174)
@@ -923,11 +818,6 @@ Neu: Figurensätze „klassisch“ und „Holz“, Nummernsprung in der Kopfzeil
 „+9“, Rückblick-Karte mit Erklärung, „!“, Spielstärke, Eröffnung für die Engine. **Vorher:** In den
 Einstellungen muss „App-Version 0.2.39“ stehen.
 
-- [ ] N201. **Figurensätze:** Einstellungen › Figurensatz: „wie im Buch“, „klassisch“ (bis
-      0.2.38 „kontrastreich“; eine gespeicherte Wahl bleibt erhalten) und „Holz“. Mit Brettfarben
-      „Holz“ und Figurensatz „Holz“ in Abb. 1.26: helle Figuren elfenbeinfarben, dunkle fast
-      schwarz mit warmem Braunton, wie im Design „Dunkles Holz“ auf deinem Bild (die Formen
-      bleiben die klassischen). Passen die Farben? (Rückfrage R1.)
 - [ ] N202. **Nummernsprung:** In Abb. 1.26 auf den Titel „Abb. 1.26“ tippen: Unter der
       Kopfzeile erscheint „Abbildung öffnen“. „1,28“ eintippen und „Öffnen“: Abb. 1.28 ist da,
       „Zurück“ führt zum Kapitel. „1.99“: „Abbildung 1.99 gibt es nicht“ mit Vorschlägen.
@@ -938,11 +828,6 @@ Einstellungen muss „App-Version 0.2.39“ stehen.
       +6,2“. Abb. 4.13, Prüffragen: „… scheint den Bauern zu gewinnen: Warum lässt … das zu?“.
       Nur das Werkzeug „Zählen“ (Abtauschbilanz), die Faktorenbilanz (Material) und die
       Kandidatenzeile zeigen weiter Zahlen, immer mit dem Wort „Material“ oder „Bilanz“ dabei.
-- [ ] N204. **Rückblick-Karte:** Eine kurze Partie mit klarem Fehler (Spielen › eigene Stellung
-      nach 1. f3 e5, dann 2. g4??). Nach der Auswertung in der Zugliste auf „2. g4??“ tippen:
-      Unter dem Brett steht eine Karte „2. g4?? kostet etwa 10,0 Bauern. Bewertung −0,4 → −M.“
-      und „Besser war 2. …“. Bei einem Zug ohne Zeichen: „… war der beste Zug“ oder „… ist in
-      Ordnung (0,2 hinter …)“.
 - [ ] N205. **Erklärung mit Markierung:** Spielen › Grundstellung, Stufe 1, als Schwarz: 1. e4 e5 2. Dh5 Sf6?? (du spielst absichtlich Sf6). Nach dem Ende und der Auswertung auf „2... Sf6??“
       tippen: Karte „Du lässt die Drohung Dxe5+ stehen (gewinnt den Bauern).“, roter Pfeil h5–e5,
       rotes Feld e5. Andere Fehlerarten lauten „lässt Läufer a3 ungedeckt hängen (W1)“ (rotes
@@ -953,10 +838,6 @@ Einstellungen muss „App-Version 0.2.39“ stehen.
       beste war und mindestens 1,2 Bauern vor dem zweitbesten lag, in der Zugliste ein „!“, am
       Brett ein goldenes „!“, auf der Karte „… war der einzige gute Zug.“ (Partien aus 0.2.38
       ohne diese Angabe bleiben ohne „!“; sie werden nicht neu ausgewertet.)
-- [ ] N207. **Spielstärke:** Unter der Auswertung die Karte „Spielstärke“ mit zwei Spalten
-      („Du (Weiß)“, „Engine (Schwarz)“): Genauigkeit in Prozent, Spielstärke (geschätzt, „etwa
-      1400“, unter zehn Zügen „zu wenige Züge“), Verlust je Zug, beste Züge („5 von 12“),
-      Zeichen („! 1 · ?! 2 · ? 1 · ?? 0“). Darunter der Hinweis, wie gerechnet wird.
 - [ ] N208. **Eröffnung wählen:** Spielen (Grundstellung) › Karte „Eröffnung“: Liste der
       Eröffnungen aus Kapitel 2 und 3; „Spanische Partie“ wählen, darunter „Hauptvariante: 1. e4
       e5 2. Sf3 Sc6 3. Lb5 …“. Als Weiß beginnen, 1. e4: Die Engine antwortet e5; 2. Sf3: Sc6; 3. Lb5: a6 (oder die Buchantwort). Der Untertitel nennt die Eröffnung. Bei einer Abbildung
@@ -1046,22 +927,8 @@ Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abs
 
 **Stufen und Fehlerprofile**
 
-- [ ] N175. **Stufe 1 (Einsteiger):** Spielen › Grundstellung, Stufe 1, ohne Uhr, etwa 15 Züge.
-      Die Engine spielt sichtbar schwach und macht etwa jeden dritten Zug einen Anfängerfehler
-      (hängende Figur, ignorierte Drohung, Dame zu früh). Nach dem Ende (oder Aufgeben) nennt die
-      Auswertung die Fehler der Engine mit Zugnummer und Art, darunter auch „eine Drohung
-      ignoriert“ oder „eine Taktik übersehen“; beim Nachspielen erklärt die Rückblick-Karte sie
-      (seit 0.2.39, N205). Stimmen die genannten Züge?
 - [ ] N176. **Stufe 2 (Anfänger), kein Damenopfer:** eine Partie auf Stufe 2 (etwa 20 Züge). Die
       Engine verschenkt Bauern und Figuren, aber nie die Dame ohne Gegenwert (Konzept 8.2).
-- [ ] N177. **Abstufung:** je eine kurze Partie auf Stufe 3, 5 und 7. Fühlt sich die Abstufung
-      richtig an: Stufe 3 noch mit groben Fehlern (höchstens eine Leichtfigur), Stufe 5 ohne
-      absichtliche Fehler, aber schlagbar, Stufe 7 deutlich stärker? Die Engine braucht je Zug
-      höchstens 0,3 bis 2 Sekunden (Stufe 1 bis 8), auch auf dem Handy.
-- [ ] N178. **Eröffnung:** Grundstellung, Stufe 1, 1. e4: Die Engine antwortet einige Züge lang
-      mit den Eröffnungen aus Kapitel 2 und 3 (Zugliste), auch auf niedriger Stufe (Buchtreue
-      0,85 je Zug, siehe Rückfrage K3). Seit 0.2.40 gilt das nur mit der Wahl „eine Eröffnung des
-      Buches (zufällig)“; „frei“ spielt ohne Buch (N211).
 
 **Gegenprüfung (Uhr und Auswertung)**
 
@@ -1083,10 +950,6 @@ Regeln C1 und C2).
 
 - [ ] N158. **Kein Spielziel:** Spielen: Es gibt keine Auswahl „Spielziel“ mehr. Nach dem Ende
       einer Partie steht nur das Ergebnis, kein „Ziel erreicht/verfehlt“.
-- [ ] N159. **Figurensatz und Ton:** Einstellungen: Figurensatz „klassisch“ (bis 0.2.38
-      „kontrastreich“; „Holz“ seit 0.2.39, N201) zeigt überall die klassischen Figuren (weiß mit
-      schwarzem Rand); Ton „an“: beim Ziehen klackt es, bei einem
-      Schlag kräftiger (Stummschalter aus). („Erst selbst denken“ ist seit 0.2.37 wieder da, N187.)
 - [ ] N160. **Warum-Fragen:** Bei den Warum-Fragen steht kein „vorbereitet“ mehr.
 - [ ] N161. **Werkzeuge in der Partie:** Partie beginnen. Am Brett unten rechts: Zählen, Röntgen,
       W1–W7. Röntgen antippen: die Karte erscheint, ziehen geht weiter. Zählen antippen, dann ein

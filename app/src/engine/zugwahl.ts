@@ -30,6 +30,7 @@ import {
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
 import type { Stufe } from "./stufen";
+import { zufallszug } from "./zufallszug";
 
 /**
  * Profil eines Gegners: erlaubte Fehlerarten (null: alle), Stil (−2 bis 2), blinde Flecken
@@ -41,6 +42,8 @@ export interface Gegnerprofil {
   readonly stil: number;
   readonly blindeFlecken: readonly BlinderFleck[];
   readonly verlauf?: Verlauf;
+  /** Anteil der Züge, die ein beliebiger legaler Zug sind (Spaß-Bots, 0.2.86); fehlend: keine. */
+  readonly zufallszuege?: number;
 }
 
 export const STANDARDPROFIL: Gegnerprofil = {
@@ -113,7 +116,8 @@ async function menschlicherZug(
  * Zug der Engine mit Skill Level 0.
  * Sonderfall: Findet die Fehlersuche keinen Zug in den Grenzen der Stufe, zieht die Engine normal.
  * Profil (0.2.42): ohne erlaubte Fehlerarten entfällt der Fehlerwurf; mit Stil holt die Engine
- * mehrere Kandidaten, und engine/stil.ts wählt um den Zug der Stufe herum (0.2.78).
+ * mehrere Kandidaten, und engine/stil.ts wählt um den Zug der Stufe herum (0.2.78). Spaß-Bots
+ * (0.2.86) ziehen mit ihrem Anteil an Zufallszügen irgendeinen legalen Zug (engine/zufallszug.ts).
  */
 export async function waehleZug(
   bewerter: Spielbewerter,
@@ -124,6 +128,11 @@ export async function waehleZug(
   buchtreue: number = BUCHTREUE,
   profil: Gegnerprofil = STANDARDPROFIL,
 ): Promise<Zugwahl | null> {
+  // Spaß-Bots (0.2.86): der Zufallszug kommt vor allem anderen, auch vor dem Buch.
+  if (profil.zufallszuege && zufall() < profil.zufallszuege) {
+    const zug = zufallszug(fen, zufall);
+    if (zug) return zug;
+  }
   if (buchzuege.length > 0 && zufall() < buchtreue) {
     const buchzug = zufallsauswahl(buchzuege, zufall);
     if (buchzug) return { uci: buchzug, quelle: "buch", fehler: null, verlust: 0 };

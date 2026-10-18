@@ -9,12 +9,14 @@
 //
 // Aufruf (im Ordner app/, die Pakete werden nur zum Erzeugen gebraucht, nicht in der App):
 //   npm install --no-save @dicebear/core@9 @dicebear/personas@9
-//   node skripte/erzeuge-gegnerbilder.mjs
+//   node skripte/erzeuge-gegnerbilder.mjs          (nur fehlende Porträts, seit 0.2.86)
+//   node skripte/erzeuge-gegnerbilder.mjs --alle   (alle neu)
+// Nur fehlende, damit eine neuere Fassung von DiceBear die vorhandenen Bilder nicht verändert.
 // Die Kennungen müssen zu engine/gegnerliste*.ts passen; der Test engine/gegner.test.ts prüft,
 // dass es zu jedem Gegner ein Porträt gibt.
 import { createAvatar } from "@dicebear/core";
 import * as personas from "@dicebear/personas";
-import { mkdirSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -50,6 +52,10 @@ const GRUPPEN = {
 
 /** Alle Gegner mit ihrer Gruppe (Reihenfolge wie engine/gegnerliste*.ts). */
 const GEGNER = {
+  fritzi: "maedchen",
+  willi: "aeltererMann",
+  trude: "aeltereFrau",
+  bruno: "junge",
   lotta: "maedchen",
   paula: "maedchen",
   max: "junge",
@@ -116,8 +122,12 @@ const GEGNER = {
   "gm-lindqvist": "aeltererMann",
 };
 
+const ALLE = process.argv.includes("--alle");
 mkdirSync(ZIEL, { recursive: true });
+let geschrieben = 0;
 for (const [kennung, gruppe] of Object.entries(GEGNER)) {
+  const datei = join(ZIEL, `${kennung}.svg`);
+  if (!ALLE && existsSync(datei)) continue;
   const [hair, facialHairProbability, grau] = GRUPPEN[gruppe];
   const svg = createAvatar(personas, {
     seed: kennung,
@@ -130,6 +140,7 @@ for (const [kennung, gruppe] of Object.entries(GEGNER)) {
     eyes: ["open", "glasses", "happy", "wink"],
     mouth: ["smile", "bigSmile", "smirk", "lips"],
   }).toString();
-  writeFileSync(join(ZIEL, `${kennung}.svg`), svg);
+  writeFileSync(datei, svg);
+  geschrieben += 1;
 }
-console.log(`${Object.keys(GEGNER).length} Porträte nach ${ZIEL}`);
+console.log(`${geschrieben} Porträts nach ${ZIEL}`);

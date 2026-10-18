@@ -50,7 +50,8 @@ describe("Elo-Zahl der Bots", () => {
   it("Anzeige: auf 50 gerundet, außerhalb der Eichung nur die Grenze", () => {
     expect(staerkeangabe(1083)).toEqual({ art: "etwa", wert: 1100 });
     expect(staerkeangabe(1074)).toEqual({ art: "etwa", wert: 1050 });
-    expect(staerkeangabe(2650)).toEqual({ art: "ueber", wert: ANGABE_HOECHSTENS });
+    expect(staerkeangabe(2650)).toEqual({ art: "etwa", wert: 2650 });
+    expect(staerkeangabe(3400)).toEqual({ art: "ueber", wert: ANGABE_HOECHSTENS });
     expect(staerkeangabe(310)).toEqual({ art: "unter", wert: ANGABE_MINDESTENS });
     expect(staerkeangabe(ANGABE_HOECHSTENS)).toEqual({ art: "etwa", wert: ANGABE_HOECHSTENS });
   });

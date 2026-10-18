@@ -9,12 +9,16 @@
  * Stufe) und seit 0.2.65 einen Spielstil (engine/stil.ts, −2 sehr defensiv bis +2 sehr
  * aggressiv). Die Stufen je Phase zeigt die App nicht (Überraschung); die Funktionen dazu stehen
  * in engine/gegner.ts. Gemessen mit `npm run messen:stufen -- 3@nina-3` je Gegner.
- * Abhängigkeiten: engine/gegnerbau.ts (Typ und Helfer), engine/gegnerliste1.ts, gegnerliste2.ts.
+ * Abhängigkeiten: engine/gegnerbau.ts (Typ und Helfer), engine/gegnerliste0.ts (Spaß-Bots),
+ * gegnerliste1.ts, gegnerliste2.ts.
  */
 import type { Gegner } from "./gegnerbau";
 export type { Gegner } from "./gegnerbau";
 import { GEGNER_STUFE_1_BIS_4 } from "./gegnerliste1";
 import { GEGNER_STUFE_5_BIS_8 } from "./gegnerliste2";
 
-/** Alle vorgefertigten Gegner, 64 (acht je Stufe), in der Reihenfolge der Teildateien. */
+/**
+ * Alle vorgefertigten Gegner: 64 (acht je Stufe), in der Reihenfolge der Teildateien. Die
+ * Spaß-Bots (engine/gegnerliste0.ts) kommen hinzu, sobald sie gemessen sind.
+ */
 export const GEGNER: readonly Gegner[] = [...GEGNER_STUFE_1_BIS_4, ...GEGNER_STUFE_5_BIS_8];

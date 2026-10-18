@@ -13,6 +13,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
 import { tagesform, type Verlauf } from "../../engine/menschlich";
+import { gegnerVon } from "../../engine/gegner";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { phaseVon } from "../../spiel/phasen";
 import { ladeKapitel } from "../../daten/laden";
@@ -149,6 +150,8 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
       stil: jetzige?.einstellung.stil ?? 0,
       blindeFlecken: jetzige?.einstellung.blindeFlecken ?? [],
       verlauf: jetzige ? verlaufVon(jetzige) : undefined,
+      // Spaß-Bots (0.2.86): der Anteil steht in der Liste, nicht in der gespeicherten Partie.
+      zufallszuege: gegnerVon(jetzige?.einstellung.bot ?? null)?.zufallszuege,
     };
     engineZug(
       engine,

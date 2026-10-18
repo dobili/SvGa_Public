@@ -101,6 +101,7 @@ function spieler(kuerzel: string): Spieler {
         fehlerarten: vorgefertigt.fehlerarten,
         stil: vorgefertigt.stil,
         blindeFlecken: vorgefertigt.blindeFlecken,
+        zufallszuege: vorgefertigt.zufallszuege,
       },
     };
   }

@@ -93,9 +93,22 @@ export function unterAbhakliste(
   return (gegnerliste ?? FEHLERARTEN).filter((art) => erlaubt.includes(art));
 }
 
-/** Die Gegner einer Stufe (Klasse = gerundeter Durchschnitt), nach Durchschnitt sortiert. */
+/** Ist der Gegner ein Spaß-Bot (mit Zufallszügen, 0.2.86)? */
+export function istSpassbot(g: Gegner): boolean {
+  return (g.zufallszuege ?? 0) > 0;
+}
+
+/**
+ * Die Gegner einer Stufe (Klasse = gerundeter Durchschnitt), nach Durchschnitt sortiert; ohne
+ * die Spaß-Bots, die eine eigene Gruppe unter Stufe 1 bilden (`spassbots`).
+ */
 export function gegnerDerStufe(nummer: Stufennummer): Gegner[] {
-  return gegnerSortiert().filter((g) => Math.round(durchschnitt(g)) === nummer);
+  return gegnerSortiert().filter((g) => !istSpassbot(g) && Math.round(durchschnitt(g)) === nummer);
+}
+
+/** Die Spaß-Bots (0.2.86), vom schwächsten zum stärksten (mehr Zufall heißt schwächer). */
+export function spassbots(): Gegner[] {
+  return GEGNER.filter(istSpassbot).sort((a, b) => (b.zufallszuege ?? 0) - (a.zufallszuege ?? 0));
 }
 
 /** Alle Gegner nach Durchschnitt sortiert, bei Gleichstand nach Mittelspiel. */

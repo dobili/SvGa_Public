@@ -1,5 +1,5 @@
 /**
- * Text zur Elo-Zahl eines Bots oder einer Stufe: „etwa 1100“, „über 2200“, „unter 400“.
+ * Text zur Elo-Zahl eines Bots oder einer Stufe: „etwa 1100“, „über 3300“, „unter 400“.
  *
  * Rolle im Gesamtbild: Gemeinsame Schreibweise für Gegnerwahl, Sprechblase und die Karte
  * „Spielstärke“ (Rückfrage S23), dazu der Bereich einer Stufe; die Rechnung steht in
@@ -11,7 +11,7 @@ import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 
 /**
- * Der Text zu einer Zahl. Beispiel: 1083 → „etwa 1100“; 2650 → „über 2200“.
+ * Der Text zu einer Zahl. Beispiel: 1083 → „etwa 1100“; 3400 → „über 3300“.
  */
 export function staerketext(wert: number): string {
   const angabe = staerkeangabe(wert);
@@ -19,8 +19,8 @@ export function staerketext(wert: number): string {
 }
 
 /**
- * Der Bereich einer Stufe als Text. Beispiel: 1042 bis 1301 → „etwa 1050 bis 1300“; 2200 bis
- * 2409 → „etwa 2200 bis über 2200“; gleiche Enden → „etwa 1100“.
+ * Der Bereich einer Stufe als Text. Beispiel: 1042 bis 1301 → „etwa 1050 bis 1300“; 2976 bis
+ * 3400 → „etwa 3000 bis über 3300“; gleiche Enden → „etwa 1100“.
  */
 export function bereichstext(nummer: Stufennummer): string {
   const { von, bis } = bereichDerStufe(nummer);

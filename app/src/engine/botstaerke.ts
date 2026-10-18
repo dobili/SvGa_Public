@@ -19,11 +19,15 @@ import { GEGNER } from "./gegnerliste";
 import type { Stufennummer } from "./stufen";
 
 /**
- * Bereich, in dem die Zahl eine Bedeutung hat: Die Eichung von „Deine Spielstärke“ beruht auf
- * Partien von 400 bis 2200 (je 200-Punkte-Band 30 Partien); darüber und darunter wird nicht
- * hochgerechnet, die App zeigt „über 2200“ oder „unter 400“.
+ * Bereich, in dem die Zahl eine Bedeutung hat. Unten: Die Eichung von „Deine Spielstärke“ beruht
+ * auf Partien ab 400; darunter zeigt die App „unter 400“. Oben: Bis 0.2.85 stand über 2200 (Ende
+ * der Eichdaten) nur „über 2200“; damit sahen Stufe 5 bis 8 gleich aus, obwohl die Ergebnisse sie
+ * klar trennen (Rückmeldung des Autors, 18.10.2026 abends). Seit 0.2.86 zeigt die App auch darüber
+ * die Zahl der Elo-Leiter: Sie kommt dort allein aus den Ergebnissen gegen die tieferen, an der
+ * Skala verankerten Stufen. Die Grenze liegt über der vollen Engine (Stufe 8, etwa 3200), weil es
+ * darüber nichts mehr zu messen gibt.
  */
-export const ANGABE_HOECHSTENS = 2200;
+export const ANGABE_HOECHSTENS = 3300;
 export const ANGABE_MINDESTENS = 400;
 const RUNDUNG = 50;
 const ERSTE_STUFE = 1;
@@ -74,8 +78,8 @@ export function gegnerstaerke(einstellung: {
 }
 
 /**
- * Was zu einer Zahl angezeigt wird: auf 50 gerundet; über 2200 und unter 400 nur die Grenze.
- * Beispiel: 1083 → etwa 1100; 2650 → über 2200; 310 → unter 400.
+ * Was zu einer Zahl angezeigt wird: auf 50 gerundet; über 3300 und unter 400 nur die Grenze.
+ * Beispiel: 1083 → etwa 1100; 2650 → etwa 2650; 3400 → über 3300; 310 → unter 400.
  */
 export function staerkeangabe(wert: number): Staerkeangabe {
   if (wert > ANGABE_HOECHSTENS) return { art: "ueber", wert: ANGABE_HOECHSTENS };
@@ -98,9 +102,23 @@ export function bereichDerStufe(nummer: Stufennummer): {
   readonly von: number;
   readonly bis: number;
 } {
-  const werte = GEGNER.filter((g) => stufeVon(g.stufenJePhase) === nummer)
-    .map((g) => staerkeDesBots(g.kennung))
-    .filter((w): w is number => w !== null);
+  const bots = GEGNER.filter((g) => !g.zufallszuege && stufeVon(g.stufenJePhase) === nummer);
+  const werte = gemesseneZahlen(bots);
   if (werte.length === 0) return { von: STUFEN_STAERKE[nummer], bis: STUFEN_STAERKE[nummer] };
+  return { von: Math.min(...werte), bis: Math.max(...werte) };
+}
+
+/** Die gemessenen Zahlen einer Gruppe von Bots (ungemessene fallen weg). */
+function gemesseneZahlen(bots: readonly { readonly kennung: string }[]): number[] {
+  return bots.map((g) => staerkeDesBots(g.kennung)).filter((w): w is number => w !== null);
+}
+
+/**
+ * Der Bereich der Spaß-Bots (0.2.86, eigene Gruppe unter Stufe 1); null, solange keiner gemessen
+ * ist. Beispiel: vier Bots von 520 bis 940 → { von: 520, bis: 940 }.
+ */
+export function bereichDerSpassbots(): { readonly von: number; readonly bis: number } | null {
+  const werte = gemesseneZahlen(GEGNER.filter((g) => (g.zufallszuege ?? 0) > 0));
+  if (werte.length === 0) return null;
   return { von: Math.min(...werte), bis: Math.max(...werte) };
 }

@@ -24,6 +24,11 @@ export interface Gegner {
   readonly blindeFlecken: readonly BlinderFleck[];
   /** Spielstil von −2 (sehr defensiv) bis 2 (sehr aggressiv), engine/stil.ts (0.2.65). */
   readonly stil: number;
+  /**
+   * Anteil der Züge, die ein beliebiger legaler Zug sind (engine/zufallszug.ts); nur bei den
+   * Spaß-Bots (0.2.86), die anderen haben keinen.
+   */
+  readonly zufallszuege?: number;
 }
 
 /** Streuung um das Mittelspiel, höchstens zwei Stufen (Vorgabe des Autors). */
@@ -49,6 +54,28 @@ export const FEIN: readonly Fehlerart[] = [
   "pattGesetzt",
   "ungenau",
 ];
+
+/** Höchster Anteil an Zufallszügen (darüber spielt der Bot gar nicht mehr Schach). */
+const ZUFALL_HOECHSTENS = 0.9;
+
+/**
+ * Baut einen Spaß-Bot (Wunsch des Autors, 0.2.86): Stufe 1 in allen Phasen und dazu ein Anteil
+ * an Zufallszügen. Beispiel: spassbot("fritzi", "Fritzi", 0.6, GROB, [], 1).
+ * Sonderfall: ein Anteil über 0,9 oder unter 0 ist ein Programmierfehler und wirft.
+ */
+export function spassbot(
+  kennung: string,
+  name: string,
+  zufallszuege: number,
+  fehlerarten: readonly Fehlerart[],
+  blindeFlecken: readonly BlinderFleck[],
+  stil: number,
+): Gegner {
+  if (zufallszuege <= 0 || zufallszuege > ZUFALL_HOECHSTENS) {
+    throw new Error(`Spaß-Bot ${kennung}: Zufallsanteil ${zufallszuege}`);
+  }
+  return { ...gegner(kennung, name, [1, 1, 1], fehlerarten, blindeFlecken, stil), zufallszuege };
+}
 
 /**
  * Baut einen Gegner und prüft Streuung und Stil. Beispiel: gegner("nina", "Nina", [3, 3, 3],

@@ -2736,3 +2736,48 @@ einem Knopf, der den Stand für den Chat in die Zwischenablage legt.
 - Folge für alle Sitzungen (CLAUDE.md, Regel 8): Das Format der Punkte in
   `docs/AUFGABEN_AUTOR.md` bleibt „- [ ] Kennung. Text“ mit eingerückten Folgezeilen, sonst sieht
   die App sie nicht (ein Test liest die echte Datei).
+
+## Genauigkeit und Spielstärke neu eichen (Plan, 18.10.2026 vormittags, Opus; Entscheidungen des Autors)
+
+Ausgangslage: Unsere Genauigkeit folgt der Formel von Lichess und liegt bei schwachem Spiel 10 bis
+19 Punkte über chess.com (CAPS2, Formel geheim). Die Spielstärke-Tabelle ist seit 0.2.72 an sieben
+Partien des Autors geeicht, also an ihn gebunden; die Spielbewertung von chess.com nimmt zudem die
+eigene Wertungszahl als Ausgangspunkt. Der Autor möchte, dass seine Leser (die beide Plattformen
+nutzen) Zahlen bekommen, die zu beiden passen. Entschieden (alle Punkte vom Autor bestätigt):
+
+1. **Schalter in den Einstellungen** für die Genauigkeit: „Lichess“, „Mittelweg“ (Standard),
+   „nahe chess.com“. Eine Rechnung mit zwei Reglern: Steilheit der Zugkurve (Lichess 0,04354;
+   strenger heißt kleine Fehler zählen mehr) und Gewicht der Züge in entschiedenen Stellungen
+   (weniger Polster). „Lichess“ = genau die Lichess-Werte; „nahe chess.com“ = an chess.com-
+   Genauigkeiten geeicht; „Mittelweg“ = Regler halb dazwischen. Die gespeicherten Bewertungen je
+   Stellung reichen: Ein Wechsel rechnet alle Partien sofort neu, kein neues Speicherformat.
+2. **Anzeige:** eine Zahl mit dem Modus darunter; die beiden anderen Werte in der aufklappbaren
+   Erklärung.
+3. **Spielstärke unabhängig vom Schalter,** aus einer festen inneren Genauigkeit. Sie ist die
+   **Mitte zweier Kurven:** Genauigkeit → chess.com-Wertungszahl (geeicht an gewerteten
+   chess.com-Partien) und Genauigkeit → Lichess-Wertungszahl (geeicht an Lichess-Partien). Die
+   Erklärung nennt beide, etwa „≈ 1250 (chess.com ≈ 1100 · Lichess ≈ 1400)“, und sagt, dass die
+   Mitte zu keiner echten Liste gehört. Damit ist die Schätzung nicht mehr an den Autor gebunden.
+4. **Zusätzlich die Spielstärke über die letzten zehn Partien** (eine einzelne Partie streut
+   erwartbar um etwa ±300 Punkte; über zehn gleicht sich das aus).
+5. **Urteilswörter je Phase** („Sehr gut“, „Gut“ …) hängen an der festen inneren Genauigkeit,
+   damit der Schalter sie nicht verschiebt.
+6. **Daten:** öffentliche Schnittstellen von chess.com (`api.chess.com/pub/…`: Partien mit
+   Wertungszahlen, PGN, `time_class`, `rated`, `accuracies` bei ausgewerteten Partien; Anfragen
+   nacheinander) und Lichess (Partien je Spieler mit Bewertung und offizieller Genauigkeit).
+   Gewertete Schnellschach-Partien, gleich viele je 200-Punkte-Band von 400 bis 2400, zuerst 300
+   Partien je Plattform, aufstocken nur bei zu großer Streuung. Ausgelassen: unsichere Wertungen
+   (neue Konten), sehr kurze Partien, Abbrüche. Kennung bei den Abfragen: nur der Name der Website
+   (`schach-von-grund-auf.com`), keine Adresse. Rohdaten nur lokal (`buch/arbeit/eichung/`, nie
+   committen); ins Repository nur die geeichten Zahlen und eine Zusammenfassung ohne Namen.
+7. **Engine:** dieselbe wie in der App (Stockfish 19 lite, ein Kern), **feste Tiefe 18** statt
+   fester Zeit, mit Zeitgrenze als Sicherung; auch die Auswertung in der App rechnet künftig bis
+   Tiefe 18, damit Eichung und App übereinstimmen und alte und neue Handys dasselbe ergeben.
+   Nachrechnen mit Zwischenständen (fortsetzbar), in Läufen unter zwei Stunden.
+8. **Kontrolle:** ein Teil der Partien bleibt beim Eichen außen vor und prüft das Ergebnis; der
+   Lichess-Modus wird gegen die offizielle Lichess-Genauigkeit geprüft.
+9. **Bot-Stufen:** Nach Abschluss der Bot-Eichung (anderer Chat) werden die Elo-Angaben der
+   Stufen auf dieselbe Skala gebracht wie die neue Spielstärke.
+10. **Zuständigkeit:** Fables Kontingent ist verbraucht; Opus macht alles, auch die Teile in
+    `spiel/` und `engine/` (Ausnahme von der Aufteilung vom 18.10.2026). Vor dem Einbau `main`
+    einmergen, weil die Bot-Eichung noch läuft.

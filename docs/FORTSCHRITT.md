@@ -1309,7 +1309,9 @@ Archiv-Repository; was davon noch offen ist, steht hier.
       Tiefe 18 in der Auswertung, Spielstärke als Mitte mit beiden Einzelwerten in der
       Erklärung, Spielstärke über die letzten zehn Partien, Urteilswörter an der inneren
       Genauigkeit; Elo-Angaben der Bot-Stufen angleichen; Tests, Doku, Nachtest, Version.
-   Stand: Plan festgehalten (0.2.79); noch nichts gesammelt oder gerechnet.
+   Stand: a gebaut (`pipeline/eichung/`: `auswahl.py` Bänder und Prüfung, `netz.py` Abfragen,
+   `chesscom.py` mit Länder- und Titellisten, `lichess.py` mit Teams, `sammeln.py` fortsetzbar,
+   Tests `pipeline/tests/test_eichung_auswahl.py`); Sammellauf mit 300 je Plattform läuft.
 
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 

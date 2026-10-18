@@ -13,7 +13,9 @@ import { useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeTaktik } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
-import { useSpeicher } from "../../speicher/speicher";
+import { mitVorlieben } from "../../speicher/partien";
+import { aendere, useSpeicher } from "../../speicher/speicher";
+import { UHR_PARTIETAG } from "../../spiel/uhr";
 import {
   BEREICHE,
   TRAINER_JE_BEREICH,
@@ -56,17 +58,23 @@ function PlanTaktik() {
   );
 }
 
-/** Zum Spiel gegen die Engine. */
+/**
+ * Zum Spiel gegen die Engine. Seit 0.2.91 stellt der Knopf vorher die Bedenkzeit 10 + 0 ein
+ * (Kapitel 12, Partietag); der Leser kann sie beim Spielen noch ändern.
+ */
 function PlanPartie() {
   const { navigiere } = useNavigation();
+  const zumSpielen = async () => {
+    await aendere((d) => ({
+      ...d,
+      spiel: mitVorlieben(d.spiel, { ...d.spiel.vorlieben, uhr: UHR_PARTIETAG }),
+    }));
+    navigiere({ bildschirm: "spielen" });
+  };
   return (
     <>
       <p className="hinweis">{t("dreissig.partieHinweis")}</p>
-      <button
-        type="button"
-        className="knopf-zweit"
-        onClick={() => navigiere({ bildschirm: "spielen" })}
-      >
+      <button type="button" className="knopf-zweit" onClick={() => void zumSpielen()}>
         {t("dreissig.partieStarten")}
       </button>
     </>

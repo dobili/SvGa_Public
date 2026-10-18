@@ -26,6 +26,7 @@ import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
 import { LEERER_SPIELSTAND, spielstandAus, type Spielstand } from "./partien";
+import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
 export const SCHEMA_VERSION = 4;
@@ -51,6 +52,8 @@ export const BRETTARTEN = [
 ] as const;
 export type Brettfarben = (typeof BRETTARTEN)[number];
 export type Strenge = "locker" | "streng";
+/** „Erst selbst denken“ auch vor Werkzeugen und Engine an den Abbildungen (seit 0.2.90). */
+export type VorWerkzeugen = "aus" | "an";
 /**
  * Die Bildsätze der Figuren (seit 0.2.82, Auswahl des Autors vom 18.10.2026), je Gruppe drei:
  * Klassisch, Modern, Holz. Die Dateien liegen in public/figuren/<satz>/, Herkunft und Lizenz in
@@ -85,6 +88,11 @@ export interface Einstellungen {
    * (spiel/staerkemodell.ts); ältere Stände ohne diesen Eintrag lesen sich als „mittelweg“.
    */
   readonly genauigkeitsmodus: Genauigkeitsmodus;
+  /**
+   * Seit 0.2.90 (Wunsch des Autors, Pflichtenheft 4 und 5.1): An den Abbildungen erst selbst
+   * einschätzen, dann Werkzeuge und Engine. Ältere Stände ohne diesen Eintrag lesen sich als „aus“.
+   */
+  readonly vorWerkzeugen: VorWerkzeugen;
 }
 
 export const STANDARD_EINSTELLUNGEN: Einstellungen = {
@@ -93,6 +101,7 @@ export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   figurensatz: "buch",
   ton: "aus",
   genauigkeitsmodus: STANDARD_GENAUIGKEITSMODUS,
+  vorWerkzeugen: "aus",
 };
 
 /** Je Kapitelnummer die Positionen der abgehakten Lernziele (0 = erster Punkt der Buchliste). */
@@ -136,6 +145,10 @@ export interface Nutzerdaten {
   readonly karten: Karten;
   /** Fehlerdatenbank des Lesers (ab Format 4, Kapitel 12). */
   readonly fehler: readonly Fehlereintrag[];
+  /** Seit 0.2.90: Trefferzahlen bei „Zug erraten“ je Partie (speicher/trainerverlauf.ts). */
+  readonly zugErraten: Rateverlauf;
+  /** Seit 0.2.90: Stand des 30-Minuten-Plans als JSON, damit er in der Sicherung steckt. */
+  readonly planstand: string | null;
 }
 
 /** Ergebnis einer Prüfung: umgewandelte Daten oder ein Grund für den Leser. */
@@ -160,6 +173,8 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     spiel: LEERER_SPIELSTAND,
     karten: {},
     fehler: [],
+    zugErraten: {},
+    planstand: null,
   };
 }
 
@@ -210,6 +225,7 @@ export function einstellungenAus(roh: unknown): Einstellungen {
     ton: roh.ton === "an" ? "an" : "aus",
     genauigkeitsmodus:
       GENAUIGKEITSMODI.find((m) => m === roh.genauigkeitsmodus) ?? STANDARD_GENAUIGKEITSMODUS,
+    vorWerkzeugen: roh.vorWerkzeugen === "an" ? "an" : "aus",
   };
 }
 
@@ -280,6 +296,8 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     spiel: spielstandAus(roh.spiel),
     karten: kartenAus(roh.karten),
     fehler: fehlerAus(roh.fehler),
+    zugErraten: rateverlaufAus(roh.zugErraten),
+    planstand: planstandTextAus(roh.planstand),
   };
 }
 

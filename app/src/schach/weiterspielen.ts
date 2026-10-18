@@ -68,7 +68,7 @@ export function legaleZiele(fen: string, von: string): string[] {
 /**
  * Felder mit Figuren der Seite am Zug, die mindestens einen legalen Zug haben.
  *
- * Warum: Beim Ziehen per Wischen (seit 0.2.90) darf nur auf diesen Feldern ein Wischen beginnen;
+ * Warum: Beim Ziehen per Wischen (seit 0.2.91) darf nur auf diesen Feldern ein Wischen beginnen;
  * überall sonst bleibt das Scrollen der Seite frei.
  * Beispiel: Grundstellung → die acht Bauern und beide Springer. Sonderfall: Stellung ohne Regeln
  * (Lehrbild ohne König) → leere Liste.

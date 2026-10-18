@@ -1,7 +1,7 @@
 /**
  * Ziehen per Wischen: eine Figur mit Finger oder Maus greifen und auf dem Zielfeld ablegen.
  *
- * Rolle im Gesamtbild: Ergänzt das Antippen von Figur und Zielfeld (Konzept 10.2), seit 0.2.90
+ * Rolle im Gesamtbild: Ergänzt das Antippen von Figur und Zielfeld (Konzept 10.2), seit 0.2.91
  * (Wunsch des Autors, 18.10.2026). Brett.tsx hängt die Zeiger-Ereignisse an die Knopfschicht über
  * dem Bild; ein Wischen beginnt nur auf Feldern mit ziehbaren Figuren, damit das Scrollen der
  * Seite auf allen anderen Feldern frei bleibt (dort gilt weiter touch-action des Brettes).

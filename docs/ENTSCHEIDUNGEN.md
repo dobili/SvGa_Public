@@ -3094,7 +3094,7 @@ als ihren Inhalt, und die Namen standen ohne Umbruch. Jetzt `minmax(0, 1fr)`, di
 schrumpfen, Namen brechen mittig um (statt abgeschnitten zu werden). Der Oberflächentest misst
 die acht Porträts der Stufe 8; mit dem alten Stil wichen sie um 24 Pixel ab.
 
-## Ziehen per Wischen (18.10.2026 abends, Opus, Zweig `ziehen-wischen`, Version 0.2.90)
+## Ziehen per Wischen (18.10.2026 abends, Opus, Zweig `ziehen-wischen`, Version 0.2.91)
 
 Auftrag des Autors (abgesegnet am 18.10.2026): Figuren mit Finger oder Maus ziehen, zusätzlich
 zum Antippen, in den Einstellungen abschaltbar (Voreinstellung an), ohne dass das Scrollen der

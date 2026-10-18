@@ -1,6 +1,7 @@
 /**
  * Ein Trainer als kompakte Zeile: Symbol, Name, Fragezeichen mit dem Ablauf und der Knopf
- * „Trainieren“; unfertige Trainer mit der Plakette „folgt mit einem Update“.
+ * „Trainieren“; ein künftiger, noch unfertiger Trainer trüge die Plakette „folgt mit einem Update“
+ * (seit 0.2.71 sind alle spielbar).
  *
  * Rolle im Gesamtbild: Steht auf der Trainingsseite (Training.tsx) und im Kasten „Training und
  * Übungen“ jedes Kapitels (Kapitel.tsx). Seit 0.2.85 (Wunsch des Autors: weniger Text, schneller

@@ -3,7 +3,8 @@
  *
  * Rolle im Gesamtbild: Startseite des Bereichs (Konzept 10.1). Alle Trainer stehen von Anfang an
  * im Menü, unter genau den Namen, die später in den Trainingskästen des Buches stehen
- * (Pflichtenheft 7); unfertige tragen „folgt mit einem Update“. Ein Tipp zeigt den Ablauf.
+ * (Pflichtenheft 7); seit 0.2.71 sind alle spielbar (die Plakette „folgt mit einem Update“
+ * bleibt nur für künftige Trainer). Ein Tipp zeigt den Ablauf.
  * Seit 16.10.2026 führt je Kapitel ein Link zur Trainingsseite der Website (/training/kapNN/),
  * dem früheren Kasten „Training zu diesem Kapitel“ des Buches; sie ist offline vorhanden.
  * Seit 0.2.85 (Wunsch des Autors: viel Text) je Kapitel eine Karte mit Nummer, die Trainer als

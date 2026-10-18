@@ -4,7 +4,7 @@
  * Rolle im Gesamtbild: Zeigt jede Abbildung und jedes Werkzeugergebnis (Konzept 10.2). Ebenen in
  * dieser Reihenfolge: Felder, Feldmarkierungen, Figuren, Pfeile, Beschriftungen.
  * Bedienung: Über dem Bild liegen 64 unsichtbare Knöpfe, einer je Feld. Das ist zuverlässig auf
- * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar. Seit 0.2.90
+ * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar. Seit 0.2.91
  * lassen sich Figuren auf derselben Schicht auch per Wischen ziehen (useZiehen.ts).
  * Abhängigkeiten: masse.ts, geometrie.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
  * useZugton.ts (Ton), useZiehen.ts, i18n.
@@ -48,7 +48,7 @@ interface BrettEigenschaften {
   readonly ziele?: readonly string[];
   /** Feld einer angetippten Figur, die nicht ziehen darf: leuchtet rot (0.2.58). */
   readonly gesperrt?: string | null;
-  /** Ziehen per Wischen (seit 0.2.90); ohne diese Angabe nur Antippen. */
+  /** Ziehen per Wischen (seit 0.2.91); ohne diese Angabe nur Antippen. */
   readonly ziehen?: Ziehbedienung | null;
 }
 
@@ -123,7 +123,7 @@ const GEZOGEN_SCHATTEN = 0.35;
 
 /**
  * Die Figuren der Stellung; eine gerade gezogene Figur blass auf ihrem Feld und groß unter dem
- * Zeiger (seit 0.2.90). Die große Figur kommt in Brett zuletzt, über Pfeile und Beschriftung.
+ * Zeiger (seit 0.2.91). Die große Figur kommt in Brett zuletzt, über Pfeile und Beschriftung.
  */
 function Figuren({
   figuren,

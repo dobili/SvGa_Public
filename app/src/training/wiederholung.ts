@@ -1,8 +1,8 @@
 /**
  * Wiederholungssystem mit fünf Kästen (Konzept 9.1).
  *
- * Rolle im Gesamtbild: Die Übungen des Buches, der Taktiktrainer und „Falle oder Köder“ teilen
- * sich diese Karten. Eine
+ * Rolle im Gesamtbild: Die Übungen des Buches, der Taktiktrainer, „Falle oder Köder“, der
+ * Strukturerkenner und der Endspieltrainer teilen sich diese Karten. Eine
  * Karte wandert bei richtiger Antwort einen Kasten weiter, bei falscher zurück in Kasten 1; nur
  * mit Hilfe gelöst bleibt sie, wo sie ist. Der Bereich „Training“ zeigt, wie viele Karten fällig
  * sind. Reine Funktionen; gespeichert werden die Karten in den Nutzerdaten (speicher/format.ts,
@@ -47,11 +47,13 @@ export function uebungAusKarte(kennung: string): string | null {
 }
 
 /**
- * Trainer, deren Aufgaben in die Wiederholung kommen (Empfehlung U9, umgesetzt in 0.2.47): Ihre
- * Aufgaben haben feste Kennungen. Zähltrainer, Röntgen und Koordinaten erzeugen ihre Aufgaben
- * zufällig; dort ergibt eine Wiederholung keinen Sinn.
+ * Trainer, deren Aufgaben in die Wiederholung kommen (Empfehlung U9, umgesetzt in 0.2.47; seit
+ * 0.2.90 auch Strukturerkenner und Endspieltrainer, Pflichtenheft 7): Ihre Aufgaben haben feste
+ * Kennungen. Zähltrainer, Röntgen und Koordinaten erzeugen ihre Aufgaben zufällig; dort ergibt
+ * eine Wiederholung keinen Sinn. Das Speicherformat bleibt gleich: Karten sind nach Kennung
+ * abgelegt („struktur:…“, „endspiel:…“).
  */
-export const WIEDERHOLTE_TRAINER = ["taktik", "falle"] as const;
+export const WIEDERHOLTE_TRAINER = ["taktik", "falle", "struktur", "endspiel"] as const;
 export type WiederholterTrainer = (typeof WIEDERHOLTE_TRAINER)[number];
 
 /** Kennung der Karte zu einer Trainer-Aufgabe („taktik:taktik-b-7.6“). */

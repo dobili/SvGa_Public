@@ -14,7 +14,7 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
  * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
  * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz;
- * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.90 unter „Brett“
+ * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.91 unter „Brett“
  * der Schalter „Figuren per Wischen ziehen“ (Merker auf dem Gerät wie die Koordinaten).
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * i18n.
@@ -28,6 +28,7 @@ import {
   type Brettfarben,
   type Figurensatz,
   type Strenge,
+  type VorWerkzeugen,
   type Ton,
 } from "../../app/einstellungen";
 import {
@@ -74,6 +75,7 @@ const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figuren
 ];
 const TOENE: readonly Ton[] = ["aus", "an"];
 const STRENGEN: readonly Strenge[] = ["locker", "streng"];
+const VOR_WERKZEUGEN: readonly VorWerkzeugen[] = ["aus", "an"];
 const KOORDINATEN = ["an", "aus"] as const;
 type Koordinaten = (typeof KOORDINATEN)[number];
 
@@ -239,6 +241,14 @@ function TrainingBereich() {
         beiWahl={(strenge) => aendereEinstellungen({ strenge })}
       />
       <p className="hinweis">{t(`einstellungen.strenge.${einstellungen.strenge}.text`)}</p>
+      <Auswahl
+        name={t("einstellungen.vorWerkzeugen")}
+        werte={VOR_WERKZEUGEN}
+        gewaehlt={einstellungen.vorWerkzeugen}
+        text={(wert) => t(`einstellungen.vorWerkzeugen.${wert}`)}
+        beiWahl={(vorWerkzeugen) => aendereEinstellungen({ vorWerkzeugen })}
+      />
+      <p className="hinweis">{t("einstellungen.vorWerkzeugen.text")}</p>
     </>
   );
 }

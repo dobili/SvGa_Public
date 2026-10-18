@@ -11,7 +11,7 @@
  * ab, ebenso ein Tipp auf den Hintergrund. Seit 0.2.39 ist der Titel „Abb. 7.12“ ein Knopf: Ein
  * Tipp öffnet ein Nummernfeld für den Sprung zu einer anderen Abbildung (Idee des Autors). Seit
  * 0.2.90 kann „Erst selbst denken“ Werkzeuge und Engine zurückhalten, bis der Leser die Stellung
- * eingeschätzt hat (SelbstDenken.tsx, Einstellung „Auch vor Werkzeugen und Engine“). Seit 0.2.92
+ * eingeschätzt hat (SelbstDenken.tsx, Einstellung „Auch vor Werkzeugen und Engine“). Seit 0.2.93
  * legt das Lesezeichen am Brett die gezeigte Stellung in die Lernsammlung (SammelFormular.tsx).
  * Abhängigkeiten: daten, analyse, engine, ui/brett, ui/komponenten (Werkzeugwahl, Nummernsprung),
  * Navigation, i18n.

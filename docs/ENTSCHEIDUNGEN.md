@@ -3094,7 +3094,30 @@ als ihren Inhalt, und die Namen standen ohne Umbruch. Jetzt `minmax(0, 1fr)`, di
 schrumpfen, Namen brechen mittig um (statt abgeschnitten zu werden). Der Oberflächentest misst
 die acht Porträts der Stufe 8; mit dem alten Stil wichen sie um 24 Pixel ab.
 
-## Lernsammlung (18.10.2026 nachts, Opus, Zweig `lernsammlung`, Version 0.2.92, Format 5)
+## Ziehen per Wischen (18.10.2026 abends, Opus, Zweig `ziehen-wischen`, Version 0.2.92)
+
+Auftrag des Autors (abgesegnet am 18.10.2026): Figuren mit Finger oder Maus ziehen, zusätzlich
+zum Antippen, in den Einstellungen abschaltbar (Voreinstellung an), ohne dass das Scrollen der
+Seite leidet.
+
+- **Wo es gilt:** überall, wo die Brettbedienung „Ziehen“ wirkt (`useBrettbedienung`), also
+  Partie, Abbildungen mit „Ziehen“, Übungen und alle Trainer mit Zügen. Stellungseditor,
+  Zähl- und Koordinatentrainer bleiben beim Antippen.
+- **Scrollen:** `touch-action: none` nur auf den Knöpfen der Felder mit ziehbarer Figur
+  (`ziehbareFelder` in `schach/weiterspielen.ts`); alle anderen Felder behalten `manipulation`
+  des Brettes. Ein Wischen beginnt erst nach 6 Bildpunkten Bewegung, darunter bleibt es ein Tipp.
+- **Ablegen:** regelgerechtes Feld → Zug (mit Umwandlungswahl wie beim Tippen); Startfeld,
+  verbotenes Feld oder neben dem Brett → die Figur bleibt gewählt. Der Klick nach dem Ablegen
+  wird 400 ms gesperrt, sonst wählte er die Figur gleich wieder ab.
+- **Einstellung:** Merker `wischen` auf dem Gerät statt im Speicherformat, wie die Koordinaten:
+  hängt von Gerät und Hand ab, nicht vom Lernstand; außerdem bleibt das Speicherformat für die
+  parallel laufende Erweiterung frei.
+- **Aufbau:** `ui/brett/useZiehen.ts` (Zeiger-Ereignisse), `geometrie.ts` `feldAnPunkt`,
+  Marken aus `Brett.tsx` nach `Brettmarken.tsx` (Datei unter 400 Zeilen). Oberflächentest
+  `tests/e2e/wischen.spec.ts`: Maus, Finger (Touch über CDP, nur Chromium), Scrollen und
+  Abschalten.
+
+## Lernsammlung (18.10.2026 nachts, Opus, Zweig `lernsammlung`, Version 0.2.93, Format 5)
 
 Auftrag des Autors (abgesegnet am 18.10.2026): eigene Stellungen aus Abbildung, Partie oder
 Trainer mit Notiz und einem Plan-Satz speichern, nach Eröffnung geordnet, PGN-Export für

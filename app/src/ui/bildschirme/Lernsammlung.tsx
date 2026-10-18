@@ -2,7 +2,7 @@
  * Bildschirm „Lernsammlung“: eigene Stellungen nach Eröffnung geordnet, abfragen, als PGN für
  * eine Lichess-Studie ausgeben, neue Stellung als FEN eintragen.
  *
- * Rolle im Gesamtbild: Pflichtenheft Stufe 3 (AP 15), Konzept 4.7; ersetzt seit 0.2.92 den
+ * Rolle im Gesamtbild: Pflichtenheft Stufe 3 (AP 15), Konzept 4.7; ersetzt seit 0.2.93 den
  * Platzhalter „Lernsammlung folgt später“. Erreichbar über die Karte „Lernsammlung“ im Training
  * und nach jedem Speichern („Lernsammlung öffnen“). Einträge kommen meist von der Abbildung,
  * aus dem Rückblick einer Partie oder nach einer Trainer-Aufgabe („In die Lernsammlung“).

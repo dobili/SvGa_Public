@@ -13,7 +13,7 @@
  *   (speicher/partien.ts).
  * - Format 3 (ab AP 13): dazu „karten“, die Wiederholungskarten (training/wiederholung.ts).
  * - Format 4 (ab 0.2.65): dazu „fehler“, die Fehlerdatenbank (training/fehlerdatenbank.ts).
- * - Format 5 (ab 0.2.92): dazu „sammlung“, die Lernsammlung aus Konzept 4.7
+ * - Format 5 (ab 0.2.93): dazu „sammlung“, die Lernsammlung aus Konzept 4.7
  *   (training/lernsammlung.ts). Eine ältere App lehnt Format 5 als „neuer“ ab, statt die
  *   Sammlung beim nächsten Speichern stillschweigend zu verlieren.
  * Abhängigkeiten: training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
@@ -28,7 +28,8 @@ import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
 import { sammlungAus, type Sammeleintrag } from "../training/lernsammlung";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
-import { LEERER_SPIELSTAND, spielstandAus, type Spielstand } from "./partien";
+import { LEERER_SPIELSTAND, type Spielstand } from "./partien";
+import { spielstandAus } from "./partienLesen";
 import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */

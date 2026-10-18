@@ -6,7 +6,7 @@
  * chess.com: einfache Kommentare, warum ein Zug schlecht war“). Die Sätze folgen der Engine-Karte
  * (Zugurteil.tsx), die Erklärung kommt aus spiel/erklaerung.ts.
  * Unten steht „In die Fehlerdatenbank“ (Kapitel 12, AP 13): Es öffnet das Formular mit der
- * Stellung vor dem Zug und dem gespielten Zug. Seit 0.2.92 daneben „In die Lernsammlung“ für die
+ * Stellung vor dem Zug und dem gespielten Zug. Seit 0.2.93 daneben „In die Lernsammlung“ für die
  * Stellung nach dem Zug, mit dem Weg der Partie (Eröffnung und PGN).
  * Seit 0.2.85 (Rückmeldung des Autors) nennt der Satz zu einem Fehler die Gewinnchance vorher und
  * nachher statt der Bauerneinheiten der Engine: Stockfish rechnet seine Zahl aus der Gewinnchance,

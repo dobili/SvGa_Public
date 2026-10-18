@@ -9,7 +9,7 @@
  * dem früheren Kasten „Training zu diesem Kapitel“ des Buches; sie ist offline vorhanden.
  * Seit 0.2.85 (Wunsch des Autors: viel Text) je Kapitel eine Karte mit Nummer, die Trainer als
  * Zeilen mit Symbol (Trainerkarte.tsx), Erklärungen hinter dem Fragezeichen.
- * Seit 0.2.92 führt die Karte „Lernsammlung“ zu den eigenen Stellungen (Kapitel 12, AP 15).
+ * Seit 0.2.93 führt die Karte „Lernsammlung“ zu den eigenen Stellungen (Kapitel 12, AP 15).
  * Abhängigkeiten: training/trainer.ts, daten/laden.ts, Navigation, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";

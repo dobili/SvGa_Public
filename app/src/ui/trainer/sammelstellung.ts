@@ -1,7 +1,7 @@
 /**
  * Die Stellung der laufenden Trainer-Aufgabe, für „In die Lernsammlung“ im Rundenrahmen.
  *
- * Rolle im Gesamtbild: Seit 0.2.92 lässt sich nach jeder beantworteten Aufgabe ihre Stellung in
+ * Rolle im Gesamtbild: Seit 0.2.93 lässt sich nach jeder beantworteten Aufgabe ihre Stellung in
  * die Lernsammlung legen (AP 15). Der Rundenrahmen kennt die Aufgaben nicht; jede Aufgabe meldet
  * ihre Stellung über diesen Kontext. Außerhalb einer Runde (Fehlerdatenbank, Lernsammlung)
  * fehlt der Kontext, und die Meldung bewirkt nichts.

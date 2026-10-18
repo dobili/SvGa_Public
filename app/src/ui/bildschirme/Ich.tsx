@@ -5,7 +5,7 @@
  * diesem Gerät (sichern, einspielen, löschen).
  *
  * Rolle im Gesamtbild: Konzept 10.1. Fortschritt und Datensicherung kamen mit AP 12; die
- * Lernsammlung hat seit 0.2.92 einen eigenen Bildschirm (Karte im Training) und steckt in der
+ * Lernsammlung hat seit 0.2.93 einen eigenen Bildschirm (Karte im Training) und steckt in der
  * Datensicherung. Seit 0.2.41 steht ganz oben die Wertung des Lesers aus den
  * gewerteten Partien (Wertungskurve.tsx, Wunsch des Autors). Seit 0.2.60 steht unter der Karte
  * „Einstellungen“ die Abhakliste der Fehlerarten (FehlerartenKarte.tsx, Rückfrage S7);

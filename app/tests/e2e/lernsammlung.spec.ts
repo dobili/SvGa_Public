@@ -1,5 +1,5 @@
 /**
- * Oberflächentests für die Lernsammlung (seit 0.2.92, Kapitel 12, AP 15): Stellung an der
+ * Oberflächentests für die Lernsammlung (seit 0.2.93, Kapitel 12, AP 15): Stellung an der
  * Abbildung sammeln, Eröffnung erkannt, nach Eröffnung geordnet, abfragen, als PGN sichern,
  * nach dem Neuladen noch da, löschen.
  */

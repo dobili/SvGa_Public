@@ -22,7 +22,7 @@
  * Abhängigkeiten: ui/komponenten/usePartie.ts, spiel/, i18n.
  */
 import { Eye, EyeOff } from "lucide-react";
-import { useMemo, useState } from "react";
+import { useMemo, useState, type ReactNode } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { durchschnitt, gegnername, gegnerVon as botVon, klasseVon } from "../../engine/gegner";
 import { stufe } from "../../engine/stufen";
@@ -175,9 +175,12 @@ function Spielfeld({
   phasen,
   ruhig,
   werkzeug,
+  engineKarte,
   rueckblick,
 }: {
   werkzeug: Werkzeugwahlstand;
+  /** Karte des Engine-Symbols direkt unter dem Brett (0.2.82), sonst null. */
+  engineKarte: ReactNode;
   rueckblick: Rueckblick | null;
   s: Partiesteuerung;
   partie: PartieDaten;
@@ -240,11 +243,20 @@ function Spielfeld({
         bedienung={tippbar ? bedienung : { ...bedienung, ziele: [], beiFeld: () => undefined }}
         beschriftung={t("partie.titel")}
         anfangsGedreht={partie.einstellung.eigeneFarbe === "black"}
-        werkzeugSymbole={ruhig || !hilfen.symbole ? null : <PartieSymbole werkzeug={werkzeug} />}
+        werkzeugSymbole={
+          ruhig ? null : (
+            <PartieSymbole
+              werkzeug={werkzeug}
+              mitSymbolen={hilfen.symbole}
+              mitEngine={mitWerkzeugen}
+            />
+          )
+        }
         zusatzSchalter={<RuhigSchalter ruhig={ruhig} />}
         seitenleiste={rb.leiste}
       />
       <Uhr s={s} farbe={partie.einstellung.eigeneFarbe} />
+      {engineKarte}
       {rb.karte}
       {!ruhig && mitWerkzeugen && <PartieLeiste werkzeug={werkzeug} />}
       <PartieWerkzeugkarten
@@ -303,6 +315,22 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         phasen={phasen}
         ruhig={ruhig}
         werkzeug={werkzeug}
+        engineKarte={
+          // Engine-Symbol gewählt, der Leser am Zug, Partie läuft (seit 0.2.82 als Symbol).
+          !ruhig &&
+          leser &&
+          !partie.ende &&
+          partie.einstellung.hilfen.werkzeuge &&
+          werkzeug.wahl === "engine" ? (
+            <SpielEngine
+              key={s.fen}
+              fen={s.fen}
+              zuege={partie.zuege.map((z) => z.san)}
+              startFen={partie.einstellung.startFen}
+              beiMarkierungen={(marken) => setzeHinweis({ fen: s.fen, marken })}
+            />
+          ) : null
+        }
         rueckblick={
           partie.ende && eintrag && urteile.length > 0 && !ruhig
             ? { werte: eintrag.werte, beste: eintrag.beste, urteile, varianten: eintrag.varianten }
@@ -310,15 +338,6 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         }
       />
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
-      {!ruhig && leser && partie.einstellung.hilfen.werkzeuge && (
-        <SpielEngine
-          key={s.fen}
-          fen={s.fen}
-          zuege={partie.zuege.map((z) => z.san)}
-          startFen={partie.einstellung.startFen}
-          beiMarkierungen={(marken) => setzeHinweis({ fen: s.fen, marken })}
-        />
-      )}
       {partie.ende && <Partieende partie={partie} />}
       {partie.ende && eintrag && !ruhig && (
         <Auswertung

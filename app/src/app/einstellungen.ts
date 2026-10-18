@@ -12,7 +12,15 @@
 import type { Einstellungen } from "../speicher/format";
 import { aendere, useSpeicher } from "../speicher/speicher";
 
-export type { Brettfarben, Einstellungen, Figurensatz, Strenge, Ton } from "../speicher/format";
+export type {
+  Bildsatz,
+  Brettfarben,
+  Einstellungen,
+  Figurensatz,
+  Strenge,
+  Ton,
+} from "../speicher/format";
+export { BILDSAETZE } from "../speicher/format";
 
 /** Ändert einzelne Einstellungen und speichert sie sofort (Fehler erscheinen als Hinweis). */
 export function aendereEinstellungen(teil: Partial<Einstellungen>): void {

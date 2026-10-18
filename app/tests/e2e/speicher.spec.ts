@@ -4,7 +4,7 @@
  * „Export auf einem Gerät und Import auf einem anderen“).
  */
 import { expect, test } from "@playwright/test";
-import { oeffneAbbildung, starteImBrowser } from "./hilfen";
+import { klappeAbschnittAuf, oeffneAbbildung, starteImBrowser } from "./hilfen";
 
 /** Eine Abbildung zählt erst nach 30 Sekunden am Stück (0.2.27); der Test spult die Uhr vor. */
 const VERWEILZEIT_MS = 30_000;
@@ -29,6 +29,7 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
   await expect(kapitel1).toContainText(/2 von \d+ Abbildungen angesehen/);
   await kapitel1.click();
   await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^2 von \d+$/);
+  await klappeAbschnittAuf(page, "1.4");
   const haken = (nummer: string) =>
     page.getByRole("button", { name: `Abb. ${nummer} als angesehen abhaken` });
   await expect(haken("1.26")).toHaveAttribute("aria-pressed", "true");
@@ -43,6 +44,7 @@ test("Abhaken von Hand in der Kapitelübersicht: einzeln, alle, alle zurücksetz
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: /Grundprinzipien/ }).click();
+  await klappeAbschnittAuf(page, "1.1");
   const haken = page.getByRole("button", { name: "Abb. 1.3 als angesehen abhaken" });
   await haken.click();
   await expect(haken).toHaveAttribute("aria-pressed", "true");
@@ -60,11 +62,14 @@ test("Abhaken von Hand in der Kapitelübersicht: einzeln, alle, alle zurücksetz
   await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0 von \d+$/);
 });
 
-test("Abschnitte der Kapitelübersicht: einzeln abhaken, Haken lösen, zuklappen (0.2.80)", async ({
+test("Abschnitte der Kapitelübersicht: anfangs zu, einzeln abhaken, Haken lösen, zuklappen (0.2.82)", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: /Grundprinzipien/ }).click();
+  // Seit 0.2.82 sind alle Abschnitte anfangs eingeklappt.
+  await expect(page.locator("details.abschnittsklappe[open]")).toHaveCount(0);
+  await klappeAbschnittAuf(page, "1.4");
   const haken = page.getByRole("button", { name: "Abb. 1.26 als angesehen abhaken" });
   await page.getByRole("button", { name: "Abschnitt 1.4 abhaken" }).click();
   await expect(haken).toHaveAttribute("aria-pressed", "true");
@@ -74,7 +79,7 @@ test("Abschnitte der Kapitelübersicht: einzeln abhaken, Haken lösen, zuklappen
   await expect(haken).toHaveAttribute("aria-pressed", "false");
   await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0 von \d+$/);
   // Zuklappen blendet die kleinen Bretter des Abschnitts aus.
-  await page.locator("summary", { hasText: "1.4" }).click();
+  await page.getByRole("heading", { name: /^1\.4 / }).click();
   await expect(haken).toBeHidden();
 });
 

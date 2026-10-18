@@ -81,6 +81,12 @@ export interface Spielvorlieben {
    * Engine-Stufen 1 bis 4 und die vorgefertigten Gegner machen dürfen; Vorgabe alle.
    */
   readonly erlaubteFehlerarten: readonly Fehlerart[];
+  /**
+   * Blinde Flecken der eigenen Stufe (0.2.82, Wunsch des Autors): Zugarten, die die Engine ohne
+   * vorgefertigten Gegner oft nicht sieht; Vorgabe keine. Fehlt die Angabe in älteren Daten,
+   * gilt die Vorgabe.
+   */
+  readonly blindeFlecken: readonly BlinderFleck[];
 }
 
 export interface Spielstand {
@@ -105,6 +111,7 @@ export const STANDARD_VORLIEBEN: Spielvorlieben = {
   ruecknahmeErlaubt: true,
   ruhigeAnsicht: false,
   erlaubteFehlerarten: FEHLERARTEN,
+  blindeFlecken: [],
 };
 
 export const LEERER_SPIELSTAND: Spielstand = {
@@ -382,6 +389,7 @@ function vorliebenAus(roh: unknown): Spielvorlieben {
     ruecknahmeErlaubt: roh.ruecknahmeErlaubt !== false,
     ruhigeAnsicht: roh.ruhigeAnsicht === true,
     erlaubteFehlerarten: fehlerartenAus(roh.erlaubteFehlerarten),
+    blindeFlecken: blindeFleckenAus(roh.blindeFlecken),
   };
 }
 

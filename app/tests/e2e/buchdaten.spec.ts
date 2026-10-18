@@ -3,7 +3,7 @@
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
-import { oeffneAbbildung, starteImBrowser } from "./hilfen";
+import { klappeAbschnittAuf, oeffneAbbildung, starteImBrowser } from "./hilfen";
 
 test("Lehrbild ohne König (Abb. 0.3): Zählen ja, Engine nein", async ({ page }) => {
   await starteImBrowser(page);
@@ -28,6 +28,7 @@ test("Kapitelübersicht: Kapitel 2 mit kleinen Brettern, Tipp öffnet die Abbild
   await expect(page.getByRole("heading", { name: "Kapitel 2" })).toBeVisible();
   await expect(page.getByRole("heading", { name: /2\.2 Die Spanische Partie/ })).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/kapitel-2.png" });
+  await klappeAbschnittAuf(page, "2.3");
   // Ohne das Kästchen „als angesehen abhaken“ daneben (0.2.27).
   await page.getByRole("button", { name: /^Abb\. 2\.20(?!.*abhaken)/ }).click();
   await expect(page.getByRole("heading", { name: "Abb. 2.20" })).toBeVisible();

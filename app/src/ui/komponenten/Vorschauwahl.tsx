@@ -5,7 +5,8 @@
  * soll man sehen, wie Brett und Figuren aussehen, bevor man wählt. Jede Kachel zeigt vier Felder
  * (hell, dunkel, hell, dunkel) mit weißem König und Springer und schwarzem Springer und Bauern,
  * gezeichnet wie auf dem Brett (Figur.tsx, Holzfelder.tsx). Für Bildschirmleser eine Gruppe von
- * Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck (aria-hidden).
+ * Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck (aria-hidden). Seit 0.2.82 lassen sich
+ * die Kacheln in Gruppen mit Überschrift teilen (Figurensätze: Klassisch, Modern, Holz).
  * Abhängigkeiten: app/einstellungen.ts (Typen), ui/brett/Figur.tsx, Holzfelder.tsx, masse.ts.
  */
 import { useId } from "react";
@@ -48,43 +49,58 @@ export function Brettausschnitt({ farben, satz }: { farben: Brettfarben; satz: F
   );
 }
 
+/** Eine Gruppe von Kacheln, optional mit Überschrift. */
+export interface Kachelgruppe<T extends string> {
+  readonly titel?: string;
+  readonly werte: readonly T[];
+}
+
 /**
  * Kacheln zur Wahl mit Vorschau; genau eine ist gewählt.
- * Eingaben: Name der Gruppe, Werte, gewählter Wert, Beschriftung, Vorschau je Wert, Wahl.
+ * Eingaben: Name der Wahl, Werte (oder Gruppen von Werten), gewählter Wert, Beschriftung,
+ * Vorschau je Wert, Wahl. Beispiel: Figurensätze in den Gruppen Klassisch, Modern, Holz.
  */
 export function Vorschauwahl<T extends string>({
   name,
   werte,
+  gruppen,
   gewaehlt,
   text,
   vorschau,
   beiWahl,
 }: {
   name: string;
-  werte: readonly T[];
+  werte?: readonly T[];
+  gruppen?: readonly Kachelgruppe<T>[];
   gewaehlt: T;
   text: (wert: T) => string;
   vorschau: (wert: T) => React.ReactNode;
   beiWahl: (wert: T) => void;
 }) {
+  const alle: readonly Kachelgruppe<T>[] = gruppen ?? [{ werte: werte ?? [] }];
   return (
     <div className="einstellung-auswahl" role="radiogroup" aria-label={name}>
       <span className="einstellung-name">{name}</span>
-      <div className="vorschaureihe">
-        {werte.map((wert) => (
-          <button
-            key={wert}
-            type="button"
-            role="radio"
-            aria-checked={wert === gewaehlt}
-            className="vorschaukachel"
-            onClick={() => beiWahl(wert)}
-          >
-            {vorschau(wert)}
-            <span>{text(wert)}</span>
-          </button>
-        ))}
-      </div>
+      {alle.map((gruppe, stelle) => (
+        <div key={gruppe.titel ?? stelle} className="vorschaugruppe">
+          {gruppe.titel && <span className="vorschaugruppe-titel">{gruppe.titel}</span>}
+          <div className="vorschaureihe">
+            {gruppe.werte.map((wert) => (
+              <button
+                key={wert}
+                type="button"
+                role="radio"
+                aria-checked={wert === gewaehlt}
+                className="vorschaukachel"
+                onClick={() => beiWahl(wert)}
+              >
+                {vorschau(wert)}
+                <span>{text(wert)}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+      ))}
     </div>
   );
 }

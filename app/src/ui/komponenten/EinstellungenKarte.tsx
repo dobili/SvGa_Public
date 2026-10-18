@@ -13,7 +13,7 @@
  * Ebenfalls seit 0.2.31: ausgeblendete Erklärkacheln von Zählen und Ziehen wieder anzeigen.
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
  * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
- * als Kacheln mit Vorschau.
+ * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz.
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * i18n.
  */
@@ -21,6 +21,7 @@ import { Brain, Crown, Grid3x3, Palette, Volume2, type LucideIcon } from "lucide
 import { useState } from "react";
 import {
   aendereEinstellungen,
+  BILDSAETZE,
   useEinstellungen,
   type Brettfarben,
   type Figurensatz,
@@ -42,7 +43,22 @@ import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
 import { zeigeErklaerungenWieder } from "./useErklaerung";
 
 const BRETTFARBEN: readonly Brettfarben[] = ["buch", "holz", "gruen"];
-const FIGURENSAETZE: readonly Figurensatz[] = ["buch", "klassisch", "holz"];
+/** Figurensätze in Gruppen (seit 0.2.82): wie im Buch, dann je drei klassisch, modern, Holz. */
+const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figurensatz[] }[] = [
+  { werte: ["buch"] },
+  {
+    titel: "einstellungen.figurensatz.gruppe.klassisch",
+    werte: BILDSAETZE.filter((s) => s.startsWith("klassisch-")),
+  },
+  {
+    titel: "einstellungen.figurensatz.gruppe.modern",
+    werte: BILDSAETZE.filter((s) => s.startsWith("modern-")),
+  },
+  {
+    titel: "einstellungen.figurensatz.gruppe.holz",
+    werte: BILDSAETZE.filter((s) => s.startsWith("holz-")),
+  },
+];
 const TOENE: readonly Ton[] = ["aus", "an"];
 const STRENGEN: readonly Strenge[] = ["locker", "streng"];
 const KOORDINATEN = ["an", "aus"] as const;
@@ -142,7 +158,7 @@ function FigurenBereich() {
   return (
     <Vorschauwahl
       name={t("einstellungen.figurensatz")}
-      werte={FIGURENSAETZE}
+      gruppen={FIGURENGRUPPEN.map((g) => ({ ...g, titel: g.titel && t(g.titel) }))}
       gewaehlt={einstellungen.figurensatz}
       text={(wert) => t(`einstellungen.figurensatz.${wert}`)}
       vorschau={(wert) => <Brettausschnitt farben={einstellungen.brettfarben} satz={wert} />}

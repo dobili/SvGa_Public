@@ -8,11 +8,11 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): „Alle abhaken“ und „Alle zurücksetzen“ stehen
  * direkt über der Galerie; jeder Abschnitt (1.1, 1.2 …) ist aufklappbar, zeigt seinen Stand als
  * kleinen Ring und hat einen eigenen Knopf „Abschnitt 1.1 abhaken“ oder „Haken in 1.1 lösen“.
- * Anfangs aufgeklappt sind die Abschnitte mit noch nicht angesehenen Abbildungen; fertige klappen
- * zu, damit der Leser gleich sieht, wo er weitermacht.
+ * Seit 0.2.82 (Wunsch des Autors) sind alle Abschnitte anfangs eingeklappt; ein Pfeil vorn zeigt,
+ * ob ein Abschnitt auf- oder zugeklappt ist.
  * Abhängigkeiten: daten/laden.ts, ui/brett, Navigation, Speicher, MitInfo, Ring, i18n.
  */
-import { Check } from "lucide-react";
+import { Check, ChevronRight } from "lucide-react";
 import { useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import type { Abbildung, Kapitel, Textteil } from "../../daten/laden";
@@ -26,6 +26,8 @@ import { Ring } from "./Kreisanzeige";
 
 /** Größe des Hakens im Kästchen an angesehenen Abbildungen. */
 const HAKEN_GROESSE = 15;
+/** Größe des Pfeils, der auf- und zugeklappt zeigt. */
+const PFEIL_GROESSE = 18;
 /** So viele Zeichen der Bildunterschrift stehen unter dem kleinen Brett. */
 const KURZTEXT_ZEICHEN = 60;
 
@@ -204,7 +206,7 @@ function Abschnitt({ gruppe }: { gruppe: Gruppe }) {
     gesamt: nummern.length,
   };
   const fertig = anteil.erreicht === anteil.gesamt;
-  const [offen, setzeOffen] = useState(!fertig);
+  const [offen, setzeOffen] = useState(false);
   const stand = t("fortschritt.anteil", anteil);
   return (
     <details
@@ -213,6 +215,7 @@ function Abschnitt({ gruppe }: { gruppe: Gruppe }) {
       onToggle={(ereignis) => setzeOffen(ereignis.currentTarget.open)}
     >
       <summary>
+        <ChevronRight className="klappzeichen" size={PFEIL_GROESSE} aria-hidden="true" />
         <Ring anteil={anteil} beschriftung={stand} klein />
         <h2 className="abschnittsklappe-titel">
           {gruppe.nummer} {gruppe.titel}

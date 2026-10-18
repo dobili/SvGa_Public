@@ -50,6 +50,27 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.71“, dann 
       chess.com: Eröffnung Großartig, Taktik Exzellent, Strategie Gut, Endspiel Gut. Prüfe, ob
       die Marken auf dem Handy in eine Zeile passen und die Farben lesbar sind.
 
+### Neu in 0.2.70 (etwa 10 Minuten, mit Engine; Abweichungsmodus, Opus)
+
+- [ ] N304. **Abweichungsmodus:** Training › Kapitel 2 › „Abweichungsmodus“ › Trainieren.
+      Eröffnung und Seite wählen (etwa Spanische Partie, Weiß), „Runde starten“. Die App spielt
+      einige Buchzüge, dann „Die Engine verlässt das Buch mit …“ (ein guter Zug, der in keiner
+      Zugfolge der Kapitel 2 und 3 steht). Du antwortest am Brett nach den Prinzipien. Danach:
+      „… ist eine gute Antwort“ (bis 0,5 Bauern hinter der Engine), „ungenau“ oder „ein Fehler“
+      mit dem besseren Zug, und darunter die Einschätzung nach den Prinzipien (Fazit von
+      Zielbilanz und Todsünden für deine Seite). Drei Aufgaben je Runde. Siehe F4.
+
+### Neu in 0.2.69 (etwa 15 Minuten; Planbilanz-Übung, Opus)
+
+- [ ] N303. **Planbilanz-Übung:** Training › Kapitel 6 › „Planbilanz-Übung“ › Trainieren. Drei
+      Übungsarten: „Drei Planfragen“ (Wo spiele ich? Was will mein Gegner? Welche Figur? Je drei
+      Antworten, nach der Wahl grün oder rot; dazwischen auch die Warum-Fragen zu Kapitel 6; bei
+      Abb. 6.20 und 11.34 danach der Verweis auf die Planbilanz im Buch), „LAP: am wenigsten aktive
+      Figur“ (erst die Figur antippen, dann ihr Zielfeld, „Prüfen“; die Lösung als goldener Pfeil)
+      und „Wettrennen der Bauern“ (bei entgegengesetzten Rochaden je Seite die Bauernzüge bis zum
+      ersten Hebel wählen; danach, wer schneller ist). Probe: Abb. 6.6 zählt die App Weiß 2,
+      Schwarz 3. Siehe F3.
+
 ### Neu in 0.2.68 (etwa 5 Minuten; Werkzeugabweichungen aus der Textarbeit geprüft, Fable)
 
 - [ ] N288. **Isolani aus Besitzersicht und Sonderfall 6. Reihe:** Abb. 5.17, Werkzeug „Richtung“:
@@ -136,40 +157,40 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.71“, dann 
 
 ### Neu in 0.2.61 (etwa 25 Minuten, mit Engine; deine Rückmeldung zu 0.2.56, Opus)
 
-- [ ] N285. **Gewertete Partie ohne Hilfen (S9):** Spielen, „Gewertete Partie“ angehakt: Die Haken
+- [ ] N310. **Gewertete Partie ohne Hilfen (S9):** Spielen, „Gewertete Partie“ angehakt: Die Haken
       „Züge zurücknehmen erlauben“, „Symbole am Brett“ und „Werkzeuge und Hinweis unter dem Brett“
       sind ausgegraut und leer, darunter der Satz, dass es in einer gewerteten Partie keine
       Zugrücknahme und keine Spielhilfen gibt. In der Partie gibt es weder „Zurücknehmen“ noch
       Werkzeuge. Haken weg: Alles ist wieder wählbar.
-- [ ] N286. **Unmögliche Stellungen (S12):** Stellung aufbauen mit drei weißen Damen und allen
+- [ ] N311. **Unmögliche Stellungen (S12):** Stellung aufbauen mit drei weißen Damen und allen
       acht weißen Bauern: „Partie beginnen“ geht nicht, der Hinweis nennt zu viele Steine für die
       Umwandlungen. Mit zwei Damen auf der Grundreihe und höchstens sieben Bauern geht es, und die
       Engine zieht.
-- [ ] N287. **Stil (S13):** Eigener Gegner › Stil: Unter dem Regler steht jetzt, dass ein Stil die
+- [ ] N312. **Stil (S13):** Eigener Gegner › Stil: Unter dem Regler steht jetzt, dass ein Stil die
       Spielstärke deutlich senken kann (bei „sehr aggressiv“ oder „sehr defensiv“ etwa eine halbe
       Stufe). Eine Partie gegen einen Gegner mit „sehr aggressiv“ fühlt sich spürbar wilder an.
-- [ ] N288. **Phase nach dem Glossar (S17):** Abb. 11.4, Werkzeug „Phase“: „Eröffnung: Nach dem
+- [ ] N313. **Phase nach dem Glossar (S17):** Abb. 11.4, Werkzeug „Phase“: „Eröffnung: Nach dem
       Glossar beginnt das Mittelspiel erst, wenn beide Seiten entwickelt sind und rochiert haben.
       Noch offen: Weiß muss noch rochieren; Schwarz muss noch entwickeln und rochieren.“ Abb. 11.12
       (Colle, schwarzer König gejagt): Mittelspiel. In einer eigenen Partie gilt weiter deine Lesart
       (eine Seite entwickelt genügt). Siehe auch D2.
-- [ ] N289. **Sonderzüge aus Kapitel 0 (U5):** Training › Koordinaten › „Zug ausführen“: Unter den
+- [ ] N314. **Sonderzüge aus Kapitel 0 (U5):** Training › Koordinaten › „Zug ausführen“: Unter den
       Sonderzügen stehen jetzt die Stellungen 0.12 bis 0.19 („aus Abb. 0.12“ usw.), mit kurzer und
       langer Rochade für beide Seiten, en passant und Umwandlung. Etwa jeder vierte Sonderzug kommt
       noch aus den zwei eigenen Stellungen (en passant für Schwarz, Umwandlung mit Schlag).
-- [ ] N290. **Strukturerkenner mit Feldern zuerst (W5):** Training › Strukturerkenner: Bei Abb. 5.8
+- [ ] N315. **Strukturerkenner mit Feldern zuerst (W5):** Training › Strukturerkenner: Bei Abb. 5.8
       (Najdorf) heißt es „Schritt 1 von 3: Welche Felder auf deiner 5. und 6. Reihe kann kein
       gegnerischer Bauer mehr angreifen?“ Richtig sind b6 und d5. Dann schwache Bauern, dann der
       Plan. Lehrbilder mit mehr als vier solchen Feldern haben nur zwei Schritte.
-- [ ] N291. **Faktorenbilanz-Trainer mit dem Urteil des Buches (W9):** Bei Abbildungen mit
+- [ ] N316. **Faktorenbilanz-Trainer mit dem Urteil des Buches (W9):** Bei Abbildungen mit
       Faktorenbilanz im Buch (etwa 3.6, 3.10, 3.14) steht nach „Prüfen“ „Buch: …“ statt „App: …“ und
       darunter „Verglichen mit der Faktorenbilanz des Buches zu Abb. 3.6“. Bei Abb. 3.6 sagt das
       Buch: Material Schwarz, Zeit Weiß, Königssicherheit Schwarz, Aktivität Weiß. Hat die
       Abbildung eine Warum-Frage, steht sie darunter.
-- [ ] N292. **Warum-Fragen im Repertoire-Trainer (W10):** Spanische Partie, Seite Schwarz: Nach
+- [ ] N317. **Warum-Fragen im Repertoire-Trainer (W10):** Spanische Partie, Seite Schwarz: Nach
       3... a6 erscheint unter dem Brett zugeklappt „Warum spielt Schwarz 3... a6?“. Die Fragen
       zählen nicht zur Wertung. 20 solche Fragen gibt es in den Varianten von Kapitel 2.
-- [ ] N293. **Zug erraten mit Vergleich (W12):** Opernpartie als Weiß, absichtlich 2. d4 statt 2. Sf3: Unter „In der Partie geschah Sf3.“ steht nach ein paar Sekunden, ob dein Zug laut
+- [ ] N318. **Zug erraten mit Vergleich (W12):** Opernpartie als Weiß, absichtlich 2. d4 statt 2. Sf3: Unter „In der Partie geschah Sf3.“ steht nach ein paar Sekunden, ob dein Zug laut
       Engine etwa gleich gut, schwächer oder stärker war, und dazu „Frag dich in einem Satz, warum
       der Meister anders zog.“
 
@@ -901,6 +922,25 @@ Regeln C1 und C2).
       regelgerechte Antwort steht und der bessere Kandidat höchstens 0,5 Bauern hinter dem Zug der
       Engine liegt; ob die Antwort die stärkste war, zeigt die App, zählt aber nicht.
       **Empfehlung:** so lassen. Schon umgesetzt in 0.2.66, Widerspruch genügt.
+
+- [ ] F3. **Planbilanz-Übung (0.2.69):** Die Antworten der Planfragen sind die Sätze, die die
+      Werkzeuge der App zu den drei Fragen rechnen, nicht die Texte deiner Planbilanzen (die zeigt
+      die App seit dem 15.10. nicht mehr). Falsche Antworten: derselbe Satz für die andere Seite
+      und der einer weit entfernten Stellung. Stellungen, in denen ein Satz nichts sagt („Noch
+      offen“, „noch kein erkennbarer Plan“, „keine Figur“), fallen weg. Die LAP-Lösung kommt aus
+      dem Werkzeug „Welche Figur?“, das Wettrennen aus dem schnellsten Sturm je Seite (bis sechs
+      Züge). Die Planfragen-Runde hat vier, LAP sechs, Wettrennen fünf Aufgaben.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.69, Widerspruch genügt. Wenn du lieber
+      deine eigenen Planbilanz-Sätze als Antworten hättest, bräuchte die App sie als freigegebenen
+      Text (sie sind Buchtext).
+
+- [ ] F4. **Abweichungsmodus (0.2.70):** Die Eröffnungen und Varianten sind die aus Kapitel 2
+      (wie im Repertoire-Trainer). Die Engine weicht frühestens nach dem 4., spätestens nach dem 12. Halbzug ab, immer mit ihrem besten Zug, der kein Buchzug ist (Buch heißt: irgendeine
+      Zugfolge der Kapitel 2 und 3). Gut ist eine Antwort bis 0,5 Bauern hinter dem besten Zug,
+      ungenau bis 1,2, darüber ein Fehler (wie die Auswertung nach der Partie). Die Einschätzung
+      zeigt die Fazits der Werkzeuge Zielbilanz und Todsünden, keine vorbereiteten Texte, weil es
+      zu Stellungen außerhalb des Buches keine gibt.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.70, Widerspruch genügt.
 
 ### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 

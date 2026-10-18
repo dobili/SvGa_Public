@@ -15,6 +15,7 @@ import { t } from "../../i18n/sprache";
 import { ladeBuchstellungen, type Buchstellung } from "../../training/buchstellungen";
 import { denkrunde } from "../../training/denkroutinetrainer";
 import { faktorenrunde } from "../../training/faktorentrainer";
+import { auswahl, lapaufgabe, planaufgaben, rennaufgabe } from "../../training/planbilanztrainer";
 import { feldrunde, gangartrunde, zugrunde } from "../../training/koordinatentrainer";
 import { roentgenrunde } from "../../training/roentgentrainer";
 import type { TrainerKennung } from "../../training/trainer";
@@ -35,6 +36,7 @@ import { FallenBereich } from "../trainer/FallenBereich";
 import { RepertoireBereich } from "../trainer/RepertoireBereich";
 import { StrukturBereich } from "../trainer/StrukturBereich";
 import { StudienBereich, ZugErratenBereich } from "../trainer/StudienBereich";
+import { AbweichungBereich } from "../trainer/AbweichungBereich";
 import { EndspielBereich } from "../trainer/EndspielBereich";
 import { FehlerBereich } from "../trainer/FehlerBereich";
 import { TaktikBereich } from "../trainer/TaktikBereich";
@@ -42,6 +44,7 @@ import { Haengeaufgabe, Zaehlaufgabe } from "../trainer/Zaehltrainer";
 import { Zielbilanzaufgabe } from "../trainer/Zielbilanzaufgabe";
 import { Faktorenaufgabe } from "../trainer/Faktorenaufgabe";
 import { Denkroutineaufgabe } from "../trainer/Denkroutineaufgabe";
+import { Lapaufgabe, Planfragenaufgabe, Rennaufgabe } from "../trainer/Planaufgaben";
 
 export type Uebungsart =
   | "bilanz"
@@ -53,7 +56,10 @@ export type Uebungsart =
   | "gangarten"
   | "zielbilanz"
   | "faktoren"
-  | "denkroutine";
+  | "denkroutine"
+  | "planfragen"
+  | "lap"
+  | "wettrennen";
 
 /** Die Übungsarten der spielbaren Trainer, in der Reihenfolge der Auswahl. */
 const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[]>>> = {
@@ -63,6 +69,7 @@ const UEBUNGSARTEN: Readonly<Partial<Record<TrainerKennung, readonly Uebungsart[
   zielbilanz: ["zielbilanz"],
   faktorenbilanz: ["faktoren"],
   denkroutine: ["denkroutine"],
+  planbilanz: ["planfragen", "lap", "wettrennen"],
 };
 
 /** Aufgaben je Runde: kurze Runden passen in eine Pause, „Feld finden“ geht schnell. */
@@ -78,6 +85,9 @@ const ANZAHL: Readonly<Record<Uebungsart, number>> = {
   faktoren: 5,
   // Je Stellung eine Minute Denkzeit und die Rechnung der Engine: drei Stellungen je Runde.
   denkroutine: 3,
+  planfragen: 4,
+  lap: 6,
+  wettrennen: 5,
 };
 
 /** Erzeugt die Aufgaben einer Runde, jede schon mit ihrer Darstellung. */
@@ -122,6 +132,34 @@ function erzeuge(art: Uebungsart, stellungen: readonly Buchstellung[]): Darstell
       return denkrunde(stellungen, n, ZUFALL).map((a) => (r) => (
         <Denkroutineaufgabe aufgabe={a} runde={r} />
       ));
+    default:
+      return planrunde(art, stellungen, n);
+  }
+}
+
+/** Die drei Übungsarten der Planbilanz-Übung (Kapitel 6). */
+function planrunde(
+  art: "planfragen" | "lap" | "wettrennen",
+  stellungen: readonly Buchstellung[],
+  n: number,
+): Darstellung[] {
+  switch (art) {
+    case "planfragen":
+      return auswahl(planaufgaben(stellungen, ZUFALL), n, ZUFALL).map((a) => (r) => (
+        <Planfragenaufgabe aufgabe={a} runde={r} />
+      ));
+    case "lap":
+      return auswahl(
+        stellungen.flatMap((b) => lapaufgabe(b) ?? []),
+        n,
+        ZUFALL,
+      ).map((a) => (r) => <Lapaufgabe aufgabe={a} runde={r} />);
+    case "wettrennen":
+      return auswahl(
+        stellungen.flatMap((b) => rennaufgabe(b) ?? []),
+        n,
+        ZUFALL,
+      ).map((a) => (r) => <Rennaufgabe aufgabe={a} runde={r} />);
   }
 }
 
@@ -190,6 +228,7 @@ const EIGENE_BEREICHE: Partial<Record<TrainerKennung, () => React.ReactNode>> = 
   studien: () => <StudienBereich />,
   zugErraten: () => <ZugErratenBereich />,
   fehlerdatenbank: () => <FehlerBereich />,
+  abweichung: () => <AbweichungBereich />,
 };
 
 export function Trainer({ kennung }: { kennung: TrainerKennung }) {

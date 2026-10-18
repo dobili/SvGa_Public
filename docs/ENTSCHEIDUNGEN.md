@@ -2621,3 +2621,18 @@ Schicht vor der Karte (`app/src/ui/werkzeuge/leerfall.ts`), die Werkzeuge in `an
   Lesen der Eingaben, Urteil), `ui/trainer/Denkroutineaufgabe.tsx`, `ui/trainer/useDenkvergleich.ts`
   (Engine nacheinander: bester Zug, nur die Kandidaten, je Kandidat die stärkste Antwort).
 - Entscheidungen wie in F2 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.
+
+## Planbilanz-Übung (18.10.2026 nachts, Opus, Zweig `planbilanz`, Version 0.2.69)
+
+- Trainer „planbilanz“ fertig (AP 13, Stufe 3) mit drei Übungsarten:
+  `training/planbilanztrainer.ts`, `ui/trainer/Planaufgaben.tsx`.
+- Entscheidungen wie in F3 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.
+- Nebenbei: Der Oberflächentest des Faktorenbilanz-Trainers erwartete nur „App:“; seit W9 steht
+  bei Buchtabellen „Buch:“. Je nach Zufallsstellung schlug er fehl, jetzt behoben.
+
+## Abweichungsmodus (18.10.2026 nachts, Opus, Zweig `abweichung`, Version 0.2.70)
+
+- Trainer „abweichung“ fertig (AP 13, Stufe 3): `training/abweichungstrainer.ts`,
+  `ui/trainer/AbweichungBereich.tsx`, `ui/trainer/Abweichungsaufgabe.tsx`,
+  `ui/trainer/useAbweichung.ts` (Engine nacheinander: Abweichzug, dann Bewertung der Antwort).
+- Entscheidungen wie in F4 (`docs/AUFGABEN_AUTOR.md`), nach Regel 9 sofort umgesetzt.

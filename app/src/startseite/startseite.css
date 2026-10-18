@@ -195,6 +195,15 @@
   justify-content: space-between;
 }
 
+/* Drei gleich breite Knöpfe in einer Zeile (DS16): Vorher brach „Kapitel → 2“ einzeln in eine
+   zweite Zeile um, und die Reihe sah zufällig aus. */
+.training-navigation > a {
+  flex: 1 1 0;
+  justify-content: center;
+  padding: 0 var(--raster);
+  white-space: nowrap;
+}
+
 .trainingsliste {
   list-style: none;
   margin: 0;

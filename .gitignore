@@ -2,7 +2,8 @@
 /buch/
 
 # Node und Build
-node_modules/
+# ohne Schrägstrich: auch ein Verweis (Symlink) aus einer zweiten Arbeitskopie bleibt draußen
+node_modules
 app/dist/
 app/dev-dist/
 app/test-results/

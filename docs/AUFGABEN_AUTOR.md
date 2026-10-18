@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.92. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.94. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.92“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.94“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -29,6 +29,50 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst den neuesten Abschnitt, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.93 (etwa 10 Minuten; Lernsammlung, Opus)
+
+- [ ] N553. **Stellung an einer Abbildung sammeln:** Öffne Abb. 2.2. Rechts unter dem Brett steht
+      neben „Brett drehen“ ein Lesezeichen. Tippe darauf: Unter dem Brett erscheinen „Plan“,
+      „Notiz“ und „Eröffnung“. Die Eröffnung ist schon ausgefüllt (Spanische Partie), du darfst
+      sie ändern. Schreibe einen Plan-Satz und tippe „Speichern“. Es erscheint „In der
+      Lernsammlung gespeichert“ mit dem Knopf „Lernsammlung öffnen“.
+- [ ] N554. **Aus Partie und Trainer sammeln:** Im Rückblick einer beendeten Partie steht unter
+      dem Zug neben „In die Fehlerdatenbank“ jetzt „In die Lernsammlung“ (Stellung nach dem Zug,
+      mit dem Weg der Partie). In den Trainern steht nach jeder beantworteten Aufgabe „In die
+      Lernsammlung“ über „Weiter“ (Taktik, Falle, Struktur, Endspiel, Repertoire, Zug erraten,
+      Abweichung, Zielbilanz, Faktorenbilanz, Planbilanz, Denkroutine).
+- [ ] N555. **Die Sammlung:** Training › Karte „Lernsammlung“ › „Lernsammlung öffnen“. Die
+      Stellungen stehen in aufklappbaren Gruppen nach Eröffnung, alphabetisch, „Ohne Eröffnung“
+      zuletzt. Ein Eintrag zeigt Brett, Plan und Notiz, dazu „Zu Abb. …“, „Bearbeiten“ und
+      „Löschen“. Unten lässt sich eine Stellung als FEN eintragen (etwa aus einer Vereinspartie).
+- [ ] N556. **Abfragen:** „Abfragen“ (alle) oder „Diese Gruppe abfragen“ zeigt die Stellungen in
+      zufälliger Folge; erst „Plan zeigen“ deckt Plan und Notiz auf. Gespeichert wird dabei nichts.
+- [ ] N557. **Als Lichess-Studie:** „Als PGN kopieren“ (oder „Als PGN-Datei sichern“). Auf Lichess
+      unter „Studien“ eine neue Studie anlegen, „PGN importieren“ wählen und einfügen. Jede
+      Stellung wird ein Kapitel; Name „Eröffnung – Fundstelle“, Plan und Notiz als Kommentar. Kennt
+      die App den Weg zur Stellung, kannst du ihn im Kapitel nachspielen.
+- [ ] N558. **Datensicherung:** Einstellungen › Daten sichern, auf einem zweiten Gerät (oder nach
+      „Daten löschen“) einspielen: Die Lernsammlung ist wieder da. Hinweis: Eine Sicherung mit
+      Lernsammlung lässt sich nur in Version 0.2.93 oder neuer einspielen (ältere Versionen melden
+      „aus einer neueren Version“, damit nichts verloren geht).
+
+### Neu in 0.2.92 (etwa 5 Minuten; Ziehen per Wischen, Opus)
+
+- [ ] N550. **Figuren per Wischen ziehen:** Beginne eine Partie (Spielen › Partie beginnen) und
+      ziehe den Bauern e2 mit dem Finger nach e4, ohne loszulassen. Die Figur hängt groß unter
+      dem Finger, auf ihrem Feld bleibt sie blass, das Feld unter dem Finger schimmert. Beim
+      Loslassen auf einem erlaubten Feld ist der Zug gespielt; auf einem verbotenen Feld oder
+      neben dem Brett bleibt die Figur gewählt (die Zielpunkte sind zu sehen). Antippen von Figur
+      und Zielfeld geht wie bisher. Das gilt überall, wo „Ziehen“ wirkt: Partie, Abbildungen mit
+      dem Werkzeug „Ziehen“, Übungen und Trainer.
+- [ ] N551. **Scrollen bleibt frei:** Lege den Finger auf ein leeres Feld oder eine gegnerische
+      Figur und wische nach oben: Die Seite scrollt wie bisher. Nur auf einer eigenen Figur, die
+      ziehen darf, nimmt der Finger die Figur. Auf Brettern ohne „Ziehen“ (Abbildung ohne
+      Werkzeug, Zählen) scrollt die Seite überall.
+- [ ] N552. **Abschalten:** Einstellungen › Brett › „Figuren per Wischen ziehen: aus“. Öffne
+      danach ein Brett neu: Wischen bewegt keine Figur mehr, Antippen schon. Die Einstellung gilt
+      nur auf diesem Gerät (wie die Koordinaten), weil sie von Gerät und Hand abhängt.
 
 ### Neu in 0.2.91 (etwa 5 Minuten; Endspiel-Kurzübungen, Opus)
 

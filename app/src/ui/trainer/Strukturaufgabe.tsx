@@ -22,6 +22,7 @@ import { antworteMitKarte } from "./kartenantwort";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
+import { useSammelstellung } from "./sammelstellung";
 
 type Vergleich = ReturnType<typeof pruefeFelder>;
 
@@ -132,6 +133,7 @@ function Planwahl({
 }
 
 export function Strukturaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const [felder] = useState(() => starkeFelder(aufgabe));
   const [vergleichFelder, setzeVergleichFelder] = useState<Vergleich | null>(null);
   const [vergleichBauern, setzeVergleichBauern] = useState<Vergleich | null>(null);

@@ -25,6 +25,7 @@ import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
 import { Wahlzeile } from "./Wahlzeile";
+import { useSammelstellung } from "./sammelstellung";
 
 type Entwurf = Record<Color, Partial<Record<Ziel, Wertung>>>;
 
@@ -63,6 +64,7 @@ function Begruendung({ fen }: { fen: string }) {
 }
 
 export function Zielbilanzaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const [entwurf, setzeEntwurf] = useState<Entwurf>({ white: {}, black: {} });
   const beantwortet = runde.ergebnis !== null;
   const tabelle = vollstaendig(entwurf);

@@ -23,6 +23,7 @@ import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import { useDenkvergleich, type Denkstand, type Kandidat } from "./useDenkvergleich";
 import type { Runde } from "./useRunde";
+import { useSammelstellung } from "./sammelstellung";
 
 const SEKUNDE_MS = 1000;
 /** Ab diesem Betrag ist ein Wert ein Matt (Engine-Werte mit Matt liegen nahe 100). */
@@ -144,6 +145,7 @@ function Eingabe({ pruefe }: { pruefe: (k: readonly string[], a: readonly string
 }
 
 export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const rest = useDenkminute();
   const [eingeben, setzeEingeben] = useState(false);
   const [pruefungen, setzePruefungen] = useState<readonly Kandidatpruefung[] | null>(null);

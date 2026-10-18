@@ -26,6 +26,7 @@ import { WarumFragenListe } from "../komponenten/WarumFrage";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
+import { useSammelstellung } from "./sammelstellung";
 
 const KEINE_WAHL = () => undefined;
 
@@ -50,6 +51,7 @@ export function Repertoireaufgabe({
   const [fehler, setzeFehler] = useState(0);
   const [zeige, setzeZeige] = useState(false);
   const fen = stellungNach(aufgabe.startFen, zuege);
+  useSammelstellung(fen);
   const fertig = runde.ergebnis !== null;
   const zaehle = () => {
     setzeFehler(fehler + 1);

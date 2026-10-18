@@ -1311,11 +1311,16 @@ Archiv-Repository; was davon noch offen ist, steht hier.
       Genauigkeit; Elo-Angaben der Bot-Stufen angleichen; Tests, Doku, Nachtest, Version.
    Stand: a gebaut (`pipeline/eichung/`: `auswahl.py` Bänder und Prüfung, `netz.py` Abfragen,
    `chesscom.py` mit Länder- und Titellisten, `lichess.py` mit Teams, `sammeln.py` fortsetzbar,
-   Tests `pipeline/tests/test_eichung_auswahl.py`); Sammellauf mit 300 je Plattform läuft.
+   Tests `pipeline/tests/test_eichung_auswahl.py`). **a fertig (18.10.2026, 10:50):** je
+   Plattform 300 Partien, alle zehn Bänder 400 bis 2399 mit je 30 Partien. chess.com: 2677
+   Spieler durchgesehen (Länder- und Titellisten), Bedenkzeit meist 10+0; die Bänder 1200 bis
+   1999 füllten sich am langsamsten (dort lassen weniger Spieler ihre Partien auswerten).
+   Lichess: in drei Minuten voll, meist 10+0 und 10+5. Keine Abfrage gescheitert.
    b gebaut: `app/skripte/eichung-rechnen.mjs` (npm-Paket „stockfish“ 19.0.1 lite-single = Engine
    der App, Tiefe 18, vier Läufe, Ausgabe `buch/arbeit/eichung/bewertet-<k>.jsonl`, überspringt
    Bewertetes; Aufruf im Ordner app/: `node skripte/eichung-rechnen.mjs --minuten 110`). Rochade
-   für Stockfish als Königszug um zwei Felder (wie `sanZuUci`). Etwa 1 s je Stellung und Lauf.
+   für Stockfish als Königszug um zwei Felder (wie `sanZuUci`). Etwa 1 s je Stellung und Lauf,
+   etwa 2,5 Partien je Minute mit vier Läufen; zweiter Durchgang über alle 600 läuft (109 fertig).
    c vorbereitet: `spiel/genauigkeitsmodell.ts` (Genauigkeit mit Abfall und Polster; Lichess-
    Regler = heutige Rechnung, getestet), `spiel/eichungsrechnung.ts` (Rastersuche, monotone
    Kurve, Kontrollpartien, Streuung über zehn), Messlauf `npm run messen:eichung`

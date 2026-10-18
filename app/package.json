@@ -22,6 +22,7 @@
     "messen:stufen": "node skripte/messe-stufen.mjs",
     "messen:opfer": "vitest run --config vitest.messung.config.ts src/spiel/opfer.messung.ts",
     "messen:vergleich": "vitest run --config vitest.messung.config.ts src/spiel/vergleich.messung.ts",
+    "messen:eichung": "vitest run --config vitest.messung.config.ts src/spiel/eichung.messung.ts",
     "deploy:probe": "wrangler deploy --dry-run"
   },
   "dependencies": {

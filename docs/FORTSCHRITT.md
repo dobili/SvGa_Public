@@ -1315,7 +1315,11 @@ Archiv-Repository; was davon noch offen ist, steht hier.
    b gebaut: `app/skripte/eichung-rechnen.mjs` (npm-Paket „stockfish“ 19.0.1 lite-single = Engine
    der App, Tiefe 18, vier Läufe, Ausgabe `buch/arbeit/eichung/bewertet-<k>.jsonl`, überspringt
    Bewertetes; Aufruf im Ordner app/: `node skripte/eichung-rechnen.mjs --minuten 110`). Rochade
-   für Stockfish als Königszug um zwei Felder (wie `sanZuUci`). Etwa 1,5 s je Stellung und Lauf.
+   für Stockfish als Königszug um zwei Felder (wie `sanZuUci`). Etwa 1 s je Stellung und Lauf.
+   c vorbereitet: `spiel/genauigkeitsmodell.ts` (Genauigkeit mit Abfall und Polster; Lichess-
+   Regler = heutige Rechnung, getestet), `spiel/eichungsrechnung.ts` (Rastersuche, monotone
+   Kurve, Kontrollpartien, Streuung über zehn), Messlauf `npm run messen:eichung`
+   (`spiel/eichung.messung.ts`, schreibt `bericht.md` und `ergebnis.json` lokal).
 
 Noch nicht als Daten erfasst (später, wenn die Werkzeuge sie brauchen): Endspieldaten mit Tablebase (Konzept 5, Schritt 7).
 

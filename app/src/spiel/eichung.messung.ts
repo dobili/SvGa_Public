@@ -1,0 +1,211 @@
+/**
+ * Messlauf der Eichung (Schritt c des Plans vom 18.10.2026): Regler für „nahe chess.com“ und
+ * „Mittelweg“, Prüfung des Lichess-Modus, Kurven Genauigkeit → Wertungszahl für chess.com und
+ * Lichess, ihre Mitte und die Kontrolle an zurückgelegten Partien.
+ *
+ * Rolle im Gesamtbild: Kein Test der Prüfkette, sondern ein Messlauf wie vergleich.messung.ts.
+ * Die Rohdaten liegen nur lokal (EICHUNG_ORDNER, Vorgabe ../buch/arbeit/eichung): die Partien
+ * aus pipeline/eichung/sammeln.py und die Bewertungen aus skripte/eichung-rechnen.mjs. Ausgabe:
+ * bericht.md und ergebnis.json im selben Ordner (lokal); die Zahlen aus ergebnis.json kommen in
+ * Schritt d als Konstanten in die App.
+ * Abhängigkeiten: spiel/eichungsrechnung.ts, spiel/genauigkeitsmodell.ts.
+ * Aufruf (im Ordner app/): npm run messen:eichung
+ */
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { describe, expect, it } from "vitest";
+import {
+  abweichungen,
+  besteRegler,
+  istKontrolle,
+  kurvenwert,
+  mittel,
+  monotoneKurve,
+  streuung,
+  werteAusEngine,
+  zehnerFehler,
+  type Eichseite,
+  type Kurve,
+  type Rohwert,
+} from "./eichungsrechnung";
+import { LICHESS_REGLER, mittelweg, seitengenauigkeit, type Regler } from "./genauigkeitsmodell";
+
+const ORDNER = process.env.EICHUNG_ORDNER ?? join(process.cwd(), "..", "buch", "arbeit", "eichung");
+const ABFAELLE = [LICHESS_REGLER.abfall, ...Array.from({ length: 31 }, (_, i) => 0.05 + i * 0.005)];
+const POLSTER = Array.from({ length: 11 }, (_, i) => 1 - i * 0.1);
+const SEITEN_JE_GRUPPE = 15;
+const HOECHSTENS_GRUPPEN = 12;
+const RASTER = Array.from({ length: 21 }, (_, i) => 50 + i * 2.5);
+const DURCHGAENGE = 400;
+const JE_ZEHN = 10;
+const BANDBREITE = 200;
+const MINDESTENS_ZUEGE = 10;
+
+interface Seitendaten extends Eichseite {
+  readonly plattform: "chesscom" | "lichess";
+  readonly kontrolle: boolean;
+}
+
+function zeilen(datei: string): Record<string, unknown>[] {
+  if (!existsSync(datei)) return [];
+  return readFileSync(datei, "utf8")
+    .split("\n")
+    .filter((z) => z.trim())
+    .map((z) => JSON.parse(z) as Record<string, unknown>);
+}
+
+interface Rohpartie {
+  plattform: "chesscom" | "lichess";
+  kennung: string;
+  weiss: { wertung: number; genauigkeit: number | null };
+  schwarz: { wertung: number; genauigkeit: number | null };
+}
+
+/** Alle Seiten mit Bewertung, je Partie beide Farben (ab zehn eigenen Zügen). */
+function lies(): Seitendaten[] {
+  const bewertet = new Map<string, Rohwert[]>();
+  for (const name of existsSync(ORDNER) ? readdirSync(ORDNER) : []) {
+    if (!/^bewertet-\d+\.jsonl$/.test(name)) continue;
+    for (const z of zeilen(join(ORDNER, name))) {
+      bewertet.set(`${String(z.plattform)}:${String(z.kennung)}`, z.stellungen as Rohwert[]);
+    }
+  }
+  const partien = ["chesscom", "lichess"].flatMap((p) =>
+    zeilen(join(ORDNER, `${p}.jsonl`)).map((z) => z as unknown as Rohpartie),
+  );
+  return partien.flatMap((p) => {
+    const roh = bewertet.get(`${p.plattform}:${p.kennung}`);
+    if (!roh) return [];
+    const werte = werteAusEngine(roh);
+    const kontrolle = istKontrolle(p.kennung);
+    return (["white", "black"] as const).flatMap((seite) => {
+      const s = seite === "white" ? p.weiss : p.schwarz;
+      const eigene = Math.floor((werte.length - (seite === "white" ? 0 : 1)) / 2);
+      if (s.genauigkeit === null || eigene < MINDESTENS_ZUEGE) return [];
+      return [
+        {
+          werte,
+          seite,
+          genauigkeit: s.genauigkeit,
+          wertung: s.wertung,
+          plattform: p.plattform,
+          kontrolle,
+        },
+      ];
+    });
+  });
+}
+
+const r1 = (x: number) => Math.round(x * 10) / 10;
+const r0 = (x: number) => Math.round(x);
+
+function genauigkeitsZeile(name: string, seiten: readonly Eichseite[], regler: Regler): string {
+  const a = abweichungen(seiten, regler);
+  return `| ${name} | ${seiten.length} | ${r1(mittel(a))} | ${r1(mittel(a.map(Math.abs)))} | ${r1(streuung(a))} |`;
+}
+
+function kurveAus(seiten: readonly Eichseite[], regler: Regler): Kurve {
+  const punkte = seiten.flatMap((s) => {
+    const x = seitengenauigkeit(s.werte, s.seite, regler);
+    return x === null ? [] : [{ x, y: s.wertung }];
+  });
+  return monotoneKurve(
+    punkte,
+    Math.min(HOECHSTENS_GRUPPEN, Math.max(2, Math.floor(punkte.length / SEITEN_JE_GRUPPE))),
+  );
+}
+
+/** Fehler der Schätzung je Partie und über zehn Partien (Kontrollseiten). */
+function schaetzfehler(
+  seiten: readonly Eichseite[],
+  regler: Regler,
+  schaetze: (x: number) => number,
+) {
+  const paare = seiten.flatMap((s) => {
+    const x = seitengenauigkeit(s.werte, s.seite, regler);
+    if (x === null) return [];
+    return [
+      {
+        schaetzung: schaetze(x),
+        wertung: s.wertung,
+        band: Math.floor(s.wertung / BANDBREITE) * BANDBREITE,
+      },
+    ];
+  });
+  const einzel = paare.map((p) => p.schaetzung - p.wertung);
+  const zehn = zehnerFehler(paare, DURCHGAENGE, JE_ZEHN);
+  return {
+    anzahl: paare.length,
+    mittel: mittel(einzel),
+    betrag: mittel(einzel.map(Math.abs)),
+    streuung: streuung(einzel),
+    zehn: streuung(zehn),
+  };
+}
+
+describe("Eichung von Genauigkeit und Spielstärke", () => {
+  it("rechnet Regler, Kurven und Kontrolle und schreibt den Bericht", () => {
+    const alle = lies();
+    const cc = alle.filter((s) => s.plattform === "chesscom");
+    const li = alle.filter((s) => s.plattform === "lichess");
+    expect(cc.length + li.length).toBeGreaterThan(0);
+    const [ccEich, ccKontrolle] = [cc.filter((s) => !s.kontrolle), cc.filter((s) => s.kontrolle)];
+    const [liEich, liKontrolle] = [li.filter((s) => !s.kontrolle), li.filter((s) => s.kontrolle)];
+    const nahe = besteRegler(ccEich, ABFAELLE, POLSTER).regler;
+    const mitte = mittelweg(LICHESS_REGLER, nahe);
+    const innen = LICHESS_REGLER;
+    const kurveCc = kurveAus(ccEich, innen);
+    const kurveLi = kurveAus(liEich, innen);
+    const kurveMitte: Kurve = RASTER.map(
+      (x) => [x, (kurvenwert(kurveCc, x) + kurvenwert(kurveLi, x)) / 2] as const,
+    );
+    const fehler = {
+      chesscomEigene: schaetzfehler(ccKontrolle, innen, (x) => kurvenwert(kurveCc, x)),
+      lichessEigene: schaetzfehler(liKontrolle, innen, (x) => kurvenwert(kurveLi, x)),
+      mitteGegenChesscom: schaetzfehler(ccKontrolle, innen, (x) => kurvenwert(kurveMitte, x)),
+      mitteGegenLichess: schaetzfehler(liKontrolle, innen, (x) => kurvenwert(kurveMitte, x)),
+    };
+    const zeilenGenau = [
+      "| Modus gegen Plattform | Seiten | Mittel | Betrag | Streuung |",
+      "|---|---|---|---|---|",
+      genauigkeitsZeile("Lichess-Modus gegen Lichess (alle)", li, LICHESS_REGLER),
+      genauigkeitsZeile("Lichess-Modus gegen chess.com (Kontrolle)", ccKontrolle, LICHESS_REGLER),
+      genauigkeitsZeile("Mittelweg gegen chess.com (Kontrolle)", ccKontrolle, mitte),
+      genauigkeitsZeile("Mittelweg gegen Lichess (Kontrolle)", liKontrolle, mitte),
+      genauigkeitsZeile("nahe chess.com gegen chess.com (Kontrolle)", ccKontrolle, nahe),
+    ];
+    const zeilenElo = Object.entries(fehler).map(
+      ([name, f]) =>
+        `| ${name} | ${f.anzahl} | ${r0(f.mittel)} | ${r0(f.betrag)} | ${r0(f.streuung)} | ${r0(f.zehn)} |`,
+    );
+    const kurven = RASTER.map(
+      (x) =>
+        `| ${x} | ${r0(kurvenwert(kurveCc, x))} | ${r0(kurvenwert(kurveLi, x))} | ${r0(kurvenwert(kurveMitte, x))} |`,
+    );
+    const bericht = [
+      "# Eichung von Genauigkeit und Spielstärke (lokal, nicht ins Repository)",
+      "",
+      `Seiten: chess.com ${cc.length} (Kontrolle ${ccKontrolle.length}), Lichess ${li.length} (Kontrolle ${liKontrolle.length}).`,
+      `Regler nahe chess.com: Abfall ${nahe.abfall.toFixed(4)}, Polster ${nahe.polster.toFixed(1)}; Mittelweg: Abfall ${mitte.abfall.toFixed(4)}, Polster ${mitte.polster.toFixed(2)}.`,
+      "",
+      "## Genauigkeit (unsere − Plattform, Prozentpunkte)",
+      ...zeilenGenau,
+      "",
+      "## Spielstärke (Schätzung − echte Wertungszahl, Kontrollseiten)",
+      "| Kurve gegen Wertung | Seiten | Mittel | Betrag | Streuung je Partie | Streuung über zehn |",
+      "|---|---|---|---|---|---|",
+      ...zeilenElo,
+      "",
+      "## Kurven (innere Genauigkeit = Lichess-Formel)",
+      "| Genauigkeit | chess.com | Lichess | Mitte |",
+      "|---|---|---|---|",
+      ...kurven,
+    ].join("\n");
+    writeFileSync(join(ORDNER, "bericht.md"), bericht + "\n");
+    writeFileSync(
+      join(ORDNER, "ergebnis.json"),
+      JSON.stringify({ nahe, mitte, kurveCc, kurveLi, kurveMitte, fehler }, null, 2),
+    );
+    console.log(bericht);
+  });
+});

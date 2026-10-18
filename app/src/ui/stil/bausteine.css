@@ -177,6 +177,19 @@
   font-weight: 600;
 }
 
+/* Dunkel (0.2.84, Rückmeldung des Autors): Navy verschwindet auf dunklem Grund, deshalb Gold wie
+   beim gewählten Reiter. Gleiche Regel wie bei .chip: Gerät dunkel und nicht „hell“ gewählt,
+   oder „dunkel“ gewählt. */
+@media (prefers-color-scheme: dark) {
+  :where(:root:not([data-farbschema="hell"])) .vorschaukachel[aria-checked="true"] {
+    border-color: var(--gold);
+  }
+}
+
+:where(:root[data-farbschema="dunkel"]) .vorschaukachel[aria-checked="true"] {
+  border-color: var(--gold);
+}
+
 .brettausschnitt {
   width: 100%;
   aspect-ratio: 4 / 1;

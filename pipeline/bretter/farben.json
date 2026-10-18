@@ -1,0 +1,21 @@
+{
+  "_hinweis": "Brettfarben der App, Auswahl des Autors vom 18.10.2026. hell und dunkel sind die Feldfarben. Die ersten zwei gibt es schon (app/src/ui/brett/masse.ts).",
+  "farben": [
+    { "kennung": "buch", "name": "Wie im Buch", "hell": "#F5F0E6", "dunkel": "#7F8794", "schon_in_app": true },
+    { "kennung": "gruen", "name": "Grün", "hell": "#EEEED2", "dunkel": "#769656", "schon_in_app": true },
+    { "kennung": "braun", "name": "Braun", "hell": "#F0D9B5", "dunkel": "#B58863", "schon_in_app": false },
+    { "kennung": "blau", "name": "Blau", "hell": "#DEE3E6", "dunkel": "#8CA2AD", "schon_in_app": false },
+    { "kennung": "sand", "name": "Sand", "hell": "#EFE6D2", "dunkel": "#B9A27E", "schon_in_app": false },
+    { "kennung": "koralle", "name": "Koralle", "hell": "#F2E6DC", "dunkel": "#C98B73", "schon_in_app": false },
+    { "kennung": "lavendel", "name": "Lavendel", "hell": "#ECE8F2", "dunkel": "#9D92B8", "schon_in_app": false },
+    { "kennung": "nacht", "name": "Nacht", "hell": "#9AA5B1", "dunkel": "#56616E", "schon_in_app": false }
+  ],
+  "holz": [
+    { "kennung": "holz", "name": "Ahorn & Nussbaum", "art": "zwei Holzfotos (app/public/holz/), Faser längs, Maserung normal", "schon_in_app": true }
+  ],
+  "material": [
+    { "kennung": "intarsie-ahorn", "name": "Intarsie Ahorn & Kirsche", "bild": "bilder/intarsie-ahorn.jpg", "schimmer": "rgba(155, 199, 0, 0.45)" },
+    { "kennung": "holz-klassisch", "name": "Holz klassisch", "bild": "bilder/holz-klassisch.jpg", "schimmer": "rgba(155, 199, 0, 0.45)" },
+    { "kennung": "marmor-gruen", "name": "Marmor grün", "bild": "bilder/marmor-gruen.jpg", "schimmer": "rgba(80, 150, 255, 0.38)" }
+  ]
+}

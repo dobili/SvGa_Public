@@ -96,15 +96,28 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
   await page
     .getByRole("radiogroup", { name: "Brettfarben" })
-    .getByRole("radio", { name: "Holz" })
+    .getByRole("radio", { name: "Ahorn & Nussbaum" })
     .click();
   await expect(
-    page.getByRole("radiogroup", { name: "Brettfarben" }).getByRole("radio", { name: "Holz" }),
+    page
+      .getByRole("radiogroup", { name: "Brettfarben" })
+      .getByRole("radio", { name: "Ahorn & Nussbaum" }),
   ).toHaveAttribute("aria-checked", "true");
   await leiste.getByRole("button", { name: "Buch" }).click();
   await oeffneAbbildung(page, "1.26", "1.26");
   await expect(
     page.locator('.brett pattern image[href$="holz/dunkel.webp"]').first(),
+  ).toBeAttached();
+  // Materialbretter (seit 0.2.84) liegen als ganzes Brettbild unter den Figuren.
+  await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page
+    .getByRole("radiogroup", { name: "Brettfarben" })
+    .getByRole("radio", { name: "Marmor grün" })
+    .click();
+  await leiste.getByRole("button", { name: "Buch" }).click();
+  await oeffneAbbildung(page, "1.26", "1.26");
+  await expect(
+    page.locator('.brett image[href$="bretter/marmor-gruen.webp"]').first(),
   ).toBeAttached();
 });
 

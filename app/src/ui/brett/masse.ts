@@ -6,6 +6,7 @@
  * ein Feld 22 pt breit; hier sind es 1000 Einheiten, passend zu den Figurenpfaden.
  * Abhängigkeiten: keine.
  */
+import type { Brettfarben } from "../../speicher/format";
 import { EINHEITEN_JE_FELD } from "./figurenpfade.generiert";
 
 /** Feldbreite im Buch in Punkt (boardfontsize=22pt in preamble.tex). */
@@ -38,24 +39,74 @@ export const FARBEN = {
   auswahl: "rgba(80, 150, 255, 0.38)",
 } as const;
 
+/** Farben eines Brettes; Materialbretter haben dazu ein ganzes Brettbild. */
+export interface Brettpalette {
+  readonly hell: string;
+  readonly dunkel: string;
+  /** Schimmer für angetipptes Feld und letzten Zug. */
+  readonly schimmer: string;
+  /** Farbe der Figuren im Buchsatz (Figur.tsx). */
+  readonly figur: string;
+  /** Ganzes Brettbild (8 × 8 Felder, a8 oben links hell), Pfad relativ zur App. */
+  readonly bild?: string;
+}
+
+/**
+ * Schimmer in Gelbgrün wie bei Lichess: auf braunen, blauen und violetten Brettern wirkt das Blau
+ * des Buches gräulich oder geht unter.
+ */
+const SCHIMMER_GELBGRUEN = "rgba(155, 199, 0, 0.45)";
+/** Figuren des Buchsatzes auf Holz und Holzbildern schlicht schwarz (Wunsch des Autors, 0.2.2). */
+const FIGUR_SCHWARZ = "#111111";
+
 /**
  * Brettfarben zur Wahl in den Einstellungen. „buch“ ist der Standard wie im Buch; die anderen
  * sind übliche Farben anderer Schachseiten für Leser, die sie gewohnt sind (Pflichtenheft 8).
+ * Seit 0.2.84 die Auswahl des Autors (pipeline/bretter/farben.json): acht Farben, Holz und drei
+ * Materialbretter. Bei den Materialbrettern sind hell und dunkel die Mittelwerte der Felder des
+ * Bildes; sie gelten für kleine Bretter, Koordinaten und solange das Bild lädt.
  */
-export const BRETTFARBEN = {
+export const BRETTFARBEN: Readonly<Record<Brettfarben, Brettpalette>> = {
   buch: { hell: FARBEN.hell, dunkel: FARBEN.dunkel, schimmer: FARBEN.auswahl, figur: FARBEN.navy },
   /**
    * Auf Holz wirkt Blau gräulich (verwechselbar mit Grau): Schimmer Gelbgrün wie bei Lichess, und
    * die Figuren schlicht schwarz statt im Navy des Buches (Wunsch des Autors nach dem Test von 0.2.2).
    */
-  holz: {
-    hell: "#E4C38E",
-    dunkel: "#8E5E36",
-    schimmer: "rgba(155, 199, 0, 0.45)",
-    figur: "#111111",
-  },
+  holz: { hell: "#E4C38E", dunkel: "#8E5E36", schimmer: SCHIMMER_GELBGRUEN, figur: FIGUR_SCHWARZ },
   gruen: { hell: "#EEEED2", dunkel: "#769656", schimmer: FARBEN.auswahl, figur: FARBEN.navy },
-} as const;
+  braun: { hell: "#F0D9B5", dunkel: "#B58863", schimmer: SCHIMMER_GELBGRUEN, figur: FARBEN.navy },
+  blau: { hell: "#DEE3E6", dunkel: "#8CA2AD", schimmer: SCHIMMER_GELBGRUEN, figur: FARBEN.navy },
+  sand: { hell: "#EFE6D2", dunkel: "#B9A27E", schimmer: FARBEN.auswahl, figur: FARBEN.navy },
+  koralle: { hell: "#F2E6DC", dunkel: "#C98B73", schimmer: FARBEN.auswahl, figur: FARBEN.navy },
+  lavendel: {
+    hell: "#ECE8F2",
+    dunkel: "#9D92B8",
+    schimmer: SCHIMMER_GELBGRUEN,
+    figur: FARBEN.navy,
+  },
+  nacht: { hell: "#9AA5B1", dunkel: "#56616E", schimmer: SCHIMMER_GELBGRUEN, figur: FARBEN.navy },
+  "intarsie-ahorn": {
+    hell: "#E0C59D",
+    dunkel: "#AC765C",
+    schimmer: SCHIMMER_GELBGRUEN,
+    figur: FIGUR_SCHWARZ,
+    bild: "bretter/intarsie-ahorn.webp",
+  },
+  "holz-klassisch": {
+    hell: "#C3A36F",
+    dunkel: "#7E5532",
+    schimmer: SCHIMMER_GELBGRUEN,
+    figur: FIGUR_SCHWARZ,
+    bild: "bretter/holz-klassisch.webp",
+  },
+  "marmor-gruen": {
+    hell: "#829883",
+    dunkel: "#647A63",
+    schimmer: FARBEN.auswahl,
+    figur: FARBEN.navy,
+    bild: "bretter/marmor-gruen.webp",
+  },
+};
 
 /**
  * Holzbilder für die Brettfarbe „Holz“ (Holzfelder.tsx), kein Buchwert: zwei Fotos echten Holzes

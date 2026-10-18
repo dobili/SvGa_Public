@@ -80,9 +80,16 @@ const BAUSTEINE: readonly { name: string; lizenz: string; herkunft: string; text
     text: "/lizenzen/ofl-source-sans-3.txt",
   },
   {
-    name: "Holzbilder der Brettfarbe „Holz“ (Wood095, Wood026)",
+    name: "Holzbilder des Bretts „Ahorn & Nussbaum“ (Wood095, Wood026)",
     lizenz: "CC0 1.0 (gemeinfrei)",
     herkunft: "ambientCG.com; gedreht, aufgehellt, als WebP gespeichert",
+  },
+  {
+    name: "Materialbretter Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (the lila authors and pirouetti)",
+    lizenz: "GNU AGPL 3.0 oder neuer",
+    herkunft:
+      "über Lichess (github.com/lichess-org/lila, public/images/board); als WebP gespeichert",
+    text: "/lizenzen/agpl-3.0.txt",
   },
   {
     name: "Porträts der vorgefertigten Gegner (Stil „Personas“ von Draftbit, über DiceBear)",

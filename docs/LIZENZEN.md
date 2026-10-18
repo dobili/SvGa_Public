@@ -11,7 +11,8 @@
 | Figurensätze (9 Sätze, `app/public/figuren/`, Quelle `pipeline/figuren/saetze/`, seit 0.2.82)                         | je Satz: GPLv2+, GPLv3+, Apache 2.0, MIT, CC0 | `pipeline/figuren/saetze/LIZENZEN.md`; `app/public/lizenzen/` |
 | Trainer-Aufgaben aus der Lichess-Puzzle-Datenbank (`inhalte/de/trainer/taktik.json`, `falle.json`, Herkunft `lichess`) | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft in `docs/TRAINERDATEN.md`)       |
 | Source Sans 3, Source Serif 4 (Adobe)                                                                                  | SIL Open Font License 1.1           | `app/public/lizenzen/ofl-*.txt`                               |
-| Holzbilder der Brettfarbe „Holz“ (ambientCG, Wood095 und Wood026)                                                      | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft unter Hinweise)                  |
+| Holzbilder der Bretts „Ahorn & Nussbaum“ (ambientCG, Wood095 und Wood026)                                                      | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft unter Hinweise)                  |
+| Materialbretter Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (Lichess, `app/public/bretter/`, seit 0.2.84) | GNU AGPL 3.0 oder neuer | `app/public/lizenzen/agpl-3.0.txt`; `pipeline/bretter/LIZENZEN.md` |
 | Porträts der vorgefertigten Gegner (`app/public/gegner/`, Stil „Personas“ von Draftbit, erzeugt mit DiceBear)          | CC BY 4.0 (Zeichnungen), MIT (Code) | `app/public/lizenzen/cc-by-4.0.txt`                           |
 | Eröffnungsnamen (Lichess chess-openings, `inhalte/lichess/`)                                                           | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft in `inhalte/lichess/README.md`)  |
 | React, Vite, Workbox, vite-plugin-pwa                                                                                  | MIT                                 | in den npm-Paketen                                            |
@@ -50,6 +51,14 @@
   Namensnennung steht in der App unter Einstellungen → Lizenzen; der Lizenztext liegt in
   `app/public/lizenzen/cc-by-4.0.txt`. Die Pakete sind keine Abhängigkeit der App (nur zum
   Erzeugen, `npm install --no-save`).
+- **Materialbretter (seit 0.2.84, Auswahl des Autors vom 18.10.2026):** drei ganze Brettbilder aus
+  dem Lichess-Repository `lichess-org/lila` (`public/images/board/maple2.jpg`, `wood4.jpg`,
+  `marble.jpg`), Urheber „the lila authors and pirouetti“, AGPLv3 oder neuer. Die Originale liegen
+  unverändert in `pipeline/bretter/bilder/`; in der App (`app/public/bretter/`) als WebP
+  (Qualität 82), weil der Offline-Speicher der App keine JPEG-Dateien vorhält. Die AGPLv3 lässt sich
+  mit der GPLv3 der App verbinden (GPLv3 Abschnitt 13); für die Bilder gelten weiter die
+  AGPL-Bedingungen, vor allem der Zugang zum Quelltext über das Netz, den das öffentliche
+  Repository erfüllt. Lizenztext und Namensnennung stehen in der App unter Einstellungen › Lizenzen.
 - **Holzbilder:** `app/public/holz/hell.webp` und `dunkel.webp` stammen von ambientCG
   (https://ambientcg.com/a/Wood095 und /a/Wood026, Farbkarte „Color“ in 1K), Lizenz CC0 1.0.
   Bearbeitung (14.10.2026): um 90° gedreht, damit die Faser längs läuft; das helle Bild ist

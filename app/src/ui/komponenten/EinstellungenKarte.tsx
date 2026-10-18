@@ -13,7 +13,8 @@
  * Ebenfalls seit 0.2.31: ausgeblendete Erklärkacheln von Zählen und Ziehen wieder anzeigen.
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
  * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
- * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz.
+ * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz;
+ * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material.
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * i18n.
  */
@@ -42,7 +43,18 @@ import { Reiter } from "./Reiter";
 import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
 import { zeigeErklaerungenWieder } from "./useErklaerung";
 
-const BRETTFARBEN: readonly Brettfarben[] = ["buch", "holz", "gruen"];
+/** Bretter in Gruppen (seit 0.2.84): Farben, Holz, Material. */
+const BRETTGRUPPEN: readonly { titel: Textschluessel; werte: readonly Brettfarben[] }[] = [
+  {
+    titel: "einstellungen.brettfarben.gruppe.farben",
+    werte: ["buch", "gruen", "braun", "blau", "sand", "koralle", "lavendel", "nacht"],
+  },
+  { titel: "einstellungen.brettfarben.gruppe.holz", werte: ["holz"] },
+  {
+    titel: "einstellungen.brettfarben.gruppe.material",
+    werte: ["intarsie-ahorn", "holz-klassisch", "marmor-gruen"],
+  },
+];
 /** Figurensätze in Gruppen (seit 0.2.82): wie im Buch, dann je drei klassisch, modern, Holz. */
 const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figurensatz[] }[] = [
   { werte: ["buch"] },
@@ -141,7 +153,7 @@ function BrettBereich() {
     <>
       <Vorschauwahl
         name={t("einstellungen.brettfarben")}
-        werte={BRETTFARBEN}
+        gruppen={BRETTGRUPPEN.map((g) => ({ ...g, titel: t(g.titel) }))}
         gewaehlt={einstellungen.brettfarben}
         text={(wert) => t(`einstellungen.brettfarben.${wert}`)}
         vorschau={(wert) => <Brettausschnitt farben={wert} satz={einstellungen.figurensatz} />}

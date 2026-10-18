@@ -109,6 +109,10 @@ export function Ich() {
       <h1 className="nur-vorlesen">{t("ich.titel")}</h1>
       <Wertungskurve punkte={wertung} />
       <Fortschrittsuebersicht />
+      <EinstellungenKarte />
+      <DatenLoeschen />
+      {/* „Über die App“ am Ende (DS14): Version und Lizenzen braucht man selten, die
+          Einstellungen oft. */}
       <section className="karte">
         <h2 className="karte-titel">{t("ich.einstellungen")}</h2>
         <dl className="einstellungen">
@@ -147,8 +151,6 @@ export function Ich() {
           </p>
         )}
       </section>
-      <EinstellungenKarte />
-      <DatenLoeschen />
     </div>
   );
 }

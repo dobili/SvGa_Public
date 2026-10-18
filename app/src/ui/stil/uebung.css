@@ -178,3 +178,27 @@
   width: 100%;
   min-width: 0;
 }
+
+/* 30-Minuten-Plan: Tagesplan als Tabelle, Uhr des Schritts groß, überschrittene Zeit rot. */
+.plantabelle caption {
+  text-align: left;
+  font-weight: bold;
+  padding-top: var(--raster);
+}
+
+.planzeit {
+  font-size: 1.6em;
+  font-variant-numeric: tabular-nums;
+  margin: calc(var(--raster) / 2) 0;
+}
+
+.planzeit-ueber {
+  color: var(--rot-text);
+}
+
+.planliste {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: calc(var(--raster) / 2);
+}

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.70. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.71. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.70“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.71“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,8 +21,23 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.70“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.71“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.71 (etwa 15 Minuten, mit Engine; 30-Minuten-Plan, Opus)
+
+- [ ] N305. **30-Minuten-Plan:** Training › Kapitel 12 › „30-Minuten-Plan“ › Trainieren. Oben der
+      Plan beider Tage als Tabelle (Tag A Partietag: 5 Min. Taktik, 20 Min. Partie, 5 Min. kurze
+      Analyse; Tag B Studientag: 5 Min. Taktik, 15 Min. Thema, 10 Min. Analyse der Vortagespartie)
+      und „Im Wechsel ist heute dran: Tag A“. „Tag A: Partietag starten“: Oben stehen Schritt 1
+      von 3 und die Restzeit (läuft sekündlich, nach Ablauf rot „… über der Zeit“), darunter zwei
+      leichte Taktikaufgaben. „Schritt erledigt“ führt zur Partie („Zum Spielen“; ohne Uhr
+      spielen, die Uhr des Plans zählt die 20 Minuten), „Zurück“ bringt dich wieder zum Plan, der
+      weiterläuft (auch nach Neuladen der App). Schritt 3 öffnet mit „Letzte Partie ansehen“ den
+      Rückblick. „Einheit abschließen“: „Einheit geschafft. Beim nächsten Mal ist Tag B dran.“
+      Danach Tag B: Im Schritt „Thema“ ist ein Bereich vorgewählt (Taktik, Endspiel, Strategie,
+      Eröffnung im Wechsel), darunter die Trainer des Bereichs als Knöpfe. Schritt 3 hat dazu
+      „Zur Fehlerdatenbank“. Siehe F5.
 
 ### Neu in 0.2.70 (etwa 10 Minuten, mit Engine; Abweichungsmodus, Opus)
 
@@ -898,6 +913,21 @@ Regeln C1 und C2).
       zeigt die Fazits der Werkzeuge Zielbilanz und Todsünden, keine vorbereiteten Texte, weil es
       zu Stellungen außerhalb des Buches keine gibt.
       **Empfehlung:** so lassen. Schon umgesetzt in 0.2.70, Widerspruch genügt.
+
+- [ ] F5. **30-Minuten-Plan (0.2.71):** Eine geführte Einheit mit den drei Schritten deiner
+      Tabelle in Kapitel 12; die Uhr zeigt die Restzeit des Schritts und läuft über die Zeit
+      weiter, statt abzubrechen (das Buch nennt Richtzeiten). Die Taktikaufgaben sind zwei
+      gemischte der leichtesten Stufe; die Partie spielst du im normalen Spielen-Bildschirm, die
+      Analyse im Rückblick der letzten Partie; am Studientag führen Knöpfe zu den Trainern des
+      Bereichs (Taktik: Taktiktrainer, Studien; Endspiel: Endspieltrainer; Strategie: Zug
+      erraten, Planbilanz, Strukturerkenner; Eröffnung: Repertoire, Abweichungsmodus,
+      Zielbilanz, Faktorenbilanz). Tag und Bereich wechseln nach jeder abgeschlossenen Einheit,
+      ein Abbruch schaltet nicht weiter. Der Stand liegt nur auf dem Gerät (nicht in der
+      Datensicherung); eine Einheit, die drei Stunden liegt, verfällt. Eine abgeschlossene
+      Einheit zählt als Durchgang im Fortschritt. Die Bedenkzeit 10+0 bietet der
+      Spielen-Bildschirm noch nicht an (Fables Bereich, ist bei Fable angefragt); bis dahin
+      steht im Plan „ohne Uhr spielen“.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.71, Widerspruch genügt.
 
 ### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 

@@ -83,9 +83,10 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await expect(zaehltrainer).toContainText("Zähltrainer");
   await expect(zaehltrainer).toContainText("Abtauschbilanz in Bauerneinheiten");
   await expect(zaehltrainer.getByRole("button", { name: "Trainieren" })).toBeVisible();
-  // Noch nicht spielbare Trainer stehen aufklappbar mit „folgt mit einem Update“ da.
+  // Alle Trainer sind spielbar (seit 0.2.71 auch der 30-Minuten-Plan), keiner „folgt“ mehr.
   const dreissig = page.getByTestId("trainer-dreissigMinuten").first();
-  await expect(dreissig).toContainText("folgt mit einem Update");
+  await expect(dreissig.getByRole("button", { name: "Trainieren" })).toBeVisible();
+  await expect(page.getByText("folgt mit einem Update")).toHaveCount(0);
   await expect(page.getByTestId("trainer-denkroutine")).toContainText("Denkroutine-Trainer");
   // Jedes Kapitel hat seine Trainingsseite, auch Kapitel 9 (sein Trainer gehört auch zu Kapitel 8).
   const kastenlinks = page.getByRole("link", { name: "Training zu diesem Kapitel (Website)" });

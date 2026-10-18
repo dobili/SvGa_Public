@@ -52,7 +52,7 @@ export const TRAINER: readonly Trainer[] = [
   { kennung: "endspiel", kapitel: [8, 9], stufe: 2, fertig: true },
   { kennung: "studien", kapitel: [10], stufe: 3, fertig: true },
   { kennung: "zugErraten", kapitel: [11], stufe: 3, fertig: true },
-  { kennung: "dreissigMinuten", kapitel: [12], stufe: 3, fertig: false },
+  { kennung: "dreissigMinuten", kapitel: [12], stufe: 3, fertig: true },
   { kennung: "fehlerdatenbank", kapitel: [12], stufe: 3, fertig: true },
   { kennung: "denkroutine", kapitel: [12], stufe: 3, fertig: true },
 ];

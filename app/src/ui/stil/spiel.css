@@ -66,6 +66,20 @@
   font-weight: 600;
 }
 
+/* Zurücknehmen und Aufgeben nebeneinander statt zwei breiter Balken (DS10): „Aufgeben“ war der
+   größte Knopf unter dem Brett, obwohl man ihn am seltensten braucht. Er steht jetzt rechts,
+   zurückhaltend; die Nachfrage „Wirklich aufgeben?“ bleibt. */
+.partiestatus > .knopfreihe {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.knopf-aufgeben {
+  margin-left: auto;
+  color: var(--text-leise);
+  font-weight: 400;
+}
+
 /* Stufe je Phase (0.2.40): drei Regler untereinander, Beschriftung mit Nummer und Name. */
 .stufenwahl {
   margin: var(--raster) 0;

@@ -59,7 +59,11 @@ export function Partiestatus({
             </button>
           )}
           {!partie.ende && (
-            <button type="button" className="knopf-zweit" onClick={() => setzeAufgeben(true)}>
+            <button
+              type="button"
+              className="knopf-zweit knopf-aufgeben"
+              onClick={() => setzeAufgeben(true)}
+            >
               {t("partie.aufgeben")}
             </button>
           )}

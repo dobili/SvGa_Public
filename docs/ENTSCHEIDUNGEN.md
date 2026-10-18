@@ -3085,3 +3085,11 @@ Spaßkategorie unter den Einsteigern mit vier Bots um 500 bis 1000.
   Spaß-Bots den unteren Bereich abdecken. Offen bleiben die Namen der Stufen, abhängig von N335.
 - **Beobachtung:** `engine/zentrumsschlag.test.ts` (echte Engine) schlug einmal im vollen Lauf fehl
   und lief allein und im zweiten vollen Lauf grün; vermutlich knappe Rechenzeit unter Last.
+
+## Gleich große Kacheln in der Gegnerwahl (18.10.2026 abends, Opus, Zweig `kacheln-gleich`, Version 0.2.89)
+
+Bildschirmfoto des Autors: In Stufe 8 waren die Kacheln von Großmeister Grün und GM Lindqvist
+größer. Ursache: `grid-template-columns: repeat(4, 1fr)` lässt eine Spalte nie schmaler werden
+als ihren Inhalt, und die Namen standen ohne Umbruch. Jetzt `minmax(0, 1fr)`, die Kachel darf
+schrumpfen, Namen brechen mittig um (statt abgeschnitten zu werden). Der Oberflächentest misst
+die acht Porträts der Stufe 8; mit dem alten Stil wichen sie um 24 Pixel ab.

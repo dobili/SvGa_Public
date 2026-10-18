@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.88. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.89. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.88“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.89“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,15 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.88“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.89 (etwa 2 Minuten; gleich große Kacheln, Opus)
+
+- [ ] N349. **Gleich große Kacheln in der Gegnerwahl:** Dein Bildschirmfoto zeigte in Stufe 8
+      größere Kacheln bei Großmeister Grün und GM Lindqvist. Grund: Eine Spalte wurde nie
+      schmaler als ihr längster Name. Jetzt sind die vier Spalten immer gleich breit, lange Namen
+      brechen in eine zweite Zeile um. Öffne Stufe 8 und Stufe 7: Alle Porträts sind gleich groß.
 
 ### Neu in 0.2.88 (etwa 15 Minuten, mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 

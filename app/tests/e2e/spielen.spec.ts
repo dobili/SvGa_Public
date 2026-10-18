@@ -298,6 +298,14 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   ).toBeVisible();
   await gitter.getByRole("radio", { name: /Fritzi/ }).click();
   await expect(staerke).toContainText(/etwa \d+ \(zum Spaß\)/);
+  // Gleich große Kacheln (0.2.89): Stufe 8 hat die längsten Namen („Großmeister Grün“).
+  await stufen.nth(8).locator("summary").click();
+  const breiten = await stufen
+    .nth(8)
+    .locator(".gegner-portraet")
+    .evaluateAll((bilder) => bilder.map((b) => b.getBoundingClientRect().width));
+  expect(breiten).toHaveLength(8);
+  expect(Math.max(...breiten) - Math.min(...breiten)).toBeLessThan(1);
   await page.screenshot({ path: "test-results/bilder/spielen-kategorien.png", fullPage: true });
   await page.getByRole("radio", { name: "Eigene Stufe" }).click();
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();

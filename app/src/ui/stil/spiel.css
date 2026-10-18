@@ -578,13 +578,20 @@
   gap: calc(var(--raster) / 2);
 }
 
+/*
+ * Vier gleich breite Spalten (0.2.89, Bildschirmfoto des Autors): Mit „1fr“ wurde eine Spalte nie
+ * schmaler als ihr längster Name, „Großmeister Grün“ machte Kachel und Porträt größer.
+ * minmax(0, 1fr) erlaubt schmalere Spalten; lange Namen brechen dafür in eine zweite Zeile um.
+ */
 .gegnergitter {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
   gap: 6px;
 }
 
 .gegnerkachel {
+  min-width: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -620,10 +627,10 @@
 
 .gegnerkachel-name {
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  overflow-wrap: break-word;
 }
 
 /* ---------- Symbole der Auswertung (0.2.85, Wunsch des Autors) ---------- */

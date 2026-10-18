@@ -33,7 +33,7 @@
   gap: 6px;
 }
 
-/* Reiter mit Symbol: Symbol über dem Wort wie in der Leiste (DS8). So passen die fünf Reiter
+/* Reiter mit Symbol: Symbol über dem Wort wie in der Leiste (DS7). So passen die fünf Reiter
    der Einstellungen auch bei 360 Pixeln nebeneinander, ohne dass „Training“ hinter dem Rand
    verschwindet und erst gewischt werden muss. */
 .reiter:has(svg) {

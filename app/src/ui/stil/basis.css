@@ -100,6 +100,13 @@ button {
   cursor: pointer;
 }
 
+/* Aufklappzeilen ohne eigenen Stil sind 44 Pixel hoch (DS8): Der Text allein war nur 23 Pixel
+   hoch und schwer zu treffen. :where hält die Regel schwächer als die eigenen Stile. */
+:where(summary) {
+  padding-block: 10px;
+  cursor: pointer;
+}
+
 a {
   color: inherit;
   font-weight: 600;
@@ -297,10 +304,11 @@ a.knopf-zweit {
 }
 
 .chip {
-  min-height: 40px;
+  /* 44 Pixel hoch wie jede Tippfläche (DS8, vorher 40; Apple 44 pt, WCAG 2.5.5). */
+  min-height: var(--tippflaeche);
   min-width: var(--tippflaeche);
   padding: 0 14px;
-  border-radius: 20px;
+  border-radius: calc(var(--tippflaeche) / 2);
   border: 1px solid var(--linie-stark);
   background: var(--flaeche);
   font-size: var(--groesse-mittel);

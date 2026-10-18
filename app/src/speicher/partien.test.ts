@@ -211,7 +211,7 @@ describe("Lesen aus Rohdaten", () => {
     expect(leer.vorlieben.erlaubteFehlerarten).toEqual([]);
   });
 
-  it("Blinde Flecken der eigenen Stufe (0.2.81): ohne Angabe keine, sonst nur bekannte", () => {
+  it("Blinde Flecken der eigenen Stufe (0.2.82): ohne Angabe keine, sonst nur bekannte", () => {
     expect(spielstandAus({ vorlieben: { stufe: 2 } }).vorlieben.blindeFlecken).toEqual([]);
     const mit = spielstandAus({ vorlieben: { blindeFlecken: ["rueckzug", "unsinn"] } });
     expect(mit.vorlieben.blindeFlecken).toEqual(["rueckzug"]);

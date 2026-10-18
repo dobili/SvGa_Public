@@ -1,6 +1,7 @@
 # Figurensätze der App – Herkunft und Lizenzen
 
-Stand: 18.10.2026. Noch nicht in der App eingebunden (Einstellung „Figurensatz“ zeigt „folgt“).
+Stand: 18.10.2026. In der App seit 0.2.82 (Einstellungen › Figurensatz); Kopien der Dateien in
+`app/public/figuren/<satz>/`.
 Jeder Ordner enthält 12 SVG-Dateien: `w` = Weiß, `b` = Schwarz,
 dann `K` König, `Q` Dame, `R` Turm, `B` Läufer, `N` Springer, `P` Bauer.
 

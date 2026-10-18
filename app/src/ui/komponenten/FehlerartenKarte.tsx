@@ -9,7 +9,7 @@
  * verbieten, die ihn nicht weiterbringt. Eigene Gegner haben ihre eigene Liste (GegnerEditor.tsx)
  * und bleiben unberührt. Die Liste liegt in den Spielvorlieben (speicher/partien.ts) und greift
  * bei der nächsten neuen Partie (Spielen.tsx, `gegnerprofil`).
- * Seit 0.2.81 (Wunsch des Autors) daneben „Blinde Flecken der Engine“ für die eigene Stufe, wie
+ * Seit 0.2.82 (Wunsch des Autors) daneben „Blinde Flecken der Engine“ für die eigene Stufe, wie
  * bei den eigenen Gegnern (GegnerEditor.tsx), gespeichert in den Spielvorlieben.
  * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, speicher/partien.ts, speicher/speicher.ts, InfoKnopf, i18n.
  */

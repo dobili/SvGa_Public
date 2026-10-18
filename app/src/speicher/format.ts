@@ -28,7 +28,7 @@ export const SCHEMA_VERSION = 4;
 export type Brettfarben = "buch" | "holz" | "gruen";
 export type Strenge = "locker" | "streng";
 /**
- * Die Bildsätze der Figuren (seit 0.2.81, Auswahl des Autors vom 18.10.2026), je Gruppe drei:
+ * Die Bildsätze der Figuren (seit 0.2.82, Auswahl des Autors vom 18.10.2026), je Gruppe drei:
  * Klassisch, Modern, Holz. Die Dateien liegen in public/figuren/<satz>/, Herkunft und Lizenz in
  * pipeline/figuren/saetze/LIZENZEN.md.
  */

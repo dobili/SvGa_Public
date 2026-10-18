@@ -131,7 +131,7 @@ h2.abschnittsklappe-titel {
   margin: 0;
 }
 
-/* Pfeil vorn in der Abschnittszeile (0.2.81): zeigt nach rechts, aufgeklappt nach unten. */
+/* Pfeil vorn in der Abschnittszeile (0.2.82): zeigt nach rechts, aufgeklappt nach unten. */
 .abschnittsklappe > summary {
   list-style: none;
 }

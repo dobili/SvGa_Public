@@ -5,7 +5,7 @@
  * Autors nach dem versprochenen zweiten Satz) gibt es mehrere Sätze:
  * - „buch“: die Figuren der Buchdiagramme (SkakNew, Pfade aus figurenpfade.generiert.ts), mit
  *   cremefarbenem Schattenriss und Figur in der Farbe des Brettes;
- * - seit 0.2.81 neun Bildsätze nach Wahl des Autors, je drei klassisch, modern und aus Holz
+ * - seit 0.2.82 neun Bildsätze nach Wahl des Autors, je drei klassisch, modern und aus Holz
  *   (speicher/format.ts, BILDSAETZE; Herkunft und Lizenz in pipeline/figuren/saetze/LIZENZEN.md).
  *   Sie ersetzen die früheren Sätze „klassisch“ und „Holz“.
  * Die SVG-Dateien liegen in public/figuren/<satz>/ und gehören zum Offline-Speicher (Muster *.svg).

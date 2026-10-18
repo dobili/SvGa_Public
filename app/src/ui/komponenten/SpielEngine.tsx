@@ -8,7 +8,7 @@
  * Auswertung (!, ?!, ?, ??) ohne Erklärung, 3. warum er schlecht war (Regeln des Buches,
  * spiel/erklaerung.ts), 4. der beste Zug jetzt als goldener Pfeil. Schritte, die nichts zu sagen
  * haben, fallen weg (kein eigener Zug bisher; ein guter Zug braucht kein „Warum“).
- * Die Engine rechnet erst beim Tipp, mit voller Stärke. Seit 0.2.81 (Rückmeldung des Autors) ist
+ * Die Engine rechnet erst beim Tipp, mit voller Stärke. Seit 0.2.82 (Rückmeldung des Autors) ist
  * der Einstieg das Engine-Symbol am Brett wie bei den Abbildungen: Die Karte erscheint mit der
  * Bewertung, die weiteren Schritte sind kleine Schaltflächen statt großer Knöpfe.
  * Abhängigkeiten: engine/engineDienst.ts, engine/letzterzug.ts, spiel/erklaerung.ts,

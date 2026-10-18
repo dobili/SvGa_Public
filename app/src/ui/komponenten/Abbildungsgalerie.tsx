@@ -8,7 +8,7 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): „Alle abhaken“ und „Alle zurücksetzen“ stehen
  * direkt über der Galerie; jeder Abschnitt (1.1, 1.2 …) ist aufklappbar, zeigt seinen Stand als
  * kleinen Ring und hat einen eigenen Knopf „Abschnitt 1.1 abhaken“ oder „Haken in 1.1 lösen“.
- * Seit 0.2.81 (Wunsch des Autors) sind alle Abschnitte anfangs eingeklappt; ein Pfeil vorn zeigt,
+ * Seit 0.2.82 (Wunsch des Autors) sind alle Abschnitte anfangs eingeklappt; ein Pfeil vorn zeigt,
  * ob ein Abschnitt auf- oder zugeklappt ist.
  * Abhängigkeiten: daten/laden.ts, ui/brett, Navigation, Speicher, MitInfo, Ring, i18n.
  */

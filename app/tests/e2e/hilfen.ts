@@ -115,7 +115,7 @@ export async function zeigeAlles(seite: Page): Promise<void> {
   }
 }
 
-/** Klappt einen Abschnitt der Kapitelübersicht auf (seit 0.2.81 anfangs eingeklappt). */
+/** Klappt einen Abschnitt der Kapitelübersicht auf (seit 0.2.82 anfangs eingeklappt). */
 export async function klappeAbschnittAuf(seite: Page, nummer: string): Promise<void> {
   const titel = seite.getByRole("heading", { name: new RegExp(`^${nummer.replace(".", "\\.")} `) });
   await titel.click();

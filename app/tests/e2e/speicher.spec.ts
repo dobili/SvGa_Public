@@ -62,12 +62,12 @@ test("Abhaken von Hand in der Kapitelübersicht: einzeln, alle, alle zurücksetz
   await expect(page.getByTestId("fortschritt-abbildungen")).toHaveText(/^0 von \d+$/);
 });
 
-test("Abschnitte der Kapitelübersicht: anfangs zu, einzeln abhaken, Haken lösen, zuklappen (0.2.81)", async ({
+test("Abschnitte der Kapitelübersicht: anfangs zu, einzeln abhaken, Haken lösen, zuklappen (0.2.82)", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: /Grundprinzipien/ }).click();
-  // Seit 0.2.81 sind alle Abschnitte anfangs eingeklappt.
+  // Seit 0.2.82 sind alle Abschnitte anfangs eingeklappt.
   await expect(page.locator("details.abschnittsklappe[open]")).toHaveCount(0);
   await klappeAbschnittAuf(page, "1.4");
   const haken = page.getByRole("button", { name: "Abb. 1.26 als angesehen abhaken" });

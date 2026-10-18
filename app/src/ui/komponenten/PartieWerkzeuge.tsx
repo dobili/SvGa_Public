@@ -32,7 +32,7 @@ const SYMBOLGROESSE = 20;
 
 /**
  * Die Symbole in der Reihenfolge am Brett, wie an den Abbildungen ab Kapitel 7. Die Engine
- * (seit 0.2.81 als Symbol statt Knopf unter dem Brett, Wunsch des Autors) gehört zu den
+ * (seit 0.2.82 als Symbol statt Knopf unter dem Brett, Wunsch des Autors) gehört zu den
  * Werkzeugen, die übrigen zu den Symbolen der Spielhilfen.
  */
 const SYMBOLE: readonly {

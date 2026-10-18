@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.81. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.82. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.81“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.82“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,8 +27,28 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.81“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.82“, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.82 (etwa 10 Minuten; deine Rückmeldung zu 0.2.80 und neue Figurensätze, Opus)
+
+- [ ] N321. **Blinde Flecken bei eigener Stufe:** Spielen › „Eigene Stufe“. Unter „Absichtliche
+      Fehler der Engine“ steht jetzt auch „Blinde Flecken der Engine“, eingeklappt mit „(0
+      gewählt)“. Aufklappen, „Rückzüge“ anhaken: Die Überschrift zeigt „(1 gewählt)“. Eine Partie
+      gegen die eigene Stufe beginnen: Die Engine übersieht dann oft Rückzüge. Die Wahl bleibt
+      gespeichert; vorgefertigte und eigene Bots behalten ihre eigenen Flecken.
+
+- [ ] N322. **Neue Figurensätze:** Einstellungen › „Darstellung und Training“ › Reiter „Figuren“.
+      Oben „wie im Buch“, darunter drei Gruppen mit je drei Sätzen und Vorschau: Klassisch
+      (Cburnett, Merida, Chessnut), Modern (Mpchess, Celtic, Spatial) und Holz (Kiefer &
+      Kirsche, Eiche & Mahagoni, Esche & Ebenholz). Die bisherigen Sätze „klassisch“ und „Holz“
+      sind ersetzt: Wer „klassisch“ gewählt hatte, sieht jetzt Cburnett (dieselben Figuren), wer
+      „Holz“ hatte, Kiefer & Kirsche. Einen Satz wählen und eine Abbildung öffnen: Die Figuren
+      erscheinen im neuen Satz. Unter Einstellungen › Lizenzen stehen Urheber und Lizenz jedes
+      Satzes.
+
+- [ ] N323. **Reiter ohne Wackeln:** Einstellungen › „Darstellung und Training“: Die Reiterzeile
+      lässt sich nur noch waagerecht schieben, nicht mehr ein Stück senkrecht.
 
 ### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
 
@@ -74,11 +94,10 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.81“, dann 
       darunter eine Karte „Training und Übungen“ (erst die Trainer, dann die Übungen aus dem
       Buch). Darunter „Abbildungen“ mit Fragezeichen (Erklärung zu den 30 Sekunden) und direkt
       darunter „Alle abhaken“ und „Alle zurücksetzen“. Jeder Abschnitt (1.1, 1.2 …) hat eine
-      Zeile mit kleinem Ring, Titel und „x von y“ und lässt sich auf- und zuklappen. Im
+      Zeile mit Pfeil, kleinem Ring, Titel und „x von y“ und lässt sich auf- und zuklappen; seit
+      0.2.82 sind anfangs alle zu, der Pfeil zeigt nach rechts (zu) oder unten (auf). Im
       aufgeklappten Abschnitt steht „Abschnitt 1.4 abhaken“; danach heißt der Knopf „Haken in 1.4
-      lösen“. Beim Öffnen des Kapitels sind nur die Abschnitte aufgeklappt, in denen noch etwas
-      fehlt; fertige sind zu (Empfehlung nach Regel 9, damit du gleich siehst, wo du weitermachst;
-      Widerspruch genügt, dann sind wieder alle offen).
+      lösen“.
 
 - [ ] N319. **Gegnerwahl in drei Kategorien:** Spielen › Gegner „Engine“. Unter „Art des
       Gegners“ drei Kacheln mit Symbol: „Eigene Stufe“ (Regler), „Vorgefertigte Bots“ (Roboter)
@@ -91,14 +110,15 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.81“, dann 
       Eröffnung gelten für alle drei und stehen darunter wie bisher.
 
 - [ ] N320. **Engine-Knopf in der Partie:** Ungewertete Partie gegen Stufe 1 beginnen, einen Zug
-      spielen und warten, bis du wieder am Zug bist. Unter dem Brett steht statt „Hinweis 1“ jetzt
-      „Engine: Stellung bewerten“. Jeder Tipp verrät etwas mehr: 1. die Bewertung („+0,36 Weiß
-      steht leicht besser“), 2. „Deinen letzten Zug bewerten“: das Zeichen deines Zuges (!, ?!, ?,
+      spielen und warten, bis du wieder am Zug bist. Seit 0.2.82 tippst du unten am Brett auf das
+      Symbol „Engine“ (Prozessor, wie bei den Abbildungen); darunter erscheint eine Karte, und
+      jeder weitere Tipp auf die kleinen Schaltflächen darin verrät etwas mehr: 1. gleich die
+      Bewertung („+0,36 Weiß steht leicht besser“), 2. „Deinen letzten Zug bewerten“: das Zeichen deines Zuges (!, ?!, ?,
       ??) am Brett und als Satz, ohne Erklärung, 3. „Warum?“ (nur bei ?!, ? und ??): die Regel
       des Buches, die verletzt war, und der bessere Zug, 4. „Besten Zug zeigen“: goldener Pfeil
       für den Zug, den die Engine jetzt spielen würde. Probiere einmal absichtlich einen
       schlechten Zug (etwa die Dame einstellen), damit du Schritt 3 siehst. In gewerteten
-      Partien gibt es den Knopf nicht (wie vorher den Hinweis).
+      Partien gibt es das Symbol nicht (wie vorher den Hinweis).
 
 ### Neu in 0.2.75 (etwa 5 Minuten; diese Datei in der App, Opus)
 

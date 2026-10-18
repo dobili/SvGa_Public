@@ -5,7 +5,7 @@
  * soll man sehen, wie Brett und Figuren aussehen, bevor man wählt. Jede Kachel zeigt vier Felder
  * (hell, dunkel, hell, dunkel) mit weißem König und Springer und schwarzem Springer und Bauern,
  * gezeichnet wie auf dem Brett (Figur.tsx, Holzfelder.tsx). Für Bildschirmleser eine Gruppe von
- * Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck (aria-hidden). Seit 0.2.81 lassen sich
+ * Radioknöpfen wie Auswahl.tsx; die Vorschau ist Schmuck (aria-hidden). Seit 0.2.82 lassen sich
  * die Kacheln in Gruppen mit Überschrift teilen (Figurensätze: Klassisch, Modern, Holz).
  * Abhängigkeiten: app/einstellungen.ts (Typen), ui/brett/Figur.tsx, Holzfelder.tsx, masse.ts.
  */

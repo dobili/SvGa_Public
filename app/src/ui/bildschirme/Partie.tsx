@@ -179,7 +179,7 @@ function Spielfeld({
   rueckblick,
 }: {
   werkzeug: Werkzeugwahlstand;
-  /** Karte des Engine-Symbols direkt unter dem Brett (0.2.81), sonst null. */
+  /** Karte des Engine-Symbols direkt unter dem Brett (0.2.82), sonst null. */
   engineKarte: ReactNode;
   rueckblick: Rueckblick | null;
   s: Partiesteuerung;
@@ -316,7 +316,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
         ruhig={ruhig}
         werkzeug={werkzeug}
         engineKarte={
-          // Engine-Symbol gewählt, der Leser am Zug, Partie läuft (seit 0.2.81 als Symbol).
+          // Engine-Symbol gewählt, der Leser am Zug, Partie läuft (seit 0.2.82 als Symbol).
           !ruhig &&
           leser &&
           !partie.ende &&

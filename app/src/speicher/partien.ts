@@ -82,7 +82,7 @@ export interface Spielvorlieben {
    */
   readonly erlaubteFehlerarten: readonly Fehlerart[];
   /**
-   * Blinde Flecken der eigenen Stufe (0.2.81, Wunsch des Autors): Zugarten, die die Engine ohne
+   * Blinde Flecken der eigenen Stufe (0.2.82, Wunsch des Autors): Zugarten, die die Engine ohne
    * vorgefertigten Gegner oft nicht sieht; Vorgabe keine. Fehlt die Angabe in älteren Daten,
    * gilt die Vorgabe.
    */

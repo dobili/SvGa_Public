@@ -13,7 +13,7 @@
  * Ebenfalls seit 0.2.31: ausgeblendete Erklärkacheln von Zählen und Ziehen wieder anzeigen.
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
  * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
- * als Kacheln mit Vorschau. Seit 0.2.81 neun Figurensätze in den Gruppen Klassisch, Modern, Holz.
+ * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz.
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * i18n.
  */
@@ -42,7 +42,7 @@ import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
 import { zeigeErklaerungenWieder } from "./useErklaerung";
 
 const BRETTFARBEN: readonly Brettfarben[] = ["buch", "holz", "gruen"];
-/** Figurensätze in Gruppen (seit 0.2.81): wie im Buch, dann je drei klassisch, modern, Holz. */
+/** Figurensätze in Gruppen (seit 0.2.82): wie im Buch, dann je drei klassisch, modern, Holz. */
 const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figurensatz[] }[] = [
   { werte: ["buch"] },
   {

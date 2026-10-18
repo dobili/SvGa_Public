@@ -2876,3 +2876,32 @@ Spielen:
     besserer Zug), 4. bester Zug jetzt mit goldenem Pfeil. Je Stellung 1,5 Sekunden Rechenzeit
     (Konzept 8.1); Schritt 2 rechnet die Stellungen vor und nach dem eigenen Zug. In gewerteten
     Partien fehlt der Knopf wie vorher der Hinweis (S9).
+
+## Rückmeldung zu 0.2.80 und neue Figurensätze (18.10.2026 nachmittags, Opus, Zweig `layout-nachtrag`, Version 0.2.82)
+
+Rückmeldung des Autors zum Layout von 0.2.80:
+
+1. **Blinde Flecken bei eigener Stufe:** neue Vorliebe `blindeFlecken` (Vorgabe keine; ältere
+   Daten ohne Eintrag lesen sich so, kein neues Format), Abschnitt „Blinde Flecken der Engine“
+   unter den absichtlichen Fehlern; gilt nur ohne vorgefertigten oder eigenen Bot.
+2. **Abschnitte der Kapitelseite anfangs eingeklappt,** mit Pfeil (rechts zu, unten auf). Die
+   Regel-9-Empfehlung aus 0.2.80 (offen, wo etwas fehlt) ist damit ersetzt.
+3. **Reiter:** nur noch waagerecht scrollbar (`overflow-y: hidden`; vorher machte
+   `overflow-x: auto` die Zeile auch senkrecht um den 3-px-Unterstrich verschiebbar).
+4. **Engine in der Partie als Symbol am Brett** (Prozessor wie bei den Abbildungen) statt eines
+   großen Knopfes unten: Das Symbol zeigt gleich die Bewertung, die weiteren Schritte sind kleine
+   Schaltflächen in der Karte direkt unter dem Brett. Es gehört zur Spielhilfe „Werkzeuge“, die
+   übrigen Symbole zur Spielhilfe „Symbole“.
+
+**Figurensätze (Wunsch des Autors):** Die neun Sätze aus seiner Auswahl ersetzen „klassisch“ und
+„Holz“; „wie im Buch“ bleibt. Quelle der Dateien ist `pipeline/figuren/saetze/` (mit
+`LIZENZEN.md` und den Lizenztexten), die App liefert Kopien unter `app/public/figuren/<satz>/`
+aus. Die drei Holzsätze erzeugt `pipeline/figuren/holz_maserung.py` aus den Originalen in
+`saetze/quelle/` (Test `pipeline/tests/test_holz_maserung.py` prüft, dass die eingecheckten
+Dateien dem Skript entsprechen). Gespeicherte alte Werte werden übernommen: „klassisch“ und
+„kontrastreich“ → Cburnett (dieselben Figuren), „holz“ → Kiefer & Kirsche (Holz bleibt Holz).
+Lizenztexte für MIT (chess-art) und Apache 2.0 (Chessnut, mit Copyright-Datei) liegen in
+`app/public/lizenzen/`; die Seite „Lizenzen“ der App nennt jeden Satz. Aus der mitgeschickten
+Zip-Datei wurden nur Figuren, Lizenzen und Skript übernommen; die beigelegten Fassungen von
+`docs/ENTSCHEIDUNGEN.md`, `FORTSCHRITT.md` und `LIZENZEN.md` waren ein alter Stand (0.2.32) und
+hätten Neueres überschrieben.

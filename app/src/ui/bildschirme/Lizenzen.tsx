@@ -45,7 +45,7 @@ const BAUSTEINE: readonly { name: string; lizenz: string; herkunft: string; text
   },
   {
     name: "Figurensatz Mpchess (Maxime Chupin)",
-    lizenz: "GNU GPL 3.0 oder neuer",
+    lizenz: "GNU General Public License 3.0 oder neuer",
     herkunft: "über Lichess (github.com/lichess-org/lila, public/piece/mpchess)",
     text: "/lizenzen/gpl-3.0.txt",
   },

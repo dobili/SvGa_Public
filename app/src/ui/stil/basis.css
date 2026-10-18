@@ -682,10 +682,24 @@ a.knopf-zweit {
   color: var(--text-leise);
 }
 
+/* Runde Marke wie ein Spielstein (DS3): Das frühere Quadrat sah aus wie ein Kästchen zum
+   Abhaken. Im dunklen Modus trägt der helle Rand die schwarze Marke. */
 .am-zug-marke {
-  width: 14px;
-  height: 14px;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
   border: 1.5px solid var(--navy);
+}
+
+@media (prefers-color-scheme: dark) {
+  :where(:root:not([data-farbschema="hell"])) .am-zug-marke {
+    border-color: var(--creme);
+  }
+}
+
+:where(:root[data-farbschema="dunkel"]) .am-zug-marke {
+  border-color: var(--creme);
 }
 
 .am-zug-w {

@@ -1,5 +1,5 @@
 /**
- * Tests der Zufallszüge der Spaß-Bots (0.2.87): legal, gleich verteilt über die Liste,
+ * Tests der Zufallszüge der Spaß-Bots (0.2.88): legal, gleich verteilt über die Liste,
  * Umwandlung in eine Dame, kein Zug im Matt.
  */
 import { Chess } from "chessops/chess";

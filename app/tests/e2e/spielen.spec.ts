@@ -120,8 +120,17 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   // Dazu die Strafe: 2... Dh4# als eigener Zweig.
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("So wird der Fehler bestraft");
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("Dh4#");
-  // Seit 0.2.83 mit dem Modus (Standard Mittelweg).
-  await expect(page.getByTestId("spielstaerke")).toContainText("Genauigkeit (Mittelweg)");
+  // Seit 0.2.83 mit dem Modus (Standard „App“, bis 0.2.86 „Mittelweg“); seit 0.2.87 schaltet
+  // man ihn nur hier um, mit Erklärung hinter dem Fragezeichen.
+  const spielstaerke = page.getByTestId("spielstaerke");
+  await expect(spielstaerke).toContainText("Genauigkeit (App)");
+  const modus = spielstaerke.getByRole("radiogroup", { name: "Genauigkeit wie" });
+  await expect(modus.getByRole("radio", { name: "App" })).toHaveAttribute("aria-checked", "true");
+  await modus.getByRole("radio", { name: "chess.com" }).click();
+  await expect(spielstaerke).toContainText("Genauigkeit (chess.com)");
+  await spielstaerke.getByRole("button", { name: "Erklärung: Genauigkeit wie" }).click();
+  await expect(spielstaerke).toContainText("Züge in entschiedener Stellung zählen kaum");
+  await modus.getByRole("radio", { name: "App" }).click();
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
   await expect(
@@ -263,7 +272,7 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(gitter.getByRole("radio", { checked: true })).toHaveCount(1);
   // Seit 0.2.85: Stufen aufklappbar, anfangs die des gewählten Bots offen; die App merkt sich
   // die Wahl. „Partie beginnen“ steht über dem Gitter, direkt unter den drei Kacheln.
-  // Seit 0.2.87 steht vor Stufe 1 die Gruppe „Zum Spaß“ (anfangs zu).
+  // Seit 0.2.88 steht vor Stufe 1 die Gruppe „Zum Spaß“ (anfangs zu).
   const stufen = page.locator("details.gegnerstufe");
   await expect(stufen.nth(0)).not.toHaveAttribute("open", "");
   await expect(stufen.nth(1)).toHaveAttribute("open", "");
@@ -282,7 +291,7 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(staerke).toContainText(/(etwa|unter|über) \d+ \(Stufe 1\)/);
   await page.getByRole("button", { name: "Erklärung: Stärke der Bots" }).click();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Elo-Leiter");
-  // Spaß-Bots (0.2.87): eigene Gruppe mit Bereich, Sprechblase „(zum Spaß)“.
+  // Spaß-Bots (0.2.88): eigene Gruppe mit Bereich, Sprechblase „(zum Spaß)“.
   await stufen.nth(0).locator("summary").click();
   await expect(
     gitter.getByRole("heading", { name: /^Zum Spaß · etwa \d+ bis \d+$/ }),
@@ -328,22 +337,11 @@ test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.
   await expect(karte.getByRole("button")).toHaveCount(0);
 });
 
-test("Genauigkeit wie (0.2.83): Mittelweg vorgewählt, Wechsel zu „nahe chess.com“ bleibt", async ({
+test("Genauigkeit wie: seit 0.2.87 nur in der Auswertung, nicht mehr in den Einstellungen", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
   await page.getByRole("tab", { name: "Training" }).click();
-  const wahl = page.getByRole("radiogroup", { name: "Genauigkeit wie" });
-  await expect(wahl.getByRole("radio", { name: "Mittelweg" })).toBeChecked();
-  await wahl.getByRole("radio", { name: "nahe chess.com" }).click();
-  await expect(page.getByText(/Züge in entschiedener Stellung zählen kaum/)).toBeVisible();
-  await page.reload();
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await page.getByRole("tab", { name: "Training" }).click();
-  await expect(
-    page.getByRole("radiogroup", { name: "Genauigkeit wie" }).getByRole("radio", {
-      name: "nahe chess.com",
-    }),
-  ).toBeChecked();
+  await expect(page.getByRole("radiogroup", { name: "Genauigkeit wie" })).toHaveCount(0);
 });

@@ -12,8 +12,8 @@
  * Spanne, die Werte für chess.com und Lichess hinter dem Fragezeichen; das Urteilswort je Phase an
  * der inneren Genauigkeit. Seit 0.2.85 (S23) über der Tabelle die feste Zahl des Gegners neben
  * seiner Leistung in dieser Partie („Leon (etwa 1300) hat in dieser Partie wie etwa 1450 gespielt“).
- * Seit 0.2.86 (Wunsch des Autors): oben der Schalter „Genauigkeit wie“ (derselbe wie in den
- * Einstellungen, zum schnellen Vergleich), vor jeder Zeile ein Symbol und vor jeder Zugklasse ihre
+ * Seit 0.2.86 (Wunsch des Autors): oben der Schalter „Genauigkeit wie“ (seit 0.2.87 nur noch hier,
+ * als Segmentleiste mit Fragezeichen; Tabellen ohne Überlauf nach rechts), vor jeder Zeile ein Symbol und vor jeder Zugklasse ihre
  * farbige Marke (Auswertungssymbole.tsx).
  * Abhängigkeiten: engine/botstaerke.ts, staerkeangabe.ts, spiel/genauigkeit.ts, spiel/auswertung.ts,
  * spiel/taktik.ts, app/einstellungen.ts,
@@ -37,9 +37,9 @@ import { PHASEN, type Phase } from "../../spiel/phasen";
 import { ZUGARTEN, zugartJeStellung } from "../../spiel/taktik";
 import { GENAUIGKEITSMODI } from "../../spiel/staerkemodell";
 import { sanZuUci } from "../../spiel/zuege";
-import { Auswahl } from "./Auswahl";
 import { Klassenmarke, Zeilenname } from "./Auswertungssymbole";
 import { MitInfo } from "./InfoKnopf";
+import { Segmentwahl } from "./Segmentwahl";
 import { staerketext as angabetext } from "./staerkeangabe";
 import { KENNZAHLSYMBOLE, PHASENSYMBOLE } from "./zeilensymbole";
 
@@ -139,7 +139,12 @@ export function Spielstaerke({
   return (
     <section className="karte spielstaerke" data-testid="spielstaerke">
       <h2 className="karte-titel">{t("spielstaerke.titel")}</h2>
-      <Auswahl
+      <MitInfo
+        zeile={<span className="einstellung-name">{t("einstellungen.genauigkeit")}</span>}
+        erklaerung={<p>{t("einstellungen.genauigkeit.info")}</p>}
+        thema={t("einstellungen.genauigkeit")}
+      />
+      <Segmentwahl
         name={t("einstellungen.genauigkeit")}
         werte={GENAUIGKEITSMODI}
         gewaehlt={modus}
@@ -193,7 +198,7 @@ export function Spielstaerke({
         </tbody>
       </table>
       <h3 className="spielstaerke-untertitel">{t("spielstaerke.klassen")}</h3>
-      <table className="spielstaerke-tabelle">
+      <table className="spielstaerke-tabelle spielstaerke-klassen">
         <tbody>
           {KLASSEN.map((k) => (
             <tr key={k}>

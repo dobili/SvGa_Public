@@ -9,7 +9,7 @@
 //
 // Aufruf (im Ordner app/, die Pakete werden nur zum Erzeugen gebraucht, nicht in der App):
 //   npm install --no-save @dicebear/core@9 @dicebear/personas@9
-//   node skripte/erzeuge-gegnerbilder.mjs          (nur fehlende Porträts, seit 0.2.87)
+//   node skripte/erzeuge-gegnerbilder.mjs          (nur fehlende Porträts, seit 0.2.88)
 //   node skripte/erzeuge-gegnerbilder.mjs --alle   (alle neu)
 // Nur fehlende, damit eine neuere Fassung von DiceBear die vorhandenen Bilder nicht verändert.
 // Die Kennungen müssen zu engine/gegnerliste*.ts passen; der Test engine/gegner.test.ts prüft,

@@ -6,7 +6,7 @@
  * die Stufen aufklappbar, damit nicht immer alle 64 Porträts zu sehen sind; die App merkt sich auf
  * dem Gerät, welche Stufen offen waren (app/merker.ts, eine Bequemlichkeit, die verloren gehen
  * darf). Ohne Merker ist die Stufe des gewählten Gegners offen. An Stufe und Kachel steht seit 0.2.85
- * die Elo-Zahl (engine/botstaerke.ts, Rückfrage S23). Seit 0.2.87 steht vor Stufe 1 die Gruppe
+ * die Elo-Zahl (engine/botstaerke.ts, Rückfrage S23). Seit 0.2.88 steht vor Stufe 1 die Gruppe
  * „Zum Spaß“ mit den Spaß-Bots (Wunsch des Autors).
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, engine/botstaerke.ts, staerkeangabe.ts,
  * app/merker.ts, lucide, i18n.
@@ -113,7 +113,7 @@ interface Gruppe {
 }
 
 /**
- * Die Gruppen der Gegnerwahl: zuerst „Zum Spaß“ (die Spaß-Bots, 0.2.87, Wunsch des Autors), dann
+ * Die Gruppen der Gegnerwahl: zuerst „Zum Spaß“ (die Spaß-Bots, 0.2.88, Wunsch des Autors), dann
  * die acht Stufen. Beispiel: „Zum Spaß · etwa 600 bis 1100“, „Stufe 1 · Einsteiger · etwa 1050
  * bis 1300“.
  */

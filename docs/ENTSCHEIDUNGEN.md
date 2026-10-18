@@ -3043,8 +3043,22 @@ Wünsche und Rückmeldungen des Autors vom Abend, nach Regel 9 gleich umgesetzt.
   aufklappbar mit Merker auf dem Gerät; Kacheln „Über die App“ und „Einstellungen“, Vorschau
   2 × 2; Trainer als Zeilen mit Symbol, Übungen als Nummernraster.
 
+## Rückmeldung zu 0.2.86 (18.10.2026 spätabends, Opus, Zweig `rueckmeldung-0.2.86`, Version 0.2.87)
 
-## Spaß-Bots und Zahlen über 2200 (18.10.2026 abends, Opus, Zweig `spass-bots`, Version 0.2.87)
+- **„Genauigkeit wie“ nur in der Auswertung:** Genauigkeiten zeigt die App nur in der Auswertung
+  einer Partie (die Partienliste zeigt die Spielstärke, die nicht vom Schalter abhängt; nur bei
+  zu wenigen Zügen die Genauigkeit). Deshalb ist der Schalter aus Einstellungen › Training
+  entfernt; der gespeicherte Wert bleibt und wird in der Auswertung umgeschaltet. Als
+  Segmentleiste in einer Zeile mit Fragezeichen (Erklärung aller drei Rechnungen).
+- **Namen:** „Mittelweg“ heißt „App“ (der Standard dieser App), „nahe chess.com“ kurz
+  „chess.com“; das „nahe“ erklärt das Fragezeichen. Gespeichert bleiben die Kennungen
+  `mittelweg` und `chesscom`, keine Umwandlung nötig.
+- **Tabellen:** feste Spaltenbreiten (Name 36 %, bei den Zugklassen 64 %), Umbruch in den Zellen.
+- **Trainer:** „Trainieren“ als runder Symbolknopf (Name bleibt für Bildschirmleser), lange
+  Namen brechen um.
+- **Bretter:** Holz und Material in einer Gruppe.
+
+## Spaß-Bots und Zahlen über 2200 (18.10.2026 abends, Opus, Zweig `spass-bots`, Version 0.2.88)
 
 Rückmeldung des Autors zu 0.2.85: Ab Stufe 5 stand überall „über 2200“, obwohl die Kalibrierung
 die Stufen klar trennen sollte; er erwartete oben etwa 2700 und mehr. Dazu wünschte er eine
@@ -3052,7 +3066,7 @@ Spaßkategorie unter den Einsteigern mit vier Bots um 500 bis 1000.
 
 - **Obere Stufen:** Die Bots waren getrennt (Leiter: Stufe 5 bis 8 etwa 2360, 2600, 2910, 3220),
   nur die Anzeige hörte bei 2200 auf, weil dort die Eichdaten von „Deine Spielstärke“ enden.
-  Seit 0.2.87 zeigt die App die Zahl der Leiter auch darüber; die Grenze liegt erst bei 3300
+  Seit 0.2.88 zeigt die App die Zahl der Leiter auch darüber; die Grenze liegt erst bei 3300
   (über der vollen Engine). Die Erklärung sagt, dass die Zahl über 2200 allein aus Ergebnissen
   gegen die verankerten tieferen Stufen kommt und ungenauer ist (etwa ±200).
 - **Spaß-Bots:** neue Eigenschaft „Anteil an Zufallszügen“ (`engine/zufallszug.ts`, Würfel in

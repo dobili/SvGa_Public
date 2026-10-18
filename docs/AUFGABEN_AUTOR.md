@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.87. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.88. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.87“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.88“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -27,12 +27,12 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.87“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.88“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.87 (etwa 15 Minuten, mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
+### Neu in 0.2.88 (etwa 15 Minuten, mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
-- [ ] N344. **Gruppe „Zum Spaß“:** Spielen › „Vorgefertigte Bots“. Ganz oben steht jetzt die
+- [ ] N347. **Gruppe „Zum Spaß“:** Spielen › „Vorgefertigte Bots“. Ganz oben steht jetzt die
       aufklappbare Gruppe „Zum Spaß · etwa 600 bis 1100“ mit vier Bots, vom schwächsten zum
       stärksten: Fritzi (etwa 600), Onkel Willi (etwa 800), Tante Trude (etwa 900), Bruno (etwa
       1100). Sie spielen wie Stufe 1 und ziehen dazu in einem Teil ihrer Züge irgendeinen legalen
@@ -42,13 +42,24 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.87“, dann 
       nach zwei Anpassungen aufgehört, damit es kein endloses Nachstellen wird. **So prüfen:**
       Spiele eine Partie gegen Fritzi. Sie sollte oft ganz sinnlose Züge machen und trotzdem ab und
       zu eine Figur schlagen, die du hängen lässt.
-- [ ] N345. **Stufe 5 bis 8 mit eigener Zahl:** Bisher stand ab Stufe 5 überall „über 2200“, weil
+- [ ] N348. **Stufe 5 bis 8 mit eigener Zahl:** Bisher stand ab Stufe 5 überall „über 2200“, weil
       die Eichung von „Deine Spielstärke“ dort endet. Die Bots selbst waren aber schon klar
       getrennt; die Ergebnisse gegeneinander zeigen etwa 2350, 2600, 2900 und 3200 für die reinen
       Stufen 5 bis 8. Jetzt zeigt die App diese Zahlen: Stufe 5 etwa 2200 bis 2400, Stufe 6 etwa
       2450 bis 2650, Stufe 7 etwa 2650 bis 3000, Stufe 8 etwa 3000 bis 3200. Das Fragezeichen in
       der Sprechblase erklärt, dass die Zahl über 2200 allein aus Ergebnissen kommt und
       ungenauer ist (etwa ±200).
+
+### Neu in 0.2.87 (etwa 5 Minuten; Rückmeldung zu 0.2.86, Opus)
+
+- [ ] N344. **Auswertung auf dem Handy:** Die Tabellen der Karte „Spielstärke“ bleiben in der
+      Karte (vorher liefen sie nach rechts über); lange Wörter brechen in der Zelle um, die
+      Urteilswörter je Phase dürfen zweizeilig werden. „Genauigkeit wie“ ist eine Leiste in einer
+      Zeile (Lichess | App | chess.com) mit Fragezeichen.
+- [ ] N345. **Trainer:** Der Knopf „Trainieren“ ist jetzt ein runder Knopf mit Abspielsymbol;
+      lange Namen wie „Abweichungsmodus“ und das Fragezeichen werden nicht mehr verdeckt.
+- [ ] N346. **Bretter:** Holz und Material sind eine Gruppe „Holz und Material“. In den
+      Einstellungen › Training steht „Genauigkeit wie“ nicht mehr (siehe N324).
 
 ### Neu in 0.2.86 (etwa 25 Minuten, mit Engine; Auswertung, Werkzeuge, Training, Opus)
 
@@ -63,7 +74,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.87“, dann 
       Brett, die Pfeile gehen Zug für Zug weiter, „Zurück zur Partie“ verlässt den Zweig. Die
       Strafe steht bei „?“ und „??“ und zeigt, wie der Gegner Material gewinnt.
 - [ ] N338. **Auswertung:** Unter der Partie: in der Karte „Spielstärke“ oben der Schalter
-      „Genauigkeit wie“ (Lichess, Mittelweg, nahe chess.com), vor jeder Zeile ein Symbol, vor
+      „Genauigkeit wie“ (Lichess, App, chess.com), vor jeder Zeile ein Symbol, vor
       jeder Zugklasse ihre farbige Marke; die Erklärungen stehen zusammen hinter einem
       Fragezeichen. Grobe Patzer beider Seiten mit kleinem Bauern in der Farbe der Seite, ein Tipp
       springt hin. Von den absichtlichen Fehlern der Engine stehen zuerst drei, „Alle N zeigen“
@@ -95,7 +106,7 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.87“, dann 
       jede Kachel unter dem Namen die Zahl des Bots („etwa 1300“). Gemessen sind: Stufe 1 etwa
       1050 bis 1300, Stufe 2 etwa 1400 bis 1700, Stufe 3 etwa 1900 bis 2100, Stufe 4 etwa 1850
       bis 2150, Stufe 5 etwa 2200 bis 2400, Stufe 6 etwa 2450 bis 2650, Stufe 7 etwa 2650 bis
-      3000, Stufe 8 etwa 3000 bis 3200 (seit 0.2.87; siehe N345). Die
+      3000, Stufe 8 etwa 3000 bis 3200 (seit 0.2.88; siehe N348). Die
       Bereiche von Stufe 3 und 4 überschneiden sich stark: Jan (Stufe 4, etwa 1850) ist der
       schwächste Bot seiner Stufe und liegt unter allen Bots der Stufe 3; die reine Stufe 4 ist
       aber klar stärker als die reine Stufe 3 (17 : 3).
@@ -132,10 +143,10 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.87“, dann 
 
 ### Neu in 0.2.84 (etwa 5 Minuten; neue Bretter, Opus)
 
-- [ ] N328. **Bretter in drei Gruppen:** Zahnrad › Karte „Einstellungen“ › Reiter
+- [ ] N328. **Bretter in zwei Gruppen (seit 0.2.87):** Zahnrad › Karte „Einstellungen“ › Reiter
       „Brett“. Unter „Farben“: Wie im Buch, Grün, Braun, Blau, Sand, Koralle, Lavendel, Nacht.
-      Unter „Holz“: Ahorn & Nussbaum (das bisherige „Holz“, nur umbenannt; wer es gewählt hatte,
-      behält es). Unter „Material“: Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (ganze
+      Unter „Holz und Material“: Ahorn & Nussbaum (das bisherige „Holz“, nur umbenannt; wer es
+      gewählt hatte, behält es), Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (ganze
       Brettbilder von Lichess). Jede Kachel zeigt einen Ausschnitt mit Figuren. Wähle je eins aus
       jeder Gruppe und öffne eine Abbildung: Die Felder, der Schimmer des letzten Zuges
       (gelbgrün auf den Holz- und dunklen Brettern, blau auf den hellen) und die Figuren müssen
@@ -146,14 +157,12 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.87“, dann 
 
 ### Neu in 0.2.83 (etwa 20 Minuten, mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 
-- [ ] N324. **Genauigkeit wie:** Zahnrad › Karte „Einstellungen“ › Reiter „Training“.
-      Oben „Genauigkeit wie“ mit Lichess, Mittelweg (vorgewählt) und nahe chess.com, darunter ein
-      Satz, was der Modus tut. Lichess rechnet wie Lichess (trifft Lichess im Mittel auf 2 bis 3
-      Prozentpunkte), nahe chess.com lässt Züge in längst entschiedener Stellung kaum zählen
-      (trifft chess.com im Mittel auf etwa 6 Punkte, chess.com veröffentlicht seine Rechnung
-      nicht), Mittelweg liegt dazwischen. Öffne eine ausgewertete Partie: In der Karte
-      „Spielstärke“ heißt die erste Zeile „Genauigkeit (Mittelweg)“. Stelle auf „nahe
-      chess.com“: Bei Partien, die lange entschieden waren, sinkt die Zahl; Spielstärke und
+- [ ] N324. **Genauigkeit wie:** Öffne eine ausgewertete Partie. In der Karte „Spielstärke“
+      steht oben „Genauigkeit wie“ mit Fragezeichen und darunter eine Leiste Lichess | App |
+      chess.com (seit 0.2.87 nur noch hier, nicht mehr in den Einstellungen; „App“ hieß vorher
+      „Mittelweg“, „chess.com“ vorher „nahe chess.com“). Das Fragezeichen erklärt die drei
+      Rechnungen. Die erste Zeile heißt „Genauigkeit (App)“. Stelle auf „chess.com“: Bei
+      Partien, die lange entschieden waren, steigt oder sinkt die Zahl; Spielstärke und
       Urteilswörter bleiben gleich (sie hängen nicht am Schalter).
 - [ ] N325. **Spielstärke mit Spanne:** In derselben Karte steht bei „Geschätzte Spielstärke“
       etwa „etwa 1550 (1150–1950)“. Darunter „Mitte aus chess.com und Lichess“ mit Fragezeichen:
@@ -1169,7 +1178,7 @@ Regeln C1 und C2).
       **Empfehlung (umgesetzt):** Die Liste gilt nur für die eigene Stufe; vorgefertigte und
       eigene Bots spielen immer mit ihrer eigenen Liste. Sag Bescheid, wenn die Liste auch die
       vorgefertigten Bots beschneiden soll; dann zeige ich sie auch dort.
-- [ ] S24. **Namen der Stufen und Lage der Skala (Opus, 0.2.85, Stand 0.2.87):** Gemessen ist
+- [ ] S24. **Namen der Stufen und Lage der Skala (Opus, 0.2.85, Stand 0.2.88):** Gemessen ist
       Stufe 1 („Einsteiger“) etwa 1200, Stufe 2 („Anfänger“) etwa 1550, Stufe 3 etwa 1900,
       Stufe 4 etwa 2100, Stufe 5 („Vereinsanfänger“) etwa 2350 bis Stufe 8 etwa 3200. Die
       Abstände stammen aus über 800 Partien der Bots gegeneinander, die Lage aus Partien der
@@ -1177,7 +1186,7 @@ Regeln C1 und C2).
       Rechnung wie „Deine Spielstärke“ etwa 1190, 1560 und 1890, und diese drei Anker passen auf
       etwa 30 Punkte zu den Ergebnissen. Unsicher bleibt, ob ein Bot mit 70 % so spielt wie ein
       Mensch mit 70 % (Bots machen seltene grobe Fehler, Menschen viele mittlere); das zeigt erst
-      dein Test N335. Seit 0.2.87 gibt es für schwache Leser die Gruppe „Zum Spaß“ (etwa 600 bis
+      dein Test N335. Seit 0.2.88 gibt es für schwache Leser die Gruppe „Zum Spaß“ (etwa 600 bis
       1100), damit ist der frühere Vorschlag, die Stufen 1 bis 4 schwächer zu machen, vom Tisch.
       Offen sind nur die Namen: „Vereinsanfänger“ bei etwa 2350 passt nicht. **Empfehlung:** Nach
       N335 entscheiden. Bestätigt dein Test die Zahlen, schlage ich neue Namen vor (etwa

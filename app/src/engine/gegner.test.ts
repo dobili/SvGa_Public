@@ -54,7 +54,7 @@ describe("vorgefertigte Gegner", () => {
   });
 });
 
-describe("Spaß-Bots (0.2.87)", () => {
+describe("Spaß-Bots (0.2.88)", () => {
   it("vier, schwächster zuerst, mit Zufallszügen und nicht in der Gruppe der Stufe 1", () => {
     const spass = spassbots();
     expect(spass.map((g) => g.kennung)).toEqual(["fritzi", "willi", "trude", "bruno"]);

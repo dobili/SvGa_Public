@@ -26,7 +26,7 @@ export function bereichstext(nummer: Stufennummer): string {
   return alsBereich(bereichDerStufe(nummer));
 }
 
-/** Der Bereich der Spaß-Bots als Text (0.2.87); ohne Messung leer. */
+/** Der Bereich der Spaß-Bots als Text (0.2.88); ohne Messung leer. */
 export function spassbereichstext(): string {
   const bereich = bereichDerSpassbots();
   return bereich ? alsBereich(bereich) : "";

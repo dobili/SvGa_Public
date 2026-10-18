@@ -15,7 +15,7 @@ import { MitInfo } from "./InfoKnopf";
 import { TRAINERSYMBOL } from "./trainersymbole";
 
 const SYMBOL = 22;
-const KNOPFSYMBOL = 16;
+const KNOPFSYMBOL = 20;
 
 /** Beispiel: Zähltrainer → Taschenrechner, „Zähltrainer“, ?, „Trainieren“. */
 export function Trainerkarte({ trainer }: { trainer: Trainer }) {
@@ -38,13 +38,16 @@ export function Trainerkarte({ trainer }: { trainer: Trainer }) {
         />
       </div>
       {trainer.fertig ? (
+        // Seit 0.2.87 nur das Symbol (Rückmeldung des Autors: der Knopf mit Text verdeckte Namen
+        // und Fragezeichen); der Name „Trainieren“ bleibt für Bildschirmleser und als Tooltip.
         <button
           type="button"
           className="knopf-zweit trainieren"
+          aria-label={t("training.trainieren")}
+          title={t("training.trainieren")}
           onClick={() => navigiere({ bildschirm: "trainer", kennung: trainer.kennung })}
         >
           <Play size={KNOPFSYMBOL} aria-hidden="true" />
-          {t("training.trainieren")}
         </button>
       ) : (
         <span className="plakette-folgt">{t("training.folgt")}</span>

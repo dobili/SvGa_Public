@@ -150,7 +150,7 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
       stil: jetzige?.einstellung.stil ?? 0,
       blindeFlecken: jetzige?.einstellung.blindeFlecken ?? [],
       verlauf: jetzige ? verlaufVon(jetzige) : undefined,
-      // Spaß-Bots (0.2.87): der Anteil steht in der Liste, nicht in der gespeicherten Partie.
+      // Spaß-Bots (0.2.88): der Anteil steht in der Liste, nicht in der gespeicherten Partie.
       zufallszuege: gegnerVon(jetzige?.einstellung.bot ?? null)?.zufallszuege,
     };
     engineZug(

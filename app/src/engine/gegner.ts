@@ -93,7 +93,7 @@ export function unterAbhakliste(
   return (gegnerliste ?? FEHLERARTEN).filter((art) => erlaubt.includes(art));
 }
 
-/** Ist der Gegner ein Spaß-Bot (mit Zufallszügen, 0.2.87)? */
+/** Ist der Gegner ein Spaß-Bot (mit Zufallszügen, 0.2.88)? */
 export function istSpassbot(g: Gegner): boolean {
   return (g.zufallszuege ?? 0) > 0;
 }
@@ -106,7 +106,7 @@ export function gegnerDerStufe(nummer: Stufennummer): Gegner[] {
   return gegnerSortiert().filter((g) => !istSpassbot(g) && Math.round(durchschnitt(g)) === nummer);
 }
 
-/** Die Spaß-Bots (0.2.87), vom schwächsten zum stärksten (mehr Zufall heißt schwächer). */
+/** Die Spaß-Bots (0.2.88), vom schwächsten zum stärksten (mehr Zufall heißt schwächer). */
 export function spassbots(): Gegner[] {
   return GEGNER.filter(istSpassbot).sort((a, b) => (b.zufallszuege ?? 0) - (a.zufallszuege ?? 0));
 }

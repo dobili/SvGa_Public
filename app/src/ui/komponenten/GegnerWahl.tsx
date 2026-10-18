@@ -57,7 +57,7 @@ function staerkezeile(
   const vorgefertigt = gegnerVon(bot);
   const gemessen = staerkeDesBots(bot);
   if (vorgefertigt && gemessen !== null) {
-    // Spaß-Bots (0.2.87) stehen in keiner Stufe, sondern in der Gruppe „Zum Spaß“.
+    // Spaß-Bots (0.2.88) stehen in keiner Stufe, sondern in der Gruppe „Zum Spaß“.
     if (istSpassbot(vorgefertigt))
       return t("spielen.bot.blaseSpass", { staerke: staerketext(gemessen) });
     const nummer = String(klasseVon(vorgefertigt).nummer);

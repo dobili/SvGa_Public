@@ -161,7 +161,18 @@
   flex: none;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  justify-content: center;
+  width: var(--tippflaeche);
+  height: var(--tippflaeche);
+  padding: 0;
+  border-radius: 50%;
+}
+
+/* Lange Namen („Abweichungsmodus“) umbrechen statt unter den Knopf zu laufen (0.2.87). */
+.trainerkarte-text .mitinfo-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  hyphens: auto;
 }
 
 .trainer-name {

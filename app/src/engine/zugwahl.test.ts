@@ -61,7 +61,7 @@ function folge(...zahlen: number[]): () => number {
 }
 
 describe("Zugwahl", () => {
-  it("Spaß-Bot (0.2.87): mit seinem Anteil ein Zufallszug ohne Engine, sonst wie die Stufe", async () => {
+  it("Spaß-Bot (0.2.88): mit seinem Anteil ein Zufallszug ohne Engine, sonst wie die Stufe", async () => {
     const profil = { ...STANDARDPROFIL, zufallszuege: 0.5 };
     const { b, aufrufe } = bewerter(KANDIDATEN);
     const zufaellig = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0), 0, profil);

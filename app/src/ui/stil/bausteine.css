@@ -347,3 +347,38 @@
   background: #3f8f4a;
   color: #ffffff;
 }
+
+/* ---------- Segmentleiste (seit 0.2.87): kurze Werte in einer Zeile, gleich breit ---------- */
+
+.segmentwahl {
+  display: flex;
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.segment {
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: var(--tippflaeche);
+  padding: 0 6px;
+  border: none;
+  border-left: 1px solid var(--linie-stark);
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.segment:first-child {
+  border-left: none;
+}
+
+.segment[aria-checked="true"] {
+  background: var(--gold);
+  color: #16253d;
+  font-weight: 600;
+}

@@ -19,7 +19,7 @@ import { GEGNER_STUFE_1_BIS_4 } from "./gegnerliste1";
 import { GEGNER_STUFE_5_BIS_8 } from "./gegnerliste2";
 
 /**
- * Alle vorgefertigten Gegner: 64 (acht je Stufe) und am Ende die vier Spaß-Bots (0.2.87), in der
+ * Alle vorgefertigten Gegner: 64 (acht je Stufe) und am Ende die vier Spaß-Bots (0.2.88), in der
  * Reihenfolge der Teildateien.
  */
 export const GEGNER: readonly Gegner[] = [

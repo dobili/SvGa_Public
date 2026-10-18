@@ -15,6 +15,7 @@ import { Abbildung } from "../ui/bildschirme/Abbildung";
 import { Buch } from "../ui/bildschirme/Buch";
 import { Ich } from "../ui/bildschirme/Ich";
 import { Kapitel } from "../ui/bildschirme/Kapitel";
+import { Lernsammlung } from "../ui/bildschirme/Lernsammlung";
 import { Checkliste } from "../ui/bildschirme/Checkliste";
 import { Denkroutine } from "../ui/bildschirme/Denkroutine";
 import { Begriff, Glossar } from "../ui/bildschirme/Glossar";
@@ -58,6 +59,8 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
       return <Denkroutine />;
     case "checkliste":
       return <Checkliste />;
+    case "lernsammlung":
+      return <Lernsammlung />;
     case "spielen":
       return <Spielen startFen={ansicht.startFen} abbildung={ansicht.abbildung} />;
     case "partie":

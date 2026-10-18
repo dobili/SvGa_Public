@@ -4,9 +4,15 @@
  *
  * Rolle im Gesamtbild: Gemeinsame Hülle aller Trainer (AP 13). Die Aufgaben selbst stehen in den
  * Komponenten der einzelnen Trainer; sie bekommen die Runde und melden ihr Ergebnis.
- * Abhängigkeiten: useRunde.ts, i18n.
+ * Seit 0.2.92 steht nach der Antwort „In die Lernsammlung“ für die Stellung, die die Aufgabe
+ * über sammelstellung.ts meldet.
+ * Abhängigkeiten: useRunde.ts, sammelstellung.ts, SammelFormular, i18n.
  */
+import { useState } from "react";
 import { t } from "../../i18n/sprache";
+import type { TrainerKennung } from "../../training/trainer";
+import { SammelKnopf } from "../komponenten/SammelFormular";
+import { SammelstellungKontext } from "./sammelstellung";
 import type { Runde } from "./useRunde";
 
 /** Rückmeldung zu einer Antwort, grün oder rot. */
@@ -50,20 +56,23 @@ function Ende({
 /**
  * Die Hülle einer Runde.
  *
- * Eingaben: Runde, die aktuelle Aufgabe als Kinder, „Noch eine Runde“ und „Zur Auswahl“ (null,
- * wenn der Trainer nur eine Übungsart hat).
+ * Eingaben: Kennung des Trainers (Fundstelle in der Lernsammlung), Runde, die aktuelle Aufgabe
+ * als Kinder, „Noch eine Runde“ und „Zur Auswahl“ (null, wenn der Trainer nur eine Übungsart hat).
  */
 export function Rundenrahmen({
+  kennung,
   runde,
   nochmal,
   zurAuswahl,
   children,
 }: {
+  kennung: TrainerKennung;
   runde: Runde;
   nochmal: () => void;
   zurAuswahl: (() => void) | null;
   children: React.ReactNode;
 }) {
+  const [stellung, setzeStellung] = useState<string | null>(null);
   if (runde.fertig) return <Ende runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl} />;
   return (
     <div className="trainerrunde" data-testid="trainerrunde">
@@ -74,7 +83,14 @@ export function Rundenrahmen({
           richtig: runde.richtig,
         })}
       </p>
-      {children}
+      <SammelstellungKontext value={setzeStellung}>{children}</SammelstellungKontext>
+      {runde.ergebnis !== null && stellung && (
+        <SammelKnopf
+          key={`${runde.index} ${stellung}`}
+          fen={stellung}
+          herkunft={{ herkunft: "trainer", quelle: kennung }}
+        />
+      )}
       {runde.ergebnis !== null && (
         <div className="knopfzeile">
           <button type="button" className="knopf-haupt" onClick={runde.weiter}>

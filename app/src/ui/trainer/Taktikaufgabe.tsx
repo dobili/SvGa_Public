@@ -22,6 +22,7 @@ import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
 import { antworteMitKarte } from "./kartenantwort";
+import { useSammelstellung } from "./sammelstellung";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -111,6 +112,7 @@ function MotivBenennen({ richtig }: { richtig: Aufgabe["motiv"] }) {
 
 /** Eine Taktikaufgabe in der Runde. */
 export function Taktikaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const zugaufgabe = useMemo(() => alsZugaufgabe(aufgabe), [aufgabe]);
   const [zuege, setzeZuege] = useState<readonly string[]>([]);
   const [stufe, setzeStufe] = useState(0);

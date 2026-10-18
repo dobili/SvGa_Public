@@ -22,6 +22,7 @@ import { antworteMitKarte } from "./kartenantwort";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { useEndspielpartie } from "./useEndspielpartie";
 import type { Runde } from "./useRunde";
+import { useSammelstellung } from "./sammelstellung";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -85,6 +86,7 @@ export function Endspielaufgabe({
   runde: Runde;
 }) {
   const [stufe, setzeStufe] = useState(0);
+  useSammelstellung(aufgabe.fen);
   const stand = useEndspielpartie(aufgabe, massstab, (ergebnis) =>
     antworteMitKarte(runde, "endspiel", aufgabe.id, ergebnis.art === "erreicht" && stufe === 0),
   );

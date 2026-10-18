@@ -13,9 +13,11 @@
  *   (speicher/partien.ts).
  * - Format 3 (ab AP 13): dazu „karten“, die Wiederholungskarten (training/wiederholung.ts).
  * - Format 4 (ab 0.2.65): dazu „fehler“, die Fehlerdatenbank (training/fehlerdatenbank.ts).
- *   Lernsammlung aus Konzept 4.7 kommt später hinzu.
+ * - Format 5 (ab 0.2.92): dazu „sammlung“, die Lernsammlung aus Konzept 4.7
+ *   (training/lernsammlung.ts). Eine ältere App lehnt Format 5 als „neuer“ ab, statt die
+ *   Sammlung beim nächsten Speichern stillschweigend zu verlieren.
  * Abhängigkeiten: training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
- * training/fehlerdatenbank (Fehler), speicher/partien.ts.
+ * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), speicher/partien.ts.
  */
 import {
   GENAUIGKEITSMODI,
@@ -23,13 +25,14 @@ import {
   type Genauigkeitsmodus,
 } from "../spiel/staerkemodell";
 import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
+import { sammlungAus, type Sammeleintrag } from "../training/lernsammlung";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
 import { LEERER_SPIELSTAND, spielstandAus, type Spielstand } from "./partien";
 import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
-export const SCHEMA_VERSION = 4;
+export const SCHEMA_VERSION = 5;
 
 /**
  * Die Bretter zur Wahl (seit 0.2.84 Auswahl des Autors vom 18.10.2026): acht Farben, das Holzbrett
@@ -145,6 +148,8 @@ export interface Nutzerdaten {
   readonly karten: Karten;
   /** Fehlerdatenbank des Lesers (ab Format 4, Kapitel 12). */
   readonly fehler: readonly Fehlereintrag[];
+  /** Lernsammlung: eigene Stellungen mit Notiz und Plan (ab Format 5, Kapitel 12). */
+  readonly sammlung: readonly Sammeleintrag[];
   /** Seit 0.2.90: Trefferzahlen bei „Zug erraten“ je Partie (speicher/trainerverlauf.ts). */
   readonly zugErraten: Rateverlauf;
   /** Seit 0.2.90: Stand des 30-Minuten-Plans als JSON, damit er in der Sicherung steckt. */
@@ -173,6 +178,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     spiel: LEERER_SPIELSTAND,
     karten: {},
     fehler: [],
+    sammlung: [],
     zugErraten: {},
     planstand: null,
   };
@@ -296,6 +302,7 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     spiel: spielstandAus(roh.spiel),
     karten: kartenAus(roh.karten),
     fehler: fehlerAus(roh.fehler),
+    sammlung: sammlungAus(roh.sammlung),
     zugErraten: rateverlaufAus(roh.zugErraten),
     planstand: planstandTextAus(roh.planstand),
   };
@@ -329,7 +336,8 @@ export function merkerAlsFormat0(einstellungen: string | null, lernstand: string
  * Eingaben: Rohdaten (aus IndexedDB oder einer Sicherungsdatei), Zeitpunkt für Fehlendes.
  * Ausgabe: umgewandelte Daten mit der Ausgangsversion, oder der Grund der Ablehnung.
  * Beispiel: {einstellungen:{brettfarben:"holz"}} ohne schemaVersion (Format 0) → Format 2 mit
- * Holzbrett; Format 1 → ohne Partien; Format 2 → ohne Karten; Format 3 → ohne Fehler.
+ * Holzbrett; Format 1 → ohne Partien; Format 2 → ohne Karten; Format 3 → ohne Fehler;
+ * Format 4 → ohne Lernsammlung.
  * Sonderfälle: Eine höhere Version als SCHEMA_VERSION stammt aus einer neueren App und wird
  * abgelehnt („neuer“), damit nichts verloren geht; Nicht-Objekte sind „kaputt“.
  */
@@ -341,7 +349,7 @@ export function wandleUm(roh: unknown, jetzt: Date): Pruefergebnis {
   }
   if (version > SCHEMA_VERSION) return { ok: false, grund: "neuer", version };
   // Jedes ältere Format ist eine Teilmenge des neueren: Format 0 (Merker) ohne Fortschritt und
-  // Version, Format 1 ohne „spiel“, Format 2 ohne „karten“, Format 3 ohne „fehler“. Fehlende Teile
-  // ergänzt das Lesen leer.
+  // Version, Format 1 ohne „spiel“, Format 2 ohne „karten“, Format 3 ohne „fehler“, Format 4 ohne
+  // „sammlung“. Fehlende Teile ergänzt das Lesen leer.
   return { ok: true, daten: aktuellesFormatAus(roh, jetzt), vonVersion: version };
 }

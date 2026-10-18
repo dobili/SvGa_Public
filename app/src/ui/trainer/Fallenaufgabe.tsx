@@ -20,6 +20,7 @@ import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
 import { antworteMitKarte } from "./kartenantwort";
+import { useSammelstellung } from "./sammelstellung";
 
 const buchzug = (san: string) => sanInSprache(san, sprache());
 
@@ -62,6 +63,7 @@ function pfeile(aufgabe: Aufgabe, entschieden: boolean): Markierung[] {
 }
 
 export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const [signale, setzeSignale] = useState(false);
   const entschieden = runde.ergebnis !== null;
   const warn = useMemo(() => {

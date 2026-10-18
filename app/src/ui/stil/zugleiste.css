@@ -160,7 +160,9 @@
 
 /* Neben den Brettknöpfen: „Weiß am Zug“ bleibt in einer Zeile. */
 .brettzeile .am-zug {
+  /* Nie schmaler als das längste Wort (DS5, Vorgabe min-width: auto statt 0): Passen „Schwarz
+     am Zug“ und sechs beschriftete Symbole nicht in eine Zeile, rücken die Symbole rechtsbündig
+     in die nächste, statt den Text zu überdecken. */
   flex: 1;
-  min-width: 0;
   line-height: 1.2;
 }

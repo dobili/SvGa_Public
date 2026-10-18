@@ -30,32 +30,12 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.89 (etwa 2 Minuten; gleich große Kacheln, Opus)
-
-- [ ] N349. **Gleich große Kacheln in der Gegnerwahl:** Dein Bildschirmfoto zeigte in Stufe 8
-      größere Kacheln bei Großmeister Grün und GM Lindqvist. Grund: Eine Spalte wurde nie
-      schmaler als ihr längster Name. Jetzt sind die vier Spalten immer gleich breit, lange Namen
-      brechen in eine zweite Zeile um. Öffne Stufe 8 und Stufe 7: Alle Porträts sind gleich groß.
-
 ### Neu in 0.2.88 (etwa 15 Minuten, mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
-- [ ] N347. **Gruppe „Zum Spaß“:** Spielen › „Vorgefertigte Bots“. Ganz oben steht jetzt die
-      aufklappbare Gruppe „Zum Spaß · etwa 600 bis 1100“ mit vier Bots, vom schwächsten zum
-      stärksten: Fritzi (etwa 600), Onkel Willi (etwa 800), Tante Trude (etwa 900), Bruno (etwa
-      1100). Sie spielen wie Stufe 1 und ziehen dazu in einem Teil ihrer Züge irgendeinen legalen
-      Zug: Fritzi in 60 %, Willi in 38 %, Trude in 25 %, Bruno in 15 %. In der Sprechblase steht
-      „etwa 600 (zum Spaß)“. Gemessen in drei Runden (je 20 Partien gegen Stufe 1 und
-      gegeneinander). Bruno liegt mit etwa 1100 etwas über deinem Wunsch (500 bis 1000); ich habe
-      nach zwei Anpassungen aufgehört, damit es kein endloses Nachstellen wird. **So prüfen:**
-      Spiele eine Partie gegen Fritzi. Sie sollte oft ganz sinnlose Züge machen und trotzdem ab und
-      zu eine Figur schlagen, die du hängen lässt.
-- [ ] N348. **Stufe 5 bis 8 mit eigener Zahl:** Bisher stand ab Stufe 5 überall „über 2200“, weil
-      die Eichung von „Deine Spielstärke“ dort endet. Die Bots selbst waren aber schon klar
-      getrennt; die Ergebnisse gegeneinander zeigen etwa 2350, 2600, 2900 und 3200 für die reinen
-      Stufen 5 bis 8. Jetzt zeigt die App diese Zahlen: Stufe 5 etwa 2200 bis 2400, Stufe 6 etwa
-      2450 bis 2650, Stufe 7 etwa 2650 bis 3000, Stufe 8 etwa 3000 bis 3200. Das Fragezeichen in
-      der Sprechblase erklärt, dass die Zahl über 2200 allein aus Ergebnissen kommt und
-      ungenauer ist (etwa ±200).
+- [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, etwa 600): Macht
+      sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende Figur? Bruno liegt mit
+      etwa 1100 etwas über deinem Wunsch (500 bis 1000); so lassen? (Gruppe, Zahlen und
+      Sprechblase hat Claude geprüft.)
 
 ### Neu in 0.2.86 (etwa 25 Minuten, mit Engine; Auswertung, Werkzeuge, Training, Opus)
 
@@ -76,44 +56,9 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       springt hin. Von den absichtlichen Fehlern der Engine stehen zuerst drei, „Alle N zeigen“
       klappt den Rest auf. Bei Partien aus der Grundstellung fehlt „Noch einmal aus derselben
       Stellung“.
-- [ ] N339. **Auswertung startet immer:** Hängt die Engine (etwa weil das Handy die App im
-      Hintergrund angehalten hat), startet die App sie nach spätestens etwa 15 Sekunden neu und
-      macht weiter. Bitte melden, wenn eine Auswertung trotzdem stehen bleibt.
-- [ ] N340. **Spielen:** „Partie beginnen“ steht direkt unter den drei Kacheln (Eigene Stufe,
-      Vorgefertigte Bots, Eigene Bots). Die Stufen der vorgefertigten Bots sind aufklappbar
-      (anfangs die Stufe des gewählten Bots); die App merkt sich, welche offen waren.
-- [ ] N341. **Werkzeuge:** Die Leiste unter dem Brett ist eine waagerecht scrollbare Reihe, jedes
-      Bündel mit Symbol (Eröffnung Tür, Angriffsregel Fadenkreuz, Fallencheck Schild, Skelett
-      Knochen, Planfindung Karte, Taktik Blitz, Endspiel Fahne, Denkroutine Gehirn), „frühere“
-      und „spätere“ am Anfang und Ende. Die Karten zeigen immer alles, „Mehr …“ gibt es nicht
-      mehr (etwa die zweite Seite bei der Angriffsregel).
 
 ### Neu in 0.2.85 (etwa 20 Minuten, mit Engine; Elo-Zahl der Bots, Opus)
 
-- [ ] N330. **Zahlen in der Gegnerwahl:** Spielen › „Vorgefertigte Bots“. Jede Überschrift zeigt
-      jetzt den Bereich ihrer acht Bots, etwa „Stufe 1 · Einsteiger · etwa 1050 bis 1300“, und
-      jede Kachel unter dem Namen die Zahl des Bots („etwa 1300“). Gemessen sind: Stufe 1 etwa
-      1050 bis 1300, Stufe 2 etwa 1400 bis 1700, Stufe 3 etwa 1900 bis 2100, Stufe 4 etwa 1850
-      bis 2150, Stufe 5 etwa 2200 bis 2400, Stufe 6 etwa 2450 bis 2650, Stufe 7 etwa 2650 bis
-      3000, Stufe 8 etwa 3000 bis 3200 (seit 0.2.88; siehe N348). Die
-      Bereiche von Stufe 3 und 4 überschneiden sich stark: Jan (Stufe 4, etwa 1850) ist der
-      schwächste Bot seiner Stufe und liegt unter allen Bots der Stufe 3; die reine Stufe 4 ist
-      aber klar stärker als die reine Stufe 3 (17 : 3).
-- [ ] N331. **Sprechblase und Erklärung:** Tippe auf einen Bot, etwa Ayşe. In der Sprechblase
-      steht „etwa 1550 (Stufe 2)“ mit einem Fragezeichen. Das Fragezeichen erklärt, woher die
-      Zahl kommt (Elo-Leiter aus den Ergebnissen, an der Skala von „Deine Spielstärke“
-      verankert, etwa ±150 genau, keine Zahl je Phase). Unter „Eigene Bots“ steht bei einem
-      eigenen Bot „etwa … (geschätzt)“; unter „Eigene Stufe“ steht „Deine Einstellung 3 · 4 · 3 ·
-      etwa … (geschätzt)“ und ändert sich, wenn du die Regler bewegst.
-- [ ] N332. **Gegner in der Karte „Spielstärke“:** Spiele eine kurze Partie gegen Leon (Stufe 1)
-      bis zum Ende und öffne den Rückblick. Über der Tabelle steht „Leon (etwa 1300) hat in
-      dieser Partie wie etwa … gespielt.“ Die feste Zahl und die Leistung in dieser einen Partie
-      dürfen deutlich auseinanderliegen; die Leistung einer Partie streut um etwa ±400.
-- [ ] N333. **Wertung mit fester Gegnerzahl:** Eine gewertete Partie gegen einen Bot rechnet in
-      deiner Wertung (Einstellungen › Wertung) jetzt mit der festen Zahl des Bots als Wertung
-      des Gegners, nicht mehr mit seiner Leistung in der Partie. Erwartung: Ein Sieg gegen einen
-      Bot, dessen Zahl weit über deiner Wertung liegt, bringt viel, eine Niederlage gegen ihn
-      kostet wenig, und umgekehrt. Die Erklärung hinter dem Fragezeichen der Wertung sagt es.
 - [ ] N334. **Stufe 3 gegen Stufe 4:** Je eine Partie gegen „Eigene Stufe“ 3 · 3 · 3 und 4 · 4 · 4.
       Macht Stufe 3 merklich mehr Fehler (etwa jeder fünfte Zug; gemessen 17 : 3 für Stufe 4)?
 - [ ] N335. **Passt die Zahl zu dir?** Das ist der wichtigste Test, denn nur du kannst die Lage
@@ -145,24 +90,14 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       je 300 gewertete Schnellschach-Partien von chess.com und Lichess (alle Bänder von 400 bis
       2200), mit der Engine der App nachgerechnet; eine einzelne Partie liegt oft 400 Punkte
       daneben, deshalb die Spanne.
-- [ ] N326. **Deine Spielstärke über zehn Partien:** Spielen, über „Letzte Partien“: Karte „Deine
-      Spielstärke“ mit großer Zahl („etwa 1400“) und darunter „1050 bis 1750, aus 3 Partien“. Sie
-      erscheint, sobald eine ausgewertete Partie gegen die Engine mit mindestens zehn eigenen
-      Zügen da ist, und nimmt höchstens die letzten zehn. Mit jeder Partie wird die Spanne enger
-      (bei zehn Partien ±250). Das Fragezeichen erklärt es und nennt beide Skalen.
-- [ ] N327. **Auswertung mit Tiefe 18:** Die Engine bewertet jede Stellung jetzt bis Tiefe 18
-      (wie bei der Eichung) statt eine feste Zeit; auf dem Handy dauert die Auswertung nach einer
-      Partie deshalb etwas länger, wenn du schnell gezogen hast (während du nachdenkst, rechnet
-      sie schon im Hintergrund). Bitte einmal eine Partie zu Ende spielen und schauen, ob die
-      Auswertung in vertretbarer Zeit fertig wird (Fortschritt unter dem Ergebnis).
-
-### Neu in 0.2.82 (etwa 10 Minuten; deine Rückmeldung zu 0.2.80 und neue Figurensätze, Opus)
-
-- [ ] N321. **Blinde Flecken bei eigener Stufe:** Spielen › „Eigene Stufe“. Unter „Absichtliche
-      Fehler der Engine“ steht jetzt auch „Blinde Flecken der Engine“, eingeklappt mit „(0
-      gewählt)“. Aufklappen, „Rückzüge“ anhaken: Die Überschrift zeigt „(1 gewählt)“. Eine Partie
-      gegen die eigene Stufe beginnen: Die Engine übersieht dann oft Rückzüge. Die Wahl bleibt
-      gespeichert; vorgefertigte und eigene Bots behalten ihre eigenen Flecken.
+- [ ] N326. **Deine Spielstärke nach einer Partie:** Spielen, Karte „Deine Spielstärke“ über
+      „Letzte Partien“ (den Ablauf hat Claude geprüft). Befund: Nach genau einer Partie zeigte sie
+      etwa 900 (500 bis 1300), die Karte „Spielstärke“ derselben Partie aber 1150 (750 bis 1550),
+      weil „Deine Spielstärke“ die beiden Skalen anders mittelt. Stört dich das, oder reicht es,
+      dass sich beides mit mehr Partien angleicht?
+- [ ] N327. **Dauer der Auswertung auf dem Handy:** Eine Partie zügig zu Ende spielen: Wird die
+      Auswertung (Tiefe 18, Fortschritt unter dem Ergebnis) in vertretbarer Zeit fertig? Am Rechner
+      waren beim Ende schon 15 von 23 Stellungen fertig, der Rest dauerte 23 Sekunden.
 
 ### Neu in 0.2.81 (etwa 15 Minuten, mit Engine; alle 64 Bots gemessen und eingestellt, Opus)
 
@@ -170,29 +105,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       Stil, etwa Onkel Rudi (aggressiv) oder Sophie (defensiv). Er sollte etwa so viele Fehler
       machen wie die Stufe 2 selbst (gemessen: alle Bots der Stufen 1 bis 4 holen gegen ihre Stufe
       ein Viertel bis drei Viertel der Punkte). Passt das?
-
-### Neu in 0.2.80 (etwa 25 Minuten, mit Engine; Einstellungen, Kapitelseiten und Spielen neu geordnet, dein Wunsch vom 18.10.2026, Opus)
-
-- [ ] N319. **Gegnerwahl in drei Kategorien:** Spielen › Gegner „Engine“. Unter „Art des
-      Gegners“ drei Kacheln mit Symbol: „Eigene Stufe“ (Regler), „Vorgefertigte Bots“ (Roboter)
-      und „Eigene Bots“ (Person mit Stift). Darunter steht nur, was zur gewählten Kachel gehört:
-      bei „Eigene Stufe“ die drei Regler und „Absichtliche Fehler der Engine“; bei
-      „Vorgefertigte Bots“ die 64 Porträts (der Wechsel wählt gleich den ersten Bot der Stufe,
-      die im Mittelspiel eingestellt war); bei „Eigene Bots“ deine Bots und darunter „Eigene Bots
-      verwalten“ zum Anlegen, Ändern und Löschen. Ohne gewählten eigenen Bot ist „Partie
-      beginnen“ gesperrt, mit einem Satz dazu. Seite, Bedenkzeit, Rücknahme, Spielhilfen und die
-      Eröffnung gelten für alle drei und stehen darunter wie bisher.
-
-- [ ] N320. **Engine-Knopf in der Partie:** Ungewertete Partie gegen Stufe 1 beginnen, einen Zug
-      spielen und warten, bis du wieder am Zug bist. Seit 0.2.82 tippst du unten am Brett auf das
-      Symbol „Engine“ (Prozessor, wie bei den Abbildungen); darunter erscheint eine Karte, und
-      jeder weitere Tipp auf die kleinen Schaltflächen darin verrät etwas mehr: 1. gleich die
-      Bewertung („+0,36 Weiß steht leicht besser“), 2. „Deinen letzten Zug bewerten“: das Zeichen deines Zuges (!, ?!, ?,
-      ??) am Brett und als Satz, ohne Erklärung, 3. „Warum?“ (nur bei ?!, ? und ??): die Regel
-      des Buches, die verletzt war, und der bessere Zug, 4. „Besten Zug zeigen“: goldener Pfeil
-      für den Zug, den die Engine jetzt spielen würde. Probiere einmal absichtlich einen
-      schlechten Zug (etwa die Dame einstellen), damit du Schritt 3 siehst. In gewerteten
-      Partien gibt es das Symbol nicht (wie vorher den Hinweis).
 
 ### Neu in 0.2.75 (etwa 5 Minuten; diese Datei in der App, Opus)
 
@@ -234,34 +146,14 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
 
 ### Neu in 0.2.61 (etwa 25 Minuten, mit Engine; deine Rückmeldung zu 0.2.56, Opus)
 
-- [ ] N310. **Gewertete Partie ohne Hilfen (S9):** Spielen, „Gewertete Partie“ angehakt: Die Haken
-      „Züge zurücknehmen erlauben“, „Symbole am Brett“ und „Werkzeuge und Hinweis unter dem Brett“
-      sind ausgegraut und leer, darunter der Satz, dass es in einer gewerteten Partie keine
-      Zugrücknahme und keine Spielhilfen gibt. In der Partie gibt es weder „Zurücknehmen“ noch
-      Werkzeuge. Haken weg: Alles ist wieder wählbar.
 - [ ] N311. **Unmögliche Stellungen (S12):** Stellung aufbauen mit drei weißen Damen und allen
       acht weißen Bauern: „Partie beginnen“ geht nicht, der Hinweis nennt zu viele Steine für die
       Umwandlungen. Mit zwei Damen auf der Grundreihe und höchstens sieben Bauern geht es, und die
       Engine zieht.
-- [ ] N312. **Stil (S13):** Eigener Gegner › Stil: Unter dem Regler steht jetzt, dass ein Stil die
-      Spielstärke deutlich senken kann (bei „sehr aggressiv“ oder „sehr defensiv“ etwa eine halbe
-      Stufe). Eine Partie gegen einen Gegner mit „sehr aggressiv“ fühlt sich spürbar wilder an.
 - [ ] N314. **Sonderzüge aus Kapitel 0 (U5):** Training › Koordinaten › „Zug ausführen“: Unter den
       Sonderzügen stehen jetzt die Stellungen 0.12 bis 0.19 („aus Abb. 0.12“ usw.), mit kurzer und
       langer Rochade für beide Seiten, en passant und Umwandlung. Etwa jeder vierte Sonderzug kommt
       noch aus den zwei eigenen Stellungen (en passant für Schwarz, Umwandlung mit Schlag).
-
-### Neu in 0.2.60 (etwa 10 Minuten, mit Engine; Abhakliste der Fehlerarten aus S7, Fable)
-
-- [ ] N284. **Abhakliste der Fehlerarten:** Spielen › eine Stufe ohne vorgefertigten Gegner ›
-      „Absichtliche Fehler der Engine“ aufklappen (seit 0.2.80 hier statt in den Einstellungen): 14 Haken, alle gesetzt, darunter „Alle
-      erlauben“, „Keine erlauben“ und „14 von 14 Arten erlaubt“. Nimm alle Haken bis auf „eine
-      Figur hängen lassen (W1)“ heraus, dann Spielen › Stufe 2 (kein vorgefertigter Gegner), eine
-      Partie spielen. Im Rückblick sollten die Fehler der Engine nur noch „hat eine Figur hängen
-      lassen“ heißen (oder gar keine absichtlichen, wenn sich keiner anbot). Dann „Keine
-      erlauben“ und noch eine Partie mit eigener Stufe: Die Engine macht keine absichtlichen Fehler
-      mehr. Seit 0.2.80 gilt die Liste nur für die eigene Stufe; vorgefertigte und eigene Bots
-      behalten ihre eigene Liste (siehe S22). Zum Schluss „Alle erlauben“.
 
 ### Neu in 0.2.59 (etwa 10 Minuten, mit Engine; Brillant, zweiter Schritt, Fable)
 
@@ -280,16 +172,6 @@ Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.89“, dann 
       Schlag kräftiger), danach ein heller Ton bei Schach, drei fallende Töne bei Matt, zwei gleiche
       bei Patt oder Remis, ein tiefer Warnton beim Antippen einer Figur, die nicht ziehen darf.
       Klingt alles gut und passend?
-- [ ] N282. **Stern für gewertete Partien:** Spielen › „Deine letzten Partien“: Hinter dem Ergebnis
-      („1–0“) steht bei gewerteten Partien ein kleiner goldener Stern; ungewertete Partien (zu
-      zweit, aus Abbildungen, mit Rücknahme) haben keinen.
-
-### Neu in 0.2.57 (etwa 15 Minuten, mit Engine; blinde Flecken vollständig, Fable)
-
-- [ ] N276. **Drei neue blinde Flecken:** Spielen › eigener Gegner › bearbeiten: In der Liste der
-      blinden Flecken stehen neu „Röntgenangriffe (Fesselung, Spieß)“, „Zwischenzüge“ und „die
-      Grundreihe“. Paula und Opa Hans übersehen jetzt die Grundreihe, Frieda Röntgenangriffe,
-      Timo und Lena Zwischenzüge (Liste bei S7).
 
 ### Neu in 0.2.56 (etwa 5 Minuten, mit Engine; Engine-Variante im Rückblick, Empfehlung R5, Fable)
 
@@ -368,14 +250,6 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
       heißt die Zeile jetzt „Geschätzte Spielstärke“, der Wert „etwa 1400“. Die Erklärung sagt
       „keine Wertungszahl eines Verbands“.
 
-### Neu in 0.2.46 (etwa 20 Minuten, mit Engine; Bots mit Persönlichkeit, dein Wunsch vom 17.10.2026 abends)
-
-- [ ] N243. **Eigene Gegner mit blinden Flecken:** „Eigene Gegner“ › Formular: unter den
-      Fehlerarten die Haken „Blinde Flecken“ (Rückzüge, lange Läuferdiagonalen, Springerzüge
-      rückwärts, lange Damenzüge, seitliche Turmzüge, ruhige Züge, Abzüge, stille Bauernzüge).
-      Einen Gegner Stufe 6 · 6 · 6 nur mit „lange Läuferdiagonalen“ anlegen: Er spielt stark und
-      übersieht ab und zu einen langen Läuferzug (Auswertung: „eine lange Diagonale nicht gesehen“).
-
 ### Neu in 0.2.44 (etwa 10 Minuten, mit Engine; deine Entscheidung vom 17.10.2026 abends)
 
 - [ ] N233. **Übergang ins Mittelspiel ohne Zugzahl:** Eine Partie gegen die Engine, in der du
@@ -407,27 +281,11 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
 
 ### Neu in 0.2.42 (etwa 20 Minuten, mit Engine; deine Ergänzungen vom 17.10.2026 abends)
 
-- [ ] N228. **Wertung nur aus der Grundstellung:** Spielen aus einer Abbildung („Gegen die Engine
-      spielen“) oder nach „Stellung aufbauen“: Statt des Hakens „Gewertete Partie“ steht der Satz
-      „Diese Partie zählt nicht für deine Wertung …“. Aus der Grundstellung ist der Haken da. Auch
-      bei „Mensch“ fehlt er.
-- [ ] N229. **Wertung zurücksetzen:** Einstellungen › Karte „Deine Spielstärke“, unten „Wertung
-      zurücksetzen“: Nachfrage, dann „Ja, zurücksetzen“: Die Karte zeigt wieder den Hinweis vor der
-      ersten Partie; die Partien bleiben in der Liste, zählen aber dauerhaft nicht mehr (eine
-      danach fertig werdende Auswertung einer alten Partie ändert nichts).
 - [ ] N230. **Kurve je Phase:** Einstellungen › „Deine Wertung“, Reiter Eröffnung, Mittelspiel,
       Endspiel (erst nach gewerteten Partien da): Erkennst du daran, wo Üben am meisten bringt?
 
 ### Neu in 0.2.41 (etwa 30 Minuten, mit Engine; deine Wünsche vom 17.10.2026 nachmittags)
 
-- [ ] N220. **Spielhilfen zuschalten:** Spielen, unter „Züge zurücknehmen erlauben“: zwei Haken
-      „Symbole am Brett (Zählen, Röntgen, Warnsignale)“ und „Werkzeuge und Hinweis unter dem Brett
-      (bis zum Ende der Partie)“. Beide an: wie bisher. Nur Symbole: Die Symbole bleiben, Bündel,
-      Werkzeugleiste und Hinweis fehlen. Beide aus: nur Brett, Uhr, Zugliste. Nach dem Partieende
-      verschwinden die Bündel und der Hinweis in jedem Fall; die Symbole bleiben, wenn sie an waren.
-- [ ] N221. **Gewertete Partie:** Darunter der Haken „Gewertete Partie (zählt für deine
-      Spielstärke)“ mit dem Satz, dass die Wertung in den Einstellungen steht. Bei „Mensch“ fehlen
-      Seite, Stufen, Eröffnung und der Haken.
 - [ ] N222. **Zu zweit spielen:** Gegner „Mensch“, Partie beginnen: Überschrift „Partie zu zweit“,
       Untertitel „Mensch gegen Mensch · beide Seiten am selben Gerät“, Status „Weiß am Zug.“ und
       „Schwarz am Zug.“ im Wechsel, die Engine zieht nicht, beide Seiten lassen sich ziehen, die
@@ -439,15 +297,6 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
       „läuft“), in der Zeile der Name des Gegners („Timo“, „Mensch“ oder „Stufe 3“) und, sobald
       die Auswertung da ist, „du etwa 1400 · Engine etwa 1600“ (bei zwei Menschen „Weiß … ·
       Schwarz …“; bei kurzen Partien „78 % genau“).
-- [ ] N224. **Deine Wertung:** Einstellungen (Zahnrad), ganz oben die Karte „Deine Spielstärke“.
-      Vor der ersten gewerteten Partie ein Hinweis. Eine gewertete Partie gegen die Engine mit
-      mindestens zehn eigenen Zügen zu Ende spielen (auch aufgeben geht) und die Auswertung
-      abwarten: Die Karte zeigt die Wertung groß (erste Partie: die Schätzung der Engine für
-      dich), darunter „1 gewertete Partie …“, das Auswahlfeld „Ausschnitt“ (letzte 10, 25, 50
-      Partien; 1 Woche, 4 Wochen, 3 Monate, halbes Jahr, 1 Jahr) und die Kurve mit einem Punkt je
-      Partie (grün Sieg, rot Niederlage, grau Remis; ein Tipp oder langes Drücken auf den Punkt
-      nennt Datum, Ergebnis und Gegner). Nach einer zweiten Partie steigt oder fällt die Zahl
-      (Sieg gegen gleich stark: +16).
 - [ ] N225. **Phase, Zusatzregeln:** Spielen › Stellung aufbauen › Brett leeren, dann K e1, D d1,
       k e8, d d8 setzen und übernehmen; in der Partie das Werkzeug „Phase“ (Kapitel 11) öffnen:
       „Endspiel …“ und als zweite Zeile „Zusatzregel (nicht aus dem Buch): Jede Seite hat höchstens
@@ -467,18 +316,6 @@ Widerspruch, etwa „K5: zurück“; dann baut Claude es wieder aus.
 
 ### Neu in 0.2.40 (etwa 20 Minuten, mit Engine; deine Ideen zum Spielen vom 17.10.2026)
 
-- [ ] N210. **Stufe je Phase:** Spielen: Statt der Stufen-Chips drei Regler „Eröffnung“,
-      „Mittelspiel“, „Endspiel“ (1 bis 8), je mit Nummer und Name. Eröffnung 1, Mittelspiel 4,
-      Endspiel 2 einstellen, Partie beginnen: Der Untertitel sagt „Stufen 1 · 4 · 2 (Eröffnung ·
-      Mittelspiel · Endspiel) · du spielst Weiß“. Sind alle drei gleich, steht wie bisher „Stufe 4
-      · Gelegenheitsspieler“.
-- [ ] N211. **Eröffnung „frei“:** Spielen › Eröffnung: „frei (die Engine spielt selbst)“ ist
-      vorgewählt, darunter „eine Eröffnung des Buches (zufällig)“ und die einzelnen Eröffnungen.
-      Mit „frei“ spielt die Engine ohne Buch; mit „zufällig“ wie bisher aus Kapitel 2 und 3.
-- [ ] N212. **Auswertung ohne Wartezeit:** Eine Partie auf Stufe 1 mit etwa 20 Zügen, dabei vor
-      einigen Zügen ein paar Sekunden warten. Nach dem Ende steht die Auswertung fast sofort da
-      („läuft … von …“ nur für die letzten Stellungen). Während der Partie ist davon nichts zu
-      sehen. Auch nach einer Rücknahme läuft alles sauber weiter.
 - [ ] N213. **Zugklassen am Brett:** Beim Nachspielen trägt jeder Zug seine Marke am Zielfeld:
       grünes „✓“ für den besten Zug, goldenes „!“ für den einzigen guten Zug oder die Strafe nach
       einem Fehler, blaues „!!“ für ein gutes Opfer, graues „?!“, rotes „?“ und „??“; sehr gute,
@@ -506,13 +343,6 @@ Einstellungen muss „App-Version 0.2.39“ stehen.
       beste war und mindestens 1,2 Bauern vor dem zweitbesten lag, in der Zugliste ein „!“, am
       Brett ein goldenes „!“, auf der Karte „… war der einzige gute Zug.“ (Partien aus 0.2.38
       ohne diese Angabe bleiben ohne „!“; sie werden nicht neu ausgewertet.)
-- [ ] N208. **Eröffnung wählen:** Spielen (Grundstellung) › Karte „Eröffnung“: Liste der
-      Eröffnungen aus Kapitel 2 und 3; „Spanische Partie“ wählen, darunter „Hauptvariante: 1. e4
-      e5 2. Sf3 Sc6 3. Lb5 …“. Als Weiß beginnen, 1. e4: Die Engine antwortet e5; 2. Sf3: Sc6; 3. Lb5: a6 (oder die Buchantwort). Der Untertitel nennt die Eröffnung. Bei einer Abbildung
-      oder eigenen Stellung gibt es die Karte nicht.
-- [ ] N209. **Eröffnung verlassen:** Mit „Spanische Partie“ 1. d4 spielen: Die Engine antwortet
-      mit einer Buchantwort auf d4 oder selbst, ohne Fehler. Die Wahl „frei“ spielt wie bisher
-      (alle Varianten, Buchtreue 0,85).
 
 ### Neu in 0.2.38 (etwa 5 Minuten, mit Engine; Rückblick nach der Partie)
 
@@ -558,14 +388,12 @@ Die Abnahme aus dem Konzept lautet: „Der Autor prüft im Test, ob sich die Abs
 
 **Gegenprüfung (Uhr und Auswertung)**
 
-- [ ] N179. **Uhr im Hintergrund:** Partie mit 5 + 3, einen Zug spielen und sofort zum
-      Startbildschirm des Handys wechseln, 20 Sekunden warten, zurück. Die Engine hat gezogen,
-      deine Uhr hat in der Zwischenzeit nicht gelaufen (sie läuft erst nach der Rückkehr weiter).
-- [ ] N180. **Uhr nach dem Neuladen:** laufende Partie mit Uhr, Seite neu laden (oder App
-      schließen und öffnen), Partie fortsetzen: Deine Restzeit ist die vom Moment des Verlassens.
-- [ ] N181. **Auswertung trotz Werkzeug:** Partie zu Ende spielen (oder aufgeben), während
-      „Auswertung läuft … von …“ steht, das Bündel „Taktik“ › „Erzwingende Züge“ öffnen (rechnet
-      mit der Engine). Die Auswertung läuft danach trotzdem zu Ende („Erste klare Abweichung …“).
+- [ ] N180. **Uhr nach dem Schließen:** Laufende Partie mit Uhr, eine Weile nachdenken, dann zu einer
+      anderen App wechseln, die App schließen und wieder öffnen, Partie fortsetzen: Ist deine
+      Restzeit die vom Moment des Verlassens? Befund am Rechner: Beim schnellen Neuladen ging die
+      Bedenkzeit seit dem letzten Zug verloren (das Speichern wird dabei abgebrochen); auf dem
+      Handy bleibt beim App-Wechsel meist genug Zeit zum Speichern. Bitte melden, wenn es bei dir
+      auch passiert; dann baut Claude einen sofortigen Speicherweg für die Uhr.
 
 ### Neu in 0.2.33 (etwa 25 Minuten, mit Engine)
 
@@ -576,11 +404,6 @@ Regeln C1 und C2).
 
 - [ ] N158. **Kein Spielziel:** Spielen: Es gibt keine Auswahl „Spielziel“ mehr. Nach dem Ende
       einer Partie steht nur das Ergebnis, kein „Ziel erreicht/verfehlt“.
-- [ ] N161. **Werkzeuge in der Partie:** Partie beginnen. Am Brett unten rechts: Zählen, Röntgen,
-      W1–W7. Röntgen antippen: die Karte erscheint, ziehen geht weiter. Zählen antippen, dann ein
-      Feld: Es wird gezählt statt gezogen; Zählen abwählen, dann wird wieder gezogen. Unter dem
-      Brett die Bündel (Eröffnung prüfen bis Denkroutine) mit Reitern, etwa Taktik › Erzwingende
-      Züge (die Engine rechnet die Kandidaten durch). In der ruhigen Ansicht (Auge) ist alles weg.
 
 **Kapitel 1 bis 4**
 

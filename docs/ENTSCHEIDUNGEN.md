@@ -3190,6 +3190,35 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N316** (Faktorenbilanz-Trainer mit dem Urteil des Buches (W9)): von Claude geprüft am 18.10.2026: Buchaufgabe 3.77: vier Zeilen „Buch: …“ und „Verglichen mit der Faktorenbilanz des Buches zu Abb. 3.77.“; ohne Buchbilanz „App:“
 - **N317** (Warum-Fragen im Repertoire-Trainer (W10)): von Claude geprüft am 18.10.2026: Spanisch als Schwarz: nach 3... a6 zugeklappt die Warum-Frage „Warum spielt Schwarz 3... a6?“
 - **N318** (Zug erraten mit Vergleich (W12)): von Claude geprüft am 18.10.2026: Opernpartie 2. d4 statt Sf3: Vergleich der Engine und „warum der Meister anders zog“ (Oberflächentest)
+- **N161** (Werkzeuge in der Partie): von Claude geprüft am 18.10.2026: Zählen, Röntgen und W1–W7 am Brett, Röntgen zeigt die Karte und gezogen wird weiter, Bündel „Taktik“ mit „Erzwingende Züge“; in der ruhigen Ansicht nur „Brett drehen“ und „Ruhige Ansicht“
+- **N179** (Uhr im Hintergrund): von Claude geprüft am 18.10.2026: Sichtbarkeit „hidden“ ausgelöst: Die Engine zog im Hintergrund, die Uhr des Lesers stand 20 s auf 5:00. Die Anzeige zeigte nach der Rückkehr einen Takt lang 5:21; behoben in 0.2.90, danach 5:00, 4:59 …
+- **N208** (Eröffnung wählen): von Claude geprüft am 18.10.2026: Vorschau „Hauptvariante: 1. e4 e5 2. Sf3 Sc6 3. Lb5 a6 …“, Untertitel „… · Spanische Partie“, gespielt 1. e4 e5 2. Sf3 Sc6 3. Lb5 a6
+- **N209** (Eröffnung verlassen): von Claude geprüft am 18.10.2026: Spanisch gewählt, 1. d4: Die Engine antwortet ohne Fehlermeldung
+- **N210** (Stufe je Phase): von Claude geprüft am 18.10.2026: „Eigene Stufe“ 1 · 4 · 2: Untertitel „Stufen 1 · 4 · 2 (Eröffnung · Mittelspiel · Endspiel) · du spielst Weiß“; 4 · 4 · 4: „Stufe 4 · Gelegenheitsspieler …“
+- **N211** (Eröffnung „frei“): von Claude geprüft am 18.10.2026: „frei (die Engine spielt selbst)“ vorgewählt, darunter „eine Eröffnung des Buches (zufällig)“ und 24 Eröffnungen
+- **N212** (Auswertung ohne Wartezeit): von Claude geprüft am 18.10.2026: zwölf Züge mit Pausen und einer Rücknahme: beim Ende 15 von 23 Stellungen schon ausgewertet, der Rest 23 s auf der ausgelasteten Testmaschine (die Zeit auf dem Handy fragt N327)
+- **N220** (Spielhilfen zuschalten): von Claude geprüft am 18.10.2026: nur Symbole: Symbole da, keine Leiste, kein Engine-Knopf; beides aus: nur Brett, Uhr, Zugliste; nach dem Ende keine Leiste, Symbole bleiben
+- **N221** (Gewertete Partie): von Claude geprüft am 18.10.2026: Haken „Gewertete Partie (zählt für deine Spielstärke)“ mit Satz; bei „Mensch“ fehlen Haken, Seite und Eröffnung
+- **N224** (Deine Wertung): von Claude geprüft am 18.10.2026: gewertete Partie gegen Leon, zwölf eigene Züge, aufgegeben: Karte „Deine Wertung“ mit Zahl gleich der Schätzung der Partie, Ausschnitt-Wahl mit allen acht Werten, Kurve mit Punkt; „1 gewertete Partien“ hieß es vorher, seit 0.2.90 „1 gewertete Partie“
+- **N228** (Wertung nur aus der Grundstellung): von Claude geprüft am 18.10.2026: aus Abb. 1.26 und aus einer aufgebauten Stellung der Satz „Diese Partie zählt nicht für deine Wertung …“ ohne Haken; aus der Grundstellung mit Haken; bei „Mensch“ ohne
+- **N229** (Wertung zurücksetzen): von Claude geprüft am 18.10.2026: „Wertung zurücksetzen“, „Ja, zurücksetzen“, danach wieder der Hinweis vor der ersten Partie; die Partien bleiben, ihr Stern verschwindet
+- **N243** (Eigene Gegner mit blinden Flecken): von Claude geprüft am 18.10.2026: alle elf blinden Flecken im Formular; ein Bot 6 · 6 · 6 nur mit „lange Läuferdiagonalen“ ließ sich anlegen, wählen und spielen
+- **N276** (Drei neue blinde Flecken): von Claude geprüft am 18.10.2026: Röntgenangriffe, Zwischenzüge und Grundreihe im Formular; die genannten Bots haben diese Flecken (Gegnerliste)
+- **N282** (Stern für gewertete Partien): von Claude geprüft am 18.10.2026: gewertete Partie mit Stern, ungewertete ohne
+- **N284** (Abhakliste der Fehlerarten): von Claude geprüft am 18.10.2026: 14 Haken, „14 von 14 Arten erlaubt“; „Keine erlauben“ 0, nur W1 1, „Alle erlauben“ 14
+- **N310** (Gewertete Partie ohne Hilfen (S9)): von Claude geprüft am 18.10.2026: bei gewerteter Partie drei Haken grau und leer mit dem Satz; ohne Haken wieder wählbar; in der Partie weder Zurücknehmen noch Werkzeuge
+- **N319** (Gegnerwahl in drei Kategorien): von Claude geprüft am 18.10.2026: drei Kacheln, je nur der passende Inhalt; bei „Eigene Bots“ ohne Bot „Partie beginnen“ gesperrt mit Satz, dazu „Eigene Bots verwalten“
+- **N320** (Engine-Knopf in der Partie): von Claude geprüft am 18.10.2026: Engine-Symbol: Bewertung, „Deinen letzten Zug bewerten“ („Dein Zug 2. Dh5? ist ein Fehler.“), „Warum?“, „Besten Zug zeigen“; nach „Warum?“ stand ein doppelter Punkt, behoben in 0.2.90
+- **N321** (Blinde Flecken bei eigener Stufe): von Claude geprüft am 18.10.2026: „(0 gewählt)“, Rückzüge angehakt „(1 gewählt)“, bleibt nach dem Neuladen
+- **N330** (Zahlen in der Gegnerwahl): von Claude geprüft am 18.10.2026: Überschriften mit Bereichen wie im Punkt (Stufe 1 etwa 1050 bis 1300 … Stufe 8 etwa 3000 bis 3200), jede Kachel mit „etwa …“
+- **N331** (Sprechblase und Erklärung): von Claude geprüft am 18.10.2026: Ayşe „etwa 1550 (Stufe 2)“, Fragezeichen mit Elo-Leiter und ±150; eigener Bot „etwa … (geschätzt)“; eigene Stufe „Deine Einstellung 3 · 4 · 3 · etwa 1950 (geschätzt)“, ändert sich mit dem Regler
+- **N332** (Gegner in der Karte „Spielstärke“): von Claude geprüft am 18.10.2026: nach der Partie gegen Leon „Leon (etwa 1300) hat in dieser Partie wie etwa … gespielt.“
+- **N333** (Wertung mit fester Gegnerzahl): von Claude geprüft am 18.10.2026: Niederlage gegen Großmeister Grün (etwa 3200) bei Wertung 1150 ändert die Wertung um ±0; die Erklärung nennt die feste Zahl des Gegners
+- **N339** (Auswertung startet immer): von Claude geprüft am 18.10.2026: eine hängende Engine lässt sich im Browser nicht erzeugen; der Komponententest „hängende Engine: neu starten …“ (engineWachhund) besteht. Bleibt eine Auswertung trotzdem stehen, meldet der Autor es ohnehin
+- **N340** (Spielen): von Claude geprüft am 18.10.2026: „Partie beginnen“ unter den Kacheln und über dem Gitter, Stufen aufklappbar, anfangs die des gewählten Bots offen, die Wahl bleibt (Oberflächentest)
+- **N341** (Werkzeuge): von Claude geprüft am 18.10.2026: in der Partie eine waagerecht scrollbare Leiste, jedes Bündel mit Symbol; an Abb. 5.17 „frühere“ und „spätere“ am Anfang und Ende; Angriffsregel an 1.37 ohne „Mehr …“
+- **N348** (Stufe 5 bis 8 mit eigener Zahl): von Claude geprüft am 18.10.2026: Stufe 5 bis 8 mit den Bereichen wie im Punkt, Fragezeichen „über 2200 … ungenauer (etwa ±200)“
+- **N349** (Gleich große Kacheln in der Gegnerwahl): von Claude geprüft am 18.10.2026: Porträts in Stufe 7 und 8 alle 72,5 px breit, hell und dunkel
 
 ### Teil 2 im Wortlaut vor dem Umbau
 
@@ -3581,3 +3610,5 @@ prüft dasselbe am aktuellen Stand. Die Nummern bleiben frei (die App speichert 
 - **N277** (Blind auch für Drohungen): überholt durch N286 und N295 (blinde Flecken aller 64 Bots gemessen, Sprechblasen nennen sie).
 - **N281** (Figurensatz „Holz“ mit eigenen Formen): überholt durch N322 („Holz“ seit 0.2.82 durch drei Holzsätze ersetzt).
 - **N291** (Urteilswort je Phase und Mittelspiel nach Taktik und Strategie): überholt durch N344 (Urteilswörter dürfen zweizeilig werden) und N338 (Karte neu geordnet).
+- **N181**: überholt durch N220 (seit 0.2.41 verschwinden Werkzeugleiste und Bündel nach dem Partieende; den Ablauf gibt es so nicht mehr). Geprüft: Die Auswertung läuft mit geöffnetem Werkzeug zu Ende.
+- **N312**: überholt durch N295 (der Hinweis unter dem Stil sagt seit 0.2.81: im Mittel etwa gleich stark, nur auf Stufe 8 schwächer); das Gefühl prüft der Autor bei N286 und N295.

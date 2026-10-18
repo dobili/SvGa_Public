@@ -168,7 +168,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 e6 2. d4 d5 3. e5, Schwarz am Zug. Die weiße Kette d4–e5 und die schwarze Kette e6–d5. Rot: die beiden Basen d4 und e6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e6 2. d4 d5 3. e5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Die weiße Kette d4–e5 und die schwarze Kette e6–d5. Rot: die beiden Basen d4 und e6.",
      "stil": "normal"
     }
    ],
@@ -236,7 +245,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3... c5 4. c3, Schwarz am Zug. Rot: der Hebel gegen die Basis d4. Grau: Der Bauer c3 stützt sie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... c5 4. c3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: der Hebel gegen die Basis d4. Grau: Der Bauer c3 stützt sie.",
      "stil": "normal"
     }
    ],
@@ -295,7 +313,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4... Sc6 5. Sf3 Db6, Weiß am Zug. Rot: Bauer c5 und Springer c6 greifen d4 an. Grau: Die Dame steht dahinter bereit.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Sc6 5. Sf3 Db6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Bauer c5 und Springer c6 greifen d4 an. Grau: Die Dame steht dahinter bereit.",
      "stil": "normal"
     }
    ],
@@ -350,7 +377,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 g6. Rot: h6 kann kein schwarzer Bauer mehr kontrollieren, denn nur der g-Bauer konnte es je decken. Grau: f6 ist geschwächt, wird aber noch vom Bauern e7 gedeckt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 g6"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: h6 kann kein schwarzer Bauer mehr kontrollieren, denn nur der g-Bauer konnte es je decken. Grau: f6 ist geschwächt, wird aber noch vom Bauern e7 gedeckt.",
      "stil": "normal"
     }
    ],
@@ -406,7 +442,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Kieseritzky-Gambit aus Kapitel 3 nach 1. e4 e5 2. f4 exf4 3. Sf3 g5 4. h4 g4 5. Se5, Schwarz am Zug. Rot: Mit ...d6 kann Schwarz den Springer jederzeit vertreiben.",
+     "text": "Das Kieseritzky-Gambit aus Kapitel 3 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. f4 exf4 3. Sf3 g5 4. h4 g4 5. Se5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Mit ...d6 kann Schwarz den Springer jederzeit vertreiben.",
      "stil": "normal"
     }
    ],
@@ -466,7 +511,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Najdorf-Hauptvariante aus Kapitel 2 nach 6. Le2 e5 7. Sb3 Le7 8. O-O O-O, Weiß am Zug. Gold: das Loch d5, der Vorposten für Weiß. Graue Pfeile: Der Springer c3 will dorthin, der Bauer e4 stützt ihn dort.",
+     "text": "Die Najdorf-Hauptvariante aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Le2 e5 7. Sb3 Le7 8. O-O O-O"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: das Loch d5, der Vorposten für Weiß. Graue Pfeile: Der Springer c3 will dorthin, der Bauer e4 stützt ihn dort.",
      "stil": "normal"
     }
    ],
@@ -626,7 +680,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Falle im Abgelehnten Königsgambit aus Kapitel 4 nach 1. e4 e5 2. f4 Lc5 3. fxe5?? Dh4+, Weiß am Zug. Rot: das Schach über die offene Diagonale.",
+     "text": "Die Falle im Abgelehnten Königsgambit aus Kapitel 4 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. f4 Lc5 3. fxe5?? Dh4+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: das Schach über die offene Diagonale.",
      "stil": "normal"
     }
    ],
@@ -803,7 +866,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Najdorf-Variante aus Kapitel 2 nach 10... Sbd7, Weiß am Zug. Gold: das Loch d5. Grau: Läufer e6, Springer f6 und Springer d7 (über b6) überwachen es. Rot: Mit ...b5 und ...b4 würde Schwarz den Springer c3 vertreiben, der d5 bewacht.",
+     "text": "Die Schlussstellung der Najdorf-Variante aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Sbd7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: das Loch d5. Grau: Läufer e6, Springer f6 und Springer d7 (über b6) überwachen es. Rot: Mit ...b5 und ...b4 würde Schwarz den Springer c3 vertreiben, der d5 bewacht.",
      "stil": "normal"
     }
    ],
@@ -881,7 +953,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Skelett des Berliner Endspiels aus Kapitel 2 nach 8... Kxd8. Rot: die Doppelbauern c7 und c6.",
+     "text": "Das Skelett des Berliner Endspiels aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Kxd8"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: die Doppelbauern c7 und c6.",
      "stil": "normal"
     }
    ],
@@ -929,7 +1010,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Sämisch-Variante der Nimzo-Indischen Verteidigung (Kapitel 2) nach 1. d4 Sf6 2. c4 e6 3. Sc3 Lb4 4. a3 Lxc3+ 5. bxc3, Schwarz am Zug. Rot: die Doppelbauern c3 und c4. Gold: dafür das Läuferpaar.",
+     "text": "Die Sämisch-Variante der Nimzo-Indischen Verteidigung (Kapitel 2) nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 Sf6 2. c4 e6 3. Sc3 Lb4 4. a3 Lxc3+ 5. bxc3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: die Doppelbauern c3 und c4. Gold: dafür das Läuferpaar.",
      "stil": "normal"
     }
    ],
@@ -993,7 +1083,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Nimzo-Indischen Hauptvariante aus Kapitel 2 nach 12. Lg5, Schwarz am Zug. Rot: der Isolani d4.",
+     "text": "Die Schlussstellung der Nimzo-Indischen Hauptvariante aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12. Lg5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: der Isolani d4.",
      "stil": "normal"
     }
    ],
@@ -1117,7 +1216,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Dänische Gambit aus Kapitel 3 nach 5... d5, Weiß am Zug. Rot: der isolierte Randbauer a2. Gold: die weißen Läufer c4 und b2.",
+     "text": "Das Dänische Gambit aus Kapitel 3 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... d5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: der isolierte Randbauer a2. Gold: die weißen Läufer c4 und b2.",
      "stil": "normal"
     }
    ],
@@ -1169,7 +1277,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung des Abgelehnten Damengambits aus Kapitel 2 nach 9... Sbd7, Weiß am Zug. Grau: Weiß kann auf d5 tauschen.",
+     "text": "Die Schlussstellung des Abgelehnten Damengambits aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9... Sbd7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Weiß kann auf d5 tauschen.",
      "stil": "normal"
     }
    ],
@@ -1229,7 +1346,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 10. cxd5 exd5 11. Tc1 c5, Weiß am Zug. Grau: Weiß kann auf c5 tauschen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. cxd5 exd5 11. Tc1 c5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Weiß kann auf c5 tauschen.",
      "stil": "normal"
     }
    ],
@@ -1312,7 +1438,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 12. dxc5 bxc5, Weiß am Zug. Rot: die hängenden Bauern c5 und d5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12. dxc5 bxc5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: die hängenden Bauern c5 und d5.",
      "stil": "normal"
     }
    ],
@@ -1396,7 +1531,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Wolga-Gambit aus Kapitel 3 nach 1. d4 Sf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Lxa6, Weiß am Zug. Rot: die Bauern a2 und b2 vor den halboffenen Linien.",
+     "text": "Das Wolga-Gambit aus Kapitel 3 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 Sf6 2. c4 c5 3. d5 b5 4. cxb5 a6 5. bxa6 Lxa6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: die Bauern a2 und b2 vor den halboffenen Linien.",
      "stil": "normal"
     }
    ],
@@ -1474,7 +1618,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Raum in der Französischen Vorstoßvariante nach 3. e5, Schwarz am Zug. Rot: die Felder d6 und f6, die der Bauer e5 Schwarz nimmt. Grau: die Umwege des Springers g8.",
+     "text": "Raum in der Französischen Vorstoßvariante nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. e5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: die Felder d6 und f6, die der Bauer e5 Schwarz nimmt. Grau: die Umwege des Springers g8.",
      "stil": "normal"
     }
    ],
@@ -1533,7 +1686,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Le2 cxd4 7. cxd4, Schwarz am Zug. Die Stütze c3 ist verschwunden. Rot: zwei Angreifer. Gold: zwei Verteidiger.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Le2 cxd4 7. cxd4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Die Stütze c3 ist verschwunden. Rot: zwei Angreifer. Gold: zwei Verteidiger.",
      "stil": "normal"
     }
    ],
@@ -1623,7 +1785,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... Sh6 8. Sc3 Sf5, Weiß am Zug. Rot: drei Angreifer. Gold: nur zwei Verteidiger.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Sh6 8. Sc3 Sf5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: drei Angreifer. Gold: nur zwei Verteidiger.",
      "stil": "normal"
     }
    ],
@@ -1685,7 +1856,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Skelett der Königsindischen Hauptvariante aus Kapitel 2 nach 8. d5 Se7, Weiß am Zug. Graue Pfeile: Die weiße Kette e4–d5 zeigt zum Damenflügel, Weiß bereitet ",
+     "text": "Das Skelett der Königsindischen Hauptvariante aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. d5 Se7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Graue Pfeile: Die weiße Kette e4–d5 zeigt zum Damenflügel, Weiß bereitet ",
      "stil": "normal"
     },
     {
@@ -1760,7 +1940,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Spanischen Partie aus Kapitel 2 nach 16... Ld7, Weiß am Zug. Graue Pfeile: Die Bauern d4 und e5 stehen in Spannung.",
+     "text": "Die Schlussstellung der Spanischen Partie aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16... Ld7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Graue Pfeile: Die Bauern d4 und e5 stehen in Spannung.",
      "stil": "normal"
     }
    ],
@@ -2267,7 +2456,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Offen: das Zweispringerspiel aus Kapitel 2 nach 12. Sxd3, Schwarz am Zug. Grau: Im Zentrum steht kein Bauer mehr.",
+     "text": "Offen: das Zweispringerspiel aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12. Sxd3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Im Zentrum steht kein Bauer mehr.",
      "stil": "normal"
     }
    ],
@@ -2431,7 +2629,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die London-Pyramide aus Kapitel 2 nach 1. d4 d5 2. Lf4 Sf6 3. e3 e6 4. Sf3 c5 5. c3 Sc6 6. Ld3, Schwarz am Zug. Gold: Der Läufer f4 steht vor der Pyramide c3–d4–e3. Rot: Der Läufer c8 steht hinter den eigenen Bauern d5 und e6.",
+     "text": "Die London-Pyramide aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 d5 2. Lf4 Sf6 3. e3 e6 4. Sf3 c5 5. c3 Sc6 6. Ld3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der Läufer f4 steht vor der Pyramide c3–d4–e3. Rot: Der Läufer c8 steht hinter den eigenen Bauern d5 und e6.",
      "stil": "normal"
     }
    ],
@@ -2541,7 +2748,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Ld6 7. Lxd6 Dxd6, Weiß am Zug. Die dunkelfeldrigen Läufer sind getauscht.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Ld6 7. Lxd6 Dxd6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Die dunkelfeldrigen Läufer sind getauscht.",
      "stil": "normal"
     }
    ],
@@ -2610,7 +2826,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8. Sbd2 O-O 9. O-O Ld7 (Schlussstellung in Kapitel 2), Weiß am Zug. Gold: der gute Läufer d3 und der Hebel e3–e4. Rot: der schlechte Läufer d7. Grau: der Hebel ...e6–e5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Sbd2 O-O 9. O-O Ld7"
+    },
+    {
+     "art": "text",
+     "text": " (Schlussstellung in Kapitel 2), Weiß am Zug. Gold: der gute Läufer d3 und der Hebel e3–e4. Rot: der schlechte Läufer d7. Grau: der Hebel ...e6–e5.",
      "stil": "normal"
     }
    ],
@@ -2704,7 +2929,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Französischen Vorstoßvariante aus Kapitel 2 nach 13... Ld7, Weiß am Zug. Rot: die Basis d4, angegriffen von den Springern c6 und f5, und der schlechte Läufer d7. Grau: der Hebel ...f6.",
+     "text": "Die Schlussstellung der Französischen Vorstoßvariante aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13... Ld7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: die Basis d4, angegriffen von den Springern c6 und f5, und der schlechte Läufer d7. Grau: der Hebel ...f6.",
      "stil": "normal"
     }
    ],
@@ -2779,7 +3013,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Stellung nach 1. e4 g6 2. d4 h6, Weiß am Zug.",
+     "text": "Stellung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 g6 2. d4 h6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],
@@ -2816,7 +3059,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Schottischen Partie aus Kapitel 2 nach 12... Le6, Weiß am Zug.",
+     "text": "Die Schlussstellung der Schottischen Partie aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12... Le6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],
@@ -2873,7 +3125,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Stellung nach 1. e4 e5 2. Sf3 Sc6 3. Sc3 Sf6 4. d3 d6, Weiß am Zug.",
+     "text": "Stellung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 Sc6 3. Sc3 Sf6 4. d3 d6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],
@@ -2914,7 +3175,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Caro-Kann-Vorstoßvariante aus Kapitel 2 nach 11... O-O, Weiß am Zug.",
+     "text": "Die Schlussstellung der Caro-Kann-Vorstoßvariante aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11... O-O"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],

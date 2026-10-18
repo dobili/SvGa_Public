@@ -113,7 +113,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. c7 Td6+ 2. Kb5 Td5+, Weiß am Zug. Grau: Dorthin läuft der König.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. c7 Td6+ 2. Kb5 Td5+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Dorthin läuft der König.",
      "stil": "normal"
     }
    ],
@@ -159,7 +168,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Kb4 Td4+ 4. Kb3 Td3+, Weiß am Zug. Goldener Pfeil: Nach 5. Kc2 kostet jedes weitere Schach den Turm.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kb4 Td4+ 4. Kb3 Td3+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Kc2"
+    },
+    {
+     "art": "text",
+     "text": " kostet jedes weitere Schach den Turm.",
      "stil": "normal"
     }
    ],
@@ -225,7 +252,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. c7 Td6+ 2. Kc5? Td1, Weiß am Zug: remis. Roter Pfeil: Nach 3. c8=D? spießt Tc1+ König und Dame auf.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. c7 Td6+ 2. Kc5? Td1"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug: remis. Roter Pfeil: Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. c8=D?"
+    },
+    {
+     "art": "text",
+     "text": " spießt Tc1+ König und Dame auf.",
      "stil": "normal"
     }
    ],
@@ -291,7 +336,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. c7 Td6+ 2. Kb7? Td7, Weiß am Zug: remis. Grauer Pfeil: die Fesselung. Rot: Der Bauer c7 darf nicht ziehen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. c7 Td6+ 2. Kb7? Td7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug: remis. Grauer Pfeil: die Fesselung. Rot: Der Bauer c7 darf nicht ziehen.",
      "stil": "normal"
     }
    ],
@@ -351,7 +405,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. Kc2 Td4!!, Weiß am Zug. Roter Pfeil: das geplante Turmopfer auf c4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Kc2 Td4!!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Roter Pfeil: das geplante Turmopfer auf c4.",
      "stil": "normal"
     }
    ],
@@ -429,7 +492,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. c8=D?? Tc4+ 7. Dxc4, Schwarz am Zug: patt. Grau: a2, b1 und b2 sind dem König versperrt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. c8=D?? Tc4+ 7. Dxc4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug: patt. Grau: a2, b1 und b2 sind dem König versperrt.",
      "stil": "normal"
     }
    ],
@@ -488,7 +560,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. c8=T!! Ta4 7. Kb3!, Schwarz am Zug. Rote Pfeile: Der König greift den Turm an, der Turm droht Tc1#.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. c8=T!! Ta4 7. Kb3!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rote Pfeile: Der König greift den Turm an, der Turm droht Tc1#.",
      "stil": "normal"
     }
    ],
@@ -624,7 +705,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Kg7 h4 2. Kf6!, Schwarz am Zug. Goldene Pfeile: Der König kann zu beiden Bauern.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Kg7 h4 2. Kf6!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Goldene Pfeile: Der König kann zu beiden Bauern.",
      "stil": "normal"
     }
    ],
@@ -674,7 +764,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... Kb6 3. Ke5!, Schwarz am Zug. Goldene Pfeile: Auf f4 steht der König im Quadrat, auf d6 deckt er den Bauern.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kb6 3. Ke5!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Goldene Pfeile: Auf f4 steht der König im Quadrat, auf d6 deckt er den Bauern.",
      "stil": "normal"
     }
    ],
@@ -741,7 +840,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3... h3 4. Kd6 h2 5. c7, Schwarz am Zug. Goldener und roter Pfeil: Beide Bauern wandeln um.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... h3 4. Kd6 h2 5. c7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Goldener und roter Pfeil: Beide Bauern wandeln um.",
      "stil": "normal"
     }
    ],
@@ -796,7 +904,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... h3 3. Ke7 h2 4. c7, Schwarz am Zug. Goldener und roter Pfeil: Beide Bauern wandeln um.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... h3 3. Ke7 h2 4. c7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Goldener und roter Pfeil: Beide Bauern wandeln um.",
      "stil": "normal"
     }
    ],
@@ -915,7 +1032,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. La7 La1 2. Kb1 Lc3, Weiß am Zug. Goldener Pfeil: 3. Kc2 greift den Läufer wieder an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. La7 La1 2. Kb1 Lc3"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kc2"
+    },
+    {
+     "art": "text",
+     "text": " greift den Läufer wieder an.",
      "stil": "normal"
     }
    ],
@@ -966,7 +1101,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Kc2 La1 4. Ld4!!, Schwarz am Zug. Gold: der Läufer d4 als Köder. Grauer Pfeil: die Diagonale des schwarzen Läufers, die er sperrt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kc2 La1 4. Ld4!!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: der Läufer d4 als Köder. Grauer Pfeil: die Diagonale des schwarzen Läufers, die er sperrt.",
      "stil": "normal"
     }
    ],
@@ -1040,7 +1184,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Hauptvariante nach 4... Lxd4 5. Kd3 La1 6. Ke4, Schwarz am Zug. Grauer Pfeil: Der Läufer ist versperrt. Gold: Der König blockiert e5, der h-Bauer läuft durch.",
+     "text": "Hauptvariante nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Lxd4 5. Kd3 La1 6. Ke4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grauer Pfeil: Der Läufer ist versperrt. Gold: Der König blockiert e5, der h-Bauer läuft durch.",
      "stil": "normal"
     }
    ],
@@ -1102,7 +1255,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nebenvariante nach 4... exd4 5. Kd3, Schwarz am Zug. Grauer Pfeil: Der Läufer ist versperrt. Gold: Der König blockiert d4, der h-Bauer läuft durch.",
+     "text": "Nebenvariante nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... exd4 5. Kd3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grauer Pfeil: Der Läufer ist versperrt. Gold: Der König blockiert d4, der h-Bauer läuft durch.",
      "stil": "normal"
     }
    ],
@@ -1152,7 +1314,34 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldener Pfeil: 1. Sg5! Der Bauer muss 1... h3 ziehen, und 2. Sg6# setzt matt.",
+     "text": "Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sg5!"
+    },
+    {
+     "art": "text",
+     "text": " Der Bauer muss ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h3"
+    },
+    {
+     "art": "text",
+     "text": " ziehen, und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sg6#"
+    },
+    {
+     "art": "text",
+     "text": " setzt matt.",
      "stil": "normal"
     }
    ],
@@ -1209,7 +1398,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Dieselbe Stellung ohne den Bauern h4, Weiß am Zug. Roter Pfeil: 1. Sg5?? setzt patt.",
+     "text": "Dieselbe Stellung ohne den Bauern h4, Weiß am Zug. Roter Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sg5??"
+    },
+    {
+     "art": "text",
+     "text": " setzt patt.",
      "stil": "normal"
     }
    ],
@@ -1348,7 +1546,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 10. De6, Schwarz am Zug: patt. Grau: Die Dame fesselt den Bauern f6 und nimmt dem König f5 und f7, der Bauer h4 nimmt ihm g5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. De6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug: patt. Grau: Die Dame fesselt den Bauern f6 und nimmt dem König f5 und f7, der Bauer h4 nimmt ihm g5.",
      "stil": "normal"
     }
    ],

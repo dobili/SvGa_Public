@@ -1093,7 +1093,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 (Schwarz am Zug)",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4"
+    },
+    {
+     "art": "text",
+     "text": " (Schwarz am Zug)",
      "stil": "normal"
     }
    ],
@@ -1132,7 +1141,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... e5 (Weiß am Zug)",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... e5"
+    },
+    {
+     "art": "text",
+     "text": " (Weiß am Zug)",
      "stil": "normal"
     }
    ],
@@ -1172,7 +1190,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2. Sf3 (Schwarz am Zug)",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sf3"
+    },
+    {
+     "art": "text",
+     "text": " (Schwarz am Zug)",
      "stil": "normal"
     }
    ],
@@ -1213,7 +1240,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... Sc6 (Weiß am Zug)",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Sc6"
+    },
+    {
+     "art": "text",
+     "text": " (Weiß am Zug)",
      "stil": "normal"
     }
    ],
@@ -1254,7 +1290,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Lb5 (Schwarz am Zug)",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Lb5"
+    },
+    {
+     "art": "text",
+     "text": " (Schwarz am Zug)",
      "stil": "normal"
     }
    ],
@@ -1290,7 +1335,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Stellung nach 6. Lg5, Schwarz am Zug.",
+     "text": "Stellung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Lg5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug.",
      "stil": "normal"
     }
    ],

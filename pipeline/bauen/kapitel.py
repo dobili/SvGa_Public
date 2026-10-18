@@ -20,6 +20,7 @@ from typing import Any
 
 from pipeline.befunde import Befund
 from pipeline.lesen.diagramme import Kapitelquelle, Rohdiagramm
+from pipeline.lesen.klartextzuege import markiere_klartextzuege
 from pipeline.lesen.text import als_klartext, wandle_text
 from pipeline.pruefen.abbildungen import (
     pruefe_fen,
@@ -104,7 +105,8 @@ def _baue_abbildung(
         "fen": diagramm.fen,
         "pfeile": [vars(p) for p in diagramm.pfeile],
         "felder": [vars(f) for f in diagramm.felder],
-        "unterschrift": [teil.als_daten() for teil in umwandlung.teile],
+        # Züge im Klartext („Nach 2. Lf4“) als eigene Teile, Vorarbeit für die englische Notation.
+        "unterschrift": [teil.als_daten() for teil in markiere_klartextzuege(umwandlung.teile)],
         "art": diagramm.art,
         "reihe": nachbarn,
         "beispiel": None,

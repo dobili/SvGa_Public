@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.73. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.74. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -11,7 +11,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.73“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.74“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -21,10 +21,10 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 ## Teil 1: Testen auf dem Handy (etwa zwei Stunden insgesamt, mit Engine)
 
-Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.73“, dann der Reihe nach die
+Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst „Neu in 0.2.74“, dann der Reihe nach die
 älteren Abschnitte.
 
-### Neu in 0.2.73 (etwa 15 Minuten, mit Engine; 64 Bots nachgemessen, Fable)
+### Neu in 0.2.74 (etwa 15 Minuten, mit Engine; 64 Bots nachgemessen, Fable und Opus)
 
 - [ ] N292. **Ausreißer unter den Bots angepasst:** Jeder der 64 Bots spielte sechs Partien gegen
       die reine Stufe seiner Nummer. Zwölf waren zu stark (meist 6 : 0, etwa Leon, Ayşe, Sophie,

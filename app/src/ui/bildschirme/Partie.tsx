@@ -50,6 +50,7 @@ import { Partieuhr } from "../komponenten/Partieuhr";
 import { Partiezuege } from "../komponenten/Partiezuege";
 import { PartieLeiste, PartieSymbole, PartieWerkzeugkarten } from "../komponenten/PartieWerkzeuge";
 import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partiewerkzeug";
+import type { Zweigart } from "../komponenten/Nebenzweig";
 import { useRueckblick, type Rueckblick } from "../komponenten/useRueckblick";
 import { SpielEngine } from "../komponenten/SpielEngine";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
@@ -197,10 +198,15 @@ function Spielfeld({
   const gewaehlt = ansicht?.zuege === sans.length ? ansicht : null;
   const stelle = gewaehlt?.stelle ?? sans.length;
   // Nebenzweig „Besser war …“ (0.2.85): gilt nur für die Stelle, an der er gewählt wurde.
-  const [zweig, setzeZweig] = useState<{ stelle: number; schritt: number } | null>(null);
+  const [zweig, setzeZweig] = useState<{ stelle: number; art: Zweigart; schritt: number } | null>(
+    null,
+  );
+  const hier = zweig?.stelle === stelle ? zweig : null;
   const zweigwahl = {
-    schritt: zweig?.stelle === stelle ? zweig.schritt : null,
-    setze: (schritt: number | null) => setzeZweig(schritt === null ? null : { stelle, schritt }),
+    art: hier?.art ?? null,
+    schritt: hier?.schritt ?? null,
+    setze: (art: Zweigart, schritt: number | null) =>
+      setzeZweig(schritt === null ? null : { stelle, art, schritt }),
   };
   const rb = useRueckblick(rueckblick, partie, alle, sans, stelle, phasen, zweigwahl);
   const gezeigt = rb.zweigzug?.nachher ?? alle[stelle] ?? s.fen;

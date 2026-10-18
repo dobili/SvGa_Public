@@ -112,6 +112,14 @@ export function useRueckblick(
     const bester = rueckblick.beste[index] ?? "";
     return zweigzuege(alle[index] ?? "", variante.length > 0 ? variante : bester ? [bester] : []);
   }, [rueckblick, alle, index]);
+  // Die Strafe (0.2.85): die Hauptvariante der Engine in der Stellung nach dem Zug.
+  const strafZuege = useMemo(
+    () =>
+      rueckblick && index >= 0
+        ? zweigzuege(alle[index + 1] ?? "", rueckblick.varianten?.[index + 1] ?? [])
+        : [],
+    [rueckblick, alle, index],
+  );
   if (!rueckblick) return { marken: [], leiste: null, karte: null, zweigzug: null };
   const marken =
     index >= 0
@@ -138,8 +146,10 @@ export function useRueckblick(
         phasenwechsel={phasenwechsel}
         zweig={zweig}
         zweigZuege={zweigZuege}
+        strafZuege={strafZuege}
       />
     ) : null;
-  const zweigzug = zweig.schritt !== null ? (zweigZuege[zweig.schritt - 1] ?? null) : null;
+  const gewaehlt = zweig.art === "strafe" ? strafZuege : zweigZuege;
+  const zweigzug = zweig.schritt !== null ? (gewaehlt[zweig.schritt - 1] ?? null) : null;
   return { marken, leiste, karte, zweigzug };
 }

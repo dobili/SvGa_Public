@@ -112,11 +112,14 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   );
   await expect(karte).toContainText("Besser war 2.");
   // Seit 0.2.85 ist die Variante ein Nebenzweig: Ein Tipp zeigt sie am Brett, dann zurück.
-  const zweig = page.getByTestId("nebenzweig");
+  const zweig = page.getByTestId("nebenzweig-besser");
   await zweig.locator(".zweigzug").first().click();
   await expect(zweig.locator(".zweigzug").first()).toHaveAttribute("aria-pressed", "true");
   await zweig.getByRole("button", { name: "Zurück zur Partie" }).click();
   await expect(zweig.getByRole("button", { name: "Zurück zur Partie" })).toHaveCount(0);
+  // Dazu die Strafe: 2... Dh4# als eigener Zweig.
+  await expect(page.getByTestId("nebenzweig-strafe")).toContainText("So wird der Fehler bestraft");
+  await expect(page.getByTestId("nebenzweig-strafe")).toContainText("Dh4#");
   // Seit 0.2.83 mit dem Modus (Standard Mittelweg).
   await expect(page.getByTestId("spielstaerke")).toContainText("Genauigkeit (Mittelweg)");
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });

@@ -89,6 +89,9 @@ const MIT_BESSEREM: ReadonlySet<Zugurteil["klasse"]> = new Set([
   "patzer",
 ]);
 
+/** Bei diesen Klassen zeigt die Karte, wie der Gegner den Fehler bestraft (seit 0.2.85). */
+const MIT_STRAFE: ReadonlySet<Zugurteil["klasse"]> = new Set(["fehler", "patzer"]);
+
 /** Die Karte unter dem Brett zum gezeigten Zug. */
 export function Rueckblickkarte({
   rueckblick,
@@ -99,6 +102,7 @@ export function Rueckblickkarte({
   phasenwechsel = null,
   zweig,
   zweigZuege,
+  strafZuege,
 }: {
   rueckblick: Rueckblick;
   partie: Partie;
@@ -111,6 +115,8 @@ export function Rueckblickkarte({
   zweig: Zweigwahl;
   /** Der bessere Zug und die nächsten Züge der Engine (useRueckblick.tsx). */
   zweigZuege: readonly Zweigzug[];
+  /** Wie der Gegner den Fehler bestraft: Variante der Engine nach dem Zug (0.2.85). */
+  strafZuege: readonly Zweigzug[];
 }) {
   const urteil = rueckblick.urteile[index];
   const san = partie.zuege[index]?.san ?? "";
@@ -153,7 +159,10 @@ export function Rueckblickkarte({
           {t("rueckblick.erklaerung", { seite, text: erklaerung.text })}
         </p>
       )}
-      {bester && MIT_BESSEREM.has(urteil.klasse) && <Nebenzweig zuege={zweigZuege} wahl={zweig} />}
+      {MIT_STRAFE.has(urteil.klasse) && <Nebenzweig zuege={strafZuege} art="strafe" wahl={zweig} />}
+      {bester && MIT_BESSEREM.has(urteil.klasse) && (
+        <Nebenzweig zuege={zweigZuege} art="besser" wahl={zweig} />
+      )}
       {phasenwechsel && (
         <p className="rueckblick-phase" data-testid="rueckblick-phase">
           {t("rueckblick.phasenwechsel", { text: phasenwechsel })}

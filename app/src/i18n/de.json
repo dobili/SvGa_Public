@@ -2357,6 +2357,7 @@
   "rueckblick.verlust": "{zug}: Die Gewinnchance von {seite} fällt von {vorher} % auf {nachher} %.",
   "rueckblick.zweigBesser": "Besser war",
   "rueckblick.zweigDanach": "danach etwa",
+  "rueckblick.zweigStrafe": "So wird der Fehler bestraft:",
   "rueckblick.zweigZurueckZug": "Zug zurück in der Variante",
   "rueckblick.zweigVorZug": "Zug vor in der Variante",
   "rueckblick.zweigZurPartie": "Zurück zur Partie",

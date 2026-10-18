@@ -1,0 +1,138 @@
+/*
+ * Querformat und Tablet (Design-Überprüfung 18.10.2026, vom Autor abgesegnet).
+ *
+ * Rolle im Gesamtbild: Im Hochformat bleibt die App eine Spalte mit der Leiste unten. Ab 600
+ * Pixeln Breite im Querformat (Material 3: ab „medium“, Handy quer und Tablet quer) wird die
+ * Leiste zur Schiene am linken Rand, und jeder Bildschirm mit Brett teilt sich in zwei Spalten:
+ * links das Brett in voller Höhe, rechts Zugleiste, Werkzeuge, Karten und Text (Material
+ * „supporting pane“, so auch Lichess). Bildschirme ohne Brett bleiben eine gut lesbare Spalte.
+ * Die Regeln greifen allgemein: Jeder Behälter, der ein .brettbereich als direktes Kind hat,
+ * wird zweispaltig; die Bildschirme selbst brauchen dafür keine eigene Gestalt.
+ * Wird zuletzt geladen (main.tsx), damit die Regeln die der übrigen Dateien überschreiben.
+ */
+
+/* ---------- Tablet hoch: etwas mehr Breite als auf dem Handy ---------- */
+
+@media (orientation: portrait) and (min-width: 760px) {
+  .rahmen,
+  .leiste {
+    max-width: 720px;
+  }
+
+  .brett,
+  .brett-mit-leiste {
+    max-width: 560px;
+  }
+}
+
+/* ---------- Querformat ab 600 Pixeln ---------- */
+
+@media (orientation: landscape) and (min-width: 600px) {
+  :root {
+    /* Breite der Schiene links (Material „navigation rail“: 80 dp und mehr). */
+    --schiene: 88px;
+    /* Kantenlänge des Brettes: Fensterhöhe abzüglich der Zeile unter dem Brett und der Ränder,
+       aber höchstens gut die Hälfte der Breite, damit rechts Platz für den Text bleibt. Die
+       Kopfzeile steht rechts über dem Text, so bekommt das Brett die ganze Höhe. */
+    --brett-seite: max(220px, min(calc(100dvh - 100px), calc((100vw - var(--schiene)) * 0.55)));
+    /* Breite der Textspalte von Bildschirmen ohne Brett (etwa 75 Zeichen je Zeile). */
+    --lesespalte: 760px;
+  }
+
+  html,
+  body {
+    background: var(--grund);
+  }
+
+  .rahmen {
+    max-width: none;
+    margin: 0;
+    padding-left: calc(var(--schiene) + env(safe-area-inset-left));
+    padding-right: env(safe-area-inset-right);
+    box-shadow: none;
+  }
+
+  .inhalt {
+    padding-bottom: calc(env(safe-area-inset-bottom) + var(--raster) * 2);
+  }
+
+  /* Die Leiste als Schiene: senkrecht, oben beginnend, mit Beschriftung unter jedem Symbol. */
+  .leiste {
+    top: 0;
+    right: auto;
+    width: calc(var(--schiene) + env(safe-area-inset-left));
+    max-width: none;
+    margin: 0;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    align-content: start;
+    gap: var(--raster);
+    padding: calc(env(safe-area-inset-top) + var(--raster)) 0 env(safe-area-inset-bottom)
+      env(safe-area-inset-left);
+    border-top: none;
+    border-right: 1px solid var(--linie);
+    box-shadow: none;
+  }
+
+  .leiste-knopf {
+    min-height: 64px;
+    padding: var(--raster) 0;
+  }
+
+  .leiste-knopf[aria-current="page"]::before {
+    top: 18%;
+    bottom: 18%;
+    left: 0;
+    right: auto;
+    width: 3px;
+    height: auto;
+    border-radius: 0 3px 3px 0;
+  }
+
+  .aufgaben-rueckweg {
+    left: calc(50% + var(--schiene) / 2);
+    bottom: calc(env(safe-area-inset-bottom) + var(--raster) * 2);
+  }
+
+  /* Bildschirme ohne Brett: eine Spalte in Lesebreite, mittig. */
+  .bildschirm {
+    width: 100%;
+    max-width: var(--lesespalte);
+    margin: 0 auto;
+  }
+
+  .bildschirm:has(.brettbereich) {
+    max-width: 1280px;
+  }
+
+  /* Zwei Spalten: das Brett links über alle Zeilen, alles andere rechts untereinander, auch die
+     Kopfzeile mit Zurück und Titel. Viele
+     Zeilen ohne Abstand, damit die hohe Brettspalte die rechten Karten nicht auseinanderzieht;
+     den Abstand rechts tragen die Karten selbst. */
+  :has(> .brettbereich) {
+    display: grid;
+    grid-template-columns: var(--brett-seite) minmax(0, 1fr);
+    grid-template-rows: repeat(30, auto) 1fr;
+    column-gap: calc(var(--raster) * 3);
+    row-gap: 0;
+    align-items: start;
+  }
+
+  :has(> .brettbereich) > * {
+    grid-column: 2;
+    margin-bottom: calc(var(--raster) * 2);
+  }
+
+  :has(> .brettbereich) > .brettbereich {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    position: sticky;
+    top: calc(env(safe-area-inset-top) + var(--raster) * 2);
+    margin: 0;
+  }
+
+  .brettbereich .brett,
+  .brettbereich .brett-mit-leiste {
+    max-width: none;
+  }
+}

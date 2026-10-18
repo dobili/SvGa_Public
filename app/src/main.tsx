@@ -22,6 +22,7 @@ import "./ui/stil/vorbereitet.css";
 import "./ui/stil/spiel.css";
 import "./ui/stil/uebung.css";
 import "./ui/stil/bausteine.css";
+import "./ui/stil/breit.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteOffline } from "./app/offline";

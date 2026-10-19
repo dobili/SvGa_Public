@@ -71,7 +71,7 @@
   "brett.sperre.blockiert": "This piece has no move right now.",
   "brett.skelettHinweis": "Skeleton view: the other pieces, arrows and markings are hidden; tools still calculate with the full position.",
   "zugleiste.entwurf": "Draft: the author has not yet approved this move sequence.",
-  "zugleiste.konstruiert": "Move sequence constructed by Claude, not from the book. It only leads to the position of the figure; the book gives no moves leading there.",
+  "zugleiste.konstruiert": "Move sequence constructed by an AI, not from the book. It only leads to the position of the figure; the book gives no moves leading there.",
   "abbildung.lehrbild": "Teaching diagram without a king: the engine cannot calculate here, but counting works.",
   "werkzeug.k1-zaehlen.name": "Counting",
   "werkzeug.k1-zaehlen.kurz": "Counting",

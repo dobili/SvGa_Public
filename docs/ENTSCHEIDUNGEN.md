@@ -4281,3 +4281,30 @@ eingetragen (der Autor übernimmt sie nach `main`) und die App-Daten daraus neu 
   („Eröffnung bis Endspiel“) folgen dem Glossar; die App rechnete schon so.
 - **D1 erledigt:** Die angekündigte Änderung zu Abb. 4.45 (Befund D.3, Fesselung in Zeile F3 der
   Fallenprüfung) steht im Buch und in der App; Buch und App widersprechen sich dort nicht.
+
+## Rückmeldung des Autors zu allen Punkten bis 0.2.115 (19.10.2026 abends, Version 0.2.116)
+
+Abgehakt („ok“, gilt als erledigt oder bleibt so): N410, N490, N483, N409, N580 bis N583, N180,
+N475, N469, N470, N473, N450, N451, N550, N403, N347, N334, N335, N328, N326, N327, N295, N289,
+N285 bis N287, N294, N264, N262, N255, N250, N230, N193; NA1, EN1, EN3, V3, V4, ZF1 bis ZF3, S21,
+S22, F1, F3 bis F5, X5, T1 bis T5, C1, C2, C4 bis C9, K1 bis K5, S24, S20.
+
+Mit Notiz (umgesetzt oder in der Arbeitsliste R1 bis R26, `docs/FORTSCHRITT.md`):
+
+- **N501:** „KI“ statt „Claude“ im Hinweis zu konstruierten Zugfolgen (0.2.116).
+- **N194:** Schritt 3 des Röntgen-Trainers ist unklar formuliert (R3).
+- **NA1:** Nach der Einschätzung soll die richtige Antwort der Engine stehen; richtig
+  eingeschätzte Stellungen merkt sich die App (R18).
+- **EN2:** Die 27 Buchzitate selbst ins Englische übersetzen, nach gängigen Fassungen (R13).
+- **V1:** Englisch bleibt in 1.0 eingeblendet; der Rest wird vorher übersetzt (R13, R25).
+- **V2:** Die App ist fertig, bevor das Buch erscheint; der Autor testet weiter auf `main`
+  (CLAUDE.md, Arbeitsablauf Punkt 2, angepasst mit seiner Erlaubnis).
+- **V5:** Alle „vorerst abgesegneten“ Texte sind freigegeben. Entwurfs-Kennzeichen gibt es in den
+  App-Daten keine mehr (geprüft).
+- **F2:** Eingabe im Denkroutine-Trainer am Brett statt als Text (R19).
+- **S24 ok:** Namen der Stufen nach den heutigen Zahlen (R8).
+- **S20 ok:** Wertung zurücksetzen macht der Autor in der App selbst, falls gewünscht.
+
+Dazu neue Wünsche (R7, R9 bis R12, R14 bis R17, R20 bis R24) und der Auftrag, alles selbst zu
+machen, auch in Dateien des Bot-Chats; offene Fragen nach Claudes Empfehlung und am Ende als
+Rückfrage in AUFGABEN_AUTOR.

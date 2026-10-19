@@ -71,7 +71,7 @@
   "brett.sperre.blockiert": "Diese Figur hat gerade keinen Zug.",
   "brett.skelettHinweis": "Skelett-Ansicht: Die übrigen Figuren, Pfeile und Markierungen sind ausgeblendet; Werkzeuge rechnen mit der vollen Stellung.",
   "zugleiste.entwurf": "Entwurf: Diese Zugfolge hat der Autor noch nicht freigegeben.",
-  "zugleiste.konstruiert": "Zugfolge von Claude konstruiert, nicht aus dem Buch. Sie führt nur zur Stellung der Abbildung hin; das Buch nennt keine Züge dorthin.",
+  "zugleiste.konstruiert": "Zugfolge von einer KI konstruiert, nicht aus dem Buch. Sie führt nur zur Stellung der Abbildung hin; das Buch nennt keine Züge dorthin.",
   "abbildung.lehrbild": "Lehrbild ohne König: Hier kann die Engine nicht rechnen, das Zählen funktioniert.",
   "werkzeug.k1-zaehlen.name": "Zählen",
   "werkzeug.k1-zaehlen.kurz": "Zählen",

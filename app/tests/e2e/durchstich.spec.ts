@@ -164,7 +164,7 @@ test("Konstruierte Zugfolge (0.2.96): Abb. 8.25 mit Hinweis, nicht aus dem Buch"
   // Die Partie endet an der Abbildung: der letzte Zug ist markiert, die Grundstellung ist der Anfang.
   await expect(leiste.locator('[aria-current="step"]')).toBeVisible();
   await expect(page.getByTestId("zugfolge-konstruiert")).toContainText(
-    "Zugfolge von Claude konstruiert, nicht aus dem Buch",
+    "Zugfolge von einer KI konstruiert, nicht aus dem Buch",
   );
   await page.screenshot({ path: "test-results/bilder/konstruiert.png", fullPage: true });
   await page.getByRole("button", { name: "Zum Anfang" }).click();

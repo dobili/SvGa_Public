@@ -36,7 +36,7 @@ STATUS_VERWORFEN = "verworfen"  # vom Autor verworfen: nie überschrieben, nie i
 STATUS_GEPRUEFT = "geprueft"
 # Von Claude konstruierte Partie zu einer Abbildung ohne Zugfolge im Buch (Entscheidung des Autors,
 # 18.10.2026; pipeline/zugfolgen/konstruktion.py): nie überschrieben, immer in den Daten, in der App
-# mit dem Hinweis „Zugfolge von Claude konstruiert, nicht aus dem Buch“ (Regel 1: Das Buch ist die
+# mit dem Hinweis „Zugfolge von einer KI konstruiert, nicht aus dem Buch“ (Regel 1: Das Buch ist die
 # einzige Quelle, darum deutlich gekennzeichnet).
 STATUS_KONSTRUIERT = "konstruiert"
 _VOM_AUTOR = (STATUS_FREIGEGEBEN, STATUS_VERWORFEN, STATUS_GEPRUEFT, STATUS_KONSTRUIERT)

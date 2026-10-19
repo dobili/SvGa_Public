@@ -118,14 +118,14 @@ Netzzugang der Cloud-Umgebung: „Voll“. npm und PyPI sind erreichbar, es gilt
 ## Arbeitsablauf
 
 1. Je Arbeitspaket ein eigener Zweig (`ap1-durchstich` usw.).
-2. Jeder Push löst die Prüfungen aus. Cloudflare ist auf Vorschau-Builds je Zweig eingestellt
-   (`docs/VEROEFFENTLICHUNG.md`); ob deren Adressen funktionieren, prüft der Autor (Rückfrage V2,
-   19.10.2026). Bis dahin testet der Autor auf `main` (schach-von-grund-auf.com/app/).
+2. Jeder Push löst die Prüfungen aus. Der Autor testet auf `main` (schach-von-grund-auf.com/app/);
+   die App ist fertig, bevor das Buch erscheint, deshalb bleibt das so (Entscheidung V2,
+   19.10.2026).
 3. Der Autor prüft nach `docs/AUFGABEN_AUTOR.md` (Teil 1) auf dem Handy und gibt frei.
 4. Nach der Freigabe wird der Zweig in `main` übernommen. `main` ist die veröffentlichte App.
    Der Autor erlaubt ausdrücklich (14.10.2026), jederzeit nach `main` zu pushen, wenn es sinnvoll
-   ist (etwa Testversionen, solange es keine funktionierende Vorschauadresse gibt). Vorher immer
-   alle Prüfungen bestehen lassen und die Versionsnummer erhöhen.
+   ist (etwa Testversionen). Vorher immer alle Prüfungen bestehen lassen und die Versionsnummer
+   erhöhen.
 5. Schutz vor Arbeitsverlust: Teilschritte, die in eine Sitzung passen. Nach jedem Teilschritt
    committen und pushen, spätestens nach etwa 30 Minuten. `docs/FORTSCHRITT.md` hält fest, was fertig
    ist, was offen ist und den genauen nächsten Schritt. Im claude.ai-Projekt hält

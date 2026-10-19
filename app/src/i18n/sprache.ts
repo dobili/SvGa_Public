@@ -144,6 +144,7 @@ export function datensprache(): string {
 
 /** Gebietsschema für Zahlen und Daten je Sprache. */
 const GEBIETSSCHEMA: Readonly<Record<string, string>> = { de: "de-DE", en: "en-US" };
+const zahlformate = new Map<string, Intl.NumberFormat>();
 
 /**
  * Eine Zahl mit fester Zahl an Nachkommastellen im Format der Sprache.
@@ -151,11 +152,20 @@ const GEBIETSSCHEMA: Readonly<Record<string, string>> = { de: "de-DE", en: "en-U
  * Sonderfall: fest = false lässt Nullen am Ende weg (zahlText(3, 1, false) → „3“).
  */
 export function zahlText(zahl: number, nachkommastellen: number, fest = true): string {
-  return zahl.toLocaleString(GEBIETSSCHEMA[aktuelleSprache] ?? "de-DE", {
-    minimumFractionDigits: fest ? nachkommastellen : 0,
-    maximumFractionDigits: nachkommastellen,
-    useGrouping: false,
-  });
+  const mindestens = fest ? nachkommastellen : 0;
+  const schluessel = `${aktuelleSprache}:${mindestens}:${nachkommastellen}`;
+  let format = zahlformate.get(schluessel);
+  if (!format) {
+    // Ein Formatierer je Sprache und Stellenzahl: neu anlegen ist teuer, die Werkzeuge rufen
+    // zahlText auf jeder Abbildung oft auf.
+    format = new Intl.NumberFormat(GEBIETSSCHEMA[aktuelleSprache] ?? "de-DE", {
+      minimumFractionDigits: mindestens,
+      maximumFractionDigits: nachkommastellen,
+      useGrouping: false,
+    });
+    zahlformate.set(schluessel, format);
+  }
+  return format.format(zahl);
 }
 
 /** Ein Datum im Format der Sprache, etwa „19.10.2026“ oder „10/19/2026“. */

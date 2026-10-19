@@ -1,12 +1,13 @@
 /**
  * Oberflächentests für die Technik der englischen Fassung (seit 0.2.94, AP 18 ohne Übersetzung):
- * `<html lang>` folgt der Sprache, die Sprachwahl erscheint erst mit einer zweiten Sprache, Züge
- * im Klartext der Unterschrift stehen wie im Buch, die Lizenzen kommen aus der Sprachdatei.
+ * `<html lang>` folgt der Sprache, Deutsch ist gewählt (Englisch seit 0.2.103 nur als Vorschau
+ * auf Wahl), Züge im Klartext der Unterschrift stehen wie im Buch und auf Englisch mit englischen
+ * Buchstaben, die Lizenzen kommen aus der Sprachdatei.
  */
 import { expect, test } from "@playwright/test";
 import { oeffneAbbildung, starteImBrowser } from "./hilfen";
 
-test("Sprache: html lang, keine Wahl mit nur einer Sprache, Unterschrift und Lizenzen", async ({
+test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und Lizenzen", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -18,8 +19,20 @@ test("Sprache: html lang, keine Wahl mit nur einer Sprache, Unterschrift und Liz
 
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
   await page.getByRole("tab", { name: "Anzeige" }).click();
-  await expect(page.getByText("Deutsch (Englisch folgt mit der englischen Ausgabe)")).toBeVisible();
-  await expect(page.getByRole("radiogroup", { name: "Sprache" })).toHaveCount(0);
+  await expect(page.getByRole("radio", { name: "Deutsch" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+
+  // Englisch: dieselbe deutsche Unterschrift, der Zug mit englischem Buchstaben („2. Bf4“).
+  await page.getByRole("radio", { name: "English (preview)" }).click();
+  await page.getByRole("navigation").getByRole("button", { name: "Book" }).click();
+  await page.getByLabel("Open figure").fill("1.2");
+  await page.getByRole("button", { name: "Open", exact: true }).click();
+  await expect(page.locator(".unterschrift").first()).toContainText("Nach 2. Bf4 – Ziel 1");
+  await page.getByRole("button", { name: "Settings", exact: true }).click();
+  await page.getByRole("tab", { name: "Display" }).click();
+  await page.getByRole("radio", { name: "Deutsch" }).click();
 
   // Der Sprung über die Adresse wirkt beim Start der App (wie aus der Fußzeile der Startseite).
   await page.goto("/app/#lizenzen");

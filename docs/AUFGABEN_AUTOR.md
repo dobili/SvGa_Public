@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.113. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.114. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.113“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.114“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -406,8 +406,8 @@ bevor du es sagst.
       **Empfehlung:** ohne Zugfolge lassen. Kennst du eine Partie, aus der die Stellung stammt,
       baue ich sie danach.
 - [ ] ZF4. **Buchbefund aus der Tablebase (Abb. 8.25, 8.26, 9.23, 9.41):** Die Lichess-Tablebase
-      (genau für bis zu sieben Steine) sagt: **8.25 und 8.26 sind mit Weiß am Zug remis**, weil
-      der schwarze König rechtzeitig vor den Bauern kommt. Das Buch zeigt dort nur die
+      (genau für bis zu sieben Steine) sagt: **8.25 und 8.26 sind remis, gleich wer am Zug ist**
+      (am 19.10.2026 nachgeprüft), weil der schwarze König rechtzeitig vor den Bauern kommt. Das Buch zeigt dort nur die
       Schlüsselfelder und behauptet nichts Falsches, ein Leser hält die Stellungen aber leicht für
       gewonnen. **Vorschlag:** in den Unterschriften ergänzen „Hier hält Schwarz remis: Sein König
       erreicht die Opposition, bevor Weiß ein Schlüsselfeld besetzt.“ **9.41 ist remis**, wie im
@@ -480,17 +480,35 @@ bevor du es sagst.
 - [ ] B6. **Zeit-Zählhilfe in Kapitel 3:** Nach 1. e4 e5 2. f4 (Abb. 3.1, ebenso 3.18 und 3.36)
       sagt die Faktorenbilanz „Schwarz liegt vorn bei Zeit“, obwohl beide Seiten null Figuren im
       Spiel haben. Das folgt der Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom weißen
-      Vorsprung eine Figur ab“) und der Tabelle zu Abb. 3.14 (zwei gegen zwei, Schwarz am Zug:
-      Schwarz +1). Der Fließtext sagt dagegen „sein Vorsprung ist eine Figur kleiner“, also nie
-      unter null. **Empfehlung:** im Buch „nie unter null“ ergänzen und die Tabelle zu 3.14 auf
-      „gleich“ setzen; dann ändert Claude die App (eine Zeile). Bis dahin bleibt die App beim Buch.
+      Vorsprung eine Figur ab“). Der Fließtext sagt dagegen nur „sein Vorsprung ist eine Figur
+      kleiner“. Nachgelesen am 19.10.2026: Das Buch zählt in drei Faktorenbilanzen genau wie die
+      App, auch unter null: Abb. 3.14 (Evans-Gambit, „Bei der Zeit liegt sogar Schwarz vorn, da
+      er am Zug ist“), Abb. 3.47 (Budapester Gambit, Schwarz +1 bei zwei gegen zwei) und Abb. 3.65
+      (Stafford-Gambit, Schwarz +2 bei zwei gegen eine). **Neue Empfehlung (ersetzt „nie unter
+      null“):** nur den Fließtext in Kapitel 3 an die Tabellen angleichen, etwa „Ist Schwarz am
+      Zug, hat Weiß einen Zug mehr gemacht; ziehe dann vom weißen Vorsprung eine Figur ab, weil
+      Schwarz mit dem nächsten Zug aufholen kann. Bei Gleichstand liegt so Schwarz eine Figur
+      vorn.“ Dann bleiben die drei Bilanzen und die App, wie sie sind. Die andere Lösung („nie
+      unter null“) müsste alle drei Bilanzen samt Urteil ändern.
 - [ ] B7. **Lichess-Adresse im Werkzeugkasten (Kapitel 12):** Die Liste der Lichess-Seiten nennt
       „/insights“ (Schach-Einblicke). Die Adresse lichess.org/insights gibt es nicht (Fehler 404,
       geprüft am 19.10.2026); die Einblicke liegen unter lichess.org/insights/DEINNAME und sind
       auch über das eigene Profil › „Einblicke“ erreichbar. Die Trainingsseite der Website
       verlinkt den Eintrag deshalb ins Leere. **Empfehlung:** im Buch „/insights/dein-name (über
       dein Profil)“ schreiben; Claude übernimmt es dann in die Trainingsseite. Bis dahin bleibt
-      der Link wie im Buch.
+      der Link wie im Buch. Alle anderen Adressen in Kapitel 12 funktionieren (geprüft am
+      19.10.2026, 17 Lichess-Adressen und zehn andere Seiten), ebenso alle Menüwege und
+      Bezeichnungen der Tabelle „Lichess-Funktionen“ in der deutschen Oberfläche. Nur
+      /training/dashboard (Aufgabenübersicht) führt ohne Lichess-Konto zur Anmeldung; ein
+      Zusatz „mit Konto“ wäre ehrlich.
+- [ ] B8. **schachtraining.de in Kapitel 12:** Das Buch nennt „Taktikaufgaben in drei Stufen“.
+      Die Seite hat das nicht (mehr): Sie ist ein Blog mit Artikeln zu Eröffnung, Mittelspiel und
+      Endspiel; ihre „Taktikaufgabe des Tages“ endet im Januar 2023 (Nr. 109), Stufen gibt es
+      keine. Mattaufgaben in einem, zwei und drei Zügen hat dagegen schach-tipps.de.
+      **Empfehlung:** „schachtraining.de (Artikel zu Eröffnung, Mittelspiel und Endspiel),
+      schach-tipps.de (Regeln, Grundlagen und Mattaufgaben in einem, zwei und drei Zügen)“, oder
+      schachtraining.de streichen. Die Trainingsseite „Werkzeugkasten“ der Website übernimmt
+      die Änderung aus dem Buch.
 - [ ] D1. **Abb. 4.45:** Im Buchstand vom 16.10. ist an der Stellung, den Pfeilen und den
       Markierungen von 4.45 nichts geändert, wohl aber die Zeile F3 der Fallenprüfung
       „Damenfalle im Dänischen Gambit“ (jetzt: der Läufer b2 fesselt g7 relativ an den Turm h8,

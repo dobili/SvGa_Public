@@ -4246,3 +4246,18 @@ Vom Autor abgesegnet (19.10.2026, „Alle anderen Punkte auch ja“; Texte nach 
   stimmt; N326 nennt Zahlen von vor der Neueichung (gekennzeichnet).
 - **Buchbefund B7:** lichess.org/insights gibt es nicht (404); die Einblicke liegen unter
   /insights/NAME. Der Link der Trainingsseite bleibt wie im Buch, bis der Autor entscheidet.
+
+## Buchbefunde nachgeprüft, Links in Kapitel 12 (19.10.2026, Opus, Version 0.2.114)
+
+Auf Wunsch des Autors („zu allen Stellen des Buches eine Änderungsformulierung, teste die Links
+in Kapitel 12“):
+
+- **B6 neu bewertet:** Das Buch zählt die Zeit in drei Faktorenbilanzen auch unter null
+  (Abb. 3.14, 3.47, 3.65), genau wie die App. Neue Empfehlung: nur den Fließtext angleichen
+  statt „nie unter null“; die Formulierungen bekam der Autor im Chat.
+- **Links in Kapitel 12:** 17 Lichess-Adressen und zehn andere Seiten aufgerufen. Fehlerhaft
+  nur `lichess.org/insights` (404, B7); `/training/dashboard` braucht ein Konto. Menüwege und
+  Bezeichnungen der Tabelle „Lichess-Funktionen“ gegen die deutsche Lichess-Oberfläche und
+  ihre Übersetzungsdateien geprüft: alle richtig. Neuer Befund **B8**: schachtraining.de hat
+  keine „Taktikaufgaben in drei Stufen“ (Blog, Tagesaufgabe endet Januar 2023).
+- **ZF4:** Abb. 8.25 und 8.26 sind laut Tablebase remis, gleich wer am Zug ist.

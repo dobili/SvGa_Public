@@ -1,4 +1,4 @@
-/** Tests für Genauigkeitsmodus und Spielstärke nach der Eichung (0.2.83). */
+/** Tests für Genauigkeitsmodus und Spielstärke nach der Eichung (0.2.83, Kurven neu seit 0.2.103). */
 import { describe, expect, it } from "vitest";
 import { kurvenwert, POLSTER, staerkeAusGenauigkeit, staerkeUeberPartien } from "./staerkemodell";
 
@@ -15,7 +15,7 @@ describe("staerkemodell", () => {
 
   it("schätzt eine Partie als Mitte mit Spanne ±400 und beiden Skalen", () => {
     const s = staerkeAusGenauigkeit(80);
-    expect(s).toEqual({ mitte: 1550, von: 1150, bis: 1950, chesscom: 1500, lichess: 1550 });
+    expect(s).toEqual({ mitte: 1550, von: 1150, bis: 1950, chesscom: 1500, lichess: 1650 });
   });
 
   it("steigt mit der Genauigkeit", () => {
@@ -24,7 +24,7 @@ describe("staerkemodell", () => {
 
   it("schätzt zehn Partien enger (±250), weniger Partien weiter", () => {
     const zehn = staerkeUeberPartien(Array.from({ length: 10 }, () => 75));
-    expect(zehn).toEqual({ mitte: 1400, von: 1150, bis: 1650, chesscom: 1350, lichess: 1450 });
+    expect(zehn).toEqual({ mitte: 1550, von: 1300, bis: 1800, chesscom: 1500, lichess: 1600 });
     const eine = staerkeUeberPartien([75]);
     expect((eine?.bis ?? 0) - (eine?.von ?? 0)).toBe(800);
     expect(staerkeUeberPartien([])).toBeNull();
@@ -32,11 +32,11 @@ describe("staerkemodell", () => {
 
   it("drei Partien mit 70, 80 und 75 % (Beispiel in wertung.ts)", () => {
     expect(staerkeUeberPartien([70, 80, 75])).toEqual({
-      mitte: 1400,
-      von: 1050,
-      bis: 1750,
-      chesscom: 1400,
-      lichess: 1450,
+      mitte: 1550,
+      von: 1200,
+      bis: 1900,
+      chesscom: 1500,
+      lichess: 1600,
     });
   });
 

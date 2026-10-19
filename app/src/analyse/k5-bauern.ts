@@ -24,7 +24,7 @@ import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug"
 
 /**
  * Kurzbezeichnungen am Brett (Pflichtenheft 6.3), in der Reihenfolge der Buchtabelle; die
- * Buchstaben stehen in der Sprachdatei (Englisch: backward B, chain base C, seit 0.2.103).
+ * Buchstaben stehen in der Sprachdatei (Englisch: backward B, chain base C, seit 0.2.104).
  */
 const KUERZEL: Readonly<Record<Schwaeche, Textschluessel>> = {
   doppel: "bauern.kuerzel.doppel",

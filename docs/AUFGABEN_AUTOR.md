@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.103. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.104. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.103“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.104“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -33,7 +33,7 @@ dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. 
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 
-### Neu in 0.2.103 (etwa 10 Minuten; englische Fassung als Vorschau, dein Wunsch vom 19.10.2026, Opus)
+### Neu in 0.2.104 (etwa 10 Minuten; englische Fassung als Vorschau, dein Wunsch vom 19.10.2026, Opus)
 
 Alle 2857 Oberflächentexte gibt es jetzt auf Englisch, mit englischer Notation (B statt L,
 N statt S, R statt T, Q statt D, auch in Zügen der Engine und in deinen Bildunterschriften).
@@ -47,6 +47,35 @@ Teil 2, EN2). Englisch muss man selbst wählen; die App startet nie von selbst a
       Qb6“. Spiele eine kurze Partie gegen die Engine und sieh dir die Auswertung an: Klingen die
       Sätze natürlich? Zahlen mit Punkt („1.5“), Datum als „10/19/2026“. Zurück mit
       Settings › Display › „Deutsch“. Notiere alles, was hölzern oder falsch klingt.
+
+### Neu in 0.2.103 (etwa 15 Minuten, mit Engine; Spielstärke nur bis zur Entscheidung, Opus)
+
+Dein Wunsch vom 19.10.2026: Für die geschätzte Spielstärke zählen nur noch die Züge, bis die
+Partie entschieden ist, also bis eine Seite mindestens 90 % Gewinnchance hat und bis zum Ende
+behält. Die Kurven Genauigkeit → Spielstärke sind dafür an 600 neu gesammelten Partien von
+chess.com und Lichess neu geeicht. Die Bots spielen wie vorher; ihre Zahlen sinken alle um etwa
+200, weil die Anker mit der neuen Regel nachgerechnet sind.
+
+- [ ] N580. **Verschenkte Partie gegen Stufe 1:** Spiele gegen Stufe 1 so lange, bis die Engine
+      früh die Dame oder einen Turm verliert, und spiele dann zügig zu Ende (wie deine Partie vom
+      19.10.2026, als die Engine nach 9...Db8?? auf 89 % und „etwa 1700“ kam). Auswertung › Karte
+      „Spielstärke“: Steht bei der Engine jetzt „zu wenige Züge vor der Entscheidung“ oder eine
+      deutlich kleinere Zahl? Die Genauigkeit oben darf hoch bleiben; sie zählt wie bei Lichess
+      und chess.com alle Züge.
+- [ ] N581. **„aus N Zügen bis zur Entscheidung“:** In derselben Auswertung steht bei deiner
+      Spielstärke hinter der Spanne etwa „· aus 12 Zügen bis zur Entscheidung“. In der Tabelle je
+      Phase steht bei Phasen, die ganz nach der Entscheidung liegen (meist das Endspiel), statt
+      Marke und Zahl „92 % · nach der Entscheidung (15 Züge)“. Verständlich?
+- [ ] N582. **Zahlen der Bots:** Spielen › „Vorgefertigte Bots“. Stufe 1 steht jetzt bei etwa
+      850 bis 1100 (vorher 1050 bis 1300), Stufe 8 bei etwa 3000 (vorher 3200), „Zum Spaß“ bei
+      „unter 400 bis etwa 850“ (Fritzi unter 400, Onkel Willi etwa 550, Tante Trude etwa 650,
+      Bruno etwa 850). Passt das zu deinem Gefühl am Brett? Zu den Spaß-Bots siehe GE1 in Teil 2.
+- [ ] N583. **Erklärung:** Auf der Karte „Spielstärke“ das Fragezeichen bei „Wie die Zahlen
+      entstehen“ antippen. Dort steht neu: „Für Spielstärke und Wort je Phase zählen nur die
+      Züge, bis die Partie entschieden ist: bis eine Seite mindestens 90 % Gewinnchance hat und
+      bis zum Ende behält. Danach ist fast jeder Zug ‚genau‘, weil nichts mehr zu verlieren ist;
+      sonst bekäme eine früh verschenkte Partie eine hohe Zahl. Die Genauigkeit oben zählt wie bei
+      Lichess und chess.com alle Züge.“ Passt der Text?
 
 ### Neu in 0.2.102 (etwa 3 Minuten, mit Engine; Uhr sofort gesichert, Opus)
 
@@ -223,7 +252,7 @@ Stellen); die englische Fassung zeigt sie später als „2. Bf4“.
 
 - [ ] N559. **Nichts hat sich verändert:** Öffne Abb. 1.2: Die Unterschrift lautet wie im Buch
       „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ stehen seit
-      0.2.103 „Deutsch“ (gewählt) und „English (preview)“; auch ein englisches Handy startet
+      0.2.104 „Deutsch“ (gewählt) und „English (preview)“; auch ein englisches Handy startet
       auf Deutsch.
 - [ ] N560. **Lizenzen:** Einstellungen › „Lizenzen“ (oder Fußzeile der Startseite): Die Seite
       sieht aus wie vorher (alle Bausteine mit Lizenz, Herkunft und „Lizenztext“). Die Texte
@@ -332,9 +361,9 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 
 ### Neu in 0.2.88 (mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
-- [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, etwa 600): Macht
-      sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende Figur? Bruno liegt mit
-      etwa 1100 etwas über deinem Wunsch (500 bis 1000); so lassen? (Gruppe, Zahlen und
+- [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, seit 0.2.103
+      „unter 400“): Macht sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende
+      Figur? Zur Lage der Zahlen (Bruno jetzt etwa 850) siehe GE1 in Teil 2. (Gruppe, Zahlen und
       Sprechblase hat Claude geprüft.)
 
 ### Neu in 0.2.85 (mit Engine; Elo-Zahl der Bots, Opus)
@@ -463,11 +492,11 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       „an“, wird sie für alle die Voreinstellung.
 
 
-### EN. Englische Fassung (Opus, 19.10.2026; EN1 und EN3 schon umgesetzt, Widerspruch genügt)
+### EN. Englische Fassung (Opus, 19.10.2026, Version 0.2.104; EN1 und EN3 schon umgesetzt, Widerspruch genügt)
 
 - [ ] EN1. **Vorläufige englische Namen der Buchbegriffe:** Empfehlung: geläufige englische
       Schachbegriffe, wo es sie gibt; eigene Begriffe des Buches wörtlich übersetzt. Schon
-      umgesetzt in 0.2.103: Zählen = Counting, Angriffsregel = Attack rule, Todsünden = Deadly
+      umgesetzt in 0.2.104: Zählen = Counting, Angriffsregel = Attack rule, Todsünden = Deadly
       sins, Schach-Röntgen-Regel = Chess X-ray rule, Zielbilanz = Goal balance, Faktorenbilanz =
       Factor balance, Planbilanz = Plan balance, Falle oder Köder = Trap or bait, Prüffragen =
       Check questions, Warnsignale = Warning signs, Leitfrage = Guiding question, Erzwingende
@@ -511,7 +540,7 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       Regelzeilen der Werkzeuge); sie sind mitübersetzt. Bildunterschriften, Glossar und
       Übungen kommen aus den Buchdaten und bleiben deutsch, bis es dein englisches LaTeX gibt.
 - [ ] EN3. **Kürzel am Brett auf Englisch:** Empfehlung: englische Anfangsbuchstaben. Schon
-      umgesetzt in 0.2.103: Bauernschwächen D (doubled), I (isolated), B (backward, statt R),
+      umgesetzt in 0.2.104: Bauernschwächen D (doubled), I (isolated), B (backward, statt R),
       H (hanging), C (chain base, statt B), U (unsound); Drohung T (threat, statt D). Auf
       Deutsch bleibt alles wie im Buch.
 
@@ -552,6 +581,18 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       (+0,03), das passt zum Buch („Weiß gewinnt mit Txa7 den Bauern zurück“). Die
       Endspielaufgaben des Trainers widersprechen der Tablebase in keinem Fall (137 Stellungen
       geprüft). Nur du änderst das Buch; die App bleibt, wie sie ist.
+
+### GE. Spielstärke nur bis zur Entscheidung (Opus, 19.10.2026; schon umgesetzt, Widerspruch genügt)
+
+- [ ] GE1. **Spaß-Bots jetzt unter deinem Wunschbereich:** Du wolltest die Gruppe „Zum Spaß“ bei
+      etwa 500 bis 1000. Mit der neuen Regel sinken alle Bot-Zahlen gemeinsam um etwa 200, die
+      Spaß-Bots liegen nun bei unter 400 (Fritzi, 60 % Zufallszüge), etwa 550 (Onkel Willi, 38 %),
+      650 (Tante Trude, 25 %) und 850 (Bruno, 15 %). Unter 400 zeigt die App keine Zahl, weil die
+      Eichpartien erst bei 400 beginnen. Gespielt wird wie vorher; nur der Maßstab ist ehrlicher
+      geworden (Stufe 1 wirkte dir mit „1700“ zu stark). **Empfehlung:** so lassen, die Bots
+      nicht neu messen (wie besprochen). Möchtest du die Spaß-Bots trotzdem bei 500 bis 1000,
+      senke ich ihre Zufallszüge (etwa 45, 30, 20 und 10 %) und messe die vier neu (etwa eine
+      Stunde Rechenzeit).
 
 ### Nur bestätigen (je eine Zeile; Widerspruch genügt)
 

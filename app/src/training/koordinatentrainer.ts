@@ -197,7 +197,7 @@ export function pruefeNotation(aufgabe: Zugaufgabe, eingabe: string) {
   const zug = zuegeAusText(text)[0] ?? "";
   const richtig = ohneZeichen(zug) === ohneZeichen(aufgabe.san);
   const schachVergessen = richtig && /[+#]$/.test(aufgabe.san) && !/[+#]$/.test(zug);
-  // In der englischen Fassung sind englische Buchstaben die Regel, kein Hinweis nötig (0.2.103).
+  // In der englischen Fassung sind englische Buchstaben die Regel, kein Hinweis nötig (0.2.104).
   const hinweisEnglisch = richtig && englischerBuchstabe && sprache() === GRUNDSPRACHE;
   return { richtig, schachVergessen, englisch: hinweisEnglisch };
 }

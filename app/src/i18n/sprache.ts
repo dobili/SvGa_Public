@@ -18,7 +18,7 @@ export type Textschluessel = keyof typeof de;
 export type Textwerte = Readonly<Record<string, string | number>>;
 
 /**
- * Die Sprachdateien der App. Englisch seit 0.2.103 als Vorschau (Wunsch des Autors, 19.10.2026):
+ * Die Sprachdateien der App. Englisch seit 0.2.104 als Vorschau (Wunsch des Autors, 19.10.2026):
  * Wörtliche Buchzitate fehlen in en.json und erscheinen deutsch, bis es die englische Fassung
  * des Autors gibt (Liste in en.buchzitate.json).
  */

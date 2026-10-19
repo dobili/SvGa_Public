@@ -90,7 +90,7 @@ function befundFuer(art: Kandidat["art"], liste: readonly Kandidat[]): Befund {
  * Kürzel der Zugart hinter der Nummer am Zielfeld (seit 0.2.32, Wunsch des Autors): Die Pfeile
  * bleiben gold wie im Buch, die Art steht als Zeichen daneben. Regel: Kapitel 7, Schritt 2
  * („Rechne sie in dieser Reihenfolge: Schachs, Schläge, Drohungen“). Der Buchstabe der Drohung
- * steht in der Sprachdatei (Deutsch D, Englisch T für „threat“, seit 0.2.103).
+ * steht in der Sprachdatei (Deutsch D, Englisch T für „threat“, seit 0.2.104).
  */
 function kuerzel(art: Kandidat["art"]): string {
   if (art === "schach") return "+";

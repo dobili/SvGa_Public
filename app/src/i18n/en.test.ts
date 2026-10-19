@@ -1,5 +1,5 @@
 /**
- * Tests der englischen Sprachdatei (seit 0.2.103): gleiche Schlüssel und Platzhalter wie
+ * Tests der englischen Sprachdatei (seit 0.2.104): gleiche Schlüssel und Platzhalter wie
  * Deutsch, englische Figurenbuchstaben in Zügen, Buchzitate bleiben deutsch.
  */
 import { afterEach, describe, expect, it } from "vitest";

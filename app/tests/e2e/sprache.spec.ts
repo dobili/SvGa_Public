@@ -1,6 +1,6 @@
 /**
  * Oberflächentests für die Technik der englischen Fassung (seit 0.2.94, AP 18 ohne Übersetzung):
- * `<html lang>` folgt der Sprache, Deutsch ist gewählt (Englisch seit 0.2.103 nur als Vorschau
+ * `<html lang>` folgt der Sprache, Deutsch ist gewählt (Englisch seit 0.2.104 nur als Vorschau
  * auf Wahl), Züge im Klartext der Unterschrift stehen wie im Buch und auf Englisch mit englischen
  * Buchstaben, die Lizenzen kommen aus der Sprachdatei.
  */

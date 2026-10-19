@@ -3947,7 +3947,49 @@ Nebenbefund: Der Oberflächentest „Alle Daten löschen entfernt auch die Daten
 wenn er mit zwei Arbeitern neben `spielen.spec.ts` läuft, auch auf dem unveränderten Stand 0.2.101;
 allein und in GitHub Actions besteht er. Nicht durch diese Änderung verursacht.
 
-## Englische Fassung als Vorschau (19.10.2026, Opus, Zweig `englisch`, Version 0.2.103)
+## Spielstärke nur bis zur Entscheidung, Kurven und Bot-Zahlen neu geeicht (19.10.2026, Opus, Zweig `genauigkeit-bis-entscheidung`, Version 0.2.103)
+
+Anlass: In einer Partie des Autors gegen Stufe 1 verlor die Engine nach 9...Db8?? die Dame, spielte
+34 Züge in verlorener Stellung weiter und bekam 89 % Genauigkeit und „etwa 1700“. Ursache: Die
+Lichess-Rechnung kappt die Bewertung bei ±10 Bauern; in entschiedener Stellung gibt es keine
+Gewinnchance mehr zu verlieren, jeder Zug zählt als fast perfekt. Wunsch des Autors: Für die
+Spielstärke zählen nur die Züge, bis die Partie dauerhaft entschieden ist; Schwankungen
+verschieben den Punkt nach hinten. Danach die Kurve Genauigkeit → Spielstärke neu eichen; die Bots
+nicht neu messen (Absprache mit dem Autor: Ihre Stärke und Reihenfolge bleiben, nur die Anker
+verschieben die Zahlen).
+
+- **Regel** (`spiel/entscheidung.ts`): Entscheidungspunkt ist die erste Stellung, ab der eine
+  Seite bis zum Ende mindestens 90 % Gewinnchance hat (dieselbe Grenze wie „entschieden“ beim
+  Polster). Es zählen die Züge davor, auch der Zug in die entschiedene Stellung. Ist schon die
+  Startstellung entschieden oder endet die Partie offen, zählen alle Züge. Gilt für die innere
+  Genauigkeit, die Spielstärke je Partie, die Spielstärke je Phase und Zugart, das Urteilswort je
+  Phase und „Deine Spielstärke“ über zehn Partien. Die angezeigte Genauigkeit (Schalter „wie
+  Lichess / App / chess.com“) zählt weiter alle Züge, damit sie mit diesen Seiten vergleichbar
+  bleibt. Schätzung weiter ab zehn gezählten Zügen (je Phase sechs).
+- **Anzeige:** „aus N Zügen bis zur Entscheidung“ hinter der Spanne, „zu wenige Züge vor der
+  Entscheidung“, je Phase „nach der Entscheidung“ ohne Urteilswort; Satz in der Erklärung.
+- **Eichung:** je 300 neu gesammelte gewertete Schnellschach-Partien von chess.com und Lichess
+  (je 30 in jedem 200-Punkte-Band von 400 bis 2399; die Rohdaten von 0.2.83 lagen in einem anderen
+  Container), in Tiefe 18 nachgerechnet, Seiten mit mindestens zehn gezählten Zügen. Vergleich an
+  denselben Kontrollseiten, Betrag der Abweichung Schätzung − Wertung (neue Regel gegen alle
+  Züge): chess.com je Partie 524 gegen 556, über zehn Partien 572 gegen 577; Lichess je Partie
+  331 gegen 373, über zehn 312 gegen 345. Die Regel trifft also überall etwas besser. Auf der
+  chess.com-Seite streut die Schätzung in dieser Stichprobe stärker als 2026-10-18 (damals 370
+  bis 480 je Partie); die Genauigkeit sagt bei chess.com über 1800 kaum noch etwas (Kurve endet
+  bei etwa 1860). Spanne in der App unverändert (±400 bis ±250).
+- **Neue Kurven** (`spiel/staerkemodell.ts`): Beispiele 80 % → etwa 1550 (chess.com 1500,
+  Lichess 1650); zehn Partien mit 75 % → etwa 1550 (1300 bis 1800). Regler der Schalterstellungen
+  unverändert (die Eichung fand Mittelweg 0,60 und nahe chess.com 0,2 statt 0,55 und 0,1; der
+  Unterschied liegt im Rauschen wie 2026-10-18).
+- **Bot-Zahlen** (`engine/botstaerke-daten.ts`, Messlauf `engine/botstaerke.messung.ts` mit der
+  neuen Regel und den neuen Kurven auf denselben Anker-Partien): Anker Stufe 1 bei 57 % → 850,
+  Stufe 2 bei 72 % → 1413, Stufe 3 bei 79 % → 1738 (Stufe 4 bis 6 gesättigt wie bisher). Alle
+  Zahlen sinken gemeinsam um 212: Stufen 983, 1319, 1698, 1868, 2147, 2383, 2699, 3011;
+  Spaß-Bots Fritzi 371, Onkel Willi 564, Tante Trude 670, Bruno 869. Rückfrage GE1 (Spaß-Bots
+  unter dem Wunschbereich 500 bis 1000; Empfehlung so lassen).
+- **Vergleichsschalter:** `EICHUNG_ALLE_ZUEGE=1 npm run messen:eichung` rechnet die Eichung wie
+  vor 0.2.103 über alle Züge.
+## Englische Fassung als Vorschau (19.10.2026, Opus, Zweig `englisch`, Version 0.2.104)
 
 Wunsch des Autors (19.10.2026): „erarbeite doch schon einmal eine englische Fassung der App. Nur
 bei Texten, die wörtlich aus dem Buch zitiert werden, müsstest du meine Fassung warten … Züge im

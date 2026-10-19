@@ -133,6 +133,9 @@ describe("Genauigkeit und Spielstärke", () => {
     expect(s.black.zeichen["??"]).toBe(1);
     expect(s.black.genauigkeit).toBeLessThan(s.white.genauigkeit ?? 0);
     expect(s.black.verlustJeZug).toBeCloseTo(10.3 / 3, 5);
+    // Nach 3...Sf6?? ist die Partie entschieden: 4. Dxf7# zählt nicht mehr für die Spielstärke.
+    expect(s.white.gewertet).toBe(3);
+    expect(s.black.gewertet).toBe(3);
   });
 
   it("Mittelspiel nach Zugart: nur Züge des Mittelspiels, getrennt nach Taktik und Strategie", () => {

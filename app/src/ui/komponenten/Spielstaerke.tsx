@@ -58,15 +58,28 @@ const KLASSEN: readonly Zugklasse[] = [
   "patzer",
 ];
 
-/** „etwa 1400 (1000–1800)“ oder „zu wenige Züge“. */
+/**
+ * „etwa 1400 (1000–1800)“, „zu wenige Züge“ oder (seit 0.2.103) „zu wenige Züge vor der
+ * Entscheidung“, wenn erst die Regel aus spiel/entscheidung.ts die Züge zu knapp macht.
+ */
 function staerketext(b: Seitenbilanz): string {
-  return b.schaetzung === null
-    ? t("spielstaerke.zuWenig")
-    : t("spielstaerke.spanne", {
-        mitte: b.schaetzung.mitte,
-        von: b.schaetzung.von,
-        bis: b.schaetzung.bis,
-      });
+  if (b.schaetzung === null) {
+    return b.gewertet < b.zuege
+      ? t("spielstaerke.zuWenigVorEntscheidung")
+      : t("spielstaerke.zuWenig");
+  }
+  return t("spielstaerke.spanne", {
+    mitte: b.schaetzung.mitte,
+    von: b.schaetzung.von,
+    bis: b.schaetzung.bis,
+  });
+}
+
+/** Wie `staerketext`, dazu „aus 18 Zügen bis zur Entscheidung“, wenn nicht alle Züge zählen. */
+function staerkezeile(b: Seitenbilanz): string {
+  const text = staerketext(b);
+  if (b.schaetzung === null || b.gewertet >= b.zuege) return text;
+  return `${text} ${t("spielstaerke.bisEntscheidung", { anzahl: b.gewertet })}`;
 }
 
 /** „82 %“ oder „–“. */
@@ -278,9 +291,20 @@ function Phasenzeile({
   );
 }
 
-/** Eine Phase in einer Zelle: Marke „Sehr gut“, dann „82 % · etwa 1500 (12 Züge)“; „–“ ohne Züge. */
+/**
+ * Eine Phase in einer Zelle: Marke „Sehr gut“, dann „82 % · etwa 1500 (12 Züge)“; „–“ ohne Züge.
+ * Liegt die ganze Phase nach der Entscheidung (seit 0.2.103), steht statt Marke und Schätzung
+ * „nach der Entscheidung“.
+ */
 function Phasenzelle({ b }: { b: Seitenbilanz }) {
-  if (b.zuege === 0 || b.genauigkeit === null || b.innen === null) return <>–</>;
+  if (b.zuege === 0 || b.genauigkeit === null) return <>–</>;
+  if (b.innen === null) {
+    return (
+      <>
+        {t("spielstaerke.phaseEntschieden", { genauigkeit: genauigkeitstext(b), zuege: b.zuege })}
+      </>
+    );
+  }
   const urteil = phasenurteil(b.innen);
   return (
     <>
@@ -308,7 +332,7 @@ function Zeilen({
 }) {
   const werte = (b: Seitenbilanz): string[] => [
     genauigkeitstext(b),
-    staerketext(b),
+    staerkezeile(b),
     t("spielstaerke.bauern", { wert: komma(b.verlustJeZug) }),
     t("spielstaerke.vonZuegen", { anzahl: b.beste, zuege: b.zuege }),
     t("spielstaerke.zeichenZeile", {

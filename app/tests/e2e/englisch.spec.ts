@@ -1,5 +1,5 @@
 /**
- * Oberflächentest der englischen Vorschau (seit 0.2.103): Wahl in den Einstellungen, Texte und
+ * Oberflächentest der englischen Vorschau (seit 0.2.104): Wahl in den Einstellungen, Texte und
  * `<html lang>` auf Englisch, Wahl übersteht das Neuladen, Abbildung als „Fig.“ mit den deutschen
  * Buchdaten, Spielen und Training auf Englisch.
  */

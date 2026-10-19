@@ -32,7 +32,7 @@ function geraetesprachen(): readonly string[] {
 
 /**
  * Setzt beim Start die Sprache (Wahl des Lesers, sonst Gerät) und `<html lang>`. Nach dem Gerät
- * gelten nur fertige Sprachen; die englische Vorschau gibt es nur auf Wahl (seit 0.2.103).
+ * gelten nur fertige Sprachen; die englische Vorschau gibt es nur auf Wahl (seit 0.2.104).
  */
 export function starteSprache(): void {
   const gewaehlt = liesMerker(MERKER_SPRACHE);

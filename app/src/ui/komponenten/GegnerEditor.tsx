@@ -13,7 +13,6 @@ import { useState } from "react";
 import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import { neueGegnerkennung, type EigenerGegner } from "../../engine/gegner";
-import { ALTERSGRUPPEN, istPortraetwahl, PORTRAETWAHL } from "../../engine/portraetwahl";
 import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../../engine/stil";
 import type { Stufennummer } from "../../engine/stufen";
 import { t, type Textschluessel } from "../../i18n/sprache";
@@ -22,6 +21,7 @@ import { MAX_NAMENSLAENGE, mitEigenemGegner, ohneEigenenGegner } from "../../spe
 import { mitEigenenGegnern } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
+import { PortraetAuswahl } from "./PortraetAuswahl";
 import { StufenWahl } from "./StufenWahl";
 
 const STILNAMEN: Readonly<Record<string, Textschluessel>> = {
@@ -51,7 +51,6 @@ function kurzbeschreibung(g: EigenerGegner): string {
   return `${s.eroeffnung} · ${s.mittelspiel} · ${s.endspiel} · ${t(STILNAMEN[String(g.stil)] ?? "spielen.stil.ausgeglichen")}`;
 }
 
-/** Das Formular für einen Gegner. */
 /** Der Gegner ohne Porträt (Wahl „kein Bild“). */
 function ohnePortraet(g: EigenerGegner): EigenerGegner {
   return {
@@ -64,42 +63,7 @@ function ohnePortraet(g: EigenerGegner): EigenerGegner {
   };
 }
 
-/**
- * Porträt aus der festen Liste wählen (0.2.99, Wunsch des Autors): ein Auswahlmenü nach
- * Altersgruppen, daneben das gewählte Bild. „kein Bild“ zeigt den Anfangsbuchstaben wie bisher.
- */
-function Portraetwahl({ g, setze }: { g: EigenerGegner; setze: (g: EigenerGegner) => void }) {
-  const waehle = (wert: string) =>
-    setze(istPortraetwahl(wert) ? { ...g, portraet: wert } : ohnePortraet(g));
-  return (
-    <div className="portraetwahl">
-      <GegnerBild bot={g.kennung} eigene={[g]} name={g.name || "?"} />
-      <div className="portraetwahl-feld">
-        <label className="einstellung-name" htmlFor="gegner-portraet">
-          {t("spielen.eigene.portraet")}
-        </label>
-        <select
-          id="gegner-portraet"
-          className="auswahlfeld"
-          value={g.portraet ?? ""}
-          onChange={(e) => waehle(e.target.value)}
-        >
-          <option value="">{t("spielen.eigene.portraetKeins")}</option>
-          {ALTERSGRUPPEN.map((gruppe) => (
-            <optgroup key={gruppe} label={t(`portraet.gruppe.${gruppe}`)}>
-              {PORTRAETWAHL.filter((p) => p.gruppe === gruppe).map((p) => (
-                <option key={p.kennung} value={p.kennung}>
-                  {t(`portraet.${p.kennung}`)}
-                </option>
-              ))}
-            </optgroup>
-          ))}
-        </select>
-      </div>
-    </div>
-  );
-}
-
+/** Das Formular für einen Gegner. */
 function Formular({
   start,
   beiSpeichern,
@@ -137,7 +101,10 @@ function Formular({
         maxLength={MAX_NAMENSLAENGE}
         onChange={(e) => setze({ ...g, name: e.target.value })}
       />
-      <Portraetwahl g={g} setze={setze} />
+      <PortraetAuswahl
+        gegner={g}
+        beiWahl={(portraet) => setze(portraet ? { ...g, portraet } : ohnePortraet(g))}
+      />
       <StufenWahl
         stufen={g.stufenJePhase}
         praefix="eigen"

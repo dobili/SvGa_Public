@@ -3884,3 +3884,13 @@ Gegnerstufen.tsx, engine/gegner.ts).
 - Nutzerdaten: Die neuen Felder (`portraet`, `besiegt`, `warum`) sind zusätzlich und optional wie
   in 0.2.90; das Format bleibt 5. Eine ältere App ließe sie beim Speichern fallen, ohne Schaden.
 
+## Porträtwahl mit Vorschaubildern (19.10.2026, Opus, Zweig `portraet-bildauswahl`, Version 0.2.100)
+
+Wunsch des Autors: Im Auswahlmenü für das Porträt eines eigenen Bots sollen die Bilder schon zu
+sehen sein, statt jedes einzeln wählen zu müssen. Ein Auswahlmenü des Systems (`<select>`) kann
+keine Bilder zeigen; deshalb jetzt ein eigenes Aufklappmenü (`ui/komponenten/PortraetAuswahl.tsx`):
+ein Knopf mit gewähltem Bild, Beschreibung und Pfeil, darunter ein Gitter aller Porträts nach
+Altersgruppen (drei je Zeile auf dem Handy, sechs ab 480 px). Die Kacheln sind Optionsfelder einer
+Gruppe: Pfeiltasten wählen, ohne zu schließen; Tippen auf ein Bild oder die Eingabetaste wählen und
+schließen; Escape schließt. Der Bildschirmleser liest Gruppe „Porträt“ und die Beschreibung jedes
+Bildes. Gespeicherte Daten unverändert (`EigenerGegner.portraet`).

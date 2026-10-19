@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.99. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.100. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -39,12 +39,13 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
       den drei Kacheln der Gegnerart stehen jetzt Du spielst, Bedenkzeit, „Züge zurücknehmen
       erlauben“, die Spielhilfen und „Gewertete Partie“, darunter „Partie beginnen“, erst dann das
       Gitter der Bots. Die Erklärung zur Wertung steht hinter dem Fragezeichen am Haken.
-- [ ] N469. **Porträt für eigene Bots:** Spielen › „Eigene Bots“ › „Neuen Gegner anlegen“. Unter
-      dem Namen steht „Porträt“ mit einem Auswahlmenü nach Altersgruppen (Kinder, Jugendliche,
-      Junge Erwachsene, Erwachsene, Ältere; je sechs, Frauen und Männer, verschiedene Haut- und
-      Haarfarben, Brillen, Bärte), links daneben das gewählte Bild. Gespeichert erscheint es in der
-      Kachel, in der Sprechblase oben und in der Liste der eigenen Bots. Ohne Wahl bleibt der
-      Anfangsbuchstabe. Passen Beschreibung und Bild zusammen?
+- [ ] N469. **Porträt für eigene Bots (mit Vorschaubildern seit 0.2.100):** Spielen › „Eigene
+      Bots“ › „Neuen Gegner anlegen“. Unter dem Namen steht „Porträt“ als Knopf mit dem gewählten
+      Bild und einem Pfeil. Antippen klappt alle 30 Bilder auf, nach Altersgruppen (Kinder,
+      Jugendliche, Junge Erwachsene, Erwachsene, Ältere; je sechs, Frauen und Männer, verschiedene
+      Haut- und Haarfarben, Brillen, Bärte), ganz oben „kein Bild“ mit dem Anfangsbuchstaben.
+      Ein Tippen auf ein Bild wählt es und klappt zu. Gespeichert erscheint es in der Kachel, in
+      der Sprechblase oben und in der Liste der eigenen Bots. Passen Bilder und Gruppen?
 - [ ] N470. **Stern für besiegte Bots:** Gewinne eine gewertete Partie gegen einen Bot (am
       einfachsten gegen Fritzi aus „Zum Spaß“). Danach trägt sein Porträt in der Gegnerwahl unten
       rechts einen kleinen goldenen Stern auf Navy, auch in der Sprechblase. Ungewertete Siege

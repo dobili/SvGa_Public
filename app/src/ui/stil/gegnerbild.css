@@ -36,7 +36,6 @@
 
 .gegner-sprechblase > .gegnerbild,
 .gegnerzeile-kopf > .gegnerbild,
-.portraetwahl > .gegnerbild,
 .partiezeile > .gegnerbild {
   flex: none;
 }
@@ -62,23 +61,103 @@
   font-size: var(--groesse-grund);
 }
 
-/* Auswahl im Editor: links das gewählte Bild, rechts Beschriftung und Menü. */
+/* Auswahl im Editor (0.2.100): Knopf mit Bild, Beschreibung und Pfeil; darunter das Gitter. */
 .portraetwahl {
-  display: flex;
-  align-items: flex-end;
-  gap: calc(var(--raster) * 1.5);
-}
-
-.portraetwahl > .gegnerbild {
-  width: 64px;
-}
-
-.portraetwahl-feld {
-  flex: 1;
-  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: calc(var(--raster) / 2);
+}
+
+.portraetknopf {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  width: 100%;
+  min-height: var(--tippflaeche);
+  padding: var(--raster);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.portraetknopf > .gegnerbild {
+  flex: none;
+  width: 56px;
+}
+
+.portraetknopf-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.portraetknopf .aufklapper {
+  flex: none;
+  transition: transform 0.2s;
+}
+
+.portraetknopf[aria-expanded="true"] .aufklapper {
+  transform: rotate(180deg);
+}
+
+.portraetliste {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  padding: var(--raster);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+}
+
+.portraetgruppe {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
+}
+
+.portraetgruppe-titel {
+  font-size: var(--groesse-klein);
+  font-weight: 700;
+  color: var(--text-leise);
+}
+
+/* Sechs Bilder je Gruppe: auf dem Handy drei je Zeile, breiter sechs. */
+.portraetgitter {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 72px));
+  gap: var(--raster);
+}
+
+@media (min-width: 480px) {
+  .portraetgitter {
+    grid-template-columns: repeat(6, minmax(0, 72px));
+  }
+}
+
+.portraetkachel {
+  position: relative;
+  display: block;
+  padding: 3px;
+  border: 2px solid transparent;
+  border-radius: calc(var(--radius) + 3px);
+  cursor: pointer;
+}
+
+.portraetkachel > .gegner-portraet {
+  display: flex;
+}
+
+.portraetkachel:has(input:checked) {
+  border-color: var(--gold);
+}
+
+.portraetkachel:has(input:focus-visible) {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
 }
 
 /* Partienliste: Zeile mit Papierkorb rechts; die Nachfrage beim Löschen nimmt eine eigene Zeile. */

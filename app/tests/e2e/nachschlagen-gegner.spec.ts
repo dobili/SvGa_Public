@@ -31,7 +31,16 @@ test("Eigener Bot mit Porträt; Spielhilfen stehen über „Partie beginnen“",
   await page.getByRole("radio", { name: "Eigene Bots" }).click();
   await page.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
   await page.getByLabel("Name").fill("Tante Erna");
-  await page.getByLabel("Porträt").selectOption("wahl-25");
+  // 0.2.100: Aufklappmenü mit Vorschaubildern; Tippen auf ein Bild wählt und schließt.
+  const knopf = page.getByRole("button", { name: /^Porträt kein Bild/ });
+  await knopf.click();
+  await expect(page.getByRole("radiogroup", { name: "Porträt" }).locator("img")).toHaveCount(30);
+  await page.getByTitle("Ältere Frau mit Dutt und Brille").click();
+  await expect(page.getByRole("radiogroup", { name: "Porträt" })).toHaveCount(0);
+  await expect(page.getByRole("button", { name: /^Porträt Ältere Frau mit Dutt/ })).toHaveAttribute(
+    "aria-expanded",
+    "false",
+  );
   await page.getByRole("button", { name: "Gegner speichern" }).click();
   await page.getByRole("radio", { name: /Tante Erna/ }).click();
   const blase = page.getByTestId("gegner-sprechblase");

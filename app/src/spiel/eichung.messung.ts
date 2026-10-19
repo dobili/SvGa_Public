@@ -35,6 +35,7 @@ import {
   genauigkeitAus,
   LICHESS_REGLER,
   mittelweg,
+  zugwerte,
   zugwerteBisEntscheidung,
   type Regler,
 } from "./genauigkeitsmodell";
@@ -54,6 +55,8 @@ const DURCHGAENGE = 400;
 const JE_ZEHN = 10;
 const BANDBREITE = 200;
 const MINDESTENS_ZUEGE = 10;
+// Zum Vergleich mit der Rechnung vor 0.2.99: EICHUNG_ALLE_ZUEGE=1 zählt alle Züge.
+const ALLE_ZUEGE = process.env.EICHUNG_ALLE_ZUEGE === "1";
 
 interface Seitendaten extends Eichseite {
   readonly plattform: "chesscom" | "lichess";
@@ -123,7 +126,9 @@ function genauigkeitsZeile(name: string, seiten: readonly Eichseite[], regler: R
  * (spiel/entscheidung.ts), null bei weniger als zehn gezählten Zügen (dann schätzt die App nicht).
  */
 function innen(s: Eichseite): number | null {
-  const zuege = zugwerteBisEntscheidung(s.werte, s.seite);
+  const zuege = ALLE_ZUEGE
+    ? zugwerte(s.werte, s.seite, LICHESS_REGLER.abfall)
+    : zugwerteBisEntscheidung(s.werte, s.seite);
   return zuege.length < MINDESTENS_ZUEGE ? null : genauigkeitAus(zuege, LICHESS_REGLER.polster);
 }
 
@@ -250,7 +255,7 @@ describe("Eichung von Genauigkeit und Spielstärke", () => {
       "|---|---|---|---|---|---|---|",
       ...zeilenElo,
       "",
-      "## Kurven (innere Genauigkeit = Lichess-Formel, nur Züge bis zur Entscheidung)",
+      `## Kurven (innere Genauigkeit = Lichess-Formel, ${ALLE_ZUEGE ? "alle Züge" : "nur Züge bis zur Entscheidung"})`,
       "| Genauigkeit | chess.com | Lichess | Mitte |",
       "|---|---|---|---|",
       ...kurven,

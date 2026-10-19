@@ -102,7 +102,7 @@ export function seitengenauigkeit(
  * Warum: Die Kurven der Eichung müssen auf derselben Rechnung stehen wie die Schätzung in der App
  * (spiel/genauigkeit.ts, seitenbilanz). Eingaben wie `zugwerte`. Ausgabe: die gezählten Zugwerte.
  * Beispiel: Partie des Autors gegen Stufe 1 (19.10.2026): Von 43 schwarzen Zügen zählen nur die
- * bis zum Damenverlust 9...Db8??, danach blieb Weiß über 90 %.
+ * bis etwa zum neunten; danach blieb Weiß über 90 % (Damenverlust 9...Db8??).
  */
 export function zugwerteBisEntscheidung(
   werte: readonly number[],

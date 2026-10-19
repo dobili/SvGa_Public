@@ -14,7 +14,7 @@
  * (gesperrt, offen, beantwortet), erklärt in der Legende über der Galerie (Zusatzsymbol.tsx).
  * Abhängigkeiten: daten/laden.ts, ui/brett, Navigation, Speicher, MitInfo, Ring, i18n.
  */
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import type { Abbildung, Kapitel, Textteil } from "../../daten/laden";
@@ -26,6 +26,7 @@ import { buchmarkierungen } from "./buchmarkierungen";
 import { MitInfo } from "./InfoKnopf";
 import { Ring } from "./Kreisanzeige";
 import { Zusatzlegende, Zusatzsymbol } from "./Zusatzsymbol";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe des Hakens im Kästchen an angesehenen Abbildungen. */
 const HAKEN_GROESSE = 15;
@@ -147,7 +148,12 @@ function Galeriekopf({ kapitel }: { kapitel: Kapitel }) {
   return (
     <div className="galeriekopf">
       <MitInfo
-        zeile={<h2 className="abschnitt-titel">{t("kapitel.abbildungen")}</h2>}
+        zeile={
+          <h2 className="abschnitt-titel">
+            <Titelsymbol art="abbildungen" />
+            {t("kapitel.abbildungen")}
+          </h2>
+        }
         erklaerung={<p>{t("fortschritt.verweilen")}</p>}
         thema={t("kapitel.abbildungen")}
       />
@@ -220,12 +226,12 @@ function Abschnitt({ gruppe }: { gruppe: Gruppe }) {
       onToggle={(ereignis) => setzeOffen(ereignis.currentTarget.open)}
     >
       <summary>
-        <ChevronRight className="klappzeichen" size={PFEIL_GROESSE} aria-hidden="true" />
         <Ring anteil={anteil} beschriftung={stand} klein />
         <h2 className="abschnittsklappe-titel">
           {gruppe.nummer} {gruppe.titel}
         </h2>
         <span className="abschnittsklappe-stand">{stand}</span>
+        <ChevronDown className="aufklapper" size={PFEIL_GROESSE} aria-hidden="true" />
       </summary>
       {offen && (
         <>

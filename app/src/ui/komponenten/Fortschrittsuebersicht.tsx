@@ -19,6 +19,7 @@ import { useSpeicher } from "../../speicher/speicher";
 import { Fortschrittszeile } from "./Kapitelfortschritt";
 import { Ring } from "./Kreisanzeige";
 import { useDaten } from "./useDaten";
+import { Titelsymbol } from "./Titelsymbol";
 
 function summe(zahlen: readonly number[]): number {
   return zahlen.reduce((gesamt, zahl) => gesamt + zahl, 0);
@@ -98,7 +99,10 @@ export function Fortschrittsuebersicht() {
   const warum = summe(Object.values(fortschritt.warum).map((stellen) => stellen.length));
   return (
     <section className="karte" data-testid="ich-fortschritt">
-      <h2 className="karte-titel">{t("fortschritt.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="fortschritt" />
+        {t("fortschritt.titel")}
+      </h2>
       <div className="kreisreihe">
         <Fortschrittszeile
           name={t("fortschritt.abbildungen")}

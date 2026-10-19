@@ -31,6 +31,7 @@ import {
 } from "../../training/dreissigminuten";
 import { Planschritt } from "./Planschritte";
 import { useJetzt, usePlanstand } from "./usePlanstand";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 /** Der Plan eines Tages als Tabelle: Zeit, Aktivität, Ziel. */
 function Tagesplan({ tag }: { tag: Tagesart }) {
@@ -70,6 +71,7 @@ function Start({ vorschlag, starte }: { vorschlag: Tagesart; starte: (tag: Tages
           className={tag === vorschlag ? "knopf-haupt" : "knopf-zweit"}
           onClick={() => starte(tag)}
         >
+          <Knopfsymbol art="starten" />
           {t("dreissig.starten", { tag: t(`dreissig.tag.${tag}`) })}
         </button>
       ))}

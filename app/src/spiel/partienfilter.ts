@@ -23,7 +23,7 @@ export interface Partienfilter {
 export const OHNE_FILTER: Partienfilter = { ergebnis: "alle", wertung: "alle" };
 
 /** Ergebnis einer beendeten Partie aus Sicht des Lesers; null bei laufender oder Mensch gegen Mensch mit Sieger. */
-function ergebnisFuerLeser(partie: Partie): Exclude<Ergebnisfilter, "alle"> | null {
+export function ergebnisFuerLeser(partie: Partie): Exclude<Ergebnisfilter, "alle"> | null {
   const ende = partie.ende;
   if (!ende) return null;
   if (!("sieger" in ende)) return "remis";

@@ -604,7 +604,7 @@
   color: var(--text-leise);
 }
 
-/* Aufklappbare Stufen der vorgefertigten Bots (0.2.85): Pfeil vorn wie in der Kapitelübersicht. */
+/* Aufklappbare Stufen der vorgefertigten Bots (0.2.85); Pfeil am Ende seit DS20 (symbole.css). */
 .gegnerstufe > summary {
   list-style: none;
   display: flex;
@@ -616,10 +616,6 @@
 
 .gegnerstufe > summary::-webkit-details-marker {
   display: none;
-}
-
-.gegnerstufe[open] > summary .klappzeichen {
-  transform: rotate(90deg);
 }
 
 .gegnerstufe[open] > .gegnergitter {

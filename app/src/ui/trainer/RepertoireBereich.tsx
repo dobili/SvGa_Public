@@ -19,6 +19,7 @@ import {
 import { useDaten } from "../komponenten/useDaten";
 import { Repertoireaufgabe } from "./Repertoireaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 const KAPITEL_EROEFFNUNGEN = 2;
 const VARIANTEN_JE_RUNDE = 6;
@@ -74,6 +75,7 @@ function Auswahl({
         disabled={gewaehlt === null}
         onClick={() => gewaehlt && starte({ eroeffnung: gewaehlt, seite })}
       >
+        <Knopfsymbol art="starten" />
         {t("taktiktrainer.starten")}
       </button>
     </div>

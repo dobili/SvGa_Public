@@ -18,6 +18,7 @@ import { kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
 import { Kreisanzeige } from "./Kreisanzeige";
 import { useDaten } from "./useDaten";
+import { Titelsymbol } from "./Titelsymbol";
 
 interface Zeilenangaben {
   readonly name: string;
@@ -81,7 +82,10 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
   const mitStand = stand.trainer.filter((eintrag) => eintrag.stand !== null);
   return (
     <section className="karte" data-testid="kapitelfortschritt">
-      <h2 className="karte-titel">{t("fortschritt.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="fortschritt" />
+        {t("fortschritt.titel")}
+      </h2>
       <div className="kreisreihe">
         <Fortschrittszeile
           name={t("fortschritt.abbildungen")}

@@ -26,6 +26,7 @@ import { Rundenablauf } from "./Rundenablauf";
 import { Stufenwahl } from "./Stufenwahl";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Wiederholungsknopf } from "./Wiederholungsknopf";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 /** Endspiele dauern länger als Taktikaufgaben: weniger je Runde. */
 const AUFGABEN_JE_RUNDE = 6;
@@ -66,11 +67,13 @@ function Wahl({
       <Stufenwahl stufe={stufe} setze={setzeStufe} erklaerung={t("endspiel.stufenText")} />
       <p className="hinweis">{t("endspiel.ablaufText")}</p>
       <button type="button" className="knopf-haupt" onClick={() => starte({ gruppe, stufe })}>
+        <Knopfsymbol art="starten" />
         {t("taktiktrainer.starten")}
       </button>
       <h3>{t("endspiel.kurz.titel")}</h3>
       <p className="hinweis">{t("endspiel.kurz.text")}</p>
       <button type="button" className="knopf-zweit" onClick={kurz}>
+        <Knopfsymbol art="starten" />
         {t("endspiel.kurz.starten")}
       </button>
     </div>

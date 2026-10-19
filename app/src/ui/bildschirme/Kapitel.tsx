@@ -18,6 +18,7 @@ import { useDaten } from "../komponenten/useDaten";
 import { Kapitelfortschritt } from "../komponenten/Kapitelfortschritt";
 import { trainerZuKapitel } from "../../training/trainer";
 import { Trainerkarte } from "../komponenten/Trainerkarte";
+import { Titelsymbol } from "../komponenten/Titelsymbol";
 
 /**
  * Trainer und Übungen des Kapitels in einer Karte (Konzept 10.1: „Trainer des Kapitels“; seit
@@ -28,7 +29,10 @@ function TrainingUndUebungen({ kapitel }: { kapitel: KapitelDaten }) {
   if (trainer.length === 0 && kapitel.uebungen.length === 0) return null;
   return (
     <section className="karte kapitel-training" data-testid="kapitel-training">
-      <h2 className="karte-titel">{t("kapitel.trainingUndUebungen")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="training" />
+        {t("kapitel.trainingUndUebungen")}
+      </h2>
       {trainer.length > 0 && (
         <div className="kapitel-trainer">
           <h3 className="unterteil-titel">{t("training.kapitelTrainer")}</h3>

@@ -42,6 +42,7 @@ import { MitInfo } from "./InfoKnopf";
 import { Segmentwahl } from "./Segmentwahl";
 import { staerketext as angabetext } from "./staerkeangabe";
 import { KENNZAHLSYMBOLE, PHASENSYMBOLE } from "./zeilensymbole";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Reihenfolge der Klassen in der Tabelle, wie bei chess.com von oben nach unten. */
 const KLASSEN: readonly Zugklasse[] = [
@@ -138,7 +139,10 @@ export function Spielstaerke({
   ];
   return (
     <section className="karte spielstaerke" data-testid="spielstaerke">
-      <h2 className="karte-titel">{t("spielstaerke.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="spielstaerke" />
+        {t("spielstaerke.titel")}
+      </h2>
       <MitInfo
         zeile={<span className="einstellung-name">{t("einstellungen.genauigkeit")}</span>}
         erklaerung={<p>{t("einstellungen.genauigkeit.info")}</p>}

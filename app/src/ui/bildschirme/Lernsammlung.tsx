@@ -23,6 +23,7 @@ import { SammeleintragKarte } from "../komponenten/Sammeleintrag";
 import { SammelFormular } from "../komponenten/SammelFormular";
 import { pgntexte } from "../komponenten/sammeltexte";
 import { Trainerbrett } from "../trainer/Trainerbrett";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 /** Neue Stellung als FEN, etwa aus einer Vereinspartie. */
 function NeueStellung() {
@@ -70,6 +71,7 @@ function PgnKnoepfe({ liste, name }: { liste: readonly Sammeleintrag[]; name: st
     <div className="pgn">
       <div className="knopfreihe">
         <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
+          <Knopfsymbol art="kopieren" />
           {t("sammlung.pgnKopieren")}
         </button>
         <button
@@ -77,6 +79,7 @@ function PgnKnoepfe({ liste, name }: { liste: readonly Sammeleintrag[]; name: st
           className="knopf-zweit"
           onClick={() => bieteDateiAn(text, datei, "application/vnd.chess-pgn")}
         >
+          <Knopfsymbol art="herunterladen" />
           {t("sammlung.pgnSichern")}
         </button>
       </div>

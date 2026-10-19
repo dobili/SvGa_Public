@@ -3,6 +3,7 @@
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Glossar: Suche, Kurzdefinition, Querverweise, Sprung zu
  * passenden Abbildungen“. Die Texte kommen eins zu eins aus dem Anhang des Buches (AP 2).
+ * Seit 0.2.101 (Symbolsprache DS29) ohne Suche nach Anfangsbuchstaben gegliedert.
  * Abhängigkeiten: daten/laden.ts, Navigation, Buchtext, i18n.
  */
 import { useState } from "react";
@@ -15,7 +16,6 @@ import { Buchtext } from "../komponenten/Unterschrift";
 import { useDaten } from "../komponenten/useDaten";
 
 export function Glossar() {
-  const { navigiere } = useNavigation();
   const glossar = useDaten(ladeGlossar, "glossar");
   const [suchtext, setzeSuchtext] = useState("");
   const treffer = glossar.art === "fertig" ? suche(glossar.wert.eintraege, suchtext) : [];
@@ -35,20 +35,82 @@ export function Glossar() {
       {glossar.art === "fertig" && treffer.length === 0 && (
         <p className="hinweis">{t("glossar.keinTreffer")}</p>
       )}
-      <ul className="begriffsliste">
-        {treffer.map((eintrag) => (
-          <li key={eintrag.begriff}>
-            <button
-              type="button"
-              className="begriff-knopf"
-              onClick={() => navigiere({ bildschirm: "begriff", begriff: eintrag.begriff })}
-            >
-              {eintrag.begriff}
-            </button>
-          </li>
-        ))}
-      </ul>
+      {suchtext.trim() === "" ? (
+        <NachBuchstaben eintraege={treffer} />
+      ) : (
+        <Begriffe eintraege={treffer} />
+      )}
     </div>
+  );
+}
+
+/** Die Begriffe als Liste von Knöpfen. */
+function Begriffe({ eintraege }: { eintraege: readonly Glossareintrag[] }) {
+  const { navigiere } = useNavigation();
+  return (
+    <ul className="begriffsliste">
+      {eintraege.map((eintrag) => (
+        <li key={eintrag.begriff}>
+          <button
+            type="button"
+            className="begriff-knopf"
+            onClick={() => navigiere({ bildschirm: "begriff", begriff: eintrag.begriff })}
+          >
+            {eintrag.begriff}
+          </button>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+/**
+ * Anfangsbuchstabe für die Gruppen: Umlaute wie der Grundbuchstabe (Ä bei A), Ziffern unter „#“.
+ * Beispiel: "50-Züge-Regel" → "#"; "Ablenkung" → "A"; "Überlastung" → "U".
+ */
+function anfangsbuchstabe(begriff: string): string {
+  const erster = begriff
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .slice(0, 1)
+    .toUpperCase();
+  return /[A-Z]/.test(erster) ? erster : "#";
+}
+
+/**
+ * Ohne Suche (DS29): Begriffe unter Buchstaben-Trennern, oben eine Leiste zum Springen, wie im
+ * Adressbuch des Telefons. Der Trenner bleibt beim Scrollen oben stehen.
+ */
+function NachBuchstaben({ eintraege }: { eintraege: readonly Glossareintrag[] }) {
+  const gruppen = new Map<string, Glossareintrag[]>();
+  for (const eintrag of eintraege) {
+    const buchstabe = anfangsbuchstabe(eintrag.begriff);
+    gruppen.set(buchstabe, [...(gruppen.get(buchstabe) ?? []), eintrag]);
+  }
+  const springe = (buchstabe: string) =>
+    document.getElementById(`buchstabe-${buchstabe}`)?.scrollIntoView({ block: "start" });
+  return (
+    <>
+      <nav className="buchstabenleiste" aria-label={t("glossar.buchstaben")}>
+        {[...gruppen.keys()].map((buchstabe) => (
+          <button key={buchstabe} type="button" onClick={() => springe(buchstabe)}>
+            {buchstabe}
+          </button>
+        ))}
+      </nav>
+      {[...gruppen.entries()].map(([buchstabe, liste]) => (
+        <section
+          key={buchstabe}
+          className="buchstabengruppe"
+          aria-labelledby={`buchstabe-${buchstabe}`}
+        >
+          <h2 id={`buchstabe-${buchstabe}`} className="buchstabe">
+            {buchstabe}
+          </h2>
+          <Begriffe eintraege={liste} />
+        </section>
+      ))}
+    </>
   );
 }
 

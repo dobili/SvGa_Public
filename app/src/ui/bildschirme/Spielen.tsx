@@ -146,6 +146,7 @@ function Einstellungen({
               {engine && (
                 <Auswahl
                   name={t("spielen.seite")}
+                  symbol="farbe"
                   werte={["white", "black"] as const}
                   gewaehlt={wahl.farbe}
                   text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
@@ -154,6 +155,7 @@ function Einstellungen({
               )}
               <Auswahl
                 name={t("spielen.uhr")}
+                symbol="bedenkzeit"
                 werte={uhrStellen}
                 gewaehlt={String(uhrstelle(v))}
                 text={(stelle) => uhrname(Number(stelle))}

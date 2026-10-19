@@ -1,0 +1,371 @@
+/*
+ * Symbolsprache (seit 0.2.101, Wunsch des Autors vom 19.10.2026): farbige Marken, Zeichen an
+ * Knöpfen und Abschnittsköpfen, damit eine Seite beim Scrollen ohne Lesen erfassbar ist. Die
+ * Zeichen stehen immer neben einem Wort, Farben nie allein (WCAG 1.4.1). Vorschläge DS19 bis
+ * DS30 in docs/ENTSCHEIDUNGEN.md.
+ */
+
+/* ---------- DS19: Stufenmarken in Gürtelfarben (Weiß bis Schwarz) ---------- */
+:root {
+  --stufe-1: #ffffff;
+  --stufe-1-text: var(--navy);
+  --stufe-2: #f3d24c;
+  --stufe-2-text: var(--navy);
+  --stufe-3: #f08a2c;
+  --stufe-3-text: var(--navy);
+  --stufe-4: #2e7d36;
+  --stufe-4-text: #ffffff;
+  --stufe-5: #2563b0;
+  --stufe-5-text: #ffffff;
+  --stufe-6: #6d3fa8;
+  --stufe-6-text: #ffffff;
+  --stufe-7: #6e4122;
+  --stufe-7-text: #ffffff;
+  --stufe-8: #111111;
+  --stufe-8-text: #ffffff;
+  --stufe-rand: var(--linie-stark);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-farbschema="hell"]) {
+    --stufe-rand: #8a9ab5;
+  }
+}
+
+:root[data-farbschema="dunkel"] {
+  --stufe-rand: #8a9ab5;
+}
+
+.stufenmarke {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid var(--stufe-rand);
+  font-size: var(--groesse-mittel);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stufenmarke-klein {
+  width: 22px;
+  height: 22px;
+  border-width: 1px;
+  font-size: var(--groesse-fein);
+}
+
+.stufe-1 {
+  background: var(--stufe-1);
+  color: var(--stufe-1-text);
+}
+.stufe-2 {
+  background: var(--stufe-2);
+  color: var(--stufe-2-text);
+  border-color: var(--stufe-2);
+}
+.stufe-3 {
+  background: var(--stufe-3);
+  color: var(--stufe-3-text);
+  border-color: var(--stufe-3);
+}
+.stufe-4 {
+  background: var(--stufe-4);
+  color: var(--stufe-4-text);
+  border-color: var(--stufe-4);
+}
+.stufe-5 {
+  background: var(--stufe-5);
+  color: var(--stufe-5-text);
+  border-color: var(--stufe-5);
+}
+.stufe-6 {
+  background: var(--stufe-6);
+  color: var(--stufe-6-text);
+  border-color: var(--stufe-6);
+}
+.stufe-7 {
+  background: var(--stufe-7);
+  color: var(--stufe-7-text);
+  border-color: var(--stufe-7);
+}
+/* Schwarz bekommt im Dunkelmodus einen hellen Rand, sonst verschwindet die Marke. */
+.stufe-8 {
+  background: var(--stufe-8);
+  color: var(--stufe-8-text);
+}
+.stufe-spass {
+  background: conic-gradient(#e2559a, #f3d24c, #3fa7d6, #59c27a, #e2559a);
+  color: var(--navy);
+  border-color: var(--flaeche);
+}
+.stufe-spass svg {
+  filter: drop-shadow(0 0 1px #ffffff);
+}
+
+/* Stufenzeile der Bots: Pfeil, Marke, Titel in zwei Zeilen, rechts die Gesichter. */
+.gegnerstufe > summary {
+  gap: var(--raster);
+  padding-block: 6px;
+  border-bottom: 1px solid var(--linie);
+}
+
+.gegnerstufe-titel {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.gegnerstufe-kopf {
+  font-size: var(--groesse-mittel);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.gegnerstufe-bereich {
+  font-size: var(--groesse-fein);
+  font-weight: 400;
+  color: var(--text-leise);
+}
+
+.gegnerstufe-vorschau {
+  flex: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+/* Vier kleine Porträts, leicht übereinander wie eine Gruppe (Avatar-Stapel). */
+.gesichterreihe {
+  display: flex;
+}
+
+.gesichterreihe img {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--flaeche);
+}
+
+.gesichterreihe img + img {
+  margin-left: -7px;
+}
+
+.gegnerstufe[open] .gesichterreihe {
+  visibility: hidden;
+}
+
+.gegnerstufe-besiegt {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  color: var(--gold-text);
+}
+
+.gegnerstufe-besiegt svg {
+  fill: currentColor;
+}
+
+/* ---------- DS20: ein Aufklappzeichen für alles, was auf der Seite aufklappt ---------- */
+/*
+ * Pfeil nach unten am Ende der Zeile, aufgeklappt nach oben (NN/g, Studie zu Akkordeon-Zeichen:
+ * nur dieser Pfeil weckte klar die Erwartung „bleibt auf der Seite“). Der Pfeil nach rechts
+ * bleibt Zeilen vorbehalten, die eine neue Seite öffnen (DS21). Zeilen mit eigenem Pfeil tragen
+ * .aufklapper; alle übrigen bekommen ihn hier ohne Änderung am Code statt des Dreiecks ▶.
+ */
+.aufklapper {
+  flex: none;
+  margin-left: auto;
+  color: var(--text-leise);
+  transition: transform 0.15s ease;
+}
+
+details[open] > summary .aufklapper {
+  transform: rotate(180deg);
+}
+
+summary:not(:has(.aufklapper)) {
+  list-style: none;
+  position: relative;
+  padding-inline-end: 32px;
+}
+
+summary:not(:has(.aufklapper))::-webkit-details-marker {
+  display: none;
+}
+
+summary:not(:has(.aufklapper))::after {
+  content: "";
+  position: absolute;
+  right: 4px;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  background: var(--text-leise);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  transition: transform 0.15s ease;
+}
+
+details[open] > summary:not(:has(.aufklapper))::after {
+  transform: rotate(180deg);
+}
+
+/* ---------- DS21: Pfeil nach rechts an Zeilen, die eine neue Seite öffnen ---------- */
+/* Kapitel im Buch und Einträge in Nachschlagen: wie in den Listen von iOS und Android. */
+.kapitel-kopf::after,
+.nachschlage-eintrag::after {
+  content: "";
+  flex: none;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  background: var(--text-leise);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m9 18 6-6-6-6'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+/* ---------- DS22: Zeichen vor der Beschriftung von Knöpfen (Knopfsymbol.tsx) ---------- */
+.knopfzeichen {
+  flex: none;
+  vertical-align: -3px;
+  margin-inline-end: 6px;
+}
+
+/* DS23: Löschen ist rot, schon bevor die Nachfrage kommt (Rot bleibt Gefahr vorbehalten). */
+.knopf-zweit:has(> .knopfzeichen-loeschen),
+.knopf-link:has(> .knopfzeichen-loeschen) {
+  color: var(--rot-text);
+}
+
+/* ---------- DS24: Zeichen vor Abschnittsköpfen (Titelsymbol.tsx) ---------- */
+.titel-symbol {
+  flex: none;
+  vertical-align: -3px;
+  margin-inline-end: 8px;
+  color: var(--gold-text);
+}
+
+/* ---------- DS25: Ergebnis aus Sicht des Lesers (Ergebnismarke.tsx) ---------- */
+.ergebnismarke {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--linie-stark);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.ergebnis-gewonnen {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}
+
+.ergebnis-remis {
+  background: var(--grund);
+  color: var(--text);
+}
+
+.ergebnis-verloren {
+  border-color: var(--rot-text);
+  color: var(--rot-text);
+}
+
+.ergebnismarke-gross {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid var(--linie-stark);
+}
+
+.partieende-titel {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+}
+
+/* ---------- DS26: Zeichen der Partiephasen (Phasenzeichen.tsx) ---------- */
+.phasenzeichen {
+  flex: none;
+  vertical-align: -3px;
+  margin-inline-end: 6px;
+  color: var(--gold-text);
+}
+
+.stufenregler .stufenmarke-klein {
+  vertical-align: middle;
+  margin-inline-start: 4px;
+}
+
+/* ---------- DS28: Werkzeugzeichen in „Werkzeuge des Buches“ ---------- */
+.werkzeugzeichen {
+  flex: none;
+  vertical-align: -3px;
+  margin-inline-end: 8px;
+  color: var(--gold-text);
+}
+
+/* ---------- DS29: Glossar nach Anfangsbuchstaben ---------- */
+.buchstabenleiste {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.buchstabenleiste button {
+  min-width: var(--tippflaeche);
+  min-height: var(--tippflaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-weight: 700;
+}
+
+.buchstabengruppe {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
+}
+
+/* Trenner bleibt beim Scrollen oben stehen, bis der nächste Buchstabe kommt. */
+.buchstabe {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  margin: 0;
+  padding: 4px var(--raster);
+  background: var(--grund);
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel);
+  color: var(--gold-text);
+}
+
+/* ---------- DS27: Fortschritt als goldener Rand der Kapitelnummer (Kapitelnummer.tsx) ---------- */
+.kapitel-nummer.mit-anteil {
+  border: 3px solid transparent;
+  background:
+    linear-gradient(var(--navy), var(--navy)) padding-box,
+    conic-gradient(var(--gold) var(--anteil), var(--linie-stark) 0) border-box;
+}
+
+.kapitel-nummer.mit-anteil.erledigt {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+}

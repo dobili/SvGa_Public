@@ -146,23 +146,13 @@ h2.abschnittsklappe-titel {
   margin: 0;
 }
 
-/* Pfeil vorn in der Abschnittszeile (0.2.82): zeigt nach rechts, aufgeklappt nach unten. */
+/* Aufklappzeichen am Ende der Abschnittszeile (DS20, symbole.css). */
 .abschnittsklappe > summary {
   list-style: none;
 }
 
 .abschnittsklappe > summary::-webkit-details-marker {
   display: none;
-}
-
-.klappzeichen {
-  flex: none;
-  color: var(--text-leise);
-  transition: transform 0.15s ease;
-}
-
-.abschnittsklappe[open] > summary .klappzeichen {
-  transform: rotate(90deg);
 }
 
 /* ---------- Zeichen für Zusatzinhalte (0.2.99, Wunsch des Autors 19.10.2026) ---------- */

@@ -23,6 +23,7 @@ import {
   type Sammelverlauf,
 } from "../../training/lernsammlung";
 import { useEroeffnungsindex } from "./useEroeffnungsindex";
+import { Knopfsymbol } from "./Knopfsymbol";
 
 /** Größe des Lesezeichens am Brett, wie die anderen Brettschalter. */
 const SYMBOLGROESSE = 20;
@@ -161,6 +162,7 @@ export function SammelFormular({
         beiAenderung={setzeEroeffnung}
       />
       <button type="button" className="knopf-haupt" disabled={fen === null} onClick={speichern}>
+        <Knopfsymbol art="speichern" />
         {t("sammlung.speichern")}
       </button>
     </div>

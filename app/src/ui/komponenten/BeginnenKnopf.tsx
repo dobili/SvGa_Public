@@ -7,6 +7,7 @@
  */
 import { useState } from "react";
 import { t } from "../../i18n/sprache";
+import { Knopfsymbol } from "./Knopfsymbol";
 
 /**
  * Eingaben: läuft schon eine Partie (dann erst die Rückfrage „ersetzen?“), darf begonnen werden,
@@ -45,6 +46,7 @@ export function BeginnenKnopf({
           disabled={!moeglich}
           onClick={() => (laufend ? setzeErsetzen(true) : beiBeginn())}
         >
+          <Knopfsymbol art="starten" />
           {t("spielen.beginnen")}
         </button>
       )}

@@ -36,6 +36,7 @@ import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { MitInfo } from "./InfoKnopf";
 import { staerketext } from "./staerkeangabe";
 import { Vorschauwahl } from "./Vorschauwahl";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe der Symbole auf den Kategorie-Kacheln. */
 const KATEGORIE_SYMBOL = 28;
@@ -253,7 +254,10 @@ export function HilfenWahl({
   const gesperrt = wertbar && gewertet;
   return (
     <>
-      <span className="einstellung-name">{t("spielen.hilfen")}</span>
+      <span className="einstellung-name">
+        <Titelsymbol art="hilfen" />
+        {t("spielen.hilfen")}
+      </span>
       <label className="schalterzeile">
         <input
           type="checkbox"

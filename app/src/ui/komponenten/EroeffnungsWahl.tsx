@@ -15,6 +15,7 @@ import { eroeffnungsnamen, hauptlinieVon } from "../../schach/eroeffnungsindex";
 import { EROEFFNUNG_BUCH } from "../../spiel/partie";
 import { sanInSprache } from "../../schach/notation";
 import { useEroeffnungsindex } from "./useEroeffnungsindex";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Kapitel 2: ab dort gibt es den Index. */
 const KAPITEL_MIT_EROEFFNUNGEN = 2;
@@ -52,6 +53,7 @@ export function EroeffnungsWahl({
   return (
     <section className="karte eroeffnungswahl" data-testid="eroeffnungswahl">
       <label className="einstellung-name" htmlFor="eroeffnung">
+        <Titelsymbol art="eroeffnung" />
         {t("spielen.eroeffnung")}
       </label>
       <select

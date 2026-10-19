@@ -21,6 +21,7 @@ import {
 } from "../../training/lernsammlung";
 import { Trainerbrett } from "../trainer/Trainerbrett";
 import { fundstelle } from "./sammeltexte";
+import { Knopfsymbol } from "./Knopfsymbol";
 
 /** Felder zum Bearbeiten von Plan, Notiz und Eröffnung. */
 function Bearbeiten({ eintrag, beiFertig }: { eintrag: Sammeleintrag; beiFertig: () => void }) {
@@ -63,6 +64,7 @@ function Bearbeiten({ eintrag, beiFertig }: { eintrag: Sammeleintrag; beiFertig:
       />
       <div className="knopfreihe">
         <button type="button" className="knopf-haupt" onClick={speichern}>
+          <Knopfsymbol art="speichern" />
           {t("sammlung.aenderungSpeichern")}
         </button>
         <button type="button" className="knopf-zweit" onClick={beiFertig}>
@@ -120,6 +122,7 @@ export function SammeleintragKarte({ eintrag }: { eintrag: Sammeleintrag }) {
             {t("sammlung.bearbeiten")}
           </button>
           <button type="button" className="knopf-zweit" onClick={loeschen}>
+            <Knopfsymbol art="loeschen" />
             {t("sammlung.loeschen")}
           </button>
         </div>

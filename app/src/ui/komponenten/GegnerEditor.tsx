@@ -23,6 +23,7 @@ import { aendere, useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
 import { PortraetAuswahl } from "./PortraetAuswahl";
 import { StufenWahl } from "./StufenWahl";
+import { Knopfsymbol } from "./Knopfsymbol";
 
 const STILNAMEN: Readonly<Record<string, Textschluessel>> = {
   "-2": "spielen.stil.sehrDefensiv",
@@ -163,6 +164,7 @@ function Formular({
           disabled={name.length === 0}
           onClick={() => beiSpeichern({ ...g, name })}
         >
+          <Knopfsymbol art="speichern" />
           {t("spielen.eigene.speichern")}
         </button>
         <button type="button" className="knopf-zweit" onClick={beiAbbrechen}>
@@ -195,6 +197,7 @@ function Zeile({
       {nachfrage ? (
         <span className="knopfreihe">
           <button type="button" className="knopf-gefahr" onClick={beiLoeschen}>
+            <Knopfsymbol art="loeschen" />
             {t("spielen.eigene.loeschenJa")}
           </button>
           <button type="button" className="knopf-zweit" onClick={() => setzeNachfrage(false)}>
@@ -212,6 +215,7 @@ function Zeile({
             aria-label={t("spielen.eigene.loeschenVon", { name: g.name })}
             onClick={() => setzeNachfrage(true)}
           >
+            <Knopfsymbol art="loeschen" />
             {t("spielen.eigene.loeschen")}
           </button>
         </span>
@@ -257,6 +261,7 @@ export function GegnerEditor() {
         />
       ) : (
         <button type="button" className="knopf-zweit" onClick={() => setzeOffen(neuerGegner())}>
+          <Knopfsymbol art="neuerGegner" />
           {t("spielen.eigene.neu")}
         </button>
       )}

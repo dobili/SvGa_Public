@@ -23,6 +23,7 @@ import { FaelligeWiederholungen } from "../komponenten/FaelligeWiederholungen";
 import { Trainerkarte } from "../komponenten/Trainerkarte";
 import { MitInfo } from "../komponenten/InfoKnopf";
 import { useDaten } from "../komponenten/useDaten";
+import { Titelsymbol } from "../komponenten/Titelsymbol";
 
 const LINKSYMBOL = 16;
 
@@ -99,7 +100,10 @@ export function Training() {
         <h1>{t("training.titel")}</h1>
       </header>
       <section className="karte">
-        <h2 className="karte-titel">{t("training.faellig")}</h2>
+        <h2 className="karte-titel">
+          <Titelsymbol art="wiederholung" />
+          {t("training.faellig")}
+        </h2>
         <FaelligeWiederholungen />
       </section>
       <SammelKarte />
@@ -117,7 +121,10 @@ export function Training() {
           {t("training.seite.uebersicht")}
         </a>
       </section>
-      <h2 className="abschnitt-titel">{t("training.jeKapitel")}</h2>
+      <h2 className="abschnitt-titel">
+        <Titelsymbol art="training" />
+        {t("training.jeKapitel")}
+      </h2>
       <JeKapitel />
     </div>
   );

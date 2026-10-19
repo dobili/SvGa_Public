@@ -11,6 +11,8 @@ import { ladeNachschlagen, type Nachschlagen } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { useDaten } from "../komponenten/useDaten";
+import { Phasenzeichen } from "../komponenten/Phasenzeichen";
+import { phaseZumNamen } from "../komponenten/zeilensymbole";
 
 type Routine = NonNullable<Nachschlagen["denkroutine"]>;
 
@@ -42,6 +44,12 @@ function Schritte({ routine }: { routine: Routine }) {
   );
 }
 
+/** Zeichen der Phase vor ihrem Namen (DS26); nichts, wenn der Name keine Phase ist. */
+function Phasensymbol({ name }: { name: string }) {
+  const phase = phaseZumNamen(name);
+  return phase ? <Phasenzeichen phase={phase} /> : null;
+}
+
 /** Karte 2: je Phase aufklappbar, wann sie gilt und welche Werkzeuge. */
 function Phasen({ routine }: { routine: Routine }) {
   return (
@@ -50,6 +58,7 @@ function Phasen({ routine }: { routine: Routine }) {
       {routine.phasen.map((phase) => (
         <details key={phase.name} className="phase">
           <summary>
+            <Phasensymbol name={phase.name} />
             <strong>{phase.name}</strong>
             <span className="hinweis"> {phase.wann}</span>
           </summary>

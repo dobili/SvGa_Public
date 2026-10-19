@@ -7,8 +7,12 @@
  * will, was „Skelett-Röntgen“ oder „Planbilanz“ prüft, fand keine Übersicht. Hier stehen alle
  * Werkzeuge aus dem Verzeichnis (analyse/register.ts) in der Reihenfolge ihrer Einführung, mit
  * denselben Texten wie an der Abbildung; ein Knopf öffnet das Kapitel, das sie einführt.
- * Abhängigkeiten: analyse/register.ts, daten/laden.ts, Kopfzeile, Navigation, i18n.
+ * Seit 0.2.101 (DS28) mit dem Zeichen jedes Werkzeugs wie am Brett oder in der Werkzeugleiste.
+ * Abhängigkeiten: analyse/register.ts, daten/laden.ts, buendelsymbole.ts, werkzeugordnung.ts,
+ * Kopfzeile, Navigation, i18n, lucide-react.
  */
+import { Calculator, ScanEye, TriangleAlert, Wrench, type LucideIcon } from "lucide-react";
+import { createElement } from "react";
 import { werkzeugeFuer } from "../../analyse/register";
 import type { Werkzeug } from "../../analyse/werkzeug";
 import { useNavigation } from "../../app/navigationsKontext";
@@ -16,7 +20,11 @@ import { ladeIndex } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { useDaten } from "../komponenten/useDaten";
+import { BUENDELSYMBOL } from "../komponenten/buendelsymbole";
+import { buendelMit } from "../komponenten/werkzeugordnung";
 
+/** Größe des Werkzeugzeichens (Bildpunkte). */
+const WERKZEUGZEICHEN = 18;
 /** Letztes Kapitel des Buches: Bis hierhin sind alle Werkzeuge freigeschaltet. */
 const LETZTES_KAPITEL = 12;
 
@@ -29,10 +37,29 @@ function nachKapiteln(): readonly (readonly [number, readonly Werkzeug[]])[] {
   return [...gruppen.entries()].sort(([a], [b]) => a - b);
 }
 
+/**
+ * Zeichen eines Werkzeugs wie am Brett (Zählen, Röntgen, Warnsignale) oder wie sein Bündel in der
+ * Werkzeugleiste (Symbolsprache DS28). Beispiel: „Skelett-Röntgen“ → Knochen des Bündels Skelett.
+ */
+function bildVon(werkzeug: Werkzeug): LucideIcon {
+  if (werkzeug.id === "k1-zaehlen") return Calculator;
+  if (werkzeug.id === "k1-roentgen") return ScanEye;
+  if (werkzeug.id.endsWith("warnsignale")) return TriangleAlert;
+  const buendel = buendelMit(werkzeug.id)[0];
+  return buendel ? BUENDELSYMBOL[buendel] : Wrench;
+}
+
 function Eintrag({ werkzeug }: { werkzeug: Werkzeug }) {
   return (
     <details className="werkzeugeintrag">
-      <summary>{t(werkzeug.name)}</summary>
+      <summary>
+        {createElement(bildVon(werkzeug), {
+          className: "werkzeugzeichen",
+          size: WERKZEUGZEICHEN,
+          "aria-hidden": true,
+        })}
+        {t(werkzeug.name)}
+      </summary>
       <p>{t(werkzeug.erklaerung)}</p>
       <p className="hinweis">{t(werkzeug.regel)}</p>
     </details>

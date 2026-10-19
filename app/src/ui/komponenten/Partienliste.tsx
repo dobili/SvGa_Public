@@ -32,11 +32,14 @@ import {
 import { ohnePartie, type Partieeintrag } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Auswahl } from "./Auswahl";
+import { Ergebnismarke } from "./Ergebnismarke";
 import { GegnerBild } from "./GegnerBild";
 import { Figur } from "../brett/Figur";
 import { BRETTFARBEN, FELD } from "../brett/masse";
 import { LetzteSpielstaerke } from "./LetzteSpielstaerke";
 import type { Genauigkeitsmodus } from "../../spiel/staerkemodell";
+import { Knopfsymbol } from "./Knopfsymbol";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe der kleinen Figur in der Liste (Bildpunkte). */
 const FIGURGROESSE = 28;
@@ -61,14 +64,6 @@ function zeile(partie: Partie): string {
       : (gegnername(partie.einstellung.bot, partie.einstellung.botName) ??
         t("spielen.partieStufe", { nummer: s.nummer }));
   return t("spielen.partiezeile", { datum, stufe: gegner, zuege });
-}
-
-/** Ergebnis in der Schreibweise des Schachs: „1–0“, „0–1“, „½–½“; „läuft“ ohne Ende. */
-function ergebniszeichen(partie: Partie): string {
-  const ende = partie.ende;
-  if (!ende) return t("spielen.laeuftKurz");
-  if (!("sieger" in ende)) return "½–½";
-  return ende.sieger === "white" ? "1–0" : "0–1";
 }
 
 /** Ein König im gewählten Figurensatz: die Farbe, die der Leser gespielt hat; beide bei Mensch gegen Mensch. */
@@ -177,6 +172,7 @@ function Loeschen({ partie }: { partie: Partie }) {
         className="knopf-gefahr"
         onClick={() => void aendere((d) => ({ ...d, spiel: ohnePartie(d.spiel, partie.id) }))}
       >
+        <Knopfsymbol art="loeschen" />
         {t("spielen.partieLoeschenJa")}
       </button>
       <button type="button" className="knopf-zweit" onClick={() => setzeFrage(false)}>
@@ -202,7 +198,7 @@ function Partiezeile({ eintrag, modus }: { eintrag: Partieeintrag; modus: Genaui
         <Seitenfigur partie={partie} />
         <span className="partiezeile-text">
           <strong>
-            {ergebniszeichen(partie)}
+            <Ergebnismarke partie={partie} />
             {partie.einstellung.gewertet && (
               <Star
                 className="partiezeile-wertung"
@@ -265,7 +261,10 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
     <>
       <LetzteSpielstaerke partien={partien} />
       <section className="abschnitt partienliste">
-        <h2 className="abschnitt-titel">{t("spielen.partien")}</h2>
+        <h2 className="abschnitt-titel">
+          <Titelsymbol art="partien" />
+          {t("spielen.partien")}
+        </h2>
         {mitFilter && <Filter filter={filter} setze={setzeFilter} />}
         {passend.length === 0 && <p className="hinweis">{t("spielen.filter.leer")}</p>}
         <ul className="begriffsliste">

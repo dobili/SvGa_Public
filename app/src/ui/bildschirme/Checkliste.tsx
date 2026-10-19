@@ -9,20 +9,17 @@
  * app/lernstand.ts auf dem Gerät.
  * Abhängigkeiten: daten/laden.ts, app/lernstand.ts, Navigation, i18n.
  */
-import { Check } from "lucide-react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { abgehakt, schalteLernziel, useLernstand, type Lernstand } from "../../app/lernstand";
 import { ladeNachschlagen, type Nachschlagen } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { Kapitelnummer } from "../komponenten/Kapitelnummer";
 import { useDaten } from "../komponenten/useDaten";
 
 type Liste = NonNullable<Nachschlagen["checkliste"]>;
 type Zeile = Liste["zeilen"][number];
 type Lernziele = Nachschlagen["lernziele"][number];
-
-/** Größe des Hakens in der Kapitelnummer, wenn alle Punkte abgehakt sind. */
-const HAKEN_GROESSE = 18;
 
 /** Die Punkte eines Kapitels als Kästchen; ein Tipp hakt ab oder nimmt den Haken zurück. */
 function Punkte({ ziele, stand }: { ziele: Lernziele; stand: Lernstand }) {
@@ -60,13 +57,10 @@ function Kapitelkarte({
   const { navigiere } = useNavigation();
   const anzahl = ziele?.punkte.length ?? 0;
   const fertig = ziele ? abgehakt(stand, zeile.kapitel, anzahl) : 0;
-  const alles = anzahl > 0 && fertig === anzahl;
   return (
     <details className="lernkarte" data-testid={`lernkarte-${zeile.kapitel}`}>
       <summary>
-        <span className={`kapitel-nummer${alles ? " erledigt" : ""}`} aria-hidden="true">
-          {alles ? <Check size={HAKEN_GROESSE} /> : zeile.kapitel}
-        </span>
+        <Kapitelnummer nummer={zeile.kapitel} anteil={{ erreicht: fertig, gesamt: anzahl }} />
         <span className="lernkarte-frage">{zeile.kernfrage}</span>
         {anzahl > 0 && (
           <span className="lernkarte-stand">

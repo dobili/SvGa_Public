@@ -23,6 +23,7 @@ import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
 import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 const HILFEN = 3;
 const KEINE_WAHL = () => undefined;
@@ -71,10 +72,12 @@ function Hilfen({
       <div className="knopfzeile">
         {stufe < HILFEN && (
           <button type="button" className="knopf-zweit" onClick={weiter}>
+            <Knopfsymbol art="hinweis" />
             {t("uebung.hinweis", { stufe: stufe + 1 })}
           </button>
         )}
         <button type="button" className="knopf-link" onClick={zeigeLoesung}>
+          <Knopfsymbol art="loesung" />
           {t("uebung.loesungZeigen")}
         </button>
       </div>

@@ -480,7 +480,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 79
    },
-   "pruefsumme": "a480fa6b7b4e1cc5"
+   "pruefsumme": "6a96a569b316625e"
   },
   {
    "id": "9.5",
@@ -530,7 +530,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 121
    },
-   "pruefsumme": "7c0138d8098b729e",
+   "pruefsumme": "2f5cdd27ad3f84fc",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -614,7 +614,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 122
    },
-   "pruefsumme": "b8b3211eed36f953",
+   "pruefsumme": "9008b20df418b8b3",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -687,7 +687,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 123
    },
-   "pruefsumme": "744afd9ec6f013f4"
+   "pruefsumme": "b2ed649517a8d753"
   },
   {
    "id": "9.8",
@@ -799,7 +799,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 185
    },
-   "pruefsumme": "450799a2cddab8f3"
+   "pruefsumme": "4ae1c0ca5eb06f13"
   },
   {
    "id": "9.10",
@@ -855,7 +855,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 186
    },
-   "pruefsumme": "a9d0ab81e7cfe0bc"
+   "pruefsumme": "04a8de5049b0198e"
   },
   {
    "id": "9.11",
@@ -920,7 +920,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 190
    },
-   "pruefsumme": "1fb56992bb329727",
+   "pruefsumme": "f70d8778e28f7c03",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -1004,7 +1004,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 191
    },
-   "pruefsumme": "d7ab7cb77af5c501"
+   "pruefsumme": "3c8b05ce6ca0eea8"
   },
   {
    "id": "9.13",
@@ -1053,7 +1053,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 214
    },
-   "pruefsumme": "cbf9c0ce798317fe",
+   "pruefsumme": "531fc7d65ed75cdb",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -1122,7 +1122,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 215
    },
-   "pruefsumme": "19c8f1cab7131e14"
+   "pruefsumme": "95f20bfb23297bbd"
   },
   {
    "id": "9.15",
@@ -1234,7 +1234,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 248
    },
-   "pruefsumme": "a7fa88bb94b3c19c",
+   "pruefsumme": "e46d562003a762ec",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -1304,7 +1304,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 249
    },
-   "pruefsumme": "d7c1f7936aebde3f"
+   "pruefsumme": "e8036464f8bfbe59"
   },
   {
    "id": "9.18",
@@ -1486,7 +1486,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 302
    },
-   "pruefsumme": "8a2ec037ef333260",
+   "pruefsumme": "8a26144a147505f2",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -1552,7 +1552,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 303
    },
-   "pruefsumme": "d0a524dedf0e9d19"
+   "pruefsumme": "8740b1300607b66f"
   },
   {
    "id": "9.21",
@@ -1619,7 +1619,7 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 312
    },
-   "pruefsumme": "f11c64cc56b5643e",
+   "pruefsumme": "ce8f0785d9feecc6",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -1824,7 +1824,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 381
+    "zeile": 383
    },
    "pruefsumme": "6c521be5c4fbe05e"
   },
@@ -2000,7 +2000,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 382
+    "zeile": 384
    },
    "pruefsumme": "16799bfefafcb367",
    "vorbereitet": {
@@ -2064,9 +2064,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 392
+    "zeile": 394
    },
-   "pruefsumme": "095d97d54171e471",
+   "pruefsumme": "71b3d394450dd32a",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -2132,9 +2132,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 393
+    "zeile": 395
    },
-   "pruefsumme": "7ae090b381f6fd95"
+   "pruefsumme": "90c1e8d9ad2bc493"
   },
   {
    "id": "9.28",
@@ -2182,9 +2182,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 417
+    "zeile": 419
    },
-   "pruefsumme": "e9377a027a410808",
+   "pruefsumme": "3444cd78d5ec9347",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -2262,9 +2262,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 418
+    "zeile": 420
    },
-   "pruefsumme": "fbed2abe2d729565"
+   "pruefsumme": "fd1b1baf8f98be10"
   },
   {
    "id": "9.30",
@@ -2328,9 +2328,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 419
+    "zeile": 421
    },
-   "pruefsumme": "e87ec66fba651135"
+   "pruefsumme": "64bfdaff6daaecd0"
   },
   {
    "id": "9.31",
@@ -2378,9 +2378,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 450
+    "zeile": 452
    },
-   "pruefsumme": "d2b7e15d56a10933"
+   "pruefsumme": "cf9389a24a5270dd"
   },
   {
    "id": "9.32",
@@ -2442,9 +2442,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 451
+    "zeile": 453
    },
-   "pruefsumme": "d4fb856a881db874",
+   "pruefsumme": "edd57745c339d67b",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -2517,9 +2517,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 452
+    "zeile": 454
    },
-   "pruefsumme": "13cca42dbd13e6bc"
+   "pruefsumme": "d8bb06d39b1a07ef"
   },
   {
    "id": "9.34",
@@ -2578,9 +2578,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 469
+    "zeile": 471
    },
-   "pruefsumme": "b6ad777a2883a101",
+   "pruefsumme": "5afadd154284c148",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -2723,7 +2723,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 511
+    "zeile": 513
    },
    "pruefsumme": "4b9d1083a4795d59",
    "vorbereitet": {
@@ -2879,7 +2879,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 512
+    "zeile": 514
    },
    "pruefsumme": "1901862b00f2f24b"
   },
@@ -3004,7 +3004,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 513
+    "zeile": 515
    },
    "pruefsumme": "6bb257ce4183806a"
   },
@@ -3056,9 +3056,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 531
+    "zeile": 533
    },
-   "pruefsumme": "34c7ac5a194b1cd0",
+   "pruefsumme": "86d837b0b8f2e09c",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -3233,7 +3233,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 554
+    "zeile": 556
    },
    "pruefsumme": "b4fa3dcdb28efcec"
   },
@@ -3296,9 +3296,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 555
+    "zeile": 557
    },
-   "pruefsumme": "cf719411706599ff"
+   "pruefsumme": "e4464a1f4212087d"
   },
   {
    "id": "9.41",
@@ -3416,7 +3416,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 566
+    "zeile": 568
    },
    "pruefsumme": "3080cab4c22bf36a",
    "vorbereitet": {
@@ -3544,7 +3544,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 583
+    "zeile": 585
    },
    "pruefsumme": "da013f7644092a27"
   },
@@ -3607,9 +3607,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 607
+    "zeile": 609
    },
-   "pruefsumme": "b9a9746105b62b67"
+   "pruefsumme": "38a0daa66d37c172"
   },
   {
    "id": "9.44",
@@ -3665,9 +3665,9 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 608
+    "zeile": 610
    },
-   "pruefsumme": "cc77e1279c6de40e",
+   "pruefsumme": "80feab23b3b2a779",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -3713,7 +3713,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 686
+    "zeile": 688
    },
    "pruefsumme": "863c677ee7dcf6c6"
   },
@@ -3745,7 +3745,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 694
+    "zeile": 696
    },
    "pruefsumme": "1196d794e0599dab"
   },
@@ -3777,7 +3777,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 702
+    "zeile": 704
    },
    "pruefsumme": "e52d17de034f49c7"
   },
@@ -3809,7 +3809,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 709
+    "zeile": 711
    },
    "pruefsumme": "25263779bb5a23df"
   },
@@ -3841,7 +3841,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 716
+    "zeile": 718
    },
    "pruefsumme": "51357bd410ef97dd"
   },
@@ -3873,7 +3873,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 723
+    "zeile": 725
    },
    "pruefsumme": "168dcbb3d19ad2ea"
   },
@@ -3905,7 +3905,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 730
+    "zeile": 732
    },
    "pruefsumme": "e97770ffe184a8b1"
   },
@@ -3937,7 +3937,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 738
+    "zeile": 740
    },
    "pruefsumme": "704fad8a96304cf9"
   },
@@ -4040,7 +4040,7 @@
    },
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 745
+    "zeile": 747
    },
    "pruefsumme": "ddabe6b6207c6ea1"
   }
@@ -4097,7 +4097,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 684
+    "zeile": 686
    },
    "erklaerung": {
     "loesung": "1... Th6!",
@@ -4193,7 +4193,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 692
+    "zeile": 694
    },
    "erklaerung": {
     "loesung": "1... Kg8 2. Tb8+ Kh7",
@@ -4250,7 +4250,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 700
+    "zeile": 702
    },
    "erklaerung": {
     "loesung": "1. Te4",
@@ -4321,7 +4321,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 707
+    "zeile": 709
    },
    "erklaerung": {
     "loesung": "1... Ta6!",
@@ -4397,7 +4397,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 714
+    "zeile": 716
    },
    "erklaerung": {
     "loesung": "1. Tb1!",
@@ -4461,7 +4461,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 721
+    "zeile": 723
    },
    "erklaerung": {
     "loesung": "1. Tg5!",
@@ -4539,7 +4539,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 728
+    "zeile": 730
    },
    "erklaerung": {
     "loesung": "1... Tb8!",
@@ -4614,7 +4614,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 736
+    "zeile": 738
    },
    "erklaerung": {
     "loesung": "1. Kc3!",
@@ -4647,7 +4647,7 @@
    ],
    "quelle": {
     "datei": "kap09_endspiel_vertiefung.tex",
-    "zeile": 743
+    "zeile": 745
    },
    "erklaerung": {
     "loesung": null,

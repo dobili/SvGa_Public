@@ -107,7 +107,7 @@
     "datei": "kap12_training.tex",
     "zeile": 224
    },
-   "pruefsumme": "7d9d07a83a1224dc",
+   "pruefsumme": "502c3e73363137d8",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -192,7 +192,7 @@
     "datei": "kap12_training.tex",
     "zeile": 225
    },
-   "pruefsumme": "4b36437afdb47cf8",
+   "pruefsumme": "6bb78255e9ddffcb",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -295,7 +295,7 @@
     "datei": "kap12_training.tex",
     "zeile": 226
    },
-   "pruefsumme": "1316b21eff5e7f3c",
+   "pruefsumme": "5f52e280406739ee",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -364,7 +364,7 @@
     "datei": "kap12_training.tex",
     "zeile": 316
    },
-   "pruefsumme": "3a6c717b95f57a43",
+   "pruefsumme": "51371e6dfa81a76a",
    "vorbereitet": {
     "status": "freigegeben",
     "fragen": [
@@ -409,7 +409,7 @@
    },
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1193
+    "zeile": 1201
    },
    "pruefsumme": "bd78a2b071ce0cda"
   },
@@ -441,7 +441,7 @@
    },
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1205
+    "zeile": 1213
    },
    "pruefsumme": "cc72b94e763c0138"
   }
@@ -517,7 +517,7 @@
    ],
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1190
+    "zeile": 1198
    },
    "erklaerung": {
     "loesung": "1. Dc2",
@@ -586,7 +586,7 @@
    ],
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1202
+    "zeile": 1210
    },
    "erklaerung": {
     "loesung": "1. g3",
@@ -617,7 +617,7 @@
    ],
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1214
+    "zeile": 1222
    },
    "erklaerung": {
     "loesung": null,
@@ -648,7 +648,7 @@
    ],
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1225
+    "zeile": 1233
    },
    "erklaerung": {
     "loesung": null,

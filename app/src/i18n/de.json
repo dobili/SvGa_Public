@@ -2241,6 +2241,7 @@
   "spielen.uhr.zeit": "{minuten} + {sekunden}",
   "spielen.ruecknahme": "Züge zurücknehmen erlauben",
   "spielen.eroeffnung": "Eröffnung",
+  "spielen.eroeffnungFestlegen": "Eröffnung festlegen",
   "spielen.eroeffnung.frei": "frei (die Engine spielt selbst)",
   "spielen.eroeffnung.buch": "eine Eröffnung des Buches (zufällig)",
   "spielen.eroeffnungZuege": "Hauptvariante: {zuege}",

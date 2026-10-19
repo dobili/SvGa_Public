@@ -57,6 +57,10 @@ Teil fertig ist.
       Fragezeichen, und ein zweiter Tipp auf den Knopf klappt das Formular wieder zu.
 - [ ] N607. **Zeichen in der Zielbilanz-Übung:** Training › „Zielbilanz-Übung“: Die Knöpfe heißen
       „✓ ja“, „◐ teils“ und „✗ nein“ wie die Zeichen im Buch.
+- [ ] N608. **Klappen über „Partie beginnen“:** Spielen. Über „Partie beginnen“ stehen Farbe,
+      Bedenkzeit und „Gewertete Partie“; darunter zwei Klappen: „Spielhilfen“ (mit „Züge
+      zurücknehmen erlauben“, Symbole am Brett, Werkzeuge und Engine) und „Eröffnung festlegen“
+      (nur aus der Grundstellung gegen die Engine). Übersichtlich so?
 
 ---
 

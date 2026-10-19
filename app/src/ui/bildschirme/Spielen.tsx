@@ -27,7 +27,7 @@ import { Auswahl } from "../komponenten/Auswahl";
 import { BlindeFleckenKarte, FehlerartenKarte } from "../komponenten/FehlerartenKarte";
 import { StufenWahl } from "../komponenten/StufenWahl";
 import { BeginnenKnopf } from "../komponenten/BeginnenKnopf";
-import { GegnerWahl, HilfenWahl } from "../komponenten/GegnerWahl";
+import { GegnerWahl, HilfenWahl, WertungsWahl } from "../komponenten/GegnerWahl";
 import {
   botFuerKategorie,
   kategorieVon,
@@ -35,6 +35,7 @@ import {
 } from "../komponenten/gegnerkategorie";
 import { GegnerEditor } from "../komponenten/GegnerEditor";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
+import { Titelsymbol } from "../komponenten/Titelsymbol";
 import { gegnerVon } from "../../engine/gegner";
 import { gegnerprofil } from "./gegnerprofil";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
@@ -93,6 +94,7 @@ function Einstellungen({
   kategorie,
   setzeKategorie,
   beginnen,
+  eroeffnung,
 }: {
   wahl: Wahl;
   fen: string;
@@ -100,6 +102,8 @@ function Einstellungen({
   kategorie: Gegnerkategorie;
   setzeKategorie: (kategorie: Gegnerkategorie) => void;
   beginnen: ReactNode;
+  /** Die Wahl der Eröffnung (nur aus der Grundstellung gegen die Engine), sonst null. */
+  eroeffnung: ReactNode;
 }) {
   const v = wahl.vorlieben;
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
@@ -162,22 +166,46 @@ function Einstellungen({
                 text={(stelle) => uhrname(Number(stelle))}
                 beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
               />
-              <label className="schalterzeile">
-                <input
-                  type="checkbox"
-                  checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
-                  disabled={wirdGewertet(fen, v)}
-                  onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
-                />
-                {t("spielen.ruecknahme")}
-              </label>
-              <HilfenWahl
-                hilfen={v.hilfen}
+              {/* Zugrücknahme gehört zu den Spielhilfen; beide in einer Klappe, ebenso die
+                  Eröffnung (Wunsch des Autors, 19.10.2026). */}
+              <WertungsWahl
                 gewertet={v.gewertet}
                 wertbar={wertbar(fen, v)}
-                beiHilfen={(hilfen) => mit({ hilfen })}
                 beiGewertet={(gewertet) => mit({ gewertet })}
               />
+              <details className="unterabschnitt" data-testid="spielhilfen-klappe">
+                <summary>
+                  <Titelsymbol art="hilfen" />
+                  {t("spielen.hilfen")}
+                </summary>
+                <label className="schalterzeile">
+                  <input
+                    type="checkbox"
+                    checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
+                    disabled={wirdGewertet(fen, v)}
+                    onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
+                  />
+                  {t("spielen.ruecknahme")}
+                </label>
+                <HilfenWahl
+                  ohneTitel
+                  ohneWertung
+                  hilfen={v.hilfen}
+                  gewertet={v.gewertet}
+                  wertbar={wertbar(fen, v)}
+                  beiHilfen={(hilfen) => mit({ hilfen })}
+                  beiGewertet={(gewertet) => mit({ gewertet })}
+                />
+              </details>
+              {eroeffnung && (
+                <details className="unterabschnitt" data-testid="eroeffnung-klappe">
+                  <summary>
+                    <Titelsymbol art="eroeffnung" />
+                    {t("spielen.eroeffnungFestlegen")}
+                  </summary>
+                  {eroeffnung}
+                </details>
+              )}
             </div>
             {beginnen}
           </>
@@ -353,13 +381,16 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
             beiBeginn={() => beginne(wahl)}
           />
         }
+        eroeffnung={
+          fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" ? (
+            <EroeffnungsWahl
+              eingebettet
+              gewaehlt={wahl.eroeffnung}
+              beiWahl={(eroeffnung) => setzeWahl({ ...wahl, eroeffnung })}
+            />
+          ) : null
+        }
       />
-      {fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" && (
-        <EroeffnungsWahl
-          gewaehlt={wahl.eroeffnung}
-          beiWahl={(eroeffnung) => setzeWahl({ ...wahl, eroeffnung })}
-        />
-      )}
       <Partienliste partien={spiel.partien} />
     </div>
   );

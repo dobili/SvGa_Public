@@ -213,6 +213,7 @@ test("Stellung aufbauen (K e6, D a3 gegen K e8), zu zweit ohne Werkzeuge spielen
   await editor.getByRole("button", { name: "Stellung übernehmen" }).click();
   await expect(page.getByRole("heading", { name: "Aus einer eigenen Stellung" })).toBeVisible();
   await page.getByRole("radio", { name: "Mensch (beide Seiten selbst)" }).click();
+  await page.getByTestId("spielhilfen-klappe").locator("summary").click();
   await page.getByRole("checkbox", { name: /Werkzeuge und Engine/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.getByRole("heading", { name: "Partie zu zweit" })).toBeVisible();
@@ -263,6 +264,7 @@ test("Gewertete Partie (S9): Rücknahme und Spielhilfen gesperrt", async ({ page
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   await expect(page.getByRole("checkbox", { name: /Gewertete Partie/ })).toBeChecked();
+  await page.getByTestId("spielhilfen-klappe").locator("summary").click();
   await expect(page.getByRole("checkbox", { name: /zurücknehmen erlauben/ })).toBeDisabled();
   await expect(page.getByRole("checkbox", { name: /Symbole am Brett/ })).toBeDisabled();
   await expect(page.getByText(/keine Zugrücknahme und keine Spielhilfen/)).toBeVisible();

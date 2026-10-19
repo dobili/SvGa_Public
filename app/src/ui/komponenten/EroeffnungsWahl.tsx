@@ -36,9 +36,12 @@ function zugfolge(zuege: readonly string[]): string {
 export function EroeffnungsWahl({
   gewaehlt,
   beiWahl,
+  eingebettet = false,
 }: {
   gewaehlt: string | null;
   beiWahl: (eroeffnung: string | null) => void;
+  /** In der Klappe „Eröffnung festlegen“ über „Partie beginnen“ ohne eigene Karte (0.2.116). */
+  eingebettet?: boolean;
 }) {
   const index = useEroeffnungsindex(KAPITEL_MIT_EROEFFNUNGEN);
   if (!index) return null;
@@ -51,7 +54,10 @@ export function EroeffnungsWahl({
         ? "spielen.eroeffnungBuch"
         : "spielen.eroeffnungHinweis";
   return (
-    <section className="karte eroeffnungswahl" data-testid="eroeffnungswahl">
+    <section
+      className={eingebettet ? "eroeffnungswahl" : "karte eroeffnungswahl"}
+      data-testid="eroeffnungswahl"
+    >
       <label className="einstellung-name" htmlFor="eroeffnung">
         <Titelsymbol art="eroeffnung" />
         {t("spielen.eroeffnung")}

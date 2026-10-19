@@ -2215,6 +2215,7 @@
   "spielen.uhr.zeit": "{minuten} + {sekunden}",
   "spielen.ruecknahme": "Allow takebacks",
   "spielen.eroeffnung": "Opening",
+  "spielen.eroeffnungFestlegen": "Choose the opening",
   "spielen.eroeffnung.frei": "free (the engine plays on its own)",
   "spielen.eroeffnung.buch": "an opening from the book (random)",
   "spielen.eroeffnungZuege": "Main line: {zuege}",

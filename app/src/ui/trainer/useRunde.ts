@@ -12,11 +12,15 @@ import { notiereDurchgang } from "../../speicher/fortschritt";
 import { aendere } from "../../speicher/speicher";
 import type { TrainerKennung } from "../../training/trainer";
 
-interface Zustand {
+export interface Zustand {
   readonly index: number;
   readonly richtig: number;
   /** Ergebnis der aktuellen Aufgabe, null solange offen. */
   readonly ergebnis: boolean | null;
+  /** Die aktuelle Aufgabe ist schon gezählt; Wiederholungen zählen nicht noch einmal. */
+  readonly gezaehlt: boolean;
+  /** Wie oft die aktuelle Aufgabe neu begonnen wurde (Schlüssel für ihren Zustand). */
+  readonly versuch: number;
   readonly fertig: boolean;
   readonly beginn: number;
   readonly ende: number | null;
@@ -24,20 +28,28 @@ interface Zustand {
 
 type Aktion =
   | { readonly art: "beantworte"; readonly richtig: boolean }
-  | { readonly art: "weiter"; readonly anzahl: number; readonly jetzt: number };
+  | { readonly art: "weiter"; readonly anzahl: number; readonly jetzt: number }
+  | { readonly art: "wiederhole" };
 
-function schritt(zustand: Zustand, aktion: Aktion): Zustand {
+/** Ein Schritt der Runde (exportiert für den Test). */
+export function rundenschritt(zustand: Zustand, aktion: Aktion): Zustand {
   if (aktion.art === "beantworte") {
     if (zustand.ergebnis !== null) return zustand;
+    const zaehlt = !zustand.gezaehlt && aktion.richtig;
     return {
       ...zustand,
       ergebnis: aktion.richtig,
-      richtig: zustand.richtig + (aktion.richtig ? 1 : 0),
+      gezaehlt: true,
+      richtig: zustand.richtig + (zaehlt ? 1 : 0),
     };
   }
+  // Dieselbe Aufgabe noch einmal (Wunsch des Autors, 19.10.2026); die erste Antwort bleibt
+  // die gezählte.
+  if (aktion.art === "wiederhole")
+    return { ...zustand, ergebnis: null, versuch: zustand.versuch + 1 };
   if (zustand.fertig) return zustand;
   if (zustand.index + 1 >= aktion.anzahl) return { ...zustand, fertig: true, ende: aktion.jetzt };
-  return { ...zustand, index: zustand.index + 1, ergebnis: null };
+  return { ...zustand, index: zustand.index + 1, ergebnis: null, gezaehlt: false, versuch: 0 };
 }
 
 export interface Runde {
@@ -45,11 +57,15 @@ export interface Runde {
   readonly anzahl: number;
   readonly richtig: number;
   readonly ergebnis: boolean | null;
+  /** Zähler der Wiederholungen der aktuellen Aufgabe (Schlüssel für ihren Zustand). */
+  readonly versuch: number;
   readonly fertig: boolean;
   /** Dauer der Runde in Sekunden, sobald sie fertig ist. */
   readonly sekunden: number | null;
   readonly beantworte: (richtig: boolean) => void;
   readonly weiter: () => void;
+  /** Die aktuelle Aufgabe von vorn; zählt nicht noch einmal. */
+  readonly wiederhole: () => void;
 }
 
 const MS_JE_SEKUNDE = 1000;
@@ -61,10 +77,12 @@ const MS_JE_SEKUNDE = 1000;
  * Sonderfall: Eine zweite Antwort auf dieselbe Aufgabe zählt nicht (erste Antwort gilt).
  */
 export function useRunde(kennung: TrainerKennung, anzahl: number): Runde {
-  const [zustand, sende] = useReducer(schritt, null, () => ({
+  const [zustand, sende] = useReducer(rundenschritt, null, () => ({
     index: 0,
     richtig: 0,
     ergebnis: null,
+    gezaehlt: false,
+    versuch: 0,
     fertig: false,
     beginn: Date.now(),
     ende: null,
@@ -80,10 +98,12 @@ export function useRunde(kennung: TrainerKennung, anzahl: number): Runde {
     anzahl,
     richtig: zustand.richtig,
     ergebnis: zustand.ergebnis,
+    versuch: zustand.versuch,
     fertig: zustand.fertig,
     sekunden:
       zustand.ende === null ? null : Math.round((zustand.ende - zustand.beginn) / MS_JE_SEKUNDE),
     beantworte: (richtig) => sende({ art: "beantworte", richtig }),
     weiter: () => sende({ art: "weiter", anzahl, jetzt: Date.now() }),
+    wiederhole: () => sende({ art: "wiederhole" }),
   };
 }

@@ -646,6 +646,7 @@
   "trainer.falsch": "Not quite.",
   "trainer.stand": "Task {nummer} of {anzahl} · {richtig} correct",
   "trainer.weiter": "Next",
+  "trainer.aufgabeWiederholen": "Try this one again",
   "trainer.auswerten": "Evaluate round",
   "trainer.rundenfortschritt": "Round progress",
   "trainer.pruefen": "Check",

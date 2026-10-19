@@ -65,6 +65,9 @@ Teil fertig ist.
       dann Nachschlagen › Endspielregeln: „The six golden endgame rules“ mit „Rule 1: Activate
       your king“ bis „Rule 6: Calculate through to promotion“. Alle 27 Zitate stehen in
       `docs/ENTSCHEIDUNGEN.md`. Passen sie, bis dein englisches Buch erscheint?
+- [ ] N610. **Aufgabe wiederholen:** In jedem Trainer (etwa Training › Taktiktrainer) steht nach
+      der Antwort neben „Weiter“ der Knopf „Aufgabe wiederholen“. Er setzt die Aufgabe auf den
+      Anfang zurück; gezählt wird weiter nur die erste Antwort.
 
 ---
 

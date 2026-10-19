@@ -8,13 +8,16 @@
  * über sammelstellung.ts meldet.
  * Abhängigkeiten: useRunde.ts, sammelstellung.ts, SammelFormular, i18n.
  */
-import { useState } from "react";
+import { RotateCcw } from "lucide-react";
+import { Fragment, useState } from "react";
 import { t } from "../../i18n/sprache";
 import type { TrainerKennung } from "../../training/trainer";
 import { Fortschrittsbalken } from "../komponenten/Fortschrittsbalken";
 import { SammelKnopf } from "../komponenten/SammelFormular";
 import { SammelstellungKontext } from "./sammelstellung";
 import type { Runde } from "./useRunde";
+
+const SYMBOLGROESSE = 16;
 
 /** Rückmeldung zu einer Antwort, grün oder rot. */
 export function Antwortmeldung({ richtig, children }: { richtig: boolean; children?: string }) {
@@ -89,7 +92,10 @@ export function Rundenrahmen({
         anteil={{ erreicht: runde.index, gesamt: runde.anzahl }}
         beschriftung={t("trainer.rundenfortschritt")}
       />
-      <SammelstellungKontext value={setzeStellung}>{children}</SammelstellungKontext>
+      {/* Der Schlüssel setzt die Aufgabe bei „Aufgabe wiederholen“ auf den Anfang zurück. */}
+      <SammelstellungKontext value={setzeStellung}>
+        <Fragment key={runde.versuch}>{children}</Fragment>
+      </SammelstellungKontext>
       {runde.ergebnis !== null && stellung && (
         <SammelKnopf
           key={`${runde.index} ${stellung}`}
@@ -101,6 +107,10 @@ export function Rundenrahmen({
         <div className="knopfzeile">
           <button type="button" className="knopf-haupt" onClick={runde.weiter}>
             {runde.index + 1 < runde.anzahl ? t("trainer.weiter") : t("trainer.auswerten")}
+          </button>
+          <button type="button" className="knopf-zweit" onClick={runde.wiederhole}>
+            <RotateCcw size={SYMBOLGROESSE} aria-hidden="true" />
+            {t("trainer.aufgabeWiederholen")}
           </button>
         </div>
       )}

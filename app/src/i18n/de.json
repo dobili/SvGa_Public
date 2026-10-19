@@ -646,6 +646,7 @@
   "trainer.falsch": "Nicht ganz.",
   "trainer.stand": "Aufgabe {nummer} von {anzahl} · {richtig} richtig",
   "trainer.weiter": "Weiter",
+  "trainer.aufgabeWiederholen": "Aufgabe wiederholen",
   "trainer.auswerten": "Runde auswerten",
   "trainer.rundenfortschritt": "Fortschritt der Runde",
   "trainer.pruefen": "Prüfen",

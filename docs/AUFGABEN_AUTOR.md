@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.101. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.102. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.99“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.102“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,16 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.102 (etwa 3 Minuten, mit Engine; Uhr sofort gesichert, Opus)
+
+- [ ] N180. **Uhr nach dem Schließen:** Partie mit Uhr (etwa 5 + 3) beginnen, einen Zug spielen,
+      nach der Antwort der Engine eine Minute nachdenken, dann die App ganz schließen (aus der
+      Liste der offenen Apps wischen) und wieder öffnen, Spielen › Weiterspielen: Steht deine
+      Restzeit auf dem Stand vom Moment des Schließens (etwa 4:0x), nicht auf dem Stand nach
+      deinem letzten Zug (5:0x)? Neu: Die App legt den angehaltenen Uhrstand beim Verlassen
+      zusätzlich sofort im Gerätespeicher ab, weil das gewöhnliche Speichern beim Schließen
+      abgebrochen werden kann.
 
 ### Neu in 0.2.101 (etwa 15 Minuten; Symbolsprache, von dir freigegeben am 19.10.2026, Opus)
 
@@ -420,15 +430,6 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
       Stimmen die Felder, die die App als hängend nennt? (Den Ablauf hat Claude geprüft.)
 - [ ] N194. **Schach-Röntgen-Trainer:** Ist die Aufgabe (drei Schritte, Pfeile setzen: Figur,
       dann Zielfeld) verständlich und auf dem Handy gut bedienbar? (Den Ablauf hat Claude geprüft.)
-
-### Neu in 0.2.36 (mit Engine; AP 11 Kalibrierung)
-
-- [ ] N180. **Uhr nach dem Schließen:** Laufende Partie mit Uhr, eine Weile nachdenken, dann zu einer
-      anderen App wechseln, die App schließen und wieder öffnen, Partie fortsetzen: Ist deine
-      Restzeit die vom Moment des Verlassens? Befund am Rechner: Beim schnellen Neuladen ging die
-      Bedenkzeit seit dem letzten Zug verloren (das Speichern wird dabei abgebrochen); auf dem
-      Handy bleibt beim App-Wechsel meist genug Zeit zum Speichern. Bitte melden, wenn es bei dir
-      auch passiert; dann baut Claude einen sofortigen Speicherweg für die Uhr.
 
 ---
 

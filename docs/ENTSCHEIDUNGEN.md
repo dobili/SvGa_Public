@@ -3929,3 +3929,20 @@ eine Seite; Kennfarben sparsam (Gold für Zeichen, Gürtelfarben nur für Stufen
 Vorlage mit Bildern vorher und nachher als privates Artifact (Bilder nicht im Repository).
 Freigabe des Autors am 19.10.2026: „Alles, ja“. Testpunkte N475 bis N482.
 
+
+## Uhr beim Verlassen sofort sichern (19.10.2026, Opus, Zweig `uhr-sichern`, Version 0.2.102)
+
+Befund N180 (seit 0.2.36 offen): Beim schnellen Neuladen am Rechner ging die Bedenkzeit seit dem
+letzten Zug verloren, weil der Browser das Schreiben in IndexedDB abbricht. Der Autor hatte den
+Punkt noch nicht beantwortet; nach seinem „Ja“ vom 19.10.2026 zur Liste der nächsten Schritte
+(Punkt b) ist der zweite Speicherweg jetzt gebaut: Beim Anhalten der Uhr (Hintergrund, `pagehide`,
+Bildschirm verlassen) legt `ui/komponenten/uhrNotsicherung.ts` den angehaltenen Uhrstand
+synchron in den Gerätespeicher (Merker `uhrNotsicherung` mit Kennung und Zahl der Züge). Beim
+Öffnen der Partie gilt er, wenn Kennung und Zugzahl passen; bei der Rückkehr wird er verworfen.
+Kein neues Speicherformat: Der Merker darf verloren gehen, dann gilt wie bisher IndexedDB.
+Komponententests in `uhrNotsicherung.test.ts`, Oberflächentest „Neuladen mitten im Nachdenken“
+in `spielen.spec.ts` (Hinweis: Chromium ohne Kopf bricht beim Neuladen das Schreiben nicht ab,
+der Test bestand auch vorher; er sichert das Verhalten für die Zukunft ab).
+Nebenbefund: Der Oberflächentest „Alle Daten löschen entfernt auch die Datenbank“ scheitert lokal,
+wenn er mit zwei Arbeitern neben `spielen.spec.ts` läuft, auch auf dem unveränderten Stand 0.2.101;
+allein und in GitHub Actions besteht er. Nicht durch diese Änderung verursacht.

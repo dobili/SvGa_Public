@@ -82,7 +82,7 @@ function uhreinstellungAus(roh: unknown): Uhreinstellung | null {
  * (wie beim Wechsel in den Hintergrund). Beim Öffnen der Partie läuft sie weiter (spiel/ablauf.ts,
  * setzeUhrFort); die Restzeit bleibt, wie sie beim Speichern war.
  */
-function uhrstandAus(roh: unknown): Uhrstand | null {
+export function uhrstandAus(roh: unknown): Uhrstand | null {
   if (!istObjekt(roh) || !istObjekt(roh.restMs) || !istZahl(roh.seitMs)) return null;
   const { white, black } = roh.restMs;
   if (!istZahl(white) || !istZahl(black)) return null;

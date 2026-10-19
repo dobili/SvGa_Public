@@ -1,6 +1,6 @@
 /** Tests für die Notation wie im Buch (Kapitel 0). */
 import { describe, expect, it } from "vitest";
-import { zugfolgeAlsText } from "./notation";
+import { buchzugInSprache, zugfolgeAlsText } from "./notation";
 import { stellungAusFen } from "./stellung";
 
 function regeln(fen: string) {
@@ -31,5 +31,16 @@ describe("zugfolgeAlsText", () => {
   it("begrenzt die Zahl der Halbzüge", () => {
     const start = regeln("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1");
     expect(zugfolgeAlsText(start, ["e2e4", "e7e5", "g1f3"], "de", 2)).toBe("1. e4 e5");
+  });
+});
+
+describe("buchzugInSprache", () => {
+  it("lässt deutsche Züge auf Deutsch stehen und schreibt sie englisch um", () => {
+    expect(buchzugInSprache("5... Db6", "de")).toBe("5... Db6");
+    expect(buchzugInSprache("5... Db6", "en")).toBe("5... Qb6");
+    expect(buchzugInSprache("4. Sc3! Lc5 5. Sxd5 Txd5 6. Kf1 O-O", "en")).toBe(
+      "4. Nc3! Bc5 5. Nxd5 Rxd5 6. Kf1 O-O",
+    );
+    expect(buchzugInSprache("8. exd8=D+", "en")).toBe("8. exd8=Q+");
   });
 });

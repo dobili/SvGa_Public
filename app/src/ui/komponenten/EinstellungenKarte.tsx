@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: Sprache, Brettfarben, Figurensatz, Ton,
  * Auflage des Buches, Strenge des Modus ‚Erst selbst denken‘“. Was es noch nicht zu wählen gibt,
- * steht mit „folgt“ da (Sprache). Die Auflage zeigt die Zeile „Datenstand“ darüber.
+ * steht mit „folgt“ da (Sprache, bis es eine zweite gibt; seit 0.2.94 dann eine Auswahl). Die Auflage zeigt die Zeile „Datenstand“ darüber.
  * Seit 0.2.33 (Fragen des Autors vom 16.10.2026): Figurensatz (wie im Buch, klassisch, seit 0.2.39
  * auch Holz) und Ton
  * (aus, an) sind wählbar. „Erst selbst denken“ war bis AP 13 ausgeblendet; seit 0.2.37 wirkt es
@@ -38,7 +38,8 @@ import {
   type Farbschema,
 } from "../../app/farbschema";
 import { liesMerker, schreibeMerker } from "../../app/merker";
-import { t, type Textschluessel } from "../../i18n/sprache";
+import { sprachname, t, verfuegbareSprachen, type Textschluessel } from "../../i18n/sprache";
+import { useSprache, waehleSprache } from "../../app/sprachwahl";
 import { MERKER_WISCHEN } from "../brett/useZiehen";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
@@ -192,18 +193,41 @@ function FigurenBereich() {
   );
 }
 
-/** Anzeige: Nachtmodus, Erklärkacheln, Sprache. */
-function AnzeigeBereich() {
-  return (
-    <>
-      <NachtmodusWahl />
-      <ErklaerungenWahl />
+/**
+ * Sprache der App (seit 0.2.94): eine Auswahl, sobald es mehr als eine Sprache gibt; bis dahin
+ * nur die Zeile „Deutsch (Englisch folgt …)“. Ohne Wahl gilt die Sprache des Geräts.
+ */
+function SprachWahl() {
+  const aktuell = useSprache();
+  const sprachen = verfuegbareSprachen();
+  if (sprachen.length <= 1) {
+    return (
       <dl className="einstellungen">
         <div className="einstellung">
           <dt>{t("einstellungen.sprache")}</dt>
           <dd>{t("einstellungen.sprache.wert")}</dd>
         </div>
       </dl>
+    );
+  }
+  return (
+    <Auswahl
+      name={t("einstellungen.sprache")}
+      werte={sprachen}
+      gewaehlt={aktuell}
+      text={sprachname}
+      beiWahl={waehleSprache}
+    />
+  );
+}
+
+/** Anzeige: Nachtmodus, Erklärkacheln, Sprache. */
+function AnzeigeBereich() {
+  return (
+    <>
+      <NachtmodusWahl />
+      <ErklaerungenWahl />
+      <SprachWahl />
     </>
   );
 }

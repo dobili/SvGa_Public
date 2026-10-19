@@ -9,6 +9,7 @@
  * Abhängigkeiten: autor/aufgabendatei.ts (nur Typen).
  */
 import type { Aufgabendatei } from "./aufgabendatei";
+import { t } from "../i18n/sprache";
 
 export interface Abhakstand {
   readonly haken: readonly string[];
@@ -92,6 +93,6 @@ export function meldung(datei: Aufgabendatei, stand: Abhakstand, appVersion: str
     if (!ok) return [`${id}: ${notiz}`];
     return [notiz === "" ? `${id} ok` : `${id} ok: ${notiz}`];
   });
-  const kopf = `Aufgaben des Autors (App-Version ${appVersion}, Aufgabendatei ${datei.version ?? "?"})`;
+  const kopf = t("autor.meldungKopf", { version: appVersion, datei: datei.version ?? "?" });
   return [kopf, ...zeilen].join("\n");
 }

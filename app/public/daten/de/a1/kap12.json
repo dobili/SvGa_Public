@@ -72,7 +72,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das griechische Geschenk aus Kapitel 1, Weiß am Zug. Gold: der Kandidat 1. Lxh7+. Grau: der ruhige Kandidat 1. Tc1.",
+     "text": "Das griechische Geschenk aus Kapitel 1, Weiß am Zug. Gold: der Kandidat ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lxh7+"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: der ruhige Kandidat ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Tc1"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -144,7 +162,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Lxh7+ Kxh7 2. Sg5+, Schwarz am Zug. Rot: die vier Königszüge, die du in Schritt 3 einzeln prüfst.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lxh7+ Kxh7 2. Sg5+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: die vier Königszüge, die du in Schritt 3 einzeln prüfst.",
      "stil": "normal"
     }
    ],
@@ -209,7 +236,43 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... Kg6 3. Dd3+, Schwarz am Zug. Gold: das Schach 3. Dd3+. Grau: Nach 3... f5 folgt 4. Sxe6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg6 3. Dd3+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: das Schach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Dd3+"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... f5"
+    },
+    {
+     "art": "text",
+     "text": " folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sxe6"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -266,7 +329,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Opernpartie nach 6. Lc4, Schwarz am Zug (erst nach der Übung ansehen).",
+     "text": "Die Opernpartie nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Lc4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug (erst nach der Übung ansehen).",
      "stil": "normal"
     }
    ],

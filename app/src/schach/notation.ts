@@ -21,6 +21,38 @@ export function sanInSprache(san: string, sprachcode: string): string {
   return san.replace(/[KQRBN]/g, (b) => buchstaben[b] ?? b);
 }
 
+/** Deutsche Figurenbuchstaben → englische (Kapitel 0, „Wie liest man Schachzüge?“). */
+const DEUTSCH_NACH_ENGLISCH: Readonly<Record<string, string>> = {
+  K: "K",
+  D: "Q",
+  T: "R",
+  L: "B",
+  S: "N",
+};
+
+/**
+ * Schreibt einen Zug oder eine Zugfolge aus dem Buchtext (deutsche Notation) in der Sprache.
+ *
+ * Warum: Die Pipeline markiert Züge im Klartext der Bildunterschriften („Nach 2. Lf4“, seit
+ * 0.2.94); in der englischen Fassung sollen sie als „2. Bf4“ erscheinen (AP 18).
+ * Eingaben: Text wie im Buch, Sprachcode. Ausgabe: derselbe Text mit den Figurenbuchstaben der
+ * Sprache. Beispiel: („5... Db6“, „en“) → „5... Qb6“ (Abb. 1.26); auf Deutsch unverändert.
+ * Sonderfall: Nur Großbuchstaben vor einem Feld oder einem Schlag und hinter „=“ (Umwandlung)
+ * werden ersetzt.
+ */
+export function buchzugInSprache(text: string, sprachcode: string): string {
+  if (sprachcode === "de") return text;
+  const englisch = (deutsch: string) => DEUTSCH_NACH_ENGLISCH[deutsch] ?? deutsch;
+  return text
+    .replace(/\b([KDTLS])(?=[a-h1-8x])/g, (_, deutsch: string) =>
+      sanInSprache(englisch(deutsch), sprachcode),
+    )
+    .replace(
+      /=([DTLS])/g,
+      (_, deutsch: string) => `=${sanInSprache(englisch(deutsch), sprachcode)}`,
+    );
+}
+
 /**
  * Schreibt eine Zugfolge in der Notation des Buches.
  *

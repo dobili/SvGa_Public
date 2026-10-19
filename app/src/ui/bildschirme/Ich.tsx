@@ -92,10 +92,10 @@ export function Ich() {
       ? t("ich.offlineBereit")
       : t("ich.offlineNicht", { prozent: offline.prozent });
   const angaben = [
-    `App-Version: ${APP_VERSION}`,
-    `Datenstand: ${datenstand}`,
-    `Offline: ${offlineText}`,
-    `Gerät: ${navigator.userAgent}`,
+    t("ich.angabe.version", { wert: APP_VERSION }),
+    t("ich.angabe.datenstand", { wert: datenstand }),
+    t("ich.angabe.offline", { wert: offlineText }),
+    t("ich.angabe.geraet", { wert: navigator.userAgent }),
   ].join("\n");
 
   const suche = async () => {

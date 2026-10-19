@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.94. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.95. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.94“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.95“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), Teil 2 entscheiden (F, X,
 T, S, C, K, D, E). Alle Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht
@@ -29,6 +29,21 @@ mehr getrennt testen. Die Prüfschritte N1 bis N157 sind erledigt.
 
 Abhaken, was klappt. Wer wenig Zeit hat, nimmt zuerst den neuesten Abschnitt, dann der Reihe nach die
 älteren Abschnitte.
+
+### Neu in 0.2.94 (etwa 3 Minuten; Technik für die englische Fassung, Opus)
+
+Dazu im Hintergrund: Die App kann jetzt mehrere Sprachen tragen (Sprache des Geräts als
+Voreinstellung, Wechsel lädt Texte und Buchdaten neu, `<html lang>` folgt). Übersetzt ist noch
+nichts. Die Pipeline erkennt die Züge im Klartext der Bildunterschriften („Nach 2. Lf4“, 697
+Stellen); die englische Fassung zeigt sie später als „2. Bf4“.
+
+- [ ] N559. **Nichts hat sich verändert:** Öffne Abb. 1.2: Die Unterschrift lautet wie im Buch
+      „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ steht weiter
+      „Deutsch (Englisch folgt mit der englischen Ausgabe)“; eine Auswahl erscheint erst, wenn
+      es eine zweite Sprache gibt.
+- [ ] N560. **Lizenzen:** Einstellungen › „Lizenzen“ (oder Fußzeile der Startseite): Die Seite
+      sieht aus wie vorher (alle Bausteine mit Lizenz, Herkunft und „Lizenztext“). Die Texte
+      stehen jetzt in der Sprachdatei, damit die englische Fassung sie übersetzen kann.
 
 ### Neu in 0.2.93 (etwa 10 Minuten; Lernsammlung, Opus)
 

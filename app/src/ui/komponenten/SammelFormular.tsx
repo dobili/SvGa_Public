@@ -195,6 +195,10 @@ export function SammelSchalter({ an, beiKlick }: { an: boolean; beiKlick: () => 
       onClick={beiKlick}
     >
       <BookmarkPlus size={SYMBOLGROESSE} aria-hidden="true" />
+      {/* Kurzes Wort unter dem Symbol wie bei den anderen Brettsymbolen (DS5). */}
+      <span className="brettschalter-text" aria-hidden="true">
+        {t("sammlung.hineinKurz")}
+      </span>
     </button>
   );
 }

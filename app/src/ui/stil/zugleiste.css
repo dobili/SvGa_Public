@@ -105,10 +105,10 @@
 }
 
 /* Symbol mit kurzem Wort darunter (DS5): Einsteiger erkennen „Röntgen“ oder „Zählen“ nicht am
-   Bild allein. Sechs Knöpfe passen auch bei 360 Pixeln Breite in eine Zeile. */
+   Bild allein. Sieben Knöpfe (mit „Sammlung“) passen auch bei 360 Pixeln in eine Zeile. */
 .brettschalter {
   width: auto;
-  min-width: 50px;
+  min-width: var(--tippflaeche);
   height: auto;
   min-height: 52px;
   padding: 4px 2px;

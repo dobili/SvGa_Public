@@ -64,7 +64,9 @@ function zeile(partie: Partie): string {
       ? t("spielen.gegner.mensch")
       : (gegnername(partie.einstellung.bot, partie.einstellung.botName) ??
         t("spielen.partieStufe", { nummer: s.nummer }));
-  return t("spielen.partiezeile", { datum, stufe: gegner, zuege });
+  // Einzahl: „1 Zug“ statt „1 Züge“ (Befund beim Vorprüfen von N479, 19.10.2026).
+  const schluessel = zuege === 1 ? "spielen.partiezeileEinZug" : "spielen.partiezeile";
+  return t(schluessel, { datum, stufe: gegner, zuege });
 }
 
 /** Ein König im gewählten Figurensatz: die Farbe, die der Leser gespielt hat; beide bei Mensch gegen Mensch. */

@@ -4061,3 +4061,40 @@ die das Skript nicht messen kann (Ringe als Verlauf oder Schatten), von Hand gep
 
 Vorlage mit Messwerten und Bildern vorher und nachher als privates Artifact (Bilder nicht im
 Repository). Freigabe des Autors am 19.10.2026: „Alles ja“. Testpunkte N483 bis N489.
+
+## Testpunkte 0.2.98 bis 0.2.101 vorgeprüft (19.10.2026, Opus, Zweig `testpunkte-vorpruefen`, Version 0.2.107)
+
+Wie Chat C am 18./19.10.: mit der gebauten App in Playwright (Handygröße 393 px, quer 844 × 390,
+Tablet 1024 × 768, hell und dunkel, „Bewegung reduzieren“), Bildschirmfotos durchgesehen.
+Gestrichen, weil ohne Auge des Autors prüfbar und in Ordnung:
+
+- **N452** runder Stein „am Zug“ (Klasse `am-zug-marke`, im Dunkelmodus mit hellem Rand),
+  **N453** Trainer als Zeilen, „Abweichungsmodus“ und „Strukturerkenner“ einzeilig,
+  **N454** Brettsymbole in einer Zeile (Abb. 7.10: Zählen, Ziehen, Engine, Röntgen, W1–W7; in
+  der Partie dazu Drehen, Ruhig), **N455** Fortschrittsbalken in der Trainerrunde,
+  **N456** fünf Reiter nebeneinander mit Symbol, **N457** Chips 44 px hoch, **N458** Titel,
+  **N459** Zurücknehmen und Aufgeben in einer Zeile, Aufgeben grau rechts,
+  **N461** Werkzeugleiste blendet rechts aus (Maske), **N462** „Alle abhaken“ und „Alle
+  zurücksetzen“ nebeneinander, **N463** Reihenfolge der Einstellungen, **N464** Übergänge
+  bei „Bewegung reduzieren“ 0,00001 s, **N465** Website Kapitel 1: drei gleich breite Knöpfe
+  (110 px) in einer Zeile, **N466** Zeilenbeschriftung über den Werten, **N467** Kapitelnummern
+  in Navy-Kreisen.
+- **N460** überholt: Seit DS20 (0.2.101) haben die Aufklappzeilen einen Pfeil statt ▶.
+- **N468** Spielhilfen und „Partie beginnen“ über dem Gitter, **N471** Partienliste mit vier
+  Partien: Filter Ergebnis und Wertung, Löschen einer ungewerteten (4 → 3), **N472**
+  Warum-Zeichen (Schloss, Sprechblase nach dem Ansehen), Antwort zählt in den Einstellungen
+  („Warum-Fragen beantwortet 1“), **N474** 34 Werkzeuge nach Kapiteln, jedes mit Zeichen.
+- **N476** kein ▶ mehr (Buch, Spielen, Nachschlagen, Glossar durchsucht), **N477** Zeichen an
+  Daten sichern, Sicherung einspielen, Löschen (rot), Zurücknehmen, Aufgeben, Hinweis, Lösung
+  zeigen, **N478** goldene Zeichen vor den genannten Überschriften, **N479** Pokal am Partieende
+  und „1–0“ in goldener Marke, **N480** Phasenzeichen mit Gürtelmarke in Spielen und
+  Denkroutine, **N481** Fortschritt am Kreis der Kapitelnummer, **N482** Werkzeugzeichen,
+  Glossar mit Buchstaben und Sprungleiste.
+
+Geblieben (gekürzt): N450, N451 (echtes Gerät), N469, N470 (gewerteter Sieg gegen einen Bot),
+N473 (Inhalt gegen das Buch), N475 (Gesamteindruck, enthält das Urteil aus N477).
+
+Befunde dabei: „1 Züge“ in der Partienliste (jetzt „1 Zug“, Schlüssel
+`spielen.partiezeileEinZug`). Auffällig, aber Sache des Bot-Chats: Die Elo-Bereiche seit 0.2.103
+überlappen bei Stufe 3 (etwa 1700 bis 1850) und Stufe 4 (etwa 1650 bis 1950); Stufe 3 beginnt
+höher als Stufe 4.

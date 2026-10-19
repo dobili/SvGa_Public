@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.106. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.107. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.106“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.107“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -126,137 +126,43 @@ chess.com und Lichess neu geeicht. Die Bots spielen wie vorher; ihre Zahlen sink
       zusätzlich sofort im Gerätespeicher ab, weil das gewöhnliche Speichern beim Schließen
       abgebrochen werden kann.
 
-### Neu in 0.2.101 (etwa 15 Minuten; Symbolsprache, von dir freigegeben am 19.10.2026, Opus)
+### Neu in 0.2.101 (etwa 5 Minuten; Symbolsprache, von dir freigegeben am 19.10.2026, Opus)
 
-- [ ] N475. **Stufen der Bots:** Spielen › „Vorgefertigte Bots“. Jede Stufe hat eine runde Marke
-      mit Nummer in Gürtelfarben (1 Weiß, 2 Gelb, 3 Orange, 4 Grün, 5 Blau, 6 Lila, 7 Braun,
-      8 Schwarz), „Zum Spaß“ eine bunte Marke mit Konfetti. Rechts stehen vier kleine Gesichter
-      (zugeklappt), darunter nach einem gewerteten Sieg ein Stern mit „1/8“. Der Elo-Bereich steht
-      kleiner in einer zweiten Zeile. Auch im Dunkelmodus gut zu erkennen?
-- [ ] N476. **Aufklappen und Weiter:** Überall, wo etwas aufklappt (Eigene Stellung eingeben,
-      Absichtliche Fehler, Abschnitte im Kapitel, Stufen der Bots, Denkroutine, Werkzeuge,
-      Checkliste), steht am Zeilenende ein Pfeil nach unten, offen nach oben; kein Dreieck ▶ mehr.
-      Kapitel im Buch und die Einträge in Nachschlagen haben rechts einen Pfeil nach rechts.
-- [ ] N477. **Zeichen an Knöpfen:** Einstellungen › Daten: Pfeil nach unten bei „Daten sichern“,
-      Pfeil nach oben bei „Sicherung einspielen“, „Alle Daten dieser App löschen“ rot mit
-      Papierkorb. Eigener Bot: Diskette bei „Gegner speichern“, Person mit Plus bei „Neuen Gegner
-      anlegen“. Partie: Fahne bei „Aufgeben“, Pfeil zurück bei „Zurücknehmen“. Taktiktrainer:
-      Dreieck bei „Runde starten“, Glühbirne bei „Hinweis“, Auge bei „Lösung zeigen“. Passt jedes
-      Zeichen zum Wort?
-- [ ] N478. **Zeichen vor Überschriften:** Goldene Zeichen vor „Deine Wertung“ (Pokal), „Dein
-      Fortschritt“, „Einstellungen“ (Zahnrad), „Daten auf diesem Gerät“, „Über die App“ („i“),
-      „Fällige Wiederholungen“, „Trainer je Kapitel“, „Deine letzten Partien“, „Auswertung“,
-      „Spielstärke“; in Spielen vor „Du spielst“, „Bedenkzeit“ (Stoppuhr), „Spielhilfen“
-      (Rettungsring), „Stufe der Engine“ und „Eröffnung“ (Buch).
-- [ ] N479. **Ergebnis:** Gewinne eine Partie (etwa „Eigene Stellung eingeben“ mit
-      6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1, dann Ta8 matt) und gib eine andere auf. Am Partieende steht
-      ein goldener Pokal bzw. ein rotes Kreuz vor dem Satz; in „Deine letzten Partien“ steht
-      „1–0“ in einer goldenen Marke mit Pokal bzw. „0–1“ rot umrandet mit Kreuz. Remis zeigt einen
-      Händedruck.
-- [ ] N480. **Phasen und Stufen:** Spielen › „Eigene Stufe“: Vor „Eröffnung“, „Mittelspiel“,
-      „Endspiel“ stehen Buch, gekreuzte Schwerter und Flagge, hinter dem Doppelpunkt die Stufe als
-      kleine Gürtelmarke. Dieselben Zeichen stehen in Nachschlagen › Denkroutine vor den Phasen.
-- [ ] N481. **Fortschritt an der Kapitelnummer:** Buch: Der Kreis um die Kapitelnummer füllt sich
-      golden mit den angesehenen Abbildungen (in einem Kapitel „Alle abhaken“ → goldener Kreis mit
-      Haken). Der kleine Ring neben dem Text ist dafür weggefallen. Dasselbe in der
-      Gesamt-Checkliste für abgehakte Lernziele.
-- [ ] N482. **Werkzeuge und Glossar:** Nachschlagen › Werkzeuge des Buches: Jedes Werkzeug hat
-      sein Zeichen wie am Brett. Nachschlagen › Glossar: Begriffe unter A, B, C …; der Buchstabe
-      bleibt beim Scrollen oben stehen, die Leiste oben springt zum Buchstaben. Mit Suchtext
-      erscheint die einfache Trefferliste.
+Ob alle Zeichen, Marken und Pfeile da sind und an der richtigen Stelle stehen, hat Claude am
+19.10.2026 mit der gebauten App geprüft (N476 bis N482 gestrichen). Hier bleibt dein Eindruck.
 
-### Neu in 0.2.99 (etwa 20 Minuten, mit Engine; deine Wünsche vom 19.10.2026 morgens, Opus)
+- [ ] N475. **Gesamteindruck der Symbolsprache (hell und dunkel):** Spielen › „Vorgefertigte
+      Bots“ (runde Stufenmarken in Gürtelfarben, „Zum Spaß“ mit Konfetti, vier kleine Gesichter
+      rechts), dazu die Zeichen an Knöpfen und Überschriften (etwa Pfeil nach unten bei „Daten
+      sichern“, Fahne bei „Aufgeben“, Glühbirne bei „Hinweis 1“, Pokal bei „Deine Wertung“).
+      Gefällt dir das, und passt jedes Zeichen zum Wort? Einmal im Dunkelmodus ansehen.
 
-- [ ] N468. **Spielhilfen über „Partie beginnen“:** Spielen › „Vorgefertigte Bots“. Direkt unter
-      den drei Kacheln der Gegnerart stehen jetzt Du spielst, Bedenkzeit, „Züge zurücknehmen
-      erlauben“, die Spielhilfen und „Gewertete Partie“, darunter „Partie beginnen“, erst dann das
-      Gitter der Bots. Die Erklärung zur Wertung steht hinter dem Fragezeichen am Haken.
-- [ ] N469. **Porträt für eigene Bots (mit Vorschaubildern seit 0.2.100):** Spielen › „Eigene
-      Bots“ › „Neuen Gegner anlegen“. Unter dem Namen steht „Porträt“ als Knopf mit dem gewählten
-      Bild und einem Pfeil. Antippen klappt alle 30 Bilder auf, nach Altersgruppen (Kinder,
-      Jugendliche, Junge Erwachsene, Erwachsene, Ältere; je sechs, Frauen und Männer, verschiedene
-      Haut- und Haarfarben, Brillen, Bärte), ganz oben „kein Bild“ mit dem Anfangsbuchstaben.
-      Ein Tippen auf ein Bild wählt es und klappt zu. Gespeichert erscheint es in der Kachel, in
-      der Sprechblase oben und in der Liste der eigenen Bots. Passen Bilder und Gruppen?
+### Neu in 0.2.99 (etwa 10 Minuten, mit Engine; deine Wünsche vom 19.10.2026 morgens, Opus)
+
+Reihenfolge der Spielhilfen, Partienliste mit Filter und Löschen, Warum-Zeichen samt Zähler und
+die Werkzeugliste hat Claude geprüft (N468, N471, N472, N474 gestrichen).
+
+- [ ] N469. **Porträts für eigene Bots:** Spielen › „Eigene Bots“ › „Neuen Gegner anlegen“ ›
+      „Porträt“: Passen die 30 Bilder und die Altersgruppen (Kinder bis Ältere)?
 - [ ] N470. **Stern für besiegte Bots:** Gewinne eine gewertete Partie gegen einen Bot (am
-      einfachsten gegen Fritzi aus „Zum Spaß“). Danach trägt sein Porträt in der Gegnerwahl unten
-      rechts einen kleinen goldenen Stern auf Navy, auch in der Sprechblase. Ungewertete Siege
-      zählen nicht; „Wertung zurücksetzen“ nimmt die Sterne weg.
-- [ ] N471. **Partienliste:** Unter „Deine letzten Partien“ steht vor jeder Partie das Porträt des
-      Gegners. Ab vier Partien gibt es den Filter „Ergebnis“ (alle, gewonnen, remis, verloren) und
-      „Wertung“ (alle, gewertet, ungewertet); „Weitere Partien zeigen“ holt die nächsten zehn.
-      Ungewertete Partien haben rechts einen Papierkorb; nach „Ja, löschen“ ist die Partie weg.
-      Gewertete Partien lassen sich nicht löschen, weil sie die Wertung tragen.
-- [ ] N472. **Zeichen für Warum-Fragen in der Kapitelübersicht:** Kapitel 1 öffnen, Abschnitt 1.4
-      aufklappen. Bretter mit Warum-Frage tragen oben rechts ein Zeichen: graues Schloss (die Frage
-      erscheint erst, wenn die Abbildung angesehen ist), goldene Sprechblase (wartet auf dich),
-      grüner Haken (beantwortet). Die Legende steht unter „Abbildungen“. Öffne Abb. 1.26, warte 30
-      Sekunden, beantworte die Warum-Frage, geh zurück: grüner Haken an 1.26, und oben unter
-      „Dein Fortschritt“ steht „Warum-Fragen beantwortet 1 von 18“. In den Einstellungen zählt
-      „Warum-Fragen beantwortet“ mit.
-- [ ] N473. **Nachschlagen › Steckbriefe:** 13 Eröffnungen und 14 Fallenchecks aus dem Buch, jeder
-      aufklappbar. Die Fallenchecks mit „Wer tappt hinein?“, den Prüfungen mit „Reicht?“ (Zeichen
-      und Wort), „Rettender Zug“ und „Fallensteller-Test“. Der Knopf führt zum Stopp-Moment bzw.
-      zur ersten Abbildung des Abschnitts. Stimmen die Inhalte mit dem Buch überein?
-- [ ] N474. **Nachschlagen › Werkzeuge des Buches:** Alle Werkzeuge nach Kapiteln; ein Tipp auf den
-      Namen zeigt, was das Werkzeug zeigt, und darunter seine Regel aus dem Buch. „Kapitel n
-      öffnen“ führt zur Kapitelübersicht.
+      einfachsten Fritzi aus „Zum Spaß“). Trägt sein Porträt danach unten rechts einen kleinen
+      goldenen Stern, auch in der Sprechblase, und steht an seiner Stufe „1/8“?
+- [ ] N473. **Steckbriefe gegen das Buch:** Nachschlagen › Steckbriefe (13 Eröffnungen, 14
+      Fallenchecks): Stimmen die Inhalte mit dem Buch überein? Zwei, drei Stichproben genügen.
 
-### Neu in 0.2.98 (etwa 25 Minuten; Design-Überprüfung, Opus)
+### Neu in 0.2.98 (etwa 5 Minuten; Design-Überprüfung, Opus)
 
-Alle 18 Vorschläge DS1 bis DS18 hast du am 19.10.2026 angenommen („Alle, ja“). Jeder Punkt prüft
-einen davon auf dem Handy (und, wo genannt, quer oder auf dem Tablet).
+DS3 bis DS18 hat Claude mit der gebauten App geprüft (Handygröße, quer 844 × 390, Tablet,
+dunkel, „Bewegung reduzieren“, Website); N452 bis N467 gestrichen. Hier bleibt, was nur das
+echte Gerät zeigt.
 
 - [ ] N450. **DS1 Schriftgröße des Geräts:** Stell am Handy die Schriftgröße größer (iPhone:
       Einstellungen › Anzeige & Helligkeit › Textgröße; Android: Einstellungen › Anzeige ›
-      Schriftgröße), öffne die App neu. Text, Knöpfe und Titel werden mit größer, das Brett
-      bleibt so groß wie der Bildschirm erlaubt. Bei Standardgröße sieht alles fast aus wie
-      vorher; nichts ist mehr kleiner als 13 Pixel (vorher bis 11).
-- [ ] N451. **DS2 Querformat und Tablet:** Dreh das Handy quer (oder nimm ein Tablet quer).
-      Die Leiste steht als Schiene links, das Brett links in voller Höhe, Zugleiste, Werkzeuge
-      und Text rechts; rechts scrollt, das Brett bleibt stehen. Prüfe Abbildung 1.26, eine
-      Übung, eine Trainerrunde, eine Partie und die Auswertung. Buch, Training und Einstellungen
-      bleiben eine Spalte in Lesebreite. Hochkant ist alles wie gewohnt.
-- [ ] N452. **DS3 Marke „am Zug“:** Unter jedem Brett steht vor „Weiß am Zug“ jetzt ein runder
-      Stein statt eines Quadrats (das wie ein Kästchen zum Abhaken aussah); im dunklen Modus hat
-      der schwarze Stein einen hellen Rand.
-- [ ] N453. **DS4 Trainerliste:** Training: Die Trainer stehen als Zeilen mit Trennlinie in der
-      Kapitelkarte, nicht mehr als Karte in der Karte. „Abweichungsmodus“ und „Strukturerkenner“
-      stehen ungebrochen in einer Zeile.
-- [ ] N454. **DS5 Wörter unter den Brettsymbolen:** Abb. 7.10: Unter den Symbolen am Brett
-      stehen Zählen, Ziehen, Engine, Röntgen, W1–W7, Drehen; in der Partie dazu „Ruhig“. Alle
-      passen bei schmalem Handy in eine Zeile.
-- [ ] N455. **DS6 Trainerrunde:** Zähltrainer › Bilanz zählen: Während der Runde ist die
-      Beschreibung des Trainers weg, unter „Aufgabe 1 von 8“ läuft ein goldener Balken mit, und
-      der Auftrag steht linksbündig und halbfett. Zurück auf der Auswahl ist die Beschreibung
-      wieder da.
-- [ ] N456. **DS7 Reiter der Einstellungen:** Alle fünf Reiter (Brett, Figuren, Anzeige, Ton,
-      Training) stehen nebeneinander, Symbol über dem Wort; nichts muss gewischt werden.
-- [ ] N457. **DS8 Tippflächen:** Chips (Weiß/Schwarz, Bedenkzeit, Zahlen im Zähltrainer) sind
-      etwas höher (44 statt 40 Pixel), „Eigene Stellung eingeben (FEN)“ lässt sich leichter
-      antippen.
-- [ ] N458. **DS9 Lange Titel:** Training › Koordinaten, Notation, Gangarten: Der zweizeilige
-      Titel steht mittig mit etwas Luft nach oben.
-- [ ] N459. **DS10 Aufgeben:** In einer Partie stehen „Zurücknehmen“ und „Aufgeben“ nebeneinander;
-      „Aufgeben“ ist klein und grau rechts. Die Nachfrage kommt wie bisher.
-- [ ] N460. **DS11 Aufklappzeilen in Spielen:** „Absichtliche Fehler der Engine“ und „Blinde
-      Flecken der Engine“ haben ein Dreieck ▶ und lassen sich erkennbar aufklappen.
-- [ ] N461. **DS12 Werkzeugleiste:** Unter dem Brett blendet die Leiste der Werkzeugbündel rechts
-      weich aus; nach dem Wischen ist das letzte Bündel ganz sichtbar.
-- [ ] N462. **DS13 Kapitelseite:** „Alle abhaken“ und „Alle zurücksetzen“ stehen klein
-      nebeneinander statt als zwei breite Balken.
-- [ ] N463. **DS14 Einstellungen:** Nach Wertung und Fortschritt kommen gleich die
-      Einstellungen, „Über die App“ (Version, Update, Lizenzen) steht am Ende.
-- [ ] N464. **DS15 Bewegung reduzieren:** Mit „Bewegung reduzieren“ am Gerät (iPhone: Bedienungs-
-      hilfen › Bewegung) gleiten Balken und Klappen nicht mehr, sie springen.
-- [ ] N465. **DS16 Trainingsseiten der Website:** <https://schach-von-grund-auf.com/training/kap01/>:
-      Unten stehen „← Kapitel 0“, „Alle Kapitel“, „Kapitel → 2“ gleich breit in
-      einer Zeile.
-- [ ] N466. **DS17 Auswertung:** Nach einer Partie, Karte „Spielstärke“: Auf dem Handy steht jede
-      Zeilenbeschriftung („Genauigkeit (App)“, „Geschätzte Spielstärke“) über den beiden Werten;
-      nichts stößt mehr aneinander.
-- [ ] N467. **DS18 Kapitelnummern:** Im Training stehen die Kapitelnummern in runden Navy-Kreisen
-      wie im Buch, nicht mehr in goldenen Quadraten.
+      Schriftgröße), öffne die App neu: Werden Text, Knöpfe und Titel mit größer, und bleibt
+      alles bedienbar?
+- [ ] N451. **DS2 Querformat:** Dreh das Handy quer (oder nimm ein Tablet): Brett links, Text
+      rechts, Leiste als Schiene links. Fühlt sich das auf deinem Gerät gut an (Abbildung,
+      Partie, Auswertung)?
 
 ### Neu in 0.2.96 (etwa 10 Minuten; konstruierte Zugfolgen, Opus)
 

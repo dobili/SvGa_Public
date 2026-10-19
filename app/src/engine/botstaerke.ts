@@ -24,7 +24,7 @@ import type { Stufennummer } from "./stufen";
  * der Eichdaten) nur „über 2200“; damit sahen Stufe 5 bis 8 gleich aus, obwohl die Ergebnisse sie
  * klar trennen (Rückmeldung des Autors, 18.10.2026 abends). Seit 0.2.88 zeigt die App auch darüber
  * die Zahl der Elo-Leiter: Sie kommt dort allein aus den Ergebnissen gegen die tieferen, an der
- * Skala verankerten Stufen. Die Grenze liegt über der vollen Engine (Stufe 8, etwa 3200), weil es
+ * Skala verankerten Stufen. Die Grenze liegt über der vollen Engine (Stufe 8, etwa 3000), weil es
  * darüber nichts mehr zu messen gibt.
  */
 export const ANGABE_HOECHSTENS = 3300;
@@ -40,7 +40,7 @@ export type Staerkeangabe =
   | { readonly art: "ueber"; readonly wert: number }
   | { readonly art: "unter"; readonly wert: number };
 
-/** Die Zahl einer reinen Stufe (gemessen). Beispiel: Stufe 3 → 1911 (angezeigt „etwa 1900“). */
+/** Die Zahl einer reinen Stufe (gemessen). Beispiel: Stufe 3 → 1698 (angezeigt „etwa 1700“). */
 export function staerkeDerStufe(nummer: Stufennummer): number {
   return STUFEN_STAERKE[nummer];
 }

@@ -114,8 +114,8 @@ interface Gruppe {
 
 /**
  * Die Gruppen der Gegnerwahl: zuerst „Zum Spaß“ (die Spaß-Bots, 0.2.88, Wunsch des Autors), dann
- * die acht Stufen. Beispiel: „Zum Spaß · etwa 600 bis 1100“, „Stufe 1 · Einsteiger · etwa 1050
- * bis 1300“.
+ * die acht Stufen. Beispiel (seit 0.2.99): „Zum Spaß · unter 400 bis etwa 850“, „Stufe 1 ·
+ * Einsteiger · etwa 850 bis 1100“.
  */
 function gruppen(): Gruppe[] {
   const stufen = STUFENNUMMERN.map((nummer) => ({

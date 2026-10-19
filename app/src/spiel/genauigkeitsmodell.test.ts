@@ -6,11 +6,13 @@ import { describe, expect, it } from "vitest";
 import { partiegenauigkeit, zuggewichte, zuggenauigkeit } from "./genauigkeit";
 import {
   genauigkeitAus,
+  innereGenauigkeit,
   LICHESS_REGLER,
   mittelweg,
   seitengenauigkeit,
   zuggenauigkeitMit,
   zugwerte,
+  zugwerteBisEntscheidung,
 } from "./genauigkeitsmodell";
 
 /** Eine Partie aus Sicht von Weiß: ausgeglichen, Weiß patzt (−3), dann lange gewonnen für Schwarz. */
@@ -49,5 +51,14 @@ describe("Genauigkeitsmodell", () => {
       abfall: (0.04354 + 0.08) / 2,
       polster: 0.75,
     });
+  });
+
+  it("zählt für die innere Genauigkeit nur die Züge bis zur Entscheidung", () => {
+    // Bei −6,5 (Halbzug 7) hat Schwarz unter 10 % für Weiß und behält das: Halbzüge 0 bis 6 zählen.
+    expect(zugwerteBisEntscheidung(WERTE, "white")).toHaveLength(4);
+    expect(zugwerteBisEntscheidung(WERTE, "black")).toHaveLength(3);
+    const alle = seitengenauigkeit(WERTE, "white", LICHESS_REGLER) ?? 0;
+    const innen = innereGenauigkeit(WERTE, "white") ?? 0;
+    expect(innen).toBeLessThan(alle);
   });
 });

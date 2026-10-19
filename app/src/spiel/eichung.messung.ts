@@ -7,7 +7,8 @@
  * Die Rohdaten liegen nur lokal (EICHUNG_ORDNER, Vorgabe ../buch/arbeit/eichung): die Partien
  * aus pipeline/eichung/sammeln.py und die Bewertungen aus skripte/eichung-rechnen.mjs. Ausgabe:
  * bericht.md und ergebnis.json im selben Ordner (lokal); die Zahlen aus ergebnis.json kommen in
- * Schritt d als Konstanten in die App.
+ * Schritt d als Konstanten in die App. Seit 0.2.99 stehen die Kurven auf der inneren Genauigkeit
+ * nur bis zur Entscheidung der Partie (spiel/entscheidung.ts), wie die Schätzung in der App.
  * Abhängigkeiten: spiel/eichungsrechnung.ts, spiel/genauigkeitsmodell.ts.
  * Aufruf (im Ordner app/): npm run messen:eichung
  */
@@ -30,7 +31,13 @@ import {
   type Kurve,
   type Rohwert,
 } from "./eichungsrechnung";
-import { LICHESS_REGLER, mittelweg, seitengenauigkeit, type Regler } from "./genauigkeitsmodell";
+import {
+  genauigkeitAus,
+  LICHESS_REGLER,
+  mittelweg,
+  zugwerteBisEntscheidung,
+  type Regler,
+} from "./genauigkeitsmodell";
 
 const ORDNER = process.env.EICHUNG_ORDNER ?? join(process.cwd(), "..", "buch", "arbeit", "eichung");
 // Unter und über dem Lichess-Wert: Die erste Runde lag am unteren Rand (18.10.2026).
@@ -111,11 +118,24 @@ function genauigkeitsZeile(name: string, seiten: readonly Eichseite[], regler: R
   return `| ${name} | ${seiten.length} | ${r1(mittel(a))} | ${r1(mittel(a.map(Math.abs)))} | ${r1(streuung(a))} |`;
 }
 
-function kurveAus(seiten: readonly Eichseite[], regler: Regler): Kurve {
-  const punkte = seiten.flatMap((s) => {
-    const x = seitengenauigkeit(s.werte, s.seite, regler);
+/**
+ * Innere Genauigkeit einer Seite wie in der App seit 0.2.99: nur Züge bis zur Entscheidung
+ * (spiel/entscheidung.ts), null bei weniger als zehn gezählten Zügen (dann schätzt die App nicht).
+ */
+function innen(s: Eichseite): number | null {
+  const zuege = zugwerteBisEntscheidung(s.werte, s.seite);
+  return zuege.length < MINDESTENS_ZUEGE ? null : genauigkeitAus(zuege, LICHESS_REGLER.polster);
+}
+
+function punkteAus(seiten: readonly Eichseite[]): { x: number; y: number }[] {
+  return seiten.flatMap((s) => {
+    const x = innen(s);
     return x === null ? [] : [{ x, y: s.wertung }];
   });
+}
+
+function kurveAus(seiten: readonly Eichseite[]): Kurve {
+  const punkte = punkteAus(seiten);
   return monotoneKurve(
     punkte,
     Math.min(HOECHSTENS_GRUPPEN, Math.max(2, Math.floor(punkte.length / SEITEN_JE_GRUPPE))),
@@ -123,12 +143,8 @@ function kurveAus(seiten: readonly Eichseite[], regler: Regler): Kurve {
 }
 
 /** Umgekehrte Kurve (Wertung → mittlere Genauigkeit) aus den Eichseiten. */
-function umkehrAus(seiten: readonly Eichseite[], regler: Regler): Kurve {
-  const punkte = seiten.flatMap((s) => {
-    const x = seitengenauigkeit(s.werte, s.seite, regler);
-    return x === null ? [] : [{ x, y: s.wertung }];
-  });
-  return umkehrKurve(punkte, BANDBREITE);
+function umkehrAus(seiten: readonly Eichseite[]): Kurve {
+  return umkehrKurve(punkteAus(seiten), BANDBREITE);
 }
 
 /**
@@ -138,12 +154,11 @@ function umkehrAus(seiten: readonly Eichseite[], regler: Regler): Kurve {
  */
 function schaetzfehler(
   seiten: readonly Eichseite[],
-  regler: Regler,
   schaetze: (x: number) => number,
   ausMittel?: (x: number) => number,
 ) {
   const paare = seiten.flatMap((s) => {
-    const x = seitengenauigkeit(s.werte, s.seite, regler);
+    const x = innen(s);
     if (x === null) return [];
     return [
       {
@@ -178,34 +193,31 @@ describe("Eichung von Genauigkeit und Spielstärke", () => {
     const [liEich, liKontrolle] = [li.filter((s) => !s.kontrolle), li.filter((s) => s.kontrolle)];
     const nahe = besteRegler(ccEich, ABFAELLE, POLSTER).regler;
     const mitte = mittelweg(LICHESS_REGLER, nahe);
-    const innen = LICHESS_REGLER;
-    const kurveCc = kurveAus(ccEich, innen);
-    const kurveLi = kurveAus(liEich, innen);
+    const kurveCc = kurveAus(ccEich);
+    const kurveLi = kurveAus(liEich);
     const kurveMitte: Kurve = RASTER.map(
       (x) => [x, (kurvenwert(kurveCc, x) + kurvenwert(kurveLi, x)) / 2] as const,
     );
-    const umkehrCc = umkehrAus(ccEich, innen);
-    const umkehrLi = umkehrAus(liEich, innen);
+    const umkehrCc = umkehrAus(ccEich);
+    const umkehrLi = umkehrAus(liEich);
     const umkehrMitte = (x: number) => (kurvenwert(umkehrCc, x) + kurvenwert(umkehrLi, x)) / 2;
     const fehler = {
-      chesscomEigene: schaetzfehler(ccKontrolle, innen, (x) => kurvenwert(kurveCc, x)),
-      lichessEigene: schaetzfehler(liKontrolle, innen, (x) => kurvenwert(kurveLi, x)),
-      mitteGegenChesscom: schaetzfehler(ccKontrolle, innen, (x) => kurvenwert(kurveMitte, x)),
-      mitteGegenLichess: schaetzfehler(liKontrolle, innen, (x) => kurvenwert(kurveMitte, x)),
+      chesscomEigene: schaetzfehler(ccKontrolle, (x) => kurvenwert(kurveCc, x)),
+      lichessEigene: schaetzfehler(liKontrolle, (x) => kurvenwert(kurveLi, x)),
+      mitteGegenChesscom: schaetzfehler(ccKontrolle, (x) => kurvenwert(kurveMitte, x)),
+      mitteGegenLichess: schaetzfehler(liKontrolle, (x) => kurvenwert(kurveMitte, x)),
       umkehrChesscom: schaetzfehler(
         ccKontrolle,
-        innen,
         (x) => kurvenwert(umkehrCc, x),
         (x) => kurvenwert(umkehrCc, x),
       ),
       umkehrLichess: schaetzfehler(
         liKontrolle,
-        innen,
         (x) => kurvenwert(umkehrLi, x),
         (x) => kurvenwert(umkehrLi, x),
       ),
-      umkehrMitteGegenChesscom: schaetzfehler(ccKontrolle, innen, umkehrMitte, umkehrMitte),
-      umkehrMitteGegenLichess: schaetzfehler(liKontrolle, innen, umkehrMitte, umkehrMitte),
+      umkehrMitteGegenChesscom: schaetzfehler(ccKontrolle, umkehrMitte, umkehrMitte),
+      umkehrMitteGegenLichess: schaetzfehler(liKontrolle, umkehrMitte, umkehrMitte),
     };
     const zeilenGenau = [
       "| Modus gegen Plattform | Seiten | Mittel | Betrag | Streuung |",
@@ -238,7 +250,7 @@ describe("Eichung von Genauigkeit und Spielstärke", () => {
       "|---|---|---|---|---|---|---|",
       ...zeilenElo,
       "",
-      "## Kurven (innere Genauigkeit = Lichess-Formel)",
+      "## Kurven (innere Genauigkeit = Lichess-Formel, nur Züge bis zur Entscheidung)",
       "| Genauigkeit | chess.com | Lichess | Mitte |",
       "|---|---|---|---|",
       ...kurven,

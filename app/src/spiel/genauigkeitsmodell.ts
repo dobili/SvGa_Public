@@ -7,7 +7,10 @@
  * heraus (wie spiel/genauigkeit.ts, partiegenauigkeit). Ein größerer Abfall bestraft kleine
  * Fehler stärker; ein Polster unter 1 lässt Züge in entschiedenen Stellungen weniger zählen (bei
  * Lichess gleichen viele saubere Züge in längst gewonnener Stellung Fehler aus).
- * Abhängigkeiten: spiel/genauigkeit.ts (Gewinnwahrscheinlichkeit, Gewichte nach Lichess).
+ * Seit 0.2.99 gibt es dazu die innere Genauigkeit nur bis zur Entscheidung der Partie
+ * (spiel/entscheidung.ts), auf der die Kurven Genauigkeit → Spielstärke geeicht sind.
+ * Abhängigkeiten: spiel/genauigkeit.ts (Gewinnwahrscheinlichkeit, Gewichte nach Lichess),
+ * spiel/entscheidung.ts.
  */
 import type { Color } from "chessops/types";
 import {
@@ -16,6 +19,7 @@ import {
   partiegenauigkeit,
   zuggewichte,
 } from "./genauigkeit";
+import { gewerteteHalbzuege } from "./entscheidung";
 
 export interface Regler {
   /** Abfall der Zugkurve je Prozentpunkt Verlust (Lichess 0,04354). */
@@ -90,6 +94,34 @@ export function seitengenauigkeit(
   anfang: Color = "white",
 ): number | null {
   return genauigkeitAus(zugwerte(werte, seite, regler.abfall, anfang), regler.polster);
+}
+
+/**
+ * Die Züge einer Seite, die für die Spielstärke zählen: nur die vor dem Entscheidungspunkt
+ * (spiel/entscheidung.ts), mit den Lichess-Reglern wie die innere Genauigkeit der App.
+ * Warum: Die Kurven der Eichung müssen auf derselben Rechnung stehen wie die Schätzung in der App
+ * (spiel/genauigkeit.ts, seitenbilanz). Eingaben wie `zugwerte`. Ausgabe: die gezählten Zugwerte.
+ * Beispiel: Partie des Autors gegen Stufe 1 (19.10.2026): Von 43 schwarzen Zügen zählen nur die
+ * bis zum Damenverlust 9...Db8??, danach blieb Weiß über 90 %.
+ */
+export function zugwerteBisEntscheidung(
+  werte: readonly number[],
+  seite: Color,
+  anfang: Color = "white",
+): Zugwert[] {
+  const bis = gewerteteHalbzuege(werte.map(gewinnwahrscheinlichkeit));
+  const zuege = zugwerte(werte, seite, LICHESS_REGLER.abfall, anfang);
+  const erster = seite === anfang ? 0 : 1;
+  return zuege.filter((_, j) => erster + 2 * j < bis);
+}
+
+/** Innere Genauigkeit bis zur Entscheidung (Lichess-Rechnung); null ohne gezählte Züge. */
+export function innereGenauigkeit(
+  werte: readonly number[],
+  seite: Color,
+  anfang: Color = "white",
+): number | null {
+  return genauigkeitAus(zugwerteBisEntscheidung(werte, seite, anfang), LICHESS_REGLER.polster);
 }
 
 /** Regler halb zwischen zwei anderen (Schalterstellung „Mittelweg“). */

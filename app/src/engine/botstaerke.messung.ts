@@ -21,7 +21,11 @@ import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { werteAusEngine, type Rohwert } from "../spiel/eichungsrechnung";
-import { LICHESS_REGLER, seitengenauigkeit } from "../spiel/genauigkeitsmodell";
+import {
+  genauigkeitAus,
+  LICHESS_REGLER,
+  zugwerteBisEntscheidung,
+} from "../spiel/genauigkeitsmodell";
 import { staerkeUeberPartien } from "../spiel/staerkemodell";
 import { leiter, verankere, type Anker, type Begegnung } from "./eloleiter";
 import { GEGNER } from "./gegnerliste";
@@ -114,7 +118,10 @@ function bewertungen(): Map<string, Rohwert[]> {
   return ergebnis;
 }
 
-/** Innere Genauigkeiten beider Seiten je Anker-Stufe (Seiten mit mindestens zehn Zügen). */
+/**
+ * Innere Genauigkeiten beider Seiten je Anker-Stufe, wie „Deine Spielstärke“ seit 0.2.99 nur bis
+ * zur Entscheidung der Partie (Seiten mit mindestens zehn gezählten Zügen).
+ */
 function ankerGenauigkeiten(): Map<number, number[]> {
   const bewertet = bewertungen();
   const je = new Map<number, number[]>();
@@ -126,7 +133,9 @@ function ankerGenauigkeiten(): Map<number, number[]> {
         if (!roh || roh.length < 2 * MINDESTENS_ZUEGE) return;
         const werte = werteAusEngine(roh);
         for (const seite of ["white", "black"] as const) {
-          const g = seitengenauigkeit(werte, seite, LICHESS_REGLER);
+          const zuege = zugwerteBisEntscheidung(werte, seite);
+          if (zuege.length < MINDESTENS_ZUEGE) continue;
+          const g = genauigkeitAus(zuege, LICHESS_REGLER.polster);
           if (g !== null) je.set(stufe, [...(je.get(stufe) ?? []), g]);
         }
       });

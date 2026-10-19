@@ -3826,3 +3826,33 @@ ist (Regel 1). Dazu die Tablebase für die Endspielabbildungen.
   8.25 und 8.26 mit Weiß am Zug remis (Buch behauptet nichts anderes, Vorschlag für die
   Unterschrift in ZF4), 9.41 remis wie im Buch, 9.23 zu viele Steine, Engine Tiefe 32 nach
   1. Txa7 +0,03 (passt zum Buch). Syzygy lokal wäre knapp 1 GB gewesen, für diese Fälle unnötig.
+
+## Design-Überprüfung (19.10.2026, Opus, Zweig `design-ueberarbeitung`, Version 0.2.97)
+
+Auftrag des Autors vom 18.10.2026; am 19.10.2026 alle 18 Vorschläge angenommen („Alle, ja“,
+Rückfrage G1). Grundlage: Apple HIG, Material 3, WCAG 2.2, Regeln für Lern-Apps, Vergleich mit
+Lichess, chess.com und ChessKid. Bilder vorher und nachher im privaten Artifact
+<https://claude.ai/artifact/8HuxsERV6rwM2YyXvyfRii> (nicht im Repository, weil sie Abbildungen
+und Bildunterschriften des Buches zeigen). Je Vorschlag ein Commit mit „DSn“ im Betreff.
+
+- DS1: Schriftgrößen nur noch als Stufen `--groesse-*` in rem; 1 rem = 17 px bei
+  Standardschrift, folgt der Systemschrift (iPhone `font: -apple-system-body` nur mit
+  `-webkit-touch-callout`, Chrome Android `<meta name="text-scale" content="scale">`). Kleinste
+  Schrift 13 px. Fest bleiben die Beschriftung der Leiste unten (12 px, wie die Tab-Leiste am
+  iPhone) und Zahlen in Ring und Bewertungsbalken. Bei 200 % kein Überlauf bei 360 px.
+- DS2: `ui/stil/breit.css`: ab 600 px Breite im Querformat Leiste als Schiene links, jeder
+  Behälter mit `.brettbereich` als direktem Kind zweispaltig (Brett links in voller Höhe,
+  klebend; alles andere rechts), Bildschirme ohne Brett in 760 px Lesebreite; Tablet hoch
+  720 statt 640 px. Brett mit Bewertungsbalken nimmt die volle Breite.
+- DS3 runde Marke „am Zug“; DS4 Trainer in der Trainingsliste als Zeilen; DS5 Wort unter jedem
+  Brettsymbol (`*.kurz` in de.json); DS6 Trainerrunde ohne Beschreibung, mit
+  Fortschrittsbalken, Auftrag linksbündig 20 px; DS7 Reiter mit Symbol über dem Wort; DS8 Chips
+  und Aufklappzeilen 44 px; DS9 lange Titel der Kopfzeile; DS10 „Aufgeben“ klein rechts; DS11
+  Aufklappzeilen in Spielen mit Dreieck; DS12 Werkzeugleiste blendet rechts aus; DS13 „Alle
+  abhaken/zurücksetzen“ nebeneinander; DS14 „Über die App“ am Ende der Einstellungen; DS15
+  „Bewegung reduzieren“ überall; DS16 Knöpfe unter den Trainingsseiten der Website; DS17
+  Spielstärke-Tabelle unter 480 px mit Beschriftung über den Werten; DS18 Kapitelnummern im
+  Training wie im Buch.
+- Bewusst nicht geändert: Gegnerwahl (Bot-Chat), kein sichtbarer Seitentitel in den
+  Einstellungen (Wunsch 0.2.30), Werkzeugleiste bleibt waagerecht scrollbar (Wunsch 0.2.86).
+

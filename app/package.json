@@ -24,6 +24,7 @@
     "messen:opfer": "vitest run --config vitest.messung.config.ts src/spiel/opfer.messung.ts",
     "messen:vergleich": "vitest run --config vitest.messung.config.ts src/spiel/vergleich.messung.ts",
     "messen:eichung": "vitest run --config vitest.messung.config.ts src/spiel/eichung.messung.ts",
+    "messen:loesungen": "vitest run --config vitest.messung.config.ts src/training/loesungen.messung.ts",
     "deploy:probe": "wrangler deploy --dry-run"
   },
   "dependencies": {

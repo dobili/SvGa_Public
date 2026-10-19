@@ -376,3 +376,40 @@ test("Genauigkeit wie: seit 0.2.87 nur in der Auswertung, nicht mehr in den Eins
   await page.getByRole("tab", { name: "Training" }).click();
   await expect(page.getByRole("radiogroup", { name: "Genauigkeit wie" })).toHaveCount(0);
 });
+
+/** Beginnt eine ungewertete Partie mit der Farbe und gibt gleich auf. */
+async function aufgegebenePartie(seite: Page, farbe: "Weiß" | "Schwarz"): Promise<void> {
+  await seite.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await seite.getByRole("radio", { name: farbe, exact: true }).click();
+  await seite.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
+  await seite.getByRole("button", { name: "Partie beginnen" }).click();
+  await seite.getByRole("button", { name: "Aufgeben" }).click();
+  await seite.getByRole("button", { name: "Ja, aufgeben" }).click();
+  await expect(seite.getByTestId("partieende")).toContainText("Du hast aufgegeben.");
+}
+
+test("Partienliste: Filter als Symbole, mehrere zugleich, Sortierung (R22)", async ({ page }) => {
+  await starteImBrowser(page);
+  for (const farbe of ["Weiß", "Schwarz", "Weiß", "Schwarz"] as const) {
+    await aufgegebenePartie(page, farbe);
+  }
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const liste = page.locator(".partienliste li.partieeintrag");
+  const filter = page.getByTestId("partienfilter");
+  await expect(liste).toHaveCount(4);
+  await filter.getByRole("button", { name: "mit Schwarz" }).click();
+  await expect(liste).toHaveCount(2);
+  // Zwei Gruppen zugleich: Schwarz und gewonnen → nichts; dazu verloren (oder) → wieder zwei.
+  await filter.getByRole("button", { name: "gewonnen" }).click();
+  await expect(liste).toHaveCount(0);
+  await expect(page.getByText("Keine Partie passt zu diesem Filter.")).toBeVisible();
+  await filter.getByRole("button", { name: "verloren" }).click();
+  await expect(liste).toHaveCount(2);
+  await page.screenshot({ path: "test-results/bilder/partienfilter.png", fullPage: true });
+  await filter.getByRole("button", { name: "Filter zurücksetzen" }).click();
+  await expect(liste).toHaveCount(4);
+  // Sortierung: neueste zuerst (Schwarz), Richtung umkehren → älteste zuerst (Weiß).
+  await expect(liste.first().getByRole("img", { name: "Du hast Schwarz gespielt" })).toBeVisible();
+  await filter.getByRole("button", { name: /^absteigend/ }).click();
+  await expect(liste.first().getByRole("img", { name: "Du hast Weiß gespielt" })).toBeVisible();
+});

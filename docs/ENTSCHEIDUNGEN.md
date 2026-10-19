@@ -4326,3 +4326,16 @@ Rückfrage in AUFGABEN_AUTOR.
 - **V1:** Englisch bleibt in der Fassung für die Leser (`SPRACHDATEIEN = { de, en }` immer;
   `pruefe-veroeffentlichung.mjs` sucht nur noch die Aufgabenseite). „(preview)“ bleibt, bis die
   Buchdaten übersetzt sind (R25).
+
+## R21: Musterlösungen der Trainer gegen die Engine (19.10.2026, Opus)
+
+Wunsch des Autors: Keine Musterlösung, die katastrophal schlechter ist als der beste Zug; sonst
+ein neues Beispiel. Geprüft mit `npm run messen:loesungen` (Stockfish, Tiefe 14, ein Kern): alle
+1498 Züge des Lesers in den 674 Aufgaben des Taktiktrainers. Katastrophal heißt mehr als zwei
+Bauern schlechter als der beste Zug, Werte über sechs Bauern (klar gewonnen, Matt) gelten als
+gleich. Ergebnis: **kein** katastrophaler Lösungszug, es muss keine Aufgabe ersetzt werden.
+„Falle oder Köder“ ist schon mit der Engine gemessen (Verlust beim Nehmen, bester Zug), der
+Endspieltrainer nimmt die Züge der Engine selbst, Repertoire und Zug erraten folgen dem Buch und
+den Meisterpartien (Regel 1; „Zug erraten“ sagt seit W12 ohnehin, ob der eigene Zug gleichwertig
+war). Der Messlauf bleibt für spätere Datenstände.
+

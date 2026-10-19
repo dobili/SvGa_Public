@@ -1292,7 +1292,8 @@ Nummernbereiche der Chats bleiben gültig (A N400–N449, B N450–N499, D N500�
 Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
 
 1. **Autor:** alles in `docs/AUFGABEN_AUTOR.md` (Regel 8): Teil 1 Tests (neueste zuerst),
-   Teil 2 „Nur bestätigen“ (NA1, ZF1 bis ZF3), Buchbefunde (ZF4, B6, D1, D2), S24 nach N335,
+   Teil 2 „Nur bestätigen“ (NA1, ZF1 bis ZF3), S24 nach N335 (Buchbefunde sind seit 0.2.115
+   erledigt; der Autor übernimmt den Buchzweig `claude/funny-bardeen-e7wpzs` nach `main`),
    S20, E4, Frage zu N326; offene Frage zu CLAUDE.md (Satz über `claude/App_Fortschritt.md`
    streichen?).
 2. **Vom Autor am 19.10.2026 abgesegnet, in dieser Reihenfolge (Opus):**
@@ -1307,6 +1308,11 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
       Veröffentlichen: endgültiger Buchstand, Datenlauf ohne Entwürfe und Prüfung mit
       `--veroeffentlichung`, Version 1.0.0, Bau mit `npm run build:veroeffentlichung`
       (Cloudflare, `docs/VEROEFFENTLICHUNG.md`), Antworten V1 bis V6.
+3. **Vorgemerkt (Wunsch des Autors, 19.10.2026):** Die Erklärung zur Bot-Stärke
+   (`botstaerke.erklaerung` in `de.json` und `en.json`) sagt noch „benachbarte Stufen
+   überschneiden sich etwas“; seit 0.2.109 schließen die Bereiche aneinander an, ohne sich zu
+   überschneiden. Den Satz entsprechend ändern. Der Text gehört zum Bereich des Bot-Chats, also
+   mit ihm abstimmen oder dort erledigen lassen.
 
 ## Offene Punkte
 

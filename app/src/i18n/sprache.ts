@@ -9,6 +9,7 @@
  * Abhängigkeiten: keine.
  */
 import de from "./de.json";
+import en from "./en.json";
 
 /** Alle Schlüssel der deutschen Sprachdatei. Ein Tippfehler im Schlüssel fällt schon beim Bauen auf. */
 export type Textschluessel = keyof typeof de;
@@ -16,8 +17,19 @@ export type Textschluessel = keyof typeof de;
 /** Werte, die in Platzhalter wie {feld} eingesetzt werden. */
 export type Textwerte = Readonly<Record<string, string | number>>;
 
-/** Die Sprachdateien der App. Englisch kommt mit AP 18 als en.json dazu. */
-const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> = { de };
+/**
+ * Die Sprachdateien der App. Englisch seit 0.2.103 als Vorschau (Wunsch des Autors, 19.10.2026):
+ * Wörtliche Buchzitate fehlen in en.json und erscheinen deutsch, bis es die englische Fassung
+ * des Autors gibt (Liste in en.buchzitate.json).
+ */
+const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> = { de, en };
+/**
+ * Sprachen, die die App von selbst nach der Sprache des Geräts wählt. Englisch ist Vorschau und
+ * muss in den Einstellungen gewählt werden, bis es Buch- und Trainerdaten auf Englisch gibt.
+ */
+const FERTIGE_SPRACHEN: readonly string[] = ["de"];
+/** Sprachen mit eigenen Buch- und Trainerdaten (/daten/<sprache>/); sonst gelten die deutschen. */
+const DATENSPRACHEN: readonly string[] = ["de"];
 /** Sprache, wenn weder der Leser noch das Gerät eine verfügbare wählt. */
 export const GRUNDSPRACHE = "de";
 
@@ -114,6 +126,41 @@ export function startsprache(
 /** Die Sprache, in der gerade alle Texte erscheinen. */
 export function sprache(): string {
   return aktuelleSprache;
+}
+
+/** Die Sprachen, die beim Start nach dem Gerät gewählt werden (nicht die Vorschau-Sprachen). */
+export function fertigeSprachen(): string[] {
+  return verfuegbareSprachen().filter((code) => FERTIGE_SPRACHEN.includes(code));
+}
+
+/**
+ * Die Sprache der Buch- und Trainerdaten: die der App, wenn es Daten in ihr gibt, sonst Deutsch.
+ * Beispiel: App auf Englisch, noch ohne /daten/en/ → „de“ (Bildunterschriften deutsch, Züge darin
+ * mit englischen Buchstaben, siehe schach/notation.ts).
+ */
+export function datensprache(): string {
+  return DATENSPRACHEN.includes(aktuelleSprache) ? aktuelleSprache : GRUNDSPRACHE;
+}
+
+/** Gebietsschema für Zahlen und Daten je Sprache. */
+const GEBIETSSCHEMA: Readonly<Record<string, string>> = { de: "de-DE", en: "en-US" };
+
+/**
+ * Eine Zahl mit fester Zahl an Nachkommastellen im Format der Sprache.
+ * Beispiel: zahlText(1.25, 1) → „1,3“ auf Deutsch, „1.3“ auf Englisch (Bauerneinheiten, Kapitel 1).
+ * Sonderfall: fest = false lässt Nullen am Ende weg (zahlText(3, 1, false) → „3“).
+ */
+export function zahlText(zahl: number, nachkommastellen: number, fest = true): string {
+  return zahl.toLocaleString(GEBIETSSCHEMA[aktuelleSprache] ?? "de-DE", {
+    minimumFractionDigits: fest ? nachkommastellen : 0,
+    maximumFractionDigits: nachkommastellen,
+    useGrouping: false,
+  });
+}
+
+/** Ein Datum im Format der Sprache, etwa „19.10.2026“ oder „10/19/2026“. */
+export function datumText(datum: Date): string {
+  return datum.toLocaleDateString(GEBIETSSCHEMA[aktuelleSprache] ?? "de-DE");
 }
 
 /** Figurenbuchstaben je Sprache für die Notation (Konzept Abschnitt 6.5). */

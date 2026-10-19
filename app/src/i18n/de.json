@@ -2855,5 +2855,12 @@
   "lizenzen.lucide.herkunft": "lucide.dev",
   "loeschen.kurz": "Deine Daten liegen nur auf diesem Gerät.",
   "sicherung.erklaerung": "Eine Sicherung ist eine Datei mit allem, was die App über dich weiß: Fortschritt, Haken, Partien, Wertung und Einstellungen. Bewahre sie gut auf. Einspielen ersetzt alle Daten auf diesem Gerät (die App fragt vorher nach). So ziehen deine Daten auf ein neues Gerät um, und so kommen sie auf dem iPhone vom Safari-Tab in die installierte App. Klappt das Herunterladen nicht, nimm „Sicherung teilen“ (auf Handys): Damit schickst du die Datei per Mail an dich oder legst sie in Dateien ab.",
-  "einstellungen.fehlerarten.kurz": "Welche typischen Fehler die Engine absichtlich machen darf."
+  "einstellungen.fehlerarten.kurz": "Welche typischen Fehler die Engine absichtlich machen darf.",
+  "bauern.kuerzel.doppel": "D",
+  "bauern.kuerzel.rueck": "R",
+  "bauern.kuerzel.isolani": "I",
+  "bauern.kuerzel.haengend": "H",
+  "bauern.kuerzel.basis": "B",
+  "bauern.kuerzel.ungesund": "U",
+  "erzwingend.kuerzel.drohung": "D"
 }

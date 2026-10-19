@@ -23,7 +23,7 @@ import type { Color } from "chessops/types";
 import { Fragment, useMemo } from "react";
 import { aendereEinstellungen, useEinstellungen } from "../../app/einstellungen";
 import { gegnerstaerke } from "../../engine/botstaerke";
-import { t } from "../../i18n/sprache";
+import { t, zahlText } from "../../i18n/sprache";
 import type { Zugklasse, Zugurteil } from "../../spiel/auswertung";
 import {
   phasenurteil,
@@ -78,7 +78,7 @@ function genauigkeitstext(b: Seitenbilanz): string {
 
 /** Zahl mit deutschem Komma und einer Nachkommastelle. */
 function komma(zahl: number): string {
-  return zahl.toFixed(1).replace(".", ",");
+  return zahlText(zahl, 1);
 }
 
 /**

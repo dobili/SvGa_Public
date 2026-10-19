@@ -63,7 +63,7 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
       <Fundmeldung fund={fund} oeffne={oeffne} />
       {zuletzt && (
         <button type="button" className="knopf-link links" onClick={() => oeffne(zuletzt)}>
-          {t("buch.zuletzt")} <strong>Abb. {zuletzt}</strong>
+          {t("buch.zuletzt")} <strong>{t("abbildung.titel", { nummer: zuletzt })}</strong>
         </button>
       )}
     </form>

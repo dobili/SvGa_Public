@@ -9,7 +9,7 @@
  */
 import { useNavigation } from "../../app/navigationsKontext";
 import type { Uebungsverweis } from "../../app/stapel";
-import { t } from "../../i18n/sprache";
+import { datumText, t } from "../../i18n/sprache";
 import { useSpeicher } from "../../speicher/speicher";
 import {
   aufgabenAusKarten,
@@ -61,7 +61,7 @@ export function FaelligeWiederholungen() {
     return (
       <p className="hinweis" data-testid="faellig">
         {naechster
-          ? t("training.naechsteFaellig", { datum: naechster.toLocaleDateString("de-DE") })
+          ? t("training.naechsteFaellig", { datum: datumText(naechster) })
           : t("training.keineFaellig")}
       </p>
     );

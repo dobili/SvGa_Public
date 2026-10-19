@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.102. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.103. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.102“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.103“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,21 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.103 (etwa 10 Minuten; englische Fassung als Vorschau, dein Wunsch vom 19.10.2026, Opus)
+
+Alle 2857 Oberflächentexte gibt es jetzt auf Englisch, mit englischer Notation (B statt L,
+N statt S, R statt T, Q statt D, auch in Zügen der Engine und in deinen Bildunterschriften).
+Bildunterschriften, Glossar und Übungen kommen weiter aus den deutschen Buchdaten, bis es dein
+englisches Buch gibt. 27 Texte, die wörtlich aus dem Buch stammen, bleiben deutsch (Liste in
+Teil 2, EN2). Englisch muss man selbst wählen; die App startet nie von selbst auf Englisch.
+
+- [ ] N409. **Englisch einschalten:** Einstellungen › Reiter „Anzeige“ › „English (preview)“.
+      Alles wechselt sofort auf Englisch, auch nach dem Neuladen. Öffne Abb. 1.26: Überschrift
+      „Fig. 1.26“, Zugleiste „5. Nf3 Qb6 … 6. Bd3?!“, die Unterschrift deutsch, aber mit „5...
+      Qb6“. Spiele eine kurze Partie gegen die Engine und sieh dir die Auswertung an: Klingen die
+      Sätze natürlich? Zahlen mit Punkt („1.5“), Datum als „10/19/2026“. Zurück mit
+      Settings › Display › „Deutsch“. Notiere alles, was hölzern oder falsch klingt.
 
 ### Neu in 0.2.102 (etwa 3 Minuten, mit Engine; Uhr sofort gesichert, Opus)
 
@@ -207,9 +222,9 @@ nichts. Die Pipeline erkennt die Züge im Klartext der Bildunterschriften („Na
 Stellen); die englische Fassung zeigt sie später als „2. Bf4“.
 
 - [ ] N559. **Nichts hat sich verändert:** Öffne Abb. 1.2: Die Unterschrift lautet wie im Buch
-      „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ steht weiter
-      „Deutsch (Englisch folgt mit der englischen Ausgabe)“; eine Auswahl erscheint erst, wenn
-      es eine zweite Sprache gibt.
+      „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ stehen seit
+      0.2.103 „Deutsch“ (gewählt) und „English (preview)“; auch ein englisches Handy startet
+      auf Deutsch.
 - [ ] N560. **Lizenzen:** Einstellungen › „Lizenzen“ (oder Fußzeile der Startseite): Die Seite
       sieht aus wie vorher (alle Bausteine mit Lizenz, Herkunft und „Lizenztext“). Die Texte
       stehen jetzt in der Sprachdatei, damit die englische Fassung sie übersetzen kann.
@@ -447,6 +462,58 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       dabei. Wer üben will, schaltet sie in den Einstellungen ein (Reiter „Training“). Sagst du
       „an“, wird sie für alle die Voreinstellung.
 
+
+### EN. Englische Fassung (Opus, 19.10.2026; EN1 und EN3 schon umgesetzt, Widerspruch genügt)
+
+- [ ] EN1. **Vorläufige englische Namen der Buchbegriffe:** Empfehlung: geläufige englische
+      Schachbegriffe, wo es sie gibt; eigene Begriffe des Buches wörtlich übersetzt. Schon
+      umgesetzt in 0.2.103: Zählen = Counting, Angriffsregel = Attack rule, Todsünden = Deadly
+      sins, Schach-Röntgen-Regel = Chess X-ray rule, Zielbilanz = Goal balance, Faktorenbilanz =
+      Factor balance, Planbilanz = Plan balance, Falle oder Köder = Trap or bait, Prüffragen =
+      Check questions, Warnsignale = Warning signs, Leitfrage = Guiding question, Erzwingende
+      Züge = Forcing moves, Ruhe = Quiet, Erkennungsbild = Recognition pattern, Sicherheitsblick
+      = Safety check, Denkroutine = Thinking routine, Gesamt-Checkliste = Master checklist,
+      Lernsammlung = Study collection, Fehlerdatenbank = Mistake log, Strukturerkenner =
+      Structure spotter, Erst selbst denken = Think first, Stufen 1 bis 8 = Newcomer bis Expert.
+      Wenn dein englisches Buch andere Namen nimmt, sag sie mir; die Liste aller Begriffe steht
+      in `docs/ENGLISCH_BEGRIFFE.md`.
+- [ ] EN2. **Diese 27 Texte bleiben deutsch, bis du sie auf Englisch lieferst** (wörtlich aus
+      dem Buch; Grundlage war ein Abgleich mit dem LaTeX, dann eine Durchsicht). Du kannst sie
+      einfach als Liste „deutsch → englisch“ schicken:
+      - König auf die kurze Seite
+      - Gleichfarbige Läufer: Der Freibauer entscheidet
+      - Erkennungsbilder der Endspiel-Vertiefung
+      - Spiele dort, wohin deine Kette zeigt
+      - Was will mein Gegner?
+      - Welche Figur bringe ich dorthin?
+      - Merkregel: Ist die Zahl der Felder zwischen den Königen ungerade, hat der Spieler die Opposition, der gerade gezogen hat.
+      - Welche Figur?
+      - Was will mein Gegner?
+      - Der Plan in einem Satz
+      - Wo spiele ich?
+      - Regel 1: Aktiviere deinen König
+      - Regel 2: Nutze Opposition und Zugzwang
+      - Regel 3: Spiele geduldig
+      - Regel 4: Tausche klug
+      - Regel 5: Verteidige aktiv
+      - Regel 6: Rechne bis zur Umwandlung
+      - Die sechs goldenen Endspielregeln
+      - Wann ist die Rechnung fertig?
+      - 2. Kann der Gegner die gezogene Figur sofort schlagen?
+      - 1. Steht mein König danach sicher?
+      - 3. Erlaube ich ein Schach oder gar ein Matt?
+      - Sicherheitsblick vor dem Ziehen
+      - Ein Handbuch für Einsteiger und leicht Fortgeschrittene
+      - Am Ende jeder Variante das Patt prüfen.
+      - Vom Warnsignal zum Motiv
+      - Könige auf verschiedenen Flügeln: Wer öffnet zuerst?
+      Nicht in der Liste: kurze Buchwendungen innerhalb längerer App-Texte (etwa in den
+      Regelzeilen der Werkzeuge); sie sind mitübersetzt. Bildunterschriften, Glossar und
+      Übungen kommen aus den Buchdaten und bleiben deutsch, bis es dein englisches LaTeX gibt.
+- [ ] EN3. **Kürzel am Brett auf Englisch:** Empfehlung: englische Anfangsbuchstaben. Schon
+      umgesetzt in 0.2.103: Bauernschwächen D (doubled), I (isolated), B (backward, statt R),
+      H (hanging), C (chain base, statt B), U (unsound); Drohung T (threat, statt D). Auf
+      Deutsch bleibt alles wie im Buch.
 
 ### ZF. Konstruierte Zugfolgen und Tablebase (Opus, 19.10.2026; ZF1 bis ZF3 schon umgesetzt, Widerspruch genügt)
 

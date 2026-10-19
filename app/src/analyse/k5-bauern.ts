@@ -12,7 +12,7 @@
  * den Bauern-Zeilen der Skelettbilanzen (Bauerninseln, Deckungstest).
  */
 import type { Color } from "chessops/types";
-import { t } from "../i18n/sprache";
+import { t, type Textschluessel } from "../i18n/sprache";
 import type { Bauernprofil } from "../schach/bauernprofil";
 import type { Bauernschwaechen } from "../schach/bauernschwaechen";
 import { schwacheMitArt, type Schwaeche, type SchwacherBauer } from "../schach/skelettfiguren";
@@ -22,14 +22,17 @@ import { profil, type Stellungsprofil } from "./stellungsprofil";
 import { farbname } from "./texte";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
 
-/** Kurzbezeichnungen am Brett (Pflichtenheft 6.3), in der Reihenfolge der Buchtabelle. */
-const KUERZEL: Readonly<Record<Schwaeche, string>> = {
-  doppel: "D",
-  rueck: "R",
-  isolani: "I",
-  haengend: "H",
-  basis: "B",
-  ungesund: "U",
+/**
+ * Kurzbezeichnungen am Brett (Pflichtenheft 6.3), in der Reihenfolge der Buchtabelle; die
+ * Buchstaben stehen in der Sprachdatei (Englisch: backward B, chain base C, seit 0.2.103).
+ */
+const KUERZEL: Readonly<Record<Schwaeche, Textschluessel>> = {
+  doppel: "bauern.kuerzel.doppel",
+  rueck: "bauern.kuerzel.rueck",
+  isolani: "bauern.kuerzel.isolani",
+  haengend: "bauern.kuerzel.haengend",
+  basis: "bauern.kuerzel.basis",
+  ungesund: "bauern.kuerzel.ungesund",
 };
 const REIHEN = 8;
 
@@ -85,7 +88,7 @@ function markierungen(
     typ: "feld",
     farbe,
     feld: feldname(s.feld),
-    text: KUERZEL[s.art],
+    text: t(KUERZEL[s.art]),
   });
   const rot: Markierung[] = [
     ...liste.map((s) => mitKuerzel(s, "rot")),

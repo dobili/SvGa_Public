@@ -10,7 +10,7 @@
  * bisherige Verhalten mit Buchtreue 0,85. Die Liste kommt aus dem Eröffnungsindex.
  * Abhängigkeiten: schach/eroeffnungsindex.ts, useEroeffnungsindex, i18n.
  */
-import { t } from "../../i18n/sprache";
+import { sprache, t } from "../../i18n/sprache";
 import { eroeffnungsnamen, hauptlinieVon } from "../../schach/eroeffnungsindex";
 import { EROEFFNUNG_BUCH } from "../../spiel/partie";
 import { sanInSprache } from "../../schach/notation";
@@ -28,7 +28,7 @@ const FREI = "";
 function zugfolge(zuege: readonly string[]): string {
   const teile = zuege.slice(0, VORSCHAU_HALBZUEGE).map((san, i) => {
     const nummer = i % 2 === 0 ? `${i / 2 + 1}. ` : "";
-    return `${nummer}${sanInSprache(san, "de")}`;
+    return `${nummer}${sanInSprache(san, sprache())}`;
   });
   return `${teile.join(" ")}${zuege.length > VORSCHAU_HALBZUEGE ? " …" : ""}`;
 }

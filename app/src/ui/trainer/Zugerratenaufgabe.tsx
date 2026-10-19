@@ -15,7 +15,7 @@
 import { useMemo, useState } from "react";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { mitRatedurchgang, type Rateeintrag } from "../../speicher/trainerverlauf";
-import { sprache, t } from "../../i18n/sprache";
+import { datumText, sprache, t, zahlText } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { stellungAusFen, type Rolle } from "../../schach/stellung";
 import { eigeneAlsText, spieleZug, zugFelder } from "../../schach/weiterspielen";
@@ -57,7 +57,7 @@ function Frueher({ eintrag }: { eintrag: Rateeintrag | undefined }) {
       {t("zugerraten.frueher", {
         treffer: eintrag.treffer,
         versuche: eintrag.versuche,
-        datum: new Date(eintrag.datum).toLocaleDateString("de-DE"),
+        datum: datumText(new Date(eintrag.datum)),
       })}
     </p>
   );
@@ -78,7 +78,7 @@ function Vergleich({ stand }: { stand: Vergleichsstand | null }) {
       {stand.art === "rechnet" && t("zugerraten.vergleich.rechnet")}
       {urteil &&
         t(`zugerraten.vergleich.${urteil.art}`, {
-          unterschied: urteil.unterschied.toFixed(1).replace(".", ","),
+          unterschied: zahlText(urteil.unterschied, 1),
         })}{" "}
       {t("zugerraten.warum")}
     </p>

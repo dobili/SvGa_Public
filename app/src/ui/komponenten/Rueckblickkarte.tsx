@@ -16,7 +16,7 @@
  * ui/trainer/FehlerFormular.tsx.
  */
 import { useState } from "react";
-import { t } from "../../i18n/sprache";
+import { sprache, t, zahlText } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { fenNachZuegen } from "../../schach/weiterspielen";
 import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
@@ -67,7 +67,7 @@ function InDieLernsammlung({ partie, index }: { partie: Partie; index: number })
 const GLEICHWERTIG_UNTER = 0.05;
 
 function bauern(verlust: number): string {
-  return verlust.toFixed(1).replace(".", ",");
+  return zahlText(verlust, 1);
 }
 
 /** Der erste Satz je Klasse (0.2.40 wie bei chess.com). */
@@ -139,10 +139,10 @@ export function Rueckblickkarte({
   const san = partie.zuege[index]?.san ?? "";
   if (!urteil || !san) return null;
   const nummer = zugnummer(partie, index);
-  const zug = `${nummer} ${sanInSprache(san, "de")}`;
+  const zug = `${nummer} ${sanInSprache(san, sprache())}`;
   const besterUci = rueckblick.beste[index] ?? "";
   const besterSan = besterUci ? uciZuSan(fen, besterUci) : null;
-  const bester = besterSan ? `${nummer} ${sanInSprache(besterSan, "de")}` : "";
+  const bester = besterSan ? `${nummer} ${sanInSprache(besterSan, sprache())}` : "";
   const seite =
     partie.einstellung.gegner === "mensch"
       ? t(fen.split(" ")[1] === "b" ? "farbe.b" : "farbe.w")

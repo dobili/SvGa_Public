@@ -8,6 +8,7 @@
  */
 import { sanInSprache } from "../schach/notation";
 import { fenNach, uciZuSan } from "./zuege";
+import { sprache } from "../i18n/sprache";
 
 /** Ein Zug des Nebenzweigs. */
 export interface Zweigzug {
@@ -38,7 +39,7 @@ export function zweigzuege(fen: string, variante: readonly string[]): Zweigzug[]
     const san = uciZuSan(stellung, uci);
     const nachher = san ? fenNach(stellung, san) : null;
     if (!san || !nachher) break;
-    const text = mitNummer(stellung, sanInSprache(san, "de"), zuege.length === 0);
+    const text = mitNummer(stellung, sanInSprache(san, sprache()), zuege.length === 0);
     zuege.push({ text, san, vorher: stellung, nachher });
     stellung = nachher;
   }

@@ -3946,3 +3946,30 @@ der Test bestand auch vorher; er sichert das Verhalten für die Zukunft ab).
 Nebenbefund: Der Oberflächentest „Alle Daten löschen entfernt auch die Datenbank“ scheitert lokal,
 wenn er mit zwei Arbeitern neben `spielen.spec.ts` läuft, auch auf dem unveränderten Stand 0.2.101;
 allein und in GitHub Actions besteht er. Nicht durch diese Änderung verursacht.
+
+## Englische Fassung als Vorschau (19.10.2026, Opus, Zweig `englisch`, Version 0.2.103)
+
+Wunsch des Autors (19.10.2026): „erarbeite doch schon einmal eine englische Fassung der App. Nur
+bei Texten, die wörtlich aus dem Buch zitiert werden, müsstest du meine Fassung warten … Züge im
+Englischen teilweise anders notiert, zB B statt L.“
+
+- `app/src/i18n/en.json`: alle Schlüssel von de.json außer 27 wörtlichen Buchzitaten
+  (`en.buchzitate.json`, Rückfrage EN2); diese erscheinen deutsch. Gefunden per Abgleich jedes
+  Textes mit dem LaTeX (Stücke ab 30 Zeichen oder ganzer Text), dann von Hand gesichtet:
+  Regeln, Merksätze, Fragen und Überschriften des Buches bleiben deutsch, Schachbegriffe und
+  Werkzeugnamen werden übersetzt (vorläufige Namen, Rückfrage EN1, Liste
+  `docs/ENGLISCH_BEGRIFFE.md`). Übersetzt in sechs Teilen mit gemeinsamer Begriffsliste, danach
+  geprüft: gleiche Platzhalter, keine deutschen Figurenbuchstaben in Zügen, kein Dezimalkomma,
+  Knopfnamen in Sätzen gleich wie auf den Knöpfen (Test `i18n/en.test.ts`).
+- Englisch ist Vorschau: nur auf Wahl in den Einstellungen, nie nach der Sprache des Geräts
+  (`FERTIGE_SPRACHEN`). Buch- und Trainerdaten kommen weiter aus `/daten/de/`
+  (`datensprache()`), bis es englische Buchquellen gibt; Züge darin erscheinen englisch
+  (`buchzugInSprache`).
+- Notation überall nach der Sprache: Stellen, die fest „de“ übergaben (Auswertung, Rückblick,
+  Nebenzweige, Eröffnungswahl, Fehlerdatenbank, Denkroutine, Abweichung, Nachspielen), nehmen
+  jetzt `sprache()`. Zahlen und Daten über `zahlText` und `datumText` (1,5 / 1.5,
+  19.10.2026 / 10/19/2026). „Abb.“ an zwei Stellen aus dem Code in die Sprachdatei.
+- Kürzel am Brett aus dem Code in die Sprachdatei: Bauernschwächen und Drohung (Englisch B für
+  backward, C für chain base, T für threat; Rückfrage EN3). Der Notations-Trainer gibt auf
+  Englisch keinen Hinweis „das Buch schreibt S, L, T, D“ mehr.
+- Oberflächentest `englisch.spec.ts` (Wahl, Neuladen, Abbildung, Spielen, Training).

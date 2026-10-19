@@ -11,7 +11,14 @@
 import { useSyncExternalStore } from "react";
 import { vergissBuchdaten } from "../daten/laden";
 import { vergissTrainerdaten } from "../daten/trainerdaten";
-import { beiSprachwechsel, setzeSprache, sprache, startsprache } from "../i18n/sprache";
+import {
+  beiSprachwechsel,
+  fertigeSprachen,
+  setzeSprache,
+  sprache,
+  startsprache,
+  verfuegbareSprachen,
+} from "../i18n/sprache";
 import { liesMerker, schreibeMerker } from "./merker";
 
 /** Name des Merkers mit der Wahl des Lesers; fehlt er, gilt die Sprache des Geräts. */
@@ -23,9 +30,14 @@ function geraetesprachen(): readonly string[] {
   return navigator.languages.length > 0 ? navigator.languages : [navigator.language];
 }
 
-/** Setzt beim Start die Sprache (Wahl des Lesers, sonst Gerät) und `<html lang>`. */
+/**
+ * Setzt beim Start die Sprache (Wahl des Lesers, sonst Gerät) und `<html lang>`. Nach dem Gerät
+ * gelten nur fertige Sprachen; die englische Vorschau gibt es nur auf Wahl (seit 0.2.103).
+ */
 export function starteSprache(): void {
-  setzeSprache(startsprache(liesMerker(MERKER_SPRACHE), geraetesprachen()));
+  const gewaehlt = liesMerker(MERKER_SPRACHE);
+  const wahlGilt = gewaehlt !== null && verfuegbareSprachen().includes(gewaehlt);
+  setzeSprache(wahlGilt ? gewaehlt : startsprache(null, geraetesprachen(), fertigeSprachen()));
   document.documentElement.lang = sprache();
 }
 

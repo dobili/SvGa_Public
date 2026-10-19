@@ -61,6 +61,10 @@ Teil fertig ist.
       Bedenkzeit und „Gewertete Partie“; darunter zwei Klappen: „Spielhilfen“ (mit „Züge
       zurücknehmen erlauben“, Symbole am Brett, Werkzeuge und Engine) und „Eröffnung festlegen“
       (nur aus der Grundstellung gegen die Engine). Übersichtlich so?
+- [ ] N609. **Buchzitate auf Englisch (EN2):** Einstellungen › Anzeige › „English (preview)“,
+      dann Nachschlagen › Endspielregeln: „The six golden endgame rules“ mit „Rule 1: Activate
+      your king“ bis „Rule 6: Calculate through to promotion“. Alle 27 Zitate stehen in
+      `docs/ENTSCHEIDUNGEN.md`. Passen sie, bis dein englisches Buch erscheint?
 
 ---
 

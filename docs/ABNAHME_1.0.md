@@ -104,7 +104,7 @@ oder entscheiden).
 | 5   | **Rechtliches:** Impressum und Datenschutz prüfen (N294), Lizenzseite (N560); optional Rückfrage bei einer Fachperson (Pflichtenheft 2)                                                                           | Autor                                                 | Claude ist kein Anwalt; Texte sind vorhanden und online.                                                                                                                                                                                                                                                                              |
 | 6   | **Domain:** mehrere Jahre im Voraus bezahlt, Verlängerung automatisch, Zugangsdaten außerhalb des Repositorys dokumentiert                                                                                        | Autor                                                 | A9.                                                                                                                                                                                                                                                                                                                                   |
 | 7   | **Sammelfreigabe der Texte**, die seit dem 17.10.2026 „vorerst als abgesegnet“ gelten; Bestätigung ZF1 bis ZF3 (29 konstruierte Partien) und „Nur bestätigen“ (NA1, S21, S22, F1–F5, X5, T1–T5, C1–C9, K1–K5, E3) | Autor                                                 | A6. Ein Satz („alle ok außer …“) genügt laut Aufgabenliste.                                                                                                                                                                                                                                                                           |
-| 8   | **Englische Vorschau:** in 1.0 zeigen oder ausblenden (Empfehlung: ausblenden, siehe 3.4)                                                                                                                         | Autor entscheidet, Claude baut                        | Nach Regel 9 kann Claude die Empfehlung gleich umsetzen; Rückbau ist einfach.                                                                                                                                                                                                                                                         |
+| 8   | **Englische Vorschau:** in 1.0 zeigen (entschieden V1, 19.10.2026, siehe 3.4)                                                                                                                                     | Autor entscheidet, Claude baut                        | Nach Regel 9 kann Claude die Empfehlung gleich umsetzen; Rückbau ist einfach.                                                                                                                                                                                                                                                         |
 | 9   | **Schutz gegen Entwürfe:** Prüfung in CI bzw. im Build, die `"status": "entwurf"` in `app/public/daten/` und `inhalte/de/trainer/` ablehnt                                                                        | Claude allein                                         | Heute 0 Entwürfe, aber nichts verhindert einen versehentlichen Lauf mit `--mit-entwuerfen`.                                                                                                                                                                                                                                           |
 | 10  | **Test „jede Nummer öffnet ihre Abbildung“** über alle Nummern aus `index.json`; Verhalten bei Abb. 0.2 (Foto) festlegen                                                                                          | Claude allein (Test), Autor (0.2)                     | A1.                                                                                                                                                                                                                                                                                                                                   |
 | 11  | **Trainernamen und Wege einfrieren** (stehen ab dem Druck im Buch)                                                                                                                                                | Autor bestätigt, Claude hält fest                     | Pflichtenheft 2 und 7.                                                                                                                                                                                                                                                                                                                |
@@ -181,18 +181,11 @@ zufällig darauf stoßen, und um 46 KB im Offline-Speicher.
 
 ### 3.4 Englische Vorschau
 
-Heute: Einstellungen › Anzeige › „English (preview)“ (`SPRACHDATEIEN = { de, en }` in
-`src/i18n/sprache.ts`); die App startet nie von selbst auf Englisch (`FERTIGE_SPRACHEN = ["de"]`).
-Bildunterschriften, Glossar, Übungen, 27 Buchzitate (`en.buchzitate.json`) und Bot-Namen bleiben
-deutsch; N409 und EN1 bis EN3 sind offen.
-
-Empfehlung: in 1.0 ausblenden. Grund: Ein englischer Leser bekommt eine halb deutsche App, und
-Pflichtenheft 2 sieht Englisch „später in derselben App“ vor (AP 18). Umsetzung mit demselben
-Schalter wie in 3.3: in der veröffentlichten Fassung nur `{ de }` in `SPRACHDATEIEN`. Dann zeigt
-`SprachWahl` (`EinstellungenKarte.tsx`) von selbst die Zeile „Deutsch (Englisch folgt mit der
-englischen Ausgabe)“ (`einstellungen.sprache.wert`), und `startsprache` fällt für Leser, die „en“
-gewählt hatten, auf Deutsch zurück. `tests/e2e/englisch.spec.ts` und `sprache.spec.ts` laufen im
-Testbuild. Entscheidung beim Autor (Abschnitt 2, Punkt 8).
+Entschieden (V1, 19.10.2026): Englisch bleibt auch in 1.0 wählbar, weil vor 1.0 der Rest übersetzt
+wird, unabhängig vom englischen Buch. Seit 0.2.116 gilt `SPRACHDATEIEN = { de, en }` in beiden
+Fassungen, und die 27 Buchzitate sind übersetzt (EN2). Offen bis 1.0: Buchdaten, Trainerdaten,
+Trainingsseiten und Bot-Namen auf Englisch (Arbeitsliste R25), danach „(preview)“ weglassen und
+„en“ in `FERTIGE_SPRACHEN` und `DATENSPRACHEN`.
 
 ### 3.5 Versionsnummer 1.0.0
 

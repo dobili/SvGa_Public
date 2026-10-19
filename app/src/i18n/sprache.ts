@@ -18,13 +18,12 @@ export type Textschluessel = keyof typeof de;
 export type Textwerte = Readonly<Record<string, string | number>>;
 
 /**
- * Die Sprachdateien der App. Englisch seit 0.2.104 als Vorschau (Wunsch des Autors, 19.10.2026):
- * Wörtliche Buchzitate fehlen in en.json und erscheinen deutsch, bis es die englische Fassung
- * des Autors gibt (Liste in en.buchzitate.json). In der Fassung für die Leser (AP 17,
- * VEROEFFENTLICHUNG=1) fehlt die Vorschau; dann steht in den Einstellungen nur „Deutsch“.
+ * Die Sprachdateien der App. Englisch seit 0.2.104 als Vorschau (Wunsch des Autors, 19.10.2026).
+ * Seit 0.2.116 auch die 27 wörtlichen Buchzitate auf Englisch (EN2, nach gängigen englischen
+ * Fassungen) und Englisch auch in der Fassung für die Leser (V1: Der Rest wird vor 1.0 übersetzt,
+ * unabhängig vom englischen Buch).
  */
-const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> =
-  __VEROEFFENTLICHUNG__ ? { de } : { de, en };
+const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> = { de, en };
 /**
  * Sprachen, die die App von selbst nach der Sprache des Geräts wählt. Englisch ist Vorschau und
  * muss in den Einstellungen gewählt werden, bis es Buch- und Trainerdaten auf Englisch gibt.

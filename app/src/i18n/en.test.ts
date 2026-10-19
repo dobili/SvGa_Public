@@ -48,8 +48,9 @@ describe("Wechsel auf Englisch", () => {
   it("zeigt englische Texte, Buchzitate deutsch, Buchdaten deutsch", () => {
     setzeSprache("en");
     expect(t("abbildung.titel", { nummer: "1.26" })).toBe("Fig. 1.26");
-    const zitat = buchzitate[0] as keyof typeof de;
-    expect(t(zitat)).toBe(DEUTSCH[zitat]);
+    // Seit 0.2.116 sind auch die Buchzitate übersetzt (EN2); die Liste ist leer.
+    expect(buchzitate).toEqual([]);
+    expect(t("regeln.titel")).toBe("The six golden endgame rules");
     expect(datensprache()).toBe("de");
   });
 

@@ -4308,3 +4308,21 @@ Mit Notiz (umgesetzt oder in der Arbeitsliste R1 bis R26, `docs/FORTSCHRITT.md`)
 Dazu neue Wünsche (R7, R9 bis R12, R14 bis R17, R20 bis R24) und der Auftrag, alles selbst zu
 machen, auch in Dateien des Bot-Chats; offene Fragen nach Claudes Empfehlung und am Ende als
 Rückfrage in AUFGABEN_AUTOR.
+
+## EN2 und V1 umgesetzt (19.10.2026, Opus, Version 0.2.116)
+
+- **EN2:** Die 27 Buchzitate sind nach gängigen englischen Fassungen übersetzt und stehen in
+  `en.json` (`en.buchzitate.json` ist leer): King to the short side · Same-colored bishops: the
+  passed pawn decides · Recognition patterns of the endgame deep dive · Play where your pawn
+  chain points · What does my opponent want? · Which piece do I bring there? · Rule of thumb: if
+  the number of squares between the kings is odd, the player who has just moved has the
+  opposition. · Which piece? · The plan in one sentence · Where do I play? · Rule 1: Activate your
+  king · Rule 2: Use opposition and zugzwang · Rule 3: Be patient · Rule 4: Trade wisely · Rule 5:
+  Defend actively · Rule 6: Calculate through to promotion · The six golden endgame rules · When
+  is the calculation finished? · 1. Is my king safe afterwards? · 2. Can my opponent capture the
+  moved piece right away? · 3. Do I allow a check or even mate? · Safety check before you move ·
+  A handbook for beginners and improving players · At the end of every line, check for
+  stalemate. · From warning sign to motif · Kings on opposite wings: who opens first?
+- **V1:** Englisch bleibt in der Fassung für die Leser (`SPRACHDATEIEN = { de, en }` immer;
+  `pruefe-veroeffentlichung.mjs` sucht nur noch die Aufgabenseite). „(preview)“ bleibt, bis die
+  Buchdaten übersetzt sind (R25).

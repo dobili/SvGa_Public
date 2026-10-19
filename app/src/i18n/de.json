@@ -2837,7 +2837,7 @@
   "lizenzen.materialbretter.herkunft": "über Lichess (github.com/lichess-org/lila, public/images/board); als WebP gespeichert",
   "lizenzen.portraets.name": "Porträts der Gegner und zur Wahl für eigene Bots (Stil „Personas“ von Draftbit, über DiceBear)",
   "lizenzen.portraets.lizenz": "CC BY 4.0 (Zeichnungen); MIT (Code von Florian Körner)",
-  "lizenzen.portraets.herkunft": "personas.draftbit.com, dicebear.com; je Gegner erzeugt, einheitlicher Hintergrund",
+  "lizenzen.portraets.herkunft": "personas.draftbit.com, dicebear.com; je Gegner erzeugt, ohne Hintergrund (die App legt die Farbe dahinter)",
   "lizenzen.eroeffnungsnamen.name": "Eröffnungsnamen außerhalb des Buches (chess-openings)",
   "lizenzen.eroeffnungsnamen.lizenz": "CC0 1.0 (gemeinfrei)",
   "lizenzen.eroeffnungsnamen.herkunft": "Lichess, github.com/lichess-org/chess-openings; Familiennamen übersetzt",

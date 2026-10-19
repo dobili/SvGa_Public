@@ -21,6 +21,12 @@ const ZIEL = resolve(dirname(fileURLToPath(import.meta.url)), "../public/gegner"
 const GROESSE = 128;
 const RUNDUNG = 18;
 const HINTERGRUND = ["3b4a6b"];
+/*
+ * Seit 0.2.102 (DS30) ohne eigenen Hintergrund: Die App legt je nach hellem oder dunklem Modus die
+ * Farbe dahinter (ui/stil/abstimmung.css, --portraet-grund). Die Farbe oben bleibt für DiceBear
+ * stehen, damit die Zufallsfolge und damit die Gesichter gleich bleiben; das Rechteck fällt danach weg.
+ */
+const HINTERGRUND_RECHTECK = /<rect fill="#3b4a6b" width="64" height="64" x="0" y="0" \/>/;
 
 /** Haarfarben der Personas: dunkel, braun, rot, blond, grau. */
 const HAAR = { dunkel: "362c47", braun: "6c4545", rot: "f27d65", blond: "f29c65", grau: "dee1f5" };
@@ -80,7 +86,9 @@ WAHL.forEach(([hair, farbe, haut, eyes, bart, mouth], i) => {
     mouth: [mouth],
     facialHair: bart ? [bart] : undefined,
     facialHairProbability: bart ? 100 : 0,
-  }).toString();
+  })
+    .toString()
+    .replace(HINTERGRUND_RECHTECK, "");
   writeFileSync(join(ZIEL, `${kennung}.svg`), svg);
 });
 console.log(`${WAHL.length} Porträts zur Wahl nach ${ZIEL}`);

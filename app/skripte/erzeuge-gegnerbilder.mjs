@@ -24,6 +24,12 @@ const ZIEL = resolve(dirname(fileURLToPath(import.meta.url)), "../public/gegner"
 const GROESSE = 128;
 const RUNDUNG = 18;
 const HINTERGRUND = ["3b4a6b"];
+/*
+ * Seit 0.2.102 (DS30) ohne eigenen Hintergrund: Die App legt je nach hellem oder dunklem Modus die
+ * Farbe dahinter (ui/stil/abstimmung.css, --portraet-grund). Die Farbe oben bleibt für DiceBear
+ * stehen, damit die Zufallsfolge und damit die Gesichter gleich bleiben; das Rechteck fällt danach weg.
+ */
+const HINTERGRUND_RECHTECK = /<rect fill="#3b4a6b" width="64" height="64" x="0" y="0" \/>/;
 const GRAU = ["dee1f5"];
 /** Natürliche Haarfarben (dunkel, braun, rot, blond); Grau nur für die Älteren. */
 const NATUERLICH = ["362c47", "6c4545", "f27d65", "f29c65"];
@@ -139,7 +145,9 @@ for (const [kennung, gruppe] of Object.entries(GEGNER)) {
     hairColor: grau ? GRAU : NATUERLICH,
     eyes: ["open", "glasses", "happy", "wink"],
     mouth: ["smile", "bigSmile", "smirk", "lips"],
-  }).toString();
+  })
+    .toString()
+    .replace(HINTERGRUND_RECHTECK, "");
   writeFileSync(datei, svg);
   geschrieben += 1;
 }

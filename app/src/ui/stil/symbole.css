@@ -9,19 +9,19 @@
 :root {
   --stufe-1: #ffffff;
   --stufe-1-text: var(--navy);
-  --stufe-2: #f3d24c;
+  --stufe-2: #ecc94b;
   --stufe-2-text: var(--navy);
-  --stufe-3: #f08a2c;
+  --stufe-3: #e8842f;
   --stufe-3-text: var(--navy);
-  --stufe-4: #2e7d36;
+  --stufe-4: #357a3e;
   --stufe-4-text: #ffffff;
-  --stufe-5: #2563b0;
+  --stufe-5: #2d63a8;
   --stufe-5-text: #ffffff;
-  --stufe-6: #6d3fa8;
+  --stufe-6: #66479c;
   --stufe-6-text: #ffffff;
-  --stufe-7: #6e4122;
+  --stufe-7: #6b4527;
   --stufe-7-text: #ffffff;
-  --stufe-8: #111111;
+  --stufe-8: #161616;
   --stufe-8-text: #ffffff;
   --stufe-rand: var(--linie-stark);
 }
@@ -57,19 +57,21 @@
   font-size: var(--groesse-fein);
 }
 
+/* Helle Gürtel bekommen im hellen Modus einen dunkleren Rand ihrer Farbe (DS33, 3:1 gegen Weiß). */
 .stufe-1 {
   background: var(--stufe-1);
   color: var(--stufe-1-text);
+  border-color: var(--rand-bedien);
 }
 .stufe-2 {
   background: var(--stufe-2);
   color: var(--stufe-2-text);
-  border-color: var(--stufe-2);
+  border-color: #b08a1a;
 }
 .stufe-3 {
   background: var(--stufe-3);
   color: var(--stufe-3-text);
-  border-color: var(--stufe-3);
+  border-color: #b2601c;
 }
 .stufe-4 {
   background: var(--stufe-4);
@@ -96,13 +98,23 @@
   background: var(--stufe-8);
   color: var(--stufe-8-text);
 }
+
+/* „Zum Spaß“: ruhig statt Regenbogen (DS33), Konfetti in Gold auf der Kartenfarbe. */
 .stufe-spass {
-  background: conic-gradient(#e2559a, #f3d24c, #3fa7d6, #59c27a, #e2559a);
-  color: var(--navy);
-  border-color: var(--flaeche);
+  background: var(--flaeche);
+  color: var(--gold-text);
+  border-color: var(--gold-text);
 }
-.stufe-spass svg {
-  filter: drop-shadow(0 0 1px #ffffff);
+
+/* Im Dunkeln trägt jede Marke einen hellen Rand, sonst verschwinden Braun, Lila und Schwarz. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-farbschema="hell"]) .stufenmarke:not(.stufe-spass) {
+    border-color: var(--stufe-rand);
+  }
+}
+
+:root[data-farbschema="dunkel"] .stufenmarke:not(.stufe-spass) {
+  border-color: var(--stufe-rand);
 }
 
 /* Stufenzeile der Bots: Pfeil, Marke, Titel in zwei Zeilen, rechts die Gesichter. */

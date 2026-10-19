@@ -24,6 +24,7 @@ import "./ui/stil/uebung.css";
 import "./ui/stil/bausteine.css";
 import "./ui/stil/gegnerbild.css";
 import "./ui/stil/symbole.css";
+import "./ui/stil/abstimmung.css";
 import "./ui/stil/breit.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";

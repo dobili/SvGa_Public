@@ -1,4 +1,7 @@
-// Erzeugt die App-Symbole (Startbildschirm, Browser-Tab) aus dem Springer des Buches.
+// Erzeugt das Symbol für den Browser-Tab (symbol.svg) aus dem Springer des Buches.
+// Seit 0.2.102 (DS37) kommen die Symbole für den Startbildschirm aus dem Buchcover
+// (erzeuge-appsymbol.mjs); dieses Skript schreibt nur noch symbol.svg, weil der goldene Springer
+// mit Pfeilen bei 16 bis 32 Pixeln nicht mehr zu erkennen ist.
 //
 // Warum: Android und iPhone brauchen Symbole als PNG in festen Größen. Gezeichnet wird der
 // weiße Springer aus der Figurenschrift SkakNew (wie in den Diagrammen) auf Navy.
@@ -45,13 +48,7 @@ function symbolSvg({ schattenriss, figur }, rand, ecken) {
 
 async function main() {
   const pfade = await springerpfade();
-  const varianten = [
-    { datei: "symbol.svg", rand: 0.04, ecken: 160, groesse: 0 },
-    { datei: "symbol-192.png", rand: 0.04, ecken: 0, groesse: 192 },
-    { datei: "symbol-512.png", rand: 0.04, ecken: 0, groesse: 512 },
-    { datei: "symbol-maskierbar-512.png", rand: 0.16, ecken: 0, groesse: 512 },
-    { datei: "apple-touch-icon.png", rand: 0.08, ecken: 0, groesse: 180 },
-  ];
+  const varianten = [{ datei: "symbol.svg", rand: 0.04, ecken: 160, groesse: 0 }];
   const browser = await chromium.launch(
     process.env.CHROMIUM_PFAD ? { executablePath: process.env.CHROMIUM_PFAD } : {},
   );

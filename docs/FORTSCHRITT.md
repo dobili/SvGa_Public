@@ -59,7 +59,7 @@ Jede neue Sitzung liest zuerst `CLAUDE.md`, dann diese Datei, und macht beim Abs
 - Typen aus Schemas: `app/skripte/erzeuge-typen.mjs` → `src/daten/generiert/` vor jedem tsc/Build
 - Engine-Kopie beim Build: `app/skripte/kopiere-engine.mjs` → `public/engine/`
 - Größenbudget beim Build: `app/skripte/pruefe-groesse.mjs` (25 MB; aktuell 2,5 MB)
-- App-Symbole: `app/skripte/erzeuge-symbole.mjs` (weißer Springer auf Navy) → `public/symbole/`
+- App-Symbole: seit 0.2.102 `app/skripte/erzeuge-appsymbol.mjs` (goldener Springer aus dem Cover, Startbildschirm) und `app/skripte/erzeuge-symbole.mjs` (weißer Springer auf Navy, nur Browser-Tab `symbol.svg`) → `public/symbole/`
 - Cover als WebP: `app/public/cover.webp` (aus `buch/a1/cover_a4.pdf`, 480 px breit)
 - CI `.github/workflows/pruefen.yml`: Pipeline (ruff, pytest, Daten gegen Schemas ohne
   Buchquellen), App (Typen, ESLint, Prettier, Vitest, Build, Größenbudget,

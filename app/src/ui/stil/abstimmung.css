@@ -1,0 +1,155 @@
+/*
+ * Farbabstimmung hell und dunkel (seit 0.2.102, Vorschläge DS30 bis DS36, Wunsch des Autors vom
+ * 19.10.2026: „stimmig, nicht zu bunt, nicht zu kontrastarm“). Grundlage war eine Messung aller
+ * Bildschirme: kein Text verfehlt den Kontrast, aber Zeichen, Marken und Rahmen von Bedienelementen
+ * lagen oft unter 3:1 (WCAG 1.4.11), Haken und Regler zeigten das Blau des Systems, und navy
+ * Kreise verschwanden im Dunkelmodus auf den navy Karten. Jede Farbe steht hier als Token mit
+ * hellem und dunklem Wert; die Regeln darunter nutzen nur die Token. Wird nach symbole.css geladen.
+ */
+:root {
+  /* DS30: Hintergrund der Porträts, helles Navy (die SVG-Dateien sind durchsichtig). */
+  --portraet-grund: #dfe5ee;
+  /* DS31: Haken, Optionsfelder und Regler in der Farbe der Hauptknöpfe statt Systemblau. */
+  --akzent: var(--navy);
+  /* DS32: Zahlkreise (Kapitel, Schritte, Anfangsbuchstaben); im Dunkeln heller mit Rand. */
+  --marke-grund: var(--navy);
+  --marke-text: var(--creme);
+  --marke-rand: transparent;
+  /* DS34: Rahmen von Chips, Zweitknöpfen und Eingabefeldern, 3:1 gegen Weiß und Creme. */
+  --rand-bedien: #958a73;
+  /* DS33/DS35: goldene Striche (Fortschrittsringe) 3:1 gegen Weiß; Gold als Fläche bleibt. */
+  --gold-strich: #b08a1a;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-farbschema="hell"]) {
+    --portraet-grund: #3b4a6b;
+    --akzent: var(--gold);
+    --marke-grund: #3b4f75;
+    --marke-rand: #8a9ab5;
+    --rand-bedien: #6b7fa3;
+    --gold-strich: var(--gold);
+  }
+}
+
+:root[data-farbschema="dunkel"] {
+  --portraet-grund: #3b4a6b;
+  --akzent: var(--gold);
+  --marke-grund: #3b4f75;
+  --marke-rand: #8a9ab5;
+  --rand-bedien: #6b7fa3;
+  --gold-strich: var(--gold);
+}
+
+/* ---------- DS30: Porträts auf hellem Navy (hell) und Schieferblau (dunkel) ---------- */
+img.gegner-portraet,
+.gesichterreihe img {
+  background: var(--portraet-grund);
+}
+
+/* ---------- DS31: Haken, Optionsfelder und Regler in den Farben der App ---------- */
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+.haken-zeile input,
+.lernziel input,
+.stufenregler input[type="range"] {
+  accent-color: var(--akzent);
+}
+
+/* ---------- DS32: Zahlkreise auch im Dunkelmodus sichtbar ---------- */
+.kapitel-nummer,
+.kapitelnummer,
+.schritt-nummer,
+.gegner-zeichen {
+  background: var(--marke-grund);
+  color: var(--marke-text);
+  box-shadow: inset 0 0 0 1.5px var(--marke-rand);
+}
+
+.kapitel-nummer.mit-anteil {
+  box-shadow: none;
+  background:
+    linear-gradient(var(--marke-grund), var(--marke-grund)) padding-box,
+    conic-gradient(var(--gold-strich) var(--anteil), var(--rand-bedien) 0) border-box;
+}
+
+.kapitel-nummer.mit-anteil.erledigt,
+.kapitel-nummer.erledigt {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--navy);
+  box-shadow: none;
+}
+
+.ring-fuellung {
+  stroke: var(--gold-strich);
+}
+
+/* ---------- DS34: Rahmen von Bedienelementen kräftiger ---------- */
+.chip:not([aria-pressed="true"], [aria-checked="true"]),
+.chip-leise[aria-pressed="true"],
+.knopf-zweit,
+.suchfeld,
+.auswahlfeld {
+  border-color: var(--rand-bedien);
+}
+
+/* Großes Ergebniszeichen am Partieende: Rand in der Farbe des Zeichens. */
+.ergebnismarke-gross.ergebnis-verloren {
+  border-color: var(--rot-text);
+}
+
+.ergebnismarke-gross.ergebnis-remis {
+  border-color: var(--rand-bedien);
+}
+
+/* ---------- DS35: Zeichen für Warum-Fragen mit Rand ---------- */
+.zusatz-gesperrt {
+  border-color: var(--rand-bedien);
+}
+
+.zusatz-offen {
+  box-shadow: inset 0 0 0 1.5px var(--gold-text);
+}
+
+.zusatz-erledigt {
+  box-shadow: inset 0 0 0 1.5px var(--gruen-text);
+}
+
+/* Zugarten wie bei chess.com, aber so weit abgedunkelt, dass das weiße Zeichen 3:1 erreicht. */
+.klassenmarke-brillant {
+  background: #1aa5a0;
+}
+
+.klassenmarke-bester {
+  background: #72a242;
+}
+
+.klassenmarke-sehrGut {
+  background: #7ea03c;
+}
+
+.klassenmarke-gut {
+  background: #7f9d71;
+}
+
+.klassenmarke-ungenau {
+  background: #ba8c00;
+}
+
+.klassenmarke-fehler {
+  background: #d6801a;
+}
+
+/* ---------- DS36: Partien gegen eine Engine-Stufe zeigen die Stufenmarke ---------- */
+.partie-stufe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partie-stufe > .stufenmarke {
+  width: 36px;
+  height: 36px;
+}

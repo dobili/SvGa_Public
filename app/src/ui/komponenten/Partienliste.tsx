@@ -39,6 +39,7 @@ import { BRETTFARBEN, FELD } from "../brett/masse";
 import { LetzteSpielstaerke } from "./LetzteSpielstaerke";
 import type { Genauigkeitsmodus } from "../../spiel/staerkemodell";
 import { Knopfsymbol } from "./Knopfsymbol";
+import { Stufenmarke } from "./Stufenmarke";
 import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe der kleinen Figur in der Liste (Bildpunkte). */
@@ -138,11 +139,20 @@ export function LaufendePartie({ partie }: { partie: Partie }) {
   );
 }
 
-/** Bild des Gegners: Bot-Porträt oder Anfangsbuchstabe der Stufe; bei Mensch gegen Mensch keins. */
+/**
+ * Bild des Gegners: Bot-Porträt, bei der Engine ohne Bot die Stufenmarke (DS36, statt des
+ * Buchstabens „S“ für „Stufe“); bei Mensch gegen Mensch keins.
+ */
 function Gegnerbild({ partie }: { partie: Partie }) {
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
   const e = partie.einstellung;
   if (e.gegner === "mensch") return null;
+  if (e.bot === null)
+    return (
+      <span className="gegnerbild partie-stufe">
+        <Stufenmarke stufe={stufe(e.stufe).nummer} />
+      </span>
+    );
   const name =
     gegnername(e.bot, e.botName) ?? t("spielen.partieStufe", { nummer: stufe(e.stufe).nummer });
   return <GegnerBild bot={e.bot} eigene={eigene} name={name} />;

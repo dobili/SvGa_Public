@@ -2210,6 +2210,7 @@
   "spielen.partieLoeschenFrage": "Delete this unrated game?",
   "spielen.partieLoeschenJa": "Yes, delete",
   "spielen.partiezeile": "{datum} · {stufe} · {zuege} moves",
+  "spielen.partiezeileEinZug": "{datum} · {stufe} · 1 move",
   "spielen.partieGewertet": "Rated game",
   "spielen.etwa": "about {wert}",
   "spielen.genau": "{wert}% accuracy",

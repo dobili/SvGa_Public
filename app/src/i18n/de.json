@@ -2236,6 +2236,7 @@
   "spielen.partieLoeschenFrage": "Diese ungewertete Partie löschen?",
   "spielen.partieLoeschenJa": "Ja, löschen",
   "spielen.partiezeile": "{datum} · {stufe} · {zuege} Züge",
+  "spielen.partiezeileEinZug": "{datum} · {stufe} · 1 Zug",
   "spielen.partieGewertet": "Gewertete Partie",
   "spielen.etwa": "etwa {wert}",
   "spielen.genau": "{wert} % genau",

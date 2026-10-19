@@ -5,7 +5,7 @@
 // man die App so auf dem Startbildschirm wieder. Bei 60 Pixeln (Startbildschirm) bleibt der
 // Springer gut erkennbar, bei 16 bis 32 Pixeln (Browser-Tab) nicht mehr; dort bleibt der schlichte
 // Springer aus erzeuge-symbole.mjs (symbol.svg). Der Ausschnitt wird zum Rand hin in Navy
-// abgedunkelt, damit die roten Figuren im Hintergrund nicht ablenken. Seit 0.2.107 (Wunsch des
+// abgedunkelt, damit die roten Figuren im Hintergrund nicht ablenken. Seit 0.2.108 (Wunsch des
 // Autors: „knackiger“) mit mehr Kontrast, etwas Sättigung und Schärfe; die Sättigung bleibt
 // niedrig, weil das Gold sonst ins Orange-Rote kippt.
 //
@@ -33,7 +33,7 @@ const AUSSCHNITT = { x: 400, y: 800, seite: 980 };
 const ABDUNKELN_AB = 0.45;
 const ABDUNKELN_DECKUNG = 0.97;
 const NAVY_TIEF = "11, 20, 36";
-/** Farbe „knackiger“ (0.2.107): Kontrast und etwas Sättigung als Canvas-Filter, dann Schärfe. */
+/** Farbe „knackiger“ (0.2.108): Kontrast und etwas Sättigung als Canvas-Filter, dann Schärfe. */
 const FARBFILTER = "contrast(1.2) saturate(1.1)";
 const SCHAERFE = 0.6;
 

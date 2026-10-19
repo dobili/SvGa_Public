@@ -208,7 +208,9 @@ Alles plausibel entschieden, wie vom Autor gewünscht; was er anders will, ist j
   20261016), damit derselbe Lauf dieselben Aufgaben liefert. Für „Rettung“ (Dauerschach, Patt)
   und „Räumung“/„Ablenkung“/„Batterie“/„Desperado“ hat Lichess kein eigenes Thema; dort gibt es
   nur Buchaufgaben. **Rückfrage A2:** 8 Lichess-Aufgaben je Motiv und Stufe (637) und 12 je
-  Fallenart und Stufe (etwa 120): genug, zu viel, oder lieber mehr Stufen 1 bis 3?
+  Fallenart und Stufe (etwa 120): genug, zu viel, oder lieber mehr Stufen 1 bis 3? (Steht für den
+  Autor als T2 in `docs/AUFGABEN_AUTOR.md`, Teil 2 „Nur bestätigen“; A1, A3, A4, A5 dort als T1,
+  T3, T4, T5.)
 - **Schwierigkeit gemessen statt geschätzt:** Stufen aus der Lichess-Wertung (1000, 1300, 1600,
   1900 als Grenzen, etwa die Spielstärken, die die Stufen 2 bis 5 des Buches meinen); Buchaufgaben
   über die Messklasse (Suchtiefe bis zum Lösungszug, Länge) an den Median der Lichess-Aufgaben

@@ -1263,7 +1263,13 @@ dieser Datei; was daraus offen ist, steht hier oder in `docs/AUFGABEN_AUTOR.md`.
      und Schriftgröße nach der Systemeinstellung; nicht nach `main` vor dem Absegnen (DS1 …).
      Nummern N450–N499.
    - **Chat C (Opus):** Testliste des Autors vorprüfen und kürzen, Rückfragen zum Abhaken
-     aufbereiten (nur `AUFGABEN_AUTOR.md` und `ENTSCHEIDUNGEN.md`).
+     aufbereiten (nur `AUFGABEN_AUTOR.md` und `ENTSCHEIDUNGEN.md`). **Erledigt (19.10. früh):**
+     Teil 1 N158 bis N349 eingeordnet: 25 überholt, 137 mit Playwright selbst geprüft und
+     gestrichen (Liste in ENTSCHEIDUNGEN, Abschnitt „Aufgabenliste entlastet“), 21 bleiben mit
+     kurzem Text für Auge, Gefühl oder Schachurteil des Autors. Die dabei gefundenen Fehler sind
+     auf dem Zweig `aufgaben-zurueck` behoben (Version 0.2.95). Teil 2 hat oben „Nur bestätigen“
+     (eine Zeile je Rückfrage), darunter Buchbefunde und Entscheidungen. Offen nur: Antworten
+     des Autors einarbeiten; N180 (Uhr nach dem Schließen) falls er den Fehler am Handy sieht.
    - **Chat D:** Zugfolgen für alle Abbildungen, die aus einer realistischen Partie erwachsen
      können (Entscheidung des Autors 18.10.2026), gekennzeichnet als „konstruiert“; Tablebase
      für 8.25, 8.26, 9.23, 9.41. Nummern N500–N549, Rückfragen ZF.

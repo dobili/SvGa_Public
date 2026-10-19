@@ -3223,3 +3223,558 @@ Weitere Fehler, die das Durchprüfen von Teil 1 mit Playwright fand, alle behobe
   sich nicht abhaken. Jetzt gelten ein oder zwei Großbuchstaben.
 - Kein Fehler: Die Rochade heißt im Trainer „O-O“ mit Buchstaben O, wie im Buch (190-mal O-O,
   nie 0-0).
+
+## Aufgabenliste entlastet (18.10.2026, Opus, Zweig `claude/aufgabenliste-entlasten-6y3tgp`, nur Doku)
+
+Auftrag des Autors vom 18.10.2026: `docs/AUFGABEN_AUTOR.md` kürzer machen, damit er auf dem Handy
+nur noch liest, was wirklich sein Auge, sein Schachgefühl oder seine Entscheidung braucht.
+
+### Teil 2 neu geordnet
+
+Teil 2 hat jetzt oben „Nur bestätigen“ mit je einer Zeile für jede Rückfrage, die Claude schon
+entschieden (meist umgesetzt) hat, damit der Autor mit „alle ok außer …“ antworten kann; darunter
+„Buchbefunde“ (B6, D1, D2) und „Braucht deine Entscheidung oder Handlung“ (S24, S20, E4). Die
+Kennungen sind geblieben (die App speichert Haken und Notizen je Kennung). Rückfrage A2 der
+Trainerdaten ist dieselbe Frage wie T2 und steht dort mit Verweis; A1, A3, A4 und A5 entsprechen
+T1, T3, T4 und T5.
+
+- **K6 überholt durch 0.2.85 und S24:** K6 fragte, ob die Stufen ohne Elo-Zahl bleiben sollen
+  („eine Elo-Zahl zeigt die App nicht“). Seit 0.2.85 zeigt die App je Stufe und Bot eine Zahl aus
+  der Elo-Leiter (Abschnitt „Elo-Zahl der Bots“); die offene Frage zu Namen und Lage der Skala
+  ist S24.
+
+### Teil 1: von Claude geprüft am 18.10.2026 (gelöscht)
+
+Geprüft mit Playwright an der gebauten App (Chromium, Pixel 7 mit 412 px Breite, hell und dunkel,
+mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
+
+- **N279** (Warnton und roter Hinweis bei gesperrter Figur): von Claude geprüft am 18.10.2026: in einer Partie zu zweit Lc1 in der Grundstellung („hat gerade keinen Zug“), h7 im Schach nach 3. Lb5+ („Erst das Schach beantworten“) und Sc6 gefesselt nach 4. a3: je der Satz und das rote Feld, beides nach unter 3 s weg. Den Warnton prüft der Autor bei N278
+- **N280** (Schlagring statt Punkt): von Claude geprüft am 18.10.2026: Sf3 angetippt: auf e5 ein goldener Ring mit Navy-Rand, auf leeren Zielfeldern Punkte
+- **N306** (Lizenzen): von Claude geprüft am 18.10.2026: Einstellungen › Lizenzen: Lichess-Puzzle-Eintrag mit CC0 1.0, beim Eintrag der App github.com/dobili/SvGa_Public
+- **N308** (Einstellungen neu geordnet): von Claude geprüft am 18.10.2026: Reiter mit Symbolen, Holz-Vorschau unter Figuren, Anzeige und Training wie beschrieben, Erklärungen hinter den Fragezeichen von „Daten auf diesem Gerät“ (mit iPhone und Safari) und „Datensicherung“, keine Fehlerarten-Karte mehr. Abweichung im Text: Ringe gibt es für Abbildungen und Lernziele, Übungen und Trainer stehen als Zeilen, sobald es welche gibt
+- **N309** (Kapitelseiten): von Claude geprüft am 18.10.2026: Kapitel 1: Fortschritt, „Training und Übungen“ (Trainer vor Übungen), Abbildungen mit Erklärung, „Alle abhaken“/„Alle zurücksetzen“, Abschnitte anfangs zu mit Pfeil und „0 von 7“, „Abschnitt 1.1 abhaken“ wird zu „Haken in 1.1 lösen“, Ring in der Buchliste
+- **N322** (Neue Figurensätze): von Claude geprüft am 18.10.2026: drei Gruppen mit je drei Sätzen und „wie im Buch“; Kiefer & Kirsche und Spatial erscheinen am Brett von Abb. 1.26; alle Sätze mit Lizenz unter Lizenzen
+- **N323** (Reiter ohne Wackeln): von Claude geprüft am 18.10.2026: Reiterzeile mit overflow-x auto und overflow-y hidden (nur waagerecht verschiebbar)
+- **N329** (Rahmen der gewählten Kachel im Dunkelmodus): von Claude geprüft am 18.10.2026: gewählte Brett- und Figurenkachel dunkel Gold (201, 162, 39), hell Navy. Abweichung im Text: Die gewählte Gegnerkachel ist auch hell golden
+- **N342** (Einstellungen): von Claude geprüft am 18.10.2026: Karten „Über die App“, „Einstellungen“ und „Deine Wertung“; Vorschau 2 × 2 Felder (je 66 px)
+- **N343** (Training): von Claude geprüft am 18.10.2026: 13 Kapitelkarten mit Nummer, 19 Trainerzeilen mit Symbol, Fragezeichen und „Trainieren“; Übungen als Nummernraster, gelöste grün. „Halb angefangen“ ließ sich mit einem falschen Zug nicht auslösen (bleibt offen); nicht weiter verfolgt
+- **N344** (Auswertung auf dem Handy): von Claude geprüft am 18.10.2026: Partie zu zweit (24 Halbzüge, aufgegeben): Karte „Spielstärke“ 348 px breit, Tabellen innerhalb, kein Überlauf der Seite; „Genauigkeit wie“ in einer Zeile mit Fragezeichen
+- **N345** (Trainer): von Claude geprüft am 18.10.2026: alle 19 „Trainieren“-Knöpfe rund mit Abspielsymbol, kein Name abgeschnitten oder vom Fragezeichen verdeckt
+- **N346** (Bretter): von Claude geprüft am 18.10.2026: Gruppe „Holz und Material“ da, „Genauigkeit wie“ fehlt unter Einstellungen › Training
+- **N160** (Warum-Fragen): von Claude geprüft am 18.10.2026: Warum-Fragen an 1.26, 2.2 und 5.17 nach 30 s aufgeklappt, nirgends „vorbereitet“
+- **N162** (Vorlauf): von Claude geprüft am 18.10.2026: Zugfolgen von 6.11 (61 Halbzüge) und 11.68 (18) führen von der Grundstellung genau zur Stellung der Abbildung; in der App von „Zum Anfang“ Halbzug für Halbzug bis zum Brett der Abbildung
+- **N163** (Zielbilanz, Abb. 2.40): von Claude geprüft am 18.10.2026: 2.40: „Zentrum: ja – … e4 ist angegriffen“, e4 grau umrahmt (Sicht Weiß), darunter „Sxe4 gewinnt den Bauern e4 nicht: 3... Sxe4 4. De2 …“; 2.24: „d4 und e4“
+- **N164** (Todsünden, Abb. 1.8): von Claude geprüft am 18.10.2026: 1.8: Überschrift „Mögliche Todsünden“, Hinweis „Nur Kandidaten …“, „3... Df6: mögliche verfrühte Dame“
+- **N165** (Phase): von Claude geprüft am 18.10.2026: 11.28: „Eröffnung … Schwarz muss noch rochieren“, auch nach Wechsel der Sicht (über Röntgen; die Karte „Phase“ hat keinen eigenen Schalter); 12.2: Mittelspiel
+- **N166** (Faktorenbilanz): von Claude geprüft am 18.10.2026: 3.6 „Weiß: teils – rochiert, aber ohne f-Bauern vor dem König“; 3.60 nur „Matt: Die Partie ist entschieden.“; 3.23 beginnt mit „Erst das Schach und die Taktik zu Ende rechnen …“
+- **N167** (Warnsignale): von Claude geprüft am 18.10.2026: die drei Sätze an 4.29 (W4), 4.8 (W2) und 4.13 (W5) wörtlich
+- **N168** (Skelett-Röntgen): von Claude geprüft am 18.10.2026: 5.30 Richtung für Weiß; 5.27 Hebel c4–c5 gold, weitere Hebel grau; 5.40 Läufer f4 mit goldenem Rahmen in Sicht Weiß; 5.13 „Luftloch h3: der König hat Luft auf h2“
+- **N169** (Planfindung): von Claude geprüft am 18.10.2026: 6.4 in Sicht Schwarz „Der Gegenschlag ist schon da: d5 greift e4 an“; 6.17 LAP „Dringe mit Turm d2 nach d7 ein“ mit goldenem Pfeil; 6.32 nur „Erst das Schach beantworten …“
+- **N170** (Taktik): von Claude geprüft am 18.10.2026: 7.14 alle Kandidaten mit „Material bis zur Ruhe“, „Am stärksten: 2. Th8+“, am Brett „2+!“; 7.10 „Sf7+: Abzug.“; 7.28 „De1+: Dauerschach.“; Übung an 7.53 „Dxc7: Überlastung.“
+- **N171** (Opposition): von Claude geprüft am 18.10.2026: 8.23 nur Kf3, 8.36 der Quadrat-Satz, 8.53 „Reserve-Tempo h4“
+- **N172** (Schlüsselfelder und Quadrat): von Claude geprüft am 18.10.2026: 8.29 „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“, 8.50 Satz zu verbundenen Freibauern, 8.46 „Nach a6 läuft der Bauer a6 durch“
+- **N173** (Turmendspiel und Erkennungsbilder): von Claude geprüft am 18.10.2026: 9.3 Philidor-Satz, 9.23 „Mehrere Bauern am Brett“, 9.37 „getrennte Freibauern b5 und g5: meist gewonnen“
+- **N174** (Kandidaten): von Claude geprüft am 18.10.2026: 12.4: „Auf b5: Dxf7# (Matt) – scheidet aus“, b5 nicht bester Kandidat; 12.3: „Auf f5: Sxe6 …“
+- **N196** (Getauschte Abbildungen): von Claude geprüft am 18.10.2026: 2.29, 2.30, 3.31 bis 3.34 von „Zum Anfang“ nachgespielt (an Abzweigen über „Andere Züge hier“): Das Brett stimmt jeweils mit der Abbildung überein
+- **N202** (Nummernsprung): von Claude geprüft am 18.10.2026: Tipp auf den Titel öffnet und schließt „Abbildung öffnen“, „1,28“ öffnet 1.28, „1.99“ meldet „gibt es nicht“ mit Vorschlägen, „Zurück“ führt zurück
+- **N203** (Werkzeugtexte ohne Zahl): von Claude geprüft am 18.10.2026: 1.30 „Sxd4: gewinnt den Bauern“, 4.11 „Lxf3 (schlägt die Dame mit Gewinn)“, 7.14 „+5 (gewinnt die Dame); Engine +6,5“. An 4.13 lautet die Prüffrage „Sxd5 nimmt Material: Warum lässt Schwarz das zu?“, weil der nächste Buchzug selbst schlägt (so gewollt)
+- **N247** (Berliner Endspiel (C8)): von Claude geprüft am 18.10.2026: 5.30 in Sicht Schwarz „Minderheit am Königsflügel (3 gegen 4)“ ohne Minderheitsangriff, Fazit „Schwarz spielt am Damenflügel …“; 5.32 für Weiß „Minderheitsangriff“
+- **N274** (Werkzeuge (C1, C2, C5)): von Claude geprüft am 18.10.2026: 3.68 „Weiß: schlecht – der König steht im Schach und hat nur einen Zug“; 4.21 nur g2; 9.34 „Dauerschach“; Startseite „in Richtung Elo 2000“
+- **N288** (Isolani aus Besitzersicht und Sonderfall 6. Reihe): von Claude geprüft am 18.10.2026: 5.17 Satz gegen den Isolani für Schwarz und Besitzer-Satz für Weiß; 5.18 ohne Isolani-Satz; 8.29 aus Sicht Schwarz „Weiß gewinnt mit e7 (Sonderfall 6. Reihe).“
+- **N300** (Leerfälle der Werkzeuge (U12)): von Claude geprüft am 18.10.2026: die Leer-Sätze an 8.2 (Opposition, Schlüsselfelder, Quadrat), 1.26 (Sechs Regeln) und 8.1 (Zielbilanz, Angriffsregel) wörtlich und je einmal, ohne Legende; Zielbilanz im Mittelspiel (12.2) und Faktorenbilanz an 3.24 voll
+- **N313** (Phase nach dem Glossar (S17)): von Claude geprüft am 18.10.2026: 11.4 zeigt den Glossar-Satz wörtlich, 11.12 Mittelspiel; die eigene Lesart in Partien prüfte die Gruppe Spielen (N233)
+- **N182** (Übungen im Kapitel): von Claude geprüft am 18.10.2026: Kapitel 1 zeigt „Übungen lösen (… offen von …)“ und die Übungen 1.40 bis 1.42; eine Übung öffnet mit „Die Aufgabe steht im Buch … Abb. 1.40“ und Brett
+- **N183** (Lösen auf dem Brett (Abb. 1.40)): von Claude geprüft am 18.10.2026: Hinweis 1 (Motiv), 2 (Figur), 3 (goldener Pfeil b5–c7, aus dem SVG gelesen); falscher Zug abgewiesen, Springer zurück auf b5; richtiger Zug „Richtig!“, Erklärung mit Sc7+, „Nächste Übung“
+- **N184** (Mehrzügige Lösung (Abb. 1.41)): von Claude geprüft am 18.10.2026: 1.41: nach cxd5 antwortet die App, bis die Lösung mit „Richtig!“ endet; der akzeptierte erste Zug exd5 zählt ebenfalls
+- **N185** (Lösung zeigen (Q6)): von Claude geprüft am 18.10.2026: „Lösung zeigen“ stellt die Lösung aufs Brett mit Erklärung; im Kapitel trägt 1.41 „gelöst“
+- **N186** (Denkaufgabe (Kapitel 0, Abb. 0.27)): von Claude geprüft am 18.10.2026: 0.27: „im Kopf oder auf Papier“, Erklärung, drei Knöpfe, „Gespeichert“
+- **N187** (Erst selbst denken): von Claude geprüft am 18.10.2026: „Erst selbst denken“ locker und streng mit Satz; bei „streng“ Hinweise und „Lösung zeigen“ erst nach dem ersten (auch falschen) Zug
+- **N188** (Wiederholung): von Claude geprüft am 18.10.2026: „Als Nächstes am …“ unter „Fällige Wiederholungen“; mit Uhr +48 h fällig, „Jetzt wiederholen“ öffnet die Übung
+- **N189** (Koordinaten, Feld finden): von Claude geprüft am 18.10.2026: 16 Felder aus beiden Richtungen mit Zeit (Oberflächentest), falscher Tipp zeigt das gesuchte Feld rot
+- **N190** (Zug aufschreiben und ausführen): von Claude geprüft am 18.10.2026: Zug aufschreiben ohne Schachzeichen gilt; „Zug ausführen“ mit Rochade, en passant und Umwandlung samt Figurenwahl
+- **N191** (Gangarten): von Claude geprüft am 18.10.2026: nach „Prüfen“ „Die Figur hat N Zielfelder“ mit Markierungen
+- **N192** (Zähltrainer, Bilanz zählen): von Claude geprüft am 18.10.2026: nach „Prüfen“ Rechnung und Pfeile des Werkzeugs „Zählen“ am Brett
+- **N197** (Neue Nummern der Übungen): von Claude geprüft am 18.10.2026: Kapitelseiten: Kapitel 3 Übungen 14 bis 18, Kapitel 4 19 bis 22, Kapitel 12 83 bis 86
+- **N236** (Taktiktrainer): von Claude geprüft am 18.10.2026: Thema und Stufe wählbar, „Aufgabe 1 von 8“, Quelle (Buch oder Lichess) und Stufe, Hinweise 1 bis 3, „Lösung zeigen“, Motivfrage (Oberflächentest), bei Schwarz am Zug gedrehtes Brett
+- **N237** (Falle oder Köder): von Claude geprüft am 18.10.2026: grauer Pfeil, Warnsignale, „Nehmen“/„Nicht nehmen“ führen zu „Eine Falle“ oder „Ein Geschenk“ mit Fortsetzung
+- **N238** (Strukturerkenner): von Claude geprüft am 18.10.2026: Brett nur mit Bauern und Königen, Schritt 1 starke Felder bzw. schwache Bauern mit gold/rot/grau, danach der Plan
+- **N239** („Nur dieser Zug“ bei Übungen): von Claude geprüft am 18.10.2026: 1.40 mit „Nur dieser Zug führt zum Ziel …“, 1.42 mit Lb4+ ohne den Satz
+- **N249** (Wiederholung in Taktik und „Falle oder Köder“ (U9)): von Claude geprüft am 18.10.2026: „Lösung zeigen“ setzt einen Termin; mit Uhr +30 h „Taktiktrainer: 1 fällig“ und eine Runde nur mit dieser Aufgabe
+- **N251** (Faktorenbilanz-Trainer): von Claude geprüft am 18.10.2026: vier Faktoren, je Zeile „App:“ bzw. „Buch:“, darunter die ganze Bilanz
+- **N252** (Repertoire-Trainer): von Claude geprüft am 18.10.2026: als Schwarz steht 1. e4 schon da, Brett gedreht; als Weiß falscher Zug mit Pfeil (Oberflächentest)
+- **N253** (Endspieltrainer öffnen): von Claude geprüft am 18.10.2026: Auswahl mit Gruppen und Anzahl (alles gemischt 80, nicht mehr 78), Stufen alle und 1 bis 5, Runde mit sechs Aufgaben
+- **N263** (Fallen aus den Eröffnungskapiteln): von Claude geprüft am 18.10.2026: 17 Buchaufgaben in den Fallendaten (darunter 2.27, 2.28, 3.33, 3.67), „Aus dem Buch: Abb. …“ in der Runde
+- **N266** (Studien lösen): von Claude geprüft am 18.10.2026: Saavedra: 1. c7 mit Buchantwort; falscher Zug zeigt goldenen Pfeil, nachgezogen geht es weiter
+- **N267** (Zug erraten): von Claude geprüft am 18.10.2026: Opernpartie: „Getroffen: 1 von 1“, „In der Partie geschah Sf3.“, „1 von 2“ (Oberflächentest)
+- **N269** (Endspieltrainer, 9.23 und 9.41): von Claude geprüft am 18.10.2026: Endspieldaten: 9.23 Remis für Weiß, 9.41 und 9.42 Remis für Schwarz
+- **N270** (Übungen mit Zügen, die das Buch stützt (T1)): von Claude geprüft am 18.10.2026: Übung 6: Df6 und Sxd4 abgewiesen, Lb4+ „gleich gut“; 15: dxc3 abgewiesen, Sf6 gilt; 83: Te1 gilt; 11: Dc7 abgewiesen; 39: Sxf6+ abgewiesen
+- **N271** (Notation mit englischen Buchstaben (U6)): von Claude geprüft am 18.10.2026: Zug mit englischem Figurenbuchstaben gilt mit „Im Buch stehen deutsche Buchstaben (S, L, T, D)“
+- **N272** (Strukturerkenner (W6, T5)): von Claude geprüft am 18.10.2026: Daten: 5.43 „Stellung öffnen“, 5.44 „Raum nutzen“, 11.70 „Vorposten besetzen“; Plan-Sätze wie beschrieben
+- **N273** (Studien (W11)): von Claude geprüft am 18.10.2026: aufklappbare Zeile „Die vier Prüfungen für Studien (Kapitel 10)“
+- **N301** (Fehlerdatenbank): von Claude geprüft am 18.10.2026: Eintrag mit FEN, Auswertung, Vorschlag, Löschen (Oberflächentest); aus dem Rückblick einer Partie öffnet „In die Fehlerdatenbank“ das Formular mit der Stellung vor dem Zug
+- **N302** (Denkroutine-Trainer): von Claude geprüft am 18.10.2026: Minute zählt herunter, Kandidat und Antwort nebeneinander ohne Überlauf, Vergleich mit der Engine (Oberflächentest)
+- **N303** (Planbilanz-Übung): von Claude geprüft am 18.10.2026: Planfragen mit Antworten, LAP-Lösung als goldener Pfeil, Wettrennen (Oberflächentest); 6.6 Weiß 2, Schwarz 3 (Werkzeugtest „Wo?“)
+- **N304** (Abweichungsmodus): von Claude geprüft am 18.10.2026: Engine verlässt das Buch, Urteil, Einschätzung, drei Aufgaben (Oberflächentest)
+- **N305** (30-Minuten-Plan): von Claude geprüft am 18.10.2026: Tabelle beider Tage, Uhr, „Schritt erledigt“, Neuladen (Oberflächentest); „Letzte Partie ansehen“ öffnet den Rückblick, „Einheit geschafft …“, Tag B mit „Zur Fehlerdatenbank“
+- **N315** (Strukturerkenner mit Feldern zuerst (W5)): von Claude geprüft am 18.10.2026: „Schritt 1 von 3: Welche Felder …“ wörtlich; 5.8 ergibt b6 und d5 (Komponententest, die Oberfläche wählt Aufgaben zufällig)
+- **N316** (Faktorenbilanz-Trainer mit dem Urteil des Buches (W9)): von Claude geprüft am 18.10.2026: Buchaufgabe 3.77: vier Zeilen „Buch: …“ und „Verglichen mit der Faktorenbilanz des Buches zu Abb. 3.77.“; ohne Buchbilanz „App:“
+- **N317** (Warum-Fragen im Repertoire-Trainer (W10)): von Claude geprüft am 18.10.2026: Spanisch als Schwarz: nach 3... a6 zugeklappt die Warum-Frage „Warum spielt Schwarz 3... a6?“
+- **N318** (Zug erraten mit Vergleich (W12)): von Claude geprüft am 18.10.2026: Opernpartie 2. d4 statt Sf3: Vergleich der Engine und „warum der Meister anders zog“ (Oberflächentest)
+- **N161** (Werkzeuge in der Partie): von Claude geprüft am 18.10.2026: Zählen, Röntgen und W1–W7 am Brett, Röntgen zeigt die Karte und gezogen wird weiter, Bündel „Taktik“ mit „Erzwingende Züge“; in der ruhigen Ansicht nur „Brett drehen“ und „Ruhige Ansicht“
+- **N179** (Uhr im Hintergrund): von Claude geprüft am 18.10.2026: Sichtbarkeit „hidden“ ausgelöst: Die Engine zog im Hintergrund, die Uhr des Lesers stand 20 s auf 5:00. Die Anzeige zeigte nach der Rückkehr einen Takt lang 5:21; behoben in 0.2.95, danach 5:00, 4:59 …
+- **N208** (Eröffnung wählen): von Claude geprüft am 18.10.2026: Vorschau „Hauptvariante: 1. e4 e5 2. Sf3 Sc6 3. Lb5 a6 …“, Untertitel „… · Spanische Partie“, gespielt 1. e4 e5 2. Sf3 Sc6 3. Lb5 a6
+- **N209** (Eröffnung verlassen): von Claude geprüft am 18.10.2026: Spanisch gewählt, 1. d4: Die Engine antwortet ohne Fehlermeldung
+- **N210** (Stufe je Phase): von Claude geprüft am 18.10.2026: „Eigene Stufe“ 1 · 4 · 2: Untertitel „Stufen 1 · 4 · 2 (Eröffnung · Mittelspiel · Endspiel) · du spielst Weiß“; 4 · 4 · 4: „Stufe 4 · Gelegenheitsspieler …“
+- **N211** (Eröffnung „frei“): von Claude geprüft am 18.10.2026: „frei (die Engine spielt selbst)“ vorgewählt, darunter „eine Eröffnung des Buches (zufällig)“ und 24 Eröffnungen
+- **N212** (Auswertung ohne Wartezeit): von Claude geprüft am 18.10.2026: zwölf Züge mit Pausen und einer Rücknahme: beim Ende 15 von 23 Stellungen schon ausgewertet, der Rest 23 s auf der ausgelasteten Testmaschine (die Zeit auf dem Handy fragt N327)
+- **N220** (Spielhilfen zuschalten): von Claude geprüft am 18.10.2026: nur Symbole: Symbole da, keine Leiste, kein Engine-Knopf; beides aus: nur Brett, Uhr, Zugliste; nach dem Ende keine Leiste, Symbole bleiben
+- **N221** (Gewertete Partie): von Claude geprüft am 18.10.2026: Haken „Gewertete Partie (zählt für deine Spielstärke)“ mit Satz; bei „Mensch“ fehlen Haken, Seite und Eröffnung
+- **N224** (Deine Wertung): von Claude geprüft am 18.10.2026: gewertete Partie gegen Leon, zwölf eigene Züge, aufgegeben: Karte „Deine Wertung“ mit Zahl gleich der Schätzung der Partie, Ausschnitt-Wahl mit allen acht Werten, Kurve mit Punkt; „1 gewertete Partien“ hieß es vorher, seit 0.2.95 „1 gewertete Partie“
+- **N228** (Wertung nur aus der Grundstellung): von Claude geprüft am 18.10.2026: aus Abb. 1.26 und aus einer aufgebauten Stellung der Satz „Diese Partie zählt nicht für deine Wertung …“ ohne Haken; aus der Grundstellung mit Haken; bei „Mensch“ ohne
+- **N229** (Wertung zurücksetzen): von Claude geprüft am 18.10.2026: „Wertung zurücksetzen“, „Ja, zurücksetzen“, danach wieder der Hinweis vor der ersten Partie; die Partien bleiben, ihr Stern verschwindet
+- **N243** (Eigene Gegner mit blinden Flecken): von Claude geprüft am 18.10.2026: alle elf blinden Flecken im Formular; ein Bot 6 · 6 · 6 nur mit „lange Läuferdiagonalen“ ließ sich anlegen, wählen und spielen
+- **N276** (Drei neue blinde Flecken): von Claude geprüft am 18.10.2026: Röntgenangriffe, Zwischenzüge und Grundreihe im Formular; die genannten Bots haben diese Flecken (Gegnerliste)
+- **N282** (Stern für gewertete Partien): von Claude geprüft am 18.10.2026: gewertete Partie mit Stern, ungewertete ohne
+- **N284** (Abhakliste der Fehlerarten): von Claude geprüft am 18.10.2026: 14 Haken, „14 von 14 Arten erlaubt“; „Keine erlauben“ 0, nur W1 1, „Alle erlauben“ 14
+- **N310** (Gewertete Partie ohne Hilfen (S9)): von Claude geprüft am 18.10.2026: bei gewerteter Partie drei Haken grau und leer mit dem Satz; ohne Haken wieder wählbar; in der Partie weder Zurücknehmen noch Werkzeuge
+- **N319** (Gegnerwahl in drei Kategorien): von Claude geprüft am 18.10.2026: drei Kacheln, je nur der passende Inhalt; bei „Eigene Bots“ ohne Bot „Partie beginnen“ gesperrt mit Satz, dazu „Eigene Bots verwalten“
+- **N320** (Engine-Knopf in der Partie): von Claude geprüft am 18.10.2026: Engine-Symbol: Bewertung, „Deinen letzten Zug bewerten“ („Dein Zug 2. Dh5? ist ein Fehler.“), „Warum?“, „Besten Zug zeigen“; nach „Warum?“ stand ein doppelter Punkt, behoben in 0.2.95
+- **N321** (Blinde Flecken bei eigener Stufe): von Claude geprüft am 18.10.2026: „(0 gewählt)“, Rückzüge angehakt „(1 gewählt)“, bleibt nach dem Neuladen
+- **N330** (Zahlen in der Gegnerwahl): von Claude geprüft am 18.10.2026: Überschriften mit Bereichen wie im Punkt (Stufe 1 etwa 1050 bis 1300 … Stufe 8 etwa 3000 bis 3200), jede Kachel mit „etwa …“
+- **N331** (Sprechblase und Erklärung): von Claude geprüft am 18.10.2026: Ayşe „etwa 1550 (Stufe 2)“, Fragezeichen mit Elo-Leiter und ±150; eigener Bot „etwa … (geschätzt)“; eigene Stufe „Deine Einstellung 3 · 4 · 3 · etwa 1950 (geschätzt)“, ändert sich mit dem Regler
+- **N332** (Gegner in der Karte „Spielstärke“): von Claude geprüft am 18.10.2026: nach der Partie gegen Leon „Leon (etwa 1300) hat in dieser Partie wie etwa … gespielt.“
+- **N333** (Wertung mit fester Gegnerzahl): von Claude geprüft am 18.10.2026: Niederlage gegen Großmeister Grün (etwa 3200) bei Wertung 1150 ändert die Wertung um ±0; die Erklärung nennt die feste Zahl des Gegners
+- **N339** (Auswertung startet immer): von Claude geprüft am 18.10.2026: eine hängende Engine lässt sich im Browser nicht erzeugen; der Komponententest „hängende Engine: neu starten …“ (engineWachhund) besteht. Bleibt eine Auswertung trotzdem stehen, meldet der Autor es ohnehin
+- **N340** (Spielen): von Claude geprüft am 18.10.2026: „Partie beginnen“ unter den Kacheln und über dem Gitter, Stufen aufklappbar, anfangs die des gewählten Bots offen, die Wahl bleibt (Oberflächentest)
+- **N341** (Werkzeuge): von Claude geprüft am 18.10.2026: in der Partie eine waagerecht scrollbare Leiste, jedes Bündel mit Symbol; an Abb. 5.17 „frühere“ und „spätere“ am Anfang und Ende; Angriffsregel an 1.37 ohne „Mehr …“
+- **N348** (Stufe 5 bis 8 mit eigener Zahl): von Claude geprüft am 18.10.2026: Stufe 5 bis 8 mit den Bereichen wie im Punkt, Fragezeichen „über 2200 … ungenauer (etwa ±200)“
+- **N349** (Gleich große Kacheln in der Gegnerwahl): von Claude geprüft am 18.10.2026: Porträts in Stufe 7 und 8 alle 72,5 px breit, hell und dunkel
+- **N158** (Kein Spielziel): von Claude geprüft am 18.10.2026: keine Auswahl „Spielziel“, nach dem Ende kein „Ziel erreicht/verfehlt“
+- **N198** (Zeichen und besserer Zug am Brett): von Claude geprüft am 18.10.2026: zu zweit nach 1. f3 e5 2. g4?? Dh4#: auf g4 ein rotes „??“, goldener Pfeil zum besseren Zug (laut Engine 2. e4, nicht e3 wie im alten Text)
+- **N199** (Bewertungsbalken): von Claude geprüft am 18.10.2026: Balken nur nach dem Ende, „−M“ nach Dh4#, als Schwarz gedreht; in der ruhigen Ansicht nicht (Oberflächentest)
+- **N200** (Verlaufskurve): von Claude geprüft am 18.10.2026: Kurve über der Auswertung, Fehler als rote Punkte, ein Tipp springt zur Stelle
+- **N205** (Erklärung mit Markierung): von Claude geprüft am 18.10.2026: Das alte Beispiel 2... Sf6 ist laut Engine kein Fehler; mit 2... a6?! geprüft: Karte „… lässt die Drohung Dxe5+ stehen (gewinnt den Bauern).“, roter Pfeil h5–e5, rotes Feld e5; gegen die Engine heißt es „Du …“
+- **N206** („!“ für den einzigen guten Zug): von Claude geprüft am 18.10.2026: goldenes „!“ am Brett, Karte „… ist stark: der einzige gute Zug oder die Strafe für den Fehler davor.“ (Wortlaut neuer als im Punkt)
+- **N213** (Zugklassen am Brett): von Claude geprüft am 18.10.2026: Marken am Zielfeld: !! blau, ! gold, ✓ grün, ?! grau, ? und ?? rot; gut und Buch ohne Marke, mit Satz. Die Lesbarkeit von „?!“ im Dunkelmodus fragt N328
+- **N215** (Phasen in der Kurve): von Claude geprüft am 18.10.2026: goldene Linie „M“ in der Kurve
+- **N218** (Auswertung ohne Nachfrage): von Claude geprüft am 18.10.2026: „Hast du es gesehen?“ kommt nicht vor (Partie gegen Stufe 1)
+- **N222** (Zu zweit spielen): von Claude geprüft am 18.10.2026: Überschrift „Partie zu zweit“, Untertitel, Status im Wechsel, „Matt! Weiß hat gewonnen.“, Aufgeben für die Seite am Zug, Uhr für beide, Spalten Weiß und Schwarz. Dabei gefunden: Die Auswertung nannte „keinen absichtlichen Fehler der Engine“; behoben in 0.2.95
+- **N225** (Phase, Zusatzregeln): von Claude geprüft am 18.10.2026: K + D gegen K + D aufgebaut: „Endspiel …“ und „Zusatzregel (nicht aus dem Buch): Jede Seite hat höchstens 13 Punkte …“
+- **N226** (Stellung aufbauen, Figuren setzen): von Claude geprüft am 18.10.2026: 12 Steine, „Feld räumen“, „Am Zug“, „Brett leeren“, „Grundstellung“; zweiter Tipp räumt; „Stellung übernehmen“ gesperrt mit rotem Satz bis zu zwei Königen; Seite am Zug vorgewählt; aus Abb. 1.26 geändert „Aus einer eigenen Stellung“
+- **N227** (Stellung aufbauen, Züge spielen): von Claude geprüft am 18.10.2026: Züge mit Zielpunkten, Umwandlungsfrage mit vier Figuren; nach 1. e4 e5 2. Sf3 spielt der Leser Schwarz
+- **N232** („M“ und „E“ in der Zugliste): von Claude geprüft am 18.10.2026: goldenes „M“ vor dem ersten Mittelspielzug mit Titel „Mittelspiel“
+- **N233** (Übergang ins Mittelspiel ohne Zugzahl): von Claude geprüft am 18.10.2026: alle drei Fälle mit den Sätzen aus dem Punkt (entwickelt, Material ungleich, je zwei Figuren zu Hause bleibt Eröffnung über 14 Züge)
+- **N234** (Erklärung am Phasenwechsel): von Claude geprüft am 18.10.2026: „Neue Phase ab hier. Mittelspiel: …“ nur beim Zug mit dem „M“
+- **N235** (Damenloses Mittelspiel bleibt Mittelspiel): von Claude geprüft am 18.10.2026: Berliner Linie bis 9. Sc3: „Mittelspiel“, „Bauern entscheiden … nein“
+- **N245** (Kein „??“ bei klarem Gewinn (K5)): von Claude geprüft am 18.10.2026: Matt in 1 auf dem Brett, gespielt 1. h3 (+M → +8,3): kein Zeichen, nicht unter „Grobe Patzer“; der Satz zu „+5 oder besser“ steht in der Engine-Karte
+- **N246** (Geschätzte Spielstärke (R3)): von Claude geprüft am 18.10.2026: Zeile „Geschätzte Spielstärke“ mit „etwa … (…–…)“; die Erklärung sagt jetzt „gehört zu keiner echten Liste“
+- **N258** (Verpasst statt Patzer): von Claude geprüft am 18.10.2026: 1. e4 e5 2. Sf3 Dg5?? 3. a3?: „3. a3? verpasst die Chance nach dem Fehler des Gegners …“, unter „Grobe Patzer“ beide, „Verpasst“ 1
+- **N259** (Beste Züge und Zugklassen passen zusammen): von Claude geprüft am 18.10.2026: „!! 0“ am Anfang der Zeile „Zeichen“, „… ist so gut wie …, der Zug der Engine“. Anders als im Punkt: „Beste Züge“ zählt jeden Zug gleich dem der Engine (auch !!, ! und Buchzüge), „Bester Zug“ unter „Züge nach Art“ nur die übrigen; beide Zahlen sind deshalb nicht gleich
+- **N275** („Danach etwa …“ in der Rückblickkarte): von Claude geprüft am 18.10.2026: „Besser war …, danach etwa …“ mit fünf Halbzügen, beim besten Zug ohne. Die Länge bleibt nach Regel 9 bei fünf Halbzügen; Widerspruch genügt
+- **N283** (Brillant nur bei wirklich nehmbarem Opfer): von Claude geprüft am 18.10.2026: Opernpartie zu zweit: Weiß „!! 3“ (10. Sxb5, 13. Txd7, 16. Db8+), in drei Läufen gleich
+- **N311** (Unmögliche Stellungen (S12)): von Claude geprüft am 18.10.2026: drei Damen und acht Bauern: schon „Stellung übernehmen“ gesperrt mit dem Satz zu den Umwandlungen; zwei Damen und sieben Bauern gehen, die Engine zieht
+- **N336** (Fehler im Rückblick): von Claude geprüft am 18.10.2026: „4... h6??: Die Gewinnchance von Schwarz fällt von 50 % auf 9 %.“, „schlägt nicht zurück: dxc6 nahm den Läufer c6 wieder …“ mit rotem Feld; Fragezeichen erklärt Balken und Gewinnchance
+- **N337** (Nebenzweige): von Claude geprüft am 18.10.2026: „Besser war …“ und „So wird der Fehler bestraft: …“ antippbar, Stellung am Brett, Zug für Zug weiter, „Zurück zur Partie“; bei gutem Zug keine Strafe
+- **N338** (Auswertung): von Claude geprüft am 18.10.2026: Schalter „Genauigkeit wie“, Symbole je Zeile, Marken je Klasse, Erklärungen hinter Fragezeichen; Patzer mit Bauer in Seitenfarbe, Tipp springt hin; Fehler der Engine erst 3, „Alle 8 zeigen“; „Noch einmal aus derselben Stellung“ nur bei eigener Stellung. Der Erklärtext nannte noch „Mittelweg“ und die Einstellungen; nachgeführt in 0.2.95
+- **N176** (Stufe 2 (Anfänger), kein Damenopfer): von Claude geprüft am 18.10.2026: nicht über eine Partie, sondern an der Regel: Absichtliche Fehler ab Stufe 2 schließen ein Damenopfer aus (`damenopferErlaubt` nur bei Stufe 1, Filter in der Fehlersuche und bei den menschlichen Zügen), Komponententest „Damenopfer (Konzept 8.2)“
+- **N195** (Fortschritt): von Claude geprüft am 18.10.2026: nach einer ganzen Runde zeigt Kapitel 0 den Trainer mit Durchgängen und richtigen Aufgaben; „1 Durchgänge“ heißt seit 0.2.95 „1 Durchgang“
+- **N254** (Mattführung gewinnen): von Claude geprüft am 18.10.2026: Mattführung Stufe 1: Auftrag, Herkunftszeile und Status wie beschrieben. Hinweis 2 und 3 zeigten bei Damen- und Königszügen weder Figur noch Pfeil; behoben in 0.2.95, danach mit den Hinweisen bis „Richtig! Matt! Ziel erreicht.“ ausgespielt
+- **N256** (Remis halten): von Claude geprüft am 18.10.2026: Turmendspiel als Schwarz: Brett gedreht, Engine zieht zuerst, „Aufgabe abbrechen“ nennt den besten Zug; nach der Behebung in 0.2.95 mit den Hinweisen bis „Richtig! Zwölf Züge gehalten … Ziel erreicht.“ ausgespielt
+- **N307** (Aufgabenseite): von Claude geprüft am 18.10.2026: langer Druck, Link, Haken, Notiz, „Stand in die Zwischenablage“, „Nur offene Punkte zeigen“, Erhalt nach dem Neuladen gingen; „‹ Zurück zu den Aufgaben“ landete aber oben statt beim Punkt. Behoben in 0.2.95 (auch für Safari); ein Oberflächentest prüft es in Chromium und WebKit
+- **N314** (Sonderzüge aus Kapitel 0 (U5)): von Claude geprüft am 18.10.2026: Sonderzüge an den Buchstellungen 0.12 bis 0.19 (Rochaden, en passant, Umwandlung) kommen; die Abbildung stand nicht dabei, seit 0.2.95 „Aus dem Buch: Abb. 0.14“ usw. unter dem Brett
+- **N223** (Partienliste): von Claude geprüft am 18.10.2026: zu zweit „0–1 · Mensch (beide Seiten selbst) · 2 Züge · Weiß 25 % genau · Schwarz 100 % genau“; gegen Stufe 1 „0–1 · … · Stufe 1 · 12 Züge · du etwa 900 · Engine etwa 900“
+- **N324** (Genauigkeit wie): von Claude geprüft am 18.10.2026: Schalter Lichess | App | chess.com in der Karte, Zeile heißt jeweils „Genauigkeit (…)“; Spielstärken und Urteilswörter blieben beim Umschalten gleich
+- **N325** (Spielstärke mit Spanne): von Claude geprüft am 18.10.2026: „Geschätzte Spielstärke“ mit „etwa 900 (500–1300)“; das Fragezeichen „Erklärung: Spielstärke“ nennt beide Skalen (chess.com etwa …, Lichess etwa …)
+
+### Teil 1: durch spätere Versionen überholte Punkte (gelöscht)
+
+Diese Punkte beschrieben einen Stand, den eine spätere Version geändert hat; der neuere Punkt
+prüft dasselbe am aktuellen Stand. Die Nummern bleiben frei (die App speichert Haken je Nummer).
+
+- **N159** (Figurensatz und Ton): überholt durch N322 (neue Figurensätze seit 0.2.82) und N278 (Töne einschließlich Klacken).
+- **N175** (Stufe 1 (Einsteiger)): überholt durch N264 (Stufen 1 bis 3 menschlicher, 0.2.52) und N336 bis N338 (Fehler im Rückblick).
+- **N177** (Abstufung): überholt durch N334 und N348 (Abstufung gemessen, Elo-Zahl je Stufe) und N335.
+- **N178** (Eröffnung): überholt durch N211 (Eröffnung „frei“ oder „eine Eröffnung des Buches (zufällig)“, 0.2.40).
+- **N201** (Figurensätze): überholt durch N322 (Figurensätze „klassisch“ und „Holz“ seit 0.2.82 ersetzt).
+- **N204** (Rückblick-Karte): überholt durch N336 und N337 (Gewinnchance statt Bauern, Nebenzweige, 0.2.86).
+- **N207** (Spielstärke): überholt durch N324, N325 und N338 (Karte „Spielstärke“ neu geeicht und neu geordnet).
+- **N214** (Spielstärke je Phase und Züge nach Art): überholt durch N291 (Urteilswort je Phase) und N338 (Züge nach Art mit Marken).
+- **N216** (Partienliste): überholt durch N223 (Partienliste mit Ergebnis und Stärke beider Seiten, 0.2.41).
+- **N217** (Fehler der Engine je Phase): überholt durch N264 und N286 (ob die Fehler der Engine menschlich wirken).
+- **N219** (Gegner wählen): überholt durch N319 (Gegnerwahl in drei Kategorien, 0.2.80) und N330 (Porträts mit Zahl).
+- **N231** (Eigene Gegner): überholt durch N319 („Eigene Bots verwalten“) und N312 (Stil spürbar); der Oberflächentest „Eigener Gegner Rambo“ prüft Anlegen, Spielen, Löschen.
+- **N240** (Gegnerliste ohne Stufen): überholt durch N319 und N330 (Gegnerwahl mit Porträts, Regler nur bei „Eigene Stufe“).
+- **N241** (Persönlichkeit): überholt durch N286 (Persönlichkeit spürbar, 64 Bots seit 0.2.67).
+- **N242** (Blinde Flecken auch bei starken Gegnern): überholt durch N287 und N295 (starke Bots mit Charakter, alle 64 gemessen).
+- **N244** (Rücknahme macht die Partie ungewertet (S9)): überholt durch N310 (gewertete Partie hat seit 0.2.61 gar keine Rücknahme).
+- **N257** (Genauigkeit wie bei chess.com): überholt durch N324 und N325 (Genauigkeit und Spielstärke neu geeicht, 0.2.83; die Zahlen im Punkt stimmen nicht mehr).
+- **N261** (Brillant und Stark wie bei chess.com): überholt durch N283 (Opernpartie: Brillant 3 seit 0.2.54/0.2.59).
+- **N265** (Strähne und Tagesform): überholt durch N334 (Stufe 3 und 4 neu gemessen, 0.2.85); das Gefühl bleibt bei N264.
+- **N268** (Brillant wie bei chess.com): überholt durch N283 (Brillant, zweiter Schritt).
+- **N277** (Blind auch für Drohungen): überholt durch N286 und N295 (blinde Flecken aller 64 Bots gemessen, Sprechblasen nennen sie).
+- **N281** (Figurensatz „Holz“ mit eigenen Formen): überholt durch N322 („Holz“ seit 0.2.82 durch drei Holzsätze ersetzt).
+- **N291** (Urteilswort je Phase und Mittelspiel nach Taktik und Strategie): überholt durch N344 (Urteilswörter dürfen zweizeilig werden) und N338 (Karte neu geordnet).
+- **N181**: überholt durch N220 (seit 0.2.41 verschwinden Werkzeugleiste und Bündel nach dem Partieende; den Ablauf gibt es so nicht mehr). Geprüft: Die Auswertung läuft mit geöffnetem Werkzeug zu Ende.
+- **N312**: überholt durch N295 (der Hinweis unter dem Stil sagt seit 0.2.81: im Mittel etwa gleich stark, nur auf Stufe 8 schwächer); das Gefühl prüft der Autor bei N286 und N295.
+
+### Teil 2 im Wortlaut vor dem Umbau
+
+Damit beim Rückbau nach einem Widerspruch nichts fehlt, hier der ganze alte Text der Rückfragen.
+
+
+#### B. Buchbefunde aus der Textarbeit (Fable, 0.2.67; nur du änderst das Buch)
+
+- B6. **Zeit-Zählhilfe in Kapitel 3:** Die Faktorenbilanz der App sagt nach 1. e4 e5 2. f4
+      (Abb. 3.1, ebenso 3.18 und 3.36) „Schwarz liegt vorn bei Zeit“, obwohl beide Seiten null
+      Figuren im Spiel haben. Das folgt der Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom
+      weißen Vorsprung eine Figur ab“) und der Tabelle zu Abb. 3.14 (zwei gegen zwei, Schwarz am
+      Zug: Schwarz +1). Der Fließtext sagt dagegen nur „sein Vorsprung ist eine Figur kleiner“,
+      also nie unter null. Die Helfer der Textarbeit fanden das Ergebnis bei 0:0 falsch, ich auch.
+      **Empfehlung:** im Buch die Zählhilfe um „nie unter null“ ergänzen und die Tabelle zu 3.14
+      auf „gleich“ setzen; dann ändere ich die App (ein Zeile) und die Kalibrierung. Bis dahin
+      bleibt die App beim Buch (Regel 1).
+
+#### S. Spielbewertung (Fable, 0.2.72; schon umgesetzt, Widerspruch genügt)
+
+- S20. **Deine Wertung nach der neuen Eichung (0.2.83):** Die Wertung in den Einstellungen
+      (Elo-System aus deinen gewerteten Partien) rechnet mit der geschätzten Stärke des Gegners.
+      Die stammt jetzt aus den neuen Kurven: Bei niedriger Genauigkeit liegt sie höher als vorher
+      (die alte Tabelle aus deinen sieben Partien ging bis 250 hinunter, die neue fängt bei etwa
+      1000 an, weil echte Spieler mit 50 % meist um 1000 stehen). Alte Punkte bleiben, die
+      Wertung wandert mit den nächsten Partien. **Empfehlung:** einmal „Wertung zurücksetzen“ in
+      den Einstellungen, dann baut sie sich auf der neuen Skala auf. Ich ändere gespeicherte
+      Daten nicht selbst (Regel 9: Daten im Speicher der Leser).
+- S21. **Urteilswort statt Symbole, Taktik und Strategie nach dem Buch:** chess.com
+      veröffentlicht nicht, wie die Symbole je Phase entstehen. Aus deinen 13 Bewertungen
+      lässt sich ablesen: „Strategie“ war alle 13 Male „Gut“, „Endspiel“ auch bei 95 %
+      Genauigkeit nur „Gut“, „Eröffnung“ meist „Bester“. Das passt zu einem Durchschnitt der
+      Zugklassen je Phase (in der Eröffnung sind viele Züge Buch oder bester Zug, in ruhigen
+      Stellungen und gewonnenen Endspielen sind gleich gute Züge nur „Gut“), nicht zu einer
+      Genauigkeit. Das sagt dem Leser wenig. **Empfehlung (umgesetzt):** Unser Wort je Phase
+      kommt aus der Genauigkeit der Phase mit denselben Grenzen wie die Spielstärke, und Taktik
+      gegen Strategie trennt die Regel des Sicherheitsblicks (Kapitel 12): Schach, Drohung,
+      Schlag mit Gewinn oder Matt möglich heißt Taktik. Beides ist im Erklärtext der Karte
+      beschrieben. Sag Bescheid, wenn du lieber die Wörter von chess.com (Bester, Exzellent, Gut,
+      Ungenauigkeit, Fehler) oder Symbole statt Wörter möchtest.
+- S22. **Absichtliche Fehler nur für die eigene Stufe (Opus, 0.2.80):** Die Liste „Absichtliche
+      Fehler der Engine“ stand bisher in den Einstellungen und beschnitt auch die vorgefertigten
+      Bots. Seit deinem Wunsch steht sie unter Spielen bei „Eigene Stufe“. Dort sieht man sie bei
+      einem vorgefertigten Bot nicht mehr; sie heimlich weiter wirken zu lassen, wäre verwirrend,
+      und die Bots sind mit ihrer eigenen Liste gemessen und beschrieben (Sprechblase).
+      **Empfehlung (umgesetzt):** Die Liste gilt nur für die eigene Stufe; vorgefertigte und
+      eigene Bots spielen immer mit ihrer eigenen Liste. Sag Bescheid, wenn die Liste auch die
+      vorgefertigten Bots beschneiden soll; dann zeige ich sie auch dort.
+- S24. **Namen der Stufen und Lage der Skala (Opus, 0.2.85, Stand 0.2.88):** Gemessen ist
+      Stufe 1 („Einsteiger“) etwa 1200, Stufe 2 („Anfänger“) etwa 1550, Stufe 3 etwa 1900,
+      Stufe 4 etwa 2100, Stufe 5 („Vereinsanfänger“) etwa 2350 bis Stufe 8 etwa 3200. Die
+      Abstände stammen aus über 800 Partien der Bots gegeneinander, die Lage aus Partien der
+      Stufen 1 bis 3 gegen sich selbst: Ihre Genauigkeit (70 %, 77 %, 83 %) ergibt über dieselbe
+      Rechnung wie „Deine Spielstärke“ etwa 1190, 1560 und 1890, und diese drei Anker passen auf
+      etwa 30 Punkte zu den Ergebnissen. Unsicher bleibt, ob ein Bot mit 70 % so spielt wie ein
+      Mensch mit 70 % (Bots machen seltene grobe Fehler, Menschen viele mittlere); das zeigt erst
+      dein Test N335. Seit 0.2.88 gibt es für schwache Leser die Gruppe „Zum Spaß“ (etwa 600 bis
+      1100), damit ist der frühere Vorschlag, die Stufen 1 bis 4 schwächer zu machen, vom Tisch.
+      Offen sind nur die Namen: „Vereinsanfänger“ bei etwa 2350 passt nicht. **Empfehlung:** Nach
+      N335 entscheiden. Bestätigt dein Test die Zahlen, schlage ich neue Namen vor (etwa
+      Gelegenheitsspieler, Vereinsspieler, Starker Vereinsspieler, Experte, Meister, Großmeister,
+      Weltklasse, Engine); liegen die Zahlen zu hoch, verschiebe ich die ganze Skala. Noch nicht
+      umgesetzt, weil beides an deinem Test hängt.
+
+#### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
+
+- F1. **Fehlerdatenbank (0.2.65):** Fehlerart ist je eine Zeile der Gesamt-Checkliste
+      (Kapitel 0 bis 12, gespeichert als Kapitelnummer, damit sich die Texte ändern dürfen).
+      Höchstens 500 Einträge, der älteste fällt dann weg. Der Vorschlag nimmt die häufigste
+      Fehlerart der letzten vier Wochen und den ersten fertigen Trainer zu ihrem Kapitel (Kapitel 1
+      → Schach-Röntgen-Trainer, 7 → Taktiktrainer); zu Kapitel 11 gibt es keinen eigenen Fehler-
+      Trainer, dann kommt die nächsthäufige Fehlerart. Der Knopf im Rückblick steht bei jedem Zug,
+      auch bei guten (ein Fehler zeigt sich manchmal erst einen Zug später). Die Einträge stehen in
+      deinen Nutzerdaten (Format 4) und kommen mit in die Datensicherung.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.65, Widerspruch genügt.
+
+- F2. **Denkroutine-Trainer (0.2.66):** Stellungen aus Kapitel 7, 11 und 12 (Taktik,
+      Meisterpartien, Denkroutine), ohne Schach, mit mindestens zehn Steinen und acht Zügen zur
+      Wahl; drei je Runde. Die Minute ist fest, ohne Abkürzung. Die Eingabe ist Text in
+      Buchnotation (englische Buchstaben gehen auch), weil zwei Kandidaten und zwei Antworten auf
+      dem Brett schwer auseinanderzuhalten sind. Gelöst, wenn zu beiden Kandidaten eine
+      regelgerechte Antwort steht und der bessere Kandidat höchstens 0,5 Bauern hinter dem Zug der
+      Engine liegt; ob die Antwort die stärkste war, zeigt die App, zählt aber nicht.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.66, Widerspruch genügt.
+
+- F3. **Planbilanz-Übung (0.2.69):** Die Antworten der Planfragen sind die Sätze, die die
+      Werkzeuge der App zu den drei Fragen rechnen, nicht die Texte deiner Planbilanzen (die zeigt
+      die App seit dem 15.10. nicht mehr). Falsche Antworten: derselbe Satz für die andere Seite
+      und der einer weit entfernten Stellung. Stellungen, in denen ein Satz nichts sagt („Noch
+      offen“, „noch kein erkennbarer Plan“, „keine Figur“), fallen weg. Die LAP-Lösung kommt aus
+      dem Werkzeug „Welche Figur?“, das Wettrennen aus dem schnellsten Sturm je Seite (bis sechs
+      Züge). Die Planfragen-Runde hat vier, LAP sechs, Wettrennen fünf Aufgaben.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.69, Widerspruch genügt. Wenn du lieber
+      deine eigenen Planbilanz-Sätze als Antworten hättest, bräuchte die App sie als freigegebenen
+      Text (sie sind Buchtext).
+
+- F4. **Abweichungsmodus (0.2.70):** Die Eröffnungen und Varianten sind die aus Kapitel 2
+      (wie im Repertoire-Trainer). Die Engine weicht frühestens nach dem 4., spätestens nach dem 12. Halbzug ab, immer mit ihrem besten Zug, der kein Buchzug ist (Buch heißt: irgendeine
+      Zugfolge der Kapitel 2 und 3). Gut ist eine Antwort bis 0,5 Bauern hinter dem besten Zug,
+      ungenau bis 1,2, darüber ein Fehler (wie die Auswertung nach der Partie). Die Einschätzung
+      zeigt die Fazits der Werkzeuge Zielbilanz und Todsünden, keine vorbereiteten Texte, weil es
+      zu Stellungen außerhalb des Buches keine gibt.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.70, Widerspruch genügt.
+
+- F5. **30-Minuten-Plan (0.2.71):** Eine geführte Einheit mit den drei Schritten deiner
+      Tabelle in Kapitel 12; die Uhr zeigt die Restzeit des Schritts und läuft über die Zeit
+      weiter, statt abzubrechen (das Buch nennt Richtzeiten). Die Taktikaufgaben sind zwei
+      gemischte der leichtesten Stufe; die Partie spielst du im normalen Spielen-Bildschirm, die
+      Analyse im Rückblick der letzten Partie; am Studientag führen Knöpfe zu den Trainern des
+      Bereichs (Taktik: Taktiktrainer, Studien; Endspiel: Endspieltrainer; Strategie: Zug
+      erraten, Planbilanz, Strukturerkenner; Eröffnung: Repertoire, Abweichungsmodus,
+      Zielbilanz, Faktorenbilanz). Tag und Bereich wechseln nach jeder abgeschlossenen Einheit,
+      ein Abbruch schaltet nicht weiter. Der Stand liegt nur auf dem Gerät (nicht in der
+      Datensicherung); eine Einheit, die drei Stunden liegt, verfällt. Eine abgeschlossene
+      Einheit zählt als Durchgang im Fortschritt. Die Bedenkzeit 10+0 bietet der
+      Spielen-Bildschirm noch nicht an (Fables Bereich, ist bei Fable angefragt); bis dahin
+      steht im Plan „ohne Uhr spielen“.
+      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.71, Widerspruch genügt.
+
+#### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
+
+- X5. **Schwierigkeit:** Grundstufe je Thema (Dame 1, Quadrat 1, Turmmatt 2, Opposition 2,
+      Bauernrennen 2, Randbauer 2, Läuferpaar 3, Schlüsselfelder 3, Durchbruch 3, Freibauer 3,
+      Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
+      erste Zug der einzige ist. Nicht an Lichess geeicht (dort gibt es keine ausspielbaren
+      Endspiele). Verteilung der 80 Stellungen: Stufe 1 viermal, 2 achtmal, 3 19-mal, 4 38-mal,
+      5 elfmal. Das Gewicht bei 4 und 5 kommt von den Turmendspielen (23) und Leichtfiguren (11)
+      aus Kapitel 9 und folgt damit dem Buch (Kapitel 8 Grundlagen, Kapitel 9 schwerer). Wer eine
+      Stufe wählt, von der es wenige gibt, bekommt die Nachbarstufen dazu; eine Runde hat sechs
+      Stellungen. **Empfehlung (Opus, 18.10.):** so lassen und nach deinem Test nachjustieren.
+      Schon umgesetzt (so in der App seit 0.2.49), Widerspruch genügt.
+
+#### T. Trainerdaten für Taktiktrainer, Strukturerkenner und „Falle oder Köder“ (Fable; plausibel entschieden)
+
+Die drei Trainer sind seit 0.2.45 in der App (Teil 1, N236 bis N238; Rückfragen W1 bis W7, am 17.10. entschieden). Was Claude entschieden
+hat, mit Rückfrage:
+
+- T1. **Übungen, Engine-Prüfung:** Alle 86 Übungen sind mit Stockfish gegengeprüft: 56
+      Lösungen halten, 6 sind gleichwertig zu einem anderen Zug, eine ist etwas schwächer, keine
+      ist widerlegt. Vorschläge für zusätzlich „akzeptierte“ Züge (gleich gut laut Engine):
+      Übung 2 (Abb. 0.26, Buch 6... h6): a6, Le7, d6, a5; Übung 6 (1.42, Buch 4... Sf6,
+      akzeptiert Lc5): dazu Df6, Lb4+, Sxd4; Übung 11 (2.151, Buch 4... h5, akzeptiert h6): dazu
+      Dc7, Da5+, a6; Übung 15 (3.81, Buch 4... d5): dxc3, Sf6; Übung 39 (7.51, Buch 1. Sf4+):
+      Sxf6+ gewinnt ebenfalls klar. Bei den Technikübungen 60 (8.65, 1. g5) und 66 (9.47, Lucena)
+      gewinnen auch viele andere Züge, Vorschlag: dort nichts ergänzen, die Übung lehrt einen
+      Weg. Befund: Übung 83 (12.5, Kandidatenzüge): 1. Dc2 ist 0,44 schwächer als 1. Te1, beide
+      vorteilhaft. Welche Vorschläge übernehmen, und Übung 83 so lassen?
+      **Empfehlung:** die Vorschläge für die Übungen 6, 11, 15 und 39 übernehmen. Wer einen laut
+      Engine gleich guten Zug findet, soll nicht „falsch“ hören; die Erklärung zeigt danach ohnehin
+      die Lösung des Buches. Übung 2 ist in der App eine Denkaufgabe (Notation schreiben), dort
+      ändern die Vorschläge nichts. Übung 83 so lassen, beide Züge sind gut.
+      **Nachgelesen im Buch (17.10.2026):** Das Buch spricht gegen mehrere Engine-Vorschläge,
+      deshalb ist die Umsetzung aus 0.2.47 geändert. Übung 6: Das Buch kritisiert 4... Sxd4?! und
+      empfiehlt „einen Entwicklungszug, der selbst etwas angreift“; dazu passt nur 4... Lb4+ (Df6
+      wäre die verfrühte Dame). Übung 11: „Richtig ist 4... h5 oder 4... h6“; kein Zusatz. Übung
+      15: gesucht ist ein Zug „ohne weiteres Material zu nehmen“, 4... d5 nur „die einfachste
+      Antwort“: 4... Sf6 gilt, dxc3 nicht. Übung 39: „Auch 1. Sxf6+ gibt Schach, … lässt die Dame
+      allerdings stehen“; kein Zusatz. Übung 83: „ein ruhiger Zug wie 1. Dc2“, also ist Dc2 nur ein
+      Beispiel: 1. Te1 gilt jetzt auch. Schon umgesetzt in 0.2.55 (Nachtest N270), Widerspruch
+      genügt.
+- T2. **Menge der Zusatzaufgaben von Lichess** (gemeinfrei, CC0): 637 Taktikaufgaben (je
+      Motiv und Stufe 8) und 120 Fallen-Aufgaben (je Stufe 12 Fallen und 12 Geschenke), dazu 37
+      Taktik- und 12 Fallenaufgaben aus dem Buch. Genug, zu viel, oder lieber mehr für die Stufen
+      1 bis 3?
+      **Empfehlung:** reicht vorerst. Je Motiv und Stufe acht Aufgaben sind etwa zehn Runden; mehr
+      erst, wenn du oder Testleser merken, dass sich Aufgaben wiederholen.
+- T3. **Schwierigkeit:** Die Stufe 1 bis 5 jeder Aufgabe ist gemessen (Lichess-Wertung aus
+      Millionen Lösungsversuchen; Buchaufgaben über die Suchtiefe der Engine daran geeicht). Soll
+      es zusätzlich ein Feld geben, mit dem du die Stufe einzelner Buchaufgaben selbst setzt?
+      **Empfehlung:** nein. Die Stufen sind gemessen, nicht geschätzt; ein Handfeld lohnt sich erst,
+      wenn dir einzelne Buchaufgaben auffallen, die falsch eingestuft wirken.
+- T4. **Fallen aus Kapitel 2 und 3:** Der Fallentrainer hat die zwölf Fallenchecks aus
+      Kapitel 4 (Klammerfalle bis Damenfang auf b2). Sollen auch die Fallen aus den
+      Eröffnungskapiteln dazu (Zugfolgen, in denen ein Schlag mit „?“ steht, etwa im
+      Damengambit)? Die Pipeline könnte sie genauso ziehen.
+      **Empfehlung:** ja. Fallen aus den Eröffnungen des Buches sind genau die, in die Leser später
+      tappen; die Pipeline kann sie mit wenig Aufwand gleich ziehen (Fable).
+      **Schon umgesetzt in 0.2.51 (Nachtest N263): jeder Schlag mit Fragezeichen in den Zugfolgen
+      der Kapitel 2 und 3, den die Engine als Falle bestätigt. Widerspruch genügt.**
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 4: Eine Falle sieht aus wie Gewinn und kostet
+      durch „eine sofortige taktische Möglichkeit“, anders als ein Gambit mit dauerhafter
+      Kompensation. Empfehlung bestätigt: nur Schläge mit sofortiger Widerlegung.
+- T5. **Strukturerkenner:** 134 Aufgaben, davon 46 aus Kapitel 5 mit Struktur, Seite und
+      Plan nach dem Unterabschnitt, in dem das Buch die Abbildung zeigt, und 88 aus anderen
+      Kapiteln mit einer klaren Struktur (Isolani, hängende Bauern, Minderheitsangriff,
+      Doppelbauer, festgefahrene Kette, Mehrheit). Die Zuordnung Abbildung → Struktur und die
+      Plan-Sätze sind ein Vorschlag von Claude (die Sätze stehen jetzt in der App, W6 am 17.10. angenommen). Reicht dir die Durchsicht in der App, wenn der
+      Trainer da ist, oder willst du die Tabelle vorher als Liste im Chat sehen?
+      **Empfehlung:** in der App durchsehen. Der Trainer ist seit 0.2.45 da (N238); auffällige
+      Abbildungen und Sätze einfach mit Nummer melden.
+      **Nachgelesen im Buch (17.10.2026):** Das Buch liefert die Zuordnung selbst (Strukturtabelle,
+      Tabelle der Schwächen, Skelettbilanzen mit Folgerung). Drei Pläne wichen ab und folgen jetzt
+      der Folgerung des Buches: 5.43 „Stellung öffnen“ (statt guten Läufer behalten), 5.44 „Raum
+      nutzen“ (statt Flügel der Kette), 11.70 „Vorposten besetzen“ (Springer nach e5; der
+      Doppelbauer ist gedeckt und kein Ziel). 5.17 und 5.22 passen mit den neuen Plan-Sätzen (W6).
+      Schon umgesetzt in 0.2.55 (Nachtest N272).
+
+#### C. Neue Regeln der Werkzeuge (plausibel entschieden)
+
+- C1. **König im Schach in der Faktorenbilanz** (C1.6): Claude wertet ihn „teils“ (die
+      Empfehlung sagte nur „nicht gut“). Deshalb heißt es in 3.23 und 3.68 weiter „Weiß liegt
+      vorn bei Königssicherheit“ (der schwarze König ist „schlecht“). Soll ein König im Schach
+      „schlecht“ heißen?
+      **Empfehlung:** „teils“ lassen. Ein Schach ist oft nur vorübergehend; „schlecht“ wäre der
+      König erst, wenn er dauerhaft ungeschützt steht.
+      **Nachgelesen im Buch (17.10.2026):** Abb. 3.68: Das Buch sagt „Weiß ist schon verloren“, es
+      bleibt nur 8. Ke2, dann Lg4#. Dort war „Weiß liegt vorn bei Königssicherheit“ falsch. Jetzt
+      heißt ein König im Schach mit nur einem einzigen Zug „schlecht – der König steht im Schach
+      und hat nur einen Zug“; sonst bleibt es bei „teils“ (3.23 hat mehrere Abwehrzüge, das Buch
+      gibt dort keine Bilanz). Schon umgesetzt in 0.2.55, Widerspruch genügt.
+- C2. **W4 in 4.21** (C1.7): Mit der neuen Regel (einziger Verteidiger gegen Matt) meldet die
+      App dort zusätzlich die Bauern e2 und g2 als einzige Verteidiger von f3 gegen Sxf3#.
+      Schachlich richtig, aber nicht das, was das Buch nennt. So lassen?
+      **Empfehlung:** so lassen. Es ist schachlich richtig, und der Leser lernt dabei, wer f3
+      wirklich verteidigt.
+      **Nachgelesen im Buch (17.10.2026):** Die Rückfrage war falsch gestellt: Nach Sxf3+ verlässt
+      der Springer e5 die e-Linie, dann fesselt die Dame e7 den Bauern e2 an den König, genau wie
+      das Buch es für 4.22 erklärt („exd3 ist illegal“). e2 verteidigt f3 also nicht. Jetzt zählt
+      ein Verteidiger gegen ein Matt nur, wenn er nach dem Mattzug legal ziehen darf; in 4.21
+      bleibt nur „Bauer g2, einziger Verteidiger von f3 gegen Sxf3#“. Schon umgesetzt in 0.2.55.
+- C4. **Gegenschlag zählen** (C1.13): Bei einem Hebel zählt die App weiter auf dem Zielfeld,
+      weil du in 6.3 („drei gegen drei“) und 6.5 so zählst; nur bei schon bestehender Spannung auf
+      dem Feld des angegriffenen Bauern. Einverstanden?
+      **Empfehlung:** so lassen. So zählst du selbst in 6.3 und 6.5.
+- C5. **Dauerschach** (C1.18): Claude nennt es nur, wenn die schachgebende Seite mindestens
+      eine Leichtfigur zurückliegt (dein Motiv 12: „Wer klar verliert …“). Sonst hießen die
+      Schachs im Turmendspiel 9.6 Dauerschach. Einverstanden?
+      **Empfehlung:** so lassen. Sonst würde jede Schachserie im Turmendspiel als Dauerschach
+      gemeldet.
+      **Nachgelesen im Buch (17.10.2026):** Glossar und Kapitel 0: Dauerschach heißt, „der König
+      entkommt den Schachs nicht“; eine Materialbedingung gibt es nicht. Abb. 9.34: Schwarz liegt
+      nur einen Bauern zurück, und das Buch nennt die Rettung „das Dauerschach“. Jetzt zählt auch
+      eine Schachfolge, die die Stellung wiederholt (der König entkommt nicht); die
+      Leichtfigur-Regel bleibt für Schachserien ohne Wiederholung. 9.34 heißt damit Dauerschach.
+      Schon umgesetzt in 0.2.55 (Nachtest N274).
+- C6. **Gabel** (C2.12): Claude verlangt, dass jedes genannte Ziel für sich gewinnbar ist
+      (König, wertvoller als der Gabler oder ungedeckt), sonst wäre König plus gedeckter Läufer
+      auch eine Gabel. Passt das zu deinem „Eine Gabel sollte Material gewinnen“?
+      **Empfehlung:** so lassen. Das ist genau dein Satz „Eine Gabel sollte Material gewinnen“.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 7: „Material gewinnt die Gabel allerdings nur,
+      wenn mindestens ein Ziel ungedeckt oder mehr wert ist als der Springer.“ Das ist eine
+      notwendige Bedingung. Die Regel der App (jedes genannte Ziel für sich gewinnbar, König zählt
+      immer) ist strenger, aber folgerichtig: Der Gegner rettet das wertvollere Ziel, also muss das
+      andere fallen können. Ein Satz „Eine Gabel sollte Material gewinnen“ steht so nicht im Buch,
+      das war deine Formulierung bei C2.12. Empfehlung: so lassen.
+- C7. **Abb. 7.10** (C1.18): Die Zugfolge beginnt jetzt eine Stellung früher mit 1. Sf7+
+      (der Springer kann nur von e5 kommen). Damit nennt „Motiv“ das Abzugsschach. Freigeben?
+      **Empfehlung:** freigeben. Die Zugfolge ist legal und führt zur Abbildung, und der Springer
+      kann nur von e5 kommen.
+      **Nachgelesen im Buch (17.10.2026):** Die Bildunterschrift sagt „Abzugsschach nach 1. Sf7+“
+      mit dem Turm e1; das geht nur vom Feld e5 aus. Empfehlung bestätigt.
+- C8. **Berliner Endspiel aus schwarzer Sicht** (C1.9): Die App schlägt Schwarz dort einen
+      Minderheitsangriff am Königsflügel vor; das Buch sagt dazu nichts. So lassen?
+      **Empfehlung:** nicht mehr anzeigen. Im Berliner Endspiel spielt Schwarz in der Praxis mit dem
+      Läuferpaar und der Mehrheit am Damenflügel, nicht mit einem Minderheitsangriff am
+      Königsflügel; ein Rat, den das Buch nicht stützt, verwirrt eher.
+      **Schon umgesetzt in 0.2.47 (Nachtest N247): Steht der Kandidat der gegnerischen Mehrheit
+      schon in der eigenen Hälfte (im Berliner Endspiel e5), nennt die App keinen
+      Minderheitsangriff. Schwarz bekommt dann die allgemeine Regel „Schwarz spielt am
+      Damenflügel: Dort bildet die Mehrheit einen Freibauern.“ (die Mehrheit ist durch den
+      Doppelbauern c7/c6 krank; das Läuferpaar sieht das Werkzeug nicht, es schaut nur auf die
+      Bauern). Carlsbad (5.32 bis 5.34, 6.8) bleibt unverändert. Widerspruch genügt.**
+
+- C9. **Kandidaten in 12.4** (C1.28): Nur „Matt scheidet aus“ hätte Dd1+ (−9) zum besten
+      Kandidaten gemacht. Claude ergänzt deshalb einen Zug, der ein drohendes Matt abwehrt (dort
+      5... Sf6, wie in der Opernpartie). Einverstanden?
+      **Empfehlung:** so lassen. Ohne den Abwehrzug wäre ein Damenschach mit −9 der „beste“
+      Kandidat, was dem Leser offensichtlich falsch vorkäme.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 11: „6. Lc4 droht Matt auf f7“, und Schwarz
+      stellt mit 6... Sf6 den Springer dazwischen (es ist Zug 6..., nicht 5...). Empfehlung
+      bestätigt.
+
+#### K. Stufen der Engine (AP 11, Fable; plausibel entschieden)
+
+- K1. **Abstufung:** Fühlt sich die Abstufung nach N175 bis N177 richtig an (Konzept 8.2)?
+      Wenn eine Stufe zu stark oder zu schwach ist: Welche? (Stufe 1 bis 3: Skill Level 0 mit
+      Fehlerquote jeder dritte, vierte, fünfte Zug (Stufe 3 seit 0.2.85, vorher etwa jeder siebte); Stufe 4: Skill 3, jeder sechzehnte; Stufe 5 bis 7:
+      Skill 6, 10, 15 ohne Fehler; Stufe 8 volle Stärke.)
+      **Empfehlung:** erst nach deinem Test entscheiden. Wirkt eine Stufe zu sprunghaft, ist das
+      eher ein Fall für R4 (Stufen menschlicher, seit 0.2.52) als für andere Zahlen.
+- K2. **Damenopfer auf Stufe 1:** Nur Stufe 1 darf die Dame verschenken (Konzept: „ab Stufe
+      2 nicht“). Soll auch Stufe 1 die Dame behalten (dann höchstens ein Turm Verlust)?
+      **Empfehlung:** so lassen. Echte Einsteiger verlieren auch mal die Dame, und das Konzept nimmt
+      erst ab Stufe 2 die Dame aus.
+- K3. **Buchtreue:** Die Engine folgt auf allen Stufen zu 85 % je Zug den Eröffnungen aus
+      Kapitel 2 und 3, also auch der „Einsteiger“ einige Züge lang fehlerfrei. So lassen (der
+      Leser sieht die Eröffnungen des Buches), oder je Stufe weniger (etwa 50 % auf Stufe 1)?
+      Seit 0.2.40 betrifft die Frage nur die Wahl „eine Eröffnung des Buches (zufällig)“; „frei“
+      spielt ohne Buch, eine bestimmte Eröffnung mit Buchtreue 1.
+      **Empfehlung:** so lassen. Seit 0.2.40 gibt es „frei“; wer ohne Buch spielen will, wählt das,
+      und wer die Eröffnungen sehen will, bekommt sie auch auf Stufe 1.
+- K4. **Drohung ignoriert ab einem Bauern:** Nach der Röntgen-Regel (Kapitel 1) zählt jede
+      Drohung, Material zu gewinnen, also auch ein Bauer (2. Dh5 droht Dxe5+). Soll die Fehlerart
+      „Drohung ignoriert“ erst ab einer Leichtfigur heißen?
+      **Empfehlung:** so lassen. Das Buch zählt jede Drohung, Material zu gewinnen (Kapitel 1); auch
+      ein verlorener Bauer ist ein Fehler, den der Leser sehen soll.
+      **Nachgelesen im Buch (17.10.2026):** Kapitel 1: Eine Drohung ist jeder Materialgewinn im
+      nächsten Zug, auch ein Bauer (Abb. 1.13). Empfehlung bestätigt. Kapitel 1 sagt aber auch,
+      dass man eine Drohung ignorieren darf, wenn die eigene größer ist; „Drohung ignoriert“ ist
+      ein Fehler nur, wenn die Engine den Verlust bestätigt (so ist es eingebaut).
+- K5. **Verpasstes Matt in der Auswertung:** Werte sind auf ±10 begrenzt (Matt = 10). Wer
+      von „Matt in 2“ zu „+5“ wechselt, bekommt deshalb „??“ (Verlust 5). So lassen?
+      **Empfehlung:** ändern. Wer von Matt in 2 zu +5 wechselt, steht weiter klar auf Gewinn; „??“
+      ist dafür zu hart. Lichess und chess.com rechnen die Bewertung vorher in eine Gewinnchance um;
+      dann kostet dieser Zug fast nichts. Vorschlag: Verlust über die Gewinnchance messen, ab +5 nie
+      mehr als „?!“.
+      **Schon umgesetzt in 0.2.47 (Nachtest N245): Steht die ziehende Seite nach dem Zug noch bei
+      +5 oder besser, gibt es höchstens „?!“, auch in der Engine-Karte und ohne Eintrag unter
+      „Grobe Patzer“. Der Verlust je Zug bleibt in Bauern (die Genauigkeit rechnet ohnehin über die
+      Gewinnchance). Widerspruch genügt.**
+- K6. **Stufen 4 bis 7 ohne Elo-Begrenzung:** Die Stufen nutzen Skill Level 3, 6, 10, 15
+      (geräteunabhängig: Die Stärke hängt von der Suchtiefe ab, nicht vom Gerät). Die Namen der Stufen bleiben; eine
+      Elo-Zahl zeigt die App nicht. Einverstanden?
+      **Empfehlung:** so lassen. Feste Skill Levels geben auf jedem Gerät dieselbe Stärke; eine Elo-
+      Zahl je Stufe wäre nur geraten.
+
+#### D. Buch
+
+- D1. **Abb. 4.45 (D.3):** Der Buchstand vom 16.10.2026 ist vollständig übernommen. Stellung,
+      Pfeile, Feldmarkierungen und Bildunterschrift von 4.45 sind dabei unverändert geblieben
+      (nur die Zeile im LaTeX hat sich verschoben). Betraf deine Änderung den Text um die
+      Abbildung, ist alles drin; betraf sie die Stellung oder die Markierungen, fehlt sie noch im
+      privaten Repository. Bitte kurz bestätigen.
+      **Empfehlung:** Ein Wort genügt („Text“ oder „Stellung“); bei „Stellung“ die neue Fassung
+      hochladen, Claude macht den Datenlauf.
+      **Nachgelesen im Buch (17.10.2026):** Im Buchstand vom 16.10. ist an der Stellung von 4.45
+      nichts geändert, wohl aber die Zeile F3 der Fallenprüfung „Damenfalle im Dänischen Gambit“
+      (jetzt: der Läufer b2 fesselt g7 relativ an den Turm h8, „teils“). Diese Zeile ist in der App
+      übernommen. Bitte nur bestätigen, dass du den Text meintest.
+
+- D2. **Glossar und Steckbriefe sind sich bei der Phase uneins (Befund aus S17, ersetzt C3).**
+      Seit 0.2.61 folgt die Phase an allen Abbildungen dem Glossar, wie du entschieden hast:
+      Mittelspiel erst, wenn beide Seiten entwickelt sind (höchstens eine Leichtfigur zu Hause) und
+      rochiert haben. „Rochiert haben“ liest die App aus den Zügen des Buches, damit ein König, der
+      rochiert hatte und dann gejagt wird, weiter als rochiert gilt (Colle 11.12 bis 11.14, Lasker
+      11.18 bis 11.21 für Schwarz, Unzicker 11.82 und 11.84). Damit stimmen die Opernpartie (11.4 bis
+      11.9) und Anderssen–Dufresne (11.25 bis 11.31) mit ihren Steckbriefen „Eröffnung bis
+      Mattangriff“ überein. Drei Stellen widersprechen ihrem Steckbrief, weil eine Seite nicht
+      rochiert hat: **Lasker–Thomas** (Steckbrief „Mittelspiel“; Weiß rochiert erst mit dem Mattzug,
+      also nach dem Glossar Eröffnung bis zum Schluss), **Fischer–Petrosjan 11.43 und 11.44**
+      (Steckbrief „Mittelspiel bis Endspiel“, an 11.43 steht die Skelettbilanz; Schwarz rochiert erst
+      im 15. Zug) und **Opernpartie 11.98** (Übung, nach 11. Lxb5+). In den Kapiteln 1 bis 7 und 10
+      werden dadurch 127 Abbildungen von „Mittelspiel“ zu „Eröffnung“, fast alle aus Eröffnungen
+      der Kapitel 2 und 3, was zum Buch passt.
+      **Empfehlung:** Im Buch die Steckbriefe von Lasker–Thomas („Eröffnung bis Mattangriff“) und
+      Fischer–Petrosjan („Eröffnung bis Endspiel“) angleichen, oder im Glossar ergänzen, dass ein
+      König, der in der Mitte bleibt, das Mittelspiel nicht aufhält, wenn beide Seiten entwickelt
+      sind. Die App bleibt beim Glossar, bis du entscheidest.
+
+#### E. Vor der Veröffentlichung der App (zurückgestellt, bis App und Website fertig sind)
+
+- E3. **Buchbeschreibung** auf der Startseite: Entwurf bestätigen oder ersetzen.
+      **Empfehlung:** denselben Text wie auf der Rückseite des Buches nehmen, dann stimmen Buch
+      und Website überein.
+      **Nachgelesen im Buch (17.10.2026):** In den Buchquellen gibt es keinen Rückseitentext. Der
+      Untertitel lautet „Vom sicheren Einstieg zum strategischen Plan – Eröffnungen meistern,
+      Fallen durchschauen und souverän gewinnen“. Korrigiert: Die Startseite sagte „bis zu einer
+      Spielstärke von etwa 2000 Elo“; das Buch sagt „in Richtung Elo 2000“ und ausdrücklich „Allein
+      aus einem Buch heraus erreicht niemand 2000 Elo“. Jetzt: „bis zu den Ideen, die für den Weg
+      in Richtung Elo 2000 entscheidend sind“. Schon umgesetzt in 0.2.55.
+- E4. **Bezugsquellen:** ISBN und Shop-Links, sobald sie feststehen.
+      **Empfehlung:** nachtragen, sobald die ISBN vergeben ist; bis dahin bleibt der Platz leer.

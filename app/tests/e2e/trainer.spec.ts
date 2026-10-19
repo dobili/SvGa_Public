@@ -58,15 +58,14 @@ test("Zähltrainer: Bilanz zählen zeigt die Rechnung der App", async ({ page })
   await oeffneTrainer(page, "zaehlen");
   await page.getByRole("button", { name: /Bilanz zählen/ }).click();
   const runde = page.getByTestId("trainerrunde");
+  // Seit 0.2.116 mit „−“ und „+“: der erste Tipp auf „+“ setzt den kleinsten Wert.
+  await runde.getByRole("button", { name: "Angreifer: eins mehr" }).click();
+  await runde.getByRole("button", { name: "Verteidiger: eins mehr" }).click();
   await runde
-    .getByRole("group", { name: "Angreifer", exact: true })
-    .getByRole("button", { name: "1", exact: true })
+    .getByRole("button", { name: /eins mehr/ })
+    .last()
     .click();
-  await runde
-    .getByRole("group", { name: "Verteidiger" })
-    .getByRole("button", { name: "1", exact: true })
-    .click();
-  await runde.getByRole("button", { name: "lohnt nicht" }).click();
+  await expect(runde.getByText("lohnt nicht")).toBeVisible();
   await runde.getByRole("button", { name: "Prüfen" }).click();
   await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/trainer-zaehlen.png", fullPage: true });

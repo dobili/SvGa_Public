@@ -647,6 +647,8 @@
   "trainer.stand": "Aufgabe {nummer} von {anzahl} · {richtig} richtig",
   "trainer.weiter": "Weiter",
   "trainer.aufgabeWiederholen": "Aufgabe wiederholen",
+  "zahlschritt.weniger": "{titel}: eins weniger",
+  "zahlschritt.mehr": "{titel}: eins mehr",
   "trainer.auswerten": "Runde auswerten",
   "trainer.rundenfortschritt": "Fortschritt der Runde",
   "trainer.pruefen": "Prüfen",

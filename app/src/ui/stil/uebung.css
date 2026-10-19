@@ -213,3 +213,26 @@
   display: grid;
   gap: calc(var(--raster) / 2);
 }
+
+/* Zahl mit „−“ und „+“ (Zähltrainer, 0.2.116). */
+.zahlschritt {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.zahlschritt legend {
+  padding: 0;
+  margin-bottom: var(--raster);
+  font-weight: 600;
+}
+
+.zahlschritt-wert {
+  min-width: 7em;
+  text-align: center;
+  font-size: var(--groesse-grund);
+  font-weight: 600;
+}

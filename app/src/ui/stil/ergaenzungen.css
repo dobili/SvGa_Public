@@ -52,6 +52,8 @@
 .chip {
   display: inline-flex;
   align-items: center;
+  /* Zahlen und kurze Wörter mittig (Wunsch des Autors, 19.10.2026: Zahlen saßen links). */
+  justify-content: center;
   gap: 6px;
 }
 

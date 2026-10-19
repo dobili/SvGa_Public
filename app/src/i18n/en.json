@@ -647,6 +647,8 @@
   "trainer.stand": "Task {nummer} of {anzahl} · {richtig} correct",
   "trainer.weiter": "Next",
   "trainer.aufgabeWiederholen": "Try this one again",
+  "zahlschritt.weniger": "{titel}: one less",
+  "zahlschritt.mehr": "{titel}: one more",
   "trainer.auswerten": "Evaluate round",
   "trainer.rundenfortschritt": "Round progress",
   "trainer.pruefen": "Check",

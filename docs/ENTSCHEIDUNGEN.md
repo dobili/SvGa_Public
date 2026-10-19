@@ -3218,5 +3218,8 @@ Weitere Fehler, die das Durchprüfen von Teil 1 mit Playwright fand, alle behobe
 - **Erklärung der Karte „Spielstärke“:** nannte noch „in den Einstellungen (wie Lichess,
   Mittelweg oder nahe chess.com)“; seit 0.2.87 steht der Schalter nur in der Karte und heißt
   „Lichess, App, chess.com“.
+- **Kennungen mit zwei Buchstaben auf der Aufgabenseite:** Die Seite las nur Kennungen mit einem
+  Buchstaben (N307, F5); die Rückfragen der parallelen Chats heißen NA1, LS…, ZF… und ließen
+  sich nicht abhaken. Jetzt gelten ein oder zwei Großbuchstaben.
 - Kein Fehler: Die Rochade heißt im Trainer „O-O“ mit Buchstaben O, wie im Buch (190-mal O-O,
   nie 0-0).

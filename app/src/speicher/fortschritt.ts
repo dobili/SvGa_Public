@@ -232,3 +232,19 @@ export function notiereWarumfrage(
   };
   return { ...daten, fortschritt: { ...daten.fortschritt, warum } };
 }
+
+/**
+ * Merkt eine richtig eingeschätzte Abbildung (NA1, Wunsch des Autors vom 19.10.2026): Beim
+ * nächsten Öffnen zeigt „Erst selbst denken“ die Werkzeuge gleich.
+ * Beispiel: notiereEinschaetzung(daten, "1.26", jetzt) nach „ausgeglichen“ bei +0,3.
+ * Sonderfall: Schon gemerkt → dieselben Daten (der Speicher schreibt nichts).
+ */
+export function notiereEinschaetzung(
+  daten: Nutzerdaten,
+  abbildung: string,
+  jetzt: Date,
+): Nutzerdaten {
+  if (daten.fortschritt.eingeschaetzt[abbildung] !== undefined) return daten;
+  const eingeschaetzt = { ...daten.fortschritt.eingeschaetzt, [abbildung]: jetzt.toISOString() };
+  return { ...daten, fortschritt: { ...daten.fortschritt, eingeschaetzt } };
+}

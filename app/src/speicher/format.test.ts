@@ -37,6 +37,7 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       uebungen: {},
       trainer: {},
       warum: {},
+      eingeschaetzt: {},
     });
     expect(ergebnis.daten.angelegt).toBe(JETZT.toISOString());
   });
@@ -103,7 +104,7 @@ describe("Format 1", () => {
           vorWerkzeugen: "aus",
         },
         // Beantwortete Warum-Fragen (seit 0.2.99) fehlen in Format 1 und lesen sich leer.
-        fortschritt: { ...format1.fortschritt, warum: {} },
+        fortschritt: { ...format1.fortschritt, warum: {}, eingeschaetzt: {} },
         schemaVersion: SCHEMA_VERSION,
         spiel: LEERER_SPIELSTAND,
         karten: {},

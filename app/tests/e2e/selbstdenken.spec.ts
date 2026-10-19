@@ -21,7 +21,7 @@ async function schalteEin(page: Page, streng = false): Promise<void> {
   await leiste.getByRole("button", { name: "Buch" }).click();
 }
 
-test("Abb. 1.26: erst einschätzen, dann Werkzeuge; die Einschätzung bleibt sichtbar", async ({
+test("Abb. 1.26: erst einschätzen, dann Werkzeuge; Einschätzung und Urteil der Engine", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -35,7 +35,10 @@ test("Abb. 1.26: erst einschätzen, dann Werkzeuge; die Einschätzung bleibt sic
   await karte.getByRole("radio", { name: "Weiß besser" }).click();
   await karte.getByRole("button", { name: "Ich habe nachgedacht" }).click();
   await expect(page.getByTestId("selbstdenken")).toHaveCount(0);
-  await expect(page.getByTestId("eigene-einschaetzung")).toContainText("Weiß steht besser");
+  const vergleich = page.getByTestId("eigene-einschaetzung");
+  await expect(vergleich).toContainText("Weiß steht besser");
+  // NA1: Die Engine sieht Abb. 1.26 ausgeglichen (unter einem halben Bauern).
+  await expect(vergleich).toContainText("also „ausgeglichen“", { timeout: 20_000 });
   await page.getByRole("button", { name: "Zählen" }).click();
   await page.getByRole("button", { name: "d4, Bauer (Weiß)" }).click();
   await expect(page.getByTestId("werkzeugkarte")).toContainText("3 gegen 3");
@@ -52,6 +55,14 @@ test("streng: ohne Einschätzung bleibt „Ich habe nachgedacht“ gesperrt", as
   await expect(weiter).toBeEnabled();
   await weiter.click();
   await expect(page.getByRole("button", { name: "Zählen" })).toBeVisible();
+  // NA1: richtig eingeschätzt → gemerkt; beim nächsten Öffnen sind die Werkzeuge gleich da.
+  await expect(page.getByTestId("eigene-einschaetzung")).toContainText("Richtig eingeschätzt", {
+    timeout: 20_000,
+  });
+  await page.reload();
+  await oeffneAbbildung(page, "1.26", "1.26");
+  await expect(page.getByRole("button", { name: "Zählen" })).toBeVisible();
+  await expect(page.getByTestId("selbstdenken")).toHaveCount(0);
 });
 
 test("eingeschaltet: Übungen und Trainer lassen sich wie bisher lösen", async ({ page }) => {

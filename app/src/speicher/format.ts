@@ -138,6 +138,12 @@ export interface Fortschritt {
    * Zusätzliches Feld wie 0.2.90; ältere Daten ohne Feld bekommen ein leeres.
    */
   readonly warum: Readonly<Record<string, readonly number[]>>;
+  /**
+   * Seit 0.2.117 (NA1): richtig eingeschätzte Abbildungen („1.26“ → Datum). Dort zeigt „Erst
+   * selbst denken“ die Werkzeuge gleich. Zusätzliches Feld wie „warum“; ältere Daten bekommen
+   * ein leeres.
+   */
+  readonly eingeschaetzt: Readonly<Record<string, string>>;
 }
 
 export interface Nutzerdaten {
@@ -179,7 +185,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     angelegt: jetzt.toISOString(),
     einstellungen: STANDARD_EINSTELLUNGEN,
     lernstand: {},
-    fortschritt: { gesehen: {}, uebungen: {}, trainer: {}, warum: {} },
+    fortschritt: { gesehen: {}, uebungen: {}, trainer: {}, warum: {}, eingeschaetzt: {} },
     letzteSicherung: null,
     spiel: LEERER_SPIELSTAND,
     karten: {},
@@ -294,6 +300,9 @@ function fortschrittAus(roh: unknown): Fortschritt {
     // Unbekannte Trainer (aus einer späteren Version) fallen weg statt die Typen zu verletzen.
     trainer: Object.fromEntries(Object.entries(trainer).filter(([k]) => KENNUNGEN.has(k))),
     warum: eintraege(teil.warum, stellenAus),
+    eingeschaetzt: eintraege(teil.eingeschaetzt, (wert) =>
+      typeof wert === "string" ? wert : null,
+    ),
   };
 }
 

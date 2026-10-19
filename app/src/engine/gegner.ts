@@ -10,9 +10,10 @@
  * (engine/blindeFlecken.ts); die Stufen je Phase bleiben dem Leser verborgen (Wunsch des Autors).
  * Seit 0.2.60 gilt dazu die allgemeine Abhakliste der Fehlerarten aus den Einstellungen
  * (`unterAbhakliste`, Rest aus Rückfrage S7).
- * Abhängigkeiten: stufen.ts, blindeFlecken.ts, fehlerart.ts, schach/phase.ts, i18n.
+ * Abhängigkeiten: stufen.ts, botgruppe.ts, blindeFlecken.ts, fehlerart.ts, schach/phase.ts, i18n.
  */
 import type { BlinderFleck } from "./blindeFlecken";
+import { gruppeDesBots } from "./botgruppe";
 import { FEHLERARTEN, type Fehlerart } from "./fehlerart";
 import type { Phase } from "../schach/phase";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
@@ -27,9 +28,12 @@ export function durchschnitt(g: Gegner): number {
   return Math.round((summe / 3) * 10) / 10;
 }
 
-/** Die Stufe, deren Name den Gegner einordnet (Durchschnitt gerundet). */
+/**
+ * Die Stufe, deren Name den Gegner einordnet: seine Gruppe in der Gegnerwahl (Durchschnitt
+ * gerundet; seit 0.2.109 für acht Bots festgelegt, engine/botgruppe.ts).
+ */
 export function klasseVon(g: Gegner): Stufe {
-  return stufe(Math.round(durchschnitt(g)));
+  return stufe(gruppeDesBots(g.kennung, durchschnitt(g)));
 }
 
 /** Der Gegner zu einer Kennung, sonst null. */
@@ -102,11 +106,13 @@ export function istSpassbot(g: Gegner): boolean {
 }
 
 /**
- * Die Gegner einer Stufe (Klasse = gerundeter Durchschnitt), nach Durchschnitt sortiert; ohne
- * die Spaß-Bots, die eine eigene Gruppe unter Stufe 1 bilden (`spassbots`).
+ * Die Gegner einer Stufe (Klasse wie `klasseVon`), nach Durchschnitt sortiert; ohne die
+ * Spaß-Bots, die eine eigene Gruppe unter Stufe 1 bilden (`spassbots`).
  */
 export function gegnerDerStufe(nummer: Stufennummer): Gegner[] {
-  return gegnerSortiert().filter((g) => !istSpassbot(g) && Math.round(durchschnitt(g)) === nummer);
+  return gegnerSortiert().filter(
+    (g) => !istSpassbot(g) && gruppeDesBots(g.kennung, durchschnitt(g)) === nummer,
+  );
 }
 
 /** Die Spaß-Bots (0.2.88), vom schwächsten zum stärksten (mehr Zufall heißt schwächer). */

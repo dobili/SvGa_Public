@@ -1,12 +1,14 @@
 /**
  * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): acht je Stufe, eindeutige Kennungen,
  * Text und Porträt zu jedem, Stil im erlaubten Bereich; dazu seit 0.2.60 der Schnitt mit der
- * allgemeinen Abhakliste der Fehlerarten (Rückfrage S7).
+ * allgemeinen Abhakliste der Fehlerarten (Rückfrage S7) und seit 0.2.109 Gruppen ohne
+ * Überschneidung.
  */
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import de from "../i18n/de.json";
+import { bereichDerStufe } from "./botstaerke";
 import { FEHLERARTEN } from "./fehlerart";
 import {
   durchschnitt,
@@ -14,6 +16,7 @@ import {
   gegnerDerStufe,
   gegnerSortiert,
   gegnerVon,
+  klasseVon,
   unterAbhakliste,
   istSpassbot,
   spassbots,
@@ -51,6 +54,23 @@ describe("vorgefertigte Gegner", () => {
       expect(texte[g.beschreibung], g.kennung).toBeTruthy();
       expect(existsSync(join("public", "gegner", `${g.kennung}.svg`)), g.kennung).toBe(true);
     }
+  });
+});
+
+describe("Gruppen ohne Überschneidung (0.2.109)", () => {
+  it("die stärkste Zahl einer Stufe liegt unter der schwächsten der nächsten", () => {
+    for (const nummer of STUFENNUMMERN.slice(0, -1)) {
+      const naechste = (nummer + 1) as Stufennummer;
+      expect(bereichDerStufe(nummer).bis, `Stufe ${nummer}`).toBeLessThan(
+        bereichDerStufe(naechste).von,
+      );
+    }
+  });
+
+  it("Jan steht in Stufe 3 und heißt so, spielt aber weiter mit seinen Stufen 4, 3, 5", () => {
+    const jan = gegnerDerStufe(3).find((g) => g.kennung === "jan");
+    expect(jan?.stufenJePhase).toEqual({ eroeffnung: 4, mittelspiel: 3, endspiel: 5 });
+    expect(jan && klasseVon(jan).nummer).toBe(3);
   });
 });
 

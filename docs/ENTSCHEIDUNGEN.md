@@ -4117,7 +4117,25 @@ Vom Autor abgesegnet (19.10.2026, Punkt d): AP 17 vorbereiten, ohne zu veröffen
 - Empfehlung V1 (Englisch in 1.0 ausblenden) ist damit vorbereitet; sie wirkt erst mit dem Bau
   für die Leser.
 
-## App-Symbol knackiger (19.10.2026, Opus, Zweig `symbol-knackig`, Version 0.2.109)
+## Bot-Gruppen ohne Überschneidung (19.10.2026, Opus, Zweig `bot-gruppen`, Version 0.2.109)
+
+Wunsch des Autors: Die Stufen der Gegnerwahl sollen sich möglichst nicht überschneiden (Stufe 3
+und 4 taten es), ohne die Bots neu zu messen. Die Gruppe eines Bots war der gerundete
+Durchschnitt seiner Stufen je Phase; nach den Zahlen der Elo-Leiter (seit 0.2.103) lagen acht
+Bots jenseits der Nachbargruppe. Sie tauschen paarweise die Gruppe (`engine/botgruppe.ts`), jede
+Stufe behält acht Bots, ihre Stufen je Phase und damit ihr Spiel bleiben gleich:
+
+- Stufe 3 ↔ 4: Jan (1657) und Lukas (1788) nach 3, Omar (1809) und Selin (1863) nach 4.
+- Stufe 6 ↔ 7: Trainer Koch (2417) nach 6, Lena (2458) nach 7.
+- Stufe 7 ↔ 8: GM Petrova (2764) nach 7, Doktor Berg (2802) nach 8.
+
+Bereiche danach: 1: 830–1089, 2: 1180–1476, 3: 1657–1788, 4: 1809–1949, 5: 1988–2197,
+6: 2223–2433, 7: 2458–2764, 8: 2802–3011. Die Einordnung („Stufe 3 · Fortgeschrittene“ in der
+Partie und in der Sprechblase) folgt der Gruppe. Ein Test prüft, dass benachbarte Bereiche sich
+nicht überschneiden; ändern sich die Zahlen nach einer neuen Messung, schlägt er an. Die Abstände
+an den Grenzen (etwa 20 bis 40 Punkte) liegen innerhalb der Messunsicherheit (±70 bis ±220).
+
+## App-Symbol knackiger (19.10.2026, Opus, Zweig `symbol-knackig`, Version 0.2.110)
 
 Rückmeldung des Autors mit Bildschirmfoto vom Startbildschirm: „Bekommen wir die Farben des Icons
 noch etwas knackiger?“ Ursachen: das weich gezeichnete Cover, das Rauschen der Verkleinerung auf

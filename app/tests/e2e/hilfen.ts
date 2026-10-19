@@ -14,8 +14,24 @@ export function gewaehlteWerkzeuge(seite: Page): Locator {
   );
 }
 
-/** Öffnet die Startseite des Buches und wählt im Installationsteil „Im Browser verwenden“. */
-export async function starteImBrowser(seite: Page): Promise<void> {
+/**
+ * Öffnet die Startseite des Buches und wählt im Installationsteil „Im Browser verwenden“.
+ * Der Sieben-Tage-Hinweis für Safari (19.10.2026) ist dabei geschlossen, weil er sonst in jedem
+ * Test auf dem iPhone oben stünde; geraete.spec.ts prüft ihn mit `safariHinweis: true`.
+ */
+export async function starteImBrowser(
+  seite: Page,
+  { safariHinweis = false }: { safariHinweis?: boolean } = {},
+): Promise<void> {
+  if (!safariHinweis) {
+    await seite.addInitScript(() => {
+      try {
+        window.localStorage.setItem("svga.safariHinweis", "aus");
+      } catch (fehler) {
+        console.warn("Merker nicht schreibbar:", fehler);
+      }
+    });
+  }
   await seite.goto("/");
   await expect(seite.getByRole("heading", { name: "Schach von Grund auf" })).toBeVisible();
   await seite.getByRole("link", { name: "Im Browser verwenden" }).click();

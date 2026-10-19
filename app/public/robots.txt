@@ -1,0 +1,5 @@
+# Suchmaschinen dürfen alles lesen (Startseite, Installation, Trainingsseiten, App).
+User-agent: *
+Allow: /
+
+Sitemap: https://schach-von-grund-auf.com/sitemap.xml

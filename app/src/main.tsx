@@ -49,3 +49,5 @@ createRoot(wurzel).render(
     </Fehlergrenze>
   </StrictMode>,
 );
+// Die App steht: Der Hinweis für zu alte Geräte (index.html, 19.10.2026) wird nicht gebraucht.
+document.getElementById("startproblem")?.remove();

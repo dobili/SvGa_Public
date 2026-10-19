@@ -2866,5 +2866,14 @@
   "bauern.kuerzel.haengend": "H",
   "bauern.kuerzel.basis": "B",
   "bauern.kuerzel.ungesund": "U",
-  "erzwingend.kuerzel.drohung": "D"
+  "erzwingend.kuerzel.drohung": "D",
+  "safari.hinweis.text": "Wichtig in Safari: Safari kann die Daten einer Website löschen, die du sieben Tage lang nicht geöffnet hast, und damit deinen ganzen Fortschritt. Als App auf dem Home-Bildschirm gilt das nicht.",
+  "safari.hinweis.installieren": "So installierst du die App",
+  "safari.hinweis.verstanden": "Verstanden",
+  "sicherung.safari": "Safari kann die Daten einer Website löschen, die du sieben Tage lang nicht geöffnet hast. Installiere die App auf dem Home-Bildschirm oder lege regelmäßig eine Sicherung an.",
+  "start.zuAlt.titel": "Dieses Gerät ist zu alt für die App",
+  "start.zuAlt.text": "Die App braucht auf iPhone und iPad iOS 16.4 oder neuer, auf Android einen aktuellen Chrome. Bitte aktualisiere das System (iPhone: Einstellungen › Allgemein › Softwareupdate) oder nutze ein anderes Gerät. Lesen und üben kannst du mit dem Buch natürlich auch ohne App.",
+  "start.haengt.titel": "Die App startet nicht",
+  "start.haengt.text": "Das dauert ungewöhnlich lange. Prüfe die Internetverbindung und lade die Seite neu. Startet sie dann immer noch nicht, ist das Gerät vielleicht zu alt: Die App braucht auf iPhone und iPad iOS 16.4 oder neuer, auf Android einen aktuellen Chrome.",
+  "start.neuLaden": "Neu laden"
 }

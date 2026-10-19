@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.110. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.111. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.110“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.111“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,17 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.111 (etwa 3 Minuten; Hinweise für iPhone und alte Geräte, Opus)
+
+- [ ] N410. **Sieben-Tage-Hinweis in Safari:** Öffne die App auf dem iPhone in Safari, nicht vom
+      Home-Bildschirm (Adresse schach-von-grund-auf.com/app/). Oben steht einmal: „Wichtig in
+      Safari: Safari kann die Daten einer Website löschen, die du sieben Tage lang nicht geöffnet
+      hast, und damit deinen ganzen Fortschritt. Als App auf dem Home-Bildschirm gilt das
+      nicht.“ mit „So installierst du die App“ und „Verstanden“. Dieselbe Warnung steht in den
+      Einstellungen bei der Datensicherung. In der installierten App erscheint beides nicht.
+      Passt der Ton? (Neu ist auch ein Hinweis für zu alte Geräte, ab iOS 16.4; den prüft Claude
+      selbst, weil es dafür ein altes iPhone bräuchte.)
 
 ### Neu in 0.2.110 (etwa 2 Minuten; App-Symbol knackiger, dein Wunsch vom 19.10.2026, Opus)
 
@@ -79,6 +90,16 @@ Anzeige › Nachtmodus „aus“ und „an“).
       rund zugeschnitten ohne abgeschnittene Ohren oder Füße. Im Browser-Tab bleibt der schlichte
       weiße Springer. Gefällt es dir auf deinem Startbildschirm?
 
+### Neu in 0.2.105 (etwa 5 Minuten, mit Engine; kurze Partien zählen für die Wertung, Opus)
+
+- [ ] N584. **Schneller Sieg gegen einen Spaß-Bot zählt:** Einstellungen › Wertung: Zahl der
+      Punkte in der Kurve merken. Dann eine gewertete Partie gegen Bruno spielen und früh gewinnen
+      (der Bot verliert nach wenigen Zügen Material). In der Auswertung darf bei beiden Seiten „zu
+      wenige Züge vor der Entscheidung“ stehen. Trotzdem hat die Kurve danach einen Punkt mehr.
+      Die Zahl selbst steigt gegen einen viel schwächeren Bot kaum (etwa 1 Punkt, gegen Fritzi
+      meist gar nicht), weil der Sieg erwartet war. Seit 0.2.103 zählten solche Partien gar nicht,
+      weil der Bot zu wenige Züge vor der Entscheidung hatte; seine Zahl ist aber ohnehin fest.
+
 ### Neu in 0.2.104 (etwa 10 Minuten; englische Fassung als Vorschau, dein Wunsch vom 19.10.2026, Opus)
 
 Alle 2857 Oberflächentexte gibt es jetzt auf Englisch, mit englischer Notation (B statt L,
@@ -93,16 +114,6 @@ Teil 2, EN2). Englisch muss man selbst wählen; die App startet nie von selbst a
       Qb6“. Spiele eine kurze Partie gegen die Engine und sieh dir die Auswertung an: Klingen die
       Sätze natürlich? Zahlen mit Punkt („1.5“), Datum als „10/19/2026“. Zurück mit
       Settings › Display › „Deutsch“. Notiere alles, was hölzern oder falsch klingt.
-
-### Neu in 0.2.105 (etwa 5 Minuten, mit Engine; kurze Partien zählen für die Wertung, Opus)
-
-- [ ] N584. **Schneller Sieg gegen einen Spaß-Bot zählt:** Einstellungen › Wertung: Zahl der
-      Punkte in der Kurve merken. Dann eine gewertete Partie gegen Bruno spielen und früh gewinnen
-      (der Bot verliert nach wenigen Zügen Material). In der Auswertung darf bei beiden Seiten „zu
-      wenige Züge vor der Entscheidung“ stehen. Trotzdem hat die Kurve danach einen Punkt mehr.
-      Die Zahl selbst steigt gegen einen viel schwächeren Bot kaum (etwa 1 Punkt, gegen Fritzi
-      meist gar nicht), weil der Sieg erwartet war. Seit 0.2.103 zählten solche Partien gar nicht,
-      weil der Bot zu wenige Züge vor der Entscheidung hatte; seine Zahl ist aber ohnehin fest.
 
 ### Neu in 0.2.103 (etwa 15 Minuten, mit Engine; Spielstärke nur bis zur Entscheidung, Opus)
 

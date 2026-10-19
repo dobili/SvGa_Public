@@ -27,10 +27,64 @@
         console.warn("Farbschema nicht lesbar:", fehler);
       }
     </script>
+    <style>
+      .startproblem {
+        max-width: 32rem;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+      }
+      .startproblem h1 {
+        font-size: 1.4rem;
+      }
+      .startproblem button {
+        min-height: 44px;
+        padding: 0 1.2rem;
+        font-size: 1rem;
+      }
+    </style>
   </head>
   <body>
     <div id="wurzel"></div>
     <noscript>Diese App braucht JavaScript.</noscript>
+    <!-- Startproblem (19.10.2026): Auf zu alten Geräten bliebe die Seite sonst leer. -->
+    <div id="startproblem" class="startproblem" hidden>
+      <h1 data-zu-alt hidden>{{start.zuAlt.titel}}</h1>
+      <p data-zu-alt hidden>{{start.zuAlt.text}}</p>
+      <h1 data-haengt hidden>{{start.haengt.titel}}</h1>
+      <p data-haengt hidden>{{start.haengt.text}}</p>
+      <button type="button" onclick="location.reload()">{{start.neuLaden}}</button>
+    </div>
+    <script>
+      // Zeigt den Hinweis, wenn das Gerät zu alt ist oder die App nach 25 Sekunden noch nicht
+      // gezeichnet hat. main.tsx entfernt ihn, sobald die App steht.
+      function geraetZuAlt() {
+        // Mindestausstattung der App (Bauziel von Vite: Safari 16.4, Chrome 111): Rückschau in
+        // regulären Ausdrücken gibt es in Safari erst ab 16.4; :has(), structuredClone und
+        // findLast fehlen in älteren Browsern.
+        try {
+          new RegExp("(?<=a)b");
+        } catch (fehler) {
+          return true;
+        }
+        var css = window.CSS && CSS.supports && CSS.supports("selector(:has(a))");
+        return !(css && "structuredClone" in window && "findLast" in Array.prototype);
+      }
+      function zeigeStartproblem(art) {
+        var kasten = document.getElementById("startproblem");
+        if (!kasten) return;
+        var teile = kasten.querySelectorAll("[data-" + art + "]");
+        for (var i = 0; i < teile.length; i++) teile[i].hidden = false;
+        kasten.hidden = false;
+      }
+      if (geraetZuAlt()) zeigeStartproblem("zu-alt");
+      else
+        setTimeout(function () {
+          var wurzel = document.getElementById("wurzel");
+          if (wurzel && wurzel.childElementCount === 0) zeigeStartproblem("haengt");
+        }, 25000);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

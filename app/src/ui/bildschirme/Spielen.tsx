@@ -33,9 +33,10 @@ import {
   kategorieVon,
   type Gegnerkategorie,
 } from "../komponenten/gegnerkategorie";
-import { gegnerVon, unterAbhakliste, type EigenerGegner } from "../../engine/gegner";
 import { GegnerEditor } from "../komponenten/GegnerEditor";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
+import { gegnerVon } from "../../engine/gegner";
+import { gegnerprofil } from "./gegnerprofil";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
 import { Stellungseditor } from "../komponenten/Stellungseditor";
@@ -249,43 +250,6 @@ function Startstellung({
       )}
     </section>
   );
-}
-
-/**
- * Name, Fehlerarten, Stil und blinde Flecken des gewählten Gegners für die Partie (0.2.42, 0.2.46).
- * Die Abhakliste (0.2.60) beschneidet nur die Fehlerarten der eigenen Stufe: Seit 0.2.80 steht
- * sie dort und nicht mehr in den Einstellungen, und vorgefertigte Gegner sind mit ihrer eigenen
- * Liste gemessen und beschrieben (Empfehlung nach Regel 9, Wunsch des Autors vom 18.10.2026);
- * eigene Gegner haben ihre eigene Liste. Ebenso gelten die blinden Flecken der Vorlieben (0.2.82)
- * nur für die eigene Stufe.
- */
-function gegnerprofil(
-  bot: string | null,
-  eigene: readonly EigenerGegner[],
-  v: Pick<Spielvorlieben, "erlaubteFehlerarten" | "blindeFlecken">,
-) {
-  const eigener = eigene.find((g) => g.kennung === bot);
-  if (eigener) {
-    return {
-      botName: eigener.name,
-      fehlerarten: eigener.fehlerarten,
-      stil: eigener.stil,
-      blindeFlecken: eigener.blindeFlecken,
-    };
-  }
-  const vorgefertigt = gegnerVon(bot);
-  if (!vorgefertigt) {
-    return {
-      fehlerarten: unterAbhakliste(null, v.erlaubteFehlerarten),
-      blindeFlecken: v.blindeFlecken,
-    };
-  }
-  return {
-    botName: vorgefertigt.name,
-    fehlerarten: vorgefertigt.fehlerarten,
-    stil: vorgefertigt.stil,
-    blindeFlecken: vorgefertigt.blindeFlecken,
-  };
 }
 
 /** Legt die Partie an, merkt die Vorlieben und öffnet die Partie. */

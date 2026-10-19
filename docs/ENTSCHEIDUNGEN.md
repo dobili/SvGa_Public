@@ -4145,3 +4145,35 @@ Mehr Sättigung (1,35 bis 1,45) machte das Gold orange-rot; gewählt: Kontrast 1
 leichte Schärfe (Laplace-Kern 0,6), Rand ab 45 % des Radius fast deckend in Navy (97 %). Die
 Symbole mit 180 und 192 Pixeln bleiben in voller Farbtiefe (je etwa 100 KB), nur die beiden 512er
 werden auf 256 Farben verkleinert (Android rechnet sie klein). Skript `skripte/erzeuge-appsymbol.mjs`.
+
+## Ohne Autor, Teil 1: Hinweise je Gerät, Abnahmetest A1, Sitemap, Kopfzeilen (19.10.2026, Opus, Zweig `weiter-ohne-autor`, Version 0.2.112)
+
+Vom Autor abgesegnet (19.10.2026, „Alle anderen Punkte auch ja“):
+
+- **Zu alte Geräte:** Vite baut für Safari 16.4 und Chrome 111. Auf älteren Geräten (etwa iPhone
+  7 mit iOS 15) blieb die App leer. Jetzt prüft ein kleines Skript in `app/index.html` vor dem
+  Start die Mindestausstattung (Rückschau in regulären Ausdrücken, `:has()`, `structuredClone`,
+  `findLast`) und zeigt sonst „Dieses Gerät ist zu alt für die App“ mit Anleitung; hat die App
+  nach 25 Sekunden nichts gezeichnet, steht „Die App startet nicht“ mit „Neu laden“.
+  `main.tsx` entfernt den Kasten, sobald die App steht. Dieselbe Warnung erscheint im
+  Installationsteil (Startseite und /installieren/), bevor jemand installiert. Test
+  `geraete.spec.ts` (alter Browser nachgestellt).
+- **Sieben-Tage-Regel von Safari:** Safari (iPhone, iPad, Mac) darf den Speicher einer Website
+  löschen, die sieben Tage nicht besucht wurde; installierte Apps sind ausgenommen. In Safari im
+  Browser erscheint deshalb einmal oben ein Hinweis mit „So installierst du die App“ und
+  „Verstanden“ (Merker `safariHinweis`), dauerhaft ein Satz in der Datensicherung
+  (`app/safarihinweis.ts`, `SafariHinweis.tsx`). In den Oberflächentests ist der Hinweis
+  vorab geschlossen (`starteImBrowser`), außer in `geraete.spec.ts`. Testpunkt N410.
+- **Abnahme A1:** `daten/finde.test.ts` öffnet jede der 765 Nummern des Verzeichnisses (auch als
+  „Abb. 1,26“) und prüft das Kapitel. Abb. 0.2 (Foto) steht nicht im Verzeichnis; offen in V6.
+- **Website:** `robots.txt` und `sitemap.xml` (Startseite, Installation, Training mit allen
+  13 Kapitelseiten und Werkzeugkasten, Impressum, Datenschutz), Test `sitemap.test.ts`.
+  Kopfzeilen für alle Seiten in `_headers`: `X-Content-Type-Options: nosniff`,
+  `X-Frame-Options: SAMEORIGIN`, `Referrer-Policy: strict-origin-when-cross-origin`,
+  `Permissions-Policy` ohne Kamera, Mikrofon, Standort, Zahlung, USB. Eine Content Security
+  Policy bewusst nicht: Sie könnte Engine (WebAssembly) oder Worker still lahmlegen, ohne dass es
+  ein Test merkt.
+- **Regel 4:** `Spielen.tsx` war 402 Zeilen lang; `gegnerprofil` steht jetzt in
+  `ui/bildschirme/gegnerprofil.ts`.
+- **CLAUDE.md** (Ja des Autors, 19.10.2026): Der Widerspruch zu den Testadressen von Cloudflare
+  ist aufgelöst (Vorschau-Builds eingestellt, Funktion prüft der Autor in V2).

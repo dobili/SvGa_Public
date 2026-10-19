@@ -12,6 +12,26 @@
 >
   <h2 id="app-titel" class="karte-titel">{{startseite.app.titel}}</h2>
   <p>{{installation.einleitung}}</p>
+  <p class="hinweis warnung" data-zu-alt hidden>{{start.zuAlt.text}}</p>
+  <script>
+    (function () {
+      function geraetZuAlt() {
+        // Mindestausstattung der App (Bauziel von Vite: Safari 16.4, Chrome 111): Rückschau in
+        // regulären Ausdrücken gibt es in Safari erst ab 16.4; :has(), structuredClone und
+        // findLast fehlen in älteren Browsern.
+        try {
+          new RegExp("(?<=a)b");
+        } catch (fehler) {
+          return true;
+        }
+        var css = window.CSS && CSS.supports && CSS.supports("selector(:has(a))");
+        return !(css && "structuredClone" in window && "findLast" in Array.prototype);
+      }
+      if (!geraetZuAlt()) return;
+      var hinweise = document.querySelectorAll("[data-zu-alt]");
+      for (var i = 0; i < hinweise.length; i++) hinweise[i].hidden = false;
+    })();
+  </script>
   <div class="fortschritt" data-fortschritt hidden>
     <div class="fortschritt-text">
       <span data-fortschritt-text>{{installation.fortschritt}}</span>

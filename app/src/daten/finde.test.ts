@@ -1,4 +1,9 @@
-/** Tests für das Nummernfeld „Abbildung öffnen“ (Konzept 6.1, findeAbbildung). */
+/**
+ * Tests für das Nummernfeld „Abbildung öffnen“ (Konzept 6.1, findeAbbildung). Dazu der
+ * Abnahmepunkt A1 für 1.0 (Pflichtenheft 9): Jede Abbildung des Buches lässt sich über ihre
+ * Nummer öffnen, geprüft an allen Nummern des eingecheckten Verzeichnisses.
+ */
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { findeAbbildung, normiereNummer } from "./finde";
 
@@ -46,5 +51,39 @@ describe("findeAbbildung", () => {
 
   it("meldet ungültige Eingaben", () => {
     expect(findeAbbildung("hallo", VORHANDEN)).toEqual({ art: "ungueltig" });
+  });
+});
+
+/** Verzeichnis der ausgelieferten Buchdaten: Kapitel mit ihren Abbildungsnummern. */
+interface Verzeichnis {
+  readonly kapitel: readonly {
+    readonly kapitel: number;
+    readonly abbildungen: readonly string[];
+  }[];
+}
+
+describe("Abnahme A1: jede Abbildung über ihre Nummer", () => {
+  const verzeichnis = JSON.parse(
+    readFileSync(new URL("../../public/daten/de/a1/index.json", import.meta.url), "utf8"),
+  ) as Verzeichnis;
+  const alle = verzeichnis.kapitel.flatMap((k) => k.abbildungen);
+
+  it("findet alle Nummern im richtigen Kapitel, auch mit Komma und „Abb.“", () => {
+    expect(alle.length).toBeGreaterThan(700);
+    const falsch = verzeichnis.kapitel.flatMap((k) =>
+      k.abbildungen.filter((nummer) => {
+        const mitKomma = findeAbbildung(`Abb. ${nummer.replace(".", ",")}`, alle);
+        return !(
+          mitKomma.art === "gefunden" &&
+          mitKomma.nummer === nummer &&
+          mitKomma.kapitel === k.kapitel
+        );
+      }),
+    );
+    expect(falsch).toEqual([]);
+  });
+
+  it("jede Nummer steht nur einmal im Verzeichnis", () => {
+    expect(new Set(alle).size).toBe(alle.length);
   });
 });

@@ -2839,5 +2839,14 @@
   "bauern.kuerzel.haengend": "H",
   "bauern.kuerzel.basis": "C",
   "bauern.kuerzel.ungesund": "U",
-  "erzwingend.kuerzel.drohung": "T"
+  "erzwingend.kuerzel.drohung": "T",
+  "safari.hinweis.text": "Important in Safari: Safari may delete the data of a website you have not opened for seven days, and with it all your progress. This does not apply to the app on your home screen.",
+  "safari.hinweis.installieren": "How to install the app",
+  "safari.hinweis.verstanden": "Got it",
+  "sicherung.safari": "Safari may delete the data of a website you have not opened for seven days. Install the app on your home screen or make a backup regularly.",
+  "start.zuAlt.titel": "This device is too old for the app",
+  "start.zuAlt.text": "On iPhone and iPad the app needs iOS 16.4 or later, on Android a current Chrome. Please update the system (iPhone: Settings › General › Software Update) or use another device. You can of course read and practice with the book without the app.",
+  "start.haengt.titel": "The app does not start",
+  "start.haengt.text": "This is taking unusually long. Check the internet connection and reload the page. If it still does not start, the device may be too old: on iPhone and iPad the app needs iOS 16.4 or later, on Android a current Chrome.",
+  "start.neuLaden": "Reload"
 }

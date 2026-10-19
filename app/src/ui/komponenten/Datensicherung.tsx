@@ -24,6 +24,8 @@ import { useSpeicher } from "../../speicher/speicher";
 import { bieteDateiAn, kannDateiTeilen, teileDatei } from "./dateiAnbieten";
 import { MitInfo } from "./InfoKnopf";
 import { Knopfsymbol } from "./Knopfsymbol";
+import { geraet, istInstalliert } from "../../app/geraet";
+import { safariHinweisNoetig } from "../../app/safarihinweis";
 
 /** So lange bleibt die Datei zum Herunterladen im Speicher. */
 type Gepruefte = Extract<Sicherungspruefung, { ok: true }>;
@@ -106,6 +108,11 @@ function Sicherungsstand() {
           <dd>{t(`sicherung.dauerhaft.${wert}`)}</dd>
         </div>
       </dl>
+      {safariHinweisNoetig(geraet(), istInstalliert(), null) && (
+        <p className="hinweis" data-testid="sicherung-safari">
+          {t("sicherung.safari")}
+        </p>
+      )}
     </>
   );
 }

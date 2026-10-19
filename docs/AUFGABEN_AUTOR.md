@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.97. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.98. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.97“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.98“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -33,7 +33,7 @@ dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. 
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 
-### Neu in 0.2.97 (etwa 25 Minuten; Design-Überprüfung, Opus)
+### Neu in 0.2.98 (etwa 25 Minuten; Design-Überprüfung, Opus)
 
 Alle 18 Vorschläge DS1 bis DS18 hast du am 19.10.2026 angenommen („Alle, ja“). Jeder Punkt prüft
 einen davon auf dem Handy (und, wo genannt, quer oder auf dem Tablet).

@@ -3827,7 +3827,7 @@ ist (Regel 1). Dazu die Tablebase für die Endspielabbildungen.
   Unterschrift in ZF4), 9.41 remis wie im Buch, 9.23 zu viele Steine, Engine Tiefe 32 nach
   1. Txa7 +0,03 (passt zum Buch). Syzygy lokal wäre knapp 1 GB gewesen, für diese Fälle unnötig.
 
-## Design-Überprüfung (19.10.2026, Opus, Zweig `design-ueberarbeitung`, Version 0.2.97)
+## Design-Überprüfung (19.10.2026, Opus, Zweig `design-ueberarbeitung`, Version 0.2.98)
 
 Auftrag des Autors vom 18.10.2026; am 19.10.2026 alle 18 Vorschläge angenommen („Alle, ja“,
 Rückfrage G1). Grundlage: Apple HIG, Material 3, WCAG 2.2, Regeln für Lern-Apps, Vergleich mit

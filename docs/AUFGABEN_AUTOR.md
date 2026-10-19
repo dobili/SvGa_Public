@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.104. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.105. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.104“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.105“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -47,6 +47,16 @@ Teil 2, EN2). Englisch muss man selbst wählen; die App startet nie von selbst a
       Qb6“. Spiele eine kurze Partie gegen die Engine und sieh dir die Auswertung an: Klingen die
       Sätze natürlich? Zahlen mit Punkt („1.5“), Datum als „10/19/2026“. Zurück mit
       Settings › Display › „Deutsch“. Notiere alles, was hölzern oder falsch klingt.
+
+### Neu in 0.2.105 (etwa 5 Minuten, mit Engine; kurze Partien zählen für die Wertung, Opus)
+
+- [ ] N584. **Schneller Sieg gegen einen Spaß-Bot zählt:** Einstellungen › Wertung: Zahl der
+      Punkte in der Kurve merken. Dann eine gewertete Partie gegen Bruno spielen und früh gewinnen
+      (der Bot verliert nach wenigen Zügen Material). In der Auswertung darf bei beiden Seiten „zu
+      wenige Züge vor der Entscheidung“ stehen. Trotzdem hat die Kurve danach einen Punkt mehr.
+      Die Zahl selbst steigt gegen einen viel schwächeren Bot kaum (etwa 1 Punkt, gegen Fritzi
+      meist gar nicht), weil der Sieg erwartet war. Seit 0.2.103 zählten solche Partien gar nicht,
+      weil der Bot zu wenige Züge vor der Entscheidung hatte; seine Zahl ist aber ohnehin fest.
 
 ### Neu in 0.2.103 (etwa 15 Minuten, mit Engine; Spielstärke nur bis zur Entscheidung, Opus)
 

@@ -104,6 +104,22 @@ describe("Wertung", () => {
     expect(verlauf.at(-1)?.wertung).toBe(Math.round(erwartet));
   });
 
+  it("zählt eine früh entschiedene Partie gegen einen Bot (seit 0.2.105)", () => {
+    const erste = mitGewerteterPartie([], eintrag("1", "white"));
+    const kurz = eintrag("k", "white", { bot: "fritzi" });
+    // Nach dem dritten Halbzug steht Weiß dauerhaft auf Gewinn: zu wenige Züge für eine Schätzung.
+    const werte = kurz.werte.map((_, i) => (i < 3 ? 0 : 10));
+    const entschieden = { ...kurz, werte };
+    const staerke = staerkeDerPartie(entschieden);
+    expect(staerke?.black.spielstaerke).toBeNull();
+    expect(staerke?.white.spielstaerke).toBeNull();
+    const verlauf = mitGewerteterPartie(erste, entschieden);
+    expect(verlauf).toHaveLength(2);
+    expect(verlauf[1]?.ergebnis).toBe(1);
+    // Ohne bisherige Wertung zählt sie nicht: Die erste Partie braucht die Schätzung des Lesers.
+    expect(wertungspunktFuer([], entschieden)).toBeNull();
+  });
+
   it("zählt nicht: ungewertet, gegen Mensch, nicht aus der Grundstellung, mit Rücknahme, laufend, ohne Auswertung, schon gezählt", () => {
     expect(wertungspunktFuer([], eintrag("a", "white", { gewertet: false }))).toBeNull();
     expect(wertungspunktFuer([], eintrag("b", "white", { gegner: "mensch" }))).toBeNull();

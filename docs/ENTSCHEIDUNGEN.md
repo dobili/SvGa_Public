@@ -4016,3 +4016,16 @@ Englischen teilweise anders notiert, zB B statt L.“
   backward, C für chain base, T für threat; Rückfrage EN3). Der Notations-Trainer gibt auf
   Englisch keinen Hinweis „das Buch schreibt S, L, T, D“ mehr.
 - Oberflächentest `englisch.spec.ts` (Wahl, Neuladen, Abbildung, Spielen, Training).
+
+## Kurze Partien zählen für die Wertung (19.10.2026, Opus, Zweig `wertung-kurze-partien`, Version 0.2.105)
+
+Rückmeldung des Autors: Gegen die Spaß-Bots steht seit 0.2.103 bei vielen Partien „zu wenige
+Züge vor der Entscheidung“. Das ist gewollt (zehn eigene Züge vor der Entscheidung, je Phase
+sechs; ein Sieg nach acht Zügen sagt nichts über die Spielstärke). Ungewollt war die Folge für die
+Elo-Wertung: `wertungspunktFuer` verlangte noch eine Schätzung des Gegners (Regel bis 0.2.83, als
+die Gegnerzahl aus dieser Schätzung kam). Seit 0.2.85 ist die Gegnerzahl fest (Bot oder Stufen),
+die Bedingung also überflüssig; sie ließ seit 0.2.103 fast jede kurze Partie gegen Spaß-Bots aus
+der Wertung fallen. Jetzt gestrichen. Die erste gewertete Partie braucht weiter die Schätzung des
+Lesers (sie setzt den Anfangswert); „Deine Spielstärke“ über zehn Partien nimmt weiter nur
+Partien mit Schätzung des Lesers.
+

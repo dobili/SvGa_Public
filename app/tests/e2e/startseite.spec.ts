@@ -1,7 +1,8 @@
 /**
  * Oberflächentests für die Startseite des Buches (Entscheidung des Autors, 15.10.2026): Buch und
  * Shops unter /, Installationsteil ohne Shops unter /installieren/ (QR-Code), die installierte App
- * springt direkt nach /app/, Impressum, Datenschutz und Lizenzen sind erreichbar.
+ * springt direkt nach /app/, Impressum, Datenschutz und Lizenzen sind erreichbar, und keine Seite
+ * lädt etwas von fremden Adressen (Datenschutz, 19.10.2026).
  */
 import { expect, test } from "@playwright/test";
 
@@ -54,4 +55,28 @@ test("Impressum, Datenschutz und Lizenzen aus der Fußzeile", async ({ page }) =
   await page.getByRole("link", { name: "Lizenzen" }).click();
   await expect(page.getByRole("heading", { name: "Lizenzen", level: 1 })).toBeVisible();
   await expect(page.getByText("GNU GPL 3.0 oder neuer")).toBeVisible();
+});
+
+// Die Datenschutzerklärung sagt: keine Inhalte anderer Anbieter, nichts wird mitgeladen
+// (Ergänzung vom 19.10.2026). Der Test hält das fest: Keine Seite lädt etwas von einer fremden
+// Adresse. (Was Cloudflare auf der Live-Seite selbst einfügt, etwa Web Analytics, sieht er
+// nicht; das wurde am 19.10.2026 im Dashboard abgeschaltet.)
+test("Startseite, App und Rechtsseiten laden nichts von fremden Adressen", async ({ page }) => {
+  const fremde: string[] = [];
+  page.on("request", (anfrage) => {
+    const adresse = new URL(anfrage.url());
+    if (adresse.protocol.startsWith("http") && adresse.hostname !== "localhost")
+      fremde.push(anfrage.url());
+  });
+  for (const pfad of [
+    "/",
+    "/installieren/",
+    "/impressum/",
+    "/datenschutz/",
+    "/training/",
+    "/app/",
+  ]) {
+    await page.goto(pfad, { waitUntil: "networkidle" });
+  }
+  expect(fremde).toEqual([]);
 });

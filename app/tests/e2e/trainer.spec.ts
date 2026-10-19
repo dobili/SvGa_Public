@@ -250,18 +250,31 @@ test("Zielbilanz-Übung: Tabelle für beide Seiten ausfüllen, App zeigt ihre We
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
 
-test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", async ({ page }) => {
+test("Faktorenbilanz-Trainer: Waagen und ✓ ◐ ✗ wie im Buch, App zeigt ihre Bilanz", async ({
+  page,
+}) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "faktorenbilanz");
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 5");
-  for (const faktor of ["Material", "Zeit", "Königssicherheit", "Aktivität"]) {
-    await runde
-      .getByRole("group", { name: faktor, exact: true })
-      .getByRole("button", { name: "gleich" })
-      .click();
+  const pruefen = runde.getByRole("button", { name: "Prüfen" });
+  // R20: Material und Zeit mit der Waage, die sich zur gewählten Seite neigt.
+  const material = runde.getByRole("group", { name: "Material", exact: true });
+  await material.getByRole("button", { name: "◀ Weiß vorn" }).click();
+  await expect(material.getByRole("img", { name: "Weiß liegt vorn" })).toBeVisible();
+  await material.getByRole("button", { name: "gerade" }).click();
+  await runde
+    .getByRole("group", { name: "Zeit", exact: true })
+    .getByRole("button", { name: "gerade" })
+    .click();
+  // Königssicherheit und Aktivität je Seite ✓ ◐ ✗ wie die Tabelle im Buch.
+  for (const faktor of ["Königssicherheit", "Aktivität"]) {
+    const gruppe = runde.getByRole("group", { name: faktor, exact: true });
+    await gruppe.getByRole("button", { name: "Weiß: teils" }).click();
+    await expect(pruefen).toBeDisabled();
+    await gruppe.getByRole("button", { name: "Schwarz: teils" }).click();
   }
-  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await pruefen.click();
   // Seit 0.2.61 (W9) mit „Buch:“, wenn die Abbildung eine Faktorenbilanz im Buch hat.
   await expect(runde.getByText(/^(App|Buch): (Weiß|gleich|Schwarz)$/)).toHaveCount(4);
   await expect(page.getByTestId("faktoren-bilanz")).toBeVisible();

@@ -55,7 +55,11 @@ const BUCHWERTUNG: Readonly<Partial<Record<NonNullable<Zelle["wertung"]>, Einsch
   nein: "schlecht",
 };
 
-function vergleiche(weiss: Einschaetzung, schwarz: Einschaetzung): Vorn {
+/**
+ * Wer vorn liegt, wenn Weiß und Schwarz je ✓, ◐ oder ✗ bekommen (Königssicherheit, Aktivität).
+ * Beispiel: Weiß ◐, Schwarz ✗ → Weiß; beide ✓ → gleich.
+ */
+export function vergleiche(weiss: Einschaetzung, schwarz: Einschaetzung): Vorn {
   const unterschied = RANG[weiss] - RANG[schwarz];
   if (unterschied === 0) return "gleich";
   return unterschied > 0 ? "white" : "black";

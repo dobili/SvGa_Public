@@ -90,6 +90,11 @@ Teil fertig ist.
       danach die stärkste Antwort des Gegners; das Brett springt zurück, dann Kandidat 2 und seine
       Antwort. Danach rechnet die Engine wie bisher. „Letzten Zug zurücknehmen“ korrigiert einen
       Fehlgriff; denselben Kandidaten zweimal nimmt die App nicht an. Angenehmer als die Textfelder?
+- [ ] N616. **Faktorenbilanz-Trainer wie im Buch:** Training › „Faktorenbilanz-Trainer“. Material
+      und Zeit stellst du jetzt an einer Waage ein („◀ Weiß vorn“, „gerade“, „Schwarz vorn ▶“);
+      sie neigt sich zur gewählten Seite. Königssicherheit und Aktivität bewertest du je Seite mit
+      ✓ (gut), ◐ (teils) oder ✗ (schlecht) wie in der Tabelle des Buches; verglichen wird, wer
+      danach vorn liegt. Passt das so?
 
 ---
 

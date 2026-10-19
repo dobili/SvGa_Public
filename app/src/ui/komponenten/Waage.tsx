@@ -48,14 +48,17 @@ function Schale({ x, y }: { x: number; y: number }) {
   );
 }
 
-/** Die Waage mit Beschriftung, etwa „Weiß | Waage | Schwarz“ und „Schwarz liegt vorn: +1“. */
+/**
+ * Die Waage mit Beschriftung, etwa „Weiß | Waage | Schwarz“ und „Schwarz liegt vorn: +1“.
+ * Sonderfall: Ohne Vorsprung (Faktorenbilanz-Trainer, nur die Richtung) „Schwarz liegt vorn“.
+ */
 export function Waage({ waage }: { waage: Waagenanzeige }) {
   const links = { x: MITTE - HALBBALKEN, y: BALKEN_Y + versatz(waage.neigung, "links") };
   const rechts = { x: MITTE + HALBBALKEN, y: BALKEN_Y + versatz(waage.neigung, "rechts") };
   const beschreibung =
     waage.neigung === "gerade"
       ? t("waage.gerade", { links: waage.links, rechts: waage.rechts })
-      : t("waage.neigt", {
+      : t(waage.vorsprung ? "waage.neigt" : "waage.neigtOhne", {
           seite: waage.neigung === "links" ? waage.links : waage.rechts,
           vorsprung: waage.vorsprung,
         });

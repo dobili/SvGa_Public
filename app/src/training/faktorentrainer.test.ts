@@ -2,7 +2,13 @@
 import { describe, expect, it } from "vitest";
 import { ladeKapitel, stellungVon } from "../schach/buchabbildungen.testhilfe";
 import { buchstellungenAus } from "./buchstellungen";
-import { buchloesung, faktorenaufgabe, faktorenrunde, falscheFaktoren } from "./faktorentrainer";
+import {
+  buchloesung,
+  faktorenaufgabe,
+  faktorenrunde,
+  falscheFaktoren,
+  vergleiche,
+} from "./faktorentrainer";
 import { festerZufall } from "./zufall";
 
 const KAPITELZAHL = 13;
@@ -55,5 +61,13 @@ describe("Faktorenbilanz-Trainer", () => {
     expect(falscheFaktoren(erste, erste.loesung)).toEqual([]);
     const anders = erste.loesung.zeit === "gleich" ? "white" : "gleich";
     expect(falscheFaktoren(erste, { ...erste.loesung, zeit: anders })).toEqual(["zeit"]);
+  });
+});
+
+describe("vergleiche (✓ ◐ ✗ je Seite, R20)", () => {
+  it("die bessere Wertung liegt vorn, gleiche Zeichen sind gleich", () => {
+    expect(vergleiche("teils", "schlecht")).toBe("white");
+    expect(vergleiche("teils", "gut")).toBe("black");
+    expect(vergleiche("gut", "gut")).toBe("gleich");
   });
 });

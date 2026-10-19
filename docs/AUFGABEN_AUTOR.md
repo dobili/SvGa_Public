@@ -171,8 +171,9 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 - [ ] N328. **Bretter gut lesbar?** Einstellungen › Karte „Einstellungen“ › Reiter „Brett“: je ein
       Brett aus „Farben“ und aus „Holz und Material“ wählen und eine Abbildung öffnen. Sind Felder,
       Schimmer des letzten Zuges und Figuren gut lesbar? Und beim Nachspielen einer Partie im
-      Dunkelmodus: Ist die graue Marke „?!“ auf hellen Feldern lesbar? Gemessen am schwächsten: der Schimmer auf
-      den dunklen Feldern von „Wie im Buch“ und „Marmor grün“ (blau auf einem dunklen Brett).
+      Dunkelmodus: Ist die graue Marke „?!“ auf hellen Feldern lesbar? Gemessen am schwächsten:
+      der Schimmer auf den dunklen Feldern von „Wie im Buch“ und „Marmor grün“ (blau auf einem
+      dunklen Brett).
       (Gruppen, Kacheln und Lizenzen hat Claude geprüft.)
 
 ### Neu in 0.2.83 (mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)

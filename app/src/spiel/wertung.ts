@@ -165,10 +165,12 @@ export function aktuelleWertung(punkte: readonly Wertungspunkt[]): number | null
 
 /**
  * Der Wertungspunkt zu einer Partie, oder null, wenn sie nicht zählt: nicht gewertet, gegen
- * einen Menschen, nicht aus der Grundstellung, mit Rücknahme, nicht beendet, ohne Auswertung,
- * schon gezählt, oder ohne Schätzung des Gegners (zu wenige Züge). Rücknahmen: Empfehlung S9,
- * umgesetzt in 0.2.47 (wer einen Patzer zurücknimmt, spielt stärker, als er ist). Die erste Partie braucht auch die Schätzung
- * für den Leser.
+ * einen Menschen, nicht aus der Grundstellung, mit Rücknahme, nicht beendet, ohne Auswertung oder
+ * schon gezählt. Rücknahmen: Empfehlung S9, umgesetzt in 0.2.47 (wer einen Patzer zurücknimmt,
+ * spielt stärker, als er ist). Nur die erste Partie braucht die Schätzung für den Leser (zehn Züge
+ * vor der Entscheidung). Seit 0.2.105 zählt eine Partie auch ohne Schätzung des Gegners: Seine
+ * Zahl ist seit 0.2.85 fest (Bot oder Stufen), und seit 0.2.103 hat ein früh verschenkter Gegner
+ * oft zu wenige Züge vor der Entscheidung (Rückmeldung des Autors zu den Spaß-Bots, 19.10.2026).
  *
  * Beispiel: erste Partie, Engine schätzt den Leser auf 1400 → Wertung 1400 (unabhängig vom
  * Ergebnis); zweite Partie gegen einen Bot mit der Zahl 1600 gewonnen → 1400 + 32 · (1 − 0,24)
@@ -188,9 +190,6 @@ export function wertungspunktFuer(
   if (punkte.some((punkt) => punkt.partieId === p.id)) return null;
   const staerke = staerkeDerPartie(eintrag);
   if (!staerke) return null;
-  const engineFarbe = p.einstellung.eigeneFarbe === "white" ? "black" : "white";
-  // Zu wenige Züge des Gegners: die Partie zählt weiterhin nicht (wie bis 0.2.83).
-  if (staerke[engineFarbe].spielstaerke === null) return null;
   const gegner = Math.round(gegnerstaerke(p.einstellung));
   const bisher = aktuelleWertung(punkte);
   const eigene = bisher ?? staerke[p.einstellung.eigeneFarbe].spielstaerke;

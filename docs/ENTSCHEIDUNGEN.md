@@ -3984,8 +3984,9 @@ verschieben die Zahlen).
   neuen Regel und den neuen Kurven auf denselben Anker-Partien): Anker Stufe 1 bei 57 % → 850,
   Stufe 2 bei 72 % → 1413, Stufe 3 bei 79 % → 1738 (Stufe 4 bis 6 gesättigt wie bisher). Alle
   Zahlen sinken gemeinsam um 212: Stufen 983, 1319, 1698, 1868, 2147, 2383, 2699, 3011;
-  Spaß-Bots Fritzi 371, Onkel Willi 564, Tante Trude 670, Bruno 869. Rückfrage GE1 (Spaß-Bots
-  unter dem Wunschbereich 500 bis 1000; Empfehlung so lassen).
+  Spaß-Bots Fritzi 371, Onkel Willi 564, Tante Trude 670, Bruno 869. GE1 (Spaß-Bots
+  unter dem Wunschbereich 500 bis 1000): Der Autor entschied am 19.10.2026 „so lassen“; die Spaß-Bots
+  werden nicht neu gemessen.
 - **Vergleichsschalter:** `EICHUNG_ALLE_ZUEGE=1 npm run messen:eichung` rechnet die Eichung wie
   vor 0.2.103 über alle Züge.
 ## Englische Fassung als Vorschau (19.10.2026, Opus, Zweig `englisch`, Version 0.2.104)
@@ -4015,7 +4016,19 @@ Englischen teilweise anders notiert, zB B statt L.“
   Englisch keinen Hinweis „das Buch schreibt S, L, T, D“ mehr.
 - Oberflächentest `englisch.spec.ts` (Wahl, Neuladen, Abbildung, Spielen, Training).
 
-## Farbabstimmung DS30 bis DS37 (19.10.2026, Opus, Zweig `farbabstimmung`, Version 0.2.105)
+## Kurze Partien zählen für die Wertung (19.10.2026, Opus, Zweig `wertung-kurze-partien`, Version 0.2.105)
+
+Rückmeldung des Autors: Gegen die Spaß-Bots steht seit 0.2.103 bei vielen Partien „zu wenige
+Züge vor der Entscheidung“. Das ist gewollt (zehn eigene Züge vor der Entscheidung, je Phase
+sechs; ein Sieg nach acht Zügen sagt nichts über die Spielstärke). Ungewollt war die Folge für die
+Elo-Wertung: `wertungspunktFuer` verlangte noch eine Schätzung des Gegners (Regel bis 0.2.83, als
+die Gegnerzahl aus dieser Schätzung kam). Seit 0.2.85 ist die Gegnerzahl fest (Bot oder Stufen),
+die Bedingung also überflüssig; sie ließ seit 0.2.103 fast jede kurze Partie gegen Spaß-Bots aus
+der Wertung fallen. Jetzt gestrichen. Die erste gewertete Partie braucht weiter die Schätzung des
+Lesers (sie setzt den Anfangswert); „Deine Spielstärke“ über zehn Partien nimmt weiter nur
+Partien mit Schätzung des Lesers.
+
+## Farbabstimmung DS30 bis DS37 (19.10.2026, Opus, Zweig `farbabstimmung`, Version 0.2.106)
 
 Frage des Autors: Ist die Farbgebung hell und dunkel stimmig, nicht zu bunt, nicht zu
 kontrastarm? Der Hintergrund der Porträts wirkte im hellen Modus zu dunkel. Dazu der Wunsch, den

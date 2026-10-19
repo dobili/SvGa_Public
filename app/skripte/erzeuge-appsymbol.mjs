@@ -1,5 +1,5 @@
 // Erzeugt die App-Symbole für den Startbildschirm aus dem goldenen Springer des Buchcovers
-// (seit 0.2.102, Vorschlag DS37, Wunsch des Autors vom 19.10.2026).
+// (seit 0.2.106, Vorschlag DS37, Wunsch des Autors vom 19.10.2026).
 //
 // Warum: Das Cover zeigt den Springer mit Pfeilen, Kreisen und Zielmarken; als App-Symbol erkennt
 // man die App so auf dem Startbildschirm wieder. Bei 60 Pixeln (Startbildschirm) bleibt der

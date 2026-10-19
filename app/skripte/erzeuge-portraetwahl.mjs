@@ -22,7 +22,7 @@ const GROESSE = 128;
 const RUNDUNG = 18;
 const HINTERGRUND = ["3b4a6b"];
 /*
- * Seit 0.2.102 (DS30) ohne eigenen Hintergrund: Die App legt je nach hellem oder dunklem Modus die
+ * Seit 0.2.106 (DS30) ohne eigenen Hintergrund: Die App legt je nach hellem oder dunklem Modus die
  * Farbe dahinter (ui/stil/abstimmung.css, --portraet-grund). Die Farbe oben bleibt für DiceBear
  * stehen, damit die Zufallsfolge und damit die Gesichter gleich bleiben; das Rechteck fällt danach weg.
  */

@@ -44,13 +44,13 @@
 - **Lichess-Puzzle-Datenbank (seit 0.2.39, Trainerdaten):** https://database.lichess.org/#puzzles,
   CC0 1.0. In den Daten stehen je Aufgabe Stellung, Lösung, Kennung, Wertung und die Adresse der
   Partie; die Datenbank selbst (300 MB) bleibt lokal. Einzelheiten in `docs/TRAINERDATEN.md`.
-- **App-Symbol (seit 0.2.102):** `app/public/symbole/*.png` sind Ausschnitte des Buchcovers (alle
+- **App-Symbol (seit 0.2.106):** `app/public/symbole/*.png` sind Ausschnitte des Buchcovers (alle
   Rechte vorbehalten wie das Cover), erzeugt mit `app/skripte/erzeuge-appsymbol.mjs`; nur das
   Symbol im Browser-Tab (`symbol.svg`) ist der Springer aus SkakNew.
 - **Porträts der Gegner (seit 0.2.65):** `app/public/gegner/<kennung>.svg`, erzeugt mit
   `app/skripte/erzeuge-gegnerbilder.mjs` aus DiceBear (https://dicebear.com, Code MIT, Florian
   Körner), Stil „Personas“ (https://personas.draftbit.com, Draftbit, CC BY 4.0). Je Gegner aus der
-  Kennung erzeugt, mit Vorgaben für Frisur, Bart und Haarfarbe; seit 0.2.102 ohne Hintergrund (die
+  Kennung erzeugt, mit Vorgaben für Frisur, Bart und Haarfarbe; seit 0.2.106 ohne Hintergrund (die
   App legt je nach hellem oder dunklem Modus die Farbe dahinter, eine Änderung im Sinne von CC BY
   4.0, die in der Namensnennung „Remix“ heißt und schon in den Dateien steht). Die
   Namensnennung steht in der App unter Einstellungen → Lizenzen; der Lizenztext liegt in

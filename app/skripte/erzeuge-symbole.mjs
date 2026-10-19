@@ -1,5 +1,5 @@
 // Erzeugt das Symbol für den Browser-Tab (symbol.svg) aus dem Springer des Buches.
-// Seit 0.2.102 (DS37) kommen die Symbole für den Startbildschirm aus dem Buchcover
+// Seit 0.2.106 (DS37) kommen die Symbole für den Startbildschirm aus dem Buchcover
 // (erzeuge-appsymbol.mjs); dieses Skript schreibt nur noch symbol.svg, weil der goldene Springer
 // mit Pfeilen bei 16 bis 32 Pixeln nicht mehr zu erkennen ist.
 //

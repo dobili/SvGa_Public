@@ -210,6 +210,7 @@ test("Brett drehen; Koordinaten in den Einstellungen; Skelett-Ansicht im Bündel
 }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
   await page.getByRole("radio", { name: "ausblenden" }).click();
   await page.getByRole("button", { name: "Buch", exact: true }).click();
   await oeffneAbbildung(page, "5.17", "5.17");

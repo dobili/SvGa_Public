@@ -92,6 +92,7 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
   });
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
   await expect(
     page
       .getByRole("radiogroup", { name: "Brettfarben" })
@@ -105,6 +106,7 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
   expect(merker).toEqual([null, null]);
   await page.reload();
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
   await expect(
     page
       .getByRole("radiogroup", { name: "Brettfarben" })
@@ -121,6 +123,7 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
   await oeffneAbbildung(page, "2.1", "2.1");
   await page.clock.runFor(VERWEILZEIT_MS);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
   await page.getByRole("radio", { name: "Grün", exact: true }).click();
   await expect(page.getByTestId("letzte-sicherung")).toHaveText("Noch keine Sicherung angelegt.");
   const [download] = await Promise.all([
@@ -146,6 +149,7 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
   await frage.getByRole("button", { name: "Ja, Daten ersetzen" }).click();
   await expect(zweite.getByText("Sicherung eingespielt.")).toBeVisible();
   await expect(zweite.getByTestId("ich-abbildungen")).toHaveText(/^1 von/);
+  await zweite.getByRole("tab", { name: "Brett" }).click();
   await expect(zweite.getByRole("radio", { name: "Grün", exact: true })).toHaveAttribute(
     "aria-checked",
     "true",
@@ -178,6 +182,7 @@ test("Datensicherung: fremde Datei wird abgelehnt, Abbrechen ändert nichts", as
     buffer: Buffer.from(leer),
   });
   await page.getByRole("button", { name: "Abbrechen" }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
   const brettfarben = page.getByRole("radiogroup", { name: "Brettfarben" });
   await expect(brettfarben.getByRole("radio", { name: "wie im Buch" })).toHaveAttribute(
     "aria-checked",

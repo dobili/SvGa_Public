@@ -97,6 +97,7 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   await expect(kastenlinks).toHaveCount(13);
   await expect(page.locator('a[href="/training/kap09/"]')).toBeVisible();
   await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
   await page
     .getByRole("radiogroup", { name: "Brettfarben" })
     .getByRole("radio", { name: "Ahorn & Nussbaum" })
@@ -113,6 +114,7 @@ test("Training zeigt alle Trainer, Einstellungen ändern die Brettfarben", async
   ).toBeAttached();
   // Materialbretter (seit 0.2.84) liegen als ganzes Brettbild unter den Figuren.
   await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
   await page
     .getByRole("radiogroup", { name: "Brettfarben" })
     .getByRole("radio", { name: "Marmor grün" })

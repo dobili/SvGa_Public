@@ -54,4 +54,14 @@ describe("Denkroutine-Trainer", () => {
     expect(geloest(zwei, vergleich(1.2))).toBe(false);
     expect(geloest([voll, { art: "antwortFehlt", kandidat: "Qc2" }], vergleich(2))).toBe(false);
   });
+
+  it("ein mattsetzender Kandidat braucht keine Antwort (Eingabe am Brett, F2)", () => {
+    const grundreihe = "6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1";
+    expect(pruefeKandidat(grundreihe, "Ra8#", "")).toMatchObject({
+      art: "vollstaendig",
+      kandidat: "Ra8#",
+      antwort: "",
+    });
+    expect(pruefeKandidat(grundreihe, "Ra7", "")).toEqual({ art: "antwortFehlt", kandidat: "Ra7" });
+  });
 });

@@ -6,8 +6,8 @@
  * Rolle im Gesamtbild: Trainer „denkroutine“ (Pflichtenheft 5.3, AP 13 Stufe 3). Die Stellungen
  * stammen aus dem Buch (Kapitel 7, 11 und 12: Taktik, Meisterpartien, Denkroutine), nur solche
  * mit beiden Königen, ohne Schach, mit mindestens zehn Steinen und einigen Zügen zur Wahl. Die
- * Eingaben schreibt der Leser in der Notation des Buches; die App liest auch englische
- * Buchstaben. Rechnen tut die Engine in ui/trainer/useDenkvergleich.ts; hier stehen die reinen
+ * Züge zieht der Leser am Brett (seit 0.2.117, Denkeingabe.tsx); gelesen werden sie hier als
+ * Kurznotation, auch in der Notation des Buches. Rechnen tut die Engine in ui/trainer/useDenkvergleich.ts; hier stehen die reinen
  * Teile: Stellungen, Lesen der Eingaben, Urteil.
  * Abhängigkeiten: training/uebungsaufgabe.ts (zuegeAusText), spiel/zuege.ts, chessops,
  * training/zufall.ts.
@@ -89,12 +89,19 @@ export type Kandidatpruefung =
  *
  * Regel: Kapitel 12, Denkroutine: zu jedem Kandidaten die stärkste Antwort des Gegners.
  * Beispiel: Abb. 12.1, „Lxh7+“ und „Kxh7“ → vollständig; „Lxh7+“ ohne Antwort → antwortFehlt.
+ * Sonderfall: Ein Kandidat, der matt oder patt setzt, ist ohne Antwort vollständig (antwort „“).
  */
 export function pruefeKandidat(fen: string, kandidat: string, antwort: string): Kandidatpruefung {
   if (kandidat.trim() === "") return { art: "leer" };
   const k = liesZug(fen, kandidat);
   if (!k) return { art: "kandidatUngueltig", eingabe: kandidat.trim() };
-  if (antwort.trim() === "") return { art: "antwortFehlt", kandidat: k.san };
+  if (antwort.trim() === "") {
+    // Setzt der Kandidat matt oder patt, gibt es keine Antwort: vollständig ohne Antwort.
+    if (regelstellung(k.fenDanach)?.isEnd()) {
+      return { art: "vollstaendig", kandidat: k.san, antwort: "", fenDanach: k.fenDanach };
+    }
+    return { art: "antwortFehlt", kandidat: k.san };
+  }
   const a = liesZug(k.fenDanach, antwort);
   if (!a) return { art: "antwortUngueltig", kandidat: k.san, eingabe: antwort.trim() };
   return { art: "vollstaendig", kandidat: k.san, antwort: a.san, fenDanach: k.fenDanach };

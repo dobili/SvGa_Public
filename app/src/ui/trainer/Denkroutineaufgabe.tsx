@@ -1,12 +1,14 @@
 /**
  * Aufgabe des Denkroutine-Trainers: eine Minute denken, dann zwei Kandidaten mit je der stärksten
- * Antwort eingeben, prüfen und mit der Engine vergleichen.
+ * Antwort am Brett ziehen (seit 0.2.117, F2; vorher als Text), prüfen und mit der Engine
+ * vergleichen.
  *
  * Rolle im Gesamtbild: Trainer „denkroutine“ (Kapitel 12, AP 13 Stufe 3). Während der Minute
  * steht nur das Brett da; erst danach öffnet sich die Eingabe (die feste Zeit ist der Kern der
  * Übung). Gelöst ist die Aufgabe, wenn zu beiden Kandidaten eine Antwort steht und der bessere
  * Kandidat höchstens 0,5 Bauern hinter dem Zug der Engine liegt.
- * Abhängigkeiten: training/denkroutinetrainer.ts, useDenkvergleich.ts, Trainerbrett, i18n.
+ * Abhängigkeiten: training/denkroutinetrainer.ts, useDenkvergleich.ts, Denkeingabe.tsx,
+ * Trainerbrett, i18n.
  */
 import { useEffect, useState } from "react";
 import { sprache, t, tZahl, zahlText } from "../../i18n/sprache";
@@ -14,11 +16,11 @@ import { sanInSprache } from "../../schach/notation";
 import {
   DENKZEIT_S,
   geloest,
-  KANDIDATEN,
   pruefeKandidat,
   type Denkaufgabe,
   type Kandidatpruefung,
 } from "../../training/denkroutinetrainer";
+import { Denkeingabe } from "./Denkeingabe";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import { useDenkvergleich, type Denkstand, type Kandidat } from "./useDenkvergleich";
@@ -28,7 +30,6 @@ import { useSammelstellung } from "./sammelstellung";
 const SEKUNDE_MS = 1000;
 /** Ab diesem Betrag ist ein Wert ein Matt (Engine-Werte mit Matt liegen nahe 100). */
 const MATT_AB = 50;
-const LEER: readonly [string, string] = ["", ""];
 
 const de = (san: string) => sanInSprache(san, sprache());
 
@@ -64,7 +65,9 @@ function pruefsatz(p: Kandidatpruefung, nummer: number): string {
     case "antwortUngueltig":
       return t("denk.antwortUngueltig", { zug: de(p.kandidat), eingabe: p.eingabe });
     case "vollstaendig":
-      return t("denk.vollstaendig", { zug: de(p.kandidat), antwort: de(p.antwort) });
+      return p.antwort === ""
+        ? t("denk.ohneAntwort", { zug: de(p.kandidat) })
+        : t("denk.vollstaendig", { zug: de(p.kandidat), antwort: de(p.antwort) });
   }
 }
 
@@ -103,47 +106,6 @@ function Vergleich({
   );
 }
 
-/** Zwei Zeilen mit Kandidat und Antwort. */
-function Eingabe({ pruefe }: { pruefe: (k: readonly string[], a: readonly string[]) => void }) {
-  const [kandidaten, setzeKandidaten] = useState<readonly string[]>(LEER);
-  const [antworten, setzeAntworten] = useState<readonly string[]>(LEER);
-  const setze = (liste: readonly string[], i: number, wert: string) =>
-    liste.map((alt, j) => (j === i ? wert : alt));
-  return (
-    <form
-      className="fehlerformular"
-      onSubmit={(e) => {
-        e.preventDefault();
-        pruefe(kandidaten, antworten);
-      }}
-    >
-      {Array.from({ length: KANDIDATEN }, (_, i) => (
-        <div key={i} className="denkzeile">
-          <input
-            type="text"
-            className="suchfeld"
-            aria-label={t("denk.kandidat", { nummer: i + 1 })}
-            placeholder={t("denk.kandidat", { nummer: i + 1 })}
-            value={kandidaten[i] ?? ""}
-            onChange={(e) => setzeKandidaten(setze(kandidaten, i, e.target.value))}
-          />
-          <input
-            type="text"
-            className="suchfeld"
-            aria-label={t("denk.antwort", { nummer: i + 1 })}
-            placeholder={t("denk.antwort", { nummer: i + 1 })}
-            value={antworten[i] ?? ""}
-            onChange={(e) => setzeAntworten(setze(antworten, i, e.target.value))}
-          />
-        </div>
-      ))}
-      <button type="submit" className="knopf-haupt">
-        {t("trainer.pruefen")}
-      </button>
-    </form>
-  );
-}
-
 export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
   const rest = useDenkminute();
@@ -174,11 +136,13 @@ export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; r
   return (
     <>
       <p>{t("denk.auftrag", { farbe: t(`farbe.${seite}`) })}</p>
-      <Trainerbrett
-        fen={aufgabe.fen}
-        gedreht={seite === "b"}
-        beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
-      />
+      {!eingeben && (
+        <Trainerbrett
+          fen={aufgabe.fen}
+          gedreht={seite === "b"}
+          beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
+        />
+      )}
       {!eingeben && (
         <button
           type="button"
@@ -190,7 +154,14 @@ export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; r
           {rest > 0 ? tZahl("denk.minute", rest, { sekunden: rest }) : t("denk.zurEingabe")}
         </button>
       )}
-      {eingeben && !pruefungen && <Eingabe pruefe={pruefe} />}
+      {eingeben && (
+        <Denkeingabe
+          fen={aufgabe.fen}
+          gedreht={seite === "b"}
+          gegner={t(seite === "w" ? "farbe.b" : "farbe.w")}
+          pruefe={pruefe}
+        />
+      )}
       {pruefungen && (
         <ul data-testid="denk-pruefung">
           {pruefungen.map((p, i) => (

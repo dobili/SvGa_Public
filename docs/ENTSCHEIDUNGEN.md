@@ -4146,6 +4146,39 @@ leichte Schärfe (Laplace-Kern 0,6), Rand ab 45 % des Radius fast deckend in Nav
 Symbole mit 180 und 192 Pixeln bleiben in voller Farbtiefe (je etwa 100 KB), nur die beiden 512er
 werden auf 256 Farben verkleinert (Android rechnet sie klein). Skript `skripte/erzeuge-appsymbol.mjs`.
 
+## Datenschutz und Impressum ergänzt, Cloudflare Web Analytics aus (19.10.2026, Opus, Zweig `datenschutz-luecken`, Version 0.2.111)
+
+Anlass: Ein Scan der Website mit e-recht24 meldete „Hosting nicht datenschutzkonform“, „Tools,
+die nicht in der Datenschutzerklärung stehen“ und zwei Probleme bei den Rechtstexten. Prüfung der
+Live-Seite mit einem echten Browser (alle Seiten, Netzwerkverkehr mitgeschnitten):
+
+- **Cloudflare Web Analytics war eingeschaltet:** Cloudflare spielte auf jeder Seite
+  `static.cloudflareinsights.com/beacon.min.js` ein, das bei jedem Aufruf Adresse und Ladezeiten
+  an `/cdn-cgi/rum` schickte, obwohl die Erklärung „keine Web Analytics“ sagte. Nicht im Code der
+  App, sondern eine Einstellung im Dashboard (Real User Measurements). Der Autor hat sie am
+  19.10.2026 auf „Disable“ gestellt; eine Minute später lud keine Seite mehr etwas von fremden
+  Servern, Cookies gibt es keine. Ein neuer Oberflächentest hält fest, dass die gebaute Seite
+  nichts von fremden Adressen lädt (was Cloudflare live einfügt, sieht er nicht).
+- **Datenschutzerklärung ergänzt:** Rechtsgrundlage für IndexedDB, lokalen Speicher und Service
+  Worker (§ 25 Abs. 2 Nr. 2 TDDDG, unbedingt erforderlich), Teilen der Datensicherung über die
+  Teilen-Funktion des Geräts, Vertrag zur Auftragsverarbeitung mit Cloudflare und Übermittlung in
+  die USA auf Grund des Angemessenheitsbeschlusses (Art. 45 DSGVO, Data Privacy Framework),
+  welche Daten Cloudflare beim Aufruf verarbeitet und was wir davon sehen, die Fehlerberichte des
+  Browsers an Cloudflare (Network Error Logging, eine Kopfzeile, die Cloudflare selbst setzt),
+  „keine eingebundenen Inhalte anderer Anbieter“, Links zu anderen Seiten, Rechtsgrundlagen bei
+  E-Mails, ausdrückliches Widerspruchsrecht (Art. 21), Beschwerderecht mit Anschrift der
+  Landesbeauftragten Niedersachsen (Art. 77), keine automatisierte Entscheidung, Stand.
+- **Impressum ergänzt:** Verbraucherstreitbeilegung (§ 36 VSBG: nicht verpflichtet und nicht
+  bereit) und Haftung für Links. Der Hinweis auf die EU-Plattform zur Online-Streitbeilegung
+  entfällt, die Plattform ist abgeschaltet.
+- **Bleibt:** „Hosting“ wird in solchen Scans wegen des US-Anbieters wohl rot bleiben; ein Wechsel
+  zu einem EU-Hoster wäre ein größerer Umbau und ist nicht nötig, solange das Data Privacy
+  Framework gilt. Der Autor will die Texte später mit dem Generator von e-recht24 (anwaltlich
+  geprüft) ersetzen; die Angaben für den Generator: Hosting Cloudflare Workers nur mit statischen
+  Dateien, E-Mail-Weiterleitung über Cloudflare an goneo, keine Cookies, kein Analysewerkzeug,
+  kein Kontaktformular, kein Newsletter, keine Anmeldung, keine Zahlungen, keine Werbung, keine
+  eingebundenen Inhalte Dritter, Gerätespeicher und Service Worker, nur Links zu Lichess, GitHub
+  und Buchhändlern.
 ## Ohne Autor, Teil 1: Hinweise je Gerät, Abnahmetest A1, Sitemap, Kopfzeilen (19.10.2026, Opus, Zweig `weiter-ohne-autor`, Version 0.2.112)
 
 Vom Autor abgesegnet (19.10.2026, „Alle anderen Punkte auch ja“):

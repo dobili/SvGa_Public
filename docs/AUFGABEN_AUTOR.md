@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.111. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.112. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.111“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.112“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -33,7 +33,7 @@ dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. 
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 
-### Neu in 0.2.111 (etwa 3 Minuten; Hinweise für iPhone und alte Geräte, Opus)
+### Neu in 0.2.112 (etwa 3 Minuten; Hinweise für iPhone und alte Geräte, Opus)
 
 - [ ] N410. **Sieben-Tage-Hinweis in Safari:** Öffne die App auf dem iPhone in Safari, nicht vom
       Home-Bildschirm (Adresse schach-von-grund-auf.com/app/). Oben steht einmal: „Wichtig in
@@ -331,7 +331,6 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 - [ ] N404. **Bewertungsbalken lesbar:** Nach einer Partie im Rückblick: Die Zahl am schmalen
       Balken links steht jetzt auf dunklem Grund, auch wenn der weiße Teil bis zur Mitte reicht.
 
-
 ### Neu in 0.2.88 (mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
 - [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, seit 0.2.103
@@ -398,10 +397,13 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 ### Neu in 0.2.63 (Impressum und Datenschutz mit deinen Angaben, Opus)
 
 - [ ] N294. **Impressum und Datenschutz:** <https://schach-von-grund-auf.com/impressum/> und
-      <https://schach-von-grund-auf.com/datenschutz/> lesen: Stimmen deine Angaben (Name,
-      Anschrift in Hannover, kontakt@schach-von-grund-auf.com), Cloudflare und die Weiterleitung an
-      goneo? Claude ist kein Anwalt; wer sichergehen will, vergleicht einmal mit einem Generator wie
-      dem von e-recht24.
+      <https://schach-von-grund-auf.com/datenschutz/> lesen. Seit 0.2.111 ergänzt um die Lücken
+      aus einem e-recht24-Scan: Rechtsgrundlage für den Speicher auf dem Gerät (§ 25 TDDDG),
+      Auftragsverarbeitung und USA-Übermittlung bei Cloudflare, Fehlerberichte des Browsers,
+      „keine Inhalte anderer Anbieter“, Links, Widerspruchs- und Beschwerderecht; im Impressum
+      Verbraucherstreitbeilegung und Haftung für Links. Cloudflare Web Analytics ist seit dem
+      19.10. aus; die Seite lädt nachweislich nichts mehr von fremden Servern. Stimmen deine
+      Angaben? Die anwaltlich geprüften Texte von e-recht24 ersetzen das später.
 
 ### Neu in 0.2.58 (mit Engine; deine Anmerkungen vom 17.10.2026 abends, Fable)
 
@@ -463,7 +465,6 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       nachprüfen, was im Buch steht; eine Pflichtkarte an jeder der 765 Abbildungen bremst
       dabei. Wer üben will, schaltet sie in den Einstellungen ein (Reiter „Training“). Sagst du
       „an“, wird sie für alle die Voreinstellung.
-
 
 ### EN. Englische Fassung (Opus, 19.10.2026, Version 0.2.104; EN1 und EN3 schon umgesetzt, Widerspruch genügt)
 

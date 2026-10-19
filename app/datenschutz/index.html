@@ -3,8 +3,13 @@
   Datenschutzerklärung unter /datenschutz/ (Entscheidung des Autors, 15.10.2026). Rechtliche
   Angaben in fester Form; deshalb stehen die Texte hier und nicht in der Sprachdatei.
   Beschreibt, was die App technisch tut (alles bleibt auf dem Gerät, keine Anmeldung, keine
-  Auswertung, Auslieferung und E-Mail über Cloudflare, Postfach bei goneo, keine Web Analytics). Angaben des Autors vom
-  17.10.2026.
+  Auswertung, Auslieferung und E-Mail über Cloudflare, Postfach bei goneo). Angaben des Autors
+  vom 17.10.2026; am 19.10.2026 ergänzt um die Lücken, die ein Scan von e-recht24 und eine
+  Prüfung der Live-Seite zeigten (Rechtsgrundlage für den Gerätespeicher nach TDDDG,
+  Auftragsverarbeitung und Drittlandübermittlung, Fehlerberichte des Browsers an Cloudflare,
+  Links zu anderen Seiten, Widerspruchs- und Beschwerderecht). Cloudflare Web Analytics hat der
+  Autor am 19.10.2026 im Dashboard abgeschaltet; die Seite lädt seitdem nichts von fremden
+  Servern. Kein Ersatz für eine anwaltliche Prüfung (geplant über den Generator von e-recht24).
 -->
 <html lang="de">
   <head>
@@ -26,16 +31,10 @@
           <p>
             Die App sammelt keine Daten über dich. Alles, was du in der App tust (Fortschritt,
             Einstellungen, Partien), bleibt auf deinem Gerät. Es gibt keine Anmeldung, keine
-            Werbung, keine Cookies und keine Auswertung deines Verhaltens.
-          </p>
-        </section>
-        <section class="karte">
-          <h2 class="karte-titel">Speicher auf deinem Gerät</h2>
-          <p>
-            Die App legt ihre Daten im Speicher deines Browsers ab (IndexedDB und lokaler Speicher)
-            und lädt ihre Dateien für die Nutzung ohne Internet vorab. Diese Daten verlassen dein
-            Gerät nicht. Du kannst sie in der App in den Einstellungen (Zahnrad) sichern oder
-            löschen. Die Datensicherung ist eine Datei, die nur du speicherst und weitergibst.
+            Werbung, keine Cookies, keine Analyse- oder Statistikwerkzeuge und keine Inhalte anderer
+            Anbieter, die beim Aufruf mitgeladen werden. Personenbezogene Daten fallen nur an, weil
+            deine Seitenaufrufe technisch über Cloudflare laufen und wenn du uns eine E-Mail
+            schreibst.
           </p>
         </section>
         <section class="karte">
@@ -49,39 +48,118 @@
           </p>
         </section>
         <section class="karte">
-          <h2 class="karte-titel">Auslieferung der Website</h2>
+          <h2 class="karte-titel">Speicher auf deinem Gerät</h2>
+          <p>
+            Die App legt ihre Daten im Speicher deines Browsers ab (IndexedDB und lokaler Speicher)
+            und lädt ihre Dateien über einen Service Worker vorab, damit sie auch ohne Internet
+            läuft. Diese Daten verlassen dein Gerät nicht; wir haben keinen Zugriff darauf. Das
+            Speichern ist unbedingt erforderlich, damit die App die Funktionen bieten kann, die du
+            ausdrücklich nutzt (Fortschritt, Einstellungen, Nutzung ohne Internet); es braucht
+            deshalb keine Einwilligung (§ 25 Abs. 2 Nr. 2 TDDDG). Du kannst die Daten in der App
+            unter Einstellungen (Zahnrad) löschen oder über die Einstellungen deines Browsers
+            entfernen.
+          </p>
+          <p>
+            Die Datensicherung ist eine Datei, die nur du speicherst. Nutzt du dafür „Teilen“,
+            öffnet sich die Teilen-Funktion deines Geräts; wohin die Datei geht, entscheidest du,
+            und für die gewählte App gelten deren Datenschutzbestimmungen. Ebenso kopieren „Fehler
+            melden“ und „Als PGN kopieren“ nur Text in deine Zwischenablage; die App selbst
+            verschickt nichts.
+          </p>
+        </section>
+        <section class="karte">
+          <h2 class="karte-titel">Auslieferung der Website (Hosting)</h2>
           <p>
             Die Website und die App werden über Cloudflare ausgeliefert (Cloudflare, Inc., 101
-            Townsend St., San Francisco, CA 94107, USA). Beim Aufruf verarbeitet Cloudflare
-            technisch notwendige Angaben wie deine IP-Adresse, Datum und Uhrzeit, die aufgerufene
-            Adresse und Angaben zu Browser und Gerät, um die Seiten zu übertragen und vor Angriffen
-            zu schützen. Rechtsgrundlage ist unser berechtigtes Interesse an einer sicheren und
-            schnellen Auslieferung (Art. 6 Abs. 1 lit. f DSGVO). Cloudflare arbeitet für uns als
-            Auftragsverarbeiter. Dabei können Daten in die USA übermittelt werden; Cloudflare ist
-            nach dem EU-US Data Privacy Framework zertifiziert. Eine Auswertung der Besuche (etwa
-            Cloudflare Web Analytics) findet nicht statt.
+            Townsend St., San Francisco, CA 94107, USA). Bei jedem Aufruf verarbeitet Cloudflare
+            technisch notwendige Angaben: deine IP-Adresse, Datum und Uhrzeit, die aufgerufene
+            Adresse, die übertragene Datenmenge sowie Angaben zu Browser, Betriebssystem und Gerät.
+            Das dient dazu, die Seiten auszuliefern, die Verbindung zu verschlüsseln (https) und die
+            Website vor Angriffen und Missbrauch zu schützen. Rechtsgrundlage ist unser berechtigtes
+            Interesse an einer sicheren und schnellen Auslieferung (Art. 6 Abs. 1 lit. f DSGVO).
+          </p>
+          <p>
+            Cloudflare arbeitet für uns als Auftragsverarbeiter; mit Cloudflare besteht ein Vertrag
+            zur Auftragsverarbeitung nach Art. 28 DSGVO. Dabei können Daten in die USA übermittelt
+            werden. Cloudflare ist nach dem EU-US Data Privacy Framework zertifiziert; für diese
+            Übermittlung gilt der Angemessenheitsbeschluss der EU-Kommission (Art. 45 DSGVO). Wir
+            rufen keine Zugriffsprotokolle ab und werten keine aus. Im Konto bei Cloudflare sehen
+            wir zusammengefasste Zahlen (etwa Aufrufe je Tag) und, wenn Cloudflare einen Angriff
+            abwehrt, das zugehörige Sicherheitsereignis. Wie lange Cloudflare die Angaben für den
+            Betrieb und die Sicherheit aufbewahrt, beschreibt Cloudflare unter
+            <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a>.
+            Eine Auswertung der Besuche (etwa Cloudflare Web Analytics) findet nicht statt.
+          </p>
+        </section>
+        <section class="karte">
+          <h2 class="karte-titel">Fehlerberichte des Browsers</h2>
+          <p>
+            Cloudflare bittet deinen Browser in einer technischen Kopfzeile, Verbindungsfehler zu
+            melden („Network Error Logging“). Browser, die das unterstützen (etwa Chrome und Edge),
+            schicken bei einem Fehler beim Laden der Seite einen kurzen Bericht an Cloudflare
+            (aufgerufene Adresse, Art des Fehlers, Zeitpunkt; dabei wird auch deine IP-Adresse
+            übertragen). Das dient dem störungsfreien Betrieb; Rechtsgrundlage ist wie oben unser
+            berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO). Inhalte, die du in der App
+            eingibst, sind nicht Teil dieser Berichte.
+          </p>
+        </section>
+        <section class="karte">
+          <h2 class="karte-titel">Keine eingebundenen Inhalte anderer Anbieter</h2>
+          <p>
+            Schriften, Bilder, Figuren, die Schach-Engine und alle Buchdaten liegen auf unserer
+            eigenen Adresse. Es werden keine Schriften, Skripte, Videos, Karten oder
+            Social-Media-Knöpfe von anderen Anbietern geladen.
+          </p>
+        </section>
+        <section class="karte">
+          <h2 class="karte-titel">Links zu anderen Seiten</h2>
+          <p>
+            Die App und die Startseite verlinken auf andere Seiten, etwa Lichess, GitHub (Quelltext
+            der App) oder Händler des Buches. Erst wenn du einen solchen Link antippst, verbindet
+            sich dein Browser mit der anderen Seite; ab dann gelten deren Datenschutzbestimmungen.
+            Vorher wird nichts an diese Anbieter übertragen.
           </p>
         </section>
         <section class="karte">
           <h2 class="karte-titel">E-Mail</h2>
           <p>
             Wenn du an kontakt@schach-von-grund-auf.com schreibst, verarbeiten wir deine Adresse und
-            den Inhalt deiner Nachricht, um sie zu beantworten (Art. 6 Abs. 1 lit. b oder f DSGVO).
-            Die E-Mails nimmt ebenfalls Cloudflare entgegen und leitet sie an ein Postfach bei der
-            goneo Internet GmbH (Deutschland) weiter, die sie als Auftragsverarbeiter speichert. Wir
-            löschen sie, wenn sie erledigt sind und keine Aufbewahrungspflicht besteht. Die App
-            selbst verschickt nichts: „Fehler melden“ kopiert nur einen Text, den du selbst
-            versenden kannst.
+            den Inhalt deiner Nachricht, um sie zu beantworten (Art. 6 Abs. 1 lit. b DSGVO, wenn es
+            um die App oder das Buch geht, sonst Art. 6 Abs. 1 lit. f DSGVO). Die E-Mails nimmt
+            Cloudflare entgegen (Weiterleitung, Auftragsverarbeitung wie oben) und leitet sie an ein
+            Postfach bei der goneo Internet GmbH in Deutschland weiter, die sie als
+            Auftragsverarbeiter speichert. Wir löschen sie, wenn sie erledigt sind und keine
+            gesetzliche Aufbewahrungspflicht besteht.
           </p>
         </section>
         <section class="karte">
           <h2 class="karte-titel">Deine Rechte</h2>
           <p>
-            Du hast das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der
-            Verarbeitung deiner Daten, auf Datenübertragbarkeit und auf Widerspruch gegen die
-            Verarbeitung (Art. 15 bis 21 DSGVO). Schreib dazu an die Adresse oben. Du kannst dich
-            außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren, etwa bei der
-            Landesbeauftragten für den Datenschutz Niedersachsen.
+            Du hast das Recht auf Auskunft (Art. 15 DSGVO), Berichtigung (Art. 16), Löschung (Art.
+            17), Einschränkung der Verarbeitung (Art. 18) und Datenübertragbarkeit (Art. 20).
+            Schreib dazu an die Adresse oben.
+          </p>
+          <p>
+            <strong>Widerspruchsrecht:</strong> Soweit wir Daten auf Grund unseres berechtigten
+            Interesses verarbeiten (Art. 6 Abs. 1 lit. f DSGVO), kannst du dem aus Gründen, die sich
+            aus deiner besonderen Situation ergeben, jederzeit widersprechen (Art. 21 DSGVO).
+          </p>
+          <p>
+            Du kannst dich außerdem bei einer Datenschutz-Aufsichtsbehörde beschweren (Art. 77
+            DSGVO), etwa bei der für uns zuständigen Landesbeauftragten für den Datenschutz
+            Niedersachsen, Prinzenstraße 5, 30159 Hannover.
+          </p>
+          <p>
+            Eine automatisierte Entscheidungsfindung oder Profilbildung findet nicht statt. Du bist
+            nicht verpflichtet, uns Daten zu geben; ohne die technischen Angaben beim Aufruf lässt
+            sich die Website allerdings nicht ausliefern.
+          </p>
+        </section>
+        <section class="karte">
+          <h2 class="karte-titel">Stand</h2>
+          <p>
+            Stand: 19. Oktober 2026. Ändert sich, was die App oder die Website technisch tun, passen
+            wir diese Erklärung an.
           </p>
         </section>
       </main>

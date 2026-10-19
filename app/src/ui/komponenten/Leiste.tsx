@@ -14,7 +14,11 @@ import type { Bereich } from "../../app/stapel";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import { useLangerDruck } from "./useLangerDruck";
 
-const SYMBOLGROESSE = 24;
+/**
+ * Seit 0.2.116 zeigt die Leiste nur Symbole (Wunsch des Autors, 19.10.2026): Die Beschriftung
+ * fällt weg, die Symbole werden dafür größer. Der Name bleibt als aria-label und Tooltip.
+ */
+const SYMBOLGROESSE = 30;
 const STRICHSTAERKE = 1.8;
 /** So lange hält der Autor das Zahnrad, bis die Aufgabenseite aufgeht (sein Wunsch: 3 s). */
 const LANGER_DRUCK_MS = 3000;
@@ -23,8 +27,6 @@ interface Bereichsknopf {
   readonly bereich: Bereich;
   readonly symbol: LucideIcon;
   readonly text: Textschluessel;
-  /** Nur das Symbol zeigen; der Text ist dann nur für Bildschirmleser da. */
-  readonly nurSymbol?: boolean;
 }
 
 const BEREICHE: readonly Bereichsknopf[] = [
@@ -32,7 +34,7 @@ const BEREICHE: readonly Bereichsknopf[] = [
   { bereich: "training", symbol: Crosshair, text: "leiste.training" },
   { bereich: "spielen", symbol: Swords, text: "leiste.spielen" },
   { bereich: "nachschlagen", symbol: Search, text: "leiste.nachschlagen" },
-  { bereich: "ich", symbol: Settings, text: "leiste.einstellungen", nurSymbol: true },
+  { bereich: "ich", symbol: Settings, text: "leiste.einstellungen" },
 ];
 
 /** Die Leiste; der aktive Bereich trägt oben einen goldenen Strich. */
@@ -46,7 +48,7 @@ export function Leiste() {
   });
   return (
     <nav className="leiste" aria-label={t("leiste.titel")}>
-      {BEREICHE.map(({ bereich, symbol: Symbol, text, nurSymbol }) => {
+      {BEREICHE.map(({ bereich, symbol: Symbol, text }) => {
         const mitDruck = bereich === "ich";
         return (
           <button
@@ -54,8 +56,8 @@ export function Leiste() {
             type="button"
             className={mitDruck ? "leiste-knopf leiste-knopf-halten" : "leiste-knopf"}
             aria-current={stapel.bereich === bereich ? "page" : undefined}
-            aria-label={nurSymbol ? t(text) : undefined}
-            title={nurSymbol ? t(text) : undefined}
+            aria-label={t(text)}
+            title={t(text)}
             {...(mitDruck
               ? {
                   onPointerDown: druck.onPointerDown,
@@ -71,7 +73,6 @@ export function Leiste() {
             }}
           >
             <Symbol size={SYMBOLGROESSE} strokeWidth={STRICHSTAERKE} aria-hidden="true" />
-            {!nurSymbol && <span>{t(text)}</span>}
           </button>
         );
       })}

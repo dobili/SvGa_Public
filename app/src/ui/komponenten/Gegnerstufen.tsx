@@ -182,6 +182,12 @@ interface Gruppe {
   readonly bots: readonly Gegner[];
 }
 
+/** Schwächster Bot zuerst (Wunsch des Autors, 19.10.2026); ohne Messung zählt die Schätzung. */
+function nachStaerke(bots: readonly Gegner[]): Gegner[] {
+  const zahl = (g: Gegner) => staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase);
+  return [...bots].sort((a, b) => zahl(a) - zahl(b));
+}
+
 /**
  * Die Gruppen der Gegnerwahl: zuerst „Zum Spaß“ (die Spaß-Bots, 0.2.88, Wunsch des Autors), dann
  * die acht Stufen. Beispiel (seit 0.2.103): „Zum Spaß“ mit „unter 400 bis etwa 850“, „Stufe 1 ·
@@ -193,9 +199,9 @@ function gruppen(): Gruppe[] {
     stufe: nummer,
     kopf: t("spielen.bot.stufeKopf", { nummer: String(nummer), name: t(stufe(nummer).name) }),
     bereich: bereichstext(nummer),
-    bots: gegnerDerStufe(nummer),
+    bots: nachStaerke(gegnerDerStufe(nummer)),
   }));
-  const spass = spassbots();
+  const spass = nachStaerke(spassbots());
   if (spass.length === 0) return stufen;
   const kopf = t("spielen.bot.spassKopf");
   const bereich = spassbereichstext();

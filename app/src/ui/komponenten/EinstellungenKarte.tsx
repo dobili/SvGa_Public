@@ -287,7 +287,9 @@ const INHALT: Readonly<Record<Bereich, () => React.ReactNode>> = {
 };
 
 export function EinstellungenKarte() {
-  const [bereich, setzeBereich] = useState<Bereich>("brett");
+  // Beim Öffnen steht der Reiter „Training“ vorn (Wunsch des Autors, 19.10.2026): Dort stellt man
+  // am häufigsten etwas um; Brett und Figuren wählt man meist nur einmal.
+  const [bereich, setzeBereich] = useState<Bereich>("training");
   return (
     <section className="karte" data-testid="darstellung">
       <h2 className="karte-titel">

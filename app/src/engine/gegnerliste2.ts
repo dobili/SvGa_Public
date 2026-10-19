@@ -1,5 +1,5 @@
 /**
- * Die vorgefertigten Gegner der Stufen 5 bis 8 (Vereinsanfänger bis Experte), je acht.
+ * Die vorgefertigten Gegner der Stufen 5 bis 8 (heute „Starker Vereinsspieler“ bis „Großmeister“, Namen seit 0.2.116), je acht.
  *
  * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Ab Stufe 5 gibt es keine absichtlichen
  * Fehler mehr (engine/stufen.ts); die Persönlichkeit entsteht aus den Stufen je Phase, den
@@ -9,7 +9,7 @@
  */
 import { gegner, type Gegner } from "./gegnerbau";
 
-/** Stufe 5, Vereinsanfänger. */
+/** Stufe 5, Starker Vereinsspieler (bis 0.2.115 „Vereinsanfänger“). */
 const STUFE_5: readonly Gegner[] = [
   gegner(
     "kurt",
@@ -52,7 +52,7 @@ const STUFE_7: readonly Gegner[] = [
   gegner("frau-doktor-ahl", "Frau Dr. Ahl", [8, 7, 7], [], ["zwischenzug"], -1),
 ];
 
-/** Stufe 8, Experten: volle Stärke, nur blinde Flecken und Stil unterscheiden sie. */
+/** Stufe 8, Großmeister (bis 0.2.115 „Experte“): volle Stärke, nur blinde Flecken und Stil unterscheiden sie. */
 const STUFE_8: readonly Gegner[] = [
   gegner("gm-gruen", "Großmeister Grün", [8, 8, 8], [], [], 0),
   gegner("im-vogt", "IM Vogt", [8, 8, 8], [], ["ruhig"], 2),

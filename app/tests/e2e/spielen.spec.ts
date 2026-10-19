@@ -100,7 +100,7 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
     .getByLabel("Stellung als FEN")
     .fill("rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2");
   await page.getByRole("button", { name: "Stellung übernehmen" }).click();
-  // Seit 0.2.40 drei Regler je Phase: alle auf Stufe 8 (Experte).
+  // Seit 0.2.40 drei Regler je Phase: alle auf Stufe 8 (Großmeister).
   for (const phase of ["Eröffnung", "Mittelspiel", "Endspiel"]) {
     await page.getByLabel(new RegExp(`^${phase}:`)).fill("8");
   }

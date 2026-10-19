@@ -4061,3 +4061,15 @@ die das Skript nicht messen kann (Ringe als Verlauf oder Schatten), von Hand gep
 
 Vorlage mit Messwerten und Bildern vorher und nachher als privates Artifact (Bilder nicht im
 Repository). Freigabe des Autors am 19.10.2026: „Alles ja“. Testpunkte N483 bis N489.
+
+## App-Symbol knackiger (19.10.2026, Opus, Zweig `symbol-knackig`, Version 0.2.107)
+
+Rückmeldung des Autors mit Bildschirmfoto vom Startbildschirm: „Bekommen wir die Farben des Icons
+noch etwas knackiger?“ Ursachen: das weich gezeichnete Cover, das Rauschen der Verkleinerung auf
+256 Farben und ein halb deckender Rand, durch den die roten Figuren grau-rosa schimmerten.
+Verglichen wurden sieben Varianten auf einem dunkelblauen Startbildschirm in 180 und 60 Pixeln.
+Mehr Sättigung (1,35 bis 1,45) machte das Gold orange-rot; gewählt: Kontrast 1,2, Sättigung 1,1,
+leichte Schärfe (Laplace-Kern 0,6), Rand ab 45 % des Radius fast deckend in Navy (97 %). Die
+Symbole mit 180 und 192 Pixeln bleiben in voller Farbtiefe (je etwa 100 KB), nur die beiden 512er
+werden auf 256 Farben verkleinert (Android rechnet sie klein). Skript `skripte/erzeuge-appsymbol.mjs`.
+

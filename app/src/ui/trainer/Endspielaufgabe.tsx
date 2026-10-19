@@ -12,6 +12,7 @@ import type { Markierung } from "../../analyse/werkzeug";
 import type { Endspielaufgabe as Aufgabe } from "../../daten/trainerdaten";
 import { sprache, t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
+import { uciZuSan } from "../../spiel/zuege";
 import { stellungAusFen } from "../../schach/stellung";
 import { zugFelder } from "../../schach/weiterspielen";
 import type { Endspielergebnis, Massstab } from "../../training/endspieltrainer";
@@ -97,7 +98,10 @@ export function Endspielaufgabe({
     KEINE_WAHL,
   );
   const stellung = useMemo(() => stellungAusFen(stand.fen), [stand.fen]);
-  const hilfe = stand.bester ? zugFelder(stand.fen, stand.bester) : null;
+  // „bester“ kommt von der Engine in UCI („b3b7“), zugFelder erwartet SAN: erst umwandeln, sonst
+  // fehlten goldene Figur und Pfeil bei Figurenzügen (Befund beim Prüfen von N255).
+  const besterSan = stand.bester ? uciZuSan(stand.fen, stand.bester) : null;
+  const hilfe = besterSan ? zugFelder(stand.fen, besterSan) : null;
   const markierungen: Markierung[] = [];
   if (!fertig && hilfe && stufe >= 2) {
     markierungen.push({ typ: "feld", farbe: "gold", feld: hilfe.von });

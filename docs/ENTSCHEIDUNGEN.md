@@ -3178,6 +3178,52 @@ Auftrag des Autors (abgesegnet am 18.10.2026, AP 18 ohne Übersetzung).
 - **Tests:** `i18n/sprache.test.ts`, `schach/notation.test.ts`, `pipeline/tests/test_klartextzuege.py`,
   Oberflächentest `tests/e2e/sprache.spec.ts`.
 
+## Befunde aus dem Durchprüfen der Aufgabenliste (18.10.2026, Opus, Zweig `aufgaben-zurueck`, Version 0.2.95)
+
+Gefunden beim Durchprüfen der Aufgabenliste (N307): Nach einem Link und „‹ Zurück zu den
+Aufgaben“ stand die Seite oben statt beim angetippten Punkt. Ursache: Die Seite merkte sich den
+Punkt („zuletzt“) erst im State-Updater von React; der Link baute die Seite ab, bevor der Updater
+lief, und im Merker blieb `zuletzt: null`. Jetzt schreibt `aendere` den Merker sofort aus dem
+neuesten Stand (Referenz, die sich nur dort ändert). Ein neuer Oberflächentest öffnet einen
+Abschnitt weit unten, folgt einem Link und prüft, dass der Punkt nach der Rückkehr im Bild ist;
+mit dem alten Stand schlug er fehl.
+
+Weitere Fehler, die das Durchprüfen von Teil 1 mit Playwright fand, alle behoben:
+
+- **Endspieltrainer, Hinweis 2 und 3 (N254 bis N256):** Goldene Figur und goldener Pfeil fehlten
+  bei Figurenzügen. Die Engine liefert den Zug in UCI („b3b7“), die Markierung erwartete SAN;
+  nur Bauernzüge las der SAN-Leser zufällig richtig. Jetzt wird erst umgewandelt. Der
+  Oberflächentest des Endspieltrainers prüft den Pfeil bei der Mattführung (mit dem alten Stand
+  rot). Danach ließen sich Mattführung bis „Matt! Ziel erreicht.“ und ein Turmendspiel bis
+  „Zwölf Züge gehalten“ mit den Hinweisen ausspielen.
+- **„..“ nach „Warum?“ (N320):** Der Text „Warum: Der Zug {text}.“ setzte einen zweiten Punkt
+  hinter die Erklärung, die schon mit Punkt endet.
+- **Uhr nach der Rückkehr aus dem Hintergrund (N179):** Die Anzeige rechnete einen Takt lang mit
+  der alten Uhrzeit und zeigte die Zeit im Hintergrund kurz als Guthaben (5:21 statt 5:00).
+  Jetzt frischt die Rückkehr die Uhrzeit der Anzeige sofort auf.
+- **Einzahl:** „1 Durchgang“ (Fortschritt im Kapitel, N195), „1 gewertete Partie“ (Deine
+  Wertung, N224), „aus 1 Partie“ (Deine Spielstärke, N326).
+- **„Aus dem Buch: Abb. 0.12“ beim Zug ausführen (N314):** Die Sonderzüge an den Buchstellungen
+  nannten ihre Abbildung nicht, obwohl der Nachtest das versprach; jetzt steht sie unter dem
+  Brett wie in den anderen Trainern.
+- **Nicht behoben, bleibt als Befund bei N180:** Beim schnellen Neuladen am Rechner ging die
+  Bedenkzeit seit dem letzten Zug verloren (die Uhr stand danach wieder auf der Zeit beim
+  letzten Engine-Zug). Das Anhalten beim Verlassen wird zwar gespeichert, aber das Schreiben in
+  die Datenbank wird beim Neuladen abgebrochen. Eine sichere Lösung bräuchte einen zweiten,
+  sofortigen Speicherweg für die Uhr; auf dem Handy (App wechseln, dann schließen) bleibt
+  meist genug Zeit zum Schreiben. Der Autor prüft das auf dem Handy.
+- **Partie zu zweit (N222):** Die Auswertung sagte „Die Engine hat in dieser Partie keinen
+  absichtlichen Fehler gemacht.“, obwohl keine Engine mitspielte. Der Abschnitt fehlt jetzt bei
+  Mensch gegen Mensch; der Oberflächentest „Stellung aufbauen … zu zweit“ prüft es.
+- **Erklärung der Karte „Spielstärke“:** nannte noch „in den Einstellungen (wie Lichess,
+  Mittelweg oder nahe chess.com)“; seit 0.2.87 steht der Schalter nur in der Karte und heißt
+  „Lichess, App, chess.com“.
+- **Kennungen mit zwei Buchstaben auf der Aufgabenseite:** Die Seite las nur Kennungen mit einem
+  Buchstaben (N307, F5); die Rückfragen der parallelen Chats heißen NA1, LS…, ZF… und ließen
+  sich nicht abhaken. Jetzt gelten ein oder zwei Großbuchstaben.
+- Kein Fehler: Die Rochade heißt im Trainer „O-O“ mit Buchstaben O, wie im Buch (190-mal O-O,
+  nie 0-0).
+
 ## Aufgabenliste entlastet (18.10.2026, Opus, Zweig `claude/aufgabenliste-entlasten-6y3tgp`, nur Doku)
 
 Auftrag des Autors vom 18.10.2026: `docs/AUFGABEN_AUTOR.md` kürzer machen, damit er auf dem Handy
@@ -3275,7 +3321,7 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N317** (Warum-Fragen im Repertoire-Trainer (W10)): von Claude geprüft am 18.10.2026: Spanisch als Schwarz: nach 3... a6 zugeklappt die Warum-Frage „Warum spielt Schwarz 3... a6?“
 - **N318** (Zug erraten mit Vergleich (W12)): von Claude geprüft am 18.10.2026: Opernpartie 2. d4 statt Sf3: Vergleich der Engine und „warum der Meister anders zog“ (Oberflächentest)
 - **N161** (Werkzeuge in der Partie): von Claude geprüft am 18.10.2026: Zählen, Röntgen und W1–W7 am Brett, Röntgen zeigt die Karte und gezogen wird weiter, Bündel „Taktik“ mit „Erzwingende Züge“; in der ruhigen Ansicht nur „Brett drehen“ und „Ruhige Ansicht“
-- **N179** (Uhr im Hintergrund): von Claude geprüft am 18.10.2026: Sichtbarkeit „hidden“ ausgelöst: Die Engine zog im Hintergrund, die Uhr des Lesers stand 20 s auf 5:00. Die Anzeige zeigte nach der Rückkehr einen Takt lang 5:21; behoben in 0.2.90, danach 5:00, 4:59 …
+- **N179** (Uhr im Hintergrund): von Claude geprüft am 18.10.2026: Sichtbarkeit „hidden“ ausgelöst: Die Engine zog im Hintergrund, die Uhr des Lesers stand 20 s auf 5:00. Die Anzeige zeigte nach der Rückkehr einen Takt lang 5:21; behoben in 0.2.95, danach 5:00, 4:59 …
 - **N208** (Eröffnung wählen): von Claude geprüft am 18.10.2026: Vorschau „Hauptvariante: 1. e4 e5 2. Sf3 Sc6 3. Lb5 a6 …“, Untertitel „… · Spanische Partie“, gespielt 1. e4 e5 2. Sf3 Sc6 3. Lb5 a6
 - **N209** (Eröffnung verlassen): von Claude geprüft am 18.10.2026: Spanisch gewählt, 1. d4: Die Engine antwortet ohne Fehlermeldung
 - **N210** (Stufe je Phase): von Claude geprüft am 18.10.2026: „Eigene Stufe“ 1 · 4 · 2: Untertitel „Stufen 1 · 4 · 2 (Eröffnung · Mittelspiel · Endspiel) · du spielst Weiß“; 4 · 4 · 4: „Stufe 4 · Gelegenheitsspieler …“
@@ -3283,7 +3329,7 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N212** (Auswertung ohne Wartezeit): von Claude geprüft am 18.10.2026: zwölf Züge mit Pausen und einer Rücknahme: beim Ende 15 von 23 Stellungen schon ausgewertet, der Rest 23 s auf der ausgelasteten Testmaschine (die Zeit auf dem Handy fragt N327)
 - **N220** (Spielhilfen zuschalten): von Claude geprüft am 18.10.2026: nur Symbole: Symbole da, keine Leiste, kein Engine-Knopf; beides aus: nur Brett, Uhr, Zugliste; nach dem Ende keine Leiste, Symbole bleiben
 - **N221** (Gewertete Partie): von Claude geprüft am 18.10.2026: Haken „Gewertete Partie (zählt für deine Spielstärke)“ mit Satz; bei „Mensch“ fehlen Haken, Seite und Eröffnung
-- **N224** (Deine Wertung): von Claude geprüft am 18.10.2026: gewertete Partie gegen Leon, zwölf eigene Züge, aufgegeben: Karte „Deine Wertung“ mit Zahl gleich der Schätzung der Partie, Ausschnitt-Wahl mit allen acht Werten, Kurve mit Punkt; „1 gewertete Partien“ hieß es vorher, seit 0.2.90 „1 gewertete Partie“
+- **N224** (Deine Wertung): von Claude geprüft am 18.10.2026: gewertete Partie gegen Leon, zwölf eigene Züge, aufgegeben: Karte „Deine Wertung“ mit Zahl gleich der Schätzung der Partie, Ausschnitt-Wahl mit allen acht Werten, Kurve mit Punkt; „1 gewertete Partien“ hieß es vorher, seit 0.2.95 „1 gewertete Partie“
 - **N228** (Wertung nur aus der Grundstellung): von Claude geprüft am 18.10.2026: aus Abb. 1.26 und aus einer aufgebauten Stellung der Satz „Diese Partie zählt nicht für deine Wertung …“ ohne Haken; aus der Grundstellung mit Haken; bei „Mensch“ ohne
 - **N229** (Wertung zurücksetzen): von Claude geprüft am 18.10.2026: „Wertung zurücksetzen“, „Ja, zurücksetzen“, danach wieder der Hinweis vor der ersten Partie; die Partien bleiben, ihr Stern verschwindet
 - **N243** (Eigene Gegner mit blinden Flecken): von Claude geprüft am 18.10.2026: alle elf blinden Flecken im Formular; ein Bot 6 · 6 · 6 nur mit „lange Läuferdiagonalen“ ließ sich anlegen, wählen und spielen
@@ -3292,7 +3338,7 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N284** (Abhakliste der Fehlerarten): von Claude geprüft am 18.10.2026: 14 Haken, „14 von 14 Arten erlaubt“; „Keine erlauben“ 0, nur W1 1, „Alle erlauben“ 14
 - **N310** (Gewertete Partie ohne Hilfen (S9)): von Claude geprüft am 18.10.2026: bei gewerteter Partie drei Haken grau und leer mit dem Satz; ohne Haken wieder wählbar; in der Partie weder Zurücknehmen noch Werkzeuge
 - **N319** (Gegnerwahl in drei Kategorien): von Claude geprüft am 18.10.2026: drei Kacheln, je nur der passende Inhalt; bei „Eigene Bots“ ohne Bot „Partie beginnen“ gesperrt mit Satz, dazu „Eigene Bots verwalten“
-- **N320** (Engine-Knopf in der Partie): von Claude geprüft am 18.10.2026: Engine-Symbol: Bewertung, „Deinen letzten Zug bewerten“ („Dein Zug 2. Dh5? ist ein Fehler.“), „Warum?“, „Besten Zug zeigen“; nach „Warum?“ stand ein doppelter Punkt, behoben in 0.2.90
+- **N320** (Engine-Knopf in der Partie): von Claude geprüft am 18.10.2026: Engine-Symbol: Bewertung, „Deinen letzten Zug bewerten“ („Dein Zug 2. Dh5? ist ein Fehler.“), „Warum?“, „Besten Zug zeigen“; nach „Warum?“ stand ein doppelter Punkt, behoben in 0.2.95
 - **N321** (Blinde Flecken bei eigener Stufe): von Claude geprüft am 18.10.2026: „(0 gewählt)“, Rückzüge angehakt „(1 gewählt)“, bleibt nach dem Neuladen
 - **N330** (Zahlen in der Gegnerwahl): von Claude geprüft am 18.10.2026: Überschriften mit Bereichen wie im Punkt (Stufe 1 etwa 1050 bis 1300 … Stufe 8 etwa 3000 bis 3200), jede Kachel mit „etwa …“
 - **N331** (Sprechblase und Erklärung): von Claude geprüft am 18.10.2026: Ayşe „etwa 1550 (Stufe 2)“, Fragezeichen mit Elo-Leiter und ±150; eigener Bot „etwa … (geschätzt)“; eigene Stufe „Deine Einstellung 3 · 4 · 3 · etwa 1950 (geschätzt)“, ändert sich mit dem Regler
@@ -3312,7 +3358,7 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N213** (Zugklassen am Brett): von Claude geprüft am 18.10.2026: Marken am Zielfeld: !! blau, ! gold, ✓ grün, ?! grau, ? und ?? rot; gut und Buch ohne Marke, mit Satz. Die Lesbarkeit von „?!“ im Dunkelmodus fragt N328
 - **N215** (Phasen in der Kurve): von Claude geprüft am 18.10.2026: goldene Linie „M“ in der Kurve
 - **N218** (Auswertung ohne Nachfrage): von Claude geprüft am 18.10.2026: „Hast du es gesehen?“ kommt nicht vor (Partie gegen Stufe 1)
-- **N222** (Zu zweit spielen): von Claude geprüft am 18.10.2026: Überschrift „Partie zu zweit“, Untertitel, Status im Wechsel, „Matt! Weiß hat gewonnen.“, Aufgeben für die Seite am Zug, Uhr für beide, Spalten Weiß und Schwarz. Dabei gefunden: Die Auswertung nannte „keinen absichtlichen Fehler der Engine“; behoben in 0.2.90
+- **N222** (Zu zweit spielen): von Claude geprüft am 18.10.2026: Überschrift „Partie zu zweit“, Untertitel, Status im Wechsel, „Matt! Weiß hat gewonnen.“, Aufgeben für die Seite am Zug, Uhr für beide, Spalten Weiß und Schwarz. Dabei gefunden: Die Auswertung nannte „keinen absichtlichen Fehler der Engine“; behoben in 0.2.95
 - **N225** (Phase, Zusatzregeln): von Claude geprüft am 18.10.2026: K + D gegen K + D aufgebaut: „Endspiel …“ und „Zusatzregel (nicht aus dem Buch): Jede Seite hat höchstens 13 Punkte …“
 - **N226** (Stellung aufbauen, Figuren setzen): von Claude geprüft am 18.10.2026: 12 Steine, „Feld räumen“, „Am Zug“, „Brett leeren“, „Grundstellung“; zweiter Tipp räumt; „Stellung übernehmen“ gesperrt mit rotem Satz bis zu zwei Königen; Seite am Zug vorgewählt; aus Abb. 1.26 geändert „Aus einer eigenen Stellung“
 - **N227** (Stellung aufbauen, Züge spielen): von Claude geprüft am 18.10.2026: Züge mit Zielpunkten, Umwandlungsfrage mit vier Figuren; nach 1. e4 e5 2. Sf3 spielt der Leser Schwarz
@@ -3329,13 +3375,13 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N311** (Unmögliche Stellungen (S12)): von Claude geprüft am 18.10.2026: drei Damen und acht Bauern: schon „Stellung übernehmen“ gesperrt mit dem Satz zu den Umwandlungen; zwei Damen und sieben Bauern gehen, die Engine zieht
 - **N336** (Fehler im Rückblick): von Claude geprüft am 18.10.2026: „4... h6??: Die Gewinnchance von Schwarz fällt von 50 % auf 9 %.“, „schlägt nicht zurück: dxc6 nahm den Läufer c6 wieder …“ mit rotem Feld; Fragezeichen erklärt Balken und Gewinnchance
 - **N337** (Nebenzweige): von Claude geprüft am 18.10.2026: „Besser war …“ und „So wird der Fehler bestraft: …“ antippbar, Stellung am Brett, Zug für Zug weiter, „Zurück zur Partie“; bei gutem Zug keine Strafe
-- **N338** (Auswertung): von Claude geprüft am 18.10.2026: Schalter „Genauigkeit wie“, Symbole je Zeile, Marken je Klasse, Erklärungen hinter Fragezeichen; Patzer mit Bauer in Seitenfarbe, Tipp springt hin; Fehler der Engine erst 3, „Alle 8 zeigen“; „Noch einmal aus derselben Stellung“ nur bei eigener Stellung. Der Erklärtext nannte noch „Mittelweg“ und die Einstellungen; nachgeführt in 0.2.90
+- **N338** (Auswertung): von Claude geprüft am 18.10.2026: Schalter „Genauigkeit wie“, Symbole je Zeile, Marken je Klasse, Erklärungen hinter Fragezeichen; Patzer mit Bauer in Seitenfarbe, Tipp springt hin; Fehler der Engine erst 3, „Alle 8 zeigen“; „Noch einmal aus derselben Stellung“ nur bei eigener Stellung. Der Erklärtext nannte noch „Mittelweg“ und die Einstellungen; nachgeführt in 0.2.95
 - **N176** (Stufe 2 (Anfänger), kein Damenopfer): von Claude geprüft am 18.10.2026: nicht über eine Partie, sondern an der Regel: Absichtliche Fehler ab Stufe 2 schließen ein Damenopfer aus (`damenopferErlaubt` nur bei Stufe 1, Filter in der Fehlersuche und bei den menschlichen Zügen), Komponententest „Damenopfer (Konzept 8.2)“
-- **N195** (Fortschritt): von Claude geprüft am 18.10.2026: nach einer ganzen Runde zeigt Kapitel 0 den Trainer mit Durchgängen und richtigen Aufgaben; „1 Durchgänge“ heißt seit 0.2.94 „1 Durchgang“
-- **N254** (Mattführung gewinnen): von Claude geprüft am 18.10.2026: Mattführung Stufe 1: Auftrag, Herkunftszeile und Status wie beschrieben. Hinweis 2 und 3 zeigten bei Damen- und Königszügen weder Figur noch Pfeil; behoben in 0.2.94, danach mit den Hinweisen bis „Richtig! Matt! Ziel erreicht.“ ausgespielt
-- **N256** (Remis halten): von Claude geprüft am 18.10.2026: Turmendspiel als Schwarz: Brett gedreht, Engine zieht zuerst, „Aufgabe abbrechen“ nennt den besten Zug; nach der Behebung in 0.2.94 mit den Hinweisen bis „Richtig! Zwölf Züge gehalten … Ziel erreicht.“ ausgespielt
-- **N307** (Aufgabenseite): von Claude geprüft am 18.10.2026: langer Druck, Link, Haken, Notiz, „Stand in die Zwischenablage“, „Nur offene Punkte zeigen“, Erhalt nach dem Neuladen gingen; „‹ Zurück zu den Aufgaben“ landete aber oben statt beim Punkt. Behoben in 0.2.94 (auch für Safari); ein Oberflächentest prüft es in Chromium und WebKit
-- **N314** (Sonderzüge aus Kapitel 0 (U5)): von Claude geprüft am 18.10.2026: Sonderzüge an den Buchstellungen 0.12 bis 0.19 (Rochaden, en passant, Umwandlung) kommen; die Abbildung stand nicht dabei, seit 0.2.94 „Aus dem Buch: Abb. 0.14“ usw. unter dem Brett
+- **N195** (Fortschritt): von Claude geprüft am 18.10.2026: nach einer ganzen Runde zeigt Kapitel 0 den Trainer mit Durchgängen und richtigen Aufgaben; „1 Durchgänge“ heißt seit 0.2.95 „1 Durchgang“
+- **N254** (Mattführung gewinnen): von Claude geprüft am 18.10.2026: Mattführung Stufe 1: Auftrag, Herkunftszeile und Status wie beschrieben. Hinweis 2 und 3 zeigten bei Damen- und Königszügen weder Figur noch Pfeil; behoben in 0.2.95, danach mit den Hinweisen bis „Richtig! Matt! Ziel erreicht.“ ausgespielt
+- **N256** (Remis halten): von Claude geprüft am 18.10.2026: Turmendspiel als Schwarz: Brett gedreht, Engine zieht zuerst, „Aufgabe abbrechen“ nennt den besten Zug; nach der Behebung in 0.2.95 mit den Hinweisen bis „Richtig! Zwölf Züge gehalten … Ziel erreicht.“ ausgespielt
+- **N307** (Aufgabenseite): von Claude geprüft am 18.10.2026: langer Druck, Link, Haken, Notiz, „Stand in die Zwischenablage“, „Nur offene Punkte zeigen“, Erhalt nach dem Neuladen gingen; „‹ Zurück zu den Aufgaben“ landete aber oben statt beim Punkt. Behoben in 0.2.95 (auch für Safari); ein Oberflächentest prüft es in Chromium und WebKit
+- **N314** (Sonderzüge aus Kapitel 0 (U5)): von Claude geprüft am 18.10.2026: Sonderzüge an den Buchstellungen 0.12 bis 0.19 (Rochaden, en passant, Umwandlung) kommen; die Abbildung stand nicht dabei, seit 0.2.95 „Aus dem Buch: Abb. 0.14“ usw. unter dem Brett
 - **N223** (Partienliste): von Claude geprüft am 18.10.2026: zu zweit „0–1 · Mensch (beide Seiten selbst) · 2 Züge · Weiß 25 % genau · Schwarz 100 % genau“; gegen Stufe 1 „0–1 · … · Stufe 1 · 12 Züge · du etwa 900 · Engine etwa 900“
 - **N324** (Genauigkeit wie): von Claude geprüft am 18.10.2026: Schalter Lichess | App | chess.com in der Karte, Zeile heißt jeweils „Genauigkeit (…)“; Spielstärken und Urteilswörter blieben beim Umschalten gleich
 - **N325** (Spielstärke mit Spanne): von Claude geprüft am 18.10.2026: „Geschätzte Spielstärke“ mit „etwa 900 (500–1300)“; das Fragezeichen „Erklärung: Spielstärke“ nennt beide Skalen (chess.com etwa …, Lichess etwa …)

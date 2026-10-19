@@ -64,3 +64,30 @@ test("Abhaken, Notiz, Link und zurück; der Text für den Chat enthält beides",
   }
   await expect(page.getByTestId(`aufgabe-${id}`).getByRole("checkbox")).toBeChecked();
 });
+
+test("„Zurück zu den Aufgaben“ führt zum zuletzt angetippten Punkt, nicht an den Anfang (N307)", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneUeberAdresse(page);
+  // Ein Abschnitt weit unten (von hinten der erste mit Link), damit die Seite beim Zurückkommen
+  // scrollen muss. Zugeklappte Abschnitte zeigen ihre Punkte erst nach dem Aufklappen.
+  const abschnitte = page.locator(".aufgabenabschnitt");
+  await expect(abschnitte.first()).toBeVisible();
+  let nummer = (await abschnitte.count()) - 1;
+  for (; nummer > 0; nummer--) {
+    const a = abschnitte.nth(nummer);
+    if ((await a.getAttribute("open")) === null) await a.locator("summary").click();
+    await expect(a).toHaveAttribute("open", "");
+    if ((await a.locator(".aufgabenlink").count()) > 0) break;
+  }
+  const abschnitt = abschnitte.nth(nummer);
+  const link = abschnitt.locator(".aufgabenlink").last();
+  const punkt = link.locator("xpath=ancestor::*[contains(@class, 'aufgabenpunkt')][1]");
+  const id = ((await punkt.getAttribute("data-testid")) ?? "").replace("aufgabe-", "");
+  await link.click();
+  await expect(page.getByTestId("autor-aufgaben")).toHaveCount(0);
+  await page.getByRole("button", { name: "‹ Zurück zu den Aufgaben" }).click();
+  await expect(page.getByTestId(`aufgabe-${id}`)).toBeInViewport();
+  expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(0);
+});

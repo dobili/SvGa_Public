@@ -300,7 +300,7 @@ export function Wertungskurve({
       </p>
       <p className="hinweis">
         {ansicht === "gesamt"
-          ? t("ich.wertung.stand", {
+          ? t(punkte.length === 1 ? "ich.wertung.standEins" : "ich.wertung.stand", {
               anzahl: punkte.length,
               aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
             })

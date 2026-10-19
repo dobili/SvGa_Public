@@ -31,7 +31,9 @@ export interface Aufgabendatei {
 }
 
 const UEBERSCHRIFT = /^(#{2,3}) (.+)$/;
-const PUNKT = /^- \[[ xX]\] ([A-Z]\d+)\. (.*)$/;
+// Kennung aus ein oder zwei Großbuchstaben und Nummer: N307, F5, aber auch NA1, LS2, ZF1 (die
+// Rückfragen der parallelen Chats seit dem 18.10.2026).
+const PUNKT = /^- \[[ xX]\] ([A-Z]{1,2}\d+)\. (.*)$/;
 const FOLGEZEILE = /^\s{2,}\S/;
 const VERSION = /Version (\d+\.\d+\.\d+)/;
 const TRENNLINIE = "---";

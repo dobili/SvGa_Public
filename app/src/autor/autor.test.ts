@@ -61,10 +61,17 @@ describe("Aufgabendatei lesen", () => {
     );
   });
 
+  it("liest Kennungen mit zwei Buchstaben (NA1, LS2) wie N307", () => {
+    const datei = liesAufgabendatei(
+      "## Teil 2\n\n### NA. Nachtarbeit\n\n- [ ] NA1. **Voreinstellung:** aus.\n",
+    );
+    expect(datei.abschnitte[1]?.punkte.map((p) => p.id)).toEqual(["NA1"]);
+  });
+
   it("liest die echte Aufgabendatei mit allen Punkten", () => {
     const text = readFileSync(new URL("../../../docs/AUFGABEN_AUTOR.md", import.meta.url), "utf8");
     const datei = liesAufgabendatei(text);
-    const anzahl = text.split("\n").filter((z) => /^- \[[ xX]\] [A-Z]\d+\. /.test(z)).length;
+    const anzahl = text.split("\n").filter((z) => /^- \[[ xX]\] [A-Z]{1,2}\d+\. /.test(z)).length;
     expect(datei.version).toMatch(/^\d+\.\d+\.\d+$/);
     expect(datei.abschnitte.flatMap((a) => a.punkte)).toHaveLength(anzahl);
     expect(anzahl).toBeGreaterThan(0);

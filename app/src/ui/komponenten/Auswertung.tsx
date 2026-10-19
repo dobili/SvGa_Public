@@ -270,7 +270,10 @@ export function Auswertung({
           <Patzer eintrag={eintrag} urteile={urteile} beiSprung={beiSprung} />
         </>
       )}
-      <Enginefehler partie={eintrag.partie} beiSprung={beiSprung} />
+      {/* Zu zweit spielt keine Engine; der Satz „keinen absichtlichen Fehler“ wäre falsch. */}
+      {eintrag.partie.einstellung.gegner === "engine" && (
+        <Enginefehler partie={eintrag.partie} beiSprung={beiSprung} />
+      )}
       <Pgn partie={eintrag.partie} urteile={urteile} />
       <Spielstaerke
         partie={eintrag.partie}

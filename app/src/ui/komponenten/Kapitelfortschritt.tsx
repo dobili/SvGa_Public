@@ -102,12 +102,17 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
       )}
       {mitStand.map(({ kennung, stand: trainer }) => (
         <p key={kennung} className="hinweis">
-          {t("fortschritt.trainerStand", {
-            name: t(`trainer.${kennung}.name`),
-            durchgaenge: trainer?.durchgaenge ?? 0,
-            richtig: trainer?.richtig ?? 0,
-            aufgaben: trainer?.aufgaben ?? 0,
-          })}
+          {t(
+            trainer?.durchgaenge === 1
+              ? "fortschritt.trainerStandEins"
+              : "fortschritt.trainerStand",
+            {
+              name: t(`trainer.${kennung}.name`),
+              durchgaenge: trainer?.durchgaenge ?? 0,
+              richtig: trainer?.richtig ?? 0,
+              aufgaben: trainer?.aufgaben ?? 0,
+            },
+          )}
         </p>
       ))}
     </section>

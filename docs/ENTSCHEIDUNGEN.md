@@ -3894,3 +3894,38 @@ Altersgruppen (drei je Zeile auf dem Handy, sechs ab 480 px). Die Kacheln sind O
 Gruppe: Pfeiltasten wählen, ohne zu schließen; Tippen auf ein Bild oder die Eingabetaste wählen und
 schließen; Escape schließt. Der Bildschirmleser liest Gruppe „Porträt“ und die Beschreibung jedes
 Bildes. Gespeicherte Daten unverändert (`EigenerGegner.portraet`).
+
+## Symbolsprache DS19 bis DS29 (19.10.2026, Opus, Zweig `symbolsprache`, wartet auf Freigabe)
+
+Wunsch des Autors: Seiten sollen beim Scrollen ohne Lesen erfassbar sein, mit allgemein bekannten
+Zeichen, Farben und Strukturen (Beispiele des Autors: Aufklappzeichen, Diskette, farbige Zahlen,
+die Stufen der Bots). Grundlage: Durchsicht aller Bildschirme und eine Recherche (NN/g zu
+Layer-Cake-Scanning, Icon Usability, Akkordeon-Zeichen und Diskette; Apple HIG Color und Icons;
+WCAG 1.4.1 und 1.4.11; Lichess und chess.com). Leitsätze: Wort und Zeichen immer zusammen; eine
+Bedeutung, ein Zeichen; Farbe nie allein; Pfeil nach unten klappt auf, Pfeil nach rechts öffnet
+eine Seite; Kennfarben sparsam (Gold für Zeichen, Gürtelfarben nur für Stufen, Rot nur für Gefahr).
+
+- DS19 Stufenmarken in Gürtelfarben (Weiß, Gelb, Orange, Grün, Blau, Lila, Braun, Schwarz; die
+  Helligkeit nimmt mit der Stufe ab, die Zahl steht in der Marke), Spaß-Gruppe mit Konfetti;
+  Porträtreihe und Zähler besiegter Bots in jeder Stufenzeile (`Stufenmarke.tsx`, `Gegnerstufen.tsx`).
+- DS20 ein Aufklappzeichen: Pfeil nach unten am Zeilenende, offen nach oben; Zeilen ohne eigenen
+  Pfeil bekommen ihn über `symbole.css` statt des Dreiecks ▶.
+- DS21 Pfeil nach rechts an Zeilen, die eine Seite öffnen (Buch, Nachschlagen).
+- DS22 Zeichen an Knöpfen (`Knopfsymbol.tsx`): Diskette nur für Speichern in der App, Pfeil nach
+  unten für Dateien; Fahne für Aufgeben wie bei Lichess und chess.com (die Flagge des Endspiels ist
+  eine Zielflagge in anderem Zusammenhang).
+- DS23 Löschen rot schon vor der Nachfrage.
+- DS24 Zeichen vor Abschnittsköpfen (`Titelsymbol.tsx`, `Auswahl` mit `symbol`).
+- DS25 Ergebnismarke aus Sicht des Lesers (`Ergebnismarke.tsx`): Pokal/Gold, Händedruck/Grau,
+  Kreuz/Rot; neutral bei Mensch gegen Mensch.
+- DS26 Phasenzeichen aus der Auswertung an den Stufenreglern und in der Denkroutine
+  (`Phasenzeichen.tsx`, `phaseZumNamen`).
+- DS27 Fortschritt als goldener Rand der Kapitelnummer im Buch und in der Gesamt-Checkliste
+  (`Kapitelnummer.tsx`); der kleine Ring neben dem Text im Buch (Wunsch vom 18.10.2026) ist an
+  die Nummer gewandert.
+- DS28 Werkzeugzeichen in „Werkzeuge des Buches“ wie am Brett und in der Werkzeugleiste.
+- DS29 Glossar ohne Suche nach Anfangsbuchstaben mit stehenden Trennern und Sprungleiste.
+
+Vorlage mit Bildern vorher und nachher als privates Artifact (Bilder nicht im Repository).
+Nach der Freigabe: main einmergen, Version 0.2.101, Testpunkte in AUFGABEN_AUTOR.
+

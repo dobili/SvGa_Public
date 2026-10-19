@@ -69,7 +69,7 @@ chess.com und Lichess neu geeicht. Die Bots spielen wie vorher; ihre Zahlen sink
 - [ ] N582. **Zahlen der Bots:** Spielen › „Vorgefertigte Bots“. Stufe 1 steht jetzt bei etwa
       850 bis 1100 (vorher 1050 bis 1300), Stufe 8 bei etwa 3000 (vorher 3200), „Zum Spaß“ bei
       „unter 400 bis etwa 850“ (Fritzi unter 400, Onkel Willi etwa 550, Tante Trude etwa 650,
-      Bruno etwa 850). Passt das zu deinem Gefühl am Brett? Zu den Spaß-Bots siehe GE1 in Teil 2.
+      Bruno etwa 850). Passt das zu deinem Gefühl am Brett?
 - [ ] N583. **Erklärung:** Auf der Karte „Spielstärke“ das Fragezeichen bei „Wie die Zahlen
       entstehen“ antippen. Dort steht neu: „Für Spielstärke und Wort je Phase zählen nur die
       Züge, bis die Partie entschieden ist: bis eine Seite mindestens 90 % Gewinnchance hat und
@@ -363,8 +363,8 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 
 - [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, seit 0.2.103
       „unter 400“): Macht sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende
-      Figur? Zur Lage der Zahlen (Bruno jetzt etwa 850) siehe GE1 in Teil 2. (Gruppe, Zahlen und
-      Sprechblase hat Claude geprüft.)
+      Figur? Bruno liegt jetzt bei etwa 850. (Gruppe, Zahlen und Sprechblase hat Claude
+      geprüft.)
 
 ### Neu in 0.2.85 (mit Engine; Elo-Zahl der Bots, Opus)
 
@@ -581,18 +581,6 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       (+0,03), das passt zum Buch („Weiß gewinnt mit Txa7 den Bauern zurück“). Die
       Endspielaufgaben des Trainers widersprechen der Tablebase in keinem Fall (137 Stellungen
       geprüft). Nur du änderst das Buch; die App bleibt, wie sie ist.
-
-### GE. Spielstärke nur bis zur Entscheidung (Opus, 19.10.2026; schon umgesetzt, Widerspruch genügt)
-
-- [ ] GE1. **Spaß-Bots jetzt unter deinem Wunschbereich:** Du wolltest die Gruppe „Zum Spaß“ bei
-      etwa 500 bis 1000. Mit der neuen Regel sinken alle Bot-Zahlen gemeinsam um etwa 200, die
-      Spaß-Bots liegen nun bei unter 400 (Fritzi, 60 % Zufallszüge), etwa 550 (Onkel Willi, 38 %),
-      650 (Tante Trude, 25 %) und 850 (Bruno, 15 %). Unter 400 zeigt die App keine Zahl, weil die
-      Eichpartien erst bei 400 beginnen. Gespielt wird wie vorher; nur der Maßstab ist ehrlicher
-      geworden (Stufe 1 wirkte dir mit „1700“ zu stark). **Empfehlung:** so lassen, die Bots
-      nicht neu messen (wie besprochen). Möchtest du die Spaß-Bots trotzdem bei 500 bis 1000,
-      senke ich ihre Zufallszüge (etwa 45, 30, 20 und 10 %) und messe die vier neu (etwa eine
-      Stunde Rechenzeit).
 
 ### Nur bestätigen (je eine Zeile; Widerspruch genügt)
 

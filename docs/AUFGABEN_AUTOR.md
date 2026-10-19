@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.100. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.101. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -32,6 +32,45 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.101 (etwa 15 Minuten; Symbolsprache, von dir freigegeben am 19.10.2026, Opus)
+
+- [ ] N475. **Stufen der Bots:** Spielen › „Vorgefertigte Bots“. Jede Stufe hat eine runde Marke
+      mit Nummer in Gürtelfarben (1 Weiß, 2 Gelb, 3 Orange, 4 Grün, 5 Blau, 6 Lila, 7 Braun,
+      8 Schwarz), „Zum Spaß“ eine bunte Marke mit Konfetti. Rechts stehen vier kleine Gesichter
+      (zugeklappt), darunter nach einem gewerteten Sieg ein Stern mit „1/8“. Der Elo-Bereich steht
+      kleiner in einer zweiten Zeile. Auch im Dunkelmodus gut zu erkennen?
+- [ ] N476. **Aufklappen und Weiter:** Überall, wo etwas aufklappt (Eigene Stellung eingeben,
+      Absichtliche Fehler, Abschnitte im Kapitel, Stufen der Bots, Denkroutine, Werkzeuge,
+      Checkliste), steht am Zeilenende ein Pfeil nach unten, offen nach oben; kein Dreieck ▶ mehr.
+      Kapitel im Buch und die Einträge in Nachschlagen haben rechts einen Pfeil nach rechts.
+- [ ] N477. **Zeichen an Knöpfen:** Einstellungen › Daten: Pfeil nach unten bei „Daten sichern“,
+      Pfeil nach oben bei „Sicherung einspielen“, „Alle Daten dieser App löschen“ rot mit
+      Papierkorb. Eigener Bot: Diskette bei „Gegner speichern“, Person mit Plus bei „Neuen Gegner
+      anlegen“. Partie: Fahne bei „Aufgeben“, Pfeil zurück bei „Zurücknehmen“. Taktiktrainer:
+      Dreieck bei „Runde starten“, Glühbirne bei „Hinweis“, Auge bei „Lösung zeigen“. Passt jedes
+      Zeichen zum Wort?
+- [ ] N478. **Zeichen vor Überschriften:** Goldene Zeichen vor „Deine Wertung“ (Pokal), „Dein
+      Fortschritt“, „Einstellungen“ (Zahnrad), „Daten auf diesem Gerät“, „Über die App“ („i“),
+      „Fällige Wiederholungen“, „Trainer je Kapitel“, „Deine letzten Partien“, „Auswertung“,
+      „Spielstärke“; in Spielen vor „Du spielst“, „Bedenkzeit“ (Stoppuhr), „Spielhilfen“
+      (Rettungsring), „Stufe der Engine“ und „Eröffnung“ (Buch).
+- [ ] N479. **Ergebnis:** Gewinne eine Partie (etwa „Eigene Stellung eingeben“ mit
+      6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1, dann Ta8 matt) und gib eine andere auf. Am Partieende steht
+      ein goldener Pokal bzw. ein rotes Kreuz vor dem Satz; in „Deine letzten Partien“ steht
+      „1–0“ in einer goldenen Marke mit Pokal bzw. „0–1“ rot umrandet mit Kreuz. Remis zeigt einen
+      Händedruck.
+- [ ] N480. **Phasen und Stufen:** Spielen › „Eigene Stufe“: Vor „Eröffnung“, „Mittelspiel“,
+      „Endspiel“ stehen Buch, gekreuzte Schwerter und Flagge, hinter dem Doppelpunkt die Stufe als
+      kleine Gürtelmarke. Dieselben Zeichen stehen in Nachschlagen › Denkroutine vor den Phasen.
+- [ ] N481. **Fortschritt an der Kapitelnummer:** Buch: Der Kreis um die Kapitelnummer füllt sich
+      golden mit den angesehenen Abbildungen (in einem Kapitel „Alle abhaken“ → goldener Kreis mit
+      Haken). Der kleine Ring neben dem Text ist dafür weggefallen. Dasselbe in der
+      Gesamt-Checkliste für abgehakte Lernziele.
+- [ ] N482. **Werkzeuge und Glossar:** Nachschlagen › Werkzeuge des Buches: Jedes Werkzeug hat
+      sein Zeichen wie am Brett. Nachschlagen › Glossar: Begriffe unter A, B, C …; der Buchstabe
+      bleibt beim Scrollen oben stehen, die Leiste oben springt zum Buchstaben. Mit Suchtext
+      erscheint die einfache Trefferliste.
 
 ### Neu in 0.2.99 (etwa 20 Minuten, mit Engine; deine Wünsche vom 19.10.2026 morgens, Opus)
 

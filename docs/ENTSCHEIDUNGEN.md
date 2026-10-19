@@ -3895,7 +3895,7 @@ Gruppe: Pfeiltasten wählen, ohne zu schließen; Tippen auf ein Bild oder die Ei
 schließen; Escape schließt. Der Bildschirmleser liest Gruppe „Porträt“ und die Beschreibung jedes
 Bildes. Gespeicherte Daten unverändert (`EigenerGegner.portraet`).
 
-## Symbolsprache DS19 bis DS29 (19.10.2026, Opus, Zweig `symbolsprache`, wartet auf Freigabe)
+## Symbolsprache DS19 bis DS29 (19.10.2026, Opus, Zweig `symbolsprache`, Version 0.2.101)
 
 Wunsch des Autors: Seiten sollen beim Scrollen ohne Lesen erfassbar sein, mit allgemein bekannten
 Zeichen, Farben und Strukturen (Beispiele des Autors: Aufklappzeichen, Diskette, farbige Zahlen,
@@ -3927,5 +3927,5 @@ eine Seite; Kennfarben sparsam (Gold für Zeichen, Gürtelfarben nur für Stufen
 - DS29 Glossar ohne Suche nach Anfangsbuchstaben mit stehenden Trennern und Sprungleiste.
 
 Vorlage mit Bildern vorher und nachher als privates Artifact (Bilder nicht im Repository).
-Nach der Freigabe: main einmergen, Version 0.2.101, Testpunkte in AUFGABEN_AUTOR.
+Freigabe des Autors am 19.10.2026: „Alles, ja“. Testpunkte N475 bis N482.
 

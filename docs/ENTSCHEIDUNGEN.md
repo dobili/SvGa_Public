@@ -3778,3 +3778,51 @@ hat, mit Rückfrage:
       in Richtung Elo 2000 entscheidend sind“. Schon umgesetzt in 0.2.55.
 - E4. **Bezugsquellen:** ISBN und Shop-Links, sobald sie feststehen.
       **Empfehlung:** nachtragen, sobald die ISBN vergeben ist; bis dahin bleibt der Platz leer.
+
+## Konstruierte Zugfolgen und Tablebase (19.10.2026 nachts, Opus, Zweig `zugfolgen-konstruiert`, Version 0.2.96)
+
+Entscheidung des Autors vom 18.10.2026: Zugfolgen für alle Abbildungen, die aus einer
+realistischen Partie erwachsen können; deutlich gekennzeichnet, weil das Buch die einzige Quelle
+ist (Regel 1). Dazu die Tablebase für die Endspielabbildungen.
+
+- **Einordnung** (`inhalte/de/konstruktion.json`, je Abbildung mit Grund): 67 Abbildungen ohne
+  Zugfolge (die Zahl 125 in älteren Notizen war veraltet), 30 realistisch, 37 nicht (Lehrbilder
+  ohne König, Bauernskelette, Mattmuster mit weggelassenen Steinen, Schemata). Rückfrage ZF1.
+- **Status „konstruiert“:** PGN `kNN-aMM-k.pgn`, nie überschrieben oder gelöscht, immer in den
+  Daten (nach den freigegebenen), in der App der Hinweis „Zugfolge von Claude konstruiert, nicht
+  aus dem Buch“. Erreicht die Partie die Abbildung nicht exakt (Stellung, Zugrecht,
+  Rochaderechte, schlagbarer En-passant-Bauer; Zähler zählen nicht), ist das ein Fehler im
+  Datenlauf. Studien- und Zugerraten-Trainer, Repertoire-Trainer, Eröffnungsindex (die Buchzüge
+  der Engine) und die Taktikdaten nehmen sie nicht (`app/src/daten/buchbeispiele.ts`).
+- **Verfahren** (`pipeline/zugfolgen/konstruktion.py`, `zielabstand.py`, `konstruieren.py`):
+  Strahlsuche ab einer gängigen Eröffnung der Lichess-Liste (Spanisch Abtausch, Italienisch,
+  Damengambit Abtausch, Sizilianisch offen). Zur Wahl je Stellung die acht besten Züge der
+  Engine und die sechs zielnächsten; ein Zug bleibt nur mit höchstens 4 Prozentpunkten
+  Gewinnchance Verlust. Ausnahmen: das späte Zugeständnis (das Ziel verlangt Material ohne
+  Gegenwert, der Gegner hat höchstens noch 3 Bauerneinheiten zum Tauschen, die beste Antwort
+  schlägt; bis 40 Prozentpunkte) und der Zug, der die Abbildung erreicht (Patt in Abb. 0.11 und
+  8.7). Abstand: eindeutige Zuordnung der Steine (Bitmaske), Bauern nur vorwärts, Überzahl,
+  ab 12 Bauerneinheiten Überzahl ein Schlagweg zu den überzähligen Steinen (bei 4 wanderten Türme
+  und Könige bis zu 50 Züge). Am Ende kürzt eine Breitensuche reine Königswege. Die Suche
+  nutzt eine native Stockfish nur lokal; geprüft wird mit der Engine der App.
+- **Ergebnis:** 29 von 30 Partien, 25 bis 130 Halbzüge. Genauigkeit (Formel der App,
+  `app/src/spiel/konstruiert.messung.ts`, Tiefe 18, als Kopfzeile `[Genauigkeit "…"]` in der
+  PGN): in 27 Partien beide Seiten mindestens 80 %, meist 85 bis 98 %. „??“ fast nur bei
+  geplanten Zugeständnissen und Patt. Abb. 10.21 Schwarz 78 %, Abb. 11.10 Schwarz 69 % (die
+  Abbildung ist für Weiß gewonnen, 1. Lxh7+ +4,2, der letzte schwarze Zug muss ein Fehler sein).
+  Die Mittelspiele sind von Hand gebaut (Semi-Tarrasch für 5.18 und 11.42, 85 und 83 %, ohne
+  „??“; Französisch klassisch mit Sce2 für 11.10), weil die Suche Mittelspiele nicht trifft;
+  die erste Fassung von 5.18 hatte drei „??“ (Lb5 vor der Rochade erlaubte Da5+), die zweite
+  rochiert, solange der Springer c3 die Diagonale sperrt, und endet mit dem Zurückschlagen Sxd4.
+- **Nicht gelungen:** Abb. 7.24 (lange Rochade, eingesperrter Läufer a2), auch mit Vorlauf.
+  Rückfrage ZF3.
+- **Daten:** Die Kapiteldaten auf `main` stammen von einem älteren Buchstand; ein voller Datenlauf
+  mit dem Buchstand vom 17.10. hätte auch Glossar und Prüfsummen geändert. Deshalb sind nur die
+  konstruierten Beispiele und die 29 Verknüpfungen in die vorhandenen Daten eingefügt (mit
+  `lies_freigegebene` der Pipeline, Schema geprüft). Der nächste volle Datenlauf erzeugt dasselbe.
+- **Tablebase** (`pipeline/pruefen/tablebase.py`): Lichess-API mit Kennung
+  „schach-von-grund-auf.com“, eine Abfrage je Sekunde, Zwischenspeicher nur lokal; 137
+  Endspielabbildungen bis sieben Steine. Keine Endspielaufgabe des Trainers widerspricht.
+  8.25 und 8.26 mit Weiß am Zug remis (Buch behauptet nichts anderes, Vorschlag für die
+  Unterschrift in ZF4), 9.41 remis wie im Buch, 9.23 zu viele Steine, Engine Tiefe 32 nach
+  1. Txa7 +0,03 (passt zum Buch). Syzygy lokal wäre knapp 1 GB gewesen, für diese Fälle unnötig.

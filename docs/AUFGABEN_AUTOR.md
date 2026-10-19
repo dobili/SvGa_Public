@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.95. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.96. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.95“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.96“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,30 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.96 (etwa 10 Minuten; konstruierte Zugfolgen, Opus)
+
+Dazu im Hintergrund: Zu 29 Abbildungen ohne Zugfolge im Buch gibt es jetzt eine Partie ab der
+Grundstellung, die genau die Stellung der Abbildung erreicht (Zugrecht, Rochaderechte, en
+passant eingeschlossen). Claude hat sie mit einer Engine-Suche gebaut, jeden Zug geprüft und die
+Genauigkeit mit der Formel der App in Tiefe 18 nachgerechnet. Trainer und Buchzüge der Engine
+nehmen diese Partien nicht, sie dienen nur dem Nachspielen.
+
+- [ ] N500. **Hinweis an der Zugleiste:** Abb. 8.25 öffnen. Über dem Brett steht die Zugleiste
+      mit 38 Zügen ab einer Italienischen Partie, der letzte Zug (38... Ke8) ist markiert.
+      Darunter steht „Zugfolge von Claude konstruiert, nicht aus dem Buch. Sie führt nur zur
+      Stellung der Abbildung hin; das Buch nennt keine Züge dorthin.“ „Zum Anfang“ führt zur
+      Grundstellung, „vor“ spielt die Partie nach. Ist der Hinweis deutlich genug?
+- [ ] N501. **Wirken die Partien echt?** Stichprobe aus drei Arten: Abb. 5.18 (Semi-Tarrasch,
+      13 Züge bis zur Isolani-Stellung), Abb. 9.24 (Turmendspiel nach Spanisch, 32 Züge) und
+      Abb. 10.21 (zwei Springer gegen Bauer nach Italienisch, 42 Züge). Spiele sie mit „vor“ nach. Erwartung:
+      keine sinnlosen Züge; wo das Ziel Material verlangt, gibt eine Seite einmal etwas her
+      (etwa ein Bauer im Endspiel). Alle 29: Abb. 0.10, 0.11, 5.9, 5.18, 5.29, 5.41, 7.45, 8.7,
+      8.8, 8.9, 8.10, 8.25, 8.26, 8.42, 9.1, 9.2, 9.18, 9.24, 9.25, 9.35, 9.36, 9.37, 9.39, 9.41,
+      9.42, 9.53, 10.21, 11.10, 11.42.
+- [ ] N502. **Trainer unberührt:** Training › „Zug erraten“ (Kapitel 11) und „Studien lösen“
+      (Kapitel 10) bieten weiter nur die Partien und Studien des Buches an; die konstruierten
+      Partien zu Abb. 10.21, 11.10 und 11.42 tauchen dort nicht auf.
 
 ### Neu in 0.2.94 (etwa 3 Minuten; Technik für die englische Fassung, Opus)
 
@@ -290,6 +314,44 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       dabei. Wer üben will, schaltet sie in den Einstellungen ein (Reiter „Training“). Sagst du
       „an“, wird sie für alle die Voreinstellung.
 
+
+### ZF. Konstruierte Zugfolgen und Tablebase (Opus, 19.10.2026; ZF1 bis ZF3 schon umgesetzt, Widerspruch genügt)
+
+- [ ] ZF1. **Welche Abbildungen eine Partie bekommen:** Von den 67 Abbildungen ohne Zugfolge
+      sind 30 als „kann aus einer realistischen Partie erwachsen“ eingeordnet: die Endspiele aus
+      Kapitel 8 bis 10 (Dame, Turm, Bauer, Läufer, Springer gegen König oder Bauern), die
+      Bauernendspiele 5.9, 5.29 und 8.42, die Mittelspiele 5.18, 11.10 und 11.42 sowie 5.41,
+      7.24 und 7.45. Keine Partie bekommen 37: Lehrbilder ohne beide Könige (0.3 bis 0.9, 5.1,
+      5.2, 8.37), Bauernskelette mit nur Königen und vielen Bauern (5.10, 5.15, 5.27, 5.30, 5.32
+      bis 5.35, 5.38, 5.39, 6.2, 6.8 bis 6.10, 8.44, 11.56: alle Figuren wären getauscht, ohne
+      dass sich an den Bauern etwas geändert hätte), Mattmuster mit weggelassenen Steinen (7.35,
+      7.36, 7.39 bis 7.43), die Schemata 5.12, 5.13 (Grundreihe) und 5.31 (Blockade) und das
+      Gabel-Lehrbild 7.2. **Empfehlung:** so lassen.
+- [ ] ZF2. **Wie genau die Partien gespielt sind:** Beide Seiten spielen in 27 der 29 Partien
+      mit mindestens 80 % Genauigkeit (Formel der App, Tiefe 18), meist 85 bis 98 %. Ein „??“
+      steht fast nur dort, wo die Abbildung es verlangt: Eine Seite muss im Endspiel Material
+      hergeben (etwa Schwarz den letzten Bauern in Abb. 8.25), oder sie setzt patt (Abb. 0.11,
+      8.7). Darunter liegen Abb. 10.21 (Schwarz 78 %) und Abb. 11.10 (Schwarz 69 %): In 11.10
+      steht Weiß schon auf Gewinn (Läuferopfer auf h7, Engine +5,4), der letzte schwarze Zug muss
+      also ein Fehler sein. Die beiden Mittelspiele (5.18 und 11.42 Semi-Tarrasch, 11.10
+      Französisch) hat Claude von Hand gebaut, weil die Suche Mittelspiele nicht genau trifft.
+      **Empfehlung:** so lassen; wenn dir eine Partie unecht vorkommt, nenne die Abbildung.
+- [ ] ZF3. **Abb. 7.24 ohne Partie:** Weiß hat lang rochiert (König c1, Turm d1), der schwarze
+      Läufer hat auf a2 den Bauern geschlagen und ist nach b3 eingesperrt. Die Suche fand auch mit
+      einem Vorlauf mit langer Rochade keinen Weg, auf dem beide Seiten vernünftig spielen.
+      **Empfehlung:** ohne Zugfolge lassen. Kennst du eine Partie, aus der die Stellung stammt,
+      baue ich sie danach.
+- [ ] ZF4. **Buchbefund aus der Tablebase (Abb. 8.25, 8.26, 9.23, 9.41):** Die Lichess-Tablebase
+      (genau für bis zu sieben Steine) sagt: **8.25 und 8.26 sind mit Weiß am Zug remis**, weil
+      der schwarze König rechtzeitig vor den Bauern kommt. Das Buch zeigt dort nur die
+      Schlüsselfelder und behauptet nichts Falsches, ein Leser hält die Stellungen aber leicht für
+      gewonnen. **Vorschlag:** in den Unterschriften ergänzen „Hier hält Schwarz remis: Sein König
+      erreicht die Opposition, bevor Weiß ein Schlüsselfeld besetzt.“ **9.41 ist remis**, wie im
+      Buch (die Engine zeigte früher +1,05; das war eine Täuschung der Engine). **9.23** hat elf
+      Steine, zu viele für die Tablebase; die Engine in Tiefe 32 sieht nach 1. Txa7 Ausgleich
+      (+0,03), das passt zum Buch („Weiß gewinnt mit Txa7 den Bauern zurück“). Die
+      Endspielaufgaben des Trainers widersprechen der Tablebase in keinem Fall (137 Stellungen
+      geprüft). Nur du änderst das Buch; die App bleibt, wie sie ist.
 
 ### Nur bestätigen (je eine Zeile; Widerspruch genügt)
 

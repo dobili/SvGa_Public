@@ -155,6 +155,22 @@ test("Nachspielen: Abb. 1.26 vor und zurück, Sprung zu Abb. 1.28, Abzweigung", 
   await page.screenshot({ path: "test-results/bilder/nachspielen.png", fullPage: true });
 });
 
+test("Konstruierte Zugfolge (0.2.96): Abb. 8.25 mit Hinweis, nicht aus dem Buch", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await oeffneAbbildung(page, "8.25", "8.25");
+  const leiste = page.getByTestId("zugleiste");
+  // Die Partie endet an der Abbildung: der letzte Zug ist markiert, die Grundstellung ist der Anfang.
+  await expect(leiste.locator('[aria-current="step"]')).toBeVisible();
+  await expect(page.getByTestId("zugfolge-konstruiert")).toContainText(
+    "Zugfolge von Claude konstruiert, nicht aus dem Buch",
+  );
+  await page.screenshot({ path: "test-results/bilder/konstruiert.png", fullPage: true });
+  await page.getByRole("button", { name: "Zum Anfang" }).click();
+  await expect(leiste.locator('[aria-current="step"]')).toHaveCount(0);
+});
+
 test("Weiterspielen: eigener Zug, zurück zur Buchvariante, Buchzug trifft das Buch", async ({
   page,
 }) => {

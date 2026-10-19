@@ -48,7 +48,7 @@ seine Züge in einem anderen Beispiel aufgehen), bekommt `[Status "verworfen"]`:
 wird nie überschrieben und nie übernommen. Entwürfe, die ein Datenlauf nicht mehr erzeugt,
 löscht die Pipeline.
 
-**Konstruierte Partien** (`[Status "konstruiert"]`, seit 0.2.90, Entscheidung des Autors vom
+**Konstruierte Partien** (`[Status "konstruiert"]`, seit 0.2.96, Entscheidung des Autors vom
 18.10.2026): Zu Abbildungen ohne Zugfolge im Buch, deren Stellung aus einer realistischen Partie
 erwachsen kann (Einordnung mit Grund in `konstruktion.json`), baut
 `python -m pipeline.zugfolgen.konstruieren` eine Partie ab der Grundstellung, die genau die

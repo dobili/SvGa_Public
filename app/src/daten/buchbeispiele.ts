@@ -1,7 +1,7 @@
 /**
  * Die Zugfolgen des Buches eines Kapitels, ohne die von Claude konstruierten Partien.
  *
- * Rolle im Gesamtbild: Seit 0.2.90 (Entscheidung des Autors vom 18.10.2026) gibt es zu Abbildungen
+ * Rolle im Gesamtbild: Seit 0.2.96 (Entscheidung des Autors vom 18.10.2026) gibt es zu Abbildungen
  * ohne Zugfolge im Buch konstruierte Partien ab der Grundstellung (`status` „konstruiert“). Sie
  * dienen nur dem Nachspielen bis zur Abbildung. Alles, was Buchzüge als Wissen nutzt (Studien und
  * „Zug erraten“, Repertoire-Trainer, Eröffnungsindex mit den Buchzügen der Engine), nimmt nur die

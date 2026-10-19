@@ -1504,7 +1504,95 @@
     "10.19",
     "10.20"
    ],
-   "beispiel": null,
+   "beispiel": {
+    "id": "k10-a21-k",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d4",
+     "exd4",
+     "O-O",
+     "Nxe4",
+     "cxd4",
+     "d5",
+     "dxc5",
+     "dxc4",
+     "Qc2",
+     "Nxc5",
+     "Qxc4",
+     "Qd6",
+     "Bf4",
+     "Qe7",
+     "Bxc7",
+     "Qxc7",
+     "Qxc5",
+     "Qb6",
+     "Qxb6",
+     "axb6",
+     "Nc3",
+     "O-O",
+     "Ng5",
+     "h5",
+     "Nd5",
+     "Bf5",
+     "Nxb6",
+     "Ra6",
+     "Nd5",
+     "Bc2",
+     "Nf4",
+     "h4",
+     "f3",
+     "Ra5",
+     "Nfh3",
+     "Rb5",
+     "Rf2",
+     "Rxb2",
+     "Rc1",
+     "Nd4",
+     "Rd1",
+     "Bxd1",
+     "Rxb2",
+     "Bc2",
+     "Kf2",
+     "Ra8",
+     "Rxb7",
+     "Bf5",
+     "Rxf7",
+     "g6",
+     "Ke3",
+     "Ne6",
+     "Rxf5",
+     "Ra3+",
+     "Ke4",
+     "gxf5+",
+     "Kxf5",
+     "Rxa2",
+     "Kxe6",
+     "Rxg2",
+     "f4",
+     "Rxh2",
+     "f5",
+     "Ra2",
+     "f6",
+     "Ra6+",
+     "Kf5",
+     "Rxf6+",
+     "Kxf6",
+     "Kf8",
+     "Ke6",
+     "Kg8",
+     "Kf5",
+     "Kf8",
+     "Kf6",
+     "Kg8"
+    ]
+   },
    "quelle": {
     "datei": "kap10_studien.tex",
     "zeile": 309
@@ -3877,6 +3965,696 @@
     }
    ],
    "status": "freigegeben"
+  },
+  {
+   "id": "k10-a21-k",
+   "kapitel": 10,
+   "abschnitt": "10.5",
+   "titel": "Konstruierte Partie zu Abb. 10.21",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "exd4",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Nxe4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "cxd4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "d5",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "dxc5",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "dxc4",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qc2",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Nxc5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxc4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Qd6",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "Bf4",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Qe7",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Bxc7",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "Qxc7",
+                                                   "zeichen": "",
+                                                   "abbildungen": [],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "Qxc5",
+                                                     "zeichen": "",
+                                                     "abbildungen": [],
+                                                     "weiter": [
+                                                      {
+                                                       "zug": "Qb6",
+                                                       "zeichen": "",
+                                                       "abbildungen": [],
+                                                       "weiter": [
+                                                        {
+                                                         "zug": "Qxb6",
+                                                         "zeichen": "",
+                                                         "abbildungen": [],
+                                                         "weiter": [
+                                                          {
+                                                           "zug": "axb6",
+                                                           "zeichen": "",
+                                                           "abbildungen": [],
+                                                           "weiter": [
+                                                            {
+                                                             "zug": "Nc3",
+                                                             "zeichen": "",
+                                                             "abbildungen": [],
+                                                             "weiter": [
+                                                              {
+                                                               "zug": "O-O",
+                                                               "zeichen": "",
+                                                               "abbildungen": [],
+                                                               "weiter": [
+                                                                {
+                                                                 "zug": "Ng5",
+                                                                 "zeichen": "",
+                                                                 "abbildungen": [],
+                                                                 "weiter": [
+                                                                  {
+                                                                   "zug": "h5",
+                                                                   "zeichen": "",
+                                                                   "abbildungen": [],
+                                                                   "weiter": [
+                                                                    {
+                                                                     "zug": "Nd5",
+                                                                     "zeichen": "",
+                                                                     "abbildungen": [],
+                                                                     "weiter": [
+                                                                      {
+                                                                       "zug": "Bf5",
+                                                                       "zeichen": "",
+                                                                       "abbildungen": [],
+                                                                       "weiter": [
+                                                                        {
+                                                                         "zug": "Nxb6",
+                                                                         "zeichen": "",
+                                                                         "abbildungen": [],
+                                                                         "weiter": [
+                                                                          {
+                                                                           "zug": "Ra6",
+                                                                           "zeichen": "",
+                                                                           "abbildungen": [],
+                                                                           "weiter": [
+                                                                            {
+                                                                             "zug": "Nd5",
+                                                                             "zeichen": "",
+                                                                             "abbildungen": [],
+                                                                             "weiter": [
+                                                                              {
+                                                                               "zug": "Bc2",
+                                                                               "zeichen": "",
+                                                                               "abbildungen": [],
+                                                                               "weiter": [
+                                                                                {
+                                                                                 "zug": "Nf4",
+                                                                                 "zeichen": "",
+                                                                                 "abbildungen": [],
+                                                                                 "weiter": [
+                                                                                  {
+                                                                                   "zug": "h4",
+                                                                                   "zeichen": "",
+                                                                                   "abbildungen": [],
+                                                                                   "weiter": [
+                                                                                    {
+                                                                                     "zug": "f3",
+                                                                                     "zeichen": "",
+                                                                                     "abbildungen": [],
+                                                                                     "weiter": [
+                                                                                      {
+                                                                                       "zug": "Ra5",
+                                                                                       "zeichen": "",
+                                                                                       "abbildungen": [],
+                                                                                       "weiter": [
+                                                                                        {
+                                                                                         "zug": "Nfh3",
+                                                                                         "zeichen": "",
+                                                                                         "abbildungen": [],
+                                                                                         "weiter": [
+                                                                                          {
+                                                                                           "zug": "Rb5",
+                                                                                           "zeichen": "",
+                                                                                           "abbildungen": [],
+                                                                                           "weiter": [
+                                                                                            {
+                                                                                             "zug": "Rf2",
+                                                                                             "zeichen": "",
+                                                                                             "abbildungen": [],
+                                                                                             "weiter": [
+                                                                                              {
+                                                                                               "zug": "Rxb2",
+                                                                                               "zeichen": "",
+                                                                                               "abbildungen": [],
+                                                                                               "weiter": [
+                                                                                                {
+                                                                                                 "zug": "Rc1",
+                                                                                                 "zeichen": "",
+                                                                                                 "abbildungen": [],
+                                                                                                 "weiter": [
+                                                                                                  {
+                                                                                                   "zug": "Nd4",
+                                                                                                   "zeichen": "",
+                                                                                                   "abbildungen": [],
+                                                                                                   "weiter": [
+                                                                                                    {
+                                                                                                     "zug": "Rd1",
+                                                                                                     "zeichen": "",
+                                                                                                     "abbildungen": [],
+                                                                                                     "weiter": [
+                                                                                                      {
+                                                                                                       "zug": "Bxd1",
+                                                                                                       "zeichen": "",
+                                                                                                       "abbildungen": [],
+                                                                                                       "weiter": [
+                                                                                                        {
+                                                                                                         "zug": "Rxb2",
+                                                                                                         "zeichen": "",
+                                                                                                         "abbildungen": [],
+                                                                                                         "weiter": [
+                                                                                                          {
+                                                                                                           "zug": "Bc2",
+                                                                                                           "zeichen": "",
+                                                                                                           "abbildungen": [],
+                                                                                                           "weiter": [
+                                                                                                            {
+                                                                                                             "zug": "Kf2",
+                                                                                                             "zeichen": "",
+                                                                                                             "abbildungen": [],
+                                                                                                             "weiter": [
+                                                                                                              {
+                                                                                                               "zug": "Ra8",
+                                                                                                               "zeichen": "",
+                                                                                                               "abbildungen": [],
+                                                                                                               "weiter": [
+                                                                                                                {
+                                                                                                                 "zug": "Rxb7",
+                                                                                                                 "zeichen": "",
+                                                                                                                 "abbildungen": [],
+                                                                                                                 "weiter": [
+                                                                                                                  {
+                                                                                                                   "zug": "Bf5",
+                                                                                                                   "zeichen": "",
+                                                                                                                   "abbildungen": [],
+                                                                                                                   "weiter": [
+                                                                                                                    {
+                                                                                                                     "zug": "Rxf7",
+                                                                                                                     "zeichen": "",
+                                                                                                                     "abbildungen": [],
+                                                                                                                     "weiter": [
+                                                                                                                      {
+                                                                                                                       "zug": "g6",
+                                                                                                                       "zeichen": "",
+                                                                                                                       "abbildungen": [],
+                                                                                                                       "weiter": [
+                                                                                                                        {
+                                                                                                                         "zug": "Ke3",
+                                                                                                                         "zeichen": "",
+                                                                                                                         "abbildungen": [],
+                                                                                                                         "weiter": [
+                                                                                                                          {
+                                                                                                                           "zug": "Ne6",
+                                                                                                                           "zeichen": "",
+                                                                                                                           "abbildungen": [],
+                                                                                                                           "weiter": [
+                                                                                                                            {
+                                                                                                                             "zug": "Rxf5",
+                                                                                                                             "zeichen": "",
+                                                                                                                             "abbildungen": [],
+                                                                                                                             "weiter": [
+                                                                                                                              {
+                                                                                                                               "zug": "Ra3+",
+                                                                                                                               "zeichen": "",
+                                                                                                                               "abbildungen": [],
+                                                                                                                               "weiter": [
+                                                                                                                                {
+                                                                                                                                 "zug": "Ke4",
+                                                                                                                                 "zeichen": "",
+                                                                                                                                 "abbildungen": [],
+                                                                                                                                 "weiter": [
+                                                                                                                                  {
+                                                                                                                                   "zug": "gxf5+",
+                                                                                                                                   "zeichen": "",
+                                                                                                                                   "abbildungen": [],
+                                                                                                                                   "weiter": [
+                                                                                                                                    {
+                                                                                                                                     "zug": "Kxf5",
+                                                                                                                                     "zeichen": "",
+                                                                                                                                     "abbildungen": [],
+                                                                                                                                     "weiter": [
+                                                                                                                                      {
+                                                                                                                                       "zug": "Rxa2",
+                                                                                                                                       "zeichen": "",
+                                                                                                                                       "abbildungen": [],
+                                                                                                                                       "weiter": [
+                                                                                                                                        {
+                                                                                                                                         "zug": "Kxe6",
+                                                                                                                                         "zeichen": "",
+                                                                                                                                         "abbildungen": [],
+                                                                                                                                         "weiter": [
+                                                                                                                                          {
+                                                                                                                                           "zug": "Rxg2",
+                                                                                                                                           "zeichen": "",
+                                                                                                                                           "abbildungen": [],
+                                                                                                                                           "weiter": [
+                                                                                                                                            {
+                                                                                                                                             "zug": "f4",
+                                                                                                                                             "zeichen": "",
+                                                                                                                                             "abbildungen": [],
+                                                                                                                                             "weiter": [
+                                                                                                                                              {
+                                                                                                                                               "zug": "Rxh2",
+                                                                                                                                               "zeichen": "",
+                                                                                                                                               "abbildungen": [],
+                                                                                                                                               "weiter": [
+                                                                                                                                                {
+                                                                                                                                                 "zug": "f5",
+                                                                                                                                                 "zeichen": "",
+                                                                                                                                                 "abbildungen": [],
+                                                                                                                                                 "weiter": [
+                                                                                                                                                  {
+                                                                                                                                                   "zug": "Ra2",
+                                                                                                                                                   "zeichen": "",
+                                                                                                                                                   "abbildungen": [],
+                                                                                                                                                   "weiter": [
+                                                                                                                                                    {
+                                                                                                                                                     "zug": "f6",
+                                                                                                                                                     "zeichen": "",
+                                                                                                                                                     "abbildungen": [],
+                                                                                                                                                     "weiter": [
+                                                                                                                                                      {
+                                                                                                                                                       "zug": "Ra6+",
+                                                                                                                                                       "zeichen": "",
+                                                                                                                                                       "abbildungen": [],
+                                                                                                                                                       "weiter": [
+                                                                                                                                                        {
+                                                                                                                                                         "zug": "Kf5",
+                                                                                                                                                         "zeichen": "",
+                                                                                                                                                         "abbildungen": [],
+                                                                                                                                                         "weiter": [
+                                                                                                                                                          {
+                                                                                                                                                           "zug": "Rxf6+",
+                                                                                                                                                           "zeichen": "",
+                                                                                                                                                           "abbildungen": [],
+                                                                                                                                                           "weiter": [
+                                                                                                                                                            {
+                                                                                                                                                             "zug": "Kxf6",
+                                                                                                                                                             "zeichen": "",
+                                                                                                                                                             "abbildungen": [],
+                                                                                                                                                             "weiter": [
+                                                                                                                                                              {
+                                                                                                                                                               "zug": "Kf8",
+                                                                                                                                                               "zeichen": "",
+                                                                                                                                                               "abbildungen": [],
+                                                                                                                                                               "weiter": [
+                                                                                                                                                                {
+                                                                                                                                                                 "zug": "Ke6",
+                                                                                                                                                                 "zeichen": "",
+                                                                                                                                                                 "abbildungen": [],
+                                                                                                                                                                 "weiter": [
+                                                                                                                                                                  {
+                                                                                                                                                                   "zug": "Kg8",
+                                                                                                                                                                   "zeichen": "",
+                                                                                                                                                                   "abbildungen": [],
+                                                                                                                                                                   "weiter": [
+                                                                                                                                                                    {
+                                                                                                                                                                     "zug": "Kf5",
+                                                                                                                                                                     "zeichen": "",
+                                                                                                                                                                     "abbildungen": [],
+                                                                                                                                                                     "weiter": [
+                                                                                                                                                                      {
+                                                                                                                                                                       "zug": "Kf8",
+                                                                                                                                                                       "zeichen": "",
+                                                                                                                                                                       "abbildungen": [],
+                                                                                                                                                                       "weiter": [
+                                                                                                                                                                        {
+                                                                                                                                                                         "zug": "Kf6",
+                                                                                                                                                                         "zeichen": "",
+                                                                                                                                                                         "abbildungen": [],
+                                                                                                                                                                         "weiter": [
+                                                                                                                                                                          {
+                                                                                                                                                                           "zug": "Kg8",
+                                                                                                                                                                           "zeichen": "",
+                                                                                                                                                                           "abbildungen": [
+                                                                                                                                                                            "10.21"
+                                                                                                                                                                           ],
+                                                                                                                                                                           "weiter": []
+                                                                                                                                                                          }
+                                                                                                                                                                         ]
+                                                                                                                                                                        }
+                                                                                                                                                                       ]
+                                                                                                                                                                      }
+                                                                                                                                                                     ]
+                                                                                                                                                                    }
+                                                                                                                                                                   ]
+                                                                                                                                                                  }
+                                                                                                                                                                 ]
+                                                                                                                                                                }
+                                                                                                                                                               ]
+                                                                                                                                                              }
+                                                                                                                                                             ]
+                                                                                                                                                            }
+                                                                                                                                                           ]
+                                                                                                                                                          }
+                                                                                                                                                         ]
+                                                                                                                                                        }
+                                                                                                                                                       ]
+                                                                                                                                                      }
+                                                                                                                                                     ]
+                                                                                                                                                    }
+                                                                                                                                                   ]
+                                                                                                                                                  }
+                                                                                                                                                 ]
+                                                                                                                                                }
+                                                                                                                                               ]
+                                                                                                                                              }
+                                                                                                                                             ]
+                                                                                                                                            }
+                                                                                                                                           ]
+                                                                                                                                          }
+                                                                                                                                         ]
+                                                                                                                                        }
+                                                                                                                                       ]
+                                                                                                                                      }
+                                                                                                                                     ]
+                                                                                                                                    }
+                                                                                                                                   ]
+                                                                                                                                  }
+                                                                                                                                 ]
+                                                                                                                                }
+                                                                                                                               ]
+                                                                                                                              }
+                                                                                                                             ]
+                                                                                                                            }
+                                                                                                                           ]
+                                                                                                                          }
+                                                                                                                         ]
+                                                                                                                        }
+                                                                                                                       ]
+                                                                                                                      }
+                                                                                                                     ]
+                                                                                                                    }
+                                                                                                                   ]
+                                                                                                                  }
+                                                                                                                 ]
+                                                                                                                }
+                                                                                                               ]
+                                                                                                              }
+                                                                                                             ]
+                                                                                                            }
+                                                                                                           ]
+                                                                                                          }
+                                                                                                         ]
+                                                                                                        }
+                                                                                                       ]
+                                                                                                      }
+                                                                                                     ]
+                                                                                                    }
+                                                                                                   ]
+                                                                                                  }
+                                                                                                 ]
+                                                                                                }
+                                                                                               ]
+                                                                                              }
+                                                                                             ]
+                                                                                            }
+                                                                                           ]
+                                                                                          }
+                                                                                         ]
+                                                                                        }
+                                                                                       ]
+                                                                                      }
+                                                                                     ]
+                                                                                    }
+                                                                                   ]
+                                                                                  }
+                                                                                 ]
+                                                                                }
+                                                                               ]
+                                                                              }
+                                                                             ]
+                                                                            }
+                                                                           ]
+                                                                          }
+                                                                         ]
+                                                                        }
+                                                                       ]
+                                                                      }
+                                                                     ]
+                                                                    }
+                                                                   ]
+                                                                  }
+                                                                 ]
+                                                                }
+                                                               ]
+                                                              }
+                                                             ]
+                                                            }
+                                                           ]
+                                                          }
+                                                         ]
+                                                        }
+                                                       ]
+                                                      }
+                                                     ]
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.21",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d4",
+      "exd4",
+      "O-O",
+      "Nxe4",
+      "cxd4",
+      "d5",
+      "dxc5",
+      "dxc4",
+      "Qc2",
+      "Nxc5",
+      "Qxc4",
+      "Qd6",
+      "Bf4",
+      "Qe7",
+      "Bxc7",
+      "Qxc7",
+      "Qxc5",
+      "Qb6",
+      "Qxb6",
+      "axb6",
+      "Nc3",
+      "O-O",
+      "Ng5",
+      "h5",
+      "Nd5",
+      "Bf5",
+      "Nxb6",
+      "Ra6",
+      "Nd5",
+      "Bc2",
+      "Nf4",
+      "h4",
+      "f3",
+      "Ra5",
+      "Nfh3",
+      "Rb5",
+      "Rf2",
+      "Rxb2",
+      "Rc1",
+      "Nd4",
+      "Rd1",
+      "Bxd1",
+      "Rxb2",
+      "Bc2",
+      "Kf2",
+      "Ra8",
+      "Rxb7",
+      "Bf5",
+      "Rxf7",
+      "g6",
+      "Ke3",
+      "Ne6",
+      "Rxf5",
+      "Ra3+",
+      "Ke4",
+      "gxf5+",
+      "Kxf5",
+      "Rxa2",
+      "Kxe6",
+      "Rxg2",
+      "f4",
+      "Rxh2",
+      "f5",
+      "Ra2",
+      "f6",
+      "Ra6+",
+      "Kf5",
+      "Rxf6+",
+      "Kxf6",
+      "Kf8",
+      "Ke6",
+      "Kg8",
+      "Kf5",
+      "Kf8",
+      "Kf6",
+      "Kg8"
+     ]
+    }
+   ],
+   "status": "konstruiert"
   }
  ]
 }

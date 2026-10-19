@@ -4098,3 +4098,21 @@ Befunde dabei: „1 Züge“ in der Partienliste (jetzt „1 Zug“, Schlüssel
 `spielen.partiezeileEinZug`). Auffällig, aber Sache des Bot-Chats: Die Elo-Bereiche seit 0.2.103
 überlappen bei Stufe 3 (etwa 1700 bis 1850) und Stufe 4 (etwa 1650 bis 1950); Stufe 3 beginnt
 höher als Stufe 4.
+
+## Version 1.0 vorbereitet, nicht veröffentlicht (19.10.2026, Opus, Zweig `ap17-vorbereitung`, Version 0.2.108)
+
+Vom Autor abgesegnet (19.10.2026, Punkt d): AP 17 vorbereiten, ohne zu veröffentlichen.
+
+- Abnahmeliste des Pflichtenhefts (Abschnitt 9) und Inhalt von Stufe 1 gegen den Stand geprüft:
+  `docs/ABNAHME_1.0.md` (Tabelle, was fehlt, technische Schritte). Technisch ist Stufe 1 erfüllt;
+  offen sind vor allem endgültiges Buch und Datenlauf, Gerätetests, Rechtliches, Domain und die
+  Sammelfreigabe (Rückfragen V1 bis V6).
+- Bauschalter `VEROEFFENTLICHUNG=1` (`npm run build:veroeffentlichung`): Fassung für die Leser
+  ohne Aufgabenseite des Autors (langer Druck und `#aufgaben` wirkungslos, Markdown nicht im
+  Build) und ohne englische Vorschau (nur `de` in `SPRACHDATEIEN`, Einstellungen zeigen
+  „Deutsch (Englisch folgt …)“). `skripte/pruefe-veroeffentlichung.mjs` prüft das, auch in
+  GitHub Actions. Die gewöhnliche Fassung (main, Testweg des Autors) bleibt unverändert.
+- `python -m pipeline.pruefen.daten --veroeffentlichung …` meldet jeden Eintrag mit Status
+  „entwurf“ als Fehler; ohne Schalter bleiben Entwürfe erlaubt (Wunsch des Autors bis AP 17).
+- Empfehlung V1 (Englisch in 1.0 ausblenden) ist damit vorbereitet; sie wirkt erst mit dem Bau
+  für die Leser.

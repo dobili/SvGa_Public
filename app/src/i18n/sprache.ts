@@ -20,9 +20,11 @@ export type Textwerte = Readonly<Record<string, string | number>>;
 /**
  * Die Sprachdateien der App. Englisch seit 0.2.104 als Vorschau (Wunsch des Autors, 19.10.2026):
  * Wörtliche Buchzitate fehlen in en.json und erscheinen deutsch, bis es die englische Fassung
- * des Autors gibt (Liste in en.buchzitate.json).
+ * des Autors gibt (Liste in en.buchzitate.json). In der Fassung für die Leser (AP 17,
+ * VEROEFFENTLICHUNG=1) fehlt die Vorschau; dann steht in den Einstellungen nur „Deutsch“.
  */
-const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> = { de, en };
+const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> =
+  __VEROEFFENTLICHUNG__ ? { de } : { de, en };
 /**
  * Sprachen, die die App von selbst nach der Sprache des Geräts wählt. Englisch ist Vorschau und
  * muss in den Einstellungen gewählt werden, bis es Buch- und Trainerdaten auf Englisch gibt.

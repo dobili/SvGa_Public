@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.107. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.108. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.107“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.108“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -488,6 +488,36 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       umgesetzt in 0.2.104: Bauernschwächen D (doubled), I (isolated), B (backward, statt R),
       H (hanging), C (chain base, statt B), U (unsound); Drohung T (threat, statt D). Auf
       Deutsch bleibt alles wie im Buch.
+
+### V. Version 1.0 (AP 17; Opus, 19.10.2026; V1 vorbereitet, Widerspruch genügt)
+
+Claude hat die Abnahmeliste des Pflichtenhefts gegen den Stand 0.2.108 geprüft. Technisch ist
+Stufe 1 erfüllt; was für 1.0 noch fehlt, liegt fast nur bei dir. Veröffentlicht wird nichts,
+bevor du es sagst.
+
+- [ ] V1. **Englische Vorschau in 1.0:** Empfehlung **ausblenden**, bis es dein englisches Buch
+      gibt (ein englischer Leser bekäme sonst eine halb deutsche App). Vorbereitet in 0.2.108:
+      Die Fassung für die Leser (Bau mit VEROEFFENTLICHUNG=1) hat weder Englisch noch deine
+      Aufgabenseite; die heutige Fassung auf schach-von-grund-auf.com bleibt, wie sie ist.
+- [ ] V2. **Dein Testweg nach 1.0:** Heute testest du auf schach-von-grund-auf.com/app/, also der
+      Fassung, die ab 1.0 die Leser bekommen. Empfehlung: Die Leser bekommen die Fassung ohne
+      Aufgabenseite, du testest auf der Vorschauadresse, die Cloudflare je Zweig baut (dort
+      bleibt die Aufgabenseite). Bitte in Cloudflare nachsehen: Worker „schach-von-grund-auf“ ›
+      Settings › Build › „Vorschau-Builds“ an? Dann sagt Claude dir die Adresse.
+- [ ] V3. **Domain:** Ist schach-von-grund-auf.com mehrere Jahre im Voraus bezahlt, verlängert
+      sie sich automatisch, und liegen die Zugangsdaten an einem sicheren Ort außerhalb des
+      Repositorys? (Abnahmepunkt des Pflichtenhefts; nur ja oder nein schicken, keine Daten.)
+- [ ] V4. **Trainernamen und Bereiche festschreiben:** Die Namen der 17 Trainer und der fünf
+      Bereiche (Buch, Training, Spielen, Nachschlagen, Einstellungen) stehen ab dem Druck im
+      Buch und dürfen sich danach nicht mehr ändern. Passen sie so?
+- [ ] V5. **Sammelfreigabe:** Alle Texte, die seit dem 17.10.2026 „vorerst als abgesegnet“ in die
+      App kamen (Trainertexte, Bot-Beschreibungen, Steckbriefe, Erklärungen), müssen vor 1.0
+      einmal von dir freigegeben sein. Ein Satz genügt („alle frei außer …“), am besten nach dem
+      Durchspielen von Teil 1.
+- [ ] V6. **Abnahme auf echten Geräten, mit der Fassung 1.0** (etwa 20 Minuten, erst wenn das
+      Buch fertig ist): Installation nach der Anleitung im Buch auf iPhone und Android (QR-Code
+      aus Kapitel 0), danach Flugmodus an und Buch, Trainer, Spielen öffnen, und Datensicherung
+      auf einem Gerät anlegen und auf dem anderen einspielen.
 
 ### ZF. Konstruierte Zugfolgen und Tablebase (Opus, 19.10.2026; ZF1 bis ZF3 schon umgesetzt, Widerspruch genügt)
 

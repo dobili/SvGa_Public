@@ -1,7 +1,7 @@
 {
   "name": "schach-von-grund-auf",
   "private": true,
-  "version": "0.2.107",
+  "version": "0.2.108",
   "description": "Companion-App zum Buch „Schach von Grund auf“",
   "license": "GPL-3.0-or-later",
   "type": "module",
@@ -17,6 +17,7 @@
     "test": "npm run vorbereiten && vitest run",
     "pruefen": "npm run typen && npm run stil && vitest run",
     "build": "npm run vorbereiten && tsc --noEmit && vite build && node skripte/pruefe-groesse.mjs",
+    "build:veroeffentlichung": "VEROEFFENTLICHUNG=1 npm run build && node skripte/pruefe-veroeffentlichung.mjs",
     "vorschau": "vite preview --port 4173 --strictPort",
     "test:e2e": "playwright test",
     "messen:stufen": "node skripte/messe-stufen.mjs",

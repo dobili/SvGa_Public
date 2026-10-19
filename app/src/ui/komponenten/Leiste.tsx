@@ -39,6 +39,8 @@ const BEREICHE: readonly Bereichsknopf[] = [
 export function Leiste() {
   const { stapel, wechsleBereich, navigiere } = useNavigation();
   const druck = useLangerDruck(LANGER_DRUCK_MS, () => {
+    // In der Fassung für die Leser gibt es die Aufgabenseite nicht (AP 17).
+    if (__VEROEFFENTLICHUNG__) return;
     wechsleBereich("ich");
     navigiere({ bildschirm: "autoraufgaben" });
   });

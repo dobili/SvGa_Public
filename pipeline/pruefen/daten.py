@@ -8,6 +8,11 @@ Verzeichnis und Kapiteldateien zusammenpassen.
 Aufruf (im Hauptordner):
 
     python -m pipeline.pruefen.daten app/public/daten/de/a1
+    python -m pipeline.pruefen.daten --veroeffentlichung app/public/daten/de/a1   # vor 1.0 (AP 17)
+
+Mit ``--veroeffentlichung`` gilt zusätzlich jeder Eintrag mit Status „entwurf“ als Fehler: Die
+Fassung für die Leser darf keine Entwürfe enthalten (Lauf ohne ``--mit-entwuerfen`` und
+``--text-entwuerfe``). Ohne den Schalter sind Entwürfe erlaubt (Testfassung bis AP 17).
 
 Rückgabewert: 0, wenn alles passt, sonst 1 mit einer Zeile je Fehler.
 """
@@ -63,12 +68,40 @@ def _pruefe_kapitel(ordner: Path, eintrag: dict) -> list[str]:
     return fehler
 
 
+def finde_entwuerfe(ordner: Path) -> list[str]:
+    """Findet Einträge mit Status „entwurf“ in allen JSON-Dateien eines Datenordners.
+
+    Warum: Vor der Veröffentlichung (AP 17) darf kein Entwurf in die Fassung für die Leser.
+    Ausgabe: je Fund eine Meldung mit Datei und Kennung. Beispiel: ein Lauf mit
+    ``--mit-entwuerfen`` setzt bei nicht freigegebenen Zugfolgen ``"status": "entwurf"``.
+    """
+    funde: list[str] = []
+    for pfad in sorted(ordner.rglob("*.json")):
+        for kennung in _entwurfskennungen(json.loads(pfad.read_text(encoding="utf-8"))):
+            funde.append(f"{pfad.name}: Entwurf {kennung}")
+    return funde
+
+
+def _entwurfskennungen(wert: object) -> list[str]:
+    """Kennungen aller Objekte mit ``"status": "entwurf"`` in einem JSON-Wert (rekursiv)."""
+    if isinstance(wert, list):
+        return [k for teil in wert for k in _entwurfskennungen(teil)]
+    if not isinstance(wert, dict):
+        return []
+    eigene = [str(wert.get("id", "?"))] if wert.get("status") == "entwurf" else []
+    return eigene + [k for teil in wert.values() for k in _entwurfskennungen(teil)]
+
+
 def main(argumente: list[str] | None = None) -> int:
-    ordner = [Path(a) for a in (argumente if argumente is not None else sys.argv[1:])]
+    liste = list(argumente if argumente is not None else sys.argv[1:])
+    veroeffentlichung = "--veroeffentlichung" in liste
+    ordner = [Path(a) for a in liste if a != "--veroeffentlichung"]
     if not ordner:
-        print("Aufruf: python -m pipeline.pruefen.daten <datenordner> …")
+        print("Aufruf: python -m pipeline.pruefen.daten [--veroeffentlichung] <datenordner> …")
         return 1
     fehler = [meldung for o in ordner for meldung in pruefe_datenordner(o)]
+    if veroeffentlichung:
+        fehler += [meldung for o in ordner for meldung in finde_entwuerfe(o)]
     for meldung in fehler:
         print(meldung)
     print("Daten passen zu den Schemas." if not fehler else f"{len(fehler)} Fehler.")

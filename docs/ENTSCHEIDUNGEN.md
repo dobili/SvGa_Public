@@ -3929,3 +3929,37 @@ eine Seite; Kennfarben sparsam (Gold für Zeichen, Gürtelfarben nur für Stufen
 Vorlage mit Bildern vorher und nachher als privates Artifact (Bilder nicht im Repository).
 Freigabe des Autors am 19.10.2026: „Alles, ja“. Testpunkte N475 bis N482.
 
+## Farbabstimmung DS30 bis DS37 (19.10.2026, Opus, Zweig `farbabstimmung`, wartet auf Freigabe)
+
+Frage des Autors: Ist die Farbgebung hell und dunkel stimmig, nicht zu bunt, nicht zu
+kontrastarm? Der Hintergrund der Porträts wirkte im hellen Modus zu dunkel. Dazu der Wunsch, den
+Springer des Covers als App-Symbol zu nehmen. Vorgehen: Bilder aller Bildschirme in hell und
+dunkel, dazu eine Messung je Bildschirm und Modus (axe für Text, eigenes Skript für Zeichen,
+Marken und Rahmen gegen ihren Hintergrund, Bestand der bunten Farben). Ergebnis vorher: kein
+Textkontrast-Fehler; 460 Marken und Rahmen und 7 Zeichen unter 3:1 (WCAG 1.4.11); Haken und
+Regler im Systemblau; navy Zahlkreise im Dunkelmodus fast unsichtbar (1,1:1); helle Gürtel auf
+Weiß (1,5 bis 1,8:1) und dunkle Gürtel auf Navy (1,7 bis 2:1) kaum abgegrenzt. Nachher: 32 Stellen,
+die das Skript nicht messen kann (Ringe als Verlauf oder Schatten), von Hand geprüft 3:1.
+
+- DS30 Porträts ohne eingebauten Hintergrund (Rechteck #3b4a6b aus allen 98 SVG entfernt, Skripte
+  entfernen es nach DiceBear, damit die Gesichter gleich bleiben); die App legt `--portraet-grund`
+  dahinter: helles Navy #dfe5ee (hell, aus derselben Farbfamilie wie das Navy und mit besserem
+  Abstand zu warmen Hauttönen als Creme oder Sand), Schieferblau #3b4a6b (dunkel, wie bisher).
+- DS31 `accent-color` aller Haken, Optionsfelder und Regler: Navy (hell), Gold (dunkel).
+- DS32 Zahlkreise (`--marke-grund`): im Dunkeln #3b4f75 mit hellem Rand statt Navy auf Navy.
+- DS33 Stufenmarken etwas ruhiger; Weiß, Gelb, Orange mit dunklerem Rand ihrer Farbe (hell),
+  alle mit hellem Rand (dunkel); „Zum Spaß“ Konfetti in Gold statt Regenbogen.
+- DS34 `--rand-bedien` für Chips, Zweitknöpfe und Felder: #958a73 (3,4:1 auf Weiß, 3:1 auf
+  Creme), dunkel #6b7fa3; Fortschrittsringe in `--gold-strich` #b08a1a (3,2:1).
+- DS35 Warum-Zeichen mit Rand; Zugarten-Marken (Farben wie chess.com) so weit abgedunkelt, dass
+  das weiße Zeichen 3:1 erreicht; großes Ergebniszeichen mit Rand in seiner Farbe.
+- DS36 Partien gegen eine Engine-Stufe zeigen die Stufenmarke statt „S“; dabei behoben: die Regel
+  `.partienliste .begriff-knopf span` färbte auch Ergebnis- und Stufenmarke grau.
+- DS37 App-Symbol für den Startbildschirm aus dem goldenen Springer des Covers
+  (`skripte/erzeuge-appsymbol.mjs`, Ausschnitt mit den Pfeilen, zum Rand in Navy abgedunkelt,
+  eigener Ausschnitt für das runde maskierbare Symbol, auf 256 Farben verkleinert). Bei 60 Pixeln
+  gut erkennbar, bei 16 bis 40 Pixeln nicht; der Browser-Tab behält den schlichten Springer.
+
+Vorlage mit Messwerten und Bildern vorher und nachher als privates Artifact (Bilder nicht im
+Repository). Nach der Freigabe: main einmergen, nächste freie Version, Testpunkte in AUFGABEN_AUTOR.
+

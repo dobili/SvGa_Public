@@ -6,7 +6,8 @@
  * chess.com: einfache Kommentare, warum ein Zug schlecht war“). Die Sätze folgen der Engine-Karte
  * (Zugurteil.tsx), die Erklärung kommt aus spiel/erklaerung.ts.
  * Unten steht „In die Fehlerdatenbank“ (Kapitel 12, AP 13): Es öffnet das Formular mit der
- * Stellung vor dem Zug und dem gespielten Zug.
+ * Stellung vor dem Zug und dem gespielten Zug. Seit 0.2.93 daneben „In die Lernsammlung“ für die
+ * Stellung nach dem Zug, mit dem Weg der Partie (Eröffnung und PGN).
  * Seit 0.2.85 (Rückmeldung des Autors) nennt der Satz zu einem Fehler die Gewinnchance vorher und
  * nachher statt der Bauerneinheiten der Engine: Stockfish rechnet seine Zahl aus der Gewinnchance,
  * eine Figur mehr ergibt dort 5 bis 7 „Bauern“, chess.com zeigt kleinere Zahlen. Die Gewinnchance
@@ -17,6 +18,7 @@
 import { useState } from "react";
 import { t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
+import { fenNachZuegen } from "../../schach/weiterspielen";
 import { zugnummer, type Zugurteil } from "../../spiel/auswertung";
 import type { Zugerklaerung } from "../../spiel/erklaerung";
 import type { Partie } from "../../spiel/partie";
@@ -24,6 +26,7 @@ import type { Zweigzug } from "../../spiel/nebenzweig";
 import { balkentext } from "../../spiel/rueckblick";
 import { uciZuSan } from "../../spiel/zuege";
 import { FehlerFormular } from "../trainer/FehlerFormular";
+import { SammelKnopf } from "./SammelFormular";
 import { gewinnchanceVorNach, type Chance } from "./gewinnchance";
 import { MitInfo } from "./InfoKnopf";
 import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
@@ -43,6 +46,20 @@ function InDieFehlerdatenbank({ fen, zug }: { fen: string; zug: string }) {
     );
   }
   return <FehlerFormular fen={fen} zug={zug} />;
+}
+
+/** „In die Lernsammlung“ für die Stellung nach dem gezeigten Zug, mit dem Weg der Partie. */
+function InDieLernsammlung({ partie, index }: { partie: Partie; index: number }) {
+  const startFen = partie.einstellung.startFen;
+  const zuege = partie.zuege.slice(0, index + 1).map((z) => z.san);
+  const fen = fenNachZuegen(startFen, zuege);
+  if (!fen) return null;
+  return (
+    <SammelKnopf
+      fen={fen}
+      herkunft={{ herkunft: "partie", quelle: "", verlauf: { startFen, zuege } }}
+    />
+  );
 }
 
 /** Verlust mit einer Nachkommastelle und deutschem Komma. */
@@ -169,6 +186,7 @@ export function Rueckblickkarte({
         </p>
       )}
       <InDieFehlerdatenbank key={`${fen} ${san}`} fen={fen} zug={san} />
+      <InDieLernsammlung key={`s ${fen} ${san}`} partie={partie} index={index} />
     </section>
   );
 }

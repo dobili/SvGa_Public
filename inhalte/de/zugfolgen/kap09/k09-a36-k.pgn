@@ -1,0 +1,17 @@
+[Event "Kapitel 9: Konstruierte Partie zu Abb. 9.36"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k09-a36-k"]
+[Kapitel "9"]
+[Abschnitt "9.8"]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 95,6 %, 0× ?, 0× ?? · Schwarz 95,4 %, 0× ?, 0× ?? (Tiefe 18)"]
+[Abbildungen "9.36"]
+[Opening "Queen's Gambit Declined: Exchange Variation"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. d4 Nf6 2. c4 e6 3. Nc3 d5 4. cxd5 Nxd5 5. a3 Nxc3 6. bxc3 Bd6 7. e4 e5 8. Nf3 exd4 9. cxd4 Bg4 10. h3 Bxf3 11. Qxf3 Qf6 12. Qxf6 gxf6 13. Be3 Nd7 14. Rc1 Ke7 15. f4 Bxa3 16. Rxc7 Rhc8 17. Rxb7 Rab8 18. Rxb8 Rxb8 19. Kd2 Rb1 20. g4 Nb6 21. g5 fxg5 22. fxg5 Nc4+ 23. Kd3 Nxe3 24. Kxe3 Bc1+ 25. Kd3 Bxg5 26. h4 Bxh4 27. Ke2 Bg3 28. Rxh7 Bf4 29. Rh8 Kd6 30. Rh4 Re1+ 31. Kxe1 Bg3+ 32. Kd2 Bxh4 33. Bc4 a6 34. Bxa6 Bg3 35. Bc4 Bf4+ 36. Ke2 f5 37. Bd3 Bg5 38. Kf3 f4 39. Bf1 Bh6 40. Ke2 Bg5 41. Bh3 f3+ 42. Kf2 Bf4 43. Bf1 Bg5 44. Ba6 Bf4 45. Bb5 Bg5 46. Bf1 Bd2 47. Kxf3 Bg5 48. Ke2 Bf4 { Abb. 9.36 } *

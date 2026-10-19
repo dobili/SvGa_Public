@@ -1,0 +1,17 @@
+[Event "Kapitel 0: Konstruierte Partie zu Abb. 0.10"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k00-a10-k"]
+[Kapitel "0"]
+[Abschnitt ""]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 95,5 %, 0× ?, 0× ?? · Schwarz 83,5 %, 0× ?, 1× ?? (Tiefe 18)"]
+[Abbildungen "0.10"]
+[Opening "Ruy Lopez: Exchange Variation"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. d4 exd4 6. Qxd4 Bg4 7. h3 Bxf3 8. Qe5+ Be7 9. gxf3 Nf6 10. Ke2 O-O 11. Be3 Nd7 12. Qg3 f5 13. Nd2 fxe4 14. fxe4 Bc5 15. Raf1 Bxe3 16. fxe3 Rc8 17. Rxf8+ Nxf8 18. Rg1 Qd7 19. a4 Kh8 20. h4 Re8 21. Qg4 Qf7 22. Kd3 b5 23. axb5 Ng6 24. Nf3 cxb5 25. h5 Ne5+ 26. Nxe5 Rxe5 27. h6 gxh6 28. Qf4 Qe7 29. Qxh6 Rxe4 30. Qxa6 Rxe3+ 31. Kd2 Qf8 32. Kxe3 Qc5+ 33. Kf4 Qxg1 34. Qxb5 c5 35. Qd7 h6 36. Kf5 Qg8 37. b3 h5 38. Qc7 Qd5+ 39. Kg6 Qe4+ 40. Kg5 Qxc2 41. Kxh5 c4 42. Kg5 cxb3 43. Qg3 Qc5+ 44. Kg6 Qh5+ 45. Kxh5 Kh7 46. Qxb3 Kh8 47. Qb7 Kg8 48. Kg6 Kh8 49. Qg7# { Abb. 0.10 } *

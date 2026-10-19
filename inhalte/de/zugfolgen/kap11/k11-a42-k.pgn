@@ -1,0 +1,17 @@
+[Event "Kapitel 11: Konstruierte Partie zu Abb. 11.42"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k11-a42-k"]
+[Kapitel "11"]
+[Abschnitt "11.7"]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 85,2 %, 1× ?, 0× ?? · Schwarz 83,0 %, 1× ?, 0× ?? (Tiefe 18)"]
+[Abbildungen "11.42"]
+[Opening "Semi-Tarrasch-Verteidigung"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 c5 5. cxd5 Nxd5 6. e3 Nc6 7. Bb5 Be7 8. O-O O-O 9. Nxd5 exd5 10. b3 Re8 11. Bb2 Rf8 12. Qe2 cxd4 13. Nxd4 { Abb. 11.42 } *

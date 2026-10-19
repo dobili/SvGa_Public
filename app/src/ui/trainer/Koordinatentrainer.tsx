@@ -165,6 +165,9 @@ export function Ausfuehraufgabe({ aufgabe, runde }: { aufgabe: Zugaufgabe; runde
           beschriftung={t("koordinatentrainer.brett")}
         />
       )}
+      {aufgabe.nummer && (
+        <p className="hinweis">{t("koordinatentrainer.ausBuch", { nummer: aufgabe.nummer })}</p>
+      )}
       {gespielt && (
         <Antwortmeldung richtig={richtig}>
           {richtig ? "" : t("koordinatentrainer.gespielt", { zug: buchzug(gespielt.san) })}

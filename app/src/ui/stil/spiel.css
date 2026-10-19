@@ -397,6 +397,10 @@
   font-weight: 700;
   color: var(--gold);
   white-space: nowrap;
+  /* Seit 0.2.90 mit dunklem Grund: Gold auf dem hellen Teil des Balkens war zu blass (axe). */
+  background: var(--navy);
+  padding: 0 2px;
+  border-radius: 3px;
 }
 
 .verlaufskurve {

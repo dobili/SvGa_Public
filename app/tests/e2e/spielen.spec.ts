@@ -203,6 +203,9 @@ test("Stellung aufbauen (K e6, D a3 gegen K e8), zu zweit ohne Werkzeuge spielen
   await expect(page.getByTestId("spielengine")).toHaveCount(0);
   await ziehe(page, /^a3,/, "e7");
   await expect(page.getByTestId("partieende")).toContainText("Matt! Weiß hat gewonnen.");
+  // Zu zweit spielt keine Engine: kein Satz über ihre absichtlichen Fehler (bis 0.2.89 stand er da).
+  await expect(page.getByTestId("auswertung")).toBeVisible();
+  await expect(page.getByText(/Die Engine hat in dieser Partie/)).toHaveCount(0);
   await page.locator(".kopfzeile").getByRole("button", { name: "Spielen", exact: true }).click();
   await expect(page.getByTestId("spielen")).toContainText("1–0");
 });

@@ -16,6 +16,7 @@ import type { Vorbereitet } from "../analyse/warumfragen";
 import type { Beispiel, Knoten } from "../daten/generiert/beispiel";
 import type { Abbildung, Kapitel } from "../daten/generiert/kapitel";
 import { kanonischeLinie, stellungNach, zuegeAusText } from "./uebungsaufgabe";
+import { buchbeispiele } from "../daten/buchbeispiele";
 
 /** Kürzere Wege sind Seitenblicke im Text, keine Variante zum Üben. */
 export const MINDESTENS_HALBZUEGE = 8;
@@ -95,7 +96,7 @@ function titelVon(beispiel: Beispiel): string {
  */
 export function eroeffnungenAus(kapitel: Kapitel): Repertoireeroeffnung[] {
   const abschnitte = new Set(kapitel.steckbriefe.map((s) => s.abschnitt));
-  return kapitel.beispiele
+  return buchbeispiele(kapitel)
     .filter((b) => abschnitte.has(b.abschnitt))
     .map((b) => ({ id: b.id, titel: titelVon(b), beispiel: b }));
 }

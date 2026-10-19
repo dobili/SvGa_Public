@@ -687,6 +687,19 @@ a.knopf-zweit {
   padding: 0;
 }
 
+/* Ziehen per Wischen (0.2.92): Nur auf Feldern mit ziehbarer Figur nimmt der Finger die Figur;
+   auf allen anderen Feldern scrollt die Seite wie bisher. */
+.brett-tasten {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.brett-tasten button.greifbar {
+  touch-action: none;
+  cursor: grab;
+}
+
 .brett-tasten button:focus-visible {
   outline-offset: -3px;
 }

@@ -1,0 +1,17 @@
+[Event "Kapitel 8: Konstruierte Partie zu Abb. 8.25"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k08-a25-k"]
+[Kapitel "8"]
+[Abschnitt "8.6"]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 97,7 %, 0× ?, 0× ?? · Schwarz 98,4 %, 0× ?, 0× ?? (Tiefe 18)"]
+[Abbildungen "8.25"]
+[Opening "Italian Game: Giuoco Piano"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d4 Bxd4 5. Nxd4 Nxd4 6. Be3 d6 7. Bxd4 exd4 8. Qxd4 Qf6 9. Qxf6 Nxf6 10. Nc3 Be6 11. Bxe6 fxe6 12. Ke2 g5 13. h4 gxh4 14. Rh3 h5 15. Rxh4 Rg8 16. Rg1 Rg4 17. Rxg4 hxg4 18. Rh1 Rd8 19. f4 gxf3+ 20. gxf3 a5 21. f4 e5 22. fxe5 dxe5 23. Rd1 Rxd1 24. Kxd1 c6 25. Ke2 b6 26. b3 Nd7 27. Nd1 b5 28. c4 bxc4 29. Nb2 cxb3 30. axb3 Nc5 31. Nc4 Nxb3 32. Nxe5 Nc5 33. Nxc6 Nb3 34. Nxa5 Nxa5 35. Kd2 Nc4+ 36. Ke2 Ne3 37. Kxe3 Ke7 38. Ke2 Ke8 { Abb. 8.25 } *

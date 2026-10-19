@@ -106,6 +106,7 @@ export function Brettbereich({
           ziele={bedienung.ziele}
           gesperrt={bedienung.gesperrt?.feld ?? null}
           beiFeld={bedienung.beiFeld}
+          ziehen={bedienung.ziehen}
           beschriftung={`${beschriftung}, ${t(`abbildung.amZug.${amZug}`)}`}
         />
       </div>

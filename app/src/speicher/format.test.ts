@@ -29,6 +29,7 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       figurensatz: "buch",
       ton: "aus",
       genauigkeitsmodus: "mittelweg",
+      vorWerkzeugen: "aus",
     });
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
     expect(ergebnis.daten.fortschritt).toEqual({ gesehen: {}, uebungen: {}, trainer: {} });
@@ -49,6 +50,9 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
     expect(einstellungenAus({ genauigkeitsmodus: "chesscom" }).genauigkeitsmodus).toBe("chesscom");
     expect(einstellungenAus({}).genauigkeitsmodus).toBe("mittelweg");
     expect(einstellungenAus({ genauigkeitsmodus: "fide" }).genauigkeitsmodus).toBe("mittelweg");
+    // Seit 0.2.90: „Erst selbst denken“ vor Werkzeugen, ältere Stände lesen sich als „aus“.
+    expect(einstellungenAus({}).vorWerkzeugen).toBe("aus");
+    expect(einstellungenAus({ vorWerkzeugen: "an" }).vorWerkzeugen).toBe("an");
   });
 
   it("übersteht kaputte und fehlende Merker", () => {
@@ -91,11 +95,15 @@ describe("Format 1", () => {
           figurensatz: "buch",
           ton: "aus",
           genauigkeitsmodus: "mittelweg",
+          vorWerkzeugen: "aus",
         },
         schemaVersion: SCHEMA_VERSION,
         spiel: LEERER_SPIELSTAND,
         karten: {},
         fehler: [],
+        sammlung: [],
+        zugErraten: {},
+        planstand: null,
       },
       vonVersion: 1,
     });
@@ -123,6 +131,34 @@ describe("Format 1", () => {
     };
     const ergebnis = wandleUm(roh, JETZT);
     expect(ergebnis.ok && ergebnis.daten.fehler).toEqual([eintrag]);
+  });
+
+  it("Format 4 → 5: Die Lernsammlung ist leer, alles andere bleibt", () => {
+    const format4 = { ...leereDaten(JETZT), schemaVersion: 4, lernstand: { 2: [0] } } as Record<
+      string,
+      unknown
+    >;
+    delete format4.sammlung;
+    const ergebnis = wandleUm(format4, JETZT);
+    expect(ergebnis.ok && ergebnis.daten.sammlung).toEqual([]);
+    expect(ergebnis.ok && ergebnis.daten.lernstand).toEqual({ 2: [0] });
+    expect(ergebnis.ok && ergebnis.daten.schemaVersion).toBe(5);
+    expect(ergebnis.ok && ergebnis.vonVersion).toBe(4);
+  });
+
+  it("Format 5 liest die Lernsammlung, Unlesbares fällt weg", () => {
+    const eintrag = {
+      id: "s1",
+      datum: "2026-10-18T08:00:00.000Z",
+      fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+      herkunft: "abbildung",
+      quelle: "2.2",
+      eroeffnung: "Spanische Partie",
+      plan: "Druck auf e5",
+      notiz: "",
+    };
+    const ergebnis = wandleUm({ ...leereDaten(JETZT), sammlung: [eintrag, { id: 3 }] }, JETZT);
+    expect(ergebnis.ok && ergebnis.daten.sammlung).toEqual([eintrag]);
   });
 
   it("bereinigt fremde und unpassende Einträge", () => {

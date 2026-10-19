@@ -1,0 +1,17 @@
+[Event "Kapitel 8: Konstruierte Partie zu Abb. 8.7"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k08-a7-k"]
+[Kapitel "8"]
+[Abschnitt "8.3"]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 96,2 %, 0× ?, 0× ?? · Schwarz 96,1 %, 0× ?, 0× ?? (Tiefe 18)"]
+[Abbildungen "8.7"]
+[Opening "Italian Game: Giuoco Piano"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d4 Nxd4 5. Nxe5 Qe7 6. Bxf7+ Kf8 7. Bxg8 Kxg8 8. c3 Qxe5 9. cxd4 Qxe4+ 10. Be3 Qxg2 11. Kd2 Bb4+ 12. Nc3 Bxc3+ 13. Kxc3 d6 14. d5 h5 15. Rg1 Qxh2 16. Rxg7+ Kxg7 17. Bd4+ Kg8 18. Qd3 Qg2 19. f3 Qg5 20. Rg1 Bg4 21. Bxh8 Kxh8 22. fxg4 Qe5+ 23. Kc2 Rg8 24. Qf3 Rxg4 25. Rxg4 hxg4 26. Qxg4 c5 27. dxc6 bxc6 28. Kb1 c5 29. Qg6 c4 30. b3 cxb3 31. axb3 Qd4 32. Ka2 Qb6 33. Ka1 Qxb3 34. Qxd6 a6 35. Qxa6 Qd5 36. Qg6 Qb3 37. Qh5+ Kg7 38. Qg4+ Kh8 39. Qg6 Qa4+ 40. Kb2 Qb4+ 41. Ka1 Qe7 42. Ka2 Qb4 43. Qf7 Qb5 44. Ka1 Qc5 45. Qg6 Qc1+ 46. Ka2 Qc3 47. Kb1 Qa5 48. Kb2 Qc3+ 49. Ka2 Qa1+ 50. Kxa1 { Abb. 8.7 } *

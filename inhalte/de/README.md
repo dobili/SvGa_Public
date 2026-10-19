@@ -48,6 +48,17 @@ seine Züge in einem anderen Beispiel aufgehen), bekommt `[Status "verworfen"]`:
 wird nie überschrieben und nie übernommen. Entwürfe, die ein Datenlauf nicht mehr erzeugt,
 löscht die Pipeline.
 
+**Konstruierte Partien** (`[Status "konstruiert"]`, seit 0.2.96, Entscheidung des Autors vom
+18.10.2026): Zu Abbildungen ohne Zugfolge im Buch, deren Stellung aus einer realistischen Partie
+erwachsen kann (Einordnung mit Grund in `konstruktion.json`), baut
+`python -m pipeline.zugfolgen.konstruieren` eine Partie ab der Grundstellung, die genau die
+Abbildung erreicht (Stellung, Zugrecht, Rochaderechte, en passant). Datei `kNN-aMM-k.pgn`, die
+Abbildung steht am letzten Zug. Sie wird nie überschrieben, kommt immer in die App und zeigt dort
+den Hinweis „Zugfolge von Claude konstruiert, nicht aus dem Buch“ (Regel 1). Trainer und
+Eröffnungsindex nehmen sie nicht. Erreicht sie die Abbildung nicht exakt, meldet der Datenlauf
+einen Fehler. Die Kopfzeile `[Genauigkeit "…"]` schreibt der Messlauf der App
+(`app/src/spiel/konstruiert.messung.ts`, Tiefe 18).
+
 Die Kennung richtet sich nach der Abbildung, an der das Beispiel beginnt, sonst nach seiner
 kleinsten Abbildungsnummer: `k02-a55` beginnt bei Abb. 2.55. Beispiele ohne Abbildung heißen nach
 ihren ersten Zügen (`k03-z-d4-d5-c4`). So verschiebt sich keine Kennung, wenn ein anderes Beispiel

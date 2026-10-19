@@ -3,9 +3,12 @@
  *
  * Rolle im Gesamtbild: Die App liest nur Daten, die die Pipeline aus dem LaTeX erzeugt hat
  * (Konzept 6.1, „ladeIndex“ und „ladeKapitel“). Offline kommen die Dateien aus dem Speicher
- * des Service Workers, die Funktionen merken davon nichts.
- * Abhängigkeiten: erzeugte Typen aus den Schemas.
+ * des Service Workers, die Funktionen merken davon nichts. Seit 0.2.94 liegt der Ordner bei der
+ * Sprache der App (/daten/<sprache>/a1); beim Sprachwechsel vergisst vergissBuchdaten alles
+ * Geladene, damit die App die Daten der neuen Sprache holt.
+ * Abhängigkeiten: erzeugte Typen aus den Schemas, i18n/sprache.ts.
  */
+import { sprache } from "../i18n/sprache";
 import type { Datenverzeichnis } from "./generiert/index";
 import type { Eroeffnungsliste } from "./generiert/eroeffnungsliste";
 import type { Glossar } from "./generiert/glossar";
@@ -16,10 +19,18 @@ export type { Datenverzeichnis, Eroeffnungsliste, Glossar, Kapitel, Nachschlagen
 export type { Eintrag as Glossareintrag } from "./generiert/glossar";
 export type { Abbildung, Textteil } from "./generiert/abbildung";
 
+/** Auflage der Buchdaten (Konzept 11.4). */
+const AUFLAGE = "a1";
+
 /** Ordner der Daten einer Sprache (Daten, die nicht aus dem Buch kommen, etwa die Eröffnungsliste). */
-const SPRACHORDNER = "/daten/de";
-/** Ordner der Buchdaten für Sprache und Auflage (Konzept 11.4). */
-const DATENORDNER = `${SPRACHORDNER}/a1`;
+function sprachordner(): string {
+  return `/daten/${sprache()}`;
+}
+
+/** Ordner der Buchdaten für Sprache und Auflage, etwa „/daten/de/a1“. */
+function datenordner(): string {
+  return `${sprachordner()}/${AUFLAGE}`;
+}
 
 const geladeneKapitel = new Map<number, Promise<Kapitel>>();
 let verzeichnis: Promise<Datenverzeichnis> | null = null;
@@ -43,7 +54,7 @@ async function ladeJson<T>(pfad: string): Promise<T> {
  */
 export function ladeIndex(): Promise<Datenverzeichnis> {
   if (!verzeichnis) {
-    verzeichnis = ladeJson<Datenverzeichnis>(`${DATENORDNER}/index.json`).catch(
+    verzeichnis = ladeJson<Datenverzeichnis>(`${datenordner()}/index.json`).catch(
       (fehler: unknown) => {
         verzeichnis = null;
         throw fehler;
@@ -70,7 +81,7 @@ export async function ladeKapitel(nummer: number): Promise<Kapitel> {
   if (!eintrag) {
     throw new Error(`Kapitel ${nummer} ist in den Daten nicht enthalten.`);
   }
-  const ladevorgang = ladeJson<Kapitel>(`${DATENORDNER}/${eintrag.datei}`);
+  const ladevorgang = ladeJson<Kapitel>(`${datenordner()}/${eintrag.datei}`);
   geladeneKapitel.set(nummer, ladevorgang);
   ladevorgang.catch(() => geladeneKapitel.delete(nummer));
   return ladevorgang;
@@ -82,7 +93,7 @@ const einmalGeladen = new Map<string, Promise<unknown>>();
 function einmal<T>(datei: string): Promise<T> {
   const bekannt = einmalGeladen.get(datei);
   if (bekannt) return bekannt as Promise<T>;
-  const ladevorgang = ladeJson<T>(`${DATENORDNER}/${datei}`);
+  const ladevorgang = ladeJson<T>(`${datenordner()}/${datei}`);
   einmalGeladen.set(datei, ladevorgang);
   ladevorgang.catch(() => einmalGeladen.delete(datei));
   return ladevorgang;
@@ -118,10 +129,22 @@ let eroeffnungsliste: Promise<Eroeffnungsliste> | null = null;
  */
 export function ladeEroeffnungsliste(): Promise<Eroeffnungsliste> {
   if (!eroeffnungsliste) {
-    eroeffnungsliste = ladeJson<Eroeffnungsliste>(`${SPRACHORDNER}/eroeffnungen-lichess.json`);
+    eroeffnungsliste = ladeJson<Eroeffnungsliste>(`${sprachordner()}/eroeffnungen-lichess.json`);
     eroeffnungsliste.catch(() => {
       eroeffnungsliste = null;
     });
   }
   return eroeffnungsliste;
+}
+
+/**
+ * Vergisst alle geladenen Buchdaten (Verzeichnis, Kapitel, Glossar, Nachschlagen, Eröffnungen).
+ *
+ * Warum: Nach einem Sprachwechsel gehören die gemerkten Daten zur alten Sprache.
+ */
+export function vergissBuchdaten(): void {
+  verzeichnis = null;
+  geladeneKapitel.clear();
+  einmalGeladen.clear();
+  eroeffnungsliste = null;
 }

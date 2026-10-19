@@ -1,0 +1,17 @@
+[Event "Kapitel 5: Konstruierte Partie zu Abb. 5.18"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k05-a18-k"]
+[Kapitel "5"]
+[Abschnitt "5.4"]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 85,2 %, 1× ?, 0× ?? · Schwarz 83,0 %, 1× ?, 0× ?? (Tiefe 18)"]
+[Abbildungen "5.18"]
+[Opening "Semi-Tarrasch-Verteidigung"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Nf3 c5 5. cxd5 Nxd5 6. e3 Nc6 7. Bb5 Be7 8. O-O O-O 9. Nxd5 exd5 10. b3 Re8 11. Bb2 Rf8 12. Qe2 cxd4 13. Nxd4 { Abb. 5.18 } *

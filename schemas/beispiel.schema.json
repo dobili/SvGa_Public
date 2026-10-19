@@ -23,7 +23,7 @@
         "properties": { "nummer": { "type": "string" }, "pfad": { "type": "array", "items": { "type": "string" } } }
       }
     },
-    "status": { "description": "„entwurf“ zeigt die App mit dem Hinweis, dass der Autor noch nicht freigegeben hat", "enum": ["freigegeben", "entwurf"] }
+    "status": { "description": "„entwurf“ zeigt die App mit dem Hinweis, dass der Autor noch nicht freigegeben hat; „konstruiert“ (seit 0.2.96) ist eine von Claude gebaute Partie ab der Grundstellung zu einer Abbildung ohne Zugfolge im Buch, die App zeigt den Hinweis „Zugfolge von Claude konstruiert, nicht aus dem Buch“", "enum": ["freigegeben", "entwurf", "konstruiert"] }
   },
   "$defs": {
     "knoten": {

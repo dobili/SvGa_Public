@@ -1,0 +1,17 @@
+[Event "Kapitel 9: Konstruierte Partie zu Abb. 9.18"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k09-a18-k"]
+[Kapitel "9"]
+[Abschnitt "9.5"]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 94,8 %, 1× ?, 0× ?? · Schwarz 84,6 %, 3× ?, 2× ?? (Tiefe 18)"]
+[Abbildungen "9.18"]
+[Opening "Italian Game: Giuoco Piano"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bc4 Bc5 4. d4 Bxd4 5. Bg5 f6 6. Nxd4 fxg5 7. Nxc6 dxc6 8. Qxd8+ Kxd8 9. Bxg8 Rxg8 10. Kd2 Ke7 11. Ke3 Kf6 12. h4 gxh4 13. Rxh4 Be6 14. Rxh7 Rh8 15. Rxh8 Rxh8 16. Nc3 b5 17. Rd1 Rh2 18. a4 Rxg2 19. axb5 cxb5 20. Nxb5 Rh2 21. Nxc7 Rh3+ 22. f3 Bg4 23. Rf1 a5 24. Na8 g5 25. Nc7 Bh5 26. b3 g4 27. Na6 gxf3 28. b4 axb4 29. Nc5 f2+ 30. Kxf2 Rc3 31. Nd3 Ke6 32. Ke3 Bg6 33. Rg1 Bxe4 34. Kxe4 Rxc2 35. Nc1 Rxc1 36. Rxc1 Kd7 37. Kxe5 Kd8 38. Rd1+ Ke8 39. Kf5 Kf7 40. Kg5 Ke6 41. Kh6 Kf5 42. Kh7 Ke4 43. Kh8 { Abb. 9.18 } *

@@ -1,0 +1,17 @@
+[Event "Kapitel 8: Konstruierte Partie zu Abb. 8.42"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k08-a42-k"]
+[Kapitel "8"]
+[Abschnitt "8.7"]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 97,5 %, 0× ?, 0× ?? · Schwarz 90,3 %, 0× ?, 1× ?? (Tiefe 18)"]
+[Abbildungen "8.42"]
+[Opening "Ruy Lopez: Exchange Variation"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. d4 exd4 6. Qxd4 Bg4 7. Qxd8+ Rxd8 8. Ke2 f5 9. h3 Bxf3+ 10. gxf3 fxe4 11. fxe4 Nf6 12. Bg5 Rd4 13. Bxf6 gxf6 14. Nd2 Bh6 15. Rhd1 Bxd2 16. Rxd2 Rxe4+ 17. Kf1 f5 18. Re2 Rxe2 19. Kxe2 Rf8 20. Rd1 Rf6 21. Rd4 Rh6 22. Rf4 Rxh3 23. Rxf5 Rh6 24. Rf4 c5 25. Rf5 Rb6 26. Rxc5 Rb5 27. Rc3 h5 28. f4 h4 29. Rb3 Rh5 30. Rh3 a5 31. Rh2 Rh6 32. Rh3 Rc6 33. Rc3 Rg6 34. Rc5 a4 35. f5 Rg7 36. f6 Rf7 37. Rh5 h3 38. Rh8+ Rf8 39. Rh6 h2 40. Rh7 Rf7 41. Rh8+ Rf8 42. Rh5 h1=N 43. Rh3 Nf2 44. Rc3 Ne4 45. Re3 Rxf6 46. Kd3 Rg6 47. Re2 Rg7 48. Re3 Rg3 49. Kxe4 Rxe3+ 50. Kxe3 Kd7 51. Ke2 Ke7 52. Kd1 Ke8 53. Kc1 Kd7 54. Kd1 Ke7 55. Ke2 Kd6 56. Kd2 Kc6 57. Kd3 a3 58. Kc3 Kd6 59. Kb3 Ke7 60. Kxa3 Kf8 61. Kb4 Ke8 62. Kc3 Ke7 63. Kd3 Kd8 64. Ke2 Ke8 { Abb. 8.42 } *

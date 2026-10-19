@@ -34,7 +34,12 @@ STATUS_VERWORFEN = "verworfen"  # vom Autor verworfen: nie überschrieben, nie i
 # Von Claude nach der Prüfung korrigiert, Freigabe des Autors steht aus: nie überschrieben, in der
 # App nur mit --mit-entwuerfen (als Entwurf).
 STATUS_GEPRUEFT = "geprueft"
-_VOM_AUTOR = (STATUS_FREIGEGEBEN, STATUS_VERWORFEN, STATUS_GEPRUEFT)
+# Von Claude konstruierte Partie zu einer Abbildung ohne Zugfolge im Buch (Entscheidung des Autors,
+# 18.10.2026; pipeline/zugfolgen/konstruktion.py): nie überschrieben, immer in den Daten, in der App
+# mit dem Hinweis „Zugfolge von Claude konstruiert, nicht aus dem Buch“ (Regel 1: Das Buch ist die
+# einzige Quelle, darum deutlich gekennzeichnet).
+STATUS_KONSTRUIERT = "konstruiert"
+_VOM_AUTOR = (STATUS_FREIGEGEBEN, STATUS_VERWORFEN, STATUS_GEPRUEFT, STATUS_KONSTRUIERT)
 _NAG_JE_ZEICHEN = {"!": 1, "?": 2, "!!": 3, "??": 4, "!?": 5, "?!": 6}
 _ZEICHEN_JE_NAG = {nag: zeichen for zeichen, nag in _NAG_JE_ZEICHEN.items()}
 _ABBILDUNG_IM_KOMMENTAR = re.compile(r"Abb\. (\d+\.\d+)")
@@ -150,16 +155,22 @@ def lies_freigegebene(
     Eingabe: Ordner ``inhalte/de/zugfolgen``, Kapitelnummer, Abbildungsnummer → FEN aus den Daten.
     """
     erlaubt = (
-        (STATUS_FREIGEGEBEN, STATUS_GEPRUEFT, STATUS_ENTWURF) if mit_entwuerfen else (STATUS_FREIGEGEBEN,)
+        (STATUS_FREIGEGEBEN, STATUS_KONSTRUIERT, STATUS_GEPRUEFT, STATUS_ENTWURF)
+        if mit_entwuerfen
+        else (STATUS_FREIGEGEBEN, STATUS_KONSTRUIERT)
     )
     dateien = sorted((ordner / f"kap{kapitel:02d}").glob("*.pgn"))
     ergebnis: list[Freigegebenes] = []
     for status in erlaubt:
         for pfad in dateien:
             if lies_status(pfad) == status:
-                daten_status = STATUS_FREIGEGEBEN if status == STATUS_FREIGEGEBEN else STATUS_ENTWURF
-                ergebnis.append(_lies_datei(pfad, kapitel, abbildungs_fen, daten_status))
+                ergebnis.append(_lies_datei(pfad, kapitel, abbildungs_fen, _daten_status(status)))
     return ergebnis
+
+
+def _daten_status(status: str) -> str:
+    """Der Status in den App-Daten: freigegeben und konstruiert bleiben, alles andere ist Entwurf."""
+    return status if status in (STATUS_FREIGEGEBEN, STATUS_KONSTRUIERT) else STATUS_ENTWURF
 
 
 def _lies_datei(pfad: Path, kapitel: int, abbildungs_fen: dict[str, str], status: str) -> Freigegebenes:
@@ -173,6 +184,8 @@ def _lies_datei(pfad: Path, kapitel: int, abbildungs_fen: dict[str, str], status
         befunde.append(Befund(Schwere.FEHLER, "pgn-zug", str(fehler), fundstelle))
     verknuepfungen: dict[str, list[str]] = {}
     knoten_daten = _knoten_daten(spiel, [], abbildungs_fen, verknuepfungen, befunde, fundstelle)
+    if status == STATUS_KONSTRUIERT:
+        befunde.extend(_pruefe_konstruierte(spiel, abbildungs_fen, fundstelle))
     daten = {
         "id": spiel.headers.get("Beispiel", pfad.stem),
         "kapitel": kapitel,
@@ -184,6 +197,43 @@ def _lies_datei(pfad: Path, kapitel: int, abbildungs_fen: dict[str, str], status
         "status": status,
     }
     return Freigegebenes(daten, verknuepfungen, befunde)
+
+
+def genauer_schluessel(brett: chess.Board) -> str:
+    """Stellung, Zugseite, Rochaderechte und ein schlagbarer En-passant-Bauer (ohne Zähler).
+
+    Warum: Eine konstruierte Partie soll die Abbildung exakt erreichen (Wunsch des Autors), also
+    strenger als ``stellungsschluessel``. En passant zählt nur, wenn das Schlagen auch legal ist.
+    Beispiel: Grundstellung → „rnbqkbnr/… w KQkq -“.
+    """
+    return " ".join(brett.fen(en_passant="legal").split()[:4])
+
+
+def _pruefe_konstruierte(
+    spiel: chess.pgn.Game, abbildungs_fen: dict[str, str], fundstelle: str
+) -> list[Befund]:
+    """Eine konstruierte Partie beginnt in der Grundstellung und endet genau in ihrer Abbildung.
+
+    Warum: Sie ersetzt keine Buchzugfolge, sondern führt nur zur Stellung des Buches hin; erreicht
+    sie die Abbildung nicht exakt (Stellung, Zugrecht, Rochaderechte, en passant), ist sie falsch.
+    Ausgabe: Fehler-Befunde (leer, wenn alles stimmt).
+    Beispiel: k08-a25-k endet nach 38... Ke8 in der Stellung von Abb. 8.25.
+    """
+    befunde: list[Befund] = []
+    if spiel.board().fen() != chess.STARTING_FEN:
+        befunde.append(
+            Befund(Schwere.FEHLER, "konstruiert", "beginnt nicht in der Grundstellung", fundstelle)
+        )
+    ende = spiel.end()
+    nummern = _ABBILDUNG_IM_KOMMENTAR.findall(ende.comment)
+    if not nummern:
+        befunde.append(Befund(Schwere.FEHLER, "konstruiert", "letzter Zug ohne Abbildung", fundstelle))
+    for nummer in nummern:
+        fen = abbildungs_fen.get(nummer)
+        if fen is None or genauer_schluessel(chess.Board(fen)) != genauer_schluessel(ende.board()):
+            text = f"erreicht Abb. {nummer} nicht exakt"
+            befunde.append(Befund(Schwere.FEHLER, "konstruiert", text, fundstelle, nummer))
+    return befunde
 
 
 def _knoten_daten(

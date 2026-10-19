@@ -26,6 +26,7 @@ import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
 import { Wahlzeile } from "./Wahlzeile";
+import { useSammelstellung } from "./sammelstellung";
 
 type Entwurf = Partial<Record<Faktor, Vorn>>;
 
@@ -58,6 +59,7 @@ function Bilanz({ fen }: { fen: string }) {
 }
 
 export function Faktorenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const [entwurf, setzeEntwurf] = useState<Entwurf>({});
   const beantwortet = runde.ergebnis !== null;
   const antwort = vollstaendig(entwurf);

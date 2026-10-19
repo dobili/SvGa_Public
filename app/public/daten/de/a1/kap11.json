@@ -97,7 +97,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. dxe5, Schwarz am Zug. Grau: Der Läufer fesselt den Springer f3 an die Dame. Gold: Schwarz tauscht zuerst auf f3.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. dxe5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Der Läufer fesselt den Springer f3 an die Dame. Gold: Schwarz tauscht zuerst auf f3.",
      "stil": "normal"
     }
    ],
@@ -151,7 +160,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... dxe5, Weiß am Zug. Gold: 6. Lc4. Rot: Läufer und Dame zielen dann beide auf f7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... dxe5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Lc4"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Läufer und Dame zielen dann beide auf f7.",
      "stil": "normal"
     }
    ],
@@ -229,7 +256,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... De7, Weiß am Zug. Rot: die Angriffe auf f7 und b7. Grau: Der Läufer f8 kann nicht mehr ziehen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... De7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: die Angriffe auf f7 und b7. Grau: Der Läufer f8 kann nicht mehr ziehen.",
      "stil": "normal"
     }
    ],
@@ -290,7 +326,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9... b5, Weiß am Zug. Grau: Der Läufer g5 fesselt den Springer f6 an die Dame. Gold: 10. Sxb5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9... b5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der Läufer g5 fesselt den Springer f6 an die Dame. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Sxb5"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -376,7 +430,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 11... Sbd7, Weiß am Zug. Grau: Beide schwarzen Springer sind gefesselt. Gold: die lange Rochade.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11... Sbd7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Beide schwarzen Springer sind gefesselt. Gold: die lange Rochade.",
      "stil": "normal"
     }
    ],
@@ -461,7 +524,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 12... Td8, Weiß am Zug. Grau: die Fesselung. Rot: Der Turm d1 greift den gefesselten Springer d7 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12... Td8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: die Fesselung. Rot: Der Turm d1 greift den gefesselten Springer d7 an.",
      "stil": "normal"
     }
    ],
@@ -532,7 +604,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 14... De6, Weiß am Zug. Grau: Der Turm d7 ist an den König gefesselt. Rot: Der Turm d1 greift ihn an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "14... De6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der Turm d7 ist an den König gefesselt. Rot: Der Turm d1 greift ihn an.",
      "stil": "normal"
     }
    ],
@@ -623,7 +704,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 16. Db8+, Schwarz am Zug. Rot: das Schach. Grau: Nur der Springer kann die Dame schlagen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16. Db8+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: das Schach. Grau: Nur der Springer kann die Dame schlagen.",
      "stil": "normal"
     }
    ],
@@ -710,7 +800,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 16... Sxb8 17. Td8#. Rot: das Schach. Grau: Der Läufer deckt den Turm und e7, der Turm deckt d7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16... Sxb8 17. Td8#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: das Schach. Grau: Der Läufer deckt den Turm und e7, der Turm deckt d7.",
      "stil": "normal"
     }
    ],
@@ -809,7 +908,37 @@
     "11.11",
     "11.12"
    ],
-   "beispiel": null,
+   "beispiel": {
+    "id": "k11-a10-k",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "Nc3",
+     "Nf6",
+     "Bg5",
+     "Be7",
+     "e5",
+     "Nfd7",
+     "Bxe7",
+     "Qxe7",
+     "Nce2",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "cxd4",
+     "cxd4",
+     "O-O",
+     "Nc3",
+     "Qd8",
+     "Bd3",
+     "Qb6",
+     "O-O",
+     "Qc7"
+    ]
+   },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
     "zeile": 225
@@ -853,7 +982,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Colle–O'Hanlon nach 11... cxd4, Weiß am Zug. Gold: dieselben drei Angreifer. Rot: das Ziel h7.",
+     "text": "Colle–O'Hanlon nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11... cxd4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: dieselben drei Angreifer. Rot: das Ziel h7.",
      "stil": "normal"
     }
    ],
@@ -938,7 +1076,34 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 13... Kg6??, Weiß am Zug. Rot: Der König steht vor seinen Bauern. Gold: 14. h4 droht 15. h5+.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13... Kg6??"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der König steht vor seinen Bauern. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "14. h4"
+    },
+    {
+     "art": "text",
+     "text": " droht ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "15. h5+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1027,7 +1192,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 15... Sf6, Weiß am Zug. Rot: Der Turm e6 ist angegriffen. Gold: Trotzdem folgt 16. h5+.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "15... Sf6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Turm e6 ist angegriffen. Gold: Trotzdem folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16. h5+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1104,7 +1287,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 17... Da5, Weiß am Zug. Gold: 18. Sxf7+. Grau: Der Läufer c1 gibt dann ebenfalls Schach.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "17... Da5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "18. Sxf7+"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: Der Läufer c1 gibt dann ebenfalls Schach.",
      "stil": "normal"
     }
    ],
@@ -1185,7 +1386,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 19... Kg8, Weiß am Zug. Gold: 20. Db3+ beendet die Partie. Rot: der schwarze König.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19... Kg8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "20. Db3+"
+    },
+    {
+     "art": "text",
+     "text": " beendet die Partie. Rot: der schwarze König.",
      "stil": "normal"
     }
    ],
@@ -1270,7 +1489,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 10... De7, Weiß am Zug. Gold: das Damenopfer auf h7. Grau: Hinter dem Springer e4 zielt der Läufer d3 auf h7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... De7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: das Damenopfer auf h7. Grau: Hinter dem Springer e4 zielt der Läufer d3 auf h7.",
      "stil": "normal"
     }
    ],
@@ -1353,7 +1581,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 11... Kxh7 12. Sxf6+, Schwarz am Zug. Rot: Springer und Läufer geben zugleich Schach.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11... Kxh7 12. Sxf6+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Springer und Läufer geben zugleich Schach.",
      "stil": "normal"
     }
    ],
@@ -1427,7 +1664,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 12... Kh6 13. Seg4+ Kg5, Weiß am Zug. Grau: der bisherige Weg des Königs. Gold: 14. h4+.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12... Kh6 13. Seg4+ Kg5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: der bisherige Weg des Königs. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "14. h4+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1511,7 +1766,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 14. h4+ Kf4 15. g3+ Kf3, Weiß am Zug. Gold: 16. Le2+ treibt den König weiter.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "14. h4+ Kf4 15. g3+ Kf3"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16. Le2+"
+    },
+    {
+     "art": "text",
+     "text": " treibt den König weiter.",
      "stil": "normal"
     }
    ],
@@ -1583,7 +1856,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 16. Le2+ Kg2, Weiß am Zug. Der König steht mitten im weißen Lager. Gold: 17. Th2+.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16. Le2+ Kg2"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Der König steht mitten im weißen Lager. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "17. Th2+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1677,7 +1968,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 17... Kg1 18. Kd2#. Rot: das Abzugsschach des Turms. Grau: Der König hat e1 verlassen; drei Figuren decken die Fluchtfelder.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "17... Kg1 18. Kd2#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: das Abzugsschach des Turms. Grau: Der König hat e1 verlassen; drei Figuren decken die Fluchtfelder.",
      "stil": "normal"
     }
    ],
@@ -1782,7 +2082,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Evans-Gambit aus Kapitel 3 nach 6. d4, Schwarz am Zug. Gold: das weiße Zentrum. Rot: der Druck auf f7.",
+     "text": "Das Evans-Gambit aus Kapitel 3 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. d4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: das weiße Zentrum. Rot: der Druck auf f7.",
      "stil": "normal"
     }
    ],
@@ -1859,7 +2168,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Anderssen–Dufresne nach 7... d3, Weiß am Zug. Grau: Der Bauer c3 nimmt dem Springer b1 sein Feld. Gold: 8. Db3 greift f7 (rot) an.",
+     "text": "Anderssen–Dufresne nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... d3"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der Bauer c3 nimmt dem Springer b1 sein Feld. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Db3"
+    },
+    {
+     "art": "text",
+     "text": " greift f7 (rot) an.",
      "stil": "normal"
     }
    ],
@@ -1919,7 +2246,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9... Dg6, Weiß am Zug. Gold: Der Bauer e5 nimmt dem Springer g8 das Feld f6. Rot: Die schwarze Dame zielt auf g2.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9... Dg6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der Bauer e5 nimmt dem Springer g8 das Feld f6. Rot: Die schwarze Dame zielt auf g2.",
      "stil": "normal"
     }
    ],
@@ -1996,7 +2332,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 11. La3, Schwarz am Zug. Gold: Die weißen Läufer zielen auf f7 und e7. Rot: Der schwarze König steht noch in der Mitte. Grau: Springer b1 und Turm a1 stehen noch zu Hause.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. La3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Die weißen Läufer zielen auf f7 und e7. Rot: Der schwarze König steht noch in der Mitte. Grau: Springer b1 und Turm a1 stehen noch zu Hause.",
      "stil": "normal"
     }
    ],
@@ -2071,7 +2416,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 16... Dh5, Weiß am Zug. Rot: Der schwarze König steht noch immer in der Mitte. Grau: die einzigen Figuren, die noch nicht mitspielen. Gold: Anderssens Zug 17. Sf6+.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16... Dh5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der schwarze König steht noch immer in der Mitte. Grau: die einzigen Figuren, die noch nicht mitspielen. Gold: Anderssens Zug ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "17. Sf6+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -2168,7 +2531,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 18... Tg8, Weiß am Zug. Rot: Der Turm g8 zielt auf g2, der Läufer b7 hinter dem Springer c6 auf f3. Gold: 19. Tad1.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "18... Tg8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Turm g8 zielt auf g2, der Läufer b7 hinter dem Springer c6 auf f3. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19. Tad1"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -2259,7 +2640,34 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 19. Tad1, Schwarz am Zug. Gold: 19... Dh3 hält die Stellung. Rot: der Partiezug 19... Dxf3. Grau: Über f5 und d7 läuft das Matt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19. Tad1"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19... Dh3"
+    },
+    {
+     "art": "text",
+     "text": " hält die Stellung. Rot: der Partiezug ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19... Dxf3"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: Über f5 und d7 läuft das Matt.",
      "stil": "normal"
     }
    ],
@@ -2357,7 +2765,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 19... Dxf3 20. Txe7+ Sxe7, Weiß am Zug. Rot: Schwarz droht Matt auf g2. Gold: 21. Dxd7+.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19... Dxf3 20. Txe7+ Sxe7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Schwarz droht Matt auf g2. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21. Dxd7+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -2460,7 +2886,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 21... Kxd7 22. Lf5+, Schwarz am Zug. Rot: Läufer und Turm geben zugleich Schach.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21... Kxd7 22. Lf5+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Läufer und Turm geben zugleich Schach.",
      "stil": "normal"
     }
    ],
@@ -2560,7 +2995,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 23... Kf8 24. Lxe7#. Rot: das Schach. Grau: Der Läufer d7 deckt e8, der Bauer f6 deckt g7 und den Läufer e7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "23... Kf8 24. Lxe7#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: das Schach. Grau: Der Läufer d7 deckt e8, der Bauer f6 deckt g7 und den Läufer e7.",
      "stil": "normal"
     }
    ],
@@ -2726,7 +3170,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Karpow–Kortschnoi nach 12. O-O-O, Schwarz am Zug. Gold: Der h-Bauer steht schon auf h4 und will nach h5. Rot: Der Springer will nach c4.",
+     "text": "Karpow–Kortschnoi nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12. O-O-O"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der h-Bauer steht schon auf h4 und will nach h5. Rot: Der Springer will nach c4.",
      "stil": "normal"
     }
    ],
@@ -2796,7 +3249,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 13... Txc4, Weiß am Zug. Gold: der Hebel 14. h5. Rot: Der Turm zielt auf den Springer c3 vor dem weißen König.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13... Txc4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: der Hebel ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "14. h5"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der Turm zielt auf den Springer c3 vor dem weißen König.",
      "stil": "normal"
     }
    ],
@@ -2885,7 +3356,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 15... Sf6, Weiß am Zug. Rot: Schwarz droht das Qualitätsopfer auf c3. Gold: 16. Sde2 deckt c3 ein zweites Mal mit einer Figur.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "15... Sf6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Schwarz droht das Qualitätsopfer auf c3. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16. Sde2"
+    },
+    {
+     "art": "text",
+     "text": " deckt c3 ein zweites Mal mit einer Figur.",
      "stil": "normal"
     }
    ],
@@ -2977,7 +3466,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 17... Lxh6, Weiß am Zug. Gold: Die Dame nimmt zurück und steht dann vor dem schwarzen König. Rot: Außer dem König hält nur noch der Springer f6 das Feld h7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "17... Lxh6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Die Dame nimmt zurück und steht dann vor dem schwarzen König. Rot: Außer dem König hält nur noch der Springer f6 das Feld h7.",
      "stil": "normal"
     }
    ],
@@ -3057,7 +3555,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 19... T4c5, Weiß am Zug. Rot: der Springer, der h7 hält. Gold: 20. g5 greift ihn an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19... T4c5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: der Springer, der h7 hält. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "20. g5"
+    },
+    {
+     "art": "text",
+     "text": " greift ihn an.",
      "stil": "normal"
     }
    ],
@@ -3161,7 +3677,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 21... Txd5, Weiß am Zug. Gold: Der Springer schlägt zurück. Rot: Von d5 aus greift er f6 und e7 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21... Txd5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der Springer schlägt zurück. Rot: Von d5 aus greift er f6 und e7 an.",
      "stil": "normal"
     }
    ],
@@ -3249,7 +3774,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 23... Lc6, Weiß am Zug. Rot: Zieht der Springer d5 weg, kommt die Dame nach g5. Gold: 24. e5 schließt die Reihe.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "23... Lc6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Zieht der Springer d5 weg, kommt die Dame nach g5. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "24. e5"
+    },
+    {
+     "art": "text",
+     "text": " schließt die Reihe.",
      "stil": "normal"
     }
    ],
@@ -3353,7 +3896,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 25... exf6, Weiß am Zug. Gold: Die Dame schlägt mit Schach auf h7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "25... exf6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Die Dame schlägt mit Schach auf h7.",
      "stil": "normal"
     }
    ],
@@ -3455,7 +4007,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schlussstellung nach 27. Dh8+, Schwarz am Zug. Rot: das Schach. Gold: Es folgen Sxd5+ und Te1+.",
+     "text": "Schlussstellung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "27. Dh8+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: das Schach. Gold: Es folgen Sxd5+ und Te1+.",
      "stil": "normal"
     }
    ],
@@ -3561,7 +4122,36 @@
    "reihe": [
     "11.43"
    ],
-   "beispiel": null,
+   "beispiel": {
+    "id": "k11-a42-k",
+    "pfad": [
+     "d4",
+     "d5",
+     "c4",
+     "e6",
+     "Nc3",
+     "Nf6",
+     "Nf3",
+     "c5",
+     "cxd5",
+     "Nxd5",
+     "e3",
+     "Nc6",
+     "Bb5",
+     "Be7",
+     "O-O",
+     "O-O",
+     "Nxd5",
+     "exd5",
+     "b3",
+     "Re8",
+     "Bb2",
+     "Rf8",
+     "Qe2",
+     "cxd4",
+     "Nxd4"
+    ]
+   },
    "quelle": {
     "datei": "kap11_beispielpartien.tex",
     "zeile": 692
@@ -3601,7 +4191,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Fischer–Petrosjan nach 10... exd5, Weiß am Zug. Rot: die isolierten Bauern d5 und a6. Gold: die Felder d4 und c5.",
+     "text": "Fischer–Petrosjan nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... exd5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: die isolierten Bauern d5 und a6. Gold: die Felder d4 und c5.",
      "stil": "normal"
     }
    ],
@@ -3667,7 +4266,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 12... Dd7, Weiß am Zug. Grau: Schwarz bietet den Damentausch an. Gold: 13. Te1 entwickelt zuerst den Turm.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12... Dd7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Schwarz bietet den Damentausch an. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13. Te1"
+    },
+    {
+     "art": "text",
+     "text": " entwickelt zuerst den Turm.",
      "stil": "normal"
     }
    ],
@@ -3754,7 +4371,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 13... Dxa4 14. Sxa4, Schwarz am Zug. Gold: der Weg des Springers nach c5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13... Dxa4 14. Sxa4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: der Weg des Springers nach c5.",
      "stil": "normal"
     }
    ],
@@ -3823,7 +4449,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 16. Lc5, Schwarz am Zug. Gold: Weiß bietet den Tausch der dunkelfeldrigen Läufer an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16. Lc5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Weiß bietet den Tausch der dunkelfeldrigen Läufer an.",
      "stil": "normal"
     }
    ],
@@ -3901,7 +4536,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 18. b4, Schwarz am Zug. Gold: Der Bauer b4 stützt das Feld c5 für den Springer.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "18. b4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der Bauer b4 stützt das Feld c5 für den Springer.",
      "stil": "normal"
     }
    ],
@@ -3988,7 +4632,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 19. Sc5, Schwarz am Zug. Gold: der Vorposten. Rot: Der Springer greift a6 und den Läufer e6 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19. Sc5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: der Vorposten. Rot: Der Springer greift a6 und den Läufer e6 an.",
      "stil": "normal"
     }
    ],
@@ -4076,7 +4729,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 20... Tea7, Weiß am Zug. Rot: die beiden schwachen Bauern. Gold: 21. Te5 greift d5 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "20... Tea7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: die beiden schwachen Bauern. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21. Te5"
+    },
+    {
+     "art": "text",
+     "text": " greift d5 an.",
      "stil": "normal"
     }
    ],
@@ -4163,7 +4834,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 21... Ld7, Weiß am Zug. Grau: Der Läufer will nach b5. Gold: 22. Sxd7+ kommt ihm zuvor.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21... Ld7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der Läufer will nach b5. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "22. Sxd7+"
+    },
+    {
+     "art": "text",
+     "text": " kommt ihm zuvor.",
      "stil": "normal"
     }
    ],
@@ -4263,7 +4952,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 23... Td6, Weiß am Zug. Gold: Über die freie c-Linie dringt der Turm auf die siebte Reihe ein.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "23... Td6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Über die freie c-Linie dringt der Turm auf die siebte Reihe ein.",
      "stil": "normal"
     }
    ],
@@ -4367,7 +5065,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 24. Tc7, Schwarz am Zug. Rot: Der Turm steht auf der siebten Reihe und greift f7 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "24. Tc7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Turm steht auf der siebten Reihe und greift f7 an.",
      "stil": "normal"
     }
    ],
@@ -4461,7 +5168,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 31. Tee7, Schwarz am Zug. Rot: Zwei Türme beherrschen die siebte Reihe.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "31. Tee7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Zwei Türme beherrschen die siebte Reihe.",
      "stil": "normal"
     }
    ],
@@ -4569,7 +5285,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 33. Tb7, Schwarz am Zug. Rot: Der König steht am Rand fest. Grau: Der Turm b7 deckt den Turm f7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "33. Tb7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der König steht am Rand fest. Grau: Der Turm b7 deckt den Turm f7.",
      "stil": "normal"
     }
    ],
@@ -4686,7 +5411,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schlussstellung nach 34. Lc4, Schwarz am Zug. Grau: Der Läufer deckt f7. Gold: Es droht Th7 mit Matt auf h8 (rot).",
+     "text": "Schlussstellung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "34. Lc4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Der Läufer deckt f7. Gold: Es droht Th7 mit Matt auf h8 (rot).",
      "stil": "normal"
     }
    ],
@@ -4868,7 +5602,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Karpow–Lautier nach 19... Lb6, Weiß am Zug. Grau: zwei weiße gegen drei schwarze Bauern am Damenflügel. Gold: 20. b4.",
+     "text": "Karpow–Lautier nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "19... Lb6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: zwei weiße gegen drei schwarze Bauern am Damenflügel. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "20. b4"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -4956,7 +5708,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 21... a6, Weiß am Zug. Grau: Die beiden weißen Bauern stehen nebeneinander. Gold: Der Hebel b5 ist vorbereitet.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21... a6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Die beiden weißen Bauern stehen nebeneinander. Gold: Der Hebel b5 ist vorbereitet.",
      "stil": "normal"
     }
    ],
@@ -5044,7 +5805,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 26... Df4, Weiß am Zug. Gold: Jetzt folgt 27. b5. Rot: das Ziel des Hebels.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "26... Df4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Jetzt folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "27. b5"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: das Ziel des Hebels.",
      "stil": "normal"
     }
    ],
@@ -5153,7 +5932,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 28. axb5, Schwarz am Zug. Gold: Weiß droht bxc6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "28. axb5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Weiß droht bxc6.",
      "stil": "normal"
     }
    ],
@@ -5250,7 +6038,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 29... Dxe5, Weiß am Zug. Gold: 30. bxc6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "29... Dxe5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. bxc6"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -5349,7 +6155,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 30... bxc6, Weiß am Zug. Rot: Den Bauern c6 kann kein Bauer mehr decken.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30... bxc6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Den Bauern c6 kann kein Bauer mehr decken.",
      "stil": "normal"
     }
    ],
@@ -5472,7 +6287,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 35... Tc8, Weiß am Zug. Rot: Der Turm c3 greift den Bauern c6 an; der Turm c8 muss ihn decken.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "35... Tc8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Turm c3 greift den Bauern c6 an; der Turm c8 muss ihn decken.",
      "stil": "normal"
     }
    ],
@@ -5588,7 +6412,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 37... c5, Weiß am Zug. Gold: 38. Sd4. Grau: Der Bauer c5 ist an den Turm c8 gefesselt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "37... c5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "38. Sd4"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: Der Bauer c5 ist an den Turm c8 gefesselt.",
      "stil": "normal"
     }
    ],
@@ -5708,7 +6550,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 39... Te8, Weiß am Zug. Gold: Der Springer geht über b5 nach d6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "39... Te8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der Springer geht über b5 nach d6.",
      "stil": "normal"
     }
    ],
@@ -5838,7 +6689,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 41... Sa4, Weiß am Zug. Rot: Der Springer d6 greift Turm und Läufer an. Gold: 42. Ta3.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "41... Sa4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Springer d6 greift Turm und Läufer an. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "42. Ta3"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -5967,7 +6836,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 43... Ld5?, Weiß am Zug. Gold: 44. e6. Der Bauer ist nur noch zwei Schritte von e8 entfernt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "43... Ld5?"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "44. e6"
+    },
+    {
+     "art": "text",
+     "text": ". Der Bauer ist nur noch zwei Schritte von e8 entfernt.",
      "stil": "normal"
     }
    ],
@@ -6200,7 +7087,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Carlsen–Tomaschewski nach 12... Sg6, Weiß am Zug. Grau: dieselbe Pyramide. Gold: Weiß tauscht beide Läufer.",
+     "text": "Carlsen–Tomaschewski nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12... Sg6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: dieselbe Pyramide. Gold: Weiß tauscht beide Läufer.",
      "stil": "normal"
     }
    ],
@@ -6291,7 +7187,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 13. Lxg6 hxg6 14. Lxd6 Dxd6, Weiß am Zug. Gold: der Weg des Springers nach e5. Rot: der Läufer b7 hinter seinem Bauern d5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13. Lxg6 hxg6 14. Lxd6 Dxd6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: der Weg des Springers nach e5. Rot: der Läufer b7 hinter seinem Bauern d5.",
      "stil": "normal"
     }
    ],
@@ -6386,7 +7291,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 15. Se5 g5 16. f4 gxf4, Weiß am Zug. Gold: der Springer auf e5 und 17. Tf1. Grau: Den Bauern f4 holt sich Weiß im 20. Zug.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "15. Se5 g5 16. f4 gxf4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: der Springer auf e5 und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "17. Tf1"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: Den Bauern f4 holt sich Weiß im 20. Zug.",
      "stil": "normal"
     }
    ],
@@ -6464,7 +7387,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 20... Se4, Weiß am Zug. Grau: Die Damen stehen sich gegenüber. Gold: 21. Sxe4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "20... Se4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Die Damen stehen sich gegenüber. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21. Sxe4"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -6550,7 +7491,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 23. dxc5 bxc5 24. Td7, Schwarz am Zug. Rot: Der Turm greift auf der siebten Reihe den Läufer b7 und den Bauern f7 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "23. dxc5 bxc5 24. Td7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Turm greift auf der siebten Reihe den Läufer b7 und den Bauern f7 an.",
      "stil": "normal"
     }
    ],
@@ -6652,7 +7602,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schlussstellung nach 30. Sc4, Schwarz am Zug. Gold: der freie a-Bauer und die Felder des Springers. Rot: Der Läufer a8 steht hinter seinem Bauern e4.",
+     "text": "Schlussstellung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. Sc4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: der freie a-Bauer und die Felder des Springers. Rot: Der Läufer a8 steht hinter seinem Bauern e4.",
      "stil": "normal"
     }
    ],
@@ -6757,7 +7716,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 12. Sbd2, Schwarz am Zug: die Hauptvariante aus Kapitel 2. Grau: die Spannung im Zentrum.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12. Sbd2"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug: die Hauptvariante aus Kapitel 2. Grau: die Spannung im Zentrum.",
      "stil": "normal"
     }
    ],
@@ -6831,7 +7799,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 13. d5, Schwarz am Zug. Gold: Die Kette e4–d5 zeigt zum Damenflügel. Grau: Die Bauern d6 und e5 stehen fest.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13. d5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Die Kette e4–d5 zeigt zum Damenflügel. Grau: Die Bauern d6 und e5 stehen fest.",
      "stil": "normal"
     }
    ],
@@ -6913,7 +7890,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 18... Ta8, Weiß am Zug. Grau: Auf der offenen a-Linie stehen sich die Türme gegenüber.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "18... Ta8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Auf der offenen a-Linie stehen sich die Türme gegenüber.",
      "stil": "normal"
     }
    ],
@@ -6996,7 +7982,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 23... Dd8, Weiß am Zug. Rot: Schwarz will die Türme tauschen. Gold: 24. La7 verhindert es.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "23... Dd8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Schwarz will die Türme tauschen. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "24. La7"
+    },
+    {
+     "art": "text",
+     "text": " verhindert es.",
      "stil": "normal"
     }
    ],
@@ -7105,7 +8109,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 24... Se8, Weiß am Zug. Gold: Der Läufer sperrt die a-Linie. Grau: Der Turm a2 deckt ihn.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "24... Se8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der Läufer sperrt die a-Linie. Grau: Der Turm a2 deckt ihn.",
      "stil": "normal"
     }
    ],
@@ -7200,7 +8213,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 26. Tea1, Schwarz am Zug. Gold: der Läufer a7. Grau: Hinter ihm stehen zwei weiße Türme bereit.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "26. Tea1"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: der Läufer a7. Grau: Hinter ihm stehen zwei weiße Türme bereit.",
      "stil": "normal"
     }
    ],
@@ -7296,7 +8318,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 31. f5, Schwarz am Zug (aus Kapitel 6 bekannt). Gold: Der Bauer f5 nimmt Schwarz am Königsflügel den Raum. Grau: Der Läufer a7 sperrt weiter die a-Linie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "31. f5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug (aus Kapitel 6 bekannt). Gold: Der Bauer f5 nimmt Schwarz am Königsflügel den Raum. Grau: Der Läufer a7 sperrt weiter die a-Linie.",
      "stil": "normal"
     }
    ],
@@ -7407,7 +8438,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 40. Se3, Schwarz am Zug. Gold: die Felder h5 und g6 und der Tausch auf f7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "40. Se3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: die Felder h5 und g6 und der Tausch auf f7.",
      "stil": "normal"
     }
    ],
@@ -7527,7 +8567,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 42. Dh5, Schwarz am Zug. Gold: Die Dame geht weiter nach g6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "42. Dh5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Die Dame geht weiter nach g6.",
      "stil": "normal"
     }
    ],
@@ -7661,7 +8710,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schlussstellung nach 44. Sh5, Schwarz am Zug. Rot: Es droht Dxg7#. Grau: Der Läufer steht noch immer auf a7.",
+     "text": "Schlussstellung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "44. Sh5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Es droht Dxg7#. Grau: Der Läufer steht noch immer auf a7.",
      "stil": "normal"
     }
    ],
@@ -7814,7 +8872,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 35. Kg3, Schwarz am Zug. Rot: Der Turm greift auf der siebten Reihe c7 an. Gold: der Freibauer g5 und der Weg des Königs.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "35. Kg3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Turm greift auf der siebten Reihe c7 an. Gold: der Freibauer g5 und der Weg des Königs.",
      "stil": "normal"
     }
    ],
@@ -7945,7 +9012,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 37. g6, Schwarz am Zug. Gold: Der Freibauer steht auf g6, der König folgt über g5 nach f6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "37. g6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der Freibauer steht auf g6, der König folgt über g5 nach f6.",
      "stil": "normal"
     }
    ],
@@ -8065,7 +9141,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 39. Kf6, Schwarz am Zug. Rot: Es droht Th8#. Grau: Der Bauer f5 schirmt den weißen König ab.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "39. Kf6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Es droht Th8#. Grau: Der Bauer f5 schirmt den weißen König ab.",
      "stil": "normal"
     }
    ],
@@ -8184,7 +9269,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 41. Txc7, Schwarz am Zug. Rot: Es droht Tc8+ mit Matt. Weiß hat noch einen Bauern weniger.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "41. Txc7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Es droht Tc8+ mit Matt. Weiß hat noch einen Bauern weniger.",
      "stil": "normal"
     }
    ],
@@ -8323,7 +9417,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 43. Kf6, Schwarz am Zug. Gold: Der Freibauer rückt weiter vor, begleitet von König und Turm.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "43. Kf6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der Freibauer rückt weiter vor, begleitet von König und Turm.",
      "stil": "normal"
     }
    ],
@@ -8455,7 +9558,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 45. g7+, Schwarz am Zug. Rot: das Schach. Gold: Der König holt sich bald den Bauern d5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "45. g7+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: das Schach. Gold: Der König holt sich bald den Bauern d5.",
      "stil": "normal"
     }
    ],
@@ -8591,7 +9703,34 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 42... Txe4, Weiß am Zug. Gold: Mit 43. Tc7 geht der Turm auf die siebte Reihe. Rot: der Partiezug 43. Ta3.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "42... Txe4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "43. Tc7"
+    },
+    {
+     "art": "text",
+     "text": " geht der Turm auf die siebte Reihe. Rot: der Partiezug ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "43. Ta3"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -8732,7 +9871,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 44... Tc7, Weiß am Zug. Gold: Der Turm will über f7 doch noch auf die siebte Reihe.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "44... Tc7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der Turm will über f7 doch noch auf die siebte Reihe.",
      "stil": "normal"
     }
    ],
@@ -8867,7 +10015,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 46. Tf7, Schwarz am Zug. Rot: Der Turm greift a7 und h7 zugleich an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "46. Tf7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Turm greift a7 und h7 zugleich an.",
      "stil": "normal"
     }
    ],
@@ -9026,7 +10183,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 48. h4+, Schwarz am Zug. Rot: das Schach. Grau: Turm und König decken den Bauern.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "48. h4+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: das Schach. Grau: Turm und König decken den Bauern.",
      "stil": "normal"
     }
    ],
@@ -9163,7 +10329,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 50. Tg7, Schwarz am Zug. Rot: Der Turm greift den Bauern g6 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "50. Tg7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Turm greift den Bauern g6 an.",
      "stil": "normal"
     }
    ],
@@ -9304,7 +10479,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 52. h5, Schwarz am Zug. Gold: Der Hebel gegen g6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "52. h5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der Hebel gegen g6.",
      "stil": "normal"
     }
    ],
@@ -9454,7 +10638,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 54. Tg5+, Schwarz am Zug. Rot: das Schach von der Seite. Gold: Hinter dem König steht der Bauer b5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "54. Tg5+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: das Schach von der Seite. Gold: Hinter dem König steht der Bauer b5.",
      "stil": "normal"
     }
    ],
@@ -9594,7 +10787,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Opernpartie nach 10. Sxb5 cxb5 11. Lxb5+, Schwarz am Zug.",
+     "text": "Opernpartie nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Sxb5 cxb5 11. Lxb5+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug.",
      "stil": "normal"
     }
    ],
@@ -9648,7 +10850,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Colle–O'Hanlon nach 13. Sg5+, Schwarz am Zug.",
+     "text": "Colle–O'Hanlon nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13. Sg5+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug.",
      "stil": "normal"
     }
    ],
@@ -9680,7 +10891,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Carlsen–Tomaschewski nach 22... dxe4, Weiß am Zug.",
+     "text": "Carlsen–Tomaschewski nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "22... dxe4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],
@@ -9712,7 +10932,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Capablanca–Tartakower nach 33... Sf5, Weiß am Zug.",
+     "text": "Capablanca–Tartakower nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "33... Sf5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],
@@ -22175,6 +23404,450 @@
     }
    ],
    "status": "freigegeben"
+  },
+  {
+   "id": "k11-a10-k",
+   "kapitel": 11,
+   "abschnitt": "11.3",
+   "titel": "Konstruierte Partie zu Abb. 11.10",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "d4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "d5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Bg5",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Be7",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "e5",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Nfd7",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Bxe7",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Qxe7",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Nce2",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "c5",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "c3",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Nc6",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Nf3",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "cxd4",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "cxd4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "O-O",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "Nc3",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Qd8",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Bd3",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "Qb6",
+                                                   "zeichen": "",
+                                                   "abbildungen": [],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "O-O",
+                                                     "zeichen": "",
+                                                     "abbildungen": [],
+                                                     "weiter": [
+                                                      {
+                                                       "zug": "Qc7",
+                                                       "zeichen": "",
+                                                       "abbildungen": [
+                                                        "11.10"
+                                                       ],
+                                                       "weiter": []
+                                                      }
+                                                     ]
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "11.10",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "Nc3",
+      "Nf6",
+      "Bg5",
+      "Be7",
+      "e5",
+      "Nfd7",
+      "Bxe7",
+      "Qxe7",
+      "Nce2",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "cxd4",
+      "cxd4",
+      "O-O",
+      "Nc3",
+      "Qd8",
+      "Bd3",
+      "Qb6",
+      "O-O",
+      "Qc7"
+     ]
+    }
+   ],
+   "status": "konstruiert"
+  },
+  {
+   "id": "k11-a42-k",
+   "kapitel": 11,
+   "abschnitt": "11.7",
+   "titel": "Konstruierte Partie zu Abb. 11.42",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "d5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "c4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "e6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nf3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "c5",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "cxd5",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Nxd5",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "e3",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Nc6",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bb5",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Be7",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "O-O",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "O-O",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Nxd5",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "exd5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "b3",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Re8",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "Bb2",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Rf8",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Qe2",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "cxd4",
+                                                   "zeichen": "",
+                                                   "abbildungen": [],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "Nxd4",
+                                                     "zeichen": "",
+                                                     "abbildungen": [
+                                                      "11.42"
+                                                     ],
+                                                     "weiter": []
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "11.42",
+     "pfad": [
+      "d4",
+      "d5",
+      "c4",
+      "e6",
+      "Nc3",
+      "Nf6",
+      "Nf3",
+      "c5",
+      "cxd5",
+      "Nxd5",
+      "e3",
+      "Nc6",
+      "Bb5",
+      "Be7",
+      "O-O",
+      "O-O",
+      "Nxd5",
+      "exd5",
+      "b3",
+      "Re8",
+      "Bb2",
+      "Rf8",
+      "Qe2",
+      "cxd4",
+      "Nxd4"
+     ]
+    }
+   ],
+   "status": "konstruiert"
   }
  ]
 }

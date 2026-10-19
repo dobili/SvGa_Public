@@ -57,7 +57,34 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Doppelangriff der Dame nach 1. Dd5+, Schwarz am Zug. Rot: Die Dame greift den König g8 und den ungedeckten Turm a8 zugleich an. Nach 1... Kh8 setzt 2. Dxa8# sogar matt.",
+     "text": "Doppelangriff der Dame nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dd5+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Die Dame greift den König g8 und den ungedeckten Turm a8 zugleich an. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kh8"
+    },
+    {
+     "art": "text",
+     "text": " setzt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Dxa8#"
+    },
+    {
+     "art": "text",
+     "text": " sogar matt.",
      "stil": "normal"
     }
    ],
@@ -142,7 +169,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Bauerngabel nach 5... d5, Weiß am Zug. Rot: Der Bauer d5 greift Läufer c4 und Springer e4 zugleich an.",
+     "text": "Die Bauerngabel nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... d5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Bauer d5 greift Läufer c4 und Springer e4 zugleich an.",
      "stil": "normal"
     }
    ],
@@ -214,7 +250,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Absolute Fesselung nach 1. e4 e5 2. Sf3 Sc6 3. Lb5 d6, Weiß am Zug. Grau: die Fesselung. Rot: Der Springer c6 darf nicht ziehen.",
+     "text": "Absolute Fesselung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 Sc6 3. Lb5 d6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: die Fesselung. Rot: Der Springer c6 darf nicht ziehen.",
      "stil": "normal"
     }
    ],
@@ -266,7 +311,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Relative Fesselung im Abgelehnten Damengambit aus Kapitel 2 nach 1. d4 d5 2. c4 e6 3. Sc3 Sf6 4. Lg5, Schwarz am Zug. Grau: die Fesselung. Rot: Zieht der Springer, schlägt der Läufer die Dame.",
+     "text": "Relative Fesselung im Abgelehnten Damengambit aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 d5 2. c4 e6 3. Sc3 Sf6 4. Lg5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: die Fesselung. Rot: Zieht der Springer, schlägt der Läufer die Dame.",
      "stil": "normal"
     }
    ],
@@ -314,7 +368,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug. Gold: 1... Th1+.",
+     "text": "Schwarz am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Th1+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -375,7 +438,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... Th1+, Weiß am Zug. Rot: das Schach. Grau: der ungedeckte Turm a1 hinter dem König.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Th1+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: das Schach. Grau: der ungedeckte Turm a1 hinter dem König.",
      "stil": "normal"
     }
    ],
@@ -536,7 +608,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Abzugsschach nach 1. Sf7+, Schwarz am Zug. Rot: Der Turm e1 gibt Schach, der Springer greift Dame und Turm an. Grau: Der Läufer c4 deckt f7.",
+     "text": "Abzugsschach nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sf7+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Turm e1 gibt Schach, der Springer greift Dame und Turm an. Grau: Der Läufer c4 deckt f7.",
      "stil": "normal"
     }
    ],
@@ -583,7 +664,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Grau: Der Springer e4 steht zwischen Turm e1 und König e8. Gold: 1. Sd6++.",
+     "text": "Weiß am Zug. Grau: Der Springer e4 steht zwischen Turm e1 und König e8. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sd6++"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -645,7 +735,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Sd6++, Schwarz am Zug. Rot: zwei Schachs zugleich.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sd6++"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: zwei Schachs zugleich.",
      "stil": "normal"
     }
    ],
@@ -697,7 +796,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... Kf8 2. Te8#. Grau: Der Springer deckt den Turm. Rot: e7 und g8 beherrscht der Turm.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kf8 2. Te8#"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: Der Springer deckt den Turm. Rot: e7 und g8 beherrscht der Turm.",
      "stil": "normal"
     }
    ],
@@ -752,7 +860,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Hinlenkung, Weiß am Zug. Grau: Der König deckt f7. Gold: 1. Th8+! Rot: die Gabel 2. Sxf7+.",
+     "text": "Hinlenkung, Weiß am Zug. Grau: Der König deckt f7. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th8+!"
+    },
+    {
+     "art": "text",
+     "text": " Rot: die Gabel ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sxf7+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -814,7 +940,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Th8+ Kxh8 2. Sxf7+, Schwarz am Zug. Rot: Der Springer greift König und Dame zugleich an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th8+ Kxh8 2. Sxf7+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Springer greift König und Dame zugleich an.",
      "stil": "normal"
     }
    ],
@@ -864,7 +999,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski (Moskau 1966) aus Kapitel 6, Weiß am Zug. Gold: 30. Dh8+! Rot: die Gabel 31. Sxf7+.",
+     "text": "Petrosjan–Spasski (Moskau 1966) aus Kapitel 6, Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. Dh8+!"
+    },
+    {
+     "art": "text",
+     "text": " Rot: die Gabel ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "31. Sxf7+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -915,8 +1068,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Räumung, Weiß am Zug. Rot: Die Dame g1 möchte nach g7. Grau: Dort steht der eigene Turm. Gold: 1. Txh7+!",
+     "text": "Räumung, Weiß am Zug. Rot: Die Dame g1 möchte nach g7. Grau: Dort steht der eigene Turm. Gold: ",
      "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Txh7+!"
     }
    ],
    "art": "fliesstext",
@@ -1045,7 +1202,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Lxc6 Lxc6 2. Se7+, Schwarz am Zug. Rot: Der Springer greift König, Turm und Läufer zugleich an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lxc6 Lxc6 2. Se7+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Springer greift König, Turm und Läufer zugleich an.",
      "stil": "normal"
     }
    ],
@@ -1099,8 +1265,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Überlastung, Weiß am Zug. Grau: Der Turm d8 deckt den Springer d5. Rot: Zugleich muss er die Grundreihe gegen Te8 schützen. Gold: 1. Lxd5!",
+     "text": "Überlastung, Weiß am Zug. Grau: Der Turm d8 deckt den Springer d5. Rot: Zugleich muss er die Grundreihe gegen Te8 schützen. Gold: ",
      "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lxd5!"
     }
    ],
    "art": "fliesstext",
@@ -1153,7 +1323,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Stafford-Gambit aus Kapitel 3 nach 1. e4 e5 2. Sf3 Sf6 3. Sxe5 Sc6 4. Sxc6 dxc6 5. d3 Lc5 6. Lg5??, Schwarz am Zug. Grau: die relative Fesselung.",
+     "text": "Das Stafford-Gambit aus Kapitel 3 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 Sf6 3. Sxe5 Sc6 4. Sxc6 dxc6 5. d3 Lc5 6. Lg5??"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: die relative Fesselung.",
      "stil": "normal"
     }
    ],
@@ -1226,7 +1405,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Sxe4! 7. Lxd8?? Lxf2+!, Weiß am Zug. Rot: Der Springer e4 deckt f2 und d2.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Sxe4! 7. Lxd8?? Lxf2+!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Springer e4 deckt f2 und d2.",
      "stil": "normal"
     }
    ],
@@ -1291,8 +1479,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Desperado, Weiß am Zug. Rot: Der Turm e8 greift die Dame e2 an. Grau: Der Turm c1 greift die Dame c7 an. Gold: 1. Dxe8+!",
+     "text": "Desperado, Weiß am Zug. Rot: Der Turm e8 greift die Dame e2 an. Grau: Der Turm c1 greift die Dame c7 an. Gold: ",
      "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxe8+!"
     }
    ],
    "art": "fliesstext",
@@ -1358,7 +1550,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... Lxa2? 2. b3!, Schwarz am Zug. Rot: Der Läufer a2 ist eingesperrt. Grau: b1 deckt der König, b3 der Bauer c2. Gold: Weiß droht Kb2.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Lxa2? 2. b3!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Läufer a2 ist eingesperrt. Grau: b1 deckt der König, b3 der Bauer c2. Gold: Weiß droht Kb2.",
      "stil": "normal"
     }
    ],
@@ -1413,7 +1614,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Arche-Noah-Falle aus Kapitel 4 nach 11. Dd5 c4!, Weiß am Zug. Rot: Der Bauer b5 deckt a4 und c4. Grau: a2 und c2 sind von eigenen Bauern besetzt.",
+     "text": "Die Arche-Noah-Falle aus Kapitel 4 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. Dd5 c4!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Bauer b5 deckt a4 und c4. Grau: a2 und c2 sind von eigenen Bauern besetzt.",
      "stil": "normal"
     }
    ],
@@ -1555,7 +1765,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug. Rot: Weiß droht Td8+ mit Matt. Gold: 1... De1+.",
+     "text": "Schwarz am Zug. Rot: Weiß droht Td8+ mit Matt. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... De1+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1616,7 +1835,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... De1+ 2. Kg2 De2+, Weiß am Zug. Grau: Auf g1 und h3 wartet das nächste Schach.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... De1+ 2. Kg2 De2+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Auf g1 und h3 wartet das nächste Schach.",
      "stil": "normal"
     }
    ],
@@ -1669,8 +1897,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Grau: g1 deckt der Läufer d4, g2 der Bauer h3, der Bauer h2 ist blockiert. Gold: 1. Dg8+!!",
+     "text": "Weiß am Zug. Grau: g1 deckt der Läufer d4, g2 der Bauer h3, der Bauer h2 ist blockiert. Gold: ",
      "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dg8+!!"
     }
    ],
    "art": "fliesstext",
@@ -1809,7 +2041,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Sxd5? exd5 2. Lxd5 Sxd5, Weiß am Zug. Weiß hat zwei Leichtfiguren für zwei Bauern gegeben. Rot: Der Turm d1 greift noch an. Grau: Der Turm d8 deckt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sxd5? exd5 2. Lxd5 Sxd5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Weiß hat zwei Leichtfiguren für zwei Bauern gegeben. Rot: Der Turm d1 greift noch an. Grau: Der Turm d8 deckt.",
      "stil": "normal"
     }
    ],
@@ -1849,7 +2090,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Txd5 Txd5, Weiß am Zug. Die Bilanz: 5 gewonnen, 11 verloren.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Txd5 Txd5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Die Bilanz: 5 gewonnen, 11 verloren.",
      "stil": "normal"
     }
    ],
@@ -1973,7 +2223,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Sxd5 Sxd5 2. Txd5, Schwarz am Zug. Grau: Der Turm d1 deckt den Turm d5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sxd5 Sxd5 2. Txd5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Der Turm d1 deckt den Turm d5.",
      "stil": "normal"
     }
    ],
@@ -2030,7 +2289,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Erstickungsmatt nach 1. Dg8+ Txg8 2. Sf7#. Rot: das Schach. Grau: Felder, die eigene Figuren besetzen.",
+     "text": "Erstickungsmatt nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dg8+ Txg8 2. Sf7#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: das Schach. Grau: Felder, die eigene Figuren besetzen.",
      "stil": "normal"
     }
    ],
@@ -2088,7 +2356,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Grundreihenmatt nach 1. Te8#. Rot: das Schach, f8 und h8 beherrscht der Turm. Grau: die eigenen Bauern.",
+     "text": "Grundreihenmatt nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Te8#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: das Schach, f8 und h8 beherrscht der Turm. Grau: die eigenen Bauern.",
      "stil": "normal"
     }
    ],
@@ -2139,7 +2416,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Gold: 1. Dxh7+!! Kxh7 (einziger Zug) und 2. Th3#. Grau: g6 und g8 sperrt der Springer e7.",
+     "text": "Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxh7+!! Kxh7"
+    },
+    {
+     "art": "text",
+     "text": " (einziger Zug) und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Th3#"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: g6 und g8 sperrt der Springer e7.",
      "stil": "normal"
     }
    ],
@@ -2497,7 +2792,74 @@
    ],
    "art": "uebung",
    "reihe": [],
-   "beispiel": null,
+   "beispiel": {
+    "id": "k07-a45-k",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d4",
+     "exd4",
+     "O-O",
+     "Nxe4",
+     "cxd4",
+     "d5",
+     "dxc5",
+     "dxc4",
+     "Qc2",
+     "Nxc5",
+     "Qxc4",
+     "Ne6",
+     "Nc3",
+     "Ncd4",
+     "Nxd4",
+     "Qxd4",
+     "Qxd4",
+     "Nxd4",
+     "Bf4",
+     "Bf5",
+     "Bxc7",
+     "O-O",
+     "Rad1",
+     "Nc6",
+     "Rfe1",
+     "Rfe8",
+     "h3",
+     "Rxe1+",
+     "Rxe1",
+     "Bd7",
+     "a4",
+     "Be6",
+     "Bd6",
+     "Rd8",
+     "Bf4",
+     "Rd4",
+     "Be3",
+     "Rb4",
+     "Bc5",
+     "Rxb2",
+     "Bb6",
+     "Rxb6",
+     "Nd5",
+     "Rb2",
+     "Nc3",
+     "Kf8",
+     "a5",
+     "Bd5",
+     "Nxd5",
+     "Nxa5",
+     "Nc3",
+     "Nc6",
+     "Rd1",
+     "Kg8",
+     "Re1"
+    ]
+   },
    "quelle": {
     "datei": "kap07_taktik.tex",
     "zeile": 793
@@ -6900,6 +7262,528 @@
     }
    ],
    "status": "freigegeben"
+  },
+  {
+   "id": "k07-a45-k",
+   "kapitel": 7,
+   "abschnitt": "7.5",
+   "titel": "Konstruierte Partie zu Abb. 7.45",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "exd4",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Nxe4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "cxd4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "d5",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "dxc5",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "dxc4",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qc2",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Nxc5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxc4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Ne6",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "Nc3",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Ncd4",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Nxd4",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "Qxd4",
+                                                   "zeichen": "",
+                                                   "abbildungen": [],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "Qxd4",
+                                                     "zeichen": "",
+                                                     "abbildungen": [],
+                                                     "weiter": [
+                                                      {
+                                                       "zug": "Nxd4",
+                                                       "zeichen": "",
+                                                       "abbildungen": [],
+                                                       "weiter": [
+                                                        {
+                                                         "zug": "Bf4",
+                                                         "zeichen": "",
+                                                         "abbildungen": [],
+                                                         "weiter": [
+                                                          {
+                                                           "zug": "Bf5",
+                                                           "zeichen": "",
+                                                           "abbildungen": [],
+                                                           "weiter": [
+                                                            {
+                                                             "zug": "Bxc7",
+                                                             "zeichen": "",
+                                                             "abbildungen": [],
+                                                             "weiter": [
+                                                              {
+                                                               "zug": "O-O",
+                                                               "zeichen": "",
+                                                               "abbildungen": [],
+                                                               "weiter": [
+                                                                {
+                                                                 "zug": "Rad1",
+                                                                 "zeichen": "",
+                                                                 "abbildungen": [],
+                                                                 "weiter": [
+                                                                  {
+                                                                   "zug": "Nc6",
+                                                                   "zeichen": "",
+                                                                   "abbildungen": [],
+                                                                   "weiter": [
+                                                                    {
+                                                                     "zug": "Rfe1",
+                                                                     "zeichen": "",
+                                                                     "abbildungen": [],
+                                                                     "weiter": [
+                                                                      {
+                                                                       "zug": "Rfe8",
+                                                                       "zeichen": "",
+                                                                       "abbildungen": [],
+                                                                       "weiter": [
+                                                                        {
+                                                                         "zug": "h3",
+                                                                         "zeichen": "",
+                                                                         "abbildungen": [],
+                                                                         "weiter": [
+                                                                          {
+                                                                           "zug": "Rxe1+",
+                                                                           "zeichen": "",
+                                                                           "abbildungen": [],
+                                                                           "weiter": [
+                                                                            {
+                                                                             "zug": "Rxe1",
+                                                                             "zeichen": "",
+                                                                             "abbildungen": [],
+                                                                             "weiter": [
+                                                                              {
+                                                                               "zug": "Bd7",
+                                                                               "zeichen": "",
+                                                                               "abbildungen": [],
+                                                                               "weiter": [
+                                                                                {
+                                                                                 "zug": "a4",
+                                                                                 "zeichen": "",
+                                                                                 "abbildungen": [],
+                                                                                 "weiter": [
+                                                                                  {
+                                                                                   "zug": "Be6",
+                                                                                   "zeichen": "",
+                                                                                   "abbildungen": [],
+                                                                                   "weiter": [
+                                                                                    {
+                                                                                     "zug": "Bd6",
+                                                                                     "zeichen": "",
+                                                                                     "abbildungen": [],
+                                                                                     "weiter": [
+                                                                                      {
+                                                                                       "zug": "Rd8",
+                                                                                       "zeichen": "",
+                                                                                       "abbildungen": [],
+                                                                                       "weiter": [
+                                                                                        {
+                                                                                         "zug": "Bf4",
+                                                                                         "zeichen": "",
+                                                                                         "abbildungen": [],
+                                                                                         "weiter": [
+                                                                                          {
+                                                                                           "zug": "Rd4",
+                                                                                           "zeichen": "",
+                                                                                           "abbildungen": [],
+                                                                                           "weiter": [
+                                                                                            {
+                                                                                             "zug": "Be3",
+                                                                                             "zeichen": "",
+                                                                                             "abbildungen": [],
+                                                                                             "weiter": [
+                                                                                              {
+                                                                                               "zug": "Rb4",
+                                                                                               "zeichen": "",
+                                                                                               "abbildungen": [],
+                                                                                               "weiter": [
+                                                                                                {
+                                                                                                 "zug": "Bc5",
+                                                                                                 "zeichen": "",
+                                                                                                 "abbildungen": [],
+                                                                                                 "weiter": [
+                                                                                                  {
+                                                                                                   "zug": "Rxb2",
+                                                                                                   "zeichen": "",
+                                                                                                   "abbildungen": [],
+                                                                                                   "weiter": [
+                                                                                                    {
+                                                                                                     "zug": "Bb6",
+                                                                                                     "zeichen": "",
+                                                                                                     "abbildungen": [],
+                                                                                                     "weiter": [
+                                                                                                      {
+                                                                                                       "zug": "Rxb6",
+                                                                                                       "zeichen": "",
+                                                                                                       "abbildungen": [],
+                                                                                                       "weiter": [
+                                                                                                        {
+                                                                                                         "zug": "Nd5",
+                                                                                                         "zeichen": "",
+                                                                                                         "abbildungen": [],
+                                                                                                         "weiter": [
+                                                                                                          {
+                                                                                                           "zug": "Rb2",
+                                                                                                           "zeichen": "",
+                                                                                                           "abbildungen": [],
+                                                                                                           "weiter": [
+                                                                                                            {
+                                                                                                             "zug": "Nc3",
+                                                                                                             "zeichen": "",
+                                                                                                             "abbildungen": [],
+                                                                                                             "weiter": [
+                                                                                                              {
+                                                                                                               "zug": "Kf8",
+                                                                                                               "zeichen": "",
+                                                                                                               "abbildungen": [],
+                                                                                                               "weiter": [
+                                                                                                                {
+                                                                                                                 "zug": "a5",
+                                                                                                                 "zeichen": "",
+                                                                                                                 "abbildungen": [],
+                                                                                                                 "weiter": [
+                                                                                                                  {
+                                                                                                                   "zug": "Bd5",
+                                                                                                                   "zeichen": "",
+                                                                                                                   "abbildungen": [],
+                                                                                                                   "weiter": [
+                                                                                                                    {
+                                                                                                                     "zug": "Nxd5",
+                                                                                                                     "zeichen": "",
+                                                                                                                     "abbildungen": [],
+                                                                                                                     "weiter": [
+                                                                                                                      {
+                                                                                                                       "zug": "Nxa5",
+                                                                                                                       "zeichen": "",
+                                                                                                                       "abbildungen": [],
+                                                                                                                       "weiter": [
+                                                                                                                        {
+                                                                                                                         "zug": "Nc3",
+                                                                                                                         "zeichen": "",
+                                                                                                                         "abbildungen": [],
+                                                                                                                         "weiter": [
+                                                                                                                          {
+                                                                                                                           "zug": "Nc6",
+                                                                                                                           "zeichen": "",
+                                                                                                                           "abbildungen": [],
+                                                                                                                           "weiter": [
+                                                                                                                            {
+                                                                                                                             "zug": "Rd1",
+                                                                                                                             "zeichen": "",
+                                                                                                                             "abbildungen": [],
+                                                                                                                             "weiter": [
+                                                                                                                              {
+                                                                                                                               "zug": "Kg8",
+                                                                                                                               "zeichen": "",
+                                                                                                                               "abbildungen": [],
+                                                                                                                               "weiter": [
+                                                                                                                                {
+                                                                                                                                 "zug": "Re1",
+                                                                                                                                 "zeichen": "",
+                                                                                                                                 "abbildungen": [
+                                                                                                                                  "7.45"
+                                                                                                                                 ],
+                                                                                                                                 "weiter": []
+                                                                                                                                }
+                                                                                                                               ]
+                                                                                                                              }
+                                                                                                                             ]
+                                                                                                                            }
+                                                                                                                           ]
+                                                                                                                          }
+                                                                                                                         ]
+                                                                                                                        }
+                                                                                                                       ]
+                                                                                                                      }
+                                                                                                                     ]
+                                                                                                                    }
+                                                                                                                   ]
+                                                                                                                  }
+                                                                                                                 ]
+                                                                                                                }
+                                                                                                               ]
+                                                                                                              }
+                                                                                                             ]
+                                                                                                            }
+                                                                                                           ]
+                                                                                                          }
+                                                                                                         ]
+                                                                                                        }
+                                                                                                       ]
+                                                                                                      }
+                                                                                                     ]
+                                                                                                    }
+                                                                                                   ]
+                                                                                                  }
+                                                                                                 ]
+                                                                                                }
+                                                                                               ]
+                                                                                              }
+                                                                                             ]
+                                                                                            }
+                                                                                           ]
+                                                                                          }
+                                                                                         ]
+                                                                                        }
+                                                                                       ]
+                                                                                      }
+                                                                                     ]
+                                                                                    }
+                                                                                   ]
+                                                                                  }
+                                                                                 ]
+                                                                                }
+                                                                               ]
+                                                                              }
+                                                                             ]
+                                                                            }
+                                                                           ]
+                                                                          }
+                                                                         ]
+                                                                        }
+                                                                       ]
+                                                                      }
+                                                                     ]
+                                                                    }
+                                                                   ]
+                                                                  }
+                                                                 ]
+                                                                }
+                                                               ]
+                                                              }
+                                                             ]
+                                                            }
+                                                           ]
+                                                          }
+                                                         ]
+                                                        }
+                                                       ]
+                                                      }
+                                                     ]
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.45",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d4",
+      "exd4",
+      "O-O",
+      "Nxe4",
+      "cxd4",
+      "d5",
+      "dxc5",
+      "dxc4",
+      "Qc2",
+      "Nxc5",
+      "Qxc4",
+      "Ne6",
+      "Nc3",
+      "Ncd4",
+      "Nxd4",
+      "Qxd4",
+      "Qxd4",
+      "Nxd4",
+      "Bf4",
+      "Bf5",
+      "Bxc7",
+      "O-O",
+      "Rad1",
+      "Nc6",
+      "Rfe1",
+      "Rfe8",
+      "h3",
+      "Rxe1+",
+      "Rxe1",
+      "Bd7",
+      "a4",
+      "Be6",
+      "Bd6",
+      "Rd8",
+      "Bf4",
+      "Rd4",
+      "Be3",
+      "Rb4",
+      "Bc5",
+      "Rxb2",
+      "Bb6",
+      "Rxb6",
+      "Nd5",
+      "Rb2",
+      "Nc3",
+      "Kf8",
+      "a5",
+      "Bd5",
+      "Nxd5",
+      "Nxa5",
+      "Nc3",
+      "Nc6",
+      "Rd1",
+      "Kg8",
+      "Re1"
+     ]
+    }
+   ],
+   "status": "konstruiert"
   }
  ]
 }

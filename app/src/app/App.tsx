@@ -15,6 +15,7 @@ import { Abbildung } from "../ui/bildschirme/Abbildung";
 import { Buch } from "../ui/bildschirme/Buch";
 import { Ich } from "../ui/bildschirme/Ich";
 import { Kapitel } from "../ui/bildschirme/Kapitel";
+import { Lernsammlung } from "../ui/bildschirme/Lernsammlung";
 import { Checkliste } from "../ui/bildschirme/Checkliste";
 import { Denkroutine } from "../ui/bildschirme/Denkroutine";
 import { Begriff, Glossar } from "../ui/bildschirme/Glossar";
@@ -36,6 +37,7 @@ import { NavigationsRahmen } from "./navigation";
 import { useNavigation } from "./navigationsKontext";
 import type { Ansicht } from "./stapel";
 import { entsperreTon } from "./ton";
+import { useSprache } from "./sprachwahl";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
 function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
@@ -58,6 +60,8 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
       return <Denkroutine />;
     case "checkliste":
       return <Checkliste />;
+    case "lernsammlung":
+      return <Lernsammlung />;
     case "spielen":
       return <Spielen startFen={ansicht.startFen} abbildung={ansicht.abbildung} />;
     case "partie":
@@ -127,9 +131,14 @@ function Hauptrahmen() {
   );
 }
 
+/**
+ * Die App. Ein Sprachwechsel (seit 0.2.94) baut die ganze Oberfläche neu auf: Jeder Text und
+ * jede geladene Datei gehört zur Sprache, und so bleibt nichts von der alten stehen.
+ */
 export function App() {
+  const sprachcode = useSprache();
   return (
-    <NavigationsRahmen start="buch">
+    <NavigationsRahmen key={sprachcode} start="buch">
       <Hauptrahmen />
     </NavigationsRahmen>
   );

@@ -1,0 +1,17 @@
+[Event "Kapitel 0: Konstruierte Partie zu Abb. 0.11"]
+[Site "Schach von Grund auf"]
+[Date "????.??.??"]
+[Round "?"]
+[White "?"]
+[Black "?"]
+[Result "*"]
+[Beispiel "k00-a11-k"]
+[Kapitel "0"]
+[Abschnitt ""]
+[Status "konstruiert"]
+[Genauigkeit "Weiß 83,1 %, 0× ?, 1× ?? · Schwarz 82,9 %, 0× ?, 1× ?? (Tiefe 18)"]
+[Abbildungen "0.11"]
+[Opening "Ruy Lopez: Exchange Variation"]
+[Annotator "Claude (konstruiert, nicht aus dem Buch)"]
+
+1. e4 e5 2. Nf3 Nc6 3. Bb5 a6 4. Bxc6 dxc6 5. d4 exd4 6. Qxd4 Bg4 7. Qe3 Bxf3 8. Qxf3 Qe7 9. a3 Qf6 10. Ke2 Qe6 11. Rd1 Bd6 12. Bf4 Bxf4 13. Qxf4 Nf6 14. Nc3 O-O 15. Qxc7 Nd5 16. Nxd5 cxd5 17. Qxb7 Qe5 18. Qxd5 Qxb2 19. g3 Qxc2+ 20. Kf3 Rfe8 21. Rac1 Qa4 22. Kg4 Qxa3 23. f4 Kh8 24. Qxf7 Rxe4 25. Rd7 Qf8 26. Kh5 Ree8 27. f5 Rec8 28. Rxc8 Rxc8 29. Rc7 g6+ 30. fxg6 hxg6+ 31. Kh4 Qh6+ 32. Kg4 Rxc7 33. Qxc7 a5 34. Qxa5 Qxh2 35. Qd5 Qxg3+ 36. Kxg3 g5 37. Kg4 Kg7 38. Kxg5 Kh8 39. Qd7 Kg8 40. Kg6 Kh8 41. Qf7 { Abb. 0.11 } *

@@ -15,6 +15,7 @@ import type { Beispiel, Knoten } from "../daten/generiert/beispiel";
 import type { Kapitel } from "../daten/generiert/kapitel";
 import type { Repertoireaufgabe } from "./repertoiretrainer";
 import { kanonischeLinie } from "./uebungsaufgabe";
+import { buchbeispiele } from "../daten/buchbeispiele";
 
 /** Kürzere Zugfolgen sind Seitenblicke (eine Mattführung, ein Hinweis), keine Studie. */
 const STUDIE_MINDESTENS = 3;
@@ -40,7 +41,7 @@ function aufgabeAus(beispiel: Beispiel, seite: Color, mindestens: number): Reper
 
 /** Zugfolgen eines Abschnitts des Kapitels (nicht der Übungen am Ende). */
 function ausAbschnitten(kapitel: Kapitel): Beispiel[] {
-  return kapitel.beispiele.filter((b) => b.abschnitt?.startsWith(`${kapitel.kapitel}.`) === true);
+  return buchbeispiele(kapitel).filter((b) => b.abschnitt?.startsWith(`${kapitel.kapitel}.`) === true);
 }
 
 /**

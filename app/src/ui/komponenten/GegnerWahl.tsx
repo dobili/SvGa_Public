@@ -268,15 +268,22 @@ export function HilfenWahl({
       </label>
       {wertbar ? (
         <>
-          <label className="schalterzeile">
-            <input
-              type="checkbox"
-              checked={gewertet}
-              onChange={(e) => beiGewertet(e.target.checked)}
-            />
-            {t("spielen.gewertet")}
-          </label>
-          <p className="hinweis">{t("spielen.gewertetHinweis")}</p>
+          {/* Die Erklärung zur Wertung hinter dem Fragezeichen: Sie stand sonst bei jedem Öffnen
+              als zweiter Absatz direkt über „Partie beginnen“ (19.10.2026). */}
+          <MitInfo
+            zeile={
+              <label className="schalterzeile">
+                <input
+                  type="checkbox"
+                  checked={gewertet}
+                  onChange={(e) => beiGewertet(e.target.checked)}
+                />
+                {t("spielen.gewertet")}
+              </label>
+            }
+            erklaerung={<p>{t("spielen.gewertetHinweis")}</p>}
+            thema={t("spielen.gewertet")}
+          />
           {gesperrt && <p className="hinweis">{t("spielen.gewertetOhneHilfen")}</p>}
         </>
       ) : (

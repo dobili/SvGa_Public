@@ -133,7 +133,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... exf4 – Schwarz nimmt das Gambit an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... exf4"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz nimmt das Gambit an.",
      "stil": "normal"
     }
    ],
@@ -199,7 +208,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Sf3 d5 4. exd5 Sf6, Weiß am Zug. Rot: Der Springer greift d5 an. Grau: Der Läufer c8 hat freie Bahn.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Sf3 d5 4. exd5 Sf6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Springer greift d5 an. Grau: Der Läufer c8 hat freie Bahn.",
      "stil": "normal"
     }
    ],
@@ -270,7 +288,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. Lc4 Sxd5 6. O-O Le7, Weiß am Zug. Gold: der zentrale Springer, gedeckt von der Dame. Grau: Schwarz kann rochieren.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Lc4 Sxd5 6. O-O Le7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: der zentrale Springer, gedeckt von der Dame. Grau: Schwarz kann rochieren.",
      "stil": "normal"
     }
    ],
@@ -339,7 +366,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. Lxd5 Dxd5 8. Sc3, Schwarz am Zug. Rot: Der Springer greift die Dame an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. Lxd5 Dxd5 8. Sc3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Springer greift die Dame an.",
      "stil": "normal"
     }
    ],
@@ -405,7 +441,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach 8... Dd8 9. d4 O-O. Gold: der rochierte schwarze König. Rot: der Mehrbauer f4. Grauer Pfeil: Weiß gewinnt ihn mit Lxf4 zurück.",
+     "text": "Bilanz nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Dd8 9. d4 O-O"
+    },
+    {
+     "art": "text",
+     "text": ". Gold: der rochierte schwarze König. Rot: der Mehrbauer f4. Grauer Pfeil: Weiß gewinnt ihn mit Lxf4 zurück.",
      "stil": "normal"
     }
    ],
@@ -472,7 +517,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Sf3 g5 – Schwarz will den Mehrbauern um jeden Preis halten.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Sf3 g5"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz will den Mehrbauern um jeden Preis halten.",
      "stil": "normal"
     }
    ],
@@ -559,7 +613,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. h4 g4 5. Se5. Rote Pfeile: Der Springer greift f7 und g4 an. Gold: das aktive Feld e5. Rot: der Preis, der fehlende f-Bauer öffnet die Diagonale e1–h4. Grau: die nächsten Schritte Lc4 und d4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. h4 g4 5. Se5"
+    },
+    {
+     "art": "text",
+     "text": ". Rote Pfeile: Der Springer greift f7 und g4 an. Gold: das aktive Feld e5. Rot: der Preis, der fehlende f-Bauer öffnet die Diagonale e1–h4. Grau: die nächsten Schritte Lc4 und d4.",
      "stil": "normal"
     }
    ],
@@ -629,7 +692,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Muzio-Gambit nach 5. O-O!? Rot: Der Bauer g4 greift den Springer f3 an, doch Weiß lässt ihn stehen; der Läufer c4 zielt auf f7.",
+     "text": "Das Muzio-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. O-O!?"
+    },
+    {
+     "art": "text",
+     "text": " Rot: Der Bauer g4 greift den Springer f3 an, doch Weiß lässt ihn stehen; der Läufer c4 zielt auf f7.",
      "stil": "normal"
     }
    ],
@@ -718,7 +790,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... gxf3 6. Dxf3. Gold: Lc4, Df3 und der rochierte König. Rot: Druck auf f7 und auf den Bauern f4. Grau: Sc3 als nächster Schritt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... gxf3 6. Dxf3"
+    },
+    {
+     "art": "text",
+     "text": ". Gold: Lc4, Df3 und der rochierte König. Rot: Druck auf f7 und auf den Bauern f4. Grau: Sc3 als nächster Schritt.",
      "stil": "normal"
     }
    ],
@@ -764,7 +845,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... Sc6, Weiß am Zug – der bekannte Ausgangspunkt aus Kapitel 2.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Sc6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug – der bekannte Ausgangspunkt aus Kapitel 2.",
      "stil": "normal"
     }
    ],
@@ -810,7 +900,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Lc4 Lc5 4. b4, Schwarz am Zug. Grau: Der Läufer c5 wird zum Schlagen eingeladen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Lc4 Lc5 4. b4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Der Läufer c5 wird zum Schlagen eingeladen.",
      "stil": "normal"
     }
    ],
@@ -853,7 +952,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4... Lxb4 5. c3 La5, Weiß am Zug – der Läufer flüchtet erneut.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Lxb4 5. c3 La5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug – der Läufer flüchtet erneut.",
      "stil": "normal"
     }
    ],
@@ -932,7 +1040,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. d4. Gold: das breite weiße Zentrum. Rot: der Preis, der fehlende b-Bauer; der rote Pfeil zeigt den Druck auf f7. Grau: die nächsten Schritte, die Rochade und La3, das die schwarze Rochade erschwert.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. d4"
+    },
+    {
+     "art": "text",
+     "text": ". Gold: das breite weiße Zentrum. Rot: der Preis, der fehlende b-Bauer; der rote Pfeil zeigt den Druck auf f7. Grau: die nächsten Schritte, die Rochade und La3, das die schwarze Rochade erschwert.",
      "stil": "normal"
     }
    ],
@@ -1003,7 +1120,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... d6 7. O-O Lb6, Weiß am Zug. Grau: d6 stützt e5. Gold: Weiß hat rochiert.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... d6 7. O-O Lb6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: d6 stützt e5. Gold: Weiß hat rochiert.",
      "stil": "normal"
     }
    ],
@@ -1059,7 +1185,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8. dxe5 dxe5 9. Dxd8+ Sxd8, Weiß am Zug. Die Damen sind getauscht. Rot: Weiß holt sich den Bauern e5 zurück.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. dxe5 dxe5 9. Dxd8+ Sxd8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Die Damen sind getauscht. Rot: Weiß holt sich den Bauern e5 zurück.",
      "stil": "normal"
     }
    ],
@@ -1128,7 +1263,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 10. Sxe5 Le6, Weiß am Zug. Material ist ausgeglichen. Gold: Läufer e6 und Springer d8 decken f7. Grau: Schwarz bietet den Läufertausch an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Sxe5 Le6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Material ist ausgeglichen. Gold: Läufer e6 und Springer d8 decken f7. Grau: Schwarz bietet den Läufertausch an.",
      "stil": "normal"
     }
    ],
@@ -1210,7 +1354,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 e5 2. d4, Schwarz am Zug. Grau: Weiß lässt Schwarz insgesamt drei Bauern entlang der Linie e5–b2 schlagen; c3 ist das zweite Angebot.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. d4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Weiß lässt Schwarz insgesamt drei Bauern entlang der Linie e5–b2 schlagen; c3 ist das zweite Angebot.",
      "stil": "normal"
     }
    ],
@@ -1249,7 +1402,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... exd4 3. c3 dxc3, Weiß am Zug – Schwarz nimmt den zweiten Bauern.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... exd4 3. c3 dxc3"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug – Schwarz nimmt den zweiten Bauern.",
      "stil": "normal"
     }
    ],
@@ -1321,7 +1483,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. Lc4 cxb2 5. Lxb2, Schwarz am Zug. Gold: das Läuferpaar. Rot: seine beiden „Laserstrahlen“ gegen g7 und f7. Grau: die nächsten Entwicklungszüge Sf3 und Sc3.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Lc4 cxb2 5. Lxb2"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: das Läuferpaar. Rot: seine beiden „Laserstrahlen“ gegen g7 und f7. Grau: die nächsten Entwicklungszüge Sf3 und Sc3.",
      "stil": "normal"
     }
    ],
@@ -1387,7 +1558,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... d5. Rot: Schwarz gibt einen Bauern zurück und greift den Läufer c4 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... d5"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Schwarz gibt einen Bauern zurück und greift den Läufer c4 an.",
      "stil": "normal"
     }
    ],
@@ -1438,7 +1618,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Lxd5 Sf6. Rot: Der Springer entwickelt sich und greift den Läufer d5 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Lxd5 Sf6"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der Springer entwickelt sich und greift den Läufer d5 an.",
      "stil": "normal"
     }
    ],
@@ -1496,7 +1685,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. Lxf7+ Kxf7 8. Dxd8 Lb4+!. Rot: Schach. Grau: Nach fast jeder Antwort schlägt der Turm h8 die Dame; nach 9. Dd2 nimmt der Läufer.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. Lxf7+ Kxf7 8. Dxd8 Lb4+!"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Schach. Grau: Nach fast jeder Antwort schlägt der Turm h8 die Dame; nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Dd2"
+    },
+    {
+     "art": "text",
+     "text": " nimmt der Läufer.",
      "stil": "normal"
     }
    ],
@@ -1572,7 +1779,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9. Dd2 Lxd2+ 10. Sxd2 – Material ist ausgeglichen, die Damen sind getauscht. Grau: der isolierte weiße Bauer a2. Gold: Der schwarze König steht ohne Damen sicher.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Dd2 Lxd2+ 10. Sxd2"
+    },
+    {
+     "art": "text",
+     "text": " – Material ist ausgeglichen, die Damen sind getauscht. Grau: der isolierte weiße Bauer a2. Gold: Der schwarze König steht ohne Damen sicher.",
      "stil": "normal"
     }
    ],
@@ -1637,7 +1853,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Smith-Morra-Gambit nach 4. Sxc3. Grau: die schnelle Entwicklung, die Weiß plant, etwa mit Lc4 und Sf3. Schwarz am Zug.",
+     "text": "Das Smith-Morra-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sxc3"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: die schnelle Entwicklung, die Weiß plant, etwa mit Lc4 und Sf3. Schwarz am Zug.",
      "stil": "normal"
     }
    ],
@@ -1686,7 +1911,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4... Sc6 5. Sf3 d6, Weiß am Zug – Schwarz entwickelt vorsichtig. Grau: Der Läufer f1 kommt als Nächstes nach c4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Sc6 5. Sf3 d6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug – Schwarz entwickelt vorsichtig. Grau: Der Läufer f1 kommt als Nächstes nach c4.",
      "stil": "normal"
     }
    ],
@@ -1765,7 +1999,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach 6. Lc4 e6 7. O-O Sf6. Gold: drei entwickelte weiße Figuren und der rochierte König. Rot: Druck auf der halboffenen d-Linie gegen d6. Grau: De2 und Td1 als nächste Schritte. Weiß am Zug.",
+     "text": "Bilanz nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Lc4 e6 7. O-O Sf6"
+    },
+    {
+     "art": "text",
+     "text": ". Gold: drei entwickelte weiße Figuren und der rochierte König. Rot: Druck auf der halboffenen d-Linie gegen d6. Grau: De2 und Td1 als nächste Schritte. Weiß am Zug.",
      "stil": "normal"
     }
    ],
@@ -1846,7 +2089,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Milner-Barry-Gambit nach 5... Db6 6. Ld3, Schwarz am Zug. Rot: Bauer c5 und Springer c6 greifen d4 an. Grau: Der Läufer d3 verstellt der Dame d1 die d-Linie.",
+     "text": "Das Milner-Barry-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Db6 6. Ld3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Bauer c5 und Springer c6 greifen d4 an. Grau: Der Läufer d3 verstellt der Dame d1 die d-Linie.",
      "stil": "normal"
     }
    ],
@@ -1909,7 +2161,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... cxd4 7. cxd4 Ld7 8. O-O, Schwarz am Zug. Rot: Springer und Dame greifen d4 an. Gold: Der Läufer d7 sperrt die Diagonale b5–e8.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... cxd4 7. cxd4 Ld7 8. O-O"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Springer und Dame greifen d4 an. Gold: Der Läufer d7 sperrt die Diagonale b5–e8.",
      "stil": "normal"
     }
    ],
@@ -1987,7 +2248,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8... Sxd4 9. Sxd4 Dxd4 10. Sc3, Schwarz am Zug. Schwarz hat einen Bauern mehr. Rot: Weiß droht Sb5. Grau: Auch der Bauer e5 ist ungedeckt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Sxd4 9. Sxd4 Dxd4 10. Sc3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Schwarz hat einen Bauern mehr. Rot: Weiß droht Sb5. Grau: Auch der Bauer e5 ist ungedeckt.",
      "stil": "normal"
     }
    ],
@@ -2069,7 +2339,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 10... a6 11. De2 Se7 12. Kh1, Schwarz am Zug. Gold: a6 nimmt dem Springer das Feld b5. Grau: Weiß bereitet f4 vor, um e5 zu stützen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... a6 11. De2 Se7 12. Kh1"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: a6 nimmt dem Springer das Feld b5. Grau: Weiß bereitet f4 vor, um e5 zu stützen.",
      "stil": "normal"
     }
    ],
@@ -2151,7 +2430,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach 12... Sc6 13. f4, Schwarz am Zug. Rot: Der Springer greift e5 an, doch der schwarze König steht noch in der Mitte, Läufer f8 und Turm h8 stehen noch. Grau: Le3 wird die Dame mit Tempo angreifen.",
+     "text": "Bilanz nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12... Sc6 13. f4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Springer greift e5 an, doch der schwarze König steht noch in der Mitte, Läufer f8 und Turm h8 stehen noch. Grau: Le3 wird die Dame mit Tempo angreifen.",
      "stil": "normal"
     }
    ],
@@ -2222,7 +2510,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... cxd4 7. cxd4 Sxd4??, Weiß am Zug. Rot: Weiß schlägt zurück. Grau: Hinter dem Läufer d3 steht die Dame d1 auf der d-Linie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... cxd4 7. cxd4 Sxd4??"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Weiß schlägt zurück. Grau: Hinter dem Läufer d3 steht die Dame d1 auf der d-Linie.",
      "stil": "normal"
     }
    ],
@@ -2303,7 +2600,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Stellung aus Kapitel 1 nach 8. Sxd4 Dxd4?? 9. Lb5+!, Schwarz am Zug. Rot: Schach vom Läufer; die Dame d4 ist verloren. Gold: Die Dame d1 schlägt sie im nächsten Zug.",
+     "text": "Die Stellung aus Kapitel 1 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Sxd4 Dxd4?? 9. Lb5+!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Schach vom Läufer; die Dame d4 ist verloren. Gold: Die Dame d1 schlägt sie im nächsten Zug.",
      "stil": "normal"
     }
    ],
@@ -2366,7 +2672,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 10... Dxe5?! 11. Te1 Db8 12. Sxd5!, Schwarz am Zug. Grau: Der Turm e1 fesselt den Bauern e6 an den König; Schwarz kann den Springer deshalb nicht schlagen. Rot: der König in der Mitte.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Dxe5?! 11. Te1 Db8 12. Sxd5!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Der Turm e1 fesselt den Bauern e6 an den König; Schwarz kann den Springer deshalb nicht schlagen. Rot: der König in der Mitte.",
      "stil": "normal"
     }
    ],
@@ -2443,7 +2758,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. d4 d5 2. e4, Schwarz am Zug. Grau: Schwarz kann den Bauern e4 schlagen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 d5 2. e4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Schwarz kann den Bauern e4 schlagen.",
      "stil": "normal"
     }
    ],
@@ -2493,7 +2817,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... dxe4 3. Sc3 Sf6 4. f3, Schwarz am Zug. Rot: Springer und Bauer greifen den Mehrbauern e4 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... dxe4 3. Sc3 Sf6 4. f3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Springer und Bauer greifen den Mehrbauern e4 an.",
      "stil": "normal"
     }
    ],
@@ -2565,7 +2898,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4... exf3 5. Sxf3, Schwarz am Zug. Weiß hat einen Bauern weniger. Grau: die halboffene f-Linie, auf die nach der Rochade der Turm kommt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... exf3 5. Sxf3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Weiß hat einen Bauern weniger. Grau: die halboffene f-Linie, auf die nach der Rochade der Turm kommt.",
      "stil": "normal"
     }
    ],
@@ -2626,7 +2968,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... c6 6. Lc4 Lf5, Weiß am Zug. Gold: Der Läufer c8 ist vor ...e6 herausgekommen. Rot: Der Läufer c4 zielt auf f7. Grau: ...e6 schließt diese Diagonale.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... c6 6. Lc4 Lf5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der Läufer c8 ist vor ...e6 herausgekommen. Rot: Der Läufer c4 zielt auf f7. Grau: ...e6 schließt diese Diagonale.",
      "stil": "normal"
     }
    ],
@@ -2689,7 +3040,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. O-O e6 8. Sg5, Schwarz am Zug. Rot: Springer und Läufer greifen e6 an, der Turm f1 den Läufer f5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. O-O e6 8. Sg5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Springer und Läufer greifen e6 an, der Turm f1 den Läufer f5.",
      "stil": "normal"
     }
    ],
@@ -2771,7 +3131,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8... Lg6 9. Se2 Ld6 10. Sf4, Schwarz am Zug. Rot: Der Springer f4 greift g6 und e6 an. Grau: Schwarz tauscht ihn mit ...Lxf4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Lg6 9. Se2 Ld6 10. Sf4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Springer f4 greift g6 und e6 an. Grau: Schwarz tauscht ihn mit ...Lxf4.",
      "stil": "normal"
     }
    ],
@@ -2849,7 +3218,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach 10... Lxf4 11. Lxf4 O-O, Weiß am Zug. Gold: der rochierte König und der Läufer g6, der ihn schützt. Rot: Springer g5 und Läufer c4 zielen auf e6. Grau: Der eigene Läufer f4 steht noch vor dem Turm f1.",
+     "text": "Bilanz nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Lxf4 11. Lxf4 O-O"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: der rochierte König und der Läufer g6, der ihn schützt. Rot: Springer g5 und Läufer c4 zielen auf e6. Grau: Der eigene Läufer f4 steht noch vor dem Turm f1.",
      "stil": "normal"
     }
    ],
@@ -2932,7 +3310,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Euwe-Verteidigung nach 5... e6 6. Lg5 Le7, Weiß am Zug. Grau: Der Läufer g5 greift den Springer f6 an; der Läufer c8 steht hinter e6.",
+     "text": "Die Euwe-Verteidigung nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... e6 6. Lg5 Le7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der Läufer g5 greift den Springer f6 an; der Läufer c8 steht hinter e6.",
      "stil": "normal"
     }
    ],
@@ -2988,7 +3375,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 c6 2. d4 d5 3. Sc3 dxe4 4. f3, Schwarz am Zug – das Blackmar-Diemer-Gambit aus der Caro-Kann-Verteidigung. Rot: f3 greift den Bauern e4 an. Gold: Der Bauer c6 steht schon.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 c6 2. d4 d5 3. Sc3 dxe4 4. f3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug – das Blackmar-Diemer-Gambit aus der Caro-Kann-Verteidigung. Rot: f3 greift den Bauern e4 an. Gold: Der Bauer c6 steht schon.",
      "stil": "normal"
     }
    ],
@@ -3039,7 +3435,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... e5, Weiß am Zug. Rot: Schwarz bietet den e-Bauern an und greift zugleich d4 an. Grau: das weiße Schlagen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... e5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Schwarz bietet den e-Bauern an und greift zugleich d4 an. Grau: das weiße Schlagen.",
      "stil": "normal"
     }
    ],
@@ -3085,7 +3490,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. dxe5 Sg4, Weiß am Zug. Rot: Der Springer greift den Bauern e5 an, den Weiß am besten mit Figuren deckt, die dann an ihn gebunden sind.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. dxe5 Sg4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Springer greift den Bauern e5 an, den Weiß am besten mit Figuren deckt, die dann an ihn gebunden sind.",
      "stil": "normal"
     }
    ],
@@ -3173,7 +3587,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach 4. Lf4 Sc6 5. Sf3, Schwarz am Zug. Gold: die beiden aktiven schwarzen Springer. Rot: Beide greifen den Bauern e5 an. Grau: ...Lb4+ und ...De7 als nächste Schritte.",
+     "text": "Bilanz nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Lf4 Sc6 5. Sf3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: die beiden aktiven schwarzen Springer. Rot: Beide greifen den Bauern e5 an. Grau: ...Lb4+ und ...De7 als nächste Schritte.",
      "stil": "normal"
     }
    ],
@@ -3239,7 +3662,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... c5, Weiß am Zug. Rot: Schwarz greift d4 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... c5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Schwarz greift d4 an.",
      "stil": "normal"
     }
    ],
@@ -3285,7 +3717,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. d5 b5, Weiß am Zug. Grau: Schwarz bietet den b-Bauern an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. d5 b5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Schwarz bietet den b-Bauern an.",
      "stil": "normal"
     }
    ],
@@ -3336,7 +3777,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Wolga-Gambit nach 4. cxb5 a6 5. bxa6 Lxa6, Weiß am Zug – die a- und die b-Linie sind für Schwarz halboffen. Gold: seine langfristigen Ziele a2 und b2.",
+     "text": "Das Wolga-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. cxb5 a6 5. bxa6 Lxa6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug – die a- und die b-Linie sind für Schwarz halboffen. Gold: seine langfristigen Ziele a2 und b2.",
      "stil": "normal"
     }
    ],
@@ -3408,7 +3858,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Sc3 d6 7. e4 Lxf1, Weiß am Zug. Grau: Weiß muss mit dem König zurückschlagen. Rot: Er verliert das Rochaderecht.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Sc3 d6 7. e4 Lxf1"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Weiß muss mit dem König zurückschlagen. Rot: Er verliert das Rochaderecht.",
      "stil": "normal"
     }
    ],
@@ -3485,7 +3944,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8. Kxf1 g6 9. g3 Lg7, Weiß am Zug. Gold: Schwarz hat fianchettiert. Grau: Weiß bringt den König mit Kg2 in Sicherheit.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Kxf1 g6 9. g3 Lg7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Schwarz hat fianchettiert. Grau: Weiß bringt den König mit Kg2 in Sicherheit.",
      "stil": "normal"
     }
    ],
@@ -3572,7 +4040,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach 10. Kg2 O-O, Weiß am Zug. Gold: die Ziele a2 und b2, der fianchettierte Läufer g7 und der rochierte schwarze König. Rot: Der Turm a8 greift auf der halboffenen a-Linie a2 an. Grau: ...Sbd7 und ...Da5 als nächste Schritte.",
+     "text": "Bilanz nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Kg2 O-O"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: die Ziele a2 und b2, der fianchettierte Läufer g7 und der rochierte schwarze König. Rot: Der Turm a8 greift auf der halboffenen a-Linie a2 an. Grau: ...Sbd7 und ...Da5 als nächste Schritte.",
      "stil": "normal"
     }
    ],
@@ -3639,7 +4116,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. d4 e5, Weiß am Zug. Rot: Schwarz greift d4 an. Grau: Weiß kann den Bauern schlagen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 e5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Schwarz greift d4 an. Grau: Weiß kann den Bauern schlagen.",
      "stil": "normal"
     }
    ],
@@ -3693,7 +4179,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2. dxe5 Sc6 3. Sf3 De7, Weiß am Zug. Rot: Springer und Dame greifen e5 an. Grau: Die Dame will nach b4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. dxe5 Sc6 3. Sf3 De7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Springer und Dame greifen e5 an. Grau: Die Dame will nach b4.",
      "stil": "normal"
     }
    ],
@@ -3746,7 +4241,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. Lf4 Db4+, Weiß am Zug. Rot: Schach und zugleich ein Angriff auf b2.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Lf4 Db4+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Schach und zugleich ein Angriff auf b2.",
      "stil": "normal"
     }
    ],
@@ -3806,7 +4310,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. Ld2 Dxb2 6. Sc3!, Schwarz am Zug. Rot: Die Dame greift Springer c3 und Turm a1 an; beide sind gedeckt. Grau: Tb1 verjagt die Dame als Nächstes.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Ld2 Dxb2 6. Sc3!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Die Dame greift Springer c3 und Turm a1 an; beide sind gedeckt. Grau: Tb1 verjagt die Dame als Nächstes.",
      "stil": "normal"
     }
    ],
@@ -3889,7 +4402,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach 6... Lb4 7. Tb1 Da3 8. Sd5!, Schwarz am Zug. Rot: Drei weiße Figuren greifen den Läufer b4 an, und der Springer droht Sxc7+.",
+     "text": "Bilanz nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Lb4 7. Tb1 Da3 8. Sd5!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Drei weiße Figuren greifen den Läufer b4 an, und der Springer droht Sxc7+.",
      "stil": "normal"
     }
    ],
@@ -3955,7 +4477,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. Ld2 Dxb2 6. Lc3?? Lb4!, Weiß am Zug. Grau: Der Läufer b4 fesselt den Läufer c3 an den König. Rot: Die Dame greift c3 und den Turm a1 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Ld2 Dxb2 6. Lc3?? Lb4!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der Läufer b4 fesselt den Läufer c3 an den König. Rot: Die Dame greift c3 und den Turm a1 an.",
      "stil": "normal"
     }
    ],
@@ -4013,7 +4544,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. Dd2 Lxc3 8. Dxc3 Dc1#. Rot: Matt. Grau: Der eigene Bauer c2 versperrt der Dame c3 den Weg nach c1.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. Dd2 Lxc3 8. Dxc3 Dc1#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Matt. Grau: Der eigene Bauer c2 versperrt der Dame c3 den Weg nach c1.",
      "stil": "normal"
     }
    ],
@@ -4075,7 +4615,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... Sf6, Weiß am Zug – dieselbe Stellung wie in der Russischen Verteidigung (Kapitel 2). Rot: Beide Springer greifen den gegnerischen e-Bauern an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Sf6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug – dieselbe Stellung wie in der Russischen Verteidigung (Kapitel 2). Rot: Beide Springer greifen den gegnerischen e-Bauern an.",
      "stil": "normal"
     }
    ],
@@ -4115,7 +4664,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Sxe5 Sc6?!, Weiß am Zug – Schwarz bietet den Bauern weiter an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Sxe5 Sc6?!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug – Schwarz bietet den Bauern weiter an.",
      "stil": "normal"
     }
    ],
@@ -4157,7 +4715,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. Sxc6 dxc6 5. d3, Schwarz am Zug – Weiß versucht, ruhig zu bleiben.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sxc6 dxc6 5. d3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug – Weiß versucht, ruhig zu bleiben.",
      "stil": "normal"
     }
    ],
@@ -4208,7 +4775,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... Lc5. Rot: Der Läufer zielt auf das Feld f2.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Lc5"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der Läufer zielt auf das Feld f2.",
      "stil": "normal"
     }
    ],
@@ -4273,7 +4849,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Le2!. Gold: die beiden aktiven schwarzen Figuren. Rot: das Ziel des Läufers c5. Grau: Le2 deckt g4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Le2!"
+    },
+    {
+     "art": "text",
+     "text": ". Gold: die beiden aktiven schwarzen Figuren. Rot: das Ziel des Läufers c5. Grau: Le2 deckt g4.",
      "stil": "normal"
     }
    ],
@@ -4335,7 +4920,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Sg4 7. Lxg4 Dh4, Weiß am Zug. Rot: Die Dame droht Matt auf f2 und greift den Läufer g4 an. Gold: Df3 deckt beides.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Sg4 7. Lxg4 Dh4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Die Dame droht Matt auf f2 und greift den Läufer g4 an. Gold: Df3 deckt beides.",
      "stil": "normal"
     }
    ],
@@ -4404,7 +4998,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Lg5??, Schwarz am Zug. Grau: die relative Fesselung.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Lg5??"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: die relative Fesselung.",
      "stil": "normal"
     }
    ],
@@ -4473,7 +5076,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Sxe4! 7. Lxd8?? Lxf2+!, Weiß am Zug. Rot: Der Springer e4 deckt f2 mit, Kxf2 ist deshalb illegal.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Sxe4! 7. Lxd8?? Lxf2+!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Springer e4 deckt f2 mit, Kxf2 ist deshalb illegal.",
      "stil": "normal"
     }
    ],
@@ -4545,7 +5157,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8. Ke2 Lg4#. Rot: Der bisher unentwickelte Läufer von c8 setzt matt. Alle Nachbarfelder des Königs sind gedeckt oder besetzt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Ke2 Lg4#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der bisher unentwickelte Läufer von c8 setzt matt. Alle Nachbarfelder des Königs sind gedeckt oder besetzt.",
      "stil": "normal"
     }
    ],
@@ -4608,7 +5229,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 e5 2. Sf3 f5, Weiß am Zug. Rot: Schwarz greift e4 an. Grau: Der Springer f3 kann e5 schlagen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 f5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Schwarz greift e4 an. Grau: Der Springer f3 kann e5 schlagen.",
      "stil": "normal"
     }
    ],
@@ -4664,7 +5294,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Sxe5 Df6, Weiß am Zug. Rot: Die Dame greift den Springer an, der Bauer f5 den Bauern e4. Grau: d4 deckt den Springer.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Sxe5 Df6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Die Dame greift den Springer an, der Bauer f5 den Bauern e4. Grau: d4 deckt den Springer.",
      "stil": "normal"
     }
    ],
@@ -4737,7 +5376,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. d4 d6 5. Sc4, Schwarz am Zug. Gold: Das Zentrum steht, der Springer ist in Sicherheit. Rot: Schwarz holt sich gleich e4 zurück.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. d4 d6 5. Sc4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Das Zentrum steht, der Springer ist in Sicherheit. Rot: Schwarz holt sich gleich e4 zurück.",
      "stil": "normal"
     }
    ],
@@ -4798,7 +5446,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... fxe4 6. Sc3 Dg6 7. f3, Schwarz am Zug. Gold: Bauer und Springer greifen e4 an. Rot: Die Dame blickt auf g2, den der Läufer f1 deckt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... fxe4 6. Sc3 Dg6 7. f3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Bauer und Springer greifen e4 an. Rot: Die Dame blickt auf g2, den der Läufer f1 deckt.",
      "stil": "normal"
     }
    ],
@@ -4857,7 +5514,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... exf3 8. Dxf3 Sf6 9. Ld3, Schwarz am Zug. Gold: Der Läufer entwickelt sich mit Tempo gegen die Dame. Grau: die Rochade als nächster Schritt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... exf3 8. Dxf3 Sf6 9. Ld3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der Läufer entwickelt sich mit Tempo gegen die Dame. Grau: die Rochade als nächster Schritt.",
      "stil": "normal"
     }
    ],
@@ -4920,7 +5586,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9... Dg4 10. De3+ De6, Weiß am Zug. Grau: Die Damen stehen sich gegenüber; Weiß rochiert zuerst.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9... Dg4 10. De3+ De6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Die Damen stehen sich gegenüber; Weiß rochiert zuerst.",
      "stil": "normal"
     }
    ],
@@ -4987,7 +5662,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 11. O-O Dxe3+ 12. Lxe3, Schwarz am Zug. Gold: Der Turm f1 steht schon auf der offenen f-Linie. Grau: Tae1 bringt den zweiten Turm auf die offene e-Linie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. O-O Dxe3+ 12. Lxe3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der Turm f1 steht schon auf der offenen f-Linie. Grau: Tae1 bringt den zweiten Turm auf die offene e-Linie.",
      "stil": "normal"
     }
    ],
@@ -5077,7 +5761,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach 12... Le7 13. Tae1 O-O, Weiß am Zug. Gold: die vier entwickelten weißen Leichtfiguren; der goldene Pfeil zeigt den Turm f1 auf der offenen f-Linie, der zweite Turm steht schon auf e1. Rot: Springer b8 und Läufer c8 stehen noch.",
+     "text": "Bilanz nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12... Le7 13. Tae1 O-O"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: die vier entwickelten weißen Leichtfiguren; der goldene Pfeil zeigt den Turm f1 auf der offenen f-Linie, der zweite Turm steht schon auf e1. Rot: Springer b8 und Läufer c8 stehen noch.",
      "stil": "normal"
     }
    ],
@@ -5165,7 +5858,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Lc4?!, Schwarz am Zug. Rot: Schwarz schlägt e4. Grau: Der Läufer zielt über f7 auf g8 – die Idee aus der Italienischen Partie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Lc4?!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Schwarz schlägt e4. Grau: Der Läufer zielt über f7 auf g8 – die Idee aus der Italienischen Partie.",
      "stil": "normal"
     }
    ],
@@ -5220,7 +5922,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3... fxe4 4. Sxe5 d5, Weiß am Zug. Rot: Der Bauer greift den Läufer an. Grau: das schwarze Bauernzentrum.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... fxe4 4. Sxe5 d5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Bauer greift den Läufer an. Grau: das schwarze Bauernzentrum.",
      "stil": "normal"
     }
    ],
@@ -5279,7 +5990,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Smith-Morra-Gambit nach 4. Sxc3, Schwarz am Zug (die Stellung aus ",
+     "text": "Das Smith-Morra-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sxc3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug (die Stellung aus ",
      "stil": "normal"
     },
     {
@@ -5329,7 +6049,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. c3, Schwarz am Zug.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. c3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug.",
      "stil": "normal"
     }
    ],
@@ -5369,7 +6098,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Wolga-Gambit nach 5... Lxa6, Weiß am Zug (die Stellung aus ",
+     "text": "Das Wolga-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Lxa6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug (die Stellung aus ",
      "stil": "normal"
     },
     {
@@ -5422,7 +6160,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 e5 2. Sf3 d5, Weiß am Zug.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 d5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],

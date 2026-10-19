@@ -21,7 +21,7 @@ import {
   type Sicherungspruefung,
 } from "../../speicher/sicherung";
 import { useSpeicher } from "../../speicher/speicher";
-import { bieteDateiAn } from "./dateiAnbieten";
+import { bieteDateiAn, kannDateiTeilen, teileDatei } from "./dateiAnbieten";
 import { MitInfo } from "./InfoKnopf";
 
 /** So lange bleibt die Datei zum Herunterladen im Speicher. */
@@ -125,6 +125,18 @@ export function Datensicherung() {
     }
   };
 
+  // Ausweg für das iPhone (seit 0.2.91): dieselbe Datei über das Teilen-Menü (Mail, Dateien).
+  const teile = async () => {
+    try {
+      const jetzt = new Date();
+      if (await teileDatei(await exportiere(APP_VERSION, jetzt), dateiname(jetzt)))
+        melde(t("sicherung.geteilt", { datei: dateiname(jetzt) }), false);
+    } catch (fehler) {
+      console.error("Teilen der Datensicherung fehlgeschlagen:", fehler);
+      melde(t("sicherung.exportFehler", { fehler: alsMeldung(fehler) }), true);
+    }
+  };
+
   const gewaehlt = async (ereignis: ChangeEvent<HTMLInputElement>) => {
     const datei = ereignis.target.files?.[0];
     ereignis.target.value = "";
@@ -156,6 +168,11 @@ export function Datensicherung() {
         <button type="button" className="knopf-zweit" onClick={() => void sichere()}>
           {t("sicherung.exportieren")}
         </button>
+        {kannDateiTeilen() && (
+          <button type="button" className="knopf-zweit" onClick={() => void teile()}>
+            {t("sicherung.teilen")}
+          </button>
+        )}
         <button type="button" className="knopf-zweit" onClick={() => auswahl.current?.click()}>
           {t("sicherung.importieren")}
         </button>

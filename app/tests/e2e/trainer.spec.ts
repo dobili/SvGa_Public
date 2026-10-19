@@ -1,28 +1,12 @@
 /**
  * Oberflächentests der ersten Trainer (AP 13 Teil 2): Koordinaten (Feld finden, Zug aufschreiben,
  * Gangarten), Zähltrainer (Bilanz, hängende Figuren), Schach-Röntgen-Trainer. Die Aufgaben sind
- * zufällig; die Tests lesen deshalb den Auftrag oder prüfen nur den Ablauf.
+ * zufällig; die Tests lesen deshalb den Auftrag oder prüfen nur den Ablauf. Dazu Taktik, Falle
+ * oder Köder, Strukturerkenner, Wiederholung, Endspiel, Zielbilanz und Faktorenbilanz; die übrigen
+ * Trainer stehen seit 0.2.90 in trainer-kapitel2bis12.spec.ts.
  */
-import { readFileSync } from "node:fs";
 import { expect, test, type Page } from "@playwright/test";
-import { Chess } from "chessops/chess";
-import { parseFen } from "chessops/fen";
-import { makeSan } from "chessops/san";
-import { starteImBrowser } from "./hilfen";
-
-async function oeffneTrainer(page: Page, kennung: string): Promise<void> {
-  await page
-    .getByRole("navigation", { name: "Hauptbereiche" })
-    .getByRole("button", { name: "Training" })
-    .click();
-  // Ein Trainer für zwei Kapitel (Endspieltrainer) steht zweimal in der Liste: die erste Karte.
-  await page
-    .getByTestId(`trainer-${kennung}`)
-    .first()
-    .getByRole("button", { name: "Trainieren" })
-    .click();
-  await expect(page.getByTestId("trainer")).toBeVisible();
-}
+import { oeffneTrainer, starteImBrowser } from "./hilfen";
 
 const feld = (page: Page, name: string) =>
   page.getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
@@ -266,219 +250,46 @@ test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", asy
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
 
-test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", async ({ page }) => {
+test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners kommt wieder", async ({
+  page,
+}) => {
+  await page.clock.install();
   await starteImBrowser(page);
-  await oeffneTrainer(page, "repertoire");
-  const wahl = page.getByTestId("repertoire-wahl");
-  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
-  await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
-  await wahl.getByRole("button", { name: "Runde starten" }).click();
+  await oeffneTrainer(page, "struktur");
+  await page.getByTestId("struktur-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
-  await expect(runde).toContainText("Aufgabe 1 von");
-  await feld(page, "e2").click();
-  await feld(page, "e4").click();
-  await expect(page.getByTestId("repertoire-zuege")).toHaveText("1. e4 e5");
-  // Falsch: 2. d4 statt 2. Sf3.
-  await feld(page, "d2").click();
-  await feld(page, "d4").click();
-  await expect(runde).toContainText("Nicht der Zug des Buches");
-  await feld(page, "g1").click();
-  await feld(page, "f3").click();
-  await expect(page.getByTestId("repertoire-zuege")).toHaveText("1. e4 e5 2. Sf3 Sc6");
-  await page.screenshot({ path: "test-results/bilder/trainer-repertoire.png", fullPage: true });
-});
-
-test("Studien lösen: Saavedra-Studie, 1. c7 und die Antwort aus dem Buch", async ({ page }) => {
-  await starteImBrowser(page);
-  await oeffneTrainer(page, "studien");
-  const runde = page.getByTestId("trainerrunde");
-  await expect(runde).toContainText("Die Saavedra-Studie");
+  // Ohne angetippte Felder ist die Leitfrage falsch beantwortet, die Aufgabe also nicht gelöst.
+  const dreiSchritte = (await runde.textContent())?.includes("Schritt 1 von 3") ?? false;
+  await runde.getByRole("button", { name: "Prüfen" }).click();
+  if (dreiSchritte) await runde.getByRole("button", { name: "Prüfen" }).click();
+  await runde.locator(".plan-satz").first().click();
+  await expect(runde).toContainText("Struktur:");
+  await page.clock.fastForward("48:00:00");
+  const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
+  await leiste.getByRole("button", { name: "Buch" }).click();
+  await leiste.getByRole("button", { name: "Training" }).click();
   await page
-    .getByTestId("studien-pruefungen")
-    .getByText(/vier Prüfungen/)
+    .getByTestId("faellig")
+    .getByRole("button", { name: /Strukturerkenner: 1 fällig/ })
     .click();
-  await expect(page.getByTestId("studien-pruefungen")).toContainText("Unterverwandlung");
-  await feld(page, "c6").click();
-  await feld(page, "c7").click();
-  await expect(page.getByTestId("repertoire-zuege")).toContainText("1. c7");
-  await page.screenshot({ path: "test-results/bilder/trainer-studien.png", fullPage: true });
+  await page.getByTestId("trainer-wiederholung").getByRole("button").click();
+  await expect(page.getByTestId("trainerrunde")).toContainText("Aufgabe 1 von 1");
 });
 
-test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", async ({ page }) => {
-  await starteImBrowser(page);
-  await oeffneTrainer(page, "zugErraten");
-  const wahl = page.getByTestId("zugerraten-wahl");
-  await wahl.getByRole("button", { name: /^Morphys Opernpartie/ }).click();
-  await wahl.getByRole("button", { name: "Runde starten" }).click();
-  const runde = page.getByTestId("trainerrunde");
-  await feld(page, "e2").click();
-  await feld(page, "e4").click();
-  await expect(runde).toContainText("Getroffen!");
-  await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 1");
-  await feld(page, "d2").click();
-  await feld(page, "d4").click();
-  await expect(runde).toContainText("In der Partie geschah Sf3.");
-  await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 2");
-  // W12: Die Engine vergleicht 2. d4 mit 2. Sf3, dazu die Frage aus Kapitel 12.
-  const vergleich = page.getByTestId("zugerraten-vergleich");
-  await expect(vergleich).toContainText("warum der Meister anders zog");
-  await expect(vergleich).toContainText(/Dein Zug ist laut Engine/, { timeout: 20_000 });
-  await page.screenshot({ path: "test-results/bilder/trainer-zugerraten.png", fullPage: true });
-});
-
-test("Fehlerdatenbank: Eintrag mit FEN, Auswertung mit Vorschlag, Löschen", async ({ page }) => {
-  await starteImBrowser(page);
-  await oeffneTrainer(page, "fehlerdatenbank");
-  await expect(page.getByTestId("fehlerdb-leer")).toBeVisible();
-  const neu = page.getByTestId("fehlerdb-neu");
-  await neu
-    .getByLabel("Stellung vor dem Fehler (FEN)")
-    .fill("rnbqkbnr/pppp1ppp/8/4p3/6P1/5P2/PPPPP2P/RNBQKBNR b KQkq - 0 2");
-  await neu.getByLabel(/^Fehlerart/).selectOption({ index: 2 });
-  await neu.getByLabel(/^Ein Satz/).fill("Nach f3 und g4 nicht an Dh4 gedacht.");
-  await neu.getByRole("button", { name: "In die Fehlerdatenbank" }).click();
-  const auswertung = page.getByTestId("fehlerdb-auswertung");
-  await expect(auswertung).toContainText("Kapitel 1");
-  await expect(auswertung.getByRole("button")).toHaveCount(1);
-  const eintrag = page.getByTestId("fehlerdb-eintrag");
-  await expect(eintrag).toHaveCount(1);
-  await eintrag.locator("summary").click();
-  await expect(eintrag).toContainText("Nach f3 und g4 nicht an Dh4 gedacht.");
-  await page.screenshot({
-    path: "test-results/bilder/trainer-fehlerdatenbank.png",
-    fullPage: true,
-  });
-  await eintrag.getByRole("button", { name: "Eintrag löschen" }).click();
-  await expect(page.getByTestId("fehlerdb-leer")).toBeVisible();
-});
-
-test("Denkroutine: eine Minute, dann Eingabe; ohne Antwort unvollständig", async ({ page }) => {
-  await page.clock.install();
-  await starteImBrowser(page);
-  await oeffneTrainer(page, "denkroutine");
-  const runde = page.getByTestId("trainerrunde");
-  await expect(runde).toContainText("Aufgabe 1 von 3");
-  const weiter = page.getByTestId("denk-weiter");
-  await expect(weiter).toBeDisabled();
-  await expect(weiter).toContainText("Sekunden nachdenken");
-  await page.clock.fastForward(61_000);
-  // Danach läuft die Zeit normal weiter (sonst warten Klicks auf Animationsbilder).
-  await page.clock.resume();
-  await expect(weiter).toBeEnabled();
-  await weiter.click();
-  await runde.getByLabel("Kandidat 1", { exact: true }).fill("Zz9");
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  await expect(page.getByTestId("denk-pruefung")).toContainText("ist hier kein regelgerechter Zug");
-  await expect(page.getByTestId("denk-pruefung")).toContainText("Kandidat 2 fehlt.");
-  await expect(runde).toContainText("Zu jedem Kandidaten gehört die stärkste Antwort");
-  await page.screenshot({ path: "test-results/bilder/trainer-denkroutine.png", fullPage: true });
-  await runde.getByRole("button", { name: "Weiter" }).click();
-  await expect(runde).toContainText("Aufgabe 2 von 3");
-});
-
-/** Zwei regelgerechte Kandidaten mit je einer Antwort für eine Abbildung (aus den Buchdaten). */
-function kandidatenFuer(nummer: string): [string, string][] {
-  const datei = `public/daten/de/a1/kap${nummer.split(".")[0]?.padStart(2, "0")}.json`;
-  const kapitel = JSON.parse(readFileSync(datei, "utf8")) as {
-    abbildungen: { id: string; fen: string }[];
-  };
-  const fen = kapitel.abbildungen.find((a) => a.id === nummer)?.fen ?? "";
-  const pos = Chess.fromSetup(parseFen(fen).unwrap()).unwrap();
-  const paare: [string, string][] = [];
-  for (const [von, ziele] of pos.allDests()) {
-    for (const nach of ziele) {
-      const zug = { from: von, to: nach };
-      const danach = pos.clone();
-      const san = makeSan(pos, zug);
-      danach.play(zug);
-      const antwort = [...danach.allDests()].flatMap(([v, z]) =>
-        [...z].map((n) => ({ from: v, to: n })),
-      )[0];
-      if (antwort && !san.includes("=")) paare.push([san, makeSan(danach, antwort)]);
-      if (paare.length === 2) return paare;
-    }
-  }
-  return paare;
-}
-
-test("Denkroutine: zwei Kandidaten mit Antwort, Vergleich mit der Engine", async ({ page }) => {
-  await page.clock.install();
-  await starteImBrowser(page);
-  await oeffneTrainer(page, "denkroutine");
-  const runde = page.getByTestId("trainerrunde");
-  const brett = runde.getByRole("img", { name: /^Stellung aus Abb\. / });
-  const nummer = ((await brett.getAttribute("aria-label")) ?? "").replace("Stellung aus Abb. ", "");
-  await page.clock.fastForward(61_000);
-  await page.clock.resume();
-  await page.getByTestId("denk-weiter").click();
-  for (const [i, [kandidat, antwort]] of kandidatenFuer(nummer).entries()) {
-    await runde.getByLabel(`Kandidat ${i + 1}`, { exact: true }).fill(kandidat);
-    await runde.getByLabel(`Stärkste Antwort auf Kandidat ${i + 1}`).fill(antwort);
-  }
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  await expect(page.getByTestId("denk-pruefung")).toContainText("vollständig");
-  const vergleich = page.getByTestId("denk-vergleich");
-  await expect(vergleich).toContainText("Bester Zug laut Engine", { timeout: 30_000 });
-  await expect(vergleich).toContainText("Dein Kandidat");
-  await expect(runde.getByRole("button", { name: "Weiter" })).toBeVisible();
-});
-
-test("Planbilanz-Übung: Planfragen, LAP und Wettrennen", async ({ page }) => {
-  await starteImBrowser(page);
-  await oeffneTrainer(page, "planbilanz");
-  await page.getByRole("button", { name: /Drei Planfragen/ }).click();
-  const runde = page.getByTestId("trainerrunde");
-  await expect(runde).toContainText("Aufgabe 1 von 4");
-  for (const gruppe of await runde.locator(".antworten").all()) {
-    await gruppe.getByRole("button").first().click();
-  }
-  await expect(runde.getByRole("button", { name: "Weiter" })).toBeVisible();
-  await page.screenshot({ path: "test-results/bilder/trainer-planfragen.png", fullPage: true });
-  await page.getByRole("button", { name: "Training" }).first().click();
-  await oeffneTrainer(page, "planbilanz");
-  await page.getByRole("button", { name: /Wettrennen der Bauern/ }).click();
-  for (const seite of ["Weiß", "Schwarz"]) {
-    await runde.getByRole("group", { name: seite }).getByRole("button", { name: "2" }).click();
-  }
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  await expect(runde).toContainText(/schneller|gleich viele/);
-  await page.getByRole("button", { name: "Training" }).first().click();
-  await oeffneTrainer(page, "planbilanz");
-  await page.getByRole("button", { name: /LAP/ }).click();
-  await feld(page, "a1").click();
-  await feld(page, "h8").click();
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  await expect(runde).toContainText("Nach dem LAP-Prinzip");
-});
-
-test("Abweichungsmodus: Spanisch als Weiß, Engine verlässt das Buch, Antwort wird bewertet", async ({
+test("Endspiel-Kurzübungen (0.2.90): Frage beantworten, Regel des Buches, acht Aufgaben", async ({
   page,
 }) => {
   await starteImBrowser(page);
-  await oeffneTrainer(page, "abweichung");
-  const wahl = page.getByTestId("abweichung-wahl");
-  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
-  await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
-  await wahl.getByRole("button", { name: "Runde starten" }).click();
+  await oeffneTrainer(page, "endspiel");
+  await page.getByRole("button", { name: "Kurzübungen starten" }).click();
   const runde = page.getByTestId("trainerrunde");
-  await expect(page.getByTestId("abweichung-zug")).toContainText("Die Engine verlässt das Buch", {
-    timeout: 30_000,
-  });
-  // Ein Randbauernzug ist in den Stellungen der Spanischen Partie nach wenigen Zügen fast immer
-  // möglich; geht h2–h3 nicht (Zufallsstellung), dann a2–a3.
-  const zuege = page.getByTestId("abweichung-zuege");
-  const vorher = (await zuege.textContent()) ?? "";
-  await feld(page, "h2").click();
-  await feld(page, "h3").click();
-  if ((await zuege.textContent()) === vorher) {
-    await feld(page, "a2").click();
-    await feld(page, "a3").click();
-  }
-  await expect(runde).toContainText(/[ha]3 ist (eine gute Antwort|ungenau|ein Fehler)/, {
-    timeout: 30_000,
-  });
-  await expect(page.getByTestId("abweichung-einschaetzung")).toContainText("Zielbilanz");
-  await page.screenshot({ path: "test-results/bilder/trainer-abweichung.png", fullPage: true });
+  await expect(runde).toContainText("Aufgabe 1 von 8");
+  await expect(runde).toContainText("Holt der schwarze König den Bauern ein?");
+  await runde.getByRole("button", { name: "Ja, er holt ihn ein" }).click();
+  await expect(page.getByTestId("drill-regel")).toContainText("Regel: Kapitel 8, die Quadratregel");
+  await page.screenshot({ path: "test-results/bilder/trainer-kurzuebung.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
-  await expect(runde).toContainText("Aufgabe 2 von 3");
+  await expect(runde).toContainText("Wer hat die Opposition?");
+  await runde.getByRole("button", { name: "Keiner" }).click();
+  await expect(page.getByTestId("drill-regel")).toContainText("die Opposition");
 });

@@ -74,7 +74,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4: Der goldene Pfeil zeigt den ersten weißen Zentrumszug; das goldene Feld e4 ist eines der vier zentralen Felder, die grauen Felder d4, e5 und d5 sind die übrigen drei.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4"
+    },
+    {
+     "art": "text",
+     "text": ": Der goldene Pfeil zeigt den ersten weißen Zentrumszug; das goldene Feld e4 ist eines der vier zentralen Felder, die grauen Felder d4, e5 und d5 sind die übrigen drei.",
      "stil": "normal"
     }
    ],
@@ -123,7 +132,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2. Lf4 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Lf4"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -197,7 +215,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. Sf3, Schwarz am Zug. Der Springer steht auf seinem besten Feld und kontrolliert e5 ebenfalls (goldener Pfeil, graues Feld). Der Bauer e3 hat dem Läufer f1 den Weg nach d3 geöffnet (grauer Pfeil): Das ist der nächste Schritt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sf3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Der Springer steht auf seinem besten Feld und kontrolliert e5 ebenfalls (goldener Pfeil, graues Feld). Der Bauer e3 hat dem Läufer f1 den Weg nach d3 geöffnet (grauer Pfeil): Das ist der nächste Schritt.",
      "stil": "normal"
     }
    ],
@@ -250,7 +277,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. Ld3 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Ld3"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -309,7 +345,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. O-O – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. O-O"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -391,7 +436,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... Sc6, Weiß am Zug. Bauer c5 und Springer c6 greifen den Bauern d4 an (rote Pfeile); die Bauern c3 und e3 und der Springer f3 decken ihn (goldene Pfeile).",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Sc6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Bauer c5 und Springer c6 greifen den Bauern d4 an (rote Pfeile); die Bauern c3 und e3 und der Springer f3 decken ihn (goldene Pfeile).",
      "stil": "normal"
     }
    ],
@@ -470,7 +524,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9. De2 – die Eröffnung ist abgeschlossen. Der goldene Pfeil zeigt die nun freie Grundreihe zwischen den beiden Türmen: Sie sind „verbunden“ und decken sich gegenseitig. Die grauen Felder e5 und e4 zeigen, welche Zentrumsfelder Weiß aus der Distanz beherrscht, ohne sie zu besetzen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. De2"
+    },
+    {
+     "art": "text",
+     "text": " – die Eröffnung ist abgeschlossen. Der goldene Pfeil zeigt die nun freie Grundreihe zwischen den beiden Türmen: Sie sind „verbunden“ und decken sich gegenseitig. Die grauen Felder e5 und e4 zeigen, welche Zentrumsfelder Weiß aus der Distanz beherrscht, ohne sie zu besetzen.",
      "stil": "normal"
     }
    ],
@@ -533,7 +596,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3... Df6? – Die Dame greift in Wahrheit nichts an: Die f-Linie ist durch den weißen Springer f3 versperrt (grauer Pfeil), f2 ist also gar nicht bedroht. Schlimmer noch: Sie nimmt dem eigenen Springer g8 (grau) das Feld f6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... Df6?"
+    },
+    {
+     "art": "text",
+     "text": " – Die Dame greift in Wahrheit nichts an: Die f-Linie ist durch den weißen Springer f3 versperrt (grauer Pfeil), f2 ist also gar nicht bedroht. Schlimmer noch: Sie nimmt dem eigenen Springer g8 (grau) das Feld f6.",
      "stil": "normal"
     }
    ],
@@ -606,7 +678,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. Sc3! Lc5 5. Sd5! – der Springer greift die Dame an ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sc3! Lc5 5. Sd5!"
+    },
+    {
+     "art": "text",
+     "text": " – der Springer greift die Dame an ",
      "stil": "normal"
     },
     {
@@ -686,7 +767,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... Dd8 – die Dame steht wieder auf ihrem Ausgangsfeld. Zwei Züge von Schwarz sind ersatzlos verschwunden.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Dd8"
+    },
+    {
+     "art": "text",
+     "text": " – die Dame steht wieder auf ihrem Ausgangsfeld. Zwei Züge von Schwarz sind ersatzlos verschwunden.",
      "stil": "normal"
     }
    ],
@@ -751,7 +841,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. d4! – Weiß hat ein breites Zentrum (gold), drei entwickelte Figuren und die Rochade in Reichweite. Schwarz hat zwei Figuren und eine Dame, die nichts erreicht hat. Dass Schwarz auf d4 schlagen kann, stört Weiß nicht: Sein Entwicklungsvorsprung ist mehr wert als der Bauer.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. d4!"
+    },
+    {
+     "art": "text",
+     "text": " – Weiß hat ein breites Zentrum (gold), drei entwickelte Figuren und die Rochade in Reichweite. Schwarz hat zwei Figuren und eine Dame, die nichts erreicht hat. Dass Schwarz auf d4 schlagen kann, stört Weiß nicht: Sein Entwicklungsvorsprung ist mehr wert als der Bauer.",
      "stil": "normal"
     }
    ],
@@ -892,7 +991,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2. Dh5 – die roten Pfeile zeigen den Angriff auf e5 und das Ziel f7. Noch ist f7 harmlos, weil der König es deckt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Dh5"
+    },
+    {
+     "art": "text",
+     "text": " – die roten Pfeile zeigen den Angriff auf e5 und das Ziel f7. Noch ist f7 harmlos, weil der König es deckt.",
      "stil": "normal"
     }
    ],
@@ -953,7 +1061,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... Sc6 – der graue Pfeil zeigt, wie der Springer den e5-Bauern deckt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Sc6"
+    },
+    {
+     "art": "text",
+     "text": " – der graue Pfeil zeigt, wie der Springer den e5-Bauern deckt.",
      "stil": "normal"
     }
    ],
@@ -1009,7 +1126,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Lc4 – Dame und Läufer zielen gemeinsam auf das rot markierte Mattfeld f7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Lc4"
+    },
+    {
+     "art": "text",
+     "text": " – Dame und Läufer zielen gemeinsam auf das rot markierte Mattfeld f7.",
      "stil": "normal"
     }
    ],
@@ -1077,7 +1203,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3... g6! – der rote Pfeil zeigt den Bauernangriff auf die Dame h5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... g6!"
+    },
+    {
+     "art": "text",
+     "text": " – der rote Pfeil zeigt den Bauernangriff auf die Dame h5.",
      "stil": "normal"
     }
    ],
@@ -1146,7 +1281,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. Df3 – der rote Pfeil zeigt: Die Dame zieht sich zurück, zielt aber weiter auf f7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Df3"
+    },
+    {
+     "art": "text",
+     "text": " – der rote Pfeil zeigt: Die Dame zieht sich zurück, zielt aber weiter auf f7.",
      "stil": "normal"
     }
    ],
@@ -1194,7 +1338,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4... Sf6 – Schwarz ist sicher und sogar leicht im Vorteil: Der Springer auf dem grau markierten Feld f6 versperrt der Dame die f-Linie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Sf6"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz ist sicher und sogar leicht im Vorteil: Der Springer auf dem grau markierten Feld f6 versperrt der Dame die f-Linie.",
      "stil": "normal"
     }
    ],
@@ -1249,7 +1402,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... Sxd5?! – der rote Pfeil zeigt den natürlich aussehenden Rückschlag, der sich als Fehler erweist.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Sxd5?!"
+    },
+    {
+     "art": "text",
+     "text": " – der rote Pfeil zeigt den natürlich aussehenden Rückschlag, der sich als Fehler erweist.",
      "stil": "normal"
     }
    ],
@@ -1321,7 +1483,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Sxf7! – der goldene Pfeil zeigt das Springeropfer auf dem kritischen Feld f7 (rot).",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Sxf7!"
+    },
+    {
+     "art": "text",
+     "text": " – der goldene Pfeil zeigt das Springeropfer auf dem kritischen Feld f7 (rot).",
      "stil": "normal"
     }
    ],
@@ -1367,7 +1538,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Kxf7 – der König muss den Springer zurückerobern und verliert dabei die Rochade.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Kxf7"
+    },
+    {
+     "art": "text",
+     "text": " – der König muss den Springer zurückerobern und verliert dabei die Rochade.",
      "stil": "normal"
     }
    ],
@@ -1414,7 +1594,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. Df3+ Ke6 – der König wird mit Schach ins offene Zentrum gezwungen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. Df3+ Ke6"
+    },
+    {
+     "art": "text",
+     "text": " – der König wird mit Schach ins offene Zentrum gezwungen.",
      "stil": "normal"
     }
    ],
@@ -1550,7 +1739,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Sf6+ – der Springer gabelt König und Dame (rote Pfeile). Schwarz hat nur drei legale Züge: Ke7, Kf8 und Kd8.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sf6+"
+    },
+    {
+     "art": "text",
+     "text": " – der Springer gabelt König und Dame (rote Pfeile). Schwarz hat nur drei legale Züge: Ke7, Kf8 und Kd8.",
      "stil": "normal"
     }
    ],
@@ -1587,7 +1785,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... Ke7 – der König ist gerettet, die Dame nicht: Es folgt 2. Sxd5+ und Weiß gewinnt die Dame für einen Springer.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke7"
+    },
+    {
+     "art": "text",
+     "text": " – der König ist gerettet, die Dame nicht: Es folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sxd5+"
+    },
+    {
+     "art": "text",
+     "text": " und Weiß gewinnt die Dame für einen Springer.",
      "stil": "normal"
     }
    ],
@@ -1661,7 +1877,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... Db6, Weiß am Zug. Die roten Pfeile zeigen die drei schwarzen Angreifer auf d4, die goldenen die drei weißen Verteidiger, darunter die Dame d1 über die d-Linie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Db6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Die roten Pfeile zeigen die drei schwarzen Angreifer auf d4, die goldenen die drei weißen Verteidiger, darunter die Dame d1 über die d-Linie.",
      "stil": "normal"
     }
    ],
@@ -1733,7 +1958,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Ld3?! – Schwarz am Zug. Das rote Feld d3 zeigt das Problem: Der eigene Läufer hat der weißen Dame dort die Deckung von d4 abgeschnitten. Aus 3:3 ist 3:2 geworden.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Ld3?!"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz am Zug. Das rote Feld d3 zeigt das Problem: Der eigene Läufer hat der weißen Dame dort die Deckung von d4 abgeschnitten. Aus 3:3 ist 3:2 geworden.",
      "stil": "normal"
     }
    ],
@@ -1816,7 +2050,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. cxd4, Schwarz am Zug. Rot: zwei Angreifer auf d4. Gold: ein Verteidiger. Der Läufer d3 verstellt der Dame d1 weiter die d-Linie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. cxd4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: zwei Angreifer auf d4. Gold: ein Verteidiger. Der Läufer d3 verstellt der Dame d1 weiter die d-Linie.",
      "stil": "normal"
     }
    ],
@@ -1896,7 +2139,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9. Lb5+, Schwarz am Zug. Der Läufer gibt Schach (roter Pfeil) und hat dabei die d-Linie geräumt: Im nächsten Zug schlägt die weiße Dame die schwarze auf d4 (goldener Pfeil, rotes Feld).",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Lb5+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Der Läufer gibt Schach (roter Pfeil) und hat dabei die d-Linie geräumt: Im nächsten Zug schlägt die weiße Dame die schwarze auf d4 (goldener Pfeil, rotes Feld).",
      "stil": "normal"
     }
    ],
@@ -1963,7 +2215,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... Ld7!, Weiß am Zug. Der Läufer steht jetzt zwischen b5 (grau) und seinem König: Auch wenn der Springer c6 auf d4 schlägt, ist Lb5 kein Schach mehr, und der Läufer d7 könnte auf b5 schlagen (goldener Pfeil). Damit ist die Drohung gegen d4 (rot) echt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Ld7!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Der Läufer steht jetzt zwischen b5 (grau) und seinem König: Auch wenn der Springer c6 auf d4 schlägt, ist Lb5 kein Schach mehr, und der Läufer d7 könnte auf b5 schlagen (goldener Pfeil). Damit ist die Drohung gegen d4 (rot) echt.",
      "stil": "normal"
     }
    ],
@@ -2028,7 +2289,34 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8. Sc3?! Sxd4! 9. Sxd4 Dxd4 – Schwarz hat einen gesunden Bauern gewonnen. Der Versuch 10. Lb5 läuft jetzt ins Leere: Er ist kein Schach, und 10... Dxe5+ gewinnt sogar einen zweiten Bauern.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Sc3?! Sxd4! 9. Sxd4 Dxd4"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz hat einen gesunden Bauern gewonnen. Der Versuch ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Lb5"
+    },
+    {
+     "art": "text",
+     "text": " läuft jetzt ins Leere: Er ist kein Schach, und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Dxe5+"
+    },
+    {
+     "art": "text",
+     "text": " gewinnt sogar einen zweiten Bauern.",
      "stil": "normal"
     }
    ],
@@ -2092,7 +2380,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. h3 – Schwarz am Zug. Der Läufer wird angegriffen. Der Schlagreflex sagt: Lxf3 (grauer Pfeil). Das graue Feld d1 zeigt, wo die weiße Dame noch untätig steht.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. h3"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz am Zug. Der Läufer wird angegriffen. Der Schlagreflex sagt: Lxf3 (grauer Pfeil). Das graue Feld d1 zeigt, wo die weiße Dame noch untätig steht.",
      "stil": "normal"
     }
    ],
@@ -2167,7 +2464,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... Lxf3?! 8. Dxf3 – Schwarz hat seinen Läufer gegen einen Springer getauscht und dabei die weiße Dame kostenlos entwickelt. Von f3 aus zielt sie auf den Springer f6 und dahinter auf den Bauern f7 (goldener Pfeil).",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Lxf3?! 8. Dxf3"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz hat seinen Läufer gegen einen Springer getauscht und dabei die weiße Dame kostenlos entwickelt. Von f3 aus zielt sie auf den Springer f6 und dahinter auf den Bauern f7 (goldener Pfeil).",
      "stil": "normal"
     }
    ],
@@ -2292,7 +2598,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Dxh7# – matt. Der Springer g5 deckt die Dame, f8 ist durch den eigenen Turm und g7 durch den eigenen Bauern verstellt, h8 kontrolliert die Dame selbst.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxh7#"
+    },
+    {
+     "art": "text",
+     "text": " – matt. Der Springer g5 deckt die Dame, f8 ist durch den eigenen Turm und g7 durch den eigenen Bauern verstellt, h8 kontrolliert die Dame selbst.",
      "stil": "normal"
     }
    ],
@@ -2484,7 +2799,52 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2. Sg5+ – Schwarz hat nur vier Königszüge. Nach 2... Kh8 folgt sofort 3. Dh5+ und Matt; die Ausflüge 2... Kg6 und 2... Kh6 führen den König mitten ins offene Feld. Rot: Der Springer gibt Schach und greift zugleich f7 an. Gold: der Weg der Dame nach h5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sg5+"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz hat nur vier Königszüge. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kh8"
+    },
+    {
+     "art": "text",
+     "text": " folgt sofort ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Dh5+"
+    },
+    {
+     "art": "text",
+     "text": " und Matt; die Ausflüge ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg6"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kh6"
+    },
+    {
+     "art": "text",
+     "text": " führen den König mitten ins offene Feld. Rot: Der Springer gibt Schach und greift zugleich f7 an. Gold: der Weg der Dame nach h5.",
      "stil": "normal"
     }
    ],
@@ -2537,7 +2897,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... Kg8 3. Dh5 – die dritte Figur ist da. Gedroht ist 4. Dh7# (goldener Pfeil, rotes Feld), gedeckt vom Springer g5 (grau). Schwarz hat keine Verteidigung mehr: Jeder Zug verliert mit Gewalt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg8 3. Dh5"
+    },
+    {
+     "art": "text",
+     "text": " – die dritte Figur ist da. Gedroht ist ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Dh7#"
+    },
+    {
+     "art": "text",
+     "text": " (goldener Pfeil, rotes Feld), gedeckt vom Springer g5 (grau). Schwarz hat keine Verteidigung mehr: Jeder Zug verliert mit Gewalt.",
      "stil": "normal"
     }
    ],

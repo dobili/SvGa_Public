@@ -335,7 +335,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Ke4 Kf7 2. Kf5 Kg7, Weiß am Zug. Grauer Pfeil: Jetzt verkleinert die Dame den Kasten.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ke4 Kf7 2. Kf5 Kg7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grauer Pfeil: Jetzt verkleinert die Dame den Kasten.",
      "stil": "normal"
     }
    ],
@@ -397,7 +406,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Dc7+ Kg8 4. Kf6 Kh8, Weiß am Zug. Goldener Pfeil: 5. Dg7# setzt matt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Dc7+ Kg8 4. Kf6 Kh8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Dg7#"
+    },
+    {
+     "art": "text",
+     "text": " setzt matt.",
      "stil": "normal"
     }
    ],
@@ -636,7 +663,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Abwartezug, Weiß am Zug. Goldener Pfeil: 1. Th7 überlässt Schwarz den Zug. Dem König bleiben nur d8 und b8.",
+     "text": "Abwartezug, Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th7"
+    },
+    {
+     "art": "text",
+     "text": " überlässt Schwarz den Zug. Dem König bleiben nur d8 und b8.",
      "stil": "normal"
     }
    ],
@@ -692,7 +728,43 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Th7 Kb8 2. Kc6 Ka8, Weiß am Zug. Grauer Pfeil: Der König folgt mit 3. Kb6; nach 3... Kb8 setzt 4. Th8# matt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th7 Kb8 2. Kc6 Ka8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grauer Pfeil: Der König folgt mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kb6"
+    },
+    {
+     "art": "text",
+     "text": "; nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... Kb8"
+    },
+    {
+     "art": "text",
+     "text": " setzt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Th8#"
+    },
+    {
+     "art": "text",
+     "text": " matt.",
      "stil": "normal"
     }
    ],
@@ -753,7 +825,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldener Pfeil: 1. Ta4 sperrt die 4. Reihe.",
+     "text": "Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ta4"
+    },
+    {
+     "art": "text",
+     "text": " sperrt die 4. Reihe.",
      "stil": "normal"
     }
    ],
@@ -794,7 +875,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Ta4 Kd5 2. Kd2 Kc5, Weiß am Zug. Grauer Pfeil: Der König rückt mit 3. Kc3 nach.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ta4 Kd5 2. Kd2 Kc5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grauer Pfeil: Der König rückt mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kc3"
+    },
+    {
+     "art": "text",
+     "text": " nach.",
      "stil": "normal"
     }
    ],
@@ -849,7 +948,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Kc3 Kb5 4. Th4 Ka5, Weiß am Zug. Goldener Pfeil: 5. Kb3. Grau: a4 und b4 sperrt der Turm; dem König bleiben a6, b6 und b5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kc3 Kb5 4. Th4 Ka5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Kb3"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: a4 und b4 sperrt der Turm; dem König bleiben a6, b6 und b5.",
      "stil": "normal"
     }
    ],
@@ -928,7 +1045,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Grau: die Felder, die dem schwarzen König bleiben. Goldener Pfeil: 1. Ld6 nimmt f8.",
+     "text": "Weiß am Zug. Grau: die Felder, die dem schwarzen König bleiben. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ld6"
+    },
+    {
+     "art": "text",
+     "text": " nimmt f8.",
      "stil": "normal"
     }
    ],
@@ -969,7 +1095,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Ld6 Kh8 2. Kg6 Kg8, Weiß am Zug. Goldener Pfeil: 3. Ld5+ treibt den König nach h8.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ld6 Kh8 2. Kg6 Kg8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Ld5+"
+    },
+    {
+     "art": "text",
+     "text": " treibt den König nach h8.",
      "stil": "normal"
     }
    ],
@@ -1020,7 +1164,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Ld5+ Kh8 4. Le5#. Rot: Der Läufer e5 gibt Schach. Grau: Der Läufer d5 beherrscht g8. Der König g6 nimmt g7 und h7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Ld5+ Kh8 4. Le5#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der Läufer e5 gibt Schach. Grau: Der Läufer d5 beherrscht g8. Der König g6 nimmt g7 und h7.",
      "stil": "normal"
     }
    ],
@@ -1133,7 +1286,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... Kd6 2. Kf5 Ke7, Weiß am Zug. Goldener Pfeil: 3. Ke5 nimmt die Opposition.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd6 2. Kf5 Ke7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Ke5"
+    },
+    {
+     "art": "text",
+     "text": " nimmt die Opposition.",
      "stil": "normal"
     }
    ],
@@ -1194,7 +1365,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3... Kf7 4. Kd6 Kf6 5. e4 Kf7 6. e5 Ke8, Weiß am Zug. Goldener Pfeil: 7. Ke6 nimmt erneut die Opposition.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... Kf7 4. Kd6 Kf6 5. e4 Kf7 6. e5 Ke8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. Ke6"
+    },
+    {
+     "art": "text",
+     "text": " nimmt erneut die Opposition.",
      "stil": "normal"
     }
    ],
@@ -1260,7 +1449,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... Kf8 8. Kd7 Kf7, Weiß am Zug. Grau: Der König d7 deckt e6, e7 und e8. Goldener Pfeil: Der Bauer läuft durch.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Kf8 8. Kd7 Kf7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der König d7 deckt e6, e7 und e8. Goldener Pfeil: Der Bauer läuft durch.",
      "stil": "normal"
     }
    ],
@@ -1317,7 +1515,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Fernopposition, Weiß am Zug. Goldener Pfeil: Nur 1. Kf3! gewinnt. Die Könige stehen dann auf der f-Linie mit drei Feldern dazwischen, und Schwarz ist am Zug.",
+     "text": "Fernopposition, Weiß am Zug. Goldener Pfeil: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Kf3!"
+    },
+    {
+     "art": "text",
+     "text": " gewinnt. Die Könige stehen dann auf der f-Linie mit drei Feldern dazwischen, und Schwarz ist am Zug.",
      "stil": "normal"
     }
    ],
@@ -1373,7 +1580,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Diagonalopposition, Weiß am Zug. Goldener Pfeil: Nur 1. Kd3! gewinnt. Die Könige d3 und f5 stehen diagonal mit einem Feld (e4) dazwischen.",
+     "text": "Diagonalopposition, Weiß am Zug. Goldener Pfeil: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Kd3!"
+    },
+    {
+     "art": "text",
+     "text": " gewinnt. Die Könige d3 und f5 stehen diagonal mit einem Feld (e4) dazwischen.",
      "stil": "normal"
     }
    ],
@@ -1605,7 +1821,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug hält remis, aber nur mit 1... Kd5! (goldener Pfeil, Opposition): Jetzt erreicht der weiße König kein Schlüsselfeld (gold) mehr.",
+     "text": "Schwarz am Zug hält remis, aber nur mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd5!"
+    },
+    {
+     "art": "text",
+     "text": " (goldener Pfeil, Opposition): Jetzt erreicht der weiße König kein Schlüsselfeld (gold) mehr.",
      "stil": "normal"
     }
    ],
@@ -1661,7 +1886,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt nur mit 1. e7! (goldener Pfeil); danach folgen Kd7 und die Umwandlung.",
+     "text": "Weiß am Zug gewinnt nur mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e7!"
+    },
+    {
+     "art": "text",
+     "text": " (goldener Pfeil); danach folgen Kd7 und die Umwandlung.",
      "stil": "normal"
     }
    ],
@@ -1717,7 +1951,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug hält mit 1... Kd8! (goldener Pfeil): Nach 2. e7+ Ke8 3. Ke6 ist Schwarz patt.",
+     "text": "Schwarz am Zug hält mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd8!"
+    },
+    {
+     "art": "text",
+     "text": " (goldener Pfeil): Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. e7+ Ke8 3. Ke6"
+    },
+    {
+     "art": "text",
+     "text": " ist Schwarz patt.",
      "stil": "normal"
     }
    ],
@@ -1780,7 +2032,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Der schwarze König steht in der Ecke, Weiß am Zug. Grau: Der König b6 beherrscht a7 und b7. Rot: Das Umwandlungsfeld a8 bleibt besetzt. 1. Ka6 setzt patt, jeder andere Königszug gibt den Bauern a7 auf.",
+     "text": "Der schwarze König steht in der Ecke, Weiß am Zug. Grau: Der König b6 beherrscht a7 und b7. Rot: Das Umwandlungsfeld a8 bleibt besetzt. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ka6"
+    },
+    {
+     "art": "text",
+     "text": " setzt patt, jeder andere Königszug gibt den Bauern a7 auf.",
      "stil": "normal"
     }
    ],
@@ -1847,7 +2108,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldener Pfeil: der Tausch 1. Txf8. Goldene Felder: die Schlüsselfelder des Bauern d4.",
+     "text": "Weiß am Zug. Goldener Pfeil: der Tausch ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Txf8"
+    },
+    {
+     "art": "text",
+     "text": ". Goldene Felder: die Schlüsselfelder des Bauern d4.",
      "stil": "normal"
     }
    ],
@@ -1917,7 +2187,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Txf8 Kxf8 2. Kd5 Ke7, Weiß am Zug. Goldener Pfeil: 3. Kc6 besetzt ein Schlüsselfeld (gold).",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Txf8 Kxf8 2. Kd5 Ke7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kc6"
+    },
+    {
+     "art": "text",
+     "text": " besetzt ein Schlüsselfeld (gold).",
      "stil": "normal"
     }
    ],
@@ -1980,7 +2268,16 @@
     },
     {
      "art": "text",
-     "text": " am Zug und hat getauscht. Nach 1... Txf4+ 2. Kxf4 Kd6, Weiß am Zug. Gold: Der schwarze König versperrt die Schlüsselfelder, remis.",
+     "text": " am Zug und hat getauscht. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Txf4+ 2. Kxf4 Kd6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der schwarze König versperrt die Schlüsselfelder, remis.",
      "stil": "normal"
     }
    ],
@@ -2040,7 +2337,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Quadrat des Bauern b4, Weiß am Zug. Goldener Pfeil: der Weg des Bauern. Graue Pfeile: die übrigen Seiten des Quadrats. Nach 1. b5 schrumpft es auf b5–e8, und der König g5 erreicht es nicht mehr. Weiß gewinnt.",
+     "text": "Das Quadrat des Bauern b4, Weiß am Zug. Goldener Pfeil: der Weg des Bauern. Graue Pfeile: die übrigen Seiten des Quadrats. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. b5"
+    },
+    {
+     "art": "text",
+     "text": " schrumpft es auf b5–e8, und der König g5 erreicht es nicht mehr. Weiß gewinnt.",
      "stil": "normal"
     }
    ],
@@ -2267,7 +2573,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. a5 h4 2. a6 h3, Weiß am Zug. Goldener Pfeil: Der a-Bauer wandelt zuerst um. Grauer Pfeil: Die neue Dame beherrscht h1.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. a5 h4 2. a6 h3"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: Der a-Bauer wandelt zuerst um. Grauer Pfeil: Die neue Dame beherrscht h1.",
      "stil": "normal"
     }
    ],
@@ -2373,7 +2688,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. b7 h2 2. b8=D h1=D, Weiß am Zug. Goldener Pfeil: 3. Dh8+. Roter Pfeil: der Spieß durch den König h5 auf die Dame h1.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. b7 h2 2. b8=D h1=D"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Dh8+"
+    },
+    {
+     "art": "text",
+     "text": ". Roter Pfeil: der Spieß durch den König h5 auf die Dame h1.",
      "stil": "normal"
     }
    ],
@@ -2542,8 +2875,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Durchbruch, Weiß am Zug. Goldener Pfeil: 1. b6!",
+     "text": "Durchbruch, Weiß am Zug. Goldener Pfeil: ",
      "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. b6!"
     }
    ],
    "art": "fliesstext",
@@ -2598,7 +2935,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. b6 axb6 2. c6 bxc6, Weiß am Zug. Goldener Pfeil: Nach 3. a6 läuft der a-Bauer durch, der König h8 kommt zu spät.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. b6 axb6 2. c6 bxc6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. a6"
+    },
+    {
+     "art": "text",
+     "text": " läuft der a-Bauer durch, der König h8 kommt zu spät.",
      "stil": "normal"
     }
    ],
@@ -2700,7 +3055,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. a6 Kc6 2. a7 Kb7, Weiß am Zug. Grauer Pfeil: Der weiße König macht sich auf den Weg.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. a6 Kc6 2. a7 Kb7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grauer Pfeil: Der weiße König macht sich auf den Weg.",
      "stil": "normal"
     }
    ],
@@ -2745,7 +3109,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Kd5 Kxa7 4. Ke6, Schwarz am Zug. Rot: Der König greift f6 an; der schwarze König ist zu weit weg.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kd5 Kxa7 4. Ke6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der König greift f6 an; der schwarze König ist zu weit weg.",
      "stil": "normal"
     }
    ],
@@ -2898,7 +3271,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Ke5 Kc6 2. Kd4 Kd7, Weiß am Zug. Goldener Pfeil: 3. Kd5 schließt das Dreieck. Die Ausgangsstellung steht wieder da, jetzt mit Schwarz am Zug.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ke5 Kc6 2. Kd4 Kd7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kd5"
+    },
+    {
+     "art": "text",
+     "text": " schließt das Dreieck. Die Ausgangsstellung steht wieder da, jetzt mit Schwarz am Zug.",
      "stil": "normal"
     }
    ],
@@ -2943,7 +3334,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Wer mit dem König ziehen muss, verliert seinen Bauern. Goldener Pfeil: Nur 1. h4! gewinnt.",
+     "text": "Weiß am Zug. Wer mit dem König ziehen muss, verliert seinen Bauern. Goldener Pfeil: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. h4!"
+    },
+    {
+     "art": "text",
+     "text": " gewinnt.",
      "stil": "normal"
     }
    ],
@@ -2998,7 +3398,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. h4, Schwarz am Zug. Jeder Königszug gibt den Bauern c5 (rot) auf.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. h4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Jeder Königszug gibt den Bauern c5 (rot) auf.",
      "stil": "normal"
     }
    ],

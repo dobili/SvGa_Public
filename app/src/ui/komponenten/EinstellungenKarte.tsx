@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Pflichtenheft 4 „Einstellungen: Sprache, Brettfarben, Figurensatz, Ton,
  * Auflage des Buches, Strenge des Modus ‚Erst selbst denken‘“. Was es noch nicht zu wählen gibt,
- * steht mit „folgt“ da (Sprache). Die Auflage zeigt die Zeile „Datenstand“ darüber.
+ * steht mit „folgt“ da (Sprache, bis es eine zweite gibt; seit 0.2.94 dann eine Auswahl). Die Auflage zeigt die Zeile „Datenstand“ darüber.
  * Seit 0.2.33 (Fragen des Autors vom 16.10.2026): Figurensatz (wie im Buch, klassisch, seit 0.2.39
  * auch Holz) und Ton
  * (aus, an) sind wählbar. „Erst selbst denken“ war bis AP 13 ausgeblendet; seit 0.2.37 wirkt es
@@ -14,7 +14,8 @@
  * Seit 0.2.80 (Wunsch des Autors, 18.10.2026): Reiter mit Symbolen (Brett, Figuren, Anzeige,
  * Ton, Training), damit nicht alles auf einmal untereinander steht; Brettfarben und Figurensätze
  * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz;
- * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material.
+ * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.92 unter „Brett“
+ * der Schalter „Figuren per Wischen ziehen“ (Merker auf dem Gerät wie die Koordinaten).
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
  * i18n.
  */
@@ -27,6 +28,7 @@ import {
   type Brettfarben,
   type Figurensatz,
   type Strenge,
+  type VorWerkzeugen,
   type Ton,
 } from "../../app/einstellungen";
 import {
@@ -36,7 +38,9 @@ import {
   type Farbschema,
 } from "../../app/farbschema";
 import { liesMerker, schreibeMerker } from "../../app/merker";
-import { t, type Textschluessel } from "../../i18n/sprache";
+import { sprachname, t, verfuegbareSprachen, type Textschluessel } from "../../i18n/sprache";
+import { useSprache, waehleSprache } from "../../app/sprachwahl";
+import { MERKER_WISCHEN } from "../brett/useZiehen";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
 import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
@@ -72,22 +76,31 @@ const FIGURENGRUPPEN: readonly { titel?: Textschluessel; werte: readonly Figuren
 ];
 const TOENE: readonly Ton[] = ["aus", "an"];
 const STRENGEN: readonly Strenge[] = ["locker", "streng"];
+const VOR_WERKZEUGEN: readonly VorWerkzeugen[] = ["aus", "an"];
 const KOORDINATEN = ["an", "aus"] as const;
 type Koordinaten = (typeof KOORDINATEN)[number];
 
-/** Koordinaten am Brett, gemerkt auf dem Gerät. Beispiel: „aus“ blendet a–h und 1–8 aus. */
-function KoordinatenWahl() {
-  const [wert, setzeWert] = useState<Koordinaten>(
-    liesMerker("koordinaten") === "aus" ? "aus" : "an",
-  );
+/**
+ * Ein Schalter an/aus, gemerkt auf dem Gerät (Voreinstellung: an).
+ * Beispiel: Merker „koordinaten“ auf „aus“ blendet a–h und 1–8 aus; Merker „wischen“ auf „aus“
+ * lässt Figuren nur noch antippen.
+ */
+function MerkerWahl({
+  merker,
+  schluessel,
+}: {
+  merker: string;
+  schluessel: "einstellungen.koordinaten" | "einstellungen.wischen";
+}) {
+  const [wert, setzeWert] = useState<Koordinaten>(liesMerker(merker) === "aus" ? "aus" : "an");
   return (
     <Auswahl
-      name={t("einstellungen.koordinaten")}
+      name={t(schluessel)}
       werte={KOORDINATEN}
       gewaehlt={wert}
-      text={(w) => t(`einstellungen.koordinaten.${w}`)}
+      text={(w) => t(`${schluessel}.${w}`)}
       beiWahl={(neu) => {
-        schreibeMerker("koordinaten", neu);
+        schreibeMerker(merker, neu);
         setzeWert(neu);
       }}
     />
@@ -145,7 +158,7 @@ const BEREICHE: readonly { wert: Bereich; text: Textschluessel; symbol: LucideIc
   { wert: "training", text: "einstellungen.reiter.training", symbol: Brain },
 ];
 
-/** Brett: Farben mit Vorschau, Koordinaten. */
+/** Brett: Farben mit Vorschau, Koordinaten, Ziehen per Wischen. */
 function BrettBereich() {
   const einstellungen = useEinstellungen();
   return (
@@ -158,7 +171,9 @@ function BrettBereich() {
         vorschau={(wert) => <Brettausschnitt farben={wert} satz={einstellungen.figurensatz} />}
         beiWahl={(brettfarben) => aendereEinstellungen({ brettfarben })}
       />
-      <KoordinatenWahl />
+      <MerkerWahl merker="koordinaten" schluessel="einstellungen.koordinaten" />
+      <MerkerWahl merker={MERKER_WISCHEN} schluessel="einstellungen.wischen" />
+      <p className="hinweis">{t("einstellungen.wischen.hinweis")}</p>
     </>
   );
 }
@@ -178,18 +193,41 @@ function FigurenBereich() {
   );
 }
 
-/** Anzeige: Nachtmodus, Erklärkacheln, Sprache. */
-function AnzeigeBereich() {
-  return (
-    <>
-      <NachtmodusWahl />
-      <ErklaerungenWahl />
+/**
+ * Sprache der App (seit 0.2.94): eine Auswahl, sobald es mehr als eine Sprache gibt; bis dahin
+ * nur die Zeile „Deutsch (Englisch folgt …)“. Ohne Wahl gilt die Sprache des Geräts.
+ */
+function SprachWahl() {
+  const aktuell = useSprache();
+  const sprachen = verfuegbareSprachen();
+  if (sprachen.length <= 1) {
+    return (
       <dl className="einstellungen">
         <div className="einstellung">
           <dt>{t("einstellungen.sprache")}</dt>
           <dd>{t("einstellungen.sprache.wert")}</dd>
         </div>
       </dl>
+    );
+  }
+  return (
+    <Auswahl
+      name={t("einstellungen.sprache")}
+      werte={sprachen}
+      gewaehlt={aktuell}
+      text={sprachname}
+      beiWahl={waehleSprache}
+    />
+  );
+}
+
+/** Anzeige: Nachtmodus, Erklärkacheln, Sprache. */
+function AnzeigeBereich() {
+  return (
+    <>
+      <NachtmodusWahl />
+      <ErklaerungenWahl />
+      <SprachWahl />
     </>
   );
 }
@@ -227,6 +265,14 @@ function TrainingBereich() {
         beiWahl={(strenge) => aendereEinstellungen({ strenge })}
       />
       <p className="hinweis">{t(`einstellungen.strenge.${einstellungen.strenge}.text`)}</p>
+      <Auswahl
+        name={t("einstellungen.vorWerkzeugen")}
+        werte={VOR_WERKZEUGEN}
+        gewaehlt={einstellungen.vorWerkzeugen}
+        text={(wert) => t(`einstellungen.vorWerkzeugen.${wert}`)}
+        beiWahl={(vorWerkzeugen) => aendereEinstellungen({ vorWerkzeugen })}
+      />
+      <p className="hinweis">{t("einstellungen.vorWerkzeugen.text")}</p>
     </>
   );
 }

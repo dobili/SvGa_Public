@@ -18,6 +18,7 @@ export type {
   Einstellungen,
   Figurensatz,
   Strenge,
+  VorWerkzeugen,
   Ton,
 } from "../speicher/format";
 export { BILDSAETZE } from "../speicher/format";

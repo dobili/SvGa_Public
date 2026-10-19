@@ -26,15 +26,25 @@ export type {
   Thema as Endspielthema,
   Stichwort as Endspielstichwort,
 } from "./generiert/trainer-endspiel";
+import { sprache } from "../i18n/sprache";
 
-const ORDNER = "/daten/de/trainer";
 const geladen = new Map<string, Promise<unknown>>();
+
+/** Ordner der Trainerdaten in der Sprache der App, etwa „/daten/de/trainer“. */
+function ordner(): string {
+  return `/daten/${sprache()}/trainer`;
+}
+
+/** Vergisst die geladenen Trainerdaten (nach einem Sprachwechsel, seit 0.2.94). */
+export function vergissTrainerdaten(): void {
+  geladen.clear();
+}
 
 /** Lädt eine Datei einmal; ein Fehler wird nicht gemerkt, damit ein späterer Versuch neu lädt. */
 function lade<T>(datei: string): Promise<T> {
   const bekannt = geladen.get(datei);
   if (bekannt) return bekannt as Promise<T>;
-  const neu = fetch(`${ORDNER}/${datei}`).then(async (antwort) => {
+  const neu = fetch(`${ordner()}/${datei}`).then(async (antwort) => {
     if (!antwort.ok) throw new Error(`${datei}: ${antwort.status} ${antwort.statusText}`);
     return (await antwort.json()) as T;
   });

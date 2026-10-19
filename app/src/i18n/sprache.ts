@@ -2,7 +2,10 @@
  * Übersetzungsfunktion der App: liefert sichtbare Texte aus den Sprachdateien.
  *
  * Rolle im Gesamtbild: Kein Oberflächentext steht im Code, alle kommen über `t` aus
- * src/i18n/de.json (Konzept Abschnitt 6.5 und 11.4). Eine zweite Sprache ist eine zweite Datei.
+ * src/i18n/de.json (Konzept Abschnitt 6.5 und 11.4). Eine zweite Sprache ist eine zweite Datei,
+ * eingetragen in SPRACHDATEIEN (AP 18). Seit 0.2.94 die Technik dafür: Startsprache nach Wahl des
+ * Lesers oder nach der Sprache des Geräts, Wechsel mit Benachrichtigung (useSprache.ts lässt die
+ * App neu zeichnen), `<html lang>` folgt der Sprache.
  * Abhängigkeiten: keine.
  */
 import de from "./de.json";
@@ -13,9 +16,13 @@ export type Textschluessel = keyof typeof de;
 /** Werte, die in Platzhalter wie {feld} eingesetzt werden. */
 export type Textwerte = Readonly<Record<string, string | number>>;
 
+/** Die Sprachdateien der App. Englisch kommt mit AP 18 als en.json dazu. */
 const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> = { de };
+/** Sprache, wenn weder der Leser noch das Gerät eine verfügbare wählt. */
+export const GRUNDSPRACHE = "de";
 
-let aktuelleSprache = "de";
+let aktuelleSprache = GRUNDSPRACHE;
+const hoerer = new Set<() => void>();
 
 /**
  * Liefert den Text zu einem Schlüssel in der aktuellen Sprache.
@@ -57,8 +64,51 @@ export function setzeSprache(sprachcode: string): boolean {
   if (!(sprachcode in SPRACHDATEIEN)) {
     return false;
   }
+  if (sprachcode === aktuelleSprache) return true;
   aktuelleSprache = sprachcode;
+  if (typeof document !== "undefined") document.documentElement.lang = sprachcode;
+  hoerer.forEach((melde) => melde());
   return true;
+}
+
+/** Meldet jeden Sprachwechsel; Ausgabe: Abmeldung. Für useSprache (React). */
+export function beiSprachwechsel(melde: () => void): () => void {
+  hoerer.add(melde);
+  return () => hoerer.delete(melde);
+}
+
+/** Die Sprachen, in denen es die App gibt, in der Reihenfolge der Sprachdateien. */
+export function verfuegbareSprachen(): string[] {
+  return Object.keys(SPRACHDATEIEN);
+}
+
+/** Name einer Sprache in ihr selbst, etwa „Deutsch“; für die Sprachwahl. */
+export function sprachname(sprachcode: string): string {
+  return SPRACHDATEIEN[sprachcode]?.["sprache.eigenname"] ?? sprachcode;
+}
+
+/**
+ * Die Sprache beim Start.
+ *
+ * Warum: Voreinstellung ist die Sprache des Geräts (Auftrag des Autors, 18.10.2026); wer selbst
+ * gewählt hat, behält seine Wahl.
+ * Eingaben: gemerkte Wahl des Lesers (oder null), Sprachen des Geräts in Vorzugsreihenfolge
+ * (navigator.languages, etwa „en-GB“), verfügbare Sprachen.
+ * Ausgabe: verfügbarer Sprachcode. Beispiel: (null, ["en-US", "de-DE"], ["de", "en"]) → „en“;
+ * („de“, ["en-US"], ["de", "en"]) → „de“; (null, ["fr-FR"], ["de"]) → „de“.
+ */
+export function startsprache(
+  gewaehlt: string | null,
+  geraet: readonly string[],
+  verfuegbar: readonly string[] = verfuegbareSprachen(),
+): string {
+  if (gewaehlt && verfuegbar.includes(gewaehlt)) return gewaehlt;
+  const passend = geraet
+    .map((code) => code.toLowerCase().split("-")[0] ?? "")
+    .find((code) => verfuegbar.includes(code));
+  return (
+    passend ?? (verfuegbar.includes(GRUNDSPRACHE) ? GRUNDSPRACHE : (verfuegbar[0] ?? GRUNDSPRACHE))
+  );
 }
 
 /** Die Sprache, in der gerade alle Texte erscheinen. */

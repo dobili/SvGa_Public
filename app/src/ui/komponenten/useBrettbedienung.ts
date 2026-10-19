@@ -8,18 +8,21 @@
  * Seit 0.2.29 ist anfangs kein Werkzeug gewählt (Wunsch des Autors); seit 0.2.30 bewirkt ein Tipp
  * aufs Brett dann nichts. Seit 0.2.58: Ein Tipp auf eine eigene Figur, die nicht ziehen darf
  * (Schach, Fesselung, blockiert), leuchtet kurz rot auf, mit Warnton und Satz unter dem Brett.
- * Abhängigkeiten: schach/weiterspielen.ts, useNachspielen.ts, app/ton.ts.
+ * Seit 0.2.92 lässt sich mit „Ziehen“ eine Figur auch per Wischen ziehen (ui/brett/useZiehen.ts):
+ * Beim Greifen ist sie gewählt, beim Ablegen auf einem Zielfeld wird gezogen wie beim Antippen.
+ * Abhängigkeiten: schach/weiterspielen.ts, useNachspielen.ts, app/ton.ts, ui/brett/useZiehen.ts.
  */
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useEinstellungen } from "../../app/einstellungen";
 import { spieleKlang } from "../../app/ton";
 import type { Rolle } from "../../schach/stellung";
-import { legaleZiele, zugsperre, type Zugsperre } from "../../schach/weiterspielen";
+import { legaleZiele, ziehbareFelder, zugsperre, type Zugsperre } from "../../schach/weiterspielen";
+import type { Ziehbedienung } from "../brett/useZiehen";
+import type { Nachspielstand } from "./useNachspielen";
+import type { Werkzeugwahl } from "./Werkzeugleiste";
 
 /** So lange leuchtet eine gesperrte Figur rot (ms). */
 const SPERRE_SICHTBAR_MS = 900;
-import type { Nachspielstand } from "./useNachspielen";
-import type { Werkzeugwahl } from "./Werkzeugleiste";
 
 /** Ein Feld, gemerkt zusammen mit der Stellung, in der es angetippt wurde. */
 interface Gemerkt {
@@ -39,6 +42,8 @@ export interface Brettbedienung {
   /** Offene Umwandlung: Der Bauer steht vor der letzten Reihe, die Figur fehlt noch. */
   readonly umwandlungOffen: boolean;
   readonly beiFeld: (feld: string) => void;
+  /** Ziehen per Wischen, nur mit „Ziehen“; sonst null. */
+  readonly ziehen: Ziehbedienung | null;
   /** Vergisst Zählfeld und gewählte Figur (beim Abwählen des Werkzeugs). */
   readonly vergiss: () => void;
   readonly waehleUmwandlung: (rolle: Rolle | null) => void;
@@ -71,13 +76,21 @@ export function useBrettbedienung(
   const zaehlfeld = wahl === "zaehlen" ? hier(gezaehlt) : null;
   const figur = wahl === "ziehen" ? hier(gewaehlt) : null;
   const ziele = figur ? legaleZiele(stand.fen, figur) : [];
+  const greifbar = useMemo(
+    () => (wahl === "ziehen" ? ziehbareFelder(stand.fen) : []),
+    [wahl, stand.fen],
+  );
 
+  /** Spielt den Zug von ``von`` nach ``nach``; bei einem Bauern auf der letzten Reihe folgt die Wahl. */
+  const spiele = (von: string, nach: string) => {
+    if (stand.spiele(von, nach) === "umwandlung") {
+      setzeUmwandlung({ fen: stand.fen, feld: von, nach });
+    }
+    setzeGewaehlt(null);
+  };
   const ziehe = (feld: string) => {
     if (figur && ziele.includes(feld)) {
-      if (stand.spiele(figur, feld) === "umwandlung") {
-        setzeUmwandlung({ fen: stand.fen, feld: figur, nach: feld });
-      }
-      setzeGewaehlt(null);
+      spiele(figur, feld);
       return;
     }
     const eigeneFigur = legaleZiele(stand.fen, feld).length > 0;
@@ -116,6 +129,16 @@ export function useBrettbedienung(
     gesperrt: gesperrt?.fen === stand.fen ? { feld: gesperrt.feld, grund: gesperrt.grund } : null,
     umwandlungOffen: umwandlung?.fen === stand.fen,
     beiFeld,
+    ziehen:
+      wahl === "ziehen"
+        ? {
+            felder: greifbar,
+            beginne: (feld) => setzeGewaehlt({ fen: stand.fen, feld }),
+            lege: (von, nach) => {
+              if (legaleZiele(stand.fen, von).includes(nach)) spiele(von, nach);
+            },
+          }
+        : null,
     vergiss,
     waehleUmwandlung,
   };

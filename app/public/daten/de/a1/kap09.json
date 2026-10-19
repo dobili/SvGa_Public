@@ -242,7 +242,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e6 Th1, Weiß am Zug. Grauer Pfeil: Der Turm gibt jetzt von hinten Schach, und der Bauer e6 nimmt dem weißen König das Versteck.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e6 Th1"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grauer Pfeil: Der Turm gibt jetzt von hinten Schach, und der Bauer e6 nimmt dem weißen König das Versteck.",
      "stil": "normal"
     }
    ],
@@ -285,7 +294,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "König auf der kurzen Seite, Turm auf der langen; Schwarz am Zug. Goldener Pfeil: Nur 1... Ta7+! hält remis.",
+     "text": "König auf der kurzen Seite, Turm auf der langen; Schwarz am Zug. Goldener Pfeil: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ta7+!"
+    },
+    {
+     "art": "text",
+     "text": " hält remis.",
      "stil": "normal"
     }
    ],
@@ -347,7 +365,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Mit dem Turm auf b8 statt a8, nach 1... Tb7+ 2. Kd8 Tb8+; Weiß am Zug. Roter Pfeil: das Schach. Goldener Pfeil: 3. Kd7.",
+     "text": "Mit dem Turm auf b8 statt a8, nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Tb7+ 2. Kd8 Tb8+"
+    },
+    {
+     "art": "text",
+     "text": "; Weiß am Zug. Roter Pfeil: das Schach. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kd7"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -408,7 +444,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Kd7 Tb7+ 4. Kc6, Schwarz am Zug. Roter Pfeil: Der König greift den Turm an; die Schachs sind zu Ende.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kd7 Tb7+ 4. Kc6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Roter Pfeil: Der König greift den Turm an; die Schachs sind zu Ende.",
      "stil": "normal"
     }
    ],
@@ -515,7 +560,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Tg1+ Kh7 2. Tg4, Schwarz am Zug. Der schwarze König ist auf die h-Linie weggetrieben. Grauer Pfeil: Von g4 aus erreicht der Turm später das Brückenfeld e4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Tg1+ Kh7 2. Tg4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Der schwarze König ist auf die h-Linie weggetrieben. Grauer Pfeil: Von g4 aus erreicht der Turm später das Brückenfeld e4.",
      "stil": "normal"
     }
    ],
@@ -559,7 +613,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 2... Ta1 3. Kd7 Td1+, Weiß am Zug. Roter Pfeil: Der König hat e8 verlassen und bekommt Schach.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Ta1 3. Kd7 Td1+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Roter Pfeil: Der König hat e8 verlassen und bekommt Schach.",
      "stil": "normal"
     }
    ],
@@ -611,7 +674,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. Ke6 Te1+ 5. Kd6 Td1+, Weiß am Zug. Roter Pfeil: das Schach. Grauer Pfeil: Der König geht auf die Linie des Bauern, nach e5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Ke6 Te1+ 5. Kd6 Td1+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Roter Pfeil: das Schach. Grauer Pfeil: Der König geht auf die Linie des Bauern, nach e5.",
      "stil": "normal"
     }
    ],
@@ -683,7 +755,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Ke5 Te1+ 7. Te4, Schwarz am Zug. Grauer Pfeil: Die Brücke steht, der König deckt den Turm e4. Rot: Das Umwandlungsfeld e8 ist nicht mehr zu halten.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Ke5 Te1+ 7. Te4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grauer Pfeil: Die Brücke steht, der König deckt den Turm e4. Rot: Das Umwandlungsfeld e8 ist nicht mehr zu halten.",
      "stil": "normal"
     }
    ],
@@ -737,7 +818,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Warnbild: dieselbe Brücke, aber der schwarze König steht noch auf g7. Schwarz am Zug. Roter Pfeil: 1... Txe4+ hält remis.",
+     "text": "Warnbild: dieselbe Brücke, aber der schwarze König steht noch auf g7. Schwarz am Zug. Roter Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Txe4+"
+    },
+    {
+     "art": "text",
+     "text": " hält remis.",
      "stil": "normal"
     }
    ],
@@ -793,7 +883,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... Txe4+ 2. Kxe4 Kf7, Weiß am Zug. Roter Pfeil: Der Bauer e7 fällt, remis.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Txe4+ 2. Kxe4 Kf7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Roter Pfeil: Der Bauer e7 fällt, remis.",
      "stil": "normal"
     }
    ],
@@ -899,7 +998,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Der König f7 bewacht weder h8 noch h7. Goldener Pfeil: Nur 1. Th8! gewinnt.",
+     "text": "Weiß am Zug. Der König f7 bewacht weder h8 noch h7. Goldener Pfeil: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th8!"
+    },
+    {
+     "art": "text",
+     "text": " gewinnt.",
      "stil": "normal"
     }
    ],
@@ -956,7 +1064,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Th8 Txa7 2. Th7+, Schwarz am Zug. Roter Pfeil: der Spieß. Der König muss weichen, dann fällt der Turm a7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th8 Txa7 2. Th7+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Roter Pfeil: der Spieß. Der König muss weichen, dann fällt der Turm a7.",
      "stil": "normal"
     }
    ],
@@ -1044,7 +1161,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt, etwa mit 1. Kc5! (goldener Pfeil): Der König nimmt dem schwarzen König das Feld d4 (grau).",
+     "text": "Weiß am Zug gewinnt, etwa mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Kc5!"
+    },
+    {
+     "art": "text",
+     "text": " (goldener Pfeil): Der König nimmt dem schwarzen König das Feld d4 (grau).",
      "stil": "normal"
     }
    ],
@@ -1101,7 +1227,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug hält nur mit 1... Kd4! (goldener Pfeil): Der König stellt sich dem weißen König in den Weg. Remis.",
+     "text": "Schwarz am Zug hält nur mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd4!"
+    },
+    {
+     "art": "text",
+     "text": " (goldener Pfeil): Der König stellt sich dem weißen König in den Weg. Remis.",
      "stil": "normal"
     }
    ],
@@ -1142,7 +1277,34 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug. Nach 1... b1=D?? setzt 2. Te1# matt. Goldener Pfeil: Nur 1... b1=S+! hält remis.",
+     "text": "Schwarz am Zug. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... b1=D??"
+    },
+    {
+     "art": "text",
+     "text": " setzt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Te1#"
+    },
+    {
+     "art": "text",
+     "text": " matt. Goldener Pfeil: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... b1=S+!"
+    },
+    {
+     "art": "text",
+     "text": " hält remis.",
      "stil": "normal"
     }
    ],
@@ -1378,7 +1540,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldener Pfeil: der Turmtausch 1. Txb8+.",
+     "text": "Weiß am Zug. Goldener Pfeil: der Turmtausch ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Txb8+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1434,7 +1605,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Txb8+ Kxb8, Weiß am Zug. Goldener Pfeil: Der entfernte Freibauer a4 bindet den schwarzen König; das Bauernendspiel ist gewonnen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Txb8+ Kxb8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: Der entfernte Freibauer a4 bindet den schwarzen König; das Bauernendspiel ist gewonnen.",
      "stil": "normal"
     }
    ],
@@ -1477,7 +1657,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Der Bauer d2 steht kurz vor der Umwandlung, der weiße König ist weit weg. Goldener Pfeil: 1. De4+ beginnt die Schachserie.",
+     "text": "Weiß am Zug. Der Bauer d2 steht kurz vor der Umwandlung, der weiße König ist weit weg. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. De4+"
+    },
+    {
+     "art": "text",
+     "text": " beginnt die Schachserie.",
      "stil": "normal"
     }
    ],
@@ -1534,7 +1723,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. De4+ Kf2 2. Dd3 Ke1, Weiß am Zug. Goldener Pfeil: 3. De3+ treibt den König nach d1, vor seinen Bauern.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. De4+ Kf2 2. Dd3 Ke1"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. De3+"
+    },
+    {
+     "art": "text",
+     "text": " treibt den König nach d1, vor seinen Bauern.",
      "stil": "normal"
     }
    ],
@@ -1580,7 +1787,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. De3+ Kd1, Weiß am Zug. Der König blockiert seinen Bauern. Goldener Pfeil: Die Pause nutzt der weiße König, 4. Kc7.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. De3+ Kd1"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Der König blockiert seinen Bauern. Goldener Pfeil: Die Pause nutzt der weiße König, ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Kc7"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1628,7 +1853,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Läuferbauer, Weiß am Zug: remis. Roter Pfeil: 1. Dxc2 setzt den König a1 patt.",
+     "text": "Läuferbauer, Weiß am Zug: remis. Roter Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxc2"
+    },
+    {
+     "art": "text",
+     "text": " setzt den König a1 patt.",
      "stil": "normal"
     }
    ],
@@ -1674,7 +1908,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug, der König e3 steht nahe genug. Roter Pfeil: der natürliche Schlag 1. Dxf2??. Goldener Pfeil: der richtige Weg, 1. Df3+.",
+     "text": "Weiß am Zug, der König e3 steht nahe genug. Roter Pfeil: der natürliche Schlag ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxf2??"
+    },
+    {
+     "art": "text",
+     "text": ". Goldener Pfeil: der richtige Weg, ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Df3+"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1738,7 +1990,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Dxf2?? – patt. Der König h1 steht nicht im Schach, aber die Dame kontrolliert g1, g2 und h2 (rot).",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxf2??"
+    },
+    {
+     "art": "text",
+     "text": " – patt. Der König h1 steht nicht im Schach, aber die Dame kontrolliert g1, g2 und h2 (rot).",
      "stil": "normal"
     }
    ],
@@ -1786,7 +2047,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug. Roter Pfeil: Der Damentausch 1... Dxg2+? verliert. Goldener Pfeil: Nur 1... Dd1+! hält remis.",
+     "text": "Schwarz am Zug. Roter Pfeil: Der Damentausch ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dxg2+?"
+    },
+    {
+     "art": "text",
+     "text": " verliert. Goldener Pfeil: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Dd1+!"
+    },
+    {
+     "art": "text",
+     "text": " hält remis.",
      "stil": "normal"
     }
    ],
@@ -1987,7 +2266,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Gleichfarbige Läufer (beide auf hellen Feldern), Weiß am Zug. Goldener Pfeil: Nur 1. a6! gewinnt. Grauer Pfeil: Der Läufer f3 beherrscht die Diagonale bis zum Umwandlungsfeld a8.",
+     "text": "Gleichfarbige Läufer (beide auf hellen Feldern), Weiß am Zug. Goldener Pfeil: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. a6!"
+    },
+    {
+     "art": "text",
+     "text": " gewinnt. Grauer Pfeil: Der Läufer f3 beherrscht die Diagonale bis zum Umwandlungsfeld a8.",
      "stil": "normal"
     }
    ],
@@ -2082,7 +2370,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug hält remis. Goldene Pfeile: Nur 1... Sg6 oder 1... Sf7 bewacht h8 rechtzeitig.",
+     "text": "Schwarz am Zug hält remis. Goldene Pfeile: Nur ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Sg6"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Sf7"
+    },
+    {
+     "art": "text",
+     "text": " bewacht h8 rechtzeitig.",
      "stil": "normal"
     }
    ],
@@ -2211,7 +2517,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die richtige Ecke, Weiß am Zug: remis. Der Läufer g3 läuft auf dunklen Feldern, die Ecke a8 ist hell. Roter Pfeil: das Schach 1. Th8+. Grauer Pfeil: 1... Lb8 fängt es ab.",
+     "text": "Die richtige Ecke, Weiß am Zug: remis. Der Läufer g3 läuft auf dunklen Feldern, die Ecke a8 ist hell. Roter Pfeil: das Schach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th8+"
+    },
+    {
+     "art": "text",
+     "text": ". Grauer Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Lb8"
+    },
+    {
+     "art": "text",
+     "text": " fängt es ab.",
      "stil": "normal"
     }
    ],
@@ -2251,7 +2575,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die falsche Ecke, Weiß am Zug. Die Ecke h8 hat die Farbe des Läufers. Goldener Pfeil: 1. Th4+ Lh6 (einziger Zug) 2. Txh6#.",
+     "text": "Die falsche Ecke, Weiß am Zug. Die Ecke h8 hat die Farbe des Läufers. Goldener Pfeil: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Th4+ Lh6"
+    },
+    {
+     "art": "text",
+     "text": " (einziger Zug) ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Txh6#"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],

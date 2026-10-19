@@ -23,6 +23,7 @@ import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
 import { Wahlzeile } from "./Wahlzeile";
+import { useSammelstellung } from "./sammelstellung";
 
 const farbe = (seite: Color) => t(seite === "white" ? "farbe.w" : "farbe.b");
 
@@ -60,6 +61,7 @@ function Frageblock({ frage, waehle }: { frage: Wahlfrage; waehle: (richtig: boo
 }
 
 export function Planfragenaufgabe({ aufgabe, runde }: { aufgabe: PlanAufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const [ergebnisse, setzeErgebnisse] = useState<readonly boolean[]>([]);
   const waehle = (richtig: boolean) => {
     const neu = [...ergebnisse, richtig];
@@ -86,6 +88,7 @@ export function Planfragenaufgabe({ aufgabe, runde }: { aufgabe: PlanAufgabe; ru
 }
 
 export function Lapaufgabe({ aufgabe, runde }: { aufgabe: LapAufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const [figur, setzeFigur] = useState<string | null>(null);
   const [ziel, setzeZiel] = useState<string | null>(null);
   const beantwortet = runde.ergebnis !== null;

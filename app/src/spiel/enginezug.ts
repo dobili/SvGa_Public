@@ -1,8 +1,8 @@
 /**
  * Der Zug der Engine in einer Partie: Buchzüge vorbereiten, Zug wählen, als Partiezug ablegen.
  *
- * Rolle im Gesamtbild: Verbindet die Zugwahl der Stufen (engine/zugwahl.ts, Platzhalter bis zur
- * Kalibrierung) mit der Partie (spiel/partie.ts). Der Eröffnungsindex liefert Buchzüge in SAN,
+ * Rolle im Gesamtbild: Verbindet die Zugwahl der Stufen (engine/zugwahl.ts, seit AP 11 geeicht)
+ * mit der Partie (spiel/partie.ts). Der Eröffnungsindex liefert Buchzüge in SAN,
  * die Zugwahl arbeitet in UCI, die Partie wieder in SAN; die Herkunft und ein absichtlicher Fehler
  * bleiben am Zug hängen, damit die Auswertung sie nennen kann.
  * Abhängigkeiten: engine/zugwahl.ts, engine/stufen.ts, spiel/zuege.ts.

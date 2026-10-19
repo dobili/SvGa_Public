@@ -137,6 +137,21 @@
   resize: vertical;
 }
 
+/* Lernsammlung (Kapitel 12, AP 15, seit 0.2.93): Einträge einer Gruppe untereinander. */
+.sammeleintrag {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+  padding: calc(var(--raster) / 2) 0;
+  border-top: 1px solid var(--linie);
+}
+
+.sammeleintrag > summary {
+  min-height: var(--tippflaeche);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 .fehlertabelle {
   width: 100%;
   border-collapse: collapse;

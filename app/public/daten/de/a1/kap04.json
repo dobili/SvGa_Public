@@ -82,7 +82,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. e3 b5? 4. a4!, Schwarz am Zug. Rot: Weiß greift b5 an, die Basis der Kette b5–c4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. e3 b5? 4. a4!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Weiß greift b5 an, die Basis der Kette b5–c4.",
      "stil": "normal"
     }
    ],
@@ -155,7 +164,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4... c6? 5. axb5 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... c6? 5. axb5"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -231,7 +249,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... cxb5?? 6. Df3!, Schwarz am Zug. Rot: Die Dame greift entlang der freien Diagonale den ungedeckten Turm a8 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... cxb5?? 6. Df3!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Die Dame greift entlang der freien Diagonale den ungedeckten Turm a8 an.",
      "stil": "normal"
     }
    ],
@@ -278,7 +305,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Evans-Gambit aus Kapitel 3 nach 6. d4, Schwarz am Zug.",
+     "text": "Das Evans-Gambit aus Kapitel 3 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. d4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug.",
      "stil": "normal"
     }
    ],
@@ -336,7 +372,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... exd4 7. O-O – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... exd4 7. O-O"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -421,7 +466,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... dxc3 8. Db3 De7? 9. Sxc3, Schwarz am Zug. Rot: Der Läufer c4 greift f7 an, dahinter steht die Dame b3. Grau: Sd5 als nächster Schritt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... dxc3 8. Db3 De7? 9. Sxc3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Läufer c4 greift f7 an, dahinter steht die Dame b3. Grau: Sd5 als nächster Schritt.",
      "stil": "normal"
     }
    ],
@@ -483,7 +537,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9... Sf6? 10. Sd5! Sxd5 11. exd5. Rot: Dame und König stehen auf der offenen e-Linie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9... Sf6? 10. Sd5! Sxd5 11. exd5"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Dame und König stehen auf der offenen e-Linie.",
      "stil": "normal"
     }
    ],
@@ -565,7 +628,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 11... Se5 12. Sxe5 Dxe5 13. Lb2. Rot: Der Läufer greift die Dame an; hinter ihr liegt g7. Grau: Tfe1 bringt den Turm auf die offene e-Linie.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11... Se5 12. Sxe5 Dxe5 13. Lb2"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der Läufer greift die Dame an; hinter ihr liegt g7. Grau: Tfe1 bringt den Turm auf die offene e-Linie.",
      "stil": "normal"
     }
    ],
@@ -625,7 +697,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Blackmar-Diemer-Gambit nach 4... exf3 5. Dxf3 Dxd4, Weiß am Zug. Schwarz hat zwei Bauern mehr, aber die d-Linie ist offen.",
+     "text": "Das Blackmar-Diemer-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... exf3 5. Dxf3 Dxd4"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Schwarz hat zwei Bauern mehr, aber die d-Linie ist offen.",
      "stil": "normal"
     }
    ],
@@ -698,7 +779,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Le3 Db4 7. O-O-O – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Le3 Db4 7. O-O-O"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -792,7 +882,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... Lg4?? 8. Sb5!!, Schwarz am Zug. Rot: Der Läufer greift die Dame an, der Springer droht Sxc7 matt. Grau: d7 und d8 beherrscht der Turm d1.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Lg4?? 8. Sb5!!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Läufer greift die Dame an, der Springer droht Sxc7 matt. Grau: d7 und d8 beherrscht der Turm d1.",
      "stil": "normal"
     }
    ],
@@ -864,7 +963,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Sc3 Sf6 4. Lg5 Sbd7. Grau: Der Läufer g5 fesselt den Springer f6 an die Dame d8.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Sc3 Sf6 4. Lg5 Sbd7"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: Der Läufer g5 fesselt den Springer f6 an die Dame d8.",
      "stil": "normal"
     }
    ],
@@ -918,7 +1026,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. cxd5 exd5 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. cxd5 exd5"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -988,7 +1105,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Sxd5?? Sxd5!!, Weiß am Zug. Schwarz schlägt trotz der Fesselung zurück.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Sxd5?? Sxd5!!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Schwarz schlägt trotz der Fesselung zurück.",
      "stil": "normal"
     }
    ],
@@ -1042,7 +1168,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. Lxd8 Lb4+, Weiß am Zug. Rot: die Schachlinie. ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. Lxd8 Lb4+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: die Schachlinie. ",
      "stil": "normal"
     },
     {
@@ -1130,7 +1265,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8. Dd2 Lxd2+ 9. Kxd2 Kxd8, Weiß am Zug. Grau: die zwei schwarzen Springer gegen den einen weißen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Dd2 Lxd2+ 9. Kxd2 Kxd8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: die zwei schwarzen Springer gegen den einen weißen.",
      "stil": "normal"
     }
    ],
@@ -1195,7 +1339,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. h3 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. h3"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -1269,7 +1422,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... Lh5? 6. Sxe5!!, Schwarz am Zug. Grau: die eigene Dame, die Weiß hier bewusst als Köder anbietet.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Lh5? 6. Sxe5!!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: die eigene Dame, die Weiß hier bewusst als Köder anbietet.",
      "stil": "normal"
     }
    ],
@@ -1353,7 +1515,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Lxd1?? 7. Lxf7+ Ke7 8. Sd5#. Rot: Der Springer d5 gibt Schach. Grau: Die freien Nachbarfelder d7, e6, e8 und f6 sind alle gedeckt; den Läufer f7 deckt der Springer e5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Lxd1?? 7. Lxf7+ Ke7 8. Sd5#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der Springer d5 gibt Schach. Grau: Die freien Nachbarfelder d7, e6, e8 und f6 sind alle gedeckt; den Läufer f7 deckt der Springer e5.",
      "stil": "normal"
     }
    ],
@@ -1407,7 +1578,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Budapester Gambit nach 5... Lb4+ 6. Sbd2, Schwarz am Zug. Grau: Der Läufer fesselt den Springer d2 an den König.",
+     "text": "Das Budapester Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Lb4+ 6. Sbd2"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Der Läufer fesselt den Springer d2 an den König.",
      "stil": "normal"
     }
    ],
@@ -1474,7 +1654,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... De7 7. a3 Sgxe5! – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... De7 7. a3 Sgxe5!"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -1555,7 +1744,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8. axb4?? Sd3#! Der Springer setzt matt, weil der weiße König umschlossen ist und der e2-Bauer den Springer aufgrund der Fesselung (grau) nicht schlagen darf.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. axb4?? Sd3#!"
+    },
+    {
+     "art": "text",
+     "text": " Der Springer setzt matt, weil der weiße König umschlossen ist und der e2-Bauer den Springer aufgrund der Fesselung (grau) nicht schlagen darf.",
      "stil": "normal"
     }
    ],
@@ -1607,7 +1805,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Wolga-Gambit nach 4. cxb5 a6 5. Sc3, Schwarz am Zug. Weiß lässt den Bauern a6 stehen und entwickelt.",
+     "text": "Das Wolga-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. cxb5 a6 5. Sc3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Weiß lässt den Bauern a6 stehen und entwickelt.",
      "stil": "normal"
     }
    ],
@@ -1663,7 +1870,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... axb5 6. e4 b4 7. Sb5 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... axb5 6. e4 b4 7. Sb5"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -1752,7 +1968,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7... Sxe4?? 8. De2!, Schwarz am Zug. Rot: Die Dame greift den Springer an. Grau: Dahinter stehen der Bauer e7 und der König e8.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Sxe4?? 8. De2!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Die Dame greift den Springer an. Grau: Dahinter stehen der Bauer e7 und der König e8.",
      "stil": "normal"
     }
    ],
@@ -1814,7 +2039,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8... Sf6 9. Sd6#. Rot: Schach. Grau: Die Dame fesselt den Bauern e7 an den König.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Sf6 9. Sd6#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Schach. Grau: Die Dame fesselt den Bauern e7 an den König.",
      "stil": "normal"
     }
    ],
@@ -1864,7 +2098,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Smith-Morra-Gambit nach 4. Sxc3 Sc6 5. Sf3 e6, Weiß am Zug. Schwarz hat ...e6 statt ...d6 gespielt.",
+     "text": "Das Smith-Morra-Gambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sxc3 Sc6 5. Sf3 e6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Schwarz hat ...e6 statt ...d6 gespielt.",
      "stil": "normal"
     }
    ],
@@ -1916,7 +2159,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6. Lc4 Dc7, Weiß am Zug. Grau: Die Dame blickt schon auf h2.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Lc4 Dc7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Die Dame blickt schon auf h2.",
      "stil": "normal"
     }
    ],
@@ -1964,7 +2216,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 7. O-O Sf6 8. De2 Sg4 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. O-O Sf6 8. De2 Sg4"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -2057,7 +2318,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9. h3?? Sd4!. Rot: Der Springer greift die Dame an, die Dame c7 zielt auf h2. Grau: der verlockende Schlagzug.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. h3?? Sd4!"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der Springer greift die Dame an, die Dame c7 zielt auf h2. Grau: der verlockende Schlagzug.",
      "stil": "normal"
     }
    ],
@@ -2148,7 +2418,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 10. Sxd4?? Dh2#. Grau: f1, f2 und g2 sind von eigenen Figuren besetzt. Rot: Das Feld h1 beherrscht die Dame selbst, und schlagen kann der König sie nicht, weil der Springer g4 sie deckt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Sxd4?? Dh2#"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: f1, f2 und g2 sind von eigenen Figuren besetzt. Rot: Das Feld h1 beherrscht die Dame selbst, und schlagen kann der König sie nicht, weil der Springer g4 sie deckt.",
      "stil": "normal"
     }
    ],
@@ -2203,7 +2482,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Spanische Partie aus Kapitel 2 nach 4. La4, Schwarz am Zug.",
+     "text": "Die Spanische Partie aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. La4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug.",
      "stil": "normal"
     }
    ],
@@ -2251,7 +2539,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4... d6 5. d4 b5 6. Lb3, Schwarz am Zug. Grau: Der Läufer b3 steht hinter den schwarzen Bauern a6 und b5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... d6 5. d4 b5 6. Lb3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Grau: Der Läufer b3 steht hinter den schwarzen Bauern a6 und b5.",
      "stil": "normal"
     }
    ],
@@ -2298,7 +2595,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Sxd4 7. Sxd4 exd4 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Sxd4 7. Sxd4 exd4"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -2384,7 +2690,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8. Dxd4?? c5!, Weiß am Zug. Rot: Der Bauer greift die Dame an. Grau: Als Nächstes droht ...c4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Dxd4?? c5!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Bauer greift die Dame an. Grau: Als Nächstes droht ...c4.",
      "stil": "normal"
     }
    ],
@@ -2447,7 +2762,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9. Dd5 Le6 10. Dc6+ Ld7, Weiß am Zug. Die Dame muss zurück. Rot: Der Bauer c5 zieht gleich nach c4. Grau: der Läufer b3, um den es geht.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Dd5 Le6 10. Dc6+ Ld7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Die Dame muss zurück. Rot: Der Bauer c5 zieht gleich nach c4. Grau: der Läufer b3, um den es geht.",
      "stil": "normal"
     }
    ],
@@ -2514,7 +2838,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 11. Dd5 c4!, Weiß am Zug. Rot: Der Bauer b5 deckt a4 und c4. Der Läufer b3 hat kein sicheres Feld mehr.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. Dd5 c4!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Bauer b5 deckt a4 und c4. Der Läufer b3 hat kein sicheres Feld mehr.",
      "stil": "normal"
     }
    ],
@@ -2599,7 +2932,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. e4 e5 2. f4 Lc5 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. f4 Lc5"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -2675,7 +3017,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. fxe5?? Dh4+ 4. g3 Dxe4+, Weiß am Zug. Rot: Die Dame gibt Schach und greift zugleich den Turm h1 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. fxe5?? Dh4+ 4. g3 Dxe4+"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Die Dame gibt Schach und greift zugleich den Turm h1 an.",
      "stil": "normal"
     }
    ],
@@ -2719,7 +3070,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. De2 Dxh1, Weiß am Zug. Schwarz hat einen ganzen Turm gewonnen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. De2 Dxh1"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Schwarz hat einen ganzen Turm gewonnen.",
      "stil": "normal"
     }
    ],
@@ -2765,7 +3125,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 3. Lc4 Sd4?! – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Lc4 Sd4?!"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -2842,7 +3211,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4. Sxe5? Dg5!. Rot: Die Dame greift gleichzeitig den ungedeckten Bauern g2 und den Springer e5 an. Weiß kann nicht beide decken.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sxe5? Dg5!"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Die Dame greift gleichzeitig den ungedeckten Bauern g2 und den Springer e5 an. Weiß kann nicht beide decken.",
      "stil": "normal"
     }
    ],
@@ -2896,7 +3274,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5. Sxf7?? Dxg2 6. Tf1. Grau: Der Springer f7 greift den Turm h8 an. Rot: Doch Schwarz ist am Zug, und die Dame schlägt mit Schach auf e4.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Sxf7?? Dxg2 6. Tf1"
+    },
+    {
+     "art": "text",
+     "text": ". Grau: Der Springer f7 greift den Turm h8 an. Rot: Doch Schwarz ist am Zug, und die Dame schlägt mit Schach auf e4.",
      "stil": "normal"
     }
    ],
@@ -2985,7 +3372,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Dxe4+ 7. Le2 Sf3#. Rot: Der Springer gibt Schach. Grau: Alle Nachbarfelder des Königs sind von eigenen Figuren besetzt – ein Erstickungsmatt. Den Springer darf der Läufer e2 nicht schlagen, denn die Dame e4 fesselt ihn an den König.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Dxe4+ 7. Le2 Sf3#"
+    },
+    {
+     "art": "text",
+     "text": ". Rot: Der Springer gibt Schach. Grau: Alle Nachbarfelder des Königs sind von eigenen Figuren besetzt – ein Erstickungsmatt. Den Springer darf der Läufer e2 nicht schlagen, denn die Dame e4 fesselt ihn an den König.",
      "stil": "normal"
     }
    ],
@@ -3045,7 +3441,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... Dg5? 6. Sf3 – ",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Dg5? 6. Sf3"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -3128,7 +3533,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Dxg2?? 7. Tg1 Dh3 8. Lxf7+!, Schwarz am Zug. Rot: Schach. Grau: der Weg des Springers nach g5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Dxg2?? 7. Tg1 Dh3 8. Lxf7+!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Schach. Grau: der Weg des Springers nach g5.",
      "stil": "normal"
     }
    ],
@@ -3179,7 +3593,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8... Kxf7?? 9. Sg5+ Ke8 10. Sxh3, Schwarz am Zug. Die schwarze Dame ist verloren.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Kxf7?? 9. Sg5+ Ke8 10. Sxh3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Die schwarze Dame ist verloren.",
      "stil": "normal"
     }
    ],
@@ -3239,7 +3662,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Najdorf-Variante nach 7... Db6 8. a3 – ",
+     "text": "Najdorf-Variante nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Db6 8. a3"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -3338,7 +3770,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8... Dxb2?? 9. Sa4!, Schwarz am Zug. Rot: Der Springer greift die Dame an. Grau: Die Felder ringsum sind alle gedeckt.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Dxb2?? 9. Sa4!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Springer greift die Dame an. Grau: Die Felder ringsum sind alle gedeckt.",
      "stil": "normal"
     }
    ],
@@ -3391,7 +3832,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9... Dxd4 10. Dxd4, Schwarz am Zug. Schwarz hat die Dame für einen Springer gegeben und ist verloren.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9... Dxd4 10. Dxd4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Schwarz hat die Dame für einen Springer gegeben und ist verloren.",
      "stil": "normal"
     }
    ],
@@ -3457,7 +3907,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Stellung aus Kapitel 1 nach 5. Sd5 – ",
+     "text": "Die Stellung aus Kapitel 1 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Sd5"
+    },
+    {
+     "art": "text",
+     "text": " – ",
      "stil": "normal"
     },
     {
@@ -3538,7 +3997,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 5... Dg6?? 6. Sxc7+!, Schwarz am Zug. Rot: Der Springer gibt Schach und greift zugleich den Turm a8 an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Dg6?? 6. Sxc7+!"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Springer gibt Schach und greift zugleich den Turm a8 an.",
      "stil": "normal"
     }
    ],
@@ -3585,7 +4053,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 6... Kd8 7. Sxa8, Schwarz am Zug. Weiß hat einen Turm gewonnen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Kd8 7. Sxa8"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Weiß hat einen Turm gewonnen.",
      "stil": "normal"
     }
    ],
@@ -3634,7 +4111,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Albins Gegengambit nach 1. d4 d5 2. c4 e5 3. dxe5 d4 4. e3 Lb4+ 5. Ld2 dxe3, Weiß am Zug.",
+     "text": "Albins Gegengambit nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 d5 2. c4 e5 3. dxe5 d4 4. e3 Lb4+ 5. Ld2 dxe3"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],
@@ -3677,7 +4163,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Spanische Partie nach 1. e4 e5 2. Sf3 Sc6 3. Lb5 Sf6 4. d3 Se7, Weiß am Zug.",
+     "text": "Spanische Partie nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 Sc6 3. Lb5 Sf6 4. d3 Se7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug.",
      "stil": "normal"
     }
    ],

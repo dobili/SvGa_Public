@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 18.10.2026, Version 0.2.89. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 18.10.2026, Version 0.2.94. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.89“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.94“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,122 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.94 (etwa 3 Minuten; Technik für die englische Fassung, Opus)
+
+Dazu im Hintergrund: Die App kann jetzt mehrere Sprachen tragen (Sprache des Geräts als
+Voreinstellung, Wechsel lädt Texte und Buchdaten neu, `<html lang>` folgt). Übersetzt ist noch
+nichts. Die Pipeline erkennt die Züge im Klartext der Bildunterschriften („Nach 2. Lf4“, 697
+Stellen); die englische Fassung zeigt sie später als „2. Bf4“.
+
+- [ ] N559. **Nichts hat sich verändert:** Öffne Abb. 1.2: Die Unterschrift lautet wie im Buch
+      „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ steht weiter
+      „Deutsch (Englisch folgt mit der englischen Ausgabe)“; eine Auswahl erscheint erst, wenn
+      es eine zweite Sprache gibt.
+- [ ] N560. **Lizenzen:** Einstellungen › „Lizenzen“ (oder Fußzeile der Startseite): Die Seite
+      sieht aus wie vorher (alle Bausteine mit Lizenz, Herkunft und „Lizenztext“). Die Texte
+      stehen jetzt in der Sprachdatei, damit die englische Fassung sie übersetzen kann.
+
+### Neu in 0.2.93 (etwa 10 Minuten; Lernsammlung, Opus)
+
+- [ ] N553. **Stellung an einer Abbildung sammeln:** Öffne Abb. 2.2. Rechts unter dem Brett steht
+      neben „Brett drehen“ ein Lesezeichen. Tippe darauf: Unter dem Brett erscheinen „Plan“,
+      „Notiz“ und „Eröffnung“. Die Eröffnung ist schon ausgefüllt (Spanische Partie), du darfst
+      sie ändern. Schreibe einen Plan-Satz und tippe „Speichern“. Es erscheint „In der
+      Lernsammlung gespeichert“ mit dem Knopf „Lernsammlung öffnen“.
+- [ ] N554. **Aus Partie und Trainer sammeln:** Im Rückblick einer beendeten Partie steht unter
+      dem Zug neben „In die Fehlerdatenbank“ jetzt „In die Lernsammlung“ (Stellung nach dem Zug,
+      mit dem Weg der Partie). In den Trainern steht nach jeder beantworteten Aufgabe „In die
+      Lernsammlung“ über „Weiter“ (Taktik, Falle, Struktur, Endspiel, Repertoire, Zug erraten,
+      Abweichung, Zielbilanz, Faktorenbilanz, Planbilanz, Denkroutine).
+- [ ] N555. **Die Sammlung:** Training › Karte „Lernsammlung“ › „Lernsammlung öffnen“. Die
+      Stellungen stehen in aufklappbaren Gruppen nach Eröffnung, alphabetisch, „Ohne Eröffnung“
+      zuletzt. Ein Eintrag zeigt Brett, Plan und Notiz, dazu „Zu Abb. …“, „Bearbeiten“ und
+      „Löschen“. Unten lässt sich eine Stellung als FEN eintragen (etwa aus einer Vereinspartie).
+- [ ] N556. **Abfragen:** „Abfragen“ (alle) oder „Diese Gruppe abfragen“ zeigt die Stellungen in
+      zufälliger Folge; erst „Plan zeigen“ deckt Plan und Notiz auf. Gespeichert wird dabei nichts.
+- [ ] N557. **Als Lichess-Studie:** „Als PGN kopieren“ (oder „Als PGN-Datei sichern“). Auf Lichess
+      unter „Studien“ eine neue Studie anlegen, „PGN importieren“ wählen und einfügen. Jede
+      Stellung wird ein Kapitel; Name „Eröffnung – Fundstelle“, Plan und Notiz als Kommentar. Kennt
+      die App den Weg zur Stellung, kannst du ihn im Kapitel nachspielen.
+- [ ] N558. **Datensicherung:** Einstellungen › Daten sichern, auf einem zweiten Gerät (oder nach
+      „Daten löschen“) einspielen: Die Lernsammlung ist wieder da. Hinweis: Eine Sicherung mit
+      Lernsammlung lässt sich nur in Version 0.2.93 oder neuer einspielen (ältere Versionen melden
+      „aus einer neueren Version“, damit nichts verloren geht).
+
+### Neu in 0.2.92 (etwa 5 Minuten; Ziehen per Wischen, Opus)
+
+- [ ] N550. **Figuren per Wischen ziehen:** Beginne eine Partie (Spielen › Partie beginnen) und
+      ziehe den Bauern e2 mit dem Finger nach e4, ohne loszulassen. Die Figur hängt groß unter
+      dem Finger, auf ihrem Feld bleibt sie blass, das Feld unter dem Finger schimmert. Beim
+      Loslassen auf einem erlaubten Feld ist der Zug gespielt; auf einem verbotenen Feld oder
+      neben dem Brett bleibt die Figur gewählt (die Zielpunkte sind zu sehen). Antippen von Figur
+      und Zielfeld geht wie bisher. Das gilt überall, wo „Ziehen“ wirkt: Partie, Abbildungen mit
+      dem Werkzeug „Ziehen“, Übungen und Trainer.
+- [ ] N551. **Scrollen bleibt frei:** Lege den Finger auf ein leeres Feld oder eine gegnerische
+      Figur und wische nach oben: Die Seite scrollt wie bisher. Nur auf einer eigenen Figur, die
+      ziehen darf, nimmt der Finger die Figur. Auf Brettern ohne „Ziehen“ (Abbildung ohne
+      Werkzeug, Zählen) scrollt die Seite überall.
+- [ ] N552. **Abschalten:** Einstellungen › Brett › „Figuren per Wischen ziehen: aus“. Öffne
+      danach ein Brett neu: Wischen bewegt keine Figur mehr, Antippen schon. Die Einstellung gilt
+      nur auf diesem Gerät (wie die Koordinaten), weil sie von Gerät und Hand abhängt.
+
+### Neu in 0.2.91 (etwa 5 Minuten; Endspiel-Kurzübungen, Opus)
+
+Dazu im Hintergrund: Die Ergebnisse aller Werkzeuge an allen Abbildungen sind festgehalten; ändert
+ein Umbau etwas daran, schlägt ein Test an. Für dich ändert sich dadurch nichts.
+
+- [ ] N408. **Endspiel-Kurzübungen:** Training › Endspieltrainer › unten „Kurzübungen starten“.
+      Acht schnelle Fragen ohne Engine, reihum: „Holt der schwarze König den Bauern ein?“
+      (Quadrat), „Wer hat die Opposition?“, „Welches Feld ist ein Schlüsselfeld?“ und „Welches
+      Erkennungsbild ist das?“ (Buchstellungen aus Kapitel 8 und 9). Nach der Antwort steht die
+      Regel des Buches; beim Quadrat und bei den Schlüsselfeldern leuchtet die Lösung gold am
+      Brett. Prüfe an zwei, drei Aufgaben, ob die Antwort der App schachlich stimmt.
+
+### Neu in 0.2.90 (etwa 10 Minuten, mit Engine; Nachtarbeit Chat A, Opus)
+
+Dazu im Hintergrund: Engine-Tests mit fester Tiefe (scheiterten ab und zu ohne Grund),
+Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmodus, ein Test bei
+360 px Breite. Die Trainingsseiten der Website werden nicht mehr zwischengespeichert.
+
+- [ ] N400. **Bedenkzeit 10 + 0:** Training › 30-Minuten-Plan › Tag A starten, „Schritt
+      erledigt“, dann „Zum Spielen“. Unter „Bedenkzeit“ ist jetzt „10 + 0“ gewählt (neu neben
+      30 + 20, 15 + 10 und 5 + 3). Du kannst sie dort noch ändern.
+- [ ] N401. **Gewinnchance statt Bauerneinheiten im Zugurteil:** Abb. 1.26 öffnen, „Engine“,
+      dann „Letzten Zug bewerten“. Bei einem Zug mit Zeichen lautet der Satz jetzt „5... Db6?!:
+      Die Gewinnchance von Schwarz fällt von … % auf … %. Besser: … (goldener Pfeil)“, wie im
+      Rückblick nach der Partie; ohne Zeichen „ist gut: Die Gewinnchance … sinkt nur von … auf …“. Nur wenn sich die Gewinnchance kaum ändert (klar gewonnene Stellung), nennt er
+      weiter Bauerneinheiten. Ebenso das Werkzeug „Falle?“ (Abb. 4.21): „Falle: Nach axb4 …“
+      nennt die Gewinnchance nach dem Schlag und nach der Rettung.
+- [ ] N402. **Gabel mit Figurennamen:** Spiele eine Partie und stelle eine Figur in eine
+      Springergabel (etwa Dame und König). Im Rückblick steht jetzt „übersieht die Gabel:
+      Springer g5 nach f7 trifft König h8 und Dame d6. Der König muss ziehen, Dame d6 geht
+      verloren.“ statt nur der Felder. Bei anderen Motiven nennt der Satz, was die Antwort
+      schlägt (etwa „… schlägt Turm e8“).
+- [ ] N403. **Datensicherung teilen (Handy):** Einstellungen › Daten auf diesem Gerät. Neben
+      „Daten sichern (Datei)“ steht auf dem Handy „Sicherung teilen (Mail, Dateien)“. Er öffnet
+      das Teilen-Menü; schick dir die Datei per Mail. Am Rechner fehlt der Knopf, wenn der
+      Browser keine Dateien teilen kann.
+- [ ] N406. **Wiederholung auch im Strukturerkenner und Endspieltrainer:** Löse im
+      Strukturerkenner ein Skelett falsch (oder schaffe im Endspieltrainer eine Stellung nicht).
+      Am nächsten Tag steht im Bereich Training unter „Fällige Wiederholungen“
+      „Strukturerkenner: 1 fällig“ (bzw. Endspieltrainer), und im Trainer startet „Wiederholen“
+      genau diese Aufgabe, wie bisher bei Taktik und „Falle oder Köder“.
+- [ ] N407. **Zug erraten merkt sich die Trefferzahl:** Spiele eine Partie bei „Zug erraten“
+      ganz durch. Beim nächsten Mal steht unter „Getroffen: …“ die Zeile „Beim letzten Mal
+      (Datum): 7 von 12 getroffen.“ zum Vergleich. Der Verlauf steckt in der Datensicherung,
+      ebenso jetzt der Stand des 30-Minuten-Plans (welcher Tag als Nächstes dran ist).
+- [ ] N405. **Erst selbst denken auch vor Werkzeugen (dein Wunsch vom 18.10.2026):**
+      Einstellungen › Reiter „Training“ › „Auch vor Werkzeugen und Engine“ auf „an“. Öffne
+      Abb. 1.26: Statt Werkzeugleiste und Engine steht die Karte „Erst selbst denken“ mit „Weiß
+      besser | gleich | Schwarz besser“ und „Ich habe nachgedacht“. Danach erscheinen die
+      Werkzeuge, darüber „Deine Einschätzung: …“ zum Vergleich mit der Engine. Mit „streng“ geht
+      es erst nach einer Einschätzung weiter. Prüfe auch: Übungen (etwa Übung an Abb. 1.40) und
+      Trainer funktionieren mit „an“ wie bisher (dort gilt ihr eigenes „Erst selbst denken“).
+      Voreinstellung ist „aus“ (siehe Rückfrage NA1).
+- [ ] N404. **Bewertungsbalken lesbar:** Nach einer Partie im Rückblick: Die Zahl am schmalen
+      Balken links steht jetzt auf dunklem Grund, auch wenn der weiße Teil bis zur Mitte reicht.
+
 
 ### Neu in 0.2.88 (mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
@@ -164,6 +280,15 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 Oben die Rückfragen, bei denen Claude schon entschieden hat (meist schon umgesetzt): Antworte mit
 „alle ok“ oder „alle ok außer K3, S21“; bei einem Widerspruch baut Claude es zurück. Darunter die
 Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entscheidung brauchen.
+
+### NA. Nachtarbeit Chat A (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
+
+- [ ] NA1. **Voreinstellung von „Erst selbst denken auch vor Werkzeugen“:** Empfehlung **aus**.
+      Schon umgesetzt in 0.2.90. Grund: Wer beim Lesen eine Abbildung öffnet, will meist
+      nachprüfen, was im Buch steht; eine Pflichtkarte an jeder der 765 Abbildungen bremst
+      dabei. Wer üben will, schaltet sie in den Einstellungen ein (Reiter „Training“). Sagst du
+      „an“, wird sie für alle die Voreinstellung.
+
 
 ### Nur bestätigen (je eine Zeile; Widerspruch genügt)
 

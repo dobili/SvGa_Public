@@ -63,7 +63,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Stellung aus Kapitel 1 nach 9. De2, Schwarz am Zug. Die Eröffnung ist abgeschlossen. Goldener Pfeil: Die Türme a1 und f1 sind verbunden.",
+     "text": "Die Stellung aus Kapitel 1 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. De2"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Die Eröffnung ist abgeschlossen. Goldener Pfeil: Die Türme a1 und f1 sind verbunden.",
      "stil": "normal"
     }
    ],
@@ -124,7 +133,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Skelett der Königsindischen Verteidigung aus Kapitel 5 nach 8. d5 Se7, Weiß am Zug. Graue Pfeile: Weiß bereitet am Damenflügel ",
+     "text": "Das Skelett der Königsindischen Verteidigung aus Kapitel 5 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. d5 Se7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Graue Pfeile: Weiß bereitet am Damenflügel ",
      "stil": "normal"
     },
     {
@@ -205,7 +223,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Nimzo-Indischen Hauptvariante (Kapitel 2 und 5) nach 12. Lg5, Schwarz am Zug. Gold: der Hebel d4–d5. Grau: die drei schwarzen Wächter des Feldes d5.",
+     "text": "Die Schlussstellung der Nimzo-Indischen Hauptvariante (Kapitel 2 und 5) nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12. Lg5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: der Hebel d4–d5. Grau: die drei schwarzen Wächter des Feldes d5.",
      "stil": "normal"
     }
    ],
@@ -267,7 +294,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Königsgambit aus Kapitel 3 nach 1. e4 e5 2. f4 exf4 3. Sf3 d5, Weiß am Zug. Rot: Der Gegenschlag im Zentrum greift den Bauern e4 an.",
+     "text": "Das Königsgambit aus Kapitel 3 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. f4 exf4 3. Sf3 d5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Gegenschlag im Zentrum greift den Bauern e4 an.",
      "stil": "normal"
     }
    ],
@@ -317,7 +353,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 8... Sc6, Weiß am Zug. Rot: der Gegenschlag ...d5. Gold: 9. Lc4 nimmt d5 unter Kontrolle.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Sc6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: der Gegenschlag ...d5. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Lc4"
+    },
+    {
+     "art": "text",
+     "text": " nimmt d5 unter Kontrolle.",
      "stil": "normal"
     }
    ],
@@ -398,7 +452,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 10... Tc8, Weiß am Zug. Gold: der weiße Sturm h4–h5 gegen den Bauern g6 (grau). Rot: der langsamere schwarze Sturm ...a5–a3.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Tc8"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: der weiße Sturm h4–h5 gegen den Bauern g6 (grau). Rot: der langsamere schwarze Sturm ...a5–a3.",
      "stil": "normal"
     }
    ],
@@ -690,7 +753,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Karpow–Unzicker, Nizza 1974 (Kapitel 11), nach 31. f5, Schwarz am Zug. Goldener Pfeil: die erste Front, die gesperrte a-Linie. Goldenes Feld: die zweite Front, der Bauer f5 am Königsflügel.",
+     "text": "Karpow–Unzicker, Nizza 1974 (Kapitel 11), nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "31. f5"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Goldener Pfeil: die erste Front, die gesperrte a-Linie. Goldenes Feld: die zweite Front, der Bauer f5 am Königsflügel.",
      "stil": "normal"
     }
    ],
@@ -800,7 +872,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 4... Lb7, Weiß am Zug. Rot: der geplante Läuferzug ...Lb4. Grau: der Springer c3, den er an den König fesseln würde. Gold: 5. a3.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Lb7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: der geplante Läuferzug ...Lb4. Grau: der Springer c3, den er an den König fesseln würde. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. a3"
+    },
+    {
+     "art": "text",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -878,7 +968,16 @@
     },
     {
      "art": "text",
-     "text": " (Kapitel 1), jetzt Schwarz am Zug. Rot: die Drohung Lxh7+. Gold: 1... f5 schließt die Diagonale.",
+     "text": " (Kapitel 1), jetzt Schwarz am Zug. Rot: die Drohung Lxh7+. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... f5"
+    },
+    {
+     "art": "text",
+     "text": " schließt die Diagonale.",
      "stil": "normal"
     }
    ],
@@ -940,7 +1039,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... f5 2. exf6 Sxf6, Weiß am Zug. Gold: Der Springer bewacht wieder h7. Rot: der Preis, der rückständige Bauer e6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... f5 2. exf6 Sxf6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der Springer bewacht wieder h7. Rot: der Preis, der rückständige Bauer e6.",
      "stil": "normal"
     }
    ],
@@ -1005,7 +1113,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1... f6 2. Lxh7+ Kxh7 3. Sg5+ fxg5, Weiß am Zug. Gold: Der Bauer hat den Springer geschlagen. Grau: Weiß bleibt nur das Schach der Dame auf h5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... f6 2. Lxh7+ Kxh7 3. Sg5+ fxg5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: Der Bauer hat den Springer geschlagen. Grau: Weiß bleibt nur das Schach der Dame auf h5.",
      "stil": "normal"
     }
    ],
@@ -1194,7 +1311,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 1. Td7, Schwarz am Zug. Rot: Der Turm greift b7 und f7 von der Seite an. f7 deckt noch der König, b7 muss Schwarz erst decken.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Td7"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Turm greift b7 und f7 von der Seite an. f7 deckt noch der König, b7 muss Schwarz erst decken.",
      "stil": "normal"
     }
    ],
@@ -1243,7 +1369,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Karpow–Kortschnoi, Moskau 1974 (Kapitel 11), nach 17. Lh6 Lxh6 18. Dxh6, Schwarz am Zug. Rot: die dunklen Felder g7 und h8, die nur noch der König bewacht. Gold: Die Dame steht auf h6.",
+     "text": "Karpow–Kortschnoi, Moskau 1974 (Kapitel 11), nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "17. Lh6 Lxh6 18. Dxh6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: die dunklen Felder g7 und h8, die nur noch der König bewacht. Gold: Die Dame steht auf h6.",
      "stil": "normal"
     }
    ],
@@ -1295,7 +1430,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Der Zwischenstand der Königsindischen Hauptvariante aus Kapitel 2 nach 8... Se7, Weiß am Zug. Grau: die Hebel beider Seiten. Rot: der Springer f6, der dem eigenen f-Bauern im Weg steht.",
+     "text": "Der Zwischenstand der Königsindischen Hauptvariante aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Se7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: die Hebel beider Seiten. Rot: der Springer f6, der dem eigenen f-Bauern im Weg steht.",
      "stil": "normal"
     }
    ],
@@ -1371,7 +1515,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9. b4 Sh5 10. Te1 f5, Weiß am Zug. Gold: das Loch e6, das ...f5 hinterlassen hat. Grau: der erste Schritt des Springers f3 dorthin.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. b4 Sh5 10. Te1 f5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: das Loch e6, das ...f5 hinterlassen hat. Grau: der erste Schritt des Springers f3 dorthin.",
      "stil": "normal"
     }
    ],
@@ -1433,7 +1586,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 11. Sg5 Sf6 12. Lf3 c6, Weiß am Zug. Grau: Der Läufer c1 kommt mit 13. Le3 ins Spiel.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. Sg5 Sf6 12. Lf3 c6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der Läufer c1 kommt mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13. Le3"
+    },
+    {
+     "art": "text",
+     "text": " ins Spiel.",
      "stil": "normal"
     }
    ],
@@ -1514,7 +1685,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 13. Le3 h6 14. Se6, Schwarz am Zug. Gold: Der Springer steht auf dem Loch e6.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13. Le3 h6 14. Se6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Der Springer steht auf dem Loch e6.",
      "stil": "normal"
     }
    ],
@@ -1588,7 +1768,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 9. Se1 Sd7 10. Le3 f5, Weiß am Zug. Grau: Der Springer e1 will nach d3 und stützt von dort den Hebel c4–c5.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Se1 Sd7 10. Le3 f5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: Der Springer e1 will nach d3 und stützt von dort den Hebel c4–c5.",
      "stil": "normal"
     }
    ],
@@ -1663,7 +1852,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 11. f3 f4 12. Lf2 g5, Weiß am Zug. Grau: die Hebel beider Seiten. Rot: die Bauern f3 und d6, auf die sie zielen.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. f3 f4 12. Lf2 g5"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: die Hebel beider Seiten. Rot: die Bauern f3 und d6, auf die sie zielen.",
      "stil": "normal"
     }
    ],
@@ -1758,7 +1956,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Italienische Partie nach 7... Kxf7, Weiß am Zug. Grau: drei entwickelte schwarze Leichtfiguren. Rot: Die weißen Leichtfiguren stehen noch auf ihren Ausgangsfeldern.",
+     "text": "Italienische Partie nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Kxf7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Grau: drei entwickelte schwarze Leichtfiguren. Rot: Die weißen Leichtfiguren stehen noch auf ihren Ausgangsfeldern.",
      "stil": "normal"
     }
    ],
@@ -1906,7 +2113,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski, Moskau 1966, 10. Partie, nach 20... Lh3, Weiß am Zug. Rot: Der Läufer greift den Turm f1 an. Gold: 21. Se3 lässt den Turm stehen.",
+     "text": "Petrosjan–Spasski, Moskau 1966, 10. Partie, nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "20... Lh3"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Rot: Der Läufer greift den Turm f1 an. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21. Se3"
+    },
+    {
+     "art": "text",
+     "text": " lässt den Turm stehen.",
      "stil": "normal"
     }
    ],
@@ -1971,7 +2196,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 21... Lxf1 22. Txf1, Schwarz am Zug. Gold: Die Dame b2 zielt auf den Springer e5, den auch der Bauer f4 angreift. Rot: Dem Springer a5 bleibt nur das Feld b7. Grau: h7, der letzte Bauer vor dem schwarzen König.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21... Lxf1 22. Txf1"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Gold: Die Dame b2 zielt auf den Springer e5, den auch der Bauer f4 angreift. Rot: Dem Springer a5 bleibt nur das Feld b7. Grau: h7, der letzte Bauer vor dem schwarzen König.",
      "stil": "normal"
     }
    ],
@@ -2015,8 +2249,21 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski, Moskau 1966, 10. Partie, nach 29... Txf7, Weiß am Zug. Gold: 30. Dh8+!",
+     "text": "Petrosjan–Spasski, Moskau 1966, 10. Partie, nach ",
      "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "29... Txf7"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. Dh8+!"
     }
    ],
    "art": "fliesstext",
@@ -2074,7 +2321,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach 30. Dh8+ Kxh8 31. Sxf7+, Schwarz am Zug. Rot: Der Springer greift König h8 und Dame g5 zugleich an.",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. Dh8+ Kxh8 31. Sxf7+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: Der Springer greift König h8 und Dame g5 zugleich an.",
      "stil": "normal"
     }
    ],
@@ -2119,7 +2375,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski nach 31... Kg7 32. Sxg5 (nicht mehr gespielt), Schwarz am Zug. Gold: Weiß hat einen Springer mehr.",
+     "text": "Petrosjan–Spasski nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "31... Kg7 32. Sxg5"
+    },
+    {
+     "art": "text",
+     "text": " (nicht mehr gespielt), Schwarz am Zug. Gold: Weiß hat einen Springer mehr.",
      "stil": "normal"
     }
    ],
@@ -2204,7 +2469,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Königsindische Verteidigung, Sämisch-Variante, nach 1. d4 Sf6 2. c4 g6 3. Sc3 Lg7 4. e4 d6 5. f3 O-O 6. Le3. Schwarz am Zug.",
+     "text": "Königsindische Verteidigung, Sämisch-Variante, nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 Sf6 2. c4 g6 3. Sc3 Lg7 4. e4 d6 5. f3 O-O 6. Le3"
+    },
+    {
+     "art": "text",
+     "text": ". Schwarz am Zug.",
      "stil": "normal"
     }
    ],
@@ -2313,7 +2587,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Königsindischen Hauptvariante aus Kapitel 2 nach 15. dxe6, Schwarz am Zug.",
+     "text": "Die Schlussstellung der Königsindischen Hauptvariante aus Kapitel 2 nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "15. dxe6"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug.",
      "stil": "normal"
     }
    ],

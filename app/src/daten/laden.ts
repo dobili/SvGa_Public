@@ -8,7 +8,7 @@
  * Geladene, damit die App die Daten der neuen Sprache holt.
  * Abhängigkeiten: erzeugte Typen aus den Schemas, i18n/sprache.ts.
  */
-import { sprache } from "../i18n/sprache";
+import { datensprache } from "../i18n/sprache";
 import type { Datenverzeichnis } from "./generiert/index";
 import type { Eroeffnungsliste } from "./generiert/eroeffnungsliste";
 import type { Glossar } from "./generiert/glossar";
@@ -24,7 +24,7 @@ const AUFLAGE = "a1";
 
 /** Ordner der Daten einer Sprache (Daten, die nicht aus dem Buch kommen, etwa die Eröffnungsliste). */
 function sprachordner(): string {
-  return `/daten/${sprache()}`;
+  return `/daten/${datensprache()}`;
 }
 
 /** Ordner der Buchdaten für Sprache und Auflage, etwa „/daten/de/a1“. */

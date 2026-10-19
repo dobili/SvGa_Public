@@ -9,7 +9,7 @@
  * Abhängigkeiten: training/denkroutinetrainer.ts, useDenkvergleich.ts, Trainerbrett, i18n.
  */
 import { useEffect, useState } from "react";
-import { t } from "../../i18n/sprache";
+import { sprache, t, zahlText } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import {
   DENKZEIT_S,
@@ -30,12 +30,12 @@ const SEKUNDE_MS = 1000;
 const MATT_AB = 50;
 const LEER: readonly [string, string] = ["", ""];
 
-const de = (san: string) => sanInSprache(san, "de");
+const de = (san: string) => sanInSprache(san, sprache());
 
 /** Wert aus Sicht der Seite am Zug: „+0,3“, „−1,2“ oder „Matt“. */
 function werttext(wert: number): string {
   if (Math.abs(wert) >= MATT_AB) return t(wert > 0 ? "denk.mattFuer" : "denk.mattGegen");
-  const zahl = Math.abs(wert).toFixed(1).replace(".", ",");
+  const zahl = zahlText(Math.abs(wert), 1);
   return `${wert < 0 ? "−" : "+"}${zahl}`;
 }
 

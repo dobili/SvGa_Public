@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.101. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.105. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.99“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.104“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,89 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.105 (etwa 10 Minuten; Farbabstimmung hell und dunkel, von dir freigegeben am 19.10.2026, Opus)
+
+Am besten jeden Punkt einmal im hellen und einmal im dunklen Modus ansehen (Einstellungen ›
+Anzeige › Nachtmodus „aus“ und „an“).
+
+- [ ] N483. **Porträts:** Spielen › „Vorgefertigte Bots“. Die Porträts stehen im hellen Modus auf
+      hellem Navy statt auf dunklem Schieferblau, im dunklen Modus wie bisher. Dasselbe in der
+      Sprechblase oben, in der Gesichterreihe der Stufen, in der Porträtwahl eigener Bots und in
+      der Partienliste. Wirkt es leichter und passend?
+- [ ] N484. **Haken und Regler:** Die Haken (etwa „Gewertete Partie“) und die Regler „Stufe der
+      Engine“ sind im hellen Modus navy, im dunklen gold, nicht mehr blau. Auch die Haken der
+      Gesamt-Checkliste sind im dunklen Modus gut zu sehen.
+- [ ] N485. **Zahlkreise im Dunkeln:** Dunkler Modus › Training (Kapitelnummern), Nachschlagen ›
+      Denkroutine (Schritte 1 bis 4), Gesamt-Checkliste: Die Kreise sind heller mit hellem Rand
+      und heben sich von den Karten ab.
+- [ ] N486. **Stufenmarken:** Die Gürtelfarben sind etwas gedämpft; Weiß, Gelb und Orange haben im
+      hellen Modus einen dunkleren Rand, im dunklen Modus haben alle Marken einen hellen Rand.
+      „Zum Spaß“ zeigt das Konfetti in Gold statt im Regenbogen.
+- [ ] N487. **Rahmen und kleine Zeichen:** Chips (Weiß/Schwarz, Bedenkzeit), Knöpfe mit Rahmen und
+      Eingabefelder haben kräftigere Rahmen. Kapitelübersicht: die Zeichen der Warum-Fragen haben
+      einen Rand. Auswertung › „Züge nach Art“: die farbigen Marken sind etwas dunkler, das weiße
+      Zeichen darin gut lesbar.
+- [ ] N488. **Partienliste:** Eine Partie gegen „Eigene Stufe“ zeigt links die Gürtelmarke der
+      Stufe statt eines „S“. „1–0“ in der goldenen Marke ist auch im dunklen Modus gut lesbar.
+- [ ] N489. **App-Symbol:** Die App neu installieren (oder einige Zeit warten): Auf dem
+      Startbildschirm erscheint der goldene Springer aus dem Cover mit den Pfeilen, auf Android
+      rund zugeschnitten ohne abgeschnittene Ohren oder Füße. Im Browser-Tab bleibt der schlichte
+      weiße Springer. Gefällt es dir auf deinem Startbildschirm?
+
+### Neu in 0.2.104 (etwa 10 Minuten; englische Fassung als Vorschau, dein Wunsch vom 19.10.2026, Opus)
+
+Alle 2857 Oberflächentexte gibt es jetzt auf Englisch, mit englischer Notation (B statt L,
+N statt S, R statt T, Q statt D, auch in Zügen der Engine und in deinen Bildunterschriften).
+Bildunterschriften, Glossar und Übungen kommen weiter aus den deutschen Buchdaten, bis es dein
+englisches Buch gibt. 27 Texte, die wörtlich aus dem Buch stammen, bleiben deutsch (Liste in
+Teil 2, EN2). Englisch muss man selbst wählen; die App startet nie von selbst auf Englisch.
+
+- [ ] N409. **Englisch einschalten:** Einstellungen › Reiter „Anzeige“ › „English (preview)“.
+      Alles wechselt sofort auf Englisch, auch nach dem Neuladen. Öffne Abb. 1.26: Überschrift
+      „Fig. 1.26“, Zugleiste „5. Nf3 Qb6 … 6. Bd3?!“, die Unterschrift deutsch, aber mit „5...
+      Qb6“. Spiele eine kurze Partie gegen die Engine und sieh dir die Auswertung an: Klingen die
+      Sätze natürlich? Zahlen mit Punkt („1.5“), Datum als „10/19/2026“. Zurück mit
+      Settings › Display › „Deutsch“. Notiere alles, was hölzern oder falsch klingt.
+
+### Neu in 0.2.103 (etwa 15 Minuten, mit Engine; Spielstärke nur bis zur Entscheidung, Opus)
+
+Dein Wunsch vom 19.10.2026: Für die geschätzte Spielstärke zählen nur noch die Züge, bis die
+Partie entschieden ist, also bis eine Seite mindestens 90 % Gewinnchance hat und bis zum Ende
+behält. Die Kurven Genauigkeit → Spielstärke sind dafür an 600 neu gesammelten Partien von
+chess.com und Lichess neu geeicht. Die Bots spielen wie vorher; ihre Zahlen sinken alle um etwa
+200, weil die Anker mit der neuen Regel nachgerechnet sind.
+
+- [ ] N580. **Verschenkte Partie gegen Stufe 1:** Spiele gegen Stufe 1 so lange, bis die Engine
+      früh die Dame oder einen Turm verliert, und spiele dann zügig zu Ende (wie deine Partie vom
+      19.10.2026, als die Engine nach 9...Db8?? auf 89 % und „etwa 1700“ kam). Auswertung › Karte
+      „Spielstärke“: Steht bei der Engine jetzt „zu wenige Züge vor der Entscheidung“ oder eine
+      deutlich kleinere Zahl? Die Genauigkeit oben darf hoch bleiben; sie zählt wie bei Lichess
+      und chess.com alle Züge.
+- [ ] N581. **„aus N Zügen bis zur Entscheidung“:** In derselben Auswertung steht bei deiner
+      Spielstärke hinter der Spanne etwa „· aus 12 Zügen bis zur Entscheidung“. In der Tabelle je
+      Phase steht bei Phasen, die ganz nach der Entscheidung liegen (meist das Endspiel), statt
+      Marke und Zahl „92 % · nach der Entscheidung (15 Züge)“. Verständlich?
+- [ ] N582. **Zahlen der Bots:** Spielen › „Vorgefertigte Bots“. Stufe 1 steht jetzt bei etwa
+      850 bis 1100 (vorher 1050 bis 1300), Stufe 8 bei etwa 3000 (vorher 3200), „Zum Spaß“ bei
+      „unter 400 bis etwa 850“ (Fritzi unter 400, Onkel Willi etwa 550, Tante Trude etwa 650,
+      Bruno etwa 850). Passt das zu deinem Gefühl am Brett? Zu den Spaß-Bots siehe GE1 in Teil 2.
+- [ ] N583. **Erklärung:** Auf der Karte „Spielstärke“ das Fragezeichen bei „Wie die Zahlen
+      entstehen“ antippen. Dort steht neu: „Für Spielstärke und Wort je Phase zählen nur die
+      Züge, bis die Partie entschieden ist: bis eine Seite mindestens 90 % Gewinnchance hat und
+      bis zum Ende behält. Danach ist fast jeder Zug ‚genau‘, weil nichts mehr zu verlieren ist;
+      sonst bekäme eine früh verschenkte Partie eine hohe Zahl. Die Genauigkeit oben zählt wie bei
+      Lichess und chess.com alle Züge.“ Passt der Text?
+
+### Neu in 0.2.102 (etwa 3 Minuten, mit Engine; Uhr sofort gesichert, Opus)
+
+- [ ] N180. **Uhr nach dem Schließen:** Partie mit Uhr (etwa 5 + 3) beginnen, einen Zug spielen,
+      nach der Antwort der Engine eine Minute nachdenken, dann die App ganz schließen (aus der
+      Liste der offenen Apps wischen) und wieder öffnen, Spielen › Weiterspielen: Steht deine
+      Restzeit auf dem Stand vom Moment des Schließens (etwa 4:0x), nicht auf dem Stand nach
+      deinem letzten Zug (5:0x)? Neu: Die App legt den angehaltenen Uhrstand beim Verlassen
+      zusätzlich sofort im Gerätespeicher ab, weil das gewöhnliche Speichern beim Schließen
+      abgebrochen werden kann.
 
 ### Neu in 0.2.101 (etwa 15 Minuten; Symbolsprache, von dir freigegeben am 19.10.2026, Opus)
 
@@ -197,9 +280,9 @@ nichts. Die Pipeline erkennt die Züge im Klartext der Bildunterschriften („Na
 Stellen); die englische Fassung zeigt sie später als „2. Bf4“.
 
 - [ ] N559. **Nichts hat sich verändert:** Öffne Abb. 1.2: Die Unterschrift lautet wie im Buch
-      „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ steht weiter
-      „Deutsch (Englisch folgt mit der englischen Ausgabe)“; eine Auswahl erscheint erst, wenn
-      es eine zweite Sprache gibt.
+      „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ stehen seit
+      0.2.104 „Deutsch“ (gewählt) und „English (preview)“; auch ein englisches Handy startet
+      auf Deutsch.
 - [ ] N560. **Lizenzen:** Einstellungen › „Lizenzen“ (oder Fußzeile der Startseite): Die Seite
       sieht aus wie vorher (alle Bausteine mit Lizenz, Herkunft und „Lizenztext“). Die Texte
       stehen jetzt in der Sprachdatei, damit die englische Fassung sie übersetzen kann.
@@ -307,9 +390,9 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 
 ### Neu in 0.2.88 (mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
-- [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, etwa 600): Macht
-      sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende Figur? Bruno liegt mit
-      etwa 1100 etwas über deinem Wunsch (500 bis 1000); so lassen? (Gruppe, Zahlen und
+- [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, seit 0.2.103
+      „unter 400“): Macht sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende
+      Figur? Zur Lage der Zahlen (Bruno jetzt etwa 850) siehe GE1 in Teil 2. (Gruppe, Zahlen und
       Sprechblase hat Claude geprüft.)
 
 ### Neu in 0.2.85 (mit Engine; Elo-Zahl der Bots, Opus)
@@ -421,15 +504,6 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 - [ ] N194. **Schach-Röntgen-Trainer:** Ist die Aufgabe (drei Schritte, Pfeile setzen: Figur,
       dann Zielfeld) verständlich und auf dem Handy gut bedienbar? (Den Ablauf hat Claude geprüft.)
 
-### Neu in 0.2.36 (mit Engine; AP 11 Kalibrierung)
-
-- [ ] N180. **Uhr nach dem Schließen:** Laufende Partie mit Uhr, eine Weile nachdenken, dann zu einer
-      anderen App wechseln, die App schließen und wieder öffnen, Partie fortsetzen: Ist deine
-      Restzeit die vom Moment des Verlassens? Befund am Rechner: Beim schnellen Neuladen ging die
-      Bedenkzeit seit dem letzten Zug verloren (das Speichern wird dabei abgebrochen); auf dem
-      Handy bleibt beim App-Wechsel meist genug Zeit zum Speichern. Bitte melden, wenn es bei dir
-      auch passiert; dann baut Claude einen sofortigen Speicherweg für die Uhr.
-
 ---
 
 ## Teil 2: Entscheiden
@@ -446,6 +520,58 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       dabei. Wer üben will, schaltet sie in den Einstellungen ein (Reiter „Training“). Sagst du
       „an“, wird sie für alle die Voreinstellung.
 
+
+### EN. Englische Fassung (Opus, 19.10.2026, Version 0.2.104; EN1 und EN3 schon umgesetzt, Widerspruch genügt)
+
+- [ ] EN1. **Vorläufige englische Namen der Buchbegriffe:** Empfehlung: geläufige englische
+      Schachbegriffe, wo es sie gibt; eigene Begriffe des Buches wörtlich übersetzt. Schon
+      umgesetzt in 0.2.104: Zählen = Counting, Angriffsregel = Attack rule, Todsünden = Deadly
+      sins, Schach-Röntgen-Regel = Chess X-ray rule, Zielbilanz = Goal balance, Faktorenbilanz =
+      Factor balance, Planbilanz = Plan balance, Falle oder Köder = Trap or bait, Prüffragen =
+      Check questions, Warnsignale = Warning signs, Leitfrage = Guiding question, Erzwingende
+      Züge = Forcing moves, Ruhe = Quiet, Erkennungsbild = Recognition pattern, Sicherheitsblick
+      = Safety check, Denkroutine = Thinking routine, Gesamt-Checkliste = Master checklist,
+      Lernsammlung = Study collection, Fehlerdatenbank = Mistake log, Strukturerkenner =
+      Structure spotter, Erst selbst denken = Think first, Stufen 1 bis 8 = Newcomer bis Expert.
+      Wenn dein englisches Buch andere Namen nimmt, sag sie mir; die Liste aller Begriffe steht
+      in `docs/ENGLISCH_BEGRIFFE.md`.
+- [ ] EN2. **Diese 27 Texte bleiben deutsch, bis du sie auf Englisch lieferst** (wörtlich aus
+      dem Buch; Grundlage war ein Abgleich mit dem LaTeX, dann eine Durchsicht). Du kannst sie
+      einfach als Liste „deutsch → englisch“ schicken:
+      - König auf die kurze Seite
+      - Gleichfarbige Läufer: Der Freibauer entscheidet
+      - Erkennungsbilder der Endspiel-Vertiefung
+      - Spiele dort, wohin deine Kette zeigt
+      - Was will mein Gegner?
+      - Welche Figur bringe ich dorthin?
+      - Merkregel: Ist die Zahl der Felder zwischen den Königen ungerade, hat der Spieler die Opposition, der gerade gezogen hat.
+      - Welche Figur?
+      - Was will mein Gegner?
+      - Der Plan in einem Satz
+      - Wo spiele ich?
+      - Regel 1: Aktiviere deinen König
+      - Regel 2: Nutze Opposition und Zugzwang
+      - Regel 3: Spiele geduldig
+      - Regel 4: Tausche klug
+      - Regel 5: Verteidige aktiv
+      - Regel 6: Rechne bis zur Umwandlung
+      - Die sechs goldenen Endspielregeln
+      - Wann ist die Rechnung fertig?
+      - 2. Kann der Gegner die gezogene Figur sofort schlagen?
+      - 1. Steht mein König danach sicher?
+      - 3. Erlaube ich ein Schach oder gar ein Matt?
+      - Sicherheitsblick vor dem Ziehen
+      - Ein Handbuch für Einsteiger und leicht Fortgeschrittene
+      - Am Ende jeder Variante das Patt prüfen.
+      - Vom Warnsignal zum Motiv
+      - Könige auf verschiedenen Flügeln: Wer öffnet zuerst?
+      Nicht in der Liste: kurze Buchwendungen innerhalb längerer App-Texte (etwa in den
+      Regelzeilen der Werkzeuge); sie sind mitübersetzt. Bildunterschriften, Glossar und
+      Übungen kommen aus den Buchdaten und bleiben deutsch, bis es dein englisches LaTeX gibt.
+- [ ] EN3. **Kürzel am Brett auf Englisch:** Empfehlung: englische Anfangsbuchstaben. Schon
+      umgesetzt in 0.2.104: Bauernschwächen D (doubled), I (isolated), B (backward, statt R),
+      H (hanging), C (chain base, statt B), U (unsound); Drohung T (threat, statt D). Auf
+      Deutsch bleibt alles wie im Buch.
 
 ### ZF. Konstruierte Zugfolgen und Tablebase (Opus, 19.10.2026; ZF1 bis ZF3 schon umgesetzt, Widerspruch genügt)
 
@@ -484,6 +610,18 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       (+0,03), das passt zum Buch („Weiß gewinnt mit Txa7 den Bauern zurück“). Die
       Endspielaufgaben des Trainers widersprechen der Tablebase in keinem Fall (137 Stellungen
       geprüft). Nur du änderst das Buch; die App bleibt, wie sie ist.
+
+### GE. Spielstärke nur bis zur Entscheidung (Opus, 19.10.2026; schon umgesetzt, Widerspruch genügt)
+
+- [ ] GE1. **Spaß-Bots jetzt unter deinem Wunschbereich:** Du wolltest die Gruppe „Zum Spaß“ bei
+      etwa 500 bis 1000. Mit der neuen Regel sinken alle Bot-Zahlen gemeinsam um etwa 200, die
+      Spaß-Bots liegen nun bei unter 400 (Fritzi, 60 % Zufallszüge), etwa 550 (Onkel Willi, 38 %),
+      650 (Tante Trude, 25 %) und 850 (Bruno, 15 %). Unter 400 zeigt die App keine Zahl, weil die
+      Eichpartien erst bei 400 beginnen. Gespielt wird wie vorher; nur der Maßstab ist ehrlicher
+      geworden (Stufe 1 wirkte dir mit „1700“ zu stark). **Empfehlung:** so lassen, die Bots
+      nicht neu messen (wie besprochen). Möchtest du die Spaß-Bots trotzdem bei 500 bis 1000,
+      senke ich ihre Zufallszüge (etwa 45, 30, 20 und 10 %) und messe die vier neu (etwa eine
+      Stunde Rechenzeit).
 
 ### Nur bestätigen (je eine Zeile; Widerspruch genügt)
 

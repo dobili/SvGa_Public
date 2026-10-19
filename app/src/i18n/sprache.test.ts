@@ -2,6 +2,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   beiSprachwechsel,
+  fertigeSprachen,
   GRUNDSPRACHE,
   setzeSprache,
   sprache,
@@ -30,8 +31,9 @@ describe("Startsprache", () => {
 });
 
 describe("Sprachwechsel", () => {
-  it("kennt heute nur Deutsch, mit Namen in der eigenen Sprache", () => {
-    expect(verfuegbareSprachen()).toEqual(["de"]);
+  it("kennt Deutsch und die englische Vorschau, mit Namen in der eigenen Sprache", () => {
+    expect(verfuegbareSprachen()).toEqual(["de", "en"]);
+    expect(fertigeSprachen()).toEqual(["de"]);
     expect(sprachname("de")).toBe("Deutsch");
     expect(sprachname("xx")).toBe("xx");
   });
@@ -39,7 +41,7 @@ describe("Sprachwechsel", () => {
   it("lehnt unbekannte Sprachen ab und meldet nur echte Wechsel", () => {
     const melde = vi.fn();
     const abmelden = beiSprachwechsel(melde);
-    expect(setzeSprache("en")).toBe(false);
+    expect(setzeSprache("xx")).toBe(false);
     expect(setzeSprache("de")).toBe(true);
     expect(melde).not.toHaveBeenCalled();
     expect(sprache()).toBe("de");

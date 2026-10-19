@@ -17,7 +17,7 @@ import { useState } from "react";
 import { useEinstellungen } from "../../app/einstellungen";
 import { useNavigation } from "../../app/navigationsKontext";
 import { stufe } from "../../engine/stufen";
-import { t } from "../../i18n/sprache";
+import { datumText, t } from "../../i18n/sprache";
 import type { Seitenbilanz } from "../../spiel/genauigkeit";
 import { gegnername } from "../../engine/gegner";
 import type { Partie } from "../../spiel/partie";
@@ -56,7 +56,7 @@ const WERTUNGSSYMBOL = 14;
 
 /** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie) */
 function zeile(partie: Partie): string {
-  const datum = new Date(partie.begonnen).toLocaleDateString("de-DE");
+  const datum = datumText(new Date(partie.begonnen));
   const zuege = Math.ceil(partie.zuege.length / 2);
   const s = stufe(partie.einstellung.stufe);
   const gegner =
@@ -161,7 +161,7 @@ function Gegnerbild({ partie }: { partie: Partie }) {
 /** Löschen einer ungewerteten Partie: Papierkorb, dann Nachfrage in der Zeile. */
 function Loeschen({ partie }: { partie: Partie }) {
   const [frage, setzeFrage] = useState(false);
-  const datum = new Date(partie.begonnen).toLocaleDateString("de-DE");
+  const datum = datumText(new Date(partie.begonnen));
   if (!frage)
     return (
       <button

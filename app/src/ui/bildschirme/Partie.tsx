@@ -26,7 +26,7 @@ import { useMemo, useState, type ReactNode } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { durchschnitt, gegnername, gegnerVon as botVon, klasseVon } from "../../engine/gegner";
 import { stufe } from "../../engine/stufen";
-import { t } from "../../i18n/sprache";
+import { t, zahlText } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
 import {
@@ -85,7 +85,7 @@ function Untertitel({ partie }: { partie: PartieDaten }) {
   const vorgefertigt = botVon(partie.einstellung.bot);
   const botText = vorgefertigt
     ? t("partie.gegnerSchnitt", {
-        schnitt: String(durchschnitt(vorgefertigt)).replace(".", ","),
+        schnitt: zahlText(durchschnitt(vorgefertigt), 1, false),
         klasse: t(klasseVon(vorgefertigt).name),
       })
     : stufenText;

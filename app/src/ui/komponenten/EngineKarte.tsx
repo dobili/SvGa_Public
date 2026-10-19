@@ -15,7 +15,7 @@ import type { Markierung } from "../../analyse/werkzeug";
 import { AuftragAbgebrochen, engine, type Bewertung } from "../../engine/engineDienst";
 import type { LetzterZug } from "../../engine/letzterzug";
 import { wertAlsZahl, wertInWorten } from "../../engine/wertInWorten";
-import { sprache, t } from "../../i18n/sprache";
+import { sprache, t, zahlText } from "../../i18n/sprache";
 import { zugfolgeAlsText } from "../../schach/notation";
 import type { Stellung } from "../../schach/stellung";
 import { SoPrueft } from "./SoPrueft";
@@ -36,7 +36,7 @@ type Zustand =
 
 /** Sekunden mit einer Nachkommastelle und deutschem Komma. */
 function sekunden(ms: number): string {
-  return (ms / MS_JE_SEKUNDE).toFixed(1).replace(".", ",");
+  return zahlText(ms / MS_JE_SEKUNDE, 1);
 }
 
 /** Goldener Pfeil für den ersten Zug der besten Variante. */

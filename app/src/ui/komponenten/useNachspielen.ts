@@ -20,6 +20,7 @@ import {
 } from "../../schach/weiterspielen";
 import type { Rolle } from "../../schach/stellung";
 import type { Verlauf } from "../../schach/todsuenden";
+import { sprache } from "../../i18n/sprache";
 
 export interface Nachspielstand {
   /** Die Zugfolge der Abbildung; null, wenn sie keine hat. */
@@ -109,7 +110,7 @@ export function useNachspielen(kapitel: Kapitel, abbildung: Abbildung): Nachspie
     setzeEigene(KEINE_EIGENEN);
     setzePfadRoh(neu);
   };
-  const buchzeile = beispiel ? zeile(beispiel, pfad, "de") : [];
+  const buchzeile = beispiel ? zeile(beispiel, pfad, sprache()) : [];
   const spiele = (von: string, nach: string, umwandlung?: Rolle): Zugversuch["art"] => {
     const versuch = spieleZug(fen, von, nach, umwandlung);
     if (versuch.art !== "gespielt") return versuch.art;

@@ -30,7 +30,7 @@ import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
 
 const KEINE_WAHL = () => undefined;
-const de = (san: string) => sanInSprache(san, "de");
+const de = (san: string) => sanInSprache(san, sprache());
 
 /** Die Fazits von Zielbilanz und Todsünden für die eigene Seite nach der Antwort. */
 function Einschaetzung({ aufgabe, zuege }: { aufgabe: Aufgabe; zuege: readonly string[] }) {

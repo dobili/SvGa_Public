@@ -15,6 +15,7 @@
  */
 import { makeSan, parseSan } from "chessops/san";
 import { makeSquare } from "chessops/util";
+import { GRUNDSPRACHE, sprache } from "../i18n/sprache";
 import { legaleZuege } from "../schach/drohungen";
 import { legaleZiele, zugFelder } from "../schach/weiterspielen";
 import { regelstellung } from "../spiel/zuege";
@@ -196,7 +197,9 @@ export function pruefeNotation(aufgabe: Zugaufgabe, eingabe: string) {
   const zug = zuegeAusText(text)[0] ?? "";
   const richtig = ohneZeichen(zug) === ohneZeichen(aufgabe.san);
   const schachVergessen = richtig && /[+#]$/.test(aufgabe.san) && !/[+#]$/.test(zug);
-  return { richtig, schachVergessen, englisch: richtig && englischerBuchstabe };
+  // In der englischen Fassung sind englische Buchstaben die Regel, kein Hinweis nötig (0.2.104).
+  const hinweisEnglisch = richtig && englischerBuchstabe && sprache() === GRUNDSPRACHE;
+  return { richtig, schachVergessen, englisch: hinweisEnglisch };
 }
 
 /** Prüft einen ausgeführten Zug (SAN der App gegen SAN der Aufgabe). */

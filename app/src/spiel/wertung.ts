@@ -101,7 +101,7 @@ const LETZTE_PARTIEN = 10;
  * (Eichung 0.2.83, Wunsch des Autors: eine einzelne Partie streut erwartbar um etwa ±450).
  * Es zählen nur Partien mit genug eigenen Zügen für eine Schätzung; die Liste ist neueste zuerst.
  * Ausgabe: Schätzung mit Spanne und Zahl der Partien; null ohne passende Partie.
- * Beispiel: drei Partien mit 70, 80 und 75 % → etwa 1400 (1050 bis 1750), aus 3 Partien.
+ * Beispiel: drei Partien mit 70, 80 und 75 % → etwa 1550 (1200 bis 1900), aus 3 Partien.
  */
 export function staerkeLetzterPartien(
   partien: readonly Partieeintrag[],

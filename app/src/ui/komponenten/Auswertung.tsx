@@ -16,7 +16,7 @@
 import { useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { stufe } from "../../engine/stufen";
-import { t } from "../../i18n/sprache";
+import { sprache, t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import {
   enginefehler,
@@ -52,7 +52,7 @@ export interface Sprung {
 
 function zugtext(partie: Partie, index: number, zeichen = ""): string {
   const san = partie.zuege[index]?.san ?? "";
-  return `${zugnummer(partie, index)} ${sanInSprache(san, "de")}${zeichen}`;
+  return `${zugnummer(partie, index)} ${sanInSprache(san, sprache())}${zeichen}`;
 }
 
 /** Gold der bessere Zug, rot der gespielte, in der Stellung vor dem Zug. */
@@ -89,7 +89,7 @@ function Abweichung({
           zug: zugtext(p, erste.index, erste.zeichen ?? ""),
           ...gewinnchanceVorNach(eintrag.werte, erste.index, fen.split(" ")[1] !== "b"),
         })}
-        {bester && ` ${t("auswertung.besser", { zug: sanInSprache(bester, "de") })}`}
+        {bester && ` ${t("auswertung.besser", { zug: sanInSprache(bester, sprache()) })}`}
       </p>
       <button
         type="button"

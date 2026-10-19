@@ -7,7 +7,8 @@
  * Zug, wählt sie ihren Zug nach der Stufe (spiel/enginezug.ts) mit den Buchzügen der Kapitel 2
  * und 3. Die Uhr hält an, sobald die App in den Hintergrund geht oder der Bildschirm verlassen
  * wird, und läuft bei der Rückkehr weiter; zieht die Engine im Hintergrund, bleibt die Uhr
- * nach ihrem Zug stehen.
+ * nach ihrem Zug stehen. Den angehaltenen Uhrstand sichert sie zusätzlich sofort im
+ * Gerätespeicher, weil ein Neuladen das Schreiben in IndexedDB abbricht (uhrNotsicherung.ts, N180).
  * Abhängigkeiten: spiel/, speicher/, engine/, daten/laden.ts, schach/eroeffnungsindex.ts.
  */
 import { useEffect, useMemo, useState } from "react";
@@ -43,6 +44,7 @@ import {
 import { findePartie, mitPartie } from "../../speicher/partien";
 import { aendere, speicherzustand, useSpeicher } from "../../speicher/speicher";
 import { useDaten } from "./useDaten";
+import { mitGesicherterUhr, sichereUhr, verwerfeUhrsicherung } from "./uhrNotsicherung";
 
 /** So oft fragt die Anzeige die Uhr ab (Millisekunden). */
 const TAKT_MS = 200;
@@ -188,6 +190,16 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
   return fehler;
 }
 
+/**
+ * Hält die Uhr an und sichert sie zusätzlich sofort im Gerätespeicher (N180): Das Schreiben in
+ * IndexedDB bricht beim Neuladen ab, der Merker nicht.
+ */
+function pausiereUndSichere(partie: Partie, jetztMs: number): Partie {
+  const angehalten = pausiere(partie, jetztMs);
+  sichereUhr(angehalten);
+  return angehalten;
+}
+
 /** Uhr: Takt für die Anzeige, Zeitüberschreitung, Pause im Hintergrund. */
 function useUhr(id: string, laeuft: boolean, geladen: boolean): number {
   const [jetztMs, setzeJetzt] = useState(() => Date.now());
@@ -202,8 +214,11 @@ function useUhr(id: string, laeuft: boolean, geladen: boolean): number {
   }, [id, laeuft]);
   useEffect(() => {
     if (!geladen) return;
-    const fortsetzen = () => aendereNeueste(id, (p) => setzeUhrFort(p, Date.now()));
-    const anhalten = () => aendereNeueste(id, (p) => pausiere(p, Date.now()));
+    const fortsetzen = () => {
+      aendereNeueste(id, (p) => setzeUhrFort(p, Date.now()));
+      verwerfeUhrsicherung();
+    };
+    const anhalten = () => aendereNeueste(id, (p) => pausiereUndSichere(p, Date.now()));
     const beiSichtbarkeit = () => {
       if (document.visibilityState === "hidden") return anhalten();
       // Die Anzeige rechnet mit jetztMs; ohne Auffrischen zeigte sie nach der Rückkehr einen
@@ -211,10 +226,14 @@ function useUhr(id: string, laeuft: boolean, geladen: boolean): number {
       setzeJetzt(Date.now());
       fortsetzen();
     };
+    // Nach einem abgebrochenen Speichern (Neuladen, N180) gilt der sofort gesicherte Uhrstand.
+    aendereNeueste(id, mitGesicherterUhr);
     fortsetzen();
     document.addEventListener("visibilitychange", beiSichtbarkeit);
+    window.addEventListener("pagehide", anhalten);
     return () => {
       document.removeEventListener("visibilitychange", beiSichtbarkeit);
+      window.removeEventListener("pagehide", anhalten);
       anhalten();
     };
   }, [id, geladen]);

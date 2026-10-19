@@ -10,7 +10,7 @@
  * i18n.
  */
 import type { LetzterZug, LetzterZugUrteil } from "../../engine/letzterzug";
-import { sprache, t } from "../../i18n/sprache";
+import { sprache, t, zahlText } from "../../i18n/sprache";
 import { zugfolgeAlsText } from "../../schach/notation";
 import { gewinnwahrscheinlichkeit } from "../../spiel/genauigkeit";
 import { regelstellung } from "../../spiel/zuege";
@@ -21,7 +21,7 @@ const GLEICHWERTIG_UNTER = 0.05;
 
 /** Verlust mit einer Nachkommastelle und deutschem Komma. */
 function bauern(verlust: number): string {
-  return verlust.toFixed(1).replace(".", ",");
+  return zahlText(verlust, 1);
 }
 
 /** Gewinnchance der ziehenden Seite mit dem besten und mit dem gespielten Zug, in ganzen Prozent. */

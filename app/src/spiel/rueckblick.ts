@@ -15,6 +15,7 @@
 import type { Markierung, Markierungsfarbe } from "../analyse/werkzeug";
 import { zugFelder } from "../schach/weiterspielen";
 import type { Zugklasse, Zugurteil } from "./auswertung";
+import { zahlText } from "../i18n/sprache";
 
 /** Der Balken und die Kurve reichen bis ±5 Bauern; mehr (auch Matt) steht am Rand. */
 export const ANZEIGEGRENZE = 5;
@@ -95,7 +96,7 @@ export function balkenanteil(wert: number): number {
  */
 export function balkentext(wert: number): string {
   if (Math.abs(wert) >= MATTWERT) return wert > 0 ? "+M" : "−M";
-  const text = Math.abs(wert).toFixed(1).replace(".", ",");
+  const text = zahlText(Math.abs(wert), 1);
   if (text === "0,0") return text;
   return `${wert > 0 ? "+" : "−"}${text}`;
 }

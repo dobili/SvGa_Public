@@ -15,12 +15,14 @@
  * Schalter „Genauigkeit wie“ (Lichess, Mittelweg, nahe chess.com: Züge in entschiedener Stellung
  * zählen voll, halb oder kaum); Spielstärke und Urteilswort hängen an der inneren Genauigkeit
  * (Lichess-Rechnung). Die Spielstärke kommt aus den Kurven der Eichung statt aus der Tabelle von
- * 0.2.72, mit Spanne und den Werten für chess.com und Lichess.
- * Abhängigkeiten: spiel/auswertung.ts, spiel/partie.ts, spiel/phasen.ts, spiel/taktik.ts,
- * spiel/staerkemodell.ts.
+ * 0.2.72, mit Spanne und den Werten für chess.com und Lichess. Seit 0.2.103 zählen für Spielstärke
+ * und Urteilswort nur die Züge bis zur Entscheidung der Partie (spiel/entscheidung.ts).
+ * Abhängigkeiten: spiel/auswertung.ts, spiel/entscheidung.ts, spiel/partie.ts, spiel/phasen.ts,
+ * spiel/phasenurteil.ts, spiel/taktik.ts, spiel/staerkemodell.ts.
  */
 import type { Color } from "chessops/types";
 import { WERTGRENZE, type Zugklasse, type Zugurteil, type Zugzeichen } from "./auswertung";
+import { gewerteteHalbzuege } from "./entscheidung";
 import { stellungen, type Partie } from "./partie";
 import type { Phase } from "./phasen";
 import {
@@ -37,8 +39,10 @@ export interface Seitenbilanz {
   readonly zuege: number;
   /** Genauigkeit 0 bis 100 im gewählten Modus (Lichess, Mittelweg, nahe chess.com); null ohne Züge. */
   readonly genauigkeit: number | null;
-  /** Innere Genauigkeit (Lichess-Rechnung) für Spielstärke und Urteilswort; null ohne Züge. */
+  /** Innere Genauigkeit (Lichess) für Spielstärke und Urteilswort, nur bis zur Entscheidung. */
   readonly innen: number | null;
+  /** Züge bis zur Entscheidung (seit 0.2.103, spiel/entscheidung.ts); nur sie zählen für `innen`. */
+  readonly gewertet: number;
   /** Durchschnittlicher Verlust je Zug in Bauerneinheiten. */
   readonly verlustJeZug: number;
   /** Geschätzte Spielstärke (Mitte der Eichkurven); null bei zu wenigen Zügen. */
@@ -90,31 +94,7 @@ const MINDESTENS_ZUEGE_PHASE = 6;
  */
 export const ENTSCHIEDEN_AB = 90;
 
-/**
- * Urteilswort je Phase aus der inneren Genauigkeit der Phase (wie die Symbole je Phase bei
- * chess.com, Wunsch des Autors 18.10.2026): hervorragend ab 95 %, sehr gut ab 88 %, gut ab 78 %,
- * ungenau ab 68 %, fehlerhaft ab 55 %, sonst schwach. Seit 0.2.83 an der inneren Genauigkeit,
- * damit der Schalter „Genauigkeit wie“ die Wörter nicht verschiebt.
- */
-export type Phasenurteil =
-  "hervorragend" | "sehrGut" | "gut" | "ungenau" | "fehlerhaft" | "schwach";
-const URTEILSGRENZEN: readonly (readonly [number, Phasenurteil])[] = [
-  [95, "hervorragend"],
-  [88, "sehrGut"],
-  [78, "gut"],
-  [68, "ungenau"],
-  [55, "fehlerhaft"],
-];
-const URTEIL_SONST: Phasenurteil = "schwach";
-
-/**
- * Das Urteilswort zu einer Genauigkeit.
- * Beispiel: Partie des Autors gegen einen 1700er-Bot, Eröffnung 96 % → hervorragend;
- * Mittelspiel 85 % → gut.
- */
-export function phasenurteil(genauigkeit: number): Phasenurteil {
-  return URTEILSGRENZEN.find(([grenze]) => genauigkeit >= grenze)?.[1] ?? URTEIL_SONST;
-}
+export { phasenurteil, type Phasenurteil } from "./phasenurteil";
 
 /** Gewinnwahrscheinlichkeit von Weiß in Prozent aus dem Wert in Bauerneinheiten. */
 export function gewinnwahrscheinlichkeit(wert: number): number {
@@ -230,13 +210,15 @@ function seitenbilanz(
     if (z.bester) beste += 1;
   }
   const verlustJeZug = zuege > 0 ? verlust / zuege : 0;
-  const innen = partiegenauigkeit(eigene);
+  const gewertete = eigene.filter((z) => z.gewertet);
+  const innen = partiegenauigkeit(gewertete);
   const schaetzung =
-    zuege >= mindestensZuege && innen !== null ? staerkeAusGenauigkeit(innen) : null;
+    gewertete.length >= mindestensZuege && innen !== null ? staerkeAusGenauigkeit(innen) : null;
   return {
     zuege,
     genauigkeit: partiegenauigkeit(eigene, POLSTER[modus]),
     innen,
+    gewertet: gewertete.length,
     verlustJeZug,
     spielstaerke: schaetzung?.mitte ?? null,
     schaetzung,
@@ -256,6 +238,8 @@ interface Zugbilanz {
   readonly bester: boolean;
   /** Stellung vor dem Zug entschieden (siehe ENTSCHIEDEN_AB). */
   readonly entschieden: boolean;
+  /** Zug vor dem Entscheidungspunkt (zählt für Spielstärke und Urteilswort). */
+  readonly gewertet: boolean;
 }
 
 /** Ordnet jeden Zug ein (Seite, Phase, Genauigkeit, bester). */
@@ -269,6 +253,7 @@ function zugbilanzen(
 ): Zugbilanz[] {
   const alle = stellungen(partie);
   const gewichte = zuggewichte(werte);
+  const bis = gewerteteHalbzuege(werte.map(gewinnwahrscheinlichkeit));
   return urteile.map((urteil) => {
     const fen = alle[urteil.index] ?? "";
     const seite: Color = fen.split(" ")[1] === "b" ? "black" : "white";
@@ -289,6 +274,7 @@ function zugbilanzen(
       gewicht,
       bester,
       entschieden,
+      gewertet: urteil.index < bis,
     };
   });
 }

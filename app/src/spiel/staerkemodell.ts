@@ -51,57 +51,62 @@ export function kurvenwert(kurve: Kurve, x: number): number {
 
 /**
  * Kurven Genauigkeit → mittlere Wertungszahl (für eine Partie die beste Schätzung), monoton
- * ausgeglichen; gerundet aus `buch/arbeit/eichung/ergebnis.json` (nur lokal).
+ * ausgeglichen; gerundet aus `buch/arbeit/eichung/ergebnis.json` (nur lokal). Seit 0.2.103 neu
+ * geeicht auf der inneren Genauigkeit nur bis zur Entscheidung (spiel/entscheidung.ts), an je 300
+ * neu gesammelten Partien von chess.com und Lichess (19.10.2026).
  */
 const KURVE_CHESSCOM: Kurve = [
-  [42.7, 840],
-  [53.3, 1050],
-  [67.3, 1050],
-  [72, 1310],
-  [76, 1310],
-  [79, 1500],
-  [84.7, 1500],
-  [87.3, 1610],
-  [89.6, 1680],
-  [94.2, 1780],
+  [41, 940],
+  [52.9, 1150],
+  [60.5, 1150],
+  [65.8, 1220],
+  [69.4, 1260],
+  [73.5, 1400],
+  [79.1, 1400],
+  [82.1, 1670],
+  [85, 1680],
+  [88.5, 1770],
+  [93.3, 1860],
 ];
 const KURVE_LICHESS: Kurve = [
-  [38.4, 1000],
-  [53, 1050],
-  [60.7, 1260],
-  [66.8, 1260],
-  [71.3, 1430],
-  [75.2, 1430],
-  [78.5, 1450],
-  [81.1, 1630],
-  [86.4, 1630],
-  [90.1, 1700],
-  [96.2, 1700],
+  [38.3, 860],
+  [48.8, 1030],
+  [55.1, 1210],
+  [61.9, 1210],
+  [67.8, 1370],
+  [72.1, 1480],
+  [75.3, 1530],
+  [78.4, 1550],
+  [81.6, 1720],
+  [84, 1750],
+  [87.4, 1750],
+  [92.9, 1840],
 ];
 /**
  * Umgekehrte Kurven: je Wertungsband die mittlere Genauigkeit, aufgelöst nach der Wertung. Sie
  * ziehen nicht zur Mitte und gehen deshalb in die Schätzung über mehrere Partien ein.
  */
 const UMKEHR_CHESSCOM: Kurve = [
-  [49.9, 280],
-  [60.7, 500],
-  [66.3, 710],
-  [71.2, 890],
-  [73.5, 1330],
-  [80.3, 1780],
-  [81.6, 2080],
-  [84.8, 2300],
-  [87.3, 2440],
-  [93.8, 2680],
+  [50.2, 200],
+  [60.6, 510],
+  [64.4, 680],
+  [67.9, 1020],
+  [72.2, 1400],
+  [76.6, 1710],
+  [77.7, 1890],
+  [81.6, 2190],
+  [89.5, 2450],
 ];
 const UMKEHR_LICHESS: Kurve = [
-  [63.9, 760],
-  [70.1, 1090],
-  [71.2, 1310],
-  [76.5, 1500],
-  [78.8, 1790],
-  [80.4, 2090],
-  [83.4, 2380],
+  [54.3, 610],
+  [60.8, 900],
+  [70.4, 1200],
+  [70.7, 1490],
+  [76.1, 1690],
+  [78.4, 1920],
+  [80.3, 2100],
+  [82.6, 2370],
+  [88.9, 2600],
 ];
 
 /** Halbe Breite der Spanne bei einer Partie und bei zehn Partien (Kontrolle der Eichung). */
@@ -143,7 +148,7 @@ function schaetzung(chesscom: number, lichess: number, partien: number): Staerke
 
 /**
  * Spielstärke aus der inneren Genauigkeit einer Partie.
- * Beispiel: 80 % → chess.com etwa 1500, Lichess etwa 1550, Mitte 1550 (1150 bis 1950).
+ * Beispiel: 80 % → chess.com etwa 1500, Lichess etwa 1650, Mitte 1550 (1150 bis 1950).
  */
 export function staerkeAusGenauigkeit(innen: number): Staerkeschaetzung {
   return schaetzung(kurvenwert(KURVE_CHESSCOM, innen), kurvenwert(KURVE_LICHESS, innen), 1);
@@ -153,8 +158,8 @@ export function staerkeAusGenauigkeit(innen: number): Staerkeschaetzung {
  * Spielstärke über mehrere Partien (höchstens die letzten zehn): je Skala das Mittel aus dem
  * Schnitt der Einzelschätzungen und der umgekehrten Kurve am Schnitt der Genauigkeiten; die
  * Spanne wird mit der Zahl der Partien enger. Null ohne Partien.
- * Beispiel: zehn Partien mit je 75 % → chess.com etwa 1350, Lichess etwa 1450, Mitte 1400
- * (1150 bis 1650).
+ * Beispiel: zehn Partien mit je 75 % → chess.com etwa 1500, Lichess etwa 1600, Mitte 1550
+ * (1300 bis 1800).
  */
 export function staerkeUeberPartien(innen: readonly number[]): Staerkeschaetzung | null {
   const letzte = innen.slice(-ZEHN);

@@ -10,7 +10,7 @@
  */
 import { useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
-import { t } from "../../i18n/sprache";
+import { datumText, sprache, t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { stellungAusFen } from "../../schach/stellung";
 import { aendere, useSpeicher } from "../../speicher/speicher";
@@ -114,14 +114,14 @@ function Auswertung({
 
 /** Ein Eintrag, zugeklappt mit Datum, Fehlerart und Satz; offen mit Brett und Löschen. */
 function Eintrag({ eintrag, arten }: { eintrag: Fehlereintrag; arten: readonly Fehlerart[] }) {
-  const datum = new Date(eintrag.datum).toLocaleDateString("de-DE");
+  const datum = datumText(new Date(eintrag.datum));
   const loeschen = () =>
     void aendere((daten) => ({ ...daten, fehler: ohneEintrag(daten.fehler, eintrag.id) }));
   return (
     <details className="karte" data-testid="fehlerdb-eintrag">
       <summary>
         {datum} · {artName(arten, eintrag.fehlerart)}
-        {eintrag.zug ? ` · ${sanInSprache(eintrag.zug, "de")}` : ""}
+        {eintrag.zug ? ` · ${sanInSprache(eintrag.zug, sprache())}` : ""}
       </summary>
       {eintrag.satz && <p>{eintrag.satz}</p>}
       <Trainerbrett fen={eintrag.fen} beschriftung={t("fehlerdb.stellung")} />

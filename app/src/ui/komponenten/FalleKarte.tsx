@@ -17,7 +17,7 @@ import { AuftragAbgebrochen, engine, STANDARD_RECHENZEIT_MS } from "../../engine
 import { pruefeFalle, type Fallenpruefung } from "../../engine/fallenpruefung";
 import { wertFuer } from "../../engine/fallenurteil";
 import { wertAlsZahl } from "../../engine/wertInWorten";
-import { sprache, t } from "../../i18n/sprache";
+import { sprache, t, zahlText } from "../../i18n/sprache";
 import { sanInSprache, zugfolgeAlsText } from "../../schach/notation";
 import type { Stellung } from "../../schach/stellung";
 import { gewinnwahrscheinlichkeit } from "../../spiel/genauigkeit";
@@ -65,7 +65,7 @@ function urteilssatz(p: Fallenpruefung, zug: string, rettung: string, farbe: Col
   const nachher = prozent(wertFuer(wert, farbe));
   const vorher = p.rettung ? prozent(wertFuer(p.rettung.wert, farbe)) : nachher;
   if (vorher === nachher) {
-    const verlust = p.urteil.verlust.toFixed(1).replace(".", ",");
+    const verlust = zahlText(p.urteil.verlust, 1);
     return t("falle.engine.falleBauern", { zug, rettung, verlust });
   }
   const seite = t(farbe === "white" ? "farbe.w" : "farbe.b");

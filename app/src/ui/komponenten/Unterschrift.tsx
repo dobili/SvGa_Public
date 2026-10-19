@@ -91,7 +91,8 @@ export function Buchtext({
 export function Unterschrift({ nummer, teile, beiVerweis }: UnterschriftEigenschaften) {
   return (
     <p className="unterschrift">
-      <strong>Abb. {nummer}:</strong> <Buchtext teile={teile} aktionen={{ beiVerweis }} />
+      <strong>{t("abbildung.titel", { nummer })}:</strong>{" "}
+      <Buchtext teile={teile} aktionen={{ beiVerweis }} />
     </p>
   );
 }

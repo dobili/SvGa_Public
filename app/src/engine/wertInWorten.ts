@@ -6,7 +6,7 @@
  * Buchbezug: Konzept Abschnitt 8.1, „Wert in Worten“. Die Grenzen sind Startwerte und werden im
  * Test mit dem Autor angepasst.
  */
-import { t } from "../i18n/sprache";
+import { t, zahlText } from "../i18n/sprache";
 import type { Wert } from "./uci";
 
 /** Bis zu diesem Betrag gilt die Stellung als ausgeglichen (Konzept 8.1). */
@@ -28,7 +28,7 @@ export function wertAlsZahl(wert: Wert): string {
   if (wert.art === "matt") {
     return `${wert.zuege < 0 ? "−" : ""}#${Math.abs(wert.zuege)}`;
   }
-  const betrag = Math.abs(wert.bauern).toFixed(NACHKOMMASTELLEN).replace(".", ",");
+  const betrag = zahlText(Math.abs(wert.bauern), NACHKOMMASTELLEN);
   return `${wert.bauern < 0 ? "−" : "+"}${betrag}`;
 }
 

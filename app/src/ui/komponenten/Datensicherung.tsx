@@ -10,7 +10,7 @@
  */
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
 import { APP_VERSION } from "../../app/version";
-import { t } from "../../i18n/sprache";
+import { datumText, t } from "../../i18n/sprache";
 import {
   dateiname,
   exportiere,
@@ -34,7 +34,7 @@ type Stand =
 
 function datum(iso: string): string {
   const zeit = new Date(iso);
-  return Number.isNaN(zeit.getTime()) ? "?" : zeit.toLocaleDateString("de-DE");
+  return Number.isNaN(zeit.getTime()) ? "?" : datumText(zeit);
 }
 
 function alsMeldung(fehler: unknown): string {

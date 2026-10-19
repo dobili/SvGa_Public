@@ -10,7 +10,7 @@
 import { useMemo, useState } from "react";
 import { farbname } from "../../analyse/texte";
 import type { Markierung, Markierungsfarbe } from "../../analyse/werkzeug";
-import { t } from "../../i18n/sprache";
+import { t, tZahl } from "../../i18n/sprache";
 import { stellungAusFen } from "../../schach/stellung";
 import { legaleZiele } from "../../schach/weiterspielen";
 import {
@@ -115,7 +115,9 @@ export function Roentgenaufgabe({ aufgabe, runde }: { aufgabe: Roentgenaufgabe; 
       )}
       {runde.ergebnis !== null && (
         <p className="hinweis">
-          {t("roentgentrainer.drohende", { anzahl: aufgabe.drohende.length })}
+          {tZahl("roentgentrainer.drohende", aufgabe.drohende.length, {
+            anzahl: aufgabe.drohende.length,
+          })}
         </p>
       )}
     </>

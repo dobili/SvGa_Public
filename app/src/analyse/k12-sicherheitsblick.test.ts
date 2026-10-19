@@ -30,7 +30,7 @@ describe("k12-sicherheitsblick", () => {
   it("Übung 12.6: 1. Txd5? erlaubt Lxh2+, 1. g3 ergibt nichts", () => {
     const e = blick("12.6", "Rxd5");
     expect(e.befunde[2]?.zeilen).toEqual(["Schach: Lxh2+ (rote Pfeile)."]);
-    expect(e.fazit).toBe("Txd5 erlaubt ein Schach: rechne es zu Ende.");
+    expect(e.fazit).toBe("Txd5 erlaubt ein Schach: Rechne es zu Ende.");
     expect(e.markierungen).toContainEqual({ typ: "pfeil", farbe: "rot", von: "d6", nach: "h2" });
     const g3 = blick("12.6", "g3");
     expect(g3.befunde[1]?.zeilen).toEqual([

@@ -24,7 +24,7 @@ describe("k7-erzwingend", () => {
     const e = erzwingend(stellungVon("7.14"), "white");
     expect(e.markierungen).toContainEqual({ typ: "feld", farbe: "gold", feld: "h8", text: "2+" });
     expect(e.fazit).toBe(
-      "Weiß hat 8 Kandidaten: 2 Schachs, 1 Schläge, 5 Drohungen. Rechne sie in dieser Reihenfolge, jeden bis zur Ruhe.",
+      "Weiß hat 8 Kandidaten (Schachs: 2, Schläge: 1, Drohungen: 5). Rechne sie in dieser Reihenfolge, jeden bis zur Ruhe.",
     );
   });
 

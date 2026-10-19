@@ -40,7 +40,7 @@ describe("k5-felder", () => {
 
   it("Abb. 5.12 und 5.13: Königsflügel ohne und mit Luftloch", () => {
     expect(zeilen("5.12", "koenig")).toEqual([
-      "Grundreihe: kein Luftloch und kein Turm oder Dame auf der Grundreihe – Grundreihenmatt droht",
+      "Grundreihe: kein Luftloch und weder Turm noch Dame auf der Grundreihe – Grundreihenmatt droht",
     ]);
     // C1.12: „Dieselbe Stellung mit dem Luftloch h3 … der König entkommt nach h2“. Schwarz hat
     // keinen Bauern, der h3 mit einem Hebel erreicht: also kein Haken.

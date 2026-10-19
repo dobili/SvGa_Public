@@ -11,7 +11,7 @@
  * Buchbezug: Kapitel 2, „Die Zielbilanz“; kalibriert an allen Zielbilanzen des Kapitels.
  */
 import type { Color, Square } from "chessops/types";
-import { t } from "../i18n/sprache";
+import { t, tZahl } from "../i18n/sprache";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
 import { zielbilanz, type Wertung, type Zielbilanz } from "../schach/zielbilanz";
 import { zielmarkierungen } from "./bilanzmarkierungen";
@@ -44,7 +44,9 @@ function zeile(ziel: Ziel, wertung: Wertung, text: string): string {
  */
 function zentrumstext(z: Zielbilanz["zentrum"]): string {
   if (z.bauern.length > 0) {
-    const bauern = t("zielbilanz.zentrum.bauern", { felder: felder(z.bauern) });
+    const bauern = tZahl("zielbilanz.zentrum.bauern", z.bauern.length, {
+      felder: felder(z.bauern),
+    });
     if (z.angegriffen.length === 0) return bauern;
     const zusatz = z.angegriffen.length === 1 ? "angegriffen" : "angegriffenMehrere";
     return `${bauern}; ${t(`zielbilanz.zentrum.${zusatz}`, { felder: felder(z.angegriffen) })}`;
@@ -68,7 +70,7 @@ function koenigstext(k: Zielbilanz["koenig"]): string {
   if (!k.rochiert) return t("zielbilanz.koenig.mitte", { feld });
   if (k.vorgerueckt) return t("zielbilanz.koenig.vorgerueckt", { feld });
   if (k.wertung === "ja") return t("zielbilanz.koenig.schild", { felder: felder(k.schild) });
-  return t("zielbilanz.koenig.gelockert", { anzahl: k.schild.length });
+  return tZahl("zielbilanz.koenig.gelockert", k.schild.length, { anzahl: k.schild.length });
 }
 
 /** Ein Befund je Seite mit den drei Zeilen, wie eine Spalte der Tabelle im Buch. */

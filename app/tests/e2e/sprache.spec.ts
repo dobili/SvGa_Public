@@ -38,6 +38,8 @@ test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und 
   await page.goto("/app/#lizenzen");
   await page.reload();
   await expect(page.getByRole("heading", { name: "Lizenzen", level: 1 })).toBeVisible();
-  await expect(page.getByText("Stockfish 19 (Stockfish.js, Chess.com)")).toBeVisible();
+  await expect(
+    page.getByText("Stockfish 19 (Stockfish.js von Nathan Rugg, Chess.com)"),
+  ).toBeVisible();
   await expect(page.getByRole("link", { name: "Lizenztext" }).first()).toBeVisible();
 });

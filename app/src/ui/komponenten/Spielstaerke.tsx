@@ -23,7 +23,7 @@ import type { Color } from "chessops/types";
 import { Fragment, useMemo } from "react";
 import { aendereEinstellungen, useEinstellungen } from "../../app/einstellungen";
 import { gegnerstaerke } from "../../engine/botstaerke";
-import { t, zahlText } from "../../i18n/sprache";
+import { t, tZahl, zahlText } from "../../i18n/sprache";
 import type { Zugklasse, Zugurteil } from "../../spiel/auswertung";
 import {
   phasenurteil,
@@ -301,7 +301,10 @@ function Phasenzelle({ b }: { b: Seitenbilanz }) {
   if (b.innen === null) {
     return (
       <>
-        {t("spielstaerke.phaseEntschieden", { genauigkeit: genauigkeitstext(b), zuege: b.zuege })}
+        {tZahl("spielstaerke.phaseEntschieden", b.zuege, {
+          genauigkeit: genauigkeitstext(b),
+          zuege: b.zuege,
+        })}
       </>
     );
   }
@@ -311,7 +314,7 @@ function Phasenzelle({ b }: { b: Seitenbilanz }) {
       <span className={`phasenurteil phasenurteil-${urteil}`}>
         {t(`spielstaerke.urteil.${urteil}`)}
       </span>
-      {t("spielstaerke.phase", {
+      {tZahl("spielstaerke.phase", b.zuege, {
         genauigkeit: genauigkeitstext(b),
         staerke: staerketext(b),
         zuege: b.zuege,

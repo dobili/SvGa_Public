@@ -12,7 +12,7 @@
  * Tauschfrage“ (Abb. 6.6, 6.19).
  */
 import type { Color } from "chessops/types";
-import { t } from "../i18n/sprache";
+import { t, tZahl } from "../i18n/sprache";
 import { aktivitaeten, aktivste, type Aktivitaet } from "../schach/aktivitaet";
 import type { Eindringen, Figurenziel } from "../schach/figurenziel";
 import { reihennummer } from "../schach/figurenziel";
@@ -81,7 +81,12 @@ function tauschzeilen(p: Stellungsprofil, eigen: Color): string[] {
   const feind = gegner(eigen);
   const seine = aktivste(aktivitaeten(p.sichereFelder(feind)));
   const zeilen = seine
-    ? [t("lap.tausch.aktivste", { figur: figurenname(seine.stand), anzahl: seine.freie.length })]
+    ? [
+        tZahl("lap.tausch.aktivste", seine.freie.length, {
+          figur: figurenname(seine.stand),
+          anzahl: seine.freie.length,
+        }),
+      ]
     : [t("lap.tausch.keine")];
   const mein = richtungFuer(p, eigen).raum.genommen.length;
   const sein = richtungFuer(p, feind).raum.genommen.length;

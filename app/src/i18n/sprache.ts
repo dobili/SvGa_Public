@@ -68,6 +68,19 @@ export function istTextschluessel(schluessel: string): schluessel is Textschlues
 }
 
 /**
+ * Text mit richtiger Einzahl: bei 1 der Schlüssel „…Eins“, bei 0 „…Null“, wenn es ihn gibt.
+ *
+ * Warum: „1 Züge“ und „0 eigene Figuren decken“ fielen beim Korrekturlesen auf (19.10.2026).
+ * Eingaben: Grundschlüssel (Mehrzahl), die Zahl, die über Einzahl oder Mehrzahl entscheidet,
+ * Werte für die Platzhalter. Beispiel: tZahl("denk.minute", 1, { sekunden: 1 }) →
+ * „Noch 1 Sekunde nachdenken“.
+ */
+export function tZahl(schluessel: Textschluessel, zahl: number, werte: Textwerte = {}): string {
+  const variante = zahl === 1 ? `${schluessel}Eins` : zahl === 0 ? `${schluessel}Null` : "";
+  return t(variante && istTextschluessel(variante) ? variante : schluessel, werte);
+}
+
+/**
  * Wählt die Sprache der Oberfläche.
  *
  * Warum: Die Sprache wird in der App gewählt (Entscheidung vom 13.10.2026).

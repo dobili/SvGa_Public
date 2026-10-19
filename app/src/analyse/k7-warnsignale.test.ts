@@ -42,14 +42,14 @@ describe("k7-warnsignale", () => {
 
   it("Abb. 7.24: W7, der Läufer a2 hat kein sicheres Feld (gefangene Figur)", () => {
     expect(zeilen("7.24", "eigen")).toContain(
-      "W7 Figur am Rand: Läufer a2 (0 sichere Felder, Einschätzung)",
+      "W7 Figur am Rand: Läufer a2 (kein sicheres Feld, Einschätzung)",
     );
     expect(zeilen("7.24", "motive")).toContain("W7: gefangene Figur");
   });
 
   it("Abb. 7.25 (Arche Noah): W7 für den Läufer b3, nicht für die Türme in den Ecken", () => {
     const eigene = zeilen("7.25", "eigen");
-    expect(eigene).toContain("W7 Figur am Rand: Läufer b3 (0 sichere Felder, Einschätzung)");
+    expect(eigene).toContain("W7 Figur am Rand: Läufer b3 (kein sicheres Feld, Einschätzung)");
     expect(eigene.join(" ")).not.toContain("W7 Figur am Rand: Turm");
   });
 

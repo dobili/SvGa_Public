@@ -14,7 +14,7 @@
  */
 import type { Color } from "chessops/types";
 import { squareFile, squareRank } from "chessops/util";
-import { t, type Textschluessel } from "../i18n/sprache";
+import { t, type Textschluessel, tZahl } from "../i18n/sprache";
 import { erkennungsbild } from "../schach/erkennungsbilder";
 import { feldname, type Stellung } from "../schach/stellung";
 import {
@@ -88,7 +88,7 @@ function seitenZeilen(lage: Turmlage): string[] {
   const kurz =
     seiten.links < seiten.rechts ? "links" : seiten.rechts < seiten.links ? "rechts" : "gleich";
   const zeilen = [
-    t(`turmbegriffe.seiten.${kurz}`, {
+    tZahl(`turmbegriffe.seiten.${kurz}`, Math.min(seiten.links, seiten.rechts), {
       bauer: feldname(lage.bauer),
       links: seiten.links,
       rechts: seiten.rechts,

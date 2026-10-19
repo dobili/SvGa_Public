@@ -11,7 +11,7 @@
  */
 import type { Color } from "chessops/types";
 import { squareFile } from "chessops/util";
-import { t, type Textschluessel } from "../i18n/sprache";
+import { t, type Textschluessel, tZahl } from "../i18n/sprache";
 import type { Figurenstand } from "../schach/angriffskarte";
 import { eigeneReihe } from "../schach/bauernprofil";
 import { gabelfelder, type Gabelfeld } from "../schach/gabeln";
@@ -98,7 +98,9 @@ function zusatzzeilen(gabeln: readonly Gabelfeld[], rand: readonly FigurAmRand[]
     }),
   );
   for (const r of rand)
-    zeilen.push(t("warnsignale.w7", { figur: figurenname(r.stand), anzahl: r.sichere }));
+    zeilen.push(
+      tZahl("warnsignale.w7", r.sichere, { figur: figurenname(r.stand), anzahl: r.sichere }),
+    );
   return zeilen;
 }
 

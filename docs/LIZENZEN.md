@@ -5,8 +5,8 @@
 | Code der App und der Pipeline                                                                                          | GNU GPL 3.0 oder neuer              | `LICENSE` (auch in der App: `/lizenzen/gpl-3.0.txt`)          |
 | Buchinhalte (Stellungen, Bildunterschriften, Cover)                                                                    | Alle Rechte vorbehalten             | –                                                             |
 | Trainingsseiten (`inhalte/de/training/`, Texte aus dem Buch)                                                           | Alle Rechte vorbehalten             | –                                                             |
-| Stockfish 19 (Stockfish.js von Nathan Rugg / Chess.com)                                                                | GNU GPL 3.0                         | `/engine/LIZENZ-stockfish.txt` (beim Build aus dem npm-Paket) |
-| chessops (Lichess, Niklas Fiekas)                                                                                      | GNU GPL 3.0                         | wie oben                                                      |
+| Stockfish 19 (Stockfish.js 19.0.1 von Nathan Rugg / Chess.com, Variante lite-single, Netz nn-61e7af4bb97d)            | GNU GPL 3.0                         | `/engine/LIZENZ-stockfish.txt` (beim Build aus dem npm-Paket) |
+| chessops (Lichess, Niklas Fiekas), mit @badrap/result (MIT)                                                            | GNU GPL 3.0                         | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Figurenschrift SkakNew-Diagram (Ulrich Dirr)                                                                           | LPPL 1.2 oder neuer                 | `app/public/lizenzen/lppl-1.3c.txt`                           |
 | Figurensätze (9 Sätze, `app/public/figuren/`, Quelle `pipeline/figuren/saetze/`, seit 0.2.82)                         | je Satz: GPLv2+, GPLv3+, Apache 2.0, MIT, CC0 | `pipeline/figuren/saetze/LIZENZEN.md`; `app/public/lizenzen/` |
 | Trainer-Aufgaben aus der Lichess-Puzzle-Datenbank (`inhalte/de/trainer/taktik.json`, `falle.json`, Herkunft `lichess`) | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft in `docs/TRAINERDATEN.md`)       |
@@ -15,11 +15,20 @@
 | Materialbretter Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (Lichess, `app/public/bretter/`, seit 0.2.84) | GNU AGPL 3.0 oder neuer | `app/public/lizenzen/agpl-3.0.txt`; `pipeline/bretter/LIZENZEN.md` |
 | Porträts der Gegner und zur Wahl für eigene Bots (`app/public/gegner/`, Stil „Personas“ von Draftbit, erzeugt mit DiceBear)          | CC BY 4.0 (Zeichnungen), MIT (Code) | `app/public/lizenzen/cc-by-4.0.txt`                           |
 | Eröffnungsnamen (Lichess chess-openings, `inhalte/lichess/`)                                                           | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft in `inhalte/lichess/README.md`)  |
-| React, Vite, Workbox, vite-plugin-pwa                                                                                  | MIT                                 | in den npm-Paketen                                            |
-| Lucide-Symbole                                                                                                         | ISC                                 | im npm-Paket `lucide-react`                                   |
-| idb                                                                                                                    | ISC                                 | im npm-Paket `idb` (ab dem Modul Speicher)                    |
+| React, React DOM, Scheduler, Workbox, vite-plugin-pwa                                                                  | MIT                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
+| Lucide-Symbole, idb                                                                                                    | ISC                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 
 ## Hinweise
+
+- **Lizenztexte der npm-Pakete (seit 0.2.113):** Vite schreibt beim Build die Lizenztexte aller
+  eingebauten Pakete mit ihren Copyright-Zeilen nach `/lizenzen/bausteine.txt`
+  (`build.license` in `app/vite.config.ts`); die Lizenzseite der App verlinkt sie bei chessops,
+  React, Workbox, Lucide, idb und @badrap/result. Grund: MIT und ISC verlangen, dass der Text mit
+  ausgeliefert wird. Die Workbox-Module im Service Worker (workbox-precaching, -routing, -core)
+  stehen unter derselben MIT-Lizenz von Google wie das dort aufgeführte workbox-window.
+- **Schriften:** Die OFL-Texte in `app/public/lizenzen/` tragen seit 0.2.113 die Copyright-Zeile
+  von Adobe aus `adobe-fonts/source-sans` und `adobe-fonts/source-serif`; Fontsource liefert
+  dort fälschlich „Google Inc.“.
 
 - **SkakNew:** Laut `pipeline/figuren/quelle/SkakNew.tex` (Zeile 25) gilt die LPPL 1.2 oder jede
   spätere Fassung; mitgeliefert wird die aktuelle Fassung 1.3c. Die App enthält nicht die Schrift

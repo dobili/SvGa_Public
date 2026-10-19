@@ -9,7 +9,7 @@
  * dazwischenstellen).
  */
 import type { Color } from "chessops/types";
-import { t } from "../i18n/sprache";
+import { t, tZahl } from "../i18n/sprache";
 import type { Antwort } from "./k12-antwort";
 import type { Kandidat } from "./k12-kandidaten";
 import { aufzaehlung, farbname, figurenname, mitVorzeichen, zugtext } from "./texte";
@@ -86,7 +86,7 @@ function bewertenZeile(r: Kandidatenrechnung): string {
 /** Fazit: wie viele Kandidaten; im Schach wie viele Abwehrzüge. */
 function fazit(r: Kandidatenrechnung): string {
   const werte = { farbe: farbname(r.eigen), anzahl: r.liste.length };
-  if (!r.imSchach) return t("kandidaten.fazit", werte);
+  if (!r.imSchach) return tZahl("kandidaten.fazit", r.liste.length, werte);
   if (r.liste.length === 0) return t("kandidaten.matt", werte);
   return t(r.liste.length === 1 ? "kandidaten.fazitSchachEins" : "kandidaten.fazitSchach", werte);
 }

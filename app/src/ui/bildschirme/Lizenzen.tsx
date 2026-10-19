@@ -12,12 +12,23 @@
 import { t } from "../../i18n/sprache";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 
-/** Bausteine mit Lizenz; Name, Lizenz und Herkunft stehen in der Sprachdatei (lizenzen.<kennung>.…). */
+/** Öffentlicher Quellcode der App, wie ihn die GPL verlangt; als Link, nicht nur als Text. */
+const QUELLCODE = "https://github.com/dobili/SvGa_Public";
+/**
+ * Lizenztexte der eingebauten npm-Pakete mit Copyright-Zeilen, erzeugt von Vite beim Build
+ * (build.license in vite.config.ts); MIT und ISC verlangen, dass der Text mitkommt.
+ */
+const PAKETTEXTE = "/lizenzen/bausteine.txt";
+
+/**
+ * Bausteine mit Lizenz; Name, Lizenz und Herkunft stehen in der Sprachdatei
+ * (lizenzen.<kennung>.…), dazu wahlweise der Lizenztext und eine Adresse der Quelle.
+ */
 const BAUSTEINE = [
-  { kennung: "app", text: "/lizenzen/gpl-3.0.txt" },
+  { kennung: "app", text: "/lizenzen/gpl-3.0.txt", quelle: QUELLCODE },
   { kennung: "buch" },
   { kennung: "stockfish", text: "/engine/LIZENZ-stockfish.txt" },
-  { kennung: "chessops" },
+  { kennung: "chessops", text: PAKETTEXTE },
   { kennung: "skaknew", text: "/lizenzen/lppl-1.3c.txt" },
   { kennung: "cburnett", text: "/lizenzen/gpl-3.0.txt" },
   { kennung: "mpchess", text: "/lizenzen/gpl-3.0.txt" },
@@ -31,10 +42,12 @@ const BAUSTEINE = [
   { kennung: "portraets", text: "/lizenzen/cc-by-4.0.txt" },
   { kennung: "eroeffnungsnamen" },
   { kennung: "puzzles" },
-  { kennung: "react" },
-  { kennung: "workbox" },
-  { kennung: "lucide" },
-] as const satisfies readonly { kennung: string; text?: string }[];
+  { kennung: "react", text: PAKETTEXTE },
+  { kennung: "workbox", text: PAKETTEXTE },
+  { kennung: "lucide", text: PAKETTEXTE },
+  { kennung: "idb", text: PAKETTEXTE },
+  { kennung: "badrap", text: PAKETTEXTE },
+] as const satisfies readonly { kennung: string; text?: string; quelle?: string }[];
 
 export function Lizenzen({ beiZurueck }: { beiZurueck?: () => void }) {
   return (
@@ -59,7 +72,13 @@ export function Lizenzen({ beiZurueck }: { beiZurueck?: () => void }) {
               <strong>{t(`lizenzen.${baustein.kennung}.name`)}</strong>
               <br />
               {t(`lizenzen.${baustein.kennung}.lizenz`)} ·{" "}
-              {t(`lizenzen.${baustein.kennung}.herkunft`)}
+              {"quelle" in baustein ? (
+                <a href={baustein.quelle} target="_blank" rel="noreferrer">
+                  {t(`lizenzen.${baustein.kennung}.herkunft`)}
+                </a>
+              ) : (
+                t(`lizenzen.${baustein.kennung}.herkunft`)
+              )}
               {"text" in baustein && (
                 <>
                   {" · "}

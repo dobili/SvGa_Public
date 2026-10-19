@@ -126,6 +126,10 @@ export default defineConfig({
     __VEROEFFENTLICHUNG__: JSON.stringify(process.env.VEROEFFENTLICHUNG === "1"),
   },
   build: {
+    // Lizenztexte aller eingebauten npm-Pakete (MIT, ISC, GPL) in einer Datei, verlinkt unter
+    // Einstellungen › Lizenzen: MIT und ISC verlangen, dass der Text mit ausgeliefert wird
+    // (Prüfung der Lizenzseite, 19.10.2026). Als .txt, damit der Offline-Speicher sie vorhält.
+    license: { fileName: "lizenzen/bausteine.txt" },
     rollupOptions: {
       input: Object.fromEntries(
         Object.entries(SEITEN).map(([name, pfad]) => [

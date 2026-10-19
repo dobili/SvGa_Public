@@ -12,7 +12,7 @@
  * den Bauern-Zeilen der Skelettbilanzen (Bauerninseln, Deckungstest).
  */
 import type { Color } from "chessops/types";
-import { t, type Textschluessel } from "../i18n/sprache";
+import { t, tZahl, type Textschluessel } from "../i18n/sprache";
 import type { Bauernprofil } from "../schach/bauernprofil";
 import type { Bauernschwaechen } from "../schach/bauernschwaechen";
 import { schwacheMitArt, type Schwaeche, type SchwacherBauer } from "../schach/skelettfiguren";
@@ -56,7 +56,11 @@ function zeilen(
     p.inseln.length === 1 ? t("bauern.insel") : t("bauern.inseln", { anzahl: p.inseln.length }),
   );
   if (s.freibauern.length > 0) {
-    ergebnis.push(t("bauern.freibauern", { felder: felderText(s.freibauern.map((f) => f.feld)) }));
+    ergebnis.push(
+      tZahl("bauern.freibauern", s.freibauern.length, {
+        felder: felderText(s.freibauern.map((f) => f.feld)),
+      }),
+    );
   }
   if (p.offeneLinien.length > 0 || p.halboffeneLinien.length > 0) {
     ergebnis.push(

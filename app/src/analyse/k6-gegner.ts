@@ -12,7 +12,7 @@
  * und „Wenn der Angriff schon läuft: die Verteidigungsmittel“ (Abb. 6.13 bis 6.15).
  */
 import type { Color, Square } from "chessops/types";
-import { t } from "../i18n/sprache";
+import { t, tZahl } from "../i18n/sprache";
 import type { Drohung } from "../schach/drohungen";
 import { feldname, FIGURENWERT, gegner, type Stellung } from "../schach/stellung";
 import { sektorGegen } from "./k1-angriffsregel";
@@ -86,7 +86,7 @@ function mittelzeilen(
     t("gegner.mittel.verteidiger", {
       text:
         helfer.length > 0
-          ? t("gegner.mittel.verteidigerWer", { figuren: aufzaehlung(helfer) })
+          ? tZahl("gegner.mittel.verteidigerWer", helfer.length, { figuren: aufzaehlung(helfer) })
           : t("gegner.mittel.verteidigerKeine"),
     }),
     t("gegner.mittel.linie", {
@@ -107,7 +107,7 @@ function mittelzeilen(
     t("gegner.mittel.tausch", {
       text:
         angreifer.length > 0
-          ? t("gegner.mittel.tauschWen", {
+          ? tZahl("gegner.mittel.tauschWen", angreifer.length, {
               figuren: aufzaehlung(angreifer.map(figurkurz)),
               dame: dame ? t("gegner.mittel.tauschDame", { figur: figurenname(dame) }) : "",
             })
@@ -116,7 +116,7 @@ function mittelzeilen(
     t("gegner.mittel.material", {
       text:
         vorsprung > 0
-          ? t("gegner.mittel.materialVoraus", { anzahl: vorsprung })
+          ? tZahl("gegner.mittel.materialVoraus", vorsprung, { anzahl: vorsprung })
           : t("gegner.mittel.materialNichts"),
     }),
   ];

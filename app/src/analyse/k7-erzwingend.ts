@@ -9,7 +9,7 @@
  * und Sf6++) und die fünf Abwehrfragen aus Schritt 3, wenn der Gegner droht.
  */
 import type { Color } from "chessops/types";
-import { t } from "../i18n/sprache";
+import { t, tZahl } from "../i18n/sprache";
 import {
   erzwingendeZuege,
   nullzug,
@@ -233,7 +233,7 @@ export function erzwingend(stellung: Stellung, eigen: Color): Werkzeugergebnis {
     ],
     fazit:
       liste.length > 0
-        ? t("erzwingend.fazit", {
+        ? tZahl("erzwingend.fazit", liste.length, {
             farbe: farbname(eigen),
             anzahl: liste.length,
             schachs: anzahl.schach,

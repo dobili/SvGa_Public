@@ -143,12 +143,14 @@ export function Rueckblickkarte({
   const besterUci = rueckblick.beste[index] ?? "";
   const besterSan = besterUci ? uciZuSan(fen, besterUci) : null;
   const bester = besterSan ? `${nummer} ${sanInSprache(besterSan, sprache())}` : "";
+  // Die Erklärungen stehen in der dritten Person („übersieht die Gabel“); deshalb „Dein Zug“
+  // statt „Du“ als Subjekt (Befund N402, 19.10.2026: „Du übersieht …“).
   const seite =
     partie.einstellung.gegner === "mensch"
       ? t(fen.split(" ")[1] === "b" ? "farbe.b" : "farbe.w")
       : partie.zuege[index]?.von === "leser"
-        ? t("partie.du")
-        : t("partie.engine");
+        ? t("rueckblick.seite.du")
+        : t("rueckblick.seite.engine");
   return (
     <section className="karte rueckblickkarte" data-testid="rueckblickkarte">
       <MitInfo

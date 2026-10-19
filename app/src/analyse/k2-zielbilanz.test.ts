@@ -103,7 +103,7 @@ describe("k2-zielbilanz an Buchabbildungen", () => {
     const auswertung = ergebnis("2.11");
     expect(auswertung.fazit).toBe("Beide Seiten haben alle drei Ziele erreicht.");
     expect(zeilen(auswertung, "white")).toEqual([
-      "Zentrum: ja – Bauer im Zentrum: d4 und e4",
+      "Zentrum: ja – Bauern im Zentrum: d4 und e4",
       "Entwicklung: ja – Alle vier Leichtfiguren haben ihr Startfeld verlassen oder sind getauscht",
       "Königssicherheit: ja – Rochiert, der Bauernschild steht (f2, g2 und h3)",
     ]);
@@ -145,7 +145,7 @@ describe("k2-zielbilanz an Buchabbildungen", () => {
   it.each([
     ["2.40", "white", "Zentrum: ja – Bauer im Zentrum: e4; e4 ist angegriffen", "e4"],
     ["2.113", "black", "Zentrum: ja – Bauer im Zentrum: e5; e5 ist angegriffen", "e5"],
-    ["2.24", "white", "Zentrum: ja – Bauer im Zentrum: d4 und e4; e4 ist angegriffen", "e4"],
+    ["2.24", "white", "Zentrum: ja – Bauern im Zentrum: d4 und e4; e4 ist angegriffen", "e4"],
   ] as const)("Abb. %s, %s: %s (grau, nicht rot)", (nummer, farbe, zeile, feld) => {
     expect(zeilen(ergebnis(nummer), farbe)[0]).toBe(zeile);
     const markierungen = zielbilanzWerkzeug(stellungVon(nummer), farbe).markierungen;

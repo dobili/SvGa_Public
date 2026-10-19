@@ -12,7 +12,7 @@
 import { abgehakt, useLernstand } from "../../app/lernstand";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeIndex, ladeNachschlagen, type Datenverzeichnis } from "../../daten/laden";
-import { t } from "../../i18n/sprache";
+import { t, tZahl } from "../../i18n/sprache";
 import type { Fortschritt } from "../../speicher/format";
 import { geloesteUebungen, kapitelfortschritt } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
@@ -39,11 +39,12 @@ function JeKapitel({ index, fortschritt }: { index: Datenverzeichnis; fortschrit
             kapitel.abbildungen,
             [],
           ).abbildungen;
-          const text = t("fortschritt.kapitelZeile", {
+          const geloest = geloesteUebungen(fortschritt, kapitel.kapitel);
+          const text = tZahl("fortschritt.kapitelZeile", geloest, {
             nummer: kapitel.kapitel,
             gesehen: anteil.erreicht,
             anzahl: anteil.gesamt,
-            geloest: geloesteUebungen(fortschritt, kapitel.kapitel),
+            geloest,
           });
           return (
             <li key={kapitel.kapitel}>

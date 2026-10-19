@@ -8,7 +8,7 @@
  */
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
-import { sprache, t } from "../../i18n/sprache";
+import { sprache, t, tZahl } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { feldAusName, ROLLENBUCHSTABE, stellungAusFen, type Rolle } from "../../schach/stellung";
 import { spieleZug } from "../../schach/weiterspielen";
@@ -214,7 +214,9 @@ export function Gangartaufgabe({ aufgabe, runde }: { aufgabe: Gangartaufgabe; ru
       )}
       {beantwortet && (
         <Antwortmeldung richtig={vergleich.richtig}>
-          {t("koordinatentrainer.ziele", { anzahl: aufgabe.ziele.length })}
+          {tZahl("koordinatentrainer.ziele", aufgabe.ziele.length, {
+            anzahl: aufgabe.ziele.length,
+          })}
         </Antwortmeldung>
       )}
       {beantwortet && <p className="hinweis">{t("trainer.legendeFelder")}</p>}

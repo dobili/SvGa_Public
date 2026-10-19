@@ -130,7 +130,7 @@ describe("k9-turmbegriffe", () => {
       "Sieh dir das Erkennungsbild „Turm gegen Bauer“ an.",
     );
     expect(turmbegriffe(stellungVon("10.22"), "black").fazit).toMatch(
-      /^Die drei Begriffe und der Hinweis auf Vancura gelten für Turm und ein Bauer gegen Turm/,
+      /^Die drei Begriffe und der Hinweis auf Vancura gelten für Turm und einen Bauern gegen Turm/,
     );
   });
 

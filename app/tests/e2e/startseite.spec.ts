@@ -54,7 +54,15 @@ test("Impressum, Datenschutz und Lizenzen aus der Fußzeile", async ({ page }) =
   await page.getByRole("link", { name: "Zur Startseite" }).click();
   await page.getByRole("link", { name: "Lizenzen" }).click();
   await expect(page.getByRole("heading", { name: "Lizenzen", level: 1 })).toBeVisible();
-  await expect(page.getByText("GNU GPL 3.0 oder neuer")).toBeVisible();
+  await expect(page.getByText("GNU GPL 3.0 oder neuer").first()).toBeVisible();
+  // Seit 0.2.113: Quellcode als Link, Lizenztexte der npm-Pakete aus dem Build (MIT, ISC).
+  await expect(page.getByRole("link", { name: /github\.com\/dobili\/SvGa_Public/ })).toBeVisible();
+  await expect(page.locator('a[href="/lizenzen/bausteine.txt"]').first()).toBeVisible();
+  const antwort = await page.request.get("/lizenzen/bausteine.txt");
+  expect(antwort.ok()).toBe(true);
+  const text = await antwort.text();
+  for (const paket of ["chessops", "react", "lucide-react", "idb", "@badrap/result"])
+    expect(text).toContain(`## ${paket} - `);
 });
 
 // Die Datenschutzerklärung sagt: keine Inhalte anderer Anbieter, nichts wird mitgeladen

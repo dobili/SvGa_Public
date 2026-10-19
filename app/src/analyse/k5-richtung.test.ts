@@ -26,7 +26,7 @@ describe("k5-richtung", () => {
 
   it("Abb. 5.17: Schwarz spielt gegen den Isolani, Weiß spielt mit ihm (0.2.66)", () => {
     expect(richtung(stellungVon("5.17"), "black").fazit).toBe(
-      "Schwarz spielt gegen den Isolani d4: Blockiere das Feld davor (d5) und greife ihn mit Figuren an.",
+      "Schwarz spielt gegen den Isolani d4: Blockiere das Feld davor (d5) und greife den Bauern mit Figuren an.",
     );
     expect(richtung(stellungVon("5.17"), "white").fazit).toBe(
       "Weiß hat den Isolani d4: Spiele aktiv mit den Figuren (offene Linien für die Türme, Sprungbrett für den Königsangriff), bereite den Vorstoß d4–d5 vor und tausche möglichst keine Figur.",
@@ -66,16 +66,16 @@ describe("k5-richtung", () => {
 
   it("Abb. 5.17 (Isolani): Schwarz blockiert und spielt gegen den Isolani d4", () => {
     expect(richtung(stellungVon("5.17"), "black").fazit).toBe(
-      "Schwarz spielt gegen den Isolani d4: Blockiere das Feld davor (d5) und greife ihn mit Figuren an.",
+      "Schwarz spielt gegen den Isolani d4: Blockiere das Feld davor (d5) und greife den Bauern mit Figuren an.",
     );
   });
 
   it("Abb. 5.22 und 6.10: das Ziel ist die Schwäche auf der halboffenen Linie (c5, c6), nicht der Isolani a7", () => {
     expect(richtung(stellungVon("5.22"), "white").fazit).toBe(
-      "Weiß spielt gegen den hängenden Bauern c5: Blockiere das Feld davor (c4) und greife ihn mit Figuren an.",
+      "Weiß spielt gegen den hängenden Bauern c5: Blockiere das Feld davor (c4) und greife den Bauern mit Figuren an.",
     );
     expect(richtung(stellungVon("6.10"), "white").fazit).toBe(
-      "Weiß spielt gegen den rückständigen Bauern c6: Blockiere das Feld davor (c5) und greife ihn mit Figuren an.",
+      "Weiß spielt gegen den rückständigen Bauern c6: Blockiere das Feld davor (c5) und greife den Bauern mit Figuren an.",
     );
   });
 

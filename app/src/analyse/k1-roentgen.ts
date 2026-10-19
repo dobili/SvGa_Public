@@ -11,7 +11,7 @@
  * ‚Schach‘ vor ‚Schlag‘ steht“ (Abb. 1.23 bis 1.25).
  */
 import type { Color } from "chessops/types";
-import { sprache, t } from "../i18n/sprache";
+import { sprache, t, tZahl } from "../i18n/sprache";
 import type { DrohenderZug, Drohung, Schachzug, Schlagzug, Zugangabe } from "../schach/drohungen";
 import { sanInSprache } from "../schach/notation";
 import { feldname, gegner, type Stellung } from "../schach/stellung";
@@ -42,7 +42,9 @@ function schlagzeilen(liste: readonly Schlagzug[] | null): string[] {
   const sinnvoll = liste.filter((schlag) => schlag.bilanz >= 0);
   const verlierend = liste.length - sinnvoll.length;
   const zeilen = sinnvoll.map((schlag) => `${zug(schlag)}: ${schlagtext(schlag)}`);
-  return verlierend > 0 ? [...zeilen, t("roentgen.verlierende", { anzahl: verlierend })] : zeilen;
+  return verlierend > 0
+    ? [...zeilen, tZahl("roentgen.verlierende", verlierend, { anzahl: verlierend })]
+    : zeilen;
 }
 
 /** Eine Drohung als Text: „Matt mit Dxh7#“ oder „Sxd4 gewinnt den Bauern“. */
@@ -75,7 +77,7 @@ function drohendeZeilen(liste: readonly DrohenderZug[] | null): string[] {
       }),
     );
   const rest = liste.length - genannt.length;
-  return rest > 0 ? [...genannt, t("roentgen.weitere", { anzahl: rest })] : genannt;
+  return rest > 0 ? [...genannt, tZahl("roentgen.weitere", rest, { anzahl: rest })] : genannt;
 }
 
 function gegnerdrohungZeilen(liste: readonly Drohung[] | null): string[] {

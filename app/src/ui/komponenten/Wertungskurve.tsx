@@ -18,7 +18,7 @@
  * Abhängigkeiten: spiel/wertung.ts, speicher/, Reiter, InfoKnopf, i18n.
  */
 import { useState } from "react";
-import { t, type Textschluessel } from "../../i18n/sprache";
+import { t, type Textschluessel, tZahl } from "../../i18n/sprache";
 import { setzeWertungZurueck } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
 import { PHASEN, type Phase } from "../../spiel/phasen";
@@ -311,7 +311,7 @@ export function Wertungskurve({
               anzahl: punkte.length,
               aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
             })
-          : t("ich.wertung.phasenstand", {
+          : tZahl("ich.wertung.phasenstand", sichtbar.length, {
               phase: t(`phase.name.${ansicht}`),
               anzahl: sichtbar.length,
             })}

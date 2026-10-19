@@ -10,7 +10,7 @@
  * Buchbezug: Kapitel 7, „Schritt 3: Wann ist die Rechnung fertig?“ und die Abwehrfragen.
  */
 import type { Color, Square } from "chessops/types";
-import { t } from "../i18n/sprache";
+import { t, tZahl } from "../i18n/sprache";
 import type { Drohung } from "../schach/drohungen";
 import { feldname, FIGURENWERT, gegner, type Stellung } from "../schach/stellung";
 import { felderText } from "./skelett";
@@ -83,7 +83,7 @@ function abwehrfragen(p: Stellungsprofil, eigen: Color, drohung: Drohung): strin
             : t("ruhe.abwehr.wegziehenNein")
           : t("ruhe.abwehr.wegziehenKoenig"),
     }),
-    t("ruhe.abwehr.decken", { anzahl: decker, feld: feldname(ziel) }),
+    tZahl("ruhe.abwehr.decken", decker, { anzahl: decker, feld: feldname(ziel) }),
     t("ruhe.abwehr.dazwischen"),
     t("ruhe.abwehr.gegendrohung", {
       text:

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.112. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.113. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.112“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.113“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -25,13 +25,19 @@ Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht mehr
 
 ---
 
-## Teil 1: Testen auf dem Handy (etwa eineinhalb Stunden, meist Partien gegen die Engine)
+## Teil 1: Testen auf dem Handy (etwa eine Stunde, meist Partien gegen die Engine)
 
 Alles, was sich ohne dich prüfen lässt (Knopf öffnet etwas, Text oder Zahl steht da, Ablauf
 klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygröße, hell und
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+Vorprüfung vom 19.10.2026 (0.2.90 bis 0.2.110): Claude hat alle 39 Punkte dieser Versionen mit der
+gebauten App durchgespielt, auch ganze Partien gegen die Engine. 26 Punkte sind gestrichen, weil
+sie stimmen (N400, N401, N404 bis N408, N484 bis N489, N500, N502, N551 bis N556, N558 bis N560,
+N584, N585); ein Fehler ist behoben (N402: im Rückblick stand „Du übersieht die Gabel“, jetzt
+„Dein Zug übersieht die Gabel“). Die übrigen sind gekürzt auf das, was nur du beurteilen kannst.
 
 ### Neu in 0.2.112 (etwa 3 Minuten; Hinweise für iPhone und alte Geräte, Opus)
 
@@ -47,112 +53,50 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 ### Neu in 0.2.110 (etwa 2 Minuten; App-Symbol knackiger, dein Wunsch vom 19.10.2026, Opus)
 
 - [ ] N490. **App-Symbol:** Die App vom Startbildschirm löschen und neu hinzufügen (iPhone: Safari
-      › Teilen › „Zum Home-Bildschirm“). Der goldene Springer wirkt jetzt klarer und kräftiger,
-      der Hintergrund dunkler, die Pfeile deutlicher, ohne das leichte Rauschen von vorher. Passt
-      es so, oder soll es noch kräftiger oder wieder weicher werden?
+      › Teilen › „Zum Home-Bildschirm“). Der goldene Springer ist kräftiger, der Hintergrund
+      dunkler, die Pfeile deutlicher, ohne Rauschen. Gefällt es dir so, oder kräftiger bzw.
+      weicher? (Den runden Zuschnitt auf Android hat Claude nachgestellt: Ohren und Fuß bleiben
+      ganz drin.)
 
-### Neu in 0.2.109 (etwa 3 Minuten; Bot-Gruppen ohne Überschneidung, dein Wunsch vom 19.10.2026, Opus)
+### Neu in 0.2.106 (etwa 2 Minuten; Farbabstimmung hell und dunkel, Opus)
 
-- [ ] N585. **Bereiche der Stufen:** Spielen › „Vorgefertigte Bots“, alle Stufen aufklappen. Die
-      Bereiche an den Überschriften schließen jetzt aneinander an, ohne sich zu überschneiden:
-      Stufe 3 etwa 1650 bis 1800, Stufe 4 etwa 1800 bis 1950, Stufe 6 etwa 2200 bis 2450, Stufe 7
-      etwa 2450 bis 2750, Stufe 8 etwa 2800 bis 3000. Dafür stehen acht Bots in der Nachbargruppe:
-      Jan und Lukas jetzt in Stufe 3, Omar und Selin in Stufe 4, Trainer Koch in Stufe 6, Lena und
-      GM Petrova in Stufe 7, Doktor Berg in Stufe 8. Wie sie spielen, ist unverändert; jede Stufe
-      hat weiter acht Bots. Passt die Einordnung?
-
-### Neu in 0.2.106 (etwa 10 Minuten; Farbabstimmung hell und dunkel, von dir freigegeben am 19.10.2026, Opus)
-
-Am besten jeden Punkt einmal im hellen und einmal im dunklen Modus ansehen (Einstellungen ›
-Anzeige › Nachtmodus „aus“ und „an“).
-
-- [ ] N483. **Porträts:** Spielen › „Vorgefertigte Bots“. Die Porträts stehen im hellen Modus auf
-      hellem Navy statt auf dunklem Schieferblau, im dunklen Modus wie bisher. Dasselbe in der
-      Sprechblase oben, in der Gesichterreihe der Stufen, in der Porträtwahl eigener Bots und in
-      der Partienliste. Wirkt es leichter und passend?
-- [ ] N484. **Haken und Regler:** Die Haken (etwa „Gewertete Partie“) und die Regler „Stufe der
-      Engine“ sind im hellen Modus navy, im dunklen gold, nicht mehr blau. Auch die Haken der
-      Gesamt-Checkliste sind im dunklen Modus gut zu sehen.
-- [ ] N485. **Zahlkreise im Dunkeln:** Dunkler Modus › Training (Kapitelnummern), Nachschlagen ›
-      Denkroutine (Schritte 1 bis 4), Gesamt-Checkliste: Die Kreise sind heller mit hellem Rand
-      und heben sich von den Karten ab.
-- [ ] N486. **Stufenmarken:** Die Gürtelfarben sind etwas gedämpft; Weiß, Gelb und Orange haben im
-      hellen Modus einen dunkleren Rand, im dunklen Modus haben alle Marken einen hellen Rand.
-      „Zum Spaß“ zeigt das Konfetti in Gold statt im Regenbogen.
-- [ ] N487. **Rahmen und kleine Zeichen:** Chips (Weiß/Schwarz, Bedenkzeit), Knöpfe mit Rahmen und
-      Eingabefelder haben kräftigere Rahmen. Kapitelübersicht: die Zeichen der Warum-Fragen haben
-      einen Rand. Auswertung › „Züge nach Art“: die farbigen Marken sind etwas dunkler, das weiße
-      Zeichen darin gut lesbar.
-- [ ] N488. **Partienliste:** Eine Partie gegen „Eigene Stufe“ zeigt links die Gürtelmarke der
-      Stufe statt eines „S“. „1–0“ in der goldenen Marke ist auch im dunklen Modus gut lesbar.
-- [ ] N489. **App-Symbol:** Die App neu installieren (oder einige Zeit warten): Auf dem
-      Startbildschirm erscheint der goldene Springer aus dem Cover mit den Pfeilen, auf Android
-      rund zugeschnitten ohne abgeschnittene Ohren oder Füße. Im Browser-Tab bleibt der schlichte
-      weiße Springer. Gefällt es dir auf deinem Startbildschirm?
-
-### Neu in 0.2.105 (etwa 5 Minuten, mit Engine; kurze Partien zählen für die Wertung, Opus)
-
-- [ ] N584. **Schneller Sieg gegen einen Spaß-Bot zählt:** Einstellungen › Wertung: Zahl der
-      Punkte in der Kurve merken. Dann eine gewertete Partie gegen Bruno spielen und früh gewinnen
-      (der Bot verliert nach wenigen Zügen Material). In der Auswertung darf bei beiden Seiten „zu
-      wenige Züge vor der Entscheidung“ stehen. Trotzdem hat die Kurve danach einen Punkt mehr.
-      Die Zahl selbst steigt gegen einen viel schwächeren Bot kaum (etwa 1 Punkt, gegen Fritzi
-      meist gar nicht), weil der Sieg erwartet war. Seit 0.2.103 zählten solche Partien gar nicht,
-      weil der Bot zu wenige Züge vor der Entscheidung hatte; seine Zahl ist aber ohnehin fest.
+- [ ] N483. **Porträts:** Spielen › „Vorgefertigte Bots“, hell und dunkel (Einstellungen ›
+      Anzeige › Nachtmodus). Die Porträts stehen im hellen Modus jetzt auf hellem Navy. Wirkt es
+      leichter und passend?
 
 ### Neu in 0.2.104 (etwa 10 Minuten; englische Fassung als Vorschau, dein Wunsch vom 19.10.2026, Opus)
 
-Alle 2857 Oberflächentexte gibt es jetzt auf Englisch, mit englischer Notation (B statt L,
-N statt S, R statt T, Q statt D, auch in Zügen der Engine und in deinen Bildunterschriften).
-Bildunterschriften, Glossar und Übungen kommen weiter aus den deutschen Buchdaten, bis es dein
-englisches Buch gibt. 27 Texte, die wörtlich aus dem Buch stammen, bleiben deutsch (Liste in
-Teil 2, EN2). Englisch muss man selbst wählen; die App startet nie von selbst auf Englisch.
+Alle Oberflächentexte gibt es auf Englisch, mit englischer Notation (B statt L, N statt S, R
+statt T, Q statt D). Bildunterschriften, Glossar und Übungen kommen weiter aus den deutschen
+Buchdaten, bis es dein englisches Buch gibt. Englisch muss man selbst wählen.
 
-- [ ] N409. **Englisch einschalten:** Einstellungen › Reiter „Anzeige“ › „English (preview)“.
-      Alles wechselt sofort auf Englisch, auch nach dem Neuladen. Öffne Abb. 1.26: Überschrift
-      „Fig. 1.26“, Zugleiste „5. Nf3 Qb6 … 6. Bd3?!“, die Unterschrift deutsch, aber mit „5...
-      Qb6“. Spiele eine kurze Partie gegen die Engine und sieh dir die Auswertung an: Klingen die
-      Sätze natürlich? Zahlen mit Punkt („1.5“), Datum als „10/19/2026“. Zurück mit
-      Settings › Display › „Deutsch“. Notiere alles, was hölzern oder falsch klingt.
+- [ ] N409. **Englisch lesen:** Einstellungen › Anzeige › „English (preview)“, eine kurze Partie
+      gegen die Engine spielen und die Auswertung lesen: Klingen die Sätze natürlich? Notiere,
+      was hölzern oder falsch klingt. Zurück mit Settings › Display › „Deutsch“.
 
 ### Neu in 0.2.103 (etwa 15 Minuten, mit Engine; Spielstärke nur bis zur Entscheidung, Opus)
 
-Dein Wunsch vom 19.10.2026: Für die geschätzte Spielstärke zählen nur noch die Züge, bis die
-Partie entschieden ist, also bis eine Seite mindestens 90 % Gewinnchance hat und bis zum Ende
-behält. Die Kurven Genauigkeit → Spielstärke sind dafür an 600 neu gesammelten Partien von
-chess.com und Lichess neu geeicht. Die Bots spielen wie vorher; ihre Zahlen sinken alle um etwa
-200, weil die Anker mit der neuen Regel nachgerechnet sind.
+Für die geschätzte Spielstärke zählen nur die Züge, bis die Partie entschieden ist (eine Seite hat
+mindestens 90 % Gewinnchance und behält sie bis zum Ende).
 
-- [ ] N580. **Verschenkte Partie gegen Stufe 1:** Spiele gegen Stufe 1 so lange, bis die Engine
-      früh die Dame oder einen Turm verliert, und spiele dann zügig zu Ende (wie deine Partie vom
-      19.10.2026, als die Engine nach 9...Db8?? auf 89 % und „etwa 1700“ kam). Auswertung › Karte
-      „Spielstärke“: Steht bei der Engine jetzt „zu wenige Züge vor der Entscheidung“ oder eine
-      deutlich kleinere Zahl? Die Genauigkeit oben darf hoch bleiben; sie zählt wie bei Lichess
-      und chess.com alle Züge.
-- [ ] N581. **„aus N Zügen bis zur Entscheidung“:** In derselben Auswertung steht bei deiner
-      Spielstärke hinter der Spanne etwa „· aus 12 Zügen bis zur Entscheidung“. In der Tabelle je
-      Phase steht bei Phasen, die ganz nach der Entscheidung liegen (meist das Endspiel), statt
-      Marke und Zahl „92 % · nach der Entscheidung (15 Züge)“. Verständlich?
-- [ ] N582. **Zahlen der Bots:** Spielen › „Vorgefertigte Bots“. Stufe 1 steht jetzt bei etwa
-      850 bis 1100 (vorher 1050 bis 1300), Stufe 8 bei etwa 3000 (vorher 3200), „Zum Spaß“ bei
-      „unter 400 bis etwa 850“ (Fritzi unter 400, Onkel Willi etwa 550, Tante Trude etwa 650,
-      Bruno etwa 850). Passt das zu deinem Gefühl am Brett?
-- [ ] N583. **Erklärung:** Auf der Karte „Spielstärke“ das Fragezeichen bei „Wie die Zahlen
-      entstehen“ antippen. Dort steht neu: „Für Spielstärke und Wort je Phase zählen nur die
-      Züge, bis die Partie entschieden ist: bis eine Seite mindestens 90 % Gewinnchance hat und
-      bis zum Ende behält. Danach ist fast jeder Zug ‚genau‘, weil nichts mehr zu verlieren ist;
-      sonst bekäme eine früh verschenkte Partie eine hohe Zahl. Die Genauigkeit oben zählt wie bei
-      Lichess und chess.com alle Züge.“ Passt der Text?
+- [ ] N580. **Verschenkte Partie gegen Stufe 1:** Spiele gegen Stufe 1, bis die Engine früh Dame
+      oder Turm verliert, und spiele zügig zu Ende. Auswertung › „Spielstärke“: Wirkt die Zahl der
+      Engine jetzt vernünftig (oder steht „zu wenige Züge vor der Entscheidung“)?
+- [ ] N581. **„bis zur Entscheidung“ verständlich?** Auswertung › „Spielstärke“: „· aus 12 Zügen bis
+      zur Entscheidung“ hinter der Spanne und „92 % · nach der Entscheidung (15 Züge)“ in der
+      Phasentabelle. Verständlich? Und stört dich „Gut 99 %“ (Wort aus den Zügen vor der
+      Entscheidung, Zahl aus allen Zügen der Phase)?
+- [ ] N582. **Zahlen der Bots:** Stufe 1 steht bei etwa 850 bis 1100 (vorher 1050 bis 1300), Stufe 8
+      bei 2800 bis 3000, „Zum Spaß“ unter 400 bis etwa 850. Passt das zu deinem Gefühl am Brett?
+- [ ] N583. **Erklärung:** Auswertung › „Spielstärke“ › Fragezeichen bei „Wie die Zahlen
+      entstehen“: Passt der neue Absatz „Für Spielstärke und Wort je Phase zählen nur die Züge, bis
+      die Partie entschieden ist …“?
 
 ### Neu in 0.2.102 (etwa 3 Minuten, mit Engine; Uhr sofort gesichert, Opus)
 
-- [ ] N180. **Uhr nach dem Schließen:** Partie mit Uhr (etwa 5 + 3) beginnen, einen Zug spielen,
-      nach der Antwort der Engine eine Minute nachdenken, dann die App ganz schließen (aus der
-      Liste der offenen Apps wischen) und wieder öffnen, Spielen › Weiterspielen: Steht deine
-      Restzeit auf dem Stand vom Moment des Schließens (etwa 4:0x), nicht auf dem Stand nach
-      deinem letzten Zug (5:0x)? Neu: Die App legt den angehaltenen Uhrstand beim Verlassen
-      zusätzlich sofort im Gerätespeicher ab, weil das gewöhnliche Speichern beim Schließen
-      abgebrochen werden kann.
+- [ ] N180. **Uhr nach dem Schließen (Handy):** Partie mit Uhr beginnen, nach der Antwort der Engine
+      eine Minute warten, die App aus der Liste der offenen Apps wischen, wieder öffnen, Spielen ›
+      Weiterspielen: Steht deine Uhr auf dem Stand beim Schließen (etwa 4:0x), nicht auf 5:0x?
 
 ### Neu in 0.2.101 (etwa 5 Minuten; Symbolsprache, von dir freigegeben am 19.10.2026, Opus)
 
@@ -194,142 +138,28 @@ echte Gerät zeigt.
 
 ### Neu in 0.2.96 (etwa 10 Minuten; konstruierte Zugfolgen, Opus)
 
-Dazu im Hintergrund: Zu 29 Abbildungen ohne Zugfolge im Buch gibt es jetzt eine Partie ab der
-Grundstellung, die genau die Stellung der Abbildung erreicht (Zugrecht, Rochaderechte, en
-passant eingeschlossen). Claude hat sie mit einer Engine-Suche gebaut, jeden Zug geprüft und die
-Genauigkeit mit der Formel der App in Tiefe 18 nachgerechnet. Trainer und Buchzüge der Engine
-nehmen diese Partien nicht, sie dienen nur dem Nachspielen.
+Zu 29 Abbildungen ohne Zugfolge im Buch gibt es eine von Claude konstruierte Partie ab der
+Grundstellung, nur zum Nachspielen (Trainer und Buchzüge der Engine nehmen sie nicht).
 
-- [ ] N500. **Hinweis an der Zugleiste:** Abb. 8.25 öffnen. Über dem Brett steht die Zugleiste
-      mit 38 Zügen ab einer Italienischen Partie, der letzte Zug (38... Ke8) ist markiert.
-      Darunter steht „Zugfolge von Claude konstruiert, nicht aus dem Buch. Sie führt nur zur
-      Stellung der Abbildung hin; das Buch nennt keine Züge dorthin.“ „Zum Anfang“ führt zur
-      Grundstellung, „vor“ spielt die Partie nach. Ist der Hinweis deutlich genug?
-- [ ] N501. **Wirken die Partien echt?** Stichprobe aus drei Arten: Abb. 5.18 (Semi-Tarrasch,
-      13 Züge bis zur Isolani-Stellung), Abb. 9.24 (Turmendspiel nach Spanisch, 32 Züge) und
-      Abb. 10.21 (zwei Springer gegen Bauer nach Italienisch, 42 Züge). Spiele sie mit „vor“ nach. Erwartung:
-      keine sinnlosen Züge; wo das Ziel Material verlangt, gibt eine Seite einmal etwas her
-      (etwa ein Bauer im Endspiel). Alle 29: Abb. 0.10, 0.11, 5.9, 5.18, 5.29, 5.41, 7.45, 8.7,
-      8.8, 8.9, 8.10, 8.25, 8.26, 8.42, 9.1, 9.2, 9.18, 9.24, 9.25, 9.35, 9.36, 9.37, 9.39, 9.41,
-      9.42, 9.53, 10.21, 11.10, 11.42.
-- [ ] N502. **Trainer unberührt:** Training › „Zug erraten“ (Kapitel 11) und „Studien lösen“
-      (Kapitel 10) bieten weiter nur die Partien und Studien des Buches an; die konstruierten
-      Partien zu Abb. 10.21, 11.10 und 11.42 tauchen dort nicht auf.
+- [ ] N501. **Konstruierte Partien echt?** Spiele Abb. 5.18 (13 Züge), 9.24 (32 Züge) und 10.21
+      (42 Züge) mit „vor“ nach: keine sinnlosen Züge? Ist der Hinweis „Zugfolge von Claude
+      konstruiert …“ unter der Zugleiste deutlich genug?
 
-### Neu in 0.2.94 (etwa 3 Minuten; Technik für die englische Fassung, Opus)
+### Neu in 0.2.93 (etwa 5 Minuten; Lernsammlung, Opus)
 
-Dazu im Hintergrund: Die App kann jetzt mehrere Sprachen tragen (Sprache des Geräts als
-Voreinstellung, Wechsel lädt Texte und Buchdaten neu, `<html lang>` folgt). Übersetzt ist noch
-nichts. Die Pipeline erkennt die Züge im Klartext der Bildunterschriften („Nach 2. Lf4“, 697
-Stellen); die englische Fassung zeigt sie später als „2. Bf4“.
+- [ ] N557. **Als Lichess-Studie:** Lernsammlung › „Als PGN kopieren“, auf Lichess unter
+      „Studien“ eine neue Studie, „PGN importieren“, einfügen. Wird jede Stellung ein Kapitel
+      „Eröffnung: Fundstelle“ mit Plan und Notiz als Kommentar?
 
-- [ ] N559. **Nichts hat sich verändert:** Öffne Abb. 1.2: Die Unterschrift lautet wie im Buch
-      „Nach 2. Lf4 – Ziel 1: …“. Einstellungen › Reiter „Anzeige“: Unter „Sprache“ stehen seit
-      0.2.104 „Deutsch“ (gewählt) und „English (preview)“; auch ein englisches Handy startet
-      auf Deutsch.
-- [ ] N560. **Lizenzen:** Einstellungen › „Lizenzen“ (oder Fußzeile der Startseite): Die Seite
-      sieht aus wie vorher (alle Bausteine mit Lizenz, Herkunft und „Lizenztext“). Die Texte
-      stehen jetzt in der Sprachdatei, damit die englische Fassung sie übersetzen kann.
+### Neu in 0.2.92 (etwa 3 Minuten; Ziehen per Wischen, Opus)
 
-### Neu in 0.2.93 (etwa 10 Minuten; Lernsammlung, Opus)
+- [ ] N550. **Wischen am Handy:** Partie beginnen und Figuren mit dem Finger ziehen. Fühlt es sich
+      gut an (Figur unter dem Finger groß genug, sichtbar, Zug sitzt beim Loslassen)?
 
-- [ ] N553. **Stellung an einer Abbildung sammeln:** Öffne Abb. 2.2. Rechts unter dem Brett steht
-      neben „Brett drehen“ ein Lesezeichen. Tippe darauf: Unter dem Brett erscheinen „Plan“,
-      „Notiz“ und „Eröffnung“. Die Eröffnung ist schon ausgefüllt (Spanische Partie), du darfst
-      sie ändern. Schreibe einen Plan-Satz und tippe „Speichern“. Es erscheint „In der
-      Lernsammlung gespeichert“ mit dem Knopf „Lernsammlung öffnen“.
-- [ ] N554. **Aus Partie und Trainer sammeln:** Im Rückblick einer beendeten Partie steht unter
-      dem Zug neben „In die Fehlerdatenbank“ jetzt „In die Lernsammlung“ (Stellung nach dem Zug,
-      mit dem Weg der Partie). In den Trainern steht nach jeder beantworteten Aufgabe „In die
-      Lernsammlung“ über „Weiter“ (Taktik, Falle, Struktur, Endspiel, Repertoire, Zug erraten,
-      Abweichung, Zielbilanz, Faktorenbilanz, Planbilanz, Denkroutine).
-- [ ] N555. **Die Sammlung:** Training › Karte „Lernsammlung“ › „Lernsammlung öffnen“. Die
-      Stellungen stehen in aufklappbaren Gruppen nach Eröffnung, alphabetisch, „Ohne Eröffnung“
-      zuletzt. Ein Eintrag zeigt Brett, Plan und Notiz, dazu „Zu Abb. …“, „Bearbeiten“ und
-      „Löschen“. Unten lässt sich eine Stellung als FEN eintragen (etwa aus einer Vereinspartie).
-- [ ] N556. **Abfragen:** „Abfragen“ (alle) oder „Diese Gruppe abfragen“ zeigt die Stellungen in
-      zufälliger Folge; erst „Plan zeigen“ deckt Plan und Notiz auf. Gespeichert wird dabei nichts.
-- [ ] N557. **Als Lichess-Studie:** „Als PGN kopieren“ (oder „Als PGN-Datei sichern“). Auf Lichess
-      unter „Studien“ eine neue Studie anlegen, „PGN importieren“ wählen und einfügen. Jede
-      Stellung wird ein Kapitel; Name „Eröffnung – Fundstelle“, Plan und Notiz als Kommentar. Kennt
-      die App den Weg zur Stellung, kannst du ihn im Kapitel nachspielen.
-- [ ] N558. **Datensicherung:** Einstellungen › Daten sichern, auf einem zweiten Gerät (oder nach
-      „Daten löschen“) einspielen: Die Lernsammlung ist wieder da. Hinweis: Eine Sicherung mit
-      Lernsammlung lässt sich nur in Version 0.2.93 oder neuer einspielen (ältere Versionen melden
-      „aus einer neueren Version“, damit nichts verloren geht).
+### Neu in 0.2.90 (etwa 3 Minuten; Nachtarbeit Chat A, Opus)
 
-### Neu in 0.2.92 (etwa 5 Minuten; Ziehen per Wischen, Opus)
-
-- [ ] N550. **Figuren per Wischen ziehen:** Beginne eine Partie (Spielen › Partie beginnen) und
-      ziehe den Bauern e2 mit dem Finger nach e4, ohne loszulassen. Die Figur hängt groß unter
-      dem Finger, auf ihrem Feld bleibt sie blass, das Feld unter dem Finger schimmert. Beim
-      Loslassen auf einem erlaubten Feld ist der Zug gespielt; auf einem verbotenen Feld oder
-      neben dem Brett bleibt die Figur gewählt (die Zielpunkte sind zu sehen). Antippen von Figur
-      und Zielfeld geht wie bisher. Das gilt überall, wo „Ziehen“ wirkt: Partie, Abbildungen mit
-      dem Werkzeug „Ziehen“, Übungen und Trainer.
-- [ ] N551. **Scrollen bleibt frei:** Lege den Finger auf ein leeres Feld oder eine gegnerische
-      Figur und wische nach oben: Die Seite scrollt wie bisher. Nur auf einer eigenen Figur, die
-      ziehen darf, nimmt der Finger die Figur. Auf Brettern ohne „Ziehen“ (Abbildung ohne
-      Werkzeug, Zählen) scrollt die Seite überall.
-- [ ] N552. **Abschalten:** Einstellungen › Brett › „Figuren per Wischen ziehen: aus“. Öffne
-      danach ein Brett neu: Wischen bewegt keine Figur mehr, Antippen schon. Die Einstellung gilt
-      nur auf diesem Gerät (wie die Koordinaten), weil sie von Gerät und Hand abhängt.
-
-### Neu in 0.2.91 (etwa 5 Minuten; Endspiel-Kurzübungen, Opus)
-
-Dazu im Hintergrund: Die Ergebnisse aller Werkzeuge an allen Abbildungen sind festgehalten; ändert
-ein Umbau etwas daran, schlägt ein Test an. Für dich ändert sich dadurch nichts.
-
-- [ ] N408. **Endspiel-Kurzübungen:** Training › Endspieltrainer › unten „Kurzübungen starten“.
-      Acht schnelle Fragen ohne Engine, reihum: „Holt der schwarze König den Bauern ein?“
-      (Quadrat), „Wer hat die Opposition?“, „Welches Feld ist ein Schlüsselfeld?“ und „Welches
-      Erkennungsbild ist das?“ (Buchstellungen aus Kapitel 8 und 9). Nach der Antwort steht die
-      Regel des Buches; beim Quadrat und bei den Schlüsselfeldern leuchtet die Lösung gold am
-      Brett. Prüfe an zwei, drei Aufgaben, ob die Antwort der App schachlich stimmt.
-
-### Neu in 0.2.90 (etwa 10 Minuten, mit Engine; Nachtarbeit Chat A, Opus)
-
-Dazu im Hintergrund: Engine-Tests mit fester Tiefe (scheiterten ab und zu ohne Grund),
-Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmodus, ein Test bei
-360 px Breite. Die Trainingsseiten der Website werden nicht mehr zwischengespeichert.
-
-- [ ] N400. **Bedenkzeit 10 + 0:** Training › 30-Minuten-Plan › Tag A starten, „Schritt
-      erledigt“, dann „Zum Spielen“. Unter „Bedenkzeit“ ist jetzt „10 + 0“ gewählt (neu neben
-      30 + 20, 15 + 10 und 5 + 3). Du kannst sie dort noch ändern.
-- [ ] N401. **Gewinnchance statt Bauerneinheiten im Zugurteil:** Abb. 1.26 öffnen, „Engine“,
-      dann „Letzten Zug bewerten“. Bei einem Zug mit Zeichen lautet der Satz jetzt „5... Db6?!:
-      Die Gewinnchance von Schwarz fällt von … % auf … %. Besser: … (goldener Pfeil)“, wie im
-      Rückblick nach der Partie; ohne Zeichen „ist gut: Die Gewinnchance … sinkt nur von … auf …“. Nur wenn sich die Gewinnchance kaum ändert (klar gewonnene Stellung), nennt er
-      weiter Bauerneinheiten. Ebenso das Werkzeug „Falle?“ (Abb. 4.21): „Falle: Nach axb4 …“
-      nennt die Gewinnchance nach dem Schlag und nach der Rettung.
-- [ ] N402. **Gabel mit Figurennamen:** Spiele eine Partie und stelle eine Figur in eine
-      Springergabel (etwa Dame und König). Im Rückblick steht jetzt „übersieht die Gabel:
-      Springer g5 nach f7 trifft König h8 und Dame d6. Der König muss ziehen, Dame d6 geht
-      verloren.“ statt nur der Felder. Bei anderen Motiven nennt der Satz, was die Antwort
-      schlägt (etwa „… schlägt Turm e8“).
-- [ ] N403. **Datensicherung teilen (Handy):** Einstellungen › Daten auf diesem Gerät. Neben
-      „Daten sichern (Datei)“ steht auf dem Handy „Sicherung teilen (Mail, Dateien)“. Er öffnet
-      das Teilen-Menü; schick dir die Datei per Mail. Am Rechner fehlt der Knopf, wenn der
-      Browser keine Dateien teilen kann.
-- [ ] N406. **Wiederholung auch im Strukturerkenner und Endspieltrainer:** Löse im
-      Strukturerkenner ein Skelett falsch (oder schaffe im Endspieltrainer eine Stellung nicht).
-      Am nächsten Tag steht im Bereich Training unter „Fällige Wiederholungen“
-      „Strukturerkenner: 1 fällig“ (bzw. Endspieltrainer), und im Trainer startet „Wiederholen“
-      genau diese Aufgabe, wie bisher bei Taktik und „Falle oder Köder“.
-- [ ] N407. **Zug erraten merkt sich die Trefferzahl:** Spiele eine Partie bei „Zug erraten“
-      ganz durch. Beim nächsten Mal steht unter „Getroffen: …“ die Zeile „Beim letzten Mal
-      (Datum): 7 von 12 getroffen.“ zum Vergleich. Der Verlauf steckt in der Datensicherung,
-      ebenso jetzt der Stand des 30-Minuten-Plans (welcher Tag als Nächstes dran ist).
-- [ ] N405. **Erst selbst denken auch vor Werkzeugen (dein Wunsch vom 18.10.2026):**
-      Einstellungen › Reiter „Training“ › „Auch vor Werkzeugen und Engine“ auf „an“. Öffne
-      Abb. 1.26: Statt Werkzeugleiste und Engine steht die Karte „Erst selbst denken“ mit „Weiß
-      besser | gleich | Schwarz besser“ und „Ich habe nachgedacht“. Danach erscheinen die
-      Werkzeuge, darüber „Deine Einschätzung: …“ zum Vergleich mit der Engine. Mit „streng“ geht
-      es erst nach einer Einschätzung weiter. Prüfe auch: Übungen (etwa Übung an Abb. 1.40) und
-      Trainer funktionieren mit „an“ wie bisher (dort gilt ihr eigenes „Erst selbst denken“).
-      Voreinstellung ist „aus“ (siehe Rückfrage NA1).
-- [ ] N404. **Bewertungsbalken lesbar:** Nach einer Partie im Rückblick: Die Zahl am schmalen
-      Balken links steht jetzt auf dunklem Grund, auch wenn der weiße Teil bis zur Mitte reicht.
+- [ ] N403. **Sicherung teilen (Handy):** Einstellungen › „Sicherung teilen (Mail, Dateien)“, die
+      Datei per Mail an dich schicken. Kommt sie an und lässt sie sich einspielen?
 
 ### Neu in 0.2.88 (mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
@@ -361,7 +191,8 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 ### Neu in 0.2.83 (mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 
 - [ ] N326. **Deine Spielstärke nach einer Partie:** Spielen, Karte „Deine Spielstärke“ über
-      „Letzte Partien“ (den Ablauf hat Claude geprüft). Befund: Nach genau einer Partie zeigte sie
+      „Letzte Partien“ (den Ablauf hat Claude geprüft). Befund aus 0.2.83 (vor der Neueichung in
+      0.2.103, die Zahlen sind heute andere): Nach genau einer Partie zeigte sie
       etwa 900 (500 bis 1300), die Karte „Spielstärke“ derselben Partie aber 1150 (750 bis 1550),
       weil „Deine Spielstärke“ die beiden Skalen anders mittelt. Stört dich das, oder reicht es,
       dass sich beides mit mehr Partien angleicht?
@@ -653,6 +484,13 @@ bevor du es sagst.
       Schwarz +1). Der Fließtext sagt dagegen „sein Vorsprung ist eine Figur kleiner“, also nie
       unter null. **Empfehlung:** im Buch „nie unter null“ ergänzen und die Tabelle zu 3.14 auf
       „gleich“ setzen; dann ändert Claude die App (eine Zeile). Bis dahin bleibt die App beim Buch.
+- [ ] B7. **Lichess-Adresse im Werkzeugkasten (Kapitel 12):** Die Liste der Lichess-Seiten nennt
+      „/insights“ (Schach-Einblicke). Die Adresse lichess.org/insights gibt es nicht (Fehler 404,
+      geprüft am 19.10.2026); die Einblicke liegen unter lichess.org/insights/DEINNAME und sind
+      auch über das eigene Profil › „Einblicke“ erreichbar. Die Trainingsseite der Website
+      verlinkt den Eintrag deshalb ins Leere. **Empfehlung:** im Buch „/insights/dein-name (über
+      dein Profil)“ schreiben; Claude übernimmt es dann in die Trainingsseite. Bis dahin bleibt
+      der Link wie im Buch.
 - [ ] D1. **Abb. 4.45:** Im Buchstand vom 16.10. ist an der Stellung, den Pfeilen und den
       Markierungen von 4.45 nichts geändert, wohl aber die Zeile F3 der Fallenprüfung
       „Damenfalle im Dänischen Gambit“ (jetzt: der Läufer b2 fesselt g7 relativ an den Turm h8,

@@ -52,7 +52,7 @@ describe("k1-todsuenden an Buchbeispielen", () => {
   it("Abb. 1.12: Der schwarze König steht nach zehn Zügen noch in der Mitte", () => {
     const auswertung = todsuendenWerkzeug(stellungVon("1.12"), "white");
     expect(zeilen(auswertung, "gegner")).toEqual([
-      "möglicherweise zu lange in der Mitte: Der König steht nach 10 Zügen noch nicht rochiert",
+      "möglicherweise zu lange in der Mitte: Der König hat nach 10 Zügen noch nicht rochiert",
     ]);
     expect(auswertung.markierungen).toContainEqual({ typ: "feld", farbe: "rot", feld: "e8" });
   });

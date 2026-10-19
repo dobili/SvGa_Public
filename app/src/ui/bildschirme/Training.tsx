@@ -14,7 +14,7 @@
  */
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeIndex } from "../../daten/laden";
-import { t } from "../../i18n/sprache";
+import { t, tZahl } from "../../i18n/sprache";
 import { TRAINER, trainerZuKapitel } from "../../training/trainer";
 import { kapiteladresse } from "../../startseite/trainingsseiten";
 import { BookmarkPlus, ExternalLink, Globe } from "lucide-react";
@@ -80,7 +80,7 @@ function SammelKarte() {
         <BookmarkPlus size={LINKSYMBOL} aria-hidden="true" /> {t("sammlung.titel")}
       </h2>
       <p className="hinweis">
-        {anzahl === 0 ? t("sammlung.karteLeer") : t("sammlung.karte", { anzahl })}
+        {anzahl === 0 ? t("sammlung.karteLeer") : tZahl("sammlung.karte", anzahl, { anzahl })}
       </p>
       <button
         type="button"

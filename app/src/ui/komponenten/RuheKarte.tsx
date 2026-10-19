@@ -13,7 +13,7 @@ import type { Markierung } from "../../analyse/werkzeug";
 import { AuftragAbgebrochen, engine, STANDARD_RECHENZEIT_MS } from "../../engine/engineDienst";
 import { rechneRuhe, type Ruhe } from "../../engine/ruhe";
 import { wertAlsZahl, wertInWorten } from "../../engine/wertInWorten";
-import { sprache, t } from "../../i18n/sprache";
+import { sprache, t, tZahl } from "../../i18n/sprache";
 import { parseUci } from "chessops/util";
 import { zugfolgeAlsText } from "../../schach/notation";
 import type { Stellung } from "../../schach/stellung";
@@ -62,7 +62,9 @@ function Ergebnis({ stellung, ruhe }: { stellung: Stellung; ruhe: Ruhe }) {
         ))}
       </ol>
       <p className="fazit">
-        {t(`ruhe.engine.ende.${ruhe.ende}`, { halbzuege: ruhe.zuege.length })}{" "}
+        {tZahl(`ruhe.engine.ende.${ruhe.ende}`, ruhe.zuege.length, {
+          halbzuege: ruhe.zuege.length,
+        })}{" "}
         {t("ruhe.engine.bilanz", {
           vorher: mitVorzeichen(ruhe.materialVorher),
           nachher: mitVorzeichen(ruhe.materialNachher),

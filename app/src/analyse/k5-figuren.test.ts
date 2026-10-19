@@ -78,7 +78,7 @@ describe("k5-figuren", () => {
   });
 
   it("Abb. 5.8 (Najdorf): Springer gehören nach d5", () => {
-    expect(zeilen("5.8", "white").find((z) => z.startsWith("Springer gehören nach"))).toContain(
+    expect(zeilen("5.8", "white").find((z) => z.startsWith("Springer gehören auf"))).toContain(
       "d5",
     );
   });

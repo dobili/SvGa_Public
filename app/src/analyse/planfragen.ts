@@ -10,7 +10,7 @@
  * Buchbezug: Kapitel 6, Planbilanz („Ich nutze …, greife … an und sichere …“, Abb. 6.20, 11.34).
  */
 import type { Color, Square } from "chessops/types";
-import { t, type Textschluessel } from "../i18n/sprache";
+import { t, type Textschluessel, tZahl } from "../i18n/sprache";
 import { aktivitaeten, type Aktivitaet } from "../schach/aktivitaet";
 import {
   eindringen,
@@ -199,11 +199,11 @@ export function figurText(p: Stellungsprofil, farbe: Color): string {
   if (ziel.ziel === null) {
     if (lap.zuHause) return t("plan.figur.zuHause", { figur: name });
     if (ziel.grund === "tausch") return t("plan.figur.tausch", { figur: name });
-    return t("plan.figur.gut", { figur: name, anzahl: lap.freie.length });
+    return tZahl("plan.figur.gut", lap.freie.length, { figur: name, anzahl: lap.freie.length });
   }
   const platz =
     ziel.platzmacher.length > 0
-      ? t("plan.figur.platz", {
+      ? tZahl("plan.figur.platz", ziel.platzmacher.length, {
           figuren: aufzaehlung(
             ziel.platzmacher.map((f) => {
               const figur = p.stellung.brett.get(f);

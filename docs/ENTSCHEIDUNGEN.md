@@ -4210,3 +4210,39 @@ Vom Autor abgesegnet (19.10.2026, „Alle anderen Punkte auch ja“):
   `ui/bildschirme/gegnerprofil.ts`.
 - **CLAUDE.md** (Ja des Autors, 19.10.2026): Der Widerspruch zu den Testadressen von Cloudflare
   ist aufgelöst (Vorschau-Builds eingestellt, Funktion prüft der Autor in V2).
+
+## Ohne Autor, Teil 2: Lektorat, Einzahl und Mehrzahl, Lizenzseite, Vorprüfung 0.2.90 bis 0.2.110 (19.10.2026, Opus, Zweig `weiter-ohne-autor`, Version 0.2.113)
+
+Vom Autor abgesegnet (19.10.2026, „Alle anderen Punkte auch ja“; Texte nach Regel 9):
+
+- **Einzahl und Mehrzahl:** `tZahl()` in `i18n/sprache.ts` nimmt bei der Zahl 1 den Schlüssel mit
+  „Eins“, bei 0 den mit „Null“, sonst den Grundschlüssel („Noch 1 Sekunde nachdenken“ statt
+  „1 Sekunden“, „kein sicheres Feld“ statt „0 sichere Felder“). Umgestellt sind 38 Stellen in
+  Werkzeugen, Trainern, Auswertung und Fortschritt. Sätze mit mehreren Zahlen stehen als Liste
+  („Schwache Bauern: Weiß 1, Schwarz 0“, „Weiß hat 8 Kandidaten (Schachs: 2, Schläge: 1,
+  Drohungen: 5)“).
+- **Lektorat** aller Texte in `de.json` (Rechtschreibung, Grammatik, Fachbegriffe wie im Buch),
+  englische Fassung jeweils angeglichen; „Bauerneinheiten“ einheitlich, „Grundreihe: weder Turm
+  noch Dame“, „Der König hat … noch nicht rochiert“, Großschreibung nach Doppelpunkt bei ganzem
+  Satz. Englisch: kein Leerzeichen vor „%“.
+- **Fehler N402** (Vorprüfung): Im Rückblick stand „Du übersieht die Gabel“, weil die
+  Erklärungen in der dritten Person stehen. Jetzt „Dein Zug übersieht …“ bzw. „Der Zug der
+  Engine …“ (`rueckblick.seite.*`).
+- **Erklärung der Wertung** stimmte seit 0.2.105 nicht mehr: Nicht jede Partie braucht zehn
+  eigene Züge, nur die erste gewertete (für die Schätzung der Spielstärke). Text in de und en
+  angepasst; der Code (`spiel/wertung.ts`) bleibt.
+- **Lizenzseite:** Quellcode der App als Link (GPL), Stockfish mit Fassung 19.0.1, Variante
+  lite-single, Netz nn-61e7af4bb97d und Quellcode-Adresse; Vite schreibt beim Build die
+  Lizenztexte aller eingebauten npm-Pakete nach `/lizenzen/bausteine.txt` (`build.license`),
+  verlinkt bei chessops, React, Workbox, Lucide und neu idb und @badrap/result (MIT und ISC
+  verlangen den Text). OFL-Texte mit der Copyright-Zeile von Adobe statt „Google Inc.“,
+  Chessnut-Copyright im Apache-Text (eigene Datei entfällt), Umwandlungsdatum der
+  Materialbretter. `docs/LIZENZEN.md` nachgezogen; Oberflächentest prüft Link und Datei.
+- **Vorprüfung der Testliste** (0.2.90 bis 0.2.110, gebaute App, Partien mit Stockfish unter
+  Node): 26 Punkte stimmten und sind gestrichen (N400, N401, N404 bis N408, N484 bis N489,
+  N500, N502, N551 bis N556, N558 bis N560, N584, N585; N489 durch N490 überholt), N402 behoben,
+  zehn gekürzt auf das Urteil des Autors. Beobachtungen ohne Handlungsbedarf: Zu N401 passen
+  die Beispiele (Abb. 1.26 hat kein Zeichen, Abb. 4.21 ist eine Mattfalle), das Verhalten
+  stimmt; N326 nennt Zahlen von vor der Neueichung (gekennzeichnet).
+- **Buchbefund B7:** lichess.org/insights gibt es nicht (404); die Einblicke liegen unter
+  /insights/NAME. Der Link der Trainingsseite bleibt wie im Buch, bis der Autor entscheidet.

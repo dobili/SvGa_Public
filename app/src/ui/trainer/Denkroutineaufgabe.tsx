@@ -9,7 +9,7 @@
  * Abhängigkeiten: training/denkroutinetrainer.ts, useDenkvergleich.ts, Trainerbrett, i18n.
  */
 import { useEffect, useState } from "react";
-import { sprache, t, zahlText } from "../../i18n/sprache";
+import { sprache, t, tZahl, zahlText } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import {
   DENKZEIT_S,
@@ -187,7 +187,7 @@ export function Denkroutineaufgabe({ aufgabe, runde }: { aufgabe: Denkaufgabe; r
           onClick={() => setzeEingeben(true)}
           data-testid="denk-weiter"
         >
-          {rest > 0 ? t("denk.minute", { sekunden: rest }) : t("denk.zurEingabe")}
+          {rest > 0 ? tZahl("denk.minute", rest, { sekunden: rest }) : t("denk.zurEingabe")}
         </button>
       )}
       {eingeben && !pruefungen && <Eingabe pruefe={pruefe} />}

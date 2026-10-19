@@ -70,7 +70,7 @@ describe("k5-bauern", () => {
     });
     expect(weiss.e.markierungen).toContainEqual({ typ: "feld", farbe: "grau", feld: "c4" });
     expect(weiss.e.fazit).toBe(
-      "Weiß: 1 schwache Bauern, Schwarz: 0. Weniger Bauerninseln bedeuten meist die gesündere Struktur.",
+      "Schwache Bauern: Weiß 1, Schwarz 0. Weniger Bauerninseln bedeuten meist die gesündere Struktur.",
     );
   });
 });

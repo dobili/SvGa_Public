@@ -409,7 +409,7 @@
    },
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1201
+    "zeile": 1203
    },
    "pruefsumme": "bd78a2b071ce0cda"
   },
@@ -441,7 +441,7 @@
    },
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1213
+    "zeile": 1215
    },
    "pruefsumme": "cc72b94e763c0138"
   }
@@ -517,7 +517,7 @@
    ],
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1198
+    "zeile": 1200
    },
    "erklaerung": {
     "loesung": "1. Dc2",
@@ -586,7 +586,7 @@
    ],
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1210
+    "zeile": 1212
    },
    "erklaerung": {
     "loesung": "1. g3",
@@ -617,7 +617,7 @@
    ],
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1222
+    "zeile": 1224
    },
    "erklaerung": {
     "loesung": null,
@@ -648,7 +648,7 @@
    ],
    "quelle": {
     "datei": "kap12_training.tex",
-    "zeile": 1233
+    "zeile": 1235
    },
    "erklaerung": {
     "loesung": null,

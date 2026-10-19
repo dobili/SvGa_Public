@@ -4261,3 +4261,23 @@ in Kapitel 12“):
   ihre Übersetzungsdateien geprüft: alle richtig. Neuer Befund **B8**: schachtraining.de hat
   keine „Taktikaufgaben in drei Stufen“ (Blog, Tagesaufgabe endet Januar 2023).
 - **ZF4:** Abb. 8.25 und 8.26 sind laut Tablebase remis, gleich wer am Zug ist.
+
+## Buchbefunde ins Buch übernommen (19.10.2026, Opus, Version 0.2.115)
+
+Der Autor hat B6, B7, B8, ZF4 und D2 freigegeben („bau die Änderungen ein und schieb es ins
+Repo“). Claude hat sie im privaten Buch-Repository auf dem Zweig `claude/funny-bardeen-e7wpzs`
+eingetragen (der Autor übernimmt sie nach `main`) und die App-Daten daraus neu gebaut:
+
+- **B6:** Fließtext und Zählhilfe in Kapitel 3 sagen jetzt ausdrücklich, dass bei Gleichstand
+  und Schwarz am Zug Schwarz eine Figur vorn liegt. Bilanzen und App unverändert.
+- **B7, B8 und Adressen in Kapitel 12:** `/insights/dein-Name` (Schach-Einblicke, auch über das
+  Profil), `/training/dashboard` „mit Konto“, schach-tipps.de mit Mattaufgaben in einem, zwei und
+  drei Zügen, schachtraining.de als Artikelsammlung. Dieselben Änderungen in
+  `inhalte/de/training/werkzeugkasten.json` (die Trainingsseiten sind seit dem Verweis im Buch
+  die gepflegte Quelle; ein neuer Pipelinelauf schreibt sie nicht mehr).
+- **ZF4:** Unterschriften von Abb. 8.25 und 8.26 nennen das Remis (Tablebase, gleich wer am
+  Zug ist); in `kap08.json` übernommen.
+- **D2:** Steckbriefe Lasker–Thomas („Eröffnung bis Mattangriff“) und Fischer–Petrosjan
+  („Eröffnung bis Endspiel“) folgen dem Glossar; die App rechnete schon so.
+- **D1 erledigt:** Die angekündigte Änderung zu Abb. 4.45 (Befund D.3, Fesselung in Zeile F3 der
+  Fallenprüfung) steht im Buch und in der App; Buch und App widersprechen sich dort nicht.

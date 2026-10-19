@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.114. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.115. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,10 +17,10 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.114“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.115“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
-bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
+bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
 Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht mehr getrennt testen.
 
 ---
@@ -287,7 +287,7 @@ Grundstellung, nur zum Nachspielen (Trainer und Buchzüge der Engine nehmen sie 
 
 Oben die Rückfragen, bei denen Claude schon entschieden hat (meist schon umgesetzt): Antworte mit
 „alle ok“ oder „alle ok außer K3, S21“; bei einem Widerspruch baut Claude es zurück. Darunter die
-Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entscheidung brauchen.
+Fragen, die wirklich deine Entscheidung brauchen. Buchbefunde sind zurzeit keine offen.
 
 ### NA. Nachtarbeit Chat A (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 
@@ -379,7 +379,7 @@ bevor du es sagst.
       aus Kapitel 0), danach Flugmodus an und Buch, Trainer, Spielen öffnen, und Datensicherung
       auf einem Gerät anlegen und auf dem anderen einspielen.
 
-### ZF. Konstruierte Zugfolgen und Tablebase (Opus, 19.10.2026; ZF1 bis ZF3 schon umgesetzt, Widerspruch genügt)
+### ZF. Konstruierte Zugfolgen (Opus, 19.10.2026; ZF1 bis ZF3 schon umgesetzt, Widerspruch genügt)
 
 - [ ] ZF1. **Welche Abbildungen eine Partie bekommen:** Von den 67 Abbildungen ohne Zugfolge
       sind 30 als „kann aus einer realistischen Partie erwachsen“ eingeordnet: die Endspiele aus
@@ -405,17 +405,6 @@ bevor du es sagst.
       einem Vorlauf mit langer Rochade keinen Weg, auf dem beide Seiten vernünftig spielen.
       **Empfehlung:** ohne Zugfolge lassen. Kennst du eine Partie, aus der die Stellung stammt,
       baue ich sie danach.
-- [ ] ZF4. **Buchbefund aus der Tablebase (Abb. 8.25, 8.26, 9.23, 9.41):** Die Lichess-Tablebase
-      (genau für bis zu sieben Steine) sagt: **8.25 und 8.26 sind remis, gleich wer am Zug ist**
-      (am 19.10.2026 nachgeprüft), weil der schwarze König rechtzeitig vor den Bauern kommt. Das Buch zeigt dort nur die
-      Schlüsselfelder und behauptet nichts Falsches, ein Leser hält die Stellungen aber leicht für
-      gewonnen. **Vorschlag:** in den Unterschriften ergänzen „Hier hält Schwarz remis: Sein König
-      erreicht die Opposition, bevor Weiß ein Schlüsselfeld besetzt.“ **9.41 ist remis**, wie im
-      Buch (die Engine zeigte früher +1,05; das war eine Täuschung der Engine). **9.23** hat elf
-      Steine, zu viele für die Tablebase; die Engine in Tiefe 32 sieht nach 1. Txa7 Ausgleich
-      (+0,03), das passt zum Buch („Weiß gewinnt mit Txa7 den Bauern zurück“). Die
-      Endspielaufgaben des Trainers widersprechen der Tablebase in keinem Fall (137 Stellungen
-      geprüft). Nur du änderst das Buch; die App bleibt, wie sie ist.
 
 ### Nur bestätigen (je eine Zeile; Widerspruch genügt)
 
@@ -474,56 +463,6 @@ bevor du es sagst.
       umgesetzt in 0.2.47.
 - [ ] E3. **Buchbeschreibung auf der Startseite:** nach dem Untertitel des Buches, „in Richtung
       Elo 2000“ statt „etwa 2000 Elo“; umgesetzt in 0.2.55.
-
-### Buchbefunde (nur du änderst das Buch)
-
-- [ ] B6. **Zeit-Zählhilfe in Kapitel 3:** Nach 1. e4 e5 2. f4 (Abb. 3.1, ebenso 3.18 und 3.36)
-      sagt die Faktorenbilanz „Schwarz liegt vorn bei Zeit“, obwohl beide Seiten null Figuren im
-      Spiel haben. Das folgt der Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom weißen
-      Vorsprung eine Figur ab“). Der Fließtext sagt dagegen nur „sein Vorsprung ist eine Figur
-      kleiner“. Nachgelesen am 19.10.2026: Das Buch zählt in drei Faktorenbilanzen genau wie die
-      App, auch unter null: Abb. 3.14 (Evans-Gambit, „Bei der Zeit liegt sogar Schwarz vorn, da
-      er am Zug ist“), Abb. 3.47 (Budapester Gambit, Schwarz +1 bei zwei gegen zwei) und Abb. 3.65
-      (Stafford-Gambit, Schwarz +2 bei zwei gegen eine). **Neue Empfehlung (ersetzt „nie unter
-      null“):** nur den Fließtext in Kapitel 3 an die Tabellen angleichen, etwa „Ist Schwarz am
-      Zug, hat Weiß einen Zug mehr gemacht; ziehe dann vom weißen Vorsprung eine Figur ab, weil
-      Schwarz mit dem nächsten Zug aufholen kann. Bei Gleichstand liegt so Schwarz eine Figur
-      vorn.“ Dann bleiben die drei Bilanzen und die App, wie sie sind. Die andere Lösung („nie
-      unter null“) müsste alle drei Bilanzen samt Urteil ändern.
-- [ ] B7. **Lichess-Adresse im Werkzeugkasten (Kapitel 12):** Die Liste der Lichess-Seiten nennt
-      „/insights“ (Schach-Einblicke). Die Adresse lichess.org/insights gibt es nicht (Fehler 404,
-      geprüft am 19.10.2026); die Einblicke liegen unter lichess.org/insights/DEINNAME und sind
-      auch über das eigene Profil › „Einblicke“ erreichbar. Die Trainingsseite der Website
-      verlinkt den Eintrag deshalb ins Leere. **Empfehlung:** im Buch „/insights/dein-name (über
-      dein Profil)“ schreiben; Claude übernimmt es dann in die Trainingsseite. Bis dahin bleibt
-      der Link wie im Buch. Alle anderen Adressen in Kapitel 12 funktionieren (geprüft am
-      19.10.2026, 17 Lichess-Adressen und zehn andere Seiten), ebenso alle Menüwege und
-      Bezeichnungen der Tabelle „Lichess-Funktionen“ in der deutschen Oberfläche. Nur
-      /training/dashboard (Aufgabenübersicht) führt ohne Lichess-Konto zur Anmeldung; ein
-      Zusatz „mit Konto“ wäre ehrlich.
-- [ ] B8. **schachtraining.de in Kapitel 12:** Das Buch nennt „Taktikaufgaben in drei Stufen“.
-      Die Seite hat das nicht (mehr): Sie ist ein Blog mit Artikeln zu Eröffnung, Mittelspiel und
-      Endspiel; ihre „Taktikaufgabe des Tages“ endet im Januar 2023 (Nr. 109), Stufen gibt es
-      keine. Mattaufgaben in einem, zwei und drei Zügen hat dagegen schach-tipps.de.
-      **Empfehlung:** „schachtraining.de (Artikel zu Eröffnung, Mittelspiel und Endspiel),
-      schach-tipps.de (Regeln, Grundlagen und Mattaufgaben in einem, zwei und drei Zügen)“, oder
-      schachtraining.de streichen. Die Trainingsseite „Werkzeugkasten“ der Website übernimmt
-      die Änderung aus dem Buch.
-- [ ] D1. **Abb. 4.45:** Im Buchstand vom 16.10. ist an der Stellung, den Pfeilen und den
-      Markierungen von 4.45 nichts geändert, wohl aber die Zeile F3 der Fallenprüfung
-      „Damenfalle im Dänischen Gambit“ (jetzt: der Läufer b2 fesselt g7 relativ an den Turm h8,
-      „teils“); die ist in der App. **Empfehlung:** Antworte „Text“, wenn du diese Änderung
-      meintest (dann ist alles drin), oder „Stellung“ und lade die neue Fassung hoch.
-- [ ] D2. **Glossar und Steckbriefe sind sich bei der Phase uneins:** Die App folgt dem Glossar
-      (Mittelspiel erst, wenn beide Seiten entwickelt sind und rochiert haben; „rochiert“ aus den
-      Buchzügen). Drei Stellen widersprechen ihrem Steckbrief, weil eine Seite nicht rochiert:
-      Lasker–Thomas (Steckbrief „Mittelspiel“, Weiß rochiert erst mit dem Mattzug),
-      Fischer–Petrosjan 11.43 und 11.44 (Steckbrief „Mittelspiel bis Endspiel“, Schwarz rochiert
-      erst im 15. Zug) und die Opernpartie 11.98 (Übung nach 11. Lxb5+). **Empfehlung:** im Buch
-      die Steckbriefe angleichen (Lasker–Thomas „Eröffnung bis Mattangriff“, Fischer–Petrosjan
-      „Eröffnung bis Endspiel“) oder im Glossar ergänzen, dass ein König in der Mitte das
-      Mittelspiel nicht aufhält, wenn beide Seiten entwickelt sind. Bis dahin bleibt die App beim
-      Glossar.
 
 ### Braucht deine Entscheidung oder Handlung
 

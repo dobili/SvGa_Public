@@ -700,7 +700,7 @@
         },
         {
           "art": "text",
-          "text": " (Aufgabenübersicht), ",
+          "text": " (Aufgabenübersicht, mit Konto), ",
           "stil": "normal"
         },
         {
@@ -754,13 +754,18 @@
           "stil": "normal"
         },
         {
-          "art": "link",
-          "text": "/insights",
-          "ziel": "https://lichess.org/insights"
+          "art": "text",
+          "text": "/insights/",
+          "stil": "normal"
         },
         {
           "art": "text",
-          "text": " (Schach-Einblicke). Ein Konto brauchst du für Studien, die Computer-Analyse, die Aufgabenübersicht, die Schach-Einblicke, Fernschach und die Seite „Einstellungen“ (Blindschach, Zugnotation).",
+          "text": "dein-Name",
+          "stil": "kursiv"
+        },
+        {
+          "art": "text",
+          "text": " (Schach-Einblicke, auch über dein Profil). Ein Konto brauchst du für Studien, die Computer-Analyse, die Aufgabenübersicht, die Schach-Einblicke, Fernschach und die Seite „Einstellungen“ (Blindschach, Zugnotation).",
           "stil": "normal"
         }
       ]
@@ -907,22 +912,22 @@
           },
           {
             "art": "link",
-            "text": "schachtraining.de",
-            "ziel": "https://schachtraining.de"
-          },
-          {
-            "art": "text",
-            "text": " (Taktikaufgaben in drei Stufen), ",
-            "stil": "normal"
-          },
-          {
-            "art": "link",
             "text": "schach-tipps.de",
             "ziel": "https://schach-tipps.de"
           },
           {
             "art": "text",
-            "text": " (Mattaufgaben und Grundlagen) und ",
+            "text": " (Regeln, Grundlagen und Mattaufgaben in einem, zwei und drei Zügen), ",
+            "stil": "normal"
+          },
+          {
+            "art": "link",
+            "text": "schachtraining.de",
+            "ziel": "https://schachtraining.de"
+          },
+          {
+            "art": "text",
+            "text": " (Artikel zu Eröffnung, Mittelspiel und Endspiel) und ",
             "stil": "normal"
           },
           {
@@ -1008,5 +1013,5 @@
     "datei": "kap12_training.tex",
     "zeile": 955
   },
-  "stand": "2026-10-16"
+  "stand": "2026-10-19"
 }

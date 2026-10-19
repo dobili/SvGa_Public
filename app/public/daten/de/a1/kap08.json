@@ -2012,7 +2012,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bauer auf der 4. Reihe, Weiß am Zug. Gold: Die Schlüsselfelder liegen zwei Reihen davor.",
+     "text": "Bauer auf der 4. Reihe, Weiß am Zug. Gold: Die Schlüsselfelder liegen zwei Reihen davor. Die Stellung selbst ist remis, gleich wer am Zug ist: Der schwarze König kommt rechtzeitig vor den Bauern.",
      "stil": "normal"
     }
    ],
@@ -2105,7 +2105,7 @@
     "datei": "kap08_endspiel_fundament.tex",
     "zeile": 417
    },
-   "pruefsumme": "30bc6082d9fba310"
+   "pruefsumme": "2d26bf8927a4ce46"
   },
   {
    "id": "8.26",
@@ -2148,7 +2148,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bauer auf der 5. Reihe, Weiß am Zug. Gold: Die Schlüsselfelder liegen eine und zwei Reihen davor.",
+     "text": "Bauer auf der 5. Reihe, Weiß am Zug. Gold: Die Schlüsselfelder liegen eine und zwei Reihen davor. Auch diese Stellung ist remis: Der schwarze König erreicht die Felder vor dem Bauern, bevor der weiße ein Schlüsselfeld besetzt.",
      "stil": "normal"
     }
    ],
@@ -2289,7 +2289,7 @@
     "datei": "kap08_endspiel_fundament.tex",
     "zeile": 418
    },
-   "pruefsumme": "e01179c6aa312de1"
+   "pruefsumme": "a76a9e3b8df04b07"
   },
   {
    "id": "8.27",

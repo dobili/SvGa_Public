@@ -61,19 +61,6 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 
 ### Neu in 0.2.83 (mit Engine; Genauigkeit und Spielstärke neu geeicht, Opus)
 
-- [ ] N324. **Genauigkeit wie:** Öffne eine ausgewertete Partie. In der Karte „Spielstärke“
-      steht oben „Genauigkeit wie“ mit Fragezeichen und darunter eine Leiste Lichess | App |
-      chess.com (seit 0.2.87 nur noch hier, nicht mehr in den Einstellungen; „App“ hieß vorher
-      „Mittelweg“, „chess.com“ vorher „nahe chess.com“). Das Fragezeichen erklärt die drei
-      Rechnungen. Die erste Zeile heißt „Genauigkeit (App)“. Stelle auf „chess.com“: Bei
-      Partien, die lange entschieden waren, steigt oder sinkt die Zahl; Spielstärke und
-      Urteilswörter bleiben gleich (sie hängen nicht am Schalter).
-- [ ] N325. **Spielstärke mit Spanne:** In derselben Karte steht bei „Geschätzte Spielstärke“
-      etwa „etwa 1550 (1150–1950)“. Darunter „Mitte aus chess.com und Lichess“ mit Fragezeichen:
-      Ein Tipp zeigt beide Werte, etwa „chess.com etwa 1500, Lichess etwa 1550“. Grundlage sind
-      je 300 gewertete Schnellschach-Partien von chess.com und Lichess (alle Bänder von 400 bis
-      2200), mit der Engine der App nachgerechnet; eine einzelne Partie liegt oft 400 Punkte
-      daneben, deshalb die Spanne.
 - [ ] N326. **Deine Spielstärke nach einer Partie:** Spielen, Karte „Deine Spielstärke“ über
       „Letzte Partien“ (den Ablauf hat Claude geprüft). Befund: Nach genau einer Partie zeigte sie
       etwa 900 (500 bis 1300), die Karte „Spielstärke“ derselben Partie aber 1150 (750 bis 1550),
@@ -153,14 +140,6 @@ sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
 
 - [ ] N230. **Kurve je Phase:** Einstellungen › „Deine Wertung“, Reiter Eröffnung, Mittelspiel,
       Endspiel (erst nach gewerteten Partien da): Erkennst du daran, wo Üben am meisten bringt?
-
-### Neu in 0.2.41 (mit Engine; deine Wünsche vom 17.10.2026 nachmittags)
-
-- [ ] N223. **Partienliste:** Spielen › „Deine letzten Partien“: je Partie der König in deiner
-      Farbe (bei zwei Menschen beide Könige), das Ergebnis als „1–0“, „0–1“, „½–½“ (oder
-      „läuft“), in der Zeile der Name des Gegners („Timo“, „Mensch“ oder „Stufe 3“) und, sobald
-      die Auswertung da ist, „du etwa 1400 · Engine etwa 1600“ (bei zwei Menschen „Weiß … ·
-      Schwarz …“; bei kurzen Partien „78 % genau“).
 
 ### Neu in 0.2.37 (AP 13 Übungen und erste Trainer)
 

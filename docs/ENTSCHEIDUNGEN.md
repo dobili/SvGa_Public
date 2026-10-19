@@ -3252,6 +3252,9 @@ mit der echten Engine, wo nötig). Je Punkt, wie geprüft wurde.
 - **N256** (Remis halten): von Claude geprüft am 18.10.2026: Turmendspiel als Schwarz: Brett gedreht, Engine zieht zuerst, „Aufgabe abbrechen“ nennt den besten Zug; nach der Behebung in 0.2.94 mit den Hinweisen bis „Richtig! Zwölf Züge gehalten … Ziel erreicht.“ ausgespielt
 - **N307** (Aufgabenseite): von Claude geprüft am 18.10.2026: langer Druck, Link, Haken, Notiz, „Stand in die Zwischenablage“, „Nur offene Punkte zeigen“, Erhalt nach dem Neuladen gingen; „‹ Zurück zu den Aufgaben“ landete aber oben statt beim Punkt. Behoben in 0.2.94 (auch für Safari); ein Oberflächentest prüft es in Chromium und WebKit
 - **N314** (Sonderzüge aus Kapitel 0 (U5)): von Claude geprüft am 18.10.2026: Sonderzüge an den Buchstellungen 0.12 bis 0.19 (Rochaden, en passant, Umwandlung) kommen; die Abbildung stand nicht dabei, seit 0.2.94 „Aus dem Buch: Abb. 0.14“ usw. unter dem Brett
+- **N223** (Partienliste): von Claude geprüft am 18.10.2026: zu zweit „0–1 · Mensch (beide Seiten selbst) · 2 Züge · Weiß 25 % genau · Schwarz 100 % genau“; gegen Stufe 1 „0–1 · … · Stufe 1 · 12 Züge · du etwa 900 · Engine etwa 900“
+- **N324** (Genauigkeit wie): von Claude geprüft am 18.10.2026: Schalter Lichess | App | chess.com in der Karte, Zeile heißt jeweils „Genauigkeit (…)“; Spielstärken und Urteilswörter blieben beim Umschalten gleich
+- **N325** (Spielstärke mit Spanne): von Claude geprüft am 18.10.2026: „Geschätzte Spielstärke“ mit „etwa 900 (500–1300)“; das Fragezeichen „Erklärung: Spielstärke“ nennt beide Skalen (chess.com etwa …, Lichess etwa …)
 
 ### Teil 1: durch spätere Versionen überholte Punkte (gelöscht)
 

@@ -8,12 +8,13 @@
  * (engine/eloleiter.ts, Messlauf engine/botstaerke.messung.ts) und stehen in
  * engine/botstaerke-daten.ts. Eigene Stufen und eigene Bots wurden nie gemessen; ihre Zahl wird
  * aus den drei Stufen je Phase geschätzt. An der Überschrift einer Stufe steht der Bereich ihrer
- * acht Bots (Vorschlag des Autors, 18.10.2026: Bereiche mit leichten Überschneidungen); die Zahl
+ * acht Bots (Vorschlag des Autors, 18.10.2026; seit 0.2.109 ohne Überschneidungen); die Zahl
  * der reinen Stufe dient der Schätzung eigener Stufen.
- * Abhängigkeiten: engine/botstaerke-daten.ts, engine/gegnerliste.ts, engine/stufen.ts (Typ),
+ * Abhängigkeiten: engine/botgruppe.ts, engine/botstaerke-daten.ts, engine/gegnerliste.ts, engine/stufen.ts (Typ),
  * schach/phase.ts (Typ).
  */
 import type { Phase } from "../schach/phase";
+import { gruppeDesBots } from "./botgruppe";
 import { BOT_STAERKE, STUFEN_STAERKE } from "./botstaerke-daten";
 import { GEGNER } from "./gegnerliste";
 import type { Stufennummer } from "./stufen";
@@ -58,7 +59,7 @@ export function staerkeDesBots(kennung: string | null): number | null {
  * Beispiel: 3 · 4 · 3 → ein Drittel des Wegs von Stufe 3 zu Stufe 4.
  */
 export function staerkeAusStufen(stufen: Readonly<Record<Phase, Stufennummer>>): number {
-  const mittel = (stufen.eroeffnung + stufen.mittelspiel + stufen.endspiel) / PHASEN_ZAHL;
+  const mittel = mittelDerStufen(stufen);
   const unten = Math.max(ERSTE_STUFE, Math.min(LETZTE_STUFE, Math.floor(mittel))) as Stufennummer;
   const oben = Math.min(LETZTE_STUFE, unten + 1) as Stufennummer;
   const anteil = mittel - unten;
@@ -87,22 +88,24 @@ export function staerkeangabe(wert: number): Staerkeangabe {
   return { art: "etwa", wert: Math.round(wert / RUNDUNG) * RUNDUNG };
 }
 
-/** Die Stufe eines vorgefertigten Bots: gerundeter Durchschnitt seiner Stufen je Phase. */
-function stufeVon(stufen: Readonly<Record<Phase, Stufennummer>>): number {
-  return Math.round((stufen.eroeffnung + stufen.mittelspiel + stufen.endspiel) / PHASEN_ZAHL);
+/** Durchschnitt der Stufen je Phase eines Bots (seine Gruppe: engine/botgruppe.ts). */
+function mittelDerStufen(stufen: Readonly<Record<Phase, Stufennummer>>): number {
+  return (stufen.eroeffnung + stufen.mittelspiel + stufen.endspiel) / PHASEN_ZAHL;
 }
 
 /**
  * Der Bereich einer Stufe: kleinste und größte Zahl ihrer acht vorgefertigten Bots (ohne
- * gemessene Bots die Zahl der reinen Stufe für beide Enden). Benachbarte Stufen dürfen sich
- * überschneiden, denn die Bots einer Stufe streuen.
- * Beispiel: Stufe 1 mit Bots von 1042 (Oma Gerda) bis 1301 (Leon) → { von: 1042, bis: 1301 }.
+ * gemessene Bots die Zahl der reinen Stufe für beide Enden). Seit 0.2.109 überschneiden sich
+ * benachbarte Stufen nicht mehr (acht Bots in der Nachbargruppe, engine/botgruppe.ts).
+ * Beispiel: Stufe 1 mit Bots von 830 (Oma Gerda) bis 1089 (Leon) → { von: 830, bis: 1089 }.
  */
 export function bereichDerStufe(nummer: Stufennummer): {
   readonly von: number;
   readonly bis: number;
 } {
-  const bots = GEGNER.filter((g) => !g.zufallszuege && stufeVon(g.stufenJePhase) === nummer);
+  const bots = GEGNER.filter(
+    (g) => !g.zufallszuege && gruppeDesBots(g.kennung, mittelDerStufen(g.stufenJePhase)) === nummer,
+  );
   const werte = gemesseneZahlen(bots);
   if (werte.length === 0) return { von: STUFEN_STAERKE[nummer], bis: STUFEN_STAERKE[nummer] };
   return { von: Math.min(...werte), bis: Math.max(...werte) };

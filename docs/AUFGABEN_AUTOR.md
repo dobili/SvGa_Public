@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.108. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.109. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.108“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.109“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,16 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.109 (etwa 3 Minuten; Bot-Gruppen ohne Überschneidung, dein Wunsch vom 19.10.2026, Opus)
+
+- [ ] N585. **Bereiche der Stufen:** Spielen › „Vorgefertigte Bots“, alle Stufen aufklappen. Die
+      Bereiche an den Überschriften schließen jetzt aneinander an, ohne sich zu überschneiden:
+      Stufe 3 etwa 1650 bis 1800, Stufe 4 etwa 1800 bis 1950, Stufe 6 etwa 2200 bis 2450, Stufe 7
+      etwa 2450 bis 2750, Stufe 8 etwa 2800 bis 3000. Dafür stehen acht Bots in der Nachbargruppe:
+      Jan und Lukas jetzt in Stufe 3, Omar und Selin in Stufe 4, Trainer Koch in Stufe 6, Lena und
+      GM Petrova in Stufe 7, Doktor Berg in Stufe 8. Wie sie spielen, ist unverändert; jede Stufe
+      hat weiter acht Bots. Passt die Einordnung?
 
 ### Neu in 0.2.106 (etwa 10 Minuten; Farbabstimmung hell und dunkel, von dir freigegeben am 19.10.2026, Opus)
 

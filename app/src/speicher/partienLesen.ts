@@ -11,6 +11,7 @@ import type { Color } from "chessops/types";
 import { BLINDE_FEHLERARTEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import { STIL_MAX, STIL_MIN } from "../engine/stil";
+import { besiegtAus } from "./besiegt";
 import { blindeFleckenAus, eigeneGegnerAus, fehlerartenAus } from "./gegner";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
@@ -282,11 +283,16 @@ export function spielstandAus(roh: unknown): Spielstand {
   if (!istObjekt(roh)) return LEERER_SPIELSTAND;
   const partien = Array.isArray(roh.partien) ? roh.partien.map(eintragAus) : [];
   const wertung = Array.isArray(roh.wertung) ? roh.wertung.map(wertungspunktAus) : [];
+  const gueltige = partien.filter((e): e is Partieeintrag => e !== null).slice(0, MAX_PARTIEN);
   return {
     laufend: partieAus(roh.laufend),
-    partien: partien.filter((e): e is Partieeintrag => e !== null).slice(0, MAX_PARTIEN),
+    partien: gueltige,
     vorlieben: vorliebenAus(roh.vorlieben),
     wertung: wertung.filter((w): w is Wertungspunkt => w !== null).slice(-MAX_WERTUNGSPUNKTE),
     eigeneGegner: eigeneGegnerAus(roh.eigeneGegner),
+    besiegt: besiegtAus(
+      roh.besiegt,
+      gueltige.map((e) => e.partie),
+    ),
   };
 }

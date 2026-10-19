@@ -17,6 +17,7 @@ import { FEHLERARTEN, type Fehlerart } from "./fehlerart";
 import type { Phase } from "../schach/phase";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
 import { GEGNER, type Gegner } from "./gegnerliste";
+import type { Portraetkennung } from "./portraetwahl";
 export { GEGNER, type Gegner } from "./gegnerliste";
 
 /** Durchschnitt der drei Stufen, eine Nachkommastelle. Beispiel: Timo (5, 4, 3) → 4. */
@@ -49,6 +50,8 @@ export interface EigenerGegner {
   readonly stil: number;
   /** Zugarten, die der Gegner nicht sieht (0.2.46). */
   readonly blindeFlecken: readonly BlinderFleck[];
+  /** Porträt aus der Liste zur Wahl (0.2.99, engine/portraetwahl.ts); fehlt bei älteren Gegnern. */
+  readonly portraet?: Portraetkennung;
 }
 
 /** Vorsilbe der Kennungen eigener Gegner (unterscheidet sie von den vorgefertigten). */

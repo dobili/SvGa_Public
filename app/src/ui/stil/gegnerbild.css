@@ -1,0 +1,116 @@
+/*
+ * Gegnerbild mit Stern für besiegte Bots, Porträt zur Wahl für eigene Bots, Porträt in der
+ * Partienliste (0.2.99, Wunsch des Autors vom 19.10.2026). Eigene Datei, weil spiel.css schon
+ * lang ist. Farben und Abstände aus basis.css.
+ */
+/* Hülle um Porträt oder Anfangsbuchstaben; der Stern sitzt unten rechts darauf. */
+.gegnerbild {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.gegnerbild > .gegner-portraet {
+  display: flex;
+}
+
+/* Stern für „schon gewertet besiegt“: gold auf Navy wie der Stern gewerteter Partien. */
+.gegner-besiegt {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  color: var(--gold);
+  box-shadow: 0 0 0 2px var(--flaeche);
+}
+
+.gegner-besiegt svg {
+  fill: currentColor;
+}
+
+.gegner-sprechblase > .gegnerbild,
+.gegnerzeile-kopf > .gegnerbild,
+.portraetwahl > .gegnerbild,
+.partiezeile > .gegnerbild {
+  flex: none;
+}
+
+.gegner-sprechblase > .gegnerbild {
+  width: 64px;
+}
+
+.gegnerzeile-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-width: 0;
+}
+
+.gegnerzeile-kopf > .gegnerbild,
+.partiezeile > .gegnerbild {
+  width: 36px;
+}
+
+.gegnerzeile-kopf .gegner-zeichen,
+.partiezeile .gegner-zeichen {
+  font-size: var(--groesse-grund);
+}
+
+/* Auswahl im Editor: links das gewählte Bild, rechts Beschriftung und Menü. */
+.portraetwahl {
+  display: flex;
+  align-items: flex-end;
+  gap: calc(var(--raster) * 1.5);
+}
+
+.portraetwahl > .gegnerbild {
+  width: 64px;
+}
+
+.portraetwahl-feld {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
+}
+
+/* Partienliste: Zeile mit Papierkorb rechts; die Nachfrage beim Löschen nimmt eine eigene Zeile. */
+.partieeintrag {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border-bottom: 1px solid var(--linie);
+}
+
+.partieeintrag > .partiezeile {
+  flex: 1;
+  min-width: 0;
+  border-bottom: none;
+}
+
+.partie-loeschen {
+  flex: none;
+  color: var(--text-leise);
+}
+
+.partie-nachfrage {
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--raster);
+  padding: 0 calc(var(--raster) * 2) var(--raster);
+}
+
+.partienfilter {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}

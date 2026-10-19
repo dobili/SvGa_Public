@@ -9,6 +9,7 @@
 import { BLINDE_FLECKEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
+import { istPortraetwahl } from "../engine/portraetwahl";
 import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../engine/stil";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
@@ -69,6 +70,8 @@ export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
     fehlerarten: fehlerartenAus(roh.fehlerarten),
     stil: stilAus(roh.stil),
     blindeFlecken: blindeFleckenAus(roh.blindeFlecken),
+    // Porträt nur aus der Liste zur Wahl (0.2.99); ältere Gegner und Unbekanntes ohne Porträt.
+    ...(istPortraetwahl(roh.portraet) ? { portraet: roh.portraet } : {}),
   };
 }
 

@@ -30,7 +30,8 @@ import type { Phase } from "../../schach/phase";
 import type { Gegnerart, Spielhilfen } from "../../spiel/partie";
 import { Auswahl } from "./Auswahl";
 import type { Gegnerkategorie } from "./gegnerkategorie";
-import { portraet } from "./gegnerportraet";
+import { useSpeicher } from "../../speicher/speicher";
+import { GegnerBild } from "./GegnerBild";
 import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { MitInfo } from "./InfoKnopf";
 import { staerketext } from "./staerkeangabe";
@@ -88,6 +89,7 @@ function Sprechblase({
   const vorgefertigt = gegnerVon(bot);
   const eigener = eigene.find((g) => g.kennung === bot) ?? null;
   const name = vorgefertigt?.name ?? eigener?.name ?? t("spielen.bot.eigene");
+  const besiegt = useSpeicher((z) => (bot ? z.daten.spiel.besiegt.includes(bot) : false));
   const text = vorgefertigt
     ? t(vorgefertigt.beschreibung)
     : eigener
@@ -95,11 +97,11 @@ function Sprechblase({
       : t("spielen.bot.eigeneText");
   return (
     <div className="gegner-sprechblase" data-testid="gegner-sprechblase">
-      {vorgefertigt ? (
-        <img className="gegner-portraet" src={portraet(vorgefertigt.kennung)} alt="" />
+      {vorgefertigt || eigener ? (
+        <GegnerBild bot={bot} eigene={eigene} name={name} besiegt={besiegt} />
       ) : (
         <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
-          {eigener ? eigener.name.slice(0, 1) : <SlidersHorizontal size={28} />}
+          <SlidersHorizontal size={28} />
         </span>
       )}
       <div className="gegner-blase">
@@ -122,7 +124,7 @@ function Sprechblase({
   );
 }
 
-/** Die eigenen Gegner des Lesers als Kacheln mit dem Anfangsbuchstaben. */
+/** Die eigenen Gegner des Lesers als Kacheln mit Porträt oder Anfangsbuchstaben. */
 function EigeneGitter({
   bot,
   eigene,
@@ -132,6 +134,7 @@ function EigeneGitter({
   eigene: readonly EigenerGegner[];
   beiBot: (bot: string | null) => void;
 }) {
+  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
   if (eigene.length === 0) return null;
   return (
     <div role="radiogroup" aria-label={t("spielen.eigene.titel")} className="gegnergitter">
@@ -142,9 +145,12 @@ function EigeneGitter({
           gewaehlt={bot === g.kennung}
           beiWahl={() => beiBot(g.kennung)}
           kinder={
-            <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
-              {g.name.slice(0, 1)}
-            </span>
+            <GegnerBild
+              bot={g.kennung}
+              eigene={eigene}
+              name={g.name}
+              besiegt={besiegt.includes(g.kennung)}
+            />
           }
         />
       ))}

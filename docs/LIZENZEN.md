@@ -13,7 +13,7 @@
 | Source Sans 3, Source Serif 4 (Adobe)                                                                                  | SIL Open Font License 1.1           | `app/public/lizenzen/ofl-*.txt`                               |
 | Holzbilder der Bretts „Ahorn & Nussbaum“ (ambientCG, Wood095 und Wood026)                                                      | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft unter Hinweise)                  |
 | Materialbretter Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (Lichess, `app/public/bretter/`, seit 0.2.84) | GNU AGPL 3.0 oder neuer | `app/public/lizenzen/agpl-3.0.txt`; `pipeline/bretter/LIZENZEN.md` |
-| Porträts der vorgefertigten Gegner (`app/public/gegner/`, Stil „Personas“ von Draftbit, erzeugt mit DiceBear)          | CC BY 4.0 (Zeichnungen), MIT (Code) | `app/public/lizenzen/cc-by-4.0.txt`                           |
+| Porträts der Gegner und zur Wahl für eigene Bots (`app/public/gegner/`, Stil „Personas“ von Draftbit, erzeugt mit DiceBear)          | CC BY 4.0 (Zeichnungen), MIT (Code) | `app/public/lizenzen/cc-by-4.0.txt`                           |
 | Eröffnungsnamen (Lichess chess-openings, `inhalte/lichess/`)                                                           | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft in `inhalte/lichess/README.md`)  |
 | React, Vite, Workbox, vite-plugin-pwa                                                                                  | MIT                                 | in den npm-Paketen                                            |
 | Lucide-Symbole                                                                                                         | ISC                                 | im npm-Paket `lucide-react`                                   |
@@ -51,6 +51,8 @@
   Namensnennung steht in der App unter Einstellungen → Lizenzen; der Lizenztext liegt in
   `app/public/lizenzen/cc-by-4.0.txt`. Die Pakete sind keine Abhängigkeit der App (nur zum
   Erzeugen, `npm install --no-save`).
+  Seit 0.2.99 dazu 30 Porträts zur Wahl für eigene Bots (`wahl-01.svg` bis `wahl-30.svg`, erzeugt
+  mit `app/skripte/erzeuge-portraetwahl.mjs`, gleiche Herkunft und Lizenz).
 - **Materialbretter (seit 0.2.84, Auswahl des Autors vom 18.10.2026):** drei ganze Brettbilder aus
   dem Lichess-Repository `lichess-org/lila` (`public/images/board/maple2.jpg`, `wood4.jpg`,
   `marble.jpg`), Urheber „the lila authors and pirouetti“, AGPLv3 oder neuer. Die Originale liegen

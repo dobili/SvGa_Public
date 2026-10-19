@@ -18,7 +18,9 @@ import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
 import { gegnerDerStufe, spassbots, type Gegner } from "../../engine/gegner";
 import { stufe } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
-import { offeneStufenAnfangs, portraet, SPASSGRUPPE, STUFENNUMMERN } from "./gegnerportraet";
+import { useSpeicher } from "../../speicher/speicher";
+import { GegnerBild } from "./GegnerBild";
+import { offeneStufenAnfangs, SPASSGRUPPE, STUFENNUMMERN } from "./gegnerportraet";
 import { bereichstext, spassbereichstext, staerketext } from "./staerkeangabe";
 
 /** Merker der offenen Stufen, als Liste der Nummern („1,3“). */
@@ -64,6 +66,8 @@ export function VorgefertigteGitter({
   beiBot: (bot: string | null) => void;
 }) {
   const [offen, setzeOffen] = useState(() => offeneStufenAnfangs(liesMerker(MERKER_OFFEN), bot));
+  // Stern an Bots, die der Leser schon gewertet besiegt hat (0.2.99, Wunsch des Autors).
+  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
   const umschalten = (nummer: number, jetztOffen: boolean) => {
     const neu = new Set(offen);
     if (jetztOffen) neu.add(nummer);
@@ -95,7 +99,14 @@ export function VorgefertigteGitter({
                 )}
                 gewaehlt={bot === g.kennung}
                 beiWahl={() => beiBot(g.kennung)}
-                kinder={<img className="gegner-portraet" src={portraet(g.kennung)} alt="" />}
+                kinder={
+                  <GegnerBild
+                    bot={g.kennung}
+                    eigene={[]}
+                    name={g.name}
+                    besiegt={besiegt.includes(g.kennung)}
+                  />
+                }
               />
             ))}
           </div>

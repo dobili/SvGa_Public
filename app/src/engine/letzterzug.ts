@@ -27,6 +27,13 @@ export interface LetzterZugUrteil {
   readonly zeichen: Letztzeichen | null;
   /** Verlust gegenüber dem besten Zug in Bauerneinheiten, aus Sicht der ziehenden Seite. */
   readonly verlust: number;
+  /**
+   * Wert des besten Zuges und des gespielten Zuges in Bauerneinheiten, aus Sicht der ziehenden
+   * Seite (begrenzt). Seit 0.2.91 nennt die Engine-Karte daraus die Gewinnchance vorher und
+   * nachher, wie der Rückblick nach der Partie.
+   */
+  readonly besterWert: number;
+  readonly gespielterWert: number;
   /** Bester Zug laut Engine (UCI) oder null. */
   readonly besterZug: string | null;
   readonly warBester: boolean;
@@ -93,6 +100,8 @@ export function urteilUeberLetztenZug(
   return {
     zeichen: einziger ? "!" : zeichenFuer(verlust, gespielterWert),
     verlust,
+    besterWert: sicht(beste),
+    gespielterWert,
     besterZug: beste.zuege[0] ?? null,
     warBester,
   };

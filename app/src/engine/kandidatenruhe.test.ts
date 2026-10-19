@@ -3,32 +3,12 @@
  * Fortsetzung (ohne Engine) und mit der echten Engine (Stockfish lite, ein Kern).
  * 1. Te8+ verliert den Turm, 2. Th8+ Kxh8 Sxf7+ Kg8 Sxd6 gewinnt die Dame (+5).
  */
-import { createRequire } from "node:module";
 import { afterAll, describe, expect, it } from "vitest";
 import { abbildung } from "../schach/buchabbildungen.testhilfe";
-import { EngineDienst, type Bewertung, type Kanal } from "./engineDienst";
+import type { Bewertung } from "./engineDienst";
 import { kandidatenwert, rechneKandidatenruhe } from "./kandidatenruhe";
+import { festeTiefe, nodeEngine, ZEIT_UNBEACHTET_MS } from "./nodeEngine.testhilfe";
 import type { Bewerter } from "./ruhe";
-
-interface NodeEngine {
-  processCommand(befehl: string): void;
-  terminate(): void;
-}
-type EngineFabrik = (art: string, beiZeile: (zeile: string) => void) => NodeEngine;
-const benoetige = createRequire(import.meta.url);
-const ladeEngine = benoetige("stockfish") as EngineFabrik;
-
-function nodeKanal(): Kanal {
-  let empfaenger: (zeile: string) => void = () => undefined;
-  const sf = ladeEngine("lite-single", (zeile) => empfaenger(zeile));
-  return {
-    senden: (befehl) => sf.processCommand(befehl),
-    beiZeile: (neu) => {
-      empfaenger = neu;
-    },
-    beenden: () => sf.terminate(),
-  };
-}
 
 /** Ein Bewerter, der nach dem Kandidaten eine feste Fortsetzung mit festem Wert liefert. */
 function feste(zuege: string[], bauern: number): Bewerter {
@@ -48,9 +28,8 @@ function feste(zuege: string[], bauern: number): Bewerter {
 }
 
 const FEN_7_14 = abbildung("7.14").fen;
-const RECHENZEIT_MS = 800;
 const TESTFRIST_MS = 60_000;
-/** Ein Bauer Unterschied liegt bei begrenzter Rechenzeit im Rahmen der Engine. */
+/** Ein Bauer Unterschied liegt bei begrenzter Suchtiefe im Rahmen der Engine. */
 const HOECHSTENS_EIN_BAUER = 1;
 
 describe("Kandidat bis zur Ruhe mit fester Fortsetzung (Abb. 7.14)", () => {
@@ -84,14 +63,16 @@ describe("Kandidat bis zur Ruhe mit fester Fortsetzung (Abb. 7.14)", () => {
 });
 
 describe("Kandidaten bis zur Ruhe mit Stockfish (Abb. 7.14)", () => {
-  const dienst = new EngineDienst(nodeKanal);
+  const dienst = nodeEngine();
   afterAll(() => dienst.beendeEngine());
+  // Feste Tiefe statt fester Zeit: gleiches Ergebnis auf jedem Rechner (nodeEngine.testhilfe.ts).
+  const bewerter = festeTiefe(dienst);
 
   it(
     "Th8+ gewinnt die Dame und ist stärker als Te8+, das nichts gewinnt",
     async () => {
-      const th8 = await rechneKandidatenruhe(dienst, FEN_7_14, "h1h8", RECHENZEIT_MS);
-      const te8 = await rechneKandidatenruhe(dienst, FEN_7_14, "e1e8", RECHENZEIT_MS);
+      const th8 = await rechneKandidatenruhe(bewerter, FEN_7_14, "h1h8", ZEIT_UNBEACHTET_MS);
+      const te8 = await rechneKandidatenruhe(bewerter, FEN_7_14, "e1e8", ZEIT_UNBEACHTET_MS);
       expect(th8?.bilanz ?? 0).toBeGreaterThan(0);
       expect(th8?.figur).toBe("queen");
       // Te8+ Txe8 holt sich die Engine über Th8+ und die Gabel zurück, gewinnt aber nichts

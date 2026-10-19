@@ -40,7 +40,9 @@ describe("Erklärung im Rückblick", () => {
 
   it("Dd6?? stellt die Dame in die Springergabel: Pfeil g5–f7, Ziele h8 und d6", () => {
     const e = erklaereZug(GABEL, danach(GABEL, "a6d6"), "a6d6", "g5f7", 9);
-    expect(e?.text).toBe("übersieht die Gabel: Springer g5 nach f7 trifft d6, h8.");
+    expect(e?.text).toBe(
+      "übersieht die Gabel: Springer g5 nach f7 trifft König h8 und Dame d6. Der König muss ziehen, Dame d6 geht verloren.",
+    );
     expect(e?.marken).toContainEqual({ typ: "pfeil", farbe: "rot", von: "g5", nach: "f7" });
     expect(e?.marken).toContainEqual({ typ: "feld", farbe: "rot", feld: "d6" });
   });

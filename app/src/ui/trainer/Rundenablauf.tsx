@@ -30,7 +30,7 @@ export function Rundenablauf({
   const aktuelle = aufgaben[runde.index];
   if (!aktuelle) return <p className="hinweis">{t("trainer.keineAufgaben")}</p>;
   return (
-    <Rundenrahmen runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl}>
+    <Rundenrahmen kennung={kennung} runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl}>
       <div key={runde.index} className="trainer-aufgabe">
         {aktuelle(runde)}
       </div>

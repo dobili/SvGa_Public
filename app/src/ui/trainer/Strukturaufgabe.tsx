@@ -18,9 +18,11 @@ import { planwahl, schwacheBauern, starkeFelder, type Plan } from "../../trainin
 import { pruefeFelder } from "../../training/zaehltrainer";
 import { ZUFALL } from "../../training/zufall";
 import { abgleichsfelder, umschalten } from "./abgleich";
+import { antworteMitKarte } from "./kartenantwort";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
+import { useSammelstellung } from "./sammelstellung";
 
 type Vergleich = ReturnType<typeof pruefeFelder>;
 
@@ -100,7 +102,7 @@ function Planwahl({
   const waehle = (plan: Plan) => {
     if (gewaehlt) return;
     setzeGewaehlt(plan);
-    runde.beantworte(vorher && plan === aufgabe.plan);
+    antworteMitKarte(runde, "struktur", aufgabe.id, vorher && plan === aufgabe.plan);
   };
   const text = `${auftrag} ${t("strukturtrainer.planFrage", { farbe })}`;
   return (
@@ -131,6 +133,7 @@ function Planwahl({
 }
 
 export function Strukturaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+  useSammelstellung(aufgabe.fen);
   const [felder] = useState(() => starkeFelder(aufgabe));
   const [vergleichFelder, setzeVergleichFelder] = useState<Vergleich | null>(null);
   const [vergleichBauern, setzeVergleichBauern] = useState<Vergleich | null>(null);

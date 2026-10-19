@@ -13,7 +13,7 @@ import {
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
 function urteil(zeichen: LetzterZugUrteil["zeichen"], warBester = false): LetzterZugUrteil {
-  return { zeichen, verlust: 0, besterZug: null, warBester };
+  return { zeichen, verlust: 0, besterWert: 0, gespielterWert: 0, besterZug: null, warBester };
 }
 
 function eigenes(zeichen: LetzterZugUrteil["zeichen"]): EigenesUrteil {

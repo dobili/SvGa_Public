@@ -13,10 +13,9 @@ import {
   mitLaufender,
   mitPartie,
   mitWerten,
-  partieAus,
   setzeWertungZurueck,
-  spielstandAus,
 } from "./partien";
+import { partieAus, spielstandAus } from "./partienLesen";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 const JETZT = new Date("2026-10-15T10:00:00.000Z");

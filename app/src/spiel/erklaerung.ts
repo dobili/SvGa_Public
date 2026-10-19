@@ -13,7 +13,7 @@
  * Abhängigkeiten: engine/fehlerart.ts, analyse/texte.ts, schach/, i18n.
  */
 import { makeSquare, parseSquare } from "chessops/util";
-import { figurenname, figurImWenfall, schlagtext, zugtext } from "../analyse/texte";
+import { aufzaehlung, figurenname, figurImWenfall, schlagtext, zugtext } from "../analyse/texte";
 import type { Markierung } from "../analyse/werkzeug";
 import { fehlerbefundIn, lageVon, type Fehlerbefund, type Taktikbefund } from "../engine/fehlerart";
 import { t, type Textschluessel } from "../i18n/sprache";
@@ -66,11 +66,7 @@ function taktik(befund: Taktikbefund, danachFen: string, antwort: string): Zuger
   if (befund.art === "gabel") {
     const { gabel } = befund;
     return {
-      text: t("erklaerung.gabel", {
-        figur: figurenname(gabel.figur),
-        feld: feldname(gabel.feld),
-        ziele: gabel.ziele.map(feldname).join(", "),
-      }),
+      text: gabelsatz(gabel, danachFen),
       marken: [
         { typ: "pfeil", farbe: "rot", von: feldname(gabel.figur.feld), nach: feldname(gabel.feld) },
         ...gabel.ziele.map((z): Markierung => ({ typ: "feld", farbe: "rot", feld: feldname(z) })),
@@ -96,10 +92,43 @@ function taktik(befund: Taktikbefund, danachFen: string, antwort: string): Zuger
     };
   }
   const zug = antworttext(danachFen, antwort);
+  const motiv = t(`motiv.name.${befund.motiv}`);
+  const geschlagen = geschlageneFigur(danachFen, antwort);
   return {
-    text: t("erklaerung.motiv", { motiv: t(`motiv.name.${befund.motiv}`), zug }),
+    text: geschlagen
+      ? t("erklaerung.motivSchlag", { motiv, zug, figur: geschlagen })
+      : t("erklaerung.motiv", { motiv, zug }),
     marken: antwort ? [pfeil(antwort)] : [],
   };
+}
+
+/**
+ * Die Figur, die die Antwort (UCI) in der Stellung nach dem Fehlzug schlägt, als „Turm a8“, oder
+ * null, wenn sie nichts schlägt. Seit 0.2.91: Der Satz zum Motiv nennt so, was verloren geht.
+ */
+function geschlageneFigur(danachFen: string, antwort: string): string | null {
+  const ziel = parseSquare(antwort.slice(FELDLAENGE, 2 * FELDLAENGE));
+  if (!antwort || ziel === undefined) return null;
+  return regelstellung(danachFen)?.board.get(ziel) ? figurAuf(danachFen, ziel) : null;
+}
+
+/**
+ * Der Satz zur Gabel mit den Namen der getroffenen Figuren (seit 0.2.91). Steht der König unter
+ * den Zielen, muss er ziehen, und die andere Figur geht verloren (Kapitel 7, Motiv 1).
+ * Beispiel: Sf7 trifft Dame d6 und König h8 → „…trifft König h8 und Dame d6: Der König muss
+ * ziehen, Dame d6 geht verloren.“
+ */
+function gabelsatz(gabel: Extract<Taktikbefund, { art: "gabel" }>["gabel"], danachFen: string) {
+  const brett = regelstellung(danachFen)?.board;
+  const istKoenig = (z: number) => brett?.get(z)?.role === "king";
+  const koenig = gabel.ziele.filter(istKoenig);
+  const andere = gabel.ziele.filter((z) => !istKoenig(z)).map((z) => figurAuf(danachFen, z));
+  const werte = { figur: figurenname(gabel.figur), feld: feldname(gabel.feld) };
+  if (koenig.length > 0 && andere.length > 0) {
+    const ziele = aufzaehlung([...koenig.map((z) => figurAuf(danachFen, z)), ...andere]);
+    return t("erklaerung.gabelSchach", { ...werte, ziele, verlust: aufzaehlung(andere) });
+  }
+  return t("erklaerung.gabel", { ...werte, ziele: aufzaehlung(andere) });
 }
 
 /** Die Figur auf einem Feld der Stellung nach dem Zug, als „Springer f6“. */

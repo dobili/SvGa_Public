@@ -3,11 +3,13 @@
  *
  * Rolle im Gesamtbild: Startseite des Bereichs (Konzept 10.1). Alle Trainer stehen von Anfang an
  * im Menü, unter genau den Namen, die später in den Trainingskästen des Buches stehen
- * (Pflichtenheft 7); unfertige tragen „folgt mit einem Update“. Ein Tipp zeigt den Ablauf.
+ * (Pflichtenheft 7); seit 0.2.71 sind alle spielbar (die Plakette „folgt mit einem Update“
+ * bleibt nur für künftige Trainer). Ein Tipp zeigt den Ablauf.
  * Seit 16.10.2026 führt je Kapitel ein Link zur Trainingsseite der Website (/training/kapNN/),
  * dem früheren Kasten „Training zu diesem Kapitel“ des Buches; sie ist offline vorhanden.
  * Seit 0.2.85 (Wunsch des Autors: viel Text) je Kapitel eine Karte mit Nummer, die Trainer als
  * Zeilen mit Symbol (Trainerkarte.tsx), Erklärungen hinter dem Fragezeichen.
+ * Seit 0.2.93 führt die Karte „Lernsammlung“ zu den eigenen Stellungen (Kapitel 12, AP 15).
  * Abhängigkeiten: training/trainer.ts, daten/laden.ts, Navigation, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";
@@ -15,7 +17,8 @@ import { ladeIndex } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { TRAINER, trainerZuKapitel } from "../../training/trainer";
 import { kapiteladresse } from "../../startseite/trainingsseiten";
-import { ExternalLink, Globe } from "lucide-react";
+import { BookmarkPlus, ExternalLink, Globe } from "lucide-react";
+import { useSpeicher } from "../../speicher/speicher";
 import { FaelligeWiederholungen } from "../komponenten/FaelligeWiederholungen";
 import { Trainerkarte } from "../komponenten/Trainerkarte";
 import { MitInfo } from "../komponenten/InfoKnopf";
@@ -66,6 +69,29 @@ function JeKapitel() {
   );
 }
 
+/** Karte „Lernsammlung“ mit der Zahl der Stellungen und dem Weg dorthin. */
+function SammelKarte() {
+  const { navigiere } = useNavigation();
+  const anzahl = useSpeicher((z) => z.daten.sammlung.length);
+  return (
+    <section className="karte" data-testid="sammelkarte">
+      <h2 className="karte-titel mit-symbol">
+        <BookmarkPlus size={LINKSYMBOL} aria-hidden="true" /> {t("sammlung.titel")}
+      </h2>
+      <p className="hinweis">
+        {anzahl === 0 ? t("sammlung.karteLeer") : t("sammlung.karte", { anzahl })}
+      </p>
+      <button
+        type="button"
+        className="knopf-zweit"
+        onClick={() => navigiere({ bildschirm: "lernsammlung" })}
+      >
+        {t("sammlung.oeffnen")}
+      </button>
+    </section>
+  );
+}
+
 export function Training() {
   return (
     <div className="bildschirm">
@@ -76,6 +102,7 @@ export function Training() {
         <h2 className="karte-titel">{t("training.faellig")}</h2>
         <FaelligeWiederholungen />
       </section>
+      <SammelKarte />
       <section className="karte">
         <MitInfo
           zeile={

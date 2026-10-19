@@ -4,8 +4,10 @@
  * Rolle im Gesamtbild: Pflichtenheft 6.2, „Falle oder Köder“: Die Engine vergleicht „Material
  * nehmen“ mit dem besten anderen Zug. Die Rechnung dauert einige Sekunden und läuft deshalb hier
  * und nicht im Werkzeug selbst. Ist das Urteil da, meldet die Karte die Pfeile fürs Brett: Rot der
- * Fehlzug, Gold die Rettung.
- * Abhängigkeiten: engine/fallenpruefung.ts, engine/engineDienst.ts, schach/notation.ts, i18n.
+ * Fehlzug, Gold die Rettung. Seit 0.2.91 nennt der Satz die Gewinnchance nach dem Schlag und
+ * nach der Rettung (wie der Rückblick nach der Partie) statt der Bauerneinheiten.
+ * Abhängigkeiten: engine/fallenpruefung.ts, engine/fallenurteil.ts, engine/engineDienst.ts,
+ * spiel/genauigkeit.ts, schach/notation.ts, i18n.
  */
 import type { Color } from "chessops/types";
 import { useEffect, useState } from "react";
@@ -13,10 +15,12 @@ import type { Angebot } from "../../analyse/k4-falle";
 import type { Markierung } from "../../analyse/werkzeug";
 import { AuftragAbgebrochen, engine, STANDARD_RECHENZEIT_MS } from "../../engine/engineDienst";
 import { pruefeFalle, type Fallenpruefung } from "../../engine/fallenpruefung";
+import { wertFuer } from "../../engine/fallenurteil";
 import { wertAlsZahl } from "../../engine/wertInWorten";
 import { sprache, t } from "../../i18n/sprache";
 import { sanInSprache, zugfolgeAlsText } from "../../schach/notation";
 import type { Stellung } from "../../schach/stellung";
+import { gewinnwahrscheinlichkeit } from "../../spiel/genauigkeit";
 
 /** So viele Halbzüge der Folge nach dem Schlag zeigt die Karte (Pflichtenheft 6.2, F2: vier). */
 const HALBZUEGE_FOLGE = 4;
@@ -57,8 +61,15 @@ function urteilssatz(p: Fallenpruefung, zug: string, rettung: string, farbe: Col
   const mattGegenSich =
     wert.art === "matt" && (farbe === "white" ? wert.zuege < 0 : wert.zuege > 0);
   if (mattGegenSich) return t("falle.engine.matt", { zug, rettung });
-  const verlust = p.urteil.verlust.toFixed(1).replace(".", ",");
-  return t("falle.engine.falle", { zug, rettung, verlust });
+  const prozent = (w: number) => String(Math.round(gewinnwahrscheinlichkeit(w)));
+  const nachher = prozent(wertFuer(wert, farbe));
+  const vorher = p.rettung ? prozent(wertFuer(p.rettung.wert, farbe)) : nachher;
+  if (vorher === nachher) {
+    const verlust = p.urteil.verlust.toFixed(1).replace(".", ",");
+    return t("falle.engine.falleBauern", { zug, rettung, verlust });
+  }
+  const seite = t(farbe === "white" ? "farbe.w" : "farbe.b");
+  return t("falle.engine.falle", { zug, rettung, seite, vorher, nachher });
 }
 
 function Urteil({

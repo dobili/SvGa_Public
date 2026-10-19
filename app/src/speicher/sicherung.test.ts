@@ -35,8 +35,21 @@ describe("Rundreise", () => {
         figurensatz: "klassisch-cburnett",
         ton: "an",
         genauigkeitsmodus: "lichess",
+        vorWerkzeugen: "an",
       },
       lernstand: { 1: [0, 2] },
+      sammlung: [
+        {
+          id: "s1",
+          datum: JETZT.toISOString(),
+          fen: "8/8/4k3/8/8/4K3/8/8 w - - 0 1",
+          herkunft: "fen",
+          quelle: "",
+          eroeffnung: "",
+          plan: "Opposition nehmen",
+          notiz: "aus dem Verein",
+        },
+      ],
     }));
     const text = await sicherungErstes.exportiere("0.2.22", JETZT);
     const daheim = erstes.speicherzustand().daten;
@@ -52,6 +65,7 @@ describe("Rundreise", () => {
     if (!pruefung.ok) return;
     expect(await sicherungZweites.importiere(pruefung.daten)).toBe(true);
     expect(zweites.speicherzustand().daten).toEqual(daheim);
+    expect(zweites.speicherzustand().daten.sammlung[0]?.plan).toBe("Opposition nehmen");
 
     // Auch nach einem Neustart des zweiten Geräts ist alles da.
     vi.resetModules();

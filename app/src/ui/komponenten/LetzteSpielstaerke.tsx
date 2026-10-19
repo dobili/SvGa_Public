@@ -39,11 +39,16 @@ export function LetzteSpielstaerke({ partien }: { partien: readonly Partieeintra
         {t("spielstaerke.letzte.wert", { mitte: schaetzung.mitte })}
       </p>
       <p className="hinweis">
-        {t("spielstaerke.letzte.spanne", {
-          von: schaetzung.von,
-          bis: schaetzung.bis,
-          partien: schaetzung.partien,
-        })}
+        {t(
+          schaetzung.partien === 1
+            ? "spielstaerke.letzte.spanneEins"
+            : "spielstaerke.letzte.spanne",
+          {
+            von: schaetzung.von,
+            bis: schaetzung.bis,
+            partien: schaetzung.partien,
+          },
+        )}
       </p>
     </section>
   );

@@ -10,7 +10,7 @@
  * Abhängigkeiten: autor/*, app/merker.ts, app/version.ts, training/trainer.ts, Aufgabenpunkt,
  * Kopfzeile, useDaten, i18n.
  */
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { APP_VERSION } from "../../app/version";
 import {
@@ -48,6 +48,9 @@ const TRAINERNAMEN: readonly Trainername[] = TRAINER.map(({ kennung }) => ({
   name: t(`trainer.${kennung}.name`),
 }));
 
+/** Wartezeit bis zum zweiten Scrollen nach der Rückkehr (Safari, siehe Inhalt). */
+const NACHSCROLL_MS = 200;
+
 /**
  * Der gemerkte Stand und eine Funktion, die ihn ändert und gleich merkt. Beim allerersten Öffnen
  * (noch nichts gemerkt) ist der neueste Abschnitt aufgeklappt.
@@ -60,12 +63,15 @@ function useAbhakstand(
     if (gemerkt === null && erster) return { ...LEERER_ABHAKSTAND, offen: [erster] };
     return abhakstandAus(gemerkt);
   });
+  // Gleich merken, nicht erst im Updater: Ein Link baut die Seite ab, bevor React den Updater
+  // ausführt; dann ging „zuletzt“ verloren, und „Zurück zu den Aufgaben“ landete oben (N307).
+  // Der Stand ändert sich nur hier; die Referenz ist deshalb immer der neueste Stand.
+  const aktuell = useRef(stand);
   const aendere = (aendern: (alt: Abhakstand) => Abhakstand) => {
-    setzeStand((alt) => {
-      const neu = aendern(alt);
-      schreibeMerker(MERKER, JSON.stringify(neu));
-      return neu;
-    });
+    const neu = aendern(aktuell.current);
+    aktuell.current = neu;
+    schreibeMerker(MERKER, JSON.stringify(neu));
+    setzeStand(neu);
   };
   return [stand, aendere];
 }
@@ -192,9 +198,16 @@ function Inhalt({ datei }: { datei: Aufgabendatei }) {
   const [stand, aendere] = useAbhakstand(erster);
   const [nurOffene, setzeNurOffene] = useState(false);
   // Beim Zurückkommen von einem Link zum zuletzt angetippten Punkt scrollen (nur beim Öffnen).
+  // Safari stellt nach der Zurück-Taste die Scrollhöhe des Verlaufseintrags erst nach dem Zeichnen
+  // wieder her (meist ganz oben); deshalb kurz danach noch einmal zum Punkt (N307).
   useEffect(() => {
-    if (stand.zuletzt)
-      document.getElementById(`aufgabe-${stand.zuletzt}`)?.scrollIntoView({ block: "center" });
+    const zuletzt = stand.zuletzt;
+    if (!zuletzt) return;
+    const zeige = () =>
+      document.getElementById(`aufgabe-${zuletzt}`)?.scrollIntoView({ block: "center" });
+    zeige();
+    const zeit = window.setTimeout(zeige, NACHSCROLL_MS);
+    return () => window.clearTimeout(zeit);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (

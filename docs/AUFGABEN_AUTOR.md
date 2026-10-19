@@ -74,6 +74,11 @@ Teil fertig ist.
 - [ ] N612. **Zahlen im Zähltrainer:** Training › Zähltrainer › „Bilanz zählen“: Angreifer,
       Verteidiger und Gewinn stellst du jetzt mit „−“ und „+“ ein, die Zahl steht groß dazwischen.
       Überall sonst stehen Zahlen und Wörter mittig in ihren Knöpfen. Schöner so?
+- [ ] N613. **Wo übe ich? (Trainingsseiten):** Im Browser
+      <https://schach-von-grund-auf.com/training/kap06/> öffnen. Oben erklärt ein Satz die Marken;
+      vor jeder Übung steht klein, wo du sie machst: „Lichess“, „Website“, „App“ (Abbildung im
+      Text, ein Tipp öffnet sie in der App), „Brett“ (echtes Schachbrett) oder „Eigene Partien“.
+      Die Texte selbst sind wie im Buch. Klar genug, oder fehlt dir noch etwas?
 
 ---
 

@@ -9,12 +9,14 @@
  * Abhängigkeiten: trainingsseiten.ts.
  */
 import {
+  type Trainingsblock,
   blockHtml,
   datumDeutsch,
   kapiteladresse,
   maskiere,
   type Trainingsseite,
 } from "./trainingsseiten";
+import { orteDerUebung } from "./uebungsort";
 
 const WEBSITE = "https://schach-von-grund-auf.com";
 
@@ -70,11 +72,22 @@ function seite(kopfHtml: string, bandHtml: string, inhalt: string): string {
 `;
 }
 
-/** Blöcke in einer Karte, dazu der Stand der Angaben. */
-function karte(daten: Trainingsseite): string {
+/** Marken „Lichess“, „App“, „Brett“ vor einer Übung (Wunsch des Autors, 19.10.2026). */
+function ortsmarken(block: Trainingsblock): string {
+  const orte = orteDerUebung(block);
+  if (orte.length === 0) return "";
+  const marken = orte
+    .map((ort) => `<span class="uebungsort uebungsort-${ort}">{{training.ort.${ort}}}</span>`)
+    .join(" ");
+  return `<p class="uebungsorte" aria-label="{{training.ort.titel}}">${marken}</p>`;
+}
+
+/** Blöcke in einer Karte, dazu der Stand der Angaben; mit Ortsmarken nur auf Kapitelseiten. */
+function karte(daten: Trainingsseite, mitOrten = false): string {
+  const block = (b: Trainingsblock) => (mitOrten ? ortsmarken(b) : "") + blockHtml(b);
   return `
         <section class="karte trainingskasten" data-testid="trainingskasten">
-          ${daten.bloecke.map(blockHtml).join("\n          ")}
+          ${daten.bloecke.map(block).join("\n          ")}
           <p class="trainingsstand">{{training.seite.stand}} ${maskiere(datumDeutsch(daten.stand))}</p>
         </section>`;
 }
@@ -106,7 +119,8 @@ export function kapitelseite(
 ): string {
   const titel = `Kapitel ${daten.kapitel ?? ""}: ${daten.titel}`;
   const inhalt = `
-        <p class="hinweis training-einleitung">{{training.seite.einleitung}}</p>${karte(daten)}${navigation(vorher, nachher)}`;
+        <p class="hinweis training-einleitung">{{training.seite.einleitung}}</p>
+        <p class="hinweis training-einleitung">{{training.seite.orte}}</p>${karte(daten, true)}${navigation(vorher, nachher)}`;
   return seite(
     kopf(`{{training.seite.titel}} ${daten.kapitel ?? ""}`, daten.adresse, titel),
     band("{{training.seite.ueberzeile}}", titel),

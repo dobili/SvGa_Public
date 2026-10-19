@@ -20,6 +20,10 @@ test("Trainingsseiten: Startseite, Übersicht, Kapitel 6, Sprung zur Abbildung i
   ).toBeVisible();
   const kasten = page.getByTestId("trainingskasten");
   await expect(kasten).toContainText("Pläne bei Meistern abschauen.");
+  // R17: Vor jeder Übung steht, wo man sie macht (Lichess, App, Brett …).
+  const orte = kasten.locator(".uebungsorte").first();
+  await expect(orte).toContainText("Lichess");
+  await expect(orte).toContainText("App");
   await page.screenshot({ path: "test-results/bilder/training-kap06.png", fullPage: true });
   await kasten.getByRole("link", { name: "Abb. 6.20" }).first().click();
   await expect(page).toHaveURL(/\/app\/$/);

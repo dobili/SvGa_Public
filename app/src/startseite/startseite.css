@@ -269,3 +269,36 @@
     content: none;
   }
 }
+
+/* Marken „Lichess“, „App“, „Brett“ … vor jeder Übung (R17, Wunsch des Autors 19.10.2026). */
+.uebungsorte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) * 0.5);
+  margin: calc(var(--raster) * 2) 0 calc(var(--raster) * 0.5) !important;
+}
+
+.uebungsort {
+  display: inline-block;
+  padding: 1px calc(var(--raster) * 1);
+  border: 1px solid var(--linie-stark);
+  border-radius: 999px;
+  font-size: var(--groesse-fein);
+  font-weight: 600;
+  color: var(--text-leise);
+}
+
+.uebungsort-lichess {
+  border-color: var(--text);
+  color: var(--text);
+}
+
+.uebungsort-app {
+  border-color: var(--gold);
+  color: var(--gold-text);
+}
+
+.uebungsort-brett {
+  color: var(--gruen-text);
+  border-color: var(--gruen-text);
+}

@@ -22,6 +22,8 @@ import {
   type Herkunft,
   type Sammelverlauf,
 } from "../../training/lernsammlung";
+import { Aufklapper } from "./Aufklapper";
+import { MitInfo } from "./InfoKnopf";
 import { useEroeffnungsindex } from "./useEroeffnungsindex";
 import { Knopfsymbol } from "./Knopfsymbol";
 
@@ -108,10 +110,13 @@ export function SammelFormular({
   fen,
   herkunft,
   beiGespeichert,
+  mitErklaerung = false,
 }: {
   fen: string | null;
   herkunft: Sammelherkunft;
   beiGespeichert?: () => void;
+  /** Kopfzeile mit Fragezeichen (unter dem Brett der Abbildung, Wunsch des Autors 19.10.2026). */
+  mitErklaerung?: boolean;
 }) {
   const index = useEroeffnungsindex(KAPITEL_MIT_INDEX);
   const [plan, setzePlan] = useState("");
@@ -139,6 +144,13 @@ export function SammelFormular({
   if (gespeichert) return <Gespeichert />;
   return (
     <div className="fehlerformular" data-testid="sammelformular">
+      {mitErklaerung && (
+        <MitInfo
+          zeile={<strong>{t("sammlung.hinein")}</strong>}
+          erklaerung={<p>{t("sammlung.erklaerung")}</p>}
+          thema={t("sammlung.erklaerungThema")}
+        />
+      )}
       <Feld
         name={t("sammlung.plan")}
         wert={plan}
@@ -174,15 +186,15 @@ export function SammelFormular({
  * Stellung, damit das Formular bei einer neuen Stellung von vorn beginnt.
  */
 export function SammelKnopf({ fen, herkunft }: { fen: string; herkunft: Sammelherkunft }) {
-  const [offen, setzeOffen] = useState(false);
-  if (!offen) {
-    return (
-      <button type="button" className="knopf-link" onClick={() => setzeOffen(true)}>
-        {t("sammlung.hinein")}
-      </button>
-    );
-  }
-  return <SammelFormular fen={fen} herkunft={herkunft} />;
+  return (
+    <Aufklapper
+      text={t("sammlung.hinein")}
+      erklaerung={<p>{t("sammlung.erklaerung")}</p>}
+      thema={t("sammlung.erklaerungThema")}
+    >
+      <SammelFormular fen={fen} herkunft={herkunft} />
+    </Aufklapper>
+  );
 }
 
 /** Lesezeichen am Brett der Abbildung: klappt das Formular unter dem Brett auf und zu. */

@@ -411,3 +411,24 @@
   color: #16253d;
   font-weight: 600;
 }
+
+/* Aufklapper (0.2.116): Knopf mit Pfeil, der sich beim Öffnen dreht. */
+.aufklapper-knopf {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.aufklapper-pfeil {
+  transition: transform 0.15s ease;
+}
+
+.aufklapper-pfeil.offen {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aufklapper-pfeil {
+    transition: none;
+  }
+}

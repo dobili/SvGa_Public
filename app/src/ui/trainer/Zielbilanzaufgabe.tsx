@@ -27,6 +27,12 @@ import type { Runde } from "./useRunde";
 import { Wahlzeile } from "./Wahlzeile";
 import { useSammelstellung } from "./sammelstellung";
 
+/**
+ * Die Zeichen der Zielbilanz wie im Buch (\zielja, \zielteils, \zielnein), immer mit Wort
+ * (WCAG 1.4.1). Wunsch des Autors, 19.10.2026.
+ */
+const BUCHZEICHEN: Readonly<Record<Wertung, string>> = { ja: "✓", teils: "◐", nein: "✗" };
+
 type Entwurf = Record<Color, Partial<Record<Ziel, Wertung>>>;
 
 /** Die fertige Tabelle, sobald jedes Feld gewählt ist, sonst null. */
@@ -85,7 +91,7 @@ export function Zielbilanzaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
               key={ziel}
               titel={t(`zielbilanz.ziel.${ziel}`)}
               werte={WERTUNGEN}
-              name={(w) => t(`zielbilanz.wertung.${w}`)}
+              name={(w) => `${BUCHZEICHEN[w]} ${t(`zielbilanz.wertung.${w}`)}`}
               wert={entwurf[seite][ziel]}
               setze={setze(seite, ziel)}
               app={beantwortet ? aufgabe.loesung[seite][ziel] : null}

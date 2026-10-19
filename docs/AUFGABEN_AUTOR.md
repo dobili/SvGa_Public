@@ -51,6 +51,12 @@ Teil fertig ist.
       Schritt 3. Der Text sagt jetzt: Schachs und alle Schläge markieren, die nach dem Abtausch auf
       dem Zielfeld kein Material verlieren; Verlustschläge darf man weglassen; die Schläge mit
       Gewinn sind die Drohungen und brauchen keine eigene Markierung. Verständlich?
+- [ ] N606. **Erklärung und Zuklappen:** Öffne Abb. 2.2 und tippe das Lesezeichen „Sammlung“
+      unter dem Brett: Oben im Formular steht „In die Lernsammlung“ mit Fragezeichen. Im
+      Rückblick einer Partie haben „In die Fehlerdatenbank“ und „In die Lernsammlung“ jetzt ein
+      Fragezeichen, und ein zweiter Tipp auf den Knopf klappt das Formular wieder zu.
+- [ ] N607. **Zeichen in der Zielbilanz-Übung:** Training › „Zielbilanz-Übung“: Die Knöpfe heißen
+      „✓ ja“, „◐ teils“ und „✗ nein“ wie die Zeichen im Buch.
 
 ---
 

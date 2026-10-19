@@ -15,7 +15,6 @@
  * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n,
  * ui/trainer/FehlerFormular.tsx.
  */
-import { useState } from "react";
 import { sprache, t, zahlText } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { fenNachZuegen } from "../../schach/weiterspielen";
@@ -28,6 +27,7 @@ import { uciZuSan } from "../../spiel/zuege";
 import { FehlerFormular } from "../trainer/FehlerFormular";
 import { SammelKnopf } from "./SammelFormular";
 import { gewinnchanceVorNach, type Chance } from "./gewinnchance";
+import { Aufklapper } from "./Aufklapper";
 import { MitInfo } from "./InfoKnopf";
 import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
 import type { Rueckblick } from "./useRueckblick";
@@ -37,15 +37,15 @@ import type { Rueckblick } from "./useRueckblick";
  * Zug) setzt das Formular für jeden Zug zurück.
  */
 function InDieFehlerdatenbank({ fen, zug }: { fen: string; zug: string }) {
-  const [offen, setzeOffen] = useState(false);
-  if (!offen) {
-    return (
-      <button type="button" className="knopf-link" onClick={() => setzeOffen(true)}>
-        {t("fehlerdb.ausRueckblick")}
-      </button>
-    );
-  }
-  return <FehlerFormular fen={fen} zug={zug} />;
+  return (
+    <Aufklapper
+      text={t("fehlerdb.ausRueckblick")}
+      erklaerung={<p>{t("fehlerdb.erklaerung")}</p>}
+      thema={t("fehlerdb.erklaerungThema")}
+    >
+      <FehlerFormular fen={fen} zug={zug} />
+    </Aufklapper>
+  );
 }
 
 /** „In die Lernsammlung“ für die Stellung nach dem gezeigten Zug, mit dem Weg der Partie. */

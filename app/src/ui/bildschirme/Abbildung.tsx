@@ -203,6 +203,7 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
       {sammeln && (
         <SammelFormular
           key={nachspielen.fen}
+          mitErklaerung
           fen={nachspielen.fen}
           herkunft={{
             herkunft: "abbildung",

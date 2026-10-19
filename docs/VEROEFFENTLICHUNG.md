@@ -34,3 +34,14 @@ Löschen sichtbar geblieben wären.
 Werte für Cloudflare (wie bisher): Build command `npm ci && npm run build`, Deploy command
 `npx wrangler deploy`, Preview command `npx wrangler preview`, Path (Root directory) `app`,
 Variable `NODE_VERSION` = `22`, Produktionszweig `main`, Vorschau-Builds an.
+
+## Version 1.0 freischalten (AP 17, vorbereitet in 0.2.108)
+
+Die Fassung für die Leser entsteht mit `npm run build:veroeffentlichung` (Umgebungsvariable
+`VEROEFFENTLICHUNG=1`): ohne Aufgabenseite des Autors und ohne englische Vorschau. Für 1.0 in
+Cloudflare den Build command des Produktionszweigs auf `npm ci && npm run build:veroeffentlichung`
+stellen oder die Variable `VEROEFFENTLICHUNG` = `1` nur für die Produktion setzen (prüfen, ob
+Cloudflare Variablen je Umgebung trennt; dann behalten die Vorschau-Builds die Aufgabenseite als
+Testweg des Autors). Vorher: `python -m pipeline.pruefen.daten --veroeffentlichung
+app/public/daten/de/a1` (keine Entwürfe), Version 1.0.0, alle Prüfungen grün. Checkliste:
+`docs/ABNAHME_1.0.md`.

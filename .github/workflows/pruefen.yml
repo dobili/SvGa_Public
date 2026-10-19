@@ -70,6 +70,10 @@ jobs:
           name: app-dist
           path: app/dist
           retention-days: 7
+      # Fassung für die Leser (AP 17): ohne Aufgabenseite und ohne englische Vorschau. Nach dem
+      # Hochladen gebaut, damit app-dist die Testfassung bleibt.
+      - name: Fassung für die Leser
+        run: npm run build:veroeffentlichung
 
   oberflaeche:
     name: Oberfläche (Playwright)

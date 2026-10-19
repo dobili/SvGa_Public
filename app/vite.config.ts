@@ -122,6 +122,8 @@ const CREME = "#F5F0E6";
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(paket.version),
+    // Fassung für die Leser (AP 17): ohne Aufgabenseite des Autors und ohne englische Vorschau.
+    __VEROEFFENTLICHUNG__: JSON.stringify(process.env.VEROEFFENTLICHUNG === "1"),
   },
   build: {
     rollupOptions: {

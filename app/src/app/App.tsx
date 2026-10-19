@@ -77,7 +77,7 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
     case "lizenzen":
       return <Lizenzen />;
     case "autoraufgaben":
-      return <AutorAufgaben />;
+      return __VEROEFFENTLICHUNG__ ? <Ich /> : <AutorAufgaben />;
     case "uebung":
       return (
         <Uebung key={ansicht.id} kapitel={ansicht.kapitel} id={ansicht.id} reihe={ansicht.reihe} />
@@ -97,7 +97,7 @@ const SPRUNG_ABBILDUNG = /^#abb-(\d{1,2}\.\d{1,3})$/;
 /** Die Ansicht zu einem Sprungziel der Adresse, oder null. Beispiel: „#abb-6.20“ → Abb. 6.20. */
 function ansichtZumSprung(hash: string): Ansicht | null {
   if (hash === SPRUNG_LIZENZEN) return { bildschirm: "lizenzen" };
-  if (hash === SPRUNG_AUFGABEN) return { bildschirm: "autoraufgaben" };
+  if (hash === SPRUNG_AUFGABEN && !__VEROEFFENTLICHUNG__) return { bildschirm: "autoraufgaben" };
   const abbildung = SPRUNG_ABBILDUNG.exec(hash)?.[1];
   return abbildung ? { bildschirm: "abbildung", nummer: abbildung } : null;
 }

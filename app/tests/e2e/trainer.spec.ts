@@ -93,7 +93,14 @@ test("Taktiktrainer: Thema und Stufe wählen, Hilfen, Lösung zeigen, Motiv bene
   await starteImBrowser(page);
   await oeffneTrainer(page, "taktik");
   const wahl = page.getByTestId("taktik-wahl");
-  await wahl.getByRole("button", { name: /^Spieß/ }).click();
+  {
+    const liste = wahl.getByLabel("Thema");
+    const wert = await liste
+      .locator("option", { hasText: /^Spieß/ })
+      .first()
+      .getAttribute("value");
+    await liste.selectOption(wert ?? "");
+  }
   await wahl.getByRole("button", { name: "2", exact: true }).click();
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
@@ -189,7 +196,14 @@ test("Endspieltrainer: Mattführung Stufe 1, Merksatz als Hinweis, Aufgabe abbre
   await starteImBrowser(page);
   await oeffneTrainer(page, "endspiel");
   const wahl = page.getByTestId("endspiel-wahl");
-  await wahl.getByRole("button", { name: /^Mattführung/ }).click();
+  {
+    const liste = wahl.getByLabel("Was üben?");
+    const wert = await liste
+      .locator("option", { hasText: /^Mattführung/ })
+      .first()
+      .getAttribute("value");
+    await liste.selectOption(wert ?? "");
+  }
   await wahl.getByRole("button", { name: "1", exact: true }).click();
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");

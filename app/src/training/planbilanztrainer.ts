@@ -184,7 +184,8 @@ export function rennaufgabe(buch: Buchstellung): Rennaufgabe | null {
   const lage = planlage(profil(buch.stellung), "white");
   const weiss = lage.sturm.eigen?.zuege;
   const schwarz = lage.sturm.gegner?.zuege;
-  if (lage.koenige.art !== "verschieden" || weiss === undefined || schwarz === undefined) return null;
+  if (lage.koenige.art !== "verschieden" || weiss === undefined || schwarz === undefined)
+    return null;
   if (weiss > HOECHSTENS_ZUEGE || schwarz > HOECHSTENS_ZUEGE) return null;
   return { nummer: buch.nummer, fen: buch.stellung.fen, zuege: { white: weiss, black: schwarz } };
 }

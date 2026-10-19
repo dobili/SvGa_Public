@@ -70,9 +70,7 @@ function passtZurGruppe(aufgabe: Endspielaufgabe, gruppe: Endspielgruppe): boole
 
 /** Wie viele Aufgaben es je Gruppe gibt (für die Auswahl). Beispiel: „turm“ → 20. */
 export function anzahlJeGruppe(aufgaben: readonly Endspielaufgabe[]): Map<Endspielgruppe, number> {
-  return new Map(
-    GRUPPEN.map((g) => [g, aufgaben.filter((a) => passtZurGruppe(a, g)).length]),
-  );
+  return new Map(GRUPPEN.map((g) => [g, aufgaben.filter((a) => passtZurGruppe(a, g)).length]));
 }
 
 /**

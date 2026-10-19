@@ -17,12 +17,7 @@ import {
   zugrunde,
   type Zugaufgabe,
 } from "./koordinatentrainer";
-import {
-  roentgenaufgabe,
-  roentgenrunde,
-  SCHRITTE,
-  vergleicheSchritt,
-} from "./roentgentrainer";
+import { roentgenaufgabe, roentgenrunde, SCHRITTE, vergleicheSchritt } from "./roentgentrainer";
 import {
   haengendeFiguren,
   haengerunde,
@@ -156,8 +151,16 @@ describe("Koordinaten, Notation, Gangarten", () => {
   };
 
   it("Notation: deutsche Buchstaben, Schachzeichen und englische Buchstaben nur als Erinnerung", () => {
-    expect(pruefeNotation(sf3, "Sf3")).toEqual({ richtig: true, schachVergessen: false, englisch: false });
-    expect(pruefeNotation(sf3, "Nf3")).toEqual({ richtig: true, schachVergessen: false, englisch: true });
+    expect(pruefeNotation(sf3, "Sf3")).toEqual({
+      richtig: true,
+      schachVergessen: false,
+      englisch: false,
+    });
+    expect(pruefeNotation(sf3, "Nf3")).toEqual({
+      richtig: true,
+      schachVergessen: false,
+      englisch: true,
+    });
     expect(pruefeNotation(sf3, "f3").richtig).toBe(false);
     const schach = { ...sf3, san: "e8=Q+" };
     expect(pruefeNotation(schach, "e8=D").schachVergessen).toBe(true);

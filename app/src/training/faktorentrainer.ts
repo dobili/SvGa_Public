@@ -105,7 +105,13 @@ export function faktorenaufgabe(buch: Buchstellung): Faktorenaufgabe | null {
   const vorbereitet = buch.vorbereitet ? { vorbereitet: buch.vorbereitet } : {};
   const ausBuch = buch.faktortabelle ? buchloesung(buch.faktortabelle) : null;
   if (ausBuch) {
-    return { nummer: buch.nummer, fen: stellung.fen, loesung: ausBuch, quelle: "buch", ...vorbereitet };
+    return {
+      nummer: buch.nummer,
+      fen: stellung.fen,
+      loesung: ausBuch,
+      quelle: "buch",
+      ...vorbereitet,
+    };
   }
   const w = faktorwertungen(stellung, "white");
   return {

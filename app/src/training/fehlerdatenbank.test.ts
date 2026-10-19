@@ -35,7 +35,8 @@ describe("Fehlerdatenbank", () => {
 
   it("hängt an, löscht und hält die Obergrenze", () => {
     let liste: Fehlereintrag[] = [];
-    for (let i = 0; i <= HOECHSTENS_EINTRAEGE; i++) liste = mitEintrag(liste, eintrag(`e${i}`, 1, 0));
+    for (let i = 0; i <= HOECHSTENS_EINTRAEGE; i++)
+      liste = mitEintrag(liste, eintrag(`e${i}`, 1, 0));
     expect(liste).toHaveLength(HOECHSTENS_EINTRAEGE);
     expect(liste[0]?.id).toBe("e1");
     expect(ohneEintrag(liste, "e1")).toHaveLength(HOECHSTENS_EINTRAEGE - 1);

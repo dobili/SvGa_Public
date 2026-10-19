@@ -1,17 +1,8 @@
 /** Tests der Zielbilanz-Übung (AP 13) an den Eröffnungsstellungen der Kapitel 2 und 3. */
 import { describe, expect, it } from "vitest";
-import {
-  bilanzfaelle,
-  ladeKapitel,
-  stellungVon,
-} from "../schach/buchabbildungen.testhilfe";
+import { bilanzfaelle, ladeKapitel, stellungVon } from "../schach/buchabbildungen.testhilfe";
 import { buchstellungenAus } from "./buchstellungen";
-import {
-  abweichungen,
-  zielbilanzaufgabe,
-  zielbilanzrunde,
-  type Ziel,
-} from "./zielbilanztrainer";
+import { abweichungen, zielbilanzaufgabe, zielbilanzrunde, type Ziel } from "./zielbilanztrainer";
 import { festerZufall } from "./zufall";
 
 const KAPITELZAHL = 13;
@@ -55,8 +46,12 @@ describe("Zielbilanz-Übung", () => {
     const erste = runde[0];
     if (!erste) throw new Error("leere Runde");
     expect(abweichungen(erste, erste.loesung)).toEqual([]);
-    const falsch = { ...erste.loesung, white: { ...erste.loesung.white, koenig: "teils" as const } };
-    const anders = erste.loesung.white.koenig === "teils" ? [] : [{ seite: "white", ziel: "koenig" }];
+    const falsch = {
+      ...erste.loesung,
+      white: { ...erste.loesung.white, koenig: "teils" as const },
+    };
+    const anders =
+      erste.loesung.white.koenig === "teils" ? [] : [{ seite: "white", ziel: "koenig" }];
     expect(abweichungen(erste, falsch)).toEqual(anders);
   });
 });

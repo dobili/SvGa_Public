@@ -24,6 +24,7 @@ import { Taktikaufgabe } from "./Taktikaufgabe";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Wiederholungsknopf } from "./Wiederholungsknopf";
 import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Auswahlliste } from "./Auswahlliste";
 
 const AUFGABEN_JE_RUNDE = 8;
 const THEMEN: readonly Taktikthema[] = ["gemischt", "mattbilder", ...MOTIVE];
@@ -51,20 +52,15 @@ function Wahl({
   return (
     <div className="trainerrunde" data-testid="taktik-wahl">
       <Wiederholungsknopf anzahl={faellig} starte={wiederhole} />
-      <fieldset className="zahlwahl">
-        <legend>{t("taktiktrainer.thema")}</legend>
-        {THEMEN.filter((th) => (anzahl.get(th) ?? 0) > 0).map((th) => (
-          <button
-            key={th}
-            type="button"
-            className="chip"
-            aria-pressed={thema === th}
-            onClick={() => setzeThema(th)}
-          >
-            {themenname(th)} ({anzahl.get(th)})
-          </button>
-        ))}
-      </fieldset>
+      <Auswahlliste
+        titel={t("taktiktrainer.thema")}
+        eintraege={THEMEN.filter((th) => (anzahl.get(th) ?? 0) > 0).map((th) => ({
+          wert: th,
+          text: `${themenname(th)} (${anzahl.get(th)})`,
+        }))}
+        wert={thema}
+        setze={setzeThema}
+      />
       <Stufenwahl stufe={stufe} setze={setzeStufe} />
       <button type="button" className="knopf-haupt" onClick={() => starte({ thema, stufe })}>
         <Knopfsymbol art="starten" />

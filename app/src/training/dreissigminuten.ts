@@ -45,7 +45,12 @@ export const TAGESARTEN: readonly Tagesart[] = ["partietag", "studientag"];
 
 /** Die vier Bereiche des Studientags, in der Reihenfolge des Buches. */
 export type Studienbereich = "taktik" | "endspiel" | "strategie" | "eroeffnung";
-export const BEREICHE: readonly Studienbereich[] = ["taktik", "endspiel", "strategie", "eroeffnung"];
+export const BEREICHE: readonly Studienbereich[] = [
+  "taktik",
+  "endspiel",
+  "strategie",
+  "eroeffnung",
+];
 
 /**
  * Die Trainer der App zu jedem Bereich.
@@ -78,7 +83,11 @@ export interface Planstand {
   readonly letzterBereich: Studienbereich | null;
 }
 
-export const LEERER_PLANSTAND: Planstand = { einheit: null, letzterTag: null, letzterBereich: null };
+export const LEERER_PLANSTAND: Planstand = {
+  einheit: null,
+  letzterTag: null,
+  letzterBereich: null,
+};
 
 const MS_JE_MINUTE = 60_000;
 /** Nach so vielen Stunden gilt eine liegengebliebene Einheit als verfallen. */
@@ -123,7 +132,10 @@ export function weiter(stand: Planstand, jetzt: number): { stand: Planstand; fer
   const e = stand.einheit;
   if (!e) return { stand, fertig: false };
   if (e.schritt + 1 < PLAN[e.tag].length) {
-    return { stand: { ...stand, einheit: { ...e, schritt: e.schritt + 1, schrittBeginn: jetzt } }, fertig: false };
+    return {
+      stand: { ...stand, einheit: { ...e, schritt: e.schritt + 1, schrittBeginn: jetzt } },
+      fertig: false,
+    };
   }
   const letzterBereich = e.bereich ?? stand.letzterBereich;
   return { stand: { einheit: null, letzterTag: e.tag, letzterBereich }, fertig: true };
@@ -163,7 +175,13 @@ function einheitAus(w: unknown): Einheit | null {
     return null;
   if (e.schritt < 0 || e.schritt >= PLAN[e.tag].length) return null;
   const bereich = istBereich(e.bereich) ? e.bereich : null;
-  return { tag: e.tag, schritt: e.schritt, beginn: e.beginn, schrittBeginn: e.schrittBeginn, bereich };
+  return {
+    tag: e.tag,
+    schritt: e.schritt,
+    beginn: e.beginn,
+    schrittBeginn: e.schrittBeginn,
+    bereich,
+  };
 }
 
 /**

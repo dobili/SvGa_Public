@@ -33,7 +33,11 @@ function amZug(fen: string): Color {
 }
 
 /** Die Hauptvariante einer Zugfolge als Aufgabe für eine Seite; null, wenn sie nicht passt. */
-function aufgabeAus(beispiel: Beispiel, seite: Color, mindestens: number): Repertoireaufgabe | null {
+function aufgabeAus(
+  beispiel: Beispiel,
+  seite: Color,
+  mindestens: number,
+): Repertoireaufgabe | null {
   const linie = kanonischeLinie(beispiel.startFen, hauptpfad(beispiel.zuege));
   if (!linie || linie.length < mindestens) return null;
   return { titel: beispiel.titel.replace(/\\,/g, " "), startFen: beispiel.startFen, linie, seite };
@@ -41,7 +45,9 @@ function aufgabeAus(beispiel: Beispiel, seite: Color, mindestens: number): Reper
 
 /** Zugfolgen eines Abschnitts des Kapitels (nicht der Übungen am Ende). */
 function ausAbschnitten(kapitel: Kapitel): Beispiel[] {
-  return buchbeispiele(kapitel).filter((b) => b.abschnitt?.startsWith(`${kapitel.kapitel}.`) === true);
+  return buchbeispiele(kapitel).filter(
+    (b) => b.abschnitt?.startsWith(`${kapitel.kapitel}.`) === true,
+  );
 }
 
 /**

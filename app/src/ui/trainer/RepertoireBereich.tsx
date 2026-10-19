@@ -20,6 +20,7 @@ import { useDaten } from "../komponenten/useDaten";
 import { Repertoireaufgabe } from "./Repertoireaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Auswahlliste } from "./Auswahlliste";
 
 const KAPITEL_EROEFFNUNGEN = 2;
 const VARIANTEN_JE_RUNDE = 6;
@@ -41,20 +42,14 @@ function Auswahl({
   const [seite, setzeSeite] = useState<Color>("white");
   return (
     <div className="trainerrunde" data-testid="repertoire-wahl">
-      <fieldset className="zahlwahl">
-        <legend>{t("repertoiretrainer.eroeffnung")}</legend>
-        {eroeffnungen.map((e) => (
-          <button
-            key={e.id}
-            type="button"
-            className="chip"
-            aria-pressed={gewaehlt?.id === e.id}
-            onClick={() => setzeGewaehlt(e)}
-          >
-            {e.titel}
-          </button>
-        ))}
-      </fieldset>
+      {gewaehlt && (
+        <Auswahlliste
+          titel={t("repertoiretrainer.eroeffnung")}
+          eintraege={eroeffnungen.map((e) => ({ wert: e.id, text: e.titel }))}
+          wert={gewaehlt.id}
+          setze={(id) => setzeGewaehlt(eroeffnungen.find((e) => e.id === id) ?? gewaehlt)}
+        />
+      )}
       <fieldset className="zahlwahl">
         <legend>{t("repertoiretrainer.seite")}</legend>
         {SEITEN.map((s) => (

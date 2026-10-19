@@ -95,8 +95,7 @@ export function strukturrunde(
   anzahl: number,
   zufall: Zufall,
 ): Strukturaufgabe[] {
-  const abstand = (a: Strukturaufgabe) =>
-    stufe === null ? 0 : Math.abs(a.schwierigkeit - stufe);
+  const abstand = (a: Strukturaufgabe) => (stufe === null ? 0 : Math.abs(a.schwierigkeit - stufe));
   return mische(aufgaben, zufall)
     .sort((a, b) => abstand(a) - abstand(b))
     .slice(0, anzahl)

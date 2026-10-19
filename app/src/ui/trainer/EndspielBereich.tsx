@@ -27,6 +27,7 @@ import { Stufenwahl } from "./Stufenwahl";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Wiederholungsknopf } from "./Wiederholungsknopf";
 import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Auswahlliste } from "./Auswahlliste";
 
 /** Endspiele dauern länger als Taktikaufgaben: weniger je Runde. */
 const AUFGABEN_JE_RUNDE = 6;
@@ -50,20 +51,15 @@ function Wahl({
   return (
     <div className="trainerrunde" data-testid="endspiel-wahl">
       {wiederholung}
-      <fieldset className="zahlwahl">
-        <legend>{t("endspiel.gruppe")}</legend>
-        {GRUPPEN.filter((g) => (anzahl.get(g) ?? 0) > 0).map((g) => (
-          <button
-            key={g}
-            type="button"
-            className="chip"
-            aria-pressed={gruppe === g}
-            onClick={() => setzeGruppe(g)}
-          >
-            {t(`endspiel.gruppe.${g}`)} ({anzahl.get(g)})
-          </button>
-        ))}
-      </fieldset>
+      <Auswahlliste
+        titel={t("endspiel.gruppe")}
+        eintraege={GRUPPEN.filter((g) => (anzahl.get(g) ?? 0) > 0).map((g) => ({
+          wert: g,
+          text: `${t(`endspiel.gruppe.${g}`)} (${anzahl.get(g)})`,
+        }))}
+        wert={gruppe}
+        setze={setzeGruppe}
+      />
       <Stufenwahl stufe={stufe} setze={setzeStufe} erklaerung={t("endspiel.stufenText")} />
       <p className="hinweis">{t("endspiel.ablaufText")}</p>
       <button type="button" className="knopf-haupt" onClick={() => starte({ gruppe, stufe })}>

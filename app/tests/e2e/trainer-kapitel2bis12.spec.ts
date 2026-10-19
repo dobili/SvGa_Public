@@ -18,7 +18,7 @@ test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", a
   await starteImBrowser(page);
   await oeffneTrainer(page, "repertoire");
   const wahl = page.getByTestId("repertoire-wahl");
-  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
+  await wahl.getByLabel("Eröffnung").selectOption({ label: "Die Spanische Partie (Ruy Lopez)" });
   await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
@@ -56,7 +56,12 @@ test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", a
   await starteImBrowser(page);
   await oeffneTrainer(page, "zugErraten");
   const wahl = page.getByTestId("zugerraten-wahl");
-  await wahl.getByRole("button", { name: /^Morphys Opernpartie/ }).click();
+  const partien = wahl.getByLabel("Partie");
+  const opern = await partien
+    .locator("option", { hasText: /^Morphys Opernpartie/ })
+    .first()
+    .getAttribute("value");
+  await partien.selectOption(opern ?? "0");
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await feld(page, "e2").click();
@@ -205,7 +210,7 @@ test("Abweichungsmodus: Spanisch als Weiß, Engine verlässt das Buch, Antwort w
   await starteImBrowser(page);
   await oeffneTrainer(page, "abweichung");
   const wahl = page.getByTestId("abweichung-wahl");
-  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
+  await wahl.getByLabel("Eröffnung").selectOption({ label: "Die Spanische Partie (Ruy Lopez)" });
   await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");

@@ -39,7 +39,11 @@ export interface Zielbilanzaufgabe {
 }
 
 function zeileAus(b: Zielbilanz): Record<Ziel, Wertung> {
-  return { zentrum: b.zentrum.wertung, entwicklung: b.entwicklung.wertung, koenig: b.koenig.wertung };
+  return {
+    zentrum: b.zentrum.wertung,
+    entwicklung: b.entwicklung.wertung,
+    koenig: b.koenig.wertung,
+  };
 }
 
 function zugnummer(fen: string): number {

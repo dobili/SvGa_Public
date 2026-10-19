@@ -41,7 +41,8 @@ export const WOCHEN = 8;
 const VORSCHLAG_WOCHEN = 4;
 
 type Roh = Record<string, unknown>;
-const istObjekt = (w: unknown): w is Roh => typeof w === "object" && w !== null && !Array.isArray(w);
+const istObjekt = (w: unknown): w is Roh =>
+  typeof w === "object" && w !== null && !Array.isArray(w);
 
 /** Ein Eintrag aus Rohdaten, oder null, wenn etwas Wesentliches fehlt. */
 function eintragAus(roh: unknown): Fehlereintrag | null {
@@ -128,8 +129,11 @@ export function auswertung(liste: readonly Fehlereintrag[], jetzt: Date): Fehler
 export function vorschlag(
   zahlen: readonly Fehlerartzahl[],
 ): { fehlerart: number; trainer: TrainerKennung } | null {
-  const juengst = (z: Fehlerartzahl) => z.jeWoche.slice(0, VORSCHLAG_WOCHEN).reduce((a, b) => a + b, 0);
-  const sortiert = [...zahlen].filter((z) => juengst(z) > 0).sort((a, b) => juengst(b) - juengst(a));
+  const juengst = (z: Fehlerartzahl) =>
+    z.jeWoche.slice(0, VORSCHLAG_WOCHEN).reduce((a, b) => a + b, 0);
+  const sortiert = [...zahlen]
+    .filter((z) => juengst(z) > 0)
+    .sort((a, b) => juengst(b) - juengst(a));
   for (const z of sortiert) {
     const trainer = TRAINER.find(
       (tr) => tr.fertig && tr.kennung !== "fehlerdatenbank" && tr.kapitel.includes(z.fehlerart),

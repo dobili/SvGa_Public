@@ -17,6 +17,7 @@ import { Repertoireaufgabe } from "./Repertoireaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Zugerratenaufgabe } from "./Zugerratenaufgabe";
 import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Auswahlliste } from "./Auswahlliste";
 
 const KAPITEL_STUDIEN = 10;
 const KAPITEL_PARTIEN = 11;
@@ -105,20 +106,12 @@ function Partiewahl({
   const gewaehlt = liste[index] ?? null;
   return (
     <div className="trainerrunde" data-testid="zugerraten-wahl">
-      <fieldset className="zahlwahl">
-        <legend>{t("zugerraten.partie")}</legend>
-        {liste.map((p, i) => (
-          <button
-            key={p.titel}
-            type="button"
-            className="chip"
-            aria-pressed={i === index}
-            onClick={() => setzeIndex(i)}
-          >
-            {p.titel}
-          </button>
-        ))}
-      </fieldset>
+      <Auswahlliste
+        titel={t("zugerraten.partie")}
+        eintraege={liste.map((p, i) => ({ wert: String(i), text: p.titel }))}
+        wert={String(index)}
+        setze={(i) => setzeIndex(Number(i))}
+      />
       <fieldset className="zahlwahl">
         <legend>{t("repertoiretrainer.seite")}</legend>
         {SEITEN.map((s) => (

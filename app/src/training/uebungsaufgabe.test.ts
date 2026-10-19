@@ -62,7 +62,10 @@ describe("Übungsaufgaben", () => {
   it("Abb. 1.41: Lösung mit Antworten der Gegenseite, dazu der akzeptierte Zug 1. exd5", () => {
     const a = zugaufgabe("ueb:zaehlen-vorstoss");
     expect(pruefeZug(a, [], "cxd5")).toEqual({ art: "weiter", antwort: "cxd5", linie: 0 });
-    expect(pruefeZug(a, ["cxd5", "cxd5"], "exd5")).toMatchObject({ art: "weiter", antwort: "exd5" });
+    expect(pruefeZug(a, ["cxd5", "cxd5"], "exd5")).toMatchObject({
+      art: "weiter",
+      antwort: "exd5",
+    });
     expect(pruefeZug(a, ["cxd5", "cxd5", "exd5", "exd5"], "Nxd5")).toEqual({
       art: "geloest",
       linie: 0,
@@ -100,7 +103,8 @@ describe("Übungsaufgaben", () => {
         ...zusaetzlich,
       ]);
       if (a.art !== "zug") throw new Error(`${id} ist keine Zugaufgabe`);
-      for (const zug of zusaetzlich) expect(pruefeZug(a, [], zug).art, `${id} ${zug}`).toBe("geloest");
+      for (const zug of zusaetzlich)
+        expect(pruefeZug(a, [], zug).art, `${id} ${zug}`).toBe("geloest");
     }
     expect(zusaetzlichAkzeptiert("ueb:k2-carokann-h4")).toEqual([]);
     expect(zusaetzlichAkzeptiert("ueb:taktik-a05")).toEqual([]);

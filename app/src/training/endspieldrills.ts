@@ -20,7 +20,12 @@ import { feldname, stellungAusFen, type Stellung } from "../schach/stellung";
 import type { Zufall } from "./zufall";
 
 export type Drillart = "quadrat" | "opposition" | "schluesselfelder" | "bild";
-export const DRILLARTEN: readonly Drillart[] = ["quadrat", "opposition", "schluesselfelder", "bild"];
+export const DRILLARTEN: readonly Drillart[] = [
+  "quadrat",
+  "opposition",
+  "schluesselfelder",
+  "bild",
+];
 
 /** Eine Kurzübung: Stellung, Antwortmöglichkeiten (Schlüssel), die richtige, Felder zur Lösung. */
 export interface Drill {
@@ -103,9 +108,17 @@ export function quadratdrill(zufall: Zufall): Drill | null {
     const bauer = zufallsbauer(zufall);
     const schwarz = zufallsfeld(zufall);
     const weiss = zufallsfeld(zufall);
-    if (new Set([bauer, schwarz, weiss]).size < STEINE_KPK || koenigsabstand(weiss, bauer) < FERN) continue;
+    if (new Set([bauer, schwarz, weiss]).size < STEINE_KPK || koenigsabstand(weiss, bauer) < FERN)
+      continue;
     const amZug: Color = zufall() < HAELFTE ? "white" : "black";
-    const s = legal(new Map([[bauer, "P"], [schwarz, "k"], [weiss, "K"]]), amZug);
+    const s = legal(
+      new Map([
+        [bauer, "P"],
+        [schwarz, "k"],
+        [weiss, "K"],
+      ]),
+      amZug,
+    );
     if (!s) continue;
     const q = quadrat(s, bauer);
     if (q.vorbehalte.length > 0 || q.ausnahme !== null || q.haeltAuf === null) continue;
@@ -131,7 +144,13 @@ export function oppositionsdrill(zufall: Zufall): Drill | null {
     const schwarz = zufall() < ANTEIL_GEGENUEBER ? gegenueber(weiss, zufall) : zufallsfeld(zufall);
     if (schwarz === null || weiss === schwarz) continue;
     const amZug: Color = zufall() < HAELFTE ? "white" : "black";
-    const s = legal(new Map([[weiss, "K"], [schwarz, "k"]]), amZug);
+    const s = legal(
+      new Map([
+        [weiss, "K"],
+        [schwarz, "k"],
+      ]),
+      amZug,
+    );
     if (!s) continue;
     const wer = hatOpposition(s);
     return {
@@ -174,7 +193,14 @@ export function schluesseldrill(zufall: Zufall): Drill | null {
     const schwarz = zufallsfeld(zufall);
     const besetzt = new Set([bauer, weiss, schwarz, ...sf.felder, ...andere]);
     if (besetzt.size < STEINE_KPK + sf.felder.length + andere.length) continue;
-    const s = legal(new Map([[bauer, "P"], [weiss, "K"], [schwarz, "k"]]), "white");
+    const s = legal(
+      new Map([
+        [bauer, "P"],
+        [weiss, "K"],
+        [schwarz, "k"],
+      ]),
+      "white",
+    );
     if (!s) continue;
     const optionen = mische([richtig, ...andere], zufall).map(feldname);
     return {

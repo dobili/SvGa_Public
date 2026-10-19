@@ -30,9 +30,16 @@ const ENDSPIEL = JSON.parse(
 
 describe("Endspiel-Kurzübungen", () => {
   it("fenAus schreibt eine lesbare FEN", () => {
-    expect(fenAus(new Map([[4, "K"], [60, "k"], [12, "P"]]), "white")).toBe(
-      "4k3/8/8/8/8/8/4P3/4K3 w - - 0 1",
-    );
+    expect(
+      fenAus(
+        new Map([
+          [4, "K"],
+          [60, "k"],
+          [12, "P"],
+        ]),
+        "white",
+      ),
+    ).toBe("4k3/8/8/8/8/8/4P3/4K3 w - - 0 1");
   });
 
   it("Quadrat: legale Stellungen, „ja“ und „nein“ kommen vor, das Quadrat leuchtet", () => {

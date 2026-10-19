@@ -49,11 +49,21 @@ describe("Taktiktrainer", () => {
     const anzahl = anzahlJeThema(daten.aufgaben);
     expect(anzahl.get("gemischt")).toBe(daten.aufgaben.length);
     expect(anzahl.get("spiess")).toBeGreaterThan(RUNDE);
-    const spiess = taktikrunde(daten.aufgaben, { thema: "spiess", stufe: 2 }, RUNDE, festerZufall(1));
+    const spiess = taktikrunde(
+      daten.aufgaben,
+      { thema: "spiess", stufe: 2 },
+      RUNDE,
+      festerZufall(1),
+    );
     expect(spiess).toHaveLength(RUNDE);
     expect(spiess.every((a) => a.motiv === "spiess")).toBe(true);
     expect(spiess.every((a) => Math.abs(a.schwierigkeit - 2) <= 1)).toBe(true);
-    const matt = taktikrunde(daten.aufgaben, { thema: "mattbilder", stufe: null }, RUNDE, festerZufall(2));
+    const matt = taktikrunde(
+      daten.aufgaben,
+      { thema: "mattbilder", stufe: null },
+      RUNDE,
+      festerZufall(2),
+    );
     expect(matt.every((a) => a.mattbild !== null)).toBe(true);
   });
 });

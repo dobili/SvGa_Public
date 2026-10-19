@@ -48,7 +48,11 @@ describe("30-Minuten-Plan", () => {
     const zwei = weiter(eins.stand, 20 * MINUTE);
     const drei = weiter(zwei.stand, 30 * MINUTE);
     expect(drei.fertig).toBe(true);
-    expect(drei.stand).toEqual({ einheit: null, letzterTag: "studientag", letzterBereich: "eroeffnung" });
+    expect(drei.stand).toEqual({
+      einheit: null,
+      letzterTag: "studientag",
+      letzterBereich: "eroeffnung",
+    });
   });
 
   it("zählt die Restzeit des Schritts, auch über die Zeit hinaus", () => {

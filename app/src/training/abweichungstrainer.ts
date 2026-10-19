@@ -76,10 +76,7 @@ export function abweichungsrunde(
  * Eingaben: Kandidaten der Engine (UCI, beste zuerst), Buchzüge der Stellung (UCI).
  * Beispiel: Kandidaten [g8f6, b8c6], Buch [b8c6] → g8f6. Ohne passenden Kandidaten null.
  */
-export function abweichzug(
-  kandidaten: readonly string[],
-  buch: readonly string[],
-): string | null {
+export function abweichzug(kandidaten: readonly string[], buch: readonly string[]): string | null {
   return kandidaten.find((k) => !buch.includes(k)) ?? null;
 }
 

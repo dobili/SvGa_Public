@@ -2,12 +2,7 @@
 import { describe, expect, it } from "vitest";
 import { ladeKapitel, stellungVon } from "../schach/buchabbildungen.testhilfe";
 import { buchstellungenAus } from "./buchstellungen";
-import {
-  buchloesung,
-  faktorenaufgabe,
-  faktorenrunde,
-  falscheFaktoren,
-} from "./faktorentrainer";
+import { buchloesung, faktorenaufgabe, faktorenrunde, falscheFaktoren } from "./faktorentrainer";
 import { festerZufall } from "./zufall";
 
 const KAPITELZAHL = 13;

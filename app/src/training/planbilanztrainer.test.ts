@@ -19,7 +19,11 @@ describe("Planbilanz-Übung", () => {
       }
     }
     expect(aufgaben.some((a) => a.buchbilanz)).toBe(true);
-    expect(aufgaben.flatMap((a) => a.fragen).some((f) => f.antworten[f.richtig]?.startsWith("Noch offen"))).toBe(false);
+    expect(
+      aufgaben
+        .flatMap((a) => a.fragen)
+        .some((f) => f.antworten[f.richtig]?.startsWith("Noch offen")),
+    ).toBe(false);
   });
 
   it("LAP: genug Stellungen, Figur und Zielfeld als Feldnamen", () => {

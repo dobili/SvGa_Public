@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.98. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.99. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.98“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.99“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,42 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.99 (etwa 20 Minuten, mit Engine; deine Wünsche vom 19.10.2026 morgens, Opus)
+
+- [ ] N468. **Spielhilfen über „Partie beginnen“:** Spielen › „Vorgefertigte Bots“. Direkt unter
+      den drei Kacheln der Gegnerart stehen jetzt Du spielst, Bedenkzeit, „Züge zurücknehmen
+      erlauben“, die Spielhilfen und „Gewertete Partie“, darunter „Partie beginnen“, erst dann das
+      Gitter der Bots. Die Erklärung zur Wertung steht hinter dem Fragezeichen am Haken.
+- [ ] N469. **Porträt für eigene Bots:** Spielen › „Eigene Bots“ › „Neuen Gegner anlegen“. Unter
+      dem Namen steht „Porträt“ mit einem Auswahlmenü nach Altersgruppen (Kinder, Jugendliche,
+      Junge Erwachsene, Erwachsene, Ältere; je sechs, Frauen und Männer, verschiedene Haut- und
+      Haarfarben, Brillen, Bärte), links daneben das gewählte Bild. Gespeichert erscheint es in der
+      Kachel, in der Sprechblase oben und in der Liste der eigenen Bots. Ohne Wahl bleibt der
+      Anfangsbuchstabe. Passen Beschreibung und Bild zusammen?
+- [ ] N470. **Stern für besiegte Bots:** Gewinne eine gewertete Partie gegen einen Bot (am
+      einfachsten gegen Fritzi aus „Zum Spaß“). Danach trägt sein Porträt in der Gegnerwahl unten
+      rechts einen kleinen goldenen Stern auf Navy, auch in der Sprechblase. Ungewertete Siege
+      zählen nicht; „Wertung zurücksetzen“ nimmt die Sterne weg.
+- [ ] N471. **Partienliste:** Unter „Deine letzten Partien“ steht vor jeder Partie das Porträt des
+      Gegners. Ab vier Partien gibt es den Filter „Ergebnis“ (alle, gewonnen, remis, verloren) und
+      „Wertung“ (alle, gewertet, ungewertet); „Weitere Partien zeigen“ holt die nächsten zehn.
+      Ungewertete Partien haben rechts einen Papierkorb; nach „Ja, löschen“ ist die Partie weg.
+      Gewertete Partien lassen sich nicht löschen, weil sie die Wertung tragen.
+- [ ] N472. **Zeichen für Warum-Fragen in der Kapitelübersicht:** Kapitel 1 öffnen, Abschnitt 1.4
+      aufklappen. Bretter mit Warum-Frage tragen oben rechts ein Zeichen: graues Schloss (die Frage
+      erscheint erst, wenn die Abbildung angesehen ist), goldene Sprechblase (wartet auf dich),
+      grüner Haken (beantwortet). Die Legende steht unter „Abbildungen“. Öffne Abb. 1.26, warte 30
+      Sekunden, beantworte die Warum-Frage, geh zurück: grüner Haken an 1.26, und oben unter
+      „Dein Fortschritt“ steht „Warum-Fragen beantwortet 1 von 18“. In den Einstellungen zählt
+      „Warum-Fragen beantwortet“ mit.
+- [ ] N473. **Nachschlagen › Steckbriefe:** 13 Eröffnungen und 14 Fallenchecks aus dem Buch, jeder
+      aufklappbar. Die Fallenchecks mit „Wer tappt hinein?“, den Prüfungen mit „Reicht?“ (Zeichen
+      und Wort), „Rettender Zug“ und „Fallensteller-Test“. Der Knopf führt zum Stopp-Moment bzw.
+      zur ersten Abbildung des Abschnitts. Stimmen die Inhalte mit dem Buch überein?
+- [ ] N474. **Nachschlagen › Werkzeuge des Buches:** Alle Werkzeuge nach Kapiteln; ein Tipp auf den
+      Namen zeigt, was das Werkzeug zeigt, und darunter seine Regel aus dem Buch. „Kapitel n
+      öffnen“ führt zur Kapitelübersicht.
 
 ### Neu in 0.2.98 (etwa 25 Minuten; Design-Überprüfung, Opus)
 

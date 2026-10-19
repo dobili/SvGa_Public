@@ -3856,3 +3856,31 @@ und Bildunterschriften des Buches zeigen). Je Vorschlag ein Commit mit „DSn“
 - Bewusst nicht geändert: Gegnerwahl (Bot-Chat), kein sichtbarer Seitentitel in den
   Einstellungen (Wunsch 0.2.30), Werkzeugleiste bleibt waagerecht scrollbar (Wunsch 0.2.86).
 
+## Wünsche des Autors vom 19.10.2026 morgens (Opus, Zweig `spielen-sammlung-nachschlagen`, Version 0.2.99)
+
+Der Autor erlaubte dafür ausdrücklich, die Dateien des Bot-Chats anzufassen (GegnerWahl.tsx,
+Gegnerstufen.tsx, engine/gegner.ts).
+
+- Spielen: Farbe, Bedenkzeit, Rücknahme, Spielhilfen und „Gewertete Partie“ stehen als Block
+  zwischen Gegnerart und „Partie beginnen“ (über den `beginnen`-Platz der Gegnerwahl); die
+  Erklärung zur Wertung hinter einem Fragezeichen.
+- Porträts für eigene Bots: feste Liste von 30 Bildern (`engine/portraetwahl.ts`,
+  `app/public/gegner/wahl-01.svg` bis `wahl-30.svg`, Skript `skripte/erzeuge-portraetwahl.mjs`,
+  DiceBear „Personas“ wie die vorgefertigten), fünf Altersgruppen zu je sechs; Auswahlmenü mit
+  Gruppen im Editor. Feld `portraet` am eigenen Gegner, optional.
+- Besiegte Bots: Liste `spiel.besiegt` (Kennungen), wächst beim Ablegen einer gewerteten, vom
+  Leser gewonnenen Partie gegen einen Bot; ältere Daten ergänzt aus den gespeicherten Partien;
+  „Wertung zurücksetzen“ leert sie. Stern am Porträt (`GegnerBild.tsx`).
+- Partienliste: Porträt je Partie, Filter nach Ergebnis (aus Sicht des Lesers) und Wertung ab
+  vier Partien, „Weitere Partien zeigen“ in Zehnerschritten, Löschen nur ungewerteter Partien
+  mit Nachfrage (`ohnePartie`).
+- Kapitelübersicht: Zeichen für Warum-Fragen (gesperrt, offen, beantwortet) mit Legende;
+  beantwortete Fragen im Feld `fortschritt.warum` (Abbildung → Stellen der Fragen), Zähler im
+  Kapitelfortschritt und Summe in den Einstellungen. Eine Frage zählt als beantwortet, ob richtig
+  oder falsch (bearbeitet wie eine gelesene Karte).
+- Nachschlagen geprüft: Glossar, Denkroutine und Gesamt-Checkliste vollständig; neu die Seiten
+  „Steckbriefe“ (13 Eröffnungen aus Kapitel 2, 14 Fallenchecks aus Kapitel 4, Begriffe wie im
+  Buch) und „Werkzeuge des Buches“ (alle Werkzeuge nach Kapiteln mit Bedienung und Regel).
+- Nutzerdaten: Die neuen Felder (`portraet`, `besiegt`, `warum`) sind zusätzlich und optional wie
+  in 0.2.90; das Format bleibt 5. Eine ältere App ließe sie beim Speichern fallen, ohne Schaden.
+

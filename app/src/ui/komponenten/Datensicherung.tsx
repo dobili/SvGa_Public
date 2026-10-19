@@ -23,6 +23,7 @@ import {
 import { useSpeicher } from "../../speicher/speicher";
 import { bieteDateiAn, kannDateiTeilen, teileDatei } from "./dateiAnbieten";
 import { MitInfo } from "./InfoKnopf";
+import { Knopfsymbol } from "./Knopfsymbol";
 
 /** So lange bleibt die Datei zum Herunterladen im Speicher. */
 type Gepruefte = Extract<Sicherungspruefung, { ok: true }>;
@@ -166,14 +167,17 @@ export function Datensicherung() {
       <Sicherungsstand />
       <div className="knopfreihe">
         <button type="button" className="knopf-zweit" onClick={() => void sichere()}>
+          <Knopfsymbol art="herunterladen" />
           {t("sicherung.exportieren")}
         </button>
         {kannDateiTeilen() && (
           <button type="button" className="knopf-zweit" onClick={() => void teile()}>
+            <Knopfsymbol art="teilen" />
             {t("sicherung.teilen")}
           </button>
         )}
         <button type="button" className="knopf-zweit" onClick={() => auswahl.current?.click()}>
+          <Knopfsymbol art="einspielen" />
           {t("sicherung.importieren")}
         </button>
       </div>

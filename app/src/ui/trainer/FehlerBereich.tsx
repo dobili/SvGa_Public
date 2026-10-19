@@ -24,6 +24,7 @@ import {
 import { FehlerFormular } from "./FehlerFormular";
 import { useFehlerarten, type Fehlerart } from "./useFehlerarten";
 import { Trainerbrett } from "./Trainerbrett";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 /** So viele Einträge zeigt die Liste zuerst; der Rest auf Wunsch. */
 const ERSTE_EINTRAEGE = 10;
@@ -125,6 +126,7 @@ function Eintrag({ eintrag, arten }: { eintrag: Fehlereintrag; arten: readonly F
       {eintrag.satz && <p>{eintrag.satz}</p>}
       <Trainerbrett fen={eintrag.fen} beschriftung={t("fehlerdb.stellung")} />
       <button type="button" className="knopf-zweit" onClick={loeschen}>
+        <Knopfsymbol art="loeschen" />
         {t("fehlerdb.loeschen")}
       </button>
     </details>

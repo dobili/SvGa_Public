@@ -1,4 +1,4 @@
-/** Tests für Genauigkeitsmodus und Spielstärke nach der Eichung (0.2.83, Kurven neu seit 0.2.99). */
+/** Tests für Genauigkeitsmodus und Spielstärke nach der Eichung (0.2.83, Kurven neu seit 0.2.103). */
 import { describe, expect, it } from "vitest";
 import { kurvenwert, POLSTER, staerkeAusGenauigkeit, staerkeUeberPartien } from "./staerkemodell";
 

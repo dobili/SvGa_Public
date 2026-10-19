@@ -16,6 +16,8 @@ import { t } from "../../i18n/sprache";
 import { vergiss } from "../../speicher/speicher";
 import { Datensicherung } from "./Datensicherung";
 import { MitInfo } from "./InfoKnopf";
+import { Knopfsymbol } from "./Knopfsymbol";
+import { Titelsymbol } from "./Titelsymbol";
 
 type Stand = "ruhe" | "nachfrage" | "laeuft" | "fertig" | "teilweise";
 
@@ -48,7 +50,10 @@ export function DatenLoeschen() {
   };
   return (
     <section className="karte">
-      <h2 className="karte-titel">{t("loeschen.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="daten" />
+        {t("loeschen.titel")}
+      </h2>
       <MitInfo
         zeile={<p>{t("loeschen.kurz")}</p>}
         erklaerung={
@@ -62,6 +67,7 @@ export function DatenLoeschen() {
       <Datensicherung />
       {stand === "ruhe" && (
         <button type="button" className="knopf-zweit" onClick={() => setzeStand("nachfrage")}>
+          <Knopfsymbol art="loeschen" />
           {t("loeschen.knopf")}
         </button>
       )}
@@ -70,6 +76,7 @@ export function DatenLoeschen() {
           <p>{t("loeschen.frage")}</p>
           <div className="knopfreihe">
             <button type="button" className="knopf-gefahr" onClick={() => void loesche()}>
+              <Knopfsymbol art="loeschen" />
               {t("loeschen.ja")}
             </button>
             <button type="button" className="knopf-zweit" onClick={() => setzeStand("ruhe")}>

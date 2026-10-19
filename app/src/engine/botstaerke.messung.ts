@@ -119,7 +119,7 @@ function bewertungen(): Map<string, Rohwert[]> {
 }
 
 /**
- * Innere Genauigkeiten beider Seiten je Anker-Stufe, wie „Deine Spielstärke“ seit 0.2.99 nur bis
+ * Innere Genauigkeiten beider Seiten je Anker-Stufe, wie „Deine Spielstärke“ seit 0.2.103 nur bis
  * zur Entscheidung der Partie (Seiten mit mindestens zehn gezählten Zügen).
  */
 function ankerGenauigkeiten(): Map<number, number[]> {

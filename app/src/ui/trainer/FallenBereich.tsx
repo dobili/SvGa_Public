@@ -16,6 +16,7 @@ import { Rundenablauf } from "./Rundenablauf";
 import { Stufenwahl } from "./Stufenwahl";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Wiederholungsknopf } from "./Wiederholungsknopf";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 const AUFGABEN_JE_RUNDE = 8;
 
@@ -37,6 +38,7 @@ export function FallenBereich() {
         <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft(vorhanden)} />
         <Stufenwahl stufe={stufe} setze={setzeStufe} />
         <button type="button" className="knopf-haupt" onClick={() => setzeLaeuft([])}>
+          <Knopfsymbol art="starten" />
           {t("taktiktrainer.starten")}
         </button>
       </div>

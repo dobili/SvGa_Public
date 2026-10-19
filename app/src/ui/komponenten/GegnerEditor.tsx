@@ -20,7 +20,10 @@ import type { Phase } from "../../spiel/phasen";
 import { MAX_NAMENSLAENGE, mitEigenemGegner, ohneEigenenGegner } from "../../speicher/gegner";
 import { mitEigenenGegnern } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
+import { GegnerBild } from "./GegnerBild";
+import { PortraetAuswahl } from "./PortraetAuswahl";
 import { StufenWahl } from "./StufenWahl";
+import { Knopfsymbol } from "./Knopfsymbol";
 
 const STILNAMEN: Readonly<Record<string, Textschluessel>> = {
   "-2": "spielen.stil.sehrDefensiv",
@@ -47,6 +50,18 @@ function neuerGegner(): EigenerGegner {
 function kurzbeschreibung(g: EigenerGegner): string {
   const s = g.stufenJePhase;
   return `${s.eroeffnung} · ${s.mittelspiel} · ${s.endspiel} · ${t(STILNAMEN[String(g.stil)] ?? "spielen.stil.ausgeglichen")}`;
+}
+
+/** Der Gegner ohne Porträt (Wahl „kein Bild“). */
+function ohnePortraet(g: EigenerGegner): EigenerGegner {
+  return {
+    kennung: g.kennung,
+    name: g.name,
+    stufenJePhase: g.stufenJePhase,
+    fehlerarten: g.fehlerarten,
+    stil: g.stil,
+    blindeFlecken: g.blindeFlecken,
+  };
 }
 
 /** Das Formular für einen Gegner. */
@@ -86,6 +101,10 @@ function Formular({
         value={g.name}
         maxLength={MAX_NAMENSLAENGE}
         onChange={(e) => setze({ ...g, name: e.target.value })}
+      />
+      <PortraetAuswahl
+        gegner={g}
+        beiWahl={(portraet) => setze(portraet ? { ...g, portraet } : ohnePortraet(g))}
       />
       <StufenWahl
         stufen={g.stufenJePhase}
@@ -145,6 +164,7 @@ function Formular({
           disabled={name.length === 0}
           onClick={() => beiSpeichern({ ...g, name })}
         >
+          <Knopfsymbol art="speichern" />
           {t("spielen.eigene.speichern")}
         </button>
         <button type="button" className="knopf-zweit" onClick={beiAbbrechen}>
@@ -168,12 +188,16 @@ function Zeile({
   const [nachfrage, setzeNachfrage] = useState(false);
   return (
     <li className="gegnerzeile">
-      <span>
-        <strong>{g.name}</strong> · {kurzbeschreibung(g)}
+      <span className="gegnerzeile-kopf">
+        <GegnerBild bot={g.kennung} eigene={[g]} name={g.name} />
+        <span>
+          <strong>{g.name}</strong> · {kurzbeschreibung(g)}
+        </span>
       </span>
       {nachfrage ? (
         <span className="knopfreihe">
           <button type="button" className="knopf-gefahr" onClick={beiLoeschen}>
+            <Knopfsymbol art="loeschen" />
             {t("spielen.eigene.loeschenJa")}
           </button>
           <button type="button" className="knopf-zweit" onClick={() => setzeNachfrage(false)}>
@@ -191,6 +215,7 @@ function Zeile({
             aria-label={t("spielen.eigene.loeschenVon", { name: g.name })}
             onClick={() => setzeNachfrage(true)}
           >
+            <Knopfsymbol art="loeschen" />
             {t("spielen.eigene.loeschen")}
           </button>
         </span>
@@ -236,6 +261,7 @@ export function GegnerEditor() {
         />
       ) : (
         <button type="button" className="knopf-zweit" onClick={() => setzeOffen(neuerGegner())}>
+          <Knopfsymbol art="neuerGegner" />
           {t("spielen.eigene.neu")}
         </button>
       )}

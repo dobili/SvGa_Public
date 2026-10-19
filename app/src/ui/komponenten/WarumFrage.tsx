@@ -13,7 +13,8 @@ import { useState } from "react";
 import { istRichtig, warumFragen, type Frage, type Vorbereitet } from "../../analyse/warumfragen";
 import type { Abbildung } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { useSpeicher } from "../../speicher/speicher";
+import { notiereWarumfrage } from "../../speicher/fortschritt";
+import { aendere, useSpeicher } from "../../speicher/speicher";
 
 /** Größe des Pfeils, der zeigt, dass sich die Frage aufklappen lässt. */
 const PFEILGROESSE = 20;
@@ -28,7 +29,19 @@ function Entwurfsplakette() {
 }
 
 /** Beispiel: Abb. 1.26, „Warum ist 6. Ld3 ungenau?“ mit drei Antworten, zugeklappt. */
-function WarumFrage({ frage, entwurf }: { frage: Frage; entwurf: boolean }) {
+function WarumFrage({
+  frage,
+  entwurf,
+  schonBeantwortet = false,
+  beiAntwort,
+}: {
+  frage: Frage;
+  entwurf: boolean;
+  /** Früher schon beantwortet (0.2.99): Der Kopf trägt dann „beantwortet“. */
+  schonBeantwortet?: boolean;
+  /** Meldet die Antwort an den Fortschritt (nur an Abbildungen, 0.2.99). */
+  beiAntwort?: () => void;
+}) {
   const [gewaehlt, setzeGewaehlt] = useState<number | null>(null);
   const beantwortet = gewaehlt !== null;
   const klasse = (stelle: number) => {
@@ -45,6 +58,9 @@ function WarumFrage({ frage, entwurf }: { frage: Frage; entwurf: boolean }) {
             : t("vorbereitet.frageStellung")}
         </h2>
         {entwurf && <Entwurfsplakette />}
+        {schonBeantwortet && gewaehlt === null && (
+          <span className="plakette-beantwortet">{t("vorbereitet.beantwortet")}</span>
+        )}
         <ChevronDown className="aufklapper" size={PFEILGROESSE} aria-hidden="true" />
       </summary>
       <p>{frage.frage}</p>
@@ -56,7 +72,10 @@ function WarumFrage({ frage, entwurf }: { frage: Frage; entwurf: boolean }) {
             className={klasse(stelle)}
             disabled={beantwortet}
             aria-pressed={gewaehlt === stelle}
-            onClick={() => setzeGewaehlt(stelle)}
+            onClick={() => {
+              setzeGewaehlt(stelle);
+              beiAntwort?.();
+            }}
           >
             {antwort}
           </button>
@@ -108,13 +127,22 @@ export function WarumFragen({ hier }: { hier: Abbildung | null }) {
   const gesehen = useSpeicher((zustand) =>
     id ? zustand.daten.fortschritt.gesehen[id] !== undefined : false,
   );
+  const beantwortet = useSpeicher((zustand) =>
+    id ? zustand.daten.fortschritt.warum[id] : undefined,
+  );
   const vorbereitet = hier?.vorbereitet;
   if (!hier || !vorbereitet || !gesehen) return null;
   const entwurf = vorbereitet.status === "entwurf";
   return (
     <>
-      {warumFragen(vorbereitet).map((frage) => (
-        <WarumFrage key={`${hier.id} ${frage.frage}`} frage={frage} entwurf={entwurf} />
+      {warumFragen(vorbereitet).map((frage, stelle) => (
+        <WarumFrage
+          key={`${hier.id} ${frage.frage}`}
+          frage={frage}
+          entwurf={entwurf}
+          schonBeantwortet={beantwortet?.includes(stelle) ?? false}
+          beiAntwort={() => void aendere((d) => notiereWarumfrage(d, hier.id, stelle))}
+        />
       ))}
     </>
   );

@@ -3856,3 +3856,136 @@ und Bildunterschriften des Buches zeigen). Je Vorschlag ein Commit mit „DSn“
 - Bewusst nicht geändert: Gegnerwahl (Bot-Chat), kein sichtbarer Seitentitel in den
   Einstellungen (Wunsch 0.2.30), Werkzeugleiste bleibt waagerecht scrollbar (Wunsch 0.2.86).
 
+## Wünsche des Autors vom 19.10.2026 morgens (Opus, Zweig `spielen-sammlung-nachschlagen`, Version 0.2.99)
+
+Der Autor erlaubte dafür ausdrücklich, die Dateien des Bot-Chats anzufassen (GegnerWahl.tsx,
+Gegnerstufen.tsx, engine/gegner.ts).
+
+- Spielen: Farbe, Bedenkzeit, Rücknahme, Spielhilfen und „Gewertete Partie“ stehen als Block
+  zwischen Gegnerart und „Partie beginnen“ (über den `beginnen`-Platz der Gegnerwahl); die
+  Erklärung zur Wertung hinter einem Fragezeichen.
+- Porträts für eigene Bots: feste Liste von 30 Bildern (`engine/portraetwahl.ts`,
+  `app/public/gegner/wahl-01.svg` bis `wahl-30.svg`, Skript `skripte/erzeuge-portraetwahl.mjs`,
+  DiceBear „Personas“ wie die vorgefertigten), fünf Altersgruppen zu je sechs; Auswahlmenü mit
+  Gruppen im Editor. Feld `portraet` am eigenen Gegner, optional.
+- Besiegte Bots: Liste `spiel.besiegt` (Kennungen), wächst beim Ablegen einer gewerteten, vom
+  Leser gewonnenen Partie gegen einen Bot; ältere Daten ergänzt aus den gespeicherten Partien;
+  „Wertung zurücksetzen“ leert sie. Stern am Porträt (`GegnerBild.tsx`).
+- Partienliste: Porträt je Partie, Filter nach Ergebnis (aus Sicht des Lesers) und Wertung ab
+  vier Partien, „Weitere Partien zeigen“ in Zehnerschritten, Löschen nur ungewerteter Partien
+  mit Nachfrage (`ohnePartie`).
+- Kapitelübersicht: Zeichen für Warum-Fragen (gesperrt, offen, beantwortet) mit Legende;
+  beantwortete Fragen im Feld `fortschritt.warum` (Abbildung → Stellen der Fragen), Zähler im
+  Kapitelfortschritt und Summe in den Einstellungen. Eine Frage zählt als beantwortet, ob richtig
+  oder falsch (bearbeitet wie eine gelesene Karte).
+- Nachschlagen geprüft: Glossar, Denkroutine und Gesamt-Checkliste vollständig; neu die Seiten
+  „Steckbriefe“ (13 Eröffnungen aus Kapitel 2, 14 Fallenchecks aus Kapitel 4, Begriffe wie im
+  Buch) und „Werkzeuge des Buches“ (alle Werkzeuge nach Kapiteln mit Bedienung und Regel).
+- Nutzerdaten: Die neuen Felder (`portraet`, `besiegt`, `warum`) sind zusätzlich und optional wie
+  in 0.2.90; das Format bleibt 5. Eine ältere App ließe sie beim Speichern fallen, ohne Schaden.
+
+## Porträtwahl mit Vorschaubildern (19.10.2026, Opus, Zweig `portraet-bildauswahl`, Version 0.2.100)
+
+Wunsch des Autors: Im Auswahlmenü für das Porträt eines eigenen Bots sollen die Bilder schon zu
+sehen sein, statt jedes einzeln wählen zu müssen. Ein Auswahlmenü des Systems (`<select>`) kann
+keine Bilder zeigen; deshalb jetzt ein eigenes Aufklappmenü (`ui/komponenten/PortraetAuswahl.tsx`):
+ein Knopf mit gewähltem Bild, Beschreibung und Pfeil, darunter ein Gitter aller Porträts nach
+Altersgruppen (drei je Zeile auf dem Handy, sechs ab 480 px). Die Kacheln sind Optionsfelder einer
+Gruppe: Pfeiltasten wählen, ohne zu schließen; Tippen auf ein Bild oder die Eingabetaste wählen und
+schließen; Escape schließt. Der Bildschirmleser liest Gruppe „Porträt“ und die Beschreibung jedes
+Bildes. Gespeicherte Daten unverändert (`EigenerGegner.portraet`).
+
+## Symbolsprache DS19 bis DS29 (19.10.2026, Opus, Zweig `symbolsprache`, Version 0.2.101)
+
+Wunsch des Autors: Seiten sollen beim Scrollen ohne Lesen erfassbar sein, mit allgemein bekannten
+Zeichen, Farben und Strukturen (Beispiele des Autors: Aufklappzeichen, Diskette, farbige Zahlen,
+die Stufen der Bots). Grundlage: Durchsicht aller Bildschirme und eine Recherche (NN/g zu
+Layer-Cake-Scanning, Icon Usability, Akkordeon-Zeichen und Diskette; Apple HIG Color und Icons;
+WCAG 1.4.1 und 1.4.11; Lichess und chess.com). Leitsätze: Wort und Zeichen immer zusammen; eine
+Bedeutung, ein Zeichen; Farbe nie allein; Pfeil nach unten klappt auf, Pfeil nach rechts öffnet
+eine Seite; Kennfarben sparsam (Gold für Zeichen, Gürtelfarben nur für Stufen, Rot nur für Gefahr).
+
+- DS19 Stufenmarken in Gürtelfarben (Weiß, Gelb, Orange, Grün, Blau, Lila, Braun, Schwarz; die
+  Helligkeit nimmt mit der Stufe ab, die Zahl steht in der Marke), Spaß-Gruppe mit Konfetti;
+  Porträtreihe und Zähler besiegter Bots in jeder Stufenzeile (`Stufenmarke.tsx`, `Gegnerstufen.tsx`).
+- DS20 ein Aufklappzeichen: Pfeil nach unten am Zeilenende, offen nach oben; Zeilen ohne eigenen
+  Pfeil bekommen ihn über `symbole.css` statt des Dreiecks ▶.
+- DS21 Pfeil nach rechts an Zeilen, die eine Seite öffnen (Buch, Nachschlagen).
+- DS22 Zeichen an Knöpfen (`Knopfsymbol.tsx`): Diskette nur für Speichern in der App, Pfeil nach
+  unten für Dateien; Fahne für Aufgeben wie bei Lichess und chess.com (die Flagge des Endspiels ist
+  eine Zielflagge in anderem Zusammenhang).
+- DS23 Löschen rot schon vor der Nachfrage.
+- DS24 Zeichen vor Abschnittsköpfen (`Titelsymbol.tsx`, `Auswahl` mit `symbol`).
+- DS25 Ergebnismarke aus Sicht des Lesers (`Ergebnismarke.tsx`): Pokal/Gold, Händedruck/Grau,
+  Kreuz/Rot; neutral bei Mensch gegen Mensch.
+- DS26 Phasenzeichen aus der Auswertung an den Stufenreglern und in der Denkroutine
+  (`Phasenzeichen.tsx`, `phaseZumNamen`).
+- DS27 Fortschritt als goldener Rand der Kapitelnummer im Buch und in der Gesamt-Checkliste
+  (`Kapitelnummer.tsx`); der kleine Ring neben dem Text im Buch (Wunsch vom 18.10.2026) ist an
+  die Nummer gewandert.
+- DS28 Werkzeugzeichen in „Werkzeuge des Buches“ wie am Brett und in der Werkzeugleiste.
+- DS29 Glossar ohne Suche nach Anfangsbuchstaben mit stehenden Trennern und Sprungleiste.
+
+Vorlage mit Bildern vorher und nachher als privates Artifact (Bilder nicht im Repository).
+Freigabe des Autors am 19.10.2026: „Alles, ja“. Testpunkte N475 bis N482.
+
+
+## Uhr beim Verlassen sofort sichern (19.10.2026, Opus, Zweig `uhr-sichern`, Version 0.2.102)
+
+Befund N180 (seit 0.2.36 offen): Beim schnellen Neuladen am Rechner ging die Bedenkzeit seit dem
+letzten Zug verloren, weil der Browser das Schreiben in IndexedDB abbricht. Der Autor hatte den
+Punkt noch nicht beantwortet; nach seinem „Ja“ vom 19.10.2026 zur Liste der nächsten Schritte
+(Punkt b) ist der zweite Speicherweg jetzt gebaut: Beim Anhalten der Uhr (Hintergrund, `pagehide`,
+Bildschirm verlassen) legt `ui/komponenten/uhrNotsicherung.ts` den angehaltenen Uhrstand
+synchron in den Gerätespeicher (Merker `uhrNotsicherung` mit Kennung und Zahl der Züge). Beim
+Öffnen der Partie gilt er, wenn Kennung und Zugzahl passen; bei der Rückkehr wird er verworfen.
+Kein neues Speicherformat: Der Merker darf verloren gehen, dann gilt wie bisher IndexedDB.
+Komponententests in `uhrNotsicherung.test.ts`, Oberflächentest „Neuladen mitten im Nachdenken“
+in `spielen.spec.ts` (Hinweis: Chromium ohne Kopf bricht beim Neuladen das Schreiben nicht ab,
+der Test bestand auch vorher; er sichert das Verhalten für die Zukunft ab).
+Nebenbefund: Der Oberflächentest „Alle Daten löschen entfernt auch die Datenbank“ scheitert lokal,
+wenn er mit zwei Arbeitern neben `spielen.spec.ts` läuft, auch auf dem unveränderten Stand 0.2.101;
+allein und in GitHub Actions besteht er. Nicht durch diese Änderung verursacht.
+
+## Spielstärke nur bis zur Entscheidung, Kurven und Bot-Zahlen neu geeicht (19.10.2026, Opus, Zweig `genauigkeit-bis-entscheidung`, Version 0.2.103)
+
+Anlass: In einer Partie des Autors gegen Stufe 1 verlor die Engine nach 9...Db8?? die Dame, spielte
+34 Züge in verlorener Stellung weiter und bekam 89 % Genauigkeit und „etwa 1700“. Ursache: Die
+Lichess-Rechnung kappt die Bewertung bei ±10 Bauern; in entschiedener Stellung gibt es keine
+Gewinnchance mehr zu verlieren, jeder Zug zählt als fast perfekt. Wunsch des Autors: Für die
+Spielstärke zählen nur die Züge, bis die Partie dauerhaft entschieden ist; Schwankungen
+verschieben den Punkt nach hinten. Danach die Kurve Genauigkeit → Spielstärke neu eichen; die Bots
+nicht neu messen (Absprache mit dem Autor: Ihre Stärke und Reihenfolge bleiben, nur die Anker
+verschieben die Zahlen).
+
+- **Regel** (`spiel/entscheidung.ts`): Entscheidungspunkt ist die erste Stellung, ab der eine
+  Seite bis zum Ende mindestens 90 % Gewinnchance hat (dieselbe Grenze wie „entschieden“ beim
+  Polster). Es zählen die Züge davor, auch der Zug in die entschiedene Stellung. Ist schon die
+  Startstellung entschieden oder endet die Partie offen, zählen alle Züge. Gilt für die innere
+  Genauigkeit, die Spielstärke je Partie, die Spielstärke je Phase und Zugart, das Urteilswort je
+  Phase und „Deine Spielstärke“ über zehn Partien. Die angezeigte Genauigkeit (Schalter „wie
+  Lichess / App / chess.com“) zählt weiter alle Züge, damit sie mit diesen Seiten vergleichbar
+  bleibt. Schätzung weiter ab zehn gezählten Zügen (je Phase sechs).
+- **Anzeige:** „aus N Zügen bis zur Entscheidung“ hinter der Spanne, „zu wenige Züge vor der
+  Entscheidung“, je Phase „nach der Entscheidung“ ohne Urteilswort; Satz in der Erklärung.
+- **Eichung:** je 300 neu gesammelte gewertete Schnellschach-Partien von chess.com und Lichess
+  (je 30 in jedem 200-Punkte-Band von 400 bis 2399; die Rohdaten von 0.2.83 lagen in einem anderen
+  Container), in Tiefe 18 nachgerechnet, Seiten mit mindestens zehn gezählten Zügen. Vergleich an
+  denselben Kontrollseiten, Betrag der Abweichung Schätzung − Wertung (neue Regel gegen alle
+  Züge): chess.com je Partie 524 gegen 556, über zehn Partien 572 gegen 577; Lichess je Partie
+  331 gegen 373, über zehn 312 gegen 345. Die Regel trifft also überall etwas besser. Auf der
+  chess.com-Seite streut die Schätzung in dieser Stichprobe stärker als 2026-10-18 (damals 370
+  bis 480 je Partie); die Genauigkeit sagt bei chess.com über 1800 kaum noch etwas (Kurve endet
+  bei etwa 1860). Spanne in der App unverändert (±400 bis ±250).
+- **Neue Kurven** (`spiel/staerkemodell.ts`): Beispiele 80 % → etwa 1550 (chess.com 1500,
+  Lichess 1650); zehn Partien mit 75 % → etwa 1550 (1300 bis 1800). Regler der Schalterstellungen
+  unverändert (die Eichung fand Mittelweg 0,60 und nahe chess.com 0,2 statt 0,55 und 0,1; der
+  Unterschied liegt im Rauschen wie 2026-10-18).
+- **Bot-Zahlen** (`engine/botstaerke-daten.ts`, Messlauf `engine/botstaerke.messung.ts` mit der
+  neuen Regel und den neuen Kurven auf denselben Anker-Partien): Anker Stufe 1 bei 57 % → 850,
+  Stufe 2 bei 72 % → 1413, Stufe 3 bei 79 % → 1738 (Stufe 4 bis 6 gesättigt wie bisher). Alle
+  Zahlen sinken gemeinsam um 212: Stufen 983, 1319, 1698, 1868, 2147, 2383, 2699, 3011;
+  Spaß-Bots Fritzi 371, Onkel Willi 564, Tante Trude 670, Bruno 869. Rückfrage GE1 (Spaß-Bots
+  unter dem Wunschbereich 500 bis 1000; Empfehlung so lassen).
+- **Vergleichsschalter:** `EICHUNG_ALLE_ZUEGE=1 npm run messen:eichung` rechnet die Eichung wie
+  vor 0.2.103 über alle Züge.

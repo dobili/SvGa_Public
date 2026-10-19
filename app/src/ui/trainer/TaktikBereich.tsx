@@ -23,6 +23,7 @@ import { Stufenwahl } from "./Stufenwahl";
 import { Taktikaufgabe } from "./Taktikaufgabe";
 import { useFaelligeAufgaben } from "./kartenantwort";
 import { Wiederholungsknopf } from "./Wiederholungsknopf";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 const AUFGABEN_JE_RUNDE = 8;
 const THEMEN: readonly Taktikthema[] = ["gemischt", "mattbilder", ...MOTIVE];
@@ -66,6 +67,7 @@ function Wahl({
       </fieldset>
       <Stufenwahl stufe={stufe} setze={setzeStufe} />
       <button type="button" className="knopf-haupt" onClick={() => starte({ thema, stufe })}>
+        <Knopfsymbol art="starten" />
         {t("taktiktrainer.starten")}
       </button>
     </div>

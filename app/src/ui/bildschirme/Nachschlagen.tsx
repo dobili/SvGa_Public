@@ -1,11 +1,12 @@
 /**
- * Bereich Nachschlagen: Glossar, Denkroutine, Gesamt-Checkliste (Pflichtenheft 8, Navigation).
+ * Bereich Nachschlagen: Glossar, Denkroutine, Gesamt-Checkliste (Pflichtenheft 8, Navigation);
+ * seit 0.2.99 dazu die Steckbriefe (Eröffnungen und Fallenchecks) und die Werkzeuge des Buches.
  *
  * Rolle im Gesamtbild: Startseite des Bereichs in der Leiste unten. Die Suche im Glossar beginnt
  * direkt hier, weil Leser meist einen Begriff aus dem Buch nachschlagen wollen.
  * Abhängigkeiten: daten/laden.ts, Navigation, i18n, lucide-react.
  */
-import { BookA, ListChecks, Route } from "lucide-react";
+import { BookA, IdCard, ListChecks, Route, Wrench } from "lucide-react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { ladeGlossar } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
@@ -64,6 +65,18 @@ export function Nachschlagen() {
         titel={t("checkliste.titel")}
         zusatz={t("checkliste.zusatz")}
         beiKlick={() => navigiere({ bildschirm: "checkliste" })}
+      />
+      <Eintrag
+        symbol={<IdCard size={SYMBOLGROESSE} />}
+        titel={t("steckbrief.titel")}
+        zusatz={t("steckbrief.zusatz")}
+        beiKlick={() => navigiere({ bildschirm: "steckbriefe" })}
+      />
+      <Eintrag
+        symbol={<Wrench size={SYMBOLGROESSE} />}
+        titel={t("werkzeuge.titel")}
+        zusatz={t("werkzeuge.zusatz")}
+        beiKlick={() => navigiere({ bildschirm: "werkzeuge" })}
       />
     </div>
   );

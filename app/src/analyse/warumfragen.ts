@@ -26,3 +26,17 @@ export function warumFragen(vorbereitet: Vorbereitet | undefined): readonly Frag
 export function istRichtig(frage: Frage, gewaehlt: number): boolean {
   return frage.richtig === gewaehlt;
 }
+
+/**
+ * Warum-Fragen je Abbildung, nur Abbildungen mit Fragen (0.2.99: Zeichen in der Kapitelübersicht
+ * und Zähler im Fortschritt). Beispiel: Kapitel 1 → { "1.26": 1, … }.
+ */
+export function fragenJeAbbildung(
+  abbildungen: readonly Pick<Abbildung, "id" | "vorbereitet">[],
+): Record<string, number> {
+  return Object.fromEntries(
+    abbildungen
+      .map((a) => [a.id, warumFragen(a.vorbereitet).length] as const)
+      .filter(([, anzahl]) => anzahl > 0),
+  );
+}

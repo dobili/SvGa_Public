@@ -146,7 +146,7 @@ h2.abschnittsklappe-titel {
   margin: 0;
 }
 
-/* Pfeil vorn in der Abschnittszeile (0.2.82): zeigt nach rechts, aufgeklappt nach unten. */
+/* Aufklappzeichen am Ende der Abschnittszeile (DS20, symbole.css). */
 .abschnittsklappe > summary {
   list-style: none;
 }
@@ -155,12 +155,76 @@ h2.abschnittsklappe-titel {
   display: none;
 }
 
-.klappzeichen {
-  flex: none;
-  color: var(--text-leise);
-  transition: transform 0.15s ease;
+/* ---------- Zeichen für Zusatzinhalte (0.2.99, Wunsch des Autors 19.10.2026) ---------- */
+
+/* Oben rechts am kleinen Brett, über den Feldern; das Brett bleibt der Knopf. */
+.abbildungskachel {
+  position: relative;
 }
 
-.abschnittsklappe[open] > summary .klappzeichen {
-  transform: rotate(90deg);
+.kachel-zusatz {
+  position: absolute;
+  top: calc(var(--raster) * 1.5);
+  right: calc(var(--raster) * 1.5);
+  pointer-events: none;
+}
+
+.zusatzzeichen {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--flaeche);
+}
+
+/* Gesperrt: noch verborgen, bis die Abbildung angesehen ist. */
+.zusatz-gesperrt {
+  background: var(--flaeche);
+  color: var(--text-leise);
+  border: 1.5px solid var(--linie-stark);
+}
+
+/* Offen: Die Frage steht bereit. */
+.zusatz-offen {
+  background: var(--gold);
+  color: #16253d;
+}
+
+/* Erledigt: alle Fragen der Abbildung beantwortet. */
+.zusatz-erledigt {
+  background: #1f5e23;
+  color: #ffffff;
+}
+
+.zusatzlegende {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster) calc(var(--raster) * 2);
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.zusatzlegende li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.zusatzlegende .zusatzzeichen {
+  box-shadow: none;
+}
+
+.plakette-beantwortet {
+  flex: none;
+  font-size: var(--groesse-fein);
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: var(--grund);
+  color: var(--gruen-text);
+  font-weight: 600;
 }

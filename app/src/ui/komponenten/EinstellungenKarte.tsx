@@ -45,6 +45,7 @@ import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
 import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
 import { zeigeErklaerungenWieder } from "./useErklaerung";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Bretter in Gruppen (seit 0.2.84): Farben, Holz, Material. */
 const BRETTGRUPPEN: readonly { titel: Textschluessel; werte: readonly Brettfarben[] }[] = [
@@ -289,7 +290,10 @@ export function EinstellungenKarte() {
   const [bereich, setzeBereich] = useState<Bereich>("brett");
   return (
     <section className="karte" data-testid="darstellung">
-      <h2 className="karte-titel">{t("einstellungen.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="einstellungen" />
+        {t("einstellungen.titel")}
+      </h2>
       <Reiter
         name={t("einstellungen.titel")}
         eintraege={BEREICHE.map((b) => ({ ...b, text: t(b.text) }))}

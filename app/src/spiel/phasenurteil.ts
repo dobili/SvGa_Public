@@ -2,7 +2,7 @@
  * Urteilswort je Phase („Hervorragend“ bis „Schwach“) aus der inneren Genauigkeit.
  *
  * Rolle im Gesamtbild: Teil der Spielstärke-Bewertung (spiel/genauigkeit.ts, das die Funktion
- * weiterreicht); seit 0.2.99 eigene Datei, damit genauigkeit.ts unter 400 Zeilen bleibt.
+ * weiterreicht); seit 0.2.103 eigene Datei, damit genauigkeit.ts unter 400 Zeilen bleibt.
  * Abhängigkeiten: keine.
  */
 

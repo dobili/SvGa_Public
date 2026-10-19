@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { aufgabenAusKarten, faellige, trainerkarte } from "../training/wiederholung";
 import { leereDaten } from "./format";
 import {
+  beantworteteFragen,
   geloesteUebungen,
   kapitelfortschritt,
   markiereGesehen,
@@ -10,6 +11,7 @@ import {
   notiereTrainerantwort,
   notiereUebung,
   notiereUebungsergebnis,
+  notiereWarumfrage,
   setzeGesehen,
 } from "./fortschritt";
 
@@ -113,5 +115,25 @@ describe("Fortschritt", () => {
     expect(aufgabenAusKarten(faellige(falsch.karten, DANN), "falle")).toEqual([]);
     const richtig = notiereTrainerantwort(falsch, karte, true, DANN);
     expect(richtig.karten[karte]?.kasten).toBe(2);
+  });
+});
+
+describe("Warum-Fragen im Fortschritt (0.2.99)", () => {
+  const jetzt = new Date("2026-10-19T08:00:00.000Z");
+  it("merkt beantwortete Fragen je Abbildung, jede einmal", () => {
+    const einmal = notiereWarumfrage(leereDaten(jetzt), "1.26", 0);
+    const zweimal = notiereWarumfrage(einmal, "1.26", 0);
+    expect(zweimal).toBe(einmal);
+    expect(einmal.fortschritt.warum).toEqual({ "1.26": [0] });
+  });
+
+  it("zählt beantwortete und alle Fragen im Kapitel", () => {
+    const daten = notiereWarumfrage(leereDaten(jetzt), "1.26", 0);
+    const stand = kapitelfortschritt(daten.fortschritt, 1, ["1.26", "1.27"], [], {
+      "1.26": 1,
+      "1.27": 2,
+    });
+    expect(stand.warum).toEqual({ erreicht: 1, gesamt: 3 });
+    expect(beantworteteFragen(daten.fortschritt, "1.27", 2)).toBe(0);
   });
 });

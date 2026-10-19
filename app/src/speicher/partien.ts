@@ -19,6 +19,7 @@ import type { Phase } from "../schach/phase";
 import type { Gegnerart, Partie, Spielhilfen } from "../spiel/partie";
 import type { Uhreinstellung } from "../spiel/uhr";
 import { mitGewerteterPartie, type Wertungspunkt } from "../spiel/wertung";
+import { mitBesiegtem } from "./besiegt";
 
 /** So viele beendete Partien bleiben gespeichert; ältere fallen weg. */
 export const MAX_PARTIEN = 50;
@@ -80,6 +81,8 @@ export interface Spielstand {
   readonly wertung: readonly Wertungspunkt[];
   /** Eigene Gegner des Lesers (0.2.42, speicher/gegner.ts). */
   readonly eigeneGegner: readonly EigenerGegner[];
+  /** Kennungen der Bots, die der Leser in gewerteten Partien besiegt hat (0.2.99, besiegt.ts). */
+  readonly besiegt: readonly string[];
 }
 
 export const STANDARD_VORLIEBEN: Spielvorlieben = {
@@ -102,6 +105,7 @@ export const LEERER_SPIELSTAND: Spielstand = {
   vorlieben: STANDARD_VORLIEBEN,
   wertung: [],
   eigeneGegner: [],
+  besiegt: [],
 };
 
 /** Die Partie mit dieser Kennung, laufend oder beendet; null, wenn es sie nicht (mehr) gibt. */
@@ -127,7 +131,7 @@ export function legeAb(stand: Spielstand, partie: Partie): Spielstand {
     0,
     MAX_PARTIEN,
   );
-  return { ...stand, laufend, partien };
+  return { ...stand, laufend, partien, besiegt: mitBesiegtem(stand.besiegt, partie) };
 }
 
 /**
@@ -163,6 +167,15 @@ export function mitWerten(
   return { ...stand, partien, wertung };
 }
 
+/**
+ * Löscht eine beendete, ungewertete Partie (0.2.99, Wunsch des Autors). Gewertete Partien bleiben:
+ * Sie tragen die Wertung und die besiegten Bots. Beispiel: Übungspartie mit Rücknahmen → weg.
+ */
+export function ohnePartie(stand: Spielstand, id: string): Spielstand {
+  const partien = stand.partien.filter((e) => e.partie.id !== id || e.partie.einstellung.gewertet);
+  return { ...stand, partien };
+}
+
 export function mitVorlieben(stand: Spielstand, vorlieben: Spielvorlieben): Spielstand {
   return { ...stand, vorlieben };
 }
@@ -190,5 +203,6 @@ export function setzeWertungZurueck(stand: Spielstand): Spielstand {
     laufend: stand.laufend ? ungewertet(stand.laufend) : null,
     partien: stand.partien.map((e) => ({ ...e, partie: ungewertet(e.partie) })),
     wertung: [],
+    besiegt: [],
   };
 }

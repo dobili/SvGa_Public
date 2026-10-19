@@ -51,7 +51,7 @@ export function kurvenwert(kurve: Kurve, x: number): number {
 
 /**
  * Kurven Genauigkeit → mittlere Wertungszahl (für eine Partie die beste Schätzung), monoton
- * ausgeglichen; gerundet aus `buch/arbeit/eichung/ergebnis.json` (nur lokal). Seit 0.2.99 neu
+ * ausgeglichen; gerundet aus `buch/arbeit/eichung/ergebnis.json` (nur lokal). Seit 0.2.103 neu
  * geeicht auf der inneren Genauigkeit nur bis zur Entscheidung (spiel/entscheidung.ts), an je 300
  * neu gesammelten Partien von chess.com und Lichess (19.10.2026).
  */

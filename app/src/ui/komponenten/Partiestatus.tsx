@@ -12,6 +12,7 @@ import { t } from "../../i18n/sprache";
 import { amZug, type Partie } from "../../spiel/partie";
 import { useSpeicher } from "../../speicher/speicher";
 import type { Partiesteuerung } from "./usePartie";
+import { Knopfsymbol } from "./Knopfsymbol";
 
 function statustext(s: Partiesteuerung, partie: Partie): string {
   if (s.fehler) return t("partie.engineFehler", { fehler: s.fehler });
@@ -55,6 +56,7 @@ export function Partiestatus({
               disabled={!eigenerZug}
               onClick={s.nimmZurueck}
             >
+              <Knopfsymbol art="zuruecknehmen" />
               {t("partie.zuruecknehmen")}
             </button>
           )}
@@ -64,6 +66,7 @@ export function Partiestatus({
               className="knopf-zweit knopf-aufgeben"
               onClick={() => setzeAufgeben(true)}
             >
+              <Knopfsymbol art="aufgeben" />
               {t("partie.aufgeben")}
             </button>
           )}

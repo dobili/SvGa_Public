@@ -13,6 +13,8 @@ import { t } from "../../i18n/sprache";
 import type { Partie } from "../../spiel/partie";
 import { ausGrundstellung } from "../../spiel/wertung";
 import { kurzergebnis } from "./partietexte";
+import { Ergebnismarke } from "./Ergebnismarke";
+import { Knopfsymbol } from "./Knopfsymbol";
 
 export function Partieende({ partie }: { partie: Partie }) {
   const { navigiere } = useNavigation();
@@ -20,7 +22,10 @@ export function Partieende({ partie }: { partie: Partie }) {
   const eigeneStellung = !ausGrundstellung(partie);
   return (
     <section className="karte partieende" data-testid="partieende">
-      <h2 className="karte-titel">{kurzergebnis(partie)}</h2>
+      <h2 className="karte-titel partieende-titel">
+        <Ergebnismarke partie={partie} gross />
+        {kurzergebnis(partie)}
+      </h2>
       <div className="knopfreihe">
         {eigeneStellung && (
           <button
@@ -30,6 +35,7 @@ export function Partieende({ partie }: { partie: Partie }) {
               navigiere({ bildschirm: "spielen", startFen, ...(abbildung ? { abbildung } : {}) })
             }
           >
+            <Knopfsymbol art="nochmal" />
             {t("partie.nochmal")}
           </button>
         )}
@@ -38,6 +44,7 @@ export function Partieende({ partie }: { partie: Partie }) {
           className={eigeneStellung ? "knopf-zweit" : "knopf-haupt"}
           onClick={() => navigiere({ bildschirm: "spielen" })}
         >
+          <Knopfsymbol art="neu" />
           {t("partie.neu")}
         </button>
       </div>

@@ -38,6 +38,8 @@ import { gewinnchanceVorNach } from "./gewinnchance";
 import { Spielstaerke } from "./Spielstaerke";
 import { Verlaufskurve } from "./Verlaufskurve";
 import type { Auswertungsstand } from "./useAuswertung";
+import { Knopfsymbol } from "./Knopfsymbol";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** So viele absichtliche Fehler der Engine stehen zuerst da (0.2.85, Wunsch des Autors). */
 const ERSTE_ENGINEFEHLER = 3;
@@ -215,6 +217,7 @@ function Pgn({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[
     <div className="pgn">
       <div className="knopfreihe">
         <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
+          <Knopfsymbol art="kopieren" />
           {t("pgn.kopieren")}
         </button>
         <button
@@ -222,6 +225,7 @@ function Pgn({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[
           className="knopf-zweit"
           onClick={() => bieteDateiAn(text, datei, "application/vnd.chess-pgn")}
         >
+          <Knopfsymbol art="herunterladen" />
           {t("pgn.sichern")}
         </button>
       </div>
@@ -247,7 +251,10 @@ export function Auswertung({
 }) {
   return (
     <section className="karte auswertung" data-testid="auswertung">
-      <h2 className="karte-titel">{t("auswertung.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="auswertung" />
+        {t("auswertung.titel")}
+      </h2>
       {stand.art === "laeuft" && (
         <>
           <p>{t("auswertung.laeuft", { erledigt: stand.erledigt, gesamt: stand.gesamt })}</p>

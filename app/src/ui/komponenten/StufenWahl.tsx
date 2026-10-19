@@ -3,20 +3,19 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (17.10.2026): „einen gerasterten Regler je Phase“. Die
  * Engine folgt der Phase der Stellung und wechselt Zug für Zug um höchstens eine Stufe
- * (usePartie.ts, stufeFuer). Jeder Regler zeigt Nummer und Namen der Stufe.
+ * (usePartie.ts, stufeFuer). Jeder Regler zeigt Nummer und Namen der Stufe; seit 0.2.101 mit
+ * Phasenzeichen (DS26) und der Nummer in der Stufenmarke (DS19).
  * Abhängigkeiten: engine/stufen.ts, spiel/phasen.ts (PHASEN), i18n.
  */
 import { STUFEN, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import { PHASEN, type Phase } from "../../spiel/phasen";
+import { Titelsymbol } from "./Titelsymbol";
+import { Phasenzeichen } from "./Phasenzeichen";
+import { Stufenmarke } from "./Stufenmarke";
 
 const ERSTE = STUFEN[0]?.nummer ?? 1;
 const LETZTE = STUFEN[STUFEN.length - 1]?.nummer ?? 8;
-
-/** „3 · Fortgeschrittener Anfänger“ */
-function stufentext(nummer: Stufennummer): string {
-  return `${nummer} · ${t(`stufe.${nummer}`)}`;
-}
 
 /** `praefix` macht die Kennungen eindeutig, wenn zwei Reglergruppen auf einer Seite stehen. */
 export function StufenWahl({
@@ -30,13 +29,20 @@ export function StufenWahl({
 }) {
   return (
     <div className="stufenwahl" role="group" aria-label={t("spielen.stufe")}>
-      <span className="einstellung-name">{t("spielen.stufe")}</span>
+      <span className="einstellung-name">
+        <Titelsymbol art="stufe" />
+        {t("spielen.stufe")}
+      </span>
       {PHASEN.map((ph) => {
         const id = `${praefix}-${ph}`;
         return (
           <div key={ph} className="stufenregler">
             <label htmlFor={id}>
-              {t(`phase.name.${ph}`)}: <strong>{stufentext(stufen[ph])}</strong>
+              <Phasenzeichen phase={ph} />
+              {t(`phase.name.${ph}`)}: <Stufenmarke stufe={stufen[ph]} klein />{" "}
+              {/* Die Zahl steht in der Marke; für Bildschirmleser bleibt sie im Text (DS19). */}
+              <span className="nur-vorlesen">{stufen[ph]} · </span>
+              <strong>{t(`stufe.${stufen[ph]}`)}</strong>
             </label>
             <input
               id={id}

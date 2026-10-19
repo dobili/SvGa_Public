@@ -16,6 +16,7 @@ import { useDaten } from "../komponenten/useDaten";
 import { Repertoireaufgabe } from "./Repertoireaufgabe";
 import { Rundenablauf } from "./Rundenablauf";
 import { Zugerratenaufgabe } from "./Zugerratenaufgabe";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 const KAPITEL_STUDIEN = 10;
 const KAPITEL_PARTIEN = 11;
@@ -138,6 +139,7 @@ function Partiewahl({
         disabled={gewaehlt === null}
         onClick={() => gewaehlt && starte(gewaehlt)}
       >
+        <Knopfsymbol art="starten" />
         {t("taktiktrainer.starten")}
       </button>
     </div>

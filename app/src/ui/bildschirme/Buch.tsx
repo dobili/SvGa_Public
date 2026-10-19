@@ -11,9 +11,9 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { findeAbbildung, type Fundergebnis } from "../../daten/finde";
 import { ladeIndex, type Datenverzeichnis } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
-import { kapitelfortschritt } from "../../speicher/fortschritt";
+import { kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
-import { Ring } from "../komponenten/Kreisanzeige";
+import { Kapitelnummer } from "../komponenten/Kapitelnummer";
 import { Fundmeldung } from "../komponenten/Nummernsprung";
 import { useDaten } from "../komponenten/useDaten";
 
@@ -70,10 +70,27 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
   );
 }
 
+/** Angesehene Abbildungen eines Kapitels. */
+function useGesehen(nummer: number, abbildungen: readonly string[]): Anteil {
+  const gesehen = useSpeicher((zustand) => zustand.daten.fortschritt.gesehen);
+  return kapitelfortschritt(
+    { gesehen, uebungen: {}, trainer: {}, warum: {} },
+    nummer,
+    abbildungen,
+    [],
+  ).abbildungen;
+}
+
 /**
- * Zusatzzeile eines Kapitels: Anzahl der Abbildungen, nach dem ersten Ansehen mit kleinem Ring
- * (seit 0.2.80 statt des Balkens, Wunsch des Autors vom 18.10.2026).
+ * Kapitelnummer mit goldenem Rand für die angesehenen Abbildungen (DS27). Der kleine Ring neben
+ * dem Text (seit 0.2.80 statt des Balkens, Wunsch des Autors vom 18.10.2026) ist an die Nummer
+ * gewandert; so steht der Fortschritt aller Kapitel in einer Spalte untereinander.
  */
+function Nummer({ nummer, abbildungen }: { nummer: number; abbildungen: readonly string[] }) {
+  return <Kapitelnummer nummer={nummer} anteil={useGesehen(nummer, abbildungen)} />;
+}
+
+/** Zusatzzeile eines Kapitels: Anzahl der Abbildungen, nach dem ersten Ansehen wie viele gesehen. */
 function Kapitelzusatz({
   nummer,
   abbildungen,
@@ -81,20 +98,13 @@ function Kapitelzusatz({
   nummer: number;
   abbildungen: readonly string[];
 }) {
-  const gesehen = useSpeicher((zustand) => zustand.daten.fortschritt.gesehen);
-  const anteil = kapitelfortschritt(
-    { gesehen, uebungen: {}, trainer: {} },
-    nummer,
-    abbildungen,
-    [],
-  ).abbildungen;
+  const anteil = useGesehen(nummer, abbildungen);
   const text =
     anteil.erreicht > 0
       ? t("buch.abbildungenGesehen", { gesehen: anteil.erreicht, anzahl: anteil.gesamt })
       : t("buch.abbildungen", { anzahl: anteil.gesamt });
   return (
     <span className="kapitel-zusatz">
-      {anteil.erreicht > 0 && <Ring anteil={anteil} beschriftung={text} klein />}
       <span>
         {t("buch.kapitel", { nummer })} · {text}
       </span>
@@ -117,9 +127,7 @@ function Kapitelliste({ index }: { index: Datenverzeichnis }) {
             className="kapitel-kopf"
             onClick={() => navigiere({ bildschirm: "kapitel", nummer: kapitel.kapitel })}
           >
-            <span className="kapitel-nummer" aria-hidden="true">
-              {kapitel.kapitel}
-            </span>
+            <Nummer nummer={kapitel.kapitel} abbildungen={kapitel.abbildungen} />
             <span className="kapitel-text">
               <span className="kapitel-titel">{kapitel.titel}</span>
               <Kapitelzusatz nummer={kapitel.kapitel} abbildungen={kapitel.abbildungen} />

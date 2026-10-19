@@ -2,7 +2,7 @@
  * Oberflächentests für das Spiel gegen die Engine (AP 11): Partie beginnen, ziehen, Antwort der
  * Engine, Rücknahme, Fortsetzen nach dem Neuladen, Start an einer Abbildung mit Schwarz,
  * ein Zug, der ein Matt erlaubt, wird ohne Rückfrage gespielt (seit 0.2.32), Ergebnis und
- * Rücknahme nach dem Matt.
+ * Rücknahme nach dem Matt; Neuladen mitten im Nachdenken behält die verbrauchte Zeit (N180).
  */
 import { expect, type Page } from "@playwright/test";
 import { test } from "@playwright/test";
@@ -10,6 +10,8 @@ import { oeffneAbbildung, starteImBrowser } from "./hilfen";
 
 /** Die Engine rechnet im Browser; der erste Start lädt die WASM-Datei. */
 const ENGINE_FRIST = 30_000;
+/** Bedenkzeit vor dem Neuladen im Test zu N180: genug, dass die Uhr unter 5:00 fällt. */
+const BEDENKZEIT_MS = 6_000;
 
 async function ziehe(seite: Page, von: RegExp, nach: string): Promise<void> {
   await seite.getByRole("button", { name: von }).click();
@@ -50,6 +52,21 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await page.getByRole("button", { name: "Weiterspielen" }).click();
   await expect(page.getByTestId("partiezuege")).toContainText("1. d4");
   await expect(page.getByTestId("partiezuege").getByRole("button")).toHaveCount(2);
+});
+
+test("Neuladen mitten im Nachdenken: die Bedenkzeit bleibt verbraucht (N180)", async ({ page }) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("radio", { name: "5 + 3" }).click();
+  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await ziehe(page, /^e2, Bauer/, "e4");
+  await warteAufLeser(page);
+  // Nachdenken: Die Uhr von Weiß läuft (5:03 nach dem Zuschlag), dann sofort neu laden.
+  await page.waitForTimeout(BEDENKZEIT_MS);
+  await page.reload();
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("button", { name: "Weiterspielen" }).click();
+  await expect(page.getByTestId("uhr-white")).toContainText(/4:5\d/);
 });
 
 test("Abb. 1.26: gegen die Engine mit Schwarz, ruhige Ansicht, Aufgeben", async ({ page }) => {

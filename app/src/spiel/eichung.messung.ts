@@ -7,7 +7,7 @@
  * Die Rohdaten liegen nur lokal (EICHUNG_ORDNER, Vorgabe ../buch/arbeit/eichung): die Partien
  * aus pipeline/eichung/sammeln.py und die Bewertungen aus skripte/eichung-rechnen.mjs. Ausgabe:
  * bericht.md und ergebnis.json im selben Ordner (lokal); die Zahlen aus ergebnis.json kommen in
- * Schritt d als Konstanten in die App. Seit 0.2.99 stehen die Kurven auf der inneren Genauigkeit
+ * Schritt d als Konstanten in die App. Seit 0.2.103 stehen die Kurven auf der inneren Genauigkeit
  * nur bis zur Entscheidung der Partie (spiel/entscheidung.ts), wie die Schätzung in der App.
  * Abhängigkeiten: spiel/eichungsrechnung.ts, spiel/genauigkeitsmodell.ts.
  * Aufruf (im Ordner app/): npm run messen:eichung
@@ -55,7 +55,7 @@ const DURCHGAENGE = 400;
 const JE_ZEHN = 10;
 const BANDBREITE = 200;
 const MINDESTENS_ZUEGE = 10;
-// Zum Vergleich mit der Rechnung vor 0.2.99: EICHUNG_ALLE_ZUEGE=1 zählt alle Züge.
+// Zum Vergleich mit der Rechnung vor 0.2.103: EICHUNG_ALLE_ZUEGE=1 zählt alle Züge.
 const ALLE_ZUEGE = process.env.EICHUNG_ALLE_ZUEGE === "1";
 
 interface Seitendaten extends Eichseite {
@@ -122,7 +122,7 @@ function genauigkeitsZeile(name: string, seiten: readonly Eichseite[], regler: R
 }
 
 /**
- * Innere Genauigkeit einer Seite wie in der App seit 0.2.99: nur Züge bis zur Entscheidung
+ * Innere Genauigkeit einer Seite wie in der App seit 0.2.103: nur Züge bis zur Entscheidung
  * (spiel/entscheidung.ts), null bei weniger als zehn gezählten Zügen (dann schätzt die App nicht).
  */
 function innen(s: Eichseite): number | null {

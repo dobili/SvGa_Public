@@ -7,7 +7,7 @@
  * heraus (wie spiel/genauigkeit.ts, partiegenauigkeit). Ein größerer Abfall bestraft kleine
  * Fehler stärker; ein Polster unter 1 lässt Züge in entschiedenen Stellungen weniger zählen (bei
  * Lichess gleichen viele saubere Züge in längst gewonnener Stellung Fehler aus).
- * Seit 0.2.99 gibt es dazu die innere Genauigkeit nur bis zur Entscheidung der Partie
+ * Seit 0.2.103 gibt es dazu die innere Genauigkeit nur bis zur Entscheidung der Partie
  * (spiel/entscheidung.ts), auf der die Kurven Genauigkeit → Spielstärke geeicht sind.
  * Abhängigkeiten: spiel/genauigkeit.ts (Gewinnwahrscheinlichkeit, Gewichte nach Lichess),
  * spiel/entscheidung.ts.

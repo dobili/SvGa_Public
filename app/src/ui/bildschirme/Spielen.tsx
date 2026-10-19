@@ -138,39 +138,49 @@ function Einstellungen({
           </>
         }
         editor={<GegnerEditor />}
-        beginnen={beginnen}
-      />
-      {engine && (
-        <Auswahl
-          name={t("spielen.seite")}
-          werte={["white", "black"] as const}
-          gewaehlt={wahl.farbe}
-          text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
-          beiWahl={(farbe) => setze({ ...wahl, farbe })}
-        />
-      )}
-      <Auswahl
-        name={t("spielen.uhr")}
-        werte={uhrStellen}
-        gewaehlt={String(uhrstelle(v))}
-        text={(stelle) => uhrname(Number(stelle))}
-        beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
-      />
-      <label className="schalterzeile">
-        <input
-          type="checkbox"
-          checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
-          disabled={wirdGewertet(fen, v)}
-          onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
-        />
-        {t("spielen.ruecknahme")}
-      </label>
-      <HilfenWahl
-        hilfen={v.hilfen}
-        gewertet={v.gewertet}
-        wertbar={wertbar(fen, v)}
-        beiHilfen={(hilfen) => mit({ hilfen })}
-        beiGewertet={(gewertet) => mit({ gewertet })}
+        beginnen={
+          <>
+            {/* Farbe, Bedenkzeit, Rücknahme und Spielhilfen direkt über „Partie beginnen“
+                (Wunsch des Autors, 19.10.2026): Unter dem Gitter der Bots übersah man sie. */}
+            <div className="partieeinstellungen">
+              {engine && (
+                <Auswahl
+                  name={t("spielen.seite")}
+                  symbol="farbe"
+                  werte={["white", "black"] as const}
+                  gewaehlt={wahl.farbe}
+                  text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
+                  beiWahl={(farbe) => setze({ ...wahl, farbe })}
+                />
+              )}
+              <Auswahl
+                name={t("spielen.uhr")}
+                symbol="bedenkzeit"
+                werte={uhrStellen}
+                gewaehlt={String(uhrstelle(v))}
+                text={(stelle) => uhrname(Number(stelle))}
+                beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
+              />
+              <label className="schalterzeile">
+                <input
+                  type="checkbox"
+                  checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
+                  disabled={wirdGewertet(fen, v)}
+                  onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
+                />
+                {t("spielen.ruecknahme")}
+              </label>
+              <HilfenWahl
+                hilfen={v.hilfen}
+                gewertet={v.gewertet}
+                wertbar={wertbar(fen, v)}
+                beiHilfen={(hilfen) => mit({ hilfen })}
+                beiGewertet={(gewertet) => mit({ gewertet })}
+              />
+            </div>
+            {beginnen}
+          </>
+        }
       />
     </section>
   );

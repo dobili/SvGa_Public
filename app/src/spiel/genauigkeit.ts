@@ -15,7 +15,7 @@
  * Schalter „Genauigkeit wie“ (Lichess, Mittelweg, nahe chess.com: Züge in entschiedener Stellung
  * zählen voll, halb oder kaum); Spielstärke und Urteilswort hängen an der inneren Genauigkeit
  * (Lichess-Rechnung). Die Spielstärke kommt aus den Kurven der Eichung statt aus der Tabelle von
- * 0.2.72, mit Spanne und den Werten für chess.com und Lichess. Seit 0.2.99 zählen für Spielstärke
+ * 0.2.72, mit Spanne und den Werten für chess.com und Lichess. Seit 0.2.103 zählen für Spielstärke
  * und Urteilswort nur die Züge bis zur Entscheidung der Partie (spiel/entscheidung.ts).
  * Abhängigkeiten: spiel/auswertung.ts, spiel/entscheidung.ts, spiel/partie.ts, spiel/phasen.ts,
  * spiel/phasenurteil.ts, spiel/taktik.ts, spiel/staerkemodell.ts.
@@ -41,7 +41,7 @@ export interface Seitenbilanz {
   readonly genauigkeit: number | null;
   /** Innere Genauigkeit (Lichess) für Spielstärke und Urteilswort, nur bis zur Entscheidung. */
   readonly innen: number | null;
-  /** Züge bis zur Entscheidung (seit 0.2.99, spiel/entscheidung.ts); nur sie zählen für `innen`. */
+  /** Züge bis zur Entscheidung (seit 0.2.103, spiel/entscheidung.ts); nur sie zählen für `innen`. */
   readonly gewertet: number;
   /** Durchschnittlicher Verlust je Zug in Bauerneinheiten. */
   readonly verlustJeZug: number;

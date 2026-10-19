@@ -10,9 +10,11 @@
  * kleinen Ring und hat einen eigenen Knopf „Abschnitt 1.1 abhaken“ oder „Haken in 1.1 lösen“.
  * Seit 0.2.82 (Wunsch des Autors) sind alle Abschnitte anfangs eingeklappt; ein Pfeil vorn zeigt,
  * ob ein Abschnitt auf- oder zugeklappt ist.
+ * Seit 0.2.99 (Wunsch des Autors): Abbildungen mit Warum-Fragen tragen oben rechts ein Zeichen
+ * (gesperrt, offen, beantwortet), erklärt in der Legende über der Galerie (Zusatzsymbol.tsx).
  * Abhängigkeiten: daten/laden.ts, ui/brett, Navigation, Speicher, MitInfo, Ring, i18n.
  */
-import { Check, ChevronRight } from "lucide-react";
+import { Check, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import type { Abbildung, Kapitel, Textteil } from "../../daten/laden";
@@ -23,6 +25,8 @@ import { Brett } from "../brett/Brett";
 import { buchmarkierungen } from "./buchmarkierungen";
 import { MitInfo } from "./InfoKnopf";
 import { Ring } from "./Kreisanzeige";
+import { Zusatzlegende, Zusatzsymbol } from "./Zusatzsymbol";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe des Hakens im Kästchen an angesehenen Abbildungen. */
 const HAKEN_GROESSE = 15;
@@ -69,6 +73,7 @@ function Kachel({ abbildung }: { abbildung: Abbildung }) {
           koordinaten={false}
           beschriftung={titel}
         />
+        <Zusatzsymbol abbildung={abbildung} />
         <span className="kachel-nummer">{titel}</span>
         <span className="kachel-text">{kurztext(abbildung.unterschrift)}</span>
       </button>
@@ -143,10 +148,16 @@ function Galeriekopf({ kapitel }: { kapitel: Kapitel }) {
   return (
     <div className="galeriekopf">
       <MitInfo
-        zeile={<h2 className="abschnitt-titel">{t("kapitel.abbildungen")}</h2>}
+        zeile={
+          <h2 className="abschnitt-titel">
+            <Titelsymbol art="abbildungen" />
+            {t("kapitel.abbildungen")}
+          </h2>
+        }
         erklaerung={<p>{t("fortschritt.verweilen")}</p>}
         thema={t("kapitel.abbildungen")}
       />
+      <Zusatzlegende kapitel={kapitel} />
       {frage ? (
         <Nachfrage frage={frage} kapitel={kapitel} beiEnde={() => setzeFrage(null)} />
       ) : (
@@ -215,12 +226,12 @@ function Abschnitt({ gruppe }: { gruppe: Gruppe }) {
       onToggle={(ereignis) => setzeOffen(ereignis.currentTarget.open)}
     >
       <summary>
-        <ChevronRight className="klappzeichen" size={PFEIL_GROESSE} aria-hidden="true" />
         <Ring anteil={anteil} beschriftung={stand} klein />
         <h2 className="abschnittsklappe-titel">
           {gruppe.nummer} {gruppe.titel}
         </h2>
         <span className="abschnittsklappe-stand">{stand}</span>
+        <ChevronDown className="aufklapper" size={PFEIL_GROESSE} aria-hidden="true" />
       </summary>
       {offen && (
         <>

@@ -32,7 +32,12 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       vorWerkzeugen: "aus",
     });
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
-    expect(ergebnis.daten.fortschritt).toEqual({ gesehen: {}, uebungen: {}, trainer: {} });
+    expect(ergebnis.daten.fortschritt).toEqual({
+      gesehen: {},
+      uebungen: {},
+      trainer: {},
+      warum: {},
+    });
     expect(ergebnis.daten.angelegt).toBe(JETZT.toISOString());
   });
 
@@ -97,6 +102,8 @@ describe("Format 1", () => {
           genauigkeitsmodus: "mittelweg",
           vorWerkzeugen: "aus",
         },
+        // Beantwortete Warum-Fragen (seit 0.2.99) fehlen in Format 1 und lesen sich leer.
+        fortschritt: { ...format1.fortschritt, warum: {} },
         schemaVersion: SCHEMA_VERSION,
         spiel: LEERER_SPIELSTAND,
         karten: {},

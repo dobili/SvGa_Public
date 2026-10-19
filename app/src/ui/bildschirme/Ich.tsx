@@ -28,6 +28,8 @@ import { Fortschrittsuebersicht } from "../komponenten/Fortschrittsuebersicht";
 import { useDaten } from "../komponenten/useDaten";
 import { Wertungskurve } from "../komponenten/Wertungskurve";
 import { useSpeicher } from "../../speicher/speicher";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Titelsymbol } from "../komponenten/Titelsymbol";
 
 /** Der Installationsteil der Startseite (Entscheidung 15.10.2026). */
 const INSTALLATIONSSEITE = "/installieren/";
@@ -62,6 +64,7 @@ function FehlerMelden({ angaben }: { angaben: string }) {
   return (
     <>
       <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
+        <Knopfsymbol art="fehlerMelden" />
         {t("ich.fehlerMelden")}
       </button>
       {meldung && (
@@ -115,7 +118,10 @@ export function Ich() {
       {/* „Über die App“ am Ende (DS14): Version und Lizenzen braucht man selten, die
           Einstellungen oft. */}
       <section className="karte">
-        <h2 className="karte-titel">{t("ich.einstellungen")}</h2>
+        <h2 className="karte-titel">
+          <Titelsymbol art="ueberApp" />
+          {t("ich.einstellungen")}
+        </h2>
         <dl className="einstellungen">
           <Zeile name={t("ich.version")} wert={APP_VERSION} testid="app-version" />
           <Zeile name={t("ich.datenstand")} wert={datenstand} />
@@ -128,6 +134,7 @@ export function Ich() {
             </button>
           ) : (
             <button type="button" className="knopf-zweit" onClick={() => void suche()}>
+              <Knopfsymbol art="aktualisieren" />
               {t("ich.updateSuchen")}
             </button>
           )}

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.98. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 19.10.2026, Version 0.2.103. **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +17,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.98“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.103“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter Buchbefunde und Entscheidungen. Alle
@@ -32,6 +32,121 @@ klappt), hat Claude am 18.10.2026 selbst mit der gebauten App geprüft (Handygr�
 dunkel, echte Engine) und hier gestrichen; dabei gefundene Fehler sind behoben. Hier steht nur
 noch, was dein Auge, dein Gefühl am Brett oder dein Schachurteil braucht. Abhaken, was passt;
 sonst eine Notiz. Wer wenig Zeit hat, nimmt zuerst N335, dann der Reihe nach.
+
+### Neu in 0.2.103 (etwa 15 Minuten, mit Engine; Spielstärke nur bis zur Entscheidung, Opus)
+
+Dein Wunsch vom 19.10.2026: Für die geschätzte Spielstärke zählen nur noch die Züge, bis die
+Partie entschieden ist, also bis eine Seite mindestens 90 % Gewinnchance hat und bis zum Ende
+behält. Die Kurven Genauigkeit → Spielstärke sind dafür an 600 neu gesammelten Partien von
+chess.com und Lichess neu geeicht. Die Bots spielen wie vorher; ihre Zahlen sinken alle um etwa
+200, weil die Anker mit der neuen Regel nachgerechnet sind.
+
+- [ ] N580. **Verschenkte Partie gegen Stufe 1:** Spiele gegen Stufe 1 so lange, bis die Engine
+      früh die Dame oder einen Turm verliert, und spiele dann zügig zu Ende (wie deine Partie vom
+      19.10.2026, als die Engine nach 9...Db8?? auf 89 % und „etwa 1700“ kam). Auswertung › Karte
+      „Spielstärke“: Steht bei der Engine jetzt „zu wenige Züge vor der Entscheidung“ oder eine
+      deutlich kleinere Zahl? Die Genauigkeit oben darf hoch bleiben; sie zählt wie bei Lichess
+      und chess.com alle Züge.
+- [ ] N581. **„aus N Zügen bis zur Entscheidung“:** In derselben Auswertung steht bei deiner
+      Spielstärke hinter der Spanne etwa „· aus 12 Zügen bis zur Entscheidung“. In der Tabelle je
+      Phase steht bei Phasen, die ganz nach der Entscheidung liegen (meist das Endspiel), statt
+      Marke und Zahl „92 % · nach der Entscheidung (15 Züge)“. Verständlich?
+- [ ] N582. **Zahlen der Bots:** Spielen › „Vorgefertigte Bots“. Stufe 1 steht jetzt bei etwa
+      850 bis 1100 (vorher 1050 bis 1300), Stufe 8 bei etwa 3000 (vorher 3200), „Zum Spaß“ bei
+      „unter 400 bis etwa 850“ (Fritzi unter 400, Onkel Willi etwa 550, Tante Trude etwa 650,
+      Bruno etwa 850). Passt das zu deinem Gefühl am Brett? Zu den Spaß-Bots siehe GE1 in Teil 2.
+- [ ] N583. **Erklärung:** Auf der Karte „Spielstärke“ das Fragezeichen bei „Wie die Zahlen
+      entstehen“ antippen. Dort steht neu: „Für Spielstärke und Wort je Phase zählen nur die
+      Züge, bis die Partie entschieden ist: bis eine Seite mindestens 90 % Gewinnchance hat und
+      bis zum Ende behält. Danach ist fast jeder Zug ‚genau‘, weil nichts mehr zu verlieren ist;
+      sonst bekäme eine früh verschenkte Partie eine hohe Zahl. Die Genauigkeit oben zählt wie bei
+      Lichess und chess.com alle Züge.“ Passt der Text?
+
+### Neu in 0.2.102 (etwa 3 Minuten, mit Engine; Uhr sofort gesichert, Opus)
+
+- [ ] N180. **Uhr nach dem Schließen:** Partie mit Uhr (etwa 5 + 3) beginnen, einen Zug spielen,
+      nach der Antwort der Engine eine Minute nachdenken, dann die App ganz schließen (aus der
+      Liste der offenen Apps wischen) und wieder öffnen, Spielen › Weiterspielen: Steht deine
+      Restzeit auf dem Stand vom Moment des Schließens (etwa 4:0x), nicht auf dem Stand nach
+      deinem letzten Zug (5:0x)? Neu: Die App legt den angehaltenen Uhrstand beim Verlassen
+      zusätzlich sofort im Gerätespeicher ab, weil das gewöhnliche Speichern beim Schließen
+      abgebrochen werden kann.
+
+### Neu in 0.2.101 (etwa 15 Minuten; Symbolsprache, von dir freigegeben am 19.10.2026, Opus)
+
+- [ ] N475. **Stufen der Bots:** Spielen › „Vorgefertigte Bots“. Jede Stufe hat eine runde Marke
+      mit Nummer in Gürtelfarben (1 Weiß, 2 Gelb, 3 Orange, 4 Grün, 5 Blau, 6 Lila, 7 Braun,
+      8 Schwarz), „Zum Spaß“ eine bunte Marke mit Konfetti. Rechts stehen vier kleine Gesichter
+      (zugeklappt), darunter nach einem gewerteten Sieg ein Stern mit „1/8“. Der Elo-Bereich steht
+      kleiner in einer zweiten Zeile. Auch im Dunkelmodus gut zu erkennen?
+- [ ] N476. **Aufklappen und Weiter:** Überall, wo etwas aufklappt (Eigene Stellung eingeben,
+      Absichtliche Fehler, Abschnitte im Kapitel, Stufen der Bots, Denkroutine, Werkzeuge,
+      Checkliste), steht am Zeilenende ein Pfeil nach unten, offen nach oben; kein Dreieck ▶ mehr.
+      Kapitel im Buch und die Einträge in Nachschlagen haben rechts einen Pfeil nach rechts.
+- [ ] N477. **Zeichen an Knöpfen:** Einstellungen › Daten: Pfeil nach unten bei „Daten sichern“,
+      Pfeil nach oben bei „Sicherung einspielen“, „Alle Daten dieser App löschen“ rot mit
+      Papierkorb. Eigener Bot: Diskette bei „Gegner speichern“, Person mit Plus bei „Neuen Gegner
+      anlegen“. Partie: Fahne bei „Aufgeben“, Pfeil zurück bei „Zurücknehmen“. Taktiktrainer:
+      Dreieck bei „Runde starten“, Glühbirne bei „Hinweis“, Auge bei „Lösung zeigen“. Passt jedes
+      Zeichen zum Wort?
+- [ ] N478. **Zeichen vor Überschriften:** Goldene Zeichen vor „Deine Wertung“ (Pokal), „Dein
+      Fortschritt“, „Einstellungen“ (Zahnrad), „Daten auf diesem Gerät“, „Über die App“ („i“),
+      „Fällige Wiederholungen“, „Trainer je Kapitel“, „Deine letzten Partien“, „Auswertung“,
+      „Spielstärke“; in Spielen vor „Du spielst“, „Bedenkzeit“ (Stoppuhr), „Spielhilfen“
+      (Rettungsring), „Stufe der Engine“ und „Eröffnung“ (Buch).
+- [ ] N479. **Ergebnis:** Gewinne eine Partie (etwa „Eigene Stellung eingeben“ mit
+      6k1/5ppp/8/8/8/8/8/R5K1 w - - 0 1, dann Ta8 matt) und gib eine andere auf. Am Partieende steht
+      ein goldener Pokal bzw. ein rotes Kreuz vor dem Satz; in „Deine letzten Partien“ steht
+      „1–0“ in einer goldenen Marke mit Pokal bzw. „0–1“ rot umrandet mit Kreuz. Remis zeigt einen
+      Händedruck.
+- [ ] N480. **Phasen und Stufen:** Spielen › „Eigene Stufe“: Vor „Eröffnung“, „Mittelspiel“,
+      „Endspiel“ stehen Buch, gekreuzte Schwerter und Flagge, hinter dem Doppelpunkt die Stufe als
+      kleine Gürtelmarke. Dieselben Zeichen stehen in Nachschlagen › Denkroutine vor den Phasen.
+- [ ] N481. **Fortschritt an der Kapitelnummer:** Buch: Der Kreis um die Kapitelnummer füllt sich
+      golden mit den angesehenen Abbildungen (in einem Kapitel „Alle abhaken“ → goldener Kreis mit
+      Haken). Der kleine Ring neben dem Text ist dafür weggefallen. Dasselbe in der
+      Gesamt-Checkliste für abgehakte Lernziele.
+- [ ] N482. **Werkzeuge und Glossar:** Nachschlagen › Werkzeuge des Buches: Jedes Werkzeug hat
+      sein Zeichen wie am Brett. Nachschlagen › Glossar: Begriffe unter A, B, C …; der Buchstabe
+      bleibt beim Scrollen oben stehen, die Leiste oben springt zum Buchstaben. Mit Suchtext
+      erscheint die einfache Trefferliste.
+
+### Neu in 0.2.99 (etwa 20 Minuten, mit Engine; deine Wünsche vom 19.10.2026 morgens, Opus)
+
+- [ ] N468. **Spielhilfen über „Partie beginnen“:** Spielen › „Vorgefertigte Bots“. Direkt unter
+      den drei Kacheln der Gegnerart stehen jetzt Du spielst, Bedenkzeit, „Züge zurücknehmen
+      erlauben“, die Spielhilfen und „Gewertete Partie“, darunter „Partie beginnen“, erst dann das
+      Gitter der Bots. Die Erklärung zur Wertung steht hinter dem Fragezeichen am Haken.
+- [ ] N469. **Porträt für eigene Bots (mit Vorschaubildern seit 0.2.100):** Spielen › „Eigene
+      Bots“ › „Neuen Gegner anlegen“. Unter dem Namen steht „Porträt“ als Knopf mit dem gewählten
+      Bild und einem Pfeil. Antippen klappt alle 30 Bilder auf, nach Altersgruppen (Kinder,
+      Jugendliche, Junge Erwachsene, Erwachsene, Ältere; je sechs, Frauen und Männer, verschiedene
+      Haut- und Haarfarben, Brillen, Bärte), ganz oben „kein Bild“ mit dem Anfangsbuchstaben.
+      Ein Tippen auf ein Bild wählt es und klappt zu. Gespeichert erscheint es in der Kachel, in
+      der Sprechblase oben und in der Liste der eigenen Bots. Passen Bilder und Gruppen?
+- [ ] N470. **Stern für besiegte Bots:** Gewinne eine gewertete Partie gegen einen Bot (am
+      einfachsten gegen Fritzi aus „Zum Spaß“). Danach trägt sein Porträt in der Gegnerwahl unten
+      rechts einen kleinen goldenen Stern auf Navy, auch in der Sprechblase. Ungewertete Siege
+      zählen nicht; „Wertung zurücksetzen“ nimmt die Sterne weg.
+- [ ] N471. **Partienliste:** Unter „Deine letzten Partien“ steht vor jeder Partie das Porträt des
+      Gegners. Ab vier Partien gibt es den Filter „Ergebnis“ (alle, gewonnen, remis, verloren) und
+      „Wertung“ (alle, gewertet, ungewertet); „Weitere Partien zeigen“ holt die nächsten zehn.
+      Ungewertete Partien haben rechts einen Papierkorb; nach „Ja, löschen“ ist die Partie weg.
+      Gewertete Partien lassen sich nicht löschen, weil sie die Wertung tragen.
+- [ ] N472. **Zeichen für Warum-Fragen in der Kapitelübersicht:** Kapitel 1 öffnen, Abschnitt 1.4
+      aufklappen. Bretter mit Warum-Frage tragen oben rechts ein Zeichen: graues Schloss (die Frage
+      erscheint erst, wenn die Abbildung angesehen ist), goldene Sprechblase (wartet auf dich),
+      grüner Haken (beantwortet). Die Legende steht unter „Abbildungen“. Öffne Abb. 1.26, warte 30
+      Sekunden, beantworte die Warum-Frage, geh zurück: grüner Haken an 1.26, und oben unter
+      „Dein Fortschritt“ steht „Warum-Fragen beantwortet 1 von 18“. In den Einstellungen zählt
+      „Warum-Fragen beantwortet“ mit.
+- [ ] N473. **Nachschlagen › Steckbriefe:** 13 Eröffnungen und 14 Fallenchecks aus dem Buch, jeder
+      aufklappbar. Die Fallenchecks mit „Wer tappt hinein?“, den Prüfungen mit „Reicht?“ (Zeichen
+      und Wort), „Rettender Zug“ und „Fallensteller-Test“. Der Knopf führt zum Stopp-Moment bzw.
+      zur ersten Abbildung des Abschnitts. Stimmen die Inhalte mit dem Buch überein?
+- [ ] N474. **Nachschlagen › Werkzeuge des Buches:** Alle Werkzeuge nach Kapiteln; ein Tipp auf den
+      Namen zeigt, was das Werkzeug zeigt, und darunter seine Regel aus dem Buch. „Kapitel n
+      öffnen“ führt zur Kapitelübersicht.
 
 ### Neu in 0.2.98 (etwa 25 Minuten; Design-Überprüfung, Opus)
 
@@ -231,9 +346,9 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 
 ### Neu in 0.2.88 (mit Engine; Spaß-Bots und Zahlen über 2200, Opus)
 
-- [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, etwa 600): Macht
-      sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende Figur? Bruno liegt mit
-      etwa 1100 etwas über deinem Wunsch (500 bis 1000); so lassen? (Gruppe, Zahlen und
+- [ ] N347. **Fritzi und Bruno:** Eine Partie gegen Fritzi (Gruppe „Zum Spaß“, seit 0.2.103
+      „unter 400“): Macht sie oft sinnlose Züge und schlägt trotzdem ab und zu eine hängende
+      Figur? Zur Lage der Zahlen (Bruno jetzt etwa 850) siehe GE1 in Teil 2. (Gruppe, Zahlen und
       Sprechblase hat Claude geprüft.)
 
 ### Neu in 0.2.85 (mit Engine; Elo-Zahl der Bots, Opus)
@@ -345,15 +460,6 @@ Barrierefreiheit auch auf Spielen, Partie, Auswertung, Trainern und im Dunkelmod
 - [ ] N194. **Schach-Röntgen-Trainer:** Ist die Aufgabe (drei Schritte, Pfeile setzen: Figur,
       dann Zielfeld) verständlich und auf dem Handy gut bedienbar? (Den Ablauf hat Claude geprüft.)
 
-### Neu in 0.2.36 (mit Engine; AP 11 Kalibrierung)
-
-- [ ] N180. **Uhr nach dem Schließen:** Laufende Partie mit Uhr, eine Weile nachdenken, dann zu einer
-      anderen App wechseln, die App schließen und wieder öffnen, Partie fortsetzen: Ist deine
-      Restzeit die vom Moment des Verlassens? Befund am Rechner: Beim schnellen Neuladen ging die
-      Bedenkzeit seit dem letzten Zug verloren (das Speichern wird dabei abgebrochen); auf dem
-      Handy bleibt beim App-Wechsel meist genug Zeit zum Speichern. Bitte melden, wenn es bei dir
-      auch passiert; dann baut Claude einen sofortigen Speicherweg für die Uhr.
-
 ---
 
 ## Teil 2: Entscheiden
@@ -408,6 +514,18 @@ Buchbefunde (nur du änderst das Buch) und die Fragen, die wirklich deine Entsch
       (+0,03), das passt zum Buch („Weiß gewinnt mit Txa7 den Bauern zurück“). Die
       Endspielaufgaben des Trainers widersprechen der Tablebase in keinem Fall (137 Stellungen
       geprüft). Nur du änderst das Buch; die App bleibt, wie sie ist.
+
+### GE. Spielstärke nur bis zur Entscheidung (Opus, 19.10.2026; schon umgesetzt, Widerspruch genügt)
+
+- [ ] GE1. **Spaß-Bots jetzt unter deinem Wunschbereich:** Du wolltest die Gruppe „Zum Spaß“ bei
+      etwa 500 bis 1000. Mit der neuen Regel sinken alle Bot-Zahlen gemeinsam um etwa 200, die
+      Spaß-Bots liegen nun bei unter 400 (Fritzi, 60 % Zufallszüge), etwa 550 (Onkel Willi, 38 %),
+      650 (Tante Trude, 25 %) und 850 (Bruno, 15 %). Unter 400 zeigt die App keine Zahl, weil die
+      Eichpartien erst bei 400 beginnen. Gespielt wird wie vorher; nur der Maßstab ist ehrlicher
+      geworden (Stufe 1 wirkte dir mit „1700“ zu stark). **Empfehlung:** so lassen, die Bots
+      nicht neu messen (wie besprochen). Möchtest du die Spaß-Bots trotzdem bei 500 bis 1000,
+      senke ich ihre Zufallszüge (etwa 45, 30, 20 und 10 %) und messe die vier neu (etwa eine
+      Stunde Rechenzeit).
 
 ### Nur bestätigen (je eine Zeile; Widerspruch genügt)
 

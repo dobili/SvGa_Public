@@ -31,6 +31,7 @@ import {
 } from "../../spiel/wertung";
 import { MitInfo } from "./InfoKnopf";
 import { Reiter } from "./Reiter";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Was die Kurve zeigt: die Wertung oder die Schätzung je Phase. */
 type Ansicht = "gesamt" | Phase;
@@ -275,7 +276,10 @@ export function Wertungskurve({
   if (aktuell === null || !ausschnitt) {
     return (
       <section className="karte wertung" data-testid="wertung">
-        <h2 className="karte-titel">{t("ich.wertung.titel")}</h2>
+        <h2 className="karte-titel">
+          <Titelsymbol art="wertung" />
+          {t("ich.wertung.titel")}
+        </h2>
         <p className="hinweis">{t("ich.wertung.leer")}</p>
       </section>
     );
@@ -285,7 +289,10 @@ export function Wertungskurve({
   const schnitt = durchschnitt(sichtbar);
   return (
     <section className="karte wertung" data-testid="wertung">
-      <h2 className="karte-titel">{t("ich.wertung.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="wertung" />
+        {t("ich.wertung.titel")}
+      </h2>
       <Reiter
         name={t("ich.wertung.ansicht")}
         eintraege={ANSICHTEN.map((a) => ({

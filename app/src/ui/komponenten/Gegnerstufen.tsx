@@ -7,23 +7,31 @@
  * dem Gerät, welche Stufen offen waren (app/merker.ts, eine Bequemlichkeit, die verloren gehen
  * darf). Ohne Merker ist die Stufe des gewählten Gegners offen. An Stufe und Kachel steht seit 0.2.85
  * die Elo-Zahl (engine/botstaerke.ts, Rückfrage S23). Seit 0.2.88 steht vor Stufe 1 die Gruppe
- * „Zum Spaß“ mit den Spaß-Bots (Wunsch des Autors).
+ * „Zum Spaß“ mit den Spaß-Bots (Wunsch des Autors). Seit 0.2.101 (Symbolsprache DS19) trägt jede
+ * Stufenzeile eine farbige Marke, die ersten Porträts und die Zahl besiegter Bots.
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, engine/botstaerke.ts, staerkeangabe.ts,
  * app/merker.ts, lucide, i18n.
  */
-import { ChevronRight } from "lucide-react";
+import { ChevronDown, Star } from "lucide-react";
 import { useState, type ReactNode } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
 import { gegnerDerStufe, spassbots, type Gegner } from "../../engine/gegner";
-import { stufe } from "../../engine/stufen";
+import { stufe, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
+import { useSpeicher } from "../../speicher/speicher";
+import { GegnerBild } from "./GegnerBild";
 import { offeneStufenAnfangs, portraet, SPASSGRUPPE, STUFENNUMMERN } from "./gegnerportraet";
 import { bereichstext, spassbereichstext, staerketext } from "./staerkeangabe";
+import { Stufenmarke } from "./Stufenmarke";
 
 /** Merker der offenen Stufen, als Liste der Nummern („1,3“). */
 const MERKER_OFFEN = "gegnerstufenOffen";
 const PFEIL_GROESSE = 18;
+/** Stern am Zähler besiegter Bots in der Stufenzeile (Bildpunkte). */
+const STERN_GROESSE = 14;
+/** So viele Porträts zeigt die zugeklappte Stufenzeile (DS19). */
+const VORSCHAU_GESICHTER = 4;
 
 /** Eine Kachel des Gitters: Porträt oder Zeichen, Name darunter; gewählt mit goldenem Rand. */
 export function Kachel({
@@ -64,6 +72,8 @@ export function VorgefertigteGitter({
   beiBot: (bot: string | null) => void;
 }) {
   const [offen, setzeOffen] = useState(() => offeneStufenAnfangs(liesMerker(MERKER_OFFEN), bot));
+  // Stern an Bots, die der Leser schon gewertet besiegt hat (0.2.99, Wunsch des Autors).
+  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
   const umschalten = (nummer: number, jetztOffen: boolean) => {
     const neu = new Set(offen);
     if (jetztOffen) neu.add(nummer);
@@ -82,8 +92,18 @@ export function VorgefertigteGitter({
           onToggle={(e) => umschalten(gruppe.schluessel, e.currentTarget.open)}
         >
           <summary>
-            <ChevronRight className="klappzeichen" size={PFEIL_GROESSE} aria-hidden="true" />
-            <h4 className="gegnerstufe-titel">{gruppe.titel}</h4>
+            <Stufenmarke stufe={gruppe.stufe} />
+            <h4 className="gegnerstufe-titel">
+              <span className="gegnerstufe-kopf">{gruppe.kopf}</span>
+              {gruppe.bereich && (
+                <span className="gegnerstufe-bereich">
+                  <span className="nur-vorlesen"> · </span>
+                  {gruppe.bereich}
+                </span>
+              )}
+            </h4>
+            <Gruppenvorschau bots={gruppe.bots} besiegt={besiegt} />
+            <ChevronDown className="aufklapper" size={PFEIL_GROESSE} aria-hidden="true" />
           </summary>
           <div className="gegnergitter">
             {gruppe.bots.map((g) => (
@@ -95,7 +115,14 @@ export function VorgefertigteGitter({
                 )}
                 gewaehlt={bot === g.kennung}
                 beiWahl={() => beiBot(g.kennung)}
-                kinder={<img className="gegner-portraet" src={portraet(g.kennung)} alt="" />}
+                kinder={
+                  <GegnerBild
+                    bot={g.kennung}
+                    eigene={[]}
+                    name={g.name}
+                    besiegt={besiegt.includes(g.kennung)}
+                  />
+                }
               />
             ))}
           </div>
@@ -105,30 +132,72 @@ export function VorgefertigteGitter({
   );
 }
 
-/** Eine aufklappbare Gruppe: Schlüssel für den Merker, Überschrift, Bots. */
+/**
+ * Rechts in der Stufenzeile (DS19): die ersten Porträts übereinander, damit man die Gruppe auch
+ * zugeklappt erkennt, und ein Stern mit der Zahl schon gewertet besiegter Bots.
+ * Beispiel: Stufe 1, Lotta und Mia besiegt → vier kleine Gesichter und „★ 2/8“.
+ */
+function Gruppenvorschau({
+  bots,
+  besiegt,
+}: {
+  bots: readonly Gegner[];
+  besiegt: readonly string[];
+}) {
+  const geschlagen = bots.filter((g) => besiegt.includes(g.kennung)).length;
+  return (
+    <span className="gegnerstufe-vorschau">
+      <span className="gesichterreihe" aria-hidden="true">
+        {bots.slice(0, VORSCHAU_GESICHTER).map((g) => (
+          <img key={g.kennung} src={portraet(g.kennung)} alt="" />
+        ))}
+      </span>
+      {geschlagen > 0 && (
+        <span className="gegnerstufe-besiegt">
+          <Star size={STERN_GROESSE} aria-hidden="true" />
+          <span aria-hidden="true">
+            {geschlagen}/{bots.length}
+          </span>
+          <span className="nur-vorlesen">
+            {t("spielen.bot.besiegtZahl", {
+              anzahl: String(geschlagen),
+              gesamt: String(bots.length),
+            })}
+          </span>
+        </span>
+      )}
+    </span>
+  );
+}
+
+/** Eine aufklappbare Gruppe: Schlüssel für den Merker, Marke, Überschrift in zwei Teilen, Bots. */
 interface Gruppe {
   readonly schluessel: number;
-  readonly titel: string;
+  /** Stufe für die farbige Marke; null für „Zum Spaß“. */
+  readonly stufe: Stufennummer | null;
+  /** „Stufe 1 · Einsteiger“ */
+  readonly kopf: string;
+  /** „etwa 1050 bis 1300“; leer ohne Messung. */
+  readonly bereich: string;
   readonly bots: readonly Gegner[];
 }
 
 /**
  * Die Gruppen der Gegnerwahl: zuerst „Zum Spaß“ (die Spaß-Bots, 0.2.88, Wunsch des Autors), dann
- * die acht Stufen. Beispiel (seit 0.2.99): „Zum Spaß · unter 400 bis etwa 850“, „Stufe 1 ·
- * Einsteiger · etwa 850 bis 1100“.
+ * die acht Stufen. Beispiel (seit 0.2.103): „Zum Spaß“ mit „unter 400 bis etwa 850“, „Stufe 1 ·
+ * Einsteiger“ mit „etwa 850 bis 1100“.
  */
 function gruppen(): Gruppe[] {
   const stufen = STUFENNUMMERN.map((nummer) => ({
     schluessel: nummer,
-    titel: t("spielen.bot.stufeMitStaerke", {
-      nummer: String(nummer),
-      name: t(stufe(nummer).name),
-      staerke: bereichstext(nummer),
-    }),
+    stufe: nummer,
+    kopf: t("spielen.bot.stufeKopf", { nummer: String(nummer), name: t(stufe(nummer).name) }),
+    bereich: bereichstext(nummer),
     bots: gegnerDerStufe(nummer),
   }));
   const spass = spassbots();
   if (spass.length === 0) return stufen;
-  const titel = t("spielen.bot.spassMitStaerke", { staerke: spassbereichstext() });
-  return [{ schluessel: SPASSGRUPPE, titel, bots: spass }, ...stufen];
+  const kopf = t("spielen.bot.spassKopf");
+  const bereich = spassbereichstext();
+  return [{ schluessel: SPASSGRUPPE, stufe: null, kopf, bereich, bots: spass }, ...stufen];
 }

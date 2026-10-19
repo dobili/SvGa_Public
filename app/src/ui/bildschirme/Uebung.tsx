@@ -24,6 +24,7 @@ import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { useDaten } from "../komponenten/useDaten";
 import { HOECHSTE_STUFE, useUebung, type Uebungssteuerung } from "../komponenten/useUebung";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 
 const OHNE_WAHL = () => undefined;
 
@@ -56,10 +57,12 @@ function Hilfe({ s, uebung }: { s: Uebungssteuerung; uebung: UebungDaten }) {
       <div className="knopfzeile">
         {s.stufe < HOECHSTE_STUFE && (
           <button type="button" className="knopf-zweit" onClick={s.hinweis}>
+            <Knopfsymbol art="hinweis" />
             {t("uebung.hinweis", { stufe: s.stufe + 1 })}
           </button>
         )}
         <button type="button" className="knopf-link" onClick={s.zeigeLoesung}>
+          <Knopfsymbol art="loesung" />
           {t("uebung.loesungZeigen")}
         </button>
       </div>

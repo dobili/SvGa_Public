@@ -42,6 +42,7 @@ import { MitInfo } from "./InfoKnopf";
 import { Segmentwahl } from "./Segmentwahl";
 import { staerketext as angabetext } from "./staerkeangabe";
 import { KENNZAHLSYMBOLE, PHASENSYMBOLE } from "./zeilensymbole";
+import { Titelsymbol } from "./Titelsymbol";
 
 /** Reihenfolge der Klassen in der Tabelle, wie bei chess.com von oben nach unten. */
 const KLASSEN: readonly Zugklasse[] = [
@@ -58,7 +59,7 @@ const KLASSEN: readonly Zugklasse[] = [
 ];
 
 /**
- * „etwa 1400 (1000–1800)“, „zu wenige Züge“ oder (seit 0.2.99) „zu wenige Züge vor der
+ * „etwa 1400 (1000–1800)“, „zu wenige Züge“ oder (seit 0.2.103) „zu wenige Züge vor der
  * Entscheidung“, wenn erst die Regel aus spiel/entscheidung.ts die Züge zu knapp macht.
  */
 function staerketext(b: Seitenbilanz): string {
@@ -151,7 +152,10 @@ export function Spielstaerke({
   ];
   return (
     <section className="karte spielstaerke" data-testid="spielstaerke">
-      <h2 className="karte-titel">{t("spielstaerke.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="spielstaerke" />
+        {t("spielstaerke.titel")}
+      </h2>
       <MitInfo
         zeile={<span className="einstellung-name">{t("einstellungen.genauigkeit")}</span>}
         erklaerung={<p>{t("einstellungen.genauigkeit.info")}</p>}
@@ -289,7 +293,7 @@ function Phasenzeile({
 
 /**
  * Eine Phase in einer Zelle: Marke „Sehr gut“, dann „82 % · etwa 1500 (12 Züge)“; „–“ ohne Züge.
- * Liegt die ganze Phase nach der Entscheidung (seit 0.2.99), steht statt Marke und Schätzung
+ * Liegt die ganze Phase nach der Entscheidung (seit 0.2.103), steht statt Marke und Schätzung
  * „nach der Entscheidung“.
  */
 function Phasenzelle({ b }: { b: Seitenbilanz }) {

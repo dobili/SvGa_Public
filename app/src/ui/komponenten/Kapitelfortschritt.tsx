@@ -11,12 +11,14 @@
 import type { ReactNode } from "react";
 import { abgehakt, useLernstand } from "../../app/lernstand";
 import { useNavigation } from "../../app/navigationsKontext";
+import { fragenJeAbbildung } from "../../analyse/warumfragen";
 import { ladeNachschlagen, type Kapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
 import { useSpeicher } from "../../speicher/speicher";
 import { Kreisanzeige } from "./Kreisanzeige";
 import { useDaten } from "./useDaten";
+import { Titelsymbol } from "./Titelsymbol";
 
 interface Zeilenangaben {
   readonly name: string;
@@ -75,11 +77,15 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
     kapitel.kapitel,
     kapitel.abbildungen.map((abbildung) => abbildung.id),
     kapitel.uebungen.map((uebung) => uebung.id),
+    fragenJeAbbildung(kapitel.abbildungen),
   );
   const mitStand = stand.trainer.filter((eintrag) => eintrag.stand !== null);
   return (
     <section className="karte" data-testid="kapitelfortschritt">
-      <h2 className="karte-titel">{t("fortschritt.titel")}</h2>
+      <h2 className="karte-titel">
+        <Titelsymbol art="fortschritt" />
+        {t("fortschritt.titel")}
+      </h2>
       <div className="kreisreihe">
         <Fortschrittszeile
           name={t("fortschritt.abbildungen")}
@@ -91,6 +97,13 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
             name={t("fortschritt.uebungen")}
             anteil={stand.uebungen}
             testid="fortschritt-uebungen"
+          />
+        )}
+        {stand.warum.gesamt > 0 && (
+          <Fortschrittszeile
+            name={t("fortschritt.warum")}
+            anteil={stand.warum}
+            testid="fortschritt-warum"
           />
         )}
         <Lernziele kapitel={kapitel.kapitel} />

@@ -1284,6 +1284,52 @@ Eröffnungsliste sind seit 0.2.32 umgesetzt).
 
 ## Nächster Schritt
 
+### Rückmeldung des Autors vom 19.10.2026 abends: 30 Punkte (Arbeitsliste, in dieser Reihenfolge)
+
+Der Autor hat alle Punkte freigegeben („Du darfst gerne alles machen. Nichts soll an einen anderen
+Chat.“), auch Dateien des Bot-Chats. Offene Fragen: jeweils Claudes Empfehlung nehmen und am Ende
+als Rückfrage in `docs/AUFGABEN_AUTOR.md` (Teil 2) stellen; neue Testpunkte in Teil 1. Nach
+jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Aufwand:
+
+- [ ] R1 Aufräumen: alle „ok“-Punkte aus AUFGABEN_AUTOR nach ENTSCHEIDUNGEN; V5 „alle frei“
+      (Entwurfs-Kennzeichen prüfen); V2: CLAUDE.md Arbeitsablauf (Autor testet auf main).
+- [ ] R2 N501: „von Claude konstruiert“ → „von einer KI konstruiert“ (de, en; sonst sichtbares
+      „Claude“ suchen).
+- [ ] R3 N194: Text Schritt 3 Röntgen-Trainer (Schachs und Schläge ohne Verlust nach Abtausch;
+      Drohungen nicht extra).
+- [ ] R4 Satz zur Bot-Stärke „benachbarte Stufen überschneiden sich etwas“ berichtigen.
+- [ ] R5 Einstellungen: Reiter „Training“ beim Öffnen gewählt.
+- [ ] R6 Hauptleiste ohne Beschriftung, Symbole größer (Name für Screenreader bleibt).
+- [ ] R7 Spielen: Bots innerhalb der Kategorie nach Spielstärke sortieren.
+- [ ] R8 S24 Namen der Stufen nach den heutigen Zahlen (Empfehlung: Einsteiger, Anfänger,
+      Gelegenheitsspieler, Vereinsspieler, Starker Vereinsspieler, Experte, Meister, Großmeister;
+      en entsprechend; Bot-Texte mit „Vereinsanfänger“).
+- [ ] R9 Sammeln unter dem Brett: Info-Symbol in der Kachel.
+- [ ] R10 Rückblick: Info-Symbole „In die Fehlerdatenbank“/„In die Lernsammlung“, Fenster wieder
+      zuklappbar.
+- [ ] R11 Zielbilanz-Übung: Zeichen ja/nein/teils wie im Buch.
+- [ ] R12 Spielen: Spielhilfen (mit „Zug zurücknehmen“) und Eröffnung festlegen aufklappbar über
+      „Partie beginnen“.
+- [ ] R13 EN2: 27 Buchzitate ins Englische (recherchiert); V1: Englisch auch in der
+      Veröffentlichungsfassung.
+- [ ] R14 Trainer: Knopf „Übung wiederholen“ überall.
+- [ ] R15 Trainer: Auswahl aus vielen per Aufklappliste (Repertoire, Abweichung, Taktik, …).
+- [ ] R16 Zähltrainer und Co.: Zahleneingabe schöner als ein Knopf je Zahl, Zahlen mittig.
+- [ ] R17 Trainingsseiten der Website: klar, wann App und wann Website (Lichess) und was zu tun ist.
+- [ ] R18 NA1: nach der Einschätzung Urteil der Engine (ausgeglichen bis 0,5 Bauern), richtig
+      eingeschätzte Abbildungen merken → Werkzeuge gleich da (Nutzerdaten Format 6, mit
+      Umwandlung und Sicherung).
+- [ ] R19 F2 Denkroutine-Trainer: Kandidaten und Antworten am Brett ziehen statt Text.
+- [ ] R20 Faktorenbilanz-Trainer: Eingabe mit Waagen wie im Buch.
+- [ ] R21 Musterlösungen der Zug-Trainer mit der Engine prüfen (katastrophal = mehr als etwa
+      2 Bauern schlechter als der beste Zug), sonst neues Beispiel.
+- [ ] R22 Partienliste: Filter und Sortierung über Symbole, mehrere Filter zugleich.
+- [ ] R23 PGN-Import bei der Partienliste: auswerten, als nicht gewertete Partie speichern.
+- [ ] R24 Bot mit festgelegter Eröffnung: ohne Buchzug Zugfolgen derselben Eröffnung aus der
+      Lichess-Liste.
+- [ ] R25 V1: restliche Buchdaten ins Englische (inhalte/en, kapitelweise).
+- [ ] R26 Abschluss: Rückfragen mit den genommenen Empfehlungen und Testpunkte in AUFGABEN_AUTOR.
+
 Stand 19.10.2026 (0.2.102). Der Nachtplan vom 18.10.2026 ist erledigt: Chat A (0.2.90, 0.2.91,
 0.2.97), Chat B (Design 0.2.98, Symbolsprache 0.2.101), Chat C (Aufgabenliste entlastet, 0.2.95),
 Chat D (konstruierte Zugfolgen und Tablebase, 0.2.96), Chat E (Wischen, Lernsammlung, Technik für

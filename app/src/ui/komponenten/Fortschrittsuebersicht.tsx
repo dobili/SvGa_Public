@@ -94,6 +94,8 @@ export function Fortschrittsuebersicht() {
   };
   const uebungen = Object.values(fortschritt.uebungen);
   const durchgaenge = summe(Object.values(fortschritt.trainer).map((s) => s.durchgaenge));
+  // Beantwortete Warum-Fragen (0.2.99); die Gesamtzahl steht in den Kapiteln, hier die Summe.
+  const warum = summe(Object.values(fortschritt.warum).map((stellen) => stellen.length));
   return (
     <section className="karte" data-testid="ich-fortschritt">
       <h2 className="karte-titel">{t("fortschritt.titel")}</h2>
@@ -105,7 +107,7 @@ export function Fortschrittsuebersicht() {
         />
         <AlleLernziele />
       </div>
-      {(uebungen.length > 0 || durchgaenge > 0) && (
+      {(uebungen.length > 0 || durchgaenge > 0 || warum > 0) && (
         <dl className="fortschritt-liste">
           {uebungen.length > 0 && (
             <div className="fortschritt-zeile">
@@ -121,6 +123,12 @@ export function Fortschrittsuebersicht() {
             <div className="fortschritt-zeile">
               <dt>{t("fortschritt.trainerDurchgaenge")}</dt>
               <dd>{durchgaenge}</dd>
+            </div>
+          )}
+          {warum > 0 && (
+            <div className="fortschritt-zeile">
+              <dt>{t("fortschritt.warum")}</dt>
+              <dd>{warum}</dd>
             </div>
           )}
         </dl>

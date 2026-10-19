@@ -133,6 +133,11 @@ export interface Fortschritt {
   readonly gesehen: Readonly<Record<string, string>>;
   readonly uebungen: Readonly<Record<string, Uebungsstand>>;
   readonly trainer: Readonly<Partial<Record<TrainerKennung, Trainerstand>>>;
+  /**
+   * Seit 0.2.99: beantwortete Warum-Fragen je Abbildung („1.26“ → Stellen der Fragen, etwa [0]).
+   * Zusätzliches Feld wie 0.2.90; ältere Daten ohne Feld bekommen ein leeres.
+   */
+  readonly warum: Readonly<Record<string, readonly number[]>>;
 }
 
 export interface Nutzerdaten {
@@ -174,7 +179,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     angelegt: jetzt.toISOString(),
     einstellungen: STANDARD_EINSTELLUNGEN,
     lernstand: {},
-    fortschritt: { gesehen: {}, uebungen: {}, trainer: {} },
+    fortschritt: { gesehen: {}, uebungen: {}, trainer: {}, warum: {} },
     letzteSicherung: null,
     spiel: LEERER_SPIELSTAND,
     karten: {},
@@ -288,7 +293,15 @@ function fortschrittAus(roh: unknown): Fortschritt {
     uebungen: eintraege(teil.uebungen, uebungsstandAus),
     // Unbekannte Trainer (aus einer späteren Version) fallen weg statt die Typen zu verletzen.
     trainer: Object.fromEntries(Object.entries(trainer).filter(([k]) => KENNUNGEN.has(k))),
+    warum: eintraege(teil.warum, stellenAus),
   };
+}
+
+/** Stellen beantworteter Fragen: ganze Zahlen ab 0, jede einmal; sonst nichts. */
+function stellenAus(roh: unknown): readonly number[] | null {
+  if (!Array.isArray(roh)) return null;
+  const stellen = roh.filter((s): s is number => Number.isInteger(s) && s >= 0);
+  return stellen.length > 0 ? [...new Set(stellen)].sort((a, b) => a - b) : null;
 }
 
 /** Aktuelles Format aus Rohdaten, Feld für Feld geprüft; Fehlendes wird leer ergänzt. */

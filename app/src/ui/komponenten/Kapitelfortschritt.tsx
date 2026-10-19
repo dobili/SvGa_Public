@@ -11,6 +11,7 @@
 import type { ReactNode } from "react";
 import { abgehakt, useLernstand } from "../../app/lernstand";
 import { useNavigation } from "../../app/navigationsKontext";
+import { fragenJeAbbildung } from "../../analyse/warumfragen";
 import { ladeNachschlagen, type Kapitel } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { kapitelfortschritt, type Anteil } from "../../speicher/fortschritt";
@@ -75,6 +76,7 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
     kapitel.kapitel,
     kapitel.abbildungen.map((abbildung) => abbildung.id),
     kapitel.uebungen.map((uebung) => uebung.id),
+    fragenJeAbbildung(kapitel.abbildungen),
   );
   const mitStand = stand.trainer.filter((eintrag) => eintrag.stand !== null);
   return (
@@ -91,6 +93,13 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
             name={t("fortschritt.uebungen")}
             anteil={stand.uebungen}
             testid="fortschritt-uebungen"
+          />
+        )}
+        {stand.warum.gesamt > 0 && (
+          <Fortschrittszeile
+            name={t("fortschritt.warum")}
+            anteil={stand.warum}
+            testid="fortschritt-warum"
           />
         )}
         <Lernziele kapitel={kapitel.kapitel} />

@@ -19,6 +19,8 @@ export interface Anteil {
 
 export interface Kapitelfortschritt {
   readonly abbildungen: Anteil;
+  /** Beantwortete Warum-Fragen des Kapitels (0.2.99); gesamt 0, wenn es keine gibt. */
+  readonly warum: Anteil;
   /** Gelöste Übungen; `versucht` zählt jede Übung mit mindestens einem Versuch. */
   readonly uebungen: Anteil & { readonly versucht: number };
   readonly trainer: readonly { kennung: TrainerKennung; stand: Trainerstand | null }[];
@@ -155,7 +157,8 @@ export function notiereDurchgang(
  * Der Fortschritt eines Kapitels.
  *
  * Eingaben: Fortschritt, Kapitelnummer, Nummern seiner Abbildungen, Kennungen seiner Übungen
- * (leer, wenn das Kapitel nicht geladen ist). Ausgabe: Zähler und Trainerstände.
+ * (leer, wenn das Kapitel nicht geladen ist), Zahl der Warum-Fragen je Abbildung (leer ohne
+ * geladenes Kapitel). Ausgabe: Zähler und Trainerstände.
  * Beispiel: Kapitel 1 mit 40 Abbildungen, davon „1.26“ gesehen → abbildungen 1 von 40.
  * Sonderfall: Gesehene Nummern, die es in dieser Auflage nicht mehr gibt, zählen nicht.
  */
@@ -164,9 +167,18 @@ export function kapitelfortschritt(
   kapitel: number,
   abbildungen: readonly string[],
   uebungen: readonly string[],
+  fragen: Readonly<Record<string, number>> = {},
 ): Kapitelfortschritt {
   const staende = uebungen.map((id) => fortschritt.uebungen[id]);
+  const mitFragen = Object.entries(fragen);
   return {
+    warum: {
+      erreicht: mitFragen.reduce(
+        (summe, [id, anzahl]) => summe + beantworteteFragen(fortschritt, id, anzahl),
+        0,
+      ),
+      gesamt: mitFragen.reduce((summe, [, anzahl]) => summe + anzahl, 0),
+    },
     abbildungen: {
       erreicht: abbildungen.filter((id) => fortschritt.gesehen[id] !== undefined).length,
       gesamt: abbildungen.length,
@@ -188,4 +200,35 @@ export function geloesteUebungen(fortschritt: Fortschritt, kapitel: number): num
   return Object.values(fortschritt.uebungen).filter(
     (stand) => stand.kapitel === kapitel && stand.geloest,
   ).length;
+}
+
+/**
+ * Wie viele der `anzahl` Warum-Fragen einer Abbildung schon beantwortet sind (0.2.99).
+ * Beispiel: Abb. 1.26 mit einer Frage, beantwortet → 1.
+ */
+export function beantworteteFragen(
+  fortschritt: Fortschritt,
+  abbildung: string,
+  anzahl: number,
+): number {
+  return (fortschritt.warum[abbildung] ?? []).filter((stelle) => stelle < anzahl).length;
+}
+
+/**
+ * Merkt eine beantwortete Warum-Frage (richtig oder falsch: Sie gilt als bearbeitet, wie eine
+ * Karte im Buch, die man gelesen hat). Beispiel: notiereWarumfrage(daten, "1.26", 0).
+ * Sonderfall: Schon gemerkt → dieselben Daten (der Speicher schreibt nichts).
+ */
+export function notiereWarumfrage(
+  daten: Nutzerdaten,
+  abbildung: string,
+  stelle: number,
+): Nutzerdaten {
+  const bisher = daten.fortschritt.warum[abbildung] ?? [];
+  if (bisher.includes(stelle)) return daten;
+  const warum = {
+    ...daten.fortschritt.warum,
+    [abbildung]: [...bisher, stelle].sort((a, b) => a - b),
+  };
+  return { ...daten, fortschritt: { ...daten.fortschritt, warum } };
 }

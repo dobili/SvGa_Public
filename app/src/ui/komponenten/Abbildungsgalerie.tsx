@@ -10,6 +10,8 @@
  * kleinen Ring und hat einen eigenen Knopf „Abschnitt 1.1 abhaken“ oder „Haken in 1.1 lösen“.
  * Seit 0.2.82 (Wunsch des Autors) sind alle Abschnitte anfangs eingeklappt; ein Pfeil vorn zeigt,
  * ob ein Abschnitt auf- oder zugeklappt ist.
+ * Seit 0.2.99 (Wunsch des Autors): Abbildungen mit Warum-Fragen tragen oben rechts ein Zeichen
+ * (gesperrt, offen, beantwortet), erklärt in der Legende über der Galerie (Zusatzsymbol.tsx).
  * Abhängigkeiten: daten/laden.ts, ui/brett, Navigation, Speicher, MitInfo, Ring, i18n.
  */
 import { Check, ChevronRight } from "lucide-react";
@@ -23,6 +25,7 @@ import { Brett } from "../brett/Brett";
 import { buchmarkierungen } from "./buchmarkierungen";
 import { MitInfo } from "./InfoKnopf";
 import { Ring } from "./Kreisanzeige";
+import { Zusatzlegende, Zusatzsymbol } from "./Zusatzsymbol";
 
 /** Größe des Hakens im Kästchen an angesehenen Abbildungen. */
 const HAKEN_GROESSE = 15;
@@ -69,6 +72,7 @@ function Kachel({ abbildung }: { abbildung: Abbildung }) {
           koordinaten={false}
           beschriftung={titel}
         />
+        <Zusatzsymbol abbildung={abbildung} />
         <span className="kachel-nummer">{titel}</span>
         <span className="kachel-text">{kurztext(abbildung.unterschrift)}</span>
       </button>
@@ -147,6 +151,7 @@ function Galeriekopf({ kapitel }: { kapitel: Kapitel }) {
         erklaerung={<p>{t("fortschritt.verweilen")}</p>}
         thema={t("kapitel.abbildungen")}
       />
+      <Zusatzlegende kapitel={kapitel} />
       {frage ? (
         <Nachfrage frage={frage} kapitel={kapitel} beiEnde={() => setzeFrage(null)} />
       ) : (

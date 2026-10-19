@@ -83,7 +83,7 @@ function Kapitelzusatz({
 }) {
   const gesehen = useSpeicher((zustand) => zustand.daten.fortschritt.gesehen);
   const anteil = kapitelfortschritt(
-    { gesehen, uebungen: {}, trainer: {} },
+    { gesehen, uebungen: {}, trainer: {}, warum: {} },
     nummer,
     abbildungen,
     [],

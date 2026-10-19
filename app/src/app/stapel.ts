@@ -22,6 +22,10 @@ export type Ansicht =
   | { readonly bildschirm: "begriff"; readonly begriff: string }
   | { readonly bildschirm: "denkroutine" }
   | { readonly bildschirm: "checkliste" }
+  /** Steckbriefe der Eröffnungen und Fallenchecks (seit 0.2.99). */
+  | { readonly bildschirm: "steckbriefe" }
+  /** Alle Werkzeuge des Buches nach Kapiteln (seit 0.2.99). */
+  | { readonly bildschirm: "werkzeuge" }
   /** Lernsammlung: eigene Stellungen mit Plan (Kapitel 12, seit 0.2.93). */
   | { readonly bildschirm: "lernsammlung" }
   /** Spiel gegen die Engine vorbereiten; mit Stellung, wenn es von einer Abbildung aus beginnt. */

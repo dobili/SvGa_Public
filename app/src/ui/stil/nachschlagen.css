@@ -304,3 +304,85 @@
   font-size: var(--groesse-mittel);
   margin: var(--raster) 0;
 }
+
+/* ---------- Steckbriefe und Werkzeuge des Buches (0.2.99) ---------- */
+
+.steckbrief > summary {
+  flex-wrap: wrap;
+  list-style: none;
+  cursor: pointer;
+}
+
+.steckbrief > summary::-webkit-details-marker {
+  display: none;
+}
+
+.steckbrief[open] > summary {
+  padding-bottom: var(--raster);
+  border-bottom: 1px solid var(--linie);
+}
+
+/* Frage oder Prüfung als Zeile über der Antwort: auf schmalen Handys lesbarer als zwei Spalten. */
+.steckbrief-zeilen {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) * 1.5);
+}
+
+.steckbrief-zeilen dt {
+  font-weight: 700;
+}
+
+.steckbrief-zeilen dd {
+  margin: 2px 0 0;
+}
+
+.steckbrief-wertung {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 8px;
+  border-radius: 10px;
+  background: var(--grund);
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.wertung-ja {
+  color: var(--gruen-text);
+}
+
+.wertung-teils {
+  color: var(--gold-text);
+}
+
+.wertung-nein {
+  color: var(--rot-text);
+}
+
+.wertung-entfaellt {
+  color: var(--text-leise);
+}
+
+.werkzeugeintrag {
+  border-top: 1px solid var(--linie);
+}
+
+.werkzeugeintrag > summary {
+  font-weight: 600;
+}
+
+.werkzeugeintrag > p {
+  margin: 0 0 var(--raster);
+}
+
+.steckbrief .aufklapper {
+  flex: none;
+  margin-left: auto;
+  transition: transform 0.15s ease;
+}
+
+.steckbrief[open] .aufklapper {
+  transform: rotate(180deg);
+}

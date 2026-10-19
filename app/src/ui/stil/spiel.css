@@ -187,7 +187,8 @@
   font-size: var(--groesse-grund);
 }
 
-.partienliste .begriff-knopf span {
+/* Nur die Zeile mit Datum und Stärke ist leise; Marken (Ergebnis, Stufe) behalten ihre Farbe. */
+.partienliste .partiezeile-text > span {
   color: var(--text-leise);
   font-size: var(--groesse-klein);
 }

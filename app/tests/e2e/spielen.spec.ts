@@ -314,10 +314,11 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   // Spaß-Bots (0.2.88): eigene Gruppe mit Bereich, Sprechblase „(zum Spaß)“.
   await stufen.nth(0).locator("summary").click();
   await expect(
-    gitter.getByRole("heading", { name: /^Zum Spaß · etwa \d+ bis \d+$/ }),
+    gitter.getByRole("heading", { name: /^Zum Spaß · (etwa|unter) \d+ bis (etwa )?\d+$/ }),
   ).toBeVisible();
   await gitter.getByRole("radio", { name: /Fritzi/ }).click();
-  await expect(staerke).toContainText(/etwa \d+ \(zum Spaß\)/);
+  // Seit 0.2.103 liegt Fritzi unter 400 (Anker nach der Regel „nur bis zur Entscheidung“).
+  await expect(staerke).toContainText(/(etwa|unter) \d+ \(zum Spaß\)/);
   // Gleich große Kacheln (0.2.89): Stufe 8 hat die längsten Namen („Großmeister Grün“).
   await stufen.nth(8).locator("summary").click();
   const breiten = await stufen

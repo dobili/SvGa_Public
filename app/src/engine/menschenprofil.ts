@@ -17,7 +17,7 @@ import {
   BEDENKZEIT,
   BLIND,
   GELEGENHEIT,
-  TEMPERATUR,
+  KERN,
   ZEITNOT,
   ZEITNOT_PATZER,
 } from "./menschenprofil-daten";
@@ -72,9 +72,21 @@ export function blindZusatz(fleck: BlinderFleck, wertung: number): number {
   return tabelle ? bandwert(tabelle, wertung) : 0;
 }
 
-/** Grundtemperatur der gewichteten Wahl (Bauern). Beispiel: 600 → 1,3; 2400 → 0,36. */
-export function grundtemperatur(wertung: number): number {
-  return bandwert(TEMPERATUR, wertung);
+/** Der Wahlkern (1 + Verlust/tau)^(−Exponent) einer Stärke. */
+export interface Wahlkern {
+  /** Breite in Bauern; Temperaturfaktoren (Strähne, Zeitnot, Häufigkeit) wirken auf sie. */
+  readonly tau: number;
+  readonly exponent: number;
+}
+
+/**
+ * Wahlkern der gewichteten Wahl für eine Stärke (angepasst an Lichess-Züge ohne erkannte
+ * Fehlerart). Warum ein Potenzkern: schwache Spieler stellen öfter grob ein, als eine
+ * Exponentialwahl hergibt. Beispiel: 500 → tau 0,16, Exponent 0,5 (langer Schwanz); 2300 →
+ * Exponent 2 (kaum grobe Fehler).
+ */
+export function wahlkern(wertung: number): Wahlkern {
+  return { tau: bandwert(KERN.tau, wertung), exponent: bandwert(KERN.exponent, wertung) };
 }
 
 /** Zeitnot-Stufe aus der Restzeit: „0“ unter 10 s, „10“ bis 30 s, „30“ bis 60 s, sonst null. */

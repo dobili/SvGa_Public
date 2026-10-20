@@ -90,15 +90,23 @@ export interface Kandidat {
  * gewählte Kandidat oder null ohne Kandidaten.
  * Beispiel: Verluste 0, 0,5, 3 bei Temperatur 1: Gewichte 1, 0,61, 0,05 → der beste zu 60 %, der
  * zweite zu 37 %, der dritte zu 3 %. Bei Temperatur 0,45: 1, 0,33, 0,001 → 75 %, 25 %, 0 %.
+ * Mit Exponent (seit 0.2.116, menschliche Bots) gilt der Potenzkern (1 + Verlust/Temperatur)^
+ * (−Exponent): Verluste 0 und 3 bei Temperatur 0,25 und Exponent 1 → Gewichte 1 und 1/13.
  * Sonderfall: Zufall 0 ergibt immer den besten Zug.
  */
 export function gewichteteZugwahl(
   kandidaten: readonly Kandidat[],
   temperatur: number,
   zufall: () => number,
+  exponent?: number,
 ): Kandidat | null {
   if (kandidaten.length === 0) return null;
-  const gewichte = kandidaten.map((k) => Math.exp(-k.verlust / Math.max(KALT, temperatur)));
+  const breite = Math.max(KALT, temperatur);
+  const gewichte = kandidaten.map((k) =>
+    exponent === undefined
+      ? Math.exp(-k.verlust / breite)
+      : Math.pow(1 + k.verlust / breite, -exponent),
+  );
   const summe = gewichte.reduce((a, b) => a + b, 0);
   let rest = zufall() * summe;
   for (const [i, gewicht] of gewichte.entries()) {

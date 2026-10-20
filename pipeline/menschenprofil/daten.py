@@ -43,7 +43,11 @@ HUNDERTSTEL = 100
 GLAETTUNG = 2.0
 ZUGSTUFEN = (0, 5, 10, 15, 20, 30, 40)
 ZEITNOT_STUFEN = ((0, 10), (10, 30), (30, 60))
-TEMPERATUREN = [round(0.02 * i, 2) for i in range(1, 76)]
+# Raster des Potenzkerns; Schwellen in Bauern (0,05: praktisch der beste Zug, als Gegenstück)
+KERN_TAUS = (0.04, 0.06, 0.08, 0.1, 0.13, 0.16, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0)
+KERN_EXPONENTEN = (0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0)
+KERN_SCHWELLEN = (0.05, 0.5, 1.0, 3.0)
+KERN_GEWICHTE = (1.0, 4.0, 4.0, 16.0)
 LAGEN = ("wiederschlag", "schach", "einzig", "eng", "offen")
 
 
@@ -184,29 +188,45 @@ def blind(s: Sammler) -> dict:
     return tabelle
 
 
-def temperatur(s: Sammler) -> list[float]:
-    """Je Band die Temperatur, bei der die gewichtete Wahl unter den Kandidaten im Mittel so oft
-    einen Verlust ab einem halben Bauern hat wie Menschen bei Zügen ohne erkannte Fehlerart."""
-    aus = []
+def kern_anteile(verluste: list[float], tau: float, exponent: float) -> list[float]:
+    """Wahrscheinlichkeiten der Kandidaten im Kern (1 + Verlust/tau)^(-Exponent).
+
+    Warum dieser Kern statt e^(-Verlust/tau): Menschen schwacher Bänder stellen öfter grob ein
+    (Verlust ab 3 Bauern), als eine Exponentialwahl mit passender Quote kleiner Fehler hergibt;
+    der Potenzkern hat dafür den längeren Schwanz. Beispiel: Verluste [0, 3], tau 0,25,
+    Exponent 1 → Gewichte 1 und 1/13.
+    """
+    gewichte = [(1 + v / tau) ** -exponent for v in verluste]
+    summe = sum(gewichte)
+    return [g / summe for g in gewichte]
+
+
+def _kernfehler(zeilen: list[list[float]], tau: float, exponent: float, ziel: list[float]) -> float:
+    """Abweichung des Kerns von den Menschen: bester Zug, Verlust ab 0,5, ab 1, ab 3 (gewichtet)."""
+    summe = [0.0] * len(KERN_SCHWELLEN)
+    for z in zeilen:
+        anteile = kern_anteile(z[:-1], tau, exponent)
+        for i, schwelle in enumerate(KERN_SCHWELLEN):
+            summe[i] += sum(a for a, v in zip(anteile, z[:-1], strict=True) if v >= schwelle)
+    n = max(1, len(zeilen))
+    return sum(g * (m / n - zi) ** 2 for g, m, zi in zip(KERN_GEWICHTE, summe, ziel, strict=True))
+
+
+def kern(s: Sammler) -> dict[str, list[float]]:
+    """Je Band tau und Exponent des Potenzkerns, angepasst an die Züge ohne erkannte Fehlerart
+    (Raster, jede zweite Zeile genügt). Ausgabe: {"tau": [...], "exponent": [...]}."""
+    taus, exponenten = [], []
     for band in BAENDER:
-        zeilen = s.rest[band]
-        ziel = sum(1 for z in zeilen if z[-1] >= MINDESTVERLUST) / max(1, len(zeilen))
-        beste, besterfehler = TEMPERATUREN[0], 1.0
-        for tau in TEMPERATUREN:
-            summe = 0.0
-            for z in zeilen:
-                verluste = z[:-1]
-                gewichte = [math.exp(-v / tau) for v in verluste]
-                summe += sum(g for g, v in zip(gewichte, verluste, strict=True) if v >= MINDESTVERLUST) / sum(
-                    gewichte
-                )
-            abweichung = abs(summe / max(1, len(zeilen)) - ziel)
-            if abweichung < besterfehler:
-                beste, besterfehler = tau, abweichung
-        aus.append(beste)
-    for i in range(1, len(aus)):
-        aus[i] = min(aus[i], aus[i - 1])
-    return aus
+        zeilen = s.rest[band][::2]
+        n = max(1, len(zeilen))
+        ziel = [sum(1 for z in zeilen if z[-1] >= schwelle) / n for schwelle in KERN_SCHWELLEN]
+        beste = min(
+            ((tau, a) for tau in KERN_TAUS for a in KERN_EXPONENTEN),
+            key=lambda ta: _kernfehler(zeilen, ta[0], ta[1], ziel),
+        )
+        taus.append(beste[0])
+        exponenten.append(beste[1])
+    return {"tau": taus, "exponent": exponenten}
 
 
 def bedenkzeit(s: Sammler) -> dict:
@@ -292,14 +312,14 @@ def main(argumente: list[str] | None = None) -> int:
     daten = {
         "GELEGENHEIT": gelegenheiten(s),
         "BLIND": blind(s),
-        "TEMPERATUR": temperatur(s),
+        "KERN": kern(s),
         "BEDENKZEIT": bedenkzeit(s),
         "ZEITNOT": zeitnot(s.not_fehler),
         "ZEITNOT_PATZER": zeitnot(s.not_patzer),
     }
     args.ziel.write_text(als_ts(daten), encoding="utf-8")
     (args.ordner / "daten.json").write_text(json.dumps(daten, indent=1, ensure_ascii=False))
-    print(json.dumps({"TEMPERATUR": daten["TEMPERATUR"], "ZEITNOT": daten["ZEITNOT"]}))
+    print(json.dumps({"KERN": daten["KERN"], "ZEITNOT": daten["ZEITNOT"]}))
     return 0
 
 

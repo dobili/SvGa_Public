@@ -4,7 +4,7 @@ import {
   bandwert,
   blindZusatz,
   gelegenheitsrate,
-  grundtemperatur,
+  wahlkern,
   zeitnotFaktoren,
   zeitnotstufe,
 } from "./menschenprofil";
@@ -27,7 +27,8 @@ describe("Menschenprofil", () => {
 
   it("blinde Flecken und Temperatur nehmen mit der Stärke ab", () => {
     expect(blindZusatz("ruhig", 600)).toBeGreaterThan(blindZusatz("ruhig", 2400));
-    expect(grundtemperatur(600)).toBeGreaterThan(grundtemperatur(2400));
+    // Schwache Spieler: längerer Schwanz (kleinerer Exponent) als starke
+    expect(wahlkern(500).exponent).toBeLessThan(wahlkern(2300).exponent);
   });
 
   it("Zeitnot erst unter 60 Sekunden, Patzer stärker als Fehler", () => {

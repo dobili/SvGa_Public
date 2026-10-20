@@ -29,7 +29,7 @@ import {
   blindZusatz,
   gelegenheitsrate,
   GELEGENHEITSARTEN,
-  grundtemperatur,
+  wahlkern,
   typischerVerlust,
   zeitnotFaktoren,
   type Gelegenheitsart,
@@ -245,8 +245,10 @@ function grundschicht(
     : kandidaten;
   const auswahl = sichtbar.length > 0 ? sichtbar : kandidaten;
   const zeit = zeitnotFaktoren(kontext.wertung, kontext.restMs).fehler;
-  const grund = grundtemperatur(kontext.wertung) * werte.haeufigkeit * zeit;
-  const wahl = gewichteteZugwahl(auswahl, temperaturFuer(fen, grund, kontext.verlauf), zufall);
+  const kern = wahlkern(kontext.wertung);
+  const grund = kern.tau * werte.haeufigkeit * zeit;
+  const breite = temperaturFuer(fen, grund, kontext.verlauf);
+  const wahl = gewichteteZugwahl(auswahl, breite, zufall, kern.exponent);
   if (!wahl) return null;
   if (fleck && wahl.verlust >= MINDESTVERLUST) {
     return {

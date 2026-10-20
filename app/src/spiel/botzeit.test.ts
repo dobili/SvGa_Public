@@ -67,8 +67,12 @@ describe("Uhr der Bots", () => {
     p = ziehe(p, leserzug("exd5")) ?? p;
     expect(zuglage(p, "d8d5", 2)).toBe("wiederschlag");
     expect(zuglage(p, "g8f6", 1)).toBe("einzig");
-    expect(sichtbareWartezeit(20_000, 120_000)).toBe(2_500);
-    expect(sichtbareWartezeit(20_000, 5_000)).toBe(600);
-    expect(sichtbareWartezeit(300, 120_000)).toBe(300);
+    const mitte = () => 0.5;
+    expect(sichtbareWartezeit(20_000, 120_000, mitte)).toBe(2_500);
+    expect(sichtbareWartezeit(20_000, 5_000, mitte)).toBe(600);
+    expect(sichtbareWartezeit(300, 120_000, mitte)).toBe(300);
+    // ±10 % Streuung
+    expect(sichtbareWartezeit(20_000, 120_000, () => 0)).toBeCloseTo(2_250);
+    expect(sichtbareWartezeit(20_000, 120_000, () => 1)).toBeCloseTo(2_750);
   });
 });

@@ -30,6 +30,8 @@ export const WERTUNG_VOLLE_ENGINE = 2600;
 const SICHTBAR_HOECHSTENS_MS = 2500;
 const SICHTBAR_ZEITNOT_MS = 600;
 const ZEITNOT_MS = 10_000;
+/** Zufällige Streuung der sichtbaren Wartezeit (±10 %, Wunsch des Autors vom 20.10.2026). */
+const SICHTBAR_STREUUNG = 0.1;
 const BEZUGSFELD_LAENGE = 2;
 const BRETTREIHEN = 8;
 
@@ -107,10 +109,20 @@ export function botBedenkzeit(
   );
 }
 
-/** Wie lange der Bot sichtbar nachdenkt: höchstens 2,5 s, in Zeitnot 0,6 s, nie länger als simuliert. */
-export function sichtbareWartezeit(bedenkMs: number, restMs: number): number {
+/**
+ * Wie lange der Bot sichtbar nachdenkt: höchstens etwa 2,5 s, in Zeitnot etwa 0,6 s, nie länger
+ * als simuliert. Die Deckel streuen zufällig um ±10 %, damit lange Züge nicht alle gleich lang
+ * dauern (die simulierte Bedenkzeit selbst streut ohnehin stark, engine/bedenkzeit.ts).
+ * Beispiel: 20 s simuliert, 2 Minuten Rest → zwischen 2,25 und 2,75 s.
+ */
+export function sichtbareWartezeit(
+  bedenkMs: number,
+  restMs: number,
+  zufall: () => number = Math.random,
+): number {
   const deckel = restMs < ZEITNOT_MS ? SICHTBAR_ZEITNOT_MS : SICHTBAR_HOECHSTENS_MS;
-  return Math.min(bedenkMs, deckel);
+  const streuung = 1 + SICHTBAR_STREUUNG * (2 * zufall() - 1);
+  return Math.min(bedenkMs, deckel * streuung);
 }
 
 /**

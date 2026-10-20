@@ -1,29 +1,16 @@
 /**
- * Menschlichere Zugwahl der Stufen 1 bis 3 (Empfehlung R4, umgesetzt 0.2.52).
+ * Bausteine der menschlichen Zugwahl: Verlauf der Partie, Tagesform, Temperatur, gewichtete Wahl.
  *
- * Rolle im Gesamtbild: Bis 0.2.51 spielten die Stufen 1 bis 3 mit Stockfishs „Skill Level 0“ und
- * zufälligen Fehlerwürfen: fehlerfrei bei allem, was einen Zug tief sichtbar ist (jeder Schlag,
- * jedes Matt in einem), und dazwischen grundlos verschenkend („dämlich, dann genial“, Rückmeldung
- * des Autors). Ein Mensch um 1000 Elo ist umgekehrt: gleichmäßig blind ab zwei Zügen Tiefe und
- * selten grundlos verschenkend. Deshalb rechnet die Engine für diese Stufen nur bis zu einer
- * Tiefengrenze (engine/engineDienst.ts, Stärke „tiefe“: Taktik jenseits des Horizonts sieht sie
- * gar nicht) und wählt unter ihren Kandidaten gewichtet zufällig mit einer „Temperatur“: Jeder
- * Kandidat bekommt das Gewicht e^(−Verlust/Temperatur). Kleine Fehler sind so häufig, große
- * selten, und in erzwungenen Lagen (ein Zug weit vor den anderen) bleibt der beste Zug sehr
- * wahrscheinlich. Die Temperatur steigt mit der Lage (viele Züge zur Wahl), sinkt im Schach,
- * steigt nach eigenen Fehlern für drei Züge (Strähne) und schwankt je Partie (Tagesform).
- * Die Fehlerprofile (engine/fehlersuche.ts) bleiben daneben: Sie liefern die erklärbaren Fehler.
- * Abhängigkeiten: engine/fehlerart.ts (Damenopfer), engine/spielbewerter.ts, engine/uci.ts.
+ * Rolle im Gesamtbild: Seit 0.2.52 (Empfehlung R4) wählt die Engine in den unteren Stufen
+ * gewichtet zufällig unter ihren Kandidaten mit einer „Temperatur“: Jeder Kandidat bekommt das
+ * Gewicht e^(−Verlust/Temperatur). Kleine Fehler sind so häufig, große selten, und in erzwungenen
+ * Lagen bleibt der beste Zug sehr wahrscheinlich. Die Temperatur sinkt im Schach, steigt bei
+ * vielen legalen Zügen, nach eigenen Fehlern (Strähne) und schwankt je Partie (Tagesform). Seit
+ * 0.2.116 kommt die Grundtemperatur aus den Menschen-Daten je Wertung (engine/menschenprofil.ts)
+ * und die Zugwahl selbst steht in engine/menschenwahl.ts; hier bleiben die Bausteine.
+ * Abhängigkeiten: engine/fehlerart.ts (Lage).
  */
-import { istDamenopfer, lageVon } from "./fehlerart";
-import { wertFuer } from "./spielbewerter";
-import type { Variante } from "./uci";
-
-/** Einstellung einer Stufe: Temperatur in Bauerneinheiten und Zahl der Kandidaten der Engine. */
-export interface Menschlich {
-  readonly temperatur: number;
-  readonly kandidaten: number;
-}
+import { lageVon } from "./fehlerart";
 
 /** Was der Verlauf der Partie zur Fehlerneigung beiträgt. */
 export interface Verlauf {
@@ -63,6 +50,14 @@ export function tagesform(saat: string): number {
 }
 
 /**
+ * Faktor des Verlaufs auf Fehler und Temperatur: Tagesform mal Strähne (ein Viertel mehr je
+ * eigenem Fehler unter den letzten drei Zügen). Beispiel: zwei Fehler, Tagesform 1,2 → 1,8.
+ */
+export function verlaufsfaktor(verlauf: Verlauf): number {
+  return verlauf.tagesform * (1 + ANLAUF_JE_FEHLER * verlauf.fehlerAnlauf);
+}
+
+/**
  * Die Temperatur für eine Stellung: Grundtemperatur der Stufe, nach Lage (Schach, viele Züge),
  * Strähne und Tagesform. Eingaben: Stellung, Grundtemperatur, Verlauf. Ausgabe: Temperatur in
  * Bauerneinheiten, nie unter KALT.
@@ -70,7 +65,7 @@ export function tagesform(saat: string): number {
  */
 export function temperaturFuer(fen: string, grund: number, verlauf: Verlauf): number {
   const lage = lageVon(fen);
-  let temperatur = grund * verlauf.tagesform * (1 + ANLAUF_JE_FEHLER * verlauf.fehlerAnlauf);
+  let temperatur = grund * verlaufsfaktor(verlauf);
   if (lage?.regeln.isCheck()) temperatur *= IM_SCHACH;
   else if (lage && zahlLegaleZuege(lage) >= VIELE_ZUEGE_AB) temperatur *= VIELE_ZUEGE;
   return Math.max(KALT, temperatur);
@@ -86,29 +81,6 @@ function zahlLegaleZuege(lage: NonNullable<ReturnType<typeof lageVon>>): number 
 export interface Kandidat {
   readonly uci: string;
   readonly verlust: number;
-}
-
-/** Kandidaten aus den Varianten der Engine; ohne Züge über dem Höchstverlust und ohne verbotene
- * Damenopfer, der beste bleibt immer. */
-export function kandidatenAus(
-  fen: string,
-  varianten: readonly Variante[],
-  hoechstverlust: number,
-  damenopferErlaubt: boolean,
-): Kandidat[] {
-  const weissAmZug = fen.split(" ")[1] !== "b";
-  const beste = varianten[0];
-  if (!beste) return [];
-  const bestwert = wertFuer(beste.wert, weissAmZug);
-  const lage = damenopferErlaubt ? null : lageVon(fen);
-  return varianten.flatMap((v, i) => {
-    const uci = v.zuege[0];
-    if (!uci) return [];
-    const verlust = Math.max(0, bestwert - wertFuer(v.wert, weissAmZug));
-    if (i > 0 && verlust > hoechstverlust) return [];
-    if (i > 0 && lage && istDamenopfer(lage, uci)) return [];
-    return [{ uci, verlust }];
-  });
 }
 
 /**

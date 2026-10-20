@@ -1,41 +1,36 @@
 /**
- * Der Zug der Engine im Spiel gegen den Leser, je nach Stufe, mit Protokoll absichtlicher Fehler.
+ * Der Zug der Engine im Spiel gegen den Leser, je nach Stufe und Profil des Gegners.
  *
- * Rolle im Gesamtbild: „waehleZug“ aus Konzept 8.1. Verfahren aus Konzept 8.2: Jede Stufe hat
- * eine Grundstärke (engine/stufen.ts); in den Stufen 1 bis 4 trifft mit der Fehlerquote der Stufe
- * ein Fehlerwurf, dann sucht die Fehlersuche (engine/fehlersuche.ts) einen typischen Fehlerzug
- * mit begrenztem Verlust und merkt sich seine Art für die Auswertung. Sonst spielt die Engine
- * mit der Grundstärke der Stufe. Eröffnungsmodus (Konzept 8.3): Gibt der Aufrufer Buchzüge aus
- * Kapitel 2 und 3 mit, spielt die Engine meist einen davon und verlässt das Buch gewichtet
- * zufällig (Buchtreue 0,85; so bleibt die Engine etwa fünf bis sieben Züge im Buch).
- * Eigene Gegner (0.2.42) bringen ein Profil mit: erlaubte Fehlerarten (leer: nie ein
- * absichtlicher Fehler) und einen Spielstil (engine/stil.ts), der unter mehreren Kandidaten der
- * Engine den aggressivsten oder defensivsten wählt. Stufen 1 bis 3 (0.2.52, Empfehlung R4)
- * wählen gewichtet zufällig unter den Kandidaten einer tiefenbegrenzten Suche
- * (engine/menschlich.ts); der Verlauf der Partie (Strähne, Tagesform) kommt über das Profil.
- * Abhängigkeiten: engine/fehlersuche.ts, engine/menschlich.ts, engine/spielbewerter.ts,
- * engine/stufen.ts, engine/stil.ts.
+ * Rolle im Gesamtbild: „waehleZug“ aus Konzept 8.1. Reihenfolge je Zug:
+ * 1. Spaß-Bots (0.2.88) ziehen mit ihrem Anteil an Zufallszügen irgendeinen legalen Zug.
+ * 2. Eröffnungsmodus (Konzept 8.3): Gibt der Aufrufer Buchzüge aus Kapitel 2 und 3 mit, spielt die
+ *    Engine meist einen davon (Buchtreue 0,85, bei vorgegebener Eröffnung 1).
+ * 3. Stufe 1 bis 7: die menschliche Zugwahl (engine/menschenwahl.ts, seit 0.2.116, Plan vom
+ *    20.10.2026): Fehler je Gelegenheit, blinde Flecken und gewichtete Wahl nach den Zahlen von
+ *    Menschen der Wertung der Stufe; das Profil des Gegners stellt Gewichte, Fehlerhäufigkeit und
+ *    Höchstverluste, die Restzeit der Uhr die Zeitnot.
+ * 4. Stufe 8: die volle Engine, mit Stil auf mehrere Kandidaten verteilt.
+ * Abhängigkeiten: engine/menschenwahl.ts, engine/menschlich.ts (Verlauf), engine/stil.ts,
+ * engine/stufen.ts, engine/zufallszug.ts.
  */
-import { blindeWahl, type BlinderFleck } from "./blindeFlecken";
+import type { BlinderFleck } from "./blindeFlecken";
 import type { Fehlerart } from "./fehlerart";
-import { sucheFehlerzug } from "./fehlersuche";
-import {
-  gewichteteZugwahl,
-  kandidatenAus,
-  RUHIGER_VERLAUF,
-  temperaturFuer,
-  type Menschlich,
-  type Verlauf,
-} from "./menschlich";
+import { menschlicheWahl, type Menschenwerte } from "./menschenwahl";
+import { RUHIGER_VERLAUF, type Verlauf } from "./menschlich";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
 import type { Stufe } from "./stufen";
 import { zufallszug } from "./zufallszug";
 
+/** Ein Fehler oder Fleck mit Gewicht: 0 aus, 1 wie Menschen, 3 besonders häufig. */
+export type Gewichte = Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
+
 /**
- * Profil eines Gegners: erlaubte Fehlerarten (null: alle), Stil (−2 bis 2), blinde Flecken
- * (Zugarten, die er nicht sieht; engine/blindeFlecken.ts, 0.2.46) und der Verlauf der Partie für
- * die Fehlerneigung der Stufen 1 bis 3 (0.2.52; fehlt er, gilt ein ruhiger Verlauf).
+ * Profil eines Gegners: erlaubte Fehlerarten (null: alle; nicht erlaubte haben Gewicht 0), Stil
+ * (−2 bis 2), blinde Flecken, für die er besonders blind ist (0.2.46; seit 0.2.116 dreifache
+ * Wahrscheinlichkeit der Menschen, die übrigen Flecken wie bei Menschen), Verlauf der Partie,
+ * Spaß-Zufallszüge, seit 0.2.116 Gewichte je Art, Fehlerhäufigkeit und Höchstverluste
+ * (erweiterter Modus der eigenen Bots) und die Restzeit der eigenen Uhr (null: ohne Uhr).
  */
 export interface Gegnerprofil {
   readonly fehlerarten: readonly Fehlerart[] | null;
@@ -44,6 +39,10 @@ export interface Gegnerprofil {
   readonly verlauf?: Verlauf;
   /** Anteil der Züge, die ein beliebiger legaler Zug sind (Spaß-Bots, 0.2.88); fehlend: keine. */
   readonly zufallszuege?: number;
+  readonly gewichte?: Gewichte;
+  readonly haeufigkeit?: number;
+  readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
+  readonly restMs?: number | null;
 }
 
 export const STANDARDPROFIL: Gegnerprofil = {
@@ -51,6 +50,9 @@ export const STANDARDPROFIL: Gegnerprofil = {
   stil: STIL_NEUTRAL,
   blindeFlecken: [],
 };
+
+/** Gewicht eines blinden Flecks, für den ein Gegner ausdrücklich blind ist. */
+export const BESONDERS_BLIND = 3;
 
 export type { Spielbewerter, Zugwahl } from "./spielbewerter";
 export { wertFuer } from "./spielbewerter";
@@ -65,59 +67,44 @@ function zufallsauswahl<T>(liste: readonly T[], zufall: () => number): T | undef
 }
 
 /**
- * Der Zug der Stufen 1 bis 3: Kandidaten der tiefenbegrenzten Suche, blinde Flecken wie bei den
- * anderen Stufen, sonst die gewichtete Wahl mit der Temperatur der Lage; der Stil wählt danach um
- * diesen Zug herum (seit 0.2.78, vorher ersetzte er die gewichtete Wahl und machte Bots mit Stil
- * fast so stark wie die Engine).
- * Beispiel: Stufe 1 nach 1. e4 e5 2. Dh5 (Schwarz): Kandidaten Sc6 (0), d6 (0,2), Sf6 (1,0) →
- * Gewichte 1, 0,82, 0,37: Sf6 in etwa jedem sechsten Fall.
+ * Die Stellschrauben der menschlichen Zugwahl aus einem Profil.
+ * Beispiel: Profil mit Fehlerarten [„figurHaengen“] und blindem Fleck „rueckzug“ → alle anderen
+ * Fehlerarten Gewicht 0, „figurHaengen“ 1, Fleck „rueckzug“ 3, übrige Flecken 1.
  */
-async function menschlicherZug(
+export function menschenwerteAus(profil: Gegnerprofil): Menschenwerte {
+  const gewichte: Partial<Record<Fehlerart | BlinderFleck, number>> = {};
+  for (const fleck of profil.blindeFlecken) gewichte[fleck] = BESONDERS_BLIND;
+  return {
+    haeufigkeit: profil.haeufigkeit ?? 1,
+    gewichte: { ...gewichte, ...profil.gewichte },
+    standardgewicht: 1,
+    erlaubt: profil.fehlerarten,
+    hoechstverlust: profil.hoechstverlust ?? {},
+  };
+}
+
+/** Stufe 8: der beste Zug, mit Stil unter mehreren nahezu gleich guten Kandidaten. */
+async function engineZug(
   bewerter: Spielbewerter,
   fen: string,
   stufe: Stufe,
-  einstellung: Menschlich,
-  profil: Gegnerprofil,
-  zufall: () => number,
+  stil: number,
 ): Promise<Zugwahl | null> {
-  const mehrere = await bewerter.bewerte(
-    fen,
-    stufe.rechenzeitMs,
-    einstellung.kandidaten,
-    stufe.staerke,
-  );
-  const blind = blindeWahl(fen, mehrere.varianten, profil.blindeFlecken, zufall);
-  if (blind) return { ...blind, quelle: "fehler" };
-  const kandidaten = kandidatenAus(
-    fen,
-    mehrere.varianten,
-    stufe.hoechstverlust,
-    stufe.damenopferErlaubt,
-  );
-  const temperatur = temperaturFuer(fen, einstellung.temperatur, profil.verlauf ?? RUHIGER_VERLAUF);
-  const wahl = gewichteteZugwahl(kandidaten, temperatur, zufall);
-  if (!wahl) return null;
-  if (profil.stil === STIL_NEUTRAL) return { ...wahl, quelle: "engine", fehler: null };
-  // Stil um den gewählten Zug herum, nur unter den Kandidaten der Stufe (0.2.78).
-  const erlaubt = mehrere.varianten.filter((v) => kandidaten.some((k) => k.uci === v.zuege[0]));
-  const uci = stilwahl(fen, erlaubt, profil.stil, wahl.uci) ?? wahl.uci;
-  const verlust = kandidaten.find((k) => k.uci === uci)?.verlust ?? wahl.verlust;
-  return { uci, quelle: "engine", fehler: null, verlust };
+  const varianten = stil === STIL_NEUTRAL ? 1 : STIL_KANDIDATEN;
+  const b = await bewerter.bewerte(fen, stufe.rechenzeitMs, varianten, stufe.staerke);
+  const uci =
+    stil === STIL_NEUTRAL ? b.besterZug : (stilwahl(fen, b.varianten, stil) ?? b.besterZug);
+  return uci ? { uci, quelle: "engine", fehler: null, verlust: 0 } : null;
 }
 
 /**
  * Wählt den Zug der Engine.
  *
- * Warum: Konzept 8.1 „waehleZug“: Stellung, Stufe, Verlauf → Zug und, falls absichtlich, die
- * Fehlerart. Eingaben: Bewerter, Stellung, Stufe, Buchzüge in UCI (leer außerhalb des Buches),
- * Zufallsquelle (für Tests fest), Buchtreue (0,85, bei vorgegebener Eröffnung 1). Ausgabe: Zug
- * oder null, wenn es keinen legalen Zug gibt.
- * Beispiel: Stufe 1 nach 1. e4 e5 2. Dh5: in etwa jedem dritten Zug ein Fehlerzug, sonst der
- * Zug der Engine mit Skill Level 0.
- * Sonderfall: Findet die Fehlersuche keinen Zug in den Grenzen der Stufe, zieht die Engine normal.
- * Profil (0.2.42): ohne erlaubte Fehlerarten entfällt der Fehlerwurf; mit Stil holt die Engine
- * mehrere Kandidaten, und engine/stil.ts wählt um den Zug der Stufe herum (0.2.78). Spaß-Bots
- * (0.2.88) ziehen mit ihrem Anteil an Zufallszügen irgendeinen legalen Zug (engine/zufallszug.ts).
+ * Warum: Konzept 8.1 „waehleZug“: Stellung, Stufe, Profil → Zug und, falls ein Fehler, dessen
+ * Art. Eingaben: Bewerter, Stellung, Stufe, Buchzüge in UCI (leer außerhalb des Buches),
+ * Zufallsquelle (für Tests fest), Buchtreue, Profil. Ausgabe: Zug oder null ohne legalen Zug.
+ * Beispiel: Stufe 1 (Menschen um 600) nach 1. e4 e5 2. Dh5 Sc6 3. Lc4: Die Mattdrohung auf f7
+ * übersieht sie in gut einem Viertel der Fälle (Sf6??, „drohungIgnoriert“).
  */
 export async function waehleZug(
   bewerter: Spielbewerter,
@@ -137,28 +124,12 @@ export async function waehleZug(
     const buchzug = zufallsauswahl(buchzuege, zufall);
     if (buchzug) return { uci: buchzug, quelle: "buch", fehler: null, verlust: 0 };
   }
-  const fehlerMoeglich = profil.fehlerarten === null || profil.fehlerarten.length > 0;
-  if (fehlerMoeglich && stufe.fehlerquote > 0 && zufall() < stufe.fehlerquote) {
-    const fehler = await sucheFehlerzug(bewerter, fen, stufe, zufall, profil.fehlerarten);
-    if (fehler) return fehler;
-  }
-  if (stufe.menschlich)
-    return menschlicherZug(bewerter, fen, stufe, stufe.menschlich, profil, zufall);
-  // Blinde Flecken und Stil brauchen mehrere Kandidaten der Engine (0.2.46).
-  if (profil.blindeFlecken.length > 0 || profil.stil !== STIL_NEUTRAL) {
-    const mehrere = await bewerter.bewerte(fen, stufe.rechenzeitMs, STIL_KANDIDATEN, stufe.staerke);
-    const blind = blindeWahl(fen, mehrere.varianten, profil.blindeFlecken, zufall);
-    if (blind) return { ...blind, quelle: "fehler" };
-    // Bezug des Stils ist der Zug der Stufe (Skill Level), nicht die erste Variante (0.2.78).
-    const bezug = mehrere.besterZug ?? undefined;
-    const uci =
-      (profil.stil !== STIL_NEUTRAL
-        ? stilwahl(fen, mehrere.varianten, profil.stil, bezug)
-        : null) ?? mehrere.besterZug;
-    return uci ? { uci, quelle: "engine", fehler: null, verlust: 0 } : null;
-  }
-  const bewertung = await bewerter.bewerte(fen, stufe.rechenzeitMs, 1, stufe.staerke);
-  return bewertung.besterZug
-    ? { uci: bewertung.besterZug, quelle: "engine", fehler: null, verlust: 0 }
-    : null;
+  if (stufe.wertung === null) return engineZug(bewerter, fen, stufe, profil.stil);
+  const kontext = {
+    wertung: stufe.wertung,
+    restMs: profil.restMs ?? null,
+    verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
+    stil: profil.stil,
+  };
+  return menschlicheWahl(bewerter, fen, stufe, menschenwerteAus(profil), kontext, zufall);
 }

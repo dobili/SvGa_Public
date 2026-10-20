@@ -114,7 +114,7 @@ class Sammler:
         if z["v"] is None or z["u"] <= 0 or z["t"] == "classical":
             return
         sek = z["u"] / HUNDERTSTEL
-        verbraucht = max(0.0, z["v"] - z["z"] * HUNDERTSTEL)
+        verbraucht = max(0.0, z["v"])
         if sek < 60:
             stufe = next(f"{a}" for a, b in ZEITNOT_STUFEN if a <= sek < b)
             self.not_sek[(band, stufe)].append(verbraucht / HUNDERTSTEL)
@@ -270,7 +270,7 @@ def als_ts(daten: dict) -> str:
         " * „Menschliche Bots und Uhr“. Quelle: offene Lichess-Datenbank (CC0), Monat 2026-09.\n"
         " * Abhängigkeiten: keine.\n */\n"
     )
-    zeilen = [kopf, "/* eslint-disable */"]
+    zeilen = [kopf]
     zeilen.append(f"export const BAENDER = {json.dumps(list(BAENDER))} as const;")
     for name, wert in daten.items():
         zeilen.append(f"export const {name} = {json.dumps(wert, ensure_ascii=False)} as const;")

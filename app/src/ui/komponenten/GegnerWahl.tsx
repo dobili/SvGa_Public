@@ -22,7 +22,12 @@
  */
 import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
 import type { ReactNode } from "react";
-import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
+import {
+  staerkeAusStufen,
+  staerkeDesBots,
+  uhrAbzug,
+  type Uhrangabe,
+} from "../../engine/botstaerke";
 import { gegnerVon, klasseVon, type EigenerGegner, istSpassbot } from "../../engine/gegner";
 import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
@@ -55,15 +60,17 @@ function staerkezeile(
   bot: string | null,
   eigener: EigenerGegner | null,
   stufen: Stufenwahl,
+  uhr: Uhrangabe | null,
 ): string {
   const vorgefertigt = gegnerVon(bot);
   const gemessen = staerkeDesBots(bot);
   if (vorgefertigt && gemessen !== null) {
+    const mitUhr = uhrzeile(gemessen, vorgefertigt.stufenJePhase, uhr);
     // Spaß-Bots (0.2.88) stehen in keiner Stufe, sondern in der Gruppe „Zum Spaß“.
     if (istSpassbot(vorgefertigt))
-      return t("spielen.bot.blaseSpass", { staerke: staerketext(gemessen) });
+      return t("spielen.bot.blaseSpass", { staerke: staerketext(gemessen) }) + mitUhr;
     const nummer = String(klasseVon(vorgefertigt).nummer);
-    return t("spielen.bot.blase", { staerke: staerketext(gemessen), nummer });
+    return t("spielen.bot.blase", { staerke: staerketext(gemessen), nummer }) + mitUhr;
   }
   if (eigener) {
     const staerke = staerketext(staerkeAusStufen(eigener.stufenJePhase));
@@ -77,15 +84,34 @@ function staerkezeile(
   });
 }
 
+const MINUTE_MS = 60_000;
+const SEKUNDE_MS = 1000;
+
+/**
+ * Die Zahl mit der gewählten Uhr (seit 0.2.116; mit Uhr spielt ein Bot schwächer, gemessen je
+ * Stufe und Bedenkzeit): „ · mit Uhr 5 + 3 etwa 1700“; ohne Uhr oder ohne Unterschied leer.
+ */
+function uhrzeile(ohneUhr: number, stufenJePhase: Stufenwahl, uhr: Uhrangabe | null): string {
+  const abzug = uhrAbzug(stufenJePhase, uhr);
+  if (!uhr || Math.round(abzug) === 0) return "";
+  return t("spielen.bot.mitUhr", {
+    minuten: String(uhr.grundzeitMs / MINUTE_MS),
+    sekunden: String(uhr.zuschlagMs / SEKUNDE_MS),
+    staerke: staerketext(ohneUhr + abzug),
+  });
+}
+
 /** Die Sprechblase des gewählten Gegners: Porträt, Name, Zahl mit Erklärung und sein Satz. */
 function Sprechblase({
   bot,
   eigene,
   stufen,
+  uhr,
 }: {
   bot: string | null;
   eigene: readonly EigenerGegner[];
   stufen: Stufenwahl;
+  uhr: Uhrangabe | null;
 }) {
   const vorgefertigt = gegnerVon(bot);
   const eigener = eigene.find((g) => g.kennung === bot) ?? null;
@@ -113,7 +139,7 @@ function Sprechblase({
               <strong>{name}</strong>
               <span className="gegner-klasse" data-testid="gegner-staerke">
                 {" · "}
-                {staerkezeile(bot, eigener, stufen)}
+                {staerkezeile(bot, eigener, stufen, uhr)}
               </span>
             </>
           }
@@ -176,6 +202,7 @@ export function GegnerWahl({
   stufeninhalt,
   editor,
   beginnen,
+  uhr = null,
 }: {
   gegner: Gegnerart;
   bot: string | null;
@@ -190,6 +217,8 @@ export function GegnerWahl({
   stufeninhalt: ReactNode;
   editor: ReactNode;
   beginnen: ReactNode;
+  /** Die gewählte Uhr (seit 0.2.116: Zahl des Bots mit Uhr in der Sprechblase). */
+  uhr?: Uhrangabe | null;
 }) {
   return (
     <>
@@ -216,7 +245,7 @@ export function GegnerWahl({
           />
           {beginnen}
           {(kategorie !== "eigene" || eigene.some((g) => g.kennung === bot)) && (
-            <Sprechblase bot={bot} eigene={eigene} stufen={stufen} />
+            <Sprechblase bot={bot} eigene={eigene} stufen={stufen} uhr={uhr} />
           )}
           {kategorie === "stufe" && stufeninhalt}
           {kategorie === "vorgefertigt" && <VorgefertigteGitter bot={bot} beiBot={beiBot} />}

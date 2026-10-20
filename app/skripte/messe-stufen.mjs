@@ -9,7 +9,9 @@
 // Aufruf (im Ordner app/):
 //   npm run messen:stufen                       # Nachbarn 1-2 … 7-8, je 10 Partien
 //   npm run messen:stufen -- 1-2 3-4 --partien 6 --parallel 2
-//   npm run messen:stufen -- 4-s5 5-e1600       # gegen festes Skill Level oder feste Elo-Zahl
+//   npm run messen:stufen -- 8s5-8 8e1600-8     # gegen festes Skill Level oder feste Elo-Zahl
+//   npm run messen:stufen -- @svenja-3 3~300+3-3 --ziel ../buch/arbeit/x   # Bot, Uhr (0.2.116)
+//   Mit MESSUNG_ENGINE_PFAD=… rechnet eine native Engine (viel schneller, nur lokal).
 import { spawn } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
@@ -17,7 +19,7 @@ import { fileURLToPath } from "node:url";
 
 const HIER = dirname(fileURLToPath(import.meta.url));
 const APP = resolve(HIER, "..");
-const ZIEL = resolve(APP, "../buch/arbeit/stufenmessung");
+let ZIEL = resolve(APP, "../buch/arbeit/stufenmessung");
 const NACHBARN = ["1-2", "2-3", "3-4", "4-5", "5-6", "6-7", "7-8"];
 const STANDARD_PARTIEN = 10;
 const STANDARD_PARALLEL = 4;
@@ -31,6 +33,7 @@ function argumente(argv) {
     const a = argv[i];
     if (a === "--partien") partien = Number(argv[(i += 1)]);
     else if (a === "--parallel") parallel = Number(argv[(i += 1)]);
+    else if (a === "--ziel") ZIEL = resolve(argv[(i += 1)]);
     else paarungen.push(a);
   }
   return { paarungen: paarungen.length > 0 ? paarungen : NACHBARN, partien, parallel };
@@ -79,8 +82,8 @@ function prozent(zaehler, nenner) {
 /** Fasst eine Paarung zusammen: Punkte der zweiten (höheren) Seite, Fehlerquoten, Verluste. */
 function zusammenfassung(paarung) {
   const { berichte } = JSON.parse(readFileSync(join(ZIEL, `${paarung}.json`), "utf8"));
-  // Am letzten Bindestrich trennen: Kennungen der Gegner enthalten selbst Bindestriche.
-  const trenner = paarung.lastIndexOf("-");
+  // Am letzten Bindestrich vor „@“ oder einer Ziffer trennen: Kennungen enthalten selbst welche.
+  const trenner = paarung.search(/-(?=[@\d][^-]*(?:-[a-z]+)*$)/);
   const [a, b] = [paarung.slice(0, trenner), paarung.slice(trenner + 1)];
   const seiten = {
     [a]: { punkte: 0, zuege: 0, fehler: 0, verlust: 0, arten: {} },

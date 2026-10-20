@@ -13,6 +13,7 @@ import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import { STIL_MAX, STIL_MIN } from "../engine/stil";
 import { besiegtAus } from "./besiegt";
 import { blindeFleckenAus, eigeneGegnerAus, fehlerartenAus } from "./gegner";
+import { menschenwerteAus } from "./menschenwerte";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
 import type { Partieende } from "../spiel/ergebnis";
@@ -151,7 +152,16 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
 /** Name, Fehlerarten und Stil eines eigenen Gegners (0.2.42), nur wenn sie gespeichert sind. */
 function gegnerprofilAus(
   roh: Roh,
-): Pick<Partieeinstellung, "botName" | "fehlerarten" | "stil" | "blindeFlecken"> {
+): Pick<
+  Partieeinstellung,
+  | "botName"
+  | "fehlerarten"
+  | "stil"
+  | "blindeFlecken"
+  | "gewichte"
+  | "haeufigkeit"
+  | "hoechstverlust"
+> {
   // Nur gespeicherte Felder übernehmen, damit ältere Partien unverändert bleiben.
   const profil: {
     botName?: string;
@@ -166,7 +176,7 @@ function gegnerprofilAus(
     profil.fehlerarten = FEHLERARTEN.filter((art) => roheArten.includes(art));
   }
   if (istZahl(roh.stil)) profil.stil = Math.max(STIL_MIN, Math.min(STIL_MAX, Math.round(roh.stil)));
-  return profil;
+  return { ...profil, ...menschenwerteAus(roh) };
 }
 
 /**

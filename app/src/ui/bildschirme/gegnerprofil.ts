@@ -29,6 +29,10 @@ export function gegnerprofil(
       fehlerarten: eigener.fehlerarten,
       stil: eigener.stil,
       blindeFlecken: eigener.blindeFlecken,
+      // Erweiterter Modus (0.2.116), nur wenn eingestellt.
+      ...(eigener.gewichte ? { gewichte: eigener.gewichte } : {}),
+      ...(eigener.haeufigkeit !== undefined ? { haeufigkeit: eigener.haeufigkeit } : {}),
+      ...(eigener.hoechstverlust ? { hoechstverlust: eigener.hoechstverlust } : {}),
     };
   }
   const vorgefertigt = gegnerVon(bot);

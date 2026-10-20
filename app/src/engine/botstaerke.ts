@@ -15,7 +15,7 @@
  */
 import type { Phase } from "../schach/phase";
 import { gruppeDesBots } from "./botgruppe";
-import { BOT_STAERKE, STUFEN_STAERKE } from "./botstaerke-daten";
+import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG } from "./botstaerke-daten";
 import { GEGNER } from "./gegnerliste";
 import type { Stufennummer } from "./stufen";
 
@@ -74,8 +74,35 @@ export function staerkeAusStufen(stufen: Readonly<Record<Phase, Stufennummer>>):
 export function gegnerstaerke(einstellung: {
   readonly bot: string | null;
   readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
+  readonly uhr?: Uhrangabe | null;
 }): number {
-  return staerkeDesBots(einstellung.bot) ?? staerkeAusStufen(einstellung.stufenJePhase);
+  const ohneUhr = staerkeDesBots(einstellung.bot) ?? staerkeAusStufen(einstellung.stufenJePhase);
+  return ohneUhr + uhrAbzug(einstellung.stufenJePhase, einstellung.uhr ?? null);
+}
+
+/** Bedenkzeit einer Partie (wie spiel/uhr.ts, Uhreinstellung). */
+export interface Uhrangabe {
+  readonly grundzeitMs: number;
+  readonly zuschlagMs: number;
+}
+
+const SEKUNDE_MS = 1000;
+
+/**
+ * Was die Uhr einen Bot dieser Stufen kostet (seit 0.2.116, gemessen: jede Stufe mit Uhr gegen
+ * sich selbst ohne Uhr, engine/botstaerke.messung.ts): Mittel der drei Phasen; ohne Uhr oder für
+ * nicht gemessene Bedenkzeiten 0. Beispiel: Stufe 5 in allen Phasen, 5 + 3 → etwa −100.
+ */
+export function uhrAbzug(
+  stufen: Readonly<Record<Phase, Stufennummer>>,
+  uhr: Uhrangabe | null,
+): number {
+  if (!uhr) return 0;
+  const schluessel = `${uhr.grundzeitMs / SEKUNDE_MS}+${uhr.zuschlagMs / SEKUNDE_MS}`;
+  const je = UHR_ABZUG[schluessel];
+  if (!je) return 0;
+  const phasen = [stufen.eroeffnung, stufen.mittelspiel, stufen.endspiel];
+  return phasen.reduce((summe, n) => summe + (je[n] ?? 0), 0) / PHASEN_ZAHL;
 }
 
 /**

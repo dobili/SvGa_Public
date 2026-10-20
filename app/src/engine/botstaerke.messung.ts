@@ -70,7 +70,7 @@ function unterordner(muster: RegExp): string[] {
 
 /** Punkte des ersten Kürzels der Paarung aus allen Partien der Datei. */
 function begegnung(d: Datei): Begegnung {
-  const trenner = d.paarung.lastIndexOf("-");
+  const trenner = trennstelle(d.paarung);
   const a = d.paarung.slice(0, trenner);
   const b = d.paarung.slice(trenner + 1);
   let punkte = 0;
@@ -88,10 +88,43 @@ function begegnung(d: Datei): Begegnung {
   };
 }
 
-/** „3@nina“ → „nina“, „3“ → „stufe3“. */
+/** Trennstelle einer Paarung: letzter Bindestrich vor „@“ oder einer Ziffer (Kennungen haben welche). */
+function trennstelle(paarung: string): number {
+  return paarung.search(/-(?=[@\d][^-]*(?:-[a-z]+)*$)/);
+}
+
+/** „@svenja“ und „3@nina“ (bis 0.2.115) → Kennung des Bots, „3“ → „stufe3“. */
 function spielerkennung(kuerzel: string): string {
   const at = kuerzel.indexOf("@");
   return at >= 0 ? kuerzel.slice(at + 1) : `stufe${kuerzel}`;
+}
+
+const UHR_ORDNER = "uhr";
+const HOECHSTER_ANTEIL = 0.95;
+const ELO_TEILER = 400;
+
+/**
+ * Was die Uhr je Stufe und Bedenkzeit kostet (seit 0.2.116): Stufe n mit Uhr gegen Stufe n ohne
+ * („3~300+3-3“), Punkte in Elo umgerechnet. Ausgabe: Bedenkzeit → Stufe → Abzug (meist negativ).
+ */
+function uhrAbzuege(): Map<string, Map<number, number>> {
+  const aus = new Map<string, Map<number, number>>();
+  for (const d of dateienIn(join(ORDNER, UHR_ORDNER))) {
+    const t = trennstelle(d.paarung);
+    const mitUhr = d.paarung.slice(0, t);
+    const [stufe, tempo] = mitUhr.split("~");
+    if (!stufe || !tempo || d.berichte.length === 0) continue;
+    const g = begegnung(d);
+    const anteil = Math.min(
+      HOECHSTER_ANTEIL,
+      Math.max(1 - HOECHSTER_ANTEIL, g.punkteA / g.partien),
+    );
+    const elo = -ELO_TEILER * Math.log10(1 / anteil - 1);
+    const je = aus.get(tempo) ?? new Map<number, number>();
+    je.set(Number(stufe), elo);
+    aus.set(tempo, je);
+  }
+  return aus;
 }
 
 /** Alle Ergebnisse für die Leiter (ohne Partien einer Stufe gegen sich selbst). */
@@ -225,6 +258,17 @@ function datendatei(werte: Map<string, number>): string {
     "",
     "export const BOT_STAERKE: Readonly<Record<string, number>> = {",
     ...bots,
+    "};",
+    "",
+    "/** Was die Uhr je Bedenkzeit („300+3“) und Stufe kostet (Elo, meist negativ; seit 0.2.116). */",
+    "export const UHR_ABZUG: Readonly<Record<string, Readonly<Record<number, number>>>> = {",
+    ...[...uhrAbzuege()].map(
+      ([tempo, je]) =>
+        `  "${tempo}": { ${[...je]
+          .sort((x, y) => x[0] - y[0])
+          .map(([n, w]) => `${n}: ${Math.round(w)}`)
+          .join(", ")} },`,
+    ),
     "};",
     "",
   ].join("\n");

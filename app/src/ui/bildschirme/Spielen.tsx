@@ -121,6 +121,7 @@ function Einstellungen({
         gegner={v.gegner}
         bot={v.bot}
         stufen={v.stufenJePhase}
+        uhr={v.uhr}
         eigene={eigene}
         kategorie={kategorie}
         beiGegner={(gegner) => mit({ gegner, gewertet: gegner === "engine" })}

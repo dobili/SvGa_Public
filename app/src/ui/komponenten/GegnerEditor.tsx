@@ -5,7 +5,9 @@
  * eine Karte unter der Gegnerwahl). Ein eigener Gegner
  * hat Name, Stufen je Phase (StufenWahl.tsx), erlaubte Fehlerarten (Haken; wirksam in Stufe 1
  * bis 4, ohne Haken nie ein absichtlicher Fehler) und einen Stil von sehr defensiv bis sehr
- * aggressiv (engine/stil.ts). Gespeichert wird im Spielstand (speicher/gegner.ts); gelöschte
+ * aggressiv (engine/stil.ts); seit 0.2.116 dazu der erweiterte Modus (ErweiterteFehler.tsx:
+ * Fehlerhäufigkeit, Gewicht je Art, Höchstverlust). Gespeichert wird im Spielstand
+ * (speicher/gegner.ts); gelöschte
  * Gegner bleiben in alten Partien mit ihrem Namen.
  * Abhängigkeiten: engine/gegner.ts, engine/fehlerart.ts, engine/stil.ts, speicher/, StufenWahl, i18n.
  */
@@ -20,6 +22,7 @@ import type { Phase } from "../../spiel/phasen";
 import { MAX_NAMENSLAENGE, mitEigenemGegner, ohneEigenenGegner } from "../../speicher/gegner";
 import { mitEigenenGegnern } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
+import { ErweiterteFehler } from "./ErweiterteFehler";
 import { GegnerBild } from "./GegnerBild";
 import { PortraetAuswahl } from "./PortraetAuswahl";
 import { StufenWahl } from "./StufenWahl";
@@ -54,14 +57,9 @@ function kurzbeschreibung(g: EigenerGegner): string {
 
 /** Der Gegner ohne Porträt (Wahl „kein Bild“). */
 function ohnePortraet(g: EigenerGegner): EigenerGegner {
-  return {
-    kennung: g.kennung,
-    name: g.name,
-    stufenJePhase: g.stufenJePhase,
-    fehlerarten: g.fehlerarten,
-    stil: g.stil,
-    blindeFlecken: g.blindeFlecken,
-  };
+  const ohne: EigenerGegner = { ...g };
+  delete (ohne as { portraet?: unknown }).portraet;
+  return ohne;
 }
 
 /** Das Formular für einen Gegner. */
@@ -157,6 +155,7 @@ function Formular({
           </label>
         ))}
       </fieldset>
+      <ErweiterteFehler g={g} setze={setze} />
       <div className="knopfreihe">
         <button
           type="button"

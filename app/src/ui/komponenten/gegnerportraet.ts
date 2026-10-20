@@ -12,9 +12,13 @@ export const SPASSGRUPPE = 0;
 /** Ordner der Porträts (app/public/gegner/, erzeugt von skripte/erzeuge-gegnerbilder.mjs). */
 const PORTRAETS = "gegner/";
 
-/** Adresse des Porträts eines vorgefertigten Gegners. */
+/**
+ * Adresse des Porträts eines vorgefertigten Gegners; seit 0.2.116 steht die Datei im Gegner
+ * (die neuen Bots tragen die Porträts der alten), sonst die Kennung selbst.
+ */
 export function portraet(kennung: string): string {
-  return `${import.meta.env.BASE_URL}${PORTRAETS}${kennung}.svg`;
+  const datei = gegnerVon(kennung)?.portraet ?? kennung;
+  return `${import.meta.env.BASE_URL}${PORTRAETS}${datei}.svg`;
 }
 
 /**

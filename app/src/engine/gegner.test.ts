@@ -15,8 +15,6 @@ import {
   GEGNER,
   gegnerDerStufe,
   gegnerSortiert,
-  gegnerVon,
-  klasseVon,
   unterAbhakliste,
   istSpassbot,
   spassbots,
@@ -52,7 +50,7 @@ describe("vorgefertigte Gegner", () => {
     const texte: Record<string, string> = de;
     for (const g of GEGNER) {
       expect(texte[g.beschreibung], g.kennung).toBeTruthy();
-      expect(existsSync(join("public", "gegner", `${g.kennung}.svg`)), g.kennung).toBe(true);
+      expect(existsSync(join("public", "gegner", `${g.portraet}.svg`)), g.kennung).toBe(true);
     }
   });
 });
@@ -66,18 +64,12 @@ describe("Gruppen ohne Überschneidung (0.2.109)", () => {
       );
     }
   });
-
-  it("Jan steht in Stufe 3 und heißt so, spielt aber weiter mit seinen Stufen 4, 3, 5", () => {
-    const jan = gegnerDerStufe(3).find((g) => g.kennung === "jan");
-    expect(jan?.stufenJePhase).toEqual({ eroeffnung: 4, mittelspiel: 3, endspiel: 5 });
-    expect(jan && klasseVon(jan).nummer).toBe(3);
-  });
 });
 
 describe("Spaß-Bots (0.2.88)", () => {
   it("vier, schwächster zuerst, mit Zufallszügen und nicht in der Gruppe der Stufe 1", () => {
     const spass = spassbots();
-    expect(spass.map((g) => g.kennung)).toEqual(["fritzi", "willi", "trude", "bruno"]);
+    expect(spass.map((g) => g.kennung)).toEqual(["kiki", "onkel-otto", "tante-hilde", "bodo"]);
     for (let i = 1; i < spass.length; i += 1) {
       expect(spass[i]?.zufallszuege ?? 0).toBeLessThan(spass[i - 1]?.zufallszuege ?? 0);
     }
@@ -87,19 +79,13 @@ describe("Spaß-Bots (0.2.88)", () => {
 });
 
 describe("Abhakliste der Fehlerarten (0.2.60)", () => {
-  it("lässt alles unverändert, wenn alle Arten erlaubt sind", () => {
+  it("lässt alles unverändert, wenn alle Arten erlaubt sind; Bots haben alle Arten (0.2.116)", () => {
     expect(unterAbhakliste(null, FEHLERARTEN)).toBeNull();
-    const max = gegnerVon("max");
-    expect(max && unterAbhakliste(max.fehlerarten, FEHLERARTEN)).toEqual(max?.fehlerarten);
+    expect(GEGNER.every((g) => g.fehlerarten === null)).toBe(true);
   });
-  it("beschneidet die Liste eines Gegners: Max ohne „Figur hängen lassen“", () => {
-    const max = gegnerVon("max");
-    if (!max) throw new Error("Max fehlt");
+  it("beschneidet eine Liste: ohne „Figur hängen lassen“", () => {
     const erlaubt = FEHLERARTEN.filter((art) => art !== "figurHaengen");
-    expect(max.fehlerarten).toContain("figurHaengen");
-    expect(unterAbhakliste(max.fehlerarten, erlaubt)).toEqual(
-      max.fehlerarten.filter((art) => art !== "figurHaengen"),
-    );
+    expect(unterAbhakliste(["figurHaengen", "bauernraub"], erlaubt)).toEqual(["bauernraub"]);
   });
   it("ergibt für die reine Engine die Abhakliste, leer heißt keine absichtlichen Fehler", () => {
     expect(unterAbhakliste(null, ["bauernraub"])).toEqual(["bauernraub"]);

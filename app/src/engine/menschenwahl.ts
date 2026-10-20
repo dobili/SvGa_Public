@@ -73,6 +73,8 @@ const KANDIDATEN = 6;
 const JE_ART = 2;
 const MINDESTVERLUST = 0.5;
 const HOECHSTE_WAHRSCHEINLICHKEIT = 0.95;
+/** Kandidaten so nah am besten gelten als gleich gut (Breite der Wahl, engine/bedenkzeit.ts). */
+const GLEICH_GUT = 0.3;
 /** Arten mit typischem Verlust ab so vielen Bauern zählen in Zeitnot als Patzer. */
 const PATZER_AB = 1.5;
 
@@ -215,9 +217,11 @@ export async function menschlicheWahl(
     ...kandidaten.slice(1),
     ...(gezielt ? kandidatenAus(gezielt.varianten, bestwert, weiss) : []),
   ];
+  const breite = kandidaten.filter((k) => k.verlust <= GLEICH_GUT).length;
   const fehler = fehlerwurf(gelegenheiten(lage, pool, bester, werte, kontext), zufall);
-  if (fehler) return fehler;
-  return grundschicht(fen, b.varianten, kandidaten, werte, kontext, zufall);
+  if (fehler) return { ...fehler, breite };
+  const wahl = grundschicht(fen, b.varianten, kandidaten, werte, kontext, zufall);
+  return wahl ? { ...wahl, breite } : null;
 }
 
 function engineZug(uci: string): Zugwahl {

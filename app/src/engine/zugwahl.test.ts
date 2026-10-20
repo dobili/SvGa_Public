@@ -115,7 +115,7 @@ describe("Zugwahl", () => {
     const { b } = bewerter(KANDIDATEN);
     const profil = { ...STANDARDPROFIL, fehlerarten: [] };
     const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0, 0, profil);
-    expect(wahl).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
+    expect(wahl).toMatchObject({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
   });
 
   it("Höchstverlust je Art: kleiner als jeder Fehlerzug, also kein Fehler", async () => {

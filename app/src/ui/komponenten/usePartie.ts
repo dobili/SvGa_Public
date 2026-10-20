@@ -31,8 +31,14 @@ import {
   setzeUhrFort,
   zieheMitUhr,
 } from "../../spiel/ablauf";
-import { BUCHTREUE, BUCHTREUE_VORGABE } from "../../engine/zugwahl";
-import { engineZug } from "../../spiel/enginezug";
+import { BUCHTREUE, BUCHTREUE_VORGABE, type Gegnerprofil } from "../../engine/zugwahl";
+import { engineZugMitLage } from "../../spiel/enginezug";
+import {
+  botBedenkzeit,
+  eigeneRestzeit,
+  sichtbareWartezeit,
+  zieheBotMitUhr,
+} from "../../spiel/botzeit";
 import {
   aktuelleFen,
   amZug,
@@ -134,6 +140,35 @@ function verlaufVon(partie: Partie): Verlauf {
   };
 }
 
+/**
+ * Das Profil des Gegners für den nächsten Zug: aus der Einstellung der Partie (eigene Gegner,
+ * eigene Stufe), bei vorgefertigten Bots Gewichte und Zufallszüge aus der Liste, dazu Verlauf und
+ * Restzeit der eigenen Uhr (Zeitnot, seit 0.2.116).
+ */
+function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
+  const e = partie.einstellung;
+  const bot = gegnerVon(e.bot);
+  return {
+    fehlerarten: e.fehlerarten ?? null,
+    stil: e.stil ?? 0,
+    blindeFlecken: e.blindeFlecken ?? [],
+    verlauf: verlaufVon(partie),
+    // Spaß-Bots (0.2.88) und Gewichte der Bots stehen in der Liste, nicht in der Partie.
+    zufallszuege: bot?.zufallszuege,
+    gewichte: e.gewichte ?? bot?.gewichte,
+    haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,
+    hoechstverlust: e.hoechstverlust,
+    restMs: eigeneRestzeit(partie, jetztMs),
+  };
+}
+
+/** Wartet, bis der Bot sichtbar nachgedacht hat (nur mit Uhr; die Rechenzeit zählt mit). */
+function sichtbarNachdenken(bedenk: number | null, rest: number | null, start: number) {
+  if (bedenk === null || rest === null) return Promise.resolve();
+  const warten = sichtbareWartezeit(bedenk, rest) - (Date.now() - start);
+  return new Promise<void>((fertig) => setTimeout(fertig, Math.max(0, warten)));
+}
+
 /** Lässt die Engine ziehen, solange sie am Zug ist. */
 function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) {
   const buch = useBuch();
@@ -147,15 +182,9 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
     let aktiv = true;
     const buchzuege = buchzuegeFuer(buch.index, fen, eroeffnung);
     const jetzige = neueste(id);
-    const profil = {
-      fehlerarten: jetzige?.einstellung.fehlerarten ?? null,
-      stil: jetzige?.einstellung.stil ?? 0,
-      blindeFlecken: jetzige?.einstellung.blindeFlecken ?? [],
-      verlauf: jetzige ? verlaufVon(jetzige) : undefined,
-      // Spaß-Bots (0.2.88): der Anteil steht in der Liste, nicht in der gespeicherten Partie.
-      zufallszuege: gegnerVon(jetzige?.einstellung.bot ?? null)?.zufallszuege,
-    };
-    engineZug(
+    const start = Date.now();
+    const profil = jetzige ? profilDerPartie(jetzige, start) : undefined;
+    engineZugMitLage(
       engine,
       fen,
       stufe(stufennummer),
@@ -164,15 +193,25 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
       buchzuege.treue,
       profil,
     )
-      .then((zug) => {
+      .then(async (ergebnis) => {
+        const vorher = neueste(id);
+        if (!aktiv || !vorher || aktuelleFen(vorher) !== fen) return;
+        if (!ergebnis) throw new Error(`Kein Zug der Engine in ${fen}`);
+        const bedenk = botBedenkzeit(
+          vorher,
+          { uci: ergebnis.uci, quelle: ergebnis.zug.quelle, breite: ergebnis.breite },
+          stufe(stufennummer).wertung,
+          Date.now(),
+          Math.random,
+        );
+        await sichtbarNachdenken(bedenk, eigeneRestzeit(vorher, Date.now()), start);
         const jetzt = neueste(id);
         if (!aktiv || !jetzt || aktuelleFen(jetzt) !== fen) return;
-        if (!zug) throw new Error(`Kein Zug der Engine in ${fen}`);
         setzeFehler(null);
         // Im Hintergrund bleibt die Uhr nach dem Zug stehen (sonst liefe die Zeit des Lesers).
         const sichtbar = document.visibilityState !== "hidden";
-        const mitStufe = { ...zug, stufe: stufennummer };
-        aendereNeueste(id, (p) => zieheMitUhr(p, mitStufe, Date.now(), sichtbar));
+        const mitStufe = { ...ergebnis.zug, stufe: stufennummer };
+        aendereNeueste(id, (p) => zieheBotMitUhr(p, mitStufe, bedenk, Date.now(), sichtbar));
       })
       .catch((grund: unknown) => {
         if (grund instanceof AuftragAbgebrochen) {

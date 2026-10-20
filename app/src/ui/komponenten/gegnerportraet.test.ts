@@ -21,6 +21,6 @@ describe("offene Stufen beim ersten Zeigen", () => {
 
   it("Gruppe „Zum Spaß“ (0.2.88): Schlüssel 0 im Merker und für einen Spaß-Bot", () => {
     expect([...offeneStufenAnfangs("0,1", null)]).toEqual([SPASSGRUPPE, 1]);
-    expect([...offeneStufenAnfangs(null, "fritzi")]).toEqual([SPASSGRUPPE]);
+    expect([...offeneStufenAnfangs(null, "kiki")]).toEqual([SPASSGRUPPE]);
   });
 });

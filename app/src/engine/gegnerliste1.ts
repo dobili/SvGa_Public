@@ -1,235 +1,62 @@
 /**
- * Die vorgefertigten Gegner der Stufen 1 bis 4 (Einsteiger bis Gelegenheitsspieler), je acht.
+ * Die vorgefertigten Gegner der Stufen 1 bis 4 (Menschen um 600 bis 1500), je acht.
  *
- * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. In diesen Stufen prägen die erlaubten
- * Fehlerarten (Kapitel 1 und 4 grob, Kapitel 5 bis 8 fein) die Persönlichkeit, dazu blinde
- * Flecken und Stil. Die 18 Gegner aus 0.2.46 bleiben unverändert (der Autor kennt sie aus
- * den Nachtests N241 und N242), nur ihr Stil ist neu.
- * Abhängigkeiten: engine/gegnerbau.ts (Typ, Helfer, Fehlerlisten).
+ * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Seit 0.2.116 neu gebaut (Wunsch des
+ * Autors vom 20.10.2026: „mach die Bots komplett neu“, Porträts bleiben, neue Namen). Jeder Bot
+ * spielt wie Menschen seiner Stufen je Phase (engine/menschenwahl.ts); die Persönlichkeit
+ * (engine/gegnerbau.ts, CHARAKTERE) verschiebt einzelne Fehlerarten und blinde Flecken, der Stil
+ * wählt unter gleich guten Zügen. Reihenfolge innerhalb der Stufe beliebig; die Gegnerwahl
+ * ordnet nach Stärke.
+ * Abhängigkeiten: engine/gegnerbau.ts (Typ, Helfer, Persönlichkeiten).
  */
-import { FEIN, gegner, GROB, type Gegner } from "./gegnerbau";
+import { bot, type Gegner } from "./gegnerbau";
 
-/** Stufe 1, Einsteiger: grobe Fehler aus Kapitel 1 und 4, in jeder Partie mehrere. */
+/** Stufe 1, Einsteiger (Menschen um 600). */
 const STUFE_1: readonly Gegner[] = [
-  gegner("lotta", "Lotta", [1, 1, 1], [...GROB, ...FEIN], ["ruhig"], 0),
-  gegner("paula", "Paula", [1, 1, 2], GROB, ["diagonale", "rueckzug", "grundreihe"], -1),
-  gegner(
-    "max",
-    "Max",
-    [1, 2, 1],
-    ["verfruehteDame", "bauernraub", "figurHaengen", "tempoverlust"],
-    ["rueckzug"],
-    2,
-  ),
-  gegner(
-    "finn",
-    "Finn",
-    [2, 1, 1],
-    ["schlagreflex", "figurHaengen", "bauernraub", "koenigMitte"],
-    ["ruhig", "abzug"],
-    2,
-  ),
-  gegner(
-    "oma-gerda",
-    "Oma Gerda",
-    [1, 1, 2],
-    ["koenigPassiv", "tempoverlust", "figurHaengen", "drohungIgnoriert"],
-    ["dame", "springer"],
-    -2,
-  ),
-  gegner(
-    "leon",
-    "Leon",
-    [1, 2, 1],
-    ["verfruehteDame", "taktikUebersehen", "ungenau", "schlagreflex"],
-    ["grundreihe", "bauer"],
-    1,
-  ),
-  gegner("mia", "Mia", [1, 1, 1], GROB, ["diagonale", "zwischenzug"], 0),
-  gegner(
-    "emil",
-    "Emil",
-    [1, 1, 2],
-    ["figurHaengen", "drohungIgnoriert", "pattGesetzt", "koenigPassiv"],
-    ["turm", "rueckzug"],
-    -1,
-  ),
+  bot("ella", "Ella", "lotta", [1, 1, 1], "solide", 0),
+  bot("marie", "Marie", "paula", [1, 1, 2], "vorsichtig", -1),
+  bot("tom", "Tom", "max", [1, 1, 1], "damenfan", 2),
+  bot("luis", "Luis", "finn", [2, 1, 1], "materialist", 1),
+  bot("oma-erna", "Oma Erna", "oma-gerda", [1, 1, 2], "endspieler", -2),
+  bot("henry", "Henry", "leon", [1, 2, 1], "angreifer", 2),
+  bot("lina", "Lina", "mia", [1, 1, 1], "traeumer", 0),
+  bot("moritz", "Moritz", "emil", [1, 1, 1], "hektiker", 1),
 ];
 
-/** Stufe 2, Anfänger: noch grobe Fehler, seltener, dazu erste feine. */
+/** Stufe 2 (Menschen um 900). */
 const STUFE_2: readonly Gegner[] = [
-  gegner(
-    "opa-hans",
-    "Opa Hans",
-    [2, 1, 2],
-    ["figurHaengen", "schlagreflex", "koenigMitte", "koenigPassiv", "bauernvorstoss"],
-    ["springer", "grundreihe"],
-    -1,
-  ),
-  gegner(
-    "onkel-rudi",
-    "Onkel Rudi",
-    [2, 2, 1],
-    ["schlagreflex", "bauernraub", "verfruehteDame", "drohungIgnoriert"],
-    ["abzug"],
-    2,
-  ),
-  gegner(
-    "frieda",
-    "Frieda",
-    [2, 2, 3],
-    ["drohungIgnoriert", "schlagreflex", "koenigsschild", "falscherAbtausch", "ungenau"],
-    ["diagonale", "roentgen"],
-    -2,
-  ),
-  gegner(
-    "herr-lehmann",
-    "Herr Lehmann",
-    [3, 2, 2],
-    ["koenigMitte", "tempoverlust", "koenigPassiv", "figurHaengen", "pattGesetzt"],
-    ["dame", "turm"],
-    0,
-  ),
-  gegner(
-    "ayse",
-    "Ayşe",
-    [2, 3, 2],
-    ["taktikUebersehen", "figurHaengen", "ungenau", "bauernvorstoss"],
-    ["abzug"],
-    1,
-  ),
-  gegner(
-    "pit",
-    "Pit",
-    [1, 2, 3],
-    ["schlagreflex", "bauernraub", "verfruehteDame", "falscherAbtausch"],
-    ["ruhig", "roentgen"],
-    2,
-  ),
-  gegner(
-    "sophie",
-    "Sophie",
-    [3, 2, 1],
-    ["tempoverlust", "koenigMitte", "koenigPassiv", "pattGesetzt", "figurHaengen"],
-    ["springer", "dame"],
-    -1,
-  ),
-  gegner(
-    "karl",
-    "Karl",
-    [2, 2, 2],
-    ["figurHaengen", "drohungIgnoriert", "taktikUebersehen"],
-    ["zwischenzug", "grundreihe"],
-    0,
-  ),
+  bot("opa-heinz", "Opa Heinz", "opa-hans", [2, 2, 3], "endspieler", -1),
+  bot("onkel-bernd", "Onkel Bernd", "onkel-rudi", [2, 2, 2], "materialist", 0),
+  bot("clara", "Clara", "frieda", [2, 2, 2], "solide", 0),
+  bot("herr-krause", "Herr Krause", "herr-lehmann", [3, 2, 2], "theoretiker", -1),
+  bot("leyla", "Leyla", "ayse", [2, 3, 2], "taktiker", 1),
+  bot("jakob", "Jakob", "pit", [1, 2, 2], "hektiker", 2),
+  bot("johanna", "Johanna", "sophie", [2, 2, 2], "koenigswanderer", 1),
+  bot("rolf", "Rolf", "karl", [2, 2, 2], "vorsichtig", -2),
 ];
 
-/** Stufe 3, fortgeschrittene Anfänger: vor allem feine Fehler aus Kapitel 5 bis 8. */
+/** Stufe 3 (Menschen um 1200). */
 const STUFE_3: readonly Gegner[] = [
-  gegner(
-    "selin",
-    "Selin",
-    [3, 3, 2],
-    ["koenigsschild", "bauernvorstoss", "koenigPassiv", "ungenau"],
-    ["dame"],
-    0,
-  ),
-  gegner(
-    "nina",
-    "Nina",
-    [3, 3, 3],
-    ["taktikUebersehen", "drohungIgnoriert", "ungenau"],
-    ["abzug"],
-    0,
-  ),
-  gegner(
-    "jonas",
-    "Jonas",
-    [2, 3, 4],
-    ["bauernraub", "schlagreflex", "koenigsschild", "taktikUebersehen"],
-    ["bauer"],
-    -1,
-  ),
-  gegner(
-    "tobias",
-    "Tobias",
-    [4, 3, 2],
-    ["taktikUebersehen", "falscherAbtausch", "koenigPassiv"],
-    ["rueckzug", "bauer"],
-    1,
-  ),
-  gegner(
-    "greta",
-    "Greta",
-    [3, 4, 3],
-    ["ungenau", "koenigsschild", "bauernvorstoss"],
-    ["dame", "turm"],
-    2,
-  ),
-  gegner(
-    "herr-nowak",
-    "Herr Nowak",
-    [3, 3, 3],
-    ["drohungIgnoriert", "schlagreflex", "ungenau"],
-    ["diagonale", "roentgen"],
-    -2,
-  ),
-  gegner(
-    "ida",
-    "Ida",
-    [2, 3, 4],
-    ["bauernraub", "tempoverlust", "taktikUebersehen"],
-    ["abzug", "grundreihe"],
-    0,
-  ),
-  gegner(
-    "omar",
-    "Omar",
-    [3, 2, 3],
-    ["koenigsschild", "falscherAbtausch", "ungenau", "drohungIgnoriert"],
-    ["zwischenzug", "ruhig"],
-    1,
-  ),
+  bot("derya", "Derya", "selin", [3, 3, 3], "angreifer", 2),
+  bot("svenja", "Svenja", "nina", [3, 3, 3], "solide", 0),
+  bot("felix", "Felix", "jonas", [2, 3, 4], "endspieler", -1),
+  bot("marco", "Marco", "tobias", [4, 3, 3], "theoretiker", 0),
+  bot("ronja", "Ronja", "greta", [3, 3, 3], "traeumer", 1),
+  bot("herr-wolff", "Herr Wolff", "herr-nowak", [3, 3, 3], "stratege", -2),
+  bot("pia", "Pia", "ida", [3, 3, 2], "damenfan", 1),
+  bot("yusuf", "Yusuf", "omar", [3, 4, 3], "taktiker", 1),
 ];
 
-/** Stufe 4, Gelegenheitsspieler: nur noch kleine Ungenauigkeiten und übersehene Taktik. */
+/** Stufe 4 (Menschen um 1500). */
 const STUFE_4: readonly Gegner[] = [
-  gegner("benno", "Benno", [4, 4, 4], ["taktikUebersehen", "ungenau"], ["ruhig", "springer"], 0),
-  gegner(
-    "timo",
-    "Timo",
-    [5, 4, 3],
-    ["taktikUebersehen", "falscherAbtausch", "bauernvorstoss", "ungenau"],
-    ["rueckzug", "diagonale", "zwischenzug"],
-    1,
-  ),
-  gegner("frau-berger", "Frau Berger", [4, 4, 5], ["ungenau", "koenigPassiv"], ["dame"], -1),
-  gegner(
-    "lukas",
-    "Lukas",
-    [3, 4, 5],
-    ["taktikUebersehen", "bauernraub"],
-    ["roentgen", "springer"],
-    2,
-  ),
-  gegner("zoe", "Zoë", [5, 4, 3], ["ungenau", "bauernvorstoss", "koenigsschild"], ["rueckzug"], 2),
-  gegner(
-    "herr-schmitt",
-    "Herr Schmitt",
-    [4, 4, 4],
-    ["ungenau", "falscherAbtausch", "taktikUebersehen"],
-    ["turm", "abzug"],
-    -2,
-  ),
-  gegner("amira", "Amira", [4, 5, 3], ["taktikUebersehen", "ungenau"], ["bauer", "zwischenzug"], 0),
-  gegner(
-    "jan",
-    "Jan",
-    [4, 3, 5],
-    ["koenigsschild", "ungenau", "drohungIgnoriert"],
-    ["diagonale", "grundreihe"],
-    1,
-  ),
+  bot("holger", "Holger", "benno", [4, 4, 4], "solide", 0),
+  bot("dennis", "Dennis", "timo", [5, 4, 4], "angreifer", 2),
+  bot("frau-albrecht", "Frau Albrecht", "frau-berger", [4, 4, 5], "vorsichtig", -2),
+  bot("philipp", "Philipp", "lukas", [3, 4, 4], "hektiker", 1),
+  bot("mara", "Mara", "zoe", [4, 4, 3], "taktiker", 1),
+  bot("herr-kuehn", "Herr Kühn", "herr-schmitt", [4, 4, 4], "stratege", -1),
+  bot("samira", "Samira", "amira", [4, 5, 4], "traeumer", 0),
+  bot("erik", "Erik", "jan", [4, 4, 4], "materialist", 0),
 ];
 
 export const GEGNER_STUFE_1_BIS_4: readonly Gegner[] = [

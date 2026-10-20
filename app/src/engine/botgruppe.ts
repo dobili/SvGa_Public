@@ -13,21 +13,10 @@
 import type { Stufennummer } from "./stufen";
 
 /**
- * Bots, deren Gruppe von ihrem Durchschnitt abweicht (Kennung → Gruppe), mit ihrer Zahl seit
- * 0.2.103: Jan (1657) und Lukas (1788) von 4 nach 3, Omar (1809) und Selin (1863) von 3 nach 4;
- * Trainer Koch (2417) von 7 nach 6, Lena (2458) von 6 nach 7; GM Petrova (2764) von 8 nach 7,
- * Doktor Berg (2802) von 7 nach 8.
+ * Bots, deren Gruppe von ihrem Durchschnitt abweicht (Kennung → Gruppe). Seit 0.2.116 neu zu
+ * setzen, sobald die neuen Bots gemessen sind (bis dahin keine Abweichung).
  */
-const ABWEICHENDE_GRUPPE: Readonly<Record<string, Stufennummer>> = {
-  jan: 3,
-  lukas: 3,
-  omar: 4,
-  selin: 4,
-  "trainer-koch": 6,
-  lena: 7,
-  "gm-petrova": 7,
-  "doktor-berg": 8,
-};
+const ABWEICHENDE_GRUPPE: Readonly<Record<string, Stufennummer>> = {};
 
 /**
  * Die Gruppe eines Bots: die festgelegte Abweichung, sonst der gerundete Durchschnitt seiner

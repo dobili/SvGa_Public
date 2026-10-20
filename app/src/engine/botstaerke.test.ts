@@ -48,9 +48,9 @@ describe("Elo-Zahl der Bots", () => {
 
   it("Gegnerwertung: gemessener Bot, sonst Schätzung aus den Stufen", () => {
     const fuenf = { eroeffnung: 5, mittelspiel: 5, endspiel: 5 } as const;
-    const nina = GEGNER.find((g) => g.kennung === "nina");
-    expect(gegnerstaerke({ bot: "nina", stufenJePhase: fuenf })).toBe(staerkeDesBots("nina"));
-    expect(nina).toBeDefined();
+    const svenja = GEGNER.find((g) => g.kennung === "svenja");
+    expect(gegnerstaerke({ bot: "svenja", stufenJePhase: fuenf })).toBe(staerkeDesBots("svenja"));
+    expect(svenja).toBeDefined();
     expect(gegnerstaerke({ bot: null, stufenJePhase: fuenf })).toBe(staerkeDerStufe(5));
     expect(gegnerstaerke({ bot: "eigen-1", stufenJePhase: fuenf })).toBe(staerkeDerStufe(5));
   });

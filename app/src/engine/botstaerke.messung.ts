@@ -103,26 +103,48 @@ const UHR_ORDNER = "uhr";
 const HOECHSTER_ANTEIL = 0.95;
 const ELO_TEILER = 400;
 
-/**
- * Was die Uhr je Stufe und Bedenkzeit kostet (seit 0.2.116): Stufe n mit Uhr gegen Stufe n ohne
- * („3~300+3-3“), Punkte in Elo umgerechnet. Ausgabe: Bedenkzeit → Stufe → Abzug (meist negativ).
- */
-function uhrAbzuege(): Map<string, Map<number, number>> {
+/** Rohwerte der Uhrmessung: Bedenkzeit → Stufe → Elo von „n~T“ gegen „n“. */
+function uhrRohwerte(): Map<string, Map<number, number>> {
   const aus = new Map<string, Map<number, number>>();
   for (const d of dateienIn(join(ORDNER, UHR_ORDNER))) {
     const t = trennstelle(d.paarung);
-    const mitUhr = d.paarung.slice(0, t);
-    const [stufe, tempo] = mitUhr.split("~");
+    const [stufe, tempo] = d.paarung.slice(0, t).split("~");
     if (!stufe || !tempo || d.berichte.length === 0) continue;
     const g = begegnung(d);
     const anteil = Math.min(
       HOECHSTER_ANTEIL,
       Math.max(1 - HOECHSTER_ANTEIL, g.punkteA / g.partien),
     );
-    const elo = -ELO_TEILER * Math.log10(1 / anteil - 1);
     const je = aus.get(tempo) ?? new Map<number, number>();
-    je.set(Number(stufe), elo);
+    je.set(Number(stufe), -ELO_TEILER * Math.log10(1 / anteil - 1));
     aus.set(tempo, je);
+  }
+  return aus;
+}
+
+/** Grundzeit einer Bedenkzeit in Sekunden („300+3“ → 300). */
+function grundzeit(tempo: string): number {
+  return Number(tempo.split("+")[0]);
+}
+
+/**
+ * Was die Uhr je Bedenkzeit kostet (seit 0.2.116): Stufe n mit Uhr gegen Stufe n ohne
+ * („3~300+3-3“). Seit 0.2.117 bereinigt: Ohne Zeitnot verläuft eine Partie mit Uhr genau wie ohne
+ * (gleiche Zufallsfolge), die Rohwerte langer Bedenkzeiten sind also nur das Rauschen der Partien
+ * gegen sich selbst. Abgezogen wird deshalb der Wert der längsten Bedenkzeit derselben Stufe, dann
+ * über alle Stufen gemittelt (je Stufe zu wenige Partien) und nie über 0.
+ * Ausgabe: Bedenkzeit → Stufe → Abzug (gleich für alle Stufen).
+ */
+function uhrAbzuege(): Map<string, Map<number, number>> {
+  const roh = uhrRohwerte();
+  const laengste = [...roh.keys()].sort((x, y) => grundzeit(y) - grundzeit(x))[0];
+  const basis = laengste ? (roh.get(laengste) ?? new Map<number, number>()) : new Map();
+  const aus = new Map<string, Map<number, number>>();
+  for (const [tempo, je] of roh) {
+    const unterschiede = [...je].map(([n, w]) => w - (basis.get(n) ?? 0));
+    const mittel = unterschiede.reduce((s, x) => s + x, 0) / Math.max(1, unterschiede.length);
+    const abzug = Math.min(0, mittel);
+    aus.set(tempo, new Map([...je.keys()].map((n) => [n, abzug])));
   }
   return aus;
 }
@@ -143,7 +165,8 @@ function zusatzAbzuege(): Map<number, number> {
       HOECHSTER_ANTEIL,
       Math.max(1 - HOECHSTER_ANTEIL, g.punkteA / g.partien),
     );
-    aus.set(Number(mit[1]), -ELO_TEILER * Math.log10(1 / anteil - 1));
+    // Ein positiver Wert (Zusatzfehler unten weniger schlimm als die Grundschicht) zählt als 0
+    aus.set(Number(mit[1]), Math.min(0, -ELO_TEILER * Math.log10(1 / anteil - 1)));
   }
   return aus;
 }

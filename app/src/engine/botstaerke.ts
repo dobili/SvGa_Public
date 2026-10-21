@@ -15,7 +15,10 @@
  */
 import type { Phase } from "../schach/phase";
 import { gruppeDesBots } from "./botgruppe";
-import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG } from "./botstaerke-daten";
+import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
+import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG, ZUSATZ_ABZUG } from "./botstaerke-daten";
+import type { Fehlerart } from "./fehlerart";
+import { GELEGENHEITSARTEN } from "./menschenprofil";
 import { GEGNER } from "./gegnerliste";
 import { STUFEN_ZAHL, type Stufennummer } from "./stufen";
 
@@ -66,17 +69,68 @@ export function staerkeAusStufen(stufen: Readonly<Record<Phase, Stufennummer>>):
   return STUFEN_STAERKE[unten] + anteil * (STUFEN_STAERKE[oben] - STUFEN_STAERKE[unten]);
 }
 
+/** Was an Zusatzfehlern eingestellt ist (eigene Gegner, eigene Stufe mit blinden Flecken). */
+export interface Zusatzfehlerangabe {
+  readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
+  readonly fehlerarten?: readonly Fehlerart[] | null;
+  readonly blindeFlecken?: readonly BlinderFleck[];
+  readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
+  readonly haeufigkeit?: number;
+}
+
+/**
+ * Anteil der Zusatzfehler eines eigenen Gegners an denen der Menschen (0: keine, 1: alle wie
+ * Menschen): Mittel der Gewichte aller Fehlerarten und blinden Flecken (abgehakt 1, sonst 0, im
+ * erweiterten Modus das Gewicht), mal Fehlerhäufigkeit. Eine grobe Schätzung: Die Arten zählen
+ * gleich, obwohl sie verschieden oft vorkommen.
+ * Beispiel: alle Haken, keine Flecken, Häufigkeit 1 → 12 von 22 Gewichten → etwa 0,55.
+ */
+export function zusatzanteil(e: Zusatzfehlerangabe): number {
+  const arten = GELEGENHEITSARTEN.map(
+    (a) => e.gewichte?.[a] ?? ((e.fehlerarten ?? []).includes(a) ? 1 : 0),
+  );
+  const flecken = BLINDE_FLECKEN.map(
+    (f) => e.gewichte?.[f] ?? ((e.blindeFlecken ?? []).includes(f) ? 1 : 0),
+  );
+  const alle = [...arten, ...flecken];
+  return ((e.haeufigkeit ?? 1) * alle.reduce((s, w) => s + w, 0)) / alle.length;
+}
+
+/**
+ * Was Zusatzfehler eine Stufe kosten (gemessen: Stufe mit allen Zusatzfehlern gegen dieselbe
+ * Stufe ohne, engine/botstaerke.messung.ts), mal Anteil; Mittel der drei Phasen. Ohne Messung 0.
+ * Beispiel: Stufe 4 kostet mit allen Zusatzfehlern −250, halber Anteil → −125.
+ */
+export function zusatzAbzug(e: Zusatzfehlerangabe): number {
+  const anteil = zusatzanteil(e);
+  if (anteil === 0) return 0;
+  const s = e.stufenJePhase;
+  const phasen = [s.eroeffnung, s.mittelspiel, s.endspiel];
+  return (anteil * phasen.reduce((summe, n) => summe + (ZUSATZ_ABZUG[n] ?? 0), 0)) / PHASEN_ZAHL;
+}
+
+/**
+ * Geschätzte Zahl eines eigenen Gegners oder einer eigenen Stufe: Stufen je Phase plus Abzug der
+ * Zusatzfehler (seit 0.2.117). Beispiel: 4 · 4 · 4 ohne Haken → die Zahl der Stufe 4.
+ */
+export function staerkeGeschaetzt(e: Zusatzfehlerangabe): number {
+  return staerkeAusStufen(e.stufenJePhase) + zusatzAbzug(e);
+}
+
 /**
  * Die feste Gegnerwertung einer Partie gegen die Engine: der gemessene Bot, sonst die Schätzung
- * aus den Stufen je Phase.
- * Beispiel: Bot „ayse“ → 1553; eigene Stufen 5 · 5 · 5 → die Zahl der Stufe 5.
+ * aus den Stufen je Phase und den Zusatzfehlern.
+ * Beispiel: Bot „ayse“ → 1553; eigene Stufen 5 · 5 · 5 ohne Zusatzfehler → die Zahl der Stufe 5.
  */
-export function gegnerstaerke(einstellung: {
-  readonly bot: string | null;
-  readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
-  readonly uhr?: Uhrangabe | null;
-}): number {
-  const ohneUhr = staerkeDesBots(einstellung.bot) ?? staerkeAusStufen(einstellung.stufenJePhase);
+export function gegnerstaerke(
+  einstellung: Zusatzfehlerangabe & {
+    readonly bot: string | null;
+    readonly uhr?: Uhrangabe | null;
+  },
+): number {
+  // Ohne Bot zählen nur die abgehakten blinden Flecken (die Abhakliste gilt den Bots).
+  const eigen = einstellung.bot === null ? { ...einstellung, fehlerarten: [] } : einstellung;
+  const ohneUhr = staerkeDesBots(einstellung.bot) ?? staerkeGeschaetzt(eigen);
   return ohneUhr + uhrAbzug(einstellung.stufenJePhase, einstellung.uhr ?? null);
 }
 

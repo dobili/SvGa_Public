@@ -127,6 +127,27 @@ function uhrAbzuege(): Map<string, Map<number, number>> {
   return aus;
 }
 
+const ZUSATZ_ORDNER = "zusatz";
+
+/**
+ * Was alle Zusatzfehler je Stufe kosten (seit 0.2.117): Stufe n mit Zusatzfehlern gegen Stufe n
+ * ohne („4m-4“), Punkte in Elo umgerechnet. Ausgabe: Stufe → Abzug (meist negativ).
+ */
+function zusatzAbzuege(): Map<number, number> {
+  const aus = new Map<number, number>();
+  for (const d of dateienIn(join(ORDNER, ZUSATZ_ORDNER))) {
+    const mit = /^(\d+)m$/.exec(d.paarung.slice(0, trennstelle(d.paarung)));
+    if (!mit?.[1] || d.berichte.length === 0) continue;
+    const g = begegnung(d);
+    const anteil = Math.min(
+      HOECHSTER_ANTEIL,
+      Math.max(1 - HOECHSTER_ANTEIL, g.punkteA / g.partien),
+    );
+    aus.set(Number(mit[1]), -ELO_TEILER * Math.log10(1 / anteil - 1));
+  }
+  return aus;
+}
+
 /** Alle Ergebnisse für die Leiter (ohne Partien einer Stufe gegen sich selbst). */
 function begegnungen(): Begegnung[] {
   return unterordner(LEITER_ORDNER)
@@ -272,6 +293,13 @@ function datendatei(werte: Map<string, number>): string {
           .map(([n, w]) => `${n}: ${Math.round(w)}`)
           .join(", ")} },`,
     ),
+    "};",
+    "",
+    "/** Was alle Zusatzfehler der Menschen je Stufe kosten (Elo, negativ; seit 0.2.117). */",
+    "export const ZUSATZ_ABZUG: Readonly<Partial<Record<Stufennummer, number>>> = {",
+    ...[...zusatzAbzuege()]
+      .sort((x, y) => x[0] - y[0])
+      .map(([n, w]) => `  ${n}: ${Math.round(w)},`),
     "};",
     "",
   ].join("\n");

@@ -94,3 +94,6 @@ export const BOT_STAERKE: Readonly<Record<string, number>> = {
 
 /** Was die Uhr je Bedenkzeit („300+3“) und Stufe kostet (Elo, meist negativ; seit 0.2.116). */
 export const UHR_ABZUG: Readonly<Record<string, Readonly<Record<number, number>>>> = {};
+
+/** Was alle Zusatzfehler der Menschen je Stufe kosten (Elo, negativ; seit 0.2.117, noch ungemessen). */
+export const ZUSATZ_ABZUG: Readonly<Partial<Record<Stufennummer, number>>> = {};

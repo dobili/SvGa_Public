@@ -9,10 +9,25 @@ import {
   staerkeAusStufen,
   staerkeDerStufe,
   staerkeDesBots,
+  zusatzanteil,
 } from "./botstaerke";
+import { BLINDE_FLECKEN } from "./blindeFlecken";
 import { GEGNER } from "./gegnerliste";
+import { GELEGENHEITSARTEN } from "./menschenprofil";
 
-const STUFEN = [1, 2, 3, 4, 5, 6, 7, 8] as const;
+const STUFEN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+
+describe("Zusatzfehler eigener Gegner (0.2.117)", () => {
+  const vier = { eroeffnung: 4, mittelspiel: 4, endspiel: 4 } as const;
+  it("ohne Haken kein Anteil, alle Arten und Flecken wie Menschen ganz", () => {
+    expect(zusatzanteil({ stufenJePhase: vier, fehlerarten: [], blindeFlecken: [] })).toBe(0);
+    const voll = Object.fromEntries([...GELEGENHEITSARTEN, ...BLINDE_FLECKEN].map((a) => [a, 1]));
+    expect(zusatzanteil({ stufenJePhase: vier, gewichte: voll })).toBeCloseTo(1);
+    expect(zusatzanteil({ stufenJePhase: vier, gewichte: voll, haeufigkeit: 0.5 })).toBeCloseTo(
+      0.5,
+    );
+  });
+});
 
 describe("Elo-Zahl der Bots", () => {
   it("jede Stufe ist stärker als die darunter", () => {

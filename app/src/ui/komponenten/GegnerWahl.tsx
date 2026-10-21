@@ -24,6 +24,7 @@ import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
 import type { ReactNode } from "react";
 import {
   staerkeAusStufen,
+  staerkeGeschaetzt,
   staerkeDesBots,
   uhrAbzug,
   type Uhrangabe,
@@ -73,7 +74,7 @@ function staerkezeile(
     return t("spielen.bot.blase", { staerke: staerketext(gemessen), nummer }) + mitUhr;
   }
   if (eigener) {
-    const staerke = staerketext(staerkeAusStufen(eigener.stufenJePhase));
+    const staerke = staerketext(staerkeGeschaetzt(eigener));
     return t("spielen.bot.blaseGeschaetzt", { staerke });
   }
   return t("spielen.bot.blaseStufen", {

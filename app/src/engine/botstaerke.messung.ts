@@ -44,7 +44,7 @@ const DURCHGAENGE = 200;
  * 2100). Solche Stufen stehen im Bericht als „gesättigt“, verankern die Leiter aber nicht.
  */
 const GESAETTIGT_AB = 83;
-const STUFEN = [1, 2, 3, 4, 5, 6, 7, 8] as const;
+const STUFEN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
 interface Bericht {
   readonly weiss: string;
@@ -155,12 +155,13 @@ function bewertungen(): Map<string, Rohwert[]> {
  * Innere Genauigkeiten beider Seiten je Anker-Stufe, wie „Deine Spielstärke“ seit 0.2.103 nur bis
  * zur Entscheidung der Partie (Seiten mit mindestens zehn gezählten Zügen).
  */
-function ankerGenauigkeiten(): Map<number, number[]> {
+function ankerGenauigkeiten(): Map<string, number[]> {
   const bewertet = bewertungen();
-  const je = new Map<number, number[]>();
+  const je = new Map<string, number[]>();
   for (const o of unterordner(ANKER_ORDNER)) {
     for (const d of dateienIn(join(ORDNER, o))) {
-      const stufe = Number(d.paarung.split("-")[0]);
+      // Kürzel der Seite: „3“ oder eine freie Grundschicht wie „4x0.2“ (Eichung 0.2.117)
+      const stufe = d.paarung.slice(0, trennstelle(d.paarung));
       d.berichte.forEach((_, i) => {
         const roh = bewertet.get(`${o}/${d.paarung}:${i}`);
         if (!roh || roh.length < 2 * MINDESTENS_ZUEGE) return;
@@ -184,7 +185,9 @@ function ankerGenauigkeiten(): Map<number, number[]> {
 function anker(): { anker: Anker[]; zeilen: string[] } {
   const liste: Anker[] = [];
   const zeilen: string[] = [];
-  for (const [stufe, werte] of [...ankerGenauigkeiten()].sort((x, y) => x[0] - y[0])) {
+  const reihenfolge = (k: string) => Number.parseFloat(k);
+  const sortiert = [...ankerGenauigkeiten()].sort((x, y) => reihenfolge(x[0]) - reihenfolge(y[0]));
+  for (const [stufe, werte] of sortiert) {
     const bloecke: number[] = [];
     for (let i = 0; i + BLOCK <= werte.length; i += BLOCK) {
       const s = staerkeUeberPartien(werte.slice(i, i + BLOCK));
@@ -274,6 +277,14 @@ function datendatei(werte: Map<string, number>): string {
   ].join("\n");
 }
 
+/** Spieler der Leiter, die weder Stufe noch Bot sind (freie Grundschichten der Eichung). */
+function weitere(werte: Map<string, number>): string[] {
+  const bekannt = new Set([...STUFEN.map((n) => `stufe${n}`), ...GEGNER.map((g) => g.kennung)]);
+  return [...werte.keys()]
+    .filter((k) => !bekannt.has(k))
+    .sort((x, y) => (werte.get(x) ?? 0) - (werte.get(y) ?? 0));
+}
+
 function bericht(
   werte: Map<string, number>,
   streu: Map<string, number>,
@@ -303,6 +314,7 @@ function bericht(
     "|---|---|---|---|",
     ...STUFEN.map((n) => zeile(`stufe${n}`, `Stufe ${n}`)),
     ...GEGNER.map((g) => zeile(g.kennung, g.name)),
+    ...weitere(werte).map((k) => zeile(k, k.replace("stufe", "Grundschicht "))),
     "",
   ].join("\n");
 }

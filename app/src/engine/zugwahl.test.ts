@@ -5,13 +5,14 @@
  */
 import { describe, expect, it } from "vitest";
 import type { Bewertung, Staerke } from "./engineDienst";
-import { stufe } from "./stufen";
+import { ALLE_ZUEGE, stufe } from "./stufen";
 import type { Variante } from "./uci";
 import { FEHLERARTEN } from "./fehlerart";
 import {
   BESONDERS_BLIND,
   BUCHTREUE_VORGABE,
   menschenwerteAus,
+  REINES_PROFIL,
   STANDARDPROFIL,
   type Spielbewerter,
   waehleZug,
@@ -95,7 +96,7 @@ describe("Zugwahl", () => {
     expect(aufrufe).toHaveLength(0);
   });
 
-  it("Stufe 1 bis 7: menschliche Zugwahl mit Kandidaten der Suchtiefe 10 (0.2.116)", async () => {
+  it("mit Zusatzfehlern: zuerst die Fehlersuche mit Kandidaten der Suchtiefe 10 (0.2.116)", async () => {
     const { b, aufrufe } = bewerter(KANDIDATEN);
     const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0.5);
     expect(aufrufe[0]).toEqual({ varianten: 6, staerke: { art: "tiefe", tiefe: 10 } });
@@ -118,12 +119,14 @@ describe("Zugwahl", () => {
     expect(wahl).toMatchObject({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
   });
 
-  it("abgewählte Fehlerarten kommen auch über die Grundschicht nicht vor (0.2.116)", async () => {
-    // Zufall knapp unter 1: die Grundschicht nähme den schlechtesten Kandidaten, den sie sieht
-    const { b } = bewerter(KANDIDATEN);
-    const profil = { ...STANDARDPROFIL, fehlerarten: [] };
-    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0.999, 0, profil);
-    expect(["b8c6", "d7d6"]).toContain(wahl?.uci);
+  it("reine Stufe (0.2.117): nur die Grundschicht, alle Züge in kleiner Tiefe bewertet", async () => {
+    const { b, aufrufe } = bewerter(KANDIDATEN);
+    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0, 0, REINES_PROFIL);
+    expect(aufrufe).toEqual([{ varianten: ALLE_ZUEGE, staerke: { art: "tiefe", tiefe: 1 } }]);
+    expect(wahl).toMatchObject({ uci: "b8c6", quelle: "engine", fehler: null });
+    // Hoher Zufall: Stufe 1 (großes tau) zieht auch den Turmverlust g6
+    const schlecht = await waehleZug(b, FEN, stufe(1), [], () => 0.999, 0, REINES_PROFIL);
+    expect(schlecht?.uci).toBe("g7g6");
   });
 
   it("Höchstverlust je Art: kleiner als jeder Fehlerzug, also kein Fehler", async () => {
@@ -159,14 +162,14 @@ describe("Zugwahl", () => {
     expect(werte.erlaubt).toEqual(["figurHaengen"]);
   });
 
-  it("Stufe 8 spielt voll", async () => {
+  it("Stufe 10 ohne Zusatzfehler spielt voll", async () => {
     const { b, aufrufe } = bewerter(KANDIDATEN, "b8c6");
-    await waehleZug(b, FEN, stufe(8), [], folge(0.5));
+    await waehleZug(b, FEN, stufe(10), [], folge(0.5), 0, REINES_PROFIL);
     expect(aufrufe[0]?.staerke).toEqual({ art: "voll" });
   });
 
   it("ohne legalen Zug: null", async () => {
     const { b } = bewerter([], null);
-    expect(await waehleZug(b, FEN, stufe(8), [], folge(0.5))).toBeNull();
+    expect(await waehleZug(b, FEN, stufe(10), [], folge(0.5), 0, REINES_PROFIL)).toBeNull();
   });
 });

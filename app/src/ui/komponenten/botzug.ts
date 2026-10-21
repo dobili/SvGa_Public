@@ -12,7 +12,7 @@ import { engine } from "../../engine/engineDienst";
 import { gegnerVon } from "../../engine/gegner";
 import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
-import { BUCHTREUE, type Gegnerprofil } from "../../engine/zugwahl";
+import { BUCHTREUE, REINES_PROFIL, type Gegnerprofil } from "../../engine/zugwahl";
 import {
   botBedenkzeit,
   eigeneRestzeit,
@@ -72,14 +72,25 @@ function verlaufVon(partie: Partie): Verlauf {
 }
 
 /**
- * Das Profil des Gegners für den nächsten Zug: aus der Einstellung der Partie (eigene Gegner,
- * eigene Stufe), bei vorgefertigten Bots Gewichte und Zufallszüge aus der Liste, dazu Verlauf und
- * Restzeit der eigenen Uhr (Zeitnot, seit 0.2.116).
+ * Das Profil des Gegners für den nächsten Zug: ohne Bot die reine Stufe (seit 0.2.117), bei eigenen
+ * Gegnern die Einstellung der Partie, bei vorgefertigten Bots Gewichte und Zufallszüge aus der
+ * Liste, dazu Verlauf und Restzeit der eigenen Uhr (Zeitnot, seit 0.2.116).
  */
 function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
   const e = partie.einstellung;
+  if (e.bot === null) {
+    // Ohne Bot spielt die Stufe rein, ohne Zusatzfehler (seit 0.2.117)
+    return {
+      ...REINES_PROFIL,
+      verlauf: verlaufVon(partie),
+      restMs: eigeneRestzeit(partie, jetztMs),
+    };
+  }
   const bot = gegnerVon(e.bot);
+  // Eigene Gegner: Abgehakte Flecken sind an (wie Menschen), die übrigen aus
+  const eigen = bot ? {} : { fleckenStandard: 0, fleckGewicht: 1 };
   return {
+    ...eigen,
     fehlerarten: e.fehlerarten ?? null,
     stil: e.stil ?? 0,
     blindeFlecken: e.blindeFlecken ?? [],

@@ -6,15 +6,13 @@
  * Paarung startet. Umgebung: MESSUNG_PAARUNG, MESSUNG_PARTIEN (Zahl, gerade; die Farben wechseln),
  * MESSUNG_ZIEL (Ordner für die JSON-Ergebnisse, nur lokal: buch/arbeit/), MESSUNG_SAAT_AB,
  * seit 0.2.116 MESSUNG_ENGINE_PFAD (native Engine statt Stockfish lite, viel schneller) und
- * MESSUNG_TIEFE_VOLL (Suchtiefe der vollen Engine, Stufe 8, Vorgabe 16, statt 2 s Rechenzeit).
+ * MESSUNG_TIEFE_VOLL (Suchtiefe der vollen Engine, Stufe 10, Vorgabe 16, statt 2 s Rechenzeit).
  * Kürzel eines Spielers:
- * - „3“: reine Stufe 3 in allen Phasen;
+ * - „3“: Stufe 3 in allen Phasen, ohne Zusatzfehler (nur die Grundschicht, seit 0.2.117);
+ * - „3m“: Stufe 3 mit allen Zusatzfehlern und blinden Flecken der Menschen (Abzug für Bots);
+ * - „4x0.2“: freie Grundschicht mit Suchtiefe 4 und tau 0,2 (Eichung der Stufen, 21.10.2026);
  * - „@svenja“: ein vorgefertigter Bot mit seinen Stufen je Phase und seiner Persönlichkeit, wie
  *   in der App (seit 0.2.116; bis 0.2.115 „3@nina“ mit nur einer Stufe für alle Phasen);
- * - „8s5“, „8e1600“: Vergleichsgegner mit festem Skill Level oder fester Elo-Zahl;
- * - „3r“: Stufe 3 ohne Fehlerarten und blinde Flecken (nur die Grundschicht); „3h1.5“: Stufe 3
- *   mit 1,5-facher Fehlerhäufigkeit; „3t14“: Stufe 3 mit Suchtiefe 14 (Versuche zum Spreizen der
- *   Stufen, 21.10.2026). Kombinierbar in dieser Reihenfolge: „3h0.8t12r“.
  * - Anhang „~300+3“: dieser Spieler spielt mit Uhr (Grundzeit und Zuschlag in Sekunden) und
  *   simulierter Bedenkzeit (engine/bedenkzeit.ts); reicht sie nicht, zieht er im Notmodus mit
  *   Vorzügen weiter (spiel/notmodus.ts) und kann so auf Zeit verlieren. Ohne Anhang hat er
@@ -30,16 +28,22 @@ import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
 import type { Phase } from "../schach/phase";
 import { bedenkzeitMs } from "./bedenkzeit";
-import { BLINDE_FLECKEN } from "./blindeFlecken";
 import type { EngineDienst } from "./engineDienst";
 import type { Fehlerart } from "./fehlerart";
 import { GEGNER } from "./gegner";
 import { tagesform } from "./menschlich";
 import { nativeEngine } from "./nativeEngine.testhilfe";
 import { nodeEngine } from "./nodeEngine.testhilfe";
-import { naechsteStufe, stufe, type Stufe, type Stufennummer } from "./stufen";
-import { BUCHTREUE, STANDARDPROFIL, type Gegnerprofil } from "./zugwahl";
-import { WERTUNG_VOLLE_ENGINE, zuglage } from "../spiel/botzeit";
+import {
+  grundschicht,
+  naechsteStufe,
+  stufe,
+  STUFEN_ZAHL,
+  type Stufe,
+  type Stufennummer,
+} from "./stufen";
+import { BUCHTREUE, REINES_PROFIL, STANDARDPROFIL, type Gegnerprofil } from "./zugwahl";
+import { zuglage } from "../spiel/botzeit";
 import { engineZugMitLage } from "../spiel/enginezug";
 import { phaseVon } from "../spiel/phasen";
 import { leserAmZug, neuePartie, stellungen, ziehe, type Partie } from "../spiel/partie";
@@ -63,7 +67,6 @@ const ANFAENGE: readonly (readonly string[])[] = [
 const HOECHSTENS_HALBZUEGE = 240;
 const STANDARD_PARTIEN = 10;
 /** Rechenzeit für Vergleichsgegner mit festem Skill Level oder fester Elo-Zahl. */
-const VERGLEICHS_RECHENZEIT_MS = 600;
 const SEKUNDE_MS = 1000;
 const TIEFE_VOLL = Number(process.env.MESSUNG_TIEFE_VOLL ?? "16");
 
@@ -108,20 +111,26 @@ interface Spieler {
   readonly uhr: { readonly grundzeitMs: number; readonly zuschlagMs: number } | null;
 }
 
-/**
- * Profil „rein“ (Kürzel „3r“): alle Fehlerarten aus, alle blinden Flecken mit Gewicht 0, also nur
- * die Grundschicht der Stufe; so steht ein eigener Gegner da, bei dem der Leser alles abschaltet
- * (Frage des Autors vom 21.10.2026: welche Elo-Zahl je Reglerstufe).
- */
-const REIN: Gegnerprofil = {
-  ...STANDARDPROFIL,
-  fehlerarten: [],
-  blindeFlecken: [],
-  gewichte: Object.fromEntries(BLINDE_FLECKEN.map((f) => [f, 0])),
-};
-
 function alleGleich(n: Stufennummer): Readonly<Record<Phase, Stufennummer>> {
   return { eroeffnung: n, mittelspiel: n, endspiel: n };
+}
+
+/** Ein vorgefertigter Bot mit seinen Stufen je Phase und seinem Profil. */
+function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
+  const bot = /^@([a-z-]+)$/.exec(kern);
+  if (!bot?.[1]) return null;
+  const g = GEGNER.find((x) => x.kennung === bot[1]);
+  if (!g) throw new Error(`Unbekannter Bot: ${kern}`);
+  const profil: Gegnerprofil = {
+    ...STANDARDPROFIL,
+    fehlerarten: g.fehlerarten,
+    stil: g.stil,
+    blindeFlecken: g.blindeFlecken,
+    gewichte: g.gewichte,
+    haeufigkeit: g.haeufigkeit,
+    zufallszuege: g.zufallszuege,
+  };
+  return { stufen: g.stufenJePhase, ersatz: null, profil, uhr };
 }
 
 /** Spieler aus dem Kürzel der Paarung (Kopf der Datei). */
@@ -131,44 +140,18 @@ function spieler(kuerzel: string): Spieler {
   const uhr = teile
     ? { grundzeitMs: (teile[0] ?? 0) * SEKUNDE_MS, zuschlagMs: (teile[1] ?? 0) * SEKUNDE_MS }
     : null;
-  const bot = /^@([a-z-]+)$/.exec(kern);
-  const g = bot?.[1] ? GEGNER.find((x) => x.kennung === bot[1]) : undefined;
-  if (bot && !g) throw new Error(`Unbekannter Bot: ${kern}`);
-  if (g) {
-    const profil: Gegnerprofil = {
-      ...STANDARDPROFIL,
-      fehlerarten: g.fehlerarten,
-      stil: g.stil,
-      blindeFlecken: g.blindeFlecken,
-      gewichte: g.gewichte,
-      haeufigkeit: g.haeufigkeit,
-      zufallszuege: g.zufallszuege,
-    };
-    return { stufen: g.stufenJePhase, ersatz: null, profil, uhr };
+  const bot = botspieler(kern, uhr);
+  if (bot) return bot;
+  const frei = /^(\d+)x(\d+(?:\.\d+)?)$/.exec(kern);
+  if (frei?.[1] && frei[2]) {
+    const ersatz = { ...stufe(1), grund: grundschicht(Number(frei[1]), Number(frei[2])) };
+    return { stufen: alleGleich(1), ersatz, profil: REINES_PROFIL, uhr };
   }
-  const variante = /^(\d)(?:h(\d+(?:\.\d+)?))?(?:t(\d+))?(r)?$/.exec(kern);
-  if (variante?.[1] && (variante[2] ?? variante[3] ?? variante[4])) {
-    const n = Number(variante[1]) as Stufennummer;
-    const basis = variante[4] ? REIN : STANDARDPROFIL;
-    const profil = variante[2] ? { ...basis, haeufigkeit: Number(variante[2]) } : basis;
-    const tiefe = variante[3] ? Number(variante[3]) : null;
-    const ersatz = tiefe ? { ...stufe(n), staerke: { art: "tiefe" as const, tiefe } } : null;
-    return { stufen: alleGleich(n), ersatz, profil, uhr };
-  }
-  const vergleich = vergleichsgegner(kern);
-  const nummer = (vergleich ? 8 : Number(kern)) as Stufennummer;
-  return { stufen: alleGleich(nummer), ersatz: vergleich, profil: STANDARDPROFIL, uhr };
-}
-
-/** Vergleichsgegner mit festem Skill Level („8s5“) oder fester Elo-Zahl („8e1600“), sonst null. */
-function vergleichsgegner(kuerzel: string): Stufe | null {
-  const skill = /^8s(\d+)$/.exec(kuerzel);
-  const elo = /^8e(\d+)$/.exec(kuerzel);
-  const basis = { name: "stufe.8" as const, rechenzeitMs: VERGLEICHS_RECHENZEIT_MS, wertung: null };
-  if (skill?.[1])
-    return { ...basis, nummer: 8, staerke: { art: "skill", stufe: Number(skill[1]) } };
-  if (elo?.[1]) return { ...basis, nummer: 8, staerke: { art: "elo", elo: Number(elo[1]) } };
-  return null;
+  const stufig = /^(\d+)(m?)$/.exec(kern);
+  const nummer = Number(stufig?.[1]);
+  if (!stufig || nummer < 1 || nummer > STUFEN_ZAHL) throw new Error(`Unbekanntes Kürzel: ${kern}`);
+  const profil = stufig[2] ? STANDARDPROFIL : REINES_PROFIL;
+  return { stufen: alleGleich(nummer as Stufennummer), ersatz: null, profil, uhr };
 }
 
 /** Die Stufe für diesen Zug: Stufe der Phase, Zug für Zug höchstens eine Stufe weiter (App). */
@@ -176,7 +159,7 @@ function stufeFuer(s: Spieler, fen: string, letzte: Stufennummer | null): Stufe 
   if (s.ersatz) return s.ersatz;
   const ziel = s.stufen[phaseVon(fen) ?? "mittelspiel"];
   const st = stufe(letzte ? naechsteStufe(letzte, ziel) : ziel);
-  return st.wertung === null ? { ...st, staerke: { art: "tiefe", tiefe: TIEFE_VOLL } } : st;
+  return st.grund === null ? { ...st, staerke: { art: "tiefe", tiefe: TIEFE_VOLL } } : st;
 }
 
 function statistik(
@@ -223,7 +206,7 @@ async function zugMitUhr(
   if (s.uhr && stand.rest !== null) {
     const bedenk = bedenkzeitMs(
       {
-        wertung: st.wertung ?? WERTUNG_VOLLE_ENGINE,
+        wertung: st.wertung,
         restMs: stand.rest,
         zugnummer: Math.floor(lauf.zuege.length / 2) + 1,
         lage: zuglage(lauf, ergebnis.uci, ergebnis.breite),

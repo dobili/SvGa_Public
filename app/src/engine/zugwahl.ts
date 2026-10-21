@@ -5,17 +5,18 @@
  * 1. Spaß-Bots (0.2.88) ziehen mit ihrem Anteil an Zufallszügen irgendeinen legalen Zug.
  * 2. Eröffnungsmodus (Konzept 8.3): Gibt der Aufrufer Buchzüge aus Kapitel 2 und 3 mit, spielt die
  *    Engine meist einen davon (Buchtreue 0,85, bei vorgegebener Eröffnung 1).
- * 3. Stufe 1 bis 7: die menschliche Zugwahl (engine/menschenwahl.ts, seit 0.2.116, Plan vom
- *    20.10.2026): Fehler je Gelegenheit, blinde Flecken und gewichtete Wahl nach den Zahlen von
- *    Menschen der Wertung der Stufe; das Profil des Gegners stellt Gewichte, Fehlerhäufigkeit und
- *    Höchstverluste, die Restzeit der Uhr die Zeitnot.
- * 4. Stufe 8: die volle Engine, mit Stil auf mehrere Kandidaten verteilt.
+ * 3. Seit 0.2.117 (zehn Stufen, Vorschlag des Autors vom 21.10.2026): Ohne Zusatzfehler zieht die
+ *    Grundschicht der Stufe (engine/grundschicht.ts), Stufe 10 die volle Engine. Mit
+ *    Zusatzfehlern (Bots) kommen Fehler je Gelegenheit und blinde Flecken nach den Zahlen von
+ *    Menschen der Ziel-Elo der Stufe dazu (engine/menschenwahl.ts); das Profil stellt Gewichte,
+ *    Fehlerhäufigkeit und Höchstverluste, die Restzeit der Uhr die Zeitnot.
+ * 4. Die volle Engine verteilt mit Stil auf mehrere nahezu gleich gute Kandidaten.
  * Abhängigkeiten: engine/menschenwahl.ts, engine/menschlich.ts (Verlauf), engine/stil.ts,
  * engine/stufen.ts, engine/zufallszug.ts.
  */
-import type { BlinderFleck } from "./blindeFlecken";
+import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
 import type { Fehlerart } from "./fehlerart";
-import { menschlicheWahl, type Menschenwerte } from "./menschenwahl";
+import { hatZusatzfehler, menschlicheWahl, type Menschenwerte } from "./menschenwahl";
 import { RUHIGER_VERLAUF, type Verlauf } from "./menschlich";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
@@ -43,6 +44,12 @@ export interface Gegnerprofil {
   readonly haeufigkeit?: number;
   readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
   readonly restMs?: number | null;
+  /**
+   * Gewicht der nicht genannten blinden Flecken (Vorgabe 1: wie Menschen, vorgefertigte Bots) und
+   * der genannten (Vorgabe 3, „besonders blind“). Eigene Gegner: 0 und 1 (abgehakt heißt an).
+   */
+  readonly fleckenStandard?: number;
+  readonly fleckGewicht?: number;
 }
 
 export const STANDARDPROFIL: Gegnerprofil = {
@@ -53,6 +60,17 @@ export const STANDARDPROFIL: Gegnerprofil = {
 
 /** Gewicht eines blinden Flecks, für den ein Gegner ausdrücklich blind ist. */
 export const BESONDERS_BLIND = 3;
+
+/**
+ * Eine Stufe ohne Zusatzfehler (seit 0.2.117, Vorschlag des Autors): keine Fehlerart, kein
+ * blinder Fleck, nur die Grundschicht. So spielt die Engine, wenn kein Bot gewählt ist.
+ */
+export const REINES_PROFIL: Gegnerprofil = {
+  fehlerarten: [],
+  stil: STIL_NEUTRAL,
+  blindeFlecken: [],
+  fleckenStandard: 0,
+};
 
 export type { Spielbewerter, Zugwahl } from "./spielbewerter";
 export { wertFuer } from "./spielbewerter";
@@ -69,11 +87,17 @@ function zufallsauswahl<T>(liste: readonly T[], zufall: () => number): T | undef
 /**
  * Die Stellschrauben der menschlichen Zugwahl aus einem Profil.
  * Beispiel: Profil mit Fehlerarten [„figurHaengen“] und blindem Fleck „rueckzug“ → alle anderen
- * Fehlerarten Gewicht 0, „figurHaengen“ 1, Fleck „rueckzug“ 3, übrige Flecken 1.
+ * Fehlerarten Gewicht 0, „figurHaengen“ 1, Fleck „rueckzug“ 3, übrige Flecken 1; ein eigener
+ * Gegner (fleckenStandard 0, fleckGewicht 1): „rueckzug“ 1, übrige Flecken 0.
  */
 export function menschenwerteAus(profil: Gegnerprofil): Menschenwerte {
   const gewichte: Partial<Record<Fehlerart | BlinderFleck, number>> = {};
-  for (const fleck of profil.blindeFlecken) gewichte[fleck] = BESONDERS_BLIND;
+  for (const fleck of BLINDE_FLECKEN) {
+    const genannt = profil.blindeFlecken.includes(fleck);
+    gewichte[fleck] = genannt
+      ? (profil.fleckGewicht ?? BESONDERS_BLIND)
+      : (profil.fleckenStandard ?? 1);
+  }
   return {
     haeufigkeit: profil.haeufigkeit ?? 1,
     gewichte: { ...gewichte, ...profil.gewichte },
@@ -83,7 +107,7 @@ export function menschenwerteAus(profil: Gegnerprofil): Menschenwerte {
   };
 }
 
-/** Stufe 8: der beste Zug, mit Stil unter mehreren nahezu gleich guten Kandidaten. */
+/** Stufe 10: der beste Zug, mit Stil unter mehreren nahezu gleich guten Kandidaten. */
 async function engineZug(
   bewerter: Spielbewerter,
   fen: string,
@@ -124,12 +148,13 @@ export async function waehleZug(
     const buchzug = zufallsauswahl(buchzuege, zufall);
     if (buchzug) return { uci: buchzug, quelle: "buch", fehler: null, verlust: 0 };
   }
-  if (stufe.wertung === null) return engineZug(bewerter, fen, stufe, profil.stil);
+  const werte = menschenwerteAus(profil);
+  if (!stufe.grund && !hatZusatzfehler(werte)) return engineZug(bewerter, fen, stufe, profil.stil);
   const kontext = {
     wertung: stufe.wertung,
     restMs: profil.restMs ?? null,
     verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
     stil: profil.stil,
   };
-  return menschlicheWahl(bewerter, fen, stufe, menschenwerteAus(profil), kontext, zufall);
+  return menschlicheWahl(bewerter, fen, stufe, werte, kontext, zufall);
 }

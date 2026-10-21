@@ -1,6 +1,6 @@
 /**
- * Elo-Zahl der Stufen und der vorgefertigten Bots: VORLÄUFIG (Wertung der Menschen, die die
- * Stufen nachspielen; bis die Messung der neuen Bots läuft, engine/botstaerke.messung.ts).
+ * Elo-Zahl der Stufen und der vorgefertigten Bots: VORLÄUFIG (Ziel-Elo der zehn Stufen, seit
+ * 0.2.117; bis die Messung läuft, engine/botstaerke.messung.ts).
  *
  * Rolle im Gesamtbild: Daten für engine/botstaerke.ts. Nach der Messung erzeugt der Messlauf diese
  * Datei neu (Elo-Leiter, verankert an Stufen gegen sich selbst); nicht von Hand ändern.
@@ -9,21 +9,23 @@
 import type { Stufennummer } from "./stufen";
 
 export const STUFEN_STAERKE: Readonly<Record<Stufennummer, number>> = {
-  1: 600,
-  2: 900,
-  3: 1200,
-  4: 1500,
-  5: 1800,
-  6: 2100,
-  7: 2400,
-  8: 2800,
+  1: 300,
+  2: 600,
+  3: 900,
+  4: 1200,
+  5: 1500,
+  6: 1800,
+  7: 2100,
+  8: 2400,
+  9: 2700,
+  10: 3000,
 };
 
 export const BOT_STAERKE: Readonly<Record<string, number>> = {
-  kiki: 350,
-  "onkel-otto": 440,
-  "tante-hilde": 500,
-  bodo: 550,
+  kiki: 150,
+  "onkel-otto": 200,
+  "tante-hilde": 230,
+  bodo: 260,
   ella: 600,
   marie: 700,
   tom: 600,

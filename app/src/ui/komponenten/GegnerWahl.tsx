@@ -89,7 +89,7 @@ const MINUTE_MS = 60_000;
 const SEKUNDE_MS = 1000;
 
 /**
- * Die Zahl mit der gewählten Uhr (seit 0.2.116; mit Uhr spielt ein Bot schwächer, gemessen je
+ * Die Zahl mit der gewählten Uhr (seit 0.2.117; mit Uhr spielt ein Bot schwächer, gemessen je
  * Stufe und Bedenkzeit): „ · mit Uhr 5 + 3 etwa 1700“; ohne Uhr oder ohne Unterschied leer.
  */
 function uhrzeile(ohneUhr: number, stufenJePhase: Stufenwahl, uhr: Uhrangabe | null): string {
@@ -218,7 +218,7 @@ export function GegnerWahl({
   stufeninhalt: ReactNode;
   editor: ReactNode;
   beginnen: ReactNode;
-  /** Die gewählte Uhr (seit 0.2.116: Zahl des Bots mit Uhr in der Sprechblase). */
+  /** Die gewählte Uhr (seit 0.2.117: Zahl des Bots mit Uhr in der Sprechblase). */
   uhr?: Uhrangabe | null;
 }) {
   return (

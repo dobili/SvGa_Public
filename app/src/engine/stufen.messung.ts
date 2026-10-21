@@ -5,14 +5,14 @@
  * Prüfkette, sondern ein Messlauf (vitest.messung.config.ts), den skripte/messe-stufen.mjs je
  * Paarung startet. Umgebung: MESSUNG_PAARUNG, MESSUNG_PARTIEN (Zahl, gerade; die Farben wechseln),
  * MESSUNG_ZIEL (Ordner für die JSON-Ergebnisse, nur lokal: buch/arbeit/), MESSUNG_SAAT_AB,
- * seit 0.2.116 MESSUNG_ENGINE_PFAD (native Engine statt Stockfish lite, viel schneller) und
+ * seit 0.2.117 MESSUNG_ENGINE_PFAD (native Engine statt Stockfish lite, viel schneller) und
  * MESSUNG_TIEFE_VOLL (Suchtiefe der vollen Engine, Stufe 10, Vorgabe 16, statt 2 s Rechenzeit).
  * Kürzel eines Spielers:
  * - „3“: Stufe 3 in allen Phasen, ohne Zusatzfehler (nur die Grundschicht, seit 0.2.117);
  * - „3m“: Stufe 3 mit allen Zusatzfehlern und blinden Flecken der Menschen (Abzug für Bots);
  * - „4x0.2“: freie Grundschicht mit Suchtiefe 4 und tau 0,2 (Eichung der Stufen, 21.10.2026);
  * - „@svenja“: ein vorgefertigter Bot mit seinen Stufen je Phase und seiner Persönlichkeit, wie
- *   in der App (seit 0.2.116; bis 0.2.115 „3@nina“ mit nur einer Stufe für alle Phasen);
+ *   in der App (seit 0.2.117; bis 0.2.115 „3@nina“ mit nur einer Stufe für alle Phasen);
  * - Anhang „~300+3“: dieser Spieler spielt mit Uhr (Grundzeit und Zuschlag in Sekunden) und
  *   simulierter Bedenkzeit (engine/bedenkzeit.ts); reicht sie nicht, zieht er im Notmodus mit
  *   Vorzügen weiter (spiel/notmodus.ts) und kann so auf Zeit verlieren. Ohne Anhang hat er

@@ -2,7 +2,7 @@
  * Der Zug des Bots in der laufenden Partie: Profil, Stufe, Bedenkzeit, sichtbares Nachdenken,
  * Zug mit Uhr und Notmodus mit Vorzügen.
  *
- * Rolle im Gesamtbild: Aus ui/komponenten/usePartie.ts ausgelagert (0.2.116), als der Notmodus
+ * Rolle im Gesamtbild: Aus ui/komponenten/usePartie.ts ausgelagert (0.2.117), als der Notmodus
  * (spiel/notmodus.ts, Idee des Autors vom 21.10.2026) dazukam. usePartie ruft je Zug entweder
  * normalerBotzug oder, im Notmodus, spieleVorzug; beide lesen und schreiben die Partie im
  * Speicher, damit sie ein Neuladen übersteht.
@@ -74,7 +74,7 @@ function verlaufVon(partie: Partie): Verlauf {
 /**
  * Das Profil des Gegners für den nächsten Zug: ohne Bot die reine Stufe (seit 0.2.117), bei eigenen
  * Gegnern die Einstellung der Partie, bei vorgefertigten Bots Gewichte und Zufallszüge aus der
- * Liste, dazu Verlauf und Restzeit der eigenen Uhr (Zeitnot, seit 0.2.116).
+ * Liste, dazu Verlauf und Restzeit der eigenen Uhr (Zeitnot, seit 0.2.117).
  */
 function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
   const e = partie.einstellung;

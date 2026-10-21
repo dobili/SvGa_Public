@@ -28,9 +28,9 @@ export type Gewichte = Readonly<Partial<Record<Fehlerart | BlinderFleck, number>
 
 /**
  * Profil eines Gegners: erlaubte Fehlerarten (null: alle; nicht erlaubte haben Gewicht 0), Stil
- * (−2 bis 2), blinde Flecken, für die er besonders blind ist (0.2.46; seit 0.2.116 dreifache
+ * (−2 bis 2), blinde Flecken, für die er besonders blind ist (0.2.46; seit 0.2.117 dreifache
  * Wahrscheinlichkeit der Menschen, die übrigen Flecken wie bei Menschen), Verlauf der Partie,
- * Spaß-Zufallszüge, seit 0.2.116 Gewichte je Art, Fehlerhäufigkeit und Höchstverluste
+ * Spaß-Zufallszüge, seit 0.2.117 Gewichte je Art, Fehlerhäufigkeit und Höchstverluste
  * (erweiterter Modus der eigenen Bots) und die Restzeit der eigenen Uhr (null: ohne Uhr).
  */
 export interface Gegnerprofil {

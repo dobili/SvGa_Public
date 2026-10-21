@@ -14,7 +14,7 @@ export const SPASSGRUPPE = 0;
 const PORTRAETS = "gegner/";
 
 /**
- * Adresse des Porträts eines vorgefertigten Gegners; seit 0.2.116 steht die Datei im Gegner
+ * Adresse des Porträts eines vorgefertigten Gegners; seit 0.2.117 steht die Datei im Gegner
  * (die neuen Bots tragen die Porträts der alten), sonst die Kennung selbst.
  */
 export function portraet(kennung: string): string {

@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Von den Listen engine/gegnerliste0.ts bis gegnerliste2.ts gebraucht, die
  * engine/gegnerliste.ts zusammenführt; getrennt, damit kein Modul im Kreis importiert.
- * Seit 0.2.116 (Plan „menschlichere Bots und Uhr der Bots“, Wunsch des Autors vom 20.10.2026:
+ * Seit 0.2.117 (Plan „menschlichere Bots und Uhr der Bots“, Wunsch des Autors vom 20.10.2026:
  * „mach die Bots komplett neu“, Porträts bleiben) spielt jeder Bot wie Menschen seiner Stufe
  * (engine/menschenwahl.ts); seine Persönlichkeit sind Gewichte auf einzelne Fehlerarten und
  * blinde Flecken (1: wie Menschen, 0: nie, 3: dreimal so oft), dazu Stil und Fehlerhäufigkeit.
@@ -25,7 +25,7 @@ export interface Gegner {
   readonly kennung: string;
   readonly name: string;
   readonly beschreibung: Textschluessel;
-  /** Porträt (Datei in app/public/gegner/ ohne Endung); seit 0.2.116 eigenes Feld. */
+  /** Porträt (Datei in app/public/gegner/ ohne Endung); seit 0.2.117 eigenes Feld. */
   readonly portraet: string;
   readonly stufenJePhase: Readonly<Record<Phase, Stufennummer>>;
   /** Erlaubte Fehlerarten; null: alle, gewichtet nach `gewichte`. */

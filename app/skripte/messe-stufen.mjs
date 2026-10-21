@@ -10,7 +10,7 @@
 //   npm run messen:stufen                       # Nachbarn 1-2 … 7-8, je 10 Partien
 //   npm run messen:stufen -- 1-2 3-4 --partien 6 --parallel 2
 //   npm run messen:stufen -- 8s5-8 8e1600-8     # gegen festes Skill Level oder feste Elo-Zahl
-//   npm run messen:stufen -- @svenja-3 3~300+3-3 --ziel ../buch/arbeit/x   # Bot, Uhr (0.2.116)
+//   npm run messen:stufen -- @svenja-3 3~300+3-3 --ziel ../buch/arbeit/x   # Bot, Uhr (0.2.117)
 //   Mit MESSUNG_ENGINE_PFAD=… rechnet eine native Engine (viel schneller, nur lokal).
 import { spawn } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";

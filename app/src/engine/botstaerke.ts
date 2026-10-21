@@ -143,7 +143,7 @@ export interface Uhrangabe {
 const SEKUNDE_MS = 1000;
 
 /**
- * Was die Uhr einen Bot dieser Stufen kostet (seit 0.2.116, gemessen: jede Stufe mit Uhr gegen
+ * Was die Uhr einen Bot dieser Stufen kostet (seit 0.2.117, gemessen: jede Stufe mit Uhr gegen
  * sich selbst ohne Uhr, engine/botstaerke.messung.ts): Mittel der drei Phasen; ohne Uhr oder für
  * nicht gemessene Bedenkzeiten 0. Beispiel: Stufe 5 in allen Phasen, 5 + 3 → etwa −100.
  */

@@ -5,7 +5,7 @@
  * eine Karte unter der Gegnerwahl). Ein eigener Gegner
  * hat Name, Stufen je Phase (StufenWahl.tsx), erlaubte Fehlerarten (Haken; wirksam in Stufe 1
  * bis 4, ohne Haken nie ein absichtlicher Fehler) und einen Stil von sehr defensiv bis sehr
- * aggressiv (engine/stil.ts); seit 0.2.116 dazu der erweiterte Modus (ErweiterteFehler.tsx:
+ * aggressiv (engine/stil.ts); seit 0.2.117 dazu der erweiterte Modus (ErweiterteFehler.tsx:
  * Fehlerhäufigkeit, Gewicht je Art, Höchstverlust). Gespeichert wird im Spielstand
  * (speicher/gegner.ts); gelöschte
  * Gegner bleiben in alten Partien mit ihrem Namen.

@@ -1,6 +1,6 @@
 /**
  * Tests der Zugwahl (Konzept 8.1 „waehleZug“, 8.2 Stufen) mit vorgegebenen Kandidaten und festem
- * Zufall: Buchzug, menschliche Zugwahl der Stufen 1 bis 7 (seit 0.2.116: Fehler je Gelegenheit,
+ * Zufall: Buchzug, menschliche Zugwahl der Stufen 1 bis 7 (seit 0.2.117: Fehler je Gelegenheit,
  * blinde Flecken, Höchstverlust je Art), volle Stärke der Stufe 8.
  */
 import { describe, expect, it } from "vitest";
@@ -96,7 +96,7 @@ describe("Zugwahl", () => {
     expect(aufrufe).toHaveLength(0);
   });
 
-  it("mit Zusatzfehlern: zuerst die Fehlersuche mit Kandidaten der Suchtiefe 10 (0.2.116)", async () => {
+  it("mit Zusatzfehlern: zuerst die Fehlersuche mit Kandidaten der Suchtiefe 10 (0.2.117)", async () => {
     const { b, aufrufe } = bewerter(KANDIDATEN);
     const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0.5);
     expect(aufrufe[0]).toEqual({ varianten: 6, staerke: { art: "tiefe", tiefe: 10 } });

@@ -92,7 +92,7 @@ export const BOT_STAERKE: Readonly<Record<string, number>> = {
   "gm-berglund": 2800,
 };
 
-/** Was die Uhr je Bedenkzeit („300+3“) und Stufe kostet (Elo, meist negativ; seit 0.2.116). */
+/** Was die Uhr je Bedenkzeit („300+3“) und Stufe kostet (Elo, meist negativ; seit 0.2.117). */
 export const UHR_ABZUG: Readonly<Record<string, Readonly<Record<number, number>>>> = {};
 
 /** Was alle Zusatzfehler der Menschen je Stufe kosten (Elo, negativ; seit 0.2.117, noch ungemessen). */

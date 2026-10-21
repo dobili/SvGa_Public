@@ -1,5 +1,5 @@
 /**
- * Lesen der Stellschrauben des erweiterten Modus aus gespeicherten Daten (seit 0.2.116).
+ * Lesen der Stellschrauben des erweiterten Modus aus gespeicherten Daten (seit 0.2.117).
  *
  * Rolle im Gesamtbild: Eigene Gegner (speicher/gegner.ts) und Partien (speicher/partienLesen.ts)
  * können Gewichte je Fehlerart und blindem Fleck, die Fehlerhäufigkeit insgesamt und Höchst-

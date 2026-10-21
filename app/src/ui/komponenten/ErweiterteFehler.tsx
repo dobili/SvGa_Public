@@ -1,6 +1,6 @@
 /**
  * Erweiterter Modus der eigenen Bots: Fehlerhäufigkeit insgesamt, Gewicht je Fehlerart und
- * blindem Fleck, Höchstverlust je Fehlerart (Wunsch des Autors vom 20.10.2026, seit 0.2.116).
+ * blindem Fleck, Höchstverlust je Fehlerart (Wunsch des Autors vom 20.10.2026, seit 0.2.117).
  *
  * Rolle im Gesamtbild: Teil des Formulars in GegnerEditor.tsx, zugeklappt unter „Erweitert“. Die
  * Stufen bestimmen die Grundstärke (engine/stufen.ts); die Zusatzfehler kommen wie bei Menschen

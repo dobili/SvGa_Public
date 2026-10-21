@@ -35,7 +35,7 @@ export const UHR_PARTIETAG: Uhreinstellung = { grundzeitMs: 10 * MINUTE_MS, zusc
 
 /**
  * Auswahl im Spielen-Bildschirm: ohne Uhr und übliche Bedenkzeiten für Einsteiger; seit 0.2.91
- * auch 10 + 0 für den Partietag des 30-Minuten-Plans, seit 0.2.116 Blitz mit 3 + 2 und 3 + 0
+ * auch 10 + 0 für den Partietag des 30-Minuten-Plans, seit 0.2.117 Blitz mit 3 + 2 und 3 + 0
  * (Wunsch des Autors vom 21.10.2026, zum Notmodus der Bots, spiel/notmodus.ts).
  */
 export const UHR_VORGABEN: readonly (Uhreinstellung | null)[] = [

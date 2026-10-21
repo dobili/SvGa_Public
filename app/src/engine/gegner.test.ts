@@ -81,7 +81,7 @@ describe("Spaß-Bots (0.2.88)", () => {
 });
 
 describe("Abhakliste der Fehlerarten (0.2.60)", () => {
-  it("lässt alles unverändert, wenn alle Arten erlaubt sind; Bots haben alle Arten (0.2.116)", () => {
+  it("lässt alles unverändert, wenn alle Arten erlaubt sind; Bots haben alle Arten (0.2.117)", () => {
     expect(unterAbhakliste(null, FEHLERARTEN)).toBeNull();
     expect(GEGNER.every((g) => g.fehlerarten === null)).toBe(true);
   });

@@ -73,7 +73,7 @@ export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
     blindeFlecken: blindeFleckenAus(roh.blindeFlecken),
     // Porträt nur aus der Liste zur Wahl (0.2.99); ältere Gegner und Unbekanntes ohne Porträt.
     ...(istPortraetwahl(roh.portraet) ? { portraet: roh.portraet } : {}),
-    // Erweiterter Modus (0.2.116), nur wenn gespeichert.
+    // Erweiterter Modus (0.2.117), nur wenn gespeichert.
     ...menschenwerteAus(roh),
   };
 }

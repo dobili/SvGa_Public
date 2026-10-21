@@ -77,7 +77,7 @@ describe("Ablauf mit Uhr", () => {
     expect(p.uhr?.laeuft).toBeNull();
   });
 
-  it("die Uhr des Bots läuft nicht in echter Zeit ab (seine Zeit ist simuliert, 0.2.116)", () => {
+  it("die Uhr des Bots läuft nicht in echter Zeit ab (seine Zeit ist simuliert, 0.2.117)", () => {
     const p = zug(partie(true), "e4", 0);
     expect(pruefeZeit(p, 2 * MINUTE)).toBe(p);
   });

@@ -128,7 +128,7 @@ function grundzeit(tempo: string): number {
 }
 
 /**
- * Was die Uhr je Bedenkzeit kostet (seit 0.2.116): Stufe n mit Uhr gegen Stufe n ohne
+ * Was die Uhr je Bedenkzeit kostet (seit 0.2.117): Stufe n mit Uhr gegen Stufe n ohne
  * („3~300+3-3“). Seit 0.2.117 bereinigt: Ohne Zeitnot verläuft eine Partie mit Uhr genau wie ohne
  * (gleiche Zufallsfolge), die Rohwerte langer Bedenkzeiten sind also nur das Rauschen der Partien
  * gegen sich selbst. Abgezogen wird deshalb der Wert der längsten Bedenkzeit derselben Stufe, dann
@@ -307,7 +307,7 @@ function datendatei(werte: Map<string, number>): string {
     ...bots,
     "};",
     "",
-    "/** Was die Uhr je Bedenkzeit („300+3“) und Stufe kostet (Elo, meist negativ; seit 0.2.116). */",
+    "/** Was die Uhr je Bedenkzeit („300+3“) und Stufe kostet (Elo, meist negativ; seit 0.2.117). */",
     "export const UHR_ABZUG: Readonly<Record<string, Readonly<Record<number, number>>>> = {",
     ...[...uhrAbzuege()].map(
       ([tempo, je]) =>

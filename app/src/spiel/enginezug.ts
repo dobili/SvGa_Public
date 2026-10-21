@@ -52,7 +52,7 @@ export async function engineZug(
 
 /**
  * Wie engineZug, dazu der Zug in UCI und die Breite der Wahl (für die Bedenkzeit der Bots,
- * spiel/botzeit.ts, seit 0.2.116). Die Breite bleibt außerhalb des Partiezugs, damit sie nicht
+ * spiel/botzeit.ts, seit 0.2.117). Die Breite bleibt außerhalb des Partiezugs, damit sie nicht
  * mit der Partie gespeichert wird.
  */
 export async function engineZugMitLage(

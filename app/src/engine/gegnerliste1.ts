@@ -1,7 +1,7 @@
 /**
  * Die vorgefertigten Gegner, erste Hälfte (die schwächeren 32 Bots).
  *
- * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Seit 0.2.116 neu gebaut (Wunsch des
+ * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Seit 0.2.117 neu gebaut (Wunsch des
  * Autors vom 20.10.2026: „mach die Bots komplett neu“, Porträts bleiben, neue Namen). Seit 0.2.117
  * (zehn Stufen) sind die Stufen je Phase die Grundstärke; dazu kommen die Zusatzfehler der
  * Menschen (engine/menschenwahl.ts), die Persönlichkeit (engine/gegnerbau.ts, CHARAKTERE)

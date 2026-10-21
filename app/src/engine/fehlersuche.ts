@@ -2,7 +2,7 @@
  * Typische Fehlerzüge einer Stellung nach den Werkzeugen des Buches (ohne Engine).
  *
  * Rolle im Gesamtbild: Konzept 8.2, Fehlerarten. Die menschliche Zugwahl (engine/menschenwahl.ts,
- * seit 0.2.116) braucht je Fehlerart die Züge, die in der Stellung eine Gelegenheit zu diesem
+ * seit 0.2.117) braucht je Fehlerart die Züge, die in der Stellung eine Gelegenheit zu diesem
  * Fehler sind; die Engine bewertet einige davon gezielt („searchmoves“), denn grobe Fehler fehlen
  * unter ihren besten Kandidaten. Bis 0.2.115 stand hier die Fehlersuche der Stufen 1 bis 4 mit
  * Fehlerwürfen und Fehlerprofilen je Stufe (ersetzt durch die Raten von Menschen je Gelegenheit).

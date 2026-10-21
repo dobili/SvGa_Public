@@ -69,7 +69,7 @@ Teil fertig ist.
       der Antwort neben „Weiter“ der Knopf „Aufgabe wiederholen“. Er setzt die Aufgabe auf den
       Anfang zurück; gezählt wird weiter nur die erste Antwort.
 
-### Neu im Zweig „menschliche Bots“ (Version folgt; Opus, 20. bis 22.10.2026)
+### Neu in 0.2.117 (menschliche Bots, zehn Stufen; Opus, 20. bis 22.10.2026)
 
 Die Zahlen unter den Bots kommen aus der laufenden Messung; bis sie fertig ist, zählt das
 Spielgefühl.

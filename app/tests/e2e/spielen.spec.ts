@@ -35,7 +35,7 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(page.getByRole("heading", { name: "Partie gegen die Engine" })).toBeVisible();
-  await expect(page.getByText("Stufe 1 · Einsteiger · du spielst Weiß")).toBeVisible();
+  await expect(page.getByText("Stufe 1 · Neuling · du spielst Weiß")).toBeVisible();
   await expect(page.getByTestId("uhr-white")).toContainText("5:00");
   await ziehe(page, /^e2, Bauer/, "e4");
   await expect(page.getByTestId("partiezuege")).toContainText("1. e4");
@@ -306,7 +306,7 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   expect((knopf?.y ?? Infinity) < (gitterBox?.y ?? 0)).toBe(true);
   // Elo-Zahl an Stufe, Kachel und Sprechblase (0.2.84, S23), mit Erklärung hinter dem Fragezeichen.
   await expect(
-    gitter.getByRole("heading", { name: /^Stufe 1 · Einsteiger · (etwa|unter) \d+( bis .*\d+)?$/ }),
+    gitter.getByRole("heading", { name: /^Stufe 1 · Neuling · (etwa|unter) \d+( bis .*\d+)?$/ }),
   ).toBeVisible();
   await expect(gitter.getByRole("radio", { checked: true })).toContainText(/etwa|unter|über/);
   const staerke = page.getByTestId("gegner-staerke");

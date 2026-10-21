@@ -4326,3 +4326,45 @@ Rückfrage in AUFGABEN_AUTOR.
 - **V1:** Englisch bleibt in der Fassung für die Leser (`SPRACHDATEIEN = { de, en }` immer;
   `pruefe-veroeffentlichung.mjs` sucht nur noch die Aufgabenseite). „(preview)“ bleibt, bis die
   Buchdaten übersetzt sind (R25).
+
+## Menschliche Bots und Uhr (20. und 21.10.2026, Opus, Zweig `menschliche-bots`)
+
+Plan vom Autor am 20.10.2026 freigegeben („du darfst deinen kompletten Plan umsetzen“; offene
+Fragen mit eigener Empfehlung entscheiden). Ergänzungen des Autors: sichtbare Wartezeit mit
+Streuung (20.10.), Notmodus mit Vorzügen und Bedenkzeiten 3 + 2 und 3 + 0 (21.10.), keine
+Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
+
+- **Datengrundlage:** offene Lichess-Datenbank (CC0), Monat 2026-09: 1542 gewertete Partien mit
+  Uhrzeiten (Blitz, Rapid, Klassisch), 111 752 Stellungen, je Stellung sechs Kandidaten in Tiefe
+  12 mit Stockfish 17.1 und die typischen Fehlerzüge nach den Werkzeugen des Buches. Rohdaten nur
+  lokal; in die App kommen nur die Tabellen (`app/src/engine/menschenprofil-daten.ts`).
+- **Zugwahl (Stufen 1 bis 7 = Menschen mit 600 bis 2400 auf Lichess):** Fehlerschicht je
+  Fehlerart (Gelegenheit, Wahrscheinlichkeit der Menschen, Verlustfaktor, Zug in der Art mit
+  Gewicht Verlust^(−beta)), blinde Flecken, Grundschicht mit Potenzkern nur unter Zügen ohne
+  Fehlerart; Stufe 8 ist die volle Engine. Alle Zahlen sind an den Lichess-Zügen geeicht
+  (`pipeline/menschenprofil/eichen.py`). Nachgespielt trifft der Bot je Band die Anteile der
+  Menschen an besten Zügen und an Verlusten ab 0,5, 1 und 3 Bauern auf etwa zwei Prozentpunkte.
+  Verworfen: Fehlerzug mit dem typischen Verlust der Art und Deckel beim 90-%-Wert (schwache Bots
+  patzten nur halb so oft grob wie Menschen, starke doppelt so oft); Wahl unter allen Kandidaten
+  (Fehler zählten doppelt, abgewählte Fehlerarten kamen doch vor).
+- **Bots:** 64 neue Bots (acht je Stufe) und vier Spaß-Bots, Porträts der alten, neue Namen;
+  Persönlichkeit als Gewichte je Fehlerart und blindem Fleck, Fehlerhäufigkeit, Stil. Spaß-Bots
+  bleiben (GE1, „So lassen“).
+- **Erweiterter Modus eigener Bots:** Fehlerhäufigkeit insgesamt, Gewicht je Fehlerart und
+  Fleck, Höchstverlust je Art (Vorgabe „unbegrenzt“, wie Menschen).
+- **Bedenkzeit:** Ein Bot mit Uhr verbraucht die Zeit, die ein Mensch seiner Stärke gebraucht
+  hätte (Anteil der Restzeit nach Zugnummer und Lage, unter 60 Sekunden feste kurze Zeiten);
+  sichtbar wartet er höchstens etwa 2,5 Sekunden (in Zeitnot 0,6), mit ±10 % Streuung. In
+  Zeitnot macht er mehr Fehler (Faktoren aus den Daten). Die Uhr des Bots läuft nicht in echter
+  Zeit ab; die Rechenzeit des Geräts zählt nicht.
+- **Notmodus (Idee des Autors):** Reicht die Bedenkzeit nicht, steht die Uhr des Bots nach dem
+  Zug auf einer Sekunde. Er sagt die drei wahrscheinlichsten Antworten voraus (Tiefe 8), legt für
+  jede eine Erwiderung mit seiner Zugwahl in Zeitnot zurecht und spielt dann unter den Vorzügen,
+  die gehen, den mit der besten Bewertung (je eine Zehntelsekunde, wie bei chess.com). Geht
+  keiner, ist die Zeit um. Mit Zuschlag verlässt er den Modus über fünf Sekunden. Nach einem
+  Neuladen ist der Plan weg; der Bot kommt dann bei Bedarf erneut hinein.
+- **Bedenkzeiten im Menü:** zusätzlich 3 + 2 und 3 + 0.
+- **Stärkezahlen:** aus einer eigenen Messung (Leiter benachbarter Stufen, Anker, je Bot zwölf
+  Partien gegen die Nachbarstufe, je Stufe mit Uhr gegen ohne für sechs Bedenkzeiten). Erste
+  Leiter: Die Stufen liegen enger als die Wertungen der Menschen (Stufe 1 bis 7 etwa 870 Elo statt
+  1800); angezeigt werden die gemessenen Zahlen.

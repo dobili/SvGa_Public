@@ -69,6 +69,36 @@ Teil fertig ist.
       der Antwort neben „Weiter“ der Knopf „Aufgabe wiederholen“. Er setzt die Aufgabe auf den
       Anfang zurück; gezählt wird weiter nur die erste Antwort.
 
+### Neu im Zweig „menschliche Bots“ (Version folgt; Opus, 20. und 21.10.2026)
+
+Die Zahlen unter den Bots sind noch vorläufig; die Messung läuft. Bis sie fertig ist, zählt hier
+das Spielgefühl.
+
+- [ ] N620. **Neue Bots:** Spielen › „Vorgefertigte Bots“. Jede Stufe hat acht neue Bots mit
+      neuen Namen und den bekannten Gesichtern, dazu vier Spaß-Bots (Kiki, Onkel Otto, Tante
+      Hilde, Bodo). Die Sprechblase beschreibt die Persönlichkeit des Bots. Gefallen dir Namen und
+      Beschreibungen?
+- [ ] N621. **Fehler wie Menschen:** Spiele eine Partie ohne Uhr gegen einen Bot der Stufe 1 oder
+      2. Er stellt nicht mehr Zug für Zug Figuren ein, sondern macht die Fehler, die Menschen
+      dieser Stärke auf Lichess machen: übersehene Drohungen und Taktik, mal ein grober Patzer,
+      dazwischen vernünftige Züge. Fühlt es sich menschlicher an als vorher?
+- [ ] N622. **Bedenkzeit der Bots:** Partie mit 5 + 3 gegen einen Bot. Er denkt sichtbar etwa eine
+      halbe bis knapp drei Sekunden, seine Uhr springt dann auf den Stand nach der Bedenkzeit, die
+      ein Mensch gebraucht hätte: Eröffnungszüge und Wiederschläge schnell, schwierige Stellungen
+      länger. Unter einer Minute zieht er schneller und macht mehr Fehler.
+- [ ] N623. **Blitz 3 + 2 und 3 + 0:** Spielen › Bedenkzeit: Es gibt jetzt auch „3 + 2“ und
+      „3 + 0“.
+- [ ] N624. **Notmodus (deine Idee vom 21.10.):** Spiele 3 + 0 gegen einen Bot der Stufe 2 bis 4
+      und lass dir Zeit, bis der Bot unter zehn Sekunden ist. Reicht seine Zeit nicht mehr, verliert
+      er nicht sofort: Seine Uhr steht dann auf 0:01, und er zieht danach fast ohne Pause seine
+      vorbereiteten Vorzüge (je eine Zehntelsekunde). Passt keiner zu deinem Zug, verliert er auf
+      Zeit. Mit 3 + 2 kommt er über fünf Sekunden wieder heraus und denkt normal. Wirkt das wie ein
+      Mensch, der in Zeitnot vorauszieht?
+- [ ] N625. **Erweiterter Modus eigener Bots:** Spielen › „Eigene Gegner“ › neuer Gegner ›
+      „Erweitert“: Regler für die Fehlerhäufigkeit, ein Gewicht je Fehlerart und je blindem Fleck
+      und der Höchstverlust je Art. Ganz rechts steht beim Höchstverlust „unbegrenzt“ (Vorgabe,
+      wie Menschen). Verständlich?
+
 ---
 
 ## Teil 2: Entscheiden

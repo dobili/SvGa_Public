@@ -28,7 +28,7 @@ from pathlib import Path
 
 QUELLE = "https://database.lichess.org/standard/lichess_db_standard_rated_{monat}.pgn.zst"
 KENNUNG = "schach-von-grund-auf.com"
-TEMPI = {"Blitz": "blitz", "Rapid": "rapid", "Classical": "classical"}
+TEMPI = {"Bullet": "bullet", "Blitz": "blitz", "Rapid": "rapid", "Classical": "classical"}
 UNTERSTE = 400
 OBERSTE = 2600
 BANDBREITE = 200
@@ -91,6 +91,8 @@ def partie_aus(kopf: dict[str, str], zugtext: str) -> dict | None:
         return None
     return {
         "kennung": kopf.get("Site", "").rsplit("/", 1)[-1],
+        # Benutzernamen (offene Datenbank, CC0) nur lokal, für den Vergleich Blitz/Schnellschach
+        "namen": [kopf.get("White", ""), kopf.get("Black", "")],
         "tempo": art,
         "start": start,
         "zuschlag": zuschlag,

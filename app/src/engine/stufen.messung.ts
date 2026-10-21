@@ -12,6 +12,9 @@
  * - „@svenja“: ein vorgefertigter Bot mit seinen Stufen je Phase und seiner Persönlichkeit, wie
  *   in der App (seit 0.2.116; bis 0.2.115 „3@nina“ mit nur einer Stufe für alle Phasen);
  * - „8s5“, „8e1600“: Vergleichsgegner mit festem Skill Level oder fester Elo-Zahl;
+ * - „3r“: Stufe 3 ohne Fehlerarten und blinde Flecken (nur die Grundschicht); „3h1.5“: Stufe 3
+ *   mit 1,5-facher Fehlerhäufigkeit; „3t14“: Stufe 3 mit Suchtiefe 14 (Versuche zum Spreizen der
+ *   Stufen, 21.10.2026). Kombinierbar in dieser Reihenfolge: „3h0.8t12r“.
  * - Anhang „~300+3“: dieser Spieler spielt mit Uhr (Grundzeit und Zuschlag in Sekunden) und
  *   simulierter Bedenkzeit (engine/bedenkzeit.ts); reicht sie nicht, zieht er im Notmodus mit
  *   Vorzügen weiter (spiel/notmodus.ts) und kann so auf Zeit verlieren. Ohne Anhang hat er
@@ -27,6 +30,7 @@ import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
 import type { Phase } from "../schach/phase";
 import { bedenkzeitMs } from "./bedenkzeit";
+import { BLINDE_FLECKEN } from "./blindeFlecken";
 import type { EngineDienst } from "./engineDienst";
 import type { Fehlerart } from "./fehlerart";
 import { GEGNER } from "./gegner";
@@ -104,6 +108,18 @@ interface Spieler {
   readonly uhr: { readonly grundzeitMs: number; readonly zuschlagMs: number } | null;
 }
 
+/**
+ * Profil „rein“ (Kürzel „3r“): alle Fehlerarten aus, alle blinden Flecken mit Gewicht 0, also nur
+ * die Grundschicht der Stufe; so steht ein eigener Gegner da, bei dem der Leser alles abschaltet
+ * (Frage des Autors vom 21.10.2026: welche Elo-Zahl je Reglerstufe).
+ */
+const REIN: Gegnerprofil = {
+  ...STANDARDPROFIL,
+  fehlerarten: [],
+  blindeFlecken: [],
+  gewichte: Object.fromEntries(BLINDE_FLECKEN.map((f) => [f, 0])),
+};
+
 function alleGleich(n: Stufennummer): Readonly<Record<Phase, Stufennummer>> {
   return { eroeffnung: n, mittelspiel: n, endspiel: n };
 }
@@ -129,6 +145,15 @@ function spieler(kuerzel: string): Spieler {
       zufallszuege: g.zufallszuege,
     };
     return { stufen: g.stufenJePhase, ersatz: null, profil, uhr };
+  }
+  const variante = /^(\d)(?:h(\d+(?:\.\d+)?))?(?:t(\d+))?(r)?$/.exec(kern);
+  if (variante?.[1] && (variante[2] ?? variante[3] ?? variante[4])) {
+    const n = Number(variante[1]) as Stufennummer;
+    const basis = variante[4] ? REIN : STANDARDPROFIL;
+    const profil = variante[2] ? { ...basis, haeufigkeit: Number(variante[2]) } : basis;
+    const tiefe = variante[3] ? Number(variante[3]) : null;
+    const ersatz = tiefe ? { ...stufe(n), staerke: { art: "tiefe" as const, tiefe } } : null;
+    return { stufen: alleGleich(n), ersatz, profil, uhr };
   }
   const vergleich = vergleichsgegner(kern);
   const nummer = (vergleich ? 8 : Number(kern)) as Stufennummer;

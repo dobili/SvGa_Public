@@ -4368,3 +4368,27 @@ Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
   Partien gegen die Nachbarstufe, je Stufe mit Uhr gegen ohne für sechs Bedenkzeiten). Erste
   Leiter: Die Stufen liegen enger als die Wertungen der Menschen (Stufe 1 bis 7 etwa 870 Elo statt
   1800); angezeigt werden die gemessenen Zahlen.
+
+### Zehn Stufen statt acht (21. und 22.10.2026, Opus, Vorschlag und Freigabe des Autors)
+
+- **Warum:** Menschliche Fehlerraten allein trennten die Stufen nicht (gemessen: Stufe 5 bis 7 fast
+  gleich stark, Stufe 1 bis 7 nur etwa 650 Elo). Vorschlag des Autors: Regler von 1 bis 10, die
+  ohne Zusatzfehler 300 bis 3000 Elo abdecken; die Zusatzfehler machen Bots menschlicher.
+- **Grundschicht:** Die Engine bewertet in den unteren Stufen alle legalen Züge in kleiner Tiefe und
+  wählt mit dem Kern (1 + Verlust/tau)^(−1). Geeicht über eine Leiter freier Grundschichten,
+  verankert an Partien gegen sich selbst (Tiefe 18). Einstellungen (Tiefe/tau): 1/100, 1/4,5,
+  2/0,7, 4/0,2, 7/0,1, 8/0,3, 8/0,07, 11/0,03, 14/0,01, Stufe 10 volle Engine. Gemessen (vorläufig)
+  etwa 270, 440, 730, 1050, 1350, 1740, 2170, 2450, 2740, 3000. Stufe 1 ist fast zufällig;
+  schwächer geht es nicht, 300 ist daher nur ungefähr erreicht. Die App zeigt die gemessenen Zahlen.
+- **Zusatzfehler:** Nur Bots; Raten der Menschen mit der Ziel-Elo der Stufe. Abzug gemessen
+  („nm-n“): unten fast keiner, oben viel (Stufe 7 etwa −380, Stufe 10 über −500). Ohne Bot spielt
+  die Stufe rein (abgehakte blinde Flecken der eigenen Stufe kommen dazu); die Abhakliste der
+  Fehlerarten gilt den vorgefertigten Bots. Eigene Gegner: Haken = an; die geschätzte Zahl zieht den
+  gemessenen Abzug anteilig ab.
+- **Bots:** 64 Bots auf Zielgruppen 1 bis 10 verteilt, Grundstufe so, dass die gemessene Zahl dort
+  landet; die stärksten machen die Fehler der Menschen seltener (Faktor 0,5 und 0,1). Die Gruppe
+  folgt der gemessenen Zahl (300 je Gruppe). Spaß-Bots spielen Stufe 3 bis 6 mit Zufallszügen.
+- **Speicher:** Format 6; alte Stufen werden die neue Stufe mit der nächsten Elo-Zahl (1 → 3, 2 → 4,
+  3 und 4 → 6, 5 → 7, 6 → 8, 7 → 9, 8 → 10). Eine ältere App lehnt Format 6 ab.
+- **Entfernt:** Strähne und Lagefaktoren der alten Zugwahl (zählten doppelt), der Wahlkern der
+  Menschen für die Grundschicht (ersetzt durch die geeichte Grundschicht der Stufe).

@@ -129,7 +129,9 @@ const STREUUNG = 2;
 const ZUFALL_HOECHSTENS = 0.9;
 
 /**
- * Baut einen Bot und prüft Streuung und Stil.
+ * Baut einen Bot und prüft Streuung und Stil. Der letzte Wert (seit 0.2.117) ist ein Faktor auf
+ * die Fehlerhäufigkeit seiner Persönlichkeit: Die stärksten Bots machen die Fehler der Menschen
+ * seltener, sonst kämen sie nie über deren Stärke (die Daten reichen bis 2400).
  * Beispiel: bot("ella", "Ella", "lotta", [1, 1, 1], "solide", 0).
  * Sonderfall: Streuung über 2 oder Stil außerhalb −2 bis 2 ist ein Programmierfehler und wirft.
  */
@@ -140,6 +142,7 @@ export function bot(
   stufen: readonly [Stufennummer, Stufennummer, Stufennummer],
   charakter: Charaktername,
   stil: number,
+  seltener = 1,
 ): Gegner {
   const [eroeffnung, mittelspiel, endspiel] = stufen;
   if (
@@ -159,7 +162,7 @@ export function bot(
     fehlerarten: null,
     blindeFlecken: c.flecken,
     gewichte: c.gewichte,
-    haeufigkeit: c.haeufigkeit ?? 1,
+    haeufigkeit: (c.haeufigkeit ?? 1) * seltener,
     stil,
   };
 }

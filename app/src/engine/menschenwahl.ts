@@ -13,7 +13,7 @@
  *    Verlust^(−beta), beta wächst mit der Stärke). Dann ein eigener Wurf: Wahrscheinlichkeit, mit
  *    der Menschen dieser Stärke die Gelegenheit nutzen (Lichess-Daten), mal Verlustfaktor des
  *    gezogenen Zuges (billige Fehler eher als teure), mal Gewicht der Art im Profil des Bots, mal
- *    Fehlerhäufigkeit, mal Verlauf (Strähne, Tagesform), mal Zeitnot (ab drei Bauern Verlust der
+ *    Fehlerhäufigkeit, mal Tagesform, mal Zeitnot (ab drei Bauern Verlust der
  *    Faktor für Patzer). Treffen mehrere Würfe, entscheidet die Wahrscheinlichkeit.
  * 3. Sonst blinde Flecken: Gehört der beste Zug zu einem Fleck, wird er mit der Zusatz-
  *    wahrscheinlichkeit von Menschen (mal Gewicht) übersehen; die Züge dieses Flecks fallen weg.
@@ -286,7 +286,7 @@ function grundschicht(
   const zeit = zeitnotFaktoren(kontext.wertung, kontext.restMs).fehler;
   const kern = wahlkern(kontext.wertung);
   const grund = kern.tau * werte.haeufigkeit * zeit;
-  const breite = temperaturFuer(fen, grund, kontext.verlauf);
+  const breite = temperaturFuer(grund, kontext.verlauf);
   const wahl = gewichteteZugwahl(auswahl, breite, zufall, kern.exponent);
   if (!wahl) return null;
   if (fleck && wahl.verlust >= MINDESTVERLUST) {

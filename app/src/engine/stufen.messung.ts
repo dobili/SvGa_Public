@@ -61,9 +61,6 @@ const STANDARD_PARTIEN = 10;
 /** Rechenzeit für Vergleichsgegner mit festem Skill Level oder fester Elo-Zahl. */
 const VERGLEICHS_RECHENZEIT_MS = 600;
 const SEKUNDE_MS = 1000;
-/** Strähne wie in der App (ui/komponenten/usePartie.ts): eigene Fehler unter den letzten drei. */
-const STRAEHNE_ZUEGE = 3;
-const STRAEHNE_VERLUST_AB = 0.5;
 const TIEFE_VOLL = Number(process.env.MESSUNG_TIEFE_VOLL ?? "16");
 
 interface Seitenstatistik {
@@ -157,12 +154,6 @@ function stufeFuer(s: Spieler, fen: string, letzte: Stufennummer | null): Stufe 
   return st.wertung === null ? { ...st, staerke: { art: "tiefe", tiefe: TIEFE_VOLL } } : st;
 }
 
-/** Eigene Züge mit Verlust unter den letzten drei der Farbe (Strähne wie in der App). */
-function fehlerAnlauf(partie: Partie, weiss: boolean): number {
-  const eigene = partie.zuege.filter((_, i) => (i % 2 === 0) === weiss).slice(-STRAEHNE_ZUEGE);
-  return eigene.filter((z) => z.verlust >= STRAEHNE_VERLUST_AB).length;
-}
-
 function statistik(
   partie: Partie,
   farbe: "white" | "black",
@@ -194,10 +185,9 @@ async function zugMitUhr(
   saat: string,
 ): Promise<Partie | null> {
   const fen = stellungen(lauf).at(-1) ?? GRUNDSTELLUNG;
-  const weiss = fen.split(" ")[1] === "w";
   const st = stufeFuer(s, fen, stand.letzte);
   stand.letzte = st.nummer;
-  const verlauf = { fehlerAnlauf: fehlerAnlauf(lauf, weiss), tagesform: tagesform(saat) };
+  const verlauf = { tagesform: tagesform(saat) };
   const profil = { ...s.profil, verlauf, restMs: stand.rest };
   const waehle = async (f: string, restMs: number) =>
     (await engineZugMitLage(engine, f, st, [], zufall, BUCHTREUE, { ...profil, restMs }))?.uci ??

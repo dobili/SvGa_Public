@@ -66,17 +66,9 @@ export function stufeFuer(partie: Partie, fen: string): Stufennummer {
   return letzter?.stufe ? naechsteStufe(letzter.stufe, ziel) : ziel;
 }
 
-/** Eigene Züge mit Verlust (ab 0,5) unter den letzten drei Zügen der Engine: Strähne (0.2.52). */
-const STRAEHNE_ZUEGE = 3;
-const STRAEHNE_VERLUST_AB = 0.5;
-
-/** Der Verlauf der Partie für die Fehlerneigung der Stufen 1 bis 3 (engine/menschlich.ts). */
+/** Der Verlauf der Partie für die Fehlerneigung (engine/menschlich.ts): die Tagesform. */
 function verlaufVon(partie: Partie): Verlauf {
-  const letzte = partie.zuege.filter((z) => z.von === "engine").slice(-STRAEHNE_ZUEGE);
-  return {
-    fehlerAnlauf: letzte.filter((z) => z.verlust >= STRAEHNE_VERLUST_AB).length,
-    tagesform: tagesform(partie.id),
-  };
+  return { tagesform: tagesform(partie.id) };
 }
 
 /**

@@ -4,9 +4,10 @@
  * Rolle im Gesamtbild: Seit 0.2.52 (Empfehlung R4) wählt die Engine in den unteren Stufen
  * gewichtet zufällig unter ihren Kandidaten mit einer „Temperatur“: Jeder Kandidat bekommt das
  * Gewicht e^(−Verlust/Temperatur). Kleine Fehler sind so häufig, große selten, und in erzwungenen
- * Lagen bleibt der beste Zug sehr wahrscheinlich. Seit 0.2.116 kommen Kern und Breite aus den
- * Menschen-Daten je Wertung (engine/menschenprofil.ts), und die Zugwahl selbst steht in
- * engine/menschenwahl.ts; hier bleiben die Bausteine. Von den alten Faustregeln bleibt nur die
+ * Lagen bleibt der beste Zug sehr wahrscheinlich. Seit 0.2.117 nutzt die Grundschicht der Stufen
+ * (engine/grundschicht.ts) diese Wahl mit dem Potenzkern, Breite und Tiefe je Stufe geeicht; die
+ * Zusatzfehler stehen in engine/menschenwahl.ts. Hier bleiben die Bausteine. Von den alten
+ * Faustregeln bleibt nur die
  * Tagesform (im Mittel 1). Strähne (mehr Fehler nach Fehlern) und Lage (Schach, viele Züge) sind
  * entfallen: Die geeichten Raten der Menschen enthalten sie schon im Mittel, ein Faktor obendrauf
  * zählte doppelt (Messung vom 21.10.2026: Stufe 1 machte in eigenen Partien 42 % Fehlerzüge statt

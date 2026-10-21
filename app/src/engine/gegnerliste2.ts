@@ -54,11 +54,11 @@ const STUFE_8: readonly Gegner[] = [
   bot("gm-novak", "GM Novak", "gm-gruen", [10, 10, 10], "solide", 0, 0.1),
   bot("im-becker", "IM Becker", "im-vogt", [10, 10, 10], "stratege", -1, 0.1),
   bot("wgm-tanaka", "WGM Tanaka", "wgm-sato", [10, 10, 9], "taktiker", 1, 0.1),
-  bot("fm-duarte", "FM Duarte", "fm-ortiz", [10, 10, 10], "angreifer", 2, 0),
-  bot("gm-ivanova", "GM Ivanova", "gm-petrova", [10, 10, 10], "endspieler", -2, 0),
-  bot("im-kraft", "IM Kraft", "im-haas", [9, 10, 10], "theoretiker", 1, 0),
-  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [9, 10, 10], "vorsichtig", -1, 0),
-  bot("gm-berglund", "GM Berglund", "gm-lindqvist", [10, 10, 10], "solide", 2, 0),
+  bot("fm-duarte", "FM Duarte", "fm-ortiz", [10, 10, 10], "angreifer", 0, 0),
+  bot("gm-ivanova", "GM Ivanova", "gm-petrova", [10, 10, 10], "endspieler", 0, 0),
+  bot("im-kraft", "IM Kraft", "im-haas", [10, 10, 10], "theoretiker", 0, 0),
+  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [10, 10, 10], "vorsichtig", 0, 0),
+  bot("gm-berglund", "GM Berglund", "gm-lindqvist", [10, 10, 10], "solide", 0, 0),
 ];
 
 export const GEGNER_STUFE_5_BIS_8: readonly Gegner[] = [

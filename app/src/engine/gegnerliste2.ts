@@ -39,26 +39,26 @@ const STUFE_6: readonly Gegner[] = [
 
 /** Bots 49 bis 56 der Liste (vor 0.2.117 Stufe 7). */
 const STUFE_7: readonly Gegner[] = [
-  bot("doktor-falk", "Doktor Falk", "doktor-berg", [10, 10, 10], "stratege", -1),
-  bot("trainer-maier", "Trainer Maier", "trainer-koch", [10, 10, 10], "solide", 0),
-  bot("amaya", "Amaya", "yara", [10, 10, 9], "theoretiker", 1),
-  bot("herr-lorenz", "Herr Lorenz", "herr-brandt", [9, 10, 10], "endspieler", -2),
-  bot("elias", "Elias", "noah", [10, 10, 9], "angreifer", 2),
-  bot("frau-wagner", "Frau Wagner", "frau-stein", [10, 10, 10], "vorsichtig", -1),
-  bot("arjun", "Arjun", "ravi", [10, 10, 10], "taktiker", 2, 0.5),
-  bot("frau-prof-reich", "Frau Prof. Reich", "frau-doktor-ahl", [10, 10, 10], "traeumer", 0, 0.5),
+  bot("doktor-falk", "Doktor Falk", "doktor-berg", [10, 10, 10], "stratege", -1, 0.5),
+  bot("trainer-maier", "Trainer Maier", "trainer-koch", [10, 10, 10], "solide", 0, 0.5),
+  bot("amaya", "Amaya", "yara", [10, 10, 9], "theoretiker", 1, 0.5),
+  bot("herr-lorenz", "Herr Lorenz", "herr-brandt", [9, 10, 10], "endspieler", -2, 0.5),
+  bot("elias", "Elias", "noah", [10, 10, 9], "angreifer", 2, 0.5),
+  bot("frau-wagner", "Frau Wagner", "frau-stein", [10, 10, 10], "vorsichtig", -1, 0.5),
+  bot("arjun", "Arjun", "ravi", [10, 10, 10], "taktiker", 2, 0.1),
+  bot("frau-prof-reich", "Frau Prof. Reich", "frau-doktor-ahl", [10, 10, 10], "traeumer", 0, 0.1),
 ];
 
 /** Bots 57 bis 64 der Liste (vor 0.2.117 Stufe 8). */
 const STUFE_8: readonly Gegner[] = [
-  bot("gm-novak", "GM Novak", "gm-gruen", [10, 10, 10], "solide", 0, 0.5),
-  bot("im-becker", "IM Becker", "im-vogt", [10, 10, 10], "stratege", -1, 0.5),
-  bot("wgm-tanaka", "WGM Tanaka", "wgm-sato", [10, 10, 9], "taktiker", 1, 0.5),
-  bot("fm-duarte", "FM Duarte", "fm-ortiz", [10, 10, 10], "angreifer", 2, 0.1),
-  bot("gm-ivanova", "GM Ivanova", "gm-petrova", [10, 10, 10], "endspieler", -2, 0.1),
-  bot("im-kraft", "IM Kraft", "im-haas", [9, 10, 10], "theoretiker", 1, 0.1),
-  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [9, 10, 10], "vorsichtig", -1, 0.1),
-  bot("gm-berglund", "GM Berglund", "gm-lindqvist", [10, 10, 10], "solide", 2, 0.1),
+  bot("gm-novak", "GM Novak", "gm-gruen", [10, 10, 10], "solide", 0, 0.1),
+  bot("im-becker", "IM Becker", "im-vogt", [10, 10, 10], "stratege", -1, 0.1),
+  bot("wgm-tanaka", "WGM Tanaka", "wgm-sato", [10, 10, 9], "taktiker", 1, 0.1),
+  bot("fm-duarte", "FM Duarte", "fm-ortiz", [10, 10, 10], "angreifer", 2, 0.02),
+  bot("gm-ivanova", "GM Ivanova", "gm-petrova", [10, 10, 10], "endspieler", -2, 0.02),
+  bot("im-kraft", "IM Kraft", "im-haas", [9, 10, 10], "theoretiker", 1, 0.02),
+  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [9, 10, 10], "vorsichtig", -1, 0.02),
+  bot("gm-berglund", "GM Berglund", "gm-lindqvist", [10, 10, 10], "solide", 2, 0.02),
 ];
 
 export const GEGNER_STUFE_5_BIS_8: readonly Gegner[] = [

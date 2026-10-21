@@ -27,9 +27,9 @@ const STUFE_1: readonly Gegner[] = [
 
 /** Bots 9 bis 16 der Liste (vor 0.2.117 Stufe 2). */
 const STUFE_2: readonly Gegner[] = [
-  bot("opa-heinz", "Opa Heinz", "opa-hans", [3, 3, 4], "endspieler", -1),
-  bot("onkel-bernd", "Onkel Bernd", "onkel-rudi", [3, 3, 3], "materialist", 0),
-  bot("clara", "Clara", "frieda", [3, 3, 3], "solide", 0),
+  bot("opa-heinz", "Opa Heinz", "opa-hans", [2, 2, 3], "endspieler", -1),
+  bot("onkel-bernd", "Onkel Bernd", "onkel-rudi", [2, 2, 2], "materialist", 0),
+  bot("clara", "Clara", "frieda", [2, 2, 2], "solide", 0),
   bot("herr-krause", "Herr Krause", "herr-lehmann", [4, 3, 3], "theoretiker", -1),
   bot("leyla", "Leyla", "ayse", [2, 3, 2], "taktiker", 1),
   bot("jakob", "Jakob", "pit", [3, 4, 4], "hektiker", 2),

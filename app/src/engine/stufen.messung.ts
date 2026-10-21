@@ -13,7 +13,8 @@
  *   in der App (seit 0.2.116; bis 0.2.115 „3@nina“ mit nur einer Stufe für alle Phasen);
  * - „8s5“, „8e1600“: Vergleichsgegner mit festem Skill Level oder fester Elo-Zahl;
  * - Anhang „~300+3“: dieser Spieler spielt mit Uhr (Grundzeit und Zuschlag in Sekunden) und
- *   simulierter Bedenkzeit (engine/bedenkzeit.ts); er kann auf Zeit verlieren. Ohne Anhang hat er
+ *   simulierter Bedenkzeit (engine/bedenkzeit.ts); reicht sie nicht, zieht er im Notmodus mit
+ *   Vorzügen weiter (spiel/notmodus.ts) und kann so auf Zeit verlieren. Ohne Anhang hat er
  *   unbegrenzt Zeit. So misst „3~300+3-3“ den Unterschied, den die Uhr bei Stufe 3 macht.
  * Jede Partie beginnt mit einer der Eröffnungen aus Kapitel 2 und 3 (zwei Halbzüge), damit die
  * Partien verschieden sind; danach spielt keine Seite aus dem Buch.
@@ -37,15 +38,10 @@ import { BUCHTREUE, STANDARDPROFIL, type Gegnerprofil } from "./zugwahl";
 import { WERTUNG_VOLLE_ENGINE, zuglage } from "../spiel/botzeit";
 import { engineZugMitLage } from "../spiel/enginezug";
 import { phaseVon } from "../spiel/phasen";
-import {
-  leserAmZug,
-  neuePartie,
-  stellungen,
-  zeitUeberschritten,
-  ziehe,
-  type Partie,
-} from "../spiel/partie";
+import { leserAmZug, neuePartie, stellungen, ziehe, type Partie } from "../spiel/partie";
+import { brauchtNotmodus, NOTMODUS_REST_MS } from "../spiel/notmodus";
 import { fenNach } from "../spiel/zuege";
+import { planeWeiter, vorzugMitUhr, type Seitenstand } from "./messuhr.testhilfe";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 /** Zwei Halbzüge je Partie aus den Eröffnungen der Kapitel 2 und 3. */
@@ -78,6 +74,8 @@ interface Seitenstatistik {
   readonly verlustSumme: number;
   /** Simulierte Bedenkzeit insgesamt in Sekunden (nur mit Uhr). */
   readonly bedenkzeitS?: number;
+  /** Züge im Notmodus (Eintritt und Vorzüge, spiel/notmodus.ts), wenn es welche gab. */
+  readonly notmodusZuege?: number;
 }
 
 interface Partiebericht {
@@ -169,6 +167,7 @@ function statistik(
   partie: Partie,
   farbe: "white" | "black",
   bedenkMs: number | null,
+  notmodusZuege = 0,
 ): Seitenstatistik {
   const eigene = partie.zuege.filter((_, i) => (i % 2 === 0) === (farbe === "white"));
   const fehler = eigene.filter((z) => z.quelle === "fehler");
@@ -181,14 +180,8 @@ function statistik(
     hoechsterVerlust: Math.max(0, ...fehler.map((z) => z.verlust)),
     verlustSumme: fehler.reduce((s, z) => s + z.verlust, 0),
     ...(bedenkMs === null ? {} : { bedenkzeitS: Math.round(bedenkMs / SEKUNDE_MS) }),
+    ...(notmodusZuege > 0 ? { notmodusZuege } : {}),
   };
-}
-
-/** Virtuelle Uhr und letzte Stufe einer Seite. */
-interface Seitenstand {
-  rest: number | null;
-  verbraucht: number;
-  letzte: Stufennummer | null;
 }
 
 /** Ein Zug eines Spielers samt virtueller Uhr; gibt die neue Partie zurück oder null am Ende. */
@@ -206,6 +199,10 @@ async function zugMitUhr(
   stand.letzte = st.nummer;
   const verlauf = { fehlerAnlauf: fehlerAnlauf(lauf, weiss), tagesform: tagesform(saat) };
   const profil = { ...s.profil, verlauf, restMs: stand.rest };
+  const waehle = async (f: string, restMs: number) =>
+    (await engineZugMitLage(engine, f, st, [], zufall, BUCHTREUE, { ...profil, restMs }))?.uci ??
+    null;
+  if (s.uhr && stand.vorzuege) return vorzugMitUhr(engine, lauf, s.uhr.zuschlagMs, stand, waehle);
   const ergebnis = await engineZugMitLage(engine, fen, st, [], zufall, BUCHTREUE, profil);
   if (!ergebnis) return null;
   if (s.uhr && stand.rest !== null) {
@@ -219,9 +216,18 @@ async function zugMitUhr(
       },
       zufall,
     );
-    stand.verbraucht += Math.min(bedenk, stand.rest);
-    if (bedenk >= stand.rest) return zeitUeberschritten(lauf, weiss ? "white" : "black");
-    stand.rest = stand.rest - bedenk + s.uhr.zuschlagMs;
+    // Würde die Zeit nicht reichen: Notmodus statt Zeitverlust (Uhr danach auf einer Sekunde)
+    const not = brauchtNotmodus(bedenk, stand.rest);
+    const verbrauch = not ? Math.max(0, stand.rest - NOTMODUS_REST_MS) : bedenk;
+    stand.verbraucht += verbrauch;
+    stand.rest = (not ? NOTMODUS_REST_MS : stand.rest - bedenk) + s.uhr.zuschlagMs;
+    if (not) {
+      const weiter = ziehe(lauf, { ...ergebnis.zug, von: "engine" });
+      if (!weiter) throw new Error(`Zug geht nicht: ${ergebnis.zug.san} in ${fen}`);
+      stand.notmodusZuege += 1;
+      await planeWeiter(engine, weiter, stand, waehle);
+      return weiter;
+    }
   }
   const weiter = ziehe(lauf, { ...ergebnis.zug, von: "engine" });
   if (!weiter) throw new Error(`Zug geht nicht: ${ergebnis.zug.san} in ${fen}`);
@@ -269,6 +275,8 @@ async function spiele(
     rest: s.uhr ? s.uhr.grundzeitMs : null,
     verbraucht: 0,
     letzte: null,
+    vorzuege: null,
+    notmodusZuege: 0,
   }));
   while (lauf.ende === null && lauf.zuege.length < HOECHSTENS_HALBZUEGE) {
     const schwarzAmZug = leserAmZug(lauf);
@@ -327,8 +335,8 @@ describe(`Messung ${paarung}`, () => {
         halbzuege: partie.zuege.length,
         dauerMs: Math.round(performance.now() - beginn),
         statistik: {
-          weiss: statistik(partie, "white", zeit(weiss, 0)),
-          schwarz: statistik(partie, "black", zeit(schwarz, 1)),
+          weiss: statistik(partie, "white", zeit(weiss, 0), staende[0]?.notmodusZuege),
+          schwarz: statistik(partie, "black", zeit(schwarz, 1), staende[1]?.notmodusZuege),
         },
         zuege: [...anfang, ...partie.zuege.map((z) => z.san)],
       });

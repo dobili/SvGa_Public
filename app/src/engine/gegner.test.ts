@@ -1,5 +1,5 @@
 /**
- * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): acht je Stufe, eindeutige Kennungen,
+ * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): 64 Bots in zehn Gruppen, eindeutige Kennungen,
  * Text und Porträt zu jedem, Stil im erlaubten Bereich; dazu seit 0.2.60 der Schnitt mit der
  * allgemeinen Abhakliste der Fehlerarten (Rückfrage S7) und seit 0.2.109 Gruppen ohne
  * Überschneidung.
@@ -22,8 +22,9 @@ import {
 import { STIL_MAX, STIL_MIN } from "./stil";
 import type { Stufennummer } from "./stufen";
 
-const JE_STUFE = 8;
-const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
+/** 64 Bots, seit 0.2.117 nach gemessener Zahl auf die zehn Stufen verteilt. */
+const BOTS_ZAHL = 64;
+const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 describe("vorgefertigte Gegner", () => {
   it("sind nach Durchschnitt sortiert, Großmeister Grün zuletzt", () => {
@@ -37,8 +38,9 @@ describe("vorgefertigte Gegner", () => {
     expect(sortiert.at(-1)?.stufenJePhase.mittelspiel).toBe(8);
   });
 
-  it("acht je Stufe (0.2.65), Kennungen eindeutig, Stil im Bereich", () => {
-    for (const nummer of STUFENNUMMERN) expect(gegnerDerStufe(nummer)).toHaveLength(JE_STUFE);
+  it("jeder Bot in genau einer Gruppe (seit 0.2.117 nach gemessener Zahl), Kennungen eindeutig, Stil im Bereich", () => {
+    const zusammen = STUFENNUMMERN.reduce((s, n) => s + gegnerDerStufe(n).length, 0);
+    expect(zusammen).toBe(GEGNER.filter((g) => !g.zufallszuege).length);
     expect(new Set(GEGNER.map((g) => g.kennung)).size).toBe(GEGNER.length);
     for (const g of GEGNER) {
       expect(g.stil).toBeGreaterThanOrEqual(STIL_MIN);
@@ -74,7 +76,7 @@ describe("Spaß-Bots (0.2.88)", () => {
       expect(spass[i]?.zufallszuege ?? 0).toBeLessThan(spass[i - 1]?.zufallszuege ?? 0);
     }
     expect(gegnerDerStufe(1).some(istSpassbot)).toBe(false);
-    expect(GEGNER.filter((g) => !istSpassbot(g))).toHaveLength(STUFENNUMMERN.length * JE_STUFE);
+    expect(GEGNER.filter((g) => !istSpassbot(g))).toHaveLength(BOTS_ZAHL);
   });
 });
 

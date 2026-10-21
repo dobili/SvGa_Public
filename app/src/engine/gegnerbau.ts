@@ -165,14 +165,16 @@ export function bot(
 }
 
 /**
- * Baut einen Spaß-Bot (Wunsch des Autors, 0.2.88): Stufe 1 in allen Phasen und dazu ein Anteil
- * an Zufallszügen. Beispiel: spassbot("kiki", "Kiki", "fritzi", 0.45, "hektiker", 1).
+ * Baut einen Spaß-Bot (Wunsch des Autors, 0.2.88): eine Stufe in allen Phasen und dazu ein
+ * Anteil an Zufallszügen. Seit 0.2.117 hat jeder seine eigene Stufe (Stufe 1 ist schon fast
+ * zufällig). Beispiel: spassbot("kiki", "Kiki", "fritzi", 3, 0.5, "hektiker", 1).
  * Sonderfall: ein Anteil über 0,9 oder unter 0 ist ein Programmierfehler und wirft.
  */
 export function spassbot(
   kennung: string,
   name: string,
   portraet: string,
+  stufe: Stufennummer,
   zufallszuege: number,
   charakter: Charaktername,
   stil: number,
@@ -180,5 +182,5 @@ export function spassbot(
   if (zufallszuege <= 0 || zufallszuege > ZUFALL_HOECHSTENS) {
     throw new Error(`Spaß-Bot ${kennung}: Zufallsanteil ${zufallszuege}`);
   }
-  return { ...bot(kennung, name, portraet, [1, 1, 1], charakter, stil), zufallszuege };
+  return { ...bot(kennung, name, portraet, [stufe, stufe, stufe], charakter, stil), zufallszuege };
 }

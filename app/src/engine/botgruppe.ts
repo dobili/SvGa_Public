@@ -1,27 +1,25 @@
 /**
- * In welcher Gruppe der Gegnerwahl ein vorgefertigter Bot steht (Stufe 1 bis 8).
+ * In welcher Gruppe der Gegnerwahl ein vorgefertigter Bot steht (Stufe 1 bis 10).
  *
- * Rolle im Gesamtbild: Die Gruppe eines Bots ist der gerundete Durchschnitt seiner Stufen je
- * Phase (engine/gegner.ts). Nach der Elo-Leiter (engine/botstaerke-daten.ts) lagen damit acht
- * Bots in der Zahl jenseits ihrer Nachbargruppe: Stufe 3 und 4, 6 und 7, 7 und 8 überschnitten
- * sich. Wunsch des Autors (19.10.2026): Die Gruppen sollen sich möglichst nicht überschneiden,
- * ohne die Bots neu zu messen. Darum tauschen diese acht Bots die Gruppe, je zwei zwischen zwei
- * Nachbargruppen; jede Gruppe behält acht Bots. Wie sie spielen, bleibt gleich (ihre Stufen je
- * Phase ändern sich nicht).
- * Abhängigkeiten: engine/stufen.ts (Typ).
+ * Rolle im Gesamtbild: Seit 0.2.117 (zehn Stufen) steht ein Bot in der Gruppe seiner gemessenen
+ * Zahl: 300 Elo je Gruppe, gerundet (engine/botstaerke-daten.ts). Seine Stufen je Phase sind nur
+ * die Grundstärke; die menschlichen Zusatzfehler machen ihn schwächer, darum taugt der
+ * Durchschnitt der Stufen nicht mehr als Gruppe. So überschneiden sich die Gruppen nicht (Wunsch
+ * des Autors, 19.10.2026). Ohne gemessene Zahl gilt der gerundete Durchschnitt der Stufen.
+ * Abhängigkeiten: engine/botstaerke-daten.ts, engine/stufen.ts.
  */
-import type { Stufennummer } from "./stufen";
+import { BOT_STAERKE } from "./botstaerke-daten";
+import { STUFEN_ZAHL } from "./stufen";
+
+const ELO_JE_GRUPPE = 300;
 
 /**
- * Bots, deren Gruppe von ihrem Durchschnitt abweicht (Kennung → Gruppe). Seit 0.2.116 neu zu
- * setzen, sobald die neuen Bots gemessen sind (bis dahin keine Abweichung).
- */
-const ABWEICHENDE_GRUPPE: Readonly<Record<string, Stufennummer>> = {};
-
-/**
- * Die Gruppe eines Bots: die festgelegte Abweichung, sonst der gerundete Durchschnitt seiner
- * Stufen je Phase. Beispiel: Nina (3, 3, 3) → 3; Jan (4, 3, 5, Durchschnitt 4) → 3.
+ * Die Gruppe eines Bots: seine gemessene Zahl geteilt durch 300, gerundet, zwischen 1 und 10;
+ * ohne Messung der gerundete Durchschnitt seiner Stufen je Phase.
+ * Beispiel: gemessen 1130 → Gruppe 4; ungemessen (3, 4, 3) → 3.
  */
 export function gruppeDesBots(kennung: string, durchschnitt: number): number {
-  return ABWEICHENDE_GRUPPE[kennung] ?? Math.round(durchschnitt);
+  const zahl = BOT_STAERKE[kennung];
+  const roh = zahl === undefined ? durchschnitt : zahl / ELO_JE_GRUPPE;
+  return Math.max(1, Math.min(STUFEN_ZAHL, Math.round(roh)));
 }

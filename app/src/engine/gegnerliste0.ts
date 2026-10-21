@@ -1,5 +1,5 @@
 /**
- * Die Spaß-Bots unter den Einsteigern: vier Gegner, die einen Teil ihrer Züge zufällig spielen.
+ * Die Spaß-Bots: vier Gegner, die einen Teil ihrer Züge zufällig spielen.
  *
  * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Wunsch des Autors (18.10.2026 abends):
  * „eine Spaßkategorie unter Einsteiger … richtig schlecht“, vier Bots. Seit 0.2.117 neu gebaut

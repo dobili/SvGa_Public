@@ -36,10 +36,10 @@ describe("Elo-Zahl der Bots", () => {
     }
   });
 
-  it("Spaß-Bots (0.2.88) liegen unter Stufe 1, ihr Bereich umfasst alle vier", () => {
+  it("Spaß-Bots (0.2.88): ihr Bereich umfasst alle vier (seit 0.2.117 über Stufe 1)", () => {
     const bereich = bereichDerSpassbots();
     expect(bereich).not.toBeNull();
-    expect(bereich?.bis ?? Infinity).toBeLessThan(staerkeDerStufe(1));
+    expect(bereich?.von ?? 0).toBeGreaterThan(staerkeDerStufe(1));
     expect(bereich?.von ?? 0).toBeLessThan(bereich?.bis ?? 0);
   });
 

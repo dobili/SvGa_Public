@@ -6,16 +6,24 @@
  * 20.10.2026). Ersetzt die Fehlerwürfe der Stufen 1 bis 4 (bis 0.2.115: bei Stufe 1 jeder dritte
  * Zug ein gezielt gesuchter Fehler, oft eine Figur direkt ins Schlagfeld). Ablauf je Zug:
  * 1. Die Engine rechnet sechs Kandidaten; dazu je Fehlerart bis zu zwei typische Fehlerzüge nach
- *    den Werkzeugen des Buches, gezielt bewertet. Ein Zug der Art mit Verlust zwischen einem
- *    halben Bauern und dem Höchstverlust ist eine Gelegenheit.
- * 2. Je Fehlerart mit Gelegenheit ein eigener Wurf: Wahrscheinlichkeit, mit der Menschen dieser
- *    Stärke die Gelegenheit nutzen (Lichess-Daten), mal Gewicht der Art im Profil des Bots, mal
- *    Fehlerhäufigkeit, mal Verlauf (Strähne, Tagesform), mal Zeitnot. Treffen mehrere Würfe,
- *    entscheidet die Wahrscheinlichkeit; gespielt wird der Zug mit dem typischen Verlust der Art.
+ *    den Werkzeugen des Buches, gezielt bewertet. Jeder Zug mit mindestens einem halben Bauern
+ *    Verlust bekommt seine Fehlerart; ein Zug der Art (bis zum Höchstverlust, falls der Leser
+ *    einen gesetzt hat) ist eine Gelegenheit.
+ * 2. Je Fehlerart mit Gelegenheit: Unter ihren Zügen wird einer gezogen, billige eher (Gewicht
+ *    Verlust^(−beta), beta wächst mit der Stärke). Dann ein eigener Wurf: Wahrscheinlichkeit, mit
+ *    der Menschen dieser Stärke die Gelegenheit nutzen (Lichess-Daten), mal Verlustfaktor des
+ *    gezogenen Zuges (billige Fehler eher als teure), mal Gewicht der Art im Profil des Bots, mal
+ *    Fehlerhäufigkeit, mal Verlauf (Strähne, Tagesform), mal Zeitnot (ab drei Bauern Verlust der
+ *    Faktor für Patzer). Treffen mehrere Würfe, entscheidet die Wahrscheinlichkeit.
  * 3. Sonst blinde Flecken: Gehört der beste Zug zu einem Fleck, wird er mit der Zusatz-
  *    wahrscheinlichkeit von Menschen (mal Gewicht) übersehen; die Züge dieses Flecks fallen weg.
- * 4. Die Grundschicht wählt gewichtet unter den übrigen Kandidaten (Temperatur aus den Daten, so
- *    dass Ungenauigkeiten ohne Art so oft vorkommen wie bei Menschen). Der Stil wählt danach.
+ * 4. Die Grundschicht wählt gewichtet unter den Kandidaten ohne Fehlerart (Potenzkern aus den
+ *    Daten, so dass Ungenauigkeiten ohne Art so oft vorkommen wie bei Menschen); Züge mit
+ *    Fehlerart kommen nur über Schritt 2, so dass ein abgewähltes Fehlerbild nie vorkommt. Der
+ *    Stil wählt danach.
+ * Alle Zahlen sind an den Lichess-Zügen geeicht (pipeline/menschenprofil/eichen.py): nachgespielt
+ * trifft der Bot je Band die Anteile der Menschen an besten Zügen und an Verlusten ab einem
+ * halben, einem und drei Bauern auf etwa zwei Prozentpunkte.
  * Sind alle Gewichte null, bleibt nur die Grundschicht: eine abgeschwächte Engine wie bei Lichess.
  * Abhängigkeiten: engine/menschenprofil.ts, engine/fehlerart.ts, engine/fehlersuche.ts,
  * engine/blindeFlecken.ts, engine/menschlich.ts, engine/stil.ts, engine/spielbewerter.ts.
@@ -29,8 +37,9 @@ import {
   blindZusatz,
   gelegenheitsrate,
   GELEGENHEITSARTEN,
+  verlustfaktor,
+  wahlInArt,
   wahlkern,
-  typischerVerlust,
   zeitnotFaktoren,
   type Gelegenheitsart,
 } from "./menschenprofil";
@@ -48,7 +57,7 @@ export interface Menschenwerte {
   readonly standardgewicht: number;
   /** Erlaubte Fehlerarten (null: alle); nicht erlaubte haben Gewicht 0 (Abhakliste, eigene Bots). */
   readonly erlaubt: readonly Fehlerart[] | null;
-  /** Höchstverlust je Fehlerart in Bauern; fehlt er, gilt der 90-%-Wert der Menschen. */
+  /** Höchstverlust je Fehlerart in Bauern; fehlt er, ist der Verlust nicht begrenzt (wie Menschen). */
   readonly hoechstverlust: Readonly<Partial<Record<Fehlerart, number>>>;
 }
 
@@ -75,13 +84,38 @@ const MINDESTVERLUST = 0.5;
 const HOECHSTE_WAHRSCHEINLICHKEIT = 0.95;
 /** Kandidaten so nah am besten gelten als gleich gut (Breite der Wahl, engine/bedenkzeit.ts). */
 const GLEICH_GUT = 0.3;
-/** Arten mit typischem Verlust ab so vielen Bauern zählen in Zeitnot als Patzer. */
-const PATZER_AB = 1.5;
+/** Fehlerzüge ab so vielen Bauern Verlust zählen in Zeitnot als Patzer (wie in den Daten). */
+const PATZER_AB = 3;
 
 interface Zugkandidat {
   readonly uci: string;
   readonly verlust: number;
   readonly antwort: readonly string[];
+}
+
+/** Ein Kandidat mit seiner Fehlerart (null unter einem halben Bauern Verlust oder ohne Art). */
+interface Eingeordnet extends Zugkandidat {
+  readonly art: Fehlerart | null;
+}
+
+/** Ordnet jedem Kandidaten seine Fehlerart zu (einmal je Zug, für Fehler- und Grundschicht). */
+function einordnen(lage: Lage, kandidaten: readonly Zugkandidat[], bester: string): Eingeordnet[] {
+  return kandidaten.map((k) => {
+    if (k.verlust < MINDESTVERLUST || k.uci === bester) return { ...k, art: null };
+    const art = fehlerartIn(lage, k.uci, k.antwort, k.verlust, bester);
+    return { ...k, art: art === "ungenau" ? null : art };
+  });
+}
+
+/** Zieht gewichtet einen Eintrag (Zufall 0 bis 1). */
+function gewichtetGezogen<T>(
+  liste: readonly T[],
+  gewichte: readonly number[],
+  zufall: () => number,
+): T | undefined {
+  const summe = gewichte.reduce((a, b) => a + b, 0);
+  let rest = zufall() * summe;
+  return liste.find((_, i) => (rest -= gewichte[i] ?? 0) < 0) ?? liste.at(-1);
 }
 
 function gewichtVon(werte: Menschenwerte, art: Fehlerart | BlinderFleck): number {
@@ -116,52 +150,55 @@ function zuPruefen(lage: Lage, aktiv: ReadonlySet<Fehlerart>, schon: ReadonlySet
 
 interface Gelegenheit {
   readonly art: Gelegenheitsart;
-  readonly zuege: readonly Zugkandidat[];
+  readonly zug: Zugkandidat;
   readonly wahrscheinlichkeit: number;
 }
 
-/** Die Gelegenheiten je Art mit ihrer Wahrscheinlichkeit (Schritt 2 im Dateikopf). */
+/** Die Gelegenheiten je Art: gezogener Zug und Wahrscheinlichkeit (Schritt 2 im Dateikopf). */
 function gelegenheiten(
   lage: Lage,
-  pool: readonly Zugkandidat[],
-  bester: string | null,
+  pool: readonly Eingeordnet[],
   werte: Menschenwerte,
   kontext: Wahlkontext,
+  zufall: () => number,
 ): Gelegenheit[] {
   const zeit = zeitnotFaktoren(kontext.wertung, kontext.restMs);
   const verlauf = verlaufsfaktor(kontext.verlauf);
+  const beta = wahlInArt(kontext.wertung);
   return GELEGENHEITSARTEN.flatMap((art): Gelegenheit[] => {
     const gewicht = gewichtVon(werte, art);
     if (gewicht <= 0) return [];
-    const typisch = typischerVerlust(art);
-    const hoechst = werte.hoechstverlust[art] ?? typisch.hoechst;
-    const zuege = pool.filter(
-      (k) =>
-        k.verlust >= MINDESTVERLUST &&
-        k.verlust <= hoechst &&
-        fehlerartIn(lage, k.uci, k.antwort, k.verlust, bester) === art,
+    const hoechst = werte.hoechstverlust[art] ?? Number.POSITIVE_INFINITY;
+    const zuege = pool.filter((k) => k.art === art && k.verlust <= hoechst);
+    const zug = gewichtetGezogen(
+      zuege,
+      zuege.map((k) => k.verlust ** -beta),
+      zufall,
     );
-    if (zuege.length === 0) return [];
-    const zeitfaktor = typisch.median >= PATZER_AB ? zeit.patzer : zeit.fehler;
+    if (!zug) return [];
+    const zeitfaktor = zug.verlust >= PATZER_AB ? zeit.patzer : zeit.fehler;
     const roh = gelegenheitsrate(art, kontext.wertung, lage.phase as Phase);
-    const p = roh * gewicht * werte.haeufigkeit * verlauf * zeitfaktor;
-    return [{ art, zuege, wahrscheinlichkeit: Math.min(HOECHSTE_WAHRSCHEINLICHKEIT, p) }];
+    const p =
+      roh *
+      verlustfaktor(kontext.wertung, zug.verlust) *
+      gewicht *
+      werte.haeufigkeit *
+      verlauf *
+      zeitfaktor;
+    return [{ art, zug, wahrscheinlichkeit: Math.min(HOECHSTE_WAHRSCHEINLICHKEIT, p) }];
   });
 }
 
-/** Würfelt je Gelegenheit; unter den Treffern gewinnt die wahrscheinlichste, mit typischem Zug. */
+/** Würfelt je Gelegenheit; unter den Treffern entscheidet die Wahrscheinlichkeit. */
 function fehlerwurf(liste: readonly Gelegenheit[], zufall: () => number): Zugwahl | null {
   const treffer = liste.filter((g) => zufall() < g.wahrscheinlichkeit);
-  if (treffer.length === 0) return null;
-  const summe = treffer.reduce((s, g) => s + g.wahrscheinlichkeit, 0);
-  let rest = zufall() * summe;
-  const wahl = treffer.find((g) => (rest -= g.wahrscheinlichkeit) < 0) ?? treffer[0];
+  const wahl = gewichtetGezogen(
+    treffer,
+    treffer.map((g) => g.wahrscheinlichkeit),
+    zufall,
+  );
   if (!wahl) return null;
-  const ziel = typischerVerlust(wahl.art).median;
-  const zug = [...wahl.zuege].sort(
-    (a, b) => Math.abs(a.verlust - ziel) - Math.abs(b.verlust - ziel),
-  )[0];
-  return zug ? { uci: zug.uci, quelle: "fehler", fehler: wahl.art, verlust: zug.verlust } : null;
+  return { uci: wahl.zug.uci, quelle: "fehler", fehler: wahl.art, verlust: wahl.zug.verlust };
 }
 
 /** Übersieht der Bot seinen besten Zug wegen eines blinden Flecks? Dann der Fleck, sonst null. */
@@ -213,14 +250,16 @@ export async function menschlicheWahl(
     extra.length > 0
       ? await bewerter.bewerte(fen, suche.rechenzeitMs, 1, suche.staerke, extra)
       : null;
+  const eingeordnet = einordnen(lage, kandidaten, bester);
   const pool = [
-    ...kandidaten.slice(1),
-    ...(gezielt ? kandidatenAus(gezielt.varianten, bestwert, weiss) : []),
+    ...eingeordnet.slice(1),
+    ...(gezielt ? einordnen(lage, kandidatenAus(gezielt.varianten, bestwert, weiss), bester) : []),
   ];
   const breite = kandidaten.filter((k) => k.verlust <= GLEICH_GUT).length;
-  const fehler = fehlerwurf(gelegenheiten(lage, pool, bester, werte, kontext), zufall);
+  const fehler = fehlerwurf(gelegenheiten(lage, pool, werte, kontext, zufall), zufall);
   if (fehler) return { ...fehler, breite };
-  const wahl = grundschicht(fen, b.varianten, kandidaten, werte, kontext, zufall);
+  const ohneArt = eingeordnet.filter((k) => k.art === null);
+  const wahl = grundschicht(fen, b.varianten, ohneArt, werte, kontext, zufall);
   return wahl ? { ...wahl, breite } : null;
 }
 
@@ -228,7 +267,7 @@ function engineZug(uci: string): Zugwahl {
   return { uci, quelle: "engine", fehler: null, verlust: 0 };
 }
 
-/** Schritte 3 und 4: blinde Flecken, gewichtete Wahl, Stil. */
+/** Schritte 3 und 4: blinde Flecken, gewichtete Wahl unter den Kandidaten ohne Fehlerart, Stil. */
 function grundschicht(
   fen: string,
   varianten: readonly Variante[],

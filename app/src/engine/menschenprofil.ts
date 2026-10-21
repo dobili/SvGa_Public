@@ -1,5 +1,5 @@
 /**
- * Menschenprofil: Fehlerraten, blinde Flecken, Temperatur und Zeitnot je Wertungszahl.
+ * Menschenprofil: Fehlerraten, blinde Flecken, Wahlkern und Zeitnot je Wertungszahl.
  *
  * Rolle im Gesamtbild: Plan „menschlichere Bots und Uhr der Bots“ (vom Autor freigegeben am
  * 20.10.2026). Die Zahlen stammen aus 111 752 Stellungen gewerteter Lichess-Partien
@@ -18,6 +18,7 @@ import {
   BLIND,
   GELEGENHEIT,
   KERN,
+  VERLUSTFAKTOR,
   ZEITNOT,
   ZEITNOT_PATZER,
 } from "./menschenprofil-daten";
@@ -82,11 +83,36 @@ export interface Wahlkern {
 /**
  * Wahlkern der gewichteten Wahl für eine Stärke (angepasst an Lichess-Züge ohne erkannte
  * Fehlerart). Warum ein Potenzkern: schwache Spieler stellen öfter grob ein, als eine
- * Exponentialwahl hergibt. Beispiel: 500 → tau 0,16, Exponent 0,5 (langer Schwanz); 2300 →
- * Exponent 2 (kaum grobe Fehler).
+ * Exponentialwahl hergibt. Beispiel: 500 → tau 3, Exponent 0,25 (langer Schwanz); 2300 →
+ * tau 0,08, Exponent 0,75 (kaum grobe Fehler).
  */
 export function wahlkern(wertung: number): Wahlkern {
   return { tau: bandwert(KERN.tau, wertung), exponent: bandwert(KERN.exponent, wertung) };
+}
+
+/**
+ * beta der Wahl innerhalb einer Fehlerart (Gewicht Verlust^(−beta)): Starke Spieler wählen unter
+ * mehreren Fehlerzügen einer Art eher den billigsten. Beispiel: 500 → 0,25 (fast gleich
+ * verteilt), 2300 → 1,25.
+ */
+export function wahlInArt(wertung: number): number {
+  return bandwert(KERN.beta, wertung);
+}
+
+/**
+ * Faktor auf die Gelegenheitsrate nach dem Verlust des gewählten Fehlerzugs: Menschen machen
+ * billige Fehler einer Art eher als teure, starke Spieler deutlich mehr als schwache.
+ * Beispiel: 1300, Verlust 0,7 → etwa 1,4; Verlust 6 → etwa 0,5; bei 2300 Verlust 6 → etwa 0,25.
+ */
+export function verlustfaktor(wertung: number, verlust: number): number {
+  let klasse = 0;
+  VERLUSTFAKTOR.klassen.forEach((grenze, i) => {
+    if (verlust >= grenze) klasse = i;
+  });
+  return bandwert(
+    VERLUSTFAKTOR.faktor.map((jeKlasse) => jeKlasse[klasse] ?? 1),
+    wertung,
+  );
 }
 
 /** Zeitnot-Stufe aus der Restzeit: „0“ unter 10 s, „10“ bis 30 s, „30“ bis 60 s, sonst null. */

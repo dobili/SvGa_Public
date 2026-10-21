@@ -118,6 +118,14 @@ describe("Zugwahl", () => {
     expect(wahl).toMatchObject({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
   });
 
+  it("abgewählte Fehlerarten kommen auch über die Grundschicht nicht vor (0.2.116)", async () => {
+    // Zufall knapp unter 1: die Grundschicht nähme den schlechtesten Kandidaten, den sie sieht
+    const { b } = bewerter(KANDIDATEN);
+    const profil = { ...STANDARDPROFIL, fehlerarten: [] };
+    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0.999, 0, profil);
+    expect(["b8c6", "d7d6"]).toContain(wahl?.uci);
+  });
+
   it("Höchstverlust je Art: kleiner als jeder Fehlerzug, also kein Fehler", async () => {
     const { b } = bewerter(KANDIDATEN);
     const klein = Object.fromEntries(FEHLERARTEN.map((a) => [a, 0.6]));

@@ -6,14 +6,15 @@
  * Bot spielt wie Menschen seiner Stufen (engine/menschenwahl.ts); hier verschiebt der Leser die
  * Zahlen: Gewicht 1 heißt so oft wie Menschen dieser Stärke, 0 nie, 3 dreimal so oft. Nicht
  * angehakte Fehlerarten bleiben aus (die Regler sind dann gesperrt). Der Höchstverlust begrenzt,
- * wie teuer ein Fehler der Art höchstens sein darf (Vorgabe: der 90-%-Wert der Menschen).
+ * wie teuer ein Fehler der Art höchstens sein darf; ganz rechts steht „unbegrenzt“ (Vorgabe, wie
+ * Menschen: billige Fehler öfter als teure), dann fehlt der Wert im Speicher.
  * Abhängigkeiten: engine/gegner.ts, engine/menschenprofil.ts, engine/blindeFlecken.ts, engine/zugwahl.ts,
  * speicher/menschenwerte.ts, i18n.
  */
 import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
 import type { Fehlerart } from "../../engine/fehlerart";
 import type { EigenerGegner } from "../../engine/gegner";
-import { GELEGENHEITSARTEN, typischerVerlust } from "../../engine/menschenprofil";
+import { GELEGENHEITSARTEN } from "../../engine/menschenprofil";
 import { BESONDERS_BLIND } from "../../engine/zugwahl";
 import { t } from "../../i18n/sprache";
 import {
@@ -26,6 +27,8 @@ import {
 const SCHRITT = 0.1;
 const SCHRITT_VERLUST = 0.5;
 const PROZENT = 100;
+/** Reglerstellung rechts vom größten Höchstverlust: unbegrenzt. */
+const UNBEGRENZT = HOECHSTVERLUST_HOECHSTENS + SCHRITT_VERLUST;
 
 function prozent(wert: number): string {
   return `${Math.round(wert * PROZENT)} %`;
@@ -85,7 +88,16 @@ export function ErweiterteFehler({
   const mitGewicht = (art: Fehlerart | BlinderFleck, wert: number) =>
     setze({ ...g, gewichte: { ...g.gewichte, [art]: wert } });
   const verlust = (art: (typeof GELEGENHEITSARTEN)[number]) =>
-    g.hoechstverlust?.[art] ?? typischerVerlust(art).hoechst;
+    g.hoechstverlust?.[art] ?? UNBEGRENZT;
+  const mitVerlust = (art: (typeof GELEGENHEITSARTEN)[number], wert: number) => {
+    const uebrige = Object.entries(g.hoechstverlust ?? {}).filter(([a]) => a !== art);
+    const neu = wert >= UNBEGRENZT ? uebrige : [...uebrige, [art, wert] as const];
+    setze({ ...g, hoechstverlust: Object.fromEntries(neu) });
+  };
+  const verlustText = (wert: number) =>
+    wert >= UNBEGRENZT
+      ? t("spielen.eigene.unbegrenzt")
+      : t("spielen.eigene.bauern", { wert: wert.toFixed(1).replace(".", ",") });
   return (
     <details className="erweitert" data-testid="erweiterte-fehler">
       <summary className="einstellung-name">{t("spielen.eigene.erweitert")}</summary>
@@ -121,13 +133,11 @@ export function ErweiterteFehler({
               name={t("spielen.eigene.hoechstverlust")}
               wert={verlust(art)}
               von={HOECHSTVERLUST_MINDESTENS}
-              bis={HOECHSTVERLUST_HOECHSTENS}
+              bis={UNBEGRENZT}
               schritt={SCHRITT_VERLUST}
-              text={t("spielen.eigene.bauern", { wert: verlust(art).toFixed(1).replace(".", ",") })}
+              text={verlustText(verlust(art))}
               gesperrt={aus}
-              beiWahl={(wert) =>
-                setze({ ...g, hoechstverlust: { ...g.hoechstverlust, [art]: wert } })
-              }
+              beiWahl={(wert) => mitVerlust(art, wert)}
             />
           </fieldset>
         );

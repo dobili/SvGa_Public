@@ -4,6 +4,8 @@ import {
   bandwert,
   blindZusatz,
   gelegenheitsrate,
+  verlustfaktor,
+  wahlInArt,
   wahlkern,
   zeitnotFaktoren,
   zeitnotstufe,
@@ -29,6 +31,12 @@ describe("Menschenprofil", () => {
     expect(blindZusatz("ruhig", 600)).toBeGreaterThan(blindZusatz("ruhig", 2400));
     // Schwache Spieler: längerer Schwanz (kleinerer Exponent) als starke
     expect(wahlkern(500).exponent).toBeLessThan(wahlkern(2300).exponent);
+  });
+
+  it("billige Fehler eher als teure, bei starken Spielern ausgeprägter", () => {
+    expect(verlustfaktor(1300, 0.7)).toBeGreaterThan(verlustfaktor(1300, 6));
+    expect(verlustfaktor(2300, 6)).toBeLessThan(verlustfaktor(500, 6));
+    expect(wahlInArt(2300)).toBeGreaterThan(wahlInArt(500));
   });
 
   it("Zeitnot erst unter 60 Sekunden, Patzer stärker als Fehler", () => {

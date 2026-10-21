@@ -5,10 +5,12 @@ Wozu: Brücke zwischen den Lichess-Daten (Schritt 1, nur lokal) und der Zugwahl 
 (400 bis 2400 in 200er-Schritten, Mitte des Bandes) entstehen:
 
 - ``gelegenheit``: Wahrscheinlichkeit je Fehlerart, eine angebotene Gelegenheit zu nutzen, dazu
-  ein Faktor je Phase und der typische Verlust (Median, 90-%-Wert) als Höchstverlust;
+  ein Faktor je Phase und der typische Verlust (Median, 90-%-Wert, Anzeige im erweiterten Modus);
 - ``blind``: Zusatzwahrscheinlichkeit, einen klar besten Zug eines blinden Flecks zu verfehlen;
-- ``temperatur``: Temperatur der Grundschicht (gewichtete Wahl unter den Kandidaten), so gewählt,
-  dass die Fehler ohne erkannte Art so oft vorkommen wie bei Menschen des Bandes;
+- ``kern``: Potenzkern der Restschicht (tau, Exponent) und Wahl innerhalb einer Fehlerart (beta),
+  angepasst an die Menschen des Bandes (eichen.py);
+- ``verlustfaktor``: Faktor auf die Gelegenheitsrate nach dem Verlust des gewählten Fehlerzugs
+  (Menschen machen billige Fehler einer Art eher als teure), geeicht durch Nachspielen;
 - ``bedenkzeit``: Anteil der Restzeit je Zug nach Zugnummer und Lage, Streuung, Zeitnot-Zeiten;
 - ``zeitnot``: Faktoren für Fehler (ab einem Bauern) und Patzer (ab drei Bauern) bei weniger als
   60, 30 und 10 Sekunden Restzeit.
@@ -36,6 +38,7 @@ from .auswerten import (
     ist_wiederschlag,
     lies,
 )
+from .eichen import ist_artzug, kern, verlustfaktoren, wahl_in_art
 from .sammeln import BAENDER, band_von
 
 ZIEL = Path("app/src/engine/menschenprofil-daten.ts")
@@ -43,11 +46,6 @@ HUNDERTSTEL = 100
 GLAETTUNG = 2.0
 ZUGSTUFEN = (0, 5, 10, 15, 20, 30, 40)
 ZEITNOT_STUFEN = ((0, 10), (10, 30), (30, 60))
-# Raster des Potenzkerns; Schwellen in Bauern (0,05: praktisch der beste Zug, als Gegenstück)
-KERN_TAUS = (0.04, 0.06, 0.08, 0.1, 0.13, 0.16, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0)
-KERN_EXPONENTEN = (0.5, 0.75, 1.0, 1.5, 2.0, 3.0, 5.0)
-KERN_SCHWELLEN = (0.05, 0.5, 1.0, 3.0)
-KERN_GEWICHTE = (1.0, 4.0, 4.0, 16.0)
 LAGEN = ("wiederschlag", "schach", "einzig", "eng", "offen")
 
 
@@ -72,7 +70,9 @@ class Sammler:
         self.art_k: dict[tuple, float] = defaultdict(float)
         self.art_verlust: dict[str, list[float]] = defaultdict(list)
         self.fleck: dict[tuple, list[int]] = defaultdict(lambda: [0, 0])
-        self.rest: dict[int, list[list[float]]] = defaultdict(list)
+        self.rest: dict[int, list[dict]] = defaultdict(list)
+        # offene Stellungen je Band (Stellung, gespielter Zug) für die Eichung (eichen.py)
+        self.offen: dict[int, list[tuple[dict, list]]] = defaultdict(list)
         self.anteil: dict[tuple, list[float]] = defaultdict(list)
         self.not_sek: dict[tuple, list[float]] = defaultdict(list)
         self.not_fehler: dict[tuple, list[int]] = defaultdict(lambda: [0, 0])
@@ -87,6 +87,7 @@ class Sammler:
         self._zeit(z, band, wiederschlag)
         if not OFFEN_VON <= gewinnchance(best) <= OFFEN_BIS:
             return
+        self.offen[band].append((z, g))
         angebot = {c[2] for c in z["k"][1:] + z["x"] if c[2] != "ungenau" and best - c[1] >= MINDESTVERLUST}
         for art in angebot:
             treffer = g[2] == art and verlust >= MINDESTVERLUST
@@ -96,8 +97,12 @@ class Sammler:
             if treffer:
                 self.art_verlust[art].append(verlust)
         self._flecken(z, band, g)
-        if g[2] == "ungenau" or verlust < MINDESTVERLUST:
-            self.rest[band].append([best - c[1] for c in z["k"]] + [verlust])
+        if not ist_artzug(g, best):
+            # Restschicht: nur Kandidaten ohne erkannte Fehlerart (die wählt die Fehlerschicht)
+            rest = [c for c in z["k"] if not ist_artzug(c, best)]
+            self.rest[band].append(
+                {"v": [max(0.0, best - c[1]) for c in rest], "f": [c[3] for c in rest], "g": verlust}
+            )
         sek = z["u"] / HUNDERTSTEL
         stufe = next((f"{a}" for a, b in ZEITNOT_STUFEN if a <= sek < b), "60")
         self.not_fehler[(band, stufe)][0] += 1
@@ -188,47 +193,6 @@ def blind(s: Sammler) -> dict:
     return tabelle
 
 
-def kern_anteile(verluste: list[float], tau: float, exponent: float) -> list[float]:
-    """Wahrscheinlichkeiten der Kandidaten im Kern (1 + Verlust/tau)^(-Exponent).
-
-    Warum dieser Kern statt e^(-Verlust/tau): Menschen schwacher Bänder stellen öfter grob ein
-    (Verlust ab 3 Bauern), als eine Exponentialwahl mit passender Quote kleiner Fehler hergibt;
-    der Potenzkern hat dafür den längeren Schwanz. Beispiel: Verluste [0, 3], tau 0,25,
-    Exponent 1 → Gewichte 1 und 1/13.
-    """
-    gewichte = [(1 + v / tau) ** -exponent for v in verluste]
-    summe = sum(gewichte)
-    return [g / summe for g in gewichte]
-
-
-def _kernfehler(zeilen: list[list[float]], tau: float, exponent: float, ziel: list[float]) -> float:
-    """Abweichung des Kerns von den Menschen: bester Zug, Verlust ab 0,5, ab 1, ab 3 (gewichtet)."""
-    summe = [0.0] * len(KERN_SCHWELLEN)
-    for z in zeilen:
-        anteile = kern_anteile(z[:-1], tau, exponent)
-        for i, schwelle in enumerate(KERN_SCHWELLEN):
-            summe[i] += sum(a for a, v in zip(anteile, z[:-1], strict=True) if v >= schwelle)
-    n = max(1, len(zeilen))
-    return sum(g * (m / n - zi) ** 2 for g, m, zi in zip(KERN_GEWICHTE, summe, ziel, strict=True))
-
-
-def kern(s: Sammler) -> dict[str, list[float]]:
-    """Je Band tau und Exponent des Potenzkerns, angepasst an die Züge ohne erkannte Fehlerart
-    (Raster, jede zweite Zeile genügt). Ausgabe: {"tau": [...], "exponent": [...]}."""
-    taus, exponenten = [], []
-    for band in BAENDER:
-        zeilen = s.rest[band][::2]
-        n = max(1, len(zeilen))
-        ziel = [sum(1 for z in zeilen if z[-1] >= schwelle) / n for schwelle in KERN_SCHWELLEN]
-        beste = min(
-            ((tau, a) for tau in KERN_TAUS for a in KERN_EXPONENTEN),
-            key=lambda ta: _kernfehler(zeilen, ta[0], ta[1], ziel),
-        )
-        taus.append(beste[0])
-        exponenten.append(beste[1])
-    return {"tau": taus, "exponent": exponenten}
-
-
 def bedenkzeit(s: Sammler) -> dict:
     def med(werte: list[float]) -> float:
         return round(median(werte), 4) if werte else 0.0
@@ -312,14 +276,17 @@ def main(argumente: list[str] | None = None) -> int:
     daten = {
         "GELEGENHEIT": gelegenheiten(s),
         "BLIND": blind(s),
-        "KERN": kern(s),
+    }
+    daten |= {
+        "KERN": {**kern(s.rest, daten["BLIND"]), "beta": wahl_in_art(s.offen)},
         "BEDENKZEIT": bedenkzeit(s),
         "ZEITNOT": zeitnot(s.not_fehler),
         "ZEITNOT_PATZER": zeitnot(s.not_patzer),
     }
+    daten["VERLUSTFAKTOR"] = verlustfaktoren(s.offen, daten)
     args.ziel.write_text(als_ts(daten), encoding="utf-8")
     (args.ordner / "daten.json").write_text(json.dumps(daten, indent=1, ensure_ascii=False))
-    print(json.dumps({"KERN": daten["KERN"], "ZEITNOT": daten["ZEITNOT"]}))
+    print(json.dumps({"KERN": daten["KERN"], "VERLUSTFAKTOR": daten["VERLUSTFAKTOR"]}))
     return 0
 
 

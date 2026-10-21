@@ -47,14 +47,6 @@ export function verlaufsfaktor(verlauf: Verlauf): number {
   return verlauf.tagesform;
 }
 
-/**
- * Die Breite (Temperatur) der Wahl: Grundbreite mal Tagesform, nie unter KALT.
- * Beispiel: Grund 0,7, Tagesform 1,2 → 0,84.
- */
-export function temperaturFuer(grund: number, verlauf: Verlauf): number {
-  return Math.max(KALT, grund * verlaufsfaktor(verlauf));
-}
-
 /** Ein Kandidat mit seinem Verlust gegenüber dem besten Zug (aus Sicht der Seite am Zug). */
 export interface Kandidat {
   readonly uci: string;

@@ -6,7 +6,6 @@ import {
   gelegenheitsrate,
   verlustfaktor,
   wahlInArt,
-  wahlkern,
   zeitnotFaktoren,
   zeitnotstufe,
 } from "./menschenprofil";
@@ -27,10 +26,8 @@ describe("Menschenprofil", () => {
     expect(gelegenheitsrate("figurHaengen", 600, "mittelspiel")).toBeLessThan(0.1);
   });
 
-  it("blinde Flecken und Temperatur nehmen mit der Stärke ab", () => {
+  it("blinde Flecken nehmen mit der Stärke ab", () => {
     expect(blindZusatz("ruhig", 600)).toBeGreaterThan(blindZusatz("ruhig", 2400));
-    // Schwache Spieler: längerer Schwanz (kleinerer Exponent) als starke
-    expect(wahlkern(500).exponent).toBeLessThan(wahlkern(2300).exponent);
   });
 
   it("billige Fehler eher als teure, bei starken Spielern ausgeprägter", () => {

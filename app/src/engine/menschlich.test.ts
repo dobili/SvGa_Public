@@ -3,7 +3,7 @@
  * Breite mit Tagesform (Strähne und Lage seit 0.2.116 entfallen).
  */
 import { describe, expect, it } from "vitest";
-import { gewichteteZugwahl, RUHIGER_VERLAUF, tagesform, temperaturFuer } from "./menschlich";
+import { gewichteteZugwahl, tagesform, verlaufsfaktor } from "./menschlich";
 
 describe("Gewichtete Wahl mit Temperatur", () => {
   const kandidaten = [
@@ -24,9 +24,8 @@ describe("Gewichtete Wahl mit Temperatur", () => {
 });
 
 describe("Breite der Wahl und Tagesform", () => {
-  it("Grundbreite mal Tagesform", () => {
-    expect(temperaturFuer(0.7, RUHIGER_VERLAUF)).toBeCloseTo(0.7, 5);
-    expect(temperaturFuer(0.7, { tagesform: 1.2 })).toBeCloseTo(0.84, 5);
+  it("der Verlauf wirkt mit der Tagesform", () => {
+    expect(verlaufsfaktor({ tagesform: 1.2 })).toBeCloseTo(1.2, 5);
   });
   it("Tagesform: fest je Kennung, zwischen 0,75 und 1,25, verschieden je Partie", () => {
     const a = tagesform("partie-eins");

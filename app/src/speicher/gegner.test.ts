@@ -27,7 +27,7 @@ describe("Eigene Gegner", () => {
     const krumm = eigenerGegnerAus({
       kennung: "k",
       name: "Krumm",
-      stufenJePhase: { eroeffnung: 9, mittelspiel: "4" },
+      stufenJePhase: { eroeffnung: 11, mittelspiel: "4" },
       fehlerarten: ["unsinn", "koenigPassiv"],
       stil: 7.6,
     });

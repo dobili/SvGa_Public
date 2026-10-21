@@ -19,7 +19,7 @@ import type { Phase } from "../schach/phase";
 export const MAX_EIGENE_GEGNER = 20;
 /** Namen werden auf diese Länge gekürzt. */
 export const MAX_NAMENSLAENGE = 24;
-const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
+const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 type Roh = Record<string, unknown>;
 

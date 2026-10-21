@@ -141,7 +141,7 @@ describe("Lesen aus Rohdaten", () => {
 
   it("verwirft Partien ohne spielbare Startstellung oder mit fremder Stufe", () => {
     const roh = durchJson(partie("a")) as { einstellung: Record<string, unknown> };
-    expect(partieAus({ ...roh, einstellung: { ...roh.einstellung, stufe: 9 } })).toBeNull();
+    expect(partieAus({ ...roh, einstellung: { ...roh.einstellung, stufe: 11 } })).toBeNull();
     expect(
       partieAus({
         ...roh,

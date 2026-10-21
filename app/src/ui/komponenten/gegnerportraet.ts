@@ -4,9 +4,10 @@
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts.
  */
 import { durchschnitt, gegnerVon, istSpassbot } from "../../engine/gegner";
-import type { Stufennummer } from "../../engine/stufen";
+import { STUFEN, type Stufennummer } from "../../engine/stufen";
 
-export const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
+/** Die Nummern aller Stufen (seit 0.2.117 eins bis zehn). */
+export const STUFENNUMMERN: readonly Stufennummer[] = STUFEN.map((s) => s.nummer);
 /** Schlüssel der Gruppe „Zum Spaß“ im Merker der offenen Gruppen (0.2.88, vor Stufe 1). */
 export const SPASSGRUPPE = 0;
 /** Ordner der Porträts (app/public/gegner/, erzeugt von skripte/erzeuge-gegnerbilder.mjs). */

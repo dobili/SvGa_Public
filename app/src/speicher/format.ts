@@ -16,7 +16,10 @@
  * - Format 5 (ab 0.2.93): dazu „sammlung“, die Lernsammlung aus Konzept 4.7
  *   (training/lernsammlung.ts). Eine ältere App lehnt Format 5 als „neuer“ ab, statt die
  *   Sammlung beim nächsten Speichern stillschweigend zu verlieren.
- * Abhängigkeiten: training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
+ * - Format 6 (ab 0.2.117): zehn statt acht Stufen; gespeicherte Stufen werden umgerechnet
+ *   (speicher/stufenskala.ts). Eine ältere App lehnt Format 6 als „neuer“ ab, statt die neuen
+ *   Stufen 9 und 10 als falsche Stufen zu lesen.
+ * Abhängigkeiten: speicher/stufenskala.ts, training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
  * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), speicher/partien.ts.
  */
 import {
@@ -30,10 +33,11 @@ import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
 import { LEERER_SPIELSTAND, type Spielstand } from "./partien";
 import { spielstandAus } from "./partienLesen";
+import { stufenUmgerechnet } from "./stufenskala";
 import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
 
 /** Aktuelle Version des Formats. Jede Änderung am Aufbau erhöht sie und ergänzt wandleUm. */
-export const SCHEMA_VERSION = 5;
+export const SCHEMA_VERSION = 6;
 
 /**
  * Die Bretter zur Wahl (seit 0.2.84 Auswahl des Autors vom 18.10.2026): acht Farben, das Holzbrett
@@ -351,7 +355,7 @@ export function merkerAlsFormat0(einstellungen: string | null, lernstand: string
  * Ausgabe: umgewandelte Daten mit der Ausgangsversion, oder der Grund der Ablehnung.
  * Beispiel: {einstellungen:{brettfarben:"holz"}} ohne schemaVersion (Format 0) → Format 2 mit
  * Holzbrett; Format 1 → ohne Partien; Format 2 → ohne Karten; Format 3 → ohne Fehler;
- * Format 4 → ohne Lernsammlung.
+ * Format 4 → ohne Lernsammlung; bis Format 5 Stufe 1 bis 8 → neue Stufe nach Elo (2 → 4).
  * Sonderfälle: Eine höhere Version als SCHEMA_VERSION stammt aus einer neueren App und wird
  * abgelehnt („neuer“), damit nichts verloren geht; Nicht-Objekte sind „kaputt“.
  */
@@ -364,6 +368,8 @@ export function wandleUm(roh: unknown, jetzt: Date): Pruefergebnis {
   if (version > SCHEMA_VERSION) return { ok: false, grund: "neuer", version };
   // Jedes ältere Format ist eine Teilmenge des neueren: Format 0 (Merker) ohne Fortschritt und
   // Version, Format 1 ohne „spiel“, Format 2 ohne „karten“, Format 3 ohne „fehler“, Format 4 ohne
-  // „sammlung“. Fehlende Teile ergänzt das Lesen leer.
-  return { ok: true, daten: aktuellesFormatAus(roh, jetzt), vonVersion: version };
+  // „sammlung“. Fehlende Teile ergänzt das Lesen leer. Bis Format 5 gab es acht Stufen.
+  const umgerechnet =
+    version < SCHEMA_VERSION ? { ...roh, spiel: stufenUmgerechnet(roh.spiel) } : roh;
+  return { ok: true, daten: aktuellesFormatAus(umgerechnet, jetzt), vonVersion: version };
 }

@@ -79,9 +79,11 @@ function verlaufVon(partie: Partie): Verlauf {
 function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
   const e = partie.einstellung;
   if (e.bot === null) {
-    // Ohne Bot spielt die Stufe rein, ohne Zusatzfehler (seit 0.2.117)
+    // Ohne Bot spielt die Stufe rein (seit 0.2.117); nur abgehakte blinde Flecken kommen dazu
     return {
       ...REINES_PROFIL,
+      blindeFlecken: e.blindeFlecken ?? [],
+      fleckGewicht: 1,
       verlauf: verlaufVon(partie),
       restMs: eigeneRestzeit(partie, jetztMs),
     };

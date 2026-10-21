@@ -17,7 +17,7 @@ import type { Phase } from "../schach/phase";
 import { gruppeDesBots } from "./botgruppe";
 import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG } from "./botstaerke-daten";
 import { GEGNER } from "./gegnerliste";
-import type { Stufennummer } from "./stufen";
+import { STUFEN_ZAHL, type Stufennummer } from "./stufen";
 
 /**
  * Bereich, in dem die Zahl eine Bedeutung hat. Unten: Die Eichung von „Deine Spielstärke“ beruht
@@ -32,7 +32,7 @@ export const ANGABE_HOECHSTENS = 3300;
 export const ANGABE_MINDESTENS = 400;
 const RUNDUNG = 50;
 const ERSTE_STUFE = 1;
-const LETZTE_STUFE = 8;
+const LETZTE_STUFE = STUFEN_ZAHL;
 const PHASEN_ZAHL = 3;
 
 /** Was die App zu einer Zahl zeigt. */

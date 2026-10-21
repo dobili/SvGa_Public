@@ -8,7 +8,7 @@ import { offeneStufenAnfangs, SPASSGRUPPE } from "./gegnerportraet";
 
 describe("offene Stufen beim ersten Zeigen", () => {
   it("aus dem Merker, unbekannte Nummern fallen weg; leerer Merker: alle zu", () => {
-    expect([...offeneStufenAnfangs("2,5,9,x", null)]).toEqual([2, 5]);
+    expect([...offeneStufenAnfangs("2,5,11,x", null)]).toEqual([2, 5]);
     expect(offeneStufenAnfangs("", "egal").size).toBe(0);
   });
 

@@ -149,7 +149,7 @@ describe("Format 1", () => {
     const ergebnis = wandleUm(format4, JETZT);
     expect(ergebnis.ok && ergebnis.daten.sammlung).toEqual([]);
     expect(ergebnis.ok && ergebnis.daten.lernstand).toEqual({ 2: [0] });
-    expect(ergebnis.ok && ergebnis.daten.schemaVersion).toBe(5);
+    expect(ergebnis.ok && ergebnis.daten.schemaVersion).toBe(SCHEMA_VERSION);
     expect(ergebnis.ok && ergebnis.vonVersion).toBe(4);
   });
 
@@ -213,7 +213,26 @@ describe("Format 2", () => {
     const format2 = { ...leereDaten(JETZT), schemaVersion: 2 } as Record<string, unknown>;
     delete format2.karten;
     const ergebnis = wandleUm(JSON.parse(JSON.stringify(format2)), JETZT);
-    expect(ergebnis).toEqual({ ok: true, daten: leereDaten(JETZT), vonVersion: 2 });
+    // Bis Format 5 gab es acht Stufen: die Vorgabe Stufe 1 wird Stufe 3 (0.2.117)
+    const leer = leereDaten(JETZT);
+    const drei = { eroeffnung: 3, mittelspiel: 3, endspiel: 3 } as const;
+    const vorlieben = { ...leer.spiel.vorlieben, stufe: 3, stufenJePhase: drei } as const;
+    const daten = { ...leer, spiel: { ...leer.spiel, vorlieben } };
+    expect(ergebnis).toEqual({ ok: true, daten, vonVersion: 2 });
+  });
+
+  it("Format 5 → 6: alte Stufen werden die neue Stufe mit der nächsten Elo-Zahl", () => {
+    const leer = leereDaten(JETZT);
+    const alt = { eroeffnung: 1, mittelspiel: 2, endspiel: 8 };
+    const vorlieben = { ...leer.spiel.vorlieben, stufe: 2, stufenJePhase: alt };
+    const roh = { ...leer, schemaVersion: 5, spiel: { ...leer.spiel, vorlieben } };
+    const ergebnis = wandleUm(JSON.parse(JSON.stringify(roh)), JETZT);
+    const neu = ergebnis.ok ? ergebnis.daten.spiel.vorlieben : null;
+    expect(neu?.stufe).toBe(4);
+    expect(neu?.stufenJePhase).toEqual({ eroeffnung: 3, mittelspiel: 4, endspiel: 10 });
+    // Daten im aktuellen Format bleiben, wie sie sind
+    const aktuell = wandleUm(JSON.parse(JSON.stringify({ ...roh, schemaVersion: 6 })), JETZT);
+    expect(aktuell.ok && aktuell.daten.spiel.vorlieben.stufe).toBe(2);
   });
 
   it("Karten bleiben beim Lesen erhalten, kaputte fallen weg", () => {

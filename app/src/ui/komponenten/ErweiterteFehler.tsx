@@ -2,20 +2,20 @@
  * Erweiterter Modus der eigenen Bots: Fehlerhäufigkeit insgesamt, Gewicht je Fehlerart und
  * blindem Fleck, Höchstverlust je Fehlerart (Wunsch des Autors vom 20.10.2026, seit 0.2.116).
  *
- * Rolle im Gesamtbild: Teil des Formulars in GegnerEditor.tsx, zugeklappt unter „Erweitert“. Ein
- * Bot spielt wie Menschen seiner Stufen (engine/menschenwahl.ts); hier verschiebt der Leser die
- * Zahlen: Gewicht 1 heißt so oft wie Menschen dieser Stärke, 0 nie, 3 dreimal so oft. Nicht
- * angehakte Fehlerarten bleiben aus (die Regler sind dann gesperrt). Der Höchstverlust begrenzt,
+ * Rolle im Gesamtbild: Teil des Formulars in GegnerEditor.tsx, zugeklappt unter „Erweitert“. Die
+ * Stufen bestimmen die Grundstärke (engine/stufen.ts); die Zusatzfehler kommen wie bei Menschen
+ * dieser Stärke dazu (engine/menschenwahl.ts). Hier verschiebt der Leser die Zahlen: Gewicht 1
+ * heißt so oft wie Menschen, 0 nie, 3 dreimal so oft. Nicht angehakte Fehlerarten bleiben aus (die
+ * Regler sind dann gesperrt); blinde Flecken stehen angehakt auf 1, sonst auf 0 (seit 0.2.117). Der Höchstverlust begrenzt,
  * wie teuer ein Fehler der Art höchstens sein darf; ganz rechts steht „unbegrenzt“ (Vorgabe, wie
  * Menschen: billige Fehler öfter als teure), dann fehlt der Wert im Speicher.
- * Abhängigkeiten: engine/gegner.ts, engine/menschenprofil.ts, engine/blindeFlecken.ts, engine/zugwahl.ts,
+ * Abhängigkeiten: engine/gegner.ts, engine/menschenprofil.ts, engine/blindeFlecken.ts,
  * speicher/menschenwerte.ts, i18n.
  */
 import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
 import type { Fehlerart } from "../../engine/fehlerart";
 import type { EigenerGegner } from "../../engine/gegner";
 import { GELEGENHEITSARTEN } from "../../engine/menschenprofil";
-import { BESONDERS_BLIND } from "../../engine/zugwahl";
 import { t } from "../../i18n/sprache";
 import {
   GEWICHT_HOECHSTENS,
@@ -84,7 +84,7 @@ export function ErweiterteFehler({
   setze: (neu: EigenerGegner) => void;
 }) {
   const gewicht = (art: Fehlerart | BlinderFleck) =>
-    g.gewichte?.[art] ?? (g.blindeFlecken.includes(art as BlinderFleck) ? BESONDERS_BLIND : 1);
+    g.gewichte?.[art] ?? (g.blindeFlecken.includes(art as BlinderFleck) ? 1 : 0);
   const mitGewicht = (art: Fehlerart | BlinderFleck, wert: number) =>
     setze({ ...g, gewichte: { ...g.gewichte, [art]: wert } });
   const verlust = (art: (typeof GELEGENHEITSARTEN)[number]) =>

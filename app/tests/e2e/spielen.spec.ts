@@ -318,16 +318,16 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(
     gitter.getByRole("heading", { name: /^Zum Spaß · (etwa|unter) \d+ bis (etwa )?\d+$/ }),
   ).toBeVisible();
-  await gitter.getByRole("radio", { name: /Fritzi/ }).click();
-  // Seit 0.2.103 liegt Fritzi unter 400 (Anker nach der Regel „nur bis zur Entscheidung“).
+  await gitter.getByRole("radio", { name: /Kiki/ }).click();
+  // Seit 0.2.117 spielen die Spaß-Bots eigene Stufen mit Zufallszügen (Kiki etwa 450).
   await expect(staerke).toContainText(/(etwa|unter) \d+ \(zum Spaß\)/);
-  // Gleich große Kacheln (0.2.89): Stufe 8 hat die längsten Namen („Großmeister Grün“).
-  await stufen.nth(8).locator("summary").click();
+  // Gleich große Kacheln (0.2.89): Stufe 9 hat lange Namen („Frau Prof. Reich“).
+  await stufen.nth(9).locator("summary").click();
   const breiten = await stufen
-    .nth(8)
+    .nth(9)
     .locator(".gegner-portraet")
     .evaluateAll((bilder) => bilder.map((b) => b.getBoundingClientRect().width));
-  expect(breiten).toHaveLength(8);
+  expect(breiten.length).toBeGreaterThan(1);
   expect(Math.max(...breiten) - Math.min(...breiten)).toBeLessThan(1);
   await page.screenshot({ path: "test-results/bilder/spielen-kategorien.png", fullPage: true });
   await page.getByRole("radio", { name: "Eigene Stufe" }).click();

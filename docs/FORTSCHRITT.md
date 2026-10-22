@@ -1408,3 +1408,26 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
 - Folgerung für das Zusammenführen: Flecken bleiben Ursachen mit eigener Rate (Faktor auf die
   Fehlerrate je Kategorie), die Fehlerart des Zuges bestimmt weiter die Erkennung. „Ruhig“ und
   „Bauer“ als Gegnerflecken streichen.
+
+### Teil A: Doppelprüfung mit der Engine (22.10.2026 nachmittags, Wunsch des Autors)
+
+- Fleck-Regeln: zwei Fehler behoben (Rochaderecht galt als „Schlag möglich“, en passant als
+  stiller Bauernzug). Zweitfassung der Regeln in python-chess (lokal flecken_unabhaengig.py)
+  stimmt bei über 400 000 Zuordnungen überein (Rest: 269 doppelt gespeicherte Stellungen).
+- Engine-Gegenprüfung (engine/fehlerpruefung.messung.ts, Tiefe 20 statt 12, 6235 Züge: je Art
+  bis 300 Fehler, dazu 1500 Züge ohne Fehler; lokal pruefung.txt):
+  bestätigt 89–96 % bei figurHaengen, schlagreflex, taktikUebersehen, bauerEingestellt,
+  schlagVerpasst, bauernraub, drohungIgnoriert; 82–85 % bei bauernzugOhneNot, koenigMitte,
+  koenigszugOhneNot, tempoverlust, verfruehteDame; schwächer koenigsschild 79, ungenau 76,
+  bauernvorstoss 74, koenigPassiv 74, falscherAbtausch 60 (Rest meist Grenzfälle 0,3–0,5).
+  Fehlerart in Tiefe 20 gleich: meist 82–100 %, falscherAbtausch 61 % (oft schlagreflex).
+  Von den Zügen ohne Fehler sind in Tiefe 20 8 % doch Fehler (Tiefe 12 übersieht sie).
+- Hochgerechnet gleichen sich Fehlalarme und übersehene Fehler fast aus (+3,5 %). Je Art ein
+  Korrekturfaktor (0,80 koenigsschild bis 1,29 bauernvorstoss, lokal korrektur.json), in
+  fehlerarten.json schon eingerechnet.
+- Flecken: Bester Zug ist in Tiefe 20 nur zu 71 % derselbe; je Fleck weichen 3–30 % der
+  Zuordnungen ab, aber in beide Richtungen etwa gleich oft. Raten und Kopplungen bleiben damit
+  im Mittel richtig, einzelne Zuordnungen sind unsicher. Fleckraten nach der Korrektur fast
+  unverändert (flecken.txt).
+- Offen für die Erkennung: falscherAbtausch und koenigPassiv schärfen (Grenze zu schlagreflex
+  und ungenau), sonst Zusammenführen von Flecken und Fehlerarten (Engine, Oberfläche, Speicher).

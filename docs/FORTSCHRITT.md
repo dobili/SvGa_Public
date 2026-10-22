@@ -1469,3 +1469,18 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
   zweiten Runde (menschenprofil2/dauerlauf.log). Nach einem Neustart des Containers: Sammler mit
   gleichem Aufruf neu starten (doppelte Partien überspringt die Auswertung nicht, also vorher
   spielerpartien.jsonl sichern oder Soll anpassen), lauf.sh und dauerlauf.sh einfach neu starten.
+- Kennzahlen für die spätere Elo-Abbildung (Wunsch des Autors, 22.10.2026 abends), lokal
+  buch/arbeit/spielerprofil/aufbereiten.py → zuege.jsonl (je Zug) und partien.jsonl (je Partie):
+  Gewinnchance vor/nach (Lichess-Formel, Werte auf ±10 wie die App), Verlust, Zuggenauigkeit,
+  Lichess-Fenstergewicht, „entschieden vorher“ (≥ 90 %/≤ 10 %), „bis Entscheidung“ (Regel von
+  spiel/entscheidung.ts), Klasse (ungenau 0,5 / fehler 1,2 / patzer 3 / verpasst wie
+  spiel/auswertung.ts, ohne Buch, brillant, stark), Fehlerart, Flecken, Bedenk- und Restzeit,
+  Stellungstyp (taktisch: Schach, Schlag/Schach/Umwandlung als bester oder gespielter Zug,
+  gegnerische Materialdrohung; sonst ruhig); je Partie Genauigkeit nach Lichess über alle Züge und
+  bis zur Entscheidung, Elo, Gegner-Elo, Ergebnis, Klassenzahlen.
+- betabinom.py liest zuege.jsonl, FILTER=offen|alle|bis_entscheidung, Zellen auch nach Phase
+  „alle“ und Stellungstyp, zusätzlich Klassen als Raten und stetige Kennzahlen je Spieler
+  (Verlust, Genauigkeit; Streuung der wahren Mittel = beobachtet minus Messrauschen).
+- Achtung für die Elo-Abbildung: Die Eichung der App rechnet in Tiefe 18 (Stockfish 19 lite),
+  die Spielerdaten in Tiefe 12 (Stockfish 17.1). Vor dem Einsatz eine Teilmenge in Tiefe 18
+  nachrechnen und die Verschiebung bestimmen.

@@ -41,6 +41,8 @@ KANDIDATEN_JE_ZELLE = 220
 MINDEST_IN_AUSWAHL = 2
 SEKUNDEN_JE_MINUTE = 60
 MELDUNG_ALLE = 1_000_000
+# So oft verbindet der Sammler nach einem Abriss des Stroms neu
+VERSUCHE = 30
 
 
 def kategorie(wertung: float) -> int | None:
@@ -68,6 +70,30 @@ def koepfe(zeilen):
         elif zeile and kopf:
             yield kopf, zeile
             kopf = {}
+
+
+def robuste_koepfe(monat: str, versuche: int = VERSUCHE):
+    """Wie koepfe über den Monatsstrom, aber robust gegen Abrisse: Endet der Strom oder bricht er
+    ab, verbindet die Funktion neu und überspringt die schon gelieferten Partien. Liefert ein neuer
+    Versuch keine neue Partie mehr, ist die Datei zu Ende."""
+    geliefert = 0
+    for versuch in range(versuche):
+        vorher = geliefert
+        gelesen = 0
+        try:
+            for kopf, zugtext in koepfe(zeilen_aus_datenbank(monat)):
+                gelesen += 1
+                if gelesen <= geliefert:
+                    continue
+                geliefert += 1
+                yield kopf, zugtext
+        except (OSError, EOFError) as fehler:
+            print(f"Abriss nach {geliefert} Partien ({fehler})", flush=True)
+            continue
+        if geliefert == vorher and versuch > 0:
+            return
+        print(f"Strom endete nach {geliefert} Partien, Versuch {versuch + 1}", flush=True)
+    print(f"Aufgegeben nach {versuche} Versuchen", flush=True)
 
 
 def waehle(zaehler: dict, summe: dict) -> dict[str, dict]:
@@ -98,7 +124,7 @@ def main(argumente: list[str] | None = None) -> int:
     kandidaten: dict | None = None
     gesammelt: dict = defaultdict(int)
     ausgabe = (args.ziel / "spielerpartien.jsonl").open("a", encoding="utf-8")
-    for nummer, (kopf, zugtext) in enumerate(koepfe(zeilen_aus_datenbank(args.monat)), 1):
+    for nummer, (kopf, zugtext) in enumerate(robuste_koepfe(args.monat), 1):
         tempo = tempo_von(kopf)
         if kandidaten is None:
             if tempo:

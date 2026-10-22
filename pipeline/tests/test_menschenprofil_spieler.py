@@ -25,3 +25,12 @@ def test_waehle_nimmt_aktive_spieler_mit_mittlerer_wertung():
         "blitz|a": {"tempo": "blitz", "kategorie": 1200},
         "rapid|c": {"tempo": "rapid", "kategorie": 2000},
     }
+
+
+def test_robuste_koepfe_setzt_nach_abriss_fort(monkeypatch):
+    from pipeline.menschenprofil import spieler
+
+    partie = ['[Event "Rated Blitz game"]', "", "1. e4 e5"]
+    aufrufe = iter([partie * 2, partie * 3, partie * 3])
+    monkeypatch.setattr(spieler, "zeilen_aus_datenbank", lambda monat: next(aufrufe))
+    assert len(list(spieler.robuste_koepfe("2026-09"))) == 3

@@ -37,6 +37,62 @@ const TAKTIKMOTIVE: ReadonlySet<Motiv> = new Set<Motiv>([
 ]);
 /** So viele Halbzüge der Engine-Antwort prüft die Motiverkennung. */
 const ANTWORT_HALBZUEGE = 3;
+/** In so vielen Halbzügen der Widerlegung muss das Motiv Material gewinnen (seit 0.2.118). */
+const GEWINN_HALBZUEGE = 5;
+/** So viel muss es mindestens gewinnen (ein Bauer). */
+const GEWINN_AB = 1;
+const WERTE: Readonly<Record<Piece["role"], number>> = {
+  pawn: 1,
+  knight: 3,
+  bishop: 3,
+  rook: 5,
+  queen: 9,
+  king: 0,
+};
+
+/** Materialbilanz aus Sicht einer Farbe (eigene minus fremde Figuren, Bauerneinheiten). */
+function bilanz(regeln: Chess, farbe: Piece["color"]): number {
+  let summe = 0;
+  for (const [, figur] of regeln.board) {
+    summe += (figur.color === farbe ? 1 : -1) * WERTE[figur.role];
+  }
+  return summe;
+}
+
+/**
+ * Gewinnt der Gegner in der Widerlegung der Engine tatsächlich Material? Seit 0.2.118 (Hinweis des
+ * Autors mit zwei Fehlalarmen: 9… Df6 „Gabel Sd5“, 4. c4 „Gabel e5“): Ein Motiv zählt nur, wenn
+ * die Widerlegung der Engine es spielt und der Gegner in den nächsten fünf Halbzügen mindestens
+ * einen Bauern gewinnt. Ohne Antwort der Engine zählt kein Motiv.
+ */
+function widerlegungGewinnt(danach: Chess, antwort: readonly string[]): boolean {
+  if (antwort.length === 0) return false;
+  const gegner = danach.turn;
+  const regeln = danach.clone();
+  const vorher = bilanz(regeln, gegner);
+  let besterStand = Number.NEGATIVE_INFINITY;
+  for (const uci of antwort.slice(0, GEWINN_HALBZUEGE)) {
+    const roh = parseUci(uci);
+    if (!roh) break;
+    const zug = normalizeMove(regeln, roh);
+    if (!regeln.isLegal(zug)) break;
+    regeln.play(zug);
+    // Es zählt nur der Stand nach der Antwort des Verteidigers (sonst zählte ein Zwischenstand,
+    // etwa Sxf7+ vor Txf7)
+    if (regeln.turn === gegner) besterStand = Math.max(besterStand, bilanz(regeln, gegner));
+  }
+  // Endet die Widerlegung hier, gilt auch ihr letzter Stand (die Engine sieht keine Antwort mehr)
+  if (antwort.length <= GEWINN_HALBZUEGE)
+    besterStand = Math.max(besterStand, bilanz(regeln, gegner));
+  return besterStand - vorher >= GEWINN_AB;
+}
+
+/** Spielt die Widerlegung das Motiv: Zieht ihr erster Zug von diesem Feld (auf dieses Feld)? */
+function ersterZugIst(antwort: readonly string[], von: number, nach?: number): boolean {
+  const roh = antwort[0] ? parseUci(antwort[0]) : undefined;
+  if (!roh || !("from" in roh)) return false;
+  return roh.from === von && (nach === undefined || roh.to === nach);
+}
 
 /** Die Stellung der App zu einer Regelstellung. */
 export function stellungVon(regeln: Chess): Stellung {
@@ -86,21 +142,24 @@ function antwortmotiv(danach: Chess, antwort: readonly string[]): Motiv | null {
 /**
  * Taktik übersehen (Kapitel 7): Nach dem Zug hat der Gegner eine neue Gabel (W6) oder eine neue
  * gefährliche Linie (W2) gegen die ziehende Seite, oder seine Antwort ist ein Motiv; sonst null.
+ * Seit 0.2.118 nur, wenn die Widerlegung der Engine das Motiv spielt und Material gewinnt.
  */
 export function uebersehneTaktik(
   lage: Lage,
   p: Zugprobe,
   antwort: readonly string[],
 ): Taktikbefund | null {
-  if (p.danach.isCheck()) return null;
+  if (p.danach.isCheck() || !widerlegungGewinnt(p.danach, antwort)) return null;
   if (!lage.regeln.isCheck()) {
     const stellung = stellungVon(p.danach);
     const feind = p.danach.turn;
     for (const [schluessel, gabel] of gabelnVon(stellung, feind)) {
-      if (!lage.gabeln.has(schluessel)) return { art: "gabel", gabel };
+      const gespielt = ersterZugIst(antwort, gabel.figur.feld, gabel.feld);
+      if (!lage.gabeln.has(schluessel) && gespielt) return { art: "gabel", gabel };
     }
     for (const [schluessel, linie] of linienGegen(stellung, opposite(feind))) {
-      if (!lage.linien.has(schluessel)) return { art: "linie", linie };
+      const gespielt = ersterZugIst(antwort, linie.von.feld);
+      if (!lage.linien.has(schluessel) && gespielt) return { art: "linie", linie };
     }
   }
   const motiv = antwortmotiv(p.danach, antwort);

@@ -52,8 +52,19 @@ describe("Fehlerart", () => {
   });
 
   it("Taktik übersehen: der Zug stellt die Dame in eine Springergabel (W6)", () => {
-    expect(fehlerartVon(GABEL, ["a6d6"], 9)).toBe("taktikUebersehen");
+    // Ohne Turm auf f8 gewinnt Sf7+ die Dame: die Widerlegung spielt die Gabel und gewinnt
+    const echt = "r6k/6pp/q7/6N1/8/8/8/6K1 b - - 0 1";
+    expect(fehlerartVon(echt, ["a6d6", "g5f7", "h8g8", "f7d6"], 9)).toBe("taktikUebersehen");
     expect(fehlerartVon(GABEL, ["a6a2"], 0.3)).toBe("ungenau");
+  });
+
+  it("keine Taktik, wenn die Gabel nichts gewinnt oder die Engine sie nicht spielt (0.2.118)", () => {
+    // Hier deckt der Turm f7: Sf7+ Txf7 verliert den Springer, also kein Gabelfehler
+    expect(fehlerartVon(GABEL, ["a6d6", "g5f7", "f8f7"], 1)).not.toBe("taktikUebersehen");
+    // Ohne Widerlegung der Engine zählt kein Motiv
+    expect(fehlerartVon("r6k/6pp/q7/6N1/8/8/8/6K1 b - - 0 1", ["a6d6"], 9)).not.toBe(
+      "taktikUebersehen",
+    );
   });
 
   it("König in der Mitte: ab dem zehnten Zug eine mögliche Rochade ausgelassen", () => {

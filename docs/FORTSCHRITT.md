@@ -1450,3 +1450,22 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
 - Deshalb läuft eine zweite Sammlung (sammeln --tempi blitz,rapid,classical --je-band 360, Ziel
   dreifache Datenmenge, Bullet bleibt bei der ersten Runde), danach dauerlauf.sh (Tiefe 12),
   Neueinordnung, Flecken, Intervalle neu. Erste Runde gesichert in partien-erste-runde.jsonl.
+
+### Spielerprofile: 90-%-Bereich der Spieler (Freigabe des Autors, 22.10.2026 abends)
+
+- Ziel: „90 % aller Spieler einer Zelle liegen bei dieser Fehlerart zwischen X und Y“ (und
+  ebenso für die Kopplungen blinder Fleck × Fehlerart). Verfahren: Beta-Binomial-Modell je Zelle
+  [Zeitklasse × Kategorie × Phase × Art] über Spieler, Quantile 5/95 % der Beta-Verteilung,
+  Bootstrap über Spieler; Tagesform aus der Überstreuung auf Partie-Ebene; seltene Arten mit ρ
+  gemeinsam über Phasen (eigenes μ je Phase), sonst über Kategorien.
+- Lichess gibt Partien je Spieler nur angemeldet heraus (keine Zugangsdaten). Deshalb
+  pipeline/menschenprofil/spieler.py: Auswahl der Aktivsten aus den ersten 15 Mio. Partien
+  2026-09 (je Zelle 220 Kandidaten), dann Sammeln im selben Strom (Soll 25, klassisch 12).
+- Auswertung app/src/engine/spielerprofil.messung.ts (nur Züge des Spielers, bester und
+  gespielter Zug, Tiefe 12, etwa 28 Stellungen/s je Prozess); lokal buch/arbeit/spielerprofil/
+  lauf.sh (Runden zu 60 min, vier Prozesse), Modell betabinom.py → betabinom.json.
+- Bestand (menschenprofil2, 6147 Partien) liefert weiter Mittelwerte, Kopplungen, Partie-Streuung.
+- Läufe (losgelöst gestartet): Sammler (sammeln.log), lauf.sh (lauf.log), dauerlauf.sh der
+  zweiten Runde (menschenprofil2/dauerlauf.log). Nach einem Neustart des Containers: Sammler mit
+  gleichem Aufruf neu starten (doppelte Partien überspringt die Auswertung nicht, also vorher
+  spielerpartien.jsonl sichern oder Soll anpassen), lauf.sh und dauerlauf.sh einfach neu starten.

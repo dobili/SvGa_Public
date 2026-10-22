@@ -131,8 +131,7 @@ class Bestand:
         gewaehlt = set(tempi)
         # Nicht gewählte Tempi bekommen keine neuen Partien (etwa Bullet, nur zur Auswertung)
         self.soll = {
-            t: (klassisch if t == "classical" else je_band) if t in gewaehlt else 0
-            for t in TEMPI.values()
+            t: (klassisch if t == "classical" else je_band) if t in gewaehlt else 0 for t in TEMPI.values()
         }
         self.zahl = {(t, b): 0 for t in TEMPI.values() for b in BAENDER}
         self.kennungen: set[str] = set()

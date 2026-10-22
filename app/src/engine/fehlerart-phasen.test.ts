@@ -46,5 +46,11 @@ describe("Fehlerarten je Phase", () => {
     expect(fehlerartIn(lage(BAUERNENDSPIEL), "e2e3", [], 0, "e2e3")).toBe("ungenau");
     expect(fehlerartIn(lage(PATTFALLE), "e7f7", [], 9)).toBe("pattGesetzt");
     expect(fehlerartIn(lage(RUECKSTAND), "c3d5", [], 0.5)).toBe("falscherAbtausch");
+    // Ist der beste Zug derselbe Schlag (Zurückschlagen), ist es kein Tauschentschluss (0.2.118)
+    expect(fehlerartIn(lage(RUECKSTAND), "c3d5", [], 0.5, "c3d5")).not.toBe("falscherAbtausch");
+    // König passiv: Weiß zieht den König vom Zentrum weg (Kapitel 8, Regel 1)
+    const aktiv = "8/8/8/4k3/8/4K3/4P3/8 w - - 0 1";
+    expect(fehlerartIn(lage(aktiv), "e3d2", [], 0.6, "e3f3")).toBe("koenigPassiv");
+    expect(fehlerartIn(lage(BAUERNENDSPIEL), "e2e3", [], 0.2, "e1d2")).not.toBe("koenigPassiv");
   });
 });

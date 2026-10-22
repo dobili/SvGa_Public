@@ -10,7 +10,14 @@
  *   src/engine/fehlerart.neuauswertung.messung.ts
  * Abhängigkeiten: engine/fehlerart.ts.
  */
-import { createReadStream, existsSync, readdirSync, writeFileSync, appendFileSync } from "node:fs";
+import {
+  appendFileSync,
+  createReadStream,
+  existsSync,
+  readdirSync,
+  readFileSync,
+  writeFileSync,
+} from "node:fs";
 import { join } from "node:path";
 import { createInterface } from "node:readline";
 import { describe, expect, it } from "vitest";
@@ -39,7 +46,48 @@ function neuEingeordnet(zeile: string): string {
   return JSON.stringify(roh);
 }
 
+/** Prüfzeile der Tiefe 20 (fehlerpruefung.messung.ts): Art mit der aktuellen Erkennung neu. */
+interface Pruefzeile {
+  g: string;
+  p: number;
+  bester: string;
+  verlust: number;
+  art: string;
+  antwort: string[];
+}
+
+/** Ordnet die Prüfzeilen der Tiefe 20 neu ein (Stellung und Zug aus der Auswahl). */
+function pruefzeilenNeu(): void {
+  const auswahlDatei = join(ORDNER, "pruefung-auswahl.jsonl");
+  if (!existsSync(auswahlDatei)) return;
+  const auswahl = new Map<string, { f: string; m: string }>();
+  for (const z of readFileSync(auswahlDatei, "utf8")
+    .split("\n")
+    .filter((x) => x.trim())) {
+    const a = JSON.parse(z) as { g: string; p: number; f: string; m: string };
+    auswahl.set(`${a.g}:${a.p}`, a);
+  }
+  for (const datei of readdirSync(ORDNER).filter((d) => /^pruefung-\d+\.jsonl$/.test(d))) {
+    const zeilen = readFileSync(join(ORDNER, datei), "utf8")
+      .split("\n")
+      .filter((x) => x.trim());
+    const neu = zeilen.map((z) => {
+      const r = JSON.parse(z) as Pruefzeile;
+      const a = auswahl.get(`${r.g}:${r.p}`);
+      const lage = a ? lageVon(a.f) : null;
+      if (a && lage) r.art = fehlerartIn(lage, a.m, r.antwort, r.verlust, r.bester);
+      return JSON.stringify(r);
+    });
+    writeFileSync(join(ORDNER, datei), neu.join("\n") + "\n");
+  }
+}
+
 describe("Neuauswertung der Fehlerarten", () => {
+  it("ordnet die Prüfzeilen der Tiefe 20 neu ein", () => {
+    pruefzeilenNeu();
+    expect(existsSync(ORDNER)).toBe(true);
+  });
+
   it("ordnet alle gespeicherten Stellungen neu ein", async () => {
     const dateien = readdirSync(ORDNER).filter((d) => /^stellungen-\d+\.jsonl$/.test(d));
     for (const datei of dateien) {

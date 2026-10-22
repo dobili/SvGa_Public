@@ -70,6 +70,7 @@ export function widerlegungsgewinn(
   danach: Chess,
   antwort: readonly string[],
   geschlagen: Piece["role"] | null = null,
+  halbzuege: number = GEWINN_HALBZUEGE,
 ): number {
   if (antwort.length === 0) return 0;
   const gegner = danach.turn;
@@ -77,7 +78,7 @@ export function widerlegungsgewinn(
   // Gezählt ab der Stellung vor dem Zug: Schlägt der Zug selbst, ist das Zurückschlagen kein Gewinn
   const vorher = bilanz(regeln, gegner) + (geschlagen ? WERTE[geschlagen] : 0);
   let besterStand = Number.NEGATIVE_INFINITY;
-  for (const uci of antwort.slice(0, GEWINN_HALBZUEGE)) {
+  for (const uci of antwort.slice(0, halbzuege)) {
     const roh = parseUci(uci);
     if (!roh) break;
     const zug = normalizeMove(regeln, roh);
@@ -88,8 +89,7 @@ export function widerlegungsgewinn(
     if (regeln.turn === gegner) besterStand = Math.max(besterStand, bilanz(regeln, gegner));
   }
   // Endet die Widerlegung hier, gilt auch ihr letzter Stand (die Engine sieht keine Antwort mehr)
-  if (antwort.length <= GEWINN_HALBZUEGE)
-    besterStand = Math.max(besterStand, bilanz(regeln, gegner));
+  if (antwort.length <= halbzuege) besterStand = Math.max(besterStand, bilanz(regeln, gegner));
   return Math.max(0, besterStand - vorher);
 }
 

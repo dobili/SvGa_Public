@@ -38,10 +38,10 @@ describe("Fehlerart", () => {
     expect(fehlerartVon(fen, ["f8a3"], 3)).toBe("figurHaengen");
   });
 
-  it("Schlagreflex (W5): Sxd5 exd5 verliert den Springer gegen einen Bauern", () => {
-    expect(fehlerartVon(MITTELSPIEL, ["c3d5"], 0)).toBe("schlagreflex");
-    // Ein Schlag, den die Engine mit mindestens einem Bauern Verlust bewertet, ebenso.
-    expect(fehlerartVon(MITTELSPIEL, ["d3h7", "g8h7"], 2)).toBe("schlagreflex");
+  it("Schlag mit Verlust laut Abtausch ist kein Reflex, sondern Figur hängen (0.2.118)", () => {
+    // Sxd5 exd5: d5 ist gedeckt, die Abtauschrechnung zeigt den Verlust sofort
+    expect(fehlerartVon(MITTELSPIEL, ["c3d5"], 0)).toBe("figurHaengen");
+    expect(fehlerartVon(MITTELSPIEL, ["d3h7", "g8h7"], 2)).toBe("figurHaengen");
   });
 
   it("Köder annehmen (W5): 5... Sxd5?! gewinnt laut Abtausch, die Engine widerlegt es", () => {

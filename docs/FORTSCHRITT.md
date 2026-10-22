@@ -1387,3 +1387,24 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
   buch/arbeit/menschenprofil2/fehlerarten.json und .txt (Skript fehlerarten.py, stichprobe.py).
 - Nächster Schritt: blinde Flecken in die Fehlerarten überführen (Engine, Oberfläche, Speicher mit
   Umwandlung), dann die Raten aus fehlerarten.json als Fehlerprofile der Stufen übernehmen.
+
+### Teil A: blinde Flecken × Fehlerarten (22.10.2026, Hinweis des Autors)
+
+- Blinde Flecken sind Ursachen, Fehlerarten Folgen; beide hängen am selben Zug. Für alle 181 000
+  gespielten Züge bestimmt (engine/blindeFlecken.kopplung.messung.ts, ohne Engine): Flecken des
+  besten Zuges (eigenen Zug übersehen) und der Widerlegung (Zug des Gegners übersehen). Auswertung
+  lokal: buch/arbeit/menschenprofil2/flecken.py → flecken.txt, flecken.json (je Zeitklasse ×
+  Kategorie × Phase).
+- Eigene Flecken: Fehlerrate ×1,2 bis ×2,4 gegenüber Stellungen ohne Fleck; am stärksten
+  Zwischenzug (×1,5–2,3), lange Damenzüge (×1,6–1,9), Abzug (bis ×2,4 bei 2400), Rückzug und
+  Springer rückwärts (×1,4–1,8); stille Bauernzüge am schwächsten (×1,1–1,4).
+- Gegnerflecken (Widerlegung): Abzug ×2,0–2,6, Zwischenzug ×2,3–3,4, Grundreihe ×1,3–3,8
+  (sinkt mit der Wertung), lange Damenzüge ×1,8–2,9, Diagonale ×1,0–2,0; Rückzug, Ruhig und
+  Bauer sind keine Gegnerflecken (unter 1).
+- Kopplung: Gegner-Abzug → taktikUebersehen (Lift 4,4), Gegner-Diagonale → figurHaengen (2,6)
+  und bauerEingestellt (2,2), Gegner-Dame → drohungIgnoriert, schlagreflex, taktik (1,7–1,9);
+  eigene Diagonale und Dame → schlagVerpasst (Lift 3), eigener Bauernzug → bauernzugOhneNot,
+  tempoverlust, verfrühte Dame (1,5–1,8).
+- Folgerung für das Zusammenführen: Flecken bleiben Ursachen mit eigener Rate (Faktor auf die
+  Fehlerrate je Kategorie), die Fehlerart des Zuges bestimmt weiter die Erkennung. „Ruhig“ und
+  „Bauer“ als Gegnerflecken streichen.

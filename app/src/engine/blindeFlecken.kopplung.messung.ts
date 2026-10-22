@@ -38,7 +38,13 @@ function kopplung(zeile: string): string | null {
   const danach = fenNachUci(z.f, z.m);
   const widerlegung = gespielt[4]?.[0];
   const gegner = danach && widerlegung ? fleckeVon(danach, widerlegung) : [];
-  return JSON.stringify({ g: z.g, p: z.p, b: bester[3], w: gegner, e: fleckeVon(z.f, z.m) });
+  return JSON.stringify({
+    g: z.g,
+    p: z.p,
+    b: fleckeVon(z.f, bester[0]),
+    w: gegner,
+    e: fleckeVon(z.f, z.m),
+  });
 }
 
 describe("Kopplung blinder Flecken", () => {

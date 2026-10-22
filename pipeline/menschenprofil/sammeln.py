@@ -124,11 +124,16 @@ def partien(zeilen: Iterable[str]) -> Iterator[dict]:
 class Bestand:
     """Gesammelte Partien je (Tempo, Band) samt Datei."""
 
-    def __init__(self, ziel: Path, je_band: int) -> None:
+    def __init__(self, ziel: Path, je_band: int, tempi: Iterable[str] = TEMPI.values()) -> None:
         ziel.mkdir(parents=True, exist_ok=True)
         self.datei = ziel / "partien.jsonl"
         klassisch = int(je_band * ANTEIL_KLASSISCH)
-        self.soll = {t: klassisch if t == "classical" else je_band for t in TEMPI.values()}
+        gewaehlt = set(tempi)
+        # Nicht gewählte Tempi bekommen keine neuen Partien (etwa Bullet, nur zur Auswertung)
+        self.soll = {
+            t: (klassisch if t == "classical" else je_band) if t in gewaehlt else 0
+            for t in TEMPI.values()
+        }
         self.zahl = {(t, b): 0 for t in TEMPI.values() for b in BAENDER}
         self.kennungen: set[str] = set()
         if self.datei.exists():
@@ -180,8 +185,9 @@ def main(argumente: list[str] | None = None) -> int:
     parser.add_argument("--je-band", type=int, default=100)
     parser.add_argument("--monat", default="2026-09")
     parser.add_argument("--minuten", type=float, default=110)
+    parser.add_argument("--tempi", default=",".join(TEMPI.values()), help="etwa blitz,rapid")
     args = parser.parse_args(argumente)
-    bestand = Bestand(args.ziel, args.je_band)
+    bestand = Bestand(args.ziel, args.je_band, args.tempi.split(","))
     ende = time.monotonic() + args.minuten * SEKUNDEN_JE_MINUTE
     gelesen = 0
     for partie in partien(zeilen_aus_datenbank(args.monat)):

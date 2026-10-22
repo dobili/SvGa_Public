@@ -1431,3 +1431,22 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
   unverändert (flecken.txt).
 - Offen für die Erkennung: falscherAbtausch und koenigPassiv schärfen (Grenze zu schlagreflex
   und ungenau), sonst Zusammenführen von Flecken und Fehlerarten (Engine, Oberfläche, Speicher).
+
+### Teil A: Schärfung und Vertrauensintervalle (22.10.2026 abends)
+
+- Festlegungen mit dem Autor (umgesetzt, engine/fehlerart-schlag.ts, fehlerart-koenig.ts):
+  - Schlagreflex: Schlag sieht nach Gewinn aus (Abtausch ≥ 1), jeder Gegnerzug der ersten vier
+    Halbzüge der Widerlegung zwingt (Schlag, Schach, Angriff ab Leichtfigur), danach mindestens
+    ein Bauer schlechter (Material oder Bewertung). Schlag mit Verlust laut Abtausch = Figur hängen.
+  - Falscher Abtausch: zurück um ≥ 2, gleichwertiger Figurentausch, nicht beim Zurückschlagen.
+  - König passiv: nur Endspiel, Kapitel 8 Regel 1 mit dem Königsweg von k8-regeln (keine
+    gegnerische Dame, König nicht am Ziel, bester Zug bringt ihn näher oder Zug vom Ziel weg).
+- Tiefe-20-Prüfung danach: Schlagreflex 96 % bestätigt (Art gleich 80 %), falscher Abtausch
+  96 % (99 %), König passiv 75 % (85 %; Rest Bewertungsrauschen der Tiefe 12 im Endspiel).
+- Vertrauensintervalle 90 % (lokal intervalle.py, .json, .txt): Bootstrap über Partien (300×),
+  Korrekturfaktoren im selben Bootstrap. Fleckfaktoren je Kategorie und Kopplungen meist eng
+  (±5–20 %); Raten je Zelle (Art × Zeitklasse × Kategorie × Phase) für häufige Arten ±14–32 %,
+  für seltene ±35–70 %. Breite ∝ 1/√n.
+- Deshalb läuft eine zweite Sammlung (sammeln --tempi blitz,rapid,classical --je-band 360, Ziel
+  dreifache Datenmenge, Bullet bleibt bei der ersten Runde), danach dauerlauf.sh (Tiefe 12),
+  Neueinordnung, Flecken, Intervalle neu. Erste Runde gesichert in partien-erste-runde.jsonl.

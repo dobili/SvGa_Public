@@ -42,6 +42,7 @@ import {
   type Schlagzug,
 } from "../schach/drohungen";
 import { phase, type Phase } from "../schach/phase";
+import { FIGURENWERT } from "../schach/stellung";
 import {
   gabelnVon,
   linienGegen,
@@ -259,7 +260,9 @@ export function fehlerbefundIn(
   if (istSchlagreflex(lage, p, verlust)) return { art: "schlagreflex", ...OHNE_EINZELHEITEN };
   // Vor „Figur hängen“: Beim gleichen Abtausch wird die schlagende Figur zurückgeschlagen.
   if (istFalscherAbtausch(lage, p)) return { art: "falscherAbtausch", ...OHNE_EINZELHEITEN };
-  if (haengt.feld !== null) {
+  // Seit 0.2.118: Ein gleichwertiger Abtausch (Sxb3 axb3) lässt nichts hängen
+  const geschlagen = p.geschlagen ? FIGURENWERT[p.geschlagen] : 0;
+  if (haengt.feld !== null && haengt.wert > geschlagen) {
     return { art: "figurHaengen", ...OHNE_EINZELHEITEN, haengt: haengt.feld };
   }
   if (drohung.wert > 0) return ignoriert;

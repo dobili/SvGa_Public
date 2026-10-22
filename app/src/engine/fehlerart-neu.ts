@@ -45,7 +45,7 @@ export function eingestellt(p: Zugprobe, antwort: readonly string[]): Eingestell
   if (!roh || !("from" in roh)) return null;
   const opfer = p.danach.board.get(roh.to);
   if (!opfer || opfer.color === p.danach.turn) return null;
-  const gewinn = widerlegungsgewinn(p.danach, antwort);
+  const gewinn = widerlegungsgewinn(p.danach, antwort, p.geschlagen);
   if (opfer.role === "pawn") {
     return gewinn >= BAUER_AB ? { art: "bauerEingestellt", haengt: roh.to } : null;
   }

@@ -1367,3 +1367,23 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
 - Abb. 7.24: ohne konstruierte Zugfolge (Chat D, siehe ZF in AUFGABEN_AUTOR).
 - Gleiche Startstellungen: Nach der Regel des Autors (nur im selben Kapitel zusammenführen) sind
   die zwei Paare zusammengeführt (0.2.32); über Kapitelgrenzen bleibt alles getrennt.
+
+### Teil A, Stand 22.10.2026 mittags (Fehlerarten und Raten je Art)
+
+- Neue Fehlerarten (engine/fehlerart-neu.ts): bauerEingestellt, schlagVerpasst, bauernzugOhneNot,
+  koenigszugOhneNot; „Figur hängen“ erkennt auch Figuren, die erst die Widerlegung schlägt.
+- Fehlalarme behoben: Taktik zählt nur, wenn die Widerlegung das Motiv spielt und Material gewinnt;
+  ein gleichwertiger Abtausch (Sxb3 axb3, Lxf4 Dxf4) ist nicht „Figur hängen“.
+- Neueinordnung aller 181 000 gespeicherten Stellungen ohne Engine
+  (engine/fehlerart.neuauswertung.messung.ts, gut 5 Minuten). Anteile an allen Fehlern ab 0,5:
+  ungenau 36,6 %, drohungIgnoriert 15,8, bauernzugOhneNot 10,3, schlagreflex 9,3,
+  taktikUebersehen 5,6 (vorher 24,7, meist Fehlalarme), schlagVerpasst 4,7, figurHaengen 3,7,
+  koenigMitte 3,0, bauerEingestellt 2,4, bauernvorstoss 2,1, übrige je unter 1,5.
+  Der Rest „ungenau“ sind fast nur ruhige Figurenzüge mit kleinem Verlust (Stellungsfehler).
+- Stichprobe 319 Fehler: Materialarten ohne Materialverlust in sieben Halbzügen von Hand geprüft;
+  echte Fehlalarme etwa 2 von 48 bei drohungIgnoriert, 0 bei figurHaengen; schlagreflex,
+  bauernraub und falscherAbtausch sind absichtlich materialneutral (Stellungsfolgen).
+- Raten je Fehlerart × Kategorie × Phase × Zeitklasse (geglättet, je 100 Züge) lokal in
+  buch/arbeit/menschenprofil2/fehlerarten.json und .txt (Skript fehlerarten.py, stichprobe.py).
+- Nächster Schritt: blinde Flecken in die Fehlerarten überführen (Engine, Oberfläche, Speicher mit
+  Umwandlung), dann die Raten aus fehlerarten.json als Fehlerprofile der Stufen übernehmen.

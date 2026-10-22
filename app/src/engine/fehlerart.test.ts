@@ -88,6 +88,13 @@ describe("Fehlerarten seit 0.2.118 (Lichess-Auswertung)", () => {
     const regeln = lageVon(SPRINGER)?.regeln;
     const springer = regeln && probe(regeln, "d4d5");
     expect(springer && eingestellt(springer, ["e8d7"])).toBeNull();
+    // Ein Abtausch ist nichts Eingestelltes: Lxf4 Dxf4 gibt nur den geschlagenen Läufer zurück
+    const abtausch = lageVon("4kq2/8/8/8/5b2/8/3B4/4K3 w - - 0 1")?.regeln;
+    const lxf4 = abtausch && probe(abtausch, "d2f4");
+    expect(lxf4 && eingestellt(lxf4, ["f8f4", "e1e2"])).toBeNull();
+    expect(fehlerartVon("4kq2/8/8/8/5b2/8/3B4/4K3 w - - 0 1", ["d2f4", "f8f4"], 0.6)).not.toBe(
+      "figurHaengen",
+    );
     expect(springer && eingestellt(springer, ["d6e5", "e1e2"])?.art).toBe("figurHaengen");
     const bauer = "4k3/8/3n4/8/2P5/1P6/8/4K3 w - - 0 1";
     expect(fehlerartVon(bauer, ["b3b4", "d6c4", "e1e2"], 1)).toBe("bauerEingestellt");

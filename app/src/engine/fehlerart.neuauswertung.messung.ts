@@ -26,13 +26,14 @@ const PUFFER = 2000;
 
 /** Ordnet die Kandidaten einer gespeicherten Zeile neu ein; unlesbare Zeilen bleiben. */
 function neuEingeordnet(zeile: string): string {
-  const roh = JSON.parse(zeile) as { f: string; k?: Kandidat[] };
+  const roh = JSON.parse(zeile) as { f: string; k?: Kandidat[]; x?: Kandidat[] };
   const lage = roh.k && roh.k.length > 0 ? lageVon(roh.f) : null;
   if (!lage || !roh.k) return zeile;
+  // Gezielt bewertete Züge (Gelegenheiten und der gespielte Zug) gehören dazu
   const bester = roh.k[0];
   const bestwert = Math.max(...roh.k.map((k) => k[1]));
   const besterZug = bester ? bester[0] : null;
-  for (const k of roh.k) {
+  for (const k of [...roh.k, ...(roh.x ?? [])]) {
     k[2] = fehlerartIn(lage, k[0], k[4] ?? [], bestwert - k[1], besterZug);
   }
   return JSON.stringify(roh);

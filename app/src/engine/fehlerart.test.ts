@@ -1,6 +1,8 @@
 /** Tests der Fehlerarten (Konzept 8.2) an Stellungen aus dem Buch, geprüft mit den Werkzeugen. */
 import { describe, expect, it } from "vitest";
-import { alleZuege, fehlerartVon, istDamenopfer, lageVon } from "./fehlerart";
+import { eingestellt } from "./fehlerart-neu";
+import { probe } from "./zugprobe";
+import { alleZuege, fehlerartIn, fehlerartVon, istDamenopfer, lageVon } from "./fehlerart";
 
 /** Abb. 1.8 vor 3... Df6: Schwarz hat Springer g8 und Läufer c8, f8 zu Hause. */
 const VOR_DF6 = "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3";
@@ -26,7 +28,7 @@ describe("Fehlerart", () => {
     expect(fehlerartVon(NACH_DH5, ["g8f6", "h5e5", "f8e7"], 3)).toBe("drohungIgnoriert");
     expect(fehlerartVon(NACH_DH5, ["g8e7", "h5e5"], 1)).toBe("drohungIgnoriert");
     // 2... Sc6 deckt e5: keine Drohung mehr, keine Figur hängt → ungenau.
-    expect(fehlerartVon(NACH_DH5, ["b8c6", "h5f7"], 3)).toBe("ungenau");
+    expect(fehlerartVon(NACH_DH5, ["b8c6", "h5f7", "e8f7"], 3)).toBe("ungenau");
   });
 
   it("Figur hängen (W1): Läufer nach a3, der Bauer b2 schlägt ihn", () => {
@@ -76,6 +78,29 @@ describe("Fehlerart", () => {
     expect(fehlerartVon(NACH_DH5, ["zz"], 3)).toBe("ungenau");
     expect(fehlerartVon(NACH_DH5, ["e8e6"], 3)).toBe("ungenau");
     expect(fehlerartVon("kein fen", ["e2e4"], 3)).toBe("ungenau");
+  });
+});
+
+describe("Fehlerarten seit 0.2.118 (Lichess-Auswertung)", () => {
+  /** Weiß am Zug, d4 deckt den Springer e5 gegen den Bauern d6. */
+  const SPRINGER = "4k3/8/3p4/4N3/3P4/8/8/4K3 w - - 0 1";
+  it("Figur hängen über die Widerlegung, Bauer eingestellt", () => {
+    const regeln = lageVon(SPRINGER)?.regeln;
+    const springer = regeln && probe(regeln, "d4d5");
+    expect(springer && eingestellt(springer, ["e8d7"])).toBeNull();
+    expect(springer && eingestellt(springer, ["d6e5", "e1e2"])?.art).toBe("figurHaengen");
+    const bauer = "4k3/8/3n4/8/2P5/1P6/8/4K3 w - - 0 1";
+    expect(fehlerartVon(bauer, ["b3b4", "d6c4", "e1e2"], 1)).toBe("bauerEingestellt");
+  });
+
+  it("Schlag verpasst, Bauern- und Königszug ohne Not", () => {
+    const schlag = "4k3/8/8/4n3/8/8/PP2R3/4K3 w - - 0 1";
+    const lage = lageVon(schlag);
+    expect(lage && fehlerartIn(lage, "a2a3", ["e8d7"], 3, "e2e5")).toBe("schlagVerpasst");
+    const mitte = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQ1RK1 w kq - 6 6";
+    expect(fehlerartVon(mitte, ["a2a3", "f6g4"], 0.6)).toBe("bauernzugOhneNot");
+    expect(fehlerartVon(mitte, ["g1h1", "f6g4"], 0.6)).toBe("koenigszugOhneNot");
+    expect(fehlerartVon(mitte, ["a2a3"], 0.2)).toBe("ungenau");
   });
 });
 

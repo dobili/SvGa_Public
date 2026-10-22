@@ -64,6 +64,7 @@ import {
   istPattGesetzt,
   istTempoverlust,
 } from "./fehlerart-phasen";
+import { eingestellt, schlagVerpasst, zugOhneNot } from "./fehlerart-neu";
 
 export type Fehlerart =
   | "figurHaengen"
@@ -80,6 +81,11 @@ export type Fehlerart =
   | "koenigPassiv"
   | "bauernvorstoss"
   | "pattGesetzt"
+  // Seit 0.2.118 aus der Auswertung von Lichess-Partien (engine/fehlerart-neu.ts):
+  | "bauerEingestellt"
+  | "schlagVerpasst"
+  | "bauernzugOhneNot"
+  | "koenigszugOhneNot"
   | "ungenau"
   // Seit 0.2.46: blinde Flecken eines Gegners (engine/blindeFlecken.ts), nur im Protokoll.
   | `blind${Capitalize<BlinderFleck>}`;
@@ -99,6 +105,10 @@ export const FEHLERARTEN: readonly Fehlerart[] = [
   "koenigPassiv",
   "bauernvorstoss",
   "pattGesetzt",
+  "bauerEingestellt",
+  "schlagVerpasst",
+  "bauernzugOhneNot",
+  "koenigszugOhneNot",
   "ungenau",
 ];
 
@@ -255,9 +265,11 @@ export function fehlerbefundIn(
   if (drohung.wert > 0) return ignoriert;
   const taktik = uebersehneTaktik(lage, p, antwort);
   if (taktik) return { art: "taktikUebersehen", ...OHNE_EINZELHEITEN, taktik };
-  const phasenart = phasenfehler(lage, p, verlust, besterZug);
-  if (phasenart) return { art: phasenart, ...OHNE_EINZELHEITEN };
-  return { art: "ungenau", ...OHNE_EINZELHEITEN };
+  const verloren = eingestellt(p, antwort);
+  if (verloren) return { ...OHNE_EINZELHEITEN, ...verloren };
+  if (schlagVerpasst(lage, p, besterZug)) return { art: "schlagVerpasst", ...OHNE_EINZELHEITEN };
+  const phasenart = phasenfehler(lage, p, verlust, besterZug) ?? zugOhneNot(lage, p, verlust);
+  return { art: phasenart ?? "ungenau", ...OHNE_EINZELHEITEN };
 }
 
 /** Die Fehlerarten je Phase (0.2.40) in ihrer Reihenfolge; null, wenn keine passt. */

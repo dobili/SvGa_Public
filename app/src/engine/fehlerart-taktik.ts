@@ -60,13 +60,13 @@ function bilanz(regeln: Chess, farbe: Piece["color"]): number {
 }
 
 /**
- * Gewinnt der Gegner in der Widerlegung der Engine tatsächlich Material? Seit 0.2.118 (Hinweis des
+ * Wie viel Material gewinnt der Gegner in der Widerlegung der Engine (Bauerneinheiten, mindestens 0)? Seit 0.2.118 (Hinweis des
  * Autors mit zwei Fehlalarmen: 9… Df6 „Gabel Sd5“, 4. c4 „Gabel e5“): Ein Motiv zählt nur, wenn
  * die Widerlegung der Engine es spielt und der Gegner in den nächsten fünf Halbzügen mindestens
  * einen Bauern gewinnt. Ohne Antwort der Engine zählt kein Motiv.
  */
-function widerlegungGewinnt(danach: Chess, antwort: readonly string[]): boolean {
-  if (antwort.length === 0) return false;
+export function widerlegungsgewinn(danach: Chess, antwort: readonly string[]): number {
+  if (antwort.length === 0) return 0;
   const gegner = danach.turn;
   const regeln = danach.clone();
   const vorher = bilanz(regeln, gegner);
@@ -84,7 +84,7 @@ function widerlegungGewinnt(danach: Chess, antwort: readonly string[]): boolean 
   // Endet die Widerlegung hier, gilt auch ihr letzter Stand (die Engine sieht keine Antwort mehr)
   if (antwort.length <= GEWINN_HALBZUEGE)
     besterStand = Math.max(besterStand, bilanz(regeln, gegner));
-  return besterStand - vorher >= GEWINN_AB;
+  return Math.max(0, besterStand - vorher);
 }
 
 /** Spielt die Widerlegung das Motiv: Zieht ihr erster Zug von diesem Feld (auf dieses Feld)? */
@@ -149,7 +149,7 @@ export function uebersehneTaktik(
   p: Zugprobe,
   antwort: readonly string[],
 ): Taktikbefund | null {
-  if (p.danach.isCheck() || !widerlegungGewinnt(p.danach, antwort)) return null;
+  if (p.danach.isCheck() || widerlegungsgewinn(p.danach, antwort) < GEWINN_AB) return null;
   if (!lage.regeln.isCheck()) {
     const stellung = stellungVon(p.danach);
     const feind = p.danach.turn;

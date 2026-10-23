@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 24.10.2026, Version 0.2.122 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 24.10.2026, Version 0.2.123 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.122“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.123“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,28 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.123: Spielen ohne die Bot-Kalibrierung (R24, R27, R28, R51, R54; Opus, 24.10.2026 nachts)
+
+- [ ] N638. **Partienliste (R54):** Über der Liste stehen „Filter“ und „Neueste zuerst“. „Filter“
+      klappt Häkchen in Gruppen auf (Ergebnis, Wertung, Deine Farbe, Gegner, Bedenkzeit); die Zahl
+      am Knopf zählt die Häkchen, aktive Filter stehen als goldene Chips mit ×. „Neueste zuerst“
+      klappt sechs Ordnungen in Worten auf (Neueste/Älteste, beste/schwächste Spielstärke,
+      stärkster/schwächster Gegner).
+- [ ] N639. **Titel der Partie (R28):** Gegen einen Bot steht oben „gegen Leon“ mit seinem Porträt.
+      Mit eigener Stufe ohne Bot bleibt „Partie gegen die Engine“.
+- [ ] N640. **Art des Gegners (R27):** Unter Spielen stehen jetzt erst Farbe, Bedenkzeit, „Gewertete
+      Partie“, Spielhilfen und Eröffnung, darunter die drei Kacheln „Eigene Stufe“, „Vorgefertigte
+      Bots“, „Eigene Bots“ und direkt darunter „Partie beginnen“.
+- [ ] N641. **Bedenkzeit (R51, Anzeigeteil):** Neu ist 60 + 0. Mit „Gewertete Partie“ gibt es
+      kein „Ohne Uhr“ mehr; ohne gewählte Uhr beginnt eine gewertete Partie mit 10 + 0. In der
+      Partienliste steht hinter jeder Partie mit Uhr die Zeitklasse, etwa „Schnellschach 10 + 0“
+      (nach der Regel von Lichess: Bullet, Blitz, Schnellschach, Klassisch), und unter „Filter“
+      gibt es die Gruppe „Bedenkzeit“. Wertung und „besiegt“ je Zeitklasse folgen mit dem Bot-Chat.
+- [ ] N642. **Festgelegte Eröffnung (R24):** Unter „Eröffnung festlegen“ etwa „Spanische Partie“
+      wählen und gegen einen Bot spielen. Hat das Buch keinen Zug mehr, bleibt der Bot in
+      derselben Eröffnung, mit Zügen aus der freien Eröffnungsliste von Lichess (im Werkzeug
+      „Eröffnung“ siehst du den Namen der Variante); erst danach spielt er wieder frei.
 
 ### Neu in 0.2.122: neue Auswertung nach der Partie (R55, R56; Opus, 23.10.2026 nachts)
 

@@ -113,8 +113,21 @@ function MotivBenennen({ richtig }: { richtig: Aufgabe["motiv"] }) {
   );
 }
 
-/** Eine Taktikaufgabe in der Runde. */
-export function Taktikaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
+/**
+ * Eine Taktikaufgabe in der Runde.
+ *
+ * `motivAbfragen`: false, wenn der Leser nur ein Motiv übt; die Frage „Welches Motiv war es?“
+ * hätte dann immer dieselbe Antwort (Wunsch des Autors R30, 23.10.2026).
+ */
+export function Taktikaufgabe({
+  aufgabe,
+  runde,
+  motivAbfragen = true,
+}: {
+  aufgabe: Aufgabe;
+  runde: Runde;
+  motivAbfragen?: boolean;
+}) {
   useSammelstellung(aufgabe.fen);
   const zugaufgabe = useMemo(() => alsZugaufgabe(aufgabe), [aufgabe]);
   const [zuege, setzeZuege] = useState<readonly string[]>([]);
@@ -189,7 +202,7 @@ export function Taktikaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
           })}
         </Antwortmeldung>
       )}
-      {fertig && <MotivBenennen richtig={aufgabe.motiv} />}
+      {fertig && motivAbfragen && <MotivBenennen richtig={aufgabe.motiv} />}
     </>
   );
 }

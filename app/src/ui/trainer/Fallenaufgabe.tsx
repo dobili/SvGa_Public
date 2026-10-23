@@ -12,7 +12,7 @@ import { warnsignale } from "../../analyse/k4-warnsignale";
 import type { Markierung } from "../../analyse/werkzeug";
 import type { Fallenaufgabe as Aufgabe } from "../../daten/trainerdaten";
 import { sprache, t } from "../../i18n/sprache";
-import { sanInSprache } from "../../schach/notation";
+import { ohneZugzeichen, sanInSprache } from "../../schach/notation";
 import { stellungAusFen } from "../../schach/stellung";
 import { zugFelder } from "../../schach/weiterspielen";
 import { pruefeEntscheidung } from "../../training/fallentrainer";
@@ -23,6 +23,8 @@ import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
 
 const buchzug = (san: string) => sanInSprache(san, sprache());
+/** Das Angebot vor der Entscheidung: ohne „+“, „#“, „!“ oder „?“, die die Antwort verraten (R31). */
+const angebotszug = (san: string) => buchzug(ohneZugzeichen(san));
 
 /** Herkunft: Fallencheck des Buches oder Lichess-Aufgabe. */
 function herkunftstext(aufgabe: Aufgabe): string {
@@ -78,7 +80,7 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
   const farbe = t(aufgabe.amZug === "w" ? "farbe.w" : "farbe.b");
   return (
     <>
-      <p>{t("fallentrainer.auftrag", { farbe, zug: buchzug(aufgabe.angebot) })}</p>
+      <p>{t("fallentrainer.auftrag", { farbe, zug: angebotszug(aufgabe.angebot) })}</p>
       <Trainerbrett
         fen={aufgabe.fen}
         markierungen={markierungen}
@@ -103,7 +105,7 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
               antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, true))
             }
           >
-            {t("fallentrainer.nehmen", { zug: buchzug(aufgabe.angebot) })}
+            {t("fallentrainer.nehmen", { zug: angebotszug(aufgabe.angebot) })}
           </button>
           <button
             type="button"

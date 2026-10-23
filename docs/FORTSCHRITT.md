@@ -1792,3 +1792,15 @@ Rückmeldung zu N730–N739 und die Antworten zu EN4/EN5 einarbeiten. Ändert de
 beim nächsten `python -m pipeline.uebersetzen` als offen (`buch/arbeit/uebersetzung/offen/`).
 Noch deutsch und außerhalb von P6: Trainerdaten (`inhalte/de/trainer/`), Trainingsseiten der
 Website (`inhalte/de/training/`), Namen der Bots.
+
+### Eröffnungen je Elo-Band (23.10.2026 abends)
+
+- pipeline/menschenprofil/eroeffnungen.py → lokal buch/arbeit/eroeffnungen/ (eroeffnungsbuch.json:
+  Stellung → Zug → Anzahl je Zeitklasse und Kategorie der ziehenden Seite, erste 16 Halbzüge, ab
+  20 Partien; eroeffnungen.json: häufigste benannte Eröffnungen je Zelle). Grundlage 83 000
+  Partien ohne Bullet; je Zelle 100 bis 280 Stellungen (klassisch und 2400 dünner).
+- Beispiele Schnellschach: 400 Wayward Queen 4,2 %, Van't Kruijs 4,0 %, Skandinavisch 3,4 %;
+  1200 Philidor, beschleunigtes London; 2400 Damengambit Abtausch, Caro-Kann Abtausch, London,
+  Najdorf. Erster Zug: 400 e4 63 % d4 20 % e3 5 %; 2400 e4 46 % d4 34 % Sf3 11 %.
+- Für ein tieferes Buch später (Teil E) den Monatsstrom der Lichess-Datenbank nach Zugfolgen
+  zählen (nur Rechenzeit).

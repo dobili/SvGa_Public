@@ -12,8 +12,9 @@ import { makeSan } from "chessops/san";
 import { makeSquare } from "chessops/util";
 import { oeffneTrainer, starteImBrowser } from "./hilfen";
 
+/** Ein Feld des Brettes (nur die Knöpfe auf dem Brett, nicht gleichnamige Züge der Zugleiste). */
 const feld = (page: Page | Locator, name: string) =>
-  page.getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
+  page.locator(".brett-tasten").getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
 
 test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", async ({ page }) => {
   await starteImBrowser(page);
@@ -85,7 +86,33 @@ test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", a
   const vergleich = page.getByTestId("zugerraten-vergleich");
   await expect(vergleich).toContainText("warum der Meister anders zog");
   await expect(vergleich).toContainText(/Dein Zug ist laut Engine/, { timeout: 20_000 });
+  await expect(vergleich).toContainText("Partiezug Sf3");
+  // R45: Bewertungsbalken am Brett, Hinweis auf die Figur, Blättern, Analysemodus.
+  await expect(page.getByTestId("bewertungsbalken")).toBeVisible();
+  await page.getByTestId("zugerraten-hinweis").click();
+  await expect(runde).toContainText("Das goldene Feld zeigt die Figur");
+  await feld(page, "d2").click();
+  await feld(page, "d4").click();
+  await expect(runde).toContainText("Getroffen, mit Hinweis");
+  await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 3");
+  const navigation = page.getByTestId("zugerraten-navigation");
+  await navigation.getByRole("button", { name: "Zum Anfang" }).click();
+  await expect(navigation).toContainText("frühere Stellung");
+  await navigation.getByRole("button", { name: "Zum Ende" }).click();
+  await expect(navigation).not.toContainText("frühere Stellung");
+  await runde.getByRole("button", { name: "Analysieren" }).click();
+  await feld(page, "d4").click();
+  await feld(page, "e5").click();
+  const analyse = page.getByTestId("zugerraten-analyse");
+  await expect(analyse).toContainText("4. dxe5");
+  // Der Balken rechnet die Analysestellung (nach 4. dxe5 steht Weiß einen Bauern besser).
+  await expect(page.getByTestId("bewertungsbalken")).not.toHaveAccessibleName(/0,0/, {
+    timeout: 20_000,
+  });
   await page.screenshot({ path: "test-results/bilder/trainer-zugerraten.png", fullPage: true });
+  await analyse.getByRole("button", { name: "Analyse beenden" }).click();
+  await expect(analyse).toHaveCount(0);
+  await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 3");
 });
 
 test("Fehlerdatenbank: Eintrag mit FEN, Auswertung mit Vorschlag, Löschen", async ({ page }) => {

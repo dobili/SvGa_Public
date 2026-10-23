@@ -6,12 +6,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Haben beide Seiten 50 Züge lang weder einen Bauern gezogen noch eine Figur geschlagen, kannst du Remis beanspruchen (Kapitel 0, ",
+     "text": "If neither side has moved a pawn or captured a piece for 50 moves, you can claim a draw (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "50-zuege-regel-0"
     },
     {
@@ -35,22 +35,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Turm, der angreift, statt nur zu bewachen: auf einer offenen Linie, hinter einem Freibauern oder auf der gegnerischen 7. Reihe, wo er mehrere Bauern zugleich bedroht. Im Endspiel ist er häufig mehr wert als ein Bauer (Kapitel 8 und 9; ",
+     "text": "A rook that attacks instead of just guarding: on an open file, behind a passed pawn or on the opponent's 7th rank, where it threatens several pawns at once. In the endgame it is often worth more than a pawn (Chapters 8 and 9; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.2",
+     "text": "Section 8.2",
      "anker": "aktiver-turm-8"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.6",
+     "text": "Section 9.6",
      "anker": "aktiver-turm-9"
     },
     {
@@ -80,22 +80,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Was deine Figuren leisten: welche wichtigen Felder sie kontrollieren, welche Ziele sie angreifen und ob jede eine Aufgabe hat. Einer der vier Faktoren der → ",
+     "text": "What your pieces achieve: which important squares they control, which targets they attack and whether each one has a task. One of the four factors of the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Faktorenbilanz",
-     "begriff": "Faktorenbilanz"
+     "text": "factor balance",
+     "begriff": "Factor balance"
     },
     {
      "art": "text",
-     "text": " (Kapitel 3, ",
+     "text": " (Chapter 3, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.2",
+     "text": "Section 3.2",
      "anker": "aktivitaet-3"
     },
     {
@@ -121,21 +121,21 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Schreibweise der Züge: Anfangsbuchstabe der Figur (K, D, T, L, S; beim Bauern keiner) und Zielfeld, etwa ",
+     "text": "The way moves are written: the letter of the piece (K, Q, R, B, N; none for a pawn) and the destination square, for example ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Sf3"
+     "text": "Nf3"
     },
     {
      "art": "text",
-     "text": " (Kapitel 0, ",
+     "text": " (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "algebraische-notation-0"
     },
     {
@@ -159,12 +159,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Mattbild mit Springer und Turm: Der Springer auf e7 sperrt die Felder g6 und g8, der Turm setzt auf der h-Linie matt. Häufig geht ein Damenopfer auf h7 voraus (Kapitel 7, ",
+     "text": "Mating pattern with knight and rook: the knight on e7 covers the squares g6 and g8, the rook mates on the h-file. Often a queen sacrifice on h7 comes first (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "anastasia-matt-7"
     },
     {
@@ -188,12 +188,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Mattbild mit Turm und Springer: Der Turm gibt direkt neben dem König Schach, der Springer deckt den Turm und das letzte Fluchtfeld (Kapitel 7, ",
+     "text": "Mating pattern with rook and knight: the rook gives check right next to the king, the knight defends the rook and covers the last flight square (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "arabisches-matt-7"
     },
     {
@@ -217,12 +217,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die erste Reihe für Weiß, die achte für Schwarz: die Reihe, auf der die Figuren zu Partiebeginn stehen (Kapitel 1, ",
+     "text": "The first rank for White, the eighth for Black: the rank on which the pieces stand at the start of the game (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "grundreihe-1"
     },
     {
@@ -246,32 +246,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Turm oder eine Dame gibt auf der Grundreihe Schach, und der König hat kein Fluchtfeld, da seine eigenen Bauern vor ihm stehen. Dagegen hilft ein → ",
+     "text": "A rook or queen gives check on the back rank, and the king has no flight square because its own pawns stand in front of it. Making → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Luftloch",
-     "begriff": "Luftloch"
+     "text": "luft",
+     "begriff": "Luft"
     },
     {
      "art": "text",
-     "text": " (Kapitel 5 und 7; ",
+     "text": " helps against it (Chapters 5 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.3",
+     "text": "Section 5.3",
      "anker": "grundreihenmatt-5"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "grundreihenmatt-7"
     },
     {
@@ -303,12 +303,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer, der hinter seinen Nachbarbauern zurückgeblieben ist: Sie stehen schon vor ihm und können ihn nicht mehr decken. Vor ihm liegt ein Loch (Kapitel 5, ",
+     "text": "A pawn that has been left behind its neighboring pawns: they already stand in front of it and can no longer protect it. In front of it lies a hole (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.4",
+     "text": "Section 5.4",
      "anker": "rueckstaendiger-bauer-5"
     },
     {
@@ -332,22 +332,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Läufer, dessen eigene Bauern auf Feldern seiner Farbe stehen und ihm die Wege versperren. Beim ",
+     "text": "A bishop whose own pawns stand on squares of its color and block its paths. With a ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "guten Läufer",
+     "text": "good bishop",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " stehen sie auf der anderen Farbe. Es zählt auch, ob der Läufer vor oder hinter seinen Bauern steht (Kapitel 5, ",
+     "text": " they stand on the other color. It also matters whether the bishop stands in front of or behind its pawns (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.6",
+     "text": "Section 5.6",
      "anker": "schlechter-laeufer-5"
     },
     {
@@ -371,22 +371,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Material, das absichtlich angeboten wird, damit der Gegner einen bestimmten Zug spielt (Kapitel 4 und 7; ",
+     "text": "Material offered on purpose so that the opponent plays a particular move (Chapters 4 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.5",
+     "text": "Section 4.5",
      "anker": "koeder-4"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "koeder-7"
     },
     {
@@ -421,8 +421,8 @@
     },
     {
      "art": "begriff",
-     "text": "Bauernkette",
-     "begriff": "Bauernkette"
+     "text": "Pawn chain",
+     "begriff": "Pawn chain"
     },
     {
      "art": "text",
@@ -440,12 +440,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer deckt nur schräg nach vorn und kann nie zurück. Daraus entstehen die dauerhaften Schwächen einer Stellung (Kapitel 5, ",
+     "text": "A pawn protects only diagonally forward and can never go back. This is where the lasting weaknesses of a position come from (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.1",
+     "text": "Section 5.1",
      "anker": "grundgesetz-der-bauern-5"
     },
     {
@@ -469,12 +469,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Matt gegen den König, der allein übrig geblieben ist, etwa mit König und Dame oder mit König und Turm (Kapitel 8, ",
+     "text": "A mate against a king that is left on its own, for example with king and queen or with king and rook (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.3",
+     "text": "Section 8.3",
      "anker": "elementarmatt-8"
     },
     {
@@ -498,22 +498,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwei eigene Langschrittfiguren hintereinander auf einer Linie, Reihe oder Diagonale. Die vordere schlägt zu, die hintere deckt sie, etwa zwei Türme auf einer offenen Linie oder Dame und Läufer auf einer Diagonale (Kapitel 2 und 7; ",
+     "text": "Two of your long-range pieces lined up one behind the other on a file, rank or diagonal. The front one strikes, the rear one backs it up, for example two rooks on an open file or queen and bishop on a diagonal (Chapters 2 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.3",
+     "text": "Section 2.3",
      "anker": "batterie-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "batterie-7"
     },
     {
@@ -543,12 +543,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Beide Läufer einer Seite, die zusammen alle Felder erreichen. Ein Vorteil ist das Läuferpaar gegen Läufer und Springer oder gegen zwei Springer, vor allem in offenen Stellungen (Kapitel 1, 2 und 5; ",
+     "text": "Both bishops of one side, which together reach all the squares. The bishop pair is an advantage against bishop and knight or against two knights, above all in open positions (Chapters 1, 2, and 5; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.5",
+     "text": "Section 1.5",
      "anker": "laeuferpaar-1"
     },
     {
@@ -558,17 +558,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.9",
+     "text": "Section 2.9",
      "anker": "laeuferpaar-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.6",
+     "text": "Section 5.6",
      "anker": "laeuferpaar-5"
     },
     {
@@ -609,8 +609,8 @@
     },
     {
      "art": "begriff",
-     "text": "Griechisches Geschenk",
-     "begriff": "Griechisches Geschenk"
+     "text": "Greek gift",
+     "begriff": "Greek gift"
     },
     {
      "art": "text",
@@ -628,12 +628,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer auf der c- oder f-Linie (Kapitel 9, ",
+     "text": "A pawn on the c- or f-file (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.7",
+     "text": "Section 9.7",
      "anker": "laeuferbauer-9"
     },
     {
@@ -657,12 +657,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Partien mit sehr kurzer Bedenkzeit, nach den Regeln der FIDE höchstens 10 Minuten je Seite. Eine Zeitgutschrift für 60 Züge wird dabei eingerechnet [2] (Kapitel 12, ",
+     "text": "Games with very short thinking time, under FIDE rules at most 10 minutes per side. An increment for 60 moves is included in this count [2] (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "blitz-12"
     },
     {
@@ -686,12 +686,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur besetzt das Feld vor einem gegnerischen Bauern, meist einem Freibauern oder Isolani, und hält ihn dort fest; dieses Feld heißt Blockadefeld. Als Blockadefigur eignet sich am besten ein Springer (Kapitel 5, ",
+     "text": "A piece occupies the square in front of an enemy pawn, usually a passed pawn or isolani, and holds it there; this square is called the blockade square. A knight is the best blockading piece (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "blockade-5"
     },
     {
@@ -715,7 +715,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur so ziehen oder stehen lassen, dass der Gegner sie ohne Gegenwert schlagen kann.",
+     "text": "Moving a piece, or leaving it where it is, so that the opponent can capture it for nothing in return.",
      "stil": "normal"
     }
    ],
@@ -727,12 +727,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Mattbild mit zwei Läufern: Ihre Diagonalen kreuzen sich vor einem König, dem die eigenen Figuren die Flucht versperren. Häufig trifft es die lange Rochade (Kapitel 7, ",
+     "text": "Mating pattern with two bishops: their diagonals cross in front of a king whose own pieces block its escape. It often strikes after queenside castling (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "boden-matt-7"
     },
     {
@@ -756,7 +756,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Bauernstruktur der Sizilianischen Verteidigung nach ",
+     "text": "Pawn structure of the Sicilian Defense after ",
      "stil": "normal"
     },
     {
@@ -765,12 +765,12 @@
     },
     {
      "art": "text",
-     "text": ": Schwarz nimmt das Loch auf d5 bewusst in Kauf und bekommt dafür Raum und aktives Figurenspiel (Kapitel 5, ",
+     "text": ": Black deliberately accepts the hole on d5 and gets space and active piece play in return (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.3",
+     "text": "Section 5.3",
      "anker": "boleslawski-struktur-5"
     },
     {
@@ -794,12 +794,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Mattführung mit König und Dame: Die Dame sperrt den gegnerischen König in einen Kasten, der eigene König rückt nach, die Dame verkleinert den Kasten, und am Rand setzt sie matt (Kapitel 8, ",
+     "text": "Mating with king and queen: the queen locks the enemy king in a box, your own king follows, the queen makes the box smaller, and at the edge it gives mate (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.3",
+     "text": "Section 8.3",
      "anker": "kastenmethode-8"
     },
     {
@@ -823,12 +823,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauernopfer, das einen Freibauern erzwingt, obwohl sich gleich viele Bauern gegenüberstehen. Das klassische Muster ist drei gegen drei (Kapitel 8, ",
+     "text": "A pawn sacrifice that forces a passed pawn even though the two sides have the same number of pawns facing each other. The classic pattern is three against three (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "durchbruch-8"
     },
     {
@@ -852,22 +852,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Das Gewinnverfahren in der → ",
+     "text": "The winning method in the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Lucena-Stellung",
-     "begriff": "Lucena-Stellung"
+     "text": "Lucena position",
+     "begriff": "Lucena position"
     },
     {
      "art": "text",
-     "text": ": Zunächst treibt ein Schach den gegnerischen König eine Linie weiter weg, dann geht der Turm auf die 4. Reihe, und der König tritt vor seinem Bauern heraus. Gegen die Schachs stellt sich der Turm dazwischen, auf ein Feld, das der eigene König deckt (Kapitel 9, ",
+     "text": ": first a check drives the enemy king one file farther away, then the rook goes to the 4th rank, and the king steps out in front of its pawn. Against the checks, the rook blocks on a square that its own king defends (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.3",
+     "text": "Section 9.3",
      "anker": "brueckenbau-9"
     },
     {
@@ -893,32 +893,32 @@
    "text": [
     {
      "art": "text",
-     "text": "In der Taktik die Kurzform für → ",
+     "text": "In tactics, short for → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Kandidatenzug",
-     "begriff": "Kandidatenzug"
+     "text": "candidate move",
+     "begriff": "Candidate move"
     },
     {
      "art": "text",
-     "text": ". Sonst der Bauer einer → ",
+     "text": ". Otherwise, the pawn of a → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Bauernmehrheit",
-     "begriff": "Bauernmehrheit (Mehrheit)"
+     "text": "pawn majority",
+     "begriff": "Pawn majority (majority)"
     },
     {
      "art": "text",
-     "text": ", vor dem auf seiner Linie kein gegnerischer Bauer steht. Nach der Kandidatenregel rückt er zuerst vor (Kapitel 5, 7 und 8; ",
+     "text": " that has no enemy pawn in front of it on its file. According to the candidate rule, it advances first (Chapters 5, 7, and 8; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "kandidat-5"
     },
     {
@@ -928,17 +928,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "kandidat-7"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "kandidat-8"
     },
     {
@@ -977,22 +977,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Jeder Zug, den du ernsthaft prüfst. In der Taktik sind das die erzwingenden Züge. Sammle zunächst alle Kandidaten, bevor du den ersten rechnest (Kapitel 7 und 12; ",
+     "text": "Any move you seriously consider. In tactics these are the forcing moves. First collect all candidates before you calculate the first one (Chapters 7 and 12; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "kandidatenzug-7"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.2",
+     "text": "Section 12.2",
      "anker": "kandidatenzug-12"
     },
     {
@@ -1022,12 +1022,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Der Drang, eine scheinbar ungedeckte Figur sofort zu schlagen. Auf ihm bauen fast alle Eröffnungsfallen auf (Kapitel 1, ",
+     "text": "The urge to capture a seemingly undefended piece immediately. Almost all opening traps are built on it (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.3",
+     "text": "Section 1.3",
      "anker": "schlagreflex-1"
     },
     {
@@ -1051,7 +1051,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Bauernstruktur, die im Abgelehnten Damengambit nach dem Tausch ",
+     "text": "Pawn structure that arises in the Queen's Gambit Declined after the exchange ",
      "stil": "normal"
     },
     {
@@ -1060,22 +1060,22 @@
     },
     {
      "art": "text",
-     "text": " entsteht. Weiß hat am Damenflügel zwei Bauern gegen drei und spielt dort den → ",
+     "text": ". White has two pawns against three on the queenside and plays the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Minderheitsangriff",
-     "begriff": "Minderheitsangriff"
+     "text": "minority attack",
+     "begriff": "Minority attack"
     },
     {
      "art": "text",
-     "text": " (Kapitel 5, ",
+     "text": " there (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "carlsbad-struktur-5"
     },
     {
@@ -1101,12 +1101,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Der einzige Zug mit zwei eigenen Figuren: Der König zieht zwei Felder in Richtung eines Turms, und dieser Turm springt über ihn hinweg auf das Feld daneben. Kurz heißt die Rochade zum Königsflügel, lang die zum Damenflügel. Erlaubt ist sie nur, wenn König und Turm noch nicht gezogen haben, zwischen ihnen nichts steht und der König weder im Schach steht noch über oder auf ein angegriffenes Feld zieht (Kapitel 0, ",
+     "text": "The only move with two of your own pieces: the king moves two squares toward a rook, and that rook jumps over it to the square next to it. Castling toward the kingside is called short, toward the queenside long. It is allowed only if king and rook have not yet moved, nothing stands between them, and the king is not in check and does not pass over or land on an attacked square (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "rochade-0"
     },
     {
@@ -1130,12 +1130,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Partie, die außerhalb eines Turniers gespielt wird (Kapitel 11, ",
+     "text": "A game played outside a tournament (Chapter 11, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 11.4",
+     "text": "Section 11.4",
      "anker": "freie-partie-11"
     },
     {
@@ -1159,12 +1159,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die vier Felder e4, d4, e5 und d5. Von dort erreichen die Figuren beide Flügel. Die Kontrolle des Zentrums ist eines der drei Ziele jeder Eröffnung (Kapitel 1, ",
+     "text": "The four squares e4, d4, e5 and d5. From there the pieces reach both wings. Control of the center is one of the three goals of every opening (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "zentrum-1"
     },
     {
@@ -1188,12 +1188,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer auf der d- oder e-Linie (Kapitel 9, ",
+     "text": "A pawn on the d- or e-file (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.7",
+     "text": "Section 9.7",
      "anker": "mittelbauer-9"
     },
     {
@@ -1222,8 +1222,8 @@
     },
     {
      "art": "begriff",
-     "text": "Bauernkette",
-     "begriff": "Bauernkette"
+     "text": "Pawn chain",
+     "begriff": "Pawn chain"
     },
     {
      "art": "text",
@@ -1246,8 +1246,8 @@
     },
     {
      "art": "begriff",
-     "text": "Bauernkette",
-     "begriff": "Bauernkette"
+     "text": "Pawn chain",
+     "begriff": "Pawn chain"
     },
     {
      "art": "text",
@@ -1265,12 +1265,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur greift den König an. Der angegriffene Spieler muss sofort reagieren: den König wegziehen, die angreifende Figur schlagen oder eine Figur dazwischenstellen (Kapitel 0, ",
+     "text": "A piece attacks the king. The player under attack must react immediately: move the king away, capture the attacking piece or put a piece in between (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "schach-0"
     },
     {
@@ -1294,7 +1294,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Drei Fragen gegen Fallen: ",
+     "text": "Three questions against traps: ",
      "stil": "normal"
     },
     {
@@ -1304,7 +1304,7 @@
     },
     {
      "art": "text",
-     "text": " Warum lässt mein Gegner das zu? ",
+     "text": " Why does my opponent allow this? ",
      "stil": "normal"
     },
     {
@@ -1314,7 +1314,7 @@
     },
     {
      "art": "text",
-     "text": " Was passiert zwei Antworten weiter? ",
+     "text": " What happens two replies further on? ",
      "stil": "normal"
     },
     {
@@ -1324,12 +1324,12 @@
     },
     {
      "art": "text",
-     "text": " Ist die Fesselung absolut oder relativ, und entsteht eine zweite? (Kapitel 4, ",
+     "text": " Is the pin absolute or relative, and does a second one arise? (Chapter 4, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.2",
+     "text": "Section 4.2",
      "anker": "prueffragen-4"
     },
     {
@@ -1353,12 +1353,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Der Abstand, den ein Turm zum gegnerischen König braucht, um Schachs zu geben: Steht er zu nah, geht der König auf ihn zu, und die Schachs hören auf. Faustregel: mindestens drei Linien zwischen Turm und Bauer (Kapitel 9, ",
+     "text": "The distance a rook needs from the enemy king in order to give checks: if it stands too close, the king walks toward it and the checks stop. Rule of thumb: at least three files between rook and pawn (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.1",
+     "text": "Section 9.1",
      "anker": "schachdistanz-9"
     },
     {
@@ -1387,8 +1387,8 @@
     },
     {
      "art": "begriff",
-     "text": "Matt",
-     "begriff": "Matt"
+     "text": "Mate",
+     "begriff": "Mate"
     },
     {
      "art": "text",
@@ -1406,12 +1406,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Zugnummer, für die du vor der Partie festlegst, wie viel Bedenkzeit du dort mindestens noch haben willst (Kapitel 12, ",
+     "text": "A move number for which you decide before the game how much thinking time you want to have left at that point at least (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "kontrollpunkt-12"
     },
     {
@@ -1435,12 +1435,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Uhr mit zwei Anzeigen. Es läuft immer die Zeit der Seite, die am Zug ist. Nach deinem Zug drückst du deinen Knopf (Kapitel 12, ",
+     "text": "A clock with two displays. The time of the side to move is always running. After your move you press your button (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "schachuhr-12"
     },
     {
@@ -1464,12 +1464,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Prüfung vor jedem Zug, in dieser Reihenfolge und für beide Seiten: Schachs, Schläge, Drohungen. Zwingt nichts davon, folgt die Optimierung: Welcher ruhige Zug verbessert meine Stellung am meisten? (Kapitel 1, ",
+     "text": "The check before every move, in this order and for both sides: checks, captures, threats. If none of these forces anything, optimization follows: Which quiet move improves my position the most? (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.4",
+     "text": "Section 1.4",
      "anker": "schach-roentgen-regel-1"
     },
     {
@@ -1493,12 +1493,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Partie mit langer Bedenkzeit, nach den Regeln der FIDE 60 Minuten und mehr je Seite [2] (Kapitel 12, ",
+     "text": "A game with long thinking time, under FIDE rules 60 minutes or more per side [2] (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "klassische-partie-12"
     },
     {
@@ -1522,12 +1522,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Du opferst eine eigene Figur, nur um das Feld freizumachen, auf dem sie steht. Eine andere deiner Figuren entscheidet von dort aus die Partie (Kapitel 7, ",
+     "text": "You sacrifice one of your pieces just to vacate the square it stands on. Another of your pieces decides the game from there (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "raeumung-7"
     },
     {
@@ -1551,12 +1551,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Im Zentrum stehen sich verkeilte Bauernpaare gegenüber. Springer sind hier häufig die besseren Leichtfiguren (Kapitel 5, ",
+     "text": "In the center, interlocked pairs of pawns face each other. Knights are often the better minor pieces here (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.6",
+     "text": "Section 5.6",
      "anker": "geschlossene-stellung-5"
     },
     {
@@ -1580,32 +1580,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Alle Felder einer Farbe oder eine Gruppe davon. Ein ",
+     "text": "All the squares of one color, or a group of them. A ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "schwacher Farbkomplex",
+     "text": "weak color complex",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " entsteht, wenn einer Seite der Läufer einer Farbe fehlt, während ihre Bauern auf Feldern der anderen Farbe stehen: Die Felder der einen Farbe gehören dann dem Gegner (Kapitel 6 und 9; ",
+     "text": " arises when one side is missing the bishop of one color while its pawns stand on squares of the other color: the squares of that one color then belong to the opponent (Chapters 6 and 9; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.5",
+     "text": "Section 6.5",
      "anker": "farbkomplex-6"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.8",
+     "text": "Section 9.8",
      "anker": "farbkomplex-9"
     },
     {
@@ -1635,12 +1635,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine erzwungene Zugfolge, die Material gewinnt oder zum Matt führt, auch gegen die beste Verteidigung (Kapitel 7, ",
+     "text": "A forced move sequence that wins material or leads to mate, even against the best defense (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 7",
+     "text": "Chapter 7",
      "anker": "kombination-7"
     },
     {
@@ -1664,22 +1664,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Was die opfernde Seite für ihr Material bekommt. Gemessen wird sie mit der → ",
+     "text": "What the sacrificing side gets for its material. It is measured with the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Faktorenbilanz",
-     "begriff": "Faktorenbilanz"
+     "text": "factor balance",
+     "begriff": "Factor balance"
     },
     {
      "art": "text",
-     "text": " (Kapitel 3, ",
+     "text": " (Chapter 3, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.1",
+     "text": "Section 3.1",
      "anker": "kompensation-3"
     },
     {
@@ -1705,12 +1705,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwei Freibauern auf benachbarten Linien. Steht einer schräg hinter dem anderen, deckt er ihn. Schlägt der König den hinteren, läuft der vordere durch (Kapitel 8, ",
+     "text": "Two passed pawns on neighboring files. If one stands diagonally behind the other, it protects it. If the king takes the rear one, the front one runs through (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "verbundene-freibauern-8"
     },
     {
@@ -1734,22 +1734,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwischen den beiden Türmen steht keine Figur mehr, daher decken sie sich gegenseitig (Kapitel 1 und 2; ",
+     "text": "No piece stands between the two rooks anymore, so they protect each other (Chapters 1 and 2; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "verbundene-tuerme-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 2",
+     "text": "Chapter 2",
      "anker": "verbundene-tuerme-2"
     },
     {
@@ -1779,12 +1779,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Feld kontrollierst du, wenn einer deiner Bauern oder eine deiner Figuren dort schlagen könnte, sobald eine gegnerische Figur es betritt (Kapitel 2, ",
+     "text": "You control a square if one of your pawns or pieces could capture there as soon as an enemy piece steps onto it (Chapter 2, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 2",
+     "text": "Chapter 2",
      "anker": "kontrollieren-2"
     },
     {
@@ -1808,22 +1808,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwei Felder, die zusammengehören: Stehen beide Könige dort, ist im Nachteil, wer mit dem König ziehen muss. Die → ",
+     "text": "Two squares that belong together: if both kings stand on them, the side that has to move its king is at a disadvantage. The → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Opposition",
+     "text": "opposition",
      "begriff": "Opposition"
     },
     {
      "art": "text",
-     "text": " ist der einfachste Fall (Kapitel 8, ",
+     "text": " is the simplest case (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.9",
+     "text": "Section 8.9",
      "anker": "korrespondierende-felder-8"
     },
     {
@@ -1849,7 +1849,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Eigene Drohungen der Seite, die sich verteidigt. Wer Gegenspiel hat, zwingt den Angreifer, sich auch um die eigene Stellung zu kümmern.",
+     "text": "Threats of its own by the side that is defending. Whoever has counterplay forces the attacker to also take care of their own position.",
      "stil": "normal"
     }
    ],
@@ -1861,12 +1861,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Stelle der Partie, an der sich viel entscheidet und für die du Bedenkzeit aufsparst: die Öffnung des Zentrums, ein Opfer, ein Abtausch, ein Königsangriff oder der Übergang ins Endspiel (Kapitel 12, ",
+     "text": "A point in the game where a lot is decided and for which you save thinking time: the opening of the center, a sacrifice, an exchange, an attack on the king or the transition to the endgame (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "kritischer-moment-12"
     },
     {
@@ -1890,22 +1890,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Im Turmendspiel: Der Turm sperrt eine Linie oder Reihe, die der gegnerische König nicht überschreiten kann. Der König ist dann vom Bauern ",
+     "text": "In rook endgames: the rook blocks a file or rank that the enemy king cannot cross. The king is then ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "abgeschnitten",
+     "text": "cut off",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": ". Faustregel: Liegen drei oder mehr Linien zwischen König und Bauer, reicht es häufig zum Gewinn (Kapitel 9, ",
+     "text": " from the pawn. Rule of thumb: if there are three or more files between king and pawn, it is often enough to win (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.1",
+     "text": "Section 9.1",
      "anker": "abschneiden-9"
     },
     {
@@ -1929,12 +1929,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Mattbild: Die Dame setzt auf h7 matt, gedeckt von einem Bauern auf g6. Häufig geht ein Turmopfer auf h8 voraus (Kapitel 7, ",
+     "text": "Mating pattern: the queen mates on h7, supported by a pawn on g6. Often a rook sacrifice on h8 comes first (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "damiano-matt-7"
     },
     {
@@ -1958,12 +1958,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Stellung, in der keine Seite mehr mattsetzen kann, auch nicht bei schlechtester Gegenwehr, etwa König gegen König. Die Partie ist sofort remis (Kapitel 0, ",
+     "text": "A position in which neither side can give mate anymore, not even against the worst possible defense, for example king against king. The game is a draw immediately (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "tote-stellung-0"
     },
     {
@@ -1987,12 +1987,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die vier häufigsten Fehler in der Eröffnung: die verfrühte Dame, Materialgier vor Entwicklung, Passivität und der König, der in der Mitte bleibt (Kapitel 1, ",
+     "text": "The four most common mistakes in the opening: the early queen, greed for material before development, passivity, and the king that stays in the center (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.2",
+     "text": "Section 1.2",
      "anker": "todsuenden-1"
     },
     {
@@ -2016,12 +2016,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Taktisches Motiv: Ein Köder zieht eine gegnerische Figur auf ein bestimmtes Feld, auf dem sie selbst Opfer einer Taktik wird (Kapitel 7, ",
+     "text": "Tactical motif: a bait lures an enemy piece onto a particular square where it becomes the victim of a tactic itself (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "hinlenkung-7"
     },
     {
@@ -2045,12 +2045,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Fünf Fragen gegen eine Drohung, vom einfachsten Mittel zum riskantesten: schlagen, wegziehen, decken, dazwischenstellen, Gegendrohung (Kapitel 7, ",
+     "text": "Five questions against a threat, from the simplest means to the riskiest: capture, move away, defend, block, counterthreat (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "abwehrfragen-7"
     },
     {
@@ -2074,22 +2074,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Taktisches Motiv: Ein Verteidiger wird von seinem Posten weggelockt, weil er eine andere Aufgabe übernehmen muss. Das Feld oder die Figur, die er bewacht hat, ist danach schutzlos (Kapitel 4 und 7; ",
+     "text": "Tactical motif: a defender is lured away from its post because it has to take on another task. The square or piece it was guarding is then unprotected (Chapters 4 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.7",
+     "text": "Section 4.7",
      "anker": "ablenkung-4"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "ablenkung-7"
     },
     {
@@ -2119,12 +2119,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur, die ohnehin geschlagen oder getauscht wird und daher vorher noch so viel wie möglich mitnimmt (Kapitel 7, ",
+     "text": "A piece that is going to be captured or traded anyway and therefore takes as much as possible with it first (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "desperado-7"
     },
     {
@@ -2148,32 +2148,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Figuren von der Grundreihe auf aktive Felder bringen. Sie ist eines der drei Ziele jeder → ",
+     "text": "Bringing the pieces from the back rank to active squares. It is one of the three goals of every → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Eröffnung",
-     "begriff": "Eröffnung"
+     "text": "opening",
+     "begriff": "Opening"
     },
     {
      "art": "text",
-     "text": " (Kapitel 1 und 2; ",
+     "text": " (Chapters 1 and 2; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "entwicklung-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 2",
+     "text": "Chapter 2",
      "anker": "entwicklung-2"
     },
     {
@@ -2215,12 +2215,12 @@
     },
     {
      "art": "text",
-     "text": ", bei der die Könige auf einer Diagonale stehen, mit einem Feld oder drei Feldern dazwischen (Kapitel 8, ",
+     "text": " in which the kings stand on a diagonal, with one square or three squares between them (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.5",
+     "text": "Section 8.5",
      "anker": "diagonalopposition-8"
     },
     {
@@ -2246,32 +2246,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur zieht weg und gibt dabei die Linie, Reihe oder Diagonale einer eigenen → ",
+     "text": "A piece moves away and in doing so opens the file, rank or diagonal of one of your own → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Langschrittfigur",
-     "begriff": "Langschrittfigur"
+     "text": "long-range pieces",
+     "begriff": "Long-range piece"
     },
     {
      "art": "text",
-     "text": " frei, die nun angreift. Greift die abziehende Figur selbst auch etwas an, entstehen zwei Drohungen mit einem Zug (Kapitel 3 und 7; ",
+     "text": ", which now attacks. If the moving piece also attacks something itself, you create two threats with one move (Chapters 3 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.6",
+     "text": "Section 3.6",
      "anker": "abzugsangriff-3"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "abzugsangriff-7"
     },
     {
@@ -2303,22 +2303,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Abzugsangriff, bei dem die freigelegte Figur Schach gibt. Die abziehende Figur darf in dieser Zeit fast alles angreifen (Kapitel 2 und 7; ",
+     "text": "A discovered attack in which the unmasked piece gives check. Meanwhile the moving piece can attack almost anything (Chapters 2 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.5",
+     "text": "Section 2.5",
      "anker": "abzugsschach-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "abzugsschach-7"
     },
     {
@@ -2353,8 +2353,8 @@
     },
     {
      "art": "begriff",
-     "text": "Abzugsangriff",
-     "begriff": "Abzugsangriff"
+     "text": "Discovered attack",
+     "begriff": "Discovered attack"
     },
     {
      "art": "text",
@@ -2382,12 +2382,12 @@
     },
     {
      "art": "text",
-     "text": " aus der Ferne: Die Könige stehen auf derselben Linie oder Reihe mit drei oder fünf Feldern dazwischen (Kapitel 8, ",
+     "text": " from a distance: the kings stand on the same file or rank with three or five squares between them (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.5",
+     "text": "Section 8.5",
      "anker": "fernopposition-8"
     },
     {
@@ -2413,22 +2413,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Zug, der zwei Ziele zugleich bedroht. Der Gegner kann meist nur eines retten. Jede Figur kann ihn ausführen (Kapitel 4 und 7; ",
+     "text": "A move that threatens two targets at once. The opponent can usually save only one. Any piece can carry it out (Chapters 4 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.9",
+     "text": "Section 4.9",
      "anker": "doppelangriff-4"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "doppelangriff-7"
     },
     {
@@ -2458,22 +2458,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwei Figuren geben gleichzeitig Schach. Schlagen und Dazwischenstellen helfen dann nicht mehr, nur ein Königszug rettet (Kapitel 0 und 7; ",
+     "text": "Two pieces give check at the same time. Capturing and blocking no longer help; only a king move saves (Chapters 0 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "doppelschach-0"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "doppelschach-7"
     },
     {
@@ -2503,22 +2503,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwei eigene Bauern auf derselben Linie. Sie entstehen, wenn ein Bauer schlägt und dabei auf eine Linie zieht, auf der schon ein eigener Bauer steht (Kapitel 2 und 5; ",
+     "text": "Two of your pawns on the same file. They arise when a pawn captures and in doing so moves onto a file where one of your pawns already stands (Chapters 2 and 5; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.9",
+     "text": "Section 2.9",
      "anker": "doppelbauern-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.4",
+     "text": "Section 5.4",
      "anker": "doppelbauern-5"
     },
     {
@@ -2548,12 +2548,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Beide Türme hintereinander auf dieselbe Linie stellen (Kapitel 6, ",
+     "text": "Placing both rooks one behind the other on the same file (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.5",
+     "text": "Section 6.5",
      "anker": "verdoppeln-6"
     },
     {
@@ -2577,12 +2577,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Unentschieden. Eine Partie endet remis durch Patt, Einigung, eine tote Stellung, dreifache Stellungswiederholung oder die 50-Züge-Regel. Die beiden letzten musst du beanspruchen, da die Partie erst nach fünfmaliger Wiederholung oder 75 Zügen ohne Bauernzug und Schlag von selbst endet (Kapitel 0, ",
+     "text": "A tied game. A game ends in a draw by stalemate, agreement, a dead position, threefold repetition or the 50-move rule. The last two you have to claim, since the game only ends by itself after fivefold repetition or 75 moves without a pawn move or capture (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "remis-0"
     },
     {
@@ -2606,12 +2606,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Wie lange ein Vorteil hält. Material ist dauerhaft, ein Zeitvorsprung hält nur einige Züge, Königssicherheit und Aktivität liegen dazwischen (Kapitel 3, ",
+     "text": "How long an advantage lasts. Material is permanent, a lead in time lasts only a few moves, and king safety and activity lie in between (Chapter 3, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.3",
+     "text": "Section 3.3",
      "anker": "haltbarkeit-3"
     },
     {
@@ -2635,12 +2635,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Wertungszahl des Deutschen Schachbundes [1]. Wie die Elo-Zahl bekommst du sie über gewertete Turnierpartien (Kapitel 12, ",
+     "text": "The rating of the German Chess Federation (Deutscher Schachbund) [1]. Like the Elo rating, you get it through rated tournament games (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "dwz-12"
     },
     {
@@ -2664,22 +2664,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die internationale Wertungszahl des Weltschachbundes FIDE [3]. Sie drückt die Spielstärke in einer einzigen Zahl aus: je höher, desto stärker (Kapitel 0 und 12; ",
+     "text": "The international rating of the World Chess Federation FIDE [3]. It expresses playing strength in a single number: the higher, the stronger (Chapters 0 and 12; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "elo-zahl-0"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "elo-zahl-12"
     },
     {
@@ -2709,12 +2709,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Französisch für „im Vorbeigehen“. Zieht ein Bauer von seinem Startfeld zwei Felder vor und landet neben einem gegnerischen Bauern, darf dieser ihn im unmittelbar folgenden Zug so schlagen, als wäre er nur ein Feld vorgerückt (Kapitel 0, ",
+     "text": "French for “in passing”. If a pawn moves two squares forward from its starting square and lands next to an enemy pawn, that pawn may capture it on the very next move as if it had advanced only one square (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "en-passant-0"
     },
     {
@@ -2738,12 +2738,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Phase der Partie mit wenigen Figuren, meist ohne Damen. Der König wird jetzt zur aktiven Figur, und die Freibauern entscheiden (Kapitel 8, ",
+     "text": "The phase of the game with few pieces, usually without queens. The king now becomes an active piece, and the passed pawns decide (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.1",
+     "text": "Section 8.1",
      "anker": "endspiel-8"
     },
     {
@@ -2791,12 +2791,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die sechs goldenen Endspielregeln: Aktiviere deinen König. Nutze Opposition und Zugzwang. Spiele geduldig. Tausche klug. Verteidige aktiv. Rechne bis zur Umwandlung (Kapitel 8, ",
+     "text": "The six golden endgame rules: Activate your king. Use opposition and zugzwang. Be patient. Trade wisely. Defend actively. Calculate through to promotion (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.2",
+     "text": "Section 8.2",
      "anker": "endspielregeln-8"
     },
     {
@@ -2820,12 +2820,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Schachprogramm wie das kostenlose Stockfish, das Stellungen berechnet und bewertet. Die Zahl, die es anzeigt, etwa +0,7, ist eine grobe Bewertung in Bauerneinheiten: Plus heißt Vorteil für Weiß, Minus Vorteil für Schwarz (Kapitel 12, ",
+     "text": "A chess program, such as the free Stockfish, that calculates and evaluates positions. The number it shows, for example +0.7, is a rough evaluation in pawn units: plus means an advantage for White, minus an advantage for Black (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.2",
+     "text": "Section 12.2",
      "anker": "engine-12"
     },
     {
@@ -2849,13 +2849,13 @@
    "text": [
     {
      "art": "text",
-     "text": "Beide Seiten schlagen nacheinander je eine Figur, oft von gleichem Wert, etwa Läufer gegen Springer. Ob sich ein Abtausch lohnt, klärt die → ",
+     "text": "Both sides capture one piece each in turn, often of equal value, such as bishop for knight. Whether an exchange pays off is answered by the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Tauschfrage",
-     "begriff": "Tauschfrage"
+     "text": "exchange question",
+     "begriff": "Exchange question"
     },
     {
      "art": "text",
@@ -2873,12 +2873,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Frage vor jedem Abtausch, wem er nützt. Wer die Schwäche hat, behält Figuren, wer sie angreift, tauscht. Auch wer mehr Raum hat, behält seine Figuren. Im Endspiel lautet sie: Welches Endspiel entsteht nach dem Tausch? (Kapitel 5, 6 und 8; ",
+     "text": "The question before every exchange: who benefits from it? The side with the weakness keeps pieces; the side attacking it trades. The side with more space also keeps its pieces. In the endgame it reads: Which endgame arises after the trade? (Chapters 5, 6, and 8; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.6",
+     "text": "Section 5.6",
      "anker": "tauschfrage-5"
     },
     {
@@ -2888,17 +2888,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.5",
+     "text": "Section 6.5",
      "anker": "tauschfrage-6"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.2",
+     "text": "Section 8.2",
      "anker": "tauschfrage-8"
     },
     {
@@ -2934,12 +2934,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Du gibst freiwillig einen Turm für eine Leichtfigur. Es lohnt sich nur für etwas, das lange hält: einen entblößten gegnerischen König, zerstörte Bauern oder einen Vorposten (Kapitel 6, ",
+     "text": "You voluntarily give a rook for a minor piece. It only pays off for something that lasts: an exposed enemy king, wrecked pawns or an outpost (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.7",
+     "text": "Section 6.7",
      "anker": "qualitaetsopfer-6"
     },
     {
@@ -2963,7 +2963,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer, den eine Seite mehr hat als die andere.",
+     "text": "A pawn that one side has more than the other.",
      "stil": "normal"
     }
    ],
@@ -2975,22 +2975,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Tabelle, mit der das Buch ein Opfer bewertet. Sie vergleicht Material und Zeit und bewertet für jede Seite einzeln Königssicherheit und Aktivität. Darunter stehen die → ",
+     "text": "The table the book uses to evaluate a sacrifice. It compares material and time and rates king safety and activity separately for each side. Below it come the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Haltbarkeit",
-     "begriff": "Haltbarkeit"
+     "text": "durability",
+     "begriff": "Durability"
     },
     {
      "art": "text",
-     "text": " der Kompensation und ein Urteil (Kapitel 3, ",
+     "text": " of the compensation and a verdict (Chapter 3, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.3",
+     "text": "Section 3.3",
      "anker": "faktorenbilanz-3"
     },
     {
@@ -3016,22 +3016,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Entwicklung eines Läufers auf die lange Diagonale, also nach b2 oder g2 (bei Schwarz nach b7 oder g7), nachdem der b- oder g-Bauer ein Feld vorgerückt ist (Kapitel 1 und 2; ",
+     "text": "Developing a bishop onto the long diagonal, that is, to b2 or g2 (for Black to b7 or g7), after the b- or g-pawn has moved forward one square (Chapters 1 and 2; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "fianchetto-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.6",
+     "text": "Section 2.6",
      "anker": "fianchetto-2"
     },
     {
@@ -3061,22 +3061,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Der Weltschachbund. Er gibt die Schachregeln heraus und führt die Elo-Zahlen (Kapitel 0 und 12; ",
+     "text": "The World Chess Federation. It publishes the rules of chess and keeps the Elo ratings (Chapters 0 and 12; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "fide-0"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "fide-12"
     },
     {
@@ -3106,22 +3106,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine senkrechte Spalte des Bretts, benannt mit den Buchstaben a bis h. Die waagerechten Zeilen heißen → ",
+     "text": "A vertical column of the board, named with the letters a to h. The horizontal rows are called → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Reihe",
-     "begriff": "Reihe"
+     "text": "ranks",
+     "begriff": "Rank"
     },
     {
      "art": "text",
-     "text": "n (Kapitel 0, ",
+     "text": " (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "linie-0"
     },
     {
@@ -3147,12 +3147,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Einen schwachen Bauern festlegen, bevor du ihn angreifst. Fixiert ist er, wenn er nicht mehr vorrücken und sich tauschen kann, da das Feld vor ihm bewacht ist und kein eigener Bauer den Vorstoß stützt. Die Reihenfolge lautet: erst fixieren, dann angreifen (Kapitel 6, ",
+     "text": "Pinning down a weak pawn before you attack it. It is fixed when it can no longer advance and trade itself off, because the square in front of it is guarded and no pawn of its own supports the advance. The order is: first fix, then attack (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.3",
+     "text": "Section 6.3",
      "anker": "fixieren-6"
     },
     {
@@ -3176,12 +3176,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Schach, ein Schlag oder eine Drohung: ein Zug, auf den der Gegner antworten muss (Kapitel 7, ",
+     "text": "A check, a capture or a threat: a move your opponent has to respond to (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "erzwingender-zug-7"
     },
     {
@@ -3205,32 +3205,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein → ",
+     "text": "A → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Doppelangriff",
-     "begriff": "Doppelangriff"
+     "text": "double attack",
+     "begriff": "Double attack"
     },
     {
      "art": "text",
-     "text": " einer einzelnen Figur auf zwei gegnerische Figuren, häufig ausgeführt von einem Springer oder einem Bauern (Kapitel 1 und 7; ",
+     "text": " by a single piece on two enemy pieces, often carried out by a knight or a pawn (Chapters 1 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.3",
+     "text": "Section 1.3",
      "anker": "gabel-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "gabel-7"
     },
     {
@@ -3262,30 +3262,30 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur schlägt einen Bauern und lässt sich schlagen. Eine Bauerngabel holt die Figur dann zurück, etwa im Vierspringerspiel nach ",
+     "text": "A piece captures a pawn and lets itself be captured. A pawn fork then wins the piece back, for example in the Four Knights Game after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Lc4"
+     "text": "4. Bc4"
     },
     {
      "art": "text",
-     "text": " mit ",
+     "text": " with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Sxe4 5. Sxe4 d5"
+     "text": "4... Nxe4 5. Nxe4 d5"
     },
     {
      "art": "text",
-     "text": " (Kapitel 7, ",
+     "text": " (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "gabeltrick-7"
     },
     {
@@ -3309,12 +3309,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Stellung, in der der Verteidiger einen Bereich so vollständig verriegelt, dass der Gegner trotz Mehrmaterial nicht eindringen kann (Kapitel 9, ",
+     "text": "A position in which the defender seals off an area so completely that the opponent cannot break in despite having extra material (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.8",
+     "text": "Section 9.8",
      "anker": "festung-9"
     },
     {
@@ -3338,7 +3338,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauernvorstoß, der eine eingeengte Stellung öffnet oder eine Schwäche auflöst, etwa ",
+     "text": "A pawn advance that opens up a cramped position or gets rid of a weakness, for example ",
      "stil": "normal"
     },
     {
@@ -3347,12 +3347,12 @@
     },
     {
      "art": "text",
-     "text": " in der Sizilianischen Verteidigung (Kapitel 5, ",
+     "text": " in the Sicilian Defense (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.4",
+     "text": "Section 5.4",
      "anker": "befreiungszug-5"
     },
     {
@@ -3376,22 +3376,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Eröffnung, in der eine Seite Material anbietet, meist einen Bauern, um dafür etwas anderes zu bekommen, etwa Zeit oder Zentrumskontrolle (Kapitel 2 und 3; ",
+     "text": "An opening in which one side offers material, usually a pawn, to get something else in return, such as time or control of the center (Chapters 2 and 3; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.7",
+     "text": "Section 2.7",
      "anker": "gambit-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.1",
+     "text": "Section 3.1",
      "anker": "gambit-3"
     },
     {
@@ -3421,12 +3421,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur, die du beim Rechnen im Kopf noch auf dem Feld siehst, das sie gerade verlassen hat (Kapitel 12, ",
+     "text": "A piece that, while calculating in your head, you still see on the square it has just left (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.1",
+     "text": "Section 12.1",
      "anker": "geisterfigur-12"
     },
     {
@@ -3450,12 +3450,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die kleine Tabelle am Ende einer Eröffnung: Sie fasst zusammen, wie beide Seiten in der Hauptvariante bei den drei Eröffnungszielen dastehen (Kapitel 2, ",
+     "text": "The small table at the end of an opening: it sums up how both sides stand in the main line with respect to the three opening goals (Chapter 2, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.1",
+     "text": "Section 2.1",
      "anker": "zielbilanz-2"
     },
     {
@@ -3479,12 +3479,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Angriff gelingt nur, wenn deine Angreifer die Verteidiger im Zielbereich zahlenmäßig übertreffen (Kapitel 1, ",
+     "text": "An attack succeeds only if your attackers outnumber the defenders in the target area (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.6",
+     "text": "Section 1.6",
      "anker": "goldene-angriffsregel-1"
     },
     {
@@ -3508,32 +3508,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Bei angebotenem Material achtest du auf die → ",
+     "text": "When material is offered, you watch for the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Warnsignale",
-     "begriff": "Warnsignale"
+     "text": "warning signs",
+     "begriff": "Warning signs"
     },
     {
      "art": "text",
-     "text": " und stellst die drei → ",
+     "text": " and ask the three → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Prüffragen",
-     "begriff": "Prüffragen"
+     "text": "check questions",
+     "begriff": "Check questions"
     },
     {
      "art": "text",
-     "text": ", bevor du zugreifst (Kapitel 4, ",
+     "text": " before you take it (Chapter 4, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.2",
+     "text": "Section 4.2",
      "anker": "goldene-verteidigungsregel-4"
     },
     {
@@ -3565,8 +3565,8 @@
     },
     {
      "art": "begriff",
-     "text": "Schlechter Läufer",
-     "begriff": "Schlechter Läufer"
+     "text": "Bad bishop",
+     "begriff": "Bad bishop"
     },
     {
      "art": "text",
@@ -3584,12 +3584,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Das Läuferopfer auf h7 (bei Schwarz auf h2) gegen den rochierten König. Es gelingt bloß, wenn genug weitere Angreifer bereitstehen, vor allem Springer und Dame (Kapitel 1, ",
+     "text": "The bishop sacrifice on h7 (for Black on h2) against the castled king. It only works if enough other attackers are ready, above all knight and queen (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.6",
+     "text": "Section 1.6",
      "anker": "griechisches-geschenk-1"
     },
     {
@@ -3613,12 +3613,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Meisterpartie nachspielen und vor jedem Zug des Siegers den eigenen Vorschlag aufschreiben, bevor du den Partiezug aufdeckst (Kapitel 12, ",
+     "text": "Replaying a master game and, before each move of the winner, writing down your own suggestion before you uncover the move played in the game (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.2",
+     "text": "Section 12.2",
      "anker": "zug-erraten-12"
     },
     {
@@ -3647,8 +3647,8 @@
     },
     {
      "art": "begriff",
-     "text": "Skelett-Röntgen",
-     "begriff": "Skelett-Röntgen"
+     "text": "Skeleton X-ray",
+     "begriff": "Skeleton X-ray"
     },
     {
      "art": "text",
@@ -3666,7 +3666,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein einzelner Zug einer Seite. Ein nummerierter Zug wie ",
+     "text": "A single move by one side. A numbered move such as ",
      "stil": "normal"
     },
     {
@@ -3675,12 +3675,12 @@
     },
     {
      "art": "text",
-     "text": " besteht aus zwei Halbzügen (Kapitel 0, ",
+     "text": " consists of two half-moves (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "halbzug-0"
     },
     {
@@ -3704,22 +3704,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Linie, auf der nur noch gegnerische Bauern stehen. Halboffen ist sie für die Seite, die dort keinen Bauern mehr hat (Kapitel 1 und 2; ",
+     "text": "A file on which only enemy pawns are left. It is half-open for the side that no longer has a pawn there (Chapters 1 and 2; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.2",
+     "text": "Section 1.2",
      "anker": "halboffene-linie-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.4",
+     "text": "Section 2.4",
      "anker": "halboffene-linie-2"
     },
     {
@@ -3749,7 +3749,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur hängt, wenn sie angegriffen und nicht ausreichend gedeckt ist.",
+     "text": "A piece is hanging when it is attacked and not sufficiently defended.",
      "stil": "normal"
     }
    ],
@@ -3761,12 +3761,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwei benachbarte Bauern, meist auf der c- und der d-Linie, die auf den Linien daneben keinen weiteren eigenen Bauern zur Unterstützung haben. Zusammen sind sie stark, einzeln schwach (Kapitel 5, ",
+     "text": "Two neighboring pawns, usually on the c- and d-files, that have no other pawn of their own on the adjacent files to support them. Together they are strong, separately weak (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.4",
+     "text": "Section 5.4",
      "anker": "haengende-bauern-5"
     },
     {
@@ -3790,32 +3790,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Feld, das kein eigener Bauer mehr kontrollieren kann. Für den Gegner kann es ein → ",
+     "text": "A square that no pawn of your own can control anymore. For the opponent it can be a → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "starkes Feld",
-     "begriff": "Starkes Feld"
+     "text": "strong square",
+     "begriff": "Strong square"
     },
     {
      "art": "text",
-     "text": " sein (Kapitel 2 und 5; ",
+     "text": " (Chapters 2 and 5; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.6",
+     "text": "Section 2.6",
      "anker": "loch-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.3",
+     "text": "Section 5.3",
      "anker": "loch-5"
     },
     {
@@ -3847,12 +3847,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein vorgezogener Bauer vor dem eigenen König, etwa auf h3: ein Ziel, an dem der Gegner mit seinen Bauern einhaken kann (Kapitel 5, ",
+     "text": "An advanced pawn in front of your own king, for example on h3: a target the opponent can hook into with their pawns (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.3",
+     "text": "Section 5.3",
      "anker": "haken-5"
     },
     {
@@ -3876,7 +3876,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Du ziehst, ohne geprüft zu haben, ob du auf jedes Schach, jeden Schlag und jede Drohung des Gegners im nächsten Zug eine sichere Antwort hast. So nennt es der amerikanische Trainer Dan Heisman [5].",
+     "text": "You move without having checked whether you have a safe answer to every check, capture and threat your opponent could play on the next move. That is what the American coach Dan Heisman calls it [5].",
      "stil": "normal"
     }
    ],
@@ -3888,22 +3888,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Eröffnungsweise, die das Zentrum nicht sofort mit Bauern besetzt, sondern zunächst aus der Ferne mit Figuren kontrolliert (Kapitel 1 und 2; ",
+     "text": "A way of playing the opening that does not occupy the center with pawns right away, but first controls it from a distance with pieces (Chapters 1 and 2; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "hypermodern-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.10",
+     "text": "Section 2.10",
      "anker": "hypermodern-2"
     },
     {
@@ -3933,32 +3933,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein → ",
+     "text": "An → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Zwischenzug",
-     "begriff": "Zwischenzug"
+     "text": "intermezzo",
+     "begriff": "Intermezzo"
     },
     {
      "art": "text",
-     "text": ", der Schach gibt (Kapitel 4 und 7; ",
+     "text": " that gives check (Chapters 4 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.5",
+     "text": "Section 4.5",
      "anker": "zwischenschach-4"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "zwischenschach-7"
     },
     {
@@ -3990,22 +3990,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Sekunden, die du für jeden ausgeführten Zug zur Bedenkzeit hinzubekommst: bei 10+5 sind es 5 Sekunden. Auch die Zeit, die der Gegner nach einem regelwidrigen Zug als Ausgleich erhält, heißt so (Kapitel 0 und 12; ",
+     "text": "The seconds that are added to your thinking time for every move you make: with 10+5 it is 5 seconds. In German, the time the opponent receives as compensation after an illegal move goes by the same name (Chapters 0 and 12; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "zeitgutschrift-0"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "zeitgutschrift-12"
     },
     {
@@ -4035,12 +4035,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Das Vorrecht, mit Drohungen den Spielverlauf zu bestimmen: Der Gegner kommt nur noch zum Reagieren. Sie ist der vergänglichste aller Vorteile (Kapitel 1, 6 und 7; ",
+     "text": "The privilege of steering the course of the game with threats: the opponent can only react. It is the most fleeting of all advantages (Chapters 1, 6, and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.5",
+     "text": "Section 1.5",
      "anker": "initiative-1"
     },
     {
@@ -4050,17 +4050,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.1",
+     "text": "Section 6.1",
      "anker": "initiative-6"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "initiative-7"
     },
     {
@@ -4096,12 +4096,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur oder ein Bauer gerät so auf eine Linie, Reihe oder Diagonale, dass eine andere Figur ihr Ziel nicht mehr erreicht (Kapitel 10, ",
+     "text": "A piece or pawn ends up on a file, rank or diagonal in such a way that another piece can no longer reach its target (Chapter 10, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 10.4",
+     "text": "Section 10.4",
      "anker": "wegversperrung-10"
     },
     {
@@ -4125,22 +4125,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Zug, der die erwartete Antwort, etwa ein Zurückschlagen, aufschiebt, da er eine noch dringendere Drohung stellt (Kapitel 3 und 7; ",
+     "text": "A move that postpones the expected reply, such as recapturing, because it poses an even more urgent threat (Chapters 3 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.10",
+     "text": "Section 3.10",
      "anker": "zwischenzug-3"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "zwischenzug-7"
     },
     {
@@ -4170,12 +4170,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer, der auf den beiden Nachbarlinien keine eigenen Bauern mehr hat. Im Mittelspiel kann er aktives Figurenspiel ermöglichen, im Endspiel ist er eine Schwäche (Kapitel 5, ",
+     "text": "A pawn that has no pawns of its own left on the two neighboring files. In the middlegame it can make active piece play possible; in the endgame it is a weakness (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.4",
+     "text": "Section 5.4",
      "anker": "isolani-5"
     },
     {
@@ -4205,7 +4205,7 @@
     {
      "art": "begriff",
      "text": "Isolani",
-     "begriff": "Isolani (isolierter Bauer)"
+     "begriff": "Isolani (isolated pawn)"
     },
     {
      "art": "text",
@@ -4223,12 +4223,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Feld vor dem eigenen Freibauern, das dein König erreichen will, da du gewinnst, wenn er es besetzt, gleich wer am Zug ist, solange der Bauer nicht sofort verloren geht. Bauer auf der 2., 3. oder 4. Reihe: die drei Felder zwei Reihen vor ihm. Bauer auf der 5. oder 6. Reihe: die sechs Felder eine und zwei Reihen vor ihm. Randbauer: die beiden letzten Felder der Nachbarlinie (Kapitel 8, ",
+     "text": "A square in front of your passed pawn that your king wants to reach, because you win once it occupies it, no matter who is to move, as long as the pawn is not lost right away. Pawn on the 2nd, 3rd or 4th rank: the three squares two ranks in front of it. Pawn on the 5th or 6th rank: the six squares one and two ranks in front of it. Rook's pawn: the last two squares of the neighboring file (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.6",
+     "text": "Section 8.6",
      "anker": "schluesselfeld-8"
     },
     {
@@ -4252,12 +4252,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Angriff, der den König mit Schachs und Opfern aus seiner Deckung holt und über das Brett treibt, bis er matt ist. Ein Beispiel ist die Partie Lasker–Thomas (Kapitel 11, ",
+     "text": "An attack that pulls the king out of its shelter with checks and sacrifices and drives it across the board until it is mated. One example is the game Lasker–Thomas (Chapter 11, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 11.4",
+     "text": "Section 11.4",
      "anker": "koenigsjagd-11"
     },
     {
@@ -4281,32 +4281,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Wie geschützt ein König steht. Sie ist eines der drei Ziele jeder Eröffnung und einer der vier Faktoren der → ",
+     "text": "How well protected a king is. It is one of the three goals of every opening and one of the four factors of the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Faktorenbilanz",
-     "begriff": "Faktorenbilanz"
+     "text": "factor balance",
+     "begriff": "Factor balance"
     },
     {
      "art": "text",
-     "text": " (Kapitel 1 und 3; ",
+     "text": " (Chapters 1 and 3; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "koenigssicherheit-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.2",
+     "text": "Section 3.2",
      "anker": "koenigssicherheit-3"
     },
     {
@@ -4343,8 +4343,8 @@
     },
     {
      "art": "begriff",
-     "text": "Flügel",
-     "begriff": "Flügel"
+     "text": "Wing",
+     "begriff": "Wing"
     },
     {
      "art": "text",
@@ -4362,12 +4362,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer auf der b- oder g-Linie (Kapitel 9, ",
+     "text": "A pawn on the b- or g-file (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.7",
+     "text": "Section 9.7",
      "anker": "springerbauer-9"
     },
     {
@@ -4391,7 +4391,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Das Prinzip der am wenigsten aktiven Figur (englisch ",
+     "text": "The principle of the least active piece (LAP, for ",
      "stil": "normal"
     },
     {
@@ -4401,12 +4401,12 @@
     },
     {
      "art": "text",
-     "text": "), das der Großmeister Igor Smirnov lehrt [14]: Frage dich, welche deiner Figuren keine Aufgabe hat, und verbessere genau diese (Kapitel 6, ",
+     "text": "), taught by grandmaster Igor Smirnov [14]: ask yourself which of your pieces has no task, and improve exactly that one (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.5",
+     "text": "Section 6.5",
      "anker": "lap-prinzip-6"
     },
     {
@@ -4435,8 +4435,8 @@
     },
     {
      "art": "begriff",
-     "text": "Bauernhebel",
-     "begriff": "Bauernhebel (Hebel)"
+     "text": "Pawn lever",
+     "begriff": "Pawn lever (lever)"
     },
     {
      "art": "text",
@@ -4454,12 +4454,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Mattbild: Ein Bauer steht auf f6, und die Dame setzt auf g7 matt. Es trifft das Fianchetto, dem der Läufer fehlt (Kapitel 7, ",
+     "text": "Mating pattern: a pawn stands on f6, and the queen mates on g7. It strikes the fianchetto that is missing its bishop (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "lolli-matt-7"
     },
     {
@@ -4483,22 +4483,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Partie mit mindestens 15 Minuten plus 10 Sekunden je Zug, die du im Anschluss gründlich analysierst. Nach den Grenzen der FIDE kann sie noch → ",
+     "text": "A game with at least 15 minutes plus 10 seconds per move, which you analyze thoroughly afterwards. By FIDE's limits it can still be → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Schnellschach",
-     "begriff": "Schnellschach"
+     "text": "rapid",
+     "begriff": "Rapid"
     },
     {
      "art": "text",
-     "text": " sein (Kapitel 12, ",
+     "text": " (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.3",
+     "text": "Section 12.3",
      "anker": "lange-partie-12"
     },
     {
@@ -4529,8 +4529,8 @@
     },
     {
      "art": "begriff",
-     "text": "Kurze und lange Seite",
-     "begriff": "Kurze und lange Seite"
+     "text": "Short and long side",
+     "begriff": "Short and long side"
     },
     {
      "art": "text",
@@ -4548,12 +4548,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Läufer, Turm oder Dame: eine Figur, die über mehrere Felder hinweg wirkt (Kapitel 2, ",
+     "text": "Bishop, rook or queen: a piece that acts across several squares (Chapter 2, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.3",
+     "text": "Section 2.3",
      "anker": "langschrittfigur-2"
     },
     {
@@ -4577,12 +4577,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Deine Bedenkzeit ist abgelaufen. Du verlierst, es sei denn, der Gegner kann dich mit keiner regelgerechten Zugfolge mehr mattsetzen. Dann endet die Partie remis (Kapitel 12, ",
+     "text": "Your thinking time has run out. You lose, unless your opponent can no longer mate you by any legal sequence of moves. Then the game ends in a draw (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "zeitueberschreitung-12"
     },
     {
@@ -4606,22 +4606,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die wichtigste Gewinnstellung im Endspiel Turm und Bauer gegen Turm: Der Bauer steht auf der 7. Reihe, der eigene König auf dem Umwandlungsfeld, und der gegnerische König ist zur Seite gedrängt. Gewonnen wird mit dem → ",
+     "text": "The most important winning position in the endgame of rook and pawn against rook: the pawn stands on the 7th rank, its king on the promotion square, and the enemy king has been pushed to the side. It is won by → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Brückenbau",
-     "begriff": "Brückenbau"
+     "text": "building a bridge",
+     "begriff": "Building a bridge"
     },
     {
      "art": "text",
-     "text": " (Kapitel 9, ",
+     "text": " (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.3",
+     "text": "Section 9.3",
      "anker": "lucena-stellung-9"
     },
     {
@@ -4647,7 +4647,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauernzug vor dem rochierten König, etwa ",
+     "text": "A pawn move in front of the castled king, for example ",
      "stil": "normal"
     },
     {
@@ -4656,22 +4656,22 @@
     },
     {
      "art": "text",
-     "text": ", der ihm ein Fluchtfeld gegen das → ",
+     "text": ", that gives it a flight square against → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Grundreihenmatt",
-     "begriff": "Grundreihenmatt"
+     "text": "back-rank mate",
+     "begriff": "Back-rank mate"
     },
     {
      "art": "text",
-     "text": " verschafft (Kapitel 5, ",
+     "text": " (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.3",
+     "text": "Section 5.3",
      "anker": "luftloch-5"
     },
     {
@@ -4697,12 +4697,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die wichtigste Zugfolge einer Eröffnung. Von ihr zweigen die weiteren Varianten und Nebenwege ab (Kapitel 2, ",
+     "text": "The most important move sequence of an opening. The other variations and side lines branch off from it (Chapter 2, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.1",
+     "text": "Section 2.1",
      "anker": "hauptvariante-2"
     },
     {
@@ -4726,12 +4726,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Turm oder Dame (Kapitel 1, ",
+     "text": "Rook or queen (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.4",
+     "text": "Section 1.4",
      "anker": "schwerfigur-1"
     },
     {
@@ -4760,8 +4760,8 @@
     },
     {
      "art": "begriff",
-     "text": "Bauernmehrheit",
-     "begriff": "Bauernmehrheit (Mehrheit)"
+     "text": "Pawn majority",
+     "begriff": "Pawn majority (majority)"
     },
     {
      "art": "text",
@@ -4779,12 +4779,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Der König steht im Schach, und keine erlaubte Antwort hilft: weder wegziehen noch schlagen noch dazwischenstellen. Die Partie ist beendet (Kapitel 0, ",
+     "text": "The king is in check, and no legal reply helps: neither moving away nor capturing nor blocking. The game is over (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "matt-0"
     },
     {
@@ -4808,32 +4808,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Figuren und Bauern, die eine Seite besitzt, gezählt nach den → ",
+     "text": "The pieces and pawns a side has, counted by the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Figurenwerte",
-     "begriff": "Figurenwerte"
+     "text": "piece values",
+     "begriff": "Piece values"
     },
     {
      "art": "text",
-     "text": "n. Einer der vier Faktoren der → ",
+     "text": ". One of the four factors of the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Faktorenbilanz",
-     "begriff": "Faktorenbilanz"
+     "text": "factor balance",
+     "begriff": "Factor balance"
     },
     {
      "art": "text",
-     "text": " (Kapitel 3, ",
+     "text": " (Chapter 3, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.2",
+     "text": "Section 3.2",
      "anker": "material-3"
     },
     {
@@ -4860,12 +4860,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine typische Aufstellung der Figuren, in der ein König matt ist, etwa das Grundreihenmatt oder das Erstickungsmatt (Kapitel 7, ",
+     "text": "A typical arrangement of pieces in which a king is mated, for example back-rank mate or smothered mate (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "mattbild-7"
     },
     {
@@ -4889,22 +4889,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Phase nach der Eröffnung. Sie beginnt, sobald beide Seiten entwickelt und rochiert haben (Kapitel 1 und 6; ",
+     "text": "The phase after the opening. It begins as soon as both sides have developed and castled (Chapters 1 and 6; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "mittelspiel-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.1",
+     "text": "Section 6.1",
      "anker": "mittelspiel-6"
     },
     {
@@ -4934,12 +4934,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Springer oder Läufer (Kapitel 1, ",
+     "text": "Knight or bishop (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.4",
+     "text": "Section 1.4",
      "anker": "leichtfigur-1"
     },
     {
@@ -4963,22 +4963,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Minderheit von Bauern rückt gegen eine gegnerische Mehrheit vor, nicht um einen Freibauern zu bilden, sondern um den Gegner zu einer dauerhaften Bauernschwäche zu zwingen. Typisch ist er in der → ",
+     "text": "A minority of pawns advances against an enemy majority, not to create a passed pawn, but to force the opponent into a lasting pawn weakness. It is typical of the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Carlsbad-Struktur",
-     "begriff": "Carlsbad-Struktur"
+     "text": "Carlsbad structure",
+     "begriff": "Carlsbad structure"
     },
     {
      "art": "text",
-     "text": " (Kapitel 5, ",
+     "text": " (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "minderheitsangriff-5"
     },
     {
@@ -5004,12 +5004,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Deine persönliche Liste der Fehler aus eigenen Partien: Partie, Zug, Fehlerart, übersehene Idee, bessere Entscheidung und nächste Übung. Eine Vorlage zeigt Tabelle 12.1 (Kapitel 12, ",
+     "text": "Your personal list of mistakes from your own games: game, move, type of mistake, idea you overlooked, better decision and next exercise. Table 12.1 shows a template (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.2",
+     "text": "Section 12.2",
      "anker": "fehlerdatenbank-12"
     },
     {
@@ -5033,22 +5033,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die wiederkehrende taktische Idee hinter einer Kombination oder Falle, etwa Fesselung, Ablenkung oder Doppelangriff (Kapitel 4 und 7; ",
+     "text": "The recurring tactical idea behind a combination or trap, for example pin, deflection or double attack (Chapters 4 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.1",
+     "text": "Section 4.1",
      "anker": "motiv-4"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "motiv-7"
     },
     {
@@ -5083,8 +5083,8 @@
     },
     {
      "art": "begriff",
-     "text": "Algebraische Notation",
-     "begriff": "Algebraische Notation"
+     "text": "Algebraic notation",
+     "begriff": "Algebraic notation"
     },
     {
      "art": "text",
@@ -5102,22 +5102,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Linie, auf der gar kein Bauer mehr steht. Sie ist der Platz für die Türme (Kapitel 1 und 2; ",
+     "text": "A file with no pawns on it at all. It is the place for the rooks (Chapters 1 and 2; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.2",
+     "text": "Section 1.2",
      "anker": "offene-linie-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.2",
+     "text": "Section 2.2",
      "anker": "offene-linie-2"
     },
     {
@@ -5147,12 +5147,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Im Zentrum steht kein Bauer mehr, die d- und die e-Linie sind offen. Hier ist das Läuferpaar besonders stark (Kapitel 5, ",
+     "text": "No pawns are left in the center; the d- and e-files are open. Here the bishop pair is especially strong (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.2",
+     "text": "Section 5.2",
      "anker": "offene-stellung-5"
     },
     {
@@ -5176,12 +5176,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die ersten Züge der Partie. Sie hat drei Ziele: Zentrumskontrolle, Figurenentwicklung und Königssicherheit (Kapitel 1, ",
+     "text": "The first moves of the game. It has three goals: control of the center, development of the pieces and king safety (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "eroeffnung-1"
     },
     {
@@ -5205,12 +5205,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Sammlung vieler gespielter Partien. Sie zeigt, welche Züge in einer Stellung häufig gespielt werden, allerdings nicht, welcher der beste ist (Kapitel 12, ",
+     "text": "A collection of many games that have been played. It shows which moves are often played in a position, but not which one is best (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.4",
+     "text": "Section 12.4",
      "anker": "eroeffnungsdatenbank-12"
     },
     {
@@ -5234,22 +5234,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Jede Seite hat einen Läufer, und die beiden laufen auf verschiedenen Feldfarben. Sie können einander nicht angreifen, was im Endspiel dem Verteidiger häufig eine → ",
+     "text": "Each side has one bishop, and the two run on different square colors. They cannot attack each other, which in the endgame often makes a → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Festung",
-     "begriff": "Festung"
+     "text": "fortress",
+     "begriff": "Fortress"
     },
     {
      "art": "text",
-     "text": " erleichtert. Laufen beide auf derselben Feldfarbe, heißen sie gleichfarbig (Kapitel 9, ",
+     "text": " easier for the defender. If both run on the same square color, they are called same-colored (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.8",
+     "text": "Section 9.8",
      "anker": "ungleichfarbige-laeufer-9"
     },
     {
@@ -5275,22 +5275,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Beide Seiten rochieren auf verschiedene Flügel. Beide können dann ihre Bauern gegen den gegnerischen König schicken, ohne den eigenen zu entblößen. Es zählt, wer zuerst eine Linie öffnet (Kapitel 2 und 6; ",
+     "text": "The two sides castle on different wings. Both can then send their pawns against the enemy king without exposing their own. What counts is who opens a file first (Chapters 2 and 6; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.6",
+     "text": "Section 2.6",
      "anker": "entgegengesetzte-rochaden-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.3",
+     "text": "Section 6.3",
      "anker": "entgegengesetzte-rochaden-6"
     },
     {
@@ -5320,12 +5320,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Könige stehen sich auf einer Linie, Reihe oder Diagonale mit genau einem Feld Abstand gegenüber. Wer am Zug ist, muss weichen. Die Opposition hat also die Seite, die nicht am Zug ist (Kapitel 8, ",
+     "text": "The kings face each other on a file, rank or diagonal with exactly one square between them. The side to move has to give way. So the opposition belongs to the side that is not to move (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.2",
+     "text": "Section 8.2",
      "anker": "opposition-8"
     },
     {
@@ -5349,22 +5349,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein → ",
+     "text": "A → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "starkes Feld",
-     "begriff": "Starkes Feld"
+     "text": "strong square",
+     "begriff": "Strong square"
     },
     {
      "art": "text",
-     "text": ", das eine eigene Figur dauerhaft und sicher besetzen kann. Am stärksten ist er, wenn ihn zusätzlich ein eigener Bauer stützt (Kapitel 5, ",
+     "text": " that one of your pieces can occupy permanently and safely. It is strongest when a pawn of yours also supports it (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.3",
+     "text": "Section 5.3",
      "anker": "vorposten-5"
     },
     {
@@ -5390,12 +5390,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Freibauer, der weit weg von den übrigen Bauern steht. Er zieht den gegnerischen König an den Rand, und währenddessen holt sich der eigene König die Bauern auf dem anderen Flügel (Kapitel 8, ",
+     "text": "A passed pawn that stands far away from the other pawns. It pulls the enemy king to the edge, and meanwhile your own king collects the pawns on the other wing (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "entfernter-freibauer-8"
     },
     {
@@ -5419,12 +5419,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur muss zwei Aufgaben zugleich erfüllen. Erzwingst du die eine, bleibt die andere unerledigt (Kapitel 7, ",
+     "text": "A piece has to fulfill two tasks at once. If you force it to carry out one, the other is left undone (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "ueberlastung-7"
     },
     {
@@ -5448,22 +5448,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer, den kein gegnerischer Bauer mehr aufhalten kann: Weder auf seiner Linie noch auf den beiden Nachbarlinien steht vor ihm ein gegnerischer Bauer (Kapitel 5 und 8; ",
+     "text": "A pawn that no enemy pawn can stop anymore: no enemy pawn stands in front of it, either on its own file or on the two neighboring files (Chapters 5 and 8; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "freibauer-5"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "freibauer-8"
     },
     {
@@ -5493,32 +5493,32 @@
    "text": [
     {
      "art": "text",
-     "text": "Bauern, die schräg hintereinander stehen, und jeder deckt den nächsten. Der vorderste Bauer ist die ",
+     "text": "Pawns standing diagonally one behind the other, each protecting the next. The front pawn is the ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Kettenspitze",
+     "text": "chain head",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": ", der hinterste die ",
+     "text": ", the rearmost one the ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Basis",
+     "text": "base",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": ". Die Basis wird von keinem Bauern der Kette gedeckt, deshalb greifst du die Kette dort an (Kapitel 2, 4 und 5; ",
+     "text": ". No pawn of the chain protects the base, so that is where you attack the chain (Chapters 2, 4, and 5; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.8",
+     "text": "Section 2.8",
      "anker": "bauernkette-2"
     },
     {
@@ -5528,17 +5528,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.4",
+     "text": "Section 4.4",
      "anker": "bauernkette-4"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "bauernkette-5"
     },
     {
@@ -5574,12 +5574,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwei eigene Zentrumsbauern nebeneinander, etwa auf d4 und e4. Solange beide dort stehen, kontrollieren sie zusammen vier Felder der nächsten Reihe (Kapitel 5, ",
+     "text": "Two of your center pawns side by side, for example on d4 and e4. As long as both stand there, together they control four squares on the next rank (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.6",
+     "text": "Section 5.6",
      "anker": "bauernduo-5"
     },
     {
@@ -5608,8 +5608,8 @@
     },
     {
      "art": "begriff",
-     "text": "Loch",
-     "begriff": "Loch (Bauernloch)"
+     "text": "Hole",
+     "begriff": "Hole (pawn hole)"
     },
     {
      "art": "text",
@@ -5627,12 +5627,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Gruppen eigener Bauern, die durch mindestens eine Linie ohne eigenen Bauern voneinander getrennt sind. Faustregel: Weniger Inseln bedeuten meist eine gesündere Struktur (Kapitel 5, ",
+     "text": "Groups of your pawns that are separated from each other by at least one file without a pawn of yours. Rule of thumb: fewer islands usually mean a healthier structure (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.4",
+     "text": "Section 5.4",
      "anker": "bauerninseln-5"
     },
     {
@@ -5656,12 +5656,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauernzug, der einen gegnerischen Bauern angreift. Ob der Gegner schlägt, vorbeizieht oder den Bauern stehen lässt: Jede Antwort verändert die Bauernstruktur (Kapitel 1, 2 und 5; ",
+     "text": "A pawn move that attacks an enemy pawn. Whether the opponent captures, pushes past or leaves the pawn where it is: every answer changes the pawn structure (Chapters 1, 2, and 5; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.4",
+     "text": "Section 1.4",
      "anker": "bauernhebel-1"
     },
     {
@@ -5671,17 +5671,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.8",
+     "text": "Section 2.8",
      "anker": "bauernhebel-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "bauernhebel-5"
     },
     {
@@ -5717,22 +5717,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Seite hat auf einem Flügel oder im Zentrum mehr Bauern als die andere. Aus einer gesunden Mehrheit entsteht ein Freibauer: Zunächst zieht der → ",
+     "text": "One side has more pawns than the other on a wing or in the center. A healthy majority produces a passed pawn: first the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Kandidat",
-     "begriff": "Kandidat"
+     "text": "candidate",
+     "begriff": "Candidate"
     },
     {
      "art": "text",
-     "text": ", die übrigen Bauern unterstützen ihn. Doppelbauern können das verhindern (Kapitel 5, 6 und 8; ",
+     "text": " advances, and the other pawns support it. Doubled pawns can prevent this (Chapters 5, 6, and 8; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "bauernmehrheit-5"
     },
     {
@@ -5742,17 +5742,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.3",
+     "text": "Section 6.3",
      "anker": "bauernmehrheit-6"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "bauernmehrheit-8"
     },
     {
@@ -5790,12 +5790,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwei Freibauern laufen gleichzeitig zur Umwandlung. Es entscheidet, wer zuerst umwandelt und ob die neue Dame dabei Schach gibt oder das Umwandlungsfeld des Gegners kontrolliert (Kapitel 8, ",
+     "text": "Two passed pawns run toward promotion at the same time. What decides is who promotes first and whether the new queen gives check or controls the opponent's promotion square (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "bauernrennen-8"
     },
     {
@@ -5819,12 +5819,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die drei Bauern direkt vor dem rochierten König, nach der kurzen Rochade der f-, g- und h-Bauer (Kapitel 2, ",
+     "text": "The three pawns directly in front of the castled king; after kingside castling, the f-, g- and h-pawns (Chapter 2, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 2",
+     "text": "Chapter 2",
      "anker": "bauernschild-2"
     },
     {
@@ -5848,12 +5848,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Mehrere Bauern rücken auf einem Flügel gegen den gegnerischen König vor, um dort Linien zu öffnen (Kapitel 6, ",
+     "text": "Several pawns advance on one wing against the enemy king in order to open files there (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.6",
+     "text": "Section 6.6",
      "anker": "bauernsturm-6"
     },
     {
@@ -5877,12 +5877,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Anordnung aller Bauern auf dem Brett. Da Bauern nie zurückziehen, bestimmt sie auf lange Sicht, welche Linien offen sind, welche Felder schwach werden und wohin die Figuren gehören. Deshalb heißt sie auch das Skelett der Partie (Kapitel 5, ",
+     "text": "The arrangement of all the pawns on the board. Since pawns never move backward, in the long run it determines which files are open, which squares become weak and where the pieces belong. That is why it is also called the skeleton of the game (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 5",
+     "text": "Chapter 5",
      "anker": "bauernstruktur-5"
     },
     {
@@ -5911,8 +5911,8 @@
     },
     {
      "art": "begriff",
-     "text": "Figurenwerte",
-     "begriff": "Figurenwerte"
+     "text": "Piece values",
+     "begriff": "Piece values"
     },
     {
      "art": "text",
@@ -5930,22 +5930,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Seite kann ununterbrochen Schach geben, und der König entkommt den Schachs nicht. Dauerschach ist keine eigene Regel; die Partie endet durch Einigung oder dreifache Stellungswiederholung remis (Kapitel 0 und 7; ",
+     "text": "One side can give check without interruption, and the king cannot escape the checks. Perpetual check is not a rule of its own; the game ends in a draw by agreement or threefold repetition (Chapters 0 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "dauerschach-0"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "dauerschach-7"
     },
     {
@@ -5975,12 +5975,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die wichtigste Remisstellung im Endspiel Turm und Bauer gegen Turm: Der verteidigende König steht vor dem Bauern, und der Turm hält den gegnerischen König von der Reihe vor dem Bauern fern. Rückt der Bauer auf diese Reihe vor, gibt der Turm Schachs von hinten (Kapitel 9, ",
+     "text": "The most important drawing position in the endgame of rook and pawn against rook: the defending king stands in front of the pawn, and the rook keeps the enemy king off the rank in front of the pawn. If the pawn advances to that rank, the rook gives checks from behind (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.2",
+     "text": "Section 9.2",
      "anker": "philidor-stellung-9"
     },
     {
@@ -6004,22 +6004,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Das → ",
+     "text": "The → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Erstickungsmatt",
-     "begriff": "Erstickungsmatt"
+     "text": "smothered mate",
+     "begriff": "Smothered mate"
     },
     {
      "art": "text",
-     "text": " nach einem Damenopfer auf g8: Der Turm muss die Dame schlagen und nimmt damit dem eigenen König das letzte Feld. Danach setzt der Springer auf f7 matt (Kapitel 7, ",
+     "text": " after a queen sacrifice on g8: the rook has to take the queen and so takes the last square away from its own king. Then the knight mates on f7 (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.5",
+     "text": "Section 7.5",
      "anker": "philidors-vermaechtnis-7"
     },
     {
@@ -6045,12 +6045,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Im weiten Sinn alles, was auf dem Brett steht, auch die Bauern. Im engeren Sinn meint das Buch Springer, Läufer, Türme und Dame; der Bauer wird dann getrennt genannt (Kapitel 0, ",
+     "text": "In the broad sense, everything that stands on the board, including the pawns. In the narrower sense the book means knights, bishops, rooks and queen; the pawn is then named separately (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "figur-0"
     },
     {
@@ -6074,12 +6074,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Faustwerte in Bauerneinheiten: Bauer 1, Springer und Läufer je 3, Turm 5, Dame 9 (Kapitel 1, ",
+     "text": "Rough values in pawn units: pawn 1, knight and bishop 3 each, rook 5, queen 9 (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.4",
+     "text": "Section 1.4",
      "anker": "figurenwerte-1"
     },
     {
@@ -6103,22 +6103,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur steht zwischen einer gegnerischen → ",
+     "text": "A piece stands between an enemy → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Langschrittfigur",
-     "begriff": "Langschrittfigur"
+     "text": "long-range piece",
+     "begriff": "Long-range piece"
     },
     {
      "art": "text",
-     "text": " und einer wertvolleren eigenen Figur. Steht dahinter der König, ist die Fesselung absolut: Die Figur darf nicht ziehen. Steht dahinter eine andere Figur, ist sie relativ: Die Figur darf ziehen, es kostet aber meist Material (Kapitel 1, 2 und 7; ",
+     "text": " and a more valuable piece of its own side. If the king stands behind it, the pin is absolute: the piece may not move. If another piece stands behind it, the pin is relative: the piece may move, but it usually costs material (Chapters 1, 2, and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.2",
+     "text": "Section 1.2",
      "anker": "fesselung-1"
     },
     {
@@ -6128,17 +6128,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.3",
+     "text": "Section 2.3",
      "anker": "fesselung-2"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "fesselung-7"
     },
     {
@@ -6176,22 +6176,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Tabelle, die für beide Seiten die drei → ",
+     "text": "The table that answers the three → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Planfragen",
-     "begriff": "Planfragen"
+     "text": "plan questions",
+     "begriff": "Plan questions"
     },
     {
      "art": "text",
-     "text": " beantwortet. Darunter steht der Plan in einem Satz (Kapitel 6, ",
+     "text": " for both sides. Below it stands the plan in one sentence (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.6",
+     "text": "Section 6.6",
      "anker": "planbilanz-6"
     },
     {
@@ -6217,12 +6217,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die drei Fragen, mit denen du im Mittelspiel einen Plan findest: Wo spiele ich? Was will mein Gegner? Welche Figur bringe ich dorthin? (Kapitel 6, ",
+     "text": "The three questions that help you find a plan in the middlegame: Where do I play? What does my opponent want? Which piece do I bring there? (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.2",
+     "text": "Section 6.2",
      "anker": "planfragen-6"
     },
     {
@@ -6246,12 +6246,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer, dessen Eroberung einen versteckten Preis hat (Kapitel 1, ",
+     "text": "A pawn whose capture has a hidden price (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.2",
+     "text": "Section 1.2",
      "anker": "vergifteter-bauer-1"
     },
     {
@@ -6275,12 +6275,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine einzige Schwäche kann der Verteidiger häufig halten. Deshalb schaffst du am anderen Flügel eine zweite, und er muss seine Figuren auf zwei Stellen verteilen (Kapitel 6, ",
+     "text": "The defender can often hold a single weakness. That is why you create a second one on the other wing, and the defender has to split their pieces between two places (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.3",
+     "text": "Section 6.3",
      "anker": "prinzip-der-zwei-schwaechen-6"
     },
     {
@@ -6304,12 +6304,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Erreicht ein Bauer die letzte Reihe, wird er im selben Zug nach deiner Wahl zu einer Dame, einem Turm, Läufer oder Springer der eigenen Farbe (Kapitel 0, ",
+     "text": "When a pawn reaches the last rank, it becomes, in the same move and by your choice, a queen, rook, bishop or knight of your own color (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "umwandlung-0"
     },
     {
@@ -6333,12 +6333,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Umwandlung, bei der die neue Dame sofort Schach gibt. Sie gewinnt ein Tempo, da der Gegner erst seinen König ziehen muss (Kapitel 8, ",
+     "text": "A promotion in which the new queen gives check right away. It gains a tempo, since the opponent first has to move their king (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "umwandlungsschach-8"
     },
     {
@@ -6362,12 +6362,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Einen Plan des Gegners verhindern, bevor er ihn ausführen kann. Den Begriff hat Aaron Nimzowitsch in die Schachlehre eingeführt [11] (Kapitel 6, ",
+     "text": "Preventing your opponent's plan before they can carry it out. Aaron Nimzowitsch introduced the term into chess teaching [11] (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.4",
+     "text": "Section 6.4",
      "anker": "prophylaxe-6"
     },
     {
@@ -6391,22 +6391,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Freibauer, den ein eigener Bauer schützt. Der gegnerische König darf ihn nicht schlagen und muss ihn bewachen (Kapitel 5 und 8; ",
+     "text": "A passed pawn that is protected by a pawn of its own side. The enemy king cannot capture it and has to keep watch over it (Chapters 5 and 8; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "gedeckter-freibauer-5"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "gedeckter-freibauer-8"
     },
     {
@@ -6436,12 +6436,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Frage für jeden Bauern: Kann ihn ein eigener Bauer decken, jetzt oder nach einem Zug von ihm selbst oder einem Nachbarbauern? Lautet die Antwort nein, müssen Figuren ihn bewachen. Zwei Bauern nebeneinander ohne weitere Nachbarn bestehen den Test nur abwechselnd: Rückt einer vor, deckt ihn der andere, und dieser steht dann selbst ohne Bauernschutz (Kapitel 5, ",
+     "text": "The question for every pawn: can a pawn of yours protect it, now or after a move by the pawn itself or a neighboring pawn? If the answer is no, pieces must guard it. Two pawns side by side with no further neighbors pass the test only by turns: if one advances, the other protects it, and that one is then without pawn protection itself (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.4",
+     "text": "Section 5.4",
      "anker": "deckungstest-5"
     },
     {
@@ -6465,12 +6465,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Opfer, bei dem das Material nach wenigen Zügen zurückkommt, wie der Bauer im Damengambit (Kapitel 3, ",
+     "text": "A sacrifice in which the material comes back after a few moves, like the pawn in the Queen's Gambit (Chapter 3, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.1",
+     "text": "Section 3.1",
      "anker": "scheinopfer-3"
     },
     {
@@ -6499,8 +6499,8 @@
     },
     {
      "art": "begriff",
-     "text": "Flügel",
-     "begriff": "Flügel"
+     "text": "Wing",
+     "begriff": "Wing"
     },
     {
      "art": "text",
@@ -6518,12 +6518,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Der Punkt, bis zu dem du eine Variante rechnest: Kein Schach, kein Schlag und keine Drohung liegt mehr in der Luft (Kapitel 7, ",
+     "text": "The point up to which you calculate a line: no check, no capture and no threat is in the air anymore (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "ruhe-7"
     },
     {
@@ -6547,12 +6547,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Zug, der kein Schach gibt und nichts schlägt. Häufig löst gerade er die Aufgabe, da er zwei Dinge zugleich vorbereitet oder dem Gegner das Zugrecht zuschiebt (Kapitel 10, ",
+     "text": "A move that gives no check and captures nothing. Often it is exactly this move that solves the puzzle, because it prepares two things at once or hands the move over to the opponent (Chapter 10, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 10.1",
+     "text": "Section 10.1",
      "anker": "stiller-zug-10"
     },
     {
@@ -6576,12 +6576,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Beide Seiten greifen auf verschiedenen Flügeln an. Wer zuerst durchbricht, gibt der Partie die Richtung vor (Kapitel 6, ",
+     "text": "The two sides attack on different wings. Whoever breaks through first sets the direction of the game (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.3",
+     "text": "Section 6.3",
      "anker": "wettrennen-6"
     },
     {
@@ -6605,22 +6605,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine waagerechte Zeile des Bretts, nummeriert von 1 bis 8. Die senkrechten Spalten heißen → ",
+     "text": "A horizontal row of the board, numbered from 1 to 8. The vertical columns are called → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Linie",
-     "begriff": "Linie"
+     "text": "files",
+     "begriff": "File"
     },
     {
      "art": "text",
-     "text": "n (Kapitel 0, ",
+     "text": " (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "reihe-0"
     },
     {
@@ -6646,22 +6646,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Partien mit mittlerer Bedenkzeit, nach den Regeln der FIDE mehr als 10 und weniger als 60 Minuten je Seite, gerechnet wie beim → ",
+     "text": "Games with medium thinking time, under FIDE rules more than 10 and less than 60 minutes per side, counted as in → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Blitz",
+     "text": "blitz",
      "begriff": "Blitz"
     },
     {
      "art": "text",
-     "text": " [2] (Kapitel 12, ",
+     "text": " [2] (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "schnellschach-12"
     },
     {
@@ -6692,8 +6692,8 @@
     },
     {
      "art": "begriff",
-     "text": "Elo-Zahl",
-     "begriff": "Elo-Zahl"
+     "text": "Elo rating",
+     "begriff": "Elo rating"
     },
     {
      "art": "text",
@@ -6703,7 +6703,7 @@
     {
      "art": "begriff",
      "text": "DWZ",
-     "begriff": "DWZ (Deutsche Wertungszahl)"
+     "begriff": "DWZ (German rating number)"
     },
     {
      "art": "text",
@@ -6722,12 +6722,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Turnierregel: Hast du eine Figur auf einem Feld losgelassen und ist der Zug regelgerecht, darfst du ihn nicht mehr ändern (Kapitel 0, ",
+     "text": "Tournament rule: once you have released a piece on a square and the move is legal, you may no longer change it (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "losgelassen-ist-gezogen-0"
     },
     {
@@ -6751,12 +6751,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Taktisches Motiv: Die Figur, die ein wichtiges Feld oder eine andere Figur deckt, wird geschlagen oder vertrieben (Kapitel 7, ",
+     "text": "Tactical motif: the piece that defends an important square or another piece is captured or driven away (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "beseitigung-der-verteidigung-7"
     },
     {
@@ -6780,7 +6780,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Eröffnungen, die du mit Weiß und mit Schwarz regelmäßig spielst.",
+     "text": "The openings you regularly play with White and with Black.",
      "stil": "normal"
     }
    ],
@@ -6792,12 +6792,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Entsteht dieselbe Stellung zum dritten Mal, mit derselben Seite am Zug und denselben Zugmöglichkeiten, kannst du Remis beanspruchen (Kapitel 0, ",
+     "text": "If the same position occurs for the third time, with the same side to move and the same possible moves, you can claim a draw (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "stellungswiederholung-0"
     },
     {
@@ -6821,17 +6821,17 @@
    "text": [
     {
      "art": "text",
-     "text": "Das Recht und die Pflicht, den nächsten Zug zu machen. Meist ist es ein Vorteil, im → ",
+     "text": "The right and the duty to make the next move. Usually it is an advantage; in → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Zugzwang",
+     "text": "zugzwang",
      "begriff": "Zugzwang"
     },
     {
      "art": "text",
-     "text": " ein Nachteil.",
+     "text": " it is a disadvantage.",
      "stil": "normal"
     }
    ],
@@ -6845,22 +6845,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer auf der a- oder h-Linie (Kapitel 8 und 9; ",
+     "text": "A pawn on the a- or h-file (Chapters 8 and 9; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.6",
+     "text": "Section 8.6",
      "anker": "randbauer-8"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.4",
+     "text": "Section 9.4",
      "anker": "randbauer-9"
     },
     {
@@ -6895,8 +6895,8 @@
     },
     {
      "art": "begriff",
-     "text": "Quadratregel",
-     "begriff": "Quadratregel"
+     "text": "Square rule",
+     "begriff": "Square rule"
     },
     {
      "art": "text",
@@ -6914,22 +6914,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Material freiwillig hergeben, um dafür etwas anderes zu bekommen, etwa einen Angriff auf den König (Kapitel 1 und 3; ",
+     "text": "Giving up material voluntarily to get something else in return, for example an attack on the king (Chapters 1 and 3; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.3",
+     "text": "Section 1.3",
      "anker": "opfer-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.1",
+     "text": "Section 3.1",
      "anker": "opfer-3"
     },
     {
@@ -6959,12 +6959,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Drei Fragen unmittelbar vor dem Ziehen: Steht mein König nach dem Zug sicher? Kann der Gegner die gezogene Figur sofort schlagen? Erlaube ich ihm ein Schach oder gar ein Matt? (Kapitel 12, ",
+     "text": "Three questions right before you move: Is my king safe after the move? Can my opponent capture the moved piece right away? Do I allow my opponent a check or even mate? (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.1",
+     "text": "Section 12.1",
      "anker": "sicherheitsblick-12"
     },
     {
@@ -6988,12 +6988,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Beide Seiten rochieren auf denselben Flügel. Ein Bauernsturm ist dann ein Risiko, da jeder vorgerückte Bauer im Anschluss vor dem eigenen König fehlt (Kapitel 6, ",
+     "text": "Both sides castle on the same wing. A pawn storm is then a risk, since every advanced pawn is afterwards missing in front of your own king (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.3",
+     "text": "Section 6.3",
      "anker": "gleichseitige-rochade-6"
     },
     {
@@ -7017,21 +7017,21 @@
    "text": [
     {
      "art": "text",
-     "text": "Das Matt auf f7 im vierten Zug durch Dame und Läufer, etwa nach ",
+     "text": "The mate on f7 on the fourth move by queen and bishop, for example after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. Dh5 Sc6 3. Lc4 Sf6 4. Dxf7#"
+     "text": "1. e4 e5 2. Qh5 Nc6 3. Bc4 Nf6 4. Qxf7#"
     },
     {
      "art": "text",
-     "text": " (Kapitel 1, ",
+     "text": " (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.3",
+     "text": "Section 1.3",
      "anker": "schaefermatt-1"
     },
     {
@@ -7055,22 +7055,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Das Blatt, auf dem du im Turnier alle Züge beider Seiten mitschreibst (Kapitel 0 und 12; ",
+     "text": "The sheet on which you write down all the moves of both sides during a tournament game (Chapters 0 and 12; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "partieformular-0"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.3",
+     "text": "Section 12.3",
      "anker": "partieformular-12"
     },
     {
@@ -7100,7 +7100,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Stellung oder Variante heißt scharf, wenn beide Seiten Risiken eingehen, genau rechnen müssen und ein einziger Fehler häufig die Partie entscheidet. Das Gegenteil ist ruhig.",
+     "text": "A position or line is called sharp when both sides take risks, must calculate precisely and a single mistake often decides the game. The opposite is quiet.",
      "stil": "normal"
     }
    ],
@@ -7112,12 +7112,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Im Turmendspiel die beiden Seiten neben der Linie des Bauern: die kurze mit weniger Linien bis zum Rand, die lange mit mehr. Der Verteidiger stellt seinen König auf die kurze und seinen Turm auf die lange Seite (Kapitel 9, ",
+     "text": "In rook endgames, the two sides next to the pawn's file: the short side with fewer files to the edge, the long side with more. The defender places their king on the short side and their rook on the long side (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.1",
+     "text": "Section 9.1",
      "anker": "kurze-und-lange-seite-9"
     },
     {
@@ -7141,12 +7141,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Im Endspiel: Dein König stellt sich dem gegnerischen König in den Weg und hält ihn so von einem Bauern fern (Kapitel 9, ",
+     "text": "In the endgame: your king steps into the path of the enemy king and so keeps it away from a pawn (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.5",
+     "text": "Section 9.5",
      "anker": "abdraengen-9"
     },
     {
@@ -7175,8 +7175,8 @@
     },
     {
      "art": "begriff",
-     "text": "Bauernstruktur",
-     "begriff": "Bauernstruktur (Skelett)"
+     "text": "Pawn structure",
+     "begriff": "Pawn structure (skeleton)"
     },
     {
      "art": "text",
@@ -7194,22 +7194,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Tabelle, die für beide Seiten die Leitfragen des → ",
+     "text": "The table that answers the guiding questions of the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Skelett-Röntgen",
-     "begriff": "Skelett-Röntgen"
+     "text": "skeleton X-ray",
+     "begriff": "Skeleton X-ray"
     },
     {
      "art": "text",
-     "text": "s beantwortet, eine Zeile je Leitfrage (Kapitel 5, ",
+     "text": " for both sides, one row per guiding question (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.2",
+     "text": "Section 5.2",
      "anker": "skelettbilanz-5"
     },
     {
@@ -7235,12 +7235,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Routine, mit der du eine Bauernstruktur liest. Vor jedem Bauernzug fragst du zunächst, was er vorn gewinnt und hinten aufgibt. Danach folgen vier Leitfragen: Felder (welche kann kein Bauer mehr kontrollieren?), Bauern (welche kann kein Bauer mehr decken?), Richtung (wohin zeigen die Ketten, wo liegen Raum und Mehrheit?) und Figuren (welche passen zu diesem Skelett?). Am Ende steht der Plan in einem Satz (Kapitel 5, ",
+     "text": "The routine you use to read a pawn structure. Before every pawn move you first ask what it gains in front and gives up behind. Then come four guiding questions: Squares (which can no pawn control anymore?), Pawns (which can no pawn protect anymore?), Direction (where do the chains point, where are space and majority?) and Pieces (which ones suit this skeleton?). At the end comes the plan in one sentence (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.2",
+     "text": "Section 5.2",
      "anker": "skelett-roentgen-5"
     },
     {
@@ -7264,12 +7264,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Wie eine Fesselung, nur steht die wertvollere Figur vorn: Sie wird angegriffen und weicht aus, und die Figur dahinter fällt (Kapitel 7, ",
+     "text": "Like a pin, except that the more valuable piece stands in front: it is attacked and moves away, and the piece behind it falls (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "spiess-7"
     },
     {
@@ -7293,22 +7293,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Springer setzt einen König matt, dem die eigenen Figuren alle Fluchtfelder versperren (Kapitel 4 und 7; ",
+     "text": "A knight mates a king whose own pieces block all its flight squares (Chapters 4 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.6",
+     "text": "Section 4.6",
      "anker": "erstickungsmatt-4"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "erstickungsmatt-7"
     },
     {
@@ -7338,12 +7338,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Felder hinter deiner Bauernfront, auf denen deine Figuren stehen können, ohne von gegnerischen Bauern vertrieben zu werden. Wer mehr Raum hat, meidet den Abtausch (Kapitel 2, 3 und 5; ",
+     "text": "The squares behind your pawn front where your pieces can stand without being driven away by enemy pawns. The side with more space avoids exchanges (Chapters 2, 3, and 5; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.2",
+     "text": "Section 2.2",
      "anker": "raum-2"
     },
     {
@@ -7353,17 +7353,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.2",
+     "text": "Section 3.2",
      "anker": "raum-3"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "raum-5"
     },
     {
@@ -7399,12 +7399,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein aufgesparter Bauernzug, mit dem du in einer Zugzwangstellung das Zugrecht abgibst, ohne deinen König zu verschlechtern (Kapitel 8, ",
+     "text": "A pawn move kept in reserve, with which you hand over the move in a zugzwang position without worsening your king's position (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.9",
+     "text": "Section 8.9",
      "anker": "reserve-tempo-8"
     },
     {
@@ -7428,12 +7428,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ziehe vom Freibauern bis zum Umwandlungsfeld ein Quadrat, zur Seite des gegnerischen Königs hin. Kann der König es betreten, wenn er am Zug ist, holt er den Bauern ein (Kapitel 8, ",
+     "text": "Draw a square from the passed pawn to the promotion square, toward the side of the enemy king. If the king can step into it when it is to move, it catches the pawn (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.7",
+     "text": "Section 8.7",
      "anker": "quadratregel-8"
     },
     {
@@ -7457,12 +7457,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Mattführung mit zwei Schwerfiguren: Eine sperrt eine Reihe, die andere gibt auf der nächsten Schach, Stufe für Stufe, bis der König am Rand steht (Kapitel 7, ",
+     "text": "Mating with two major pieces: one blocks a rank, the other gives check on the next one, step by step, until the king stands on the edge (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.4",
+     "text": "Section 7.4",
      "anker": "treppenmatt-7"
     },
     {
@@ -7486,12 +7486,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Seite am Zug steht nicht im Schach, hat allerdings keinen regelgerechten Zug. Die Partie endet sofort remis (Kapitel 0, ",
+     "text": "The side to move is not in check, but has no legal move. The game ends in a draw immediately (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "patt-0"
     },
     {
@@ -7515,12 +7515,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Bauer des Verteidigers, der noch ziehen kann. Er verhindert, dass der eingesperrte König patt ist, und macht dadurch ein Matt erst möglich (Kapitel 10, ",
+     "text": "A pawn of the defender that can still move. It prevents the trapped king from being stalemated and so makes mate possible in the first place (Chapter 10, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 10.5",
+     "text": "Section 10.5",
      "anker": "pattreserve-10"
     },
     {
@@ -7544,7 +7544,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine von vier Zusammenstellungen aus je einer Eröffnung mit Weiß, einer gegen ",
+     "text": "One of four sets, each made up of one opening with White, one against ",
      "stil": "normal"
     },
     {
@@ -7553,7 +7553,7 @@
     },
     {
      "art": "text",
-     "text": " und einer gegen ",
+     "text": " and one against ",
      "stil": "normal"
     },
     {
@@ -7562,12 +7562,12 @@
     },
     {
      "art": "text",
-     "text": ", die einer gemeinsamen Idee folgen (Kapitel 2, ",
+     "text": ", that follow a common idea (Chapter 2, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.1",
+     "text": "Section 2.1",
      "anker": "starterpaket-2"
     },
     {
@@ -7591,22 +7591,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Stelle in einer Falle, an der du die drei → ",
+     "text": "The point in a trap where you go through the three → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Prüffragen",
-     "begriff": "Prüffragen"
+     "text": "check questions",
+     "begriff": "Check questions"
     },
     {
      "art": "text",
-     "text": " durchgehst. In der Bildunterschrift ist sie als Stopp-Moment markiert (Kapitel 4, ",
+     "text": ". The caption marks it as the stop moment (Chapter 4, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.3",
+     "text": "Section 4.3",
      "anker": "stopp-moment-4"
     },
     {
@@ -7632,12 +7632,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Feld in der gegnerischen Hälfte, das kein gegnerischer Bauer mehr angreifen kann (Kapitel 5, ",
+     "text": "A square in the opponent's half of the board that no enemy pawn can attack anymore (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.3",
+     "text": "Section 5.3",
      "anker": "starkes-feld-5"
     },
     {
@@ -7661,22 +7661,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine komponierte Stellung, die eine besondere Gewinn-, Remis- oder Pattidee möglichst klar zeigt (Kapitel 10, ",
+     "text": "A composed position that shows a special idea of winning, drawing or stalemate as clearly as possible (Chapter 10, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 10.1",
+     "text": "Section 10.1",
      "anker": "studie-10"
     },
     {
      "art": "text",
-     "text": "). Auf Lichess heißt zusätzlich die Funktion so, in der du eigene Stellungen und Varianten sammelst (Kapitel 12, ",
+     "text": "). On Lichess, the feature in which you collect your own positions and lines is also called a study (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.3",
+     "text": "Section 12.3",
      "anker": "studie-12"
     },
     {
@@ -7706,12 +7706,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Sammlung deiner wichtigsten Stellungen, Varianten und Pläne, digital oder auf Karteikarten (Kapitel 12, ",
+     "text": "A collection of your most important positions, lines and plans, digital or on index cards (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.4",
+     "text": "Section 12.4",
      "anker": "lernsammlung-12"
     },
     {
@@ -7735,22 +7735,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Endspieldatenbank, die für jede Stellung mit höchstens sieben Figuren das bewiesene Ergebnis bei bestem Spiel angibt, und zwar für jeden möglichen Zug (Kapitel 8 und 12; ",
+     "text": "An endgame database that gives the proven result with best play for every position with at most seven pieces, and does so for every possible move (Chapters 8 and 12; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.10",
+     "text": "Section 8.10",
      "anker": "tablebase-8"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.3",
+     "text": "Section 12.3",
      "anker": "tablebase-12"
     },
     {
@@ -7780,12 +7780,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Türme gehören hinter Freibauern: hinter die eigenen, um sie zu unterstützen, und hinter die gegnerischen, um sie aufzuhalten. Die Regel geht auf Siegbert Tarrasch zurück [16] (Kapitel 9, ",
+     "text": "Rooks belong behind passed pawns: behind your own to support them, and behind the opponent's to stop them. The rule goes back to Siegbert Tarrasch [16] (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.6",
+     "text": "Section 9.6",
      "anker": "tarrasch-regel-9"
     },
     {
@@ -7809,22 +7809,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Zug als Zeiteinheit. Ein Zug kommt „mit Tempo“, wenn der Gegner sofort reagieren muss, statt seinen eigenen Plan zu verfolgen. Ein ",
+     "text": "A move as a unit of time. A move comes “with tempo” when the opponent has to react immediately instead of pursuing their own plan. A ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Tempoverlust",
+     "text": "loss of tempo",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " ist ein Zug, der nichts einbringt, etwa wenn eine Figur hin- und wieder zurückzieht (Kapitel 1, ",
+     "text": " is a move that gains nothing, for example when a piece moves somewhere and back again (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.2",
+     "text": "Section 1.2",
      "anker": "tempo-1"
     },
     {
@@ -7848,22 +7848,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Tausch ist möglich, aber noch hat niemand geschlagen. Bei Bauern: Zwei gegnerische Bauern könnten einander schlagen. Wer die Spannung auflöst, legt die Bauernstruktur fest (Kapitel 1 und 5; ",
+     "text": "An exchange is possible, but nobody has captured yet. With pawns: two opposing pawns could capture each other. Whoever releases the tension fixes the pawn structure (Chapters 1 and 5; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.5",
+     "text": "Section 1.5",
      "anker": "spannung-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.5",
+     "text": "Section 5.5",
      "anker": "spannung-5"
     },
     {
@@ -7893,12 +7893,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Der Wertunterschied zwischen einem Turm und einer Leichtfigur. „Die Qualität gewinnen“ heißt, einen Turm für einen Springer oder Läufer zu bekommen (Kapitel 1, ",
+     "text": "The difference in value between a rook and a minor piece. “Winning the exchange” means getting a rook for a knight or bishop (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.4",
+     "text": "Section 1.4",
      "anker": "qualitaet-1"
     },
     {
@@ -7922,12 +7922,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Zwanzig Aufgaben zu einem einzigen Motiv, etwa zur Gabel (Kapitel 12, ",
+     "text": "Twenty puzzles on a single motif, for example the fork (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.3",
+     "text": "Section 12.3",
      "anker": "themenblock-12"
     },
     {
@@ -7951,22 +7951,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Vier Schritte vor jedem Zug: Stellung und Phase der Partie erfassen, Kandidatenzüge sammeln, die stärkste Antwort suchen, am Ende bewerten und vergleichen. Die Phase entscheidet, welches Werkzeug du für einen ruhigen Zug heranziehst. Vor dem Ziehen folgt der → ",
+     "text": "Four steps before every move: assess the position and the phase of the game, collect candidate moves, look for the strongest reply, and finally evaluate and compare. The phase decides which tool you use for a quiet move. Before you move comes the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Sicherheitsblick",
-     "begriff": "Sicherheitsblick"
+     "text": "safety check",
+     "begriff": "Safety check"
     },
     {
      "art": "text",
-     "text": " (Kapitel 12, ",
+     "text": " (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.1",
+     "text": "Section 12.1",
      "anker": "denkroutine-12"
     },
     {
@@ -7992,22 +7992,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Zeit, die jeder Seite für ihre Züge zur Verfügung steht. Geschrieben wird sie als Minuten + Sekunden: 10+5 heißt 10 Minuten Grundzeit und 5 Sekunden → ",
+     "text": "The time each side has for its moves. It is written as minutes + seconds: 10+5 means 10 minutes of base time and a 5-second → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Zeitgutschrift",
-     "begriff": "Zeitgutschrift"
+     "text": "increment",
+     "begriff": "Increment"
     },
     {
      "art": "text",
-     "text": " für jeden Zug (Kapitel 12, ",
+     "text": " for every move (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "bedenkzeit-12"
     },
     {
@@ -8033,12 +8033,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Zug droht etwas, wenn er im nächsten Zug Material gewinnen oder mattsetzen würde (Kapitel 1, ",
+     "text": "A move threatens something if it would win material or give mate on the next move (Chapter 1, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.4",
+     "text": "Section 1.4",
      "anker": "drohung-1"
     },
     {
@@ -8062,42 +8062,42 @@
    "text": [
     {
      "art": "text",
-     "text": "In der → ",
+     "text": "In the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Faktorenbilanz",
-     "begriff": "Faktorenbilanz"
+     "text": "factor balance",
+     "begriff": "Factor balance"
     },
     {
      "art": "text",
-     "text": " die Zahl der Figuren, die schon im Spiel sind, verglichen mit dem Gegner. Im Mittelspiel lebt sie als → ",
+     "text": ", the number of pieces already in play, compared with the opponent. In the middlegame it lives on as the → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Initiative",
+     "text": "initiative",
      "begriff": "Initiative"
     },
     {
      "art": "text",
-     "text": " weiter (Kapitel 3 und 6; ",
+     "text": " (Chapters 3 and 6; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 3.2",
+     "text": "Section 3.2",
      "anker": "zeit-3"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.1",
+     "text": "Section 6.1",
      "anker": "zeit-6"
     },
     {
@@ -8130,12 +8130,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Dir bleibt nur noch wenig Zeit für die Züge, die du noch spielen musst (Kapitel 12, ",
+     "text": "You have only a little time left for the moves you still have to play (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.5",
+     "text": "Section 12.5",
      "anker": "zeitnot-12"
     },
     {
@@ -8159,12 +8159,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Turnierregel: Berührst du absichtlich eine eigene Figur, musst du mit ihr ziehen. Berührst du absichtlich eine gegnerische, musst du sie schlagen, jeweils sofern das regelgerecht möglich ist. Wer eine Figur nur zurechtrücken will, kündigt das vorher an (Kapitel 0, ",
+     "text": "Tournament rule: if you deliberately touch one of your own pieces, you must move it. If you deliberately touch one of your opponent's pieces, you must capture it, in each case provided this is legal. If you only want to adjust a piece, you announce this beforehand (Chapter 0, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "beruehrt-gefuehrt-0"
     },
     {
@@ -8193,8 +8193,8 @@
     },
     {
      "art": "begriff",
-     "text": "Abtausch",
-     "begriff": "Abtausch"
+     "text": "Exchange",
+     "begriff": "Exchange"
     },
     {
      "art": "text",
@@ -8203,8 +8203,8 @@
     },
     {
      "art": "begriff",
-     "text": "Tauschfrage",
-     "begriff": "Tauschfrage"
+     "text": "Exchange question",
+     "begriff": "Exchange question"
     },
     {
      "art": "text",
@@ -8223,12 +8223,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Dieselbe Stellung entsteht über eine andere Zugfolge (Kapitel 2, ",
+     "text": "The same position arises by a different move order (Chapter 2, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.12",
+     "text": "Section 2.12",
      "anker": "zugumstellung-2"
     },
     {
@@ -8252,12 +8252,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Angebot, das so aussieht, als gewinne der Gegner etwas, und das ihn in Wahrheit Material, die Stellung oder die Partie kostet (Kapitel 4, ",
+     "text": "An offer that looks as if the opponent wins something, but that in truth costs them material, the position or the game (Chapter 4, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.1",
+     "text": "Section 4.1",
      "anker": "falle-4"
     },
     {
@@ -8281,22 +8281,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Auswertung am Ende jeder Falle: wer hineintappt, welche Regel gereicht hätte und welcher Zug rettet. Dazu gehört der ",
+     "text": "The review at the end of every trap: who falls into it, which rule would have been enough, and which move saves. It includes the ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Fallensteller-Test",
+     "text": "trap-setter test",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": ": Ist der Zug, der die Falle stellt, auch ohne Fehler des Gegners gut? (Kapitel 4, ",
+     "text": ": is the move that sets the trap good even without a mistake by the opponent? (Chapter 4, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.3",
+     "text": "Section 4.3",
      "anker": "fallencheck-4"
     },
     {
@@ -8325,8 +8325,8 @@
     },
     {
      "art": "begriff",
-     "text": "Fallencheck",
-     "begriff": "Fallencheck"
+     "text": "Trap check",
+     "begriff": "Trap check"
     },
     {
      "art": "text",
@@ -8344,22 +8344,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine Figur, die angegriffen ist und kein sicheres Feld mehr erreichen kann (Kapitel 4 und 7; ",
+     "text": "A piece that is attacked and can no longer reach a safe square (Chapters 4 and 7; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.8",
+     "text": "Section 4.8",
      "anker": "gefangene-figur-4"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "gefangene-figur-7"
     },
     {
@@ -8389,12 +8389,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Deine Kandidaten und die Antworten des Gegners: Jeder Kandidat ist ein Ast, jede Antwort eine Verzweigung. Du rechnest Ast für Ast (Kapitel 7, ",
+     "text": "Your candidates and your opponent's replies: each candidate is a branch, each reply a fork in the branch. You calculate branch by branch (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "variantenbaum-7"
     },
     {
@@ -8418,12 +8418,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Dein König läuft auf drei Feldern ein kleines Dreieck, während der gegnerische König nur zwischen zwei Feldern pendeln kann. Danach steht dieselbe Stellung auf dem Brett, aber mit dem Gegner am Zug (Kapitel 8, ",
+     "text": "Your king walks a small triangle on three squares, while the enemy king can only shuttle between two squares. Afterwards the same position is on the board, but with the opponent to move (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.8",
+     "text": "Section 8.8",
      "anker": "triangulation-8"
     },
     {
@@ -8447,12 +8447,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Grenze im Endspiel zwei Springer gegen Bauer, benannt nach dem russischen Studienkomponisten Alexei Troizki (auch Troitzky geschrieben). Steht der Bauer auf seinem Grenzfeld oder weiter zurück und blockiert ihn ein Springer sicher, gewinnt die Seite mit den Springern. Manche dieser Gewinne dauern allerdings länger, als die 50-Züge-Regel erlaubt (Kapitel 10, ",
+     "text": "The boundary in the endgame of two knights against pawn, named after the Russian study composer Alexei Troitzky (also spelled Troitsky). If the pawn stands on its boundary square or farther back and a knight blockades it securely, the side with the knights wins. Some of these wins, however, take longer than the 50-move rule allows (Chapter 10, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 10.5",
+     "text": "Section 10.5",
      "anker": "troitzky-linie-10"
     },
     {
@@ -8476,12 +8476,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Die Umwandlung in Turm, Läufer oder Springer statt in die Dame, etwa um ein Patt zu vermeiden oder mit dem Springer Schach zu geben (Kapitel 0, 7 und 10; ",
+     "text": "Promotion to a rook, bishop or knight instead of a queen, for example to avoid stalemate or to give check with the knight (Chapters 0, 7, and 10; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Kapitel 0",
+     "text": "Chapter 0",
      "anker": "unterverwandlung-0"
     },
     {
@@ -8491,17 +8491,17 @@
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.2",
+     "text": "Section 7.2",
      "anker": "unterverwandlung-7"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 10.1",
+     "text": "Section 10.1",
      "anker": "unterverwandlung-10"
     },
     {
@@ -8537,12 +8537,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Remisstellung im Turmendspiel gegen einen Randbauern: Der verteidigende Turm greift den Bauern von der Seite an und gibt von dort Schachs, sobald sich der gegnerische König nähert. Der eigene König hält Abstand und wartet gegen den weißen a-Bauern auf g7 oder h7 (Kapitel 9, ",
+     "text": "Drawing position in a rook endgame against a rook's pawn: the defending rook attacks the pawn from the side and gives checks from there as soon as the enemy king approaches. The defender's king keeps its distance and, against the white a-pawn, waits on g7 or h7 (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.4",
+     "text": "Section 9.4",
      "anker": "vancura-stellung-9"
     },
     {
@@ -8566,12 +8566,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Stellungen im Kopf sehen, ohne die Figuren zu ziehen: Nach jedem gedachten Zug steht die Figur nur noch auf dem Zielfeld (Kapitel 12, ",
+     "text": "Seeing positions in your head without moving the pieces: after each imagined move, the piece stands only on its destination square (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.1",
+     "text": "Section 12.1",
      "anker": "visualisierung-12"
     },
     {
@@ -8595,22 +8595,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Zug, der die eigene Stellung möglichst wenig verändert und nur dazu dient, dem Gegner den Zug zu überlassen, meist um ihn in → ",
+     "text": "A move that changes your own position as little as possible and only serves to hand the move over to your opponent, usually to put them in → ",
      "stil": "normal"
     },
     {
      "art": "begriff",
-     "text": "Zugzwang",
+     "text": "zugzwang",
      "begriff": "Zugzwang"
     },
     {
      "art": "text",
-     "text": " zu bringen (Kapitel 8, ",
+     "text": " (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.4",
+     "text": "Section 8.4",
      "anker": "abwartezug-8"
     },
     {
@@ -8636,7 +8636,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Sieben Zeichen dafür, dass in der Stellung eine Taktik steckt: ",
+     "text": "Seven signs that a tactic is hidden in the position: ",
      "stil": "normal"
     },
     {
@@ -8646,7 +8646,7 @@
     },
     {
      "art": "text",
-     "text": " ungedeckte Figur, ",
+     "text": " undefended piece, ",
      "stil": "normal"
     },
     {
@@ -8656,7 +8656,7 @@
     },
     {
      "art": "text",
-     "text": " gefährliche Linie, ",
+     "text": " dangerous line, ",
      "stil": "normal"
     },
     {
@@ -8666,7 +8666,7 @@
     },
     {
      "art": "text",
-     "text": " König ohne Luft, ",
+     "text": " king without air, ",
      "stil": "normal"
     },
     {
@@ -8676,7 +8676,7 @@
     },
     {
      "art": "text",
-     "text": " doppelte Aufgabe, ",
+     "text": " double duty, ",
      "stil": "normal"
     },
     {
@@ -8686,17 +8686,17 @@
     },
     {
      "art": "text",
-     "text": " Geschenk (Kapitel 4, ",
+     "text": " gift (Chapter 4, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 4.2",
+     "text": "Section 4.2",
      "anker": "warnsignale-4"
     },
     {
      "art": "text",
-     "text": "), dazu ",
+     "text": "), plus ",
      "stil": "normal"
     },
     {
@@ -8706,7 +8706,7 @@
     },
     {
      "art": "text",
-     "text": " Gabelgeometrie und ",
+     "text": " fork geometry and ",
      "stil": "normal"
     },
     {
@@ -8716,12 +8716,12 @@
     },
     {
      "art": "text",
-     "text": " Figur am Rand (Kapitel 7, ",
+     "text": " piece on the edge (Chapter 7, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 7.1",
+     "text": "Section 7.1",
      "anker": "warnsignale-7"
     },
     {
@@ -8751,22 +8751,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Feld, das kein eigener Bauer mehr kontrollieren kann, oder ein Bauer, den kein eigener Bauer mehr decken kann (Kapitel 5, ",
+     "text": "A square that no pawn of your own can control anymore, or a pawn that no pawn of your own can protect anymore (Chapter 5, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 5.1",
+     "text": "Section 5.1",
      "anker": "schwaeche-5"
     },
     {
      "art": "text",
-     "text": "). Im weiteren Sinn jede Stelle, die der Verteidiger bewachen muss: ein Bauer, ein Feld, eine Linie oder der König (Kapitel 6, ",
+     "text": "). In the broader sense, any point the defender has to guard: a pawn, a square, a file or the king (Chapter 6, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 6.3",
+     "text": "Section 6.3",
      "anker": "schwaeche-6"
     },
     {
@@ -8801,8 +8801,8 @@
     },
     {
      "art": "begriff",
-     "text": "Prüffragen",
-     "begriff": "Prüffragen"
+     "text": "Check questions",
+     "begriff": "Check questions"
     },
     {
      "art": "text",
@@ -8820,22 +8820,22 @@
    "text": [
     {
      "art": "text",
-     "text": "Die beiden Bretthälften: der Damenflügel mit den Linien a bis d und der Königsflügel mit den Linien e bis h (Kapitel 1 und 2; ",
+     "text": "The two halves of the board: the queenside with the files a to d and the kingside with the files e to h (Chapters 1 and 2; ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 1.1",
+     "text": "Section 1.1",
      "anker": "fluegel-1"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 2.1",
+     "text": "Section 2.1",
      "anker": "fluegel-2"
     },
     {
@@ -8865,7 +8865,7 @@
    "text": [
     {
      "art": "text",
-     "text": "Eine strenge Form des Wiederholens (englisch ",
+     "text": "A strict form of repetition (",
      "stil": "normal"
     },
     {
@@ -8875,12 +8875,12 @@
     },
     {
      "art": "text",
-     "text": "), beschrieben von den schwedischen Großmeistern Axel Smith und Hans Tikkanen [15]: Du löst denselben großen Satz von Aufgaben mehrmals hintereinander, jeden Durchgang schneller (Kapitel 12, ",
+     "text": "), described by the Swedish grandmasters Axel Smith and Hans Tikkanen [15]: you solve the same large set of puzzles several times in a row, each round faster (Chapter 12, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 12.3",
+     "text": "Section 12.3",
      "anker": "specht-methode-12"
     },
     {
@@ -8904,12 +8904,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Ein Läufer, der das Umwandlungsfeld des eigenen Randbauern nicht kontrolliert. Erreicht der verteidigende König die Ecke, ist die Partie remis (Kapitel 9, ",
+     "text": "A bishop that does not control the promotion square of its own rook's pawn. If the defending king reaches the corner, the game is a draw (Chapter 9, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 9.8",
+     "text": "Section 9.8",
      "anker": "falscher-laeufer-9"
     },
     {
@@ -8938,8 +8938,8 @@
     },
     {
      "art": "begriff",
-     "text": "Schach-Röntgen-Regel",
-     "begriff": "Schach-Röntgen-Regel"
+     "text": "Chess X-ray rule",
+     "begriff": "Chess X-ray rule"
     },
     {
      "art": "text",
@@ -8957,12 +8957,12 @@
    "text": [
     {
      "art": "text",
-     "text": "Du musst ziehen, obwohl jeder mögliche Zug deine Stellung verschlechtert. Wäre in derselben Stellung auch der Gegner im Nachteil, wenn er ziehen müsste, heißt der Zugzwang wechselseitig (Kapitel 8, ",
+     "text": "You have to move, even though every possible move worsens your position. If the opponent would also be at a disadvantage in the same position if they had to move, the zugzwang is called mutual (Chapter 8, ",
      "stil": "normal"
     },
     {
      "art": "stelle",
-     "text": "Abschnitt 8.2",
+     "text": "Section 8.2",
      "anker": "zugzwang-8"
     },
     {

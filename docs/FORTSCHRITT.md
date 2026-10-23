@@ -1371,12 +1371,14 @@ Trainerdaten in `inhalte/` (Paket P4).
       (`TaktikBereich.tsx` gibt `motivAbfragen={false}` an `Taktikaufgabe`). N710.
 - [x] R31 Falle oder Köder: Auftrag und Knopf „Nehmen: …“ ohne „+ # ! ?“
       (`ohneZugzeichen` in `schach/notation.ts`); die Auflösung zeigt den Zug vollständig. N711.
-- [ ] R46 Studien-Trainer: bei falschem Zug roter Pfeil (eigener Zug) und goldener Pfeil (Zug der
-      Studie), Vergleich beider mit der Engine.
+- [x] R46 Studien-Trainer: bei falschem Zug roter Pfeil (eigener Zug) und goldener Pfeil (Zug der
+      Studie), Vergleich beider mit der Engine (`Repertoireaufgabe` mit `vergleichen`,
+      gemeinsame Anzeige `Zugvergleich.tsx` und `vergleichspfeile.ts` für Studien und Zug
+      erraten; `rateurteil` liefert beide Werte und die Variante nach dem eigenen Zug). N712.
 - [ ] R45 Zug erraten: Hinweis-Knopf (Figur), Pfeile für den letzten Zug, Bewertungsbalken live,
       Kommentar nach Motiven und Fehlerarten, Zugnavigation, Analysemodus.
 
-**Nächster Schritt:** R46.
+**Nächster Schritt:** R45.
 
 ## Offene Punkte
 

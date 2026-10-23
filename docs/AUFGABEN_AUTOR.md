@@ -153,6 +153,12 @@ Spielgefühl.
 - [ ] N711. **Falle oder Köder ohne verräterische Zeichen (R31):** Training › Falle oder Köder ›
       Runde starten. Im Auftrag und auf dem Knopf „Nehmen: …“ steht der Zug ohne „+“, „#“, „!“
       oder „?“. Nach der Entscheidung zeigt die Auflösung den Zug wieder mit allen Zeichen.
+- [ ] N712. **Studien: falscher Zug im Vergleich (R46):** Training › Studien lösen, Saavedra-Studie.
+      Ziehe zuerst absichtlich falsch, etwa den König b6–b7. Rot erscheint dein Zug, gold der Zug
+      der Studie (c6–c7), dazu „Nicht der Zug der Studie“. Nach etwa drei Sekunden sagt die
+      Engine, wie viel schwächer dein Zug ist, und nennt beide Bewertungen aus Sicht von Weiß
+      (Matt als „#5“). Bei Matt nennt sie keinen Abstand in Bauern. Danach c7 ziehen, es geht
+      weiter wie bisher.
 
 ---
 

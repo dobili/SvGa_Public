@@ -72,6 +72,7 @@ function Studienrunde({ studien }: { studien: readonly Aufgabe[] }) {
             <Repertoireaufgabe
               aufgabe={a}
               runde={r}
+              vergleichen
               auftrag={t("studien.auftrag", {
                 titel: a.titel,
                 farbe: t(a.seite === "white" ? "farbe.w" : "farbe.b"),

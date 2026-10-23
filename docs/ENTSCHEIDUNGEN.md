@@ -4404,3 +4404,35 @@ gleich. Ergebnis: **kein** katastrophaler Lösungszug, es muss keine Aufgabe ers
 Endspieltrainer nimmt die Züge der Engine selbst, Repertoire und Zug erraten folgen dem Buch und
 den Meisterpartien (Regel 1; „Zug erraten“ sagt seit W12 ohnehin, ob der eigene Zug gleichwertig
 war). Der Messlauf bleibt für spätere Datenstände.
+
+## 23.10.2026 – P4 Trainer-Inhalte (Fable, Zweig `p4-trainerinhalte`)
+
+- **R50 Falle oder Köder, neuer Maßstab.** Falle = nach dem Nehmen hat der Gegner eine
+  Widerlegung, der Leser steht mindestens 1,5 Bauern schlechter als vor dem Nehmen (bester Zug)
+  und mindestens 0,8 im Minus (Tiefe 18). Grund: Die alte Regel „ein anderer Zug war 1,5 besser“
+  machte aus verpassten Gewinnen Fallen (Befund des Autors, Lichess-Aufgabe mit Wertung 753).
+  Grenze 0,8 statt 1,0, damit das Blackburne-Shilling-Gambit (Abb. 4.41, −0,88) Falle bleibt.
+  Jede Aufgabe braucht den Köder-Zug des Gegners (`fenVorher`, `vorzug`), der das Angebot erst
+  geschaffen hat (Figur hingestellt, Linie geöffnet, Verteidiger abgezogen); Lichess-Fallen nur
+  aus Aufgaben ohne „crushing“ und ohne Mattthema. Die App zeigt den Köder-Zug rot, das Angebot
+  grau, nach der Antwort Widerlegung mit Wirkung (Matt, Material, Stellung), Wert vorher/nachher
+  und erst dann die Warnsignale. Drei Schläge mit „?“ aus Kapitel 2 und 3 (2.129, 2.49, 3.30)
+  sind nach diesem Maßstab keine Fallen und fallen weg (Rückfrage P4-3).
+- **R48 Planbilanz-Übung.** Ablenker nur aus Sicht der Seite am Zug: „Wo?“ aus anderen
+  Stellungen mit anderer Lage (Ort, Grund, Flügel), „Gegner?“ nur Aussagen über denselben Gegner
+  (Ersatz: anderer Flügel, „noch kein erkennbarer Plan“), „Welche Figur?“ andere eigene Figuren,
+  die aktiver sind als die LAP; eigene Figuren mit „dein/deine“. Nur Mittelspielstellungen nach
+  `schach/phase.ts` (Lesart). Hauptkette: längste, dann zentralste Kette zum Flügel der Antwort
+  (Abb. 11.78: e4–d5). Der leere Zusatz „(Ziel )“ des Werkzeugs wird im Trainer entfernt;
+  Befunde für P3: leeres Ziel in `plan.wo.figuren`, Kettenwahl in `planlage.ts` nimmt die erste
+  Kette, Gliederfolge „d6–f6–e5“ bei zwei Basen.
+- **R47 Endspieltrainer.** Abb. 8.31 raus (Weiß am Zug: Ka6 patt, die Engine beendet die Aufgabe
+  vor dem ersten Zug des Lesers); alle übrigen 79 Buchstellungen über zwölf Züge geprüft (Engine
+  Tiefe 12 für alle Züge, Tiefe 16 für ihren Zug): überall kann der Leser scheitern. 119 freie
+  Lichess-Endspielaufgaben (Themen pawn/rook/queen/bishop/knightEndgame, „equality“ = Remis),
+  höchstens acht Steine, Engine bestätigt Ziel und Nichttrivialität, Stufe nach Wertung, je
+  Gruppe höchstens fünf (Startwert 20261023). Kurzübungen: drei neue Arten; Quadrat-Lösung als
+  Pfeile aus k8-quadrat statt goldener Felder.
+- **R49 Strukturerkenner** wartet auf die neue Strukturerkennung von P3 (Zweig `p3-werkzeuge`,
+  am 23.10.2026 noch nicht vorhanden).
+

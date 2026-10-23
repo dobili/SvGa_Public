@@ -111,6 +111,15 @@ Buchdaten; die App schreibt sie deutsch.
 
 ### Falle oder Köder (`falle.json`, Kapitel 2 bis 4)
 
+**Seit P4 (R50, 23.10.2026, Fable) gilt ein neuer Maßstab;** die Absätze darunter beschreiben den
+alten Lauf vom 17.10.2026, soweit sie nicht widersprechen. Neu: Jede Aufgabe trägt den Köder-Zug
+des Gegners (`fenVorher`, `vorzug`); **Falle** = nach dem Nehmen steht der Leser mindestens 1,5
+Bauerneinheiten schlechter als vor dem Nehmen (`wertVorher` = bester Zug, `wertNachher` = nach
+dem Schlag und der besten Antwort) und mindestens 0,8 im Minus; **Geschenk** = höchstens 0,3
+hinter dem besten Zug und nicht im Minus. Lichess-Fallen nur aus Aufgaben ohne „crushing“ und
+Mattthema, und nur, wenn der Köder-Zug das Angebot erst geschaffen hat (`falle.neues_angebot`).
+Buchquellen in `falle_buch.py`. Lauf in vier Teilen: `--teil i/4`, dann `--zusammen`.
+
 137 Aufgaben: 17 aus dem Buch (12 Fallenchecks, 5 aus den Zugfolgen der Kapitel 2 und 3), 120 aus der Lichess-Datenbank; `python -m pipeline.trainer.falle
 --lichess <Stichprobe> --je-stufe 12` (Dauer etwa zwei Stunden, die Engine siebt dreimal so viele
 Kandidaten wie gebraucht).
@@ -161,6 +170,14 @@ Die Plan-Sätze selbst (Texte zu den Schlüsseln `vorpostenBesetzen`, `isolaniBl
 in die App (`i18n/de.json`).
 
 ### Endspieltrainer (`endspiel.json`, Kapitel 8 und 9; Fable, 0.2.49)
+
+**Seit P4 (R47, 23.10.2026, Fable):** Abb. 8.31 ausgelassen (die Engine zieht zuerst und setzt
+patt). Dazu 119 freie Aufgaben der Lichess-Datenbank (`endspiel_lichess.py`, Kennungen
+`endspiel-l-…`, Themen `bauernendspiel`, `turmendspiel`, `damenendspiel`, `leichtfiguren`):
+höchstens acht Steine, genau eine Figurenart, Gewinn ab +2,0 oder Matt, Remis (Lichess-Thema
+„equality“) bis ±0,8, Tiefe 18; nicht trivial (mindestens ein Zug verfehlt das Ziel, Tiefe 12);
+je Thema, Stufe (Lichess-Wertung) und Ziel höchstens fünf. Stichprobe:
+`lichess.lies_datenbank(pfad, endspiele=True)` → `buch/arbeit/lichess/passende-endspiel.pkl`.
 
 Erzeugt mit `python -m pipeline.trainer.endspiel` (etwa eine Minute). 78 Abbildungen aus
 Kapitel 8 und 9, die sich ausspielen lassen (Lehrbilder, die nur eine Regel zeigen, und

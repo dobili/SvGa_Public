@@ -186,6 +186,11 @@ function kettenAus(brett: Board, bauern: readonly Square[], farbe: Color): Bauer
       deckerVon(feld, farbe).filter((d) => bauern.includes(d) && !glieder.has(d)),
     );
     const spitze = kette[kette.length - 1];
+    // Verzweigt sich die Kette (zwei Basen wie d6–e5–f6 oder zwei Spitzen wie d5–e4–f5), liest
+    // man sie von Linie zu Linie; nach Reihen sortiert stünde „d6–f6–e5“ da (Befund aus P4,
+    // Abb. 6.11).
+    const verzweigt = new Set(kette.map((feld) => eigeneReihe(feld, farbe))).size < kette.length;
+    if (verzweigt) kette.sort((a, b) => squareFile(a) - squareFile(b));
     if (spitze !== undefined) ketten.push({ glieder: kette, basis, spitze, stuetzen });
   }
   return ketten;

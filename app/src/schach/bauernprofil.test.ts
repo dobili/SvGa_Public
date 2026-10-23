@@ -63,6 +63,14 @@ describe("bauernprofil", () => {
     expect(test.find((t) => t.feld === feld("d4"))?.gesund).toBe(false);
   });
 
+  it("Abb. 6.11: verzweigte Ketten von Linie zu Linie (d6–e5–f6, d5–e4–f5)", () => {
+    const { brett } = stellungVon("6.11");
+    const schwarz = bauernprofil(brett, "black").ketten.map((k) => namen(k.glieder));
+    expect(schwarz).toContainEqual(["d6", "e5", "f6"]);
+    const weiss = bauernprofil(brett, "white").ketten.map((k) => namen(k.glieder));
+    expect(weiss).toContainEqual(["d5", "e4", "f5"]);
+  });
+
   it("Abb. 1.26: mit dem Bauern c3 ist die Basis d4 gestützt und besteht den Deckungstest", () => {
     const { brett } = stellungVon("1.26");
     const kette = bauernprofil(brett, "white").ketten[0];

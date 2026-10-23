@@ -1304,6 +1304,7 @@
   "plan.wo.sturm": "On the {fluegel}, against the king: {sturm}{linien}",
   "plan.wo.sturmZug": "Storm {sturm}",
   "plan.wo.figuren": "On the {fluegel}, with pieces against the king: all three conditions met (target {ziel})",
+  "plan.wo.figurenOhneZiel": "On the {fluegel}, with pieces against the king: all three conditions met",
   "plan.wo.schwaeche": "On the {fluegel}, against the fixed weakness {feld}",
   "plan.wo.minderheit": "On the {fluegel}: minority attack to create a weakness",
   "plan.wo.gegenspiel": "On the {fluegel}: counterplay with pieces; the pawns in front of your own king stay put",

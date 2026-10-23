@@ -98,11 +98,14 @@ export function woText(l: Planlage): string {
           ? t("plan.linien", { linien: aufzaehlung(l.linienZumKoenig.map(linienname)) })
           : "",
     });
-  if (a.grund === "gleicherFluegel")
-    return t("plan.wo.figuren", {
-      fluegel,
-      ziel: felderText(l.bedingungen?.ziele.map((z) => z.feld) ?? l.bedingungen?.haken ?? []),
-    });
+  if (a.grund === "gleicherFluegel") {
+    // Ohne Ziele zählen die Haken; ohne beides steht kein leeres „(Ziel )“ da (Befund aus P4).
+    const ziele = l.bedingungen?.ziele.map((z) => z.feld) ?? [];
+    const felder = ziele.length > 0 ? ziele : (l.bedingungen?.haken ?? []);
+    return felder.length > 0
+      ? t("plan.wo.figuren", { fluegel, ziel: felderText(felder) })
+      : t("plan.wo.figurenOhneZiel", { fluegel });
+  }
   const schwaeche = l.schwaechen.find((s) => s.fixiert);
   if (schwaeche) return t("plan.wo.schwaeche", { fluegel, feld: feldname(schwaeche.feld) });
   return l.minderheit?.art === "gegenspiel"

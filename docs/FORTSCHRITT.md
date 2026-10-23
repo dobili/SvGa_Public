@@ -1311,6 +1311,11 @@ Ziel, wenn `bedingungen.ziele` und `haken` leer sind (Abb. 11.14, 11.15, 11.67);
 nimmt als `kette` die erste Kette mit Richtung statt der längsten/zentralsten (Abb. 11.78:
 c3–b4 statt e4–d5); die Gliederfolge einer Kette mit zwei Basen liest sich „d6–f6–e5“ (Abb.
 6.11). Der Trainer umgeht alle drei lokal (`planablenker.ts`).
+**Erledigt (P1, 23.10.2026):** Alle drei im Werkzeug behoben: ohne Ziel und Haken heißt es nur
+„alle drei Bedingungen erfüllt“ (`plan.wo.figurenOhneZiel`); die Hauptkette ist die längste mit
+Richtung, bei Gleichstand die zentralste; verzweigte Ketten (zwei Basen oder zwei Spitzen) stehen
+von Linie zu Linie („d6–e5–f6“). Tests in `planlage.test.ts` und `bauernprofil.test.ts`. Die
+Umgehungen in `planablenker.ts` bleiben unschädlich stehen.
 
 **Nächster Schritt:** Rückmeldung des Autors zu N690–N705 und P4-1 bis P4-9; danach den Zweig
 nach `weiter-ohne-autor` (oder main) übernehmen.

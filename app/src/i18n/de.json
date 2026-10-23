@@ -1304,6 +1304,7 @@
   "plan.wo.sturm": "Am {fluegel}, gegen den König: {sturm}{linien}",
   "plan.wo.sturmZug": "Sturm {sturm}",
   "plan.wo.figuren": "Am {fluegel}, mit Figuren gegen den König: alle drei Bedingungen erfüllt (Ziel {ziel})",
+  "plan.wo.figurenOhneZiel": "Am {fluegel}, mit Figuren gegen den König: alle drei Bedingungen erfüllt",
   "plan.wo.schwaeche": "Am {fluegel}, gegen die fixierte Schwäche {feld}",
   "plan.wo.minderheit": "Am {fluegel}: Minderheitsangriff, um eine Schwäche zu erzeugen",
   "plan.wo.gegenspiel": "Am {fluegel}: Gegenspiel mit Figuren; die Bauern vor dem eigenen König bleiben stehen",

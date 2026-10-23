@@ -224,6 +224,30 @@ function antwortVon(l: Omit<Planlage, "antwort">): Antwort {
   return { art: "offen" };
 }
 
+/** Mitte des Brettes zwischen d- und e-Linie (Linien 0 bis 7). */
+const BRETTMITTE = 3.5;
+
+/**
+ * Die Kette, die den Plan bestimmt: die längste mit Richtung, bei Gleichstand die zentralste.
+ * Beispiel: Abb. 11.78, Weiß mit e4–d5 und c3–b4 → e4–d5 (Befund aus P4: vorher die erste
+ * gefundene, c3–b4).
+ * Sonderfall: keine Kette mit Richtung → null.
+ */
+function hauptkette(ketten: readonly Kettenrichtung[]): Kettenrichtung | null {
+  const abstand = (k: Kettenrichtung) =>
+    Math.abs(
+      k.kette.glieder.reduce((summe, feld) => summe + squareFile(feld), 0) /
+        k.kette.glieder.length -
+        BRETTMITTE,
+    );
+  const mitRichtung = ketten.filter((k) => k.zeigtNach !== null);
+  return (
+    [...mitRichtung].sort(
+      (a, b) => b.kette.glieder.length - a.kette.glieder.length || abstand(a) - abstand(b),
+    )[0] ?? null
+  );
+}
+
 /**
  * Die Lage einer Seite für Planfrage 1.
  *
@@ -243,7 +267,7 @@ export function planlage(p: Stellungsprofil, farbe: Color): Planlage {
   const ohneAntwort = {
     farbe,
     typ,
-    kette: richtung.ketten.find((k) => k.zeigtNach !== null) ?? null,
+    kette: hauptkette(richtung.ketten),
     hebelBasis: richtung.hebel.filter((h) => h.gegenBasis),
     zentrumshebel: zentrumshebelVon(p, farbe, richtung),
     koenige: { eigen, gegner: seiner, art },

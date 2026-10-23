@@ -9,11 +9,17 @@
  * Die Regeln greifen allgemein: Jeder Behälter, der ein .brettbereich als direktes Kind hat,
  * wird zweispaltig; die Bildschirme selbst brauchen dafür keine eigene Gestalt.
  * Wird zuletzt geladen (main.tsx), damit die Regeln die der übrigen Dateien überschreiben.
+ *
+ * Seit R40 (23.10.2026) entscheidet das Seitenverhältnis statt „quer“ oder „hoch“: zwei Spalten
+ * erst, wenn das Fenster mindestens 5 : 4 breit ist. Am Rechner kippte die App sonst erst bei
+ * einem quadratischen Fenster in eine Spalte; beim Schmalerziehen wurden Brett und Textspalte
+ * vorher sehr eng, und der Wechsel schien auszubleiben. Handy und Tablet quer (ab etwa 4 : 3)
+ * bleiben zweispaltig. Alles geschieht in CSS und folgt der Fenstergröße deshalb sofort.
  */
 
-/* ---------- Tablet hoch: etwas mehr Breite als auf dem Handy ---------- */
+/* ---------- Tablet hoch (oder schmales Fenster): etwas mehr Breite als auf dem Handy ---------- */
 
-@media (orientation: portrait) and (min-width: 760px) {
+@media (max-aspect-ratio: 5/4) and (min-width: 760px) {
   .rahmen,
   .leiste {
     max-width: 720px;
@@ -30,9 +36,9 @@
   }
 }
 
-/* ---------- Querformat ab 600 Pixeln ---------- */
+/* ---------- Querformat ab 600 Pixeln und mindestens 5 : 4 ---------- */
 
-@media (orientation: landscape) and (min-width: 600px) {
+@media (min-aspect-ratio: 5/4) and (min-width: 600px) {
   :root {
     /* Breite der Schiene links (Material „navigation rail“: 80 dp und mehr). */
     --schiene: 88px;

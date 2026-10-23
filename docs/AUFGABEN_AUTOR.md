@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 23.10.2026, Version 0.2.118 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 23.10.2026, Version 0.2.119 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.118“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.119“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu in 0.2.118: Brett und Bedienung (P2; Opus, 23.10.2026)
+### Neu in 0.2.118 und 0.2.119: Brett und Bedienung (P2; Opus, 23.10.2026)
 
 - [ ] N650. **Tippen (R35):** Spielen › „Partie beginnen“. Tippe den Springer g1 an, dann nicht
       genau f3, sondern knapp daneben (etwa auf den linken Rand von g3): Der Springer zieht nach
@@ -65,6 +65,21 @@ Teil fertig ist.
       selbst aus; die Karte unter dem Brett bleibt. Öffnest du eine beendete Partie aus der Liste,
       kommt das Schild nicht noch einmal. Bei Partien zu zweit steht „Weiß gewinnt“ oder
       „Schwarz gewinnt“.
+- [ ] N655. **Startanimation (R39):** Schließe die App ganz und öffne sie neu. Etwa zwei Sekunden
+      lang wächst der goldene Springer vom Cover mit goldenem Schein auf dunklem Grund heran,
+      darunter „Schach von Grund auf“, dann blendet alles aus. Ein Tipp irgendwo überspringt sie.
+      Beim Neuladen kommt sie nicht, und höchstens einmal je Stunde (siehe Teil 2, P2-A).
+- [ ] N656. **Fenstergröße am Rechner (R40):** Öffne Abb. 1.26 im Browser am Rechner, Fenster
+      breit: Brett links, Text rechts. Ziehe das Fenster langsam schmaler: Sobald es weniger als
+      etwa 5 : 4 breit ist (etwa 1000 × 800), springt die App sofort, ohne Neuladen, in eine
+      Spalte mit dem Brett oben; breiter gezogen wieder zurück. Bisher kippte sie erst bei einem
+      fast quadratischen Fenster, vorher wurden Brett und Text sehr eng (siehe Teil 2, P2-B).
+- [ ] N657. **Weiß und Schwarz in der Fehlerliste (R53):** Einstellungen › Anzeige › Nachtmodus
+      „an“. Spiele eine kurze Partie oder lies eine ein (Spielen › „Partie einlesen (PGN)“, etwa
+      „1. e4 e5 2. Qh5 Nc6 3. Qxf7+ Kxf7 0-1“). In der Auswertung unter „Grobe Patzer“ steht vor
+      jedem Zug ein kleiner Bauer auf einem runden Plättchen: weißes Plättchen mit dunklem Bauern
+      für Weiß, dunkles Plättchen mit hellem Bauern für Schwarz, beide mit Rand. Gut zu erkennen,
+      auch im hellen Modus?
 
 ### Neu in 0.2.116 und 0.2.118: deine Rückmeldung vom 19.10.2026 (R1 bis R23, R33; Opus)
 
@@ -469,3 +484,19 @@ Paket P4.
       (Klammerfalle), Desperado rook (Rasender Turm), Staircase mate (Treppenmatt; gängiger wäre
       „ladder mate“). Eröffnungen mit den üblichen englischen Namen (Ruy Lopez, Petrov Defense,
       Trompowsky Attack …), Spieler in englischer Schreibweise (Karpov, Korchnoi, Alekhine).
+
+### P2 Brett und Bedienung: schon umgesetzt, Widerspruch genügt (23.10.2026)
+
+- [ ] P2-A. **Wann kommt die Startanimation? (R39, N655)** Du wolltest sie „nicht bei jedem
+      Neuladen“. Empfehlung: nur bei einem neuen Start der App (eine neue Sitzung des Browsers;
+      die installierte App startet nach dem Schließen neu, ein Neuladen nicht) und höchstens
+      einmal je Stunde, nie bei „Bewegung reduzieren“ des Geräts. Einen Schalter zum Abschalten
+      gibt es nicht, weil ein Tipp sie sofort beendet. Schon umgesetzt, Widerspruch genügt (etwa
+      „nur einmal am Tag“ oder „mit Schalter“).
+- [ ] P2-B. **Ab wann eine Spalte? (R40, N656)** Die App wechselte schon live mit der
+      Fenstergröße, aber erst, wenn das Fenster schmaler als hoch war; am Rechner wurde es vorher
+      eng. Empfehlung: zwei Spalten (Brett links, Text rechts) erst ab einem Seitenverhältnis von
+      5 : 4, darunter eine Spalte mit dem Brett oben. Handy und Tablet quer bleiben zweispaltig.
+      Schon umgesetzt, Widerspruch genügt (etwa eine andere Grenze). Falls du etwas anderes
+      gemeint hast (etwa Safari am Mac, das gar nicht wechselt), schreib bitte kurz, in welchem
+      Browser.

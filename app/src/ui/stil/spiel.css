@@ -752,20 +752,29 @@
   background: #ca3431;
 }
 
-/* Bauer in der Farbe der Seite: weiß mit dunklem Rand, schwarz gefüllt. */
+/* Bauer in der Farbe der Seite auf einem runden Plättchen derselben Farbe mit Rand (R53): Ohne
+   Plättchen verschwand im Nachtmodus der dunkle Rand des weißen Bauern und der ganze schwarze
+   Bauer im dunklen Grund. Weiß: weißes Plättchen, dunkle Linien; Schwarz: dunkles Plättchen,
+   helle Linien. Der Rand in --linie-stark trennt beide Plättchen von jedem Grund. */
 .seitenfigur {
   flex: none;
-  vertical-align: -3px;
-  stroke: #1d2433;
+  box-sizing: content-box;
+  padding: 2px;
+  border: 1px solid var(--linie-stark);
+  border-radius: 50%;
+  vertical-align: -5px;
 }
 
 .seitenfigur-white {
+  background: #ffffff;
   fill: #ffffff;
+  stroke: #1d2433;
 }
 
 .seitenfigur-black {
+  background: #1d2433;
   fill: #1d2433;
-  stroke: #8a93a6;
+  stroke: #f5f0e6;
 }
 
 .patzerliste {

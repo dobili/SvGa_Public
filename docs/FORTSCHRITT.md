@@ -1853,3 +1853,12 @@ Eröffnung sagt wie erwartet am wenigsten. Filter „alle Züge“ ist etwas sch
 E[Schätzung | wahr] und Umkehrung macht die Bänder fast unverzerrt (±35) bei etwas größerer
 Abweichung (139 statt 131). Vorschlag für die App: entzerrte Zahl anzeigen, Bereich aus der
 Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
+- **Umrechnung chess.com/FIDE (Schritt 4) recherchiert:** ChessGoals (chessgoals.com/
+  rating-comparison, Stand Juli 2026, knapp 20 000 aktive Spieler mit RD < 150, Selbstangaben):
+  Tabellen über die gemeinsame Spalte chess.com Blitz; halbe Breite der mittleren 50 %: FIDE ±75,
+  chess.com Rapid ±115, Lichess Blitz ±70, Rapid ±90, Classical ±90 (N nur 240). Kein Wert unter
+  etwa 1550 FIDE. Tabelle lokal in buch/arbeit/umrechnung/chessgoals-2026-07.json; für die App
+  eine glatte Kurve anpassen (Zahlen sind Fakten, Text nicht übernehmen) und die Quelle in der
+  Erklärung und in LIZENZEN nennen. Zweite Quelle (Lichess-Blog „universal rating converter
+  2024“) nur hinter Cloudflare erreichbar, nicht geprüft. Lichess-Forum-Analysen (Selbstangaben):
+  Lichess Blitz etwa 80–130 über FIDE, Classical etwa 170–200 über FIDE; passt zu ChessGoals.

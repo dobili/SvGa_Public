@@ -7,9 +7,10 @@
  * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar. Seit 0.2.92
  * lassen sich Figuren auf derselben Schicht auch per Wischen ziehen (useZiehen.ts); seit R35
  * erkennt useZiehen.ts auch das Antippen, mit großzügiger Trefferfläche um die Zielfelder
- * (treffer.ts).
+ * (treffer.ts). Seit R37 gleitet ein neuer Zug über das Brett (useZuganimation.ts,
+ * Zuganimation.tsx).
  * Abhängigkeiten: masse.ts, geometrie.ts, treffer.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
- * useZugton.ts (Ton), useZiehen.ts, i18n.
+ * useZugton.ts (Ton), useZiehen.ts, useZuganimation.ts, Zuganimation.tsx, i18n.
  */
 import { Fragment, useId, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
@@ -23,6 +24,8 @@ import { TOLERANZ_EIGENE_FIGUR, TOLERANZ_ZIELFELD, trefferfeld } from "./treffer
 import { Feldmarken, Pfeil, Schimmer, SPERRFARBE, Zielpunkt, Zielring } from "./Brettmarken";
 import { useZiehen, wischenAn, type Ziehbedienung, type Ziehstand } from "./useZiehen";
 import { querversaetze } from "./versatz";
+import { Zuganimation } from "./Zuganimation";
+import { useZuganimation, zuganimationAn } from "./useZuganimation";
 import { useEinstellungen, type Figurensatz } from "../../app/einstellungen";
 import { BRETT, BRETTFARBEN, FELD, holzmuster, KOORDINATEN_GROESSE, PFEIL } from "./masse";
 
@@ -133,6 +136,7 @@ const GEZOGEN_SCHATTEN = 0.35;
 /**
  * Die Figuren der Stellung; eine gerade gezogene Figur blass auf ihrem Feld und groß unter dem
  * Zeiger (seit 0.2.92). Die große Figur kommt in Brett zuletzt, über Pfeile und Beschriftung.
+ * Seit R37 fehlen die Figuren, die gerade gleiten, auf ihrem Zielfeld.
  */
 function Figuren({
   figuren,
@@ -140,16 +144,19 @@ function Figuren({
   satz,
   farbe,
   gezogen,
+  verborgen,
 }: {
   figuren: ReadonlyMap<string, string>;
   gedreht: boolean;
   satz: Figurensatz;
   farbe: string;
   gezogen: Ziehstand | null;
+  /** Felder, deren Figur gerade dorthin gleitet (Zuganimation.tsx zeichnet sie). */
+  verborgen: readonly string[];
 }) {
   return [...figuren].map(([feld, zeichen]) => {
     const ecke = feldEcke(feld, gedreht);
-    if (!ecke) return null;
+    if (!ecke || verborgen.includes(feld)) return null;
     const figur = <Figur zeichen={zeichen} x={ecke.x} y={ecke.y} satz={satz} farbe={farbe} />;
     return gezogen?.von === feld ? (
       <g key={feld} opacity={GEZOGEN_SCHATTEN}>
@@ -273,7 +280,25 @@ export function Brett({
   const versaetze = querversaetze(pfeile, PFEIL.versatz);
   // Abgeschaltet in den Einstellungen (Merker auf dem Gerät); gelesen beim Öffnen des Bildschirms.
   const [wischenErlaubt] = useState(wischenAn);
-  const zieh = beiFeld && wischenErlaubt ? ziehen : null;
+  const [animationErlaubt] = useState(zuganimationAn);
+  const { laufend, merkeGewischt } = useZuganimation(
+    fen,
+    figuren,
+    letzterZug,
+    animationErlaubt && beiFeld !== undefined,
+  );
+  // Ein per Wischen abgelegter Zug gleitet nicht (R37): Das Brett merkt sich sein Startfeld.
+  const zieh =
+    beiFeld && wischenErlaubt && ziehen
+      ? {
+          ...ziehen,
+          lege: (von: string, nach: string) => {
+            merkeGewischt(von);
+            ziehen.lege(von, nach);
+          },
+        }
+      : null;
+
   const treffe = (punkt: Punkt) => {
     const unter = feldAnPunkt(punkt, gedreht);
     const eigene =
@@ -308,7 +333,9 @@ export function Brett({
           satz={figurensatz}
           farbe={farben.figur}
           gezogen={gezogen}
+          verborgen={laufend.map((b) => b.nach)}
         />
+        <Zuganimation laufend={laufend} gedreht={gedreht} satz={figurensatz} farbe={farben.figur} />
         {ziele.map((feld) =>
           figuren.has(feld) ? (
             <Zielring key={`z${feld}`} feld={feld} gedreht={gedreht} />

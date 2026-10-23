@@ -1385,10 +1385,16 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
       Darstellung, Buchdaten unverändert. N651.
 - [x] R29 Fortschrittsbalken in der Auswertung: `Auswertungsfortschritt` in
       `komponenten/Auswertung.tsx`, Prozent daneben (`auswertung.prozent`), Text ohne Zahlen. N652.
-- [ ] R37 Zuganimation.
+- [x] R37 Zuganimation: `ui/brett/useZuganimation.ts` (welche Figuren gleiten, Rochade mit
+      Turm, en passant, nichts beim Zurückblättern; Merker „zuganimation“, aus bei reduzierter
+      Bewegung) und `Zuganimation.tsx` (Web Animations API, 220 ms, drei Nachbilder). Uhr nur
+      minimal: `restzeit` zählt nichts vor `seitMs`, `mitUhrverzug` in `spiel/ablauf.ts` schiebt
+      den Start der Gegenuhr um die Animationsdauer (Aufrufe in `usePartie.ts` und `botzug.ts`).
+      Bekannt: Nach einem gewischten Zug bekommt die Gegenuhr den Verzug trotzdem (0,22 s,
+      unschädlich). N653.
 - [ ] R38 Partieende auf dem Brett.
 - [ ] R39 Startanimation.
 - [ ] R40 Desktop: Quer- und Hochformat live.
 - [ ] R53 Nachtmodus: Symbol für Weiß in der Fehlerliste.
 
-**Nächster Schritt:** R37.
+**Nächster Schritt:** R38.

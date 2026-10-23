@@ -51,6 +51,12 @@ Teil fertig ist.
       einlesen (PGN)“) steht in der Karte „Auswertung“, solange die Engine rechnet, nur „Die
       Engine wertet die Partie aus …“ und darunter ein goldener Balken mit der Prozentzahl
       daneben, statt „12 von 48 Stellungen“.
+- [ ] N653. **Zuganimation (R37):** Spiele eine Partie mit 5 + 3 gegen einen Bot. Tippst du Figur
+      und Zielfeld an, gleitet die Figur in etwa einer Fünftelsekunde hinüber, mit einer kurzen,
+      verblassenden Spur aus Nachbildern; ebenso der Zug des Bots (bei der Rochade gleitet der Turm
+      mit, eine geschlagene Figur verblasst). Deine Uhr läuft erst, wenn sein Zug angekommen ist.
+      Ziehst du per Wischen, springt nichts nach. Einstellungen › Brett › „Züge gleiten über das
+      Brett“ schaltet es ab. Gefällt dir Tempo und Spur?
 
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 

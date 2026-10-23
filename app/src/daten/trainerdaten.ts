@@ -26,13 +26,13 @@ export type {
   Thema as Endspielthema,
   Stichwort as Endspielstichwort,
 } from "./generiert/trainer-endspiel";
-import { datensprache } from "../i18n/sprache";
+import { trainerdatensprache } from "../i18n/sprache";
 
 const geladen = new Map<string, Promise<unknown>>();
 
 /** Ordner der Trainerdaten in der Sprache der App, etwa „/daten/de/trainer“. */
 function ordner(): string {
-  return `/daten/${datensprache()}/trainer`;
+  return `/daten/${trainerdatensprache()}/trainer`;
 }
 
 /** Vergisst die geladenen Trainerdaten (nach einem Sprachwechsel, seit 0.2.94). */

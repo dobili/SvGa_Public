@@ -144,13 +144,13 @@ Spielgefühl.
 - [ ] N627. **Einstellungen › Fehlerarten:** Die Abhakliste heißt jetzt „Fehlerarten der
       vorgefertigten Bots“ und gilt nur für sie; die Stufen ohne Bot machen keine Zusatzfehler.
 
-### Neu in P6: englische Buchdaten (Opus, 23.10.2026; erst testbar, wenn P6 in der App ist)
+### Neu in P6: englische Buchdaten (Opus, 23.10.2026; testbar, sobald P6 auf main ist)
 
 Alle Buchdaten gibt es jetzt auch auf Englisch: Bildunterschriften, Abschnittstitel, Übungen,
-Warum-Fragen, Bilanzen, Fallenchecks, Steckbriefe, Glossar und Nachschlagen. Die App zeigt sie,
-sobald die englischen Daten eingeschaltet sind (eine kleine Änderung im App-Code, die noch
-aussteht; bis dahin erscheinen die Buchdaten auch in „English (preview)“ deutsch). Zum Testen
-jeweils Einstellungen › Anzeige › „English (preview)“.
+Warum-Fragen, Bilanzen, Fallenchecks, Steckbriefe, Glossar und Nachschlagen. Die Trainer
+(Taktik, „Falle oder Köder“, Strukturerkenner, Endspiel) zeigen ihre Aufgabentexte vorerst
+weiter deutsch; deshalb bleibt Englisch eine Vorschau. Zum Testen jeweils Einstellungen ›
+Anzeige › „English (preview)“.
 
 - [ ] N730. **Kapitel und Lernziele:** Book: Die Kapitel heißen englisch („Basic principles of
       chess“, „Endgame deep dive“ …). Ein Kapitel öffnen: Abschnitte, Kacheltexte und die

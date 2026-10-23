@@ -29,8 +29,13 @@ const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> 
  * muss in den Einstellungen gewählt werden, bis es Buch- und Trainerdaten auf Englisch gibt.
  */
 const FERTIGE_SPRACHEN: readonly string[] = ["de"];
-/** Sprachen mit eigenen Buch- und Trainerdaten (/daten/<sprache>/); sonst gelten die deutschen. */
-const DATENSPRACHEN: readonly string[] = ["de"];
+/**
+ * Sprachen mit eigenen Buchdaten (/daten/<sprache>/a1/); sonst gelten die deutschen. Englisch seit
+ * P6 (R25, 23.10.2026): alle Buchdaten übersetzt (pipeline/uebersetzen, inhalte/en/).
+ */
+const DATENSPRACHEN: readonly string[] = ["de", "en"];
+/** Sprachen mit eigenen Trainerdaten (/daten/<sprache>/trainer/); die Trainer sind noch deutsch. */
+const TRAINERSPRACHEN: readonly string[] = ["de"];
 /** Sprache, wenn weder der Leser noch das Gerät eine verfügbare wählt. */
 export const GRUNDSPRACHE = "de";
 
@@ -148,12 +153,21 @@ export function fertigeSprachen(): string[] {
 }
 
 /**
- * Die Sprache der Buch- und Trainerdaten: die der App, wenn es Daten in ihr gibt, sonst Deutsch.
- * Beispiel: App auf Englisch, noch ohne /daten/en/ → „de“ (Bildunterschriften deutsch, Züge darin
- * mit englischen Buchstaben, siehe schach/notation.ts).
+ * Die Sprache der Buchdaten: die der App, wenn es Daten in ihr gibt, sonst Deutsch.
+ * Beispiel: App auf Englisch → „en“ (Bildunterschriften, Übungen, Glossar englisch); eine Sprache
+ * ohne eigene Daten → „de“ (Züge darin mit den Buchstaben der Sprache, siehe schach/notation.ts).
  */
 export function datensprache(): string {
   return DATENSPRACHEN.includes(aktuelleSprache) ? aktuelleSprache : GRUNDSPRACHE;
+}
+
+/**
+ * Die Sprache der Trainerdaten (Taktik, „Falle oder Köder“, Strukturerkenner, Endspiel): wie
+ * datensprache, aber nur für Sprachen mit eigenen Trainerdaten. Beispiel: App auf Englisch → „de“,
+ * bis die Trainerdaten übersetzt sind.
+ */
+export function trainerdatensprache(): string {
+  return TRAINERSPRACHEN.includes(aktuelleSprache) ? aktuelleSprache : GRUNDSPRACHE;
 }
 
 /** Gebietsschema für Zahlen und Daten je Sprache. */

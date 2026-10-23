@@ -1,6 +1,7 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.116. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 23.10.2026, Version 0.2.117 auf `main`, dazu der Zweig `p3-werkzeuge` (noch nicht auf
+`main`). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -107,6 +108,62 @@ Teil fertig ist.
       wählen, „Einlesen und auswerten“. Die Partie öffnet sich als „Eingelesene Partie“ mit den
       Namen, die Auswertung läuft, und in der Liste steht sie ungewertet mit eigenem Symbol
       (Filter „eingelesene Partien“). Für deine Wertung zählt sie nicht.
+
+### Neu auf dem Zweig `p3-werkzeuge` (Werkzeuge und Strukturbegriffe; Fable, 23.10.2026)
+
+Noch nicht auf `main`; die Punkte gelten, sobald der Zweig übernommen ist (dann steht in den
+Einstellungen eine Version über 0.2.117). Die Werkzeuge findest du unter jeder Abbildung in der
+Leiste unter dem Brett (Bündel „Skelett-Röntgen“, „Planfindung“, „Denkroutine“); „Sicht“ ist der
+Schalter oben rechts in der Werkzeugkarte.
+
+- [ ] N670. **Rückständiger Bauer (R44):** Abb. 5.8 öffnen, Bündel „Skelett-Röntgen“, Reiter
+      „Bauern“, Sicht Schwarz. Bei d6 steht „rückständig – die Nachbarn stehen schon vor ihm,
+      kein eigener Bauer deckt ihn mehr, der Gegner hält das Feld davor; Ziel auf der halboffenen
+      Linie“, am Brett das Kürzel R. Abb. 5.7 (Kieseritzky), Sicht Schwarz: f7 und h7 heißen
+      nicht mehr rückständig, sondern nur „besteht den Deckungstest nicht“ (U), weil kein weißer
+      Bauer f6 oder h6 hält. Passt das zu deiner Festlegung?
+- [ ] N671. **Löcher, starke Felder, Vorposten (R44):** Abb. 5.8, Reiter „Felder“, Sicht Weiß:
+      „Starke Felder für Weiß“ mit „d5: starkes Feld – kein gegnerischer Bauer kann es mehr
+      angreifen, ein eigener Bauer stützt es: ein Vorposten; erreichbar für c3 und d1“. Sicht
+      Schwarz: „Löcher bei Schwarz (schwache Felder)“ mit „d5: Bauernloch – kein eigener Bauer
+      kann es je wieder decken; der Gegner kann es nutzen“. Abb. 11.43, Sicht Weiß: d4 (eigene
+      4. Reihe) und c5 stehen bei den starken Feldern. Unter „So prüft die App“ stehen die fünf
+      Begriffe wie von dir festgelegt.
+- [ ] N672. **Legende folgt der Sicht (R41):** Abb. 1.26, Symbol „Röntgen“ am Brett. Unter der
+      Karte steht „Am Brett: Goldene Pfeile: Schachs, Gewinnschläge und Drohungen von Weiß. Rote
+      Pfeile: Schachs und Drohungen von Schwarz …“. Nach „Sicht“ tauschen die Farben im Text.
+      Dasselbe bei allen Werkzeugen mit Pfeilen oder Feldern (statt „der Seite der Sicht“ oder
+      „eigene“ stehen jetzt Weiß und Schwarz).
+- [ ] N673. **Nur die gewählte Seite (R41), Skelett:** Abb. 5.17, Reiter „Bauern“ (Schwarz am
+      Zug): „Bauern von Schwarz“ vollständig (Deckungstest, Inseln, Linien), darunter nur noch
+      „Ziele bei Weiß: d4: Isolani“. Reiter „Felder“, „Richtung“ und „Figuren“ zeigen nur noch die
+      gewählte Seite; die andere über „Sicht“. Fehlt dir dabei etwas, etwa die Richtung des
+      Gegners neben der eigenen?
+- [ ] N674. **Nur die gewählte Seite (R41), Planbilanz:** Abb. 6.20, Bündel „Planfindung“, Reiter
+      „Planbilanz“: Jede Planfrage hat nur noch die Zeile von Weiß („Weiß: Am Damenflügel …“);
+      „Sicht“ zeigt Schwarz. Der Verweis auf die Planbilanz im Buch bleibt. Wo das Buch beide
+      Seiten fragt oder vergleicht, bleiben beide mit Begründung unter „So prüft die App“:
+      Schach-Röntgen (die Regel fragt nach den Schachs, Schlägen und Drohungen beider Seiten),
+      Warnsignale (Gefahren bei dir, Ziele beim Gegner), Zielbilanz und Faktorenbilanz
+      (Vergleichstabellen, Waage). Einverstanden?
+- [ ] N675. **Werkzeugkarten einspaltig (R42):** Auf dem Handy stehen die Befunde jeder
+      Werkzeugkarte untereinander, etwa Bündel „Denkroutine“, Reiter „Erfassen“ an Abb. 12.1. Erst
+      auf dem Tablet (hochkant) oder einem breiten Bildschirm sind es zwei Spalten. Weniger
+      Scrollen als vorher?
+- [ ] N676. **Phase nur noch im Reiter „Phase“ (R42):** Abb. 12.1, Reiter „Erfassen“: Die Phase
+      steht nur im Fazit („Mittelspiel. …“); Gründe und Werkzeuge stehen allein im Reiter „Phase“.
+- [ ] N677. **Kandidaten mit Bewertung der Engine (R43):** Abb. 12.1, Reiter „Kandidaten“. Unter
+      den drei Schritten rechnet die Engine etwa drei Sekunden: „Bewertung der Engine“, „Stellung
+      jetzt: +… (…)“, dann je Kandidat „1. Lxh7+: +… – verbessert die Stellung um …“ oder „hält die
+      Stellung“ oder „verschlechtert die Stellung um …“, zuletzt „Am stärksten nach der Engine: …“.
+- [ ] N678. **Ruhige Kandidaten ohne „Material“ (R43):** Übung 12.6 öffnen, Reiter „Kandidaten“.
+      Beim Buchzug g3 steht nicht mehr „Material danach …“, sondern „keine zwingende Antwort – ein
+      ruhiger Zug; wie er die Stellung verändert, sagt die Engine unten“, und in Schritt 4 „… ob der
+      ruhige Zug der beste ist, sagt die Bewertung der Engine unten“. Zwingende Kandidaten
+      (Schachs, Schläge, Abwehrzüge im Schach) behalten den Materialstand. Richtig so?
+- [ ] N679. **Kandidaten in der Partie:** Gegen die Engine spielen, nach ein paar Zügen die
+      Werkzeuge öffnen, Bündel „Denkroutine“, „Kandidaten“: Der Engine-Abschnitt erscheint auch
+      hier (ohne Buchzug). Die Pfeile am Brett folgen der Sicht, die Legende nennt deine Farbe.
 
 ### Neu in 0.2.117 (menschliche Bots, zehn Stufen; Opus, 20. bis 22.10.2026)
 
@@ -215,3 +272,24 @@ festgelegten Bauern für den schlechten Läufer (Abb. 5.7: Läufer c8 ist nicht 
 Abb. 11.77: Läufer c2 ist es jetzt). Starke Felder beginnen auf der eigenen 4. Reihe (bisher 5.).
 Der Strukturerkenner (Trainer) rechnet noch mit der alten Zeile „5. und 6. Reihe“; das übernimmt
 Paket P4.
+
+### P3 Werkzeuge: schon umgesetzt, Widerspruch genügt (23.10.2026)
+
+- **R41 Sicht.** Die Legende jeder Werkzeugkarte nennt die Farben der gewählten Sicht. Felder,
+  Bauern, Richtung, Figuren und Planbilanz zeigen nur die gewählte Seite (Bauern: die Schwächen
+  des Gegners bleiben als Ziele, weil die Tabelle in Kapitel 5 zu jeder Schwäche den Plan dagegen
+  nennt). Beide Seiten bleiben, wo das Buch beide fragt oder vergleicht: Schach-Röntgen („Kann
+  mein Gegner mich mit Schach überraschen? Welche Figuren können auf beiden Seiten geschlagen
+  werden?“), Warnsignale (Kapitel 12, Schritt 1: „auf beiden Seiten des Brettes“), Zielbilanz
+  und Faktorenbilanz (Tabelle und Waage sind Vergleiche); die Begründung steht jeweils unter „So
+  prüft die App“. Empfehlung: so lassen.
+- **R42 Reiter.** Doppelte Inhalte gefunden und entfernt: die Phase in „Erfassen“ (jetzt nur im
+  Reiter „Phase“). Bewusst gelassen: „Figuren“ nennt die Springerfelder und Turmlinien noch
+  einmal, weil Leitfrage 4 genau danach fragt („Springer auf Löcher, Türme auf offene Linien“);
+  die Planbilanz fasst Wo?, Gegner? und LAP zusammen, wie die Tabelle im Buch; die sechs
+  Endspielregeln nennen Opposition und Quadrat als Regel, die eigenen Reiter rechnen sie aus.
+- **R43 Kandidaten.** Ruhige Kandidaten sind der Buchzug und die Mattabwehr; zwingende Kandidaten
+  (Schachs, Schläge, Drohungen, Abwehrzüge im Schach) behalten „Material danach“, weil das Buch in
+  Schritt 4 nach Material zählt und die Beispiele (Abb. 12.3, 12.4) so aufgehen. Die Engine
+  bewertet aber alle Kandidaten, nicht nur die ruhigen. „Hält die Stellung“ gilt bis 0,3 Bauern
+  Unterschied (die Grenze „ausgeglichen“ der App).

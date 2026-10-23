@@ -4637,3 +4637,28 @@ war). Der Messlauf bleibt für spätere Datenstände.
   „alle drei Bedingungen erfüllt“ statt „(Ziel )“; die Kette des Plans ist die längste mit
   Richtung, bei Gleichstand die zentralste (Abb. 11.78: e4–d5–f5 statt c3–b4); verzweigte
   Ketten stehen von Linie zu Linie (Abb. 6.11: „d6–e5–f6“ statt „d6–f6–e5“).
+
+## Zugwahl der Bots, Plan (23.10.2026 abends, Freigabe des Autors)
+
+- **Phasenregler Variante A:** Der Regler je Phase setzt die Ziel-Elo der Phase; daraus folgen die
+  Fehlerraten der Phase. Fehlerart- und Fleckregler verschieben nur die Zusammensetzung (feste
+  Stärke); im erweiterten Modus auch frei (Stärke wandert, Schätzung wird angezeigt).
+- **Oberfläche:** Stil als Spinnennetz über die drei Achsen (sechs Speichen) mit Anzeige des
+  nächsten Stils, dazu Auswahlliste; je Fehlerart und Fleck ein Regler auf den Quantilen der
+  Menschen (5, 25, 50, 75, 95 %) plus je zwei Stufen darunter und darüber („unmenschlich“);
+  Menschlichkeitsanzeige für die Kombination; geschätzte Elo aus den Einstellungen.
+- **Zugwahl:** Wahrscheinlichkeit je Kandidat = Grundgewicht × Faktor Fehlerart × Faktor Flecken
+  × Faktor Stil; Faktoren an den echten Stellungen der Spielerprofile geeicht; Tagesform je
+  Partie, Zeitnot nach den Daten; kein Nachregeln während der Partie.
+- **Bots je Kategorie:** jeder Stil einmal plus ein zweiter universeller, wechselnde Flecken,
+  leicht gespreizte Phasen; echte Vorbilder und gezogene Profile gemischt; mehr Bots, wenn nötig.
+- **Maia:** Versuch in Teil E (Maia-2 steht unter MIT; Maia-3 prüfen), Bedingung: Rechnen nicht
+  spürbar länger als die künstliche Bedenkzeit.
+- **Eröffnungen je Elo-Band** aus den Lichess-Partien für Bots und die Einschränkung „Eröffnung“;
+  im Trainer nur als gekennzeichneter Bereich „Aus der Praxis“.
+- **Modelle:** Teil E und Elo-Modell mit Fable (hoch), Auswertungen, Oberfläche, Teil F mit Opus.
+- **Koordination (Koordinations-Chat P1, 23.10.2026):** R51 (Zeitklassen, Abzeichen, „ohne Uhr“
+  weg, 60+0, „besiegt“ je Zeitklasse, Zeit in der Partienliste) ist Teil F dieses Zweigs; ebenso
+  Schritt 5 (Schalter weg, neue Schätzung) unter Erhalt von R32 (nur gewertete Partien zählen).
+  Neue Testpunkte ab N770. Nach dem Einbau auf main den Autor informieren, damit P1 mit R24,
+  R27, R28 beginnt.

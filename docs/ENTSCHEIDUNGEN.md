@@ -4660,5 +4660,6 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Koordination (Koordinations-Chat P1, 23.10.2026):** R51 (Zeitklassen, Abzeichen, „ohne Uhr“
   weg, 60+0, „besiegt“ je Zeitklasse, Zeit in der Partienliste) ist Teil F dieses Zweigs; ebenso
   Schritt 5 (Schalter weg, neue Schätzung) unter Erhalt von R32 (nur gewertete Partien zählen).
+  Bullet wird nicht angeboten (Autor, 23.10.2026), auch nicht unter R51.
   Neue Testpunkte ab N770. Nach dem Einbau auf main den Autor informieren, damit P1 mit R24,
   R27, R28 beginnt.

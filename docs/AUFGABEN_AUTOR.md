@@ -921,6 +921,27 @@ Paket P4.
       „ladder mate“). Eröffnungen mit den üblichen englischen Namen (Ruy Lopez, Petrov Defense,
       Trompowsky Attack …), Spieler in englischer Schreibweise (Karpov, Korchnoi, Alekhine).
 
+### P1 Spielen und Auswertung: schon umgesetzt, Widerspruch genügt (24.10.2026 nachts)
+
+- [ ] P1-A. **Gewertet ohne gewählte Uhr (R51):** Gewertete Partien haben jetzt immer eine Uhr.
+      Empfehlung: Wer „Ohne Uhr“ gewählt hatte und gewertet spielt, beginnt mit 10 + 0
+      (Schnellschach, wie der Partietag des 30-Minuten-Plans). Schon umgesetzt in 0.2.123,
+      Widerspruch genügt (etwa „15 + 10“ als Vorgabe).
+- [ ] P1-B. **Vergleich der Zugklassen (R56):** Die „üblichen“ Anteile je Zugart sind vorerst
+      geschätzt (eine Tabelle für 800, 1200, 1600 und 2000), „normal“ heißt 75 % bis 125 % des
+      Üblichen. Verglichen wird mit deiner Spielstärke aus den letzten zehn gewerteten Partien
+      (sonst mit der Schätzung dieser Partie), beim Bot mit seiner festen Zahl. Empfehlung: so
+      lassen, bis der Bot-Chat echte Werte je Elo und Zeitklasse aus den Lichess-Partien liefert;
+      dann kommen auch die Zonengrenzen aus der Streuung der Spieler. Schon umgesetzt in 0.2.122.
+- [ ] P1-C. **Umschalter auf der Seite des Bots:** Steht der Umschalter auf dem Bot, zeigt die
+      Auswertung statt „Fehler und Patzer“ die eingeklappte Liste „Absichtliche Fehler der Engine“
+      und keinen Satz zur ersten Abweichung (der betrifft nur deine Züge). Schon umgesetzt in
+      0.2.122, Widerspruch genügt.
+- [ ] P1-D. **Fortsetzung einer festgelegten Eröffnung (R24):** Die Familie der gewählten Eröffnung
+      liest die App an der letzten Stellung ihrer Hauptlinie im Buch ab, die die Lichess-Liste
+      kennt (dort heißt sie zum Beispiel „Ruy Lopez“ für die Spanische Partie). Gibt es keinen
+      Zug derselben Familie mehr, spielt der Bot wieder frei. Schon umgesetzt in 0.2.123.
+
 ### P2 Brett und Bedienung: schon umgesetzt, Widerspruch genügt (23.10.2026)
 
 - [ ] P2-B. **Ab wann eine Spalte? (R40, N656)** Die App wechselte schon live mit der

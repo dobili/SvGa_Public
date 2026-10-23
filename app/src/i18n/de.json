@@ -1896,7 +1896,7 @@
   "werkzeug.k11-phase.erklaerung": "Welche Phase, welches Werkzeug? Eröffnungsziele und die vier Endspielfragen, dazu bei Beispielpartien Thema, Werkzeug und Lehre des Buches.",
   "werkzeug.k11-phase.legende": "Goldene Pfeile im Endspiel: der Weg des Königs der Seite am Zug ins Zentrum.",
   "werkzeug.k12-erfassen.name": "Erfassen",
-  "werkzeug.k12-erfassen.regel": "Regel: Kapitel 12, Denkroutine Schritt 1. Der letzte Zug des Gegners (aus dem Verlauf) und seine Drohungen im nächsten Zug (Materialgewinn, Matt), rote Pfeile; die Warnsignale W1 bis W7 auf beiden Seiten mit ihren Markierungen (Kapitel 4 und 7); die Phase mit Eröffnungszielen und Endspielfragen und die Werkzeuge für Schritt 2.",
+  "werkzeug.k12-erfassen.regel": "Regel: Kapitel 12, Denkroutine Schritt 1. Der letzte Zug des Gegners (aus dem Verlauf) und seine Drohungen im nächsten Zug (Materialgewinn, Matt), rote Pfeile; die Warnsignale W1 bis W7 auf beiden Seiten mit ihren Markierungen (Kapitel 4 und 7); die Phase im Fazit – ihre Gründe und die Werkzeuge für Schritt 2 stehen im Reiter „Phase“.",
   "werkzeug.k12-erfassen.erklaerung": "Denkroutine, Schritt 1: Was hat der letzte Zug verändert, was droht? Warnsignale beider Seiten (so verlangt es Schritt 1 des Buches), dazu die Phase; mehr dazu im Reiter „Phase“.",
   "werkzeug.k12-erfassen.legende": "Rote Pfeile: Drohungen von {gegner}. Dazu die Warnsignale wie bei W1–W7: rot bei {eigen}, gold bei {gegner}, grau Gabelfelder.",
   "werkzeug.k12-kandidaten.name": "Kandidaten",

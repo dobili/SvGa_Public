@@ -19,6 +19,11 @@
     max-width: 720px;
   }
 
+  /* Breite Karte: Befunde in zwei Spalten (R42; auf dem Handy eine Spalte, basis.css). */
+  .befunde {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .brett,
   .brett-mit-leiste {
     max-width: 560px;
@@ -134,5 +139,14 @@
   .brettbereich .brett,
   .brettbereich .brett-mit-leiste {
     max-width: none;
+  }
+}
+
+/* Breites Querformat: Die Textspalte neben dem Brett ist breit genug für zwei Befundspalten
+   (R42): Sie bekommt mindestens 45 % der Breite ohne Schiene, also ab etwa 1340 Pixeln gut
+   560 Pixel. */
+@media (orientation: landscape) and (min-width: 1340px) {
+  .befunde {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }

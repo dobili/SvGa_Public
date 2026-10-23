@@ -19,7 +19,7 @@ describe("k12-erfassen", () => {
       "Keine Drohung im nächsten Zug (kein Materialgewinn, kein Matt).",
     ]);
     expect(e.befunde[1]?.zeilen).toContain("Schwarz: W1 Ungedeckt: Dame c7, Turm a8");
-    expect(e.befunde[2]?.zeilen[0]).toMatch(/^Mittelspiel/);
+    expect(e.fazit).toMatch(/^Mittelspiel/);
     expect(e.fazit).toMatch(/^Mittelspiel\. Signale auf dem Brett: W1\./);
   });
 
@@ -42,6 +42,6 @@ describe("k12-erfassen", () => {
     expect(e.markierungen[0]).toEqual({ typ: "pfeil", farbe: "rot", von: "e5", nach: "d3" });
     // Seit 0.2.33 (C1.27): Beide Seiten haben nur noch eine Leichtfigur zu Hause (Lf1, Lc8);
     // dass beide Könige noch nicht rochiert haben, ist eine Frage der Königssicherheit.
-    expect(e.befunde[2]?.zeilen[0]).toMatch(/^Mittelspiel/);
+    expect(e.fazit).toMatch(/^Mittelspiel/);
   });
 });

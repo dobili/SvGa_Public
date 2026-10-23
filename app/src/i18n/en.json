@@ -1896,7 +1896,7 @@
   "werkzeug.k11-phase.erklaerung": "Which phase, which tool? Opening goals and the four endgame questions, plus, for example games, the book's theme, tool and lesson.",
   "werkzeug.k11-phase.legende": "Gold arrows in the endgame: the route of the king of the side to move into the center.",
   "werkzeug.k12-erfassen.name": "Assess",
-  "werkzeug.k12-erfassen.regel": "Rule: Chapter 12, thinking routine step 1. The opponent's last move (from the game history) and his threats on the next move (winning material, mate), red arrows; the warning signs W1 to W7 on both sides with their markings (Chapters 4 and 7); the phase with opening goals and endgame questions, and the tools for step 2.",
+  "werkzeug.k12-erfassen.regel": "Rule: Chapter 12, thinking routine step 1. The opponent's last move (from the game history) and his threats on the next move (winning material, mate), red arrows; the warning signs W1 to W7 on both sides with their markings (Chapters 4 and 7); the phase in the summary – its reasons and the tools for step 2 are in the “Phase” tab.",
   "werkzeug.k12-erfassen.erklaerung": "Thinking routine, step 1: what did the last move change, what is threatened? Warning signs of both sides (as step 1 in the book demands), plus the phase; more on it in the “Phase” tab.",
   "werkzeug.k12-erfassen.legende": "Red arrows: threats of {gegner}. Plus the warning signs as with W1–W7: red for {eigen}, gold for {gegner}, gray fork squares.",
   "werkzeug.k12-kandidaten.name": "Candidates",

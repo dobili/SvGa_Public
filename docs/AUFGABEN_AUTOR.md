@@ -148,5 +148,70 @@ Spielgefühl.
 
 ## Teil 2: Entscheiden
 
-Zurzeit ist nichts offen. Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene
-Empfehlung und stellt sie dir am Ende hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“).
+Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
+hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
+nur du das Buch änderst.
+
+### P3 Strukturbegriffe (R44): Vorschläge für das Buch (23.10.2026)
+
+Deine fünf Festlegungen (rückständiger Bauer, Bauernloch, schwaches Feld, starkes Feld,
+Vorposten) sind in der App umgesetzt: im Skelett-Röntgen (Felder, Bauern, Figuren), im
+LAP-Vorschlag und in den Texten. Das Glossar der App ist das Glossar des Buches (die Pipeline
+liest es aus dem LaTeX), deshalb stehen die Begriffe dort noch in der alten Fassung. Die Stellen
+im Buch, die von den Festlegungen abweichen, mit einem Formulierungsvorschlag je Stelle. Du
+änderst das Buch; sobald der Buchstand kommt, baut die Pipeline das Glossar neu.
+
+- [ ] B9. **Glossar „Rückständiger Bauer“.** Jetzt: „Ein Bauer, der hinter seinen Nachbarbauern
+      zurückgeblieben ist: Sie stehen schon vor ihm und können ihn nicht mehr decken. Vor ihm
+      liegt ein Loch.“ Es fehlen „am Vorrücken gehindert“ und „Ziel auf der halboffenen Linie“.
+      Vorschlag: „Ein Bauer, der hinter den eigenen Bauern auf den Nachbarlinien zurückgeblieben
+      ist: Sie stehen schon vor ihm und können ihn nicht mehr decken, und das Feld vor ihm hält ein
+      gegnerischer Bauer, sodass er nicht mehr vorrücken kann. Vor ihm liegt ein Loch; auf der
+      halboffenen Linie wird er zum Angriffsziel (Kapitel 5).“
+- [ ] B10. **Kapitel 5, Abschnitt „Der rückständige Bauer“ und die Tabelle der Bauernschwächen.**
+      Der Text sagt: „Zum Dauer-Angriffsziel wird er, wenn der Gegner die Linie vor ihm mit einem
+      Turm besetzen kann. Ob er sich jemals durch einen eigenen Vorstoß befreien kann, hängt davon
+      ab, ob das Feld vor ihm ausreichend gedeckt ist.“ Vorschlag für den ersten Absatz: „Ein
+      rückständiger Bauer ist hinter seinen Nachbarbauern auf den angrenzenden Linien
+      zurückgeblieben. Anders als ein Isolani hat er zwar noch Nachbarn, die aber bereits vor ihm
+      stehen und ihn nicht mehr decken können. Rückständig im vollen Sinn ist er, wenn ihn auch
+      das Vorrücken nicht befreit, weil ein gegnerischer Bauer das Feld vor ihm kontrolliert. Auf
+      der halboffenen Linie wird er zum Dauer-Angriffsziel: Der Gegner stellt einen Turm davor und
+      eine Figur auf das Loch.“ In der Tabelle (Spalte „Warum deckt kein Bauer?“): „die Nachbarn
+      stehen schon vor ihm, das Feld davor hält der Gegner“.
+- [ ] B11. **Glossar „Loch (Bauernloch)“.** Jetzt: „Ein Feld, das kein eigener Bauer mehr
+      kontrollieren kann. Für den Gegner kann es ein starkes Feld sein.“ Vorschlag: „Ein Feld,
+      meist auf der 3. bis 5. Reihe (von dir aus gezählt), das kein eigener Bauer je wieder
+      kontrollieren kann. Für den Gegner ist es ein starkes Feld, ein Nistplatz für seine Figuren
+      (Kapitel 2 und 5).“
+- [ ] B12. **Glossar, neuer Eintrag „Schwaches Feld“** (fehlt im Buch; die App nennt ihn als
+      Oberbegriff bei den Löchern): „Oberbegriff für jedes Feld, das dauerhaft kein eigener Bauer
+      mehr decken kann. Ein Loch ist ein schwaches Feld; vor jedem rückständigen Bauern liegt
+      eines (Kapitel 5).“
+- [ ] B13. **Glossar „Starkes Feld“ und Kapitel 5, Abschnitt „Starke Felder und Vorposten“ samt
+      Checkliste zur Leitfrage 1.** Glossar jetzt: „Ein Feld in der gegnerischen Hälfte, das kein
+      gegnerischer Bauer mehr angreifen kann.“ Abschnitt: „meist auf der 5. oder 6. Reihe“,
+      Checkliste: „vor allem auf der 5. und 6. Reihe“. Deine Festlegung sagt 4. bis 6. Reihe; die
+      4. Reihe liegt aber in der eigenen Hälfte (Abb. 11.43: „d4 und c5 kann kein schwarzer Bauer
+      mehr angreifen: zwei sichere Felder für weiße Figuren“). Vorschlag Glossar: „Ein Feld auf
+      der 4. bis 6. Reihe (von dir aus gezählt), meist in der gegnerischen Hälfte, das kein
+      gegnerischer Bauer mehr angreifen kann (Kapitel 5).“ Im Abschnitt und in der Checkliste
+      entsprechend „auf der 4. bis 6. Reihe“. Die App rechnet schon so.
+- [ ] B14. **Glossar „Vorposten“ und derselbe Abschnitt in Kapitel 5.** Jetzt: „Ein starkes Feld,
+      das eine eigene Figur dauerhaft und sicher besetzen kann. Am stärksten ist er, wenn ihn
+      zusätzlich ein eigener Bauer stützt.“ Nach deiner Festlegung gehört die Bauernstütze zur
+      Definition. Vorschlag Glossar: „Ein starkes Feld, das zusätzlich ein eigener Bauer deckt
+      und auf dem eine eigene Figur steht oder stehen soll, am besten ein Springer (Kapitel 5).“
+      Vorschlag für den Abschnitt: „Ein Vorposten ist ein starkes Feld, das zusätzlich ein eigener
+      Bauer stützt und auf das eine Figur gehört, am besten ein Springer: Der Gegner kann sie dort
+      nur gegen eine eigene Figur tauschen.“ Checkliste, zweiter Punkt, passt schon („am besten
+      auf ein Feld, das ein eigener Bauer stützt: Dann ist es ein Vorposten“).
+
+Schon umgesetzt in der App (Widerspruch genügt): Ein Bauer, dessen Nachbarn vor ihm stehen, den
+aber kein gegnerischer Bauer am Vorrücken hindert, heißt nicht mehr „rückständig“ (R), sondern
+fällt nur durch den Deckungstest (U); ebenso einer, dem ein gegnerischer Bauer direkt
+gegenübersteht (blockiert, kein Ziel auf der Linie). Dadurch zählt die App ihn auch nicht mehr als
+festgelegten Bauern für den schlechten Läufer (Abb. 5.7: Läufer c8 ist nicht mehr „schlecht“;
+Abb. 11.77: Läufer c2 ist es jetzt). Starke Felder beginnen auf der eigenen 4. Reihe (bisher 5.).
+Der Strukturerkenner (Trainer) rechnet noch mit der alten Zeile „5. und 6. Reihe“; das übernimmt
+Paket P4.

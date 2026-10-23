@@ -36,6 +36,7 @@ function feldzeilen(f: Felderbefund): string[] {
     t("felder.sicher", {
       feld: feldname(s.feld),
       stuetze: s.gestuetzt ? t("felder.gestuetzt") : "",
+      besetzt: s.besetztVon ? t("felder.besetztVon", { figur: figurenname(s.besetztVon) }) : "",
       erreichbar:
         s.erreichbar.length > 0 ? t("felder.erreichbar", { felder: felderText(s.erreichbar) }) : "",
     }),
@@ -131,8 +132,7 @@ export function felder(stellung: Stellung, eigen: Color): Werkzeugergebnis {
     fazit: t("felder.fazit", {
       eigen: farbname(eigen),
       anzahlEigene: nutzbar(mein),
-      gegner: farbname(gegner(eigen)),
-      anzahlGegner: nutzbar(sein),
+      anzahlStarke: mein.sichere.length + mein.springerfelder.length,
     }),
     markierungen: markierungen(mein),
     stufen: [

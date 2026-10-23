@@ -13,10 +13,10 @@ function zeilen(nummer: string, kennung: string): readonly string[] {
 describe("k5-felder", () => {
   it("Abb. 5.8 (Najdorf, Weiß am Zug): d5 ist ein sicheres Feld, gestützt von e4, für Sc3", () => {
     expect(zeilen("5.8", "sichere")[0]).toBe(
-      "d5: Kein gegnerischer Bauer kann es mehr angreifen, ein eigener Bauer stützt es (Vorposten); erreichbar für c3 und d1",
+      "d5: starkes Feld – kein gegnerischer Bauer kann es mehr angreifen, ein eigener Bauer stützt es: ein Vorposten; erreichbar für c3 und d1",
     );
     const s = stellungVon("5.8");
-    expect(felder(s, "black").befunde[0]?.zeilen[0]).toMatch(/^d5: Kein eigener Bauer/);
+    expect(felder(s, "black").befunde[0]?.zeilen[0]).toMatch(/^d5: Bauernloch – kein eigener Bauer/);
     expect(felder(s, s.amZug).markierungen).toContainEqual({
       typ: "feld",
       farbe: "gold",
@@ -28,7 +28,9 @@ describe("k5-felder", () => {
     const s = stellungVon("5.6");
     const schwarz = felder(s, "black");
     // h6 kann kein schwarzer Bauer mehr decken; Weiß kann es noch nicht nutzen (keine Figur hin).
-    expect(schwarz.befunde[0]?.zeilen).toEqual(["Kein Loch, das der Gegner nutzen kann."]);
+    expect(schwarz.befunde[0]?.zeilen).toEqual([
+      "Kein Loch auf der 3. bis 5. Reihe, das der Gegner nutzen kann.",
+    ]);
     expect(felder(s, "white").befunde[3]?.zeilen.join(" ")).not.toContain("f6");
   });
 

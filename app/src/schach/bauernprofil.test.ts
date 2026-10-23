@@ -22,6 +22,25 @@ describe("bauernprofil", () => {
     expect(loecher).not.toContain("f6");
   });
 
+  it("Abb. 11.43: d4 auf der eigenen 4. Reihe ist ein starkes Feld für Weiß (P3: 4. bis 6. Reihe)", () => {
+    expect(namen(bauernprofil(stellungVon("11.43").brett, "white").starkeFelder)).toContain("d4");
+  });
+
+  it("rückständig nur, wenn der Gegner das Feld davor mit einem Bauern hält (P3)", () => {
+    // Weiß d3 hinter c4 und e4; Schwarz hält d4 mit c5 und e5, die d-Linie ist halboffen: R.
+    const gehalten = stellungAus("4k3/8/8/2p1p3/2P1P3/3P4/8/4K3 w - - 0 1").brett;
+    expect(namen(bauernschwaechen(gehalten, "white").rueckstaendige)).toEqual(["d3"]);
+    // Kein schwarzer Bauer hält d4: d3 kann aufrücken, fällt nur durch den Deckungstest.
+    const frei = stellungAus("4k3/p7/8/8/2P1P3/3P4/8/4K3 w - - 0 1").brett;
+    expect(bauernschwaechen(frei, "white").rueckstaendige).toEqual([]);
+    expect(
+      bauernschwaechen(frei, "white").deckungstest.find((d) => feldname(d.feld) === "d3")?.gesund,
+    ).toBe(false);
+    // Ein schwarzer Bauer steht d3 auf d4 direkt gegenüber: blockiert, kein Ziel auf der Linie.
+    const blockiert = stellungAus("4k3/8/8/4p3/2PpP3/3P4/8/4K3 w - - 0 1").brett;
+    expect(bauernschwaechen(blockiert, "white").rueckstaendige).toEqual([]);
+  });
+
   it("Abb. 5.8: das Loch d5 ist ein starkes Feld für Weiß; d6 ist rückständig", () => {
     const { brett } = stellungVon("5.8");
     expect(namen(bauernprofil(brett, "white").starkeFelder)).toContain("d5");

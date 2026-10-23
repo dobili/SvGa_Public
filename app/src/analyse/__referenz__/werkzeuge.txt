@@ -1268,7 +1268,7 @@
 5.7 k5-felder: E [loecher:E/rot sichere:E/gold koenig:E gegner:E] {gold g3 rot f5}
 5.7 k5-bauern: E [black:E white:E] {gold g2 grau e2 grau e3 grau e6 grau e7 rot f4 rot f7 rot h7}
 5.7 k5-richtung: E [black:E white:E] {gold d7-d5 gold f4-f3 gold f7-f5}
-5.7 k5-figuren: E [typ:E black:E white:E] {gold g3 rot c8}
+5.7 k5-figuren: E [typ:E black:E white:E] {gold g3}
 5.8 k1-roentgen: E [schachs:E/gold schachs-gegner:E/rot schlaege:E/gold schlaege-gegner:E/rot drohungen:E/gold drohungen-gegner:E/rot optimierung:N] {}
 5.8 k1-angriffsregel: N [eigen:N/gold gegner:N/rot] {gold c1 gold d1 gold e2 grau e5 grau e6 grau e8 grau f5 grau g5 grau h5 rot e7 rot f6 rot f8}
 5.8 k2-zielbilanz: E [white:E black:E] {gold b3 gold c3 gold e2 gold e4 gold f2 gold g1 gold g2 gold h2 grau d4 grau d5 grau e5 rot c1}
@@ -7598,7 +7598,7 @@
 11.49 k5-felder: E [loecher:E/rot sichere:E/gold koenig:E gegner:E] {gold a4 gold a5 gold c5 gold g4 rot c4}
 11.49 k5-bauern: E [white:E black:E] {gold a6 gold d5 grau c1 grau c2 grau c3 grau c4 grau c6 grau c7 grau d1 grau d2 grau d4 grau d6 grau d7 grau d8 grau e2 grau e3 grau e4 grau e5 grau e6 grau e7 grau e8 rot a2}
 11.49 k5-richtung: E [white:E black:E] {gold b4-b5}
-11.49 k5-figuren: E [typ:E white:E black:E] {gold a4 gold a5 gold b6 gold c5 gold c6 gold d3 gold d4 gold d6 gold g4}
+11.49 k5-figuren: E [typ:E white:E black:E] {gold a4 gold a5 gold b6 gold c5 gold c6 gold d4 gold d6 gold g4}
 11.49 k6-wo: E [lage:E offen:E schwaeche:E] {gold a6}
 11.49 k6-gegner: N [plan:N/rot droht:E sichern:N mittel:N] {}
 11.49 k6-lap: N [zaehlung:E lap:E/rot vorschlag:N/gold tausch:N] {gold c5-a4 rot c5}
@@ -7622,7 +7622,7 @@
 11.50 k5-felder: E [loecher:E/rot sichere:E/gold koenig:E gegner:E] {gold a4 gold a5 gold c5 gold g4 rot c4}
 11.50 k5-bauern: E [white:E black:E] {gold a6 gold d5 grau c1 grau c2 grau c3 grau c4 grau c6 grau c7 grau c8 grau d1 grau d2 grau d4 grau d6 grau d8 grau e1 grau e2 grau e3 grau e4 grau e6 grau e7 grau e8 rot a2}
 11.50 k5-richtung: E [white:E black:E] {gold b4-b5}
-11.50 k5-figuren: E [typ:E white:E black:E] {gold a4 gold a5 gold b6 gold c5 gold c6 gold d3 gold d4 gold d6 gold g4}
+11.50 k5-figuren: E [typ:E white:E black:E] {gold a4 gold a5 gold b6 gold c5 gold c6 gold d4 gold d6 gold g4}
 11.50 k6-wo: E [lage:E offen:E schwaeche:E] {gold a6}
 11.50 k6-gegner: N [plan:N/rot droht:E sichern:N mittel:N] {}
 11.50 k6-lap: N [zaehlung:E lap:E/rot vorschlag:N/gold tausch:N] {gold c5-a4 rot c5}
@@ -7646,7 +7646,7 @@
 11.51 k5-felder: E [loecher:E/rot sichere:E/gold koenig:E gegner:E] {gold a5 gold c5 gold c6 gold g4 rot c4}
 11.51 k5-bauern: E [white:E black:E] {gold a6 gold d5 grau c2 grau c3 grau c4 grau c5 grau c6 grau c7 grau c8 grau d1 grau d2 grau d4 grau d7 grau d8 grau e1 grau e2 grau e3 grau e4 grau e6 grau e7 grau e8 rot a2}
 11.51 k5-richtung: E [white:E black:E] {gold b4-b5}
-11.51 k5-figuren: E [typ:E white:E black:E] {gold a4 gold a5 gold b6 gold c5 gold c6 gold d3 gold d4 gold d6 gold g4}
+11.51 k5-figuren: E [typ:E white:E black:E] {gold a4 gold a5 gold b6 gold c5 gold c6 gold d4 gold d6 gold g4}
 11.51 k6-wo: E [lage:E offen:E schwaeche:E] {gold a6}
 11.51 k6-gegner: N [plan:N/rot droht:E sichern:N mittel:N] {}
 11.51 k6-lap: N [zaehlung:E lap:E/rot vorschlag:N/gold tausch:N] {rot d3}
@@ -8270,7 +8270,7 @@
 11.77 k5-felder: E [loecher:E/rot sichere:E/gold koenig:E gegner:E] {gold a5 gold a6 gold c6 gold f5 gold g4 rot a4 rot c4}
 11.77 k5-bauern: E [white:E black:E] {gold d6 grau a2 grau a3 grau a4 grau a5 grau a6 grau a7 rot c3 rot e4}
 11.77 k5-richtung: E [white:E black:E] {gold c3-c4 gold f2-f4 grau e4-d5 rot d6}
-11.77 k5-figuren: E [typ:E white:E black:E] {gold a5 gold a6 gold b6 gold c6 gold f5 gold g4}
+11.77 k5-figuren: E [typ:E white:E black:E] {gold a5 gold a6 gold b6 gold c6 gold f5 gold g4 rot c2}
 11.77 k6-wo: E [lage:E geschlossen:E gleicherFluegel:N schwaeche:E] {gold d6}
 11.77 k6-gegner: N [plan:N/rot droht:E sichern:N mittel:N] {rot f7-f5}
 11.77 k6-lap: N [zaehlung:E lap:E/rot vorschlag:N/gold tausch:N] {gold b3-a5 gold d2-b3 gold f1-d2 rot f1}

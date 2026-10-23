@@ -20,7 +20,11 @@ import type { Koenigsumgebung } from "./koenigsumgebung";
 import { zugziele } from "./sichereFelder";
 import { FIGURENWERT, gegner, type Stellung } from "./stellung";
 
-/** Sichere Felder für Figuren liegen ab der eigenen 4. Reihe (Index 3) bis zur 6. (Index 5). */
+/**
+ * Starke Felder liegen auf der eigenen 4. bis 6. Reihe (Index 3 bis 5; Festlegung des Autors
+ * zu P3: „gegnerische Hälfte (4.–6. Reihe)“); eigene Löcher, die der Gegner nutzen kann, auf der
+ * eigenen 3. bis 5. Reihe (seine 4. bis 6.).
+ */
 const FELDER_VON = 3;
 const FELDER_BIS = 5;
 /** Die Reihen vor dem König, in denen Löcher den Königsflügel schwächen (eigene Sicht, Index). */
@@ -31,11 +35,18 @@ const HAKEN_AB_REIHE = 2;
 const SCHILD_GRUNDREIHE = 1;
 const LINIEN = 8;
 
-/** Ein Feld, das kein gegnerischer Bauer mehr angreifen kann: sicher für eigene Figuren. */
+/**
+ * Ein starkes Feld: Ein Feld auf der eigenen 4. bis 6. Reihe, das kein gegnerischer Bauer mehr
+ * angreifen kann (Loch des Gegners), sicher für eigene Figuren. Mit Stütze eines eigenen Bauern
+ * ist es ein Vorposten, mit einer eigenen Figur darauf oder einer, die hinkommt, ist er besetzt
+ * oder dafür vorgesehen (Festlegung des Autors, P3, 23.10.2026).
+ */
 export interface SicheresFeld {
   readonly feld: Square;
-  /** Der eigene Bauer, der es jetzt deckt (Vorposten im Sinne des Buches), sonst null. */
+  /** Ob ein eigener Bauer es jetzt deckt: dann ist es ein Vorposten. */
   readonly gestuetzt: boolean;
+  /** Die eigene Figur (kein Bauer), die darauf steht, sonst null. */
+  readonly besetztVon: Figurenstand | null;
   /** Eigene Figuren außer Bauern und König, die das Feld mit einem Zug erreichen. */
   readonly erreichbar: readonly Square[];
 }
@@ -151,7 +162,7 @@ function vonFigurAngegriffen(brett: Board, feld: Square, farbe: Color): boolean 
  * Sichere Felder und Springerfelder einer Seite ab der eigenen 4. Reihe.
  *
  * Regel: Kapitel 5, „Starke Felder und Vorposten“: ein Feld, das kein gegnerischer Bauer mehr
- * angreifen kann (Loch des Gegners); am stärksten, wenn ein eigener Bauer es stützt. Ein
+ * angreifen kann (Loch des Gegners); ein Vorposten, wenn ein eigener Bauer es stützt. Ein
  * Springerfeld ist gestützt und frei von Bauernangriffen, aber noch angreifbar (Abb. 5.7: e5 im
  * Kieseritzky-Gambit ist kein Vorposten, „da der schwarze d-Bauer ihn mit ...d6 jederzeit
  * angreifen kann“).
@@ -173,6 +184,7 @@ function felderFuer(
       sichere.push({
         feld,
         gestuetzt: vonBauerGedeckt(brett, feld, farbe),
+        besetztVon: eigen && eigen.color === farbe ? { feld, figur: eigen } : null,
         erreichbar: erreichtVon(ziele, brett, feld),
       });
       continue;

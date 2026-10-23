@@ -795,9 +795,12 @@ a.knopf-zweit {
   color: var(--text-leise);
 }
 
+/* Befunde einer Werkzeugkarte untereinander (R42, Wunsch des Autors vom 23.10.2026: zwei
+   schmale Spalten kosteten auf dem Handy mehr Scrollen); erst in breiten Karten zwei Spalten
+   (breit.css). */
 .befunde {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 12px;
 }
 

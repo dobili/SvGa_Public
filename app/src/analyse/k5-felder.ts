@@ -12,7 +12,7 @@
 import type { Color } from "chessops/types";
 import { t } from "../i18n/sprache";
 import type { Felderbefund, Koenigsfluegel } from "../schach/skelettfelder";
-import { feldname, gegner, type Stellung } from "../schach/stellung";
+import { feldname, type Stellung } from "../schach/stellung";
 import { felderFuer, felderText } from "./skelett";
 import { profil } from "./stellungsprofil";
 import { farbname, figurenname } from "./texte";
@@ -36,6 +36,7 @@ function feldzeilen(f: Felderbefund): string[] {
     t("felder.sicher", {
       feld: feldname(s.feld),
       stuetze: s.gestuetzt ? t("felder.gestuetzt") : "",
+      besetzt: s.besetztVon ? t("felder.besetztVon", { figur: figurenname(s.besetztVon) }) : "",
       erreichbar:
         s.erreichbar.length > 0 ? t("felder.erreichbar", { felder: felderText(s.erreichbar) }) : "",
     }),
@@ -80,18 +81,19 @@ function markierungen(f: Felderbefund): Markierung[] {
 }
 
 /**
- * Beantwortet Leitfrage 1 für beide Seiten.
+ * Beantwortet Leitfrage 1 für die gewählte Seite.
  *
  * Warum: „Welche Felder kann kein Bauer mehr kontrollieren – bei mir und beim Gegner? Kann ich
  * ein gegnerisches Loch mit einer Figur besetzen? Ist mein Königsflügel dicht?“ (Kapitel 5).
- * Eingaben: Stellung, eigene Seite. Ausgabe: vier Befunde (eigene Löcher, eigene sichere Felder,
- * Löcher des Gegners, Königsflügel). Beispiel: Abb. 5.8 (Najdorf): Weiß hat das sichere Feld
- * d5, gestützt von e4, erreichbar für den Springer c3; Schwarz hat das Loch d5.
+ * „Bei mir“ sind die eigenen Löcher, „beim Gegner“ die eigenen starken Felder; die Sicht des
+ * Gegners zeigt der Sicht-Schalter (R41, seit 23.10.2026 kein vierter Befund mehr).
+ * Eingaben: Stellung, eigene Seite. Ausgabe: drei Befunde (eigene Löcher, starke Felder,
+ * Königsflügel). Beispiel: Abb. 5.8 (Najdorf): Weiß hat das starke Feld d5, gestützt von e4,
+ * erreichbar für den Springer c3; in der Sicht von Schwarz ist d5 sein Loch.
  */
 export function felder(stellung: Stellung, eigen: Color): Werkzeugergebnis {
   const p = profil(stellung);
   const mein = felderFuer(p, eigen);
-  const sein = felderFuer(p, gegner(eigen));
   const befunde: Befund[] = [
     {
       kennung: "loecher",
@@ -114,13 +116,6 @@ export function felder(stellung: Stellung, eigen: Color): Werkzeugergebnis {
       zeilen: koenigszeilen(mein.koenigsfluegel),
       farbe: null,
     },
-    {
-      kennung: "gegner",
-      art: "E",
-      titel: t("felder.sichere", { farbe: farbname(gegner(eigen)) }),
-      zeilen: feldzeilen(sein),
-      farbe: null,
-    },
   ];
   const nutzbar = (f: Felderbefund) => f.eigeneLoecher.filter((l) => l.nutzbar).length;
   return {
@@ -131,14 +126,13 @@ export function felder(stellung: Stellung, eigen: Color): Werkzeugergebnis {
     fazit: t("felder.fazit", {
       eigen: farbname(eigen),
       anzahlEigene: nutzbar(mein),
-      gegner: farbname(gegner(eigen)),
-      anzahlGegner: nutzbar(sein),
+      anzahlStarke: mein.sichere.length + mein.springerfelder.length,
     }),
     markierungen: markierungen(mein),
     stufen: [
       ["loecher", "sichere"],
       ["loecher", "sichere", "koenig"],
-      ["loecher", "sichere", "koenig", "gegner"],
+      ["loecher", "sichere", "koenig"],
     ],
     regel: t("werkzeug.k5-felder.regel"),
   };

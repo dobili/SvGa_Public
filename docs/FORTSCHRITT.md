@@ -1422,6 +1422,43 @@ Prüfung: `npm run pruefen` (1251 Tests) und alle 142 Oberflächentests in Chrom
 `p5-trainerbedienung` danach mit `weiter-ohne-autor` zusammenführen (nicht nach main ohne
 Auftrag).
 
+### P3 Werkzeuge und Strukturbegriffe (Zweig `p3-werkzeuge`, Fable, 23.10.2026) – fertig, Abnahme offen
+
+Basis `weiter-ohne-autor`; nicht auf `main`, keine Versionsnummer. Testpunkte N670 bis N679 und
+Rückfragen B9 bis B14 (Buchvorschläge zu den Strukturbegriffen) in `docs/AUFGABEN_AUTOR.md`.
+
+- [x] **R44 Bauernstruktur** nach den Festlegungen des Autors: `schach/bauernschwaechen.ts`
+      (rückständig = Nachbarn vorn, kein eigener Bauer deckt mehr, gegnerischer Bauer hält das
+      Feld davor, kein gegnerischer Bauer auf der Linie davor), `schach/bauernprofil.ts` (starke
+      Felder 4. bis 6. Reihe), `schach/skelettfelder.ts` (`besetztVon` am starken Feld: Vorposten
+      besetzt oder vorgesehen). Texte der Werkzeuge Felder, Bauern, LAP und des Plan-Satzes
+      „Vorposten besetzen“ mit Bauernloch, schwachem Feld, starkem Feld, Vorposten (de, en).
+      Folge: fünf Abbildungen mit anderem Läuferurteil (weniger Bauern gelten als festgelegt),
+      Referenz `analyse/__referenz__/werkzeuge.txt` neu. Buchvorschläge B9 bis B14.
+- [x] **R41 Sichtwechsel:** `wende` (analyse/register.ts) stempelt die Sicht ins Ergebnis
+      (`Werkzeugergebnis.seite`), die Legende der Werkzeugkarte nennt die Farben über `{eigen}`
+      und `{gegner}` in allen 22 Legenden mit Seitenbezug. Nur die gewählte Seite: k5-felder (ohne
+      vierten Befund), k5-bauern (Gegner nur als „Ziele bei …“), k5-richtung, k5-figuren,
+      k6-planbilanz. Beide Seiten mit Begründung in der Regel: Röntgen, Warnsignale, Erfassen,
+      Zielbilanz, Faktorenbilanz.
+- [x] **R42 Karten:** `.befunde` einspaltig (basis.css), zwei Spalten erst im Tablet-Hochformat
+      ab 760 px und im Querformat ab 1340 px (breit.css). Phase aus `k12-erfassen` entfernt (nur
+      im Fazit), Reiter „Phase“ bleibt die einzige Stelle.
+- [x] **R43 Kandidaten:** `ui/komponenten/KandidatenKarte.tsx` (Engine-Abschnitt über
+      `Werkzeugzusatz`, auch in der Partie), reine Teile in `kandidatenbewertung.ts` mit Test;
+      `kandidatenliste()` und `istRuhig()` in `analyse/k12-kandidaten.ts`; Texte für ruhige
+      Kandidaten ohne Materialstand (`kandidaten.antwortRuhig`, `besteRuhig`, `ruhigeUnten`).
+      Oberflächentests angepasst (Planbilanz, Bauern, Kandidaten mit Engine, Legende der Sicht).
+
+**Für P4 (Strukturerkenner):** Die neue Strukturerkennung liegt in `schach/bauernschwaechen.ts`
+(`rueckstaendige` mit den vier Bedingungen), `schach/bauernprofil.ts` (`loecher`, `starkeFelder`
+ab der eigenen 4. Reihe) und `schach/skelettfelder.ts` (`SicheresFeld.gestuetzt` = Vorposten,
+`besetztVon`, `Springerfeld`). `training/strukturtrainer.ts` rechnet noch mit seiner eigenen
+Zeile `STARKE_REIHEN = [4, 5]` (5. und 6. Reihe) und den Merkmalen aus den Trainerdaten
+(`merkmale.rueckstaendige` von Fable, alte Definition); beides auf die neue Erkennung umstellen,
+dazu die Texte `strukturtrainer.auftrag.felder` und `strukturtrainer.keine.felder` („5. und 6. Reihe“ → „4. bis 6. Reihe“). Nächster Schritt: Rückmeldung des Autors zu N670 bis N679 und
+B9 bis B14; danach `p3-werkzeuge` in `weiter-ohne-autor` übernehmen.
+
 ## Offene Punkte
 
 - Zugfolgen, die eine im Buch nicht gezeigte Ausgangsstellung brauchen („Stünde der Turm auf b8 …“,

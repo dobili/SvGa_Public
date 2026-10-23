@@ -87,6 +87,7 @@ export function Karten({
               wahl={wahl}
               stellung={stellung}
               eigen={sicht.farbe}
+              zug={naechsterZug ?? undefined}
               beiGegnerplan={gegnerplan.setzeMarkierungen}
               beiErzwingend={erzwingend.setzeMarkierungen}
             />

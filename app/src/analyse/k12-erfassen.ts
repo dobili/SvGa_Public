@@ -1,6 +1,7 @@
 /**
  * Werkzeug k12-erfassen: Schritt 1 der Denkroutine. Was hat der letzte Zug des Gegners
- * verändert, was droht er? Warnsignale auf beiden Seiten, Phase und Werkzeug für Schritt 2.
+ * verändert, was droht er? Warnsignale auf beiden Seiten, die Phase im Fazit (Werkzeug für
+ * Schritt 2 im Reiter „Phase“).
  *
  * Rolle im Gesamtbild: Pflichtenheft 6.3 („Denkroutine Schritt 1: Stellung erfassen. E“). Rot:
  * die Drohungen des Gegners; dazu die Markierungen der Warnsignale W1 bis W7.
@@ -17,7 +18,6 @@ import { LESART, phase, phasenregel, type Phasenregel } from "../schach/phase";
 import { gegner, type Stellung } from "../schach/stellung";
 import type { Verlauf } from "../schach/todsuenden";
 import { warnsignaleSieben } from "./k7-warnsignale";
-import { phasenzeilen, werkzeugzeilen } from "./k11-phase";
 import { profil } from "./stellungsprofil";
 import { aufzaehlung, farbname, schlagtext, zugtext } from "./texte";
 import type { Befund, Markierung, Werkzeug, Werkzeugergebnis } from "./werkzeug";
@@ -70,11 +70,12 @@ function mitSeite(signale: Werkzeugergebnis, kennung: string, seite: string): st
 }
 
 /**
- * Erfasst die Stellung in drei Schritten: letzter Zug und Drohungen, Warnsignale, Phase.
+ * Erfasst die Stellung: letzter Zug und Drohungen, Warnsignale beider Seiten; die Phase steht im
+ * Fazit mit Namen, ihre Gründe und Werkzeuge im eigenen Reiter „Phase“ (R42, 23.10.2026: kein
+ * doppelter Inhalt zwischen den Reitern eines Bündels).
  *
  * Eingaben: Stellung, eigene Seite, Verlauf (für den letzten Zug), Phasenregel (Glossar für
- * Stellungen des Buches, S17). Ausgabe: drei Befunde und
- * die Werkzeuge für Schritt 2.
+ * Stellungen des Buches, S17). Ausgabe: zwei Befunde und das Fazit mit der Phase.
  * Beispiel: Abb. 12.1 (griechisches Geschenk): Warnsignal W3 (König ohne Luft, Turm f8), Phase
  * Mittelspiel.
  */
@@ -106,13 +107,6 @@ export function erfassen(
       ],
       farbe: "grau",
     },
-    {
-      kennung: "phase",
-      art: "N",
-      titel: t("erfassen.phaseTitel"),
-      zeilen: [...phasenzeilen(ph), ...werkzeugzeilen(ph.phase)],
-      farbe: "gold",
-    },
   ];
   return {
     werkzeug: "k12-erfassen",
@@ -121,7 +115,7 @@ export function erfassen(
     befunde,
     fazit: t("erfassen.fazit", { phase: t(`phase.name.${ph.phase}`), signale: signale.fazit }),
     markierungen: [...drohungspfeile(stellung, eigen), ...signale.markierungen],
-    stufen: [["zug"], ["zug", "warnsignale"], ["zug", "warnsignale", "phase"]],
+    stufen: [["zug"], ["zug", "warnsignale"], ["zug", "warnsignale"]],
     regel: t("werkzeug.k12-erfassen.regel"),
   };
 }

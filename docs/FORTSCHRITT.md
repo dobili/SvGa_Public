@@ -1404,12 +1404,24 @@ jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Au
       2 Bauern schlechter als der beste Zug), sonst neues Beispiel.
 - [x] R22 Partienliste: Filter und Sortierung über Symbole, mehrere Filter zugleich.
 - [x] R23 PGN-Import bei der Partienliste: auswerten, als nicht gewertete Partie speichern.
-- [ ] R54 Partienliste: ein Symbol „Filter“ und ein Symbol „Sortieren“, je mit aufklappender
-      Liste in Worten (statt unbeschrifteter Einzelsymbole); Varianten vorher zeigen (Wunsch des
-      Autors, 23.10.2026 abends; nach der Bot-Kalibrierung, P7b).
-- [ ] R55 Auswertung: Liste der Fehler und Patzer immer eingeklappt (P7b).
-- [ ] R56 Auswertung: Umschalter Sicht Weiß/Schwarz statt zwei Spalten (Voreinstellung: eigene
-      Seite), volle Breite; Genauigkeiten und Zugklassen grafisch statt kleiner Zahlen (P7b).
+- [ ] R54 Partienliste (entschieden 23.10.2026): Variante A, zwei Knöpfe „Filter“ und
+      „Sortieren“ mit aufklappender Liste in Worten, aktive Filter als Chips mit × (P7b).
+- [ ] R55 Auswertung: Liste der Fehler und Patzer immer eingeklappt, Anzahl als Badge (P7b).
+- [ ] R56 Auswertung (entschieden 23.10.2026, P7b):
+      - Umschalter Weiß/Schwarz, Voreinstellung eigene Seite, volle Breite.
+      - Großer Ring mit der Gesamtgenauigkeit, daneben Urteil, Genauigkeit und geschätzte
+        Spielstärke mit Spanne.
+      - Darunter Balken (Skala 50–100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und
+        Taktik, mit den Phasensymbolen der App, Prozent, Urteilswort und Elo; Phase mit zu
+        wenigen Zügen grau, „–“.
+      - Zugklassen einzig als Bullet-Diagramm mit Zonen: je Klasse Marke, Name, Badge mit
+        Anzahl und „x % des Üblichen · Urteil“; eigene Skala 0 bis doppelt üblich; Strich =
+        üblich bei der eigenen Stärke; Zonen schwach/normal/gut (bei schwachen Klassen
+        umgekehrt); über der Skala „▸“.
+      - Zonengrenzen aus der Streuung der Lichess-Daten des Bot-Chats; unter etwa 15 eigenen
+        Zügen nur Badges.
+      - Erklärtexte hinter dem Fragezeichen.
+      - Vorschau: vorschau-auswertung.html (Chat P1).
 - [ ] R24 Bot mit festgelegter Eröffnung: ohne Buchzug Zugfolgen derselben Eröffnung aus der
       Lichess-Liste.
 - [ ] R25 V1: restliche Buchdaten ins Englische (inhalte/en, kapitelweise).

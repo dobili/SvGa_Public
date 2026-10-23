@@ -1,0 +1,1086 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 12,
+ "titel": "Training methods and checklists",
+ "abschnitte": [
+  {
+   "nummer": "12.1",
+   "label": "sec:kandidatenzuege",
+   "titel": "The thinking routine: four steps to your next move"
+  },
+  {
+   "nummer": "12.2",
+   "label": "sec:analyse",
+   "titel": "Game analysis without fooling yourself"
+  },
+  {
+   "nummer": "12.3",
+   "label": "sec:plan",
+   "titel": "The 30-minute training plan"
+  },
+  {
+   "nummer": "12.4",
+   "label": "sec:saeulen",
+   "titel": "Opening training: the four pillars"
+  },
+  {
+   "nummer": "12.5",
+   "label": "sec:zeitmanagement",
+   "titel": "Time management and tournament practice"
+  },
+  {
+   "nummer": "12.6",
+   "label": "sec:kopf",
+   "titel": "Mind and concentration"
+  },
+  {
+   "nummer": "12.7",
+   "label": "sec:werkzeugkasten",
+   "titel": "Your toolbox"
+  },
+  {
+   "nummer": "12.8",
+   "label": "sec:weiter",
+   "titel": "What comes next"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "12.1",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.1",
+    "label": "sec:kandidatenzuege",
+    "titel": "The thinking routine: four steps to your next move"
+   },
+   "unterabschnitt": "The routine in an example",
+   "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "grau",
+     "von": "a1",
+     "nach": "c1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Greek gift from Chapter 1, White to move. Gold: the candidate ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bxh7+"
+    },
+    {
+     "art": "text",
+     "text": ". Gray: the quiet candidate ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rc1"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "12.2",
+    "12.3"
+   ],
+   "beispiel": {
+    "id": "k12-a1",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 224
+   },
+   "pruefsumme": "502c3e73363137d8",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Bxh7+",
+      "frage": "Why do you check 1. Bxh7+ before the quiet 1. Rc1?",
+      "antworten": [
+       "Quiet moves are not allowed in the thinking routine.",
+       "Bxh7+ wins a pawn without any calculation.",
+       "A check leaves your opponent the fewest replies, so you calculate it first."
+      ],
+      "richtig": 2,
+      "erklaerung": "After Bxh7+, Black has only two moves. Forcing moves like this are quick to calculate to the end, so they come first."
+     }
+    ]
+   }
+  },
+  {
+   "id": "12.2",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.1",
+    "label": "sec:kandidatenzuege",
+    "titel": "The thinking routine: four steps to your next move"
+   },
+   "unterabschnitt": "The routine in an example",
+   "fen": "r1b2r2/ppqn1ppk/2n1p3/3pP1N1/3P4/2N5/PP3PPP/R2Q1RK1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "g8"
+    },
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "g6"
+    },
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "h6"
+    },
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "h8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bxh7+ Kxh7 2. Ng5+"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the four king moves you check one by one in step 3.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "12.1",
+    "12.3"
+   ],
+   "beispiel": {
+    "id": "k12-a1",
+    "pfad": [
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 225
+   },
+   "pruefsumme": "6bb78255e9ddffcb",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why do you check each of the four king moves one by one here?",
+      "antworten": [
+       "Only the king can get out of the check, and each king move allows White a different continuation.",
+       "Black can also simply capture the knight on g5.",
+       "A pawn move to f5 also blocks the check."
+      ],
+      "richtig": 0,
+      "erklaerung": "Black has exactly four legal moves, all with the king. Step 3 looks for White's strongest reply to each one."
+     }
+    ]
+   }
+  },
+  {
+   "id": "12.3",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.1",
+    "label": "sec:kandidatenzuege",
+    "titel": "The thinking routine: four steps to your next move"
+   },
+   "unterabschnitt": "The routine in an example",
+   "fen": "r1b2r2/ppqn1pp1/2n1p1k1/3pP1N1/3P4/2NQ4/PP3PPP/R4RK1 b - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "g6"
+    },
+    {
+     "farbe": "grau",
+     "von": "g5",
+     "nach": "e6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg6 3. Qd3+"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold: the check ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Qd3+"
+    },
+    {
+     "art": "text",
+     "text": ". Gray: after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... f5"
+    },
+    {
+     "art": "text",
+     "text": " comes ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Nxe6"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "12.1",
+    "12.2"
+   ],
+   "beispiel": {
+    "id": "k12-a1",
+    "pfad": [
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+",
+     "Kg6",
+     "Qd3+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 226
+   },
+   "pruefsumme": "5f52e280406739ee",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "3... f5",
+      "frage": "What does 3... f5 mean for the square e6?",
+      "antworten": [
+       "e6 is then defended twice.",
+       "The knight on g5 is then pinned.",
+       "The f7 pawn no longer defends e6: 4. Nxe6 attacks the queen on c7 and the rook on f8."
+      ],
+      "richtig": 2,
+      "erklaerung": "f5 blocks the check but gives up the last protection of e6. That is exactly where the fork geometry from step 1 was."
+     }
+    ]
+   }
+  },
+  {
+   "id": "12.4",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.1",
+    "label": "sec:kandidatenzuege",
+    "titel": "The thinking routine: four steps to your next move"
+   },
+   "unterabschnitt": "Visualization: the board in your head",
+   "fen": "rn1qkbnr/ppp2ppp/8/4p3/2B1P3/5Q2/PPP2PPP/RNB1K2R b KQkq - 1 6",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Opera Game after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Bc4"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move (only look after the exercise).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k12-a4",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "d6",
+     "d4",
+     "Bg4",
+     "dxe5",
+     "Bxf3",
+     "Qxf3",
+     "dxe5",
+     "Bc4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 316
+   },
+   "pruefsumme": "51371e6dfa81a76a",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "What must Black do first here?",
+      "antworten": [
+       "Attack the bishop on c4 with b5.",
+       "Stop the threat Qxf7#.",
+       "Castle queenside quickly."
+      ],
+      "richtig": 1,
+      "erklaerung": "An attack of your own is no use if your opponent mates you on the next move. That is why step 1 always asks about the threat first."
+     }
+    ]
+   }
+  },
+  {
+   "id": "12.5",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.8",
+    "label": "sec:weiter",
+    "titel": "What comes next"
+   },
+   "unterabschnitt": "To finish",
+   "fen": "r1bq1rk1/pp1n1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k12-a5",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1203
+   },
+   "pruefsumme": "bd78a2b071ce0cda"
+  },
+  {
+   "id": "12.6",
+   "auflage": 1,
+   "kapitel": 12,
+   "abschnitt": {
+    "nummer": "12.8",
+    "label": "sec:weiter",
+    "titel": "What comes next"
+   },
+   "unterabschnitt": "To finish",
+   "fen": "3r2k1/pp3pp1/2nb3p/3p4/8/2P1BN2/PP3PPP/3R2K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k12-a6",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1215
+   },
+   "pruefsumme": "cc72b94e763c0138"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:kandidatenzuege",
+   "nummer": 83,
+   "kapitel": 12,
+   "titel": null,
+   "abbildungen": [
+    "12.5"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "The position is the same as the example from ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 12.1",
+     "abbildung": "12.1"
+    },
+    {
+     "art": "text",
+     "text": " except for one piece: the black queen is on d8 instead of c7. Go through the four steps of the thinking routine for the candidate ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bxh7+"
+    },
+    {
+     "art": "text",
+     "text": ". Do you play it?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "No. Step 3 demands the strongest reply, and that does not only mean king moves. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bxh7+? Kxh7 2. Ng5+"
+    },
+    {
+     "art": "text",
+     "text": ", the queen captures the knight: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Qxg5!"
+    },
+    {
+     "art": "text",
+     "text": ". From d8 it guards the square g5, and no white piece defends the knight. White has then given two pieces for a pawn. A quiet move like ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qc2"
+    },
+    {
+     "art": "text",
+     "text": " is better. Remember: when looking for the strongest reply, first check your opponent's captures, because a single piece on a different square turns a winning sacrifice into a mistake.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1200
+   },
+   "erklaerung": {
+    "loesung": "1. Qc2",
+    "akzeptiert": [],
+    "motiv": "Check the strongest reply",
+    "text": "After 1. Bxh7+? Kxh7 2. Ng5+, the queen captures from d8 with 2... Qxg5!, and White has given two pieces for a pawn. When looking for the strongest reply, first check your opponent's captures; a quiet move like 1. Qc2 is better."
+   }
+  },
+  {
+   "id": "ueb:zeitnot-prinzipien",
+   "nummer": 84,
+   "kapitel": 12,
+   "titel": null,
+   "abbildungen": [
+    "12.6"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "You have three minutes left for twelve moves. The pawn on d5 looks undefended, because the black bishop on d6 stands between it and the rook on d8. Do you take it with your rook? Which of the three questions of the safety check decides?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "No. The third question decides: Do I allow my opponent a check? After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rxd5??"
+    },
+    {
+     "art": "text",
+     "text": ", the bishop moves away with check and opens the d-file: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Bxh2+! 2. Kxh2 Rxd5"
+    },
+    {
+     "art": "text",
+     "text": ". Black has won the exchange and given only the d5 pawn for it. This is the discovered attack from Chapter 7 (motif 4). The check takes only a few seconds, because you are just looking for your opponent's checks, and here there is exactly one. The right move is one like ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. g3"
+    },
+    {
+     "art": "text",
+     "text": ", which closes the diagonal to h2. Only then does ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Rxd5"
+    },
+    {
+     "art": "text",
+     "text": " really threaten. Remember: even in time trouble, look for your opponent's checks before every capture.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1212
+   },
+   "erklaerung": {
+    "loesung": "1. g3",
+    "akzeptiert": [],
+    "motiv": "Safety check in time trouble",
+    "text": "After 1. Rxd5??, the bishop moves away with check: 1... Bxh2+! 2. Kxh2 Rxd5, and Black wins the exchange. The question about your opponent's checks decides; 1. g3 closes the diagonal, and only then does it threaten Rxd5."
+   }
+  },
+  {
+   "id": "ueb:fehlerprotokoll",
+   "nummer": 85,
+   "kapitel": 12,
+   "titel": null,
+   "abbildungen": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Take one of your own games and make a mistake record. Name exactly one tactical and one strategic mistake. Assign each a type of mistake from Table 12.2, write down a better candidate move or plan for each, and only afterwards check with an engine whether your analysis caught the main idea. If you don't have a game of your own yet, use a game from Chapter 11 and make the record for a key moment described there.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "A good mistake record names a concrete move instead of a vague phase like “my opening was bad”. Example: “After my move I overlooked the knight fork on d4 (Chapter 7)” and “I traded my active piece for a passive one (Chapter 6)”. The matching types of mistake are called “Missed tactic” and “Plan or piece activity”. The example row in Table 12.1 shows how you enter the first mistake. The engine is only the checking partner, not a replacement for your own analysis. Remember: a mistake you can name in one sentence can be trained in a targeted way.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1224
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Mistake record",
+    "text": "A good record names a concrete move and assigns it a type of mistake, such as a missed tactic or a weak plan. Only then does the engine check whether your own analysis caught the main idea."
+   }
+  },
+  {
+   "id": "ueb:trainingsplan",
+   "nummer": 86,
+   "kapitel": 12,
+   "titel": null,
+   "abbildungen": [],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Draw up a concrete training plan for seven days. For each day, decide which tactics exercises, which kind of game and which chapter you review. Make sure that at least one day includes analyzing one of your own lost games.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "A good plan is concrete: for example, Monday tactics exercises on forks plus a 10+0 game (game day from Table 12.3), Tuesday defending the Philidor position from Chapter 9 on the analysis board against the computer, Wednesday analyzing one of your own games, Thursday playing through a master game on the isolani (Fischer, Chapter 11), Friday playing a short game followed by a hunt for mistakes, Saturday reviewing two basic endgame positions, and Sunday playing a long game (about 15+10), adding to the mistake log and training the most common type of mistake of the week. Remember: what matters is the mix of playing, analysis and targeted study.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap12_training.tex",
+    "zeile": 1235
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Training plan",
+    "text": "A good plan mixes tactics, games, endgames, master games and the analysis of one of your own lost games over seven days. For each day it names concrete content instead of general resolutions."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k12-a1",
+   "kapitel": 12,
+   "abschnitt": "12.1",
+   "titel": "The routine in an example",
+   "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5+",
+         "zeichen": "",
+         "abbildungen": [
+          "12.2"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qd3+",
+             "zeichen": "!",
+             "abbildungen": [
+              "12.3"
+             ],
+             "weiter": [
+              {
+               "zug": "f5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxe6",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              },
+              {
+               "zug": "Kh6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qh7+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              },
+              {
+               "zug": "Kh5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qh7+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              },
+              {
+               "zug": "Kxg5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "f4+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "zug": "Qg4",
+             "zeichen": "?",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "f5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Kh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Kg8",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qh7#",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kh6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qg4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nxd5",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Rc1",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "12.1",
+     "pfad": []
+    },
+    {
+     "nummer": "12.2",
+     "pfad": [
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+"
+     ]
+    },
+    {
+     "nummer": "12.3",
+     "pfad": [
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+",
+      "Kg6",
+      "Qd3+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k12-a4",
+   "kapitel": 12,
+   "abschnitt": "12.1",
+   "titel": "Visualization: the board in your head",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "d6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "d4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bg4",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "dxe5",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Bxf3",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Qxf3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "dxe5",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Bc4",
+                         "zeichen": "",
+                         "abbildungen": [
+                          "12.4"
+                         ],
+                         "weiter": []
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "12.4",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "d6",
+      "d4",
+      "Bg4",
+      "dxe5",
+      "Bxf3",
+      "Qxf3",
+      "dxe5",
+      "Bc4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k12-a5",
+   "kapitel": 12,
+   "abschnitt": "Übung 83",
+   "titel": "To finish",
+   "startFen": "r1bq1rk1/pp1n1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qc2",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Bxh7+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Qxg5",
+           "zeichen": "!",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "12.5",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k12-a6",
+   "kapitel": 12,
+   "abschnitt": "Übung 84",
+   "titel": "To finish",
+   "startFen": "3r2k1/pp3pp1/2nb3p/3p4/8/2P1BN2/PP3PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "g3",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Rxd5",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bxh2+",
+       "zeichen": "!",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kxh2",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rxd5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "12.6",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  }
+ ]
+}

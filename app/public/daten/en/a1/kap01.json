@@ -1,0 +1,5389 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 1,
+ "titel": "Basic principles of chess",
+ "abschnitte": [
+  {
+   "nummer": "1.1",
+   "label": "sec:k1-eroeffnungsziele",
+   "titel": "The three goals of every opening"
+  },
+  {
+   "nummer": "1.2",
+   "label": "sec:k1-todsuenden",
+   "titel": "The four deadly sins of the opening phase"
+  },
+  {
+   "nummer": "1.3",
+   "label": "sec:k1-anfaenger",
+   "titel": "Why beginners so often lose in the first few moves"
+  },
+  {
+   "nummer": "1.4",
+   "label": "sec:k1-roentgen",
+   "titel": "Your built-in error radar: the Chess X-ray rule"
+  },
+  {
+   "nummer": "1.5",
+   "label": "sec:k1-spannung",
+   "titel": "Don't capture too soon: tension is a weapon"
+  },
+  {
+   "nummer": "1.6",
+   "label": "sec:k1-angriff",
+   "titel": "Attack needs superior force: the golden attack rule"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "1.1",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "The three goals of every opening"
+   },
+   "unterabschnitt": null,
+   "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e2",
+     "nach": "e4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4"
+    },
+    {
+     "art": "text",
+     "text": ": the gold arrow shows White's first center move; the gold square e4 is one of the four central squares, and the gray squares d4, e5 and d5 are the other three.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a1",
+    "pfad": [
+     "e4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 54
+   },
+   "pruefsumme": "43d6730c67f583aa"
+  },
+  {
+   "id": "1.2",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "The three goals of every opening"
+   },
+   "unterabschnitt": "The three goals in practice: the London System",
+   "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f4",
+     "nach": "e5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Bf4"
+    },
+    {
+     "art": "text",
+     "text": " – ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Goal 1",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": ": the pawn occupies d4 (gold), and the bishop controls e5 from a distance (gold arrow, gray square). The order is what matters: the bishop leaves the back rank ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "before",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " e3 shuts it in.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.3"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 87
+   },
+   "pruefsumme": "93168561d1097a53"
+  },
+  {
+   "id": "1.3",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "The three goals of every opening"
+   },
+   "unterabschnitt": "The three goals in practice: the London System",
+   "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P1B2/4PN2/PPP2PPP/RN1QKB1R b KQkq - 1 4",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "e5"
+    },
+    {
+     "farbe": "grau",
+     "von": "f1",
+     "nach": "d3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Nf3"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. The knight stands on its best square and also controls e5 (gold arrow, gray square). The pawn on e3 has opened the way to d3 for the bishop on f1 (gray arrow): that is the next step.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.2"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 92
+   },
+   "pruefsumme": "a22379ab33b2ebe4"
+  },
+  {
+   "id": "1.4",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "The three goals of every opening"
+   },
+   "unterabschnitt": "The three goals in practice: the London System",
+   "fen": "rnbqk2r/ppp1bppp/4pn2/3p4/3P1B2/3BPN2/PPP2PPP/RN1QK2R b KQkq - 3 5",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "e5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Bd3"
+    },
+    {
+     "art": "text",
+     "text": " – ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Goal 2",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": ": both minor pieces stand on active squares, the bishop on the b1–h7 diagonal, and the knight also defends e5 (gold arrows).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.5"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 100
+   },
+   "pruefsumme": "bc459efb962a04e2"
+  },
+  {
+   "id": "1.5",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "The three goals of every opening"
+   },
+   "unterabschnitt": "The three goals in practice: the London System",
+   "fen": "rnbq1rk1/ppp1bppp/4pn2/3p4/3P1B2/3BPN2/PPP2PPP/RN1Q1RK1 b - - 5 6",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "g1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. O-O"
+    },
+    {
+     "art": "text",
+     "text": " – ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Goal 3",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": ": the king is safe (gold square g1), and all that in only six moves.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.4"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3",
+     "O-O",
+     "O-O"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 105
+   },
+   "pruefsumme": "58a57f325fcbfa46"
+  },
+  {
+   "id": "1.6",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "The three goals of every opening"
+   },
+   "unterabschnitt": "The three goals in practice: the London System",
+   "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1 w - - 1 8",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c5",
+     "nach": "d4"
+    },
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "c3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "e3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "d4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Nc6"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. The pawn on c5 and the knight on c6 attack the pawn on d4 (red arrows); the pawns on c3 and e3 and the knight on f3 defend it (gold arrows).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.7"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3",
+     "O-O",
+     "O-O",
+     "c5",
+     "c3",
+     "Nc6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 120
+   },
+   "pruefsumme": "9b6d4854506eef9d",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why doesn't White need to defend the pawn on d4 any further right now?",
+      "antworten": [
+       "Two attackers face three defenders: capturing on d4 wins nothing.",
+       "The pawn on d4 is pinned to the king.",
+       "In the opening, Black is not allowed to capture pawns."
+      ],
+      "richtig": 0,
+      "erklaerung": "You count on the square: as long as the defenders are not fewer than the attackers, every capture on d4 ends in a mere exchange."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.7",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "The three goals of every opening"
+   },
+   "unterabschnitt": "The three goals in practice: the London System",
+   "fen": "r1bq1rk1/p3bppp/1pn1pn2/2pp4/3P1B2/2PBPN2/PP1NQPPP/R4RK1 b - - 1 9",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a1",
+     "nach": "f1"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Qe2"
+    },
+    {
+     "art": "text",
+     "text": " – the opening is complete. The gold arrow shows the back rank, now clear between the two rooks: they are “connected” and protect each other. The gray squares e5 and e4 show which center squares White controls from a distance without occupying them.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.6"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3",
+     "O-O",
+     "O-O",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nbd2",
+     "b6",
+     "Qe2"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 125
+   },
+   "pruefsumme": "01e64c0f95872f92"
+  },
+  {
+   "id": "1.8",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "The four deadly sins of the opening phase"
+   },
+   "unterabschnitt": "The premature queen in the Italian Game",
+   "fen": "r1b1kbnr/pppp1ppp/2n2q2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "f3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... Qf6?"
+    },
+    {
+     "art": "text",
+     "text": " – the queen actually attacks nothing: the f-file is blocked by the white knight on f3 (gray arrow), so f2 is not threatened at all. Worse still: it takes the square f6 away from its own knight on g8 (gray).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.9"
+   ],
+   "beispiel": {
+    "id": "k01-a8",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Qf6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 187
+   },
+   "pruefsumme": "1549a10c7786dbda",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "4. Nc3",
+      "frage": "Why is 4. Nc3 so effective here?",
+      "antworten": [
+       "It threatens mate on f7 at once.",
+       "It develops a piece and prepares Nd5, which attacks the queen with tempo.",
+       "It prepares queenside castling."
+      ],
+      "richtig": 1,
+      "erklaerung": "The queen that came out early becomes a target: every further attack on it is a developing move for White and a lost tempo for Black."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.9",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "The four deadly sins of the opening phase"
+   },
+   "unterabschnitt": "The premature queen in the Italian Game",
+   "fen": "r1b1k1nr/pppp1ppp/2n2q2/2bNp3/2B1P3/5N2/PPPP1PPP/R1BQK2R b KQkq - 7 5",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "f6"
+    },
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "c7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Nc3! Bc5 5. Nd5!"
+    },
+    {
+     "art": "text",
+     "text": " – the knight attacks the queen ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "and",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " also threatens Nxc7+, a double attack (a ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "fork",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ") on the king and the rook on a8 (red arrows). White develops, Black has to react.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.8"
+   ],
+   "beispiel": {
+    "id": "k01-a8",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Qf6",
+     "Nc3",
+     "Bc5",
+     "Nd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 192
+   },
+   "pruefsumme": "de664b8fb836bb52",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "5... Qd8",
+      "frage": "Why does the queen retreat to d8?",
+      "antworten": [
+       "It prepares queenside castling.",
+       "From d8 it attacks the knight on d5.",
+       "It escapes the attack and defends c7; so the two queen moves were for nothing."
+      ],
+      "richtig": 2,
+      "erklaerung": "d8 is the only square where the queen is safe and at the same time prevents the fork on c7. Meanwhile White has developed two pieces, and Black has only lost moves."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.10",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "The four deadly sins of the opening phase"
+   },
+   "unterabschnitt": "The premature queen in the Italian Game",
+   "fen": "r1bqk1nr/pppp1ppp/2n5/2bNp3/2B1P3/5N2/PPPP1PPP/R1BQK2R w KQkq - 8 6",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Qd8"
+    },
+    {
+     "art": "text",
+     "text": " – the queen is back on its starting square. Two of Black's moves have vanished without anything to show for them.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.11"
+   ],
+   "beispiel": {
+    "id": "k01-a8",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Qf6",
+     "Nc3",
+     "Bc5",
+     "Nd5",
+     "Qd8"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 200
+   },
+   "pruefsumme": "473fe816f46a48fa"
+  },
+  {
+   "id": "1.11",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "The four deadly sins of the opening phase"
+   },
+   "unterabschnitt": "The premature queen in the Italian Game",
+   "fen": "r1bqk1nr/pppp1ppp/2n5/2bNp3/2BPP3/5N2/PPP2PPP/R1BQK2R b KQkq d3 0 6",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e4",
+     "nach": "d5"
+    },
+    {
+     "farbe": "gold",
+     "von": "d4",
+     "nach": "e5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. d4!"
+    },
+    {
+     "art": "text",
+     "text": " – White has a broad center (gold), three developed pieces and castling within reach. Black has two pieces and a queen that has achieved nothing. That Black can capture on d4 doesn't bother White: White's lead in development is worth more than the pawn.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.10"
+   ],
+   "beispiel": {
+    "id": "k01-a8",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Qf6",
+     "Nc3",
+     "Bc5",
+     "Nd5",
+     "Qd8",
+     "d4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 201
+   },
+   "pruefsumme": "95c47d750896b2cc",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why doesn't it bother White that Black can capture the pawn on d4?",
+      "antworten": [
+       "The lead in development is worth more than a pawn.",
+       "The pawn on d4 is defended three times.",
+       "After the capture, Black is mated at once."
+      ],
+      "richtig": 0,
+      "erklaerung": "White has a broad center and three developed pieces, and is about to castle. A pawn that Black grabs with further moves of the same pieces only makes this deficit bigger."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.12",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "The four deadly sins of the opening phase"
+   },
+   "unterabschnitt": "Delayed castling – a typical danger position",
+   "fen": "r3kb1r/ppqb1ppp/2np4/8/2BNn3/2N5/PPP2PPP/R1BQR1K1 w kq - 6 11",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "c3",
+     "nach": "e4"
+    },
+    {
+     "farbe": "grau",
+     "von": "e1",
+     "nach": "e8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White has already castled, has brought the rook to the open e-file and is to move. The gray arrow shows the line of the pin: the black knight on e4 must not move, or its own king would be in check. The gold arrow shows the additional attack of the knight on c3 on exactly this square – the red square e4 shows that White wins the piece at once.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a12",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 238
+   },
+   "pruefsumme": "6f15f1ea001d23ca",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "11. Nxe4",
+      "frage": "Why is the black knight on e4 lost?",
+      "antworten": [
+       "It has no free square left.",
+       "It is pinned to the king on e8 and attacked twice.",
+       "White threatens mate on e8."
+      ],
+      "richtig": 1,
+      "erklaerung": "The rook on e1 pins it to the king, and the knight on c3 attacks it as well. A king that stays in the middle too long is what makes such pins possible in the first place."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.13",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Scholar's mate and how to defend against it",
+   "fen": "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h5",
+     "nach": "e5"
+    },
+    {
+     "farbe": "rot",
+     "von": "h5",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Qh5"
+    },
+    {
+     "art": "text",
+     "text": " – the red arrows show the attack on e5 and the target f7. For now f7 is harmless, because the king defends it.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.14",
+    "1.15"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 291
+   },
+   "pruefsumme": "9fbc7b6d68a151d4",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "2... Nc6",
+      "frage": "Why does Black play 2... Nc6?",
+      "antworten": [
+       "It attacks the queen on h5.",
+       "It prepares Nd4 with mate.",
+       "It develops a piece and at the same time defends the attacked pawn on e5."
+      ],
+      "richtig": 2,
+      "erklaerung": "One move that does two jobs: development and defense. That way White's threat costs Black no tempo."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.14",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Scholar's mate and how to defend against it",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR w KQkq - 2 3",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "c6",
+     "nach": "e5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Nc6"
+    },
+    {
+     "art": "text",
+     "text": " – the gray arrow shows how the knight defends the e5 pawn.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.13",
+    "1.15"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 296
+   },
+   "pruefsumme": "711e8860e078155e"
+  },
+  {
+   "id": "1.15",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Scholar's mate and how to defend against it",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h5",
+     "nach": "f7"
+    },
+    {
+     "farbe": "rot",
+     "von": "c4",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Bc4"
+    },
+    {
+     "art": "text",
+     "text": " – queen and bishop aim together at the mating square f7, marked in red.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.13",
+    "1.14"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6",
+     "Bc4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 301
+   },
+   "pruefsumme": "2ec6380e7e1901b6",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "3... g6",
+      "frage": "Why is 3... g6 a good reply?",
+      "antworten": [
+       "It prevents Qxf7# and attacks the queen with tempo.",
+       "It prepares Bg7 and deliberately leaves f7 undefended.",
+       "It opens the h-file for the rook on h8."
+      ],
+      "richtig": 0,
+      "erklaerung": "After g6 the queen has to move. Black parries the mate threat and gains time for Black's own development in the process."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.16",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Scholar's mate and how to defend against it",
+   "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 0 4",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "g6",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... g6!"
+    },
+    {
+     "art": "text",
+     "text": " – the red arrow shows the pawn attacking the queen on h5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.17",
+    "1.18"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6",
+     "Bc4",
+     "g6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 316
+   },
+   "pruefsumme": "653a30281a9d8a20",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "4. Qf3",
+      "frage": "Why does the queen go to f3 of all squares?",
+      "antworten": [
+       "It prepares queenside castling.",
+       "It stays aimed at f7 and renews the mate threat.",
+       "It attacks the knight on c6."
+      ],
+      "richtig": 1,
+      "erklaerung": "From f3, the queen and the bishop on c4 keep aiming at f7. Black has to react again, this time best with a developing move such as Nf6."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.17",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Scholar's mate and how to defend against it",
+   "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR b KQkq - 1 4",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f3",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Qf3"
+    },
+    {
+     "art": "text",
+     "text": " – the red arrow shows: the queen retreats but keeps aiming at f7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.16",
+    "1.18"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6",
+     "Bc4",
+     "g6",
+     "Qf3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 321
+   },
+   "pruefsumme": "dcad47ec4f4d9725"
+  },
+  {
+   "id": "1.18",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Scholar's mate and how to defend against it",
+   "fen": "r1bqkb1r/pppp1p1p/2n2np1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 5",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Nf6"
+    },
+    {
+     "art": "text",
+     "text": " – Black is safe and even slightly better: the knight on f6, the square marked in gray, blocks the f-file for the queen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.16",
+    "1.17"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6",
+     "Bc4",
+     "g6",
+     "Qf3",
+     "Nf6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 326
+   },
+   "pruefsumme": "234d94279cc0eb7f"
+  },
+  {
+   "id": "1.19",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Looking ahead: the Fried Liver Attack",
+   "fen": "r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "d5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Nxd5?!"
+    },
+    {
+     "art": "text",
+     "text": " – the red arrow shows the natural-looking recapture that turns out to be a mistake.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.20"
+   ],
+   "beispiel": {
+    "id": "k01-a19",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Nf6",
+     "Ng5",
+     "d5",
+     "exd5",
+     "Nxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 352
+   },
+   "pruefsumme": "ec2a98e1d1546f61",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6. Nxf7",
+      "frage": "Why does White capture on f7 with the knight?",
+      "antworten": [
+       "f7 is undefended; White simply wins a pawn.",
+       "Afterwards the queen on d8 is trapped.",
+       "The king has to recapture, loses the right to castle and is lured into the center."
+      ],
+      "richtig": 2,
+      "erklaerung": "At the same time, the sacrifice takes the knight out of the attack by the queen on d8. After Kxf7 Qf3+ the king has to go into the open center."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.20",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Looking ahead: the Fried Liver Attack",
+   "fen": "r1bqkb1r/ppp2Npp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R b KQkq - 0 6",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "g5",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Nxf7!"
+    },
+    {
+     "art": "text",
+     "text": " – the gold arrow shows the knight sacrifice on the critical square f7 (red).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.19"
+   ],
+   "beispiel": {
+    "id": "k01-a19",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Nf6",
+     "Ng5",
+     "d5",
+     "exd5",
+     "Nxd5",
+     "Nxf7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 357
+   },
+   "pruefsumme": "81747efa56b41edb"
+  },
+  {
+   "id": "1.21",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Looking ahead: the Fried Liver Attack",
+   "fen": "r1bq1b1r/ppp2kpp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R w KQ - 0 7",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Kxf7"
+    },
+    {
+     "art": "text",
+     "text": " – the king has to win back the knight and loses the right to castle in doing so.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.22"
+   ],
+   "beispiel": {
+    "id": "k01-a19",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Nf6",
+     "Ng5",
+     "d5",
+     "exd5",
+     "Nxd5",
+     "Nxf7",
+     "Kxf7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 376
+   },
+   "pruefsumme": "1d22eb26c444b5f7"
+  },
+  {
+   "id": "1.22",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Why beginners so often lose in the first few moves"
+   },
+   "unterabschnitt": "Looking ahead: the Fried Liver Attack",
+   "fen": "r1bq1b1r/ppp3pp/2n1k3/3np3/2B5/5Q2/PPPP1PPP/RNB1K2R w KQ - 2 8",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. Qf3+ Ke6"
+    },
+    {
+     "art": "text",
+     "text": " – the king is forced into the open center with check.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.21"
+   ],
+   "beispiel": {
+    "id": "k01-a19",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Nf6",
+     "Ng5",
+     "d5",
+     "exd5",
+     "Nxd5",
+     "Nxf7",
+     "Kxf7",
+     "Qf3+",
+     "Ke6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 377
+   },
+   "pruefsumme": "65949d1a4f2248fc"
+  },
+  {
+   "id": "1.23",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Why “check” comes before “capture”",
+   "fen": "rnb1k2r/ppp2p1p/4p1p1/2bq4/4N3/3P4/PPP1BPPP/R1BQ1RK1 w kq - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "e4",
+     "nach": "c5"
+    },
+    {
+     "farbe": "gold",
+     "von": "e4",
+     "nach": "f6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d5"
+    },
+    {
+     "farbe": "rot",
+     "feld": "e8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. The gray arrow shows the obvious capture Nxc5. But the gold arrow shows the much stronger move: Nf6+ gives check to the king on e8 and at the same time attacks the queen on d5 (both red).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.24",
+    "1.25"
+   ],
+   "beispiel": {
+    "id": "k01-a23",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 432
+   },
+   "pruefsumme": "7952c5e1ea53475f",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Nf6+",
+      "frage": "Why is 1. Nf6+ stronger than 1. Nxc5?",
+      "antworten": [
+       "It gives check and attacks the queen on d5 at the same time: White wins the queen.",
+       "It gives mate.",
+       "It protects White's own king."
+      ],
+      "richtig": 0,
+      "erklaerung": "If you look at the checks first, you find the fork. Nxc5 only trades knight for bishop."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.24",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Why “check” comes before “capture”",
+   "fen": "rnb1k2r/ppp2p1p/4pNp1/2bq4/8/3P4/PPP1BPPP/R1BQ1RK1 b kq - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "e8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nf6+"
+    },
+    {
+     "art": "text",
+     "text": " – the knight forks king and queen (red arrows). Black has only three legal moves: Ke7, Kf8 and Kd8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.23",
+    "1.25"
+   ],
+   "beispiel": {
+    "id": "k01-a23",
+    "pfad": [
+     "Nf6+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 436
+   },
+   "pruefsumme": "ecfb84f839e173ff"
+  },
+  {
+   "id": "1.25",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Why “check” comes before “capture”",
+   "fen": "rnb4r/ppp1kp1p/4pNp1/2bq4/8/3P4/PPP1BPPP/R1BQ1RK1 w - - 2 2",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke7"
+    },
+    {
+     "art": "text",
+     "text": " – the king is saved, the queen is not: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Nxd5+"
+    },
+    {
+     "art": "text",
+     "text": " follows, and White wins the queen for a knight.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.23",
+    "1.24"
+   ],
+   "beispiel": {
+    "id": "k01-a23",
+    "pfad": [
+     "Nf6+",
+     "Ke7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 441
+   },
+   "pruefsumme": "c62626867dac992e"
+  },
+  {
+   "id": "1.26",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Counting in practice: the pawn lever",
+   "fen": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R w KQkq - 4 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c5",
+     "nach": "d4"
+    },
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "rot",
+     "von": "b6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "c3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Qb6"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. The red arrows show the three black attackers on d4, the gold ones the three white defenders, among them the queen on d1 along the d-file.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.27"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 534
+   },
+   "pruefsumme": "cd684791017a4f03",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6. Bd3",
+      "frage": "Why is 6. Bd3 inaccurate?",
+      "antworten": [
+       "The bishop is undefended on d3.",
+       "The bishop blocks the d-file for the queen on d1: d4 has only two defenders left.",
+       "With it, White loses the right to castle."
+      ],
+      "richtig": 1,
+      "erklaerung": "Three against three becomes three against two. A single natural-looking developing move tips the count."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.27",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Counting in practice: the pawn lever",
+   "fen": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/3P4/2PB1N2/PP3PPP/RNBQK2R b KQkq - 4 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f1",
+     "nach": "d3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Bd3?!"
+    },
+    {
+     "art": "text",
+     "text": " – Black to move. The red square d3 shows the problem: there, White's own bishop has cut off the white queen's defense of d4. 3:3 has become 3:2.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.26"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 539
+   },
+   "pruefsumme": "76c3e66174a2aa28",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6... cxd4",
+      "frage": "Why does Black capture on d4 now?",
+      "antworten": [
+       "The pawn on d4 is pinned.",
+       "Otherwise White threatens mate.",
+       "Three attackers against two defenders: at the end of the exchange, a pawn is left over."
+      ],
+      "richtig": 2,
+      "erklaerung": "The count decides: with more attackers than defenders, the attacking side wins material."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.28",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Counting in practice: the pawn lever",
+   "fen": "r1b1kbnr/pp3ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQK2R b KQkq - 0 7",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "rot",
+     "von": "b6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. cxd4"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: two attackers on d4. Gold: one defender. The bishop on d3 still blocks the d-file for the queen on d1.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.29"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 552
+   },
+   "pruefsumme": "e1c822720166b1de",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "7... Bd7",
+      "frage": "Why does Black play 7... Bd7 first instead of Nxd4 at once?",
+      "antworten": [
+       "After Nxd4 Nxd4 Qxd4, Bb5+ clears the d-file, and the queen on d1 captures the queen on d4.",
+       "Bd7 prepares queenside castling.",
+       "Nxd4 would be a retreat."
+      ],
+      "richtig": 0,
+      "erklaerung": "Only Bd7 puts a bishop between b5 and the king. Then Bb5 is no longer check, and the threat against d4 becomes real."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.29",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Counting in practice: the pawn lever",
+   "fen": "r1b1kbnr/pp3ppp/4p3/1B1pP3/3q4/8/PP3PPP/RNBQK2R b KQkq - 1 9",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b5",
+     "nach": "e8"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Bb5+"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. The bishop gives check (red arrow) and has cleared the d-file in doing so: on the next move the white queen captures the black one on d4 (gold arrow, red square).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.28"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Nxd4",
+     "Nxd4",
+     "Qxd4",
+     "Bb5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 557
+   },
+   "pruefsumme": "e57d055509115b10"
+  },
+  {
+   "id": "1.30",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Counting in practice: the pawn lever",
+   "fen": "r3kbnr/pp1b1ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQK2R w KQkq - 1 8",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d7",
+     "nach": "b5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "b5"
+    },
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Bd7!"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. The bishop now stands between b5 (gray) and its king: even if the knight on c6 captures on d4, Bb5 is no longer check, and the bishop on d7 could capture on b5 (gold arrow). So the threat against d4 (red) is real.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.31"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Bd7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 586
+   },
+   "pruefsumme": "1f8b2fafd3b3dcce",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "8. Nc3",
+      "frage": "Why is 8. Nc3 inaccurate?",
+      "antworten": [
+       "It blunders the knight.",
+       "It does nothing for d4: Black wins the pawn, and Bb5 is no longer check.",
+       "It stops White from castling."
+      ],
+      "richtig": 1,
+      "erklaerung": "After Nxd4 Nxd4 Qxd4, Black has a sound extra pawn. The trap with Bb5+ no longer works, because Bd7 blocks the line to the king."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.31",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Your built-in error radar: the Chess X-ray rule"
+   },
+   "unterabschnitt": "Counting in practice: the pawn lever",
+   "fen": "r3kbnr/pp1b1ppp/4p3/3pP3/3q4/2NB4/PP3PPP/R1BQK2R w KQkq - 0 10",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Nc3?! Nxd4! 9. Nxd4 Qxd4"
+    },
+    {
+     "art": "text",
+     "text": " – Black has won a sound pawn. The try ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Bb5"
+    },
+    {
+     "art": "text",
+     "text": " now comes to nothing: it is not check, and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Qxe5+"
+    },
+    {
+     "art": "text",
+     "text": " even wins a second pawn.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.30"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Bd7",
+     "Nc3",
+     "Nxd4",
+     "Nxd4",
+     "Qxd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 591
+   },
+   "pruefsumme": "05d3f9a287bc3e14"
+  },
+  {
+   "id": "1.32",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.5",
+    "label": "sec:k1-spannung",
+    "titel": "Don't capture too soon: tension is a weapon"
+   },
+   "unterabschnitt": "How an exchange helps the opponent",
+   "fen": "r2qk2r/ppp2ppp/2np1n2/2b1p3/2B1P1b1/2PP1N1P/PP3PP1/RNBQ1RK1 b kq - 0 7",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g4",
+     "nach": "f3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "d1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. h3"
+    },
+    {
+     "art": "text",
+     "text": " – Black to move. The bishop is attacked. The capture reflex says: Bxf3 (gray arrow). The gray square d1 shows where the white queen is still standing idle.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.33"
+   ],
+   "beispiel": {
+    "id": "k01-a32",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d3",
+     "d6",
+     "O-O",
+     "Bg4",
+     "h3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 636
+   },
+   "pruefsumme": "ab10a2299284b9c1",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "7... Bxf3",
+      "frage": "What speaks against 7... Bxf3?",
+      "antworten": [
+       "The bishop is trapped on f3.",
+       "Bxf3 loses a piece.",
+       "White recaptures with the queen and so has developed it for free."
+      ],
+      "richtig": 2,
+      "erklaerung": "An unnecessary exchange resolves the tension in the opponent's favor: the white queen comes into play with a gain of time and aims at f6 and f7."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.33",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.5",
+    "label": "sec:k1-spannung",
+    "titel": "Don't capture too soon: tension is a weapon"
+   },
+   "unterabschnitt": "How an exchange helps the opponent",
+   "fen": "r2qk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1Q1P/PP3PP1/RNB2RK1 b kq - 0 8",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "f6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "f3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Bxf3?! 8. Qxf3"
+    },
+    {
+     "art": "text",
+     "text": " – Black has traded the bishop for a knight and in doing so developed the white queen for free. From f3 it aims at the knight on f6 and, behind it, at the pawn on f7 (gold arrow).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.32"
+   ],
+   "beispiel": {
+    "id": "k01-a32",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d3",
+     "d6",
+     "O-O",
+     "Bg4",
+     "h3",
+     "Bxf3",
+     "Qxf3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 641
+   },
+   "pruefsumme": "a1ec30570a33f536"
+  },
+  {
+   "id": "1.34",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.5",
+    "label": "sec:k1-spannung",
+    "titel": "Don't capture too soon: tension is a weapon"
+   },
+   "unterabschnitt": "Ignoring the threat: first come, first served",
+   "fen": "r1bq1rk1/pp3ppp/2p1p3/3p2N1/1n6/3Q4/PPP2PPP/R1B2RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b4",
+     "nach": "d3"
+    },
+    {
+     "farbe": "rot",
+     "von": "d8",
+     "nach": "g5"
+    },
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d3"
+    },
+    {
+     "farbe": "rot",
+     "feld": "g5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. The red arrows show Black's two threats. The gold arrow shows what White does instead.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.35"
+   ],
+   "beispiel": {
+    "id": "k01-a34",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 678
+   },
+   "pruefsumme": "47353a6385e861c7",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Qxh7#",
+      "frage": "Why may White ignore Black's two threats?",
+      "antworten": [
+       "Qxh7 is mate at once, and mate comes before any threat.",
+       "The threats are only apparent.",
+       "Black is not allowed to capture after a check."
+      ],
+      "richtig": 0,
+      "erklaerung": "If you look at the checks first, you see the mate. What the opponent threatens then no longer matters."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.35",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.5",
+    "label": "sec:k1-spannung",
+    "titel": "Don't capture too soon: tension is a weapon"
+   },
+   "unterabschnitt": "Ignoring the threat: first come, first served",
+   "fen": "r1bq1rk1/pp3ppQ/2p1p3/3p2N1/1n6/8/PPP2PPP/R1B2RK1 b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qxh7#"
+    },
+    {
+     "art": "text",
+     "text": " – mate. The knight on g5 protects the queen, f8 is blocked by Black's own rook and g7 by Black's own pawn, and the queen itself controls h8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.34"
+   ],
+   "beispiel": {
+    "id": "k01-a34",
+    "pfad": [
+     "Qxh7#"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 683
+   },
+   "pruefsumme": "1df38596a4a8a418"
+  },
+  {
+   "id": "1.36",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Attack needs superior force: the golden attack rule"
+   },
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
+   "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2N2N2/PP2BPPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e2"
+    },
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The failed attempt. White to move. The bishop stands on e2, where of all things it blocks the d1–h5 diagonal (gray) that the queen would need to reach the kingside. White wants to attack with knight and queen – but only the knight on f3 even gets within reach. Red: the target h7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.37"
+   ],
+   "beispiel": {
+    "id": "k01-a36",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 730
+   },
+   "pruefsumme": "2202086f1bfc5bd6",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Ng5",
+      "frage": "Why does the attack with 1. Ng5 fail?",
+      "antworten": [
+       "The knight on g5 is lost at once.",
+       "The knight stays alone; the queen can't get to h5 because the bishop on e2 is in the way.",
+       "Black then gives mate."
+      ],
+      "richtig": 1,
+      "erklaerung": "An attack with one piece against a well-defended king fizzles out. Only superior force makes it dangerous."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.37",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Attack needs superior force: the golden attack rule"
+   },
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
+   "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "g5"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "This is how it should have looked. The bishop on d3 itself aims at h7 (gold arrow), the knight on f3 reaches g5 – and as soon as it does, the d1–h5 diagonal opens for the queen. Three attackers reach h7 (red) – and only the king itself defends the square.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.36"
+   ],
+   "beispiel": {
+    "id": "k01-a37",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 733
+   },
+   "pruefsumme": "cd83562e7767753a",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Bxh7+",
+      "frage": "Why does 1. Bxh7+ work here?",
+      "antworten": [
+       "The bishop can't be captured on h7.",
+       "Black has already castled and can no longer move the king.",
+       "Three attackers reach h7, and only the king defends: the superior force carries the sacrifice."
+      ],
+      "richtig": 2,
+      "erklaerung": "After Kxh7, Ng5+ and Qh5 bring the knight and queen in with tempo. Against three attackers, a single defender is not enough."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.38",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Attack needs superior force: the golden attack rule"
+   },
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
+   "fen": "r1b2r2/ppqn1ppk/2n1p3/3pP1N1/3P4/2N5/PP3PPP/R2Q1RK1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "g5",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    },
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Ng5+"
+    },
+    {
+     "art": "text",
+     "text": " – Black has only four king moves. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kh8"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Qh5+"
+    },
+    {
+     "art": "text",
+     "text": " and mate follow at once; the excursions ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg6"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kh6"
+    },
+    {
+     "art": "text",
+     "text": " lead the king into the middle of the open board. Red: the knight gives check and attacks f7 at the same time. Gold: the queen's path to h5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.39"
+   ],
+   "beispiel": {
+    "id": "k01-a37",
+    "pfad": [
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 759
+   },
+   "pruefsumme": "28d7ddb61e806ff4"
+  },
+  {
+   "id": "1.39",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Attack needs superior force: the golden attack rule"
+   },
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
+   "fen": "r1b2rk1/ppqn1pp1/2n1p3/3pP1NQ/3P4/2N5/PP3PPP/R4RK1 b - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h5",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg8 3. Qh5"
+    },
+    {
+     "art": "text",
+     "text": " – the third piece has arrived. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Qh7#"
+    },
+    {
+     "art": "text",
+     "text": " is threatened (gold arrow, red square), protected by the knight on g5 (gray). Black has no defense left: every move loses by force.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.38"
+   ],
+   "beispiel": {
+    "id": "k01-a37",
+    "pfad": [
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+",
+     "Kg8",
+     "Qh5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 764
+   },
+   "pruefsumme": "0bff01205de0e8fe"
+  },
+  {
+   "id": "1.40",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Attack needs superior force: the golden attack rule"
+   },
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
+   "fen": "rn2kb1r/1p3ppp/p3pn2/1Npq4/3P4/5N2/PPP2PPP/R1BQ1RK1 w kq - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Black has just played ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...a6"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a40",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 807
+   },
+   "pruefsumme": "582c2de0bb5e4ade"
+  },
+  {
+   "id": "1.41",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Attack needs superior force: the golden attack rule"
+   },
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
+   "fen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/2PPP3/2N5/PP2BPPP/R1BQ1RK1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. In the center, everything hinges on a single square.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a41",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 817
+   },
+   "pruefsumme": "65b46f31e5b66e61"
+  },
+  {
+   "id": "1.42",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Attack needs superior force: the golden attack rule"
+   },
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Black to move. White has just recaptured on d4.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a42",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "d4",
+     "exd4",
+     "Nxd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 827
+   },
+   "pruefsumme": "5b34b0d9a4f6028b"
+  },
+  {
+   "id": "1.43",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Attack needs superior force: the golden attack rule"
+   },
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
+   "fen": "r1b2rk1/ppq2ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. The bishop on d3 aims at h7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a43",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 837
+   },
+   "pruefsumme": "4ce519c281b60f86"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:droh-ignorieren",
+   "nummer": 4,
+   "kapitel": 1,
+   "titel": null,
+   "abbildungen": [
+    "1.40"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Your knight on b5 is attacked by the pawn on a6 and not defended by a single one of your pieces, so after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...axb5"
+    },
+    {
+     "art": "text",
+     "text": " it would be lost for nothing. So the reflex says: get the knight to safety. What do you play?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "The first question of the Chess X-ray rule is not “How do I save my knight?” but “Can I give check?”, and the answer is ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nc7+!"
+    },
+    {
+     "art": "text",
+     "text": " The square c7 is not defended by a single black piece, and there the knight forks three pieces at once: the king on e8, the queen on d5 and the rook on a8. Since Black first has to answer the check, after the only three possible king moves ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd7"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke7"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd8"
+    },
+    {
+     "art": "text",
+     "text": " comes ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Nxd5"
+    },
+    {
+     "art": "text",
+     "text": " (after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke7"
+    },
+    {
+     "art": "text",
+     "text": " even with check), and White wins the queen for a knight, that is, six pawn units. The “safe” retreat ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nc3"
+    },
+    {
+     "art": "text",
+     "text": " does save the piece, but it gives away exactly this gain. Remember: a threat against you only counts if your opponent ever gets to carry it out.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 805
+   },
+   "erklaerung": {
+    "loesung": "1. Nc7+!",
+    "akzeptiert": [],
+    "motiv": "Knight fork with check",
+    "text": "Instead of saving the attacked knight, White gives check: 1. Nc7+! forks king, queen and rook, and after any king move the queen falls. A threat only counts if the opponent ever gets to carry it out."
+   }
+  },
+  {
+   "id": "ueb:zaehlen-vorstoss",
+   "nummer": 5,
+   "kapitel": 1,
+   "titel": null,
+   "abbildungen": [
+    "1.41"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Both sides have completed their opening properly, and at first glance the position looks completely equal. What do you play, and what does it get you?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Count the square d5: White attacks it three times (pawn c4, pawn e4, knight c3), whereas Black only defends it twice (pawn c6, pawn e6). The black queen on d8 does ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "not",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " count: Black's own knight on d7 blocks the d-file for it. Three against two means: the exchange on d5 wins a pawn. Play goes ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. cxd5! cxd5 2. exd5 exd5 3. Nxd5"
+    },
+    {
+     "art": "text",
+     "text": ", and no black piece is left that could recapture on d5. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. exd5"
+    },
+    {
+     "art": "text",
+     "text": " leads to the same result with the moves in a different order. Nor can the knight on d5 be trapped there, because after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... Nb6"
+    },
+    {
+     "art": "text",
+     "text": " it escapes with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Nxe7+"
+    },
+    {
+     "art": "text",
+     "text": ", and White keeps the extra pawn. Remember: before a pawn exchange in the center, only count the pieces that really reach the square.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 815
+   },
+   "erklaerung": {
+    "loesung": "1. cxd5! cxd5 2. exd5 exd5 3. Nxd5",
+    "akzeptiert": [
+     "1. exd5"
+    ],
+    "motiv": "Counting attackers and defenders",
+    "text": "Three white pieces attack d5, and only two black ones defend it; the queen on d8 doesn't count because the knight on d7 blocks it. That is why the exchange 1. cxd5! wins a pawn, and if need be the knight on d5 escapes to e7 with check."
+   }
+  },
+  {
+   "id": "ueb:spannung-halten",
+   "nummer": 6,
+   "kapitel": 1,
+   "titel": null,
+   "abbildungen": [
+    "1.42"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4"
+    },
+    {
+     "art": "text",
+     "text": ", a white knight stands right in the center, and your knight on c6 can capture it. Do you exchange on d4, or do you keep the tension?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Keep the tension. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Nxd4?! 5. Qxd4"
+    },
+    {
+     "art": "text",
+     "text": ", the white queen stands right in the center, and Black can only drive it away from there in a roundabout way, for example with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Ne7"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Nc6"
+    },
+    {
+     "art": "text",
+     "text": ", because the knight on c6, which could have done it at once, has been traded. Compare the premature queen from ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 1.8",
+     "abbildung": "1.8"
+    },
+    {
+     "art": "text",
+     "text": ": there the queen was chased, here it stands safely for the time being. With the capture, Black has developed the opponent's queen. Better is a developing move that attacks something itself: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Nf6"
+    },
+    {
+     "art": "text",
+     "text": " aims at the pawn on e4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Bc5"
+    },
+    {
+     "art": "text",
+     "text": " at the knight on d4. Remember: before every exchange, ask which enemy piece recaptures and how well it stands afterwards.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 825
+   },
+   "erklaerung": {
+    "loesung": "4... Nf6",
+    "akzeptiert": [
+     "4... Bc5"
+    ],
+    "motiv": "Keeping the tension",
+    "text": "After 4... Nxd4?! 5. Qxd4 the white queen stands safely in the center, and Black has developed it for White. A developing move with an attack is better: 4... Nf6 against e4, or 4... Bc5 against the knight on d4."
+   }
+  },
+  {
+   "id": "ueb:angriff-zaehlen",
+   "nummer": 7,
+   "kapitel": 1,
+   "titel": null,
+   "abbildungen": [
+    "1.43"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "The position is reminiscent of the Greek gift from ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 1.37",
+     "abbildung": "1.37"
+    },
+    {
+     "art": "text",
+     "text": ". Does ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bxh7+"
+    },
+    {
+     "art": "text",
+     "text": " work here too?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "No. Only one attacker aims at h7, the bishop on d3, whereas the square is defended by the king and the knight on f6. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bxh7+?? Nxh7"
+    },
+    {
+     "art": "text",
+     "text": ", White has given a bishop for a pawn, and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Ng5"
+    },
+    {
+     "art": "text",
+     "text": " then loses the knight too after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Nxg5"
+    },
+    {
+     "art": "text",
+     "text": ". If the king captures (",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kxh7 2. Ng5+ Kg8"
+    },
+    {
+     "art": "text",
+     "text": "), the queen can't get to h5, because the knight on f6 guards the square. The difference from ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 1.37",
+     "abbildung": "1.37"
+    },
+    {
+     "art": "text",
+     "text": ": there the pawn on e5 had driven the knight away from f6, whereas here the pawn stands on e3 and the knight on f6. So White first brings up more pieces instead of sacrificing. Remember: before every sacrifice on the kingside, count what really arrives on the target square and what defends it.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 835
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Recounting the bishop sacrifice on h7",
+    "text": "1. Bxh7+?? doesn't work here: only the bishop gets to h7, while the king and the knight on f6 defend it. As long as the knight stands on f6, the queen can't get to h5, and White simply loses a piece."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k01-a1",
+   "kapitel": 1,
+   "abschnitt": "1.1",
+   "titel": "The three goals of every opening",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [
+      "1.1"
+     ],
+     "weiter": [
+      {
+       "zug": "Nf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "g6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.1",
+     "pfad": [
+      "e4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a12",
+   "kapitel": 1,
+   "abschnitt": "1.2",
+   "titel": "Delayed castling – a typical danger position",
+   "startFen": "r3kb1r/ppqb1ppp/2np4/8/2BNn3/2N5/PPP2PPP/R1BQR1K1 w kq - 6 11",
+   "zuege": [
+    {
+     "zug": "Nxe4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.12",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a13",
+   "kapitel": 1,
+   "abschnitt": "1.3",
+   "titel": "Scholar's mate and how to defend against it",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qh5",
+         "zeichen": "",
+         "abbildungen": [
+          "1.13"
+         ],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [
+            "1.14"
+           ],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [
+              "1.15"
+             ],
+             "weiter": [
+              {
+               "zug": "g6",
+               "zeichen": "!",
+               "abbildungen": [
+                "1.16"
+               ],
+               "weiter": [
+                {
+                 "zug": "Qf3",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "1.17"
+                 ],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [
+                    "1.18"
+                   ],
+                   "weiter": []
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "zug": "Nf6",
+               "zeichen": "??",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qxf7#",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "zug": "Qxe5+",
+             "zeichen": "??",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nxe5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.13",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5"
+     ]
+    },
+    {
+     "nummer": "1.14",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6"
+     ]
+    },
+    {
+     "nummer": "1.15",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6",
+      "Bc4"
+     ]
+    },
+    {
+     "nummer": "1.16",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6",
+      "Bc4",
+      "g6"
+     ]
+    },
+    {
+     "nummer": "1.17",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6",
+      "Bc4",
+      "g6",
+      "Qf3"
+     ]
+    },
+    {
+     "nummer": "1.18",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6",
+      "Bc4",
+      "g6",
+      "Qf3",
+      "Nf6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a19",
+   "kapitel": 1,
+   "abschnitt": "1.3",
+   "titel": "Looking ahead: the Fried Liver Attack",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Ng5",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "d5",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "exd5",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Nxd5",
+                       "zeichen": "?!",
+                       "abbildungen": [
+                        "1.19"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "Nxf7",
+                         "zeichen": "!",
+                         "abbildungen": [
+                          "1.20"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "Kxf7",
+                           "zeichen": "",
+                           "abbildungen": [
+                            "1.21"
+                           ],
+                           "weiter": [
+                            {
+                             "zug": "Qf3+",
+                             "zeichen": "!",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Ke6",
+                               "zeichen": "",
+                               "abbildungen": [
+                                "1.22"
+                               ],
+                               "weiter": [
+                                {
+                                 "zug": "Nc3",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": []
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      },
+                      {
+                       "zug": "Na5",
+                       "zeichen": "!",
+                       "abbildungen": [],
+                       "weiter": []
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.19",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5"
+     ]
+    },
+    {
+     "nummer": "1.20",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7"
+     ]
+    },
+    {
+     "nummer": "1.21",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7",
+      "Kxf7"
+     ]
+    },
+    {
+     "nummer": "1.22",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7",
+      "Kxf7",
+      "Qf3+",
+      "Ke6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a2",
+   "kapitel": 1,
+   "abschnitt": "1.1",
+   "titel": "The three goals in practice: the London System",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "d5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bf4",
+         "zeichen": "",
+         "abbildungen": [
+          "1.2"
+         ],
+         "weiter": [
+          {
+           "zug": "Nf6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "e3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "e6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nf3",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "1.3"
+                 ],
+                 "weiter": [
+                  {
+                   "zug": "Be7",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Bd3",
+                     "zeichen": "",
+                     "abbildungen": [
+                      "1.4"
+                     ],
+                     "weiter": [
+                      {
+                       "zug": "O-O",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [
+                          "1.5"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "c5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "c3",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Nc6",
+                               "zeichen": "",
+                               "abbildungen": [
+                                "1.6"
+                               ],
+                               "weiter": [
+                                {
+                                 "zug": "Nbd2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "b6",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qe2",
+                                     "zeichen": "",
+                                     "abbildungen": [
+                                      "1.7"
+                                     ],
+                                     "weiter": []
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.2",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4"
+     ]
+    },
+    {
+     "nummer": "1.3",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3"
+     ]
+    },
+    {
+     "nummer": "1.4",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3"
+     ]
+    },
+    {
+     "nummer": "1.5",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3",
+      "O-O",
+      "O-O"
+     ]
+    },
+    {
+     "nummer": "1.6",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3",
+      "O-O",
+      "O-O",
+      "c5",
+      "c3",
+      "Nc6"
+     ]
+    },
+    {
+     "nummer": "1.7",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3",
+      "O-O",
+      "O-O",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nbd2",
+      "b6",
+      "Qe2"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a23",
+   "kapitel": 1,
+   "abschnitt": "1.4",
+   "titel": "Why “check” comes before “capture”",
+   "startFen": "rnb1k2r/ppp2p1p/4p1p1/2bq4/4N3/3P4/PPP1BPPP/R1BQ1RK1 w kq - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf6+",
+     "zeichen": "!",
+     "abbildungen": [
+      "1.24"
+     ],
+     "weiter": [
+      {
+       "zug": "Ke7",
+       "zeichen": "",
+       "abbildungen": [
+        "1.25"
+       ],
+       "weiter": [
+        {
+         "zug": "Nxd5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    },
+    {
+     "zug": "Nxc5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxc5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.23",
+     "pfad": []
+    },
+    {
+     "nummer": "1.24",
+     "pfad": [
+      "Nf6+"
+     ]
+    },
+    {
+     "nummer": "1.25",
+     "pfad": [
+      "Nf6+",
+      "Ke7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a26",
+   "kapitel": 1,
+   "abschnitt": "1.4",
+   "titel": "Counting in practice: the pawn lever",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "d4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "d5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "e5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "c5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nc6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nf3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Qb6",
+                       "zeichen": "",
+                       "abbildungen": [
+                        "1.26"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "Bd3",
+                         "zeichen": "?!",
+                         "abbildungen": [
+                          "1.27"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "cxd4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "cxd4",
+                             "zeichen": "",
+                             "abbildungen": [
+                              "1.28"
+                             ],
+                             "weiter": [
+                              {
+                               "zug": "Bd7",
+                               "zeichen": "!",
+                               "abbildungen": [
+                                "1.30"
+                               ],
+                               "weiter": [
+                                {
+                                 "zug": "Nc3",
+                                 "zeichen": "?!",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Nxd4",
+                                   "zeichen": "!",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Nxd4",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Qxd4",
+                                       "zeichen": "",
+                                       "abbildungen": [
+                                        "1.31"
+                                       ],
+                                       "weiter": [
+                                        {
+                                         "zug": "Bb5",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Qxe5+",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": []
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                },
+                                {
+                                 "zug": "Be2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": []
+                                }
+                               ]
+                              },
+                              {
+                               "zug": "Nxd4",
+                               "zeichen": "??",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Nxd4",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Qxd4",
+                                   "zeichen": "??",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Bb5+",
+                                     "zeichen": "!",
+                                     "abbildungen": [
+                                      "1.29"
+                                     ],
+                                     "weiter": [
+                                      {
+                                       "zug": "Bd7",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxd4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": []
+                                        }
+                                       ]
+                                      },
+                                      {
+                                       "zug": "Ke7",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxd4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": []
+                                        }
+                                       ]
+                                      },
+                                      {
+                                       "zug": "Kd8",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxd4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": []
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.26",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6"
+     ]
+    },
+    {
+     "nummer": "1.27",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3"
+     ]
+    },
+    {
+     "nummer": "1.28",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4"
+     ]
+    },
+    {
+     "nummer": "1.30",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4",
+      "Bd7"
+     ]
+    },
+    {
+     "nummer": "1.31",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4",
+      "Bd7",
+      "Nc3",
+      "Nxd4",
+      "Nxd4",
+      "Qxd4"
+     ]
+    },
+    {
+     "nummer": "1.29",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4",
+      "Nxd4",
+      "Nxd4",
+      "Qxd4",
+      "Bb5+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a32",
+   "kapitel": 1,
+   "abschnitt": "1.5",
+   "titel": "How an exchange helps the opponent",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "d6",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Bg4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "h3",
+                             "zeichen": "",
+                             "abbildungen": [
+                              "1.32"
+                             ],
+                             "weiter": [
+                              {
+                               "zug": "Bxf3",
+                               "zeichen": "?!",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Qxf3",
+                                 "zeichen": "",
+                                 "abbildungen": [
+                                  "1.33"
+                                 ],
+                                 "weiter": []
+                                }
+                               ]
+                              },
+                              {
+                               "zug": "Bh5",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": []
+                              },
+                              {
+                               "zug": "Be6",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": []
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.32",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d3",
+      "d6",
+      "O-O",
+      "Bg4",
+      "h3"
+     ]
+    },
+    {
+     "nummer": "1.33",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d3",
+      "d6",
+      "O-O",
+      "Bg4",
+      "h3",
+      "Bxf3",
+      "Qxf3"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a34",
+   "kapitel": 1,
+   "abschnitt": "1.5",
+   "titel": "Ignoring the threat: first come, first served",
+   "startFen": "r1bq1rk1/pp3ppp/2p1p3/3p2N1/1n6/3Q4/PPP2PPP/R1B2RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxh7#",
+     "zeichen": "",
+     "abbildungen": [
+      "1.35"
+     ],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.34",
+     "pfad": []
+    },
+    {
+     "nummer": "1.35",
+     "pfad": [
+      "Qxh7#"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a36",
+   "kapitel": 1,
+   "abschnitt": "1.6",
+   "titel": "One attacker is too few, three are enough: the Greek gift",
+   "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2N2N2/PP2BPPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ng5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "h6",
+       "zeichen": "!",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.36",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a37",
+   "kapitel": 1,
+   "abschnitt": "1.6",
+   "titel": "One attacker is too few, three are enough: the Greek gift",
+   "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5+",
+         "zeichen": "",
+         "abbildungen": [
+          "1.38"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5",
+             "zeichen": "",
+             "abbildungen": [
+              "1.39"
+             ],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Kh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Kg6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          },
+          {
+           "zug": "Kh6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.37",
+     "pfad": []
+    },
+    {
+     "nummer": "1.38",
+     "pfad": [
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+"
+     ]
+    },
+    {
+     "nummer": "1.39",
+     "pfad": [
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+",
+      "Kg8",
+      "Qh5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a40",
+   "kapitel": 1,
+   "abschnitt": "Übung 4",
+   "titel": "Exercise: Ignoring the threat",
+   "startFen": "rn2kb1r/1p3ppp/p3pn2/1Npq4/3P4/5N2/PPP2PPP/R1BQ1RK1 w kq - 0 1",
+   "zuege": [
+    {
+     "zug": "Nc7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kd7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxd5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Ke7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxd5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxd5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nc3",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.40",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a41",
+   "kapitel": 1,
+   "abschnitt": "Übung 5",
+   "titel": "Exercise: Counting before the pawn exchange",
+   "startFen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/2PPP3/2N5/PP2BPPP/R1BQ1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "cxd5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "cxd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "exd5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "exd5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxd5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nb6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxe7+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "exd5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.41",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a42",
+   "kapitel": 1,
+   "abschnitt": "Übung 6",
+   "titel": "Exercise: Keeping the tension",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "d4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "exd4",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxd4",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "1.42"
+                 ],
+                 "weiter": [
+                  {
+                   "zug": "Nxd4",
+                   "zeichen": "?!",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Qxd4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": []
+                    }
+                   ]
+                  },
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": []
+                  },
+                  {
+                   "zug": "Bc5",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": []
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.42",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "d4",
+      "exd4",
+      "Nxd4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a43",
+   "kapitel": 1,
+   "abschnitt": "Übung 7",
+   "titel": "Exercise: Counting the attack",
+   "startFen": "r1b2rk1/ppq2ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nxg5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.43",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a8",
+   "kapitel": 1,
+   "abschnitt": "1.2",
+   "titel": "The premature queen in the Italian Game",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Qf6",
+               "zeichen": "?",
+               "abbildungen": [
+                "1.8"
+               ],
+               "weiter": [
+                {
+                 "zug": "Nc3",
+                 "zeichen": "!",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Bc5",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nd5",
+                     "zeichen": "!",
+                     "abbildungen": [
+                      "1.9"
+                     ],
+                     "weiter": [
+                      {
+                       "zug": "Qd8",
+                       "zeichen": "",
+                       "abbildungen": [
+                        "1.10"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "d4",
+                         "zeichen": "!",
+                         "abbildungen": [
+                          "1.11"
+                         ],
+                         "weiter": []
+                        }
+                       ]
+                      },
+                      {
+                       "zug": "Qg6",
+                       "zeichen": "??",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Nxc7+",
+                         "zeichen": "!",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Kd8",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Nxa8",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": []
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              },
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.8",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Qf6"
+     ]
+    },
+    {
+     "nummer": "1.9",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Qf6",
+      "Nc3",
+      "Bc5",
+      "Nd5"
+     ]
+    },
+    {
+     "nummer": "1.10",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Qf6",
+      "Nc3",
+      "Bc5",
+      "Nd5",
+      "Qd8"
+     ]
+    },
+    {
+     "nummer": "1.11",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Qf6",
+      "Nc3",
+      "Bc5",
+      "Nd5",
+      "Qd8",
+      "d4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  }
+ ]
+}

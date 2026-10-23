@@ -1461,3 +1461,73 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
 - [ ] R53 Nachtmodus: Symbol für Weiß in der Fehlerliste.
 
 **Nächster Schritt:** R39.
+
+## P6 Englisch
+
+Paket P6 (R25, V1), Zweig `p6-englisch` (Basis `weiter-ohne-autor`, nicht auf main, keine
+Versionsnummer). Auftrag: die restlichen Buchdaten (Bildunterschriften, Glossar, Übungstexte,
+vorbereitete Texte, Nachschlagen) Kapitel für Kapitel ins Englische, Begriffe nach
+`docs/ENGLISCH_BEGRIFFE.md`, die 27 Buchzitate wie in `en.json`. Geändert werden nur
+`inhalte/en/`, `app/public/daten/en/` und die Übersetzungsschicht `pipeline/uebersetzen/`
+(mit `pipeline/tests/test_uebersetzen.py`). Testpunkte nur N730–N739.
+
+**Übersetzungsschicht (fertig):** `python -m pipeline.uebersetzen` baut aus
+`app/public/daten/de/a1/` und den Tabellen `inhalte/en/a1/<datei>` die Daten
+`app/public/daten/en/a1/`. Eine Teilliste (Unterschrift, Übung …) wird als ein Satz mit
+Platzhaltern übersetzt (`{z1}` Zug, `{v1}` Verweis, `{s1}` Stelle, `<b>`, `<i>`, `<g1>` Begriff),
+Züge, Verweise und Stellen überträgt die Schicht selbst. Die Tabellen sind nach Kennung (SHA-1 der
+deutschen Vorlage) geschlüsselt und enthalten keinen deutschen Text (Regel „Öffentlich“).
+Lösungszüge der Übungen und erfragte Züge der Warum-Fragen bekommen englische Buchstaben;
+Kennungen, FEN, Abschnittsnummern, Werkzeugkennungen bleiben. Glossar: Verweise auf die
+englischen Namen, Einträge nach englischem Alphabet. Nicht Übersetztes bleibt deutsch. Lokale
+Arbeitsdateien und Prüfhilfe Deutsch/Englisch in `buch/arbeit/uebersetzung/`. Format und Ablauf:
+`inhalte/en/README.md`. Der Test prüft, dass die eingecheckten englischen Daten genau zu den
+Tabellen passen, gegen die Schemas gültig sind und keine Kennung verwaist ist.
+
+**Prüfung je Kapitel:** lokal mit vorübergehend `DATENSPRACHEN = ["de", "en"]` in
+`app/src/i18n/sprache.ts` (nicht eingecheckt): jede Abbildung des Kapitels, die Kapitelseite und
+jede Übung mit Lösung in „English (preview)“ geöffnet, sichtbarer Text auf deutsche Wörter und
+deutsche Züge durchsucht (Playwright, Skript nur lokal).
+
+| Schritt | Stand |
+| --- | --- |
+| Schicht, Tests, Kapiteltitel (index.json) | fertig |
+| Kapitel 0 bis 12 (mit Lernzielen und Zeilen der Gesamt-Checkliste) | fertig, jedes in der App geprüft |
+| Glossar (255 Einträge, Verweise, englisches Alphabet) | fertig, in der App geprüft |
+| Nachschlagen (Denkroutine, Gesamt-Checkliste, Lernziele) | fertig, in der App geprüft |
+
+`python -m pipeline.uebersetzen --streng` meldet für alle 16 Dateien „0 Sätze offen“. Übersetzt
+in Teilaufträgen je Datei mit gemeinsamer Anleitung (lokal `buch/arbeit/uebersetzung/ANLEITUNG.md`,
+verbindliche Begriffe: `docs/ENGLISCH_BEGRIFFE.md`, die 255 Glossarstichwörter und die Namen und
+Buchzitate aus `en.json`); Sätze, die in mehreren Kapiteln stehen, und die Stichwörter vorab
+einheitlich. Testpunkte N730–N739, Rückfragen EN4 (Buchbefunde aus der Übersetzung) und EN5
+(neue englische Begriffe) in `docs/AUFGABEN_AUTOR.md`.
+
+**Bevor die englischen Daten in der App erscheinen (App-Code, nicht Teil von P6):**
+
+1. `DATENSPRACHEN` in `app/src/i18n/sprache.ts` um „en“ ergänzen. Dann lädt aber auch
+   `daten/trainerdaten.ts` aus `/daten/en/trainer/`, das es nicht gibt: Trainerdaten bis zu ihrer
+   Übersetzung weiter aus `de` laden (eigene Datensprache für Trainer) oder
+   `skripte/kopiere-trainerdaten.mjs` auch nach `en` kopieren lassen.
+2. Stellen im App-Code, die deutsche Datentexte als Schlüssel lesen und auf Englisch ins Leere
+   greifen: `training/faktorentrainer.ts` (`ZEILEN` „Material/Zeit/Königssicherheit/Aktivität“,
+   `spalten[0].startsWith("Weiß")`), `analyse/k2-eroeffnung.ts` (`KURZFASSUNGEN` nach dem
+   deutschen Namen des Steckbriefs), `schach/eroeffnungsindex.ts` (`ARTIKEL`,
+   `ALLGEMEINE_TITEL` „Weitere Varianten“/„Grundstellung“, Wortvergleich Steckbrief–Beispiel).
+   Sie brauchen die englischen Formen mit: „Material“, „Time“, „King safety“, „Activity“,
+   Spalten beginnen mit „White“; Steckbriefe „Ruy Lopez“, „Italian Game“, „Scotch Game“,
+   „Petrov Defense (Russian Game)“, „Sicilian Defense“, „Queen's Gambit“, „London System“,
+   „Trompowsky Attack“, „French Defense“, „Caro-Kann Defense“, „King's Indian Defense“,
+   „Two Knights Defense and Bishop's Opening“, „Nimzo-Indian Defense“; allgemeine Titel
+   „Further lines“, „Basic position“; Artikel „The“.
+3. `ui/komponenten/Abbildungsgalerie.tsx` (Kurztext der Kacheln) zeigt Zugteile ohne
+   `buchzugInSprache`; mit den englischen Daten ist das kein Problem mehr, weil die Zugteile dort
+   schon englisch sind.
+
+**Nächster Schritt:** P6 ist fertig. Für die Leser fehlen nur die App-Schritte oben (1 bis 3,
+nicht Teil von P6): Datensprache „en“ einschalten, Trainerdaten bis zu ihrer Übersetzung weiter
+deutsch laden, die drei Stellen mit deutschen Datenschlüsseln anpassen. Danach N730–N739 und
+die Antworten zu EN4/EN5 einarbeiten. Ändert der Autor Buchtext, erscheinen die geänderten Sätze
+beim nächsten `python -m pipeline.uebersetzen` als offen (`buch/arbeit/uebersetzung/offen/`).
+Noch deutsch und außerhalb von P6: Trainerdaten (`inhalte/de/trainer/`), Trainingsseiten der
+Website (`inhalte/de/training/`), Namen der Bots.

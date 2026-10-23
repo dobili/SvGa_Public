@@ -1,0 +1,8985 @@
+{
+ "schemaVersion": 1,
+ "eintraege": [
+  {
+   "begriff": "50-move rule",
+   "text": [
+    {
+     "art": "text",
+     "text": "If neither side has moved a pawn or captured a piece for 50 moves, you can claim a draw (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "50-zuege-regel-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "50-zuege-regel-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Active rook",
+   "text": [
+    {
+     "art": "text",
+     "text": "A rook that attacks instead of just guarding: on an open file, behind a passed pawn or on the opponent's 7th rank, where it threatens several pawns at once. In the endgame it is often worth more than a pawn (Chapters 8 and 9; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.2",
+     "anker": "aktiver-turm-8"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.6",
+     "anker": "aktiver-turm-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "aktiver-turm-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    },
+    {
+     "anker": "aktiver-turm-9",
+     "kapitel": 9,
+     "abschnitt": "9.6",
+     "abbildung": "9.23"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Activity",
+   "text": [
+    {
+     "art": "text",
+     "text": "What your pieces achieve: which important squares they control, which targets they attack and whether each one has a task. One of the four factors of the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "factor balance",
+     "begriff": "Factor balance"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.2",
+     "anker": "aktivitaet-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "aktivitaet-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Factor balance"
+   ]
+  },
+  {
+   "begriff": "Algebraic notation",
+   "text": [
+    {
+     "art": "text",
+     "text": "The way moves are written: the letter of the piece (K, Q, R, B, N; none for a pawn) and the destination square, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Nf3"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "algebraische-notation-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "algebraische-notation-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.21"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Anastasia's mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mating pattern with knight and rook: the knight on e7 covers the squares g6 and g8, the rook mates on the h-file. Often a queen sacrifice on h7 comes first (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "anastasia-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "anastasia-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.37"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Arabian mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mating pattern with rook and knight: the rook gives check right next to the king, the knight defends the rook and covers the last flight square (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "arabisches-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "arabisches-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.39"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Back rank",
+   "text": [
+    {
+     "art": "text",
+     "text": "The first rank for White, the eighth for Black: the rank on which the pieces stand at the start of the game (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "grundreihe-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "grundreihe-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Back-rank mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "A rook or queen gives check on the back rank, and the king has no flight square because its own pawns stand in front of it. Making → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "luft",
+     "begriff": "Luft"
+    },
+    {
+     "art": "text",
+     "text": " helps against it (Chapters 5 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.3",
+     "anker": "grundreihenmatt-5"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "grundreihenmatt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "grundreihenmatt-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.12"
+    },
+    {
+     "anker": "grundreihenmatt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.35"
+    }
+   ],
+   "verweise": [
+    "Luft"
+   ]
+  },
+  {
+   "begriff": "Backward pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn that has been left behind its neighboring pawns: they already stand in front of it and can no longer protect it. In front of it lies a hole (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.4",
+     "anker": "rueckstaendiger-bauer-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "rueckstaendiger-bauer-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bad bishop",
+   "text": [
+    {
+     "art": "text",
+     "text": "A bishop whose own pawns stand on squares of its color and block its paths. With a ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "good bishop",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " they stand on the other color. It also matters whether the bishop stands in front of or behind its pawns (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.6",
+     "anker": "schlechter-laeufer-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schlechter-laeufer-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.40"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bait",
+   "text": [
+    {
+     "art": "text",
+     "text": "Material offered on purpose so that the opponent plays a particular move (Chapters 4 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.5",
+     "anker": "koeder-4"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "koeder-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "koeder-4",
+     "kapitel": 4,
+     "abschnitt": "4.5",
+     "abbildung": "4.19"
+    },
+    {
+     "anker": "koeder-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.14"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Base",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Pawn chain",
+     "begriff": "Pawn chain"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Pawn chain"
+   ]
+  },
+  {
+   "begriff": "Basic law of pawns",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn protects only diagonally forward and can never go back. This is where the lasting weaknesses of a position come from (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.1",
+     "anker": "grundgesetz-der-bauern-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "grundgesetz-der-bauern-5",
+     "kapitel": 5,
+     "abschnitt": "5.1",
+     "abbildung": "5.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Basic mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "A mate against a king that is left on its own, for example with king and queen or with king and rook (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.3",
+     "anker": "elementarmatt-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "elementarmatt-8",
+     "kapitel": 8,
+     "abschnitt": "8.3",
+     "abbildung": "8.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Battery",
+   "text": [
+    {
+     "art": "text",
+     "text": "Two of your long-range pieces lined up one behind the other on a file, rank or diagonal. The front one strikes, the rear one backs it up, for example two rooks on an open file or queen and bishop on a diagonal (Chapters 2 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.3",
+     "anker": "batterie-2"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "batterie-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "batterie-2",
+     "kapitel": 2,
+     "abschnitt": "2.3",
+     "abbildung": "2.28"
+    },
+    {
+     "anker": "batterie-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.8"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bishop pair",
+   "text": [
+    {
+     "art": "text",
+     "text": "Both bishops of one side, which together reach all the squares. The bishop pair is an advantage against bishop and knight or against two knights, above all in open positions (Chapters 1, 2, and 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.5",
+     "anker": "laeuferpaar-1"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.9",
+     "anker": "laeuferpaar-2"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.6",
+     "anker": "laeuferpaar-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "laeuferpaar-1",
+     "kapitel": 1,
+     "abschnitt": "1.5",
+     "abbildung": "1.34"
+    },
+    {
+     "anker": "laeuferpaar-2",
+     "kapitel": 2,
+     "abschnitt": "2.9",
+     "abbildung": "2.85"
+    },
+    {
+     "anker": "laeuferpaar-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.42"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Bishop sacrifice on h7",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Greek gift",
+     "begriff": "Greek gift"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Greek gift"
+   ]
+  },
+  {
+   "begriff": "Bishop's pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn on the c- or f-file (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.7",
+     "anker": "laeuferbauer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "laeuferbauer-9",
+     "kapitel": 9,
+     "abschnitt": "9.7",
+     "abbildung": "9.31"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Blitz",
+   "text": [
+    {
+     "art": "text",
+     "text": "Games with very short thinking time, under FIDE rules at most 10 minutes per side. An increment for 60 moves is included in this count [2] (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "blitz-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "blitz-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Blockade",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece occupies the square in front of an enemy pawn, usually a passed pawn or isolani, and holds it there; this square is called the blockade square. A knight is the best blockading piece (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "blockade-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "blockade-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.32"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Blundering a piece",
+   "text": [
+    {
+     "art": "text",
+     "text": "Moving a piece, or leaving it where it is, so that the opponent can capture it for nothing in return.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Boden's mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mating pattern with two bishops: their diagonals cross in front of a king whose own pieces block its escape. It often strikes after queenside castling (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "boden-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "boden-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.41"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Boleslavsky structure",
+   "text": [
+    {
+     "art": "text",
+     "text": "Pawn structure of the Sicilian Defense after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...e5"
+    },
+    {
+     "art": "text",
+     "text": ": Black deliberately accepts the hole on d5 and gets space and active piece play in return (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.3",
+     "anker": "boleslawski-struktur-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "boleslawski-struktur-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.9"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Box method",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mating with king and queen: the queen locks the enemy king in a box, your own king follows, the queen makes the box smaller, and at the edge it gives mate (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.3",
+     "anker": "kastenmethode-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kastenmethode-8",
+     "kapitel": 8,
+     "abschnitt": "8.3",
+     "abbildung": "8.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Breakthrough",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn sacrifice that forces a passed pawn even though the two sides have the same number of pawns facing each other. The classic pattern is three against three (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "durchbruch-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "durchbruch-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.42"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Building a bridge",
+   "text": [
+    {
+     "art": "text",
+     "text": "The winning method in the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Lucena position",
+     "begriff": "Lucena position"
+    },
+    {
+     "art": "text",
+     "text": ": first a check drives the enemy king one file farther away, then the rook goes to the 4th rank, and the king steps out in front of its pawn. Against the checks, the rook blocks on a square that its own king defends (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.3",
+     "anker": "brueckenbau-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "brueckenbau-9",
+     "kapitel": 9,
+     "abschnitt": "9.3",
+     "abbildung": "9.9"
+    }
+   ],
+   "verweise": [
+    "Lucena position"
+   ]
+  },
+  {
+   "begriff": "Candidate",
+   "text": [
+    {
+     "art": "text",
+     "text": "In tactics, short for → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "candidate move",
+     "begriff": "Candidate move"
+    },
+    {
+     "art": "text",
+     "text": ". Otherwise, the pawn of a → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "pawn majority",
+     "begriff": "Pawn majority (majority)"
+    },
+    {
+     "art": "text",
+     "text": " that has no enemy pawn in front of it on its file. According to the candidate rule, it advances first (Chapters 5, 7, and 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "kandidat-5"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "kandidat-7"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "kandidat-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kandidat-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.29"
+    },
+    {
+     "anker": "kandidat-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    },
+    {
+     "anker": "kandidat-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.42"
+    }
+   ],
+   "verweise": [
+    "Candidate move",
+    "Pawn majority (majority)"
+   ]
+  },
+  {
+   "begriff": "Candidate move",
+   "text": [
+    {
+     "art": "text",
+     "text": "Any move you seriously consider. In tactics these are the forcing moves. First collect all candidates before you calculate the first one (Chapters 7 and 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "kandidatenzug-7"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.2",
+     "anker": "kandidatenzug-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kandidatenzug-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    },
+    {
+     "anker": "kandidatenzug-12",
+     "kapitel": 12,
+     "abschnitt": "12.2",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Capture reflex",
+   "text": [
+    {
+     "art": "text",
+     "text": "The urge to capture a seemingly undefended piece immediately. Almost all opening traps are built on it (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.3",
+     "anker": "schlagreflex-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schlagreflex-1",
+     "kapitel": 1,
+     "abschnitt": "1.3",
+     "abbildung": "1.13"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Carlsbad structure",
+   "text": [
+    {
+     "art": "text",
+     "text": "Pawn structure that arises in the Queen's Gambit Declined after the exchange ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "cxd5 exd5"
+    },
+    {
+     "art": "text",
+     "text": ". White has two pawns against three on the queenside and plays the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "minority attack",
+     "begriff": "Minority attack"
+    },
+    {
+     "art": "text",
+     "text": " there (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "carlsbad-struktur-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "carlsbad-struktur-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.32"
+    }
+   ],
+   "verweise": [
+    "Minority attack"
+   ]
+  },
+  {
+   "begriff": "Castling",
+   "text": [
+    {
+     "art": "text",
+     "text": "The only move with two of your own pieces: the king moves two squares toward a rook, and that rook jumps over it to the square next to it. Castling toward the kingside is called short, toward the queenside long. It is allowed only if king and rook have not yet moved, nothing stands between them, and the king is not in check and does not pass over or land on an attacked square (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "rochade-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "rochade-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.12"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Casual game",
+   "text": [
+    {
+     "art": "text",
+     "text": "A game played outside a tournament (Chapter 11, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 11.4",
+     "anker": "freie-partie-11"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "freie-partie-11",
+     "kapitel": 11,
+     "abschnitt": "11.4",
+     "abbildung": "11.16"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Center",
+   "text": [
+    {
+     "art": "text",
+     "text": "The four squares e4, d4, e5 and d5. From there the pieces reach both wings. Control of the center is one of the three goals of every opening (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "zentrum-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zentrum-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.2"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Center pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn on the d- or e-file (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.7",
+     "anker": "mittelbauer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "mittelbauer-9",
+     "kapitel": 9,
+     "abschnitt": "9.7",
+     "abbildung": "9.28"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Chain base",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Pawn chain",
+     "begriff": "Pawn chain"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Pawn chain"
+   ]
+  },
+  {
+   "begriff": "Chain head",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Pawn chain",
+     "begriff": "Pawn chain"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Pawn chain"
+   ]
+  },
+  {
+   "begriff": "Check",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece attacks the king. The player under attack must react immediately: move the king away, capture the attacking piece or put a piece in between (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "schach-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schach-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.10"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Check questions",
+   "text": [
+    {
+     "art": "text",
+     "text": "Three questions against traps: ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "F1",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Why does my opponent allow this? ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "F2",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " What happens two replies further on? ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "F3",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Is the pin absolute or relative, and does a second one arise? (Chapter 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.2",
+     "anker": "prueffragen-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "prueffragen-4",
+     "kapitel": 4,
+     "abschnitt": "4.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Checking distance",
+   "text": [
+    {
+     "art": "text",
+     "text": "The distance a rook needs from the enemy king in order to give checks: if it stands too close, the king walks toward it and the checks stop. Rule of thumb: at least three files between rook and pawn (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.1",
+     "anker": "schachdistanz-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schachdistanz-9",
+     "kapitel": 9,
+     "abschnitt": "9.1",
+     "abbildung": "9.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Checkmate",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Mate",
+     "begriff": "Mate"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Mate"
+   ]
+  },
+  {
+   "begriff": "Checkpoint",
+   "text": [
+    {
+     "art": "text",
+     "text": "A move number for which you decide before the game how much thinking time you want to have left at that point at least (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "kontrollpunkt-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kontrollpunkt-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Chess clock",
+   "text": [
+    {
+     "art": "text",
+     "text": "A clock with two displays. The time of the side to move is always running. After your move you press your button (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "schachuhr-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schachuhr-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Chess X-ray rule",
+   "text": [
+    {
+     "art": "text",
+     "text": "The check before every move, in this order and for both sides: checks, captures, threats. If none of these forces anything, optimization follows: Which quiet move improves my position the most? (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.4",
+     "anker": "schach-roentgen-regel-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schach-roentgen-regel-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.23"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Classical game",
+   "text": [
+    {
+     "art": "text",
+     "text": "A game with long thinking time, under FIDE rules 60 minutes or more per side [2] (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "klassische-partie-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "klassische-partie-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Clearance",
+   "text": [
+    {
+     "art": "text",
+     "text": "You sacrifice one of your pieces just to vacate the square it stands on. Another of your pieces decides the game from there (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "raeumung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "raeumung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Closed position",
+   "text": [
+    {
+     "art": "text",
+     "text": "In the center, interlocked pairs of pawns face each other. Knights are often the better minor pieces here (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.6",
+     "anker": "geschlossene-stellung-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "geschlossene-stellung-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Color complex",
+   "text": [
+    {
+     "art": "text",
+     "text": "All the squares of one color, or a group of them. A ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "weak color complex",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " arises when one side is missing the bishop of one color while its pawns stand on squares of the other color: the squares of that one color then belong to the opponent (Chapters 6 and 9; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.5",
+     "anker": "farbkomplex-6"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.8",
+     "anker": "farbkomplex-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "farbkomplex-6",
+     "kapitel": 6,
+     "abschnitt": "6.5",
+     "abbildung": "6.19"
+    },
+    {
+     "anker": "farbkomplex-9",
+     "kapitel": 9,
+     "abschnitt": "9.8",
+     "abbildung": "9.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Combination",
+   "text": [
+    {
+     "art": "text",
+     "text": "A forced move sequence that wins material or leads to mate, even against the best defense (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 7",
+     "anker": "kombination-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kombination-7",
+     "kapitel": 7,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Compensation",
+   "text": [
+    {
+     "art": "text",
+     "text": "What the sacrificing side gets for its material. It is measured with the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "factor balance",
+     "begriff": "Factor balance"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.1",
+     "anker": "kompensation-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kompensation-3",
+     "kapitel": 3,
+     "abschnitt": "3.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Factor balance"
+   ]
+  },
+  {
+   "begriff": "Connected passed pawns",
+   "text": [
+    {
+     "art": "text",
+     "text": "Two passed pawns on neighboring files. If one stands diagonally behind the other, it protects it. If the king takes the rear one, the front one runs through (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "verbundene-freibauern-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "verbundene-freibauern-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.50"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Connected rooks",
+   "text": [
+    {
+     "art": "text",
+     "text": "No piece stands between the two rooks anymore, so they protect each other (Chapters 1 and 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "verbundene-tuerme-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 2",
+     "anker": "verbundene-tuerme-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "verbundene-tuerme-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    },
+    {
+     "anker": "verbundene-tuerme-2",
+     "kapitel": 2,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Controlling",
+   "text": [
+    {
+     "art": "text",
+     "text": "You control a square if one of your pawns or pieces could capture there as soon as an enemy piece steps onto it (Chapter 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 2",
+     "anker": "kontrollieren-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kontrollieren-2",
+     "kapitel": 2,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Corresponding squares",
+   "text": [
+    {
+     "art": "text",
+     "text": "Two squares that belong together: if both kings stand on them, the side that has to move its king is at a disadvantage. The → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "opposition",
+     "begriff": "Opposition"
+    },
+    {
+     "art": "text",
+     "text": " is the simplest case (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.9",
+     "anker": "korrespondierende-felder-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "korrespondierende-felder-8",
+     "kapitel": 8,
+     "abschnitt": "8.9",
+     "abbildung": "8.54"
+    }
+   ],
+   "verweise": [
+    "Opposition"
+   ]
+  },
+  {
+   "begriff": "Counterplay",
+   "text": [
+    {
+     "art": "text",
+     "text": "Threats of its own by the side that is defending. Whoever has counterplay forces the attacker to also take care of their own position.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Critical moment",
+   "text": [
+    {
+     "art": "text",
+     "text": "A point in the game where a lot is decided and for which you save thinking time: the opening of the center, a sacrifice, an exchange, an attack on the king or the transition to the endgame (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "kritischer-moment-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kritischer-moment-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Cutting off",
+   "text": [
+    {
+     "art": "text",
+     "text": "In rook endgames: the rook blocks a file or rank that the enemy king cannot cross. The king is then ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "cut off",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " from the pawn. Rule of thumb: if there are three or more files between king and pawn, it is often enough to win (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.1",
+     "anker": "abschneiden-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abschneiden-9",
+     "kapitel": 9,
+     "abschnitt": "9.1",
+     "abbildung": "9.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Damiano's mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mating pattern: the queen mates on h7, supported by a pawn on g6. Often a rook sacrifice on h8 comes first (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "damiano-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "damiano-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.41"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Dead position",
+   "text": [
+    {
+     "art": "text",
+     "text": "A position in which neither side can give mate anymore, not even against the worst possible defense, for example king against king. The game is a draw immediately (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "tote-stellung-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tote-stellung-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Deadly sins",
+   "text": [
+    {
+     "art": "text",
+     "text": "The four most common mistakes in the opening: the early queen, greed for material before development, passivity, and the king that stays in the center (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.2",
+     "anker": "todsuenden-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "todsuenden-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.8"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Decoy",
+   "text": [
+    {
+     "art": "text",
+     "text": "Tactical motif: a bait lures an enemy piece onto a particular square where it becomes the victim of a tactic itself (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "hinlenkung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "hinlenkung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.14"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Defense questions",
+   "text": [
+    {
+     "art": "text",
+     "text": "Five questions against a threat, from the simplest means to the riskiest: capture, move away, defend, block, counterthreat (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "abwehrfragen-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abwehrfragen-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Deflection",
+   "text": [
+    {
+     "art": "text",
+     "text": "Tactical motif: a defender is lured away from its post because it has to take on another task. The square or piece it was guarding is then unprotected (Chapters 4 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.7",
+     "anker": "ablenkung-4"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "ablenkung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "ablenkung-4",
+     "kapitel": 4,
+     "abschnitt": "4.7",
+     "abbildung": "4.27"
+    },
+    {
+     "anker": "ablenkung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.14"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Desperado",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece that is going to be captured or traded anyway and therefore takes as much as possible with it first (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "desperado-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "desperado-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.23"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Development",
+   "text": [
+    {
+     "art": "text",
+     "text": "Bringing the pieces from the back rank to active squares. It is one of the three goals of every → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "opening",
+     "begriff": "Opening"
+    },
+    {
+     "art": "text",
+     "text": " (Chapters 1 and 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "entwicklung-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 2",
+     "anker": "entwicklung-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "entwicklung-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    },
+    {
+     "anker": "entwicklung-2",
+     "kapitel": 2,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Opening"
+   ]
+  },
+  {
+   "begriff": "Diagonal opposition",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Opposition",
+     "begriff": "Opposition"
+    },
+    {
+     "art": "text",
+     "text": " in which the kings stand on a diagonal, with one square or three squares between them (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.5",
+     "anker": "diagonalopposition-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "diagonalopposition-8",
+     "kapitel": 8,
+     "abschnitt": "8.5",
+     "abbildung": "8.23"
+    }
+   ],
+   "verweise": [
+    "Opposition"
+   ]
+  },
+  {
+   "begriff": "Discovered attack",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece moves away and in doing so opens the file, rank or diagonal of one of your own → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "long-range pieces",
+     "begriff": "Long-range piece"
+    },
+    {
+     "art": "text",
+     "text": ", which now attacks. If the moving piece also attacks something itself, you create two threats with one move (Chapters 3 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.6",
+     "anker": "abzugsangriff-3"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "abzugsangriff-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abzugsangriff-3",
+     "kapitel": 3,
+     "abschnitt": "3.6",
+     "abbildung": "3.23"
+    },
+    {
+     "anker": "abzugsangriff-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.9"
+    }
+   ],
+   "verweise": [
+    "Long-range piece"
+   ]
+  },
+  {
+   "begriff": "Discovered check",
+   "text": [
+    {
+     "art": "text",
+     "text": "A discovered attack in which the unmasked piece gives check. Meanwhile the moving piece can attack almost anything (Chapters 2 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.5",
+     "anker": "abzugsschach-2"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "abzugsschach-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abzugsschach-2",
+     "kapitel": 2,
+     "abschnitt": "2.5",
+     "abbildung": "2.41"
+    },
+    {
+     "anker": "abzugsschach-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.9"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Discovery",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Discovered attack",
+     "begriff": "Discovered attack"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Discovered attack"
+   ]
+  },
+  {
+   "begriff": "Distant opposition",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Opposition",
+     "begriff": "Opposition"
+    },
+    {
+     "art": "text",
+     "text": " from a distance: the kings stand on the same file or rank with three or five squares between them (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.5",
+     "anker": "fernopposition-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fernopposition-8",
+     "kapitel": 8,
+     "abschnitt": "8.5",
+     "abbildung": "8.23"
+    }
+   ],
+   "verweise": [
+    "Opposition"
+   ]
+  },
+  {
+   "begriff": "Double attack",
+   "text": [
+    {
+     "art": "text",
+     "text": "A move that threatens two targets at once. The opponent can usually save only one. Any piece can carry it out (Chapters 4 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.9",
+     "anker": "doppelangriff-4"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "doppelangriff-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "doppelangriff-4",
+     "kapitel": 4,
+     "abschnitt": "4.9",
+     "abbildung": "4.38"
+    },
+    {
+     "anker": "doppelangriff-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Double check",
+   "text": [
+    {
+     "art": "text",
+     "text": "Two pieces give check at the same time. Capturing and blocking no longer help; only a king move saves (Chapters 0 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "doppelschach-0"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "doppelschach-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "doppelschach-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.10"
+    },
+    {
+     "anker": "doppelschach-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.11"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Doubled pawns",
+   "text": [
+    {
+     "art": "text",
+     "text": "Two of your pawns on the same file. They arise when a pawn captures and in doing so moves onto a file where one of your pawns already stands (Chapters 2 and 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.9",
+     "anker": "doppelbauern-2"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.4",
+     "anker": "doppelbauern-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "doppelbauern-2",
+     "kapitel": 2,
+     "abschnitt": "2.9",
+     "abbildung": "2.85"
+    },
+    {
+     "anker": "doppelbauern-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.15"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Doubling",
+   "text": [
+    {
+     "art": "text",
+     "text": "Placing both rooks one behind the other on the same file (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.5",
+     "anker": "verdoppeln-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "verdoppeln-6",
+     "kapitel": 6,
+     "abschnitt": "6.5",
+     "abbildung": "6.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Draw",
+   "text": [
+    {
+     "art": "text",
+     "text": "A tied game. A game ends in a draw by stalemate, agreement, a dead position, threefold repetition or the 50-move rule. The last two you have to claim, since the game only ends by itself after fivefold repetition or 75 moves without a pawn move or capture (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "remis-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "remis-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Durability",
+   "text": [
+    {
+     "art": "text",
+     "text": "How long an advantage lasts. Material is permanent, a lead in time lasts only a few moves, and king safety and activity lie in between (Chapter 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.3",
+     "anker": "haltbarkeit-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "haltbarkeit-3",
+     "kapitel": 3,
+     "abschnitt": "3.3",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "DWZ (German rating number)",
+   "text": [
+    {
+     "art": "text",
+     "text": "The rating of the German Chess Federation (Deutscher Schachbund) [1]. Like the Elo rating, you get it through rated tournament games (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "dwz-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "dwz-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Elo rating",
+   "text": [
+    {
+     "art": "text",
+     "text": "The international rating of the World Chess Federation FIDE [3]. It expresses playing strength in a single number: the higher, the stronger (Chapters 0 and 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "elo-zahl-0"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "elo-zahl-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "elo-zahl-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.1"
+    },
+    {
+     "anker": "elo-zahl-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "En passant",
+   "text": [
+    {
+     "art": "text",
+     "text": "French for “in passing”. If a pawn moves two squares forward from its starting square and lands next to an enemy pawn, that pawn may capture it on the very next move as if it had advanced only one square (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "en-passant-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "en-passant-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.16"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Endgame",
+   "text": [
+    {
+     "art": "text",
+     "text": "The phase of the game with few pieces, usually without queens. The king now becomes an active piece, and the passed pawns decide (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.1",
+     "anker": "endspiel-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "endspiel-8",
+     "kapitel": 8,
+     "abschnitt": "8.1",
+     "abbildung": "8.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Endgame database",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Tablebase",
+     "begriff": "Tablebase"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Tablebase"
+   ]
+  },
+  {
+   "begriff": "Endgame rules",
+   "text": [
+    {
+     "art": "text",
+     "text": "The six golden endgame rules: Activate your king. Use opposition and zugzwang. Be patient. Trade wisely. Defend actively. Calculate through to promotion (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.2",
+     "anker": "endspielregeln-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "endspielregeln-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Engine",
+   "text": [
+    {
+     "art": "text",
+     "text": "A chess program, such as the free Stockfish, that calculates and evaluates positions. The number it shows, for example +0.7, is a rough evaluation in pawn units: plus means an advantage for White, minus an advantage for Black (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.2",
+     "anker": "engine-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "engine-12",
+     "kapitel": 12,
+     "abschnitt": "12.2",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Exchange",
+   "text": [
+    {
+     "art": "text",
+     "text": "Both sides capture one piece each in turn, often of equal value, such as bishop for knight. Whether an exchange pays off is answered by the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "exchange question",
+     "begriff": "Exchange question"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Exchange question"
+   ]
+  },
+  {
+   "begriff": "Exchange question",
+   "text": [
+    {
+     "art": "text",
+     "text": "The question before every exchange: who benefits from it? The side with the weakness keeps pieces; the side attacking it trades. The side with more space also keeps its pieces. In the endgame it reads: Which endgame arises after the trade? (Chapters 5, 6, and 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.6",
+     "anker": "tauschfrage-5"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.5",
+     "anker": "tauschfrage-6"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.2",
+     "anker": "tauschfrage-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tauschfrage-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.42"
+    },
+    {
+     "anker": "tauschfrage-6",
+     "kapitel": 6,
+     "abschnitt": "6.5",
+     "abbildung": "6.19"
+    },
+    {
+     "anker": "tauschfrage-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Exchange sacrifice",
+   "text": [
+    {
+     "art": "text",
+     "text": "You voluntarily give a rook for a minor piece. It only pays off for something that lasts: an exposed enemy king, wrecked pawns or an outpost (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.7",
+     "anker": "qualitaetsopfer-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "qualitaetsopfer-6",
+     "kapitel": 6,
+     "abschnitt": "6.7",
+     "abbildung": "6.27"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Extra pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn that one side has more than the other.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Factor balance",
+   "text": [
+    {
+     "art": "text",
+     "text": "The table the book uses to evaluate a sacrifice. It compares material and time and rates king safety and activity separately for each side. Below it come the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "durability",
+     "begriff": "Durability"
+    },
+    {
+     "art": "text",
+     "text": " of the compensation and a verdict (Chapter 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.3",
+     "anker": "faktorenbilanz-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "faktorenbilanz-3",
+     "kapitel": 3,
+     "abschnitt": "3.3",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Durability"
+   ]
+  },
+  {
+   "begriff": "Fianchetto",
+   "text": [
+    {
+     "art": "text",
+     "text": "Developing a bishop onto the long diagonal, that is, to b2 or g2 (for Black to b7 or g7), after the b- or g-pawn has moved forward one square (Chapters 1 and 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "fianchetto-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.6",
+     "anker": "fianchetto-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fianchetto-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.2"
+    },
+    {
+     "anker": "fianchetto-2",
+     "kapitel": 2,
+     "abschnitt": "2.6",
+     "abbildung": "2.56"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "FIDE",
+   "text": [
+    {
+     "art": "text",
+     "text": "The World Chess Federation. It publishes the rules of chess and keeps the Elo ratings (Chapters 0 and 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "fide-0"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "fide-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fide-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    },
+    {
+     "anker": "fide-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "File",
+   "text": [
+    {
+     "art": "text",
+     "text": "A vertical column of the board, named with the letters a to h. The horizontal rows are called → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "ranks",
+     "begriff": "Rank"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "linie-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "linie-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.3"
+    }
+   ],
+   "verweise": [
+    "Rank"
+   ]
+  },
+  {
+   "begriff": "Fixing",
+   "text": [
+    {
+     "art": "text",
+     "text": "Pinning down a weak pawn before you attack it. It is fixed when it can no longer advance and trade itself off, because the square in front of it is guarded and no pawn of its own supports the advance. The order is: first fix, then attack (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.3",
+     "anker": "fixieren-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fixieren-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.11"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Forcing move",
+   "text": [
+    {
+     "art": "text",
+     "text": "A check, a capture or a threat: a move your opponent has to respond to (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "erzwingender-zug-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "erzwingender-zug-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Fork",
+   "text": [
+    {
+     "art": "text",
+     "text": "A → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "double attack",
+     "begriff": "Double attack"
+    },
+    {
+     "art": "text",
+     "text": " by a single piece on two enemy pieces, often carried out by a knight or a pawn (Chapters 1 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.3",
+     "anker": "gabel-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "gabel-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gabel-1",
+     "kapitel": 1,
+     "abschnitt": "1.3",
+     "abbildung": "1.21"
+    },
+    {
+     "anker": "gabel-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.2"
+    }
+   ],
+   "verweise": [
+    "Double attack"
+   ]
+  },
+  {
+   "begriff": "Fork trick",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece captures a pawn and lets itself be captured. A pawn fork then wins the piece back, for example in the Four Knights Game after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Bc4"
+    },
+    {
+     "art": "text",
+     "text": " with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Nxe4 5. Nxe4 d5"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "gabeltrick-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gabeltrick-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.2"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Fortress",
+   "text": [
+    {
+     "art": "text",
+     "text": "A position in which the defender seals off an area so completely that the opponent cannot break in despite having extra material (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.8",
+     "anker": "festung-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "festung-9",
+     "kapitel": 9,
+     "abschnitt": "9.8",
+     "abbildung": "9.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Freeing move",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn advance that opens up a cramped position or gets rid of a weakness, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...d5"
+    },
+    {
+     "art": "text",
+     "text": " in the Sicilian Defense (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.4",
+     "anker": "befreiungszug-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "befreiungszug-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Gambit",
+   "text": [
+    {
+     "art": "text",
+     "text": "An opening in which one side offers material, usually a pawn, to get something else in return, such as time or control of the center (Chapters 2 and 3; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.7",
+     "anker": "gambit-2"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.1",
+     "anker": "gambit-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gambit-2",
+     "kapitel": 2,
+     "abschnitt": "2.7",
+     "abbildung": "2.63"
+    },
+    {
+     "anker": "gambit-3",
+     "kapitel": 3,
+     "abschnitt": "3.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Ghost piece",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece that, while calculating in your head, you still see on the square it has just left (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.1",
+     "anker": "geisterfigur-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "geisterfigur-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Goal balance",
+   "text": [
+    {
+     "art": "text",
+     "text": "The small table at the end of an opening: it sums up how both sides stand in the main line with respect to the three opening goals (Chapter 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.1",
+     "anker": "zielbilanz-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zielbilanz-2",
+     "kapitel": 2,
+     "abschnitt": "2.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Golden attack rule",
+   "text": [
+    {
+     "art": "text",
+     "text": "An attack succeeds only if your attackers outnumber the defenders in the target area (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.6",
+     "anker": "goldene-angriffsregel-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "goldene-angriffsregel-1",
+     "kapitel": 1,
+     "abschnitt": "1.6",
+     "abbildung": "1.36"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Golden defense rule",
+   "text": [
+    {
+     "art": "text",
+     "text": "When material is offered, you watch for the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "warning signs",
+     "begriff": "Warning signs"
+    },
+    {
+     "art": "text",
+     "text": " and ask the three → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "check questions",
+     "begriff": "Check questions"
+    },
+    {
+     "art": "text",
+     "text": " before you take it (Chapter 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.2",
+     "anker": "goldene-verteidigungsregel-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "goldene-verteidigungsregel-4",
+     "kapitel": 4,
+     "abschnitt": "4.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Warning signs",
+    "Check questions"
+   ]
+  },
+  {
+   "begriff": "Good bishop",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Bad bishop",
+     "begriff": "Bad bishop"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Bad bishop"
+   ]
+  },
+  {
+   "begriff": "Greek gift",
+   "text": [
+    {
+     "art": "text",
+     "text": "The bishop sacrifice on h7 (for Black on h2) against the castled king. It only works if enough other attackers are ready, above all knight and queen (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.6",
+     "anker": "griechisches-geschenk-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "griechisches-geschenk-1",
+     "kapitel": 1,
+     "abschnitt": "1.6",
+     "abbildung": "1.36"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Guess the move",
+   "text": [
+    {
+     "art": "text",
+     "text": "Replaying a master game and, before each move of the winner, writing down your own suggestion before you uncover the move played in the game (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.2",
+     "anker": "zug-erraten-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zug-erraten-12",
+     "kapitel": 12,
+     "abschnitt": "12.2",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Guiding questions",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Skeleton X-ray",
+     "begriff": "Skeleton X-ray"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Skeleton X-ray"
+   ]
+  },
+  {
+   "begriff": "Half-move",
+   "text": [
+    {
+     "art": "text",
+     "text": "A single move by one side. A numbered move such as ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5"
+    },
+    {
+     "art": "text",
+     "text": " consists of two half-moves (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "halbzug-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "halbzug-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.21"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Half-open file",
+   "text": [
+    {
+     "art": "text",
+     "text": "A file on which only enemy pawns are left. It is half-open for the side that no longer has a pawn there (Chapters 1 and 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.2",
+     "anker": "halboffene-linie-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.4",
+     "anker": "halboffene-linie-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "halboffene-linie-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.12"
+    },
+    {
+     "anker": "halboffene-linie-2",
+     "kapitel": 2,
+     "abschnitt": "2.4",
+     "abbildung": "2.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Hanging",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece is hanging when it is attacked and not sufficiently defended.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Hanging pawns",
+   "text": [
+    {
+     "art": "text",
+     "text": "Two neighboring pawns, usually on the c- and d-files, that have no other pawn of their own on the adjacent files to support them. Together they are strong, separately weak (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.4",
+     "anker": "haengende-bauern-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "haengende-bauern-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.20"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Hole (pawn hole)",
+   "text": [
+    {
+     "art": "text",
+     "text": "A square that no pawn of your own can control anymore. For the opponent it can be a → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "strong square",
+     "begriff": "Strong square"
+    },
+    {
+     "art": "text",
+     "text": " (Chapters 2 and 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.6",
+     "anker": "loch-2"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.3",
+     "anker": "loch-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "loch-2",
+     "kapitel": 2,
+     "abschnitt": "2.6",
+     "abbildung": "2.56"
+    },
+    {
+     "anker": "loch-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.6"
+    }
+   ],
+   "verweise": [
+    "Strong square"
+   ]
+  },
+  {
+   "begriff": "Hook",
+   "text": [
+    {
+     "art": "text",
+     "text": "An advanced pawn in front of your own king, for example on h3: a target the opponent can hook into with their pawns (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.3",
+     "anker": "haken-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "haken-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.9"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Hope chess",
+   "text": [
+    {
+     "art": "text",
+     "text": "You move without having checked whether you have a safe answer to every check, capture and threat your opponent could play on the next move. That is what the American coach Dan Heisman calls it [5].",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Hypermodern",
+   "text": [
+    {
+     "art": "text",
+     "text": "A way of playing the opening that does not occupy the center with pawns right away, but first controls it from a distance with pieces (Chapters 1 and 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "hypermodern-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.10",
+     "anker": "hypermodern-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "hypermodern-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.2"
+    },
+    {
+     "anker": "hypermodern-2",
+     "kapitel": 2,
+     "abschnitt": "2.10",
+     "abbildung": "2.110"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "In-between check",
+   "text": [
+    {
+     "art": "text",
+     "text": "An → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "intermezzo",
+     "begriff": "Intermezzo"
+    },
+    {
+     "art": "text",
+     "text": " that gives check (Chapters 4 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.5",
+     "anker": "zwischenschach-4"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "zwischenschach-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zwischenschach-4",
+     "kapitel": 4,
+     "abschnitt": "4.5",
+     "abbildung": "4.17"
+    },
+    {
+     "anker": "zwischenschach-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Intermezzo"
+   ]
+  },
+  {
+   "begriff": "Increment",
+   "text": [
+    {
+     "art": "text",
+     "text": "The seconds that are added to your thinking time for every move you make: with 10+5 it is 5 seconds. In German, the time the opponent receives as compensation after an illegal move goes by the same name (Chapters 0 and 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "zeitgutschrift-0"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "zeitgutschrift-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zeitgutschrift-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    },
+    {
+     "anker": "zeitgutschrift-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Initiative",
+   "text": [
+    {
+     "art": "text",
+     "text": "The privilege of steering the course of the game with threats: the opponent can only react. It is the most fleeting of all advantages (Chapters 1, 6, and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.5",
+     "anker": "initiative-1"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.1",
+     "anker": "initiative-6"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "initiative-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "initiative-1",
+     "kapitel": 1,
+     "abschnitt": "1.5",
+     "abbildung": "1.35"
+    },
+    {
+     "anker": "initiative-6",
+     "kapitel": 6,
+     "abschnitt": "6.1",
+     "abbildung": "6.1"
+    },
+    {
+     "anker": "initiative-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Interference",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece or pawn ends up on a file, rank or diagonal in such a way that another piece can no longer reach its target (Chapter 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 10.4",
+     "anker": "wegversperrung-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "wegversperrung-10",
+     "kapitel": 10,
+     "abschnitt": "10.4",
+     "abbildung": "10.14"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Intermezzo",
+   "text": [
+    {
+     "art": "text",
+     "text": "A move that postpones the expected reply, such as recapturing, because it poses an even more urgent threat (Chapters 3 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.10",
+     "anker": "zwischenzug-3"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "zwischenzug-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zwischenzug-3",
+     "kapitel": 3,
+     "abschnitt": "3.10",
+     "abbildung": "3.67"
+    },
+    {
+     "anker": "zwischenzug-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Isolani (isolated pawn)",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn that has no pawns of its own left on the two neighboring files. In the middlegame it can make active piece play possible; in the endgame it is a weakness (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.4",
+     "anker": "isolani-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "isolani-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.17"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Isolated pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Isolani",
+     "begriff": "Isolani (isolated pawn)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Isolani (isolated pawn)"
+   ]
+  },
+  {
+   "begriff": "Key square",
+   "text": [
+    {
+     "art": "text",
+     "text": "A square in front of your passed pawn that your king wants to reach, because you win once it occupies it, no matter who is to move, as long as the pawn is not lost right away. Pawn on the 2nd, 3rd or 4th rank: the three squares two ranks in front of it. Pawn on the 5th or 6th rank: the six squares one and two ranks in front of it. Rook's pawn: the last two squares of the neighboring file (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.6",
+     "anker": "schluesselfeld-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schluesselfeld-8",
+     "kapitel": 8,
+     "abschnitt": "8.6",
+     "abbildung": "8.25"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "King hunt",
+   "text": [
+    {
+     "art": "text",
+     "text": "An attack that pulls the king out of its shelter with checks and sacrifices and drives it across the board until it is mated. One example is the game Lasker–Thomas (Chapter 11, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 11.4",
+     "anker": "koenigsjagd-11"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "koenigsjagd-11",
+     "kapitel": 11,
+     "abschnitt": "11.4",
+     "abbildung": "11.16"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "King safety",
+   "text": [
+    {
+     "art": "text",
+     "text": "How well protected a king is. It is one of the three goals of every opening and one of the four factors of the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "factor balance",
+     "begriff": "Factor balance"
+    },
+    {
+     "art": "text",
+     "text": " (Chapters 1 and 3; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "koenigssicherheit-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.2",
+     "anker": "koenigssicherheit-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "koenigssicherheit-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    },
+    {
+     "anker": "koenigssicherheit-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Factor balance"
+   ]
+  },
+  {
+   "begriff": "Kingside",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Wing",
+     "begriff": "Wing"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Wing"
+   ]
+  },
+  {
+   "begriff": "Knight's pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn on the b- or g-file (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.7",
+     "anker": "springerbauer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "springerbauer-9",
+     "kapitel": 9,
+     "abschnitt": "9.7",
+     "abbildung": "9.28"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "LAP principle",
+   "text": [
+    {
+     "art": "text",
+     "text": "The principle of the least active piece (LAP, for ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Least Active Piece",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": "), taught by grandmaster Igor Smirnov [14]: ask yourself which of your pieces has no task, and improve exactly that one (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.5",
+     "anker": "lap-prinzip-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lap-prinzip-6",
+     "kapitel": 6,
+     "abschnitt": "6.5",
+     "abbildung": "6.16"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Lever",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Pawn lever",
+     "begriff": "Pawn lever (lever)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Pawn lever (lever)"
+   ]
+  },
+  {
+   "begriff": "Lolli's mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mating pattern: a pawn stands on f6, and the queen mates on g7. It strikes the fianchetto that is missing its bishop (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "lolli-matt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lolli-matt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.41"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Long game",
+   "text": [
+    {
+     "art": "text",
+     "text": "A game with at least 15 minutes plus 10 seconds per move, which you analyze thoroughly afterwards. By FIDE's limits it can still be → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "rapid",
+     "begriff": "Rapid"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.3",
+     "anker": "lange-partie-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lange-partie-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": [
+    "Rapid"
+   ]
+  },
+  {
+   "begriff": "Long side",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Short and long side",
+     "begriff": "Short and long side"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Short and long side"
+   ]
+  },
+  {
+   "begriff": "Long-range piece",
+   "text": [
+    {
+     "art": "text",
+     "text": "Bishop, rook or queen: a piece that acts across several squares (Chapter 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.3",
+     "anker": "langschrittfigur-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "langschrittfigur-2",
+     "kapitel": 2,
+     "abschnitt": "2.3",
+     "abbildung": "2.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Losing on time",
+   "text": [
+    {
+     "art": "text",
+     "text": "Your thinking time has run out. You lose, unless your opponent can no longer mate you by any legal sequence of moves. Then the game ends in a draw (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "zeitueberschreitung-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zeitueberschreitung-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Lucena position",
+   "text": [
+    {
+     "art": "text",
+     "text": "The most important winning position in the endgame of rook and pawn against rook: the pawn stands on the 7th rank, its king on the promotion square, and the enemy king has been pushed to the side. It is won by → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "building a bridge",
+     "begriff": "Building a bridge"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.3",
+     "anker": "lucena-stellung-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lucena-stellung-9",
+     "kapitel": 9,
+     "abschnitt": "9.3",
+     "abbildung": "9.8"
+    }
+   ],
+   "verweise": [
+    "Building a bridge"
+   ]
+  },
+  {
+   "begriff": "Luft",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn move in front of the castled king, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "h3"
+    },
+    {
+     "art": "text",
+     "text": ", that gives it a flight square against → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "back-rank mate",
+     "begriff": "Back-rank mate"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.3",
+     "anker": "luftloch-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "luftloch-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.14"
+    }
+   ],
+   "verweise": [
+    "Back-rank mate"
+   ]
+  },
+  {
+   "begriff": "Main line",
+   "text": [
+    {
+     "art": "text",
+     "text": "The most important move sequence of an opening. The other variations and side lines branch off from it (Chapter 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.1",
+     "anker": "hauptvariante-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "hauptvariante-2",
+     "kapitel": 2,
+     "abschnitt": "2.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Major piece",
+   "text": [
+    {
+     "art": "text",
+     "text": "Rook or queen (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.4",
+     "anker": "schwerfigur-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schwerfigur-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Majority",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Pawn majority",
+     "begriff": "Pawn majority (majority)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Pawn majority (majority)"
+   ]
+  },
+  {
+   "begriff": "Mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "The king is in check, and no legal reply helps: neither moving away nor capturing nor blocking. The game is over (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "matt-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "matt-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.10"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Material",
+   "text": [
+    {
+     "art": "text",
+     "text": "The pieces and pawns a side has, counted by the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "piece values",
+     "begriff": "Piece values"
+    },
+    {
+     "art": "text",
+     "text": ". One of the four factors of the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "factor balance",
+     "begriff": "Factor balance"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.2",
+     "anker": "material-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "material-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Piece values",
+    "Factor balance"
+   ]
+  },
+  {
+   "begriff": "Mating pattern",
+   "text": [
+    {
+     "art": "text",
+     "text": "A typical arrangement of pieces in which a king is mated, for example back-rank mate or smothered mate (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "mattbild-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "mattbild-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Middlegame",
+   "text": [
+    {
+     "art": "text",
+     "text": "The phase after the opening. It begins as soon as both sides have developed and castled (Chapters 1 and 6; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "mittelspiel-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.1",
+     "anker": "mittelspiel-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "mittelspiel-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.7"
+    },
+    {
+     "anker": "mittelspiel-6",
+     "kapitel": 6,
+     "abschnitt": "6.1",
+     "abbildung": "6.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Minor piece",
+   "text": [
+    {
+     "art": "text",
+     "text": "Knight or bishop (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.4",
+     "anker": "leichtfigur-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "leichtfigur-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Minority attack",
+   "text": [
+    {
+     "art": "text",
+     "text": "A minority of pawns advances against an enemy majority, not to create a passed pawn, but to force the opponent into a lasting pawn weakness. It is typical of the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Carlsbad structure",
+     "begriff": "Carlsbad structure"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "minderheitsangriff-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "minderheitsangriff-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.32"
+    }
+   ],
+   "verweise": [
+    "Carlsbad structure"
+   ]
+  },
+  {
+   "begriff": "Mistake log",
+   "text": [
+    {
+     "art": "text",
+     "text": "Your personal list of mistakes from your own games: game, move, type of mistake, idea you overlooked, better decision and next exercise. Table 12.1 shows a template (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.2",
+     "anker": "fehlerdatenbank-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fehlerdatenbank-12",
+     "kapitel": 12,
+     "abschnitt": "12.2",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Motif",
+   "text": [
+    {
+     "art": "text",
+     "text": "The recurring tactical idea behind a combination or trap, for example pin, deflection or double attack (Chapters 4 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.1",
+     "anker": "motiv-4"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "motiv-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "motiv-4",
+     "kapitel": 4,
+     "abschnitt": "4.1",
+     "abbildung": null
+    },
+    {
+     "anker": "motiv-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.21"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Notation",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Algebraic notation",
+     "begriff": "Algebraic notation"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Algebraic notation"
+   ]
+  },
+  {
+   "begriff": "Open file",
+   "text": [
+    {
+     "art": "text",
+     "text": "A file with no pawns on it at all. It is the place for the rooks (Chapters 1 and 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.2",
+     "anker": "offene-linie-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.2",
+     "anker": "offene-linie-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "offene-linie-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.12"
+    },
+    {
+     "anker": "offene-linie-2",
+     "kapitel": 2,
+     "abschnitt": "2.2",
+     "abbildung": "2.12"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Open position",
+   "text": [
+    {
+     "art": "text",
+     "text": "No pawns are left in the center; the d- and e-files are open. Here the bishop pair is especially strong (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.2",
+     "anker": "offene-stellung-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "offene-stellung-5",
+     "kapitel": 5,
+     "abschnitt": "5.2",
+     "abbildung": "5.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Opening",
+   "text": [
+    {
+     "art": "text",
+     "text": "The first moves of the game. It has three goals: control of the center, development of the pieces and king safety (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "eroeffnung-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "eroeffnung-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Opening database",
+   "text": [
+    {
+     "art": "text",
+     "text": "A collection of many games that have been played. It shows which moves are often played in a position, but not which one is best (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.4",
+     "anker": "eroeffnungsdatenbank-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "eroeffnungsdatenbank-12",
+     "kapitel": 12,
+     "abschnitt": "12.4",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Opposite-colored bishops",
+   "text": [
+    {
+     "art": "text",
+     "text": "Each side has one bishop, and the two run on different square colors. They cannot attack each other, which in the endgame often makes a → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "fortress",
+     "begriff": "Fortress"
+    },
+    {
+     "art": "text",
+     "text": " easier for the defender. If both run on the same square color, they are called same-colored (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.8",
+     "anker": "ungleichfarbige-laeufer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "ungleichfarbige-laeufer-9",
+     "kapitel": 9,
+     "abschnitt": "9.8",
+     "abbildung": "9.35"
+    }
+   ],
+   "verweise": [
+    "Fortress"
+   ]
+  },
+  {
+   "begriff": "Opposite-side castling",
+   "text": [
+    {
+     "art": "text",
+     "text": "The two sides castle on different wings. Both can then send their pawns against the enemy king without exposing their own. What counts is who opens a file first (Chapters 2 and 6; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.6",
+     "anker": "entgegengesetzte-rochaden-2"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.3",
+     "anker": "entgegengesetzte-rochaden-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "entgegengesetzte-rochaden-2",
+     "kapitel": 2,
+     "abschnitt": "2.6",
+     "abbildung": "2.56"
+    },
+    {
+     "anker": "entgegengesetzte-rochaden-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.6"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Opposition",
+   "text": [
+    {
+     "art": "text",
+     "text": "The kings face each other on a file, rank or diagonal with exactly one square between them. The side to move has to give way. So the opposition belongs to the side that is not to move (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.2",
+     "anker": "opposition-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "opposition-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Outpost",
+   "text": [
+    {
+     "art": "text",
+     "text": "A → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "strong square",
+     "begriff": "Strong square"
+    },
+    {
+     "art": "text",
+     "text": " that one of your pieces can occupy permanently and safely. It is strongest when a pawn of yours also supports it (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.3",
+     "anker": "vorposten-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "vorposten-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.7"
+    }
+   ],
+   "verweise": [
+    "Strong square"
+   ]
+  },
+  {
+   "begriff": "Outside passed pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A passed pawn that stands far away from the other pawns. It pulls the enemy king to the edge, and meanwhile your own king collects the pawns on the other wing (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "entfernter-freibauer-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "entfernter-freibauer-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.47"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Overloading",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece has to fulfill two tasks at once. If you force it to carry out one, the other is left undone (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "ueberlastung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "ueberlastung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.20"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Passed pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn that no enemy pawn can stop anymore: no enemy pawn stands in front of it, either on its own file or on the two neighboring files (Chapters 5 and 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "freibauer-5"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "freibauer-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "freibauer-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.29"
+    },
+    {
+     "anker": "freibauer-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn chain",
+   "text": [
+    {
+     "art": "text",
+     "text": "Pawns standing diagonally one behind the other, each protecting the next. The front pawn is the ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "chain head",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ", the rearmost one the ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "base",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ". No pawn of the chain protects the base, so that is where you attack the chain (Chapters 2, 4, and 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.8",
+     "anker": "bauernkette-2"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.4",
+     "anker": "bauernkette-4"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "bauernkette-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernkette-2",
+     "kapitel": 2,
+     "abschnitt": "2.8",
+     "abbildung": "2.80"
+    },
+    {
+     "anker": "bauernkette-4",
+     "kapitel": 4,
+     "abschnitt": "4.4",
+     "abbildung": "4.1"
+    },
+    {
+     "anker": "bauernkette-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.25"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn duo",
+   "text": [
+    {
+     "art": "text",
+     "text": "Two of your center pawns side by side, for example on d4 and e4. As long as both stand there, together they control four squares on the next rank (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.6",
+     "anker": "bauernduo-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernduo-5",
+     "kapitel": 5,
+     "abschnitt": "5.6",
+     "abbildung": "5.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn hole",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Hole",
+     "begriff": "Hole (pawn hole)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Hole (pawn hole)"
+   ]
+  },
+  {
+   "begriff": "Pawn islands",
+   "text": [
+    {
+     "art": "text",
+     "text": "Groups of your pawns that are separated from each other by at least one file without a pawn of yours. Rule of thumb: fewer islands usually mean a healthier structure (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.4",
+     "anker": "bauerninseln-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauerninseln-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.20"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn lever (lever)",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn move that attacks an enemy pawn. Whether the opponent captures, pushes past or leaves the pawn where it is: every answer changes the pawn structure (Chapters 1, 2, and 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.4",
+     "anker": "bauernhebel-1"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.8",
+     "anker": "bauernhebel-2"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "bauernhebel-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernhebel-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    },
+    {
+     "anker": "bauernhebel-2",
+     "kapitel": 2,
+     "abschnitt": "2.8",
+     "abbildung": "2.77"
+    },
+    {
+     "anker": "bauernhebel-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.27"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn majority (majority)",
+   "text": [
+    {
+     "art": "text",
+     "text": "One side has more pawns than the other on a wing or in the center. A healthy majority produces a passed pawn: first the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "candidate",
+     "begriff": "Candidate"
+    },
+    {
+     "art": "text",
+     "text": " advances, and the other pawns support it. Doubled pawns can prevent this (Chapters 5, 6, and 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "bauernmehrheit-5"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.3",
+     "anker": "bauernmehrheit-6"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "bauernmehrheit-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernmehrheit-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.29"
+    },
+    {
+     "anker": "bauernmehrheit-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.6"
+    },
+    {
+     "anker": "bauernmehrheit-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.42"
+    }
+   ],
+   "verweise": [
+    "Candidate"
+   ]
+  },
+  {
+   "begriff": "Pawn race",
+   "text": [
+    {
+     "art": "text",
+     "text": "Two passed pawns run toward promotion at the same time. What decides is who promotes first and whether the new queen gives check or controls the opponent's promotion square (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "bauernrennen-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernrennen-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn shield",
+   "text": [
+    {
+     "art": "text",
+     "text": "The three pawns directly in front of the castled king; after kingside castling, the f-, g- and h-pawns (Chapter 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 2",
+     "anker": "bauernschild-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernschild-2",
+     "kapitel": 2,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn storm",
+   "text": [
+    {
+     "art": "text",
+     "text": "Several pawns advance on one wing against the enemy king in order to open files there (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.6",
+     "anker": "bauernsturm-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernsturm-6",
+     "kapitel": 6,
+     "abschnitt": "6.6",
+     "abbildung": "6.24"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn structure (skeleton)",
+   "text": [
+    {
+     "art": "text",
+     "text": "The arrangement of all the pawns on the board. Since pawns never move backward, in the long run it determines which files are open, which squares become weak and where the pieces belong. That is why it is also called the skeleton of the game (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 5",
+     "anker": "bauernstruktur-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bauernstruktur-5",
+     "kapitel": 5,
+     "abschnitt": null,
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pawn unit",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Piece values",
+     "begriff": "Piece values"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Piece values"
+   ]
+  },
+  {
+   "begriff": "Perpetual check",
+   "text": [
+    {
+     "art": "text",
+     "text": "One side can give check without interruption, and the king cannot escape the checks. Perpetual check is not a rule of its own; the game ends in a draw by agreement or threefold repetition (Chapters 0 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "dauerschach-0"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "dauerschach-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "dauerschach-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    },
+    {
+     "anker": "dauerschach-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.27"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Philidor position",
+   "text": [
+    {
+     "art": "text",
+     "text": "The most important drawing position in the endgame of rook and pawn against rook: the defending king stands in front of the pawn, and the rook keeps the enemy king off the rank in front of the pawn. If the pawn advances to that rank, the rook gives checks from behind (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.2",
+     "anker": "philidor-stellung-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "philidor-stellung-9",
+     "kapitel": 9,
+     "abschnitt": "9.2",
+     "abbildung": "9.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Philidor's legacy",
+   "text": [
+    {
+     "art": "text",
+     "text": "The → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "smothered mate",
+     "begriff": "Smothered mate"
+    },
+    {
+     "art": "text",
+     "text": " after a queen sacrifice on g8: the rook has to take the queen and so takes the last square away from its own king. Then the knight mates on f7 (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.5",
+     "anker": "philidors-vermaechtnis-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "philidors-vermaechtnis-7",
+     "kapitel": 7,
+     "abschnitt": "7.5",
+     "abbildung": "7.61"
+    }
+   ],
+   "verweise": [
+    "Smothered mate"
+   ]
+  },
+  {
+   "begriff": "Piece",
+   "text": [
+    {
+     "art": "text",
+     "text": "In the broad sense, everything that stands on the board, including the pawns. In the narrower sense the book means knights, bishops, rooks and queen; the pawn is then named separately (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "figur-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "figur-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Piece values",
+   "text": [
+    {
+     "art": "text",
+     "text": "Rough values in pawn units: pawn 1, knight and bishop 3 each, rook 5, queen 9 (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.4",
+     "anker": "figurenwerte-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "figurenwerte-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pin",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece stands between an enemy → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "long-range piece",
+     "begriff": "Long-range piece"
+    },
+    {
+     "art": "text",
+     "text": " and a more valuable piece of its own side. If the king stands behind it, the pin is absolute: the piece may not move. If another piece stands behind it, the pin is relative: the piece may move, but it usually costs material (Chapters 1, 2, and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.2",
+     "anker": "fesselung-1"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.3",
+     "anker": "fesselung-2"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "fesselung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fesselung-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.12"
+    },
+    {
+     "anker": "fesselung-2",
+     "kapitel": 2,
+     "abschnitt": "2.3",
+     "abbildung": "2.26"
+    },
+    {
+     "anker": "fesselung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.4"
+    }
+   ],
+   "verweise": [
+    "Long-range piece"
+   ]
+  },
+  {
+   "begriff": "Plan balance",
+   "text": [
+    {
+     "art": "text",
+     "text": "The table that answers the three → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "plan questions",
+     "begriff": "Plan questions"
+    },
+    {
+     "art": "text",
+     "text": " for both sides. Below it stands the plan in one sentence (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.6",
+     "anker": "planbilanz-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "planbilanz-6",
+     "kapitel": 6,
+     "abschnitt": "6.6",
+     "abbildung": "6.20"
+    }
+   ],
+   "verweise": [
+    "Plan questions"
+   ]
+  },
+  {
+   "begriff": "Plan questions",
+   "text": [
+    {
+     "art": "text",
+     "text": "The three questions that help you find a plan in the middlegame: Where do I play? What does my opponent want? Which piece do I bring there? (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.2",
+     "anker": "planfragen-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "planfragen-6",
+     "kapitel": 6,
+     "abschnitt": "6.2",
+     "abbildung": "6.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Poisoned pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn whose capture has a hidden price (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.2",
+     "anker": "vergifteter-bauer-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "vergifteter-bauer-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.8"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Principle of two weaknesses",
+   "text": [
+    {
+     "art": "text",
+     "text": "The defender can often hold a single weakness. That is why you create a second one on the other wing, and the defender has to split their pieces between two places (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.3",
+     "anker": "prinzip-der-zwei-schwaechen-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "prinzip-der-zwei-schwaechen-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.11"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Promotion",
+   "text": [
+    {
+     "art": "text",
+     "text": "When a pawn reaches the last rank, it becomes, in the same move and by your choice, a queen, rook, bishop or knight of your own color (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "umwandlung-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "umwandlung-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.19"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Promotion with check",
+   "text": [
+    {
+     "art": "text",
+     "text": "A promotion in which the new queen gives check right away. It gains a tempo, since the opponent first has to move their king (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "umwandlungsschach-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "umwandlungsschach-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.38"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Prophylaxis",
+   "text": [
+    {
+     "art": "text",
+     "text": "Preventing your opponent's plan before they can carry it out. Aaron Nimzowitsch introduced the term into chess teaching [11] (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.4",
+     "anker": "prophylaxe-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "prophylaxe-6",
+     "kapitel": 6,
+     "abschnitt": "6.4",
+     "abbildung": "6.12"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Protected passed pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A passed pawn that is protected by a pawn of its own side. The enemy king cannot capture it and has to keep watch over it (Chapters 5 and 8; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "gedeckter-freibauer-5"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "gedeckter-freibauer-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gedeckter-freibauer-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.32"
+    },
+    {
+     "anker": "gedeckter-freibauer-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.50"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Protection test",
+   "text": [
+    {
+     "art": "text",
+     "text": "The question for every pawn: can a pawn of yours protect it, now or after a move by the pawn itself or a neighboring pawn? If the answer is no, pieces must guard it. Two pawns side by side with no further neighbors pass the test only by turns: if one advances, the other protects it, and that one is then without pawn protection itself (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.4",
+     "anker": "deckungstest-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "deckungstest-5",
+     "kapitel": 5,
+     "abschnitt": "5.4",
+     "abbildung": "5.15"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Pseudo-sacrifice",
+   "text": [
+    {
+     "art": "text",
+     "text": "A sacrifice in which the material comes back after a few moves, like the pawn in the Queen's Gambit (Chapter 3, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.1",
+     "anker": "scheinopfer-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "scheinopfer-3",
+     "kapitel": 3,
+     "abschnitt": "3.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Queenside",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Wing",
+     "begriff": "Wing"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Wing"
+   ]
+  },
+  {
+   "begriff": "Quiet",
+   "text": [
+    {
+     "art": "text",
+     "text": "The point up to which you calculate a line: no check, no capture and no threat is in the air anymore (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "ruhe-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "ruhe-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Quiet move",
+   "text": [
+    {
+     "art": "text",
+     "text": "A move that gives no check and captures nothing. Often it is exactly this move that solves the puzzle, because it prepares two things at once or hands the move over to the opponent (Chapter 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 10.1",
+     "anker": "stiller-zug-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "stiller-zug-10",
+     "kapitel": 10,
+     "abschnitt": "10.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Race",
+   "text": [
+    {
+     "art": "text",
+     "text": "The two sides attack on different wings. Whoever breaks through first sets the direction of the game (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.3",
+     "anker": "wettrennen-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "wettrennen-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.2"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Rank",
+   "text": [
+    {
+     "art": "text",
+     "text": "A horizontal row of the board, numbered from 1 to 8. The vertical columns are called → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "files",
+     "begriff": "File"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "reihe-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "reihe-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.3"
+    }
+   ],
+   "verweise": [
+    "File"
+   ]
+  },
+  {
+   "begriff": "Rapid",
+   "text": [
+    {
+     "art": "text",
+     "text": "Games with medium thinking time, under FIDE rules more than 10 and less than 60 minutes per side, counted as in → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "blitz",
+     "begriff": "Blitz"
+    },
+    {
+     "art": "text",
+     "text": " [2] (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "schnellschach-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schnellschach-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": [
+    "Blitz"
+   ]
+  },
+  {
+   "begriff": "Rating",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Elo rating",
+     "begriff": "Elo rating"
+    },
+    {
+     "art": "text",
+     "text": ", → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "DWZ",
+     "begriff": "DWZ (German rating number)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Elo rating",
+    "DWZ (German rating number)"
+   ]
+  },
+  {
+   "begriff": "Released means moved",
+   "text": [
+    {
+     "art": "text",
+     "text": "Tournament rule: once you have released a piece on a square and the move is legal, you may no longer change it (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "losgelassen-ist-gezogen-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "losgelassen-ist-gezogen-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Removing the defender",
+   "text": [
+    {
+     "art": "text",
+     "text": "Tactical motif: the piece that defends an important square or another piece is captured or driven away (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "beseitigung-der-verteidigung-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "beseitigung-der-verteidigung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.18"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Repertoire",
+   "text": [
+    {
+     "art": "text",
+     "text": "The openings you regularly play with White and with Black.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Repetition",
+   "text": [
+    {
+     "art": "text",
+     "text": "If the same position occurs for the third time, with the same side to move and the same possible moves, you can claim a draw (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "stellungswiederholung-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "stellungswiederholung-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Right to move",
+   "text": [
+    {
+     "art": "text",
+     "text": "The right and the duty to make the next move. Usually it is an advantage; in → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "zugzwang",
+     "begriff": "Zugzwang"
+    },
+    {
+     "art": "text",
+     "text": " it is a disadvantage.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Zugzwang"
+   ]
+  },
+  {
+   "begriff": "Rook's pawn",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn on the a- or h-file (Chapters 8 and 9; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.6",
+     "anker": "randbauer-8"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.4",
+     "anker": "randbauer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "randbauer-8",
+     "kapitel": 8,
+     "abschnitt": "8.6",
+     "abbildung": "8.25"
+    },
+    {
+     "anker": "randbauer-9",
+     "kapitel": 9,
+     "abschnitt": "9.4",
+     "abbildung": "9.15"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Rule of the square",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Square rule",
+     "begriff": "Square rule"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Square rule"
+   ]
+  },
+  {
+   "begriff": "Sacrifice",
+   "text": [
+    {
+     "art": "text",
+     "text": "Giving up material voluntarily to get something else in return, for example an attack on the king (Chapters 1 and 3; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.3",
+     "anker": "opfer-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.1",
+     "anker": "opfer-3"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "opfer-1",
+     "kapitel": 1,
+     "abschnitt": "1.3",
+     "abbildung": "1.21"
+    },
+    {
+     "anker": "opfer-3",
+     "kapitel": 3,
+     "abschnitt": "3.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Safety check",
+   "text": [
+    {
+     "art": "text",
+     "text": "Three questions right before you move: Is my king safe after the move? Can my opponent capture the moved piece right away? Do I allow my opponent a check or even mate? (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.1",
+     "anker": "sicherheitsblick-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "sicherheitsblick-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Same-side castling",
+   "text": [
+    {
+     "art": "text",
+     "text": "Both sides castle on the same wing. A pawn storm is then a risk, since every advanced pawn is afterwards missing in front of your own king (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.3",
+     "anker": "gleichseitige-rochade-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gleichseitige-rochade-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.7"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Scholar's mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "The mate on f7 on the fourth move by queen and bishop, for example after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Qh5 Nc6 3. Bc4 Nf6 4. Qxf7#"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.3",
+     "anker": "schaefermatt-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schaefermatt-1",
+     "kapitel": 1,
+     "abschnitt": "1.3",
+     "abbildung": "1.13"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Score sheet",
+   "text": [
+    {
+     "art": "text",
+     "text": "The sheet on which you write down all the moves of both sides during a tournament game (Chapters 0 and 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "partieformular-0"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.3",
+     "anker": "partieformular-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "partieformular-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    },
+    {
+     "anker": "partieformular-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Sharp",
+   "text": [
+    {
+     "art": "text",
+     "text": "A position or line is called sharp when both sides take risks, must calculate precisely and a single mistake often decides the game. The opposite is quiet.",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": []
+  },
+  {
+   "begriff": "Short and long side",
+   "text": [
+    {
+     "art": "text",
+     "text": "In rook endgames, the two sides next to the pawn's file: the short side with fewer files to the edge, the long side with more. The defender places their king on the short side and their rook on the long side (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.1",
+     "anker": "kurze-und-lange-seite-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "kurze-und-lange-seite-9",
+     "kapitel": 9,
+     "abschnitt": "9.1",
+     "abbildung": "9.1"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Shouldering",
+   "text": [
+    {
+     "art": "text",
+     "text": "In the endgame: your king steps into the path of the enemy king and so keeps it away from a pawn (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.5",
+     "anker": "abdraengen-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abdraengen-9",
+     "kapitel": 9,
+     "abschnitt": "9.5",
+     "abbildung": "9.18"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Skeleton",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Pawn structure",
+     "begriff": "Pawn structure (skeleton)"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Pawn structure (skeleton)"
+   ]
+  },
+  {
+   "begriff": "Skeleton balance",
+   "text": [
+    {
+     "art": "text",
+     "text": "The table that answers the guiding questions of the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "skeleton X-ray",
+     "begriff": "Skeleton X-ray"
+    },
+    {
+     "art": "text",
+     "text": " for both sides, one row per guiding question (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.2",
+     "anker": "skelettbilanz-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "skelettbilanz-5",
+     "kapitel": 5,
+     "abschnitt": "5.2",
+     "abbildung": "5.5"
+    }
+   ],
+   "verweise": [
+    "Skeleton X-ray"
+   ]
+  },
+  {
+   "begriff": "Skeleton X-ray",
+   "text": [
+    {
+     "art": "text",
+     "text": "The routine you use to read a pawn structure. Before every pawn move you first ask what it gains in front and gives up behind. Then come four guiding questions: Squares (which can no pawn control anymore?), Pawns (which can no pawn protect anymore?), Direction (where do the chains point, where are space and majority?) and Pieces (which ones suit this skeleton?). At the end comes the plan in one sentence (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.2",
+     "anker": "skelett-roentgen-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "skelett-roentgen-5",
+     "kapitel": 5,
+     "abschnitt": "5.2",
+     "abbildung": "5.3"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Skewer",
+   "text": [
+    {
+     "art": "text",
+     "text": "Like a pin, except that the more valuable piece stands in front: it is attacked and moves away, and the piece behind it falls (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "spiess-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "spiess-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.6"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Smothered mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "A knight mates a king whose own pieces block all its flight squares (Chapters 4 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.6",
+     "anker": "erstickungsmatt-4"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "erstickungsmatt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "erstickungsmatt-4",
+     "kapitel": 4,
+     "abschnitt": "4.6",
+     "abbildung": "4.23"
+    },
+    {
+     "anker": "erstickungsmatt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.35"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Space",
+   "text": [
+    {
+     "art": "text",
+     "text": "The squares behind your pawn front where your pieces can stand without being driven away by enemy pawns. The side with more space avoids exchanges (Chapters 2, 3, and 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.2",
+     "anker": "raum-2"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.2",
+     "anker": "raum-3"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "raum-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "raum-2",
+     "kapitel": 2,
+     "abschnitt": "2.2",
+     "abbildung": "2.8"
+    },
+    {
+     "anker": "raum-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    },
+    {
+     "anker": "raum-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.24"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Spare tempo",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn move kept in reserve, with which you hand over the move in a zugzwang position without worsening your king's position (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.9",
+     "anker": "reserve-tempo-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "reserve-tempo-8",
+     "kapitel": 8,
+     "abschnitt": "8.9",
+     "abbildung": "8.53"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Square rule",
+   "text": [
+    {
+     "art": "text",
+     "text": "Draw a square from the passed pawn to the promotion square, toward the side of the enemy king. If the king can step into it when it is to move, it catches the pawn (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.7",
+     "anker": "quadratregel-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "quadratregel-8",
+     "kapitel": 8,
+     "abschnitt": "8.7",
+     "abbildung": "8.37"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Staircase mate",
+   "text": [
+    {
+     "art": "text",
+     "text": "Mating with two major pieces: one blocks a rank, the other gives check on the next one, step by step, until the king stands on the edge (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.4",
+     "anker": "treppenmatt-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "treppenmatt-7",
+     "kapitel": 7,
+     "abschnitt": "7.4",
+     "abbildung": "7.39"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Stalemate",
+   "text": [
+    {
+     "art": "text",
+     "text": "The side to move is not in check, but has no legal move. The game ends in a draw immediately (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "patt-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "patt-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.10"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Stalemate reserve",
+   "text": [
+    {
+     "art": "text",
+     "text": "A pawn of the defender that can still move. It prevents the trapped king from being stalemated and so makes mate possible in the first place (Chapter 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 10.5",
+     "anker": "pattreserve-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "pattreserve-10",
+     "kapitel": 10,
+     "abschnitt": "10.5",
+     "abbildung": "10.19"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Starter pack",
+   "text": [
+    {
+     "art": "text",
+     "text": "One of four sets, each made up of one opening with White, one against ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4"
+    },
+    {
+     "art": "text",
+     "text": " and one against ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4"
+    },
+    {
+     "art": "text",
+     "text": ", that follow a common idea (Chapter 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.1",
+     "anker": "starterpaket-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "starterpaket-2",
+     "kapitel": 2,
+     "abschnitt": "2.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Stop moment",
+   "text": [
+    {
+     "art": "text",
+     "text": "The point in a trap where you go through the three → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "check questions",
+     "begriff": "Check questions"
+    },
+    {
+     "art": "text",
+     "text": ". The caption marks it as the stop moment (Chapter 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.3",
+     "anker": "stopp-moment-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "stopp-moment-4",
+     "kapitel": 4,
+     "abschnitt": "4.3",
+     "abbildung": null
+    }
+   ],
+   "verweise": [
+    "Check questions"
+   ]
+  },
+  {
+   "begriff": "Strong square",
+   "text": [
+    {
+     "art": "text",
+     "text": "A square in the opponent's half of the board that no enemy pawn can attack anymore (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.3",
+     "anker": "starkes-feld-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "starkes-feld-5",
+     "kapitel": 5,
+     "abschnitt": "5.3",
+     "abbildung": "5.7"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Study",
+   "text": [
+    {
+     "art": "text",
+     "text": "A composed position that shows a special idea of winning, drawing or stalemate as clearly as possible (Chapter 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 10.1",
+     "anker": "studie-10"
+    },
+    {
+     "art": "text",
+     "text": "). On Lichess, the feature in which you collect your own positions and lines is also called a study (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.3",
+     "anker": "studie-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "studie-10",
+     "kapitel": 10,
+     "abschnitt": "10.1",
+     "abbildung": null
+    },
+    {
+     "anker": "studie-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Study collection",
+   "text": [
+    {
+     "art": "text",
+     "text": "A collection of your most important positions, lines and plans, digital or on index cards (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.4",
+     "anker": "lernsammlung-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "lernsammlung-12",
+     "kapitel": 12,
+     "abschnitt": "12.4",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tablebase",
+   "text": [
+    {
+     "art": "text",
+     "text": "An endgame database that gives the proven result with best play for every position with at most seven pieces, and does so for every possible move (Chapters 8 and 12; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.10",
+     "anker": "tablebase-8"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.3",
+     "anker": "tablebase-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tablebase-8",
+     "kapitel": 8,
+     "abschnitt": "8.10",
+     "abbildung": "8.68"
+    },
+    {
+     "anker": "tablebase-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tarrasch rule",
+   "text": [
+    {
+     "art": "text",
+     "text": "Rooks belong behind passed pawns: behind your own to support them, and behind the opponent's to stop them. The rule goes back to Siegbert Tarrasch [16] (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.6",
+     "anker": "tarrasch-regel-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tarrasch-regel-9",
+     "kapitel": 9,
+     "abschnitt": "9.6",
+     "abbildung": "9.24"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tempo",
+   "text": [
+    {
+     "art": "text",
+     "text": "A move as a unit of time. A move comes “with tempo” when the opponent has to react immediately instead of pursuing their own plan. A ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "loss of tempo",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " is a move that gains nothing, for example when a piece moves somewhere and back again (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.2",
+     "anker": "tempo-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "tempo-1",
+     "kapitel": 1,
+     "abschnitt": "1.2",
+     "abbildung": "1.12"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tension",
+   "text": [
+    {
+     "art": "text",
+     "text": "An exchange is possible, but nobody has captured yet. With pawns: two opposing pawns could capture each other. Whoever releases the tension fixes the pawn structure (Chapters 1 and 5; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.5",
+     "anker": "spannung-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.5",
+     "anker": "spannung-5"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "spannung-1",
+     "kapitel": 1,
+     "abschnitt": "1.5",
+     "abbildung": "1.32"
+    },
+    {
+     "anker": "spannung-5",
+     "kapitel": 5,
+     "abschnitt": "5.5",
+     "abbildung": "5.29"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "The exchange",
+   "text": [
+    {
+     "art": "text",
+     "text": "The difference in value between a rook and a minor piece. “Winning the exchange” means getting a rook for a knight or bishop (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.4",
+     "anker": "qualitaet-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "qualitaet-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Theme block",
+   "text": [
+    {
+     "art": "text",
+     "text": "Twenty puzzles on a single motif, for example the fork (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.3",
+     "anker": "themenblock-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "themenblock-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Thinking routine",
+   "text": [
+    {
+     "art": "text",
+     "text": "Four steps before every move: assess the position and the phase of the game, collect candidate moves, look for the strongest reply, and finally evaluate and compare. The phase decides which tool you use for a quiet move. Before you move comes the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "safety check",
+     "begriff": "Safety check"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.1",
+     "anker": "denkroutine-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "denkroutine-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.1"
+    }
+   ],
+   "verweise": [
+    "Safety check"
+   ]
+  },
+  {
+   "begriff": "Thinking time",
+   "text": [
+    {
+     "art": "text",
+     "text": "The time each side has for its moves. It is written as minutes + seconds: 10+5 means 10 minutes of base time and a 5-second → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "increment",
+     "begriff": "Increment"
+    },
+    {
+     "art": "text",
+     "text": " for every move (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "bedenkzeit-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "bedenkzeit-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": [
+    "Increment"
+   ]
+  },
+  {
+   "begriff": "Threat",
+   "text": [
+    {
+     "art": "text",
+     "text": "A move threatens something if it would win material or give mate on the next move (Chapter 1, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.4",
+     "anker": "drohung-1"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "drohung-1",
+     "kapitel": 1,
+     "abschnitt": "1.4",
+     "abbildung": "1.23"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Time",
+   "text": [
+    {
+     "art": "text",
+     "text": "In the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "factor balance",
+     "begriff": "Factor balance"
+    },
+    {
+     "art": "text",
+     "text": ", the number of pieces already in play, compared with the opponent. In the middlegame it lives on as the → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "initiative",
+     "begriff": "Initiative"
+    },
+    {
+     "art": "text",
+     "text": " (Chapters 3 and 6; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 3.2",
+     "anker": "zeit-3"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.1",
+     "anker": "zeit-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zeit-3",
+     "kapitel": 3,
+     "abschnitt": "3.2",
+     "abbildung": null
+    },
+    {
+     "anker": "zeit-6",
+     "kapitel": 6,
+     "abschnitt": "6.1",
+     "abbildung": "6.1"
+    }
+   ],
+   "verweise": [
+    "Factor balance",
+    "Initiative"
+   ]
+  },
+  {
+   "begriff": "Time trouble",
+   "text": [
+    {
+     "art": "text",
+     "text": "You have only a little time left for the moves you still have to play (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.5",
+     "anker": "zeitnot-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zeitnot-12",
+     "kapitel": 12,
+     "abschnitt": "12.5",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Touch-move",
+   "text": [
+    {
+     "art": "text",
+     "text": "Tournament rule: if you deliberately touch one of your own pieces, you must move it. If you deliberately touch one of your opponent's pieces, you must capture it, in each case provided this is legal. If you only want to adjust a piece, you announce this beforehand (Chapter 0, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "beruehrt-gefuehrt-0"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "beruehrt-gefuehrt-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.26"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Trade",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Exchange",
+     "begriff": "Exchange"
+    },
+    {
+     "art": "text",
+     "text": ", → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Exchange question",
+     "begriff": "Exchange question"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Exchange",
+    "Exchange question"
+   ]
+  },
+  {
+   "begriff": "Transposition",
+   "text": [
+    {
+     "art": "text",
+     "text": "The same position arises by a different move order (Chapter 2, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.12",
+     "anker": "zugumstellung-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zugumstellung-2",
+     "kapitel": 2,
+     "abschnitt": "2.12",
+     "abbildung": "2.143"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Trap",
+   "text": [
+    {
+     "art": "text",
+     "text": "An offer that looks as if the opponent wins something, but that in truth costs them material, the position or the game (Chapter 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.1",
+     "anker": "falle-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "falle-4",
+     "kapitel": 4,
+     "abschnitt": "4.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Trap check",
+   "text": [
+    {
+     "art": "text",
+     "text": "The review at the end of every trap: who falls into it, which rule would have been enough, and which move saves. It includes the ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "trap-setter test",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ": is the move that sets the trap good even without a mistake by the opponent? (Chapter 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.3",
+     "anker": "fallencheck-4"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fallencheck-4",
+     "kapitel": 4,
+     "abschnitt": "4.3",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Trap-setter test",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Trap check",
+     "begriff": "Trap check"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Trap check"
+   ]
+  },
+  {
+   "begriff": "Trapped piece",
+   "text": [
+    {
+     "art": "text",
+     "text": "A piece that is attacked and can no longer reach a safe square (Chapters 4 and 7; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.8",
+     "anker": "gefangene-figur-4"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "gefangene-figur-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "gefangene-figur-4",
+     "kapitel": 4,
+     "abschnitt": "4.8",
+     "abbildung": "4.32"
+    },
+    {
+     "anker": "gefangene-figur-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.24"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Tree of variations",
+   "text": [
+    {
+     "art": "text",
+     "text": "Your candidates and your opponent's replies: each candidate is a branch, each reply a fork in the branch. You calculate branch by branch (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "variantenbaum-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "variantenbaum-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Triangulation",
+   "text": [
+    {
+     "art": "text",
+     "text": "Your king walks a small triangle on three squares, while the enemy king can only shuttle between two squares. Afterwards the same position is on the board, but with the opponent to move (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.8",
+     "anker": "triangulation-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "triangulation-8",
+     "kapitel": 8,
+     "abschnitt": "8.8",
+     "abbildung": "8.51"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Troitzky line",
+   "text": [
+    {
+     "art": "text",
+     "text": "The boundary in the endgame of two knights against pawn, named after the Russian study composer Alexei Troitzky (also spelled Troitsky). If the pawn stands on its boundary square or farther back and a knight blockades it securely, the side with the knights wins. Some of these wins, however, take longer than the 50-move rule allows (Chapter 10, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 10.5",
+     "anker": "troitzky-linie-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "troitzky-linie-10",
+     "kapitel": 10,
+     "abschnitt": "10.5",
+     "abbildung": "10.22"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Underpromotion",
+   "text": [
+    {
+     "art": "text",
+     "text": "Promotion to a rook, bishop or knight instead of a queen, for example to avoid stalemate or to give check with the knight (Chapters 0, 7, and 10; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Chapter 0",
+     "anker": "unterverwandlung-0"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.2",
+     "anker": "unterverwandlung-7"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 10.1",
+     "anker": "unterverwandlung-10"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "unterverwandlung-0",
+     "kapitel": 0,
+     "abschnitt": null,
+     "abbildung": "0.19"
+    },
+    {
+     "anker": "unterverwandlung-7",
+     "kapitel": 7,
+     "abschnitt": "7.2",
+     "abbildung": "7.26"
+    },
+    {
+     "anker": "unterverwandlung-10",
+     "kapitel": 10,
+     "abschnitt": "10.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Vancura position",
+   "text": [
+    {
+     "art": "text",
+     "text": "Drawing position in a rook endgame against a rook's pawn: the defending rook attacks the pawn from the side and gives checks from there as soon as the enemy king approaches. The defender's king keeps its distance and, against the white a-pawn, waits on g7 or h7 (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.4",
+     "anker": "vancura-stellung-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "vancura-stellung-9",
+     "kapitel": 9,
+     "abschnitt": "9.4",
+     "abbildung": "9.15"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Visualization",
+   "text": [
+    {
+     "art": "text",
+     "text": "Seeing positions in your head without moving the pieces: after each imagined move, the piece stands only on its destination square (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.1",
+     "anker": "visualisierung-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "visualisierung-12",
+     "kapitel": 12,
+     "abschnitt": "12.1",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Waiting move",
+   "text": [
+    {
+     "art": "text",
+     "text": "A move that changes your own position as little as possible and only serves to hand the move over to your opponent, usually to put them in → ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "zugzwang",
+     "begriff": "Zugzwang"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.4",
+     "anker": "abwartezug-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "abwartezug-8",
+     "kapitel": 8,
+     "abschnitt": "8.4",
+     "abbildung": "8.11"
+    }
+   ],
+   "verweise": [
+    "Zugzwang"
+   ]
+  },
+  {
+   "begriff": "Warning signs",
+   "text": [
+    {
+     "art": "text",
+     "text": "Seven signs that a tactic is hidden in the position: ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W1",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " undefended piece, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W2",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " dangerous line, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W3",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " king without air, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W4",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " double duty, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W5",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " gift (Chapter 4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 4.2",
+     "anker": "warnsignale-4"
+    },
+    {
+     "art": "text",
+     "text": "), plus ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W6",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " fork geometry and ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "W7",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " piece on the edge (Chapter 7, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 7.1",
+     "anker": "warnsignale-7"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "warnsignale-4",
+     "kapitel": 4,
+     "abschnitt": "4.2",
+     "abbildung": null
+    },
+    {
+     "anker": "warnsignale-7",
+     "kapitel": 7,
+     "abschnitt": "7.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Weakness",
+   "text": [
+    {
+     "art": "text",
+     "text": "A square that no pawn of your own can control anymore, or a pawn that no pawn of your own can protect anymore (Chapter 5, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 5.1",
+     "anker": "schwaeche-5"
+    },
+    {
+     "art": "text",
+     "text": "). In the broader sense, any point the defender has to guard: a pawn, a square, a file or the king (Chapter 6, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 6.3",
+     "anker": "schwaeche-6"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "schwaeche-5",
+     "kapitel": 5,
+     "abschnitt": "5.1",
+     "abbildung": "5.2"
+    },
+    {
+     "anker": "schwaeche-6",
+     "kapitel": 6,
+     "abschnitt": "6.3",
+     "abbildung": "6.11"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Why question",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Check questions",
+     "begriff": "Check questions"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Check questions"
+   ]
+  },
+  {
+   "begriff": "Wing",
+   "text": [
+    {
+     "art": "text",
+     "text": "The two halves of the board: the queenside with the files a to d and the kingside with the files e to h (Chapters 1 and 2; ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 1.1",
+     "anker": "fluegel-1"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 2.1",
+     "anker": "fluegel-2"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "fluegel-1",
+     "kapitel": 1,
+     "abschnitt": "1.1",
+     "abbildung": "1.1"
+    },
+    {
+     "anker": "fluegel-2",
+     "kapitel": 2,
+     "abschnitt": "2.1",
+     "abbildung": null
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Woodpecker Method",
+   "text": [
+    {
+     "art": "text",
+     "text": "A strict form of repetition (",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Woodpecker Method",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": "), described by the Swedish grandmasters Axel Smith and Hans Tikkanen [15]: you solve the same large set of puzzles several times in a row, each round faster (Chapter 12, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 12.3",
+     "anker": "specht-methode-12"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "specht-methode-12",
+     "kapitel": 12,
+     "abschnitt": "12.3",
+     "abbildung": "12.4"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "Wrong bishop",
+   "text": [
+    {
+     "art": "text",
+     "text": "A bishop that does not control the promotion square of its own rook's pawn. If the defending king reaches the corner, the game is a draw (Chapter 9, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 9.8",
+     "anker": "falscher-laeufer-9"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "falscher-laeufer-9",
+     "kapitel": 9,
+     "abschnitt": "9.8",
+     "abbildung": "9.41"
+    }
+   ],
+   "verweise": []
+  },
+  {
+   "begriff": "X-ray rule",
+   "text": [
+    {
+     "art": "text",
+     "text": "→ ",
+     "stil": "normal"
+    },
+    {
+     "art": "begriff",
+     "text": "Chess X-ray rule",
+     "begriff": "Chess X-ray rule"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [],
+   "verweise": [
+    "Chess X-ray rule"
+   ]
+  },
+  {
+   "begriff": "Zugzwang",
+   "text": [
+    {
+     "art": "text",
+     "text": "You have to move, even though every possible move worsens your position. If the opponent would also be at a disadvantage in the same position if they had to move, the zugzwang is called mutual (Chapter 8, ",
+     "stil": "normal"
+    },
+    {
+     "art": "stelle",
+     "text": "Section 8.2",
+     "anker": "zugzwang-8"
+    },
+    {
+     "art": "text",
+     "text": ").",
+     "stil": "normal"
+    }
+   ],
+   "stellen": [
+    {
+     "anker": "zugzwang-8",
+     "kapitel": 8,
+     "abschnitt": "8.2",
+     "abbildung": "8.3"
+    }
+   ],
+   "verweise": []
+  }
+ ]
+}

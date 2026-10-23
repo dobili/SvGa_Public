@@ -59,6 +59,13 @@ export interface Partieeinstellung {
   readonly stil?: number;
   /** Blinde Flecken des Gegners (0.2.46, engine/blindeFlecken.ts); fehlend: keine. */
   readonly blindeFlecken?: readonly BlinderFleck[];
+  /**
+   * Erweiterter Modus eigener Gegner (seit 0.2.117): Gewicht je Fehlerart und Fleck (0 aus, 1 wie
+   * Menschen), Fehlerhäufigkeit insgesamt, Höchstverlust je Art in Bauern; fehlend: wie Menschen.
+   */
+  readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
+  readonly haeufigkeit?: number;
+  readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
   readonly hilfen: Spielhilfen;
   /** Zählt die Partie für die Wertung des Lesers (spiel/wertung.ts)? */
   readonly gewertet: boolean;

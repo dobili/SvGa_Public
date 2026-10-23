@@ -9,10 +9,25 @@ import {
   staerkeAusStufen,
   staerkeDerStufe,
   staerkeDesBots,
+  zusatzanteil,
 } from "./botstaerke";
+import { BLINDE_FLECKEN } from "./blindeFlecken";
 import { GEGNER } from "./gegnerliste";
+import { GELEGENHEITSARTEN } from "./menschenprofil";
 
-const STUFEN = [1, 2, 3, 4, 5, 6, 7, 8] as const;
+const STUFEN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+
+describe("Zusatzfehler eigener Gegner (0.2.117)", () => {
+  const vier = { eroeffnung: 4, mittelspiel: 4, endspiel: 4 } as const;
+  it("ohne Haken kein Anteil, alle Arten und Flecken wie Menschen ganz", () => {
+    expect(zusatzanteil({ stufenJePhase: vier, fehlerarten: [], blindeFlecken: [] })).toBe(0);
+    const voll = Object.fromEntries([...GELEGENHEITSARTEN, ...BLINDE_FLECKEN].map((a) => [a, 1]));
+    expect(zusatzanteil({ stufenJePhase: vier, gewichte: voll })).toBeCloseTo(1);
+    expect(zusatzanteil({ stufenJePhase: vier, gewichte: voll, haeufigkeit: 0.5 })).toBeCloseTo(
+      0.5,
+    );
+  });
+});
 
 describe("Elo-Zahl der Bots", () => {
   it("jede Stufe ist stärker als die darunter", () => {
@@ -21,10 +36,10 @@ describe("Elo-Zahl der Bots", () => {
     }
   });
 
-  it("Spaß-Bots (0.2.88) liegen unter Stufe 1, ihr Bereich umfasst alle vier", () => {
+  it("Spaß-Bots (0.2.88): ihr Bereich umfasst alle vier (seit 0.2.117 über Stufe 1)", () => {
     const bereich = bereichDerSpassbots();
     expect(bereich).not.toBeNull();
-    expect(bereich?.bis ?? Infinity).toBeLessThan(staerkeDerStufe(1));
+    expect(bereich?.von ?? 0).toBeGreaterThan(staerkeDerStufe(1));
     expect(bereich?.von ?? 0).toBeLessThan(bereich?.bis ?? 0);
   });
 
@@ -48,9 +63,9 @@ describe("Elo-Zahl der Bots", () => {
 
   it("Gegnerwertung: gemessener Bot, sonst Schätzung aus den Stufen", () => {
     const fuenf = { eroeffnung: 5, mittelspiel: 5, endspiel: 5 } as const;
-    const nina = GEGNER.find((g) => g.kennung === "nina");
-    expect(gegnerstaerke({ bot: "nina", stufenJePhase: fuenf })).toBe(staerkeDesBots("nina"));
-    expect(nina).toBeDefined();
+    const svenja = GEGNER.find((g) => g.kennung === "svenja");
+    expect(gegnerstaerke({ bot: "svenja", stufenJePhase: fuenf })).toBe(staerkeDesBots("svenja"));
+    expect(svenja).toBeDefined();
     expect(gegnerstaerke({ bot: null, stufenJePhase: fuenf })).toBe(staerkeDerStufe(5));
     expect(gegnerstaerke({ bot: "eigen-1", stufenJePhase: fuenf })).toBe(staerkeDerStufe(5));
   });

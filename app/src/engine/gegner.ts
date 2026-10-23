@@ -56,6 +56,10 @@ export interface EigenerGegner {
   readonly blindeFlecken: readonly BlinderFleck[];
   /** Porträt aus der Liste zur Wahl (0.2.99, engine/portraetwahl.ts); fehlt bei älteren Gegnern. */
   readonly portraet?: Portraetkennung;
+  /** Erweiterter Modus (seit 0.2.117): Gewichte, Fehlerhäufigkeit, Höchstverluste; fehlend: wie Menschen. */
+  readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
+  readonly haeufigkeit?: number;
+  readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
 }
 
 /** Vorsilbe der Kennungen eigener Gegner (unterscheidet sie von den vorgefertigten). */

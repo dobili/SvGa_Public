@@ -1,14 +1,18 @@
 /**
  * Tests der Zugwahl (Konzept 8.1 „waehleZug“, 8.2 Stufen) mit vorgegebenen Kandidaten und festem
- * Zufall: Buchzug, Zug mit der Grundstärke der Stufe, Fehlerzug innerhalb der Verlustgrenze,
- * Stärkebegrenzung ab Stufe 4.
+ * Zufall: Buchzug, menschliche Zugwahl der Stufen 1 bis 7 (seit 0.2.117: Fehler je Gelegenheit,
+ * blinde Flecken, Höchstverlust je Art), volle Stärke der Stufe 8.
  */
 import { describe, expect, it } from "vitest";
 import type { Bewertung, Staerke } from "./engineDienst";
-import { stufe } from "./stufen";
+import { ALLE_ZUEGE, stufe } from "./stufen";
 import type { Variante } from "./uci";
+import { FEHLERARTEN } from "./fehlerart";
 import {
+  BESONDERS_BLIND,
   BUCHTREUE_VORGABE,
+  menschenwerteAus,
+  REINES_PROFIL,
   STANDARDPROFIL,
   type Spielbewerter,
   waehleZug,
@@ -92,111 +96,80 @@ describe("Zugwahl", () => {
     expect(aufrufe).toHaveLength(0);
   });
 
-  it("Stufe 1 ohne Fehlerwurf: Kandidaten bis Tiefe 2, gewichtete Wahl (R4, 0.2.52)", async () => {
+  it("mit Zusatzfehlern: zuerst die Fehlersuche mit Kandidaten der Suchtiefe 10 (0.2.117)", async () => {
     const { b, aufrufe } = bewerter(KANDIDATEN);
-    // Fehlerwurf 0,9 trifft nicht; Wahl 0 → der beste Zug.
-    const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.9, 0));
-    expect(wahl).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(aufrufe).toEqual([{ varianten: 6, staerke: { art: "tiefe", tiefe: 2 } }]);
-    // Hoher Wurf: ein schlechterer Kandidat mit seinem Verlust (Schwarz am Zug: d6 kostet 0,2).
-    const zweite = await waehleZug(b, FEN, stufe(1), [], folge(0.9, 0.7));
-    expect(zweite?.uci).toBe("d7d6");
-    expect(zweite?.verlust).toBeCloseTo(0.2, 5);
-  });
-
-  it("Stufe 1 mit Fehlerwurf: ein typischer Fehler bis zum Höchstverlust", async () => {
-    const { b, aufrufe } = bewerter(KANDIDATEN);
-    const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0));
-    expect(wahl?.quelle).toBe("fehler");
-    expect(wahl?.fehler).toBe("figurHaengen");
-    expect(wahl?.verlust).toBeGreaterThanOrEqual(0.5);
-    expect(aufrufe[0]?.staerke).toEqual({ art: "voll" });
-  });
-
-  it("Stufe 3 erlaubt höchstens eine Leichtfigur Verlust: kein Turmverlust", async () => {
-    const { b } = bewerter(KANDIDATEN);
-    for (const wurf of [0, 0.5, 0.99]) {
-      const wahl = await waehleZug(b, FEN, stufe(3), [], folge(0.01, wurf));
-      expect(wahl?.uci).not.toBe("g7g6");
-    }
-  });
-
-  it("Fehlerwurf ohne passenden Fehler: der normale Zug der Stufe", async () => {
-    const { b, aufrufe } = bewerter([variante(1, 0.3, ["b8c6"])], "d7d6");
-    const wahl = await waehleZug(b, FEN, stufe(3), [], folge(0.01, 0.5));
-    expect(wahl).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(aufrufe.at(-1)).toEqual({ varianten: 6, staerke: { art: "tiefe", tiefe: 5 } });
-    // Ab Stufe 4 weiter der beste Zug der Grundstärke.
-    const { b: b4, aufrufe: a4 } = bewerter([variante(1, 0.3, ["b8c6"])], "d7d6");
-    const wahl4 = await waehleZug(b4, FEN, stufe(4), [], folge(0.01, 0.5));
-    expect(wahl4).toEqual({ uci: "d7d6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(a4.at(-1)).toEqual({ varianten: 1, staerke: { art: "skill", stufe: 4 } });
-  });
-
-  it("ab Stufe 5 nur die Grundstärke, kein Fehlerwurf", async () => {
-    const { b, aufrufe } = bewerter(KANDIDATEN, "d7d6");
-    const wahl = await waehleZug(b, FEN, stufe(6), [], folge(0.0001));
-    expect(wahl).toEqual({ uci: "d7d6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(aufrufe).toEqual([{ varianten: 1, staerke: { art: "skill", stufe: 10 } }]);
-  });
-
-  it("Stufe 8 spielt voll", async () => {
-    const { b, aufrufe } = bewerter(KANDIDATEN, "b8c6");
-    await waehleZug(b, FEN, stufe(8), [], folge(0.5));
-    expect(aufrufe[0]?.staerke).toEqual({ art: "voll" });
-  });
-
-  // Eigene Gegner (0.2.42): Profil mit Fehlerarten und Stil.
-  it("Profil ohne Fehlerarten: nie ein Fehlerwurf; nur erlaubte Arten zählen", async () => {
-    const { b, aufrufe } = bewerter(KANDIDATEN);
-    const keine = { fehlerarten: [], stil: 0, blindeFlecken: [] };
-    const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0), BUCHTREUE_VORGABE, keine);
+    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0.5);
+    expect(aufrufe[0]).toEqual({ varianten: 6, staerke: { art: "tiefe", tiefe: 10 } });
     expect(wahl?.quelle).toBe("engine");
-    expect(aufrufe).toEqual([{ varianten: 6, staerke: { art: "tiefe", tiefe: 2 } }]);
-    const nurRaub = { fehlerarten: ["bauernraub" as const], stil: 0, blindeFlecken: [] };
-    const ohne = await waehleZug(b, FEN, stufe(1), [], folge(0.1, 0), BUCHTREUE_VORGABE, nurRaub);
-    expect(ohne?.fehler).toBeNull();
+    expect(["b8c6", "d7d6"]).toContain(wahl?.uci);
   });
 
-  it("Profil mit Stil: mehrere Kandidaten der Stufe, Wahl nach dem Stil", async () => {
-    const { b, aufrufe } = bewerter(KANDIDATEN);
-    const profil = { fehlerarten: null, stil: 2, blindeFlecken: [] };
-    const wahl = await waehleZug(b, FEN, stufe(6), [], folge(0.9), BUCHTREUE_VORGABE, profil);
-    expect(wahl).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(aufrufe).toEqual([{ varianten: 4, staerke: { art: "skill", stufe: 10 } }]);
-  });
-
-  it("Stufe 1 mit Stil (0.2.78): der schwache Zug der Stufe bleibt, der Stil hebt ihn nicht an", async () => {
+  it("trifft der Wurf eine Gelegenheit, spielt Stufe 1 einen Fehler dieser Art", async () => {
     const { b } = bewerter(KANDIDATEN);
-    const profil = { fehlerarten: [], stil: 2, blindeFlecken: [] };
-    // Hoher Wurf: Die gewichtete Wahl nimmt einen der schwachen Züge (La3 oder g6).
-    const wahl = await waehleZug(b, FEN, stufe(1), [], folge(0.999), BUCHTREUE_VORGABE, profil);
-    expect(wahl?.uci).not.toBe("b8c6");
-    expect(wahl?.uci).not.toBe("d7d6");
-    expect(wahl?.verlust ?? 0).toBeGreaterThan(2);
+    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0);
+    expect(wahl?.quelle).toBe("fehler");
+    expect(wahl?.fehler).not.toBeNull();
+    expect(wahl?.verlust ?? 0).toBeGreaterThanOrEqual(0.5);
   });
 
-  it("Profil mit blindem Fleck: übersieht den besten Zug und spielt den nächsten anderer Art", async () => {
-    // Bester Zug Sc6 (b8c6) ist ein Springerzug vorwärts; blind für „bauer“: d6 ist still.
+  it("ohne erlaubte Fehlerarten kein Fehler, auch wenn jeder Wurf trifft", async () => {
+    const { b } = bewerter(KANDIDATEN);
+    const profil = { ...STANDARDPROFIL, fehlerarten: [] };
+    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0, 0, profil);
+    expect(wahl).toMatchObject({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
+  });
+
+  it("reine Stufe (0.2.117): nur die Grundschicht, alle Züge in kleiner Tiefe bewertet", async () => {
     const { b, aufrufe } = bewerter(KANDIDATEN);
-    const blind = { fehlerarten: null, stil: 0, blindeFlecken: ["bauer" as const] };
-    const gesehen = await waehleZug(b, FEN, stufe(6), [], folge(0.9), BUCHTREUE_VORGABE, blind);
-    expect(gesehen).toEqual({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
-    expect(aufrufe[0]?.varianten).toBe(4);
-    // Bester Zug d6 (still), Gegner blind dafür, niedriger Wurf: der nächste Zug anderer Art.
-    // Werte aus Sicht von Weiß; Schwarz am Zug: d6 (0,3) ist besser als Sc6 (0,5).
-    const { b: b2 } = bewerter([variante(1, 0.3, ["d7d6"]), variante(2, 0.5, ["b8c6"])]);
-    const uebersehen = await waehleZug(b2, FEN, stufe(6), [], folge(0.1), BUCHTREUE_VORGABE, blind);
-    expect(uebersehen).toEqual({
-      uci: "b8c6",
-      quelle: "fehler",
-      fehler: "blindBauer",
-      verlust: 0.2,
+    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0, 0, REINES_PROFIL);
+    expect(aufrufe).toEqual([{ varianten: ALLE_ZUEGE, staerke: { art: "tiefe", tiefe: 1 } }]);
+    expect(wahl).toMatchObject({ uci: "b8c6", quelle: "engine", fehler: null });
+    // Hoher Zufall: Stufe 1 (großes tau) zieht auch den Turmverlust g6
+    const schlecht = await waehleZug(b, FEN, stufe(1), [], () => 0.999, 0, REINES_PROFIL);
+    expect(schlecht?.uci).toBe("g7g6");
+  });
+
+  it("Höchstverlust je Art: kleiner als jeder Fehlerzug, also kein Fehler", async () => {
+    const { b } = bewerter(KANDIDATEN);
+    const klein = Object.fromEntries(FEHLERARTEN.map((a) => [a, 0.6]));
+    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0, 0, {
+      ...STANDARDPROFIL,
+      hoechstverlust: klein,
     });
+    expect(wahl?.quelle).toBe("engine");
+  });
+
+  it("blinder Fleck: übersieht den besten ruhigen Zug, wenn ein Schlag möglich ist", async () => {
+    const nachD5 = "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2";
+    const { b } = bewerter(
+      [variante(1, 0.4, ["e4e5"]), variante(2, 0.3, ["e4d5"]), variante(3, 0.0, ["g1f3"])],
+      "e4e5",
+    );
+    const profil = { ...STANDARDPROFIL, fehlerarten: [] };
+    const wahl = await waehleZug(b, nachD5, stufe(4), [], () => 0, 0, profil);
+    expect(wahl?.uci).toBe("e4d5");
+  });
+
+  it("Gewichte aus dem Profil: Fleck des Bots dreifach, nicht erlaubte Arten aus", () => {
+    const werte = menschenwerteAus({
+      ...STANDARDPROFIL,
+      fehlerarten: ["figurHaengen"],
+      blindeFlecken: ["rueckzug"],
+      gewichte: { dame: 0 },
+    });
+    expect(werte.gewichte.rueckzug).toBe(BESONDERS_BLIND);
+    expect(werte.gewichte.dame).toBe(0);
+    expect(werte.erlaubt).toEqual(["figurHaengen"]);
+  });
+
+  it("Stufe 10 ohne Zusatzfehler spielt voll", async () => {
+    const { b, aufrufe } = bewerter(KANDIDATEN, "b8c6");
+    await waehleZug(b, FEN, stufe(10), [], folge(0.5), 0, REINES_PROFIL);
+    expect(aufrufe[0]?.staerke).toEqual({ art: "voll" });
   });
 
   it("ohne legalen Zug: null", async () => {
     const { b } = bewerter([], null);
-    expect(await waehleZug(b, FEN, stufe(8), [], folge(0.5))).toBeNull();
+    expect(await waehleZug(b, FEN, stufe(10), [], folge(0.5), 0, REINES_PROFIL)).toBeNull();
   });
 });

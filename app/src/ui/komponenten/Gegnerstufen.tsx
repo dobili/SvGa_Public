@@ -190,8 +190,8 @@ function nachStaerke(bots: readonly Gegner[]): Gegner[] {
 
 /**
  * Die Gruppen der Gegnerwahl: zuerst „Zum Spaß“ (die Spaß-Bots, 0.2.88, Wunsch des Autors), dann
- * die acht Stufen. Beispiel (seit 0.2.103): „Zum Spaß“ mit „unter 400 bis etwa 850“, „Stufe 1 ·
- * Einsteiger“ mit „etwa 850 bis 1100“.
+ * die Stufen mit Bots (seit 0.2.117 zehn, nach der gemessenen Zahl; eine Stufe ohne Bot fällt
+ * weg). Beispiel: „Zum Spaß“ mit „etwa 450 bis 1200“, „Stufe 1 · Neuling“ mit „unter 400“.
  */
 function gruppen(): Gruppe[] {
   const stufen = STUFENNUMMERN.map((nummer) => ({
@@ -200,7 +200,7 @@ function gruppen(): Gruppe[] {
     kopf: t("spielen.bot.stufeKopf", { nummer: String(nummer), name: t(stufe(nummer).name) }),
     bereich: bereichstext(nummer),
     bots: nachStaerke(gegnerDerStufe(nummer)),
-  }));
+  })).filter((g) => g.bots.length > 0);
   const spass = nachStaerke(spassbots());
   if (spass.length === 0) return stufen;
   const kopf = t("spielen.bot.spassKopf");

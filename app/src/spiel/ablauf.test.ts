@@ -69,10 +69,17 @@ describe("Ablauf mit Uhr", () => {
     expect(weiter.uhr?.laeuft).toBe("white");
   });
 
-  it("Zeitüberschreitung beendet die Partie und hält die Uhr an", () => {
-    const p = pruefeZeit(zug(partie(true), "e4", 0), MINUTE + 1);
-    expect(p.ende).toEqual({ art: "zeit", sieger: "white" });
+  it("Zeitüberschreitung des Lesers beendet die Partie und hält die Uhr an", () => {
+    // Weiß (Leser) zieht e4, Schwarz e5, dann läuft die Uhr des Lesers ab
+    const zwei = zug(zug(partie(true), "e4", 0), "e5", SEKUNDE);
+    const p = pruefeZeit(zwei, 2 * MINUTE);
+    expect(p.ende).toEqual({ art: "zeit", sieger: "black" });
     expect(p.uhr?.laeuft).toBeNull();
+  });
+
+  it("die Uhr des Bots läuft nicht in echter Zeit ab (seine Zeit ist simuliert, 0.2.117)", () => {
+    const p = zug(partie(true), "e4", 0);
+    expect(pruefeZeit(p, 2 * MINUTE)).toBe(p);
   });
 
   it("Pause und Fortsetzen", () => {

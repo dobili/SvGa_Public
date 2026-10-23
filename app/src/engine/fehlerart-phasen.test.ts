@@ -1,7 +1,6 @@
 /** Tests der Fehlerarten je Phase (0.2.40) an kleinen Stellungen; Reihenfolge über fehlerartIn. */
 import { describe, expect, it } from "vitest";
 import { fehlerartIn, lageVon, type Lage } from "./fehlerart";
-import { gewicht, gewichteteWahl } from "./fehlerprofil";
 
 function lage(fen: string): Lage {
   const l = lageVon(fen);
@@ -47,45 +46,5 @@ describe("Fehlerarten je Phase", () => {
     expect(fehlerartIn(lage(BAUERNENDSPIEL), "e2e3", [], 0, "e2e3")).toBe("ungenau");
     expect(fehlerartIn(lage(PATTFALLE), "e7f7", [], 9)).toBe("pattGesetzt");
     expect(fehlerartIn(lage(RUECKSTAND), "c3d5", [], 0.5)).toBe("falscherAbtausch");
-  });
-});
-
-describe("Fehlerprofil", () => {
-  it("gewichtet je Phase und Stufe; ungenau hat nie Gewicht; unbekannte Arten selten", () => {
-    expect(gewicht("eroeffnung", 1, "verfruehteDame")).toBe(3);
-    expect(gewicht("endspiel", 4, "koenigPassiv")).toBe(3);
-    expect(gewicht("endspiel", 1, "tempoverlust")).toBe(0.5);
-    expect(gewicht("mittelspiel", 2, "ungenau")).toBe(0);
-  });
-
-  it("wählt gewichtet: Zufall 0,5 bei Gewichten 3 und 1 trifft den ersten; ohne Gewicht gleichverteilt", () => {
-    expect(
-      gewichteteWahl(
-        ["a", "b"],
-        (k) => (k === "a" ? 3 : 1),
-        () => 0.5,
-      ),
-    ).toBe("a");
-    expect(
-      gewichteteWahl(
-        ["a", "b"],
-        (k) => (k === "a" ? 3 : 1),
-        () => 0.9,
-      ),
-    ).toBe("b");
-    expect(
-      gewichteteWahl(
-        ["a", "b"],
-        () => 0,
-        () => 0.9,
-      ),
-    ).toBe("b");
-    expect(
-      gewichteteWahl(
-        [],
-        () => 1,
-        () => 0.5,
-      ),
-    ).toBeUndefined();
   });
 });

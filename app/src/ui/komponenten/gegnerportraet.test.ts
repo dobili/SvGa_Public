@@ -8,7 +8,7 @@ import { offeneStufenAnfangs, SPASSGRUPPE } from "./gegnerportraet";
 
 describe("offene Stufen beim ersten Zeigen", () => {
   it("aus dem Merker, unbekannte Nummern fallen weg; leerer Merker: alle zu", () => {
-    expect([...offeneStufenAnfangs("2,5,9,x", null)]).toEqual([2, 5]);
+    expect([...offeneStufenAnfangs("2,5,11,x", null)]).toEqual([2, 5]);
     expect(offeneStufenAnfangs("", "egal").size).toBe(0);
   });
 
@@ -21,6 +21,6 @@ describe("offene Stufen beim ersten Zeigen", () => {
 
   it("Gruppe „Zum Spaß“ (0.2.88): Schlüssel 0 im Merker und für einen Spaß-Bot", () => {
     expect([...offeneStufenAnfangs("0,1", null)]).toEqual([SPASSGRUPPE, 1]);
-    expect([...offeneStufenAnfangs(null, "fritzi")]).toEqual([SPASSGRUPPE]);
+    expect([...offeneStufenAnfangs(null, "kiki")]).toEqual([SPASSGRUPPE]);
   });
 });

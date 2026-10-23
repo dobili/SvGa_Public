@@ -33,11 +33,18 @@ export function zieheMitUhr(
   return mitUhr(danach, laeuftWeiter ? gedrueckt : halte(gedrueckt, jetztMs));
 }
 
-/** Beendet die Partie, wenn die Zeit der laufenden Seite abgelaufen ist; sonst unverändert. */
+/**
+ * Beendet die Partie, wenn die Zeit der laufenden Seite abgelaufen ist; sonst unverändert.
+ * Sonderfall (0.2.117): Die Uhr des Bots läuft nicht in echter Zeit ab. Seine Zeit ist simuliert
+ * (spiel/botzeit.ts, spiel/notmodus.ts) und wird erst mit seinem Zug abgerechnet; sonst
+ * entschiede die Rechenzeit des Geräts statt der Bedenkzeit eines Menschen.
+ */
 export function pruefeZeit(partie: Partie, jetztMs: number): Partie {
   if (!partie.uhr || partie.ende) return partie;
   const verloren = abgelaufen(partie.uhr, jetztMs);
   if (!verloren) return partie;
+  const bot = partie.einstellung.gegner === "engine" && verloren !== partie.einstellung.eigeneFarbe;
+  if (bot) return partie;
   return mitUhr(zeitUeberschritten(partie, verloren), halte(partie.uhr, jetztMs));
 }
 

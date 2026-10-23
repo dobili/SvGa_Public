@@ -1,5 +1,5 @@
 /**
- * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): acht je Stufe, eindeutige Kennungen,
+ * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): 64 Bots in zehn Gruppen, eindeutige Kennungen,
  * Text und Porträt zu jedem, Stil im erlaubten Bereich; dazu seit 0.2.60 der Schnitt mit der
  * allgemeinen Abhakliste der Fehlerarten (Rückfrage S7) und seit 0.2.109 Gruppen ohne
  * Überschneidung.
@@ -15,8 +15,6 @@ import {
   GEGNER,
   gegnerDerStufe,
   gegnerSortiert,
-  gegnerVon,
-  klasseVon,
   unterAbhakliste,
   istSpassbot,
   spassbots,
@@ -24,11 +22,12 @@ import {
 import { STIL_MAX, STIL_MIN } from "./stil";
 import type { Stufennummer } from "./stufen";
 
-const JE_STUFE = 8;
-const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
+/** 64 Bots, seit 0.2.117 nach gemessener Zahl auf die zehn Stufen verteilt. */
+const BOTS_ZAHL = 64;
+const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 describe("vorgefertigte Gegner", () => {
-  it("sind nach Durchschnitt sortiert, Großmeister Grün zuletzt", () => {
+  it("sind nach Durchschnitt sortiert, die stärksten mit Stufe 10 zuletzt", () => {
     const sortiert = gegnerSortiert();
     expect(sortiert).toHaveLength(GEGNER.length);
     for (let i = 1; i < sortiert.length; i += 1) {
@@ -36,11 +35,12 @@ describe("vorgefertigte Gegner", () => {
       const jetzt = sortiert[i];
       if (vorher && jetzt) expect(durchschnitt(vorher)).toBeLessThanOrEqual(durchschnitt(jetzt));
     }
-    expect(sortiert.at(-1)?.stufenJePhase.mittelspiel).toBe(8);
+    expect(sortiert.at(-1)?.stufenJePhase.mittelspiel).toBe(10);
   });
 
-  it("acht je Stufe (0.2.65), Kennungen eindeutig, Stil im Bereich", () => {
-    for (const nummer of STUFENNUMMERN) expect(gegnerDerStufe(nummer)).toHaveLength(JE_STUFE);
+  it("jeder Bot in genau einer Gruppe (seit 0.2.117 nach gemessener Zahl), Kennungen eindeutig, Stil im Bereich", () => {
+    const zusammen = STUFENNUMMERN.reduce((s, n) => s + gegnerDerStufe(n).length, 0);
+    expect(zusammen).toBe(GEGNER.filter((g) => !g.zufallszuege).length);
     expect(new Set(GEGNER.map((g) => g.kennung)).size).toBe(GEGNER.length);
     for (const g of GEGNER) {
       expect(g.stil).toBeGreaterThanOrEqual(STIL_MIN);
@@ -52,7 +52,7 @@ describe("vorgefertigte Gegner", () => {
     const texte: Record<string, string> = de;
     for (const g of GEGNER) {
       expect(texte[g.beschreibung], g.kennung).toBeTruthy();
-      expect(existsSync(join("public", "gegner", `${g.kennung}.svg`)), g.kennung).toBe(true);
+      expect(existsSync(join("public", "gegner", `${g.portraet}.svg`)), g.kennung).toBe(true);
     }
   });
 });
@@ -66,40 +66,28 @@ describe("Gruppen ohne Überschneidung (0.2.109)", () => {
       );
     }
   });
-
-  it("Jan steht in Stufe 3 und heißt so, spielt aber weiter mit seinen Stufen 4, 3, 5", () => {
-    const jan = gegnerDerStufe(3).find((g) => g.kennung === "jan");
-    expect(jan?.stufenJePhase).toEqual({ eroeffnung: 4, mittelspiel: 3, endspiel: 5 });
-    expect(jan && klasseVon(jan).nummer).toBe(3);
-  });
 });
 
 describe("Spaß-Bots (0.2.88)", () => {
   it("vier, schwächster zuerst, mit Zufallszügen und nicht in der Gruppe der Stufe 1", () => {
     const spass = spassbots();
-    expect(spass.map((g) => g.kennung)).toEqual(["fritzi", "willi", "trude", "bruno"]);
+    expect(spass.map((g) => g.kennung)).toEqual(["kiki", "onkel-otto", "tante-hilde", "bodo"]);
     for (let i = 1; i < spass.length; i += 1) {
       expect(spass[i]?.zufallszuege ?? 0).toBeLessThan(spass[i - 1]?.zufallszuege ?? 0);
     }
     expect(gegnerDerStufe(1).some(istSpassbot)).toBe(false);
-    expect(GEGNER.filter((g) => !istSpassbot(g))).toHaveLength(STUFENNUMMERN.length * JE_STUFE);
+    expect(GEGNER.filter((g) => !istSpassbot(g))).toHaveLength(BOTS_ZAHL);
   });
 });
 
 describe("Abhakliste der Fehlerarten (0.2.60)", () => {
-  it("lässt alles unverändert, wenn alle Arten erlaubt sind", () => {
+  it("lässt alles unverändert, wenn alle Arten erlaubt sind; Bots haben alle Arten (0.2.117)", () => {
     expect(unterAbhakliste(null, FEHLERARTEN)).toBeNull();
-    const max = gegnerVon("max");
-    expect(max && unterAbhakliste(max.fehlerarten, FEHLERARTEN)).toEqual(max?.fehlerarten);
+    expect(GEGNER.every((g) => g.fehlerarten === null)).toBe(true);
   });
-  it("beschneidet die Liste eines Gegners: Max ohne „Figur hängen lassen“", () => {
-    const max = gegnerVon("max");
-    if (!max) throw new Error("Max fehlt");
+  it("beschneidet eine Liste: ohne „Figur hängen lassen“", () => {
     const erlaubt = FEHLERARTEN.filter((art) => art !== "figurHaengen");
-    expect(max.fehlerarten).toContain("figurHaengen");
-    expect(unterAbhakliste(max.fehlerarten, erlaubt)).toEqual(
-      max.fehlerarten.filter((art) => art !== "figurHaengen"),
-    );
+    expect(unterAbhakliste(["figurHaengen", "bauernraub"], erlaubt)).toEqual(["bauernraub"]);
   });
   it("ergibt für die reine Engine die Abhakliste, leer heißt keine absichtlichen Fehler", () => {
     expect(unterAbhakliste(null, ["bauernraub"])).toEqual(["bauernraub"]);

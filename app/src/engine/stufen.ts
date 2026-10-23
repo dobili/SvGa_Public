@@ -1,191 +1,96 @@
 /**
- * Die acht Spielstufen der Engine mit Namen und Verfahren (Konzept 8.2, Pflichtenheft 5.2).
+ * Die zehn Spielstufen der Engine: Name, Ziel-Elo und Grundschicht (Konzept 8.2, Pflichtenheft 5.2).
  *
- * Rolle im Gesamtbild: Die Stufe entscheidet, wie die Engine im Spiel ihren Zug wählt
- * (engine/zugwahl.ts). Jede Stufe hat eine Grundstärke (die eingebaute Stärkebegrenzung von
- * Stockfish, „Skill Level“, oder volle Stärke) und bis Stufe 4 eine Fehlerquote: so oft spielt
- * die Engine statt ihres Zuges einen typischen Anfängerfehler aus den Fehlerprofilen
- * (engine/fehlersuche.ts), protokolliert für die Auswertung.
- *
- * Kalibrierung (AP 11, Fable, 16.10.2026), gemessen mit `npm run messen:stufen`
- * (skripte/messe-stufen.mjs, Partien Stufe gegen Stufe mit der echten Engine):
- * - Der „Skill Level“ von Stockfish 19 wählt den Zug an der Suchtiefe Level + 1 unter den vier
- *   besten Zügen gewichtet zufällig. Die Stärke hängt damit von der Tiefe ab, nicht vom Gerät:
- *   ein langsames Handy spielt auf Stufe 4 bis 7 genauso stark wie ein PC. Die Elo-Begrenzung
- *   („UCI_Elo“) rechnet Stockfish selbst in ein Skill Level um (1600 Elo entspricht etwa Level 2,
- *   2000 Elo etwa Level 4); sie ist deshalb hier nicht nötig, der Engine-Dienst kann sie weiter.
- * - Stufe 1 bis 3 (seit 0.2.52, Empfehlung R4, engine/menschlich.ts): volle Stärke bis zu einer
- *   Tiefengrenze (2, 4, 5 Halbzüge: Taktik dahinter sieht die Engine nicht) und gewichtete Wahl
- *   unter den Kandidaten mit einer Temperatur (1,0, 0,7, 0,5 Bauerneinheiten: kleine Fehler
- *   oft, große selten). Dazu die Fehlerprofile des Konzepts (jeder dritte, vierte, achte Zug)
- *   mit fallendem Höchstverlust, die erklärbare Fehler liefern. Bis 0.2.51: Skill Level 0, die
- *   „flache Suche“ aus Konzept 8.2 (Tiefe 1), die alles Einzügige fehlerfrei spielte.
- * - Stufe 4: Skill Level 4 (bis 0.2.51: 3; seit die Stufen 1 bis 3 Taktik sehen, musste Stufe 4
- *   nachziehen, damit sie die Mehrheit gegen Stufe 3 gewinnt), „selten ein typischer Fehler“
- *   (Konzept 8.2): jeder sechzehnte Zug.
- * - Stufe 5 bis 7: Skill Level 6, 10 und 15 ohne Fehlerprofile; Stufe 8 volle Stärke.
- * Wer hier ändert, ändert nur diese Tabelle; die Oberfläche liest Namen und Nummer.
- * Abhängigkeiten: engine/engineDienst.ts (Staerke), i18n (Namen).
+ * Rolle im Gesamtbild: Die Stufe entscheidet, wie stark die Engine im Spiel zieht
+ * (engine/zugwahl.ts). Seit 0.2.117 (Vorschlag des Autors vom 21.10.2026) sind es zehn Stufen von
+ * etwa 300 bis 3000 Elo in Schritten von 300. Eine Stufe ohne Zusatzfehler spielt nur ihre
+ * Grundschicht (engine/grundschicht.ts): Die Engine bewertet die Züge in begrenzter Tiefe (in den
+ * unteren Stufen alle legalen Züge) und wählt gewichtet mit dem Kern (1 + Verlust/tau)^(−Exponent);
+ * Tiefe und tau sind so geeicht, dass die Stufe ihre Ziel-Elo erreicht (Messung in
+ * engine/stufen.messung.ts, Ergebnis in engine/botstaerke-daten.ts). Stufe 10 ist die volle Engine.
+ * Die Zusatzfehler der Menschen (engine/menschenwahl.ts) machen Bots menschlicher und schwächer;
+ * sie nutzen die Lichess-Zahlen der Menschen mit der Ziel-Elo der Stufe.
+ * Bis 0.2.116 gab es acht Stufen; gespeicherte Stufen rechnet speicher/format.ts um.
+ * Abhängigkeiten: engine/engineDienst.ts (Staerke), engine/grundschicht.ts (Typ), i18n (Namen).
  */
 import type { Textschluessel } from "../i18n/sprache";
 import { VOLLE_STAERKE, type Staerke } from "./engineDienst";
-import type { Menschlich } from "./menschlich";
+import type { Grundschicht } from "./grundschicht";
 
-export type Stufennummer = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8;
+export type Stufennummer = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 
 export interface Stufe {
   readonly nummer: Stufennummer;
   readonly name: Textschluessel;
-  /** Grundstärke für die normalen Züge der Engine. */
+  /** Elo-Zahl, auf die die Stufe geeicht ist (300 je Stufe). */
+  readonly zielElo: number;
+  /** Grundschicht der Stufe; null: volle Engine (Stufe 10). */
+  readonly grund: Grundschicht | null;
+  /** Stärke der Engine, wenn die Stufe voll zieht (Stufe 10). */
   readonly staerke: Staerke;
-  /** Anteil der Züge, die ein typischer Anfängerfehler sein sollen; 0: keine Fehlerprofile. */
-  readonly fehlerquote: number;
-  /** Größter erlaubter Verlust eines Fehlerzuges in Bauerneinheiten (Konzept 8.2). */
-  readonly hoechstverlust: number;
-  /**
-   * Darf ein Fehlerzug die Dame grundlos hergeben? Konzept 8.2: „Ein grundloses Damenopfer gibt
-   * es ab Stufe 2 nicht.“ Nur Stufe 1 darf das; engine/fehlersuche.ts prüft es ausdrücklich mit
-   * der Abtauschrechnung, unabhängig vom Höchstverlust.
-   */
-  readonly damenopferErlaubt: boolean;
-  /** Rechenzeit je Zug in Millisekunden (Konzept 8.1: höchstens 2 bis 3 Sekunden). */
+  /** Rechenzeit je Auftrag in Millisekunden (Notanker; die Tiefe begrenzt die Suche). */
   readonly rechenzeitMs: number;
-  /** Gewichtete Zugwahl mit Temperatur (Stufen 1 bis 3); null: der beste Zug der Grundstärke. */
-  readonly menschlich: Menschlich | null;
+  /** Wertung der Menschen für Zusatzfehler und Bedenkzeit (die Ziel-Elo). */
+  readonly wertung: number;
 }
 
-/**
- * Fehlerwürfe für die Sollquoten aus Konzept 8.2 (etwa jeder dritte, vierte, achte Zug; Stufe 4
- * „selten“). Die Würfe liegen über dem Soll, weil die Fehlersuche nicht in jeder Stellung einen
- * Zug in den Grenzen der Stufe findet (ohne Damenopfer, Höchstverlust): Gemessen trafen 1/3, 1/4,
- * 1/8 und 1/16 nur 30 %, 18 %, 10 % und 5 % der Züge; mit 0,36, 0,33, 0,15 und 0,075 dann
- * 36 %, 29 %, 13 % und 6 % (16.10.2026, `npm run messen:stufen`). Stufe 1 und 2 danach leicht
- * gesenkt, erwartet etwa 34 % und 26 %.
- */
-const JEDER_DRITTE = 0.34;
-const JEDER_VIERTE = 0.3;
-const JEDER_SECHZEHNTE = 0.075;
-/**
- * Stufe 3 seit 0.2.85: 0,2 statt 0,15 und Temperatur 0,6 statt 0,5. Die Elo-Leiter der Bots
- * (Rückfrage S23) zeigte, dass Stufe 3 so stark war wie Stufe 4 (20 Partien: 12 : 8 für Stufe 3,
- * Abnahme Konzept 8.2 verletzt). Mit der schwächeren Fassung: gegen Stufe 4 3 : 17, gegen Stufe 2
- * 19,5 : 0,5.
- */
-const FEHLER_STUFE_3 = 0.2;
-const NIE = 0;
-/** Höchstverluste in Bauerneinheiten (Faustwerte aus Kapitel 1). */
-const DAME = 9;
-const TURM = 5;
-const LEICHTFIGUR = 3;
+export const STUFEN_ZAHL = 10;
+const ELO_JE_STUFE = 300;
+const RECHENZEIT_MS = 1500;
+const RECHENZEIT_VOLL_MS = 2000;
+/** Alle legalen Züge bewerten (Stockfish begrenzt MultiPV selbst auf die Zahl der Züge). */
+export const ALLE_ZUEGE = 256;
+/** In tiefen Suchen genügen die besten Züge, die anderen haben bei kleinem tau kein Gewicht. */
+const BESTE_ZUEGE = 8;
 
-/** Tiefengrenzen und Temperaturen der Stufen 1 bis 3 (engine/menschlich.ts). */
-const TIEFE_STUFE_1 = 2;
-const TIEFE_STUFE_2 = 4;
-const TIEFE_STUFE_3 = 5;
-const TEMPERATUR_STUFE_1 = 1.0;
-const TEMPERATUR_STUFE_2 = 0.7;
-const TEMPERATUR_STUFE_3 = 0.6; // seit 0.2.85, siehe FEHLER_STUFE_3
-/** So viele Kandidaten rechnet die Engine für die gewichtete Wahl. */
-const KANDIDATEN_MENSCHLICH = 6;
+/**
+ * Grundschicht je Stufe 1 bis 9: Suchtiefe und tau (Exponent 1), geeicht am 22.10.2026 auf 300
+ * bis 2700 Elo (Leiter freier Grundschichten, verankert an Partien gegen sich selbst; Bericht
+ * buch/arbeit/botelo3, nur lokal). Gemessen etwa: 1x10 510, 1x3 650, 1x1 830, 2x0,5 960,
+ * 4x0,2 1210, 7x0,1 1520, 6x0,06 1700, 8x0,15 1970, 8x0,07 2130, 11x0,03 2400, 14x0,01 2700,
+ * volle Engine 2940. Stufe 1 ist fast zufällig (1x100, etwa 390): Schwächer als zufällige Züge
+ * geht es nicht, 300 ist auf dieser Skala nicht erreichbar. Stufe 2, 3 und 6 liegen zwischen
+ * Messpunkten (tau logarithmisch geschätzt) und sind in der Leiter der Stufen nachgemessen.
+ */
+const GRUNDSCHICHTEN: readonly (readonly [tiefe: number, tau: number])[] = [
+  [1, 100],
+  [1, 4.5],
+  [2, 0.7],
+  [4, 0.2],
+  [7, 0.1],
+  [8, 0.3],
+  [8, 0.07],
+  [11, 0.03],
+  [14, 0.01],
+];
+const TIEF_AB = 8;
 
-function menschlich(tiefe: number, temperatur: number): Pick<Stufe, "staerke" | "menschlich"> {
+/** Grundschicht aus Tiefe und tau (die Breite folgt aus der Tiefe). */
+export function grundschicht(tiefe: number, tau: number): Grundschicht {
+  return { tiefe, tau, exponent: 1, breite: tiefe >= TIEF_AB ? BESTE_ZUEGE : ALLE_ZUEGE };
+}
+
+function stufeMit(nummer: Stufennummer, grund: Grundschicht | null): Stufe {
+  const zielElo = nummer * ELO_JE_STUFE;
   return {
-    staerke: { art: "tiefe", tiefe },
-    menschlich: { temperatur, kandidaten: KANDIDATEN_MENSCHLICH },
+    nummer,
+    name: `stufe.${nummer}` as Textschluessel,
+    zielElo,
+    grund,
+    staerke: grund ? { art: "tiefe", tiefe: grund.tiefe } : VOLLE_STAERKE,
+    rechenzeitMs: grund ? RECHENZEIT_MS : RECHENZEIT_VOLL_MS,
+    wertung: zielElo,
   };
 }
 
-/** Die Skill Level von Stockfish je Stufe (0 bis 20; 20 ist die volle Stärke). */
-const SKILL_STUFE_4 = 4;
-const SKILL_STUFE_5 = 6;
-const SKILL_STUFE_6 = 10;
-const SKILL_STUFE_7 = 15;
-
-function skill(stufe: number): Staerke {
-  return { art: "skill", stufe };
-}
-
-const EINSTEIGER: Stufe = {
-  nummer: 1,
-  name: "stufe.1",
-  ...menschlich(TIEFE_STUFE_1, TEMPERATUR_STUFE_1),
-  fehlerquote: JEDER_DRITTE,
-  hoechstverlust: DAME,
-  damenopferErlaubt: true,
-  rechenzeitMs: 300,
-};
-
 export const STUFEN: readonly Stufe[] = [
-  EINSTEIGER,
-  {
-    nummer: 2,
-    name: "stufe.2",
-    ...menschlich(TIEFE_STUFE_2, TEMPERATUR_STUFE_2),
-    fehlerquote: JEDER_VIERTE,
-    hoechstverlust: TURM,
-    damenopferErlaubt: false,
-    rechenzeitMs: 400,
-  },
-  {
-    nummer: 3,
-    name: "stufe.3",
-    ...menschlich(TIEFE_STUFE_3, TEMPERATUR_STUFE_3),
-    fehlerquote: FEHLER_STUFE_3,
-    hoechstverlust: LEICHTFIGUR,
-    damenopferErlaubt: false,
-    rechenzeitMs: 500,
-  },
-  {
-    nummer: 4,
-    name: "stufe.4",
-    staerke: skill(SKILL_STUFE_4),
-    fehlerquote: JEDER_SECHZEHNTE,
-    hoechstverlust: LEICHTFIGUR,
-    damenopferErlaubt: false,
-    rechenzeitMs: 600,
-    menschlich: null,
-  },
-  {
-    nummer: 5,
-    name: "stufe.5",
-    staerke: skill(SKILL_STUFE_5),
-    fehlerquote: NIE,
-    hoechstverlust: 0,
-    damenopferErlaubt: false,
-    rechenzeitMs: 800,
-    menschlich: null,
-  },
-  {
-    nummer: 6,
-    name: "stufe.6",
-    staerke: skill(SKILL_STUFE_6),
-    fehlerquote: NIE,
-    hoechstverlust: 0,
-    damenopferErlaubt: false,
-    rechenzeitMs: 1000,
-    menschlich: null,
-  },
-  {
-    nummer: 7,
-    name: "stufe.7",
-    staerke: skill(SKILL_STUFE_7),
-    fehlerquote: NIE,
-    hoechstverlust: 0,
-    damenopferErlaubt: false,
-    rechenzeitMs: 1500,
-    menschlich: null,
-  },
-  {
-    nummer: 8,
-    name: "stufe.8",
-    staerke: VOLLE_STAERKE,
-    fehlerquote: NIE,
-    hoechstverlust: 0,
-    damenopferErlaubt: false,
-    rechenzeitMs: 2000,
-    menschlich: null,
-  },
+  ...GRUNDSCHICHTEN.map(([tiefe, tau], i) =>
+    stufeMit((i + 1) as Stufennummer, grundschicht(tiefe, tau)),
+  ),
+  stufeMit(STUFEN_ZAHL, null),
 ];
+
+const EINSTEIGER = STUFEN[0] as Stufe;
 
 /** Die Stufe zu einer Nummer; unbekannte Nummern (alte Daten) ergeben Stufe 1. */
 /**

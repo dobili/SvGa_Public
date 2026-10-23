@@ -2964,7 +2964,6 @@ Auswahl des Autors (Zip „figurensaetze_fuer_repo“ mit `bretter/`, Werte in
   Autors mit Bildschirmfoto: Navy auf dunklem Grund kaum zu sehen), gleiche Regel wie beim
   gewählten Reiter und bei den Chips.
 
-
 ## Elo-Zahl der Bots (18.10.2026 abends, Opus, Zweig `bot-elo`, Version 0.2.85)
 
 Rückfrage S23 (Elo-Angaben der Bot-Stufen), nach Rücksprache mit dem Autor: Er wollte Zahlen auf
@@ -3421,132 +3420,131 @@ prüft dasselbe am aktuellen Stand. Die Nummern bleiben frei (die App speichert 
 
 Damit beim Rückbau nach einem Widerspruch nichts fehlt, hier der ganze alte Text der Rückfragen.
 
-
 #### B. Buchbefunde aus der Textarbeit (Fable, 0.2.67; nur du änderst das Buch)
 
 - B6. **Zeit-Zählhilfe in Kapitel 3:** Die Faktorenbilanz der App sagt nach 1. e4 e5 2. f4
-      (Abb. 3.1, ebenso 3.18 und 3.36) „Schwarz liegt vorn bei Zeit“, obwohl beide Seiten null
-      Figuren im Spiel haben. Das folgt der Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom
-      weißen Vorsprung eine Figur ab“) und der Tabelle zu Abb. 3.14 (zwei gegen zwei, Schwarz am
-      Zug: Schwarz +1). Der Fließtext sagt dagegen nur „sein Vorsprung ist eine Figur kleiner“,
-      also nie unter null. Die Helfer der Textarbeit fanden das Ergebnis bei 0:0 falsch, ich auch.
-      **Empfehlung:** im Buch die Zählhilfe um „nie unter null“ ergänzen und die Tabelle zu 3.14
-      auf „gleich“ setzen; dann ändere ich die App (ein Zeile) und die Kalibrierung. Bis dahin
-      bleibt die App beim Buch (Regel 1).
+  (Abb. 3.1, ebenso 3.18 und 3.36) „Schwarz liegt vorn bei Zeit“, obwohl beide Seiten null
+  Figuren im Spiel haben. Das folgt der Zählhilfe des Buches („Ist Schwarz am Zug, ziehe vom
+  weißen Vorsprung eine Figur ab“) und der Tabelle zu Abb. 3.14 (zwei gegen zwei, Schwarz am
+  Zug: Schwarz +1). Der Fließtext sagt dagegen nur „sein Vorsprung ist eine Figur kleiner“,
+  also nie unter null. Die Helfer der Textarbeit fanden das Ergebnis bei 0:0 falsch, ich auch.
+  **Empfehlung:** im Buch die Zählhilfe um „nie unter null“ ergänzen und die Tabelle zu 3.14
+  auf „gleich“ setzen; dann ändere ich die App (ein Zeile) und die Kalibrierung. Bis dahin
+  bleibt die App beim Buch (Regel 1).
 
 #### S. Spielbewertung (Fable, 0.2.72; schon umgesetzt, Widerspruch genügt)
 
 - S20. **Deine Wertung nach der neuen Eichung (0.2.83):** Die Wertung in den Einstellungen
-      (Elo-System aus deinen gewerteten Partien) rechnet mit der geschätzten Stärke des Gegners.
-      Die stammt jetzt aus den neuen Kurven: Bei niedriger Genauigkeit liegt sie höher als vorher
-      (die alte Tabelle aus deinen sieben Partien ging bis 250 hinunter, die neue fängt bei etwa
-      1000 an, weil echte Spieler mit 50 % meist um 1000 stehen). Alte Punkte bleiben, die
-      Wertung wandert mit den nächsten Partien. **Empfehlung:** einmal „Wertung zurücksetzen“ in
-      den Einstellungen, dann baut sie sich auf der neuen Skala auf. Ich ändere gespeicherte
-      Daten nicht selbst (Regel 9: Daten im Speicher der Leser).
+  (Elo-System aus deinen gewerteten Partien) rechnet mit der geschätzten Stärke des Gegners.
+  Die stammt jetzt aus den neuen Kurven: Bei niedriger Genauigkeit liegt sie höher als vorher
+  (die alte Tabelle aus deinen sieben Partien ging bis 250 hinunter, die neue fängt bei etwa
+  1000 an, weil echte Spieler mit 50 % meist um 1000 stehen). Alte Punkte bleiben, die
+  Wertung wandert mit den nächsten Partien. **Empfehlung:** einmal „Wertung zurücksetzen“ in
+  den Einstellungen, dann baut sie sich auf der neuen Skala auf. Ich ändere gespeicherte
+  Daten nicht selbst (Regel 9: Daten im Speicher der Leser).
 - S21. **Urteilswort statt Symbole, Taktik und Strategie nach dem Buch:** chess.com
-      veröffentlicht nicht, wie die Symbole je Phase entstehen. Aus deinen 13 Bewertungen
-      lässt sich ablesen: „Strategie“ war alle 13 Male „Gut“, „Endspiel“ auch bei 95 %
-      Genauigkeit nur „Gut“, „Eröffnung“ meist „Bester“. Das passt zu einem Durchschnitt der
-      Zugklassen je Phase (in der Eröffnung sind viele Züge Buch oder bester Zug, in ruhigen
-      Stellungen und gewonnenen Endspielen sind gleich gute Züge nur „Gut“), nicht zu einer
-      Genauigkeit. Das sagt dem Leser wenig. **Empfehlung (umgesetzt):** Unser Wort je Phase
-      kommt aus der Genauigkeit der Phase mit denselben Grenzen wie die Spielstärke, und Taktik
-      gegen Strategie trennt die Regel des Sicherheitsblicks (Kapitel 12): Schach, Drohung,
-      Schlag mit Gewinn oder Matt möglich heißt Taktik. Beides ist im Erklärtext der Karte
-      beschrieben. Sag Bescheid, wenn du lieber die Wörter von chess.com (Bester, Exzellent, Gut,
-      Ungenauigkeit, Fehler) oder Symbole statt Wörter möchtest.
+  veröffentlicht nicht, wie die Symbole je Phase entstehen. Aus deinen 13 Bewertungen
+  lässt sich ablesen: „Strategie“ war alle 13 Male „Gut“, „Endspiel“ auch bei 95 %
+  Genauigkeit nur „Gut“, „Eröffnung“ meist „Bester“. Das passt zu einem Durchschnitt der
+  Zugklassen je Phase (in der Eröffnung sind viele Züge Buch oder bester Zug, in ruhigen
+  Stellungen und gewonnenen Endspielen sind gleich gute Züge nur „Gut“), nicht zu einer
+  Genauigkeit. Das sagt dem Leser wenig. **Empfehlung (umgesetzt):** Unser Wort je Phase
+  kommt aus der Genauigkeit der Phase mit denselben Grenzen wie die Spielstärke, und Taktik
+  gegen Strategie trennt die Regel des Sicherheitsblicks (Kapitel 12): Schach, Drohung,
+  Schlag mit Gewinn oder Matt möglich heißt Taktik. Beides ist im Erklärtext der Karte
+  beschrieben. Sag Bescheid, wenn du lieber die Wörter von chess.com (Bester, Exzellent, Gut,
+  Ungenauigkeit, Fehler) oder Symbole statt Wörter möchtest.
 - S22. **Absichtliche Fehler nur für die eigene Stufe (Opus, 0.2.80):** Die Liste „Absichtliche
-      Fehler der Engine“ stand bisher in den Einstellungen und beschnitt auch die vorgefertigten
-      Bots. Seit deinem Wunsch steht sie unter Spielen bei „Eigene Stufe“. Dort sieht man sie bei
-      einem vorgefertigten Bot nicht mehr; sie heimlich weiter wirken zu lassen, wäre verwirrend,
-      und die Bots sind mit ihrer eigenen Liste gemessen und beschrieben (Sprechblase).
-      **Empfehlung (umgesetzt):** Die Liste gilt nur für die eigene Stufe; vorgefertigte und
-      eigene Bots spielen immer mit ihrer eigenen Liste. Sag Bescheid, wenn die Liste auch die
-      vorgefertigten Bots beschneiden soll; dann zeige ich sie auch dort.
+  Fehler der Engine“ stand bisher in den Einstellungen und beschnitt auch die vorgefertigten
+  Bots. Seit deinem Wunsch steht sie unter Spielen bei „Eigene Stufe“. Dort sieht man sie bei
+  einem vorgefertigten Bot nicht mehr; sie heimlich weiter wirken zu lassen, wäre verwirrend,
+  und die Bots sind mit ihrer eigenen Liste gemessen und beschrieben (Sprechblase).
+  **Empfehlung (umgesetzt):** Die Liste gilt nur für die eigene Stufe; vorgefertigte und
+  eigene Bots spielen immer mit ihrer eigenen Liste. Sag Bescheid, wenn die Liste auch die
+  vorgefertigten Bots beschneiden soll; dann zeige ich sie auch dort.
 - S24. **Namen der Stufen und Lage der Skala (Opus, 0.2.85, Stand 0.2.88):** Gemessen ist
-      Stufe 1 („Einsteiger“) etwa 1200, Stufe 2 („Anfänger“) etwa 1550, Stufe 3 etwa 1900,
-      Stufe 4 etwa 2100, Stufe 5 („Vereinsanfänger“) etwa 2350 bis Stufe 8 etwa 3200. Die
-      Abstände stammen aus über 800 Partien der Bots gegeneinander, die Lage aus Partien der
-      Stufen 1 bis 3 gegen sich selbst: Ihre Genauigkeit (70 %, 77 %, 83 %) ergibt über dieselbe
-      Rechnung wie „Deine Spielstärke“ etwa 1190, 1560 und 1890, und diese drei Anker passen auf
-      etwa 30 Punkte zu den Ergebnissen. Unsicher bleibt, ob ein Bot mit 70 % so spielt wie ein
-      Mensch mit 70 % (Bots machen seltene grobe Fehler, Menschen viele mittlere); das zeigt erst
-      dein Test N335. Seit 0.2.88 gibt es für schwache Leser die Gruppe „Zum Spaß“ (etwa 600 bis
-      1100), damit ist der frühere Vorschlag, die Stufen 1 bis 4 schwächer zu machen, vom Tisch.
-      Offen sind nur die Namen: „Vereinsanfänger“ bei etwa 2350 passt nicht. **Empfehlung:** Nach
-      N335 entscheiden. Bestätigt dein Test die Zahlen, schlage ich neue Namen vor (etwa
-      Gelegenheitsspieler, Vereinsspieler, Starker Vereinsspieler, Experte, Meister, Großmeister,
-      Weltklasse, Engine); liegen die Zahlen zu hoch, verschiebe ich die ganze Skala. Noch nicht
-      umgesetzt, weil beides an deinem Test hängt.
+  Stufe 1 („Einsteiger“) etwa 1200, Stufe 2 („Anfänger“) etwa 1550, Stufe 3 etwa 1900,
+  Stufe 4 etwa 2100, Stufe 5 („Vereinsanfänger“) etwa 2350 bis Stufe 8 etwa 3200. Die
+  Abstände stammen aus über 800 Partien der Bots gegeneinander, die Lage aus Partien der
+  Stufen 1 bis 3 gegen sich selbst: Ihre Genauigkeit (70 %, 77 %, 83 %) ergibt über dieselbe
+  Rechnung wie „Deine Spielstärke“ etwa 1190, 1560 und 1890, und diese drei Anker passen auf
+  etwa 30 Punkte zu den Ergebnissen. Unsicher bleibt, ob ein Bot mit 70 % so spielt wie ein
+  Mensch mit 70 % (Bots machen seltene grobe Fehler, Menschen viele mittlere); das zeigt erst
+  dein Test N335. Seit 0.2.88 gibt es für schwache Leser die Gruppe „Zum Spaß“ (etwa 600 bis
+  1100), damit ist der frühere Vorschlag, die Stufen 1 bis 4 schwächer zu machen, vom Tisch.
+  Offen sind nur die Namen: „Vereinsanfänger“ bei etwa 2350 passt nicht. **Empfehlung:** Nach
+  N335 entscheiden. Bestätigt dein Test die Zahlen, schlage ich neue Namen vor (etwa
+  Gelegenheitsspieler, Vereinsspieler, Starker Vereinsspieler, Experte, Meister, Großmeister,
+  Weltklasse, Engine); liegen die Zahlen zu hoch, verschiebe ich die ganze Skala. Noch nicht
+  umgesetzt, weil beides an deinem Test hängt.
 
 #### F. Trainer der Stufe 3 (Opus, 18.10.2026; schon umgesetzt, Widerspruch genügt)
 
 - F1. **Fehlerdatenbank (0.2.65):** Fehlerart ist je eine Zeile der Gesamt-Checkliste
-      (Kapitel 0 bis 12, gespeichert als Kapitelnummer, damit sich die Texte ändern dürfen).
-      Höchstens 500 Einträge, der älteste fällt dann weg. Der Vorschlag nimmt die häufigste
-      Fehlerart der letzten vier Wochen und den ersten fertigen Trainer zu ihrem Kapitel (Kapitel 1
-      → Schach-Röntgen-Trainer, 7 → Taktiktrainer); zu Kapitel 11 gibt es keinen eigenen Fehler-
-      Trainer, dann kommt die nächsthäufige Fehlerart. Der Knopf im Rückblick steht bei jedem Zug,
-      auch bei guten (ein Fehler zeigt sich manchmal erst einen Zug später). Die Einträge stehen in
-      deinen Nutzerdaten (Format 4) und kommen mit in die Datensicherung.
-      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.65, Widerspruch genügt.
+  (Kapitel 0 bis 12, gespeichert als Kapitelnummer, damit sich die Texte ändern dürfen).
+  Höchstens 500 Einträge, der älteste fällt dann weg. Der Vorschlag nimmt die häufigste
+  Fehlerart der letzten vier Wochen und den ersten fertigen Trainer zu ihrem Kapitel (Kapitel 1
+  → Schach-Röntgen-Trainer, 7 → Taktiktrainer); zu Kapitel 11 gibt es keinen eigenen Fehler-
+  Trainer, dann kommt die nächsthäufige Fehlerart. Der Knopf im Rückblick steht bei jedem Zug,
+  auch bei guten (ein Fehler zeigt sich manchmal erst einen Zug später). Die Einträge stehen in
+  deinen Nutzerdaten (Format 4) und kommen mit in die Datensicherung.
+  **Empfehlung:** so lassen. Schon umgesetzt in 0.2.65, Widerspruch genügt.
 
 - F2. **Denkroutine-Trainer (0.2.66):** Stellungen aus Kapitel 7, 11 und 12 (Taktik,
-      Meisterpartien, Denkroutine), ohne Schach, mit mindestens zehn Steinen und acht Zügen zur
-      Wahl; drei je Runde. Die Minute ist fest, ohne Abkürzung. Die Eingabe ist Text in
-      Buchnotation (englische Buchstaben gehen auch), weil zwei Kandidaten und zwei Antworten auf
-      dem Brett schwer auseinanderzuhalten sind. Gelöst, wenn zu beiden Kandidaten eine
-      regelgerechte Antwort steht und der bessere Kandidat höchstens 0,5 Bauern hinter dem Zug der
-      Engine liegt; ob die Antwort die stärkste war, zeigt die App, zählt aber nicht.
-      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.66, Widerspruch genügt.
+  Meisterpartien, Denkroutine), ohne Schach, mit mindestens zehn Steinen und acht Zügen zur
+  Wahl; drei je Runde. Die Minute ist fest, ohne Abkürzung. Die Eingabe ist Text in
+  Buchnotation (englische Buchstaben gehen auch), weil zwei Kandidaten und zwei Antworten auf
+  dem Brett schwer auseinanderzuhalten sind. Gelöst, wenn zu beiden Kandidaten eine
+  regelgerechte Antwort steht und der bessere Kandidat höchstens 0,5 Bauern hinter dem Zug der
+  Engine liegt; ob die Antwort die stärkste war, zeigt die App, zählt aber nicht.
+  **Empfehlung:** so lassen. Schon umgesetzt in 0.2.66, Widerspruch genügt.
 
 - F3. **Planbilanz-Übung (0.2.69):** Die Antworten der Planfragen sind die Sätze, die die
-      Werkzeuge der App zu den drei Fragen rechnen, nicht die Texte deiner Planbilanzen (die zeigt
-      die App seit dem 15.10. nicht mehr). Falsche Antworten: derselbe Satz für die andere Seite
-      und der einer weit entfernten Stellung. Stellungen, in denen ein Satz nichts sagt („Noch
-      offen“, „noch kein erkennbarer Plan“, „keine Figur“), fallen weg. Die LAP-Lösung kommt aus
-      dem Werkzeug „Welche Figur?“, das Wettrennen aus dem schnellsten Sturm je Seite (bis sechs
-      Züge). Die Planfragen-Runde hat vier, LAP sechs, Wettrennen fünf Aufgaben.
-      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.69, Widerspruch genügt. Wenn du lieber
-      deine eigenen Planbilanz-Sätze als Antworten hättest, bräuchte die App sie als freigegebenen
-      Text (sie sind Buchtext).
+  Werkzeuge der App zu den drei Fragen rechnen, nicht die Texte deiner Planbilanzen (die zeigt
+  die App seit dem 15.10. nicht mehr). Falsche Antworten: derselbe Satz für die andere Seite
+  und der einer weit entfernten Stellung. Stellungen, in denen ein Satz nichts sagt („Noch
+  offen“, „noch kein erkennbarer Plan“, „keine Figur“), fallen weg. Die LAP-Lösung kommt aus
+  dem Werkzeug „Welche Figur?“, das Wettrennen aus dem schnellsten Sturm je Seite (bis sechs
+  Züge). Die Planfragen-Runde hat vier, LAP sechs, Wettrennen fünf Aufgaben.
+  **Empfehlung:** so lassen. Schon umgesetzt in 0.2.69, Widerspruch genügt. Wenn du lieber
+  deine eigenen Planbilanz-Sätze als Antworten hättest, bräuchte die App sie als freigegebenen
+  Text (sie sind Buchtext).
 
 - F4. **Abweichungsmodus (0.2.70):** Die Eröffnungen und Varianten sind die aus Kapitel 2
-      (wie im Repertoire-Trainer). Die Engine weicht frühestens nach dem 4., spätestens nach dem 12. Halbzug ab, immer mit ihrem besten Zug, der kein Buchzug ist (Buch heißt: irgendeine
-      Zugfolge der Kapitel 2 und 3). Gut ist eine Antwort bis 0,5 Bauern hinter dem besten Zug,
-      ungenau bis 1,2, darüber ein Fehler (wie die Auswertung nach der Partie). Die Einschätzung
-      zeigt die Fazits der Werkzeuge Zielbilanz und Todsünden, keine vorbereiteten Texte, weil es
-      zu Stellungen außerhalb des Buches keine gibt.
-      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.70, Widerspruch genügt.
+  (wie im Repertoire-Trainer). Die Engine weicht frühestens nach dem 4., spätestens nach dem 12. Halbzug ab, immer mit ihrem besten Zug, der kein Buchzug ist (Buch heißt: irgendeine
+  Zugfolge der Kapitel 2 und 3). Gut ist eine Antwort bis 0,5 Bauern hinter dem besten Zug,
+  ungenau bis 1,2, darüber ein Fehler (wie die Auswertung nach der Partie). Die Einschätzung
+  zeigt die Fazits der Werkzeuge Zielbilanz und Todsünden, keine vorbereiteten Texte, weil es
+  zu Stellungen außerhalb des Buches keine gibt.
+  **Empfehlung:** so lassen. Schon umgesetzt in 0.2.70, Widerspruch genügt.
 
 - F5. **30-Minuten-Plan (0.2.71):** Eine geführte Einheit mit den drei Schritten deiner
-      Tabelle in Kapitel 12; die Uhr zeigt die Restzeit des Schritts und läuft über die Zeit
-      weiter, statt abzubrechen (das Buch nennt Richtzeiten). Die Taktikaufgaben sind zwei
-      gemischte der leichtesten Stufe; die Partie spielst du im normalen Spielen-Bildschirm, die
-      Analyse im Rückblick der letzten Partie; am Studientag führen Knöpfe zu den Trainern des
-      Bereichs (Taktik: Taktiktrainer, Studien; Endspiel: Endspieltrainer; Strategie: Zug
-      erraten, Planbilanz, Strukturerkenner; Eröffnung: Repertoire, Abweichungsmodus,
-      Zielbilanz, Faktorenbilanz). Tag und Bereich wechseln nach jeder abgeschlossenen Einheit,
-      ein Abbruch schaltet nicht weiter. Der Stand liegt nur auf dem Gerät (nicht in der
-      Datensicherung); eine Einheit, die drei Stunden liegt, verfällt. Eine abgeschlossene
-      Einheit zählt als Durchgang im Fortschritt. Die Bedenkzeit 10+0 bietet der
-      Spielen-Bildschirm noch nicht an (Fables Bereich, ist bei Fable angefragt); bis dahin
-      steht im Plan „ohne Uhr spielen“.
-      **Empfehlung:** so lassen. Schon umgesetzt in 0.2.71, Widerspruch genügt.
+  Tabelle in Kapitel 12; die Uhr zeigt die Restzeit des Schritts und läuft über die Zeit
+  weiter, statt abzubrechen (das Buch nennt Richtzeiten). Die Taktikaufgaben sind zwei
+  gemischte der leichtesten Stufe; die Partie spielst du im normalen Spielen-Bildschirm, die
+  Analyse im Rückblick der letzten Partie; am Studientag führen Knöpfe zu den Trainern des
+  Bereichs (Taktik: Taktiktrainer, Studien; Endspiel: Endspieltrainer; Strategie: Zug
+  erraten, Planbilanz, Strukturerkenner; Eröffnung: Repertoire, Abweichungsmodus,
+  Zielbilanz, Faktorenbilanz). Tag und Bereich wechseln nach jeder abgeschlossenen Einheit,
+  ein Abbruch schaltet nicht weiter. Der Stand liegt nur auf dem Gerät (nicht in der
+  Datensicherung); eine Einheit, die drei Stunden liegt, verfällt. Eine abgeschlossene
+  Einheit zählt als Durchgang im Fortschritt. Die Bedenkzeit 10+0 bietet der
+  Spielen-Bildschirm noch nicht an (Fables Bereich, ist bei Fable angefragt); bis dahin
+  steht im Plan „ohne Uhr spielen“.
+  **Empfehlung:** so lassen. Schon umgesetzt in 0.2.71, Widerspruch genügt.
 
 #### X. Endspieltrainer (Fable, 0.2.49; plausibel entschieden, bitte prüfen)
 
 - X5. **Schwierigkeit:** Grundstufe je Thema (Dame 1, Quadrat 1, Turmmatt 2, Opposition 2,
-      Bauernrennen 2, Randbauer 2, Läuferpaar 3, Schlüsselfelder 3, Durchbruch 3, Freibauer 3,
-      Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
-      erste Zug der einzige ist. Nicht an Lichess geeicht (dort gibt es keine ausspielbaren
-      Endspiele). Verteilung der 80 Stellungen: Stufe 1 viermal, 2 achtmal, 3 19-mal, 4 38-mal,
-      5 elfmal. Das Gewicht bei 4 und 5 kommt von den Turmendspielen (23) und Leichtfiguren (11)
-      aus Kapitel 9 und folgt damit dem Buch (Kapitel 8 Grundlagen, Kapitel 9 schwerer). Wer eine
-      Stufe wählt, von der es wenige gibt, bekommt die Nachbarstufen dazu; eine Runde hat sechs
-      Stellungen. **Empfehlung (Opus, 18.10.):** so lassen und nach deinem Test nachjustieren.
-      Schon umgesetzt (so in der App seit 0.2.49), Widerspruch genügt.
+  Bauernrennen 2, Randbauer 2, Läuferpaar 3, Schlüsselfelder 3, Durchbruch 3, Freibauer 3,
+  Zugzwang 4, Turmendspiel 4, Dame gegen Bauer 4, Leichtfiguren 4), eine Stufe mehr, wenn der
+  erste Zug der einzige ist. Nicht an Lichess geeicht (dort gibt es keine ausspielbaren
+  Endspiele). Verteilung der 80 Stellungen: Stufe 1 viermal, 2 achtmal, 3 19-mal, 4 38-mal,
+  5 elfmal. Das Gewicht bei 4 und 5 kommt von den Turmendspielen (23) und Leichtfiguren (11)
+  aus Kapitel 9 und folgt damit dem Buch (Kapitel 8 Grundlagen, Kapitel 9 schwerer). Wer eine
+  Stufe wählt, von der es wenige gibt, bekommt die Nachbarstufen dazu; eine Runde hat sechs
+  Stellungen. **Empfehlung (Opus, 18.10.):** so lassen und nach deinem Test nachjustieren.
+  Schon umgesetzt (so in der App seit 0.2.49), Widerspruch genügt.
 
 #### T. Trainerdaten für Taktiktrainer, Strukturerkenner und „Falle oder Köder“ (Fable; plausibel entschieden)
 
@@ -3554,230 +3552,230 @@ Die drei Trainer sind seit 0.2.45 in der App (Teil 1, N236 bis N238; Rückfragen
 hat, mit Rückfrage:
 
 - T1. **Übungen, Engine-Prüfung:** Alle 86 Übungen sind mit Stockfish gegengeprüft: 56
-      Lösungen halten, 6 sind gleichwertig zu einem anderen Zug, eine ist etwas schwächer, keine
-      ist widerlegt. Vorschläge für zusätzlich „akzeptierte“ Züge (gleich gut laut Engine):
-      Übung 2 (Abb. 0.26, Buch 6... h6): a6, Le7, d6, a5; Übung 6 (1.42, Buch 4... Sf6,
-      akzeptiert Lc5): dazu Df6, Lb4+, Sxd4; Übung 11 (2.151, Buch 4... h5, akzeptiert h6): dazu
-      Dc7, Da5+, a6; Übung 15 (3.81, Buch 4... d5): dxc3, Sf6; Übung 39 (7.51, Buch 1. Sf4+):
-      Sxf6+ gewinnt ebenfalls klar. Bei den Technikübungen 60 (8.65, 1. g5) und 66 (9.47, Lucena)
-      gewinnen auch viele andere Züge, Vorschlag: dort nichts ergänzen, die Übung lehrt einen
-      Weg. Befund: Übung 83 (12.5, Kandidatenzüge): 1. Dc2 ist 0,44 schwächer als 1. Te1, beide
-      vorteilhaft. Welche Vorschläge übernehmen, und Übung 83 so lassen?
-      **Empfehlung:** die Vorschläge für die Übungen 6, 11, 15 und 39 übernehmen. Wer einen laut
-      Engine gleich guten Zug findet, soll nicht „falsch“ hören; die Erklärung zeigt danach ohnehin
-      die Lösung des Buches. Übung 2 ist in der App eine Denkaufgabe (Notation schreiben), dort
-      ändern die Vorschläge nichts. Übung 83 so lassen, beide Züge sind gut.
-      **Nachgelesen im Buch (17.10.2026):** Das Buch spricht gegen mehrere Engine-Vorschläge,
-      deshalb ist die Umsetzung aus 0.2.47 geändert. Übung 6: Das Buch kritisiert 4... Sxd4?! und
-      empfiehlt „einen Entwicklungszug, der selbst etwas angreift“; dazu passt nur 4... Lb4+ (Df6
-      wäre die verfrühte Dame). Übung 11: „Richtig ist 4... h5 oder 4... h6“; kein Zusatz. Übung
-      15: gesucht ist ein Zug „ohne weiteres Material zu nehmen“, 4... d5 nur „die einfachste
-      Antwort“: 4... Sf6 gilt, dxc3 nicht. Übung 39: „Auch 1. Sxf6+ gibt Schach, … lässt die Dame
-      allerdings stehen“; kein Zusatz. Übung 83: „ein ruhiger Zug wie 1. Dc2“, also ist Dc2 nur ein
-      Beispiel: 1. Te1 gilt jetzt auch. Schon umgesetzt in 0.2.55 (Nachtest N270), Widerspruch
-      genügt.
+  Lösungen halten, 6 sind gleichwertig zu einem anderen Zug, eine ist etwas schwächer, keine
+  ist widerlegt. Vorschläge für zusätzlich „akzeptierte“ Züge (gleich gut laut Engine):
+  Übung 2 (Abb. 0.26, Buch 6... h6): a6, Le7, d6, a5; Übung 6 (1.42, Buch 4... Sf6,
+  akzeptiert Lc5): dazu Df6, Lb4+, Sxd4; Übung 11 (2.151, Buch 4... h5, akzeptiert h6): dazu
+  Dc7, Da5+, a6; Übung 15 (3.81, Buch 4... d5): dxc3, Sf6; Übung 39 (7.51, Buch 1. Sf4+):
+  Sxf6+ gewinnt ebenfalls klar. Bei den Technikübungen 60 (8.65, 1. g5) und 66 (9.47, Lucena)
+  gewinnen auch viele andere Züge, Vorschlag: dort nichts ergänzen, die Übung lehrt einen
+  Weg. Befund: Übung 83 (12.5, Kandidatenzüge): 1. Dc2 ist 0,44 schwächer als 1. Te1, beide
+  vorteilhaft. Welche Vorschläge übernehmen, und Übung 83 so lassen?
+  **Empfehlung:** die Vorschläge für die Übungen 6, 11, 15 und 39 übernehmen. Wer einen laut
+  Engine gleich guten Zug findet, soll nicht „falsch“ hören; die Erklärung zeigt danach ohnehin
+  die Lösung des Buches. Übung 2 ist in der App eine Denkaufgabe (Notation schreiben), dort
+  ändern die Vorschläge nichts. Übung 83 so lassen, beide Züge sind gut.
+  **Nachgelesen im Buch (17.10.2026):** Das Buch spricht gegen mehrere Engine-Vorschläge,
+  deshalb ist die Umsetzung aus 0.2.47 geändert. Übung 6: Das Buch kritisiert 4... Sxd4?! und
+  empfiehlt „einen Entwicklungszug, der selbst etwas angreift“; dazu passt nur 4... Lb4+ (Df6
+  wäre die verfrühte Dame). Übung 11: „Richtig ist 4... h5 oder 4... h6“; kein Zusatz. Übung
+  15: gesucht ist ein Zug „ohne weiteres Material zu nehmen“, 4... d5 nur „die einfachste
+  Antwort“: 4... Sf6 gilt, dxc3 nicht. Übung 39: „Auch 1. Sxf6+ gibt Schach, … lässt die Dame
+  allerdings stehen“; kein Zusatz. Übung 83: „ein ruhiger Zug wie 1. Dc2“, also ist Dc2 nur ein
+  Beispiel: 1. Te1 gilt jetzt auch. Schon umgesetzt in 0.2.55 (Nachtest N270), Widerspruch
+  genügt.
 - T2. **Menge der Zusatzaufgaben von Lichess** (gemeinfrei, CC0): 637 Taktikaufgaben (je
-      Motiv und Stufe 8) und 120 Fallen-Aufgaben (je Stufe 12 Fallen und 12 Geschenke), dazu 37
-      Taktik- und 12 Fallenaufgaben aus dem Buch. Genug, zu viel, oder lieber mehr für die Stufen
-      1 bis 3?
-      **Empfehlung:** reicht vorerst. Je Motiv und Stufe acht Aufgaben sind etwa zehn Runden; mehr
-      erst, wenn du oder Testleser merken, dass sich Aufgaben wiederholen.
+  Motiv und Stufe 8) und 120 Fallen-Aufgaben (je Stufe 12 Fallen und 12 Geschenke), dazu 37
+  Taktik- und 12 Fallenaufgaben aus dem Buch. Genug, zu viel, oder lieber mehr für die Stufen
+  1 bis 3?
+  **Empfehlung:** reicht vorerst. Je Motiv und Stufe acht Aufgaben sind etwa zehn Runden; mehr
+  erst, wenn du oder Testleser merken, dass sich Aufgaben wiederholen.
 - T3. **Schwierigkeit:** Die Stufe 1 bis 5 jeder Aufgabe ist gemessen (Lichess-Wertung aus
-      Millionen Lösungsversuchen; Buchaufgaben über die Suchtiefe der Engine daran geeicht). Soll
-      es zusätzlich ein Feld geben, mit dem du die Stufe einzelner Buchaufgaben selbst setzt?
-      **Empfehlung:** nein. Die Stufen sind gemessen, nicht geschätzt; ein Handfeld lohnt sich erst,
-      wenn dir einzelne Buchaufgaben auffallen, die falsch eingestuft wirken.
+  Millionen Lösungsversuchen; Buchaufgaben über die Suchtiefe der Engine daran geeicht). Soll
+  es zusätzlich ein Feld geben, mit dem du die Stufe einzelner Buchaufgaben selbst setzt?
+  **Empfehlung:** nein. Die Stufen sind gemessen, nicht geschätzt; ein Handfeld lohnt sich erst,
+  wenn dir einzelne Buchaufgaben auffallen, die falsch eingestuft wirken.
 - T4. **Fallen aus Kapitel 2 und 3:** Der Fallentrainer hat die zwölf Fallenchecks aus
-      Kapitel 4 (Klammerfalle bis Damenfang auf b2). Sollen auch die Fallen aus den
-      Eröffnungskapiteln dazu (Zugfolgen, in denen ein Schlag mit „?“ steht, etwa im
-      Damengambit)? Die Pipeline könnte sie genauso ziehen.
-      **Empfehlung:** ja. Fallen aus den Eröffnungen des Buches sind genau die, in die Leser später
-      tappen; die Pipeline kann sie mit wenig Aufwand gleich ziehen (Fable).
-      **Schon umgesetzt in 0.2.51 (Nachtest N263): jeder Schlag mit Fragezeichen in den Zugfolgen
-      der Kapitel 2 und 3, den die Engine als Falle bestätigt. Widerspruch genügt.**
-      **Nachgelesen im Buch (17.10.2026):** Kapitel 4: Eine Falle sieht aus wie Gewinn und kostet
-      durch „eine sofortige taktische Möglichkeit“, anders als ein Gambit mit dauerhafter
-      Kompensation. Empfehlung bestätigt: nur Schläge mit sofortiger Widerlegung.
+  Kapitel 4 (Klammerfalle bis Damenfang auf b2). Sollen auch die Fallen aus den
+  Eröffnungskapiteln dazu (Zugfolgen, in denen ein Schlag mit „?“ steht, etwa im
+  Damengambit)? Die Pipeline könnte sie genauso ziehen.
+  **Empfehlung:** ja. Fallen aus den Eröffnungen des Buches sind genau die, in die Leser später
+  tappen; die Pipeline kann sie mit wenig Aufwand gleich ziehen (Fable).
+  **Schon umgesetzt in 0.2.51 (Nachtest N263): jeder Schlag mit Fragezeichen in den Zugfolgen
+  der Kapitel 2 und 3, den die Engine als Falle bestätigt. Widerspruch genügt.**
+  **Nachgelesen im Buch (17.10.2026):** Kapitel 4: Eine Falle sieht aus wie Gewinn und kostet
+  durch „eine sofortige taktische Möglichkeit“, anders als ein Gambit mit dauerhafter
+  Kompensation. Empfehlung bestätigt: nur Schläge mit sofortiger Widerlegung.
 - T5. **Strukturerkenner:** 134 Aufgaben, davon 46 aus Kapitel 5 mit Struktur, Seite und
-      Plan nach dem Unterabschnitt, in dem das Buch die Abbildung zeigt, und 88 aus anderen
-      Kapiteln mit einer klaren Struktur (Isolani, hängende Bauern, Minderheitsangriff,
-      Doppelbauer, festgefahrene Kette, Mehrheit). Die Zuordnung Abbildung → Struktur und die
-      Plan-Sätze sind ein Vorschlag von Claude (die Sätze stehen jetzt in der App, W6 am 17.10. angenommen). Reicht dir die Durchsicht in der App, wenn der
-      Trainer da ist, oder willst du die Tabelle vorher als Liste im Chat sehen?
-      **Empfehlung:** in der App durchsehen. Der Trainer ist seit 0.2.45 da (N238); auffällige
-      Abbildungen und Sätze einfach mit Nummer melden.
-      **Nachgelesen im Buch (17.10.2026):** Das Buch liefert die Zuordnung selbst (Strukturtabelle,
-      Tabelle der Schwächen, Skelettbilanzen mit Folgerung). Drei Pläne wichen ab und folgen jetzt
-      der Folgerung des Buches: 5.43 „Stellung öffnen“ (statt guten Läufer behalten), 5.44 „Raum
-      nutzen“ (statt Flügel der Kette), 11.70 „Vorposten besetzen“ (Springer nach e5; der
-      Doppelbauer ist gedeckt und kein Ziel). 5.17 und 5.22 passen mit den neuen Plan-Sätzen (W6).
-      Schon umgesetzt in 0.2.55 (Nachtest N272).
+  Plan nach dem Unterabschnitt, in dem das Buch die Abbildung zeigt, und 88 aus anderen
+  Kapiteln mit einer klaren Struktur (Isolani, hängende Bauern, Minderheitsangriff,
+  Doppelbauer, festgefahrene Kette, Mehrheit). Die Zuordnung Abbildung → Struktur und die
+  Plan-Sätze sind ein Vorschlag von Claude (die Sätze stehen jetzt in der App, W6 am 17.10. angenommen). Reicht dir die Durchsicht in der App, wenn der
+  Trainer da ist, oder willst du die Tabelle vorher als Liste im Chat sehen?
+  **Empfehlung:** in der App durchsehen. Der Trainer ist seit 0.2.45 da (N238); auffällige
+  Abbildungen und Sätze einfach mit Nummer melden.
+  **Nachgelesen im Buch (17.10.2026):** Das Buch liefert die Zuordnung selbst (Strukturtabelle,
+  Tabelle der Schwächen, Skelettbilanzen mit Folgerung). Drei Pläne wichen ab und folgen jetzt
+  der Folgerung des Buches: 5.43 „Stellung öffnen“ (statt guten Läufer behalten), 5.44 „Raum
+  nutzen“ (statt Flügel der Kette), 11.70 „Vorposten besetzen“ (Springer nach e5; der
+  Doppelbauer ist gedeckt und kein Ziel). 5.17 und 5.22 passen mit den neuen Plan-Sätzen (W6).
+  Schon umgesetzt in 0.2.55 (Nachtest N272).
 
 #### C. Neue Regeln der Werkzeuge (plausibel entschieden)
 
 - C1. **König im Schach in der Faktorenbilanz** (C1.6): Claude wertet ihn „teils“ (die
-      Empfehlung sagte nur „nicht gut“). Deshalb heißt es in 3.23 und 3.68 weiter „Weiß liegt
-      vorn bei Königssicherheit“ (der schwarze König ist „schlecht“). Soll ein König im Schach
-      „schlecht“ heißen?
-      **Empfehlung:** „teils“ lassen. Ein Schach ist oft nur vorübergehend; „schlecht“ wäre der
-      König erst, wenn er dauerhaft ungeschützt steht.
-      **Nachgelesen im Buch (17.10.2026):** Abb. 3.68: Das Buch sagt „Weiß ist schon verloren“, es
-      bleibt nur 8. Ke2, dann Lg4#. Dort war „Weiß liegt vorn bei Königssicherheit“ falsch. Jetzt
-      heißt ein König im Schach mit nur einem einzigen Zug „schlecht – der König steht im Schach
-      und hat nur einen Zug“; sonst bleibt es bei „teils“ (3.23 hat mehrere Abwehrzüge, das Buch
-      gibt dort keine Bilanz). Schon umgesetzt in 0.2.55, Widerspruch genügt.
+  Empfehlung sagte nur „nicht gut“). Deshalb heißt es in 3.23 und 3.68 weiter „Weiß liegt
+  vorn bei Königssicherheit“ (der schwarze König ist „schlecht“). Soll ein König im Schach
+  „schlecht“ heißen?
+  **Empfehlung:** „teils“ lassen. Ein Schach ist oft nur vorübergehend; „schlecht“ wäre der
+  König erst, wenn er dauerhaft ungeschützt steht.
+  **Nachgelesen im Buch (17.10.2026):** Abb. 3.68: Das Buch sagt „Weiß ist schon verloren“, es
+  bleibt nur 8. Ke2, dann Lg4#. Dort war „Weiß liegt vorn bei Königssicherheit“ falsch. Jetzt
+  heißt ein König im Schach mit nur einem einzigen Zug „schlecht – der König steht im Schach
+  und hat nur einen Zug“; sonst bleibt es bei „teils“ (3.23 hat mehrere Abwehrzüge, das Buch
+  gibt dort keine Bilanz). Schon umgesetzt in 0.2.55, Widerspruch genügt.
 - C2. **W4 in 4.21** (C1.7): Mit der neuen Regel (einziger Verteidiger gegen Matt) meldet die
-      App dort zusätzlich die Bauern e2 und g2 als einzige Verteidiger von f3 gegen Sxf3#.
-      Schachlich richtig, aber nicht das, was das Buch nennt. So lassen?
-      **Empfehlung:** so lassen. Es ist schachlich richtig, und der Leser lernt dabei, wer f3
-      wirklich verteidigt.
-      **Nachgelesen im Buch (17.10.2026):** Die Rückfrage war falsch gestellt: Nach Sxf3+ verlässt
-      der Springer e5 die e-Linie, dann fesselt die Dame e7 den Bauern e2 an den König, genau wie
-      das Buch es für 4.22 erklärt („exd3 ist illegal“). e2 verteidigt f3 also nicht. Jetzt zählt
-      ein Verteidiger gegen ein Matt nur, wenn er nach dem Mattzug legal ziehen darf; in 4.21
-      bleibt nur „Bauer g2, einziger Verteidiger von f3 gegen Sxf3#“. Schon umgesetzt in 0.2.55.
+  App dort zusätzlich die Bauern e2 und g2 als einzige Verteidiger von f3 gegen Sxf3#.
+  Schachlich richtig, aber nicht das, was das Buch nennt. So lassen?
+  **Empfehlung:** so lassen. Es ist schachlich richtig, und der Leser lernt dabei, wer f3
+  wirklich verteidigt.
+  **Nachgelesen im Buch (17.10.2026):** Die Rückfrage war falsch gestellt: Nach Sxf3+ verlässt
+  der Springer e5 die e-Linie, dann fesselt die Dame e7 den Bauern e2 an den König, genau wie
+  das Buch es für 4.22 erklärt („exd3 ist illegal“). e2 verteidigt f3 also nicht. Jetzt zählt
+  ein Verteidiger gegen ein Matt nur, wenn er nach dem Mattzug legal ziehen darf; in 4.21
+  bleibt nur „Bauer g2, einziger Verteidiger von f3 gegen Sxf3#“. Schon umgesetzt in 0.2.55.
 - C4. **Gegenschlag zählen** (C1.13): Bei einem Hebel zählt die App weiter auf dem Zielfeld,
-      weil du in 6.3 („drei gegen drei“) und 6.5 so zählst; nur bei schon bestehender Spannung auf
-      dem Feld des angegriffenen Bauern. Einverstanden?
-      **Empfehlung:** so lassen. So zählst du selbst in 6.3 und 6.5.
+  weil du in 6.3 („drei gegen drei“) und 6.5 so zählst; nur bei schon bestehender Spannung auf
+  dem Feld des angegriffenen Bauern. Einverstanden?
+  **Empfehlung:** so lassen. So zählst du selbst in 6.3 und 6.5.
 - C5. **Dauerschach** (C1.18): Claude nennt es nur, wenn die schachgebende Seite mindestens
-      eine Leichtfigur zurückliegt (dein Motiv 12: „Wer klar verliert …“). Sonst hießen die
-      Schachs im Turmendspiel 9.6 Dauerschach. Einverstanden?
-      **Empfehlung:** so lassen. Sonst würde jede Schachserie im Turmendspiel als Dauerschach
-      gemeldet.
-      **Nachgelesen im Buch (17.10.2026):** Glossar und Kapitel 0: Dauerschach heißt, „der König
-      entkommt den Schachs nicht“; eine Materialbedingung gibt es nicht. Abb. 9.34: Schwarz liegt
-      nur einen Bauern zurück, und das Buch nennt die Rettung „das Dauerschach“. Jetzt zählt auch
-      eine Schachfolge, die die Stellung wiederholt (der König entkommt nicht); die
-      Leichtfigur-Regel bleibt für Schachserien ohne Wiederholung. 9.34 heißt damit Dauerschach.
-      Schon umgesetzt in 0.2.55 (Nachtest N274).
+  eine Leichtfigur zurückliegt (dein Motiv 12: „Wer klar verliert …“). Sonst hießen die
+  Schachs im Turmendspiel 9.6 Dauerschach. Einverstanden?
+  **Empfehlung:** so lassen. Sonst würde jede Schachserie im Turmendspiel als Dauerschach
+  gemeldet.
+  **Nachgelesen im Buch (17.10.2026):** Glossar und Kapitel 0: Dauerschach heißt, „der König
+  entkommt den Schachs nicht“; eine Materialbedingung gibt es nicht. Abb. 9.34: Schwarz liegt
+  nur einen Bauern zurück, und das Buch nennt die Rettung „das Dauerschach“. Jetzt zählt auch
+  eine Schachfolge, die die Stellung wiederholt (der König entkommt nicht); die
+  Leichtfigur-Regel bleibt für Schachserien ohne Wiederholung. 9.34 heißt damit Dauerschach.
+  Schon umgesetzt in 0.2.55 (Nachtest N274).
 - C6. **Gabel** (C2.12): Claude verlangt, dass jedes genannte Ziel für sich gewinnbar ist
-      (König, wertvoller als der Gabler oder ungedeckt), sonst wäre König plus gedeckter Läufer
-      auch eine Gabel. Passt das zu deinem „Eine Gabel sollte Material gewinnen“?
-      **Empfehlung:** so lassen. Das ist genau dein Satz „Eine Gabel sollte Material gewinnen“.
-      **Nachgelesen im Buch (17.10.2026):** Kapitel 7: „Material gewinnt die Gabel allerdings nur,
-      wenn mindestens ein Ziel ungedeckt oder mehr wert ist als der Springer.“ Das ist eine
-      notwendige Bedingung. Die Regel der App (jedes genannte Ziel für sich gewinnbar, König zählt
-      immer) ist strenger, aber folgerichtig: Der Gegner rettet das wertvollere Ziel, also muss das
-      andere fallen können. Ein Satz „Eine Gabel sollte Material gewinnen“ steht so nicht im Buch,
-      das war deine Formulierung bei C2.12. Empfehlung: so lassen.
+  (König, wertvoller als der Gabler oder ungedeckt), sonst wäre König plus gedeckter Läufer
+  auch eine Gabel. Passt das zu deinem „Eine Gabel sollte Material gewinnen“?
+  **Empfehlung:** so lassen. Das ist genau dein Satz „Eine Gabel sollte Material gewinnen“.
+  **Nachgelesen im Buch (17.10.2026):** Kapitel 7: „Material gewinnt die Gabel allerdings nur,
+  wenn mindestens ein Ziel ungedeckt oder mehr wert ist als der Springer.“ Das ist eine
+  notwendige Bedingung. Die Regel der App (jedes genannte Ziel für sich gewinnbar, König zählt
+  immer) ist strenger, aber folgerichtig: Der Gegner rettet das wertvollere Ziel, also muss das
+  andere fallen können. Ein Satz „Eine Gabel sollte Material gewinnen“ steht so nicht im Buch,
+  das war deine Formulierung bei C2.12. Empfehlung: so lassen.
 - C7. **Abb. 7.10** (C1.18): Die Zugfolge beginnt jetzt eine Stellung früher mit 1. Sf7+
-      (der Springer kann nur von e5 kommen). Damit nennt „Motiv“ das Abzugsschach. Freigeben?
-      **Empfehlung:** freigeben. Die Zugfolge ist legal und führt zur Abbildung, und der Springer
-      kann nur von e5 kommen.
-      **Nachgelesen im Buch (17.10.2026):** Die Bildunterschrift sagt „Abzugsschach nach 1. Sf7+“
-      mit dem Turm e1; das geht nur vom Feld e5 aus. Empfehlung bestätigt.
+  (der Springer kann nur von e5 kommen). Damit nennt „Motiv“ das Abzugsschach. Freigeben?
+  **Empfehlung:** freigeben. Die Zugfolge ist legal und führt zur Abbildung, und der Springer
+  kann nur von e5 kommen.
+  **Nachgelesen im Buch (17.10.2026):** Die Bildunterschrift sagt „Abzugsschach nach 1. Sf7+“
+  mit dem Turm e1; das geht nur vom Feld e5 aus. Empfehlung bestätigt.
 - C8. **Berliner Endspiel aus schwarzer Sicht** (C1.9): Die App schlägt Schwarz dort einen
-      Minderheitsangriff am Königsflügel vor; das Buch sagt dazu nichts. So lassen?
-      **Empfehlung:** nicht mehr anzeigen. Im Berliner Endspiel spielt Schwarz in der Praxis mit dem
-      Läuferpaar und der Mehrheit am Damenflügel, nicht mit einem Minderheitsangriff am
-      Königsflügel; ein Rat, den das Buch nicht stützt, verwirrt eher.
-      **Schon umgesetzt in 0.2.47 (Nachtest N247): Steht der Kandidat der gegnerischen Mehrheit
-      schon in der eigenen Hälfte (im Berliner Endspiel e5), nennt die App keinen
-      Minderheitsangriff. Schwarz bekommt dann die allgemeine Regel „Schwarz spielt am
-      Damenflügel: Dort bildet die Mehrheit einen Freibauern.“ (die Mehrheit ist durch den
-      Doppelbauern c7/c6 krank; das Läuferpaar sieht das Werkzeug nicht, es schaut nur auf die
-      Bauern). Carlsbad (5.32 bis 5.34, 6.8) bleibt unverändert. Widerspruch genügt.**
+  Minderheitsangriff am Königsflügel vor; das Buch sagt dazu nichts. So lassen?
+  **Empfehlung:** nicht mehr anzeigen. Im Berliner Endspiel spielt Schwarz in der Praxis mit dem
+  Läuferpaar und der Mehrheit am Damenflügel, nicht mit einem Minderheitsangriff am
+  Königsflügel; ein Rat, den das Buch nicht stützt, verwirrt eher.
+  **Schon umgesetzt in 0.2.47 (Nachtest N247): Steht der Kandidat der gegnerischen Mehrheit
+  schon in der eigenen Hälfte (im Berliner Endspiel e5), nennt die App keinen
+  Minderheitsangriff. Schwarz bekommt dann die allgemeine Regel „Schwarz spielt am
+  Damenflügel: Dort bildet die Mehrheit einen Freibauern.“ (die Mehrheit ist durch den
+  Doppelbauern c7/c6 krank; das Läuferpaar sieht das Werkzeug nicht, es schaut nur auf die
+  Bauern). Carlsbad (5.32 bis 5.34, 6.8) bleibt unverändert. Widerspruch genügt.**
 
 - C9. **Kandidaten in 12.4** (C1.28): Nur „Matt scheidet aus“ hätte Dd1+ (−9) zum besten
-      Kandidaten gemacht. Claude ergänzt deshalb einen Zug, der ein drohendes Matt abwehrt (dort
-      5... Sf6, wie in der Opernpartie). Einverstanden?
-      **Empfehlung:** so lassen. Ohne den Abwehrzug wäre ein Damenschach mit −9 der „beste“
-      Kandidat, was dem Leser offensichtlich falsch vorkäme.
-      **Nachgelesen im Buch (17.10.2026):** Kapitel 11: „6. Lc4 droht Matt auf f7“, und Schwarz
-      stellt mit 6... Sf6 den Springer dazwischen (es ist Zug 6..., nicht 5...). Empfehlung
-      bestätigt.
+  Kandidaten gemacht. Claude ergänzt deshalb einen Zug, der ein drohendes Matt abwehrt (dort
+  5... Sf6, wie in der Opernpartie). Einverstanden?
+  **Empfehlung:** so lassen. Ohne den Abwehrzug wäre ein Damenschach mit −9 der „beste“
+  Kandidat, was dem Leser offensichtlich falsch vorkäme.
+  **Nachgelesen im Buch (17.10.2026):** Kapitel 11: „6. Lc4 droht Matt auf f7“, und Schwarz
+  stellt mit 6... Sf6 den Springer dazwischen (es ist Zug 6..., nicht 5...). Empfehlung
+  bestätigt.
 
 #### K. Stufen der Engine (AP 11, Fable; plausibel entschieden)
 
 - K1. **Abstufung:** Fühlt sich die Abstufung nach N175 bis N177 richtig an (Konzept 8.2)?
-      Wenn eine Stufe zu stark oder zu schwach ist: Welche? (Stufe 1 bis 3: Skill Level 0 mit
-      Fehlerquote jeder dritte, vierte, fünfte Zug (Stufe 3 seit 0.2.85, vorher etwa jeder siebte); Stufe 4: Skill 3, jeder sechzehnte; Stufe 5 bis 7:
-      Skill 6, 10, 15 ohne Fehler; Stufe 8 volle Stärke.)
-      **Empfehlung:** erst nach deinem Test entscheiden. Wirkt eine Stufe zu sprunghaft, ist das
-      eher ein Fall für R4 (Stufen menschlicher, seit 0.2.52) als für andere Zahlen.
+  Wenn eine Stufe zu stark oder zu schwach ist: Welche? (Stufe 1 bis 3: Skill Level 0 mit
+  Fehlerquote jeder dritte, vierte, fünfte Zug (Stufe 3 seit 0.2.85, vorher etwa jeder siebte); Stufe 4: Skill 3, jeder sechzehnte; Stufe 5 bis 7:
+  Skill 6, 10, 15 ohne Fehler; Stufe 8 volle Stärke.)
+  **Empfehlung:** erst nach deinem Test entscheiden. Wirkt eine Stufe zu sprunghaft, ist das
+  eher ein Fall für R4 (Stufen menschlicher, seit 0.2.52) als für andere Zahlen.
 - K2. **Damenopfer auf Stufe 1:** Nur Stufe 1 darf die Dame verschenken (Konzept: „ab Stufe
-      2 nicht“). Soll auch Stufe 1 die Dame behalten (dann höchstens ein Turm Verlust)?
-      **Empfehlung:** so lassen. Echte Einsteiger verlieren auch mal die Dame, und das Konzept nimmt
-      erst ab Stufe 2 die Dame aus.
+  2 nicht“). Soll auch Stufe 1 die Dame behalten (dann höchstens ein Turm Verlust)?
+  **Empfehlung:** so lassen. Echte Einsteiger verlieren auch mal die Dame, und das Konzept nimmt
+  erst ab Stufe 2 die Dame aus.
 - K3. **Buchtreue:** Die Engine folgt auf allen Stufen zu 85 % je Zug den Eröffnungen aus
-      Kapitel 2 und 3, also auch der „Einsteiger“ einige Züge lang fehlerfrei. So lassen (der
-      Leser sieht die Eröffnungen des Buches), oder je Stufe weniger (etwa 50 % auf Stufe 1)?
-      Seit 0.2.40 betrifft die Frage nur die Wahl „eine Eröffnung des Buches (zufällig)“; „frei“
-      spielt ohne Buch, eine bestimmte Eröffnung mit Buchtreue 1.
-      **Empfehlung:** so lassen. Seit 0.2.40 gibt es „frei“; wer ohne Buch spielen will, wählt das,
-      und wer die Eröffnungen sehen will, bekommt sie auch auf Stufe 1.
+  Kapitel 2 und 3, also auch der „Einsteiger“ einige Züge lang fehlerfrei. So lassen (der
+  Leser sieht die Eröffnungen des Buches), oder je Stufe weniger (etwa 50 % auf Stufe 1)?
+  Seit 0.2.40 betrifft die Frage nur die Wahl „eine Eröffnung des Buches (zufällig)“; „frei“
+  spielt ohne Buch, eine bestimmte Eröffnung mit Buchtreue 1.
+  **Empfehlung:** so lassen. Seit 0.2.40 gibt es „frei“; wer ohne Buch spielen will, wählt das,
+  und wer die Eröffnungen sehen will, bekommt sie auch auf Stufe 1.
 - K4. **Drohung ignoriert ab einem Bauern:** Nach der Röntgen-Regel (Kapitel 1) zählt jede
-      Drohung, Material zu gewinnen, also auch ein Bauer (2. Dh5 droht Dxe5+). Soll die Fehlerart
-      „Drohung ignoriert“ erst ab einer Leichtfigur heißen?
-      **Empfehlung:** so lassen. Das Buch zählt jede Drohung, Material zu gewinnen (Kapitel 1); auch
-      ein verlorener Bauer ist ein Fehler, den der Leser sehen soll.
-      **Nachgelesen im Buch (17.10.2026):** Kapitel 1: Eine Drohung ist jeder Materialgewinn im
-      nächsten Zug, auch ein Bauer (Abb. 1.13). Empfehlung bestätigt. Kapitel 1 sagt aber auch,
-      dass man eine Drohung ignorieren darf, wenn die eigene größer ist; „Drohung ignoriert“ ist
-      ein Fehler nur, wenn die Engine den Verlust bestätigt (so ist es eingebaut).
+  Drohung, Material zu gewinnen, also auch ein Bauer (2. Dh5 droht Dxe5+). Soll die Fehlerart
+  „Drohung ignoriert“ erst ab einer Leichtfigur heißen?
+  **Empfehlung:** so lassen. Das Buch zählt jede Drohung, Material zu gewinnen (Kapitel 1); auch
+  ein verlorener Bauer ist ein Fehler, den der Leser sehen soll.
+  **Nachgelesen im Buch (17.10.2026):** Kapitel 1: Eine Drohung ist jeder Materialgewinn im
+  nächsten Zug, auch ein Bauer (Abb. 1.13). Empfehlung bestätigt. Kapitel 1 sagt aber auch,
+  dass man eine Drohung ignorieren darf, wenn die eigene größer ist; „Drohung ignoriert“ ist
+  ein Fehler nur, wenn die Engine den Verlust bestätigt (so ist es eingebaut).
 - K5. **Verpasstes Matt in der Auswertung:** Werte sind auf ±10 begrenzt (Matt = 10). Wer
-      von „Matt in 2“ zu „+5“ wechselt, bekommt deshalb „??“ (Verlust 5). So lassen?
-      **Empfehlung:** ändern. Wer von Matt in 2 zu +5 wechselt, steht weiter klar auf Gewinn; „??“
-      ist dafür zu hart. Lichess und chess.com rechnen die Bewertung vorher in eine Gewinnchance um;
-      dann kostet dieser Zug fast nichts. Vorschlag: Verlust über die Gewinnchance messen, ab +5 nie
-      mehr als „?!“.
-      **Schon umgesetzt in 0.2.47 (Nachtest N245): Steht die ziehende Seite nach dem Zug noch bei
-      +5 oder besser, gibt es höchstens „?!“, auch in der Engine-Karte und ohne Eintrag unter
-      „Grobe Patzer“. Der Verlust je Zug bleibt in Bauern (die Genauigkeit rechnet ohnehin über die
-      Gewinnchance). Widerspruch genügt.**
+  von „Matt in 2“ zu „+5“ wechselt, bekommt deshalb „??“ (Verlust 5). So lassen?
+  **Empfehlung:** ändern. Wer von Matt in 2 zu +5 wechselt, steht weiter klar auf Gewinn; „??“
+  ist dafür zu hart. Lichess und chess.com rechnen die Bewertung vorher in eine Gewinnchance um;
+  dann kostet dieser Zug fast nichts. Vorschlag: Verlust über die Gewinnchance messen, ab +5 nie
+  mehr als „?!“.
+  **Schon umgesetzt in 0.2.47 (Nachtest N245): Steht die ziehende Seite nach dem Zug noch bei
+  +5 oder besser, gibt es höchstens „?!“, auch in der Engine-Karte und ohne Eintrag unter
+  „Grobe Patzer“. Der Verlust je Zug bleibt in Bauern (die Genauigkeit rechnet ohnehin über die
+  Gewinnchance). Widerspruch genügt.**
 - K6. **Stufen 4 bis 7 ohne Elo-Begrenzung:** Die Stufen nutzen Skill Level 3, 6, 10, 15
-      (geräteunabhängig: Die Stärke hängt von der Suchtiefe ab, nicht vom Gerät). Die Namen der Stufen bleiben; eine
-      Elo-Zahl zeigt die App nicht. Einverstanden?
-      **Empfehlung:** so lassen. Feste Skill Levels geben auf jedem Gerät dieselbe Stärke; eine Elo-
-      Zahl je Stufe wäre nur geraten.
+  (geräteunabhängig: Die Stärke hängt von der Suchtiefe ab, nicht vom Gerät). Die Namen der Stufen bleiben; eine
+  Elo-Zahl zeigt die App nicht. Einverstanden?
+  **Empfehlung:** so lassen. Feste Skill Levels geben auf jedem Gerät dieselbe Stärke; eine Elo-
+  Zahl je Stufe wäre nur geraten.
 
 #### D. Buch
 
 - D1. **Abb. 4.45 (D.3):** Der Buchstand vom 16.10.2026 ist vollständig übernommen. Stellung,
-      Pfeile, Feldmarkierungen und Bildunterschrift von 4.45 sind dabei unverändert geblieben
-      (nur die Zeile im LaTeX hat sich verschoben). Betraf deine Änderung den Text um die
-      Abbildung, ist alles drin; betraf sie die Stellung oder die Markierungen, fehlt sie noch im
-      privaten Repository. Bitte kurz bestätigen.
-      **Empfehlung:** Ein Wort genügt („Text“ oder „Stellung“); bei „Stellung“ die neue Fassung
-      hochladen, Claude macht den Datenlauf.
-      **Nachgelesen im Buch (17.10.2026):** Im Buchstand vom 16.10. ist an der Stellung von 4.45
-      nichts geändert, wohl aber die Zeile F3 der Fallenprüfung „Damenfalle im Dänischen Gambit“
-      (jetzt: der Läufer b2 fesselt g7 relativ an den Turm h8, „teils“). Diese Zeile ist in der App
-      übernommen. Bitte nur bestätigen, dass du den Text meintest.
+  Pfeile, Feldmarkierungen und Bildunterschrift von 4.45 sind dabei unverändert geblieben
+  (nur die Zeile im LaTeX hat sich verschoben). Betraf deine Änderung den Text um die
+  Abbildung, ist alles drin; betraf sie die Stellung oder die Markierungen, fehlt sie noch im
+  privaten Repository. Bitte kurz bestätigen.
+  **Empfehlung:** Ein Wort genügt („Text“ oder „Stellung“); bei „Stellung“ die neue Fassung
+  hochladen, Claude macht den Datenlauf.
+  **Nachgelesen im Buch (17.10.2026):** Im Buchstand vom 16.10. ist an der Stellung von 4.45
+  nichts geändert, wohl aber die Zeile F3 der Fallenprüfung „Damenfalle im Dänischen Gambit“
+  (jetzt: der Läufer b2 fesselt g7 relativ an den Turm h8, „teils“). Diese Zeile ist in der App
+  übernommen. Bitte nur bestätigen, dass du den Text meintest.
 
 - D2. **Glossar und Steckbriefe sind sich bei der Phase uneins (Befund aus S17, ersetzt C3).**
-      Seit 0.2.61 folgt die Phase an allen Abbildungen dem Glossar, wie du entschieden hast:
-      Mittelspiel erst, wenn beide Seiten entwickelt sind (höchstens eine Leichtfigur zu Hause) und
-      rochiert haben. „Rochiert haben“ liest die App aus den Zügen des Buches, damit ein König, der
-      rochiert hatte und dann gejagt wird, weiter als rochiert gilt (Colle 11.12 bis 11.14, Lasker
-      11.18 bis 11.21 für Schwarz, Unzicker 11.82 und 11.84). Damit stimmen die Opernpartie (11.4 bis
-      11.9) und Anderssen–Dufresne (11.25 bis 11.31) mit ihren Steckbriefen „Eröffnung bis
-      Mattangriff“ überein. Drei Stellen widersprechen ihrem Steckbrief, weil eine Seite nicht
-      rochiert hat: **Lasker–Thomas** (Steckbrief „Mittelspiel“; Weiß rochiert erst mit dem Mattzug,
-      also nach dem Glossar Eröffnung bis zum Schluss), **Fischer–Petrosjan 11.43 und 11.44**
-      (Steckbrief „Mittelspiel bis Endspiel“, an 11.43 steht die Skelettbilanz; Schwarz rochiert erst
-      im 15. Zug) und **Opernpartie 11.98** (Übung, nach 11. Lxb5+). In den Kapiteln 1 bis 7 und 10
-      werden dadurch 127 Abbildungen von „Mittelspiel“ zu „Eröffnung“, fast alle aus Eröffnungen
-      der Kapitel 2 und 3, was zum Buch passt.
-      **Empfehlung:** Im Buch die Steckbriefe von Lasker–Thomas („Eröffnung bis Mattangriff“) und
-      Fischer–Petrosjan („Eröffnung bis Endspiel“) angleichen, oder im Glossar ergänzen, dass ein
-      König, der in der Mitte bleibt, das Mittelspiel nicht aufhält, wenn beide Seiten entwickelt
-      sind. Die App bleibt beim Glossar, bis du entscheidest.
+  Seit 0.2.61 folgt die Phase an allen Abbildungen dem Glossar, wie du entschieden hast:
+  Mittelspiel erst, wenn beide Seiten entwickelt sind (höchstens eine Leichtfigur zu Hause) und
+  rochiert haben. „Rochiert haben“ liest die App aus den Zügen des Buches, damit ein König, der
+  rochiert hatte und dann gejagt wird, weiter als rochiert gilt (Colle 11.12 bis 11.14, Lasker
+  11.18 bis 11.21 für Schwarz, Unzicker 11.82 und 11.84). Damit stimmen die Opernpartie (11.4 bis
+  11.9) und Anderssen–Dufresne (11.25 bis 11.31) mit ihren Steckbriefen „Eröffnung bis
+  Mattangriff“ überein. Drei Stellen widersprechen ihrem Steckbrief, weil eine Seite nicht
+  rochiert hat: **Lasker–Thomas** (Steckbrief „Mittelspiel“; Weiß rochiert erst mit dem Mattzug,
+  also nach dem Glossar Eröffnung bis zum Schluss), **Fischer–Petrosjan 11.43 und 11.44**
+  (Steckbrief „Mittelspiel bis Endspiel“, an 11.43 steht die Skelettbilanz; Schwarz rochiert erst
+  im 15. Zug) und **Opernpartie 11.98** (Übung, nach 11. Lxb5+). In den Kapiteln 1 bis 7 und 10
+  werden dadurch 127 Abbildungen von „Mittelspiel“ zu „Eröffnung“, fast alle aus Eröffnungen
+  der Kapitel 2 und 3, was zum Buch passt.
+  **Empfehlung:** Im Buch die Steckbriefe von Lasker–Thomas („Eröffnung bis Mattangriff“) und
+  Fischer–Petrosjan („Eröffnung bis Endspiel“) angleichen, oder im Glossar ergänzen, dass ein
+  König, der in der Mitte bleibt, das Mittelspiel nicht aufhält, wenn beide Seiten entwickelt
+  sind. Die App bleibt beim Glossar, bis du entscheidest.
 
 #### E. Vor der Veröffentlichung der App (zurückgestellt, bis App und Website fertig sind)
 
 - E3. **Buchbeschreibung** auf der Startseite: Entwurf bestätigen oder ersetzen.
-      **Empfehlung:** denselben Text wie auf der Rückseite des Buches nehmen, dann stimmen Buch
-      und Website überein.
-      **Nachgelesen im Buch (17.10.2026):** In den Buchquellen gibt es keinen Rückseitentext. Der
-      Untertitel lautet „Vom sicheren Einstieg zum strategischen Plan – Eröffnungen meistern,
-      Fallen durchschauen und souverän gewinnen“. Korrigiert: Die Startseite sagte „bis zu einer
-      Spielstärke von etwa 2000 Elo“; das Buch sagt „in Richtung Elo 2000“ und ausdrücklich „Allein
-      aus einem Buch heraus erreicht niemand 2000 Elo“. Jetzt: „bis zu den Ideen, die für den Weg
-      in Richtung Elo 2000 entscheidend sind“. Schon umgesetzt in 0.2.55.
+  **Empfehlung:** denselben Text wie auf der Rückseite des Buches nehmen, dann stimmen Buch
+  und Website überein.
+  **Nachgelesen im Buch (17.10.2026):** In den Buchquellen gibt es keinen Rückseitentext. Der
+  Untertitel lautet „Vom sicheren Einstieg zum strategischen Plan – Eröffnungen meistern,
+  Fallen durchschauen und souverän gewinnen“. Korrigiert: Die Startseite sagte „bis zu einer
+  Spielstärke von etwa 2000 Elo“; das Buch sagt „in Richtung Elo 2000“ und ausdrücklich „Allein
+  aus einem Buch heraus erreicht niemand 2000 Elo“. Jetzt: „bis zu den Ideen, die für den Weg
+  in Richtung Elo 2000 entscheidend sind“. Schon umgesetzt in 0.2.55.
 - E4. **Bezugsquellen:** ISBN und Shop-Links, sobald sie feststehen.
-      **Empfehlung:** nachtragen, sobald die ISBN vergeben ist; bis dahin bleibt der Platz leer.
+  **Empfehlung:** nachtragen, sobald die ISBN vergeben ist; bis dahin bleibt der Platz leer.
 
 ## Konstruierte Zugfolgen und Tablebase (19.10.2026 nachts, Opus, Zweig `zugfolgen-konstruiert`, Version 0.2.96)
 
@@ -3989,6 +3987,7 @@ verschieben die Zahlen).
   werden nicht neu gemessen.
 - **Vergleichsschalter:** `EICHUNG_ALLE_ZUEGE=1 npm run messen:eichung` rechnet die Eichung wie
   vor 0.2.103 über alle Züge.
+
 ## Englische Fassung als Vorschau (19.10.2026, Opus, Zweig `englisch`, Version 0.2.104)
 
 Wunsch des Autors (19.10.2026): „erarbeite doch schon einmal eine englische Fassung der App. Nur
@@ -4179,6 +4178,7 @@ Live-Seite mit einem echten Browser (alle Seiten, Netzwerkverkehr mitgeschnitten
   kein Kontaktformular, kein Newsletter, keine Anmeldung, keine Zahlungen, keine Werbung, keine
   eingebundenen Inhalte Dritter, Gerätespeicher und Service Worker, nur Links zu Lichess, GitHub
   und Buchhändlern.
+
 ## Ohne Autor, Teil 1: Hinweise je Gerät, Abnahmetest A1, Sitemap, Kopfzeilen (19.10.2026, Opus, Zweig `weiter-ohne-autor`, Version 0.2.112)
 
 Vom Autor abgesegnet (19.10.2026, „Alle anderen Punkte auch ja“):
@@ -4327,6 +4327,72 @@ Rückfrage in AUFGABEN_AUTOR.
   `pruefe-veroeffentlichung.mjs` sucht nur noch die Aufgabenseite). „(preview)“ bleibt, bis die
   Buchdaten übersetzt sind (R25).
 
+## Menschliche Bots und Uhr (20. und 21.10.2026, Opus, Zweig `menschliche-bots`)
+
+Plan vom Autor am 20.10.2026 freigegeben („du darfst deinen kompletten Plan umsetzen“; offene
+Fragen mit eigener Empfehlung entscheiden). Ergänzungen des Autors: sichtbare Wartezeit mit
+Streuung (20.10.), Notmodus mit Vorzügen und Bedenkzeiten 3 + 2 und 3 + 0 (21.10.), keine
+Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
+
+- **Datengrundlage:** offene Lichess-Datenbank (CC0), Monat 2026-09: 1542 gewertete Partien mit
+  Uhrzeiten (Blitz, Rapid, Klassisch), 111 752 Stellungen, je Stellung sechs Kandidaten in Tiefe
+  12 mit Stockfish 17.1 und die typischen Fehlerzüge nach den Werkzeugen des Buches. Rohdaten nur
+  lokal; in die App kommen nur die Tabellen (`app/src/engine/menschenprofil-daten.ts`).
+- **Zugwahl (Stufen 1 bis 7 = Menschen mit 600 bis 2400 auf Lichess):** Fehlerschicht je
+  Fehlerart (Gelegenheit, Wahrscheinlichkeit der Menschen, Verlustfaktor, Zug in der Art mit
+  Gewicht Verlust^(−beta)), blinde Flecken, Grundschicht mit Potenzkern nur unter Zügen ohne
+  Fehlerart; Stufe 8 ist die volle Engine. Alle Zahlen sind an den Lichess-Zügen geeicht
+  (`pipeline/menschenprofil/eichen.py`). Nachgespielt trifft der Bot je Band die Anteile der
+  Menschen an besten Zügen und an Verlusten ab 0,5, 1 und 3 Bauern auf etwa zwei Prozentpunkte.
+  Verworfen: Fehlerzug mit dem typischen Verlust der Art und Deckel beim 90-%-Wert (schwache Bots
+  patzten nur halb so oft grob wie Menschen, starke doppelt so oft); Wahl unter allen Kandidaten
+  (Fehler zählten doppelt, abgewählte Fehlerarten kamen doch vor).
+- **Bots:** 64 neue Bots (acht je Stufe) und vier Spaß-Bots, Porträts der alten, neue Namen;
+  Persönlichkeit als Gewichte je Fehlerart und blindem Fleck, Fehlerhäufigkeit, Stil. Spaß-Bots
+  bleiben (GE1, „So lassen“).
+- **Erweiterter Modus eigener Bots:** Fehlerhäufigkeit insgesamt, Gewicht je Fehlerart und
+  Fleck, Höchstverlust je Art (Vorgabe „unbegrenzt“, wie Menschen).
+- **Bedenkzeit:** Ein Bot mit Uhr verbraucht die Zeit, die ein Mensch seiner Stärke gebraucht
+  hätte (Anteil der Restzeit nach Zugnummer und Lage, unter 60 Sekunden feste kurze Zeiten);
+  sichtbar wartet er höchstens etwa 2,5 Sekunden (in Zeitnot 0,6), mit ±10 % Streuung. In
+  Zeitnot macht er mehr Fehler (Faktoren aus den Daten). Die Uhr des Bots läuft nicht in echter
+  Zeit ab; die Rechenzeit des Geräts zählt nicht.
+- **Notmodus (Idee des Autors):** Reicht die Bedenkzeit nicht, steht die Uhr des Bots nach dem
+  Zug auf einer Sekunde. Er sagt die drei wahrscheinlichsten Antworten voraus (Tiefe 8), legt für
+  jede eine Erwiderung mit seiner Zugwahl in Zeitnot zurecht und spielt dann unter den Vorzügen,
+  die gehen, den mit der besten Bewertung (je eine Zehntelsekunde, wie bei chess.com). Geht
+  keiner, ist die Zeit um. Mit Zuschlag verlässt er den Modus über fünf Sekunden. Nach einem
+  Neuladen ist der Plan weg; der Bot kommt dann bei Bedarf erneut hinein.
+- **Bedenkzeiten im Menü:** zusätzlich 3 + 2 und 3 + 0.
+- **Stärkezahlen:** aus einer eigenen Messung (Leiter benachbarter Stufen, Anker, je Bot zwölf
+  Partien gegen die Nachbarstufe, je Stufe mit Uhr gegen ohne für sechs Bedenkzeiten). Erste
+  Leiter: Die Stufen liegen enger als die Wertungen der Menschen (Stufe 1 bis 7 etwa 870 Elo statt
+  1800); angezeigt werden die gemessenen Zahlen.
+
+### Zehn Stufen statt acht (21. und 22.10.2026, Opus, Vorschlag und Freigabe des Autors)
+
+- **Warum:** Menschliche Fehlerraten allein trennten die Stufen nicht (gemessen: Stufe 5 bis 7 fast
+  gleich stark, Stufe 1 bis 7 nur etwa 650 Elo). Vorschlag des Autors: Regler von 1 bis 10, die
+  ohne Zusatzfehler 300 bis 3000 Elo abdecken; die Zusatzfehler machen Bots menschlicher.
+- **Grundschicht:** Die Engine bewertet in den unteren Stufen alle legalen Züge in kleiner Tiefe und
+  wählt mit dem Kern (1 + Verlust/tau)^(−1). Geeicht über eine Leiter freier Grundschichten,
+  verankert an Partien gegen sich selbst (Tiefe 18). Einstellungen (Tiefe/tau): 1/100, 1/4,5,
+  2/0,7, 4/0,2, 7/0,1, 8/0,3, 8/0,07, 11/0,03, 14/0,01, Stufe 10 volle Engine. Gemessen (vorläufig)
+  etwa 270, 440, 730, 1050, 1350, 1740, 2170, 2450, 2740, 3000. Stufe 1 ist fast zufällig;
+  schwächer geht es nicht, 300 ist daher nur ungefähr erreicht. Die App zeigt die gemessenen Zahlen.
+- **Zusatzfehler:** Nur Bots; Raten der Menschen mit der Ziel-Elo der Stufe. Abzug gemessen
+  („nm-n“): unten fast keiner, oben viel (Stufe 7 etwa −380, Stufe 10 über −500). Ohne Bot spielt
+  die Stufe rein (abgehakte blinde Flecken der eigenen Stufe kommen dazu); die Abhakliste der
+  Fehlerarten gilt den vorgefertigten Bots. Eigene Gegner: Haken = an; die geschätzte Zahl zieht den
+  gemessenen Abzug anteilig ab.
+- **Bots:** 64 Bots auf Zielgruppen 1 bis 10 verteilt, Grundstufe so, dass die gemessene Zahl dort
+  landet; die stärksten machen die Fehler der Menschen seltener (Faktor 0,5 und 0,1). Die Gruppe
+  folgt der gemessenen Zahl (300 je Gruppe). Spaß-Bots spielen Stufe 3 bis 6 mit Zufallszügen.
+- **Speicher:** Format 6; alte Stufen werden die neue Stufe mit der nächsten Elo-Zahl (1 → 3, 2 → 4,
+  3 und 4 → 6, 5 → 7, 6 → 8, 7 → 9, 8 → 10). Eine ältere App lehnt Format 6 ab.
+- **Entfernt:** Strähne und Lagefaktoren der alten Zugwahl (zählten doppelt), der Wahlkern der
+  Menschen für die Grundschicht (ersetzt durch die geeichte Grundschicht der Stufe).
+
 ## R21: Musterlösungen der Trainer gegen die Engine (19.10.2026, Opus)
 
 Wunsch des Autors: Keine Musterlösung, die katastrophal schlechter ist als der beste Zug; sonst
@@ -4338,4 +4404,3 @@ gleich. Ergebnis: **kein** katastrophaler Lösungszug, es muss keine Aufgabe ers
 Endspieltrainer nimmt die Züge der Engine selbst, Repertoire und Zug erraten folgen dem Buch und
 den Meisterpartien (Regel 1; „Zug erraten“ sagt seit W12 ohnehin, ob der eigene Zug gleichwertig
 war). Der Messlauf bleibt für spätere Datenstände.
-

@@ -1,67 +1,64 @@
 /**
- * Die vorgefertigten Gegner der Stufen 5 bis 8 (heute „Starker Vereinsspieler“ bis „Großmeister“, Namen seit 0.2.116), je acht.
+ * Die vorgefertigten Gegner, zweite Hälfte (die stärkeren 32 Bots).
  *
- * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Ab Stufe 5 gibt es keine absichtlichen
- * Fehler mehr (engine/stufen.ts); die Persönlichkeit entsteht aus den Stufen je Phase, den
- * blinden Flecken und dem Stil. Stufe 8 spielt in voller Stärke, dort unterscheiden nur blinde
- * Flecken und Stil die Gegner.
- * Abhängigkeiten: engine/gegnerbau.ts (Typ, Helfer).
+ * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Seit 0.2.117 neu gebaut (Wunsch des
+ * Autors vom 20.10.2026: „mach die Bots komplett neu“, Porträts bleiben, neue Namen). Seit 0.2.117
+ * (zehn Stufen) sind die Stufen je Phase die Grundstärke; dazu kommen die Zusatzfehler der
+ * Menschen (engine/menschenwahl.ts), die Persönlichkeit (engine/gegnerbau.ts, CHARAKTERE)
+ * verschiebt einzelne Fehlerarten und blinde Flecken, der Stil wählt unter gleich guten Zügen.
+ * Die Grundstufe ist so gewählt, dass die gemessene Zahl in der Zielgruppe landet (Einstufung vom
+ * 22.10.2026: Gruppe 1 → Stufe 1, 2 → 3, 3 → 4, 4 → 5, 5 → 6, 6 → 7, 7 → 8, 8 bis 10 → 10 mit
+ * seltener werdenden Fehlern); die Gegnerwahl ordnet nach der gemessenen Zahl (engine/botgruppe.ts).
+ * Abhängigkeiten: engine/gegnerbau.ts (Typ, Helfer, Persönlichkeiten).
  */
-import { gegner, type Gegner } from "./gegnerbau";
+import { bot, type Gegner } from "./gegnerbau";
 
-/** Stufe 5, Starker Vereinsspieler (bis 0.2.115 „Vereinsanfänger“). */
+/** Bots 33 bis 40 der Liste (vor 0.2.117 Stufe 5). */
 const STUFE_5: readonly Gegner[] = [
-  gegner(
-    "kurt",
-    "Kurt",
-    [4, 5, 5],
-    ["koenigsschild", "falscherAbtausch", "ungenau"],
-    ["springer"],
-    0,
-  ),
-  gegner("frau-ortega", "Frau Ortega", [5, 5, 4], ["ungenau"], ["rueckzug"], -1),
-  gegner("nils", "Nils", [5, 5, 5], [], ["ruhig", "abzug"], 2),
-  gegner("hanna", "Hanna", [6, 5, 4], [], ["ruhig"], 1),
-  gegner("herr-weber", "Herr Weber", [5, 5, 6], [], ["dame", "diagonale"], -2),
-  gegner("lea", "Lea", [5, 6, 4], [], ["grundreihe", "bauer"], 1),
-  gegner("paul", "Paul", [5, 4, 6], [], ["abzug"], 0),
-  gegner("frau-kaya", "Frau Kaya", [5, 5, 5], [], ["roentgen"], -1),
+  bot("guenter", "Günter", "kurt", [6, 6, 7], "endspieler", -1),
+  bot("frau-romero", "Frau Romero", "frau-ortega", [6, 6, 6], "solide", 0),
+  bot("lars", "Lars", "nils", [7, 7, 7], "angreifer", 2),
+  bot("katrin", "Katrin", "hanna", [8, 7, 6], "theoretiker", 0),
+  bot("herr-vogel", "Herr Vogel", "herr-weber", [7, 7, 7], "stratege", -2),
+  bot("nele", "Nele", "lea", [6, 7, 6], "taktiker", 1),
+  bot("simon", "Simon", "paul", [6, 7, 7], "hektiker", 1),
+  bot("frau-demir", "Frau Demir", "frau-kaya", [7, 7, 7], "vorsichtig", -1),
 ];
 
-/** Stufe 6, Vereinsspieler. */
+/** Bots 41 bis 48 der Liste (vor 0.2.117 Stufe 6). */
 const STUFE_6: readonly Gegner[] = [
-  gegner("lena", "Lena", [6, 6, 5], [], ["ruhig", "zwischenzug"], 0),
-  gegner("viktor", "Viktor", [7, 6, 6], [], ["abzug", "bauer"], 1),
-  gegner("sara", "Sara", [6, 6, 6], [], ["abzug"], 2),
-  gegner("herr-fischer", "Herr Fischer", [5, 6, 7], [], ["dame", "ruhig"], -2),
-  gegner("elif", "Elif", [7, 7, 5], [], ["ruhig", "grundreihe"], 1),
-  gegner("matteo", "Matteo", [6, 7, 5], [], ["zwischenzug"], 0),
-  gegner("frau-lind", "Frau Lind", [6, 5, 7], [], ["diagonale", "bauer"], -1),
-  gegner("ben", "Ben", [6, 6, 6], [], ["springer", "turm"], 1),
+  bot("jana", "Jana", "lena", [7, 7, 7], "solide", 0),
+  bot("igor", "Igor", "viktor", [9, 8, 8], "theoretiker", -1),
+  bot("miriam", "Miriam", "sara", [8, 8, 8], "traeumer", 1),
+  bot("herr-hartmann", "Herr Hartmann", "herr-fischer", [7, 8, 9], "endspieler", -2),
+  bot("defne", "Defne", "elif", [7, 8, 7], "taktiker", 2),
+  bot("luca", "Luca", "matteo", [8, 8, 7], "angreifer", 2),
+  bot("frau-sommer", "Frau Sommer", "frau-lind", [8, 8, 8], "stratege", -1),
+  bot("david", "David", "ben", [8, 8, 8], "materialist", 0),
 ];
 
-/** Stufe 7, starke Vereinsspieler. */
+/** Bots 49 bis 56 der Liste (vor 0.2.117 Stufe 7). */
 const STUFE_7: readonly Gegner[] = [
-  gegner("doktor-berg", "Doktor Berg", [6, 7, 7], [], ["turm"], 0),
-  gegner("trainer-koch", "Trainer Koch", [7, 7, 7], [], ["ruhig"], -1),
-  gegner("yara", "Yara", [8, 7, 6], [], ["ruhig"], 2),
-  gegner("herr-brandt", "Herr Brandt", [6, 7, 8], [], ["abzug"], -2),
-  gegner("noah", "Noah", [7, 8, 6], [], ["grundreihe"], 1),
-  gegner("frau-stein", "Frau Stein", [7, 7, 7], [], ["zwischenzug", "dame"], 0),
-  gegner("ravi", "Ravi", [7, 6, 8], [], ["diagonale"], 1),
-  gegner("frau-doktor-ahl", "Frau Dr. Ahl", [8, 7, 7], [], ["zwischenzug"], -1),
+  bot("doktor-falk", "Doktor Falk", "doktor-berg", [10, 10, 10], "stratege", -1, 0.3),
+  bot("trainer-maier", "Trainer Maier", "trainer-koch", [10, 10, 10], "solide", 0, 0.5),
+  bot("amaya", "Amaya", "yara", [10, 10, 9], "theoretiker", 1, 0.5),
+  bot("herr-lorenz", "Herr Lorenz", "herr-brandt", [9, 10, 10], "endspieler", -2, 0.5),
+  bot("elias", "Elias", "noah", [10, 10, 9], "angreifer", 2, 0.3),
+  bot("frau-wagner", "Frau Wagner", "frau-stein", [10, 10, 10], "vorsichtig", -1, 0.5),
+  bot("arjun", "Arjun", "ravi", [10, 10, 10], "taktiker", 2, 0.1),
+  bot("frau-prof-reich", "Frau Prof. Reich", "frau-doktor-ahl", [10, 10, 10], "traeumer", 0, 0.1),
 ];
 
-/** Stufe 8, Großmeister (bis 0.2.115 „Experte“): volle Stärke, nur blinde Flecken und Stil unterscheiden sie. */
+/** Bots 57 bis 64 der Liste (vor 0.2.117 Stufe 8). */
 const STUFE_8: readonly Gegner[] = [
-  gegner("gm-gruen", "Großmeister Grün", [8, 8, 8], [], [], 0),
-  gegner("im-vogt", "IM Vogt", [8, 8, 8], [], ["ruhig"], 2),
-  gegner("wgm-sato", "WGM Sato", [8, 8, 8], [], ["ruhig"], 1),
-  gegner("fm-ortiz", "FM Ortiz", [7, 8, 8], [], ["abzug"], 0),
-  gegner("gm-petrova", "GM Petrova", [8, 8, 8], [], ["zwischenzug"], -1),
-  gegner("im-haas", "IM Haas", [8, 8, 7], [], ["grundreihe"], -1),
-  gegner("wim-nkemelu", "WIM Nkemelu", [8, 7, 8], [], ["diagonale"], 1),
-  gegner("gm-lindqvist", "GM Lindqvist", [8, 8, 8], [], ["bauer"], 0),
+  bot("gm-novak", "GM Novak", "gm-gruen", [10, 10, 10], "solide", 0, 0.1),
+  bot("im-becker", "IM Becker", "im-vogt", [10, 10, 10], "stratege", -1, 0.1),
+  bot("wgm-tanaka", "WGM Tanaka", "wgm-sato", [10, 10, 9], "taktiker", 1, 0.1),
+  bot("fm-duarte", "FM Duarte", "fm-ortiz", [10, 10, 10], "angreifer", 0, 0),
+  bot("gm-ivanova", "GM Ivanova", "gm-petrova", [10, 10, 10], "endspieler", 0, 0),
+  bot("im-kraft", "IM Kraft", "im-haas", [10, 10, 10], "theoretiker", 0, 0),
+  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [10, 10, 10], "vorsichtig", 0, 0),
+  bot("gm-berglund", "GM Berglund", "gm-lindqvist", [10, 10, 10], "solide", 0, 0),
 ];
 
 export const GEGNER_STUFE_5_BIS_8: readonly Gegner[] = [

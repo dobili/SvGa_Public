@@ -28,6 +28,11 @@ export interface Zugwahl {
   readonly fehler: Fehlerart | null;
   /** Verlust gegenüber dem besten Zug in Bauerneinheiten (nur bei Fehlern). */
   readonly verlust: number;
+  /**
+   * Zahl der Kandidaten höchstens 0,3 Bauern hinter dem besten (seit 0.2.117, für die Bedenkzeit
+   * der Bots: ein einziger guter Zug kostet Menschen mehr Zeit als viele gleich gute).
+   */
+  readonly breite?: number;
 }
 
 /** Ein Matt zählt wie dieser Wert (in Bauerneinheiten), minus der Züge bis zum Matt. */

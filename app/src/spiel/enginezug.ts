@@ -38,11 +38,44 @@ export async function engineZug(
   buchtreue: number = BUCHTREUE,
   profil: Gegnerprofil = STANDARDPROFIL,
 ): Promise<Partiezug | null> {
+  const ergebnis = await engineZugMitLage(
+    bewerter,
+    fen,
+    stufe,
+    buchzuege,
+    zufall,
+    buchtreue,
+    profil,
+  );
+  return ergebnis?.zug ?? null;
+}
+
+/**
+ * Wie engineZug, dazu der Zug in UCI und die Breite der Wahl (für die Bedenkzeit der Bots,
+ * spiel/botzeit.ts, seit 0.2.117). Die Breite bleibt außerhalb des Partiezugs, damit sie nicht
+ * mit der Partie gespeichert wird.
+ */
+export async function engineZugMitLage(
+  bewerter: Spielbewerter,
+  fen: string,
+  stufe: Stufe,
+  buchzuege: readonly string[],
+  zufall: () => number,
+  buchtreue: number = BUCHTREUE,
+  profil: Gegnerprofil = STANDARDPROFIL,
+): Promise<{ zug: Partiezug; uci: string; breite?: number } | null> {
   const buchUci = buchzuege
     .map((san) => sanZuUci(fen, san))
     .filter((uci): uci is string => uci !== null);
   const wahl = await waehleZug(bewerter, fen, stufe, buchUci, zufall, buchtreue, profil);
   const san = wahl ? uciZuSan(fen, wahl.uci) : null;
   if (!wahl || !san) return null;
-  return { san, von: "engine", quelle: wahl.quelle, fehler: wahl.fehler, verlust: wahl.verlust };
+  const zug: Partiezug = {
+    san,
+    von: "engine",
+    quelle: wahl.quelle,
+    fehler: wahl.fehler,
+    verlust: wahl.verlust,
+  };
+  return { zug, uci: wahl.uci, breite: wahl.breite };
 }

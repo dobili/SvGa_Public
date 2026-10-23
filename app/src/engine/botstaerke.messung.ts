@@ -44,7 +44,7 @@ const DURCHGAENGE = 200;
  * 2100). Solche Stufen stehen im Bericht als „gesättigt“, verankern die Leiter aber nicht.
  */
 const GESAETTIGT_AB = 83;
-const STUFEN = [1, 2, 3, 4, 5, 6, 7, 8] as const;
+const STUFEN = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
 
 interface Bericht {
   readonly weiss: string;
@@ -70,7 +70,7 @@ function unterordner(muster: RegExp): string[] {
 
 /** Punkte des ersten Kürzels der Paarung aus allen Partien der Datei. */
 function begegnung(d: Datei): Begegnung {
-  const trenner = d.paarung.lastIndexOf("-");
+  const trenner = trennstelle(d.paarung);
   const a = d.paarung.slice(0, trenner);
   const b = d.paarung.slice(trenner + 1);
   let punkte = 0;
@@ -88,10 +88,87 @@ function begegnung(d: Datei): Begegnung {
   };
 }
 
-/** „3@nina“ → „nina“, „3“ → „stufe3“. */
+/** Trennstelle einer Paarung: letzter Bindestrich vor „@“ oder einer Ziffer (Kennungen haben welche). */
+function trennstelle(paarung: string): number {
+  return paarung.search(/-(?=[@\d][^-]*(?:-[a-z]+)*$)/);
+}
+
+/** „@svenja“ und „3@nina“ (bis 0.2.115) → Kennung des Bots, „3“ → „stufe3“. */
 function spielerkennung(kuerzel: string): string {
   const at = kuerzel.indexOf("@");
   return at >= 0 ? kuerzel.slice(at + 1) : `stufe${kuerzel}`;
+}
+
+const UHR_ORDNER = "uhr";
+const HOECHSTER_ANTEIL = 0.95;
+const ELO_TEILER = 400;
+
+/** Rohwerte der Uhrmessung: Bedenkzeit → Stufe → Elo von „n~T“ gegen „n“. */
+function uhrRohwerte(): Map<string, Map<number, number>> {
+  const aus = new Map<string, Map<number, number>>();
+  for (const d of dateienIn(join(ORDNER, UHR_ORDNER))) {
+    const t = trennstelle(d.paarung);
+    const [stufe, tempo] = d.paarung.slice(0, t).split("~");
+    if (!stufe || !tempo || d.berichte.length === 0) continue;
+    const g = begegnung(d);
+    const anteil = Math.min(
+      HOECHSTER_ANTEIL,
+      Math.max(1 - HOECHSTER_ANTEIL, g.punkteA / g.partien),
+    );
+    const je = aus.get(tempo) ?? new Map<number, number>();
+    je.set(Number(stufe), -ELO_TEILER * Math.log10(1 / anteil - 1));
+    aus.set(tempo, je);
+  }
+  return aus;
+}
+
+/** Grundzeit einer Bedenkzeit in Sekunden („300+3“ → 300). */
+function grundzeit(tempo: string): number {
+  return Number(tempo.split("+")[0]);
+}
+
+/**
+ * Was die Uhr je Bedenkzeit kostet (seit 0.2.117): Stufe n mit Uhr gegen Stufe n ohne
+ * („3~300+3-3“). Seit 0.2.117 bereinigt: Ohne Zeitnot verläuft eine Partie mit Uhr genau wie ohne
+ * (gleiche Zufallsfolge), die Rohwerte langer Bedenkzeiten sind also nur das Rauschen der Partien
+ * gegen sich selbst. Abgezogen wird deshalb der Wert der längsten Bedenkzeit derselben Stufe, dann
+ * über alle Stufen gemittelt (je Stufe zu wenige Partien) und nie über 0.
+ * Ausgabe: Bedenkzeit → Stufe → Abzug (gleich für alle Stufen).
+ */
+function uhrAbzuege(): Map<string, Map<number, number>> {
+  const roh = uhrRohwerte();
+  const laengste = [...roh.keys()].sort((x, y) => grundzeit(y) - grundzeit(x))[0];
+  const basis = laengste ? (roh.get(laengste) ?? new Map<number, number>()) : new Map();
+  const aus = new Map<string, Map<number, number>>();
+  for (const [tempo, je] of roh) {
+    const unterschiede = [...je].map(([n, w]) => w - (basis.get(n) ?? 0));
+    const mittel = unterschiede.reduce((s, x) => s + x, 0) / Math.max(1, unterschiede.length);
+    const abzug = Math.min(0, mittel);
+    aus.set(tempo, new Map([...je.keys()].map((n) => [n, abzug])));
+  }
+  return aus;
+}
+
+const ZUSATZ_ORDNER = "zusatz";
+
+/**
+ * Was alle Zusatzfehler je Stufe kosten (seit 0.2.117): Stufe n mit Zusatzfehlern gegen Stufe n
+ * ohne („4m-4“), Punkte in Elo umgerechnet. Ausgabe: Stufe → Abzug (meist negativ).
+ */
+function zusatzAbzuege(): Map<number, number> {
+  const aus = new Map<number, number>();
+  for (const d of dateienIn(join(ORDNER, ZUSATZ_ORDNER))) {
+    const mit = /^(\d+)m$/.exec(d.paarung.slice(0, trennstelle(d.paarung)));
+    if (!mit?.[1] || d.berichte.length === 0) continue;
+    const g = begegnung(d);
+    const anteil = Math.min(
+      HOECHSTER_ANTEIL,
+      Math.max(1 - HOECHSTER_ANTEIL, g.punkteA / g.partien),
+    );
+    // Ein positiver Wert (Zusatzfehler unten weniger schlimm als die Grundschicht) zählt als 0
+    aus.set(Number(mit[1]), Math.min(0, -ELO_TEILER * Math.log10(1 / anteil - 1)));
+  }
+  return aus;
 }
 
 /** Alle Ergebnisse für die Leiter (ohne Partien einer Stufe gegen sich selbst). */
@@ -122,12 +199,13 @@ function bewertungen(): Map<string, Rohwert[]> {
  * Innere Genauigkeiten beider Seiten je Anker-Stufe, wie „Deine Spielstärke“ seit 0.2.103 nur bis
  * zur Entscheidung der Partie (Seiten mit mindestens zehn gezählten Zügen).
  */
-function ankerGenauigkeiten(): Map<number, number[]> {
+function ankerGenauigkeiten(): Map<string, number[]> {
   const bewertet = bewertungen();
-  const je = new Map<number, number[]>();
+  const je = new Map<string, number[]>();
   for (const o of unterordner(ANKER_ORDNER)) {
     for (const d of dateienIn(join(ORDNER, o))) {
-      const stufe = Number(d.paarung.split("-")[0]);
+      // Kürzel der Seite: „3“ oder eine freie Grundschicht wie „4x0.2“ (Eichung 0.2.117)
+      const stufe = d.paarung.slice(0, trennstelle(d.paarung));
       d.berichte.forEach((_, i) => {
         const roh = bewertet.get(`${o}/${d.paarung}:${i}`);
         if (!roh || roh.length < 2 * MINDESTENS_ZUEGE) return;
@@ -151,7 +229,9 @@ function ankerGenauigkeiten(): Map<number, number[]> {
 function anker(): { anker: Anker[]; zeilen: string[] } {
   const liste: Anker[] = [];
   const zeilen: string[] = [];
-  for (const [stufe, werte] of [...ankerGenauigkeiten()].sort((x, y) => x[0] - y[0])) {
+  const reihenfolge = (k: string) => Number.parseFloat(k);
+  const sortiert = [...ankerGenauigkeiten()].sort((x, y) => reihenfolge(x[0]) - reihenfolge(y[0]));
+  for (const [stufe, werte] of sortiert) {
     const bloecke: number[] = [];
     for (let i = 0; i + BLOCK <= werte.length; i += BLOCK) {
       const s = staerkeUeberPartien(werte.slice(i, i + BLOCK));
@@ -227,7 +307,33 @@ function datendatei(werte: Map<string, number>): string {
     ...bots,
     "};",
     "",
+    "/** Was die Uhr je Bedenkzeit („300+3“) und Stufe kostet (Elo, meist negativ; seit 0.2.117). */",
+    "export const UHR_ABZUG: Readonly<Record<string, Readonly<Record<number, number>>>> = {",
+    ...[...uhrAbzuege()].map(
+      ([tempo, je]) =>
+        `  "${tempo}": { ${[...je]
+          .sort((x, y) => x[0] - y[0])
+          .map(([n, w]) => `${n}: ${Math.round(w)}`)
+          .join(", ")} },`,
+    ),
+    "};",
+    "",
+    "/** Was alle Zusatzfehler der Menschen je Stufe kosten (Elo, negativ; seit 0.2.117). */",
+    "export const ZUSATZ_ABZUG: Readonly<Partial<Record<Stufennummer, number>>> = {",
+    ...[...zusatzAbzuege()]
+      .sort((x, y) => x[0] - y[0])
+      .map(([n, w]) => `  ${n}: ${Math.round(w)},`),
+    "};",
+    "",
   ].join("\n");
+}
+
+/** Spieler der Leiter, die weder Stufe noch Bot sind (freie Grundschichten der Eichung). */
+function weitere(werte: Map<string, number>): string[] {
+  const bekannt = new Set([...STUFEN.map((n) => `stufe${n}`), ...GEGNER.map((g) => g.kennung)]);
+  return [...werte.keys()]
+    .filter((k) => !bekannt.has(k))
+    .sort((x, y) => (werte.get(x) ?? 0) - (werte.get(y) ?? 0));
 }
 
 function bericht(
@@ -259,6 +365,7 @@ function bericht(
     "|---|---|---|---|",
     ...STUFEN.map((n) => zeile(`stufe${n}`, `Stufe ${n}`)),
     ...GEGNER.map((g) => zeile(g.kennung, g.name)),
+    ...weitere(werte).map((k) => zeile(k, k.replace("stufe", "Grundschicht "))),
     "",
   ].join("\n");
 }

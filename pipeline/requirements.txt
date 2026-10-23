@@ -4,3 +4,4 @@ jsonschema==4.26.0
 fonttools==4.65.0
 pytest==9.0.0
 ruff==0.14.0
+zstandard==0.25.0  # nur für pipeline/menschenprofil/sammeln.py (Lichess-Datenbank, Datenstrom)

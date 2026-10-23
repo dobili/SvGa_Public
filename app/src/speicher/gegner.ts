@@ -10,6 +10,7 @@ import { BLINDE_FLECKEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import { istPortraetwahl } from "../engine/portraetwahl";
+import { menschenwerteAus } from "./menschenwerte";
 import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../engine/stil";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
@@ -18,7 +19,7 @@ import type { Phase } from "../schach/phase";
 export const MAX_EIGENE_GEGNER = 20;
 /** Namen werden auf diese Länge gekürzt. */
 export const MAX_NAMENSLAENGE = 24;
-const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8];
+const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 type Roh = Record<string, unknown>;
 
@@ -72,6 +73,8 @@ export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
     blindeFlecken: blindeFleckenAus(roh.blindeFlecken),
     // Porträt nur aus der Liste zur Wahl (0.2.99); ältere Gegner und Unbekanntes ohne Porträt.
     ...(istPortraetwahl(roh.portraet) ? { portraet: roh.portraet } : {}),
+    // Erweiterter Modus (0.2.117), nur wenn gespeichert.
+    ...menschenwerteAus(roh),
   };
 }
 

@@ -5,18 +5,14 @@
  * Partie liegt immer im Speicher (speicher/partien.ts); jeder Zug, jede Rücknahme und jeder
  * Uhrstand wird sofort geschrieben, damit die Partie ein Neuladen übersteht. Ist die Engine am
  * Zug, wählt sie ihren Zug nach der Stufe (spiel/enginezug.ts) mit den Buchzügen der Kapitel 2
- * und 3. Die Uhr hält an, sobald die App in den Hintergrund geht oder der Bildschirm verlassen
+ * und 3; den Zug samt Bedenkzeit und Notmodus spielt ui/komponenten/botzug.ts. Die Uhr hält an, sobald die App in den Hintergrund geht oder der Bildschirm verlassen
  * wird, und läuft bei der Rückkehr weiter; zieht die Engine im Hintergrund, bleibt die Uhr
  * nach ihrem Zug stehen. Den angehaltenen Uhrstand sichert sie zusätzlich sofort im
  * Gerätespeicher, weil ein Neuladen das Schreiben in IndexedDB abbricht (uhrNotsicherung.ts, N180).
  * Abhängigkeiten: spiel/, speicher/, engine/, daten/laden.ts, schach/eroeffnungsindex.ts.
  */
 import { useEffect, useMemo, useState } from "react";
-import { AuftragAbgebrochen, engine } from "../../engine/engineDienst";
-import { tagesform, type Verlauf } from "../../engine/menschlich";
-import { gegnerVon } from "../../engine/gegner";
-import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
-import { phaseVon } from "../../spiel/phasen";
+import { AuftragAbgebrochen } from "../../engine/engineDienst";
 import { ladeKapitel } from "../../daten/laden";
 import {
   baueEroeffnungsindex,
@@ -32,7 +28,6 @@ import {
   zieheMitUhr,
 } from "../../spiel/ablauf";
 import { BUCHTREUE, BUCHTREUE_VORGABE } from "../../engine/zugwahl";
-import { engineZug } from "../../spiel/enginezug";
 import {
   aktuelleFen,
   amZug,
@@ -41,9 +36,11 @@ import {
   leserzug,
   type Partie,
 } from "../../spiel/partie";
-import { findePartie, mitPartie } from "../../speicher/partien";
-import { aendere, speicherzustand, useSpeicher } from "../../speicher/speicher";
+import { findePartie } from "../../speicher/partien";
+import { useSpeicher } from "../../speicher/speicher";
 import { useDaten } from "./useDaten";
+import { aendereNeueste, neueste, normalerBotzug, spieleVorzug, stufeFuer } from "./botzug";
+import { vorzugFuer } from "./botNotmodus";
 import { mitGesicherterUhr, sichereUhr, verwerfeUhrsicherung } from "./uhrNotsicherung";
 
 /** So oft fragt die Anzeige die Uhr ab (Millisekunden). */
@@ -63,23 +60,6 @@ export interface Partiesteuerung {
   readonly spieleLeser: (san: string) => void;
   readonly nimmZurueck: () => void;
   readonly gibAuf: () => void;
-}
-
-/** Die Partie in ihrem neuesten Stand (nicht aus einem älteren Render). */
-function neueste(id: string): Partie | null {
-  return findePartie(speicherzustand().daten.spiel, id);
-}
-
-/** Schreibt eine Partie in den Speicher (laufend oder, wenn beendet, abgelegt). */
-function schreibe(partie: Partie): void {
-  void aendere((daten) => ({ ...daten, spiel: mitPartie(daten.spiel, partie) }));
-}
-
-/** Ändert die neueste Partie mit einer reinen Funktion; Gleiches schreibt nichts. */
-function aendereNeueste(id: string, aenderung: (partie: Partie) => Partie | null): void {
-  const partie = neueste(id);
-  const neu = partie ? aenderung(partie) : null;
-  if (neu && neu !== partie) schreibe(neu);
 }
 
 /** Der Eröffnungsindex für den Eröffnungsmodus; bereit auch dann, wenn das Laden scheitert. */
@@ -110,31 +90,7 @@ function buchzuegeFuer(
   return { zuege: buchzuegeAb(index, fen), treue: BUCHTREUE };
 }
 
-/**
- * Die Stufe der Engine für diesen Zug (0.2.40): die Stufe der Phase der Stellung, erreicht Zug
- * für Zug um höchstens eine Stufe von der Stufe des vorigen Engine-Zuges aus.
- * Beispiel: Eröffnung 1, Mittelspiel 4: erster Zug im Mittelspiel 2, dann 3, dann 4.
- */
-function stufeFuer(partie: Partie, fen: string): Stufennummer {
-  const ziel = partie.einstellung.stufenJePhase[phaseVon(fen) ?? "mittelspiel"];
-  const letzter = [...partie.zuege].reverse().find((z) => z.von === "engine" && z.stufe);
-  return letzter?.stufe ? naechsteStufe(letzter.stufe, ziel) : ziel;
-}
-
-/** Eigene Züge mit Verlust (ab 0,5) unter den letzten drei Zügen der Engine: Strähne (0.2.52). */
-const STRAEHNE_ZUEGE = 3;
-const STRAEHNE_VERLUST_AB = 0.5;
-
-/** Der Verlauf der Partie für die Fehlerneigung der Stufen 1 bis 3 (engine/menschlich.ts). */
-function verlaufVon(partie: Partie): Verlauf {
-  const letzte = partie.zuege.filter((z) => z.von === "engine").slice(-STRAEHNE_ZUEGE);
-  return {
-    fehlerAnlauf: letzte.filter((z) => z.verlust >= STRAEHNE_VERLUST_AB).length,
-    tagesform: tagesform(partie.id),
-  };
-}
-
-/** Lässt die Engine ziehen, solange sie am Zug ist. */
+/** Lässt die Engine ziehen, solange sie am Zug ist; im Notmodus mit Vorzügen. */
 function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) {
   const buch = useBuch();
   const [fehler, setzeFehler] = useState<string | null>(null);
@@ -145,34 +101,17 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
   useEffect(() => {
     if (!amZugEngine || !buch.bereit) return;
     let aktiv = true;
-    const buchzuege = buchzuegeFuer(buch.index, fen, eroeffnung);
+    const laeuft = () => aktiv;
     const jetzige = neueste(id);
-    const profil = {
-      fehlerarten: jetzige?.einstellung.fehlerarten ?? null,
-      stil: jetzige?.einstellung.stil ?? 0,
-      blindeFlecken: jetzige?.einstellung.blindeFlecken ?? [],
-      verlauf: jetzige ? verlaufVon(jetzige) : undefined,
-      // Spaß-Bots (0.2.88): der Anteil steht in der Liste, nicht in der gespeicherten Partie.
-      zufallszuege: gegnerVon(jetzige?.einstellung.bot ?? null)?.zufallszuege,
-    };
-    engineZug(
-      engine,
-      fen,
-      stufe(stufennummer),
-      buchzuege.zuege,
-      Math.random,
-      buchzuege.treue,
-      profil,
-    )
-      .then((zug) => {
-        const jetzt = neueste(id);
-        if (!aktiv || !jetzt || aktuelleFen(jetzt) !== fen) return;
-        if (!zug) throw new Error(`Kein Zug der Engine in ${fen}`);
-        setzeFehler(null);
-        // Im Hintergrund bleibt die Uhr nach dem Zug stehen (sonst liefe die Zeit des Lesers).
-        const sichtbar = document.visibilityState !== "hidden";
-        const mitStufe = { ...zug, stufe: stufennummer };
-        aendereNeueste(id, (p) => zieheMitUhr(p, mitStufe, Date.now(), sichtbar));
+    const buchzuege = buchzuegeFuer(buch.index, fen, eroeffnung);
+    (jetzige ? vorzugFuer(id, jetzige) : Promise.resolve(null))
+      .then((vorzug) =>
+        vorzug === null
+          ? normalerBotzug(id, fen, stufennummer, buchzuege, laeuft)
+          : spieleVorzug(id, fen, vorzug, stufennummer, laeuft),
+      )
+      .then(() => {
+        if (aktiv) setzeFehler(null);
       })
       .catch((grund: unknown) => {
         if (grund instanceof AuftragAbgebrochen) {

@@ -1675,6 +1675,8 @@ etwa“ chess.com und FIDE über veröffentlichte Umrechnungen.
 8. Teil E: Bots für Schnellschach neu (Spaß 4 + 8 × 8), Fehlerraten je Phase aus den Spielerprofilen,
    Unterscheidung der Bots über die Bereiche und Kopplungen (vorher Gespräch mit dem Autor),
    Messung mit vierfachen Kandidaten (256 + 16), Ergebnisleiter, Verankerung mit dem neuen Modell.
+   Dazu (Autor, 23.10.2026): tieferes Eröffnungsbuch je Elo-Band aus einem ganzen Monat der
+   Lichess-Datenbank (Zugfolgen zählen, nur Rechenzeit).
 8b. Bedenkzeit und Zeitnot der Bots aus den Spielerprofilen neu eichen (Teil C verlangte die
    Bedenkzeit je Zelle; das Uhrmodell beruht noch auf der ersten Sammlung), ebenso die Tagesform
    (Streuung zwischen Partien) aus dem Beta-Binomial-Modell.

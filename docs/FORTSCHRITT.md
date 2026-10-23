@@ -1816,3 +1816,40 @@ Website (`inhalte/de/training/`), Namen der Bots.
   mit Gradient Boosting, Prüfung an 20 % zurückgelegten Spielern, Teilmodelle je Phase).
 - Nach einem Neustart des Containers: kette2.sh, den Engine-Lauf (gleicher Aufruf, fortsetzbar)
   und elomodell.py neu starten.
+
+### Ergebnisse der Nacht, Teil 1 (24.10.2026, 0 Uhr): Spieler-Bereiche und Elo-Modell
+
+**Beta-Binomial, Filter „offen“ (10–90 % Gewinnchance), lokal spielerprofil/betabinom-offen.json,
+bericht-offen.txt.** 6705 Zellen, 2581 Kopplungen; 3510 Zellen mit eigener Streuung, 1388 mit
+zusammengefasster. Alle Fehler ≥ 0,5 je 100 Züge, Schnellschach, 5–95 % der Spieler:
+400: 46,6 [37–56]; 800: 38,1 [30–47]; 1200: 31,2 [24–38]; 1600: 27,1 [22–33]; 2000: 23,2 [18–29];
+2200: 18,6 [13–25]; 2400: 13,9 [7–23]. Unsicherheit der Grenzen etwa ±1. Streuung zwischen
+Spielern 3,3–5,6 Punkte, Tagesform (zwischen Partien desselben Spielers) 5,3–5,8: Die Tagesform
+ist so groß wie die Persönlichkeit. 1200, je Phase: Eröffnung 20 [11–31], Mittelspiel 36 [30–43],
+Endspiel 30 [23–38]; Verlust je Fehler 1,2 / 1,8 / 1,7 Bauern; Fehler je Partie 1,3 / 5,9 / 5,3,
+gesamt 9,3 [6,6–12,0]. Taktische und ruhige Stellungen fast gleich fehlerträchtig. Fehlerarten
+1200: ungenau 13,1 [10,5–15,8], Drohung ignoriert 4,9 [2,8–7,4], Bauernzug ohne Not 3,0 [1,5–4,9],
+Taktik 2,0 [1,3–2,8], Schlag verpasst 1,4, Figur hängen 1,3 [0,7–2,1], König in der Mitte 1,1
+[0,2–2,7] (sehr spielerabhängig), übrige unter 1. Kopplungen je Spieler (Lift): Schlagreflex ←
+Grundreihe 7,7 [5,0–10,8], Zwischenzug 6,9, Dame 4,5; Taktik ← Abzug 3,9; Bauer eingestellt ←
+Diagonale 2,4; einige Bereiche entartet (ρ → 0), dort nur der Mittelwert belastbar.
+
+**Elo-Modell (spielerprofil/elomodell.py, Gradient Boosting, Filter bis zur Entscheidung,
+Prüfung an 20 % zurückgelegten Spielern), Abweichung in Elo:**
+
+| Zeitklasse | nur Genauigkeit je Partie / Mittel über 10 | alle Kennzahlen je Partie / Mittel über 10 | Spielerebene (Kennzahlen über 10 Partien gemittelt) |
+|---|---|---|---|
+| Blitz | 425 / 392 | 305 / 261 | 167 (90 % unter 355) |
+| Schnellschach | 366 / 328 | 262 / 200 | 131 (90 % unter 272) |
+| Klassisch | 255 / 178 | 194 / 134 | 129 (90 % unter 265) |
+
+Stufenvergleich Schnellschach je Partie: Genauigkeit 366 → + Fehler je Partie und Verlust 295 →
++ Phasen 276 → + Fehlerarten 272 → + Flecken 270 → + Schwierigkeit und Zeit 262. Fehlerarten und
+Flecken verbessern die Schätzung also kaum (sie sind für die Bots wichtig, nicht für die Zahl).
+Teilmodelle je Phase (Schnellschach): Eröffnung 382, Mittelspiel 321, Endspiel 470 je Partie;
+Eröffnung sagt wie erwartet am wenigsten. Filter „alle Züge“ ist etwas schlechter (266 / 143).
+**Verzerrung zur Mitte:** Das Modell schätzt schwache Spieler zu hoch, starke zu tief (je Partie
+400: +280, 2400: −210; Spielerebene 400: +108, 2400: −80). Entzerrung über die Gerade
+E[Schätzung | wahr] und Umkehrung macht die Bänder fast unverzerrt (±35) bei etwas größerer
+Abweichung (139 statt 131). Vorschlag für die App: entzerrte Zahl anzeigen, Bereich aus der
+Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.

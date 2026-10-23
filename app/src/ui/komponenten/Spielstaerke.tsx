@@ -1,30 +1,22 @@
 /**
- * Karte „Spielstärke“ in der Auswertung: Genauigkeit, geschätzte Spielstärke, Verlust je Zug,
- * beste Züge und Zeichen je Seite.
+ * Karten „Genauigkeit und Spielstärke“ und „Deine Züge“ in der Auswertung, für eine Seite.
  *
- * Rolle im Gesamtbild: Rückmeldung des Autors zum Nachtest von 0.2.38 („Elo-Schätzung für beide
- * Seiten, Anzahl der !, ?, ?! Züge, Genauigkeit wie bei chess.com“), seit 0.2.40 dazu je Phase
- * (Eröffnung, Mittelspiel, Endspiel) und die Züge nach Klasse wie bei chess.com; seit 0.2.72 je
- * Phase ein Urteilswort als farbige Marke (wie die Symbole je Phase bei chess.com) und das
- * Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Die Rechnung steht in
- * spiel/genauigkeit.ts; hier nur die Tabellen mit zwei Spalten, der Leser zuerst.
- * Seit 0.2.83 (Eichung): Genauigkeit im gewählten Modus (Einstellungen), Spielstärke als Mitte mit
- * Spanne, die Werte für chess.com und Lichess hinter dem Fragezeichen; das Urteilswort je Phase an
- * der inneren Genauigkeit. Seit 0.2.85 (S23) über der Tabelle die feste Zahl des Gegners neben
- * seiner Leistung in dieser Partie („Leon (etwa 1300) hat in dieser Partie wie etwa 1450 gespielt“).
- * Seit 0.2.86 (Wunsch des Autors): oben der Schalter „Genauigkeit wie“ (seit 0.2.87 nur noch hier,
- * als Segmentleiste mit Fragezeichen; Tabellen ohne Überlauf nach rechts), vor jeder Zeile ein Symbol und vor jeder Zugklasse ihre
- * farbige Marke (Auswertungssymbole.tsx).
- * Abhängigkeiten: engine/botstaerke.ts, staerkeangabe.ts, spiel/genauigkeit.ts, spiel/auswertung.ts,
- * spiel/taktik.ts, app/einstellungen.ts,
- * InfoKnopf, i18n.
+ * Rolle im Gesamtbild: Seit R56 (Wunsch des Autors, 23.10.2026, nach Vorschaubildern) statt der
+ * zweispaltigen Tabellen: Die Auswertung zeigt eine Seite (Umschalter in Auswertung.tsx), oben ein
+ * großer Ring mit der Genauigkeit, daneben Urteil und geschätzte Spielstärke mit Spanne, darunter
+ * je ein Balken (Skala 50 bis 100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und Taktik
+ * mit Prozent, Urteilswort und Spielstärke; Phasen ohne Wertung grau mit „–“. Die Zugklassen
+ * stehen als Bullet-Diagramm in Zugklassen.tsx. Rechnungen wie bisher in spiel/genauigkeit.ts.
+ * Der Schalter „Genauigkeit wie“ bleibt hinter dem Fragezeichen, bis der Bot-Chat ihn abschafft.
+ * Abhängigkeiten: spiel/genauigkeit.ts, spiel/wertung.ts, engine/botstaerke.ts, Zugklassen.tsx,
+ * Genauigkeitsbalken.tsx, InfoKnopf, i18n.
  */
 import type { Color } from "chessops/types";
-import { Fragment, useMemo } from "react";
+import { useMemo } from "react";
 import { aendereEinstellungen, useEinstellungen } from "../../app/einstellungen";
 import { gegnerstaerke } from "../../engine/botstaerke";
-import { t, tZahl, zahlText } from "../../i18n/sprache";
-import type { Zugklasse, Zugurteil } from "../../spiel/auswertung";
+import { t } from "../../i18n/sprache";
+import type { Zugurteil } from "../../spiel/auswertung";
 import {
   phasenurteil,
   spielstaerke,
@@ -33,217 +25,127 @@ import {
   type Seitenbilanz,
 } from "../../spiel/genauigkeit";
 import { stellungen, type Partie } from "../../spiel/partie";
-import { PHASEN, type Phase } from "../../spiel/phasen";
-import { ZUGARTEN, zugartJeStellung } from "../../spiel/taktik";
+import { type Phase } from "../../spiel/phasen";
 import { GENAUIGKEITSMODI } from "../../spiel/staerkemodell";
+import { zugartJeStellung } from "../../spiel/taktik";
+import { staerkeLetzterPartien } from "../../spiel/wertung";
 import { sanZuUci } from "../../spiel/zuege";
-import { Klassenmarke, Zeilenname } from "./Auswertungssymbole";
+import { useSpeicher } from "../../speicher/speicher";
+import { Genauigkeitsbalken, type Balkenzeile } from "./Genauigkeitsbalken";
 import { MitInfo } from "./InfoKnopf";
 import { Segmentwahl } from "./Segmentwahl";
 import { staerketext as angabetext } from "./staerkeangabe";
-import { KENNZAHLSYMBOLE, PHASENSYMBOLE } from "./zeilensymbole";
 import { Titelsymbol } from "./Titelsymbol";
+import { Zugklassen } from "./Zugklassen";
 
-/** Reihenfolge der Klassen in der Tabelle, wie bei chess.com von oben nach unten. */
-const KLASSEN: readonly Zugklasse[] = [
-  "brillant",
-  "stark",
-  "bester",
-  "sehrGut",
-  "gut",
-  "buch",
-  "ungenau",
-  "fehler",
-  "verpasst",
-  "patzer",
-];
+/** Ohne jede Schätzung vergleicht „Deine Züge“ mit dieser Stärke (Einsteiger mit Erfahrung). */
+const VERGLEICH_OHNE_SCHAETZUNG = 1200;
+const RING_RADIUS = 40;
+const RING_GROESSE = 100;
+const PROZENT = 100;
 
 /**
- * „etwa 1400 (1000–1800)“, „zu wenige Züge“ oder (seit 0.2.103) „zu wenige Züge vor der
- * Entscheidung“, wenn erst die Regel aus spiel/entscheidung.ts die Züge zu knapp macht.
+ * Mit welcher Stärke werden die Zugklassen verglichen? Für den Leser mit „Deine Spielstärke“
+ * (letzte zehn gewertete Partien), sonst mit der Schätzung dieser Partie; für die Engine mit der
+ * festen Zahl des Bots. Nicht die Schätzung der Partie zuerst: Eine schwache Partie würde sich
+ * sonst mit schwachen Spielern vergleichen und „normal“ aussehen.
  */
-function staerketext(b: Seitenbilanz): string {
-  if (b.schaetzung === null) {
-    return b.gewertet < b.zuege
-      ? t("spielstaerke.zuWenigVorEntscheidung")
-      : t("spielstaerke.zuWenig");
-  }
-  return t("spielstaerke.spanne", {
-    mitte: b.schaetzung.mitte,
-    von: b.schaetzung.von,
-    bis: b.schaetzung.bis,
-  });
+function vergleichsElo(
+  partie: Partie,
+  seite: Color,
+  b: Seitenbilanz,
+  eigeneStaerke: number | null,
+): number {
+  const ausPartie = b.schaetzung?.mitte ?? VERGLEICH_OHNE_SCHAETZUNG;
+  if (seite === partie.einstellung.eigeneFarbe) return eigeneStaerke ?? ausPartie;
+  return partie.einstellung.gegner === "engine" ? gegnerstaerke(partie.einstellung) : ausPartie;
 }
 
-/** Wie `staerketext`, dazu „aus 18 Zügen bis zur Entscheidung“, wenn nicht alle Züge zählen. */
-function staerkezeile(b: Seitenbilanz): string {
-  const text = staerketext(b);
-  if (b.schaetzung === null || b.gewertet >= b.zuege) return text;
-  return `${text} ${t("spielstaerke.bisEntscheidung", { anzahl: b.gewertet })}`;
-}
-
-/** „82 %“ oder „–“. */
-function genauigkeitstext(b: Seitenbilanz): string {
-  return b.genauigkeit === null
-    ? "–"
-    : t("spielstaerke.prozent", { wert: Math.round(b.genauigkeit) });
-}
-
-/** Zahl mit deutschem Komma und einer Nachkommastelle. */
-function komma(zahl: number): string {
-  return zahlText(zahl, 1);
-}
-
-/**
- * Feste Zahl des Gegners und seine Leistung in dieser Partie; null gegen einen Menschen oder ohne
- * Schätzung (zu wenige Züge).
- * Beispiel: Leon (etwa 1300), Engine spielte mit 82 % → „Leon (etwa 1300) hat in dieser Partie wie
- * etwa 1500 gespielt.“
- */
-function gegnerzeile(partie: Partie, engine: Seitenbilanz): string | null {
-  if (partie.einstellung.gegner !== "engine" || engine.schaetzung === null) return null;
-  return t("spielstaerke.gegnerHeute", {
-    name: partie.einstellung.botName ?? t("spielstaerke.gegnerName"),
-    staerke: angabetext(gegnerstaerke(partie.einstellung)),
-    heute: angabetext(engine.schaetzung.mitte),
-  });
-}
-
-/** Die Tabelle: Zeilen sind die Kennzahlen, Spalten die Seiten (Leser zuerst). */
-export function Spielstaerke({
-  partie,
-  werte,
-  urteile,
-  beste,
-  phasen,
-}: {
-  partie: Partie;
-  werte: readonly number[];
-  urteile: readonly Zugurteil[];
-  beste: readonly string[];
-  phasen: readonly Phase[];
-}) {
-  const zugarten = useMemo(() => zugartJeStellung(partie), [partie]);
-  const modus = useEinstellungen().genauigkeitsmodus;
-  if (urteile.length === 0) return null;
-  const alle = stellungen(partie);
-  const gespielte = partie.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  const bilanz = spielstaerke(partie, werte, urteile, beste, gespielte, modus);
-  const jePhase = spielstaerkeJePhase(partie, werte, urteile, beste, gespielte, phasen, modus);
-  const imMittelspiel = spielstaerkeImMittelspiel(
-    partie,
-    werte,
-    urteile,
-    beste,
-    gespielte,
-    phasen,
-    zugarten,
-    modus,
-  );
-  const eigene: Color = partie.einstellung.eigeneFarbe;
-  const andere: Color = eigene === "white" ? "black" : "white";
-  const farbe = (seite: Color) => t(seite === "white" ? "farbe.w" : "farbe.b");
-  const zeilen = [
-    t("spielstaerke.genauigkeit", { modus: t(`einstellungen.genauigkeit.${modus}`) }),
-    t("spielstaerke.staerke"),
-    t("spielstaerke.verlust"),
-    t("spielstaerke.beste"),
-    t("spielstaerke.zeichen"),
-  ];
+/** Ring mit der Genauigkeit in der Farbe des Urteils. */
+function Ring({ genauigkeit, urteil }: { genauigkeit: number; urteil: string }) {
+  const umfang = 2 * Math.PI * RING_RADIUS;
+  const mitte = RING_GROESSE / 2;
   return (
-    <section className="karte spielstaerke" data-testid="spielstaerke">
-      <h2 className="karte-titel">
-        <Titelsymbol art="spielstaerke" />
-        {t("spielstaerke.titel")}
-      </h2>
-      <MitInfo
-        zeile={<span className="einstellung-name">{t("einstellungen.genauigkeit")}</span>}
-        erklaerung={<p>{t("einstellungen.genauigkeit.info")}</p>}
-        thema={t("einstellungen.genauigkeit")}
+    <svg
+      className="genauigkeitsring"
+      width={RING_GROESSE}
+      height={RING_GROESSE}
+      viewBox={`0 0 ${RING_GROESSE} ${RING_GROESSE}`}
+      aria-hidden="true"
+    >
+      <circle className="ring-grund" cx={mitte} cy={mitte} r={RING_RADIUS} />
+      <circle
+        className={`ring-wert ringfarbe-${urteil}`}
+        cx={mitte}
+        cy={mitte}
+        r={RING_RADIUS}
+        strokeDasharray={`${(umfang * genauigkeit) / PROZENT} ${umfang}`}
+        transform={`rotate(-90 ${mitte} ${mitte})`}
       />
-      <Segmentwahl
-        name={t("einstellungen.genauigkeit")}
-        werte={GENAUIGKEITSMODI}
-        gewaehlt={modus}
-        text={(wert) => t(`einstellungen.genauigkeit.${wert}`)}
-        beiWahl={(genauigkeitsmodus) => aendereEinstellungen({ genauigkeitsmodus })}
-      />
-      {gegnerzeile(partie, bilanz[andere]) && (
-        <p className="hinweis" data-testid="gegner-heute">
-          {gegnerzeile(partie, bilanz[andere])}
-        </p>
-      )}
-      <table className="spielstaerke-tabelle">
-        <thead>
-          <tr>
-            <th scope="col">{t("spielstaerke.seite")}</th>
-            <th scope="col">
-              {partie.einstellung.gegner === "mensch"
-                ? farbe(eigene)
-                : t("spielstaerke.du", { farbe: farbe(eigene) })}
-            </th>
-            <th scope="col">
-              {partie.einstellung.gegner === "mensch"
-                ? farbe(andere)
-                : t("spielstaerke.engine", { farbe: farbe(andere) })}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <Zeilen zeilen={zeilen} eigene={bilanz[eigene]} andere={bilanz[andere]} />
-          {PHASEN.map((ph) => (
-            <Fragment key={ph}>
-              <Phasenzeile
-                art={ph}
-                name={t(`phase.name.${ph}`)}
-                eigene={jePhase[ph][eigene]}
-                andere={jePhase[ph][andere]}
-              />
-              {ph === "mittelspiel" &&
-                ZUGARTEN.map((art) => (
-                  <Phasenzeile
-                    key={art}
-                    art={art}
-                    name={t(`spielstaerke.zugart.${art}`)}
-                    unterzeile
-                    eigene={imMittelspiel[art][eigene]}
-                    andere={imMittelspiel[art][andere]}
-                  />
-                ))}
-            </Fragment>
-          ))}
-        </tbody>
-      </table>
-      <h3 className="spielstaerke-untertitel">{t("spielstaerke.klassen")}</h3>
-      <table className="spielstaerke-tabelle spielstaerke-klassen">
-        <tbody>
-          {KLASSEN.map((k) => (
-            <tr key={k}>
-              <th scope="row">
-                <span className="zeilenname">
-                  <Klassenmarke klasse={k} />
-                  <span>{t(`zugklasse.${k}`)}</span>
-                </span>
-              </th>
-              <td>{bilanz[eigene].klassen[k]}</td>
-              <td>{bilanz[andere].klassen[k]}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <Erklaerung b={bilanz[eigene]} />
-    </section>
+      <text
+        x={mitte}
+        y={mitte}
+        className="ring-zahl"
+        textAnchor="middle"
+        dominantBaseline="central"
+      >
+        {t("spielstaerke.prozent", { wert: Math.round(genauigkeit) })}
+      </text>
+    </svg>
   );
 }
 
-/**
- * Erklärung der Karte hinter einem Fragezeichen: die Werte des Lesers auf beiden Skalen (seit
- * 0.2.83) und wie die Zahlen entstehen (seit 0.2.85 zusammen, Wunsch des Autors).
- */
-function Erklaerung({ b }: { b: Seitenbilanz }) {
+/** Kopf der Karte: Ring, Urteil, Genauigkeit, Spielstärke; beim Bot seine feste Zahl dazu. */
+function Gesamt({ partie, seite, b }: { partie: Partie; seite: Color; b: Seitenbilanz }) {
+  const modus = useEinstellungen().genauigkeitsmodus;
+  if (b.genauigkeit === null) return <p>{t("spielstaerke.keineZuege")}</p>;
+  const urteil = phasenurteil(b.innen ?? b.genauigkeit);
+  const bot =
+    partie.einstellung.gegner === "engine" && seite !== partie.einstellung.eigeneFarbe
+      ? t("spielstaerke.botZahl", {
+          name: partie.einstellung.botName ?? t("spielstaerke.gegnerName"),
+          staerke: angabetext(gegnerstaerke(partie.einstellung)),
+        })
+      : null;
+  return (
+    <div className="gesamtgenauigkeit">
+      <Ring genauigkeit={b.genauigkeit} urteil={urteil} />
+      <div>
+        <p className="gesamt-urteil">{t(`spielstaerke.gesamt.${urteil}`)}</p>
+        <p>
+          {t("spielstaerke.genauigkeit", { modus: t(`einstellungen.genauigkeit.${modus}`) })}{" "}
+          {t("spielstaerke.prozent", { wert: Math.round(b.genauigkeit) })}
+        </p>
+        <p>
+          {t("spielstaerke.staerke")}{" "}
+          <b>
+            {b.schaetzung
+              ? t("spielstaerke.etwa", { wert: b.schaetzung.mitte })
+              : t("spielstaerke.zuWenig")}
+          </b>
+        </p>
+        {b.schaetzung && (
+          <p className="hinweis">
+            {t("spielstaerke.spannenzeile", { von: b.schaetzung.von, bis: b.schaetzung.bis })}
+          </p>
+        )}
+        {bot && <p className="hinweis">{bot}</p>}
+      </div>
+    </div>
+  );
+}
+
+/** Erklärung und Schalter „Genauigkeit wie“ hinter dem Fragezeichen der Karte. */
+function Kartenkopf({ b }: { b: Seitenbilanz }) {
+  const modus = useEinstellungen().genauigkeitsmodus;
   return (
     <MitInfo
-      zeile={<p className="hinweis">{t("spielstaerke.erklaerungKurz")}</p>}
+      zeile={
+        <h2 className="karte-titel">
+          <Titelsymbol art="spielstaerke" />
+          {t("spielstaerke.titel")}
+        </h2>
+      }
       erklaerung={
         <>
           {b.schaetzung && (
@@ -255,6 +157,14 @@ function Erklaerung({ b }: { b: Seitenbilanz }) {
             </p>
           )}
           <p>{t("spielstaerke.erklaerung")}</p>
+          <p>{t("einstellungen.genauigkeit.info")}</p>
+          <Segmentwahl
+            name={t("einstellungen.genauigkeit")}
+            werte={GENAUIGKEITSMODI}
+            gewaehlt={modus}
+            text={(wert) => t(`einstellungen.genauigkeit.${wert}`)}
+            beiWahl={(genauigkeitsmodus) => aendereEinstellungen({ genauigkeitsmodus })}
+          />
         </>
       }
       thema={t("spielstaerke.titel")}
@@ -262,115 +172,48 @@ function Erklaerung({ b }: { b: Seitenbilanz }) {
   );
 }
 
-/** Eine Zeile je Phase oder Zugart (Taktik, Strategie eingerückt), beide Seiten. */
-function Phasenzeile({
-  art,
-  name,
-  unterzeile = false,
-  eigene,
-  andere,
+/** Die beiden Karten für die gewählte Seite. */
+export function Spielstaerke({
+  partie,
+  werte,
+  urteile,
+  beste,
+  phasen,
+  seite,
 }: {
-  art: keyof typeof PHASENSYMBOLE;
-  name: string;
-  unterzeile?: boolean;
-  eigene: Seitenbilanz;
-  andere: Seitenbilanz;
+  partie: Partie;
+  werte: readonly number[];
+  urteile: readonly Zugurteil[];
+  beste: readonly string[];
+  phasen: readonly Phase[];
+  seite: Color;
 }) {
-  return (
-    <tr className={unterzeile ? "spielstaerke-unterzeile" : undefined}>
-      <th scope="row">
-        <Zeilenname Symbol={PHASENSYMBOLE[art]} kinder={name} />
-      </th>
-      <td>
-        <Phasenzelle b={eigene} />
-      </td>
-      <td>
-        <Phasenzelle b={andere} />
-      </td>
-    </tr>
-  );
-}
-
-/**
- * Eine Phase in einer Zelle: Marke „Sehr gut“, dann „82 % · etwa 1500 (12 Züge)“; „–“ ohne Züge.
- * Liegt die ganze Phase nach der Entscheidung (seit 0.2.103), steht statt Marke und Schätzung
- * „nach der Entscheidung“.
- */
-function Phasenzelle({ b }: { b: Seitenbilanz }) {
-  if (b.zuege === 0 || b.genauigkeit === null) return <>–</>;
-  if (b.innen === null) {
-    return (
-      <>
-        {tZahl("spielstaerke.phaseEntschieden", b.zuege, {
-          genauigkeit: genauigkeitstext(b),
-          zuege: b.zuege,
-        })}
-      </>
-    );
-  }
-  const urteil = phasenurteil(b.innen);
-  // Seit R33 (Wunsch des Autors, 23.10.2026): Die Eröffnung endet nach unseren Regeln oft nach
-  // wenigen Zügen. Dann stehen Urteil und Genauigkeit ohne den Satz „zu wenige Züge“; die Zahl der
-  // Spielstärke kommt erst ab sechs Zügen (Erklärung hinter dem Fragezeichen).
-  const ohneSchaetzung = b.schaetzung === null && b.gewertet >= b.zuege;
-  return (
-    <>
-      <span className={`phasenurteil phasenurteil-${urteil}`}>
-        {t(`spielstaerke.urteil.${urteil}`)}
-      </span>
-      {ohneSchaetzung
-        ? tZahl("spielstaerke.phaseKurz", b.zuege, {
-            genauigkeit: genauigkeitstext(b),
-            zuege: b.zuege,
-          })
-        : tZahl("spielstaerke.phase", b.zuege, {
-            genauigkeit: genauigkeitstext(b),
-            staerke: staerketext(b),
-            zuege: b.zuege,
-          })}
-    </>
-  );
-}
-
-/** Die Zeilen der Tabelle: je Kennzahl eine Zeile mit beiden Seiten. */
-function Zeilen({
-  zeilen,
-  eigene,
-  andere,
-}: {
-  zeilen: readonly string[];
-  eigene: Seitenbilanz;
-  andere: Seitenbilanz;
-}) {
-  const werte = (b: Seitenbilanz): string[] => [
-    genauigkeitstext(b),
-    staerkezeile(b),
-    t("spielstaerke.bauern", { wert: komma(b.verlustJeZug) }),
-    t("spielstaerke.vonZuegen", { anzahl: b.beste, zuege: b.zuege }),
-    t("spielstaerke.zeichenZeile", {
-      brillant: b.zeichen["!!"],
-      einzige: b.zeichen["!"],
-      ungenau: b.zeichen["?!"],
-      fehler: b.zeichen["?"],
-      patzer: b.zeichen["??"],
-    }),
+  const zugarten = useMemo(() => zugartJeStellung(partie), [partie]);
+  const modus = useEinstellungen().genauigkeitsmodus;
+  const partien = useSpeicher((z) => z.daten.spiel.partien);
+  const eigeneStaerke = useMemo(() => staerkeLetzterPartien(partien)?.mitte ?? null, [partien]);
+  if (urteile.length === 0) return null;
+  const alle = stellungen(partie);
+  const gespielte = partie.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
+  const args = [partie, werte, urteile, beste, gespielte] as const;
+  const b = spielstaerke(...args, modus)[seite];
+  const jePhase = spielstaerkeJePhase(...args, phasen, modus);
+  const imMittelspiel = spielstaerkeImMittelspiel(...args, phasen, zugarten, modus);
+  const zeilen: readonly Balkenzeile[] = [
+    { art: "eroeffnung", b: jePhase.eroeffnung[seite] },
+    { art: "mittelspiel", b: jePhase.mittelspiel[seite] },
+    { art: "endspiel", b: jePhase.endspiel[seite] },
+    { art: "strategie", b: imMittelspiel.strategie[seite] },
+    { art: "taktik", b: imMittelspiel.taktik[seite] },
   ];
-  const links = werte(eigene);
-  const rechts = werte(andere);
   return (
     <>
-      {zeilen.map((name, i) => (
-        <tr key={name}>
-          <th scope="row">
-            {(() => {
-              const Symbol = KENNZAHLSYMBOLE[i];
-              return Symbol ? <Zeilenname Symbol={Symbol} kinder={name} /> : name;
-            })()}
-          </th>
-          <td>{links[i]}</td>
-          <td>{rechts[i]}</td>
-        </tr>
-      ))}
+      <section className="karte spielstaerke" data-testid="spielstaerke">
+        <Kartenkopf b={b} />
+        <Gesamt partie={partie} seite={seite} b={b} />
+        <Genauigkeitsbalken zeilen={zeilen} />
+      </section>
+      <Zugklassen bilanz={b} elo={vergleichsElo(partie, seite, b, eigeneStaerke)} />
     </>
   );
 }

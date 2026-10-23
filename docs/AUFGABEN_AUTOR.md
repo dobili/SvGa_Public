@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 23.10.2026, Version 0.2.121 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 24.10.2026, Version 0.2.122 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.121“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.122“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,35 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.122: neue Auswertung nach der Partie (R55, R56; Opus, 23.10.2026 nachts)
+
+Wie in den Vorschaubildern besprochen. Zum Testen eine Partie gegen einen Bot spielen (gern 20 Züge
+oder mehr) oder unter Spielen eine Partie per PGN einlesen.
+
+- [ ] N633. **Umschalter oben:** Über der Bewertungskurve steht „Weiß (du) | Schwarz (Name des
+      Bots)“, voreingestellt auf deine Seite. Er gilt für die ganze Auswertung: Satz unter der
+      Kurve, Fehlerliste, Spielstärke und Züge. Auf der Seite des Bots steht statt der
+      Fehlerliste die eingeklappte Liste „Absichtliche Fehler der Engine“.
+- [ ] N634. **Fehler und Patzer eingeklappt (R55):** Unter der Kurve steht „Fehler und Patzer“ mit
+      der Anzahl im Kästchen. Erst ein Tipp klappt die Liste auf; jeder Eintrag hat seine farbige
+      Marke und springt zur Stellung.
+- [ ] N635. **Zoom der Kurve:** Unter der Kurve stehen „Ganze Partie“, „Eröffnung“, „Mittelspiel“,
+      „Endspiel“ (soweit vorhanden). Ein Tipp auf eine Phase zieht sie auf die volle Breite.
+      Finger auf der Kurve halten und seitwärts fahren: Darüber steht der Zug („13. Txd7“) und ein
+      goldener Strich zeigt die Stelle; Loslassen springt dorthin. Mit zwei Fingern aufziehen
+      vergrößert.
+- [ ] N636. **Spielstärke:** Großer Ring mit der Genauigkeit in der Farbe des Urteils, daneben
+      „Sehr gut gespielt“, Genauigkeit, geschätzte Spielstärke und Spanne. Darunter je ein Balken
+      für Eröffnung, Mittelspiel, Endspiel, Strategie und Taktik mit Symbol, Prozent, Spielstärke
+      (ab sechs Zügen), Urteil und Zahl der Züge; ohne Züge grau mit „–“. Der Schalter „Genauigkeit
+      wie“ steckt jetzt hinter dem Fragezeichen der Karte.
+- [ ] N637. **Deine Züge:** Je Zugart eine Zeile mit Marke, Name, Kästchen mit der Anzahl und
+      „x % des Üblichen · gut/normal/schwach“; darunter der Balken über drei grauen Zonen mit dem
+      dunklen Strich für das Übliche. Bei schwachen Zügen ist die linke Zone „gut“. Ein brillanter
+      Zug ergibt schnell „über 300 % … ▸“. Unter 15 eigenen Zügen stehen nur die Anzahlen. Die
+      üblichen Anteile sind vorerst geschätzt (Tabelle in spiel/zugklassenvergleich.ts); der
+      Bot-Chat ersetzt sie durch Werte aus Lichess-Partien.
 
 ### Neu in 0.2.121: App-Tour (P8, R52; Opus, 23.10.2026)
 

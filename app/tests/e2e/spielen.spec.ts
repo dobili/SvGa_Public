@@ -141,13 +141,30 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   // man ihn nur hier um, mit Erklärung hinter dem Fragezeichen.
   const spielstaerke = page.getByTestId("spielstaerke");
   await expect(spielstaerke).toContainText("Genauigkeit (App)");
+  // Seit R56 steckt der Schalter hinter dem Fragezeichen der Karte.
+  await spielstaerke.getByRole("button", { name: "Erklärung: Spielstärke" }).click();
+  await expect(spielstaerke).toContainText("Züge in entschiedener Stellung zählen kaum");
   const modus = spielstaerke.getByRole("radiogroup", { name: "Genauigkeit wie" });
   await expect(modus.getByRole("radio", { name: "App" })).toHaveAttribute("aria-checked", "true");
   await modus.getByRole("radio", { name: "chess.com" }).click();
   await expect(spielstaerke).toContainText("Genauigkeit (chess.com)");
-  await spielstaerke.getByRole("button", { name: "Erklärung: Genauigkeit wie" }).click();
-  await expect(spielstaerke).toContainText("Züge in entschiedener Stellung zählen kaum");
   await modus.getByRole("radio", { name: "App" }).click();
+  // R56: Ring, fünf Balken und die Zugklassen der eigenen Seite; der Umschalter wechselt die Seite.
+  await expect(page.getByTestId("balken-taktik")).toBeVisible();
+  await expect(page.getByTestId("zugklasse-patzer")).toContainText("1");
+  const seiten = auswertung.getByRole("radiogroup", { name: "Seite" });
+  await expect(seiten.getByRole("radio", { name: "Weiß (du)" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  // R55: Fehler und Patzer eingeklappt, mit der Anzahl.
+  const fehler = page.getByTestId("grobe-patzer");
+  await expect(fehler.getByRole("button", { name: /2\. g4\?\?/ })).toBeHidden();
+  await fehler.locator("summary").click();
+  await expect(fehler.getByRole("button", { name: /2\. g4\?\?/ })).toBeVisible();
+  await seiten.getByRole("radio", { name: /^Schwarz/ }).click();
+  await expect(page.getByTestId("grobe-patzer")).toHaveCount(0);
+  await seiten.getByRole("radio", { name: "Weiß (du)" }).click();
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
   await expect(

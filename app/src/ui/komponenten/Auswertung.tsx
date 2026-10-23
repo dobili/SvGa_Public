@@ -11,8 +11,13 @@
  * Seit 0.2.85 (Wünsche des Autors): die erste Abweichung mit der Gewinnchance statt Bauern, grobe
  * Patzer beider Seiten mit einem Bauern in der Farbe der Seite und Sprung zur Stellung, von den
  * absichtlichen Fehlern der Engine zuerst nur drei („Alle zeigen“ klappt den Rest auf).
+ * Seit R55/R56 (Wunsch des Autors, 23.10.2026): oben ein Umschalter Weiß/Schwarz (Voreinstellung
+ * die eigene Seite), der die ganze Seite steuert: erste Abweichung, die eingeklappte Liste „Fehler
+ * und Patzer“ (alle Fehler, verpassten Gewinne und Patzer der Seite), bei der Engine die
+ * eingeklappte Liste ihrer absichtlichen Fehler, darunter Ring, Balken und Zugklassen.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/pgn.ts, speicher/partien.ts, i18n.
  */
+import type { Color } from "chessops/types";
 import { useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
 import { stufe } from "../../engine/stufen";
@@ -21,8 +26,8 @@ import { sanInSprache } from "../../schach/notation";
 import {
   enginefehler,
   ersteAbweichung,
-  GROBER_PATZER,
   zugnummer,
+  type Zugklasse,
   type Zugurteil,
 } from "../../spiel/auswertung";
 import { stellungen, type Partie } from "../../spiel/partie";
@@ -32,8 +37,9 @@ import { uciZuSan } from "../../spiel/zuege";
 import { zugFelder } from "../../schach/weiterspielen";
 import type { Partieeintrag } from "../../speicher/partien";
 import { bieteDateiAn } from "./dateiAnbieten";
-import { Seitenfigur } from "./Auswertungssymbole";
+import { Klassenmarke } from "./Auswertungssymbole";
 import { Fortschrittsbalken } from "./Fortschrittsbalken";
+import { Segmentwahl } from "./Segmentwahl";
 import { gewinnchanceVorNach } from "./gewinnchance";
 import { Spielstaerke } from "./Spielstaerke";
 import { Verlaufskurve } from "./Verlaufskurve";
@@ -41,9 +47,15 @@ import type { Auswertungsstand } from "./useAuswertung";
 import { Knopfsymbol } from "./Knopfsymbol";
 import { Titelsymbol } from "./Titelsymbol";
 
-/** So viele absichtliche Fehler der Engine stehen zuerst da (0.2.85, Wunsch des Autors). */
-const ERSTE_ENGINEFEHLER = 3;
 const PROZENT = 100;
+const SEITEN: readonly Color[] = ["white", "black"];
+/** Klassen der Liste „Fehler und Patzer“ (R55). */
+const FEHLERKLASSEN: ReadonlySet<Zugklasse> = new Set(["fehler", "verpasst", "patzer"]);
+
+/** Die Seite, die den Zug an dieser Stelle gemacht hat. */
+function seiteAn(partie: Partie, index: number): Color {
+  return stellungen(partie)[index]?.split(" ")[1] === "b" ? "black" : "white";
+}
 
 /** Ein Sprung auf dem Brett: Stelle in der Partie und Markierungen dort. */
 export interface Sprung {
@@ -104,11 +116,11 @@ function Abweichung({
 }
 
 /**
- * Grobe Patzer beider Seiten (mehr als zwei Bauern laut Engine), je mit einem Bauern in der Farbe
- * der Seite und Sprung zur Stellung; ohne Züge, nach denen die Seite weiter klar gewinnt (K5: die
- * haben nur „?!“). Beispiel: „♙ 10. Tb1??“ für Weiß.
+ * Fehler, verpasste Gewinne und Patzer der gewählten Seite, eingeklappt mit der Anzahl (R55,
+ * Wunsch des Autors: die Liste wurde oft sehr lang). Je Zug die farbige Marke und der Sprung zur
+ * Stellung. Beispiel: „▸ Fehler und Patzer (3)“, aufgeklappt „?? 2. g4??“.
  */
-function Patzer({
+function Fehlerliste({
   eintrag,
   urteile,
   beiSprung,
@@ -118,44 +130,45 @@ function Patzer({
   beiSprung: (sprung: Sprung) => void;
 }) {
   const partie = eintrag.partie;
-  const alle = stellungen(partie);
-  const grobe = urteile.filter((u) => u.verlust > GROBER_PATZER && u.klasse !== "ungenau");
-  if (grobe.length === 0) return null;
+  const fehler = urteile.filter((u) => FEHLERKLASSEN.has(u.klasse));
+  if (fehler.length === 0) return null;
   return (
-    <div className="grobe-patzer" data-testid="grobe-patzer">
-      <span>{t("auswertung.patzer")}</span>
+    <details className="klappliste fehlerliste" data-testid="grobe-patzer">
+      <summary>
+        {t("auswertung.fehlerUndPatzer")} <span className="badge">{fehler.length}</span>
+      </summary>
       <ul className="patzerliste">
-        {grobe.map((u) => (
+        {fehler.map((u) => (
           <li key={u.index}>
             <button
               type="button"
               className="knopf-link"
               onClick={() => beiSprung(sprungZu(eintrag, u.index))}
             >
-              <Seitenfigur farbe={alle[u.index]?.split(" ")[1] === "b" ? "black" : "white"} />{" "}
-              {zugtext(partie, u.index, u.zeichen ?? "")}
+              <Klassenmarke klasse={u.klasse} /> {zugtext(partie, u.index, u.zeichen ?? "")}
             </button>
           </li>
         ))}
       </ul>
-    </div>
+    </details>
   );
 }
 
-/** Die absichtlichen Fehler der Engine aus dem Protokoll. */
+/** Die absichtlichen Fehler der Engine aus dem Protokoll, eingeklappt mit der Anzahl (R55). */
 function Enginefehler({ partie, beiSprung }: { partie: Partie; beiSprung: (s: Sprung) => void }) {
-  const [alleZeigen, setzeAlleZeigen] = useState(false);
   const fehler = enginefehler(partie);
-  const sichtbar = alleZeigen ? fehler : fehler.slice(0, ERSTE_ENGINEFEHLER);
   const ERSTE_STUFE_OHNE_PROFIL = 4;
   if (fehler.length === 0) {
     const niedrigste = Math.min(...Object.values(partie.einstellung.stufenJePhase));
     return niedrigste < ERSTE_STUFE_OHNE_PROFIL ? <p>{t("auswertung.engineOhneFehler")}</p> : null;
   }
   return (
-    <div className="enginefehler" data-testid="enginefehler">
+    <details className="klappliste enginefehler" data-testid="enginefehler">
+      <summary>
+        {t("auswertung.engineFehlerTitel")} <span className="badge">{fehler.length}</span>
+      </summary>
       <ul>
-        {sichtbar.map((f) => (
+        {fehler.map((f) => (
           <li key={f.index}>
             {t("auswertung.engineFehler", {
               zug: zugtext(partie, f.index),
@@ -171,14 +184,7 @@ function Enginefehler({ partie, beiSprung }: { partie: Partie; beiSprung: (s: Sp
           </li>
         ))}
       </ul>
-      {fehler.length > ERSTE_ENGINEFEHLER && (
-        <button type="button" className="knopf-link" onClick={() => setzeAlleZeigen(!alleZeigen)}>
-          {alleZeigen
-            ? t("auswertung.engineWeniger")
-            : t("auswertung.engineAlle", { anzahl: fehler.length })}
-        </button>
-      )}
-    </div>
+    </details>
   );
 }
 
@@ -259,6 +265,34 @@ function Auswertungsfortschritt({ erledigt, gesamt }: { erledigt: number; gesamt
   );
 }
 
+/** Umschalter Weiß/Schwarz; bei der Engine mit ihrem Namen, die eigene Seite mit „(du)“. */
+function Seitenwahl({
+  partie,
+  seite,
+  beiWahl,
+}: {
+  partie: Partie;
+  seite: Color;
+  beiWahl: (seite: Color) => void;
+}) {
+  const e = partie.einstellung;
+  const name = (s: Color) => {
+    const farbe = t(s === "white" ? "farbe.w" : "farbe.b");
+    if (e.gegner !== "engine") return farbe;
+    if (s === e.eigeneFarbe) return t("auswertung.seiteDu", { farbe });
+    return t("auswertung.seiteGegner", { farbe, name: e.botName ?? t("spielstaerke.gegnerName") });
+  };
+  return (
+    <Segmentwahl
+      name={t("auswertung.seite")}
+      werte={SEITEN}
+      gewaehlt={seite}
+      text={name}
+      beiWahl={beiWahl}
+    />
+  );
+}
+
 export function Auswertung({
   eintrag,
   stand,
@@ -273,6 +307,11 @@ export function Auswertung({
   phasen: readonly Phase[];
   beiSprung: (sprung: Sprung) => void;
 }) {
+  const partie = eintrag.partie;
+  const [seite, setzeSeite] = useState<Color>(partie.einstellung.eigeneFarbe);
+  const eigeneUrteile = urteile.filter((u) => seiteAn(partie, u.index) === seite);
+  const engineSeite =
+    partie.einstellung.gegner === "engine" && seite !== partie.einstellung.eigeneFarbe;
   return (
     <section className="karte auswertung" data-testid="auswertung">
       <h2 className="karte-titel">
@@ -283,6 +322,7 @@ export function Auswertung({
         <Auswertungsfortschritt erledigt={stand.erledigt} gesamt={stand.gesamt} />
       )}
       {stand.art === "fehler" && <p className="fehlertext">{stand.meldung}</p>}
+      {urteile.length > 0 && <Seitenwahl partie={partie} seite={seite} beiWahl={setzeSeite} />}
       {urteile.length > 0 && (
         <>
           <Verlaufskurve
@@ -290,22 +330,35 @@ export function Auswertung({
             urteile={urteile}
             wechsel={phasenwechsel(phasen)}
             beiStelle={(stelle) => beiSprung({ stelle, marken: [] })}
+            zugname={(stelle) =>
+              stelle === 0
+                ? t("rueckblick.startstellung")
+                : zugtext(
+                    partie,
+                    stelle - 1,
+                    urteile.find((u) => u.index === stelle - 1)?.zeichen ?? "",
+                  )
+            }
           />
-          <Abweichung eintrag={eintrag} urteile={urteile} beiSprung={beiSprung} />
-          <Patzer eintrag={eintrag} urteile={urteile} beiSprung={beiSprung} />
+          {/* Die erste Abweichung betrifft nur Züge des Lesers (spiel/auswertung.ts). */}
+          {!engineSeite && (
+            <Abweichung eintrag={eintrag} urteile={eigeneUrteile} beiSprung={beiSprung} />
+          )}
+          <Fehlerliste eintrag={eintrag} urteile={eigeneUrteile} beiSprung={beiSprung} />
         </>
       )}
       {/* Zu zweit spielt keine Engine; der Satz „keinen absichtlichen Fehler“ wäre falsch. */}
-      {eintrag.partie.einstellung.gegner === "engine" && (
-        <Enginefehler partie={eintrag.partie} beiSprung={beiSprung} />
+      {(urteile.length === 0 ? partie.einstellung.gegner === "engine" : engineSeite) && (
+        <Enginefehler partie={partie} beiSprung={beiSprung} />
       )}
-      <Pgn partie={eintrag.partie} urteile={urteile} />
+      <Pgn partie={partie} urteile={urteile} />
       <Spielstaerke
-        partie={eintrag.partie}
+        partie={partie}
         werte={eintrag.werte}
         urteile={urteile}
         beste={eintrag.beste}
         phasen={phasen}
+        seite={seite}
       />
     </section>
   );

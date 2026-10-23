@@ -136,9 +136,9 @@ export function Endspielaufgabe({
         />
       )}
       <p className="hinweis">
-        {t("endspiel.ausBuch", {
-          nummer: aufgabe.herkunft.quelle === "buch" ? aufgabe.herkunft.abbildung : "",
-        })}
+        {aufgabe.herkunft.quelle === "buch"
+          ? t("endspiel.ausBuch", { nummer: aufgabe.herkunft.abbildung })
+          : t("taktiktrainer.ausLichess", { wertung: aufgabe.herkunft.wertung })}
         {" · "}
         {t(`endspiel.thema.${aufgabe.thema}`)}
         {" · "}

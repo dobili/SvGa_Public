@@ -10,9 +10,15 @@ Wozu diese Datei da ist:
     des Lesers, das Ziel und die Schwierigkeit. Stellungen, die
     die Engine weder als gewonnen noch als Remis einordnet, fallen weg (Bericht auf der Konsole).
     Kein Buchtext: Die Merksätze stehen in der App (de.json), hier nur Nummern, Stellungen, Themen.
+    Seit P4 (R47) dazu freie Endspielaufgaben der Lichess-Datenbank (CC0, endspiel_lichess.py):
+    Bauern-, Turm-, Damen- und Leichtfigurenendspiele mit höchstens acht Steinen, Gewinn- und
+    Remisaufgaben, von der Engine bestätigt, Schwierigkeit nach der Lichess-Wertung.
 
 Aufruf (im Hauptordner, Engine über ``cd app && npm ci``):
-    python -m pipeline.trainer.endspiel
+    python -m pipeline.trainer.endspiel                                   # nur Buch
+    python -m pipeline.trainer.endspiel --lichess buch/arbeit/lichess/passende-endspiel.pkl
+    python -m pipeline.trainer.endspiel --lichess … --teil 1/4            # Lichess-Gruppen eines Teils
+    python -m pipeline.trainer.endspiel --zusammen                        # Buch rechnen, Teile einsammeln
 """
 
 from __future__ import annotations
@@ -20,6 +26,7 @@ from __future__ import annotations
 import sys
 from dataclasses import dataclass
 from datetime import date
+from pathlib import Path
 
 import chess
 
@@ -89,7 +96,9 @@ KANDIDATEN: list[Kandidat] = [
     Kandidat("8.28", "schluesselfelder"),
     Kandidat("8.29", "schluesselfelder"),
     Kandidat("8.30", "schluesselfelder", "patt"),
-    Kandidat("8.31", "randbauer"),
+    # 8.31 (Randbauer, Weiß am Zug mit Ka6 patt oder Bauernverlust): Die Engine zieht zuerst und
+    # macht sofort Remis, der Leser käme nie an den Zug (Befund des Autors, P4 R47). Bleibt
+    # Lehrbild; der Randbauer wird an 8.61 und 8.63 geübt.
     Kandidat("8.32", "schluesselfelder"),
     Kandidat("8.34", "schluesselfelder"),
     Kandidat("8.35", "quadrat"),
@@ -157,6 +166,13 @@ KANDIDATEN: list[Kandidat] = [
     Kandidat("9.52", "dameGegenBauer"),
     Kandidat("9.53", "leichtfiguren", "falscherLaeufer"),
 ]
+
+
+def bisherige_lichess() -> list[dict]:
+    """Die Lichess-Aufgaben aus der vorhandenen Datei (ohne Lichess-Stichprobe bleiben sie)."""
+    if not ZIELDATEI.exists():
+        return []
+    return [a for a in lies_json(ZIELDATEI)["aufgaben"] if a["herkunft"]["quelle"] == "lichess"]
 
 
 def fen_der_abbildung(nummer: str) -> str:
@@ -250,7 +266,8 @@ def pruefe(engine: Engine, kandidat: Kandidat) -> dict | None:
     }
 
 
-def baue() -> dict:
+def baue(lichess: list[dict] | None = None) -> dict:
+    """Die Datei: Buchaufgaben (Engine) und, falls übergeben, die Lichess-Aufgaben dahinter."""
     aufgaben = []
     with Engine() as engine:
         for kandidat in KANDIDATEN:
@@ -277,18 +294,44 @@ def baue() -> dict:
                 "name": "Schach von Grund auf, Kapitel 8 und 9 (Endspiele)",
                 "lizenz": "Alle Rechte vorbehalten (nur Stellungen und Züge)",
                 "anzahl": len(aufgaben),
-            }
+            },
+            {
+                "kennung": "lichess",
+                "name": "Lichess-Puzzle-Datenbank (Endspielaufgaben)",
+                "lizenz": "CC0 1.0",
+                "adresse": "https://database.lichess.org/#puzzles",
+                "anzahl": len(lichess or []),
+            },
         ],
         "massstab": {"gewinnAb": GEWINN_AB, "remisBis": REMIS_BIS, "tiefe": TIEFE},
-        "aufgaben": aufgaben,
+        "aufgaben": aufgaben + (lichess or []),
     }
 
 
 def main() -> int:
+    import argparse
+
+    from pipeline.trainer import endspiel_lichess
+
     if not engine_vorhanden():
         print("Engine fehlt: cd app && npm ci", file=sys.stderr)
         return 1
-    daten = baue()
+    parser = argparse.ArgumentParser(description="Aufgaben für den Endspieltrainer bauen")
+    parser.add_argument("--lichess", type=Path, help="Stichprobe der Endspiel-Puzzles (pickle)")
+    parser.add_argument("--je-gruppe", type=int, default=endspiel_lichess.JE_GRUPPE)
+    parser.add_argument("--teil", help="nur die Lichess-Gruppen i/n rechnen, Zwischenstand ablegen")
+    parser.add_argument("--zusammen", action="store_true", help="Zwischenstände einsammeln und schreiben")
+    args = parser.parse_args()
+    if args.teil:
+        if not args.lichess:
+            print("--teil braucht --lichess", file=sys.stderr)
+            return 1
+        endspiel_lichess.rechne(args.lichess, args.je_gruppe, args.teil)
+        return 0
+    if args.lichess and not args.zusammen:
+        endspiel_lichess.rechne(args.lichess, args.je_gruppe, None)
+    lichess = endspiel_lichess.aus_teilen() if (args.lichess or args.zusammen) else bisherige_lichess()
+    daten = baue(lichess)
     schreibe_daten(ZIELDATEI, daten, SCHEMA)
     print(f"{len(daten['aufgaben'])} Aufgaben nach {ZIELDATEI.relative_to(TRAINERORDNER.parents[2])}")
     return 0

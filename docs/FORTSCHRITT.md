@@ -1379,7 +1379,10 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
       den Klick desselben Tipps; `ui/brett/treffer.ts` zieht einen Tipp bis 0.25 Feldbreiten neben
       einem Zielfeld dorthin (auf eigener Figur 0.1), abgelehnt nur auf der Kante zwischen zwei
       Zielfeldern; mit gewählter Figur scrollt das Brett nicht. N650.
-- [ ] R36 Feldmarkierungen mit gemeinsamem Umriss.
+- [x] R36 Feldmarkierungen mit gemeinsamem Umriss: `ui/brett/umriss.ts` rechnet je Farbe die
+      Randzüge der zusammenhängenden Felder (nur Kantennachbarn, Ecke an Ecke bleibt getrennt),
+      `Brettmarken.tsx` zeichnet sie als einen Rahmen (Gold: Ecken an jedem Knick). Nur
+      Darstellung, Buchdaten unverändert. N651.
 - [ ] R29 Fortschrittsbalken in der Auswertung.
 - [ ] R37 Zuganimation.
 - [ ] R38 Partieende auf dem Brett.
@@ -1387,4 +1390,4 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
 - [ ] R40 Desktop: Quer- und Hochformat live.
 - [ ] R53 Nachtmodus: Symbol für Weiß in der Fehlerliste.
 
-**Nächster Schritt:** R36.
+**Nächster Schritt:** R29.

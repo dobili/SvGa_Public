@@ -41,6 +41,12 @@ Teil fertig ist.
       zählt jetzt auch, wenn der Finger dabei etwas rutscht, und gleich nach einem Wischen. Ist
       eine Figur gewählt, scrollt die Seite über dem Brett nicht. Erkennt die App deine Tipps
       jetzt zuverlässig?
+- [ ] N651. **Markierte Felder mit einem Umriss (R36):** Abb. 0.3 öffnen: Die grauen Felder, die
+      der Turm erreicht, stehen jetzt als zwei lange gepunktete Rahmen (Linie und Reihe) da statt
+      als einzelne Kästchen. Abb. 0.4: Die drei roten Felder e3 bis e5 haben einen gemeinsamen
+      gestrichelten Rahmen, die goldenen Felder um den König Ecken nur am äußeren Umriss. Das
+      gilt überall, auch für die Werkzeuge. Felder, die sich nur an einer Ecke berühren, und
+      Felder verschiedener Farbe bleiben getrennt. Gefällt dir das, auch bei Gold?
 
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 

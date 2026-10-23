@@ -20,7 +20,7 @@ import { useZugton } from "./useZugton";
 import { Brettbild, Holzfelder } from "./Holzfelder";
 import { alleFelder, feldAnPunkt, feldEcke, figurenAusFen, type Punkt } from "./geometrie";
 import { TOLERANZ_EIGENE_FIGUR, TOLERANZ_ZIELFELD, trefferfeld } from "./treffer";
-import { Feldmarke, Pfeil, Schimmer, SPERRFARBE, Zielpunkt, Zielring } from "./Brettmarken";
+import { Feldmarken, Pfeil, Schimmer, SPERRFARBE, Zielpunkt, Zielring } from "./Brettmarken";
 import { useZiehen, wischenAn, type Ziehbedienung, type Ziehstand } from "./useZiehen";
 import { querversaetze } from "./versatz";
 import { useEinstellungen, type Figurensatz } from "../../app/einstellungen";
@@ -298,11 +298,7 @@ export function Brett({
         {ausgewaehlt && <Schimmer feld={ausgewaehlt} gedreht={gedreht} farbe={farben.schimmer} />}
         {gesperrt && <Schimmer feld={gesperrt} gedreht={gedreht} farbe={SPERRFARBE} />}
         {koordinaten && <Koordinaten gedreht={gedreht} farben={farben} />}
-        {markierungen.map((m, i) =>
-          m.typ === "feld" ? (
-            <Feldmarke key={`f${i}`} feld={m.feld} farbe={m.farbe} gedreht={gedreht} />
-          ) : null,
-        )}
+        <Feldmarken markierungen={markierungen} gedreht={gedreht} />
         {gezogen?.ueber && (
           <Schimmer feld={gezogen.ueber} gedreht={gedreht} farbe={farben.schimmer} />
         )}

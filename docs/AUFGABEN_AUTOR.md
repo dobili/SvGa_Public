@@ -107,6 +107,10 @@ Teil fertig ist.
       wählen, „Einlesen und auswerten“. Die Partie öffnet sich als „Eingelesene Partie“ mit den
       Namen, die Auswertung läuft, und in der Liste steht sie ungewertet mit eigenem Symbol
       (Filter „eingelesene Partien“). Für deine Wertung zählt sie nicht.
+- [ ] N630. **Eröffnung ohne „zu wenige Züge“ (R33):** Eine kurze Partie spielen und auswerten. In der
+      Karte „Spielstärke“ steht bei „Eröffnung“ jetzt Urteil und Genauigkeit, etwa „Gut 84 % (4 Züge)“,
+      ohne „zu wenige Züge“. Die Zahl der Spielstärke kommt je Phase erst ab sechs Zügen; das erklärt
+      das Fragezeichen der Karte.
 
 ### Neu in 0.2.117 (menschliche Bots, zehn Stufen; Opus, 20. bis 22.10.2026)
 

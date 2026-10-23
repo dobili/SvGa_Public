@@ -1284,6 +1284,37 @@ Eröffnungsliste sind seit 0.2.32 umgesetzt).
 
 ## Nächster Schritt
 
+### Arbeitsplan ab 23.10.2026 (Pakete, mehrere Chats)
+
+Der Autor hat die Arbeitsliste am 23.10.2026 um R27 bis R53 erweitert und in Pakete aufgeteilt.
+Jeder Chat arbeitet auf eigenem Zweig ab `weiter-ohne-autor`; nur P1 mischt ein, erhöht die
+Version und pusht nach `main`. Den Code der Bots fasst niemand an, solange der Bot-Chat kalibriert.
+Testpunkt-Nummern je Paket getrennt.
+
+| Paket | Zweig | Inhalt | Modell | Testpunkte | Stand |
+|---|---|---|---|---|---|
+| P1 Koordination | `weiter-ohne-autor` | R33, Einmischen, main, R26 | Opus mittel | N630–N649 | läuft (R33 fertig) |
+| P2 Brett | `p2-brett` | R35–R40, R29, R53 | Opus mittel | N650–N669 | läuft |
+| P3 Werkzeuge | `p3-werkzeuge` | R41–R44, Glossarvorschläge | Fable hoch | N670–N689 | läuft |
+| P4 Trainerinhalte | `p4-trainerinhalte` | R50, R48, R47 (mit R34), danach R49 | Fable hoch | N690–N709 | noch nicht gestartet |
+| P5 Trainerbedienung | `p5-trainerbedienung` | R30, R31, R46, R45 | Opus mittel | N710–N729 | läuft |
+| P6 Englisch | `p6-englisch` | R25 | Opus niedrig | N730–N739 | läuft |
+| P7 Spielen | `p7-spielen` | R51, R24, R27, R28, R32 | Opus mittel | N740–N759 | nach der Bot-Kalibrierung |
+| P8 App-Tour | `p8-tour` | R52 | Opus mittel | N760–N769 | zum Schluss |
+
+Kurzbeschreibung der neuen Punkte: R27 „Art des Gegners“ über „Partie beginnen“; R28 Bot-Name als
+Partietitel mit Porträt; R29 Fortschrittsbalken der Auswertung; R30 Taktik ohne Motivfrage bei
+einem Motiv; R31 „Nehmen: …“ ohne Zugzeichen; R32 Spielstärke-Karte nur gewertet, Haken nicht
+automatisch; R33 Eröffnung ohne „zu wenige Züge“ (erledigt); R34 Quadrat im Endspieltrainer wie im
+Buch; R35 Tippen großzügiger; R36 zusammenhängende Markierungen als ein Umriss; R37 Zuganimation;
+R38 Partieende auf dem Brett; R39 Startanimation; R40 Quer-/Hochformat live; R41 Sichtwechsel in
+Werkzeugen; R42 einspaltig, keine Dopplungen; R43 Denkroutine mit Engine-Bewertung; R44
+Strukturbegriffe (rückständiger Bauer, Loch, schwaches/starkes Feld, Vorposten); R45 Zug erraten
+ausbauen; R46 Studien mit Pfeilen und Engine; R47 Endspieltrainer prüfen und erweitern; R48
+Planbilanz-Trainer neu erzeugen; R49 Strukturerkenner mit echten Stellungen; R50 Falle/Köder mit
+echtem Verfahren; R51 Zeitklassen und Abzeichen; R52 App-Tour; R53 Nachtmodus der Seitensymbole.
+
+
 ### Rückmeldung des Autors vom 19.10.2026 abends: 30 Punkte (Arbeitsliste, in dieser Reihenfolge)
 
 Der Autor hat alle Punkte freigegeben („Du darfst gerne alles machen. Nichts soll an einen anderen

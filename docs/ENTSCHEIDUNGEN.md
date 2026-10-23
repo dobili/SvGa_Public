@@ -4422,3 +4422,97 @@ Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
   Der eigene Fleck zählt in Auswertungen nur bei klar bestem Zug (Abstand zum zweitbesten ≥ 0,3).
 - **Prüfung** in Tiefe 20 (6885 Züge): bestätigt meist 89–97 %, schwächer König passiv,
   Bauernvorstoß, ungenau (Bewertungsrauschen der Tiefe 12); Zahlen in docs/FORTSCHRITT.md.
+
+## Spielstile der Bots (23.10.2026, Plan „Bots, zweite Runde“, Teil D)
+
+- **Recherche:** Keine begutachtete Studie trennt die üblichen Stile messbar; verbreitet sind vier
+  Grundtypen nach Expertenmeinung (angreifend/taktisch, positionell, solide/defensiv,
+  kreativ). Messbare Ersatzgrößen: Anteil erzwingender Züge, angegriffene Felder. Einzelne
+  Spieler lassen sich an ihrem Stil sicher wiedererkennen (NeurIPS 2021, 98 % bei 100 Partien).
+- **Daten:** 3889 Spieler (Spielerprofile, Lichess 2026-09), zehn Merkmale je Zug, je Kategorie um
+  die Wertung bereinigt. Drei Achsen (Hauptkomponenten, zusammen 66 %): **Königsangriff**
+  (Schach, Königsnähe, Opfer, scharfe Wahl gegen Spannung halten), **Aktivität** (Schläge,
+  Abtausch, Vorwärts gegen Rückzug), **Bauernsturm gegen Vereinfachen**.
+- **Ab welcher Spielstärke:** Schon ab 400 unterscheidbar. Zuverlässigkeit der Achsen über die
+  Partien eines Spielers (Hälften, Spearman-Brown) in Blitz und Schnellschach bis 2000 meist
+  0,5 bis 0,77. Ab 2200 in Schnellschach nur noch die Aktivität sicher (0,6 bis 0,7);
+  Königsangriff und Bauernsturm fallen auf 0,2 bis 0,3. Klassisch niedriger (12 Partien).
+- **Stile** (Achse ab einer Standardabweichung, sonst universell; je Kategorie etwa 10 % je Stil
+  und 30 bis 40 % universell): Angreifer (Angriff +), Positionsspieler (Angriff −, Spannung),
+  Taktiker (Aktivität +), Verteidiger (Aktivität −), Draufgänger (Bauernsturm und Opfer),
+  Vereinfacher (Abtausch), Universell.
+- **Je Bot genau ein Stil**, abgeleitet aus seiner Persönlichkeit (Umsetzung in der Zugwahl mit
+  Teil E; der bisherige Regler −2 bis +2 geht darin auf). Über 2200 wirken Angreifer,
+  Draufgänger und Positionsspieler in Schnellschach nach den Daten schwächer; sie bleiben, die
+  Stärke des Stils folgt der gemessenen Streuung der Menschen.
+
+| Bot | Persönlichkeit | Stilregler bisher | Stil neu |
+|---|---|---|---|
+| Kiki | hektiker | 1 | Taktiker |
+| Onkel Otto | materialist | 0 | Taktiker |
+| Tante Hilde | vorsichtig | -1 | Verteidiger |
+| Bodo | angreifer | 2 | Angreifer |
+| Ella | solide | 0 | Universell |
+| Marie | vorsichtig | -1 | Verteidiger |
+| Tom | damenfan | 2 | Draufgänger |
+| Luis | materialist | 1 | Taktiker |
+| Oma Erna | endspieler | -2 | Vereinfacher |
+| Henry | angreifer | 2 | Angreifer |
+| Lina | traeumer | 0 | Draufgänger |
+| Moritz | hektiker | 1 | Taktiker |
+| Opa Heinz | endspieler | -1 | Vereinfacher |
+| Onkel Bernd | materialist | 0 | Taktiker |
+| Clara | solide | 0 | Universell |
+| Herr Krause | theoretiker | -1 | Positionsspieler |
+| Leyla | taktiker | 1 | Taktiker |
+| Jakob | hektiker | 2 | Taktiker |
+| Johanna | koenigswanderer | 1 | Draufgänger |
+| Rolf | vorsichtig | -2 | Verteidiger |
+| Derya | angreifer | 2 | Angreifer |
+| Svenja | solide | 0 | Universell |
+| Felix | endspieler | -1 | Vereinfacher |
+| Marco | theoretiker | 0 | Positionsspieler |
+| Ronja | traeumer | 1 | Draufgänger |
+| Herr Wolff | stratege | -2 | Positionsspieler |
+| Pia | damenfan | 1 | Draufgänger |
+| Yusuf | taktiker | 1 | Taktiker |
+| Holger | solide | 0 | Universell |
+| Dennis | angreifer | 2 | Angreifer |
+| Frau Albrecht | vorsichtig | -2 | Verteidiger |
+| Philipp | hektiker | 1 | Taktiker |
+| Mara | taktiker | 1 | Taktiker |
+| Herr Kühn | stratege | -1 | Positionsspieler |
+| Samira | traeumer | 0 | Draufgänger |
+| Erik | materialist | 0 | Taktiker |
+| Günter | endspieler | -1 | Vereinfacher |
+| Frau Romero | solide | 0 | Universell |
+| Lars | angreifer | 2 | Angreifer |
+| Katrin | theoretiker | 0 | Positionsspieler |
+| Herr Vogel | stratege | -2 | Positionsspieler |
+| Nele | taktiker | 1 | Taktiker |
+| Simon | hektiker | 1 | Taktiker |
+| Frau Demir | vorsichtig | -1 | Verteidiger |
+| Jana | solide | 0 | Universell |
+| Igor | theoretiker | -1 | Positionsspieler |
+| Miriam | traeumer | 1 | Draufgänger |
+| Herr Hartmann | endspieler | -2 | Vereinfacher |
+| Defne | taktiker | 2 | Taktiker |
+| Luca | angreifer | 2 | Angreifer |
+| Frau Sommer | stratege | -1 | Positionsspieler |
+| David | materialist | 0 | Taktiker |
+| Doktor Falk | stratege | -1 | Positionsspieler |
+| Trainer Maier | solide | 0 | Universell |
+| Amaya | theoretiker | 1 | Positionsspieler |
+| Herr Lorenz | endspieler | -2 | Vereinfacher |
+| Elias | angreifer | 2 | Angreifer |
+| Frau Wagner | vorsichtig | -1 | Verteidiger |
+| Arjun | taktiker | 2 | Taktiker |
+| Frau Prof. Reich | traeumer | 0 | Draufgänger |
+| GM Novak | solide | 0 | Universell |
+| IM Becker | stratege | -1 | Positionsspieler |
+| WGM Tanaka | taktiker | 1 | Taktiker |
+| FM Duarte | angreifer | 0 | Angreifer |
+| GM Ivanova | endspieler | 0 | Vereinfacher |
+| IM Kraft | theoretiker | 0 | Positionsspieler |
+| WIM Okafor | vorsichtig | 0 | Verteidiger |
+| GM Berglund | solide | 0 | Universell |

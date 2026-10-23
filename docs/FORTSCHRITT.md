@@ -1523,7 +1523,7 @@ etwa“ chess.com und FIDE über veröffentlichte Umrechnungen.
    f4 wird mit e5 und h4 eingesperrt, Gewinn erst im 7. Halbzug) heißt jetzt „Bauernzug ohne
    Not“; Vorschlag: eingesperrte Figur erkennen (Widerlegung gewinnt die Figur innerhalb der
    ganzen Fortsetzung, die Figur hat kein sicheres Feld) und als „Figur hängen“ einordnen.
-7. Teil D: Spielstile (Recherche, Unterscheidbarkeit je Elo aus den Daten), je Bot genau ein Stil.
+7. Teil D: erledigt (23.10.2026, ENTSCHEIDUNGEN „Spielstile der Bots“); Umsetzung in der Zugwahl mit Teil E.
 8. Teil E: Bots für Schnellschach neu (Spaß 4 + 8 × 8), Fehlerraten je Phase aus den Spielerprofilen,
    Unterscheidung der Bots über die Bereiche und Kopplungen (vorher Gespräch mit dem Autor),
    Messung mit vierfachen Kandidaten (256 + 16), Ergebnisleiter, Verankerung mit dem neuen Modell.

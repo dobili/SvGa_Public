@@ -4516,3 +4516,27 @@ Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
 | IM Kraft | theoretiker | 0 | Positionsspieler |
 | WIM Okafor | vorsichtig | 0 | Verteidiger |
 | GM Berglund | solide | 0 | Universell |
+
+## Zugwahl der Bots, Plan (23.10.2026 abends, Freigabe des Autors)
+
+- **Phasenregler Variante A:** Der Regler je Phase setzt die Ziel-Elo der Phase; daraus folgen die
+  Fehlerraten der Phase. Fehlerart- und Fleckregler verschieben nur die Zusammensetzung (feste
+  Stärke); im erweiterten Modus auch frei (Stärke wandert, Schätzung wird angezeigt).
+- **Oberfläche:** Stil als Spinnennetz über die drei Achsen (sechs Speichen) mit Anzeige des
+  nächsten Stils, dazu Auswahlliste; je Fehlerart und Fleck ein Regler auf den Quantilen der
+  Menschen (5, 25, 50, 75, 95 %) plus je zwei Stufen darunter und darüber („unmenschlich“);
+  Menschlichkeitsanzeige für die Kombination; geschätzte Elo aus den Einstellungen.
+- **Zugwahl:** Wahrscheinlichkeit je Kandidat = Grundgewicht × Faktor Fehlerart × Faktor Flecken
+  × Faktor Stil; Faktoren an den echten Stellungen der Spielerprofile geeicht (nachspielen, bis
+  Raten, Flecken und Kopplungen die Ziele treffen); Tagesform je Partie, Zeitnot nach den Daten;
+  kein Nachregeln während der Partie.
+- **Bots je Kategorie:** jeder Stil einmal plus ein zweiter universeller, wechselnde Flecken,
+  leicht gespreizte Phasen; echte Vorbilder und gezogene Profile gemischt; mehr Bots, wenn nötig.
+- **Maia:** Versuch in Teil E (Maia-2 steht unter MIT; Maia-3 prüfen), Bedingung: Rechnen nicht
+  spürbar länger als die künstliche Bedenkzeit.
+- **Eröffnungen je Elo-Band** aus den Lichess-Partien: Bots wählen bevorzugt, was Menschen ihrer
+  Stärke spielen; die Einschränkung „Eröffnung“ für Bots bekommt diese Varianten; im Trainer nur
+  als eigener, gekennzeichneter Bereich „Aus der Praxis“ (das Buch bleibt die einzige Quelle für
+  die Lehrinhalte).
+- **Modelle:** Teil E und das Elo-Modell mit Fable (hoch), Auswertungen, Oberfläche und Teil F mit
+  Opus (mittel).

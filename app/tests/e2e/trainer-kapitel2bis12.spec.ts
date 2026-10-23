@@ -47,6 +47,14 @@ test("Studien lösen: Saavedra-Studie, 1. c7 und die Antwort aus dem Buch", asyn
     .getByText(/vier Prüfungen/)
     .click();
   await expect(page.getByTestId("studien-pruefungen")).toContainText("Unterverwandlung");
+  // R46: Ein falscher Zug zeigt beide Pfeile und den Vergleich der Engine.
+  await feld(page, "b6").click();
+  await feld(page, "b7").click();
+  await expect(runde).toContainText("Nicht der Zug der Studie");
+  await expect(page.getByTestId("studien-vergleich")).toContainText(/Dein Zug ist laut Engine/, {
+    timeout: 20_000,
+  });
+  await expect(page.getByTestId("studien-vergleich")).toContainText("Zug der Studie c7");
   await feld(page, "c6").click();
   await feld(page, "c7").click();
   await expect(page.getByTestId("repertoire-zuege")).toContainText("1. c7");

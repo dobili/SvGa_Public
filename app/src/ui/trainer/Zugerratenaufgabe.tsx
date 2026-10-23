@@ -15,7 +15,7 @@
 import { useMemo, useState } from "react";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { mitRatedurchgang, type Rateeintrag } from "../../speicher/trainerverlauf";
-import { datumText, sprache, t, zahlText } from "../../i18n/sprache";
+import { datumText, sprache, t } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { stellungAusFen, type Rolle } from "../../schach/stellung";
 import { eigeneAlsText, spieleZug, zugFelder } from "../../schach/weiterspielen";
@@ -30,7 +30,8 @@ import { stellungNach } from "../../training/uebungsaufgabe";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
-import { useRatevergleich, type Fehlversuch, type Vergleichsstand } from "./useRatevergleich";
+import { useRatevergleich, type Fehlversuch } from "./useRatevergleich";
+import { Zugvergleich } from "./Zugvergleich";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
 
@@ -67,22 +68,6 @@ function Frueher({ eintrag }: { eintrag: Rateeintrag | undefined }) {
 function speichereDurchgang(partie: string, stand: Ratestand): void {
   const eintrag = { datum: new Date().toISOString(), ...stand };
   void aendere((d) => ({ ...d, zugErraten: mitRatedurchgang(d.zugErraten, partie, eintrag) }));
-}
-
-/** Die Zeile zum Vergleich: rechnet, gleichwertig, schwächer oder stärker, dazu die Warum-Frage. */
-function Vergleich({ stand }: { stand: Vergleichsstand | null }) {
-  if (!stand) return null;
-  const urteil = stand.art === "fertig" ? stand.urteil : null;
-  return (
-    <p className="hinweis" data-testid="zugerraten-vergleich">
-      {stand.art === "rechnet" && t("zugerraten.vergleich.rechnet")}
-      {urteil &&
-        t(`zugerraten.vergleich.${urteil.art}`, {
-          unterschied: zahlText(urteil.unterschied, 1),
-        })}{" "}
-      {t("zugerraten.warum")}
-    </p>
-  );
 }
 
 export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
@@ -154,7 +139,15 @@ export function Zugerratenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde:
             : t("zugerraten.partiezug", { zug: sanInSprache(meldung.zug, sprache()) })}
         </p>
       )}
-      {meldung && !meldung.getroffen && <Vergleich stand={vergleich} />}
+      {fehlversuch && vergleich && (
+        <Zugvergleich
+          versuch={fehlversuch}
+          stand={vergleich}
+          bezug="partie"
+          zusatz={t("zugerraten.warum")}
+          testid="zugerraten-vergleich"
+        />
+      )}
       <p data-testid="zugerraten-stand">{t("zugerraten.stand", { ...stand })}</p>
       <Frueher eintrag={frueher} />
       {fertig && (

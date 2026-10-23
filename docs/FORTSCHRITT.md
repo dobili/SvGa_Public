@@ -1392,6 +1392,25 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
    überschneiden. Den Satz entsprechend ändern. Der Text gehört zum Bereich des Bot-Chats, also
    mit ihm abstimmen oder dort erledigen lassen.
 
+### P5 Trainerbedienung (Zweig `p5-trainerbedienung` von `weiter-ohne-autor`, Opus, 23.10.2026)
+
+Auftrag: Paket P5 „Trainer-Bedienung“ (R30, R31, R46, R45), nicht nach main, keine
+Versionsnummer, Testpunkte N710–N729. Nicht angefasst: `app/src/engine/*` (Bots) und die
+Trainerdaten in `inhalte/` (Paket P4).
+
+- [x] R30 Taktiktrainer: Ist nur ein Motiv gewählt, entfällt „Welches Motiv war es?“
+      (`TaktikBereich.tsx` gibt `motivAbfragen={false}` an `Taktikaufgabe`). N710.
+- [x] R31 Falle oder Köder: Auftrag und Knopf „Nehmen: …“ ohne „+ # ! ?“
+      (`ohneZugzeichen` in `schach/notation.ts`); die Auflösung zeigt den Zug vollständig. N711.
+- [x] R46 Studien-Trainer: bei falschem Zug roter Pfeil (eigener Zug) und goldener Pfeil (Zug der
+      Studie), Vergleich beider mit der Engine (`Repertoireaufgabe` mit `vergleichen`,
+      gemeinsame Anzeige `Zugvergleich.tsx` und `vergleichspfeile.ts` für Studien und Zug
+      erraten; `rateurteil` liefert beide Werte und die Variante nach dem eigenen Zug). N712.
+- [ ] R45 Zug erraten: Hinweis-Knopf (Figur), Pfeile für den letzten Zug, Bewertungsbalken live,
+      Kommentar nach Motiven und Fehlerarten, Zugnavigation, Analysemodus.
+
+**Nächster Schritt:** R45.
+
 ## Offene Punkte
 
 - Zugfolgen, die eine im Buch nicht gezeigte Ausgangsstellung brauchen („Stünde der Turm auf b8 …“,

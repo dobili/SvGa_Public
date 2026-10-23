@@ -92,6 +92,8 @@ export function TaktikBereich() {
         wiederhole={() => setzeWahl({ wiederholung: vorhanden })}
       />
     );
+  // Bei einem einzelnen Motiv steht die Antwort auf „Welches Motiv?“ schon fest (R30).
+  const einMotiv = !("wiederholung" in wahl) && (MOTIVE as readonly string[]).includes(wahl.thema);
   const runde = () =>
     "wiederholung" in wahl
       ? wahl.wiederholung
@@ -102,7 +104,9 @@ export function TaktikBereich() {
     <Rundenablauf
       key={`${JSON.stringify(wahl)}-${durchlauf}`}
       kennung="taktik"
-      erzeuge={() => runde().map((a) => (r) => <Taktikaufgabe aufgabe={a} runde={r} />)}
+      erzeuge={() =>
+        runde().map((a) => (r) => <Taktikaufgabe aufgabe={a} runde={r} motivAbfragen={!einMotiv} />)
+      }
       nochmal={() => ("wiederholung" in wahl ? setzeWahl(null) : setzeDurchlauf(durchlauf + 1))}
       zurAuswahl={() => setzeWahl(null)}
     />

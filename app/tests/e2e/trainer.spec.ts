@@ -86,7 +86,7 @@ test("Schach-Röntgen-Trainer: drei Schritte, dann Weiter", async ({ page }) => 
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
 
-test("Taktiktrainer: Thema und Stufe wählen, Hilfen, Lösung zeigen, Motiv benennen", async ({
+test("Taktiktrainer: ein Motiv wählen, Hilfen, Lösung zeigen, ohne Motivfrage", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -110,9 +110,8 @@ test("Taktiktrainer: Thema und Stufe wählen, Hilfen, Lösung zeigen, Motiv bene
   await expect(page.getByTestId("taktik-motiv")).toContainText("Spieß");
   await runde.getByRole("button", { name: "Lösung zeigen" }).click();
   await expect(runde).toContainText("Lösung:");
-  const benennen = page.getByTestId("motiv-benennen");
-  await benennen.getByRole("button", { name: "Spieß" }).click();
-  await expect(benennen).toContainText("Richtig!");
+  // Nur ein Motiv gewählt: Die Frage nach dem Motiv entfällt (R30).
+  await expect(page.getByTestId("motiv-benennen")).toHaveCount(0);
   await page.screenshot({ path: "test-results/bilder/trainer-taktik.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");

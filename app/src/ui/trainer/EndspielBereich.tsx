@@ -17,7 +17,20 @@ import {
   type Endspielgruppe,
   type Endspielwahl,
 } from "../../training/endspieltrainer";
-import { drillrunde } from "../../training/endspieldrills";
+import {
+  bilddrills,
+  drillrunde,
+  oppositionsdrill,
+  quadratdrill,
+  schluesseldrill,
+  type Drill,
+  type Drillart,
+} from "../../training/endspieldrills";
+import {
+  bildplandrills,
+  oppositionszugdrill,
+  quadratzugdrill,
+} from "../../training/endspielzugdrills";
 import { ZUFALL } from "../../training/zufall";
 import { useDaten } from "../komponenten/useDaten";
 import { Drillaufgabe } from "./Drillaufgabe";
@@ -31,8 +44,26 @@ import { Auswahlliste } from "./Auswahlliste";
 
 /** Endspiele dauern länger als Taktikaufgaben: weniger je Runde. */
 const AUFGABEN_JE_RUNDE = 6;
-/** Kurzübungen gehen schnell: zwei je Art. */
+/** Kurzübungen gehen schnell: sieben Arten, die erste kommt zweimal. */
 const DRILLS_JE_RUNDE = 8;
+
+/** Erzeuger der Kurzübungen: zufällige Stellungen je Art, die Bild-Arten aus den Buchstellungen. */
+function drillerzeuger(fens: readonly string[]): (art: Drillart) => Drill | null {
+  const bilder = bilddrills(fens, ZUFALL);
+  const plaene = bildplandrills(fens, ZUFALL);
+  const ziehe = (vorrat: Drill[]) =>
+    vorrat.splice(Math.floor(ZUFALL() * vorrat.length), 1)[0] ?? null;
+  const je: Record<Drillart, () => Drill | null> = {
+    quadrat: () => quadratdrill(ZUFALL),
+    opposition: () => oppositionsdrill(ZUFALL),
+    schluesselfelder: () => schluesseldrill(ZUFALL),
+    bild: () => ziehe(bilder),
+    quadratzug: () => quadratzugdrill(ZUFALL),
+    oppositionszug: () => oppositionszugdrill(ZUFALL),
+    bildplan: () => ziehe(plaene),
+  };
+  return (art) => je[art]();
+}
 
 /** Wahl von Gruppe und Stufe. */
 function Wahl({
@@ -100,11 +131,9 @@ export function EndspielBereich() {
         key={`kurz-${durchlauf}`}
         kennung="endspiel"
         erzeuge={() =>
-          drillrunde(
-            aufgaben.map((a) => a.fen),
-            DRILLS_JE_RUNDE,
-            ZUFALL,
-          ).map((d) => (r) => <Drillaufgabe drill={d} runde={r} />)
+          drillrunde(drillerzeuger(aufgaben.map((a) => a.fen)), DRILLS_JE_RUNDE).map((d) => (r) => (
+            <Drillaufgabe drill={d} runde={r} />
+          ))
         }
         nochmal={() => setzeDurchlauf(durchlauf + 1)}
         zurAuswahl={zurAuswahl}

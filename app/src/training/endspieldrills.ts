@@ -1,16 +1,21 @@
 /**
  * Kurzübungen im Endspieltrainer: Quadrat, Opposition, Schlüsselfelder und das Quiz „Welches
- * Erkennungsbild?“ (seit 0.2.90).
+ * Erkennungsbild?“ (seit 0.2.90); seit P4 (R47) dazu die Zug-Übungen und der Plan zum
+ * Erkennungsbild aus endspielzugdrills.ts.
  *
  * Rolle im Gesamtbild: Pflichtenheft 7 nennt für den Endspieltrainer neben den Partien gegen die
- * Engine kurze Drills und ein Erkennungsbild-Quiz. Die Stellungen der ersten drei Drills erzeugt
- * die App zufällig (König und Bauer gegen König oder zwei Könige); die Antwort rechnen dieselben
+ * Engine kurze Drills und ein Erkennungsbild-Quiz. Die Stellungen der Drills erzeugt die App
+ * zufällig (König und Bauer gegen König oder zwei Könige); die Antwort rechnen dieselben
  * Bausteine, die auch die Werkzeuge des Kapitels 8 tragen (schach/quadrat.ts, opposition.ts,
- * schluesselfelder.ts). Das Quiz nimmt die Buchstellungen des Endspieltrainers, für die das
- * Werkzeug „Erkennungsbild“ (Kapitel 9) ein Bild der Tabelle erkennt. Reine Funktionen.
- * Abhängigkeiten: schach/, training/zufall.ts.
+ * schluesselfelder.ts). Die Lösung am Brett zeichnet beim Quadrat das Werkzeug k8-quadrat wie
+ * das Buch (goldener Pfeil der Bauernweg, graue Pfeile die übrigen Seiten, Abb. 8.35), nicht mehr
+ * goldene Felder (Wunsch des Autors, R47). Das Quiz nimmt die Buchstellungen des Endspieltrainers,
+ * für die das Werkzeug „Erkennungsbild“ (Kapitel 9) ein Bild der Tabelle erkennt. Reine Funktionen.
+ * Abhängigkeiten: schach/, analyse/k8-quadrat.ts (nur aufgerufen), training/zufall.ts.
  */
 import type { Color, Square } from "chessops/types";
+import { quadratregel } from "../analyse/k8-quadrat";
+import type { Markierung } from "../analyse/werkzeug";
 import { erkennungsbild, type Bildname } from "../schach/erkennungsbilder";
 import { koenigsabstand } from "../schach/koenigsweg";
 import { hatOpposition } from "../schach/opposition";
@@ -19,22 +24,33 @@ import { schluesselfelder } from "../schach/schluesselfelder";
 import { feldname, stellungAusFen, type Stellung } from "../schach/stellung";
 import type { Zufall } from "./zufall";
 
-export type Drillart = "quadrat" | "opposition" | "schluesselfelder" | "bild";
+export type Drillart =
+  | "quadrat"
+  | "opposition"
+  | "schluesselfelder"
+  | "bild"
+  | "quadratzug"
+  | "oppositionszug"
+  | "bildplan";
+/** Reihenfolge in einer Runde: erst die vier Grundübungen, dann die schwereren. */
 export const DRILLARTEN: readonly Drillart[] = [
   "quadrat",
   "opposition",
   "schluesselfelder",
   "bild",
+  "quadratzug",
+  "oppositionszug",
+  "bildplan",
 ];
 
-/** Eine Kurzübung: Stellung, Antwortmöglichkeiten (Schlüssel), die richtige, Felder zur Lösung. */
+/** Eine Kurzübung: Stellung, Antwortmöglichkeiten (Schlüssel), die richtige, Lösung am Brett. */
 export interface Drill {
   readonly art: Drillart;
   readonly fen: string;
   readonly optionen: readonly string[];
   readonly richtig: string;
-  /** Felder, die nach der Antwort gold leuchten (Quadrat, Schlüsselfelder). */
-  readonly loesungsfelder: readonly string[];
+  /** Markierungen nach der Antwort: Quadrat wie im Buch, Schlüsselfelder gold, Zug als Pfeil. */
+  readonly loesung: readonly Markierung[];
 }
 
 const FELDER = 64;
@@ -59,12 +75,12 @@ const LINIEN_SEITLICH = 2;
 /** Drei Steine: Bauer und zwei Könige. */
 const STEINE_KPK = 3;
 
-function zufallsfeld(zufall: Zufall): Square {
+export function zufallsfeld(zufall: Zufall): Square {
   return Math.floor(zufall() * FELDER) as Square;
 }
 
 /** Ein Feld für den weißen Bauern, a2 bis h6. */
-function zufallsbauer(zufall: Zufall): Square {
+export function zufallsbauer(zufall: Zufall): Square {
   return (ERSTES_BAUERNFELD + Math.floor(zufall() * BAUERNFELDER)) as Square;
 }
 
@@ -91,7 +107,7 @@ export function fenAus(steine: ReadonlyMap<Square, string>, amZug: Color): strin
  * Eine legale Stellung aus den Steinen, sonst null (Könige zu nah, Seite nicht am Zug im Schach,
  * Matt oder Patt). Zwei nackte Könige sind erlaubt, obwohl die Partie dort remis wäre.
  */
-function legal(steine: ReadonlyMap<Square, string>, amZug: Color): Stellung | null {
+export function legal(steine: ReadonlyMap<Square, string>, amZug: Color): Stellung | null {
   const s = stellungAusFen(fenAus(steine, amZug));
   if (!s.ok || s.wert.regeln === null) return null;
   const r = s.wert.regeln;
@@ -100,7 +116,8 @@ function legal(steine: ReadonlyMap<Square, string>, amZug: Color): Stellung | nu
 
 /**
  * Quadrat: Weißer Bauer (2. bis 6. Reihe), schwarzer König, weißer König weit weg. Frage: Holt
- * der König den Bauern ein? Nur Stellungen ohne Vorbehalt und ohne Ausnahme des Buches.
+ * der König den Bauern ein? Nur Stellungen ohne Vorbehalt und ohne Ausnahme des Buches. Die
+ * Lösung zeichnet das Werkzeug k8-quadrat (Pfeile wie im Buch, Abb. 8.35).
  * Regel: Kapitel 8, die Quadratregel (am Zug ins Quadrat treten heißt einholen).
  */
 export function quadratdrill(zufall: Zufall): Drill | null {
@@ -122,13 +139,12 @@ export function quadratdrill(zufall: Zufall): Drill | null {
     if (!s) continue;
     const q = quadrat(s, bauer);
     if (q.vorbehalte.length > 0 || q.ausnahme !== null || q.haeltAuf === null) continue;
-    const rahmen = q.nachZug ?? q;
     return {
       art: "quadrat",
       fen: s.fen,
       optionen: ["ja", "nein"],
       richtig: q.haeltAuf ? "ja" : "nein",
-      loesungsfelder: rahmen.felder.map(feldname),
+      loesung: quadratregel(s, s.amZug, feldname(bauer)).markierungen,
     };
   }
   return null;
@@ -158,7 +174,7 @@ export function oppositionsdrill(zufall: Zufall): Drill | null {
       fen: s.fen,
       optionen: ["white", "black", "keiner"],
       richtig: wer ?? "keiner",
-      loesungsfelder: [],
+      loesung: [],
     };
   }
   return null;
@@ -208,7 +224,7 @@ export function schluesseldrill(zufall: Zufall): Drill | null {
       fen: s.fen,
       optionen,
       richtig: feldname(richtig),
-      loesungsfelder: sf.felder.map(feldname),
+      loesung: sf.felder.map((feld) => ({ typ: "feld", farbe: "gold", feld: feldname(feld) })),
     };
   }
   return null;
@@ -231,9 +247,14 @@ function nebenfelder(bauer: Square, schluessel: ReadonlySet<Square>, zufall: Zuf
 
 /**
  * Erkennungsbild-Quiz: Aus den Buchstellungen (FEN) die nehmen, für die das Werkzeug ein Bild
- * erkennt, dazu drei andere Bilder als Auswahl. Regel: Kapitel 9, „Rückblick: die Erkennungsbilder“.
+ * erkennt, dazu drei andere Bilder als Auswahl. Mit `art` „bildplan“ fragt dieselbe Stellung
+ * nach dem Plan des Bildes (R47). Regel: Kapitel 9, „Rückblick: die Erkennungsbilder“.
  */
-export function bilddrills(fens: readonly string[], zufall: Zufall): Drill[] {
+export function bilddrills(
+  fens: readonly string[],
+  zufall: Zufall,
+  art: "bild" | "bildplan" = "bild",
+): Drill[] {
   const erkannt = fens.flatMap((fen) => {
     const s = stellungAusFen(fen);
     const bild = s.ok ? erkennungsbild(s.wert, s.wert.amZug) : null;
@@ -245,13 +266,7 @@ export function bilddrills(fens: readonly string[], zufall: Zufall): Drill[] {
       namen.filter((n): n is Bildname => n !== bild),
       zufall,
     ).slice(0, ANTWORTEN_BILD - 1);
-    return {
-      art: "bild",
-      fen,
-      optionen: mische([bild, ...falsche], zufall),
-      richtig: bild,
-      loesungsfelder: [],
-    };
+    return { art, fen, optionen: mische([bild, ...falsche], zufall), richtig: bild, loesung: [] };
   });
 }
 
@@ -265,23 +280,19 @@ export function mische<T>(liste: readonly T[], zufall: Zufall): T[] {
   return neu;
 }
 
+/** Erzeuger je Art für die Runde; die Bild-Arten ziehen aus ihren Vorräten. */
+export type Drillerzeuger = (art: Drillart) => Drill | null;
+
 /**
- * Eine gemischte Runde Kurzübungen: je Art reihum, das Quiz aus den Buchstellungen.
- * Beispiel: 8 Aufgaben → Quadrat, Opposition, Schlüsselfelder, Bild, Quadrat, …
+ * Eine gemischte Runde Kurzübungen: je Art reihum (DRILLARTEN), das Quiz aus den Buchstellungen.
+ * Beispiel: 8 Aufgaben → Quadrat, Opposition, Schlüsselfelder, Bild, Quadrat als Zug, Opposition
+ * als Zug, Plan zum Bild, Quadrat.
  */
-export function drillrunde(fens: readonly string[], anzahl: number, zufall: Zufall): Drill[] {
-  const bilder = mische(bilddrills(fens, zufall), zufall);
+export function drillrunde(erzeuge: Drillerzeuger, anzahl: number): Drill[] {
   const runde: Drill[] = [];
   for (let i = 0; runde.length < anzahl && i < anzahl * 2; i++) {
     const art = DRILLARTEN[i % DRILLARTEN.length];
-    const drill =
-      art === "quadrat"
-        ? quadratdrill(zufall)
-        : art === "opposition"
-          ? oppositionsdrill(zufall)
-          : art === "schluesselfelder"
-            ? schluesseldrill(zufall)
-            : (bilder.shift() ?? null);
+    const drill = art ? erzeuge(art) : null;
     if (drill) runde.push(drill);
   }
   return runde;

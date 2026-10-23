@@ -4,10 +4,14 @@ import { describe, expect, it } from "vitest";
 import type { Strukturdaten } from "../daten/trainerdaten";
 import de from "../i18n/de.json";
 import {
+  FELDARTEN,
+  feldarten,
+  feldartfrage,
   PLAENE_ZUR_WAHL,
   planwahl,
   schwacheBauern,
   starkeFelder,
+  starkeFelderMitArt,
   strukturrunde,
 } from "./strukturtrainer";
 import { festerZufall } from "./zufall";
@@ -30,16 +34,36 @@ describe("Strukturerkenner", () => {
     expect(schwacheBauern(aufgabe)).toEqual(["a3", "c3", "c4"]);
   });
 
-  // W5: Leitfrage 1 zuerst (Checkliste: 5. und 6. Reihe von der Seite am Zug aus).
-  it("starke Felder: Abb. 5.8 b6 und d5, Abb. 5.3 keine, Abb. 5.12 zu viele (Schritt entfällt)", () => {
-    const aufgabe = (id: string) => {
-      const a = daten.aufgaben.find((x) => x.id === id);
-      if (!a) throw new Error(`${id} fehlt`);
-      return a;
-    };
-    expect(starkeFelder(aufgabe("struktur-b-5.8"))).toEqual(["b6", "d5"]);
+  const aufgabe = (id: string) => {
+    const a = daten.aufgaben.find((x) => x.id === id);
+    if (!a) throw new Error(`${id} fehlt`);
+    return a;
+  };
+
+  // W5: Leitfrage 1 zuerst; seit P3/R49 die 4. bis 6. Reihe wie das Werkzeug „Felder“.
+  it("starke Felder: Abb. 5.8 d5 als Vorposten und b6, Abb. 5.3 keine", () => {
+    const najdorf = starkeFelderMitArt(aufgabe("struktur-b-5.8"));
+    expect(najdorf?.map((f) => f.feld)).toContain("d5");
+    expect(najdorf?.find((f) => f.feld === "d5")?.vorposten).toBe(true);
+    expect(starkeFelder(aufgabe("struktur-b-5.8"))).toContain("b6");
     expect(starkeFelder(aufgabe("struktur-b-5.3"))).toEqual([]);
-    expect(starkeFelder(aufgabe("struktur-b-5.12"))).toBeNull();
+  });
+
+  it("R49: Feldarten aus Sicht der Seite am Zug, Abb. 5.8: d5 Vorposten, d6 rückständig", () => {
+    const funde = feldarten(aufgabe("struktur-b-5.8"));
+    expect(funde).toContainEqual({ feld: "d5", art: "vorposten" });
+    expect(funde).toContainEqual({ feld: "d6", art: "rueckstaendigerBauer" });
+    const frage = feldartfrage(aufgabe("struktur-b-5.8"), festerZufall(2));
+    expect(frage?.optionen).toEqual(FELDARTEN);
+    expect(funde.map((f) => f.art)).toContain(frage?.richtig);
+    // Jede Aufgabe hat lesbare Felder, und die meisten eine Feldart-Frage.
+    const mitFrage = daten.aufgaben.filter((a) => feldartfrage(a, festerZufall(1)) !== null);
+    expect(mitFrage.length).toBeGreaterThan(daten.aufgaben.length / 2);
+  });
+
+  it("R49: Stellungen aus den Partien des Buches sind dabei", () => {
+    const partien = daten.aufgaben.filter((a) => a.herkunft.quelle === "buch" && a.herkunft.beispiel);
+    expect(partien.length).toBeGreaterThan(10);
   });
 
   it("die Wahl enthält den richtigen Plan und keinen aus derselben Familie", () => {

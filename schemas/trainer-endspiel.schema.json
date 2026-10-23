@@ -2,61 +2,200 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://schach-von-grund-auf.com/schemas/trainer-endspiel.schema.json",
   "title": "Aufgaben des Endspieltrainers",
-  "description": "Kapitel 8 und 9, Pflichtenheft 7: Der Leser spielt eine Buchstellung gegen die Engine (volle Stärke) aus, bis er gewonnen oder das Remis gehalten hat oder die Stellung laut Engine gekippt ist. Jede Stellung ist mit Stockfish geprüft: Das Ziel ist erreichbar, und die Prüfung nennt den Wert und, bei Matt, die höchstens nötigen Züge. Nur Stellungen, Züge und Nummern des Buches, kein Buchtext; die Merksätze stehen in der App.",
+  "description": "Kapitel 8 und 9, Pflichtenheft 7: Der Leser spielt eine Buchstellung (oder seit P4 eine freie Endspielaufgabe der Lichess-Datenbank, CC0) gegen die Engine (volle Stärke) aus, bis er gewonnen oder das Remis gehalten hat oder die Stellung laut Engine gekippt ist. Jede Stellung ist mit Stockfish geprüft: Das Ziel ist erreichbar, und die Prüfung nennt den Wert und, bei Matt, die höchstens nötigen Züge. Nur Stellungen, Züge und Nummern des Buches, kein Buchtext; die Merksätze stehen in der App.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schemaVersion", "trainer", "erzeugt", "quellen", "massstab", "aufgaben"],
-  "allOf": [{ "$ref": "trainer-gemeinsam.schema.json#/$defs/kopf" }],
+  "required": [
+    "schemaVersion",
+    "trainer",
+    "erzeugt",
+    "quellen",
+    "massstab",
+    "aufgaben"
+  ],
+  "allOf": [
+    {
+      "$ref": "trainer-gemeinsam.schema.json#/$defs/kopf"
+    }
+  ],
   "properties": {
     "schemaVersion": {},
-    "trainer": { "const": "endspiel" },
+    "trainer": {
+      "const": "endspiel"
+    },
     "erzeugt": {},
     "quellen": {},
     "massstab": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["gewinnAb", "remisBis", "tiefe"],
+      "required": [
+        "gewinnAb",
+        "remisBis",
+        "tiefe"
+      ],
       "properties": {
-        "gewinnAb": { "description": "Wert aus Sicht des Lesers (Bauerneinheiten), ab dem eine Stellung als gewonnen gilt; die App nutzt dieselbe Grenze, um das Kippen zu erkennen", "type": "number" },
-        "remisBis": { "description": "Betrag des Werts, bis zu dem eine Stellung als Remis gilt", "type": "number" },
-        "tiefe": { "description": "Suchtiefe der Prüfung", "type": "integer" }
+        "gewinnAb": {
+          "description": "Wert aus Sicht des Lesers (Bauerneinheiten), ab dem eine Stellung als gewonnen gilt; die App nutzt dieselbe Grenze, um das Kippen zu erkennen",
+          "type": "number"
+        },
+        "remisBis": {
+          "description": "Betrag des Werts, bis zu dem eine Stellung als Remis gilt",
+          "type": "number"
+        },
+        "tiefe": {
+          "description": "Suchtiefe der Prüfung",
+          "type": "integer"
+        }
       }
     },
-    "aufgaben": { "type": "array", "items": { "$ref": "#/$defs/aufgabe" } }
+    "aufgaben": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/aufgabe"
+      }
+    }
   },
   "$defs": {
     "thema": {
-      "description": "Thema des Buches, zu dem die Stellung gehört (Merksatz in der App unter endspiel.merksatz.<thema>)",
-      "enum": ["damenmatt", "turmmatt", "laeuferpaar", "opposition", "schluesselfelder", "quadrat", "bauernrennen", "durchbruch", "freibauer", "zugzwang", "randbauer", "turmendspiel", "dameGegenBauer", "leichtfiguren"]
+      "description": "Thema des Buches, zu dem die Stellung gehört (Merksatz in der App unter endspiel.merksatz.<thema>); bauernendspiel und damenendspiel fassen die freien Lichess-Aufgaben nach Figurenart zusammen",
+      "enum": [
+        "damenmatt",
+        "turmmatt",
+        "laeuferpaar",
+        "opposition",
+        "schluesselfelder",
+        "quadrat",
+        "bauernrennen",
+        "durchbruch",
+        "freibauer",
+        "zugzwang",
+        "randbauer",
+        "turmendspiel",
+        "dameGegenBauer",
+        "leichtfiguren",
+        "bauernendspiel",
+        "damenendspiel"
+      ]
     },
     "stichwort": {
       "description": "Erkennungsbild oder Sonderfall (Text in der App unter endspiel.stichwort.<stichwort>)",
-      "enum": ["philidor", "lucena", "vancura", "abschneiden", "kurzeSeite", "bruecke", "patt", "unterverwandlung", "laeuferbauer", "falscherLaeufer", "ungleich", "springer", "kasten", "fernopposition", "diagonalopposition", "dreieck", "entfernterFreibauer", "verbundene", "mehrheit", "turmHinterFreibauer", "siebteReihe"]
+      "enum": [
+        "philidor",
+        "lucena",
+        "vancura",
+        "abschneiden",
+        "kurzeSeite",
+        "bruecke",
+        "patt",
+        "unterverwandlung",
+        "laeuferbauer",
+        "falscherLaeufer",
+        "ungleich",
+        "springer",
+        "kasten",
+        "fernopposition",
+        "diagonalopposition",
+        "dreieck",
+        "entfernterFreibauer",
+        "verbundene",
+        "mehrheit",
+        "turmHinterFreibauer",
+        "siebteReihe"
+      ]
     },
     "aufgabe": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["id", "fen", "leser", "ziel", "thema", "stichwort", "schwierigkeit", "herkunft", "pruefung"],
+      "required": [
+        "id",
+        "fen",
+        "leser",
+        "ziel",
+        "thema",
+        "stichwort",
+        "schwierigkeit",
+        "herkunft",
+        "pruefung"
+      ],
       "properties": {
-        "id": { "type": "string", "pattern": "^endspiel-b-[0-9A-Za-z.-]+$" },
-        "fen": { "$ref": "trainer-gemeinsam.schema.json#/$defs/fen" },
-        "leser": { "description": "Die Seite des Lesers; ist die andere Seite am Zug, zieht die Engine zuerst", "$ref": "trainer-gemeinsam.schema.json#/$defs/seite" },
-        "ziel": { "description": "gewinn: der Leser gewinnt (Matt oder Umwandlung mit gewonnener Stellung); remis: der Leser hält das Remis", "enum": ["gewinn", "remis"] },
-        "thema": { "$ref": "#/$defs/thema" },
-        "stichwort": { "oneOf": [{ "$ref": "#/$defs/stichwort" }, { "type": "null" }] },
-        "schwierigkeit": { "$ref": "trainer-gemeinsam.schema.json#/$defs/schwierigkeit" },
-        "herkunft": { "$ref": "trainer-gemeinsam.schema.json#/$defs/herkunft" },
+        "id": {
+          "type": "string",
+          "pattern": "^endspiel-(b|l)-[0-9A-Za-z.-]+$"
+        },
+        "fen": {
+          "$ref": "trainer-gemeinsam.schema.json#/$defs/fen"
+        },
+        "leser": {
+          "description": "Die Seite des Lesers; ist die andere Seite am Zug, zieht die Engine zuerst",
+          "$ref": "trainer-gemeinsam.schema.json#/$defs/seite"
+        },
+        "ziel": {
+          "description": "gewinn: der Leser gewinnt (Matt oder Umwandlung mit gewonnener Stellung); remis: der Leser hält das Remis",
+          "enum": [
+            "gewinn",
+            "remis"
+          ]
+        },
+        "thema": {
+          "$ref": "#/$defs/thema"
+        },
+        "stichwort": {
+          "oneOf": [
+            {
+              "$ref": "#/$defs/stichwort"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "schwierigkeit": {
+          "$ref": "trainer-gemeinsam.schema.json#/$defs/schwierigkeit"
+        },
+        "herkunft": {
+          "$ref": "trainer-gemeinsam.schema.json#/$defs/herkunft"
+        },
         "pruefung": {
           "description": "Engine-Prüfung der Ausgangsstellung",
           "type": "object",
           "additionalProperties": false,
-          "required": ["wert", "mattIn", "bester", "einzigerZug", "tiefe"],
+          "required": [
+            "wert",
+            "mattIn",
+            "bester",
+            "einzigerZug",
+            "tiefe"
+          ],
           "properties": {
-            "wert": { "description": "Wert aus Sicht des Lesers in Bauerneinheiten (Matt als 100 minus Züge)", "type": "number" },
-            "mattIn": { "description": "Züge bis zum Matt aus Sicht des Lesers, falls die Engine eines sieht (höchstens nötige Züge)", "type": ["integer", "null"] },
-            "bester": { "description": "Bester Zug der Seite am Zug laut Engine (SAN); bei Leser am Zug der Zug, der das Ziel hält", "oneOf": [{ "$ref": "trainer-gemeinsam.schema.json#/$defs/san" }, { "type": "null" }] },
-            "einzigerZug": { "description": "Bei Leser am Zug: Jeder andere Zug verfehlt das Ziel", "type": "boolean" },
-            "tiefe": { "type": "integer" }
+            "wert": {
+              "description": "Wert aus Sicht des Lesers in Bauerneinheiten (Matt als 100 minus Züge)",
+              "type": "number"
+            },
+            "mattIn": {
+              "description": "Züge bis zum Matt aus Sicht des Lesers, falls die Engine eines sieht (höchstens nötige Züge)",
+              "type": [
+                "integer",
+                "null"
+              ]
+            },
+            "bester": {
+              "description": "Bester Zug der Seite am Zug laut Engine (SAN); bei Leser am Zug der Zug, der das Ziel hält",
+              "oneOf": [
+                {
+                  "$ref": "trainer-gemeinsam.schema.json#/$defs/san"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "einzigerZug": {
+              "description": "Bei Leser am Zug: Jeder andere Zug verfehlt das Ziel",
+              "type": "boolean"
+            },
+            "tiefe": {
+              "type": "integer"
+            }
           }
         }
       }

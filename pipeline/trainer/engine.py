@@ -32,6 +32,9 @@ class Zugwert:
     wert: float  # Bauerneinheiten, Matt als ±(100 − Züge)
     matt: int | None  # Züge bis zum Matt (positiv: eigenes Matt), sonst None
     tiefe: int
+    # Die Hauptvariante der Engine ab diesem Zug (er selbst zuerst); seit P4 für die Widerlegung
+    # einer Falle (falle.py), ohne weitere Suchen je Halbzug.
+    linie: tuple[chess.Move, ...] = ()
 
 
 def bauern(wert: chess.engine.PovScore) -> float:
@@ -118,6 +121,7 @@ class Engine:
 
 
 def _zugwert(brett: chess.Board, info: chess.engine.InfoDict) -> Zugwert:
-    zug = info["pv"][0]
+    pv = tuple(info["pv"])
+    zug = pv[0]
     wert = info["score"]
-    return Zugwert(zug, brett.san(zug), bauern(wert), wert.relative.mate(), int(info.get("depth", 0)))
+    return Zugwert(zug, brett.san(zug), bauern(wert), wert.relative.mate(), int(info.get("depth", 0)), pv)

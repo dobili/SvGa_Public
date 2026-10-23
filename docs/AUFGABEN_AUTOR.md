@@ -81,6 +81,71 @@ Teil fertig ist.
       für Weiß, dunkles Plättchen mit hellem Bauern für Schwarz, beide mit Rand. Gut zu erkennen,
       auch im hellen Modus?
 
+### Neu in 0.2.119: Trainer-Inhalte (P4; Fable, 23.10.2026)
+
+Alles unter Training.
+
+- [ ] N690. **Falle oder Köder, neues Bild:** Training › „Falle oder Köder“ › Runde starten. Der
+      Auftrag sagt jetzt: „Der Gegner hat gerade … gespielt (roter Pfeil) und bietet damit … an
+      (grauer Pfeil). Falle oder Geschenk?“ Am Brett: roter Pfeil der Köder-Zug des Gegners,
+      grauer Pfeil der mögliche Schlag. Vor der Antwort gibt es keinen Knopf „Warnsignale“ mehr.
+- [ ] N691. **Nach der Antwort:** Bei einer Falle steht: „Nach … folgt …, und du wirst matt
+      gesetzt / verlierst Material / deine Stellung ist deutlich schlechter. Du stündest x,x Bauern
+      schlechter als vor dem Nehmen. Besser war … (goldener Pfeil).“ Darunter die Fortsetzung der
+      Engine und die Warnsignale aus Kapitel 4 mit Marken am Brett (erst jetzt). Stimmt die
+      Reihenfolge für dich?
+- [ ] N692. **Keine Scheinfallen mehr:** Spiele eine Runde Stufe 1 und eine Runde Stufe 3. Jede
+      „Falle“ hat eine echte Widerlegung: Nach dem Nehmen stehst du klar schlechter als vorher
+      (die Aufgabe mit Wertung 753, in der Schwarz nach axb5 noch gut stand, ist weg). Fällt dir
+      noch eine Aufgabe auf, bei der das Nehmen gar nicht schlecht ist? Dann Kennung aus der
+      Zeile „Aus der freien Lichess-Datenbank“ notieren (Wertung genügt).
+- [ ] N693. **Geschenk:** Bei einem Geschenk heißt es: „Nehmen mit … ist gut, der Zug … hat das
+      Material wirklich hergegeben.“ Der rote Pfeil ist der Zug, der die Figur hängen ließ.
+- [ ] N694. **Planbilanz-Übung, deine Sicht:** Training › „Planbilanz-Übung“ › Planfragen. Unter
+      „Was will mein Gegner?“ fangen alle drei Antworten mit der Farbe des Gegners an („Schwarz
+      will …“), keine mit deiner. Unter „Wo spiele ich?“ ist keine falsche Antwort mehr ein Satz
+      über den Gegner, und keine gleicht der richtigen bis auf ein Feld.
+- [ ] N695. **Figuren mit Farbe:** Unter „Welche Figur?“ heißt es „Dein Läufer c1 …“, „Deine
+      Dame d1 …“; die falschen Antworten nennen andere eigene Figuren, nie gegnerische.
+- [ ] N696. **Nur Mittelspiel:** In der Planbilanz-Übung kommen keine Endspiele mehr (Abb. 6.27,
+      Turm gegen Springer, war dabei) und keine Eröffnungen (Abb. 6.4). Abb. 11.78 (Weiß am Zug)
+      sagt jetzt „Die Kette e4–d5 zeigt dorthin“, nicht mehr „c3–b4“.
+- [ ] N697. **Quadrat wie im Buch:** Training › „Endspieltrainer“ › „Kurzübungen starten“. Nach
+      der Antwort auf „Holt der schwarze König den Bauern ein?“ zeigt das Brett den goldenen Pfeil
+      des Bauernwegs und graue Pfeile für die übrigen Seiten des Quadrats (wie Abb. 8.35), kein
+      goldenes Feld mehr; das Feld des Königs ist gold (holt ein) oder rot (zu spät).
+- [ ] N698. **Schwerere Kurzübungen:** Aufgabe 5 bis 7 einer Runde: „Mit welchem Königszug holt
+      er den Bauern ein?“ (drei Züge zur Wahl), „Mit welchem Zug nimmt Weiß/Schwarz die
+      Opposition?“ und „Welcher Plan gilt in diesem Erkennungsbild?“ (vier Pläne als Text). Nach
+      der Antwort goldener Pfeil des richtigen Zugs beziehungsweise der Name des Bildes.
+- [ ] N699. **Freie Endspielaufgaben:** Endspieltrainer › „Was üben?“: Die Gruppen zeigen jetzt
+      mehr Aufgaben (Bauernendspiele, Turmendspiele, Damenendspiele, Leichtfiguren). Starte eine
+      Runde „Bauernendspiele“: Neben Buchstellungen kommen Aufgaben mit der Zeile „Aus der freien
+      Lichess-Datenbank (Wertung …)“, Thema „Bauernendspiel“, Merksatz „Bauernendspiel aus einer
+      echten Partie“. Spiel zwei davon aus: Fühlen sie sich wie echte Übungen an (du kannst
+      scheitern, die Engine wehrt sich)?
+- [ ] N700. **Remis halten:** Es gibt auch freie Remisaufgaben („Halte das Remis gegen die
+      Engine“), vor allem in Turmendspielen. Eine davon spielen.
+- [ ] N701. **Abb. 8.31 fehlt absichtlich:** Im Endspieltrainer kommt die Randbauer-Stellung
+      Abb. 8.31 nicht mehr vor (Weiß zog zuerst und setzte sofort patt, du kamst nie an den Zug).
+      Randbauer übst du an Abb. 8.61 und 8.63. Einverstanden?
+- [ ] N702. **Strukturerkenner mit echten Stellungen:** Training › „Strukturerkenner“ › Runde
+      starten. Das Brett zeigt die ganze Stellung; unter dem Brett schaltet „Nur das Skelett
+      zeigen“ auf Bauern und Könige um und zurück („Alle Figuren zeigen“). Der Schalter gilt für
+      alle Schritte der Aufgabe.
+- [ ] N703. **Starke Felder auf der 4. bis 6. Reihe:** Schritt 1 fragt jetzt nach deiner 4. bis
+      6. Reihe (deine Festlegung aus P3). Nach „Prüfen“ steht „Starke Felder: d5 (Vorposten), b6“;
+      Vorposten sind die mit eigener Bauernstütze. Bei Abb. 5.8 (Najdorf, Weiß) muss d5 als
+      Vorposten dabei sein.
+- [ ] N704. **Feldart benennen:** Vor der Planwahl kommt (wenn die Stellung eines hergibt) ein
+      Schritt „Welche Feldart ist das goldene Feld für dich?“ mit fünf Knöpfen: Loch, Schwaches
+      Feld, Starkes Feld, Vorposten, Rückständiger Bauer. Nach der Wahl erklärt ein Satz die Art
+      nach deinen Festlegungen. Gefragt ist immer die genaueste Art (Vorposten vor starkem Feld,
+      Loch vor schwachem Feld). Passt das?
+- [ ] N705. **Stellungen aus Partien:** Manche Aufgaben tragen die Zeile „Aus einer Partie des
+      Buches (nach Abb. …)“: Mittelspielstellungen aus den Zugfolgen der Kapitel 2, 3, 6, 11 und
+      12 (28 Stück, ab Zug 10, höchstens zwei je Zugfolge). Sind Struktur und Plan dort stimmig?
+
 ### Neu in 0.2.116 und 0.2.118: deine Rückmeldung vom 19.10.2026 (R1 bis R23, R33; Opus)
 
 - [ ] N600. **„KI“ statt „Claude“:** Abb. 8.25 öffnen. Unter der Zugleiste steht jetzt „Zugfolge
@@ -500,3 +565,56 @@ Paket P4.
       Schon umgesetzt, Widerspruch genügt (etwa eine andere Grenze). Falls du etwas anderes
       gemeint hast (etwa Safari am Mac, das gar nicht wechselt), schreib bitte kurz, in welchem
       Browser.
+
+### P4 Trainer-Inhalte (Fable, 23.10.2026): schon umgesetzt, nur bestätigen
+
+- [ ] P4-1. **Maßstab der Falle.** Eine Falle ist eine Aufgabe, in der der Leser nach dem Nehmen
+      mindestens 1,5 Bauern schlechter steht als vor dem Nehmen (vor dem Nehmen = sein bester Zug)
+      und danach mindestens 0,8 Bauern im Minus liegt (Engine, Tiefe 18). Die zweite Grenze
+      sorgt dafür, dass „ich stand auf Gewinn und stehe jetzt nur noch gleich“ keine Falle ist;
+      sie liegt bei 0,8 wie die Remisgrenze des Endspieltrainers, weil das
+      Blackburne-Shilling-Gambit (Abb. 4.41) genau −0,88 misst und eine Falle bleiben soll.
+      Geschenk: Nehmen ist höchstens 0,3 hinter dem besten Zug und lässt den Leser nicht im
+      Minus. Schon umgesetzt, Widerspruch genügt.
+- [ ] P4-2. **Lichess-Fallen ohne Matt.** Lichess-Aufgaben mit Thema „crushing“ oder einem
+      Mattthema geben keine Fallen mehr her: Dort wäre die Lehre „setze matt statt zu schlagen“,
+      nicht „erkenne den Köder“. Fallen stammen aus Aufgaben, in denen der Leser vorher
+      ausgeglichen oder besser steht (Median vor dem Nehmen +4, danach −6). Schon umgesetzt.
+- [ ] P4-3. **Buchbefund: drei Schläge mit „?“ sind laut Engine keine Fallen.** Aus den
+      Zugfolgen der Kapitel 2 und 3 fallen nach dem neuen Maßstab heraus: Abb. 2.129, 5. Sxd5
+      (nach exd5; Engine: nach dem Schlag −0,97, der beste Zug Sa5 steht bei 0,0: etwa ein Bauer
+      schlechter, keine Widerlegung); Abb. 2.49, 3... Sxe4 (nach 3. Sxe5; −0,75 statt −0,39 mit
+      d6: Schwarz steht nur wenig schlechter, weil er nach 4. De2 Sf6?? 5. Sc6+ ausweichen kann);
+      Abb. 3.30, 10. Dxe5 (nach Sc3; 0,0 statt +0,77). Die Fragezeichen im Buch bleiben Sache des
+      Autors; im Trainer sind diese drei Stellungen nicht mehr. Soll eines der Zeichen im Buch
+      zu „?!“ werden?
+- [ ] P4-4. **Planbilanz nur im Mittelspiel.** Planfragen, LAP und Wettrennen gibt es nur noch
+      an Stellungen, die die App als Mittelspiel einordnet (49 Stellungen aus Kapitel 6 und 11,
+      vorher 72 mit 16 Endspielen und 7 Eröffnungen). Die Warum-Fragen der vorbereiteten Texte zu
+      Kapitel 6 bleiben unabhängig von der Phase. Lichess-Stellungen braucht es dafür nicht.
+      Schon umgesetzt.
+- [ ] P4-5. **Hauptkette.** Zeigen mehrere Ketten einer Seite zum selben Flügel, nennt der
+      Trainer die längste, bei gleicher Länge die zentralste (Abb. 11.78: e4–d5 statt c3–b4).
+      Das gilt im Trainer; im Werkzeug „Wo spiele ich?“ nennt die Kettenwahl noch die erste
+      gefundene Kette (Hinweis an P3). Schon umgesetzt.
+- [ ] P4-6. **Freie Endspielaufgaben.** 119 Aufgaben der Lichess-Datenbank (CC0) im
+      Endspieltrainer: höchstens acht Steine, genau eine Figurenart (Bauern-, Turm-, Damen-,
+      Leichtfigurenendspiel), Gewinn ab +2,0 oder Matt, Remis bis ±0,8 (Tiefe 18), nie trivial
+      (mindestens ein Zug des Lesers verfehlt das Ziel), je Thema, Stufe und Ziel höchstens fünf,
+      Stufe nach der Lichess-Wertung wie im Taktiktrainer. Neue Themen „Bauernendspiel“ und
+      „Damenendspiel“ mit eigenem Merksatz; die Gruppe „Dame gegen Bauer“ heißt jetzt
+      „Damenendspiele“. Schon umgesetzt, Widerspruch genügt.
+- [ ] P4-7. **Kurzübungen.** Drei neue Arten (Zug ins Quadrat, Zug zur Opposition, Plan zum
+      Erkennungsbild), eine Runde hat weiter acht Aufgaben, die sieben Arten reihum. Mehr
+      Aufgaben je Runde? Schon umgesetzt mit acht.
+- [ ] P4-8. **Feldart-Frage: die genaueste Art zählt.** Ein Vorposten ist auch ein starkes Feld,
+      ein Loch auch ein schwaches Feld; im Trainer gilt nur die genaueste Benennung als richtig,
+      der Erklärsatz nennt den Oberbegriff mit. „Schwaches Feld“ ist als Antwort nur dann richtig,
+      wenn das Feld außerhalb deiner 3. bis 5. Reihe liegt (etwa ein nicht mehr deckbares Feld
+      auf der 6. Reihe). Schon umgesetzt, Widerspruch genügt.
+- [ ] P4-9. **Partiestellungen für den Strukturerkenner** aus den Zugfolgen des Buches statt aus
+      fremden Partien: Regel 1 (das Buch ist die Quelle), und die Zugfolgen sind freigegeben.
+      Lichess-Aufgabenstellungen sind taktisch und taugen nicht für Strukturen. Reicht das, oder
+      sollen zusätzlich Stellungen aus den Lichess-Partien der Bot-Daten dazu?
+
+

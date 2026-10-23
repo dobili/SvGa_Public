@@ -5,7 +5,7 @@
  * oder Köder, Strukturerkenner, Wiederholung, Endspiel, Zielbilanz und Faktorenbilanz; die übrigen
  * Trainer stehen seit 0.2.90 in trainer-kapitel2bis12.spec.ts.
  */
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 import { oeffneTrainer, starteImBrowser } from "./hilfen";
 
 const feld = (page: Page, name: string) =>
@@ -117,21 +117,43 @@ test("Taktiktrainer: ein Motiv wählen, Hilfen, Lösung zeigen, ohne Motivfrage"
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
 
-test("Falle oder Köder: Warnsignale prüfen, entscheiden, Auflösung", async ({ page }) => {
+test("Falle oder Köder: Köder-Zug, entscheiden, Widerlegung und Warnsignale danach", async ({
+  page,
+}) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "falle");
   await page.getByTestId("falle-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Der Gegner hat gerade");
   await expect(runde).toContainText("Falle oder Geschenk?");
-  await runde.getByRole("button", { name: /Warnsignale prüfen/ }).click();
-  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
+  // Die Warnsignale kommen erst nach der Antwort (Wunsch des Autors, P4 R50).
+  await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);
   await runde.getByRole("button", { name: "Nicht nehmen" }).click();
   await expect(runde).toContainText(/Eine Falle|Ein Geschenk/);
+  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
   await expect(runde).toContainText("Fortsetzung laut Engine:");
   await page.screenshot({ path: "test-results/bilder/trainer-falle.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
+
+/**
+ * Strukturerkenner: die Schritte vor der Planwahl durchklicken (Prüfen ohne Felder; bei der
+ * Feldart-Frage die erste Art), bis „Welcher Plan passt“ dasteht (R49: zwei bis vier Schritte).
+ */
+async function schritteBisZumPlan(runde: Locator): Promise<void> {
+  const HOECHSTENS_SCHRITTE = 4;
+  const plan = runde.getByText("Welcher Plan passt");
+  const pruefen = runde.getByRole("button", { name: "Prüfen" });
+  const loch = runde.getByRole("button", { name: "Loch", exact: true });
+  for (let i = 0; i < HOECHSTENS_SCHRITTE; i++) {
+    // Warten, bis der nächste Schritt (oder die Planwahl) da ist, sonst klickt der Test ins Leere.
+    await expect(plan.or(pruefen).or(loch).first()).toBeVisible();
+    if ((await plan.count()) > 0) return;
+    if ((await pruefen.count()) > 0) await pruefen.click();
+    else await loch.click();
+  }
+}
 
 test("Strukturerkenner: starke Felder und schwache Bauern prüfen, Plan wählen", async ({
   page,
@@ -140,14 +162,12 @@ test("Strukturerkenner: starke Felder und schwache Bauern prüfen, Plan wählen"
   await oeffneTrainer(page, "struktur");
   await page.getByTestId("struktur-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
-  await expect(runde).toContainText(/Schritt 1 von [23]/);
-  // W5: Mit starken Feldern hat die Aufgabe drei Schritte, sonst zwei.
-  const dreiSchritte = (await runde.textContent())?.includes("Schritt 1 von 3") ?? false;
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  if (dreiSchritte) {
-    await expect(runde).toContainText("Schritt 2 von 3");
-    await runde.getByRole("button", { name: "Prüfen" }).click();
-  }
+  await expect(runde).toContainText(/Schritt 1 von [234]/);
+  // R49: echte Stellung, Skelett per Knopf.
+  await runde.getByRole("button", { name: "Nur das Skelett zeigen" }).click();
+  await expect(runde.getByRole("button", { name: "Alle Figuren zeigen" })).toBeVisible();
+  // W5/R49: Tipp-Schritte (starke Felder, schwache Bauern), dann je nach Stellung die Feldart.
+  await schritteBisZumPlan(runde);
   await expect(runde).toContainText("Welcher Plan passt");
   await runde.locator(".plan-satz").first().click();
   await expect(runde).toContainText("Struktur:");
@@ -302,9 +322,7 @@ test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners 
   await page.getByTestId("struktur-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   // Ohne angetippte Felder ist die Leitfrage falsch beantwortet, die Aufgabe also nicht gelöst.
-  const dreiSchritte = (await runde.textContent())?.includes("Schritt 1 von 3") ?? false;
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  if (dreiSchritte) await runde.getByRole("button", { name: "Prüfen" }).click();
+  await schritteBisZumPlan(runde);
   await runde.locator(".plan-satz").first().click();
   await expect(runde).toContainText("Struktur:");
   await expect(runde).toContainText("Nicht ganz");

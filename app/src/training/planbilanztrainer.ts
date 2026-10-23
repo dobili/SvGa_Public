@@ -3,28 +3,33 @@
  * Wettrennen bei entgegengesetzten Rochaden.
  *
  * Rolle im Gesamtbild: Trainer „planbilanz“ (Pflichtenheft 5.3, AP 13 Stufe 3). Drei
- * Übungsarten an Stellungen des Buches (Kapitel 6 und 11):
- * - Planfragen: je Frage drei Antworten. Richtig ist der Satz, den die Werkzeuge zur Frage
- *   rechnen (analyse/planfragen.ts); falsch sind derselbe Satz für die andere Seite und der einer
- *   anderen Stellung. Die Buchtexte der Planbilanzen zeigt die App nicht (Entscheidung des Autors
- *   vom 15.10.2026), bei Abb. 6.20 und 11.34 steht ein Verweis aufs Buch. Dazu kommen die
- *   Warum-Fragen der vorbereiteten Texte zu Kapitel 6.
+ * Übungsarten an Mittelspielstellungen des Buches (Kapitel 6 und 11, Phase nach
+ * schach/phase.ts; Wunsch des Autors, P4 R48):
+ * - Planfragen: je Frage drei Antworten, alle aus Sicht der Seite am Zug. Richtig ist der Satz,
+ *   den die Werkzeuge zur Frage rechnen (analyse/planfragen.ts, Sätze und Ablenker in
+ *   planablenker.ts); falsch sind Sätze anderer Art aus anderen Stellungen (Wo?), andere
+ *   Aussagen über denselben Gegner (Gegner?) und andere eigene Figuren (Welche Figur?). Die
+ *   Buchtexte der Planbilanzen zeigt die App nicht (Entscheidung des Autors vom 15.10.2026), bei
+ *   Abb. 6.20 und 11.34 steht ein Verweis aufs Buch. Dazu kommen die Warum-Fragen der
+ *   vorbereiteten Texte zu Kapitel 6.
  * - LAP: die am wenigsten aktive Figur der Seite am Zug antippen, dann ihr Zielfeld.
  * - Wettrennen: Bauernzüge bis zum ersten Hebel für beide Seiten zählen.
  * Abhängigkeiten: analyse/stellungsprofil.ts, analyse/planlage.ts, analyse/planfragen.ts (nur
- * aufgerufen), training/zufall.ts.
+ * aufgerufen), training/planablenker.ts, schach/phase.ts, training/zufall.ts.
  * Buchbezug: Kapitel 6, drei Planfragen, Planbilanz (Abb. 6.20), LAP-Prinzip, entgegengesetzte
  * Rochaden („Bauernzüge bis zum ersten Hebel zählen“).
  */
 import type { Color } from "chessops/types";
-import { figurText, gegnerText, lapVon, unruhe, woText } from "../analyse/planfragen";
+import { lapVon, unruhe } from "../analyse/planfragen";
 import { planlage } from "../analyse/planlage";
-import { profil } from "../analyse/stellungsprofil";
+import { profil, type Stellungsprofil } from "../analyse/stellungsprofil";
 import type { Frage } from "../analyse/warumfragen";
 import { t } from "../i18n/sprache";
 import { farbname } from "../analyse/texte";
+import { phase } from "../schach/phase";
 import { feldname, gegner } from "../schach/stellung";
 import type { Buchstellung } from "./buchstellungen";
+import { gegnerErsatz, plansaetze, type Plansaetze } from "./planablenker";
 import { mische, type Zufall } from "./zufall";
 
 /** Kapitel mit Planfragen-Stellungen. */
@@ -33,6 +38,8 @@ const KAPITEL = new Set([6, 11]);
 const MIT_BUCHBILANZ = new Set(["6.20", "11.34"]);
 /** Höchstens so viele Bauernzüge fragt das Wettrennen ab (Knöpfe 1 bis 6). */
 export const HOECHSTENS_ZUEGE = 6;
+/** Je Frage so viele falsche Antworten. */
+const ABLENKER = 2;
 
 /** Eine Frage mit Antwortauswahl (wie die Warum-Fragen). */
 export interface Wahlfrage {
@@ -51,13 +58,6 @@ export interface Planaufgabe {
   readonly buchbilanz: boolean;
 }
 
-/** Die drei Sätze der Planfragen einer Seite. */
-interface Plansaetze {
-  readonly wo: string;
-  readonly gegner: string;
-  readonly figur: string;
-}
-
 /**
  * Sagt der Satz etwas über die Stellung? „Noch offen“, „noch kein erkennbarer Plan“ und „keine
  * Figur“ taugen weder als richtige Antwort noch als Ablenker.
@@ -70,55 +70,88 @@ function aussagekraeftig(s: Plansaetze, farbe: Color): boolean {
   );
 }
 
-/** Die Sätze beider Seiten einer ruhigen Stellung, oder null (unruhig, ohne König). */
-function saetze(buch: Buchstellung): Readonly<Record<Color, Plansaetze>> | null {
-  if (!buch.stellung.regeln) return null;
+/**
+ * Nur ruhige Mittelspielstellungen: Planfragen gelten im Mittelspiel (Kapitel 6); in Eröffnung
+ * und Endspiel führen sie in die Irre (Abb. 6.27 wäre ein Turmendspiel). Phase nach der Lesart
+ * der App (schach/phase.ts).
+ */
+export function planstellung(buch: Buchstellung): Stellungsprofil | null {
+  if (!KAPITEL.has(buch.kapitel) || !buch.stellung.regeln) return null;
   const p = profil(buch.stellung);
   if (unruhe(p) !== null) return null;
-  const fuer = (farbe: Color): Plansaetze => ({
-    wo: woText(planlage(p, farbe)),
-    gegner: gegnerText(planlage(p, gegner(farbe))),
-    figur: figurText(p, farbe),
-  });
-  return { white: fuer("white"), black: fuer("black") };
+  return phase(buch.stellung, p.angriffskarte, p.drohungen).phase === "mittelspiel" ? p : null;
 }
 
 /** Eine Frage: der richtige Satz und bis zu zwei andere, gemischt, ohne Doppelte. */
 function wahlfrage(frage: string, richtig: string, andere: readonly string[], zufall: Zufall) {
-  const falsche = [...new Set(andere.filter((a) => a !== richtig))].slice(0, 2);
+  const falsche = [...new Set(andere.filter((a) => a !== richtig))].slice(0, ABLENKER);
   const antworten = mische([richtig, ...falsche], zufall);
   return { frage, antworten, richtig: antworten.indexOf(richtig) };
 }
 
+interface Vorrat {
+  readonly buch: Buchstellung;
+  readonly p: Stellungsprofil;
+  readonly s: Plansaetze;
+}
+
 /**
- * Die Planfragen-Aufgaben: je ruhige Stellung aus Kapitel 6 und 11 die drei Fragen für die Seite
- * am Zug, dazu die Warum-Fragen der vorbereiteten Texte zu Kapitel 6.
- * Beispiel: Abb. 6.20, Weiß am Zug → „Wo spiele ich?“ mit dem Satz von Weiß, dem von Schwarz und
- * dem einer anderen Stellung.
+ * Ablenker aus anderen Stellungen: ab einem Versatz (nicht die Nachbarstellung derselben Partie
+ * mit fast gleichem Skelett), nur Sätze anderer Art als der richtige und untereinander
+ * verschieden, bei „Gegner?“ nur über denselben Gegner (gleiche Seite am Zug).
+ */
+function fremdeAblenker(
+  vorrat: readonly Vorrat[],
+  i: number,
+  satz: (s: Plansaetze) => string,
+  art: (s: Plansaetze) => string,
+  passt: (v: Vorrat) => boolean,
+): string[] {
+  const versatz = Math.max(1, Math.floor(vorrat.length / 2));
+  const eigene = vorrat[i];
+  if (!eigene) return [];
+  const arten = new Set([art(eigene.s)]);
+  const gefunden: string[] = [];
+  for (let k = 0; k < vorrat.length && gefunden.length < ABLENKER; k++) {
+    const v = vorrat[(i + versatz + k) % vorrat.length];
+    if (!v || v === eigene || !passt(v) || arten.has(art(v.s))) continue;
+    arten.add(art(v.s));
+    gefunden.push(satz(v.s));
+  }
+  return gefunden;
+}
+
+/** Die drei Planfragen zu einer Stellung des Vorrats. */
+function planfragen(vorrat: readonly Vorrat[], i: number, zufall: Zufall): Wahlfrage[] {
+  const { buch, p, s } = vorrat[i] as Vorrat;
+  const seite = buch.stellung.amZug;
+  const gleicheSeite = (v: Vorrat) => v.buch.stellung.amZug === seite;
+  const wo = fremdeAblenker(vorrat, i, (x) => x.wo, (x) => x.woArt, () => true);
+  const gegnerSaetze = [
+    ...fremdeAblenker(vorrat, i, (x) => x.gegner, (x) => x.gegnerArt, gleicheSeite),
+    ...gegnerErsatz(p, seite),
+  ];
+  return [
+    wahlfrage(t("planbilanz.wo"), s.wo, wo, zufall),
+    wahlfrage(t("planbilanz.gegner"), s.gegner, gegnerSaetze, zufall),
+    wahlfrage(t("planbilanz.figur"), s.figur, s.andereFiguren, zufall),
+  ];
+}
+
+/**
+ * Die Planfragen-Aufgaben: je ruhige Mittelspielstellung aus Kapitel 6 und 11 die drei Fragen
+ * für die Seite am Zug, dazu die Warum-Fragen der vorbereiteten Texte zu Kapitel 6.
+ * Beispiel: Abb. 6.20, Weiß am Zug → „Wo spiele ich?“ mit dem Satz von Weiß und zwei Sätzen
+ * anderer Lagen aus anderen Stellungen.
  */
 export function planaufgaben(stellungen: readonly Buchstellung[], zufall: Zufall): Planaufgabe[] {
-  const mitSaetzen = stellungen
-    .filter((b) => KAPITEL.has(b.kapitel))
-    .flatMap((b) => {
-      const s = saetze(b);
-      const seite = b.stellung.amZug;
-      return s && aussagekraeftig(s[seite], seite) ? [{ buch: b, s }] : [];
-    });
-  // Der fremde Ablenker kommt aus einer weit entfernten Stellung, nicht aus der Nachbarstellung
-  // derselben Partie mit fast gleichem Skelett.
-  const versatz = Math.max(1, Math.floor(mitSaetzen.length / 2));
-  const aufgaben = mitSaetzen.map(({ buch, s }, i) => {
-    const seite = buch.stellung.amZug;
-    const eigen = s[seite];
-    const anders = s[gegner(seite)];
-    const fremd = mitSaetzen[(i + versatz) % mitSaetzen.length]?.s[seite] ?? anders;
-    const fragen: Wahlfrage[] = [
-      wahlfrage(t("planbilanz.wo"), eigen.wo, [anders.wo, fremd.wo], zufall),
-      wahlfrage(t("planbilanz.gegner"), eigen.gegner, [anders.gegner, fremd.gegner], zufall),
-      wahlfrage(t("planbilanz.figur"), eigen.figur, [anders.figur, fremd.figur], zufall),
-    ];
-    return { buch, fragen };
+  const vorrat: Vorrat[] = stellungen.flatMap((buch) => {
+    const p = planstellung(buch);
+    if (!p) return [];
+    const s = plansaetze(p, buch.stellung.amZug);
+    return aussagekraeftig(s, buch.stellung.amZug) ? [{ buch, p, s }] : [];
   });
+  const aufgaben = vorrat.map((v, i) => ({ buch: v.buch, fragen: planfragen(vorrat, i, zufall) }));
   const warum = stellungen
     .filter((b) => b.kapitel === 6 && b.vorbereitet && b.vorbereitet.fragen.length > 0)
     .map((buch) => ({ buch, fragen: (buch.vorbereitet?.fragen ?? []).map(alsWahlfrage) }));
@@ -147,14 +180,13 @@ export interface Lapaufgabe {
 }
 
 /**
- * Die LAP-Aufgabe zu einer ruhigen Stellung aus Kapitel 6 und 11 (Seite am Zug), oder null.
- * Regel: Kapitel 6, Frage 3 (LAP-Prinzip: die am wenigsten aktive Figur verbessern).
+ * Die LAP-Aufgabe zu einer ruhigen Mittelspielstellung aus Kapitel 6 und 11 (Seite am Zug),
+ * oder null. Regel: Kapitel 6, Frage 3 (LAP-Prinzip: die am wenigsten aktive Figur verbessern).
  * Beispiel: Abb. 6.20 → Läufer c1 (noch zu Hause), Ziel nach dem Werkzeug „Welche Figur?“.
  */
 export function lapaufgabe(buch: Buchstellung): Lapaufgabe | null {
-  if (!KAPITEL.has(buch.kapitel) || !buch.stellung.regeln) return null;
-  const p = profil(buch.stellung);
-  if (unruhe(p) !== null) return null;
+  const p = planstellung(buch);
+  if (!p) return null;
   const seite = buch.stellung.amZug;
   const ergebnis = lapVon(p, seite);
   if (!ergebnis || ergebnis.ziel.ziel === null) return null;
@@ -175,13 +207,15 @@ export interface Rennaufgabe {
 }
 
 /**
- * Das Wettrennen zu einer Stellung mit entgegengesetzten Rochaden, oder null.
+ * Das Wettrennen zu einer Mittelspielstellung mit entgegengesetzten Rochaden, oder null.
  * Regel: Kapitel 6, „Bei entgegengesetzten Rochaden: Bauernzüge bis zum ersten Hebel für beide
  * Seiten zählen“. Beispiel: Abb. 6.6 → Weiß 2 (h2–h5 gegen g6), Schwarz 3 (a7–a3 gegen b2).
  */
 export function rennaufgabe(buch: Buchstellung): Rennaufgabe | null {
   if (!buch.stellung.regeln) return null;
-  const lage = planlage(profil(buch.stellung), "white");
+  const p = profil(buch.stellung);
+  if (phase(buch.stellung, p.angriffskarte, p.drohungen).phase !== "mittelspiel") return null;
+  const lage = planlage(p, "white");
   const weiss = lage.sturm.eigen?.zuege;
   const schwarz = lage.sturm.gegner?.zuege;
   if (lage.koenige.art !== "verschieden" || weiss === undefined || schwarz === undefined)

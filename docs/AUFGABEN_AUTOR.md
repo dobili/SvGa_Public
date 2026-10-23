@@ -416,6 +416,277 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
+### P8 App-Tour (R52): Plan, die Umsetzung läuft (23.10.2026)
+
+Dein Wunsch R52: ein kleines Toursymbol oben rechts, ein Hinweis beim ersten Start, ein Schalter
+in den Einstellungen, eine kurze Haupttour und je Bildschirm eine ausführliche Tour, leicht
+ergänzbar. So ist es geplant und (außer Spielen) umgesetzt. Die Texte gelten nach deiner Regel als
+abgesegnet; lies sie, wenn du Zeit hast, am besten direkt in der App, und schreib Änderungen als
+„P8-20: Schritt 3 anders: …“.
+
+- [ ] P8-1. **Das Symbol.** Oben rechts auf jedem Bildschirm, für den es eine Tour gibt, steht ein
+      kleiner Kompass ohne Beschriftung (Bildschirmleser lesen „Tour zu diesem Bildschirm“). Ein
+      Tipp startet die Tour genau dieses Bildschirms. Solange du eine Tour noch nicht gesehen
+      hast, trägt das Symbol einen kleinen goldenen Punkt; danach ist es nur noch grau. Empfehlung:
+      Kompass, weil das Fragezeichen schon für die Erklärungen hinter „?“ vergeben ist. Schon
+      umgesetzt, Widerspruch genügt (etwa ein anderes Symbol oder ohne Punkt).
+- [ ] P8-2. **Hinweis beim ersten Start.** Nach dem Startbild fragt die App einmal: „Kleiner
+      Rundgang? Oben rechts zeigt dir das Kompass-Symbol auf jedem Bildschirm, wie er
+      funktioniert. Möchtest du jetzt einen kurzen Rundgang durch die App?“ mit „Rundgang
+      starten“ und „Später“. Die Frage kommt einmal je Gerät, auch für alle, die die App schon
+      benutzen (die Touren sind neu). Öffnet jemand die App über einen Link zu einer Abbildung
+      (Trainingsseiten der Website), kommt sie erst beim nächsten normalen Start. Schon umgesetzt,
+      Widerspruch genügt.
+- [ ] P8-3. **Schalter in den Einstellungen.** Zahnrad › Einstellungen › Reiter „Anzeige“:
+      „Toursymbol: an / aus“ und der Knopf „Rundgang durch die App“. Mit „aus“ verschwindet das
+      Symbol überall dauerhaft, und der Hinweis beim ersten Start entfällt; der Rundgang bleibt
+      über den Knopf erreichbar. Schon umgesetzt, Widerspruch genügt.
+- [ ] P8-4. **So sieht eine Tour aus.** Der Rest des Bildschirms wird abgedunkelt, das erklärte
+      Element bleibt hell mit goldenem Rahmen und wird bei Bedarf in den sichtbaren Bereich
+      gescrollt. Eine Karte unten (oder oben, wenn das Element unten liegt) zeigt den Text,
+      „Schritt 3 von 9“, „Zurück“, „Weiter“ (am Ende „Fertig“) und ein Kreuz zum Beenden. Während
+      der Tour lässt sich nichts anderes antippen, damit nichts aus Versehen passiert. Mit
+      Tastatur: Tab wechselt zwischen den Knöpfen, Esc beendet, die Pfeiltasten blättern.
+      Bildschirmleser lesen jeden Schritt vor. Bei „Bewegung reduzieren“ des Geräts gibt es keine
+      Animation. Schon umgesetzt, Widerspruch genügt.
+- [ ] P8-5. **Was gerade nicht da ist, wird übersprungen.** Eine Tour erklärt den Bildschirm so,
+      wie er gerade ist: Hat eine Abbildung keine Zugfolge, entfällt der Schritt zur Zugleiste;
+      ist noch kein Werkzeug gewählt, erklärt die Tour die Werkzeugkarte ohne Rahmen in der Mitte.
+      In den Trainern startet die Tour meist auf der Auswahlseite und erklärt die Runde mit
+      Schritten in der Mitte. Schon umgesetzt, Widerspruch genügt.
+- [ ] P8-6. **Umfang.** 32 Touren: der Rundgang (Haupttour, acht Schritte), Buch, Kapitel,
+      Abbildung (mit Werkzeugleiste und Werkzeugkarten), Übung, Training, alle 17 Trainer (mit
+      30-Minuten-Plan und Fehlerdatenbank), Lernsammlung, Nachschlagen, Glossar, Begriff,
+      Denkroutine, Gesamt-Checkliste, Steckbriefe, Werkzeuge des Buches und Einstellungen (mit
+      allen fünf Reitern). Keine Tour bekommen die Lizenzen und deine Aufgabenseite (dort ist
+      alles selbsterklärend). Spielen, Partie, Auswertung und Partienliste kommen als Teil B, wenn
+      die Kalibrierung der Bots auf main ist (siehe P8-44). Schon umgesetzt, Widerspruch genügt.
+- [ ] P8-7. **Technik, kurz.** Jede Tour ist eine Liste von Zeilen „Bildschirm, Ziel, Text“ in einer
+      Datei (`app/src/tour/touren.ts`); die Ziele tragen eine feste Kennung (`data-tour="brett"`),
+      die Texte stehen in de.json und en.json. Eine Tour ergänzen heißt also eine Zeile und einen
+      Text hinzufügen. Ein Test meldet jede Zeile, deren Ziel es im Code nicht gibt, und jeden
+      fehlenden Text. Gemerkt wird nur auf dem Gerät (angeboten, Symbol aus, gesehene Touren), nicht
+      in der Datensicherung; ein neues Speicherformat gibt es nicht. Keine neue Bibliothek: etwa
+      300 Zeilen eigener Code. Schon umgesetzt, Widerspruch genügt.
+- [ ] P8-8. **Tourtexte auf Englisch** stehen gleich mit in en.json (wie alle Oberflächentexte).
+      Schon umgesetzt, Widerspruch genügt.
+- [ ] P8-9. **Rundgang auch aus dem Buch?** Der Buch-Bildschirm hat seine eigene Tour (Nummernfeld,
+      Kapitel); den Rundgang durch alle Bereiche nennt ihr letzter Schritt und startet der Knopf in
+      den Einstellungen. Empfehlung: so lassen, damit ein Tipp auf das Symbol immer genau den
+      Bildschirm erklärt. Schon umgesetzt, Widerspruch genügt.
+- [ ] P8-10. **Gesehen.** Eine Tour gilt als gesehen, sobald du sie bis zum Ende oder mit dem Kreuz
+      verlassen hast; dann verschwindet der goldene Punkt an diesem Bildschirm. Schon umgesetzt,
+      Widerspruch genügt.
+- [ ] P8-11. **Gemeinsame Schritte aller Trainer** (außer 30-Minuten-Plan und Fehlerdatenbank):
+      vorn „Hier steht in einem Satz, wie dieser Trainer abläuft.“, hinten „In der Runde steht
+      oben, die wievielte Aufgabe dran ist und wie viele du richtig hast. Nach jeder Antwort geht
+      es mit „Weiter“ zur nächsten.“, „Nach einer Antwort legt „In die Lernsammlung“ die Stellung
+      mit einem Plan-Satz zu deinen eigenen Stellungen (Bereich Training).“ und „Am Ende siehst du
+      Ergebnis und Zeit. Jede Runde zählt als Durchgang im Fortschritt des Kapitels.“ Dazwischen
+      stehen die eigenen Schritte des Trainers (P8-18 bis P8-34).
+
+Die Texte je Tour (in Klammern die Schritte):
+
+- [ ] P8-12. **Tour Rundgang durch die App.** (1) Willkommen bei „Schach von Grund auf“! Dieser
+      kurze Rundgang zeigt dir, wo du was findest. Mit „Weiter“ geht es los, mit dem Kreuz hörst du
+      jederzeit auf. (2) Buch: jede Abbildung des Buches als lebendiges Brett, mit den Werkzeugen
+      des Buches. Tippe die Nummer aus dem Buch ein oder öffne ein Kapitel. (3) Training: fällige
+      Wiederholungen, deine Lernsammlung und zu jedem Kapitel die Trainer aus dem Buch. (4) Spielen:
+      Partien gegen Bots auf zehn Stufen oder gegen einen Menschen am selben Gerät, danach eine
+      Auswertung deiner Partie. (5) Nachschlagen: Glossar, Denkroutine, Gesamt-Checkliste,
+      Steckbriefe der Eröffnungen und alle Werkzeuge des Buches. (6) Das Zahnrad: deine Wertung und
+      dein Fortschritt, Brett, Figuren und Anzeige, dazu die Datensicherung. (7) Dieses Symbol steht
+      oben rechts auf jedem Bildschirm, für den es eine Tour gibt. Ein Tipp erklärt genau diesen
+      Bildschirm. Ausschalten kannst du es in den Einstellungen unter „Anzeige“. (8) Viel Freude!
+      Öffne am besten eine Abbildung aus Kapitel 1 und tippe dort auf das Toursymbol: Die Abbildung
+      ist das Herzstück der App.
+- [ ] P8-13. **Tour Buch.** (1) Tippe die Nummer einer Abbildung aus dem Buch ein, etwa 1.26, und
+      öffne sie. Bei einem Tippfehler schlägt die App passende Nummern vor. (2) Ein Tipp bringt dich
+      zur zuletzt geöffneten Abbildung zurück. (3) Die Kapitel des Buches. Der goldene Ring um die
+      Nummer zeigt, wie viele Abbildungen du schon angesehen hast. Ein Tipp öffnet das Kapitel mit
+      allen Abbildungen, Trainern und Übungen. (4) Den Rundgang durch alle Bereiche findest du
+      jederzeit in den Einstellungen unter „Anzeige“.
+- [ ] P8-14. **Tour Kapitel.** (1) Dein Stand in diesem Kapitel: angesehene Abbildungen, gelöste
+      Übungen, beantwortete Warum-Fragen, abgehakte Lernziele und deine Trainer-Durchgänge. (2) Die
+      Trainer zu diesem Kapitel. Das Fragezeichen erklärt den Ablauf, „Trainieren“ startet. (3) Die
+      Übungen aus dem Buch. „Übungen lösen“ geht alle der Reihe nach durch, die offenen zuerst.
+      Gelöste Übungen kommen später zur Wiederholung. (4) Alle Abbildungen als kleine Bretter, nach
+      Abschnitten. Ein Tipp auf einen Abschnitt klappt ihn auf, ein Tipp auf ein Brett öffnet die
+      Abbildung. Ein Zeichen oben rechts am Brett zeigt Warum-Fragen an. (5) Eine Abbildung gilt als
+      angesehen, wenn sie 30 Sekunden am Stück zu sehen war. Hier hakst du alle von Hand ab oder
+      setzt sie zurück; jeder Abschnitt hat dafür auch einen eigenen Knopf.
+- [ ] P8-15. **Tour Abbildung.** (1) Die Nummer wie im Buch. Ein Tipp darauf öffnet ein Feld, mit
+      dem du zu jeder anderen Abbildung springst. (2) Vorige und nächste Abbildung im selben
+      Kapitel. (3) Diese Abbildung hat eine Zugfolge. Tippe einen Zug an, um die Stellung danach zu
+      sehen, oder blättere mit den Knöpfen darunter Halbzug für Halbzug. Abzweigungen stehen unter
+      „Andere Züge hier“. (4) Das Brett zeigt Pfeile und Felder wie im Buch. Du kannst jederzeit
+      selbst weiterziehen: Figur antippen und Zielfeld tippen oder die Figur wischen. „Zurück zur
+      Buchvariante“ führt wieder zum Buch. (5) Die Werkzeuge für jede Phase: Zählen (ein Feld
+      antippen, Angreifer und Verteidiger zählen), Ziehen, Engine, Röntgen und Warnsignale, sobald
+      das Buch sie eingeführt hat. Ein zweiter Tipp schaltet ein Werkzeug wieder aus, ebenso ein
+      Tipp neben das Brett. (6) Dreht das Brett, damit Schwarz unten steht. (7) Das Lesezeichen legt
+      die gezeigte Stellung mit einem Plan-Satz und einer Notiz in deine Lernsammlung. (8) Erst
+      selbst denken: Schätze die Stellung ein, bevor Werkzeuge und Engine helfen. Ob das hier
+      verlangt wird, stellst du in den Einstellungen unter „Training“ ein. (9) Die Verfahren des
+      Buches als Bündel, etwa „Eröffnung prüfen“ oder „Planfindung“. Es stehen die Bündel bis zu
+      diesem Kapitel da; „frühere“ und „spätere“ am Rand zeigen weitere, spätere als Vorschau. Die
+      Reihe lässt sich seitlich schieben. (10) Die Teile des gewählten Bündels. Jeder Reiter zeigt
+      ein Werkzeug, mit seinem Ergebnis am Brett und in der Karte darunter. (11) Die Karte eines
+      Werkzeugs zeigt Befunde und Fazit, darüber die Legende der Markierungen am Brett. „Sicht“ oben
+      rechts rechnet für die andere Seite. „So prüft die App“ nennt die Regel des Buches. Werkzeuge
+      können irren; maßgeblich ist das Buch. (12) Warum-Fragen zur Stellung oder zum nächsten Zug,
+      mit Antwortauswahl. Sie erscheinen, sobald du die Abbildung 30 Sekunden angesehen hast. (13)
+      Spiel die gezeigte Stellung gegen die Engine zu Ende. (14) Die Bildunterschrift wie im Buch,
+      darunter die Fundstelle. Antippbare Nummern öffnen die genannte Abbildung.
+- [ ] P8-16. **Tour Übung.** (1) Die Aufgabe steht im Buch, hier löst du sie. Bei Zugaufgaben ziehst
+      du auf dem Brett, die App antwortet mit den Zügen der Gegenseite aus der Lösung. (2) Erst
+      selbst denken: Hinweise und Lösung erscheinen, wenn du nachgedacht hast. Danach helfen
+      gestufte Hinweise (Motiv, Figur, Zug), oder du lässt dir die Lösung zeigen. (3) Übungen im
+      Kopf schätzt du nach der Erklärung selbst ein. Danach kommt die Übung in wachsenden Abständen
+      zur Wiederholung, nach 1, 3, 7, 16 und 35 Tagen. (4) „Nächste Übung“ führt weiter durch die
+      Übungen des Kapitels.
+- [ ] P8-17. **Tour Training.** (1) Übungen und Trainer-Aufgaben, die zur Wiederholung fällig sind.
+      Sie kommen in wachsenden Abständen wieder, bis sie sitzen. (2) Deine Lernsammlung: eigene
+      Stellungen mit Plan, nach Eröffnung geordnet, zum Abfragen. (3) Die Übungen aus dem Kasten
+      „Training zu diesem Kapitel“ des Buches auf der Website, mit Links zu Lichess. Die Seiten
+      gehen auch offline. (4) Zu jedem Kapitel seine Trainer. Der Kopf mit der Nummer öffnet das
+      Kapitel, das Fragezeichen erklärt den Ablauf, „Trainieren“ startet. Im Trainer zeigt das
+      Toursymbol, wie er funktioniert.
+- [ ] P8-18. **Tour Trainer „Koordinaten, Notation, Gangarten“.** (1) Vier Übungsarten: Feld finden
+      (auf Zeit, ohne Koordinaten am Rand, erst mit Weiß, dann mit Schwarz unten), Zug aufschreiben,
+      Zug ausführen (auch Rochade, en passant, Umwandlung) und Gangarten. (2) Notation wie im Buch:
+      K, D, T, L, S für König, Dame, Turm, Läufer und Springer, Bauernzüge ohne Buchstaben, „x“ für
+      Schlagen, 0-0 und 0-0-0 für die Rochade.
+- [ ] P8-19. **Tour Trainer „Schach-Röntgen-Trainer“.** (1) Drei Schritte wie die
+      Schach-Röntgen-Regel aus Kapitel 1: deine Schachs, deine Schläge, dann was der Gegner hätte,
+      wenn er am Zug wäre. (2) Tippe eine Figur und dann ihr Zielfeld: So entsteht ein Pfeil.
+      Derselbe Zug noch einmal nimmt ihn weg. Gibt es nichts, tippe gleich auf „Prüfen“. Gold heißt
+      gefunden, Rot übersehen, Grau gehört nicht dazu.
+- [ ] P8-20. **Tour Trainer „Zähltrainer“.** (1) Zwei Übungsarten: Bilanz zählen an einem Feld und
+      hängende Figuren finden auf Zeit. (2) Bilanz zählen: Zähle Angreifer und Verteidiger des
+      Feldes und schätze, was das Schlagen in Bauerneinheiten bringt (Bauer 1, Springer und Läufer
+      3, Turm 5, Dame 9). Die App rechnet zum Vergleich den ganzen Abtausch vor.
+- [ ] P8-21. **Tour Trainer „Repertoire-Trainer“.** (1) Wähle eine Eröffnung aus Kapitel 2 und deine
+      Seite. (2) Zieh die Züge des Buches, die App spielt die Gegenseite. Ein falscher Zug zeigt den
+      Zug des Buches. An Schlüsselzügen fragt die App, warum er gespielt wird.
+- [ ] P8-22. **Tour Trainer „Zielbilanz-Übung“.** (1) Für beide Seiten je drei Ziele: Zentrum,
+      Entwicklung, Königssicherheit. Wähle ja, teils oder nein; „Prüfen“ vergleicht mit der Prüfung
+      der App und erklärt Unterschiede.
+- [ ] P8-23. **Tour Trainer „Abweichungsmodus“.** (1) Wähle eine Eröffnung aus Kapitel 2 und deine
+      Seite. (2) Die Engine verlässt die Buchvariante. Antworte nach den Prinzipien aus Kapitel 2
+      und 3: Zentrum, Entwicklung, Königssicherheit. Danach zeigt die App, wie die Engine deinen Zug
+      einschätzt.
+- [ ] P8-24. **Tour Trainer „Faktorenbilanz-Trainer“.** (1) Stell die Waagen für Material und Zeit
+      ein und sag, wer bei Königssicherheit und Aktivität besser steht. Danach vergleicht die App
+      mit ihrer Faktorenbilanz aus Kapitel 3.
+- [ ] P8-25. **Tour Trainer „Falle oder Köder“.** (1) Wähle eine Stufe von 1 (leicht) bis 5 (schwer)
+      oder alle. Die Stufen sind an echten Lösungsversuchen auf Lichess geeicht. (2) Falsch gelöste
+      Aufgaben kommen später zur Wiederholung. Ist eine fällig, startet dieser Knopf eine Runde nur
+      damit. (3) Der rote Pfeil zeigt den letzten Zug des Gegners. Entscheide, ob du das Material
+      nimmst. Danach zeigt die App die Widerlegung und welche Warnsignale aus Kapitel 4 dich gewarnt
+      hätten.
+- [ ] P8-26. **Tour Trainer „Strukturerkenner“.** (1) Stufe 1 ist leicht, Stufe 5 schwer: Je mehr
+      Bauernmerkmale und Figuren, desto mehr ist zu überblicken. (2) Falsch gelöste Aufgaben kommen
+      später zur Wiederholung. Ist eine fällig, startet dieser Knopf eine Runde nur damit. (3)
+      Schritt für Schritt: starke Felder antippen, schwache Bauern antippen, die Feldart des
+      goldenen Feldes benennen, dann den passenden Plan-Satz wählen. „Nur das Skelett zeigen“
+      blendet die Figuren aus.
+- [ ] P8-27. **Tour Trainer „Planbilanz-Übung“.** (1) Drei Übungsarten: die drei Planfragen, LAP
+      (die am wenigsten aktive Figur) und das Wettrennen der Bauern. (2) Planfragen: je Frage eine
+      Antwort wählen, danach die Musterlösung. LAP: erst die Figur antippen, dann ihr Zielfeld.
+      Wettrennen: bei entgegengesetzten Rochaden die Züge bis zum ersten Hebel zählen.
+- [ ] P8-28. **Tour Trainer „Taktiktrainer“.** (1) Wähle ein Motiv oder „gemischt“ und eine Stufe
+      von 1 bis 5. Die Stufen sind an echten Lösungsversuchen auf Lichess geeicht. (2) Falsch
+      gelöste Aufgaben kommen später zur Wiederholung. Ist eine fällig, startet dieser Knopf eine
+      Runde nur damit. (3) Zieh die Lösung auf dem Brett. Findest du nichts, helfen die Hilfen
+      Schritt für Schritt: Warnsignal, Motiv, Schlüsselfigur, Lösung. Richtig zählt eine Aufgabe
+      ohne falschen Zug und ohne Hilfe. (4) Nach der Lösung benennst du das Motiv. Das schult den
+      Blick für das nächste Mal.
+- [ ] P8-29. **Tour Trainer „Endspieltrainer“.** (1) Wähle, was du üben willst (Mattführung,
+      Bauern-, Turm-, Damenendspiele, Leichtfiguren oder alles gemischt), und eine Stufe. (2) Falsch
+      gelöste Aufgaben kommen später zur Wiederholung. Ist eine fällig, startet dieser Knopf eine
+      Runde nur damit. (3) Darunter stehen Kurzübungen ohne Engine, etwa der Zug ins Quadrat oder
+      der Zug zur Opposition. (4) In der Runde spielst du gegen die Engine, bis das Ziel erreicht
+      ist: gewinnen oder Remis halten. Hilfen: Merksatz, Figur, Zug.
+- [ ] P8-30. **Tour Trainer „Studien lösen“.** (1) Du ziehst, die App antwortet mit dem Gegenzug aus
+      dem Buch. Ein falscher Zug zeigt den Zug der Lösung als Pfeil, und die Engine zeigt, warum
+      dein Zug nicht reicht.
+- [ ] P8-31. **Tour Trainer „Zug erraten“.** (1) Wähle eine Meisterpartie aus Kapitel 11 und eine
+      Seite, am besten die des Siegers. (2) Zieh deinen Zug, die App deckt den Partiezug auf: Gold
+      der Partiezug, Rot deiner. Weicht er ab, überleg kurz, warum der Meister anders zog. (3) Über
+      den Knöpfen blätterst du durch die gespielten Züge. „Analysieren“ lässt dich frei Varianten
+      ausprobieren, bevor du dich festlegst. „Hinweis: Figur zeigen“ markiert die Figur, die zieht;
+      ein Treffer mit Hinweis zählt nicht.
+- [ ] P8-32. **Tour Trainer „30-Minuten-Plan“.** (1) Tag A ist Partietag, Tag B Studientag, im
+      Wechsel. Die App schlägt den Tag vor, der dran ist, und zeigt den Plan mit Zeit, Aktivität und
+      Ziel. (2) Während der Einheit stehen oben Schritt und Restzeit. Die Zeit ist ein Richtwert und
+      läuft weiter; „Schritt erledigt“ führt zum nächsten. Eine fertige Einheit zählt im
+      Fortschritt.
+- [ ] P8-33. **Tour Trainer „Fehlerdatenbank“.** (1) Die Auswertung zählt deine Fehler je Fehlerart
+      über die Wochen und schlägt den passenden Trainer vor. (2) Am einfachsten trägst du Fehler im
+      Rückblick einer Partie ein. Hier geht es auch mit einer Stellung als FEN, einem Satz und einer
+      Fehlerart aus der Gesamt-Checkliste. (3) Deine Einträge mit Stellung. Hier kannst du sie
+      ansehen und löschen.
+- [ ] P8-34. **Tour Trainer „Denkroutine-Trainer“.** (1) Eine feste Minute nur schauen. Dann gibst
+      du zwei Kandidatenzüge und zu jedem die stärkste Antwort des Gegners ein. Die App prüft, ob zu
+      jedem Kandidaten eine Antwort dasteht, und vergleicht mit der Engine.
+- [ ] P8-35. **Tour Lernsammlung.** (1) Hier liegen deine eigenen Stellungen mit Plan-Satz und
+      Notiz. Du sammelst sie mit dem Lesezeichen an jeder Abbildung, im Rückblick einer Partie und
+      nach Trainer-Aufgaben. (2) Abfragen: Die App zeigt eine Stellung, du überlegst deinen Plan und
+      deckst dann auf. Regelmäßig gemacht, sitzen die Pläne in der Partie. (3) Die Stellungen nach
+      Eröffnung geordnet; jede Gruppe lässt sich einzeln abfragen. (4) Als PGN kopieren oder teilen:
+      So wird aus der Sammlung eine Lichess-Studie, jede Stellung ein Kapitel mit Plan und Notiz.
+      (5) Eine Stellung von woanders, etwa aus einer Vereinspartie: FEN einfügen, Plan und Notiz
+      schreiben, speichern.
+- [ ] P8-36. **Tour Nachschlagen.** (1) Das Glossar aus dem Anhang des Buches, mit Suche und
+      Querverweisen. (2) Die Denkroutine: vier Schritte vor jedem Zug und die Werkzeuge je
+      Partiephase. (3) Die Gesamt-Checkliste: was du nach jedem Kapitel können solltest, zum
+      Abhaken. (4) Die Steckbriefe der Eröffnungen und die Fallenchecks des Buches. (5) Alle
+      Werkzeuge des Buches nach Kapiteln: was jedes prüft und nach welcher Regel.
+- [ ] P8-37. **Tour Glossar.** (1) Tippe einen Begriff oder einen Teil davon; die Liste zeigt sofort
+      passende Einträge. (2) Ein Tipp auf einen Buchstaben springt zu den Begriffen mit diesem
+      Anfang. (3) Ein Tipp auf einen Begriff öffnet seine Erklärung mit Verweisen auf verwandte
+      Begriffe.
+- [ ] P8-38. **Tour Begriff.** (1) Die Erklärung aus dem Anhang des Buches. Unter „Siehe auch“
+      führen die Knöpfe zu verwandten Begriffen; Zurück bringt dich zur Liste.
+- [ ] P8-39. **Tour Denkroutine.** (1) Die vier Schritte vor jedem Zug, wie im Buch. Der
+      Sicherheitsblick vor dem Ziehen gehört dazu. (2) Je Partiephase die Werkzeuge, die du dort
+      brauchst. Ein Tipp klappt eine Phase auf.
+- [ ] P8-40. **Tour Gesamt-Checkliste.** (1) Wie viele Punkte du schon abgehakt hast. Die Haken
+      bleiben auf diesem Gerät und ziehen mit der Datensicherung um. (2) Je Kapitel eine Karte mit
+      der Kernfrage. Ein Tipp klappt sie auf: Lernziele zum Abhaken, das Werkzeug des Kapitels und
+      der Weg zum Kapitel.
+- [ ] P8-41. **Tour Steckbriefe.** (1) Die Steckbriefe der Eröffnungen aus Kapitel 2. Ein Tipp
+      öffnet einen Eintrag, der Knopf darunter führt zur Abbildung im Buch. (2) Die Fallenchecks aus
+      Kapitel 4: wo die Falle steht und woran du sie erkennst.
+- [ ] P8-42. **Tour Werkzeuge des Buches.** (1) Die Werkzeuge in der Reihenfolge des Buches, je
+      Kapitel eine Karte. Ein Tipp auf einen Namen zeigt, was das Werkzeug zeigt und nach welcher
+      Regel es rechnet.
+- [ ] P8-43. **Tour Einstellungen.** (1) Deine Wertung aus den gewerteten Partien, mit Verlauf. Die
+      Reiter zeigen statt der Wertung die Schätzung je Partiephase; der Ausschnitt wählt die letzten
+      Partien oder einen Zeitraum. (2) Dein Fortschritt im ganzen Buch und je Kapitel. Ein Tipp auf
+      ein Kapitel öffnet es. (3) Brett: Farben und Holz, Koordinaten, Ziehen per Wischen,
+      Zuganimation und Startbild. (4) Figuren: der Figurensatz, mit Vorschau auf deinem Brett. (5)
+      Anzeige: Nachtmodus, ausgeblendete Erklärungen wieder zeigen, Sprache, das Toursymbol und der
+      Rundgang durch die App. (6) Ton: Zuggeräusche an oder aus. (7) Training: wie streng „Erst
+      selbst denken“ ist und ob es auch vor Werkzeugen und Engine an den Abbildungen gilt. (8) Deine
+      Daten liegen nur auf diesem Gerät. Sichere sie ab und zu als Datei; mit ihr ziehst du auch auf
+      ein anderes Gerät um. (9) App-Version, Datenstand und ob die App offline bereit ist. „Fehler
+      melden“ kopiert diese Angaben, damit du sie mitschicken kannst.
+
+- [ ] P8-44. **Teil B: Spielen (nach der Kalibrierung, noch nicht umgesetzt).** Geplante Touren:
+      **Spielen** (Art des Gegners mit den drei Kacheln eigene Stufe, Bots und eigene Bots; das
+      Porträtgitter mit Elo-Zahl und Sprechblase; Farbe; Zeitklasse und Abzeichen; Eröffnung
+      vorgeben; Stellung aufbauen; Spielhilfen; „Gewertete Partie“; „Partie beginnen“; die Karte
+      „Deine Spielstärke“; die Partienliste mit Filtern, Sortierung, Löschen und „Partie einlesen
+      (PGN)“), **Partie** (Zugliste, die beiden Uhren, ruhige Ansicht mit dem Auge, Werkzeuge am
+      Brett und Bündel, der Knopf „Engine“, Rücknahme, Remis und Aufgeben) und **Auswertung und
+      Rückblick** (Fortschrittsbalken, Verlaufskurve, erste klare Abweichung, grobe Patzer, Fehler
+      der Engine, Spielstärke und Genauigkeit, Bewertungsbalken und Karte zum Zug im Rückblick, „In
+      die Fehlerdatenbank“ und „In die Lernsammlung“, PGN). Die Texte schreibt Claude erst, wenn
+      die Kalibrierung auf main ist, weil sich Gegnerwahl, Zeitklassen und Partienliste gerade
+      ändern. Sag einfach Bescheid, wenn es so weit ist.
+
 ### P3 Strukturbegriffe (R44): Vorschläge für das Buch (23.10.2026)
 
 Deine fünf Festlegungen (rückständiger Bauer, Bauernloch, schwaches Feld, starkes Feld,

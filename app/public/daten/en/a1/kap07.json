@@ -6,27 +6,27 @@
   {
    "nummer": "7.1",
    "label": "sec:k7-werkzeug",
-   "titel": "Dein Werkzeug: Taktik finden in drei Schritten"
+   "titel": "Your tool: finding tactics in three steps"
   },
   {
    "nummer": "7.2",
    "label": "sec:k7-motive",
-   "titel": "Die zwölf Grundmotive"
+   "titel": "The twelve basic motifs"
   },
   {
    "nummer": "7.3",
    "label": "sec:k7-abtausch",
-   "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+   "titel": "Calculate instead of hoping: the exchange on one square"
   },
   {
    "nummer": "7.4",
    "label": "sec:k7-mattbilder",
-   "titel": "Typische Mattbilder"
+   "titel": "Typical mating patterns"
   },
   {
    "nummer": "7.5",
    "label": "",
-   "titel": "Rückblick: Taktik"
+   "titel": "Review: tactics"
   }
  ],
  "abbildungen": [
@@ -37,9 +37,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "1. Doppelangriff und Gabel",
+   "unterabschnitt": "1. Double attack and fork",
    "fen": "r5k1/p5pp/8/3Q4/8/8/5PPP/6K1 b - - 0 1",
    "pfeile": [
     {
@@ -57,16 +57,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Doppelangriff der Dame nach ",
+     "text": "Double attack by the queen after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dd5+"
+     "text": "1. Qd5+"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Die Dame greift den König g8 und den ungedeckten Turm a8 zugleich an. Nach ",
+     "text": ", Black to move. Red: the queen attacks the king on g8 and the undefended rook on a8 at the same time. After ",
      "stil": "normal"
     },
     {
@@ -75,16 +75,16 @@
     },
     {
      "art": "text",
-     "text": " setzt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Dxa8#"
+     "text": "2. Qxa8#"
     },
     {
      "art": "text",
-     "text": " sogar matt.",
+     "text": " is even mate.",
      "stil": "normal"
     }
    ],
@@ -107,9 +107,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "1. Doppelangriff und Gabel",
+   "unterabschnitt": "1. Double attack and fork",
    "fen": "8/8/5k2/3N4/1q6/8/8/7K b - - 0 1",
    "pfeile": [
     {
@@ -127,7 +127,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Springergabel, Schwarz am Zug. Rot: Der Springer d5 greift König f6 und Dame b4 zugleich an. Der König muss ausweichen, danach fällt die Dame.",
+     "text": "The knight fork, Black to move. Red: the knight on d5 attacks the king on f6 and the queen on b4 at the same time. The king must move away, and then the queen falls.",
      "stil": "normal"
     }
    ],
@@ -149,9 +149,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "1. Doppelangriff und Gabel",
+   "unterabschnitt": "1. Double attack and fork",
    "fen": "r1bqkb1r/ppp2ppp/2n5/3pp3/2B1N3/5N2/PPPP1PPP/R1BQK2R w KQkq - 0 6",
    "pfeile": [
     {
@@ -169,7 +169,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Bauerngabel nach ",
+     "text": "The pawn fork after ",
      "stil": "normal"
     },
     {
@@ -178,7 +178,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Bauer d5 greift Läufer c4 und Springer e4 zugleich an.",
+     "text": ", White to move. Red: the pawn on d5 attacks the bishop on c4 and the knight on e4 at the same time.",
      "stil": "normal"
     }
    ],
@@ -211,14 +211,14 @@
     "fragen": [
      {
       "zug": "6. Bd3",
-      "frage": "Warum spielt Weiß 6. Ld3?",
+      "frage": "Why does White play 6. Bd3?",
       "antworten": [
-       "Der Läufer greift den Bauern d5 ein zweites Mal an.",
-       "Der Läufer weicht aus und deckt dabei den Springer e4; nach dxe4 Lxe4 holt Weiß wenigstens den Bauern zurück.",
-       "Der Läufer bereitet einen Angriff auf h7 vor, der Springer ist dabei egal."
+       "The bishop attacks the pawn on d5 a second time.",
+       "The bishop moves away and defends the knight on e4 at the same time; after dxe4 Bxe4, White at least wins the pawn back.",
+       "The bishop prepares an attack on h7; the knight doesn't matter."
       ],
       "richtig": 1,
-      "erklaerung": "Gegen eine Gabel hilft oft ein Zug, der die eine Figur rettet und die andere deckt. Die Figur ist trotzdem weg, aber der Bauer kommt zurück."
+      "erklaerung": "Against a fork, a move that saves one piece and defends the other often helps. The piece is still lost, but the pawn comes back."
      }
     ]
    }
@@ -230,9 +230,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "2. Die Fesselung",
+   "unterabschnitt": "2. The pin",
    "fen": "r1bqkbnr/ppp2ppp/2np4/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
    "pfeile": [
     {
@@ -250,16 +250,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Absolute Fesselung nach ",
+     "text": "Absolute pin after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. Sf3 Sc6 3. Lb5 d6"
+     "text": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: die Fesselung. Rot: Der Springer c6 darf nicht ziehen.",
+     "text": ", White to move. Gray: the pin. Red: the knight on c6 must not move.",
      "stil": "normal"
     }
    ],
@@ -291,9 +291,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "2. Die Fesselung",
+   "unterabschnitt": "2. The pin",
    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
    "pfeile": [
     {
@@ -311,16 +311,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Relative Fesselung im Abgelehnten Damengambit aus Kapitel 2 nach ",
+     "text": "Relative pin in the Queen's Gambit Declined from Chapter 2 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. d4 d5 2. c4 e6 3. Sc3 Sf6 4. Lg5"
+     "text": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: die Fesselung. Rot: Zieht der Springer, schlägt der Läufer die Dame.",
+     "text": ", Black to move. Gray: the pin. Red: if the knight moves, the bishop captures the queen.",
      "stil": "normal"
     }
    ],
@@ -353,9 +353,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "3. Der Spieß",
+   "unterabschnitt": "3. The skewer",
    "fen": "7r/6k1/8/8/8/8/8/R3K3 b - - 0 1",
    "pfeile": [
     {
@@ -368,12 +368,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug. Gold: ",
+     "text": "Black to move. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Th1+"
+     "text": "1... Rh1+"
     },
     {
      "art": "text",
@@ -399,14 +399,14 @@
     "fragen": [
      {
       "zug": "1... Rh1+",
-      "frage": "Warum gewinnt 1... Th1+ den weißen Turm?",
+      "frage": "Why does 1... Rh1+ win the white rook?",
       "antworten": [
-       "Der König muss die erste Reihe verlassen, dann schlägt Schwarz den ungedeckten Turm a1.",
-       "Der Turm h1 setzt den weißen König matt.",
-       "Weiß muss den Turm a1 dazwischenstellen."
+       "The king must leave the first rank, and then Black captures the undefended rook on a1.",
+       "The rook on h1 checkmates the white king.",
+       "White must interpose the rook on a1."
       ],
       "richtig": 0,
-      "erklaerung": "Jedes Feld des Königs auf der ersten Reihe beherrscht der Turm h1. Also zieht der König nach oben, und Txa1 folgt."
+      "erklaerung": "The rook on h1 controls every square of the king on the first rank. So the king moves up, and Rxa1 follows."
      }
     ]
    }
@@ -418,9 +418,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "3. Der Spieß",
+   "unterabschnitt": "3. The skewer",
    "fen": "8/6k1/8/8/8/8/8/R3K2r w - - 1 2",
    "pfeile": [
     {
@@ -438,16 +438,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Th1+"
+     "text": "1... Rh1+"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: das Schach. Grau: der ungedeckte Turm a1 hinter dem König.",
+     "text": ", White to move. Red: the check. Gray: the undefended rook on a1 behind the king.",
      "stil": "normal"
     }
    ],
@@ -474,9 +474,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "4. Batterie und Abzug",
+   "unterabschnitt": "4. Battery and discovered attack",
    "fen": "r2q1rk1/pp2bppp/4pn2/8/3P2P1/2NQ4/PPB2P1P/R4RK1 w - - 0 1",
    "pfeile": [
     {
@@ -494,7 +494,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Gold: die Batterie aus Dame d3 und Läufer c2, ihr Ziel ist h7. Rot: Außer dem König hält nur der Springer f6 das Feld h7.",
+     "text": "White to move. Gold: the battery of the queen on d3 and the bishop on c2; its target is h7. Red: apart from the king, only the knight on f6 guards h7.",
      "stil": "normal"
     }
    ],
@@ -517,9 +517,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "4. Batterie und Abzug",
+   "unterabschnitt": "4. Battery and discovered attack",
    "fen": "5rk1/pp1qbppp/2n5/8/8/3BQN2/PP3PPP/3R2K1 w - - 0 1",
    "pfeile": [
     {
@@ -537,7 +537,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Abzugsangriff, Weiß am Zug. Grau: Der Turm d1 zielt durch den eigenen Läufer auf die Dame d7. Gold: Der Läufer zieht mit Schach ab.",
+     "text": "Discovered attack, White to move. Gray: the rook on d1 aims through its own bishop at the queen on d7. Gold: the bishop moves away with check.",
      "stil": "normal"
     }
    ],
@@ -559,14 +559,14 @@
     "fragen": [
      {
       "zug": "1. Bxh7+",
-      "frage": "Warum ist 1. Lxh7+ so stark?",
+      "frage": "Why is 1. Bxh7+ so strong?",
       "antworten": [
-       "Es ist ein Doppelschach, nur der König darf ziehen.",
-       "Weiß gewinnt einen Bauern und öffnet die h-Linie für den Turm.",
-       "Der Läufer gibt Schach und gibt zugleich die d-Linie frei: Nach dem Königszug schlägt Txd7 die Dame."
+       "It is a double check; only the king may move.",
+       "White wins a pawn and opens the h-file for the rook.",
+       "The bishop gives check and at the same time opens the d-file: after the king move, Rxd7 captures the queen."
       ],
       "richtig": 2,
-      "erklaerung": "Ein Abzug mit Schach: Schwarz muss sich um den König kümmern. Danach nimmt der Turm d1 die Dame, die niemand zurückschlagen kann."
+      "erklaerung": "A discovery with check: Black has to take care of the king. Then the rook on d1 takes the queen, and nobody can recapture."
      }
     ]
    }
@@ -578,9 +578,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "4. Batterie und Abzug",
+   "unterabschnitt": "4. Battery and discovered attack",
    "fen": "rnbqk2r/pppp1Npp/5n2/8/2B5/8/PPPP1PPP/R1BQR1K1 b kq - 1 1",
    "pfeile": [
     {
@@ -608,16 +608,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Abzugsschach nach ",
+     "text": "Discovered check after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sf7+"
+     "text": "1. Nf7+"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Turm e1 gibt Schach, der Springer greift Dame und Turm an. Grau: Der Läufer c4 deckt f7.",
+     "text": ", Black to move. Red: the rook on e1 gives check, and the knight attacks the queen and rook. Gray: the bishop on c4 defends f7.",
      "stil": "normal"
     }
    ],
@@ -644,9 +644,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "5. Das Doppelschach",
+   "unterabschnitt": "5. The double check",
    "fen": "4k3/pbpp1ppp/1q6/7r/4N3/8/PP3PPP/2BQR1K1 w - - 0 1",
    "pfeile": [
     {
@@ -664,12 +664,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Grau: Der Springer e4 steht zwischen Turm e1 und König e8. Gold: ",
+     "text": "White to move. Gray: the knight on e4 stands between the rook on e1 and the king on e8. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sd6++"
+     "text": "1. Nd6++"
     },
     {
      "art": "text",
@@ -696,14 +696,14 @@
     "fragen": [
      {
       "zug": "1. Nd6++",
-      "frage": "Warum muss Schwarz nach 1. Sd6++ mit dem König ziehen?",
+      "frage": "Why must Black move the king after 1. Nd6++?",
       "antworten": [
-       "Weil alle anderen schwarzen Figuren gefesselt sind.",
-       "Zwei Figuren geben zugleich Schach; Schlagen oder Dazwischenstellen wehrt nur eines davon ab.",
-       "Weil Schwarz nach der Regel nie mit der Dame schlagen darf, wenn er im Schach steht."
+       "Because all the other black pieces are pinned.",
+       "Two pieces give check at the same time; capturing or interposing only stops one of them.",
+       "Because the rules never allow Black to capture with the queen while in check."
       ],
       "richtig": 1,
-      "erklaerung": "Gegen ein Doppelschach hilft nur ein Königszug. Hier bleiben d8 und f8, und auf beiden Feldern folgt Te8#."
+      "erklaerung": "Against a double check, only a king move helps. Here d8 and f8 remain, and on both squares Re8# follows."
      }
     ]
    }
@@ -715,9 +715,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "5. Das Doppelschach",
+   "unterabschnitt": "5. The double check",
    "fen": "4k3/pbpp1ppp/1q1N4/7r/8/8/PP3PPP/2BQR1K1 b - - 1 1",
    "pfeile": [
     {
@@ -735,16 +735,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sd6++"
+     "text": "1. Nd6++"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: zwei Schachs zugleich.",
+     "text": ", Black to move. Red: two checks at once.",
      "stil": "normal"
     }
    ],
@@ -772,9 +772,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "5. Das Doppelschach",
+   "unterabschnitt": "5. The double check",
    "fen": "4Rk2/pbpp1ppp/1q1N4/7r/8/8/PP3PPP/2BQ2K1 b - - 3 2",
    "pfeile": [
     {
@@ -796,16 +796,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Kf8 2. Te8#"
+     "text": "1... Kf8 2. Re8#"
     },
     {
      "art": "text",
-     "text": ". Grau: Der Springer deckt den Turm. Rot: e7 und g8 beherrscht der Turm.",
+     "text": ". Gray: the knight defends the rook. Red: the rook controls e7 and g8.",
      "stil": "normal"
     }
    ],
@@ -835,9 +835,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "6. Köder, Hinlenkung und Räumung",
+   "unterabschnitt": "6. Bait, decoy and clearance",
    "fen": "r5k1/pp3pp1/3q4/6N1/8/2P5/PP3PP1/4R1KR w - - 0 1",
    "pfeile": [
     {
@@ -860,21 +860,21 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Hinlenkung, Weiß am Zug. Grau: Der König deckt f7. Gold: ",
+     "text": "Decoy, White to move. Gray: the king defends f7. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Th8+!"
+     "text": "1. Rh8+!"
     },
     {
      "art": "text",
-     "text": " Rot: die Gabel ",
+     "text": " Red: the fork ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sxf7+"
+     "text": "2. Nxf7+"
     },
     {
      "art": "text",
@@ -901,14 +901,14 @@
     "fragen": [
      {
       "zug": "1. Rh8+",
-      "frage": "Warum gibt Weiß mit 1. Th8+ einen Turm her?",
+      "frage": "Why does White give up a rook with 1. Rh8+?",
       "antworten": [
-       "Der König muss nach h8; dann deckt er f7 nicht mehr, und Sxf7+ gabelt König und Dame.",
-       "Weiß will nach Kxh8 mit der Dame auf der h-Linie matt setzen.",
-       "Der Turm h1 ist ohnehin verloren, darum nimmt er noch etwas mit."
+       "The king must go to h8; then it no longer defends f7, and Nxf7+ forks the king and queen.",
+       "After Kxh8, White wants to mate with the queen on the h-file.",
+       "The rook on h1 is lost anyway, so it takes something with it."
       ],
       "richtig": 0,
-      "erklaerung": "Der Turm ist der Köder. Für ihn bekommt Weiß den Bauern f7 und die Dame d6."
+      "erklaerung": "The rook is the bait. For it, White gets the pawn on f7 and the queen on d6."
      }
     ]
    }
@@ -920,9 +920,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "6. Köder, Hinlenkung und Räumung",
+   "unterabschnitt": "6. Bait, decoy and clearance",
    "fen": "r6k/pp3Np1/3q4/8/8/2P5/PP3PP1/4R1K1 b - - 0 2",
    "pfeile": [
     {
@@ -940,16 +940,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Th8+ Kxh8 2. Sxf7+"
+     "text": "1. Rh8+ Kxh8 2. Nxf7+"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Springer greift König und Dame zugleich an.",
+     "text": ", Black to move. Red: the knight attacks the king and queen at the same time.",
      "stil": "normal"
     }
    ],
@@ -979,9 +979,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "6. Köder, Hinlenkung und Räumung",
+   "unterabschnitt": "6. Bait, decoy and clearance",
    "fen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
    "pfeile": [
     {
@@ -999,21 +999,21 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski (Moskau 1966) aus Kapitel 6, Weiß am Zug. Gold: ",
+     "text": "Petrosian–Spassky (Moscow 1966) from Chapter 6, White to move. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "30. Dh8+!"
+     "text": "30. Qh8+!"
     },
     {
      "art": "text",
-     "text": " Rot: die Gabel ",
+     "text": " Red: the fork ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "31. Sxf7+"
+     "text": "31. Nxf7+"
     },
     {
      "art": "text",
@@ -1043,9 +1043,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "6. Köder, Hinlenkung und Räumung",
+   "unterabschnitt": "6. Bait, decoy and clearance",
    "fen": "r6k/1p3pRp/8/5N2/8/q7/P4P1P/6QK w - - 0 1",
    "pfeile": [
     {
@@ -1068,12 +1068,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Räumung, Weiß am Zug. Rot: Die Dame g1 möchte nach g7. Grau: Dort steht der eigene Turm. Gold: ",
+     "text": "Clearance, White to move. Red: the queen on g1 wants to go to g7. Gray: White's own rook is standing there. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Txh7+!"
+     "text": "1. Rxh7+!"
     }
    ],
    "art": "fliesstext",
@@ -1092,14 +1092,14 @@
     "fragen": [
      {
       "zug": "1. Rxh7+",
-      "frage": "Warum opfert Weiß den Turm mit 1. Txh7+?",
+      "frage": "Why does White sacrifice the rook with 1. Rxh7+?",
       "antworten": [
-       "Er gewinnt den Bauern h7 und öffnet dem eigenen König Luft.",
-       "Er gewinnt den Bauern h7 und hofft, dass Schwarz nicht zurückschlägt.",
-       "Er räumt mit Schach das Feld g7, damit die Dame dort matt setzen kann."
+       "It wins the pawn on h7 and gives White's own king some air.",
+       "It wins the pawn on h7 and hopes that Black won't recapture.",
+       "It clears the square g7 with check, so that the queen can mate there."
       ],
       "richtig": 2,
-      "erklaerung": "Nach Kxh7 zieht die Dame über die freie g-Linie nach g7. Der Springer f5 deckt sie, der König hat kein Feld mehr."
+      "erklaerung": "After Kxh7, the queen goes to g7 along the open g-file. The knight on f5 defends it, and the king has no square left."
      }
     ]
    }
@@ -1111,9 +1111,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "7. Beseitigung der Verteidigung",
+   "unterabschnitt": "7. Removing the defender",
    "fen": "q1r3k1/pp1b1ppp/2n5/1B1N4/8/8/PPQ2PPP/3R2K1 w - - 0 1",
    "pfeile": [
     {
@@ -1136,7 +1136,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Rot: Der Springer c6 ist der einzige Verteidiger von e7. Gold: Der Läufer b5 kann ihn schlagen.",
+     "text": "White to move. Red: the knight on c6 is the only defender of e7. Gold: the bishop on b5 can capture it.",
      "stil": "normal"
     }
    ],
@@ -1158,14 +1158,14 @@
     "fragen": [
      {
       "zug": "1. Bxc6",
-      "frage": "Warum schlägt Weiß mit 1. Lxc6 zuerst den Springer?",
+      "frage": "Why does White capture the knight first with 1. Bxc6?",
       "antworten": [
-       "Weil Läufer und Springer gleich viel wert sind und Weiß vereinfachen will.",
-       "Er ist der einzige Verteidiger von e7; ohne ihn gabelt Se7+ König und Turm c8.",
-       "Um den Bauern b7 zu schwächen."
+       "Because bishop and knight are worth the same and White wants to simplify.",
+       "It is the only defender of e7; without it, Ne7+ forks the king and the rook on c8.",
+       "To weaken the pawn on b7."
       ],
       "richtig": 1,
-      "erklaerung": "Erst fällt der Verteidiger, dann die Taktik. Wie Schwarz auch zurückschlägt, Se7+ gewinnt danach Material."
+      "erklaerung": "First the defender falls, then comes the tactic. However Black recaptures, Ne7+ then wins material."
      }
     ]
    }
@@ -1177,9 +1177,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "7. Beseitigung der Verteidigung",
+   "unterabschnitt": "7. Removing the defender",
    "fen": "q1r3k1/pp2Nppp/2b5/8/8/8/PPQ2PPP/3R2K1 b - - 1 2",
    "pfeile": [
     {
@@ -1202,16 +1202,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lxc6 Lxc6 2. Se7+"
+     "text": "1. Bxc6 Bxc6 2. Ne7+"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Springer greift König, Turm und Läufer zugleich an.",
+     "text": ", Black to move. Red: the knight attacks the king, rook and bishop at the same time.",
      "stil": "normal"
     }
    ],
@@ -1240,9 +1240,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "8. Überlastung und Ablenkung",
+   "unterabschnitt": "8. Overloading and deflection",
    "fen": "3r2k1/pp3ppp/1q6/3n4/8/1B6/PPQ2PPP/4R1K1 w - - 0 1",
    "pfeile": [
     {
@@ -1265,12 +1265,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Überlastung, Weiß am Zug. Grau: Der Turm d8 deckt den Springer d5. Rot: Zugleich muss er die Grundreihe gegen Te8 schützen. Gold: ",
+     "text": "Overloading, White to move. Gray: the rook on d8 defends the knight on d5. Red: at the same time it must guard the back rank against Re8. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lxd5!"
+     "text": "1. Bxd5!"
     }
    ],
    "art": "fliesstext",
@@ -1289,14 +1289,14 @@
     "fragen": [
      {
       "zug": "1. Bxd5",
-      "frage": "Warum gewinnt 1. Lxd5 eine Figur?",
+      "frage": "Why does 1. Bxd5 win a piece?",
       "antworten": [
-       "Schwarz steht nach dem Schlag im Schach.",
-       "Der Springer d5 war ohnehin ungedeckt.",
-       "Schlägt der Turm d8 zurück, verlässt er die Grundreihe, und Te8 setzt matt."
+       "After the capture, Black is in check.",
+       "The knight on d5 was undefended anyway.",
+       "If the rook on d8 recaptures, it leaves the back rank, and Re8 is mate."
       ],
       "richtig": 2,
-      "erklaerung": "Der einzige Verteidiger des Springers ist der Turm d8, und der wird auf der Grundreihe gebraucht. Schwarz bleibt eine Figur weniger."
+      "erklaerung": "The knight's only defender is the rook on d8, and it is needed on the back rank. Black stays a piece down."
      }
     ]
    }
@@ -1308,9 +1308,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "9. Der Zwischenzug",
+   "unterabschnitt": "9. The intermezzo",
    "fen": "r1bqk2r/ppp2ppp/2p2n2/2b3B1/4P3/3P4/PPP2PPP/RN1QKB1R b KQkq - 2 6",
    "pfeile": [
     {
@@ -1323,16 +1323,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Stafford-Gambit aus Kapitel 3 nach ",
+     "text": "The Stafford Gambit from Chapter 3 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. Sf3 Sf6 3. Sxe5 Sc6 4. Sxc6 dxc6 5. d3 Lc5 6. Lg5??"
+     "text": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Bg5??"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: die relative Fesselung.",
+     "text": ", Black to move. Gray: the relative pin.",
      "stil": "normal"
     }
    ],
@@ -1366,14 +1366,14 @@
     "fragen": [
      {
       "zug": "6... Nxe4",
-      "frage": "Warum darf Schwarz hier 6... Sxe4 spielen, obwohl die Dame d8 hängt?",
+      "frage": "Why may Black play 6... Nxe4 here, even though the queen on d8 is hanging?",
       "antworten": [
-       "Nach Lxd8 folgen Lxf2+ und Lg4#: Das Matt ist mehr wert als die Dame.",
-       "Weil Weiß die Dame wegen einer Fesselung nicht schlagen darf.",
-       "Weil der Springer e4 danach den Läufer g5 und den Bauern c2 gabelt."
+       "After Bxd8, Bxf2+ and Bg4# follow: the mate is worth more than the queen.",
+       "Because a pin stops White from capturing the queen.",
+       "Because the knight on e4 then forks the bishop on g5 and the pawn on c2."
       ],
       "richtig": 0,
-      "erklaerung": "Nach Lxf2+ hat der König nur e2, denn der Springer e4 deckt d2 und f2. Dann setzt Lg4 matt."
+      "erklaerung": "After Bxf2+, the king only has e2, because the knight on e4 covers d2 and f2. Then Bg4 is mate."
      }
     ]
    }
@@ -1385,9 +1385,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "9. Der Zwischenzug",
+   "unterabschnitt": "9. The intermezzo",
    "fen": "r1bBk2r/ppp2ppp/2p5/8/4n3/3P4/PPP2bPP/RN1QKB1R w KQkq - 0 8",
    "pfeile": [
     {
@@ -1405,16 +1405,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Sxe4! 7. Lxd8?? Lxf2+!"
+     "text": "6... Nxe4! 7. Bxd8?? Bxf2+!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Springer e4 deckt f2 und d2.",
+     "text": ", White to move. Red: the knight on e4 covers f2 and d2.",
      "stil": "normal"
     }
    ],
@@ -1454,9 +1454,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "9. Der Zwischenzug",
+   "unterabschnitt": "9. The intermezzo",
    "fen": "r3r1k1/ppq2ppp/8/8/8/7P/P3QPP1/R1R3K1 w - - 0 1",
    "pfeile": [
     {
@@ -1479,12 +1479,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Desperado, Weiß am Zug. Rot: Der Turm e8 greift die Dame e2 an. Grau: Der Turm c1 greift die Dame c7 an. Gold: ",
+     "text": "Desperado, White to move. Red: the rook on e8 attacks the queen on e2. Gray: the rook on c1 attacks the queen on c7. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxe8+!"
+     "text": "1. Qxe8+!"
     }
    ],
    "art": "fliesstext",
@@ -1503,14 +1503,14 @@
     "fragen": [
      {
       "zug": "1. Qxe8+",
-      "frage": "Warum schlägt Weiß zuerst auf e8 und nicht sofort die Dame c7?",
+      "frage": "Why does White capture on e8 first instead of taking the queen on c7 right away?",
       "antworten": [
-       "Weil der Turm c1 an den König gefesselt ist.",
-       "Die eigene Dame ist ohnehin angegriffen; so nimmt sie vorher noch den Turm e8 mit.",
-       "Weil Dxe8 matt setzt."
+       "Because the rook on c1 is pinned to the king.",
+       "White's own queen is under attack anyway; this way it takes the rook on e8 with it first.",
+       "Because Qxe8 is mate."
       ],
       "richtig": 1,
-      "erklaerung": "Ein Desperado: Nach 1. Txc7 würde Schwarz einfach die Dame e2 nehmen. Mit Dxe8+ Txe8 Txc7 bleibt Weiß ein Turm mehr."
+      "erklaerung": "A desperado: after 1. Rxc7, Black would simply take the queen on e2. With Qxe8+ Rxe8 Rxc7, White stays a rook up."
      }
     ]
    }
@@ -1522,9 +1522,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "10. Die gefangene Figur",
+   "unterabschnitt": "10. The trapped piece",
    "fen": "4r1k1/1p3ppp/8/8/8/1P6/b1P2PPP/2KR4 b - - 0 2",
    "pfeile": [
     {
@@ -1550,16 +1550,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Lxa2? 2. b3!"
+     "text": "1... Bxa2? 2. b3!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Läufer a2 ist eingesperrt. Grau: b1 deckt der König, b3 der Bauer c2. Gold: Weiß droht Kb2.",
+     "text": ", Black to move. Red: the bishop on a2 is shut in. Gray: the king covers b1, and the pawn on c2 covers b3. Gold: White threatens Kb2.",
      "stil": "normal"
     }
    ],
@@ -1581,9 +1581,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "10. Die gefangene Figur",
+   "unterabschnitt": "10. The trapped piece",
    "fen": "r2qkbnr/3b1ppp/p2p4/1p1Q4/2p1P3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 12",
    "pfeile": [
     {
@@ -1614,16 +1614,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Arche-Noah-Falle aus Kapitel 4 nach ",
+     "text": "The Noah's Ark Trap from Chapter 4 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "11. Dd5 c4!"
+     "text": "11. Qd5 c4!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Bauer b5 deckt a4 und c4. Grau: a2 und c2 sind von eigenen Bauern besetzt.",
+     "text": ", White to move. Red: the pawn on b5 covers a4 and c4. Gray: a2 and c2 are occupied by White's own pawns.",
      "stil": "normal"
     }
    ],
@@ -1667,14 +1667,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist der Läufer b3 nicht mehr zu retten?",
+      "frage": "Why can the bishop on b3 no longer be saved?",
       "antworten": [
        "It is pinned to the king.",
-       "Weiß muss zuerst die angegriffene Dame d5 retten.",
-       "Alle Felder sind gedeckt oder von eigenen Bauern besetzt: Er ist eine gefangene Figur."
+       "White must first save the attacked queen on d5.",
+       "All its squares are covered or occupied by its own pawns: it is a trapped piece."
       ],
       "richtig": 2,
-      "erklaerung": "Eine Arche-Noah-Falle: Der Bauer b5 hält a4 und c4, die eigenen Bauern stehen auf a2 und c2. Für den Läufer bekommt Weiß nur noch Bauern."
+      "erklaerung": "A Noah's Ark Trap: the pawn on b5 guards a4 and c4, and White's own pawns stand on a2 and c2. For the bishop, White only gets pawns."
      }
     ]
    }
@@ -1686,9 +1686,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "11. Taktik rund um die Umwandlung",
+   "unterabschnitt": "11. Tactics around promotion",
    "fen": "8/pb2P1kp/5q2/8/8/B7/6PP/7K w - - 0 1",
    "pfeile": [
     {
@@ -1706,7 +1706,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Rot: Schwarz droht Df1#. Gold: die Umwandlung auf e8.",
+     "text": "White to move. Red: Black threatens Qf1#. Gold: the promotion on e8.",
      "stil": "normal"
     }
    ],
@@ -1726,14 +1726,14 @@
     "fragen": [
      {
       "zug": "1. e8=N+",
-      "frage": "Warum wandelt Weiß mit 1. e8=S+ in einen Springer um?",
+      "frage": "Why does White promote to a knight with 1. e8=N+?",
       "antworten": [
        "In the endgame, a knight is stronger than a queen.",
-       "Nach 1. e8=D könnte Schwarz die neue Dame sofort schlagen.",
-       "Nur der Springer gibt Schach und greift die Dame f6 an; nach e8=D setzt Schwarz mit Df1 matt."
+       "After 1. e8=Q, Black could capture the new queen right away.",
+       "Only the knight gives check and attacks the queen on f6; after e8=Q, Black mates with Qf1."
       ],
       "richtig": 2,
-      "erklaerung": "Mit Schach hat Schwarz keine Zeit für Df1. Danach schlägt der Springer die Dame f6, und die Mattgefahr ist vorbei."
+      "erklaerung": "Because of the check, Black has no time for Qf1. Then the knight captures the queen on f6, and the danger of mate is over."
      }
     ]
    }
@@ -1745,9 +1745,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "12. Rettung durch Dauerschach und Patt",
+   "unterabschnitt": "12. Rescue by perpetual check and stalemate",
    "fen": "6k1/2QR1ppp/8/8/4q3/6P1/PP5P/6K1 b - - 0 1",
    "pfeile": [
     {
@@ -1765,12 +1765,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug. Rot: Weiß droht Td8+ mit Matt. Gold: ",
+     "text": "Black to move. Red: White threatens Rd8+ with mate. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... De1+"
+     "text": "1... Qe1+"
     },
     {
      "art": "text",
@@ -1796,14 +1796,14 @@
     "fragen": [
      {
       "zug": "1... Qe1+",
-      "frage": "Warum gibt Schwarz mit 1... De1+ ein Schach nach dem anderen?",
+      "frage": "Why does Black give one check after another with 1... Qe1+?",
       "antworten": [
-       "Er will den König auf die Grundreihe zurückdrängen und dort matt setzen.",
-       "Er steht auf Verlust und rettet mit Dauerschach ein Remis.",
-       "Er will den Bauern b2 mit Schach gewinnen."
+       "Black wants to drive the king back to the back rank and mate it there.",
+       "Black is lost and saves a draw with perpetual check.",
+       "Black wants to win the pawn on b2 with check."
       ],
       "richtig": 1,
-      "erklaerung": "Der weiße König findet kein Versteck vor den Damenschachs. Für Schwarz ist ein Remis hier das beste Ergebnis."
+      "erklaerung": "The white king finds no hiding place from the queen checks. For Black, a draw is the best result here."
      }
     ]
    }
@@ -1815,9 +1815,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "12. Rettung durch Dauerschach und Patt",
+   "unterabschnitt": "12. Rescue by perpetual check and stalemate",
    "fen": "6k1/2QR1ppp/8/8/8/6P1/PP2q1KP/8 w - - 3 3",
    "pfeile": [
     {
@@ -1835,16 +1835,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... De1+ 2. Kg2 De2+"
+     "text": "1... Qe1+ 2. Kg2 Qe2+"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Auf g1 und h3 wartet das nächste Schach.",
+     "text": ", White to move. Gray: the next check is waiting on g1 and h3.",
      "stil": "normal"
     }
    ],
@@ -1873,9 +1873,9 @@
    "abschnitt": {
     "nummer": "7.2",
     "label": "sec:k7-motive",
-    "titel": "Die zwölf Grundmotive"
+    "titel": "The twelve basic motifs"
    },
-   "unterabschnitt": "12. Rettung durch Dauerschach und Patt",
+   "unterabschnitt": "12. Rescue by perpetual check and stalemate",
    "fen": "5r1k/6pp/8/3Q4/3b4/7p/1q5P/7K w - - 0 1",
    "pfeile": [
     {
@@ -1897,12 +1897,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Grau: g1 deckt der Läufer d4, g2 der Bauer h3, der Bauer h2 ist blockiert. Gold: ",
+     "text": "White to move. Gray: the bishop on d4 covers g1, the pawn on h3 covers g2, and the pawn on h2 is blocked. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dg8+!!"
+     "text": "1. Qg8+!!"
     }
    ],
    "art": "fliesstext",
@@ -1921,14 +1921,14 @@
     "fragen": [
      {
       "zug": "1. Qg8+",
-      "frage": "Warum opfert Weiß mit 1. Dg8+ die Dame?",
+      "frage": "Why does White sacrifice the queen with 1. Qg8+?",
       "antworten": [
-       "Nach dem Schlag auf g8 hat Weiß keinen legalen Zug mehr: Patt, also Remis.",
-       "Nach Kxg8 gewinnt Weiß den Turm f8.",
-       "Die Dame setzt auf g8 matt."
+       "After the capture on g8, White has no legal move left: stalemate, so a draw.",
+       "After Kxg8, White wins the rook on f8.",
+       "The queen mates on g8."
       ],
       "richtig": 0,
-      "erklaerung": "Schwarz muss die Dame schlagen, mit König oder Turm. In beiden Fällen ist Weiß patt. Jeder andere Zug verliert, weil Schwarz bald matt setzt."
+      "erklaerung": "Black must capture the queen, with the king or the rook. In both cases, White is stalemated. Every other move loses, because Black will soon mate."
      }
     ]
    }
@@ -1940,7 +1940,7 @@
    "abschnitt": {
     "nummer": "7.3",
     "label": "sec:k7-abtausch",
-    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+    "titel": "Calculate instead of hoping: the exchange on one square"
    },
    "unterabschnitt": null,
    "fen": "3r2k1/p3bppp/4pn2/3p4/8/2N1P1P1/PP3PBP/3R2K1 w - - 0 1",
@@ -1980,7 +1980,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Rot: Springer c3, Läufer g2 und Turm d1 greifen d5 dreimal an. Grau: Bauer e6, Springer f6 und Turm d8 verteidigen ihn dreimal.",
+     "text": "White to move. Red: the knight on c3, the bishop on g2 and the rook on d1 attack d5 three times. Gray: the pawn on e6, the knight on f6 and the rook on d8 defend it three times.",
      "stil": "normal"
     }
    ],
@@ -2002,14 +2002,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum sollte Weiß hier nicht auf d5 schlagen?",
+      "frage": "Why shouldn't White capture on d5 here?",
       "antworten": [
-       "Weil der Bauer d5 vergiftet ist: Danach droht Matt.",
-       "Weil drei Verteidiger gegen drei Angreifer stehen und Schwarz mit dem billigeren Material schlägt.",
-       "Weil Weiß damit die Rochade verliert."
+       "Because the pawn on d5 is poisoned: afterwards mate is threatened.",
+       "Because three defenders face three attackers and Black captures with the cheaper material.",
+       "Because White would lose the right to castle."
       ],
       "richtig": 1,
-      "erklaerung": "Gezählt wird nicht nur die Anzahl, sondern auch der Wert. Am Ende hat Weiß viel mehr Material gegeben als bekommen."
+      "erklaerung": "You count not only the number but also the value. In the end, White has given much more material than White got back."
      }
     ]
    }
@@ -2021,7 +2021,7 @@
    "abschnitt": {
     "nummer": "7.3",
     "label": "sec:k7-abtausch",
-    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+    "titel": "Calculate instead of hoping: the exchange on one square"
    },
    "unterabschnitt": null,
    "fen": "3r2k1/p3bppp/8/3n4/8/4P1P1/PP3P1P/3R2K1 w - - 0 3",
@@ -2041,16 +2041,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sxd5? exd5 2. Lxd5 Sxd5"
+     "text": "1. Nxd5? exd5 2. Bxd5 Nxd5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Weiß hat zwei Leichtfiguren für zwei Bauern gegeben. Rot: Der Turm d1 greift noch an. Grau: Der Turm d8 deckt.",
+     "text": ", White to move. White has given two minor pieces for two pawns. Red: the rook on d1 is still attacking. Gray: the rook on d8 defends.",
      "stil": "normal"
     }
    ],
@@ -2081,7 +2081,7 @@
    "abschnitt": {
     "nummer": "7.3",
     "label": "sec:k7-abtausch",
-    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+    "titel": "Calculate instead of hoping: the exchange on one square"
    },
    "unterabschnitt": null,
    "fen": "6k1/p3bppp/8/3r4/8/4P1P1/PP3P1P/6K1 w - - 0 4",
@@ -2090,16 +2090,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Txd5 Txd5"
+     "text": "3. Rxd5 Rxd5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Die Bilanz: 5 gewonnen, 11 verloren.",
+     "text": ", White to move. The balance: 5 won, 11 lost.",
      "stil": "normal"
     }
    ],
@@ -2132,9 +2132,9 @@
    "abschnitt": {
     "nummer": "7.3",
     "label": "sec:k7-abtausch",
-    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+    "titel": "Calculate instead of hoping: the exchange on one square"
    },
-   "unterabschnitt": "Figuren hinter Figuren zählen mit",
+   "unterabschnitt": "Pieces behind pieces count too",
    "fen": "r2r2k1/pp3ppp/5n2/3p4/8/2N4P/PP1R1PP1/3R2K1 w - - 0 1",
    "pfeile": [
     {
@@ -2167,7 +2167,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Rot: Springer c3 und Turm d2 greifen d5 an. Grau: Springer f6 und Turm d8 decken ihn. Gold: der Turm d1 hinter dem Turm d2, der dritte Angreifer.",
+     "text": "White to move. Red: the knight on c3 and the rook on d2 attack d5. Gray: the knight on f6 and the rook on d8 defend it. Gold: the rook on d1 behind the rook on d2, the third attacker.",
      "stil": "normal"
     }
    ],
@@ -2189,14 +2189,14 @@
     "fragen": [
      {
       "zug": "1. Nxd5",
-      "frage": "Warum gewinnt 1. Sxd5 den Bauern d5?",
+      "frage": "Why does 1. Nxd5 win the pawn on d5?",
       "antworten": [
-       "Der Turm d1 hinter dem Turm d2 ist ein dritter Angreifer, Schwarz hat nur zwei Verteidiger.",
-       "Der Bauer d5 ist gar nicht gedeckt.",
-       "Nach Sxd5 ist der Springer f6 gefesselt."
+       "The rook on d1 behind the rook on d2 is a third attacker; Black only has two defenders.",
+       "The pawn on d5 isn't defended at all.",
+       "After Nxd5, the knight on f6 is pinned."
       ],
       "richtig": 0,
-      "erklaerung": "Nach Sxd5 Sxd5 Txd5 Txd5 Txd5 bleibt Weiß ein Bauer mehr. Wichtig ist, mit der billigsten Figur anzufangen."
+      "erklaerung": "After Nxd5 Nxd5 Rxd5 Rxd5 Rxd5, White stays a pawn up. It is important to start with the cheapest piece."
      }
     ]
    }
@@ -2208,9 +2208,9 @@
    "abschnitt": {
     "nummer": "7.3",
     "label": "sec:k7-abtausch",
-    "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld"
+    "titel": "Calculate instead of hoping: the exchange on one square"
    },
-   "unterabschnitt": "Figuren hinter Figuren zählen mit",
+   "unterabschnitt": "Pieces behind pieces count too",
    "fen": "r2r2k1/pp3ppp/8/3R4/8/7P/PP3PP1/3R2K1 b - - 0 2",
    "pfeile": [
     {
@@ -2223,16 +2223,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sxd5 Sxd5 2. Txd5"
+     "text": "1. Nxd5 Nxd5 2. Rxd5"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: Der Turm d1 deckt den Turm d5.",
+     "text": ", Black to move. Gray: the rook on d1 defends the rook on d5.",
      "stil": "normal"
     }
    ],
@@ -2261,9 +2261,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Das Grundreihenmatt",
+   "unterabschnitt": "The back-rank mate",
    "fen": "6rk/p4Npp/1q6/8/8/8/5PPP/6K1 b - - 1 2",
    "pfeile": [
     {
@@ -2289,16 +2289,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Erstickungsmatt nach ",
+     "text": "Smothered mate after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dg8+ Txg8 2. Sf7#"
+     "text": "1. Qg8+ Rxg8 2. Nf7#"
     },
     {
      "art": "text",
-     "text": ". Rot: das Schach. Grau: Felder, die eigene Figuren besetzen.",
+     "text": ". Red: the check. Gray: squares occupied by the king's own pieces.",
      "stil": "normal"
     }
    ],
@@ -2320,9 +2320,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Das Grundreihenmatt",
+   "unterabschnitt": "The back-rank mate",
    "fen": "4R1k1/5ppp/8/8/8/8/5PPP/6K1 b - - 1 1",
    "pfeile": [
     {
@@ -2356,16 +2356,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Grundreihenmatt nach ",
+     "text": "Back-rank mate after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Te8#"
+     "text": "1. Re8#"
     },
     {
      "art": "text",
-     "text": ". Rot: das Schach, f8 und h8 beherrscht der Turm. Grau: die eigenen Bauern.",
+     "text": ". Red: the check; the rook controls f8 and h8. Gray: the king's own pawns.",
      "stil": "normal"
     }
    ],
@@ -2387,9 +2387,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Damenopfer auf h7 und Anastasia-Matt",
+   "unterabschnitt": "Queen sacrifice on h7 and Anastasia's mate",
    "fen": "1q3r1k/4Nppp/8/7Q/8/3R4/5PPP/6K1 w - - 0 1",
    "pfeile": [
     {
@@ -2416,25 +2416,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Gold: ",
+     "text": "White to move. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxh7+!! Kxh7"
+     "text": "1. Qxh7+!! Kxh7"
     },
     {
      "art": "text",
-     "text": " (einziger Zug) und ",
+     "text": " (the only move) and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Th3#"
+     "text": "2. Rh3#"
     },
     {
      "art": "text",
-     "text": ". Grau: g6 und g8 sperrt der Springer e7.",
+     "text": ". Gray: the knight on e7 blocks g6 and g8.",
      "stil": "normal"
     }
    ],
@@ -2456,14 +2456,14 @@
     "fragen": [
      {
       "zug": "1. Qxh7+",
-      "frage": "Warum gibt Weiß mit 1. Dxh7+ die Dame her?",
+      "frage": "Why does White give up the queen with 1. Qxh7+?",
       "antworten": [
-       "Um den Bauern h7 zu gewinnen und dann die Damen zu tauschen.",
-       "Weil die Dame h5 sonst verloren wäre.",
-       "Der König muss nach h7, und dort setzt Th3 matt; g6 und g8 sperrt der Springer."
+       "To win the pawn on h7 and then trade queens.",
+       "Because otherwise the queen on h5 would be lost.",
+       "The king must go to h7, and there Rh3 is mate; the knight blocks g6 and g8."
       ],
       "richtig": 2,
-      "erklaerung": "Kxh7 ist der einzige Zug. Danach kommt der Turm über die dritte Reihe auf die h-Linie: Anastasia-Matt."
+      "erklaerung": "Kxh7 is the only move. Then the rook comes along the third rank to the h-file: Anastasia's mate."
      }
     ]
    }
@@ -2475,9 +2475,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Damenopfer auf h7 und Anastasia-Matt",
+   "unterabschnitt": "Queen sacrifice on h7 and Anastasia's mate",
    "fen": "1q3r2/4Nppk/8/8/8/7R/5PPP/6K1 b - - 1 2",
    "pfeile": [
     {
@@ -2499,7 +2499,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Anastasia-Matt. Grau: Der Springer e7 sperrt g6 und g8. Rot: Der Turm h3 beherrscht die h-Linie.",
+     "text": "Anastasia's mate. Gray: the knight on e7 blocks g6 and g8. Red: the rook on h3 controls the h-file.",
      "stil": "normal"
     }
    ],
@@ -2528,9 +2528,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Arabisches Matt und Treppenmatt",
+   "unterabschnitt": "Arabian mate and staircase mate",
    "fen": "r6k/ppp4R/5N2/8/8/8/PPP3PP/6K1 b - - 0 1",
    "pfeile": [
     {
@@ -2552,7 +2552,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Arabisches Matt. Rot: g7 beherrscht der Turm h7, g8 der Springer. Grau: Der Springer deckt den Turm.",
+     "text": "Arabian mate. Red: the rook on h7 controls g7, the knight controls g8. Gray: the knight defends the rook.",
      "stil": "normal"
     }
    ],
@@ -2574,9 +2574,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Arabisches Matt und Treppenmatt",
+   "unterabschnitt": "Arabian mate and staircase mate",
    "fen": "R3k3/1R6/6p1/7p/8/2K5/7r/8 b - - 0 1",
    "pfeile": [
     {
@@ -2594,7 +2594,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Treppenmatt. Grau: Der Turm b7 sperrt die 7. Reihe. Rot: Der Turm a8 gibt auf der 8. Reihe Schach.",
+     "text": "Staircase mate. Gray: the rook on b7 blocks the 7th rank. Red: the rook on a8 gives check on the 8th rank.",
      "stil": "normal"
     }
    ],
@@ -2616,9 +2616,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Drei Mattbilder gegen den Bauernschild",
+   "unterabschnitt": "Three mating patterns against the pawn shield",
    "fen": "2kr4/3n4/B1p5/8/5B2/8/8/2K5 b - - 1 2",
    "pfeile": [
     {
@@ -2636,7 +2636,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Boden-Matt. Rot: Der Läufer a6 gibt Schach und beherrscht b7. Grau: Der Läufer f4 beherrscht c7 und b8. Auf d7 und d8 stehen eigene Figuren.",
+     "text": "Boden's mate. Red: the bishop on a6 gives check and controls b7. Gray: the bishop on f4 controls c7 and b8. The king's own pieces stand on d7 and d8.",
      "stil": "normal"
     }
    ],
@@ -2659,9 +2659,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Drei Mattbilder gegen den Bauernschild",
+   "unterabschnitt": "Three mating patterns against the pawn shield",
    "fen": "5rk1/5ppQ/6P1/8/8/8/8/6K1 b - - 2 3",
    "pfeile": [
     {
@@ -2679,7 +2679,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Damiano-Matt. Rot: Die Dame gibt Schach und beherrscht h8. Grau: Der Bauer g6 deckt sie. Auf f7, g7 und f8 stehen eigene Figuren.",
+     "text": "Damiano's mate. Red: the queen gives check and controls h8. Gray: the pawn on g6 defends it. The king's own pieces stand on f7, g7 and f8.",
      "stil": "normal"
     }
    ],
@@ -2702,9 +2702,9 @@
    "abschnitt": {
     "nummer": "7.4",
     "label": "sec:k7-mattbilder",
-    "titel": "Typische Mattbilder"
+    "titel": "Typical mating patterns"
    },
-   "unterabschnitt": "Drei Mattbilder gegen den Bauernschild",
+   "unterabschnitt": "Three mating patterns against the pawn shield",
    "fen": "5rk1/5pQp/5Pp1/8/8/8/8/6K1 b - - 1 1",
    "pfeile": [
     {
@@ -2722,7 +2722,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Lolli-Matt. Rot: Die Dame gibt Schach und beherrscht h8. Grau: Der Bauer f6 deckt sie. Auf f7, h7 und f8 stehen eigene Figuren.",
+     "text": "Lolli's mate. Red: the queen gives check and controls h8. Gray: the pawn on f6 defends it. The king's own pieces stand on f7, h7 and f8.",
      "stil": "normal"
     }
    ],
@@ -2745,7 +2745,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "8/6k1/8/8/8/7p/1q3p1P/4R2K w - - 0 1",
@@ -2754,7 +2754,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Schwarz droht fxe1=D#.",
+     "text": "White to move. Black threatens fxe1=Q#.",
      "stil": "normal"
     }
    ],
@@ -2777,7 +2777,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "6k1/pp3ppp/2n5/8/8/2N4P/1r3PP1/4R1K1 b - - 0 1",
@@ -2873,7 +2873,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16",
@@ -2905,7 +2905,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "r1b1k2r/pp1pqppp/5n2/1N2p3/2B1P3/8/PPP1QPPP/R4RK1 w kq - 0 1",
@@ -2914,7 +2914,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt Material.",
+     "text": "White to move wins material.",
      "stil": "normal"
     }
    ],
@@ -2937,7 +2937,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "6k1/p4ppp/1p6/q3n3/8/1P2Q3/P1r2PPP/3R2K1 w - - 0 1",
@@ -2946,7 +2946,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt matt.",
+     "text": "White to move mates.",
      "stil": "normal"
     }
    ],
@@ -2969,7 +2969,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "6q1/r7/4k3/1p2p3/8/8/2B2PPP/3R2K1 w - - 0 1",
@@ -2978,7 +2978,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt Material.",
+     "text": "White to move wins material.",
      "stil": "normal"
     }
    ],
@@ -3001,7 +3001,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "3r1rk1/pp4pp/2n5/3q4/8/1P6/P1Q1BPPP/R3R1K1 w - - 0 1",
@@ -3010,7 +3010,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt Material.",
+     "text": "White to move wins material.",
      "stil": "normal"
     }
    ],
@@ -3033,7 +3033,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "r4rk1/pp4pp/2n2n2/3N4/8/1B4Pq/PP3P1P/R2Q1RK1 w - - 0 1",
@@ -3042,7 +3042,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt die Dame.",
+     "text": "White to move wins the queen.",
      "stil": "normal"
     }
    ],
@@ -3065,7 +3065,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "6k1/pp3ppp/4q3/n2N4/8/8/PP2BPPP/2R3K1 w - - 0 1",
@@ -3074,7 +3074,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt Material.",
+     "text": "White to move wins material.",
      "stil": "normal"
     }
    ],
@@ -3097,7 +3097,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "3q2k1/ppn2ppp/8/8/6b1/8/PPQ2PPP/4R1K1 w - - 0 1",
@@ -3106,7 +3106,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt Material.",
+     "text": "White to move wins material.",
      "stil": "normal"
     }
    ],
@@ -3129,7 +3129,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "r1r4k/p1pR3p/1p6/8/4N3/8/2P2PPP/6K1 w - - 0 1",
@@ -3161,7 +3161,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "r3r2k/pp4pp/8/6N1/2Q5/q7/PP3PPP/6K1 w - - 0 1",
@@ -3170,7 +3170,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in vier Zügen matt.",
+     "text": "White to move mates in four moves.",
      "stil": "normal"
     }
    ],
@@ -3193,7 +3193,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
@@ -3225,7 +3225,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "r4rk1/pb2qppp/1p3n2/2p4Q/8/2NB1R2/PP3PPP/R5K1 w - - 0 1",
@@ -3234,7 +3234,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt mindestens eine Figur oder setzt matt.",
+     "text": "White to move wins at least a piece or mates.",
      "stil": "normal"
     }
    ],
@@ -3257,7 +3257,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "rq3rk1/pb3ppp/8/3N1R1Q/8/8/PP3PPP/6K1 w - - 0 1",
@@ -3289,7 +3289,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "2kr3r/pp1n1ppp/2n5/8/Q4B2/8/PP2BPPP/2KR4 w - - 0 1",
@@ -3321,7 +3321,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "r4rk1/pp3pp1/2p3P1/3Q4/8/8/PP6/1K5R w - - 0 1",
@@ -3353,7 +3353,7 @@
    "abschnitt": {
     "nummer": "7.5",
     "label": "",
-    "titel": "Rückblick: Taktik"
+    "titel": "Review: tactics"
    },
    "unterabschnitt": null,
    "fen": "r4rk1/pp3p1p/5Pp1/8/8/8/PP1Q4/1K6 w - - 0 1",
@@ -3391,45 +3391,45 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Weiß steht auf Verlust. Finde den einzigen Zug, der remis hält, und erkläre, warum Schwarz ihm nicht entkommt.",
+     "text": "White is lost. Find the only move that holds the draw, and explain why Black cannot escape it.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "zug",
-     "text": "1. Te7+!"
+     "text": "1. Re7+!"
     },
     {
      "art": "text",
-     "text": " Der Turm gibt ohne Pause Schach, etwa ",
+     "text": " The rook gives check without a break, for example ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Kf6 2. Te6+ Kf5 3. Te5+"
+     "text": "1... Kf6 2. Re6+ Kf5 3. Re5+"
     },
     {
      "art": "text",
-     "text": ". Schlägt Schwarz ihn, mit dem König oder der Dame, ist Weiß patt: g1 deckt der Bauer f2, g2 der Bauer h3, und der Bauer h2 ist blockiert. Weicht der König aus, folgt das nächste Schach. Weiß meidet dabei nur Felder, auf denen der Turm mit Schach geschlagen wird: die erste Reihe (dort schlägt die Dame oder der Bauer f2 mit Umwandlung) und das Feld b7. Alle anderen Züge verlieren, zum Beispiel ",
+     "text": ". If Black captures it, with the king or the queen, White is stalemated: the pawn on f2 covers g1, the pawn on h3 covers g2, and the pawn on h2 is blocked. If the king steps aside, the next check follows. White only avoids squares where the rook would be captured with check: the first rank (there the queen or the pawn on f2 captures with promotion) and the square b7. All other moves lose, for example ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Te8? f1=D#"
+     "text": "1. Re8? f1=Q#"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Tg1+? fxg1=D+ 2. Kxg1 Dg2#"
+     "text": "1. Rg1+? fxg1=Q+ 2. Kxg1 Qg2#"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Hat dein König keinen Zug mehr, wird eine Figur, die Schach um Schach gibt, zu deiner Rettung.",
+     "text": ". Remember: if your king has no move left, a piece that gives check after check becomes your rescue.",
      "stil": "normal"
     }
    ],
@@ -3440,8 +3440,8 @@
    "erklaerung": {
     "loesung": "1. Re7+!",
     "akzeptiert": [],
-    "motiv": "Rasender Turm und Patt",
-    "text": "1. Te7+! gibt Schach um Schach; schlägt Schwarz den Turm, ist Weiß patt, weil sein König kein Feld hat. Weiß meidet nur die erste Reihe und das Feld b7, wo der Turm mit Schach geschlagen würde."
+    "motiv": "Desperado rook and stalemate",
+    "text": "1. Re7+! gives check after check; if Black captures the rook, White is stalemated because White's king has no square. White only avoids the first rank and the square b7, where the rook would be captured with check."
    }
   },
   {
@@ -3455,33 +3455,33 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Welcher weiße Zug droht in ",
+     "text": "Which white move is threatened in ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 7.45",
+     "text": "Fig. 7.45",
      "abbildung": "7.45"
     },
     {
      "art": "text",
-     "text": ", und warum wäre er matt? Nenne eine konkrete Bauernbewegung, mit der Schwarz das Matt verhindert, und erkläre, warum. Welchen vorbeugenden Zug hat Weiß selbst schon gespielt?",
+     "text": ", and why would it be mate? Name a concrete pawn move with which Black prevents the mate, and explain why. Which preventive move has White already played?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Weiß droht ",
+     "text": "White threatens ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Te8#"
+     "text": "Re8#"
     },
     {
      "art": "text",
-     "text": ", da die Bauern f7, g7 und h7 dem König alle Felder auf der 7. Reihe nehmen und keine schwarze Figur dann auf e8 schlagen oder sich auf f8 dazwischenstellen kann. Ein Bauernzug wie ",
+     "text": ", because the pawns on f7, g7 and h7 take all the squares on the 7th rank from the king, and no black piece can then capture on e8 or interpose on f8. A pawn move like ",
      "stil": "normal"
     },
     {
@@ -3490,7 +3490,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -3499,25 +3499,25 @@
     },
     {
      "art": "text",
-     "text": " schafft ein Luftloch: Der König geht nach ",
+     "text": " creates luft: after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Te8+"
+     "text": "Re8+"
     },
     {
      "art": "text",
-     "text": " nach h7 oder g7. Auch ein Figurenzug hilft, etwa ",
+     "text": ", the king goes to h7 or g7. A piece move also helps, for example ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Se7"
+     "text": "...Ne7"
     },
     {
      "art": "text",
-     "text": ", der die e-Linie sperrt. Weiß selbst hat mit ",
+     "text": ", which blocks the e-file. White has already taken precautions with ",
      "stil": "normal"
     },
     {
@@ -3526,7 +3526,7 @@
     },
     {
      "art": "text",
-     "text": " schon vorgebeugt: Kommt ein schwarzer Turm mit Schach auf die erste Reihe, hat der weiße König das Feld h2. Merke dir: Ein Luftloch kostet einen Bauernzug, das Grundreihenmatt kostet die Partie.",
+     "text": ": if a black rook comes to the first rank with check, the white king has the square h2. Remember: luft costs a pawn move; the back-rank mate costs the game.",
      "stil": "normal"
     }
    ],
@@ -3537,8 +3537,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Grundreihenmatt verhindern",
-    "text": "Weiß droht Te8#, weil die eigenen Bauern dem schwarzen König die siebte Reihe versperren. Ein Luftloch wie ...h6 oder ...g6 oder ein Sperrzug wie ...Se7 verhindert das; Weiß hat mit h3 selbst schon vorgebeugt."
+    "motiv": "Preventing the back-rank mate",
+    "text": "White threatens Re8#, because Black's own pawns block the 7th rank for the black king. Luft such as ...h6 or ...g6, or a blocking move such as ...Ne7, prevents it; White has already taken precautions with h3."
    }
   },
   {
@@ -3552,37 +3552,37 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Finde die Kombination. Beantworte im Anschluss für den ersten Zug die Fragen aus Schritt 2 und 3 deines Werkzeugs: Welche Art von erzwingendem Zug ist es? Hat Schwarz einen Zwischenzug? Welche Rolle spielt die Bilanz?",
+     "text": "Find the combination. Then answer the questions from steps 2 and 3 of your tool for the first move: What kind of forcing move is it? Does Black have an intermezzo? What role does the balance play?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "zug",
-     "text": "16. Db8+!! Sxb8 17. Td8#"
+     "text": "16. Qb8+!! Nxb8 17. Rd8#"
     },
     {
      "art": "text",
-     "text": ", und der Läufer g5 deckt den Turm. So endete Morphys berühmte Opernpartie (Paris 1858), die du in Kapitel 11 ganz nachspielst. Zu den Fragen: Der erste Zug ist ein ",
+     "text": ", and the bishop on g5 defends the rook. This is how Morphy's famous Opera Game (Paris 1858) ended; you will play through the whole game in Chapter 11. On the questions: the first move is a ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Schach",
+     "text": "check",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": ": Schwarz muss reagieren. Ein Zwischenzug ist unmöglich, denn einem König im Schach muss sofort geholfen werden. Die einzige legale Antwort ist deshalb ",
+     "text": ": Black must respond. An intermezzo is impossible, because a king in check must be helped at once. The only legal reply is therefore ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "16... Sxb8"
+     "text": "16... Nxb8"
     },
     {
      "art": "text",
-     "text": ". Die Bilanz spielt keine Rolle: Weiß gibt zwar die Dame für einen Springer, das Matt beendet aber die Partie. Merke dir: Endet die Variante mit Matt, zählt kein Material.",
+     "text": ". The balance plays no role: White does give the queen for a knight, but the mate ends the game. Remember: if the line ends in mate, material doesn't count.",
      "stil": "normal"
     }
    ],
@@ -3593,8 +3593,8 @@
    "erklaerung": {
     "loesung": "16. Qb8+!! Nxb8 17. Rd8#",
     "akzeptiert": [],
-    "motiv": "Damenopfer und Grundreihenmatt",
-    "text": "16. Db8+!! zwingt 16... Sxb8, danach setzt 17. Td8# matt, gedeckt vom Läufer g5. Auf ein Schach gibt es keinen Zwischenzug, und weil die Variante mit Matt endet, zählt das geopferte Material nicht."
+    "motiv": "Queen sacrifice and back-rank mate",
+    "text": "16. Qb8+!! forces 16... Nxb8, and then 17. Rd8# is mate, defended by the bishop on g5. There is no intermezzo against a check, and because the line ends in mate, the sacrificed material doesn't count."
    }
   },
   {
@@ -3609,16 +3609,16 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Gabel: ",
+     "text": "Fork: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sc7+!"
+     "text": "1. Nc7+!"
     },
     {
      "art": "text",
-     "text": " greift König e8 und Turm a8 an. Die Dame e7 kann c7 nicht schlagen, da der Bauer d7 im Weg steht. Nach ",
+     "text": " attacks the king on e8 and the rook on a8. The queen on e7 cannot capture on c7, because the pawn on d7 is in the way. After ",
      "stil": "normal"
     },
     {
@@ -3627,7 +3627,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -3636,34 +3636,34 @@
     },
     {
      "art": "text",
-     "text": " folgt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sxa8"
+     "text": "2. Nxa8"
     },
     {
      "art": "text",
-     "text": ". Der Springer kommt aus der Ecke kaum wieder heraus. Doch selbst wenn Schwarz ihn später erobert, hat Weiß einen Turm für einen Springer bekommen, also die Qualität. Das ähnliche ",
+     "text": " follows. The knight will hardly get out of the corner again. But even if Black wins it later, White has got a rook for a knight, that is, the exchange. The similar ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sd6+?"
+     "text": "1. Nd6+?"
     },
     {
      "art": "text",
-     "text": " scheitert an ",
+     "text": " fails to ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Dxd6"
+     "text": "1... Qxd6"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Eine Gabel mit Schach lässt dem Gegner keine Zeit, das zweite Ziel zu retten.",
+     "text": ". Remember: a fork with check leaves your opponent no time to save the second target.",
      "stil": "normal"
     }
    ],
@@ -3674,8 +3674,8 @@
    "erklaerung": {
     "loesung": "1. Nc7+!",
     "akzeptiert": [],
-    "motiv": "Springergabel",
-    "text": "1. Sc7+! greift König und Turm a8 an, und die Dame e7 kann c7 nicht schlagen, weil d7 im Weg steht. Nach dem Königszug gewinnt 2. Sxa8 mindestens die Qualität; 1. Sd6+? scheitert an 1... Dxd6."
+    "motiv": "Knight fork",
+    "text": "1. Nc7+! attacks the king and the rook on a8, and the queen on e7 cannot capture on c7 because d7 is in the way. After the king move, 2. Nxa8 wins at least the exchange; 1. Nd6+? fails to 1... Qxd6."
    }
   },
   {
@@ -3690,16 +3690,16 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Grundreihenmatt: ",
+     "text": "Back-rank mate: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Td8#"
+     "text": "1. Rd8#"
     },
     {
      "art": "text",
-     "text": ". Keine schwarze Figur erreicht d8, e8 oder f8, und die Bauern f7, g7 und h7 versperren die Flucht. Die Dame a5 kommt nicht nach d8, weil der eigene Bauer b6 im Weg steht. Merke dir: Prüfe bei jedem Grundreihenzug, welche gegnerische Figur die Grundreihe noch erreicht.",
+     "text": ". No black piece reaches d8, e8 or f8, and the pawns on f7, g7 and h7 block the escape. The queen on a5 cannot get to d8, because its own pawn on b6 is in the way. Remember: with every back-rank move, check which enemy piece can still reach the back rank.",
      "stil": "normal"
     }
    ],
@@ -3711,7 +3711,7 @@
     "loesung": "1. Rd8#",
     "akzeptiert": [],
     "motiv": "Back-rank mate",
-    "text": "1. Td8# setzt sofort matt: Keine schwarze Figur erreicht die Grundreihe, und die eigenen Bauern versperren die Flucht. Die Dame a5 kommt nicht nach d8, weil der Bauer b6 im Weg steht."
+    "text": "1. Rd8# mates at once: no black piece reaches the back rank, and Black's own pawns block the escape. The queen on a5 cannot get to d8, because the pawn on b6 is in the way."
    }
   },
   {
@@ -3726,25 +3726,25 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Spieß: ",
+     "text": "Skewer: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lb3+!"
+     "text": "1. Bb3+!"
     },
     {
      "art": "text",
-     "text": " gibt Schach, und König e6 und Dame g8 stehen auf derselben Diagonale. Der König muss ausweichen (d6 und d7 beherrscht der Turm d1, f7 liegt weiter auf der Diagonale), danach folgt ",
+     "text": " gives check, and the king on e6 and the queen on g8 stand on the same diagonal. The king must move away (the rook on d1 controls d6 and d7, and f7 is still on the diagonal), and then ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Lxg8"
+     "text": "2. Bxg8"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Ein Spieß mit Schach ist der sicherste, da der König wegmuss.",
+     "text": " follows. Remember: a skewer with check is the safest, because the king has to move.",
      "stil": "normal"
     }
    ],
@@ -3755,8 +3755,8 @@
    "erklaerung": {
     "loesung": "1. Bb3+!",
     "akzeptiert": [],
-    "motiv": "Spieß mit Schach",
-    "text": "1. Lb3+! greift den König e6 an, hinter dem auf derselben Diagonale die Dame g8 steht. Der König muss weichen, und 2. Lxg8 gewinnt die Dame."
+    "motiv": "Skewer with check",
+    "text": "1. Bb3+! attacks the king on e6, behind which the queen on g8 stands on the same diagonal. The king must move away, and 2. Bxg8 wins the queen."
    }
   },
   {
@@ -3771,52 +3771,52 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Fesselung: ",
+     "text": "Pin: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lc4!"
+     "text": "1. Bc4!"
     },
     {
      "art": "text",
-     "text": " fesselt die Dame d5 an den König g8, und der Läufer ist vom Bauern b3 und von der Dame c2 gedeckt. Schwarz kann die Dame nur noch gegen den Läufer geben, etwa ",
+     "text": " pins the queen on d5 to the king on g8, and the bishop is defended by the pawn on b3 and by the queen on c2. Black can only give the queen for the bishop, for example ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Dxc4 2. Dxc4+"
+     "text": "1... Qxc4 2. Qxc4+"
     },
     {
      "art": "text",
-     "text": ". Greift der Springer mit ",
+     "text": ". If the knight attacks the queen on c2 with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Sd4"
+     "text": "1... Nd4"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Sb4"
+     "text": "1... Nb4"
     },
     {
      "art": "text",
-     "text": " die Dame c2 an, schlägt Weiß zunächst mit Schach (",
+     "text": ", White first captures with check (",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Lxd5+"
+     "text": "2. Bxd5+"
     },
     {
      "art": "text",
-     "text": ") und kümmert sich erst im Anschluss um seine Dame. Merke dir: Gegen eine absolut gefesselte Dame genügt eine gedeckte Leichtfigur.",
+     "text": ") and only then takes care of the queen. Remember: against an absolutely pinned queen, a defended minor piece is enough.",
      "stil": "normal"
     }
    ],
@@ -3827,8 +3827,8 @@
    "erklaerung": {
     "loesung": "1. Bc4!",
     "akzeptiert": [],
-    "motiv": "Fesselung der Dame",
-    "text": "1. Lc4! fesselt die Dame d5 an den König g8, und der Läufer ist von b3 und der Dame c2 gedeckt. Schwarz kann die Dame nur noch gegen den Läufer geben; greift ein Springer die Dame c2 an, schlägt Weiß zuerst mit Schach auf d5."
+    "motiv": "Pinning the queen",
+    "text": "1. Bc4! pins the queen on d5 to the king on g8, and the bishop is defended by b3 and by the queen on c2. Black can only give the queen for the bishop; if a knight attacks the queen on c2, White first captures on d5 with check."
    }
   },
   {
@@ -3843,16 +3843,16 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Abzugsschach: ",
+     "text": "Discovered check: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sf4+!"
+     "text": "1. Nf4+!"
     },
     {
      "art": "text",
-     "text": " Der Springer gibt die Diagonale b3–g8 frei, der Läufer gibt Schach, und der Springer greift zugleich die Dame h3 an. Nach ",
+     "text": " The knight opens the diagonal b3–g8, the bishop gives check, and the knight attacks the queen on h3 at the same time. After ",
      "stil": "normal"
     },
     {
@@ -3866,56 +3866,56 @@
     },
     {
      "art": "zug",
-     "text": "1... Tf7"
+     "text": "1... Rf7"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Sd5"
+     "text": "1... Nd5"
     },
     {
      "art": "text",
-     "text": " folgt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sxh3"
+     "text": "2. Nxh3"
     },
     {
      "art": "text",
-     "text": ". Stellt Schwarz die Dame mit ",
+     "text": " follows. If Black interposes the queen with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... De6"
+     "text": "1... Qe6"
     },
     {
      "art": "text",
-     "text": " dazwischen, schlägt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sxe6"
+     "text": "2. Nxe6"
     },
     {
      "art": "text",
-     "text": ". Auch ",
+     "text": " captures it. ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sxf6+"
+     "text": "1. Nxf6+"
     },
     {
      "art": "text",
-     "text": " gibt Schach, sogar Doppelschach, lässt die Dame allerdings stehen. Merke dir: Beim Abzugsschach hat die abziehende Figur einen freien Zug. Suche für sie das wertvollste Ziel.",
+     "text": " also gives check, even double check, but it leaves the queen alone. Remember: in a discovered check, the moving piece gets a free move. Look for the most valuable target for it.",
      "stil": "normal"
     }
    ],
@@ -3927,7 +3927,7 @@
     "loesung": "1. Nf4+!",
     "akzeptiert": [],
     "motiv": "Discovered check",
-    "text": "1. Sf4+! öffnet die Diagonale des Läufers b3 mit Schach, und der Springer greift zugleich die Dame h3 an. Nach jedem Schutz gegen das Schach gewinnt Weiß die Dame; die abziehende Figur sucht sich das wertvollste Ziel."
+    "text": "1. Nf4+! opens the diagonal of the bishop on b3 with check, and the knight attacks the queen on h3 at the same time. Whatever Black does against the check, White wins the queen; the moving piece picks the most valuable target."
    }
   },
   {
@@ -3942,79 +3942,79 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Hinlenkung und Gabel: ",
+     "text": "Decoy and fork: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Tc8+!"
+     "text": "1. Rc8+!"
     },
     {
      "art": "text",
-     "text": " lenkt die Dame nach c8. Nach ",
+     "text": " lures the queen to c8. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Dxc8"
+     "text": "1... Qxc8"
     },
     {
      "art": "text",
-     "text": " folgt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Se7+"
+     "text": "2. Ne7+"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Sxc8"
+     "text": "3. Nxc8"
     },
     {
      "art": "text",
-     "text": ": Weiß gibt den Turm und gewinnt die Dame. Stellt sich die Dame mit ",
+     "text": " follow: White gives the rook and wins the queen. If the queen interposes with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... De8"
+     "text": "1... Qe8"
     },
     {
      "art": "text",
-     "text": " dazwischen, setzt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Txe8#"
+     "text": "2. Rxe8#"
     },
     {
      "art": "text",
-     "text": " matt. Das sofortige ",
+     "text": " is mate. The immediate ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Se7+?"
+     "text": "1. Ne7+?"
     },
     {
      "art": "text",
-     "text": " scheitert an ",
+     "text": " fails to ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Dxe7"
+     "text": "1... Qxe7"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Fehlt der Gabel ein zweites Ziel, lenke es mit Schach auf das richtige Feld.",
+     "text": ". Remember: if the fork lacks a second target, lure it to the right square with check.",
      "stil": "normal"
     }
    ],
@@ -4025,8 +4025,8 @@
    "erklaerung": {
     "loesung": "1. Rc8+!",
     "akzeptiert": [],
-    "motiv": "Hinlenkung und Gabel",
-    "text": "1. Tc8+! lenkt die Dame nach c8: Nach 1... Dxc8 gewinnt die Gabel 2. Se7+ die Dame, nach 1... De8 setzt 2. Txe8# matt. Das sofortige 1. Se7+? scheitert an 1... Dxe7."
+    "motiv": "Decoy and fork",
+    "text": "1. Rc8+! lures the queen to c8: after 1... Qxc8, the fork 2. Ne7+ wins the queen; after 1... Qe8, 2. Rxe8# is mate. The immediate 1. Ne7+? fails to 1... Qxe7."
    }
   },
   {
@@ -4041,71 +4041,71 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Überlastung: Die Dame d8 deckt den Springer c7 ",
+     "text": "Overloading: the queen on d8 defends the knight on c7 ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "und",
+     "text": "and",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " das Feld e8. ",
+     "text": " the square e8. ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxc7!"
+     "text": "1. Qxc7!"
     },
     {
      "art": "text",
-     "text": ", und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Dxc7?? 2. Te8#"
+     "text": "1... Qxc7?? 2. Re8#"
     },
     {
      "art": "text",
-     "text": " wäre matt. Schwarz muss deshalb mit ",
+     "text": " would be mate. So Black must defend the queen and the back rank at the same time with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Df8"
+     "text": "1... Qf8"
     },
     {
      "art": "text",
-     "text": " Dame und Grundreihe zugleich decken, und Weiß behält eine Figur mehr. Das sofortige ",
+     "text": ", and White stays a piece up. The immediate ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Te8+?"
+     "text": "1. Re8+?"
     },
     {
      "art": "text",
-     "text": " scheitert an ",
+     "text": " fails to ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Dxe8"
+     "text": "1... Qxe8"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Sxe8"
+     "text": "1... Nxe8"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Schlage zunächst, was der überlastete Verteidiger deckt, nicht den Verteidiger selbst.",
+     "text": ". Remember: first capture what the overloaded defender is defending, not the defender itself.",
      "stil": "normal"
     }
    ],
@@ -4117,7 +4117,7 @@
     "loesung": "1. Qxc7!",
     "akzeptiert": [],
     "motiv": "Overloading",
-    "text": "Die Dame d8 muss den Springer c7 und das Feld e8 zugleich decken. Nach 1. Dxc7! kann sie nicht zurückschlagen, weil sonst 2. Te8# folgt, und Weiß behält eine Figur mehr."
+    "text": "The queen on d8 must defend the knight on c7 and the square e8 at the same time. After 1. Qxc7!, it cannot recapture, because 2. Re8# would follow, and White stays a piece up."
    }
   },
   {
@@ -4132,34 +4132,34 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Arabisches Matt: ",
+     "text": "Arabian mate: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sf6!"
+     "text": "1. Nf6!"
     },
     {
      "art": "text",
-     "text": " (ein ruhiger Zug) droht ",
+     "text": " (a quiet move) threatens ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Txh7#"
+     "text": "2. Rxh7#"
     },
     {
      "art": "text",
-     "text": ": Der schwarze König hat kein Feld (g8 deckt der Springer, g7 der Turm), und Schwarz kann h7 nicht zusätzlich decken, da der Bauer c7 dem Turm c8 den Weg zur 7. Reihe versperrt. Auf jeden schwarzen Zug folgt ",
+     "text": ": the black king has no square (the knight covers g8, the rook covers g7), and Black cannot add a defender to h7, because the pawn on c7 blocks the rook on c8 from reaching the 7th rank. Against any black move, ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Txh7#"
+     "text": "2. Rxh7#"
     },
     {
      "art": "text",
-     "text": ", nach ",
+     "text": " follows; after ",
      "stil": "normal"
     },
     {
@@ -4168,7 +4168,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -4177,16 +4177,16 @@
     },
     {
      "art": "text",
-     "text": " ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Th7#"
+     "text": "2. Rh7#"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Nicht jede Kombination beginnt mit Schach, denn eine unabwendbare Mattdrohung ist genauso zwingend.",
+     "text": ". Remember: not every combination starts with a check, because an unstoppable mate threat is just as forcing.",
      "stil": "normal"
     }
    ],
@@ -4198,7 +4198,7 @@
     "loesung": "1. Nf6!",
     "akzeptiert": [],
     "motiv": "Arabian mate",
-    "text": "Der ruhige Zug 1. Sf6! droht 2. Txh7#: Der Springer deckt g8, der Turm g7, und Schwarz kann h7 nicht mehr verteidigen. Eine unabwendbare Mattdrohung ist so zwingend wie ein Schach."
+    "text": "The quiet move 1. Nf6! threatens 2. Rxh7#: the knight covers g8, the rook covers g7, and Black can no longer defend h7. An unstoppable mate threat is as forcing as a check."
    }
   },
   {
@@ -4213,16 +4213,16 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Erstickungsmatt: ",
+     "text": "Smothered mate: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sf7+ Kg8 2. Sh6++"
+     "text": "1. Nf7+ Kg8 2. Nh6++"
     },
     {
      "art": "text",
-     "text": " (Doppelschach durch Springer und Dame c4) ",
+     "text": " (double check by the knight and the queen on c4) ",
      "stil": "normal"
     },
     {
@@ -4231,7 +4231,7 @@
     },
     {
      "art": "text",
-     "text": " (nach ",
+     "text": " (after ",
      "stil": "normal"
     },
     {
@@ -4240,35 +4240,35 @@
     },
     {
      "art": "text",
-     "text": " setzt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Df7#"
+     "text": "3. Qf7#"
     },
     {
      "art": "text",
-     "text": " matt) ",
+     "text": " is mate) ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Dg8+!! Txg8 4. Sf7#"
+     "text": "3. Qg8+!! Rxg8 4. Nf7#"
     },
     {
      "art": "text",
-     "text": ". Der König darf die Dame nicht schlagen, weil der Springer h6 das Feld g8 deckt. Diese Zugfolge wird ",
+     "text": ". The king may not capture the queen, because the knight on h6 covers the square g8. This sequence is called ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Philidors Vermächtnis",
+     "text": "Philidor's legacy",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " genannt. Merke dir: Das Damenopfer auf g8 zwingt den Turm, dem eigenen König das letzte Feld zu nehmen.",
+     "text": ". Remember: the queen sacrifice on g8 forces the rook to take the last square from its own king.",
      "stil": "normal"
     }
    ],
@@ -4279,8 +4279,8 @@
    "erklaerung": {
     "loesung": "1. Nf7+ Kg8 2. Nh6++ Kh8 3. Qg8+!! Rxg8 4. Nf7#",
     "akzeptiert": [],
-    "motiv": "Erstickungsmatt (Philidors Vermächtnis)",
-    "text": "Nach 1. Sf7+ Kg8 2. Sh6++ Kh8 zwingt das Damenopfer 3. Dg8+!! den Turm, dem eigenen König das letzte Feld zu nehmen. 4. Sf7# ist Erstickungsmatt."
+    "motiv": "Smothered mate (Philidor's legacy)",
+    "text": "After 1. Nf7+ Kg8 2. Nh6++ Kh8, the queen sacrifice 3. Qg8+!! forces the rook to take the last square from its own king. 4. Nf7# is smothered mate."
    }
   },
   {
@@ -4295,34 +4295,34 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Damenopfer und Doppelschach: ",
+     "text": "Queen sacrifice and double check: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dd8+!! Kxd8 2. Lg5++"
+     "text": "1. Qd8+!! Kxd8 2. Bg5++"
     },
     {
      "art": "text",
-     "text": " (Läufer g5 und Turm d1) ",
+     "text": " (bishop on g5 and rook on d1) ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Kc7 3. Ld8#"
+     "text": "2... Kc7 3. Bd8#"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Ke8 3. Td8#"
+     "text": "2... Ke8 3. Rd8#"
     },
     {
      "art": "text",
-     "text": ". Die Stellung stammt aus der Partie Réti–Tartakower, Wien 1910. Merke dir: Ein Doppelschach gegen einen König ohne Felder ist fast immer das Ende der Partie.",
+     "text": ". The position comes from the game Réti–Tartakower, Vienna 1910. Remember: a double check against a king without squares is almost always the end of the game.",
      "stil": "normal"
     }
    ],
@@ -4333,8 +4333,8 @@
    "erklaerung": {
     "loesung": "1. Qd8+!! Kxd8 2. Bg5++",
     "akzeptiert": [],
-    "motiv": "Damenopfer und Doppelschach",
-    "text": "1. Dd8+!! Kxd8 2. Lg5++ gibt Doppelschach mit Läufer und Turm, und es folgt 3. Ld8# oder 3. Td8#. So endete Réti–Tartakower, Wien 1910."
+    "motiv": "Queen sacrifice and double check",
+    "text": "1. Qd8+!! Kxd8 2. Bg5++ gives double check with bishop and rook, and 3. Bd8# or 3. Rd8# follows. This is how Réti–Tartakower, Vienna 1910, ended."
    }
   },
   {
@@ -4349,16 +4349,16 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Beseitigung der Verteidigung: Außer dem König deckt nur der Springer f6 das Feld h7. ",
+     "text": "Removing the defender: apart from the king, only the knight on f6 covers the square h7. ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Txf6!"
+     "text": "1. Rxf6!"
     },
     {
      "art": "text",
-     "text": " Nach ",
+     "text": " After ",
      "stil": "normal"
     },
     {
@@ -4367,25 +4367,25 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Dxf6"
+     "text": "1... Qxf6"
     },
     {
      "art": "text",
-     "text": " folgt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Dxh7#"
+     "text": "2. Qxh7#"
     },
     {
      "art": "text",
-     "text": " (der Läufer d3 deckt die Dame). Verhindert Schwarz das Matt anders (etwa mit ",
+     "text": " follows (the bishop on d3 defends the queen). If Black prevents the mate some other way (for example with ",
      "stil": "normal"
     },
     {
@@ -4403,16 +4403,16 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Le4"
+     "text": "1... Be4"
     },
     {
      "art": "text",
-     "text": "), bleibt Weiß eine Figur vorn. Nach ",
+     "text": "), White stays a piece ahead. After ",
      "stil": "normal"
     },
     {
@@ -4421,34 +4421,34 @@
     },
     {
      "art": "text",
-     "text": " deckt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Dh4"
+     "text": "2. Qh4"
     },
     {
      "art": "text",
-     "text": " den Turm. Das sofortige ",
+     "text": " defends the rook. The immediate ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxh7+?"
+     "text": "1. Qxh7+?"
     },
     {
      "art": "text",
-     "text": " scheitert an ",
+     "text": " fails to ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Sxh7"
+     "text": "1... Nxh7"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Ein Turm ist ein guter Preis für den einzigen Verteidiger des Königs.",
+     "text": ". Remember: a rook is a good price for the king's only defender.",
      "stil": "normal"
     }
    ],
@@ -4460,7 +4460,7 @@
     "loesung": "1. Rxf6!",
     "akzeptiert": [],
     "motiv": "Removing the defender",
-    "text": "Nur der Springer f6 deckt h7 neben dem König. 1. Txf6! beseitigt ihn: Nach dem Zurückschlagen setzt 2. Dxh7# matt, sonst bleibt Weiß eine Figur vorn."
+    "text": "Besides the king, only the knight on f6 covers h7. 1. Rxf6! removes it: after the recapture, 2. Qxh7# is mate; otherwise White stays a piece ahead."
    }
   },
   {
@@ -4475,16 +4475,16 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Damenopfer und Anastasia-Matt: ",
+     "text": "Queen sacrifice and Anastasia's mate: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Se7+ Kh8 2. Dxh7+!! Kxh7 3. Th5#"
+     "text": "1. Ne7+ Kh8 2. Qxh7+!! Kxh7 3. Rh5#"
     },
     {
      "art": "text",
-     "text": ". Der Springer e7 sperrt g6 und g8, der Turm beherrscht die h-Linie. Merke dir: Steht ein Springer auf e7, prüfe das Opfer auf h7.",
+     "text": ". The knight on e7 blocks g6 and g8, and the rook controls the h-file. Remember: when a knight stands on e7, check the sacrifice on h7.",
      "stil": "normal"
     }
    ],
@@ -4496,7 +4496,7 @@
     "loesung": "1. Ne7+ Kh8 2. Qxh7+!! Kxh7 3. Rh5#",
     "akzeptiert": [],
     "motiv": "Anastasia's mate",
-    "text": "Der Springer e7 nimmt dem König g6 und g8, also öffnet 2. Dxh7+!! die h-Linie für den Turm. 3. Th5# ist das Anastasia-Matt."
+    "text": "The knight on e7 takes g6 and g8 from the king, so 2. Qxh7+!! opens the h-file for the rook. 3. Rh5# is Anastasia's mate."
    }
   },
   {
@@ -4511,16 +4511,16 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Boden-Matt: ",
+     "text": "Boden's mate: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxc6+! bxc6 2. La6#"
+     "text": "1. Qxc6+! bxc6 2. Ba6#"
     },
     {
      "art": "text",
-     "text": ". Schwarz muss mit dem Bauern schlagen, da der König kein Feld hat (b8 beherrscht der Läufer f4) und sich keine Figur auf c7 dazwischenstellen kann. Danach kreuzen sich die Diagonalen der Läufer: Der eine gibt auf a6 Schach und nimmt dem König b7, der andere nimmt ihm c7 und b8. Auf d7 und d8 steht Schwarz sich selbst im Weg. Merke dir: Hält nach der langen Rochade nur noch der b-Bauer die Diagonale a6–c8 geschlossen, prüfe das Opfer, das ihn wegzieht.",
+     "text": ". Black must capture with the pawn, because the king has no square (the bishop on f4 controls b8) and no piece can interpose on c7. Then the bishops' diagonals cross: one gives check on a6 and takes b7 from the king, the other takes c7 and b8. On d7 and d8, Black's own pieces are in the king's way. Remember: if, after queenside castling, only the b-pawn still keeps the diagonal a6–c8 closed, check the sacrifice that draws it away.",
      "stil": "normal"
     }
    ],
@@ -4532,7 +4532,7 @@
     "loesung": "1. Qxc6+! bxc6 2. Ba6#",
     "akzeptiert": [],
     "motiv": "Boden's mate",
-    "text": "1. Dxc6+! zwingt 1... bxc6 und öffnet die Diagonale a6–c8. Nach 2. La6# kreuzen sich die Diagonalen der beiden Läufer, und die eigenen Figuren auf d7 und d8 nehmen dem König die Flucht."
+    "text": "1. Qxc6+! forces 1... bxc6 and opens the diagonal a6–c8. After 2. Ba6#, the diagonals of the two bishops cross, and the king's own pieces on d7 and d8 cut off its escape."
    }
   },
   {
@@ -4547,21 +4547,21 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Damiano-Matt: ",
+     "text": "Damiano's mate: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Th8+! Kxh8 2. Dh5+"
+     "text": "1. Rh8+! Kxh8 2. Qh5+"
     },
     {
      "art": "text",
-     "text": " (oder ",
+     "text": " (or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Dh1+"
+     "text": "2. Qh1+"
     },
     {
      "art": "text",
@@ -4570,11 +4570,11 @@
     },
     {
      "art": "zug",
-     "text": "2... Kg8 3. Dh7#"
+     "text": "2... Kg8 3. Qh7#"
     },
     {
      "art": "text",
-     "text": ". Das Turmopfer lenkt den König nach h8 (Hinlenkung, Motiv 6): Die Dame kommt mit Schach auf die h-Linie, und der Bauer g6 deckt das Mattfeld. Die Dame d5 ist vom Bauern c6 angegriffen, Schwarz kommt aber nie dazu, sie zu schlagen, denn jeder weiße Zug gibt Schach. Merke dir: Solange du Schach gibst, kommt keine Drohung des Gegners zum Zug.",
+     "text": ". The rook sacrifice lures the king to h8 (decoy, motif 6): the queen comes to the h-file with check, and the pawn on g6 defends the mating square. The queen on d5 is attacked by the pawn on c6, but Black never gets the chance to capture it, because every white move gives check. Remember: as long as you give check, none of your opponent's threats get a turn.",
      "stil": "normal"
     }
    ],
@@ -4588,7 +4588,7 @@
      "1. Rh8+! Kxh8 2. Qh1+"
     ],
     "motiv": "Damiano's mate",
-    "text": "Das Turmopfer 1. Th8+! lenkt den König nach h8, die Dame kommt mit Schach auf die h-Linie, und 3. Dh7# ist matt, weil g6 das Mattfeld deckt. Weil jeder Zug Schach gibt, kommt Schwarz nie dazu, die Dame d5 zu schlagen."
+    "text": "The rook sacrifice 1. Rh8+! lures the king to h8, the queen comes to the h-file with check, and 3. Qh7# is mate because g6 defends the mating square. Because every move gives check, Black never gets the chance to capture the queen on d5."
    }
   },
   {
@@ -4603,35 +4603,35 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Lolli-Matt: ",
+     "text": "Lolli's mate: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dh6!"
+     "text": "1. Qh6!"
     },
     {
      "art": "text",
-     "text": " droht ",
+     "text": " threatens ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Dg7#"
+     "text": "2. Qg7#"
     },
     {
      "art": "text",
-     "text": ", und Schwarz kann das Feld g7 nicht mehr decken, da der Läufer fehlt, der es im Fianchetto bewacht. Wieder entscheidet ein ruhiger Zug wie in ",
+     "text": ", and Black can no longer defend the square g7, because the bishop that guards it in the fianchetto is missing. Once again a quiet move decides, as in ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 7.54",
+     "text": "Fig. 7.54",
      "abbildung": "7.54"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Ein Bauer auf f6 und ein Fianchetto ohne Läufer ergeben zusammen ein Mattbild.",
+     "text": ". Remember: a pawn on f6 and a fianchetto without its bishop together make a mating pattern.",
      "stil": "normal"
     }
    ],
@@ -4643,7 +4643,7 @@
     "loesung": "1. Qh6!",
     "akzeptiert": [],
     "motiv": "Lolli's mate",
-    "text": "1. Dh6! droht 2. Dg7#, und kein schwarzer Läufer verteidigt mehr g7. Ein Bauer auf f6 und ein Fianchetto ohne Läufer ergeben zusammen ein Mattbild."
+    "text": "1. Qh6! threatens 2. Qg7#, and no black bishop defends g7 anymore. A pawn on f6 and a fianchetto without its bishop together make a mating pattern."
    }
   }
  ],
@@ -4655,7 +4655,7 @@
    "id": "k07-a1",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "1. Doppelangriff und Gabel",
+   "titel": "1. Double attack and fork",
    "startFen": "r5k1/p5pp/8/3Q4/8/8/5PPP/6K1 b - - 0 1",
    "zuege": [
     {
@@ -4684,7 +4684,7 @@
    "id": "k07-a10",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "4. Batterie und Abzug",
+   "titel": "4. Battery and discovered attack",
    "startFen": "rnbqk2r/pppp2pp/5n2/4N3/2B5/8/PPPP1PPP/R1BQR1K1 w kq - 0 1",
    "zuege": [
     {
@@ -4750,7 +4750,7 @@
    "id": "k07-a11",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "5. Das Doppelschach",
+   "titel": "5. The double check",
    "startFen": "4k3/pbpp1ppp/1q6/7r/4N3/8/PP3PPP/2BQR1K1 w - - 0 1",
    "zuege": [
     {
@@ -4850,7 +4850,7 @@
    "id": "k07-a14",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "6. Köder, Hinlenkung und Räumung",
+   "titel": "6. Bait, decoy and clearance",
    "startFen": "r5k1/pp3pp1/3q4/6N1/8/2P5/PP3PP1/4R1KR w - - 0 1",
    "zuege": [
     {
@@ -4923,7 +4923,7 @@
    "id": "k07-a16",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "6. Köder, Hinlenkung und Räumung",
+   "titel": "6. Bait, decoy and clearance",
    "startFen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
    "zuege": [
     {
@@ -4959,7 +4959,7 @@
    "id": "k07-a17",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "6. Köder, Hinlenkung und Räumung",
+   "titel": "6. Bait, decoy and clearance",
    "startFen": "r6k/1p3pRp/8/5N2/8/q7/P4P1P/6QK w - - 0 1",
    "zuege": [
     {
@@ -4995,7 +4995,7 @@
    "id": "k07-a18",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "7. Beseitigung der Verteidigung",
+   "titel": "7. Removing the defender",
    "startFen": "q1r3k1/pp1b1ppp/2n5/1B1N4/8/8/PPQ2PPP/3R2K1 w - - 0 1",
    "zuege": [
     {
@@ -5081,7 +5081,7 @@
    "id": "k07-a20",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "8. Überlastung und Ablenkung",
+   "titel": "8. Overloading and deflection",
    "startFen": "3r2k1/pp3ppp/1q6/3n4/8/1B6/PPQ2PPP/4R1K1 w - - 0 1",
    "zuege": [
     {
@@ -5117,7 +5117,7 @@
    "id": "k07-a23",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "9. Der Zwischenzug",
+   "titel": "9. The intermezzo",
    "startFen": "r3r1k1/ppq2ppp/8/8/8/7P/P3QPP1/R1R3K1 w - - 0 1",
    "zuege": [
     {
@@ -5166,7 +5166,7 @@
    "id": "k07-a25",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "10. Die gefangene Figur",
+   "titel": "10. The trapped piece",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -5360,7 +5360,7 @@
    "id": "k07-a26",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "11. Taktik rund um die Umwandlung",
+   "titel": "11. Tactics around promotion",
    "startFen": "8/pb2P1kp/5q2/8/8/B7/6PP/7K w - - 0 1",
    "zuege": [
     {
@@ -5409,7 +5409,7 @@
    "id": "k07-a27",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "12. Rettung durch Dauerschach und Patt",
+   "titel": "12. Rescue by perpetual check and stalemate",
    "startFen": "6k1/2QR1ppp/8/8/4q3/6P1/PP5P/6K1 b - - 0 1",
    "zuege": [
     {
@@ -5509,7 +5509,7 @@
    "id": "k07-a29",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "12. Rettung durch Dauerschach und Patt",
+   "titel": "12. Rescue by perpetual check and stalemate",
    "startFen": "5r1k/6pp/8/3Q4/3b4/7p/1q5P/7K w - - 0 1",
    "zuege": [
     {
@@ -5544,7 +5544,7 @@
    "id": "k07-a3",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "1. Doppelangriff und Gabel",
+   "titel": "1. Double attack and fork",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -5805,7 +5805,7 @@
    "id": "k07-a30",
    "kapitel": 7,
    "abschnitt": "7.3",
-   "titel": "Rechnen statt hoffen: der Abtausch auf einem Feld",
+   "titel": "Calculate instead of hoping: the exchange on one square",
    "startFen": "3r2k1/p3bppp/4pn2/3p4/8/2N1P1P1/PP3PBP/3R2K1 w - - 0 1",
    "zuege": [
     {
@@ -5886,7 +5886,7 @@
    "id": "k07-a33",
    "kapitel": 7,
    "abschnitt": "7.3",
-   "titel": "Figuren hinter Figuren zählen mit",
+   "titel": "Pieces behind pieces count too",
    "startFen": "r2r2k1/pp3ppp/5n2/3p4/8/2N4P/PP1R1PP1/3R2K1 w - - 0 1",
    "zuege": [
     {
@@ -5946,7 +5946,7 @@
    "id": "k07-a37",
    "kapitel": 7,
    "abschnitt": "7.4",
-   "titel": "Damenopfer auf h7 und Anastasia-Matt",
+   "titel": "Queen sacrifice on h7 and Anastasia's mate",
    "startFen": "1q3r1k/4Nppp/8/7Q/8/3R4/5PPP/6K1 w - - 0 1",
    "zuege": [
     {
@@ -5992,7 +5992,7 @@
    "id": "k07-a4",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "2. Die Fesselung",
+   "titel": "2. The pin",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -6304,7 +6304,7 @@
    "id": "k07-a5",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "2. Die Fesselung",
+   "titel": "2. The pin",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -7020,7 +7020,7 @@
    "id": "k07-a6",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "3. Der Spieß",
+   "titel": "3. The skewer",
    "startFen": "7r/6k1/8/8/8/8/8/R3K3 b - - 0 1",
    "zuege": [
     {
@@ -7156,7 +7156,7 @@
    "id": "k07-a8",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "4. Batterie und Abzug",
+   "titel": "4. Battery and discovered attack",
    "startFen": "r2q1rk1/pp2bppp/4pn2/8/3P2P1/2NQ4/PPB2P1P/R4RK1 w - - 0 1",
    "zuege": [
     {
@@ -7218,7 +7218,7 @@
    "id": "k07-a9",
    "kapitel": 7,
    "abschnitt": "7.2",
-   "titel": "4. Batterie und Abzug",
+   "titel": "4. Battery and discovered attack",
    "startFen": "5rk1/pp1qbppp/2n5/8/8/3BQN2/PP3PPP/3R2K1 w - - 0 1",
    "zuege": [
     {
@@ -7267,7 +7267,7 @@
    "id": "k07-a45-k",
    "kapitel": 7,
    "abschnitt": "7.5",
-   "titel": "Konstruierte Partie zu Abb. 7.45",
+   "titel": "Constructed game for Fig. 7.45",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {

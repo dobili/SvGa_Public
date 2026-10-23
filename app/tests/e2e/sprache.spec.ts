@@ -24,12 +24,12 @@ test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und 
     "true",
   );
 
-  // Englisch: dieselbe deutsche Unterschrift, der Zug mit englischem Buchstaben („2. Bf4“).
+  // Englisch: seit 0.2.118 (P6) die englische Unterschrift aus /daten/en/a1.
   await page.getByRole("radio", { name: "English (preview)" }).click();
   await page.getByRole("navigation").getByRole("button", { name: "Book" }).click();
   await page.getByLabel("Open figure").fill("1.2");
   await page.getByRole("button", { name: "Open", exact: true }).click();
-  await expect(page.locator(".unterschrift").first()).toContainText("Nach 2. Bf4 – Ziel 1");
+  await expect(page.locator(".unterschrift").first()).toContainText("After 2. Bf4 – Goal 1");
   await page.getByRole("button", { name: "Settings", exact: true }).click();
   await page.getByRole("tab", { name: "Display" }).click();
   await page.getByRole("radio", { name: "Deutsch" }).click();

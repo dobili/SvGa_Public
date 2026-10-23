@@ -29,8 +29,14 @@ const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> 
  * muss in den Einstellungen gewählt werden, bis es Buch- und Trainerdaten auf Englisch gibt.
  */
 const FERTIGE_SPRACHEN: readonly string[] = ["de"];
-/** Sprachen mit eigenen Buch- und Trainerdaten (/daten/<sprache>/); sonst gelten die deutschen. */
+/** Sprachen mit eigenen Trainerdaten (/daten/<sprache>/trainer); sonst gelten die deutschen. */
 const DATENSPRACHEN: readonly string[] = ["de"];
+/**
+ * Sprachen mit eigenen Buchdaten (/daten/<sprache>/a1). Englisch seit 0.2.118 (Paket P6, R25):
+ * Bildunterschriften, Übungen, Glossar und Nachschlagen liegen übersetzt vor; die Trainerdaten
+ * und die Eröffnungsliste folgen noch.
+ */
+const BUCHDATENSPRACHEN: readonly string[] = ["de", "en"];
 /** Sprache, wenn weder der Leser noch das Gerät eine verfügbare wählt. */
 export const GRUNDSPRACHE = "de";
 
@@ -154,6 +160,14 @@ export function fertigeSprachen(): string[] {
  */
 export function datensprache(): string {
   return DATENSPRACHEN.includes(aktuelleSprache) ? aktuelleSprache : GRUNDSPRACHE;
+}
+
+/**
+ * Die Sprache der Buchdaten (Kapitel, Glossar, Nachschlagen): die der App, wenn es sie in ihr
+ * gibt, sonst Deutsch. Beispiel: App auf Englisch → „en“ (/daten/en/a1), Trainerdaten bleiben „de“.
+ */
+export function buchdatensprache(): string {
+  return BUCHDATENSPRACHEN.includes(aktuelleSprache) ? aktuelleSprache : GRUNDSPRACHE;
 }
 
 /** Gebietsschema für Zahlen und Daten je Sprache. */

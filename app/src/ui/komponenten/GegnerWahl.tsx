@@ -202,6 +202,7 @@ export function GegnerWahl({
   beiKategorie,
   stufeninhalt,
   editor,
+  einstellungen,
   beginnen,
   uhr = null,
 }: {
@@ -217,6 +218,9 @@ export function GegnerWahl({
   beiKategorie: (kategorie: Gegnerkategorie) => void;
   stufeninhalt: ReactNode;
   editor: ReactNode;
+  /** Farbe, Bedenkzeit, Wertung, Spielhilfen, Eröffnung: über der Art des Gegners (R27). */
+  einstellungen: ReactNode;
+  /** Der Knopf „Partie beginnen“, direkt unter der Art des Gegners (R27). */
   beginnen: ReactNode;
   /** Die gewählte Uhr (seit 0.2.117: Zahl des Bots mit Uhr in der Sprechblase). */
   uhr?: Uhrangabe | null;
@@ -230,9 +234,12 @@ export function GegnerWahl({
         text={(w) => t(`spielen.gegner.${w}`)}
         beiWahl={beiGegner}
       />
+      {einstellungen}
       {gegner === "mensch" && beginnen}
       {gegner === "engine" && (
         <div className="gegnerwahl">
+          {/* R27 (Wunsch des Autors, 23.10.2026): Die Art des Gegners steht direkt über
+              „Partie beginnen“, die übrigen Einstellungen darüber. */}
           <Vorschauwahl
             name={t("spielen.kategorie")}
             werte={KATEGORIEN}

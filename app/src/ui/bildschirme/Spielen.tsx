@@ -146,7 +146,7 @@ function Einstellungen({
           </>
         }
         editor={<GegnerEditor />}
-        beginnen={
+        einstellungen={
           <>
             {/* Farbe, Bedenkzeit, Rücknahme und Spielhilfen direkt über „Partie beginnen“
                 (Wunsch des Autors, 19.10.2026): Unter dem Gitter der Bots übersah man sie. */}
@@ -210,9 +210,9 @@ function Einstellungen({
                 </details>
               )}
             </div>
-            {beginnen}
           </>
         }
+        beginnen={beginnen}
       />
     </section>
   );

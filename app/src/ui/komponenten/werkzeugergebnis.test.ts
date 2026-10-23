@@ -32,7 +32,8 @@ function aus(id: string, nummer: string, sicht: Farbe): string {
     zug: naechsterBuchzug(nummer) ?? undefined,
     fortsetzung: [],
   });
-  return JSON.stringify(ergebnis);
+  // Ohne den Stempel der Sicht (`seite`), den `wende` immer setzt: Es zählt nur der Inhalt.
+  return JSON.stringify(ergebnis ? { ...ergebnis, seite: undefined } : null);
 }
 
 /** Zahl der geprüften Abbildungen, an denen die Sicht etwas ändert. */

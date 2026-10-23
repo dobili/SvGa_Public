@@ -73,6 +73,11 @@ export interface Werkzeugergebnis {
   /** Text für „So prüft die App“. */
   readonly regel: string;
   /**
+   * Die Seite, für die gerechnet wurde (die Sicht); setzt `wende` in register.ts. Die Legende der
+   * Karte nennt damit die Farben statt „eigene Seite“ (R41, Wunsch des Autors, 23.10.2026).
+   */
+  readonly seite?: Farbe;
+  /**
    * Gut sichtbarer kurzer Hinweis oben in der Karte, etwa dass die Todsünden nur Kandidaten sind
    * (Wunsch des Autors zu C2.3, 16.10.2026). Fehlt bei den meisten Werkzeugen.
    */

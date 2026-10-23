@@ -133,7 +133,9 @@ export function stellungswerkzeuge(kapitel: number): {
  */
 export function wende(id: string, eingabe: Werkzeugeingabe): Werkzeugergebnis | null {
   const werkzeug = WERKZEUGE.find((kandidat) => kandidat.id === id);
-  return werkzeug ? werkzeug.berechne(eingabe) : null;
+  const ergebnis = werkzeug ? werkzeug.berechne(eingabe) : null;
+  // Die Sicht wandert mit, damit die Legende der Karte die Farben nennen kann (R41).
+  return ergebnis ? { ...ergebnis, seite: eingabe.perspektive } : null;
 }
 
 /**

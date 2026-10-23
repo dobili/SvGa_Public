@@ -16,7 +16,9 @@ describe("k5-felder", () => {
       "d5: starkes Feld – kein gegnerischer Bauer kann es mehr angreifen, ein eigener Bauer stützt es: ein Vorposten; erreichbar für c3 und d1",
     );
     const s = stellungVon("5.8");
-    expect(felder(s, "black").befunde[0]?.zeilen[0]).toMatch(/^d5: Bauernloch – kein eigener Bauer/);
+    expect(felder(s, "black").befunde[0]?.zeilen[0]).toMatch(
+      /^d5: Bauernloch – kein eigener Bauer/,
+    );
     expect(felder(s, s.amZug).markierungen).toContainEqual({
       typ: "feld",
       farbe: "gold",
@@ -31,7 +33,7 @@ describe("k5-felder", () => {
     expect(schwarz.befunde[0]?.zeilen).toEqual([
       "Kein Loch auf der 3. bis 5. Reihe, das der Gegner nutzen kann.",
     ]);
-    expect(felder(s, "white").befunde[3]?.zeilen.join(" ")).not.toContain("f6");
+    expect(felder(s, "white").befunde[1]?.zeilen.join(" ")).not.toContain("f6");
   });
 
   it("Abb. 5.32 (Carlsbad): Springerfeld e5, solange Schwarz nicht ...f6 spielt", () => {

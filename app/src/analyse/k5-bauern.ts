@@ -127,16 +127,45 @@ function befundFuer(p: Stellungsprofil, farbe: Color): { befund: Befund; liste: 
 }
 
 /**
- * Beantwortet Leitfrage 2 für beide Seiten.
+ * Die schwachen Bauern des Gegners als Ziele der gewählten Seite (R41: Die Karte erklärt nur die
+ * gewählte Seite; seine Inseln und Linien zeigt der Sicht-Schalter).
+ * Beispiel: Abb. 5.17 aus Sicht von Schwarz: „Ziele bei Weiß: d4: Isolani“.
+ */
+function zielbefund(p: Stellungsprofil, farbe: Color): { befund: Befund; liste: SchwacherBauer[] } {
+  const liste = schwacheMitArt(p.bauernschwaechen(farbe), p.bauernprofil(farbe));
+  const zeilenZiele =
+    liste.length === 0
+      ? [t("bauern.keineZiele")]
+      : liste.map((schwacher) =>
+          t("bauern.schwach", {
+            feld: feldname(schwacher.feld),
+            art: t(`bauern.art.${schwacher.art}`),
+          }),
+        );
+  return {
+    befund: {
+      kennung: farbe,
+      art: "E",
+      titel: t("bauern.ziele", { farbe: farbname(farbe) }),
+      zeilen: zeilenZiele,
+      farbe: "gold",
+    },
+    liste,
+  };
+}
+
+/**
+ * Beantwortet Leitfrage 2 für die gewählte Seite, dazu die Ziele beim Gegner.
  *
  * Warum: „Welche Bauern kann kein Bauer mehr decken?“ (Kapitel 5). Eingaben: Stellung, eigene
- * Seite. Ausgabe: ein Befund je Seite. Beispiel: Abb. 5.17: Weiß „d4: Isolani“, drei
- * Bauerninseln; Schwarz gesund, zwei Bauerninseln.
+ * Seite. Ausgabe: der Befund der eigenen Seite (Deckungstest, Inseln, Linien) und die schwachen
+ * Bauern des Gegners als Ziele. Beispiel: Abb. 5.17 aus Sicht von Weiß: „d4: Isolani“, drei
+ * Bauerninseln; „Ziele bei Schwarz: keine“.
  */
 export function bauern(stellung: Stellung, eigen: Color): Werkzeugergebnis {
   const p = profil(stellung);
   const mein = befundFuer(p, eigen);
-  const sein = befundFuer(p, gegner(eigen));
+  const sein = zielbefund(p, gegner(eigen));
   return {
     werkzeug: "k5-bauern",
     art: "E",

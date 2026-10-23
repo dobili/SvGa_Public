@@ -47,14 +47,13 @@ function buchverweis(bilanz: Bilanz): Befund {
 }
 
 /**
- * Die Planbilanz für beide Seiten.
+ * Die Planbilanz für die gewählte Seite.
  *
- * Eingaben: Stellung, eigene Seite (für die Markierungen; Weiß steht immer zuerst), Planbilanz
- * des Buches (freiwillig).
- * Ausgabe: je Planfrage ein Befund mit einer Zeile je Seite, der Plan in einem Satz je Seite,
- * der Verweis auf die Planbilanz des Buches. Beispiel: Abb. 6.20: Weiß Damenflügel (Kette
- * e4–d5, Hebel c4–c5 gegen d6), Schwarz Königsflügel (Hebel f7–f5 gegen e4); Figur: Läufer c1
- * und Läufer c8 zu Hause.
+ * Eingaben: Stellung, eigene Seite, Planbilanz des Buches (freiwillig).
+ * Ausgabe: je Planfrage ein Befund mit der Zeile der eigenen Seite, der Plan in einem Satz, der
+ * Verweis auf die Planbilanz des Buches (dort stehen beide Seiten nebeneinander). Beispiel:
+ * Abb. 6.20, Weiß: Damenflügel (Kette e4–d5, Hebel c4–c5 gegen d6); in der Sicht von Schwarz:
+ * Königsflügel (Hebel f7–f5 gegen e4).
  */
 export function planbilanz(stellung: Stellung, eigen: Color, bilanz?: Bilanz): Werkzeugergebnis {
   const p = profil(stellung);
@@ -62,8 +61,10 @@ export function planbilanz(stellung: Stellung, eigen: Color, bilanz?: Bilanz): W
   const unruhig = unruhigesErgebnis(p, "k6-planbilanz", t("planbilanz.titel"), "N");
   if (unruhig)
     return { ...unruhig, befunde: [...unruhig.befunde, ...(bilanz ? [buchverweis(bilanz)] : [])] };
-  // Wie die Tabelle im Buch: Weiß zuerst, gleich wer am Zug ist (Nachtest des Autors, 0.2.26).
-  const seiten: readonly Color[] = ["white", "black"];
+  // Nur die gewählte Seite (R41, Wunsch des Autors vom 23.10.2026; bis dahin beide Seiten wie die
+  // Tabelle im Buch): „Was will mein Gegner?“ beschreibt seinen Plan aus dieser Sicht, die
+  // andere Seite zeigt der Sicht-Schalter.
+  const seiten: readonly Color[] = [eigen];
   const lagen = new Map(seiten.map((farbe) => [farbe, planlage(p, farbe)] as const));
   const lage = (farbe: Color) => lagen.get(farbe) ?? planlage(p, farbe);
   const zeile = (farbe: Color, inhalt: string) =>

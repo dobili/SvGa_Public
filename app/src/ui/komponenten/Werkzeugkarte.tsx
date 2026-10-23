@@ -10,7 +10,8 @@
  * prüft die App“ stehen Erklärung und Regel des Werkzeugs und der Hinweis, dass die Werkzeuge
  * irren können und das Buch maßgeblich ist (SoPrueft.tsx). Darüber steht klein die Legende der
  * Markierungen am Brett (seit 0.2.30, Wunsch des Autors); im Leerfall (U12, ohne Befunde und
- * Markierungen) fehlt sie. Hat das Ergebnis einen Hinweis (etwa
+ * Markierungen) fehlt sie. Die Legende nennt die Farben der gewählten Sicht („Drohungen von
+ * Schwarz“ statt „des Gegners“), damit sie dem Sicht-Schalter folgt (R41, 23.10.2026). Hat das Ergebnis einen Hinweis (etwa
  * „Nur Kandidaten“ bei den Todsünden, seit 0.2.33), steht er hervorgehoben unter dem Namen.
  * Seit 0.2.85 (Wunsch des Autors) zeigt die Karte immer alle Befunde; das gestufte Aufklappen mit
  * „Mehr …“ (0.2.30 bis 0.2.84) ist entfallen, etwa die zweite Seite bei der Angriffsregel.
@@ -20,8 +21,9 @@ import { ArrowLeftRight } from "lucide-react";
 import { erklaerungVon, legendeVon } from "../../analyse/register";
 import type { Befund, Werkzeugergebnis } from "../../analyse/werkzeug";
 import { useNavigation } from "../../app/navigationsKontext";
+import { farbname } from "../../analyse/texte";
 import { t } from "../../i18n/sprache";
-import { farbkuerzel } from "../../schach/stellung";
+import { farbkuerzel, gegner } from "../../schach/stellung";
 import { SoPrueft } from "./SoPrueft";
 import type { Sicht } from "./useSicht";
 import { Waage } from "./Waage";
@@ -96,6 +98,9 @@ export function Werkzeugkarte({
   const befunde = ergebnis.befunde;
   const erklaerung = erklaerungVon(ergebnis.werkzeug);
   const legende = legendeVon(ergebnis.werkzeug);
+  // Ohne Sicht (Werkzeug direkt gerechnet) gilt Weiß; in der App setzt `wende` die Seite immer.
+  const seite = ergebnis.seite ?? "white";
+  const farben = { eigen: farbname(seite), gegner: farbname(gegner(seite)) };
   return (
     <section className="karte" aria-live="polite" data-testid="werkzeugkarte">
       {/* Der Sicht-Schalter steht oben rechts neben dem Namen (Wunsch des Autors, Nachtest
@@ -120,7 +125,7 @@ export function Werkzeugkarte({
       <p className="fazit">{ergebnis.fazit}</p>
       {legende && (ergebnis.befunde.length > 0 || ergebnis.markierungen.length > 0) && (
         <p className="legende">
-          <strong>{t("werkzeug.legendeTitel")}</strong> {t(legende)}
+          <strong>{t("werkzeug.legendeTitel")}</strong> {t(legende, farben)}
         </p>
       )}
       <SoPrueft

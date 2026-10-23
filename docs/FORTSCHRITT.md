@@ -1806,3 +1806,13 @@ Website (`inhalte/de/training/`), Namen der Bots.
   Najdorf. Erster Zug: 400 e4 63 % d4 20 % e3 5 %; 2400 e4 46 % d4 34 % Sf3 11 %.
 - Für ein tieferes Buch später (Teil E) den Monatsstrom der Lichess-Datenbank nach Zugfolgen
   zählen (nur Rechenzeit).
+
+### Nachtlauf 23./24.10.2026 (Fable, Freigabe des Autors)
+
+- Läuft: Beta-Binomial (drei Filter nacheinander, kette2.sh), Tiefe-18-Abgleich (814 Spielerpartien,
+  je Zelle bis 40, eine je Spieler; app/skripte/eichung-rechnen.mjs mit der Engine der App,
+  Ausgabe buch/arbeit/tiefe18/bewertet-*.jsonl), Elo-Modell (buch/arbeit/spielerprofil/
+  elomodell.py: Kennzahlen je Partie → partiekennzahlen.jsonl, dann Stufenvergleich je Zeitklasse
+  mit Gradient Boosting, Prüfung an 20 % zurückgelegten Spielern, Teilmodelle je Phase).
+- Nach einem Neustart des Containers: kette2.sh, den Engine-Lauf (gleicher Aufruf, fortsetzbar)
+  und elomodell.py neu starten.

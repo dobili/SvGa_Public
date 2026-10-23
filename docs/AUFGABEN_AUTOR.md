@@ -159,6 +159,35 @@ Spielgefühl.
       Engine, wie viel schwächer dein Zug ist, und nennt beide Bewertungen aus Sicht von Weiß
       (Matt als „#5“). Bei Matt nennt sie keinen Abstand in Bauern. Danach c7 ziehen, es geht
       weiter wie bisher.
+- [ ] N713. **Zug erraten: Bewertungsbalken (R45):** Training › Zug erraten › Morphys Opernpartie
+      als Weiß › Runde starten. Links am Brett steht der Balken wie im Rückblick nach einer
+      Partie. Nach jedem Zug rechnet er kurz neu (etwa eine Sekunde, nach einem verfehlten Zug
+      erst nach dem Vergleich). Schon umgesetzt: Der Balken ist immer da, ohne Schalter;
+      Widerspruch genügt, falls er dir beim Raten zu viel verrät.
+- [ ] N714. **Zug erraten: Pfeile für den letzten Zug:** Rate einen Zug falsch (etwa 2. d4 statt
+      2. Sf3). Gold erscheint der Partiezug, rot dein Zug, dazu „Gold der Partiezug, rot dein
+      Zug.“ Darunter vergleicht die Engine beide Züge mit beiden Bewertungen. Bei einem Treffer
+      zeigt nur der goldene Pfeil den Zug.
+- [ ] N715. **Zug erraten: Hinweis-Knopf:** Tippe „Hinweis: Figur zeigen“. Ein goldenes Feld liegt
+      unter der Figur, die in der Partie zieht. Ziehst du dann richtig, steht da „Getroffen, mit
+      Hinweis: zählt nicht als Treffer.“ Schon umgesetzt: Ein Treffer mit Hinweis zählt als
+      Versuch, aber nicht als Treffer (sonst wäre die Trefferzahl mit Hinweisen wertlos);
+      Widerspruch genügt.
+- [ ] N716. **Zug erraten: Kommentar nach Motiven und Fehlerarten:** Spiel die Opernpartie bis zum
+      Schluss (Hinweise helfen). Bei 15. Lxd7+, 16. Db8+ und 17. Td8# steht unter dem Brett etwa
+      „Im Partiezug Db8+ steckt: Ablenkung, Doppelangriff, Mattbild Grundreihenmatt.“ Weicht dein
+      Zug als Fehler ab (ab „?!“ wie im Rückblick), nennt der Kommentar die Fehlerart, etwa
+      „Dein Zug … lässt die Drohung … stehen“. Schon umgesetzt: Motive nennt die App nur, wenn
+      die Folge Material gewinnt oder mattsetzt; die Motiverkennung ist für Taktikaufgaben
+      gebaut und fände sonst in jedem ruhigen Zug etwas („2. Sf3: Abzug“). Widerspruch genügt.
+- [ ] N717. **Zug erraten: Blättern:** Über den Knöpfen unter dem Brett stehen die gespielten Züge.
+      Tippe einen Zug oder „Zum Anfang“, „zurück“, „vor“: Das Brett zeigt die frühere Stellung,
+      der Balken bewertet sie, und ein Satz sagt, dass du zum Weiterraten ganz nach vorne
+      blättern musst. „Zum Ende“ bringt dich zurück.
+- [ ] N718. **Zug erraten: Analysemodus:** Tippe „Analysieren“ und ziehe frei für beide Seiten,
+      etwa ein paar Züge, die du erwägst. Der Balken bewertet jede Stellung, „Zug zurück“ nimmt
+      einen Analysezug zurück. „Analyse beenden“ stellt die Partiestellung wieder her, dann legst
+      du deinen Zug fest. Die Analysezüge zählen nicht.
 
 ---
 

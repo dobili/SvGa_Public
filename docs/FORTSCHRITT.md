@@ -1375,10 +1375,21 @@ Trainerdaten in `inhalte/` (Paket P4).
       Studie), Vergleich beider mit der Engine (`Repertoireaufgabe` mit `vergleichen`,
       gemeinsame Anzeige `Zugvergleich.tsx` und `vergleichspfeile.ts` für Studien und Zug
       erraten; `rateurteil` liefert beide Werte und die Variante nach dem eigenen Zug). N712.
-- [ ] R45 Zug erraten: Hinweis-Knopf (Figur), Pfeile für den letzten Zug, Bewertungsbalken live,
-      Kommentar nach Motiven und Fehlerarten, Zugnavigation, Analysemodus.
+- [x] R45 Zug erraten: Hinweis-Knopf (Figur; Treffer mit Hinweis zählt nicht), Pfeile für den
+      letzten Zug, Bewertungsbalken live, Kommentar nach Motiven und Fehlerarten, Zugnavigation,
+      Analysemodus. Dateien: `ui/trainer/Zugerratenaufgabe.tsx` (Brett und Ablauf),
+      `useRatestand.ts` (Stand und Raten), `useZugerratenEngine.ts` (eine Engine nacheinander für
+      Vergleich und Balken, mit Zwischenspeicher je Stellung), `Zugerratenleiste.tsx` (Blättern,
+      Analyse), `Zugkommentare.tsx` und `training/zugkommentar.ts` (Motive aus Kapitel 7 nur bei
+      Materialgewinn ab 2 oder Matt, Rückschläge ausgenommen; Fehlerart wie im Rückblick ab
+      „?!“). Der Oberflächentest `feld()` in `trainer-kapitel2bis12.spec.ts` sucht nur noch auf
+      dem Brett, weil die Zugleiste gleichnamige Knöpfe hat. N713–N718.
 
-**Nächster Schritt:** R45.
+Prüfung: `npm run pruefen` (1251 Tests) und alle 142 Oberflächentests in Chromium grün.
+
+**Nächster Schritt:** Paket P5 fertig. Rückmeldung des Autors zu N710–N718 abwarten; Zweig
+`p5-trainerbedienung` danach mit `weiter-ohne-autor` zusammenführen (nicht nach main ohne
+Auftrag).
 
 ## Offene Punkte
 

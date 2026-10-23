@@ -28,7 +28,7 @@ from pathlib import Path
 from typing import Any
 
 from pipeline.uebersetzen.pruefhilfe import pruefhilfe
-from pipeline.uebersetzen.tabellen import kennung, lies_tabelle, schreibe_tabelle
+from pipeline.uebersetzen.tabellen import kennung, lies_tabelle, schreibe_json, schreibe_tabelle
 from pipeline.uebersetzen.uebertragen import Bericht, begriffsuebersetzer, uebersetze
 from pipeline.uebersetzen.vorlage import platzhaltertexte
 
@@ -44,10 +44,7 @@ def _lies(pfad: Path) -> Any:
     return json.loads(pfad.read_text(encoding="utf-8"))
 
 
-def _schreibe(pfad: Path, daten: Any) -> None:
-    # Wie pipeline/bauen: eingerückt, Umlaute im Klartext, damit Änderungen lesbar bleiben.
-    pfad.parent.mkdir(parents=True, exist_ok=True)
-    pfad.write_text(json.dumps(daten, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+_schreibe = schreibe_json
 
 
 def datendateien(quelle: Path) -> list[str]:

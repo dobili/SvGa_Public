@@ -17,6 +17,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 from pathlib import Path
 
 TABELLENVERSION = 1
@@ -62,5 +63,16 @@ def schreibe_tabelle(pfad: Path, texte: dict[str, str], reihenfolge: list[str]) 
     geordnet = {k: texte[k] for k in dict.fromkeys(reihenfolge) if k in texte}
     geordnet.update({k: v for k, v in texte.items() if k not in geordnet})
     inhalt = {"schemaVersion": TABELLENVERSION, "datei": pfad.name, "texte": geordnet}
+    schreibe_json(pfad, inhalt)
+
+
+def schreibe_json(pfad: Path, daten: object) -> None:
+    """Schreibt JSON wie pipeline/bauen (eingerückt, Umlaute im Klartext), ohne halbe Dateien.
+
+    Warum über eine Zwischendatei: Laufen zwei Übersetzungen zugleich, liest die eine sonst
+    womöglich die Tabelle der anderen, während sie geschrieben wird.
+    """
     pfad.parent.mkdir(parents=True, exist_ok=True)
-    pfad.write_text(json.dumps(inhalt, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    zwischen = pfad.with_name(f".{pfad.name}.{os.getpid()}")
+    zwischen.write_text(json.dumps(daten, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    os.replace(zwischen, pfad)

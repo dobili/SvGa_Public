@@ -105,7 +105,9 @@ Netzzugang der Cloud-Umgebung: „Voll“. npm und PyPI sind erreichbar, es gilt
 - Playwright lokal: In der Cloud-Umgebung liegt ein Chromium unter `/opt/pw-browsers`, das nicht zur
   Playwright-Version passt. Deshalb lokal nur Chromium und mit festem Pfad:
   `CHROMIUM_PFAD=/opt/pw-browsers/chromium-1194/chrome-linux/chrome PLAYWRIGHT_NUR_CHROMIUM=1 npm run test:e2e`
-  (vorher `npm run build`). WebKit läuft nur in GitHub Actions.
+  (vorher `npm run build`). Der Ordner unter `/opt/pw-browsers` wechselt je Umgebung (auch
+  `chromium-1243/chrome-linux64/chrome` kam vor); vorher mit `ls /opt/pw-browsers` nachsehen.
+  WebKit läuft nur in GitHub Actions.
 - GitHub Actions (`.github/workflows/pruefen.yml`) prüft bei jedem Push und Pull Request Pipeline,
   App und Oberfläche (Chromium und WebKit). Im öffentlichen Repository kostet das nichts. Ergebnisse
   über die GitHub-Werkzeuge lesen, alle 2 Minuten nachsehen (Wunsch des Autors, 15.10.2026); ein

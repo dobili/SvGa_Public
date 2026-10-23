@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 23.10.2026, Version 0.2.120 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 23.10.2026, Version 0.2.121 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.120“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.121“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu im Zweig p8-tour: App-Tour (P8, R52; Opus, 23.10.2026)
+### Neu in 0.2.121: App-Tour (P8, R52; Opus, 23.10.2026)
 
 Die Rückfragen dazu stehen in Teil 2 unter „P8 App-Tour“ (P8-1 bis P8-44). Zum Testen am besten
 erst die Daten der App auf dem Gerät nicht löschen, sondern einfach öffnen: Die Frage nach dem

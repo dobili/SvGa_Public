@@ -413,3 +413,25 @@ test("Partienliste: Filter als Symbole, mehrere zugleich, Sortierung (R22)", asy
   await filter.getByRole("button", { name: /^absteigend/ }).click();
   await expect(liste.first().getByRole("img", { name: "Du hast Weiß gespielt" })).toBeVisible();
 });
+
+test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgewertet", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("button", { name: "Partie einlesen (PGN)", exact: true }).click();
+  const formular = page.getByTestId("pgnimport");
+  await formular.getByRole("button", { name: "Einlesen und auswerten" }).click();
+  await expect(formular).toContainText("Füge zuerst eine Partie ein.");
+  await formular
+    .getByLabel("PGN der Partie")
+    .fill('[White "Anna"]\n[Black "Ben"]\n[Result "0-1"]\n\n1. f3 e5 2. g4 Qh4# 0-1');
+  await formular.getByRole("radio", { name: "Schwarz" }).click();
+  await formular.getByRole("button", { name: "Einlesen und auswerten" }).click();
+  await expect(page.getByTestId("partieende")).toContainText("Matt", { timeout: ENGINE_FRIST });
+  await page.screenshot({ path: "test-results/bilder/pgnimport.png", fullPage: true });
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const eintrag = page.locator(".partienliste li.partieeintrag").first();
+  await expect(eintrag).toContainText("Anna – Ben");
+  await expect(eintrag.locator(".ergebnis-gewonnen")).toContainText("0–1");
+});

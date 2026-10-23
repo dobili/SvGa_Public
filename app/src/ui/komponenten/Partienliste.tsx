@@ -9,7 +9,8 @@
  * darüber die Karte „Deine Spielstärke“ über die letzten zehn Partien (LetzteSpielstaerke.tsx).
  * Seit 0.2.99 (Wunsch des Autors vom 19.10.2026): Porträt des Gegners je Partie, Filter nach
  * Ergebnis und Wertung, „Weitere Partien zeigen“ und Löschen ungewerteter Partien mit Nachfrage.
- * Seit 0.2.117: Filter und Sortierung als Symbole, mehrere zugleich (Partienfilterleiste.tsx).
+ * Seit 0.2.117: Filter und Sortierung als Symbole, mehrere zugleich (Partienfilterleiste.tsx), und
+ * „Partie einlesen (PGN)“ (PgnImport.tsx), auch wenn noch keine Partie gespielt ist.
  * Abhängigkeiten: spiel/partie.ts, spiel/auswertung.ts, spiel/genauigkeit.ts, speicher/partien.ts,
  * engine/stufen.ts, ui/brett (Figur), Navigation, i18n.
  */
@@ -40,6 +41,7 @@ import { Figur } from "../brett/Figur";
 import { BRETTFARBEN, FELD } from "../brett/masse";
 import { LetzteSpielstaerke } from "./LetzteSpielstaerke";
 import { Partienfilterleiste } from "./Partienfilterleiste";
+import { PgnImport } from "./PgnImport";
 import type { Genauigkeitsmodus } from "../../spiel/staerkemodell";
 import { Knopfsymbol } from "./Knopfsymbol";
 import { Stufenmarke } from "./Stufenmarke";
@@ -57,10 +59,12 @@ const LOESCHSYMBOL = 20;
 /** Größe des Sterns für eine gewertete Partie (0.2.58, Wunsch des Autors). */
 const WERTUNGSSYMBOL = 14;
 
-/** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie) */
+/** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie); eingelesen „… · Anna – Ben · 30 Züge“. */
 function zeile(partie: Partie): string {
   const datum = datumText(new Date(partie.begonnen));
   const zuege = Math.ceil(partie.zuege.length / 2);
+  const importiert = partie.einstellung.importiert;
+  if (importiert) return t("spielen.partiezeileImport", { datum, ...importiert, zuege });
   const s = stufe(partie.einstellung.stufe);
   const gegner =
     partie.einstellung.gegner === "mensch"
@@ -257,7 +261,12 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
     () => new Map(partien.map((e) => [e, sortierwerte(e, modus)])),
     [partien, modus],
   );
-  if (partien.length === 0) return null;
+  if (partien.length === 0)
+    return (
+      <section className="abschnitt partienliste">
+        <PgnImport />
+      </section>
+    );
   // Ohne sichtbaren Filter (weniger als FILTER_AB Partien) gilt auch keiner, etwa nach dem Löschen.
   const mitFilter = partien.length >= FILTER_AB;
   const aktiv = mitFilter ? filter : OHNE_FILTER;
@@ -276,6 +285,7 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
           <Titelsymbol art="partien" />
           {t("spielen.partien")}
         </h2>
+        <PgnImport />
         {mitFilter && (
           <Partienfilterleiste
             filter={filter}

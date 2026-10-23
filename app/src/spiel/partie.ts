@@ -68,6 +68,11 @@ export interface Partieeinstellung {
    * Eröffnung selbst, ohne Buch (Wunsch des Autors, 0.2.40).
    */
   readonly eroeffnung: string | null;
+  /**
+   * Seit 0.2.117: eine aus PGN eingelesene Partie mit den Namen aus White und Black
+   * (spiel/pgnimport.ts); fehlend bei allen in der App gespielten Partien.
+   */
+  readonly importiert?: { readonly weiss: string; readonly schwarz: string };
 }
 
 /** Ein Halbzug der Partie. Bei Engine-Zügen mit Herkunft und, falls absichtlich, Fehlerart. */

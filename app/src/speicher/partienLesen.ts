@@ -64,6 +64,7 @@ const ENDEN_OHNE_SIEGER = [
   "wiederholung",
   "material",
   "zeitRemis",
+  "vereinbart",
 ] as const;
 
 function auswahl<T>(liste: readonly T[], wert: unknown): T | undefined {
@@ -148,19 +149,26 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
   };
 }
 
-/** Name, Fehlerarten und Stil eines eigenen Gegners (0.2.42), nur wenn sie gespeichert sind. */
+/**
+ * Name, Fehlerarten und Stil eines eigenen Gegners (0.2.42) und die Namen einer eingelesenen
+ * Partie (0.2.117), nur wenn sie gespeichert sind.
+ */
 function gegnerprofilAus(
   roh: Roh,
-): Pick<Partieeinstellung, "botName" | "fehlerarten" | "stil" | "blindeFlecken"> {
+): Pick<Partieeinstellung, "botName" | "fehlerarten" | "stil" | "blindeFlecken" | "importiert"> {
   // Nur gespeicherte Felder übernehmen, damit ältere Partien unverändert bleiben.
   const profil: {
     botName?: string;
     fehlerarten?: readonly Fehlerart[];
     stil?: number;
     blindeFlecken?: readonly BlinderFleck[];
+    importiert?: { readonly weiss: string; readonly schwarz: string };
   } = {};
   if (Array.isArray(roh.blindeFlecken)) profil.blindeFlecken = blindeFleckenAus(roh.blindeFlecken);
   if (typeof roh.botName === "string") profil.botName = roh.botName;
+  const imp = roh.importiert;
+  if (istObjekt(imp) && typeof imp.weiss === "string" && typeof imp.schwarz === "string")
+    profil.importiert = { weiss: imp.weiss, schwarz: imp.schwarz };
   if (Array.isArray(roh.fehlerarten)) {
     const roheArten: readonly unknown[] = roh.fehlerarten;
     profil.fehlerarten = FEHLERARTEN.filter((art) => roheArten.includes(art));

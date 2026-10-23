@@ -4,7 +4,7 @@
  *
  * Rolle im Gesamtbild: Teil von Partienliste.tsx. Eine Reihe Symbolknöpfe zum An- und
  * Ausschalten: Ergebnis (Pokal, Handschlag, Kreuz wie die Ergebnismarke), Wertung (Stern),
- * eigene Farbe (heller und dunkler Kreis), Gegner (Bot, Engine-Stufe, Mensch). Darunter die
+ * eigene Farbe (heller und dunkler Kreis), Gegner (Bot, Engine-Stufe, Mensch, eingelesen). Darunter die
  * Sortierung nach Datum, eigener Spielstärke oder Stärke des Gegners mit Richtung. Jeder Knopf
  * trägt seinen Namen als Beschriftung für Bildschirmleser und als Hinweis beim Darüberfahren.
  * Abhängigkeiten: spiel/partienfilter.ts, lucide-react, i18n.
@@ -17,6 +17,7 @@ import {
   Circle,
   CircleX,
   Cpu,
+  FileInput,
   Handshake,
   Star,
   StarOff,
@@ -54,6 +55,7 @@ const SYMBOLE: Readonly<Record<string, LucideIcon>> = {
   bot: Bot,
   stufe: Cpu,
   mensch: Users,
+  import: FileInput,
   datum: CalendarDays,
   staerke: TrendingUp,
   gegner: Swords,

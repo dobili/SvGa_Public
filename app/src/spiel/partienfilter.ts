@@ -19,8 +19,11 @@ export const WERTUNGEN = ["gewertet", "ungewertet"] as const;
 export type Wertungsart = (typeof WERTUNGEN)[number];
 export const FARBEN = ["white", "black"] as const;
 export type Farbfilter = (typeof FARBEN)[number];
-/** Art des Gegners: vorgefertigter oder eigener Bot, die Engine nach Stufe, ein Mensch. */
-export const GEGNERARTEN = ["bot", "stufe", "mensch"] as const;
+/**
+ * Art des Gegners: vorgefertigter oder eigener Bot, die Engine nach Stufe, ein Mensch am selben
+ * Gerät, eine eingelesene Partie (PGN-Import, seit 0.2.117).
+ */
+export const GEGNERARTEN = ["bot", "stufe", "mensch", "import"] as const;
 export type Gegnerfilter = (typeof GEGNERARTEN)[number];
 export const SORTIERUNGEN = ["datum", "staerke", "gegner"] as const;
 export type Sortierung = (typeof SORTIERUNGEN)[number];
@@ -39,12 +42,14 @@ export function ergebnisFuerLeser(partie: Partie): Ergebnis | null {
   const ende = partie.ende;
   if (!ende) return null;
   if (!("sieger" in ende)) return "remis";
-  if (partie.einstellung.gegner === "mensch") return null;
+  // Zu zweit an einem Gerät gibt es keine Seite des Lesers; bei eingelesenen Partien schon.
+  if (partie.einstellung.gegner === "mensch" && !partie.einstellung.importiert) return null;
   return ende.sieger === partie.einstellung.eigeneFarbe ? "gewonnen" : "verloren";
 }
 
 /** Die Art des Gegners einer Partie. */
 export function gegnerart(partie: Partie): Gegnerfilter {
+  if (partie.einstellung.importiert) return "import";
   if (partie.einstellung.gegner === "mensch") return "mensch";
   return partie.einstellung.bot === null ? "stufe" : "bot";
 }
@@ -63,7 +68,7 @@ function inGruppe<T>(gruppe: readonly T[], wert: T | null): boolean {
 export function passtZumFilter(partie: Partie, filter: Partienfilter): boolean {
   const e = partie.einstellung;
   const wertung: Wertungsart = e.gewertet ? "gewertet" : "ungewertet";
-  const farbe = e.gegner === "mensch" ? null : e.eigeneFarbe;
+  const farbe = e.gegner === "mensch" && !e.importiert ? null : e.eigeneFarbe;
   return (
     inGruppe(filter.ergebnis, ergebnisFuerLeser(partie)) &&
     inGruppe(filter.wertung, wertung) &&

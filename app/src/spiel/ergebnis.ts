@@ -19,7 +19,9 @@ export type Partieende =
   | { readonly art: "wiederholung" }
   | { readonly art: "material" }
   /** Zeit abgelaufen, aber der Gegner kann nicht mehr mattsetzen (Kapitel 0). */
-  | { readonly art: "zeitRemis" };
+  | { readonly art: "zeitRemis" }
+  /** Remis durch Vereinbarung, nur bei eingelesenen Partien (PGN-Import, seit 0.2.117). */
+  | { readonly art: "vereinbart" };
 
 /** 50 Züge je Seite ohne Bauernzug und ohne Schlag = 100 Halbzüge. */
 const FUENFZIG_ZUEGE_HALBZUEGE = 100;

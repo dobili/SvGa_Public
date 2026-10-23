@@ -54,9 +54,13 @@ export function neueUhr(einstellung: Uhreinstellung): Uhrstand {
   return { restMs: { white: voll, black: voll }, laeuft: null, seitMs: 0 };
 }
 
-/** Restzeit einer Seite zum Zeitpunkt „jetzt“, nie unter null. */
+/**
+ * Restzeit einer Seite zum Zeitpunkt „jetzt“, nie unter null.
+ * Sonderfall (R37): „seitMs“ darf in der Zukunft liegen, solange der Zug noch über das Brett
+ * gleitet (spiel/ablauf.ts, mitUhrverzug); bis dahin ist nichts verbraucht.
+ */
 export function restzeit(stand: Uhrstand, farbe: Color, jetztMs: number): number {
-  const verbraucht = stand.laeuft === farbe ? jetztMs - stand.seitMs : 0;
+  const verbraucht = stand.laeuft === farbe ? Math.max(0, jetztMs - stand.seitMs) : 0;
   return Math.max(0, stand.restMs[farbe] - verbraucht);
 }
 

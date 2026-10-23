@@ -34,6 +34,20 @@ export function zieheMitUhr(
 }
 
 /**
+ * Die eben angelaufene Uhr beginnt erst nach ``verzugMs``: So lange gleitet der Zug über das
+ * Brett (R37, Wunsch des Autors: während der Zuganimation läuft keine Uhr).
+ *
+ * Eingaben: Partie direkt nach einem Zug (oder null, wenn er nicht ging), Verzug in ms.
+ * Beispiel: Der Bot zieht um 10:00:00,000, Animation 220 ms → die Uhr des Lesers zählt ab
+ * 10:00:00,220. Sonderfälle: Steht die Uhr (Partieende, App im Hintergrund), bleibt alles gleich.
+ */
+export function mitUhrverzug(partie: Partie | null, verzugMs: number): Partie | null {
+  const uhr = partie?.uhr;
+  if (!partie || !uhr?.laeuft || verzugMs <= 0) return partie;
+  return mitUhr(partie, { ...uhr, seitMs: uhr.seitMs + verzugMs });
+}
+
+/**
  * Beendet die Partie, wenn die Zeit der laufenden Seite abgelaufen ist; sonst unverändert.
  * Sonderfall (0.2.117): Die Uhr des Bots läuft nicht in echter Zeit ab. Seine Zeit ist simuliert
  * (spiel/botzeit.ts, spiel/notmodus.ts) und wird erst mit seinem Zug abgerechnet; sonst

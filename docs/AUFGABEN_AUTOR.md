@@ -51,6 +51,19 @@ Teil fertig ist.
       einlesen (PGN)“) steht in der Karte „Auswertung“, solange die Engine rechnet, nur „Die
       Engine wertet die Partie aus …“ und darunter ein goldener Balken mit der Prozentzahl
       daneben, statt „12 von 48 Stellungen“.
+- [ ] N653. **Zuganimation (R37):** Spiele eine Partie mit 5 + 3 gegen einen Bot. Tippst du Figur
+      und Zielfeld an, gleitet die Figur in etwa einer Fünftelsekunde hinüber, mit einer kurzen,
+      verblassenden Spur aus Nachbildern; ebenso der Zug des Bots (bei der Rochade gleitet der Turm
+      mit, eine geschlagene Figur verblasst). Deine Uhr läuft erst, wenn sein Zug angekommen ist.
+      Ziehst du per Wischen, springt nichts nach. Einstellungen › Brett › „Züge gleiten über das
+      Brett“ schaltet es ab. Gefällt dir Tempo und Spur?
+- [ ] N654. **Ergebnis auf dem Brett (R38):** Beende eine Partie (gewinnen, Remis oder aufgeben).
+      Sobald der letzte Zug angekommen ist, springt mitten auf dem Brett ein Schild auf:
+      „Gewonnen!“ mit goldenem Pokal, „Remis“ mit Händedruck oder „Verloren“ mit rotem Kreuz, darunter
+      der Grund („Matt. Die Engine hat gewonnen.“). Nach etwa drei Sekunden blendet es sich von
+      selbst aus; die Karte unter dem Brett bleibt. Öffnest du eine beendete Partie aus der Liste,
+      kommt das Schild nicht noch einmal. Bei Partien zu zweit steht „Weiß gewinnt“ oder
+      „Schwarz gewinnt“.
 
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 

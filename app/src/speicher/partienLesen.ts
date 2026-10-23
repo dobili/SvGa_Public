@@ -171,10 +171,7 @@ function gegnerprofilAus(
   } = {};
   if (Array.isArray(roh.blindeFlecken)) profil.blindeFlecken = blindeFleckenAus(roh.blindeFlecken);
   if (typeof roh.botName === "string") profil.botName = roh.botName;
-  if (Array.isArray(roh.fehlerarten)) {
-    const roheArten: readonly unknown[] = roh.fehlerarten;
-    profil.fehlerarten = FEHLERARTEN.filter((art) => roheArten.includes(art));
-  }
+  if (Array.isArray(roh.fehlerarten)) profil.fehlerarten = fehlerartenAus(roh.fehlerarten);
   if (istZahl(roh.stil)) profil.stil = Math.max(STIL_MIN, Math.min(STIL_MAX, Math.round(roh.stil)));
   return { ...profil, ...menschenwerteAus(roh) };
 }

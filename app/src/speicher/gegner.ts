@@ -40,10 +40,27 @@ function stufenAus(roh: unknown): Readonly<Record<Phase, Stufennummer>> {
   };
 }
 
-/** Fehlerarten aus Rohdaten; ohne Liste alle (auch für die Abhakliste der Vorlieben, 0.2.60). */
+/** Die Fehlerarten, die seit 0.2.118 dazukamen (Auswertung von Lichess-Partien). */
+const NEUE_ARTEN: readonly Fehlerart[] = [
+  "bauerEingestellt",
+  "schlagVerpasst",
+  "bauernzugOhneNot",
+  "koenigszugOhneNot",
+];
+
+/**
+ * Fehlerarten aus Rohdaten; ohne Liste alle (auch für die Abhakliste der Vorlieben, 0.2.60).
+ * Seit 0.2.118: Enthält eine gespeicherte Liste alle Arten von vor 0.2.118, hatte der Leser nichts
+ * abgehakt; dann gelten auch die neuen Arten als erlaubt (sonst machte sein Gegner sie nie).
+ */
 export function fehlerartenAus(roh: unknown): readonly Fehlerart[] {
   if (!Array.isArray(roh)) return FEHLERARTEN;
-  return FEHLERARTEN.filter((art) => roh.includes(art));
+  const alteVollstaendig = FEHLERARTEN.filter((a) => !NEUE_ARTEN.includes(a)).every((a) =>
+    roh.includes(a),
+  );
+  return FEHLERARTEN.filter(
+    (art) => roh.includes(art) || (alteVollstaendig && NEUE_ARTEN.includes(art)),
+  );
 }
 
 /** Blinde Flecken aus Rohdaten; ohne Angabe keine. */

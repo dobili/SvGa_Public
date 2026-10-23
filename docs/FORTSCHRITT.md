@@ -1516,12 +1516,13 @@ etwa“ chess.com und FIDE über veröffentlichte Umrechnungen.
 4. Umrechnung chess.com/FIDE recherchieren (Quelle, Nutzungsbedingungen, je Zeitklasse).
 5. App: Schalter chess.com/Lichess/Mittelweg entfernen, neue Schätzung (Konstanten), Phasenzahl
    nur bei schmalem Bereich, Texte de/en, alte Einstellung beim Lesen übergehen, Tests.
-6. Teil A, Rest: blinde Flecken und Fehlerarten zusammenführen (Engine, Oberfläche, Speicher mit
-   Umwandlung). Dabei: Gespeicherte Listen erlaubter Fehlerarten (eigene Gegner, Vorlieben,
-   Partien) kennen die vier neuen Arten nicht; eine vollständige alte Liste muss beim Lesen die
-   neuen Arten dazubekommen, sonst machen eigene Gegner sie nie (speicher/gegner.ts,
-   speicher/partien.ts, speicher/partienLesen.ts, engine/gegner.ts). Die beiden Beispiele des
-   Autors (9… Df6, 4. c4) als Test nachstellen, sobald die Stellungen vorliegen.
+6. Teil A, Rest: Zusammenführen von Flecken und Fehlerarten entfällt (Autor, 23.10.2026: Flecken
+   sind Ursachen, keine Fehlerart; die Kopplung bildet das ab). Gespeicherte vollständige Listen
+   erlaubter Fehlerarten bekommen die vier neuen Arten (speicher/gegner.ts, erledigt 23.10.2026).
+   Beispiele des Autors geprüft: 9… Df6 und 4. c4 zeigen keine Gabel mehr. Offen: 4. c4 (Läufer
+   f4 wird mit e5 und h4 eingesperrt, Gewinn erst im 7. Halbzug) heißt jetzt „Bauernzug ohne
+   Not“; Vorschlag: eingesperrte Figur erkennen (Widerlegung gewinnt die Figur innerhalb der
+   ganzen Fortsetzung, die Figur hat kein sicheres Feld) und als „Figur hängen“ einordnen.
 7. Teil D: Spielstile (Recherche, Unterscheidbarkeit je Elo aus den Daten), je Bot genau ein Stil.
 8. Teil E: Bots für Schnellschach neu (Spaß 4 + 8 × 8), Fehlerraten je Phase aus den Spielerprofilen,
    Unterscheidung der Bots über die Bereiche und Kopplungen (vorher Gespräch mit dem Autor),

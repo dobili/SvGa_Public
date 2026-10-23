@@ -59,6 +59,36 @@
   background: var(--gold);
 }
 
+/* R29: Fortschritt der Auswertung nach der Partie, Balken mit Prozentzahl daneben. */
+.auswertung-fortschritt-zeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.auswertung-fortschritt-zeile .fortschrittsbalken {
+  flex: 1;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.auswertung-fortschritt-zeile .fortschrittsbalken-fuellung {
+  transition: width 0.3s ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auswertung-fortschritt-zeile .fortschrittsbalken-fuellung {
+    transition: none;
+  }
+}
+
+.auswertung-prozent {
+  min-width: 4ch;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+}
+
 .kapitel-text .fortschrittsbalken {
   margin-top: 4px;
 }

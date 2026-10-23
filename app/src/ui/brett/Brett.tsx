@@ -5,8 +5,10 @@
  * dieser Reihenfolge: Felder, Feldmarkierungen, Figuren, Pfeile, Beschriftungen.
  * Bedienung: Über dem Bild liegen 64 unsichtbare Knöpfe, einer je Feld. Das ist zuverlässig auf
  * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar. Seit 0.2.92
- * lassen sich Figuren auf derselben Schicht auch per Wischen ziehen (useZiehen.ts).
- * Abhängigkeiten: masse.ts, geometrie.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
+ * lassen sich Figuren auf derselben Schicht auch per Wischen ziehen (useZiehen.ts); seit R35
+ * erkennt useZiehen.ts auch das Antippen, mit großzügiger Trefferfläche um die Zielfelder
+ * (treffer.ts).
+ * Abhängigkeiten: masse.ts, geometrie.ts, treffer.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
  * useZugton.ts (Ton), useZiehen.ts, i18n.
  */
 import { Fragment, useId, useState } from "react";
@@ -16,8 +18,9 @@ import { Beschriftungen } from "./Beschriftung";
 import { Figur } from "./Figur";
 import { useZugton } from "./useZugton";
 import { Brettbild, Holzfelder } from "./Holzfelder";
-import { alleFelder, feldEcke, figurenAusFen } from "./geometrie";
-import { Feldmarke, Pfeil, Schimmer, SPERRFARBE, Zielpunkt, Zielring } from "./Brettmarken";
+import { alleFelder, feldAnPunkt, feldEcke, figurenAusFen, type Punkt } from "./geometrie";
+import { TOLERANZ_EIGENE_FIGUR, TOLERANZ_ZIELFELD, trefferfeld } from "./treffer";
+import { Feldmarken, Pfeil, Schimmer, SPERRFARBE, Zielpunkt, Zielring } from "./Brettmarken";
 import { useZiehen, wischenAn, type Ziehbedienung, type Ziehstand } from "./useZiehen";
 import { querversaetze } from "./versatz";
 import { useEinstellungen, type Figurensatz } from "../../app/einstellungen";
@@ -57,6 +60,12 @@ function figurenname(zeichen: string): string {
   const farbe = zeichen === zeichen.toUpperCase() ? t("farbe.w") : t("farbe.b");
   const rolle = zeichen.toLowerCase() as "p" | "n" | "b" | "r" | "q" | "k";
   return `${t(`figur.${rolle}`)} (${farbe})`;
+}
+
+/** Stehen auf zwei Feldern Figuren derselben Farbe? (FEN: Großbuchstaben Weiß.) */
+function gleicheFarbe(a: string | undefined, b: string | undefined): boolean {
+  if (!a || !b) return false;
+  return (a === a.toUpperCase()) === (b === b.toUpperCase());
 }
 
 /** Die 64 Felder, schlicht in den Feldfarben oder mit den Holzbildern (Holzfelder.tsx). */
@@ -179,7 +188,9 @@ function GezogeneFigur({
 /**
  * Die 64 unsichtbaren Knöpfe über dem Bild. Felder mit ziehbaren Figuren bekommen beim Wischen
  * touch-action „none“, damit der Finger dort die Figur nimmt statt die Seite zu scrollen; alle
- * anderen Felder lassen das Scrollen frei.
+ * anderen Felder lassen das Scrollen frei. Ist eine Figur gewählt (Klasse „wahl“), scrollt das
+ * Brett gar nicht: Sonst brach ein leicht rutschender Finger den Tipp aufs Zielfeld als
+ * Scrollen ab (R35).
  */
 function Knopfschicht({
   felder,
@@ -187,6 +198,7 @@ function Knopfschicht({
   ausgewaehlt,
   beiFeld,
   greifbar,
+  wahl,
   wischen,
 }: {
   felder: readonly string[];
@@ -194,11 +206,12 @@ function Knopfschicht({
   ausgewaehlt: string | null;
   beiFeld: (feld: string) => void;
   greifbar: readonly string[];
+  wahl: boolean;
   wischen: Omit<ReturnType<typeof useZiehen>, "gezogen">;
 }) {
   const { ereignisse, klickGilt } = wischen;
   return (
-    <div className="brett-tasten" {...ereignisse}>
+    <div className={wahl ? "brett-tasten wahl" : "brett-tasten"} {...ereignisse}>
       {felder.map((feld) => {
         const figur = figuren.get(feld);
         const name = figur ? `${feld}, ${figurenname(figur)}` : feld;
@@ -261,7 +274,16 @@ export function Brett({
   // Abgeschaltet in den Einstellungen (Merker auf dem Gerät); gelesen beim Öffnen des Bildschirms.
   const [wischenErlaubt] = useState(wischenAn);
   const zieh = beiFeld && wischenErlaubt ? ziehen : null;
-  const { gezogen, ...wischen } = useZiehen(zieh, gedreht);
+  const treffe = (punkt: Punkt) => {
+    const unter = feldAnPunkt(punkt, gedreht);
+    const eigene =
+      unter !== null && gleicheFarbe(figuren.get(unter), figuren.get(ausgewaehlt ?? ""));
+    return trefferfeld(punkt, gedreht, ziele, eigene ? TOLERANZ_EIGENE_FIGUR : TOLERANZ_ZIELFELD);
+  };
+  const { gezogen, ...wischen } = useZiehen(
+    { ziehen: zieh, treffe, tippe: (feld) => beiFeld?.(feld) },
+    gedreht,
+  );
   const gezogenesZeichen = gezogen ? figuren.get(gezogen.von) : undefined;
   return (
     <div className="brett">
@@ -276,11 +298,7 @@ export function Brett({
         {ausgewaehlt && <Schimmer feld={ausgewaehlt} gedreht={gedreht} farbe={farben.schimmer} />}
         {gesperrt && <Schimmer feld={gesperrt} gedreht={gedreht} farbe={SPERRFARBE} />}
         {koordinaten && <Koordinaten gedreht={gedreht} farben={farben} />}
-        {markierungen.map((m, i) =>
-          m.typ === "feld" ? (
-            <Feldmarke key={`f${i}`} feld={m.feld} farbe={m.farbe} gedreht={gedreht} />
-          ) : null,
-        )}
+        <Feldmarken markierungen={markierungen} gedreht={gedreht} />
         {gezogen?.ueber && (
           <Schimmer feld={gezogen.ueber} gedreht={gedreht} farbe={farben.schimmer} />
         )}
@@ -325,6 +343,7 @@ export function Brett({
           ausgewaehlt={ausgewaehlt}
           beiFeld={beiFeld}
           greifbar={zieh?.felder ?? []}
+          wahl={ziele.length > 0}
           wischen={wischen}
         />
       )}

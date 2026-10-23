@@ -2,12 +2,14 @@
  * Marken auf dem Brett: Schimmer, Zielpunkte und -ringe, Feldrahmen und Pfeile im Stil des Buches.
  *
  * Rolle im Gesamtbild: Bausteine für Brett.tsx, seit 0.2.92 in einer eigenen Datei, damit das
- * Brett mit dem Ziehen per Wischen unter 400 Zeilen bleibt.
- * Abhängigkeiten: analyse/werkzeug.ts (Markierungsfarben), geometrie.ts, masse.ts.
+ * Brett mit dem Ziehen per Wischen unter 400 Zeilen bleibt. Seit R36 (23.10.2026) teilen sich
+ * benachbarte Feldmarkierungen gleicher Farbe einen Umriss (umriss.ts).
+ * Abhängigkeiten: analyse/werkzeug.ts (Markierungen), geometrie.ts, masse.ts, umriss.ts.
  */
-import type { Markierungsfarbe } from "../../analyse/werkzeug";
-import { feldEcke, pfeilform } from "./geometrie";
+import type { Markierung, Markierungsfarbe } from "../../analyse/werkzeug";
+import { feldEcke, pfeilform, type Punkt } from "./geometrie";
 import { FARBEN, FELD, PFEIL, RAHMEN } from "./masse";
+import { umrisse } from "./umriss";
 
 /** Heller Schimmer über einem Feld: angetippt oder letzter Zug, nie Gold, Rot oder Grau. */
 export function Schimmer({
@@ -80,28 +82,51 @@ function strichmuster(farbe: Markierungsfarbe, art: "pfeil" | "rahmen"): string 
   return undefined;
 }
 
-/** Ein Feldrahmen (Rot, Grau) oder vier Ecken (Gold), jeweils mit dünner Navy-Kontur. */
-export function Feldmarke({
-  feld,
+/** Pfad eines geschlossenen Umrisses durch seine Eckpunkte. */
+function rahmenpfad(punkte: readonly Punkt[]): string {
+  return `${punkte.map((p, i) => `${i === 0 ? "M" : "L"}${p.x} ${p.y}`).join("")}Z`;
+}
+
+/** Ein Schritt der Länge ``laenge`` von ``a`` in Richtung ``b``. */
+function schrittZu(a: Punkt, b: Punkt, laenge: number): Punkt {
+  const abstand = Math.hypot(b.x - a.x, b.y - a.y) || 1;
+  return { x: a.x + ((b.x - a.x) / abstand) * laenge, y: a.y + ((b.y - a.y) / abstand) * laenge };
+}
+
+/**
+ * Nur die Ecken eines Umrisses (Gold): an jedem Knick zwei Schenkel, höchstens halb so lang wie
+ * die angrenzende Strecke, damit sich zwei Ecken auf einer kurzen Strecke nicht berühren.
+ */
+function eckenpfad(punkte: readonly Punkt[]): string {
+  return punkte
+    .map((ecke, i) => {
+      const davor = punkte[(i + punkte.length - 1) % punkte.length] ?? ecke;
+      const danach = punkte[(i + 1) % punkte.length] ?? ecke;
+      const halb = (p: Punkt) => Math.hypot(p.x - ecke.x, p.y - ecke.y) / 2;
+      const a = schrittZu(ecke, davor, Math.min(RAHMEN.eckschenkel, halb(davor)));
+      const b = schrittZu(ecke, danach, Math.min(RAHMEN.eckschenkel, halb(danach)));
+      return `M${a.x} ${a.y}L${ecke.x} ${ecke.y}L${b.x} ${b.y}`;
+    })
+    .join(" ");
+}
+
+/**
+ * Die Feldmarkierungen einer Farbe als gemeinsamer Umriss (umriss.ts, R36): Rot gestrichelt,
+ * Grau gepunktet, Gold nur an den Ecken, die übrigen Farben durchgezogen, jeweils mit dünner
+ * Navy-Kontur wie im Buch.
+ * Beispiel: Zentrum d4, e4, d5, e5 in Gold → vier Ecken um das ganze Quadrat statt sechzehn.
+ */
+function Umrissmarke({
+  felder,
   farbe,
   gedreht,
 }: {
-  feld: string;
+  felder: readonly string[];
   farbe: Markierungsfarbe;
   gedreht: boolean;
 }) {
-  const ecke = feldEcke(feld, gedreht);
-  if (!ecke) return null;
-  const halb = RAHMEN.breite / 2;
-  const x0 = ecke.x + halb;
-  const y0 = ecke.y + halb;
-  const x1 = ecke.x + FELD - halb;
-  const y1 = ecke.y + FELD - halb;
-  const s = RAHMEN.eckschenkel;
-  const pfad =
-    farbe === "gold"
-      ? `M${x0} ${y0 + s}V${y0}H${x0 + s} M${x1 - s} ${y0}H${x1}V${y0 + s} M${x1} ${y1 - s}V${y1}H${x1 - s} M${x0 + s} ${y1}H${x0}V${y1 - s}`
-      : `M${x0} ${y0}H${x1}V${y1}H${x0}Z`;
+  const zuege = umrisse(felder, gedreht, RAHMEN.breite / 2);
+  const pfad = zuege.map(farbe === "gold" ? eckenpfad : rahmenpfad).join(" ");
   const kappe = farbe === "grau" ? "round" : "butt";
   return (
     <g fill="none" strokeLinecap={kappe} strokeLinejoin="miter">
@@ -119,6 +144,35 @@ export function Feldmarke({
       />
     </g>
   );
+}
+
+/** Die markierten Felder je Farbe, in der Reihenfolge, in der die Farben zuerst vorkommen. */
+function felderJeFarbe(markierungen: readonly Markierung[]): Map<Markierungsfarbe, string[]> {
+  const gruppen = new Map<Markierungsfarbe, string[]>();
+  for (const m of markierungen) {
+    if (m.typ === "feld") gruppen.set(m.farbe, [...(gruppen.get(m.farbe) ?? []), m.feld]);
+  }
+  return gruppen;
+}
+
+/**
+ * Alle Feldmarkierungen des Brettes, je Farbe ein gemeinsamer Umriss.
+ *
+ * Eingaben: Markierungen (Pfeile werden übergangen), Drehung.
+ * Beispiel: Abb. 1.6, die gezählten Felder; nebeneinanderliegende rote Felder teilen einen
+ * gestrichelten Rahmen.
+ * Sonderfälle: Felder verschiedener Farbe verschmelzen nie; doppelte Felder zählen einmal.
+ */
+export function Feldmarken({
+  markierungen,
+  gedreht,
+}: {
+  markierungen: readonly Markierung[];
+  gedreht: boolean;
+}) {
+  return [...felderJeFarbe(markierungen)].map(([farbe, felder]) => (
+    <Umrissmarke key={farbe} felder={felder} farbe={farbe} gedreht={gedreht} />
+  ));
 }
 
 /** Ein Pfeil im Stil des Buches, mit Kontur. */

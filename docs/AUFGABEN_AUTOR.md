@@ -32,6 +32,26 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu auf Zweig p2-brett (Brett und Bedienung; Opus, 23.10.2026)
+
+- [ ] N650. **Tippen (R35):** Spielen › „Partie beginnen“. Tippe den Springer g1 an, dann nicht
+      genau f3, sondern knapp daneben (etwa auf den linken Rand von g3): Der Springer zieht nach
+      f3. Ein Tipp in die Mitte eines anderen Feldes wählt wie bisher ab. Nur genau auf der Kante
+      zwischen zwei möglichen Zielfeldern geschieht nichts, die Figur bleibt gewählt. Ein Tipp
+      zählt jetzt auch, wenn der Finger dabei etwas rutscht, und gleich nach einem Wischen. Ist
+      eine Figur gewählt, scrollt die Seite über dem Brett nicht. Erkennt die App deine Tipps
+      jetzt zuverlässig?
+- [ ] N651. **Markierte Felder mit einem Umriss (R36):** Abb. 0.3 öffnen: Die grauen Felder, die
+      der Turm erreicht, stehen jetzt als zwei lange gepunktete Rahmen (Linie und Reihe) da statt
+      als einzelne Kästchen. Abb. 0.4: Die drei roten Felder e3 bis e5 haben einen gemeinsamen
+      gestrichelten Rahmen, die goldenen Felder um den König Ecken nur am äußeren Umriss. Das
+      gilt überall, auch für die Werkzeuge. Felder, die sich nur an einer Ecke berühren, und
+      Felder verschiedener Farbe bleiben getrennt. Gefällt dir das, auch bei Gold?
+- [ ] N652. **Fortschritt der Auswertung (R29):** Nach einer Partie (oder Spielen › „Partie
+      einlesen (PGN)“) steht in der Karte „Auswertung“, solange die Engine rechnet, nur „Die
+      Engine wertet die Partie aus …“ und darunter ein goldener Balken mit der Prozentzahl
+      daneben, statt „12 von 48 Stellungen“.
+
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 
 - [ ] N600. **„KI“ statt „Claude“:** Abb. 8.25 öffnen. Unter der Zugleiste steht jetzt „Zugfolge

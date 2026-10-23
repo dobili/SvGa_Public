@@ -1383,11 +1383,12 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
       Randzüge der zusammenhängenden Felder (nur Kantennachbarn, Ecke an Ecke bleibt getrennt),
       `Brettmarken.tsx` zeichnet sie als einen Rahmen (Gold: Ecken an jedem Knick). Nur
       Darstellung, Buchdaten unverändert. N651.
-- [ ] R29 Fortschrittsbalken in der Auswertung.
+- [x] R29 Fortschrittsbalken in der Auswertung: `Auswertungsfortschritt` in
+      `komponenten/Auswertung.tsx`, Prozent daneben (`auswertung.prozent`), Text ohne Zahlen. N652.
 - [ ] R37 Zuganimation.
 - [ ] R38 Partieende auf dem Brett.
 - [ ] R39 Startanimation.
 - [ ] R40 Desktop: Quer- und Hochformat live.
 - [ ] R53 Nachtmodus: Symbol für Weiß in der Fehlerliste.
 
-**Nächster Schritt:** R29.
+**Nächster Schritt:** R37.

@@ -47,6 +47,10 @@ Teil fertig ist.
       gestrichelten Rahmen, die goldenen Felder um den König Ecken nur am äußeren Umriss. Das
       gilt überall, auch für die Werkzeuge. Felder, die sich nur an einer Ecke berühren, und
       Felder verschiedener Farbe bleiben getrennt. Gefällt dir das, auch bei Gold?
+- [ ] N652. **Fortschritt der Auswertung (R29):** Nach einer Partie (oder Spielen › „Partie
+      einlesen (PGN)“) steht in der Karte „Auswertung“, solange die Engine rechnet, nur „Die
+      Engine wertet die Partie aus …“ und darunter ein goldener Balken mit der Prozentzahl
+      daneben, statt „12 von 48 Stellungen“.
 
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 

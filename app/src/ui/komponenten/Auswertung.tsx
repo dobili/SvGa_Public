@@ -43,6 +43,7 @@ import { Titelsymbol } from "./Titelsymbol";
 
 /** So viele absichtliche Fehler der Engine stehen zuerst da (0.2.85, Wunsch des Autors). */
 const ERSTE_ENGINEFEHLER = 3;
+const PROZENT = 100;
 
 /** Ein Sprung auf dem Brett: Stelle in der Partie und Markierungen dort. */
 export interface Sprung {
@@ -235,6 +236,29 @@ function Pgn({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[
   );
 }
 
+/**
+ * Fortschritt der laufenden Auswertung als Balken mit Prozentzahl (R29, Wunsch des Autors:
+ * „Zug x von y“ sagte wenig, ein Balken zeigt auf einen Blick, wie weit die Engine ist).
+ * Beispiel: 12 von 48 Stellungen → Balken zu einem Viertel, daneben „25 %“.
+ */
+function Auswertungsfortschritt({ erledigt, gesamt }: { erledigt: number; gesamt: number }) {
+  const prozent = gesamt > 0 ? Math.round((erledigt / gesamt) * PROZENT) : 0;
+  return (
+    <div className="auswertung-fortschritt">
+      <p>{t("auswertung.laeuft")}</p>
+      <div className="auswertung-fortschritt-zeile">
+        <Fortschrittsbalken
+          anteil={{ erreicht: erledigt, gesamt }}
+          beschriftung={t("auswertung.titel")}
+        />
+        <span className="auswertung-prozent" data-testid="auswertung-prozent">
+          {t("auswertung.prozent", { prozent })}
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export function Auswertung({
   eintrag,
   stand,
@@ -256,13 +280,7 @@ export function Auswertung({
         {t("auswertung.titel")}
       </h2>
       {stand.art === "laeuft" && (
-        <>
-          <p>{t("auswertung.laeuft", { erledigt: stand.erledigt, gesamt: stand.gesamt })}</p>
-          <Fortschrittsbalken
-            anteil={{ erreicht: stand.erledigt, gesamt: stand.gesamt }}
-            beschriftung={t("auswertung.titel")}
-          />
-        </>
+        <Auswertungsfortschritt erledigt={stand.erledigt} gesamt={stand.gesamt} />
       )}
       {stand.art === "fehler" && <p className="fehlertext">{stand.meldung}</p>}
       {urteile.length > 0 && (

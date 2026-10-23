@@ -152,6 +152,7 @@ test("Strukturerkenner: starke Felder und schwache Bauern prüfen, Plan wählen"
   await expect(runde).toContainText("Welcher Plan passt");
   await runde.locator(".plan-satz").first().click();
   await expect(runde).toContainText("Struktur:");
+  await expect(runde).toContainText("Nicht ganz");
   await page.screenshot({ path: "test-results/bilder/trainer-struktur.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");
@@ -286,6 +287,17 @@ test("Faktorenbilanz-Trainer: Waagen und ✓ ◐ ✗ wie im Buch, App zeigt ihre
 test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners kommt wieder", async ({
   page,
 }) => {
+  // Fester Zufall (23.10.2026): Mit Math.random kam ab und zu eine Aufgabe, bei der „nichts
+  // antippen, ersten Plan-Satz wählen“ richtig ist; dann wird nichts fällig und der Test scheitert.
+  await page.addInitScript(() => {
+    const MODUL = 2147483647;
+    const FAKTOR = 16807;
+    let saat = 7;
+    Math.random = () => {
+      saat = (saat * FAKTOR) % MODUL;
+      return (saat - 1) / (MODUL - 1);
+    };
+  });
   await page.clock.install();
   await starteImBrowser(page);
   await oeffneTrainer(page, "struktur");
@@ -297,6 +309,7 @@ test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners 
   if (dreiSchritte) await runde.getByRole("button", { name: "Prüfen" }).click();
   await runde.locator(".plan-satz").first().click();
   await expect(runde).toContainText("Struktur:");
+  await expect(runde).toContainText("Nicht ganz");
   await page.clock.fastForward("48:00:00");
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Buch" }).click();

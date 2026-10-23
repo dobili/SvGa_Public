@@ -27,6 +27,7 @@ import "./ui/stil/symbole.css";
 import "./ui/stil/abstimmung.css";
 import "./ui/stil/breit.css";
 import "./ui/stil/brett.css";
+import "./ui/stil/tour.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
 import { starteOffline } from "./app/offline";

@@ -30,10 +30,13 @@ function Schalter({
   name,
   kurz,
   beiKlick,
+  tour,
   children,
 }: {
   an: boolean;
   name: string;
+  /** Ziel-Kennung für die Tour (tour/touren.ts). */
+  tour: string;
   /** Kurzes Wort unter dem Symbol (DS5). */
   kurz: string;
   beiKlick: () => void;
@@ -43,6 +46,7 @@ function Schalter({
     <button
       type="button"
       className="knopf-symbol brettschalter"
+      data-tour={tour}
       aria-pressed={an}
       aria-label={name}
       title={name}
@@ -98,7 +102,7 @@ export function Brettbereich({
   const amZug = farbkuerzel(stellung.amZug);
   return (
     <div className="brettbereich">
-      <div className={seitenleiste ? "brett-mit-leiste" : undefined}>
+      <div className={seitenleiste ? "brett-mit-leiste" : undefined} data-tour="brett">
         {seitenleiste?.(gedreht)}
         <Brett
           fen={skelett ? skelettFen(stellung.fen) : stellung.fen}
@@ -128,6 +132,7 @@ export function Brettbereich({
         </p>
         <div
           className="brettschalter-gruppe"
+          data-tour="brett-werkzeuge"
           role="group"
           aria-label={t("abbildung.brettwerkzeuge")}
         >
@@ -136,6 +141,7 @@ export function Brettbereich({
             an={gedreht}
             name={t("brett.drehen")}
             kurz={t("brett.drehenKurz")}
+            tour="brett-drehen"
             beiKlick={() => setzeGedreht(!gedreht)}
           >
             <RotateCw size={SYMBOLGROESSE} aria-hidden="true" />

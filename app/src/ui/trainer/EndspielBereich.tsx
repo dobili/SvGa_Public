@@ -80,7 +80,7 @@ function Wahl({
   const [gruppe, setzeGruppe] = useState<Endspielgruppe>("alle");
   const [stufe, setzeStufe] = useState<number | null>(null);
   return (
-    <div className="trainerrunde" data-testid="endspiel-wahl">
+    <div className="trainerrunde" data-testid="endspiel-wahl" data-tour="trainer-wahl">
       {wiederholung}
       <Auswahlliste
         titel={t("endspiel.gruppe")}
@@ -97,12 +97,14 @@ function Wahl({
         <Knopfsymbol art="starten" />
         {t("taktiktrainer.starten")}
       </button>
-      <h3>{t("endspiel.kurz.titel")}</h3>
-      <p className="hinweis">{t("endspiel.kurz.text")}</p>
-      <button type="button" className="knopf-zweit" onClick={kurz}>
-        <Knopfsymbol art="starten" />
-        {t("endspiel.kurz.starten")}
-      </button>
+      <div className="trainer-kurz" data-tour="endspiel-kurz">
+        <h3>{t("endspiel.kurz.titel")}</h3>
+        <p className="hinweis">{t("endspiel.kurz.text")}</p>
+        <button type="button" className="knopf-zweit" onClick={kurz}>
+          <Knopfsymbol art="starten" />
+          {t("endspiel.kurz.starten")}
+        </button>
+      </div>
     </div>
   );
 }

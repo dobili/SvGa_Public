@@ -78,7 +78,7 @@ export function Werkzeuguebersicht() {
       <Kopfzeile titel={t("werkzeuge.titel")} zurueckText={t("nachschlagen.titel")} />
       <p className="hinweis">{t("werkzeuge.einleitung")}</p>
       {nachKapiteln().map(([kapitel, werkzeuge]) => (
-        <section key={kapitel} className="karte">
+        <section key={kapitel} className="karte" data-tour="werkzeuge-kapitel">
           <h2 className="karte-titel">
             {t("werkzeuge.kapitel", { nummer: kapitel, titel: titel(kapitel) })}
           </h2>

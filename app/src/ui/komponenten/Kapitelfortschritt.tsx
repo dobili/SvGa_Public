@@ -81,7 +81,7 @@ export function Kapitelfortschritt({ kapitel }: { kapitel: Kapitel }) {
   );
   const mitStand = stand.trainer.filter((eintrag) => eintrag.stand !== null);
   return (
-    <section className="karte" data-testid="kapitelfortschritt">
+    <section className="karte" data-testid="kapitelfortschritt" data-tour="kapitel-fortschritt">
       <h2 className="karte-titel">
         <Titelsymbol art="fortschritt" />
         {t("fortschritt.titel")}

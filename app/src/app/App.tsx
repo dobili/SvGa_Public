@@ -8,7 +8,9 @@
  * die statische Startseite unter / vor (Entscheidung 15.10.2026). Die Adresse /app/#lizenzen
  * (Fußzeile der Startseite) öffnet gleich die Lizenzen, /app/#abb-6.20 (Trainingsseiten der
  * Website, seit 16.10.2026) gleich die Abbildung, /app/#aufgaben die Aufgabenseite des Autors.
- * Abhängigkeiten: Navigation, Bildschirme, Komponenten.
+ * Seit P8 (R52) liegen hier auch die Tour-Ebene und der Hinweis beim ersten Start (tour/), unter
+ * der Startanimation, damit die Frage nach dem Rundgang erst nach ihr zu sehen ist.
+ * Abhängigkeiten: Navigation, Bildschirme, Komponenten, Tour.
  */
 import { useEffect } from "react";
 import { Abbildung } from "../ui/bildschirme/Abbildung";
@@ -42,6 +44,8 @@ import { useNavigation } from "./navigationsKontext";
 import type { Ansicht } from "./stapel";
 import { entsperreTon } from "./ton";
 import { useSprache } from "./sprachwahl";
+import { TourAngebot } from "../tour/TourAngebot";
+import { TourEbene } from "../tour/TourEbene";
 
 /** Zeichnet die Ansicht oben auf dem Stapel. */
 function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
@@ -136,6 +140,8 @@ function Hauptrahmen() {
       </main>
       <AufgabenRueckweg />
       <Leiste />
+      <TourAngebot />
+      <TourEbene />
       <Startanimation />
     </div>
   );

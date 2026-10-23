@@ -43,7 +43,7 @@ function NeuerEintrag() {
   const gelesen = fen.trim() === "" ? null : stellungAusFen(fen.trim());
   const gueltig = gelesen?.ok ? gelesen.wert.fen : null;
   return (
-    <section className="karte" data-testid="fehlerdb-neu">
+    <section className="karte" data-testid="fehlerdb-neu" data-tour="fehler-neu">
       <h2 className="karte-titel">{t("fehlerdb.neu")}</h2>
       <p className="hinweis">{t("fehlerdb.neuHinweis")}</p>
       <input
@@ -73,7 +73,7 @@ function Auswertung({
   const zahlen = auswertung(liste, new Date());
   const rat = vorschlag(zahlen);
   return (
-    <section className="karte" data-testid="fehlerdb-auswertung">
+    <section className="karte" data-testid="fehlerdb-auswertung" data-tour="fehler-auswertung">
       <h2 className="karte-titel">{t("fehlerdb.auswertung")}</h2>
       <table className="fehlertabelle">
         <thead>
@@ -149,7 +149,9 @@ export function FehlerBereich() {
       ) : (
         <>
           <Auswertung liste={liste} arten={arten} />
-          <h2 className="abschnitt-titel">{t("fehlerdb.eintraege", { anzahl: liste.length })}</h2>
+          <h2 className="abschnitt-titel" data-tour="fehler-eintraege">
+            {t("fehlerdb.eintraege", { anzahl: liste.length })}
+          </h2>
           {sichtbar.map((e) => (
             <Eintrag key={e.id} eintrag={e} arten={arten} />
           ))}

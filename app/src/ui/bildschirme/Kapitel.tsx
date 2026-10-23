@@ -34,7 +34,7 @@ function TrainingUndUebungen({ kapitel }: { kapitel: KapitelDaten }) {
         {t("kapitel.trainingUndUebungen")}
       </h2>
       {trainer.length > 0 && (
-        <div className="kapitel-trainer">
+        <div className="kapitel-trainer" data-tour="kapitel-trainer">
           <h3 className="unterteil-titel">{t("training.kapitelTrainer")}</h3>
           {trainer.map((eintrag) => (
             <Trainerkarte key={eintrag.kennung} trainer={eintrag} />

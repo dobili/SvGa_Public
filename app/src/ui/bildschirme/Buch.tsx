@@ -16,6 +16,7 @@ import { useSpeicher } from "../../speicher/speicher";
 import { Kapitelnummer } from "../komponenten/Kapitelnummer";
 import { Fundmeldung } from "../komponenten/Nummernsprung";
 import { useDaten } from "../komponenten/useDaten";
+import { TourKnopf } from "../../tour/TourKnopf";
 
 /** Kapitel 0 bis 12 des Buches. */
 const ANZAHL_KAPITEL = 13;
@@ -42,7 +43,7 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
   };
 
   return (
-    <form className="karte" onSubmit={absenden}>
+    <form className="karte" onSubmit={absenden} data-tour="buch-nummer">
       <label htmlFor="abbildungsnummer" className="karte-titel">
         {t("buch.abbildungOeffnen")}
       </label>
@@ -62,7 +63,12 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
       </div>
       <Fundmeldung fund={fund} oeffne={oeffne} />
       {zuletzt && (
-        <button type="button" className="knopf-link links" onClick={() => oeffne(zuletzt)}>
+        <button
+          type="button"
+          className="knopf-link links"
+          onClick={() => oeffne(zuletzt)}
+          data-tour="buch-zuletzt"
+        >
           {t("buch.zuletzt")} <strong>{t("abbildung.titel", { nummer: zuletzt })}</strong>
         </button>
       )}
@@ -119,7 +125,7 @@ function Kapitelzusatz({
 function Kapitelliste({ index }: { index: Datenverzeichnis }) {
   const { navigiere } = useNavigation();
   return (
-    <section className="kapitelliste">
+    <section className="kapitelliste" data-tour="buch-kapitel">
       {index.kapitel.map((kapitel) => (
         <div key={kapitel.kapitel} className="kapitel">
           <button
@@ -149,6 +155,7 @@ export function Buch() {
       <header className="seitenkopf">
         <p className="ueberzeile">{t("app.titel")}</p>
         <h1>{t("buch.titel")}</h1>
+        <TourKnopf />
       </header>
       {index.art === "laedt" && <p className="lade">…</p>}
       {index.art === "fehler" && (

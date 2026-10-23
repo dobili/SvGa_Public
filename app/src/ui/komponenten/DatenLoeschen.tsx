@@ -49,7 +49,7 @@ export function DatenLoeschen() {
     setzeStand(fehler.length === 0 ? "fertig" : "teilweise");
   };
   return (
-    <section className="karte">
+    <section className="karte" data-tour="einstellungen-daten">
       <h2 className="karte-titel">
         <Titelsymbol art="daten" />
         {t("loeschen.titel")}

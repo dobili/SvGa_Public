@@ -173,7 +173,7 @@ function Auswahl({
   waehle: (art: Uebungsart) => void;
 }) {
   return (
-    <ul className="uebungsarten">
+    <ul className="uebungsarten" data-tour="trainer-wahl">
       {arten.map((art) => (
         <li key={art}>
           <button type="button" className="karte uebungsart" onClick={() => waehle(art)}>
@@ -238,7 +238,9 @@ export function Trainer({ kennung }: { kennung: TrainerKennung }) {
   return (
     <div className="bildschirm bildschirm-trainer" data-testid="trainer">
       <Kopfzeile titel={t(`trainer.${kennung}.name`)} zurueckText={t("trainer.zurueck")} />
-      <p className="hinweis trainer-ablauf">{t(`trainer.${kennung}.ablauf`)}</p>
+      <p className="hinweis trainer-ablauf" data-tour="trainer-ablauf">
+        {t(`trainer.${kennung}.ablauf`)}
+      </p>
       {eigener ? eigener() : <MitBuchstellungen kennung={kennung} />}
     </div>
   );

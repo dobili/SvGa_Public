@@ -102,7 +102,12 @@ export function Werkzeugkarte({
   const seite = ergebnis.seite ?? "white";
   const farben = { eigen: farbname(seite), gegner: farbname(gegner(seite)) };
   return (
-    <section className="karte" aria-live="polite" data-testid="werkzeugkarte">
+    <section
+      className="karte"
+      aria-live="polite"
+      data-testid="werkzeugkarte"
+      data-tour="werkzeugkarte"
+    >
       {/* Der Sicht-Schalter steht oben rechts neben dem Namen (Wunsch des Autors, Nachtest
           0.2.27); reicht der Platz nicht, rutscht er in die nächste Zeile. */}
       <div className="karte-kopf werkzeugkopf">

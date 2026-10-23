@@ -161,7 +161,7 @@ function Galeriekopf({ kapitel }: { kapitel: Kapitel }) {
       {frage ? (
         <Nachfrage frage={frage} kapitel={kapitel} beiEnde={() => setzeFrage(null)} />
       ) : (
-        <div className="knopfreihe">
+        <div className="knopfreihe" data-tour="kapitel-abhaken">
           <button type="button" className="knopf-zweit" onClick={() => setzeFrage("abhaken")}>
             {t("fortschritt.alleAbhaken")}
           </button>
@@ -258,7 +258,7 @@ function Abschnitt({ gruppe }: { gruppe: Gruppe }) {
  */
 export function Abbildungsgalerie({ kapitel }: { kapitel: Kapitel }) {
   return (
-    <section className="abschnitt" data-testid="abbildungsgalerie">
+    <section className="abschnitt" data-testid="abbildungsgalerie" data-tour="kapitel-galerie">
       <Galeriekopf kapitel={kapitel} />
       {nachAbschnitten(kapitel).map((gruppe) =>
         gruppe.nummer ? (

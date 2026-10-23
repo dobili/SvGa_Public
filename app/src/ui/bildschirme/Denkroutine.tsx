@@ -19,7 +19,7 @@ type Routine = NonNullable<Nachschlagen["denkroutine"]>;
 /** Karte 1: vier Schritte, Sicherheitsblick, Ziehen, Rückweg zu Schritt 2. */
 function Schritte({ routine }: { routine: Routine }) {
   return (
-    <section className="karte">
+    <section className="karte" data-tour="denkroutine-schritte">
       <h2 className="karte-titel">{routine.titel}</h2>
       <ol className="schrittliste">
         {routine.schritte.map((schritt) => (
@@ -53,7 +53,7 @@ function Phasensymbol({ name }: { name: string }) {
 /** Karte 2: je Phase aufklappbar, wann sie gilt und welche Werkzeuge. */
 function Phasen({ routine }: { routine: Routine }) {
   return (
-    <section className="karte">
+    <section className="karte" data-tour="denkroutine-phasen">
       <h2 className="karte-titel">{routine.phasenTitel}</h2>
       {routine.phasen.map((phase) => (
         <details key={phase.name} className="phase">

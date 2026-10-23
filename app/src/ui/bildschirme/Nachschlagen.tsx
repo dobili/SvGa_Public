@@ -11,6 +11,7 @@ import { useNavigation } from "../../app/navigationsKontext";
 import { ladeGlossar } from "../../daten/laden";
 import { t } from "../../i18n/sprache";
 import { useDaten } from "../komponenten/useDaten";
+import { TourKnopf } from "../../tour/TourKnopf";
 
 const SYMBOLGROESSE = 24;
 
@@ -20,14 +21,17 @@ function Eintrag({
   titel,
   zusatz,
   beiKlick,
+  tour,
 }: {
   symbol: React.ReactNode;
   titel: string;
   zusatz: string;
   beiKlick: () => void;
+  /** Ziel-Kennung für die Tour (tour/touren.ts). */
+  tour: string;
 }) {
   return (
-    <button type="button" className="nachschlage-eintrag" onClick={beiKlick}>
+    <button type="button" className="nachschlage-eintrag" onClick={beiKlick} data-tour={tour}>
       <span className="nachschlage-symbol" aria-hidden="true">
         {symbol}
       </span>
@@ -47,36 +51,42 @@ export function Nachschlagen() {
     <div className="bildschirm">
       <header className="seitenkopf">
         <h1>{t("nachschlagen.titel")}</h1>
+        <TourKnopf />
       </header>
       <Eintrag
         symbol={<BookA size={SYMBOLGROESSE} />}
         titel={t("glossar.titel")}
         zusatz={t("glossar.anzahl", { anzahl })}
         beiKlick={() => navigiere({ bildschirm: "glossar" })}
+        tour="nachschlagen-glossar"
       />
       <Eintrag
         symbol={<Route size={SYMBOLGROESSE} />}
         titel={t("denkroutine.titel")}
         zusatz={t("denkroutine.zusatz")}
         beiKlick={() => navigiere({ bildschirm: "denkroutine" })}
+        tour="nachschlagen-denkroutine"
       />
       <Eintrag
         symbol={<ListChecks size={SYMBOLGROESSE} />}
         titel={t("checkliste.titel")}
         zusatz={t("checkliste.zusatz")}
         beiKlick={() => navigiere({ bildschirm: "checkliste" })}
+        tour="nachschlagen-checkliste"
       />
       <Eintrag
         symbol={<IdCard size={SYMBOLGROESSE} />}
         titel={t("steckbrief.titel")}
         zusatz={t("steckbrief.zusatz")}
         beiKlick={() => navigiere({ bildschirm: "steckbriefe" })}
+        tour="nachschlagen-steckbriefe"
       />
       <Eintrag
         symbol={<Wrench size={SYMBOLGROESSE} />}
         titel={t("werkzeuge.titel")}
         zusatz={t("werkzeuge.zusatz")}
         beiKlick={() => navigiere({ bildschirm: "werkzeuge" })}
+        tour="nachschlagen-werkzeuge"
       />
     </div>
   );

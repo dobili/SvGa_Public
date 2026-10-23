@@ -50,7 +50,7 @@ function Wahl({
   const [thema, setzeThema] = useState<Taktikthema>("gemischt");
   const [stufe, setzeStufe] = useState<number | null>(null);
   return (
-    <div className="trainerrunde" data-testid="taktik-wahl">
+    <div className="trainerrunde" data-testid="taktik-wahl" data-tour="trainer-wahl">
       <Wiederholungsknopf anzahl={faellig} starte={wiederhole} />
       <Auswahlliste
         titel={t("taktiktrainer.thema")}

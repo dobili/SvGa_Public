@@ -1,7 +1,7 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 23.10.2026, Version 0.2.117 auf `main`, dazu der Zweig `p3-werkzeuge` (noch nicht auf
-`main`). **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 23.10.2026, Version 0.2.118 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -18,7 +18,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.116“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.118“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu auf Zweig p2-brett (Brett und Bedienung; Opus, 23.10.2026)
+### Neu in 0.2.118: Brett und Bedienung (P2; Opus, 23.10.2026)
 
 - [ ] N650. **Tippen (R35):** Spielen › „Partie beginnen“. Tippe den Springer g1 an, dann nicht
       genau f3, sondern knapp daneben (etwa auf den linken Rand von g3): Der Springer zieht nach
@@ -66,7 +66,7 @@ Teil fertig ist.
       kommt das Schild nicht noch einmal. Bei Partien zu zweit steht „Weiß gewinnt“ oder
       „Schwarz gewinnt“.
 
-### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
+### Neu in 0.2.116 und 0.2.118: deine Rückmeldung vom 19.10.2026 (R1 bis R23, R33; Opus)
 
 - [ ] N600. **„KI“ statt „Claude“:** Abb. 8.25 öffnen. Unter der Zugleiste steht jetzt „Zugfolge
       von einer KI konstruiert, nicht aus dem Buch …“.
@@ -146,7 +146,7 @@ Teil fertig ist.
       ohne „zu wenige Züge“. Die Zahl der Spielstärke kommt je Phase erst ab sechs Zügen; das erklärt
       das Fragezeichen der Karte.
 
-### Neu auf dem Zweig `p3-werkzeuge` (Werkzeuge und Strukturbegriffe; Fable, 23.10.2026)
+### Neu in 0.2.118: Werkzeuge und Strukturbegriffe (P3; Fable, 23.10.2026)
 
 Noch nicht auf `main`; die Punkte gelten, sobald der Zweig übernommen ist (dann steht in den
 Einstellungen eine Version über 0.2.117). Die Werkzeuge findest du unter jeder Abbildung in der
@@ -238,7 +238,7 @@ Spielgefühl.
 - [ ] N627. **Einstellungen › Fehlerarten:** Die Abhakliste heißt jetzt „Fehlerarten der
       vorgefertigten Bots“ und gilt nur für sie; die Stufen ohne Bot machen keine Zusatzfehler.
 
-### P5 Trainer-Bedienung (Zweig `p5-trainerbedienung`, noch nicht auf main; Opus, 23.10.2026)
+### Neu in 0.2.118: Trainer-Bedienung (P5; Opus, 23.10.2026)
 
 - [ ] N710. **Taktiktrainer mit einem Motiv (R30):** Training › Taktik › Thema „Spieß“ › Runde
       starten, eine Aufgabe lösen oder „Lösung zeigen“. Die Frage „Welches Motiv war es?“ kommt
@@ -283,12 +283,11 @@ Spielgefühl.
       einen Analysezug zurück. „Analyse beenden“ stellt die Partiestellung wieder her, dann legst
       du deinen Zug fest. Die Analysezüge zählen nicht.
 
-### Neu in P6: englische Buchdaten (Opus, 23.10.2026; erst testbar, wenn P6 in der App ist)
+### Neu in 0.2.118: englische Buchdaten (P6; Opus, 23.10.2026)
 
 Alle Buchdaten gibt es jetzt auch auf Englisch: Bildunterschriften, Abschnittstitel, Übungen,
 Warum-Fragen, Bilanzen, Fallenchecks, Steckbriefe, Glossar und Nachschlagen. Die App zeigt sie,
-sobald die englischen Daten eingeschaltet sind (eine kleine Änderung im App-Code, die noch
-aussteht; bis dahin erscheinen die Buchdaten auch in „English (preview)“ deutsch). Zum Testen
+seit 0.2.118 in „English (preview)“; die Trainerdaten bleiben vorerst deutsch. Zum Testen
 jeweils Einstellungen › Anzeige › „English (preview)“.
 
 - [ ] N730. **Kapitel und Lernziele:** Book: Die Kapitel heißen englisch („Basic principles of

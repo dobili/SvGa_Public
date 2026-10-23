@@ -6,7 +6,7 @@
   {
    "nummer": "11.1",
    "label": "sec:k11-weg",
-   "titel": "Dein Weg durch dieses Kapitel"
+   "titel": "Your path through this chapter"
   },
   {
    "nummer": "11.2",
@@ -215,7 +215,7 @@
       "frage": "Warum ist 6. Lc4 hier der richtige Entwicklungszug?",
       "antworten": [
        "Er deckt den Bauern e4 gegen einen Angriff des Springers g8.",
-       "Er bereitet die lange Rochade vor.",
+       "It prepares queenside castling.",
        "Er entwickelt mit Drohung: Läufer und Dame greifen f7 an, gedeckt ist f7 nur vom König."
       ],
       "richtig": 2,
@@ -3430,7 +3430,7 @@
       "frage": "Warum spielt Weiß 16. Sde2?",
       "antworten": [
        "Der Springer greift von e2 aus den Bauern d6 an.",
-       "Er bereitet die kurze Rochade vor.",
+       "It prepares kingside castling.",
        "Er deckt c3 ein zweites Mal mit einer Figur, damit das Qualitätsopfer Txc3 nicht mehr wirkt."
       ],
       "richtig": 2,
@@ -11355,8 +11355,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -11376,14 +11376,14 @@
         "text": [
          {
           "art": "text",
-          "text": "+2 Bauern",
+          "text": "+2 pawns",
           "stil": "normal"
          }
         ]
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "gleichstand",
         "text": [
@@ -11406,13 +11406,13 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
          {
           "art": "text",
-          "text": "rochiert",
+          "text": "castled",
           "stil": "normal"
          }
         ]
@@ -11429,7 +11429,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "teils",
         "text": [
@@ -11507,8 +11507,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -11518,7 +11518,7 @@
         "text": [
          {
           "art": "text",
-          "text": "beide Bauern sind zurück",
+          "text": "both pawns are back",
           "stil": "normal"
          }
         ]
@@ -11529,7 +11529,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "gleichstand",
         "text": [
@@ -11552,7 +11552,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -11575,7 +11575,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -11653,12 +11653,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Wo spiele ich?",
+       "name": "Where do I play?",
        "links": {
         "wertung": null,
         "text": [
@@ -11681,7 +11681,7 @@
        }
       },
       {
-       "name": "Was will mein Gegner?",
+       "name": "What does my opponent want?",
        "links": {
         "wertung": null,
         "text": [
@@ -11713,7 +11713,7 @@
        }
       },
       {
-       "name": "Welche Figur?",
+       "name": "Which piece?",
        "links": {
         "wertung": null,
         "text": [
@@ -11785,12 +11785,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -11831,7 +11831,7 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
@@ -11854,7 +11854,7 @@
        }
       },
       {
-       "name": "Richtung",
+       "name": "Direction",
        "links": {
         "wertung": null,
         "text": [
@@ -11877,7 +11877,7 @@
        }
       },
       {
-       "name": "Figuren",
+       "name": "Pieces",
        "links": {
         "wertung": null,
         "text": [
@@ -11949,12 +11949,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -11977,13 +11977,13 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
          {
           "art": "text",
-          "text": "Gesund, zwei Bauerninseln.",
+          "text": "Healthy, two pawn islands.",
           "stil": "normal"
          }
         ]
@@ -12000,7 +12000,7 @@
        }
       },
       {
-       "name": "Richtung",
+       "name": "Direction",
        "links": {
         "wertung": null,
         "text": [
@@ -12023,7 +12023,7 @@
        }
       },
       {
-       "name": "Figuren",
+       "name": "Pieces",
        "links": {
         "wertung": null,
         "text": [
@@ -12122,12 +12122,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -12150,7 +12150,7 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
@@ -12173,7 +12173,7 @@
        }
       },
       {
-       "name": "Richtung",
+       "name": "Direction",
        "links": {
         "wertung": null,
         "text": [
@@ -12223,7 +12223,7 @@
        }
       },
       {
-       "name": "Figuren",
+       "name": "Pieces",
        "links": {
         "wertung": null,
         "text": [

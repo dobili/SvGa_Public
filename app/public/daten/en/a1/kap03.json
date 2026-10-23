@@ -16,7 +16,7 @@
   {
    "nummer": "3.3",
    "label": "",
-   "titel": "Dein Weg durch dieses Kapitel"
+   "titel": "Your path through this chapter"
   },
   {
    "nummer": "3.4",
@@ -173,7 +173,7 @@
       "antworten": [
        "Er greift den Bauern f4 sofort an.",
        "Er entwickelt eine Figur und nimmt der schwarzen Dame das Schach auf h4.",
-       "Er bereitet die lange Rochade vor."
+       "It prepares queenside castling."
       ],
       "richtig": 1,
       "erklaerung": "Ohne f-Bauern ist die Diagonale h4–e1 offen. Der Springer f3 deckt h4 und kommt dabei auf sein bestes Feld."
@@ -559,7 +559,7 @@
       "antworten": [
        "Er greift den Bauern g5 an, der den Bauern f4 stützt.",
        "Er deckt den Springer f3.",
-       "Er bereitet die kurze Rochade vor."
+       "It prepares kingside castling."
       ],
       "richtig": 0,
       "erklaerung": "Schwarz muss sich entscheiden, was mit g5 geschieht. Nach g4 bekommt der Springer mit Se5 ein aktives Feld."
@@ -1084,7 +1084,7 @@
       "frage": "Warum spielt Schwarz 6... d6?",
       "antworten": [
        "Er greift den Läufer c4 an.",
-       "Er bereitet die lange Rochade vor.",
+       "It prepares queenside castling.",
        "Er stützt e5 und öffnet dem Läufer c8 den Weg."
       ],
       "richtig": 2,
@@ -1744,7 +1744,7 @@
       "zug": "9. Qd2",
       "frage": "Warum stellt Weiß die Dame mit 9. Dd2 dazwischen?",
       "antworten": [
-       "Sie bereitet die lange Rochade vor.",
+       "It prepares queenside castling.",
        "Sie greift den Läufer b4 an und gewinnt ihn.",
        "Sie ist ohnehin verloren; auf d2 bekommt Weiß wenigstens den Läufer dafür."
       ],
@@ -2304,7 +2304,7 @@
       "antworten": [
        "Er nimmt dem Springer c3 das Feld b5.",
        "Er öffnet dem Turm a8 die a-Linie.",
-       "Er deckt den Bauern d5."
+       "It defends the pawn on d5."
       ],
       "richtig": 0,
       "erklaerung": "Sb5 hätte die Dame angegriffen und Sc7+ oder Sd6+ vorbereitet. Mit a6 ist das Feld b5 gesperrt."
@@ -3091,7 +3091,7 @@
       "antworten": [
        "Er greift den Springer g5 an.",
        "Der Läufer verlässt die f-Linie, auf der ihn der Turm angreift; e6 muss ihn dann nicht mehr decken.",
-       "Er bereitet die lange Rochade vor."
+       "It prepares queenside castling."
       ],
       "richtig": 1,
       "erklaerung": "Auf f5 war der Läufer nur durch e6 gedeckt, und e6 stand selbst unter Druck. Auf g6 ist er aus der Schusslinie."
@@ -3292,7 +3292,7 @@
     "label": "",
     "titel": "Das Blackmar-Diemer-Gambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqk2r/ppp1bppp/4pn2/6B1/3P4/2N2N2/PPP3PP/R2QKB1R w KQkq - 2 7",
    "pfeile": [
     {
@@ -3357,7 +3357,7 @@
     "label": "",
     "titel": "Das Blackmar-Diemer-Gambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkbnr/pp2pppp/2p5/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR b KQkq - 0 4",
    "pfeile": [
     {
@@ -4967,7 +4967,7 @@
       "frage": "Warum ist 8. Df3 hier die richtige Verteidigung?",
       "antworten": [
        "Die Dame greift den Läufer c5 an.",
-       "Sie bereitet die lange Rochade vor.",
+       "It prepares queenside castling.",
        "Sie deckt f2 gegen das Matt und schützt zugleich den Läufer g4."
       ],
       "richtig": 2,
@@ -5127,7 +5127,7 @@
       "antworten": [
        "Es ist der einzige erlaubte Zug: Der Springer e4 deckt f2 und d2.",
        "Er will den König über e2 nach f3 in Sicherheit bringen.",
-       "Er bereitet die Rochade vor."
+       "It prepares castling."
       ],
       "richtig": 0,
       "erklaerung": "Ein Schach mit nur einem Ausweg ist gefährlich. Nach Ke2 setzt der bisher unentwickelte Läufer c8 auf g4 matt."
@@ -5337,7 +5337,7 @@
       "antworten": [
        "Er greift die Dame f6 an.",
        "Er deckt den angegriffenen Springer e5 und baut das Zentrum aus.",
-       "Er öffnet dem Läufer f1 die Diagonale."
+       "It opens the diagonal for the bishop on f1."
       ],
       "richtig": 1,
       "erklaerung": "Der Springer ist jetzt gedeckt, und Weiß steht im Zentrum fest. Danach findet der Springer mit Sc4 ein sicheres Feld."
@@ -6895,8 +6895,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -6923,7 +6923,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -6946,7 +6946,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "teils",
         "text": [
@@ -6969,7 +6969,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7041,8 +7041,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -7069,7 +7069,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "gleichstand",
         "text": [
@@ -7092,7 +7092,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "teils",
         "text": [
@@ -7115,7 +7115,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7187,8 +7187,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -7215,7 +7215,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -7238,13 +7238,13 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
          {
           "art": "text",
-          "text": "rochiert",
+          "text": "castled",
           "stil": "normal"
          }
         ]
@@ -7261,7 +7261,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7324,8 +7324,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -7352,7 +7352,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": null,
         "text": [
@@ -7375,7 +7375,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7398,7 +7398,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7461,8 +7461,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -7482,14 +7482,14 @@
         "text": [
          {
           "art": "text",
-          "text": "+2 Bauern",
+          "text": "+2 pawns",
           "stil": "normal"
          }
         ]
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -7512,7 +7512,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "teils",
         "text": [
@@ -7535,7 +7535,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7641,8 +7641,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -7652,7 +7652,7 @@
         "text": [
          {
           "art": "text",
-          "text": "beide Bauern sind zurück",
+          "text": "both pawns are back",
           "stil": "normal"
          }
         ]
@@ -7663,7 +7663,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "gleichstand",
         "text": [
@@ -7686,7 +7686,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7709,7 +7709,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "teils",
         "text": [
@@ -7781,8 +7781,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -7809,7 +7809,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -7832,13 +7832,13 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
          {
           "art": "text",
-          "text": "rochiert",
+          "text": "castled",
           "stil": "normal"
          }
         ]
@@ -7855,7 +7855,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7918,8 +7918,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -7946,7 +7946,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "gleichstand",
         "text": [
@@ -7969,7 +7969,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -7992,7 +7992,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -8073,8 +8073,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -8101,7 +8101,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -8124,7 +8124,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "teils",
         "text": [
@@ -8147,7 +8147,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -8210,8 +8210,8 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (Gambitspieler)",
-      "Schwarz"
+      "White (gambit player)",
+      "Black"
      ],
      "zeilen": [
       {
@@ -8238,7 +8238,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -8261,7 +8261,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "teils",
         "text": [
@@ -8284,7 +8284,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -8348,7 +8348,7 @@
      "art": "tabelle",
      "spalten": [
       "Schwarz (Gambitspieler)",
-      "Weiß"
+      "White"
      ],
      "zeilen": [
       {
@@ -8375,7 +8375,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -8398,7 +8398,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "teils",
         "text": [
@@ -8421,7 +8421,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -8485,7 +8485,7 @@
      "art": "tabelle",
      "spalten": [
       "Schwarz (Gambitspieler)",
-      "Weiß"
+      "White"
      ],
      "zeilen": [
       {
@@ -8512,7 +8512,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -8535,13 +8535,13 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
          {
           "art": "text",
-          "text": "rochiert",
+          "text": "castled",
           "stil": "normal"
          }
         ]
@@ -8558,7 +8558,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -8622,7 +8622,7 @@
      "art": "tabelle",
      "spalten": [
       "Schwarz (Gambitspieler)",
-      "Weiß"
+      "White"
      ],
      "zeilen": [
       {
@@ -8643,7 +8643,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "gleichstand",
         "text": [
@@ -8666,7 +8666,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "nein",
         "text": [
@@ -8689,7 +8689,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "nein",
         "text": [
@@ -8753,7 +8753,7 @@
      "art": "tabelle",
      "spalten": [
       "Schwarz (Gambitspieler)",
-      "Weiß"
+      "White"
      ],
      "zeilen": [
       {
@@ -8780,7 +8780,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "vornlinks",
         "text": [
@@ -8803,7 +8803,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "teils",
         "text": [
@@ -8826,7 +8826,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "teils",
         "text": [
@@ -8899,7 +8899,7 @@
      "art": "tabelle",
      "spalten": [
       "Schwarz (Gambitspieler)",
-      "Weiß"
+      "White"
      ],
      "zeilen": [
       {
@@ -8920,7 +8920,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": null,
         "text": [
@@ -8943,13 +8943,13 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
          {
           "art": "text",
-          "text": "rochiert",
+          "text": "castled",
           "stil": "normal"
          }
         ]
@@ -8959,14 +8959,14 @@
         "text": [
          {
           "art": "text",
-          "text": "rochiert",
+          "text": "castled",
           "stil": "normal"
          }
         ]
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "teils",
         "text": [
@@ -11062,7 +11062,7 @@
    "id": "k03-a44",
    "kapitel": 3,
    "abschnitt": "3.8",
-   "titel": "Weitere Varianten",
+   "titel": "Further lines",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {

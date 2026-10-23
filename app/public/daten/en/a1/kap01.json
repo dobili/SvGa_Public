@@ -636,9 +636,9 @@
       "zug": "4. Nc3",
       "frage": "Warum ist 4. Sc3 hier so wirkungsvoll?",
       "antworten": [
-       "Er droht sofort Matt auf f7.",
+       "It threatens mate on f7 at once.",
        "Er entwickelt eine Figur und bereitet Sd5 vor, das die Dame mit Tempo angreift.",
-       "Er bereitet die lange Rochade vor."
+       "It prepares queenside castling."
       ],
       "richtig": 1,
       "erklaerung": "Die früh herausgekommene Dame wird zur Zielscheibe: Jeder weitere Angriff auf sie ist ein Entwicklungszug für Weiß und ein verlorenes Tempo für Schwarz."
@@ -741,7 +741,7 @@
       "zug": "5... Qd8",
       "frage": "Warum zieht die Dame nach d8 zurück?",
       "antworten": [
-       "Sie bereitet die lange Rochade vor.",
+       "It prepares queenside castling.",
        "Von d8 aus greift sie den Springer d5 an.",
        "Sie weicht dem Angriff aus und deckt c7; die beiden Damenzüge waren damit umsonst."
       ],
@@ -887,7 +887,7 @@
       "antworten": [
        "Der Vorsprung in der Entwicklung ist mehr wert als ein Bauer.",
        "Der Bauer d4 ist dreifach gedeckt.",
-       "Nach dem Schlag ist Schwarz sofort matt."
+       "After the capture, Black is mated at once."
       ],
       "richtig": 0,
       "erklaerung": "Weiß hat ein breites Zentrum, drei entwickelte Figuren und rochiert gleich. Ein Bauer, den Schwarz mit weiteren Zügen derselben Figuren holt, vergrößert diesen Rückstand nur."
@@ -1244,7 +1244,7 @@
       "zug": "4. Qf3",
       "frage": "Warum zieht die Dame gerade nach f3?",
       "antworten": [
-       "Sie bereitet die lange Rochade vor.",
+       "It prepares queenside castling.",
        "Sie bleibt auf f7 gerichtet und erneuert die Mattdrohung.",
        "Sie greift den Springer c6 an."
       ],

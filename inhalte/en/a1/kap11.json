@@ -1,0 +1,24 @@
+{
+ "schemaVersion": 1,
+ "datei": "kap11.json",
+ "texte": {
+  "bc151dd9a0d8": "Your path through this chapter",
+  "354538c2a003": "It prepares queenside castling.",
+  "d38e9c0367e4": "It prepares kingside castling.",
+  "c10fe5eee864": "White (gambit player)",
+  "4b436dc5eb76": "Black",
+  "0e467cbe4304": "–",
+  "825a08fab44d": "+2 pawns",
+  "52129b4adc6a": "castled",
+  "76443fee756b": "both pawns are back",
+  "fb938e028855": "White",
+  "94c404272280": "Where do I play?",
+  "d3b0c17fe5be": "What does my opponent want?",
+  "aad35ec51c5e": "Which piece?",
+  "109271376351": "Squares",
+  "de9d0acc7440": "Pawns",
+  "6f7cc3046371": "Direction",
+  "521de3e2ed35": "Pieces",
+  "e0023c00d737": "Healthy, two pawn islands."
+ }
+}

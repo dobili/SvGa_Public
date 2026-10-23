@@ -1055,7 +1055,7 @@
     "label": "sec:k5-bauern",
     "titel": "Leitfrage 2: Bauern"
    },
-   "unterabschnitt": "Doppelbauern",
+   "unterabschnitt": "Doubled pawns",
    "fen": "3k4/ppp2ppp/2p5/4P3/8/8/PPP2PPP/6K1 w - - 0 1",
    "pfeile": [],
    "felder": [
@@ -1104,7 +1104,7 @@
     "label": "sec:k5-bauern",
     "titel": "Leitfrage 2: Bauern"
    },
-   "unterabschnitt": "Doppelbauern",
+   "unterabschnitt": "Doubled pawns",
    "fen": "rnbqk2r/pppp1ppp/4pn2/8/2PP4/P1P5/4PPPP/R1BQKBNR b KQkq - 0 5",
    "pfeile": [],
    "felder": [
@@ -1882,7 +1882,7 @@
       "antworten": [
        "Er greift den Läufer e2 an.",
        "Er will über f5 als dritter Angreifer gegen d4 wirken; f6 nimmt ihm der Bauer e5.",
-       "Er bereitet die lange Rochade vor."
+       "It prepares queenside castling."
       ],
       "richtig": 1,
       "erklaerung": "Der direkte Weg über f6 ist versperrt. Über h6 und f5 kommt der Springer trotzdem gegen d4 ins Spiel."
@@ -2535,7 +2535,7 @@
       "frage": "Warum ist der Bauer c6 ein gutes Ziel für Weiß?",
       "antworten": [
        "Er kann jederzeit zur Dame werden.",
-       "Er ist an den König gefesselt.",
+       "It is pinned to the king.",
        "Er ist rückständig: Kein schwarzer Bauer kann ihn decken, und er steht auf der halboffenen c-Linie."
       ],
       "richtig": 2,
@@ -2916,7 +2916,7 @@
       "frage": "Warum spielt Schwarz 6... Ld6?",
       "antworten": [
        "Er bietet den Tausch gegen den aktiven Läufer f4 an.",
-       "Er greift den Bauern d4 an.",
+       "It attacks the pawn on d4.",
        "Er greift den Springer f3 an."
       ],
       "richtig": 0,
@@ -3882,7 +3882,7 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Skelett-Röntgen",
+    "motiv": "Skeleton X-ray",
     "text": "Die weiße Basis d4 ist schwach und bindet Figuren, Weiß hat Raum am Königsflügel; Schwarz drückt über die offene c-Linie gegen d4. Anders als in der Französischen Vorstoßvariante hat Schwarz keinen eingesperrten Läufer, weil er ihn vor ...e6 entwickelt hat."
    }
   }
@@ -3914,12 +3914,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -4027,12 +4027,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -4055,7 +4055,7 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
@@ -4137,12 +4137,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -4183,7 +4183,7 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
@@ -4264,12 +4264,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -4301,7 +4301,7 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
@@ -4324,7 +4324,7 @@
        }
       },
       {
-       "name": "Richtung",
+       "name": "Direction",
        "links": {
         "wertung": null,
         "text": [
@@ -4414,12 +4414,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -4460,13 +4460,13 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
          {
           "art": "text",
-          "text": "Gesund, zwei Bauerninseln.",
+          "text": "Healthy, two pawn islands.",
           "stil": "normal"
          }
         ]
@@ -4493,7 +4493,7 @@
        }
       },
       {
-       "name": "Richtung",
+       "name": "Direction",
        "links": {
         "wertung": null,
         "text": [
@@ -4601,12 +4601,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -4638,7 +4638,7 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
@@ -4661,7 +4661,7 @@
        }
       },
       {
-       "name": "Richtung",
+       "name": "Direction",
        "links": {
         "wertung": null,
         "text": [
@@ -4711,7 +4711,7 @@
        }
       },
       {
-       "name": "Figuren",
+       "name": "Pieces",
        "links": {
         "wertung": null,
         "text": [
@@ -4810,12 +4810,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Felder",
+       "name": "Squares",
        "links": {
         "wertung": null,
         "text": [
@@ -4847,7 +4847,7 @@
        }
       },
       {
-       "name": "Bauern",
+       "name": "Pawns",
        "links": {
         "wertung": null,
         "text": [
@@ -4870,7 +4870,7 @@
        }
       },
       {
-       "name": "Richtung",
+       "name": "Direction",
        "links": {
         "wertung": null,
         "text": [
@@ -4902,7 +4902,7 @@
        }
       },
       {
-       "name": "Figuren",
+       "name": "Pieces",
        "links": {
         "wertung": null,
         "text": [
@@ -5049,7 +5049,7 @@
    "id": "k05-a16",
    "kapitel": 5,
    "abschnitt": "5.4",
-   "titel": "Doppelbauern",
+   "titel": "Doubled pawns",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {

@@ -1,0 +1,21 @@
+{
+ "schemaVersion": 1,
+ "datei": "kap03.json",
+ "texte": {
+  "bc151dd9a0d8": "Your path through this chapter",
+  "354538c2a003": "It prepares queenside castling.",
+  "d38e9c0367e4": "It prepares kingside castling.",
+  "ac03a54a1b2a": "It prepares queenside castling.",
+  "3e66476a519f": "It defends the pawn on d5.",
+  "b349978bd7cd": "Further lines",
+  "25e719fa0472": "It prepares castling.",
+  "5cd2e1ac5e02": "It opens the diagonal for the bishop on f1.",
+  "c10fe5eee864": "White (gambit player)",
+  "4b436dc5eb76": "Black",
+  "0e467cbe4304": "–",
+  "52129b4adc6a": "castled",
+  "825a08fab44d": "+2 pawns",
+  "76443fee756b": "both pawns are back",
+  "fb938e028855": "White"
+ }
+}

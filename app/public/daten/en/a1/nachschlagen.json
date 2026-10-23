@@ -1,100 +1,100 @@
 {
  "schemaVersion": 1,
  "denkroutine": {
-  "titel": "Vor jedem Zug: die Denkroutine",
+  "titel": "Before every move: the thinking routine",
   "schritte": [
    {
     "nummer": 1,
-    "titel": "Stellung erfassen.",
-    "text": "Was hat der letzte Zug des Gegners verändert, was droht er? Warnsignale auf beiden Seiten. Welche Phase? Dann das Werkzeug von Karte 2."
+    "titel": "Assess the position.",
+    "text": "What did your opponent's last move change, and what is the threat? Warning signs on both sides. Which phase? Then the tool from card 2."
    },
    {
     "nummer": 2,
-    "titel": "Kandidaten sammeln.",
-    "text": "Zuerst Schachs, Schläge, Drohungen, deine und die des Gegners. Zwingt nichts: der beste ruhige Zug mit dem Werkzeug deiner Phase. Zwei bis drei Kandidaten."
+    "titel": "Collect candidates.",
+    "text": "First checks, captures, threats, yours and your opponent's. If nothing is forcing: the best quiet move with the tool of your phase. Two or three candidates."
    },
    {
     "nummer": 3,
-    "titel": "Die stärkste Antwort suchen.",
-    "text": "Für jeden Kandidaten die stärkste, nicht die bequemste Antwort. Mindestens zwei Antworten weit, jeden Kandidaten zu Ende rechnen."
+    "titel": "Look for the strongest reply.",
+    "text": "For each candidate, the strongest reply, not the most convenient one. At least two replies deep; calculate every candidate to the end."
    },
    {
     "nummer": 4,
-    "titel": "Bewerten und vergleichen.",
-    "text": "Bis zur Ruhe rechnen, dann zählen: Material, Königssicherheit, Aktivität. Den Kandidaten wählen, der gegen die stärkste Antwort am besten abschneidet."
+    "titel": "Evaluate and compare.",
+    "text": "Calculate until the position is quiet, then count: material, king safety, activity. Choose the candidate that does best against the strongest reply."
    }
   ],
   "sicherheitsblick": {
-   "titel": "Sicherheitsblick.",
-   "text": "Steht mein König danach sicher? Kann der Gegner die gezogene Figur sofort schlagen? Erlaube ich ein Schach oder Matt?"
+   "titel": "Safety check.",
+   "text": "Is my king safe afterwards? Can my opponent capture the moved piece right away? Do I allow a check or mate?"
   },
-  "zurueck": "widerlegt oder unsicher?",
-  "abschluss": "Ziehen",
-  "phasenTitel": "Welche Phase? Welches Werkzeug?",
+  "zurueck": "refuted or unsafe?",
+  "abschluss": "Move",
+  "phasenTitel": "Which phase? Which tool?",
   "phasen": [
    {
-    "name": "Eröffnung",
-    "wann": "Du bist hier, solange die drei Eröffnungsziele nicht erfüllt sind: Zentrum, Entwicklung, Königssicherheit.",
+    "name": "Opening",
+    "wann": "You are here as long as the three opening goals are not met: center, development, king safety.",
     "abschnitte": [
      {
-      "titel": "Ruhiger Zug mit",
+      "titel": "Quiet move with",
       "punkte": [
-       "deinem Repertoire (Kap. 2)",
-       "den drei Eröffnungszielen (Kap. 1)"
+       "your repertoire (Ch. 2)",
+       "the three opening goals (Ch. 1)"
       ]
      },
      {
-      "titel": "Achte besonders auf",
+      "titel": "Watch especially for",
       "punkte": [
-       "die vier Todsünden (Kap. 1)",
-       "Geschenke: erst die Warum-Frage (Kap. 4)",
-       "Gambits: die Faktorenbilanz (Kap. 3)"
+       "the four deadly sins (Ch. 1)",
+       "gifts: first the Why question (Ch. 4)",
+       "gambits: the factor balance (Ch. 3)"
       ]
      }
     ]
    },
    {
-    "name": "Mittelspiel",
-    "wann": "Du bist hier, sobald die Eröffnungsziele erfüllt sind und noch kein Endspiel erreicht ist.",
+    "name": "Middlegame",
+    "wann": "You are here once the opening goals are met and no endgame has been reached yet.",
     "abschnitte": [
      {
-      "titel": "Ruhiger Zug mit",
+      "titel": "Quiet move with",
       "punkte": [
-       "dem Skelett-Röntgen: Felder, Bauern, Richtung, Figuren (Kap. 5)",
-       "den drei Planfragen: Wo spiele ich? Was will mein Gegner? Welche Figur bringe ich dorthin? (Kap. 6)"
+       "the skeleton X-ray: squares, pawns, direction, pieces (Ch. 5)",
+       "the three plan questions: Where do I play? What does my opponent want? Which piece do I bring there? (Ch. 6)"
       ]
      },
      {
-      "titel": "Achte besonders auf",
+      "titel": "Watch especially for",
       "punkte": [
-       "den Plan des Gegners (Kap. 6)",
-       "Mehrmaterial: Figuren tauschen, ins Endspiel gehen (Kap. 6, 8)"
+       "your opponent's plan (Ch. 6)",
+       "extra material: trade pieces, head for the endgame (Ch. 6, 8)"
       ]
      }
     ]
    },
    {
-    "name": "Endspiel",
-    "wann": "Du bist hier, wenn die Damen weg sind, beide Könige sicher stehen, dein König ins Zentrum darf und die Bauern entscheiden (Kap. 8).",
+    "name": "Endgame",
+    "wann": "You are here when the queens are off, both kings are safe, your king may go to the center and the pawns decide (Ch. 8).",
     "abschnitte": [
      {
-      "titel": "Ruhiger Zug mit",
+      "titel": "Quiet move with",
       "punkte": [
-       "den sechs Endspielregeln (Kap. 8)",
-       "im Turmendspiel: Abschneiden, Schachdistanz, kurze und lange Seite (Kap. 9)"
+       "the six endgame rules (Ch. 8)",
+       "in rook endgames: cutting off, checking distance, short and long side (Ch. 9)"
       ]
      },
      {
-      "titel": "Achte besonders auf",
+      "titel": "Watch especially for",
       "punkte": [
-       "Freibauern: bis zur Umwandlung rechnen (Kap. 8)",
-       "Patt am Ende jeder Variante (Kap. 10)"
+       "passed pawns: calculate through to promotion (Ch. 8)",
+       "stalemate at the end of every line (Ch. 10)"
       ]
      }
     ]
    }
   ],
-  "zuerst": "In jeder Phase zuerst: Warnsignale und die Schach-Röntgen-Regel (Schachs, Schläge, Drohungen)."
+  "zuerst": "In every phase, first: warning signs and the Chess X-ray rule (checks, captures, threats)."
  },
  "checkliste": {
   "titel": "Master checklist for training and game analysis",
@@ -131,57 +131,57 @@
    },
    {
     "kapitel": 4,
-    "kernfrage": "Warum lässt mein Gegner das zu?",
-    "werkzeug": "goldene Verteidigungsregel, Prüffragen F1–F3, Warnsignale W1–W5",
-    "fehlerart": "Falle oder Köder"
+    "kernfrage": "Why is my opponent allowing this?",
+    "werkzeug": "golden defense rule, check questions F1–F3, warning signs W1–W5",
+    "fehlerart": "Trap or bait"
    },
    {
     "kapitel": 5,
-    "kernfrage": "Was bleibt für immer?",
-    "werkzeug": "Skelett-Röntgen: Vorher und vier Leitfragen",
-    "fehlerart": "Bauernstruktur"
+    "kernfrage": "What stays forever?",
+    "werkzeug": "Skeleton X-ray: Before and four guiding questions",
+    "fehlerart": "Pawn structure"
    },
    {
     "kapitel": 6,
-    "kernfrage": "Wo spiele ich, was will mein Gegner, welche Figur bringe ich dorthin?",
-    "werkzeug": "drei Planfragen, Planbilanz, LAP-Prinzip",
-    "fehlerart": "Plan oder Figurenaktivität"
+    "kernfrage": "Where do I play, what does my opponent want, which piece do I bring there?",
+    "werkzeug": "three plan questions, plan balance, LAP principle",
+    "fehlerart": "Plan or piece activity"
    },
    {
     "kapitel": 7,
-    "kernfrage": "Ist die Kombination korrekt?",
-    "werkzeug": "Taktik in drei Schritten, Warnsignale W6 und W7, zwölf Motive, Mattbilder",
-    "fehlerart": "Taktik übersehen"
+    "kernfrage": "Is the combination sound?",
+    "werkzeug": "tactics in three steps, warning signs W6 and W7, twelve motifs, mating patterns",
+    "fehlerart": "Missed tactic"
    },
    {
     "kapitel": 8,
-    "kernfrage": "Welches Elementarendspiel liegt vor?",
-    "werkzeug": "sechs goldene Endspielregeln",
-    "fehlerart": "Elementarendspiel"
+    "kernfrage": "Which basic endgame is on the board?",
+    "werkzeug": "six golden endgame rules",
+    "fehlerart": "Basic endgame"
    },
    {
     "kapitel": 9,
-    "kernfrage": "Welches Erkennungsbild passt?",
-    "werkzeug": "Abschneiden, Schachdistanz, kurze und lange Seite; Philidor, Lucena, Vancura",
-    "fehlerart": "Endspieltechnik"
+    "kernfrage": "Which recognition pattern fits?",
+    "werkzeug": "cutting off, checking distance, short and long side; Philidor, Lucena, Vancura",
+    "fehlerart": "Endgame technique"
    },
    {
     "kapitel": 10,
-    "kernfrage": "Steckt ein verstecktes Motiv darin?",
-    "werkzeug": "Studien-Werkzeug: Plan des Gegners, jede Umwandlung, Patt, stiller Zug",
-    "fehlerart": "Verstecktes Motiv"
+    "kernfrage": "Is there a hidden motif?",
+    "werkzeug": "Study tool: opponent's plan, every promotion, stalemate, quiet move",
+    "fehlerart": "Hidden motif"
    },
    {
     "kapitel": 11,
-    "kernfrage": "Welches Werkzeug passt zu dieser Phase der Partie?",
-    "werkzeug": "die Werkzeuge in der ganzen Partie",
-    "fehlerart": "Planwahl"
+    "kernfrage": "Which tool fits this phase of the game?",
+    "werkzeug": "the tools across the whole game",
+    "fehlerart": "Choice of plan"
    },
    {
     "kapitel": 12,
-    "kernfrage": "Arbeite ich mit Routine?",
-    "werkzeug": "Denkroutine, Kontrollpunkte, Fehlerdatenbank",
-    "fehlerart": "Routine oder Zeit"
+    "kernfrage": "Am I working with a routine?",
+    "werkzeug": "thinking routine, checkpoints, mistake log",
+    "fehlerart": "Routine or time"
    }
   ]
  },
@@ -235,110 +235,110 @@
   },
   {
    "kapitel": 4,
-   "einleitung": "Bevor du mit Kapitel 5 weiterliest, solltest du Folgendes sicher können:",
+   "einleitung": "Before you read on with Chapter 5, you should be able to do the following with confidence:",
    "punkte": [
-    "vor jedem angebotenen Material die drei Prüffragen stellen",
-    "die fünf Warnsignale auf dem Brett erkennen",
-    "die Fallen kennen, die dein Repertoire treffen, als Opfer wie als Fallensteller"
+    "ask the three check questions before taking any material you are offered",
+    "recognize the five warning signs on the board",
+    "know the traps that hit your repertoire, both as the victim and as the trap-setter"
    ]
   },
   {
    "kapitel": 5,
-   "einleitung": "Bevor du mit Kapitel 6 weiterliest, solltest du Folgendes sicher können:",
+   "einleitung": "Before you read on with Chapter 6, you should be able to do the following with confidence:",
    "punkte": [
-    "vor jedem eigenen Bauernzug sagen, welche Felder er für immer aufgibt und welchen der vier Gründe er erfüllt",
-    "Löcher, Vorposten und die Gefahr vor dem eigenen König erkennen",
-    "mit dem Deckungstest Doppelbauern, rückständige Bauern, Isolani, hängende Bauern und Kettenbasen finden und die Bauerninseln zählen",
-    "aus der Richtung der Ketten, dem Raum und den Mehrheiten ablesen, auf welchem Flügel du spielst, und einen gegnerischen Freibauern blockieren",
-    "erkennen, ob eine Stellung offen, halboffen, geschlossen oder beweglich ist, und entscheiden, ob du sie öffnest",
-    "mit dem Skelett-Röntgen für eine unbekannte Struktur einen Plan in einem Satz formulieren und daraus einen ersten Zug ableiten"
+    "before each pawn move of your own, say which squares it gives up forever and which of the four reasons it fulfills",
+    "recognize holes, outposts and the danger in front of your own king",
+    "use the protection test to find doubled pawns, backward pawns, isolanis, hanging pawns and chain bases, and count the pawn islands",
+    "read from the direction of the chains, space and the majorities which wing you play on, and blockade an enemy passed pawn",
+    "recognize whether a position is open, half-open, closed or mobile, and decide whether to open it",
+    "use the skeleton X-ray to put a plan for an unfamiliar structure into one sentence and derive a first move from it"
    ]
   },
   {
    "kapitel": 6,
-   "einleitung": "Bevor du mit Kapitel 7 weiterliest, solltest du Folgendes sicher können:",
+   "einleitung": "Before you read on with Chapter 7, you should be able to do the following with confidence:",
    "punkte": [
-    "in einer ruhigen Stellung sagen, was jetzt zählt: Königssicherheit, Aktivität und Bauernstruktur",
-    "entscheiden, ob du am Flügel oder im Zentrum spielst – je nachdem, ob das Zentrum geschlossen oder offen ist und wo die Könige stehen",
-    "die drei Bedingungen für einen Königsangriff bei gleichseitiger Rochade prüfen",
-    "den Plan deines Gegners an einem konkreten Zug erkennen und ihn vorbeugend verhindern",
-    "einem laufenden Angriff mit den fünf Verteidigungsmitteln eine seiner Bedingungen nehmen",
-    "eine Schwäche fixieren, gegen sie spielen und eine zweite schaffen",
-    "deine am wenigsten aktive Figur finden und ihr einen Weg zum Plan bahnen, einen Turm etwa über die offene Linie auf die siebte Reihe",
-    "eine Planbilanz für beide Seiten aufstellen",
-    "einen ungleichen Tausch und ein Qualitätsopfer mit der Faktorenbilanz beurteilen",
-    "einen Materialvorteil mit den richtigen Tauschen verwerten"
+    "say what counts now in a quiet position: king safety, activity and pawn structure",
+    "decide whether to play on a wing or in the center – depending on whether the center is closed or open and where the kings are",
+    "check the three conditions for a king attack with same-side castling",
+    "spot your opponent's plan from a concrete move and prevent it in advance",
+    "use the five defensive resources to take away one of the conditions of an attack already under way",
+    "fix a weakness, play against it and create a second one",
+    "find your least active piece and clear a path for it to the plan, for example a rook via the open file to the seventh rank",
+    "draw up a plan balance for both sides",
+    "judge an unequal trade and an exchange sacrifice with the factor balance",
+    "convert a material advantage with the right trades"
    ]
   },
   {
    "kapitel": 7,
-   "einleitung": "Bevor du mit Kapitel 8 weiterliest, solltest du Folgendes können:",
+   "einleitung": "Before you read on with Chapter 8, you should be able to do the following:",
    "punkte": [
-    "zu jedem Warnsignal, für beide Seiten, das passende Motiv finden",
-    "mehrere Kandidaten nacheinander bis zur Ruhe rechnen und die Bilanz ziehen",
-    "eine Drohung mit den fünf Abwehrfragen prüfen",
-    "einen Abtausch auf einem Feld richtig zählen, auch mit Figuren, die hintereinanderstehen",
-    "die Mattbilder dieses Kapitels erkennen",
-    "in einer verlorenen Stellung nach Dauerschach und Patt suchen"
+    "find the matching motif for every warning sign, for both sides",
+    "calculate several candidates one after another until the position is quiet, and draw up the balance",
+    "test a threat with the five defense questions",
+    "count an exchange on a square correctly, including pieces lined up one behind the other",
+    "recognize the mating patterns of this chapter",
+    "look for perpetual check and stalemate in a lost position"
    ]
   },
   {
    "kapitel": 8,
-   "einleitung": "Bevor du mit Kapitel 9 weiterliest, solltest du Folgendes können:",
+   "einleitung": "Before you read on with Chapter 9, you should be able to do the following:",
    "punkte": [
-    "Damenmatt und Turmmatt ohne Patt sicher ausführen, das Turmmatt auch aus der Brettmitte",
-    "die Opposition erkennen und nutzen, auch aus der Ferne",
-    "die Schlüsselfelder eines Bauern bestimmen und den König dorthin führen",
-    "vor dem Tausch der letzten Figur das Bauernendspiel ausrechnen",
-    "mit der Quadratregel und durch Zählen entscheiden, ob ein Freibauer durchläuft",
-    "aus einer Mehrheit einen Freibauern machen und einen entfernten Freibauern als Lockvogel einsetzen",
-    "das Zugrecht mit Triangulation oder einem Reserve-Tempo abgeben"
+    "deliver mate with queen and with rook confidently and without stalemate, the rook mate also from the middle of the board",
+    "recognize and use the opposition, also from a distance",
+    "determine a pawn's key squares and lead the king there",
+    "calculate the pawn endgame before trading the last piece",
+    "decide with the square rule and by counting whether a passed pawn gets through",
+    "create a passed pawn from a majority and use an outside passed pawn as a lure",
+    "hand over the right to move with triangulation or a spare tempo"
    ]
   },
   {
    "kapitel": 9,
-   "einleitung": "Bevor du mit Kapitel 10 weiterliest, solltest du Folgendes können:",
+   "einleitung": "Before you read on with Chapter 10, you should be able to do the following:",
    "punkte": [
-    "erkennen, ob ein König abgeschnitten ist, und die kurze und die lange Seite unterscheiden",
-    "die Philidor-Stellung aufbauen und im richtigen Moment hinter den Bauern wechseln",
-    "die Lucena-Stellung gewinnen: wegtreiben, Turm auf die 4. Reihe, Brücke bauen",
-    "gegen einen Randbauern die Vancura-Idee anwenden und den Spieß auf der 7. Reihe vermeiden",
-    "Turm gegen Bauer durch Abschneiden und Zählen einschätzen",
-    "Dame gegen Bauer ohne Patt gewinnen und im Damenendspiel an das Dauerschach denken",
-    "die typischen Remisbilder mit Läufern und die Festung erkennen"
+    "recognize whether a king is cut off, and tell the short side from the long side",
+    "set up the Philidor position and switch behind the pawn at the right moment",
+    "win the Lucena position: drive the king away, rook to the 4th rank, build a bridge",
+    "apply the Vancura idea against a rook's pawn and avoid the skewer on the 7th rank",
+    "assess rook against pawn by cutting off and counting",
+    "win queen against pawn without stalemate and keep perpetual check in mind in queen endgames",
+    "recognize the typical drawing patterns with bishops and the fortress"
    ]
   },
   {
    "kapitel": 10,
-   "einleitung": "Bevor du mit Kapitel 11 weiterliest, solltest du Folgendes können:",
+   "einleitung": "Before you read on with Chapter 11, you should be able to do the following:",
    "punkte": [
-    "eine Studie mit den vier zusätzlichen Prüfungen des Werkzeugs lösen",
-    "erklären, warum in der Saavedra-Studie nur der Turm gewinnt",
-    "mit der Réti-Idee einen Königsweg mit zwei Zielen finden",
-    "einer gegnerischen Figur mit einem Opfer oder einem stillen Zug den Weg versperren",
-    "bei Pattverdacht jede Figur einzeln prüfen und eine Pattreserve erkennen"
+    "solve a study with the tool's four additional checks",
+    "explain why only the rook wins in the Saavedra study",
+    "use the Réti idea to find a king route with two goals",
+    "block the path of an enemy piece with a sacrifice or a quiet move",
+    "check every piece one by one when you suspect stalemate, and recognize a stalemate reserve"
    ]
   },
   {
    "kapitel": 11,
-   "einleitung": "Bevor du weiterliest, solltest du Folgendes können:",
+   "einleitung": "Before you read on, you should be able to do the following:",
    "punkte": [
-    "zu einer Stellung das Werkzeug nennen, das sie verlangt",
-    "eine Meisterpartie am Brett nachspielen und an jedem Diagramm den Plan in einem Satz sagen",
-    "erklären, warum Colles Opfer die Hilfe des Gegners brauchte und Laskers nicht",
-    "eine Faktorenbilanz neu ziehen, wenn Material zurückgewonnen oder neu geopfert wird",
-    "vor einem Tausch sagen, welche Figuren übrig bleiben",
-    "im Turmendspiel zunächst nach der Aktivität fragen und erst dann nach dem Material"
+    "name the tool a position calls for",
+    "play through a master game on the board and state the plan in one sentence at each diagram",
+    "explain why Colle's sacrifice needed the opponent's help and Lasker's did not",
+    "redo a factor balance when material is won back or sacrificed anew",
+    "say before a trade which pieces will remain",
+    "in rook endgames, ask about activity first and only then about material"
    ]
   },
   {
    "kapitel": 12,
-   "einleitung": "Bevor du das Buch zuklappst, solltest du Folgendes können:",
+   "einleitung": "Before you close the book, you should be able to do the following:",
    "punkte": [
-    "vor einem Zug die Phase der Partie bestimmen, die vier Schritte der Denkroutine durchgehen und dabei mindestens zwei Kandidatenzüge prüfen",
-    "eine eigene Partie zuerst ohne Engine auswerten und den wichtigsten Fehler in die Fehlerdatenbank eintragen",
-    "einen Trainingsplan für deine Stufe aufstellen",
-    "deine Bedenkzeit mit Kontrollpunkten einteilen"
+    "determine the phase of the game before a move, go through the four steps of the thinking routine and check at least two candidate moves along the way",
+    "analyze one of your own games without an engine first and enter the most important mistake in the mistake log",
+    "draw up a training plan for your level",
+    "divide your thinking time with checkpoints"
    ]
   }
  ]

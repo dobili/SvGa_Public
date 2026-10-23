@@ -1742,7 +1742,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "text": "White to move mates in two.",
      "stil": "normal"
     }
    ],
@@ -1774,7 +1774,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "text": "White to move mates in two.",
      "stil": "normal"
     }
    ],
@@ -1870,7 +1870,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "text": "White to move mates in two.",
      "stil": "normal"
     }
    ],
@@ -2321,7 +2321,7 @@
    "erklaerung": {
     "loesung": "1. Bb8!",
     "akzeptiert": [],
-    "motiv": "Wegversperrung",
+    "motiv": "Interference",
     "text": "Der Turm h8 bewacht das Umwandlungsfeld über die achte Reihe. 1. Lb8! versperrt ihm den Weg, gedeckt vom Bauern a7; nach 1... Txb8 2. axb8=D gewinnt Weiß, sonst wandelt der Bauer um."
    }
   },

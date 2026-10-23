@@ -582,7 +582,7 @@
       "antworten": [
        "Alle drei Bedingungen sind erfüllt: verriegeltes Zentrum, Überzahl am Königsflügel und ein Ziel, das nur der König deckt.",
        "Weiß gewinnt mit dem Läufer sofort einen Turm.",
-       "Nach dem Schlag ist Schwarz sofort matt."
+       "After the capture, Black is mated at once."
       ],
       "richtig": 0,
       "erklaerung": "Der Bauer e5 hat den Springer von f6 vertrieben, den wichtigsten Verteidiger. Nach dem Opfer kommen Springer und Dame über g5 und h5 schnell heran."
@@ -921,7 +921,7 @@
       "zug": "5. a3",
       "frage": "Warum spielt Weiß den ruhigen Zug 5. a3?",
       "antworten": [
-       "Er bereitet die lange Rochade vor.",
+       "It prepares queenside castling.",
        "Er verhindert ...Lb4: Der Läufer würde den Springer c3 fesseln, auf b4 könnte Weiß ihn jetzt einfach schlagen.",
        "Er macht dem Turm a1 das Feld a2 frei."
       ],
@@ -1078,7 +1078,7 @@
       "antworten": [
        "Den Bauern e6, den kein Bauer mehr decken kann.",
        "Einen ganzen Springer.",
-       "Das Recht zu rochieren."
+       "The right to castle."
       ],
       "richtig": 0,
       "erklaerung": "Der Springer f6 bewacht h7 wieder, doch e6 bleibt dauerhaft schwach. Verteidigen heißt abwägen, welche Bedingung du dem Angriff am billigsten nimmst."
@@ -1218,7 +1218,7 @@
      {
       "frage": "Warum ist der Springer d2 die am wenigsten aktive weiße Figur?",
       "antworten": [
-       "Er ist an den König gefesselt.",
+       "It is pinned to the king.",
        "Eigene Figuren besetzen fast alle seine Felder; frei sind nur b1 und b3, beide ohne Aufgabe.",
        "Er wird vom Bauern e5 angegriffen."
       ],
@@ -1655,8 +1655,8 @@
       "frage": "Warum spielt Weiß jetzt 13. Le3?",
       "antworten": [
        "Er bringt die letzte Figur ins Spiel, die noch zu Hause stand.",
-       "Er greift den Bauern e5 an.",
-       "Er bereitet die lange Rochade vor."
+       "It attacks the pawn on e5.",
+       "It prepares queenside castling."
       ],
       "richtig": 0,
       "erklaerung": "In der Planbilanz fehlte nur noch diese Figur. Danach ist Weiß fertig entwickelt, und der Springer g5 kann auf das Loch e6."
@@ -2658,7 +2658,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug.",
+     "text": "Black to move.",
      "stil": "normal"
     }
    ],
@@ -2928,7 +2928,7 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Prophylaxe",
+    "motiv": "Prophylaxis",
     "text": "5. f3 verhindert ...Sg4, das den Läufer e3 angreifen und das Läuferpaar kosten würde. Zugleich deckt f3 den Bauern e4 und bereitet Dd2, lange Rochade und den Bauernsturm vor: gute Prophylaxe fördert auch den eigenen Plan."
    }
   },
@@ -3160,12 +3160,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Wo spiele ich?",
+       "name": "Where do I play?",
        "links": {
         "wertung": null,
         "text": [
@@ -3206,7 +3206,7 @@
        }
       },
       {
-       "name": "Was will mein Gegner?",
+       "name": "What does my opponent want?",
        "links": {
         "wertung": null,
         "text": [
@@ -3256,7 +3256,7 @@
        }
       },
       {
-       "name": "Welche Figur?",
+       "name": "Which piece?",
        "links": {
         "wertung": null,
         "text": [
@@ -3341,7 +3341,7 @@
      "art": "tabelle",
      "spalten": [
       "Weiß (hat die Qualität gegeben)",
-      "Schwarz"
+      "Black"
      ],
      "zeilen": [
       {
@@ -3368,7 +3368,7 @@
        }
       },
       {
-       "name": "Zeit",
+       "name": "Time",
        "links": {
         "wertung": "gleichstand",
         "text": [
@@ -3391,7 +3391,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "teils",
         "text": [
@@ -3414,7 +3414,7 @@
        }
       },
       {
-       "name": "Aktivität",
+       "name": "Activity",
        "links": {
         "wertung": "ja",
         "text": [
@@ -5579,7 +5579,7 @@
    "id": "k06-a34",
    "kapitel": 6,
    "abschnitt": "Übung 27",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "r4rk1/pp1b1ppp/2nqpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R2Q1RK1 w - - 4 10",
    "zuege": [
     {
@@ -5608,7 +5608,7 @@
    "id": "k06-a35",
    "kapitel": 6,
    "abschnitt": "Übung 28",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -5714,7 +5714,7 @@
    "id": "k06-a36",
    "kapitel": 6,
    "abschnitt": "Übung 29",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -5988,7 +5988,7 @@
    "id": "k06-a38",
    "kapitel": 6,
    "abschnitt": "Übung 31",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "8/8/6k1/r5p1/7P/5NK1/4R3/8 b - - 0 1",
    "zuege": [
     {

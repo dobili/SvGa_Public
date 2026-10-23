@@ -4143,7 +4143,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4175,7 +4175,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in drei Zügen matt.",
+     "text": "White to move mates in three.",
      "stil": "normal"
     }
    ],
@@ -4207,7 +4207,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in drei Zügen matt.",
+     "text": "White to move mates in three.",
      "stil": "normal"
     }
    ],
@@ -4239,7 +4239,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug.",
+     "text": "Black to move.",
      "stil": "normal"
     }
    ],
@@ -4271,7 +4271,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug.",
+     "text": "Black to move.",
      "stil": "normal"
     }
    ],
@@ -4303,7 +4303,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4335,7 +4335,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4367,7 +4367,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4399,7 +4399,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4431,7 +4431,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4463,7 +4463,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4495,7 +4495,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4527,7 +4527,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4559,7 +4559,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -5021,7 +5021,7 @@
    "erklaerung": {
     "loesung": "1... Kf6!",
     "akzeptiert": [],
-    "motiv": "Fernopposition",
+    "motiv": "Distant opposition",
     "text": "Nach 1... Kf6! stehen die Könige mit drei Feldern Abstand auf der f-Linie, und Weiß ist am Zug: Fernopposition. Kommt der weiße König näher, wird daraus mit 2... Ke5 oder 2... Kf5 die direkte Opposition, und d4, e4 und f4 bleiben gesperrt."
    }
   },
@@ -5746,7 +5746,7 @@
     "akzeptiert": [
      "1. a4"
     ],
-    "motiv": "Entfernter Freibauer",
+    "motiv": "Outside passed pawn",
     "text": "Weiß schiebt den h-Bauern vor, bis der schwarze König ihn stoppen muss, und holt sich mit dem König unterdessen die Damenflügelbauern. Der entfernte Freibauer bindet den König, der eigene König erntet auf dem anderen Flügel."
    }
   },
@@ -5939,7 +5939,7 @@
    "erklaerung": {
     "loesung": "1. a3!",
     "akzeptiert": [],
-    "motiv": "Reserve-Tempo",
+    "motiv": "Spare tempo",
     "text": "1. a3! behält einen Bauernzug in Reserve: Nach 1... a5 2. a4 muss Schwarz mit dem König ziehen und verliert f5. Der Doppelschritt 1. a4? verbraucht beide Tempi auf einmal, und nach 1... a5! muss Weiß selbst weichen."
    }
   }

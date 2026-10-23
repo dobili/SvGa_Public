@@ -6,7 +6,7 @@
   {
    "nummer": "2.1",
    "label": "",
-   "titel": "Dein Weg durch dieses Kapitel"
+   "titel": "Your path through this chapter"
   },
   {
    "nummer": "2.2",
@@ -181,7 +181,7 @@
       "antworten": [
        "Er deckt den Springer c6 ein zweites Mal.",
        "Er stellt den Läufer b5 sofort zur Rede: Weiß muss tauschen oder zurückziehen.",
-       "Er bereitet die lange Rochade vor."
+       "It prepares queenside castling."
       ],
       "richtig": 1,
       "erklaerung": "Der Bauer a6 greift den Läufer an. Weiß zieht in der Hauptvariante nach a4 zurück und behält den Druck auf c6."
@@ -659,7 +659,7 @@
       "zug": "11. d4",
       "frage": "Warum spielt Weiß jetzt 11. d4?",
       "antworten": [
-       "Er deckt den Bauern e4.",
+       "It defends the pawn on e4.",
        "Er greift den Springer a5 an.",
        "Er stellt einen zweiten Bauern ins Zentrum und greift e5 und c5 an."
       ],
@@ -928,7 +928,7 @@
     "label": "",
     "titel": "Die Spanische Partie (Ruy Lopez)"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
    "pfeile": [],
    "felder": [],
@@ -974,7 +974,7 @@
     "label": "",
     "titel": "Die Spanische Partie (Ruy Lopez)"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r1bqkb1r/pppp1ppp/2n2n2/1B2p3/4P3/5N2/PPPP1PPP/RNBQ1RK1 b kq - 5 4",
    "pfeile": [
     {
@@ -1048,7 +1048,7 @@
     "label": "",
     "titel": "Die Spanische Partie (Ruy Lopez)"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r1bqkb1r/pppp1ppp/2nn4/1B2p3/3P4/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 6",
    "pfeile": [
     {
@@ -1109,7 +1109,7 @@
     "label": "",
     "titel": "Die Spanische Partie (Ruy Lopez)"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r1bqkb1r/ppp2ppp/2p5/4Pn2/8/5N2/PPP2PPP/RNBQ1RK1 w kq - 1 8",
    "pfeile": [
     {
@@ -1173,7 +1173,7 @@
     "label": "",
     "titel": "Die Spanische Partie (Ruy Lopez)"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r1bk1b1r/ppp2ppp/2p5/4Pn2/8/5N2/PPP2PPP/RNB2RK1 w - - 0 9",
    "pfeile": [],
    "felder": [
@@ -1257,7 +1257,7 @@
     "label": "",
     "titel": "Die Spanische Partie (Ruy Lopez)"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r1bq1rk1/2p1bppp/p1n2n2/1p1pp3/4P3/1BP2N2/PP1P1PPP/RNBQR1K1 w - - 0 9",
    "pfeile": [],
    "felder": [
@@ -1318,7 +1318,7 @@
       "antworten": [
        "Den Bauern e5: Nach dem Tausch auf d5 kann der Springer f3 ihn schlagen.",
        "Den Läufer e7.",
-       "Das Recht zu rochieren."
+       "The right to castle."
       ],
       "richtig": 0,
       "erklaerung": "Nach exd5 Sxd5 nimmt Sxe5 den Bauern. Schwarz setzt dafür auf schnelles Figurenspiel."
@@ -1813,7 +1813,7 @@
       "frage": "Warum zieht der Läufer mit 6... Lb4+ weg?",
       "antworten": [
        "Er schlägt dabei einen Bauern.",
-       "Er bereitet die lange Rochade vor.",
+       "It prepares queenside castling.",
        "Der Bauer d4 greift ihn an; er weicht mit Schach aus und gewinnt so Zeit."
       ],
       "richtig": 2,
@@ -2770,7 +2770,7 @@
       "antworten": [
        "Er greift den Bauern d5 an.",
        "Er entwickelt den letzten Läufer und fesselt den Springer f6 an die Dame.",
-       "Er bereitet die lange Rochade vor."
+       "It prepares queenside castling."
       ],
       "richtig": 1,
       "erklaerung": "Der Läufer kommt mit Wirkung ins Spiel. Der Springer f6 deckt d5 und kann nun nicht ohne Weiteres ziehen."
@@ -3916,7 +3916,7 @@
       "frage": "Warum antwortet Schwarz mit 1... c5 statt mit 1... e5?",
       "antworten": [
        "Er greift damit den Bauern e4 an.",
-       "Er bereitet die kurze Rochade vor.",
+       "It prepares kingside castling.",
        "Er sucht eine unsymmetrische Stellung und kämpft von der Seite um d4."
       ],
       "richtig": 2,
@@ -4177,7 +4177,7 @@
       "antworten": [
        "Er deckt den Bauern b7.",
        "Er nimmt den weißen Figuren das Feld b5 und bereitet ...b5 vor.",
-       "Er bereitet die lange Rochade vor."
+       "It prepares queenside castling."
       ],
       "richtig": 1,
       "erklaerung": "Ohne a6 könnten ein weißer Läufer oder Springer nach b5 kommen. Mit a6 und später b5 gewinnt Schwarz Raum am Damenflügel."
@@ -4880,7 +4880,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r1bq1rk1/pp1nbppp/2p1pn2/3p2B1/2PP4/2N1PN2/PP3PPP/2RQKB1R w K - 0 8",
    "pfeile": [
     {
@@ -4975,7 +4975,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
    "pfeile": [],
    "felder": [
@@ -5028,7 +5028,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkbnr/ppp1pppp/8/8/2pP4/4P3/PP3PPP/RNBQKBNR b KQkq - 0 3",
    "pfeile": [
     {
@@ -5098,7 +5098,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkb1r/ppp2ppp/4pn2/8/2BP4/4P3/PP3PPP/RNBQK1NR w KQkq - 0 5",
    "pfeile": [
     {
@@ -5161,7 +5161,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkb1r/1p3ppp/p3pn2/2p5/2BP4/4PN2/PP3PPP/RNBQ1RK1 w kq - 0 7",
    "pfeile": [
     {
@@ -5254,7 +5254,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkbnr/pp2pppp/2p5/3p4/2PP4/8/PP2PPPP/RNBQKBNR w KQkq - 0 3",
    "pfeile": [
     {
@@ -5314,7 +5314,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkb1r/pp2pppp/2p2n2/3p4/2PP4/4PN2/PP3PPP/RNBQKB1R b KQkq - 0 4",
    "pfeile": [
     {
@@ -5377,7 +5377,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rn1qkb1r/pp3ppp/2p1pn2/3p1b2/2PP4/2NBPN2/PP3PPP/R1BQK2R b KQkq - 1 6",
    "pfeile": [
     {
@@ -5444,7 +5444,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r2qkb1r/pp1n1ppp/2p1pn2/3p4/2PP4/2NQPN2/PP3PPP/R1B2RK1 b kq - 2 8",
    "pfeile": [
     {
@@ -5514,7 +5514,7 @@
     "label": "",
     "titel": "Das Damengambit"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "r2q1rk1/pp1nbppp/2p1pn2/3p4/2PP4/1PNQPN2/PB3PPP/R4RK1 b - - 2 10",
    "pfeile": [],
    "felder": [],
@@ -6049,7 +6049,7 @@
       "zug": "9... Bd7",
       "frage": "Warum spielt Schwarz 9... Ld7?",
       "antworten": [
-       "Er greift den Bauern d4 an.",
+       "It attacks the pawn on d4.",
        "Er deckt den Springer f6.",
        "Er entwickelt die letzte Leichtfigur; dann sind alle drei Ziele erreicht."
       ],
@@ -6636,7 +6636,7 @@
     "label": "",
     "titel": "Die Trompowsky-Eröffnung: Der Läufer fragt sofort"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkb1r/pppppppp/8/6B1/3Pn3/8/PPP1PPPP/RN1QKBNR w KQkq - 3 3",
    "pfeile": [
     {
@@ -6691,7 +6691,7 @@
     "label": "",
     "titel": "Die Trompowsky-Eröffnung: Der Läufer fragt sofort"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkb1r/pppppppp/8/8/3PnB2/8/PPP1PPPP/RN1QKBNR b KQkq - 4 3",
    "pfeile": [
     {
@@ -6752,7 +6752,7 @@
     "label": "",
     "titel": "Die Trompowsky-Eröffnung: Der Läufer fragt sofort"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkb1r/ppp1pppp/8/3p4/3PnB2/4P3/PPP2PPP/RN1QKBNR b KQkq - 0 4",
    "pfeile": [],
    "felder": [
@@ -6817,7 +6817,7 @@
     "label": "",
     "titel": "Die Trompowsky-Eröffnung: Der Läufer fragt sofort"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnbqkb1r/pppp1pp1/4pn1p/6B1/3PP3/8/PPP2PPP/RN1QKBNR w KQkq - 0 4",
    "pfeile": [
     {
@@ -6878,7 +6878,7 @@
     "label": "",
     "titel": "Die Trompowsky-Eröffnung: Der Läufer fragt sofort"
    },
-   "unterabschnitt": "Weitere Varianten",
+   "unterabschnitt": "Further lines",
    "fen": "rnb1kb1r/pppp1pp1/4pq1p/8/3PP3/8/PPP2PPP/RN1QKBNR w KQkq - 0 5",
    "pfeile": [],
    "felder": [
@@ -7585,9 +7585,9 @@
      {
       "frage": "Warum spielt Schwarz ...Lf5, bevor er ...e6 zieht?",
       "antworten": [
-       "Er deckt den Bauern d5.",
+       "It defends the pawn on d5.",
        "Der Läufer soll vor die Bauernkette kommen, bevor e6 ihn einsperrt.",
-       "Er greift den Bauern e5 an."
+       "It attacks the pawn on e5."
       ],
       "richtig": 1,
       "erklaerung": "Nach ...e6 wäre der Weg für den Läufer c8 zu. So steht er aktiv, und die Kette hinter ihm ist trotzdem fest."
@@ -8124,7 +8124,7 @@
       "frage": "Was ist der Sinn von 6... e5?",
       "antworten": [
        "Schwarz kämpft endlich mit einem Bauern um das Zentrum und greift d4 an.",
-       "Er bereitet die Rochade vor.",
+       "It prepares castling.",
        "Er deckt den Springer f6."
       ],
       "richtig": 0,
@@ -9516,8 +9516,8 @@
       "frage": "Warum spielt Weiß 3. d3?",
       "antworten": [
        "Er deckt den angegriffenen Bauern e4.",
-       "Er greift den Bauern e5 an.",
-       "Er öffnet dem Läufer f1 die Diagonale."
+       "It attacks the pawn on e5.",
+       "It opens the diagonal for the bishop on f1."
       ],
       "richtig": 0,
       "erklaerung": "Der Springer f6 greift e4 an, und keine weiße Figur deckt ihn. Der Bauer d3 deckt ihn und öffnet dem Läufer c1 den Weg."
@@ -9868,7 +9868,7 @@
       "zug": "3... Bb4",
       "frage": "Warum spielt Schwarz 3... Lb4?",
       "antworten": [
-       "Er greift den Bauern d4 an.",
+       "It attacks the pawn on d4.",
        "Er fesselt den Springer c3 an den König.",
        "Er droht, den Turm a1 zu schlagen."
       ],
@@ -11085,7 +11085,7 @@
    "erklaerung": {
     "loesung": "4... Qxg5",
     "akzeptiert": [],
-    "motiv": "Ungedeckte Figur",
+    "motiv": "Undefended piece",
     "text": "Anders als im Zweispringerspiel steht kein Springer auf f6, also ist die Diagonale d8–g5 frei, und Schwarz schlägt mit 4... Dxg5 einfach den ungedeckten Springer. Ein Zug, der in einer Eröffnung stark ist, kann in einer ähnlichen Stellung ein grober Fehler sein."
    }
   },
@@ -11859,7 +11859,7 @@
    "erklaerung": {
     "loesung": "7. Bg5",
     "akzeptiert": [],
-    "motiv": "Zugumstellung",
+    "motiv": "Transposition",
     "text": "Die Stellung ist das Giuoco Pianissimo der Italienischen Partie, nur über das Läuferspiel erreicht. In der Hauptvariante folgt 7. Lg5 h6 8. Lh4 Le6 9. Sbd2; prüfe nach einem ungewohnten Anfang, welche bekannte Stellung du erreichst."
    }
   }
@@ -12851,12 +12851,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -12879,7 +12879,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -12902,7 +12902,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13058,12 +13058,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13086,7 +13086,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13109,7 +13109,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13203,12 +13203,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13231,7 +13231,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "teils",
         "text": [
@@ -13254,7 +13254,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13366,12 +13366,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13394,7 +13394,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13417,7 +13417,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13493,12 +13493,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13521,7 +13521,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13544,7 +13544,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13620,12 +13620,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13648,7 +13648,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13671,7 +13671,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13775,12 +13775,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13803,7 +13803,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13826,7 +13826,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13941,12 +13941,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -13978,7 +13978,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "teils",
         "text": [
@@ -14001,7 +14001,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14053,12 +14053,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14081,7 +14081,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "teils",
         "text": [
@@ -14104,7 +14104,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "nein",
         "text": [
@@ -14240,12 +14240,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14268,7 +14268,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14291,7 +14291,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14366,12 +14366,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14394,7 +14394,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14417,7 +14417,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14493,12 +14493,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14521,7 +14521,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14544,7 +14544,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14630,12 +14630,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14658,7 +14658,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14681,7 +14681,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14757,12 +14757,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14785,7 +14785,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14808,7 +14808,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14884,12 +14884,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14912,7 +14912,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -14935,7 +14935,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -15021,12 +15021,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -15049,7 +15049,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -15072,7 +15072,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [
@@ -15138,12 +15138,12 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß",
-      "Schwarz"
+      "White",
+      "Black"
      ],
      "zeilen": [
       {
-       "name": "Zentrum",
+       "name": "Center",
        "links": {
         "wertung": "ja",
         "text": [
@@ -15166,7 +15166,7 @@
        }
       },
       {
-       "name": "Entwicklung",
+       "name": "Development",
        "links": {
         "wertung": "ja",
         "text": [
@@ -15189,7 +15189,7 @@
        }
       },
       {
-       "name": "Königssicherheit",
+       "name": "King safety",
        "links": {
         "wertung": "ja",
         "text": [

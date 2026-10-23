@@ -16,7 +16,7 @@
   {
    "nummer": "4.3",
    "label": "sec:fallen-weg",
-   "titel": "Dein Weg durch dieses Kapitel"
+   "titel": "Your path through this chapter"
   },
   {
    "nummer": "4.4",
@@ -744,7 +744,7 @@
       "antworten": [
        "Er deckt den Bauern d4.",
        "Er greift die Dame d4 an und bereitet die lange Rochade vor; die d-Linie ist schon offen.",
-       "Er droht sofort Matt auf f7."
+       "It threatens mate on f7 at once."
       ],
       "richtig": 1,
       "erklaerung": "Für zwei Bauern hat Weiß Zeit und offene Linien. Jeder weitere Damenzug von Schwarz schenkt Weiß ein Tempo für die Entwicklung."
@@ -2276,7 +2276,7 @@
      {
       "frage": "Warum ist der Springer f3 jetzt so wichtig?",
       "antworten": [
-       "Er deckt den Bauern e4.",
+       "It defends the pawn on e4.",
        "Er ist neben dem König der einzige Verteidiger von h2, auf das Dame c7 und Springer g4 zielen.",
        "Er verhindert, dass Schwarz lang rochiert."
       ],
@@ -4906,7 +4906,7 @@
    "zeilen": [
     {
      "kennung": "W1",
-     "titel": "Ungedeckte Figur",
+     "titel": "Undefended piece",
      "text": [
       {
        "art": "text",
@@ -4918,7 +4918,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -5096,7 +5096,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -5247,7 +5247,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -5428,7 +5428,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -5599,7 +5599,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -5780,7 +5780,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -5904,7 +5904,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -6067,7 +6067,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -6213,7 +6213,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -6363,7 +6363,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -6495,7 +6495,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -6650,7 +6650,7 @@
     },
     {
      "kennung": "W1",
-     "titel": "Ungedeckte Figur",
+     "titel": "Undefended piece",
      "text": [
       {
        "art": "text",
@@ -6662,7 +6662,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -6799,7 +6799,7 @@
     },
     {
      "kennung": "F1",
-     "titel": "Warum-Frage",
+     "titel": "Why question",
      "text": [
       {
        "art": "text",
@@ -6926,7 +6926,7 @@
    "zeilen": [
     {
      "kennung": "W1",
-     "titel": "Ungedeckte Figur",
+     "titel": "Undefended piece",
      "text": [
       {
        "art": "text",

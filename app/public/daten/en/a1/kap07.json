@@ -1669,7 +1669,7 @@
      {
       "frage": "Warum ist der Läufer b3 nicht mehr zu retten?",
       "antworten": [
-       "Er ist an den König gefesselt.",
+       "It is pinned to the king.",
        "Weiß muss zuerst die angegriffene Dame d5 retten.",
        "Alle Felder sind gedeckt oder von eigenen Bauern besetzt: Er ist eine gefangene Figur."
       ],
@@ -1728,7 +1728,7 @@
       "zug": "1. e8=N+",
       "frage": "Warum wandelt Weiß mit 1. e8=S+ in einen Springer um?",
       "antworten": [
-       "Ein Springer ist im Endspiel stärker als eine Dame.",
+       "In the endgame, a knight is stronger than a queen.",
        "Nach 1. e8=D könnte Schwarz die neue Dame sofort schlagen.",
        "Nur der Springer gibt Schach und greift die Dame f6 an; nach e8=D setzt Schwarz mit Df1 matt."
       ],
@@ -2786,7 +2786,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug.",
+     "text": "Black to move.",
      "stil": "normal"
     }
    ],
@@ -2882,7 +2882,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "text": "White to move mates in two.",
      "stil": "normal"
     }
    ],
@@ -3138,7 +3138,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "text": "White to move mates in two.",
      "stil": "normal"
     }
    ],
@@ -3202,7 +3202,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in drei Zügen matt.",
+     "text": "White to move mates in three.",
      "stil": "normal"
     }
    ],
@@ -3266,7 +3266,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in drei Zügen matt.",
+     "text": "White to move mates in three.",
      "stil": "normal"
     }
    ],
@@ -3298,7 +3298,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "text": "White to move mates in two.",
      "stil": "normal"
     }
    ],
@@ -3330,7 +3330,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in drei Zügen matt.",
+     "text": "White to move mates in three.",
      "stil": "normal"
     }
    ],
@@ -3362,7 +3362,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in zwei Zügen matt.",
+     "text": "White to move mates in two.",
      "stil": "normal"
     }
    ],
@@ -3710,7 +3710,7 @@
    "erklaerung": {
     "loesung": "1. Rd8#",
     "akzeptiert": [],
-    "motiv": "Grundreihenmatt",
+    "motiv": "Back-rank mate",
     "text": "1. Td8# setzt sofort matt: Keine schwarze Figur erreicht die Grundreihe, und die eigenen Bauern versperren die Flucht. Die Dame a5 kommt nicht nach d8, weil der Bauer b6 im Weg steht."
    }
   },
@@ -3926,7 +3926,7 @@
    "erklaerung": {
     "loesung": "1. Nf4+!",
     "akzeptiert": [],
-    "motiv": "Abzugsschach",
+    "motiv": "Discovered check",
     "text": "1. Sf4+! öffnet die Diagonale des Läufers b3 mit Schach, und der Springer greift zugleich die Dame h3 an. Nach jedem Schutz gegen das Schach gewinnt Weiß die Dame; die abziehende Figur sucht sich das wertvollste Ziel."
    }
   },
@@ -4116,7 +4116,7 @@
    "erklaerung": {
     "loesung": "1. Qxc7!",
     "akzeptiert": [],
-    "motiv": "Überlastung",
+    "motiv": "Overloading",
     "text": "Die Dame d8 muss den Springer c7 und das Feld e8 zugleich decken. Nach 1. Dxc7! kann sie nicht zurückschlagen, weil sonst 2. Te8# folgt, und Weiß behält eine Figur mehr."
    }
   },
@@ -4197,7 +4197,7 @@
    "erklaerung": {
     "loesung": "1. Nf6!",
     "akzeptiert": [],
-    "motiv": "Arabisches Matt",
+    "motiv": "Arabian mate",
     "text": "Der ruhige Zug 1. Sf6! droht 2. Txh7#: Der Springer deckt g8, der Turm g7, und Schwarz kann h7 nicht mehr verteidigen. Eine unabwendbare Mattdrohung ist so zwingend wie ein Schach."
    }
   },
@@ -4459,7 +4459,7 @@
    "erklaerung": {
     "loesung": "1. Rxf6!",
     "akzeptiert": [],
-    "motiv": "Beseitigung der Verteidigung",
+    "motiv": "Removing the defender",
     "text": "Nur der Springer f6 deckt h7 neben dem König. 1. Txf6! beseitigt ihn: Nach dem Zurückschlagen setzt 2. Dxh7# matt, sonst bleibt Weiß eine Figur vorn."
    }
   },
@@ -4495,7 +4495,7 @@
    "erklaerung": {
     "loesung": "1. Ne7+ Kh8 2. Qxh7+!! Kxh7 3. Rh5#",
     "akzeptiert": [],
-    "motiv": "Anastasia-Matt",
+    "motiv": "Anastasia's mate",
     "text": "Der Springer e7 nimmt dem König g6 und g8, also öffnet 2. Dxh7+!! die h-Linie für den Turm. 3. Th5# ist das Anastasia-Matt."
    }
   },
@@ -4531,7 +4531,7 @@
    "erklaerung": {
     "loesung": "1. Qxc6+! bxc6 2. Ba6#",
     "akzeptiert": [],
-    "motiv": "Boden-Matt",
+    "motiv": "Boden's mate",
     "text": "1. Dxc6+! zwingt 1... bxc6 und öffnet die Diagonale a6–c8. Nach 2. La6# kreuzen sich die Diagonalen der beiden Läufer, und die eigenen Figuren auf d7 und d8 nehmen dem König die Flucht."
    }
   },
@@ -4587,7 +4587,7 @@
     "akzeptiert": [
      "1. Rh8+! Kxh8 2. Qh1+"
     ],
-    "motiv": "Damiano-Matt",
+    "motiv": "Damiano's mate",
     "text": "Das Turmopfer 1. Th8+! lenkt den König nach h8, die Dame kommt mit Schach auf die h-Linie, und 3. Dh7# ist matt, weil g6 das Mattfeld deckt. Weil jeder Zug Schach gibt, kommt Schwarz nie dazu, die Dame d5 zu schlagen."
    }
   },
@@ -4642,7 +4642,7 @@
    "erklaerung": {
     "loesung": "1. Qh6!",
     "akzeptiert": [],
-    "motiv": "Lolli-Matt",
+    "motiv": "Lolli's mate",
     "text": "1. Dh6! droht 2. Dg7#, und kein schwarzer Läufer verteidigt mehr g7. Ein Bauer auf f6 und ein Fianchetto ohne Läufer ergeben zusammen ein Mattbild."
    }
   }
@@ -6058,7 +6058,7 @@
    "id": "k07-a44",
    "kapitel": 7,
    "abschnitt": "Übung 32",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "8/6k1/8/8/8/7p/1q3p1P/4R2K w - - 0 1",
    "zuege": [
     {
@@ -6148,7 +6148,7 @@
    "id": "k07-a46",
    "kapitel": 7,
    "abschnitt": "Übung 34",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16",
    "zuege": [
     {
@@ -6184,7 +6184,7 @@
    "id": "k07-a47",
    "kapitel": 7,
    "abschnitt": "Übung 35",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "r1b1k2r/pp1pqppp/5n2/1N2p3/2B1P3/8/PPP1QPPP/R4RK1 w kq - 0 1",
    "zuege": [
     {
@@ -6246,7 +6246,7 @@
    "id": "k07-a48",
    "kapitel": 7,
    "abschnitt": "Übung 36",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "6k1/p4ppp/1p6/q3n3/8/1P2Q3/P1r2PPP/3R2K1 w - - 0 1",
    "zuege": [
     {
@@ -6268,7 +6268,7 @@
    "id": "k07-a49",
    "kapitel": 7,
    "abschnitt": "Übung 37",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "6q1/r7/4k3/1p2p3/8/8/2B2PPP/3R2K1 w - - 0 1",
    "zuege": [
     {
@@ -6378,7 +6378,7 @@
    "id": "k07-a50",
    "kapitel": 7,
    "abschnitt": "Übung 38",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "3r1rk1/pp4pp/2n5/3q4/8/1P6/P1Q1BPPP/R3R1K1 w - - 0 1",
    "zuege": [
     {
@@ -6440,7 +6440,7 @@
    "id": "k07-a51",
    "kapitel": 7,
    "abschnitt": "Übung 39",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "r4rk1/pp4pp/2n2n2/3N4/8/1B4Pq/PP3P1P/R2Q1RK1 w - - 0 1",
    "zuege": [
     {
@@ -6521,7 +6521,7 @@
    "id": "k07-a52",
    "kapitel": 7,
    "abschnitt": "Übung 40",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "6k1/pp3ppp/4q3/n2N4/8/8/PP2BPPP/2R3K1 w - - 0 1",
    "zuege": [
     {
@@ -6597,7 +6597,7 @@
    "id": "k07-a53",
    "kapitel": 7,
    "abschnitt": "Übung 41",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "3q2k1/ppn2ppp/8/8/6b1/8/PPQ2PPP/4R1K1 w - - 0 1",
    "zuege": [
     {
@@ -6658,7 +6658,7 @@
    "id": "k07-a54",
    "kapitel": 7,
    "abschnitt": "Übung 42",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "r1r4k/p1pR3p/1p6/8/4N3/8/2P2PPP/6K1 w - - 0 1",
    "zuege": [
     {
@@ -6707,7 +6707,7 @@
    "id": "k07-a55",
    "kapitel": 7,
    "abschnitt": "Übung 43",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "r3r2k/pp4pp/8/6N1/2Q5/q7/PP3PPP/6K1 w - - 0 1",
    "zuege": [
     {
@@ -6784,7 +6784,7 @@
    "id": "k07-a56",
    "kapitel": 7,
    "abschnitt": "Übung 44",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
    "zuege": [
     {
@@ -6847,7 +6847,7 @@
    "id": "k07-a57",
    "kapitel": 7,
    "abschnitt": "Übung 45",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "r4rk1/pb2qppp/1p3n2/2p4Q/8/2NB1R2/PP3PPP/R5K1 w - - 0 1",
    "zuege": [
     {
@@ -6934,7 +6934,7 @@
    "id": "k07-a58",
    "kapitel": 7,
    "abschnitt": "Übung 46",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "rq3rk1/pb3ppp/8/3N1R1Q/8/8/PP3PPP/6K1 w - - 0 1",
    "zuege": [
     {
@@ -6984,7 +6984,7 @@
    "id": "k07-a59",
    "kapitel": 7,
    "abschnitt": "Übung 47",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "2kr3r/pp1n1ppp/2n5/8/Q4B2/8/PP2BPPP/2KR4 w - - 0 1",
    "zuege": [
     {
@@ -7064,7 +7064,7 @@
    "id": "k07-a60",
    "kapitel": 7,
    "abschnitt": "Übung 48",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "r4rk1/pp3pp1/2p3P1/3Q4/8/8/PP6/1K5R w - - 0 1",
    "zuege": [
     {
@@ -7134,7 +7134,7 @@
    "id": "k07-a61",
    "kapitel": 7,
    "abschnitt": "Übung 49",
-   "titel": "Übungen",
+   "titel": "Exercises",
    "startFen": "r4rk1/pp3p1p/5Pp1/8/8/8/PP1Q4/1K6 w - - 0 1",
    "zuege": [
     {

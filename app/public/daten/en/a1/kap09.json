@@ -1628,7 +1628,7 @@
       "frage": "Warum wandelt Schwarz in einen Springer um?",
       "antworten": [
        "Er gibt Schach, und nach 1... b1=D?? hätte 2. Te1 mattgesetzt.",
-       "Ein Springer ist im Endspiel stärker als eine Dame.",
+       "In the endgame, a knight is stronger than a queen.",
        "Der Springer greift den Turm e2 an."
       ],
       "richtig": 0,
@@ -3701,7 +3701,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug.",
+     "text": "Black to move.",
      "stil": "normal"
     }
    ],
@@ -3733,7 +3733,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug.",
+     "text": "Black to move.",
      "stil": "normal"
     }
    ],
@@ -3765,7 +3765,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -3797,7 +3797,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug.",
+     "text": "Black to move.",
      "stil": "normal"
     }
    ],
@@ -3829,7 +3829,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -3861,7 +3861,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -3893,7 +3893,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug.",
+     "text": "Black to move.",
      "stil": "normal"
     }
    ],
@@ -3925,7 +3925,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -3957,7 +3957,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug.",
+     "text": "White to move.",
      "stil": "normal"
     }
    ],
@@ -4102,7 +4102,7 @@
    "erklaerung": {
     "loesung": "1... Rh6!",
     "akzeptiert": [],
-    "motiv": "Philidor-Stellung",
+    "motiv": "Philidor position",
     "text": "Nach 1... Td1+? 2. Ke6! schirmt der Bauer e5 den König gegen Schachs von hinten ab, und Weiß droht den Turmtausch ins gewonnene Bauernendspiel. Richtig ist 1... Th6!: Der Turm sperrt die sechste Reihe, und erst wenn der Bauer vorrückt, geht er nach hinten."
    }
   },
@@ -4652,7 +4652,7 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Falscher Läufer",
+    "motiv": "Wrong bishop",
     "text": "Der Läufer läuft auf dunklen Feldern, das Umwandlungsfeld a8 ist hell. Bleibt der schwarze König in der Ecke, kann Weiß ihn nicht vertreiben: remis."
    }
   }

@@ -176,15 +176,19 @@ describe("Wertung", () => {
     expect(imBereich(punkte, { art: "zeit", tage: 365 }, jetzt)).toHaveLength(3);
   });
 
-  it("Spielstärke über die letzten zehn Partien (0.2.83): nur gegen die Engine, höchstens zehn", () => {
+  it("Spielstärke über die letzten zehn Partien (0.2.83, R32): nur gewertete gegen die Engine, höchstens zehn", () => {
     const engine = Array.from({ length: 12 }, (_, i) => eintrag(`p${i}`, "white"));
     const mensch = eintrag("m", "white", { gegner: "mensch" });
-    const schaetzung = staerkeLetzterPartien([mensch, ...engine]);
-    expect(schaetzung?.partien).toBe(10);
-    // Fehlerfreie Partien: innere Genauigkeit 100 % in jeder.
-    expect(schaetzung?.mitte).toBe(
-      staerkeUeberPartien(Array.from({ length: 10 }, () => 100))?.mitte,
+    const ungewertet = Array.from({ length: 3 }, (_, i) =>
+      eintrag(`u${i}`, "white", { gewertet: false }),
     );
+    expect(staerkeLetzterPartien(ungewertet)).toBeNull();
+    const schaetzung = staerkeLetzterPartien([mensch, ...ungewertet, ...engine.slice(0, 3)]);
+    expect(schaetzung?.partien).toBe(3);
+    const voll = staerkeLetzterPartien([mensch, ...engine]);
+    expect(voll?.partien).toBe(10);
+    // Fehlerfreie Partien: innere Genauigkeit 100 % in jeder.
+    expect(voll?.mitte).toBe(staerkeUeberPartien(Array.from({ length: 10 }, () => 100))?.mitte);
     expect(staerkeLetzterPartien([mensch])).toBeNull();
   });
 });

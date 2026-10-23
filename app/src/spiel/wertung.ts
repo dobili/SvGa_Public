@@ -97,8 +97,8 @@ export function staerkeDerPartie(
 const LETZTE_PARTIEN = 10;
 
 /**
- * Die Spielstärke des Lesers über seine letzten zehn ausgewerteten Partien gegen die Engine
- * (Eichung 0.2.83, Wunsch des Autors: eine einzelne Partie streut erwartbar um etwa ±450).
+ * Die Spielstärke des Lesers über seine letzten zehn ausgewerteten gewerteten Partien gegen die
+ * Engine (seit R32 nur gewertete; Eichung 0.2.83, Wunsch des Autors: eine einzelne Partie streut erwartbar um etwa ±450).
  * Es zählen nur Partien mit genug eigenen Zügen für eine Schätzung; die Liste ist neueste zuerst.
  * Ausgabe: Schätzung mit Spanne und Zahl der Partien; null ohne passende Partie.
  * Beispiel: drei Partien mit 70, 80 und 75 % → etwa 1550 (1200 bis 1900), aus 3 Partien.
@@ -109,7 +109,10 @@ export function staerkeLetzterPartien(
   const innen: number[] = [];
   for (const eintrag of partien) {
     if (innen.length >= LETZTE_PARTIEN) break;
-    if (eintrag.partie.einstellung.gegner !== "engine") continue;
+    // Nur gewertete Partien (R32, Wunsch des Autors 23.10.2026): Partien mit Rücknahme oder
+    // Spielhilfen, aus Abbildungen oder eingelesene PGN spiegeln die eigene Stärke nicht.
+    const { gegner, gewertet } = eintrag.partie.einstellung;
+    if (gegner !== "engine" || !gewertet) continue;
     const seite = staerkeDerPartie(eintrag)?.[eintrag.partie.einstellung.eigeneFarbe];
     if (seite?.spielstaerke !== null && seite?.innen !== null && seite?.innen !== undefined) {
       innen.push(seite.innen);

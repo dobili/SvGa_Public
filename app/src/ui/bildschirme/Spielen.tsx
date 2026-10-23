@@ -124,7 +124,9 @@ function Einstellungen({
         uhr={v.uhr}
         eigene={eigene}
         kategorie={kategorie}
-        beiGegner={(gegner) => mit({ gegner, gewertet: gegner === "engine" })}
+        // R32: Der Haken „Gewertete Partie“ bleibt beim Wechsel der Art des Gegners, wie er war; ob
+        // gewertet wird, entscheidet beim Start wertbar() (nur gegen die Engine).
+        beiGegner={(gegner) => mit({ gegner })}
         beiBot={waehleBot}
         beiKategorie={(neu) => {
           setzeKategorie(neu);

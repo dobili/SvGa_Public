@@ -228,6 +228,11 @@ Alles unter Training.
       Karte „Spielstärke“ steht bei „Eröffnung“ jetzt Urteil und Genauigkeit, etwa „Gut 84 % (4 Züge)“,
       ohne „zu wenige Züge“. Die Zahl der Spielstärke kommt je Phase erst ab sechs Zügen; das erklärt
       das Fragezeichen der Karte.
+- [ ] N632. **Spielstärke nur aus gewerteten Partien (R32):** Unter Spielen den Haken „Gewertete
+      Partie“ abnehmen, als Gegner „Mensch (beide Seiten selbst)“ und wieder „Engine“ wählen: Der
+      Haken bleibt aus (bisher sprang er wieder an). Eine ungewertete Partie gegen die Engine
+      spielen und auswerten lassen: Die Karte „Deine Spielstärke“ ändert sich dadurch nicht; nur
+      gewertete Partien zählen dort.
 
 ### Neu in 0.2.118: Werkzeuge und Strukturbegriffe (P3; Fable, 23.10.2026)
 

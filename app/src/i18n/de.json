@@ -2759,7 +2759,7 @@
   "spielstaerke.letzte.wert": "etwa {mitte}",
   "spielstaerke.letzte.spanne": "{von} bis {bis}, aus {partien} Partien",
   "spielstaerke.letzte.spanneEins": "{von} bis {bis}, aus 1 Partie",
-  "spielstaerke.letzte.erklaerung": "Geschätzt aus der Genauigkeit deiner letzten ausgewerteten Partien gegen die Engine (höchstens zehn). Eine einzelne Partie streut stark; über zehn Partien gleicht sich das aus, deshalb wird die Spanne mit jeder Partie enger. Auf den Skalen: chess.com etwa {chesscom}, Lichess etwa {lichess}; die App zeigt die Mitte. Keine Wertungszahl eines Verbands.",
+  "spielstaerke.letzte.erklaerung": "Geschätzt aus der Genauigkeit deiner letzten ausgewerteten gewerteten Partien gegen die Engine (höchstens zehn; ungewertete Partien, etwa mit Rücknahme oder Spielhilfen, zählen nicht). Eine einzelne Partie streut stark; über zehn Partien gleicht sich das aus, deshalb wird die Spanne mit jeder Partie enger. Auf den Skalen: chess.com etwa {chesscom}, Lichess etwa {lichess}; die App zeigt die Mitte. Keine Wertungszahl eines Verbands.",
   "spielstaerke.verlust": "Verlust je Zug",
   "spielstaerke.bauern": "{wert} Bauern",
   "spielstaerke.beste": "Beste Züge",

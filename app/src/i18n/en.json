@@ -2759,7 +2759,7 @@
   "spielstaerke.letzte.wert": "about {mitte}",
   "spielstaerke.letzte.spanne": "{von} to {bis}, from {partien} games",
   "spielstaerke.letzte.spanneEins": "{von} to {bis}, from 1 game",
-  "spielstaerke.letzte.erklaerung": "Estimated from the accuracy of your last analyzed games against the engine (ten at most). A single game varies a lot; over ten games this evens out, which is why the range gets narrower with every game. On the scales: chess.com about {chesscom}, Lichess about {lichess}; the app shows the middle. Not a federation rating.",
+  "spielstaerke.letzte.erklaerung": "Estimated from the accuracy of your last analyzed rated games against the engine (ten at most; unrated games, e.g. with takebacks or assistance, do not count). A single game varies a lot; over ten games this evens out, which is why the range gets narrower with every game. On the scales: chess.com about {chesscom}, Lichess about {lichess}; the app shows the middle. Not a federation rating.",
   "spielstaerke.verlust": "Loss per move",
   "spielstaerke.bauern": "{wert} pawns",
   "spielstaerke.beste": "Best moves",

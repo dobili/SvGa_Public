@@ -273,6 +273,18 @@ test("Gewertete Partie (S9): Rücknahme und Spielhilfen gesperrt", async ({ page
   await expect(page.getByRole("button", { name: "Röntgen" })).toHaveCount(0);
 });
 
+test("Gewertete Partie (R32): der Haken bleibt beim Wechsel der Art des Gegners aus", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const haken = page.getByRole("checkbox", { name: /Gewertete Partie/ });
+  await haken.uncheck();
+  await page.getByRole("radio", { name: "Mensch (beide Seiten selbst)" }).click();
+  await page.getByRole("radio", { name: "Engine", exact: true }).click();
+  await expect(haken).not.toBeChecked();
+});
+
 test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen (0.2.80)", async ({
   page,
 }) => {

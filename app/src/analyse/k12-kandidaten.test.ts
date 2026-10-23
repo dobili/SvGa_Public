@@ -28,7 +28,7 @@ describe("k12-kandidaten", () => {
     expect(e.befunde[0]?.zeilen[1]).toBe("2. Txd5 (Schlag)");
     expect(e.befunde[1]?.zeilen[1]).toBe("Auf Txd5: Lxh2+ (Schach); Material danach 0.");
     expect(e.befunde[2]?.zeilen[0]).toBe(
-      "Gegen die stärkste Antwort schneidet g3 am besten ab (0).",
+      "Gegen die stärkste Antwort steht g3 nach Material bei 0; ob der ruhige Zug der beste ist, sagt die Bewertung der Engine unten.",
     );
   });
 
@@ -85,7 +85,7 @@ describe("k12-kandidaten", () => {
     expect(e.befunde[0]?.zeilen[4]).toBe("5. Sf6 (wehrt das drohende Matt ab)");
     expect(e.befunde[1]?.zeilen[2]).toBe("Auf b5: Dxf7# (Matt) – scheidet aus: Matt.");
     expect(e.befunde[2]?.zeilen[0]).toBe(
-      "Gegen die stärkste Antwort schneidet Sf6 am besten ab (0).",
+      "Gegen die stärkste Antwort steht Sf6 nach Material bei 0; ob der ruhige Zug der beste ist, sagt die Bewertung der Engine unten.",
     );
   });
 
@@ -93,7 +93,7 @@ describe("k12-kandidaten", () => {
     const e = ergebnis("1.15");
     expect(e.befunde[1]?.zeilen[1]).toBe("Auf Sb4: Dxf7# (Matt) – scheidet aus: Matt.");
     expect(e.befunde[2]?.zeilen[0]).toBe(
-      "Gegen die stärkste Antwort schneidet g6 am besten ab (−1).",
+      "Gegen die stärkste Antwort steht g6 nach Material bei −1; ob der ruhige Zug der beste ist, sagt die Bewertung der Engine unten.",
     );
   });
 

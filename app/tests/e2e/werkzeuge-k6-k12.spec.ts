@@ -32,15 +32,20 @@ test("Werkzeug LAP (Abb. 6.20): der Läufer c1 steht noch zu Hause und gehört n
   await expect(karte).toContainText("Verbessere Läufer c1: nach e3.");
 });
 
-test("Werkzeug Planbilanz (Abb. 6.20): beide Seiten und der Verweis aufs Buch", async ({
+test("Werkzeug Planbilanz (Abb. 6.20): nur die Seite der Sicht (R41) und der Verweis aufs Buch", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await oeffneAbbildung(page, "6.20", "6.20");
   await waehleWerkzeug(page, "Planbilanz");
   const karte = page.getByTestId("werkzeugkarte");
-  await expect(karte).toContainText("Schwarz: Am Königsflügel: Die Kette d6–e5 zeigt dorthin");
+  await expect(karte).toContainText("Weiß: Am Damenflügel: Die Kette e4–d5 zeigt dorthin");
+  await expect(karte).not.toContainText("Schwarz: Am Königsflügel");
   await expect(karte).toContainText("Vergleiche deine Planbilanz mit der Planbilanz im Buch");
+  // Die andere Seite über den Sicht-Schalter; die Legende nennt die Farben.
+  await page.getByTestId("sichtschalter").click();
+  await expect(karte).toContainText("Schwarz: Am Königsflügel: Die Kette d6–e5 zeigt dorthin");
+  await expect(karte).toContainText("Für Schwarz wie bei Wo? und LAP");
   await page.screenshot({ path: "test-results/bilder/planbilanz.png", fullPage: true });
 });
 
@@ -212,15 +217,23 @@ test("Werkzeug Erfassen (Abb. 12.2): letzter Zug Sg5+, im Schach", async ({ page
   await expect(karte).toContainText("Du stehst im Schach: Erst das Schach abwehren.");
 });
 
-test("Werkzeug Kandidaten (Abb. 12.1): 1. Lxh7+ zuerst, stärkste Antwort Kxh7", async ({
+test("Werkzeug Kandidaten (Abb. 12.1): 1. Lxh7+ zuerst, stärkste Antwort Kxh7, die Engine bewertet jeden Kandidaten", async ({
   page,
 }) => {
+  test.setTimeout(ENGINE_FRIST_MS * 2);
   await starteImBrowser(page);
   await oeffneAbbildung(page, "12.1", "12.1");
   await waehleWerkzeug(page, "Kandidaten");
   const karte = page.getByTestId("werkzeugkarte");
   await expect(karte).toContainText("1. Lxh7+ (Schach)");
   await expect(karte).toContainText("Auf Lxh7+: Kxh7 (Schlag mit Gewinn)");
+  await expect(karte).toContainText("Goldene Pfeile: die Kandidaten von Weiß");
+  // R43: Bewertung der Engine je Kandidat statt Material bei ruhigen Zügen.
+  const engine = karte.getByTestId("kandidaten-karte");
+  await expect(engine).toContainText("Bewertung der Engine");
+  await expect(engine).toContainText("Stellung jetzt:", { timeout: ENGINE_FRIST_MS });
+  await expect(engine).toContainText("1. Lxh7+:");
+  await expect(engine).toContainText("Am stärksten nach der Engine:", { timeout: ENGINE_FRIST_MS });
   await page.screenshot({ path: "test-results/bilder/denkroutine.png", fullPage: true });
 });
 

@@ -8,7 +8,9 @@
  * Rolle im Gesamtbild: Plan „Bots, zweite Runde“, Teil A (Wunsch des Autors, 22.10.2026: Fehler-,
  * Fleckraten und Kopplungen möglichst genau). Rohdaten nur lokal. Fortsetzbar: fertige Züge in der
  * Ausgabe `pruefung-<LAUF>.jsonl` werden übersprungen.
- * Umgebung: ENGINE_PFAD, TIEFE (Vorgabe 20), LAUF und LAEUFE (Aufteilung auf mehrere Prozesse).
+ * Umgebung: ENGINE_PFAD, TIEFE (Vorgabe 20), LAUF und LAEUFE (Aufteilung auf mehrere Prozesse),
+ * AUSGABE (Vorsilbe der Ausgabedatei, Vorgabe „pruefung“; „schnell“ für die Gegenprobe der
+ * schnellen Auswertung der Spielerprofile in Tiefe 12).
  * Aufruf (im Ordner app/): LAUF=0 LAEUFE=4 npx vitest run --config vitest.messung.config.ts
  *   src/engine/fehlerpruefung.messung.ts
  * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, engine/nativeEngine.testhilfe.ts.
@@ -76,7 +78,7 @@ async function pruefe(a: Auswahl) {
 
 describe("Fehlerprüfung", () => {
   it("bewertet die Stichprobe in größerer Tiefe neu", async () => {
-    const ziel = join(ORDNER, `pruefung-${LAUF}.jsonl`);
+    const ziel = join(ORDNER, `${process.env.AUSGABE ?? "pruefung"}-${LAUF}.jsonl`);
     const fertig = new Set(
       existsSync(ziel)
         ? readFileSync(ziel, "utf8")

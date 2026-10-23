@@ -1,5 +1,6 @@
 /**
- * Oberflächentests für Brett und Bedienung (Paket P2): Zuganimation (R37).
+ * Oberflächentests für Brett und Bedienung (Paket P2): Zuganimation (R37), Ergebnis auf dem
+ * Brett (R38).
  */
 import { expect, test, type Page } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
@@ -72,4 +73,34 @@ test("Zuganimation (R37): in den Einstellungen abgeschaltet gleitet nichts", asy
   await page.getByRole("button", { name: "d4", exact: true }).click();
   await expect(page.getByTestId("partiezuege")).toContainText("1. d4");
   expect(await geglitten(page)).toEqual([]);
+});
+
+test("Ergebnis auf dem Brett (R38): erscheint beim Matt, verschwindet, die Karte bleibt", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByText("Eigene Stellung eingeben (FEN)").click();
+  await page
+    .getByLabel("Stellung als FEN")
+    .fill("rnbqkbnr/pppp1ppp/8/4p3/8/5P2/PPPPP1PP/RNBQKBNR w KQkq - 0 2");
+  await page.getByRole("button", { name: "Stellung übernehmen" }).click();
+  for (const phase of ["Eröffnung", "Mittelspiel", "Endspiel"]) {
+    await page.getByLabel(new RegExp(`^${phase}:`)).fill("8");
+  }
+  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await page.getByRole("button", { name: /^g2, Bauer/ }).click();
+  await page.getByRole("button", { name: "g4", exact: true }).click();
+  const blende = page.getByTestId("ergebnisblende");
+  await expect(blende).toContainText("Verloren", { timeout: 30_000 });
+  await expect(blende).toContainText("Matt");
+  await page.waitForTimeout(1000);
+  await page.screenshot({ path: "test-results/bilder/ergebnisblende.png" });
+  await expect(blende).toHaveCount(0, { timeout: 5_000 });
+  await expect(page.getByTestId("partieende")).toContainText("Matt. Die Engine hat gewonnen.");
+  // Eine schon beendete Partie neu öffnen zeigt die Blende nicht noch einmal.
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.locator(".partienliste li.partieeintrag").first().getByRole("button").first().click();
+  await expect(page.getByTestId("partieende")).toBeVisible();
+  await expect(blende).toHaveCount(0);
 });

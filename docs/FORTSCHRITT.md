@@ -1392,9 +1392,11 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
       den Start der Gegenuhr um die Animationsdauer (Aufrufe in `usePartie.ts` und `botzug.ts`).
       Bekannt: Nach einem gewischten Zug bekommt die Gegenuhr den Verzug trotzdem (0,22 s,
       unschädlich). N653.
-- [ ] R38 Partieende auf dem Brett.
+- [x] R38 Partieende auf dem Brett: `komponenten/Ergebnisblende.tsx` als `ueberlagerung` von
+      Brett und Brettbereich, nur beim Übergang laufend → beendet, 0,25 s nach dem Zug, 2,8 s
+      Animation (`ui/stil/brett.css`, neue Stildatei des Pakets). Karte darunter unverändert. N654.
 - [ ] R39 Startanimation.
 - [ ] R40 Desktop: Quer- und Hochformat live.
 - [ ] R53 Nachtmodus: Symbol für Weiß in der Fehlerliste.
 
-**Nächster Schritt:** R38.
+**Nächster Schritt:** R39.

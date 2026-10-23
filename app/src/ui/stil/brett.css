@@ -1,0 +1,88 @@
+/* Brett und Bedienung, Paket P2 (23.10.2026): Ergebnis auf dem Brett (R38). */
+
+/* ---------- R38: Ergebnisblende über dem Brett ---------- */
+.ergebnisblende {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: rgb(22 37 61 / 0.18);
+  /* Erst wenn der letzte Zug angekommen ist (Zuganimation 0,22 s, R37). */
+  animation: ergebnisblende-grund 2.8s ease-in-out 0.25s both;
+}
+
+.ergebnisblende-schild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 80%;
+  padding: calc(var(--raster) * 2) calc(var(--raster) * 3);
+  border-radius: var(--radius);
+  border: 2px solid var(--linie-stark);
+  background: var(--flaeche);
+  color: var(--text);
+  text-align: center;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+  animation: ergebnisblende-schild 2.8s ease-out 0.25s both;
+}
+
+.ergebnisblende-gewonnen .ergebnisblende-schild {
+  border-color: var(--gold);
+}
+
+.ergebnisblende-verloren .ergebnisblende-schild {
+  border-color: var(--rot-text);
+}
+
+.ergebnisblende-wort {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ergebnisblende-grund {
+  font-size: 0.9rem;
+}
+
+@keyframes ergebnisblende-grund {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ergebnisblende-schild {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  12% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  18%,
+  82% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ergebnisblende,
+  .ergebnisblende-schild {
+    animation: none;
+  }
+}

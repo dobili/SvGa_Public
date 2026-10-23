@@ -56,6 +56,8 @@ interface BrettEigenschaften {
   readonly gesperrt?: string | null;
   /** Ziehen per Wischen (seit 0.2.92); ohne diese Angabe nur Antippen. */
   readonly ziehen?: Ziehbedienung | null;
+  /** Etwas über dem ganzen Brett, das Tipps durchlässt (R38: Ergebnis der Partie). */
+  readonly ueberlagerung?: React.ReactNode;
 }
 
 /** Name einer Figur für Bildschirmleser, etwa „weißer Springer“. */
@@ -257,6 +259,7 @@ export function Brett({
   ziele = [],
   gesperrt = null,
   ziehen = null,
+  ueberlagerung = null,
 }: BrettEigenschaften) {
   const { brettfarben, figurensatz, ton } = useEinstellungen();
   const farben = BRETTFARBEN[brettfarben];
@@ -374,6 +377,7 @@ export function Brett({
           wischen={wischen}
         />
       )}
+      {ueberlagerung}
     </div>
   );
 }

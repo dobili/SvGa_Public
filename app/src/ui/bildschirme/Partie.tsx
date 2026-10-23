@@ -38,6 +38,7 @@ import { Auswertung, type Sprung } from "../komponenten/Auswertung";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { Partieende } from "../komponenten/Partieende";
+import { Ergebnisblende } from "../komponenten/Ergebnisblende";
 import { Partiestatus } from "../komponenten/Partiestatus";
 import { Partieuhr } from "../komponenten/Partieuhr";
 import { Partiezuege } from "../komponenten/Partiezuege";
@@ -238,6 +239,7 @@ function Spielfeld({
         }
         zusatzSchalter={<RuhigSchalter ruhig={ruhig} />}
         seitenleiste={rb.leiste}
+        ueberlagerung={<Ergebnisblende partie={partie} />}
       />
       <Uhr s={s} farbe={partie.einstellung.eigeneFarbe} />
       {engineKarte}

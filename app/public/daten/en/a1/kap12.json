@@ -6,42 +6,42 @@
   {
    "nummer": "12.1",
    "label": "sec:kandidatenzuege",
-   "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+   "titel": "The thinking routine: four steps to your next move"
   },
   {
    "nummer": "12.2",
    "label": "sec:analyse",
-   "titel": "Partieanalyse ohne Selbsttäuschung"
+   "titel": "Game analysis without fooling yourself"
   },
   {
    "nummer": "12.3",
    "label": "sec:plan",
-   "titel": "Der 30-Minuten-Trainingsplan"
+   "titel": "The 30-minute training plan"
   },
   {
    "nummer": "12.4",
    "label": "sec:saeulen",
-   "titel": "Eröffnungstraining: die vier Säulen"
+   "titel": "Opening training: the four pillars"
   },
   {
    "nummer": "12.5",
    "label": "sec:zeitmanagement",
-   "titel": "Zeitmanagement und Turnierpraxis"
+   "titel": "Time management and tournament practice"
   },
   {
    "nummer": "12.6",
    "label": "sec:kopf",
-   "titel": "Kopf und Konzentration"
+   "titel": "Mind and concentration"
   },
   {
    "nummer": "12.7",
    "label": "sec:werkzeugkasten",
-   "titel": "Dein Werkzeugkasten"
+   "titel": "Your toolbox"
   },
   {
    "nummer": "12.8",
    "label": "sec:weiter",
-   "titel": "Wie es weitergeht"
+   "titel": "What comes next"
   }
  ],
  "abbildungen": [
@@ -52,9 +52,9 @@
    "abschnitt": {
     "nummer": "12.1",
     "label": "sec:kandidatenzuege",
-    "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+    "titel": "The thinking routine: four steps to your next move"
    },
-   "unterabschnitt": "Die Routine an einem Beispiel",
+   "unterabschnitt": "The routine in an example",
    "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
    "pfeile": [
     {
@@ -72,21 +72,21 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das griechische Geschenk aus Kapitel 1, Weiß am Zug. Gold: der Kandidat ",
+     "text": "The Greek gift from Chapter 1, White to move. Gold: the candidate ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lxh7+"
+     "text": "1. Bxh7+"
     },
     {
      "art": "text",
-     "text": ". Grau: der ruhige Kandidat ",
+     "text": ". Gray: the quiet candidate ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Tc1"
+     "text": "1. Rc1"
     },
     {
      "art": "text",
@@ -113,14 +113,14 @@
     "fragen": [
      {
       "zug": "1. Bxh7+",
-      "frage": "Warum prüfst du 1. Lxh7+ vor dem ruhigen 1. Tc1?",
+      "frage": "Why do you check 1. Bxh7+ before the quiet 1. Rc1?",
       "antworten": [
-       "Ruhige Züge sind in der Denkroutine nicht erlaubt.",
-       "Lxh7+ gewinnt ohne jede Rechnung einen Bauern.",
-       "Ein Schach lässt dem Gegner die wenigsten Antworten, darum rechnest du es zuerst."
+       "Quiet moves are not allowed in the thinking routine.",
+       "Bxh7+ wins a pawn without any calculation.",
+       "A check leaves your opponent the fewest replies, so you calculate it first."
       ],
       "richtig": 2,
-      "erklaerung": "Nach Lxh7+ hat Schwarz nur zwei Züge. Solche zwingenden Züge sind schnell zu Ende gerechnet und kommen deshalb zuerst."
+      "erklaerung": "After Bxh7+, Black has only two moves. Forcing moves like this are quick to calculate to the end, so they come first."
      }
     ]
    }
@@ -132,9 +132,9 @@
    "abschnitt": {
     "nummer": "12.1",
     "label": "sec:kandidatenzuege",
-    "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+    "titel": "The thinking routine: four steps to your next move"
    },
-   "unterabschnitt": "Die Routine an einem Beispiel",
+   "unterabschnitt": "The routine in an example",
    "fen": "r1b2r2/ppqn1ppk/2n1p3/3pP1N1/3P4/2N5/PP3PPP/R2Q1RK1 b - - 1 2",
    "pfeile": [
     {
@@ -162,16 +162,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lxh7+ Kxh7 2. Sg5+"
+     "text": "1. Bxh7+ Kxh7 2. Ng5+"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: die vier Königszüge, die du in Schritt 3 einzeln prüfst.",
+     "text": ", Black to move. Red: the four king moves you check one by one in step 3.",
      "stil": "normal"
     }
    ],
@@ -197,14 +197,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum prüfst du hier jeden der vier Königszüge einzeln?",
+      "frage": "Why do you check each of the four king moves one by one here?",
       "antworten": [
-       "Nur der König kann das Schach abwehren, und jeder Königszug erlaubt Weiß eine andere Fortsetzung.",
-       "Schwarz kann den Springer g5 auch einfach schlagen.",
-       "Ein Bauernzug nach f5 wehrt das Schach ebenfalls ab."
+       "Only the king can get out of the check, and each king move allows White a different continuation.",
+       "Black can also simply capture the knight on g5.",
+       "A pawn move to f5 also blocks the check."
       ],
       "richtig": 0,
-      "erklaerung": "Schwarz hat genau vier legale Züge, alle mit dem König. Schritt 3 sucht für jeden die stärkste Antwort von Weiß."
+      "erklaerung": "Black has exactly four legal moves, all with the king. Step 3 looks for White's strongest reply to each one."
      }
     ]
    }
@@ -216,9 +216,9 @@
    "abschnitt": {
     "nummer": "12.1",
     "label": "sec:kandidatenzuege",
-    "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+    "titel": "The thinking routine: four steps to your next move"
    },
-   "unterabschnitt": "Die Routine an einem Beispiel",
+   "unterabschnitt": "The routine in an example",
    "fen": "r1b2r2/ppqn1pp1/2n1p1k1/3pP1N1/3P4/2NQ4/PP3PPP/R4RK1 b - - 3 3",
    "pfeile": [
     {
@@ -236,25 +236,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Kg6 3. Dd3+"
+     "text": "2... Kg6 3. Qd3+"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: das Schach ",
+     "text": ", Black to move. Gold: the check ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Dd3+"
+     "text": "3. Qd3+"
     },
     {
      "art": "text",
-     "text": ". Grau: Nach ",
+     "text": ". Gray: after ",
      "stil": "normal"
     },
     {
@@ -263,12 +263,12 @@
     },
     {
      "art": "text",
-     "text": " folgt ",
+     "text": " comes ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxe6"
+     "text": "4. Nxe6"
     },
     {
      "art": "text",
@@ -301,14 +301,14 @@
     "fragen": [
      {
       "zug": "3... f5",
-      "frage": "Welche Folge hat 3... f5 für das Feld e6?",
+      "frage": "What does 3... f5 mean for the square e6?",
       "antworten": [
-       "e6 ist danach doppelt gedeckt.",
-       "Der Springer g5 ist danach gefesselt.",
-       "Der Bauer f7 deckt e6 nicht mehr: 4. Sxe6 greift Dame c7 und Turm f8 an."
+       "e6 is then defended twice.",
+       "The knight on g5 is then pinned.",
+       "The f7 pawn no longer defends e6: 4. Nxe6 attacks the queen on c7 and the rook on f8."
       ],
       "richtig": 2,
-      "erklaerung": "f5 wehrt das Schach ab, gibt aber den letzten Schutz von e6 auf. Genau dort lag die Gabelgeometrie aus Schritt 1."
+      "erklaerung": "f5 blocks the check but gives up the last protection of e6. That is exactly where the fork geometry from step 1 was."
      }
     ]
    }
@@ -320,25 +320,25 @@
    "abschnitt": {
     "nummer": "12.1",
     "label": "sec:kandidatenzuege",
-    "titel": "Die Denkroutine: in vier Schritten zum nächsten Zug"
+    "titel": "The thinking routine: four steps to your next move"
    },
-   "unterabschnitt": "Visualisierung: das Brett im Kopf",
+   "unterabschnitt": "Visualization: the board in your head",
    "fen": "rn1qkbnr/ppp2ppp/8/4p3/2B1P3/5Q2/PPP2PPP/RNB1K2R b KQkq - 1 6",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Opernpartie nach ",
+     "text": "The Opera Game after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lc4"
+     "text": "6. Bc4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug (erst nach der Übung ansehen).",
+     "text": ", Black to move (only look after the exercise).",
      "stil": "normal"
     }
    ],
@@ -369,14 +369,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Was muss Schwarz hier zuerst tun?",
+      "frage": "What must Black do first here?",
       "antworten": [
-       "Den Läufer c4 mit b5 angreifen.",
-       "Die Drohung Dxf7# abwehren.",
-       "Schnell lang rochieren."
+       "Attack the bishop on c4 with b5.",
+       "Stop the threat Qxf7#.",
+       "Castle queenside quickly."
       ],
       "richtig": 1,
-      "erklaerung": "Ein eigener Angriff hilft nichts, wenn der Gegner im nächsten Zug matt setzt. Schritt 1 fragt deshalb immer zuerst nach der Drohung."
+      "erklaerung": "An attack of your own is no use if your opponent mates you on the next move. That is why step 1 always asks about the threat first."
      }
     ]
    }
@@ -388,9 +388,9 @@
    "abschnitt": {
     "nummer": "12.8",
     "label": "sec:weiter",
-    "titel": "Wie es weitergeht"
+    "titel": "What comes next"
    },
-   "unterabschnitt": "Zum Abschluss",
+   "unterabschnitt": "To finish",
    "fen": "r1bq1rk1/pp1n1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
    "pfeile": [],
    "felder": [],
@@ -420,9 +420,9 @@
    "abschnitt": {
     "nummer": "12.8",
     "label": "sec:weiter",
-    "titel": "Wie es weitergeht"
+    "titel": "What comes next"
    },
-   "unterabschnitt": "Zum Abschluss",
+   "unterabschnitt": "To finish",
    "fen": "3r2k1/pp3pp1/2nb3p/3p4/8/2P1BN2/PP3PPP/3R2K1 w - - 0 1",
    "pfeile": [],
    "felder": [],
@@ -458,60 +458,60 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Die Stellung gleicht dem Beispiel aus ",
+     "text": "The position is the same as the example from ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 12.1",
+     "text": "Fig. 12.1",
      "abbildung": "12.1"
     },
     {
      "art": "text",
-     "text": " bis auf eine Figur: Die schwarze Dame steht auf d8 statt auf c7. Gehe für den Kandidaten ",
+     "text": " except for one piece: the black queen is on d8 instead of c7. Go through the four steps of the thinking routine for the candidate ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lxh7+"
+     "text": "1. Bxh7+"
     },
     {
      "art": "text",
-     "text": " die vier Schritte der Denkroutine durch. Spielst du ihn?",
+     "text": ". Do you play it?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Nein. Schritt 3 verlangt die stärkste Antwort, und dazu gehören nicht nur Königszüge. Nach ",
+     "text": "No. Step 3 demands the strongest reply, and that does not only mean king moves. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lxh7+? Kxh7 2. Sg5+"
+     "text": "1. Bxh7+? Kxh7 2. Ng5+"
     },
     {
      "art": "text",
-     "text": " schlägt die Dame den Springer: ",
+     "text": ", the queen captures the knight: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Dxg5!"
+     "text": "2... Qxg5!"
     },
     {
      "art": "text",
-     "text": ". Von d8 aus bewacht sie das Feld g5, und keine weiße Figur deckt den Springer. Weiß hat dann zwei Figuren für einen Bauern gegeben. Besser ist ein ruhiger Zug wie ",
+     "text": ". From d8 it guards the square g5, and no white piece defends the knight. White has then given two pieces for a pawn. A quiet move like ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dc2"
+     "text": "1. Qc2"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Prüfe bei der stärksten Antwort zunächst die Schläge des Gegners, denn eine einzige Figur auf einem anderen Feld macht aus einem Gewinnopfer einen Fehler.",
+     "text": " is better. Remember: when looking for the strongest reply, first check your opponent's captures, because a single piece on a different square turns a winning sacrifice into a mistake.",
      "stil": "normal"
     }
    ],
@@ -522,8 +522,8 @@
    "erklaerung": {
     "loesung": "1. Qc2",
     "akzeptiert": [],
-    "motiv": "Stärkste Antwort prüfen",
-    "text": "Nach 1. Lxh7+? Kxh7 2. Sg5+ schlägt die Dame von d8 aus mit 2... Dxg5!, und Weiß hat zwei Figuren für einen Bauern gegeben. Prüfe bei der stärksten Antwort zuerst die Schlagzüge des Gegners; besser ist ein ruhiger Zug wie 1. Dc2."
+    "motiv": "Check the strongest reply",
+    "text": "After 1. Bxh7+? Kxh7 2. Ng5+, the queen captures from d8 with 2... Qxg5!, and White has given two pieces for a pawn. When looking for the strongest reply, first check your opponent's captures; a quiet move like 1. Qc2 is better."
    }
   },
   {
@@ -537,32 +537,32 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Du hast noch drei Minuten für zwölf Züge. Der Bauer d5 sieht ungedeckt aus, da zwischen ihm und dem Turm d8 der schwarze Läufer d6 steht. Schlägst du ihn mit dem Turm? Welche der drei Fragen des Sicherheitsblicks entscheidet?",
+     "text": "You have three minutes left for twelve moves. The pawn on d5 looks undefended, because the black bishop on d6 stands between it and the rook on d8. Do you take it with your rook? Which of the three questions of the safety check decides?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Nein. Es entscheidet die dritte Frage: Erlaube ich ihm ein Schach? Nach ",
+     "text": "No. The third question decides: Do I allow my opponent a check? After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Txd5??"
+     "text": "1. Rxd5??"
     },
     {
      "art": "text",
-     "text": " zieht der Läufer mit Schach ab und gibt dabei die d-Linie frei: ",
+     "text": ", the bishop moves away with check and opens the d-file: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Lxh2+! 2. Kxh2 Txd5"
+     "text": "1... Bxh2+! 2. Kxh2 Rxd5"
     },
     {
      "art": "text",
-     "text": ". Schwarz hat die Qualität gewonnen und dafür nur den Bauern d5 gegeben. Das ist der Abzugsangriff aus Kapitel 7 (Motiv 4). Die Prüfung kostet wenige Sekunden, denn du suchst bloß die Schachs des Gegners, und hier gibt es genau eines. Richtig ist ein Zug wie ",
+     "text": ". Black has won the exchange and given only the d5 pawn for it. This is the discovered attack from Chapter 7 (motif 4). The check takes only a few seconds, because you are just looking for your opponent's checks, and here there is exactly one. The right move is one like ",
      "stil": "normal"
     },
     {
@@ -571,16 +571,16 @@
     },
     {
      "art": "text",
-     "text": ", der die Diagonale nach h2 schließt. Erst dann droht ",
+     "text": ", which closes the diagonal to h2. Only then does ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Txd5"
+     "text": "Rxd5"
     },
     {
      "art": "text",
-     "text": " wirklich. Merke dir: Suche auch in Zeitnot vor jedem Schlag die Schachs des Gegners.",
+     "text": " really threaten. Remember: even in time trouble, look for your opponent's checks before every capture.",
      "stil": "normal"
     }
    ],
@@ -591,8 +591,8 @@
    "erklaerung": {
     "loesung": "1. g3",
     "akzeptiert": [],
-    "motiv": "Sicherheitsblick in Zeitnot",
-    "text": "Nach 1. Txd5?? zieht der Läufer mit Schach ab: 1... Lxh2+! 2. Kxh2 Txd5, und Schwarz gewinnt die Qualität. Die Frage nach den Schachs des Gegners entscheidet; 1. g3 schließt die Diagonale und droht erst dann Txd5."
+    "motiv": "Safety check in time trouble",
+    "text": "After 1. Rxd5??, the bishop moves away with check: 1... Bxh2+! 2. Kxh2 Rxd5, and Black wins the exchange. The question about your opponent's checks decides; 1. g3 closes the diagonal, and only then does it threaten Rxd5."
    }
   },
   {
@@ -604,14 +604,14 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Nimm eine eigene Partie und erstelle ein Fehlerprotokoll. Benenne genau einen taktischen und einen strategischen Fehler. Ordne beiden eine Fehlerart aus Tabelle 12.2 zu, formuliere je einen besseren Kandidatenzug oder Plan und überprüfe erst im Anschluss mit einer Engine, ob deine Analyse die Hauptidee getroffen hat. Falls du noch keine eigene Partie hast, nutze eine Partie aus Kapitel 11 und erstelle das Protokoll zu einer dort beschriebenen Schlüsselstelle.",
+     "text": "Take one of your own games and make a mistake record. Name exactly one tactical and one strategic mistake. Assign each a type of mistake from Table 12.2, write down a better candidate move or plan for each, and only afterwards check with an engine whether your analysis caught the main idea. If you don't have a game of your own yet, use a game from Chapter 11 and make the record for a key moment described there.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Ein gutes Fehlerprotokoll nennt einen konkreten Zug statt eine vage Phase wie „meine Eröffnung war schlecht“. Beispiel: „Ich übersah nach meinem Zug die Springergabel auf d4 (Kapitel 7)“ und „ich tauschte meine aktive Figur gegen eine passive (Kapitel 6)“. Die Fehlerarten dazu heißen „Taktik übersehen“ und „Plan oder Figurenaktivität“. Die Beispielzeile in Tabelle 12.1 zeigt, wie du den ersten Fehler einträgst. Die Engine ist erst der Kontrollpartner, nicht der Ersatz für die eigene Analyse. Merke dir: Ein Fehler, den du in einem Satz benennen kannst, lässt sich gezielt trainieren.",
+     "text": "A good mistake record names a concrete move instead of a vague phase like “my opening was bad”. Example: “After my move I overlooked the knight fork on d4 (Chapter 7)” and “I traded my active piece for a passive one (Chapter 6)”. The matching types of mistake are called “Missed tactic” and “Plan or piece activity”. The example row in Table 12.1 shows how you enter the first mistake. The engine is only the checking partner, not a replacement for your own analysis. Remember: a mistake you can name in one sentence can be trained in a targeted way.",
      "stil": "normal"
     }
    ],
@@ -622,8 +622,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Fehlerprotokoll",
-    "text": "Ein gutes Protokoll nennt einen konkreten Zug und ordnet ihn einer Fehlerart zu, etwa übersehene Taktik oder schwacher Plan. Erst danach prüft die Engine, ob die eigene Analyse die Hauptidee getroffen hat."
+    "motiv": "Mistake record",
+    "text": "A good record names a concrete move and assigns it a type of mistake, such as a missed tactic or a weak plan. Only then does the engine check whether your own analysis caught the main idea."
    }
   },
   {
@@ -635,14 +635,14 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Entwirf einen konkreten Trainingsplan für sieben Tage. Lege für jeden Tag fest, welche Taktikaufgaben, welche Partieform und welches Kapitel du wiederholst. Sorge dafür, dass mindestens ein Tag die Analyse einer eigenen verlorenen Partie enthält.",
+     "text": "Draw up a concrete training plan for seven days. For each day, decide which tactics exercises, which kind of game and which chapter you review. Make sure that at least one day includes analyzing one of your own lost games.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Ein guter Plan ist konkret: etwa Montag Taktikaufgaben zu Gabeln plus eine Partie mit 10+0 (Partietag aus Tabelle 12.3), Dienstag die Philidor-Stellung aus Kapitel 9 im Analysebrett gegen den Computer verteidigen, Mittwoch eigene Partie analysieren, Donnerstag eine Meisterpartie zum Isolani nachspielen (Fischer, Kapitel 11), Freitag eine kurze Partie mit anschließender Fehlersuche spielen, Samstag zwei elementare Endspielstellungen wiederholen und Sonntag eine lange Partie (etwa 15+10) spielen, die Fehlerdatenbank ergänzen sowie die häufigste Fehlerart der Woche trainieren. Merke dir: Entscheidend ist die Mischung aus Spielen, Analyse und gezieltem Studium.",
+     "text": "A good plan is concrete: for example, Monday tactics exercises on forks plus a 10+0 game (game day from Table 12.3), Tuesday defending the Philidor position from Chapter 9 on the analysis board against the computer, Wednesday analyzing one of your own games, Thursday playing through a master game on the isolani (Fischer, Chapter 11), Friday playing a short game followed by a hunt for mistakes, Saturday reviewing two basic endgame positions, and Sunday playing a long game (about 15+10), adding to the mistake log and training the most common type of mistake of the week. Remember: what matters is the mix of playing, analysis and targeted study.",
      "stil": "normal"
     }
    ],
@@ -653,8 +653,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Trainingsplan",
-    "text": "Ein guter Plan mischt an sieben Tagen Taktik, Partien, Endspiele, Meisterpartien und die Analyse einer eigenen verlorenen Partie. Er nennt für jeden Tag konkrete Inhalte statt allgemeiner Vorsätze."
+    "motiv": "Training plan",
+    "text": "A good plan mixes tactics, games, endgames, master games and the analysis of one of your own lost games over seven days. For each day it names concrete content instead of general resolutions."
    }
   }
  ],
@@ -666,7 +666,7 @@
    "id": "k12-a1",
    "kapitel": 12,
    "abschnitt": "12.1",
-   "titel": "Die Routine an einem Beispiel",
+   "titel": "The routine in an example",
    "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
    "zuege": [
     {
@@ -882,7 +882,7 @@
    "id": "k12-a4",
    "kapitel": 12,
    "abschnitt": "12.1",
-   "titel": "Visualisierung: das Brett im Kopf",
+   "titel": "Visualization: the board in your head",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -988,7 +988,7 @@
    "id": "k12-a5",
    "kapitel": 12,
    "abschnitt": "Übung 83",
-   "titel": "Zum Abschluss",
+   "titel": "To finish",
    "startFen": "r1bq1rk1/pp1n1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
    "zuege": [
     {
@@ -1037,7 +1037,7 @@
    "id": "k12-a6",
    "kapitel": 12,
    "abschnitt": "Übung 84",
-   "titel": "Zum Abschluss",
+   "titel": "To finish",
    "startFen": "3r2k1/pp3pp1/2nb3p/3p4/8/2P1BN2/PP3PPP/3R2K1 w - - 0 1",
    "zuege": [
     {

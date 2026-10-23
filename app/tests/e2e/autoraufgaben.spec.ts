@@ -79,10 +79,12 @@ test("„Zurück zu den Aufgaben“ führt zum zuletzt angetippten Punkt, nicht 
     const a = abschnitte.nth(nummer);
     if ((await a.getAttribute("open")) === null) await a.locator("summary").click();
     await expect(a).toHaveAttribute("open", "");
-    if ((await a.locator(".aufgabenlink").count()) > 0) break;
+    // Nur Links in Punkten zählen: Erläuterungen ohne Haken (etwa „schon umgesetzt“) haben
+    // auch Links, aber keinen Punkt, zu dem die Seite zurückkehren könnte.
+    if ((await a.locator(".aufgabenpunkt .aufgabenlink").count()) > 0) break;
   }
   const abschnitt = abschnitte.nth(nummer);
-  const link = abschnitt.locator(".aufgabenlink").last();
+  const link = abschnitt.locator(".aufgabenpunkt .aufgabenlink").last();
   const punkt = link.locator("xpath=ancestor::*[contains(@class, 'aufgabenpunkt')][1]");
   const id = ((await punkt.getAttribute("data-testid")) ?? "").replace("aufgabe-", "");
   await link.click();

@@ -61,7 +61,9 @@ def thema_von(themen: tuple[str, ...]) -> str | None:
     return THEMA_JE_LICHESS[next(iter(arten))]
 
 
-def kandidaten(puzzles: list[Puzzle], je_gruppe: int, startwert: int = STARTWERT) -> dict[Gruppe, list[Puzzle]]:
+def kandidaten(
+    puzzles: list[Puzzle], je_gruppe: int, startwert: int = STARTWERT
+) -> dict[Gruppe, list[Puzzle]]:
     """Kandidaten je Gruppe (Thema, Stufe, Ziel): wenige Steine, eine Figurenart, zufällig gemischt."""
     zufall = random.Random(startwert)
     gruppen: dict[Gruppe, list[Puzzle]] = {}
@@ -163,7 +165,8 @@ def rechne(lichess_pfad: Path, je_gruppe: int, teil: str | None) -> None:
                 if aufgabe:
                     aufgaben.append(aufgabe)
                     print(f"Lichess {p.kennung} {thema} {ziel} Stufe {stufe}", file=sys.stderr)
-            _teildatei(gruppe).write_text(json.dumps(aufgaben, ensure_ascii=False, indent=1), encoding="utf-8")
+            text = json.dumps(aufgaben, ensure_ascii=False, indent=1)
+            _teildatei(gruppe).write_text(text, encoding="utf-8")
             print(f"Gruppe {gruppe}: {len(aufgaben)} Aufgaben", file=sys.stderr)
 
 

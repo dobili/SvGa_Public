@@ -120,7 +120,7 @@ def test_koeder_zug_schafft_das_angebot():
     brett = vorher.copy()
     brett.push(vorzug)
     assert neues_angebot(Angebot(vorher, vorzug, brett, brett.parse_san("Bxd1")))
-    # Grundstellung nach 1. e4 e5 2. Sf3: Der Bauer e5 war vor 2. Sf3 schon genauso ungedeckt wie danach? Nein,
+    # Gegenbeispiel: Ein Zug, der nichts am Angebot ändert, zählt nicht:
     # er war gar nicht angegriffen; aber ein Zug, der nichts am Angebot ändert, zählt nicht:
     # 1. e4 d5 2. Sc3: der Bauer e4 hing schon vor 2. Sc3 (dxe4 war schon möglich) und ist danach genauso
     # gedeckt (Sc3 deckt e4 → ein Verteidiger mehr, also kein abgezogener Verteidiger).
@@ -153,11 +153,13 @@ def test_endspiel_lichess_auswahl():
     assert thema_von(("endgame", "bishopEndgame")) == "leichtfiguren"
     assert thema_von(("endgame", "rookEndgame", "pawnEndgame")) is None
     assert thema_von(("endgame", "queenRookEndgame")) is None
-    wenig = Puzzle("a", "8/8/8/4k3/8/8/4P3/4K3 w - - 0 1", ["Ke2"], 1200, ("endgame", "pawnEndgame"), None, None, "")
-    remis = Puzzle("b", "8/8/8/4k3/8/8/4P3/4K3 b - - 0 1", ["Ke4"], 1500, ("endgame", "equality", "pawnEndgame"), None, None, "")
-    viele = Puzzle(
-        "c", "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1", ["d4"], 1200, ("endgame", "pawnEndgame"), None, None, ""
+    kpk = "8/8/8/4k3/8/8/4P3/4K3"
+    voll = "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1"
+    wenig = Puzzle("a", f"{kpk} w - - 0 1", ["Ke2"], 1200, ("endgame", "pawnEndgame"), None, None, "")
+    remis = Puzzle(
+        "b", f"{kpk} b - - 0 1", ["Ke4"], 1500, ("endgame", "equality", "pawnEndgame"), None, None, ""
     )
+    viele = Puzzle("c", voll, ["d4"], 1200, ("endgame", "pawnEndgame"), None, None, "")
     gruppen = kandidaten([wenig, remis, viele], 5)
     assert set(gruppen) == {("bauernendspiel", 2, "gewinn"), ("bauernendspiel", 3, "remis")}
     assert verfehlt("gewinn", 1.4) and not verfehlt("gewinn", 1.6)

@@ -13,6 +13,8 @@ Wozu diese Datei da ist:
     2. Weitere Abbildungen des Buches (Kapitel 2, 3, 6, 11, 12), in denen die Pipeline eine
     einzige klare Struktur findet (Isolani, hängende Bauern, Doppelbauer, Minderheitsangriff,
     Bauernkette, Mehrheit) — Regeln unten, nur mit Bauern geprüft, keine Engine.
+    3. Seit P4 (R49): Stellungen aus den Partien und Zugfolgen dieser Kapitel (Hauptvarianten ab
+    Zug 10, höchstens zwei je Zugfolge) mit einer klaren Struktur, als Beispiele aus Partien.
 
     Schwierigkeit (ohne Engine; eine Stellungsbewertung sagt nichts über das Erkennen einer
     Struktur): 1, +1 ab drei Merkmalen beider Seiten, +1 ab fünf, +1 ab acht Figuren außer
@@ -138,8 +140,9 @@ def merkmale(brett: chess.Board, farbe: chess.Color) -> Merkmale:
     """Isolierte, doppelte, rückständige Bauern, Freibauern, Inseln und Ketten einer Seite.
 
     Regeln (Kapitel 5): isoliert = kein eigener Bauer auf einer Nachbarlinie; doppelt = zwei auf
-    einer Linie; rückständig = kein eigener Bauer auf den Nachbarlinien gleich hoch oder dahinter
-    und das Feld davor von einem gegnerischen Bauern beherrscht; Freibauer = kein gegnerischer
+    einer Linie; rückständig = kein eigener Bauer auf den Nachbarlinien gleich hoch oder dahinter,
+    das Feld davor von einem gegnerischen Bauern beherrscht und kein gegnerischer Bauer vor ihm
+    auf seiner Linie (Festlegung des Autors, P3); Freibauer = kein gegnerischer
     Bauer davor auf derselben oder einer Nachbarlinie. Beispiel: Abb. 5.19 (Weiß) → Isolani d4.
     """
     eigene, fremde = bauernfelder(brett, farbe), bauernfelder(brett, not farbe)
@@ -162,7 +165,14 @@ def merkmale(brett: chess.Board, farbe: chess.Color) -> Merkmale:
             and chess.square_rank(_vorn(g, not farbe)) == chess.square_rank(vor)  # type: ignore[arg-type]
             for g in fremde
         )
-        if nachbarn and not hinten_oder_gleich and gegner_kontrolliert:
+        # Festlegung des Autors (P3, 23.10.2026): Ziel auf der halboffenen Linie, also kein
+        # gegnerischer Bauer vor ihm auf seiner Linie (sonst ist er nur blockiert).
+        gegner_davor = any(
+            chess.square_file(g) == linie
+            and (chess.square_rank(g) > reihe if farbe else chess.square_rank(g) < reihe)
+            for g in fremde
+        )
+        if nachbarn and not hinten_oder_gleich and gegner_kontrolliert and not gegner_davor:
             rueckstaendige.append(feld)
         voraus = [
             g
@@ -336,10 +346,10 @@ BUCHFOLGERUNGEN: dict[str, tuple[str, str, str]] = {
 }
 
 
-def aus_weiteren_kapiteln(datenordner: Path = DATENORDNER) -> list[dict]:
+def aus_weiteren_kapiteln(datenordner: Path = DATENORDNER, gesehen: set[str] | None = None) -> list[dict]:
     """Abbildungen anderer Kapitel mit einer klaren Struktur; der Plan gilt für die Seite am Zug."""
     aufgaben = []
-    gesehen: set[str] = set()
+    gesehen = set() if gesehen is None else gesehen
     for kapitel in WEITERE_KAPITEL:
         for a in lies_json(datenordner / f"kap{kapitel:02d}.json")["abbildungen"]:
             brett = chess.Board(a["fen"])
@@ -374,8 +384,75 @@ def aus_weiteren_kapiteln(datenordner: Path = DATENORDNER) -> list[dict]:
     return aufgaben
 
 
+# Stellungen aus den Zugfolgen: ab diesem Zug (Eröffnung vorbei), höchstens so viele je Zugfolge,
+# mindestens so viele Figuren außer Bauern und Königen (Mittelspiel, nicht Endspiel).
+ZUGFOLGE_AB_ZUG = 10
+HOECHSTENS_JE_ZUGFOLGE = 2
+MINDESTENS_FIGUREN = 6
+
+
+def _hauptlinie(beispiel: dict):
+    """Die Stellungen der Hauptvariante mit der letzten Abbildung davor: (Brett, Abbildung)."""
+    nummer = lambda a: a["nummer"] if isinstance(a, dict) else a  # noqa: E731
+    brett = chess.Board(beispiel["startFen"])
+    abbildung = nummer(next(iter(beispiel.get("abbildungen", [])), ""))
+    knoten = beispiel["zuege"]
+    while knoten:
+        k = knoten[0]
+        brett.push_san(k["zug"])
+        if k["abbildungen"]:
+            abbildung = nummer(k["abbildungen"][0])
+        yield brett.copy(), abbildung
+        knoten = k["weiter"]
+
+
+def aus_zugfolgen(gesehen: set[str], datenordner: Path = DATENORDNER) -> list[dict]:
+    """Stellungen aus den Partien und Zugfolgen des Buches mit einer klaren Struktur (R49).
+
+    Warum: Der Autor wünscht Beispiele aus Partien; die Hauptvarianten der Kapitel 2, 3, 6, 11
+    und 12 liefern echte Mittelspielstellungen. Je Zugfolge höchstens zwei, ab Zug 10, mit
+    mindestens zehn Bauern und sechs Figuren, gleiche Skelette nur einmal (auch gegenüber den
+    Abbildungen). Der Plan gilt für die Seite am Zug.
+    """
+    aufgaben = []
+    for kapitel in WEITERE_KAPITEL:
+        for beispiel in lies_json(datenordner / f"kap{kapitel:02d}.json")["beispiele"]:
+            je_zugfolge = 0
+            for brett, abbildung in _hauptlinie(beispiel):
+                if je_zugfolge >= HOECHSTENS_JE_ZUGFOLGE or brett.fullmove_number < ZUGFOLGE_AB_ZUG:
+                    continue
+                schluessel = skelett(brett)
+                anzahl_bauern = len(brett.pieces(chess.PAWN, True)) + len(brett.pieces(chess.PAWN, False))
+                if anzahl_bauern < MINDESTENS_BAUERN or schluessel in gesehen:
+                    continue
+                if figuren_ausser_bauern(brett) < MINDESTENS_FIGUREN or brett.is_check():
+                    continue
+                erkannt = erkenne(brett)
+                if erkannt is None:
+                    continue
+                struktur, besitzer = erkannt
+                plan = (PLAN_BESITZER if brett.turn == besitzer else PLAN_GEGNER).get(struktur)
+                if plan is None:
+                    continue
+                gesehen.add(schluessel)
+                je_zugfolge += 1
+                seite = "w" if brett.turn else "b"
+                aufgaben.append(
+                    _aufgabe(
+                        f"struktur-b-{beispiel['id']}-{brett.fullmove_number}{seite}",
+                        brett,
+                        struktur,
+                        seite,
+                        plan,
+                        {"quelle": "buch", "abbildung": abbildung, "beispiel": beispiel["id"]},
+                    )
+                )
+    return aufgaben
+
+
 def baue(ziel: Path = ZIELDATEI) -> dict:
-    aufgaben = aus_kapitel_5() + aus_weiteren_kapiteln()
+    gesehen: set[str] = set()
+    aufgaben = aus_kapitel_5() + aus_weiteren_kapiteln(gesehen=gesehen) + aus_zugfolgen(gesehen)
     daten = {
         "schemaVersion": 1,
         "trainer": "struktur",

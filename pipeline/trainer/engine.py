@@ -124,6 +124,4 @@ def _zugwert(brett: chess.Board, info: chess.engine.InfoDict) -> Zugwert:
     pv = tuple(info["pv"])
     zug = pv[0]
     wert = info["score"]
-    return Zugwert(
-        zug, brett.san(zug), bauern(wert), wert.relative.mate(), int(info.get("depth", 0)), pv
-    )
+    return Zugwert(zug, brett.san(zug), bauern(wert), wert.relative.mate(), int(info.get("depth", 0)), pv)

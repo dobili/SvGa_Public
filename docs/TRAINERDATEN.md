@@ -157,6 +157,12 @@ Kandidaten wie gebraucht).
 
 ### Strukturerkenner (`struktur.json`, Kapitel 5)
 
+**Seit P4 (R49, 23.10.2026, Fable):** 162 Aufgaben, davon 28 aus den Hauptvarianten der
+Zugfolgen der Kapitel 2, 3, 6, 11 und 12 (`aus_zugfolgen`, Kennung `struktur-b-<beispiel>-<zug>`,
+Herkunft mit `beispiel`). Die App rechnet starke Felder, Vorposten, Löcher und schwache Bauern
+selbst (Festlegungen des Autors, P3); die Merkmale der Datei dienen der Nachvollziehbarkeit, die
+Regel „rückständig“ hat dort die vierte Bedingung (kein gegnerischer Bauer davor).
+
 134 Aufgaben, alle aus Buchabbildungen: die 46 Abbildungen aus Kapitel 5 mit Struktur, Seite und
 Plan-Satz nach dem Unterabschnitt, in dem das Buch sie zeigt (Tabelle `BUCHSTRUKTUREN` in
 `struktur.py`, Vorschlag), dazu 88 Abbildungen aus den Kapiteln 2, 3, 6, 11 und 12, in denen die

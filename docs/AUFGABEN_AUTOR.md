@@ -35,7 +35,7 @@ Teil fertig ist.
 
 ### Neu auf dem Zweig `p4-trainerinhalte` (Paket P4 Trainer-Inhalte; Fable, 23.10.2026)
 
-Noch nicht auf main: Zum Testen den Zweig `p4-trainerinhalte` ansehen (oder warten, bis er
+Noch nicht auf main; enthält auch den Zweig `p3-werkzeuge` (N670 bis N679): Zum Testen den Zweig `p4-trainerinhalte` ansehen (oder warten, bis er
 eingemischt ist). Alles unter Training.
 
 - [ ] N690. **Falle oder Köder, neues Bild:** Training › „Falle oder Köder“ › Runde starten. Der
@@ -82,6 +82,22 @@ eingemischt ist). Alles unter Training.
 - [ ] N701. **Abb. 8.31 fehlt absichtlich:** Im Endspieltrainer kommt die Randbauer-Stellung
       Abb. 8.31 nicht mehr vor (Weiß zog zuerst und setzte sofort patt, du kamst nie an den Zug).
       Randbauer übst du an Abb. 8.61 und 8.63. Einverstanden?
+- [ ] N702. **Strukturerkenner mit echten Stellungen:** Training › „Strukturerkenner“ › Runde
+      starten. Das Brett zeigt die ganze Stellung; unter dem Brett schaltet „Nur das Skelett
+      zeigen“ auf Bauern und Könige um und zurück („Alle Figuren zeigen“). Der Schalter gilt für
+      alle Schritte der Aufgabe.
+- [ ] N703. **Starke Felder auf der 4. bis 6. Reihe:** Schritt 1 fragt jetzt nach deiner 4. bis
+      6. Reihe (deine Festlegung aus P3). Nach „Prüfen“ steht „Starke Felder: d5 (Vorposten), b6“;
+      Vorposten sind die mit eigener Bauernstütze. Bei Abb. 5.8 (Najdorf, Weiß) muss d5 als
+      Vorposten dabei sein.
+- [ ] N704. **Feldart benennen:** Vor der Planwahl kommt (wenn die Stellung eines hergibt) ein
+      Schritt „Welche Feldart ist das goldene Feld für dich?“ mit fünf Knöpfen: Loch, Schwaches
+      Feld, Starkes Feld, Vorposten, Rückständiger Bauer. Nach der Wahl erklärt ein Satz die Art
+      nach deinen Festlegungen. Gefragt ist immer die genaueste Art (Vorposten vor starkem Feld,
+      Loch vor schwachem Feld). Passt das?
+- [ ] N705. **Stellungen aus Partien:** Manche Aufgaben tragen die Zeile „Aus einer Partie des
+      Buches (nach Abb. …)“: Mittelspielstellungen aus den Zugfolgen der Kapitel 2, 3, 6, 11 und
+      12 (28 Stück, ab Zug 10, höchstens zwei je Zugfolge). Sind Struktur und Plan dort stimmig?
 
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 
@@ -386,5 +402,14 @@ Paket P4.
 - [ ] P4-7. **Kurzübungen.** Drei neue Arten (Zug ins Quadrat, Zug zur Opposition, Plan zum
       Erkennungsbild), eine Runde hat weiter acht Aufgaben, die sieben Arten reihum. Mehr
       Aufgaben je Runde? Schon umgesetzt mit acht.
+- [ ] P4-8. **Feldart-Frage: die genaueste Art zählt.** Ein Vorposten ist auch ein starkes Feld,
+      ein Loch auch ein schwaches Feld; im Trainer gilt nur die genaueste Benennung als richtig,
+      der Erklärsatz nennt den Oberbegriff mit. „Schwaches Feld“ ist als Antwort nur dann richtig,
+      wenn das Feld außerhalb deiner 3. bis 5. Reihe liegt (etwa ein nicht mehr deckbares Feld
+      auf der 6. Reihe). Schon umgesetzt, Widerspruch genügt.
+- [ ] P4-9. **Partiestellungen für den Strukturerkenner** aus den Zugfolgen des Buches statt aus
+      fremden Partien: Regel 1 (das Buch ist die Quelle), und die Zugfolgen sind freigegeben.
+      Lichess-Aufgabenstellungen sind taktisch und taugen nicht für Strukturen. Reicht das, oder
+      sollen zusätzlich Stellungen aus den Lichess-Partien der Bot-Daten dazu?
 
 

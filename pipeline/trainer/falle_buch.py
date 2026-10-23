@@ -86,7 +86,14 @@ def erster_schlag_mit_fragezeichen(
             if vorher is None:
                 return None
             return Buchangebot(
-                vorher[0], vorher[1], brett.copy(), zug, _buchlinie(knoten), abbildung, beispiel["id"], fallencheck
+                vorher[0],
+                vorher[1],
+                brett.copy(),
+                zug,
+                _buchlinie(knoten),
+                abbildung,
+                beispiel["id"],
+                fallencheck,
             )
         vorher = (brett.copy(), zug)
         brett.push(zug)
@@ -137,7 +144,7 @@ def angebote_der_fallenchecks(datenordner: Path = DATENORDNER) -> list[Buchangeb
         )
         if gefunden is None:
             print(
-                f"Fallencheck „{check['name']}“: kein Schlag mit Fragezeichen (mit Zug davor) in der Zugfolge",
+                f"Fallencheck „{check['name']}“: kein Schlag mit Fragezeichen (mit Zug davor)",
                 file=sys.stderr,
             )
             continue

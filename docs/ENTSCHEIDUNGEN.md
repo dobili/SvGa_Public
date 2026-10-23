@@ -4468,6 +4468,12 @@ war). Der Messlauf bleibt für spätere Datenstände.
   höchstens acht Steine, Engine bestätigt Ziel und Nichttrivialität, Stufe nach Wertung, je
   Gruppe höchstens fünf (Startwert 20261023). Kurzübungen: drei neue Arten; Quadrat-Lösung als
   Pfeile aus k8-quadrat statt goldener Felder.
-- **R49 Strukturerkenner** wartet auf die neue Strukturerkennung von P3 (Zweig `p3-werkzeuge`,
-  am 23.10.2026 noch nicht vorhanden).
+- **R49 Strukturerkenner** (nach dem Einmischen von `p3-werkzeuge`): echte Stellung, Skelett per
+  Knopf; starke Felder und schwache Bauern rechnet der Trainer mit `felderFuer` und
+  `bauernschwaechen` (Festlegungen des Autors) statt aus den Pipeline-Merkmalen; neuer Schritt
+  Feldart (genaueste Art zählt: Vorposten vor starkem Feld, Loch vor schwachem Feld; schwaches
+  Feld = dauerhaft nicht deckbares Feld außerhalb der Lochreihen 3 bis 5); Partiestellungen aus
+  den Hauptvarianten der Kapitel 2, 3, 6, 11, 12 (ab Zug 10, höchstens zwei je Zugfolge,
+  mindestens zehn Bauern und sechs Figuren, gleiche Skelette einmal): 28 neue Aufgaben. Die
+  Pipeline-Regel „rückständig“ hat die vierte Bedingung (kein gegnerischer Bauer davor) dazu.
 

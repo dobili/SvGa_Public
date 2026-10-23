@@ -8,7 +8,8 @@ Wozu diese Datei da ist:
     23.10.2026, nach dem Befund des Autors zur Lichess-Aufgabe mit Wertung 753):
     - **Falle:** Nach dem Nehmen hat der Gegner eine Widerlegung, und der Leser steht schlechter
       als vor dem Nehmen: Der Wert nach dem Schlag liegt mindestens 1,5 Bauerneinheiten unter dem
-      Wert vor dem Schlag (bester Zug) **und** klar im Minus (höchstens −0,8, wie die Remisgrenze des Endspieltrainers; das Blackburne-Shilling-Gambit, Abb. 4.41, misst −0,88). Dass ein anderer Zug
+      Wert vor dem Schlag (bester Zug) **und** klar im Minus (höchstens −0,8, wie die Remisgrenze
+      des Endspieltrainers; das Blackburne-Shilling-Gambit, Abb. 4.41, misst −0,88). Dass ein anderer Zug
       besser gewesen wäre, macht allein noch keine Falle (Beispiel: Schwarz steht auf Gewinn, nimmt
       einen Bauern und steht danach nur noch ausgeglichen).
     - **Geschenk:** Nehmen ist der beste Zug oder höchstens 0,3 dahinter, und der Leser steht
@@ -50,7 +51,6 @@ from pipeline.trainer.daten import HAUPTORDNER, TRAINERORDNER, lies_json, schrei
 from pipeline.trainer.engine import Engine, engine_vorhanden
 from pipeline.trainer.falle_buch import (
     FORTSETZUNG_HALBZUEGE,
-    Buchangebot,
     angebote_der_eroeffnungen,
     angebote_der_fallenchecks,
 )
@@ -342,7 +342,8 @@ def rechne_lichess(lichess_pfad: Path, je_stufe: int, teil: str | None) -> None:
     with Engine() as engine:
         for gruppe in _teil(alle_gruppen(), teil):
             aufgaben = aus_lichess_gruppe(engine, gruppe, kandidaten.get(gruppe, []), je_stufe)
-            _teildatei(gruppe).write_text(json.dumps(aufgaben, ensure_ascii=False, indent=1), encoding="utf-8")
+            text = json.dumps(aufgaben, ensure_ascii=False, indent=1)
+            _teildatei(gruppe).write_text(text, encoding="utf-8")
             print(f"Gruppe {gruppe}: {len(aufgaben)} Aufgaben", file=sys.stderr)
 
 
@@ -424,7 +425,9 @@ if __name__ == "__main__":
     parser.add_argument("--je-stufe", type=int, default=12)
     parser.add_argument("--bisherige", action="store_true")
     parser.add_argument("--teil", help="nur die Lichess-Gruppen i/n rechnen, Zwischenstand ablegen")
-    parser.add_argument("--zusammen", action="store_true", help="Zwischenstände einsammeln, Buch rechnen, schreiben")
+    parser.add_argument(
+        "--zusammen", action="store_true", help="Zwischenstände einsammeln, Buch rechnen, schreiben"
+    )
     args = parser.parse_args()
     if args.teil:
         if not args.lichess:

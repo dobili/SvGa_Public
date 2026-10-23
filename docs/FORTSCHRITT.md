@@ -1400,7 +1400,9 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
       Browsersitzung und höchstens einmal je Stunde (Merker `startanimation.zuletzt`), nie bei
       reduzierter Bewegung. `starteImBrowser` in den Oberflächentests schaltet sie ab
       (`startanimation: true` zum Prüfen). N655, Rückfrage P2-A.
-- [ ] R40 Desktop: Quer- und Hochformat live.
+- [x] R40 Desktop: Das Layout war schon reines CSS und wechselte live, kippte aber erst bei
+      quadratischem Fenster. `ui/stil/breit.css` nimmt jetzt das Seitenverhältnis 5 : 4 als
+      Grenze; Oberflächentest in `brett.spec.ts` (läuft in CI auch in WebKit). N656, P2-B.
 - [ ] R53 Nachtmodus: Symbol für Weiß in der Fehlerliste.
 
-**Nächster Schritt:** R40.
+**Nächster Schritt:** R53.

@@ -68,6 +68,11 @@ Teil fertig ist.
       lang wächst der goldene Springer vom Cover mit goldenem Schein auf dunklem Grund heran,
       darunter „Schach von Grund auf“, dann blendet alles aus. Ein Tipp irgendwo überspringt sie.
       Beim Neuladen kommt sie nicht, und höchstens einmal je Stunde (siehe Teil 2, P2-A).
+- [ ] N656. **Fenstergröße am Rechner (R40):** Öffne Abb. 1.26 im Browser am Rechner, Fenster
+      breit: Brett links, Text rechts. Ziehe das Fenster langsam schmaler: Sobald es weniger als
+      etwa 5 : 4 breit ist (etwa 1000 × 800), springt die App sofort, ohne Neuladen, in eine
+      Spalte mit dem Brett oben; breiter gezogen wieder zurück. Bisher kippte sie erst bei einem
+      fast quadratischen Fenster, vorher wurden Brett und Text sehr eng (siehe Teil 2, P2-B).
 
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 

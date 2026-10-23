@@ -1,9 +1,9 @@
 /**
  * Oberflächentests für Brett und Bedienung (Paket P2): Zuganimation (R37), Ergebnis auf dem
- * Brett (R38), Startanimation (R39).
+ * Brett (R38), Startanimation (R39), Wechsel der Spalten mit der Fenstergröße (R40).
  */
 import { expect, test, type Page } from "@playwright/test";
-import { starteImBrowser } from "./hilfen";
+import { oeffneAbbildung, starteImBrowser } from "./hilfen";
 
 async function beginnePartie(seite: Page): Promise<void> {
   await seite.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
@@ -118,4 +118,25 @@ test("Startanimation (R39): goldener Springer beim Start, Tipp überspringt, nic
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
   await expect(start).toHaveCount(0);
+});
+
+test("Fenstergröße (R40): zwei Spalten ab 5 : 4, eine Spalte darunter, live beim Ändern", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await starteImBrowser(page);
+  await oeffneAbbildung(page, "1.26", "1.26");
+  const spalten = () =>
+    page.evaluate(
+      () =>
+        getComputedStyle(document.querySelector(".brettbereich")?.parentElement ?? document.body)
+          .display,
+    );
+  await expect.poll(spalten).toBe("grid");
+  // Schmaler, aber noch quer (900 × 800): jetzt schon eine Spalte, ohne Neuladen.
+  await page.setViewportSize({ width: 900, height: 800 });
+  await expect.poll(spalten).not.toBe("grid");
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await expect.poll(spalten).toBe("grid");
+  await expect(page.getByRole("heading", { name: "Abb. 1.26" })).toBeVisible();
 });

@@ -6,12 +6,12 @@
   {
    "nummer": "4.1",
    "label": "sec:fallen-was",
-   "titel": "Was ist eine Falle, und warum musst du sie kennen?"
+   "titel": "What is a trap, and why do you need to know it?"
   },
   {
    "nummer": "4.2",
    "label": "sec:fallen-regel",
-   "titel": "Die goldene Verteidigungsregel gegen Fallen"
+   "titel": "The golden defense rule against traps"
   },
   {
    "nummer": "4.3",
@@ -21,42 +21,42 @@
   {
    "nummer": "4.4",
    "label": "sec:fallen-kat1",
-   "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+   "titel": "Category I: When a won pawn opens lines"
   },
   {
    "nummer": "4.5",
    "label": "sec:fallen-kat2",
-   "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+   "titel": "Category II: When a pin only seems to protect"
   },
   {
    "nummer": "4.6",
    "label": "sec:fallen-kat3",
-   "titel": "Kategorie III: Wenn hinter der ersten Fesselung eine zweite wartet"
+   "titel": "Category III: When a second pin waits behind the first"
   },
   {
    "nummer": "4.7",
    "label": "sec:fallen-kat4",
-   "titel": "Kategorie IV: Wenn ein Verteidiger weggelockt wird"
+   "titel": "Category IV: When a defender is lured away"
   },
   {
    "nummer": "4.8",
    "label": "sec:fallen-kat5",
-   "titel": "Kategorie V: Wenn eine Figur kein Feld mehr findet"
+   "titel": "Category V: When a piece runs out of squares"
   },
   {
    "nummer": "4.9",
    "label": "sec:fallen-kat6",
-   "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+   "titel": "Category VI: When one move hits two targets"
   },
   {
    "nummer": "4.10",
    "label": "sec:fallen-ueberblick",
-   "titel": "Drei Muster ohne feste Zugfolge"
+   "titel": "Three patterns without a fixed move order"
   },
   {
    "nummer": "4.11",
    "label": "sec:fallen-rueckblick",
-   "titel": "Rückblick: Hätten die Regeln die Fallen verhindert?"
+   "titel": "Review: Would the rules have prevented the traps?"
   }
  ],
  "abbildungen": [
@@ -67,9 +67,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die Damengambit-Klammerfalle",
+   "unterabschnitt": "The Queen's Gambit clamp trap",
    "fen": "rnbqkbnr/p1p1pppp/8/1p6/P1pP4/4P3/1P3PPP/RNBQKBNR b KQkq a3 0 4",
    "pfeile": [
     {
@@ -82,7 +82,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -91,7 +91,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Weiß greift b5 an, die Basis der Kette b5–c4.",
+     "text": ", Black to move. Red: White attacks b5, the base of the b5–c4 chain.",
      "stil": "normal"
     }
    ],
@@ -121,14 +121,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum zielt Weiß mit 4. a4 gerade auf den Bauern b5?",
+      "frage": "Why does White aim at the pawn on b5 with 4. a4?",
       "antworten": [
-       "Der Bauer a4 wäre sonst selbst verloren.",
-       "b5 ist die Basis der Kette b5–c4: Fällt b5, verliert c4 seine Stütze.",
-       "Weiß bereitet damit die lange Rochade vor."
+       "Otherwise the pawn on a4 would be lost itself.",
+       "b5 is the base of the b5–c4 chain: if b5 falls, c4 loses its support.",
+       "White is preparing to castle queenside."
       ],
       "richtig": 1,
-      "erklaerung": "Eine Bauernkette greift man an ihrer Basis an. Schwarz muss nun Zeit aufwenden, um b5 zu halten."
+      "erklaerung": "You attack a pawn chain at its base. Black now has to spend time holding b5."
      }
     ]
    }
@@ -140,9 +140,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die Damengambit-Klammerfalle",
+   "unterabschnitt": "The Queen's Gambit clamp trap",
    "fen": "rnbqkbnr/p3pppp/2p5/1P6/2pP4/4P3/1P3PPP/RNBQKBNR b KQkq - 0 5",
    "pfeile": [
     {
@@ -164,7 +164,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -178,12 +178,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz ist am Zug. Grau: der ungedeckte Turm a8 und der Bauer c6, der die Diagonale a8–f3 sperrt. Rot: der Weg der Dame nach f3.",
+     "text": ": Black is to move. Gray: the undefended rook on a8 and the pawn on c6, which blocks the a8–f3 diagonal. Red: the queen's path to f3.",
      "stil": "normal"
     }
    ],
@@ -215,14 +215,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 5... cxb5 hier ein schwerer Fehler?",
+      "frage": "Why is 5... cxb5 a serious mistake here?",
       "antworten": [
-       "Der Bauer c6 gibt die Diagonale a8–f3 frei: Df3 greift den ungedeckten Turm a8 an.",
-       "Der Turm a1 schlägt auf b5 zurück.",
-       "Nach cxb5 setzt Weiß sofort matt."
+       "The pawn on c6 opens the a8–f3 diagonal: Qf3 attacks the undefended rook on a8.",
+       "The rook on a1 recaptures on b5.",
+       "After cxb5, White mates at once."
       ],
       "richtig": 0,
-      "erklaerung": "Der Bauer c6 stand als Sperre zwischen Turm und Diagonale. Wer ihn zum Schlagen benutzt, öffnet dem Gegner selbst den Weg."
+      "erklaerung": "The pawn on c6 stood as a barrier between the rook and the diagonal. If you use it to capture, you open the way for your opponent yourself."
      }
     ]
    }
@@ -234,9 +234,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die Damengambit-Klammerfalle",
+   "unterabschnitt": "The Queen's Gambit clamp trap",
    "fen": "rnbqkbnr/p3pppp/8/1p6/2pP4/4PQ2/1P3PPP/RNB1KBNR b KQkq - 1 6",
    "pfeile": [
     {
@@ -249,16 +249,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... cxb5?? 6. Df3!"
+     "text": "5... cxb5?? 6. Qf3!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Die Dame greift entlang der freien Diagonale den ungedeckten Turm a8 an.",
+     "text": ", Black to move. Red: along the open diagonal, the queen attacks the undefended rook on a8.",
      "stil": "normal"
     }
    ],
@@ -296,16 +296,16 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die kompromittierte Verteidigung im Evans-Gambit",
+   "unterabschnitt": "The Compromised Defense in the Evans Gambit",
    "fen": "r1bqk1nr/pppp1ppp/2n5/b3p3/2BPP3/2P2N2/P4PPP/RNBQK2R b KQkq d3 0 6",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Evans-Gambit aus Kapitel 3 nach ",
+     "text": "The Evans Gambit from Chapter 3 after ",
      "stil": "normal"
     },
     {
@@ -314,7 +314,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug.",
+     "text": ", Black to move.",
      "stil": "normal"
     }
    ],
@@ -352,9 +352,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die kompromittierte Verteidigung im Evans-Gambit",
+   "unterabschnitt": "The Compromised Defense in the Evans Gambit",
    "fen": "r1bqk1nr/pppp1ppp/2n5/b7/2BpP3/2P2N2/P4PPP/RNBQ1RK1 b kq - 1 7",
    "pfeile": [
     {
@@ -372,7 +372,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -386,12 +386,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz ist am Zug. Rot: Der Bauer d4 kann den dritten Bauern schlagen. Grau: Der Läufer c4 zielt auf f7.",
+     "text": ": Black is to move. Red: the pawn on d4 can capture the third pawn. Gray: the bishop on c4 aims at f7.",
      "stil": "normal"
     }
    ],
@@ -427,14 +427,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Was spricht gegen 7... dxc3?",
+      "frage": "What speaks against 7... dxc3?",
       "antworten": [
-       "Der Bauer c3 ist dreifach gedeckt.",
-       "Nach dxc3 ist der schwarze König sofort matt.",
-       "Schwarz holt den dritten Bauern mit einem weiteren Bauernzug, während Weiß entwickelt und Linien gegen f7 öffnet."
+       "The pawn on c3 is defended three times.",
+       "After dxc3, the black king is mated at once.",
+       "Black grabs the third pawn with yet another pawn move, while White develops and opens lines against f7."
       ],
       "richtig": 2,
-      "erklaerung": "Weiß hat rochiert, Schwarz kaum etwas entwickelt. Nach Db3 zielen Dame und Läufer c4 gemeinsam auf f7."
+      "erklaerung": "White has castled, Black has developed hardly anything. After Qb3, the queen and the bishop on c4 aim at f7 together."
      }
     ]
    }
@@ -446,9 +446,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die kompromittierte Verteidigung im Evans-Gambit",
+   "unterabschnitt": "The Compromised Defense in the Evans Gambit",
    "fen": "r1b1k1nr/ppppqppp/2n5/b7/2B1P3/1QN2N2/P4PPP/R1B2RK1 b kq - 0 9",
    "pfeile": [
     {
@@ -466,16 +466,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... dxc3 8. Db3 De7? 9. Sxc3"
+     "text": "7... dxc3 8. Qb3 Qe7? 9. Nxc3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Läufer c4 greift f7 an, dahinter steht die Dame b3. Grau: Sd5 als nächster Schritt.",
+     "text": ", Black to move. Red: the bishop on c4 attacks f7, with the queen on b3 behind it. Gray: Nd5 as the next step.",
      "stil": "normal"
     }
    ],
@@ -519,9 +519,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die kompromittierte Verteidigung im Evans-Gambit",
+   "unterabschnitt": "The Compromised Defense in the Evans Gambit",
    "fen": "r1b1k2r/ppppqppp/2n5/b2P4/2B5/1Q3N2/P4PPP/R1B2RK1 b kq - 0 11",
    "pfeile": [],
    "felder": [
@@ -537,16 +537,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9... Sf6? 10. Sd5! Sxd5 11. exd5"
+     "text": "9... Nf6? 10. Nd5! Nxd5 11. exd5"
     },
     {
      "art": "text",
-     "text": ". Rot: Dame und König stehen auf der offenen e-Linie.",
+     "text": ". Red: queen and king stand on the open e-file.",
      "stil": "normal"
     }
    ],
@@ -589,14 +589,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist die offene e-Linie für Schwarz so gefährlich?",
+      "frage": "Why is the open e-file so dangerous for Black?",
       "antworten": [
-       "Über die e-Linie kann der weiße König in den Angriff eingreifen.",
-       "Der Läufer c4 gibt über die e-Linie Schach auf e8.",
-       "Dame und König stehen hintereinander: Ein Turm auf e1 fesselt die Dame an den König."
+       "The white king can join the attack via the e-file.",
+       "The bishop on c4 gives check on e8 via the e-file.",
+       "Queen and king stand one behind the other: a rook on e1 pins the queen to the king."
       ],
       "richtig": 2,
-      "erklaerung": "Eine offene Linie vor dem eigenen König ist eine Einladung für die gegnerischen Türme. Darum gehört der König früh in Sicherheit."
+      "erklaerung": "An open file in front of your own king is an invitation to the enemy rooks. That is why the king belongs in safety early."
      }
     ]
    }
@@ -608,9 +608,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die kompromittierte Verteidigung im Evans-Gambit",
+   "unterabschnitt": "The Compromised Defense in the Evans Gambit",
    "fen": "r1b1k2r/pppp1ppp/8/b2Pq3/2B5/1Q6/PB3PPP/R4RK1 b kq - 1 13",
    "pfeile": [
     {
@@ -628,16 +628,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "11... Se5 12. Sxe5 Dxe5 13. Lb2"
+     "text": "11... Ne5 12. Nxe5 Qxe5 13. Bb2"
     },
     {
      "art": "text",
-     "text": ". Rot: Der Läufer greift die Dame an; hinter ihr liegt g7. Grau: Tfe1 bringt den Turm auf die offene e-Linie.",
+     "text": ". Red: the bishop attacks the queen; behind it lies g7. Gray: Rfe1 brings the rook to the open e-file.",
      "stil": "normal"
     }
    ],
@@ -688,25 +688,25 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die Halosar-Falle im Blackmar-Diemer-Gambit",
+   "unterabschnitt": "The Halosar Trap in the Blackmar-Diemer Gambit",
    "fen": "rnb1kb1r/ppp1pppp/5n2/8/3q4/2N2Q2/PPP3PP/R1B1KBNR w KQkq - 0 6",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Blackmar-Diemer-Gambit nach ",
+     "text": "The Blackmar-Diemer Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... exf3 5. Dxf3 Dxd4"
+     "text": "4... exf3 5. Qxf3 Qxd4"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Schwarz hat zwei Bauern mehr, aber die d-Linie ist offen.",
+     "text": ", White to move. Black is two pawns up, but the d-file is open.",
      "stil": "normal"
     }
    ],
@@ -740,14 +740,14 @@
     "fragen": [
      {
       "zug": "6. Be3",
-      "frage": "Warum ist 6. Le3 ein guter Zug?",
+      "frage": "Why is 6. Be3 a good move?",
       "antworten": [
-       "Er deckt den Bauern d4.",
-       "Er greift die Dame d4 an und bereitet die lange Rochade vor; die d-Linie ist schon offen.",
+       "It defends the pawn on d4.",
+       "It attacks the queen on d4 and prepares to castle queenside; the d-file is already open.",
        "It threatens mate on f7 at once."
       ],
       "richtig": 1,
-      "erklaerung": "Für zwei Bauern hat Weiß Zeit und offene Linien. Jeder weitere Damenzug von Schwarz schenkt Weiß ein Tempo für die Entwicklung."
+      "erklaerung": "For two pawns, White has time and open lines. Every further queen move by Black gives White a tempo for development."
      }
     ]
    }
@@ -759,9 +759,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die Halosar-Falle im Blackmar-Diemer-Gambit",
+   "unterabschnitt": "The Halosar Trap in the Blackmar-Diemer Gambit",
    "fen": "rnb1kb1r/ppp1pppp/5n2/8/1q6/2N1BQ2/PPP3PP/2KR1BNR b kq - 3 7",
    "pfeile": [
     {
@@ -779,12 +779,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Le3 Db4 7. O-O-O"
+     "text": "6. Be3 Qb4 7. O-O-O"
     },
     {
      "art": "text",
@@ -793,12 +793,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz ist am Zug. Grau: die offene d-Linie. Rot: Der Springer kann über b5 nach c7.",
+     "text": ": Black is to move. Gray: the open d-file. Red: the knight can go to c7 via b5.",
      "stil": "normal"
     }
    ],
@@ -834,14 +834,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 7... Lg4 ein schwerer Fehler?",
+      "frage": "Why is 7... Bg4 a serious mistake?",
       "antworten": [
-       "Er greift zwar die Dame f3 an, doch nach Sb5 droht Sxc7 matt, und der Damengewinn kommt zu spät.",
-       "Der Läufer g4 ist ungedeckt und geht sofort verloren.",
-       "Mit Lg4 verliert Schwarz das Recht zu rochieren."
+       "It does attack the queen on f3, but after Nb5 White threatens Nxc7 mate, and winning the queen comes too late.",
+       "The bishop on g4 is undefended and is lost at once.",
+       "With Bg4, Black loses the right to castle."
       ],
       "richtig": 0,
-      "erklaerung": "Weiß antwortet 8. Sb5!! und lässt die Dame stehen. Der König e8 hat kein Feld, d7 und d8 deckt der Turm d1."
+      "erklaerung": "White answers 8. Nb5!! and leaves the queen where it is. The king on e8 has no square; the rook on d1 covers d7 and d8."
      }
     ]
    }
@@ -853,9 +853,9 @@
    "abschnitt": {
     "nummer": "4.4",
     "label": "sec:fallen-kat1",
-    "titel": "Kategorie I: Wenn ein gewonnener Bauer Linien öffnet"
+    "titel": "Category I: When a won pawn opens lines"
    },
-   "unterabschnitt": "Die Halosar-Falle im Blackmar-Diemer-Gambit",
+   "unterabschnitt": "The Halosar Trap in the Blackmar-Diemer Gambit",
    "fen": "rn2kb1r/ppp1pppp/5n2/1N6/1q4b1/4BQ2/PPP3PP/2KR1BNR b kq - 5 8",
    "pfeile": [
     {
@@ -882,16 +882,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Lg4?? 8. Sb5!!"
+     "text": "7... Bg4?? 8. Nb5!!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Läufer greift die Dame an, der Springer droht Sxc7 matt. Grau: d7 und d8 beherrscht der Turm d1.",
+     "text": ", Black to move. Red: the bishop attacks the queen, the knight threatens Nxc7 mate. Gray: the rook on d1 controls d7 and d8.",
      "stil": "normal"
     }
    ],
@@ -929,14 +929,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum darf Schwarz die Dame f3 nicht nehmen?",
+      "frage": "Why can't Black take the queen on f3?",
       "antworten": [
-       "Weil Weiß dann mit Sxc7 matt setzt, ganz gleich, wie viel Material Schwarz vorher gewinnt.",
-       "Weil der Läufer g4 an den König gefesselt ist.",
-       "Weil die Dame b4 dann vom Läufer e3 angegriffen wird."
+       "Because White then mates with Nxc7, no matter how much material Black wins first.",
+       "Because the bishop on g4 is pinned to the king.",
+       "Because the queen on b4 is then attacked by the bishop on e3."
       ],
       "richtig": 0,
-      "erklaerung": "Der Springer c7 gibt Schach, und der König findet kein Feld: d7 und d8 beherrscht der Turm d1, die übrigen Felder sind besetzt."
+      "erklaerung": "The knight on c7 gives check, and the king finds no square: the rook on d1 controls d7 and d8, and the other squares are occupied."
      }
     ]
    }
@@ -948,9 +948,9 @@
    "abschnitt": {
     "nummer": "4.5",
     "label": "sec:fallen-kat2",
-    "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+    "titel": "Category II: When a pin only seems to protect"
    },
-   "unterabschnitt": "Die Elefantenfalle im Abgelehnten Damengambit",
+   "unterabschnitt": "The Elephant Trap in the Queen's Gambit Declined",
    "fen": "r1bqkb1r/pppn1ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR w KQkq - 4 5",
    "pfeile": [
     {
@@ -963,16 +963,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Sc3 Sf6 4. Lg5 Sbd7"
+     "text": "3. Nc3 Nf6 4. Bg5 Nbd7"
     },
     {
      "art": "text",
-     "text": ". Grau: Der Läufer g5 fesselt den Springer f6 an die Dame d8.",
+     "text": ". Gray: the bishop on g5 pins the knight on f6 to the queen on d8.",
      "stil": "normal"
     }
    ],
@@ -1006,9 +1006,9 @@
    "abschnitt": {
     "nummer": "4.5",
     "label": "sec:fallen-kat2",
-    "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+    "titel": "Category II: When a pin only seems to protect"
    },
-   "unterabschnitt": "Die Elefantenfalle im Abgelehnten Damengambit",
+   "unterabschnitt": "The Elephant Trap in the Queen's Gambit Declined",
    "fen": "r1bqkb1r/pppn1ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq - 0 6",
    "pfeile": [
     {
@@ -1026,7 +1026,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1040,12 +1040,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Weiß ist am Zug. Grau: der scheinbar schwach gedeckte Bauer d5 und die Fesselung g5–d8.",
+     "text": ": White is to move. Gray: the seemingly weakly defended pawn on d5 and the g5–d8 pin.",
      "stil": "normal"
     }
    ],
@@ -1077,14 +1077,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 6. Sxd5 ein Fehler, obwohl der Springer f6 gefesselt ist?",
+      "frage": "Why is 6. Nxd5 a mistake, even though the knight on f6 is pinned?",
       "antworten": [
-       "Der Bauer d5 ist vom Läufer f8 gedeckt.",
-       "Der Bauer e6 schlägt den Springer d5 zurück.",
-       "Die Fesselung ist nur relativ: Schwarz schlägt zurück, gibt die Dame und holt sie mit Lb4+ zurück."
+       "The pawn on d5 is defended by the bishop on f8.",
+       "The pawn on e6 recaptures the knight on d5.",
+       "The pin is only relative: Black recaptures, gives up the queen and wins it back with Bb4+."
       ],
       "richtig": 2,
-      "erklaerung": "Nach 6... Sxd5! 7. Lxd8 Lb4+ bleibt Weiß nur 8. Dd2. Nach Lxd2+ Kxd2 Kxd8 hat Schwarz zwei Springer gegen einen."
+      "erklaerung": "After 6... Nxd5! 7. Bxd8 Bb4+, White's only move is 8. Qd2. After Bxd2+ Kxd2 Kxd8, Black has two knights against one."
      }
     ]
    }
@@ -1096,25 +1096,25 @@
    "abschnitt": {
     "nummer": "4.5",
     "label": "sec:fallen-kat2",
-    "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+    "titel": "Category II: When a pin only seems to protect"
    },
-   "unterabschnitt": "Die Elefantenfalle im Abgelehnten Damengambit",
+   "unterabschnitt": "The Elephant Trap in the Queen's Gambit Declined",
    "fen": "r1bqkb1r/pppn1ppp/8/3n2B1/3P4/8/PP2PPPP/R2QKBNR w KQkq - 0 7",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Sxd5?? Sxd5!!"
+     "text": "6. Nxd5?? Nxd5!!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Schwarz schlägt trotz der Fesselung zurück.",
+     "text": ", White to move. Black recaptures despite the pin.",
      "stil": "normal"
     }
    ],
@@ -1153,9 +1153,9 @@
    "abschnitt": {
     "nummer": "4.5",
     "label": "sec:fallen-kat2",
-    "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+    "titel": "Category II: When a pin only seems to protect"
    },
-   "unterabschnitt": "Die Elefantenfalle im Abgelehnten Damengambit",
+   "unterabschnitt": "The Elephant Trap in the Queen's Gambit Declined",
    "fen": "r1bBk2r/pppn1ppp/8/3n4/1b1P4/8/PP2PPPP/R2QKBNR w KQkq - 1 8",
    "pfeile": [
     {
@@ -1168,25 +1168,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. Lxd8 Lb4+"
+     "text": "7. Bxd8 Bb4+"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: die Schachlinie. ",
+     "text": ", White to move. Red: the line of the check. ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Dd2"
+     "text": "8. Qd2"
     },
     {
      "art": "text",
-     "text": " ist der einzige legale Zug.",
+     "text": " is the only legal move.",
      "stil": "normal"
     }
    ],
@@ -1224,14 +1224,14 @@
     "fragen": [
      {
       "zug": "8. Qd2",
-      "frage": "Warum zieht Weiß 8. Dd2?",
+      "frage": "Why does White play 8. Qd2?",
       "antworten": [
-       "Die Dame deckt von d2 aus den Läufer d8.",
-       "Es ist der einzige legale Zug: Der König hat kein Feld, und nur die Dame kann das Schach auf d2 abfangen.",
-       "Weiß bereitet damit die lange Rochade vor."
+       "From d2, the queen defends the bishop on d8.",
+       "It is the only legal move: the king has no square, and only the queen can block the check on d2.",
+       "White is preparing to castle queenside."
       ],
       "richtig": 1,
-      "erklaerung": "d1, e2, f1 und f2 sind besetzt, d2 beherrscht der Läufer b4. Nach Lxd2+ Kxd2 Kxd8 bleibt Schwarz eine Figur vorn."
+      "erklaerung": "d1, e2, f1 and f2 are occupied, and the bishop on b4 controls d2. After Bxd2+ Kxd2 Kxd8, Black stays a piece ahead."
      }
     ]
    }
@@ -1243,9 +1243,9 @@
    "abschnitt": {
     "nummer": "4.5",
     "label": "sec:fallen-kat2",
-    "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+    "titel": "Category II: When a pin only seems to protect"
    },
-   "unterabschnitt": "Die Elefantenfalle im Abgelehnten Damengambit",
+   "unterabschnitt": "The Elephant Trap in the Queen's Gambit Declined",
    "fen": "r1bk3r/pppn1ppp/8/3n4/3P4/8/PP1KPPPP/R4BNR w - - 0 10",
    "pfeile": [],
    "felder": [
@@ -1265,16 +1265,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Dd2 Lxd2+ 9. Kxd2 Kxd8"
+     "text": "8. Qd2 Bxd2+ 9. Kxd2 Kxd8"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: die zwei schwarzen Springer gegen den einen weißen.",
+     "text": ", White to move. Gray: the two black knights against the one white knight.",
      "stil": "normal"
     }
    ],
@@ -1319,9 +1319,9 @@
    "abschnitt": {
     "nummer": "4.5",
     "label": "sec:fallen-kat2",
-    "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+    "titel": "Category II: When a pin only seems to protect"
    },
-   "unterabschnitt": "Das Seekadettenmatt (Légal-Falle)",
+   "unterabschnitt": "Légal's Mate (the Légal Trap)",
    "fen": "r2qkbnr/ppp2ppp/2np4/4p3/2B1P1b1/2N2N1P/PPPP1PP1/R1BQK2R b KQkq - 0 5",
    "pfeile": [
     {
@@ -1339,7 +1339,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1353,12 +1353,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz ist am Zug. Grau: die Fesselung g4–d1; sie ist nur relativ. Rot: Der Läufer c4 zielt schon auf f7.",
+     "text": ": Black is to move. Gray: the g4–d1 pin; it is only relative. Red: the bishop on c4 is already aiming at f7.",
      "stil": "normal"
     }
    ],
@@ -1389,14 +1389,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 5... Lh5 gefährlich?",
+      "frage": "Why is 5... Bh5 dangerous?",
       "antworten": [
-       "Auf h5 ist der Läufer ungedeckt und wird von der Dame d1 geschlagen.",
-       "Weiß spielt 6. Sxe5 und bietet die Dame an: Nimmt Schwarz sie, folgt Matt mit Lxf7+ und Sd5.",
-       "Nach Lh5 kann Schwarz nicht mehr rochieren."
+       "On h5 the bishop is undefended and is captured by the queen on d1.",
+       "White plays 6. Nxe5 and offers the queen: if Black takes it, mate follows with Bxf7+ and Nd5.",
+       "After Bh5, Black can no longer castle."
       ],
       "richtig": 1,
-      "erklaerung": "Die Fesselung hielt den Springer f3 nur scheinbar fest. Nach 6. Sxe5!! Lxd1 7. Lxf7+ Ke7 8. Sd5 ist Schwarz matt."
+      "erklaerung": "The pin only seemed to hold the knight on f3 in place. After 6. Nxe5!! Bxd1 7. Bxf7+ Ke7 8. Nd5, Black is mated."
      }
     ]
    }
@@ -1408,9 +1408,9 @@
    "abschnitt": {
     "nummer": "4.5",
     "label": "sec:fallen-kat2",
-    "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+    "titel": "Category II: When a pin only seems to protect"
    },
-   "unterabschnitt": "Das Seekadettenmatt (Légal-Falle)",
+   "unterabschnitt": "Légal's Mate (the Légal Trap)",
    "fen": "r2qkbnr/ppp2ppp/2np4/4N2b/2B1P3/2N4P/PPPP1PP1/R1BQK2R b KQkq - 0 6",
    "pfeile": [],
    "felder": [
@@ -1422,16 +1422,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Lh5? 6. Sxe5!!"
+     "text": "5... Bh5? 6. Nxe5!!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: die eigene Dame, die Weiß hier bewusst als Köder anbietet.",
+     "text": ", Black to move. Gray: White's own queen, which White deliberately offers here as bait.",
      "stil": "normal"
     }
    ],
@@ -1464,14 +1464,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum darf Schwarz die Dame d1 nicht nehmen?",
+      "frage": "Why can't Black take the queen on d1?",
       "antworten": [
-       "Weil nach 7. Lxf7+ Ke7 8. Sd5 der schwarze König matt ist.",
-       "Weil der Läufer h5 an den König gefesselt ist.",
-       "Weil Weiß die Dame danach sofort zurückgewinnt."
+       "Because after 7. Bxf7+ Ke7 8. Nd5, the black king is mated.",
+       "Because the bishop on h5 is pinned to the king.",
+       "Because White then wins the queen back at once."
       ],
       "richtig": 0,
-      "erklaerung": "Der König e7 hat kein Fluchtfeld: d7, e6, e8 und f6 sind gedeckt. Den Läufer f7 schützt der Springer e5."
+      "erklaerung": "The king on e7 has no escape square: d7, e6, e8 and f6 are covered. The knight on e5 protects the bishop on f7."
      }
     ]
    }
@@ -1483,9 +1483,9 @@
    "abschnitt": {
     "nummer": "4.5",
     "label": "sec:fallen-kat2",
-    "titel": "Kategorie II: Wenn eine Fesselung nur scheinbar schützt"
+    "titel": "Category II: When a pin only seems to protect"
    },
-   "unterabschnitt": "Das Seekadettenmatt (Légal-Falle)",
+   "unterabschnitt": "Légal's Mate (the Légal Trap)",
    "fen": "r2q1bnr/ppp1kBpp/2np4/3NN3/4P3/7P/PPPP1PP1/R1BbK2R b KQ - 2 8",
    "pfeile": [
     {
@@ -1515,16 +1515,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Lxd1?? 7. Lxf7+ Ke7 8. Sd5#"
+     "text": "6... Bxd1?? 7. Bxf7+ Ke7 8. Nd5#"
     },
     {
      "art": "text",
-     "text": ". Rot: Der Springer d5 gibt Schach. Grau: Die freien Nachbarfelder d7, e6, e8 und f6 sind alle gedeckt; den Läufer f7 deckt der Springer e5.",
+     "text": ". Red: the knight on d5 gives check. Gray: the free neighboring squares d7, e6, e8 and f6 are all covered; the knight on e5 defends the bishop on f7.",
      "stil": "normal"
     }
    ],
@@ -1563,9 +1563,9 @@
    "abschnitt": {
     "nummer": "4.6",
     "label": "sec:fallen-kat3",
-    "titel": "Kategorie III: Wenn hinter der ersten Fesselung eine zweite wartet"
+    "titel": "Category III: When a second pin waits behind the first"
    },
-   "unterabschnitt": "Die Kieninger-Falle im Budapester Gambit",
+   "unterabschnitt": "The Kieninger Trap in the Budapest Gambit",
    "fen": "r1bqk2r/pppp1ppp/2n5/4P3/1bP2Bn1/5N2/PP1NPPPP/R2QKB1R b KQkq - 6 6",
    "pfeile": [
     {
@@ -1578,16 +1578,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Budapester Gambit nach ",
+     "text": "The Budapest Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Lb4+ 6. Sbd2"
+     "text": "5... Bb4+ 6. Nbd2"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: Der Läufer fesselt den Springer d2 an den König.",
+     "text": ", Black to move. Gray: the bishop pins the knight on d2 to the king.",
      "stil": "normal"
     }
    ],
@@ -1625,9 +1625,9 @@
    "abschnitt": {
     "nummer": "4.6",
     "label": "sec:fallen-kat3",
-    "titel": "Kategorie III: Wenn hinter der ersten Fesselung eine zweite wartet"
+    "titel": "Category III: When a second pin waits behind the first"
    },
-   "unterabschnitt": "Die Kieninger-Falle im Budapester Gambit",
+   "unterabschnitt": "The Kieninger Trap in the Budapest Gambit",
    "fen": "r1b1k2r/ppppqppp/2n5/4n3/1bP2B2/P4N2/1P1NPPPP/R2QKB1R w KQkq - 0 8",
    "pfeile": [
     {
@@ -1654,12 +1654,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... De7 7. a3 Sgxe5!"
+     "text": "6... Qe7 7. a3 Ngxe5!"
     },
     {
      "art": "text",
@@ -1668,12 +1668,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Weiß ist am Zug. Grau: die Fesselung b4–e1 und die Felder e7 und e2 auf der e-Linie. Rot: die Drohung Sd3.",
+     "text": ": White is to move. Gray: the b4–e1 pin and the squares e7 and e2 on the e-file. Red: the threat Nd3.",
      "stil": "normal"
     }
    ],
@@ -1710,14 +1710,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 8. axb4 ein Fehler?",
+      "frage": "Why is 8. axb4 a mistake?",
       "antworten": [
-       "Weil der Bauer a3 dann den Läufer f4 nicht mehr deckt.",
-       "Weil Schwarz danach den Turm a1 gewinnt.",
-       "Weil Schwarz mit 8... Sd3 matt setzt: Der Bauer e2 darf den Springer nicht schlagen."
+       "Because the pawn on a3 then no longer defends the bishop on f4.",
+       "Because Black then wins the rook on a1.",
+       "Because Black mates with 8... Nd3: the pawn on e2 may not capture the knight."
       ],
       "richtig": 2,
-      "erklaerung": "Sd3 gibt Schach, der König findet kein Feld, und e2 ist durch die Dame e7 gefesselt. Hinter der ersten Fesselung wartete eine zweite."
+      "erklaerung": "Nd3 gives check, the king finds no square, and e2 is pinned by the queen on e7. Behind the first pin, a second one was waiting."
      }
     ]
    }
@@ -1729,9 +1729,9 @@
    "abschnitt": {
     "nummer": "4.6",
     "label": "sec:fallen-kat3",
-    "titel": "Kategorie III: Wenn hinter der ersten Fesselung eine zweite wartet"
+    "titel": "Category III: When a second pin waits behind the first"
    },
-   "unterabschnitt": "Die Kieninger-Falle im Budapester Gambit",
+   "unterabschnitt": "The Kieninger Trap in the Budapest Gambit",
    "fen": "r1b1k2r/ppppqppp/2n5/8/1PP2B2/3n1N2/1P1NPPPP/R2QKB1R w KQkq - 1 9",
    "pfeile": [
     {
@@ -1744,16 +1744,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. axb4?? Sd3#!"
+     "text": "8. axb4?? Nd3#!"
     },
     {
      "art": "text",
-     "text": " Der Springer setzt matt, weil der weiße König umschlossen ist und der e2-Bauer den Springer aufgrund der Fesselung (grau) nicht schlagen darf.",
+     "text": ". The knight mates because the white king is boxed in and the e2 pawn may not capture the knight because of the pin (gray).",
      "stil": "normal"
     }
    ],
@@ -1796,25 +1796,25 @@
    "abschnitt": {
     "nummer": "4.6",
     "label": "sec:fallen-kat3",
-    "titel": "Kategorie III: Wenn hinter der ersten Fesselung eine zweite wartet"
+    "titel": "Category III: When a second pin waits behind the first"
    },
-   "unterabschnitt": "Die Benko-Falle im Wolga-Gambit",
+   "unterabschnitt": "The Benko Trap in the Volga Gambit",
    "fen": "rnbqkb1r/3ppppp/p4n2/1PpP4/8/2N5/PP2PPPP/R1BQKBNR b KQkq - 1 5",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Wolga-Gambit nach ",
+     "text": "The Volga Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. cxb5 a6 5. Sc3"
+     "text": "4. cxb5 a6 5. Nc3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Weiß lässt den Bauern a6 stehen und entwickelt.",
+     "text": ", Black to move. White leaves the pawn on a6 alone and develops.",
      "stil": "normal"
     }
    ],
@@ -1850,9 +1850,9 @@
    "abschnitt": {
     "nummer": "4.6",
     "label": "sec:fallen-kat3",
-    "titel": "Kategorie III: Wenn hinter der ersten Fesselung eine zweite wartet"
+    "titel": "Category III: When a second pin waits behind the first"
    },
-   "unterabschnitt": "Die Benko-Falle im Wolga-Gambit",
+   "unterabschnitt": "The Benko Trap in the Volga Gambit",
    "fen": "rnbqkb1r/3ppppp/5n2/1NpP4/1p2P3/8/PP3PPP/R1BQKBNR b KQkq - 1 7",
    "pfeile": [
     {
@@ -1870,12 +1870,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... axb5 6. e4 b4 7. Sb5"
+     "text": "5... axb5 6. e4 b4 7. Nb5"
     },
     {
      "art": "text",
@@ -1884,12 +1884,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz ist am Zug. Grau: Der Bauer e4 ist ungedeckt. Rot: Der Springer b5 blickt auf d6.",
+     "text": ": Black is to move. Gray: the pawn on e4 is undefended. Red: the knight on b5 eyes d6.",
      "stil": "normal"
     }
    ],
@@ -1925,14 +1925,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 7... Sxe4 ein Fehler?",
+      "frage": "Why is 7... Nxe4 a mistake?",
       "antworten": [
-       "Weil der Bauer d5 den Springer e4 schlagen kann.",
-       "Weil Schwarz danach sofort die Dame d8 verliert.",
-       "Nach 8. De2 muss der Springer weg, dann ist e7 gefesselt und Sd6 setzt matt."
+       "Because the pawn on d5 can capture the knight on e4.",
+       "Because Black then loses the queen on d8 at once.",
+       "After 8. Qe2 the knight has to move away; then e7 is pinned and Nd6 is mate."
       ],
       "richtig": 2,
-      "erklaerung": "Nach 8. De2 ist der Springer angegriffen. Zieht er nach f6, steht e7 gefesselt, und 9. Sd6 ist matt."
+      "erklaerung": "After 8. Qe2 the knight is attacked. If it goes to f6, e7 is pinned, and 9. Nd6 is mate."
      }
     ]
    }
@@ -1944,9 +1944,9 @@
    "abschnitt": {
     "nummer": "4.6",
     "label": "sec:fallen-kat3",
-    "titel": "Kategorie III: Wenn hinter der ersten Fesselung eine zweite wartet"
+    "titel": "Category III: When a second pin waits behind the first"
    },
-   "unterabschnitt": "Die Benko-Falle im Wolga-Gambit",
+   "unterabschnitt": "The Benko Trap in the Volga Gambit",
    "fen": "rnbqkb1r/3ppppp/8/1NpP4/1p2n3/8/PP2QPPP/R1B1KBNR b KQkq - 1 8",
    "pfeile": [
     {
@@ -1968,16 +1968,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Sxe4?? 8. De2!"
+     "text": "7... Nxe4?? 8. Qe2!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Die Dame greift den Springer an. Grau: Dahinter stehen der Bauer e7 und der König e8.",
+     "text": ", Black to move. Red: the queen attacks the knight. Gray: behind it stand the pawn on e7 and the king on e8.",
      "stil": "normal"
     }
    ],
@@ -2019,9 +2019,9 @@
    "abschnitt": {
     "nummer": "4.6",
     "label": "sec:fallen-kat3",
-    "titel": "Kategorie III: Wenn hinter der ersten Fesselung eine zweite wartet"
+    "titel": "Category III: When a second pin waits behind the first"
    },
-   "unterabschnitt": "Die Benko-Falle im Wolga-Gambit",
+   "unterabschnitt": "The Benko Trap in the Volga Gambit",
    "fen": "rnbqkb1r/3ppppp/3N1n2/2pP4/1p6/8/PP2QPPP/R1B1KBNR b KQkq - 3 9",
    "pfeile": [
     {
@@ -2039,16 +2039,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Sf6 9. Sd6#"
+     "text": "8... Nf6 9. Nd6#"
     },
     {
      "art": "text",
-     "text": ". Rot: Schach. Grau: Die Dame fesselt den Bauern e7 an den König.",
+     "text": ". Red: check. Gray: the queen pins the pawn on e7 to the king.",
      "stil": "normal"
     }
    ],
@@ -2089,25 +2089,25 @@
    "abschnitt": {
     "nummer": "4.7",
     "label": "sec:fallen-kat4",
-    "titel": "Kategorie IV: Wenn ein Verteidiger weggelockt wird"
+    "titel": "Category IV: When a defender is lured away"
    },
-   "unterabschnitt": "Die Sibirische Falle",
+   "unterabschnitt": "The Siberian Trap",
    "fen": "r1bqkbnr/pp1p1ppp/2n1p3/8/4P3/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 6",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Smith-Morra-Gambit nach ",
+     "text": "The Smith-Morra Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxc3 Sc6 5. Sf3 e6"
+     "text": "4. Nxc3 Nc6 5. Nf3 e6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Schwarz hat ...e6 statt ...d6 gespielt.",
+     "text": ", White to move. Black has played ...e6 instead of ...d6.",
      "stil": "normal"
     }
    ],
@@ -2144,9 +2144,9 @@
    "abschnitt": {
     "nummer": "4.7",
     "label": "sec:fallen-kat4",
-    "titel": "Kategorie IV: Wenn ein Verteidiger weggelockt wird"
+    "titel": "Category IV: When a defender is lured away"
    },
-   "unterabschnitt": "Die Sibirische Falle",
+   "unterabschnitt": "The Siberian Trap",
    "fen": "r1b1kbnr/ppqp1ppp/2n1p3/8/2B1P3/2N2N2/PP3PPP/R1BQK2R w KQkq - 2 7",
    "pfeile": [
     {
@@ -2159,16 +2159,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lc4 Dc7"
+     "text": "6. Bc4 Qc7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Die Dame blickt schon auf h2.",
+     "text": ", White to move. Gray: the queen is already eyeing h2.",
      "stil": "normal"
     }
    ],
@@ -2207,21 +2207,21 @@
    "abschnitt": {
     "nummer": "4.7",
     "label": "sec:fallen-kat4",
-    "titel": "Kategorie IV: Wenn ein Verteidiger weggelockt wird"
+    "titel": "Category IV: When a defender is lured away"
    },
-   "unterabschnitt": "Die Sibirische Falle",
+   "unterabschnitt": "The Siberian Trap",
    "fen": "r1b1kb1r/ppqp1ppp/2n1p3/8/2B1P1n1/2N2N2/PP2QPPP/R1B2RK1 w kq - 6 9",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. O-O Sf6 8. De2 Sg4"
+     "text": "7. O-O Nf6 8. Qe2 Ng4"
     },
     {
      "art": "text",
@@ -2230,12 +2230,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Weiß ist am Zug. Was hat Schwarz vor?",
+     "text": ": White is to move. What is Black up to?",
      "stil": "normal"
     }
    ],
@@ -2274,14 +2274,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist der Springer f3 jetzt so wichtig?",
+      "frage": "Why is the knight on f3 so important now?",
       "antworten": [
        "It defends the pawn on e4.",
-       "Er ist neben dem König der einzige Verteidiger von h2, auf das Dame c7 und Springer g4 zielen.",
-       "Er verhindert, dass Schwarz lang rochiert."
+       "Apart from the king, it is the only defender of h2, which the queen on c7 and the knight on g4 are aiming at.",
+       "It stops Black from castling queenside."
       ],
       "richtig": 1,
-      "erklaerung": "Schwarz will den Springer weglocken. Nach 9. h3?? Sd4! greift der Springer die Dame an; schlägt Sxd4, ist Dh2 matt."
+      "erklaerung": "Black wants to lure the knight away. After 9. h3?? Nd4! the knight attacks the queen; if Nxd4, Qh2 is mate."
      }
     ]
    }
@@ -2293,9 +2293,9 @@
    "abschnitt": {
     "nummer": "4.7",
     "label": "sec:fallen-kat4",
-    "titel": "Kategorie IV: Wenn ein Verteidiger weggelockt wird"
+    "titel": "Category IV: When a defender is lured away"
    },
-   "unterabschnitt": "Die Sibirische Falle",
+   "unterabschnitt": "The Siberian Trap",
    "fen": "r1b1kb1r/ppqp1ppp/4p3/8/2BnP1n1/2N2N1P/PP2QPP1/R1B2RK1 w kq - 1 10",
    "pfeile": [
     {
@@ -2318,16 +2318,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. h3?? Sd4!"
+     "text": "9. h3?? Nd4!"
     },
     {
      "art": "text",
-     "text": ". Rot: Der Springer greift die Dame an, die Dame c7 zielt auf h2. Grau: der verlockende Schlagzug.",
+     "text": ". Red: the knight attacks the queen, the queen on c7 aims at h2. Gray: the tempting capture.",
      "stil": "normal"
     }
    ],
@@ -2367,14 +2367,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum darf der Springer f3 den Springer d4 nicht schlagen?",
+      "frage": "Why can't the knight on f3 capture the knight on d4?",
       "antworten": [
-       "Weil Schwarz dann mit Dh2 matt setzt: Der Springer g4 deckt die Dame, und f1, f2 und g2 sind besetzt.",
-       "Weil der Springer d4 von der Dame c7 gedeckt ist.",
-       "Weil die Dame e2 danach den Bauern e4 nicht mehr deckt."
+       "Because Black then mates with Qh2: the knight on g4 defends the queen, and f1, f2 and g2 are occupied.",
+       "Because the knight on d4 is defended by the queen on c7.",
+       "Because the queen on e2 then no longer defends the pawn on e4."
       ],
       "richtig": 0,
-      "erklaerung": "Der Springer f3 war der Verteidiger von h2. Wer ihn mit einem Köder weglockt, öffnet das Mattfeld."
+      "erklaerung": "The knight on f3 was the defender of h2. Lure it away with bait, and the mating square opens."
      }
     ]
    }
@@ -2386,9 +2386,9 @@
    "abschnitt": {
     "nummer": "4.7",
     "label": "sec:fallen-kat4",
-    "titel": "Kategorie IV: Wenn ein Verteidiger weggelockt wird"
+    "titel": "Category IV: When a defender is lured away"
    },
-   "unterabschnitt": "Die Sibirische Falle",
+   "unterabschnitt": "The Siberian Trap",
    "fen": "r1b1kb1r/pp1p1ppp/4p3/8/2BNP1n1/2N4P/PP2QPPq/R1B2RK1 w kq - 1 11",
    "pfeile": [
     {
@@ -2418,16 +2418,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10. Sxd4?? Dh2#"
+     "text": "10. Nxd4?? Qh2#"
     },
     {
      "art": "text",
-     "text": ". Grau: f1, f2 und g2 sind von eigenen Figuren besetzt. Rot: Das Feld h1 beherrscht die Dame selbst, und schlagen kann der König sie nicht, weil der Springer g4 sie deckt.",
+     "text": ". Gray: f1, f2 and g2 are occupied by White's own pieces. Red: the queen itself controls h1, and the king cannot capture it because the knight on g4 defends it.",
      "stil": "normal"
     }
    ],
@@ -2473,25 +2473,25 @@
    "abschnitt": {
     "nummer": "4.8",
     "label": "sec:fallen-kat5",
-    "titel": "Kategorie V: Wenn eine Figur kein Feld mehr findet"
+    "titel": "Category V: When a piece runs out of squares"
    },
-   "unterabschnitt": "Die Arche-Noah-Falle",
+   "unterabschnitt": "Noah's Ark Trap",
    "fen": "r1bqkbnr/1ppp1ppp/p1n5/4p3/B3P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 4",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Spanische Partie aus Kapitel 2 nach ",
+     "text": "The Ruy Lopez from Chapter 2 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. La4"
+     "text": "4. Ba4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug.",
+     "text": ", Black to move.",
      "stil": "normal"
     }
    ],
@@ -2525,9 +2525,9 @@
    "abschnitt": {
     "nummer": "4.8",
     "label": "sec:fallen-kat5",
-    "titel": "Kategorie V: Wenn eine Figur kein Feld mehr findet"
+    "titel": "Category V: When a piece runs out of squares"
    },
-   "unterabschnitt": "Die Arche-Noah-Falle",
+   "unterabschnitt": "Noah's Ark Trap",
    "fen": "r1bqkbnr/2p2ppp/p1np4/1p2p3/3PP3/1B3N2/PPP2PPP/RNBQK2R b KQkq - 1 6",
    "pfeile": [],
    "felder": [
@@ -2539,16 +2539,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... d6 5. d4 b5 6. Lb3"
+     "text": "4... d6 5. d4 b5 6. Bb3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: Der Läufer b3 steht hinter den schwarzen Bauern a6 und b5.",
+     "text": ", Black to move. Gray: the bishop on b3 stands behind the black pawns on a6 and b5.",
      "stil": "normal"
     }
    ],
@@ -2586,21 +2586,21 @@
    "abschnitt": {
     "nummer": "4.8",
     "label": "sec:fallen-kat5",
-    "titel": "Kategorie V: Wenn eine Figur kein Feld mehr findet"
+    "titel": "Category V: When a piece runs out of squares"
    },
-   "unterabschnitt": "Die Arche-Noah-Falle",
+   "unterabschnitt": "Noah's Ark Trap",
    "fen": "r1bqkbnr/2p2ppp/p2p4/1p6/3pP3/1B6/PPP2PPP/RNBQK2R w KQkq - 0 8",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Sxd4 7. Sxd4 exd4"
+     "text": "6... Nxd4 7. Nxd4 exd4"
     },
     {
      "art": "text",
@@ -2609,12 +2609,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Weiß ist am Zug. Soll die Dame den Bauern d4 nehmen?",
+     "text": ": White is to move. Should the queen take the pawn on d4?",
      "stil": "normal"
     }
    ],
@@ -2651,14 +2651,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 8. Dxd4 ein Fehler?",
+      "frage": "Why is 8. Qxd4 a mistake?",
       "antworten": [
-       "Die Dame wird mit c5 vertrieben, und danach sperrt c4 den Läufer b3 ein.",
-       "Der Bauer d4 ist vom Springer gedeckt.",
-       "Schwarz setzt nach Dxd4 sofort matt."
+       "The queen is driven away with c5, and then c4 shuts in the bishop on b3.",
+       "The pawn on d4 is defended by the knight.",
+       "After Qxd4, Black mates at once."
       ],
       "richtig": 0,
-      "erklaerung": "Nach 8... c5! muss die Dame weichen, Le6 und Ld7 gewinnen Zeit, dann folgt c4. Der Bauer b5 deckt a4 und c4, der Läufer ist gefangen."
+      "erklaerung": "After 8... c5! the queen has to retreat, Be6 and Bd7 gain time, and then c4 follows. The pawn on b5 covers a4 and c4: the bishop is trapped."
      }
     ]
    }
@@ -2670,9 +2670,9 @@
    "abschnitt": {
     "nummer": "4.8",
     "label": "sec:fallen-kat5",
-    "titel": "Kategorie V: Wenn eine Figur kein Feld mehr findet"
+    "titel": "Category V: When a piece runs out of squares"
    },
-   "unterabschnitt": "Die Arche-Noah-Falle",
+   "unterabschnitt": "Noah's Ark Trap",
    "fen": "r1bqkbnr/5ppp/p2p4/1pp5/3QP3/1B6/PPP2PPP/RNB1K2R w KQkq c6 0 9",
    "pfeile": [
     {
@@ -2690,16 +2690,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Dxd4?? c5!"
+     "text": "8. Qxd4?? c5!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Bauer greift die Dame an. Grau: Als Nächstes droht ...c4.",
+     "text": ", White to move. Red: the pawn attacks the queen. Gray: next, ...c4 is threatened.",
      "stil": "normal"
     }
    ],
@@ -2742,9 +2742,9 @@
    "abschnitt": {
     "nummer": "4.8",
     "label": "sec:fallen-kat5",
-    "titel": "Kategorie V: Wenn eine Figur kein Feld mehr findet"
+    "titel": "Category V: When a piece runs out of squares"
    },
-   "unterabschnitt": "Die Arche-Noah-Falle",
+   "unterabschnitt": "Noah's Ark Trap",
    "fen": "r2qkbnr/3b1ppp/p1Qp4/1pp5/4P3/1B6/PPP2PPP/RNB1K2R w KQkq - 4 11",
    "pfeile": [
     {
@@ -2762,16 +2762,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. Dd5 Le6 10. Dc6+ Ld7"
+     "text": "9. Qd5 Be6 10. Qc6+ Bd7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Die Dame muss zurück. Rot: Der Bauer c5 zieht gleich nach c4. Grau: der Läufer b3, um den es geht.",
+     "text": ", White to move. The queen has to go back. Red: the pawn on c5 moves straight on to c4. Gray: the bishop on b3, which is what it is all about.",
      "stil": "normal"
     }
    ],
@@ -2818,9 +2818,9 @@
    "abschnitt": {
     "nummer": "4.8",
     "label": "sec:fallen-kat5",
-    "titel": "Kategorie V: Wenn eine Figur kein Feld mehr findet"
+    "titel": "Category V: When a piece runs out of squares"
    },
-   "unterabschnitt": "Die Arche-Noah-Falle",
+   "unterabschnitt": "Noah's Ark Trap",
    "fen": "r2qkbnr/3b1ppp/p2p4/1p1Q4/2p1P3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 12",
    "pfeile": [
     {
@@ -2838,16 +2838,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "11. Dd5 c4!"
+     "text": "11. Qd5 c4!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Bauer b5 deckt a4 und c4. Der Läufer b3 hat kein sicheres Feld mehr.",
+     "text": ", White to move. Red: the pawn on b5 covers a4 and c4. The bishop on b3 has no safe square left.",
      "stil": "normal"
     }
    ],
@@ -2893,14 +2893,14 @@
     "fragen": [
      {
       "zug": "12. Bxc4",
-      "frage": "Warum schlägt Weiß mit 12. Lxc4 einen gedeckten Bauern?",
+      "frage": "Why does White capture a defended pawn with 12. Bxc4?",
       "antworten": [
-       "Der Bauer c4 ist an den König gefesselt.",
-       "Weiß gewinnt damit eine ganze Figur.",
-       "Der Läufer hat kein sicheres Feld mehr; so bekommt Weiß wenigstens zwei Bauern für ihn."
+       "The pawn on c4 is pinned to the king.",
+       "White wins a whole piece this way.",
+       "The bishop has no safe square left; this way White at least gets two pawns for it."
       ],
       "richtig": 2,
-      "erklaerung": "b5 deckt a4 und c4, auf a2 und c2 stehen eigene Bauern. Nach bxc4 Dxc4 hat Weiß zwei Bauern für den Läufer."
+      "erklaerung": "b5 covers a4 and c4, and White's own pawns stand on a2 and c2. After bxc4 Qxc4, White has two pawns for the bishop."
      }
     ]
    }
@@ -2912,9 +2912,9 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Die Falle im Abgelehnten Königsgambit",
+   "unterabschnitt": "The trap in the King's Gambit Declined",
    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 1 3",
    "pfeile": [
     {
@@ -2932,12 +2932,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. f4 Lc5"
+     "text": "1. e4 e5 2. f4 Bc5"
     },
     {
      "art": "text",
@@ -2946,12 +2946,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Weiß ist am Zug. Grau: der Weg der Dame nach h4, von wo sie über die offene Diagonale h4–e1 Schach gäbe. Rot: Der Läufer c5 blickt über f2 auf g1.",
+     "text": ": White is to move. Gray: the queen's path to h4, from where it would give check along the open h4–e1 diagonal. Red: the bishop on c5 looks through f2 at g1.",
      "stil": "normal"
     }
    ],
@@ -2978,14 +2978,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 3. fxe5 ein Fehler?",
+      "frage": "Why is 3. fxe5 a mistake?",
       "antworten": [
-       "Weil der Läufer c5 dann den Turm h1 angreift.",
-       "Weil nach Dh4+ und g3 der Schlag Dxe4+ König und Turm h1 zugleich angreift.",
-       "Weil Schwarz den Bauern e5 mit dem Springer zurückschlägt."
+       "Because the bishop on c5 then attacks the rook on h1.",
+       "Because after Qh4+ and g3, the capture Qxe4+ attacks king and rook on h1 at the same time.",
+       "Because Black recaptures the pawn on e5 with the knight."
       ],
       "richtig": 1,
-      "erklaerung": "Eine Gabel mit Schach: Weiß muss zuerst den König schützen, danach nimmt die Dame den Turm h1."
+      "erklaerung": "A fork with check: White first has to protect the king, and then the queen takes the rook on h1."
      }
     ]
    }
@@ -2997,9 +2997,9 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Die Falle im Abgelehnten Königsgambit",
+   "unterabschnitt": "The trap in the King's Gambit Declined",
    "fen": "rnb1k1nr/pppp1ppp/8/2b1P3/4q3/6P1/PPPP3P/RNBQKBNR w KQkq - 0 5",
    "pfeile": [
     {
@@ -3017,16 +3017,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. fxe5?? Dh4+ 4. g3 Dxe4+"
+     "text": "3. fxe5?? Qh4+ 4. g3 Qxe4+"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Die Dame gibt Schach und greift zugleich den Turm h1 an.",
+     "text": ", White to move. Red: the queen gives check and at the same time attacks the rook on h1.",
      "stil": "normal"
     }
    ],
@@ -3061,25 +3061,25 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Die Falle im Abgelehnten Königsgambit",
+   "unterabschnitt": "The trap in the King's Gambit Declined",
    "fen": "rnb1k1nr/pppp1ppp/8/2b1P3/8/6P1/PPPPQ2P/RNB1KBNq w Qkq - 0 6",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. De2 Dxh1"
+     "text": "5. Qe2 Qxh1"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Schwarz hat einen ganzen Turm gewonnen.",
+     "text": ", White to move. Black has won a whole rook.",
      "stil": "normal"
     }
    ],
@@ -3116,21 +3116,21 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Das Blackburne-Shilling-Gambit",
+   "unterabschnitt": "The Blackburne Shilling Gambit",
    "fen": "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Lc4 Sd4?!"
+     "text": "3. Bc4 Nd4?!"
     },
     {
      "art": "text",
@@ -3139,12 +3139,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Weiß ist am Zug. Der Bauer e5 ist ungedeckt.",
+     "text": ": White is to move. The pawn on e5 is undefended.",
      "stil": "normal"
     }
    ],
@@ -3172,14 +3172,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 4. Sxe5 riskant?",
+      "frage": "Why is 4. Nxe5 risky?",
       "antworten": [
-       "Der Springer ist auf e5 an den König gefesselt.",
-       "Der Springer steht auf e5 ungedeckt, und Dg5 greift ihn und den Bauern g2 gleichzeitig an.",
-       "Nach Sxe5 gewinnt Schwarz sofort die Dame d1."
+       "On e5, the knight is pinned to the king.",
+       "On e5 the knight is undefended, and Qg5 attacks it and the pawn on g2 at the same time.",
+       "After Nxe5, Black wins the queen on d1 at once."
       ],
       "richtig": 1,
-      "erklaerung": "Weiß kann nicht beides decken. Rettet sich der Springer mit Sxf7, nimmt die Dame g2 und greift den Turm h1 an."
+      "erklaerung": "White cannot cover both. If the knight escapes with Nxf7, the queen takes g2 and attacks the rook on h1."
      }
     ]
    }
@@ -3191,9 +3191,9 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Das Blackburne-Shilling-Gambit",
+   "unterabschnitt": "The Blackburne Shilling Gambit",
    "fen": "r1b1kbnr/pppp1ppp/8/4N1q1/2BnP3/8/PPPP1PPP/RNBQK2R w KQkq - 1 5",
    "pfeile": [
     {
@@ -3211,16 +3211,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxe5? Dg5!"
+     "text": "4. Nxe5? Qg5!"
     },
     {
      "art": "text",
-     "text": ". Rot: Die Dame greift gleichzeitig den ungedeckten Bauern g2 und den Springer e5 an. Weiß kann nicht beide decken.",
+     "text": ". Red: the queen attacks the undefended pawn on g2 and the knight on e5 at the same time. White cannot cover both.",
      "stil": "normal"
     }
    ],
@@ -3254,9 +3254,9 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Das Blackburne-Shilling-Gambit",
+   "unterabschnitt": "The Blackburne Shilling Gambit",
    "fen": "r1b1kbnr/pppp1Npp/8/8/2BnP3/8/PPPP1PqP/RNBQKR2 b Qkq - 1 6",
    "pfeile": [
     {
@@ -3274,16 +3274,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Sxf7?? Dxg2 6. Tf1"
+     "text": "5. Nxf7?? Qxg2 6. Rf1"
     },
     {
      "art": "text",
-     "text": ". Grau: Der Springer f7 greift den Turm h8 an. Rot: Doch Schwarz ist am Zug, und die Dame schlägt mit Schach auf e4.",
+     "text": ". Gray: the knight on f7 attacks the rook on h8. Red: but it is Black's move, and the queen captures on e4 with check.",
      "stil": "normal"
     }
    ],
@@ -3317,14 +3317,14 @@
     "fragen": [
      {
       "zug": "6... Qxe4+",
-      "frage": "Warum schlägt Schwarz mit 6... Dxe4+ und lässt den Turm h8 stehen?",
+      "frage": "Why does Black capture with 6... Qxe4+ and leave the rook on h8 where it is?",
       "antworten": [
-       "Weil das Schach Zeit gewinnt: Nach Le2 setzt Sf3 matt.",
-       "Weil der Springer f7 gefesselt ist und h8 nicht schlagen darf.",
-       "Weil der Turm h8 gedeckt ist."
+       "Because the check gains time: after Be2, Nf3 is mate.",
+       "Because the knight on f7 is pinned and may not capture on h8.",
+       "Because the rook on h8 is defended."
       ],
       "richtig": 0,
-      "erklaerung": "Mit Schach hat Weiß keine Zeit für Sxh8. Nach 7. Le2 Sf3 ist der König erstickt, denn die Dame e4 fesselt den Läufer e2."
+      "erklaerung": "With the check, White has no time for Nxh8. After 7. Be2 Nf3 the king is smothered, because the queen on e4 pins the bishop on e2."
      }
     ]
    }
@@ -3336,9 +3336,9 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Das Blackburne-Shilling-Gambit",
+   "unterabschnitt": "The Blackburne Shilling Gambit",
    "fen": "r1b1kbnr/pppp1Npp/8/8/4q3/5n2/PPPPBP1P/RNBQKR2 w Qkq - 2 8",
    "pfeile": [
     {
@@ -3372,16 +3372,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Dxe4+ 7. Le2 Sf3#"
+     "text": "6... Qxe4+ 7. Be2 Nf3#"
     },
     {
      "art": "text",
-     "text": ". Rot: Der Springer gibt Schach. Grau: Alle Nachbarfelder des Königs sind von eigenen Figuren besetzt – ein Erstickungsmatt. Den Springer darf der Läufer e2 nicht schlagen, denn die Dame e4 fesselt ihn an den König.",
+     "text": ". Red: the knight gives check. Gray: all the king's neighboring squares are occupied by White's own pieces – a smothered mate. The bishop on e2 may not capture the knight, because the queen on e4 pins it to the king.",
      "stil": "normal"
     }
    ],
@@ -3421,9 +3421,9 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Die Damenfalle im Dänischen Gambit",
+   "unterabschnitt": "The queen trap in the Danish Gambit",
    "fen": "rnb1kbnr/pppp1ppp/8/6q1/2B1P3/5N2/PB3PPP/RN1QK2R b KQkq - 2 6",
    "pfeile": [
     {
@@ -3441,12 +3441,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Dg5? 6. Sf3"
+     "text": "5... Qg5? 6. Nf3"
     },
     {
      "art": "text",
@@ -3455,12 +3455,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz ist am Zug. Rot: Der Springer greift die Dame an. Grau: der Bauer g2, den sie dabei schlagen könnte.",
+     "text": ": Black is to move. Red: the knight attacks the queen. Gray: the pawn on g2, which the queen could capture as it moves away.",
      "stil": "normal"
     }
    ],
@@ -3494,14 +3494,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 6... Dxg2 ein Fehler?",
+      "frage": "Why is 6... Qxg2 a mistake?",
       "antworten": [
-       "Der Bauer g2 ist vom Läufer f1 gedeckt.",
-       "Mit Dxg2 verliert Schwarz das Recht zu rochieren.",
-       "Die Dame wird danach gejagt: Tg1, Lxf7+ und Sg5 greifen mit Tempo an."
+       "The pawn on g2 is defended by the bishop on f1.",
+       "With Qxg2, Black loses the right to castle.",
+       "The queen is then hunted: Rg1, Bxf7+ and Ng5 attack with tempo."
       ],
       "richtig": 2,
-      "erklaerung": "Nach 7. Tg1 Dh3 8. Lxf7+ ist die Dame in Gefahr: Schlägt der König den Läufer, gabelt Sg5+ König und Dame h3."
+      "erklaerung": "After 7. Rg1 Qh3 8. Bxf7+ the queen is in danger: if the king takes the bishop, Ng5+ forks the king and the queen on h3."
      }
     ]
    }
@@ -3513,9 +3513,9 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Die Damenfalle im Dänischen Gambit",
+   "unterabschnitt": "The queen trap in the Danish Gambit",
    "fen": "rnb1kbnr/pppp1Bpp/8/8/4P3/5N1q/PB3P1P/RN1QK1R1 b Qkq - 0 8",
    "pfeile": [
     {
@@ -3533,16 +3533,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Dxg2?? 7. Tg1 Dh3 8. Lxf7+!"
+     "text": "6... Qxg2?? 7. Rg1 Qh3 8. Bxf7+!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Schach. Grau: der Weg des Springers nach g5.",
+     "text": ", Black to move. Red: check. Gray: the knight's path to g5.",
      "stil": "normal"
     }
    ],
@@ -3584,25 +3584,25 @@
    "abschnitt": {
     "nummer": "4.9",
     "label": "sec:fallen-kat6",
-    "titel": "Kategorie VI: Wenn ein Zug zwei Ziele trifft"
+    "titel": "Category VI: When one move hits two targets"
    },
-   "unterabschnitt": "Die Damenfalle im Dänischen Gambit",
+   "unterabschnitt": "The queen trap in the Danish Gambit",
    "fen": "rnb1kbnr/pppp2pp/8/8/4P3/7N/PB3P1P/RN1QK1R1 b Q - 0 10",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Kxf7?? 9. Sg5+ Ke8 10. Sxh3"
+     "text": "8... Kxf7?? 9. Ng5+ Ke8 10. Nxh3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Die schwarze Dame ist verloren.",
+     "text": ", Black to move. The black queen is lost.",
      "stil": "normal"
     }
    ],
@@ -3648,9 +3648,9 @@
    "abschnitt": {
     "nummer": "4.10",
     "label": "sec:fallen-ueberblick",
-    "titel": "Drei Muster ohne feste Zugfolge"
+    "titel": "Three patterns without a fixed move order"
    },
-   "unterabschnitt": "Muster 1: Damenfang auf b2",
+   "unterabschnitt": "Pattern 1: Trapping the queen on b2",
    "fen": "rnb1kb1r/1p3ppp/pq1ppn2/6B1/3NPP2/P1N5/1PP3PP/R2QKB1R b KQkq - 0 8",
    "pfeile": [],
    "felder": [
@@ -3662,12 +3662,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Najdorf-Variante nach ",
+     "text": "The Najdorf Variation after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Db6 8. a3"
+     "text": "7... Qb6 8. a3"
     },
     {
      "art": "text",
@@ -3676,12 +3676,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz ist am Zug. Grau: Der Bauer b2 steht scheinbar ungedeckt.",
+     "text": ": Black is to move. Gray: the pawn on b2 seems to be undefended.",
      "stil": "normal"
     }
    ],
@@ -3719,14 +3719,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 8... Dxb2 hier ein Fehler?",
+      "frage": "Why is 8... Qxb2 a mistake here?",
       "antworten": [
-       "Weil der Turm a1 den Bauern b2 deckt.",
-       "Weil Weiß danach lang rochiert.",
-       "Weil Sa4 die Dame angreift und sie kein sicheres Feld mehr findet."
+       "Because the rook on a1 defends the pawn on b2.",
+       "Because White then castles queenside.",
+       "Because Na4 attacks the queen and it no longer finds a safe square."
       ],
       "richtig": 2,
-      "erklaerung": "Schwarz muss die Dame für einen Springer geben: 9... Dxd4 10. Dxd4. Danach ist die Partie verloren."
+      "erklaerung": "Black has to give up the queen for a knight: 9... Qxd4 10. Qxd4. After that, the game is lost."
      }
     ]
    }
@@ -3738,9 +3738,9 @@
    "abschnitt": {
     "nummer": "4.10",
     "label": "sec:fallen-ueberblick",
-    "titel": "Drei Muster ohne feste Zugfolge"
+    "titel": "Three patterns without a fixed move order"
    },
-   "unterabschnitt": "Muster 1: Damenfang auf b2",
+   "unterabschnitt": "Pattern 1: Trapping the queen on b2",
    "fen": "rnb1kb1r/1p3ppp/p2ppn2/6B1/N2NPP2/P7/1qP3PP/R2QKB1R b KQkq - 1 9",
    "pfeile": [
     {
@@ -3770,16 +3770,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Dxb2?? 9. Sa4!"
+     "text": "8... Qxb2?? 9. Na4!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Springer greift die Dame an. Grau: Die Felder ringsum sind alle gedeckt.",
+     "text": ", Black to move. Red: the knight attacks the queen. Gray: the squares around it are all covered.",
      "stil": "normal"
     }
    ],
@@ -3823,25 +3823,25 @@
    "abschnitt": {
     "nummer": "4.10",
     "label": "sec:fallen-ueberblick",
-    "titel": "Drei Muster ohne feste Zugfolge"
+    "titel": "Three patterns without a fixed move order"
    },
-   "unterabschnitt": "Muster 1: Damenfang auf b2",
+   "unterabschnitt": "Pattern 1: Trapping the queen on b2",
    "fen": "rnb1kb1r/1p3ppp/p2ppn2/6B1/N2QPP2/P7/2P3PP/R3KB1R b KQkq - 0 10",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9... Dxd4 10. Dxd4"
+     "text": "9... Qxd4 10. Qxd4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Schwarz hat die Dame für einen Springer gegeben und ist verloren.",
+     "text": ", Black to move. Black has given up the queen for a knight and is lost.",
      "stil": "normal"
     }
    ],
@@ -3887,9 +3887,9 @@
    "abschnitt": {
     "nummer": "4.10",
     "label": "sec:fallen-ueberblick",
-    "titel": "Drei Muster ohne feste Zugfolge"
+    "titel": "Three patterns without a fixed move order"
    },
-   "unterabschnitt": "Muster 3: Die Springergabel auf c7",
+   "unterabschnitt": "Pattern 3: The knight fork on c7",
    "fen": "r1b1k1nr/pppp1ppp/2n2q2/2bNp3/2B1P3/5N2/PPPP1PPP/R1BQK2R b KQkq - 7 5",
    "pfeile": [
     {
@@ -3907,12 +3907,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Stellung aus Kapitel 1 nach ",
+     "text": "The position from Chapter 1 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Sd5"
+     "text": "5. Nd5"
     },
     {
      "art": "text",
@@ -3921,12 +3921,12 @@
     },
     {
      "art": "text",
-     "text": "Stopp-Moment",
+     "text": "Stop moment",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz ist am Zug. Rot: Der Springer greift die Dame an und droht zugleich Sxc7+.",
+     "text": ": Black is to move. Red: the knight attacks the queen and at the same time threatens Nxc7+.",
      "stil": "normal"
     }
    ],
@@ -3958,14 +3958,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist 5... Dg6 ein Fehler?",
+      "frage": "Why is 5... Qg6 a mistake?",
       "antworten": [
-       "Auf g6 wird die Dame vom Läufer c4 angegriffen.",
-       "Die Dame rettet sich, deckt aber c7 nicht: Sxc7+ gabelt König und Turm a8.",
-       "Dg6 stellt den Läufer c5 ein."
+       "On g6 the queen is attacked by the bishop on c4.",
+       "The queen escapes but does not cover c7: Nxc7+ forks the king and the rook on a8.",
+       "Qg6 drops the bishop on c5."
       ],
       "richtig": 1,
-      "erklaerung": "Nach 6. Sxc7+ Kd8 7. Sxa8 hat Weiß einen Turm gewonnen. In Kapitel 1 deckte Dd8 das Feld c7."
+      "erklaerung": "After 6. Nxc7+ Kd8 7. Nxa8, White has won a rook. In Chapter 1, Qd8 covered the c7 square."
      }
     ]
    }
@@ -3977,9 +3977,9 @@
    "abschnitt": {
     "nummer": "4.10",
     "label": "sec:fallen-ueberblick",
-    "titel": "Drei Muster ohne feste Zugfolge"
+    "titel": "Three patterns without a fixed move order"
    },
-   "unterabschnitt": "Muster 3: Die Springergabel auf c7",
+   "unterabschnitt": "Pattern 3: The knight fork on c7",
    "fen": "r1b1k1nr/ppNp1ppp/2n3q1/2b1p3/2B1P3/5N2/PPPP1PPP/R1BQK2R b KQkq - 0 6",
    "pfeile": [
     {
@@ -3997,16 +3997,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Dg6?? 6. Sxc7+!"
+     "text": "5... Qg6?? 6. Nxc7+!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Springer gibt Schach und greift zugleich den Turm a8 an.",
+     "text": ", Black to move. Red: the knight gives check and at the same time attacks the rook on a8.",
      "stil": "normal"
     }
    ],
@@ -4044,25 +4044,25 @@
    "abschnitt": {
     "nummer": "4.10",
     "label": "sec:fallen-ueberblick",
-    "titel": "Drei Muster ohne feste Zugfolge"
+    "titel": "Three patterns without a fixed move order"
    },
-   "unterabschnitt": "Muster 3: Die Springergabel auf c7",
+   "unterabschnitt": "Pattern 3: The knight fork on c7",
    "fen": "N1bk2nr/pp1p1ppp/2n3q1/2b1p3/2B1P3/5N2/PPPP1PPP/R1BQK2R b KQ - 0 7",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Kd8 7. Sxa8"
+     "text": "6... Kd8 7. Nxa8"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Weiß hat einen Turm gewonnen.",
+     "text": ", Black to move. White has won a rook.",
      "stil": "normal"
     }
    ],
@@ -4102,25 +4102,25 @@
    "abschnitt": {
     "nummer": "4.11",
     "label": "sec:fallen-rueckblick",
-    "titel": "Rückblick: Hätten die Regeln die Fallen verhindert?"
+    "titel": "Review: Would the rules have prevented the traps?"
    },
-   "unterabschnitt": "Und wenn du selbst eine Falle stellst?",
+   "unterabschnitt": "And what if you set a trap yourself?",
    "fen": "rnbqk1nr/ppp2ppp/8/4P3/1bP5/4p3/PP1B1PPP/RN1QKBNR w KQkq - 0 6",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Albins Gegengambit nach ",
+     "text": "The Albin Countergambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. d4 d5 2. c4 e5 3. dxe5 d4 4. e3 Lb4+ 5. Ld2 dxe3"
+     "text": "1. d4 d5 2. c4 e5 3. dxe5 d4 4. e3 Bb4+ 5. Bd2 dxe3"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug.",
+     "text": ", White to move.",
      "stil": "normal"
     }
    ],
@@ -4154,25 +4154,25 @@
    "abschnitt": {
     "nummer": "4.11",
     "label": "sec:fallen-rueckblick",
-    "titel": "Rückblick: Hätten die Regeln die Fallen verhindert?"
+    "titel": "Review: Would the rules have prevented the traps?"
    },
-   "unterabschnitt": "Und wenn du selbst eine Falle stellst?",
+   "unterabschnitt": "And what if you set a trap yourself?",
    "fen": "r1bqkb1r/ppppnppp/5n2/1B2p3/4P3/3P1N2/PPP2PPP/RNBQK2R w KQkq - 1 5",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Spanische Partie nach ",
+     "text": "Ruy Lopez after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. Sf3 Sc6 3. Lb5 Sf6 4. d3 Se7"
+     "text": "1. e4 e5 2. Nf3 Nc6 3. Bb5 Nf6 4. d3 Ne7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug.",
+     "text": ", White to move.",
      "stil": "normal"
     }
    ],
@@ -4210,7 +4210,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Gegen das Damengambit kann Schwarz mit ",
+     "text": "Against the Queen's Gambit, Black can also play a gambit, with ",
      "stil": "normal"
     },
     {
@@ -4219,26 +4219,26 @@
     },
     {
      "art": "text",
-     "text": " selbst ein Gambit spielen, ",
+     "text": ": the ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Albins Gegengambit",
+     "text": "Albin Countergambit",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ". Weiß möchte jetzt mit ",
+     "text": ". White now wants to play ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lxb4"
+     "text": "6. Bxb4"
     },
     {
      "art": "text",
-     "text": " den Läufer schlagen, der scheinbar ungedeckt auf b4 steht. Stelle die Warum-Frage ",
+     "text": " and capture the bishop that seems to stand undefended on b4. Ask the Why question ",
      "stil": "normal"
     },
     {
@@ -4248,7 +4248,7 @@
     },
     {
      "art": "text",
-     "text": " und rechne im Anschluss zwei Antworten weiter (",
+     "text": " and then calculate two replies ahead (",
      "stil": "normal"
     },
     {
@@ -4258,16 +4258,16 @@
     },
     {
      "art": "text",
-     "text": "): Was hat Schwarz nach ",
+     "text": "): What is Black up to after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lxb4"
+     "text": "6. Bxb4"
     },
     {
      "art": "text",
-     "text": " vor? Welches Warnsignal hättest du auf dem Brett sehen können?",
+     "text": "? Which warning sign could you have seen on the board?",
      "stil": "normal"
     }
    ],
@@ -4279,16 +4279,16 @@
     },
     {
      "art": "text",
-     "text": ": Warum lässt Schwarz seinen Läufer auf b4 stehen? Die Antwort: Der Bauer e3 ist viel gefährlicher als der Läufer, denn nach ",
+     "text": ": Why does Black leave the bishop on b4? The answer: the pawn on e3 is much more dangerous than the bishop, because after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lxb4??"
+     "text": "6. Bxb4??"
     },
     {
      "art": "text",
-     "text": " folgt ",
+     "text": " comes ",
      "stil": "normal"
     },
     {
@@ -4297,7 +4297,7 @@
     },
     {
      "art": "text",
-     "text": ". Weiß hat nur zwei Antworten: ",
+     "text": ". White has only two replies: ",
      "stil": "normal"
     },
     {
@@ -4306,16 +4306,16 @@
     },
     {
      "art": "text",
-     "text": " verliert die Dame nach ",
+     "text": " loses the queen after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Dxd1"
+     "text": "7... Qxd1"
     },
     {
      "art": "text",
-     "text": ", weil die d-Linie offen ist, also ",
+     "text": ", because the d-file is open, so ",
      "stil": "normal"
     },
     {
@@ -4324,53 +4324,53 @@
     },
     {
      "art": "text",
-     "text": ", und jetzt kommt die Pointe: ",
+     "text": ", and now comes the point: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... fxg1=S+!"
+     "text": "7... fxg1=N+!"
     },
     {
      "art": "text",
-     "text": " Schwarz wandelt in einen ",
+     "text": " Black promotes to a ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Springer",
+     "text": "knight",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " um, also eine Unterverwandlung (Kapitel 0). Nur der Springer gibt dabei Schach. Bei einer Umwandlung in eine Dame könnte Weiß dagegen erst mit ",
+     "text": ", which is an underpromotion (Chapter 0). Only the knight gives check here. With a promotion to a queen, on the other hand, White could first trade queens with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Dxd8+"
+     "text": "8. Qxd8+"
     },
     {
      "art": "text",
-     "text": " die Damen tauschen und danach die neue Dame auf g1 schlagen. Nach ",
+     "text": " and then capture the new queen on g1. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Txg1"
+     "text": "8. Rxg1"
     },
     {
      "art": "text",
-     "text": " gewinnt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Lg4+"
+     "text": "8... Bg4+"
     },
     {
      "art": "text",
-     "text": " die Dame, da König e2 und Dame d1 auf derselben Diagonale stehen. Spielt Weiß stattdessen ",
+     "text": " wins the queen, since the king on e2 and the queen on d1 stand on the same diagonal. If White plays ",
      "stil": "normal"
     },
     {
@@ -4379,16 +4379,16 @@
     },
     {
      "art": "text",
-     "text": ", steht der König nach ",
+     "text": " instead, after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Dh4+"
+     "text": "8... Qh4+"
     },
     {
      "art": "text",
-     "text": " schutzlos im Freien. Das Warnsignal war ",
+     "text": " the king stands defenseless out in the open. The warning sign was ",
      "stil": "normal"
     },
     {
@@ -4398,7 +4398,7 @@
     },
     {
      "art": "text",
-     "text": ": Die weiße Dame d1 steht mit dem eigenen Läufer d2 auf derselben Linie wie die schwarze Dame d8, sodass die d-Linie offen ist, sobald der Läufer nach b4 zieht. Richtig ist ",
+     "text": ": the white queen on d1 stands on the same file as the black queen on d8, with only White's own bishop on d2 in between, so the d-file is open as soon as the bishop moves to b4. The right move is ",
      "stil": "normal"
     },
     {
@@ -4407,7 +4407,7 @@
     },
     {
      "art": "text",
-     "text": ". Noch besser vermeidet Weiß schon ",
+     "text": ". Even better, White avoids ",
      "stil": "normal"
     },
     {
@@ -4416,16 +4416,16 @@
     },
     {
      "art": "text",
-     "text": " und spielt ",
+     "text": " in the first place and plays ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sf3"
+     "text": "4. Nf3"
     },
     {
      "art": "text",
-     "text": ". Der Fallensteller-Test: ",
+     "text": ". The trap-setter test: ",
      "stil": "normal"
     },
     {
@@ -4434,7 +4434,7 @@
     },
     {
      "art": "text",
-     "text": " ist auch dann ein guter Zug, wenn Weiß nicht hineintappt. Merke dir: Steht eine gegnerische Figur ungedeckt zum Schlagen bereit, suche zunächst das Schach, das der Gegner im Anschluss hat.",
+     "text": " is a good move even if White does not fall for it. Remember: if an enemy piece stands undefended, ready to be taken, first look for the check your opponent has afterwards.",
      "stil": "normal"
     }
    ],
@@ -4445,8 +4445,8 @@
    "erklaerung": {
     "loesung": "6. fxe3",
     "akzeptiert": [],
-    "motiv": "Unterverwandlung mit Schach",
-    "text": "Nach 6. Lxb4?? exf2+ 7. Ke2 kommt 7... fxg1=S+!: Die Unterverwandlung gibt Schach, und Weiß verliert danach die Dame, oder sein König steht schutzlos im Freien. Richtig ist 6. fxe3; das Warnsignal war die offene d-Linie zwischen den Damen, sobald der Läufer d2 wegzieht."
+    "motiv": "Underpromotion with check",
+    "text": "After 6. Bxb4?? exf2+ 7. Ke2 comes 7... fxg1=N+!: the underpromotion gives check, and White then loses the queen, or the white king stands defenseless out in the open. The right move is 6. fxe3; the warning sign was the open d-file between the queens as soon as the bishop on d2 moves away."
    }
   },
   {
@@ -4460,41 +4460,41 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Schwarz hat seinen Springer mit ",
+     "text": "Black has moved the knight away from c6 with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Se7"
+     "text": "4... Ne7"
     },
     {
      "art": "text",
-     "text": " von c6 weggezogen, und der Bauer e5 steht plötzlich ungedeckt. Gehe den vollständigen Fallencheck durch: Welches Warnsignal siehst du? Was passiert nach ",
+     "text": ", and suddenly the pawn on e5 stands undefended. Go through the full trap check: Which warning sign do you see? What happens two replies ahead after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Sxe5"
+     "text": "5. Nxe5"
     },
     {
      "art": "text",
-     "text": " zwei Antworten weiter? Was spielst du stattdessen? Und besteht ",
+     "text": "? What do you play instead? And does ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Se7"
+     "text": "4... Ne7"
     },
     {
      "art": "text",
-     "text": " den Fallensteller-Test?",
+     "text": " pass the trap-setter test?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Das Warnsignal ist ",
+     "text": "The warning sign is ",
      "stil": "normal"
     },
     {
@@ -4504,7 +4504,7 @@
     },
     {
      "art": "text",
-     "text": ": Der Bauer e5 steht scheinbar kostenlos. ",
+     "text": ": the pawn on e5 seems to be free for the taking. ",
      "stil": "normal"
     },
     {
@@ -4514,7 +4514,7 @@
     },
     {
      "art": "text",
-     "text": ": Warum zieht Schwarz den einzigen Verteidiger von e5 weg? ",
+     "text": ": Why does Black move the only defender of e5 away? ",
      "stil": "normal"
     },
     {
@@ -4524,16 +4524,16 @@
     },
     {
      "art": "text",
-     "text": ": Nach ",
+     "text": ": After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Sxe5?"
+     "text": "5. Nxe5?"
     },
     {
      "art": "text",
-     "text": " greift ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -4542,61 +4542,61 @@
     },
     {
      "art": "text",
-     "text": " den Läufer b5 an. Zieht er sich mit ",
+     "text": " attacks the bishop on b5. If it retreats with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. La4"
+     "text": "6. Ba4"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lc4"
+     "text": "6. Bc4"
     },
     {
      "art": "text",
-     "text": " zurück, folgt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Da5+!"
+     "text": "6... Qa5+!"
     },
     {
      "art": "text",
-     "text": ": Die Dame gibt Schach und greift entlang der fünften Reihe zugleich den Springer e5 an, also ein Doppelangriff wie im Blackburne-Shilling-Gambit. Nach ",
+     "text": " follows: the queen gives check and at the same time attacks the knight on e5 along the fifth rank, a double attack as in the Blackburne Shilling Gambit. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. c3 Dxe5"
+     "text": "7. c3 Qxe5"
     },
     {
      "art": "text",
-     "text": " hat Schwarz eine Figur gewonnen. Rettet Weiß stattdessen mit ",
+     "text": ", Black has won a piece. If White instead saves the knight with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Sc4"
+     "text": "6. Nc4"
     },
     {
      "art": "text",
-     "text": " den Springer, droht er selbst ",
+     "text": ", it threatens ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. Sd6#"
+     "text": "7. Nd6#"
     },
     {
      "art": "text",
-     "text": ". ",
+     "text": " itself. ",
      "stil": "normal"
     },
     {
@@ -4605,7 +4605,7 @@
     },
     {
      "art": "text",
-     "text": " wäre daher ein Reinfall. Mit ",
+     "text": " would therefore be a blunder. With ",
      "stil": "normal"
     },
     {
@@ -4614,16 +4614,16 @@
     },
     {
      "art": "text",
-     "text": " nimmt Schwarz dem Springer das Feld d6, der Läufer b5 bleibt angegriffen, und Schwarz gewinnt eine Figur für zwei Bauern. Richtig ist für Weiß, den Bauern stehen zu lassen und zu entwickeln, etwa mit ",
+     "text": ", Black takes the d6 square away from the knight, the bishop on b5 remains attacked, and Black wins a piece for two pawns. The right course for White is to leave the pawn alone and develop, for example with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Sc3"
+     "text": "5. Nc3"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -4632,16 +4632,16 @@
     },
     {
      "art": "text",
-     "text": ". Der Fallensteller-Test fällt nicht so klar aus wie bei den meisten Fallen dieses Kapitels: ",
+     "text": ". The trap-setter test is not as clear-cut as for most traps in this chapter: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Se7"
+     "text": "4... Ne7"
     },
     {
      "art": "text",
-     "text": " ist spielbar, der Springer will über g6 ins Spiel kommen. Er zieht aber ein zweites Mal und verzögert die Entwicklung. Als eigene Waffe ist diese Falle deshalb nur bedingt zu empfehlen. Merke dir: Zieht der einzige Verteidiger eines Bauern freiwillig weg, ist der Bauer selten wirklich frei.",
+     "text": " is playable, and the knight wants to come into play via g6. But it moves a second time and delays development. So this trap is only partly recommendable as a weapon of your own. Remember: if the only defender of a pawn moves away voluntarily, the pawn is rarely really free.",
      "stil": "normal"
     }
    ],
@@ -4654,8 +4654,8 @@
     "akzeptiert": [
      "5. O-O"
     ],
-    "motiv": "Scheinbar freier Bauer",
-    "text": "Nach 5. Sxe5? c6! muss der Läufer weichen, und 6... Da5+ greift König und Springer e5 zugleich an. Weiß lässt den Bauern stehen und entwickelt mit 5. Sc3 oder 5. O-O; zieht der einzige Verteidiger freiwillig weg, ist der Bauer selten wirklich frei."
+    "motiv": "Seemingly free pawn",
+    "text": "After 5. Nxe5? c6! the bishop has to retreat, and 6... Qa5+ attacks the king and the knight on e5 at the same time. White leaves the pawn alone and develops with 5. Nc3 or 5. O-O; if the only defender moves away voluntarily, the pawn is rarely really free."
    }
   },
   {
@@ -4667,7 +4667,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Ordne jedem der fünf Warnsignale ",
+     "text": "Match each of the five warning signs ",
      "stil": "normal"
     },
     {
@@ -4677,7 +4677,7 @@
     },
     {
      "art": "text",
-     "text": " bis ",
+     "text": " to ",
      "stil": "normal"
     },
     {
@@ -4687,7 +4687,7 @@
     },
     {
      "art": "text",
-     "text": " aus Abschnitt 4.2 mindestens eine Falle aus diesem Kapitel zu. Nenne jeweils die Figur oder die Linie, an der man das Signal auf dem Brett sieht.",
+     "text": " from Section 4.2 with at least one trap from this chapter. For each one, name the piece or the line where you can see the sign on the board.",
      "stil": "normal"
     }
    ],
@@ -4699,7 +4699,7 @@
     },
     {
      "art": "text",
-     "text": " ungedeckte Figur: der Turm a8 in der Klammerfalle, Bauer g2 und Springer e5 im Blackburne-Shilling-Gambit, die Dame h3 in der Damenfalle im Dänischen Gambit. ",
+     "text": " undefended piece: the rook on a8 in the clamp trap, the pawn on g2 and the knight on e5 in the Blackburne Shilling Gambit, the queen on h3 in the queen trap in the Danish Gambit. ",
      "stil": "normal"
     },
     {
@@ -4709,7 +4709,7 @@
     },
     {
      "art": "text",
-     "text": " gefährliche Linie: die Diagonale g5–d8 in der Elefantenfalle, die e-Linie zwischen Dame e7 und König e1 in der Kieninger-Falle. ",
+     "text": " dangerous line: the g5–d8 diagonal in the Elephant Trap, the e-file between the queen on e7 and the king on e1 in the Kieninger Trap. ",
      "stil": "normal"
     },
     {
@@ -4719,16 +4719,16 @@
     },
     {
      "art": "text",
-     "text": " König ohne Luft: der weiße König e1 in der Kieninger-Falle und im Blackburne-Shilling-Gambit, der schwarze König nach ",
+     "text": " king without air: the white king on e1 in the Kieninger Trap and in the Blackburne Shilling Gambit, the black king after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. Lxf7+"
+     "text": "7. Bxf7+"
     },
     {
      "art": "text",
-     "text": " in der Légal-Falle und der schwarze König e8 in der Benko-Falle. ",
+     "text": " in the Légal Trap, and the black king on e8 in the Benko Trap. ",
      "stil": "normal"
     },
     {
@@ -4738,7 +4738,7 @@
     },
     {
      "art": "text",
-     "text": " doppelte Aufgabe: der Springer f3 in der Sibirischen Falle, der als einziger wirksam h2 deckt. ",
+     "text": " double duty: the knight on f3 in the Siberian Trap, which is the only piece effectively defending h2. ",
      "stil": "normal"
     },
     {
@@ -4748,7 +4748,7 @@
     },
     {
      "art": "text",
-     "text": " Geschenk: die weiße Dame d1 in der Légal-Falle, die weiße Dame f3 in der Halosar-Falle, der Bauer d5 in der Elefantenfalle, der Bauer d4 in der Arche-Noah-Falle, der Bauer e5 im Blackburne-Shilling-Gambit und im Abgelehnten Königsgambit. Merke dir: Ein Warnsignal sagt dir nicht, was droht, aber es zeigt dir, wo du rechnen musst.",
+     "text": " gift: the white queen on d1 in the Légal Trap, the white queen on f3 in the Halosar Trap, the pawn on d5 in the Elephant Trap, the pawn on d4 in Noah's Ark Trap, the pawn on e5 in the Blackburne Shilling Gambit and in the King's Gambit Declined. Remember: a warning sign does not tell you what is threatened, but it shows you where you need to calculate.",
      "stil": "normal"
     }
    ],
@@ -4759,8 +4759,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Warnsignale W1 bis W5",
-    "text": "Jedes Warnsignal zeigt sich an einer Figur oder Linie, etwa die ungedeckte Dame h3 im Dänischen Gambit (W1), die offene e-Linie in der Kieninger-Falle (W2) oder die Dame d1 als Geschenk in der Légal-Falle (W5). Ein Signal sagt nicht, was droht, aber wo du rechnen musst."
+    "motiv": "Warning signs W1 to W5",
+    "text": "Every warning sign shows up on a piece or a line, for example the undefended queen on h3 in the Danish Gambit (W1), the open e-file in the Kieninger Trap (W2), or the queen on d1 as a gift in the Légal Trap (W5). A sign does not tell you what is threatened, but where you need to calculate."
    }
   },
   {
@@ -4772,35 +4772,35 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "In der Légal-Falle hat Weiß soeben ",
+     "text": "In the Légal Trap, White has just played ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Sxe5!!"
+     "text": "6. Nxe5!!"
     },
     {
      "art": "text",
-     "text": " gespielt (",
+     "text": " (",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.18",
+     "text": "Fig. 4.18",
      "abbildung": "4.18"
     },
     {
      "art": "text",
-     "text": "). Du bist Schwarz und hast erkannt, dass ",
+     "text": "). You are Black and have realized that ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Lxd1??"
+     "text": "6... Bxd1??"
     },
     {
      "art": "text",
-     "text": " verliert. Wie holst du den Springer e5 zurück, und was kostet dich das? Rechne dazu mit ",
+     "text": " loses. How do you win back the knight on e5, and what does it cost you? Use ",
      "stil": "normal"
     },
     {
@@ -4810,14 +4810,14 @@
     },
     {
      "art": "text",
-     "text": " zwei Antworten weiter.",
+     "text": " to calculate two replies ahead.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Die solide Alternative ist, den Springer e5 sofort zurückzuerobern, zum Beispiel mit ",
+     "text": "The solid alternative is to win back the knight on e5 at once, for example with ",
      "stil": "normal"
     },
     {
@@ -4826,25 +4826,25 @@
     },
     {
      "art": "text",
-     "text": ": Der schwarze Bauer von d6 schlägt nach e5 und nimmt damit den weißen Springer zurück. Ganz ohne Verlust geht das allerdings nicht: Der Springer f3 ist weg, die Fesselung besteht nicht mehr, und der Läufer h5 steht jetzt ungedeckt. Nach ",
+     "text": ": the black pawn on d6 captures on e5 and so takes back the white knight. This is not entirely free, though: the knight on f3 is gone, the pin no longer exists, and the bishop on h5 now stands undefended. So after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. Dxh5"
+     "text": "7. Qxh5"
     },
     {
      "art": "text",
-     "text": " hat Weiß deshalb einen Bauern mehr. Auch nach ",
+     "text": ", White is a pawn up. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Sxe5 7. Dxh5"
+     "text": "6... Nxe5 7. Qxh5"
     },
     {
      "art": "text",
-     "text": " behält Weiß einen Bauern mehr. Ein Bauer weniger ist unangenehm, aber weit besser als ein Matt. Merke dir: Hast du eine Falle erkannt, suche den Zug, der am wenigsten kostet.",
+     "text": ", too, White keeps an extra pawn. Being a pawn down is unpleasant, but far better than being mated. Remember: once you have spotted a trap, look for the move that costs you the least.",
      "stil": "normal"
     }
    ],
@@ -4857,8 +4857,8 @@
     "akzeptiert": [
      "6... Nxe5"
     ],
-    "motiv": "Den billigsten Ausweg finden",
-    "text": "Statt 6... Lxd1?? holt Schwarz den Springer sofort zurück, etwa mit 6... dxe5. Weil die Fesselung weg ist, schlägt Weiß mit 7. Dxh5 den ungedeckten Läufer und hat einen Bauern mehr: ärgerlich, aber viel besser als ein Matt."
+    "motiv": "Finding the cheapest way out",
+    "text": "Instead of 6... Bxd1??, Black wins the knight back at once, for example with 6... dxe5. Because the pin is gone, White takes the undefended bishop with 7. Qxh5 and is a pawn up: annoying, but much better than being mated."
    }
   }
  ],
@@ -4866,11 +4866,11 @@
  "bilanzen": [],
  "fallenchecks": [
   {
-   "name": "Klammerfalle",
+   "name": "Clamp trap",
    "wer": [
     {
      "art": "text",
-     "text": "Schwarz, mit ",
+     "text": "Black, with ",
      "stil": "normal"
     },
     {
@@ -4879,7 +4879,7 @@
     },
     {
      "art": "text",
-     "text": ". Der erste Fehler war schon ",
+     "text": ". The first mistake was already ",
      "stil": "normal"
     },
     {
@@ -4888,12 +4888,12 @@
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.2",
+     "text": "Fig. 4.2",
      "abbildung": "4.2"
     },
     {
@@ -4910,7 +4910,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Der Turm a8 hat keinen Verteidiger; Springer b8 und Läufer c8 stehen noch auf ihren Ausgangsfeldern.",
+       "text": "The rook on a8 has no defender; the knight on b8 and the bishop on c8 are still on their starting squares.",
        "stil": "normal"
       }
      ],
@@ -4922,7 +4922,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Weiß bietet mit ",
+       "text": "With ",
        "stil": "normal"
       },
       {
@@ -4931,7 +4931,7 @@
       },
       {
        "art": "text",
-       "text": " einen Tausch an. Warum? Weil danach eine Linie aufgeht, nicht wegen des Bauern.",
+       "text": ", White offers a trade. Why? Because a line opens afterwards, not because of the pawn.",
        "stil": "normal"
       }
      ],
@@ -4939,15 +4939,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "5... cxb5 6. Df3"
+       "text": "5... cxb5 6. Qf3"
       },
       {
        "art": "text",
-       "text": " – schon die erste weiße Antwort greift den Turm a8 an.",
+       "text": " – White's very first reply attacks the rook on a8.",
        "stil": "normal"
       }
      ],
@@ -4955,11 +4955,11 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Keine Fesselung im Spiel.",
+       "text": "No pin involved.",
        "stil": "normal"
       }
      ],
@@ -4969,7 +4969,7 @@
    "rettung": [
     {
      "art": "text",
-     "text": "Den Fehler ",
+     "text": "Anyone who calculates two replies ahead already avoids the mistake ",
      "stil": "normal"
     },
     {
@@ -4978,7 +4978,7 @@
     },
     {
      "art": "text",
-     "text": " vermeidet schon, wer zwei Antworten weiterrechnet. Die eigentliche Rettung liegt aber früher: Statt ",
+     "text": ". But the real rescue comes earlier: instead of ",
      "stil": "normal"
     },
     {
@@ -4987,16 +4987,16 @@
     },
     {
      "art": "text",
-     "text": " entwickelt Schwarz eine Figur, etwa mit ",
+     "text": ", Black develops a piece, for example with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3... Sf6"
+     "text": "3... Nf6"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -5005,16 +5005,16 @@
     },
     {
      "art": "text",
-     "text": ", und lässt Weiß den Bauern mit ",
+     "text": ", and lets White win the pawn back with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Lxc4"
+     "text": "Bxc4"
     },
     {
      "art": "text",
-     "text": " zurückholen (siehe „Das Angenommene Damengambit“ in Kapitel 2).",
+     "text": " (see “The Queen's Gambit Accepted” in Chapter 2).",
      "stil": "normal"
     }
    ],
@@ -5023,7 +5023,7 @@
     "text": [
      {
       "art": "text",
-      "text": "Weiß spielt in dieser Falle nur normale, gute Züge. Tappt Schwarz nicht hinein, hat Weiß dennoch nichts verloren.",
+      "text": "In this trap, White plays only normal, good moves. If Black does not fall for it, White has still lost nothing.",
       "stil": "normal"
      }
     ]
@@ -5035,11 +5035,11 @@
    }
   },
   {
-   "name": "Kompromittierte Verteidigung",
+   "name": "Compromised Defense",
    "wer": [
     {
      "art": "text",
-     "text": "Schwarz, mit ",
+     "text": "Black, with ",
      "stil": "normal"
     },
     {
@@ -5048,30 +5048,30 @@
     },
     {
      "art": "text",
-     "text": ". Die Fehler im Anschluss waren ",
+     "text": ". The mistakes that followed were ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... De7?"
+     "text": "8... Qe7?"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9... Sf6?"
+     "text": "9... Nf6?"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.5",
+     "text": "Fig. 4.5",
      "abbildung": "4.5"
     },
     {
@@ -5084,11 +5084,11 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Der Bauer c3 steht zum Schlagen bereit; es wäre schon der dritte Bauer.",
+       "text": "The pawn on c3 is there for the taking; it would already be the third pawn.",
        "stil": "normal"
       }
      ],
@@ -5100,7 +5100,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum gibt Weiß noch einen Bauern? Für offene Linien gegen den König in der Mitte.",
+       "text": "Why does White give up yet another pawn? For open lines against the king in the center.",
        "stil": "normal"
       }
      ],
@@ -5108,24 +5108,24 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "7... dxc3 8. Db3"
+       "text": "7... dxc3 8. Qb3"
       },
       {
        "art": "text",
-       "text": " – die Dame zielt mit dem Läufer auf f7, und ",
+       "text": " – the queen aims at f7 together with the bishop, and ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "9. Sxc3"
+       "text": "9. Nxc3"
       },
       {
        "art": "text",
-       "text": " bringt die nächste Figur ins Spiel. Wie gefährlich das wird, zeigt diese Rechnung nur zum Teil.",
+       "text": " brings the next piece into play. This calculation shows only part of how dangerous it becomes.",
        "stil": "normal"
       }
      ],
@@ -5133,11 +5133,11 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Keine Fesselung im Spiel.",
+       "text": "No pin involved.",
        "stil": "normal"
       }
      ],
@@ -5147,7 +5147,7 @@
    "rettung": [
     {
      "art": "text",
-     "text": "Den dritten Bauern stehen lassen und entwickeln. Am sichersten ist schon ",
+     "text": "Leave the third pawn alone and develop. Safest of all is ",
      "stil": "normal"
     },
     {
@@ -5156,16 +5156,16 @@
     },
     {
      "art": "text",
-     "text": ", die Lasker-Verteidigung aus Kapitel 3. Hat Schwarz schon auf c3 genommen, hält ",
+     "text": " right away, the Lasker Defense from Chapter 3. If Black has already taken on c3, ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Df6"
+     "text": "8... Qf6"
     },
     {
      "art": "text",
-     "text": " die Stellung zusammen.",
+     "text": " holds the position together.",
      "stil": "normal"
     }
    ],
@@ -5174,7 +5174,7 @@
     "text": [
      {
       "art": "text",
-      "text": "Weiß spielt nur normale Gambitzüge: rochieren, die Dame gegen f7, den Springer ins Spiel. Nimmt Schwarz den dritten Bauern nicht, steht Weiß im Evans-Gambit wie gewohnt.",
+      "text": "White plays only normal gambit moves: castling, the queen against f7, the knight into play. If Black does not take the third pawn, White has the usual Evans Gambit position.",
       "stil": "normal"
      }
     ]
@@ -5186,34 +5186,34 @@
    }
   },
   {
-   "name": "Halosar-Falle",
+   "name": "Halosar Trap",
    "wer": [
     {
      "art": "text",
-     "text": "Schwarz, mit ",
+     "text": "Black, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Lg4??"
+     "text": "7... Bg4??"
     },
     {
      "art": "text",
-     "text": " und endgültig mit ",
+     "text": " and finally with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Lxf3??"
+     "text": "8... Bxf3??"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.10",
+     "text": "Fig. 4.10",
      "abbildung": "4.10"
     },
     {
@@ -5226,20 +5226,20 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Nach ",
+       "text": "After ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "8. Sb5"
+       "text": "8. Nb5"
       },
       {
        "art": "text",
-       "text": " steht die weiße Dame f3 scheinbar kostenlos.",
+       "text": ", the white queen on f3 seems to be free for the taking.",
        "stil": "normal"
       }
      ],
@@ -5251,26 +5251,26 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum lässt Weiß seine ",
+       "text": "Why does White leave the ",
        "stil": "normal"
       },
       {
        "art": "text",
-       "text": "Dame",
+       "text": "queen",
        "stil": "kursiv"
       },
       {
        "art": "text",
-       "text": " stehen? Kein Spieler verschenkt die Dame ohne Grund. Nach ",
+       "text": " where it is? No player gives away the queen without a reason. After ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "8. Sb5"
+       "text": "8. Nb5"
       },
       {
        "art": "text",
-       "text": " verhindert die Frage das Matt, die Stellung rettet sie nicht mehr.",
+       "text": ", the question prevents the mate, but it can no longer save the position.",
        "stil": "normal"
       }
      ],
@@ -5278,24 +5278,24 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "7... Lg4 8. Sb5"
+       "text": "7... Bg4 8. Nb5"
       },
       {
        "art": "text",
-       "text": " – schon die erste weiße Antwort droht Matt auf c7, und nach ",
+       "text": " – White's very first reply threatens mate on c7, and after ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "8... Lxf3 9. Sxc7#"
+       "text": "8... Bxf3 9. Nxc7#"
       },
       {
        "art": "text",
-       "text": " ist es die zweite.",
+       "text": " it is the second.",
        "stil": "normal"
       }
      ],
@@ -5303,11 +5303,11 @@
     },
     {
      "kennung": "W3",
-     "titel": "König ohne Luft",
+     "titel": "King without air",
      "text": [
       {
        "art": "text",
-       "text": "Auf e7, f7 und f8 stehen eigene Figuren; gegen ein Schach von c7 bliebe dem König nur die offene d-Linie, und die beherrscht der Turm d1.",
+       "text": "Black's own pieces stand on e7, f7 and f8; against a check from c7, the king would only have the open d-file, and the rook on d1 controls it.",
        "stil": "normal"
       }
      ],
@@ -5316,12 +5316,17 @@
    ],
    "rettung": [
     {
+     "art": "text",
+     "text": "Do not play ",
+     "stil": "normal"
+    },
+    {
      "art": "zug",
-     "text": "7... Lg4??"
+     "text": "7... Bg4??"
     },
     {
      "art": "text",
-     "text": " nicht spielen: Mit ",
+     "text": ": with ",
      "stil": "normal"
     },
     {
@@ -5330,16 +5335,16 @@
     },
     {
      "art": "text",
-     "text": " nimmt Schwarz dem Springer das Feld b5 und behält zwei Mehrbauern. Noch einfacher bietet er schon mit ",
+     "text": ", Black takes the b5 square away from the knight and keeps two extra pawns. Even simpler, Black offers the queen trade with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Dg4"
+     "text": "6... Qg4"
     },
     {
      "art": "text",
-     "text": " den Damentausch an. Wer den zweiten Bauern gar nicht erst nehmen will, entwickelt mit ",
+     "text": " one move earlier. If you do not want to take the second pawn at all, develop with ",
      "stil": "normal"
     },
     {
@@ -5348,7 +5353,7 @@
     },
     {
      "art": "text",
-     "text": " wie in der Ziegler-Verteidigung aus Kapitel 3.",
+     "text": " as in the Ziegler Defense from Chapter 3.",
      "stil": "normal"
     }
    ],
@@ -5357,11 +5362,11 @@
     "text": [
      {
       "art": "zug",
-      "text": "5. Dxf3"
+      "text": "5. Qxf3"
      },
      {
       "art": "text",
-      "text": " opfert einen zweiten Bauern, und entwickelt Schwarz ruhig weiter, bekommt Weiß dafür zu wenig. Diese Fortsetzung gilt deshalb als zweifelhaft, und die Falle ist ihr bestes Argument.",
+      "text": " sacrifices a second pawn, and if Black just keeps developing calmly, White gets too little for it. So this continuation is considered dubious, and the trap is its best argument.",
       "stil": "normal"
      }
     ]
@@ -5373,25 +5378,25 @@
    }
   },
   {
-   "name": "Elefantenfalle",
+   "name": "Elephant Trap",
    "wer": [
     {
      "art": "text",
-     "text": "Weiß, mit ",
+     "text": "White, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Sxd5??"
+     "text": "6. Nxd5??"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.13",
+     "text": "Fig. 4.13",
      "abbildung": "4.13"
     },
     {
@@ -5404,11 +5409,11 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Der Bauer d5 scheint nur vom gefesselten Springer f6 gedeckt zu sein.",
+       "text": "The pawn on d5 seems to be defended only by the pinned knight on f6.",
        "stil": "normal"
       }
      ],
@@ -5416,11 +5421,11 @@
     },
     {
      "kennung": "W2",
-     "titel": "Gefährliche Linie",
+     "titel": "Dangerous line",
      "text": [
       {
        "art": "text",
-       "text": "Auf der Diagonale g5–d8 stehen Springer f6 und Dame d8 hintereinander.",
+       "text": "On the g5–d8 diagonal, the knight on f6 and the queen on d8 stand one behind the other.",
        "stil": "normal"
       }
      ],
@@ -5432,16 +5437,16 @@
      "text": [
       {
        "art": "text",
-       "text": "Schwarz hat ",
+       "text": "Black has played ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "4... Sbd7"
+       "text": "4... Nbd7"
       },
       {
        "art": "text",
-       "text": " gespielt und d5 nicht zusätzlich gedeckt. Warum lässt ein Gegner einen Zentrumsbauern so stehen?",
+       "text": " and has not given d5 extra protection. Why would an opponent leave a center pawn like that?",
        "stil": "normal"
       }
      ],
@@ -5449,15 +5454,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "6. Sxd5 Sxd5 7. Lxd8 Lb4+!"
+       "text": "6. Nxd5 Nxd5 7. Bxd8 Bb4+!"
       },
       {
        "art": "text",
-       "text": " – nach zwei schwarzen Antworten steht das Zwischenschach auf dem Brett.",
+       "text": " – after two black replies, the in-between check is on the board.",
        "stil": "normal"
       }
      ],
@@ -5465,11 +5470,11 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Hinter f6 steht die Dame, nicht der König: Die Fesselung ist relativ, der Springer darf schlagen.",
+       "text": "Behind f6 stands the queen, not the king: the pin is relative, and the knight may capture.",
        "stil": "normal"
       }
      ],
@@ -5483,16 +5488,16 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Sf3"
+     "text": "6. Nf3"
     },
     {
      "art": "text",
-     "text": ": Weiß entwickelt sich weiter wie im Abgelehnten Damengambit aus Kapitel 2 und lässt den Bauern d5 stehen.",
+     "text": ": White keeps developing as in the Queen's Gambit Declined from Chapter 2 and leaves the pawn on d5 alone.",
      "stil": "normal"
     }
    ],
@@ -5501,11 +5506,11 @@
     "text": [
      {
       "art": "zug",
-      "text": "4... Sbd7"
+      "text": "4... Nbd7"
      },
      {
       "art": "text",
-      "text": " ist ein gesunder Entwicklungszug. Tappt Weiß nicht hinein, hat Schwarz eine ganz normale Stellung.",
+      "text": " is a sound developing move. If White does not fall for it, Black has a perfectly normal position.",
       "stil": "normal"
      }
     ]
@@ -5517,34 +5522,34 @@
    }
   },
   {
-   "name": "Légal-Falle",
+   "name": "Légal Trap",
    "wer": [
     {
      "art": "text",
-     "text": "Schwarz, mit ",
+     "text": "Black, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Lxd1??"
+     "text": "6... Bxd1??"
     },
     {
      "art": "text",
-     "text": ". Der erste Schritt in die Falle war ",
+     "text": ". The first step into the trap was ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Lh5?"
+     "text": "5... Bh5?"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.17",
+     "text": "Fig. 4.17",
      "abbildung": "4.17"
     },
     {
@@ -5557,16 +5562,16 @@
    "zeilen": [
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Hinter f3 steht die Dame, nicht der König. Weiß darf die Fesselung jederzeit brechen – und tut es mit ",
+       "text": "Behind f3 stands the queen, not the king. White may break the pin at any time – and does so with ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "6. Sxe5!!"
+       "text": "6. Nxe5!!"
       },
       {
        "art": "text",
@@ -5578,20 +5583,20 @@
     },
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Nach ",
+       "text": "After ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "6. Sxe5"
+       "text": "6. Nxe5"
       },
       {
        "art": "text",
-       "text": " steht die weiße Dame d1 scheinbar kostenlos.",
+       "text": ", the white queen on d1 seems to be free for the taking.",
        "stil": "normal"
       }
      ],
@@ -5603,17 +5608,17 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum lässt Weiß seine ",
+       "text": "Why does White leave the ",
        "stil": "normal"
       },
       {
        "art": "text",
-       "text": "Dame",
+       "text": "queen",
        "stil": "kursiv"
       },
       {
        "art": "text",
-       "text": " stehen? Kein Spieler verschenkt die Dame ohne Grund.",
+       "text": " where it is? No player gives away the queen without a reason.",
        "stil": "normal"
       }
      ],
@@ -5621,15 +5626,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "6... Lxd1 7. Lxf7+ Ke7 8. Sd5#"
+       "text": "6... Bxd1 7. Bxf7+ Ke7 8. Nd5#"
       },
       {
        "art": "text",
-       "text": " – zwei weiße Antworten, und es ist Matt.",
+       "text": " – two white replies, and it is mate.",
        "stil": "normal"
       }
      ],
@@ -5637,20 +5642,20 @@
     },
     {
      "kennung": "W3",
-     "titel": "König ohne Luft",
+     "titel": "King without air",
      "text": [
       {
        "art": "text",
-       "text": "Nach ",
+       "text": "After ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "7. Lxf7+"
+       "text": "7. Bxf7+"
       },
       {
        "art": "text",
-       "text": " bleibt dem König nur e7, weil d8 und f8 besetzt sind und der Springer e5 d7 deckt.",
+       "text": ", the king only has e7, because d8 and f8 are occupied and the knight on e5 covers d7.",
        "stil": "normal"
       }
      ],
@@ -5660,47 +5665,47 @@
    "rettung": [
     {
      "art": "zug",
-     "text": "5... Lxf3"
+     "text": "5... Bxf3"
     },
     {
      "art": "text",
-     "text": " statt ",
+     "text": " instead of ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Lh5?"
+     "text": "5... Bh5?"
     },
     {
      "art": "text",
-     "text": ": Nach ",
+     "text": ": after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Dxf3"
+     "text": "6. Qxf3"
     },
     {
      "art": "text",
-     "text": " entwickelt Schwarz weiter, etwa mit ",
+     "text": ", Black keeps developing, for example with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Sf6"
+     "text": "6... Nf6"
     },
     {
      "art": "text",
-     "text": ". Ist es schon zu spät, gilt: ",
+     "text": ". If it is already too late, the rule is: do not play ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Lxd1??"
+     "text": "6... Bxd1??"
     },
     {
      "art": "text",
-     "text": " nicht spielen und den Schaden begrenzen (siehe Übung 22).",
+     "text": ", and limit the damage (see Exercise 22).",
      "stil": "normal"
     }
    ],
@@ -5709,11 +5714,11 @@
     "text": [
      {
       "art": "zug",
-      "text": "6. Sxe5!!"
+      "text": "6. Nxe5!!"
      },
      {
       "art": "text",
-      "text": " gewinnt auch dann einen Bauern, wenn Schwarz die Dame nicht nimmt (siehe die Lösung zu Übung 22). Weiß riskiert mit der Falle nichts.",
+      "text": " wins a pawn even if Black does not take the queen (see the solution to Exercise 22). White risks nothing with this trap.",
       "stil": "normal"
      }
     ]
@@ -5725,11 +5730,11 @@
    }
   },
   {
-   "name": "Kieninger-Falle",
+   "name": "Kieninger Trap",
    "wer": [
     {
      "art": "text",
-     "text": "Weiß, mit ",
+     "text": "White, with ",
      "stil": "normal"
     },
     {
@@ -5738,12 +5743,12 @@
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.21",
+     "text": "Fig. 4.21",
      "abbildung": "4.21"
     },
     {
@@ -5756,11 +5761,11 @@
    "zeilen": [
     {
      "kennung": "W3",
-     "titel": "König ohne Luft",
+     "titel": "King without air",
      "text": [
       {
        "art": "text",
-       "text": "Dame d1, Läufer f1, Springer d2 und die Bauern e2 und f2 umschließen den König e1.",
+       "text": "The queen on d1, the bishop on f1, the knight on d2 and the pawns on e2 and f2 box in the king on e1.",
        "stil": "normal"
       }
      ],
@@ -5768,11 +5773,11 @@
     },
     {
      "kennung": "W2",
-     "titel": "Gefährliche Linie",
+     "titel": "Dangerous line",
      "text": [
       {
        "art": "text",
-       "text": "Auf der e-Linie stehen die schwarze Dame e7 und der weiße König e1; dazwischen nur der Springer e5 und der Bauer e2.",
+       "text": "On the e-file stand the black queen on e7 and the white king on e1, with only the knight on e5 and the pawn on e2 in between.",
        "stil": "normal"
       }
      ],
@@ -5784,7 +5789,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum lässt Schwarz den Läufer b4 einfach stehen, statt ihn zurückzuziehen?",
+       "text": "Why does Black simply leave the bishop on b4 instead of retreating it?",
        "stil": "normal"
       }
      ],
@@ -5792,15 +5797,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "8. axb4 Sd3#"
+       "text": "8. axb4 Nd3#"
       },
       {
        "art": "text",
-       "text": " – schon die erste schwarze Antwort ist Matt.",
+       "text": " – Black's very first reply is mate.",
        "stil": "normal"
       }
      ],
@@ -5808,21 +5813,21 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Zweiter Teil der Frage: Entsteht durch meinen Zug eine ",
+       "text": "Second part of the question: does my move create a ",
        "stil": "normal"
       },
       {
        "art": "text",
-       "text": "zweite",
+       "text": "second",
        "stil": "kursiv"
       },
       {
        "art": "text",
-       "text": " Fesselung? Ja – der Bauer e2 wird an den König gefesselt.",
+       "text": " pin? Yes – the pawn on e2 becomes pinned to the king.",
        "stil": "normal"
       }
      ],
@@ -5836,7 +5841,7 @@
     },
     {
      "art": "text",
-     "text": ": Der König bekommt das Feld e2, und der Läufer f1 deckt d3.",
+     "text": ": the king gets the e2 square, and the bishop on f1 covers d3.",
      "stil": "normal"
     }
    ],
@@ -5845,11 +5850,11 @@
     "text": [
      {
       "art": "zug",
-      "text": "7... Sgxe5!"
+      "text": "7... Ngxe5!"
      },
      {
       "art": "text",
-      "text": " gewinnt den geopferten Bauern zurück. Genau das will Schwarz im Budapester Gambit ohnehin erreichen (Kapitel 3), und das Matt ist nur die Zugabe.",
+      "text": " wins back the sacrificed pawn. That is exactly what Black wants in the Budapest Gambit anyway (Chapter 3), and the mate is just a bonus.",
       "stil": "normal"
      }
     ]
@@ -5861,25 +5866,25 @@
    }
   },
   {
-   "name": "Benko-Falle",
+   "name": "Benko Trap",
    "wer": [
     {
      "art": "text",
-     "text": "Schwarz, der Gambitspieler, mit ",
+     "text": "Black, the gambit player, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Sxe4??"
+     "text": "7... Nxe4??"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.24",
+     "text": "Fig. 4.24",
      "abbildung": "4.24"
     },
     {
@@ -5892,11 +5897,11 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Der Bauer e4 ist ungedeckt, seit der Springer c3 nach b5 gezogen ist.",
+       "text": "The pawn on e4 has been undefended since the knight moved from c3 to b5.",
        "stil": "normal"
       }
      ],
@@ -5908,7 +5913,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum lässt Weiß seinen Zentrumsbauern ungedeckt stehen?",
+       "text": "Why does White leave the center pawn undefended?",
        "stil": "normal"
       }
      ],
@@ -5916,15 +5921,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "7... Sxe4 8. De2 Sf6 9. Sd6#"
+       "text": "7... Nxe4 8. Qe2 Nf6 9. Nd6#"
       },
       {
        "art": "text",
-       "text": " – schon die erste weiße Antwort greift den Springer auf der e-Linie an.",
+       "text": " – White's very first reply attacks the knight on the e-file.",
        "stil": "normal"
       }
      ],
@@ -5932,21 +5937,21 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Zweiter Teil der Frage: Entsteht durch meinen Zug eine ",
+       "text": "Second part of the question: does my move create a ",
        "stil": "normal"
       },
       {
        "art": "text",
-       "text": "zweite",
+       "text": "second",
        "stil": "kursiv"
       },
       {
        "art": "text",
-       "text": " Fesselung? Ja – zieht der Springer von e4 weg, ist der Bauer e7 an den König gefesselt.",
+       "text": " pin? Yes – if the knight moves away from e4, the pawn on e7 is pinned to the king.",
        "stil": "normal"
       }
      ],
@@ -5954,11 +5959,11 @@
     },
     {
      "kennung": "W3",
-     "titel": "König ohne Luft",
+     "titel": "King without air",
      "text": [
       {
        "art": "text",
-       "text": "Alle Nachbarfelder des Königs e8 sind von eigenen Figuren besetzt.",
+       "text": "All neighboring squares of the king on e8 are occupied by Black's own pieces.",
        "stil": "normal"
       }
      ],
@@ -5967,12 +5972,17 @@
    ],
    "rettung": [
     {
+     "art": "text",
+     "text": "Do not play ",
+     "stil": "normal"
+    },
+    {
      "art": "zug",
-     "text": "7... Sxe4??"
+     "text": "7... Nxe4??"
     },
     {
      "art": "text",
-     "text": " nicht spielen, sondern entwickeln, etwa mit ",
+     "text": "; develop instead, for example with ",
      "stil": "normal"
     },
     {
@@ -5990,20 +6000,20 @@
     "text": [
      {
       "art": "zug",
-      "text": "5. Sc3"
+      "text": "5. Nc3"
      },
      {
       "art": "text",
-      "text": " und ",
+      "text": " and ",
       "stil": "normal"
      },
      {
       "art": "zug",
-      "text": "7. Sb5"
+      "text": "7. Nb5"
      },
      {
       "art": "text",
-      "text": " sind normale Figurenzüge. Tappt Schwarz nicht hinein, hat Weiß eine gesunde Stellung mit starkem Zentrum.",
+      "text": " are normal piece moves. If Black does not fall for it, White has a healthy position with a strong center.",
       "stil": "normal"
      }
     ]
@@ -6015,11 +6025,11 @@
    }
   },
   {
-   "name": "Sibirische Falle",
+   "name": "Siberian Trap",
    "wer": [
     {
      "art": "text",
-     "text": "Weiß, mit ",
+     "text": "White, with ",
      "stil": "normal"
     },
     {
@@ -6028,21 +6038,21 @@
     },
     {
      "art": "text",
-     "text": " und endgültig mit ",
+     "text": " and finally with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10. Sxd4??"
+     "text": "10. Nxd4??"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.29",
+     "text": "Fig. 4.29",
      "abbildung": "4.29"
     },
     {
@@ -6055,11 +6065,11 @@
    "zeilen": [
     {
      "kennung": "W4",
-     "titel": "Doppelte Aufgabe",
+     "titel": "Double duty",
      "text": [
       {
        "art": "text",
-       "text": "Der Springer f3 ist der einzige wirksame Verteidiger von h2. Jede zweite Aufgabe überlastet ihn.",
+       "text": "The knight on f3 is the only effective defender of h2. Any second task overloads it.",
        "stil": "normal"
       }
      ],
@@ -6071,7 +6081,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum steht der Springer auf g4? Zusammen mit der Dame c7 zielt er auf h2.",
+       "text": "Why is the knight on g4? Together with the queen on c7, it aims at h2.",
        "stil": "normal"
       }
      ],
@@ -6079,15 +6089,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "9. h3 Sd4 10. Sxd4 Dh2#"
+       "text": "9. h3 Nd4 10. Nxd4 Qh2#"
       },
       {
        "art": "text",
-       "text": " – nach der zweiten schwarzen Antwort ist es Matt.",
+       "text": " – after Black's second reply it is mate.",
        "stil": "normal"
       }
      ],
@@ -6095,11 +6105,11 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Keine Fesselung im Spiel.",
+       "text": "No pin involved.",
        "stil": "normal"
       }
      ],
@@ -6109,7 +6119,7 @@
    "rettung": [
     {
      "art": "text",
-     "text": "Weiß muss zunächst die Drohung auf h2 ernst nehmen, statt den Springer g4 sofort mit ",
+     "text": "White first has to take the threat on h2 seriously instead of driving the knight on g4 away at once with ",
      "stil": "normal"
     },
     {
@@ -6118,34 +6128,34 @@
     },
     {
      "art": "text",
-     "text": " zu vertreiben. Richtig ist ",
+     "text": ". The right line is ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. Sb5 Db8 10. h3"
+     "text": "9. Nb5 Qb8 10. h3"
     },
     {
      "art": "text",
-     "text": ": Der Springer b5 deckt jetzt d4, und ",
+     "text": ": the knight on b5 now covers d4, and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Sd4"
+     "text": "...Nd4"
     },
     {
      "art": "text",
-     "text": " verliert eine Figur. Ist ",
+     "text": " loses a piece. Once ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9... Sd4!"
+     "text": "9... Nd4!"
     },
     {
      "art": "text",
-     "text": " erst einmal auf dem Brett, darf der Springer f3 auf keinen Fall schlagen.",
+     "text": " is on the board, the knight on f3 must on no account capture.",
      "stil": "normal"
     }
    ],
@@ -6154,11 +6164,11 @@
     "text": [
      {
       "art": "zug",
-      "text": "8... Sg4"
+      "text": "8... Ng4"
      },
      {
       "art": "text",
-      "text": " ist ein aktiver Zug, der Druck auf h2 macht. Schwarz stellt die Falle mit Zügen, die ohnehin zu seinem Plan passen.",
+      "text": " is an active move that puts pressure on h2. Black sets the trap with moves that fit Black's plan anyway.",
       "stil": "normal"
      }
     ]
@@ -6170,25 +6180,25 @@
    }
   },
   {
-   "name": "Arche-Noah-Falle",
+   "name": "Noah's Ark Trap",
    "wer": [
     {
      "art": "text",
-     "text": "Weiß, mit ",
+     "text": "White, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Dxd4??"
+     "text": "8. Qxd4??"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.34",
+     "text": "Fig. 4.34",
      "abbildung": "4.34"
     },
     {
@@ -6201,11 +6211,11 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Der Bauer d4 steht mitten im Zentrum und scheint zu hängen.",
+       "text": "The pawn on d4 stands right in the center and seems to be hanging.",
        "stil": "normal"
       }
      ],
@@ -6217,7 +6227,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum hat Schwarz so getauscht, dass der Bauer auf d4 landet? Weil die Dame dort Ziel für ",
+       "text": "Why did Black trade in such a way that the pawn lands on d4? Because there the queen becomes a target for ",
        "stil": "normal"
       },
       {
@@ -6226,7 +6236,7 @@
       },
       {
        "art": "text",
-       "text": " und ",
+       "text": " and ",
        "stil": "normal"
       },
       {
@@ -6235,7 +6245,7 @@
       },
       {
        "art": "text",
-       "text": " wird.",
+       "text": ".",
        "stil": "normal"
       }
      ],
@@ -6243,15 +6253,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "8. Dxd4 c5 9. Dd5 Le6"
+       "text": "8. Qxd4 c5 9. Qd5 Be6"
       },
       {
        "art": "text",
-       "text": " – zwei Antworten zeigen, dass die Dame gejagt wird. Das Ende mit ",
+       "text": " – two replies show that the queen is being hunted. The end with ",
        "stil": "normal"
       },
       {
@@ -6260,7 +6270,7 @@
       },
       {
        "art": "text",
-       "text": " liegt allerdings noch weiter weg.",
+       "text": ", however, lies further ahead.",
        "stil": "normal"
       }
      ],
@@ -6268,11 +6278,11 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Keine Fesselung im Spiel.",
+       "text": "No pin involved.",
        "stil": "normal"
       }
      ],
@@ -6281,21 +6291,26 @@
    ],
    "rettung": [
     {
-     "art": "zug",
-     "text": "8. Dxd4??"
-    },
-    {
      "art": "text",
-     "text": " nicht spielen, da der Bauer d4 nicht wegläuft und Weiß ihn mit ",
+     "text": "Do not play ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Ld5"
+     "text": "8. Qxd4??"
     },
     {
      "art": "text",
-     "text": " zurückholt: Der Läufer greift den Turm a8 an und verlässt zugleich das gefährdete Feld b3.",
+     "text": ", since the pawn on d4 is not going anywhere and White wins it back with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Bd5"
+    },
+    {
+     "art": "text",
+     "text": ": the bishop attacks the rook on a8 and at the same time leaves the endangered b3 square.",
      "stil": "normal"
     }
    ],
@@ -6304,11 +6319,11 @@
     "text": [
      {
       "art": "zug",
-      "text": "6... Sxd4"
+      "text": "6... Nxd4"
      },
      {
       "art": "text",
-      "text": " bringt Schwarz den Bauern d4 ein. Nimmt Weiß nicht mit der Dame, hat Schwarz dennoch nichts verloren.",
+      "text": " wins Black the pawn on d4. If White does not take with the queen, Black has still lost nothing.",
       "stil": "normal"
      }
     ]
@@ -6320,11 +6335,11 @@
    }
   },
   {
-   "name": "Abgelehntes Königsgambit",
+   "name": "King's Gambit Declined",
    "wer": [
     {
      "art": "text",
-     "text": "Weiß, der Gambitspieler, mit ",
+     "text": "White, the gambit player, with ",
      "stil": "normal"
     },
     {
@@ -6333,12 +6348,12 @@
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.38",
+     "text": "Fig. 4.38",
      "abbildung": "4.38"
     },
     {
@@ -6351,11 +6366,11 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Der Bauer e5 ist ungedeckt, und der Bauer f4 kann ihn schlagen.",
+       "text": "The pawn on e5 is undefended, and the pawn on f4 can capture it.",
        "stil": "normal"
       }
      ],
@@ -6367,7 +6382,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum lässt Schwarz e5 einfach stehen? Weil nach dem Schlagen die Diagonale h4–e1 offen ist.",
+       "text": "Why does Black simply leave e5 where it is? Because after the capture, the h4–e1 diagonal is open.",
        "stil": "normal"
       }
      ],
@@ -6375,15 +6390,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "3. fxe5 Dh4+ 4. g3 Dxe4+"
+       "text": "3. fxe5 Qh4+ 4. g3 Qxe4+"
       },
       {
        "art": "text",
-       "text": " – nach der zweiten schwarzen Antwort hängt der Turm h1.",
+       "text": " – after Black's second reply, the rook on h1 is hanging.",
        "stil": "normal"
       }
      ],
@@ -6391,11 +6406,11 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Keine Fesselung im Spiel.",
+       "text": "No pin involved.",
        "stil": "normal"
       }
      ],
@@ -6405,20 +6420,20 @@
    "rettung": [
     {
      "art": "zug",
-     "text": "3. Sf3"
+     "text": "3. Nf3"
     },
     {
      "art": "text",
-     "text": ": Der Springer entwickelt sich und deckt das Feld h4, sodass ",
+     "text": ": the knight develops and covers the h4 square, so that ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Dh4+"
+     "text": "...Qh4+"
     },
     {
      "art": "text",
-     "text": " gar nicht mehr geht.",
+     "text": " is no longer possible at all.",
      "stil": "normal"
     }
    ],
@@ -6427,11 +6442,11 @@
     "text": [
      {
       "art": "zug",
-      "text": "2... Lc5"
+      "text": "2... Bc5"
      },
      {
       "art": "text",
-      "text": " ist die klassische Ablehnung des Königsgambits: Der Läufer steht aktiv und verhindert die kurze Rochade. Tappt Weiß nicht hinein, hat Schwarz eine gesunde Stellung.",
+      "text": " is the classical way to decline the King's Gambit: the bishop stands actively and prevents kingside castling. If White does not fall for it, Black has a healthy position.",
       "stil": "normal"
      }
     ]
@@ -6443,34 +6458,34 @@
    }
   },
   {
-   "name": "Blackburne-Shilling-Gambit",
+   "name": "Blackburne Shilling Gambit",
    "wer": [
     {
      "art": "text",
-     "text": "Weiß, mit ",
+     "text": "White, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxe5?"
+     "text": "4. Nxe5?"
     },
     {
      "art": "text",
-     "text": " und endgültig mit ",
+     "text": " and finally with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Sxf7??"
+     "text": "5. Nxf7??"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.41",
+     "text": "Fig. 4.41",
      "abbildung": "4.41"
     },
     {
@@ -6483,11 +6498,11 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Der Bauer e5 ist ungedeckt, seit der Springer c6 nach d4 gezogen ist.",
+       "text": "The pawn on e5 has been undefended since the knight moved from c6 to d4.",
        "stil": "normal"
       }
      ],
@@ -6499,7 +6514,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum zieht Schwarz den Springer weg, der e5 deckt? Weil die Dame danach nach g5 will.",
+       "text": "Why does Black move away the knight that defends e5? Because the queen then wants to go to g5.",
        "stil": "normal"
       }
      ],
@@ -6507,15 +6522,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "4. Sxe5 Dg5!"
+       "text": "4. Nxe5 Qg5!"
       },
       {
        "art": "text",
-       "text": " – schon die erste Antwort zeigt den Doppelangriff auf g2 und e5.",
+       "text": " – the very first reply shows the double attack on g2 and e5.",
        "stil": "normal"
       }
      ],
@@ -6523,20 +6538,20 @@
     },
     {
      "kennung": "W3",
-     "titel": "König ohne Luft",
+     "titel": "King without air",
      "text": [
       {
        "art": "text",
-       "text": "Erst später wichtig: Nach ",
+       "text": "Only important later: after ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "7. Le2"
+       "text": "7. Be2"
       },
       {
        "art": "text",
-       "text": " ist der König von eigenen Figuren umstellt.",
+       "text": ", the king is hemmed in by White's own pieces.",
        "stil": "normal"
       }
      ],
@@ -6546,16 +6561,16 @@
    "rettung": [
     {
      "art": "text",
-     "text": "Nicht auf e5 schlagen. Stattdessen tauscht Weiß den vorgeprellten Springer: ",
+     "text": "Do not capture on e5. Instead, White trades off the knight that has rushed forward: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxd4 exd4"
+     "text": "4. Nxd4 exd4"
     },
     {
      "art": "text",
-     "text": ". Danach rochiert Weiß mit ",
+     "text": ". Then White castles with ",
      "stil": "normal"
     },
     {
@@ -6564,7 +6579,7 @@
     },
     {
      "art": "text",
-     "text": " oder spielt ",
+     "text": " or plays ",
      "stil": "normal"
     },
     {
@@ -6573,7 +6588,7 @@
     },
     {
      "art": "text",
-     "text": ". Er ist weiter entwickelt, und der schwarze Bauer d4 ist ein Ziel.",
+     "text": ". White is further developed, and the black pawn on d4 is a target.",
      "stil": "normal"
     }
    ],
@@ -6582,11 +6597,11 @@
     "text": [
      {
       "art": "zug",
-      "text": "3... Sd4?!"
+      "text": "3... Nd4?!"
      },
      {
       "art": "text",
-      "text": " lebt nur vom Fehler des Gegners: Spielt Weiß richtig, steht Schwarz schlechter. Er hat einen Springer zum zweiten Mal gezogen und ihn tauschen lassen (bei der Zeit aus Kapitel 3 zählt jede Figur nur einmal, egal wie oft sie zieht). Genau so eine Falle solltest du selbst nicht stellen.",
+      "text": " lives only on the opponent's mistake: if White plays correctly, Black stands worse. Black has moved a knight for the second time and let it be traded off (when counting time as in Chapter 3, each piece counts only once, no matter how often it moves). This is exactly the kind of trap you should not set yourself.",
       "stil": "normal"
      }
     ]
@@ -6598,20 +6613,20 @@
    }
   },
   {
-   "name": "Damenfalle im Dänischen Gambit",
+   "name": "Queen trap in the Danish Gambit",
    "wer": [
     {
      "art": "text",
-     "text": "Schwarz, mit ",
+     "text": "Black, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Dxg2??"
+     "text": "6... Qxg2??"
     },
     {
      "art": "text",
-     "text": " und endgültig mit ",
+     "text": " and finally with ",
      "stil": "normal"
     },
     {
@@ -6620,12 +6635,12 @@
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.45",
+     "text": "Fig. 4.45",
      "abbildung": "4.45"
     },
     {
@@ -6638,11 +6653,11 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Erst steht der Bauer g2 zum Schlagen bereit, dann der Läufer f7.",
+       "text": "First the pawn on g2 is there for the taking, then the bishop on f7.",
        "stil": "normal"
       }
      ],
@@ -6654,7 +6669,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Die Dame h3 hat keinen Verteidiger; ein Angriff mit Schach trifft sie.",
+       "text": "The queen on h3 has no defender; an attack with check hits it.",
        "stil": "normal"
       }
      ],
@@ -6666,7 +6681,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum lässt Weiß den Bauern g2 ungedeckt? Weil der Turm über g1 ins Spiel kommt und die Dame an den Rand treibt.",
+       "text": "Why does White leave the pawn on g2 undefended? Because the rook comes into play via g1 and drives the queen to the edge.",
        "stil": "normal"
       }
      ],
@@ -6674,15 +6689,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "6... Dxg2 7. Tg1 Dh3 8. Lxf7+"
+       "text": "6... Qxg2 7. Rg1 Qh3 8. Bxf7+"
       },
       {
        "art": "text",
-       "text": " – nach zwei weißen Antworten schlägt der Läufer mit Schach ein, und die Dame h3 ist ungedeckt.",
+       "text": " – after two white replies, the bishop strikes with check, and the queen on h3 is undefended.",
        "stil": "normal"
       }
      ],
@@ -6690,11 +6705,11 @@
     },
     {
      "kennung": "F3",
-     "titel": "Fesselungs-Check",
+     "titel": "Pin check",
      "text": [
       {
        "art": "text",
-       "text": "Der Läufer b2 fesselt den Bauern g7 an den ungedeckten Turm h8 (relativ): Zieht g7, fällt h8.",
+       "text": "The bishop on b2 pins the pawn on g7 to the undefended rook on h8 (relative): if g7 moves, h8 falls.",
        "stil": "normal"
       }
      ],
@@ -6704,16 +6719,16 @@
    "rettung": [
     {
      "art": "text",
-     "text": "Den Bauern g2 stehen lassen und entwickeln, etwa mit ",
+     "text": "Leave the pawn on g2 alone and develop, for example with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Lb4+"
+     "text": "6... Bb4+"
     },
     {
      "art": "text",
-     "text": ". Besser geht Schwarz gar nicht erst mit der Dame auf Bauernjagd, sondern gibt mit ",
+     "text": ". Better still, Black does not go pawn hunting with the queen at all, but gives back a pawn with ",
      "stil": "normal"
     },
     {
@@ -6722,7 +6737,7 @@
     },
     {
      "art": "text",
-     "text": " einen Bauern zurück (Kapitel 3).",
+     "text": " (Chapter 3).",
      "stil": "normal"
     }
    ],
@@ -6731,20 +6746,20 @@
     "text": [
      {
       "art": "zug",
-      "text": "6. Sf3"
+      "text": "6. Nf3"
      },
      {
       "art": "text",
-      "text": " und ",
+      "text": " and ",
       "stil": "normal"
      },
      {
       "art": "zug",
-      "text": "7. Tg1"
+      "text": "7. Rg1"
      },
      {
       "art": "text",
-      "text": " sind Entwicklungszüge, die die Dame angreifen. Lässt Schwarz den Bauern g2 stehen, hat Weiß nichts verloren.",
+      "text": " are developing moves that attack the queen. If Black leaves the pawn on g2 alone, White has lost nothing.",
       "stil": "normal"
      }
     ]
@@ -6756,25 +6771,25 @@
    }
   },
   {
-   "name": "Damenfang auf b2",
+   "name": "Trapping the queen on b2",
    "wer": [
     {
      "art": "text",
-     "text": "Schwarz, mit ",
+     "text": "Black, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Dxb2??"
+     "text": "8... Qxb2??"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.48",
+     "text": "Fig. 4.48",
      "abbildung": "4.48"
     },
     {
@@ -6787,11 +6802,11 @@
    "zeilen": [
     {
      "kennung": "W5",
-     "titel": "Geschenk",
+     "titel": "Gift",
      "text": [
       {
        "art": "text",
-       "text": "Der Bauer b2 steht völlig ungedeckt im feindlichen Lager.",
+       "text": "The pawn on b2 stands completely undefended in the enemy camp.",
        "stil": "normal"
       }
      ],
@@ -6803,7 +6818,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Warum verteidigt Weiß b2 nicht mit der Dame, sondern zieht den a-Bauern?",
+       "text": "Why does White not defend b2 with the queen, but move the a-pawn instead?",
        "stil": "normal"
       }
      ],
@@ -6811,15 +6826,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "8... Dxb2 9. Sa4"
+       "text": "8... Qxb2 9. Na4"
       },
       {
        "art": "text",
-       "text": " – und die Dame hat kein einziges Fluchtfeld mehr.",
+       "text": " – and the queen has not a single escape square left.",
        "stil": "normal"
       }
      ],
@@ -6829,12 +6844,12 @@
    "rettung": [
     {
      "art": "text",
-     "text": "Den Bauern stehen lassen und entwickeln, etwa mit ",
+     "text": "Leave the pawn alone and develop, for example with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Sc6"
+     "text": "8... Nc6"
     },
     {
      "art": "text",
@@ -6843,16 +6858,16 @@
     },
     {
      "art": "zug",
-     "text": "8... Sbd7"
+     "text": "8... Nbd7"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Le7"
+     "text": "8... Be7"
     },
     {
      "art": "text",
@@ -6865,7 +6880,7 @@
     "text": [
      {
       "art": "text",
-      "text": "Der Zug ",
+      "text": "The move ",
       "stil": "normal"
      },
      {
@@ -6874,7 +6889,7 @@
      },
      {
       "art": "text",
-      "text": " deckt das Feld b4 und bereitet eigene Aktionen vor. Fällt Schwarz nicht darauf herein, hat Weiß eine normale, gute Stellung.",
+      "text": " covers the b4 square and prepares White's own actions. If Black does not fall for it, White has a normal, good position.",
       "stil": "normal"
      }
     ]
@@ -6886,34 +6901,34 @@
    }
   },
   {
-   "name": "Springergabel auf c7",
+   "name": "Knight fork on c7",
    "wer": [
     {
      "art": "text",
-     "text": "Schwarz, mit ",
+     "text": "Black, with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Dg6??"
+     "text": "5... Qg6??"
     },
     {
      "art": "text",
-     "text": ". Der erste Fehler war ",
+     "text": ". The first mistake was ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3... Df6?"
+     "text": "3... Qf6?"
     },
     {
      "art": "text",
-     "text": ". Stopp-Moment: ",
+     "text": ". Stop moment: ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 4.51",
+     "text": "Fig. 4.51",
      "abbildung": "4.51"
     },
     {
@@ -6930,7 +6945,7 @@
      "text": [
       {
        "art": "text",
-       "text": "Der Bauer c7 und der Turm a8 dahinter haben keinen Verteidiger, seit die Dame d8 verlassen hat.",
+       "text": "The pawn on c7 and the rook on a8 behind it have had no defender since the queen left d8.",
        "stil": "normal"
       }
      ],
@@ -6938,15 +6953,15 @@
     },
     {
      "kennung": "F2",
-     "titel": "Zwei Antworten weiter",
+     "titel": "Two replies ahead",
      "text": [
       {
        "art": "zug",
-       "text": "5... Dg6 6. Sxc7+"
+       "text": "5... Qg6 6. Nxc7+"
       },
       {
        "art": "text",
-       "text": " – schon die erste weiße Antwort gabelt König und Turm.",
+       "text": " – White's very first reply forks king and rook.",
        "stil": "normal"
       }
      ],
@@ -6956,11 +6971,11 @@
    "rettung": [
     {
      "art": "zug",
-     "text": "5... Dd8"
+     "text": "5... Qd8"
     },
     {
      "art": "text",
-     "text": ": Nur von d8 aus deckt die Dame das Feld c7. Besser bringt Schwarz sie gar nicht erst so früh heraus (Kapitel 1).",
+     "text": ": only from d8 does the queen cover the c7 square. Better still, Black does not bring it out so early in the first place (Chapter 1).",
      "stil": "normal"
     }
    ],
@@ -6969,20 +6984,20 @@
     "text": [
      {
       "art": "zug",
-      "text": "4. Sc3"
+      "text": "4. Nc3"
      },
      {
       "art": "text",
-      "text": " und ",
+      "text": " and ",
       "stil": "normal"
      },
      {
       "art": "zug",
-      "text": "5. Sd5"
+      "text": "5. Nd5"
      },
      {
       "art": "text",
-      "text": " sind Entwicklungszüge mit Tempo. Geht die Dame nach d8 zurück, hat Weiß zwei Züge gewonnen.",
+      "text": " are developing moves with tempo. If the queen goes back to d8, White has gained two moves.",
       "stil": "normal"
      }
     ]
@@ -6999,7 +7014,7 @@
    "id": "k04-a1",
    "kapitel": 4,
    "abschnitt": "4.4",
-   "titel": "Die Damengambit-Klammerfalle",
+   "titel": "The Queen's Gambit clamp trap",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -7147,7 +7162,7 @@
    "id": "k04-a12",
    "kapitel": 4,
    "abschnitt": "4.5",
-   "titel": "Die Elefantenfalle im Abgelehnten Damengambit",
+   "titel": "The Elephant Trap in the Queen's Gambit Declined",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -7393,7 +7408,7 @@
    "id": "k04-a17",
    "kapitel": 4,
    "abschnitt": "4.5",
-   "titel": "Das Seekadettenmatt (Légal-Falle)",
+   "titel": "Légal's Mate (the Légal Trap)",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -7611,7 +7626,7 @@
    "id": "k04-a20",
    "kapitel": 4,
    "abschnitt": "4.6",
-   "titel": "Die Kieninger-Falle im Budapester Gambit",
+   "titel": "The Kieninger Trap in the Budapest Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -7802,7 +7817,7 @@
    "id": "k04-a23",
    "kapitel": 4,
    "abschnitt": "4.6",
-   "titel": "Die Benko-Falle im Wolga-Gambit",
+   "titel": "The Benko Trap in the Volga Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -8020,7 +8035,7 @@
    "id": "k04-a27",
    "kapitel": 4,
    "abschnitt": "4.7",
-   "titel": "Die Sibirische Falle",
+   "titel": "The Siberian Trap",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -8302,7 +8317,7 @@
    "id": "k04-a32",
    "kapitel": 4,
    "abschnitt": "4.8",
-   "titel": "Die Arche-Noah-Falle",
+   "titel": "Noah's Ark Trap",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -8626,7 +8641,7 @@
    "id": "k04-a38",
    "kapitel": 4,
    "abschnitt": "4.9",
-   "titel": "Die Falle im Abgelehnten Königsgambit",
+   "titel": "The trap in the King's Gambit Declined",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -8978,7 +8993,7 @@
    "id": "k04-a4",
    "kapitel": 4,
    "abschnitt": "4.4",
-   "titel": "Die kompromittierte Verteidigung im Evans-Gambit",
+   "titel": "The Compromised Defense in the Evans Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -9298,7 +9313,7 @@
    "id": "k04-a41",
    "kapitel": 4,
    "abschnitt": "4.9",
-   "titel": "Das Blackburne-Shilling-Gambit",
+   "titel": "The Blackburne Shilling Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -9520,7 +9535,7 @@
    "id": "k04-a48",
    "kapitel": 4,
    "abschnitt": "4.10",
-   "titel": "Muster 1: Damenfang auf b2",
+   "titel": "Pattern 1: Trapping the queen on b2",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -9767,7 +9782,7 @@
    "id": "k04-a51",
    "kapitel": 4,
    "abschnitt": "4.10",
-   "titel": "Muster 3: Die Springergabel auf c7",
+   "titel": "Pattern 3: The knight fork on c7",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -9929,7 +9944,7 @@
    "id": "k04-a54",
    "kapitel": 4,
    "abschnitt": "Übung 19",
-   "titel": "Und wenn du selbst eine Falle stellst?",
+   "titel": "And what if you set a trap yourself?",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -10120,7 +10135,7 @@
    "id": "k04-a55",
    "kapitel": 4,
    "abschnitt": "Übung 20",
-   "titel": "Und wenn du selbst eine Falle stellst?",
+   "titel": "And what if you set a trap yourself?",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -10309,7 +10324,7 @@
    "id": "k04-a9",
    "kapitel": 4,
    "abschnitt": "4.4",
-   "titel": "Die Halosar-Falle im Blackmar-Diemer-Gambit",
+   "titel": "The Halosar Trap in the Blackmar-Diemer Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {

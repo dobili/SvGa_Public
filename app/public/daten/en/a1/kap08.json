@@ -6,52 +6,52 @@
   {
    "nummer": "8.1",
    "label": "sec:k8-uebergang",
-   "titel": "Wann beginnt das Endspiel, und wann führst du es herbei?"
+   "titel": "When does the endgame begin, and when do you bring it about?"
   },
   {
    "nummer": "8.2",
    "label": "sec:k8-regeln",
-   "titel": "Dein Werkzeug: die sechs goldenen Endspielregeln"
+   "titel": "Your tool: the six golden endgame rules"
   },
   {
    "nummer": "8.3",
    "label": "",
-   "titel": "Elementarmatt: Dame und König gegen König"
+   "titel": "Basic mate: queen and king against king"
   },
   {
    "nummer": "8.4",
    "label": "",
-   "titel": "Elementarmatt: Turm und König gegen König"
+   "titel": "Basic mate: rook and king against king"
   },
   {
    "nummer": "8.5",
    "label": "sec:k8-kpk",
-   "titel": "König und Bauer gegen König"
+   "titel": "King and pawn against king"
   },
   {
    "nummer": "8.6",
    "label": "sec:k8-schluesselfelder",
-   "titel": "Schlüsselfelder: Wohin der König will"
+   "titel": "Key squares: where the king wants to go"
   },
   {
    "nummer": "8.7",
    "label": "sec:k8-freibauern",
-   "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+   "titel": "Passed pawns: let them run, create them, use them"
   },
   {
    "nummer": "8.8",
    "label": "",
-   "titel": "Triangulation: Das Zugrecht übertragen"
+   "titel": "Triangulation: handing over the move"
   },
   {
    "nummer": "8.9",
    "label": "",
-   "titel": "Das Reserve-Tempo"
+   "titel": "The spare tempo"
   },
   {
    "nummer": "8.10",
    "label": "",
-   "titel": "Rückblick: Endspiel-Fundament"
+   "titel": "Review: endgame foundations"
   }
  ],
  "abbildungen": [
@@ -62,7 +62,7 @@
    "abschnitt": {
     "nummer": "8.1",
     "label": "sec:k8-uebergang",
-    "titel": "Wann beginnt das Endspiel, und wann führst du es herbei?"
+    "titel": "When does the endgame begin, and when do you bring it about?"
    },
    "unterabschnitt": null,
    "fen": "2rr2k1/pp3ppp/4b3/3p4/8/4PN2/PP3PPP/2RR2K1 w - - 0 1",
@@ -87,7 +87,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Die Damen sind getauscht, jede Seite hat noch zwei Türme und eine Leichtfigur. Gold: ",
+     "text": "White to move. The queens have been traded; each side still has two rooks and a minor piece. Gold: ",
      "stil": "normal"
     },
     {
@@ -96,7 +96,7 @@
     },
     {
      "art": "text",
-     "text": " bringt den König Richtung Zentrum. Grau: sein weiterer Weg über e2 und das Feld d4 vor dem Isolani.",
+     "text": " brings the king toward the center. Gray: its further route via e2 and the square d4 in front of the isolani.",
      "stil": "normal"
     }
    ],
@@ -119,14 +119,14 @@
     "fragen": [
      {
       "zug": "1. Kf1",
-      "frage": "Warum zieht Weiß den König, obwohl noch Türme am Brett stehen?",
+      "frage": "Why does White move the king even though rooks are still on the board?",
       "antworten": [
-       "Weiß bereitet die lange Rochade vor.",
-       "Ohne Damen steht der König sicher genug und wird im Zentrum zu einer starken Figur.",
-       "Der König soll den Turm d1 decken."
+       "White is preparing to castle queenside.",
+       "Without queens the king is safe enough and becomes a strong piece in the center.",
+       "The king is meant to defend the rook on d1."
       ],
       "richtig": 1,
-      "erklaerung": "Mit dem Damentausch beginnt das Endspiel. Jetzt zählt jeder Zug, den der König früher im Zentrum ist."
+      "erklaerung": "The endgame begins with the queen trade. Now every move counts by which the king reaches the center sooner."
      }
     ]
    }
@@ -138,7 +138,7 @@
    "abschnitt": {
     "nummer": "8.1",
     "label": "sec:k8-uebergang",
-    "titel": "Wann beginnt das Endspiel, und wann führst du es herbei?"
+    "titel": "When does the endgame begin, and when do you bring it about?"
    },
    "unterabschnitt": null,
    "fen": "6k1/pp1q1ppp/1n6/8/4N3/2P5/PP3PPP/3Q2K1 w - - 0 1",
@@ -166,16 +166,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Damen und Springer stehen noch, Weiß hat einen Bauern mehr. Gold: ",
+     "text": "White to move. Queens and knights are still on the board, and White is a pawn up. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxd7"
+     "text": "1. Qxd7"
     },
     {
      "art": "text",
-     "text": " tauscht die Damen. Grau: die Mehrheit am Damenflügel, drei Bauern gegen zwei.",
+     "text": " trades the queens. Gray: the queenside majority, three pawns against two.",
      "stil": "normal"
     }
    ],
@@ -198,14 +198,14 @@
     "fragen": [
      {
       "zug": "1. Qxd7",
-      "frage": "Warum tauscht Weiß die Damen?",
+      "frage": "Why does White trade the queens?",
       "antworten": [
-       "Nach dem Tausch gewinnt Weiß sofort den Springer b6.",
-       "Mit Damen am Brett ist ein Mehrbauer mehr wert als ohne.",
-       "Die stärkere Seite tauscht Figuren: Im Endspiel wiegt der Mehrbauer schwerer."
+       "After the trade White immediately wins the knight on b6.",
+       "With queens on the board an extra pawn is worth more than without.",
+       "The stronger side trades pieces: in the endgame the extra pawn weighs more."
       ],
       "richtig": 2,
-      "erklaerung": "Je weniger Figuren stehen, desto deutlicher zählt ein Bauer mehr. Am Damenflügel kann Weiß später einen Freibauern bilden."
+      "erklaerung": "The fewer pieces there are, the more clearly an extra pawn counts. On the queenside White can later create a passed pawn."
      }
     ]
    }
@@ -217,7 +217,7 @@
    "abschnitt": {
     "nummer": "8.1",
     "label": "sec:k8-uebergang",
-    "titel": "Wann beginnt das Endspiel, und wann führst du es herbei?"
+    "titel": "When does the endgame begin, and when do you bring it about?"
    },
    "unterabschnitt": null,
    "fen": "8/pp1nkppp/8/8/4NP2/2P1K3/PP4PP/8 b - - 4 4",
@@ -231,16 +231,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxd7 Sxd7 2. f4 Kf8 3. Kf2 Ke7 4. Ke3"
+     "text": "1. Qxd7 Nxd7 2. f4 Kf8 3. Kf2 Ke7 4. Ke3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: Ohne Damen steht der weiße König sicher im Zentrum.",
+     "text": ", Black to move. Gold: without queens the white king stands safely in the center.",
      "stil": "normal"
     }
    ],
@@ -274,7 +274,7 @@
    "abschnitt": {
     "nummer": "8.3",
     "label": "",
-    "titel": "Elementarmatt: Dame und König gegen König"
+    "titel": "Basic mate: queen and king against king"
    },
    "unterabschnitt": null,
    "fen": "8/4k3/2Q5/8/3K4/8/8/8 w - - 0 1",
@@ -294,7 +294,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Der Kasten, Weiß am Zug. Goldene Pfeile: Die Dame sperrt die 6. Reihe und die c-Linie.",
+     "text": "The box, White to move. Gold arrows: the queen blocks the 6th rank and the c-file.",
      "stil": "normal"
     }
    ],
@@ -320,7 +320,7 @@
    "abschnitt": {
     "nummer": "8.3",
     "label": "",
-    "titel": "Elementarmatt: Dame und König gegen König"
+    "titel": "Basic mate: queen and king against king"
    },
    "unterabschnitt": null,
    "fen": "8/6k1/2Q5/5K2/8/8/8/8 w - - 4 3",
@@ -335,7 +335,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -344,7 +344,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grauer Pfeil: Jetzt verkleinert die Dame den Kasten.",
+     "text": ", White to move. Gray arrow: now the queen makes the box smaller.",
      "stil": "normal"
     }
    ],
@@ -372,14 +372,14 @@
     "fragen": [
      {
       "zug": "3. Qc7+",
-      "frage": "Warum verkleinert die Dame den Kasten erst jetzt?",
+      "frage": "Why does the queen make the box smaller only now?",
       "antworten": [
-       "Erst jetzt steht der weiße König nahe genug, um zu helfen.",
-       "Vorher war der Kasten schon klein genug.",
-       "Vorher hätte jeder Damenzug Patt gesetzt."
+       "Only now is the white king close enough to help.",
+       "Before, the box was already small enough.",
+       "Before, every queen move would have given stalemate."
       ],
       "richtig": 0,
-      "erklaerung": "Die Dame allein setzt nicht matt. Der König rückt zuerst nach, dann schrumpft der Kasten Schritt für Schritt."
+      "erklaerung": "The queen alone does not give mate. The king moves up first, then the box shrinks step by step."
      }
     ]
    }
@@ -391,7 +391,7 @@
    "abschnitt": {
     "nummer": "8.3",
     "label": "",
-    "titel": "Elementarmatt: Dame und König gegen König"
+    "titel": "Basic mate: queen and king against king"
    },
    "unterabschnitt": null,
    "fen": "7k/2Q5/5K2/8/8/8/8/8 w - - 8 5",
@@ -406,25 +406,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Dc7+ Kg8 4. Kf6 Kh8"
+     "text": "3. Qc7+ Kg8 4. Kf6 Kh8"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Dg7#"
+     "text": "5. Qg7#"
     },
     {
      "art": "text",
-     "text": " setzt matt.",
+     "text": " is mate.",
      "stil": "normal"
     }
    ],
@@ -456,14 +456,14 @@
     "fragen": [
      {
       "zug": "5. Qg7#",
-      "frage": "Warum ist Dg7 Matt und nicht nur Schach?",
+      "frage": "Why is Qg7 mate and not just check?",
       "antworten": [
-       "Der König h8 darf eine Dame nie schlagen.",
-       "Der König h8 steht in der Ecke, und dort ist jedes Schach matt.",
-       "Der König f6 deckt die Dame, und dem König h8 bleibt kein freies Feld."
+       "The king on h8 may never capture a queen.",
+       "The king on h8 is in the corner, and there every check is mate.",
+       "The king on f6 defends the queen, and the king on h8 has no free square left."
       ],
       "richtig": 2,
-      "erklaerung": "Ein Matt am Rand braucht beide Figuren: Die Dame gibt Schach, der König schützt sie vor dem Schlagen."
+      "erklaerung": "A mate on the edge needs both pieces: the queen gives check, the king protects it from being captured."
      }
     ]
    }
@@ -475,7 +475,7 @@
    "abschnitt": {
     "nummer": "8.3",
     "label": "",
-    "titel": "Elementarmatt: Dame und König gegen König"
+    "titel": "Basic mate: queen and king against king"
    },
    "unterabschnitt": null,
    "fen": "7k/8/6Q1/8/8/8/8/K7 b - - 0 1",
@@ -497,7 +497,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Patt, Schwarz am Zug. Der König steht nicht im Schach und hat keinen Zug. Rot: Die Dame nimmt ihm g7, g8 und h7.",
+     "text": "Stalemate, Black to move. The king is not in check and has no move. Red: the queen takes g7, g8 and h7 away from it.",
      "stil": "normal"
     }
    ],
@@ -622,7 +622,7 @@
    "abschnitt": {
     "nummer": "8.3",
     "label": "",
-    "titel": "Elementarmatt: Dame und König gegen König"
+    "titel": "Basic mate: queen and king against king"
    },
    "unterabschnitt": null,
    "fen": "7k/6Q1/6K1/8/8/8/8/8 b - - 0 1",
@@ -642,7 +642,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Matt. Rot: Die Dame gibt Schach und beherrscht g8 und h7. Grau: Der König g6 deckt sie.",
+     "text": "Mate. Red: the queen gives check and controls g8 and h7. Gray: the king on g6 defends it.",
      "stil": "normal"
     }
    ],
@@ -749,7 +749,7 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
    "unterabschnitt": null,
    "fen": "8/3k4/R7/4K3/8/8/8/8 b - - 0 1",
@@ -764,7 +764,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Der Kasten beim Turmmatt, Schwarz am Zug. Goldener Pfeil: Der Turm a6 sperrt die 6. Reihe; der schwarze König bleibt auf der 7. und 8. Reihe.",
+     "text": "The box in the rook mate, Black to move. Gold arrow: the rook on a6 blocks the 6th rank; the black king stays on the 7th and 8th ranks.",
      "stil": "normal"
     }
    ],
@@ -863,7 +863,7 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
    "unterabschnitt": null,
    "fen": "4k2R/8/4K3/8/8/8/8/8 b - - 0 1",
@@ -891,7 +891,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Matt. Rot: Der Turm gibt Schach und beherrscht die 8. Reihe. Grau: Der König e6 nimmt d7, e7 und f7.",
+     "text": "Mate. Red: the rook gives check and controls the 8th rank. Gray: the king on e6 takes d7, e7 and f7.",
      "stil": "normal"
     }
    ],
@@ -1008,7 +1008,7 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
    "unterabschnitt": null,
    "fen": "2k5/4R3/3K4/8/8/8/8/8 w - - 0 1",
@@ -1023,16 +1023,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Abwartezug, Weiß am Zug. Goldener Pfeil: ",
+     "text": "Waiting move, White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Th7"
+     "text": "1. Rh7"
     },
     {
      "art": "text",
-     "text": " überlässt Schwarz den Zug. Dem König bleiben nur d8 und b8.",
+     "text": " hands the move to Black. The king has only d8 and b8 left.",
      "stil": "normal"
     }
    ],
@@ -1054,14 +1054,14 @@
     "fragen": [
      {
       "zug": "1. Rh7",
-      "frage": "Warum zieht der Turm von e7 nach h7?",
+      "frage": "Why does the rook move from e7 to h7?",
       "antworten": [
-       "Er gibt so Schach.",
-       "Er wartet ab: Der Kasten bleibt gleich, und Schwarz muss ziehen.",
-       "Er greift den König von hinten an."
+       "That way it gives check.",
+       "It waits: the box stays the same, and Black has to move.",
+       "It attacks the king from behind."
       ],
       "richtig": 1,
-      "erklaerung": "Der Turm bleibt auf der 7. Reihe und weit weg vom König. Nach Kd8 setzt Th8 matt, nach Kb8 rückt der weiße König nach."
+      "erklaerung": "The rook stays on the 7th rank and far away from the king. After Kd8, Rh8 is mate; after Kb8, the white king moves up."
      }
     ]
    }
@@ -1073,7 +1073,7 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
    "unterabschnitt": null,
    "fen": "k7/7R/2K5/8/8/8/8/8 w - - 4 3",
@@ -1088,16 +1088,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Th7 Kb8 2. Kc6 Ka8"
+     "text": "1. Rh7 Kb8 2. Kc6 Ka8"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grauer Pfeil: Der König folgt mit ",
+     "text": ", White to move. Gray arrow: the king follows with ",
      "stil": "normal"
     },
     {
@@ -1106,7 +1106,7 @@
     },
     {
      "art": "text",
-     "text": "; nach ",
+     "text": "; after ",
      "stil": "normal"
     },
     {
@@ -1115,16 +1115,16 @@
     },
     {
      "art": "text",
-     "text": " setzt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Th8#"
+     "text": "4. Rh8#"
     },
     {
      "art": "text",
-     "text": " matt.",
+     "text": " is mate.",
      "stil": "normal"
     }
    ],
@@ -1151,14 +1151,14 @@
     "fragen": [
      {
       "zug": "3. Kb6",
-      "frage": "Warum zieht Weiß den König nach b6?",
+      "frage": "Why does White move the king to b6?",
       "antworten": [
-       "Er rückt nach: Nach Kb8 stehen sich die Könige gegenüber, und Th8 setzt matt.",
-       "Er setzt Schwarz patt.",
-       "Er schützt den Turm h7 vor dem schwarzen König."
+       "It moves up: after Kb8 the kings face each other, and Rh8 is mate.",
+       "It stalemates Black.",
+       "It protects the rook on h7 from the black king."
       ],
       "richtig": 0,
-      "erklaerung": "Der weiße König stellt sich dem schwarzen gegenüber. Dann reicht ein Turmschach auf der 8. Reihe zum Matt."
+      "erklaerung": "The white king places itself opposite the black one. Then a rook check on the 8th rank is enough for mate."
      }
     ]
    }
@@ -1170,9 +1170,9 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
-   "unterabschnitt": "Aus der Brettmitte: Reihe für Reihe",
+   "unterabschnitt": "From the middle of the board: rank by rank",
    "fen": "8/8/8/4k3/8/8/8/R3K3 w - - 0 1",
    "pfeile": [
     {
@@ -1185,16 +1185,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldener Pfeil: ",
+     "text": "White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Ta4"
+     "text": "1. Ra4"
     },
     {
      "art": "text",
-     "text": " sperrt die 4. Reihe.",
+     "text": " blocks the 4th rank.",
      "stil": "normal"
     }
    ],
@@ -1220,9 +1220,9 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
-   "unterabschnitt": "Aus der Brettmitte: Reihe für Reihe",
+   "unterabschnitt": "From the middle of the board: rank by rank",
    "fen": "8/8/8/2k5/R7/8/3K4/8 w - - 4 3",
    "pfeile": [
     {
@@ -1235,16 +1235,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Ta4 Kd5 2. Kd2 Kc5"
+     "text": "1. Ra4 Kd5 2. Kd2 Kc5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grauer Pfeil: Der König rückt mit ",
+     "text": ", White to move. Gray arrow: the king moves up with ",
      "stil": "normal"
     },
     {
@@ -1253,7 +1253,7 @@
     },
     {
      "art": "text",
-     "text": " nach.",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1284,9 +1284,9 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
-   "unterabschnitt": "Aus der Brettmitte: Reihe für Reihe",
+   "unterabschnitt": "From the middle of the board: rank by rank",
    "fen": "8/8/8/k7/7R/2K5/8/8 w - - 8 5",
    "pfeile": [
     {
@@ -1308,16 +1308,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Kc3 Kb5 4. Th4 Ka5"
+     "text": "3. Kc3 Kb5 4. Rh4 Ka5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
@@ -1326,7 +1326,7 @@
     },
     {
      "art": "text",
-     "text": ". Grau: a4 und b4 sperrt der Turm; dem König bleiben a6, b6 und b5.",
+     "text": ". Gray: a4 and b4 are blocked by the rook; the king has a6, b6 and b5 left.",
      "stil": "normal"
     }
    ],
@@ -1361,9 +1361,9 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
-   "unterabschnitt": "Zwei Läufer und ein Ausblick",
+   "unterabschnitt": "Two bishops and an outlook",
    "fen": "6k1/8/5K2/4B3/4B3/8/8/8 w - - 0 1",
    "pfeile": [
     {
@@ -1405,16 +1405,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Grau: die Felder, die dem schwarzen König bleiben. Goldener Pfeil: ",
+     "text": "White to move. Gray: the squares left to the black king. Gold arrow: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Ld6"
+     "text": "1. Bd6"
     },
     {
      "art": "text",
-     "text": " nimmt f8.",
+     "text": " takes away f8.",
      "stil": "normal"
     }
    ],
@@ -1440,9 +1440,9 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
-   "unterabschnitt": "Zwei Läufer und ein Ausblick",
+   "unterabschnitt": "Two bishops and an outlook",
    "fen": "6k1/8/3B2K1/8/4B3/8/8/8 w - - 0 3",
    "pfeile": [
     {
@@ -1455,25 +1455,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Ld6 Kh8 2. Kg6 Kg8"
+     "text": "1. Bd6 Kh8 2. Kg6 Kg8"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Ld5+"
+     "text": "3. Bd5+"
     },
     {
      "art": "text",
-     "text": " treibt den König nach h8.",
+     "text": " drives the king to h8.",
      "stil": "normal"
     }
    ],
@@ -1504,9 +1504,9 @@
    "abschnitt": {
     "nummer": "8.4",
     "label": "",
-    "titel": "Elementarmatt: Turm und König gegen König"
+    "titel": "Basic mate: rook and king against king"
    },
-   "unterabschnitt": "Zwei Läufer und ein Ausblick",
+   "unterabschnitt": "Two bishops and an outlook",
    "fen": "7k/8/6K1/3BB3/8/8/8/8 b - - 0 4",
    "pfeile": [
     {
@@ -1524,16 +1524,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Ld5+ Kh8 4. Le5#"
+     "text": "3. Bd5+ Kh8 4. Be5#"
     },
     {
      "art": "text",
-     "text": ". Rot: Der Läufer e5 gibt Schach. Grau: Der Läufer d5 beherrscht g8. Der König g6 nimmt g7 und h7.",
+     "text": ". Red: the bishop on e5 gives check. Gray: the bishop on d5 controls g8. The king on g6 takes g7 and h7.",
      "stil": "normal"
     }
    ],
@@ -1567,7 +1567,7 @@
    "abschnitt": {
     "nummer": "8.5",
     "label": "sec:k8-kpk",
-    "titel": "König und Bauer gegen König"
+    "titel": "King and pawn against king"
    },
    "unterabschnitt": null,
    "fen": "8/8/4k3/8/4K3/4P3/8/8 w - - 0 1",
@@ -1589,7 +1589,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Direkte Opposition, Weiß am Zug: remis. Gold: die Felder d5, e5 und f5, auf die der weiße König will.",
+     "text": "Direct opposition, White to move: draw. Gold: the squares d5, e5 and f5 that the white king wants to reach.",
      "stil": "normal"
     }
    ],
@@ -1612,14 +1612,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist die Stellung remis, obwohl Weiß einen Bauern mehr hat?",
+      "frage": "Why is the position a draw even though White is a pawn up?",
       "antworten": [
-       "Der Bauer e3 ist ein Randbauer.",
-       "Weiß ist patt.",
-       "Schwarz hat die Opposition: Weiß am Zug muss weichen und erreicht kein Schlüsselfeld."
+       "The pawn on e3 is a rook's pawn.",
+       "White is stalemated.",
+       "Black has the opposition: White, to move, has to give way and reaches no key square."
       ],
       "richtig": 2,
-      "erklaerung": "Der weiße König will auf d5, e5 oder f5. Solange Schwarz die Opposition hält, bleibt ihm dieser Weg versperrt."
+      "erklaerung": "The white king wants to go to d5, e5 or f5. As long as Black keeps the opposition, this route stays blocked for it."
      }
     ]
    }
@@ -1631,7 +1631,7 @@
    "abschnitt": {
     "nummer": "8.5",
     "label": "sec:k8-kpk",
-    "titel": "König und Bauer gegen König"
+    "titel": "King and pawn against king"
    },
    "unterabschnitt": null,
    "fen": "8/4k3/8/5K2/8/4P3/8/8 w - - 0 3",
@@ -1646,7 +1646,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1655,7 +1655,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
@@ -1664,7 +1664,7 @@
     },
     {
      "art": "text",
-     "text": " nimmt die Opposition.",
+     "text": " takes the opposition.",
      "stil": "normal"
     }
    ],
@@ -1691,14 +1691,14 @@
     "fragen": [
      {
       "zug": "3. Ke5",
-      "frage": "Warum zieht Weiß 3. Ke5 und nicht den Bauern?",
+      "frage": "Why does White play 3. Ke5 and not the pawn?",
       "antworten": [
-       "Mit Ke5 nimmt Weiß die Opposition, und Schwarz muss den Weg nach vorn freigeben.",
-       "Der Bauer e3 ist gefesselt.",
-       "Der Bauer darf erst ziehen, wenn der König auf der 6. Reihe steht."
+       "With Ke5 White takes the opposition, and Black has to clear the way forward.",
+       "The pawn on e3 is pinned.",
+       "The pawn may only move once the king stands on the 6th rank."
       ],
       "richtig": 0,
-      "erklaerung": "Erst der König, dann der Bauer. Schon 3. e4 würde hier den Gewinn verschenken."
+      "erklaerung": "First the king, then the pawn. Even 3. e4 would throw away the win here."
      }
     ]
    }
@@ -1710,7 +1710,7 @@
    "abschnitt": {
     "nummer": "8.5",
     "label": "sec:k8-kpk",
-    "titel": "König und Bauer gegen König"
+    "titel": "King and pawn against king"
    },
    "unterabschnitt": null,
    "fen": "4k3/8/3K4/4P3/8/8/8/8 w - - 0 7",
@@ -1725,7 +1725,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1734,7 +1734,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
@@ -1743,7 +1743,7 @@
     },
     {
      "art": "text",
-     "text": " nimmt erneut die Opposition.",
+     "text": " takes the opposition again.",
      "stil": "normal"
     }
    ],
@@ -1781,7 +1781,7 @@
    "abschnitt": {
     "nummer": "8.5",
     "label": "sec:k8-kpk",
-    "titel": "König und Bauer gegen König"
+    "titel": "King and pawn against king"
    },
    "unterabschnitt": null,
    "fen": "8/3K1k2/8/4P3/8/8/8/8 w - - 0 9",
@@ -1809,7 +1809,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1818,7 +1818,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Der König d7 deckt e6, e7 und e8. Goldener Pfeil: Der Bauer läuft durch.",
+     "text": ", White to move. Gray: the king on d7 covers e6, e7 and e8. Gold arrow: the pawn runs through.",
      "stil": "normal"
     }
    ],
@@ -1860,9 +1860,9 @@
    "abschnitt": {
     "nummer": "8.5",
     "label": "sec:k8-kpk",
-    "titel": "König und Bauer gegen König"
+    "titel": "King and pawn against king"
    },
-   "unterabschnitt": "Fern- und Diagonalopposition",
+   "unterabschnitt": "Distant and diagonal opposition",
    "fen": "8/5k2/8/8/8/8/3P2K1/8 w - - 0 1",
    "pfeile": [
     {
@@ -1875,7 +1875,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Fernopposition, Weiß am Zug. Goldener Pfeil: Nur ",
+     "text": "Distant opposition, White to move. Gold arrow: only ",
      "stil": "normal"
     },
     {
@@ -1884,7 +1884,7 @@
     },
     {
      "art": "text",
-     "text": " gewinnt. Die Könige stehen dann auf der f-Linie mit drei Feldern dazwischen, und Schwarz ist am Zug.",
+     "text": " wins. The kings then stand on the f-file with three squares between them, and Black is to move.",
      "stil": "normal"
     }
    ],
@@ -1906,14 +1906,14 @@
     "fragen": [
      {
       "zug": "1. Kf3",
-      "frage": "Warum gewinnt nur 1. Kf3?",
+      "frage": "Why does only 1. Kf3 win?",
       "antworten": [
-       "Er deckt den Bauern d2.",
-       "Er nimmt die Fernopposition und kommt den Schlüsselfeldern näher.",
-       "Er bedroht den König f7 direkt."
+       "It defends the pawn on d2.",
+       "It takes the distant opposition and gets closer to the key squares.",
+       "It threatens the king on f7 directly."
       ],
       "richtig": 1,
-      "erklaerung": "Nach Kf3 ist Schwarz am Zug und muss weichen. Der weiße König folgt nach e4 und erreicht die Schlüsselfelder."
+      "erklaerung": "After Kf3 Black is to move and has to give way. The white king follows to e4 and reaches the key squares."
      }
     ]
    }
@@ -1925,9 +1925,9 @@
    "abschnitt": {
     "nummer": "8.5",
     "label": "sec:k8-kpk",
-    "titel": "König und Bauer gegen König"
+    "titel": "King and pawn against king"
    },
-   "unterabschnitt": "Fern- und Diagonalopposition",
+   "unterabschnitt": "Distant and diagonal opposition",
    "fen": "8/8/8/5k2/8/8/2K1P3/8 w - - 0 1",
    "pfeile": [
     {
@@ -1940,7 +1940,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Diagonalopposition, Weiß am Zug. Goldener Pfeil: Nur ",
+     "text": "Diagonal opposition, White to move. Gold arrow: only ",
      "stil": "normal"
     },
     {
@@ -1949,7 +1949,7 @@
     },
     {
      "art": "text",
-     "text": " gewinnt. Die Könige d3 und f5 stehen diagonal mit einem Feld (e4) dazwischen.",
+     "text": " wins. The kings on d3 and f5 stand diagonally with one square (e4) between them.",
      "stil": "normal"
     }
    ],
@@ -1971,14 +1971,14 @@
     "fragen": [
      {
       "zug": "1. Kd3",
-      "frage": "Was macht 1. Kd3 zum einzigen Gewinnzug?",
+      "frage": "What makes 1. Kd3 the only winning move?",
       "antworten": [
-       "Er stellt die Könige auf dieselbe Linie.",
-       "Er nimmt die Diagonalopposition: Nur e4 liegt zwischen den Königen.",
-       "Er greift den König f5 an."
+       "It puts the kings on the same file.",
+       "It takes the diagonal opposition: only e4 lies between the kings.",
+       "It attacks the king on f5."
       ],
       "richtig": 1,
-      "erklaerung": "Auch schräg gilt: Wer nach seinem Zug ein Feld zwischen den Königen lässt, zwingt den Gegner zum Weichen."
+      "erklaerung": "Diagonally the same holds: whoever leaves one square between the kings after their move forces the opponent to give way."
      }
     ]
    }
@@ -1990,7 +1990,7 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
    "unterabschnitt": null,
    "fen": "4k3/8/8/8/4P3/8/4K3/8 w - - 0 1",
@@ -2012,7 +2012,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bauer auf der 4. Reihe, Weiß am Zug. Gold: Die Schlüsselfelder liegen zwei Reihen davor. Die Stellung selbst ist remis, gleich wer am Zug ist: Der schwarze König kommt rechtzeitig vor den Bauern.",
+     "text": "Pawn on the 4th rank, White to move. Gold: the key squares lie two ranks ahead of it. The position itself is a draw, no matter who is to move: the black king gets in front of the pawn in time.",
      "stil": "normal"
     }
    ],
@@ -2114,7 +2114,7 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
    "unterabschnitt": null,
    "fen": "2k5/8/8/4P3/8/2K5/8/8 w - - 0 1",
@@ -2148,7 +2148,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bauer auf der 5. Reihe, Weiß am Zug. Gold: Die Schlüsselfelder liegen eine und zwei Reihen davor. Auch diese Stellung ist remis: Der schwarze König erreicht die Felder vor dem Bauern, bevor der weiße ein Schlüsselfeld besetzt.",
+     "text": "Pawn on the 5th rank, White to move. Gold: the key squares lie one and two ranks ahead of it. This position is a draw too: the black king reaches the squares in front of the pawn before the white king occupies a key square.",
      "stil": "normal"
     }
    ],
@@ -2298,7 +2298,7 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
    "unterabschnitt": null,
    "fen": "8/8/3k4/8/8/3K4/3P4/8 w - - 0 1",
@@ -2320,7 +2320,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt: Kc4, Kd4 oder Ke4 besetzt sofort ein Schlüsselfeld (gold).",
+     "text": "White to move wins: Kc4, Kd4 or Ke4 occupies a key square (gold) at once.",
      "stil": "normal"
     }
    ],
@@ -2342,14 +2342,14 @@
     "fragen": [
      {
       "zug": "1. Kc4",
-      "frage": "Warum gewinnt 1. Kc4?",
+      "frage": "Why does 1. Kc4 win?",
       "antworten": [
-       "Er nimmt die Opposition.",
-       "Er greift den König d6 an.",
-       "Der König steht auf einem Schlüsselfeld des Bauern d2, ganz gleich, wer danach zieht."
+       "It takes the opposition.",
+       "It attacks the king on d6.",
+       "The king stands on a key square of the pawn on d2, no matter who moves next."
       ],
       "richtig": 2,
-      "erklaerung": "Ein Schlüsselfeld ist mehr wert als die Opposition: Steht der König dort, gewinnt er, solange der Bauer nicht verloren geht."
+      "erklaerung": "A key square is worth more than the opposition: once the king stands there, it wins as long as the pawn is not lost."
      }
     ]
    }
@@ -2361,7 +2361,7 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
    "unterabschnitt": null,
    "fen": "8/8/3k4/8/8/3K4/3P4/8 b - - 0 1",
@@ -2389,7 +2389,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug hält remis, aber nur mit ",
+     "text": "Black to move holds the draw, but only with ",
      "stil": "normal"
     },
     {
@@ -2398,7 +2398,7 @@
     },
     {
      "art": "text",
-     "text": " (goldener Pfeil, Opposition): Jetzt erreicht der weiße König kein Schlüsselfeld (gold) mehr.",
+     "text": " (gold arrow, opposition): now the white king no longer reaches a key square (gold).",
      "stil": "normal"
     }
    ],
@@ -2420,14 +2420,14 @@
     "fragen": [
      {
       "zug": "1... Kd5",
-      "frage": "Warum hält nur 1... Kd5 das Remis?",
+      "frage": "Why does only 1... Kd5 hold the draw?",
       "antworten": [
-       "Mit der direkten Opposition versperrt er dem weißen König die Schlüsselfelder.",
-       "Er greift den Bauern d2 an.",
-       "Er zwingt Weiß, sofort mit dem Bauern zu ziehen."
+       "With the direct opposition it blocks the white king from the key squares.",
+       "It attacks the pawn on d2.",
+       "It forces White to move the pawn at once."
       ],
       "richtig": 0,
-      "erklaerung": "Dieselbe Stellung wie eben, nur mit Schwarz am Zug: Jetzt bekommt Schwarz die Opposition, und das reicht zum Remis."
+      "erklaerung": "The same position as before, only with Black to move: now Black gets the opposition, and that is enough for a draw."
      }
     ]
    }
@@ -2439,7 +2439,7 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
    "unterabschnitt": null,
    "fen": "4k3/8/3KP3/8/8/8/8/8 w - - 0 1",
@@ -2454,7 +2454,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt nur mit ",
+     "text": "White to move wins only with ",
      "stil": "normal"
     },
     {
@@ -2463,7 +2463,7 @@
     },
     {
      "art": "text",
-     "text": " (goldener Pfeil); danach folgen Kd7 und die Umwandlung.",
+     "text": " (gold arrow); Kd7 and promotion follow.",
      "stil": "normal"
     }
    ],
@@ -2485,14 +2485,14 @@
     "fragen": [
      {
       "zug": "1. e7",
-      "frage": "Warum gewinnt hier ein Bauernzug und kein Königszug?",
+      "frage": "Why does a pawn move win here and not a king move?",
       "antworten": [
-       "Der Bauer gibt Schach und gewinnt so ein Tempo.",
-       "Der Bauer kommt ohne Schach auf die 7. Reihe, und der weiße König deckt danach e8.",
-       "Jeder Königszug wäre Patt."
+       "The pawn gives check and so gains a tempo.",
+       "The pawn reaches the 7th rank without check, and the white king then covers e8.",
+       "Every king move would be stalemate."
       ],
       "richtig": 1,
-      "erklaerung": "Steht der Bauer auf der 6. Reihe, zählt, ob er ohne Schach weiterzieht. Dann verdrängt der König den Verteidiger vom Umwandlungsfeld."
+      "erklaerung": "With the pawn on the 6th rank, what counts is whether it advances without check. Then the king drives the defender away from the promotion square."
      }
     ]
    }
@@ -2504,7 +2504,7 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
    "unterabschnitt": null,
    "fen": "4k3/8/3KP3/8/8/8/8/8 b - - 0 1",
@@ -2519,7 +2519,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug hält mit ",
+     "text": "Black to move holds with ",
      "stil": "normal"
     },
     {
@@ -2528,7 +2528,7 @@
     },
     {
      "art": "text",
-     "text": " (goldener Pfeil): Nach ",
+     "text": " (gold arrow): after ",
      "stil": "normal"
     },
     {
@@ -2537,7 +2537,7 @@
     },
     {
      "art": "text",
-     "text": " ist Schwarz patt.",
+     "text": ", Black is stalemated.",
      "stil": "normal"
     }
    ],
@@ -2559,14 +2559,14 @@
     "fragen": [
      {
       "zug": "1... Kd8",
-      "frage": "Was erreicht Schwarz mit 1... Kd8?",
+      "frage": "What does Black achieve with 1... Kd8?",
       "antworten": [
-       "Er greift den Bauern e6 an.",
-       "Er bereitet den Weg nach c7 vor, um den Bauern von hinten zu holen.",
-       "Nach 2. e7+ Ke8 3. Ke6 hat Schwarz keinen Zug mehr, steht aber nicht im Schach."
+       "It attacks the pawn on e6.",
+       "It prepares the route to c7 to win the pawn from behind.",
+       "After 2. e7+ Ke8 3. Ke6, Black has no move left but is not in check."
       ],
       "richtig": 2,
-      "erklaerung": "Weil der Bauer mit Schach auf die 7. Reihe kommt, muss der König in die Ecke vor dem Bauern. Am Ende hat Schwarz keinen Zug mehr."
+      "erklaerung": "Because the pawn reaches the 7th rank with check, the king has to go into the corner in front of the pawn. In the end Black has no move left."
      }
     ]
    }
@@ -2578,9 +2578,9 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
-   "unterabschnitt": "Die Randbauer-Ausnahme",
+   "unterabschnitt": "The rook's pawn exception",
    "fen": "k7/P7/1K6/8/8/8/8/8 w - - 0 1",
    "pfeile": [],
    "felder": [
@@ -2600,7 +2600,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Der schwarze König steht in der Ecke, Weiß am Zug. Grau: Der König b6 beherrscht a7 und b7. Rot: Das Umwandlungsfeld a8 bleibt besetzt. ",
+     "text": "The black king is in the corner, White to move. Gray: the king on b6 controls a7 and b7. Red: the promotion square a8 stays occupied. ",
      "stil": "normal"
     },
     {
@@ -2609,7 +2609,7 @@
     },
     {
      "art": "text",
-     "text": " setzt patt, jeder andere Königszug gibt den Bauern a7 auf.",
+     "text": " gives stalemate; every other king move gives up the pawn on a7.",
      "stil": "normal"
     }
    ],
@@ -2629,14 +2629,14 @@
     "fragen": [
      {
       "zug": "1. Ka6",
-      "frage": "Warum bringt 1. Ka6 Weiß nichts?",
+      "frage": "Why does 1. Ka6 get White nowhere?",
       "antworten": [
-       "Schwarz ist patt: Der König steht nicht im Schach und hat keinen Zug.",
-       "Schwarz schlägt danach den Bauern a7.",
-       "Schwarz muss danach mit dem König nach b8."
+       "Black is stalemated: the king is not in check and has no move.",
+       "Black then captures the pawn on a7.",
+       "Black then has to move the king to b8."
       ],
       "richtig": 0,
-      "erklaerung": "Beim Randbauern fehlt der Platz, um den König aus der Ecke zu drängen. Deshalb hält der Verteidiger oft remis."
+      "erklaerung": "With a rook's pawn there is no room to drive the king out of the corner. That is why the defender often holds the draw."
      }
     ]
    }
@@ -2648,9 +2648,9 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
-   "unterabschnitt": "Regel 4 am Brett: der Tausch ins Bauernendspiel",
+   "unterabschnitt": "Rule 4 on the board: the trade into a pawn endgame",
    "fen": "5r2/4k3/8/8/3PKR2/8/8/8 w - - 0 1",
    "pfeile": [
     {
@@ -2676,16 +2676,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldener Pfeil: der Tausch ",
+     "text": "White to move. Gold arrow: the trade ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Txf8"
+     "text": "1. Rxf8"
     },
     {
      "art": "text",
-     "text": ". Goldene Felder: die Schlüsselfelder des Bauern d4.",
+     "text": ". Gold squares: the key squares of the pawn on d4.",
      "stil": "normal"
     }
    ],
@@ -2708,14 +2708,14 @@
     "fragen": [
      {
       "zug": "1. Rxf8",
-      "frage": "Warum tauscht Weiß die Türme?",
+      "frage": "Why does White trade the rooks?",
       "antworten": [
-       "Der Turm f4 ist gefesselt.",
-       "Ohne Türme kann Schwarz den Bauern d4 nicht mehr angreifen.",
-       "Im Bauernendspiel kommt der weiße König vor dem schwarzen an die Schlüsselfelder."
+       "The rook on f4 is pinned.",
+       "Without rooks Black can no longer attack the pawn on d4.",
+       "In the pawn endgame the white king gets to the key squares before the black one."
       ],
       "richtig": 2,
-      "erklaerung": "Regel 4 sagt: Figuren tauschen, wenn du vorn bist. Vorher rechnest du nach, ob das Bauernendspiel gewonnen ist."
+      "erklaerung": "Rule 4 says: trade pieces when you are ahead. Beforehand you calculate whether the pawn endgame is won."
      }
     ]
    }
@@ -2727,9 +2727,9 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
-   "unterabschnitt": "Regel 4 am Brett: der Tausch ins Bauernendspiel",
+   "unterabschnitt": "Rule 4 on the board: the trade into a pawn endgame",
    "fen": "8/4k3/8/3K4/3P4/8/8/8 w - - 2 3",
    "pfeile": [
     {
@@ -2755,16 +2755,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Txf8 Kxf8 2. Kd5 Ke7"
+     "text": "1. Rxf8 Kxf8 2. Kd5 Ke7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
@@ -2773,7 +2773,7 @@
     },
     {
      "art": "text",
-     "text": " besetzt ein Schlüsselfeld (gold).",
+     "text": " occupies a key square (gold).",
      "stil": "normal"
     }
    ],
@@ -2804,9 +2804,9 @@
    "abschnitt": {
     "nummer": "8.6",
     "label": "sec:k8-schluesselfelder",
-    "titel": "Schlüsselfelder: Wohin der König will"
+    "titel": "Key squares: where the king wants to go"
    },
-   "unterabschnitt": "Regel 4 am Brett: der Tausch ins Bauernendspiel",
+   "unterabschnitt": "Rule 4 on the board: the trade into a pawn endgame",
    "fen": "8/8/3k4/8/3P1K2/8/8/8 w - - 1 3",
    "pfeile": [],
    "felder": [
@@ -2826,26 +2826,26 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz war in ",
+     "text": "In ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 8.32",
+     "text": "Fig. 8.32",
      "abbildung": "8.32"
     },
     {
      "art": "text",
-     "text": " am Zug und hat getauscht. Nach ",
+     "text": " Black was to move and traded. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Txf4+ 2. Kxf4 Kd6"
+     "text": "1... Rxf4+ 2. Kxf4 Kd6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: Der schwarze König versperrt die Schlüsselfelder, remis.",
+     "text": ", White to move. Gold: the black king blocks the key squares, draw.",
      "stil": "normal"
     }
    ],
@@ -2875,9 +2875,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Holt der König ihn ein? Die Regel des Quadrats",
+   "unterabschnitt": "Can the king catch it? The rule of the square",
    "fen": "8/8/8/6k1/1P6/8/8/7K w - - 0 1",
    "pfeile": [
     {
@@ -2905,7 +2905,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Quadrat des Bauern b4, Weiß am Zug. Goldener Pfeil: der Weg des Bauern. Graue Pfeile: die übrigen Seiten des Quadrats. Nach ",
+     "text": "The square of the pawn on b4, White to move. Gold arrow: the pawn's path. Gray arrows: the other sides of the square. After ",
      "stil": "normal"
     },
     {
@@ -2914,7 +2914,7 @@
     },
     {
      "art": "text",
-     "text": " schrumpft es auf b5–e8, und der König g5 erreicht es nicht mehr. Weiß gewinnt.",
+     "text": " it shrinks to b5–e8, and the king on g5 can no longer reach it. White wins.",
      "stil": "normal"
     }
    ],
@@ -2936,14 +2936,14 @@
     "fragen": [
      {
       "zug": "1. b5",
-      "frage": "Warum gewinnt 1. b5?",
+      "frage": "Why does 1. b5 win?",
       "antworten": [
-       "Der weiße König holt den Bauern rechtzeitig ab.",
-       "Der König g5 kann das Quadrat b5–e8 nicht mehr betreten.",
-       "Der Bauer ist auf b5 gedeckt."
+       "The white king picks up the pawn in time.",
+       "The king on g5 can no longer enter the square b5–e8.",
+       "The pawn is defended on b5."
       ],
       "richtig": 1,
-      "erklaerung": "Mit dem Quadrat musst du nicht Zug für Zug zählen. Ein Blick genügt: Der König steht außerhalb."
+      "erklaerung": "With the square you don't have to count move by move. One glance is enough: the king stands outside."
      }
     ]
    }
@@ -2955,9 +2955,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Holt der König ihn ein? Die Regel des Quadrats",
+   "unterabschnitt": "Can the king catch it? The rule of the square",
    "fen": "8/8/8/6k1/1P6/8/8/7K b - - 0 1",
    "pfeile": [
     {
@@ -2985,7 +2985,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Dieselbe Stellung mit Schwarz am Zug: Der König tritt mit Kf6, Kf5 oder Kf4 ins Quadrat (grau) und holt den Bauern ein. Remis.",
+     "text": "The same position with Black to move: the king steps into the square (gray) with Kf6, Kf5 or Kf4 and catches the pawn. Draw.",
      "stil": "normal"
     }
    ],
@@ -3007,14 +3007,14 @@
     "fragen": [
      {
       "zug": "1... Kf6",
-      "frage": "Warum hält 1... Kf6 remis?",
+      "frage": "Why does 1... Kf6 hold the draw?",
       "antworten": [
-       "Der König steht danach im Quadrat des Bauern.",
-       "Er nimmt die Opposition gegen den König h1.",
-       "Er deckt das Feld b8."
+       "The king then stands inside the pawn's square.",
+       "It takes the opposition against the king on h1.",
+       "It covers the square b8."
       ],
       "richtig": 0,
-      "erklaerung": "Ein Tempo mehr oder weniger entscheidet: Mit Weiß am Zug läuft der Bauer durch, mit Schwarz am Zug holt ihn der König ein."
+      "erklaerung": "One tempo more or less decides: with White to move the pawn runs through, with Black to move the king catches it."
      }
     ]
    }
@@ -3026,9 +3026,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Holt der König ihn ein? Die Regel des Quadrats",
+   "unterabschnitt": "Can the king catch it? The rule of the square",
    "fen": "8/8/8/8/8/8/8/4K3 w - - 0 1",
    "pfeile": [
     {
@@ -3061,7 +3061,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Wege des Königs. Grauer Pfeil: nach e5 geradeaus, vier Züge. Goldene Pfeile: der Bogen über g3, ebenfalls vier Züge. Roter Pfeil: Nach a5 (rot), das genau schräg liegt, führt lediglich die Diagonale in vier Zügen hin.",
+     "text": "The king's routes. Gray arrow: straight to e5, four moves. Gold arrows: the curve via g3, also four moves. Red arrow: to a5 (red), which lies exactly diagonal, only the diagonal leads there in four moves.",
      "stil": "normal"
     }
    ],
@@ -3081,9 +3081,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Das Bauernrennen zählen",
+   "unterabschnitt": "Counting the pawn race",
    "fen": "8/5k2/8/7p/P7/8/2K5/8 w - - 0 1",
    "pfeile": [
     {
@@ -3096,7 +3096,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bauernrennen, Weiß am Zug. Goldener Pfeil: der Weg des a-Bauern.",
+     "text": "Pawn race, White to move. Gold arrow: the path of the a-pawn.",
      "stil": "normal"
     }
    ],
@@ -3121,9 +3121,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Das Bauernrennen zählen",
+   "unterabschnitt": "Counting the pawn race",
    "fen": "8/5k2/P7/8/8/7p/2K5/8 w - - 0 3",
    "pfeile": [
     {
@@ -3141,7 +3141,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -3150,7 +3150,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: Der a-Bauer wandelt zuerst um. Grauer Pfeil: Die neue Dame beherrscht h1.",
+     "text": ", White to move. Gold arrow: the a-pawn promotes first. Gray arrow: the new queen controls h1.",
      "stil": "normal"
     }
    ],
@@ -3180,9 +3180,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Das Bauernrennen zählen",
+   "unterabschnitt": "Counting the pawn race",
    "fen": "8/8/1P6/7k/8/2K4p/8/8 w - - 0 1",
    "pfeile": [
     {
@@ -3195,7 +3195,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bauernrennen, Weiß am Zug. Beide Bauern brauchen zwei Züge; goldener Pfeil: der Weg des b-Bauern.",
+     "text": "Pawn race, White to move. Both pawns need two moves; gold arrow: the path of the b-pawn.",
      "stil": "normal"
     }
    ],
@@ -3217,14 +3217,14 @@
     "fragen": [
      {
       "zug": "1. b7",
-      "frage": "Warum darf Weiß das Rennen mit 1. b7 aufnehmen, obwohl Schwarz auch umwandelt?",
+      "frage": "Why may White take up the race with 1. b7 even though Black promotes too?",
       "antworten": [
-       "Schwarz kann nach 1. b7 nicht mehr umwandeln.",
-       "Die neue schwarze Dame steht sofort patt.",
-       "Weiß wandelt zuerst um, und Dh8+ spießt danach König h5 und Dame h1 auf."
+       "After 1. b7 Black can no longer promote.",
+       "The new black queen is stalemated at once.",
+       "White promotes first, and Qh8+ then skewers the king on h5 and the queen on h1."
       ],
       "richtig": 2,
-      "erklaerung": "Im Bauernrennen zählt nicht nur, wer zuerst umwandelt. Prüfe auch, was die neue Dame sofort mit Schach anrichtet."
+      "erklaerung": "In a pawn race it is not only who promotes first that counts. Also check what the new queen can do right away with a check."
      }
     ]
    }
@@ -3236,9 +3236,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Das Bauernrennen zählen",
+   "unterabschnitt": "Counting the pawn race",
    "fen": "1Q6/8/8/7k/8/2K5/8/7q w - - 0 3",
    "pfeile": [
     {
@@ -3256,25 +3256,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. b7 h2 2. b8=D h1=D"
+     "text": "1. b7 h2 2. b8=Q h1=Q"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Dh8+"
+     "text": "3. Qh8+"
     },
     {
      "art": "text",
-     "text": ". Roter Pfeil: der Spieß durch den König h5 auf die Dame h1.",
+     "text": ". Red arrow: the skewer through the king on h5 to the queen on h1.",
      "stil": "normal"
     }
    ],
@@ -3304,9 +3304,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Wie ein Freibauer entsteht: Mehrheit und Durchbruch",
+   "unterabschnitt": "How a passed pawn is born: majority and breakthrough",
    "fen": "4k3/1pp5/8/8/8/8/PPP1K3/8 w - - 0 1",
    "pfeile": [
     {
@@ -3319,7 +3319,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Mehrheit aus Kapitel 5 (3 gegen 2), Weiß am Zug. Goldener Pfeil: der Kandidat a2.",
+     "text": "The majority from Chapter 5 (3 against 2), White to move. Gold arrow: the candidate a2.",
      "stil": "normal"
     }
    ],
@@ -3474,9 +3474,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Wie ein Freibauer entsteht: Mehrheit und Durchbruch",
+   "unterabschnitt": "How a passed pawn is born: majority and breakthrough",
    "fen": "4k3/1pp5/8/PP6/8/8/2P1K3/8 w - - 0 1",
    "pfeile": [
     {
@@ -3489,7 +3489,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Mehrheit ist bis a5 und b5 vorgerückt, Weiß am Zug. Goldener Pfeil: der Hebel a6.",
+     "text": "The majority has advanced to a5 and b5, White to move. Gold arrow: the lever a6.",
      "stil": "normal"
     }
    ],
@@ -3515,9 +3515,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Wie ein Freibauer entsteht: Mehrheit und Durchbruch",
+   "unterabschnitt": "How a passed pawn is born: majority and breakthrough",
    "fen": "3k4/ppp2ppp/2p5/4P3/8/8/PPP2PPP/6K1 w - - 0 1",
    "pfeile": [],
    "felder": [
@@ -3537,7 +3537,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Skelett des Berliner Endspiels (Kapitel 5), Weiß am Zug. Rot: die Doppelbauern. Gold: der Kandidat e5.",
+     "text": "Skeleton of the Berlin endgame (Chapter 5), White to move. Red: the doubled pawns. Gold: the candidate e5.",
      "stil": "normal"
     }
    ],
@@ -3560,9 +3560,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Wie ein Freibauer entsteht: Mehrheit und Durchbruch",
+   "unterabschnitt": "How a passed pawn is born: majority and breakthrough",
    "fen": "7k/ppp5/8/PPP5/8/8/8/7K w - - 0 1",
    "pfeile": [
     {
@@ -3575,7 +3575,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Durchbruch, Weiß am Zug. Goldener Pfeil: ",
+     "text": "Breakthrough, White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
@@ -3601,14 +3601,14 @@
     "fragen": [
      {
       "zug": "1. b6",
-      "frage": "Was bezweckt 1. b6?",
+      "frage": "What is the point of 1. b6?",
       "antworten": [
-       "Ein Durchbruch: Nach den Schlägen wird ein weißer Bauer frei und läuft durch.",
-       "Er gibt Schach.",
-       "Er tauscht nur Bauern, um remis zu halten."
+       "A breakthrough: after the captures a white pawn becomes free and runs through.",
+       "It gives check.",
+       "It only trades pawns to hold the draw."
       ],
       "richtig": 0,
-      "erklaerung": "Nach axb6 folgt c6, nach cxb6 folgt a6. Der König h8 ist zu weit weg, um den neuen Freibauern einzuholen."
+      "erklaerung": "After axb6, c6 follows; after cxb6, a6 follows. The king on h8 is too far away to catch the new passed pawn."
      }
     ]
    }
@@ -3620,9 +3620,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Wie ein Freibauer entsteht: Mehrheit und Durchbruch",
+   "unterabschnitt": "How a passed pawn is born: majority and breakthrough",
    "fen": "7k/2p5/1pp5/P7/8/8/8/7K w - - 0 3",
    "pfeile": [
     {
@@ -3635,7 +3635,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -3644,7 +3644,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: Nach ",
+     "text": ", White to move. Gold arrow: after ",
      "stil": "normal"
     },
     {
@@ -3653,7 +3653,7 @@
     },
     {
      "art": "text",
-     "text": " läuft der a-Bauer durch, der König h8 kommt zu spät.",
+     "text": " the a-pawn runs through; the king on h8 comes too late.",
      "stil": "normal"
     }
    ],
@@ -3683,9 +3683,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Der entfernte Freibauer",
+   "unterabschnitt": "The outside passed pawn",
    "fen": "8/3k3p/5pp1/P7/4K1P1/8/7P/8 w - - 0 1",
    "pfeile": [
     {
@@ -3698,7 +3698,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldener Pfeil: der entfernte Freibauer a5.",
+     "text": "White to move. Gold arrow: the outside passed pawn a5.",
      "stil": "normal"
     }
    ],
@@ -3721,14 +3721,14 @@
     "fragen": [
      {
       "zug": "1. a6",
-      "frage": "Warum schickt Weiß den a-Bauern los, obwohl der schwarze König ihn einholt?",
+      "frage": "Why does White send the a-pawn forward even though the black king catches it?",
       "antworten": [
-       "Der Bauer wandelt sicher um.",
-       "Er lenkt den schwarzen König ab; der weiße König greift am Königsflügel an.",
-       "Weiß will ihn gegen den Bauern h7 tauschen."
+       "The pawn promotes safely.",
+       "It deflects the black king; the white king attacks on the kingside.",
+       "White wants to trade it for the pawn on h7."
       ],
       "richtig": 1,
-      "erklaerung": "Ein entfernter Freibauer muss nicht umwandeln, um zu gewinnen. Es reicht, wenn er den gegnerischen König weit weglockt."
+      "erklaerung": "An outside passed pawn doesn't have to promote to win. It is enough if it lures the enemy king far away."
      }
     ]
    }
@@ -3740,9 +3740,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Der entfernte Freibauer",
+   "unterabschnitt": "The outside passed pawn",
    "fen": "8/Pk5p/5pp1/8/4K1P1/8/7P/8 w - - 1 3",
    "pfeile": [
     {
@@ -3755,7 +3755,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -3764,7 +3764,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grauer Pfeil: Der weiße König macht sich auf den Weg.",
+     "text": ", White to move. Gray arrow: the white king sets off.",
      "stil": "normal"
     }
    ],
@@ -3795,9 +3795,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Der entfernte Freibauer",
+   "unterabschnitt": "The outside passed pawn",
    "fen": "8/k6p/4Kpp1/8/6P1/8/7P/8 b - - 1 4",
    "pfeile": [],
    "felder": [
@@ -3809,7 +3809,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -3818,7 +3818,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der König greift f6 an; der schwarze König ist zu weit weg.",
+     "text": ", Black to move. Red: the king attacks f6; the black king is too far away.",
      "stil": "normal"
     }
    ],
@@ -3852,9 +3852,9 @@
    "abschnitt": {
     "nummer": "8.7",
     "label": "sec:k8-freibauern",
-    "titel": "Freibauern: laufen lassen, schaffen, nutzen"
+    "titel": "Passed pawns: let them run, create them, use them"
    },
-   "unterabschnitt": "Gedeckte und verbundene Freibauern",
+   "unterabschnitt": "Protected and connected passed pawns",
    "fen": "8/8/4kP2/4P3/8/8/8/K7 b - - 0 1",
    "pfeile": [
     {
@@ -3867,7 +3867,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Verbundene Freibauern, Schwarz am Zug. Der König kann f6 nicht schlagen, weil e5 den Bauern deckt. Schlägt er e5 (roter Pfeil), läuft der f-Bauer durch.",
+     "text": "Connected passed pawns, Black to move. The king cannot capture f6 because e5 defends the pawn. If it captures e5 (red arrow), the f-pawn runs through.",
      "stil": "normal"
     }
    ],
@@ -3890,7 +3890,7 @@
    "abschnitt": {
     "nummer": "8.8",
     "label": "",
-    "titel": "Triangulation: Das Zugrecht übertragen"
+    "titel": "Triangulation: handing over the move"
    },
    "unterabschnitt": null,
    "fen": "8/1p1k4/1P6/2PK4/8/8/8/8 w - - 0 1",
@@ -3915,7 +3915,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldene Pfeile: das Dreieck d5–e5–d4. Wäre Schwarz am Zug, hätte er verloren.",
+     "text": "White to move. Gold arrows: the triangle d5–e5–d4. If it were Black to move, Black would have lost.",
      "stil": "normal"
     }
    ],
@@ -3937,14 +3937,14 @@
     "fragen": [
      {
       "zug": "1. Ke5",
-      "frage": "Warum zieht Weiß den König von d5 weg, obwohl er dort gut steht?",
+      "frage": "Why does White move the king away from d5 even though it stands well there?",
       "antworten": [
-       "Er will den Bauern b7 von e5 aus angreifen.",
-       "Er beginnt das Dreieck d5–e5–d4, um das Zugrecht an Schwarz zu geben.",
-       "Er nimmt damit sofort die Opposition."
+       "It wants to attack the pawn on b7 from e5.",
+       "It starts the triangle d5–e5–d4 to hand the move over to Black.",
+       "It takes the opposition at once."
       ],
       "richtig": 1,
-      "erklaerung": "Das ist Triangulation: Der König verliert absichtlich einen Zug. Kehrt er nach d5 zurück, muss Schwarz ziehen."
+      "erklaerung": "That is triangulation: the king deliberately loses a move. When it returns to d5, Black has to move."
      }
     ]
    }
@@ -3956,7 +3956,7 @@
    "abschnitt": {
     "nummer": "8.8",
     "label": "",
-    "titel": "Triangulation: Das Zugrecht übertragen"
+    "titel": "Triangulation: handing over the move"
    },
    "unterabschnitt": null,
    "fen": "8/1p1k4/1P6/2P5/3K4/8/8/8 w - - 4 3",
@@ -3971,7 +3971,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -3980,7 +3980,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
@@ -3989,7 +3989,7 @@
     },
     {
      "art": "text",
-     "text": " schließt das Dreieck. Die Ausgangsstellung steht wieder da, jetzt mit Schwarz am Zug.",
+     "text": " closes the triangle. The starting position is back on the board, now with Black to move.",
      "stil": "normal"
     }
    ],
@@ -4019,7 +4019,7 @@
    "abschnitt": {
     "nummer": "8.9",
     "label": "",
-    "titel": "Das Reserve-Tempo"
+    "titel": "The spare tempo"
    },
    "unterabschnitt": null,
    "fen": "8/8/8/1Kp4p/2Pk4/7P/8/8 w - - 0 1",
@@ -4034,7 +4034,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Wer mit dem König ziehen muss, verliert seinen Bauern. Goldener Pfeil: Nur ",
+     "text": "White to move. Whoever has to move the king loses their pawn. Gold arrow: only ",
      "stil": "normal"
     },
     {
@@ -4043,7 +4043,7 @@
     },
     {
      "art": "text",
-     "text": " gewinnt.",
+     "text": " wins.",
      "stil": "normal"
     }
    ],
@@ -4065,14 +4065,14 @@
     "fragen": [
      {
       "zug": "1. h4",
-      "frage": "Warum gewinnt nur 1. h4?",
+      "frage": "Why does only 1. h4 win?",
       "antworten": [
-       "Er greift den Bauern h5 an.",
-       "Er schafft einen Freibauern auf der h-Linie.",
-       "Der Bauernzug ist ein Reserve-Tempo: Jetzt muss Schwarz mit dem König ziehen und c5 aufgeben."
+       "It attacks the pawn on h5.",
+       "It creates a passed pawn on the h-file.",
+       "The pawn move is a spare tempo: now Black has to move the king and give up c5."
       ],
       "richtig": 2,
-      "erklaerung": "Beide Könige decken ihren Bauern, und wer zuerst weicht, lässt ihn im Stich. Der letzte freie Bauernzug schiebt diese Pflicht Schwarz zu."
+      "erklaerung": "Both kings defend their pawn, and whoever gives way first abandons it. The last free pawn move passes this duty to Black."
      }
     ]
    }
@@ -4084,7 +4084,7 @@
    "abschnitt": {
     "nummer": "8.9",
     "label": "",
-    "titel": "Das Reserve-Tempo"
+    "titel": "The spare tempo"
    },
    "unterabschnitt": null,
    "fen": "8/8/8/1Kp4p/2Pk3P/8/8/8 b - - 0 1",
@@ -4098,7 +4098,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -4107,7 +4107,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Jeder Königszug gibt den Bauern c5 (rot) auf.",
+     "text": ", Black to move. Every king move gives up the pawn on c5 (red).",
      "stil": "normal"
     }
    ],
@@ -4134,7 +4134,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "k7/8/8/8/8/1Q6/8/7K w - - 0 1",
@@ -4166,7 +4166,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "7k/8/8/8/3K4/8/6Q1/8 w - - 0 1",
@@ -4198,7 +4198,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "k7/1R6/2K5/8/8/8/8/8 w - - 0 1",
@@ -4230,7 +4230,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/4k3/8/8/5K2/4P3/8/8 b - - 0 1",
@@ -4262,7 +4262,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/8/6k1/8/8/8/4PK2/8 b - - 0 1",
@@ -4294,7 +4294,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/8/5k2/8/8/3P4/3K4/8 w - - 0 1",
@@ -4326,7 +4326,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/8/4k3/2K5/P7/8/8/8 w - - 0 1",
@@ -4358,7 +4358,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "4r3/3k4/8/8/2KP4/8/8/4R3 w - - 0 1",
@@ -4390,7 +4390,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/8/8/6k1/8/8/P7/7K w - - 0 1",
@@ -4422,7 +4422,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/8/7P/8/6K1/p1k5/8/8 w - - 0 1",
@@ -4454,7 +4454,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/8/4k1p1/8/4KPP1/8/8/8 w - - 0 1",
@@ -4486,7 +4486,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/p7/1p6/3k4/7P/3K4/PP6/8 w - - 0 1",
@@ -4518,7 +4518,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "k7/1p1K4/1P6/2P5/8/8/8/8 w - - 0 1",
@@ -4550,7 +4550,7 @@
    "abschnitt": {
     "nummer": "8.10",
     "label": "",
-    "titel": "Rückblick: Endspiel-Fundament"
+    "titel": "Review: endgame foundations"
    },
    "unterabschnitt": null,
    "fen": "8/8/p7/5pK1/4kP2/8/P7/8 w - - 0 1",
@@ -4588,12 +4588,12 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Warum ist ",
+     "text": "Why is ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Db6??"
+     "text": "1. Qb6??"
     },
     {
      "art": "text",
@@ -4602,28 +4602,28 @@
     },
     {
      "art": "verweis",
-     "text": "Abb. 8.55",
+     "text": "Fig. 8.55",
      "abbildung": "8.55"
     },
     {
      "art": "text",
-     "text": " ein grober Fehler? Benenne die drei Felder, die der schwarze König im Anschluss nicht betreten darf, und nenne einen besseren Plan.",
+     "text": " a gross mistake? Name the three squares the black king may not step onto afterwards, and name a better plan.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Db6??"
+     "text": "1. Qb6??"
     },
     {
      "art": "text",
-     "text": " steht der schwarze König a8 nicht im Schach, und die Dame nimmt ihm a7, b7 und b8. Er hat keinen legalen Zug: Patt, die Partie ist remis. Besser bleibt die Dame auf b3 stehen, wo sie den König auf der a-Linie festhält, während der weiße König herankommt, bis die Dame matt setzt. Merke dir: Solange die Dame kein Schach gibt, braucht der gegnerische König ein Feld, auf das er ziehen kann.",
+     "text": " the black king on a8 is not in check, and the queen takes a7, b7 and b8 away from it. It has no legal move: stalemate, the game is a draw. It is better for the queen to stay on b3, where it holds the king on the a-file while the white king comes closer, until the queen gives mate. Remember: as long as the queen does not give check, the enemy king needs a square it can move to.",
      "stil": "normal"
     }
    ],
@@ -4634,8 +4634,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Pattfalle",
-    "text": "Nach 1. Db6?? nimmt die Dame dem König a7, b7 und b8, ohne Schach zu geben: patt. Die Dame bleibt auf b3 und hält den König fest, bis der eigene König herangekommen ist."
+    "motiv": "Stalemate trap",
+    "text": "After 1. Qb6?? the queen takes a7, b7 and b8 away from the king without giving check: stalemate. The queen stays on b3 and holds the king until your own king has come closer."
    }
   },
   {
@@ -4649,18 +4649,18 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Welcher Zug ist der einzige, der so schnell zum Ziel führt, und welcher Damenzug wäre ein schwerer Fehler?",
+     "text": "Which move is the only one that reaches the goal this quickly, and which queen move would be a serious mistake?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "zug",
-     "text": "1. Ke5! Kh7 2. Kf6 Kh8 3. Dg7#"
+     "text": "1. Ke5! Kh7 2. Kf6 Kh8 3. Qg7#"
     },
     {
      "art": "text",
-     "text": ". Nach ",
+     "text": ". After ",
      "stil": "normal"
     },
     {
@@ -4669,35 +4669,35 @@
     },
     {
      "art": "text",
-     "text": " setzt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Dg6#"
+     "text": "3. Qg6#"
     },
     {
      "art": "text",
-     "text": " matt. Die Dame hält auf der g-Linie den Kasten und rührt sich nicht, bis der König neben ihr steht. Nur der Königszug nach e5 ist schnell genug. Der Damenzug ",
+     "text": " is mate. The queen holds the box on the g-file and does not move until the king stands next to it. Only the king move to e5 is fast enough. The queen move ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dg6??"
+     "text": "1. Qg6??"
     },
     {
      "art": "text",
-     "text": " setzt patt, wie in ",
+     "text": " gives stalemate, as in ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 8.7",
+     "text": "Fig. 8.7",
      "abbildung": "8.7"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Erst kommt der König, dann die Dame.",
+     "text": ". Remember: first comes the king, then the queen.",
      "stil": "normal"
     }
    ],
@@ -4708,8 +4708,8 @@
    "erklaerung": {
     "loesung": "1. Ke5! Kh7 2. Kf6 Kh8 3. Qg7#",
     "akzeptiert": [],
-    "motiv": "Damenmatt: erst der König",
-    "text": "Die Dame hält den Kasten auf der g-Linie, und nur 1. Ke5! bringt den König schnell genug heran; nach 2. Kf6 folgt Matt auf g7 oder g6. Der Damenzug 1. Dg6?? setzt patt."
+    "motiv": "Queen mate: the king first",
+    "text": "The queen holds the box on the g-file, and only 1. Ke5! brings the king up quickly enough; after 2. Kf6, mate follows on g7 or g6. The queen move 1. Qg6?? gives stalemate."
    }
   },
   {
@@ -4723,7 +4723,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Der schwarze König hat schon jetzt kein Feld mehr. Welche beiden Königszüge setzen daher patt, und wie setzt Weiß matt?",
+     "text": "The black king already has no square left. Which two king moves therefore give stalemate, and how does White give mate?",
      "stil": "normal"
     }
    ],
@@ -4734,7 +4734,7 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -4743,17 +4743,17 @@
     },
     {
      "art": "text",
-     "text": " setzen patt: Der Turm nimmt dem König a7 und b8, und er steht nicht im Schach. In ",
+     "text": " give stalemate: the rook takes a7 and b8 away from the king, and it is not in check. In ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 8.12",
+     "text": "Fig. 8.12",
      "abbildung": "8.12"
     },
     {
      "art": "text",
-     "text": " war ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -4762,34 +4762,34 @@
     },
     {
      "art": "text",
-     "text": " richtig, weil der Turm auf h7 dem König das Feld b8 ließ. Hier muss der Turm ihm erst ein Feld freigeben, allerdings nur eines: ",
+     "text": " was correct because the rook on h7 left the king the square b8. Here the rook first has to give it a square back, but only one: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Tb6! Ka7 2. Kc7 Ka8 3. Ta6#"
+     "text": "1. Rb6! Ka7 2. Kc7 Ka8 3. Ra6#"
     },
     {
      "art": "text",
-     "text": ". Ebenso gut ist ",
+     "text": ". Just as good is ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Tc7 Kb8 2. Kb6 Ka8 3. Tc8#"
+     "text": "1. Rc7 Kb8 2. Kb6 Ka8 3. Rc8#"
     },
     {
      "art": "text",
-     "text": ". Ein Turmzug weit weg, etwa ",
+     "text": ". A rook move far away, such as ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Tb1"
+     "text": "1. Rb1"
     },
     {
      "art": "text",
-     "text": ", dauert dagegen länger, da der König dann über a7 nach a6 ins Freie kommt. Merke dir: Hat der gegnerische König kein Feld mehr, gibt ihm ein Turmzug genau eines zurück.",
+     "text": ", takes longer, though, since the king then gets out via a7 to a6. Remember: if the enemy king has no square left, a rook move gives it back exactly one.",
      "stil": "normal"
     }
    ],
@@ -4802,8 +4802,8 @@
     "akzeptiert": [
      "1. Rc7"
     ],
-    "motiv": "Turmmatt ohne Patt",
-    "text": "1. Kb6?? und 1. Kc7?? setzen patt, weil der König kein Feld hat. Ein Turmzug gibt ihm genau ein Feld zurück: 1. Tb6! Ka7 2. Kc7 Ka8 3. Ta6#, ebenso gut 1. Tc7 mit Matt auf c8."
+    "motiv": "Rook mate without stalemate",
+    "text": "1. Kb6?? and 1. Kc7?? give stalemate because the king has no square. A rook move gives it back exactly one square: 1. Rb6! Ka7 2. Kc7 Ka8 3. Ra6#, just as good is 1. Rc7 with mate on c8."
    }
   },
   {
@@ -4817,7 +4817,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Nur ein einziger Zug hält remis. Finde ihn und erkläre, warum das naheliegende ",
+     "text": "Only one single move holds the draw. Find it and explain why the obvious ",
      "stil": "normal"
     },
     {
@@ -4826,7 +4826,7 @@
     },
     {
      "art": "text",
-     "text": " verliert.",
+     "text": " loses.",
      "stil": "normal"
     }
    ],
@@ -4837,7 +4837,7 @@
     },
     {
      "art": "text",
-     "text": " nimmt die Opposition. Auf ",
+     "text": " takes the opposition. On ",
      "stil": "normal"
     },
     {
@@ -4846,7 +4846,7 @@
     },
     {
      "art": "text",
-     "text": " folgt ",
+     "text": " follows ",
      "stil": "normal"
     },
     {
@@ -4855,17 +4855,17 @@
     },
     {
      "art": "text",
-     "text": ", und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 8.19",
+     "text": "Fig. 8.19",
      "abbildung": "8.19"
     },
     {
      "art": "text",
-     "text": " steht mit Weiß am Zug auf dem Brett: remis. Auf ",
+     "text": " is on the board with White to move: draw. On ",
      "stil": "normal"
     },
     {
@@ -4874,7 +4874,7 @@
     },
     {
      "art": "text",
-     "text": " folgt ebenso ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -4883,7 +4883,7 @@
     },
     {
      "art": "text",
-     "text": ". Nach ",
+     "text": " follows likewise. After ",
      "stil": "normal"
     },
     {
@@ -4892,7 +4892,7 @@
     },
     {
      "art": "text",
-     "text": " spielt Weiß ",
+     "text": ", White plays ",
      "stil": "normal"
     },
     {
@@ -4901,7 +4901,7 @@
     },
     {
      "art": "text",
-     "text": ". Jetzt ist dieselbe Stellung mit Schwarz am Zug entstanden: Er muss weichen, und der weiße König erreicht d5 oder f5. Alle übrigen Züge lassen den weißen König sofort nach f5 oder e5, auf ein Schlüsselfeld des Bauern e3. Merke dir: Bei der Opposition zählt, wer am Zug ist. Dieselbe Stellung kann remis oder verloren sein.",
+     "text": ". Now the same position has arisen with Black to move: Black has to give way, and the white king reaches d5 or f5. All other moves let the white king go straight to f5 or e5, onto a key square of the pawn on e3. Remember: with the opposition, what counts is who is to move. The same position can be a draw or lost.",
      "stil": "normal"
     }
    ],
@@ -4913,7 +4913,7 @@
     "loesung": "1... Kf6!",
     "akzeptiert": [],
     "motiv": "Opposition",
-    "text": "1... Kf6! nimmt die Opposition: Auf 2. Ke4 folgt 2... Ke6, auf 2. Kg4 2... Kg6, und Weiß erreicht kein Schlüsselfeld. Nach 1... Ke6? 2. Ke4 steht dieselbe Stellung mit Schwarz am Zug, und er muss weichen."
+    "text": "1... Kf6! takes the opposition: 2. Ke4 is met by 2... Ke6, 2. Kg4 by 2... Kg6, and White reaches no key square. After 1... Ke6? 2. Ke4 the same position arises with Black to move, and Black has to give way."
    }
   },
   {
@@ -4927,7 +4927,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Nur ein einziger Zug hält remis. Finde ihn und erkläre, welche Art von Opposition entsteht und wie Schwarz auf ",
+     "text": "Only one single move holds the draw. Find it and explain what kind of opposition arises and how Black answers ",
      "stil": "normal"
     },
     {
@@ -4936,7 +4936,7 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -4945,7 +4945,7 @@
     },
     {
      "art": "text",
-     "text": " antwortet.",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -4956,7 +4956,7 @@
     },
     {
      "art": "text",
-     "text": " Die Könige stehen im Anschluss auf der f-Linie mit drei Feldern dazwischen, und Weiß ist am Zug: Schwarz hat die Fernopposition. Die Schlüsselfelder des Bauern e2 sind d4, e4 und f4. Nähert sich der weiße König, geht Schwarz in die direkte Opposition über: ",
+     "text": " The kings then stand on the f-file with three squares between them, and White is to move: Black has the distant opposition. The key squares of the pawn on e2 are d4, e4 and f4. If the white king approaches, Black switches to the direct opposition: ",
      "stil": "normal"
     },
     {
@@ -4965,7 +4965,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -4974,7 +4974,7 @@
     },
     {
      "art": "text",
-     "text": ", und der weiße König erreicht kein Schlüsselfeld. Das naheliegende ",
+     "text": ", and the white king reaches no key square. The obvious ",
      "stil": "normal"
     },
     {
@@ -4983,7 +4983,7 @@
     },
     {
      "art": "text",
-     "text": " verliert, da dann Weiß mit ",
+     "text": " loses, since White then takes the opposition with ",
      "stil": "normal"
     },
     {
@@ -4992,7 +4992,7 @@
     },
     {
      "art": "text",
-     "text": " die Opposition nimmt. Auch ",
+     "text": ". ",
      "stil": "normal"
     },
     {
@@ -5001,7 +5001,7 @@
     },
     {
      "art": "text",
-     "text": " verliert, etwa nach ",
+     "text": " loses too, for example after ",
      "stil": "normal"
     },
     {
@@ -5010,7 +5010,7 @@
     },
     {
      "art": "text",
-     "text": ", und alle übrigen Züge ebenfalls. Merke dir: Aus der Fernopposition wird beim Annähern die direkte Opposition. Beide Male ist entscheidend, dass der andere am Zug ist.",
+     "text": ", and so do all other moves. Remember: as the kings approach, the distant opposition turns into the direct opposition. Both times it is decisive that the other side is to move.",
      "stil": "normal"
     }
    ],
@@ -5022,7 +5022,7 @@
     "loesung": "1... Kf6!",
     "akzeptiert": [],
     "motiv": "Distant opposition",
-    "text": "Nach 1... Kf6! stehen die Könige mit drei Feldern Abstand auf der f-Linie, und Weiß ist am Zug: Fernopposition. Kommt der weiße König näher, wird daraus mit 2... Ke5 oder 2... Kf5 die direkte Opposition, und d4, e4 und f4 bleiben gesperrt."
+    "text": "After 1... Kf6! the kings stand on the f-file three squares apart, and White is to move: distant opposition. If the white king comes closer, 2... Ke5 or 2... Kf5 turns it into the direct opposition, and d4, e4 and f4 stay blocked."
    }
   },
   {
@@ -5036,14 +5036,14 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Nenne die Schlüsselfelder des Bauern d3. Mit welchem Königszug gewinnt Weiß?",
+     "text": "Name the key squares of the pawn on d3. With which king move does White win?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Die Schlüsselfelder des Bauern d3 sind c5, d5 und e5. Nur ",
+     "text": "The key squares of the pawn on d3 are c5, d5 and e5. Only ",
      "stil": "normal"
     },
     {
@@ -5052,7 +5052,7 @@
     },
     {
      "art": "text",
-     "text": " gewinnt, da der König auf der Seite vorgeht, auf der ihm der schwarze König nicht zuvorkommt. Nach ",
+     "text": " wins, since the king advances on the side where the black king cannot get there first. After ",
      "stil": "normal"
     },
     {
@@ -5061,7 +5061,7 @@
     },
     {
      "art": "text",
-     "text": " nimmt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -5070,7 +5070,7 @@
     },
     {
      "art": "text",
-     "text": " die Opposition: Schwarz muss weichen, und der König erreicht c5 oder e5. Auf ",
+     "text": " takes the opposition: Black has to give way, and the king reaches c5 or e5. On ",
      "stil": "normal"
     },
     {
@@ -5079,7 +5079,7 @@
     },
     {
      "art": "text",
-     "text": " hält dagegen ",
+     "text": ", by contrast, ",
      "stil": "normal"
     },
     {
@@ -5088,7 +5088,7 @@
     },
     {
      "art": "text",
-     "text": " mit Opposition remis. Merke dir: Wähle den Weg zum Schlüsselfeld, den der gegnerische König nicht versperren kann.",
+     "text": " holds the draw with the opposition. Remember: choose the route to the key square that the enemy king cannot block.",
      "stil": "normal"
     }
    ],
@@ -5099,8 +5099,8 @@
    "erklaerung": {
     "loesung": "1. Kc3!",
     "akzeptiert": [],
-    "motiv": "Schlüsselfelder",
-    "text": "Die Schlüsselfelder des Bauern d3 sind c5, d5 und e5. 1. Kc3! geht auf der Seite vor, die der schwarze König nicht rechtzeitig sperrt, und nach 2. Kc4 Kd6 3. Kd4! hat Weiß die Opposition; nach 1. Ke3? hält 1... Ke5! remis."
+    "motiv": "Key squares",
+    "text": "The key squares of the pawn on d3 are c5, d5 and e5. 1. Kc3! advances on the side that the black king cannot block in time, and after 2. Kc4 Kd6 3. Kd4! White has the opposition; after 1. Ke3?, 1... Ke5! holds the draw."
    }
   },
   {
@@ -5114,7 +5114,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Der a-Bauer ist ein Randbauer. Kann Weiß dennoch gewinnen? Wohin muss der weiße König, und warum reicht ",
+     "text": "The a-pawn is a rook's pawn. Can White still win? Where does the white king have to go, and why is ",
      "stil": "normal"
     },
     {
@@ -5123,14 +5123,14 @@
     },
     {
      "art": "text",
-     "text": " nicht?",
+     "text": " not enough?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Ja: ",
+     "text": "Yes: ",
      "stil": "normal"
     },
     {
@@ -5139,7 +5139,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -5148,7 +5148,7 @@
     },
     {
      "art": "text",
-     "text": " gewinnt. Der König geht nach b7, auf ein Schlüsselfeld des a-Bauern, und hält den schwarzen König aus der Ecke fern, danach läuft der Bauer durch. Nach ",
+     "text": " wins. The king goes to b7, onto a key square of the a-pawn, and keeps the black king away from the corner; then the pawn runs through. After ",
      "stil": "normal"
     },
     {
@@ -5157,7 +5157,7 @@
     },
     {
      "art": "text",
-     "text": " rettet sich Schwarz mit dem einzigen Zug ",
+     "text": ", Black saves the game with the only move ",
      "stil": "normal"
     },
     {
@@ -5166,7 +5166,7 @@
     },
     {
      "art": "text",
-     "text": ", da auf ",
+     "text": ", since ",
      "stil": "normal"
     },
     {
@@ -5175,7 +5175,7 @@
     },
     {
      "art": "text",
-     "text": " ",
+     "text": " is met by ",
      "stil": "normal"
     },
     {
@@ -5184,7 +5184,7 @@
     },
     {
      "art": "text",
-     "text": " folgt und der König die Ecke erreicht. Merke dir: Beim Randbauern gewinnt, wer die Ecke beherrscht.",
+     "text": " and the king reaches the corner. Remember: with a rook's pawn, whoever controls the corner wins.",
      "stil": "normal"
     }
    ],
@@ -5197,8 +5197,8 @@
     "akzeptiert": [
      "1. Kc6"
     ],
-    "motiv": "Randbauer: die Ecke beherrschen",
-    "text": "Der weiße König geht über b6 oder c6 nach b7 und hält den schwarzen König von der Ecke fern, dann läuft der Bauer durch. Nach 1. a5? erreicht Schwarz mit 1... Kd7! und ...Kc8 die Ecke und hält remis."
+    "motiv": "Rook's pawn: control the corner",
+    "text": "The white king goes via b6 or c6 to b7 and keeps the black king away from the corner; then the pawn runs through. After 1. a5?, Black reaches the corner with 1... Kd7! and ...Kc8 and holds the draw."
    }
   },
   {
@@ -5212,23 +5212,23 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Weiß kann die Türme tauschen. Gewinnt das Bauernendspiel im Anschluss? Rechne bis zu dem Zug, mit dem der weiße König ein Schlüsselfeld erreicht.",
+     "text": "White can trade the rooks. Is the resulting pawn endgame won? Calculate up to the move with which the white king reaches a key square.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Ja, allerdings nur mit genauem Spiel: ",
+     "text": "Yes, but only with precise play: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Txe8! Kxe8 2. Kc5!"
+     "text": "1. Rxe8! Kxe8 2. Kc5!"
     },
     {
      "art": "text",
-     "text": " Die Schlüsselfelder des Bauern d4 sind c6, d6 und e6. Nach ",
+     "text": " The key squares of the pawn on d4 are c6, d6 and e6. After ",
      "stil": "normal"
     },
     {
@@ -5237,7 +5237,7 @@
     },
     {
      "art": "text",
-     "text": " nimmt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -5246,7 +5246,7 @@
     },
     {
      "art": "text",
-     "text": " die Opposition, und Schwarz muss eines freigeben: ",
+     "text": " takes the opposition, and Black has to give one of them up: ",
      "stil": "normal"
     },
     {
@@ -5255,7 +5255,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -5264,7 +5264,7 @@
     },
     {
      "art": "text",
-     "text": ". Auf ",
+     "text": ". On ",
      "stil": "normal"
     },
     {
@@ -5273,7 +5273,7 @@
     },
     {
      "art": "text",
-     "text": " geht ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -5282,7 +5282,7 @@
     },
     {
      "art": "text",
-     "text": " sofort, auf ",
+     "text": " goes there at once; on ",
      "stil": "normal"
     },
     {
@@ -5291,7 +5291,7 @@
     },
     {
      "art": "text",
-     "text": " ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -5300,7 +5300,7 @@
     },
     {
      "art": "text",
-     "text": ". Der naheliegende Zug ",
+     "text": ". The obvious move ",
      "stil": "normal"
     },
     {
@@ -5309,7 +5309,7 @@
     },
     {
      "art": "text",
-     "text": " verschenkt dagegen den Sieg, weil dann Schwarz mit ",
+     "text": ", by contrast, throws away the win, because then Black has the opposition with ",
      "stil": "normal"
     },
     {
@@ -5318,7 +5318,7 @@
     },
     {
      "art": "text",
-     "text": " die Opposition hat. Ohne den Turmtausch gewinnt Weiß in dieser Stellung nicht. Merke dir: Nach dem Tausch zählt jedes Tempo, denn erst die Opposition bringt deinen König auf ein Schlüsselfeld.",
+     "text": ". Without the rook trade White does not win in this position. Remember: after the trade every tempo counts, because only the opposition brings your king onto a key square.",
      "stil": "normal"
     }
    ],
@@ -5329,8 +5329,8 @@
    "erklaerung": {
     "loesung": "1. Rxe8! Kxe8 2. Kc5!",
     "akzeptiert": [],
-    "motiv": "Tausch ins gewonnene Bauernendspiel",
-    "text": "Nach 1. Txe8! Kxe8 2. Kc5! erreicht der weiße König mit der Opposition eines der Schlüsselfelder c6, d6 oder e6. Das naheliegende 2. Kd5? verschenkt den Sieg, weil dann Schwarz mit 2... Kd7! die Opposition hat."
+    "motiv": "Trade into a won pawn endgame",
+    "text": "After 1. Rxe8! Kxe8 2. Kc5! the white king, with the opposition, reaches one of the key squares c6, d6 or e6. The obvious 2. Kd5? throws away the win, because then Black has the opposition with 2... Kd7!."
    }
   },
   {
@@ -5344,14 +5344,14 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Kann der Bauer umwandeln, ohne dass sein König hilft? Nenne den Zug und begründe ihn mit dem Quadrat.",
+     "text": "Can the pawn promote without help from its king? Name the move and justify it with the square.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Ja, allerdings nur mit ",
+     "text": "Yes, but only with ",
      "stil": "normal"
     },
     {
@@ -5360,7 +5360,7 @@
     },
     {
      "art": "text",
-     "text": ": Nach dem Doppelschritt reicht das Quadrat von a4 bis e8, und der König g5 erreicht es nicht mehr. Nach ",
+     "text": ": after the double step the square reaches from a4 to e8, and the king on g5 can no longer reach it. After ",
      "stil": "normal"
     },
     {
@@ -5369,7 +5369,7 @@
     },
     {
      "art": "text",
-     "text": " holt der König den Bauern hingegen ein. (Stünde der schwarze König auf f5, wäre die Stellung auch nach ",
+     "text": ", on the other hand, the king catches the pawn. (If the black king stood on f5, the position would be a draw even after ",
      "stil": "normal"
     },
     {
@@ -5378,7 +5378,7 @@
     },
     {
      "art": "text",
-     "text": " remis.) Merke dir: Steht der Bauer auf seinem Ausgangsfeld, zeichnest du das Quadrat eine Reihe weiter vorn.",
+     "text": ".) Remember: if the pawn stands on its starting square, you draw the square one rank further forward.",
      "stil": "normal"
     }
    ],
@@ -5389,8 +5389,8 @@
    "erklaerung": {
     "loesung": "1. a4!",
     "akzeptiert": [],
-    "motiv": "Quadratregel mit Doppelschritt",
-    "text": "Nach dem Doppelschritt 1. a4! reicht das Quadrat von a4 bis e8, und der König g5 kommt nicht mehr hinein. Nach 1. a3? holt er den Bauern ein; steht der Bauer auf seinem Ausgangsfeld, zeichnest du das Quadrat eine Reihe weiter vorn."
+    "motiv": "Square rule with double step",
+    "text": "After the double step 1. a4! the square reaches from a4 to e8, and the king on g5 can no longer get into it. After 1. a3? it catches the pawn; if the pawn stands on its starting square, you draw the square one rank further forward."
    }
   },
   {
@@ -5404,23 +5404,23 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Beide Bauern brauchen noch zwei Züge bis zur Umwandlung. Gewinnt Weiß das Rennen? Beantworte die vier Fragen zum Bauernrennen.",
+     "text": "Both pawns still need two moves to promote. Does White win the race? Answer the four questions about the pawn race.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Ja: ",
+     "text": "Yes: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. h7! a2 2. h8=D+"
+     "text": "1. h7! a2 2. h8=Q+"
     },
     {
      "art": "text",
-     "text": ". Weiß wandelt zuerst um (Frage 1), und zwar mit Schach (Frage 2), da der König c3 auf der langen Diagonale steht. Schwarz muss den König ziehen und kommt nicht zur Umwandlung. Auf ",
+     "text": ". White promotes first (question 1), and with check (question 2), since the king on c3 stands on the long diagonal. Black has to move the king and does not get to promote. On ",
      "stil": "normal"
     },
     {
@@ -5429,7 +5429,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -5438,16 +5438,16 @@
     },
     {
      "art": "text",
-     "text": " stellt sich die Dame mit ",
+     "text": ", the queen places itself on the promotion square with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Da1"
+     "text": "3. Qa1"
     },
     {
      "art": "text",
-     "text": " auf das Umwandlungsfeld (Frage 3), und der weiße König holt den Bauern ab. Nach ",
+     "text": " (question 3), and the white king picks up the pawn. After ",
      "stil": "normal"
     },
     {
@@ -5456,7 +5456,7 @@
     },
     {
      "art": "text",
-     "text": " ist das der einzige Gewinnzug. Die vierte Frage stellt sich nicht, weil Schwarz keine Dame bekommt. Zieht Schwarz den König vorher von der Diagonale weg, etwa mit ",
+     "text": " this is the only winning move. The fourth question does not arise, because Black gets no queen. If Black moves the king off the diagonal beforehand, for example with ",
      "stil": "normal"
     },
     {
@@ -5465,16 +5465,16 @@
     },
     {
      "art": "text",
-     "text": ", fehlt ihm ein Tempo: ",
+     "text": ", Black is a tempo short: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. h8=D a2 3. Da1"
+     "text": "2. h8=Q a2 3. Qa1"
     },
     {
      "art": "text",
-     "text": ". Am zähesten ist ",
+     "text": ". The toughest defense is ",
      "stil": "normal"
     },
     {
@@ -5483,25 +5483,25 @@
     },
     {
      "art": "text",
-     "text": ": Weiß braucht nach ",
+     "text": ": after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. h8=D+ Kb1"
+     "text": "2. h8=Q+ Kb1"
     },
     {
      "art": "text",
-     "text": " ein Damenschach, etwa ",
+     "text": " White needs a queen check, such as ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Db8+"
+     "text": "3. Qb8+"
     },
     {
      "art": "text",
-     "text": ", damit der Bauer nicht nach a2 kommt. Jeder andere erste Zug als ",
+     "text": ", so that the pawn does not get to a2. Any first move other than ",
      "stil": "normal"
     },
     {
@@ -5510,7 +5510,7 @@
     },
     {
      "art": "text",
-     "text": " lässt Remis zu. Merke dir: Prüfe vor einem Bauernrennen, ob ein König auf einer Linie, Reihe oder Diagonale steht, die die neue Dame beherrscht.",
+     "text": " allows a draw. Remember: before a pawn race, check whether a king stands on a file, rank or diagonal that the new queen controls.",
      "stil": "normal"
     }
    ],
@@ -5521,8 +5521,8 @@
    "erklaerung": {
     "loesung": "1. h7! a2 2. h8=Q+",
     "akzeptiert": [],
-    "motiv": "Umwandlung mit Schach",
-    "text": "Weiß wandelt zuerst und mit Schach um, weil der König c3 auf der langen Diagonale steht; danach stellt sich die Dame mit Da1 vor den a-Bauern. Prüfe vor jedem Bauernrennen, ob ein König auf einer Linie der neuen Dame steht."
+    "motiv": "Promotion with check",
+    "text": "White promotes first and with check, because the king on c3 stands on the long diagonal; then the queen places itself in front of the a-pawn with Qa1. Before every pawn race, check whether a king stands on a line of the new queen."
    }
   },
   {
@@ -5536,7 +5536,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Weiß hat einen Bauern mehr, und zwei Züge bieten sich an: ",
+     "text": "White is a pawn up, and two moves suggest themselves: ",
      "stil": "normal"
     },
     {
@@ -5545,7 +5545,7 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -5554,7 +5554,7 @@
     },
     {
      "art": "text",
-     "text": ". Welcher gewinnt, und woran scheitert der andere?",
+     "text": ". Which one wins, and why does the other one fail?",
      "stil": "normal"
     }
    ],
@@ -5565,7 +5565,7 @@
     },
     {
      "art": "text",
-     "text": " gewinnt, ",
+     "text": " wins, ",
      "stil": "normal"
     },
     {
@@ -5574,7 +5574,7 @@
     },
     {
      "art": "text",
-     "text": " verschenkt den Sieg: Nach ",
+     "text": " throws away the win: after ",
      "stil": "normal"
     },
     {
@@ -5583,7 +5583,7 @@
     },
     {
      "art": "text",
-     "text": " hat Weiß zwar einen Freibauern, sein König steht aber hinter ihm statt davor. Die Schlüsselfelder des Bauern f5 (e6, f6, g6 und e7, f7, g7) erreicht er nicht mehr: remis. Nach ",
+     "text": " White does have a passed pawn, but the king stands behind it instead of in front of it. It no longer reaches the key squares of the pawn on f5 (e6, f6, g6 and e7, f7, g7): draw. After ",
      "stil": "normal"
     },
     {
@@ -5592,7 +5592,7 @@
     },
     {
      "art": "text",
-     "text": " liegt der Bauer g6 fest, und ",
+     "text": " the pawn on g6 is fixed, and ",
      "stil": "normal"
     },
     {
@@ -5601,7 +5601,7 @@
     },
     {
      "art": "text",
-     "text": " bleibt als Hebel in Reserve. Zunächst arbeitet der König, und zwar mit der Opposition: auf ",
+     "text": " stays in reserve as a lever. First the king goes to work, and with the opposition: ",
      "stil": "normal"
     },
     {
@@ -5610,7 +5610,7 @@
     },
     {
      "art": "text",
-     "text": " folgt ",
+     "text": " is met by ",
      "stil": "normal"
     },
     {
@@ -5619,7 +5619,7 @@
     },
     {
      "art": "text",
-     "text": ", auf ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -5628,7 +5628,7 @@
     },
     {
      "art": "text",
-     "text": " ",
+     "text": " by ",
      "stil": "normal"
     },
     {
@@ -5637,7 +5637,7 @@
     },
     {
      "art": "text",
-     "text": ", auf ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -5646,7 +5646,7 @@
     },
     {
      "art": "text",
-     "text": " die Diagonalopposition ",
+     "text": " by the diagonal opposition ",
      "stil": "normal"
     },
     {
@@ -5655,7 +5655,7 @@
     },
     {
      "art": "text",
-     "text": ". Der schwarze König muss jedes Mal weichen, und der weiße dringt über d6 oder f6 ein und holt den Bauern g6. Auf ",
+     "text": ". Each time the black king has to give way, and the white king penetrates via d6 or f6 and wins the pawn on g6. On ",
      "stil": "normal"
     },
     {
@@ -5664,7 +5664,7 @@
     },
     {
      "art": "text",
-     "text": " gewinnt sofort ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -5673,7 +5673,7 @@
     },
     {
      "art": "text",
-     "text": ", da g6 ein Schlüsselfeld des Bauern g5 ist. Merke dir: Bilde den Freibauern erst, wenn dein König im Anschluss ein Schlüsselfeld erreicht.",
+     "text": " wins at once, since g6 is a key square of the pawn on g5. Remember: create the passed pawn only when your king then reaches a key square.",
      "stil": "normal"
     }
    ],
@@ -5684,8 +5684,8 @@
    "erklaerung": {
     "loesung": "1. g5!",
     "akzeptiert": [],
-    "motiv": "Freibauer erst mit König davor",
-    "text": "1. g5! legt den Bauern g6 fest, hält f5 als Hebel in Reserve, und der weiße König dringt mit der Opposition ein. Nach 1. f5+? gxf5+ 2. gxf5+ steht der König hinter seinem Freibauern und erreicht kein Schlüsselfeld: remis."
+    "motiv": "Passed pawn only with the king in front",
+    "text": "1. g5! fixes the pawn on g6, keeps f5 in reserve as a lever, and the white king penetrates with the opposition. After 1. f5+? gxf5+ 2. gxf5+ the king stands behind its passed pawn and reaches no key square: draw."
    }
   },
   {
@@ -5699,23 +5699,23 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Weiß hat einen Bauern mehr. Beschreibe den Plan, mit dem Weiß gewinnt, und nenne einen ersten Zug.",
+     "text": "White is a pawn up. Describe the plan with which White wins, and name a first move.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Der h-Bauer ist ein entfernter Freibauer, den Weiß vorschiebt, bis der schwarze König ihn stoppen muss. Danach holt sich der weiße König die schwarzen Damenflügelbauern: etwa ",
+     "text": "The h-pawn is an outside passed pawn, which White pushes until the black king has to stop it. Then the white king collects the black queenside pawns: for example ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. h5 Ke6 2. h6 Kf7 3. h7 Kg7 4. h8=D+ Kxh8 5. Kc4"
+     "text": "1. h5 Ke6 2. h6 Kf7 3. h7 Kg7 4. h8=Q+ Kxh8 5. Kc4"
     },
     {
      "art": "text",
-     "text": ", und der weiße König schlägt beide schwarzen Bauern, bevor der schwarze König zurück ist. Läuft der König stattdessen mit ",
+     "text": ", and the white king captures both black pawns before the black king is back. If the king instead runs to the white pawns with ",
      "stil": "normal"
     },
     {
@@ -5724,7 +5724,7 @@
     },
     {
      "art": "text",
-     "text": " zu den weißen Bauern, steht er außerhalb des Quadrats, und der h-Bauer wird zur Dame. Auch ruhige Züge wie ",
+     "text": ", it stands outside the square, and the h-pawn becomes a queen. Quiet moves such as ",
      "stil": "normal"
     },
     {
@@ -5733,7 +5733,7 @@
     },
     {
      "art": "text",
-     "text": " gewinnen, der Plan bleibt derselbe. Merke dir: Der entfernte Freibauer bindet den König, dein König erntet auf dem anderen Flügel.",
+     "text": " also win; the plan stays the same. Remember: the outside passed pawn ties down the king, and your king harvests on the other wing.",
      "stil": "normal"
     }
    ],
@@ -5747,7 +5747,7 @@
      "1. a4"
     ],
     "motiv": "Outside passed pawn",
-    "text": "Weiß schiebt den h-Bauern vor, bis der schwarze König ihn stoppen muss, und holt sich mit dem König unterdessen die Damenflügelbauern. Der entfernte Freibauer bindet den König, der eigene König erntet auf dem anderen Flügel."
+    "text": "White pushes the h-pawn until the black king has to stop it, and meanwhile collects the queenside pawns with the king. The outside passed pawn ties down the king, and your own king harvests on the other wing."
    }
   },
   {
@@ -5761,7 +5761,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Zwei Königszüge setzen patt. Welche sind es, und wie gewinnt Weiß stattdessen?",
+     "text": "Two king moves give stalemate. Which are they, and how does White win instead?",
      "stil": "normal"
     }
    ],
@@ -5772,7 +5772,7 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -5781,7 +5781,7 @@
     },
     {
      "art": "text",
-     "text": " setzen patt, da der König a8 kein Feld hat und der Bauer b7 blockiert ist. Es gewinnt das Bauernopfer ",
+     "text": " give stalemate, since the king on a8 has no square and the pawn on b7 is blocked. The pawn sacrifice ",
      "stil": "normal"
     },
     {
@@ -5790,7 +5790,7 @@
     },
     {
      "art": "text",
-     "text": ": Nach ",
+     "text": " wins: after ",
      "stil": "normal"
     },
     {
@@ -5799,7 +5799,7 @@
     },
     {
      "art": "text",
-     "text": " hat Schwarz nur noch den Bauernzug ",
+     "text": " Black only has the pawn move ",
      "stil": "normal"
     },
     {
@@ -5808,35 +5808,35 @@
     },
     {
      "art": "text",
-     "text": ", und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. b7+ Ka7 4. b8=D+ Ka6 5. Db6#"
+     "text": "3. b7+ Ka7 4. b8=Q+ Ka6 5. Qb6#"
     },
     {
      "art": "text",
-     "text": " setzt matt. Schlägt Schwarz nicht, entscheidet ",
+     "text": " is mate. If Black does not capture, ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Kb8 2. c7+ Ka8 3. c8=D#"
+     "text": "1... Kb8 2. c7+ Ka8 3. c8=Q#"
     },
     {
      "art": "text",
-     "text": ". Die Stellung entsteht aus ",
+     "text": " decides. The position arises from ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 8.51",
+     "text": "Fig. 8.51",
      "abbildung": "8.51"
     },
     {
      "art": "text",
-     "text": ", wenn der schwarze König nach dem Dreieck auf die 8. Reihe zurückweicht und der weiße über d6 und e7 nach d7 eindringt. Merke dir: Bevor du dem König das letzte Feld nimmst, prüfe, ob der Gegner noch einen Bauernzug hat.",
+     "text": " when the black king retreats to the 8th rank after the triangle and the white king penetrates via d6 and e7 to d7. Remember: before you take the king's last square away, check whether your opponent still has a pawn move.",
      "stil": "normal"
     }
    ],
@@ -5847,8 +5847,8 @@
    "erklaerung": {
     "loesung": "1. c6!",
     "akzeptiert": [],
-    "motiv": "Bauernopfer statt Patt",
-    "text": "1. Kc7?? und 1. Kc8?? setzen patt. Das Opfer 1. c6! lässt Schwarz einen Bauernzug: Nach 1... bxc6 2. Kc7 c5 3. b7+ setzt Weiß bald matt, nach 1... Kb8 2. c7+ Ka8 3. c8=D#."
+    "motiv": "Pawn sacrifice instead of stalemate",
+    "text": "1. Kc7?? and 1. Kc8?? give stalemate. The sacrifice 1. c6! leaves Black a pawn move: after 1... bxc6 2. Kc7 c5 3. b7+ White soon gives mate; after 1... Kb8 2. c7+ Ka8 3. c8=Q#."
    }
   },
   {
@@ -5862,7 +5862,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Weiß hat zwei Bauernzüge zur Wahl: ",
+     "text": "White has two pawn moves to choose from: ",
      "stil": "normal"
     },
     {
@@ -5871,7 +5871,7 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -5880,7 +5880,7 @@
     },
     {
      "art": "text",
-     "text": ". Welcher gewinnt, und warum verliert der andere?",
+     "text": ". Which one wins, and why does the other one lose?",
      "stil": "normal"
     }
    ],
@@ -5891,17 +5891,17 @@
     },
     {
      "art": "text",
-     "text": " gewinnt. Wie in ",
+     "text": " wins. As in ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 8.53",
+     "text": "Fig. 8.53",
      "abbildung": "8.53"
     },
     {
      "art": "text",
-     "text": " verliert, wer mit dem König ziehen muss. Nach ",
+     "text": ", whoever has to move the king loses. After ",
      "stil": "normal"
     },
     {
@@ -5910,7 +5910,7 @@
     },
     {
      "art": "text",
-     "text": " sind die a-Bauern blockiert: Schwarz muss mit dem König ziehen und verliert den Bauern f5. Auf ",
+     "text": " the a-pawns are blocked: Black has to move the king and loses the pawn on f5. On ",
      "stil": "normal"
     },
     {
@@ -5919,7 +5919,7 @@
     },
     {
      "art": "text",
-     "text": " dreht ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -5928,7 +5928,7 @@
     },
     {
      "art": "text",
-     "text": " das Bild um: Jetzt hat Weiß keinen Bauernzug mehr, muss mit dem König ziehen und verliert den Bauern f4 und die Partie, da der Doppelschritt beide Reserve-Tempi auf einmal verbraucht hat. Merke dir: Zähle die Bauernzüge beider Seiten, bevor du einen davon ausgibst.",
+     "text": " turns the picture around: now White has no pawn move left, has to move the king and loses the pawn on f4 and the game, since the double step used up both spare tempi at once. Remember: count the pawn moves of both sides before you spend one of them.",
      "stil": "normal"
     }
    ],
@@ -5940,7 +5940,7 @@
     "loesung": "1. a3!",
     "akzeptiert": [],
     "motiv": "Spare tempo",
-    "text": "1. a3! behält einen Bauernzug in Reserve: Nach 1... a5 2. a4 muss Schwarz mit dem König ziehen und verliert f5. Der Doppelschritt 1. a4? verbraucht beide Tempi auf einmal, und nach 1... a5! muss Weiß selbst weichen."
+    "text": "1. a3! keeps a pawn move in reserve: after 1... a5 2. a4 Black has to move the king and loses f5. The double step 1. a4? uses up both tempi at once, and after 1... a5! White has to give way."
    }
   }
  ],
@@ -5952,7 +5952,7 @@
    "id": "k08-a1",
    "kapitel": 8,
    "abschnitt": "8.1",
-   "titel": "Wann beginnt das Endspiel, und wann führst du es herbei?",
+   "titel": "When does the endgame begin, and when do you bring it about?",
    "startFen": "2rr2k1/pp3ppp/4b3/3p4/8/4PN2/PP3PPP/2RR2K1 w - - 0 1",
    "zuege": [
     {
@@ -5980,7 +5980,7 @@
    "id": "k08-a11",
    "kapitel": 8,
    "abschnitt": "8.4",
-   "titel": "Elementarmatt: Turm und König gegen König",
+   "titel": "Basic mate: rook and king against king",
    "startFen": "2k5/4R3/3K4/8/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -6080,7 +6080,7 @@
    "id": "k08-a13",
    "kapitel": 8,
    "abschnitt": "8.4",
-   "titel": "Aus der Brettmitte: Reihe für Reihe",
+   "titel": "From the middle of the board: rank by rank",
    "startFen": "8/8/8/4k3/8/8/8/R3K3 w - - 0 1",
    "zuege": [
     {
@@ -6198,7 +6198,7 @@
    "id": "k08-a16",
    "kapitel": 8,
    "abschnitt": "8.4",
-   "titel": "Zwei Läufer und ein Ausblick",
+   "titel": "Two bishops and an outlook",
    "startFen": "6k1/8/5K2/4B3/4B3/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -6287,7 +6287,7 @@
    "id": "k08-a2",
    "kapitel": 8,
    "abschnitt": "8.1",
-   "titel": "Wann beginnt das Endspiel, und wann führst du es herbei?",
+   "titel": "When does the endgame begin, and when do you bring it about?",
    "startFen": "6k1/pp1q1ppp/1n6/8/4N3/2P5/PP3PPP/3Q2K1 w - - 0 1",
    "zuege": [
     {
@@ -6365,7 +6365,7 @@
    "id": "k08-a20",
    "kapitel": 8,
    "abschnitt": "8.5",
-   "titel": "König und Bauer gegen König",
+   "titel": "King and pawn against king",
    "startFen": "8/8/4k3/8/4K3/4P3/8/8 b - - 0 1",
    "zuege": [
     {
@@ -6579,7 +6579,7 @@
    "id": "k08-a23",
    "kapitel": 8,
    "abschnitt": "8.5",
-   "titel": "Fern- und Diagonalopposition",
+   "titel": "Distant and diagonal opposition",
    "startFen": "8/5k2/8/8/8/8/3P2K1/8 w - - 0 1",
    "zuege": [
     {
@@ -6615,7 +6615,7 @@
    "id": "k08-a24",
    "kapitel": 8,
    "abschnitt": "8.5",
-   "titel": "Fern- und Diagonalopposition",
+   "titel": "Distant and diagonal opposition",
    "startFen": "8/8/8/5k2/8/8/2K1P3/8 w - - 0 1",
    "zuege": [
     {
@@ -6637,7 +6637,7 @@
    "id": "k08-a27",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Schlüsselfelder: Wohin der König will",
+   "titel": "Key squares: where the king wants to go",
    "startFen": "8/8/3k4/8/8/3K4/3P4/8 w - - 0 1",
    "zuege": [
     {
@@ -6671,7 +6671,7 @@
    "id": "k08-a28",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Schlüsselfelder: Wohin der König will",
+   "titel": "Key squares: where the king wants to go",
    "startFen": "8/8/3k4/8/8/3K4/3P4/8 b - - 0 1",
    "zuege": [
     {
@@ -6693,7 +6693,7 @@
    "id": "k08-a29",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Schlüsselfelder: Wohin der König will",
+   "titel": "Key squares: where the king wants to go",
    "startFen": "4k3/8/3KP3/8/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -6729,7 +6729,7 @@
    "id": "k08-a30",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Schlüsselfelder: Wohin der König will",
+   "titel": "Key squares: where the king wants to go",
    "startFen": "4k3/8/3KP3/8/8/8/8/8 b - - 0 1",
    "zuege": [
     {
@@ -6772,7 +6772,7 @@
    "id": "k08-a31",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Die Randbauer-Ausnahme",
+   "titel": "The rook's pawn exception",
    "startFen": "k7/P7/1K6/8/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -6794,7 +6794,7 @@
    "id": "k08-a32",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Regel 4 am Brett: der Tausch ins Bauernendspiel",
+   "titel": "Rule 4 on the board: the trade into a pawn endgame",
    "startFen": "5r2/4k3/8/8/3PKR2/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -6868,7 +6868,7 @@
    "id": "k08-a34",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Regel 4 am Brett: der Tausch ins Bauernendspiel",
+   "titel": "Rule 4 on the board: the trade into a pawn endgame",
    "startFen": "5r2/4k3/8/8/3PKR2/8/8/8 b - - 0 1",
    "zuege": [
     {
@@ -6910,7 +6910,7 @@
    "id": "k08-a35",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Holt der König ihn ein? Die Regel des Quadrats",
+   "titel": "Can the king catch it? The rule of the square",
    "startFen": "8/8/8/6k1/1P6/8/8/7K w - - 0 1",
    "zuege": [
     {
@@ -6932,7 +6932,7 @@
    "id": "k08-a36",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Holt der König ihn ein? Die Regel des Quadrats",
+   "titel": "Can the king catch it? The rule of the square",
    "startFen": "8/8/8/6k1/1P6/8/8/7K b - - 0 1",
    "zuege": [
     {
@@ -6966,7 +6966,7 @@
    "id": "k08-a38",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Das Bauernrennen zählen",
+   "titel": "Counting the pawn race",
    "startFen": "8/5k2/8/7p/P7/8/2K5/8 w - - 0 1",
    "zuege": [
     {
@@ -7041,7 +7041,7 @@
    "id": "k08-a4",
    "kapitel": 8,
    "abschnitt": "8.3",
-   "titel": "Elementarmatt: Dame und König gegen König",
+   "titel": "Basic mate: queen and king against king",
    "startFen": "8/4k3/2Q5/8/3K4/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -7190,7 +7190,7 @@
    "id": "k08-a40",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Das Bauernrennen zählen",
+   "titel": "Counting the pawn race",
    "startFen": "8/8/1P6/7k/8/2K4p/8/8 w - - 0 1",
    "zuege": [
     {
@@ -7265,7 +7265,7 @@
    "id": "k08-a43",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Wie ein Freibauer entsteht: Mehrheit und Durchbruch",
+   "titel": "How a passed pawn is born: majority and breakthrough",
    "startFen": "4k3/1pp5/8/PP6/8/8/2P1K3/8 w - - 0 1",
    "zuege": [
     {
@@ -7307,7 +7307,7 @@
    "id": "k08-a45",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Wie ein Freibauer entsteht: Mehrheit und Durchbruch",
+   "titel": "How a passed pawn is born: majority and breakthrough",
    "startFen": "7k/ppp5/8/PPP5/8/8/8/7K w - - 0 1",
    "zuege": [
     {
@@ -7381,7 +7381,7 @@
    "id": "k08-a47",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Der entfernte Freibauer",
+   "titel": "The outside passed pawn",
    "startFen": "8/3k3p/5pp1/P7/4K1P1/8/7P/8 w - - 0 1",
    "zuege": [
     {
@@ -7483,7 +7483,7 @@
    "id": "k08-a50",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Holt der König ihn ein? Die Regel des Quadrats",
+   "titel": "Can the king catch it? The rule of the square",
    "startFen": "8/8/4kP2/4P3/8/8/8/K7 b - - 0 1",
    "zuege": [
     {
@@ -7512,7 +7512,7 @@
    "id": "k08-a51",
    "kapitel": 8,
    "abschnitt": "8.8",
-   "titel": "Triangulation: Das Zugrecht übertragen",
+   "titel": "Triangulation: handing over the move",
    "startFen": "8/1p1k4/1P6/2PK4/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -7600,7 +7600,7 @@
    "id": "k08-a53",
    "kapitel": 8,
    "abschnitt": "8.9",
-   "titel": "Das Reserve-Tempo",
+   "titel": "The spare tempo",
    "startFen": "8/8/8/1Kp4p/2Pk4/7P/8/8 w - - 0 1",
    "zuege": [
     {
@@ -7630,7 +7630,7 @@
    "id": "k08-a55",
    "kapitel": 8,
    "abschnitt": "Übung 50",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "k7/8/8/8/8/1Q6/8/7K w - - 0 1",
    "zuege": [
     {
@@ -7652,7 +7652,7 @@
    "id": "k08-a56",
    "kapitel": 8,
    "abschnitt": "Übung 51",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "7k/8/8/8/3K4/8/6Q1/8 w - - 0 1",
    "zuege": [
     {
@@ -7721,7 +7721,7 @@
    "id": "k08-a57",
    "kapitel": 8,
    "abschnitt": "Übung 52",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "k7/1R6/2K5/8/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -7823,7 +7823,7 @@
    "id": "k08-a58",
    "kapitel": 8,
    "abschnitt": "Übung 53",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/4k3/8/8/5K2/4P3/8/8 b - - 0 1",
    "zuege": [
     {
@@ -7895,7 +7895,7 @@
    "id": "k08-a59",
    "kapitel": 8,
    "abschnitt": "Übung 54",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/8/6k1/8/8/8/4PK2/8 b - - 0 1",
    "zuege": [
     {
@@ -7970,7 +7970,7 @@
    "id": "k08-a60",
    "kapitel": 8,
    "abschnitt": "Übung 55",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/8/5k2/8/8/3P4/3K4/8 w - - 0 1",
    "zuege": [
     {
@@ -8033,7 +8033,7 @@
    "id": "k08-a61",
    "kapitel": 8,
    "abschnitt": "Übung 56",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/8/4k3/2K5/P7/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -8088,7 +8088,7 @@
    "id": "k08-a62",
    "kapitel": 8,
    "abschnitt": "Übung 57",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "4r3/3k4/8/8/2KP4/8/8/4R3 w - - 0 1",
    "zuege": [
     {
@@ -8204,7 +8204,7 @@
    "id": "k08-a63",
    "kapitel": 8,
    "abschnitt": "Übung 58",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/8/8/6k1/8/8/P7/7K w - - 0 1",
    "zuege": [
     {
@@ -8232,7 +8232,7 @@
    "id": "k08-a64",
    "kapitel": 8,
    "abschnitt": "Übung 59",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/8/7P/8/6K1/p1k5/8/8 w - - 0 1",
    "zuege": [
     {
@@ -8349,7 +8349,7 @@
    "id": "k08-a65",
    "kapitel": 8,
    "abschnitt": "Übung 60",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/8/4k1p1/8/4KPP1/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -8479,7 +8479,7 @@
    "id": "k08-a66",
    "kapitel": 8,
    "abschnitt": "Übung 61",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/p7/1p6/3k4/7P/3K4/PP6/8 w - - 0 1",
    "zuege": [
     {
@@ -8569,7 +8569,7 @@
    "id": "k08-a67",
    "kapitel": 8,
    "abschnitt": "Übung 62",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "k7/1p1K4/1P6/2P5/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -8686,7 +8686,7 @@
    "id": "k08-a68",
    "kapitel": 8,
    "abschnitt": "Übung 63",
-   "titel": "Rückblick: Endspiel-Fundament",
+   "titel": "Review: endgame foundations",
    "startFen": "8/8/p7/5pK1/4kP2/8/P7/8 w - - 0 1",
    "zuege": [
     {
@@ -8735,7 +8735,7 @@
    "id": "k08-a10-k",
    "kapitel": 8,
    "abschnitt": "8.4",
-   "titel": "Konstruierte Partie zu Abb. 8.10",
+   "titel": "Constructed game for Fig. 8.10",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -9481,7 +9481,7 @@
    "id": "k08-a25-k",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Konstruierte Partie zu Abb. 8.25",
+   "titel": "Constructed game for Fig. 8.25",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -10107,7 +10107,7 @@
    "id": "k08-a26-k",
    "kapitel": 8,
    "abschnitt": "8.6",
-   "titel": "Konstruierte Partie zu Abb. 8.26",
+   "titel": "Constructed game for Fig. 8.26",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -11117,7 +11117,7 @@
    "id": "k08-a42-k",
    "kapitel": 8,
    "abschnitt": "8.7",
-   "titel": "Konstruierte Partie zu Abb. 8.42",
+   "titel": "Constructed game for Fig. 8.42",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -12159,7 +12159,7 @@
    "id": "k08-a7-k",
    "kapitel": 8,
    "abschnitt": "8.3",
-   "titel": "Konstruierte Partie zu Abb. 8.7",
+   "titel": "Constructed game for Fig. 8.7",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -12969,7 +12969,7 @@
    "id": "k08-a8-k",
    "kapitel": 8,
    "abschnitt": "8.3",
-   "titel": "Konstruierte Partie zu Abb. 8.8",
+   "titel": "Constructed game for Fig. 8.8",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -13635,7 +13635,7 @@
    "id": "k08-a9-k",
    "kapitel": 8,
    "abschnitt": "8.4",
-   "titel": "Konstruierte Partie zu Abb. 8.9",
+   "titel": "Constructed game for Fig. 8.9",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {

@@ -1408,7 +1408,12 @@ jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Au
       „Sortieren“ mit aufklappender Liste in Worten, aktive Filter als Chips mit × (P7b).
 - [ ] R55 Auswertung: Liste der Fehler und Patzer immer eingeklappt, Anzahl als Badge (P7b).
 - [ ] R56 Auswertung (entschieden 23.10.2026, P7b):
-      - Umschalter Weiß/Schwarz, Voreinstellung eigene Seite, volle Breite.
+      - Umschalter Weiß/Schwarz ganz oben, gilt für die ganze Seite (Satz, Fehlerliste,
+        Auswertung); Voreinstellung eigene Seite, volle Breite.
+      - Bewertungskurve bleibt die einzige Kurve (keine zweite für Genauigkeit je Zug, sie wäre
+        doppelt). Zoom: Phase unter der Kurve antippen zieht sie auf volle Breite, „Ganze
+        Partie“ zurück; Finger auf der Kurve fahren zeigt Zug für Zug „23. Sf5“, Loslassen springt
+        dorthin; zusätzlich Aufziehen mit zwei Fingern.
       - Großer Ring mit der Gesamtgenauigkeit, daneben Urteil, Genauigkeit und geschätzte
         Spielstärke mit Spanne.
       - Darunter Balken (Skala 50–100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und

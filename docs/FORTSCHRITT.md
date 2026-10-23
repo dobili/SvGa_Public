@@ -1501,3 +1501,28 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
   alle Fehler 0,96), im Modell eingerechnet.
 - betabinom.py zusätzlich: Fehler je Partie (alle, ungenau, fehler, patzer, verpasst) und
   Verlust je Fehler, je Zelle mit 90-%-Bereich der Spieler (Wunsch des Autors, 23.10.2026).
+
+### Restplan bis zum Abschluss aller Pläne (Freigabe des Autors, 23.10.2026 abends)
+
+Eigenes Elo je Zeitklasse = Lichess-Entsprechung (geeicht an Lichess-Wertungen); dazu „entspricht
+etwa“ chess.com und FIDE über veröffentlichte Umrechnungen.
+
+1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
+   Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).
+2. Tiefe 18: etwa 1000 Spielerpartien mit der Engine der App nachrechnen, Umrechnung der
+   Kennzahlen Tiefe 12 → 18.
+3. Elo-Modell je Zeitklasse und Teilmodelle je Phase; Stufenvergleich der Kennzahlen an
+   zurückgelegten Spielern (je Partie, über zehn Partien), 90-%-Bereich.
+4. Umrechnung chess.com/FIDE recherchieren (Quelle, Nutzungsbedingungen, je Zeitklasse).
+5. App: Schalter chess.com/Lichess/Mittelweg entfernen, neue Schätzung (Konstanten), Phasenzahl
+   nur bei schmalem Bereich, Texte de/en, alte Einstellung beim Lesen übergehen, Tests.
+6. Teil A, Rest: blinde Flecken und Fehlerarten zusammenführen (Engine, Oberfläche, Speicher mit
+   Umwandlung).
+7. Teil D: Spielstile (Recherche, Unterscheidbarkeit je Elo aus den Daten), je Bot genau ein Stil.
+8. Teil E: Bots für Schnellschach neu (Spaß 4 + 8 × 8), Fehlerraten je Phase aus den Spielerprofilen,
+   Unterscheidung der Bots über die Bereiche und Kopplungen (vorher Gespräch mit dem Autor),
+   Messung mit vierfachen Kandidaten (256 + 16), Ergebnisleiter, Verankerung mit dem neuen Modell.
+9. Teil F: Blitz und 60 Minuten (eigene Raten, Feinabstimmung), drei Einstellungssätze und drei
+   Wertungen je Bot, „ohne Uhr“ weg (außer ungewertet ab Buchabbildung), „besiegt“ je Zeitklasse,
+   Zeitkontrolle in der Partieliste.
+10. Abschluss: Dokumente, AUFGABEN_AUTOR (Tests), Version, Prüfungen, CI grün, nach main.

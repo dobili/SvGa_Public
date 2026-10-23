@@ -78,7 +78,9 @@ describe("k6-planbilanz", () => {
   it.each(faelle.map((fall) => [fall.abbildung, fall] as const))(
     "Abb. %s: jede Zeile und Seite wie im Buch",
     (nummer, fall) => {
-      const e = planbilanz(stellungVon(nummer), "white");
+      // Seit R41 zeigt die Karte nur die gewählte Seite: je Seite ein Ergebnis.
+      const weiss = planbilanz(stellungVon(nummer), "white");
+      const schwarz = planbilanz(stellungVon(nummer), "black");
       const kennung: Record<string, string> = {
         "Wo spiele ich?": "wo",
         "Was will mein Gegner?": "gegner",
@@ -87,9 +89,11 @@ describe("k6-planbilanz", () => {
       for (const zeile of fall.tabelle.zeilen) {
         const pruefung = ERWARTUNGEN[nummer]?.[zeile.name];
         expect(pruefung, `Erwartung für Abb. ${nummer}, Zeile ${zeile.name}`).toBeDefined();
-        const befund = e.befunde.find((b) => b.kennung === kennung[zeile.name]);
-        expect(befund).toBeDefined();
-        pruefung?.(befund?.zeilen[0] ?? "", befund?.zeilen[1] ?? "");
+        const w = weiss.befunde.find((b) => b.kennung === kennung[zeile.name]);
+        const s = schwarz.befunde.find((b) => b.kennung === kennung[zeile.name]);
+        expect(w).toBeDefined();
+        expect(s).toBeDefined();
+        pruefung?.(w?.zeilen[0] ?? "", s?.zeilen[0] ?? "");
       }
     },
   );

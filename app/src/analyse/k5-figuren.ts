@@ -134,19 +134,19 @@ function markierungen(f: Figurenbefund): Markierung[] {
  * Beantwortet Leitfrage 4 für beide Seiten.
  *
  * Warum: „Welche Figuren passen zu diesem Skelett – und was tausche ich?“ (Kapitel 5).
- * Eingaben: Stellung, eigene Seite. Ausgabe: Stellungstyp und ein Befund je Seite.
+ * Eingaben: Stellung, eigene Seite. Ausgabe: Stellungstyp und der Befund der eigenen Seite (der
+ * Gegner über den Sicht-Schalter, R41); die Tauschfrage nennt seine Schwächen mit.
  * Beispiel: Abb. 5.43 (London): „Läufer d3: gut“, „Läufer d7: schlecht“; Abb. 5.37: offen.
  */
 export function figuren(stellung: Stellung, eigen: Color): Werkzeugergebnis {
   const p = profil(stellung);
   const typ = stellungstyp(stellung.brett);
   const mein = befundFuer(p, eigen);
-  const sein = befundFuer(p, gegner(eigen));
   return {
     werkzeug: "k5-figuren",
     art: "E",
     ueberschrift: t("figuren.titel"),
-    befunde: [typbefund(typ.typ, typ), mein.befund, sein.befund],
+    befunde: [typbefund(typ.typ, typ), mein.befund],
     fazit: t("figuren.fazit", {
       typ: t(`figuren.typname.${typ.typ}`),
       satz: t(`figuren.typsatz.${typ.typ}`),
@@ -154,8 +154,8 @@ export function figuren(stellung: Stellung, eigen: Color): Werkzeugergebnis {
     markierungen: markierungen(mein.f),
     stufen: [
       ["typ", eigen],
-      ["typ", eigen, gegner(eigen)],
-      ["typ", eigen, gegner(eigen)],
+      ["typ", eigen],
+      ["typ", eigen],
     ],
     regel: t("werkzeug.k5-figuren.regel"),
   };

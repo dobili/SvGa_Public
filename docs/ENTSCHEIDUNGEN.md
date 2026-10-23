@@ -4393,6 +4393,41 @@ Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
 - **Entfernt:** Strähne und Lagefaktoren der alten Zugwahl (zählten doppelt), der Wahlkern der
   Menschen für die Grundschicht (ersetzt durch die geeichte Grundschicht der Stufe).
 
+## P3 Werkzeuge und Strukturbegriffe (23.10.2026, Fable, Zweig `p3-werkzeuge`)
+
+Festlegungen des Autors (Arbeitsplan vom 23.10.2026), in der App umgesetzt; die Abweichungen
+des Buches davon stehen als Vorschläge B9 bis B14 in AUFGABEN_AUTOR:
+
+- **Rückständiger Bauer:** hinter den benachbarten eigenen Bauern zurückgeblieben, von keinem
+  eigenen Bauern mehr zu decken (Deckungstest), am Vorrücken gehindert (ein gegnerischer Bauer
+  kontrolliert das Feld davor), Ziel auf der halboffenen Linie (kein gegnerischer Bauer vor ihm
+  auf seiner Linie). Bis dahin reichten Nachbarn vorn und Deckungstest; ein Bauer, der noch
+  aufrücken kann, bekommt jetzt nur U. Folge für Leitfrage 4: Er zählt nicht mehr als
+  festgelegter Bauer, fünf Läuferurteile ändern sich (Abb. 5.7 c8 nicht mehr schlecht, 11.77 c2
+  schlecht).
+- **Bauernloch:** Feld, meist 3. bis 5. Reihe aus eigener Sicht, das nie wieder ein eigener Bauer
+  kontrollieren kann; Nistplatz für gegnerische Figuren. **Schwaches Feld** ist der Oberbegriff
+  (jedes dauerhaft von eigenen Bauern nicht mehr deckbare Feld). **Starkes Feld:** gegnerische
+  Hälfte, 4. bis 6. Reihe aus eigener Sicht (bisher 5. und 6. im Bauernprofil; das Werkzeug
+  Felder rechnete schon ab der 4.), vom Gegner nicht mehr mit Bauern angreifbar. **Vorposten:**
+  starkes Feld, zusätzlich von einem eigenen Bauern gedeckt, mit eigener Figur (ideal Springer)
+  besetzt oder dafür vorgesehen (`besetztVon`, `erreichbar`).
+- **Sicht (R41):** Die Legende nennt die Farben der gewählten Sicht. Werkzeuge erklären nur die
+  gewählte Seite; Ausnahmen mit Begründung in der Regel: Schach-Röntgen (die Regel des Buches
+  fragt beide Seiten), Warnsignale und Erfassen (Kapitel 12, Schritt 1: beide Seiten), Zielbilanz
+  und Faktorenbilanz (Vergleichstabellen). Bei den Bauern bleiben die Schwächen des Gegners als
+  „Ziele“, weil die Buchtabelle zu jeder Schwäche den Plan dagegen nennt.
+- **Karten (R42):** Befunde einspaltig auf dem Handy, zweispaltig ab 760 px hoch und 1340 px
+  quer. Doppelte Inhalte zwischen Reitern: nur die Phase in „Erfassen“ war doppelt; Figuren
+  (Springerfelder, Turmlinien), Planbilanz (Zusammenfassung) und Endspielregeln bleiben, weil
+  das Buch sie an der Stelle so wiederholt.
+- **Kandidaten (R43):** Ruhige Kandidaten (Buchzug, Mattabwehr) ohne Materialstand; die Engine
+  bewertet alle Kandidaten gegen die Stellung jetzt („hält“ bis 0,3 Bauern, sonst verbessert oder
+  verschlechtert um den Betrag, Matt geht vor). Der Materialvergleich in Schritt 4 läuft weiter
+  über alle Kandidaten (Abb. 12.4: Sf6 bleibt der beste); liegt ein ruhiger vorn, verweist der
+  Satz auf die Engine. Versuch, ruhige Kandidaten aus dem Materialvergleich zu nehmen, verworfen:
+  Dann gewann Dd1+ (−9) in Abb. 12.4.
+
 ## R21: Musterlösungen der Trainer gegen die Engine (19.10.2026, Opus)
 
 Wunsch des Autors: Keine Musterlösung, die katastrophal schlechter ist als der beste Zug; sonst

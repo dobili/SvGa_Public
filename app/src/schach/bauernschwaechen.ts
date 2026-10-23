@@ -6,7 +6,8 @@
  * des Skelett-Röntgens und Grundlage der Endspielfragen (Kapitel 8).
  * Abhängigkeiten: bauernprofil.ts, chessops.
  * Buchbezug: Kapitel 5, „Leitfrage 2: Bauern“ mit der Tabelle der Bauernschwächen; Glossar
- * (Doppelbauern, Rückständiger Bauer, Isolani, Hängende Bauern, Freibauer, Gedeckter Freibauer).
+ * (Doppelbauern, Rückständiger Bauer, Isolani, Hängende Bauern, Freibauer, Gedeckter Freibauer);
+ * rückständig nach den Festlegungen des Autors vom 23.10.2026 (P3).
  */
 import type { Board } from "chessops/board";
 import type { Color, Square } from "chessops/types";
@@ -75,23 +76,61 @@ function bestehtDeckungstest(
 }
 
 /**
- * Rückständiger Bauer: Er hat noch Nachbarn, die aber alle schon vor ihm stehen.
+ * Ob ein gegnerischer Bauer das Feld direkt vor dem Bauern angreift: Er steht auf einer
+ * Nachbarlinie zwei Reihen vor dem Bauern (aus dessen Sicht) und schlägt schräg nach hinten
+ * darauf. Beispiel: Abb. 5.8, vor dem Bauern d6 liegt d5, der weiße Bauer e4 greift es an.
+ */
+function feldDavorVomGegnerAngegriffen(
+  feld: Square,
+  gegnerische: readonly (readonly Square[])[],
+  farbe: Color,
+): boolean {
+  const angriffsreihe = eigeneReihe(feld, farbe) + 2;
+  return nachbarlinien(squareFile(feld)).some((linie) =>
+    (gegnerische[linie] ?? []).some((g) => eigeneReihe(g, farbe) === angriffsreihe),
+  );
+}
+
+/** Ob vor dem Bauern auf seiner Linie noch ein gegnerischer Bauer steht (die Linie ist dann nicht halboffen). */
+function gegnerbauerDavor(
+  feld: Square,
+  gegnerische: readonly (readonly Square[])[],
+  farbe: Color,
+): boolean {
+  const reihe = eigeneReihe(feld, farbe);
+  return (gegnerische[squareFile(feld)] ?? []).some((g) => eigeneReihe(g, farbe) > reihe);
+}
+
+/**
+ * Rückständiger Bauer: Er hat noch Nachbarn, die aber alle schon vor ihm stehen, kein eigener
+ * Bauer kann ihn je wieder decken, und er kommt nicht mehr vor.
  *
- * Regel: Glossar: „Ein Bauer, der hinter seinen Nachbarbauern zurückgeblieben ist: Sie stehen
- * schon vor ihm und können ihn nicht mehr decken.“ Beide Teile zählen: alle Nachbarn vorn und
- * der Deckungstest fällt durch. Beispiel: Abb. 5.8, der Bauer d6 (Nachbar e5 steht vor ihm, auf
- * der c-Linie steht kein schwarzer Bauer mehr); b7 daneben ist nicht rückständig, denn nach
- * ...b5 deckt ihn a6.
+ * Regel: Kapitel 5, „Der rückständige Bauer“, mit den Festlegungen des Autors (P3, 23.10.2026):
+ * hinter den benachbarten eigenen Bauern zurückgeblieben; von keinem eigenen Bauern mehr zu
+ * decken (Deckungstest fällt durch); am Vorrücken gehindert, weil ein gegnerischer Bauer das Feld
+ * vor ihm kontrolliert; Ziel auf der halboffenen Linie, also kein gegnerischer Bauer vor ihm auf
+ * seiner Linie. Beispiel: Abb. 5.8, der Bauer d6 (Nachbar e5 steht vor ihm, auf der c-Linie steht
+ * kein schwarzer Bauer mehr, d5 greift der Bauer e4 an, die d-Linie ist für Weiß halboffen); b7
+ * daneben ist nicht rückständig, denn nach ...b5 deckt ihn a6.
+ * Sonderfälle: Steht das Feld davor nicht unter Bauernkontrolle, ist der Bauer nur
+ * „zurückgeblieben“ und kann aufrücken; er fällt dann höchstens durch den Deckungstest. Steht ihm
+ * ein gegnerischer Bauer gegenüber, ist er blockiert, kein Ziel auf der Linie.
  */
 function istRueckstaendig(
   feld: Square,
   jeLinie: readonly (readonly Square[])[],
+  gegnerische: readonly (readonly Square[])[],
   farbe: Color,
 ): boolean {
   const nachbarn = nachbarlinien(squareFile(feld)).flatMap((linie) => jeLinie[linie] ?? []);
   const reihe = eigeneReihe(feld, farbe);
   const alleVorn = nachbarn.length > 0 && nachbarn.every((n) => eigeneReihe(n, farbe) > reihe);
-  return alleVorn && !bestehtDeckungstest(feld, jeLinie, farbe);
+  return (
+    alleVorn &&
+    !bestehtDeckungstest(feld, jeLinie, farbe) &&
+    feldDavorVomGegnerAngegriffen(feld, gegnerische, farbe) &&
+    !gegnerbauerDavor(feld, gegnerische, farbe)
+  );
 }
 
 /**
@@ -166,7 +205,7 @@ export function bauernschwaechen(brett: Board, farbe: Color): Bauernschwaechen {
     isolani: bauern.filter((feld) =>
       nachbarlinien(squareFile(feld)).every((linie) => (jeLinie[linie] ?? []).length === 0),
     ),
-    rueckstaendige: bauern.filter((feld) => istRueckstaendig(feld, jeLinie, farbe)),
+    rueckstaendige: bauern.filter((feld) => istRueckstaendig(feld, jeLinie, gegnerische, farbe)),
     haengende: haengendeAus(jeLinie, farbe),
     freibauern: bauern
       .filter((feld) => istFreibauer(feld, gegnerische, farbe))

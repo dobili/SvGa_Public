@@ -26,8 +26,12 @@ const KOENIGSFLUEGEL: readonly number[] = [4, 5, 6, 7];
 /** Löcher werden auf den eigenen Reihen 3 bis 6 gesucht (Abb. 5.6: h6; Abb. 5.8: d5). */
 const LOCHREIHEN_VON = 2;
 const LOCHREIHEN_BIS = 5;
-/** Starke Felder liegen auf der 5. und 6. Reihe aus eigener Sicht (Kapitel 5). */
-const STARKE_REIHEN_VON = 4;
+/**
+ * Starke Felder liegen auf der 4. bis 6. Reihe aus eigener Sicht (Festlegung des Autors, P3,
+ * 23.10.2026: „Feld in der gegnerischen Hälfte (4.–6. Reihe), das der Gegner nicht mehr mit
+ * Bauern angreifen kann“; Abb. 11.43: d4 und c5 sind sichere Felder für Weiß).
+ */
+const STARKE_REIHEN_VON = 3;
 const STARKE_REIHEN_BIS = 5;
 
 /** Eine Bauernkette: Glieder von der Basis zur Spitze, dazu die Stützen von außerhalb. */
@@ -68,9 +72,12 @@ export interface Bauernprofil {
   readonly offeneLinien: readonly number[];
   /** Linien, auf denen nur noch gegnerische Bauern stehen: halboffen für diese Farbe. */
   readonly halboffeneLinien: readonly number[];
-  /** Felder, die kein eigener Bauer mehr kontrollieren kann (eigene Reihen 3 bis 6). */
+  /**
+   * Löcher: Felder, die kein eigener Bauer je wieder kontrollieren kann (schwache Felder im
+   * Sinne des Oberbegriffs; eigene Reihen 3 bis 6). Für den Gegner Nistplätze seiner Figuren.
+   */
   readonly loecher: readonly Square[];
-  /** Löcher des Gegners auf der eigenen 5. und 6. Reihe. */
+  /** Löcher des Gegners auf der eigenen 4. bis 6. Reihe: starke Felder. */
   readonly starkeFelder: readonly Square[];
   readonly mehrheiten: readonly Mehrheit[];
 }
@@ -208,11 +215,13 @@ function duosAus(
 }
 
 /**
- * Löcher: Felder, die kein eigener Bauer mehr kontrollieren kann.
+ * Löcher: Felder, die kein eigener Bauer je wieder kontrollieren kann.
  *
- * Regel: Kapitel 5, Leitfrage 1: Ein Feld ist ein Loch, wenn auf den beiden Nachbarlinien kein
- * eigener Bauer mehr hinter ihm steht (Abb. 5.6: Nach ...g6 kann kein schwarzer Bauer h6 mehr
- * decken; f6 deckt noch e7). Geprüft werden die eigenen Reihen 3 bis 6.
+ * Regel: Kapitel 5, Leitfrage 1, und Festlegung des Autors (P3, 23.10.2026): Ein Bauernloch ist
+ * ein Feld (meist 3. bis 5. Reihe aus eigener Sicht), das nie wieder von eigenen Bauern
+ * kontrolliert werden kann: Auf den beiden Nachbarlinien steht kein eigener Bauer mehr hinter
+ * ihm (Abb. 5.6: Nach ...g6 kann kein schwarzer Bauer h6 mehr decken; f6 deckt noch e7).
+ * Geprüft werden die eigenen Reihen 3 bis 6; k5-felder nennt davon die Reihen 3 bis 5.
  */
 function loecherAus(jeLinie: readonly (readonly Square[])[], farbe: Color): Square[] {
   const loecher: Square[] = [];

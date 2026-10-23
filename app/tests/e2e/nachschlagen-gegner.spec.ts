@@ -45,4 +45,9 @@ test("Eigener Bot mit Porträt; Spielhilfen stehen über „Partie beginnen“",
   await page.getByRole("radio", { name: /Tante Erna/ }).click();
   const blase = page.getByTestId("gegner-sprechblase");
   await expect(blase.locator("img")).toHaveAttribute("src", /gegner\/wahl-25\.svg$/);
+  // R28: In der Partie steht der Bot mit Porträt als Titel.
+  await beginnen.click();
+  const titel = page.getByRole("heading", { name: "gegen Tante Erna" });
+  await expect(titel).toBeVisible();
+  await expect(titel.locator("img")).toHaveAttribute("src", /gegner\/wahl-25\.svg$/);
 });

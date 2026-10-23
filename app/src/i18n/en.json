@@ -3272,5 +3272,6 @@
   "spielen.ordnung.staerke.ab": "Your best strength first",
   "spielen.ordnung.staerke.auf": "Your weakest strength first",
   "spielen.ordnung.gegner.ab": "Strongest opponent first",
-  "spielen.ordnung.gegner.auf": "Weakest opponent first"
+  "spielen.ordnung.gegner.auf": "Weakest opponent first",
+  "partie.titelBot": "against {name}"
 }

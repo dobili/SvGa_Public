@@ -440,3 +440,15 @@
   color: var(--navy);
   font-size: var(--groesse-klein);
 }
+
+/* ---------- Titel der Partie mit Porträt (R28) ---------- */
+.partietitel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.partietitel .gegner-portraet {
+  width: 32px;
+  height: 32px;
+}

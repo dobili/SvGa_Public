@@ -3272,5 +3272,6 @@
   "spielen.ordnung.staerke.ab": "Deine beste Spielstärke zuerst",
   "spielen.ordnung.staerke.auf": "Deine schwächste Spielstärke zuerst",
   "spielen.ordnung.gegner.ab": "Stärkster Gegner zuerst",
-  "spielen.ordnung.gegner.auf": "Schwächster Gegner zuerst"
+  "spielen.ordnung.gegner.auf": "Schwächster Gegner zuerst",
+  "partie.titelBot": "gegen {name}"
 }

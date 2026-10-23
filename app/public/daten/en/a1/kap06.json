@@ -6,42 +6,42 @@
   {
    "nummer": "6.1",
    "label": "sec:k6-saeulen",
-   "titel": "Was im Mittelspiel zählt"
+   "titel": "What counts in the middlegame"
   },
   {
    "nummer": "6.2",
    "label": "sec:k6-planfragen",
-   "titel": "Planfindung mit den drei Planfragen"
+   "titel": "Finding a plan with the three plan questions"
   },
   {
    "nummer": "6.3",
    "label": "sec:k6-wo",
-   "titel": "Frage 1: Wo spiele ich?"
+   "titel": "Question 1: Where do I play?"
   },
   {
    "nummer": "6.4",
    "label": "sec:k6-gegner",
-   "titel": "Frage 2: Was will mein Gegner?"
+   "titel": "Question 2: What does my opponent want?"
   },
   {
    "nummer": "6.5",
    "label": "sec:k6-figur",
-   "titel": "Frage 3: Welche Figur bringe ich dorthin?"
+   "titel": "Question 3: Which piece do I bring there?"
   },
   {
    "nummer": "6.6",
    "label": "sec:k6-wettrennen",
-   "titel": "Alle drei Fragen an einer Stellung: das Wettrennen in der Königsindischen Verteidigung"
+   "titel": "All three questions on one position: the race in the King's Indian Defense"
   },
   {
    "nummer": "6.7",
    "label": "sec:k6-qualitaet",
-   "titel": "Wenn der Plan Material kostet: ungleiche Tausche und das Qualitätsopfer"
+   "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
   },
   {
    "nummer": "6.8",
    "label": "sec:k6-verwerten",
-   "titel": "Den Vorteil verwerten"
+   "titel": "Converting the advantage"
   }
  ],
  "abbildungen": [
@@ -63,16 +63,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Stellung aus Kapitel 1 nach ",
+     "text": "The position from Chapter 1 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. De2"
+     "text": "9. Qe2"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Die Eröffnung ist abgeschlossen. Goldener Pfeil: Die Türme a1 und f1 sind verbunden.",
+     "text": ", Black to move. The opening is over. Gold arrow: the rooks on a1 and f1 are connected.",
      "stil": "normal"
     }
    ],
@@ -113,9 +113,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Geschlossenes Zentrum: Spiele dort, wohin deine Kette zeigt",
+   "unterabschnitt": "Closed center: Play where your pawn chain points",
    "fen": "6k1/ppp2p1p/3p2p1/3Pp3/2P1P3/8/PP3PPP/6K1 w - - 0 1",
    "pfeile": [
     {
@@ -133,16 +133,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Skelett der Königsindischen Verteidigung aus Kapitel 5 nach ",
+     "text": "The skeleton of the King's Indian Defense from Chapter 5 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. d5 Se7"
+     "text": "8. d5 Ne7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Graue Pfeile: Weiß bereitet am Damenflügel ",
+     "text": ", White to move. Gray arrows: White prepares ",
      "stil": "normal"
     },
     {
@@ -151,7 +151,7 @@
     },
     {
      "art": "text",
-     "text": " vor, Schwarz am Königsflügel ",
+     "text": " on the queenside, Black ",
      "stil": "normal"
     },
     {
@@ -160,7 +160,7 @@
     },
     {
      "art": "text",
-     "text": ".",
+     "text": " on the kingside.",
      "stil": "normal"
     }
    ],
@@ -176,14 +176,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum spielen Weiß und Schwarz hier auf verschiedenen Flügeln?",
+      "frage": "Why do White and Black play on opposite wings here?",
       "antworten": [
-       "Weil Weiß am Königsflügel keine Bauern mehr hat.",
-       "Jede Seite spielt dorthin, wohin ihre eigene Kette zeigt, und greift die gegnerische Basis an.",
-       "Weil im geschlossenen Zentrum kein Bauer mehr ziehen darf."
+       "Because White has no pawns left on the kingside.",
+       "Each side plays where its own chain points and attacks the opponent's base.",
+       "Because in a closed center no pawn may move anymore."
       ],
       "richtig": 1,
-      "erklaerung": "Die weiße Kette e4–d5 zeigt zum Damenflügel, die schwarze d6–e5 zum Königsflügel. So beginnt ein Wettrennen: Wer zuerst durchbricht, bestimmt die Partie."
+      "erklaerung": "White's chain e4–d5 points to the queenside, Black's chain d6–e5 to the kingside. This starts a race: whoever breaks through first decides the game."
      }
     ]
    }
@@ -195,9 +195,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Offenes Zentrum: Spiele mit Figuren",
+   "unterabschnitt": "Open center: Play with your pieces",
    "fen": "r2q1rk1/pb1n1ppp/1p2pn2/6B1/1bBP4/2N2N2/PP2QPPP/R2R2K1 b - - 2 12",
    "pfeile": [
     {
@@ -223,16 +223,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Nimzo-Indischen Hauptvariante (Kapitel 2 und 5) nach ",
+     "text": "The final position of the Nimzo-Indian main line (Chapters 2 and 5) after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "12. Lg5"
+     "text": "12. Bg5"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: der Hebel d4–d5. Grau: die drei schwarzen Wächter des Feldes d5.",
+     "text": ", Black to move. Gold: the lever d4–d5. Gray: Black's three guards of the square d5.",
      "stil": "normal"
     }
    ],
@@ -279,9 +279,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Der Angriff am Flügel bei offenem Zentrum: Antworte in der Mitte",
+   "unterabschnitt": "A wing attack with an open center: Respond in the middle",
    "fen": "rnbqkbnr/ppp2ppp/8/3p4/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq d6 0 4",
    "pfeile": [
     {
@@ -294,16 +294,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Königsgambit aus Kapitel 3 nach ",
+     "text": "The King's Gambit from Chapter 3 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. f4 exf4 3. Sf3 d5"
+     "text": "1. e4 e5 2. f4 exf4 3. Nf3 d5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Gegenschlag im Zentrum greift den Bauern e4 an.",
+     "text": ", White to move. Red: the counterstrike in the center attacks the pawn on e4.",
      "stil": "normal"
     }
    ],
@@ -333,9 +333,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Der Angriff am Flügel bei offenem Zentrum: Antworte in der Mitte",
+   "unterabschnitt": "A wing attack with an open center: Respond in the middle",
    "fen": "r1bq1rk1/pp2ppbp/2np1np1/8/3NP3/2N1BP2/PPPQ2PP/R3KB1R w KQ - 3 9",
    "pfeile": [
     {
@@ -353,25 +353,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Sc6"
+     "text": "8... Nc6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: der Gegenschlag ...d5. Gold: ",
+     "text": ", White to move. Red: the counterstrike ...d5. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. Lc4"
+     "text": "9. Bc4"
     },
     {
      "art": "text",
-     "text": " nimmt d5 unter Kontrolle.",
+     "text": " takes control of d5.",
      "stil": "normal"
     }
    ],
@@ -408,14 +408,14 @@
     "fragen": [
      {
       "zug": "9. Bc4",
-      "frage": "Warum spielt Weiß 9. Lc4 noch vor der langen Rochade?",
+      "frage": "Why does White play 9. Bc4 even before castling queenside?",
       "antworten": [
-       "Er greift sofort den Springer f6 an.",
-       "Er will den Läufer gegen den Springer c6 tauschen.",
-       "Er bewacht d5: Jetzt stehen drei weiße Angreifer zwei schwarzen Verteidigern gegenüber, der Gegenschlag ...d5 geht nicht."
+       "It attacks the knight on f6 right away.",
+       "It wants to trade the bishop for the knight on c6.",
+       "It guards d5: now three white attackers face two black defenders, and the counterstrike ...d5 doesn't work."
       ],
       "richtig": 2,
-      "erklaerung": "Vorher stand es auf d5 zwei gegen zwei: Bauer e4 und Springer c3 gegen Springer f6 und Dame d8. Wer am Flügel angreifen will, sichert zuerst das Zentrum."
+      "erklaerung": "Before, it was two against two on d5: the pawn on e4 and the knight on c3 against the knight on f6 and the queen on d8. If you want to attack on the wing, secure the center first."
      }
     ]
    }
@@ -427,9 +427,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Die Könige auf verschiedenen Flügeln: Wer öffnet zuerst?",
+   "unterabschnitt": "Kings on opposite wings: Who opens up first?",
    "fen": "2rq1rk1/pp1bppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/2KR3R w - - 7 11",
    "pfeile": [
     {
@@ -452,16 +452,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10... Tc8"
+     "text": "10... Rc8"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: der weiße Sturm h4–h5 gegen den Bauern g6 (grau). Rot: der langsamere schwarze Sturm ...a5–a3.",
+     "text": ", White to move. Gold: White's storm h4–h5 against the pawn on g6 (gray). Red: Black's slower storm ...a5–a3.",
      "stil": "normal"
     }
    ],
@@ -501,14 +501,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist der weiße Bauernsturm schneller als der schwarze?",
+      "frage": "Why is White's pawn storm faster than Black's?",
       "antworten": [
-       "Weil der schwarze a-Bauer gefesselt ist.",
-       "Weil der vorgerückte Bauer g6 dem weißen h-Bauern ein nahes Ziel bietet.",
-       "Weil Schwarz am Damenflügel nicht mit Bauern angreifen darf."
+       "Because Black's a-pawn is pinned.",
+       "Because the advanced pawn on g6 gives White's h-pawn a nearby target.",
+       "Because Black may not attack with pawns on the queenside."
       ],
       "richtig": 1,
-      "erklaerung": "Das Fianchetto ...g6 hat Weiß einen Haken geschenkt. Vor dem weißen König ist dagegen noch kein Bauer vorgerückt, deshalb braucht Schwarz einen Zug mehr."
+      "erklaerung": "The fianchetto ...g6 has handed White a hook. In front of White's king, on the other hand, no pawn has advanced yet, so Black needs one move more."
      }
     ]
    }
@@ -520,9 +520,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Die Könige auf demselben Flügel: Wann darf ich angreifen?",
+   "unterabschnitt": "Kings on the same wing: When may I attack?",
    "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
    "pfeile": [
     {
@@ -558,7 +558,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Stellung des griechischen Geschenks aus Kapitel 1, Weiß am Zug. Grau: die Bauern d4 und e5 halten das Zentrum geschlossen. Gold: drei Angreifer. Rot: der schwache Punkt h7.",
+     "text": "The Greek gift position from Chapter 1, White to move. Gray: the pawns on d4 and e5 keep the center closed. Gold: three attackers. Red: the weak point h7.",
      "stil": "normal"
     }
    ],
@@ -578,14 +578,14 @@
     "fragen": [
      {
       "zug": "1. Bxh7+",
-      "frage": "Warum funktioniert hier das Opfer 1. Lxh7+?",
+      "frage": "Why does the sacrifice 1. Bxh7+ work here?",
       "antworten": [
-       "Alle drei Bedingungen sind erfüllt: verriegeltes Zentrum, Überzahl am Königsflügel und ein Ziel, das nur der König deckt.",
-       "Weiß gewinnt mit dem Läufer sofort einen Turm.",
+       "All three conditions are met: a locked center, superior numbers on the kingside, and a target that only the king defends.",
+       "White wins a rook with the bishop right away.",
        "After the capture, Black is mated at once."
       ],
       "richtig": 0,
-      "erklaerung": "Der Bauer e5 hat den Springer von f6 vertrieben, den wichtigsten Verteidiger. Nach dem Opfer kommen Springer und Dame über g5 und h5 schnell heran."
+      "erklaerung": "The pawn on e5 has driven the knight away from f6, the most important defender. After the sacrifice, the knight and queen arrive quickly via g5 and h5."
      }
     ]
    }
@@ -597,9 +597,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Kein Angriff in Sicht: Spiele gegen die Schwäche",
+   "unterabschnitt": "No attack in sight: Play against the weakness",
    "fen": "6k1/pp3ppp/2p5/3p4/3P4/4P3/PP3PPP/6K1 w - - 0 1",
    "pfeile": [
     {
@@ -612,7 +612,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Carlsbad-Struktur aus Kapitel 5 (Skelett), Weiß am Zug. Goldener Pfeil: der Vorstoß b2–b4.",
+     "text": "The Carlsbad structure from Chapter 5 (skeleton), White to move. Gold arrow: the advance b2–b4.",
      "stil": "normal"
     }
    ],
@@ -635,9 +635,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Kein Angriff in Sicht: Spiele gegen die Schwäche",
+   "unterabschnitt": "No attack in sight: Play against the weakness",
    "fen": "6k1/pp3ppp/2p5/1P1p4/3P4/4P3/P4PPP/6K1 b - - 0 1",
    "pfeile": [
     {
@@ -650,7 +650,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach b4 und b5 (Schwarz hat inzwischen Figuren gezogen), Schwarz am Zug. Goldener Pfeil: Weiß will bxc6 spielen.",
+     "text": "After b4 and b5 (Black has made some piece moves in the meantime), Black to move. Gold arrow: White wants to play bxc6.",
      "stil": "normal"
     }
    ],
@@ -673,9 +673,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Kein Angriff in Sicht: Spiele gegen die Schwäche",
+   "unterabschnitt": "No attack in sight: Play against the weakness",
    "fen": "6k1/p4ppp/2p5/3p4/3P4/4P3/P4PPP/6K1 w - - 0 1",
    "pfeile": [],
    "felder": [
@@ -695,7 +695,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach bxc6 bxc6, Weiß am Zug. Rot: der rückständige Bauer c6 und der isolierte Bauer a7. Grau: das Feld c5, das der Bauer d4 bewacht.",
+     "text": "After bxc6 bxc6, White to move. Red: the backward pawn on c6 and the isolated pawn on a7. Gray: the square c5, which the pawn on d4 guards.",
      "stil": "normal"
     }
    ],
@@ -714,14 +714,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist der Bauer c6 jetzt ein dauerhaftes Ziel?",
+      "frage": "Why is the pawn on c6 now a permanent target?",
       "antworten": [
-       "Weil Weiß auf der c-Linie mehr Bauern hat.",
-       "Weil er ein Doppelbauer ist.",
-       "Weil er nicht nach c5 vorrücken kann: Der Bauer d4 bewacht das Feld, und kein schwarzer Bauer kann ihn mehr stützen."
+       "Because White has more pawns on the c-file.",
+       "Because it is a doubled pawn.",
+       "Because it cannot advance to c5: the pawn on d4 guards that square, and no black pawn can support it anymore."
       ],
       "richtig": 2,
-      "erklaerung": "Erst fixieren, dann angreifen. Ein Bauer, der nicht weglaufen kann, ist ein Ziel für Türme auf der c-Linie und einen Springer auf e5."
+      "erklaerung": "First fix, then attack. A pawn that cannot run away is a target for rooks on the c-file and a knight on e5."
      }
     ]
    }
@@ -733,9 +733,9 @@
    "abschnitt": {
     "nummer": "6.3",
     "label": "sec:k6-wo",
-    "titel": "Frage 1: Wo spiele ich?"
+    "titel": "Question 1: Where do I play?"
    },
-   "unterabschnitt": "Kein Angriff in Sicht: Spiele gegen die Schwäche",
+   "unterabschnitt": "No attack in sight: Play against the weakness",
    "fen": "r1rnb1k1/B1n1q1bp/3p1pp1/1p1PpP2/1Pp1P3/2P4P/R2QN1PN/RB4K1 b - - 0 31",
    "pfeile": [
     {
@@ -753,7 +753,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Karpow–Unzicker, Nizza 1974 (Kapitel 11), nach ",
+     "text": "Karpov–Unzicker, Nice 1974 (Chapter 11), after ",
      "stil": "normal"
     },
     {
@@ -762,7 +762,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Goldener Pfeil: die erste Front, die gesperrte a-Linie. Goldenes Feld: die zweite Front, der Bauer f5 am Königsflügel.",
+     "text": ", Black to move. Gold arrow: the first front, the blocked a-file. Gold square: the second front, the pawn on f5 on the kingside.",
      "stil": "normal"
     }
    ],
@@ -847,7 +847,7 @@
    "abschnitt": {
     "nummer": "6.4",
     "label": "sec:k6-gegner",
-    "titel": "Frage 2: Was will mein Gegner?"
+    "titel": "Question 2: What does my opponent want?"
    },
    "unterabschnitt": null,
    "fen": "rn1qkb1r/pbpp1ppp/1p2pn2/8/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 2 5",
@@ -872,16 +872,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Lb7"
+     "text": "4... Bb7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: der geplante Läuferzug ...Lb4. Grau: der Springer c3, den er an den König fesseln würde. Gold: ",
+     "text": ", White to move. Red: the planned bishop move ...Bb4. Gray: the knight on c3, which it would pin to the king. Gold: ",
      "stil": "normal"
     },
     {
@@ -919,14 +919,14 @@
     "fragen": [
      {
       "zug": "5. a3",
-      "frage": "Warum spielt Weiß den ruhigen Zug 5. a3?",
+      "frage": "Why does White play the quiet move 5. a3?",
       "antworten": [
        "It prepares queenside castling.",
-       "Er verhindert ...Lb4: Der Läufer würde den Springer c3 fesseln, auf b4 könnte Weiß ihn jetzt einfach schlagen.",
-       "Er macht dem Turm a1 das Feld a2 frei."
+       "It prevents ...Bb4: the bishop would pin the knight on c3, and on b4 White could now simply capture it.",
+       "It frees the square a2 for the rook on a1."
       ],
       "richtig": 1,
-      "erklaerung": "Das ist Prophylaxe: Du nennst den gegnerischen Zug (...Lb4), verhinderst genau ihn und schwächst dabei nichts vor deinem König."
+      "erklaerung": "That is prophylaxis: you name your opponent's move (...Bb4), prevent exactly that move, and weaken nothing in front of your king."
      }
     ]
    }
@@ -938,9 +938,9 @@
    "abschnitt": {
     "nummer": "6.4",
     "label": "sec:k6-gegner",
-    "titel": "Frage 2: Was will mein Gegner?"
+    "titel": "Question 2: What does my opponent want?"
    },
-   "unterabschnitt": "Wenn der Angriff schon läuft: die Verteidigungsmittel",
+   "unterabschnitt": "When the attack is already underway: the means of defense",
    "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 b - - 0 1",
    "pfeile": [
     {
@@ -958,17 +958,17 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Stellung aus ",
+     "text": "The position from ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 6.7",
+     "text": "Fig. 6.7",
      "abbildung": "6.7"
     },
     {
      "art": "text",
-     "text": " (Kapitel 1), jetzt Schwarz am Zug. Rot: die Drohung Lxh7+. Gold: ",
+     "text": " (Chapter 1), now Black to move. Red: the threat Bxh7+. Gold: ",
      "stil": "normal"
     },
     {
@@ -977,7 +977,7 @@
     },
     {
      "art": "text",
-     "text": " schließt die Diagonale.",
+     "text": " closes the diagonal.",
      "stil": "normal"
     }
    ],
@@ -1000,14 +1000,14 @@
     "fragen": [
      {
       "zug": "1... f5",
-      "frage": "Warum spielt Schwarz 1... f5?",
+      "frage": "Why does Black play 1... f5?",
       "antworten": [
-       "Er bereitet einen Bauernsturm gegen den weißen König vor.",
-       "Er greift den Läufer d3 an.",
-       "Der Bauer stellt sich zwischen den Läufer d3 und h7 und schließt die Diagonale."
+       "It prepares a pawn storm against White's king.",
+       "It attacks the bishop on d3.",
+       "The pawn steps between the bishop on d3 and h7 and closes the diagonal."
       ],
       "richtig": 2,
-      "erklaerung": "Nach f5 ist die Diagonale zu. Schlägt Weiß en passant, kehrt der Springer nach f6 zurück und bewacht h7 wieder."
+      "erklaerung": "After f5 the diagonal is closed. If White captures en passant, the knight returns to f6 and guards h7 again."
      }
     ]
    }
@@ -1019,9 +1019,9 @@
    "abschnitt": {
     "nummer": "6.4",
     "label": "sec:k6-gegner",
-    "titel": "Frage 2: Was will mein Gegner?"
+    "titel": "Question 2: What does my opponent want?"
    },
-   "unterabschnitt": "Wenn der Angriff schon läuft: die Verteidigungsmittel",
+   "unterabschnitt": "When the attack is already underway: the means of defense",
    "fen": "r1b2rk1/ppq3pp/2n1pn2/3p4/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 3",
    "pfeile": [
     {
@@ -1039,16 +1039,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... f5 2. exf6 Sxf6"
+     "text": "1... f5 2. exf6 Nxf6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: Der Springer bewacht wieder h7. Rot: der Preis, der rückständige Bauer e6.",
+     "text": ", White to move. Gold: the knight guards h7 again. Red: the price, the backward pawn on e6.",
      "stil": "normal"
     }
    ],
@@ -1074,14 +1074,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Was hat Schwarz für die Rettung von h7 bezahlt?",
+      "frage": "What did Black pay for rescuing h7?",
       "antworten": [
-       "Den Bauern e6, den kein Bauer mehr decken kann.",
-       "Einen ganzen Springer.",
+       "The pawn on e6, which no pawn can defend anymore.",
+       "A whole knight.",
        "The right to castle."
       ],
       "richtig": 0,
-      "erklaerung": "Der Springer f6 bewacht h7 wieder, doch e6 bleibt dauerhaft schwach. Verteidigen heißt abwägen, welche Bedingung du dem Angriff am billigsten nimmst."
+      "erklaerung": "The knight on f6 guards h7 again, but e6 stays permanently weak. Defending means weighing which condition you can take away from the attack most cheaply."
      }
     ]
    }
@@ -1093,9 +1093,9 @@
    "abschnitt": {
     "nummer": "6.4",
     "label": "sec:k6-gegner",
-    "titel": "Frage 2: Was will mein Gegner?"
+    "titel": "Question 2: What does my opponent want?"
    },
-   "unterabschnitt": "Wenn der Angriff schon läuft: die Verteidigungsmittel",
+   "unterabschnitt": "When the attack is already underway: the means of defense",
    "fen": "r1b2r2/ppqn2pk/2n1p3/3pP1p1/3P4/2N5/PP3PPP/R2Q1RK1 w - - 0 4",
    "pfeile": [
     {
@@ -1113,16 +1113,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... f6 2. Lxh7+ Kxh7 3. Sg5+ fxg5"
+     "text": "1... f6 2. Bxh7+ Kxh7 3. Ng5+ fxg5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: Der Bauer hat den Springer geschlagen. Grau: Weiß bleibt nur das Schach der Dame auf h5.",
+     "text": ", White to move. Gold: the pawn has captured the knight. Gray: White is left with only the queen check on h5.",
      "stil": "normal"
     }
    ],
@@ -1154,7 +1154,7 @@
    "abschnitt": {
     "nummer": "6.5",
     "label": "sec:k6-figur",
-    "titel": "Frage 3: Welche Figur bringe ich dorthin?"
+    "titel": "Question 3: Which piece do I bring there?"
    },
    "unterabschnitt": null,
    "fen": "r2q1rk1/ppp2pp1/2npbn1p/2b1p3/2B1P2B/2PP1N2/PP1N1PPP/R2Q1RK1 b - - 3 9",
@@ -1179,7 +1179,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Italienischen Partie aus Kapitel 2, Schwarz am Zug. Grau: Der weiße Turm macht f1 frei, der Springer d2 zieht dorthin. Gold: sein Ziel g3.",
+     "text": "The final position of the Italian Game from Chapter 2, Black to move. Gray: the white rook clears f1, and the knight on d2 goes there. Gold: its destination g3.",
      "stil": "normal"
     }
    ],
@@ -1216,14 +1216,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist der Springer d2 die am wenigsten aktive weiße Figur?",
+      "frage": "Why is the knight on d2 White's least active piece?",
       "antworten": [
        "It is pinned to the king.",
-       "Eigene Figuren besetzen fast alle seine Felder; frei sind nur b1 und b3, beide ohne Aufgabe.",
-       "Er wird vom Bauern e5 angegriffen."
+       "White's own pieces occupy almost all of its squares; only b1 and b3 are free, and neither has a task.",
+       "It is attacked by the pawn on e5."
       ],
       "richtig": 1,
-      "erklaerung": "Von g3 aus blickt der Springer auf f5 und h5 und deckt e4. Eine Umgruppierung verbessert hier zwei Figuren zugleich: Springer und Turm."
+      "erklaerung": "From g3 the knight eyes f5 and h5 and defends e4. Here one regrouping improves two pieces at once: the knight and the rook."
      }
     ]
    }
@@ -1235,7 +1235,7 @@
    "abschnitt": {
     "nummer": "6.5",
     "label": "sec:k6-figur",
-    "titel": "Frage 3: Welche Figur bringe ich dorthin?"
+    "titel": "Question 3: Which piece do I bring there?"
    },
    "unterabschnitt": null,
    "fen": "2r1r1k1/pp3ppp/4p3/8/8/4P3/PP1R1PPP/3R2K1 w - - 0 1",
@@ -1250,7 +1250,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Er hat die offene d-Linie besetzt und die Türme verdoppelt. Grau: der Weg zur 7. Reihe.",
+     "text": "White to move. White has occupied the open d-file and doubled the rooks. Gray: the path to the 7th rank.",
      "stil": "normal"
     }
    ],
@@ -1272,14 +1272,14 @@
     "fragen": [
      {
       "zug": "1. Rd7",
-      "frage": "Warum zieht Weiß jetzt 1. Td7?",
+      "frage": "Why does White now play 1. Rd7?",
       "antworten": [
-       "Er weicht einem Angriff des Turms c8 aus.",
-       "Er will den Turm c8 abtauschen.",
-       "Der Turm dringt auf der 7. Reihe ein und greift die Bauern b7 und f7 von der Seite an."
+       "It escapes an attack by the rook on c8.",
+       "It wants to trade off the rook on c8.",
+       "The rook invades on the 7th rank and attacks the pawns on b7 and f7 from the side."
       ],
       "richtig": 2,
-      "erklaerung": "Erst die offene Linie besetzen, dann verdoppeln, dann eindringen. Auf der 7. Reihe decken sich die Bauern nicht gegenseitig; b7 hängt, f7 hält vorerst nur der König."
+      "erklaerung": "First occupy the open file, then double, then invade. On the 7th rank the pawns don't defend each other; b7 is hanging, and for now only the king holds f7."
      }
     ]
    }
@@ -1291,7 +1291,7 @@
    "abschnitt": {
     "nummer": "6.5",
     "label": "sec:k6-figur",
-    "titel": "Frage 3: Welche Figur bringe ich dorthin?"
+    "titel": "Question 3: Which piece do I bring there?"
    },
    "unterabschnitt": null,
    "fen": "2r1r1k1/pp1R1ppp/4p3/8/8/4P3/PP3PPP/3R2K1 b - - 1 1",
@@ -1311,16 +1311,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Td7"
+     "text": "1. Rd7"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Turm greift b7 und f7 von der Seite an. f7 deckt noch der König, b7 muss Schwarz erst decken.",
+     "text": ", Black to move. Red: the rook attacks b7 and f7 from the side. The king still defends f7; Black first has to defend b7.",
      "stil": "normal"
     }
    ],
@@ -1347,9 +1347,9 @@
    "abschnitt": {
     "nummer": "6.5",
     "label": "sec:k6-figur",
-    "titel": "Frage 3: Welche Figur bringe ich dorthin?"
+    "titel": "Question 3: Which piece do I bring there?"
    },
-   "unterabschnitt": "Die Tauschfrage: Welche Figur soll verschwinden?",
+   "unterabschnitt": "The exchange question: Which piece should disappear?",
    "fen": "5rk1/pp1bpp1p/3p1npQ/q7/2r1P1P1/2N2P2/PPP1N3/2KR3R b - - 0 18",
    "pfeile": [],
    "felder": [
@@ -1369,16 +1369,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Karpow–Kortschnoi, Moskau 1974 (Kapitel 11), nach ",
+     "text": "Karpov–Korchnoi, Moscow 1974 (Chapter 11), after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "17. Lh6 Lxh6 18. Dxh6"
+     "text": "17. Bh6 Bxh6 18. Qxh6"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: die dunklen Felder g7 und h8, die nur noch der König bewacht. Gold: Die Dame steht auf h6.",
+     "text": ", Black to move. Red: the dark squares g7 and h8, which only the king still guards. Gold: the queen stands on h6.",
      "stil": "normal"
     }
    ],
@@ -1405,7 +1405,7 @@
    "abschnitt": {
     "nummer": "6.6",
     "label": "sec:k6-wettrennen",
-    "titel": "Alle drei Fragen an einer Stellung: das Wettrennen in der Königsindischen Verteidigung"
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
    },
    "unterabschnitt": null,
    "fen": "r1bq1rk1/ppp1npbp/3p1np1/3Pp3/2P1P3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 1 9",
@@ -1430,16 +1430,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Der Zwischenstand der Königsindischen Hauptvariante aus Kapitel 2 nach ",
+     "text": "The interim position of the King's Indian main line from Chapter 2 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Se7"
+     "text": "8... Ne7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: die Hebel beider Seiten. Rot: der Springer f6, der dem eigenen f-Bauern im Weg steht.",
+     "text": ", White to move. Gray: both sides' levers. Red: the knight on f6, which stands in the way of its own f-pawn.",
      "stil": "normal"
     }
    ],
@@ -1476,14 +1476,14 @@
     "fragen": [
      {
       "zug": "9. b4",
-      "frage": "Welche Planfrage beantwortet Weiß mit 9. b4?",
+      "frage": "Which plan question does White answer with 9. b4?",
       "antworten": [
-       "Frage 2: Er verhindert damit ...f5.",
-       "Frage 1: Er stößt am Damenflügel vor und bereitet c5 gegen die Basis d6 vor.",
-       "Frage 3: Er bringt den Läufer c1 ins Spiel."
+       "Question 2: it prevents ...f5.",
+       "Question 1: it advances on the queenside and prepares c5 against the base d6.",
+       "Question 3: it brings the bishop on c1 into play."
       ],
       "richtig": 1,
-      "erklaerung": "b4 stützt den Hebel c5. Fast jeder Zug der Hauptvariante beantwortet eine Planfrage; Schwarz antwortet mit ...Sh5 und macht dem f-Bauern Platz."
+      "erklaerung": "b4 supports the lever c5. Almost every move of the main line answers a plan question; Black replies with ...Nh5 and makes room for the f-pawn."
      }
     ]
    }
@@ -1495,7 +1495,7 @@
    "abschnitt": {
     "nummer": "6.6",
     "label": "sec:k6-wettrennen",
-    "titel": "Alle drei Fragen an einer Stellung: das Wettrennen in der Königsindischen Verteidigung"
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
    },
    "unterabschnitt": null,
    "fen": "r1bq1rk1/ppp1n1bp/3p2p1/3Ppp1n/1PP1P3/2N2N2/P3BPPP/R1BQR1K1 w - - 0 11",
@@ -1515,16 +1515,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. b4 Sh5 10. Te1 f5"
+     "text": "9. b4 Nh5 10. Re1 f5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: das Loch e6, das ...f5 hinterlassen hat. Grau: der erste Schritt des Springers f3 dorthin.",
+     "text": ", White to move. Gold: the hole on e6 that ...f5 has left behind. Gray: the first step of the knight on f3 toward it.",
      "stil": "normal"
     }
    ],
@@ -1571,7 +1571,7 @@
    "abschnitt": {
     "nummer": "6.6",
     "label": "sec:k6-wettrennen",
-    "titel": "Alle drei Fragen an einer Stellung: das Wettrennen in der Königsindischen Verteidigung"
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
    },
    "unterabschnitt": null,
    "fen": "r1bq1rk1/pp2n1bp/2pp1np1/3PppN1/1PP1P3/2N2B2/P4PPP/R1BQR1K1 w - - 0 13",
@@ -1586,25 +1586,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "11. Sg5 Sf6 12. Lf3 c6"
+     "text": "11. Ng5 Nf6 12. Bf3 c6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Der Läufer c1 kommt mit ",
+     "text": ", White to move. Gray: the bishop on c1 comes into play with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "13. Le3"
+     "text": "13. Be3"
     },
     {
      "art": "text",
-     "text": " ins Spiel.",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -1652,14 +1652,14 @@
     "fragen": [
      {
       "zug": "13. Be3",
-      "frage": "Warum spielt Weiß jetzt 13. Le3?",
+      "frage": "Why does White play 13. Be3 now?",
       "antworten": [
-       "Er bringt die letzte Figur ins Spiel, die noch zu Hause stand.",
+       "It brings the last piece into play that was still at home.",
        "It attacks the pawn on e5.",
        "It prepares queenside castling."
       ],
       "richtig": 0,
-      "erklaerung": "In der Planbilanz fehlte nur noch diese Figur. Danach ist Weiß fertig entwickelt, und der Springer g5 kann auf das Loch e6."
+      "erklaerung": "In the plan balance, only this piece was still missing. After it, White is fully developed, and the knight on g5 can go to the hole on e6."
      }
     ]
    }
@@ -1671,7 +1671,7 @@
    "abschnitt": {
     "nummer": "6.6",
     "label": "sec:k6-wettrennen",
-    "titel": "Alle drei Fragen an einer Stellung: das Wettrennen in der Königsindischen Verteidigung"
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
    },
    "unterabschnitt": null,
    "fen": "r1bq1rk1/pp2n1b1/2ppNnpp/3Ppp2/1PP1P3/2N1BB2/P4PPP/R2QR1K1 b - - 1 14",
@@ -1685,16 +1685,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "13. Le3 h6 14. Se6"
+     "text": "13. Be3 h6 14. Ne6"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: Der Springer steht auf dem Loch e6.",
+     "text": ", Black to move. Gold: the knight stands on the hole e6.",
      "stil": "normal"
     }
    ],
@@ -1748,9 +1748,9 @@
    "abschnitt": {
     "nummer": "6.6",
     "label": "sec:k6-wettrennen",
-    "titel": "Alle drei Fragen an einer Stellung: das Wettrennen in der Königsindischen Verteidigung"
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
    },
-   "unterabschnitt": "Das Rennen selbst: der Bauernsturm vor dem eigenen König",
+   "unterabschnitt": "The race itself: the pawn storm in front of your own king",
    "fen": "r1bq1rk1/pppnn1bp/3p2p1/3Ppp2/2P1P3/2N1B3/PP2BPPP/R2QNRK1 w - - 0 11",
    "pfeile": [
     {
@@ -1768,16 +1768,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. Se1 Sd7 10. Le3 f5"
+     "text": "9. Ne1 Nd7 10. Be3 f5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Der Springer e1 will nach d3 und stützt von dort den Hebel c4–c5.",
+     "text": ", White to move. Gray: the knight on e1 wants to go to d3 and from there supports the lever c4–c5.",
      "stil": "normal"
     }
    ],
@@ -1823,9 +1823,9 @@
    "abschnitt": {
     "nummer": "6.6",
     "label": "sec:k6-wettrennen",
-    "titel": "Alle drei Fragen an einer Stellung: das Wettrennen in der Königsindischen Verteidigung"
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
    },
-   "unterabschnitt": "Das Rennen selbst: der Bauernsturm vor dem eigenen König",
+   "unterabschnitt": "The race itself: the pawn storm in front of your own king",
    "fen": "r1bq1rk1/pppnn1bp/3p4/3Pp1p1/2P1Pp2/2N2P2/PP2BBPP/R2QNRK1 w - - 0 13",
    "pfeile": [
     {
@@ -1852,16 +1852,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "11. f3 f4 12. Lf2 g5"
+     "text": "11. f3 f4 12. Bf2 g5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: die Hebel beider Seiten. Rot: die Bauern f3 und d6, auf die sie zielen.",
+     "text": ", White to move. Gray: both sides' levers. Red: the pawns on f3 and d6 they are aimed at.",
      "stil": "normal"
     }
    ],
@@ -1907,14 +1907,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum darf Schwarz hier die Bauern vor dem eigenen König vorschieben?",
+      "frage": "Why may Black push the pawns in front of its own king here?",
       "antworten": [
-       "Weil Weiß keine Figur am Königsflügel hat.",
-       "Weil der weiße König noch nicht rochiert hat.",
-       "Weil das Zentrum verriegelt ist und Weiß dort keinen Hebel hat, um die Mitte zu öffnen."
+       "Because White has no pieces on the kingside.",
+       "Because White's king has not castled yet.",
+       "Because the center is locked and White has no lever there to open up the middle."
       ],
       "richtig": 2,
-      "erklaerung": "Nur bei verriegeltem Zentrum ist ein Bauernsturm vor dem eigenen König erlaubt. Weiß kommt am Damenflügel oft zuerst an, Schwarz spielt dafür um den höheren Preis."
+      "erklaerung": "A pawn storm in front of your own king is allowed only when the center is locked. White often gets there first on the queenside; in return, Black plays for the higher stakes."
      }
     ]
    }
@@ -1926,9 +1926,9 @@
    "abschnitt": {
     "nummer": "6.7",
     "label": "sec:k6-qualitaet",
-    "titel": "Wenn der Plan Material kostet: ungleiche Tausche und das Qualitätsopfer"
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
    },
-   "unterabschnitt": "Ungleiche Tausche: was die Faustwerte nicht sagen",
+   "unterabschnitt": "Unequal trades: what the rule-of-thumb values don't tell you",
    "fen": "r1bq4/pppp1kpp/2n2n2/2b1p3/4P3/8/PPPP1PPP/RNBQ1RK1 w - - 0 8",
    "pfeile": [],
    "felder": [
@@ -1956,7 +1956,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Italienische Partie nach ",
+     "text": "Italian Game after ",
      "stil": "normal"
     },
     {
@@ -1965,7 +1965,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: drei entwickelte schwarze Leichtfiguren. Rot: Die weißen Leichtfiguren stehen noch auf ihren Ausgangsfeldern.",
+     "text": ", White to move. Gray: three developed black minor pieces. Red: White's minor pieces are still on their starting squares.",
      "stil": "normal"
     }
    ],
@@ -2003,9 +2003,9 @@
    "abschnitt": {
     "nummer": "6.7",
     "label": "sec:k6-qualitaet",
-    "titel": "Wenn der Plan Material kostet: ungleiche Tausche und das Qualitätsopfer"
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
    },
-   "unterabschnitt": "Das Qualitätsopfer",
+   "unterabschnitt": "The exchange sacrifice",
    "fen": "2r3k1/8/8/8/8/2N5/PPP5/2K5 b - - 0 1",
    "pfeile": [
     {
@@ -2018,7 +2018,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Skelett zur Drachen-Variante, Schwarz am Zug: Der Turm c8 steht auf der halboffenen c-Linie, vor ihm der Springer c3. Goldener Pfeil: das Qualitätsopfer ...Txc3.",
+     "text": "Skeleton for the Dragon Variation, Black to move: the rook on c8 stands on the half-open c-file, with the knight on c3 in front of it. Gold arrow: the exchange sacrifice ...Rxc3.",
      "stil": "normal"
     }
    ],
@@ -2043,9 +2043,9 @@
    "abschnitt": {
     "nummer": "6.7",
     "label": "sec:k6-qualitaet",
-    "titel": "Wenn der Plan Material kostet: ungleiche Tausche und das Qualitätsopfer"
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
    },
-   "unterabschnitt": "Das Qualitätsopfer",
+   "unterabschnitt": "The exchange sacrifice",
    "fen": "6k1/8/8/8/8/2P5/P1P5/2K5 b - - 0 2",
    "pfeile": [],
    "felder": [
@@ -2065,7 +2065,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ...Txc3 bxc3, Schwarz am Zug. Rot: Der Bauernschild vor dem König c1 ist zerstört: Doppelbauern auf c2 und c3, isolierter Bauer a2, dazu die offene b-Linie.",
+     "text": "After ...Rxc3 bxc3, Black to move. Red: the pawn shield in front of the king on c1 is destroyed: doubled pawns on c2 and c3, an isolated pawn on a2, and on top of that the open b-file.",
      "stil": "normal"
     }
    ],
@@ -2093,9 +2093,9 @@
    "abschnitt": {
     "nummer": "6.7",
     "label": "sec:k6-qualitaet",
-    "titel": "Wenn der Plan Material kostet: ungleiche Tausche und das Qualitätsopfer"
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
    },
-   "unterabschnitt": "Das Qualitätsopfer",
+   "unterabschnitt": "The exchange sacrifice",
    "fen": "r2q1rk1/7p/p2p4/nppPn3/2P2P2/1P5b/PQ1NB2P/R2N1RK1 w - - 1 21",
    "pfeile": [
     {
@@ -2113,25 +2113,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski, Moskau 1966, 10. Partie, nach ",
+     "text": "Petrosian–Spassky, Moscow 1966, game 10, after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "20... Lh3"
+     "text": "20... Bh3"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Läufer greift den Turm f1 an. Gold: ",
+     "text": ", White to move. Red: the bishop attacks the rook on f1. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "21. Se3"
+     "text": "21. Ne3"
     },
     {
      "art": "text",
-     "text": " lässt den Turm stehen.",
+     "text": " leaves the rook where it is.",
      "stil": "normal"
     }
    ],
@@ -2153,14 +2153,14 @@
     "fragen": [
      {
       "zug": "21. Ne3",
-      "frage": "Warum lässt Petrosjan den Turm f1 stehen und spielt 21. Se3?",
+      "frage": "Why does Petrosian leave the rook on f1 where it is and play 21. Ne3?",
       "antworten": [
-       "Er übersieht, dass der Turm angegriffen ist.",
-       "Er gibt die Qualität für Dauerhaftes: Der letzte schwarze Läufer verschwindet, und der schwarze König steht fast ohne Bauernschild.",
-       "Der Turm f1 ist an den König gefesselt und kann nicht ausweichen."
+       "He overlooks that the rook is attacked.",
+       "He gives up the exchange for something lasting: Black's last bishop disappears, and Black's king is left almost without a pawn shield.",
+       "The rook on f1 is pinned to the king and cannot move away."
       ],
       "richtig": 1,
-      "erklaerung": "Ein Qualitätsopfer muss etwas Dauerhaftes kaufen. Hier sind es die hellen Felder ohne schwarzen Läufer und der entblößte König."
+      "erklaerung": "An exchange sacrifice must buy something lasting. Here it is the light squares without a black bishop and the exposed king."
      }
     ]
    }
@@ -2172,9 +2172,9 @@
    "abschnitt": {
     "nummer": "6.7",
     "label": "sec:k6-qualitaet",
-    "titel": "Wenn der Plan Material kostet: ungleiche Tausche und das Qualitätsopfer"
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
    },
-   "unterabschnitt": "Das Qualitätsopfer",
+   "unterabschnitt": "The exchange sacrifice",
    "fen": "r2q1rk1/7p/p2p4/nppPn3/2P2P2/1P2N3/PQ1NB2P/5RK1 b - - 0 22",
    "pfeile": [
     {
@@ -2196,16 +2196,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "21... Lxf1 22. Txf1"
+     "text": "21... Bxf1 22. Rxf1"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: Die Dame b2 zielt auf den Springer e5, den auch der Bauer f4 angreift. Rot: Dem Springer a5 bleibt nur das Feld b7. Grau: h7, der letzte Bauer vor dem schwarzen König.",
+     "text": ", Black to move. Gold: the queen on b2 is aiming at the knight on e5, which the pawn on f4 also attacks. Red: the knight on a5 has only the square b7 left. Gray: h7, the last pawn in front of Black's king.",
      "stil": "normal"
     }
    ],
@@ -2234,9 +2234,9 @@
    "abschnitt": {
     "nummer": "6.7",
     "label": "sec:k6-qualitaet",
-    "titel": "Wenn der Plan Material kostet: ungleiche Tausche und das Qualitätsopfer"
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
    },
-   "unterabschnitt": "Das Qualitätsopfer",
+   "unterabschnitt": "The exchange sacrifice",
    "fen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
    "pfeile": [
     {
@@ -2249,21 +2249,21 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski, Moskau 1966, 10. Partie, nach ",
+     "text": "Petrosian–Spassky, Moscow 1966, game 10, after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "29... Txf7"
+     "text": "29... Rxf7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: ",
+     "text": ", White to move. Gold: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "30. Dh8+!"
+     "text": "30. Qh8+!"
     }
    ],
    "art": "fliesstext",
@@ -2282,14 +2282,14 @@
     "fragen": [
      {
       "zug": "30. Qh8+",
-      "frage": "Warum gibt Weiß mit 30. Dh8+ die Dame?",
+      "frage": "Why does White give up the queen with 30. Qh8+?",
       "antworten": [
-       "Nach Kxh8 folgt Sxf7+ mit Gabel auf König und Dame g5; danach hat Weiß eine Figur mehr.",
-       "Er erzwingt ein Patt.",
-       "Nach Kxh8 ist Schwarz sofort matt."
+       "After Kxh8 comes Nxf7+, forking the king and the queen on g5; after that White is a piece up.",
+       "It forces stalemate.",
+       "After Kxh8, Black is mated at once."
       ],
       "richtig": 0,
-      "erklaerung": "Kxh8 ist der einzige Zug. Nach Sxf7+ Kg7 Sxg5 hat Weiß die Kompensation in Material verwandelt: eine ganze Figur mehr."
+      "erklaerung": "Kxh8 is the only move. After Nxf7+ Kg7 Nxg5, White has turned the compensation into material: a whole piece up."
      }
     ]
    }
@@ -2301,9 +2301,9 @@
    "abschnitt": {
     "nummer": "6.7",
     "label": "sec:k6-qualitaet",
-    "titel": "Wenn der Plan Material kostet: ungleiche Tausche und das Qualitätsopfer"
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
    },
-   "unterabschnitt": "Das Qualitätsopfer",
+   "unterabschnitt": "The exchange sacrifice",
    "fen": "7k/5N1p/p7/nppP2q1/2P5/1P2N3/P6P/7K b - - 0 31",
    "pfeile": [
     {
@@ -2321,16 +2321,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "30. Dh8+ Kxh8 31. Sxf7+"
+     "text": "30. Qh8+ Kxh8 31. Nxf7+"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Springer greift König h8 und Dame g5 zugleich an.",
+     "text": ", Black to move. Red: the knight attacks the king on h8 and the queen on g5 at the same time.",
      "stil": "normal"
     }
    ],
@@ -2357,7 +2357,7 @@
    "abschnitt": {
     "nummer": "6.8",
     "label": "sec:k6-verwerten",
-    "titel": "Den Vorteil verwerten"
+    "titel": "Converting the advantage"
    },
    "unterabschnitt": null,
    "fen": "8/6kp/p7/nppP2N1/2P5/1P2N3/P6P/7K b - - 0 32",
@@ -2375,16 +2375,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski nach ",
+     "text": "Petrosian–Spassky after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "31... Kg7 32. Sxg5"
+     "text": "31... Kg7 32. Nxg5"
     },
     {
      "art": "text",
-     "text": " (nicht mehr gespielt), Schwarz am Zug. Gold: Weiß hat einen Springer mehr.",
+     "text": " (not played in the game), Black to move. Gold: White is a knight up.",
      "stil": "normal"
     }
    ],
@@ -2409,14 +2409,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Weiß hat einen Springer mehr. Welche Tausche sollte er anstreben?",
+      "frage": "White is a knight up. Which trades should White aim for?",
       "antworten": [
-       "Bauern tauschen und beide Springer behalten.",
-       "Gar nichts tauschen, denn jeder Tausch hilft dem Verteidiger.",
-       "Ein Springerpaar tauschen und die eigenen Bauern behalten."
+       "Trade pawns and keep both knights.",
+       "Trade nothing at all, because every trade helps the defender.",
+       "Trade a pair of knights and keep your own pawns."
       ],
       "richtig": 2,
-      "erklaerung": "Mit einem Springer und fünf Bauern gegen vier Bauern führt Weiß einen Bauern zur Dame. Zwei Springer gegen einen ohne Bauern wären dagegen meist remis."
+      "erklaerung": "With a knight and five pawns against four pawns, White will queen a pawn. Two knights against one without pawns, on the other hand, would usually be a draw."
      }
     ]
    }
@@ -2428,7 +2428,7 @@
    "abschnitt": {
     "nummer": "6.8",
     "label": "sec:k6-verwerten",
-    "titel": "Den Vorteil verwerten"
+    "titel": "Converting the advantage"
    },
    "unterabschnitt": null,
    "fen": "r4rk1/pp1b1ppp/2nqpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R2Q1RK1 w - - 4 10",
@@ -2437,7 +2437,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung des London-Systems aus Kapitel 2, Weiß am Zug.",
+     "text": "The final position of the London System from Chapter 2, White to move.",
      "stil": "normal"
     }
    ],
@@ -2460,7 +2460,7 @@
    "abschnitt": {
     "nummer": "6.8",
     "label": "sec:k6-verwerten",
-    "titel": "Den Vorteil verwerten"
+    "titel": "Converting the advantage"
    },
    "unterabschnitt": null,
    "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N1BP2/PP4PP/R2QKBNR b KQ - 2 6",
@@ -2469,16 +2469,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Königsindische Verteidigung, Sämisch-Variante, nach ",
+     "text": "King's Indian Defense, Sämisch Variation, after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. d4 Sf6 2. c4 g6 3. Sc3 Lg7 4. e4 d6 5. f3 O-O 6. Le3"
+     "text": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Be3"
     },
     {
      "art": "text",
-     "text": ". Schwarz am Zug.",
+     "text": ". Black to move.",
      "stil": "normal"
     }
    ],
@@ -2513,7 +2513,7 @@
    "abschnitt": {
     "nummer": "6.8",
     "label": "sec:k6-verwerten",
-    "titel": "Den Vorteil verwerten"
+    "titel": "Converting the advantage"
    },
    "unterabschnitt": null,
    "fen": "r4rk1/2qbbppp/2np1n2/1p2p3/p2PP3/4BN1P/PPBN1PP1/R2QR1K1 w - - 2 17",
@@ -2522,7 +2522,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Spanischen Partie aus Kapitel 2, Weiß am Zug.",
+     "text": "The final position of the Ruy Lopez from Chapter 2, White to move.",
      "stil": "normal"
     }
    ],
@@ -2578,7 +2578,7 @@
    "abschnitt": {
     "nummer": "6.8",
     "label": "sec:k6-verwerten",
-    "titel": "Den Vorteil verwerten"
+    "titel": "Converting the advantage"
    },
    "unterabschnitt": null,
    "fen": "r2q1rk1/pp2n1b1/2ppPnpp/4pp2/1PP1P3/2N1BB2/P4PPP/R2QR1K1 b - - 0 15",
@@ -2587,7 +2587,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Schlussstellung der Königsindischen Hauptvariante aus Kapitel 2 nach ",
+     "text": "The final position of the King's Indian main line from Chapter 2 after ",
      "stil": "normal"
     },
     {
@@ -2596,7 +2596,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug.",
+     "text": ", Black to move.",
      "stil": "normal"
     }
    ],
@@ -2649,7 +2649,7 @@
    "abschnitt": {
     "nummer": "6.8",
     "label": "sec:k6-verwerten",
-    "titel": "Den Vorteil verwerten"
+    "titel": "Converting the advantage"
    },
    "unterabschnitt": null,
    "fen": "8/8/6k1/r5p1/7P/5NK1/4R3/8 b - - 0 1",
@@ -2687,28 +2687,28 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Der Läufer d3 zielt auf h7, und der Springer f3 kann nach g5 ziehen. Prüfe die drei Bedingungen für einen Königsangriff bei gleichseitiger Rochade. Was geschieht nach ",
+     "text": "The bishop on d3 is aiming at h7, and the knight on f3 can go to g5. Check the three conditions for a king attack with same-side castling. What happens after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10. Lxh7+"
+     "text": "10. Bxh7+"
     },
     {
      "art": "text",
-     "text": "? Was müsste Weiß zuerst erreichen?",
+     "text": "? What would White have to achieve first?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Bedingung 1, das Zentrum:",
+     "text": "Condition 1, the center:",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " nicht erfüllt. Zwischen d4 und c5 besteht Spannung, nichts ist verriegelt, und Schwarz hält den Gegenschlag ",
+     "text": " not met. There is tension between d4 and c5, nothing is locked, and Black has the counterstrike ",
      "stil": "normal"
     },
     {
@@ -2717,65 +2717,65 @@
     },
     {
      "art": "text",
-     "text": " bereit. Springer c6 und Dame d6 stützen ihn, Bauer d4 und Springer f3 halten dagegen. ",
+     "text": " ready. The knight on c6 and the queen on d6 support it; the pawn on d4 and the knight on f3 hold it back. ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Bedingung 2, die Übermacht:",
+     "text": "Condition 2, superior force:",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " nicht erfüllt. Der Läufer d3 zielt zwar auf h7, und das Feld g5 bewacht kein schwarzer Läufer mehr, der Springer f6 deckt jedoch h7 und h5. Auf ",
+     "text": " not met. The bishop on d3 does aim at h7, and no black bishop guards the square g5 anymore, but the knight on f6 defends h7 and h5. So ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10. Lxh7+"
+     "text": "10. Bxh7+"
     },
     {
      "art": "text",
-     "text": " folgt daher einfach ",
+     "text": " is simply met by ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10... Sxh7"
+     "text": "10... Nxh7"
     },
     {
      "art": "text",
-     "text": ", und Weiß hat einen Läufer für einen Bauern gegeben. ",
+     "text": ", and White has given a bishop for a pawn. ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Bedingung 3, das Ziel:",
+     "text": "Condition 3, the target:",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " nicht erfüllt. Das Feld h7, auf das der Läufer zielt, decken König und Springer, und das Feld g7 deckt zwar nur der König, keine weiße Figur erreicht es aber. Einen Haken gibt es auch nicht. ",
+     "text": " not met. The square h7, at which the bishop aims, is defended by the king and the knight; the square g7 is defended only by the king, but no white piece can reach it. There is no hook either. ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Was fehlt:",
+     "text": "What is missing:",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " Der Springer f6 müsste vertrieben oder getauscht werden, und das Zentrum müsste feststehen, wie in ",
+     "text": " the knight on f6 would have to be driven away or traded, and the center would have to be fixed, as in ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 6.7",
+     "text": "Fig. 6.7",
      "abbildung": "6.7"
     },
     {
      "art": "text",
-     "text": ". Beides erreicht Weiß nur über das Zentrum, mit dem Hebel ",
+     "text": ". White can achieve both only through the center, with the lever ",
      "stil": "normal"
     },
     {
@@ -2784,7 +2784,7 @@
     },
     {
      "art": "text",
-     "text": " oder mit einem Springer auf e5. Merke dir: Ein Läufer, der auf h7 zielt, ist noch kein Angriff. Solange der Springer f6 steht, arbeitest du zunächst im Zentrum.",
+     "text": " or with a knight on e5. Remember: a bishop aimed at h7 is not yet an attack. As long as the knight on f6 stays, you work in the center first.",
      "stil": "normal"
     }
    ],
@@ -2795,8 +2795,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Bedingungen für den Königsangriff",
-    "text": "Keine der drei Bedingungen ist erfüllt: Das Zentrum ist offen, und der Springer f6 deckt h7 und h5. Nach 10. Lxh7+? Sxh7 fehlt Weiß einfach eine Figur; zuerst muss er über das Zentrum (e3-e4 oder Se5) den Springer f6 vertreiben."
+    "motiv": "Conditions for a king attack",
+    "text": "None of the three conditions is met: the center is open, and the knight on f6 defends h7 and h5. After 10. Bxh7+? Nxh7, White is simply a piece down; first White has to drive away the knight on f6 through the center (e3-e4 or Ne5)."
    }
   },
   {
@@ -2810,7 +2810,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Weiß hat ",
+     "text": "White played ",
      "stil": "normal"
     },
     {
@@ -2819,7 +2819,7 @@
     },
     {
      "art": "text",
-     "text": " gespielt, bevor er den Läufer nach e3 entwickelt hat. Welchen schwarzen Zug hat er damit vorbeugend verhindert? Nenne den Zug und sein Ziel. Warum ist ",
+     "text": " before developing the bishop to e3. Which black move did White prevent in advance? Name the move and its goal. Why is ",
      "stil": "normal"
     },
     {
@@ -2828,14 +2828,14 @@
     },
     {
      "art": "text",
-     "text": " dennoch kein bloßer Vorsichtszug?",
+     "text": " nevertheless not a mere precautionary move?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Ohne ",
+     "text": "Without ",
      "stil": "normal"
     },
     {
@@ -2844,25 +2844,25 @@
     },
     {
      "art": "text",
-     "text": " könnte Schwarz mit ",
+     "text": ", Black could attack the bishop on e3 with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Sg4"
+     "text": "...Ng4"
     },
     {
      "art": "text",
-     "text": " den Läufer e3 angreifen. Weiß müsste den Läufer wegziehen oder den Tausch ",
+     "text": ". White would have to move the bishop away or allow the trade ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Sxe3"
+     "text": "...Nxe3"
     },
     {
      "art": "text",
-     "text": " zulassen. Nach ",
+     "text": ". After ",
      "stil": "normal"
     },
     {
@@ -2871,7 +2871,7 @@
     },
     {
      "art": "text",
-     "text": " hätte er einen Doppelbauern auf der e-Linie (Kapitel 5) bekommen und das Läuferpaar verloren. Der Bauer f3 nimmt dem Springer das Feld g4: Zieht er dennoch dorthin, schlägt ihn ",
+     "text": ", White would have gotten doubled pawns on the e-file (Chapter 5) and lost the bishop pair. The pawn on f3 takes the square g4 away from the knight: if it goes there anyway, ",
      "stil": "normal"
     },
     {
@@ -2880,7 +2880,7 @@
     },
     {
      "art": "text",
-     "text": ". Kein bloßer Vorsichtszug ist ",
+     "text": " captures it. ",
      "stil": "normal"
     },
     {
@@ -2889,16 +2889,16 @@
     },
     {
      "art": "text",
-     "text": ", da er zugleich den Bauern e4 deckt und den weißen Plan vorbereitet: ",
+     "text": " is not a mere precautionary move, because it also defends the pawn on e4 and prepares White's plan: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Dd2"
+     "text": "Qd2"
     },
     {
      "art": "text",
-     "text": ", lange Rochade und ein Bauernsturm am Königsflügel. Denselben Zweck hatte ",
+     "text": ", queenside castling, and a pawn storm on the kingside. ",
      "stil": "normal"
     },
     {
@@ -2907,17 +2907,17 @@
     },
     {
      "art": "text",
-     "text": " im Jugoslawischen Angriff der Drachen-Variante (",
+     "text": " had the same purpose in the Yugoslav Attack of the Dragon Variation (",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 6.5",
+     "text": "Fig. 6.5",
      "abbildung": "6.5"
     },
     {
      "art": "text",
-     "text": "). Merke dir: Die beste Prophylaxe verhindert einen konkreten gegnerischen Zug und fördert zugleich den eigenen Plan.",
+     "text": "). Remember: the best prophylaxis prevents a concrete move by your opponent and at the same time furthers your own plan.",
      "stil": "normal"
     }
    ],
@@ -2929,7 +2929,7 @@
     "loesung": null,
     "akzeptiert": [],
     "motiv": "Prophylaxis",
-    "text": "5. f3 verhindert ...Sg4, das den Läufer e3 angreifen und das Läuferpaar kosten würde. Zugleich deckt f3 den Bauern e4 und bereitet Dd2, lange Rochade und den Bauernsturm vor: gute Prophylaxe fördert auch den eigenen Plan."
+    "text": "5. f3 prevents ...Ng4, which would attack the bishop on e3 and cost the bishop pair. At the same time f3 defends the pawn on e4 and prepares Qd2, queenside castling, and the pawn storm: good prophylaxis also furthers your own plan."
    }
   },
   {
@@ -2943,48 +2943,48 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Wende die dritte Planfrage für beide Seiten an: Welche weiße und welche schwarze Figur hat die wenigsten Aufgaben? Wohin gehört sie, und auf welchem Weg kommt sie dorthin?",
+     "text": "Apply the third plan question for both sides: which white piece and which black piece has the fewest tasks? Where does it belong, and by which route does it get there?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Weiß:",
+     "text": "White:",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " Der Springer d2. Von seinen sechs Feldern sind e4 und f3 mit eigenen Figuren besetzt, b3 und c4 bewachen die schwarzen Bauern a4 und b5. Übrig bleiben nur b1 und f1. Sein Weg führt über f1 nach g3 (e3 ist vom eigenen Läufer besetzt), von wo er den Königsflügel unterstützt und e4 deckt. Anders als in der Italienischen Partie (",
+     "text": " the knight on d2. Of its six squares, e4 and f3 are occupied by White's own pieces, and b3 and c4 are guarded by the black pawns on a4 and b5. Only b1 and f1 remain. Its route leads via f1 to g3 (e3 is occupied by White's own bishop), from where it supports the kingside and defends e4. Unlike in the Italian Game (",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 6.16",
+     "text": "Fig. 6.16",
      "abbildung": "6.16"
     },
     {
      "art": "text",
-     "text": ") ist f1 hier schon frei, da der Turm bereits auf e1 steht. Auch der Turm a1 hat noch keine Aufgabe, er kann allerdings erst eingreifen, wenn sich eine Linie öffnet. Der Springer hat hingegen schon heute einen Weg. ",
+     "text": "), f1 is already free here, since the rook already stands on e1. The rook on a1 has no task yet either, but it can only join in once a file opens. The knight, by contrast, already has a route today. ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Schwarz:",
+     "text": "Black:",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " der Turm a8. Den Bauern a4 deckt schon der Bauer b5, der Turm hat daher nichts zu tun. Auf der c-Linie steht kein Bauer mehr, sie ist also offen, und die Dame c7 steht schon dort. Mit ",
+     "text": " the rook on a8. The pawn on b5 already defends the pawn on a4, so the rook has nothing to do. There is no pawn left on the c-file, so it is open, and the queen on c7 already stands there. With ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Tac8"
+     "text": "...Rac8"
     },
     {
      "art": "text",
-     "text": " kommt der Turm deshalb in einem einzigen Zug hinter die Dame. Ein zweiter Kandidat ist der Läufer e7: Die Bauern d6 und e5 stehen auf seiner Farbe, er ist somit der schlechte Läufer aus Kapitel 5. Ihn umzugruppieren kostet aber mehrere Züge. Merke dir: Der Springerweg d2–f1–g3 ist in den ruhigen e4-Eröffnungen ein Standardmanöver, und ein Turm ohne Linie ist fast immer der erste Kandidat für das LAP-Prinzip.",
+     "text": ", the rook therefore gets behind the queen in a single move. A second candidate is the bishop on e7: the pawns on d6 and e5 stand on its color, so it is the bad bishop from Chapter 5. Regrouping it, however, takes several moves. Remember: the knight route d2–f1–g3 is a standard maneuver in the quiet e4 openings, and a rook without a file is almost always the first candidate for the LAP principle.",
      "stil": "normal"
     }
    ],
@@ -2995,8 +2995,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Schlechteste Figur verbessern",
-    "text": "Bei Weiß hat der Springer d2 die wenigsten Aufgaben; er geht über f1 nach g3 und unterstützt den Königsflügel. Bei Schwarz ist es der Turm a8, der mit ...Tac8 in einem Zug auf die offene c-Linie kommt."
+    "motiv": "Improving the worst piece",
+    "text": "For White, the knight on d2 has the fewest tasks; it goes via f1 to g3 and supports the kingside. For Black, it is the rook on a8, which reaches the open c-file in one move with ...Rac8."
    }
   },
   {
@@ -3010,7 +3010,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Führe zuerst das Skelett-Röntgen durch: Was hat sich durch ",
+     "text": "First carry out the skeleton X-ray: what has ",
      "stil": "normal"
     },
     {
@@ -3019,29 +3019,29 @@
     },
     {
      "art": "text",
-     "text": " am Skelett geändert? Stelle danach die Planbilanz für beide Seiten auf.",
+     "text": " changed in the skeleton? Then draw up the plan balance for both sides.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Skelett-Röntgen:",
+     "text": "Skeleton X-ray:",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " Weiß hat keinen d-Bauern mehr, die d-Linie ist also für Weiß halboffen, und auf ihr steht der Bauer d6. Er besteht den Deckungstest nicht: Der c-Bauer steht schon auf c6 und der e-Bauer auf e5, keiner kann d6 je decken. Vorrücken kann d6 auch nicht, denn d5 bewachen die Bauern c4 und e4. Damit ist d6 ein rückständiger Bauer auf einer halboffenen Linie (Kapitel 5). Der weiße Bauer e6 ist ebenso schwach, weil ihn kein weißer Bauer decken kann, solange der schwarze Bauer f5 den f-Bauern aufhält. Dafür engt er allerdings die schwarzen Figuren ein. ",
+     "text": " White no longer has a d-pawn, so the d-file is half-open for White, and the pawn on d6 stands on it. It fails the protection test: the c-pawn is already on c6 and the e-pawn on e5, so neither can ever defend d6. Nor can d6 advance, because the pawns on c4 and e4 guard d5. So d6 is a backward pawn on a half-open file (Chapter 5). White's pawn on e6 is just as weak, because no white pawn can defend it as long as Black's pawn on f5 holds up the f-pawn. In return, though, it cramps Black's pieces. ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Planbilanz:",
+     "text": "Plan balance:",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": " Wo? Weiß spielt gegen d6 und am Damenflügel mit ",
+     "text": " Where? White plays against d6 and on the queenside with ",
      "stil": "normal"
     },
     {
@@ -3050,7 +3050,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Königsflügel und gegen e6. Was will der Gegner? Weiß muss mit ",
+     "text": ", Black on the kingside and against e6. What does the opponent want? White has to reckon with ",
      "stil": "normal"
     },
     {
@@ -3059,7 +3059,7 @@
     },
     {
      "art": "text",
-     "text": " rechnen, wonach die f-Linie für den Turm f8 halboffen ist, und Schwarz muss den Druck gegen d6 im Blick behalten. Welche Figur? Weiß bringt nach einem Damenzug die Türme auf die d-Linie, und Schwarz greift e6 mit der Dame von c8 aus an und nutzt den Turm f8. Plan in einem Satz, Weiß: „Ich nutze den Keil e6, greife d6 an und sichere e4.“ Schwarz: „Ich nutze die f-Linie, greife e6 an und sichere d6.“ Merke dir: Nach jedem Bauerntausch beginnt das Skelett-Röntgen von vorn, da ein neues Skelett neue Pläne bringt.",
+     "text": ", after which the f-file is half-open for the rook on f8, and Black has to keep an eye on the pressure against d6. Which piece? After a queen move, White brings the rooks to the d-file, and Black attacks e6 with the queen from c8 and uses the rook on f8. The plan in one sentence, White: “I use the wedge on e6, attack d6, and secure e4.” Black: “I use the f-file, attack e6, and secure d6.” Remember: after every pawn trade the skeleton X-ray starts over, since a new skeleton brings new plans.",
      "stil": "normal"
     }
    ],
@@ -3070,8 +3070,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Planbilanz nach dem Bauerntausch",
-    "text": "Nach 15. dxe6 ist d6 ein rückständiger Bauer auf halboffener Linie, der Keil e6 ist schwach, engt Schwarz aber ein. Weiß spielt gegen d6 und am Damenflügel, Schwarz über die f-Linie und gegen e6."
+    "motiv": "Plan balance after the pawn trade",
+    "text": "After 15. dxe6, d6 is a backward pawn on a half-open file; the wedge on e6 is weak but cramps Black. White plays against d6 and on the queenside, Black via the f-file and against e6."
    }
   },
   {
@@ -3085,7 +3085,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Weiß hat einen Springer mehr. Mit welchem Zug rettet Schwarz das Remis, und welche Regel aus diesem Kapitel führt dich zu ihm? Was hätte Weiß gespielt, wenn er am Zug gewesen wäre?",
+     "text": "White is a knight up. With which move does Black save the draw, and which rule from this chapter leads you to it? What would White have played if it had been White's move?",
      "stil": "normal"
     }
    ],
@@ -3096,16 +3096,16 @@
     },
     {
      "art": "text",
-     "text": " Schwarz tauscht den letzten weißen Bauern. Nach ",
+     "text": " Black trades off White's last pawn. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sxh4+"
+     "text": "2. Nxh4+"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -3114,7 +3114,7 @@
     },
     {
      "art": "text",
-     "text": " bleiben Turm und Springer gegen Turm. Das ist bei genauer Verteidigung remis, denn ohne Bauern bekommt Weiß keine Dame mehr. Jeder andere Zug verliert, auch ",
+     "text": ", rook and knight against rook remain. With accurate defense that is a draw, because without pawns White can no longer get a queen. Every other move loses, including ",
      "stil": "normal"
     },
     {
@@ -3123,7 +3123,7 @@
     },
     {
      "art": "text",
-     "text": ", weil Weiß dann seinen h-Bauern behält. Die Regel dahinter: Wer weniger Material hat, tauscht Bauern. Wäre Weiß am Zug, würde er selbst auf g5 schlagen, mit dem Bauern oder mit dem Springer: Beide Züge behalten einen Bauern, und nur sie gewinnen. Merke dir: Der Verteidiger zählt nicht die Figuren, sondern die Bauern des Gegners, da eine Mehrfigur ohne Bauern häufig nichts wert ist.",
+     "text": ", because White then keeps the h-pawn. The rule behind it: whoever has less material trades pawns. If it were White's move, White would capture on g5 itself, with the pawn or with the knight: both moves keep a pawn, and only they win. Remember: the defender does not count the pieces but the opponent's pawns, since an extra piece without pawns is often worth nothing.",
      "stil": "normal"
     }
    ],
@@ -3134,8 +3134,8 @@
    "erklaerung": {
     "loesung": "1... gxh4+!",
     "akzeptiert": [],
-    "motiv": "Wer weniger Material hat, tauscht Bauern",
-    "text": "1... gxh4+! tauscht den letzten weißen Bauern; Turm und Springer gegen Turm ist ohne Bauern remis. Wäre Weiß am Zug, würde er selbst auf g5 schlagen und einen Bauern behalten."
+    "motiv": "Whoever has less material trades pawns",
+    "text": "1... gxh4+! trades off White's last pawn; rook and knight against rook is a draw without pawns. If it were White's move, White would capture on g5 itself and keep a pawn."
    }
   }
  ],
@@ -3146,12 +3146,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Königsindische Verteidigung nach ",
+     "text": "King's Indian Defense after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Se7"
+     "text": "8... Ne7"
     }
    ],
    "abschnitt": "6.6",
@@ -3171,7 +3171,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Am Damenflügel: Die Kette e4–d5 zeigt dorthin. Der Hebel ",
+          "text": "On the queenside: the chain e4–d5 points there. The lever ",
           "stil": "normal"
          },
          {
@@ -3180,7 +3180,7 @@
          },
          {
           "art": "text",
-          "text": " greift die Basis d6 an.",
+          "text": " attacks the base d6.",
           "stil": "normal"
          }
         ]
@@ -3190,7 +3190,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Am Königsflügel: Die Kette e5–d6 zeigt dorthin. Der Hebel ",
+          "text": "On the kingside: the chain e5–d6 points there. The lever ",
           "stil": "normal"
          },
          {
@@ -3199,7 +3199,7 @@
          },
          {
           "art": "text",
-          "text": " greift die Basis e4 an.",
+          "text": " attacks the base e4.",
           "stil": "normal"
          }
         ]
@@ -3212,7 +3212,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Schwarz will mit ",
+          "text": "Black wants to attack the pawn on e4 with ",
           "stil": "normal"
          },
          {
@@ -3221,7 +3221,7 @@
          },
          {
           "art": "text",
-          "text": " den Bauern e4 angreifen und danach gegen den weißen König stürmen. Weiß muss e4 stützen.",
+          "text": " and then storm White's king. White has to support e4.",
           "stil": "normal"
          }
         ]
@@ -3231,7 +3231,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Weiß will mit ",
+          "text": "White wants to open the c-file with ",
           "stil": "normal"
          },
          {
@@ -3240,7 +3240,7 @@
          },
          {
           "art": "text",
-          "text": " und ",
+          "text": " and ",
           "stil": "normal"
          },
          {
@@ -3249,7 +3249,7 @@
          },
          {
           "art": "text",
-          "text": " die c-Linie öffnen. Schwarz muss schneller sein.",
+          "text": ". Black has to be faster.",
           "stil": "normal"
          }
         ]
@@ -3262,7 +3262,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Läufer c1 steht noch zu Hause; die Türme gehören später auf die c-Linie.",
+          "text": "The bishop on c1 is still at home; the rooks belong on the c-file later.",
           "stil": "normal"
          }
         ]
@@ -3272,7 +3272,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Springer f6 muss dem f-Bauern Platz machen; der Läufer c8 steht noch zu Hause.",
+          "text": "The knight on f6 has to make room for the f-pawn; the bishop on c8 is still at home.",
           "stil": "normal"
          }
         ]
@@ -3285,7 +3285,7 @@
    "urteil": [
     {
      "art": "text",
-     "text": "Weiß: „Ich nutze meinen Raum am Damenflügel, greife mit ",
+     "text": "White: “I use my space on the queenside, attack the base d6 with ",
      "stil": "normal"
     },
     {
@@ -3294,7 +3294,7 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -3303,7 +3303,7 @@
     },
     {
      "art": "text",
-     "text": " die Basis d6 an und sichere e4.“ Schwarz: „Ich nutze die Richtung meiner Kette zum Königsflügel, greife mit ",
+     "text": ", and secure e4.” Black: “I use the direction of my chain toward the kingside, attack the base e4 with ",
      "stil": "normal"
     },
     {
@@ -3312,7 +3312,7 @@
     },
     {
      "art": "text",
-     "text": " die Basis e4 an und mache dafür mit dem Springer f6 Platz.“",
+     "text": ", and make room for it with the knight on f6.”",
      "stil": "normal"
     }
    ],
@@ -3326,12 +3326,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Petrosjan–Spasski vor ",
+     "text": "Petrosian–Spassky before ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "30. Dh8+"
+     "text": "30. Qh8+"
     }
    ],
    "abschnitt": "6.7",
@@ -3340,7 +3340,7 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Weiß (hat die Qualität gegeben)",
+      "White (has given up the exchange)",
       "Black"
      ],
      "zeilen": [
@@ -3351,7 +3351,7 @@
         "text": [
          {
           "art": "text",
-          "text": "– (Dame, zwei Springer, fünf Bauern)",
+          "text": "– (queen, two knights, five pawns)",
           "stil": "normal"
          }
         ]
@@ -3361,7 +3361,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 (Dame, Turm, Springer, vier Bauern): die Qualität mehr, dafür ein Bauer weniger",
+          "text": "+1 (queen, rook, knight, four pawns): the exchange up, but a pawn down",
           "stil": "normal"
          }
         ]
@@ -3374,7 +3374,7 @@
         "text": [
          {
           "art": "text",
-          "text": "3 : 3 (Dame und zwei Springer)",
+          "text": "3 : 3 (queen and two knights)",
           "stil": "normal"
          }
         ]
@@ -3384,7 +3384,7 @@
         "text": [
          {
           "art": "text",
-          "text": "3 : 3 (Dame, Turm und Springer)",
+          "text": "3 : 3 (queen, rook, and knight)",
           "stil": "normal"
          }
         ]
@@ -3397,7 +3397,7 @@
         "text": [
          {
           "art": "text",
-          "text": "kein Bauernschild, aber jedes schwarze Schach kostet Schwarz Material",
+          "text": "no pawn shield, but every black check costs Black material",
           "stil": "normal"
          }
         ]
@@ -3407,7 +3407,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Vor dem König steht nur noch h7; die dunklen Felder g7 und h8 bewacht kein Läufer mehr.",
+          "text": "Only h7 is left in front of the king; no bishop guards the dark squares g7 and h8 anymore.",
           "stil": "normal"
          }
         ]
@@ -3420,7 +3420,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Springer d6 steht auf einem Vorposten und greift den Turm f7 an; die Dame b2 zielt über die lange Diagonale auf h8.",
+          "text": "The knight on d6 stands on an outpost and attacks the rook on f7; the queen on b2 aims at h8 along the long diagonal.",
           "stil": "normal"
          }
         ]
@@ -3430,7 +3430,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Turm f7 muss sich verteidigen, der Springer a5 steht am Rand.",
+          "text": "The rook on f7 has to defend itself; the knight on a5 is on the edge.",
           "stil": "normal"
          }
         ]
@@ -3442,14 +3442,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "dauerhaft – kein schwarzer Bauer kann den Springer d6 je vertreiben, und der schwarze König bekommt keinen Bauernschild zurück.",
+     "text": "lasting – no black pawn can ever drive the knight away from d6, and Black's king will not get a pawn shield back.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "Weiß hat für die Qualität mehr als genug Kompensation.",
+     "text": "White has more than enough compensation for the exchange.",
      "stil": "normal"
     }
    ],
@@ -3619,7 +3619,7 @@
    "id": "k06-a11",
    "kapitel": 6,
    "abschnitt": "6.3",
-   "titel": "Karpow–Unzicker (Vorlauf aus Kapitel 11)",
+   "titel": "Karpov–Unzicker (lead-up from Chapter 11)",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -4125,7 +4125,7 @@
    "id": "k06-a12",
    "kapitel": 6,
    "abschnitt": "6.4",
-   "titel": "Frage 2: Was will mein Gegner?",
+   "titel": "Question 2: What does my opponent want?",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -4234,7 +4234,7 @@
    "id": "k06-a13",
    "kapitel": 6,
    "abschnitt": "6.4",
-   "titel": "Wenn der Angriff schon läuft: die Verteidigungsmittel",
+   "titel": "When the attack is already underway: the means of defense",
    "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 b - - 0 1",
    "zuege": [
     {
@@ -4332,7 +4332,7 @@
    "id": "k06-a16",
    "kapitel": 6,
    "abschnitt": "6.5",
-   "titel": "Frage 3: Welche Figur bringe ich dorthin?",
+   "titel": "Question 3: Which piece do I bring there?",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -4486,7 +4486,7 @@
    "id": "k06-a17",
    "kapitel": 6,
    "abschnitt": "6.5",
-   "titel": "Frage 3: Welche Figur bringe ich dorthin?",
+   "titel": "Question 3: Which piece do I bring there?",
    "startFen": "2r1r1k1/pp3ppp/4p3/8/8/4P3/PP1R1PPP/3R2K1 w - - 0 1",
    "zuege": [
     {
@@ -4516,7 +4516,7 @@
    "id": "k06-a19",
    "kapitel": 6,
    "abschnitt": "6.5",
-   "titel": "Angriff auf den rochierten König",
+   "titel": "Attack on the castled king",
    "startFen": "5rk1/pp1bppbp/3p1np1/q7/2r1P1P1/2N1BP2/PPPQN3/2KR3R w - - 3 17",
    "zuege": [
     {
@@ -4558,7 +4558,7 @@
    "id": "k06-a20",
    "kapitel": 6,
    "abschnitt": "6.6",
-   "titel": "Alle drei Fragen an einer Stellung: das Wettrennen in der Königsindischen Verteidigung",
+   "titel": "All three questions on one position: the race in the King's Indian Defense",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -5036,7 +5036,7 @@
    "id": "k06-a26",
    "kapitel": 6,
    "abschnitt": "6.7",
-   "titel": "Ungleiche Tausche: was die Faustwerte nicht sagen",
+   "titel": "Unequal trades: what the rule-of-thumb values don't tell you",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -5166,7 +5166,7 @@
    "id": "k06-a27",
    "kapitel": 6,
    "abschnitt": "6.7",
-   "titel": "Das Qualitätsopfer",
+   "titel": "The exchange sacrifice",
    "startFen": "2r3k1/8/8/8/8/2N5/PPP5/2K5 b - - 0 1",
    "zuege": [
     {
@@ -5204,7 +5204,7 @@
    "id": "k06-a29",
    "kapitel": 6,
    "abschnitt": "6.7",
-   "titel": "Das Qualitätsopfer",
+   "titel": "The exchange sacrifice",
    "startFen": "r2q1rk1/7p/p2p4/nppPn3/2P2P2/1P5b/PQ1NB2P/R2N1RK1 w - - 1 21",
    "zuege": [
     {
@@ -5305,7 +5305,7 @@
    "id": "k06-a3",
    "kapitel": 6,
    "abschnitt": "6.3",
-   "titel": "Offenes Zentrum: Spiele mit Figuren",
+   "titel": "Open center: Play with your pieces",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -5507,7 +5507,7 @@
    "id": "k06-a31",
    "kapitel": 6,
    "abschnitt": "6.7",
-   "titel": "Das Qualitätsopfer",
+   "titel": "The exchange sacrifice",
    "startFen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
    "zuege": [
     {
@@ -6029,7 +6029,7 @@
    "id": "k06-a4",
    "kapitel": 6,
    "abschnitt": "6.3",
-   "titel": "Der Angriff am Flügel bei offenem Zentrum: Antworte in der Mitte",
+   "titel": "A wing attack with an open center: Respond in the middle",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -6095,7 +6095,7 @@
    "id": "k06-a5",
    "kapitel": 6,
    "abschnitt": "6.3",
-   "titel": "Der Angriff am Flügel bei offenem Zentrum: Antworte in der Mitte",
+   "titel": "A wing attack with an open center: Respond in the middle",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -6309,7 +6309,7 @@
    "id": "k06-a7",
    "kapitel": 6,
    "abschnitt": "6.3",
-   "titel": "Die Könige auf demselben Flügel: Wann darf ich angreifen?",
+   "titel": "Kings on the same wing: When may I attack?",
    "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
    "zuege": [
     {

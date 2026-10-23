@@ -1484,3 +1484,20 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
 - Achtung für die Elo-Abbildung: Die Eichung der App rechnet in Tiefe 18 (Stockfish 19 lite),
   die Spielerdaten in Tiefe 12 (Stockfish 17.1). Vor dem Einsatz eine Teilmenge in Tiefe 18
   nachrechnen und die Verschiebung bestimmen.
+
+### Gegenprobe der schnellen Auswertung (23.10.2026, Wunsch des Autors)
+
+- Dieselbe Stichprobe (6885 Züge) schnell (bester und gespielter Zug, Tiefe 12) gegen voll
+  (MultiPV 6, Tiefe 12) und gegen Tiefe 20 (lokal menschenprofil2/schnell_vergleich.py):
+  Fehler gegen Tiefe 20 richtig: voll 86,6 %, schnell 85,3 % (schnell weniger Fehlalarme, mehr
+  übersehene). Fehlerart bei gemeinsamen Fehlern gleich: meist 91–100 %, Schlagreflex 82 %,
+  Taktik 81 %, Bauer eingestellt 82 %, König passiv 74 %. Gegnerflecken 64–91 % gleich.
+- Eigene Flecken nur 45–90 % gleich: Der beste Zug ist in Tiefe 12 oft einer von mehreren fast
+  gleichwertigen (gleich in beiden Methoden 65 %). Mit Abstand zum zweitbesten ≥ 0,3 ist er zu
+  91 % auch der beste in Tiefe 20 (44 % der Stellungen). Deshalb seit 23.10.2026 zwei Varianten
+  in spielerprofil.messung.ts (b2, w2) und Neustart aller Spielerpartien (alte Ergebnisse in
+  spielerprofil/alt-einevariante); der eigene Fleck zählt in der Kopplung nur bei Abstand ≥ 0,3.
+- Korrekturfaktoren schnell → Tiefe 20 je Art (lokal korrektur_schnell.json, 0,85 bis 1,43;
+  alle Fehler 0,96), im Modell eingerechnet.
+- betabinom.py zusätzlich: Fehler je Partie (alle, ungenau, fehler, patzer, verpasst) und
+  Verlust je Fehler, je Zelle mit 90-%-Bereich der Spieler (Wunsch des Autors, 23.10.2026).

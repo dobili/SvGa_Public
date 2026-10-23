@@ -38,6 +38,7 @@ const MS_JE_MINUTE = 60_000;
 const RECHENZEIT_MS = 60_000;
 const FORTSETZUNG_HALBZUEGE = 8;
 const STELLEN = 100;
+const ZWEI_VARIANTEN = 2;
 const HUNDERTSTEL_JE_SEKUNDE = 100;
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
@@ -67,8 +68,11 @@ async function stellung(fen: string, gespielt: string) {
   if (!lage) return null;
   const staerke = { art: "tiefe", tiefe: TIEFE } as const;
   const weiss = fen.split(" ")[1] === "w";
-  const beste = await engine.bewerte(fen, RECHENZEIT_MS, 1, staerke);
+  // Zwei Varianten (seit 23.10.2026): Der Abstand zum zweitbesten Zug zeigt, ob der beste Zug klar
+  // der beste ist; nur dann ist sein blinder Fleck aussagekräftig (Gegenprobe gegen Tiefe 20)
+  const beste = await engine.bewerte(fen, RECHENZEIT_MS, ZWEI_VARIANTEN, staerke);
   const b = beste.varianten[0];
+  const zweite = beste.varianten[1];
   const bester = b?.zuege[0];
   if (!b || !bester) return null;
   const s =
@@ -85,6 +89,8 @@ async function stellung(fen: string, gespielt: string) {
     ph: lage.phase,
     b: bester,
     bw: gerundet(bestwert),
+    b2: zweite?.zuege[0] ?? null,
+    w2: zweite ? gerundet(wertFuer(zweite.wert, weiss)) : null,
     w: gerundet(wert),
     a: fehlerartIn(lage, gespielt, antwort, verlust, bester),
     fb: fleckeVon(fen, bester),

@@ -3264,5 +3264,13 @@
   "rueckblick.zoom": "Ausschnitt der Kurve",
   "rueckblick.ganzePartie": "Ganze Partie",
   "rueckblick.startstellung": "Ausgangsstellung",
-  "zugklassen.relativViel": "über {prozent} % des Üblichen · {urteil}"
+  "zugklassen.relativViel": "über {prozent} % des Üblichen · {urteil}",
+  "spielen.filter.mitAnzahl": "Filter ({anzahl})",
+  "spielen.filter.entfernen": "Filter „{filter}“ entfernen",
+  "spielen.ordnung.datum.ab": "Neueste zuerst",
+  "spielen.ordnung.datum.auf": "Älteste zuerst",
+  "spielen.ordnung.staerke.ab": "Deine beste Spielstärke zuerst",
+  "spielen.ordnung.staerke.auf": "Deine schwächste Spielstärke zuerst",
+  "spielen.ordnung.gegner.ab": "Stärkster Gegner zuerst",
+  "spielen.ordnung.gegner.auf": "Schwächster Gegner zuerst"
 }

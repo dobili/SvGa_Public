@@ -1,5 +1,5 @@
 /*
- * Auswertung nach der Partie seit R55/R56 (Wunsch des Autors, 23.10.2026): Umschalter der Seite,
+ * Bereich Spielen seit P7 (23./24.10.2026). Auswertung nach der Partie seit R55/R56 (Wunsch des Autors, 23.10.2026): Umschalter der Seite,
  * eingeklappte Fehlerlisten, Ring der Gesamtgenauigkeit, Balken je Phase und das Bullet-Diagramm
  * der Zugklassen mit Zonen. Farben aus basis.css; die Urteilsfarben wie bei .phasenurteil-*.
  */
@@ -329,4 +329,114 @@
   background: var(--text);
   color: var(--grund);
   border-color: var(--text);
+}
+
+/* ---------- Partienliste: Filter und Sortieren (R54, Variante A) ---------- */
+.filterknoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.filteroeffner {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) * 0.75);
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 1.75);
+  border: 1px solid var(--linie-stark);
+  border-radius: 999px;
+  background: var(--flaeche);
+  color: var(--text);
+  font-size: var(--groesse-mittel);
+}
+
+.filteroeffner[aria-expanded="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.filterliste {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+}
+
+.filtergruppe {
+  margin: 0 0 var(--raster);
+  padding: 0;
+  border: none;
+}
+
+.filtergruppe legend {
+  padding: 0;
+  margin-bottom: calc(var(--raster) / 2);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-leise);
+}
+
+.filterwahl {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  width: 100%;
+  min-height: 40px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-size: var(--groesse-mittel);
+  text-align: left;
+}
+
+.filterhaken,
+.filterpunkt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--linie-stark);
+  border-radius: 4px;
+  color: var(--navy);
+}
+
+.filterpunkt {
+  border-radius: 50%;
+}
+
+.filterwahl[aria-checked="true"] .filterhaken {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.filterwahl[aria-checked="true"] .filterpunkt {
+  border: 6px solid var(--gold);
+}
+
+.filterchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+}
+
+.filterchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 32px;
+  padding: 0 calc(var(--raster) * 1.25);
+  border: none;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: var(--groesse-klein);
 }

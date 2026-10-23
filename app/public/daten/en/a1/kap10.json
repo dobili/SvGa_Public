@@ -6,32 +6,32 @@
   {
    "nummer": "10.1",
    "label": "sec:k10-werkzeug",
-   "titel": "Dein Werkzeug: So löst du eine Studie"
+   "titel": "Your tool: how to solve a study"
   },
   {
    "nummer": "10.2",
    "label": "sec:k10-saavedra",
-   "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+   "titel": "The Saavedra study: underpromotion against stalemate"
   },
   {
    "nummer": "10.3",
    "label": "sec:k10-reti",
-   "titel": "Die Réti-Studie: ein Königsweg mit zwei Zielen"
+   "titel": "The Réti study: one king route with two goals"
   },
   {
    "nummer": "10.4",
    "label": "sec:k10-heuaecker",
-   "titel": "Die Heuäcker-Studie: Wegversperrung"
+   "titel": "The Heuäcker study: interference"
   },
   {
    "nummer": "10.5",
    "label": "sec:k10-kuriositaeten",
-   "titel": "Zwei Kuriositäten"
+   "titel": "Two curiosities"
   },
   {
    "nummer": "10.6",
    "label": "",
-   "titel": "Rückblick: Studien und Kuriositäten"
+   "titel": "Review: studies and curiosities"
   }
  ],
  "abbildungen": [
@@ -42,7 +42,7 @@
    "abschnitt": {
     "nummer": "10.2",
     "label": "sec:k10-saavedra",
-    "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+    "titel": "The Saavedra study: underpromotion against stalemate"
    },
    "unterabschnitt": null,
    "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
@@ -57,7 +57,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Saavedra-Studie, Weiß am Zug gewinnt. Goldener Pfeil: der Weg des Bauern.",
+     "text": "The Saavedra study, White to move wins. Gold arrow: the pawn's path.",
      "stil": "normal"
     }
    ],
@@ -80,14 +80,14 @@
     "fragen": [
      {
       "zug": "1. c7",
-      "frage": "Warum zieht Weiß sofort 1. c7?",
+      "frage": "Why does White play 1. c7 right away?",
       "antworten": [
-       "Damit setzt Weiß den schwarzen König patt.",
-       "Der Bauer steht vor dem Ziel, und der Turm kann ihn nur noch mit Schachs stören.",
-       "Der Bauer deckt auf c7 den eigenen König."
+       "It stalemates the black king.",
+       "The pawn is right before its goal, and the rook can only disturb it with checks.",
+       "On c7 the pawn defends its own king."
       ],
       "richtig": 1,
-      "erklaerung": "Ein Turmzug nach d8 scheitert am Schlag cxd8. Schwarz bleibt nur, mit Schachs Zeit zu gewinnen."
+      "erklaerung": "A rook move to d8 fails to the capture cxd8. All Black can do is gain time with checks."
      }
     ]
    }
@@ -99,7 +99,7 @@
    "abschnitt": {
     "nummer": "10.2",
     "label": "sec:k10-saavedra",
-    "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+    "titel": "The Saavedra study: underpromotion against stalemate"
    },
    "unterabschnitt": null,
    "fen": "8/2P5/8/1K1r4/8/8/8/k7 w - - 3 3",
@@ -113,16 +113,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. c7 Td6+ 2. Kb5 Td5+"
+     "text": "1. c7 Rd6+ 2. Kb5 Rd5+"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Dorthin läuft der König.",
+     "text": ", White to move. Gray: this is where the king is heading.",
      "stil": "normal"
     }
    ],
@@ -153,7 +153,7 @@
    "abschnitt": {
     "nummer": "10.2",
     "label": "sec:k10-saavedra",
-    "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+    "titel": "The Saavedra study: underpromotion against stalemate"
    },
    "unterabschnitt": null,
    "fen": "8/2P5/8/8/8/1K1r4/8/k7 w - - 7 5",
@@ -168,16 +168,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Kb4 Td4+ 4. Kb3 Td3+"
+     "text": "3. Kb4 Rd4+ 4. Kb3 Rd3+"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: Nach ",
+     "text": ", White to move. Gold arrow: after ",
      "stil": "normal"
     },
     {
@@ -186,7 +186,7 @@
     },
     {
      "art": "text",
-     "text": " kostet jedes weitere Schach den Turm.",
+     "text": " every further check costs the rook.",
      "stil": "normal"
     }
    ],
@@ -218,14 +218,14 @@
     "fragen": [
      {
       "zug": "5. Kc2",
-      "frage": "Warum geht der König jetzt nach c2?",
+      "frage": "Why does the king go to c2 now?",
       "antworten": [
-       "Weiß will die Stellung wiederholen und remis machen.",
-       "Er will den Bauern c7 von hinten decken.",
-       "Von c2 aus deckt er c3 und d2: Jedes weitere Schach kostet den Turm."
+       "White wants to repeat the position and make a draw.",
+       "It wants to defend the pawn on c7 from behind.",
+       "From c2 it covers c3 and d2: every further check costs the rook."
       ],
       "richtig": 2,
-      "erklaerung": "Der Turm hat keine sicheren Schachs mehr. Schwarz muss sich etwas Neues einfallen lassen."
+      "erklaerung": "The rook has no safe checks left. Black has to come up with something new."
      }
     ]
    }
@@ -237,7 +237,7 @@
    "abschnitt": {
     "nummer": "10.2",
     "label": "sec:k10-saavedra",
-    "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+    "titel": "The Saavedra study: underpromotion against stalemate"
    },
    "unterabschnitt": null,
    "fen": "8/2P5/8/2K5/8/8/8/k2r4 w - - 3 3",
@@ -252,25 +252,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. c7 Td6+ 2. Kc5? Td1"
+     "text": "1. c7 Rd6+ 2. Kc5? Rd1"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug: remis. Roter Pfeil: Nach ",
+     "text": ", White to move: draw. Red arrow: after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. c8=D?"
+     "text": "3. c8=Q?"
     },
     {
      "art": "text",
-     "text": " spießt Tc1+ König und Dame auf.",
+     "text": ", Rc1+ skewers king and queen.",
      "stil": "normal"
     }
    ],
@@ -297,14 +297,14 @@
     "fragen": [
      {
       "zug": "3. c8=Q",
-      "frage": "Warum ist 3. c8=D hier ein Fehler?",
+      "frage": "Why is 3. c8=Q a mistake here?",
       "antworten": [
-       "Tc1+ spießt König c5 und Dame c8 auf der c-Linie auf.",
-       "Die neue Dame setzt den schwarzen König patt.",
-       "Der Turm d1 kann die Dame sofort schlagen."
+       "Rc1+ skewers the king on c5 and the queen on c8 along the c-file.",
+       "The new queen stalemates the black king.",
+       "The rook on d1 can capture the queen right away."
       ],
       "richtig": 0,
-      "erklaerung": "Der König muss aus dem Schach, dann schlägt der Turm die Dame. Mit 2. Kc5? stand der König auf der falschen Linie."
+      "erklaerung": "The king has to get out of check, then the rook captures the queen. With 2. Kc5? the king stood on the wrong file."
      }
     ]
    }
@@ -316,7 +316,7 @@
    "abschnitt": {
     "nummer": "10.2",
     "label": "sec:k10-saavedra",
-    "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+    "titel": "The Saavedra study: underpromotion against stalemate"
    },
    "unterabschnitt": null,
    "fen": "8/1KPr4/8/8/8/8/8/k7 w - - 3 3",
@@ -336,16 +336,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. c7 Td6+ 2. Kb7? Td7"
+     "text": "1. c7 Rd6+ 2. Kb7? Rd7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug: remis. Grauer Pfeil: die Fesselung. Rot: Der Bauer c7 darf nicht ziehen.",
+     "text": ", White to move: draw. Gray arrow: the pin. Red: the pawn on c7 must not move.",
      "stil": "normal"
     }
    ],
@@ -371,14 +371,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum kommt Weiß hier nicht weiter?",
+      "frage": "Why can't White make progress here?",
       "antworten": [
-       "Der weiße König hat keine Felder mehr.",
-       "Schwarz droht Matt auf der a-Linie.",
-       "Der Turm d7 fesselt den Bauern c7 an den König b7."
+       "The white king has no squares left.",
+       "Black threatens mate on the a-file.",
+       "The rook on d7 pins the pawn on c7 to the king on b7."
       ],
       "richtig": 2,
-      "erklaerung": "Der Bauer darf nicht ziehen, solange er den eigenen König deckt. Zieht der König weg, schlägt der Turm den Bauern."
+      "erklaerung": "The pawn must not move as long as it shields its own king. If the king steps away, the rook captures the pawn."
      }
     ]
    }
@@ -390,7 +390,7 @@
    "abschnitt": {
     "nummer": "10.2",
     "label": "sec:k10-saavedra",
-    "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+    "titel": "The Saavedra study: underpromotion against stalemate"
    },
    "unterabschnitt": null,
    "fen": "8/2P5/8/8/3r4/8/2K5/k7 w - - 9 6",
@@ -405,16 +405,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Kc2 Td4!!"
+     "text": "5. Kc2 Rd4!!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Roter Pfeil: das geplante Turmopfer auf c4.",
+     "text": ", White to move. Red arrow: the planned rook sacrifice on c4.",
      "stil": "normal"
     }
    ],
@@ -445,14 +445,14 @@
     "fragen": [
      {
       "zug": "6. c8=R",
-      "frage": "Warum wandelt Weiß in einen Turm um und nicht in eine Dame?",
+      "frage": "Why does White promote to a rook and not to a queen?",
       "antworten": [
-       "Ein Turm auf c8 ist vor allen Schachs sicher.",
-       "Nach c8=D gibt Tc4+, und nach Dxc4 ist Schwarz patt.",
-       "Eine Dame auf c8 könnte Schwarz sofort schlagen."
+       "A rook on c8 is safe from all checks.",
+       "After c8=Q comes Rc4+, and after Qxc4 Black is stalemated.",
+       "Black could capture a queen on c8 right away."
       ],
       "richtig": 1,
-      "erklaerung": "Die Dame auf c4 würde auch a2 decken. Ein Turm auf c4 deckt a2 nicht, also gibt es kein Patt."
+      "erklaerung": "The queen on c4 would also cover a2. A rook on c4 does not cover a2, so there is no stalemate."
      }
     ]
    }
@@ -464,7 +464,7 @@
    "abschnitt": {
     "nummer": "10.2",
     "label": "sec:k10-saavedra",
-    "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+    "titel": "The Saavedra study: underpromotion against stalemate"
    },
    "unterabschnitt": null,
    "fen": "8/8/8/8/2Q5/8/2K5/k7 b - - 0 7",
@@ -492,16 +492,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. c8=D?? Tc4+ 7. Dxc4"
+     "text": "6. c8=Q?? Rc4+ 7. Qxc4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug: patt. Grau: a2, b1 und b2 sind dem König versperrt.",
+     "text": ", Black to move: stalemate. Gray: a2, b1 and b2 are closed to the king.",
      "stil": "normal"
     }
    ],
@@ -540,7 +540,7 @@
    "abschnitt": {
     "nummer": "10.2",
     "label": "sec:k10-saavedra",
-    "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt"
+    "titel": "The Saavedra study: underpromotion against stalemate"
    },
    "unterabschnitt": null,
    "fen": "2R5/8/8/8/r7/1K6/8/k7 b - - 2 7",
@@ -560,16 +560,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. c8=T!! Ta4 7. Kb3!"
+     "text": "6. c8=R!! Ra4 7. Kb3!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rote Pfeile: Der König greift den Turm an, der Turm droht Tc1#.",
+     "text": ", Black to move. Red arrows: the king attacks the rook, the rook threatens Rc1#.",
      "stil": "normal"
     }
    ],
@@ -604,14 +604,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum gewinnt Weiß jetzt?",
+      "frage": "Why does White win now?",
       "antworten": [
-       "Schwarz hat keinen legalen Zug mehr.",
-       "Weiß kann den c-Bauern noch einmal umwandeln.",
-       "Der Turm a4 ist angegriffen, und zieht er weg, setzt Tc1 matt."
+       "Black has no legal move left.",
+       "White can promote the c-pawn once more.",
+       "The rook on a4 is attacked, and if it moves away, Rc1 mates."
       ],
       "richtig": 2,
-      "erklaerung": "Doppelte Aufgabe für einen einzigen Turm: Er kann nicht zugleich fliehen und die erste Reihe schützen."
+      "erklaerung": "Double duty for a single rook: it cannot flee and guard the first rank at the same time."
      }
     ]
    }
@@ -623,7 +623,7 @@
    "abschnitt": {
     "nummer": "10.3",
     "label": "sec:k10-reti",
-    "titel": "Die Réti-Studie: ein Königsweg mit zwei Zielen"
+    "titel": "The Réti study: one king route with two goals"
    },
    "unterabschnitt": null,
    "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
@@ -643,7 +643,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Réti-Studie, Weiß am Zug hält remis. Roter Pfeil: Der h-Bauer scheint uneinholbar. Goldener Pfeil: der Weg des weißen Bauern.",
+     "text": "The Réti study, White to move draws. Red arrow: the h-pawn seems unstoppable. Gold arrow: the path of the white pawn.",
      "stil": "normal"
     }
    ],
@@ -666,14 +666,14 @@
     "fragen": [
      {
       "zug": "1. Kg7",
-      "frage": "Warum zieht der König nach g7?",
+      "frage": "Why does the king go to g7?",
       "antworten": [
-       "Er deckt von dort das Umwandlungsfeld h1.",
-       "Er nähert sich zugleich dem h-Bauern und dem eigenen c-Bauern.",
-       "Er will den schwarzen König patt setzen."
+       "From there it covers the promotion square h1.",
+       "It approaches the h-pawn and its own c-pawn at the same time.",
+       "It wants to stalemate the black king."
       ],
       "richtig": 1,
-      "erklaerung": "Ein schräger Königszug zählt so viel wie ein gerader, deckt aber zwei Richtungen ab. So bleiben beide Ziele erreichbar."
+      "erklaerung": "A diagonal king move counts as much as a straight one, but it covers two directions. That way both goals stay within reach."
      }
     ]
    }
@@ -685,7 +685,7 @@
    "abschnitt": {
     "nummer": "10.3",
     "label": "sec:k10-reti",
-    "titel": "Die Réti-Studie: ein Königsweg mit zwei Zielen"
+    "titel": "The Réti study: one king route with two goals"
    },
    "unterabschnitt": null,
    "fen": "8/8/k1P2K2/8/7p/8/8/8 b - - 1 2",
@@ -705,7 +705,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -714,7 +714,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Goldene Pfeile: Der König kann zu beiden Bauern.",
+     "text": ", Black to move. Gold arrows: the king can reach both pawns.",
      "stil": "normal"
     }
    ],
@@ -744,7 +744,7 @@
    "abschnitt": {
     "nummer": "10.3",
     "label": "sec:k10-reti",
-    "titel": "Die Réti-Studie: ein Königsweg mit zwei Zielen"
+    "titel": "The Réti study: one king route with two goals"
    },
    "unterabschnitt": null,
    "fen": "8/8/1kP5/4K3/7p/8/8/8 b - - 3 3",
@@ -764,7 +764,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -773,7 +773,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Goldene Pfeile: Auf f4 steht der König im Quadrat, auf d6 deckt er den Bauern.",
+     "text": ", Black to move. Gold arrows: on f4 the king stands in the square, on d6 it defends the pawn.",
      "stil": "normal"
     }
    ],
@@ -801,14 +801,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist der Königszug nach e5 so stark?",
+      "frage": "Why is the king move to e5 so strong?",
       "antworten": [
-       "Von e5 erreicht er f4 im Quadrat des h-Bauern oder d6 neben dem c-Bauern.",
-       "Er setzt den schwarzen König in Zugzwang und gewinnt sofort.",
-       "Er deckt den Bauern c6 schon jetzt."
+       "From e5 it reaches f4 in the square of the h-pawn or d6 next to the c-pawn.",
+       "It puts the black king in zugzwang and wins at once.",
+       "It already defends the pawn on c6."
       ],
       "richtig": 0,
-      "erklaerung": "Schlägt Schwarz auf c6, holt der König den h-Bauern ein. Läuft der h-Bauer, unterstützt der König den c-Bauern."
+      "erklaerung": "If Black captures on c6, the king catches the h-pawn. If the h-pawn runs, the king supports the c-pawn."
      }
     ]
    }
@@ -820,7 +820,7 @@
    "abschnitt": {
     "nummer": "10.3",
     "label": "sec:k10-reti",
-    "titel": "Die Réti-Studie: ein Königsweg mit zwei Zielen"
+    "titel": "The Réti study: one king route with two goals"
    },
    "unterabschnitt": null,
    "fen": "8/2P5/1k1K4/8/8/8/7p/8 b - - 0 5",
@@ -840,7 +840,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -849,7 +849,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Goldener und roter Pfeil: Beide Bauern wandeln um.",
+     "text": ", Black to move. Gold and red arrow: both pawns promote.",
      "stil": "normal"
     }
    ],
@@ -884,7 +884,7 @@
    "abschnitt": {
     "nummer": "10.3",
     "label": "sec:k10-reti",
-    "titel": "Die Réti-Studie: ein Königsweg mit zwei Zielen"
+    "titel": "The Réti study: one king route with two goals"
    },
    "unterabschnitt": null,
    "fen": "8/2P1K3/k7/8/8/8/7p/8 b - - 0 4",
@@ -904,7 +904,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -913,7 +913,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Goldener und roter Pfeil: Beide Bauern wandeln um.",
+     "text": ", Black to move. Gold and red arrow: both pawns promote.",
      "stil": "normal"
     }
    ],
@@ -946,7 +946,7 @@
    "abschnitt": {
     "nummer": "10.4",
     "label": "sec:k10-heuaecker",
-    "titel": "Die Heuäcker-Studie: Wegversperrung"
+    "titel": "The Heuäcker study: interference"
    },
    "unterabschnitt": null,
    "fen": "1B6/8/7P/4p3/3b3k/8/8/2K5 w - - 0 1",
@@ -975,7 +975,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Heuäcker-Studie, Weiß am Zug gewinnt. Grauer Pfeil: die lange Diagonale des Läufers d4. Rot: Noch versperrt sie der eigene Bauer e5. Gold: der h-Bauer und sein Umwandlungsfeld h8.",
+     "text": "The Heuäcker study, White to move wins. Gray arrow: the long diagonal of the bishop on d4. Red: its own pawn on e5 still blocks it. Gold: the h-pawn and its promotion square h8.",
      "stil": "normal"
     }
    ],
@@ -998,14 +998,14 @@
     "fragen": [
      {
       "zug": "1. Ba7",
-      "frage": "Warum spielt Weiß 1. La7?",
+      "frage": "Why does White play 1. Ba7?",
       "antworten": [
-       "Der Läufer deckt von a7 das Feld h8.",
-       "Er greift den Läufer d4 an; schlägt dieser auf a7, verlässt er die lange Diagonale.",
-       "Er stellt den eigenen König vor Läuferschachs sicher."
+       "From a7 the bishop covers the square h8.",
+       "It attacks the bishop on d4; if that bishop captures on a7, it leaves the long diagonal.",
+       "It keeps its own king safe from bishop checks."
       ],
       "richtig": 1,
-      "erklaerung": "Nach Lxa7 und h7 erreicht kein schwarzer Stein mehr h8. Ein sofortiges h7 dagegen beantwortet Schwarz mit e4."
+      "erklaerung": "After Bxa7 and h7, no black unit can reach h8 anymore. An immediate h7, on the other hand, Black answers with e4."
      }
     ]
    }
@@ -1017,7 +1017,7 @@
    "abschnitt": {
     "nummer": "10.4",
     "label": "sec:k10-heuaecker",
-    "titel": "Die Heuäcker-Studie: Wegversperrung"
+    "titel": "The Heuäcker study: interference"
    },
    "unterabschnitt": null,
    "fen": "8/B7/7P/4p3/7k/2b5/8/1K6 w - - 4 3",
@@ -1032,16 +1032,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. La7 La1 2. Kb1 Lc3"
+     "text": "1. Ba7 Ba1 2. Kb1 Bc3"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Goldener Pfeil: ",
+     "text": ", White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
@@ -1050,7 +1050,7 @@
     },
     {
      "art": "text",
-     "text": " greift den Läufer wieder an.",
+     "text": " attacks the bishop again.",
      "stil": "normal"
     }
    ],
@@ -1081,7 +1081,7 @@
    "abschnitt": {
     "nummer": "10.4",
     "label": "sec:k10-heuaecker",
-    "titel": "Die Heuäcker-Studie: Wegversperrung"
+    "titel": "The Heuäcker study: interference"
    },
    "unterabschnitt": null,
    "fen": "8/8/7P/4p3/3B3k/8/2K5/b7 b - - 7 4",
@@ -1101,16 +1101,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Kc2 La1 4. Ld4!!"
+     "text": "3. Kc2 Ba1 4. Bd4!!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: der Läufer d4 als Köder. Grauer Pfeil: die Diagonale des schwarzen Läufers, die er sperrt.",
+     "text": ", Black to move. Gold: the bishop on d4 as bait. Gray arrow: the black bishop's diagonal, which it blocks.",
      "stil": "normal"
     }
    ],
@@ -1140,14 +1140,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum stellt Weiß den Läufer auf d4 ein?",
+      "frage": "Why does White put the bishop en prise on d4?",
       "antworten": [
-       "Er sperrt die Diagonale: Nach dem Schlag auf d4 bleibt der schwarze Läufer hinter einem Hindernis.",
-       "Er deckt von d4 aus das Feld h8 für den eigenen Bauern.",
-       "Nach dem Tausch hat Weiß einen Bauern mehr."
+       "It blocks the diagonal: after the capture on d4, the black bishop stays behind an obstacle.",
+       "From d4 it covers the square h8 for its own pawn.",
+       "After the trade, White is a pawn up."
       ],
       "richtig": 0,
-      "erklaerung": "Ob Läufer oder Bauer auf d4 schlägt: Der weiße König hält die Sperre fest. Dann läuft der h-Bauer durch."
+      "erklaerung": "Whether bishop or pawn captures on d4: the white king holds the block in place. Then the h-pawn runs through."
      }
     ]
    }
@@ -1159,7 +1159,7 @@
    "abschnitt": {
     "nummer": "10.4",
     "label": "sec:k10-heuaecker",
-    "titel": "Die Heuäcker-Studie: Wegversperrung"
+    "titel": "The Heuäcker study: interference"
    },
    "unterabschnitt": null,
    "fen": "8/8/7P/4p3/4K2k/8/8/b7 b - - 3 6",
@@ -1184,16 +1184,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Hauptvariante nach ",
+     "text": "Main line after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Lxd4 5. Kd3 La1 6. Ke4"
+     "text": "4... Bxd4 5. Kd3 Ba1 6. Ke4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grauer Pfeil: Der Läufer ist versperrt. Gold: Der König blockiert e5, der h-Bauer läuft durch.",
+     "text": ", Black to move. Gray arrow: the bishop is blocked. Gold: the king blockades e5, the h-pawn runs through.",
      "stil": "normal"
     }
    ],
@@ -1230,7 +1230,7 @@
    "abschnitt": {
     "nummer": "10.4",
     "label": "sec:k10-heuaecker",
-    "titel": "Die Heuäcker-Studie: Wegversperrung"
+    "titel": "The Heuäcker study: interference"
    },
    "unterabschnitt": null,
    "fen": "8/8/7P/8/3p3k/3K4/8/b7 b - - 1 5",
@@ -1255,7 +1255,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nebenvariante nach ",
+     "text": "Side line after ",
      "stil": "normal"
     },
     {
@@ -1264,7 +1264,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grauer Pfeil: Der Läufer ist versperrt. Gold: Der König blockiert d4, der h-Bauer läuft durch.",
+     "text": ", Black to move. Gray arrow: the bishop is blocked. Gold: the king blockades d4, the h-pawn runs through.",
      "stil": "normal"
     }
    ],
@@ -1299,9 +1299,9 @@
    "abschnitt": {
     "nummer": "10.5",
     "label": "sec:k10-kuriositaeten",
-    "titel": "Zwei Kuriositäten"
+    "titel": "Two curiosities"
    },
-   "unterabschnitt": "Zwei Springer brauchen einen gegnerischen Bauern",
+   "unterabschnitt": "Two knights need an enemy pawn",
    "fen": "7k/5K2/8/4N3/7p/7N/8/8 w - - 0 1",
    "pfeile": [
     {
@@ -1314,16 +1314,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Goldener Pfeil: ",
+     "text": "White to move. Gold arrow: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sg5!"
+     "text": "1. Ng5!"
     },
     {
      "art": "text",
-     "text": " Der Bauer muss ",
+     "text": " The pawn has to move ",
      "stil": "normal"
     },
     {
@@ -1332,16 +1332,16 @@
     },
     {
      "art": "text",
-     "text": " ziehen, und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sg6#"
+     "text": "2. Ng6#"
     },
     {
      "art": "text",
-     "text": " setzt matt.",
+     "text": " mates.",
      "stil": "normal"
     }
    ],
@@ -1364,14 +1364,14 @@
     "fragen": [
      {
       "zug": "1. Ng5",
-      "frage": "Warum ist 1. Sg5 so stark?",
+      "frage": "Why is 1. Ng5 so strong?",
       "antworten": [
-       "Der Springer droht, den Bauern h4 zu schlagen.",
-       "Er setzt sofort matt.",
-       "Er nimmt dem König h7; Schwarz muss h3 ziehen, und Sg6 setzt matt."
+       "The knight threatens to capture the pawn on h4.",
+       "It mates at once.",
+       "It takes h7 from the king; Black has to play h3, and Ng6 mates."
       ],
       "richtig": 2,
-      "erklaerung": "Ein stiller Zug bringt Schwarz in Zugzwang. Der Bauer, der Schwarz vor dem Patt rettet, wird ihm zum Verhängnis."
+      "erklaerung": "A quiet move puts Black in zugzwang. The pawn that saves Black from stalemate becomes Black's undoing."
      }
     ]
    }
@@ -1383,9 +1383,9 @@
    "abschnitt": {
     "nummer": "10.5",
     "label": "sec:k10-kuriositaeten",
-    "titel": "Zwei Kuriositäten"
+    "titel": "Two curiosities"
    },
-   "unterabschnitt": "Zwei Springer brauchen einen gegnerischen Bauern",
+   "unterabschnitt": "Two knights need an enemy pawn",
    "fen": "7k/5K2/8/4N3/8/7N/8/8 w - - 0 1",
    "pfeile": [
     {
@@ -1398,16 +1398,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Dieselbe Stellung ohne den Bauern h4, Weiß am Zug. Roter Pfeil: ",
+     "text": "The same position without the pawn on h4, White to move. Red arrow: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sg5??"
+     "text": "1. Ng5??"
     },
     {
      "art": "text",
-     "text": " setzt patt.",
+     "text": " stalemates.",
      "stil": "normal"
     }
    ],
@@ -1430,14 +1430,14 @@
     "fragen": [
      {
       "zug": "1. Ng5",
-      "frage": "Warum ist 1. Sg5 hier ein Fehler?",
+      "frage": "Why is 1. Ng5 a mistake here?",
       "antworten": [
-       "Der Springer auf g5 kann geschlagen werden.",
-       "Schwarz hat danach keinen legalen Zug und steht nicht im Schach: patt.",
-       "Schwarz kann nach g8 entkommen."
+       "The knight on g5 can be captured.",
+       "Afterwards Black has no legal move and is not in check: stalemate.",
+       "Black can escape to g8."
       ],
       "richtig": 1,
-      "erklaerung": "Dieselbe Idee wie in der Stellung mit Bauer, aber ohne Pattreserve wird aus dem Zugzwang ein Patt."
+      "erklaerung": "The same idea as in the position with the pawn, but without a stalemate reserve the zugzwang turns into stalemate."
      }
     ]
    }
@@ -1449,9 +1449,9 @@
    "abschnitt": {
     "nummer": "10.5",
     "label": "sec:k10-kuriositaeten",
-    "titel": "Zwei Kuriositäten"
+    "titel": "Two curiosities"
    },
-   "unterabschnitt": "Zwei Springer brauchen einen gegnerischen Bauern",
+   "unterabschnitt": "Two knights need an enemy pawn",
    "fen": "6k1/8/5K2/6N1/7p/7N/8/8 w - - 0 1",
    "pfeile": [],
    "felder": [
@@ -1495,7 +1495,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt. Gold: Der Springer h3 blockiert den Bauern h4. Grau: die Troitzky-Linie für schwarze Bauern.",
+     "text": "White to move wins. Gold: the knight on h3 blockades the pawn on h4. Gray: the Troitzky line for black pawns.",
      "stil": "normal"
     }
    ],
@@ -1606,9 +1606,9 @@
    "abschnitt": {
     "nummer": "10.5",
     "label": "sec:k10-kuriositaeten",
-    "titel": "Zwei Kuriositäten"
+    "titel": "Two curiosities"
    },
-   "unterabschnitt": "Das kürzeste Patt",
+   "unterabschnitt": "The shortest stalemate",
    "fen": "5bnr/4p1pq/4Qpkr/7p/7P/4P3/PPPP1PP1/RNB1KBNR b KQ - 2 10",
    "pfeile": [
     {
@@ -1634,16 +1634,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10. De6"
+     "text": "10. Qe6"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug: patt. Grau: Die Dame fesselt den Bauern f6 und nimmt dem König f5 und f7, der Bauer h4 nimmt ihm g5.",
+     "text": ", Black to move: stalemate. Gray: the queen pins the pawn on f6 and takes f5 and f7 from the king, the pawn on h4 takes g5 from it.",
      "stil": "normal"
     }
    ],
@@ -1682,14 +1682,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum hat Schwarz hier keinen Zug mehr?",
+      "frage": "Why does Black have no move left here?",
       "antworten": [
-       "Der König steht im Schach und kann nicht ausweichen.",
-       "Die Dame e6 fesselt f6 und deckt f5 und f7, h4 deckt g5; alle anderen Steine sind blockiert.",
-       "Schwarz darf nicht ziehen, weil Weiß zuletzt Schach gegeben hat."
+       "The king is in check and cannot get away.",
+       "The queen on e6 pins f6 and covers f5 and f7, h4 covers g5; all other black units are blocked.",
+       "Black may not move because White gave check last."
       ],
       "richtig": 1,
-      "erklaerung": "Kein Schach, kein legaler Zug: Das ist Patt. Wenige weiße Steine reichen, weil die schwarzen sich gegenseitig einsperren."
+      "erklaerung": "No check, no legal move: that is stalemate. A few white units are enough, because the black ones lock each other in."
      }
     ]
    }
@@ -1701,7 +1701,7 @@
    "abschnitt": {
     "nummer": "10.6",
     "label": "",
-    "titel": "Rückblick: Studien und Kuriositäten"
+    "titel": "Review: studies and curiosities"
    },
    "unterabschnitt": null,
    "fen": "7n/5P1k/4BKpp/8/8/8/8/8 w - - 0 1",
@@ -1710,7 +1710,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug setzt in einem Zug matt.",
+     "text": "White to move mates in one.",
      "stil": "normal"
     }
    ],
@@ -1733,7 +1733,7 @@
    "abschnitt": {
     "nummer": "10.6",
     "label": "",
-    "titel": "Rückblick: Studien und Kuriositäten"
+    "titel": "Review: studies and curiosities"
    },
    "unterabschnitt": null,
    "fen": "8/1P6/8/8/8/8/5K2/7k w - - 0 1",
@@ -1765,7 +1765,7 @@
    "abschnitt": {
     "nummer": "10.6",
     "label": "",
-    "titel": "Rückblick: Studien und Kuriositäten"
+    "titel": "Review: studies and curiosities"
    },
    "unterabschnitt": null,
    "fen": "1k6/8/K7/8/8/8/8/5R2 w - - 0 1",
@@ -1797,7 +1797,7 @@
    "abschnitt": {
     "nummer": "10.6",
     "label": "",
-    "titel": "Rückblick: Studien und Kuriositäten"
+    "titel": "Review: studies and curiosities"
    },
    "unterabschnitt": null,
    "fen": "7K/1k6/8/3P3p/8/8/8/8 w - - 0 1",
@@ -1806,7 +1806,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug hält remis.",
+     "text": "White to move draws.",
      "stil": "normal"
     }
    ],
@@ -1829,7 +1829,7 @@
    "abschnitt": {
     "nummer": "10.6",
     "label": "",
-    "titel": "Rückblick: Studien und Kuriositäten"
+    "titel": "Review: studies and curiosities"
    },
    "unterabschnitt": null,
    "fen": "7r/P7/4k3/8/8/6B1/8/6K1 w - - 0 1",
@@ -1838,7 +1838,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug gewinnt.",
+     "text": "White to move wins.",
      "stil": "normal"
     }
    ],
@@ -1861,7 +1861,7 @@
    "abschnitt": {
     "nummer": "10.6",
     "label": "",
-    "titel": "Rückblick: Studien und Kuriositäten"
+    "titel": "Review: studies and curiosities"
    },
    "unterabschnitt": null,
    "fen": "k7/2p5/8/K7/2Q5/8/8/8 w - - 0 1",
@@ -1899,27 +1899,27 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "zug",
-     "text": "1. f8=S#"
+     "text": "1. f8=N#"
     },
     {
      "art": "text",
-     "text": ". Der Springer gibt dem König h7 Schach. Das Feld g8 deckt jetzt der Läufer e6, da der Bauer f7 nicht mehr im Weg steht, und g7 der König f6. Auf g6, h6 und h8 stehen eigene schwarze Figuren, und niemand kann den Springer f8 schlagen. Nach ",
+     "text": ". The knight gives check to the king on h7. The square g8 is now covered by the bishop on e6, since the pawn on f7 is no longer in the way, and g7 by the king on f6. On g6, h6 and h8 stand Black's own pieces, and nobody can capture the knight on f8. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. f8=D?"
+     "text": "1. f8=Q?"
     },
     {
      "art": "text",
-     "text": " gibt es dagegen kein Schach, und Schwarz hat noch Züge. Merke dir: Prüfe bei jeder Umwandlung alle vier Figuren.",
+     "text": ", on the other hand, there is no check, and Black still has moves. Remember: with every promotion, check all four pieces.",
      "stil": "normal"
     }
    ],
@@ -1930,8 +1930,8 @@
    "erklaerung": {
     "loesung": "1. f8=N#",
     "akzeptiert": [],
-    "motiv": "Unterverwandlung mit Matt",
-    "text": "1. f8=S# gibt Schach, und weil der Bauer f7 weg ist, deckt jetzt der Läufer e6 das Feld g8; g7 deckt der König. Nach 1. f8=D? gibt es kein Schach, und Schwarz hat noch Züge: Prüfe bei jeder Umwandlung alle vier Figuren."
+    "motiv": "Underpromotion with mate",
+    "text": "1. f8=N# gives check, and because the pawn on f7 is gone, the bishop on e6 now covers the square g8; g7 is covered by the king. After 1. f8=Q? there is no check, and Black still has moves: with every promotion, check all four pieces."
    }
   },
   {
@@ -1945,45 +1945,45 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "zug",
-     "text": "1. b8=T!"
+     "text": "1. b8=R!"
     },
     {
      "art": "text",
-     "text": " Nach ",
+     "text": " After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. b8=D?"
+     "text": "1. b8=Q?"
     },
     {
      "art": "text",
-     "text": " ist Schwarz sofort patt: Die Dame deckt über die Diagonale b8–h2 das Feld h2, der König f2 g1 und g2. Dasselbe gilt für ",
+     "text": " Black is stalemated at once: the queen covers the square h2 along the diagonal b8–h2, the king on f2 covers g1 and g2. The same goes for ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. b8=L?"
+     "text": "1. b8=B?"
     },
     {
      "art": "text",
-     "text": ". Nach ",
+     "text": ". After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. b8=T!"
+     "text": "1. b8=R!"
     },
     {
      "art": "text",
-     "text": " bleibt dem schwarzen König nur ",
+     "text": " the black king has only ",
      "stil": "normal"
     },
     {
@@ -1992,16 +1992,16 @@
     },
     {
      "art": "text",
-     "text": ", und ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Th8#"
+     "text": "2. Rh8#"
     },
     {
      "art": "text",
-     "text": " setzt matt. Merke dir: Nimmt die neue Figur dem König das letzte Feld, ohne Schach zu geben, und kann Schwarz auch sonst nicht ziehen, ist es Patt.",
+     "text": " mates. Remember: if the new piece takes the king's last square without giving check, and Black cannot move otherwise either, it is stalemate.",
      "stil": "normal"
     }
    ],
@@ -2012,8 +2012,8 @@
    "erklaerung": {
     "loesung": "1. b8=R!",
     "akzeptiert": [],
-    "motiv": "Unterverwandlung gegen Patt",
-    "text": "Eine neue Dame oder ein Läufer auf b8 deckt über die Diagonale h2, und Schwarz ist sofort patt. Nach 1. b8=T! bleibt dem König nur 1... Kh2, und 2. Th8# setzt matt."
+    "motiv": "Underpromotion against stalemate",
+    "text": "A new queen or a bishop on b8 covers h2 along the diagonal, and Black is stalemated at once. After 1. b8=R! the king has only 1... Kh2, and 2. Rh8# mates."
    }
   },
   {
@@ -2027,18 +2027,18 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "zug",
-     "text": "1. Tc1!"
+     "text": "1. Rc1!"
     },
     {
      "art": "text",
-     "text": " Ein Schach im ersten Zug hilft nicht. Der stille Turmzug nimmt dem König dagegen die Felder c7 und c8, während a7 und b7 der König a6 deckt. Schwarz steht im Zugzwang und muss ",
+     "text": " A check on the first move does not help. The quiet rook move, by contrast, takes the squares c7 and c8 from the king, while the king on a6 covers a7 and b7. Black is in zugzwang and has to play ",
      "stil": "normal"
     },
     {
@@ -2047,16 +2047,16 @@
     },
     {
      "art": "text",
-     "text": " spielen, und es folgt ",
+     "text": ", and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Tc8#"
+     "text": "2. Rc8#"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Nimm dem König mit einem stillen Zug alle Felder außer dem Mattfeld, denn im Zugzwang muss er dann hinein.",
+     "text": " follows. Remember: with a quiet move, take all squares from the king except the mating square, because in zugzwang it then has to step into it.",
      "stil": "normal"
     }
    ],
@@ -2067,8 +2067,8 @@
    "erklaerung": {
     "loesung": "1. Rc1!",
     "akzeptiert": [],
-    "motiv": "Stiller Zug und Zugzwang",
-    "text": "1. Tc1! nimmt dem König c7 und c8, a7 und b7 deckt der König a6. Schwarz muss 1... Ka8 ziehen, und 2. Tc8# setzt matt."
+    "motiv": "Quiet move and zugzwang",
+    "text": "1. Rc1! takes c7 and c8 from the king, and the king on a6 covers a7 and b7. Black has to play 1... Ka8, and 2. Rc8# mates."
    }
   },
   {
@@ -2082,7 +2082,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
      "stil": "normal"
     }
    ],
@@ -2093,7 +2093,7 @@
     },
     {
      "art": "text",
-     "text": " Wie bei Réti läuft der König diagonal, zum h-Bauern und zugleich zum eigenen Bauern. Alle anderen Züge verlieren, etwa ",
+     "text": " As in Réti's study, the king walks diagonally, toward the h-pawn and at the same time toward its own pawn. All other moves lose, for example ",
      "stil": "normal"
     },
     {
@@ -2102,7 +2102,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -2111,7 +2111,7 @@
     },
     {
      "art": "text",
-     "text": ". Nach ",
+     "text": ". After ",
      "stil": "normal"
     },
     {
@@ -2120,7 +2120,7 @@
     },
     {
      "art": "text",
-     "text": " halten allerdings nur ",
+     "text": ", however, only ",
      "stil": "normal"
     },
     {
@@ -2129,7 +2129,7 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -2138,16 +2138,16 @@
     },
     {
      "art": "text",
-     "text": ", zum Beispiel ",
+     "text": " hold, for example ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... h3 3. d6 h2 4. d7 h1=D 5. d8=D"
+     "text": "2... h3 3. d6 h2 4. d7 h1=Q 5. d8=Q"
     },
     {
      "art": "text",
-     "text": " mit Remis. Das Réti-artige ",
+     "text": " with a draw. The Réti-like ",
      "stil": "normal"
     },
     {
@@ -2156,25 +2156,25 @@
     },
     {
      "art": "text",
-     "text": " verliert dagegen: Nach ",
+     "text": ", on the other hand, loses: after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... h3 3. d6 h2 4. d7 h1=D 5. d8=D"
+     "text": "2... h3 3. d6 h2 4. d7 h1=Q 5. d8=Q"
     },
     {
      "art": "text",
-     "text": " steht der König auf der Diagonale h4–d8, und ",
+     "text": " the king stands on the diagonal h4–d8, and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Dh4+!"
+     "text": "5... Qh4+!"
     },
     {
      "art": "text",
-     "text": " gewinnt mit einem Spieß (Kapitel 7) die neue Dame. Geht Schwarz stattdessen mit ",
+     "text": " wins the new queen with a skewer (Chapter 7). If Black instead goes to the pawn with ",
      "stil": "normal"
     },
     {
@@ -2183,7 +2183,7 @@
     },
     {
      "art": "text",
-     "text": " zum Bauern, führt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -2192,16 +2192,16 @@
     },
     {
      "art": "text",
-     "text": " den König rechtzeitig nach e7, etwa ",
+     "text": " brings the king to e7 in time, for example ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... h4 3. Ke7 h3 4. d6+ Kb7 5. d7 h2 6. d8=D h1=D"
+     "text": "2... h4 3. Ke7 h3 4. d6+ Kb7 5. d7 h2 6. d8=Q h1=Q"
     },
     {
      "art": "text",
-     "text": ". Nach ",
+     "text": ". After ",
      "stil": "normal"
     },
     {
@@ -2210,7 +2210,7 @@
     },
     {
      "art": "text",
-     "text": " hält ebenfalls bloß ",
+     "text": ", too, only ",
      "stil": "normal"
     },
     {
@@ -2219,7 +2219,7 @@
     },
     {
      "art": "text",
-     "text": ", nach ",
+     "text": " holds; after ",
      "stil": "normal"
     },
     {
@@ -2228,7 +2228,7 @@
     },
     {
      "art": "text",
-     "text": " genügt ",
+     "text": ", ",
      "stil": "normal"
     },
     {
@@ -2237,7 +2237,7 @@
     },
     {
      "art": "text",
-     "text": ". Merke dir: Übernimm die Idee einer Studie, nicht ihre Züge, und prüfe am Ende jeder Variante, ob die neue Dame mit Schach verloren geht.",
+     "text": " is enough. Remember: take over the idea of a study, not its moves, and at the end of every line check whether the new queen is lost to a check.",
      "stil": "normal"
     }
    ],
@@ -2248,8 +2248,8 @@
    "erklaerung": {
     "loesung": "1. Kg7!",
     "akzeptiert": [],
-    "motiv": "Réti-Manöver",
-    "text": "1. Kg7! läuft diagonal und nähert sich zugleich dem h-Bauern und dem eigenen Bauern. Nach 1... h4 hält nur 2. Kf7! oder 2. Kf8; das Réti-artige 2. Kf6? verliert, weil die neue weiße Dame später mit Dh4+ aufgespießt wird."
+    "motiv": "Réti maneuver",
+    "text": "1. Kg7! walks diagonally and approaches the h-pawn and its own pawn at the same time. After 1... h4 only 2. Kf7! or 2. Kf8 holds; the Réti-like 2. Kf6? loses, because the new white queen is later skewered with Qh4+."
    }
   },
   {
@@ -2263,54 +2263,54 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "zug",
-     "text": "1. Lb8!"
+     "text": "1. Bb8!"
     },
     {
      "art": "text",
-     "text": " Was will Schwarz? Der Turm h8 bewacht über die 8. Reihe das Umwandlungsfeld a8 und will sich mit ",
+     "text": " What does Black want? The rook on h8 guards the promotion square a8 along the 8th rank and wants to place itself in front of the pawn with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Ta8"
+     "text": "...Ra8"
     },
     {
      "art": "text",
-     "text": " vor den Bauern stellen. Der stille Läuferzug versperrt ihm die Reihe, und der Bauer a7 deckt den Läufer. Nach ",
+     "text": ". The quiet bishop move blocks the rank, and the pawn on a7 defends the bishop. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Txb8 2. axb8=D"
+     "text": "1... Rxb8 2. axb8=Q"
     },
     {
      "art": "text",
-     "text": " gewinnt die Dame, sonst wandelt der Bauer auf a8 um, nach einem Turmschach einen Zug später. Alle anderen Züge verschenken den Gewinn: ",
+     "text": " the queen wins; otherwise the pawn promotes on a8, one move later after a rook check. All other moves throw away the win: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. a8=D? Txa8"
+     "text": "1. a8=Q? Rxa8"
     },
     {
      "art": "text",
-     "text": " ist remis, und nach ",
+     "text": " is a draw, and after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lf4? Ta8"
+     "text": "1. Bf4? Ra8"
     },
     {
      "art": "text",
-     "text": " kommt der Läufer zu spät. Merke dir: Bewacht eine gegnerische Figur dein Umwandlungsfeld aus der Ferne, suche das Feld, auf dem du ihr den Weg versperrst.",
+     "text": " the bishop comes too late. Remember: if an enemy piece guards your promotion square from a distance, look for the square on which you block its path.",
      "stil": "normal"
     }
    ],
@@ -2322,7 +2322,7 @@
     "loesung": "1. Bb8!",
     "akzeptiert": [],
     "motiv": "Interference",
-    "text": "Der Turm h8 bewacht das Umwandlungsfeld über die achte Reihe. 1. Lb8! versperrt ihm den Weg, gedeckt vom Bauern a7; nach 1... Txb8 2. axb8=D gewinnt Weiß, sonst wandelt der Bauer um."
+    "text": "The rook on h8 guards the promotion square along the eighth rank. 1. Bb8! blocks its path, defended by the pawn on a7; after 1... Rxb8 2. axb8=Q White wins, otherwise the pawn promotes."
    }
   },
   {
@@ -2336,7 +2336,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Löse die Stellungen im Kopf, d.h. ohne eine Figur zu ziehen.",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
      "stil": "normal"
     }
    ],
@@ -2347,16 +2347,16 @@
     },
     {
      "art": "text",
-     "text": " Nach ",
+     "text": " After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxc7?"
+     "text": "1. Qxc7?"
     },
     {
      "art": "text",
-     "text": " wäre Schwarz patt, da die Dame a7, b7 und b8 deckt. Der Bauer c7 ist die Pattreserve von Schwarz (Abschnitt 10.5). Nach ",
+     "text": " Black would be stalemated, since the queen covers a7, b7 and b8. The pawn on c7 is Black's stalemate reserve (Section 10.5). After ",
      "stil": "normal"
     },
     {
@@ -2365,7 +2365,7 @@
     },
     {
      "art": "text",
-     "text": " muss Schwarz ziehen, ",
+     "text": " Black has to move, ",
      "stil": "normal"
     },
     {
@@ -2383,7 +2383,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -2392,16 +2392,16 @@
     },
     {
      "art": "text",
-     "text": ", und in allen Fällen folgt ",
+     "text": ", and in every case ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Dg8#"
+     "text": "2. Qg8#"
     },
     {
      "art": "text",
-     "text": ". Merke dir: Schlage den letzten beweglichen Bauern des Gegners nicht, solange er dir das Patt erspart.",
+     "text": " follows. Remember: don't capture your opponent's last mobile pawn as long as it spares you the stalemate.",
      "stil": "normal"
     }
    ],
@@ -2412,8 +2412,8 @@
    "erklaerung": {
     "loesung": "1. Ka6!",
     "akzeptiert": [],
-    "motiv": "Pattreserve stehen lassen",
-    "text": "Nach 1. Dxc7? wäre Schwarz patt, denn der Bauer c7 ist seine einzige Zugreserve. 1. Ka6! lässt ihn stehen; jeder schwarze Zug wird mit 2. Dg8# beantwortet."
+    "motiv": "Leaving the stalemate reserve alone",
+    "text": "After 1. Qxc7? Black would be stalemated, because the pawn on c7 is Black's only spare move. 1. Ka6! leaves it alone; every black move is answered with 2. Qg8#."
    }
   }
  ],
@@ -2425,7 +2425,7 @@
    "id": "k10-a1",
    "kapitel": 10,
    "abschnitt": "10.2",
-   "titel": "Die Saavedra-Studie: Unterverwandlung gegen Patt",
+   "titel": "The Saavedra study: underpromotion against stalemate",
    "startFen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
    "zuege": [
     {
@@ -2736,7 +2736,7 @@
    "id": "k10-a14",
    "kapitel": 10,
    "abschnitt": "10.4",
-   "titel": "Die Heuäcker-Studie: Wegversperrung",
+   "titel": "The Heuäcker study: interference",
    "startFen": "1B6/8/7P/4p3/3b3k/8/8/2K5 w - - 0 1",
    "zuege": [
     {
@@ -2966,7 +2966,7 @@
    "id": "k10-a19",
    "kapitel": 10,
    "abschnitt": "10.5",
-   "titel": "Zwei Springer brauchen einen gegnerischen Bauern",
+   "titel": "Two knights need an enemy pawn",
    "startFen": "7k/5K2/8/4N3/7p/7N/8/8 w - - 0 1",
    "zuege": [
     {
@@ -3002,7 +3002,7 @@
    "id": "k10-a20",
    "kapitel": 10,
    "abschnitt": "10.5",
-   "titel": "Zwei Springer brauchen einen gegnerischen Bauern",
+   "titel": "Two knights need an enemy pawn",
    "startFen": "7k/5K2/8/4N3/8/7N/8/8 w - - 0 1",
    "zuege": [
     {
@@ -3024,7 +3024,7 @@
    "id": "k10-a22",
    "kapitel": 10,
    "abschnitt": "10.5",
-   "titel": "Das kürzeste Patt",
+   "titel": "The shortest stalemate",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -3194,7 +3194,7 @@
    "id": "k10-a23",
    "kapitel": 10,
    "abschnitt": "Übung 73",
-   "titel": "Rückblick: Studien und Kuriositäten",
+   "titel": "Review: studies and curiosities",
    "startFen": "7n/5P1k/4BKpp/8/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -3222,7 +3222,7 @@
    "id": "k10-a24",
    "kapitel": 10,
    "abschnitt": "Übung 74",
-   "titel": "Rückblick: Studien und Kuriositäten",
+   "titel": "Review: studies and curiosities",
    "startFen": "8/1P6/8/8/8/8/5K2/7k w - - 0 1",
    "zuege": [
     {
@@ -3270,7 +3270,7 @@
    "id": "k10-a25",
    "kapitel": 10,
    "abschnitt": "Übung 75",
-   "titel": "Rückblick: Studien und Kuriositäten",
+   "titel": "Review: studies and curiosities",
    "startFen": "1k6/8/K7/8/8/8/8/5R2 w - - 0 1",
    "zuege": [
     {
@@ -3306,7 +3306,7 @@
    "id": "k10-a26",
    "kapitel": 10,
    "abschnitt": "Übung 76",
-   "titel": "Rückblick: Studien und Kuriositäten",
+   "titel": "Review: studies and curiosities",
    "startFen": "7K/1k6/8/3P3p/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -3601,7 +3601,7 @@
    "id": "k10-a27",
    "kapitel": 10,
    "abschnitt": "Übung 77",
-   "titel": "Rückblick: Studien und Kuriositäten",
+   "titel": "Review: studies and curiosities",
    "startFen": "7r/P7/4k3/8/8/6B1/8/6K1 w - - 0 1",
    "zuege": [
     {
@@ -3663,7 +3663,7 @@
    "id": "k10-a28",
    "kapitel": 10,
    "abschnitt": "Übung 78",
-   "titel": "Rückblick: Studien und Kuriositäten",
+   "titel": "Review: studies and curiosities",
    "startFen": "k7/2p5/8/K7/2Q5/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -3731,7 +3731,7 @@
    "id": "k10-a9",
    "kapitel": 10,
    "abschnitt": "10.3",
-   "titel": "Die Réti-Studie: ein Königsweg mit zwei Zielen",
+   "titel": "The Réti study: one king route with two goals",
    "startFen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
    "zuege": [
     {
@@ -3970,7 +3970,7 @@
    "id": "k10-a21-k",
    "kapitel": 10,
    "abschnitt": "10.5",
-   "titel": "Konstruierte Partie zu Abb. 10.21",
+   "titel": "Constructed game for Fig. 10.21",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {

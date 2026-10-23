@@ -102,7 +102,7 @@
   background: radial-gradient(circle at 50% 42%, #1b2b45 0%, #0b1424 70%);
   color: #f5f0e6;
   cursor: pointer;
-  animation: startanimation-flaeche 1.9s ease-in both;
+  animation: startanimation-flaeche 2.5s ease-in both;
 }
 
 .startanimation-schein {
@@ -111,7 +111,7 @@
   aspect-ratio: 1;
   border-radius: 50%;
   overflow: hidden;
-  animation: startanimation-springer 1.9s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  animation: startanimation-springer 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
 }
 
 .startanimation-springer {
@@ -125,7 +125,7 @@
   font-size: clamp(1.3rem, 5vmin, 2rem);
   font-weight: 600;
   letter-spacing: 0.02em;
-  animation: startanimation-titel 1.9s ease-out both;
+  animation: startanimation-titel 2.5s ease-out both;
 }
 
 @keyframes startanimation-flaeche {

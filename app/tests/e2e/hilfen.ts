@@ -18,7 +18,7 @@ export function gewaehlteWerkzeuge(seite: Page): Locator {
  * Öffnet die Startseite des Buches und wählt im Installationsteil „Im Browser verwenden“.
  * Der Sieben-Tage-Hinweis für Safari (19.10.2026) ist dabei geschlossen, weil er sonst in jedem
  * Test auf dem iPhone oben stünde; geraete.spec.ts prüft ihn mit `safariHinweis: true`. Ebenso
- * die Startanimation (R39): Sie läge sonst knapp zwei Sekunden über dem ersten Bildschirm;
+ * die Startanimation (R39): Sie läge sonst 2,5 Sekunden über dem ersten Bildschirm;
  * brett.spec.ts prüft sie mit `startanimation: true`.
  */
 export async function starteImBrowser(

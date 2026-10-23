@@ -65,10 +65,13 @@ Teil fertig ist.
       selbst aus; die Karte unter dem Brett bleibt. Öffnest du eine beendete Partie aus der Liste,
       kommt das Schild nicht noch einmal. Bei Partien zu zweit steht „Weiß gewinnt“ oder
       „Schwarz gewinnt“.
-- [ ] N655. **Startanimation (R39):** Schließe die App ganz und öffne sie neu. Etwa zwei Sekunden
-      lang wächst der goldene Springer vom Cover mit goldenem Schein auf dunklem Grund heran,
-      darunter „Schach von Grund auf“, dann blendet alles aus. Ein Tipp irgendwo überspringt sie.
-      Beim Neuladen kommt sie nicht, und höchstens einmal je Stunde (siehe Teil 2, P2-A).
+- [ ] N655. **Startanimation (R39, seit 0.2.120 nach deinem Wunsch):** Schließe die App ganz und
+      öffne sie neu. 2,5 Sekunden lang wächst der goldene Springer vom Cover mit goldenem Schein
+      auf dunklem Grund heran, darunter „Schach von Grund auf“, dann blendet alles aus. Ein Tipp
+      irgendwo überspringt sie. Gleich noch einmal schließen und öffnen: Sie kommt wieder (bei
+      jedem Start, keine Stundensperre mehr). Beim bloßen Neuladen kommt sie nicht. Dann
+      Zahnrad › Brett › „Startbild beim Öffnen der App“ auf „aus“, App schließen und öffnen: kein
+      Startbild mehr. Bei „Bewegung reduzieren“ des Geräts bleibt sie immer aus.
 - [ ] N656. **Fenstergröße am Rechner (R40):** Öffne Abb. 1.26 im Browser am Rechner, Fenster
       breit: Brett links, Text rechts. Ziehe das Fenster langsam schmaler: Sobald es weniger als
       etwa 5 : 4 breit ist (etwa 1000 × 800), springt die App sofort, ohne Neuladen, in eine
@@ -553,12 +556,6 @@ Paket P4.
 
 ### P2 Brett und Bedienung: schon umgesetzt, Widerspruch genügt (23.10.2026)
 
-- [ ] P2-A. **Wann kommt die Startanimation? (R39, N655)** Du wolltest sie „nicht bei jedem
-      Neuladen“. Empfehlung: nur bei einem neuen Start der App (eine neue Sitzung des Browsers;
-      die installierte App startet nach dem Schließen neu, ein Neuladen nicht) und höchstens
-      einmal je Stunde, nie bei „Bewegung reduzieren“ des Geräts. Einen Schalter zum Abschalten
-      gibt es nicht, weil ein Tipp sie sofort beendet. Schon umgesetzt, Widerspruch genügt (etwa
-      „nur einmal am Tag“ oder „mit Schalter“).
 - [ ] P2-B. **Ab wann eine Spalte? (R40, N656)** Die App wechselte schon live mit der
       Fenstergröße, aber erst, wenn das Fenster schmaler als hoch war; am Rechner wurde es vorher
       eng. Empfehlung: zwei Spalten (Brett links, Text rechts) erst ab einem Seitenverhältnis von

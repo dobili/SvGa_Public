@@ -42,6 +42,7 @@ import { sprachname, t, verfuegbareSprachen, type Textschluessel } from "../../i
 import { useSprache, waehleSprache } from "../../app/sprachwahl";
 import { MERKER_WISCHEN } from "../brett/useZiehen";
 import { MERKER_ZUGANIMATION } from "../brett/useZuganimation";
+import { MERKER_STARTANIMATION } from "./Startanimation";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
 import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
@@ -92,7 +93,11 @@ function MerkerWahl({
   schluessel,
 }: {
   merker: string;
-  schluessel: "einstellungen.koordinaten" | "einstellungen.wischen" | "einstellungen.zuganimation";
+  schluessel:
+    | "einstellungen.koordinaten"
+    | "einstellungen.wischen"
+    | "einstellungen.zuganimation"
+    | "einstellungen.startanimation";
 }) {
   const [wert, setzeWert] = useState<Koordinaten>(liesMerker(merker) === "aus" ? "aus" : "an");
   return (
@@ -178,6 +183,8 @@ function BrettBereich() {
       <p className="hinweis">{t("einstellungen.wischen.hinweis")}</p>
       <MerkerWahl merker={MERKER_ZUGANIMATION} schluessel="einstellungen.zuganimation" />
       <p className="hinweis">{t("einstellungen.zuganimation.hinweis")}</p>
+      <MerkerWahl merker={MERKER_STARTANIMATION} schluessel="einstellungen.startanimation" />
+      <p className="hinweis">{t("einstellungen.startanimation.hinweis")}</p>
     </>
   );
 }

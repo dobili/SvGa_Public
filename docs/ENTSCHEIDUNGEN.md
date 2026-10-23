@@ -4477,3 +4477,15 @@ war). Der Messlauf bleibt für spätere Datenstände.
   mindestens zehn Bauern und sechs Figuren, gleiche Skelette einmal): 28 neue Aufgaben. Die
   Pipeline-Regel „rückständig“ hat die vierte Bedingung (kein gegnerischer Bauer davor) dazu.
 
+
+## 23.10.2026 – Startanimation und Werkzeug-Befunde (P1, Opus)
+
+- **Startanimation (R39, Antwort auf P2-A):** 2,5 Sekunden statt 1,9 und bei jedem Start der App
+  (neue Sitzung des Browsers; die installierte App startet nach dem Schließen neu), ohne die
+  Stundensperre. Neuer Schalter Zahnrad › Brett › „Startbild beim Öffnen der App“ (Merker
+  `startanimation`, Voreinstellung an). Beim bloßen Neuladen und bei „Bewegung reduzieren“ des
+  Geräts weiter nicht. Wunsch des Autors.
+- **Befunde aus P4 an den Werkzeugen aus P3:** Ohne Ziel und Haken schreibt „Wo spiele ich?“
+  „alle drei Bedingungen erfüllt“ statt „(Ziel )“; die Kette des Plans ist die längste mit
+  Richtung, bei Gleichstand die zentralste (Abb. 11.78: e4–d5–f5 statt c3–b4); verzweigte
+  Ketten stehen von Linie zu Linie (Abb. 6.11: „d6–e5–f6“ statt „d6–f6–e5“).

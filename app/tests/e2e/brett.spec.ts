@@ -105,7 +105,7 @@ test("Ergebnis auf dem Brett (R38): erscheint beim Matt, verschwindet, die Karte
   await expect(blende).toHaveCount(0);
 });
 
-test("Startanimation (R39): goldener Springer beim Start, Tipp überspringt, nicht beim Neuladen", async ({
+test("Startanimation (R39): goldener Springer beim Start, Tipp überspringt, nicht beim Neuladen, abschaltbar", async ({
   page,
 }) => {
   await starteImBrowser(page, { startanimation: true });
@@ -115,6 +115,16 @@ test("Startanimation (R39): goldener Springer beim Start, Tipp überspringt, nic
   await start.click();
   await expect(start).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+  await expect(start).toHaveCount(0);
+  // In den Einstellungen abgeschaltet: auch beim nächsten Start (neue Sitzung) kein Startbild.
+  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await page.getByRole("tab", { name: "Brett" }).click();
+  const schalter = page.getByRole("radiogroup", { name: "Startbild beim Öffnen der App" });
+  await expect(schalter.getByRole("radio", { name: "an" })).toHaveAttribute("aria-checked", "true");
+  await schalter.getByRole("radio", { name: "aus" }).click();
+  await page.evaluate(() => window.sessionStorage.clear());
   await page.reload();
   await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
   await expect(start).toHaveCount(0);

@@ -5,23 +5,22 @@
  * Navy; der Springer (dasselbe Bild wie das App-Symbol, public/symbole/symbol-512.png, also schon
  * im Offline-Speicher) wächst mit goldenem Schein heran, darunter der Titel des Buches; dann
  * blendet alles aus. Ein Tipp irgendwo überspringt sie sofort.
- * Nicht bei jedem Neuladen (Empfehlung nach Regel 9): nur in einer neuen Sitzung des Browsers
- * (die installierte App startet nach dem Schließen neu, ein Neuladen bleibt in der Sitzung) und
- * höchstens einmal je Stunde; bei „Bewegung reduzieren“ des Geräts nie.
+ * Bei jedem Start der App, 2,5 Sekunden lang (Wunsch des Autors, 23.10.2026; vorher 1,9 s und
+ * höchstens einmal je Stunde), außer sie ist in den Einstellungen abgeschaltet. Ein Start ist eine
+ * neue Sitzung des Browsers (die installierte App startet nach dem Schließen neu); ein Neuladen
+ * bleibt in der Sitzung und zeigt sie nicht noch einmal. Bei „Bewegung reduzieren“ des Geräts nie.
  * Abhängigkeiten: app/merker.ts, i18n, ui/stil/brett.css.
  */
 import { useEffect, useState } from "react";
-import { liesMerker, schreibeMerker } from "../../app/merker";
+import { liesMerker } from "../../app/merker";
 import { t } from "../../i18n/sprache";
 
-/** Merker auf dem Gerät: Zeitpunkt der letzten Startanimation (ms seit 1970). */
-export const MERKER_STARTANIMATION = "startanimation.zuletzt";
+/** Merker auf dem Gerät: Schalter in den Einstellungen, „aus“ schaltet sie ab (Voreinstellung: an). */
+export const MERKER_STARTANIMATION = "startanimation";
 /** Schlüssel in der Sitzung des Browsers: In dieser Sitzung lief sie schon. */
 const SITZUNG_SCHLUESSEL = "svga.startanimation.sitzung";
-/** Frühestens nach dieser Zeit kommt sie wieder (ms). */
-const ABSTAND_MS = 60 * 60 * 1000;
 /** Gesamtdauer samt Ausblenden (ms), passend zu den Keyframes in brett.css. */
-export const STARTANIMATION_MS = 1900;
+export const STARTANIMATION_MS = 2500;
 
 /** Liest oder setzt den Sitzungsschlüssel; ein gesperrter Speicher zählt als „schon gezeigt“. */
 function sitzungKenntSie(): boolean {
@@ -36,25 +35,22 @@ function sitzungKenntSie(): boolean {
 }
 
 /**
- * Soll die Startanimation jetzt laufen? Merkt sich die Antwort „ja“ sofort.
+ * Soll die Startanimation jetzt laufen? Merkt sich die Sitzung sofort.
  *
- * Beispiel: App öffnen → ja; neu laden → nein; nach dem Schließen zwei Stunden später → ja.
- * Sonderfall: „Bewegung reduzieren“ → nein, ohne etwas zu merken.
+ * Beispiel: App öffnen → ja; neu laden → nein; App schließen und wieder öffnen → ja.
+ * Sonderfälle: in den Einstellungen aus oder „Bewegung reduzieren“ → nein.
  */
-function startanimationFaellig(jetztMs: number): boolean {
+function startanimationFaellig(): boolean {
+  if (liesMerker(MERKER_STARTANIMATION) === "aus") return false;
   const reduziert =
     typeof window.matchMedia === "function" &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduziert || sitzungKenntSie()) return false;
-  const zuletzt = Number(liesMerker(MERKER_STARTANIMATION) ?? "0");
-  if (Number.isFinite(zuletzt) && jetztMs - zuletzt < ABSTAND_MS) return false;
-  schreibeMerker(MERKER_STARTANIMATION, String(jetztMs));
-  return true;
+  return !reduziert && !sitzungKenntSie();
 }
 
 /** Die Startanimation; nach STARTANIMATION_MS oder einem Tipp ist sie weg. */
 export function Startanimation() {
-  const [sichtbar, setzeSichtbar] = useState(() => startanimationFaellig(Date.now()));
+  const [sichtbar, setzeSichtbar] = useState(startanimationFaellig);
   useEffect(() => {
     if (!sichtbar) return;
     const zeit = setTimeout(() => setzeSichtbar(false), STARTANIMATION_MS);

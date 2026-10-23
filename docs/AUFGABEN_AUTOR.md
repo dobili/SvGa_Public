@@ -363,12 +363,13 @@ Spielgefühl.
       einen Analysezug zurück. „Analyse beenden“ stellt die Partiestellung wieder her, dann legst
       du deinen Zug fest. Die Analysezüge zählen nicht.
 
-### Neu in 0.2.118: englische Buchdaten (P6; Opus, 23.10.2026)
+### Neu in 0.2.118 und 0.2.119: englische Buchdaten (P6; Opus, 23.10.2026)
 
 Alle Buchdaten gibt es jetzt auch auf Englisch: Bildunterschriften, Abschnittstitel, Übungen,
-Warum-Fragen, Bilanzen, Fallenchecks, Steckbriefe, Glossar und Nachschlagen. Die App zeigt sie,
-seit 0.2.118 in „English (preview)“; die Trainerdaten bleiben vorerst deutsch. Zum Testen
-jeweils Einstellungen › Anzeige › „English (preview)“.
+Warum-Fragen, Bilanzen, Fallenchecks, Steckbriefe, Glossar und Nachschlagen. Die Trainer
+(Taktik, „Falle oder Köder“, Strukturerkenner, Endspiel) zeigen ihre Aufgabentexte vorerst
+weiter deutsch; deshalb bleibt Englisch eine Vorschau. Zum Testen jeweils Einstellungen ›
+Anzeige › „English (preview)“.
 
 - [ ] N730. **Kapitel und Lernziele:** Book: Die Kapitel heißen englisch („Basic principles of
       chess“, „Endgame deep dive“ …). Ein Kapitel öffnen: Abschnitte, Kacheltexte und die

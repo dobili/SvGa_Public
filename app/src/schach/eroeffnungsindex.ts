@@ -20,10 +20,21 @@ import { buchbeispiele } from "../daten/buchbeispiele";
 
 /** Felder der FEN, die eine Stellung für den Vergleich ausmachen (Figuren, Zugrecht, Rochade). */
 const SCHLUESSELFELDER = 3;
-/** Artikel am Anfang eines Abschnittstitels, die der Name nicht braucht („Das Königsgambit“). */
-const ARTIKEL = /^(die|das|der)\s+/i;
-/** Beispieltitel, die keine Eröffnung nennen; dann gilt der Abschnittstitel, falls er eine nennt. */
-const ALLGEMEINE_TITEL = new Set(["Weitere Varianten", "Grundstellung"]);
+/**
+ * Artikel am Anfang eines Abschnittstitels, die der Name nicht braucht („Das Königsgambit“,
+ * englisch „The King's Gambit“).
+ */
+const ARTIKEL = /^(die|das|der|the)\s+/i;
+/**
+ * Beispieltitel, die keine Eröffnung nennen; dann gilt der Abschnittstitel, falls er eine nennt.
+ * Deutsch und englisch (Buchdaten /daten/en/, P6).
+ */
+const ALLGEMEINE_TITEL = new Set([
+  "Weitere Varianten",
+  "Grundstellung",
+  "Further lines",
+  "Basic position",
+]);
 
 export interface Eroeffnungseintrag {
   /** Name der Eröffnung: der Steckbrief (Kapitel 2) oder der Abschnitt (Kapitel 3). */

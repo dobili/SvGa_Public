@@ -2,7 +2,7 @@
  * Oberflächentests für die Technik der englischen Fassung (seit 0.2.94, AP 18 ohne Übersetzung):
  * `<html lang>` folgt der Sprache, Deutsch ist gewählt (Englisch seit 0.2.104 nur als Vorschau
  * auf Wahl), Züge im Klartext der Unterschrift stehen wie im Buch und auf Englisch mit englischen
- * Buchstaben, die Lizenzen kommen aus der Sprachdatei.
+ * Buchstaben (seit P6 in der englischen Unterschrift), die Lizenzen kommen aus der Sprachdatei.
  */
 import { expect, test } from "@playwright/test";
 import { oeffneAbbildung, starteImBrowser } from "./hilfen";
@@ -24,7 +24,7 @@ test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und 
     "true",
   );
 
-  // Englisch: seit 0.2.118 (P6) die englische Unterschrift aus /daten/en/a1.
+  // Englisch: die englische Unterschrift (P6), der Zug mit englischem Buchstaben („2. Bf4“).
   await page.getByRole("radio", { name: "English (preview)" }).click();
   await page.getByRole("navigation").getByRole("button", { name: "Book" }).click();
   await page.getByLabel("Open figure").fill("1.2");

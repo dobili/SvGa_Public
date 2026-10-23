@@ -1,7 +1,7 @@
 /**
  * Oberflächentest der englischen Vorschau (seit 0.2.104): Wahl in den Einstellungen, Texte und
- * `<html lang>` auf Englisch, Wahl übersteht das Neuladen, Abbildung als „Fig.“ mit den deutschen
- * Buchdaten, Spielen und Training auf Englisch.
+ * `<html lang>` auf Englisch, Wahl übersteht das Neuladen, Abbildung als „Fig.“ mit den englischen
+ * Buchdaten (seit P6), Spielen und Training auf Englisch.
  */
 import { expect, test } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
@@ -22,6 +22,8 @@ test("Englische Vorschau: wählen, Buch, Abbildung, Spielen, Training", async ({
   await page.getByRole("button", { name: "Open", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Fig. 1.26" })).toBeVisible();
   await expect(page.locator(".bildschirm-abbildung .brettbereich")).toBeVisible();
+  // Bildunterschrift aus /daten/en/ mit englischen Figurenbuchstaben (P6).
+  await expect(page.locator(".unterschrift")).toContainText("After 5... Qb6, White to move.");
   await page.screenshot({ path: `${BILDER}/en-abbildung.png`, fullPage: true });
   await page.getByRole("navigation").getByRole("button", { name: "Play" }).click();
   await expect(page.getByRole("heading", { name: "Play" })).toBeVisible();

@@ -41,13 +41,18 @@ export interface Faktorenaufgabe {
   readonly vorbereitet?: Vorbereitet;
 }
 
-/** Die Zeilen der Buchtabelle zu den Faktoren der App. */
+/** Die Zeilen der Buchtabelle zu den Faktoren der App, deutsch und englisch (Buchdaten, P6). */
 const ZEILEN: Readonly<Record<string, Faktor>> = {
   Material: "material",
   Zeit: "zeit",
   Königssicherheit: "koenig",
   Aktivität: "aktivitaet",
+  Time: "zeit",
+  "King safety": "koenig",
+  Activity: "aktivitaet",
 };
+/** Erste Spalte für Weiß („Weiß (Gambitspieler)“, englisch „White (gambit player)“). */
+const WEISS_SPALTE = /^(Weiß|White)(\s|$)/;
 /** Buchwertung ✓ ◐ ✗ in der Sprache der App. */
 const BUCHWERTUNG: Readonly<Partial<Record<NonNullable<Zelle["wertung"]>, Einschaetzung>>> = {
   ja: "gut",
@@ -87,7 +92,7 @@ function buchzeile(links: Zelle, rechts: Zelle, linksFarbe: Color): Vorn {
  * Schwarz (◐ gegen ✓), Aktivität Weiß (✓ gegen ◐).
  */
 export function buchloesung(tabelle: Tabelle): Faktorantwort | null {
-  const links: Color = tabelle.spalten[0].startsWith("Weiß") ? "white" : "black";
+  const links: Color = WEISS_SPALTE.test(tabelle.spalten[0]) ? "white" : "black";
   const antwort: Partial<Record<Faktor, Vorn>> = {};
   for (const zeile of tabelle.zeilen) {
     const faktor = ZEILEN[zeile.name];

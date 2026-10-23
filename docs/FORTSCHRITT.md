@@ -1595,31 +1595,26 @@ Buchzitate aus `en.json`); Sätze, die in mehreren Kapiteln stehen, und die Stic
 einheitlich. Testpunkte N730–N739, Rückfragen EN4 (Buchbefunde aus der Übersetzung) und EN5
 (neue englische Begriffe) in `docs/AUFGABEN_AUTOR.md`.
 
-**Bevor die englischen Daten in der App erscheinen (App-Code, nicht Teil von P6):**
+**App eingeschaltet (Wunsch des Autors, 23.10.2026, auf P6 nachgezogen):**
 
-1. `DATENSPRACHEN` in `app/src/i18n/sprache.ts` um „en“ ergänzen. Dann lädt aber auch
-   `daten/trainerdaten.ts` aus `/daten/en/trainer/`, das es nicht gibt: Trainerdaten bis zu ihrer
-   Übersetzung weiter aus `de` laden (eigene Datensprache für Trainer) oder
-   `skripte/kopiere-trainerdaten.mjs` auch nach `en` kopieren lassen.
-2. Stellen im App-Code, die deutsche Datentexte als Schlüssel lesen und auf Englisch ins Leere
-   greifen: `training/faktorentrainer.ts` (`ZEILEN` „Material/Zeit/Königssicherheit/Aktivität“,
-   `spalten[0].startsWith("Weiß")`), `analyse/k2-eroeffnung.ts` (`KURZFASSUNGEN` nach dem
-   deutschen Namen des Steckbriefs), `schach/eroeffnungsindex.ts` (`ARTIKEL`,
-   `ALLGEMEINE_TITEL` „Weitere Varianten“/„Grundstellung“, Wortvergleich Steckbrief–Beispiel).
-   Sie brauchen die englischen Formen mit: „Material“, „Time“, „King safety“, „Activity“,
-   Spalten beginnen mit „White“; Steckbriefe „Ruy Lopez“, „Italian Game“, „Scotch Game“,
-   „Petrov Defense (Russian Game)“, „Sicilian Defense“, „Queen's Gambit“, „London System“,
-   „Trompowsky Attack“, „French Defense“, „Caro-Kann Defense“, „King's Indian Defense“,
-   „Two Knights Defense and Bishop's Opening“, „Nimzo-Indian Defense“; allgemeine Titel
-   „Further lines“, „Basic position“; Artikel „The“.
-3. `ui/komponenten/Abbildungsgalerie.tsx` (Kurztext der Kacheln) zeigt Zugteile ohne
-   `buchzugInSprache`; mit den englischen Daten ist das kein Problem mehr, weil die Zugteile dort
-   schon englisch sind.
+1. `DATENSPRACHEN = ["de", "en"]` in `app/src/i18n/sprache.ts`; die Trainer laden über
+   `trainerdatensprache()` (eigene Liste `TRAINERSPRACHEN = ["de"]`) weiter die deutschen
+   Trainerdaten, bis sie übersetzt sind.
+2. Stellen, die Datentexte als Schlüssel lesen, kennen auch die englischen Formen:
+   `training/faktorentrainer.ts` (Zeilen „Time“, „King safety“, „Activity“, erste Spalte
+   „White …“), `analyse/k2-eroeffnung.ts` (`KURZFASSUNGEN` auch unter den englischen
+   Steckbriefnamen), `schach/eroeffnungsindex.ts` (Artikel „The“, allgemeine Titel „Further
+   lines“, „Basic position“). In `en.json` heißt die Spanische Partie wie in den Daten „Ruy Lopez“.
+3. Tests: `daten/englischeBuchdaten.test.ts` (jeder englische Steckbrief hat seine Kurzfassung,
+   jede Faktorenbilanz ergibt englisch dieselbe Buchlösung wie deutsch, der Eröffnungsindex hat
+   gleich viele Namen), `i18n/sprache.test.ts` (Daten- und Trainersprache), Oberflächentest
+   `englisch.spec.ts` prüft eine englische Bildunterschrift.
 
-**Nächster Schritt:** P6 ist fertig. Für die Leser fehlen nur die App-Schritte oben (1 bis 3,
-nicht Teil von P6): Datensprache „en“ einschalten, Trainerdaten bis zu ihrer Übersetzung weiter
-deutsch laden, die drei Stellen mit deutschen Datenschlüsseln anpassen. Danach N730–N739 und
-die Antworten zu EN4/EN5 einarbeiten. Ändert der Autor Buchtext, erscheinen die geänderten Sätze
+„English (preview)“ bleibt Vorschau (Wahl nur in den Einstellungen), weil Trainerdaten,
+Trainingsseiten und Bot-Namen noch deutsch sind.
+
+**Nächster Schritt:** P6 ist fertig und eingeschaltet. Nach der Übernahme nach main die
+Rückmeldung zu N730–N739 und die Antworten zu EN4/EN5 einarbeiten. Ändert der Autor Buchtext, erscheinen die geänderten Sätze
 beim nächsten `python -m pipeline.uebersetzen` als offen (`buch/arbeit/uebersetzung/offen/`).
 Noch deutsch und außerhalb von P6: Trainerdaten (`inhalte/de/trainer/`), Trainingsseiten der
 Website (`inhalte/de/training/`), Namen der Bots.

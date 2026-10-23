@@ -8,7 +8,7 @@
  * Geladene, damit die App die Daten der neuen Sprache holt.
  * Abhängigkeiten: erzeugte Typen aus den Schemas, i18n/sprache.ts.
  */
-import { buchdatensprache, datensprache } from "../i18n/sprache";
+import { datensprache, trainerdatensprache } from "../i18n/sprache";
 import type { Datenverzeichnis } from "./generiert/index";
 import type { Eroeffnungsliste } from "./generiert/eroeffnungsliste";
 import type { Glossar } from "./generiert/glossar";
@@ -22,14 +22,17 @@ export type { Abbildung, Textteil } from "./generiert/abbildung";
 /** Auflage der Buchdaten (Konzept 11.4). */
 const AUFLAGE = "a1";
 
-/** Ordner der Daten einer Sprache (Daten, die nicht aus dem Buch kommen, etwa die Eröffnungsliste). */
+/**
+ * Ordner der Daten, die nicht aus dem Buch kommen (etwa die Eröffnungsliste von Lichess). Sie gibt
+ * es nur auf Deutsch, wie die Trainerdaten; deshalb gilt hier die Sprache der Trainerdaten.
+ */
 function sprachordner(): string {
-  return `/daten/${datensprache()}`;
+  return `/daten/${trainerdatensprache()}`;
 }
 
 /** Ordner der Buchdaten für Sprache und Auflage, etwa „/daten/de/a1“. */
 function datenordner(): string {
-  return `/daten/${buchdatensprache()}/${AUFLAGE}`;
+  return `/daten/${datensprache()}/${AUFLAGE}`;
 }
 
 const geladeneKapitel = new Map<number, Promise<Kapitel>>();

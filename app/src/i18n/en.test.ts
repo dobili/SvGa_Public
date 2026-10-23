@@ -45,13 +45,14 @@ describe("englische Sprachdatei", () => {
 });
 
 describe("Wechsel auf Englisch", () => {
-  it("zeigt englische Texte, Buchzitate deutsch, Buchdaten deutsch", () => {
+  it("zeigt englische Texte, Buchzitate und Buchdaten englisch", () => {
     setzeSprache("en");
     expect(t("abbildung.titel", { nummer: "1.26" })).toBe("Fig. 1.26");
     // Seit 0.2.116 sind auch die Buchzitate übersetzt (EN2); die Liste ist leer.
     expect(buchzitate).toEqual([]);
     expect(t("regeln.titel")).toBe("The six golden endgame rules");
-    expect(datensprache()).toBe("de");
+    // Seit P6 (R25) gibt es die Buchdaten englisch (/daten/en/a1/).
+    expect(datensprache()).toBe("en");
   });
 
   it("formatiert Zahlen und Daten nach der Sprache", () => {

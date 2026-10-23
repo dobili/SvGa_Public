@@ -27,14 +27,21 @@ interface Bereichsknopf {
   readonly bereich: Bereich;
   readonly symbol: LucideIcon;
   readonly text: Textschluessel;
+  /** Ziel-Kennung für die Haupttour (tour/touren.ts). */
+  readonly tour: string;
 }
 
 const BEREICHE: readonly Bereichsknopf[] = [
-  { bereich: "buch", symbol: BookOpen, text: "leiste.buch" },
-  { bereich: "training", symbol: Crosshair, text: "leiste.training" },
-  { bereich: "spielen", symbol: Swords, text: "leiste.spielen" },
-  { bereich: "nachschlagen", symbol: Search, text: "leiste.nachschlagen" },
-  { bereich: "ich", symbol: Settings, text: "leiste.einstellungen" },
+  { bereich: "buch", symbol: BookOpen, text: "leiste.buch", tour: "leiste-buch" },
+  { bereich: "training", symbol: Crosshair, text: "leiste.training", tour: "leiste-training" },
+  { bereich: "spielen", symbol: Swords, text: "leiste.spielen", tour: "leiste-spielen" },
+  {
+    bereich: "nachschlagen",
+    symbol: Search,
+    text: "leiste.nachschlagen",
+    tour: "leiste-nachschlagen",
+  },
+  { bereich: "ich", symbol: Settings, text: "leiste.einstellungen", tour: "leiste-einstellungen" },
 ];
 
 /** Die Leiste; der aktive Bereich trägt oben einen goldenen Strich. */
@@ -48,7 +55,7 @@ export function Leiste() {
   });
   return (
     <nav className="leiste" aria-label={t("leiste.titel")}>
-      {BEREICHE.map(({ bereich, symbol: Symbol, text }) => {
+      {BEREICHE.map(({ bereich, symbol: Symbol, text, tour }) => {
         const mitDruck = bereich === "ich";
         return (
           <button
@@ -56,6 +63,7 @@ export function Leiste() {
             type="button"
             className={mitDruck ? "leiste-knopf leiste-knopf-halten" : "leiste-knopf"}
             aria-current={stapel.bereich === bereich ? "page" : undefined}
+            data-tour={tour}
             aria-label={t(text)}
             title={t(text)}
             {...(mitDruck

@@ -1347,7 +1347,7 @@ Testpunkt-Nummern je Paket getrennt.
 | P5 Trainerbedienung | `p5-trainerbedienung` | R30, R31, R46, R45 | Opus mittel | N710–N729 | fertig (0.2.118) |
 | P6 Englisch | `p6-englisch` | R25 | Opus niedrig | N730–N739 | läuft |
 | P7 Spielen | `p7-spielen` | R51, R24, R27, R28, R32 | Opus mittel | N740–N759 | nach der Bot-Kalibrierung |
-| P8 App-Tour | `p8-tour` | R52 | Opus mittel | N760–N769 | zum Schluss |
+| P8 App-Tour | `p8-tour` | R52 | Opus mittel | N760–N769 | Teil A fertig (Zweig), Teil B Spielen nach der Kalibrierung |
 
 Kurzbeschreibung der neuen Punkte: R27 „Art des Gegners“ über „Partie beginnen“; R28 Bot-Name als
 Partietitel mit Porträt; R29 Fortschrittsbalken der Auswertung; R30 Taktik ohne Motivfrage bei
@@ -1438,6 +1438,19 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
    überschneiden sich etwas“; seit 0.2.109 schließen die Bereiche aneinander an, ohne sich zu
    überschneiden. Den Satz entsprechend ändern. Der Text gehört zum Bereich des Bot-Chats, also
    mit ihm abstimmen oder dort erledigen lassen.
+
+### P8 App-Tour (Zweig `p8-tour` von main 0.2.120, Opus, 23.10.2026) – Teil A fertig, Abnahme offen
+
+R52: Toursymbol (Kompass) oben rechts, Frage nach dem Rundgang beim ersten Start, Schalter in den
+Einstellungen › Anzeige, Haupttour und 31 Bildschirmtouren (alle außer Spielen). Technik in
+`app/src/tour/` (README dort): Tourdaten `touren.ts` (eine Zeile je Schritt, Ziele über
+`data-tour`), Ablauf `TourEbene.tsx`, Merker `tourMerker.ts` (nur Gerät), Test `touren.test.ts`
+meldet Ziele, die es im Code nicht gibt; Oberflächentests `tests/e2e/tour.spec.ts`. Plan, Texte
+und Rückfragen: `docs/AUFGABEN_AUTOR.md` P8-1 bis P8-44, Testpunkte N760–N768. Version nicht
+erhöht (macht P1). **Nächster Schritt:** Teil B (Touren für Spielen, Partie, Auswertung,
+Partienliste, P8-44), sobald der Autor meldet, dass die Kalibrierung auf main ist: dann main in
+`p8-tour` mischen, `data-tour` an Spielen.tsx, GegnerWahl, Partie, Auswertung, Partienliste
+setzen, Touren „spielen“ und „partie“ in `touren.ts` und `tourFuerAnsicht` ergänzen, Texte de/en.
 
 ### P5 Trainerbedienung (Zweig `p5-trainerbedienung` von `weiter-ohne-autor`, Opus, 23.10.2026)
 

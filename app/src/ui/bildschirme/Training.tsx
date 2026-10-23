@@ -24,6 +24,7 @@ import { Trainerkarte } from "../komponenten/Trainerkarte";
 import { MitInfo } from "../komponenten/InfoKnopf";
 import { useDaten } from "../komponenten/useDaten";
 import { Titelsymbol } from "../komponenten/Titelsymbol";
+import { TourKnopf } from "../../tour/TourKnopf";
 
 const LINKSYMBOL = 16;
 
@@ -42,7 +43,7 @@ function JeKapitel() {
   return (
     <>
       {kapitel.map((nummer) => (
-        <section key={nummer} className="karte trainingskapitel">
+        <section key={nummer} className="karte trainingskapitel" data-tour="training-kapitel">
           <button
             type="button"
             className="trainingskapitel-kopf"
@@ -75,7 +76,7 @@ function SammelKarte() {
   const { navigiere } = useNavigation();
   const anzahl = useSpeicher((z) => z.daten.sammlung.length);
   return (
-    <section className="karte" data-testid="sammelkarte">
+    <section className="karte" data-testid="sammelkarte" data-tour="training-sammlung">
       <h2 className="karte-titel mit-symbol">
         <BookmarkPlus size={LINKSYMBOL} aria-hidden="true" /> {t("sammlung.titel")}
       </h2>
@@ -98,8 +99,9 @@ export function Training() {
     <div className="bildschirm">
       <header className="seitenkopf">
         <h1>{t("training.titel")}</h1>
+        <TourKnopf />
       </header>
-      <section className="karte">
+      <section className="karte" data-tour="training-faellig">
         <h2 className="karte-titel">
           <Titelsymbol art="wiederholung" />
           {t("training.faellig")}
@@ -107,7 +109,7 @@ export function Training() {
         <FaelligeWiederholungen />
       </section>
       <SammelKarte />
-      <section className="karte">
+      <section className="karte" data-tour="training-website">
         <MitInfo
           zeile={
             <h2 className="karte-titel mit-symbol">

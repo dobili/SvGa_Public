@@ -41,7 +41,7 @@ function Auswahl({
   const [gewaehlt, setzeGewaehlt] = useState(eroeffnungen[0] ?? null);
   const [seite, setzeSeite] = useState<Color>("white");
   return (
-    <div className="trainerrunde" data-testid="repertoire-wahl">
+    <div className="trainerrunde" data-testid="repertoire-wahl" data-tour="trainer-wahl">
       {gewaehlt && (
         <Auswahlliste
           titel={t("repertoiretrainer.eroeffnung")}

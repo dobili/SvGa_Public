@@ -58,7 +58,11 @@ function Kapitelkarte({
   const anzahl = ziele?.punkte.length ?? 0;
   const fertig = ziele ? abgehakt(stand, zeile.kapitel, anzahl) : 0;
   return (
-    <details className="lernkarte" data-testid={`lernkarte-${zeile.kapitel}`}>
+    <details
+      className="lernkarte"
+      data-testid={`lernkarte-${zeile.kapitel}`}
+      data-tour="checkliste-karte"
+    >
       <summary>
         <Kapitelnummer nummer={zeile.kapitel} anteil={{ erreicht: fertig, gesamt: anzahl }} />
         <span className="lernkarte-frage">{zeile.kernfrage}</span>
@@ -101,7 +105,7 @@ function Inhalt({ daten }: { daten: Nachschlagen }) {
       <p className="hinweis">{liste.titel}</p>
       {alle > 0 && <p className="hinweis">{t("checkliste.hinweis")}</p>}
       {alle > 0 && (
-        <p className="lernstand-gesamt" data-testid="lernstand-gesamt">
+        <p className="lernstand-gesamt" data-testid="lernstand-gesamt" data-tour="checkliste-stand">
           {t("checkliste.gesamt", { erledigt, alle })}
         </p>
       )}

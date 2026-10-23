@@ -31,7 +31,7 @@ function NeueStellung() {
   const gelesen = fen.trim() === "" ? null : stellungAusFen(fen.trim());
   const gueltig = gelesen?.ok ? gelesen.wert.fen : null;
   return (
-    <details className="karte" data-testid="sammlung-neu">
+    <details className="karte" data-testid="sammlung-neu" data-tour="sammlung-neu">
       <summary className="karte-titel">{t("sammlung.neu")}</summary>
       <p className="hinweis">{t("sammlung.neuHinweis")}</p>
       <input
@@ -68,7 +68,7 @@ function PgnKnoepfe({ liste, name }: { liste: readonly Sammeleintrag[]; name: st
   };
   const datei = `lernsammlung-${name}-${new Date().toISOString().slice(0, "JJJJ-MM-TT".length)}.pgn`;
   return (
-    <div className="pgn">
+    <div className="pgn" data-tour="sammlung-pgn">
       <div className="knopfreihe">
         <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
           <Knopfsymbol art="kopieren" />
@@ -114,7 +114,12 @@ function Gruppen({
   return nachEroeffnung(liste).map((gruppe) => {
     const titel = gruppe.eroeffnung || t("sammlung.ohneEroeffnung");
     return (
-      <details key={gruppe.eroeffnung} className="karte" data-testid="sammelgruppe">
+      <details
+        key={gruppe.eroeffnung}
+        className="karte"
+        data-testid="sammelgruppe"
+        data-tour="sammlung-gruppe"
+      >
         <summary className="karte-titel">
           {t("sammlung.gruppe", { name: titel, anzahl: gruppe.eintraege.length })}
         </summary>
@@ -141,7 +146,12 @@ function Gesamt({
   return (
     <section className="karte">
       <h2 className="karte-titel">{t("sammlung.alle", { anzahl: liste.length })}</h2>
-      <button type="button" className="knopf-haupt" onClick={() => frage(liste)}>
+      <button
+        type="button"
+        className="knopf-haupt"
+        onClick={() => frage(liste)}
+        data-tour="sammlung-abfragen"
+      >
         {t("sammlung.abfragen")}
       </button>
       <p className="hinweis">{t("sammlung.lichessHinweis")}</p>
@@ -160,7 +170,9 @@ export function Lernsammlung() {
         <SammelAbfrage liste={abfrage} beiEnde={() => setzeAbfrage(null)} />
       ) : (
         <>
-          <p className="hinweis">{t("sammlung.einleitung")}</p>
+          <p className="hinweis" data-tour="sammlung-einleitung">
+            {t("sammlung.einleitung")}
+          </p>
           {liste.length === 0 ? (
             <p className="hinweis" data-testid="sammlung-leer">
               {t("sammlung.leer")}

@@ -10,7 +10,7 @@ import { t } from "../../i18n/sprache";
 export function Wiederholungsknopf({ anzahl, starte }: { anzahl: number; starte: () => void }) {
   if (anzahl === 0) return null;
   return (
-    <p data-testid="trainer-wiederholung">
+    <p data-testid="trainer-wiederholung" data-tour="trainer-wiederholen">
       <button type="button" className="knopf-zweit" onClick={starte}>
         {anzahl === 1 ? t("trainer.wiederholungEine") : t("trainer.wiederholungAnzahl", { anzahl })}
       </button>

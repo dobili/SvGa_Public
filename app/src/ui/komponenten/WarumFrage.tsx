@@ -50,7 +50,7 @@ function WarumFrage({
     return stelle === gewaehlt ? "antwort antwort-falsch" : "antwort";
   };
   return (
-    <details className="karte warum-frage" data-testid="warum-frage">
+    <details className="karte warum-frage" data-testid="warum-frage" data-tour="warumfragen">
       <summary className="karte-kopf">
         <h2>
           {frage.zug

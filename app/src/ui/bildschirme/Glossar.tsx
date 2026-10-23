@@ -25,6 +25,7 @@ export function Glossar() {
       <input
         type="search"
         className="suchfeld"
+        data-tour="glossar-suche"
         aria-label={t("glossar.suchen")}
         placeholder={t("glossar.suchen")}
         value={suchtext}
@@ -48,7 +49,7 @@ export function Glossar() {
 function Begriffe({ eintraege }: { eintraege: readonly Glossareintrag[] }) {
   const { navigiere } = useNavigation();
   return (
-    <ul className="begriffsliste">
+    <ul className="begriffsliste" data-tour="glossar-liste">
       {eintraege.map((eintrag) => (
         <li key={eintrag.begriff}>
           <button
@@ -91,7 +92,11 @@ function NachBuchstaben({ eintraege }: { eintraege: readonly Glossareintrag[] })
     document.getElementById(`buchstabe-${buchstabe}`)?.scrollIntoView({ block: "start" });
   return (
     <>
-      <nav className="buchstabenleiste" aria-label={t("glossar.buchstaben")}>
+      <nav
+        className="buchstabenleiste"
+        aria-label={t("glossar.buchstaben")}
+        data-tour="glossar-buchstaben"
+      >
         {[...gruppen.keys()].map((buchstabe) => (
           <button key={buchstabe} type="button" onClick={() => springe(buchstabe)}>
             {buchstabe}
@@ -124,7 +129,7 @@ function Eintragsinhalt({ eintrag }: { eintrag: Glossareintrag }) {
     else if (stelle) navigiere({ bildschirm: "kapitel", nummer: stelle.kapitel });
   };
   return (
-    <section className="karte">
+    <section className="karte" data-tour="begriff-karte">
       <h2 className="karte-titel">{eintrag.begriff}</h2>
       <p>
         <Buchtext

@@ -66,6 +66,7 @@ export function Nummerntitel({
     <button
       type="button"
       className="knopf-titel"
+      data-tour="abbildung-nummer"
       aria-expanded={offen}
       aria-label={t("abbildung.andereNummer", { nummer })}
       onClick={beiTipp}

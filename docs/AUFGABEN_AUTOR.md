@@ -33,6 +33,45 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu im Zweig p8-tour: App-Tour (P8, R52; Opus, 23.10.2026)
+
+Die Rückfragen dazu stehen in Teil 2 unter „P8 App-Tour“ (P8-1 bis P8-44). Zum Testen am besten
+erst die Daten der App auf dem Gerät nicht löschen, sondern einfach öffnen: Die Frage nach dem
+Rundgang kommt auch bei dir einmal.
+
+- [ ] N760. **Frage beim ersten Start:** App öffnen. Nach dem Startbild erscheint „Kleiner
+      Rundgang?“ mit „Später“ und „Rundgang starten“. Tippe „Rundgang starten“: acht Schritte,
+      der Rest des Bildschirms ist abgedunkelt, die Leiste wird Bereich für Bereich mit goldenem
+      Rahmen gezeigt, zum Schluss das Kompass-Symbol oben rechts. App schließen und wieder öffnen:
+      Die Frage kommt nicht noch einmal.
+- [ ] N761. **Toursymbol:** Oben rechts steht auf Buch, Kapitel, Abbildung, Übung, Training, jedem
+      Trainer, Lernsammlung, Nachschlagen (mit Glossar, Begriff, Denkroutine, Checkliste,
+      Steckbriefen, Werkzeugen) und in den Einstellungen ein kleiner Kompass. Ein goldener Punkt
+      daran heißt „noch nicht gesehen“; nach der Tour ist er weg. Beim Spielen gibt es das Symbol
+      noch nicht (kommt nach der Kalibrierung).
+- [ ] N762. **Tour der Abbildung:** Abb. 1.26 › Kompass. Die Tour zeigt Nummer, Blättern,
+      Zugleiste, Brett, die Werkzeuge am Brett, Drehen, Lesezeichen, Bündel, die Werkzeugkarte
+      (ohne gewähltes Werkzeug in der Mitte), Gegen die Engine spielen und die Unterschrift. Das
+      Ziel wird jeweils in den sichtbaren Bereich gescrollt. Danach Abb. 0.4 (ohne Zugfolge): Der
+      Schritt zur Zugleiste fehlt.
+- [ ] N763. **Querformat:** Handy quer, Abb. 1.26 › Kompass. Beim Brett steht die Karte rechts
+      daneben statt darüber; der goldene Rahmen bleibt ganz im Bild.
+- [ ] N764. **Trainer:** Training › Taktiktrainer › Kompass: Wahl von Thema und Stufe mit Rahmen,
+      dann Hilfen, Motiv und die Runde als Karten in der Mitte. Dasselbe in einer laufenden Runde:
+      Jetzt ist auch der Stand oben gerahmt. Probier zwei, drei weitere Trainer.
+- [ ] N765. **Einstellungen:** Zahnrad › Kompass: Wertung, Fortschritt, jeder der fünf Reiter,
+      Daten auf diesem Gerät, Über die App. Dann Reiter „Anzeige“ › „Toursymbol: aus“: Das Symbol
+      verschwindet überall. „Rundgang durch die App“ startet den Rundgang trotzdem; der Schritt zum
+      Symbol steht dann in der Mitte. Zum Schluss das Symbol wieder einschalten.
+- [ ] N766. **Bedienung:** Während einer Tour lässt sich neben der Karte nichts antippen. Das
+      Kreuz beendet sie jederzeit, „Zurück“ geht einen Schritt zurück. Die Zurück-Geste des Handys
+      beendet die Tour.
+- [ ] N767. **Nachtmodus:** Einstellungen › Anzeige › Nachtmodus an, dann eine Tour: Karte dunkel
+      mit goldenem Rand, gut lesbar.
+- [ ] N768. **Texte:** Lies bei Gelegenheit die Touren der Bildschirme, die du oft benutzt. Stimmt
+      etwas nicht oder fehlt etwas, schreib es mit Nummer der Rückfrage (P8-12 bis P8-43) und
+      Schritt.
+
 ### Neu in 0.2.118 und 0.2.119: Brett und Bedienung (P2; Opus, 23.10.2026)
 
 - [ ] N650. **Tippen (R35):** Spielen › „Partie beginnen“. Tippe den Springer g1 an, dann nicht
@@ -416,13 +455,13 @@ Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung 
 hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
 nur du das Buch änderst.
 
-### P8 App-Tour (R52): Plan, die Umsetzung läuft (23.10.2026)
+### P8 App-Tour (R52): Plan, schon umgesetzt, Widerspruch genügt (23.10.2026)
 
 Dein Wunsch R52: ein kleines Toursymbol oben rechts, ein Hinweis beim ersten Start, ein Schalter
 in den Einstellungen, eine kurze Haupttour und je Bildschirm eine ausführliche Tour, leicht
 ergänzbar. So ist es geplant und (außer Spielen) umgesetzt. Die Texte gelten nach deiner Regel als
 abgesegnet; lies sie, wenn du Zeit hast, am besten direkt in der App, und schreib Änderungen als
-„P8-20: Schritt 3 anders: …“.
+„P8-20: Schritt 3 anders: …“. Die Testpunkte stehen in Teil 1 (N760 bis N768).
 
 - [ ] P8-1. **Das Symbol.** Oben rechts auf jedem Bildschirm, für den es eine Tour gibt, steht ein
       kleiner Kompass ohne Beschriftung (Bildschirmleser lesen „Tour zu diesem Bildschirm“). Ein
@@ -443,7 +482,8 @@ abgesegnet; lies sie, wenn du Zeit hast, am besten direkt in der App, und schrei
       über den Knopf erreichbar. Schon umgesetzt, Widerspruch genügt.
 - [ ] P8-4. **So sieht eine Tour aus.** Der Rest des Bildschirms wird abgedunkelt, das erklärte
       Element bleibt hell mit goldenem Rahmen und wird bei Bedarf in den sichtbaren Bereich
-      gescrollt. Eine Karte unten (oder oben, wenn das Element unten liegt) zeigt den Text,
+      gescrollt. Eine Karte unten (oder oben, wenn das Element unten liegt; im Querformat neben
+      dem Element) zeigt den Text,
       „Schritt 3 von 9“, „Zurück“, „Weiter“ (am Ende „Fertig“) und ein Kreuz zum Beenden. Während
       der Tour lässt sich nichts anderes antippen, damit nichts aus Versehen passiert. Mit
       Tastatur: Tab wechselt zwischen den Knöpfen, Esc beendet, die Pfeiltasten blättern.
@@ -467,7 +507,7 @@ abgesegnet; lies sie, wenn du Zeit hast, am besten direkt in der App, und schrei
       Text hinzufügen. Ein Test meldet jede Zeile, deren Ziel es im Code nicht gibt, und jeden
       fehlenden Text. Gemerkt wird nur auf dem Gerät (angeboten, Symbol aus, gesehene Touren), nicht
       in der Datensicherung; ein neues Speicherformat gibt es nicht. Keine neue Bibliothek: etwa
-      300 Zeilen eigener Code. Schon umgesetzt, Widerspruch genügt.
+      600 Zeilen eigener Code ohne die Tourdaten. Schon umgesetzt, Widerspruch genügt.
 - [ ] P8-8. **Tourtexte auf Englisch** stehen gleich mit in en.json (wie alle Oberflächentexte).
       Schon umgesetzt, Widerspruch genügt.
 - [ ] P8-9. **Rundgang auch aus dem Buch?** Der Buch-Bildschirm hat seine eigene Tour (Nummernfeld,

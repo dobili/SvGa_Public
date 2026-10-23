@@ -1,11 +1,14 @@
 /**
  * Kopfzeile eines Bildschirms im Stapel: Zurück-Knopf, Titel, optionale Knöpfe rechts.
  *
- * Abhängigkeiten: Navigation, i18n, Lucide-Symbole.
+ * Seit P8 (R52) steht ganz rechts das Toursymbol, wenn es zum Bildschirm eine Tour gibt
+ * (tour/TourKnopf.tsx); sonst bleibt die Stelle leer.
+ * Abhängigkeiten: Navigation, i18n, Lucide-Symbole, Tour.
  */
 import { ChevronLeft } from "lucide-react";
 import type { ReactNode } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
+import { TourKnopf } from "../../tour/TourKnopf";
 
 interface KopfzeileEigenschaften {
   /** Der Titel, meist Text; an der Abbildung ein Knopf (Nummernsprung, seit 0.2.39). */
@@ -30,7 +33,10 @@ export function Kopfzeile({ titel, zurueckText, rechts, beiZurueck }: KopfzeileE
         )}
       </div>
       <h1 className="kopfzeile-titel">{titel}</h1>
-      <div className="kopfzeile-rechts">{rechts}</div>
+      <div className="kopfzeile-rechts">
+        {rechts}
+        <TourKnopf />
+      </div>
     </header>
   );
 }

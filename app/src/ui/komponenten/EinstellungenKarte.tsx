@@ -16,8 +16,9 @@
  * als Kacheln mit Vorschau. Seit 0.2.82 neun Figurensätze in den Gruppen Klassisch, Modern, Holz;
  * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.92 unter „Brett“
  * der Schalter „Figuren per Wischen ziehen“ (Merker auf dem Gerät wie die Koordinaten).
+ * Seit P8 (R52) unter „Anzeige“ der Schalter für das Toursymbol und der Knopf für den Rundgang.
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
- * i18n.
+ * tour/, i18n.
  */
 import { Brain, Crown, Grid3x3, Palette, Volume2, type LucideIcon } from "lucide-react";
 import { useState } from "react";
@@ -48,6 +49,8 @@ import { Reiter } from "./Reiter";
 import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
 import { zeigeErklaerungenWieder } from "./useErklaerung";
 import { Titelsymbol } from "./Titelsymbol";
+import { setzeSymbol, useTourMerker } from "../../tour/tourMerker";
+import { starteTour } from "../../tour/tourStand";
 
 /** Bretter in Gruppen (seit 0.2.84): Farben, Holz, Material. */
 const BRETTGRUPPEN: readonly { titel: Textschluessel; werte: readonly Brettfarben[] }[] = [
@@ -157,12 +160,43 @@ function ErklaerungenWahl() {
 }
 
 type Bereich = "brett" | "figuren" | "anzeige" | "ton" | "training";
-const BEREICHE: readonly { wert: Bereich; text: Textschluessel; symbol: LucideIcon }[] = [
-  { wert: "brett", text: "einstellungen.reiter.brett", symbol: Grid3x3 },
-  { wert: "figuren", text: "einstellungen.reiter.figuren", symbol: Crown },
-  { wert: "anzeige", text: "einstellungen.reiter.anzeige", symbol: Palette },
-  { wert: "ton", text: "einstellungen.reiter.ton", symbol: Volume2 },
-  { wert: "training", text: "einstellungen.reiter.training", symbol: Brain },
+const BEREICHE: readonly {
+  wert: Bereich;
+  text: Textschluessel;
+  symbol: LucideIcon;
+  /** Ziel-Kennung für die Tour der Einstellungen (tour/touren.ts). */
+  tour: string;
+}[] = [
+  {
+    wert: "brett",
+    text: "einstellungen.reiter.brett",
+    symbol: Grid3x3,
+    tour: "einstellungen-reiter-brett",
+  },
+  {
+    wert: "figuren",
+    text: "einstellungen.reiter.figuren",
+    symbol: Crown,
+    tour: "einstellungen-reiter-figuren",
+  },
+  {
+    wert: "anzeige",
+    text: "einstellungen.reiter.anzeige",
+    symbol: Palette,
+    tour: "einstellungen-reiter-anzeige",
+  },
+  {
+    wert: "ton",
+    text: "einstellungen.reiter.ton",
+    symbol: Volume2,
+    tour: "einstellungen-reiter-ton",
+  },
+  {
+    wert: "training",
+    text: "einstellungen.reiter.training",
+    symbol: Brain,
+    tour: "einstellungen-reiter-training",
+  },
 ];
 
 /** Brett: Farben mit Vorschau, Koordinaten, Ziehen per Wischen, Zuganimation (R37). */
@@ -232,13 +266,39 @@ function SprachWahl() {
   );
 }
 
-/** Anzeige: Nachtmodus, Erklärkacheln, Sprache. */
+/**
+ * Toursymbol an oder aus und der Rundgang durch die App (seit P8, Wunsch des Autors R52). Ist das
+ * Symbol aus, bleibt der Rundgang über den Knopf erreichbar.
+ */
+function TourWahl() {
+  const merker = useTourMerker();
+  return (
+    <>
+      <Auswahl
+        name={t("einstellungen.toursymbol")}
+        werte={KOORDINATEN}
+        gewaehlt={merker.symbolAn ? "an" : "aus"}
+        text={(w) => t(`einstellungen.toursymbol.${w}`)}
+        beiWahl={(neu) => setzeSymbol(neu === "an")}
+      />
+      <div className="einstellung-rundgang">
+        <p className="hinweis">{t("einstellungen.toursymbol.hinweis")}</p>
+        <button type="button" className="knopf-zweit" onClick={() => starteTour("haupt")}>
+          {t("einstellungen.rundgang")}
+        </button>
+      </div>
+    </>
+  );
+}
+
+/** Anzeige: Nachtmodus, Erklärkacheln, Sprache, Toursymbol und Rundgang. */
 function AnzeigeBereich() {
   return (
     <>
       <NachtmodusWahl />
       <ErklaerungenWahl />
       <SprachWahl />
+      <TourWahl />
     </>
   );
 }

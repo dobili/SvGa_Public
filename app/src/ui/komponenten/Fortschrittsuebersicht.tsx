@@ -99,7 +99,7 @@ export function Fortschrittsuebersicht() {
   // Beantwortete Warum-Fragen (0.2.99); die Gesamtzahl steht in den Kapiteln, hier die Summe.
   const warum = summe(Object.values(fortschritt.warum).map((stellen) => stellen.length));
   return (
-    <section className="karte" data-testid="ich-fortschritt">
+    <section className="karte" data-testid="ich-fortschritt" data-tour="einstellungen-fortschritt">
       <h2 className="karte-titel">
         <Titelsymbol art="fortschritt" />
         {t("fortschritt.titel")}

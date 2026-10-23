@@ -130,6 +130,7 @@ export function Karten({
         <button
           type="button"
           className="knopf-zweit"
+          data-tour="gegen-engine"
           onClick={() =>
             navigiere({
               bildschirm: "spielen",

@@ -1517,11 +1517,18 @@ etwa“ chess.com und FIDE über veröffentlichte Umrechnungen.
 5. App: Schalter chess.com/Lichess/Mittelweg entfernen, neue Schätzung (Konstanten), Phasenzahl
    nur bei schmalem Bereich, Texte de/en, alte Einstellung beim Lesen übergehen, Tests.
 6. Teil A, Rest: blinde Flecken und Fehlerarten zusammenführen (Engine, Oberfläche, Speicher mit
-   Umwandlung).
+   Umwandlung). Dabei: Gespeicherte Listen erlaubter Fehlerarten (eigene Gegner, Vorlieben,
+   Partien) kennen die vier neuen Arten nicht; eine vollständige alte Liste muss beim Lesen die
+   neuen Arten dazubekommen, sonst machen eigene Gegner sie nie (speicher/gegner.ts,
+   speicher/partien.ts, speicher/partienLesen.ts, engine/gegner.ts). Die beiden Beispiele des
+   Autors (9… Df6, 4. c4) als Test nachstellen, sobald die Stellungen vorliegen.
 7. Teil D: Spielstile (Recherche, Unterscheidbarkeit je Elo aus den Daten), je Bot genau ein Stil.
 8. Teil E: Bots für Schnellschach neu (Spaß 4 + 8 × 8), Fehlerraten je Phase aus den Spielerprofilen,
    Unterscheidung der Bots über die Bereiche und Kopplungen (vorher Gespräch mit dem Autor),
    Messung mit vierfachen Kandidaten (256 + 16), Ergebnisleiter, Verankerung mit dem neuen Modell.
+8b. Bedenkzeit und Zeitnot der Bots aus den Spielerprofilen neu eichen (Teil C verlangte die
+   Bedenkzeit je Zelle; das Uhrmodell beruht noch auf der ersten Sammlung), ebenso die Tagesform
+   (Streuung zwischen Partien) aus dem Beta-Binomial-Modell.
 9. Teil F: Blitz und 60 Minuten (eigene Raten, Feinabstimmung), drei Einstellungssätze und drei
    Wertungen je Bot, „ohne Uhr“ weg (außer ungewertet ab Buchabbildung), „besiegt“ je Zeitklasse,
    Zeitkontrolle in der Partieliste.

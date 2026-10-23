@@ -50,6 +50,10 @@ MOTIV_JE_THEMA: dict[str, str] = {
 }
 # Für „Falle oder Köder“: Aufgaben, in denen Material wirklich zu nehmen ist (Geschenk).
 GESCHENK_THEMA = "hangingPiece"
+# Für den Endspieltrainer (P4, R47): Endspielaufgaben nach Figurenart; „equality“ sind Aufgaben,
+# in denen die Lösung aus schlechterer Stellung das Remis rettet (Remisaufgaben).
+ENDSPIEL_THEMEN = ("pawnEndgame", "rookEndgame", "queenEndgame", "bishopEndgame", "knightEndgame")
+REMIS_THEMA = "equality"
 MATTBILD_JE_THEMA: dict[str, str] = {
     "backRankMate": "grundreihe",
     "anastasiaMate": "anastasia",
@@ -67,13 +71,16 @@ STARTWERT = 20261016
 @dataclass(frozen=True)
 class Puzzle:
     kennung: str
-    fen: str  # Stellung, in der der Leser am Zug ist (nach dem Gegnerzug)
+    fen: str  # Stellung, in der der Leser am Zug ist (nach dem Gegnerzug, dem Köder-Zug)
     loesung: list[str]  # Lösung in englischer Kurznotation, eigene und gegnerische Züge im Wechsel
     wertung: int
     themen: tuple[str, ...]
     motiv: str | None
     mattbild: str | None
     partie: str
+    # Seit P4 (R50): der Zug des Gegners, der zur Stellung führt (Köder-Zug), und die Stellung davor.
+    fen_vorher: str = ""
+    vorzug: str = ""
 
 
 def _motiv(themen: set[str]) -> str | None:
@@ -86,8 +93,12 @@ def _mattbild(themen: set[str]) -> str | None:
     return next(iter(bilder)) if len(bilder) == 1 else None
 
 
-def lies_zeile(zeile: dict[str, str]) -> Puzzle | None:
-    """Ein Puzzle aus einer Zeile der Datenbank; None, wenn es nicht in die Auswahl passt."""
+def lies_zeile(zeile: dict[str, str], endspiele: bool = False) -> Puzzle | None:
+    """Ein Puzzle aus einer Zeile der Datenbank; None, wenn es nicht in die Auswahl passt.
+
+    ``endspiele``: statt Motiven und Geschenken die Endspielaufgaben (ENDSPIEL_THEMEN) nehmen,
+    auch mit langen Lösungen (der Leser spielt sie gegen die Engine aus, nicht nach).
+    """
     try:
         wertung, abweichung = int(zeile["Rating"]), int(zeile["RatingDeviation"])
         beliebt, partien = int(zeile["Popularity"]), int(zeile["NbPlays"])
@@ -97,13 +108,18 @@ def lies_zeile(zeile: dict[str, str]) -> Puzzle | None:
         return None
     themen = set(zeile["Themes"].split())
     motiv, mattbild = _motiv(themen), _mattbild(themen)
-    if motiv is None and mattbild is None and GESCHENK_THEMA not in themen:
+    if endspiele:
+        if not any(t in themen for t in ENDSPIEL_THEMEN):
+            return None
+    elif motiv is None and mattbild is None and GESCHENK_THEMA not in themen:
         return None
     zuege = zeile["Moves"].split()
-    if len(zuege) < 2 or (len(zuege) - 1 + 1) // 2 > HOECHSTENS_EIGENE_ZUEGE:
+    if len(zuege) < 2 or (not endspiele and (len(zuege) - 1 + 1) // 2 > HOECHSTENS_EIGENE_ZUEGE):
         return None
     brett = chess.Board(zeile["FEN"])
+    fen_vorher = brett.fen()
     try:
+        vorzug = brett.san(chess.Move.from_uci(zuege[0]))
         brett.push_uci(zuege[0])
         fen = brett.fen()
         loesung = []
@@ -114,11 +130,20 @@ def lies_zeile(zeile: dict[str, str]) -> Puzzle | None:
     except ValueError:
         return None
     return Puzzle(
-        zeile["PuzzleId"], fen, loesung, wertung, tuple(sorted(themen)), motiv, mattbild, zeile["GameUrl"]
+        zeile["PuzzleId"],
+        fen,
+        loesung,
+        wertung,
+        tuple(sorted(themen)),
+        motiv,
+        mattbild,
+        zeile["GameUrl"],
+        fen_vorher=fen_vorher,
+        vorzug=vorzug,
     )
 
 
-def lies_datenbank(pfad: Path) -> list[Puzzle]:
+def lies_datenbank(pfad: Path, endspiele: bool = False) -> list[Puzzle]:
     """Alle passenden Puzzles aus der gepackten Datenbank (Streaming, einige Minuten)."""
     import zstandard
 
@@ -126,7 +151,7 @@ def lies_datenbank(pfad: Path) -> list[Puzzle]:
     with pfad.open("rb") as roh:
         text = io.TextIOWrapper(zstandard.ZstdDecompressor().stream_reader(roh), encoding="utf-8")
         for zeile in csv.DictReader(text):
-            puzzle = lies_zeile(zeile)
+            puzzle = lies_zeile(zeile, endspiele)
             if puzzle is not None:
                 passende.append(puzzle)
     return passende

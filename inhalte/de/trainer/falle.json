@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "trainer": "falle",
  "erzeugt": {
-  "datum": "2026-10-17",
+  "datum": "2026-10-23",
   "engine": "Stockfish 19 lite (ein Kern)",
   "skript": "pipeline/trainer/falle.py"
  },
@@ -23,6 +23,7 @@
  ],
  "massstab": {
   "falleAbVerlust": 1.5,
+  "falleSchlechterAb": 0.8,
   "geschenkBisVerlust": 0.3,
   "tiefe": 18
  },
@@ -33,11 +34,15 @@
  "aufgaben": [
   {
    "id": "falle-b-4.2",
+   "fenVorher": "rnbqkbnr/p3pppp/2p5/1p6/P1pP4/4P3/1P3PPP/RNBQKBNR w KQkq - 0 5",
+   "vorzug": "axb5",
    "fen": "rnbqkbnr/p3pppp/2p5/1P6/2pP4/4P3/1P3PPP/RNBQKBNR b KQkq - 0 5",
    "amZug": "b",
    "angebot": "cxb5",
    "antwort": "falle",
-   "verlustBeimNehmen": 2.39,
+   "wertVorher": -1.97,
+   "wertNachher": -4.78,
+   "verlustBeimNehmen": 2.81,
    "bester": "Nf6",
    "fortsetzung": [
     "cxb5",
@@ -58,11 +63,15 @@
   },
   {
    "id": "falle-b-4.10",
+   "fenVorher": "rn2kb1r/ppp1pppp/5n2/8/1q4b1/2N1BQ2/PPP3PP/2KR1BNR w kq - 4 8",
+   "vorzug": "Nb5",
    "fen": "rn2kb1r/ppp1pppp/5n2/1N6/1q4b1/4BQ2/PPP3PP/2KR1BNR b kq - 5 8",
    "amZug": "b",
    "angebot": "Bxf3",
    "antwort": "falle",
-   "verlustBeimNehmen": 94.64,
+   "wertVorher": -4.14,
+   "wertNachher": -99.0,
+   "verlustBeimNehmen": 94.86,
    "bester": "Na6",
    "fortsetzung": [
     "Bxf3",
@@ -83,11 +92,15 @@
   },
   {
    "id": "falle-b-4.13",
+   "fenVorher": "r1bqkb1r/pppn1ppp/4pn2/3P2B1/3P4/2N5/PP2PPPP/R2QKBNR b KQkq - 0 5",
+   "vorzug": "exd5",
    "fen": "r1bqkb1r/pppn1ppp/5n2/3p2B1/3P4/2N5/PP2PPPP/R2QKBNR w KQkq - 0 6",
    "amZug": "w",
    "angebot": "Nxd5",
    "antwort": "falle",
-   "verlustBeimNehmen": 5.15,
+   "wertVorher": 0.34,
+   "wertNachher": -4.89,
+   "verlustBeimNehmen": 5.23,
    "bester": "e3",
    "fortsetzung": [
     "Nxd5",
@@ -112,12 +125,16 @@
   },
   {
    "id": "falle-b-4.17",
+   "fenVorher": "r2qkbnr/ppp2ppp/2np4/4p2b/2B1P3/2N2N1P/PPPP1PP1/R1BQK2R w KQkq - 1 6",
+   "vorzug": "Nxe5",
    "fen": "r2qkbnr/ppp2ppp/2np4/4N2b/2B1P3/2N4P/PPPP1PP1/R1BQK2R b KQkq - 0 6",
    "amZug": "b",
    "angebot": "Bxd1",
    "antwort": "falle",
-   "verlustBeimNehmen": 95.54,
-   "bester": "dxe5",
+   "wertVorher": -2.22,
+   "wertNachher": -98.0,
+   "verlustBeimNehmen": 95.78,
+   "bester": "Nxe5",
    "fortsetzung": [
     "Bxd1",
     "Bxf7+",
@@ -139,11 +156,15 @@
   },
   {
    "id": "falle-b-4.21",
+   "fenVorher": "r1b1k2r/ppppqppp/2n5/4P3/1bP2Bn1/P4N2/1P1NPPPP/R2QKB1R b KQkq - 0 7",
+   "vorzug": "Ngxe5",
    "fen": "r1b1k2r/ppppqppp/2n5/4n3/1bP2B2/P4N2/1P1NPPPP/R2QKB1R w KQkq - 0 8",
    "amZug": "w",
    "angebot": "axb4",
    "antwort": "falle",
-   "verlustBeimNehmen": 99.3,
+   "wertVorher": 0.33,
+   "wertNachher": -99.0,
+   "verlustBeimNehmen": 99.33,
    "bester": "Nxe5",
    "fortsetzung": [
     "axb4",
@@ -164,11 +185,15 @@
   },
   {
    "id": "falle-b-4.24",
+   "fenVorher": "rnbqkb1r/3ppppp/5n2/2pP4/1p2P3/2N5/PP3PPP/R1BQKBNR w KQkq - 0 7",
+   "vorzug": "Nb5",
    "fen": "rnbqkb1r/3ppppp/5n2/1NpP4/1p2P3/8/PP3PPP/R1BQKBNR b KQkq - 1 7",
    "amZug": "b",
    "angebot": "Nxe4",
    "antwort": "falle",
-   "verlustBeimNehmen": 2.85,
+   "wertVorher": -0.11,
+   "wertNachher": -3.55,
+   "verlustBeimNehmen": 3.44,
    "bester": "d6",
    "fortsetzung": [
     "Nxe4",
@@ -191,11 +216,15 @@
   },
   {
    "id": "falle-b-4.29",
+   "fenVorher": "r1b1kb1r/ppqp1ppp/2n1p3/8/2B1P1n1/2N2N1P/PP2QPP1/R1B2RK1 b kq - 0 9",
+   "vorzug": "Nd4",
    "fen": "r1b1kb1r/ppqp1ppp/4p3/8/2BnP1n1/2N2N1P/PP2QPP1/R1B2RK1 w kq - 1 10",
    "amZug": "w",
    "angebot": "Nxd4",
    "antwort": "falle",
-   "verlustBeimNehmen": 94.61,
+   "wertVorher": -4.38,
+   "wertNachher": -99.0,
+   "verlustBeimNehmen": 94.62,
    "bester": "hxg4",
    "fortsetzung": [
     "Nxd4",
@@ -216,11 +245,15 @@
   },
   {
    "id": "falle-b-4.34",
+   "fenVorher": "r1bqkbnr/2p2ppp/p2p4/1p2p3/3NP3/1B6/PPP2PPP/RNBQK2R b KQkq - 0 7",
+   "vorzug": "exd4",
    "fen": "r1bqkbnr/2p2ppp/p2p4/1p6/3pP3/1B6/PPP2PPP/RNBQK2R w KQkq - 0 8",
    "amZug": "w",
    "angebot": "Qxd4",
    "antwort": "falle",
-   "verlustBeimNehmen": 3.37,
+   "wertVorher": 0.05,
+   "wertNachher": -3.14,
+   "verlustBeimNehmen": 3.19,
    "bester": "a4",
    "fortsetzung": [
     "Qxd4",
@@ -245,11 +278,15 @@
   },
   {
    "id": "falle-b-4.38",
+   "fenVorher": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq - 0 2",
+   "vorzug": "Bc5",
    "fen": "rnbqk1nr/pppp1ppp/8/2b1p3/4PP2/8/PPPP2PP/RNBQKBNR w KQkq - 1 3",
    "amZug": "w",
    "angebot": "fxe5",
    "antwort": "falle",
-   "verlustBeimNehmen": 4.16,
+   "wertVorher": 0.12,
+   "wertNachher": -4.09,
+   "verlustBeimNehmen": 4.21,
    "bester": "Nf3",
    "fortsetzung": [
     "fxe5",
@@ -274,11 +311,15 @@
   },
   {
    "id": "falle-b-4.41",
+   "fenVorher": "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3",
+   "vorzug": "Nd4",
    "fen": "r1bqkbnr/pppp1ppp/8/4p3/2BnP3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
    "amZug": "w",
    "angebot": "Nxe5",
    "antwort": "falle",
-   "verlustBeimNehmen": 1.99,
+   "wertVorher": 1.07,
+   "wertNachher": -0.88,
+   "verlustBeimNehmen": 1.95,
    "bester": "Nxd4",
    "fortsetzung": [
     "Nxe5",
@@ -303,11 +344,15 @@
   },
   {
    "id": "falle-b-4.45",
+   "fenVorher": "rnb1kbnr/pppp1ppp/8/6q1/2B1P3/8/PB3PPP/RN1QK1NR w KQkq - 1 6",
+   "vorzug": "Nf3",
    "fen": "rnb1kbnr/pppp1ppp/8/6q1/2B1P3/5N2/PB3PPP/RN1QK2R b KQkq - 2 6",
    "amZug": "b",
    "angebot": "Qxg2",
    "antwort": "falle",
-   "verlustBeimNehmen": 2.61,
+   "wertVorher": -1.47,
+   "wertNachher": -4.4,
+   "verlustBeimNehmen": 2.93,
    "bester": "Bb4+",
    "fortsetzung": [
     "Qxg2",
@@ -332,11 +377,15 @@
   },
   {
    "id": "falle-b-4.48",
+   "fenVorher": "rnb1kb1r/1p3ppp/pq1ppn2/6B1/3NPP2/2N5/PPP3PP/R2QKB1R w KQkq - 1 8",
+   "vorzug": "a3",
    "fen": "rnb1kb1r/1p3ppp/pq1ppn2/6B1/3NPP2/P1N5/1PP3PP/R2QKB1R b KQkq - 0 8",
    "amZug": "b",
    "angebot": "Qxb2",
    "antwort": "falle",
-   "verlustBeimNehmen": 6.44,
+   "wertVorher": -0.02,
+   "wertNachher": -6.03,
+   "verlustBeimNehmen": 6.01,
    "bester": "Nbd7",
    "fortsetzung": [
     "Qxb2",
@@ -359,11 +408,15 @@
   },
   {
    "id": "falle-b-k02-a18-9b",
+   "fenVorher": "r1bqk2r/pppp1ppp/2n5/8/1bBP4/2n2N2/PP3PPP/R1BQ1RK1 w kq - 0 9",
+   "vorzug": "bxc3",
    "fen": "r1bqk2r/pppp1ppp/2n5/8/1bBP4/2P2N2/P4PPP/R1BQ1RK1 b kq - 0 9",
    "amZug": "b",
    "angebot": "Bxc3",
    "antwort": "falle",
-   "verlustBeimNehmen": 2.04,
+   "wertVorher": -0.18,
+   "wertNachher": -1.71,
+   "verlustBeimNehmen": 1.53,
    "bester": "d5",
    "fortsetzung": [
     "Bxc3",
@@ -386,11 +439,15 @@
   },
   {
    "id": "falle-b-k02-a18-10b",
+   "fenVorher": "r1bqk2r/pppp1ppp/2n5/8/2BP4/2b2N2/P4PPP/R1BQ1RK1 w kq - 0 10",
+   "vorzug": "Qb3",
    "fen": "r1bqk2r/pppp1ppp/2n5/8/2BP4/1Qb2N2/P4PPP/R1B2RK1 b kq - 1 10",
    "amZug": "b",
    "angebot": "Bxa1",
    "antwort": "falle",
-   "verlustBeimNehmen": 3.97,
+   "wertVorher": -0.68,
+   "wertNachher": -4.47,
+   "verlustBeimNehmen": 3.79,
    "bester": "d5",
    "fortsetzung": [
     "Bxa1",
@@ -412,11 +469,15 @@
   },
   {
    "id": "falle-b-k03-a28-7b",
+   "fenVorher": "r1b1kbnr/pp3ppp/1qn1p3/3pP3/3p4/2PB1N2/PP3PPP/RNBQK2R w KQkq - 0 7",
+   "vorzug": "cxd4",
    "fen": "r1b1kbnr/pp3ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQK2R b KQkq - 0 7",
    "amZug": "b",
    "angebot": "Nxd4",
    "antwort": "falle",
-   "verlustBeimNehmen": 4.05,
+   "wertVorher": 0.0,
+   "wertNachher": -4.38,
+   "verlustBeimNehmen": 4.38,
    "bester": "Bd7",
    "fortsetzung": [
     "Nxd4",
@@ -438,11 +499,15 @@
   },
   {
    "id": "falle-b-k03-a28-8b",
+   "fenVorher": "r1b1kbnr/pp3ppp/1q2p3/3pP3/3n4/3B1N2/PP3PPP/RNBQK2R w KQkq - 0 8",
+   "vorzug": "Nxd4",
    "fen": "r1b1kbnr/pp3ppp/1q2p3/3pP3/3N4/3B4/PP3PPP/RNBQK2R b KQkq - 0 8",
    "amZug": "b",
    "angebot": "Qxd4",
    "antwort": "falle",
-   "verlustBeimNehmen": 3.25,
+   "wertVorher": -4.61,
+   "wertNachher": -7.55,
+   "verlustBeimNehmen": 2.94,
    "bester": "Bc5",
    "fortsetzung": [
     "Qxd4",
@@ -462,11 +527,15 @@
   },
   {
    "id": "falle-b-k03-a61-7w",
+   "fenVorher": "r1bqk2r/ppp2ppp/2p2n2/2b3B1/4P3/3P4/PPP2PPP/RN1QKB1R b KQkq - 2 6",
+   "vorzug": "Nxe4",
    "fen": "r1bqk2r/ppp2ppp/2p5/2b3B1/4n3/3P4/PPP2PPP/RN1QKB1R w KQkq - 0 7",
    "amZug": "w",
    "angebot": "Bxd8",
    "antwort": "falle",
-   "verlustBeimNehmen": 92.73,
+   "wertVorher": -4.96,
+   "wertNachher": -98.0,
+   "verlustBeimNehmen": 93.04,
    "bester": "Qe2",
    "fortsetzung": [
     "Bxd8",
@@ -487,28 +556,32 @@
    "schwierigkeit": 5
   },
   {
-   "id": "falle-l-xixzj",
-   "fen": "1r4k1/8/7p/1P1Rppp1/P1n5/1N3P1P/1P4P1/5K2 b - - 2 34",
-   "amZug": "b",
-   "angebot": "Nxb2",
+   "id": "falle-l-x977R",
+   "fenVorher": "1k3r1r/2p1q3/1p1p3p/p2PN1p1/1Q6/1R4P1/PP3P1P/1K1R4 b - - 0 28",
+   "vorzug": "axb4",
+   "fen": "1k3r1r/2p1q3/1p1p3p/3PN1p1/1p6/1R4P1/PP3P1P/1K1R4 w - - 0 29",
+   "amZug": "w",
+   "angebot": "Rxb4",
    "antwort": "falle",
-   "verlustBeimNehmen": 8.96,
-   "bester": "Ne3+",
+   "wertVorher": 4.36,
+   "wertNachher": -7.47,
+   "verlustBeimNehmen": 11.83,
+   "bester": "Nc6+",
    "fortsetzung": [
-    "Nxb2",
-    "a5",
-    "Nc4",
-    "Rc5",
-    "Ne3+",
-    "Kf2"
+    "Rxb4",
+    "Qxe5",
+    "f4",
+    "Qf5+",
+    "Kc1",
+    "Kb7"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "xixzj",
-    "wertung": 895,
-    "partie": "https://lichess.org/92aexHeV#67",
+    "puzzle": "x977R",
+    "wertung": 974,
+    "partie": "https://lichess.org/IXa8Gw7f/black#56",
     "themen": [
-     "crushing",
+     "advantage",
      "endgame",
      "fork",
      "master",
@@ -523,26 +596,108 @@
    "schwierigkeit": 1
   },
   {
-   "id": "falle-l-v8BEZ",
-   "fen": "3r2k1/1b3p2/p2r1Ppp/1p1B4/3Rp1P1/P7/1P4P1/3R3K w - - 1 33",
-   "amZug": "w",
-   "angebot": "Bxb7",
+   "id": "falle-l-4RG2o",
+   "fenVorher": "4r1k1/1p3pp1/p1p4p/P2pP3/1P4n1/2B1b1P1/2R2q1P/3QR2K w - - 0 28",
+   "vorzug": "Rxf2",
+   "fen": "4r1k1/1p3pp1/p1p4p/P2pP3/1P4n1/2B1b1P1/5R1P/3QR2K b - - 0 28",
+   "amZug": "b",
+   "angebot": "Bxf2",
    "antwort": "falle",
-   "verlustBeimNehmen": 11.36,
-   "bester": "Bxf7+",
+   "wertVorher": 4.75,
+   "wertNachher": -5.87,
+   "verlustBeimNehmen": 10.62,
+   "bester": "Nxf2+",
    "fortsetzung": [
-    "Bxb7",
-    "Rxd4",
-    "Rg1",
-    "a5",
-    "Kh2",
-    "e3"
+    "Bxf2",
+    "Qxg4",
+    "Bxe1",
+    "Bxe1",
+    "h5",
+    "Qd7"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "v8BEZ",
-    "wertung": 778,
-    "partie": "https://lichess.org/78tYqdyf/black#64",
+    "puzzle": "4RG2o",
+    "wertung": 831,
+    "partie": "https://lichess.org/G0Y3icKY#55",
+    "themen": [
+     "advantage",
+     "fork",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-lIbe0",
+   "fenVorher": "r1q5/2p1n1kp/p5p1/3PN3/Q3Nr2/1Pn2P2/P1P3PP/3R1RK1 w - - 1 25",
+   "vorzug": "Qd4",
+   "fen": "r1q5/2p1n1kp/p5p1/3PN3/3QNr2/1Pn2P2/P1P3PP/3R1RK1 b - - 2 25",
+   "amZug": "b",
+   "angebot": "Nxa2",
+   "antwort": "falle",
+   "wertVorher": 4.28,
+   "wertNachher": -13.89,
+   "verlustBeimNehmen": 18.17,
+   "bester": "Ne2+",
+   "fortsetzung": [
+    "Nxa2",
+    "Ng4+",
+    "Kf8",
+    "Qh8+",
+    "Ng8",
+    "Nh6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "lIbe0",
+    "wertung": 915,
+    "partie": "https://lichess.org/32BEFMQC#49",
+    "themen": [
+     "advantage",
+     "fork",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-zsCsv",
+   "fenVorher": "6k1/1r4p1/1b2p1rp/p2p2p1/PP4N1/2P4P/4RPP1/1R4K1 w - - 0 25",
+   "vorzug": "bxa5",
+   "fen": "6k1/1r4p1/1b2p1rp/P2p2p1/P5N1/2P4P/4RPP1/1R4K1 b - - 0 25",
+   "amZug": "b",
+   "angebot": "Bxa5",
+   "antwort": "falle",
+   "wertVorher": 3.7,
+   "wertNachher": -5.84,
+   "verlustBeimNehmen": 9.54,
+   "bester": "Bxf2+",
+   "fortsetzung": [
+    "Bxa5",
+    "Rxb7",
+    "Bxc3",
+    "Rc2",
+    "d4",
+    "Rxc3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "zsCsv",
+    "wertung": 984,
+    "partie": "https://lichess.org/eXrecujK#49",
     "themen": [
      "advantage",
      "discoveredAttack",
@@ -558,30 +713,343 @@
    "schwierigkeit": 1
   },
   {
-   "id": "falle-l-3PGAO",
-   "fen": "4r1k1/1b1q3p/p4pp1/2rp4/p2pBP2/2P3P1/1P2QPPK/R3R3 w - - 0 28",
+   "id": "falle-l-UI1Uh",
+   "fenVorher": "2k3r1/pp3p1p/1n1p4/2pN1b2/5P2/P2B2P1/3K3P/4R3 b - - 0 23",
+   "vorzug": "Bxd3",
+   "fen": "2k3r1/pp3p1p/1n1p4/2pN4/5P2/P2b2P1/3K3P/4R3 w - - 0 24",
    "amZug": "w",
-   "angebot": "cxd4",
+   "angebot": "Kxd3",
    "antwort": "falle",
-   "verlustBeimNehmen": 9.06,
-   "bester": "Bxd5+",
+   "wertVorher": 1.87,
+   "wertNachher": -6.76,
+   "verlustBeimNehmen": 8.63,
+   "bester": "Ne7+",
    "fortsetzung": [
-    "cxd4",
-    "Rcc8",
-    "Bf5",
-    "gxf5",
-    "Qd3",
-    "Rxe1"
+    "Kxd3",
+    "Nxd5",
+    "Kc4",
+    "Nb6+",
+    "Kd3",
+    "Kd7"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "3PGAO",
-    "wertung": 868,
-    "partie": "https://lichess.org/4izy1Urx/black#54",
+    "puzzle": "UI1Uh",
+    "wertung": 967,
+    "partie": "https://lichess.org/kW50Ocgl/black#46",
     "themen": [
      "advantage",
-     "discoveredAttack",
-     "kingsideAttack",
+     "endgame",
+     "fork",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-MXtfD",
+   "fenVorher": "2b2rk1/2bn1ppp/5n2/1B1NqN2/5p2/4P3/5PPP/Q2R2K1 b - - 0 20",
+   "vorzug": "Qxf5",
+   "fen": "2b2rk1/2bn1ppp/5n2/1B1N1q2/5p2/4P3/5PPP/Q2R2K1 w - - 0 21",
+   "amZug": "w",
+   "angebot": "Nxc7",
+   "antwort": "falle",
+   "wertVorher": 4.55,
+   "wertNachher": -6.03,
+   "verlustBeimNehmen": 10.58,
+   "bester": "Ne7+",
+   "fortsetzung": [
+    "Nxc7",
+    "fxe3",
+    "fxe3",
+    "Qg5",
+    "Qd4",
+    "Bb7"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "MXtfD",
+    "wertung": 995,
+    "partie": "https://lichess.org/Bj0dxELH/black#40",
+    "themen": [
+     "advantage",
+     "fork",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-k3eZ1",
+   "fenVorher": "r4rk1/pp3b1p/2nb2p1/1B1p1n2/N7/1P3N2/PBP2PPP/2KRR3 w - - 8 18",
+   "vorzug": "Ng5",
+   "fen": "r4rk1/pp3b1p/2nb2p1/1B1p1nN1/N7/1P6/PBP2PPP/2KRR3 b - - 9 18",
+   "amZug": "b",
+   "angebot": "Bxh2",
+   "antwort": "falle",
+   "wertVorher": 3.53,
+   "wertNachher": -4.81,
+   "verlustBeimNehmen": 8.34,
+   "bester": "Bf4+",
+   "fortsetzung": [
+    "Bxh2",
+    "g3",
+    "Rac8",
+    "Rh1",
+    "Nb4",
+    "Rxh2"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "k3eZ1",
+    "wertung": 959,
+    "partie": "https://lichess.org/avxzqVb3#35",
+    "themen": [
+     "advantage",
+     "fork",
+     "master",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-LvRpp",
+   "fenVorher": "5k2/p5pp/8/1pN1bp2/1Pb3P1/P6P/2K3B1/8 b - - 3 42",
+   "vorzug": "fxg4",
+   "fen": "5k2/p5pp/8/1pN1b3/1Pb3p1/P6P/2K3B1/8 w - - 0 43",
+   "amZug": "w",
+   "angebot": "hxg4",
+   "antwort": "falle",
+   "wertVorher": 1.64,
+   "wertNachher": -3.18,
+   "verlustBeimNehmen": 4.82,
+   "bester": "Nd7+",
+   "fortsetzung": [
+    "hxg4",
+    "Ke7",
+    "Bf3",
+    "Bc7",
+    "Kc3",
+    "Kf6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "LvRpp",
+    "wertung": 836,
+    "partie": "https://lichess.org/pSkvp5IJ/black#84",
+    "themen": [
+     "advantage",
+     "endgame",
+     "fork",
+     "master",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-h8F5H",
+   "fenVorher": "4r3/1p4p1/1p1k1p1p/1b1p2n1/1N1P1P2/P4K2/1P5P/3R3B w - - 8 33",
+   "vorzug": "fxg5",
+   "fen": "4r3/1p4p1/1p1k1p1p/1b1p2P1/1N1P4/P4K2/1P5P/3R3B b - - 0 33",
+   "amZug": "b",
+   "angebot": "hxg5",
+   "antwort": "falle",
+   "wertVorher": 3.94,
+   "wertNachher": -3.24,
+   "verlustBeimNehmen": 7.18,
+   "bester": "Be2+",
+   "fortsetzung": [
+    "hxg5",
+    "Rd2",
+    "f5",
+    "Bg2",
+    "Bc4",
+    "h3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "h8F5H",
+    "wertung": 943,
+    "partie": "https://lichess.org/CaMeOeof#65",
+    "themen": [
+     "advantage",
+     "endgame",
+     "fork",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-fkQb3",
+   "fenVorher": "2r2rk1/1p1q1pbp/p3p1pB/2p1n3/4N3/3P2Q1/PPP3PP/1R3RK1 b - - 3 17",
+   "vorzug": "Bxh6",
+   "fen": "2r2rk1/1p1q1p1p/p3p1pb/2p1n3/4N3/3P2Q1/PPP3PP/1R3RK1 w - - 0 18",
+   "amZug": "w",
+   "angebot": "Qxe5",
+   "antwort": "falle",
+   "wertVorher": 4.02,
+   "wertNachher": -4.02,
+   "verlustBeimNehmen": 8.04,
+   "bester": "Nf6+",
+   "fortsetzung": [
+    "Qxe5",
+    "Qd4+",
+    "Qxd4",
+    "cxd4",
+    "c4",
+    "dxc3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "fkQb3",
+    "wertung": 877,
+    "partie": "https://lichess.org/aRFK3XWD/black#34",
+    "themen": [
+     "advantage",
+     "fork",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-u9HKf",
+   "fenVorher": "1Q6/p3rppk/1p1p3q/3Pr3/3R4/P5PP/1P3P2/5RK1 b - - 0 28",
+   "vorzug": "Qxh3",
+   "fen": "1Q6/p3rppk/1p1p4/3Pr3/3R4/P5Pq/1P3P2/5RK1 w - - 0 29",
+   "amZug": "w",
+   "angebot": "Qxd6",
+   "antwort": "falle",
+   "wertVorher": 4.73,
+   "wertNachher": -6.88,
+   "verlustBeimNehmen": 11.61,
+   "bester": "Rh4+",
+   "fortsetzung": [
+    "Qxd6",
+    "Rh5",
+    "Rh4",
+    "Rxh4",
+    "gxh4",
+    "Re4"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "u9HKf",
+    "wertung": 942,
+    "partie": "https://lichess.org/tFQFMx9S/black#56",
+    "themen": [
+     "advantage",
+     "endgame",
+     "fork",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-xSMKH",
+   "fenVorher": "2kr3r/B4pp1/1pq4p/2pR1N2/8/Q1P5/PP3PPP/2K5 b - - 0 25",
+   "vorzug": "Qxd5",
+   "fen": "2kr3r/B4pp1/1p5p/2pq1N2/8/Q1P5/PP3PPP/2K5 w - - 0 26",
+   "amZug": "w",
+   "angebot": "Bxb6",
+   "antwort": "falle",
+   "wertVorher": 4.98,
+   "wertNachher": -99.0,
+   "verlustBeimNehmen": 103.98,
+   "bester": "Ne7+",
+   "fortsetzung": [
+    "Bxb6",
+    "Qd1#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "xSMKH",
+    "wertung": 948,
+    "partie": "https://lichess.org/KgJDvTMu/black#50",
+    "themen": [
+     "advantage",
+     "endgame",
+     "fork",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-TRmKX",
+   "fenVorher": "2r2rk1/pp2ppbp/6p1/q2pNb2/1P1PnB2/P2BP3/4QPPP/R3K2R b KQ - 0 15",
+   "vorzug": "Qxa3",
+   "fen": "2r2rk1/pp2ppbp/6p1/3pNb2/1P1PnB2/q2BP3/4QPPP/R3K2R w KQ - 0 16",
+   "amZug": "w",
+   "angebot": "Rxa3",
+   "antwort": "geschenk",
+   "wertVorher": 2.94,
+   "wertNachher": 3.52,
+   "verlustBeimNehmen": -0.58,
+   "bester": "Rxa3",
+   "fortsetzung": [
+    "Rxa3",
+    "Rc1+",
+    "Qd1",
+    "Rxd1+",
+    "Kxd1",
+    "Nxf2+"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "TRmKX",
+    "wertung": 787,
+    "partie": "https://lichess.org/n9tsjzU0/black#30",
+    "themen": [
+     "advantage",
+     "hangingPiece",
      "long",
      "middlegame"
     ]
@@ -594,24 +1062,184 @@
    "schwierigkeit": 1
   },
   {
-   "id": "falle-l-e25m4",
-   "fen": "2k2b1r/ppp2ppp/6r1/1BqQP3/4n3/5bPP/PPP2P2/RN2R1K1 w - - 1 16",
-   "amZug": "w",
-   "angebot": "Qxf7",
-   "antwort": "falle",
-   "verlustBeimNehmen": 197.0,
-   "bester": "Qd7+",
+   "id": "falle-l-xYBpy",
+   "fenVorher": "2r3k1/6pp/3r1p2/RPP5/8/3p1P1P/6P1/2R4K w - - 0 43",
+   "vorzug": "cxd6",
+   "fen": "2r3k1/6pp/3P1p2/RP6/8/3p1P1P/6P1/2R4K b - - 0 43",
+   "amZug": "b",
+   "angebot": "Rxc1+",
+   "antwort": "geschenk",
+   "wertVorher": 6.59,
+   "wertNachher": 6.42,
+   "verlustBeimNehmen": 0.17,
+   "bester": "Rxc1+",
    "fortsetzung": [
-    "Qxf7",
-    "Qxf2#"
+    "Rxc1+",
+    "Kh2",
+    "d2",
+    "Ra8+",
+    "Kf7",
+    "Ra7+"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "e25m4",
-    "wertung": 974,
-    "partie": "https://lichess.org/KKlovtn1/black#30",
+    "puzzle": "xYBpy",
+    "wertung": 981,
+    "partie": "https://lichess.org/ZAJKRJP7#85",
     "themen": [
-     "backRankMate",
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "hangingPiece",
+     "long",
+     "rookEndgame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-EEuYd",
+   "fenVorher": "7r/2Q5/1R6/p7/k3P3/2P3B1/1P3PPK/3q4 w - - 2 35",
+   "vorzug": "Bh4",
+   "fen": "7r/2Q5/1R6/p7/k3P2B/2P5/1P3PPK/3q4 b - - 3 35",
+   "amZug": "b",
+   "angebot": "Rxh4+",
+   "antwort": "geschenk",
+   "wertVorher": 98.0,
+   "wertNachher": 98.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Rxh4+",
+   "fortsetzung": [
+    "Rxh4+",
+    "Kg3",
+    "Qg4#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "EEuYd",
+    "wertung": 974,
+    "partie": "https://lichess.org/aeEuq5mu#69",
+    "themen": [
+     "endgame",
+     "hangingPiece",
+     "master",
+     "mate",
+     "mateIn2",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 2,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-wIpht",
+   "fenVorher": "8/2Nk1p2/1P2p1p1/3pP3/3P2pP/3b4/5PP1/6K1 w - - 1 33",
+   "vorzug": "b7",
+   "fen": "8/1PNk1p2/4p1p1/3pP3/3P2pP/3b4/5PP1/6K1 b - - 0 33",
+   "amZug": "b",
+   "angebot": "Kxc7",
+   "antwort": "geschenk",
+   "wertVorher": 5.59,
+   "wertNachher": 5.87,
+   "verlustBeimNehmen": -0.28,
+   "bester": "Kxc7",
+   "fortsetzung": [
+    "Kxc7",
+    "Kh2",
+    "Kxb7",
+    "Kg3",
+    "Be2",
+    "Kf4"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "wIpht",
+    "wertung": 830,
+    "partie": "https://lichess.org/4SBcfvBK#65",
+    "themen": [
+     "crushing",
+     "endgame",
+     "hangingPiece",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-MXWJL",
+   "fenVorher": "r1b1r1k1/pp2bppp/2n5/2pq2P1/3p3P/1P1P1N2/PBPNQP2/R3K2R b KQ - 1 14",
+   "vorzug": "Bxg5",
+   "fen": "r1b1r1k1/pp3ppp/2n5/2pq2b1/3p3P/1P1P1N2/PBPNQP2/R3K2R w KQ - 0 15",
+   "amZug": "w",
+   "angebot": "Qxe8#",
+   "antwort": "geschenk",
+   "wertVorher": 99.0,
+   "wertNachher": 99.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Qxe8#",
+   "fortsetzung": [
+    "Qxe8#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "MXWJL",
+    "wertung": 975,
+    "partie": "https://lichess.org/jGAjVFeA/black#28",
+    "themen": [
+     "hangingPiece",
+     "kingsideAttack",
+     "mate",
+     "mateIn1",
+     "middlegame",
+     "oneMove"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-oQCXh",
+   "fenVorher": "r2q1r1k/pp3pp1/3p4/2bp2N1/2B1P1b1/3P4/PPnK2PQ/R7 b - - 1 17",
+   "vorzug": "Bh5",
+   "fen": "r2q1r1k/pp3pp1/3p4/2bp2Nb/2B1P3/3P4/PPnK2PQ/R7 w - - 2 18",
+   "amZug": "w",
+   "angebot": "Qxh5+",
+   "antwort": "geschenk",
+   "wertVorher": 98.0,
+   "wertNachher": 98.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Qxh5+",
+   "fortsetzung": [
+    "Qxh5+",
+    "Kg8",
+    "Qh7#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "oQCXh",
+    "wertung": 965,
+    "partie": "https://lichess.org/nteVWLOg/black#34",
+    "themen": [
+     "hangingPiece",
+     "kingsideAttack",
      "mate",
      "mateIn2",
      "middlegame",
@@ -626,25 +1254,144 @@
    "schwierigkeit": 1
   },
   {
-   "id": "falle-l-rLoVN",
-   "fen": "3r1rk1/pb4b1/4p1Np/2pq1p2/3P2p1/1PQ3B1/P4PPP/2RR2K1 w - - 0 23",
-   "amZug": "w",
-   "angebot": "Nxf8",
-   "antwort": "falle",
-   "verlustBeimNehmen": 105.37,
-   "bester": "Ne7+",
+   "id": "falle-l-vh8ii",
+   "fenVorher": "2r5/p4ppp/1p1kp1n1/1Q1p4/2bP4/8/P4PPP/1RR3K1 w - - 2 26",
+   "vorzug": "Qa6",
+   "fen": "2r5/p4ppp/Qp1kp1n1/3p4/2bP4/8/P4PPP/1RR3K1 b - - 3 26",
+   "amZug": "b",
+   "angebot": "Bxa6",
+   "antwort": "geschenk",
+   "wertVorher": 6.58,
+   "wertNachher": 6.39,
+   "verlustBeimNehmen": 0.19,
+   "bester": "Bxa6",
    "fortsetzung": [
-    "Nxf8",
-    "Qxg2#"
+    "Bxa6",
+    "Rxc8",
+    "Bxc8",
+    "Kf1",
+    "e5",
+    "Rb3"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "rLoVN",
-    "wertung": 970,
-    "partie": "https://lichess.org/94r7k9Et/black#44",
+    "puzzle": "vh8ii",
+    "wertung": 922,
+    "partie": "https://lichess.org/wlyyl3l5#51",
     "themen": [
-     "crushing",
-     "fork",
+     "advantage",
+     "endgame",
+     "hangingPiece",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-qb7Oz",
+   "fenVorher": "2k4r/ppp2ppp/5q2/3N4/8/1P1P2Q1/P3nPPP/R3R1K1 w - - 5 19",
+   "vorzug": "Rxe2",
+   "fen": "2k4r/ppp2ppp/5q2/3N4/8/1P1P2Q1/P3RPPP/R5K1 b - - 0 19",
+   "amZug": "b",
+   "angebot": "Qxa1+",
+   "antwort": "geschenk",
+   "wertVorher": 98.0,
+   "wertNachher": 98.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Qxa1+",
+   "fortsetzung": [
+    "Qxa1+",
+    "Re1",
+    "Qxe1#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "qb7Oz",
+    "wertung": 749,
+    "partie": "https://lichess.org/10lODHbL#37",
+    "themen": [
+     "endgame",
+     "hangingPiece",
+     "kingsideAttack",
+     "mate",
+     "mateIn2",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-MSVda",
+   "fenVorher": "1r4k1/p1N4p/6pb/2p1Q3/3p3P/2qP4/P4P2/1K1R3R w - - 3 29",
+   "vorzug": "Nb5",
+   "fen": "1r4k1/p6p/6pb/1Np1Q3/3p3P/2qP4/P4P2/1K1R3R b - - 4 29",
+   "amZug": "b",
+   "angebot": "Rxb5#",
+   "antwort": "geschenk",
+   "wertVorher": 99.0,
+   "wertNachher": 99.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Rxb5#",
+   "fortsetzung": [
+    "Rxb5#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "MSVda",
+    "wertung": 961,
+    "partie": "https://lichess.org/Hjzq7yRm#57",
+    "themen": [
+     "hangingPiece",
+     "mate",
+     "mateIn1",
+     "middlegame",
+     "oneMove"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-TtUka",
+   "fenVorher": "3rr1k1/ppp2ppp/8/2n5/2P2n2/2N2P2/PPK2P1P/3RRB2 b - - 7 20",
+   "vorzug": "Rxe1",
+   "fen": "3r2k1/ppp2ppp/8/2n5/2P2n2/2N2P2/PPK2P1P/3RrB2 w - - 0 21",
+   "amZug": "w",
+   "angebot": "Rxd8+",
+   "antwort": "geschenk",
+   "wertVorher": 98.0,
+   "wertNachher": 98.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Rxd8+",
+   "fortsetzung": [
+    "Rxd8+",
+    "Re8",
+    "Rxe8#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "TtUka",
+    "wertung": 838,
+    "partie": "https://lichess.org/FL2GbSZK/black#40",
+    "themen": [
+     "backRankMate",
+     "hangingPiece",
+     "mate",
+     "mateIn2",
      "middlegame",
      "short"
     ]
@@ -657,30 +1404,70 @@
    "schwierigkeit": 1
   },
   {
-   "id": "falle-l-w1HXH",
-   "fen": "6r1/1p3k1p/5p2/3pb3/7P/2PN2R1/PP4K1/5R2 b - - 0 32",
+   "id": "falle-l-ZIHqF",
+   "fenVorher": "6Q1/p3kp1p/4pp2/q2r4/8/8/P1P2PPP/3RR1K1 w - - 1 23",
+   "vorzug": "Rxd5",
+   "fen": "6Q1/p3kp1p/4pp2/q2R4/8/8/P1P2PPP/4R1K1 b - - 0 23",
    "amZug": "b",
-   "angebot": "Bxg3",
-   "antwort": "falle",
-   "verlustBeimNehmen": 6.33,
-   "bester": "Rxg3+",
+   "angebot": "Qxe1#",
+   "antwort": "geschenk",
+   "wertVorher": 99.0,
+   "wertNachher": 99.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Qxe1#",
    "fortsetzung": [
-    "Bxg3",
-    "Kf3",
-    "Bc7",
-    "Ke3",
-    "Bb6+",
-    "Kf3"
+    "Qxe1#"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "w1HXH",
-    "wertung": 997,
-    "partie": "https://lichess.org/SD7z0icA#63",
+    "puzzle": "ZIHqF",
+    "wertung": 817,
+    "partie": "https://lichess.org/gIfEIdni#45",
     "themen": [
-     "crushing",
      "endgame",
+     "hangingPiece",
+     "mate",
+     "mateIn1",
+     "oneMove"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 1
+  },
+  {
+   "id": "falle-l-cHHrI",
+   "fenVorher": "2r2k1r/pp1n1ppp/4p3/3p1b2/2nP1P2/1Q2P2P/P5P1/RN3KNR w - - 0 17",
+   "vorzug": "Nd2",
+   "fen": "2r2k1r/pp1n1ppp/4p3/3p1b2/2nP1P2/1Q2P2P/P2N2P1/R4KNR b - - 1 17",
+   "amZug": "b",
+   "angebot": "Nxd2+",
+   "antwort": "geschenk",
+   "wertVorher": 6.5,
+   "wertNachher": 6.37,
+   "verlustBeimNehmen": 0.13,
+   "bester": "Nxd2+",
+   "fortsetzung": [
+    "Nxd2+",
+    "Kf2",
+    "Nxb3",
+    "axb3",
+    "Rc2+",
+    "Ne2"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "cHHrI",
+    "wertung": 795,
+    "partie": "https://lichess.org/njJGutie#33",
+    "themen": [
+     "advantage",
      "fork",
+     "hangingPiece",
+     "middlegame",
      "short"
     ]
    },
@@ -692,28 +1479,229 @@
    "schwierigkeit": 1
   },
   {
-   "id": "falle-l-OKIHt",
-   "fen": "8/5p2/4p1p1/2BkP3/P1pP1P1P/8/P1R2K2/7r b - - 0 43",
-   "amZug": "b",
-   "angebot": "Rxh4",
+   "id": "falle-l-yGsH9",
+   "fenVorher": "R7/pp3pkp/1q4p1/4Q3/8/P6P/1rr2PP1/5RK1 b - - 8 29",
+   "vorzug": "Qf6",
+   "fen": "R7/pp3pkp/5qp1/4Q3/8/P6P/1rr2PP1/5RK1 w - - 9 30",
+   "amZug": "w",
+   "angebot": "Rxa7",
    "antwort": "falle",
-   "verlustBeimNehmen": 10.42,
-   "bester": "Rh2+",
+   "wertVorher": 5.42,
+   "wertNachher": -16.7,
+   "verlustBeimNehmen": 22.12,
+   "bester": "Rg8+",
    "fortsetzung": [
-    "Rxh4",
-    "Kg3",
-    "g5",
-    "fxg5",
-    "Rh5",
-    "a5"
+    "Rxa7",
+    "Qxe5",
+    "Ra5",
+    "Qxa5",
+    "a4",
+    "Qc5"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "OKIHt",
-    "wertung": 978,
-    "partie": "https://lichess.org/bLTEDNdx#85",
+    "puzzle": "yGsH9",
+    "wertung": 1121,
+    "partie": "https://lichess.org/Wb4ormZP/black#58",
     "themen": [
-     "crushing",
+     "advantage",
+     "deflection",
+     "endgame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-2dlhR",
+   "fenVorher": "2kr1bnr/pppbq1pp/2n5/5pP1/Q3B2P/2N5/PP1PPP2/R1B1K1NR w KQ - 0 11",
+   "vorzug": "Bxc6",
+   "fen": "2kr1bnr/pppbq1pp/2B5/5pP1/Q6P/2N5/PP1PPP2/R1B1K1NR b KQ - 0 11",
+   "amZug": "b",
+   "angebot": "bxc6",
+   "antwort": "falle",
+   "wertVorher": 4.49,
+   "wertNachher": -3.58,
+   "verlustBeimNehmen": 8.07,
+   "bester": "Bxc6",
+   "fortsetzung": [
+    "bxc6",
+    "Qxa7",
+    "Qb4",
+    "d3",
+    "Bd6",
+    "Qa8+"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "2dlhR",
+    "wertung": 1195,
+    "partie": "https://lichess.org/o2vJs8PR#21",
+    "themen": [
+     "advantage",
+     "fork",
+     "opening",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-jA1F7",
+   "fenVorher": "3q1rk1/p4ppp/5n2/4p3/Q2bP3/2r5/PPP2PPP/R1BR2K1 w - - 0 16",
+   "vorzug": "bxc3",
+   "fen": "3q1rk1/p4ppp/5n2/4p3/Q2bP3/2P5/P1P2PPP/R1BR2K1 b - - 0 16",
+   "amZug": "b",
+   "angebot": "Bxc3",
+   "antwort": "falle",
+   "wertVorher": 2.91,
+   "wertNachher": -5.14,
+   "verlustBeimNehmen": 8.05,
+   "bester": "Bxf2+",
+   "fortsetzung": [
+    "Bxc3",
+    "Rxd8",
+    "Rxd8",
+    "Bb2",
+    "Bxb2",
+    "Qa5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "jA1F7",
+    "wertung": 1050,
+    "partie": "https://lichess.org/HKFbv2dd#31",
+    "themen": [
+     "advantage",
+     "discoveredAttack",
+     "kingsideAttack",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-d45Lc",
+   "fenVorher": "r1bq1rk1/pp2ppbp/5np1/8/3Bp3/2N2P2/PPP3PP/1K1RQB1R b - - 1 12",
+   "vorzug": "exf3",
+   "fen": "r1bq1rk1/pp2ppbp/5np1/8/3B4/2N2p2/PPP3PP/1K1RQB1R w - - 0 13",
+   "amZug": "w",
+   "angebot": "gxf3",
+   "antwort": "falle",
+   "wertVorher": 5.07,
+   "wertNachher": -1.76,
+   "verlustBeimNehmen": 6.83,
+   "bester": "Bxf6",
+   "fortsetzung": [
+    "gxf3",
+    "Qc7",
+    "Qg3",
+    "Qxg3",
+    "hxg3",
+    "b6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "d45Lc",
+    "wertung": 1143,
+    "partie": "https://lichess.org/FS4V8epj/black#24",
+    "themen": [
+     "advantage",
+     "discoveredAttack",
+     "master",
+     "opening",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-5L1eU",
+   "fenVorher": "6k1/5pp1/R3p2p/p2pP3/r2P4/N6P/1r3PP1/R5K1 w - - 0 23",
+   "vorzug": "Nc2",
+   "fen": "6k1/5pp1/R3p2p/p2pP3/r2P4/7P/1rN2PP1/R5K1 b - - 1 23",
+   "amZug": "b",
+   "angebot": "Rxc2",
+   "antwort": "falle",
+   "wertVorher": 2.05,
+   "wertNachher": -5.83,
+   "verlustBeimNehmen": 7.88,
+   "bester": "Rxa1+",
+   "fortsetzung": [
+    "Rxc2",
+    "Ra8+",
+    "Kh7",
+    "Rxa4",
+    "Rc1+",
+    "Kh2"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "5L1eU",
+    "wertung": 1163,
+    "partie": "https://lichess.org/gzVde3AK#45",
+    "themen": [
+     "advantage",
+     "endgame",
+     "fork",
+     "long"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-x8EDy",
+   "fenVorher": "6k1/1p4pp/4bb2/2B5/1PP3P1/7P/2K5/r4B1R w - - 3 25",
+   "vorzug": "Bg2",
+   "fen": "6k1/1p4pp/4bb2/2B5/1PP3P1/7P/2K3B1/r6R b - - 4 25",
+   "amZug": "b",
+   "angebot": "Bxc4",
+   "antwort": "falle",
+   "wertVorher": 5.37,
+   "wertNachher": -0.95,
+   "verlustBeimNehmen": 6.32,
+   "bester": "Ra2+",
+   "fortsetzung": [
+    "Bxc4",
+    "Rxa1",
+    "Bxa1",
+    "Bxb7",
+    "Kf7",
+    "Be4"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "x8EDy",
+    "wertung": 1048,
+    "partie": "https://lichess.org/52GDbDl8#49",
+    "themen": [
+     "advantage",
      "endgame",
      "short",
      "skewer"
@@ -724,630 +1712,37 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 1
+   "schwierigkeit": 2
   },
   {
-   "id": "falle-l-gohH7",
-   "fen": "1r3n2/4r1kp/3Q1n2/5P2/3P1N2/1PP1P2P/5K2/8 b - - 4 42",
+   "id": "falle-l-kGMR5",
+   "fenVorher": "5r1k/1p2B1p1/p2p4/q2Bpp2/3nPP1P/2r5/PP1Q1P2/3R2K1 w - - 0 24",
+   "vorzug": "Qxc3",
+   "fen": "5r1k/1p2B1p1/p2p4/q2Bpp2/3nPP1P/2Q5/PP3P2/3R2K1 b - - 0 24",
    "amZug": "b",
-   "angebot": "Rxb3",
+   "angebot": "exf4",
    "antwort": "falle",
-   "verlustBeimNehmen": 18.19,
-   "bester": "Ne4+",
+   "wertVorher": 4.11,
+   "wertNachher": -16.5,
+   "verlustBeimNehmen": 20.61,
+   "bester": "Ne2+",
    "fortsetzung": [
-    "Rxb3",
-    "Qxe7+",
-    "Kg8",
-    "Qxf6",
-    "Rb2+",
-    "Kg3"
+    "exf4",
+    "Qxa5",
+    "b6",
+    "Qa4",
+    "Ne2+",
+    "Kf1"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "gohH7",
-    "wertung": 962,
-    "partie": "https://lichess.org/sNEjOLHF#83",
-    "themen": [
-     "crushing",
-     "endgame",
-     "fork",
-     "master",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-8BfPX",
-   "fen": "1r4k1/1bp2ppp/p4q2/1Nppr3/8/2P1P2Q/PPB3PP/4R1K1 w - - 0 30",
-   "amZug": "w",
-   "angebot": "Nxc7",
-   "antwort": "falle",
-   "verlustBeimNehmen": 11.51,
-   "bester": "Qxh7+",
-   "fortsetzung": [
-    "Nxc7",
-    "g6",
-    "Qg3",
-    "Qe7",
-    "h4",
-    "Rf8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "8BfPX",
-    "wertung": 981,
-    "partie": "https://lichess.org/ZzHXsZHn/black#58",
-    "themen": [
-     "advantage",
-     "kingsideAttack",
-     "long",
-     "middlegame",
-     "skewer"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-fLwSC",
-   "fen": "r2q2rk/1pp3pp/p1n5/3Bp1N1/6b1/2PP2P1/P3PP1P/1RR3K1 w - - 0 17",
-   "amZug": "w",
-   "angebot": "Bxg8",
-   "antwort": "falle",
-   "verlustBeimNehmen": 105.99,
-   "bester": "Nf7#",
-   "fortsetzung": [
-    "Bxg8",
-    "Kxg8",
-    "h4",
-    "Bxe2",
-    "Re1",
-    "Bxd3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "fLwSC",
-    "wertung": 801,
-    "partie": "https://lichess.org/VcejuJ2e/black#32",
-    "themen": [
-     "mate",
-     "mateIn1",
-     "middlegame",
-     "oneMove",
-     "smotheredMate"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-8zTLX",
-   "fen": "6k1/2q2p1p/p3p1p1/1P3n2/4QP2/1P6/P2R3P/7K b - - 0 29",
-   "amZug": "b",
-   "angebot": "axb5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 6.09,
-   "bester": "Qc1+",
-   "fortsetzung": [
-    "axb5",
-    "Kg2",
-    "Qa5",
-    "Rc2",
-    "Qd8",
-    "h3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "8zTLX",
-    "wertung": 753,
-    "partie": "https://lichess.org/Ja2n7fFf#57",
-    "themen": [
-     "crushing",
-     "endgame",
-     "fork",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-9czyW",
-   "fen": "r7/1p4k1/2pN1p2/2P3b1/3rP1Pp/1B3R2/1K5P/8 w - - 0 38",
-   "amZug": "w",
-   "angebot": "Nxb7",
-   "antwort": "falle",
-   "verlustBeimNehmen": 9.48,
-   "bester": "Nf5+",
-   "fortsetzung": [
-    "Nxb7",
-    "Rxe4",
-    "Nd6",
-    "Re2+",
-    "Bc2",
-    "Rxh2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "9czyW",
-    "wertung": 961,
-    "partie": "https://lichess.org/0q2xLG2n/black#74",
-    "themen": [
-     "advantage",
-     "endgame",
-     "fork",
-     "master",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-bbYXU",
-   "fen": "3r3k/pq4bp/8/5bQ1/5K2/6P1/7P/2B5 w - - 0 29",
-   "amZug": "w",
-   "angebot": "Qxd8+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxd8+",
-   "fortsetzung": [
-    "Qxd8+",
-    "Bf8",
-    "Qxf8#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "bbYXU",
-    "wertung": 724,
-    "partie": "https://lichess.org/5uOYi7Ka/black#56",
-    "themen": [
-     "endgame",
-     "hangingPiece",
-     "mate",
-     "mateIn2",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-26UVi",
-   "fen": "2r1kbnr/pp3ppp/8/1N1Q1b2/5B2/2Pn4/4KPPP/R4BNR b k - 2 13",
-   "amZug": "b",
-   "angebot": "Nxf4+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Nxf4+",
-   "fortsetzung": [
-    "Nxf4+",
-    "Kd2",
-    "Nxd5",
-    "Nd4",
-    "Bd7",
-    "Ngf3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "26UVi",
-    "wertung": 971,
-    "partie": "https://lichess.org/ZNJ1yP9X#25",
+    "puzzle": "kGMR5",
+    "wertung": 1031,
+    "partie": "https://lichess.org/YbkoscnP#47",
     "themen": [
      "advantage",
      "fork",
-     "hangingPiece",
      "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-99qRh",
-   "fen": "4r1k1/7p/4p1p1/5pq1/2pP3P/2Pn1BP1/2Q2P1K/4R3 b - - 0 33",
-   "amZug": "b",
-   "angebot": "Nxe1",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Nxe1",
-   "fortsetzung": [
-    "Nxe1",
-    "Qd1",
-    "Qd2",
-    "Qe2",
-    "Qxe2",
-    "Bxe2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "99qRh",
-    "wertung": 938,
-    "partie": "https://lichess.org/6OhOYVfP#65",
-    "themen": [
-     "crushing",
-     "endgame",
-     "fork",
-     "hangingPiece",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-wNJZq",
-   "fen": "5r1k/6pp/pb1Q2b1/1p2p1q1/1N3n2/2P2P2/PP4PP/R2R3K w - - 8 33",
-   "amZug": "w",
-   "angebot": "Qxf8#",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxf8#",
-   "fortsetzung": [
-    "Qxf8#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "wNJZq",
-    "wertung": 638,
-    "partie": "https://lichess.org/CYgnzGIX/black#64",
-    "themen": [
-     "hangingPiece",
-     "kingsideAttack",
-     "mate",
-     "mateIn1",
-     "middlegame",
-     "oneMove"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-Yd5s5",
-   "fen": "rnb1k2r/pp1pbppp/8/3p2B1/4n3/5N2/PP3PPP/2R2RK1 w kq - 0 12",
-   "amZug": "w",
-   "angebot": "Rxc8+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxc8+",
-   "fortsetzung": [
-    "Rxc8+",
-    "Bd8",
-    "Rxd8#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "Yd5s5",
-    "wertung": 906,
-    "partie": "https://lichess.org/8SNOyaav/black#22",
-    "themen": [
-     "hangingPiece",
-     "mate",
-     "mateIn2",
-     "middlegame",
-     "operaMate",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-frpgD",
-   "fen": "8/8/8/4k3/P1pb4/3B4/8/3K4 b - - 1 56",
-   "amZug": "b",
-   "angebot": "cxd3",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "cxd3",
-   "fortsetzung": [
-    "cxd3",
-    "Ke1",
-    "Bc3+",
-    "Kf2",
-    "Kf4",
-    "a5"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "frpgD",
-    "wertung": 973,
-    "partie": "https://lichess.org/xmBhiTo3#111",
-    "themen": [
-     "bishopEndgame",
-     "crushing",
-     "defensiveMove",
-     "endgame",
-     "hangingPiece",
-     "master",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-HvSkc",
-   "fen": "5r1k/3q3p/p3p1pQ/1p2Pp2/3p4/1P1P2R1/PPr3PP/5RK1 w - - 1 25",
-   "amZug": "w",
-   "angebot": "Qxf8#",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxf8#",
-   "fortsetzung": [
-    "Qxf8#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "HvSkc",
-    "wertung": 783,
-    "partie": "https://lichess.org/KijqWMZI/black#48",
-    "themen": [
-     "endgame",
-     "hangingPiece",
-     "kingsideAttack",
-     "master",
-     "mate",
-     "mateIn1",
-     "oneMove"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-RI8Qz",
-   "fen": "2r3k1/pp3ppp/2R1p3/q2pP3/N2P4/1P1bP3/PQ4PP/4R1K1 b - - 0 22",
-   "amZug": "b",
-   "angebot": "Qxe1#",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxe1#",
-   "fortsetzung": [
-    "Qxe1#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "RI8Qz",
-    "wertung": 949,
-    "partie": "https://lichess.org/OLQQ5G4L#43",
-    "themen": [
-     "hangingPiece",
-     "kingsideAttack",
-     "mate",
-     "mateIn1",
-     "middlegame",
-     "oneMove"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-iXihR",
-   "fen": "r3kb1r/1p1b1ppp/1p2p3/1B1pn3/8/2N2N2/PPP2PPP/R4RK1 w kq - 0 13",
-   "amZug": "w",
-   "angebot": "Nxe5",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Nxe5",
-   "fortsetzung": [
-    "Nxe5",
-    "Bxb5",
-    "Nxb5",
-    "Ra5",
-    "a4",
-    "g5"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "iXihR",
-    "wertung": 965,
-    "partie": "https://lichess.org/yJMbL23e/black#24",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-WeLMb",
-   "fen": "1r5k/pb3pr1/4p2p/q2p4/P7/1B4Q1/2P2PPP/3R2K1 w - - 0 25",
-   "amZug": "w",
-   "angebot": "Qxb8+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxb8+",
-   "fortsetzung": [
-    "Qxb8+",
-    "Kh7",
-    "Qxb7",
-    "Qc3",
-    "Qb5",
-    "Rg4"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "WeLMb",
-    "wertung": 927,
-    "partie": "https://lichess.org/CzZvUcda/black#48",
-    "themen": [
-     "crushing",
-     "fork",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-2yfZt",
-   "fen": "8/p6p/2P5/2r5/1K2p1P1/4k3/8/8 w - - 0 64",
-   "amZug": "w",
-   "angebot": "Kxc5",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Kxc5",
-   "fortsetzung": [
-    "Kxc5",
-    "Kf3",
-    "c7",
-    "a5",
-    "c8=Q",
-    "e3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "2yfZt",
-    "wertung": 995,
-    "partie": "https://lichess.org/Ff7cRl4q/black#126",
-    "themen": [
-     "advancedPawn",
-     "crushing",
-     "endgame",
-     "hangingPiece",
-     "long",
-     "master",
-     "promotion"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-D3k3R",
-   "fen": "8/r2r1kp1/4b2p/5p2/1BP5/bP4P1/2B2P1P/R4RK1 b - - 6 27",
-   "amZug": "b",
-   "angebot": "Bxb4",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Bxb4",
-   "fortsetzung": [
-    "Bxb4",
-    "Rfc1",
-    "Rxa1",
-    "Rxa1",
-    "Rd2",
-    "Bd1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "D3k3R",
-    "wertung": 956,
-    "partie": "https://lichess.org/74lOAo90#53",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 1
-  },
-  {
-   "id": "falle-l-5DPF5",
-   "fen": "r1b1k2r/pp3ppp/2n5/3pp3/4P2q/PNP3P1/2P4P/R1BQKB1R b KQkq - 0 11",
-   "amZug": "b",
-   "angebot": "dxe4",
-   "antwort": "falle",
-   "verlustBeimNehmen": 16.07,
-   "bester": "Qxe4+",
-   "fortsetzung": [
-    "dxe4",
-    "gxh4",
-    "h5",
-    "Rg1",
-    "Bg4",
-    "Rxg4"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "5DPF5",
-    "wertung": 1016,
-    "partie": "https://lichess.org/DegFuOSJ#21",
-    "themen": [
-     "advantage",
-     "fork",
-     "opening",
      "short"
     ]
    },
@@ -1359,31 +1754,152 @@
    "schwierigkeit": 2
   },
   {
-   "id": "falle-l-ufkfL",
-   "fen": "r1b2rk1/2pp1ppp/p5n1/1N6/3bP3/1P1N1P2/PBPP1P1P/2KR3R b - - 0 14",
-   "amZug": "b",
-   "angebot": "axb5",
+   "id": "falle-l-hk3Er",
+   "fenVorher": "r7/4Pkb1/5rp1/5R2/4p3/2P5/1PK3Q1/q5R1 b - - 4 41",
+   "vorzug": "Qxg1",
+   "fen": "r7/4Pkb1/5rp1/5R2/4p3/2P5/1PK3Q1/6q1 w - - 0 42",
+   "amZug": "w",
+   "angebot": "Qxg1",
    "antwort": "falle",
-   "verlustBeimNehmen": 6.77,
-   "bester": "Bxb2+",
+   "wertVorher": 2.99,
+   "wertNachher": -6.87,
+   "verlustBeimNehmen": 9.86,
+   "bester": "Rxf6+",
    "fortsetzung": [
-    "axb5",
-    "Bxd4",
-    "d6",
-    "h4",
-    "c5",
-    "Bb2"
+    "Qxg1",
+    "Rxf5",
+    "Qe3",
+    "Re5",
+    "c4",
+    "Bf6"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "ufkfL",
-    "wertung": 1177,
-    "partie": "https://lichess.org/R3Od4LRP#27",
+    "puzzle": "hk3Er",
+    "wertung": 1169,
+    "partie": "https://lichess.org/8MrU9VsG/black#82",
+    "themen": [
+     "advantage",
+     "endgame",
+     "intermezzo",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-iKXkR",
+   "fenVorher": "r1b1r1k1/ppq2pp1/3b1n1p/8/2BB4/2NP4/PPPQ1PPP/2KR3R w - - 1 13",
+   "vorzug": "Bxf6",
+   "fen": "r1b1r1k1/ppq2pp1/3b1B1p/8/2B5/2NP4/PPPQ1PPP/2KR3R b - - 0 13",
+   "amZug": "b",
+   "angebot": "gxf6",
+   "antwort": "falle",
+   "wertVorher": 2.77,
+   "wertNachher": -6.16,
+   "verlustBeimNehmen": 8.93,
+   "bester": "Bf4",
+   "fortsetzung": [
+    "gxf6",
+    "Nd5",
+    "Qd8",
+    "Qxh6",
+    "Re6",
+    "Rhe1"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "iKXkR",
+    "wertung": 1170,
+    "partie": "https://lichess.org/2itZUR0A#25",
+    "themen": [
+     "advantage",
+     "middlegame",
+     "pin",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-7ejlL",
+   "fenVorher": "6k1/q2b1pb1/3N2p1/2pP1pN1/1p5P/1P4Q1/2P2PP1/r1R3K1 w - - 1 33",
+   "vorzug": "Rxa1",
+   "fen": "6k1/q2b1pb1/3N2p1/2pP1pN1/1p5P/1P4Q1/2P2PP1/R5K1 b - - 0 33",
+   "amZug": "b",
+   "angebot": "Bxa1",
+   "antwort": "falle",
+   "wertVorher": 4.59,
+   "wertNachher": -5.12,
+   "verlustBeimNehmen": 9.71,
+   "bester": "Qxa1+",
+   "fortsetzung": [
+    "Bxa1",
+    "Ngxf7",
+    "Bg7",
+    "Qxg6",
+    "Qa1+",
+    "Kh2"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "7ejlL",
+    "wertung": 1299,
+    "partie": "https://lichess.org/YrN9MzQj#65",
+    "themen": [
+     "advantage",
+     "interference",
+     "long",
+     "middlegame",
+     "pin"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-PvwWu",
+   "fenVorher": "r5k1/pp1qn2p/2p1Rr1p/3p4/3b4/1BN4P/PP3PP1/R2Q2K1 w - - 0 20",
+   "vorzug": "Rxe7",
+   "fen": "r5k1/pp1qR2p/2p2r1p/3p4/3b4/1BN4P/PP3PP1/R2Q2K1 b - - 0 20",
+   "amZug": "b",
+   "angebot": "Qxe7",
+   "antwort": "falle",
+   "wertVorher": 5.54,
+   "wertNachher": -3.12,
+   "verlustBeimNehmen": 8.66,
+   "bester": "Bxf2+",
+   "fortsetzung": [
+    "Qxe7",
+    "Qxd4",
+    "Qg7",
+    "Ne2",
+    "Rf7",
+    "Rd1"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "PvwWu",
+    "wertung": 1199,
+    "partie": "https://lichess.org/z1lmhx5L#39",
     "themen": [
      "advantage",
      "intermezzo",
      "middlegame",
-     "queensideAttack",
      "short"
     ]
    },
@@ -1395,33 +1911,35 @@
    "schwierigkeit": 2
   },
   {
-   "id": "falle-l-Jlfza",
-   "fen": "4r1k1/pp1Q2pp/8/3pr3/8/1P4PK/Pq5P/R4R2 w - - 2 28",
+   "id": "falle-l-SeQMt",
+   "fenVorher": "4N1k1/pp2rppp/2n2b2/8/8/2P1B3/PPb2PPP/3RR1K1 b - - 0 21",
+   "vorzug": "Bxd1",
+   "fen": "4N1k1/pp2rppp/2n2b2/8/8/2P1B3/PP3PPP/3bR1K1 w - - 0 22",
    "amZug": "w",
-   "angebot": "Qxb7",
+   "angebot": "Rxd1",
    "antwort": "falle",
-   "verlustBeimNehmen": 193.0,
-   "bester": "Qf7+",
+   "wertVorher": 3.63,
+   "wertNachher": -4.71,
+   "verlustBeimNehmen": 8.34,
+   "bester": "Nxf6+",
    "fortsetzung": [
-    "Qxb7",
-    "Rh5+",
-    "Kg4",
-    "Re4+",
-    "Kxh5",
-    "Qe5+"
+    "Rxd1",
+    "Rxe8",
+    "Kf1",
+    "b6",
+    "Rd7",
+    "Be5"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "Jlfza",
-    "wertung": 1136,
-    "partie": "https://lichess.org/V2DJ2erG/black#54",
+    "puzzle": "SeQMt",
+    "wertung": 1172,
+    "partie": "https://lichess.org/hmNk1oMS/black#42",
     "themen": [
-     "backRankMate",
-     "endgame",
-     "long",
-     "mate",
-     "mateIn3",
-     "sacrifice"
+     "advantage",
+     "intermezzo",
+     "middlegame",
+     "short"
     ]
    },
    "messung": {
@@ -1432,30 +1950,35 @@
    "schwierigkeit": 2
   },
   {
-   "id": "falle-l-C5lIj",
-   "fen": "2k5/8/2p2Rp1/2n4p/2pP4/2P4P/r5PK/8 w - - 0 32",
-   "amZug": "w",
-   "angebot": "dxc5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 2.92,
-   "bester": "Rxc6+",
+   "id": "falle-l-SSb8X",
+   "fenVorher": "3r2k1/5pp1/p1q1p3/4Q1P1/2p2P2/2N1P3/p2r4/K2R3R w - - 1 32",
+   "vorzug": "Rxd2",
+   "fen": "3r2k1/5pp1/p1q1p3/4Q1P1/2p2P2/2N1P3/p2R4/K6R b - - 0 32",
+   "amZug": "b",
+   "angebot": "Qxh1+",
+   "antwort": "geschenk",
+   "wertVorher": 8.54,
+   "wertNachher": 8.25,
+   "verlustBeimNehmen": 0.29,
+   "bester": "Qxh1+",
    "fortsetzung": [
-    "dxc5",
-    "Rc2",
-    "Rxc6+",
-    "Kb7",
-    "Rxg6",
-    "Rxc3"
+    "Qxh1+",
+    "Kxa2",
+    "Rxd2+",
+    "Ka3",
+    "Qb7",
+    "Nb5"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "C5lIj",
-    "wertung": 1196,
-    "partie": "https://lichess.org/RuNxRtoF/black#62",
+    "puzzle": "SSb8X",
+    "wertung": 1032,
+    "partie": "https://lichess.org/By51Vyrb#63",
     "themen": [
      "crushing",
      "endgame",
-     "fork",
+     "hangingPiece",
+     "intermezzo",
      "short"
     ]
    },
@@ -1467,29 +1990,33 @@
    "schwierigkeit": 2
   },
   {
-   "id": "falle-l-n1SeM",
-   "fen": "rnbqk2r/p1p2ppp/8/3Pp3/1bp1n3/2N5/PP3PPP/R1BQKBNR w KQkq - 2 8",
-   "amZug": "w",
-   "angebot": "Bxc4",
-   "antwort": "falle",
-   "verlustBeimNehmen": 9.33,
-   "bester": "Qa4+",
+   "id": "falle-l-WQ6XR",
+   "fenVorher": "rnkq1b2/1pp1n3/p6r/4P1Qp/2B2p1P/2N2P2/PPP5/R1B1K2R w KQ - 1 15",
+   "vorzug": "Qxh6",
+   "fen": "rnkq1b2/1pp1n3/p6Q/4P2p/2B2p1P/2N2P2/PPP5/R1B1K2R b KQ - 0 15",
+   "amZug": "b",
+   "angebot": "Bxh6",
+   "antwort": "geschenk",
+   "wertVorher": 4.91,
+   "wertNachher": 4.63,
+   "verlustBeimNehmen": 0.28,
+   "bester": "Bxh6",
    "fortsetzung": [
-    "Bxc4",
-    "Nxc3",
-    "bxc3",
-    "Bxc3+",
+    "Bxh6",
     "Bd2",
-    "Bxa1"
+    "Nbc6",
+    "O-O-O",
+    "Qd4",
+    "Bb3"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "n1SeM",
-    "wertung": 1237,
-    "partie": "https://lichess.org/8Wdmetws/black#14",
+    "puzzle": "WQ6XR",
+    "wertung": 1167,
+    "partie": "https://lichess.org/1LViMos4#29",
     "themen": [
      "advantage",
-     "fork",
+     "hangingPiece",
      "opening",
      "short"
     ]
@@ -1502,31 +2029,34 @@
    "schwierigkeit": 2
   },
   {
-   "id": "falle-l-ANbmi",
-   "fen": "1r6/R6p/P6k/3n1K2/4p1P1/7P/8/8 w - - 0 47",
+   "id": "falle-l-9H2cm",
+   "fenVorher": "r3kb1r/pppq1ppp/2n2n2/8/4p1b1/1BPP1N2/PP2QPPP/RNB1K2R b KQkq - 0 9",
+   "vorzug": "Ne5",
+   "fen": "r3kb1r/pppq1ppp/5n2/4n3/4p1b1/1BPP1N2/PP2QPPP/RNB1K2R w KQkq - 1 10",
    "amZug": "w",
-   "angebot": "Kxe4",
-   "antwort": "falle",
-   "verlustBeimNehmen": 98.0,
-   "bester": "g5+",
+   "angebot": "Nxe5",
+   "antwort": "geschenk",
+   "wertVorher": 5.36,
+   "wertNachher": 5.45,
+   "verlustBeimNehmen": -0.09,
+   "bester": "Nxe5",
    "fortsetzung": [
-    "Kxe4",
-    "Nb4",
-    "h4",
-    "Rb6",
-    "Rb7",
-    "Rxa6"
+    "Nxe5",
+    "Bxe2",
+    "Nxd7",
+    "exd3",
+    "Nxf6+",
+    "gxf6"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "ANbmi",
-    "wertung": 1218,
-    "partie": "https://lichess.org/WDcP8Rnt/black#92",
+    "puzzle": "9H2cm",
+    "wertung": 1193,
+    "partie": "https://lichess.org/vLUMGRVp/black#18",
     "themen": [
-     "deflection",
-     "endgame",
-     "mate",
-     "mateIn2",
+     "crushing",
+     "hangingPiece",
+     "opening",
      "short"
     ]
    },
@@ -1538,26 +2068,647 @@
    "schwierigkeit": 2
   },
   {
-   "id": "falle-l-zSkuV",
-   "fen": "3rr1k1/pp5p/6p1/5p2/4n3/2PBQN2/P1P2qPP/R3R2K b - - 1 20",
+   "id": "falle-l-PcQRy",
+   "fenVorher": "8/8/4p3/1n5p/1P2KP2/5Nk1/8/8 w - - 5 50",
+   "vorzug": "Ke5",
+   "fen": "8/8/4p3/1n2K2p/1P3P2/5Nk1/8/8 b - - 6 50",
    "amZug": "b",
-   "angebot": "Nxc3",
-   "antwort": "falle",
-   "verlustBeimNehmen": 17.41,
-   "bester": "Ng3+",
+   "angebot": "Kxf3",
+   "antwort": "geschenk",
+   "wertVorher": 6.82,
+   "wertNachher": 6.89,
+   "verlustBeimNehmen": -0.07,
+   "bester": "Kxf3",
    "fortsetzung": [
-    "Nxc3",
-    "Qxf2",
-    "Ne4",
-    "Bxe4",
-    "fxe4",
-    "Ng5"
+    "Kxf3",
+    "Kxe6",
+    "Kxf4",
+    "Kd5",
+    "Na3",
+    "Kd4"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "zSkuV",
-    "wertung": 1142,
-    "partie": "https://lichess.org/cMJs3JEV#39",
+    "puzzle": "PcQRy",
+    "wertung": 1221,
+    "partie": "https://lichess.org/obdVfGiG#99",
+    "themen": [
+     "crushing",
+     "endgame",
+     "hangingPiece",
+     "knightEndgame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-TT6ay",
+   "fenVorher": "4rr2/ppp2knQ/2n5/8/3P4/2P2R2/PP2q1PP/R6K b - - 4 33",
+   "vorzug": "Ke7",
+   "fen": "4rr2/ppp1k1nQ/2n5/8/3P4/2P2R2/PP2q1PP/R6K w - - 5 34",
+   "amZug": "w",
+   "angebot": "Qxg7+",
+   "antwort": "geschenk",
+   "wertVorher": 6.64,
+   "wertNachher": 6.82,
+   "verlustBeimNehmen": -0.18,
+   "bester": "Qxg7+",
+   "fortsetzung": [
+    "Qxg7+",
+    "Ke6",
+    "Rxf8",
+    "Rxf8",
+    "Qxf8",
+    "Ne7"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "TT6ay",
+    "wertung": 1281,
+    "partie": "https://lichess.org/vvTOLYHo/black#66",
+    "themen": [
+     "advantage",
+     "deflection",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-9TFQ7",
+   "fenVorher": "1Rn4r/2p2p2/2Pp1k2/4pNp1/5qP1/5N2/2Q3K1/8 w - - 6 39",
+   "vorzug": "Nh6",
+   "fen": "1Rn4r/2p2p2/2Pp1k1N/4p1p1/5qP1/5N2/2Q3K1/8 b - - 7 39",
+   "amZug": "b",
+   "angebot": "Rxh6",
+   "antwort": "geschenk",
+   "wertVorher": 6.73,
+   "wertNachher": 6.62,
+   "verlustBeimNehmen": 0.11,
+   "bester": "Rxh6",
+   "fortsetzung": [
+    "Rxh6",
+    "Qf5+",
+    "Qxf5",
+    "gxf5",
+    "Ne7",
+    "Rf8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "9TFQ7",
+    "wertung": 1117,
+    "partie": "https://lichess.org/ynQD2V1T#77",
+    "themen": [
+     "crushing",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-wEyDs",
+   "fenVorher": "6k1/4R1Bp/1p4p1/p1p5/P1Bp4/1P6/2b2KPq/4r3 b - - 3 30",
+   "vorzug": "Re6",
+   "fen": "6k1/4R1Bp/1p2r1p1/p1p5/P1Bp4/1P6/2b2KPq/8 w - - 4 31",
+   "amZug": "w",
+   "angebot": "Bxe6#",
+   "antwort": "geschenk",
+   "wertVorher": 99.0,
+   "wertNachher": 99.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Bxe6#",
+   "fortsetzung": [
+    "Bxe6#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "wEyDs",
+    "wertung": 1063,
+    "partie": "https://lichess.org/XsCEBlOP/black#60",
+    "themen": [
+     "endgame",
+     "hangingPiece",
+     "mate",
+     "mateIn1",
+     "oneMove"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-9pkL4",
+   "fenVorher": "2r3kr/8/3P1pp1/pp1QpNp1/1P2P3/P1q2PP1/5KP1/7R b - - 1 34",
+   "vorzug": "Kf8",
+   "fen": "2r2k1r/8/3P1pp1/pp1QpNp1/1P2P3/P1q2PP1/5KP1/7R w - - 2 35",
+   "amZug": "w",
+   "angebot": "Rxh8#",
+   "antwort": "geschenk",
+   "wertVorher": 99.0,
+   "wertNachher": 99.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Rxh8#",
+   "fortsetzung": [
+    "Rxh8#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "9pkL4",
+    "wertung": 1019,
+    "partie": "https://lichess.org/UUrrd6fa/black#68",
+    "themen": [
+     "endgame",
+     "hangingPiece",
+     "mate",
+     "mateIn1",
+     "oneMove"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-fnOVM",
+   "fenVorher": "3r2nr/pkp1qp1p/B1np1bpP/3Q4/4P3/5N2/P2B1PP1/4K2R b K - 1 16",
+   "vorzug": "Kxa6",
+   "fen": "3r2nr/p1p1qp1p/k1np1bpP/3Q4/4P3/5N2/P2B1PP1/4K2R w K - 0 17",
+   "amZug": "w",
+   "angebot": "Qxc6#",
+   "antwort": "geschenk",
+   "wertVorher": 99.0,
+   "wertNachher": 99.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Qxc6#",
+   "fortsetzung": [
+    "Qxc6#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "fnOVM",
+    "wertung": 1158,
+    "partie": "https://lichess.org/Y6e17IpV/black#32",
+    "themen": [
+     "hangingPiece",
+     "mate",
+     "mateIn1",
+     "middlegame",
+     "oneMove"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-LVxlE",
+   "fenVorher": "Rr4k1/5pp1/R3p2p/3nq3/3p4/2rB2PP/4QP1K/8 b - - 4 34",
+   "vorzug": "Qxe2",
+   "fen": "Rr4k1/5pp1/R3p2p/3n4/3p4/2rB2PP/4qP1K/8 w - - 0 35",
+   "amZug": "w",
+   "angebot": "Rxb8+",
+   "antwort": "geschenk",
+   "wertVorher": 98.0,
+   "wertNachher": 98.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Rxb8+",
+   "fortsetzung": [
+    "Rxb8+",
+    "Rc8",
+    "Rxc8#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "LVxlE",
+    "wertung": 1116,
+    "partie": "https://lichess.org/BYUWjupd/black#68",
+    "themen": [
+     "hangingPiece",
+     "mate",
+     "mateIn2",
+     "middlegame",
+     "pillsburysMate",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-kkmTL",
+   "fenVorher": "1rbr2k1/6b1/p2N1p2/1pP1n1pp/3N4/4P1P1/PP4BP/2RR2K1 w - b6 0 25",
+   "vorzug": "cxb6",
+   "fen": "1rbr2k1/6b1/pP1N1p2/4n1pp/3N4/4P1P1/PP4BP/2RR2K1 b - - 0 25",
+   "amZug": "b",
+   "angebot": "Rxd6",
+   "antwort": "geschenk",
+   "wertVorher": 2.81,
+   "wertNachher": 2.87,
+   "verlustBeimNehmen": -0.06,
+   "bester": "Rxd6",
+   "fortsetzung": [
+    "Rxd6",
+    "Rxc8+",
+    "Rxc8",
+    "b7",
+    "Rb8",
+    "Rc1"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "kkmTL",
+    "wertung": 1281,
+    "partie": "https://lichess.org/JClrObR5#49",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-tFlFG",
+   "fenVorher": "2r5/K7/3b2k1/2PPp1p1/P7/8/8/2R5 w - - 3 39",
+   "vorzug": "cxd6",
+   "fen": "2r5/K7/3P2k1/3Pp1p1/P7/8/8/2R5 b - - 0 39",
+   "amZug": "b",
+   "angebot": "Rxc1",
+   "antwort": "geschenk",
+   "wertVorher": 7.02,
+   "wertNachher": 7.67,
+   "verlustBeimNehmen": -0.65,
+   "bester": "Rxc1",
+   "fortsetzung": [
+    "Rxc1",
+    "a5",
+    "Rc5",
+    "Kb7",
+    "Rxd5",
+    "Kc7"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "tFlFG",
+    "wertung": 1170,
+    "partie": "https://lichess.org/Lf0jfQIj#77",
+    "themen": [
+     "crushing",
+     "endgame",
+     "hangingPiece",
+     "long",
+     "rookEndgame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 2
+  },
+  {
+   "id": "falle-l-MSnhS",
+   "fenVorher": "q2r2k1/5pp1/4p2p/P3N3/1p1P1n2/3Q3P/1P3PP1/2R3K1 w - - 0 27",
+   "vorzug": "Qf3",
+   "fen": "q2r2k1/5pp1/4p2p/P3N3/1p1P1n2/5Q1P/1P3PP1/2R3K1 b - - 1 27",
+   "amZug": "b",
+   "angebot": "Rxd4",
+   "antwort": "falle",
+   "wertVorher": 5.88,
+   "wertNachher": -9.63,
+   "verlustBeimNehmen": 15.51,
+   "bester": "Qxf3",
+   "fortsetzung": [
+    "Rxd4",
+    "Qxa8+",
+    "Kh7",
+    "Qf3",
+    "Ng6",
+    "Qe3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "MSnhS",
+    "wertung": 1308,
+    "partie": "https://lichess.org/qChTFolZ#53",
+    "themen": [
+     "advantage",
+     "endgame",
+     "fork",
+     "long"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-2BKnc",
+   "fenVorher": "r2q1r1k/ppp3pp/2n5/5p2/4p1b1/1BPPNN2/PP1BQ1PP/R5K1 w - - 0 16",
+   "vorzug": "Nxg4",
+   "fen": "r2q1r1k/ppp3pp/2n5/5p2/4p1N1/1BPP1N2/PP1BQ1PP/R5K1 b - - 0 16",
+   "amZug": "b",
+   "angebot": "fxg4",
+   "antwort": "falle",
+   "wertVorher": 3.21,
+   "wertNachher": -4.88,
+   "verlustBeimNehmen": 8.09,
+   "bester": "exf3",
+   "fortsetzung": [
+    "fxg4",
+    "Ng5",
+    "Qf6",
+    "Nxe4",
+    "Rae8",
+    "Rf1"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "2BKnc",
+    "wertung": 1399,
+    "partie": "https://lichess.org/BVSmVk2Y#31",
+    "themen": [
+     "advantage",
+     "intermezzo",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-41XLZ",
+   "fenVorher": "3r3k/pb4p1/3b1r1p/8/2N1pp2/1B4PP/PPP2P2/3R1RK1 w - - 0 24",
+   "vorzug": "gxf4",
+   "fen": "3r3k/pb4p1/3b1r1p/8/2N1pP2/1B5P/PPP2P2/3R1RK1 b - - 0 24",
+   "amZug": "b",
+   "angebot": "Rxf4",
+   "antwort": "falle",
+   "wertVorher": 7.19,
+   "wertNachher": -6.61,
+   "verlustBeimNehmen": 13.8,
+   "bester": "Rg6+",
+   "fortsetzung": [
+    "Rxf4",
+    "Nxd6",
+    "Rd7",
+    "Nxb7",
+    "Rxb7",
+    "Rd8+"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "41XLZ",
+    "wertung": 1570,
+    "partie": "https://lichess.org/7tTrQ8ht#47",
+    "themen": [
+     "advancedPawn",
+     "advantage",
+     "discoveredAttack",
+     "discoveredCheck",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-sWDIR",
+   "fenVorher": "r4r2/1p2b1pk/3N3p/p4q2/2Q3pP/8/PPP2P2/2KR3R b - - 5 27",
+   "vorzug": "Qxf2",
+   "fen": "r4r2/1p2b1pk/3N3p/p7/2Q3pP/8/PPP2q2/2KR3R w - - 0 28",
+   "amZug": "w",
+   "angebot": "Qxg4",
+   "antwort": "falle",
+   "wertVorher": 3.45,
+   "wertNachher": -1.56,
+   "verlustBeimNehmen": 5.01,
+   "bester": "Qe4+",
+   "fortsetzung": [
+    "Qxg4",
+    "Rf4",
+    "Qh3",
+    "Rd8",
+    "Rd2",
+    "Qb6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "sWDIR",
+    "wertung": 1448,
+    "partie": "https://lichess.org/eY9yc4J8/black#54",
+    "themen": [
+     "advantage",
+     "fork",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-0qTCw",
+   "fenVorher": "6k1/R2n1rp1/4p2p/4P3/2N2p2/8/5KPP/8 b - - 3 36",
+   "vorzug": "Nxe5",
+   "fen": "6k1/R4rp1/4p2p/4n3/2N2p2/8/5KPP/8 w - - 0 37",
+   "amZug": "w",
+   "angebot": "Nxe5",
+   "antwort": "falle",
+   "wertVorher": 3.5,
+   "wertNachher": -5.47,
+   "verlustBeimNehmen": 8.97,
+   "bester": "Ra8+",
+   "fortsetzung": [
+    "Nxe5",
+    "Rxa7",
+    "Ng6",
+    "Kf7",
+    "Nxf4",
+    "Ra5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "0qTCw",
+    "wertung": 1527,
+    "partie": "https://lichess.org/vDzI0xNN/black#72",
+    "themen": [
+     "advantage",
+     "endgame",
+     "intermezzo",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-OTDTo",
+   "fenVorher": "2r2b2/p7/2r2pp1/3k1n1p/pP1PpB1P/R1P1R3/2NK1PP1/8 b - - 5 30",
+   "vorzug": "Nxe3",
+   "fen": "2r2b2/p7/2r2pp1/3k3p/pP1PpB1P/R1P1n3/2NK1PP1/8 w - - 0 31",
+   "amZug": "w",
+   "angebot": "Bxe3",
+   "antwort": "falle",
+   "wertVorher": 5.96,
+   "wertNachher": -3.35,
+   "verlustBeimNehmen": 9.31,
+   "bester": "Nxe3+",
+   "fortsetzung": [
+    "Bxe3",
+    "a5",
+    "Rxa4",
+    "Rxc3",
+    "Rxa5+",
+    "Kc4"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "OTDTo",
+    "wertung": 1407,
+    "partie": "https://lichess.org/a7CAJW6V/black#60",
+    "themen": [
+     "advantage",
+     "fork",
+     "long",
+     "master",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-CQtFH",
+   "fenVorher": "1k1q1b1r/p7/5p2/1ppbp2p/4NP2/3PQ2P/PPP3P1/2KR2R1 w - - 0 22",
+   "vorzug": "fxe5",
+   "fen": "1k1q1b1r/p7/5p2/1ppbP2p/4N3/3PQ2P/PPP3P1/2KR2R1 b - - 0 22",
+   "amZug": "b",
+   "angebot": "fxe5",
+   "antwort": "falle",
+   "wertVorher": 3.68,
+   "wertNachher": -5.75,
+   "verlustBeimNehmen": 9.43,
+   "bester": "Bh6",
+   "fortsetzung": [
+    "fxe5",
+    "Kb1",
+    "Rg8",
+    "Nc3",
+    "Bb7",
+    "Qxe5+"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "CQtFH",
+    "wertung": 1514,
+    "partie": "https://lichess.org/TKn1kfw9#43",
+    "themen": [
+     "advantage",
+     "middlegame",
+     "pin",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-53GGu",
+   "fenVorher": "3rr1k1/pp2qn1p/3P2p1/4pp2/5P2/1P2Q1P1/P5B1/3RR1K1 b - - 0 32",
+   "vorzug": "Qe6",
+   "fen": "3rr1k1/pp3n1p/3Pq1p1/4pp2/5P2/1P2Q1P1/P5B1/3RR1K1 w - - 1 33",
+   "amZug": "w",
+   "angebot": "Bxb7",
+   "antwort": "falle",
+   "wertVorher": 5.25,
+   "wertNachher": -0.94,
+   "verlustBeimNehmen": 6.19,
+   "bester": "Bd5",
+   "fortsetzung": [
+    "Bxb7",
+    "Rxd6",
+    "Bf3",
+    "Re7",
+    "a4",
+    "Rxd1"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "53GGu",
+    "wertung": 1545,
+    "partie": "https://lichess.org/bpGjR5s1/black#64",
     "themen": [
      "advantage",
      "discoveredAttack",
@@ -1571,209 +2722,229 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 2
+   "schwierigkeit": 3
   },
   {
-   "id": "falle-l-PXGE4",
-   "fen": "r3r1k1/pp3ppp/8/2b5/4n3/P5P1/1B1P1PBP/1R2R1K1 b - - 1 20",
+   "id": "falle-l-W3pI5",
+   "fenVorher": "r1b1kb1r/1p3ppp/p1p1pn2/q3P1B1/2Q1P3/8/PPP2PPP/RN2K1NR w KQkq - 1 11",
+   "vorzug": "Qc3",
+   "fen": "r1b1kb1r/1p3ppp/p1p1pn2/q3P1B1/4P3/2Q5/PPP2PPP/RN2K1NR b KQkq - 2 11",
    "amZug": "b",
-   "angebot": "Nxd2",
+   "angebot": "Nxe4",
    "antwort": "falle",
-   "verlustBeimNehmen": 5.77,
-   "bester": "Bxf2+",
+   "wertVorher": 4.11,
+   "wertNachher": -7.57,
+   "verlustBeimNehmen": 11.68,
+   "bester": "Bb4",
    "fortsetzung": [
-    "Nxd2",
-    "Rbc1",
-    "Rxe1+",
-    "Rxe1",
-    "Nc4",
-    "Rc1"
+    "Nxe4",
+    "Qxa5",
+    "Nxg5",
+    "Nc3",
+    "Bd7",
+    "Qc7"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "PXGE4",
-    "wertung": 1266,
-    "partie": "https://lichess.org/Ez4BmhwM#39",
+    "puzzle": "W3pI5",
+    "wertung": 1562,
+    "partie": "https://lichess.org/GE68or8Y#21",
+    "themen": [
+     "advantage",
+     "opening",
+     "pin",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-5JM4Y",
+   "fenVorher": "r3k2r/ppp2ppp/2n1pP2/8/8/2qB1Q2/P1P1K1PP/R1B4R w kq - 2 13",
+   "vorzug": "fxg7",
+   "fen": "r3k2r/ppp2pPp/2n1p3/8/8/2qB1Q2/P1P1K1PP/R1B4R b kq - 0 13",
+   "amZug": "b",
+   "angebot": "Qxg7",
+   "antwort": "falle",
+   "wertVorher": 5.61,
+   "wertNachher": -3.94,
+   "verlustBeimNehmen": 9.55,
+   "bester": "Nd4+",
+   "fortsetzung": [
+    "Qxg7",
+    "Be3",
+    "Rg8",
+    "Rab1",
+    "O-O-O",
+    "g3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "5JM4Y",
+    "wertung": 1484,
+    "partie": "https://lichess.org/YRI6EsQg#25",
     "themen": [
      "advantage",
      "fork",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-T3XTu",
+   "fenVorher": "rn2r1k1/pp1b1ppp/2p5/2b1Q3/2P4q/3P4/PPN1BPPP/R1B2RK1 w - - 1 19",
+   "vorzug": "Qg3",
+   "fen": "rn2r1k1/pp1b1ppp/2p5/2b5/2P4q/3P2Q1/PPN1BPPP/R1B2RK1 b - - 2 19",
+   "amZug": "b",
+   "angebot": "Rxe2",
+   "antwort": "falle",
+   "wertVorher": 5.61,
+   "wertNachher": -6.43,
+   "verlustBeimNehmen": 12.04,
+   "bester": "Qxg3",
+   "fortsetzung": [
+    "Rxe2",
+    "Qxh4",
+    "Re6",
+    "Bf4",
+    "Be7",
+    "Qh5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "T3XTu",
+    "wertung": 1337,
+    "partie": "https://lichess.org/pBSINdPi#37",
+    "themen": [
+     "advantage",
+     "opening",
+     "pin",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-pNEkY",
+   "fenVorher": "rn2k2r/ppp1qppp/3b1n2/3p2B1/3P2b1/2N2N2/PPP1QPPP/R3KB1R w KQkq - 8 8",
+   "vorzug": "Nxd5",
+   "fen": "rn2k2r/ppp1qppp/3b1n2/3N2B1/3P2b1/5N2/PPP1QPPP/R3KB1R b KQkq - 0 8",
+   "amZug": "b",
+   "angebot": "Nxd5",
+   "antwort": "falle",
+   "wertVorher": 4.48,
+   "wertNachher": -5.51,
+   "verlustBeimNehmen": 9.99,
+   "bester": "Qxe2+",
+   "fortsetzung": [
+    "Nxd5",
+    "Bxe7",
+    "Nxe7",
+    "h3",
+    "Be6",
+    "g3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "pNEkY",
+    "wertung": 1524,
+    "partie": "https://lichess.org/I5a5o8Ma#15",
+    "themen": [
+     "advantage",
+     "intermezzo",
+     "opening",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-DngGl",
+   "fenVorher": "2r1r1k1/pp1bppbp/3p1np1/q4PB1/2PQP3/2N5/PP2B1PP/R4R1K w - - 3 16",
+   "vorzug": "fxg6",
+   "fen": "2r1r1k1/pp1bppbp/3p1nP1/q5B1/2PQP3/2N5/PP2B1PP/R4R1K b - - 0 16",
+   "amZug": "b",
+   "angebot": "Qxg5",
+   "antwort": "geschenk",
+   "wertVorher": 4.72,
+   "wertNachher": 4.9,
+   "verlustBeimNehmen": -0.18,
+   "bester": "Qxg5",
+   "fortsetzung": [
+    "Qxg5",
+    "gxf7+",
+    "Kxf7",
+    "e5",
+    "Qxe5",
+    "Qh4"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "DngGl",
+    "wertung": 1578,
+    "partie": "https://lichess.org/2Nzg3OcJ#31",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "master",
      "middlegame",
      "short"
     ]
    },
    "messung": {
-    "tiefe": 1,
+    "tiefe": 6,
     "laenge": 1,
-    "klasse": "t0-l0"
+    "klasse": "t2-l0"
    },
-   "schwierigkeit": 2
+   "schwierigkeit": 3
   },
   {
-   "id": "falle-l-pdXDk",
-   "fen": "2k5/2p3R1/1pN2np1/1r1p4/8/8/3K4/8 w - - 0 42",
-   "amZug": "w",
-   "angebot": "Rxg6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 8.29,
-   "bester": "Na7+",
-   "fortsetzung": [
-    "Rxg6",
-    "Ne4+",
-    "Ke3",
-    "Rc5",
-    "Kd4",
-    "Nd6"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "pdXDk",
-    "wertung": 1230,
-    "partie": "https://lichess.org/lGDP5ShD/black#82",
-    "themen": [
-     "advantage",
-     "endgame",
-     "fork",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-gmWaz",
-   "fen": "3r3k/3P2pp/1pp1Q3/p7/2P5/PP4qP/3r2P1/6RK w - - 1 33",
-   "amZug": "w",
-   "angebot": "Qxc6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 104.57,
-   "bester": "Qe8+",
-   "fortsetzung": [
-    "Qxc6",
-    "R2xd7",
-    "Qe6",
-    "Rd2",
-    "Qe7",
-    "Rg8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "gmWaz",
-    "wertung": 1171,
-    "partie": "https://lichess.org/XTCrxx3w/black#64",
-    "themen": [
-     "advancedPawn",
-     "backRankMate",
-     "endgame",
-     "mate",
-     "mateIn2",
-     "promotion",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-zNFVj",
-   "fen": "8/6rk/4Q2p/5p2/5p1r/2P3qP/2P2RP1/5R1K b - - 2 39",
+   "id": "falle-l-EG5VQ",
+   "fenVorher": "r5k1/pp3p1p/2qBn1p1/2PR4/5p2/4rP2/PP1Q2PP/3R2K1 w - - 0 27",
+   "vorzug": "Bxf4",
+   "fen": "r5k1/pp3p1p/2q1n1p1/2PR4/5B2/4rP2/PP1Q2PP/3R2K1 b - - 0 27",
    "amZug": "b",
-   "angebot": "Qxc3",
-   "antwort": "falle",
-   "verlustBeimNehmen": 102.07,
-   "bester": "Rxh3+",
-   "fortsetzung": [
-    "Qxc3",
-    "Qxf5+",
-    "Kg8",
-    "Rd1",
-    "Rf7",
-    "Qg6+"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "zNFVj",
-    "wertung": 1267,
-    "partie": "https://lichess.org/bNsLkJJf#77",
-    "themen": [
-     "deflection",
-     "endgame",
-     "long",
-     "mate",
-     "mateIn3",
-     "sacrifice"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-h8Gn5",
-   "fen": "5k2/5pp1/1pR4p/3r4/B7/5P1P/P3rPK1/8 w - - 0 36",
-   "amZug": "w",
-   "angebot": "Rxb6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 9.66,
-   "bester": "Rc8+",
-   "fortsetzung": [
-    "Rxb6",
-    "Rxa2",
-    "Rb8+",
-    "Ke7",
-    "Rb7+",
-    "Kd8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "h8Gn5",
-    "wertung": 1090,
-    "partie": "https://lichess.org/gLT97XKb/black#70",
-    "themen": [
-     "advantage",
-     "endgame",
-     "long",
-     "skewer"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-B6i7N",
-   "fen": "r2q1rk1/p3ppbp/2p1n1p1/1p1p1b2/3P4/2nBPN1P/PPN2PPB/R2Q1RK1 w - - 0 16",
-   "amZug": "w",
-   "angebot": "bxc3",
+   "angebot": "Nxf4",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "bxc3",
+   "wertVorher": 4.99,
+   "wertNachher": 5.01,
+   "verlustBeimNehmen": -0.02,
+   "bester": "Nxf4",
    "fortsetzung": [
-    "bxc3",
-    "Be4",
-    "Bxe4",
-    "dxe4",
-    "Nd2",
-    "c5"
+    "Nxf4",
+    "Qxe3",
+    "Nxd5",
+    "Qg5",
+    "Nc7",
+    "Rd6"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "B6i7N",
-    "wertung": 1129,
-    "partie": "https://lichess.org/jyovA7zB/black#30",
+    "puzzle": "EG5VQ",
+    "wertung": 1458,
+    "partie": "https://lichess.org/3jLEfu11#53",
     "themen": [
      "advantage",
      "hangingPiece",
@@ -1786,29 +2957,350 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 2
+   "schwierigkeit": 3
   },
   {
-   "id": "falle-l-2iNWr",
-   "fen": "r5k1/5ppp/1P3n2/4N3/R1QP4/8/3q1PPP/4R1K1 b - - 0 25",
+   "id": "falle-l-wJdY9",
+   "fenVorher": "r3k2r/pppbNp1p/2n3p1/1B2b1B1/6n1/8/PPP2PPP/3RK1NR w Kkq - 3 11",
+   "vorzug": "Rxd7",
+   "fen": "r3k2r/pppRNp1p/2n3p1/1B2b1B1/6n1/8/PPP2PPP/4K1NR b Kkq - 0 11",
    "amZug": "b",
-   "angebot": "Qxe1+",
+   "angebot": "Kxd7",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxe1+",
+   "wertVorher": 2.33,
+   "wertNachher": 2.61,
+   "verlustBeimNehmen": -0.28,
+   "bester": "Kxd7",
    "fortsetzung": [
-    "Qxe1+",
-    "Qf1",
-    "Qxf1+",
-    "Kxf1",
-    "Rxa4",
-    "h3"
+    "Kxd7",
+    "Nxc6",
+    "bxc6",
+    "Be2",
+    "f5",
+    "Nf3"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "2iNWr",
-    "wertung": 1159,
-    "partie": "https://lichess.org/F3NZ0nSX#49",
+    "puzzle": "wJdY9",
+    "wertung": 1319,
+    "partie": "https://lichess.org/M86GXmi6#21",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "master",
+     "masterVsMaster",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-wPtRx",
+   "fenVorher": "1r2r1k1/5pb1/p2p3p/qPnPp1p1/4Pnb1/2N2NB1/R1Q1BPPP/1R4K1 b - - 1 22",
+   "vorzug": "Qxc3",
+   "fen": "1r2r1k1/5pb1/p2p3p/1PnPp1p1/4Pnb1/2q2NB1/R1Q1BPPP/1R4K1 w - - 0 23",
+   "amZug": "w",
+   "angebot": "Qxc3",
+   "antwort": "geschenk",
+   "wertVorher": 4.4,
+   "wertNachher": 4.32,
+   "verlustBeimNehmen": 0.08,
+   "bester": "Qxc3",
+   "fortsetzung": [
+    "Qxc3",
+    "Nxe4",
+    "Qa5",
+    "Rec8",
+    "Bxf4",
+    "exf4"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "wPtRx",
+    "wertung": 1504,
+    "partie": "https://lichess.org/L6CGb1uY/black#44",
+    "themen": [
+     "crushing",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-vdMz7",
+   "fenVorher": "4k3/6K1/5n1p/1pBpN3/1P1P2b1/8/8/8 b - - 0 42",
+   "vorzug": "Ne4",
+   "fen": "4k3/6K1/7p/1pBpN3/1P1Pn1b1/8/8/8 w - - 1 43",
+   "amZug": "w",
+   "angebot": "Nxg4",
+   "antwort": "geschenk",
+   "wertVorher": 5.38,
+   "wertNachher": 5.38,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Nxg4",
+   "fortsetzung": [
+    "Nxg4",
+    "Kd7",
+    "Kxh6",
+    "Ke6",
+    "Kg6",
+    "Ng3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "vdMz7",
+    "wertung": 1320,
+    "partie": "https://lichess.org/HOo6I012/black#84",
+    "themen": [
+     "crushing",
+     "endgame",
+     "hangingPiece",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-XKmwf",
+   "fenVorher": "r1b3k1/1p2q2N/pnnbprBQ/3p4/3P4/2P5/5PPP/R4RK1 b - - 9 23",
+   "vorzug": "Rxg6",
+   "fen": "r1b3k1/1p2q2N/pnnbp1rQ/3p4/3P4/2P5/5PPP/R4RK1 w - - 0 24",
+   "amZug": "w",
+   "angebot": "Qxg6+",
+   "antwort": "geschenk",
+   "wertVorher": 8.98,
+   "wertNachher": 8.73,
+   "verlustBeimNehmen": 0.25,
+   "bester": "Qxg6+",
+   "fortsetzung": [
+    "Qxg6+",
+    "Kh8",
+    "Nf6",
+    "Qxf6",
+    "Qxf6+",
+    "Kg8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "XKmwf",
+    "wertung": 1473,
+    "partie": "https://lichess.org/gvtq8NSu/black#46",
+    "themen": [
+     "crushing",
+     "hangingPiece",
+     "kingsideAttack",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-cfZU2",
+   "fenVorher": "1k5r/p1p3pp/Qpn3n1/1Nb5/3P4/4B3/Pq4PP/2R4K b - - 0 25",
+   "vorzug": "Bxd4",
+   "fen": "1k5r/p1p3pp/Qpn3n1/1N6/3b4/4B3/Pq4PP/2R4K w - - 0 26",
+   "amZug": "w",
+   "angebot": "Rxc6",
+   "antwort": "geschenk",
+   "wertVorher": 4.95,
+   "wertNachher": 5.04,
+   "verlustBeimNehmen": -0.09,
+   "bester": "Rxc6",
+   "fortsetzung": [
+    "Rxc6",
+    "Qb1+",
+    "Rc1",
+    "Qxb5",
+    "Qxb5",
+    "Bxe3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "cfZU2",
+    "wertung": 1480,
+    "partie": "https://lichess.org/hzOMBeZV/black#50",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-e1Wfh",
+   "fenVorher": "5rk1/2r2ppp/2n5/1pNp2P1/3P2b1/pP6/P1BR2PP/2K1R3 b - - 10 24",
+   "vorzug": "Nxd4",
+   "fen": "5rk1/2r2ppp/8/1pNp2P1/3n2b1/pP6/P1BR2PP/2K1R3 w - - 0 25",
+   "amZug": "w",
+   "angebot": "Rxd4",
+   "antwort": "geschenk",
+   "wertVorher": 4.83,
+   "wertNachher": 5.12,
+   "verlustBeimNehmen": -0.29,
+   "bester": "Rxd4",
+   "fortsetzung": [
+    "Rxd4",
+    "Rxc5",
+    "Rxg4",
+    "Rfc8",
+    "Re2",
+    "R5c6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "e1Wfh",
+    "wertung": 1424,
+    "partie": "https://lichess.org/CniBBBfF/black#48",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "hangingPiece",
+     "long",
+     "master",
+     "masterVsMaster",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-Ap82E",
+   "fenVorher": "3r2k1/pp3ppp/2p5/8/1PP5/2qb2Q1/P4PPP/R2R2K1 w - - 0 24",
+   "vorzug": "Rxd3",
+   "fen": "3r2k1/pp3ppp/2p5/8/1PP5/2qR2Q1/P4PPP/R5K1 b - - 0 24",
+   "amZug": "b",
+   "angebot": "Qxa1+",
+   "antwort": "geschenk",
+   "wertVorher": 98.0,
+   "wertNachher": 98.0,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Qxa1+",
+   "fortsetzung": [
+    "Qxa1+",
+    "Rd1",
+    "Rxd1#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Ap82E",
+    "wertung": 1304,
+    "partie": "https://lichess.org/8QyqCAI7#47",
+    "themen": [
+     "backRankMate",
+     "endgame",
+     "hangingPiece",
+     "mate",
+     "mateIn2",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-vqn2a",
+   "fenVorher": "r7/5k2/2p5/2Pp4/p3b3/2B3Kp/8/R7 b - - 1 44",
+   "vorzug": "Rh8",
+   "fen": "7r/5k2/2p5/2Pp4/p3b3/2B3Kp/8/R7 w - - 2 45",
+   "amZug": "w",
+   "angebot": "Bxh8",
+   "antwort": "geschenk",
+   "wertVorher": 4.66,
+   "wertNachher": 4.76,
+   "verlustBeimNehmen": -0.1,
+   "bester": "Bxh8",
+   "fortsetzung": [
+    "Bxh8",
+    "d4",
+    "Rxa4",
+    "Bg2",
+    "Rxd4",
+    "Kg8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "vqn2a",
+    "wertung": 1333,
+    "partie": "https://lichess.org/Bv7snIh6/black#88",
+    "themen": [
+     "advantage",
+     "endgame",
+     "hangingPiece",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 2,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-BghWF",
+   "fenVorher": "4rk2/pp2rppp/1q3n2/3p4/3N1P2/2B1nQ1P/PP2R1P1/4R2K b - - 7 21",
+   "vorzug": "Nf5",
+   "fen": "4rk2/pp2rppp/1q3n2/3p1n2/3N1P2/2B2Q1P/PP2R1P1/4R2K w - - 8 22",
+   "amZug": "w",
+   "angebot": "Nxf5",
+   "antwort": "geschenk",
+   "wertVorher": 5.25,
+   "wertNachher": 5.22,
+   "verlustBeimNehmen": 0.03,
+   "bester": "Nxf5",
+   "fortsetzung": [
+    "Nxf5",
+    "Rxe2",
+    "Rxe2",
+    "Rxe2",
+    "Qxe2",
+    "Qe6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "BghWF",
+    "wertung": 1451,
+    "partie": "https://lichess.org/AXu6z9WQ/black#42",
     "themen": [
      "advantage",
      "hangingPiece",
@@ -1821,32 +3313,313 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 2
+   "schwierigkeit": 3
   },
   {
-   "id": "falle-l-IZMUB",
-   "fen": "4r3/pp4Rp/7k/2B2n2/2Q1pPq1/6P1/PP3P1P/3R2K1 b - - 0 25",
-   "amZug": "b",
-   "angebot": "Qxd1+",
+   "id": "falle-l-VPXVD",
+   "fenVorher": "r1bqkb1r/1p1p1ppp/2n2n2/2P1p3/1P6/P7/1B2PPPP/RN1QKBNR b KQkq - 2 7",
+   "vorzug": "Nxb4",
+   "fen": "r1bqkb1r/1p1p1ppp/5n2/2P1p3/1n6/P7/1B2PPPP/RN1QKBNR w KQkq - 0 8",
+   "amZug": "w",
+   "angebot": "axb4",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxd1+",
+   "wertVorher": 4.83,
+   "wertNachher": 4.81,
+   "verlustBeimNehmen": 0.02,
+   "bester": "axb4",
    "fortsetzung": [
-    "Qxd1+",
-    "Kg2",
-    "Kxg7",
-    "Qb5",
-    "Qf3+",
-    "Kg1"
+    "axb4",
+    "Rxa1",
+    "Bxa1",
+    "b6",
+    "Bxe5",
+    "bxc5"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "IZMUB",
-    "wertung": 1289,
-    "partie": "https://lichess.org/JZXTKfxd#49",
+    "puzzle": "VPXVD",
+    "wertung": 1452,
+    "partie": "https://lichess.org/xzyRobNq/black#14",
     "themen": [
      "advantage",
      "hangingPiece",
+     "opening",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 3
+  },
+  {
+   "id": "falle-l-XcnRk",
+   "fenVorher": "r1b1kb1r/pppp1pp1/5B1p/8/2B1P3/3P1Q2/Pqp2PPP/1N3RK1 b kq - 0 14",
+   "vorzug": "cxb1=Q",
+   "fen": "r1b1kb1r/pppp1pp1/5B1p/8/2B1P3/3P1Q2/Pq3PPP/1q3RK1 w kq - 0 15",
+   "amZug": "w",
+   "angebot": "Rxb1",
+   "antwort": "falle",
+   "wertVorher": 5.86,
+   "wertNachher": -98.0,
+   "verlustBeimNehmen": 103.86,
+   "bester": "Bxf7+",
+   "fortsetzung": [
+    "Rxb1",
+    "Qxb1+",
+    "Qd1",
+    "Qxd1#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "XcnRk",
+    "wertung": 1862,
+    "partie": "https://lichess.org/7sNNPPFY/black#28",
+    "themen": [
+     "advantage",
+     "attackingF2F7",
+     "discoveredAttack",
+     "discoveredCheck",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-vmekR",
+   "fenVorher": "r1b4r/4kpQp/p2p1p2/q2P4/1p3P2/3B4/PPP3PP/2KR4 b - - 1 19",
+   "vorzug": "Re8",
+   "fen": "r1b1r3/4kpQp/p2p1p2/q2P4/1p3P2/3B4/PPP3PP/2KR4 w - - 2 20",
+   "amZug": "w",
+   "angebot": "Qxh7",
+   "antwort": "falle",
+   "wertVorher": 4.93,
+   "wertNachher": -3.93,
+   "verlustBeimNehmen": 8.86,
+   "bester": "Re1+",
+   "fortsetzung": [
+    "Qxh7",
+    "Qc5",
+    "Re1+",
+    "Kd8",
+    "Rxe8+",
+    "Kxe8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "vmekR",
+    "wertung": 1659,
+    "partie": "https://lichess.org/w7Hp6FT4/black#38",
+    "themen": [
+     "advantage",
+     "deflection",
+     "long",
+     "master",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-LP8Sg",
+   "fenVorher": "r4r1k/1p5p/p1q2pp1/2P1pN2/8/PPn1P1P1/2Q3P1/3R2KR b - - 4 27",
+   "vorzug": "Nxd1",
+   "fen": "r4r1k/1p5p/p1q2pp1/2P1pN2/8/PP2P1P1/2Q3P1/3n2KR w - - 0 28",
+   "amZug": "w",
+   "angebot": "Qxd1",
+   "antwort": "falle",
+   "wertVorher": 3.71,
+   "wertNachher": -6.12,
+   "verlustBeimNehmen": 9.83,
+   "bester": "Ne7",
+   "fortsetzung": [
+    "Qxd1",
+    "gxf5",
+    "Qh5",
+    "Qd7",
+    "Rh3",
+    "Rg8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "LP8Sg",
+    "wertung": 1803,
+    "partie": "https://lichess.org/cWy2thOc/black#54",
+    "themen": [
+     "advantage",
+     "kingsideAttack",
+     "long",
+     "middlegame",
+     "pin"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-PCPNT",
+   "fenVorher": "6k1/1pR3pp/p1bppb2/8/P3r3/q6P/3QN1P1/5R1K w - - 2 32",
+   "vorzug": "Rxf6",
+   "fen": "6k1/1pR3pp/p1bppR2/8/P3r3/q6P/3QN1P1/7K b - - 0 32",
+   "amZug": "b",
+   "angebot": "gxf6",
+   "antwort": "falle",
+   "wertVorher": 2.88,
+   "wertNachher": -93.0,
+   "verlustBeimNehmen": 95.88,
+   "bester": "Qa1+",
+   "fortsetzung": [
+    "gxf6",
+    "Qh6",
+    "Qxh3+",
+    "Qxh3",
+    "Bd7",
+    "Rxd7"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "PCPNT",
+    "wertung": 1733,
+    "partie": "https://lichess.org/kDegMz2E#63",
+    "themen": [
+     "advantage",
+     "defensiveMove",
+     "fork",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-EN0Dk",
+   "fenVorher": "5q1k/p1Qr4/5n1p/6p1/2P1B3/P5P1/1P5P/5RK1 w - - 7 31",
+   "vorzug": "Qxd7",
+   "fen": "5q1k/p2Q4/5n1p/6p1/2P1B3/P5P1/1P5P/5RK1 b - - 0 31",
+   "amZug": "b",
+   "angebot": "Nxd7",
+   "antwort": "falle",
+   "wertVorher": 5.03,
+   "wertNachher": -5.86,
+   "verlustBeimNehmen": 10.89,
+   "bester": "Qc5+",
+   "fortsetzung": [
+    "Nxd7",
+    "Rxf8+",
+    "Nxf8",
+    "Kf2",
+    "Kg7",
+    "Ke3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "EN0Dk",
+    "wertung": 1829,
+    "partie": "https://lichess.org/yQCNIUXW#61",
+    "themen": [
+     "advantage",
+     "endgame",
+     "intermezzo",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-LcUQV",
+   "fenVorher": "2r3k1/q4ppp/pp4n1/3pPQN1/1PrP1N2/P6P/6P1/R6K b - - 3 28",
+   "vorzug": "Nxf4",
+   "fen": "2r3k1/q4ppp/pp6/3pPQN1/1PrP1n2/P6P/6P1/R6K w - - 0 29",
+   "amZug": "w",
+   "angebot": "Qxf4",
+   "antwort": "falle",
+   "wertVorher": 4.35,
+   "wertNachher": -3.8,
+   "verlustBeimNehmen": 8.15,
+   "bester": "Qxh7+",
+   "fortsetzung": [
+    "Qxf4",
+    "h6",
+    "Nf3",
+    "Qe7",
+    "Rf1",
+    "Qe6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "LcUQV",
+    "wertung": 1841,
+    "partie": "https://lichess.org/tF06Y6Z5/black#56",
+    "themen": [
+     "advantage",
+     "deflection",
+     "kingsideAttack",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-BGR60",
+   "fenVorher": "2r3k1/2r2ppp/pqn1p3/1p1pP3/1P1P3N/P2Q3P/5PP1/2RR2K1 b - - 0 21",
+   "vorzug": "Nxb4",
+   "fen": "2r3k1/2r2ppp/pq2p3/1p1pP3/1n1P3N/P2Q3P/5PP1/2RR2K1 w - - 0 22",
+   "amZug": "w",
+   "angebot": "axb4",
+   "antwort": "falle",
+   "wertVorher": 2.45,
+   "wertNachher": -5.07,
+   "verlustBeimNehmen": 7.52,
+   "bester": "Rxc7",
+   "fortsetzung": [
+    "axb4",
+    "Rxc1",
+    "Rxc1",
+    "Rxc1+",
+    "Kh2",
+    "Qd8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "BGR60",
+    "wertung": 1660,
+    "partie": "https://lichess.org/1HMTnuru/black#42",
+    "themen": [
+     "advantage",
+     "intermezzo",
      "middlegame",
      "short"
     ]
@@ -1856,29 +3629,229 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 2
+   "schwierigkeit": 4
   },
   {
-   "id": "falle-l-cV246",
-   "fen": "r1bqk2r/pp1p1ppp/8/4n3/3Q4/8/PPP2nPP/R3KBNR w KQkq - 0 10",
+   "id": "falle-l-Gbgzl",
+   "fenVorher": "r4rk1/1b1n1p1p/1q1pp1P1/ppp5/1n1bP1P1/3P2NP/PPP2RBN/R1B1Q2K b - - 0 18",
+   "vorzug": "Bxf2",
+   "fen": "r4rk1/1b1n1p1p/1q1pp1P1/ppp5/1n2P1P1/3P2NP/PPP2bBN/R1B1Q2K w - - 0 19",
    "amZug": "w",
-   "angebot": "Qxe5+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxe5+",
+   "angebot": "Qxf2",
+   "antwort": "falle",
+   "wertVorher": 2.32,
+   "wertNachher": -3.22,
+   "verlustBeimNehmen": 5.54,
+   "bester": "gxh7+",
    "fortsetzung": [
-    "Qxe5+",
-    "Qe7",
-    "Qxe7+",
-    "Kxe7",
-    "Kxf2",
-    "Rd8"
+    "Qxf2",
+    "fxg6",
+    "Qe2",
+    "Rf7",
+    "Bh6",
+    "Ne5"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "cV246",
-    "wertung": 1193,
-    "partie": "https://lichess.org/APSyVVRS/black#18",
+    "puzzle": "Gbgzl",
+    "wertung": 1870,
+    "partie": "https://lichess.org/38hZ6MIw/black#36",
+    "themen": [
+     "advancedPawn",
+     "advantage",
+     "intermezzo",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-HkUJ0",
+   "fenVorher": "rnb4r/ppp3pp/1k1pB3/8/n1Q5/3P4/P1PB1PPP/R2K4 w - - 10 18",
+   "vorzug": "Bxc8",
+   "fen": "rnB4r/ppp3pp/1k1p4/8/n1Q5/3P4/P1PB1PPP/R2K4 b - - 0 18",
+   "amZug": "b",
+   "angebot": "Rxc8",
+   "antwort": "falle",
+   "wertVorher": 4.68,
+   "wertNachher": -98.0,
+   "verlustBeimNehmen": 102.68,
+   "bester": "Nb2+",
+   "fortsetzung": [
+    "Rxc8",
+    "Rb1+",
+    "Nb2+",
+    "Rxb2#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "HkUJ0",
+    "wertung": 1850,
+    "partie": "https://lichess.org/rZk4BFjE#35",
+    "themen": [
+     "advantage",
+     "defensiveMove",
+     "fork",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-OP2yx",
+   "fenVorher": "r2q1rk1/4n1bp/p5p1/1ppp1p2/3n1P2/P1NPQ3/BPP2RPP/R1B3K1 b - - 4 16",
+   "vorzug": "Nxc2",
+   "fen": "r2q1rk1/4n1bp/p5p1/1ppp1p2/5P2/P1NPQ3/BPn2RPP/R1B3K1 w - - 0 17",
+   "amZug": "w",
+   "angebot": "Rxc2",
+   "antwort": "falle",
+   "wertVorher": 2.64,
+   "wertNachher": -2.5,
+   "verlustBeimNehmen": 5.14,
+   "bester": "Qe6+",
+   "fortsetzung": [
+    "Rxc2",
+    "Bd4",
+    "Nxd5",
+    "Nxd5",
+    "Rxc5",
+    "Bxe3+"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "OP2yx",
+    "wertung": 1727,
+    "partie": "https://lichess.org/e7WZeUce/black#32",
+    "themen": [
+     "advantage",
+     "intermezzo",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 6,
+    "laenge": 1,
+    "klasse": "t2-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-8ihoO",
+   "fenVorher": "8/1q3p1k/2pp3p/rP2p3/4Pp1P/1Q1PbP2/1PP4R/1K3R2 w - - 5 30",
+   "vorzug": "bxc6",
+   "fen": "8/1q3p1k/2Pp3p/r3p3/4Pp1P/1Q1PbP2/1PP4R/1K3R2 b - - 0 30",
+   "amZug": "b",
+   "angebot": "Qxc6",
+   "antwort": "falle",
+   "wertVorher": 3.11,
+   "wertNachher": -93.0,
+   "verlustBeimNehmen": 96.11,
+   "bester": "Qa7",
+   "fortsetzung": [
+    "Qxc6",
+    "Qxf7+",
+    "Kh8",
+    "Rg2",
+    "Ra1+",
+    "Kxa1"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "8ihoO",
+    "wertung": 1862,
+    "partie": "https://lichess.org/wNB7XbMW#59",
+    "themen": [
+     "advantage",
+     "endgame",
+     "long",
+     "quietMove",
+     "skewer"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-wc4P2",
+   "fenVorher": "4k2r/3n1ppp/p3q3/1p1Np3/1Qr1P3/8/PPP2PPP/2KR3R w k - 4 16",
+   "vorzug": "Qxc4",
+   "fen": "4k2r/3n1ppp/p3q3/1p1Np3/2Q1P3/8/PPP2PPP/2KR3R b k - 0 16",
+   "amZug": "b",
+   "angebot": "bxc4",
+   "antwort": "falle",
+   "wertVorher": 4.03,
+   "wertNachher": -5.68,
+   "verlustBeimNehmen": 9.71,
+   "bester": "Qh6+",
+   "fortsetzung": [
+    "bxc4",
+    "Nc7+",
+    "Ke7",
+    "Nxe6",
+    "Kxe6",
+    "Rd5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "wc4P2",
+    "wertung": 1789,
+    "partie": "https://lichess.org/xUOq6Hgf#31",
+    "themen": [
+     "advantage",
+     "intermezzo",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-FzMtC",
+   "fenVorher": "rn2qrk1/ppp1bpp1/3p1n1p/6B1/3P3P/2N5/PPP1QP2/2KR2NR b - - 3 11",
+   "vorzug": "Nd5",
+   "fen": "rn2qrk1/ppp1bpp1/3p3p/3n2B1/3P3P/2N5/PPP1QP2/2KR2NR w - - 4 12",
+   "amZug": "w",
+   "angebot": "Nxd5",
+   "antwort": "geschenk",
+   "wertVorher": 6.78,
+   "wertNachher": 6.87,
+   "verlustBeimNehmen": -0.09,
+   "bester": "Nxd5",
+   "fortsetzung": [
+    "Nxd5",
+    "Bd8",
+    "Qxe8",
+    "Rxe8",
+    "Bxd8",
+    "Rxd8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "FzMtC",
+    "wertung": 1807,
+    "partie": "https://lichess.org/OQsR4P8m/black#22",
     "themen": [
      "crushing",
      "hangingPiece",
@@ -1891,29 +3864,33 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 2
+   "schwierigkeit": 4
   },
   {
-   "id": "falle-l-5YpMF",
-   "fen": "r1bqk2r/ppp3bp/3p1np1/3PpnB1/2P1N3/8/PP1Q1PPP/R3KBNR b KQkq - 3 10",
+   "id": "falle-l-zVxFI",
+   "fenVorher": "1r2r2k/pbq2p1p/2n1pPp1/8/5P2/2P2B2/P1Q2BPP/1R1R2K1 w - - 1 26",
+   "vorzug": "Bxa7",
+   "fen": "1r2r2k/Bbq2p1p/2n1pPp1/8/5P2/2P2B2/P1Q3PP/1R1R2K1 b - - 0 26",
    "amZug": "b",
-   "angebot": "Nxe4",
+   "angebot": "Nxa7",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Nxe4",
+   "wertVorher": 2.41,
+   "wertNachher": 2.39,
+   "verlustBeimNehmen": 0.02,
+   "bester": "Nxa7",
    "fortsetzung": [
-    "Nxe4",
-    "Bxd8",
-    "Nxd2",
-    "Bxc7",
-    "Nxf1",
-    "Nf3"
+    "Nxa7",
+    "Rxb7",
+    "Rxb7",
+    "Bxb7",
+    "Qxb7",
+    "h4"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "5YpMF",
-    "wertung": 1022,
-    "partie": "https://lichess.org/IVDlZybP#19",
+    "puzzle": "zVxFI",
+    "wertung": 1668,
+    "partie": "https://lichess.org/D9NAIusk#51",
     "themen": [
      "advantage",
      "hangingPiece",
@@ -1926,33 +3903,699 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 2
+   "schwierigkeit": 4
   },
   {
-   "id": "falle-l-KNOov",
-   "fen": "8/5p2/1P4kp/p7/P5P1/4pKbP/8/8 w - - 1 41",
-   "amZug": "w",
-   "angebot": "Kxg3",
+   "id": "falle-l-QmnzE",
+   "fenVorher": "1r4r1/2q2pk1/p2bb3/3p2pQ/P1p5/2Pn2B1/B2N1PP1/R3R1K1 w - - 4 25",
+   "vorzug": "Rxe6",
+   "fen": "1r4r1/2q2pk1/p2bR3/3p2pQ/P1p5/2Pn2B1/B2N1PP1/R5K1 b - - 0 25",
+   "amZug": "b",
+   "angebot": "fxe6",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Kxg3",
+   "wertVorher": 3.54,
+   "wertNachher": 4.26,
+   "verlustBeimNehmen": -0.72,
+   "bester": "fxe6",
    "fortsetzung": [
-    "Kxg3",
-    "Kf6",
-    "Kf3",
-    "Ke5",
-    "b7",
-    "Kd4"
+    "fxe6",
+    "Qxg5+",
+    "Kf7",
+    "Qh5+",
+    "Rg6",
+    "Bxd6"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "KNOov",
-    "wertung": 1136,
-    "partie": "https://lichess.org/lkkpxJNY/black#80",
+    "puzzle": "QmnzE",
+    "wertung": 1767,
+    "partie": "https://lichess.org/SZrBWW7N#49",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-I3tRO",
+   "fenVorher": "rnbr2k1/1pp2p1p/p5p1/4b3/2P1N3/6P1/PP3PBP/R1B2RK1 w - - 0 13",
+   "vorzug": "b3",
+   "fen": "rnbr2k1/1pp2p1p/p5p1/4b3/2P1N3/1P4P1/P4PBP/R1B2RK1 b - - 0 13",
+   "amZug": "b",
+   "angebot": "Bxa1",
+   "antwort": "geschenk",
+   "wertVorher": 4.8,
+   "wertNachher": 4.78,
+   "verlustBeimNehmen": 0.02,
+   "bester": "Bxa1",
+   "fortsetzung": [
+    "Bxa1",
+    "Bg5",
+    "f6",
+    "Nxf6+",
+    "Bxf6",
+    "Bxf6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "I3tRO",
+    "wertung": 1850,
+    "partie": "https://lichess.org/jnN8Sz8r#25",
+    "themen": [
+     "crushing",
+     "hangingPiece",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 5,
+    "laenge": 1,
+    "klasse": "t1-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-LT05U",
+   "fenVorher": "r1b2rk1/1pq1bppp/p3pn2/8/2BN4/2P5/PP2QPPP/R1B1R1K1 w - - 3 14",
+   "vorzug": "Nf5",
+   "fen": "r1b2rk1/1pq1bppp/p3pn2/5N2/2B5/2P5/PP2QPPP/R1B1R1K1 b - - 4 14",
+   "amZug": "b",
+   "angebot": "exf5",
+   "antwort": "geschenk",
+   "wertVorher": 5.79,
+   "wertNachher": 5.72,
+   "verlustBeimNehmen": 0.07,
+   "bester": "exf5",
+   "fortsetzung": [
+    "exf5",
+    "Qxe7",
+    "Qxc4",
+    "Bg5",
+    "Nd5",
+    "Qd6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "LT05U",
+    "wertung": 1784,
+    "partie": "https://lichess.org/Ejllzyz4#27",
+    "themen": [
+     "crushing",
+     "hangingPiece",
+     "master",
+     "opening",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-4NJBY",
+   "fenVorher": "rn1qk2r/1b4pp/p2pppn1/1pbN2B1/4P3/1B3N2/PP3PPP/2RQR1K1 w kq - 0 13",
+   "vorzug": "Rxc5",
+   "fen": "rn1qk2r/1b4pp/p2pppn1/1pRN2B1/4P3/1B3N2/PP3PPP/3QR1K1 b kq - 0 13",
+   "amZug": "b",
+   "angebot": "dxc5",
+   "antwort": "geschenk",
+   "wertVorher": 2.87,
+   "wertNachher": 2.81,
+   "verlustBeimNehmen": 0.06,
+   "bester": "dxc5",
+   "fortsetzung": [
+    "dxc5",
+    "h4",
+    "c4",
+    "h5",
+    "fxg5",
+    "hxg6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "4NJBY",
+    "wertung": 1601,
+    "partie": "https://lichess.org/p54cm8pX#25",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "long",
+     "master",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-zxq8g",
+   "fenVorher": "r1bqkbnr/1pp3pp/p1n5/3pp3/5B2/P2BP3/1PP2PPP/RN1QK1NR w KQkq - 0 7",
+   "vorzug": "Bxe5",
+   "fen": "r1bqkbnr/1pp3pp/p1n5/3pB3/8/P2BP3/1PP2PPP/RN1QK1NR b KQkq - 0 7",
+   "amZug": "b",
+   "angebot": "Nxe5",
+   "antwort": "geschenk",
+   "wertVorher": 5.31,
+   "wertNachher": 5.31,
+   "verlustBeimNehmen": 0.0,
+   "bester": "Nxe5",
+   "fortsetzung": [
+    "Nxe5",
+    "Nc3",
+    "Nf6",
+    "Nf3",
+    "Nxf3+",
+    "Qxf3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "zxq8g",
+    "wertung": 1719,
+    "partie": "https://lichess.org/c3vZKgqA#13",
+    "themen": [
+     "advantage",
+     "defensiveMove",
+     "hangingPiece",
+     "opening",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 3,
+    "laenge": 1,
+    "klasse": "t1-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-mncLZ",
+   "fenVorher": "rn2k2r/1p2qpbp/p3p1p1/4N3/1nPB4/N4Q2/PP3PPP/R4RK1 w kq - 3 15",
+   "vorzug": "Nxg6",
+   "fen": "rn2k2r/1p2qpbp/p3p1N1/8/1nPB4/N4Q2/PP3PPP/R4RK1 b kq - 0 15",
+   "amZug": "b",
+   "angebot": "fxg6",
+   "antwort": "geschenk",
+   "wertVorher": 2.94,
+   "wertNachher": 2.94,
+   "verlustBeimNehmen": 0.0,
+   "bester": "fxg6",
+   "fortsetzung": [
+    "fxg6",
+    "Bxg7",
+    "Qxg7",
+    "Rfe1",
+    "Qe7",
+    "c5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "mncLZ",
+    "wertung": 1763,
+    "partie": "https://lichess.org/EmvcvNsj#29",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-WbHsM",
+   "fenVorher": "1k2r2r/ppp4p/2nq2p1/3Bn1B1/4Q3/2P4P/PP1R1PP1/2K4R w - - 1 21",
+   "vorzug": "Bf7",
+   "fen": "1k2r2r/ppp2B1p/2nq2p1/4n1B1/4Q3/2P4P/PP1R1PP1/2K4R b - - 2 21",
+   "amZug": "b",
+   "angebot": "Nxf7",
+   "antwort": "geschenk",
+   "wertVorher": 5.58,
+   "wertNachher": 5.51,
+   "verlustBeimNehmen": 0.07,
+   "bester": "Nxf7",
+   "fortsetzung": [
+    "Nxf7",
+    "Qa4",
+    "Qe6",
+    "Be3",
+    "a6",
+    "Re1"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "WbHsM",
+    "wertung": 1703,
+    "partie": "https://lichess.org/EY7Z5Rxa#41",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-5v38B",
+   "fenVorher": "4r1k1/ppp3p1/1b1p3p/3P4/2P5/1P5P/P2Br1PK/4RR2 w - - 1 26",
+   "vorzug": "Ba5",
+   "fen": "4r1k1/ppp3p1/1b1p3p/B2P4/2P5/1P5P/P3r1PK/4RR2 b - - 2 26",
+   "amZug": "b",
+   "angebot": "Bxa5",
+   "antwort": "geschenk",
+   "wertVorher": 5.61,
+   "wertNachher": 5.71,
+   "verlustBeimNehmen": -0.1,
+   "bester": "Bxa5",
+   "fortsetzung": [
+    "Bxa5",
+    "Rxe2",
+    "Rxe2",
+    "a4",
+    "Bc3",
+    "Kg3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "5v38B",
+    "wertung": 1701,
+    "partie": "https://lichess.org/faomTN4t#51",
     "themen": [
      "crushing",
      "endgame",
      "hangingPiece",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-DSBgu",
+   "fenVorher": "r1b2rk1/ppp2pp1/2nbq2p/3Np3/2P5/3P1N1P/PP1QBPP1/R3K2R b KQ - 0 12",
+   "vorzug": "Qxd5",
+   "fen": "r1b2rk1/ppp2pp1/2nb3p/3qp3/2P5/3P1N1P/PP1QBPP1/R3K2R w KQ - 0 13",
+   "amZug": "w",
+   "angebot": "cxd5",
+   "antwort": "geschenk",
+   "wertVorher": 5.73,
+   "wertNachher": 5.69,
+   "verlustBeimNehmen": 0.04,
+   "bester": "cxd5",
+   "fortsetzung": [
+    "cxd5",
+    "Bb4",
+    "dxc6",
+    "Bxd2+",
+    "Kxd2",
+    "Re8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "DSBgu",
+    "wertung": 1688,
+    "partie": "https://lichess.org/r17sQHsI/black#24",
+    "themen": [
+     "crushing",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-vr7Q8",
+   "fenVorher": "r6r/pp1nkpbp/2pNpnp1/6NB/3P3q/5Q2/PPPB1P2/R4RK1 w - - 6 16",
+   "vorzug": "Bb4",
+   "fen": "r6r/pp1nkpbp/2pNpnp1/6NB/1B1P3q/5Q2/PPP2P2/R4RK1 b - - 7 16",
+   "amZug": "b",
+   "angebot": "Qxg5+",
+   "antwort": "geschenk",
+   "wertVorher": 4.65,
+   "wertNachher": 4.76,
+   "verlustBeimNehmen": -0.11,
+   "bester": "Qxg5+",
+   "fortsetzung": [
+    "Qxg5+",
+    "Qg3",
+    "Qxg3+",
+    "fxg3",
+    "gxh5",
+    "Nxb7+"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "vr7Q8",
+    "wertung": 1855,
+    "partie": "https://lichess.org/ud9tKXWY#31",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "kingsideAttack",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 4
+  },
+  {
+   "id": "falle-l-KSR7z",
+   "fenVorher": "2r2rk1/pbq2pb1/1p1p1n2/2p2QNp/3P1N1P/2P1P3/PP3PP1/2KR2R1 b - - 0 17",
+   "vorzug": "cxd4",
+   "fen": "2r2rk1/pbq2pb1/1p1p1n2/5QNp/3p1N1P/2P1P3/PP3PP1/2KR2R1 w - - 0 18",
+   "amZug": "w",
+   "angebot": "Rxd4",
+   "antwort": "falle",
+   "wertVorher": 3.25,
+   "wertNachher": -1.39,
+   "verlustBeimNehmen": 4.64,
+   "bester": "Nxh5",
+   "fortsetzung": [
+    "Rxd4",
+    "Rfe8",
+    "Rgd1",
+    "Qd7",
+    "Qc2",
+    "Rc5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "KSR7z",
+    "wertung": 1938,
+    "partie": "https://lichess.org/CR7Up4Fs/black#34",
+    "themen": [
+     "advantage",
+     "fork",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 3,
+    "laenge": 1,
+    "klasse": "t1-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-Pbsgj",
+   "fenVorher": "r5k1/pb4bp/1p1q2p1/3np3/2B4P/2N2QP1/PP4PK/5R2 b - - 2 23",
+   "vorzug": "e4",
+   "fen": "r5k1/pb4bp/1p1q2p1/3n4/2B1p2P/2N2QP1/PP4PK/5R2 w - - 0 24",
+   "amZug": "w",
+   "angebot": "Qxe4",
+   "antwort": "falle",
+   "wertVorher": 5.66,
+   "wertNachher": -3.2,
+   "verlustBeimNehmen": 8.86,
+   "bester": "Qf7+",
+   "fortsetzung": [
+    "Qxe4",
+    "Bxc3",
+    "bxc3",
+    "Rf8",
+    "Rd1",
+    "Rf5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Pbsgj",
+    "wertung": 2071,
+    "partie": "https://lichess.org/cGTcE31V/black#46",
+    "themen": [
+     "advantage",
+     "fork",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-7kPgW",
+   "fenVorher": "r1nb4/1p3q1r/p1p1p1k1/P1NpPp1p/1P1P1PpR/2PQN1P1/5KP1/7R w - - 7 32",
+   "vorzug": "Nxg4",
+   "fen": "r1nb4/1p3q1r/p1p1p1k1/P1NpPp1p/1P1P1PNR/2PQ2P1/5KP1/7R b - - 0 32",
+   "amZug": "b",
+   "angebot": "hxg4",
+   "antwort": "falle",
+   "wertVorher": 2.61,
+   "wertNachher": -98.0,
+   "verlustBeimNehmen": 100.61,
+   "bester": "Bxh4",
+   "fortsetzung": [
+    "hxg4",
+    "Rxg4+",
+    "Bg5",
+    "Rxg5#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "7kPgW",
+    "wertung": 1917,
+    "partie": "https://lichess.org/MAkKE7nB#63",
+    "themen": [
+     "advantage",
+     "intermezzo",
+     "long",
+     "middlegame"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-JfgJy",
+   "fenVorher": "r2qr3/pb3k1p/2p2np1/b2pp1B1/4N3/P4Q2/1PP2PPP/2KR3R b - - 1 17",
+   "vorzug": "dxe4",
+   "fen": "r2qr3/pb3k1p/2p2np1/b3p1B1/4p3/P4Q2/1PP2PPP/2KR3R w - - 0 18",
+   "amZug": "w",
+   "angebot": "Rxd8",
+   "antwort": "falle",
+   "wertVorher": 4.79,
+   "wertNachher": -7.12,
+   "verlustBeimNehmen": 11.91,
+   "bester": "Qb3+",
+   "fortsetzung": [
+    "Rxd8",
+    "exf3",
+    "Rd3",
+    "fxg2",
+    "Rg1",
+    "Ba6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "JfgJy",
+    "wertung": 2055,
+    "partie": "https://lichess.org/8VADXNIL/black#34",
+    "themen": [
+     "advantage",
+     "fork",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-3uAq2",
+   "fenVorher": "5rk1/p1r3pp/1p1bp1q1/5p2/2PPb3/P6P/1Q1B1PP1/R3RBK1 b - - 0 22",
+   "vorzug": "Rxc4",
+   "fen": "5rk1/p5pp/1p1bp1q1/5p2/2rPb3/P6P/1Q1B1PP1/R3RBK1 w - - 0 23",
+   "amZug": "w",
+   "angebot": "Bxc4",
+   "antwort": "falle",
+   "wertVorher": 5.37,
+   "wertNachher": -99.0,
+   "verlustBeimNehmen": 104.37,
+   "bester": "Rxe4",
+   "fortsetzung": [
+    "Bxc4",
+    "Qxg2#"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "3uAq2",
+    "wertung": 1973,
+    "partie": "https://lichess.org/NEUKO1lv/black#44",
+    "themen": [
+     "advantage",
+     "intermezzo",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-G1Gci",
+   "fenVorher": "2k1r3/1pq2pp1/p6p/4N3/3P4/2PQ3P/Pr1B3b/R6K b - - 1 31",
+   "vorzug": "Qd6",
+   "fen": "2k1r3/1p3pp1/p2q3p/4N3/3P4/2PQ3P/Pr1B3b/R6K w - - 2 32",
+   "amZug": "w",
+   "angebot": "Nxf7",
+   "antwort": "falle",
+   "wertVorher": 2.1,
+   "wertNachher": -6.62,
+   "verlustBeimNehmen": 8.72,
+   "bester": "Nc4",
+   "fortsetzung": [
+    "Nxf7",
+    "Qg3",
+    "Nd6+",
+    "Qxd6",
+    "Rf1",
+    "Kb8"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "G1Gci",
+    "wertung": 2216,
+    "partie": "https://lichess.org/D6GEeaR4/black#62",
+    "themen": [
+     "advantage",
+     "fork",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-Sd20D",
+   "fenVorher": "6k1/2pr1bp1/p1p4p/4b3/8/P1N1B2P/1PP3P1/4R1K1 w - - 0 25",
+   "vorzug": "Bxh6",
+   "fen": "6k1/2pr1bp1/p1p4B/4b3/8/P1N4P/1PP3P1/4R1K1 b - - 0 25",
+   "amZug": "b",
+   "angebot": "gxh6",
+   "antwort": "falle",
+   "wertVorher": 4.75,
+   "wertNachher": -2.37,
+   "verlustBeimNehmen": 7.12,
+   "bester": "Bxc3",
+   "fortsetzung": [
+    "gxh6",
+    "Rxe5",
+    "Bg6",
+    "Re2",
+    "c5",
+    "Kf2"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Sd20D",
+    "wertung": 2047,
+    "partie": "https://lichess.org/cI1Dg08O#49",
+    "themen": [
+     "advantage",
+     "endgame",
+     "intermezzo",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-JIaYi",
+   "fenVorher": "6k1/Rp3rn1/6p1/3PQ2p/2P1P1q1/1P3p2/1P4PP/5RK1 w - - 0 29",
+   "vorzug": "Qg3",
+   "fen": "6k1/Rp3rn1/6p1/3P3p/2P1P1q1/1P3pQ1/1P4PP/5RK1 b - - 1 29",
+   "amZug": "b",
+   "angebot": "Qxe4",
+   "antwort": "falle",
+   "wertVorher": 2.45,
+   "wertNachher": -4.98,
+   "verlustBeimNehmen": 7.43,
+   "bester": "f2+",
+   "fortsetzung": [
+    "Qxe4",
+    "gxf3",
+    "Qe3+",
+    "Qf2",
+    "Qxb3",
+    "Rc1"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "JIaYi",
+    "wertung": 2504,
+    "partie": "https://lichess.org/8OQnfpUP#57",
+    "themen": [
+     "advancedPawn",
+     "advantage",
+     "clearance",
+     "endgame",
      "long"
     ]
    },
@@ -1961,285 +4604,38 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 2
+   "schwierigkeit": 5
   },
   {
-   "id": "falle-l-ETbgU",
-   "fen": "r3k2r/ppp1bppp/4qP2/8/8/5QP1/PPP2PBP/R1B1R1K1 b kq - 0 14",
+   "id": "falle-l-xZIGk",
+   "fenVorher": "2kr3r/ppp3pp/2nb4/4qp2/4P3/6PP/PPP1BP2/R1BQ1RK1 w - - 1 14",
+   "vorzug": "exf5",
+   "fen": "2kr3r/ppp3pp/2nb4/4qP2/8/6PP/PPP1BP2/R1BQ1RK1 b - - 0 14",
    "amZug": "b",
-   "angebot": "Qxe1+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxe1+",
-   "fortsetzung": [
-    "Qxe1+",
-    "Bf1",
-    "Bxf6",
-    "Qe3+",
-    "Qxe3",
-    "Bxe3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "ETbgU",
-    "wertung": 1273,
-    "partie": "https://lichess.org/QAKmMZBy#27",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "intermezzo",
-     "kingsideAttack",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-savFM",
-   "fen": "7r/4R1p1/2P1p1k1/2P2p2/p2PpP2/P3n1Nr/5R2/4B1K1 b - - 1 35",
-   "amZug": "b",
-   "angebot": "Rxg3+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxg3+",
-   "fortsetzung": [
-    "Rxg3+",
-    "Rg2",
-    "Rxg2#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "savFM",
-    "wertung": 1259,
-    "partie": "https://lichess.org/5dw7Zln5#69",
-    "themen": [
-     "hangingPiece",
-     "mate",
-     "mateIn2",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-HX4pW",
-   "fen": "3qrn1k/pp3r1p/5ppQ/4b3/3pp2P/1B2B1P1/3R1PK1/1N6 w - - 0 32",
-   "amZug": "w",
-   "angebot": "Bxf7",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Bxf7",
-   "fortsetzung": [
-    "Bxf7",
-    "Qe7",
-    "Bxe8",
-    "dxe3",
-    "Qxe3",
-    "Qxe8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "HX4pW",
-    "wertung": 1059,
-    "partie": "https://lichess.org/PFuH0g6S/black#62",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "master",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-GAZF0",
-   "fen": "5rk1/2R5/4p1b1/Np1pP1Kp/1P1P4/P3P1p1/8/8 w - - 0 39",
-   "amZug": "w",
-   "angebot": "Kxg6",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Kxg6",
-   "fortsetzung": [
-    "Kxg6",
-    "g2",
-    "Rg7+",
-    "Kh8",
-    "Rh7+",
-    "Kg8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "GAZF0",
-    "wertung": 1126,
-    "partie": "https://lichess.org/fhMufd46/black#76",
-    "themen": [
-     "crushing",
-     "endgame",
-     "hangingPiece",
-     "master",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-qgtH1",
-   "fen": "r4rk1/p1p2ppp/1p2p3/2b5/4n3/2Pn1NPP/PP1BKP2/R2N3R w - - 0 18",
-   "amZug": "w",
-   "angebot": "Kxd3",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Kxd3",
-   "fortsetzung": [
-    "Kxd3",
-    "Nxf2+",
-    "Nxf2",
-    "Bxf2",
-    "Ke2",
-    "Bc5"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "qgtH1",
-    "wertung": 1164,
-    "partie": "https://lichess.org/UZuZfrRX/black#34",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-ShGB2",
-   "fen": "5nk1/pb4pp/1pp5/3p2q1/2PPN3/1B2P3/PP2Q1PP/6K1 b - - 0 21",
-   "amZug": "b",
-   "angebot": "dxe4",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "dxe4",
-   "fortsetzung": [
-    "dxe4",
-    "c5+",
-    "Kh8",
-    "h4",
-    "Qd8",
-    "cxb6"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "ShGB2",
-    "wertung": 1220,
-    "partie": "https://lichess.org/GnTHBPLf#41",
-    "themen": [
-     "advantage",
-     "defensiveMove",
-     "endgame",
-     "hangingPiece",
-     "master",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 2
-  },
-  {
-   "id": "falle-l-5IWf8",
-   "fen": "6r1/pp4r1/1kp3P1/1qn1QB1p/3p3P/3P2P1/PPP2K2/R2R4 b - - 2 28",
-   "amZug": "b",
-   "angebot": "Qxb2",
+   "angebot": "Qxf5",
    "antwort": "falle",
-   "verlustBeimNehmen": 18.24,
-   "bester": "Nxd3+",
+   "wertVorher": 3.8,
+   "wertNachher": -6.6,
+   "verlustBeimNehmen": 10.4,
+   "bester": "Bc5",
    "fortsetzung": [
-    "Qxb2",
-    "Rdb1",
-    "Qb5",
-    "Rxb5+",
-    "Kxb5",
-    "Rb1+"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "5IWf8",
-    "wertung": 1521,
-    "partie": "https://lichess.org/cPWLxVmY#55",
-    "themen": [
-     "crushing",
-     "discoveredAttack",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-qPxm4",
-   "fen": "5rk1/1p2p1B1/2p3pp/3P1nq1/P1P5/3Q4/P3R1PP/5R1K b - - 0 24",
-   "amZug": "b",
-   "angebot": "Kxg7",
-   "antwort": "falle",
-   "verlustBeimNehmen": 102.31,
-   "bester": "Ng3+",
-   "fortsetzung": [
-    "Kxg7",
-    "Rfe1",
+    "Qxf5",
+    "Bg4",
+    "Rhf8",
+    "Be3",
     "h5",
-    "Qc3+",
-    "Kh7",
-    "a5"
+    "Bxf5+"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "qPxm4",
-    "wertung": 1446,
-    "partie": "https://lichess.org/6bZYZnnj#47",
+    "puzzle": "xZIGk",
+    "wertung": 1947,
+    "partie": "https://lichess.org/WlpJV5II#27",
     "themen": [
+     "advantage",
      "discoveredAttack",
-     "kingsideAttack",
-     "long",
-     "mate",
-     "mateIn3",
-     "middlegame"
+     "middlegame",
+     "short"
     ]
    },
    "messung": {
@@ -2247,36 +4643,37 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 3
+   "schwierigkeit": 5
   },
   {
-   "id": "falle-l-21JUa",
-   "fen": "1br2rk1/pp3ppp/3qpn2/3pnN2/1P6/P1NPP2P/1B2BPP1/2RQ1RK1 b - - 0 16",
-   "amZug": "b",
-   "angebot": "exf5",
+   "id": "falle-l-Xtdqg",
+   "fenVorher": "3rr1k1/p7/1p2p1pq/4Pp1p/2PPp1nP/1P4PR/PB2Q1K1/4R3 b - - 0 28",
+   "vorzug": "Nxe5",
+   "fen": "3rr1k1/p7/1p2p1pq/4np1p/2PPp2P/1P4PR/PB2Q1K1/4R3 w - - 0 29",
+   "amZug": "w",
+   "angebot": "dxe5",
    "antwort": "falle",
-   "verlustBeimNehmen": 98.35,
-   "bester": "Nf3+",
+   "wertVorher": 3.15,
+   "wertNachher": -5.64,
+   "verlustBeimNehmen": 8.79,
+   "bester": "Bc1",
    "fortsetzung": [
-    "exf5",
-    "g3",
-    "Qd7",
-    "Na2",
-    "Rce8",
-    "Bd4"
+    "dxe5",
+    "Rd2",
+    "Kf2",
+    "Red8",
+    "Bc1",
+    "Rxe2+"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "21JUa",
-    "wertung": 1582,
-    "partie": "https://lichess.org/A8ACYZb8#31",
+    "puzzle": "Xtdqg",
+    "wertung": 1940,
+    "partie": "https://lichess.org/hKk761B7/black#56",
     "themen": [
-     "clearance",
-     "kingsideAttack",
-     "mate",
-     "mateIn2",
-     "opening",
-     "sacrifice",
+     "advantage",
+     "intermezzo",
+     "middlegame",
      "short"
     ]
    },
@@ -2285,33 +4682,234 @@
     "laenge": 1,
     "klasse": "t1-l0"
    },
-   "schwierigkeit": 3
+   "schwierigkeit": 5
   },
   {
-   "id": "falle-l-ai19o",
-   "fen": "r1bq1nk1/7p/1p2P1p1/3pP3/1p1P4/PP2P2P/4B3/R4QK1 w - - 1 23",
+   "id": "falle-l-XbfBn",
+   "fenVorher": "r1b2rk1/pp1pppbp/2n2np1/q7/3NPP2/2N1B3/PPPQB1PP/R3K2R b KQ - 0 9",
+   "vorzug": "Nxe4",
+   "fen": "r1b2rk1/pp1pppbp/2n3p1/q7/3NnP2/2N1B3/PPPQB1PP/R3K2R w KQ - 0 10",
    "amZug": "w",
-   "angebot": "axb4",
+   "angebot": "Nxe4",
    "antwort": "falle",
-   "verlustBeimNehmen": 13.54,
-   "bester": "Qf7+",
+   "wertVorher": 4.29,
+   "wertNachher": -2.1,
+   "verlustBeimNehmen": 6.39,
+   "bester": "Nxc6",
    "fortsetzung": [
-    "axb4",
-    "Rxa1",
-    "Qxa1",
-    "Qg5+",
-    "Kf2",
-    "Qh4+"
+    "Nxe4",
+    "Qxd2+",
+    "Nxd2",
+    "Nxd4",
+    "Bd3",
+    "d6"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "ai19o",
-    "wertung": 1445,
-    "partie": "https://lichess.org/xPWHBkg5/black#44",
+    "puzzle": "XbfBn",
+    "wertung": 1935,
+    "partie": "https://lichess.org/JOhnXici/black#18",
     "themen": [
-     "advancedPawn",
+     "advantage",
+     "intermezzo",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-aEnTS",
+   "fenVorher": "rnq1kr2/pbp2p2/1p2pQ2/8/2n3p1/2N1B1P1/PP3PBP/R4RK1 b q - 0 18",
+   "vorzug": "Bxg2",
+   "fen": "rnq1kr2/p1p2p2/1p2pQ2/8/2n3p1/2N1B1P1/PP3PbP/R4RK1 w q - 0 19",
+   "amZug": "w",
+   "angebot": "Kxg2",
+   "antwort": "falle",
+   "wertVorher": 1.97,
+   "wertNachher": -3.8,
+   "verlustBeimNehmen": 5.77,
+   "bester": "Bg5",
+   "fortsetzung": [
+    "Kxg2",
+    "Qb7+",
+    "Kg1",
+    "Nd7",
+    "Qg5",
+    "Nde5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "aEnTS",
+    "wertung": 2145,
+    "partie": "https://lichess.org/Y58u8cEC/black#36",
+    "themen": [
+     "advantage",
+     "intermezzo",
+     "middlegame",
+     "quietMove",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 4,
+    "laenge": 1,
+    "klasse": "t1-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-atTh4",
+   "fenVorher": "6k1/pppr2p1/6q1/7p/4r3/1P1PRpPQ/P4P2/3R2K1 w - - 0 32",
+   "vorzug": "dxe4",
+   "fen": "6k1/pppr2p1/6q1/7p/4P3/1P2RpPQ/P4P2/3R2K1 b - - 0 32",
+   "amZug": "b",
+   "angebot": "Rxd1+",
+   "antwort": "geschenk",
+   "wertVorher": 5.22,
+   "wertNachher": 5.26,
+   "verlustBeimNehmen": -0.04,
+   "bester": "Rxd1+",
+   "fortsetzung": [
+    "Rxd1+",
+    "Kh2",
+    "Qg4",
+    "Qxg4",
+    "hxg4",
+    "Rc3"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "atTh4",
+    "wertung": 2211,
+    "partie": "https://lichess.org/CPYsYbCb#63",
+    "themen": [
      "crushing",
+     "endgame",
+     "hangingPiece",
+     "long"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-cA7RG",
+   "fenVorher": "8/ppp1n2p/8/4pP1k/1PPpP3/P6K/3B4/8 b - - 0 34",
+   "vorzug": "Nxf5",
+   "fen": "8/ppp4p/8/4pn1k/1PPpP3/P6K/3B4/8 w - - 0 35",
+   "amZug": "w",
+   "angebot": "exf5",
+   "antwort": "geschenk",
+   "wertVorher": 3.98,
+   "wertNachher": 3.71,
+   "verlustBeimNehmen": 0.27,
+   "bester": "exf5",
+   "fortsetzung": [
+    "exf5",
+    "e4",
+    "Bf4",
+    "a6",
+    "b5",
+    "h6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "cA7RG",
+    "wertung": 2362,
+    "partie": "https://lichess.org/KvkR86YV/black#68",
+    "themen": [
+     "crushing",
+     "endgame",
+     "hangingPiece",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-mxeYw",
+   "fenVorher": "8/2K4p/6p1/1P3p2/N1n5/P7/6kP/8 w - - 3 41",
+   "vorzug": "Nb2",
+   "fen": "8/2K4p/6p1/1P3p2/2n5/P7/1N4kP/8 b - - 4 41",
+   "amZug": "b",
+   "angebot": "Nxb2",
+   "antwort": "geschenk",
+   "wertVorher": 6.05,
+   "wertNachher": 6.0,
+   "verlustBeimNehmen": 0.05,
+   "bester": "Nxb2",
+   "fortsetzung": [
+    "Nxb2",
+    "b6",
+    "Na4",
+    "b7",
+    "Nc5",
+    "b8=Q"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "mxeYw",
+    "wertung": 2360,
+    "partie": "https://lichess.org/CCRkGlxJ#81",
+    "themen": [
+     "crushing",
+     "endgame",
+     "hangingPiece",
+     "knightEndgame",
+     "long"
+    ]
+   },
+   "messung": {
+    "tiefe": 7,
+    "laenge": 1,
+    "klasse": "t2-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-2NI9U",
+   "fenVorher": "r5k1/1bpnq1pp/pb2r3/1p2P1N1/8/1Q5P/PB1N1PP1/R3R1K1 b - - 4 23",
+   "vorzug": "Qxg5",
+   "fen": "r5k1/1bpn2pp/pb2r3/1p2P1q1/8/1Q5P/PB1N1PP1/R3R1K1 w - - 0 24",
+   "amZug": "w",
+   "angebot": "Qxe6+",
+   "antwort": "geschenk",
+   "wertVorher": 3.76,
+   "wertNachher": 3.66,
+   "verlustBeimNehmen": 0.1,
+   "bester": "Qxe6+",
+   "fortsetzung": [
+    "Qxe6+",
+    "Kh8",
+    "Ne4",
+    "Qf4",
+    "Qxd7",
+    "Bxe4"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "2NI9U",
+    "wertung": 2025,
+    "partie": "https://lichess.org/Y8oPhrmF/black#46",
+    "themen": [
+     "advantage",
      "fork",
+     "hangingPiece",
      "long",
      "middlegame"
     ]
@@ -2321,384 +4919,117 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 3
+   "schwierigkeit": 5
   },
   {
-   "id": "falle-l-K8fsl",
-   "fen": "8/2N5/p2p2p1/Pp1Pn3/2p1Pk2/2P4r/1P2K3/6R1 w - - 2 41",
-   "amZug": "w",
-   "angebot": "Nxa6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 7.95,
-   "bester": "Ne6+",
-   "fortsetzung": [
-    "Nxa6",
-    "Rh2+",
-    "Kd1",
-    "Rxb2",
-    "Re1",
-    "Rb1+"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "K8fsl",
-    "wertung": 1353,
-    "partie": "https://lichess.org/8iRn78wi/black#80",
-    "themen": [
-     "advantage",
-     "endgame",
-     "fork",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-jBO9m",
-   "fen": "q3k2r/p1pn1ppp/3pb3/4p3/1PPNn3/P1N3P1/3PPP1P/R1BQK2R b KQk - 0 10",
+   "id": "falle-l-3qR6M",
+   "fenVorher": "r3kb1r/pp1n1ppp/4qn2/2pp1N2/4P3/2N5/PPP2PPP/R1BQ1RK1 w kq - 0 11",
+   "vorzug": "exd5",
+   "fen": "r3kb1r/pp1n1ppp/4qn2/2pP1N2/8/2N5/PPP2PPP/R1BQ1RK1 b kq - 0 11",
    "amZug": "b",
-   "angebot": "exd4",
-   "antwort": "falle",
-   "verlustBeimNehmen": 8.58,
-   "bester": "Nxc3",
-   "fortsetzung": [
-    "exd4",
-    "Nxe4",
-    "Qxe4",
-    "f3",
-    "Qe5",
-    "d3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "jBO9m",
-    "wertung": 1440,
-    "partie": "https://lichess.org/FA8bdKET#19",
-    "themen": [
-     "advantage",
-     "discoveredAttack",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-iWr49",
-   "fen": "1r3k2/1p2rpp1/2B2b1p/p7/P1P5/1R1P3P/2P3PK/5R2 b - - 0 31",
-   "amZug": "b",
-   "angebot": "bxc6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 9.44,
-   "bester": "Be5+",
-   "fortsetzung": [
-    "bxc6",
-    "Rxb8+",
-    "Re8",
-    "Rxe8+",
-    "Kxe8",
-    "Rb1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "iWr49",
-    "wertung": 1508,
-    "partie": "https://lichess.org/BqW96FSu#61",
-    "themen": [
-     "crushing",
-     "endgame",
-     "intermezzo",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-bmHFU",
-   "fen": "8/4r2k/2r1B1R1/1p1p1K2/p2P4/P1P5/1P6/8 w - - 5 58",
-   "amZug": "w",
-   "angebot": "Bxd5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 14.31,
-   "bester": "Bg8+",
-   "fortsetzung": [
-    "Bxd5",
-    "Rxg6",
-    "Be4",
-    "Kg7",
-    "Kf4",
-    "Rf6+"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "bmHFU",
-    "wertung": 1305,
-    "partie": "https://lichess.org/uEt9B87X/black#114",
-    "themen": [
-     "crushing",
-     "discoveredAttack",
-     "endgame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-4MPqJ",
-   "fen": "2kr1b1r/pp3p1p/2pB4/5p2/8/3n1P2/PPP3PP/RN3RK1 w - - 0 17",
-   "amZug": "w",
-   "angebot": "cxd3",
-   "antwort": "falle",
-   "verlustBeimNehmen": 7.43,
-   "bester": "Bxf8",
-   "fortsetzung": [
-    "cxd3",
-    "Rxd6",
-    "Nc3",
-    "Bg7",
-    "Rfd1",
-    "Rhd8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "4MPqJ",
-    "wertung": 1403,
-    "partie": "https://lichess.org/TCs8FeFl/black#32",
-    "themen": [
-     "advantage",
-     "intermezzo",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-tkc6E",
-   "fen": "r2qk2r/pp1b1ppp/2B1p3/2p1b3/3Pp3/2N5/PPP2PPP/R2QK2R w KQkq - 0 11",
-   "amZug": "w",
-   "angebot": "dxe5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 6.93,
-   "bester": "Bxd7+",
-   "fortsetzung": [
-    "dxe5",
-    "Bxc6",
-    "Qd2",
-    "Qd4",
-    "Qxd4",
-    "cxd4"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "tkc6E",
-    "wertung": 1507,
-    "partie": "https://lichess.org/IqoV3E2c/black#20",
-    "themen": [
-     "crushing",
-     "intermezzo",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-2yoSS",
-   "fen": "3R4/pp2rpkp/3B1b2/5p1B/8/1PP4P/Pn3PP1/6K1 b - - 4 23",
-   "amZug": "b",
-   "angebot": "Bxc3",
-   "antwort": "falle",
-   "verlustBeimNehmen": 13.81,
-   "bester": "Re1+",
-   "fortsetzung": [
-    "Bxc3",
-    "Bxe7",
-    "Be5",
-    "Rd7",
-    "a5",
-    "Bg5"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "2yoSS",
-    "wertung": 1390,
-    "partie": "https://lichess.org/rLdf6K40#45",
-    "themen": [
-     "advantage",
-     "discoveredAttack",
-     "endgame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-sOvpi",
-   "fen": "r2q1k2/p2pbPrp/1p5B/2pn2N1/8/3P4/PPP3PP/R4RK1 w - - 0 20",
-   "amZug": "w",
-   "angebot": "Bxg7+",
-   "antwort": "falle",
-   "verlustBeimNehmen": 103.76,
-   "bester": "Nxh7#",
-   "fortsetzung": [
-    "Bxg7+",
-    "Kxg7",
-    "Ne4",
-    "Qh8",
-    "Ng3",
-    "Kf8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "sOvpi",
-    "wertung": 1439,
-    "partie": "https://lichess.org/YlkJ5wM1/black#38",
-    "themen": [
-     "mate",
-     "mateIn1",
-     "middlegame",
-     "oneMove",
-     "pin"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-TDf0k",
-   "fen": "4r2r/1QBqRkpp/1pn2p2/1Bp5/2P5/5N2/PP3PPP/2K5 b - - 0 21",
-   "amZug": "b",
-   "angebot": "Rxe7",
+   "angebot": "Qxf5",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxe7",
+   "wertVorher": 2.8,
+   "wertNachher": 3.07,
+   "verlustBeimNehmen": -0.27,
+   "bester": "Qxf5",
    "fortsetzung": [
-    "Rxe7",
-    "Bxc6",
-    "Qxc7",
-    "Bd5+",
-    "Kf8",
-    "Qxc7"
+    "Qxf5",
+    "Re1+",
+    "Kd8",
+    "h3",
+    "h5",
+    "Re3"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "TDf0k",
-    "wertung": 1401,
-    "partie": "https://lichess.org/9M2WIROo#41",
+    "puzzle": "3qR6M",
+    "wertung": 1998,
+    "partie": "https://lichess.org/ke0ObDLW#21",
     "themen": [
      "advantage",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-dj2Y5",
-   "fen": "5r1k/5p1p/2qNp2Q/3nP2p/1p1P2P1/2p2P2/b6P/2R3K1 w - - 0 34",
-   "amZug": "w",
-   "angebot": "Qxf8#",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxf8#",
-   "fortsetzung": [
-    "Qxf8#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "dj2Y5",
-    "wertung": 1399,
-    "partie": "https://lichess.org/JgCgcJSV/black#66",
-    "themen": [
-     "hangingPiece",
-     "kingsideAttack",
-     "mate",
-     "mateIn1",
-     "middlegame",
-     "oneMove"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-54iSc",
-   "fen": "8/8/5p2/5P2/1nPK4/1k6/8/q6R w - - 0 57",
-   "amZug": "w",
-   "angebot": "Rxa1",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxa1",
-   "fortsetzung": [
-    "Rxa1",
-    "Nc2+",
-    "Kd5",
-    "Nxa1",
-    "c5",
-    "Nc2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "54iSc",
-    "wertung": 1347,
-    "partie": "https://lichess.org/ZhjjzNmt/black#112",
-    "themen": [
-     "crushing",
      "defensiveMove",
-     "endgame",
      "hangingPiece",
-     "master",
+     "opening",
      "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 5,
+    "laenge": 1,
+    "klasse": "t1-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-vhDtC",
+   "fenVorher": "r3r1k1/p1qb3p/3p2pP/5p2/1P1b4/3B1Q2/P1p3P1/2R2R1K b - - 4 28",
+   "vorzug": "Re3",
+   "fen": "r5k1/p1qb3p/3p2pP/5p2/1P1b4/3BrQ2/P1p3P1/2R2R1K w - - 5 29",
+   "amZug": "w",
+   "angebot": "Qxa8+",
+   "antwort": "geschenk",
+   "wertVorher": 5.93,
+   "wertNachher": 5.91,
+   "verlustBeimNehmen": 0.02,
+   "bester": "Qxa8+",
+   "fortsetzung": [
+    "Qxa8+",
+    "Kf7",
+    "Qd5+",
+    "Ke7",
+    "Qxd4",
+    "Re5"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "vhDtC",
+    "wertung": 2205,
+    "partie": "https://lichess.org/pJ3VjZuv/black#56",
+    "themen": [
+     "crushing",
+     "hangingPiece",
+     "middlegame",
+     "short"
+    ]
+   },
+   "messung": {
+    "tiefe": 3,
+    "laenge": 1,
+    "klasse": "t1-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-jhWMt",
+   "fenVorher": "1r2k2r/p3ppbp/3pbnp1/q1p5/4P3/1PNBBP2/P1PQ2PP/R3K2R b KQk - 1 13",
+   "vorzug": "Nxe4",
+   "fen": "1r2k2r/p3ppbp/3pb1p1/q1p5/4n3/1PNBBP2/P1PQ2PP/R3K2R w KQk - 0 14",
+   "amZug": "w",
+   "angebot": "Nxe4",
+   "antwort": "geschenk",
+   "wertVorher": 3.33,
+   "wertNachher": 3.34,
+   "verlustBeimNehmen": -0.01,
+   "bester": "Nxe4",
+   "fortsetzung": [
+    "Nxe4",
+    "Qxd2+",
+    "Kxd2",
+    "Bxa1",
+    "Rxa1",
+    "f6"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "jhWMt",
+    "wertung": 2015,
+    "partie": "https://lichess.org/YAB08XYj/black#26",
+    "themen": [
+     "advantage",
+     "hangingPiece",
+     "long",
+     "middlegame"
     ]
    },
    "messung": {
@@ -2706,31 +5037,75 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 3
+   "schwierigkeit": 5
   },
   {
-   "id": "falle-l-4oZWu",
-   "fen": "8/1N3pk1/p4pp1/2b1p3/P7/4p2P/5PP1/6K1 w - - 0 42",
+   "id": "falle-l-nPGwV",
+   "fenVorher": "1r6/p2R1p1r/2p2ppk/8/1p1PpNPP/b1P5/5PK1/1R6 b - - 0 37",
+   "vorzug": "bxc3",
+   "fen": "1r6/p2R1p1r/2p2ppk/8/3PpNPP/b1p5/5PK1/1R6 w - - 0 38",
    "amZug": "w",
-   "angebot": "Nxc5",
+   "angebot": "Rxb8",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Nxc5",
+   "wertVorher": 3.51,
+   "wertNachher": 3.53,
+   "verlustBeimNehmen": -0.02,
+   "bester": "Rxb8",
    "fortsetzung": [
-    "Nxc5",
-    "e2",
-    "Nd3",
-    "e4",
-    "Ne1",
-    "f5"
+    "Rxb8",
+    "c2",
+    "Ne2",
+    "c1=R",
+    "Nxc1",
+    "Bxc1"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "4oZWu",
-    "wertung": 1362,
-    "partie": "https://lichess.org/1gws4M87/black#82",
+    "puzzle": "nPGwV",
+    "wertung": 2007,
+    "partie": "https://lichess.org/OzXVB6iJ/black#74",
     "themen": [
      "advantage",
+     "endgame",
+     "hangingPiece",
+     "long",
+     "quietMove"
+    ]
+   },
+   "messung": {
+    "tiefe": 1,
+    "laenge": 1,
+    "klasse": "t0-l0"
+   },
+   "schwierigkeit": 5
+  },
+  {
+   "id": "falle-l-tYGK9",
+   "fenVorher": "8/8/4k3/6PK/4n2P/8/8/8 b - - 0 72",
+   "vorzug": "Nxg5",
+   "fen": "8/8/4k3/6nK/7P/8/8/8 w - - 0 73",
+   "amZug": "w",
+   "angebot": "hxg5",
+   "antwort": "geschenk",
+   "wertVorher": 6.14,
+   "wertNachher": 6.0,
+   "verlustBeimNehmen": 0.14,
+   "bester": "hxg5",
+   "fortsetzung": [
+    "hxg5",
+    "Kf7",
+    "Kh6",
+    "Kf8",
+    "Kh7",
+    "Kf7"
+   ],
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "tYGK9",
+    "wertung": 1931,
+    "partie": "https://lichess.org/i7wYHeoL/black#144",
+    "themen": [
+     "crushing",
      "defensiveMove",
      "endgame",
      "hangingPiece",
@@ -2743,1090 +5118,35 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 3
+   "schwierigkeit": 5
   },
   {
-   "id": "falle-l-e5cTo",
-   "fen": "8/1p2b3/n1p1k2P/2P1P3/1PK3p1/5N2/N7/8 b - - 0 36",
+   "id": "falle-l-rO7aC",
+   "fenVorher": "7k/7p/1p4p1/1Pp1p3/P1Pp3P/1B1n2QK/5r2/8 w - - 0 46",
+   "vorzug": "Qxf2",
+   "fen": "7k/7p/1p4p1/1Pp1p3/P1Pp3P/1B1n3K/5Q2/8 b - - 0 46",
    "amZug": "b",
-   "angebot": "gxf3",
+   "angebot": "Nxf2+",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "gxf3",
+   "wertVorher": 5.02,
+   "wertNachher": 5.16,
+   "verlustBeimNehmen": -0.14,
+   "bester": "Nxf2+",
    "fortsetzung": [
-    "gxf3",
-    "h7",
-    "f2",
-    "h8=Q",
-    "f1=Q+",
-    "Kb3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "e5cTo",
-    "wertung": 1573,
-    "partie": "https://lichess.org/GRYY8uxl#71",
-    "themen": [
-     "advancedPawn",
-     "advantage",
-     "endgame",
-     "hangingPiece",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-AgIwS",
-   "fen": "2r2rk1/1b1q2p1/p4b1p/2pP1R2/2P4N/Q2P3P/5PP1/R2B2K1 b - - 2 32",
-   "amZug": "b",
-   "angebot": "Bxh4",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Bxh4",
-   "fortsetzung": [
-    "Bxh4",
-    "Rxf8+",
-    "Rxf8",
-    "Bf3",
-    "Bf6",
-    "Re1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "AgIwS",
-    "wertung": 1342,
-    "partie": "https://lichess.org/EaYmvKIp#63",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-Z0vMR",
-   "fen": "r1bq1r1k/1pp3p1/3pP2p/pP1P1p2/3R4/P1N2n1P/BBQ2PK1/4R3 b - - 1 25",
-   "amZug": "b",
-   "angebot": "Nxe1+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Nxe1+",
-   "fortsetzung": [
-    "Nxe1+",
-    "Kf1",
-    "Nxc2",
-    "Rd2",
-    "Qh4",
-    "Rxc2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "Z0vMR",
-    "wertung": 1386,
-    "partie": "https://lichess.org/i4nUrSXb#49",
-    "themen": [
-     "crushing",
-     "fork",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-bmYbi",
-   "fen": "3r2k1/pR3p1p/5Np1/r7/3b1PP1/P6P/6K1/3R4 b - - 4 29",
-   "amZug": "b",
-   "angebot": "Bxf6",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Bxf6",
-   "fortsetzung": [
-    "Bxf6",
-    "Rc1",
-    "Rxa3",
-    "g5",
-    "Bd4",
-    "Rd1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "bmYbi",
-    "wertung": 1552,
-    "partie": "https://lichess.org/D6VQ6qnc#57",
-    "themen": [
-     "advantage",
-     "defensiveMove",
-     "endgame",
-     "hangingPiece",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-9BJoU",
-   "fen": "3r1rk1/p4p1p/1pnRpqp1/2p5/2P5/1P4NP/P4PP1/2QR2K1 w - - 5 23",
-   "amZug": "w",
-   "angebot": "Rxc6",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxc6",
-   "fortsetzung": [
-    "Rxc6",
-    "Rxd1+",
-    "Qxd1",
-    "Rd8",
-    "Rd6",
-    "Rxd6"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "9BJoU",
-    "wertung": 1477,
-    "partie": "https://lichess.org/aFuPFM5k/black#44",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-SF5qO",
-   "fen": "3r3k/pp2p1bp/1q6/4P2p/3n4/2N4P/PP1Q1r2/2KR2NR w - - 0 21",
-   "amZug": "w",
-   "angebot": "Qxf2",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxf2",
-   "fortsetzung": [
-    "Qxf2",
-    "Bh6+",
-    "Kb1",
-    "Qg6+",
-    "Ka1",
-    "Be3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "SF5qO",
-    "wertung": 1319,
-    "partie": "https://lichess.org/rGbk9lIE/black#40",
-    "themen": [
-     "advantage",
-     "defensiveMove",
-     "hangingPiece",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 5,
-    "laenge": 1,
-    "klasse": "t1-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-OeBMg",
-   "fen": "rn1q1rk1/p1pp1ppp/bp2p3/8/3PnB2/P1PQPNP1/2P2P1P/R3KB1R w KQ - 1 10",
-   "amZug": "w",
-   "angebot": "Qxe4",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxe4",
-   "fortsetzung": [
-    "Qxe4",
-    "d5",
-    "Qe5",
-    "Bxf1",
-    "Kxf1",
-    "Qe8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "OeBMg",
-    "wertung": 1376,
-    "partie": "https://lichess.org/mdyBHnWF/black#18",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "opening",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-DGjOQ",
-   "fen": "2r3k1/p4pp1/1p2pn1p/4R3/q1rP4/1PPQ1B1P/3B1PP1/R5K1 b - - 0 24",
-   "amZug": "b",
-   "angebot": "Qxa1+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxa1+",
-   "fortsetzung": [
-    "Qxa1+",
-    "Qf1",
-    "Qxf1+",
-    "Kxf1",
-    "Rxc3",
-    "Bxc3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "DGjOQ",
-    "wertung": 1419,
-    "partie": "https://lichess.org/PzTWU3Zh#47",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "master",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 3
-  },
-  {
-   "id": "falle-l-wmDot",
-   "fen": "r4rk1/ppbnq1p1/2p1pP1p/3p4/3P1BQ1/P2P4/1P1N1PPP/R4RK1 b - - 0 15",
-   "amZug": "b",
-   "angebot": "Rxf6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 9.91,
-   "bester": "Nxf6",
-   "fortsetzung": [
-    "Rxf6",
-    "Bxc7",
-    "Rf5",
-    "Qe2",
-    "Qf6",
-    "Bg3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "wmDot",
-    "wertung": 1846,
-    "partie": "https://lichess.org/O5FizewD#29",
-    "themen": [
-     "advantage",
-     "fork",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-gBQLv",
-   "fen": "3r1rk1/qb1p1ppp/p3pPn1/1pb1P2Q/3N1R2/2PB4/PP4PP/R5BK b - - 4 19",
-   "amZug": "b",
-   "angebot": "Nxf4",
-   "antwort": "falle",
-   "verlustBeimNehmen": 106.95,
-   "bester": "Bxg2+",
-   "fortsetzung": [
-    "Nxf4",
-    "Qxh7#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "gBQLv",
-    "wertung": 1820,
-    "partie": "https://lichess.org/KLZouMSn#37",
-    "themen": [
-     "attraction",
-     "crushing",
-     "kingsideAttack",
-     "master",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-37F63",
-   "fen": "1br2rk1/1p2nppp/p2qp3/6B1/1P2p3/P5NP/2P2PP1/1R1Q1RK1 w - - 0 21",
-   "amZug": "w",
-   "angebot": "Nxe4",
-   "antwort": "falle",
-   "verlustBeimNehmen": 102.51,
-   "bester": "Qxd6",
-   "fortsetzung": [
-    "Nxe4",
-    "Qh2#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "37F63",
-    "wertung": 1801,
-    "partie": "https://lichess.org/wyI3o6ew/black#40",
-    "themen": [
-     "advantage",
-     "intermezzo",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-vIlZq",
-   "fen": "2r2r2/3kb3/p2pppQ1/1p2q3/P3P3/1R1B4/2P3PP/5R1K b - - 0 26",
-   "amZug": "b",
-   "angebot": "bxa4",
-   "antwort": "falle",
-   "verlustBeimNehmen": 4.4,
-   "bester": "Rh8",
-   "fortsetzung": [
-    "bxa4",
-    "Rb7+",
-    "Rc7",
-    "Rb6",
-    "Rc6",
-    "Rb7+"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "vIlZq",
-    "wertung": 1875,
-    "partie": "https://lichess.org/2rprsBjK#51",
-    "themen": [
-     "clearance",
-     "crushing",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-ipbtP",
-   "fen": "r1b2rk1/ppp2p2/3p3p/2n3pQ/2B2q2/2P5/PP1N1PPP/R4RK1 w - - 0 16",
-   "amZug": "w",
-   "angebot": "Qxh6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 3.44,
-   "bester": "Qg6+",
-   "fortsetzung": [
-    "Qxh6",
-    "d5",
-    "Bxd5",
-    "Qxd2",
-    "Qg6+",
-    "Kh8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "ipbtP",
-    "wertung": 1647,
-    "partie": "https://lichess.org/YI4rTDYO/black#30",
-    "themen": [
-     "advantage",
-     "kingsideAttack",
-     "middlegame",
-     "pin",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-dNmz5",
-   "fen": "r4rk1/1Bq2ppp/p3p3/8/N2p2n1/PP3P2/2P3PP/R2QR1K1 b - - 0 19",
-   "amZug": "b",
-   "angebot": "Qxb7",
-   "antwort": "falle",
-   "verlustBeimNehmen": 13.16,
-   "bester": "Qxh2+",
-   "fortsetzung": [
-    "Qxb7",
-    "fxg4",
-    "Rac8",
-    "Nb2",
-    "Rc3",
-    "Na4"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "dNmz5",
-    "wertung": 1732,
-    "partie": "https://lichess.org/RX8kapRO#37",
-    "themen": [
-     "crushing",
-     "deflection",
-     "kingsideAttack",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-UMS9z",
-   "fen": "8/1QR2p1k/1p2q2p/3p2p1/2pP3B/P4PK1/6PP/8 b - - 1 37",
-   "amZug": "b",
-   "angebot": "gxh4+",
-   "antwort": "falle",
-   "verlustBeimNehmen": 102.46,
-   "bester": "Qe1+",
-   "fortsetzung": [
-    "gxh4+",
-    "Kf2",
-    "Kg7",
-    "Qc8",
-    "Qf6",
-    "Qg4+"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "UMS9z",
-    "wertung": 1802,
-    "partie": "https://lichess.org/NPXclo0T#73",
-    "themen": [
-     "endgame",
-     "long",
-     "mate",
-     "mateIn3",
-     "skewer"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-nyD7U",
-   "fen": "8/7R/4k1p1/P3PpP1/5r2/1p5P/7K/8 b - - 0 45",
-   "amZug": "b",
-   "angebot": "Kxe5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 7.1,
-   "bester": "Rb4",
-   "fortsetzung": [
-    "Kxe5",
-    "Rb7",
-    "Ra4",
-    "Rxb3",
-    "Kf4",
-    "Rb2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "nyD7U",
-    "wertung": 1781,
-    "partie": "https://lichess.org/mm1ICK8F#89",
-    "themen": [
-     "advancedPawn",
-     "crushing",
-     "endgame",
-     "long",
-     "promotion",
-     "quietMove",
-     "rookEndgame"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-9edA9",
-   "fen": "6R1/8/kNK1p1p1/2PnP2p/8/5r2/P4P2/8 b - - 9 46",
-   "amZug": "b",
-   "angebot": "Rxf2",
-   "antwort": "falle",
-   "verlustBeimNehmen": 103.68,
-   "bester": "Ne7+",
-   "fortsetzung": [
-    "Rxf2",
-    "Ra8#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "9edA9",
-    "wertung": 1748,
-    "partie": "https://lichess.org/BqPjp3F5#91",
-    "themen": [
-     "crushing",
-     "endgame",
-     "fork",
-     "master",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-JBEFR",
-   "fen": "r2q2r1/ppp3k1/1b2Q2p/3Pp3/4n2P/8/PPP3P1/R3KR2 w Q - 0 20",
-   "amZug": "w",
-   "angebot": "Qxe5+",
-   "antwort": "falle",
-   "verlustBeimNehmen": 103.61,
-   "bester": "Rf7+",
-   "fortsetzung": [
-    "Qxe5+",
-    "Nf6",
-    "O-O-O",
-    "Qd6",
-    "Qc3",
-    "Rae8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "JBEFR",
-    "wertung": 1807,
-    "partie": "https://lichess.org/R3l0Deow/black#38",
-    "themen": [
-     "deflection",
-     "mate",
-     "mateIn2",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-5mU0N",
-   "fen": "5k2/5ppp/3N4/p3R3/P7/4n3/1Pr3PP/6K1 b - - 2 30",
-   "amZug": "b",
-   "angebot": "Rxb2",
-   "antwort": "falle",
-   "verlustBeimNehmen": 105.72,
-   "bester": "Rc1+",
-   "fortsetzung": [
-    "Rxb2",
-    "Re8#"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "5mU0N",
-    "wertung": 1768,
-    "partie": "https://lichess.org/dNi3oNPX#59",
-    "themen": [
-     "crushing",
-     "endgame",
-     "fork",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-QR0p0",
-   "fen": "2k4r/ppp5/8/3q1R2/6p1/3P2Pr/PPPQ1R1P/6K1 b - - 0 26",
-   "amZug": "b",
-   "angebot": "Qxa2",
-   "antwort": "falle",
-   "verlustBeimNehmen": 13.84,
-   "bester": "Rxg3+",
-   "fortsetzung": [
-    "Qxa2",
-    "Rf8+",
-    "Rxf8",
-    "Rxf8+",
-    "Kd7",
-    "Qg5"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "QR0p0",
-    "wertung": 1831,
-    "partie": "https://lichess.org/QlwPJzVL#51",
-    "themen": [
-     "crushing",
-     "endgame",
-     "fork",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-jH4Ir",
-   "fen": "4r1k1/2qn2p1/2p5/2Pp2PQ/3p4/4P3/3B2K1/r3R3 w - - 0 31",
-   "amZug": "w",
-   "angebot": "Qxe8+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxe8+",
-   "fortsetzung": [
-    "Qxe8+",
-    "Nf8",
-    "Rxa1",
-    "Qf7",
-    "Qxf7+",
-    "Kxf7"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "jH4Ir",
-    "wertung": 1739,
-    "partie": "https://lichess.org/tB3OOzSU/black#60",
-    "themen": [
-     "crushing",
-     "hangingPiece",
-     "intermezzo",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-pbiCZ",
-   "fen": "8/8/5rR1/8/8/6p1/7k/4K3 w - - 6 78",
-   "amZug": "w",
-   "angebot": "Rxf6",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxf6",
-   "fortsetzung": [
-    "Rxf6",
-    "g2",
-    "Rh6+",
+    "Nxf2+",
     "Kg3",
-    "Rg6+",
-    "Kf3"
+    "Ne4+",
+    "Kg4",
+    "Nd6",
+    "a5"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "pbiCZ",
-    "wertung": 1660,
-    "partie": "https://lichess.org/5O1GQLA6/black#154",
+    "puzzle": "rO7aC",
+    "wertung": 2130,
+    "partie": "https://lichess.org/CCOvCEhr#91",
     "themen": [
      "crushing",
-     "endgame",
-     "hangingPiece",
-     "long",
-     "rookEndgame"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-Qztow",
-   "fen": "8/5b2/5K2/5P1p/8/8/Rk6/8 b - - 0 68",
-   "amZug": "b",
-   "angebot": "Bxa2",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Bxa2",
-   "fortsetzung": [
-    "Bxa2",
-    "Kg5",
-    "Bf7",
-    "Kf6",
-    "Be8",
-    "Ke7"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "Qztow",
-    "wertung": 1740,
-    "partie": "https://lichess.org/94R16fuY#135",
-    "themen": [
-     "crushing",
-     "defensiveMove",
-     "endgame",
-     "hangingPiece",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-PD0EM",
-   "fen": "3r2k1/2Q3p1/pp3p1p/2b2n2/2P3PP/5qNK/P7/2R5 w - - 0 35",
-   "amZug": "w",
-   "angebot": "Qxd8+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxd8+",
-   "fortsetzung": [
-    "Qxd8+",
-    "Kh7",
-    "gxf5",
-    "Bf2",
-    "Qd6",
-    "h5"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "PD0EM",
-    "wertung": 1711,
-    "partie": "https://lichess.org/OCrsdhea/black#68",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "intermezzo",
-     "master",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-951oz",
-   "fen": "1k6/1p2b1p1/p1b1pN2/3q4/5P2/P4Q2/1PPN4/1K2R3 b - - 0 32",
-   "amZug": "b",
-   "angebot": "Qxd2",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxd2",
-   "fortsetzung": [
-    "Qxd2",
-    "Qe3",
-    "Qxe3",
-    "Rxe3",
-    "Bxf6",
-    "Rxe6"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "951oz",
-    "wertung": 1653,
-    "partie": "https://lichess.org/8YvTO6CX#63",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "master",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-vGAGf",
-   "fen": "r4rk1/pQ2p2p/6p1/3n2N1/3n4/b1B5/2q3PP/1R3BKR w - - 2 25",
-   "amZug": "w",
-   "angebot": "Qxd5+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxd5+",
-   "fortsetzung": [
-    "Qxd5+",
-    "e6",
-    "Qxd4",
-    "Bc5",
-    "Qxc5",
-    "Qxb1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "vGAGf",
-    "wertung": 1696,
-    "partie": "https://lichess.org/lqU3W8iW/black#48",
-    "themen": [
-     "advantage",
-     "fork",
-     "hangingPiece",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 8,
-    "laenge": 1,
-    "klasse": "t2-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-ZA9cM",
-   "fen": "r3k3/1pp1qp2/3p1nrp/3Bp3/Pb1nP1bB/3P1N2/3N1PP1/1R1Q1RK1 w q - 2 19",
-   "amZug": "w",
-   "angebot": "Rxb4",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxb4",
-   "fortsetzung": [
-    "Rxb4",
-    "Nxf3+",
-    "Nxf3",
-    "c6",
-    "Ba2",
-    "Qd7"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "ZA9cM",
-    "wertung": 1674,
-    "partie": "https://lichess.org/iaVjSe4k/black#36",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-WvdQ2",
-   "fen": "r2qr1k1/ppp2pp1/5n1p/bb6/2N5/P2B3P/1PP1NPP1/R2Q1RK1 w - - 1 17",
-   "amZug": "w",
-   "angebot": "Nxa5",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Nxa5",
-   "fortsetzung": [
-    "Nxa5",
-    "Bxd3",
-    "cxd3",
-    "Qd5",
-    "Nc4",
-    "Rad8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "WvdQ2",
-    "wertung": 1768,
-    "partie": "https://lichess.org/kXtGpA6X/black#32",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "opening",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-G2EoI",
-   "fen": "r1bqk2r/2pnpBbp/p2p1np1/8/1p1PPP2/2N2N2/PPP3PP/R1BQ1RK1 b kq - 0 9",
-   "amZug": "b",
-   "angebot": "Kxf7",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Kxf7",
-   "fortsetzung": [
-    "Kxf7",
-    "Ng5+",
-    "Kg8",
-    "Ne6",
-    "Qe8",
-    "Ne2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "G2EoI",
-    "wertung": 1822,
-    "partie": "https://lichess.org/E2ClAMEp#17",
-    "themen": [
-     "advantage",
-     "defensiveMove",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-7Gi3v",
-   "fen": "2r1nrk1/pp2qp1p/3p2p1/2pPb3/2P1P3/3B1R1Q/PP4PP/3N1RK1 w - - 4 19",
-   "amZug": "w",
-   "angebot": "Qxc8",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxc8",
-   "fortsetzung": [
-    "Qxc8",
-    "h5",
-    "Qh3",
-    "Qg5",
-    "g3",
-    "Nf6"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "7Gi3v",
-    "wertung": 1642,
-    "partie": "https://lichess.org/a4b6YAtG/black#36",
-    "themen": [
-     "crushing",
-     "hangingPiece",
-     "master",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-jXTbI",
-   "fen": "8/8/8/P5n1/1K6/1P4p1/5kB1/8 b - - 0 59",
-   "amZug": "b",
-   "angebot": "Kxg2",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Kxg2",
-   "fortsetzung": [
-    "Kxg2",
-    "a6",
-    "Ne6",
-    "a7",
-    "Nc7",
-    "Kc5"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "jXTbI",
-    "wertung": 1794,
-    "partie": "https://lichess.org/MbobJVyD#117",
-    "themen": [
-     "crushing",
-     "defensiveMove",
      "endgame",
      "hangingPiece",
      "long",
@@ -3838,534 +5158,37 @@
     "laenge": 1,
     "klasse": "t0-l0"
    },
-   "schwierigkeit": 4
+   "schwierigkeit": 5
   },
   {
-   "id": "falle-l-Fb4gt",
-   "fen": "3r4/5pk1/4p1p1/4Pn1q/2r5/2N2N2/1P3PP1/2R2QK1 w - - 5 37",
+   "id": "falle-l-KHMcW",
+   "fenVorher": "5r2/6k1/2qp2pp/p1p1p3/P1Pn4/1pNP1rP1/1P3P1P/R2Q1RK1 b - - 2 31",
+   "vorzug": "Rxd3",
+   "fen": "5r2/6k1/2qp2pp/p1p1p3/P1Pn4/1pNr2P1/1P3P1P/R2Q1RK1 w - - 0 32",
    "amZug": "w",
-   "angebot": "Qxc4",
+   "angebot": "Qxd3",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxc4",
+   "wertVorher": 4.9,
+   "wertNachher": 4.69,
+   "verlustBeimNehmen": 0.21,
+   "bester": "Qxd3",
    "fortsetzung": [
-    "Qxc4",
-    "Rh8",
-    "Kf1",
-    "Qh1+",
-    "Ng1",
-    "Rh2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "Fb4gt",
-    "wertung": 1681,
-    "partie": "https://lichess.org/MODMlhai/black#72",
-    "themen": [
-     "crushing",
-     "hangingPiece",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 4
-  },
-  {
-   "id": "falle-l-RedgI",
-   "fen": "6k1/p4pp1/1p5p/3p4/8/1R2Q3/P4KPP/q1r1N3 b - - 5 29",
-   "amZug": "b",
-   "angebot": "Qxa2+",
-   "antwort": "falle",
-   "verlustBeimNehmen": 5.45,
-   "bester": "Rxe1",
-   "fortsetzung": [
-    "Qxa2+",
-    "Kf1",
-    "Qc2",
-    "Qe8+",
-    "Kh7",
-    "Re3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "RedgI",
-    "wertung": 2164,
-    "partie": "https://lichess.org/yqoIdEVD#57",
-    "themen": [
-     "advantage",
-     "endgame",
-     "fork",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 2,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-1e6UP",
-   "fen": "r3kbnr/ppp2ppp/2np4/4P1q1/2B5/2p2Q2/PP3PPP/RN2K2R w KQkq - 0 10",
-   "amZug": "w",
-   "angebot": "Qxc3",
-   "antwort": "falle",
-   "verlustBeimNehmen": 105.27,
-   "bester": "Qxf7+",
-   "fortsetzung": [
-    "Qxc3",
-    "Qxg2",
-    "Rf1",
-    "Qe4+",
-    "Be2",
-    "O-O-O"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "1e6UP",
-    "wertung": 1917,
-    "partie": "https://lichess.org/pLc1mjJR/black#18",
-    "themen": [
-     "attackingF2F7",
-     "deflection",
-     "long",
-     "mate",
-     "mateIn3",
-     "opening"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-PfX0y",
-   "fen": "r1b2rk1/p1p2ppp/1bp3B1/4P2Q/3p1P1q/8/PPP1N1PP/R1B2RK1 b - - 0 13",
-   "amZug": "b",
-   "angebot": "hxg6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 9.51,
-   "bester": "d3+",
-   "fortsetzung": [
-    "hxg6",
-    "Qxh4",
-    "d3+",
+    "Qxd3",
+    "Nf3+",
     "Kh1",
-    "dxe2",
-    "Re1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "PfX0y",
-    "wertung": 2186,
-    "partie": "https://lichess.org/o1Skm4Jv#25",
-    "themen": [
-     "advancedPawn",
-     "advantage",
-     "discoveredAttack",
-     "discoveredCheck",
-     "kingsideAttack",
-     "opening",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-k2ub7",
-   "fen": "3k4/2p3pp/1pB5/pPp1b3/P1b2p2/7P/2r2PP1/2B1R1K1 w - - 2 28",
-   "amZug": "w",
-   "angebot": "Rxe5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 8.89,
-   "bester": "Bxf4",
-   "fortsetzung": [
-    "Rxe5",
-    "Rxc1+",
-    "Kh2",
-    "Bf7",
-    "Rf5",
-    "Ke7"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "k2ub7",
-    "wertung": 2068,
-    "partie": "https://lichess.org/1uOAColz/black#54",
-    "themen": [
-     "advantage",
-     "capturingDefender",
-     "endgame",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-SVwvW",
-   "fen": "r2r3k/2p1Q3/p5pB/1qNP4/1P2P3/8/6PP/b4RK1 b - - 0 23",
-   "amZug": "b",
-   "angebot": "Qxb4",
-   "antwort": "falle",
-   "verlustBeimNehmen": 10.42,
-   "bester": "Bd4+",
-   "fortsetzung": [
-    "Qxb4",
-    "Kh1",
-    "Re8",
-    "Qh4",
-    "Kg8",
-    "Rxa1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "SVwvW",
-    "wertung": 2288,
-    "partie": "https://lichess.org/f1EpKHJ0#45",
-    "themen": [
-     "crushing",
-     "middlegame",
-     "pin",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-bWI6D",
-   "fen": "7Q/1pk1b1p1/8/1p1pP1p1/3Pp1B1/2q4P/6P1/R5K1 b - - 0 31",
-   "amZug": "b",
-   "angebot": "Qxa1+",
-   "antwort": "falle",
-   "verlustBeimNehmen": 5.58,
-   "bester": "Qxd4+",
-   "fortsetzung": [
-    "Qxa1+",
-    "Kh2",
-    "Kb6",
-    "Qg8",
-    "Qf1",
-    "Qe6+"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "bWI6D",
-    "wertung": 2188,
-    "partie": "https://lichess.org/ZYJy4NGL#61",
-    "themen": [
-     "crushing",
-     "endgame",
-     "fork",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 2,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-zKj7B",
-   "fen": "r3k3/pp1qn3/2p1Q3/3nP2p/2BP2P1/6b1/PP4P1/5R1K w q - 1 28",
-   "amZug": "w",
-   "angebot": "gxh5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 18.96,
-   "bester": "Rf8+",
-   "fortsetzung": [
-    "gxh5",
-    "Qxe6",
-    "Be2",
-    "Qh6",
-    "Bg4",
-    "Ne3"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "zKj7B",
-    "wertung": 2230,
-    "partie": "https://lichess.org/Gx0Ktn5g/black#54",
-    "themen": [
-     "advantage",
-     "deflection",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-QrL07",
-   "fen": "2Nr1k2/5pp1/p6p/1p5q/3b1P2/PQ2PnP1/1P1R3P/3R1K2 b - - 3 31",
-   "amZug": "b",
-   "angebot": "Rxc8",
-   "antwort": "falle",
-   "verlustBeimNehmen": 4.52,
-   "bester": "Nxd2+",
-   "fortsetzung": [
-    "Rxc8",
-    "exd4",
-    "Rc4",
-    "h4",
-    "Nxd2+",
-    "Rxd2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "QrL07",
-    "wertung": 1956,
-    "partie": "https://lichess.org/oXEGV8zC#61",
-    "themen": [
-     "clearance",
-     "crushing",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-BxJNb",
-   "fen": "3r1bk1/5p2/p4Pp1/1q4BP/2p1Q2P/5P2/1PP5/1K5R b - - 0 30",
-   "amZug": "b",
-   "angebot": "gxh5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 6.19,
-   "bester": "Ba3",
-   "fortsetzung": [
-    "gxh5",
+    "Qc8",
     "Rg1",
-    "Kh8",
-    "Bc1",
-    "Re8",
-    "Qf4"
+    "h5"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "BxJNb",
-    "wertung": 2093,
-    "partie": "https://lichess.org/gbvmfHtE#59",
-    "themen": [
-     "crushing",
-     "endgame",
-     "master",
-     "pin",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-trSXT",
-   "fen": "r1bq1kr1/pp3p1R/3pp3/3pb3/3P2Q1/6P1/PPP1BPP1/2K4R w - - 0 19",
-   "amZug": "w",
-   "angebot": "dxe5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 8.59,
-   "bester": "Qxg8+",
-   "fortsetzung": [
-    "dxe5",
-    "Rxg4",
-    "Bxg4",
-    "Qg5+",
-    "f4",
-    "Qxg4"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "trSXT",
-    "wertung": 2316,
-    "partie": "https://lichess.org/M5tWD99r/black#36",
+    "puzzle": "KHMcW",
+    "wertung": 1959,
+    "partie": "https://lichess.org/rTgJVKYA/black#62",
     "themen": [
      "advantage",
-     "intermezzo",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-v5nC8",
-   "fen": "r2q2k1/1pp5/p3p2p/3p3Q/2nbP3/P1N4P/1PP3P1/5R1K w - - 0 24",
-   "amZug": "w",
-   "angebot": "Qxh6",
-   "antwort": "falle",
-   "verlustBeimNehmen": 7.13,
-   "bester": "Qg6+",
-   "fortsetzung": [
-    "Qxh6",
-    "Qe7",
-    "exd5",
-    "Bg7",
-    "Qg6",
-    "Rf8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "v5nC8",
-    "wertung": 1948,
-    "partie": "https://lichess.org/TTnudqCz/black#46",
-    "themen": [
-     "advantage",
-     "kingsideAttack",
-     "long",
-     "middlegame",
-     "pin"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-OIj5V",
-   "fen": "r2q1rk1/p2nn1bp/2pNp1p1/1p2P1p1/3P4/1Q3N2/PP3PPP/R4RK1 w - - 0 15",
-   "amZug": "w",
-   "angebot": "Nxg5",
-   "antwort": "falle",
-   "verlustBeimNehmen": 5.94,
-   "bester": "Qxe6+",
-   "fortsetzung": [
-    "Nxg5",
-    "Nd5",
-    "Nxe6",
-    "Qe7",
-    "Nxf8",
-    "Nxf8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "OIj5V",
-    "wertung": 2116,
-    "partie": "https://lichess.org/y4Ugesg4/black#28",
-    "themen": [
-     "crushing",
-     "intermezzo",
-     "kingsideAttack",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 5,
-    "laenge": 1,
-    "klasse": "t1-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-6oM8a",
-   "fen": "8/6P1/1kb4K/5P1r/1p6/2P5/8/8 w - - 0 61",
-   "amZug": "w",
-   "angebot": "Kxh5",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Kxh5",
-   "fortsetzung": [
-    "Kxh5",
-    "Bd5",
-    "cxb4",
-    "Kc7",
-    "Kg6",
-    "Kc6"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "6oM8a",
-    "wertung": 1928,
-    "partie": "https://lichess.org/h0TCa49y/black#120",
-    "themen": [
-     "crushing",
-     "endgame",
-     "hangingPiece",
-     "master",
-     "masterVsMaster",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-QhLEL",
-   "fen": "2r2rk1/Q3bppp/8/p3p3/Pp2P3/1B3N2/2P3PP/qNKR3n w - - 0 24",
-   "amZug": "w",
-   "angebot": "Qxe7",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxe7",
-   "fortsetzung": [
-    "Qxe7",
-    "h6",
-    "Rxh1",
-    "Rc3",
-    "Qxe5",
-    "Rfc8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "QhLEL",
-    "wertung": 2125,
-    "partie": "https://lichess.org/ez17RVHS/black#46",
-    "themen": [
-     "crushing",
      "defensiveMove",
      "hangingPiece",
-     "master",
      "middlegame",
      "short"
     ]
@@ -4378,356 +5201,42 @@
    "schwierigkeit": 5
   },
   {
-   "id": "falle-l-oRWLg",
-   "fen": "r2r2k1/1pq2ppp/8/pB3b2/1nNP4/B3P1N1/P4nPb/R2Q1R1K w - - 0 19",
-   "amZug": "w",
-   "angebot": "Rxf2",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxf2",
-   "fortsetzung": [
-    "Rxf2",
-    "Bc2",
-    "Rxc2",
-    "Nxc2",
-    "Kxh2",
-    "Nxa1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "oRWLg",
-    "wertung": 1948,
-    "partie": "https://lichess.org/SmiIQZ1k/black#36",
-    "themen": [
-     "crushing",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-Mf1to",
-   "fen": "8/p3Q3/4prk1/7p/1P4p1/R1P2B1q/5P1P/5RK1 b - - 0 33",
+   "id": "falle-l-1vGyk",
+   "fenVorher": "r3r1k1/ppp1npp1/7p/3pR3/3P4/2PB3q/PP3P2/R2Q1NK1 w - - 0 17",
+   "vorzug": "Qh5",
+   "fen": "r3r1k1/ppp1npp1/7p/3pR2Q/3P4/2PB3q/PP3P2/R4NK1 b - - 1 17",
    "amZug": "b",
-   "angebot": "gxf3",
+   "angebot": "Qxd3",
    "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "gxf3",
+   "wertVorher": 2.23,
+   "wertNachher": 2.08,
+   "verlustBeimNehmen": 0.15,
+   "bester": "Qxd3",
    "fortsetzung": [
-    "gxf3",
-    "Qe8+",
-    "Rf7",
-    "Qxe6+",
-    "Qxe6",
-    "Kh1"
+    "Qxd3",
+    "Rae1",
+    "Kf8",
+    "R1e3",
+    "Qg6+",
+    "Qxg6"
    ],
    "herkunft": {
     "quelle": "lichess",
-    "puzzle": "Mf1to",
-    "wertung": 2213,
-    "partie": "https://lichess.org/QazVEW2F#65",
-    "themen": [
-     "crushing",
-     "endgame",
-     "hangingPiece",
-     "long"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-MAphw",
-   "fen": "r4rk1/pp2p1b1/7p/3pPq1Q/3n1N2/2N1B3/PP3PP1/2KR4 w - - 2 19",
-   "amZug": "w",
-   "angebot": "Rxd4",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxd4",
-   "fortsetzung": [
-    "Rxd4",
-    "Qxe5",
-    "Rxd5",
-    "Qxh5",
-    "Rxh5",
-    "Rfc8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "MAphw",
-    "wertung": 1907,
-    "partie": "https://lichess.org/IhesfVqD/black#36",
-    "themen": [
-     "crushing",
-     "hangingPiece",
-     "master",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-1ZXbh",
-   "fen": "r1bq1rk1/pp1n1Nbp/4p1p1/n3P3/3P4/1B3N2/PP4PP/R1BQ1RK1 b - - 0 15",
-   "amZug": "b",
-   "angebot": "Rxf7",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxf7",
-   "fortsetzung": [
-    "Rxf7",
-    "Ng5",
-    "Rxf1+",
-    "Qxf1",
-    "Nxb3",
-    "Qf7+"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "1ZXbh",
-    "wertung": 2410,
-    "partie": "https://lichess.org/frlFsMZ5#29",
+    "puzzle": "1vGyk",
+    "wertung": 1968,
+    "partie": "https://lichess.org/f5I3lVdD#33",
     "themen": [
      "advantage",
+     "defensiveMove",
      "hangingPiece",
-     "long",
-     "middlegame"
+     "middlegame",
+     "short"
     ]
    },
    "messung": {
     "tiefe": 8,
     "laenge": 1,
     "klasse": "t2-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-4yUdu",
-   "fen": "r3r3/2p2pk1/p2b2P1/6R1/2QP4/2P2N1q/5P2/3R2K1 b - - 0 28",
-   "amZug": "b",
-   "angebot": "Qxf3",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxf3",
-   "fortsetzung": [
-    "Qxf3",
-    "Qxf7+",
-    "Qxf7",
-    "gxf7+",
-    "Kxf7",
-    "Ra1"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "4yUdu",
-    "wertung": 2258,
-    "partie": "https://lichess.org/5PvIasHS#55",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "long",
-     "middlegame"
-    ]
-   },
-   "messung": {
-    "tiefe": 3,
-    "laenge": 1,
-    "klasse": "t1-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-dx9Tn",
-   "fen": "5rk1/pp4pp/4pq2/1Qnpp3/1P6/P1P2N2/5PPP/4R1K1 w - - 1 24",
-   "amZug": "w",
-   "angebot": "Qxc5",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxc5",
-   "fortsetzung": [
-    "Qxc5",
-    "e4",
-    "Nd2",
-    "h5",
-    "b5",
-    "Qh6"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "dx9Tn",
-    "wertung": 1928,
-    "partie": "https://lichess.org/96tll301/black#46",
-    "themen": [
-     "advantage",
-     "endgame",
-     "hangingPiece",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 3,
-    "laenge": 1,
-    "klasse": "t1-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-zZcgE",
-   "fen": "8/2q5/4rb1k/6p1/7p/6rP/Q5R1/5R1K w - - 1 70",
-   "amZug": "w",
-   "angebot": "Qxe6",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Qxe6",
-   "fortsetzung": [
-    "Qxe6",
-    "Rxh3+",
-    "Qxh3",
-    "Qc6",
-    "Qf5",
-    "Kg7"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "zZcgE",
-    "wertung": 2000,
-    "partie": "https://lichess.org/n2DeF3lj/black#138",
-    "themen": [
-     "crushing",
-     "hangingPiece",
-     "middlegame",
-     "pin",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-8dMcx",
-   "fen": "r2qkbnr/1pp2pp1/p1np3p/4N2b/2B1P3/P1N4P/1PPP1PP1/R1BQ1RK1 b kq - 0 8",
-   "amZug": "b",
-   "angebot": "Nxe5",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Nxe5",
-   "fortsetzung": [
-    "Nxe5",
-    "Qxh5",
-    "Nxc4",
-    "d4",
-    "Ne7",
-    "Qe2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "8dMcx",
-    "wertung": 2242,
-    "partie": "https://lichess.org/bqEjeCyn#15",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "opening",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-iMrCD",
-   "fen": "8/p2P4/1p6/3K4/1pP1r3/1P3p1k/P7/8 w - - 0 41",
-   "amZug": "w",
-   "angebot": "Kxe4",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Kxe4",
-   "fortsetzung": [
-    "Kxe4",
-    "f2",
-    "d8=Q",
-    "f1=Q",
-    "Qd3+",
-    "Kg2"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "iMrCD",
-    "wertung": 2204,
-    "partie": "https://lichess.org/rnIE0xhr/black#80",
-    "themen": [
-     "advancedPawn",
-     "crushing",
-     "endgame",
-     "hangingPiece",
-     "promotion",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 9,
-    "laenge": 1,
-    "klasse": "t2-l0"
-   },
-   "schwierigkeit": 5
-  },
-  {
-   "id": "falle-l-gkLuk",
-   "fen": "3r2k1/pb3qp1/1p2p1p1/7P/6p1/r3QP2/P2R4/R5K1 w - - 0 26",
-   "amZug": "w",
-   "angebot": "Rxd8+",
-   "antwort": "geschenk",
-   "verlustBeimNehmen": 0.0,
-   "bester": "Rxd8+",
-   "fortsetzung": [
-    "Rxd8+",
-    "Kh7",
-    "Qxa3",
-    "Qf5",
-    "Qf8",
-    "Qxf8"
-   ],
-   "herkunft": {
-    "quelle": "lichess",
-    "puzzle": "gkLuk",
-    "wertung": 1961,
-    "partie": "https://lichess.org/5u1YyHsp/black#50",
-    "themen": [
-     "advantage",
-     "hangingPiece",
-     "middlegame",
-     "short"
-    ]
-   },
-   "messung": {
-    "tiefe": 1,
-    "laenge": 1,
-    "klasse": "t0-l0"
    },
    "schwierigkeit": 5
   }

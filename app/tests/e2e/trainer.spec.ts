@@ -118,16 +118,20 @@ test("Taktiktrainer: Thema und Stufe wählen, Hilfen, Lösung zeigen, Motiv bene
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
 
-test("Falle oder Köder: Warnsignale prüfen, entscheiden, Auflösung", async ({ page }) => {
+test("Falle oder Köder: Köder-Zug, entscheiden, Widerlegung und Warnsignale danach", async ({
+  page,
+}) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "falle");
   await page.getByTestId("falle-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Der Gegner hat gerade");
   await expect(runde).toContainText("Falle oder Geschenk?");
-  await runde.getByRole("button", { name: /Warnsignale prüfen/ }).click();
-  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
+  // Die Warnsignale kommen erst nach der Antwort (Wunsch des Autors, P4 R50).
+  await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);
   await runde.getByRole("button", { name: "Nicht nehmen" }).click();
   await expect(runde).toContainText(/Eine Falle|Ein Geschenk/);
+  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
   await expect(runde).toContainText("Fortsetzung laut Engine:");
   await page.screenshot({ path: "test-results/bilder/trainer-falle.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();

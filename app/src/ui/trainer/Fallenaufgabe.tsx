@@ -1,21 +1,27 @@
 /**
- * Eine Aufgabe von „Falle oder Köder“: Angebot ansehen, Warnsignale prüfen, entscheiden.
+ * Eine Aufgabe von „Falle oder Köder“: Köder-Zug des Gegners ansehen, entscheiden, dann die
+ * Widerlegung und die Warnsignale sehen.
  *
  * Rolle im Gesamtbild: Trainer „falle“ (Pflichtenheft 7: „Die Engine spielt den Fallensteller und
- * bietet Material an. Du entscheidest, ob du nimmst, und markierst vorher die Warnsignale.“). Die
- * Warnsignale rechnet das Werkzeug aus Kapitel 4 (k4-warnsignale) auf Wunsch aus der Stellung;
- * danach steht die Widerlegung oder der Gewinn aus der Engine-Prüfung da.
+ * bietet Material an. Du entscheidest, ob du nimmst.“). Seit P4 (R50) steht der Köder-Zug als
+ * roter Pfeil am Brett, das Angebot als grauer; die Warnsignale (Kapitel 4, k4-warnsignale)
+ * erscheinen erst nach der Antwort, zusammen mit der Widerlegung aus der Engine-Prüfung und dem
+ * Wert vor und nach dem Nehmen.
  * Abhängigkeiten: training/fallentrainer.ts, analyse/k4-warnsignale.ts, Trainerbrett.
  */
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { warnsignale } from "../../analyse/k4-warnsignale";
 import type { Markierung } from "../../analyse/werkzeug";
 import type { Fallenaufgabe as Aufgabe } from "../../daten/trainerdaten";
-import { sprache, t } from "../../i18n/sprache";
+import { sprache, t, zahlText } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { stellungAusFen } from "../../schach/stellung";
 import { zugFelder } from "../../schach/weiterspielen";
-import { pruefeEntscheidung } from "../../training/fallentrainer";
+import {
+  pruefeEntscheidung,
+  widerlegungszug,
+  wirkungDerWiderlegung,
+} from "../../training/fallentrainer";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
@@ -23,6 +29,7 @@ import { antworteMitKarte } from "./kartenantwort";
 import { useSammelstellung } from "./sammelstellung";
 
 const buchzug = (san: string) => sanInSprache(san, sprache());
+const NACHKOMMASTELLEN = 1;
 
 /** Herkunft: Fallencheck des Buches oder Lichess-Aufgabe. */
 function herkunftstext(aufgabe: Aufgabe): string {
@@ -32,18 +39,23 @@ function herkunftstext(aufgabe: Aufgabe): string {
   return t("taktiktrainer.ausLichess", { wertung: h.wertung });
 }
 
-/** Die Auflösung nach der Entscheidung. */
+/** Die Auflösung nach der Entscheidung: Widerlegung, Wirkung, Wert vorher und nachher. */
 function Aufloesung({ aufgabe, richtig }: { aufgabe: Aufgabe; richtig: boolean }) {
-  const [, widerlegung] = aufgabe.fortsetzung;
   const folge = aufgabe.fortsetzung.map(buchzug).join(" ");
+  const widerlegung = widerlegungszug(aufgabe);
   const text =
     aufgabe.antwort === "falle"
       ? t("fallentrainer.warFalle", {
           zug: buchzug(aufgabe.angebot),
           widerlegung: widerlegung ? buchzug(widerlegung) : folge,
+          wirkung: t(`fallentrainer.wirkung.${wirkungDerWiderlegung(aufgabe)}`),
+          verlust: zahlText(aufgabe.verlustBeimNehmen, NACHKOMMASTELLEN),
           bester: buchzug(aufgabe.bester),
         })
-      : t("fallentrainer.warGeschenk", { zug: buchzug(aufgabe.angebot), folge });
+      : t("fallentrainer.warGeschenk", {
+          zug: buchzug(aufgabe.angebot),
+          vorzug: buchzug(aufgabe.vorzug),
+        });
   return (
     <>
       <Antwortmeldung richtig={richtig}>{text}</Antwortmeldung>
@@ -52,11 +64,17 @@ function Aufloesung({ aufgabe, richtig }: { aufgabe: Aufgabe; richtig: boolean }
   );
 }
 
-/** Die Pfeile: grau das Angebot; nach der Entscheidung gold der beste Zug, falls er anders ist. */
+/**
+ * Die Pfeile: rot der Köder-Zug des Gegners, grau das Angebot; nach der Entscheidung gold der
+ * beste Zug, falls er ein anderer ist.
+ */
 function pfeile(aufgabe: Aufgabe, entschieden: boolean): Markierung[] {
+  const koeder = zugFelder(aufgabe.fenVorher, aufgabe.vorzug);
   const angebot = zugFelder(aufgabe.fen, aufgabe.angebot);
   const bester = zugFelder(aufgabe.fen, aufgabe.bester);
-  const marken: Markierung[] = angebot ? [{ typ: "pfeil", farbe: "grau", ...angebot }] : [];
+  const marken: Markierung[] = [];
+  if (koeder) marken.push({ typ: "pfeil", farbe: "rot", ...koeder });
+  if (angebot) marken.push({ typ: "pfeil", farbe: "grau", ...angebot });
   if (entschieden && bester && aufgabe.bester !== aufgabe.angebot)
     marken.push({ typ: "pfeil", farbe: "gold", ...bester });
   return marken;
@@ -64,7 +82,6 @@ function pfeile(aufgabe: Aufgabe, entschieden: boolean): Markierung[] {
 
 export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
-  const [signale, setzeSignale] = useState(false);
   const entschieden = runde.ergebnis !== null;
   const warn = useMemo(() => {
     const gelesen = stellungAusFen(aufgabe.fen);
@@ -73,12 +90,20 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
   }, [aufgabe]);
   const markierungen = [
     ...pfeile(aufgabe, entschieden),
-    ...(signale && warn ? warn.markierungen : []),
+    ...(entschieden && warn ? warn.markierungen : []),
   ];
   const farbe = t(aufgabe.amZug === "w" ? "farbe.w" : "farbe.b");
+  const antworte = (nimmt: boolean) =>
+    antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, nimmt));
   return (
     <>
-      <p>{t("fallentrainer.auftrag", { farbe, zug: buchzug(aufgabe.angebot) })}</p>
+      <p>
+        {t("fallentrainer.auftrag", {
+          farbe,
+          vorzug: buchzug(aufgabe.vorzug),
+          zug: buchzug(aufgabe.angebot),
+        })}
+      </p>
       <Trainerbrett
         fen={aufgabe.fen}
         markierungen={markierungen}
@@ -88,35 +113,22 @@ export function Fallenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Run
       <p className="hinweis">
         {herkunftstext(aufgabe)} · {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
       </p>
-      {!signale && !entschieden && (
-        <button type="button" className="knopf-zweit" onClick={() => setzeSignale(true)}>
-          {t("fallentrainer.warnsignale")}
-        </button>
-      )}
-      {signale && warn && <p data-testid="falle-warnsignale">{warn.fazit}</p>}
       {!entschieden && (
         <div className="knopfzeile">
-          <button
-            type="button"
-            className="knopf-haupt"
-            onClick={() =>
-              antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, true))
-            }
-          >
+          <button type="button" className="knopf-haupt" onClick={() => antworte(true)}>
             {t("fallentrainer.nehmen", { zug: buchzug(aufgabe.angebot) })}
           </button>
-          <button
-            type="button"
-            className="knopf-haupt"
-            onClick={() =>
-              antworteMitKarte(runde, "falle", aufgabe.id, pruefeEntscheidung(aufgabe, false))
-            }
-          >
+          <button type="button" className="knopf-haupt" onClick={() => antworte(false)}>
             {t("fallentrainer.nichtNehmen")}
           </button>
         </div>
       )}
       {entschieden && <Aufloesung aufgabe={aufgabe} richtig={runde.ergebnis === true} />}
+      {entschieden && warn && (
+        <p className="hinweis" data-testid="falle-warnsignale">
+          {t("fallentrainer.warnsignaleDanach", { fazit: warn.fazit })}
+        </p>
+      )}
     </>
   );
 }

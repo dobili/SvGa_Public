@@ -32,6 +32,16 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
+### Neu auf Zweig p2-brett (Brett und Bedienung; Opus, 23.10.2026)
+
+- [ ] N650. **Tippen (R35):** Spielen › „Partie beginnen“. Tippe den Springer g1 an, dann nicht
+      genau f3, sondern knapp daneben (etwa auf den linken Rand von g3): Der Springer zieht nach
+      f3. Ein Tipp in die Mitte eines anderen Feldes wählt wie bisher ab. Nur genau auf der Kante
+      zwischen zwei möglichen Zielfeldern geschieht nichts, die Figur bleibt gewählt. Ein Tipp
+      zählt jetzt auch, wenn der Finger dabei etwas rutscht, und gleich nach einem Wischen. Ist
+      eine Figur gewählt, scrollt die Seite über dem Brett nicht. Erkennt die App deine Tipps
+      jetzt zuverlässig?
+
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 
 - [ ] N600. **„KI“ statt „Claude“:** Abb. 8.25 öffnen. Unter der Zugleiste steht jetzt „Zugfolge

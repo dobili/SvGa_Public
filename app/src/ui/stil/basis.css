@@ -700,6 +700,13 @@ a.knopf-zweit {
   cursor: grab;
 }
 
+/* R35: Mit gewählter Figur scrollt das Brett nicht, damit ein rutschender Finger den Tipp aufs
+   Zielfeld nicht als Scrollen abbricht. */
+.brett-tasten.wahl,
+.brett-tasten.wahl button {
+  touch-action: none;
+}
+
 .brett-tasten button:focus-visible {
   outline-offset: -3px;
 }

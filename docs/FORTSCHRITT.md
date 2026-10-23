@@ -1368,3 +1368,23 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
 - Abb. 7.24: ohne konstruierte Zugfolge (Chat D, siehe ZF in AUFGABEN_AUTOR).
 - Gleiche Startstellungen: Nach der Regel des Autors (nur im selben Kapitel zusammenführen) sind
   die zwei Paare zusammengeführt (0.2.32); über Kapitelgrenzen bleibt alles getrennt.
+
+## P2 Brett
+
+Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.117). Version und
+`main` macht der Koordinations-Chat. Testpunkte N650–N669 in AUFGABEN_AUTOR.
+
+- [x] R35 Tippen: `ui/brett/useZiehen.ts` erkennt den Tipp selbst über Zeiger-Ereignisse (bis
+      0.4 Feldbreiten Rutschen; Wischen erst ab 10 statt 6 px), die Klicksperre gilt nur noch für
+      den Klick desselben Tipps; `ui/brett/treffer.ts` zieht einen Tipp bis 0.25 Feldbreiten neben
+      einem Zielfeld dorthin (auf eigener Figur 0.1), abgelehnt nur auf der Kante zwischen zwei
+      Zielfeldern; mit gewählter Figur scrollt das Brett nicht. N650.
+- [ ] R36 Feldmarkierungen mit gemeinsamem Umriss.
+- [ ] R29 Fortschrittsbalken in der Auswertung.
+- [ ] R37 Zuganimation.
+- [ ] R38 Partieende auf dem Brett.
+- [ ] R39 Startanimation.
+- [ ] R40 Desktop: Quer- und Hochformat live.
+- [ ] R53 Nachtmodus: Symbol für Weiß in der Fehlerliste.
+
+**Nächster Schritt:** R36.

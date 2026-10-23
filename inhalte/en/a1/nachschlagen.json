@@ -1,0 +1,23 @@
+{
+ "schemaVersion": 1,
+ "datei": "nachschlagen.json",
+ "texte": {
+  "d7331212647c": "Master checklist for training and game analysis",
+  "ce1f17fc768f": "Ch.",
+  "90fb312af6ac": "Key question",
+  "dfa660bfef7f": "Tool",
+  "5a95bb3b5a3c": "Type of mistake",
+  "0b6c47787943": "Can I read and write down any move sequence?",
+  "cc47ee35fd8f": "Notation and special symbols",
+  "2c7c54108e4f": "Rule or notation",
+  "f20c368a1230": "Before you read on with Chapter 1, you should be able to do the following with confidence:",
+  "3457d0ea671a": "orient the board from White's point of view",
+  "6bd18bc493ac": "move and capture legally with every piece",
+  "67765882eac5": "get out of check",
+  "bc715f89c4fc": "tell stalemate from checkmate",
+  "c25fc9208be9": "name the conditions for castling",
+  "92db78f12361": "recognize en passant",
+  "74f080bf8219": "read a short move sequence in algebraic notation and write one down yourself",
+  "79d58bf652c1": "know the rules at the tournament board and the ways a game can end in a draw"
+ }
+}

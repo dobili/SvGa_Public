@@ -1,0 +1,19 @@
+{
+ "schemaVersion": 1,
+ "datei": "index.json",
+ "texte": {
+  "78311c2f265f": "Your entry into the chess book",
+  "80201ed6c9ad": "Basic principles of chess",
+  "f48a9da50ab5": "Classical opening systems",
+  "da0e91451bdd": "Gambits: time and activity versus material",
+  "8e7f860d7849": "The cabinet of traps",
+  "fad8ba6b9971": "Pawn structures: the skeleton of the chessboard",
+  "c80ca00948c3": "Middlegame strategy",
+  "8f595b1b1f50": "Tactics: how to turn small advantages into material",
+  "4fdefbc5d14e": "Endgame foundations",
+  "2e616dc7f3ad": "Endgame deep dive",
+  "a14f937310c1": "Studies and curiosities",
+  "6678adb6b0ae": "Model games: how the concepts work together",
+  "83c441cd64fe": "Training methods and checklists"
+ }
+}

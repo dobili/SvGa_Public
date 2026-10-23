@@ -1,0 +1,345 @@
+{
+ "schemaVersion": 1,
+ "denkroutine": {
+  "titel": "Vor jedem Zug: die Denkroutine",
+  "schritte": [
+   {
+    "nummer": 1,
+    "titel": "Stellung erfassen.",
+    "text": "Was hat der letzte Zug des Gegners verändert, was droht er? Warnsignale auf beiden Seiten. Welche Phase? Dann das Werkzeug von Karte 2."
+   },
+   {
+    "nummer": 2,
+    "titel": "Kandidaten sammeln.",
+    "text": "Zuerst Schachs, Schläge, Drohungen, deine und die des Gegners. Zwingt nichts: der beste ruhige Zug mit dem Werkzeug deiner Phase. Zwei bis drei Kandidaten."
+   },
+   {
+    "nummer": 3,
+    "titel": "Die stärkste Antwort suchen.",
+    "text": "Für jeden Kandidaten die stärkste, nicht die bequemste Antwort. Mindestens zwei Antworten weit, jeden Kandidaten zu Ende rechnen."
+   },
+   {
+    "nummer": 4,
+    "titel": "Bewerten und vergleichen.",
+    "text": "Bis zur Ruhe rechnen, dann zählen: Material, Königssicherheit, Aktivität. Den Kandidaten wählen, der gegen die stärkste Antwort am besten abschneidet."
+   }
+  ],
+  "sicherheitsblick": {
+   "titel": "Sicherheitsblick.",
+   "text": "Steht mein König danach sicher? Kann der Gegner die gezogene Figur sofort schlagen? Erlaube ich ein Schach oder Matt?"
+  },
+  "zurueck": "widerlegt oder unsicher?",
+  "abschluss": "Ziehen",
+  "phasenTitel": "Welche Phase? Welches Werkzeug?",
+  "phasen": [
+   {
+    "name": "Eröffnung",
+    "wann": "Du bist hier, solange die drei Eröffnungsziele nicht erfüllt sind: Zentrum, Entwicklung, Königssicherheit.",
+    "abschnitte": [
+     {
+      "titel": "Ruhiger Zug mit",
+      "punkte": [
+       "deinem Repertoire (Kap. 2)",
+       "den drei Eröffnungszielen (Kap. 1)"
+      ]
+     },
+     {
+      "titel": "Achte besonders auf",
+      "punkte": [
+       "die vier Todsünden (Kap. 1)",
+       "Geschenke: erst die Warum-Frage (Kap. 4)",
+       "Gambits: die Faktorenbilanz (Kap. 3)"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Mittelspiel",
+    "wann": "Du bist hier, sobald die Eröffnungsziele erfüllt sind und noch kein Endspiel erreicht ist.",
+    "abschnitte": [
+     {
+      "titel": "Ruhiger Zug mit",
+      "punkte": [
+       "dem Skelett-Röntgen: Felder, Bauern, Richtung, Figuren (Kap. 5)",
+       "den drei Planfragen: Wo spiele ich? Was will mein Gegner? Welche Figur bringe ich dorthin? (Kap. 6)"
+      ]
+     },
+     {
+      "titel": "Achte besonders auf",
+      "punkte": [
+       "den Plan des Gegners (Kap. 6)",
+       "Mehrmaterial: Figuren tauschen, ins Endspiel gehen (Kap. 6, 8)"
+      ]
+     }
+    ]
+   },
+   {
+    "name": "Endspiel",
+    "wann": "Du bist hier, wenn die Damen weg sind, beide Könige sicher stehen, dein König ins Zentrum darf und die Bauern entscheiden (Kap. 8).",
+    "abschnitte": [
+     {
+      "titel": "Ruhiger Zug mit",
+      "punkte": [
+       "den sechs Endspielregeln (Kap. 8)",
+       "im Turmendspiel: Abschneiden, Schachdistanz, kurze und lange Seite (Kap. 9)"
+      ]
+     },
+     {
+      "titel": "Achte besonders auf",
+      "punkte": [
+       "Freibauern: bis zur Umwandlung rechnen (Kap. 8)",
+       "Patt am Ende jeder Variante (Kap. 10)"
+      ]
+     }
+    ]
+   }
+  ],
+  "zuerst": "In jeder Phase zuerst: Warnsignale und die Schach-Röntgen-Regel (Schachs, Schläge, Drohungen)."
+ },
+ "checkliste": {
+  "titel": "Master checklist for training and game analysis",
+  "spalten": [
+   "Ch.",
+   "Key question",
+   "Tool",
+   "Type of mistake"
+  ],
+  "zeilen": [
+   {
+    "kapitel": 0,
+    "kernfrage": "Can I read and write down any move sequence?",
+    "werkzeug": "Notation and special symbols",
+    "fehlerart": "Rule or notation"
+   },
+   {
+    "kapitel": 1,
+    "kernfrage": "Was passiert jetzt?",
+    "werkzeug": "Schach-Röntgen-Regel (Schach, Schlag, Drohung, Optimierung); goldene Angriffsregel",
+    "fehlerart": "Schach oder Schlag übersehen"
+   },
+   {
+    "kapitel": 2,
+    "kernfrage": "Erreiche ich die drei Eröffnungsziele?",
+    "werkzeug": "Zielbilanz; die Idee meiner Eröffnung",
+    "fehlerart": "Eröffnungsidee"
+   },
+   {
+    "kapitel": 3,
+    "kernfrage": "Lohnt sich das Opfer, und wie lange?",
+    "werkzeug": "Faktorenbilanz (Material, Zeit, Königssicherheit, Aktivität) mit Haltbarkeit",
+    "fehlerart": "Opferbewertung"
+   },
+   {
+    "kapitel": 4,
+    "kernfrage": "Warum lässt mein Gegner das zu?",
+    "werkzeug": "goldene Verteidigungsregel, Prüffragen F1–F3, Warnsignale W1–W5",
+    "fehlerart": "Falle oder Köder"
+   },
+   {
+    "kapitel": 5,
+    "kernfrage": "Was bleibt für immer?",
+    "werkzeug": "Skelett-Röntgen: Vorher und vier Leitfragen",
+    "fehlerart": "Bauernstruktur"
+   },
+   {
+    "kapitel": 6,
+    "kernfrage": "Wo spiele ich, was will mein Gegner, welche Figur bringe ich dorthin?",
+    "werkzeug": "drei Planfragen, Planbilanz, LAP-Prinzip",
+    "fehlerart": "Plan oder Figurenaktivität"
+   },
+   {
+    "kapitel": 7,
+    "kernfrage": "Ist die Kombination korrekt?",
+    "werkzeug": "Taktik in drei Schritten, Warnsignale W6 und W7, zwölf Motive, Mattbilder",
+    "fehlerart": "Taktik übersehen"
+   },
+   {
+    "kapitel": 8,
+    "kernfrage": "Welches Elementarendspiel liegt vor?",
+    "werkzeug": "sechs goldene Endspielregeln",
+    "fehlerart": "Elementarendspiel"
+   },
+   {
+    "kapitel": 9,
+    "kernfrage": "Welches Erkennungsbild passt?",
+    "werkzeug": "Abschneiden, Schachdistanz, kurze und lange Seite; Philidor, Lucena, Vancura",
+    "fehlerart": "Endspieltechnik"
+   },
+   {
+    "kapitel": 10,
+    "kernfrage": "Steckt ein verstecktes Motiv darin?",
+    "werkzeug": "Studien-Werkzeug: Plan des Gegners, jede Umwandlung, Patt, stiller Zug",
+    "fehlerart": "Verstecktes Motiv"
+   },
+   {
+    "kapitel": 11,
+    "kernfrage": "Welches Werkzeug passt zu dieser Phase der Partie?",
+    "werkzeug": "die Werkzeuge in der ganzen Partie",
+    "fehlerart": "Planwahl"
+   },
+   {
+    "kapitel": 12,
+    "kernfrage": "Arbeite ich mit Routine?",
+    "werkzeug": "Denkroutine, Kontrollpunkte, Fehlerdatenbank",
+    "fehlerart": "Routine oder Zeit"
+   }
+  ]
+ },
+ "lernziele": [
+  {
+   "kapitel": 0,
+   "einleitung": "Before you read on with Chapter 1, you should be able to do the following with confidence:",
+   "punkte": [
+    "orient the board from White's point of view",
+    "move and capture legally with every piece",
+    "get out of check",
+    "tell stalemate from checkmate",
+    "name the conditions for castling",
+    "recognize en passant",
+    "read a short move sequence in algebraic notation and write one down yourself",
+    "know the rules at the tournament board and the ways a game can end in a draw"
+   ]
+  },
+  {
+   "kapitel": 1,
+   "einleitung": "Bevor du mit Kapitel 2 weiterliest, solltest du Folgendes sicher können:",
+   "punkte": [
+    "die drei Eröffnungsziele an einer Stellung prüfen",
+    "die vier Todsünden der Eröffnung erkennen",
+    "vor jedem Zug die vier Fragen der Schach-Röntgen-Regel stellen",
+    "auf einem umkämpften Feld Angreifer und Verteidiger samt ihren Werten zählen",
+    "eine Spannung halten, bis der Tausch dir etwas bringt",
+    "vor einem Angriff die Übermacht zählen"
+   ]
+  },
+  {
+   "kapitel": 2,
+   "einleitung": "Bevor du mit Kapitel 3 weiterliest, solltest du Folgendes sicher können:",
+   "punkte": [
+    "an einer Eröffnungsstellung die drei Prüfungen (Zentrum, Entwicklung, Königssicherheit) für beide Seiten durchführen",
+    "die Hauptvariante deiner drei Eröffnungen bis zur Schlussstellung aufs Brett bringen und sagen, was beide Seiten dort erreicht haben",
+    "die typischen Fehler deiner Eröffnungen erkennen, etwa 4... Sf6?? in der Russischen Verteidigung oder 5... Sxd5?! im Zweispringerspiel",
+    "eine bekannte Stellung auch nach einer Zugumstellung wiedererkennen",
+    "sagen, gegen welche gegnerischen Antworten du einen Plan brauchst"
+   ]
+  },
+  {
+   "kapitel": 3,
+   "einleitung": "Bevor du mit Kapitel 4 weiterliest, solltest du Folgendes sicher können:",
+   "punkte": [
+    "ein Bauernangebot als echtes Opfer oder Scheinopfer erkennen",
+    "für eine Stellung selbst eine Faktorenbilanz aufstellen und dabei bei der Zeit berücksichtigen, wer am Zug ist",
+    "die Verteidigung gegen die Gambits spielen, die dein Repertoire treffen",
+    "im richtigen Moment einen Mehrbauern zurückgeben"
+   ]
+  },
+  {
+   "kapitel": 4,
+   "einleitung": "Bevor du mit Kapitel 5 weiterliest, solltest du Folgendes sicher können:",
+   "punkte": [
+    "vor jedem angebotenen Material die drei Prüffragen stellen",
+    "die fünf Warnsignale auf dem Brett erkennen",
+    "die Fallen kennen, die dein Repertoire treffen, als Opfer wie als Fallensteller"
+   ]
+  },
+  {
+   "kapitel": 5,
+   "einleitung": "Bevor du mit Kapitel 6 weiterliest, solltest du Folgendes sicher können:",
+   "punkte": [
+    "vor jedem eigenen Bauernzug sagen, welche Felder er für immer aufgibt und welchen der vier Gründe er erfüllt",
+    "Löcher, Vorposten und die Gefahr vor dem eigenen König erkennen",
+    "mit dem Deckungstest Doppelbauern, rückständige Bauern, Isolani, hängende Bauern und Kettenbasen finden und die Bauerninseln zählen",
+    "aus der Richtung der Ketten, dem Raum und den Mehrheiten ablesen, auf welchem Flügel du spielst, und einen gegnerischen Freibauern blockieren",
+    "erkennen, ob eine Stellung offen, halboffen, geschlossen oder beweglich ist, und entscheiden, ob du sie öffnest",
+    "mit dem Skelett-Röntgen für eine unbekannte Struktur einen Plan in einem Satz formulieren und daraus einen ersten Zug ableiten"
+   ]
+  },
+  {
+   "kapitel": 6,
+   "einleitung": "Bevor du mit Kapitel 7 weiterliest, solltest du Folgendes sicher können:",
+   "punkte": [
+    "in einer ruhigen Stellung sagen, was jetzt zählt: Königssicherheit, Aktivität und Bauernstruktur",
+    "entscheiden, ob du am Flügel oder im Zentrum spielst – je nachdem, ob das Zentrum geschlossen oder offen ist und wo die Könige stehen",
+    "die drei Bedingungen für einen Königsangriff bei gleichseitiger Rochade prüfen",
+    "den Plan deines Gegners an einem konkreten Zug erkennen und ihn vorbeugend verhindern",
+    "einem laufenden Angriff mit den fünf Verteidigungsmitteln eine seiner Bedingungen nehmen",
+    "eine Schwäche fixieren, gegen sie spielen und eine zweite schaffen",
+    "deine am wenigsten aktive Figur finden und ihr einen Weg zum Plan bahnen, einen Turm etwa über die offene Linie auf die siebte Reihe",
+    "eine Planbilanz für beide Seiten aufstellen",
+    "einen ungleichen Tausch und ein Qualitätsopfer mit der Faktorenbilanz beurteilen",
+    "einen Materialvorteil mit den richtigen Tauschen verwerten"
+   ]
+  },
+  {
+   "kapitel": 7,
+   "einleitung": "Bevor du mit Kapitel 8 weiterliest, solltest du Folgendes können:",
+   "punkte": [
+    "zu jedem Warnsignal, für beide Seiten, das passende Motiv finden",
+    "mehrere Kandidaten nacheinander bis zur Ruhe rechnen und die Bilanz ziehen",
+    "eine Drohung mit den fünf Abwehrfragen prüfen",
+    "einen Abtausch auf einem Feld richtig zählen, auch mit Figuren, die hintereinanderstehen",
+    "die Mattbilder dieses Kapitels erkennen",
+    "in einer verlorenen Stellung nach Dauerschach und Patt suchen"
+   ]
+  },
+  {
+   "kapitel": 8,
+   "einleitung": "Bevor du mit Kapitel 9 weiterliest, solltest du Folgendes können:",
+   "punkte": [
+    "Damenmatt und Turmmatt ohne Patt sicher ausführen, das Turmmatt auch aus der Brettmitte",
+    "die Opposition erkennen und nutzen, auch aus der Ferne",
+    "die Schlüsselfelder eines Bauern bestimmen und den König dorthin führen",
+    "vor dem Tausch der letzten Figur das Bauernendspiel ausrechnen",
+    "mit der Quadratregel und durch Zählen entscheiden, ob ein Freibauer durchläuft",
+    "aus einer Mehrheit einen Freibauern machen und einen entfernten Freibauern als Lockvogel einsetzen",
+    "das Zugrecht mit Triangulation oder einem Reserve-Tempo abgeben"
+   ]
+  },
+  {
+   "kapitel": 9,
+   "einleitung": "Bevor du mit Kapitel 10 weiterliest, solltest du Folgendes können:",
+   "punkte": [
+    "erkennen, ob ein König abgeschnitten ist, und die kurze und die lange Seite unterscheiden",
+    "die Philidor-Stellung aufbauen und im richtigen Moment hinter den Bauern wechseln",
+    "die Lucena-Stellung gewinnen: wegtreiben, Turm auf die 4. Reihe, Brücke bauen",
+    "gegen einen Randbauern die Vancura-Idee anwenden und den Spieß auf der 7. Reihe vermeiden",
+    "Turm gegen Bauer durch Abschneiden und Zählen einschätzen",
+    "Dame gegen Bauer ohne Patt gewinnen und im Damenendspiel an das Dauerschach denken",
+    "die typischen Remisbilder mit Läufern und die Festung erkennen"
+   ]
+  },
+  {
+   "kapitel": 10,
+   "einleitung": "Bevor du mit Kapitel 11 weiterliest, solltest du Folgendes können:",
+   "punkte": [
+    "eine Studie mit den vier zusätzlichen Prüfungen des Werkzeugs lösen",
+    "erklären, warum in der Saavedra-Studie nur der Turm gewinnt",
+    "mit der Réti-Idee einen Königsweg mit zwei Zielen finden",
+    "einer gegnerischen Figur mit einem Opfer oder einem stillen Zug den Weg versperren",
+    "bei Pattverdacht jede Figur einzeln prüfen und eine Pattreserve erkennen"
+   ]
+  },
+  {
+   "kapitel": 11,
+   "einleitung": "Bevor du weiterliest, solltest du Folgendes können:",
+   "punkte": [
+    "zu einer Stellung das Werkzeug nennen, das sie verlangt",
+    "eine Meisterpartie am Brett nachspielen und an jedem Diagramm den Plan in einem Satz sagen",
+    "erklären, warum Colles Opfer die Hilfe des Gegners brauchte und Laskers nicht",
+    "eine Faktorenbilanz neu ziehen, wenn Material zurückgewonnen oder neu geopfert wird",
+    "vor einem Tausch sagen, welche Figuren übrig bleiben",
+    "im Turmendspiel zunächst nach der Aktivität fragen und erst dann nach dem Material"
+   ]
+  },
+  {
+   "kapitel": 12,
+   "einleitung": "Bevor du das Buch zuklappst, solltest du Folgendes können:",
+   "punkte": [
+    "vor einem Zug die Phase der Partie bestimmen, die vier Schritte der Denkroutine durchgehen und dabei mindestens zwei Kandidatenzüge prüfen",
+    "eine eigene Partie zuerst ohne Engine auswerten und den wichtigsten Fehler in die Fehlerdatenbank eintragen",
+    "einen Trainingsplan für deine Stufe aufstellen",
+    "deine Bedenkzeit mit Kontrollpunkten einteilen"
+   ]
+  }
+ ]
+}

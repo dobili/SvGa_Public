@@ -1368,3 +1368,59 @@ Bot-Chat N350–N399); der Bot-Chat behält seine Dateien.
 - Abb. 7.24: ohne konstruierte Zugfolge (Chat D, siehe ZF in AUFGABEN_AUTOR).
 - Gleiche Startstellungen: Nach der Regel des Autors (nur im selben Kapitel zusammenführen) sind
   die zwei Paare zusammengeführt (0.2.32); über Kapitelgrenzen bleibt alles getrennt.
+
+## P6 Englisch
+
+Paket P6 (R25, V1), Zweig `p6-englisch` (Basis `weiter-ohne-autor`, nicht auf main, keine
+Versionsnummer). Auftrag: die restlichen Buchdaten (Bildunterschriften, Glossar, Übungstexte,
+vorbereitete Texte, Nachschlagen) Kapitel für Kapitel ins Englische, Begriffe nach
+`docs/ENGLISCH_BEGRIFFE.md`, die 27 Buchzitate wie in `en.json`. Geändert werden nur
+`inhalte/en/`, `app/public/daten/en/` und die Übersetzungsschicht `pipeline/uebersetzen/`
+(mit `pipeline/tests/test_uebersetzen.py`). Testpunkte nur N730–N739.
+
+**Übersetzungsschicht (fertig):** `python -m pipeline.uebersetzen` baut aus
+`app/public/daten/de/a1/` und den Tabellen `inhalte/en/a1/<datei>` die Daten
+`app/public/daten/en/a1/`. Eine Teilliste (Unterschrift, Übung …) wird als ein Satz mit
+Platzhaltern übersetzt (`{z1}` Zug, `{v1}` Verweis, `{s1}` Stelle, `<b>`, `<i>`, `<g1>` Begriff),
+Züge, Verweise und Stellen überträgt die Schicht selbst. Die Tabellen sind nach Kennung (SHA-1 der
+deutschen Vorlage) geschlüsselt und enthalten keinen deutschen Text (Regel „Öffentlich“).
+Lösungszüge der Übungen und erfragte Züge der Warum-Fragen bekommen englische Buchstaben;
+Kennungen, FEN, Abschnittsnummern, Werkzeugkennungen bleiben. Glossar: Verweise auf die
+englischen Namen, Einträge nach englischem Alphabet. Nicht Übersetztes bleibt deutsch. Lokale
+Arbeitsdateien und Prüfhilfe Deutsch/Englisch in `buch/arbeit/uebersetzung/`. Format und Ablauf:
+`inhalte/en/README.md`. Der Test prüft, dass die eingecheckten englischen Daten genau zu den
+Tabellen passen, gegen die Schemas gültig sind und keine Kennung verwaist ist.
+
+**Prüfung je Kapitel:** lokal mit vorübergehend `DATENSPRACHEN = ["de", "en"]` in
+`app/src/i18n/sprache.ts` (nicht eingecheckt): jede Abbildung des Kapitels, die Kapitelseite und
+jede Übung mit Lösung in „English (preview)“ geöffnet, sichtbarer Text auf deutsche Wörter und
+deutsche Züge durchsucht (Playwright, Skript nur lokal).
+
+| Schritt | Stand |
+| --- | --- |
+| Schicht, Tests, Kapiteltitel (index.json) | fertig |
+| Kapitel 0 (mit Lernzielen und Zeile der Gesamt-Checkliste) | fertig, App geprüft |
+| Kapitel 1 bis 12 | offen |
+| Glossar | offen |
+| Nachschlagen (Denkroutine, restliche Gesamt-Checkliste) | offen |
+
+**Bevor die englischen Daten in der App erscheinen (App-Code, nicht Teil von P6):**
+
+1. `DATENSPRACHEN` in `app/src/i18n/sprache.ts` um „en“ ergänzen. Dann lädt aber auch
+   `daten/trainerdaten.ts` aus `/daten/en/trainer/`, das es nicht gibt: Trainerdaten bis zu ihrer
+   Übersetzung weiter aus `de` laden (eigene Datensprache für Trainer) oder
+   `skripte/kopiere-trainerdaten.mjs` auch nach `en` kopieren lassen.
+2. Stellen im App-Code, die deutsche Datentexte als Schlüssel lesen und auf Englisch ins Leere
+   greifen: `training/faktorentrainer.ts` (`ZEILEN` „Material/Zeit/Königssicherheit/Aktivität“,
+   `spalten[0].startsWith("Weiß")`), `analyse/k2-eroeffnung.ts` (`KURZFASSUNGEN` nach dem
+   deutschen Namen des Steckbriefs), `schach/eroeffnungsindex.ts` (`ARTIKEL`,
+   `ALLGEMEINE_TITEL` „Weitere Varianten“/„Grundstellung“, Wortvergleich Steckbrief–Beispiel).
+   Sie brauchen die englischen Formen mit (Liste der englischen Namen in den Tabellen von
+   Kapitel 2, 3 und 6).
+3. `ui/komponenten/Abbildungsgalerie.tsx` (Kurztext der Kacheln) zeigt Zugteile ohne
+   `buchzugInSprache`; mit den englischen Daten ist das kein Problem mehr, weil die Zugteile dort
+   schon englisch sind.
+
+**Nächster Schritt:** Kapitel 1 übersetzen (`buch/arbeit/uebersetzung/offen/kap01.json`, dazu
+Lernziele und Checklistenzeile 1 aus `offen/nachschlagen.json`), einspielen, bauen, in der App
+prüfen, committen und pushen; dann Kapitel 2 usw.

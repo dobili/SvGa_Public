@@ -1,0 +1,5389 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 1,
+ "titel": "Basic principles of chess",
+ "abschnitte": [
+  {
+   "nummer": "1.1",
+   "label": "sec:k1-eroeffnungsziele",
+   "titel": "Die drei Ziele jeder Eröffnung"
+  },
+  {
+   "nummer": "1.2",
+   "label": "sec:k1-todsuenden",
+   "titel": "Die vier Todsünden der Eröffnungsphase"
+  },
+  {
+   "nummer": "1.3",
+   "label": "sec:k1-anfaenger",
+   "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+  },
+  {
+   "nummer": "1.4",
+   "label": "sec:k1-roentgen",
+   "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+  },
+  {
+   "nummer": "1.5",
+   "label": "sec:k1-spannung",
+   "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+  },
+  {
+   "nummer": "1.6",
+   "label": "sec:k1-angriff",
+   "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "1.1",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "Die drei Ziele jeder Eröffnung"
+   },
+   "unterabschnitt": null,
+   "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e2",
+     "nach": "e4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4"
+    },
+    {
+     "art": "text",
+     "text": ": Der goldene Pfeil zeigt den ersten weißen Zentrumszug; das goldene Feld e4 ist eines der vier zentralen Felder, die grauen Felder d4, e5 und d5 sind die übrigen drei.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a1",
+    "pfad": [
+     "e4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 54
+   },
+   "pruefsumme": "43d6730c67f583aa"
+  },
+  {
+   "id": "1.2",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "Die drei Ziele jeder Eröffnung"
+   },
+   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f4",
+     "nach": "e5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Lf4"
+    },
+    {
+     "art": "text",
+     "text": " – ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Ziel 1",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": ": Der Bauer besetzt d4 (gold), der Läufer kontrolliert aus der Distanz e5 (goldener Pfeil, graues Feld). Entscheidend ist die Reihenfolge: Der Läufer verlässt die Grundreihe, ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "bevor",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " e3 ihn einsperrt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.3"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 87
+   },
+   "pruefsumme": "93168561d1097a53"
+  },
+  {
+   "id": "1.3",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "Die drei Ziele jeder Eröffnung"
+   },
+   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P1B2/4PN2/PPP2PPP/RN1QKB1R b KQkq - 1 4",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "e5"
+    },
+    {
+     "farbe": "grau",
+     "von": "f1",
+     "nach": "d3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sf3"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Der Springer steht auf seinem besten Feld und kontrolliert e5 ebenfalls (goldener Pfeil, graues Feld). Der Bauer e3 hat dem Läufer f1 den Weg nach d3 geöffnet (grauer Pfeil): Das ist der nächste Schritt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.2"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 92
+   },
+   "pruefsumme": "a22379ab33b2ebe4"
+  },
+  {
+   "id": "1.4",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "Die drei Ziele jeder Eröffnung"
+   },
+   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "fen": "rnbqk2r/ppp1bppp/4pn2/3p4/3P1B2/3BPN2/PPP2PPP/RN1QK2R b KQkq - 3 5",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "e5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Ld3"
+    },
+    {
+     "art": "text",
+     "text": " – ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Ziel 2",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": ": Beide Leichtfiguren stehen auf aktiven Feldern, der Läufer auf der Diagonale b1–h7, der Springer deckt zusätzlich e5 (goldene Pfeile).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.5"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 100
+   },
+   "pruefsumme": "bc459efb962a04e2"
+  },
+  {
+   "id": "1.5",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "Die drei Ziele jeder Eröffnung"
+   },
+   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "fen": "rnbq1rk1/ppp1bppp/4pn2/3p4/3P1B2/3BPN2/PPP2PPP/RN1Q1RK1 b - - 5 6",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "g1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. O-O"
+    },
+    {
+     "art": "text",
+     "text": " – ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Ziel 3",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": ": Der König ist in Sicherheit (goldenes Feld g1), und das alles in nur sechs Zügen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.4"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3",
+     "O-O",
+     "O-O"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 105
+   },
+   "pruefsumme": "58a57f325fcbfa46"
+  },
+  {
+   "id": "1.6",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "Die drei Ziele jeder Eröffnung"
+   },
+   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1 w - - 1 8",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c5",
+     "nach": "d4"
+    },
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "c3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "e3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "d4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Sc6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Bauer c5 und Springer c6 greifen den Bauern d4 an (rote Pfeile); die Bauern c3 und e3 und der Springer f3 decken ihn (goldene Pfeile).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.7"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3",
+     "O-O",
+     "O-O",
+     "c5",
+     "c3",
+     "Nc6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 120
+   },
+   "pruefsumme": "9b6d4854506eef9d",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum muss Weiß den Bauern d4 im Moment nicht zusätzlich decken?",
+      "antworten": [
+       "Zwei Angreifer stehen drei Verteidigern gegenüber: Schlagen auf d4 gewinnt nichts.",
+       "Der Bauer d4 ist an den König gefesselt.",
+       "In der Eröffnung darf Schwarz keine Bauern schlagen."
+      ],
+      "richtig": 0,
+      "erklaerung": "Gezählt wird am Feld: Solange die Verteidiger nicht weniger sind als die Angreifer, endet jeder Schlag auf d4 mit einem bloßen Abtausch."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.7",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.1",
+    "label": "sec:k1-eroeffnungsziele",
+    "titel": "Die drei Ziele jeder Eröffnung"
+   },
+   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "fen": "r1bq1rk1/p3bppp/1pn1pn2/2pp4/3P1B2/2PBPN2/PP1NQPPP/R4RK1 b - - 1 9",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a1",
+     "nach": "f1"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. De2"
+    },
+    {
+     "art": "text",
+     "text": " – die Eröffnung ist abgeschlossen. Der goldene Pfeil zeigt die nun freie Grundreihe zwischen den beiden Türmen: Sie sind „verbunden“ und decken sich gegenseitig. Die grauen Felder e5 und e4 zeigen, welche Zentrumsfelder Weiß aus der Distanz beherrscht, ohne sie zu besetzen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.6"
+   ],
+   "beispiel": {
+    "id": "k01-a2",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3",
+     "O-O",
+     "O-O",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nbd2",
+     "b6",
+     "Qe2"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 125
+   },
+   "pruefsumme": "01e64c0f95872f92"
+  },
+  {
+   "id": "1.8",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "Die vier Todsünden der Eröffnungsphase"
+   },
+   "unterabschnitt": "Die verfrühte Dame in der Italienischen Partie",
+   "fen": "r1b1kbnr/pppp1ppp/2n2q2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "f3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... Df6?"
+    },
+    {
+     "art": "text",
+     "text": " – Die Dame greift in Wahrheit nichts an: Die f-Linie ist durch den weißen Springer f3 versperrt (grauer Pfeil), f2 ist also gar nicht bedroht. Schlimmer noch: Sie nimmt dem eigenen Springer g8 (grau) das Feld f6.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.9"
+   ],
+   "beispiel": {
+    "id": "k01-a8",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Qf6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 187
+   },
+   "pruefsumme": "1549a10c7786dbda",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "4. Nc3",
+      "frage": "Warum ist 4. Sc3 hier so wirkungsvoll?",
+      "antworten": [
+       "Er droht sofort Matt auf f7.",
+       "Er entwickelt eine Figur und bereitet Sd5 vor, das die Dame mit Tempo angreift.",
+       "Er bereitet die lange Rochade vor."
+      ],
+      "richtig": 1,
+      "erklaerung": "Die früh herausgekommene Dame wird zur Zielscheibe: Jeder weitere Angriff auf sie ist ein Entwicklungszug für Weiß und ein verlorenes Tempo für Schwarz."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.9",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "Die vier Todsünden der Eröffnungsphase"
+   },
+   "unterabschnitt": "Die verfrühte Dame in der Italienischen Partie",
+   "fen": "r1b1k1nr/pppp1ppp/2n2q2/2bNp3/2B1P3/5N2/PPPP1PPP/R1BQK2R b KQkq - 7 5",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "f6"
+    },
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "c7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sc3! Lc5 5. Sd5!"
+    },
+    {
+     "art": "text",
+     "text": " – der Springer greift die Dame an ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "und",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " droht zusätzlich Sxc7+, einen Doppelangriff (eine ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Gabel",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ") auf König und Turm a8 (rote Pfeile). Weiß entwickelt, Schwarz muss reagieren.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.8"
+   ],
+   "beispiel": {
+    "id": "k01-a8",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Qf6",
+     "Nc3",
+     "Bc5",
+     "Nd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 192
+   },
+   "pruefsumme": "de664b8fb836bb52",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "5... Qd8",
+      "frage": "Warum zieht die Dame nach d8 zurück?",
+      "antworten": [
+       "Sie bereitet die lange Rochade vor.",
+       "Von d8 aus greift sie den Springer d5 an.",
+       "Sie weicht dem Angriff aus und deckt c7; die beiden Damenzüge waren damit umsonst."
+      ],
+      "richtig": 2,
+      "erklaerung": "d8 ist das einzige Feld, auf dem die Dame zugleich sicher steht und die Gabel auf c7 verhindert. Weiß hat dabei zwei Figuren entwickelt, Schwarz nur Züge verloren."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.10",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "Die vier Todsünden der Eröffnungsphase"
+   },
+   "unterabschnitt": "Die verfrühte Dame in der Italienischen Partie",
+   "fen": "r1bqk1nr/pppp1ppp/2n5/2bNp3/2B1P3/5N2/PPPP1PPP/R1BQK2R w KQkq - 8 6",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Dd8"
+    },
+    {
+     "art": "text",
+     "text": " – die Dame steht wieder auf ihrem Ausgangsfeld. Zwei Züge von Schwarz sind ersatzlos verschwunden.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.11"
+   ],
+   "beispiel": {
+    "id": "k01-a8",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Qf6",
+     "Nc3",
+     "Bc5",
+     "Nd5",
+     "Qd8"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 200
+   },
+   "pruefsumme": "473fe816f46a48fa"
+  },
+  {
+   "id": "1.11",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "Die vier Todsünden der Eröffnungsphase"
+   },
+   "unterabschnitt": "Die verfrühte Dame in der Italienischen Partie",
+   "fen": "r1bqk1nr/pppp1ppp/2n5/2bNp3/2BPP3/5N2/PPP2PPP/R1BQK2R b KQkq d3 0 6",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e4",
+     "nach": "d5"
+    },
+    {
+     "farbe": "gold",
+     "von": "d4",
+     "nach": "e5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. d4!"
+    },
+    {
+     "art": "text",
+     "text": " – Weiß hat ein breites Zentrum (gold), drei entwickelte Figuren und die Rochade in Reichweite. Schwarz hat zwei Figuren und eine Dame, die nichts erreicht hat. Dass Schwarz auf d4 schlagen kann, stört Weiß nicht: Sein Entwicklungsvorsprung ist mehr wert als der Bauer.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.10"
+   ],
+   "beispiel": {
+    "id": "k01-a8",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Qf6",
+     "Nc3",
+     "Bc5",
+     "Nd5",
+     "Qd8",
+     "d4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 201
+   },
+   "pruefsumme": "95c47d750896b2cc",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Warum stört es Weiß nicht, dass Schwarz den Bauern d4 schlagen kann?",
+      "antworten": [
+       "Der Vorsprung in der Entwicklung ist mehr wert als ein Bauer.",
+       "Der Bauer d4 ist dreifach gedeckt.",
+       "Nach dem Schlag ist Schwarz sofort matt."
+      ],
+      "richtig": 0,
+      "erklaerung": "Weiß hat ein breites Zentrum, drei entwickelte Figuren und rochiert gleich. Ein Bauer, den Schwarz mit weiteren Zügen derselben Figuren holt, vergrößert diesen Rückstand nur."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.12",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.2",
+    "label": "sec:k1-todsuenden",
+    "titel": "Die vier Todsünden der Eröffnungsphase"
+   },
+   "unterabschnitt": "Die verzögerte Rochade – eine typische Gefahrenstellung",
+   "fen": "r3kb1r/ppqb1ppp/2np4/8/2BNn3/2N5/PPP2PPP/R1BQR1K1 w kq - 6 11",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "c3",
+     "nach": "e4"
+    },
+    {
+     "farbe": "grau",
+     "von": "e1",
+     "nach": "e8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß hat bereits rochiert und den Turm auf die offene e-Linie gebracht, und ist am Zug. Der graue Pfeil zeigt die Fesselungslinie: Der schwarze Springer auf e4 darf sich nicht bewegen, sonst stünde der eigene König im Schach. Der goldene Pfeil zeigt den zusätzlichen Angriff des Springers c3 auf genau dieses Feld – das rote Feld e4 zeigt, dass Weiß die Figur sofort gewinnt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a12",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 238
+   },
+   "pruefsumme": "6f15f1ea001d23ca",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "11. Nxe4",
+      "frage": "Warum geht der schwarze Springer e4 verloren?",
+      "antworten": [
+       "Er hat kein freies Feld mehr.",
+       "Er ist an den König e8 gefesselt und wird zweimal angegriffen.",
+       "Weiß droht Matt auf e8."
+      ],
+      "richtig": 1,
+      "erklaerung": "Der Turm e1 fesselt ihn an den König, der Springer c3 greift zusätzlich an. Ein König, der zu lange in der Mitte bleibt, macht solche Fesselungen erst möglich."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.13",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "fen": "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h5",
+     "nach": "e5"
+    },
+    {
+     "farbe": "rot",
+     "von": "h5",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Dh5"
+    },
+    {
+     "art": "text",
+     "text": " – die roten Pfeile zeigen den Angriff auf e5 und das Ziel f7. Noch ist f7 harmlos, weil der König es deckt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.14",
+    "1.15"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 291
+   },
+   "pruefsumme": "9fbc7b6d68a151d4",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "2... Nc6",
+      "frage": "Warum spielt Schwarz 2... Sc6?",
+      "antworten": [
+       "Er greift die Dame h5 an.",
+       "Er bereitet Sd4 mit Matt vor.",
+       "Er entwickelt eine Figur und deckt dabei den angegriffenen Bauern e5."
+      ],
+      "richtig": 2,
+      "erklaerung": "Ein Zug, der zwei Aufgaben erfüllt: Entwicklung und Deckung. So kostet die Drohung von Weiß Schwarz kein Tempo."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.14",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR w KQkq - 2 3",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "c6",
+     "nach": "e5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Sc6"
+    },
+    {
+     "art": "text",
+     "text": " – der graue Pfeil zeigt, wie der Springer den e5-Bauern deckt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.13",
+    "1.15"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 296
+   },
+   "pruefsumme": "711e8860e078155e"
+  },
+  {
+   "id": "1.15",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h5",
+     "nach": "f7"
+    },
+    {
+     "farbe": "rot",
+     "von": "c4",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Lc4"
+    },
+    {
+     "art": "text",
+     "text": " – Dame und Läufer zielen gemeinsam auf das rot markierte Mattfeld f7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.13",
+    "1.14"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6",
+     "Bc4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 301
+   },
+   "pruefsumme": "2ec6380e7e1901b6",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "3... g6",
+      "frage": "Warum ist 3... g6 eine gute Antwort?",
+      "antworten": [
+       "Es verhindert Dxf7# und greift die Dame mit Tempo an.",
+       "Es bereitet Lg7 vor und lässt f7 bewusst ungedeckt.",
+       "Es öffnet dem Turm h8 die h-Linie."
+      ],
+      "richtig": 0,
+      "erklaerung": "Nach g6 muss die Dame ziehen. Schwarz wehrt die Mattdrohung ab und gewinnt dabei Zeit für die eigene Entwicklung."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.16",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 0 4",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "g6",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... g6!"
+    },
+    {
+     "art": "text",
+     "text": " – der rote Pfeil zeigt den Bauernangriff auf die Dame h5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.17",
+    "1.18"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6",
+     "Bc4",
+     "g6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 316
+   },
+   "pruefsumme": "653a30281a9d8a20",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "4. Qf3",
+      "frage": "Warum zieht die Dame gerade nach f3?",
+      "antworten": [
+       "Sie bereitet die lange Rochade vor.",
+       "Sie bleibt auf f7 gerichtet und erneuert die Mattdrohung.",
+       "Sie greift den Springer c6 an."
+      ],
+      "richtig": 1,
+      "erklaerung": "Von f3 aus zielen Dame und Läufer c4 weiter auf f7. Schwarz muss erneut reagieren, diesmal am besten mit einem Entwicklungszug wie Sf6."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.17",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR b KQkq - 1 4",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f3",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Df3"
+    },
+    {
+     "art": "text",
+     "text": " – der rote Pfeil zeigt: Die Dame zieht sich zurück, zielt aber weiter auf f7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.16",
+    "1.18"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6",
+     "Bc4",
+     "g6",
+     "Qf3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 321
+   },
+   "pruefsumme": "dcad47ec4f4d9725"
+  },
+  {
+   "id": "1.18",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "fen": "r1bqkb1r/pppp1p1p/2n2np1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 5",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Sf6"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz ist sicher und sogar leicht im Vorteil: Der Springer auf dem grau markierten Feld f6 versperrt der Dame die f-Linie.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.16",
+    "1.17"
+   ],
+   "beispiel": {
+    "id": "k01-a13",
+    "pfad": [
+     "e4",
+     "e5",
+     "Qh5",
+     "Nc6",
+     "Bc4",
+     "g6",
+     "Qf3",
+     "Nf6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 326
+   },
+   "pruefsumme": "234d94279cc0eb7f"
+  },
+  {
+   "id": "1.19",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Ausblick: Der Fried-Liver-Angriff",
+   "fen": "r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "d5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Sxd5?!"
+    },
+    {
+     "art": "text",
+     "text": " – der rote Pfeil zeigt den natürlich aussehenden Rückschlag, der sich als Fehler erweist.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.20"
+   ],
+   "beispiel": {
+    "id": "k01-a19",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Nf6",
+     "Ng5",
+     "d5",
+     "exd5",
+     "Nxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 352
+   },
+   "pruefsumme": "ec2a98e1d1546f61",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6. Nxf7",
+      "frage": "Warum schlägt Weiß mit dem Springer auf f7?",
+      "antworten": [
+       "f7 ist ungedeckt, Weiß gewinnt einfach einen Bauern.",
+       "Danach ist die Dame d8 gefangen.",
+       "Der König muss zurückschlagen, verliert die Rochade und wird ins Zentrum gelockt."
+      ],
+      "richtig": 2,
+      "erklaerung": "Das Opfer bringt den Springer zugleich aus dem Angriff der Dame d8. Nach Kxf7 Df3+ muss der König ins offene Zentrum."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.20",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Ausblick: Der Fried-Liver-Angriff",
+   "fen": "r1bqkb1r/ppp2Npp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R b KQkq - 0 6",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "g5",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Sxf7!"
+    },
+    {
+     "art": "text",
+     "text": " – der goldene Pfeil zeigt das Springeropfer auf dem kritischen Feld f7 (rot).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.19"
+   ],
+   "beispiel": {
+    "id": "k01-a19",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Nf6",
+     "Ng5",
+     "d5",
+     "exd5",
+     "Nxd5",
+     "Nxf7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 357
+   },
+   "pruefsumme": "81747efa56b41edb"
+  },
+  {
+   "id": "1.21",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Ausblick: Der Fried-Liver-Angriff",
+   "fen": "r1bq1b1r/ppp2kpp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R w KQ - 0 7",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Kxf7"
+    },
+    {
+     "art": "text",
+     "text": " – der König muss den Springer zurückerobern und verliert dabei die Rochade.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.22"
+   ],
+   "beispiel": {
+    "id": "k01-a19",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Nf6",
+     "Ng5",
+     "d5",
+     "exd5",
+     "Nxd5",
+     "Nxf7",
+     "Kxf7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 376
+   },
+   "pruefsumme": "1d22eb26c444b5f7"
+  },
+  {
+   "id": "1.22",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.3",
+    "label": "sec:k1-anfaenger",
+    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   },
+   "unterabschnitt": "Ausblick: Der Fried-Liver-Angriff",
+   "fen": "r1bq1b1r/ppp3pp/2n1k3/3np3/2B5/5Q2/PPPP1PPP/RNB1K2R w KQ - 2 8",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. Df3+ Ke6"
+    },
+    {
+     "art": "text",
+     "text": " – der König wird mit Schach ins offene Zentrum gezwungen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.21"
+   ],
+   "beispiel": {
+    "id": "k01-a19",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Nf6",
+     "Ng5",
+     "d5",
+     "exd5",
+     "Nxd5",
+     "Nxf7",
+     "Kxf7",
+     "Qf3+",
+     "Ke6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 377
+   },
+   "pruefsumme": "65949d1a4f2248fc"
+  },
+  {
+   "id": "1.23",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Warum „ Schach“ vor „ Schlag“ steht",
+   "fen": "rnb1k2r/ppp2p1p/4p1p1/2bq4/4N3/3P4/PPP1BPPP/R1BQ1RK1 w kq - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "e4",
+     "nach": "c5"
+    },
+    {
+     "farbe": "gold",
+     "von": "e4",
+     "nach": "f6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d5"
+    },
+    {
+     "farbe": "rot",
+     "feld": "e8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Der graue Pfeil zeigt den naheliegenden Schlag Sxc5. Doch der goldene Pfeil zeigt den viel stärkeren Zug: Sf6+ gibt dem König e8 Schach und greift gleichzeitig die Dame auf d5 an (beide rot).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.24",
+    "1.25"
+   ],
+   "beispiel": {
+    "id": "k01-a23",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 432
+   },
+   "pruefsumme": "7952c5e1ea53475f",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Nf6+",
+      "frage": "Warum ist 1. Sf6+ stärker als 1. Sxc5?",
+      "antworten": [
+       "Es gibt Schach und greift zugleich die Dame d5 an: Weiß gewinnt die Dame.",
+       "Es setzt matt.",
+       "Es deckt den eigenen König."
+      ],
+      "richtig": 0,
+      "erklaerung": "Wer zuerst die Schachs prüft, findet die Gabel. Sxc5 tauscht nur Springer gegen Läufer."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.24",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Warum „ Schach“ vor „ Schlag“ steht",
+   "fen": "rnb1k2r/ppp2p1p/4pNp1/2bq4/8/3P4/PPP1BPPP/R1BQ1RK1 b kq - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "e8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sf6+"
+    },
+    {
+     "art": "text",
+     "text": " – der Springer gabelt König und Dame (rote Pfeile). Schwarz hat nur drei legale Züge: Ke7, Kf8 und Kd8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.23",
+    "1.25"
+   ],
+   "beispiel": {
+    "id": "k01-a23",
+    "pfad": [
+     "Nf6+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 436
+   },
+   "pruefsumme": "ecfb84f839e173ff"
+  },
+  {
+   "id": "1.25",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Warum „ Schach“ vor „ Schlag“ steht",
+   "fen": "rnb4r/ppp1kp1p/4pNp1/2bq4/8/3P4/PPP1BPPP/R1BQ1RK1 w - - 2 2",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke7"
+    },
+    {
+     "art": "text",
+     "text": " – der König ist gerettet, die Dame nicht: Es folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sxd5+"
+    },
+    {
+     "art": "text",
+     "text": " und Weiß gewinnt die Dame für einen Springer.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.23",
+    "1.24"
+   ],
+   "beispiel": {
+    "id": "k01-a23",
+    "pfad": [
+     "Nf6+",
+     "Ke7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 441
+   },
+   "pruefsumme": "c62626867dac992e"
+  },
+  {
+   "id": "1.26",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "fen": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R w KQkq - 4 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c5",
+     "nach": "d4"
+    },
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "rot",
+     "von": "b6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "c3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Db6"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Die roten Pfeile zeigen die drei schwarzen Angreifer auf d4, die goldenen die drei weißen Verteidiger, darunter die Dame d1 über die d-Linie.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.27"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 534
+   },
+   "pruefsumme": "cd684791017a4f03",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6. Bd3",
+      "frage": "Warum ist 6. Ld3 ungenau?",
+      "antworten": [
+       "Der Läufer steht auf d3 ungedeckt.",
+       "Der Läufer verstellt der Dame d1 die d-Linie: d4 hat nur noch zwei Verteidiger.",
+       "Weiß verliert damit das Rochaderecht."
+      ],
+      "richtig": 1,
+      "erklaerung": "Aus drei gegen drei wird drei gegen zwei. Ein einziger natürlich aussehender Entwicklungszug kippt die Zählung."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.27",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "fen": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/3P4/2PB1N2/PP3PPP/RNBQK2R b KQkq - 4 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f1",
+     "nach": "d3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. Ld3?!"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz am Zug. Das rote Feld d3 zeigt das Problem: Der eigene Läufer hat der weißen Dame dort die Deckung von d4 abgeschnitten. Aus 3:3 ist 3:2 geworden.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.26"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 539
+   },
+   "pruefsumme": "76c3e66174a2aa28",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6... cxd4",
+      "frage": "Warum schlägt Schwarz jetzt auf d4?",
+      "antworten": [
+       "Der Bauer d4 ist gefesselt.",
+       "Sonst droht Weiß Matt.",
+       "Drei Angreifer gegen zwei Verteidiger: Am Ende des Abtauschs bleibt ein Bauer übrig."
+      ],
+      "richtig": 2,
+      "erklaerung": "Die Zählung entscheidet: Bei mehr Angreifern als Verteidigern gewinnt die angreifende Seite Material."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.28",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "fen": "r1b1kbnr/pp3ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQK2R b KQkq - 0 7",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "rot",
+     "von": "b6",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. cxd4"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Rot: zwei Angreifer auf d4. Gold: ein Verteidiger. Der Läufer d3 verstellt der Dame d1 weiter die d-Linie.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.29"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 552
+   },
+   "pruefsumme": "e1c822720166b1de",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "7... Bd7",
+      "frage": "Warum spielt Schwarz zuerst 7... Ld7 statt sofort Sxd4?",
+      "antworten": [
+       "Nach Sxd4 Sxd4 Dxd4 räumt Lb5+ die d-Linie, und die Dame d1 schlägt die Dame d4.",
+       "Ld7 bereitet die lange Rochade vor.",
+       "Sxd4 wäre ein Rückzug."
+      ],
+      "richtig": 0,
+      "erklaerung": "Erst Ld7 stellt einen Läufer zwischen b5 und den König. Dann ist Lb5 kein Schach mehr, und die Drohung gegen d4 wird echt."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.29",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "fen": "r1b1kbnr/pp3ppp/4p3/1B1pP3/3q4/8/PP3PPP/RNBQK2R b KQkq - 1 9",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b5",
+     "nach": "e8"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Lb5+"
+    },
+    {
+     "art": "text",
+     "text": ", Schwarz am Zug. Der Läufer gibt Schach (roter Pfeil) und hat dabei die d-Linie geräumt: Im nächsten Zug schlägt die weiße Dame die schwarze auf d4 (goldener Pfeil, rotes Feld).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.28"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Nxd4",
+     "Nxd4",
+     "Qxd4",
+     "Bb5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 557
+   },
+   "pruefsumme": "e57d055509115b10"
+  },
+  {
+   "id": "1.30",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "fen": "r3kbnr/pp1b1ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQK2R w KQkq - 1 8",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d7",
+     "nach": "b5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "b5"
+    },
+    {
+     "farbe": "rot",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Ld7!"
+    },
+    {
+     "art": "text",
+     "text": ", Weiß am Zug. Der Läufer steht jetzt zwischen b5 (grau) und seinem König: Auch wenn der Springer c6 auf d4 schlägt, ist Lb5 kein Schach mehr, und der Läufer d7 könnte auf b5 schlagen (goldener Pfeil). Damit ist die Drohung gegen d4 (rot) echt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.31"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Bd7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 586
+   },
+   "pruefsumme": "1f8b2fafd3b3dcce",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "8. Nc3",
+      "frage": "Warum ist 8. Sc3 ungenau?",
+      "antworten": [
+       "Es stellt den Springer ein.",
+       "Es tut nichts für d4: Schwarz gewinnt den Bauern, und Lb5 ist kein Schach mehr.",
+       "Es verhindert die eigene Rochade."
+      ],
+      "richtig": 1,
+      "erklaerung": "Nach Sxd4 Sxd4 Dxd4 hat Schwarz einen gesunden Bauern mehr. Die Falle mit Lb5+ funktioniert nicht mehr, weil Ld7 die Linie zum König verstellt."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.31",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.4",
+    "label": "sec:k1-roentgen",
+    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   },
+   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "fen": "r3kbnr/pp1b1ppp/4p3/3pP3/3q4/2NB4/PP3PPP/R1BQK2R w KQkq - 0 10",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. Sc3?! Sxd4! 9. Sxd4 Dxd4"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz hat einen gesunden Bauern gewonnen. Der Versuch ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Lb5"
+    },
+    {
+     "art": "text",
+     "text": " läuft jetzt ins Leere: Er ist kein Schach, und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Dxe5+"
+    },
+    {
+     "art": "text",
+     "text": " gewinnt sogar einen zweiten Bauern.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.30"
+   ],
+   "beispiel": {
+    "id": "k01-a26",
+    "pfad": [
+     "e4",
+     "e6",
+     "d4",
+     "d5",
+     "e5",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nf3",
+     "Qb6",
+     "Bd3",
+     "cxd4",
+     "cxd4",
+     "Bd7",
+     "Nc3",
+     "Nxd4",
+     "Nxd4",
+     "Qxd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 591
+   },
+   "pruefsumme": "05d3f9a287bc3e14"
+  },
+  {
+   "id": "1.32",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.5",
+    "label": "sec:k1-spannung",
+    "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+   },
+   "unterabschnitt": "Wie ein Abtausch dem Gegner hilft",
+   "fen": "r2qk2r/ppp2ppp/2np1n2/2b1p3/2B1P1b1/2PP1N1P/PP3PP1/RNBQ1RK1 b kq - 0 7",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g4",
+     "nach": "f3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "d1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. h3"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz am Zug. Der Läufer wird angegriffen. Der Schlagreflex sagt: Lxf3 (grauer Pfeil). Das graue Feld d1 zeigt, wo die weiße Dame noch untätig steht.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.33"
+   ],
+   "beispiel": {
+    "id": "k01-a32",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d3",
+     "d6",
+     "O-O",
+     "Bg4",
+     "h3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 636
+   },
+   "pruefsumme": "ab10a2299284b9c1",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "7... Bxf3",
+      "frage": "Was spricht gegen 7... Lxf3?",
+      "antworten": [
+       "Der Läufer ist auf f3 gefangen.",
+       "Lxf3 verliert eine Figur.",
+       "Weiß nimmt mit der Dame zurück und hat sie damit kostenlos entwickelt."
+      ],
+      "richtig": 2,
+      "erklaerung": "Ein Abtausch ohne Not löst die Spannung zugunsten des Gegners: Die weiße Dame kommt mit Zeitgewinn ins Spiel und zielt auf f6 und f7."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.33",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.5",
+    "label": "sec:k1-spannung",
+    "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+   },
+   "unterabschnitt": "Wie ein Abtausch dem Gegner hilft",
+   "fen": "r2qk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1Q1P/PP3PP1/RNB2RK1 b kq - 0 8",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "f6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "f3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Lxf3?! 8. Dxf3"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz hat seinen Läufer gegen einen Springer getauscht und dabei die weiße Dame kostenlos entwickelt. Von f3 aus zielt sie auf den Springer f6 und dahinter auf den Bauern f7 (goldener Pfeil).",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.32"
+   ],
+   "beispiel": {
+    "id": "k01-a32",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d3",
+     "d6",
+     "O-O",
+     "Bg4",
+     "h3",
+     "Bxf3",
+     "Qxf3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 641
+   },
+   "pruefsumme": "a1ec30570a33f536"
+  },
+  {
+   "id": "1.34",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.5",
+    "label": "sec:k1-spannung",
+    "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+   },
+   "unterabschnitt": "Die Drohung ignorieren: wer zuerst kommt",
+   "fen": "r1bq1rk1/pp3ppp/2p1p3/3p2N1/1n6/3Q4/PPP2PPP/R1B2RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b4",
+     "nach": "d3"
+    },
+    {
+     "farbe": "rot",
+     "von": "d8",
+     "nach": "g5"
+    },
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "d3"
+    },
+    {
+     "farbe": "rot",
+     "feld": "g5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Die roten Pfeile zeigen die beiden schwarzen Drohungen. Der goldene Pfeil zeigt, was Weiß stattdessen tut.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.35"
+   ],
+   "beispiel": {
+    "id": "k01-a34",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 678
+   },
+   "pruefsumme": "47353a6385e861c7",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Qxh7#",
+      "frage": "Warum darf Weiß die beiden schwarzen Drohungen übergehen?",
+      "antworten": [
+       "Dxh7 setzt sofort matt, und ein Matt geht jeder Drohung vor.",
+       "Die Drohungen sind nur scheinbar.",
+       "Schwarz darf nach einem Schach nicht schlagen."
+      ],
+      "richtig": 0,
+      "erklaerung": "Wer zuerst die Schachs prüft, sieht das Matt. Was der Gegner droht, spielt dann keine Rolle mehr."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.35",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.5",
+    "label": "sec:k1-spannung",
+    "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+   },
+   "unterabschnitt": "Die Drohung ignorieren: wer zuerst kommt",
+   "fen": "r1bq1rk1/pp3ppQ/2p1p3/3p2N1/1n6/8/PPP2PPP/R1B2RK1 b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Dxh7#"
+    },
+    {
+     "art": "text",
+     "text": " – matt. Der Springer g5 deckt die Dame, f8 ist durch den eigenen Turm und g7 durch den eigenen Bauern verstellt, h8 kontrolliert die Dame selbst.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.34"
+   ],
+   "beispiel": {
+    "id": "k01-a34",
+    "pfad": [
+     "Qxh7#"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 683
+   },
+   "pruefsumme": "1df38596a4a8a418"
+  },
+  {
+   "id": "1.36",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   },
+   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2N2N2/PP2BPPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e2"
+    },
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Der Fehlversuch. Weiß am Zug. Der Läufer steht auf e2 und blockiert dort ausgerechnet die Diagonale d1–h5 (grau), über die die Dame zum Königsflügel müsste. Weiß will mit Springer und Dame angreifen – doch nur der Springer f3 kommt überhaupt in Reichweite. Rot: das Ziel h7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.37"
+   ],
+   "beispiel": {
+    "id": "k01-a36",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 730
+   },
+   "pruefsumme": "2202086f1bfc5bd6",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Ng5",
+      "frage": "Warum scheitert der Angriff mit 1. Sg5?",
+      "antworten": [
+       "Der Springer g5 geht sofort verloren.",
+       "Der Springer bleibt allein; die Dame kommt nicht nach h5, weil der Läufer e2 im Weg steht.",
+       "Schwarz setzt danach matt."
+      ],
+      "richtig": 1,
+      "erklaerung": "Ein Angriff mit einer Figur gegen einen gut verteidigten König verpufft. Erst die Übermacht macht ihn gefährlich."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.37",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   },
+   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "g5"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "So hätte es aussehen müssen. Der Läufer auf d3 zielt selbst auf h7 (goldener Pfeil), der Springer f3 erreicht g5 – und sobald er das tut, wird die Diagonale d1–h5 für die Dame frei. Drei Angreifer erreichen h7 (rot) – und nur der König selbst deckt das Feld.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.36"
+   ],
+   "beispiel": {
+    "id": "k01-a37",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 733
+   },
+   "pruefsumme": "cd83562e7767753a",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Bxh7+",
+      "frage": "Warum funktioniert 1. Lxh7+ hier?",
+      "antworten": [
+       "Der Läufer kann auf h7 nicht geschlagen werden.",
+       "Schwarz hat schon rochiert und kann den König nicht mehr bewegen.",
+       "Drei Angreifer erreichen h7, und nur der König deckt: Die Übermacht trägt das Opfer."
+      ],
+      "richtig": 2,
+      "erklaerung": "Nach Kxh7 Sg5+ und Dh5 kommen Springer und Dame mit Tempo heran. Gegen drei Angreifer reicht ein einzelner Verteidiger nicht."
+     }
+    ]
+   }
+  },
+  {
+   "id": "1.38",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   },
+   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "fen": "r1b2r2/ppqn1ppk/2n1p3/3pP1N1/3P4/2N5/PP3PPP/R2Q1RK1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "g5",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    },
+    {
+     "farbe": "rot",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sg5+"
+    },
+    {
+     "art": "text",
+     "text": " – Schwarz hat nur vier Königszüge. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kh8"
+    },
+    {
+     "art": "text",
+     "text": " folgt sofort ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Dh5+"
+    },
+    {
+     "art": "text",
+     "text": " und Matt; die Ausflüge ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg6"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kh6"
+    },
+    {
+     "art": "text",
+     "text": " führen den König mitten ins offene Feld. Rot: Der Springer gibt Schach und greift zugleich f7 an. Gold: der Weg der Dame nach h5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.39"
+   ],
+   "beispiel": {
+    "id": "k01-a37",
+    "pfad": [
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 759
+   },
+   "pruefsumme": "28d7ddb61e806ff4"
+  },
+  {
+   "id": "1.39",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   },
+   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "fen": "r1b2rk1/ppqn1pp1/2n1p3/3pP1NQ/3P4/2N5/PP3PPP/R4RK1 b - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h5",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg8 3. Dh5"
+    },
+    {
+     "art": "text",
+     "text": " – die dritte Figur ist da. Gedroht ist ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Dh7#"
+    },
+    {
+     "art": "text",
+     "text": " (goldener Pfeil, rotes Feld), gedeckt vom Springer g5 (grau). Schwarz hat keine Verteidigung mehr: Jeder Zug verliert mit Gewalt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "1.38"
+   ],
+   "beispiel": {
+    "id": "k01-a37",
+    "pfad": [
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+",
+     "Kg8",
+     "Qh5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 764
+   },
+   "pruefsumme": "0bff01205de0e8fe"
+  },
+  {
+   "id": "1.40",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   },
+   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "fen": "rn2kb1r/1p3ppp/p3pn2/1Npq4/3P4/5N2/PPP2PPP/R1BQ1RK1 w kq - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Schwarz hat soeben ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...a6"
+    },
+    {
+     "art": "text",
+     "text": " gespielt.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a40",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 807
+   },
+   "pruefsumme": "582c2de0bb5e4ade"
+  },
+  {
+   "id": "1.41",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   },
+   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "fen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/2PPP3/2N5/PP2BPPP/R1BQ1RK1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Im Zentrum hängt alles an einem einzigen Feld.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a41",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 817
+   },
+   "pruefsumme": "65b46f31e5b66e61"
+  },
+  {
+   "id": "1.42",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   },
+   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "fen": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Schwarz am Zug. Weiß hat soeben auf d4 zurückgeschlagen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a42",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "d4",
+     "exd4",
+     "Nxd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 827
+   },
+   "pruefsumme": "5b34b0d9a4f6028b"
+  },
+  {
+   "id": "1.43",
+   "auflage": 1,
+   "kapitel": 1,
+   "abschnitt": {
+    "nummer": "1.6",
+    "label": "sec:k1-angriff",
+    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   },
+   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "fen": "r1b2rk1/ppq2ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Weiß am Zug. Der Läufer d3 zielt auf h7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k01-a43",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 837
+   },
+   "pruefsumme": "4ce519c281b60f86"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:droh-ignorieren",
+   "nummer": 4,
+   "kapitel": 1,
+   "titel": null,
+   "abbildungen": [
+    "1.40"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Dein Springer auf b5 wird vom Bauern a6 angegriffen und von keiner einzigen eigenen Figur gedeckt, sodass er nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...axb5"
+    },
+    {
+     "art": "text",
+     "text": " ersatzlos verloren wäre. Der Reflex sagt daher: Springer in Sicherheit bringen. Was spielst du?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Die erste Frage der Schach-Röntgen-Regel lautet nicht „Wie rette ich meinen Springer?“, sondern „Kann ich Schach geben?“, und die Antwort ist ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sc7+!"
+    },
+    {
+     "art": "text",
+     "text": " Das Feld c7 wird von keiner einzigen schwarzen Figur gedeckt, und der Springer gabelt dort gleich dreifach: König e8, Dame d5 und Turm a8. Da Schwarz zunächst das Schach beantworten muss, folgt nach den einzigen drei möglichen Königszügen ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd7"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke7"
+    },
+    {
+     "art": "text",
+     "text": " oder ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd8"
+    },
+    {
+     "art": "text",
+     "text": " ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sxd5"
+    },
+    {
+     "art": "text",
+     "text": " (nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ke7"
+    },
+    {
+     "art": "text",
+     "text": " sogar mit Schach), und Weiß gewinnt die Dame für einen Springer, also sechs Bauerneinheiten. Der „sichere“ Rückzug ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Sc3"
+    },
+    {
+     "art": "text",
+     "text": " rettet zwar die Figur, verschenkt aber genau diesen Gewinn. Merke dir: Eine Drohung gegen dich zählt nur dann, wenn dein Gegner überhaupt dazu kommt, sie auszuführen.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 805
+   },
+   "erklaerung": {
+    "loesung": "1. Nc7+!",
+    "akzeptiert": [],
+    "motiv": "Springergabel mit Schach",
+    "text": "Statt den angegriffenen Springer zu retten, gibt Weiß Schach: 1. Sc7+! gabelt König, Dame und Turm, und nach jedem Königszug fällt die Dame. Eine Drohung zählt nur, wenn der Gegner überhaupt dazu kommt, sie auszuführen."
+   }
+  },
+  {
+   "id": "ueb:zaehlen-vorstoss",
+   "nummer": 5,
+   "kapitel": 1,
+   "titel": null,
+   "abbildungen": [
+    "1.41"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Beide Seiten haben ihre Eröffnung ordentlich abgeschlossen, und auf den ersten Blick sieht die Stellung völlig ausgeglichen aus. Was spielst du, und was bringt es dir ein?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Zähle das Feld d5 ab: Weiß greift es dreifach an (Bauer c4, Bauer e4, Springer c3), wohingegen Schwarz es lediglich zweifach verteidigt (Bauer c6, Bauer e6). Die schwarze Dame auf d8 zählt ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "nicht",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " mit: Der eigene Springer auf d7 versperrt ihr die d-Linie. Drei gegen zwei bedeutet: Der Tausch auf d5 gewinnt einen Bauern. Es folgt ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. cxd5! cxd5 2. exd5 exd5 3. Sxd5"
+    },
+    {
+     "art": "text",
+     "text": ", und auf d5 steht keine schwarze Figur mehr, die zurückschlagen könnte. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. exd5"
+    },
+    {
+     "art": "text",
+     "text": " führt mit vertauschter Zugfolge zum selben Ergebnis. Der Springer auf d5 lässt sich dort auch nicht fangen, da er nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... Sb6"
+    },
+    {
+     "art": "text",
+     "text": " mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Sxe7+"
+    },
+    {
+     "art": "text",
+     "text": " entkommt und Weiß den Mehrbauern behält. Merke dir: Zähle vor einem Bauerntausch im Zentrum nur die Figuren mit, die das Feld wirklich erreichen.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 815
+   },
+   "erklaerung": {
+    "loesung": "1. cxd5! cxd5 2. exd5 exd5 3. Nxd5",
+    "akzeptiert": [
+     "1. exd5"
+    ],
+    "motiv": "Zählen von Angreifern und Verteidigern",
+    "text": "Auf d5 greifen drei weiße Figuren an, nur zwei schwarze verteidigen; die Dame d8 zählt nicht, weil der Springer d7 sie verstellt. Darum gewinnt der Tausch mit 1. cxd5! einen Bauern, und der Springer d5 entkommt notfalls mit Schach nach e7."
+   }
+  },
+  {
+   "id": "ueb:spannung-halten",
+   "nummer": 6,
+   "kapitel": 1,
+   "titel": null,
+   "abbildungen": [
+    "1.42"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4"
+    },
+    {
+     "art": "text",
+     "text": " steht ein weißer Springer mitten im Zentrum, und dein Springer c6 kann ihn schlagen. Tauschst du auf d4, oder hältst du die Spannung?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Halte die Spannung. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Sxd4?! 5. Dxd4"
+    },
+    {
+     "art": "text",
+     "text": " steht die weiße Dame mitten im Zentrum, und Schwarz kann sie von dort nur umständlich vertreiben, etwa mit ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Se7"
+    },
+    {
+     "art": "text",
+     "text": " und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Sc6"
+    },
+    {
+     "art": "text",
+     "text": ", weil der Springer c6, der das sofort gekonnt hätte, getauscht ist. Vergleiche mit der verfrühten Dame aus ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 1.8",
+     "abbildung": "1.8"
+    },
+    {
+     "art": "text",
+     "text": ": Dort wurde die Dame gejagt, hier steht sie vorerst sicher. Schwarz hat mit seinem Schlagzug die gegnerische Dame entwickelt. Besser ist ein Entwicklungszug, der selbst etwas angreift: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Sf6"
+    },
+    {
+     "art": "text",
+     "text": " zielt auf den Bauern e4, ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Lc5"
+    },
+    {
+     "art": "text",
+     "text": " auf den Springer d4. Merke dir: Frage vor jedem Tausch, welche gegnerische Figur zurückschlägt und wie gut sie danach steht.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 825
+   },
+   "erklaerung": {
+    "loesung": "4... Nf6",
+    "akzeptiert": [
+     "4... Bc5"
+    ],
+    "motiv": "Spannung halten",
+    "text": "Nach 4... Sxd4?! 5. Dxd4 steht die weiße Dame sicher im Zentrum, und Schwarz hat sie selbst entwickelt. Besser ist ein Entwicklungszug mit Angriff: 4... Sf6 auf e4 oder 4... Lc5 auf den Springer d4."
+   }
+  },
+  {
+   "id": "ueb:angriff-zaehlen",
+   "nummer": 7,
+   "kapitel": 1,
+   "titel": null,
+   "abbildungen": [
+    "1.43"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Die Stellung erinnert an das griechische Geschenk aus ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 1.37",
+     "abbildung": "1.37"
+    },
+    {
+     "art": "text",
+     "text": ". Funktioniert ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lxh7+"
+    },
+    {
+     "art": "text",
+     "text": " auch hier?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Nein. Auf h7 zielt lediglich ein Angreifer, der Läufer d3, wohingegen das Feld vom König und vom Springer f6 gedeckt wird. Nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Lxh7+?? Sxh7"
+    },
+    {
+     "art": "text",
+     "text": " hat Weiß einen Läufer für einen Bauern gegeben, und ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Sg5"
+    },
+    {
+     "art": "text",
+     "text": " verliert nach ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Sxg5"
+    },
+    {
+     "art": "text",
+     "text": " auch noch den Springer. Schlägt der König (",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kxh7 2. Sg5+ Kg8"
+    },
+    {
+     "art": "text",
+     "text": "), kommt die Dame nicht nach h5, da der Springer f6 das Feld bewacht. Der Unterschied zu ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Abb. 1.37",
+     "abbildung": "1.37"
+    },
+    {
+     "art": "text",
+     "text": ": Dort hatte der Bauer e5 den Springer von f6 vertrieben, hier steht der Bauer hingegen auf e3 und der Springer auf f6. Weiß bringt daher zunächst weitere Figuren heran, statt zu opfern. Merke dir: Zähle vor jedem Opfer am Königsflügel, was auf dem Zielfeld wirklich ankommt und was es verteidigt.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap01_grundprinzipien.tex",
+    "zeile": 835
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Läuferopfer auf h7 nachzählen",
+    "text": "1. Lxh7+?? funktioniert hier nicht: Auf h7 kommt nur der Läufer an, König und Springer f6 decken. Solange der Springer auf f6 steht, kommt die Dame nicht nach h5, und Weiß verliert einfach eine Figur."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k01-a1",
+   "kapitel": 1,
+   "abschnitt": "1.1",
+   "titel": "Die drei Ziele jeder Eröffnung",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [
+      "1.1"
+     ],
+     "weiter": [
+      {
+       "zug": "Nf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "g6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.1",
+     "pfad": [
+      "e4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a12",
+   "kapitel": 1,
+   "abschnitt": "1.2",
+   "titel": "Die verzögerte Rochade – eine typische Gefahrenstellung",
+   "startFen": "r3kb1r/ppqb1ppp/2np4/8/2BNn3/2N5/PPP2PPP/R1BQR1K1 w kq - 6 11",
+   "zuege": [
+    {
+     "zug": "Nxe4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.12",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a13",
+   "kapitel": 1,
+   "abschnitt": "1.3",
+   "titel": "Das Schäfermatt und seine Abwehr",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qh5",
+         "zeichen": "",
+         "abbildungen": [
+          "1.13"
+         ],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [
+            "1.14"
+           ],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [
+              "1.15"
+             ],
+             "weiter": [
+              {
+               "zug": "g6",
+               "zeichen": "!",
+               "abbildungen": [
+                "1.16"
+               ],
+               "weiter": [
+                {
+                 "zug": "Qf3",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "1.17"
+                 ],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [
+                    "1.18"
+                   ],
+                   "weiter": []
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "zug": "Nf6",
+               "zeichen": "??",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qxf7#",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            },
+            {
+             "zug": "Qxe5+",
+             "zeichen": "??",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nxe5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.13",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5"
+     ]
+    },
+    {
+     "nummer": "1.14",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6"
+     ]
+    },
+    {
+     "nummer": "1.15",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6",
+      "Bc4"
+     ]
+    },
+    {
+     "nummer": "1.16",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6",
+      "Bc4",
+      "g6"
+     ]
+    },
+    {
+     "nummer": "1.17",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6",
+      "Bc4",
+      "g6",
+      "Qf3"
+     ]
+    },
+    {
+     "nummer": "1.18",
+     "pfad": [
+      "e4",
+      "e5",
+      "Qh5",
+      "Nc6",
+      "Bc4",
+      "g6",
+      "Qf3",
+      "Nf6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a19",
+   "kapitel": 1,
+   "abschnitt": "1.3",
+   "titel": "Ausblick: Der Fried-Liver-Angriff",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Ng5",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "d5",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "exd5",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Nxd5",
+                       "zeichen": "?!",
+                       "abbildungen": [
+                        "1.19"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "Nxf7",
+                         "zeichen": "!",
+                         "abbildungen": [
+                          "1.20"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "Kxf7",
+                           "zeichen": "",
+                           "abbildungen": [
+                            "1.21"
+                           ],
+                           "weiter": [
+                            {
+                             "zug": "Qf3+",
+                             "zeichen": "!",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Ke6",
+                               "zeichen": "",
+                               "abbildungen": [
+                                "1.22"
+                               ],
+                               "weiter": [
+                                {
+                                 "zug": "Nc3",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": []
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      },
+                      {
+                       "zug": "Na5",
+                       "zeichen": "!",
+                       "abbildungen": [],
+                       "weiter": []
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.19",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5"
+     ]
+    },
+    {
+     "nummer": "1.20",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7"
+     ]
+    },
+    {
+     "nummer": "1.21",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7",
+      "Kxf7"
+     ]
+    },
+    {
+     "nummer": "1.22",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Nf6",
+      "Ng5",
+      "d5",
+      "exd5",
+      "Nxd5",
+      "Nxf7",
+      "Kxf7",
+      "Qf3+",
+      "Ke6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a2",
+   "kapitel": 1,
+   "abschnitt": "1.1",
+   "titel": "Die drei Ziele in der Praxis: das London-System",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "d5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bf4",
+         "zeichen": "",
+         "abbildungen": [
+          "1.2"
+         ],
+         "weiter": [
+          {
+           "zug": "Nf6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "e3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "e6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nf3",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "1.3"
+                 ],
+                 "weiter": [
+                  {
+                   "zug": "Be7",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Bd3",
+                     "zeichen": "",
+                     "abbildungen": [
+                      "1.4"
+                     ],
+                     "weiter": [
+                      {
+                       "zug": "O-O",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [
+                          "1.5"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "c5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "c3",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Nc6",
+                               "zeichen": "",
+                               "abbildungen": [
+                                "1.6"
+                               ],
+                               "weiter": [
+                                {
+                                 "zug": "Nbd2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "b6",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qe2",
+                                     "zeichen": "",
+                                     "abbildungen": [
+                                      "1.7"
+                                     ],
+                                     "weiter": []
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.2",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4"
+     ]
+    },
+    {
+     "nummer": "1.3",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3"
+     ]
+    },
+    {
+     "nummer": "1.4",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3"
+     ]
+    },
+    {
+     "nummer": "1.5",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3",
+      "O-O",
+      "O-O"
+     ]
+    },
+    {
+     "nummer": "1.6",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3",
+      "O-O",
+      "O-O",
+      "c5",
+      "c3",
+      "Nc6"
+     ]
+    },
+    {
+     "nummer": "1.7",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3",
+      "O-O",
+      "O-O",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nbd2",
+      "b6",
+      "Qe2"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a23",
+   "kapitel": 1,
+   "abschnitt": "1.4",
+   "titel": "Warum „Schach“ vor „Schlag“ steht",
+   "startFen": "rnb1k2r/ppp2p1p/4p1p1/2bq4/4N3/3P4/PPP1BPPP/R1BQ1RK1 w kq - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf6+",
+     "zeichen": "!",
+     "abbildungen": [
+      "1.24"
+     ],
+     "weiter": [
+      {
+       "zug": "Ke7",
+       "zeichen": "",
+       "abbildungen": [
+        "1.25"
+       ],
+       "weiter": [
+        {
+         "zug": "Nxd5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    },
+    {
+     "zug": "Nxc5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxc5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.23",
+     "pfad": []
+    },
+    {
+     "nummer": "1.24",
+     "pfad": [
+      "Nf6+"
+     ]
+    },
+    {
+     "nummer": "1.25",
+     "pfad": [
+      "Nf6+",
+      "Ke7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a26",
+   "kapitel": 1,
+   "abschnitt": "1.4",
+   "titel": "Zählen in der Praxis: der Bauernhebel",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "d4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "d5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "e5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "c5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nc6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nf3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Qb6",
+                       "zeichen": "",
+                       "abbildungen": [
+                        "1.26"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "Bd3",
+                         "zeichen": "?!",
+                         "abbildungen": [
+                          "1.27"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "cxd4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "cxd4",
+                             "zeichen": "",
+                             "abbildungen": [
+                              "1.28"
+                             ],
+                             "weiter": [
+                              {
+                               "zug": "Bd7",
+                               "zeichen": "!",
+                               "abbildungen": [
+                                "1.30"
+                               ],
+                               "weiter": [
+                                {
+                                 "zug": "Nc3",
+                                 "zeichen": "?!",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Nxd4",
+                                   "zeichen": "!",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Nxd4",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Qxd4",
+                                       "zeichen": "",
+                                       "abbildungen": [
+                                        "1.31"
+                                       ],
+                                       "weiter": [
+                                        {
+                                         "zug": "Bb5",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Qxe5+",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": []
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                },
+                                {
+                                 "zug": "Be2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": []
+                                }
+                               ]
+                              },
+                              {
+                               "zug": "Nxd4",
+                               "zeichen": "??",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Nxd4",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Qxd4",
+                                   "zeichen": "??",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Bb5+",
+                                     "zeichen": "!",
+                                     "abbildungen": [
+                                      "1.29"
+                                     ],
+                                     "weiter": [
+                                      {
+                                       "zug": "Bd7",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxd4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": []
+                                        }
+                                       ]
+                                      },
+                                      {
+                                       "zug": "Ke7",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxd4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": []
+                                        }
+                                       ]
+                                      },
+                                      {
+                                       "zug": "Kd8",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxd4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": []
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.26",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6"
+     ]
+    },
+    {
+     "nummer": "1.27",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3"
+     ]
+    },
+    {
+     "nummer": "1.28",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4"
+     ]
+    },
+    {
+     "nummer": "1.30",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4",
+      "Bd7"
+     ]
+    },
+    {
+     "nummer": "1.31",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4",
+      "Bd7",
+      "Nc3",
+      "Nxd4",
+      "Nxd4",
+      "Qxd4"
+     ]
+    },
+    {
+     "nummer": "1.29",
+     "pfad": [
+      "e4",
+      "e6",
+      "d4",
+      "d5",
+      "e5",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nf3",
+      "Qb6",
+      "Bd3",
+      "cxd4",
+      "cxd4",
+      "Nxd4",
+      "Nxd4",
+      "Qxd4",
+      "Bb5+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a32",
+   "kapitel": 1,
+   "abschnitt": "1.5",
+   "titel": "Wie ein Abtausch dem Gegner hilft",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "d6",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Bg4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "h3",
+                             "zeichen": "",
+                             "abbildungen": [
+                              "1.32"
+                             ],
+                             "weiter": [
+                              {
+                               "zug": "Bxf3",
+                               "zeichen": "?!",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Qxf3",
+                                 "zeichen": "",
+                                 "abbildungen": [
+                                  "1.33"
+                                 ],
+                                 "weiter": []
+                                }
+                               ]
+                              },
+                              {
+                               "zug": "Bh5",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": []
+                              },
+                              {
+                               "zug": "Be6",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": []
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.32",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d3",
+      "d6",
+      "O-O",
+      "Bg4",
+      "h3"
+     ]
+    },
+    {
+     "nummer": "1.33",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d3",
+      "d6",
+      "O-O",
+      "Bg4",
+      "h3",
+      "Bxf3",
+      "Qxf3"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a34",
+   "kapitel": 1,
+   "abschnitt": "1.5",
+   "titel": "Die Drohung ignorieren: wer zuerst kommt",
+   "startFen": "r1bq1rk1/pp3ppp/2p1p3/3p2N1/1n6/3Q4/PPP2PPP/R1B2RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxh7#",
+     "zeichen": "",
+     "abbildungen": [
+      "1.35"
+     ],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.34",
+     "pfad": []
+    },
+    {
+     "nummer": "1.35",
+     "pfad": [
+      "Qxh7#"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a36",
+   "kapitel": 1,
+   "abschnitt": "1.6",
+   "titel": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2N2N2/PP2BPPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ng5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "h6",
+       "zeichen": "!",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.36",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a37",
+   "kapitel": 1,
+   "abschnitt": "1.6",
+   "titel": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5+",
+         "zeichen": "",
+         "abbildungen": [
+          "1.38"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5",
+             "zeichen": "",
+             "abbildungen": [
+              "1.39"
+             ],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Kh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Kg6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          },
+          {
+           "zug": "Kh6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.37",
+     "pfad": []
+    },
+    {
+     "nummer": "1.38",
+     "pfad": [
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+"
+     ]
+    },
+    {
+     "nummer": "1.39",
+     "pfad": [
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+",
+      "Kg8",
+      "Qh5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a40",
+   "kapitel": 1,
+   "abschnitt": "Übung 4",
+   "titel": "Übung: Drohung ignorieren",
+   "startFen": "rn2kb1r/1p3ppp/p3pn2/1Npq4/3P4/5N2/PPP2PPP/R1BQ1RK1 w kq - 0 1",
+   "zuege": [
+    {
+     "zug": "Nc7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kd7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxd5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Ke7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxd5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxd5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nc3",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.40",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a41",
+   "kapitel": 1,
+   "abschnitt": "Übung 5",
+   "titel": "Übung: Zählen vor dem Bauerntausch",
+   "startFen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/2PPP3/2N5/PP2BPPP/R1BQ1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "cxd5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "cxd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "exd5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "exd5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxd5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nb6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxe7+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "exd5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.41",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a42",
+   "kapitel": 1,
+   "abschnitt": "Übung 6",
+   "titel": "Übung: Spannung halten",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "d4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "exd4",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxd4",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "1.42"
+                 ],
+                 "weiter": [
+                  {
+                   "zug": "Nxd4",
+                   "zeichen": "?!",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Qxd4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": []
+                    }
+                   ]
+                  },
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": []
+                  },
+                  {
+                   "zug": "Bc5",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": []
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.42",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "d4",
+      "exd4",
+      "Nxd4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a43",
+   "kapitel": 1,
+   "abschnitt": "Übung 7",
+   "titel": "Übung: Angriff zählen",
+   "startFen": "r1b2rk1/ppq2ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nxg5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.43",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k01-a8",
+   "kapitel": 1,
+   "abschnitt": "1.2",
+   "titel": "Die verfrühte Dame in der Italienischen Partie",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Qf6",
+               "zeichen": "?",
+               "abbildungen": [
+                "1.8"
+               ],
+               "weiter": [
+                {
+                 "zug": "Nc3",
+                 "zeichen": "!",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Bc5",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nd5",
+                     "zeichen": "!",
+                     "abbildungen": [
+                      "1.9"
+                     ],
+                     "weiter": [
+                      {
+                       "zug": "Qd8",
+                       "zeichen": "",
+                       "abbildungen": [
+                        "1.10"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "d4",
+                         "zeichen": "!",
+                         "abbildungen": [
+                          "1.11"
+                         ],
+                         "weiter": []
+                        }
+                       ]
+                      },
+                      {
+                       "zug": "Qg6",
+                       "zeichen": "??",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Nxc7+",
+                         "zeichen": "!",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Kd8",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Nxa8",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": []
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              },
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              },
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "1.8",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Qf6"
+     ]
+    },
+    {
+     "nummer": "1.9",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Qf6",
+      "Nc3",
+      "Bc5",
+      "Nd5"
+     ]
+    },
+    {
+     "nummer": "1.10",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Qf6",
+      "Nc3",
+      "Bc5",
+      "Nd5",
+      "Qd8"
+     ]
+    },
+    {
+     "nummer": "1.11",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Qf6",
+      "Nc3",
+      "Bc5",
+      "Nd5",
+      "Qd8",
+      "d4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  }
+ ]
+}

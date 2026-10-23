@@ -6,12 +6,12 @@
   {
    "nummer": "3.1",
    "label": "",
-   "titel": "Was ist ein Gambit, und warum wird es gespielt?"
+   "titel": "What is a gambit, and why is it played?"
   },
   {
    "nummer": "3.2",
    "label": "",
-   "titel": "Stellungsbewertung mit Kasparows vier Faktoren"
+   "titel": "Evaluating positions with Kasparov's four factors"
   },
   {
    "nummer": "3.3",
@@ -21,42 +21,42 @@
   {
    "nummer": "3.4",
    "label": "",
-   "titel": "Das Königsgambit"
+   "titel": "The King's Gambit"
   },
   {
    "nummer": "3.5",
    "label": "",
-   "titel": "Das Evans-Gambit"
+   "titel": "The Evans Gambit"
   },
   {
    "nummer": "3.6",
    "label": "",
-   "titel": "Das Dänische Gambit"
+   "titel": "The Danish Gambit"
   },
   {
    "nummer": "3.7",
    "label": "",
-   "titel": "Das Milner-Barry-Gambit"
+   "titel": "The Milner-Barry Gambit"
   },
   {
    "nummer": "3.8",
    "label": "",
-   "titel": "Das Blackmar-Diemer-Gambit"
+   "titel": "The Blackmar-Diemer Gambit"
   },
   {
    "nummer": "3.9",
    "label": "",
-   "titel": "Gambits für Schwarz gegen 1.\\,d4"
+   "titel": "Gambits for Black against 1.\\,d4"
   },
   {
    "nummer": "3.10",
    "label": "",
-   "titel": "Gambits für Schwarz gegen 1.\\,e4"
+   "titel": "Gambits for Black against 1.\\,e4"
   },
   {
    "nummer": "3.11",
    "label": "",
-   "titel": "Wann sollte man einen Gambitbauern zurückgeben?"
+   "titel": "When should you give back a gambit pawn?"
   }
  ],
  "abbildungen": [
@@ -67,7 +67,7 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
    "unterabschnitt": null,
    "fen": "rnbqkbnr/pppp1ppp/8/4p3/4PP2/8/PPPP2PP/RNBQKBNR b KQkq f3 0 2",
@@ -95,7 +95,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Königsgambit. Rot: der Angriff auf das umkämpfte Zentrumsfeld e5 (grau). Grau: der Teil der f-Linie, der schon frei ist.",
+     "text": "The King's Gambit. Red: the attack on the contested central square e5 (gray). Gray: the part of the f-file that is already open.",
      "stil": "normal"
     }
    ],
@@ -124,7 +124,7 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
    "unterabschnitt": null,
    "fen": "rnbqkbnr/pppp1ppp/8/8/4Pp2/8/PPPP2PP/RNBQKBNR w KQkq - 0 3",
@@ -133,7 +133,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -142,7 +142,7 @@
     },
     {
      "art": "text",
-     "text": " – Schwarz nimmt das Gambit an.",
+     "text": " – Black accepts the gambit.",
      "stil": "normal"
     }
    ],
@@ -169,14 +169,14 @@
     "fragen": [
      {
       "zug": "3. Nf3",
-      "frage": "Warum spielt Weiß 3. Sf3?",
+      "frage": "Why does White play 3. Nf3?",
       "antworten": [
-       "Er greift den Bauern f4 sofort an.",
-       "Er entwickelt eine Figur und nimmt der schwarzen Dame das Schach auf h4.",
+       "It attacks the pawn on f4 right away.",
+       "It develops a piece and takes away the black queen's check on h4.",
        "It prepares queenside castling."
       ],
       "richtig": 1,
-      "erklaerung": "Ohne f-Bauern ist die Diagonale h4–e1 offen. Der Springer f3 deckt h4 und kommt dabei auf sein bestes Feld."
+      "erklaerung": "Without the f-pawn, the h4–e1 diagonal is open. The knight on f3 covers h4 and lands on its best square at the same time."
      }
     ]
    }
@@ -188,9 +188,9 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: 3... d5",
+   "unterabschnitt": "How to defend: 3... d5",
    "fen": "rnbqkb1r/ppp2ppp/5n2/3P4/5p2/5N2/PPPP2PP/RNBQKB1R w KQkq - 1 5",
    "pfeile": [
     {
@@ -208,16 +208,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Sf3 d5 4. exd5 Sf6"
+     "text": "3. Nf3 d5 4. exd5 Nf6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Springer greift d5 an. Grau: Der Läufer c8 hat freie Bahn.",
+     "text": ", White to move. Red: the knight attacks d5. Gray: the bishop on c8 has a free path.",
      "stil": "normal"
     }
    ],
@@ -249,14 +249,14 @@
     "fragen": [
      {
       "zug": "5. Bc4",
-      "frage": "Warum ist 5. Lc4 eine gute Antwort?",
+      "frage": "Why is 5. Bc4 a good reply?",
       "antworten": [
-       "Er droht Lxf7+ mit Damengewinn.",
-       "Er bringt den Läufer aus dem Angriff des Springers f6.",
-       "Er entwickelt eine Figur, deckt d5 und bereitet die kurze Rochade vor."
+       "It threatens Bxf7+, winning the queen.",
+       "It moves the bishop out of the attack of the knight on f6.",
+       "It develops a piece, defends d5 and prepares kingside castling."
       ],
       "richtig": 2,
-      "erklaerung": "Ein Zug mit mehreren Aufgaben: Der Läufer kommt ins Spiel und hält d5. Danach fehlt Weiß nur noch die Rochade."
+      "erklaerung": "One move with several jobs: the bishop comes into play and holds d5. After that, White only needs to castle."
      }
     ]
    }
@@ -268,9 +268,9 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: 3... d5",
+   "unterabschnitt": "How to defend: 3... d5",
    "fen": "rnbqk2r/ppp1bppp/8/3n4/2B2p2/5N2/PPPP2PP/RNBQ1RK1 w kq - 2 7",
    "pfeile": [
     {
@@ -288,16 +288,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Lc4 Sxd5 6. O-O Le7"
+     "text": "5. Bc4 Nxd5 6. O-O Be7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: der zentrale Springer, gedeckt von der Dame. Grau: Schwarz kann rochieren.",
+     "text": ", White to move. Gold: the central knight, defended by the queen. Gray: Black can castle.",
      "stil": "normal"
     }
    ],
@@ -332,14 +332,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Was zeigt die Bilanz in dieser Stellung?",
+      "frage": "What does the balance show in this position?",
       "antworten": [
-       "Weiß hat für den Bauern Zeit, Königssicherheit und Aktivität; Schwarz sollte schnell rochieren.",
-       "Schwarz steht in allen Faktoren besser.",
-       "Das Material ist ausgeglichen, Weiß hat nichts gegeben."
+       "For the pawn, White has time, king safety and activity; Black should castle quickly.",
+       "Black is better in every factor.",
+       "Material is equal; White has given nothing."
       ],
       "richtig": 0,
-      "erklaerung": "Der weiße Vorsprung hält nur, bis Schwarz rochiert hat. Deshalb ist die Rochade für Schwarz der wichtigste nächste Schritt."
+      "erklaerung": "White's lead only lasts until Black has castled. That is why castling is Black's most important next step."
      }
     ]
    }
@@ -351,9 +351,9 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: 3... d5",
+   "unterabschnitt": "How to defend: 3... d5",
    "fen": "rnb1k2r/ppp1bppp/8/3q4/5p2/2N2N2/PPPP2PP/R1BQ1RK1 b kq - 1 8",
    "pfeile": [
     {
@@ -366,16 +366,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. Lxd5 Dxd5 8. Sc3"
+     "text": "7. Bxd5 Qxd5 8. Nc3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Springer greift die Dame an.",
+     "text": ", Black to move. Red: the knight attacks the queen.",
      "stil": "normal"
     }
    ],
@@ -417,9 +417,9 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: 3... d5",
+   "unterabschnitt": "How to defend: 3... d5",
    "fen": "rnbq1rk1/ppp1bppp/8/8/3P1p2/2N2N2/PPP3PP/R1BQ1RK1 w - - 1 10",
    "pfeile": [
     {
@@ -441,16 +441,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach ",
+     "text": "Balance after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Dd8 9. d4 O-O"
+     "text": "8... Qd8 9. d4 O-O"
     },
     {
      "art": "text",
-     "text": ". Gold: der rochierte schwarze König. Rot: der Mehrbauer f4. Grauer Pfeil: Weiß gewinnt ihn mit Lxf4 zurück.",
+     "text": ". Gold: the castled black king. Red: the extra pawn on f4. Gray arrow: White wins it back with Bxf4.",
      "stil": "normal"
     }
    ],
@@ -489,14 +489,14 @@
     "fragen": [
      {
       "zug": "10. Bxf4",
-      "frage": "Warum ist 10. Lxf4 der natürliche Zug?",
+      "frage": "Why is 10. Bxf4 the natural move?",
       "antworten": [
-       "Er droht Matt auf h7.",
-       "Der Läufer entwickelt sich und schlägt dabei den Gambitbauern.",
-       "Er öffnet der Dame die d-Linie."
+       "It threatens mate on h7.",
+       "The bishop develops and captures the gambit pawn at the same time.",
+       "It opens the d-file for the queen."
       ],
       "richtig": 1,
-      "erklaerung": "Nach Lxf4 ist das Material gleich, und Weiß hat weiter mehr Figuren im Spiel. Das Gambit hat seinen Zweck erfüllt."
+      "erklaerung": "After Bxf4, material is equal, and White still has more pieces in play. The gambit has done its job."
      }
     ]
    }
@@ -508,25 +508,25 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
-   "unterabschnitt": "Weitere Varianten: Den Mehrbauern festhalten mit 3... g5",
+   "unterabschnitt": "Further lines: holding on to the extra pawn with 3... g5",
    "fen": "rnbqkbnr/pppp1p1p/8/6p1/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq g6 0 4",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Sf3 g5"
+     "text": "3. Nf3 g5"
     },
     {
      "art": "text",
-     "text": " – Schwarz will den Mehrbauern um jeden Preis halten.",
+     "text": " – Black wants to keep the extra pawn at any price.",
      "stil": "normal"
     }
    ],
@@ -555,14 +555,14 @@
     "fragen": [
      {
       "zug": "4. h4",
-      "frage": "Warum spielt Weiß 4. h4?",
+      "frage": "Why does White play 4. h4?",
       "antworten": [
-       "Er greift den Bauern g5 an, der den Bauern f4 stützt.",
-       "Er deckt den Springer f3.",
+       "It attacks the pawn on g5, which supports the pawn on f4.",
+       "It defends the knight on f3.",
        "It prepares kingside castling."
       ],
       "richtig": 0,
-      "erklaerung": "Schwarz muss sich entscheiden, was mit g5 geschieht. Nach g4 bekommt der Springer mit Se5 ein aktives Feld."
+      "erklaerung": "Black has to decide what happens to g5. After g4, the knight gets an active square with Ne5."
      }
     ]
    }
@@ -574,9 +574,9 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
-   "unterabschnitt": "Weitere Varianten: Den Mehrbauern festhalten mit 3... g5",
+   "unterabschnitt": "Further lines: holding on to the extra pawn with 3... g5",
    "fen": "rnbqkbnr/pppp1p1p/8/4N3/4PppP/8/PPPP2P1/RNBQKB1R b KQkq - 1 5",
    "pfeile": [
     {
@@ -613,16 +613,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. h4 g4 5. Se5"
+     "text": "4. h4 g4 5. Ne5"
     },
     {
      "art": "text",
-     "text": ". Rote Pfeile: Der Springer greift f7 und g4 an. Gold: das aktive Feld e5. Rot: der Preis, der fehlende f-Bauer öffnet die Diagonale e1–h4. Grau: die nächsten Schritte Lc4 und d4.",
+     "text": ". Red arrows: the knight attacks f7 and g4. Gold: the active square e5. Red: the price – the missing f-pawn opens the e1–h4 diagonal. Gray: the next steps Bc4 and d4.",
      "stil": "normal"
     }
    ],
@@ -653,14 +653,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Was ist der Preis der weißen Aktivität in dieser Stellung?",
+      "frage": "What is the price of White's activity in this position?",
       "antworten": [
-       "Der Springer e5 kann sofort gefangen werden.",
-       "Weiß hat schon zwei Bauern weniger.",
-       "Die Diagonale e1–h4 zum weißen König ist offen."
+       "The knight on e5 can be trapped right away.",
+       "White is already two pawns down.",
+       "The e1–h4 diagonal to the white king is open."
       ],
       "richtig": 2,
-      "erklaerung": "Der fehlende f-Bauer gibt der schwarzen Dame einen Weg zum König, etwa mit Dxh4+. Deshalb will Weiß schnell Lc4 und d4 folgen lassen."
+      "erklaerung": "The missing f-pawn gives the black queen a path to the king, for example with Qxh4+. That is why White wants to follow up quickly with Bc4 and d4."
      }
     ]
    }
@@ -672,9 +672,9 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
-   "unterabschnitt": "Weitere Varianten: Den Mehrbauern festhalten mit 3... g5",
+   "unterabschnitt": "Further lines: holding on to the extra pawn with 3... g5",
    "fen": "rnbqkbnr/pppp1p1p/8/8/2B1Ppp1/5N2/PPPP2PP/RNBQ1RK1 b kq - 1 5",
    "pfeile": [
     {
@@ -692,7 +692,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Muzio-Gambit nach ",
+     "text": "The Muzio Gambit after ",
      "stil": "normal"
     },
     {
@@ -701,7 +701,7 @@
     },
     {
      "art": "text",
-     "text": " Rot: Der Bauer g4 greift den Springer f3 an, doch Weiß lässt ihn stehen; der Läufer c4 zielt auf f7.",
+     "text": " Red: the pawn on g4 attacks the knight on f3, but White leaves it there; the bishop on c4 aims at f7.",
      "stil": "normal"
     }
    ],
@@ -733,14 +733,14 @@
     "fragen": [
      {
       "zug": "5... gxf3",
-      "frage": "Warum schlägt Schwarz den Springer?",
+      "frage": "Why does Black capture the knight?",
       "antworten": [
-       "Er muss schlagen, sonst ist er sofort matt.",
-       "Eine ganze Figur ist viel Material; Schwarz nimmt sie und muss danach den Angriff aushalten.",
-       "Er entwickelt damit eine Figur."
+       "Black has to capture, otherwise it is mate at once.",
+       "A whole piece is a lot of material; Black takes it and then has to withstand the attack.",
+       "It develops a piece."
       ],
       "richtig": 1,
-      "erklaerung": "Material gegen Zeit in reinster Form: Schwarz hat danach eine Figur mehr, Weiß den großen Vorsprung in der Entwicklung."
+      "erklaerung": "Material versus time in its purest form: afterwards Black is a piece up, and White has a big lead in development."
      }
     ]
    }
@@ -752,9 +752,9 @@
    "abschnitt": {
     "nummer": "3.4",
     "label": "",
-    "titel": "Das Königsgambit"
+    "titel": "The King's Gambit"
    },
-   "unterabschnitt": "Weitere Varianten: Den Mehrbauern festhalten mit 3... g5",
+   "unterabschnitt": "Further lines: holding on to the extra pawn with 3... g5",
    "fen": "rnbqkbnr/pppp1p1p/8/8/2B1Pp2/5Q2/PPPP2PP/RNB2RK1 b kq - 0 6",
    "pfeile": [
     {
@@ -790,16 +790,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... gxf3 6. Dxf3"
+     "text": "5... gxf3 6. Qxf3"
     },
     {
      "art": "text",
-     "text": ". Gold: Lc4, Df3 und der rochierte König. Rot: Druck auf f7 und auf den Bauern f4. Grau: Sc3 als nächster Schritt.",
+     "text": ". Gold: Bc4, Qf3 and the castled king. Red: pressure on f7 and on the pawn on f4. Gray: Nc3 as the next step.",
      "stil": "normal"
     }
    ],
@@ -836,7 +836,7 @@
    "abschnitt": {
     "nummer": "3.5",
     "label": "",
-    "titel": "Das Evans-Gambit"
+    "titel": "The Evans Gambit"
    },
    "unterabschnitt": null,
    "fen": "r1bqkbnr/pppp1ppp/2n5/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
@@ -845,16 +845,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Sc6"
+     "text": "2... Nc6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug – der bekannte Ausgangspunkt aus Kapitel 2.",
+     "text": ", White to move – the familiar starting point from Chapter 2.",
      "stil": "normal"
     }
    ],
@@ -885,7 +885,7 @@
    "abschnitt": {
     "nummer": "3.5",
     "label": "",
-    "titel": "Das Evans-Gambit"
+    "titel": "The Evans Gambit"
    },
    "unterabschnitt": null,
    "fen": "r1bqk1nr/pppp1ppp/2n5/2b1p3/1PB1P3/5N2/P1PP1PPP/RNBQK2R b KQkq b3 0 4",
@@ -900,16 +900,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Lc4 Lc5 4. b4"
+     "text": "3. Bc4 Bc5 4. b4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: Der Läufer c5 wird zum Schlagen eingeladen.",
+     "text": ", Black to move. Gray: the bishop on c5 is invited to capture.",
      "stil": "normal"
     }
    ],
@@ -943,7 +943,7 @@
    "abschnitt": {
     "nummer": "3.5",
     "label": "",
-    "titel": "Das Evans-Gambit"
+    "titel": "The Evans Gambit"
    },
    "unterabschnitt": null,
    "fen": "r1bqk1nr/pppp1ppp/2n5/b3p3/2B1P3/2P2N2/P2P1PPP/RNBQK2R w KQkq - 1 6",
@@ -952,16 +952,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Lxb4 5. c3 La5"
+     "text": "4... Bxb4 5. c3 Ba5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug – der Läufer flüchtet erneut.",
+     "text": ", White to move – the bishop retreats again.",
      "stil": "normal"
     }
    ],
@@ -998,7 +998,7 @@
    "abschnitt": {
     "nummer": "3.5",
     "label": "",
-    "titel": "Das Evans-Gambit"
+    "titel": "The Evans Gambit"
    },
    "unterabschnitt": null,
    "fen": "r1bqk1nr/pppp1ppp/2n5/b3p3/2BPP3/2P2N2/P4PPP/RNBQK2R b KQkq d3 0 6",
@@ -1040,7 +1040,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1049,7 +1049,7 @@
     },
     {
      "art": "text",
-     "text": ". Gold: das breite weiße Zentrum. Rot: der Preis, der fehlende b-Bauer; der rote Pfeil zeigt den Druck auf f7. Grau: die nächsten Schritte, die Rochade und La3, das die schwarze Rochade erschwert.",
+     "text": ". Gold: White's broad center. Red: the price, the missing b-pawn; the red arrow shows the pressure on f7. Gray: the next steps, castling and Ba3, which makes it harder for Black to castle.",
      "stil": "normal"
     }
    ],
@@ -1081,14 +1081,14 @@
     "fragen": [
      {
       "zug": "6... d6",
-      "frage": "Warum spielt Schwarz 6... d6?",
+      "frage": "Why does Black play 6... d6?",
       "antworten": [
-       "Er greift den Läufer c4 an.",
+       "It attacks the bishop on c4.",
        "It prepares queenside castling.",
-       "Er stützt e5 und öffnet dem Läufer c8 den Weg."
+       "It supports e5 and opens the way for the bishop on c8."
       ],
       "richtig": 2,
-      "erklaerung": "d6 deckt e5 ein zweites Mal und macht die Diagonale c8–h3 frei. Den Mehrbauern behält Schwarz vorerst."
+      "erklaerung": "d6 defends e5 a second time and frees the c8–h3 diagonal. Black keeps the extra pawn for now."
      }
     ]
    }
@@ -1100,9 +1100,9 @@
    "abschnitt": {
     "nummer": "3.5",
     "label": "",
-    "titel": "Das Evans-Gambit"
+    "titel": "The Evans Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: die Lasker-Verteidigung",
+   "unterabschnitt": "How to defend: the Lasker Defense",
    "fen": "r1bqk1nr/ppp2ppp/1bnp4/4p3/2BPP3/2P2N2/P4PPP/RNBQ1RK1 w kq - 2 8",
    "pfeile": [
     {
@@ -1120,16 +1120,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... d6 7. O-O Lb6"
+     "text": "6... d6 7. O-O Bb6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: d6 stützt e5. Gold: Weiß hat rochiert.",
+     "text": ", White to move. Gray: d6 supports e5. Gold: White has castled.",
      "stil": "normal"
     }
    ],
@@ -1170,9 +1170,9 @@
    "abschnitt": {
     "nummer": "3.5",
     "label": "",
-    "titel": "Das Evans-Gambit"
+    "titel": "The Evans Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: die Lasker-Verteidigung",
+   "unterabschnitt": "How to defend: the Lasker Defense",
    "fen": "r1bnk1nr/ppp2ppp/1b6/4p3/2B1P3/2P2N2/P4PPP/RNB2RK1 w kq - 0 10",
    "pfeile": [
     {
@@ -1185,16 +1185,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. dxe5 dxe5 9. Dxd8+ Sxd8"
+     "text": "8. dxe5 dxe5 9. Qxd8+ Nxd8"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Die Damen sind getauscht. Rot: Weiß holt sich den Bauern e5 zurück.",
+     "text": ", White to move. The queens have been traded. Red: White wins back the pawn on e5.",
      "stil": "normal"
     }
    ],
@@ -1239,9 +1239,9 @@
    "abschnitt": {
     "nummer": "3.5",
     "label": "",
-    "titel": "Das Evans-Gambit"
+    "titel": "The Evans Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: die Lasker-Verteidigung",
+   "unterabschnitt": "How to defend: the Lasker Defense",
    "fen": "r2nk1nr/ppp2ppp/1b2b3/4N3/2B1P3/2P5/P4PPP/RNB2RK1 w kq - 1 11",
    "pfeile": [
     {
@@ -1263,16 +1263,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10. Sxe5 Le6"
+     "text": "10. Nxe5 Be6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Material ist ausgeglichen. Gold: Läufer e6 und Springer d8 decken f7. Grau: Schwarz bietet den Läufertausch an.",
+     "text": ", White to move. Material is equal. Gold: the bishop on e6 and the knight on d8 defend f7. Gray: Black offers a bishop trade.",
      "stil": "normal"
     }
    ],
@@ -1315,14 +1315,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Was ist in dieser Linie aus dem Evans-Gambit geworden?",
+      "frage": "What has become of the Evans Gambit in this line?",
       "antworten": [
-       "Weiß steht klar besser, weil er mehr entwickelt hat.",
-       "Schwarz behält den Mehrbauern bis ins Endspiel.",
-       "Weiß hat den Bauern zurückgewonnen, die Stellung ist ausgeglichen."
+       "White is clearly better because White is further developed.",
+       "Black keeps the extra pawn into the endgame.",
+       "White has won back the pawn; the position is equal."
       ],
       "richtig": 2,
-      "erklaerung": "Weiß hat sein Material zurück, Schwarz hat in der Entwicklung aufgeholt. Kein Faktor liegt mehr vorn."
+      "erklaerung": "White has the material back, and Black has caught up in development. No factor is ahead anymore."
      }
     ]
    }
@@ -1334,7 +1334,7 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
    "unterabschnitt": null,
    "fen": "rnbqkbnr/pppp1ppp/8/4p3/3PP3/8/PPP2PPP/RNBQKBNR b KQkq d3 0 2",
@@ -1354,7 +1354,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1363,7 +1363,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: Weiß lässt Schwarz insgesamt drei Bauern entlang der Linie e5–b2 schlagen; c3 ist das zweite Angebot.",
+     "text": ", Black to move. Gray: White lets Black capture three pawns in all along the e5–b2 line; c3 is the second offer.",
      "stil": "normal"
     }
    ],
@@ -1393,7 +1393,7 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
    "unterabschnitt": null,
    "fen": "rnbqkbnr/pppp1ppp/8/8/4P3/2p5/PP3PPP/RNBQKBNR w KQkq - 0 4",
@@ -1402,7 +1402,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1411,7 +1411,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug – Schwarz nimmt den zweiten Bauern.",
+     "text": ", White to move – Black takes the second pawn.",
      "stil": "normal"
     }
    ],
@@ -1444,7 +1444,7 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
    "unterabschnitt": null,
    "fen": "rnbqkbnr/pppp1ppp/8/8/2B1P3/8/PB3PPP/RN1QK1NR b KQkq - 0 5",
@@ -1483,16 +1483,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Lc4 cxb2 5. Lxb2"
+     "text": "4. Bc4 cxb2 5. Bxb2"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: das Läuferpaar. Rot: seine beiden „Laserstrahlen“ gegen g7 und f7. Grau: die nächsten Entwicklungszüge Sf3 und Sc3.",
+     "text": ", Black to move. Gold: the bishop pair. Red: its two “laser beams” against g7 and f7. Gray: the next developing moves Nf3 and Nc3.",
      "stil": "normal"
     }
    ],
@@ -1524,14 +1524,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Wofür hat Weiß zwei Bauern gegeben?",
+      "frage": "What has White given two pawns for?",
       "antworten": [
-       "Für ein schnelles Matt auf f7.",
-       "Für zwei Läufer auf starken Diagonalen und einen Vorsprung in der Entwicklung.",
-       "Für einen Mehrbauern im Endspiel."
+       "For a quick mate on f7.",
+       "For two bishops on strong diagonals and a lead in development.",
+       "For an extra pawn in the endgame."
       ],
       "richtig": 1,
-      "erklaerung": "Schwarz hat noch keine Figur entwickelt, Weiß zwei Läufer gegen g7 und f7. Schwarz sollte schnell Figuren ins Spiel bringen und darf dafür auch einen Bauern zurückgeben."
+      "erklaerung": "Black has not developed a single piece yet; White has two bishops aimed at g7 and f7. Black should bring pieces into play quickly and may give back a pawn to do so."
      }
     ]
    }
@@ -1543,9 +1543,9 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: Schwarz gibt einen Bauern zurück",
+   "unterabschnitt": "How to defend: Black gives back a pawn",
    "fen": "rnbqkbnr/ppp2ppp/8/3p4/2B1P3/8/PB3PPP/RN1QK1NR w KQkq d6 0 6",
    "pfeile": [
     {
@@ -1558,7 +1558,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1567,7 +1567,7 @@
     },
     {
      "art": "text",
-     "text": ". Rot: Schwarz gibt einen Bauern zurück und greift den Läufer c4 an.",
+     "text": ". Red: Black gives back a pawn and attacks the bishop on c4.",
      "stil": "normal"
     }
    ],
@@ -1603,9 +1603,9 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: Schwarz gibt einen Bauern zurück",
+   "unterabschnitt": "How to defend: Black gives back a pawn",
    "fen": "rnbqkb1r/ppp2ppp/5n2/3B4/4P3/8/PB3PPP/RN1QK1NR w KQkq - 1 7",
    "pfeile": [
     {
@@ -1618,16 +1618,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lxd5 Sf6"
+     "text": "6. Bxd5 Nf6"
     },
     {
      "art": "text",
-     "text": ". Rot: Der Springer entwickelt sich und greift den Läufer d5 an.",
+     "text": ". Red: the knight develops and attacks the bishop on d5.",
      "stil": "normal"
     }
    ],
@@ -1665,9 +1665,9 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: Schwarz gibt einen Bauern zurück",
+   "unterabschnitt": "How to defend: Black gives back a pawn",
    "fen": "rnbQ3r/ppp2kpp/5n2/8/1b2P3/8/PB3PPP/RN2K1NR w KQ - 1 9",
    "pfeile": [
     {
@@ -1685,25 +1685,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. Lxf7+ Kxf7 8. Dxd8 Lb4+!"
+     "text": "7. Bxf7+ Kxf7 8. Qxd8 Bb4+!"
     },
     {
      "art": "text",
-     "text": ". Rot: Schach. Grau: Nach fast jeder Antwort schlägt der Turm h8 die Dame; nach ",
+     "text": ". Red: check. Gray: after almost any reply, the rook on h8 captures the queen; after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. Dd2"
+     "text": "9. Qd2"
     },
     {
      "art": "text",
-     "text": " nimmt der Läufer.",
+     "text": ", the bishop takes.",
      "stil": "normal"
     }
    ],
@@ -1742,14 +1742,14 @@
     "fragen": [
      {
       "zug": "9. Qd2",
-      "frage": "Warum stellt Weiß die Dame mit 9. Dd2 dazwischen?",
+      "frage": "Why does White block with the queen with 9. Qd2?",
       "antworten": [
        "It prepares queenside castling.",
-       "Sie greift den Läufer b4 an und gewinnt ihn.",
-       "Sie ist ohnehin verloren; auf d2 bekommt Weiß wenigstens den Läufer dafür."
+       "It attacks the bishop on b4 and wins it.",
+       "It is lost anyway; on d2, White at least gets the bishop for it."
       ],
       "richtig": 2,
-      "erklaerung": "Nach 9... Lxd2+ 10. Sxd2 ist das Material gleich. Nach jeder anderen Antwort nimmt der Turm h8 die Dame, und Schwarz hat eine Figur mehr."
+      "erklaerung": "After 9... Bxd2+ 10. Nxd2, material is equal. After any other reply, the rook on h8 takes the queen, and Black is a piece up."
      }
     ]
    }
@@ -1761,9 +1761,9 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: Schwarz gibt einen Bauern zurück",
+   "unterabschnitt": "How to defend: Black gives back a pawn",
    "fen": "rnb4r/ppp2kpp/5n2/8/4P3/8/PB1N1PPP/R3K1NR b KQ - 0 10",
    "pfeile": [],
    "felder": [
@@ -1779,16 +1779,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. Dd2 Lxd2+ 10. Sxd2"
+     "text": "9. Qd2 Bxd2+ 10. Nxd2"
     },
     {
      "art": "text",
-     "text": " – Material ist ausgeglichen, die Damen sind getauscht. Grau: der isolierte weiße Bauer a2. Gold: Der schwarze König steht ohne Damen sicher.",
+     "text": " – material is equal, the queens are off. Gray: White's isolated pawn on a2. Gold: without queens, the black king is safe.",
      "stil": "normal"
     }
    ],
@@ -1833,9 +1833,9 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
-   "unterabschnitt": "Verwandte Idee gegen Sizilianisch: das Smith-Morra-Gambit",
+   "unterabschnitt": "A related idea against the Sicilian: the Smith-Morra Gambit",
    "fen": "rnbqkbnr/pp1ppppp/8/8/4P3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4",
    "pfeile": [
     {
@@ -1853,16 +1853,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Smith-Morra-Gambit nach ",
+     "text": "The Smith-Morra Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxc3"
+     "text": "4. Nxc3"
     },
     {
      "art": "text",
-     "text": ". Grau: die schnelle Entwicklung, die Weiß plant, etwa mit Lc4 und Sf3. Schwarz am Zug.",
+     "text": ". Gray: the quick development White is planning, for example with Bc4 and Nf3. Black to move.",
      "stil": "normal"
     }
    ],
@@ -1896,9 +1896,9 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
-   "unterabschnitt": "Verwandte Idee gegen Sizilianisch: das Smith-Morra-Gambit",
+   "unterabschnitt": "A related idea against the Sicilian: the Smith-Morra Gambit",
    "fen": "r1bqkbnr/pp2pppp/2np4/8/4P3/2N2N2/PP3PPP/R1BQKB1R w KQkq - 0 6",
    "pfeile": [
     {
@@ -1911,16 +1911,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Sc6 5. Sf3 d6"
+     "text": "4... Nc6 5. Nf3 d6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug – Schwarz entwickelt vorsichtig. Grau: Der Läufer f1 kommt als Nächstes nach c4.",
+     "text": ", White to move – Black develops cautiously. Gray: the bishop on f1 goes to c4 next.",
      "stil": "normal"
     }
    ],
@@ -1957,9 +1957,9 @@
    "abschnitt": {
     "nummer": "3.6",
     "label": "",
-    "titel": "Das Dänische Gambit"
+    "titel": "The Danish Gambit"
    },
-   "unterabschnitt": "Verwandte Idee gegen Sizilianisch: das Smith-Morra-Gambit",
+   "unterabschnitt": "A related idea against the Sicilian: the Smith-Morra Gambit",
    "fen": "r1bqkb1r/pp3ppp/2nppn2/8/2B1P3/2N2N2/PP3PPP/R1BQ1RK1 w kq - 2 8",
    "pfeile": [
     {
@@ -1999,16 +1999,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach ",
+     "text": "Balance after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lc4 e6 7. O-O Sf6"
+     "text": "6. Bc4 e6 7. O-O Nf6"
     },
     {
      "art": "text",
-     "text": ". Gold: drei entwickelte weiße Figuren und der rochierte König. Rot: Druck auf der halboffenen d-Linie gegen d6. Grau: De2 und Td1 als nächste Schritte. Weiß am Zug.",
+     "text": ". Gold: three developed white pieces and the castled king. Red: pressure on the half-open d-file against d6. Gray: Qe2 and Rd1 as the next steps. White to move.",
      "stil": "normal"
     }
    ],
@@ -2045,14 +2045,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Welcher weiße Plan passt zu dieser Bilanz?",
+      "frage": "Which plan for White fits this balance?",
       "antworten": [
-       "Sofort die Damen tauschen, um ins Endspiel zu kommen.",
-       "Mit De2 und Td1 schnell Druck gegen d6 aufbauen.",
-       "Mit a4 und b4 die Bauern am Damenflügel vorrücken."
+       "Trade queens at once to reach an endgame.",
+       "Build up pressure against d6 quickly with Qe2 and Rd1.",
+       "Advance the queenside pawns with a4 and b4."
       ],
       "richtig": 1,
-      "erklaerung": "Der Vorsprung bei Zeit hält nur einige Züge. Weiß muss ihn in Druck umsetzen, sonst zählt am Ende der schwarze Mehrbauer."
+      "erklaerung": "The lead in time only lasts a few moves. White must turn it into pressure; otherwise Black's extra pawn counts in the end."
      }
     ]
    }
@@ -2064,7 +2064,7 @@
    "abschnitt": {
     "nummer": "3.7",
     "label": "",
-    "titel": "Das Milner-Barry-Gambit"
+    "titel": "The Milner-Barry Gambit"
    },
    "unterabschnitt": null,
    "fen": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/3P4/2PB1N2/PP3PPP/RNBQK2R b KQkq - 4 6",
@@ -2089,16 +2089,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Milner-Barry-Gambit nach ",
+     "text": "The Milner-Barry Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Db6 6. Ld3"
+     "text": "5... Qb6 6. Bd3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Bauer c5 und Springer c6 greifen d4 an. Grau: Der Läufer d3 verstellt der Dame d1 die d-Linie.",
+     "text": ", Black to move. Red: the pawn on c5 and the knight on c6 attack d4. Gray: the bishop on d3 blocks the d-file for the queen on d1.",
      "stil": "normal"
     }
    ],
@@ -2136,7 +2136,7 @@
    "abschnitt": {
     "nummer": "3.7",
     "label": "",
-    "titel": "Das Milner-Barry-Gambit"
+    "titel": "The Milner-Barry Gambit"
    },
    "unterabschnitt": null,
    "fen": "r3kbnr/pp1b1ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQ1RK1 b kq - 2 8",
@@ -2161,16 +2161,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... cxd4 7. cxd4 Ld7 8. O-O"
+     "text": "6... cxd4 7. cxd4 Bd7 8. O-O"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Springer und Dame greifen d4 an. Gold: Der Läufer d7 sperrt die Diagonale b5–e8.",
+     "text": ", Black to move. Red: knight and queen attack d4. Gold: the bishop on d7 blocks the b5–e8 diagonal.",
      "stil": "normal"
     }
    ],
@@ -2209,14 +2209,14 @@
     "fragen": [
      {
       "zug": "8... Nxd4",
-      "frage": "Warum kann Schwarz jetzt 8... Sxd4 spielen?",
+      "frage": "Why can Black play 8... Nxd4 now?",
       "antworten": [
-       "Weiß hat rochiert und kann deshalb nicht zurückschlagen.",
-       "Der Bauer d4 ist gar nicht mehr gedeckt.",
-       "Der Läufer d7 sperrt die Diagonale b5–e8; ein Schach auf b5 gibt es nicht mehr."
+       "White has castled and therefore cannot recapture.",
+       "The pawn on d4 is not defended at all anymore.",
+       "The bishop on d7 blocks the b5–e8 diagonal; there is no longer a check on b5."
       ],
       "richtig": 2,
-      "erklaerung": "Zieht der Läufer d3 jetzt weg, ist es kein Schach. Die schwarze Dame kann dann zuerst die weiße schlagen."
+      "erklaerung": "If the bishop on d3 moves away now, it is not check. The black queen can then capture the white one first."
      }
     ]
    }
@@ -2228,7 +2228,7 @@
    "abschnitt": {
     "nummer": "3.7",
     "label": "",
-    "titel": "Das Milner-Barry-Gambit"
+    "titel": "The Milner-Barry Gambit"
    },
    "unterabschnitt": null,
    "fen": "r3kbnr/pp1b1ppp/4p3/3pP3/3q4/2NB4/PP3PPP/R1BQ1RK1 b kq - 1 10",
@@ -2248,16 +2248,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Sxd4 9. Sxd4 Dxd4 10. Sc3"
+     "text": "8... Nxd4 9. Nxd4 Qxd4 10. Nc3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Schwarz hat einen Bauern mehr. Rot: Weiß droht Sb5. Grau: Auch der Bauer e5 ist ungedeckt.",
+     "text": ", Black to move. Black is a pawn up. Red: White threatens Nb5. Gray: the pawn on e5 is undefended too.",
      "stil": "normal"
     }
    ],
@@ -2300,14 +2300,14 @@
     "fragen": [
      {
       "zug": "10... a6",
-      "frage": "Warum spielt Schwarz 10... a6?",
+      "frage": "Why does Black play 10... a6?",
       "antworten": [
-       "Er nimmt dem Springer c3 das Feld b5.",
-       "Er öffnet dem Turm a8 die a-Linie.",
+       "It takes the b5 square away from the knight on c3.",
+       "It opens the a-file for the rook on a8.",
        "It defends the pawn on d5."
       ],
       "richtig": 0,
-      "erklaerung": "Sb5 hätte die Dame angegriffen und Sc7+ oder Sd6+ vorbereitet. Mit a6 ist das Feld b5 gesperrt."
+      "erklaerung": "Nb5 would have attacked the queen and prepared Nc7+ or Nd6+. With a6, the b5 square is shut."
      }
     ]
    }
@@ -2319,9 +2319,9 @@
    "abschnitt": {
     "nummer": "3.7",
     "label": "",
-    "titel": "Das Milner-Barry-Gambit"
+    "titel": "The Milner-Barry Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
+   "unterabschnitt": "How to defend: first 7... Bd7!, then take the pawn",
    "fen": "r3kb1r/1p1bnppp/p3p3/3pP3/3q4/2NB4/PP2QPPP/R1B2R1K b kq - 3 12",
    "pfeile": [
     {
@@ -2339,16 +2339,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10... a6 11. De2 Se7 12. Kh1"
+     "text": "10... a6 11. Qe2 Ne7 12. Kh1"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: a6 nimmt dem Springer das Feld b5. Grau: Weiß bereitet f4 vor, um e5 zu stützen.",
+     "text": ", Black to move. Gold: a6 takes the b5 square away from the knight. Gray: White is preparing f4 to support e5.",
      "stil": "normal"
     }
    ],
@@ -2397,9 +2397,9 @@
    "abschnitt": {
     "nummer": "3.7",
     "label": "",
-    "titel": "Das Milner-Barry-Gambit"
+    "titel": "The Milner-Barry Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
+   "unterabschnitt": "How to defend: first 7... Bd7!, then take the pawn",
    "fen": "r3kb1r/1p1b1ppp/p1n1p3/3pP3/3q1P2/2NB4/PP2Q1PP/R1B2R1K b kq f3 0 13",
    "pfeile": [
     {
@@ -2430,16 +2430,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach ",
+     "text": "Balance after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "12... Sc6 13. f4"
+     "text": "12... Nc6 13. f4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Springer greift e5 an, doch der schwarze König steht noch in der Mitte, Läufer f8 und Turm h8 stehen noch. Grau: Le3 wird die Dame mit Tempo angreifen.",
+     "text": ", Black to move. Red: the knight attacks e5, but the black king is still in the center, and the bishop on f8 and the rook on h8 have not moved yet. Gray: Be3 will attack the queen with tempo.",
      "stil": "normal"
     }
    ],
@@ -2490,9 +2490,9 @@
    "abschnitt": {
     "nummer": "3.7",
     "label": "",
-    "titel": "Das Milner-Barry-Gambit"
+    "titel": "The Milner-Barry Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
+   "unterabschnitt": "How to defend: first 7... Bd7!, then take the pawn",
    "fen": "r1b1kbnr/pp3ppp/1q2p3/3pP3/3n4/3B1N2/PP3PPP/RNBQK2R w KQkq - 0 8",
    "pfeile": [
     {
@@ -2510,16 +2510,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... cxd4 7. cxd4 Sxd4??"
+     "text": "6... cxd4 7. cxd4 Nxd4??"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Weiß schlägt zurück. Grau: Hinter dem Läufer d3 steht die Dame d1 auf der d-Linie.",
+     "text": ", White to move. Red: White recaptures. Gray: behind the bishop on d3, the queen on d1 stands on the d-file.",
      "stil": "normal"
     }
    ],
@@ -2556,14 +2556,14 @@
     "fragen": [
      {
       "zug": "8. Nxd4",
-      "frage": "Warum kann Weiß mit 8. Sxd4 ruhig zurückschlagen?",
+      "frage": "Why can White calmly recapture with 8. Nxd4?",
       "antworten": [
-       "Schwarz kann den Springer d4 nicht zurückschlagen.",
-       "Nach 8... Dxd4 folgt 9. Lb5+, und die Dame d1 schlägt die Dame d4.",
-       "Weiß hat danach eine Figur mehr."
+       "Black cannot recapture on d4.",
+       "After 8... Qxd4 comes 9. Bb5+, and the queen on d1 captures the queen on d4.",
+       "White is then a piece up."
       ],
       "richtig": 1,
-      "erklaerung": "Der Läufer d3 verdeckt die d-Linie. Zieht er mit Schach nach b5, greift die Dame d1 die Dame d4 an, und Schwarz muss zuerst das Schach abwehren."
+      "erklaerung": "The bishop on d3 masks the d-file. If it moves to b5 with check, the queen on d1 attacks the queen on d4, and Black has to deal with the check first."
      }
     ]
    }
@@ -2575,9 +2575,9 @@
    "abschnitt": {
     "nummer": "3.7",
     "label": "",
-    "titel": "Das Milner-Barry-Gambit"
+    "titel": "The Milner-Barry Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: erst 7... Ld7!, dann den Bauern nehmen",
+   "unterabschnitt": "How to defend: first 7... Bd7!, then take the pawn",
    "fen": "r1b1kbnr/pp3ppp/4p3/1B1pP3/3q4/8/PP3PPP/RNBQK2R b KQkq - 1 9",
    "pfeile": [
     {
@@ -2600,16 +2600,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Stellung aus Kapitel 1 nach ",
+     "text": "The position from Chapter 1 after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Sxd4 Dxd4?? 9. Lb5+!"
+     "text": "8. Nxd4 Qxd4?? 9. Bb5+!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Schach vom Läufer; die Dame d4 ist verloren. Gold: Die Dame d1 schlägt sie im nächsten Zug.",
+     "text": ", Black to move. Red: check from the bishop; the queen on d4 is lost. Gold: the queen on d1 captures it next move.",
      "stil": "normal"
     }
    ],
@@ -2652,9 +2652,9 @@
    "abschnitt": {
     "nummer": "3.7",
     "label": "",
-    "titel": "Das Milner-Barry-Gambit"
+    "titel": "The Milner-Barry Gambit"
    },
-   "unterabschnitt": "Weitere Varianten: der zweite Bauer mit 10... Dxe5?!",
+   "unterabschnitt": "Further lines: the second pawn with 10... Qxe5?!",
    "fen": "rq2kbnr/pp1b1ppp/4p3/3N4/8/3B4/PP3PPP/R1BQR1K1 b kq - 0 12",
    "pfeile": [
     {
@@ -2672,16 +2672,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10... Dxe5?! 11. Te1 Db8 12. Sxd5!"
+     "text": "10... Qxe5?! 11. Re1 Qb8 12. Nxd5!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: Der Turm e1 fesselt den Bauern e6 an den König; Schwarz kann den Springer deshalb nicht schlagen. Rot: der König in der Mitte.",
+     "text": ", Black to move. Gray: the rook on e1 pins the pawn on e6 to the king, so Black cannot capture the knight. Red: the king in the center.",
      "stil": "normal"
     }
    ],
@@ -2724,14 +2724,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Was zeigt diese Stellung über den Bauerngewinn 10... Dxe5?",
+      "frage": "What does this position show about the pawn grab 10... Qxe5?",
       "antworten": [
-       "Er hat sich gelohnt, denn Schwarz hat jetzt zwei Bauern mehr.",
-       "Er war harmlos, weil die Dame auf b8 sicher steht.",
-       "Er hat Zeit gekostet: Die e-Linie ist offen, und der König in der Mitte wird zum Ziel."
+       "It paid off, because Black is now two pawns up.",
+       "It was harmless, because the queen is safe on b8.",
+       "It cost time: the e-file is open, and the king in the center becomes a target."
       ],
       "richtig": 2,
-      "erklaerung": "Für einen Bauern hat Schwarz mit der Dame mehrere Züge gemacht. Weiß nutzt die e-Linie gegen den König, der noch nicht rochiert hat."
+      "erklaerung": "For one pawn, Black has made several queen moves. White uses the e-file against the king, which has not castled yet."
      }
     ]
    }
@@ -2743,7 +2743,7 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
    "unterabschnitt": null,
    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3PP3/8/PPP2PPP/RNBQKBNR b KQkq e3 0 2",
@@ -2758,7 +2758,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -2767,7 +2767,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: Schwarz kann den Bauern e4 schlagen.",
+     "text": ", Black to move. Gray: Black can capture the pawn on e4.",
      "stil": "normal"
     }
    ],
@@ -2797,7 +2797,7 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
    "unterabschnitt": null,
    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR b KQkq - 0 4",
@@ -2817,16 +2817,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... dxe4 3. Sc3 Sf6 4. f3"
+     "text": "2... dxe4 3. Nc3 Nf6 4. f3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Springer und Bauer greifen den Mehrbauern e4 an.",
+     "text": ", Black to move. Red: knight and pawn attack the extra pawn on e4.",
      "stil": "normal"
     }
    ],
@@ -2857,14 +2857,14 @@
     "fragen": [
      {
       "zug": "4... exf3",
-      "frage": "Warum schlägt Schwarz mit 4... exf3?",
+      "frage": "Why does Black capture with 4... exf3?",
       "antworten": [
-       "e4 ist nicht zu halten; Schwarz tauscht ihn, statt ihn ohne Ersatz zu verlieren.",
-       "Er öffnet die e-Linie für seinen Turm.",
-       "Er entwickelt damit den Läufer c8."
+       "e4 cannot be held; Black trades it instead of losing it for nothing.",
+       "It opens the e-file for Black's rook.",
+       "It develops the bishop on c8."
       ],
       "richtig": 0,
-      "erklaerung": "Nach 5. Sxf3 bleibt Schwarz ein Bauer mehr. Weiß hat dafür die halboffene f-Linie und einen weiteren entwickelten Springer."
+      "erklaerung": "After 5. Nxf3, Black stays a pawn up. In return, White has the half-open f-file and one more developed knight."
      }
     ]
    }
@@ -2876,7 +2876,7 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
    "unterabschnitt": null,
    "fen": "rnbqkb1r/ppp1pppp/5n2/8/3P4/2N2N2/PPP3PP/R1BQKB1R b KQkq - 0 5",
@@ -2898,16 +2898,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... exf3 5. Sxf3"
+     "text": "4... exf3 5. Nxf3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Weiß hat einen Bauern weniger. Grau: die halboffene f-Linie, auf die nach der Rochade der Turm kommt.",
+     "text": ", Black to move. White is a pawn down. Gray: the half-open f-file, where the rook goes after castling.",
      "stil": "normal"
     }
    ],
@@ -2943,9 +2943,9 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: die Ziegler-Verteidigung 5... c6",
+   "unterabschnitt": "How to defend: the Ziegler Defense 5... c6",
    "fen": "rn1qkb1r/pp2pppp/2p2n2/5b2/2BP4/2N2N2/PPP3PP/R1BQK2R w KQkq - 2 7",
    "pfeile": [
     {
@@ -2968,16 +2968,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... c6 6. Lc4 Lf5"
+     "text": "5... c6 6. Bc4 Bf5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: Der Läufer c8 ist vor ...e6 herausgekommen. Rot: Der Läufer c4 zielt auf f7. Grau: ...e6 schließt diese Diagonale.",
+     "text": ", White to move. Gold: the bishop on c8 has come out before ...e6. Red: the bishop on c4 aims at f7. Gray: ...e6 closes this diagonal.",
      "stil": "normal"
     }
    ],
@@ -3015,9 +3015,9 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: die Ziegler-Verteidigung 5... c6",
+   "unterabschnitt": "How to defend: the Ziegler Defense 5... c6",
    "fen": "rn1qkb1r/pp3ppp/2p1pn2/5bN1/2BP4/2N5/PPP3PP/R1BQ1RK1 b kq - 1 8",
    "pfeile": [
     {
@@ -3040,16 +3040,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. O-O e6 8. Sg5"
+     "text": "7. O-O e6 8. Ng5"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Springer und Läufer greifen e6 an, der Turm f1 den Läufer f5.",
+     "text": ", Black to move. Red: knight and bishop attack e6, and the rook on f1 attacks the bishop on f5.",
      "stil": "normal"
     }
    ],
@@ -3087,14 +3087,14 @@
     "fragen": [
      {
       "zug": "8... Bg6",
-      "frage": "Warum zieht Schwarz 8... Lg6?",
+      "frage": "Why does Black play 8... Bg6?",
       "antworten": [
-       "Er greift den Springer g5 an.",
-       "Der Läufer verlässt die f-Linie, auf der ihn der Turm angreift; e6 muss ihn dann nicht mehr decken.",
+       "It attacks the knight on g5.",
+       "The bishop leaves the f-file, where the rook attacks it; e6 then no longer has to defend it.",
        "It prepares queenside castling."
       ],
       "richtig": 1,
-      "erklaerung": "Auf f5 war der Läufer nur durch e6 gedeckt, und e6 stand selbst unter Druck. Auf g6 ist er aus der Schusslinie."
+      "erklaerung": "On f5, the bishop was defended only by e6, and e6 was itself under pressure. On g6, it is out of the line of fire."
      }
     ]
    }
@@ -3106,9 +3106,9 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: die Ziegler-Verteidigung 5... c6",
+   "unterabschnitt": "How to defend: the Ziegler Defense 5... c6",
    "fen": "rn1qk2r/pp3ppp/2pbpnb1/6N1/2BP1N2/8/PPP3PP/R1BQ1RK1 b kq - 5 10",
    "pfeile": [
     {
@@ -3131,16 +3131,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8... Lg6 9. Se2 Ld6 10. Sf4"
+     "text": "8... Bg6 9. Ne2 Bd6 10. Nf4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Der Springer f4 greift g6 und e6 an. Grau: Schwarz tauscht ihn mit ...Lxf4.",
+     "text": ", Black to move. Red: the knight on f4 attacks g6 and e6. Gray: Black trades it off with ...Bxf4.",
      "stil": "normal"
     }
    ],
@@ -3185,9 +3185,9 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
-   "unterabschnitt": "So verteidigst du dich: die Ziegler-Verteidigung 5... c6",
+   "unterabschnitt": "How to defend: the Ziegler Defense 5... c6",
    "fen": "rn1q1rk1/pp3ppp/2p1pnb1/6N1/2BP1B2/8/PPP3PP/R2Q1RK1 w - - 1 12",
    "pfeile": [
     {
@@ -3218,16 +3218,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach ",
+     "text": "Balance after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10... Lxf4 11. Lxf4 O-O"
+     "text": "10... Bxf4 11. Bxf4 O-O"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: der rochierte König und der Läufer g6, der ihn schützt. Rot: Springer g5 und Läufer c4 zielen auf e6. Grau: Der eigene Läufer f4 steht noch vor dem Turm f1.",
+     "text": ", White to move. Gold: the castled king and the bishop on g6 that protects it. Red: the knight on g5 and the bishop on c4 aim at e6. Gray: White's own bishop on f4 still stands in front of the rook on f1.",
      "stil": "normal"
     }
    ],
@@ -3271,14 +3271,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Was hat Schwarz mit den letzten Zügen erreicht?",
+      "frage": "What has Black achieved with the last few moves?",
       "antworten": [
-       "Er hat die Damen getauscht.",
-       "Er hat den König in Sicherheit gebracht und den Mehrbauern behalten.",
-       "Er hat alle Figuren entwickelt."
+       "Black has traded queens.",
+       "Black has brought the king to safety and kept the extra pawn.",
+       "Black has developed all the pieces."
       ],
       "richtig": 1,
-      "erklaerung": "Zeit ist ein flüchtiger Vorteil: Hat der Gegner rochiert, verliert sie an Wert. Der Mehrbauer dagegen bleibt."
+      "erklaerung": "Time is a fleeting advantage: once the opponent has castled, it loses value. The extra pawn, on the other hand, stays."
      }
     ]
    }
@@ -3290,7 +3290,7 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
    "unterabschnitt": "Further lines",
    "fen": "rnbqk2r/ppp1bppp/4pn2/6B1/3P4/2N2N2/PPP3PP/R2QKB1R w KQkq - 2 7",
@@ -3310,16 +3310,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Die Euwe-Verteidigung nach ",
+     "text": "The Euwe Defense after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... e6 6. Lg5 Le7"
+     "text": "5... e6 6. Bg5 Be7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Der Läufer g5 greift den Springer f6 an; der Läufer c8 steht hinter e6.",
+     "text": ", White to move. Gray: the bishop on g5 attacks the knight on f6; the bishop on c8 is stuck behind e6.",
      "stil": "normal"
     }
    ],
@@ -3355,7 +3355,7 @@
    "abschnitt": {
     "nummer": "3.8",
     "label": "",
-    "titel": "Das Blackmar-Diemer-Gambit"
+    "titel": "The Blackmar-Diemer Gambit"
    },
    "unterabschnitt": "Further lines",
    "fen": "rnbqkbnr/pp2pppp/2p5/8/3Pp3/2N2P2/PPP3PP/R1BQKBNR b KQkq - 0 4",
@@ -3375,16 +3375,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 c6 2. d4 d5 3. Sc3 dxe4 4. f3"
+     "text": "1. e4 c6 2. d4 d5 3. Nc3 dxe4 4. f3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug – das Blackmar-Diemer-Gambit aus der Caro-Kann-Verteidigung. Rot: f3 greift den Bauern e4 an. Gold: Der Bauer c6 steht schon.",
+     "text": ", Black to move – the Blackmar-Diemer Gambit from the Caro-Kann Defense. Red: f3 attacks the pawn on e4. Gold: the pawn is already on c6.",
      "stil": "normal"
     }
    ],
@@ -3415,9 +3415,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Budapester Gambit",
+   "unterabschnitt": "The Budapest Gambit",
    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/2PP4/8/PP2PPPP/RNBQKBNR w KQkq e6 0 3",
    "pfeile": [
     {
@@ -3435,7 +3435,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -3444,7 +3444,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Schwarz bietet den e-Bauern an und greift zugleich d4 an. Grau: das weiße Schlagen.",
+     "text": ", White to move. Red: Black offers the e-pawn and attacks d4 at the same time. Gray: White's capture.",
      "stil": "normal"
     }
    ],
@@ -3475,9 +3475,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Budapester Gambit",
+   "unterabschnitt": "The Budapest Gambit",
    "fen": "rnbqkb1r/pppp1ppp/8/4P3/2P3n1/8/PP2PPPP/RNBQKBNR w KQkq - 1 4",
    "pfeile": [
     {
@@ -3490,16 +3490,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. dxe5 Sg4"
+     "text": "3. dxe5 Ng4"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Springer greift den Bauern e5 an, den Weiß am besten mit Figuren deckt, die dann an ihn gebunden sind.",
+     "text": ", White to move. Red: the knight attacks the pawn on e5, which White best defends with pieces that are then tied to it.",
      "stil": "normal"
     }
    ],
@@ -3529,14 +3529,14 @@
     "fragen": [
      {
       "zug": "4. Bf4",
-      "frage": "Warum deckt Weiß den Bauern e5 mit 4. Lf4?",
+      "frage": "Why does White defend the pawn on e5 with 4. Bf4?",
       "antworten": [
-       "Er greift den Springer g4 an.",
-       "Er droht Lxc7 mit Damengewinn.",
-       "Er entwickelt eine Figur und hält den Mehrbauern; dafür ist der Läufer an e5 gebunden."
+       "It attacks the knight on g4.",
+       "It threatens Bxc7, winning the queen.",
+       "It develops a piece and holds on to the extra pawn; in return, the bishop is tied to e5."
       ],
       "richtig": 2,
-      "erklaerung": "Weiß deckt mit Figuren, nicht mit Bauern. Diese Figuren sind dann an e5 gebunden, und genau das will Schwarz mit seinem Gambit erreichen."
+      "erklaerung": "White defends with pieces, not with pawns. These pieces are then tied to e5, and that is exactly what Black wants to achieve with the gambit."
      }
     ]
    }
@@ -3548,9 +3548,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Budapester Gambit",
+   "unterabschnitt": "The Budapest Gambit",
    "fen": "r1bqkb1r/pppp1ppp/2n5/4P3/2P2Bn1/5N2/PP2PPPP/RN1QKB1R b KQkq - 4 5",
    "pfeile": [
     {
@@ -3587,16 +3587,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach ",
+     "text": "Balance after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Lf4 Sc6 5. Sf3"
+     "text": "4. Bf4 Nc6 5. Nf3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: die beiden aktiven schwarzen Springer. Rot: Beide greifen den Bauern e5 an. Grau: ...Lb4+ und ...De7 als nächste Schritte.",
+     "text": ", Black to move. Gold: the two active black knights. Red: both attack the pawn on e5. Gray: ...Bb4+ and ...Qe7 as the next steps.",
      "stil": "normal"
     }
    ],
@@ -3628,14 +3628,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum ist ...De7 ein natürlicher nächster Schritt für Schwarz?",
+      "frage": "Why is ...Qe7 a natural next step for Black?",
       "antworten": [
-       "Die Dame greift e5 als dritte Figur an.",
-       "Die Dame bereitet die kurze Rochade vor.",
-       "Die Dame deckt den Bauern c7."
+       "The queen attacks e5 as the third piece.",
+       "The queen prepares kingside castling.",
+       "The queen defends the pawn on c7."
       ],
       "richtig": 0,
-      "erklaerung": "Drei Angreifer gegen zwei Verteidiger: Dann muss Weiß e5 noch einmal decken oder den Bauern zurückgeben."
+      "erklaerung": "Three attackers against two defenders: White then has to defend e5 once more or give the pawn back."
      }
     ]
    }
@@ -3647,9 +3647,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Ein strategisches Gegenbeispiel: das Wolga-Gambit",
+   "unterabschnitt": "A strategic counterexample: the Volga Gambit",
    "fen": "rnbqkb1r/pp1ppppp/5n2/2p5/2PP4/8/PP2PPPP/RNBQKBNR w KQkq c6 0 3",
    "pfeile": [
     {
@@ -3662,7 +3662,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -3671,7 +3671,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Schwarz greift d4 an.",
+     "text": ", White to move. Red: Black attacks d4.",
      "stil": "normal"
     }
    ],
@@ -3702,9 +3702,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Ein strategisches Gegenbeispiel: das Wolga-Gambit",
+   "unterabschnitt": "A strategic counterexample: the Volga Gambit",
    "fen": "rnbqkb1r/p2ppppp/5n2/1ppP4/2P5/8/PP2PPPP/RNBQKBNR w KQkq b6 0 4",
    "pfeile": [
     {
@@ -3717,7 +3717,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -3726,7 +3726,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Schwarz bietet den b-Bauern an.",
+     "text": ", White to move. Gray: Black offers the b-pawn.",
      "stil": "normal"
     }
    ],
@@ -3759,9 +3759,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Ein strategisches Gegenbeispiel: das Wolga-Gambit",
+   "unterabschnitt": "A strategic counterexample: the Volga Gambit",
    "fen": "rn1qkb1r/3ppppp/b4n2/2pP4/8/8/PP2PPPP/RNBQKBNR w KQkq - 0 6",
    "pfeile": [],
    "felder": [
@@ -3777,16 +3777,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Wolga-Gambit nach ",
+     "text": "The Volga Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. cxb5 a6 5. bxa6 Lxa6"
+     "text": "4. cxb5 a6 5. bxa6 Bxa6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug – die a- und die b-Linie sind für Schwarz halboffen. Gold: seine langfristigen Ziele a2 und b2.",
+     "text": ", White to move – the a- and b-files are half-open for Black. Gold: Black's long-term targets a2 and b2.",
      "stil": "normal"
     }
    ],
@@ -3819,14 +3819,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum hält der schwarze Ausgleich im Wolga-Gambit länger als in vielen anderen Gambits?",
+      "frage": "Why does Black's compensation in the Volga Gambit last longer than in many other gambits?",
       "antworten": [
-       "Weil Schwarz schneller rochieren kann.",
-       "Weil Weiß den Bauern bald zurückgeben muss.",
-       "Weil halboffene Linien gegen feste Ziele wie a2 und b2 auch nach der Entwicklung bleiben."
+       "Because Black can castle faster.",
+       "Because White soon has to give the pawn back.",
+       "Because half-open files against fixed targets like a2 and b2 remain even after development."
       ],
       "richtig": 2,
-      "erklaerung": "Ein Entwicklungsvorsprung verschwindet, sobald der Gegner aufholt. Offene Linien gegen feste Ziele wirken dagegen lange."
+      "erklaerung": "A lead in development disappears as soon as the opponent catches up. Open files against fixed targets, by contrast, work for a long time."
      }
     ]
    }
@@ -3838,9 +3838,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Ein strategisches Gegenbeispiel: das Wolga-Gambit",
+   "unterabschnitt": "A strategic counterexample: the Volga Gambit",
    "fen": "rn1qkb1r/4pppp/3p1n2/2pP4/4P3/2N5/PP3PPP/R1BQKbNR w KQkq - 0 8",
    "pfeile": [
     {
@@ -3858,16 +3858,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Sc3 d6 7. e4 Lxf1"
+     "text": "6. Nc3 d6 7. e4 Bxf1"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Weiß muss mit dem König zurückschlagen. Rot: Er verliert das Rochaderecht.",
+     "text": ", White to move. Gray: White has to recapture with the king. Red: White loses the right to castle.",
      "stil": "normal"
     }
    ],
@@ -3905,14 +3905,14 @@
     "fragen": [
      {
       "zug": "8. Kxf1",
-      "frage": "Warum schlägt Weiß mit dem König zurück?",
+      "frage": "Why does White recapture with the king?",
       "antworten": [
-       "Er will den König in die Mitte bringen.",
-       "Keine andere Figur kann auf f1 schlagen; sonst fehlte eine ganze Figur.",
-       "Der König steht auf f1 sicherer als nach der Rochade."
+       "White wants to bring the king to the center.",
+       "No other piece can capture on f1; otherwise White would be a whole piece down.",
+       "The king is safer on f1 than after castling."
       ],
       "richtig": 1,
-      "erklaerung": "Der Preis ist das Rochaderecht. Weiß muss den König später mit g3 und Kg2 in Sicherheit bringen."
+      "erklaerung": "The price is the right to castle. White has to bring the king to safety later with g3 and Kg2."
      }
     ]
    }
@@ -3924,9 +3924,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Ein strategisches Gegenbeispiel: das Wolga-Gambit",
+   "unterabschnitt": "A strategic counterexample: the Volga Gambit",
    "fen": "rn1qk2r/4ppbp/3p1np1/2pP4/4P3/2N3P1/PP3P1P/R1BQ1KNR w kq - 1 10",
    "pfeile": [
     {
@@ -3944,16 +3944,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Kxf1 g6 9. g3 Lg7"
+     "text": "8. Kxf1 g6 9. g3 Bg7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: Schwarz hat fianchettiert. Grau: Weiß bringt den König mit Kg2 in Sicherheit.",
+     "text": ", White to move. Gold: Black has fianchettoed. Gray: White brings the king to safety with Kg2.",
      "stil": "normal"
     }
    ],
@@ -3998,9 +3998,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Ein strategisches Gegenbeispiel: das Wolga-Gambit",
+   "unterabschnitt": "A strategic counterexample: the Volga Gambit",
    "fen": "rn1q1rk1/4ppbp/3p1np1/2pP4/4P3/2N3P1/PP3PKP/R1BQ2NR w - - 3 11",
    "pfeile": [
     {
@@ -4040,7 +4040,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach ",
+     "text": "Balance after ",
      "stil": "normal"
     },
     {
@@ -4049,7 +4049,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: die Ziele a2 und b2, der fianchettierte Läufer g7 und der rochierte schwarze König. Rot: Der Turm a8 greift auf der halboffenen a-Linie a2 an. Grau: ...Sbd7 und ...Da5 als nächste Schritte.",
+     "text": ", White to move. Gold: the targets a2 and b2, the fianchettoed bishop on g7 and the castled black king. Red: the rook on a8 attacks a2 along the half-open a-file. Gray: ...Nbd7 and ...Qa5 as the next steps.",
      "stil": "normal"
     }
    ],
@@ -4096,9 +4096,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Englund-Gambit",
+   "unterabschnitt": "The Englund Gambit",
    "fen": "rnbqkbnr/pppp1ppp/8/4p3/3P4/8/PPP1PPPP/RNBQKBNR w KQkq e6 0 2",
    "pfeile": [
     {
@@ -4116,7 +4116,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -4125,7 +4125,7 @@
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Schwarz greift d4 an. Grau: Weiß kann den Bauern schlagen.",
+     "text": ", White to move. Red: Black attacks d4. Gray: White can capture the pawn.",
      "stil": "normal"
     }
    ],
@@ -4154,9 +4154,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Englund-Gambit",
+   "unterabschnitt": "The Englund Gambit",
    "fen": "r1b1kbnr/ppppqppp/2n5/4P3/8/5N2/PPP1PPPP/RNBQKB1R w KQkq - 3 4",
    "pfeile": [
     {
@@ -4179,16 +4179,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. dxe5 Sc6 3. Sf3 De7"
+     "text": "2. dxe5 Nc6 3. Nf3 Qe7"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Springer und Dame greifen e5 an. Grau: Die Dame will nach b4.",
+     "text": ", White to move. Red: knight and queen attack e5. Gray: the queen wants to go to b4.",
      "stil": "normal"
     }
    ],
@@ -4221,9 +4221,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Englund-Gambit",
+   "unterabschnitt": "The Englund Gambit",
    "fen": "r1b1kbnr/pppp1ppp/2n5/4P3/1q3B2/5N2/PPP1PPPP/RN1QKB1R w KQkq - 5 5",
    "pfeile": [
     {
@@ -4241,16 +4241,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Lf4 Db4+"
+     "text": "4. Bf4 Qb4+"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Schach und zugleich ein Angriff auf b2.",
+     "text": ", White to move. Red: check and at the same time an attack on b2.",
      "stil": "normal"
     }
    ],
@@ -4285,9 +4285,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Englund-Gambit",
+   "unterabschnitt": "The Englund Gambit",
    "fen": "r1b1kbnr/pppp1ppp/2n5/4P3/8/2N2N2/PqPBPPPP/R2QKB1R b KQkq - 1 6",
    "pfeile": [
     {
@@ -4310,16 +4310,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Ld2 Dxb2 6. Sc3!"
+     "text": "5. Bd2 Qxb2 6. Nc3!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Die Dame greift Springer c3 und Turm a1 an; beide sind gedeckt. Grau: Tb1 verjagt die Dame als Nächstes.",
+     "text": ", Black to move. Red: the queen attacks the knight on c3 and the rook on a1; both are defended. Gray: Rb1 chases the queen away next.",
      "stil": "normal"
     }
    ],
@@ -4353,14 +4353,14 @@
     "fragen": [
      {
       "zug": "6... Bb4",
-      "frage": "Warum spielt Schwarz 6... Lb4?",
+      "frage": "Why does Black play 6... Bb4?",
       "antworten": [
-       "Er bringt einen zweiten Angreifer gegen den Springer c3, der nur einmal gedeckt ist.",
-       "Er gibt Schach und gewinnt Zeit.",
-       "Er fesselt den Läufer d2 an die Dame d1."
+       "It brings a second attacker against the knight on c3, which is defended only once.",
+       "It gives check and gains time.",
+       "It pins the bishop on d2 to the queen on d1."
       ],
       "richtig": 0,
-      "erklaerung": "Zwei Angreifer gegen einen Verteidiger: Schwarz droht, auf c3 eine Figur zu gewinnen. Weiß antwortet mit Tb1 und greift dabei die Dame an."
+      "erklaerung": "Two attackers against one defender: Black threatens to win a piece on c3. White replies with Rb1, attacking the queen."
      }
     ]
    }
@@ -4372,9 +4372,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Englund-Gambit",
+   "unterabschnitt": "The Englund Gambit",
    "fen": "r1b1k1nr/pppp1ppp/2n5/3NP3/1b6/q4N2/P1PBPPPP/1R1QKB1R b Kkq - 5 8",
    "pfeile": [
     {
@@ -4402,16 +4402,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach ",
+     "text": "Balance after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Lb4 7. Tb1 Da3 8. Sd5!"
+     "text": "6... Bb4 7. Rb1 Qa3 8. Nd5!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Drei weiße Figuren greifen den Läufer b4 an, und der Springer droht Sxc7+.",
+     "text": ", Black to move. Red: three white pieces attack the bishop on b4, and the knight threatens Nxc7+.",
      "stil": "normal"
     }
    ],
@@ -4452,9 +4452,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Englund-Gambit",
+   "unterabschnitt": "The Englund Gambit",
    "fen": "r1b1k1nr/pppp1ppp/2n5/4P3/1b6/2B2N2/PqP1PPPP/RN1QKB1R w KQkq - 2 7",
    "pfeile": [
     {
@@ -4477,16 +4477,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Ld2 Dxb2 6. Lc3?? Lb4!"
+     "text": "5. Bd2 Qxb2 6. Bc3?? Bb4!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Der Läufer b4 fesselt den Läufer c3 an den König. Rot: Die Dame greift c3 und den Turm a1 an.",
+     "text": ", White to move. Gray: the bishop on b4 pins the bishop on c3 to the king. Red: the queen attacks c3 and the rook on a1.",
      "stil": "normal"
     }
    ],
@@ -4524,9 +4524,9 @@
    "abschnitt": {
     "nummer": "3.9",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,d4"
+    "titel": "Gambits for Black against 1.\\,d4"
    },
-   "unterabschnitt": "Das Englund-Gambit",
+   "unterabschnitt": "The Englund Gambit",
    "fen": "r1b1k1nr/pppp1ppp/2n5/4P3/8/2Q2N2/P1P1PPPP/RNq1KB1R w KQkq - 1 9",
    "pfeile": [
     {
@@ -4544,16 +4544,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. Dd2 Lxc3 8. Dxc3 Dc1#"
+     "text": "7. Qd2 Bxc3 8. Qxc3 Qc1#"
     },
     {
      "art": "text",
-     "text": ". Rot: Matt. Grau: Der eigene Bauer c2 versperrt der Dame c3 den Weg nach c1.",
+     "text": ". Red: mate. Gray: White's own pawn on c2 blocks the queen on c3 from reaching c1.",
      "stil": "normal"
     }
    ],
@@ -4595,9 +4595,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "rnbqkb1r/pppp1ppp/5n2/4p3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq - 2 3",
    "pfeile": [
     {
@@ -4615,16 +4615,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Sf6"
+     "text": "2... Nf6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug – dieselbe Stellung wie in der Russischen Verteidigung (Kapitel 2). Rot: Beide Springer greifen den gegnerischen e-Bauern an.",
+     "text": ", White to move – the same position as in the Petrov Defense (Chapter 2). Red: both knights attack the opponent's e-pawn.",
      "stil": "normal"
     }
    ],
@@ -4655,25 +4655,25 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "r1bqkb1r/pppp1ppp/2n2n2/4N3/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 1 4",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Sxe5 Sc6?!"
+     "text": "3. Nxe5 Nc6?!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug – Schwarz bietet den Bauern weiter an.",
+     "text": ", White to move – Black keeps offering the pawn.",
      "stil": "normal"
     }
    ],
@@ -4706,25 +4706,25 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "r1bqkb1r/ppp2ppp/2p2n2/8/4P3/3P4/PPP2PPP/RNBQKB1R b KQkq - 0 5",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxc6 dxc6 5. d3"
+     "text": "4. Nxc6 dxc6 5. d3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug – Weiß versucht, ruhig zu bleiben.",
+     "text": ", Black to move – White tries to stay calm.",
      "stil": "normal"
     }
    ],
@@ -4760,9 +4760,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "r1bqk2r/ppp2ppp/2p2n2/2b5/4P3/3P4/PPP2PPP/RNBQKB1R w KQkq - 1 6",
    "pfeile": [
     {
@@ -4775,16 +4775,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Lc5"
+     "text": "5... Bc5"
     },
     {
      "art": "text",
-     "text": ". Rot: Der Läufer zielt auf das Feld f2.",
+     "text": ". Red: the bishop aims at the f2 square.",
      "stil": "normal"
     }
    ],
@@ -4820,9 +4820,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "r1bqk2r/ppp2ppp/2p2n2/2b5/4P3/3P4/PPP1BPPP/RNBQK2R b KQkq - 2 6",
    "pfeile": [
     {
@@ -4849,16 +4849,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Le2!"
+     "text": "6. Be2!"
     },
     {
      "art": "text",
-     "text": ". Gold: die beiden aktiven schwarzen Figuren. Rot: das Ziel des Läufers c5. Grau: Le2 deckt g4.",
+     "text": ". Gold: the two active black pieces. Red: the target of the bishop on c5. Gray: Be2 covers g4.",
      "stil": "normal"
     }
    ],
@@ -4895,9 +4895,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "r1b1k2r/ppp2ppp/2p5/2b5/4P1Bq/3P4/PPP2PPP/RNBQK2R w KQkq - 1 8",
    "pfeile": [
     {
@@ -4920,16 +4920,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Sg4 7. Lxg4 Dh4"
+     "text": "6... Ng4 7. Bxg4 Qh4"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Die Dame droht Matt auf f2 und greift den Läufer g4 an. Gold: Df3 deckt beides.",
+     "text": ", White to move. Red: the queen threatens mate on f2 and attacks the bishop on g4. Gold: Qf3 covers both.",
      "stil": "normal"
     }
    ],
@@ -4964,14 +4964,14 @@
     "fragen": [
      {
       "zug": "8. Qf3",
-      "frage": "Warum ist 8. Df3 hier die richtige Verteidigung?",
+      "frage": "Why is 8. Qf3 the right defense here?",
       "antworten": [
-       "Die Dame greift den Läufer c5 an.",
+       "The queen attacks the bishop on c5.",
        "It prepares queenside castling.",
-       "Sie deckt f2 gegen das Matt und schützt zugleich den Läufer g4."
+       "It defends f2 against the mate and protects the bishop on g4 at the same time."
       ],
       "richtig": 2,
-      "erklaerung": "Ein Zug mit zwei Aufgaben. Zuerst kommt die Mattdrohung, erst danach zählt das Material."
+      "erklaerung": "One move with two jobs. The mate threat comes first; only after that does material count."
      }
     ]
    }
@@ -4983,9 +4983,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "r1bqk2r/ppp2ppp/2p2n2/2b3B1/4P3/3P4/PPP2PPP/RN1QKB1R b KQkq - 2 6",
    "pfeile": [
     {
@@ -4998,16 +4998,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Lg5??"
+     "text": "6. Bg5??"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Grau: die relative Fesselung.",
+     "text": ", Black to move. Gray: the relative pin.",
      "stil": "normal"
     }
    ],
@@ -5042,14 +5042,14 @@
     "fragen": [
      {
       "zug": "6... Nxe4",
-      "frage": "Warum darf Schwarz 6... Sxe4 spielen, obwohl der Springer vor der Dame steht?",
+      "frage": "Why may Black play 6... Nxe4, even though the knight stands in front of the queen?",
       "antworten": [
-       "Der Springer e4 deckt danach die Dame d8.",
-       "Die Fesselung ist nur relativ: Nimmt Weiß die Dame, setzt Schwarz mit Lxf2+ und Lg4 matt.",
-       "Der Läufer g5 ist selbst gefesselt und darf nicht schlagen."
+       "The knight on e4 then defends the queen on d8.",
+       "The pin is only relative: if White takes the queen, Black mates with Bxf2+ and Bg4.",
+       "The bishop on g5 is itself pinned and may not capture."
       ],
       "richtig": 1,
-      "erklaerung": "Hinter dem Springer stand die Dame, nicht der König. Opfert Schwarz sie, wird der weiße König nach Lxf2+ Ke2 mit Lg4 matt gesetzt."
+      "erklaerung": "Behind the knight stood the queen, not the king. If Black gives it up, the white king is mated after Bxf2+ Ke2 with Bg4."
      }
     ]
    }
@@ -5061,9 +5061,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "r1bBk2r/ppp2ppp/2p5/8/4n3/3P4/PPP2bPP/RN1QKB1R w KQkq - 0 8",
    "pfeile": [
     {
@@ -5076,16 +5076,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Sxe4! 7. Lxd8?? Lxf2+!"
+     "text": "6... Nxe4! 7. Bxd8?? Bxf2+!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Springer e4 deckt f2 mit, Kxf2 ist deshalb illegal.",
+     "text": ", White to move. Red: the knight on e4 also covers f2, so Kxf2 is illegal.",
      "stil": "normal"
     }
    ],
@@ -5123,14 +5123,14 @@
     "fragen": [
      {
       "zug": "8. Ke2",
-      "frage": "Warum spielt Weiß 8. Ke2?",
+      "frage": "Why does White play 8. Ke2?",
       "antworten": [
-       "Es ist der einzige erlaubte Zug: Der Springer e4 deckt f2 und d2.",
-       "Er will den König über e2 nach f3 in Sicherheit bringen.",
+       "It is the only legal move: the knight on e4 covers f2 and d2.",
+       "White wants to bring the king to safety on f3 via e2.",
        "It prepares castling."
       ],
       "richtig": 0,
-      "erklaerung": "Ein Schach mit nur einem Ausweg ist gefährlich. Nach Ke2 setzt der bisher unentwickelte Läufer c8 auf g4 matt."
+      "erklaerung": "A check with only one way out is dangerous. After Ke2, the bishop on c8, undeveloped until now, mates on g4."
      }
     ]
    }
@@ -5142,9 +5142,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Stafford-Gambit",
+   "unterabschnitt": "The Stafford Gambit",
    "fen": "r2Bk2r/ppp2ppp/2p5/8/4n1b1/3P4/PPP1KbPP/RN1Q1B1R w kq - 2 9",
    "pfeile": [
     {
@@ -5157,16 +5157,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Ke2 Lg4#"
+     "text": "8. Ke2 Bg4#"
     },
     {
      "art": "text",
-     "text": ". Rot: Der bisher unentwickelte Läufer von c8 setzt matt. Alle Nachbarfelder des Königs sind gedeckt oder besetzt.",
+     "text": ". Red: the bishop from c8, undeveloped until now, gives mate. All squares next to the king are covered or occupied.",
      "stil": "normal"
     }
    ],
@@ -5209,9 +5209,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnbqkbnr/pppp2pp/8/4pp2/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq f6 0 3",
    "pfeile": [
     {
@@ -5229,16 +5229,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. Sf3 f5"
+     "text": "1. e4 e5 2. Nf3 f5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Schwarz greift e4 an. Grau: Der Springer f3 kann e5 schlagen.",
+     "text": ", White to move. Red: Black attacks e4. Gray: the knight on f3 can capture on e5.",
      "stil": "normal"
     }
    ],
@@ -5269,9 +5269,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnb1kbnr/pppp2pp/5q2/4Np2/4P3/8/PPPP1PPP/RNBQKB1R w KQkq - 1 4",
    "pfeile": [
     {
@@ -5294,16 +5294,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Sxe5 Df6"
+     "text": "3. Nxe5 Qf6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Die Dame greift den Springer an, der Bauer f5 den Bauern e4. Grau: d4 deckt den Springer.",
+     "text": ", White to move. Red: the queen attacks the knight, and the pawn on f5 attacks the pawn on e4. Gray: d4 defends the knight.",
      "stil": "normal"
     }
    ],
@@ -5333,14 +5333,14 @@
     "fragen": [
      {
       "zug": "4. d4",
-      "frage": "Warum spielt Weiß 4. d4?",
+      "frage": "Why does White play 4. d4?",
       "antworten": [
-       "Er greift die Dame f6 an.",
-       "Er deckt den angegriffenen Springer e5 und baut das Zentrum aus.",
+       "It attacks the queen on f6.",
+       "It defends the attacked knight on e5 and strengthens the center.",
        "It opens the diagonal for the bishop on f1."
       ],
       "richtig": 1,
-      "erklaerung": "Der Springer ist jetzt gedeckt, und Weiß steht im Zentrum fest. Danach findet der Springer mit Sc4 ein sicheres Feld."
+      "erklaerung": "The knight is now defended, and White stands firmly in the center. After that, the knight finds a safe square with Nc4."
      }
     ]
    }
@@ -5352,9 +5352,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnb1kbnr/ppp3pp/3p1q2/5p2/2NPP3/8/PPP2PPP/RNBQKB1R b KQkq - 1 5",
    "pfeile": [
     {
@@ -5376,16 +5376,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. d4 d6 5. Sc4"
+     "text": "4. d4 d6 5. Nc4"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: Das Zentrum steht, der Springer ist in Sicherheit. Rot: Schwarz holt sich gleich e4 zurück.",
+     "text": ", Black to move. Gold: the center holds, and the knight is safe. Red: Black is about to win back e4.",
      "stil": "normal"
     }
    ],
@@ -5421,9 +5421,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnb1kbnr/ppp3pp/3p2q1/8/2NPp3/2N2P2/PPP3PP/R1BQKB1R b KQkq - 0 7",
    "pfeile": [
     {
@@ -5446,16 +5446,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... fxe4 6. Sc3 Dg6 7. f3"
+     "text": "5... fxe4 6. Nc3 Qg6 7. f3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: Bauer und Springer greifen e4 an. Rot: Die Dame blickt auf g2, den der Läufer f1 deckt.",
+     "text": ", Black to move. Gold: pawn and knight attack e4. Red: the queen eyes g2, which the bishop on f1 defends.",
      "stil": "normal"
     }
    ],
@@ -5494,9 +5494,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnb1kb1r/ppp3pp/3p1nq1/8/2NP4/2NB1Q2/PPP3PP/R1B1K2R b KQkq - 2 9",
    "pfeile": [
     {
@@ -5514,16 +5514,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... exf3 8. Dxf3 Sf6 9. Ld3"
+     "text": "7... exf3 8. Qxf3 Nf6 9. Bd3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: Der Läufer entwickelt sich mit Tempo gegen die Dame. Grau: die Rochade als nächster Schritt.",
+     "text": ", Black to move. Gold: the bishop develops with tempo against the queen. Gray: castling as the next step.",
      "stil": "normal"
     }
    ],
@@ -5566,9 +5566,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnb1kb1r/ppp3pp/3pqn2/8/2NP4/2NBQ3/PPP3PP/R1B1K2R w KQkq - 5 11",
    "pfeile": [
     {
@@ -5586,16 +5586,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9... Dg4 10. De3+ De6"
+     "text": "9... Qg4 10. Qe3+ Qe6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Grau: Die Damen stehen sich gegenüber; Weiß rochiert zuerst.",
+     "text": ", White to move. Gray: the queens face each other; White castles first.",
      "stil": "normal"
     }
    ],
@@ -5642,9 +5642,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnb1kb1r/ppp3pp/3p1n2/8/2NP4/2NBB3/PPP3PP/R4RK1 b kq - 0 12",
    "pfeile": [
     {
@@ -5662,16 +5662,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "11. O-O Dxe3+ 12. Lxe3"
+     "text": "11. O-O Qxe3+ 12. Bxe3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Gold: Der Turm f1 steht schon auf der offenen f-Linie. Grau: Tae1 bringt den zweiten Turm auf die offene e-Linie.",
+     "text": ", Black to move. Gold: the rook on f1 already stands on the open f-file. Gray: Rae1 brings the second rook to the open e-file.",
      "stil": "normal"
     }
    ],
@@ -5721,9 +5721,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnb2rk1/ppp1b1pp/3p1n2/8/2NP4/2NBB3/PPP3PP/4RRK1 w - - 3 14",
    "pfeile": [
     {
@@ -5761,16 +5761,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Bilanz nach ",
+     "text": "Balance after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "12... Le7 13. Tae1 O-O"
+     "text": "12... Be7 13. Rae1 O-O"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Gold: die vier entwickelten weißen Leichtfiguren; der goldene Pfeil zeigt den Turm f1 auf der offenen f-Linie, der zweite Turm steht schon auf e1. Rot: Springer b8 und Läufer c8 stehen noch.",
+     "text": ", White to move. Gold: the four developed white minor pieces; the gold arrow shows the rook on f1 on the open f-file, and the second rook is already on e1. Red: the knight on b8 and the bishop on c8 have not moved yet.",
      "stil": "normal"
     }
    ],
@@ -5819,14 +5819,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Wie lange hält dieser weiße Vorsprung?",
+      "frage": "How long does this white lead last?",
       "antworten": [
-       "Für immer, denn Entwicklung bleibt erhalten.",
-       "Gar nicht, denn ohne Damen zählt Entwicklung nichts.",
-       "Nur so lange, bis Schwarz seine letzten Figuren entwickelt hat, wenn Weiß ihn nicht nutzt."
+       "Forever, because development is permanent.",
+       "Not at all, because without queens development counts for nothing.",
+       "Only until Black has developed the last pieces, if White does not use it."
       ],
       "richtig": 2,
-      "erklaerung": "Zeit ist ein Vorteil auf Abruf. Weiß muss die offenen Linien nutzen, solange Schwarz noch zwei Figuren zu Hause hat."
+      "erklaerung": "Time is an advantage on call. White has to use the open files while Black still has two pieces at home."
      }
     ]
    }
@@ -5838,9 +5838,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnbqkbnr/pppp2pp/8/4pp2/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 1 3",
    "pfeile": [
     {
@@ -5858,16 +5858,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Lc4?!"
+     "text": "3. Bc4?!"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: Schwarz schlägt e4. Grau: Der Läufer zielt über f7 auf g8 – die Idee aus der Italienischen Partie.",
+     "text": ", Black to move. Red: Black captures on e4. Gray: the bishop aims through f7 at g8 – the idea from the Italian Game.",
      "stil": "normal"
     }
    ],
@@ -5898,9 +5898,9 @@
    "abschnitt": {
     "nummer": "3.10",
     "label": "",
-    "titel": "Gambits für Schwarz gegen 1.\\,e4"
+    "titel": "Gambits for Black against 1.\\,e4"
    },
-   "unterabschnitt": "Das Lettische Gambit",
+   "unterabschnitt": "The Latvian Gambit",
    "fen": "rnbqkbnr/ppp3pp/8/3pN3/2B1p3/8/PPPP1PPP/RNBQK2R w KQkq d6 0 5",
    "pfeile": [
     {
@@ -5922,16 +5922,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3... fxe4 4. Sxe5 d5"
+     "text": "3... fxe4 4. Nxe5 d5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Rot: Der Bauer greift den Läufer an. Grau: das schwarze Bauernzentrum.",
+     "text": ", White to move. Red: the pawn attacks the bishop. Gray: Black's pawn center.",
      "stil": "normal"
     }
    ],
@@ -5962,14 +5962,14 @@
     "fragen": [
      {
       "zug": "5. Qh5+",
-      "frage": "Warum gibt Weiß 5. Dh5+?",
+      "frage": "Why does White play 5. Qh5+?",
       "antworten": [
-       "Er nutzt die offene Diagonale zum König; Schwarz muss das Schach abwehren, statt den Läufer zu schlagen.",
-       "Es ist Matt.",
-       "Er deckt damit den Läufer c4."
+       "It uses the open diagonal to the king; Black has to deal with the check instead of capturing the bishop.",
+       "It is mate.",
+       "It defends the bishop on c4."
       ],
       "richtig": 0,
-      "erklaerung": "Ohne f-Bauern steht der schwarze König offen. Das Schach kommt vor dem Rückzug des Läufers, so bleibt Weiß am Drücker."
+      "erklaerung": "Without the f-pawn, the black king is exposed. The check comes before the bishop retreats, so White keeps the upper hand."
      }
     ]
    }
@@ -5981,30 +5981,30 @@
    "abschnitt": {
     "nummer": "3.11",
     "label": "",
-    "titel": "Wann sollte man einen Gambitbauern zurückgeben?"
+    "titel": "When should you give back a gambit pawn?"
    },
-   "unterabschnitt": "Überblick: solide oder zweifelhaft?",
+   "unterabschnitt": "Overview: sound or dubious?",
    "fen": "rnbqkbnr/pp1ppppp/8/8/4P3/2N5/PP3PPP/R1BQKBNR b KQkq - 0 4",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Smith-Morra-Gambit nach ",
+     "text": "The Smith-Morra Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxc3"
+     "text": "4. Nxc3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug (die Stellung aus ",
+     "text": ", Black to move (the position from ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 3.25",
+     "text": "Fig. 3.25",
      "abbildung": "3.25"
     },
     {
@@ -6040,25 +6040,25 @@
    "abschnitt": {
     "nummer": "3.11",
     "label": "",
-    "titel": "Wann sollte man einen Gambitbauern zurückgeben?"
+    "titel": "When should you give back a gambit pawn?"
    },
-   "unterabschnitt": "Überblick: solide oder zweifelhaft?",
+   "unterabschnitt": "Overview: sound or dubious?",
    "fen": "r1bqkbnr/pppp1ppp/2n5/8/3pP3/2P2N2/PP3PPP/RNBQKB1R b KQkq - 0 4",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. c3"
+     "text": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. c3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug.",
+     "text": ", Black to move.",
      "stil": "normal"
     }
    ],
@@ -6089,30 +6089,30 @@
    "abschnitt": {
     "nummer": "3.11",
     "label": "",
-    "titel": "Wann sollte man einen Gambitbauern zurückgeben?"
+    "titel": "When should you give back a gambit pawn?"
    },
-   "unterabschnitt": "Überblick: solide oder zweifelhaft?",
+   "unterabschnitt": "Overview: sound or dubious?",
    "fen": "rn1qkb1r/3ppppp/b4n2/2pP4/8/8/PP2PPPP/RNBQKBNR w KQkq - 0 6",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Das Wolga-Gambit nach ",
+     "text": "The Volga Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Lxa6"
+     "text": "5... Bxa6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug (die Stellung aus ",
+     "text": ", White to move (the position from ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 3.50",
+     "text": "Fig. 3.50",
      "abbildung": "3.50"
     },
     {
@@ -6151,25 +6151,25 @@
    "abschnitt": {
     "nummer": "3.11",
     "label": "",
-    "titel": "Wann sollte man einen Gambitbauern zurückgeben?"
+    "titel": "When should you give back a gambit pawn?"
    },
-   "unterabschnitt": "Überblick: solide oder zweifelhaft?",
+   "unterabschnitt": "Overview: sound or dubious?",
    "fen": "rnbqkbnr/ppp2ppp/8/3pp3/4P3/5N2/PPPP1PPP/RNBQKB1R w KQkq d6 0 3",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. Sf3 d5"
+     "text": "1. e4 e5 2. Nf3 d5"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug.",
+     "text": ", White to move.",
      "stil": "normal"
     }
    ],
@@ -6203,33 +6203,33 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Du spielst Schwarz im Smith-Morra-Gambit und hast nach ",
+     "text": "You are playing Black in the Smith-Morra Gambit and are a pawn up after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxc3"
+     "text": "4. Nxc3"
     },
     {
      "art": "text",
-     "text": " einen Bauern mehr (",
+     "text": " (",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 3.80",
+     "text": "Fig. 3.80",
      "abbildung": "3.80"
     },
     {
      "art": "text",
-     "text": "). Fülle mit der Zählhilfe aus Tabelle 3.2 eine Faktorenbilanz aus: Worin besteht die Kompensation von Weiß? Und was ist jetzt deine wichtigste Aufgabe?",
+     "text": "). Use the counting aid from Table 3.2 to fill in a factor balance: what does White's compensation consist of? And what is your most important task now?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Material: Schwarz liegt einen Bauern vorn. Zeit: Es steht gleich, da Weiß zwar den Springer c3 im Spiel hat und Schwarz noch keine Figur, Schwarz jedoch am Zug ist und mit dem nächsten Figurenzug gleichzieht. Königssicherheit: bei beiden ",
+     "text": "Material: Black is a pawn ahead. Time: it is equal, because although White has the knight on c3 in play and Black has no piece out yet, Black is to move and draws level with the next piece move. King safety: ",
      "stil": "normal"
     },
     {
@@ -6239,7 +6239,7 @@
     },
     {
      "art": "text",
-     "text": ". Beide Könige stehen noch in der Mitte, sind aber nicht bedroht. Aktivität (",
+     "text": " for both. Both kings are still in the center, but they are not threatened. Activity (",
      "stil": "normal"
     },
     {
@@ -6249,7 +6249,7 @@
     },
     {
      "art": "text",
-     "text": " für Weiß): Der Bauer e4 steht im Zentrum, Schwarz hat dort keinen Bauern. Die c-Linie ist offen, die Dame d1 blickt über die für Weiß halboffene d-Linie schon auf d7, und jede weiße Figur, die jetzt ins Spiel kommt, findet sofort eine freie Bahn, etwa der Läufer f1 über c4 mit Ziel f7. Die Kompensation liegt also in der Aktivität. Einen Vorsprung bei der Zeit bekommt Weiß erst, wenn Schwarz seine Züge nicht in Figurenzüge steckt. Deine wichtigste Aufgabe ist daher nicht, weiteres Material zu nehmen, sondern deine Figuren zu entwickeln und den König in Sicherheit zu bringen. Behältst du den Bauern dabei, ist das ein Bonus, und es ist kein Unglück, wenn du ihn für eine gesunde Entwicklung zurückgeben musst. Merke dir: Gegen ein Gambit entwickelst du zunächst, denn der Mehrbauer läuft nicht weg.",
+     "text": " for White): the pawn on e4 stands in the center, and Black has no pawn there. The c-file is open, the queen on d1 already eyes d7 along the d-file, which is half-open for White, and every white piece that now comes into play immediately finds a free path, for example the bishop on f1 via c4 with f7 as its target. So the compensation lies in activity. White only gets a lead in time if Black does not put the moves into piece moves. Your most important task is therefore not to take more material, but to develop your pieces and bring your king to safety. If you keep the pawn along the way, that is a bonus, and it is no disaster if you have to give it back for healthy development. Remember: against a gambit, you develop first, because the extra pawn will not run away.",
      "stil": "normal"
     }
    ],
@@ -6260,8 +6260,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Faktorenbilanz eines Gambits",
-    "text": "Weiß hat für den Bauern Aktivität: Bauer e4 im Zentrum, offene c- und d-Linie, freie Bahn für jede Figur. Deine wichtigste Aufgabe als Schwarzer ist darum Entwicklung und Königssicherheit, nicht weiteres Material."
+    "motiv": "Factor balance of a gambit",
+    "text": "For the pawn, White has activity: the pawn on e4 in the center, open c- and d-files, a free path for every piece. As Black, your most important task is therefore development and king safety, not more material."
    }
   },
   {
@@ -6275,16 +6275,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Wer mit Weiß die Schottische Partie spielt, kann statt ",
-     "stil": "normal"
-    },
-    {
-     "art": "zug",
-     "text": "4. Sxd4"
-    },
-    {
-     "art": "text",
-     "text": " auch ",
+     "text": "If you play the Scotch Game with White, you can choose ",
      "stil": "normal"
     },
     {
@@ -6293,17 +6284,26 @@
     },
     {
      "art": "text",
-     "text": " wählen, das ",
+     "text": " instead of ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4. Nxd4"
+    },
+    {
+     "art": "text",
+     "text": ": the ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Göring-Gambit",
+     "text": "Göring Gambit",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ". Welchem Gambit aus diesem Kapitel ähnelt die Stellung, wenn Schwarz mit ",
+     "text": ". Which gambit from this chapter does the position resemble if Black accepts with ",
      "stil": "normal"
     },
     {
@@ -6312,23 +6312,23 @@
     },
     {
      "art": "text",
-     "text": " annimmt, und ist das Opfer dann echt? Mit welchem Zug kann Schwarz dem Gambit die Kraft nehmen, ohne weiteres Material zu nehmen?",
+     "text": ", and is the sacrifice then real? With which move can Black take the sting out of the gambit without taking more material?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... dxc3 5. Sxc3"
+     "text": "4... dxc3 5. Nxc3"
     },
     {
      "art": "text",
-     "text": " entsteht dieselbe Idee wie im Dänischen Gambit und im Smith-Morra-Gambit: Weiß gibt einen Bauern, bekommt dafür einen entwickelten Springer, offene Linien und freie Bahn für beide Läufer. Das Opfer ist echt, da Weiß den Bauern nicht einfach zurückholt. Die einfachste Antwort ist allerdings ",
+     "text": ", the same idea arises as in the Danish Gambit and the Smith-Morra Gambit: White gives a pawn and gets a developed knight, open files and a free path for both bishops in return. The sacrifice is real, because White does not simply win the pawn back. The simplest reply, however, is ",
      "stil": "normal"
     },
     {
@@ -6337,25 +6337,25 @@
     },
     {
      "art": "text",
-     "text": ": Schwarz greift sofort den Bauern e4 an. Nach ",
+     "text": ": Black attacks the pawn on e4 at once. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. exd5 Dxd5 6. cxd4"
+     "text": "5. exd5 Qxd5 6. cxd4"
     },
     {
      "art": "text",
-     "text": " ist das Material ausgeglichen, die schwarze Dame steht zentral, und mit ",
+     "text": ", material is equal, the black queen stands in the center, and with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Lg4"
+     "text": "...Bg4"
     },
     {
      "art": "text",
-     "text": " entwickelt Schwarz weiter und greift den Springer f3 an, der d4 deckt. Wie im Königsgambit mit ",
+     "text": " Black continues developing and attacks the knight on f3, which defends d4. As in the King's Gambit with ",
      "stil": "normal"
     },
     {
@@ -6364,7 +6364,7 @@
     },
     {
      "art": "text",
-     "text": " nimmt der Gegenstoß im Zentrum dem Gambit den Zeitvorsprung, von dem es lebt. Merke dir: Der Gegenstoß ",
+     "text": ", the counterthrust in the center takes away the lead in time that the gambit lives on. Remember: the counterthrust ",
      "stil": "normal"
     },
     {
@@ -6373,7 +6373,7 @@
     },
     {
      "art": "text",
-     "text": " gibt Material im Zentrum zurück und nimmt dem Gambit den Zeitvorsprung.",
+     "text": " gives back material in the center and takes away the gambit's lead in time.",
      "stil": "normal"
     }
    ],
@@ -6384,8 +6384,8 @@
    "erklaerung": {
     "loesung": "4... d5",
     "akzeptiert": [],
-    "motiv": "Gegenstoß ...d5",
-    "text": "Nach 4... dxc3 5. Sxc3 entsteht ein echtes Gambit wie das Dänische oder das Smith-Morra-Gambit. Einfacher ist 4... d5: Schwarz greift e4 an, gibt Material im Zentrum zurück und nimmt Weiß den Zeitvorsprung, von dem das Gambit lebt."
+    "motiv": "Counterthrust ...d5",
+    "text": "After 4... dxc3 5. Nxc3, a real gambit arises, like the Danish or the Smith-Morra Gambit. Simpler is 4... d5: Black attacks e4, gives back material in the center and takes away White's lead in time, which the gambit lives on."
    }
   },
   {
@@ -6399,26 +6399,26 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Erstelle für die Stellung nach ",
+     "text": "For the position after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Lxa6"
+     "text": "5... Bxa6"
     },
     {
      "art": "text",
-     "text": " im Wolga-Gambit (",
+     "text": " in the Volga Gambit (",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 3.82",
+     "text": "Fig. 3.82",
      "abbildung": "3.82"
     },
     {
      "art": "text",
-     "text": ") selbst eine Faktorenbilanz aus Sicht von Schwarz. Vergleiche sie mit der Bilanz nach ",
+     "text": "), draw up a factor balance yourself from Black's point of view. Compare it with the balance after ",
      "stil": "normal"
     },
     {
@@ -6432,28 +6432,28 @@
     },
     {
      "art": "verweis",
-     "text": "Abb. 3.53",
+     "text": "Fig. 3.53",
      "abbildung": "3.53"
     },
     {
      "art": "text",
-     "text": "): Welcher Faktor ist dazugekommen, welcher ist gleich geblieben? Und warum ist das Wolga-Gambit daher langlebiger als das Königsgambit?",
+     "text": "): which factor has been added, and which has stayed the same? And why does that make the Volga Gambit longer-lasting than the King's Gambit?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Lxa6"
+     "text": "5... Bxa6"
     },
     {
      "art": "text",
-     "text": ": Material: Weiß liegt einen Bauern vorn. Zeit: Schwarz liegt zwei Figuren vorn. Springer f6 und Läufer a6 sind im Spiel, Weiß hat noch keine Figur gezogen, und weil Weiß am Zug ist, zählt der Vorsprung so, wie er ist. Königssicherheit ",
+     "text": ": Material: White is a pawn ahead. Time: Black is two pieces ahead. The knight on f6 and the bishop on a6 are in play, White has not moved a piece yet, and because White is to move, the lead counts as it is. King safety ",
      "stil": "normal"
     },
     {
@@ -6463,7 +6463,7 @@
     },
     {
      "art": "text",
-     "text": " bei beiden, da beide Könige noch in der Mitte stehen. Aktivität ",
+     "text": " for both, because both kings are still in the center. Activity ",
      "stil": "normal"
     },
     {
@@ -6473,7 +6473,7 @@
     },
     {
      "art": "text",
-     "text": " für Schwarz (halboffene a- und b-Linie gegen a2 und b2, auf die bald die Türme kommen). Nach ",
+     "text": " for Black (half-open a- and b-files against a2 and b2, where the rooks will soon arrive). After ",
      "stil": "normal"
     },
     {
@@ -6482,7 +6482,7 @@
     },
     {
      "art": "text",
-     "text": " ist der schwarze König in Sicherheit, aus ",
+     "text": ", the black king is safe; ",
      "stil": "normal"
     },
     {
@@ -6492,7 +6492,7 @@
     },
     {
      "art": "text",
-     "text": " ist ",
+     "text": " has become ",
      "stil": "normal"
     },
     {
@@ -6502,7 +6502,7 @@
     },
     {
      "art": "text",
-     "text": " geworden. Gleich geblieben sind der Druck auf a2 und b2 und der Vorsprung bei der Zeit: Aus zwei Figuren gegen keine sind drei gegen eine geworden: Mit der Rochade ist der Turm f8 dazugekommen, Weiß hat nur den Springer c3 ins Spiel gebracht. Genau darin liegt der Unterschied zum Königsgambit: Dort lebt die Kompensation von Zeit, die nach wenigen Zügen verbraucht ist, wohingegen sie im Wolga-Gambit von offenen Linien und festen Zielen lebt, die bestehen bleiben. Merke dir: Kompensation aus der Bauernstruktur hält länger als Kompensation aus der Zeit.",
+     "text": ". What has stayed the same is the pressure on a2 and b2 and the lead in time: two pieces against none have become three against one. Castling has added the rook on f8, while White has brought only the knight on c3 into play. This is exactly the difference from the King's Gambit: there, the compensation lives on time, which is used up after a few moves, whereas in the Volga Gambit it lives on open files and fixed targets that remain. Remember: compensation from the pawn structure lasts longer than compensation from time.",
      "stil": "normal"
     }
    ],
@@ -6513,8 +6513,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Kompensation aus der Struktur",
-    "text": "Nach 5... Lxa6 hat Schwarz einen Bauern weniger, aber Zeit und Druck auf den halboffenen Linien a und b. Später kommt die Königssicherheit dazu, während der Druck bleibt: Diese Kompensation hält länger als die reine Zeit des Königsgambits."
+    "motiv": "Compensation from the structure",
+    "text": "After 5... Bxa6, Black is a pawn down but has time and pressure on the half-open a- and b-files. Later king safety is added, while the pressure remains: this compensation lasts longer than the pure time of the King's Gambit."
    }
   },
   {
@@ -6528,26 +6528,26 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Wer mit Weiß ",
+     "text": "If you play ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sf3"
+     "text": "2. Nf3"
     },
     {
      "art": "text",
-     "text": " spielt, trifft neben dem Lettischen Gambit auch auf das ",
+     "text": " with White, you will meet not only the Latvian Gambit but also the ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Elefanten-Gambit",
+     "text": "Elephant Gambit",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Schwarz bietet mit ",
+     "text": ": with ",
      "stil": "normal"
     },
     {
@@ -6556,7 +6556,7 @@
     },
     {
      "art": "text",
-     "text": " den d-Bauern an. Nach ",
+     "text": ", Black offers the d-pawn. After ",
      "stil": "normal"
     },
     {
@@ -6565,16 +6565,16 @@
     },
     {
      "art": "text",
-     "text": " greift der Bauer den Springer f3 an, und Weiß antwortet mit ",
+     "text": ", the pawn attacks the knight on f3, and White replies with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. De2"
+     "text": "4. Qe2"
     },
     {
      "art": "text",
-     "text": ". Warum darf Schwarz den Springer jetzt nicht mit ",
+     "text": ". Why may Black not capture the knight with ",
      "stil": "normal"
     },
     {
@@ -6583,41 +6583,41 @@
     },
     {
      "art": "text",
-     "text": " schlagen? Stelle für die Stellung nach ",
+     "text": " now? Draw up a factor balance for the position after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. De2"
+     "text": "4. Qe2"
     },
     {
      "art": "text",
-     "text": " eine Faktorenbilanz auf: Was hat Schwarz für den Bauern bekommen? Und warum ist ",
+     "text": ": what has Black got for the pawn? And why is ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. De2"
+     "text": "4. Qe2"
     },
     {
      "art": "text",
-     "text": " keine „verfrühte Dame“ im Sinne von Kapitel 1?",
+     "text": " not an “premature queen” in the sense of Chapter 1?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. De2"
+     "text": "4. Qe2"
     },
     {
      "art": "text",
-     "text": " steht die weiße Dame auf der e-Linie vor dem schwarzen König, und die Felder e5, e6 und e7 sind leer. Der Bauer e4 ist daher absolut an den König e8 gefesselt: ",
+     "text": ", the white queen stands on the e-file in front of the black king, and the squares e5, e6 and e7 are empty. The pawn on e4 is therefore absolutely pinned to the king on e8: ",
      "stil": "normal"
     },
     {
@@ -6626,7 +6626,7 @@
     },
     {
      "art": "text",
-     "text": " ist gar nicht erlaubt, weil danach der eigene König im Schach stünde. Die Bilanz: Material: Weiß liegt einen Bauern vorn (d5). Zeit: Weiß liegt eine Figur vorn. Springer f3 und Dame e2 sind im Spiel, Schwarz hat noch keine Figur gezogen und ist am Zug. Davon bleibt eine Figur Vorsprung. Königssicherheit: bei beiden ",
+     "text": " is not even allowed, because Black's own king would then be in check. The balance: Material: White is a pawn ahead (d5). Time: White is one piece ahead. The knight on f3 and the queen on e2 are in play, Black has not moved a piece yet and is to move. That leaves a lead of one piece. King safety: ",
      "stil": "normal"
     },
     {
@@ -6636,7 +6636,7 @@
     },
     {
      "art": "text",
-     "text": ", da beide Könige in der Mitte stehen, der schwarze zusätzlich auf der Linie der weißen Dame. Aktivität: ",
+     "text": " for both, because both kings are in the center, and the black one also stands on the white queen's file. Activity: ",
      "stil": "normal"
     },
     {
@@ -6646,7 +6646,7 @@
     },
     {
      "art": "text",
-     "text": " für Weiß, denn die Dame fesselt den Bauern e4, und Weiß greift ihn mit ",
+     "text": " for White, because the queen pins the pawn on e4, and White attacks it a second time with ",
      "stil": "normal"
     },
     {
@@ -6655,7 +6655,7 @@
     },
     {
      "art": "text",
-     "text": " ein zweites Mal an. Schwarz hat ",
+     "text": ". Black has ",
      "stil": "normal"
     },
     {
@@ -6665,52 +6665,52 @@
     },
     {
      "art": "text",
-     "text": ": Sein Bauer e4 steht weit vorn, ist aber gefesselt, sodass Schwarz für den Bauern kaum etwas bekommen hat. Nach ",
+     "text": ": the pawn on e4 is far advanced but pinned, so Black has got hardly anything for the pawn. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Sf6 5. d3 Le7 6. dxe4"
+     "text": "4... Nf6 5. d3 Be7 6. dxe4"
     },
     {
      "art": "text",
-     "text": " hat Weiß sogar zwei Bauern mehr. Schwarz ist dafür besser entwickelt und drückt mit ",
+     "text": ", White is even two pawns up. In return, Black is better developed and presses against e4 with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Te8"
+     "text": "...Re8"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Lb4"
+     "text": "...Bb4"
     },
     {
      "art": "text",
-     "text": " gegen e4, doch Weiß entwickelt mit ",
+     "text": ", but White develops with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Sc3"
+     "text": "Nc3"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Ld2"
+     "text": "Bd2"
     },
     {
      "art": "text",
-     "text": ", rochiert lang und steht besser. Die frühe Dame ist hier keine „verfrühte Dame“ im Sinne von Kapitel 1: Diese Todsünde meint eine Dame, die von gegnerischen Leichtfiguren gejagt wird und dabei Tempi verschenkt. Die Dame e2 kann Schwarz nicht sofort mit Tempo angreifen, und sie erfüllt eine konkrete Aufgabe, die Fesselung. Merke dir: Eine frühe Dame ist nur dann verfrüht, wenn der Gegner sie mit Tempo jagen kann.",
+     "text": ", castles queenside and is better. The early queen here is not an “premature queen” in the sense of Chapter 1: that deadly sin means a queen that is chased by the opponent's minor pieces and gives away tempi in the process. Black cannot attack the queen on e2 with tempo right away, and it fulfills a concrete task, the pin. Remember: an early queen is only premature if the opponent can chase it with tempo.",
      "stil": "normal"
     }
    ],
@@ -6721,8 +6721,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Fesselung auf der e-Linie",
-    "text": "Nach 4. De2 ist der Bauer e4 absolut an den König gefesselt, darum ist 4... exf3 gar nicht erlaubt. Schwarz hat für den Bauern kaum etwas bekommen, und die Dame e2 ist nicht verfrüht, weil sie nicht mit Tempo gejagt werden kann und die Fesselung hält."
+    "motiv": "Pin on the e-file",
+    "text": "After 4. Qe2, the pawn on e4 is absolutely pinned to the king, so 4... exf3 is not even allowed. Black has got hardly anything for the pawn, and the queen on e2 is not premature, because it cannot be chased with tempo and it holds the pin."
    }
   },
   {
@@ -6734,27 +6734,27 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Ordne die folgenden vier Bauernangebote aus diesem Kapitel als ",
+     "text": "Classify the following four pawn offers from this chapter as a ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "echtes Opfer",
+     "text": "real sacrifice",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or a ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Scheinopfer",
+     "text": "pseudo-sacrifice",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " ein und begründe jede Antwort in einem Satz: das Damengambit (",
+     "text": ", and justify each answer in one sentence: the Queen's Gambit (",
      "stil": "normal"
     },
     {
@@ -6763,32 +6763,32 @@
     },
     {
      "art": "text",
-     "text": "), das Dänische Gambit (",
+     "text": "), the Danish Gambit (",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 3.20",
+     "text": "Fig. 3.20",
      "abbildung": "3.20"
     },
     {
      "art": "text",
-     "text": "), das Smith-Morra-Gambit (",
+     "text": "), the Smith-Morra Gambit (",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 3.25",
+     "text": "Fig. 3.25",
      "abbildung": "3.25"
     },
     {
      "art": "text",
-     "text": ") und das Budapester Gambit (",
+     "text": ") and the Budapest Gambit (",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 3.46",
+     "text": "Fig. 3.46",
      "abbildung": "3.46"
     },
     {
@@ -6800,17 +6800,17 @@
    "loesung": [
     {
      "art": "text",
-     "text": "Das ",
+     "text": "The ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Damengambit",
+     "text": "Queen's Gambit",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " ist ein Scheinopfer: Weiß holt den Bauern mit ",
+     "text": " is a pseudo-sacrifice: White wins the pawn back with ",
      "stil": "normal"
     },
     {
@@ -6819,46 +6819,46 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "Lxc4"
+     "text": "Bxc4"
     },
     {
      "art": "text",
-     "text": " zurück. Das ",
+     "text": ". The ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Dänische Gambit",
+     "text": "Danish Gambit",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " ist echt: Zwei Bauern bleiben weg, solange Schwarz sie nicht freiwillig zurückgibt. Das ",
+     "text": " is real: two pawns stay gone unless Black gives them back voluntarily. The ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Smith-Morra-Gambit",
+     "text": "Smith-Morra Gambit",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " ist echt: Ein Bauer bleibt weg, Weiß spielt auf Entwicklung und offene Linien. Das ",
+     "text": " is real: one pawn stays gone, and White plays for development and open files. The ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Budapester Gambit",
+     "text": "Budapest Gambit",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " liegt dazwischen: Schwarz gewinnt den Bauern häufig zurück, muss dafür aber genau spielen und seine Figuren gezielt gegen e5 richten. Es ist also ein echtes Opfer mit guter Aussicht auf Rückgewinn. Merke dir: Frage bei jedem Bauernangebot zunächst, ob das Material von selbst zurückkommt.",
+     "text": " lies in between: Black often wins the pawn back, but has to play accurately and aim the pieces deliberately at e5 to do so. So it is a real sacrifice with a good prospect of winning the material back. Remember: with every pawn offer, first ask whether the material comes back by itself.",
      "stil": "normal"
     }
    ],
@@ -6869,8 +6869,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Echtes Opfer oder Scheinopfer",
-    "text": "Das Damengambit ist ein Scheinopfer, weil der Bauer mit e3 und Lxc4 zurückkommt. Dänisches und Smith-Morra-Gambit sind echte Opfer für Entwicklung und Linien; das Budapester Gambit liegt dazwischen, weil Schwarz den Bauern oft, aber nur mit genauem Spiel zurückgewinnt."
+    "motiv": "Real sacrifice or pseudo-sacrifice",
+    "text": "The Queen's Gambit is a pseudo-sacrifice, because the pawn comes back with e3 and Bxc4. The Danish and the Smith-Morra Gambit are real sacrifices for development and open files; the Budapest Gambit lies in between, because Black often wins the pawn back, but only with accurate play."
    }
   }
  ],
@@ -6881,7 +6881,7 @@
    "titel": [
     {
      "art": "text",
-     "text": "Königsgambit nach ",
+     "text": "King's Gambit after ",
      "stil": "normal"
     },
     {
@@ -6916,7 +6916,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer, den Weiß mit Lxf4 bald zurückholt",
+          "text": "+1 pawn, which White soon wins back with Bxf4",
           "stil": "normal"
          }
         ]
@@ -6929,7 +6929,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Figur: drei im Spiel (Sc3, Sf3, Tf1); Weiß am Zug",
+          "text": "+1 piece: three in play (Nc3, Nf3, Rf1); White to move",
           "stil": "normal"
          }
         ]
@@ -6939,7 +6939,7 @@
         "text": [
          {
           "art": "text",
-          "text": "zwei im Spiel (Le7, Tf8); die Dame steht wieder auf d8, Springer b8 und Läufer c8 stehen noch",
+          "text": "two in play (Be7, Rf8); the queen is back on d8, the knight on b8 and the bishop on c8 have not moved yet",
           "stil": "normal"
          }
         ]
@@ -6952,7 +6952,7 @@
         "text": [
          {
           "art": "text",
-          "text": "rochiert, aber ohne f-Bauern vor dem König",
+          "text": "castled, but without the f-pawn in front of the king",
           "stil": "normal"
          }
         ]
@@ -6962,7 +6962,7 @@
         "text": [
          {
           "art": "text",
-          "text": "rochiert, Bauernschild unberührt",
+          "text": "castled, pawn shield untouched",
           "stil": "normal"
          }
         ]
@@ -6975,7 +6975,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Bauer d4 beherrscht das Zentrum, der Läufer c1 greift schon den Bauern f4 an, und der Turm f1 steht bereits auf der halboffenen f-Linie. Die Dame d1 hat noch kein Ziel.",
+          "text": "The pawn on d4 controls the center, the bishop on c1 already attacks the pawn on f4, and the rook on f1 already stands on the half-open f-file. The queen on d1 has no target yet.",
           "stil": "normal"
          }
         ]
@@ -6985,7 +6985,7 @@
         "text": [
          {
           "art": "text",
-          "text": "kein Zentrumsbauer, aber die Dame d8 drückt über die halboffene d-Linie auf d4; die Türme haben noch keine Linie",
+          "text": "no center pawn, but the queen on d8 presses on d4 along the half-open d-file; the rooks have no file yet",
           "stil": "normal"
          }
         ]
@@ -6997,14 +6997,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "kurz – nach Lxf4 ist das Material wieder gleich, und der Zeitvorsprung hat keinen Angriff mehr gebracht.",
+     "text": "short – after Bxf4, material is level again, and the lead in time has not produced an attack.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "ausgeglichen. Mit ",
+     "text": "equal. With ",
      "stil": "normal"
     },
     {
@@ -7013,7 +7013,7 @@
     },
     {
      "art": "text",
-     "text": " hat Schwarz den Mehrbauern nicht verteidigt, sondern Zeit zurückgekauft, und dem Gambit damit die Kraft genommen.",
+     "text": ", Black did not defend the extra pawn but bought back time, and so took the sting out of the gambit.",
      "stil": "normal"
     }
    ],
@@ -7027,12 +7027,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Kieseritzky-Gambit nach ",
+     "text": "Kieseritzky Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Se5"
+     "text": "5. Ne5"
     }
    ],
    "abschnitt": "3.4",
@@ -7062,7 +7062,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer",
+          "text": "+1 pawn",
           "stil": "normal"
          }
         ]
@@ -7075,7 +7075,7 @@
         "text": [
          {
           "art": "text",
-          "text": "eine Figur im Spiel, der Springer e5 (mit zwei Zügen)",
+          "text": "one piece in play, the knight on e5 (with two moves)",
           "stil": "normal"
          }
         ]
@@ -7085,7 +7085,7 @@
         "text": [
          {
           "art": "text",
-          "text": "keine Figur im Spiel, Schwarz ist aber am Zug",
+          "text": "no piece in play, but Black is to move",
           "stil": "normal"
          }
         ]
@@ -7098,7 +7098,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König in der Mitte; der fehlende f-Bauer öffnet die Diagonale e1–h4",
+          "text": "king in the center; the missing f-pawn opens the e1–h4 diagonal",
           "stil": "normal"
          }
         ]
@@ -7108,7 +7108,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König in der Mitte; der g-Bauer steht weit vorn, f7 wird angegriffen",
+          "text": "king in the center; the g-pawn is far advanced, f7 is under attack",
           "stil": "normal"
          }
         ]
@@ -7121,7 +7121,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Springer e5 greift f7 und g4 an, die Dame d1 blickt ebenfalls auf g4.",
+          "text": "The knight on e5 attacks f7 and g4, and the queen on d1 also eyes g4.",
           "stil": "normal"
          }
         ]
@@ -7131,7 +7131,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Schwarz ist am Zug, muss dabei aber f7 und g4 im Auge behalten. Keine Figur hat derzeit eine aktive Aufgabe.",
+          "text": "Black is to move but has to keep an eye on f7 and g4. No piece has an active task at the moment.",
           "stil": "normal"
          }
         ]
@@ -7143,14 +7143,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "kurz – sobald Schwarz entwickelt ist, verliert der Springer e5 seine Wirkung.",
+     "text": "short – as soon as Black is developed, the knight on e5 loses its effect.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "zweischneidig. Bei der Zeit steht es gleich, der Vorteil von Weiß liegt in der Aktivität: Sein Springer greift an, Schwarz muss reagieren. Schwarz behält den Bauern, muss aber sehr genau verteidigen, da beide Könige unsicher stehen. Für die eigene Praxis ist ",
+     "text": "double-edged. Time is equal; White's advantage lies in activity: White's knight attacks, and Black has to react. Black keeps the pawn but has to defend very accurately, because both kings are unsafe. For your own games, ",
      "stil": "normal"
     },
     {
@@ -7159,7 +7159,7 @@
     },
     {
      "art": "text",
-     "text": " der einfachere Weg.",
+     "text": " is the simpler way.",
      "stil": "normal"
     }
    ],
@@ -7173,12 +7173,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Muzio-Gambit nach ",
+     "text": "Muzio Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Dxf3"
+     "text": "6. Qxf3"
     }
    ],
    "abschnitt": "3.4",
@@ -7208,7 +7208,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Springer",
+          "text": "+1 knight",
           "stil": "normal"
          }
         ]
@@ -7221,7 +7221,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+2 Figuren: drei im Spiel (Lc4, Df3, Tf1); Schwarz ist am Zug und kann eine aufholen",
+          "text": "+2 pieces: three in play (Bc4, Qf3, Rf1); Black is to move and can catch up by one",
           "stil": "normal"
          }
         ]
@@ -7231,7 +7231,7 @@
         "text": [
          {
           "art": "text",
-          "text": "keine Figur im Spiel, nur Bauernzüge",
+          "text": "no piece in play, only pawn moves",
           "stil": "normal"
          }
         ]
@@ -7254,7 +7254,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König in der Mitte, f7 und die f-Linie im Visier",
+          "text": "king in the center, f7 and the f-file under fire",
           "stil": "normal"
          }
         ]
@@ -7267,7 +7267,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Läufer c4 zielt auf f7; Dame f3 und Turm f1 stehen auf der halboffenen f-Linie und greifen f4 an. Fällt f4, trifft die Linie f7.",
+          "text": "The bishop on c4 aims at f7; the queen on f3 and the rook on f1 stand on the half-open f-file and attack f4. If f4 falls, the file hits f7.",
           "stil": "normal"
          }
         ]
@@ -7277,7 +7277,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Keine Figur hat eine Aufgabe, auch Dame und Türme nicht; nur der Bauer f4 sperrt noch die f-Linie.",
+          "text": "No piece has a task, not even the queen and rooks; only the pawn on f4 still blocks the f-file.",
           "stil": "normal"
          }
         ]
@@ -7289,14 +7289,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "sehr kurz – Weiß muss sofort angreifen, bevor Schwarz seine Figuren herausbringt.",
+     "text": "very short – White has to attack at once, before Black brings out the pieces.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "sehr riskant. Weiß steht in allen drei anderen Faktoren besser: Dame und Turm sind schon im Spiel, sein König ist sicher, und die f-Linie zielt auf f7. Das braucht er auch, da ihm eine ganze Figur fehlt. Ein Extrembeispiel für „Material gegen Zeit, Königssicherheit und Aktivität“.",
+     "text": "very risky. White is better in all three other factors: queen and rook are already in play, White's king is safe, and the f-file aims at f7. White needs all that, too, being a whole piece down. An extreme example of “material versus time, king safety and activity”.",
      "stil": "normal"
     }
    ],
@@ -7310,7 +7310,7 @@
    "titel": [
     {
      "art": "text",
-     "text": "Evans-Gambit nach ",
+     "text": "Evans Gambit after ",
      "stil": "normal"
     },
     {
@@ -7345,7 +7345,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer",
+          "text": "+1 pawn",
           "stil": "normal"
          }
         ]
@@ -7358,7 +7358,7 @@
         "text": [
          {
           "art": "text",
-          "text": "zwei Figuren im Spiel (Lc4, Sf3), jede mit einem Zug",
+          "text": "two pieces in play (Bc4, Nf3), each with one move",
           "stil": "normal"
          }
         ]
@@ -7368,7 +7368,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Figur: zwei im Spiel (Sc6, La5), der Läufer mit drei Zügen; Schwarz am Zug",
+          "text": "+1 piece: two in play (Nc6, Ba5), the bishop with three moves; Black to move",
           "stil": "normal"
          }
         ]
@@ -7381,7 +7381,7 @@
         "text": [
          {
           "art": "text",
-          "text": "sofort rochadefähig",
+          "text": "can castle at once",
           "stil": "normal"
          }
         ]
@@ -7391,7 +7391,7 @@
         "text": [
          {
           "art": "text",
-          "text": "erst nach einem Zug des Springers g8 rochadefähig; La3 könnte die kurze Rochade erschweren",
+          "text": "can castle only after a move of the knight on g8; Ba3 could make kingside castling harder",
           "stil": "normal"
          }
         ]
@@ -7404,7 +7404,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Die Bauern c3, d4 und e4 beherrschen das Zentrum, d4 greift e5 an, der Läufer c4 zielt auf f7. Dame und Türme stehen noch zu Hause.",
+          "text": "The pawns on c3, d4 and e4 control the center, d4 attacks e5, and the bishop on c4 aims at f7. The queen and rooks are still at home.",
           "stil": "normal"
          }
         ]
@@ -7414,7 +7414,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Zug ist nicht frei: Der Bauer e5, der einzige im Zentrum, wird angegriffen. Der Läufer a5 steht am Rand; Dame und Türme stehen noch zu Hause.",
+          "text": "The move is not free: the pawn on e5, Black's only one in the center, is under attack. The bishop on a5 stands on the edge; the queen and rooks are still at home.",
           "stil": "normal"
          }
         ]
@@ -7426,14 +7426,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "mittel – das Zentrum hält länger als ein reiner Zeitvorsprung.",
+     "text": "medium – the center lasts longer than a pure lead in time.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "Die Kompensation ist real. Bei der Zeit liegt sogar Schwarz vorn, da er am Zug ist, allerdings braucht er diesen Zug für e5. Weiß hat die Tempi, die ihm der wandernde schwarze Läufer geschenkt hat, in Zentrumsbauern gesteckt statt in Figuren. Die Kompensation liegt daher bei Aktivität und Königssicherheit.",
+     "text": "The compensation is real. In time, Black is even ahead, being the side to move, but Black needs this move for e5. White has put the tempi that the wandering black bishop gave away into center pawns instead of pieces. The compensation therefore lies in activity and king safety.",
      "stil": "normal"
     }
    ],
@@ -7447,12 +7447,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Dänisches Gambit nach ",
+     "text": "Danish Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Lxb2"
+     "text": "5. Bxb2"
     }
    ],
    "abschnitt": "3.6",
@@ -7495,7 +7495,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Figur: zwei im Spiel (Lc4, Lb2); Schwarz ist am Zug und kann eine aufholen",
+          "text": "+1 piece: two in play (Bc4, Bb2); Black is to move and can catch up by one",
           "stil": "normal"
          }
         ]
@@ -7505,7 +7505,7 @@
         "text": [
          {
           "art": "text",
-          "text": "keine Figur im Spiel; drei Züge gingen ins Schlagen von Bauern",
+          "text": "no piece in play; three moves went into capturing pawns",
           "stil": "normal"
          }
         ]
@@ -7518,7 +7518,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König noch in der Mitte, aber nicht bedroht",
+          "text": "king still in the center, but not threatened",
           "stil": "normal"
          }
         ]
@@ -7528,7 +7528,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König noch in der Mitte, und die kurze Rochade führt ihn genau vor die beiden Läufer",
+          "text": "king still in the center, and kingside castling would put it right in front of the two bishops",
           "stil": "normal"
          }
         ]
@@ -7541,7 +7541,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Das Läuferpaar beherrscht zwei offene Diagonalen bis f7 und g7; der Bauer e4 steht im Zentrum, und die Dame d1 blickt über die halboffene d-Linie auf d7.",
+          "text": "The bishop pair controls two open diagonals reaching f7 and g7; the pawn on e4 stands in the center, and the queen on d1 eyes d7 along the half-open d-file.",
           "stil": "normal"
          }
         ]
@@ -7551,7 +7551,7 @@
         "text": [
          {
           "art": "text",
-          "text": "keine Figur im Spiel, auch Dame und Türme ohne Aufgabe; kein Bauer im Zentrum",
+          "text": "no piece in play, the queen and rooks without a task too; no pawn in the center",
           "stil": "normal"
          }
         ]
@@ -7563,14 +7563,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "kurz – sobald Schwarz die Diagonalen sperrt und sich entwickelt, verliert das Läuferpaar an Wucht.",
+     "text": "short – as soon as Black blocks the diagonals and develops, the bishop pair loses its punch.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "gefährlich, aber Schwarz kann mit ",
+     "text": "dangerous, but with ",
      "stil": "normal"
     },
     {
@@ -7579,7 +7579,7 @@
     },
     {
      "art": "text",
-     "text": " rechtzeitig zurückgeben und ausgleichen.",
+     "text": " Black can give back material in time and equalize.",
      "stil": "normal"
     }
    ],
@@ -7593,12 +7593,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Dänisches Gambit nach dem Zurückgeben (",
+     "text": "Danish Gambit after returning material (",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10. Sxd2"
+     "text": "10. Nxd2"
     },
     {
      "art": "text",
@@ -7614,12 +7614,12 @@
      "text": [
       {
        "art": "text",
-       "text": "Vergleiche mit der ersten Bilanz nach ",
+       "text": "Compare with the first balance after ",
        "stil": "normal"
       },
       {
        "art": "zug",
-       "text": "5. Lxb2"
+       "text": "5. Bxb2"
       },
       {
        "art": "text",
@@ -7628,7 +7628,7 @@
       },
       {
        "art": "verweis",
-       "text": "Abb. 3.20",
+       "text": "Fig. 3.20",
        "abbildung": "3.20"
       },
       {
@@ -7669,7 +7669,7 @@
         "text": [
          {
           "art": "text",
-          "text": "zwei Figuren im Spiel (Lb2, Sd2); die Damen sind getauscht",
+          "text": "two pieces in play (Bb2, Nd2); the queens have been traded",
           "stil": "normal"
          }
         ]
@@ -7679,7 +7679,7 @@
         "text": [
          {
           "art": "text",
-          "text": "erst eine im Spiel (Sf6), aber Schwarz ist am Zug und zieht mit dem nächsten Figurenzug gleich",
+          "text": "only one in play so far (Nf6), but Black is to move and draws level with the next piece move",
           "stil": "normal"
          }
         ]
@@ -7692,7 +7692,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König noch in der Mitte, ohne Damen aber ungefährdet",
+          "text": "king still in the center, but without queens it is not in danger",
           "stil": "normal"
          }
         ]
@@ -7702,7 +7702,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König f7 steht ohne Damen sicher",
+          "text": "the king on f7 is safe without queens",
           "stil": "normal"
          }
         ]
@@ -7715,7 +7715,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Läufer b2 greift nur den gut gedeckten Springer f6 an; die Türme stehen noch zu Hause.",
+          "text": "The bishop on b2 only attacks the well-defended knight on f6; the rooks are still at home.",
           "stil": "normal"
          }
         ]
@@ -7725,7 +7725,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Springer f6 greift e4 an, der Läufer c8 hat freie Bahn; die Türme stehen noch zu Hause.",
+          "text": "The knight on f6 attacks e4, and the bishop on c8 has a free path; the rooks are still at home.",
           "stil": "normal"
          }
         ]
@@ -7737,23 +7737,23 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "entfällt – die Kompensation ist aufgebraucht.",
+     "text": "not applicable – the compensation is used up.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "Das Gambit ist verpufft. Nach ",
+     "text": "The gambit has fizzled out. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Lxb2"
+     "text": "5. Bxb2"
     },
     {
      "art": "text",
-     "text": " neigte sich die Waage bei der Zeit zu Weiß, jetzt steht sie in beiden Vergleichszeilen gerade, und bei König und Aktivität stehen beide Seiten gleich da: Mit dem Zurückgeben hat Schwarz den Zeitvorsprung zurückgekauft. Obendrein bleibt Weiß der isolierte Bauer a2, eine dauerhafte Schwäche der Bauernstruktur (Kapitel 5, Abschnitt 5.4).",
+     "text": ", the scales tipped toward White in time; now they are level in both compared rows, and in king safety and activity both sides are equal: by giving back material, Black has bought back the lead in time. On top of that, White is left with the isolated pawn on a2, a lasting weakness in the pawn structure (Chapter 5, Section 5.4).",
      "stil": "normal"
     }
    ],
@@ -7767,12 +7767,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Smith-Morra-Gambit nach ",
+     "text": "Smith-Morra Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Sf6"
+     "text": "7... Nf6"
     }
    ],
    "abschnitt": "3.6",
@@ -7802,7 +7802,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer",
+          "text": "+1 pawn",
           "stil": "normal"
          }
         ]
@@ -7815,7 +7815,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+2 Figuren: vier im Spiel (Sc3, Sf3, Lc4, Tf1); Weiß am Zug",
+          "text": "+2 pieces: four in play (Nc3, Nf3, Bc4, Rf1); White to move",
           "stil": "normal"
          }
         ]
@@ -7825,7 +7825,7 @@
         "text": [
          {
           "art": "text",
-          "text": "zwei im Spiel (Sc6, Sf6)",
+          "text": "two in play (Nc6, Nf6)",
           "stil": "normal"
          }
         ]
@@ -7848,7 +7848,7 @@
         "text": [
          {
           "art": "text",
-          "text": "noch nicht rochiert, aber mit ...Le7 und ...O-O bald in Sicherheit",
+          "text": "not castled yet, but soon safe with ...Be7 and ...O-O",
           "stil": "normal"
          }
         ]
@@ -7861,7 +7861,7 @@
         "text": [
          {
           "art": "text",
-          "text": "offene c-Linie; die Dame d1 greift über die halboffene d-Linie schon d6 an, ein Turm folgt mit Td1; Läufer c4 gegen e6",
+          "text": "open c-file; the queen on d1 already attacks d6 along the half-open d-file, and a rook follows with Rd1; the bishop on c4 against e6",
           "stil": "normal"
          }
         ]
@@ -7871,7 +7871,7 @@
         "text": [
          {
           "art": "text",
-          "text": "solide, aber ohne Ziel: Der Springer f6 greift nur den gedeckten Bauern e4 an, die Türme haben noch keine Linie.",
+          "text": "solid, but without a target: the knight on f6 only attacks the defended pawn on e4, and the rooks have no file yet.",
           "stil": "normal"
          }
         ]
@@ -7883,14 +7883,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "mittel – die offenen Linien bleiben, der Vorsprung bei der Zeit schrumpft mit jedem schwarzen Figurenzug.",
+     "text": "medium – the open files remain, but the lead in time shrinks with every black piece move.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "spielbar. Schwarz braucht genaue Entwicklung, damit der Mehrbauer ein echter Vorteil ist.",
+     "text": "playable. Black needs accurate development for the extra pawn to become a real advantage.",
      "stil": "normal"
     }
    ],
@@ -7904,7 +7904,7 @@
    "titel": [
     {
      "art": "text",
-     "text": "Milner-Barry-Gambit nach ",
+     "text": "Milner-Barry Gambit after ",
      "stil": "normal"
     },
     {
@@ -7939,7 +7939,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer",
+          "text": "+1 pawn",
           "stil": "normal"
          }
         ]
@@ -7952,7 +7952,7 @@
         "text": [
          {
           "art": "text",
-          "text": "vier Figuren im Spiel (Sc3, Ld3, De2, Tf1)",
+          "text": "four pieces in play (Nc3, Bd3, Qe2, Rf1)",
           "stil": "normal"
          }
         ]
@@ -7962,7 +7962,7 @@
         "text": [
          {
           "art": "text",
-          "text": "drei im Spiel (Ld7, Sc6, Dd4); Schwarz ist am Zug und kann gleichziehen",
+          "text": "three in play (Bd7, Nc6, Qd4); Black is to move and can draw level",
           "stil": "normal"
          }
         ]
@@ -7975,7 +7975,7 @@
         "text": [
          {
           "art": "text",
-          "text": "rochiert; der König h1 steht außerhalb der Diagonale der Dame d4",
+          "text": "castled; the king on h1 is off the diagonal of the queen on d4",
           "stil": "normal"
          }
         ]
@@ -7985,7 +7985,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König in der Mitte; vor der kurzen Rochade muss erst der Läufer f8 ziehen",
+          "text": "king in the center; before castling kingside, the bishop on f8 must move first",
           "stil": "normal"
          }
         ]
@@ -7998,7 +7998,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Die Bauern e5 und f4 halten das Zentrum und nehmen Schwarz das Feld f6; mit Le3 greift Weiß gleich die Dame an, und ein Turm kommt nach d1. Läufer c1 und Turm a1 stehen aber noch.",
+          "text": "The pawns on e5 and f4 hold the center and take the f6 square away from Black; with Be3, White will attack the queen next, and a rook goes to d1. But the bishop on c1 and the rook on a1 have not moved yet.",
           "stil": "normal"
          }
         ]
@@ -8008,7 +8008,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Die Dame d4 steht zentral, aber allein und wird bald angegriffen; der Springer c6 greift e5 an. Läufer f8 und Turm h8 haben noch keine Aufgabe.",
+          "text": "The queen on d4 is centralized but alone and will soon be attacked; the knight on c6 attacks e5. The bishop on f8 and the rook on h8 have no task yet.",
           "stil": "normal"
          }
         ]
@@ -8020,23 +8020,23 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "mittel – solange der schwarze König in der Mitte steht, bleibt die Kompensation. Nach der Rochade zählt der Mehrbauer.",
+     "text": "medium – as long as the black king is in the center, the compensation remains. After castling, the extra pawn counts.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "zweifelhaft. Bei der Zeit steht es gleich, die Kompensation von Weiß liegt allein in der Königssicherheit und der Aktivität. Mit ",
+     "text": "dubious. Time is equal; White's compensation lies only in king safety and activity. With ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Ld7!"
+     "text": "7... Bd7!"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -8045,7 +8045,7 @@
     },
     {
      "art": "text",
-     "text": " behält Schwarz den Mehrbauern, muss aber jeden Zug auf Schachs und Abzüge prüfen.",
+     "text": ", Black keeps the extra pawn but has to check every move for checks and discovered attacks.",
      "stil": "normal"
     }
    ],
@@ -8059,7 +8059,7 @@
    "titel": [
     {
      "art": "text",
-     "text": "Blackmar-Diemer-Gambit nach ",
+     "text": "Blackmar-Diemer Gambit after ",
      "stil": "normal"
     },
     {
@@ -8094,7 +8094,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer",
+          "text": "+1 pawn",
           "stil": "normal"
          }
         ]
@@ -8107,7 +8107,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Figur: vier im Spiel (Sg5, Lc4, Lf4, Tf1); Weiß am Zug",
+          "text": "+1 piece: four in play (Ng5, Bc4, Bf4, Rf1); White to move",
           "stil": "normal"
          }
         ]
@@ -8117,7 +8117,7 @@
         "text": [
          {
           "art": "text",
-          "text": "drei im Spiel (Sf6, Lg6, Tf8); der Springer b8 steht noch",
+          "text": "three in play (Nf6, Bg6, Rf8); the knight on b8 has not moved yet",
           "stil": "normal"
          }
         ]
@@ -8130,7 +8130,7 @@
         "text": [
          {
           "art": "text",
-          "text": "rochiert, aber ohne f-Bauern vor dem König",
+          "text": "castled, but without the f-pawn in front of the king",
           "stil": "normal"
          }
         ]
@@ -8140,7 +8140,7 @@
         "text": [
          {
           "art": "text",
-          "text": "rochiert; der Läufer g6 schützt f7 und h7",
+          "text": "castled; the bishop on g6 protects f7 and h7",
           "stil": "normal"
          }
         ]
@@ -8153,7 +8153,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Springer g5 und Läufer c4 zielen auf e6, der Turm f1 steht auf der halboffenen f-Linie. Die Dame d1 und der Turm a1 haben noch keine Aufgabe.",
+          "text": "The knight on g5 and the bishop on c4 aim at e6, and the rook on f1 stands on the half-open f-file. The queen on d1 and the rook on a1 have no task yet.",
           "stil": "normal"
          }
         ]
@@ -8163,7 +8163,7 @@
         "text": [
          {
           "art": "text",
-          "text": "solide: Die Bauern c6 und e6 halten d5 und die Diagonalen dicht. Der Springer b8 fehlt noch, Dame und Türme haben noch keine Linie.",
+          "text": "solid: the pawns on c6 and e6 hold d5 and keep the diagonals closed. The knight on b8 is still missing, and the queen and rooks have no file yet.",
           "stil": "normal"
          }
         ]
@@ -8175,14 +8175,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "kurz bis mittel – die halboffene f-Linie bleibt, der Vorsprung bei der Zeit ist nach ...Sbd7 verbraucht.",
+     "text": "short to medium – the half-open f-file remains, but the lead in time is used up after ...Nbd7.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "Die Kompensation reicht objektiv nicht: Schwarz steht fest, sein König ist sicher, und er behält den Mehrbauern. In der Praxis bleibt das Gambit dennoch gefährlich, da Schwarz bis hierher genau spielen muss.",
+     "text": "Objectively, the compensation is not enough: Black stands firm, Black's king is safe, and Black keeps the extra pawn. In practice, the gambit is still dangerous, because Black has had to play accurately to get this far.",
      "stil": "normal"
     }
    ],
@@ -8196,12 +8196,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Euwe-Verteidigung nach ",
+     "text": "Euwe Defense after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6... Le7"
+     "text": "6... Be7"
     }
    ],
    "abschnitt": "3.8",
@@ -8231,7 +8231,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer",
+          "text": "+1 pawn",
           "stil": "normal"
          }
         ]
@@ -8244,7 +8244,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Figur: drei im Spiel (Sc3, Sf3, Lg5); Weiß am Zug",
+          "text": "+1 piece: three in play (Nc3, Nf3, Bg5); White to move",
           "stil": "normal"
          }
         ]
@@ -8254,7 +8254,7 @@
         "text": [
          {
           "art": "text",
-          "text": "zwei im Spiel (Sf6, Le7)",
+          "text": "two in play (Nf6, Be7)",
           "stil": "normal"
          }
         ]
@@ -8267,7 +8267,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König in der Mitte; nach Ld3 und O-O steht er, ohne f-Bauern, luftig",
+          "text": "king in the center; after Bd3 and O-O, it stands exposed without the f-pawn",
           "stil": "normal"
          }
         ]
@@ -8277,7 +8277,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König in der Mitte, kann aber sofort rochieren",
+          "text": "king in the center, but can castle at once",
           "stil": "normal"
          }
         ]
@@ -8290,7 +8290,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Läufer g5 greift den Springer f6 an, die Springer stehen im Zentrum, und nach der Rochade kommt der Turm auf die halboffene f-Linie. Die Dame d1 steht noch hinter d4.",
+          "text": "The bishop on g5 attacks the knight on f6, the knights stand in the center, and after castling the rook goes to the half-open f-file. The queen on d1 is still behind d4.",
           "stil": "normal"
          }
         ]
@@ -8300,7 +8300,7 @@
         "text": [
          {
           "art": "text",
-          "text": "solide, aber der Läufer c8 steht hinter e6; Dame und Türme haben noch keine Linie.",
+          "text": "solid, but the bishop on c8 is behind e6; the queen and rooks have no file yet.",
           "stil": "normal"
          }
         ]
@@ -8312,14 +8312,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "mittel – die halboffene f-Linie bleibt, die Entwicklung holt Schwarz mit ...O-O und ...c5 schnell auf.",
+     "text": "medium – the half-open f-file remains, but Black quickly catches up in development with ...O-O and ...c5.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "spielbar für Schwarz. Er hat dieselbe Aufgabe wie im Damengambit und in der Französischen Verteidigung: zunächst rochieren und mit ...c5 das Zentrum angreifen, im Anschluss den Läufer c8 befreien, wonach der Mehrbauer zählt.",
+     "text": "playable for Black. Black has the same task as in the Queen's Gambit and the French Defense: castle first and attack the center with ...c5, then free the bishop on c8, after which the extra pawn counts.",
      "stil": "normal"
     }
    ],
@@ -8333,12 +8333,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Budapester Gambit nach ",
+     "text": "Budapest Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Sf3"
+     "text": "5. Nf3"
     }
    ],
    "abschnitt": "3.9",
@@ -8347,7 +8347,7 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Schwarz (Gambitspieler)",
+      "Black (gambit player)",
       "White"
      ],
      "zeilen": [
@@ -8368,7 +8368,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer, meist nur vorübergehend",
+          "text": "+1 pawn, usually only temporarily",
           "stil": "normal"
          }
         ]
@@ -8381,7 +8381,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Figur: zwei im Spiel (Sg4, Sc6); Schwarz am Zug",
+          "text": "+1 piece: two in play (Ng4, Nc6); Black to move",
           "stil": "normal"
          }
         ]
@@ -8391,7 +8391,7 @@
         "text": [
          {
           "art": "text",
-          "text": "zwei im Spiel (Lf4, Sf3)",
+          "text": "two in play (Bf4, Nf3)",
           "stil": "normal"
          }
         ]
@@ -8404,7 +8404,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König noch in der Mitte, aber nicht bedroht",
+          "text": "king still in the center, but not threatened",
           "stil": "normal"
          }
         ]
@@ -8414,7 +8414,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König noch in der Mitte, aber nicht bedroht",
+          "text": "king still in the center, but not threatened",
           "stil": "normal"
          }
         ]
@@ -8427,7 +8427,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Beide Springer greifen e5 an; mit ...Lb4+ und ...De7 kommen der Läufer f8 und die Dame dazu.",
+          "text": "Both knights attack e5; with ...Bb4+ and ...Qe7, the bishop on f8 and the queen join in.",
           "stil": "normal"
          }
         ]
@@ -8437,7 +8437,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Läufer f4 und Springer f3 sind an die Verteidigung von e5 gebunden. Die Dame d1 blickt über die halboffene d-Linie auf d7, hat aber noch kein Ziel.",
+          "text": "The bishop on f4 and the knight on f3 are tied to the defense of e5. The queen on d1 eyes d7 along the half-open d-file but has no target yet.",
           "stil": "normal"
          }
         ]
@@ -8449,14 +8449,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "kurz – entweder gewinnt Schwarz den Bauern bald zurück, oder die Kompensation ist verbraucht.",
+     "text": "short – either Black soon wins the pawn back, or the compensation is used up.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "eher zweifelhaft, aber spielbar. Schwarz kauft sich Aktivität, keinen dauerhaften Vorteil, und sein Vorsprung bei der Zeit hält nur, solange er die Züge in Angriffe auf e5 steckt.",
+     "text": "rather dubious, but playable. Black buys activity, not a lasting advantage, and Black's lead in time only lasts as long as the moves go into attacks on e5.",
      "stil": "normal"
     }
    ],
@@ -8470,7 +8470,7 @@
    "titel": [
     {
      "art": "text",
-     "text": "Wolga-Gambit nach ",
+     "text": "Volga Gambit after ",
      "stil": "normal"
     },
     {
@@ -8484,7 +8484,7 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Schwarz (Gambitspieler)",
+      "Black (gambit player)",
       "White"
      ],
      "zeilen": [
@@ -8505,7 +8505,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer",
+          "text": "+1 pawn",
           "stil": "normal"
          }
         ]
@@ -8518,7 +8518,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+2 Figuren: drei im Spiel (Sf6, Lg7, Tf8); Weiß am Zug",
+          "text": "+2 pieces: three in play (Nf6, Bg7, Rf8); White to move",
           "stil": "normal"
          }
         ]
@@ -8528,7 +8528,7 @@
         "text": [
          {
           "art": "text",
-          "text": "eine im Spiel (Sc3); Springer g1, Läufer c1, Dame und beide Türme stehen noch, denn die künstliche Rochade mit g3 und Kg2 bringt keinen Turm ins Spiel",
+          "text": "one in play (Nc3); the knight on g1, the bishop on c1, the queen and both rooks have not moved yet, because the artificial castling with g3 and Kg2 brings no rook into play",
           "stil": "normal"
          }
         ]
@@ -8551,7 +8551,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König g2 steht nach der künstlichen Rochade sicher",
+          "text": "the king on g2 is safe after artificial castling",
           "stil": "normal"
          }
         ]
@@ -8564,7 +8564,7 @@
         "text": [
          {
           "art": "text",
-          "text": "halboffene a- und b-Linie gegen die festen Ziele a2 und b2; der Turm a8 greift a2 schon an, die Dame kommt mit ...Da5 dazu",
+          "text": "half-open a- and b-files against the fixed targets a2 and b2; the rook on a8 already attacks a2, and the queen joins in with ...Qa5",
           "stil": "normal"
          }
         ]
@@ -8574,7 +8574,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Die Bauern d5 und e4 beherrschen das Zentrum und geben Weiß mehr Raum, doch die weißen Figuren haben noch kein Ziel, und der Turm h1 ist hinter Sg1, h2 und dem König g2 eingesperrt.",
+          "text": "The pawns on d5 and e4 control the center and give White more space, but the white pieces have no target yet, and the rook on h1 is shut in behind Ng1, h2 and the king on g2.",
           "stil": "normal"
          }
         ]
@@ -8586,14 +8586,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "dauerhaft – die offenen Linien und die Ziele bleiben oft bis ins Endspiel bestehen.",
+     "text": "lasting – the open files and the targets often remain into the endgame.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "angesehen und gesund. Schwarz liegt zwar auch bei der Zeit vorn, doch davon lebt das Gambit nicht: Gekauft hat Schwarz vor allem dauerhafte Aktivität, und Weiß musste sogar mit seinem Rochaderecht bezahlen.",
+     "text": "respected and sound. Black is ahead in time as well, but that is not what the gambit lives on: above all, Black has bought lasting activity, and White even had to pay with the right to castle.",
      "stil": "normal"
     }
    ],
@@ -8607,12 +8607,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Englund-Gambit nach ",
+     "text": "Englund Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Sd5"
+     "text": "8. Nd5"
     }
    ],
    "abschnitt": "3.9",
@@ -8621,7 +8621,7 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Schwarz (Gambitspieler)",
+      "Black (gambit player)",
       "White"
      ],
      "zeilen": [
@@ -8632,7 +8632,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Schwarz hat mit Dxb2 den Bauern zurückgeholt",
+          "text": "Black has won the pawn back with Qxb2",
           "stil": "normal"
          }
         ]
@@ -8649,7 +8649,7 @@
         "text": [
          {
           "art": "text",
-          "text": "drei Figuren im Spiel (Sc6, Lb4, Da3); Schwarz am Zug",
+          "text": "three pieces in play (Nc6, Bb4, Qa3); Black to move",
           "stil": "normal"
          }
         ]
@@ -8659,7 +8659,7 @@
         "text": [
          {
           "art": "text",
-          "text": "vier im Spiel (Sf3, Ld2, Sd5, Tb1)",
+          "text": "four in play (Nf3, Bd2, Nd5, Rb1)",
           "stil": "normal"
          }
         ]
@@ -8672,7 +8672,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König in der Mitte; Sxc7+ droht",
+          "text": "king in the center; Nxc7+ is threatened",
           "stil": "normal"
          }
         ]
@@ -8682,7 +8682,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König in der Mitte, aber nicht bedroht",
+          "text": "king in the center, but not threatened",
           "stil": "normal"
          }
         ]
@@ -8695,7 +8695,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Zug ist nicht frei: Der Läufer b4 wird dreimal angegriffen, und c7 muss gedeckt werden. Die Dame a3 steht abseits.",
+          "text": "The move is not free: the bishop on b4 is attacked three times, and c7 has to be defended. The queen on a3 is offside.",
           "stil": "normal"
          }
         ]
@@ -8705,7 +8705,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Springer d5, Läufer d2 und der Turm auf der halboffenen b-Linie greifen den Läufer b4 an; der Springer d5 bedroht c7.",
+          "text": "The knight on d5, the bishop on d2 and the rook on the half-open b-file attack the bishop on b4; the knight on d5 threatens c7.",
           "stil": "normal"
          }
         ]
@@ -8717,14 +8717,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "entfällt – Schwarz hat sein Material zurück, aber Weiß behält die Initiative.",
+     "text": "not applicable – Black has the material back, but White keeps the initiative.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "Weiß steht klar besser. Schwarz hat den Bauern zurückgewonnen und dafür mit Zeit bezahlt: Bei der Zeit steht es nur wegen des Zugrechts gleich, und diesen Zug braucht Schwarz, um seinen Läufer zu retten. Die Dame hat viermal gezogen und zählt doch bloß als eine Figur. Das Englund-Gambit ist schwach, da es von einer einzigen Falle lebt.",
+     "text": "White is clearly better. Black has won the pawn back and paid for it with time: in time, it is level only because of the right to move, and Black needs this move to save the bishop. The queen has moved four times and still counts as just one piece. The Englund Gambit is weak, because it lives on a single trap.",
      "stil": "normal"
     }
    ],
@@ -8738,12 +8738,12 @@
    "titel": [
     {
      "art": "text",
-     "text": "Stafford-Gambit nach ",
+     "text": "Stafford Gambit after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Le2!"
+     "text": "6. Be2!"
     }
    ],
    "abschnitt": "3.10",
@@ -8752,7 +8752,7 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Schwarz (Gambitspieler)",
+      "Black (gambit player)",
       "White"
      ],
      "zeilen": [
@@ -8773,7 +8773,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+1 Bauer",
+          "text": "+1 pawn",
           "stil": "normal"
          }
         ]
@@ -8786,7 +8786,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+2 Figuren: zwei im Spiel (Sf6, Lc5); Schwarz am Zug",
+          "text": "+2 pieces: two in play (Nf6, Bc5); Black to move",
           "stil": "normal"
          }
         ]
@@ -8796,7 +8796,7 @@
         "text": [
          {
           "art": "text",
-          "text": "eine im Spiel (Le2)",
+          "text": "one in play (Be2)",
           "stil": "normal"
          }
         ]
@@ -8809,7 +8809,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König noch in der Mitte",
+          "text": "king still in the center",
           "stil": "normal"
          }
         ]
@@ -8819,7 +8819,7 @@
         "text": [
          {
           "art": "text",
-          "text": "König noch in der Mitte; er rochiert, sobald der Angriff über g4 abgewehrt ist",
+          "text": "king still in the center; White castles as soon as the attack via g4 has been repelled",
           "stil": "normal"
          }
         ]
@@ -8832,7 +8832,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Läufer c5 zielt auf f2, und die Dame d8 greift über die halboffene d-Linie d3 an. Ein zweites Ziel am Königsflügel fehlt aber, denn das Feld g4 deckt der Läufer e2.",
+          "text": "The bishop on c5 aims at f2, and the queen on d8 attacks d3 along the half-open d-file. But a second target on the kingside is missing, because the bishop on e2 covers the g4 square.",
           "stil": "normal"
          }
         ]
@@ -8842,7 +8842,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Läufer e2 deckt g4, der Bauer e4 steht im Zentrum; die Dame d1 steht hinter d3 und deckt ihn.",
+          "text": "The bishop on e2 covers g4, and the pawn on e4 stands in the center; the queen on d1 stands behind d3 and defends it.",
           "stil": "normal"
          }
         ]
@@ -8854,23 +8854,23 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "kurz – ist der Angriff über g4 abgewehrt und Weiß rochiert, ist der Druck auf f2 verpufft.",
+     "text": "short – once the attack via g4 has been repelled and White has castled, the pressure on f2 has fizzled out.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "Die Kompensation reicht nicht: Das Gambit gilt nach ",
+     "text": "The compensation is not enough: after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Le2!"
+     "text": "6. Be2!"
     },
     {
      "art": "text",
-     "text": " als widerlegt. Auch zwei Figuren Vorsprung bei der Zeit ändern daran nichts, da Schwarz kein zweites Ziel findet und der Mehrbauer länger hält als der Zeitvorsprung.",
+     "text": ", the gambit is considered refuted. Even a two-piece lead in time does not change that, because Black finds no second target and the extra pawn lasts longer than the lead in time.",
      "stil": "normal"
     }
    ],
@@ -8884,7 +8884,7 @@
    "titel": [
     {
      "art": "text",
-     "text": "Lettisches Gambit nach ",
+     "text": "Latvian Gambit after ",
      "stil": "normal"
     },
     {
@@ -8898,7 +8898,7 @@
     {
      "art": "tabelle",
      "spalten": [
-      "Schwarz (Gambitspieler)",
+      "Black (gambit player)",
       "White"
      ],
      "zeilen": [
@@ -8909,7 +8909,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Schwarz hat den Bauern zurück",
+          "text": "Black has the pawn back",
           "stil": "normal"
          }
         ]
@@ -8926,7 +8926,7 @@
         "text": [
          {
           "art": "text",
-          "text": "drei Figuren im Spiel (Sf6, Le7, Tf8)",
+          "text": "three pieces in play (Nf6, Be7, Rf8)",
           "stil": "normal"
          }
         ]
@@ -8936,7 +8936,7 @@
         "text": [
          {
           "art": "text",
-          "text": "+3 Figuren: sechs im Spiel (Sc3, Sc4, Ld3, Le3, Te1, Tf1); Weiß am Zug",
+          "text": "+3 pieces: six in play (Nc3, Nc4, Bd3, Be3, Re1, Rf1); White to move",
           "stil": "normal"
          }
         ]
@@ -8972,7 +8972,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Der Turm f8 steht auf der offenen f-Linie, doch Springer b8 und Läufer c8 haben noch keine Aufgabe.",
+          "text": "The rook on f8 stands on the open f-file, but the knight on b8 and the bishop on c8 have no task yet.",
           "stil": "normal"
          }
         ]
@@ -8982,7 +8982,7 @@
         "text": [
          {
           "art": "text",
-          "text": "Beide Türme stehen auf den offenen e- und f-Linien, die Springer kontrollieren das Zentrum, der Läufer d3 zielt auf h7.",
+          "text": "Both rooks stand on the open e- and f-files, the knights control the center, and the bishop on d3 aims at h7.",
           "stil": "normal"
          }
         ]
@@ -8994,14 +8994,14 @@
    "haltbarkeit": [
     {
      "art": "text",
-     "text": "entfällt – das Gambit hat Schwarz nichts eingebracht, der weiße Vorsprung bei der Zeit dagegen ist ein echter Vorteil.",
+     "text": "not applicable – the gambit has brought Black nothing, whereas White's lead in time is a real advantage.",
      "stil": "normal"
     }
    ],
    "urteil": [
     {
      "art": "text",
-     "text": "Weiß steht besser. Schwarz hat sein Material zurückgeholt, aber mit Zeit bezahlt: Die Damen sind getauscht, der Angriff über die f-Linie ist ausgeblieben, und Weiß hat doppelt so viele Figuren im Spiel. Das Lettische Gambit ist objektiv zweifelhaft.",
+     "text": "White is better. Black has won the material back but paid with time: the queens have been traded, the attack along the f-file never came, and White has twice as many pieces in play. The Latvian Gambit is objectively dubious.",
      "stil": "normal"
     }
    ],
@@ -9017,7 +9017,7 @@
    "id": "k03-a1",
    "kapitel": 3,
    "abschnitt": "3.4",
-   "titel": "Das Königsgambit",
+   "titel": "The King's Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -9413,7 +9413,7 @@
    "id": "k03-a11",
    "kapitel": 3,
    "abschnitt": "3.5",
-   "titel": "Das Evans-Gambit",
+   "titel": "The Evans Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -9730,7 +9730,7 @@
    "id": "k03-a18",
    "kapitel": 3,
    "abschnitt": "3.6",
-   "titel": "Das Dänische Gambit",
+   "titel": "The Danish Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -10018,7 +10018,7 @@
    "id": "k03-a25",
    "kapitel": 3,
    "abschnitt": "3.6",
-   "titel": "Verwandte Idee gegen Sizilianisch: das Smith-Morra-Gambit",
+   "titel": "A related idea against the Sicilian: the Smith-Morra Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -10198,7 +10198,7 @@
    "id": "k03-a28",
    "kapitel": 3,
    "abschnitt": "3.7",
-   "titel": "Das Milner-Barry-Gambit",
+   "titel": "The Milner-Barry Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -10675,7 +10675,7 @@
    "id": "k03-a36",
    "kapitel": 3,
    "abschnitt": "3.8",
-   "titel": "Das Blackmar-Diemer-Gambit",
+   "titel": "The Blackmar-Diemer Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -11157,7 +11157,7 @@
    "id": "k03-a45",
    "kapitel": 3,
    "abschnitt": "3.9",
-   "titel": "Das Budapester Gambit",
+   "titel": "The Budapest Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -11271,7 +11271,7 @@
    "id": "k03-a48",
    "kapitel": 3,
    "abschnitt": "3.9",
-   "titel": "Ein strategisches Gegenbeispiel: das Wolga-Gambit",
+   "titel": "A strategic counterexample: the Volga Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -11558,7 +11558,7 @@
    "id": "k03-a54",
    "kapitel": 3,
    "abschnitt": "3.9",
-   "titel": "Das Englund-Gambit",
+   "titel": "The Englund Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -11887,7 +11887,7 @@
    "id": "k03-a61",
    "kapitel": 3,
    "abschnitt": "3.10",
-   "titel": "Das Stafford-Gambit",
+   "titel": "The Stafford Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -12248,7 +12248,7 @@
    "id": "k03-a70",
    "kapitel": 3,
    "abschnitt": "3.10",
-   "titel": "Das Lettische Gambit",
+   "titel": "The Latvian Gambit",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -12682,7 +12682,7 @@
    "id": "k03-a81",
    "kapitel": 3,
    "abschnitt": "Übung 15",
-   "titel": "Überblick: solide oder zweifelhaft?",
+   "titel": "Overview: sound or dubious?",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -12810,7 +12810,7 @@
    "id": "k03-a83",
    "kapitel": 3,
    "abschnitt": "Übung 17",
-   "titel": "Überblick: solide oder zweifelhaft?",
+   "titel": "Overview: sound or dubious?",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -12909,7 +12909,7 @@
    "id": "k03-z-d4-d5-c4",
    "kapitel": 3,
    "abschnitt": "3.1",
-   "titel": "Grundstellung",
+   "titel": "Basic position",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {

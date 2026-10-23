@@ -4663,3 +4663,21 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Bullet wird nicht angeboten (Autor, 23.10.2026), auch nicht unter R51.
   Neue Testpunkte ab N770. Nach dem Einbau auf main den Autor informieren, damit P1 mit R24,
   R27, R28 beginnt.
+
+## Wahlmodell der Bots als bedingtes Logit (24.10.2026 nachts, Fable, Teil E Schritt 1)
+
+- **Idee:** Statt Fehlerraten nachzuregeln, lernt ein Modell direkt aus den gespielten Zügen der
+  Menschen, welchen der Kandidaten sie wählen. Kandidaten sind genau die, die auch der Bot sieht
+  (sechs beste Züge der Engine, typische Fehlerzüge je Art, in der Eichung dazu der gespielte Zug).
+  Nutzen eines Kandidaten = Verlustkurve (Stützstellen 0; 0,5; 1,2; 3; 10 Bauern) + Gewicht je
+  Fehlerart + Gewicht je eigenem Fleck + Gewicht je Fleck der Widerlegung + Stilmerkmale + Bonus
+  „bester Zug“; jedes Gewicht linear in der Wertung. Wahrscheinlichkeit ∝ exp(Nutzen).
+- **Warum so:** Dieselbe Kandidatenerzeugung in Eichung und Spiel macht die Raten des Bots von
+  selbst menschlich (Gelegenheiten wie in echten Partien); die Kopplung Fleck → Fehlerart entsteht
+  aus den Gewichten der Widerlegungsflecken; der Phasenregler (Variante A) setzt die Wertung ein;
+  die Persönlichkeit eines Bots verschiebt einzelne Gewichte innerhalb der Spielerbereiche.
+- **Probe (2000 Stellungen):** Trefferquote des gespielten Zuges 36–43 % (Zufall 10–12 %), die
+  Verlustkurve fällt mit der Wertung steiler. Vollständige Eichung an 180 000 Stellungen läuft
+  (lokal buch/arbeit/zugwahl/merkmale.py, wahlmodell.py).
+- **Offen:** Maia als Grundgewicht statt der Verlustkurve (Versuch), Tagesform und Zeitnot als
+  Faktoren auf tau, Übertragung der Gewichte in die App (engine/menschenwahl.ts ersetzen).

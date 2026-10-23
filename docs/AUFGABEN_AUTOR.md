@@ -144,9 +144,104 @@ Spielgefühl.
 - [ ] N627. **Einstellungen › Fehlerarten:** Die Abhakliste heißt jetzt „Fehlerarten der
       vorgefertigten Bots“ und gilt nur für sie; die Stufen ohne Bot machen keine Zusatzfehler.
 
+### Neu in P6: englische Buchdaten (Opus, 23.10.2026; erst testbar, wenn P6 in der App ist)
+
+Alle Buchdaten gibt es jetzt auch auf Englisch: Bildunterschriften, Abschnittstitel, Übungen,
+Warum-Fragen, Bilanzen, Fallenchecks, Steckbriefe, Glossar und Nachschlagen. Die App zeigt sie,
+sobald die englischen Daten eingeschaltet sind (eine kleine Änderung im App-Code, die noch
+aussteht; bis dahin erscheinen die Buchdaten auch in „English (preview)“ deutsch). Zum Testen
+jeweils Einstellungen › Anzeige › „English (preview)“.
+
+- [ ] N730. **Kapitel und Lernziele:** Book: Die Kapitel heißen englisch („Basic principles of
+      chess“, „Endgame deep dive“ …). Ein Kapitel öffnen: Abschnitte, Kacheltexte und die
+      Lernziele unter „Master checklist“ sind englisch.
+- [ ] N731. **Bildunterschriften:** Abb. 1.2: „After 2. Bf4 – Goal 1: the pawn occupies d4
+      (gold) …“. Züge stehen mit englischen Buchstaben (B, N, R, Q), auch in den Kacheln unter
+      dem kleinen Brett.
+- [ ] N732. **Übungen:** Kapitel 1 › Übung 4 („Drohung ignoriert?“): Nach dem Lösen steht
+      „Knight fork with check. Instead of saving the attacked knight, White gives check: 1. Nc7+!
+      …“. Der Lösungszug wird mit englischer Notation erkannt.
+- [ ] N733. **Warum-Fragen:** Abb. 1.26: „Why is 6. Bd3 inaccurate?“ mit drei englischen
+      Antworten und der Erklärung „Three against three becomes three against two …“.
+- [ ] N734. **Steckbriefe und Bilanzen:** Kapitel 2: Die Eröffnungen heißen „Ruy Lopez“,
+      „Italian Game“, „Petrov Defense (Russian Game)“ usw.; Zielbilanzen und Faktorenbilanzen
+      (Kapitel 3, etwa Königsgambit) zeigen „Material“, „Time“, „King safety“, „Activity“ mit
+      ✓ ◐ ✗ wie im Deutschen.
+- [ ] N735. **Fallenchecks:** Kapitel 4, eine Falle (etwa „Légal Trap“): Die Zeilen heißen wie
+      die Warnsignale und Prüffragen der App („Gift“, „Two replies ahead“, „Pin check“ …).
+- [ ] N736. **Glossar:** Nachschlagen › Glossary: 255 englische Stichwörter nach dem englischen
+      Alphabet („50-move rule“, „Active rook“ …). „Discovery“ antippen: Der Verweis führt zu
+      „Discovered attack“, „See also“ zu „Long-range piece“.
+- [ ] N737. **Nachschlagen:** Thinking routine (vier Schritte, Safety check, die drei Phasen
+      Opening/Middlegame/Endgame mit ihren Werkzeugen) und Master checklist sind englisch.
+- [ ] N738. **Ganze Kapitel ohne Deutsch:** Claude hat jedes Kapitel in der App durchgesehen
+      (jede Abbildung, Kapitelseite, jede Übung mit Lösung): kein deutscher Rest außer
+      Eigennamen (Heuäcker, Göring, Sämisch). Blätter ein Kapitel deiner Wahl durch; fällt dir
+      ein deutscher Satz oder eine holprige Stelle auf, schreib „N738: Abb. x.y …“.
+- [ ] N739. **Englisch im Ganzen:** Lies zwei, drei Unterschriften und eine Erklärung. Klingt
+      das Englisch natürlich genug für die Vorschau, bis dein englisches Buch kommt?
+
 ---
 
 ## Teil 2: Entscheiden
 
 Zurzeit ist nichts offen. Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene
 Empfehlung und stellt sie dir am Ende hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“).
+
+### Aus der englischen Übersetzung (P6, 23.10.2026)
+
+- [ ] EN4. **Buchbefunde:** Beim Übersetzen fielen diese Stellen im deutschen Buch auf. Nichts
+      wurde geändert (das Buch änderst nur du); übersetzt ist, was dasteht. Je Punkt „ok so“ oder
+      deine Änderung:
+      a) Denkroutine (Nachschlagen): „Erlaube ich ein Schach oder Matt?“ ohne Nummern; im
+      Sicherheitsblick sonst „3. Erlaube ich ein Schach oder gar ein Matt?“. Eine Fassung?
+      b) Lernziele: Kapitel 0 bis 6 „solltest du Folgendes sicher können“, Kapitel 7 bis 12 ohne
+      „sicher“. Absicht?
+      c) Titel mit „1.\,d4“, „5.\,d4“ (Kapitel 2, Gambits für Schwarz in Kapitel 3): Der
+      LaTeX-Abstand steht roh in den App-Daten, auch auf Deutsch sichtbar. Claude kann das in der
+      Pipeline beheben, wenn du willst.
+      d) Abb. 1.23, Unterabschnitt: Leerzeichen nach den öffnenden Anführungszeichen („ Schach“).
+      e) Kapitel 1, Übung „Drohung ignoriert?“: nach „die Antwort ist 1. Sc7+!“ fehlt der Punkt;
+      ebenso Abb. 4.22 nach „Nach 6. …“.
+      f) Kapitel 2, Bilanz-Übung zur Italienischen Partie: „Rochiert Schwarz dagegen zunächst,
+      rückt Weiß mit 9. d5 vor, und nach 8... d6 …“ – die Zugreihenfolge ist unklar.
+      g) Kapitel 2, Fazit der Bilanz zum Läuferspiel zitiert „flexibel und solide“, der
+      Steckbrief sagt „ruhig und flexibel“.
+      h) Kapitel 3, Übung echtes oder Scheinopfer (Budapester Gambit): erst „liegt dazwischen“,
+      dann „Es ist also ein echtes Opfer“.
+      i) Kapitel 3, Dänisch-Bilanz nach dem Zurückgeben: „jetzt steht sie in beiden
+      Vergleichszeilen gerade“ – welche Zeilen?
+      j) Kapitel 4, Arche-Noah-Falle: F1 „Ziel für ...c5 und ...c4“ (…c4 trifft den Läufer b3,
+      nicht die Dame); Rettung „holt den Bauern d4 mit 8. Ld5 zurück“ (8. Ld5 greift a8 an, d4
+      kommt nicht direkt zurück).
+      k) Kapitel 4, Halosar-Falle, F1: „Nach 8. Sb5 verhindert die Frage das Matt, die Stellung
+      rettet sie nicht mehr“ ist schwer zu verstehen.
+      l) Abb. 5.8 nennt 6. Le2 e5 7. Sb3 „Najdorf-Hauptvariante“; heute gelten 6. Le3 und 6. Lg5
+      als Hauptvarianten, 6. Le2 als klassische Variante.
+      m) Bilanz zu Abb. 5.44, Schwarz, Richtung: „greift zwar die Spitze an, macht aber die
+      f-Linie halboffen“ – „zwar … aber“ ohne Gegensatz.
+      n) Abb. 5.14: die Erklärung sagt, 11. a4 „bremst“ …b5, das Urteil der Bilanz „verhindert“.
+      o) Kapitel 6: Die Lösung der Planbilanz-Übung zur Königsindischen formuliert die Planfragen
+      um („Wo?“, „Was will der Gegner?“, „Plan in einem Satz“); Abb. 6.7 sagt „Überzahl am
+      Königsflügel“, die London-Übung „Übermacht“.
+      p) Kapitel 7, Übung zu Morphys Opfer: „Weiß gibt zwar die Dame für einen Springer“ – nach
+      16. Db8+ Sxb8 bekommt Weiß nichts dafür; gemeint wohl „an einen Springer“.
+      q) Abb. 7.35 steht unter „Das Grundreihenmatt“, zeigt aber ein Erstickungsmatt.
+      r) Kapitel 8, Übung zum Durchbruch: „über d6 und e7 nach d7“ – Umweg? Abb. 8.23: „folgt
+      nach e4 und erreicht die Schlüsselfelder“, e4 ist selbst eines.
+      s) Kapitel 9: Abb. 9.2 und 9.6 nennen vier Linien Schachdistanz, Abb. 9.5 drei; Abb. 9.44
+      „Als Läuferseite gehört er in die Ecke …“ („er“ ist der König).
+      t) Kapitel 12, Übung zum Fehlerprotokoll: Aufgabe nennt Tabelle 12.2, Lösung Tabelle 12.1.
+      u) Glossar: „Abzugsschach … darf fast alles angreifen“ (gemeint „kann“); „Hängende Bauern“
+      ohne die halboffenen Nachbarlinien; „Zeitgutschrift“ auch für die Ausgleichszeit nach
+      einem regelwidrigen Zug gilt so nur auf Deutsch.
+- [ ] EN5. **Neue englische Begriffe (vorläufig wie EN1, schon umgesetzt, Widerspruch genügt):**
+      Die 255 Glossarstichwörter stehen englisch im Glossar der App. Dazu neu geprägt: superior
+      force (Übermacht), error radar (Fehler-Radar), protection test (Deckungstest), durability
+      (Haltbarkeit), stop moment (Stopp-Moment), trap-setter test, skeleton balance, plan
+      questions, guiding questions, box method, checking distance, building a bridge, stalemate
+      reserve, ghost piece, theme block, starter pack, hope chess, capture reflex,
+      Released means moved (Losgelassen ist gezogen), Touch-move, Luft (Luftloch), Clamp trap
+      (Klammerfalle), Desperado rook (Rasender Turm), Staircase mate (Treppenmatt; gängiger wäre
+      „ladder mate“). Eröffnungen mit den üblichen englischen Namen (Ruy Lopez, Petrov Defense,
+      Trompowsky Attack …), Spieler in englischer Schreibweise (Karpov, Korchnoi, Alekhine).

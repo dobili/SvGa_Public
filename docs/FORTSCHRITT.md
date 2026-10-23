@@ -1399,10 +1399,16 @@ deutsche Züge durchsucht (Playwright, Skript nur lokal).
 | Schritt | Stand |
 | --- | --- |
 | Schicht, Tests, Kapiteltitel (index.json) | fertig |
-| Kapitel 0 (mit Lernzielen und Zeile der Gesamt-Checkliste) | fertig, App geprüft |
-| Kapitel 1 bis 12 | offen |
-| Glossar | offen |
-| Nachschlagen (Denkroutine, restliche Gesamt-Checkliste) | offen |
+| Kapitel 0 bis 12 (mit Lernzielen und Zeilen der Gesamt-Checkliste) | fertig, jedes in der App geprüft |
+| Glossar (255 Einträge, Verweise, englisches Alphabet) | fertig, in der App geprüft |
+| Nachschlagen (Denkroutine, Gesamt-Checkliste, Lernziele) | fertig, in der App geprüft |
+
+`python -m pipeline.uebersetzen --streng` meldet für alle 16 Dateien „0 Sätze offen“. Übersetzt
+in Teilaufträgen je Datei mit gemeinsamer Anleitung (lokal `buch/arbeit/uebersetzung/ANLEITUNG.md`,
+verbindliche Begriffe: `docs/ENGLISCH_BEGRIFFE.md`, die 255 Glossarstichwörter und die Namen und
+Buchzitate aus `en.json`); Sätze, die in mehreren Kapiteln stehen, und die Stichwörter vorab
+einheitlich. Testpunkte N730–N739, Rückfragen EN4 (Buchbefunde aus der Übersetzung) und EN5
+(neue englische Begriffe) in `docs/AUFGABEN_AUTOR.md`.
 
 **Bevor die englischen Daten in der App erscheinen (App-Code, nicht Teil von P6):**
 
@@ -1415,12 +1421,20 @@ deutsche Züge durchsucht (Playwright, Skript nur lokal).
    `spalten[0].startsWith("Weiß")`), `analyse/k2-eroeffnung.ts` (`KURZFASSUNGEN` nach dem
    deutschen Namen des Steckbriefs), `schach/eroeffnungsindex.ts` (`ARTIKEL`,
    `ALLGEMEINE_TITEL` „Weitere Varianten“/„Grundstellung“, Wortvergleich Steckbrief–Beispiel).
-   Sie brauchen die englischen Formen mit (Liste der englischen Namen in den Tabellen von
-   Kapitel 2, 3 und 6).
+   Sie brauchen die englischen Formen mit: „Material“, „Time“, „King safety“, „Activity“,
+   Spalten beginnen mit „White“; Steckbriefe „Ruy Lopez“, „Italian Game“, „Scotch Game“,
+   „Petrov Defense (Russian Game)“, „Sicilian Defense“, „Queen's Gambit“, „London System“,
+   „Trompowsky Attack“, „French Defense“, „Caro-Kann Defense“, „King's Indian Defense“,
+   „Two Knights Defense and Bishop's Opening“, „Nimzo-Indian Defense“; allgemeine Titel
+   „Further lines“, „Basic position“; Artikel „The“.
 3. `ui/komponenten/Abbildungsgalerie.tsx` (Kurztext der Kacheln) zeigt Zugteile ohne
    `buchzugInSprache`; mit den englischen Daten ist das kein Problem mehr, weil die Zugteile dort
    schon englisch sind.
 
-**Nächster Schritt:** Kapitel 1 übersetzen (`buch/arbeit/uebersetzung/offen/kap01.json`, dazu
-Lernziele und Checklistenzeile 1 aus `offen/nachschlagen.json`), einspielen, bauen, in der App
-prüfen, committen und pushen; dann Kapitel 2 usw.
+**Nächster Schritt:** P6 ist fertig. Für die Leser fehlen nur die App-Schritte oben (1 bis 3,
+nicht Teil von P6): Datensprache „en“ einschalten, Trainerdaten bis zu ihrer Übersetzung weiter
+deutsch laden, die drei Stellen mit deutschen Datenschlüsseln anpassen. Danach N730–N739 und
+die Antworten zu EN4/EN5 einarbeiten. Ändert der Autor Buchtext, erscheinen die geänderten Sätze
+beim nächsten `python -m pipeline.uebersetzen` als offen (`buch/arbeit/uebersetzung/offen/`).
+Noch deutsch und außerhalb von P6: Trainerdaten (`inhalte/de/trainer/`), Trainingsseiten der
+Website (`inhalte/de/training/`), Namen der Bots.

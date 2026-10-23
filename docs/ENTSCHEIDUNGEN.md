@@ -4392,3 +4392,16 @@ Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
   3 und 4 → 6, 5 → 7, 6 → 8, 7 → 9, 8 → 10). Eine ältere App lehnt Format 6 ab.
 - **Entfernt:** Strähne und Lagefaktoren der alten Zugwahl (zählten doppelt), der Wahlkern der
   Menschen für die Grundschicht (ersetzt durch die geeichte Grundschicht der Stufe).
+
+## Eigenes Elo-System statt Schalter chess.com/Lichess (23.10.2026, Wunsch des Autors)
+
+- Der Schalter „Genauigkeit wie Lichess / Mittelweg / chess.com“ und die Doppelanzeige
+  (chess.com ≈ … · Lichess ≈ …) entfallen. Die App schätzt eine eigene Elo-Zahl, geeicht an den
+  Lichess-Wertungen der gesammelten Spieler (Glicko-2, aktive Spieler mit eingeschwungener Zahl).
+- **Eine Zahl je Zeitklasse** (Entscheidung des Autors): Blitz, Schnellschach und klassisch je
+  eigenes Modell und eigene Skala (wie Lichess), keine Umrechnung auf eine gemeinsame Zahl.
+- Schätzung aus mehreren Kennzahlen (Zugqualität, Schwierigkeit, Phasen, Fehlerarten, blinde
+  Flecken, Zeit, Eröffnung), Prüfung an zurückgelegten Spielern; welche Kennzahlen bleiben,
+  entscheidet der Zugewinn an Treffsicherheit (Stufenvergleich). Ausgabe mit 90-%-Bereich.
+- Elo je Phase bleibt, als eigenes Teilmodell je Phase mit eigenem Bereich; angezeigt nur, wenn
+  der Bereich schmal genug ist. Umsetzung nach der Auswertung der Spielerprofile.

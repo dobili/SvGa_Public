@@ -252,14 +252,14 @@ test("Abhakliste der Fehlerarten (0.2.60): ein Haken weniger überlebt das Neula
   await leiste.getByRole("button", { name: "Spielen" }).click();
   const karte = page.getByTestId("fehlerarten-abhakliste");
   await karte.locator("summary").click();
-  await expect(karte.getByRole("status")).toHaveText("14 von 14 Arten erlaubt");
+  await expect(karte.getByRole("status")).toHaveText("18 von 18 Arten erlaubt");
   await karte.getByRole("checkbox", { name: /eine Figur hängen lassen/ }).uncheck();
-  await expect(karte.getByRole("status")).toHaveText("13 von 14 Arten erlaubt");
+  await expect(karte.getByRole("status")).toHaveText("17 von 18 Arten erlaubt");
   await page.reload();
   await leiste.getByRole("button", { name: "Spielen" }).click();
   await karte.locator("summary").click();
-  await expect(karte.getByRole("status")).toHaveText("13 von 14 Arten erlaubt");
+  await expect(karte.getByRole("status")).toHaveText("17 von 18 Arten erlaubt");
   await expect(karte.getByRole("checkbox", { name: /eine Figur hängen lassen/ })).not.toBeChecked();
   await karte.getByRole("button", { name: "Keine erlauben" }).click();
-  await expect(karte.getByRole("status")).toHaveText("0 von 14 Arten erlaubt");
+  await expect(karte.getByRole("status")).toHaveText("0 von 18 Arten erlaubt");
 });

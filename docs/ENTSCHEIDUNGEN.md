@@ -4405,3 +4405,20 @@ Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
   entscheidet der Zugewinn an Treffsicherheit (Stufenvergleich). Ausgabe mit 90-%-Bereich.
 - Elo je Phase bleibt, als eigenes Teilmodell je Phase mit eigenem Bereich; angezeigt nur, wenn
   der Bereich schmal genug ist. Umsetzung nach der Auswertung der Spielerprofile.
+
+## Fehlerarten geschärft und ergänzt (22. und 23.10.2026, Plan „Bots, zweite Runde“, Teil A)
+
+- **Neue Arten** aus 2600 und 6147 Lichess-Partien (ein Drittel der Fehler passte vorher in keine
+  Art): Bauer eingestellt, Schlag verpasst, Bauernzug ohne Not, Königszug ohne Not; „Figur
+  hängen“ auch, wenn erst die Widerlegung der Engine die Figur mit Gewinn schlägt.
+- **Taktik übersehen** nur, wenn die Widerlegung das Motiv spielt und Material gewinnt (Fehlalarme
+  des Autors 9… Df6 „Gabel Sd5“, 4. c4 „Gabel e5“).
+- **Schlagreflex** (Festlegung mit dem Autor, Glossar „scheinbar ungedeckte Figur“): Der Schlag
+  sieht nach Gewinn aus, die Bestrafung folgt erzwungen in höchstens vier Halbzügen. Ein Schlag,
+  der schon laut Abtausch verliert, ist „Figur hängen“; ein gleichwertiger Abtausch nie.
+- **Falscher Abtausch** nicht beim Zurückschlagen. **König passiv** nach Kapitel 8, Regel 1 mit
+  dem Königsweg des Endspielwerkzeugs.
+- **Blinde Flecken:** Rochade ist kein Schlag, en passant schon (zwei Fehler der Regeln behoben).
+  Der eigene Fleck zählt in Auswertungen nur bei klar bestem Zug (Abstand zum zweitbesten ≥ 0,3).
+- **Prüfung** in Tiefe 20 (6885 Züge): bestätigt meist 89–97 %, schwächer König passiv,
+  Bauernvorstoß, ungenau (Bewertungsrauschen der Tiefe 12); Zahlen in docs/FORTSCHRITT.md.

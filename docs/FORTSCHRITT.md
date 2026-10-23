@@ -1404,6 +1404,12 @@ jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Au
       2 Bauern schlechter als der beste Zug), sonst neues Beispiel.
 - [x] R22 Partienliste: Filter und Sortierung über Symbole, mehrere Filter zugleich.
 - [x] R23 PGN-Import bei der Partienliste: auswerten, als nicht gewertete Partie speichern.
+- [ ] R54 Partienliste: ein Symbol „Filter“ und ein Symbol „Sortieren“, je mit aufklappender
+      Liste in Worten (statt unbeschrifteter Einzelsymbole); Varianten vorher zeigen (Wunsch des
+      Autors, 23.10.2026 abends; nach der Bot-Kalibrierung, P7b).
+- [ ] R55 Auswertung: Liste der Fehler und Patzer immer eingeklappt (P7b).
+- [ ] R56 Auswertung: Umschalter Sicht Weiß/Schwarz statt zwei Spalten (Voreinstellung: eigene
+      Seite), volle Breite; Genauigkeiten und Zugklassen grafisch statt kleiner Zahlen (P7b).
 - [ ] R24 Bot mit festgelegter Eröffnung: ohne Buchzug Zugfolgen derselben Eröffnung aus der
       Lichess-Liste.
 - [ ] R25 V1: restliche Buchdaten ins Englische (inhalte/en, kapitelweise).

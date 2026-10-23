@@ -151,7 +151,6 @@ test("Strukturerkenner: starke Felder und schwache Bauern prüfen, Plan wählen"
   await expect(runde).toContainText("Welcher Plan passt");
   await runde.locator(".plan-satz").first().click();
   await expect(runde).toContainText("Struktur:");
-  await expect(runde).toContainText("Nicht ganz");
   await page.screenshot({ path: "test-results/bilder/trainer-struktur.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");

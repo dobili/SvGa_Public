@@ -64,6 +64,10 @@ Teil fertig ist.
       selbst aus; die Karte unter dem Brett bleibt. Öffnest du eine beendete Partie aus der Liste,
       kommt das Schild nicht noch einmal. Bei Partien zu zweit steht „Weiß gewinnt“ oder
       „Schwarz gewinnt“.
+- [ ] N655. **Startanimation (R39):** Schließe die App ganz und öffne sie neu. Etwa zwei Sekunden
+      lang wächst der goldene Springer vom Cover mit goldenem Schein auf dunklem Grund heran,
+      darunter „Schach von Grund auf“, dann blendet alles aus. Ein Tipp irgendwo überspringt sie.
+      Beim Neuladen kommt sie nicht, und höchstens einmal je Stunde (siehe Teil 2, P2-A).
 
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 

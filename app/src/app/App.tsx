@@ -33,6 +33,7 @@ import { AufgabenRueckweg } from "../ui/komponenten/AufgabenRueckweg";
 import { Leiste } from "../ui/komponenten/Leiste";
 import { Speicherhinweis } from "../ui/komponenten/Speicherhinweis";
 import { SafariHinweis } from "../ui/komponenten/SafariHinweis";
+import { Startanimation } from "../ui/komponenten/Startanimation";
 import { SicherungsHinweis } from "../ui/komponenten/SicherungsHinweis";
 import { UpdateHinweis } from "../ui/komponenten/UpdateHinweis";
 import { useEinstellungen } from "./einstellungen";
@@ -135,6 +136,7 @@ function Hauptrahmen() {
       </main>
       <AufgabenRueckweg />
       <Leiste />
+      <Startanimation />
     </div>
   );
 }

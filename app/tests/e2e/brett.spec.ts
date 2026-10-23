@@ -1,6 +1,6 @@
 /**
  * Oberflächentests für Brett und Bedienung (Paket P2): Zuganimation (R37), Ergebnis auf dem
- * Brett (R38).
+ * Brett (R38), Startanimation (R39).
  */
 import { expect, test, type Page } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
@@ -103,4 +103,19 @@ test("Ergebnis auf dem Brett (R38): erscheint beim Matt, verschwindet, die Karte
   await page.locator(".partienliste li.partieeintrag").first().getByRole("button").first().click();
   await expect(page.getByTestId("partieende")).toBeVisible();
   await expect(blende).toHaveCount(0);
+});
+
+test("Startanimation (R39): goldener Springer beim Start, Tipp überspringt, nicht beim Neuladen", async ({
+  page,
+}) => {
+  await starteImBrowser(page, { startanimation: true });
+  const start = page.getByTestId("startanimation");
+  await expect(start).toBeVisible();
+  await expect(start).toHaveAccessibleName("Startbild überspringen");
+  await start.click();
+  await expect(start).toHaveCount(0);
+  await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+  await page.reload();
+  await expect(page.getByRole("heading", { name: "Buch" })).toBeVisible();
+  await expect(start).toHaveCount(0);
 });

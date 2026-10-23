@@ -73,6 +73,12 @@ Teil fertig ist.
       etwa 5 : 4 breit ist (etwa 1000 × 800), springt die App sofort, ohne Neuladen, in eine
       Spalte mit dem Brett oben; breiter gezogen wieder zurück. Bisher kippte sie erst bei einem
       fast quadratischen Fenster, vorher wurden Brett und Text sehr eng (siehe Teil 2, P2-B).
+- [ ] N657. **Weiß und Schwarz in der Fehlerliste (R53):** Einstellungen › Anzeige › Nachtmodus
+      „an“. Spiele eine kurze Partie oder lies eine ein (Spielen › „Partie einlesen (PGN)“, etwa
+      „1. e4 e5 2. Qh5 Nc6 3. Qxf7+ Kxf7 0-1“). In der Auswertung unter „Grobe Patzer“ steht vor
+      jedem Zug ein kleiner Bauer auf einem runden Plättchen: weißes Plättchen mit dunklem Bauern
+      für Weiß, dunkles Plättchen mit hellem Bauern für Schwarz, beide mit Rand. Gut zu erkennen,
+      auch im hellen Modus?
 
 ### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
 
@@ -192,3 +198,17 @@ Spielgefühl.
 
 Zurzeit ist nichts offen. Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene
 Empfehlung und stellt sie dir am Ende hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“).
+
+- [ ] P2-A. **Wann kommt die Startanimation? (R39, N655)** Du wolltest sie „nicht bei jedem
+      Neuladen“. Empfehlung: nur bei einem neuen Start der App (eine neue Sitzung des Browsers;
+      die installierte App startet nach dem Schließen neu, ein Neuladen nicht) und höchstens
+      einmal je Stunde, nie bei „Bewegung reduzieren“ des Geräts. Einen Schalter zum Abschalten
+      gibt es nicht, weil ein Tipp sie sofort beendet. Schon umgesetzt, Widerspruch genügt (etwa
+      „nur einmal am Tag“ oder „mit Schalter“).
+- [ ] P2-B. **Ab wann eine Spalte? (R40, N656)** Die App wechselte schon live mit der
+      Fenstergröße, aber erst, wenn das Fenster schmaler als hoch war; am Rechner wurde es vorher
+      eng. Empfehlung: zwei Spalten (Brett links, Text rechts) erst ab einem Seitenverhältnis von
+      5 : 4, darunter eine Spalte mit dem Brett oben. Handy und Tablet quer bleiben zweispaltig.
+      Schon umgesetzt, Widerspruch genügt (etwa eine andere Grenze). Falls du etwas anderes
+      gemeint hast (etwa Safari am Mac, das gar nicht wechselt), schreib bitte kurz, in welchem
+      Browser.

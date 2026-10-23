@@ -1403,6 +1403,13 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
 - [x] R40 Desktop: Das Layout war schon reines CSS und wechselte live, kippte aber erst bei
       quadratischem Fenster. `ui/stil/breit.css` nimmt jetzt das Seitenverhältnis 5 : 4 als
       Grenze; Oberflächentest in `brett.spec.ts` (läuft in CI auch in WebKit). N656, P2-B.
-- [ ] R53 Nachtmodus: Symbol für Weiß in der Fehlerliste.
+- [x] R53 Nachtmodus: `.seitenfigur` in `ui/stil/spiel.css` steht auf einem runden Plättchen
+      in der Farbe der Seite mit Rand (`--linie-stark`), in hell und dunkel geprüft. N657.
 
-**Nächster Schritt:** R53.
+Rückfragen nach Regel 9 in AUFGABEN_AUTOR Teil 2: P2-A (wann die Startanimation kommt), P2-B
+(Grenze 5 : 4 für zwei Spalten). Bekannt: `trainer.spec.ts` „Wiederholung … Strukturerkenner“
+ist in der Cloud-Umgebung unter Last gelegentlich rot, auf `weiter-ohne-autor` ebenso (1–2 von
+14 je Lauf), einzeln grün.
+
+**Nächster Schritt:** Paket P2 fertig. Koordinations-Chat: Zweig `p2-brett` übernehmen,
+Version erhöhen; dann Rückmeldung des Autors zu N650–N657, P2-A, P2-B.

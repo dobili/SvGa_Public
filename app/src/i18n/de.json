@@ -3273,5 +3273,16 @@
   "spielen.ordnung.staerke.auf": "Deine schwächste Spielstärke zuerst",
   "spielen.ordnung.gegner.ab": "Stärkster Gegner zuerst",
   "spielen.ordnung.gegner.auf": "Schwächster Gegner zuerst",
-  "partie.titelBot": "gegen {name}"
+  "partie.titelBot": "gegen {name}",
+  "spielen.filter.zeit": "Bedenkzeit",
+  "spielen.filter.zeit.bullet": "Bullet",
+  "spielen.filter.zeit.blitz": "Blitz",
+  "spielen.filter.zeit.schnell": "Schnellschach",
+  "spielen.filter.zeit.klassisch": "Klassisch",
+  "spielen.filter.zeit.ohne": "ohne Uhr",
+  "zeitklasse.bullet": "Bullet",
+  "zeitklasse.blitz": "Blitz",
+  "zeitklasse.schnell": "Schnellschach",
+  "zeitklasse.klassisch": "Klassisch",
+  "spielen.zeitangabe": "{klasse} {minuten} + {sekunden}"
 }

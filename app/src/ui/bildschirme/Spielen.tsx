@@ -20,6 +20,7 @@ import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { neuePartie, spielbar } from "../../spiel/partie";
 import { UHR_VORGABEN } from "../../spiel/uhr";
+import { uhrFuerStart, uhrname, uhrstelle } from "../komponenten/uhrwahl";
 import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
@@ -43,26 +44,6 @@ import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
 import { Stellungseditor } from "../komponenten/Stellungseditor";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
-const MINUTE_MS = 60_000;
-const SEKUNDE_MS = 1000;
-
-/** Name einer Uhrvorgabe: „Ohne Uhr“ oder „15 + 10“. */
-function uhrname(stelle: number): string {
-  const vorgabe = UHR_VORGABEN[stelle];
-  if (!vorgabe) return t("spielen.uhr.ohne");
-  return t("spielen.uhr.zeit", {
-    minuten: vorgabe.grundzeitMs / MINUTE_MS,
-    sekunden: vorgabe.zuschlagMs / SEKUNDE_MS,
-  });
-}
-
-function uhrstelle(vorlieben: Spielvorlieben): number {
-  const stelle = UHR_VORGABEN.findIndex(
-    (v) =>
-      v?.grundzeitMs === vorlieben.uhr?.grundzeitMs && v?.zuschlagMs === vorlieben.uhr?.zuschlagMs,
-  );
-  return Math.max(0, stelle);
-}
 
 /** Eindeutige Kennung einer Partie aus Zeit und Zufall. */
 function neueKennung(): string {
@@ -108,7 +89,11 @@ function Einstellungen({
   const v = wahl.vorlieben;
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
   const mit = (teil: Partial<Spielvorlieben>) => setze({ ...wahl, vorlieben: { ...v, ...teil } });
-  const uhrStellen = UHR_VORGABEN.map((_, stelle) => String(stelle));
+  // R51: Gewertete Partien haben immer eine Uhr; „Ohne Uhr“ gibt es nur ungewertet.
+  const mitUhrPflicht = wirdGewertet(fen, v);
+  const uhrStellen = UHR_VORGABEN.flatMap((vorgabe, stelle) =>
+    mitUhrPflicht && vorgabe === null ? [] : [String(stelle)],
+  );
   const engine = v.gegner === "engine";
   // Ein Gegner bringt seine Stufen je Phase mit; ohne Gegner bleiben die Regler, wie sie sind.
   const waehleBot = (bot: string | null) => {
@@ -165,7 +150,7 @@ function Einstellungen({
                 name={t("spielen.uhr")}
                 symbol="bedenkzeit"
                 werte={uhrStellen}
-                gewaehlt={String(uhrstelle(v))}
+                gewaehlt={String(uhrstelle(uhrFuerStart(mitUhrPflicht, v.uhr)))}
                 text={(stelle) => uhrname(Number(stelle))}
                 beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
               />
@@ -296,7 +281,7 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       eigeneFarbe: wahl.farbe,
       stufe: v.stufenJePhase.mittelspiel,
       stufenJePhase: v.stufenJePhase,
-      uhr: v.uhr,
+      uhr: uhrFuerStart(wirdGewertet(fen, v), v.uhr),
       // Gewertete Partien: keine Rücknahme und keine Spielhilfen (Wunsch des Autors zu S9).
       ruecknahmeErlaubt: v.ruecknahmeErlaubt && !wirdGewertet(fen, v),
       abbildung: abbildung ?? null,

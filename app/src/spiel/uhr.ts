@@ -40,6 +40,8 @@ export const UHR_PARTIETAG: Uhreinstellung = { grundzeitMs: 10 * MINUTE_MS, zusc
  */
 export const UHR_VORGABEN: readonly (Uhreinstellung | null)[] = [
   null,
+  // Seit R51 (Wunsch des Autors, 23.10.2026): eine klassische Stunde ohne Zuschlag.
+  { grundzeitMs: 60 * MINUTE_MS, zuschlagMs: 0 },
   { grundzeitMs: 30 * MINUTE_MS, zuschlagMs: 20 * SEKUNDE_MS },
   { grundzeitMs: 15 * MINUTE_MS, zuschlagMs: 10 * SEKUNDE_MS },
   UHR_PARTIETAG,

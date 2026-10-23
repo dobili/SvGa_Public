@@ -5,7 +5,7 @@
  * Symbolknöpfe; man musste die Symbole kennen, und Filter und Sortierung waren nicht getrennt.
  * Seit R54 (Wunsch des Autors, Variante A, 23.10.2026): oben „Filter“ (mit der Zahl aktiver
  * Filter) und „Sortieren“ (mit der gewählten Ordnung); ein Tipp klappt direkt darunter die Liste
- * auf. Filter sind Häkchen in Gruppen (Ergebnis, Wertung, Farbe, Gegner), die Sortierung eine Wahl
+ * auf. Filter sind Häkchen in Gruppen (Ergebnis, Wertung, Farbe, Gegner, seit R51 Zeitklasse), die Sortierung eine Wahl
  * aus sechs Ordnungen. Aktive Filter stehen als Chips mit × unter den Knöpfen.
  * Abhängigkeiten: spiel/partienfilter.ts, lucide-react, i18n.
  */
@@ -21,12 +21,14 @@ import {
   SORTIERUNGEN,
   umschalten,
   WERTUNGEN,
+  ZEITFILTER,
   type Ergebnis,
   type Farbfilter,
   type Gegnerfilter,
   type Partienfilter,
   type Sortierung,
   type Wertungsart,
+  type Zeitfilter,
 } from "../../spiel/partienfilter";
 
 /** Größe der Symbole in den Knöpfen (Bildpunkte). */
@@ -38,6 +40,7 @@ const GRUPPEN: readonly { name: Gruppenname; werte: readonly string[] }[] = [
   { name: "wertung", werte: WERTUNGEN },
   { name: "farbe", werte: FARBEN },
   { name: "gegner", werte: GEGNERARTEN },
+  { name: "zeit", werte: ZEITFILTER },
 ];
 
 /** Eine Ordnung der Liste: Sortierung und Richtung. */
@@ -63,6 +66,8 @@ function wertname(gruppe: Gruppenname, wert: string): string {
       return t(`spielen.filter.farbe.${wert as Farbfilter}`);
     case "gegner":
       return t(`spielen.filter.gegner.${wert as Gegnerfilter}`);
+    case "zeit":
+      return t(`spielen.filter.zeit.${wert as Zeitfilter}`);
   }
 }
 

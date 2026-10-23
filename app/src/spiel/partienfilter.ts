@@ -12,6 +12,7 @@
  * Abhängigkeiten: spiel/partie.ts.
  */
 import type { Partie } from "./partie";
+import { ZEITKLASSEN, zeitklasse } from "./zeitklasse";
 
 export const ERGEBNISSE = ["gewonnen", "remis", "verloren"] as const;
 export type Ergebnis = (typeof ERGEBNISSE)[number];
@@ -25,6 +26,9 @@ export type Farbfilter = (typeof FARBEN)[number];
  */
 export const GEGNERARTEN = ["bot", "stufe", "mensch", "import"] as const;
 export type Gegnerfilter = (typeof GEGNERARTEN)[number];
+/** Zeitklasse der Partie (R51, spiel/zeitklasse.ts) oder „ohne“ Uhr. */
+export const ZEITFILTER = [...ZEITKLASSEN, "ohne"] as const;
+export type Zeitfilter = (typeof ZEITFILTER)[number];
 export const SORTIERUNGEN = ["datum", "staerke", "gegner"] as const;
 export type Sortierung = (typeof SORTIERUNGEN)[number];
 
@@ -33,9 +37,16 @@ export interface Partienfilter {
   readonly wertung: readonly Wertungsart[];
   readonly farbe: readonly Farbfilter[];
   readonly gegner: readonly Gegnerfilter[];
+  readonly zeit: readonly Zeitfilter[];
 }
 
-export const OHNE_FILTER: Partienfilter = { ergebnis: [], wertung: [], farbe: [], gegner: [] };
+export const OHNE_FILTER: Partienfilter = {
+  ergebnis: [],
+  wertung: [],
+  farbe: [],
+  gegner: [],
+  zeit: [],
+};
 
 /** Ergebnis einer beendeten Partie aus Sicht des Lesers; null bei laufender oder Mensch gegen Mensch mit Sieger. */
 export function ergebnisFuerLeser(partie: Partie): Ergebnis | null {
@@ -73,7 +84,8 @@ export function passtZumFilter(partie: Partie, filter: Partienfilter): boolean {
     inGruppe(filter.ergebnis, ergebnisFuerLeser(partie)) &&
     inGruppe(filter.wertung, wertung) &&
     inGruppe(filter.farbe, farbe) &&
-    inGruppe(filter.gegner, gegnerart(partie))
+    inGruppe(filter.gegner, gegnerart(partie)) &&
+    inGruppe<Zeitfilter>(filter.zeit, zeitklasse(e.uhr) ?? "ohne")
   );
 }
 
@@ -84,8 +96,9 @@ export function umschalten<T>(gruppe: readonly T[], wert: T): readonly T[] {
 
 /** Wie viele Gruppen gerade einschränken (für „Filter zurücksetzen“). */
 export function aktiveFilter(filter: Partienfilter): number {
-  return [filter.ergebnis, filter.wertung, filter.farbe, filter.gegner].filter((g) => g.length > 0)
-    .length;
+  return [filter.ergebnis, filter.wertung, filter.farbe, filter.gegner, filter.zeit].filter(
+    (g) => g.length > 0,
+  ).length;
 }
 
 /** Zahlen einer Partie zum Sortieren; null, wenn unbekannt (etwa ohne Auswertung). */

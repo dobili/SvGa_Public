@@ -9,7 +9,7 @@
  * Abhängigkeiten: engine/uci.ts (Variante), engine/spielbewerter.ts (Wert aus Sicht der Seite).
  * Buchbezug: Kapitel 12, „Von Meistern lernen: Zug erraten statt Zug lesen“.
  */
-import type { Variante } from "../engine/uci";
+import type { Variante, Wert } from "../engine/uci";
 import { wertFuer } from "../engine/spielbewerter";
 
 /** Bis zu diesem Abstand (Bauerneinheiten) gelten beide Züge als gleichwertig. */
@@ -19,13 +19,24 @@ export interface Rateurteil {
   readonly art: "gleichwertig" | "schwaecher" | "staerker";
   /** Abstand zum Partiezug in Bauerneinheiten, immer positiv. */
   readonly unterschied: number;
+  /** Die Werte beider Züge, aus Sicht von Weiß (R46: beide Bewertungen nebeneinander). */
+  readonly eigenerWert: Wert;
+  readonly partieWert: Wert;
+  /** Die Variante der Engine nach dem eigenen Zug (UCI, erster Zug ist der eigene). */
+  readonly eigeneFolge: readonly string[];
+}
+
+/** Ob ein Matt im Spiel ist; dann ist ein Abstand in Bauerneinheiten nicht sinnvoll. */
+export function mitMatt(urteil: Rateurteil): boolean {
+  return urteil.eigenerWert.art === "matt" || urteil.partieWert.art === "matt";
 }
 
 /**
  * Vergleicht den eigenen Zug mit dem Partiezug.
  *
  * Eingaben: Varianten der Engine für genau diese beiden Züge, beide Züge in UCI, ob Weiß zieht.
- * Ausgabe: das Urteil, oder null, wenn einer der beiden Züge in den Varianten fehlt.
+ * Ausgabe: das Urteil mit beiden Werten und der Variante nach dem eigenen Zug, oder null, wenn
+ * einer der beiden Züge in den Varianten fehlt.
  * Beispiel: Partiezug +0,5, eigener Zug +0,4 → gleichwertig (0,1); eigener Zug −0,5 → schwächer
  * um 1,0.
  */
@@ -35,15 +46,17 @@ export function rateurteil(
   partie: string,
   weissZieht: boolean,
 ): Rateurteil | null {
-  const wert = (uci: string) => {
-    const v = varianten.find((x) => x.zuege[0] === uci);
-    return v ? wertFuer(v.wert, weissZieht) : null;
+  const eigeneVariante = varianten.find((x) => x.zuege[0] === eigen);
+  const partieVariante = varianten.find((x) => x.zuege[0] === partie);
+  if (!eigeneVariante || !partieVariante) return null;
+  const werte = {
+    eigenerWert: eigeneVariante.wert,
+    partieWert: partieVariante.wert,
+    eigeneFolge: eigeneVariante.zuege,
   };
-  const eigenerWert = wert(eigen);
-  const partieWert = wert(partie);
-  if (eigenerWert === null || partieWert === null) return null;
-  const abstand = eigenerWert - partieWert;
+  const abstand =
+    wertFuer(eigeneVariante.wert, weissZieht) - wertFuer(partieVariante.wert, weissZieht);
   const unterschied = Math.abs(abstand);
-  if (unterschied <= GLEICHWERTIG_BIS) return { art: "gleichwertig", unterschied };
-  return { art: abstand < 0 ? "schwaecher" : "staerker", unterschied };
+  if (unterschied <= GLEICHWERTIG_BIS) return { art: "gleichwertig", unterschied, ...werte };
+  return { art: abstand < 0 ? "schwaecher" : "staerker", unterschied, ...werte };
 }

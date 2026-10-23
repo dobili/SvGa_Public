@@ -50,6 +50,15 @@ export interface Kandidat {
 const JE_ART = 2;
 const HOECHSTENS = 4;
 
+/**
+ * Ein ruhiger Kandidat: kein Schach, kein Schlag, keine Drohung, keine Abwehr (der Buchzug oder
+ * die Mattabwehr). Für ihn sagt die Rechnung einen Zug tief wenig über Material; seine Wirkung
+ * zeigt die Bewertung der Engine (R43, Wunsch des Autors vom 23.10.2026).
+ */
+export function istRuhig(k: Kandidat): boolean {
+  return k.art === "ruhig" || k.art === "mattabwehr";
+}
+
 /** Der Buchzug als Kandidat, falls er in dieser Stellung geht. */
 function buchkandidat(regeln: Chess, buchzug?: string): Kandidat | null {
   const buch = buchzug ? parseSan(regeln, buchzug) : undefined;
@@ -150,21 +159,44 @@ function ohneRegeln(eigen: Color): Werkzeugergebnis {
   };
 }
 
-/** Die Kandidaten außerhalb des Schachs und das Werkzeug der Phase für die ruhigen Züge. */
+/** Die Kandidaten außerhalb des Schachs: Rechenreihenfolge, Buchzug, Mattabwehr. */
 function gewoehnlicheKandidaten(
   stellung: Stellung,
   fuer: Chess,
   eigen: Color,
   buchzug: string | undefined,
-  regel: Phasenregel,
-): { liste: Kandidat[]; phasenwerkzeug: string } {
+): Kandidat[] {
   const p = profil(stellung);
-  const ph = phase(stellung, p.angriffskarte, p.drohungen, regel);
   const e = p.erzwingend();
   const zuege = e && e.farbe === eigen ? e : erzwingendeZuege(fuer);
   const liste = sammeln(zuege, fuer, stellung.regeln?.turn === eigen ? buchzug : undefined);
   liste.push(...mattabwehr(fuer, eigen, liste));
-  return { liste, phasenwerkzeug: werkzeugzeilen(ph.phase)[0] ?? "" };
+  return liste;
+}
+
+/** Das Werkzeug der Phase für den besten ruhigen Zug (Schritt 2, „Zwingt nichts …“). */
+function phasenwerkzeug(stellung: Stellung, regel: Phasenregel): string {
+  const p = profil(stellung);
+  const ph = phase(stellung, p.angriffskarte, p.drohungen, regel);
+  return werkzeugzeilen(ph.phase)[0] ?? "";
+}
+
+/**
+ * Die Kandidaten einer Seite, wie Schritt 2 sie sammelt: im Schach alle Abwehrzüge, sonst
+ * Schachs, Schläge ohne Verlust, Drohungen, dazu der Buchzug und die Mattabwehr.
+ *
+ * Warum: Dieselbe Liste braucht die Engine-Rechnung der Karte (KandidatenKarte.tsx), die jeden
+ * Kandidaten bewertet (R43). Eingaben: Stellung, eigene Seite, Buchzug (freiwillig). Ausgabe:
+ * die Liste, leer ohne Regeln oder bei Matt. Beispiel: Abb. 12.1 → Lxh7+ und der Buchzug.
+ */
+export function kandidatenliste(stellung: Stellung, eigen: Color, buchzug?: string): Kandidat[] {
+  const { regeln } = stellung;
+  if (!regeln) return [];
+  const imSchach = regeln.isCheck() && regeln.turn === eigen;
+  const fuer = regeln.turn === eigen ? regeln : nullzug(regeln, eigen);
+  return imSchach
+    ? abwehrkandidaten(regeln, buchzug)
+    : gewoehnlicheKandidaten(stellung, fuer, eigen, buchzug);
 }
 
 /**
@@ -177,7 +209,9 @@ function gewoehnlicheKandidaten(
  * Kh5 und Kxg5 sind die Kandidaten; auf f5 folgt Sxe6 mit Gabel gegen Dame und Turm.
  * Abb. 12.4: b5 scheidet aus (Dxf7#); dazu ein Zug, der das Matt abwehrt.
  * Sonderfälle: Ein Kandidat, der mit Matt beantwortet wird, ist der schlechteste (C1.28); ist
- * die Seite matt, gibt es keine Kandidaten.
+ * die Seite matt, gibt es keine Kandidaten. Ruhige Kandidaten (Buchzug, Mattabwehr) stehen
+ * ohne Materialstand da; sie zählen im Vergleich nach Material mit (Abb. 12.4: Sf6 bleibt der
+ * beste), ihr Urteil kommt aber von der Engine in der Karte (R43).
  */
 export function kandidaten(
   stellung: Stellung,
@@ -189,9 +223,7 @@ export function kandidaten(
   if (!regeln) return ohneRegeln(eigen);
   const imSchach = regeln.isCheck() && regeln.turn === eigen;
   const fuer = regeln.turn === eigen ? regeln : nullzug(regeln, eigen);
-  const { liste, phasenwerkzeug } = imSchach
-    ? { liste: abwehrkandidaten(regeln, buchzug), phasenwerkzeug: "" }
-    : gewoehnlicheKandidaten(stellung, fuer, eigen, buchzug, regel);
+  const liste = kandidatenliste(stellung, eigen, buchzug);
   const antworten = liste.map((k) => staerksteAntwort(fuer, k.san, eigen));
   const befunde = kandidatenBefunde({
     eigen,
@@ -199,7 +231,7 @@ export function kandidaten(
     liste,
     antworten,
     beste: besterKandidat(antworten),
-    phasenwerkzeug,
+    phasenwerkzeug: imSchach ? "" : phasenwerkzeug(stellung, regel),
   });
   return {
     werkzeug: "k12-kandidaten",

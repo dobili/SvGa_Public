@@ -3,7 +3,14 @@ import { describe, expect, it } from "vitest";
 import type { Bewertung } from "../engine/engineDienst";
 import { stufe } from "../engine/stufen";
 import type { Spielbewerter } from "../engine/zugwahl";
-import { nimmZurueckMitUhr, pausiere, pruefeZeit, setzeUhrFort, zieheMitUhr } from "./ablauf";
+import {
+  mitUhrverzug,
+  nimmZurueckMitUhr,
+  pausiere,
+  pruefeZeit,
+  setzeUhrFort,
+  zieheMitUhr,
+} from "./ablauf";
 import { engineZug } from "./enginezug";
 import { leserzug, neuePartie, type Partie, type Partiezug } from "./partie";
 import { restzeit } from "./uhr";
@@ -51,6 +58,23 @@ describe("Ablauf mit Uhr", () => {
     const p = zug(zug(partie(true), "e4", 0), "e5", 5 * SEKUNDE);
     expect(p.uhr?.laeuft).toBe("white");
     expect(p.uhr && restzeit(p.uhr, "black", 5 * SEKUNDE)).toBe(MINUTE - 3 * SEKUNDE);
+  });
+
+  it("während der Zuganimation läuft keine Uhr (R37)", () => {
+    const ANIMATION = 220;
+    const eins = zug(partie(true), "e4", 0);
+    const p = mitUhrverzug(zug(eins, "e5", 5 * SEKUNDE), ANIMATION);
+    expect(p?.uhr?.laeuft).toBe("white");
+    // Während des Gleitens bleibt die Zeit des Lesers stehen, danach läuft sie.
+    expect(p?.uhr && restzeit(p.uhr, "white", 5 * SEKUNDE + 100)).toBe(MINUTE);
+    expect(p?.uhr && restzeit(p.uhr, "white", 5 * SEKUNDE + ANIMATION + SEKUNDE)).toBe(
+      MINUTE - SEKUNDE,
+    );
+    // Ohne laufende Uhr und ohne Verzug ändert sich nichts.
+    const ohneUhr = partie(false);
+    expect(mitUhrverzug(ohneUhr, ANIMATION)).toBe(ohneUhr);
+    expect(mitUhrverzug(eins, 0)).toBe(eins);
+    expect(mitUhrverzug(null, ANIMATION)).toBeNull();
   });
 
   it("Zug der Engine, während die App im Hintergrund ist: die Uhr bleibt stehen", () => {

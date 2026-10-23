@@ -68,16 +68,27 @@ def test_taktik_loesungen_gehen():
 
 
 def test_falle_angebote_gehen():
+    """Köder-Zug führt zur Stellung, Angebot ist ein Schlag, Fallen stehen klar schlechter (R50)."""
     daten = _lies("falle.json")
+    massstab = daten["massstab"]
+    kennungen = [a["id"] for a in daten["aufgaben"]]
+    assert len(kennungen) == len(set(kennungen))
     for a in daten["aufgaben"]:
+        vorher = chess.Board(a["fenVorher"])
+        vorher.push_san(a["vorzug"])
+        assert vorher.fen() == a["fen"], a["id"]
         brett = chess.Board(a["fen"])
         assert brett.is_capture(brett.parse_san(a["angebot"])), a["id"]
         assert a["fortsetzung"][0] == a["angebot"]
         _spiele(a["fen"], a["fortsetzung"])
+        abfall = a["wertVorher"] - a["wertNachher"]
+        assert abs(abfall - a["verlustBeimNehmen"]) < 0.02, a["id"]
         if a["antwort"] == "falle":
-            assert a["verlustBeimNehmen"] >= daten["massstab"]["falleAbVerlust"]
+            assert abfall >= massstab["falleAbVerlust"], a["id"]
+            assert a["wertNachher"] <= -massstab["falleSchlechterAb"], a["id"]
         else:
-            assert a["verlustBeimNehmen"] <= daten["massstab"]["geschenkBisVerlust"]
+            assert abfall <= massstab["geschenkBisVerlust"], a["id"]
+            assert a["wertNachher"] > -massstab["falleSchlechterAb"], a["id"]
 
 
 def test_uebungen_engine_zuege_gehen():
@@ -104,5 +115,9 @@ def test_endspiel_stellungen_spielbar_und_stimmig():
         brett.parse_san(a["pruefung"]["bester"])
         if a["ziel"] == "gewinn":
             assert a["pruefung"]["wert"] >= daten["massstab"]["gewinnAb"], a["id"]
-        elif a["herkunft"]["abbildung"] not in BUCHURTEIL:
+        elif a["herkunft"].get("abbildung") not in BUCHURTEIL:
             assert abs(a["pruefung"]["wert"]) <= daten["massstab"]["remisBis"], a["id"]
+        if a["herkunft"]["quelle"] == "lichess":
+            # Freie Aufgaben (R47): der Leser ist am Zug, Stufe nach der Lichess-Wertung.
+            assert a["id"].startswith("endspiel-l-") and a["leser"] == ("w" if brett.turn else "b"), a["id"]
+            assert a["thema"] in {"bauernendspiel", "turmendspiel", "damenendspiel", "leichtfiguren"}, a["id"]

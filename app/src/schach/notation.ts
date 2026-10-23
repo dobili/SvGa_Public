@@ -21,6 +21,18 @@ export function sanInSprache(san: string, sprachcode: string): string {
   return san.replace(/[KQRBN]/g, (b) => buchstaben[b] ?? b);
 }
 
+/**
+ * Entfernt Schach-, Matt- und Bewertungszeichen am Ende eines Zuges.
+ *
+ * Warum: In Fragen wie „Falle oder Geschenk?“ würde „Lxh7+“, „Dxf7#“ oder „Sxe5?“ die Antwort
+ * vorwegnehmen (Wunsch des Autors R31, 23.10.2026). Die Auflösung danach zeigt den Zug wieder
+ * mit allen Zeichen.
+ * Beispiel: „Dxf7#“ → „Dxf7“, „Sxe5??“ → „Sxe5“, „exd8=D+!?“ → „exd8=D“.
+ */
+export function ohneZugzeichen(san: string): string {
+  return san.replace(/[+#!?]+$/, "");
+}
+
 /** Deutsche Figurenbuchstaben → englische (Kapitel 0, „Wie liest man Schachzüge?“). */
 const DEUTSCH_NACH_ENGLISCH: Readonly<Record<string, string>> = {
   K: "K",

@@ -2,7 +2,8 @@
 
 import chess
 
-from pipeline.trainer.falle import scheinbarer_gewinn
+from pipeline.trainer.falle import Angebot, neues_angebot, scheinbarer_gewinn
+from pipeline.trainer.falle_buch import angebote_der_fallenchecks
 from pipeline.trainer.lichess import lies_zeile
 from pipeline.trainer.schwierigkeit import Messung, eiche, klasse, stufe_von_messung, stufe_von_wertung
 from pipeline.trainer.struktur import erkenne, merkmale, schwierigkeit
@@ -109,3 +110,57 @@ def test_scheinbarer_gewinn():
     anfang.push_san("e4")
     anfang.push_san("d5")  # noqa: E702
     assert scheinbarer_gewinn(anfang, anfang.parse_san("exd5")) is False  # gedeckt, gleicher Wert
+
+
+def test_koeder_zug_schafft_das_angebot():
+    """R50: Nur ein Köder-Zug, der das Angebot erst schafft, gibt eine Aufgabe (falle.neues_angebot)."""
+    # Légal-Falle, Abb. 4.17 → 4.18: 6. Sxe5 gibt die Dame d1 frei (die Linie g4–d1 war zu).
+    vorher = chess.Board("r2qkbnr/ppp2ppp/2np4/4p3/2B1P1b1/2N2N1P/PPPP1PP1/R1BQK2R w KQkq - 0 6")
+    vorzug = vorher.parse_san("Nxe5")
+    brett = vorher.copy()
+    brett.push(vorzug)
+    assert neues_angebot(Angebot(vorher, vorzug, brett, brett.parse_san("Bxd1")))
+    # Gegenbeispiel: Ein Zug, der nichts am Angebot ändert, zählt nicht:
+    # er war gar nicht angegriffen; aber ein Zug, der nichts am Angebot ändert, zählt nicht:
+    # 1. e4 d5 2. Sc3: der Bauer e4 hing schon vor 2. Sc3 (dxe4 war schon möglich) und ist danach genauso
+    # gedeckt (Sc3 deckt e4 → ein Verteidiger mehr, also kein abgezogener Verteidiger).
+    vorher = chess.Board("rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2")
+    vorzug = vorher.parse_san("Nc3")
+    brett = vorher.copy()
+    brett.push(vorzug)
+    assert not neues_angebot(Angebot(vorher, vorzug, brett, brett.parse_san("dxe4")))
+
+
+def test_fallenchecks_mit_koeder_zug():
+    """Die Fallenchecks aus Kapitel 4 liefern Köder-Zug, Schlag und Buchlinie (ohne Engine)."""
+    angebote = {a.fallencheck: a for a in angebote_der_fallenchecks()}
+    klammer = angebote["Klammerfalle"]
+    assert klammer.vorher.san(klammer.vorzug) == "axb5"
+    assert klammer.brett.san(klammer.schlag) == "cxb5"
+    assert klammer.buchlinie[:2] == ["cxb5", "Qf3"]
+    legal = angebote["Légal-Falle"]
+    assert legal.vorher.san(legal.vorzug) == "Nxe5" and legal.brett.san(legal.schlag) == "Bxd1"
+    assert all(a.brett.is_capture(a.schlag) for a in angebote.values())
+
+
+def test_endspiel_lichess_auswahl():
+    """R47: Lichess-Endspielaufgaben nur mit genau einer Figurenart, wenig Steinen, Ziel nach „equality“."""
+    from pipeline.trainer.endspiel_lichess import kandidaten, thema_von, verfehlt
+    from pipeline.trainer.lichess import Puzzle
+
+    assert thema_von(("endgame", "pawnEndgame", "short")) == "bauernendspiel"
+    assert thema_von(("endgame", "rookEndgame", "long")) == "turmendspiel"
+    assert thema_von(("endgame", "bishopEndgame")) == "leichtfiguren"
+    assert thema_von(("endgame", "rookEndgame", "pawnEndgame")) is None
+    assert thema_von(("endgame", "queenRookEndgame")) is None
+    kpk = "8/8/8/4k3/8/8/4P3/4K3"
+    voll = "r1bqkbnr/pppppppp/2n5/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1"
+    wenig = Puzzle("a", f"{kpk} w - - 0 1", ["Ke2"], 1200, ("endgame", "pawnEndgame"), None, None, "")
+    remis = Puzzle(
+        "b", f"{kpk} b - - 0 1", ["Ke4"], 1500, ("endgame", "equality", "pawnEndgame"), None, None, ""
+    )
+    viele = Puzzle("c", voll, ["d4"], 1200, ("endgame", "pawnEndgame"), None, None, "")
+    gruppen = kandidaten([wenig, remis, viele], 5)
+    assert set(gruppen) == {("bauernendspiel", 2, "gewinn"), ("bauernendspiel", 3, "remis")}
+    assert verfehlt("gewinn", 1.4) and not verfehlt("gewinn", 1.6)
+    assert verfehlt("remis", -1.6) and not verfehlt("remis", -1.4)

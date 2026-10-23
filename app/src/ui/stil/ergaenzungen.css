@@ -52,6 +52,8 @@
 .chip {
   display: inline-flex;
   align-items: center;
+  /* Zahlen und kurze Wörter mittig (Wunsch des Autors, 19.10.2026: Zahlen saßen links). */
+  justify-content: center;
   gap: 6px;
 }
 
@@ -431,4 +433,36 @@
   color: var(--navy);
   font-weight: 700;
   box-shadow: 0 2px 8px rgb(0 0 0 / 20%);
+}
+
+/* Faktorenbilanz-Trainer mit Waage und ✓ ◐ ✗ wie im Buch (R20, Wunsch des Autors 19.10.2026). */
+.faktorwahl .waage {
+  margin: 0 auto calc(var(--raster) * 1);
+}
+
+.faktorwahl-knoepfe,
+.faktorwahl-zeile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) * 1);
+  align-items: center;
+}
+
+.faktorwahl-zeile + .faktorwahl-zeile {
+  margin-top: calc(var(--raster) * 1);
+}
+
+.faktorwahl-seite {
+  min-width: 5em;
+  font-weight: 600;
+}
+
+.faktorwahl-zeile .chip {
+  min-width: var(--tippflaeche);
+  font-size: var(--groesse-gross);
+}
+
+.faktorwahl > .meldung {
+  display: block;
+  margin-top: calc(var(--raster) * 1);
 }

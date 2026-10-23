@@ -2,7 +2,7 @@
  "schemaVersion": 1,
  "trainer": "endspiel",
  "erzeugt": {
-  "datum": "2026-10-17",
+  "datum": "2026-10-23",
   "engine": "Stockfish 19 lite (ein Kern)",
   "skript": "pipeline/trainer/endspiel.py"
  },
@@ -11,7 +11,14 @@
    "kennung": "buch",
    "name": "Schach von Grund auf, Kapitel 8 und 9 (Endspiele)",
    "lizenz": "Alle Rechte vorbehalten (nur Stellungen und Züge)",
-   "anzahl": 80
+   "anzahl": 79
+  },
+  {
+   "kennung": "lichess",
+   "name": "Lichess-Puzzle-Datenbank (Endspielaufgaben)",
+   "lizenz": "CC0 1.0",
+   "adresse": "https://database.lichess.org/#puzzles",
+   "anzahl": 119
   }
  ],
  "massstab": {
@@ -357,26 +364,6 @@
     "mattIn": null,
     "bester": "Kd8",
     "einzigerZug": true,
-    "tiefe": 18
-   }
-  },
-  {
-   "id": "endspiel-b-8.31",
-   "fen": "k7/P7/1K6/8/8/8/8/8 w - - 0 1",
-   "leser": "b",
-   "ziel": "remis",
-   "thema": "randbauer",
-   "stichwort": null,
-   "schwierigkeit": 2,
-   "herkunft": {
-    "quelle": "buch",
-    "abbildung": "8.31"
-   },
-   "pruefung": {
-    "wert": -0.0,
-    "mattIn": null,
-    "bester": "Ka6",
-    "einzigerZug": false,
     "tiefe": 18
    }
   },
@@ -1617,6 +1604,3469 @@
     "mattIn": null,
     "bester": "Kb6",
     "einzigerZug": false,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-N64DU",
+   "fen": "8/8/8/8/2K2pk1/P7/6P1/8 b - - 0 49",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "N64DU",
+    "wertung": 940,
+    "partie": "https://lichess.org/nD8lhwne#97",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "promotion",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.12,
+    "mattIn": null,
+    "bester": "Kg3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-yUbbI",
+   "fen": "8/7p/2k2Kp1/5p2/8/5P1P/8/8 w - - 4 55",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "yUbbI",
+    "wertung": 989,
+    "partie": "https://lichess.org/59EMpvf5/black#108",
+    "themen": [
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.09,
+    "mattIn": null,
+    "bester": "Kg7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-Dk6ri",
+   "fen": "8/8/6k1/5p2/5K1p/5P1P/8/8 w - - 1 62",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Dk6ri",
+    "wertung": 828,
+    "partie": "https://lichess.org/XVHzy1CU/black#122",
+    "themen": [
+     "crushing",
+     "endgame",
+     "master",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 9.8,
+    "mattIn": null,
+    "bester": "Ke5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-RB0Pz",
+   "fen": "8/5p2/p7/1pk5/4K3/2P5/P5P1/8 b - - 2 47",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "RB0Pz",
+    "wertung": 979,
+    "partie": "https://lichess.org/cMdSukU6#93",
+    "themen": [
+     "crushing",
+     "endgame",
+     "master",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.49,
+    "mattIn": null,
+    "bester": "Kc4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-01HXY",
+   "fen": "8/8/1p1P1k2/1p5K/pP6/P7/8/8 b - - 1 42",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "01HXY",
+    "wertung": 884,
+    "partie": "https://lichess.org/THUPRnRv#83",
+    "themen": [
+     "crushing",
+     "endgame",
+     "master",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.12,
+    "mattIn": null,
+    "bester": "Ke6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-RwzEG",
+   "fen": "8/8/8/Pp1p4/7p/4K1k1/8/8 w - - 0 47",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "RwzEG",
+    "wertung": 1128,
+    "partie": "https://lichess.org/nIljsQ4z/black#92",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "promotion",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.15,
+    "mattIn": null,
+    "bester": "a6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-igN6V",
+   "fen": "8/8/p7/7K/1ppk2P1/P7/1P6/8 w - - 0 42",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "igN6V",
+    "wertung": 1161,
+    "partie": "https://lichess.org/m1RY1Eo1/black#82",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "promotion",
+     "quietMove",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.27,
+    "mattIn": null,
+    "bester": "axb4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-ojwjg",
+   "fen": "8/8/8/p2kp1K1/P5P1/7P/8/8 b - - 0 55",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "ojwjg",
+    "wertung": 1039,
+    "partie": "https://lichess.org/O1QwaGMD#109",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "pawnEndgame",
+     "quietMove"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.89,
+    "mattIn": null,
+    "bester": "e4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-Atglv",
+   "fen": "8/2K2p2/4k3/4Pp2/5P1p/7P/8/8 b - - 13 54",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Atglv",
+    "wertung": 1259,
+    "partie": "https://lichess.org/62JU7xg2#107",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "pawnEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.78,
+    "mattIn": null,
+    "bester": "Kd5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-AKjNi",
+   "fen": "8/7p/3k4/1p3p2/1P3P1P/2K5/8/8 b - - 3 46",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "AKjNi",
+    "wertung": 1288,
+    "partie": "https://lichess.org/IkBi7XuN#91",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "pawnEndgame",
+     "quietMove",
+     "zugzwang"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.93,
+    "mattIn": null,
+    "bester": "Kd5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-jjrGp",
+   "fen": "8/8/p7/8/3K4/1p6/8/3k4 w - - 0 62",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "jjrGp",
+    "wertung": 1043,
+    "partie": "https://lichess.org/Dcd2CmSK/black#122",
+    "themen": [
+     "endgame",
+     "equality",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.19,
+    "mattIn": null,
+    "bester": "Kc3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-ae8en",
+   "fen": "8/p6p/P1K3p1/5p2/4k3/8/7P/8 w - - 0 43",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "ae8en",
+    "wertung": 1061,
+    "partie": "https://lichess.org/8JrTorsq/black#84",
+    "themen": [
+     "endgame",
+     "equality",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": -0.06,
+    "mattIn": null,
+    "bester": "Kb7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-JyD6E",
+   "fen": "8/1k6/p7/KPP5/8/8/8/8 b - - 0 57",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "JyD6E",
+    "wertung": 1115,
+    "partie": "https://lichess.org/CuLda6Wi#113",
+    "themen": [
+     "defensiveMove",
+     "endgame",
+     "equality",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "axb5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-vybkD",
+   "fen": "8/8/4K3/5P2/6p1/7k/7P/8 b - - 0 50",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "vybkD",
+    "wertung": 1255,
+    "partie": "https://lichess.org/iUrTfbJQ#99",
+    "themen": [
+     "advancedPawn",
+     "endgame",
+     "equality",
+     "pawnEndgame",
+     "promotion",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Kxh2",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-kNRGZ",
+   "fen": "8/8/8/8/7p/6k1/4K3/8 w - - 0 96",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "kNRGZ",
+    "wertung": 1060,
+    "partie": "https://lichess.org/Hhhy1SAJ/black#190",
+    "themen": [
+     "endgame",
+     "equality",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Kf1",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-yQnY2",
+   "fen": "8/8/8/K7/1p1k4/8/P7/8 w - - 2 46",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "yQnY2",
+    "wertung": 1438,
+    "partie": "https://lichess.org/chnCQTk5/black#90",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "long",
+     "pawnEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.09,
+    "mattIn": null,
+    "bester": "Kxb4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-jJjMi",
+   "fen": "8/6p1/8/3k1PPp/5K1P/4p3/8/8 w - - 0 81",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "jJjMi",
+    "wertung": 1403,
+    "partie": "https://lichess.org/83E61IZe/black#160",
+    "themen": [
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.33,
+    "mattIn": null,
+    "bester": "Kxe3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-MuuZ1",
+   "fen": "8/8/7p/2P5/1p2kp2/1P5P/5K2/8 b - - 0 42",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "MuuZ1",
+    "wertung": 1343,
+    "partie": "https://lichess.org/EKMOmCtW#83",
+    "themen": [
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.84,
+    "mattIn": null,
+    "bester": "Kd5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-i2or5",
+   "fen": "8/3K4/8/4P2p/5pkP/8/8/8 b - - 1 57",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "i2or5",
+    "wertung": 1395,
+    "partie": "https://lichess.org/4LuXbMRQ#113",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "promotion",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.32,
+    "mattIn": null,
+    "bester": "f3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-cjm6P",
+   "fen": "8/6pp/8/p4P2/6P1/1K2k2P/8/8 w - - 0 52",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "cjm6P",
+    "wertung": 1551,
+    "partie": "https://lichess.org/5Rf4eFNO/black#102",
+    "themen": [
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "quietMove",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.51,
+    "mattIn": null,
+    "bester": "g5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-dIRfK",
+   "fen": "8/8/4k1P1/3p4/2p3K1/4P3/5P2/8 b - - 0 77",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "dIRfK",
+    "wertung": 1740,
+    "partie": "https://lichess.org/u2U27EHJ#153",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "master",
+     "pawnEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.71,
+    "mattIn": null,
+    "bester": "c3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-cNofQ",
+   "fen": "7k/4K3/6Pp/8/8/8/8/8 b - - 0 70",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "cNofQ",
+    "wertung": 1626,
+    "partie": "https://lichess.org/zTqosnw6#139",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "pawnEndgame",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.06,
+    "mattIn": null,
+    "bester": "Kg7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-ZLG0Q",
+   "fen": "8/2p5/2k5/2p3p1/P1K3P1/8/8/8 w - - 4 55",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "ZLG0Q",
+    "wertung": 1896,
+    "partie": "https://lichess.org/ALdRPtrH/black#108",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "pawnEndgame",
+     "quietMove",
+     "zugzwang"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.93,
+    "mattIn": null,
+    "bester": "a5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-yfJ5q",
+   "fen": "8/2p5/8/2pk4/5K2/5P1P/P5P1/8 b - - 1 38",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "yfJ5q",
+    "wertung": 1882,
+    "partie": "https://lichess.org/rBunKl65#75",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "long",
+     "pawnEndgame",
+     "quietMove"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.61,
+    "mattIn": null,
+    "bester": "Kd4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-aCWl7",
+   "fen": "8/6p1/7p/7P/3k4/5PK1/8/8 w - - 4 62",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "aCWl7",
+    "wertung": 1789,
+    "partie": "https://lichess.org/mQz61ZeV/black#122",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "master",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.14,
+    "mattIn": null,
+    "bester": "Kf4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-hO5bB",
+   "fen": "8/8/8/ppp1k3/6P1/3K4/PP6/8 w - - 1 41",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "hO5bB",
+    "wertung": 2388,
+    "partie": "https://lichess.org/uEFaBgnL/black#80",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "long",
+     "pawnEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.04,
+    "mattIn": null,
+    "bester": "a4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-3EUvb",
+   "fen": "8/8/5k2/8/4K1p1/4P3/8/8 b - - 0 58",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "3EUvb",
+    "wertung": 2013,
+    "partie": "https://lichess.org/stoG8AbZ#115",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "pawnEndgame",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.16,
+    "mattIn": null,
+    "bester": "Kg5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-XbcmU",
+   "fen": "8/1pp5/8/1P1P4/2P1k3/6p1/8/4K3 w - - 1 42",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "XbcmU",
+    "wertung": 1902,
+    "partie": "https://lichess.org/Z88SozYk/black#82",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "pawnEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.91,
+    "mattIn": null,
+    "bester": "b6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-3qsJr",
+   "fen": "8/2P5/p2k4/1p6/1P3K2/8/8/8 b - - 0 58",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "3qsJr",
+    "wertung": 2314,
+    "partie": "https://lichess.org/fDCmyNqM#115",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "pawnEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.96,
+    "mattIn": null,
+    "bester": "Kxc7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-7QaEh",
+   "fen": "8/6p1/p7/Pp1P1k2/1K6/6P1/8/8 w - - 1 49",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "bauernendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "7QaEh",
+    "wertung": 1938,
+    "partie": "https://lichess.org/zUmvG7U3/black#96",
+    "themen": [
+     "crushing",
+     "endgame",
+     "pawnEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.31,
+    "mattIn": null,
+    "bester": "Kc5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-QMLxB",
+   "fen": "8/8/1R6/8/8/4K3/r5p1/4k3 w - - 0 74",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "QMLxB",
+    "wertung": 919,
+    "partie": "https://lichess.org/2e4noZg7/black#146",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Rb1#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-g45Az",
+   "fen": "8/8/8/4kp2/3r1p2/3R1K2/5P2/8 w - - 10 61",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "g45Az",
+    "wertung": 878,
+    "partie": "https://lichess.org/lZKWYjfG/black#120",
+    "themen": [
+     "crushing",
+     "endgame",
+     "master",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.93,
+    "mattIn": null,
+    "bester": "Rxd4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-iZTad",
+   "fen": "8/8/6k1/7p/R6K/5PP1/Pr6/8 b - - 0 49",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "iZTad",
+    "wertung": 794,
+    "partie": "https://lichess.org/9uaE4zIz#97",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Rh2#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-GUlj7",
+   "fen": "8/2K5/7p/6p1/3k2P1/5p2/5R2/8 b - - 1 70",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "GUlj7",
+    "wertung": 927,
+    "partie": "https://lichess.org/4JMGQNKW#139",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.41,
+    "mattIn": null,
+    "bester": "Ke3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-DLPPA",
+   "fen": "8/8/6pk/5r1p/R6K/6PP/8/8 b - - 0 46",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "DLPPA",
+    "wertung": 885,
+    "partie": "https://lichess.org/tuT5thIP#91",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "g5#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-n5FY3",
+   "fen": "8/5r2/8/7p/6PP/7K/2k5/8 w - - 1 55",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "n5FY3",
+    "wertung": 998,
+    "partie": "https://lichess.org/jyKrhS6V/black#108",
+    "themen": [
+     "endgame",
+     "equality",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "gxh5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-v0ScD",
+   "fen": "7K/r5P1/8/4k3/8/8/R6P/8 b - - 0 58",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "v0ScD",
+    "wertung": 989,
+    "partie": "https://lichess.org/NmV8N1L6#115",
+    "themen": [
+     "endgame",
+     "equality",
+     "long",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Rxa2",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-g4S40",
+   "fen": "8/4R3/8/8/4r3/4k3/4p3/2K5 w - - 6 68",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "g4S40",
+    "wertung": 888,
+    "partie": "https://lichess.org/bOqOx6mI/black#134",
+    "themen": [
+     "endgame",
+     "equality",
+     "long",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Rxe4+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-0oLbB",
+   "fen": "4k3/2R5/6K1/8/2p5/1p6/8/8 b - - 1 57",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "0oLbB",
+    "wertung": 1136,
+    "partie": "https://lichess.org/2c4W9iR5#113",
+    "themen": [
+     "advancedPawn",
+     "advantage",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 2.66,
+    "mattIn": null,
+    "bester": "b2",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-ImU6H",
+   "fen": "2R5/8/4p2P/8/4k3/6K1/r1p3P1/8 w - - 0 48",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "ImU6H",
+    "wertung": 1258,
+    "partie": "https://lichess.org/UH9SBxa9/black#94",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "master",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.58,
+    "mattIn": null,
+    "bester": "h7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-kcymN",
+   "fen": "4k3/6P1/5K2/8/5P2/r1p5/p7/R7 b - - 0 46",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "kcymN",
+    "wertung": 1254,
+    "partie": "https://lichess.org/NW7ZFoSb#91",
+    "themen": [
+     "crushing",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.2,
+    "mattIn": null,
+    "bester": "Ra6+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-9jV69",
+   "fen": "8/4k1p1/r7/R7/K7/8/PP6/8 b - - 2 45",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "9jV69",
+    "wertung": 1171,
+    "partie": "https://lichess.org/YsXyEY0Y#89",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.45,
+    "mattIn": null,
+    "bester": "Rxa5+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-0PzZ6",
+   "fen": "7R/8/8/4rk2/7p/8/6PK/8 w - - 0 62",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "0PzZ6",
+    "wertung": 1252,
+    "partie": "https://lichess.org/xKjVEpZa/black#122",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.25,
+    "mattIn": null,
+    "bester": "Rh5+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-3x6xd",
+   "fen": "8/3R4/5p2/5p2/K2pk3/8/8/4r3 w - - 4 63",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "3x6xd",
+    "wertung": 1095,
+    "partie": "https://lichess.org/dBtvse0n/black#124",
+    "themen": [
+     "endgame",
+     "equality",
+     "rookEndgame",
+     "short",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Re7+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-Vqpmh",
+   "fen": "8/8/5k2/7P/6P1/5P2/2R2K2/7r b - - 2 57",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Vqpmh",
+    "wertung": 1076,
+    "partie": "https://lichess.org/gEhKFlBh#113",
+    "themen": [
+     "endgame",
+     "equality",
+     "rookEndgame",
+     "short",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.65,
+    "mattIn": null,
+    "bester": "Rh2+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-8YPO4",
+   "fen": "8/8/2R2p2/4r1kr/4P3/5PK1/8/8 w - - 7 54",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "8YPO4",
+    "wertung": 1026,
+    "partie": "https://lichess.org/y1YuxCgq/black#106",
+    "themen": [
+     "endgame",
+     "equality",
+     "fork",
+     "pin",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "f4+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-KjjYV",
+   "fen": "6R1/8/8/6p1/6k1/5r1p/4K3/8 w - - 0 67",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "KjjYV",
+    "wertung": 1244,
+    "partie": "https://lichess.org/FLyfQPbg/black#132",
+    "themen": [
+     "defensiveMove",
+     "deflection",
+     "endgame",
+     "equality",
+     "long",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": -0.09,
+    "mattIn": null,
+    "bester": "Rxg5+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-EHTVm",
+   "fen": "8/8/8/5pkp/7R/7K/8/8 b - - 0 55",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "EHTVm",
+    "wertung": 1014,
+    "partie": "https://lichess.org/lBK1kdEj#109",
+    "themen": [
+     "endgame",
+     "equality",
+     "quietMove",
+     "rookEndgame",
+     "short",
+     "zugzwang"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "f4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-vhzRg",
+   "fen": "8/8/6k1/5p1p/1r5P/4R1K1/6P1/8 b - - 2 38",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "vhzRg",
+    "wertung": 1463,
+    "partie": "https://lichess.org/0JtvZAuz#75",
+    "themen": [
+     "crushing",
+     "endgame",
+     "fork",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 7.25,
+    "mattIn": null,
+    "bester": "f4+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-vNJD5",
+   "fen": "3r4/2p5/2k5/2P5/1K6/1R6/8/8 b - - 7 69",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "vNJD5",
+    "wertung": 1502,
+    "partie": "https://lichess.org/0ixuiUwa#137",
+    "themen": [
+     "crushing",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.16,
+    "mattIn": null,
+    "bester": "Rb8+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-sRVit",
+   "fen": "8/R2P1p2/6k1/4K1p1/7p/8/3r4/8 w - - 8 61",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "sRVit",
+    "wertung": 1417,
+    "partie": "https://lichess.org/HkH5jGBm/black#120",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.47,
+    "mattIn": null,
+    "bester": "Ra6+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-KjCuy",
+   "fen": "4r2k/1K4Rp/7P/8/8/P5p1/8/8 b - - 1 44",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "KjCuy",
+    "wertung": 1358,
+    "partie": "https://lichess.org/FxpKefy0#87",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.46,
+    "mattIn": null,
+    "bester": "Rg8",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-1F2q4",
+   "fen": "8/PR6/r7/5p2/5kp1/1K6/2P5/8 w - - 3 43",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "1F2q4",
+    "wertung": 1386,
+    "partie": "https://lichess.org/cfrayrWU/black#84",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "master",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.82,
+    "mattIn": null,
+    "bester": "Rb4+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-9Yn3g",
+   "fen": "8/8/8/8/7p/R4pk1/7r/6K1 w - - 0 69",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "9Yn3g",
+    "wertung": 1321,
+    "partie": "https://lichess.org/93lO3FQ9/black#136",
+    "themen": [
+     "deflection",
+     "endgame",
+     "equality",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Rxf3+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-XQsAv",
+   "fen": "8/6r1/1K6/p7/r7/2P3k1/8/5R2 w - - 0 50",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "XQsAv",
+    "wertung": 1338,
+    "partie": "https://lichess.org/lHQsXq2c/black#98",
+    "themen": [
+     "endgame",
+     "equality",
+     "rookEndgame",
+     "short",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Rg1+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-YTJfV",
+   "fen": "8/5R2/8/1P4kP/6P1/5K2/8/6r1 b - - 2 47",
+   "leser": "b",
+   "ziel": "remis",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "YTJfV",
+    "wertung": 1362,
+    "partie": "https://lichess.org/QAbVBeOZ#93",
+    "themen": [
+     "endgame",
+     "equality",
+     "rookEndgame",
+     "short",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "Rf1+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-5XOXS",
+   "fen": "8/1K6/2Pk4/1P4P1/5r2/8/8/8 w - - 0 60",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "5XOXS",
+    "wertung": 1721,
+    "partie": "https://lichess.org/GAd9P39e/black#118",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.29,
+    "mattIn": null,
+    "bester": "c7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-aAoez",
+   "fen": "8/3K4/r1P5/8/5k1p/7P/p7/R7 w - - 4 55",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "aAoez",
+    "wertung": 1658,
+    "partie": "https://lichess.org/TSH2RHvd/black#108",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "long",
+     "promotion",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.8,
+    "mattIn": null,
+    "bester": "c7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-dbqYf",
+   "fen": "8/7p/8/6k1/P5r1/2P1K1p1/8/6R1 b - - 2 54",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "dbqYf",
+    "wertung": 1619,
+    "partie": "https://lichess.org/A2Cnfhh1#107",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "quietMove",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 3.72,
+    "mattIn": null,
+    "bester": "h5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-qTMYM",
+   "fen": "8/8/8/6p1/p1kr2P1/P3RK2/8/8 b - - 1 55",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "qTMYM",
+    "wertung": 1701,
+    "partie": "https://lichess.org/EYNAR4vp#109",
+    "themen": [
+     "crushing",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.06,
+    "mattIn": null,
+    "bester": "Rd3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-P6jeE",
+   "fen": "4k1r1/8/5KP1/2p1p3/2P1P3/8/8/8 w - - 1 60",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "P6jeE",
+    "wertung": 1600,
+    "partie": "https://lichess.org/OFtkDObZ/black#118",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "promotion",
+     "rookEndgame",
+     "veryLong",
+     "zugzwang"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.62,
+    "mattIn": null,
+    "bester": "g7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-idLMX",
+   "fen": "8/6p1/5p1P/1r4k1/5RP1/6K1/8/8 b - - 0 78",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "idLMX",
+    "wertung": 2140,
+    "partie": "https://lichess.org/YjzH2iJz#155",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "rookEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.25,
+    "mattIn": null,
+    "bester": "Rb3+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-Hj92R",
+   "fen": "8/5k2/2r4p/1p3K2/8/1pR5/8/8 w - - 4 70",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Hj92R",
+    "wertung": 2428,
+    "partie": "https://lichess.org/2mit7f2Q/black#138",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "exposedKing",
+     "hangingPiece",
+     "master",
+     "rookEndgame",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 4.74,
+    "mattIn": null,
+    "bester": "Rxc6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-HoLFm",
+   "fen": "R7/8/8/6pk/7p/P6K/r5P1/8 b - - 6 54",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "HoLFm",
+    "wertung": 1942,
+    "partie": "https://lichess.org/RwJvU4jk#107",
+    "themen": [
+     "crushing",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 4.74,
+    "mattIn": null,
+    "bester": "g4+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-0cMhb",
+   "fen": "R7/8/5Kp1/4P3/5k1p/7r/8/8 w - - 0 68",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "0cMhb",
+    "wertung": 2025,
+    "partie": "https://lichess.org/81hRzu5D/black#134",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "promotion",
+     "rookEndgame",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.09,
+    "mattIn": null,
+    "bester": "Ra4+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-irlU1",
+   "fen": "8/1K5R/8/6p1/6k1/7p/8/8 b - - 3 66",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "turmendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "irlU1",
+    "wertung": 2264,
+    "partie": "https://lichess.org/shas5mLd#131",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "rookEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.79,
+    "mattIn": null,
+    "bester": "Kg3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-RkDJx",
+   "fen": "8/6p1/q7/7p/6k1/4Q1P1/8/6K1 w - - 1 50",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "RkDJx",
+    "wertung": 990,
+    "partie": "https://lichess.org/vVMstSqw/black#98",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn2",
+     "queenEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 98.0,
+    "mattIn": 2,
+    "bester": "Qf4+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-BmVo0",
+   "fen": "8/8/5Q2/1p6/2p4P/q2k4/5PK1/8 w - - 1 47",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "BmVo0",
+    "wertung": 963,
+    "partie": "https://lichess.org/70zIpSfz/black#92",
+    "themen": [
+     "crushing",
+     "endgame",
+     "queenEndgame",
+     "short",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 10.18,
+    "mattIn": null,
+    "bester": "Qf3+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-wDjuH",
+   "fen": "5k2/4q3/8/6PK/4p1Q1/8/8/8 b - - 4 84",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "wDjuH",
+    "wertung": 888,
+    "partie": "https://lichess.org/T26meTZs#167",
+    "themen": [
+     "endgame",
+     "master",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Qh7#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-i12WD",
+   "fen": "8/Q7/8/8/8/5K2/2pq4/2k5 w - - 0 81",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "i12WD",
+    "wertung": 900,
+    "partie": "https://lichess.org/t26SNEex/black#160",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Qa1#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-TJHRB",
+   "fen": "8/8/8/8/8/4K3/Q7/6kq w - - 0 71",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "TJHRB",
+    "wertung": 974,
+    "partie": "https://lichess.org/YKClz1Vg/black#140",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Qf2#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-nLFqO",
+   "fen": "5Q2/6p1/7k/5P2/5PK1/4q3/p7/8 w - - 0 57",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "nLFqO",
+    "wertung": 1113,
+    "partie": "https://lichess.org/Rqa2z918/black#112",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Qh8#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-jbO1W",
+   "fen": "Q4K2/3q4/4k3/8/8/8/7P/8 b - - 8 46",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "jbO1W",
+    "wertung": 1021,
+    "partie": "https://lichess.org/qHGdSR5G#91",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Qf7#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-ZECxI",
+   "fen": "8/6Q1/8/8/4KP2/8/P1k5/3q4 b - - 1 44",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "ZECxI",
+    "wertung": 1192,
+    "partie": "https://lichess.org/5VvECS6r#87",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "queenEndgame",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.97,
+    "mattIn": null,
+    "bester": "Qd3+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-Zypad",
+   "fen": "3Q4/8/6p1/8/8/2k3p1/6K1/4q3 w - - 2 64",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Zypad",
+    "wertung": 1196,
+    "partie": "https://lichess.org/5sy9HGlE/black#126",
+    "themen": [
+     "crushing",
+     "endgame",
+     "queenEndgame",
+     "short",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.82,
+    "mattIn": null,
+    "bester": "Qa5+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-Gaq1W",
+   "fen": "8/8/p7/6Q1/5K2/7k/8/q7 w - - 0 63",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Gaq1W",
+    "wertung": 1057,
+    "partie": "https://lichess.org/8bRX7KnX/black#124",
+    "themen": [
+     "endgame",
+     "master",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Qg3#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-OeZdE",
+   "fen": "8/7Q/8/8/4K3/6P1/6kP/5q2 b - - 24 54",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "OeZdE",
+    "wertung": 1358,
+    "partie": "https://lichess.org/yQo9mZY0#107",
+    "themen": [
+     "crushing",
+     "endgame",
+     "queenEndgame",
+     "short",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 7.33,
+    "mattIn": null,
+    "bester": "Qb1+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-6PZ7w",
+   "fen": "8/3q4/7Q/3k1P2/p6P/8/6PK/8 b - - 0 42",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "6PZ7w",
+    "wertung": 1416,
+    "partie": "https://lichess.org/4eROEI9d#83",
+    "themen": [
+     "crushing",
+     "endgame",
+     "queenEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.91,
+    "mattIn": null,
+    "bester": "Qd6+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-VPl3G",
+   "fen": "8/8/8/8/8/7K/1Q6/6qk w - - 0 68",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "VPl3G",
+    "wertung": 1318,
+    "partie": "https://lichess.org/lIWncmzI/black#134",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn2",
+     "queenEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 98.0,
+    "mattIn": 2,
+    "bester": "Qb7+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-guO1a",
+   "fen": "6k1/6p1/6K1/3q2Q1/5P1P/6P1/8/8 b - - 6 60",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "guO1a",
+    "wertung": 1394,
+    "partie": "https://lichess.org/rew6Xpvl#119",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Qf7#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-2KI5m",
+   "fen": "8/7p/8/8/3Q4/5K2/7q/2k5 w - - 2 65",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "2KI5m",
+    "wertung": 1534,
+    "partie": "https://lichess.org/NIvMfx6M/black#128",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "queenEndgame",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 7.15,
+    "mattIn": null,
+    "bester": "Qa1+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-58St7",
+   "fen": "2K2k2/p3q3/1p2P1Q1/8/8/8/2P5/8 b - - 16 54",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "58St7",
+    "wertung": 1809,
+    "partie": "https://lichess.org/8PmRKEWO#107",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "long",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.31,
+    "mattIn": null,
+    "bester": "Qe8+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-0sQ6M",
+   "fen": "7K/6QP/8/8/8/p1q5/1k6/8 w - - 0 75",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "0sQ6M",
+    "wertung": 1624,
+    "partie": "https://lichess.org/kFsvIrA8/black#148",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "long",
+     "promotion",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.28,
+    "mattIn": null,
+    "bester": "Qxc3+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-0Cxf2",
+   "fen": "5K2/2q5/8/p2k4/P7/8/5Q2/8 b - - 8 52",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "0Cxf2",
+    "wertung": 1625,
+    "partie": "https://lichess.org/cBixrE7X#103",
+    "themen": [
+     "crushing",
+     "endgame",
+     "long",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.34,
+    "mattIn": null,
+    "bester": "Qc5+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-XkgCC",
+   "fen": "8/3Q4/5K1k/6p1/8/8/8/6q1 w - - 2 54",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "XkgCC",
+    "wertung": 1804,
+    "partie": "https://lichess.org/E43QlAx4/black#106",
+    "themen": [
+     "endgame",
+     "mate",
+     "mateIn1",
+     "oneMove",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Qh3#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-wkocR",
+   "fen": "8/8/7k/Pq4pp/8/6P1/5QK1/8 w - - 0 50",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "wkocR",
+    "wertung": 1810,
+    "partie": "https://lichess.org/apXCYeRz/black#98",
+    "themen": [
+     "crushing",
+     "endgame",
+     "queenEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 10.67,
+    "mattIn": null,
+    "bester": "Qb6+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-GbVWd",
+   "fen": "1Q6/8/8/6p1/p3K1P1/P7/2k5/5q2 b - - 8 64",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "GbVWd",
+    "wertung": 1937,
+    "partie": "https://lichess.org/cBcsJVsY#127",
+    "themen": [
+     "crushing",
+     "endgame",
+     "queenEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 10.04,
+    "mattIn": null,
+    "bester": "Qd3+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-voaQm",
+   "fen": "8/8/8/6p1/8/4QP2/4K1k1/7q b - - 1 67",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "voaQm",
+    "wertung": 2055,
+    "partie": "https://lichess.org/LZzrmOlX#133",
+    "themen": [
+     "crushing",
+     "endgame",
+     "queenEndgame",
+     "veryLong",
+     "zugzwang"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.13,
+    "mattIn": null,
+    "bester": "Qf1+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-cbgZj",
+   "fen": "8/6P1/7K/4Q3/8/8/kp6/6q1 w - - 1 61",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "cbgZj",
+    "wertung": 2409,
+    "partie": "https://lichess.org/xNZloupq/black#120",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "long",
+     "promotion",
+     "queenEndgame"
+    ]
+   },
+   "pruefung": {
+    "wert": 2.5,
+    "mattIn": null,
+    "bester": "Qd5+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-78HF7",
+   "fen": "4k3/1P2p3/1q6/8/8/2K5/2P2pQ1/8 w - - 3 61",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "78HF7",
+    "wertung": 1921,
+    "partie": "https://lichess.org/mxpJHMiA/black#120",
+    "themen": [
+     "crushing",
+     "endgame",
+     "queenEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 10.42,
+    "mattIn": null,
+    "bester": "Qg8+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-6PMhU",
+   "fen": "4Q3/2p5/7k/3P4/5p2/7P/6K1/2q5 w - - 1 52",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "damenendspiel",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "6PMhU",
+    "wertung": 2052,
+    "partie": "https://lichess.org/sVM9CpJ3/black#102",
+    "themen": [
+     "crushing",
+     "endgame",
+     "master",
+     "queenEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.48,
+    "mattIn": null,
+    "bester": "Qc6+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-T8TIk",
+   "fen": "8/8/7p/6p1/4K1P1/2kB4/2b5/8 w - - 0 47",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "T8TIk",
+    "wertung": 967,
+    "partie": "https://lichess.org/ZaGDXqtC/black#92",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "veryLong",
+     "zugzwang"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.88,
+    "mattIn": null,
+    "bester": "Bxc2",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-GYdPX",
+   "fen": "8/4k3/7K/1n4P1/8/8/7P/8 w - - 1 48",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "GYdPX",
+    "wertung": 971,
+    "partie": "https://lichess.org/hZrDX0kT/black#94",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "knightEndgame",
+     "promotion",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.01,
+    "mattIn": null,
+    "bester": "g6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-VSXAF",
+   "fen": "8/8/8/2K5/4k1p1/5pP1/5B2/8 b - - 8 61",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "VSXAF",
+    "wertung": 985,
+    "partie": "https://lichess.org/Df9WFes2#121",
+    "themen": [
+     "advancedPawn",
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "long"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.24,
+    "mattIn": null,
+    "bester": "Kd3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-gnWU2",
+   "fen": "8/8/5pB1/7P/2K2k2/4b3/8/8 w - - 3 51",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "gnWU2",
+    "wertung": 758,
+    "partie": "https://lichess.org/CiYW35Vg/black#100",
+    "themen": [
+     "advancedPawn",
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "long",
+     "promotion"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.2,
+    "mattIn": null,
+    "bester": "h6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-sqkxs",
+   "fen": "8/8/1p1N4/1P3P2/pk6/2p5/2K5/8 b - - 0 51",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "sqkxs",
+    "wertung": 775,
+    "partie": "https://lichess.org/imrLboLt#101",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "knightEndgame",
+     "long",
+     "promotion"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.91,
+    "mattIn": null,
+    "bester": "a3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-qtPCU",
+   "fen": "8/3n4/4k3/3p4/3K4/2P5/8/8 w - - 4 78",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 1,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "qtPCU",
+    "wertung": 987,
+    "partie": "https://lichess.org/gMqOvTvk/black#154",
+    "themen": [
+     "endgame",
+     "equality",
+     "knightEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": -0.19,
+    "mattIn": null,
+    "bester": "c4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-aWKPv",
+   "fen": "8/1K6/Pb6/8/5p2/4kB2/8/8 w - - 8 74",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "aWKPv",
+    "wertung": 1242,
+    "partie": "https://lichess.org/UlspFRPo/black#146",
+    "themen": [
+     "advancedPawn",
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.06,
+    "mattIn": null,
+    "bester": "Kxb6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-U1n1b",
+   "fen": "8/8/1p6/1P6/2B5/2Pb2k1/7p/7K b - - 1 58",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "U1n1b",
+    "wertung": 1252,
+    "partie": "https://lichess.org/CseBPWFL#115",
+    "themen": [
+     "bishopEndgame",
+     "endgame",
+     "master",
+     "masterVsMaster",
+     "mate",
+     "mateIn1",
+     "oneMove"
+    ]
+   },
+   "pruefung": {
+    "wert": 99.0,
+    "mattIn": 1,
+    "bester": "Be4#",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-q9B0Z",
+   "fen": "8/8/1p1K4/1P3P1k/n7/8/8/8 w - - 0 50",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "q9B0Z",
+    "wertung": 1250,
+    "partie": "https://lichess.org/Nc7l411s/black#98",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "endgame",
+     "knightEndgame",
+     "long"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.55,
+    "mattIn": null,
+    "bester": "f6",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-H0Lfy",
+   "fen": "8/1p4Pb/1P6/p1K5/2P5/k7/8/8 w - - 0 49",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "H0Lfy",
+    "wertung": 1287,
+    "partie": "https://lichess.org/x7LpavPR/black#96",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "long",
+     "quietMove"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.81,
+    "mattIn": null,
+    "bester": "Kb5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-1U2Pd",
+   "fen": "8/1b4k1/4Kp2/5Bp1/8/8/5P1P/8 b - - 5 44",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "1U2Pd",
+    "wertung": 1027,
+    "partie": "https://lichess.org/L0msecH1#87",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "deflection",
+     "endgame",
+     "short",
+     "skewer"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.75,
+    "mattIn": null,
+    "bester": "Bc8+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-qXwbY",
+   "fen": "8/8/1pn1k3/2p5/3PK3/2P5/6P1/8 w - - 1 40",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 2,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "qXwbY",
+    "wertung": 1235,
+    "partie": "https://lichess.org/BfFFeZ8U/black#78",
+    "themen": [
+     "endgame",
+     "equality",
+     "fork",
+     "knightEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": -0.03,
+    "mattIn": null,
+    "bester": "d5+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-PbpLd",
+   "fen": "8/P6p/1P6/3b2k1/1K6/8/4P3/8 w - - 1 68",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "PbpLd",
+    "wertung": 1588,
+    "partie": "https://lichess.org/XL1e0WRY/black#134",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "long",
+     "master"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.23,
+    "mattIn": null,
+    "bester": "Kc5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-gV7Sc",
+   "fen": "8/8/8/1N6/8/P1P1p1k1/1P3p2/5K2 b - - 0 51",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "gV7Sc",
+    "wertung": 1521,
+    "partie": "https://lichess.org/SjI7HkJ9#101",
+    "themen": [
+     "advancedPawn",
+     "advantage",
+     "endgame",
+     "knightEndgame",
+     "long",
+     "promotion"
+    ]
+   },
+   "pruefung": {
+    "wert": 4.42,
+    "mattIn": null,
+    "bester": "e2+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-BZB4p",
+   "fen": "8/8/8/5kp1/2P1N2p/4PK2/8/8 b - - 4 46",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "BZB4p",
+    "wertung": 1391,
+    "partie": "https://lichess.org/T4Di0BA7#91",
+    "themen": [
+     "crushing",
+     "deflection",
+     "endgame",
+     "knightEndgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.83,
+    "mattIn": null,
+    "bester": "g4+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-gtiZi",
+   "fen": "8/8/1K3B2/2P5/1pk5/p6p/7P/8 b - - 1 66",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "gtiZi",
+    "wertung": 1501,
+    "partie": "https://lichess.org/Yr48oHHc#131",
+    "themen": [
+     "advancedPawn",
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "promotion",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.07,
+    "mattIn": null,
+    "bester": "b3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-6fTiu",
+   "fen": "8/8/8/2k3Bp/4Kp2/2P5/6Pb/8 w - - 2 43",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "6fTiu",
+    "wertung": 1390,
+    "partie": "https://lichess.org/Zq7btK4R/black#84",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "long"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.06,
+    "mattIn": null,
+    "bester": "Bxf4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-HKHht",
+   "fen": "8/5k2/5n1P/p3KP2/1p6/P7/8/8 w - - 0 53",
+   "leser": "w",
+   "ziel": "remis",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 3,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "HKHht",
+    "wertung": 1561,
+    "partie": "https://lichess.org/YLwpFFtR/black#104",
+    "themen": [
+     "endgame",
+     "equality",
+     "knightEndgame",
+     "oneMove"
+    ]
+   },
+   "pruefung": {
+    "wert": 0.0,
+    "mattIn": null,
+    "bester": "axb4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-sAXPl",
+   "fen": "8/8/8/pp6/8/k2K4/8/1B6 b - - 3 57",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "sAXPl",
+    "wertung": 1816,
+    "partie": "https://lichess.org/jyqLXs6Z#113",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "long",
+     "quietMove"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.87,
+    "mattIn": null,
+    "bester": "Kb2",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-OubkU",
+   "fen": "2K5/3Pk3/1b6/pP6/8/1P6/8/8 w - - 1 46",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "OubkU",
+    "wertung": 1889,
+    "partie": "https://lichess.org/i7kVl4Et/black#90",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.62,
+    "mattIn": null,
+    "bester": "Kb7",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-uUTpE",
+   "fen": "8/8/8/4KPb1/8/8/1P1k4/8 w - - 3 77",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "uUTpE",
+    "wertung": 1620,
+    "partie": "https://lichess.org/SgBzZ4tN/black#152",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "long",
+     "quietMove"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.97,
+    "mattIn": null,
+    "bester": "b4",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-rx5i6",
+   "fen": "8/8/8/3B2p1/2p2kP1/3p1P2/5K2/8 b - - 1 61",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "rx5i6",
+    "wertung": 1824,
+    "partie": "https://lichess.org/7hK5WYhz#121",
+    "themen": [
+     "advancedPawn",
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "long"
+    ]
+   },
+   "pruefung": {
+    "wert": 7.9,
+    "mattIn": null,
+    "bester": "c3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-eOAKT",
+   "fen": "8/7p/P7/7P/6k1/4b3/3pK3/5B2 w - - 1 64",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 4,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "eOAKT",
+    "wertung": 1734,
+    "partie": "https://lichess.org/KjsT2wNM/black#126",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "fork",
+     "long"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.72,
+    "mattIn": null,
+    "bester": "Kxe3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-OBRLG",
+   "fen": "8/8/pN6/2p5/3p4/1k1K4/8/8 b - - 5 63",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "OBRLG",
+    "wertung": 2380,
+    "partie": "https://lichess.org/yeAGRJ4B#125",
+    "themen": [
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "knightEndgame",
+     "master",
+     "quietMove",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.44,
+    "mattIn": null,
+    "bester": "a5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-GxYWK",
+   "fen": "8/8/5p2/5k1p/3K1b2/4BP1P/8/8 b - - 6 46",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "GxYWK",
+    "wertung": 2112,
+    "partie": "https://lichess.org/wYdKXCbD#91",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.12,
+    "mattIn": null,
+    "bester": "Bxe3+",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-Yaenm",
+   "fen": "2k5/8/2PK4/8/7p/4B3/5P2/4b3 b - - 2 43",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "Yaenm",
+    "wertung": 2133,
+    "partie": "https://lichess.org/BJz1K8Pz#85",
+    "themen": [
+     "bishopEndgame",
+     "crushing",
+     "endgame",
+     "long",
+     "quietMove"
+    ]
+   },
+   "pruefung": {
+    "wert": 6.1,
+    "mattIn": null,
+    "bester": "h3",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-TfZ72",
+   "fen": "8/8/2p5/5PK1/7P/k5n1/8/8 w - - 1 53",
+   "leser": "w",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "TfZ72",
+    "wertung": 2129,
+    "partie": "https://lichess.org/fRhvOI8I/black#104",
+    "themen": [
+     "advancedPawn",
+     "crushing",
+     "defensiveMove",
+     "endgame",
+     "knightEndgame",
+     "quietMove",
+     "veryLong"
+    ]
+   },
+   "pruefung": {
+    "wert": 5.04,
+    "mattIn": null,
+    "bester": "h5",
+    "einzigerZug": true,
+    "tiefe": 18
+   }
+  },
+  {
+   "id": "endspiel-l-wgvLo",
+   "fen": "8/8/2P5/1P1kpp2/1nN5/4K3/8/8 b - - 0 62",
+   "leser": "b",
+   "ziel": "gewinn",
+   "thema": "leichtfiguren",
+   "stichwort": null,
+   "schwierigkeit": 5,
+   "herkunft": {
+    "quelle": "lichess",
+    "puzzle": "wgvLo",
+    "wertung": 1987,
+    "partie": "https://lichess.org/BUKnaICo#123",
+    "themen": [
+     "crushing",
+     "endgame",
+     "hangingPiece",
+     "knightEndgame",
+     "master",
+     "short"
+    ]
+   },
+   "pruefung": {
+    "wert": 7.35,
+    "mattIn": null,
+    "bester": "Kxc4",
+    "einzigerZug": true,
     "tiefe": 18
    }
   }

@@ -94,3 +94,16 @@ test("Ziehen per Wischen abgeschaltet: Wischen zieht nicht, Antippen schon", asy
   await page.getByRole("button", { name: "e4", exact: true }).click();
   await expect(page.getByTestId("partiezuege")).toContainText("1. e4");
 });
+
+test("Antippen mit großzügiger Trefferfläche (R35): knapp neben f3 zieht der Springer", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await beginnePartie(page);
+  await page.getByRole("button", { name: /^g1, Springer/ }).click();
+  // g3 ist kein Zielfeld; ein Tipp ganz links in g3 meint das Nachbarfeld f3.
+  const g3 = await page.getByRole("button", { name: "g3", exact: true }).boundingBox();
+  if (!g3) throw new Error("g3 nicht sichtbar");
+  await page.mouse.click(g3.x + g3.width * 0.1, g3.y + g3.height / 2);
+  await expect(page.getByTestId("partiezuege")).toContainText("1. Sf3");
+});

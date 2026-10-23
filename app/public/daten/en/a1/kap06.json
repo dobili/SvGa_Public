@@ -1,0 +1,6331 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 6,
+ "titel": "Middlegame strategy",
+ "abschnitte": [
+  {
+   "nummer": "6.1",
+   "label": "sec:k6-saeulen",
+   "titel": "What counts in the middlegame"
+  },
+  {
+   "nummer": "6.2",
+   "label": "sec:k6-planfragen",
+   "titel": "Finding a plan with the three plan questions"
+  },
+  {
+   "nummer": "6.3",
+   "label": "sec:k6-wo",
+   "titel": "Question 1: Where do I play?"
+  },
+  {
+   "nummer": "6.4",
+   "label": "sec:k6-gegner",
+   "titel": "Question 2: What does my opponent want?"
+  },
+  {
+   "nummer": "6.5",
+   "label": "sec:k6-figur",
+   "titel": "Question 3: Which piece do I bring there?"
+  },
+  {
+   "nummer": "6.6",
+   "label": "sec:k6-wettrennen",
+   "titel": "All three questions on one position: the race in the King's Indian Defense"
+  },
+  {
+   "nummer": "6.7",
+   "label": "sec:k6-qualitaet",
+   "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
+  },
+  {
+   "nummer": "6.8",
+   "label": "sec:k6-verwerten",
+   "titel": "Converting the advantage"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "6.1",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": null,
+   "unterabschnitt": null,
+   "fen": "r1bq1rk1/p3bppp/1pn1pn2/2pp4/3P1B2/2PBPN2/PP1NQPPP/R4RK1 b - - 1 9",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a1",
+     "nach": "f1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The position from Chapter 1 after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Qe2"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. The opening is over. Gold arrow: the rooks on a1 and f1 are connected.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a1",
+    "pfad": [
+     "d4",
+     "d5",
+     "Bf4",
+     "Nf6",
+     "e3",
+     "e6",
+     "Nf3",
+     "Be7",
+     "Bd3",
+     "O-O",
+     "O-O",
+     "c5",
+     "c3",
+     "Nc6",
+     "Nbd2",
+     "b6",
+     "Qe2"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 33
+   },
+   "pruefsumme": "af4a2f98dd03bb80"
+  },
+  {
+   "id": "6.2",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "Closed center: Play where your pawn chain points",
+   "fen": "6k1/ppp2p1p/3p2p1/3Pp3/2P1P3/8/PP3PPP/6K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "c4",
+     "nach": "c5"
+    },
+    {
+     "farbe": "grau",
+     "von": "f7",
+     "nach": "f5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The skeleton of the King's Indian Defense from Chapter 5 after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8. d5 Ne7"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray arrows: White prepares ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "c4-c5"
+    },
+    {
+     "art": "text",
+     "text": " on the queenside, Black ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...f7-f5"
+    },
+    {
+     "art": "text",
+     "text": " on the kingside.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 138
+   },
+   "pruefsumme": "35b137e4fc010a2c",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why do White and Black play on opposite wings here?",
+      "antworten": [
+       "Because White has no pawns left on the kingside.",
+       "Each side plays where its own chain points and attacks the opponent's base.",
+       "Because in a closed center no pawn may move anymore."
+      ],
+      "richtig": 1,
+      "erklaerung": "White's chain e4–d5 points to the queenside, Black's chain d6–e5 to the kingside. This starts a race: whoever breaks through first decides the game."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.3",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "Open center: Play with your pieces",
+   "fen": "r2q1rk1/pb1n1ppp/1p2pn2/6B1/1bBP4/2N2N2/PP2QPPP/R2R2K1 b - - 2 12",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d4",
+     "nach": "d5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "f6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The final position of the Nimzo-Indian main line (Chapters 2 and 5) after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "12. Bg5"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold: the lever d4–d5. Gray: Black's three guards of the square d5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a3",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "e6",
+     "Nc3",
+     "Bb4",
+     "e3",
+     "O-O",
+     "Bd3",
+     "d5",
+     "Nf3",
+     "c5",
+     "O-O",
+     "dxc4",
+     "Bxc4",
+     "Nbd7",
+     "Qe2",
+     "b6",
+     "Rd1",
+     "cxd4",
+     "exd4",
+     "Bb7",
+     "Bg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 155
+   },
+   "pruefsumme": "ae11f382a51cc85e"
+  },
+  {
+   "id": "6.4",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "A wing attack with an open center: Respond in the middle",
+   "fen": "rnbqkbnr/ppp2ppp/8/3p4/4Pp2/5N2/PPPP2PP/RNBQKB1R w KQkq d6 0 4",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "e4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The King's Gambit from Chapter 3 after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. f4 exf4 3. Nf3 d5"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red: the counterstrike in the center attacks the pawn on e4.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a4",
+    "pfad": [
+     "e4",
+     "e5",
+     "f4",
+     "exf4",
+     "Nf3",
+     "d5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 196
+   },
+   "pruefsumme": "4805f26caae7615b"
+  },
+  {
+   "id": "6.5",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "A wing attack with an open center: Respond in the middle",
+   "fen": "r1bq1rk1/pp2ppbp/2np1np1/8/3NP3/2N1BP2/PPPQ2PP/R3KB1R w KQ - 3 9",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "gold",
+     "von": "f1",
+     "nach": "c4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Nc6"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red: the counterstrike ...d5. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Bc4"
+    },
+    {
+     "art": "text",
+     "text": " takes control of d5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a5",
+    "pfad": [
+     "e4",
+     "c5",
+     "Nf3",
+     "d6",
+     "d4",
+     "cxd4",
+     "Nxd4",
+     "Nf6",
+     "Nc3",
+     "g6",
+     "Be3",
+     "Bg7",
+     "f3",
+     "O-O",
+     "Qd2",
+     "Nc6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 210
+   },
+   "pruefsumme": "3554b1d0acd4a898",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "9. Bc4",
+      "frage": "Why does White play 9. Bc4 even before castling queenside?",
+      "antworten": [
+       "It attacks the knight on f6 right away.",
+       "It wants to trade the bishop for the knight on c6.",
+       "It guards d5: now three white attackers face two black defenders, and the counterstrike ...d5 doesn't work."
+      ],
+      "richtig": 2,
+      "erklaerung": "Before, it was two against two on d5: the pawn on e4 and the knight on c3 against the knight on f6 and the queen on d8. If you want to attack on the wing, secure the center first."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.6",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "Kings on opposite wings: Who opens up first?",
+   "fen": "2rq1rk1/pp1bppbp/2np1np1/8/2BNP3/2N1BP2/PPPQ2PP/2KR3R w - - 7 11",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h2",
+     "nach": "h5"
+    },
+    {
+     "farbe": "rot",
+     "von": "a7",
+     "nach": "a3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Rc8"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gold: White's storm h4–h5 against the pawn on g6 (gray). Red: Black's slower storm ...a5–a3.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a5",
+    "pfad": [
+     "e4",
+     "c5",
+     "Nf3",
+     "d6",
+     "d4",
+     "cxd4",
+     "Nxd4",
+     "Nf6",
+     "Nc3",
+     "g6",
+     "Be3",
+     "Bg7",
+     "f3",
+     "O-O",
+     "Qd2",
+     "Nc6",
+     "Bc4",
+     "Bd7",
+     "O-O-O",
+     "Rc8"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 260
+   },
+   "pruefsumme": "ff4a86dbbd05f54c",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why is White's pawn storm faster than Black's?",
+      "antworten": [
+       "Because Black's a-pawn is pinned.",
+       "Because the advanced pawn on g6 gives White's h-pawn a nearby target.",
+       "Because Black may not attack with pawns on the queenside."
+      ],
+      "richtig": 1,
+      "erklaerung": "The fianchetto ...g6 has handed White a hook. In front of White's king, on the other hand, no pawn has advanced yet, so Black needs one move more."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.7",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "Kings on the same wing: When may I attack?",
+   "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "f3",
+     "nach": "g5"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "h7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Greek gift position from Chapter 1, White to move. Gray: the pawns on d4 and e5 keep the center closed. Gold: three attackers. Red: the weak point h7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a7",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 305
+   },
+   "pruefsumme": "d2b9a3700f06f725",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Bxh7+",
+      "frage": "Why does the sacrifice 1. Bxh7+ work here?",
+      "antworten": [
+       "All three conditions are met: a locked center, superior numbers on the kingside, and a target that only the king defends.",
+       "White wins a rook with the bishop right away.",
+       "After the capture, Black is mated at once."
+      ],
+      "richtig": 0,
+      "erklaerung": "The pawn on e5 has driven the knight away from f6, the most important defender. After the sacrifice, the knight and queen arrive quickly via g5 and h5."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.8",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "No attack in sight: Play against the weakness",
+   "fen": "6k1/pp3ppp/2p5/3p4/3P4/4P3/PP3PPP/6K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b2",
+     "nach": "b4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Carlsbad structure from Chapter 5 (skeleton), White to move. Gold arrow: the advance b2–b4.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.9",
+    "6.10"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 334
+   },
+   "pruefsumme": "c6d6bfbdadf625d7"
+  },
+  {
+   "id": "6.9",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "No attack in sight: Play against the weakness",
+   "fen": "6k1/pp3ppp/2p5/1P1p4/3P4/4P3/P4PPP/6K1 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b5",
+     "nach": "c6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After b4 and b5 (Black has made some piece moves in the meantime), Black to move. Gold arrow: White wants to play bxc6.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.8",
+    "6.10"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 339
+   },
+   "pruefsumme": "ca75c0245fa6bb8f"
+  },
+  {
+   "id": "6.10",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "No attack in sight: Play against the weakness",
+   "fen": "6k1/p4ppp/2p5/3p4/3P4/4P3/P4PPP/6K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "c6"
+    },
+    {
+     "farbe": "rot",
+     "feld": "a7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "c5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After bxc6 bxc6, White to move. Red: the backward pawn on c6 and the isolated pawn on a7. Gray: the square c5, which the pawn on d4 guards.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.8",
+    "6.9"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 344
+   },
+   "pruefsumme": "a98320081aade2ac",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why is the pawn on c6 now a permanent target?",
+      "antworten": [
+       "Because White has more pawns on the c-file.",
+       "Because it is a doubled pawn.",
+       "Because it cannot advance to c5: the pawn on d4 guards that square, and no black pawn can support it anymore."
+      ],
+      "richtig": 2,
+      "erklaerung": "First fix, then attack. A pawn that cannot run away is a target for rooks on the c-file and a knight on e5."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.11",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.3",
+    "label": "sec:k6-wo",
+    "titel": "Question 1: Where do I play?"
+   },
+   "unterabschnitt": "No attack in sight: Play against the weakness",
+   "fen": "r1rnb1k1/B1n1q1bp/3p1pp1/1p1PpP2/1Pp1P3/2P4P/R2QN1PN/RB4K1 b - - 0 31",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "a1",
+     "nach": "a7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "f5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Karpov–Unzicker, Nice 1974 (Chapter 11), after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "31. f5"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold arrow: the first front, the blocked a-file. Gold square: the second front, the pawn on f5 on the kingside.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a11",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bb5",
+     "a6",
+     "Ba4",
+     "Nf6",
+     "O-O",
+     "Be7",
+     "Re1",
+     "b5",
+     "Bb3",
+     "d6",
+     "c3",
+     "O-O",
+     "h3",
+     "Na5",
+     "Bc2",
+     "c5",
+     "d4",
+     "Qc7",
+     "Nbd2",
+     "Nc6",
+     "d5",
+     "Nd8",
+     "a4",
+     "Rb8",
+     "axb5",
+     "axb5",
+     "b4",
+     "Nb7",
+     "Nf1",
+     "Bd7",
+     "Be3",
+     "Ra8",
+     "Qd2",
+     "Rfc8",
+     "Bd3",
+     "g6",
+     "Ng3",
+     "Bf8",
+     "Ra2",
+     "c4",
+     "Bb1",
+     "Qd8",
+     "Ba7",
+     "Ne8",
+     "Bc2",
+     "Nc7",
+     "Rea1",
+     "Qe7",
+     "Bb1",
+     "Be8",
+     "Ne2",
+     "Nd8",
+     "Nh2",
+     "Bg7",
+     "f4",
+     "f6",
+     "f5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 382
+   },
+   "pruefsumme": "abaf1ace5203b954"
+  },
+  {
+   "id": "6.12",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.4",
+    "label": "sec:k6-gegner",
+    "titel": "Question 2: What does my opponent want?"
+   },
+   "unterabschnitt": null,
+   "fen": "rn1qkb1r/pbpp1ppp/1p2pn2/8/2PP4/2N2N2/PP2PPPP/R1BQKB1R w KQkq - 2 5",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f8",
+     "nach": "b4"
+    },
+    {
+     "farbe": "gold",
+     "von": "a2",
+     "nach": "a3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "c3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Bb7"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red: the planned bishop move ...Bb4. Gray: the knight on c3, which it would pin to the king. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. a3"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a12",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "e6",
+     "Nf3",
+     "b6",
+     "Nc3",
+     "Bb7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 417
+   },
+   "pruefsumme": "56a0ca654c166eb8",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "5. a3",
+      "frage": "Why does White play the quiet move 5. a3?",
+      "antworten": [
+       "It prepares queenside castling.",
+       "It prevents ...Bb4: the bishop would pin the knight on c3, and on b4 White could now simply capture it.",
+       "It frees the square a2 for the rook on a1."
+      ],
+      "richtig": 1,
+      "erklaerung": "That is prophylaxis: you name your opponent's move (...Bb4), prevent exactly that move, and weaken nothing in front of your king."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.13",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.4",
+    "label": "sec:k6-gegner",
+    "titel": "Question 2: What does my opponent want?"
+   },
+   "unterabschnitt": "When the attack is already underway: the means of defense",
+   "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "f7",
+     "nach": "f5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The position from ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 6.7",
+     "abbildung": "6.7"
+    },
+    {
+     "art": "text",
+     "text": " (Chapter 1), now Black to move. Red: the threat Bxh7+. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... f5"
+    },
+    {
+     "art": "text",
+     "text": " closes the diagonal.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.14",
+    "6.15"
+   ],
+   "beispiel": {
+    "id": "k06-a13",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 479
+   },
+   "pruefsumme": "64482143dc3e8ad5",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... f5",
+      "frage": "Why does Black play 1... f5?",
+      "antworten": [
+       "It prepares a pawn storm against White's king.",
+       "It attacks the bishop on d3.",
+       "The pawn steps between the bishop on d3 and h7 and closes the diagonal."
+      ],
+      "richtig": 2,
+      "erklaerung": "After f5 the diagonal is closed. If White captures en passant, the knight returns to f6 and guards h7 again."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.14",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.4",
+    "label": "sec:k6-gegner",
+    "titel": "Question 2: What does my opponent want?"
+   },
+   "unterabschnitt": "When the attack is already underway: the means of defense",
+   "fen": "r1b2rk1/ppq3pp/2n1pn2/3p4/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f6",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... f5 2. exf6 Nxf6"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gold: the knight guards h7 again. Red: the price, the backward pawn on e6.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.13",
+    "6.15"
+   ],
+   "beispiel": {
+    "id": "k06-a13",
+    "pfad": [
+     "f5",
+     "exf6",
+     "Nxf6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 480
+   },
+   "pruefsumme": "19641c0d42896769",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "What did Black pay for rescuing h7?",
+      "antworten": [
+       "The pawn on e6, which no pawn can defend anymore.",
+       "A whole knight.",
+       "The right to castle."
+      ],
+      "richtig": 0,
+      "erklaerung": "The knight on f6 guards h7 again, but e6 stays permanently weak. Defending means weighing which condition you can take away from the attack most cheaply."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.15",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.4",
+    "label": "sec:k6-gegner",
+    "titel": "Question 2: What does my opponent want?"
+   },
+   "unterabschnitt": "When the attack is already underway: the means of defense",
+   "fen": "r1b2r2/ppqn2pk/2n1p3/3pP1p1/3P4/2N5/PP3PPP/R2Q1RK1 w - - 0 4",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "h5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "g5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... f6 2. Bxh7+ Kxh7 3. Ng5+ fxg5"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gold: the pawn has captured the knight. Gray: White is left with only the queen check on h5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.13",
+    "6.14"
+   ],
+   "beispiel": {
+    "id": "k06-a13",
+    "pfad": [
+     "f6",
+     "Bxh7+",
+     "Kxh7",
+     "Ng5+",
+     "fxg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 481
+   },
+   "pruefsumme": "d76fa85f61e15c7b"
+  },
+  {
+   "id": "6.16",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.5",
+    "label": "sec:k6-figur",
+    "titel": "Question 3: Which piece do I bring there?"
+   },
+   "unterabschnitt": null,
+   "fen": "r2q1rk1/ppp2pp1/2npbn1p/2b1p3/2B1P2B/2PP1N2/PP1N1PPP/R2Q1RK1 b - - 3 9",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "f1",
+     "nach": "e1"
+    },
+    {
+     "farbe": "grau",
+     "von": "d2",
+     "nach": "f1"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "g3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The final position of the Italian Game from Chapter 2, Black to move. Gray: the white rook clears f1, and the knight on d2 goes there. Gold: its destination g3.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a16",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d3",
+     "d6",
+     "O-O",
+     "O-O",
+     "Bg5",
+     "h6",
+     "Bh4",
+     "Be6",
+     "Nbd2"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 521
+   },
+   "pruefsumme": "85c45490639979ad",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why is the knight on d2 White's least active piece?",
+      "antworten": [
+       "It is pinned to the king.",
+       "White's own pieces occupy almost all of its squares; only b1 and b3 are free, and neither has a task.",
+       "It is attacked by the pawn on e5."
+      ],
+      "richtig": 1,
+      "erklaerung": "From g3 the knight eyes f5 and h5 and defends e4. Here one regrouping improves two pieces at once: the knight and the rook."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.17",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.5",
+    "label": "sec:k6-figur",
+    "titel": "Question 3: Which piece do I bring there?"
+   },
+   "unterabschnitt": null,
+   "fen": "2r1r1k1/pp3ppp/4p3/8/8/4P3/PP1R1PPP/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d2",
+     "nach": "d7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. White has occupied the open d-file and doubled the rooks. Gray: the path to the 7th rank.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.18"
+   ],
+   "beispiel": {
+    "id": "k06-a17",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 548
+   },
+   "pruefsumme": "aae024a30fedb3c2",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Rd7",
+      "frage": "Why does White now play 1. Rd7?",
+      "antworten": [
+       "It escapes an attack by the rook on c8.",
+       "It wants to trade off the rook on c8.",
+       "The rook invades on the 7th rank and attacks the pawns on b7 and f7 from the side."
+      ],
+      "richtig": 2,
+      "erklaerung": "First occupy the open file, then double, then invade. On the 7th rank the pawns don't defend each other; b7 is hanging, and for now only the king holds f7."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.18",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.5",
+    "label": "sec:k6-figur",
+    "titel": "Question 3: Which piece do I bring there?"
+   },
+   "unterabschnitt": null,
+   "fen": "2r1r1k1/pp1R1ppp/4p3/8/8/4P3/PP3PPP/3R2K1 b - - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d7",
+     "nach": "b7"
+    },
+    {
+     "farbe": "rot",
+     "von": "d7",
+     "nach": "f7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rd7"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the rook attacks b7 and f7 from the side. The king still defends f7; Black first has to defend b7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.17"
+   ],
+   "beispiel": {
+    "id": "k06-a17",
+    "pfad": [
+     "Rd7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 549
+   },
+   "pruefsumme": "9669bf5b4987ebdb"
+  },
+  {
+   "id": "6.19",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.5",
+    "label": "sec:k6-figur",
+    "titel": "Question 3: Which piece do I bring there?"
+   },
+   "unterabschnitt": "The exchange question: Which piece should disappear?",
+   "fen": "5rk1/pp1bpp1p/3p1npQ/q7/2r1P1P1/2N2P2/PPP1N3/2KR3R b - - 0 18",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "g7"
+    },
+    {
+     "farbe": "rot",
+     "feld": "h8"
+    },
+    {
+     "farbe": "gold",
+     "feld": "h6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Karpov–Korchnoi, Moscow 1974 (Chapter 11), after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "17. Bh6 Bxh6 18. Qxh6"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the dark squares g7 and h8, which only the king still guards. Gold: the queen stands on h6.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a19",
+    "pfad": [
+     "Bh6",
+     "Bxh6",
+     "Qxh6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 580
+   },
+   "pruefsumme": "d5520aa66b9919b8"
+  },
+  {
+   "id": "6.20",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.6",
+    "label": "sec:k6-wettrennen",
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
+   },
+   "unterabschnitt": null,
+   "fen": "r1bq1rk1/ppp1npbp/3p1np1/3Pp3/2P1P3/2N2N2/PP2BPPP/R1BQ1RK1 w - - 1 9",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "c4",
+     "nach": "c5"
+    },
+    {
+     "farbe": "grau",
+     "von": "f7",
+     "nach": "f5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The interim position of the King's Indian main line from Chapter 2 after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Ne7"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray: both sides' levers. Red: the knight on f6, which stands in the way of its own f-pawn.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a20",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "g6",
+     "Nc3",
+     "Bg7",
+     "e4",
+     "d6",
+     "Nf3",
+     "O-O",
+     "Be2",
+     "e5",
+     "O-O",
+     "Nc6",
+     "d5",
+     "Ne7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 604
+   },
+   "pruefsumme": "a571de81115a9e76",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "9. b4",
+      "frage": "Which plan question does White answer with 9. b4?",
+      "antworten": [
+       "Question 2: it prevents ...f5.",
+       "Question 1: it advances on the queenside and prepares c5 against the base d6.",
+       "Question 3: it brings the bishop on c1 into play."
+      ],
+      "richtig": 1,
+      "erklaerung": "b4 supports the lever c5. Almost every move of the main line answers a plan question; Black replies with ...Nh5 and makes room for the f-pawn."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.21",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.6",
+    "label": "sec:k6-wettrennen",
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
+   },
+   "unterabschnitt": null,
+   "fen": "r1bq1rk1/ppp1n1bp/3p2p1/3Ppp1n/1PP1P3/2N2N2/P3BPPP/R1BQR1K1 w - - 0 11",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "f3",
+     "nach": "g5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "e6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. b4 Nh5 10. Re1 f5"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gold: the hole on e6 that ...f5 has left behind. Gray: the first step of the knight on f3 toward it.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.22",
+    "6.23"
+   ],
+   "beispiel": {
+    "id": "k06-a20",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "g6",
+     "Nc3",
+     "Bg7",
+     "e4",
+     "d6",
+     "Nf3",
+     "O-O",
+     "Be2",
+     "e5",
+     "O-O",
+     "Nc6",
+     "d5",
+     "Ne7",
+     "b4",
+     "Nh5",
+     "Re1",
+     "f5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 656
+   },
+   "pruefsumme": "43527809929bb57a"
+  },
+  {
+   "id": "6.22",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.6",
+    "label": "sec:k6-wettrennen",
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
+   },
+   "unterabschnitt": null,
+   "fen": "r1bq1rk1/pp2n1bp/2pp1np1/3PppN1/1PP1P3/2N2B2/P4PPP/R1BQR1K1 w - - 0 13",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "c1",
+     "nach": "e3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. Ng5 Nf6 12. Bf3 c6"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray: the bishop on c1 comes into play with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13. Be3"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.21",
+    "6.23"
+   ],
+   "beispiel": {
+    "id": "k06-a20",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "g6",
+     "Nc3",
+     "Bg7",
+     "e4",
+     "d6",
+     "Nf3",
+     "O-O",
+     "Be2",
+     "e5",
+     "O-O",
+     "Nc6",
+     "d5",
+     "Ne7",
+     "b4",
+     "Nh5",
+     "Re1",
+     "f5",
+     "Ng5",
+     "Nf6",
+     "Bf3",
+     "c6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 657
+   },
+   "pruefsumme": "d2f88a3c30c10785",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "13. Be3",
+      "frage": "Why does White play 13. Be3 now?",
+      "antworten": [
+       "It brings the last piece into play that was still at home.",
+       "It attacks the pawn on e5.",
+       "It prepares queenside castling."
+      ],
+      "richtig": 0,
+      "erklaerung": "In the plan balance, only this piece was still missing. After it, White is fully developed, and the knight on g5 can go to the hole on e6."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.23",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.6",
+    "label": "sec:k6-wettrennen",
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
+   },
+   "unterabschnitt": null,
+   "fen": "r1bq1rk1/pp2n1b1/2ppNnpp/3Ppp2/1PP1P3/2N1BB2/P4PPP/R2QR1K1 b - - 1 14",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "e6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "13. Be3 h6 14. Ne6"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold: the knight stands on the hole e6.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.21",
+    "6.22"
+   ],
+   "beispiel": {
+    "id": "k06-a20",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "g6",
+     "Nc3",
+     "Bg7",
+     "e4",
+     "d6",
+     "Nf3",
+     "O-O",
+     "Be2",
+     "e5",
+     "O-O",
+     "Nc6",
+     "d5",
+     "Ne7",
+     "b4",
+     "Nh5",
+     "Re1",
+     "f5",
+     "Ng5",
+     "Nf6",
+     "Bf3",
+     "c6",
+     "Be3",
+     "h6",
+     "Ne6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 658
+   },
+   "pruefsumme": "60cf8d81d9fc00b0"
+  },
+  {
+   "id": "6.24",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.6",
+    "label": "sec:k6-wettrennen",
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
+   },
+   "unterabschnitt": "The race itself: the pawn storm in front of your own king",
+   "fen": "r1bq1rk1/pppnn1bp/3p2p1/3Ppp2/2P1P3/2N1B3/PP2BPPP/R2QNRK1 w - - 0 11",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "e1",
+     "nach": "d3"
+    },
+    {
+     "farbe": "grau",
+     "von": "c4",
+     "nach": "c5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "9. Ne1 Nd7 10. Be3 f5"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray: the knight on e1 wants to go to d3 and from there supports the lever c4–c5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.25"
+   ],
+   "beispiel": {
+    "id": "k06-a20",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "g6",
+     "Nc3",
+     "Bg7",
+     "e4",
+     "d6",
+     "Nf3",
+     "O-O",
+     "Be2",
+     "e5",
+     "O-O",
+     "Nc6",
+     "d5",
+     "Ne7",
+     "Ne1",
+     "Nd7",
+     "Be3",
+     "f5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 695
+   },
+   "pruefsumme": "a03fdecadeb810d0"
+  },
+  {
+   "id": "6.25",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.6",
+    "label": "sec:k6-wettrennen",
+    "titel": "All three questions on one position: the race in the King's Indian Defense"
+   },
+   "unterabschnitt": "The race itself: the pawn storm in front of your own king",
+   "fen": "r1bq1rk1/pppnn1bp/3p4/3Pp1p1/2P1Pp2/2N2P2/PP2BBPP/R2QNRK1 w - - 0 13",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g5",
+     "nach": "g4"
+    },
+    {
+     "farbe": "grau",
+     "von": "c4",
+     "nach": "c5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f3"
+    },
+    {
+     "farbe": "rot",
+     "feld": "d6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. f3 f4 12. Bf2 g5"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray: both sides' levers. Red: the pawns on f3 and d6 they are aimed at.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.24"
+   ],
+   "beispiel": {
+    "id": "k06-a20",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "g6",
+     "Nc3",
+     "Bg7",
+     "e4",
+     "d6",
+     "Nf3",
+     "O-O",
+     "Be2",
+     "e5",
+     "O-O",
+     "Nc6",
+     "d5",
+     "Ne7",
+     "Ne1",
+     "Nd7",
+     "Be3",
+     "f5",
+     "f3",
+     "f4",
+     "Bf2",
+     "g5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 696
+   },
+   "pruefsumme": "1c6833d3fb2bfc14",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why may Black push the pawns in front of its own king here?",
+      "antworten": [
+       "Because White has no pieces on the kingside.",
+       "Because White's king has not castled yet.",
+       "Because the center is locked and White has no lever there to open up the middle."
+      ],
+      "richtig": 2,
+      "erklaerung": "A pawn storm in front of your own king is allowed only when the center is locked. White often gets there first on the queenside; in return, Black plays for the higher stakes."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.26",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.7",
+    "label": "sec:k6-qualitaet",
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
+   },
+   "unterabschnitt": "Unequal trades: what the rule-of-thumb values don't tell you",
+   "fen": "r1bq4/pppp1kpp/2n2n2/2b1p3/4P3/8/PPPP1PPP/RNBQ1RK1 w - - 0 8",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "c5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "c6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "f6"
+    },
+    {
+     "farbe": "rot",
+     "feld": "b1"
+    },
+    {
+     "farbe": "rot",
+     "feld": "c1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Italian Game after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7... Kxf7"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray: three developed black minor pieces. Red: White's minor pieces are still on their starting squares.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a26",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "O-O",
+     "Nf6",
+     "Ng5",
+     "O-O",
+     "Nxf7",
+     "Rxf7",
+     "Bxf7+",
+     "Kxf7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 767
+   },
+   "pruefsumme": "31a6040bb8391207"
+  },
+  {
+   "id": "6.27",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.7",
+    "label": "sec:k6-qualitaet",
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
+   },
+   "unterabschnitt": "The exchange sacrifice",
+   "fen": "2r3k1/8/8/8/8/2N5/PPP5/2K5 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "c8",
+     "nach": "c3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Skeleton for the Dragon Variation, Black to move: the rook on c8 stands on the half-open c-file, with the knight on c3 in front of it. Gold arrow: the exchange sacrifice ...Rxc3.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.28"
+   ],
+   "beispiel": {
+    "id": "k06-a27",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 796
+   },
+   "pruefsumme": "aa20019eb30620fc"
+  },
+  {
+   "id": "6.28",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.7",
+    "label": "sec:k6-qualitaet",
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
+   },
+   "unterabschnitt": "The exchange sacrifice",
+   "fen": "6k1/8/8/8/8/2P5/P1P5/2K5 b - - 0 2",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "a2"
+    },
+    {
+     "farbe": "rot",
+     "feld": "c2"
+    },
+    {
+     "farbe": "rot",
+     "feld": "c3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ...Rxc3 bxc3, Black to move. Red: the pawn shield in front of the king on c1 is destroyed: doubled pawns on c2 and c3, an isolated pawn on a2, and on top of that the open b-file.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.27"
+   ],
+   "beispiel": {
+    "id": "k06-a27",
+    "pfad": [
+     "Rxc3",
+     "bxc3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 797
+   },
+   "pruefsumme": "47dfb86f9760a417"
+  },
+  {
+   "id": "6.29",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.7",
+    "label": "sec:k6-qualitaet",
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
+   },
+   "unterabschnitt": "The exchange sacrifice",
+   "fen": "r2q1rk1/7p/p2p4/nppPn3/2P2P2/1P5b/PQ1NB2P/R2N1RK1 w - - 1 21",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h3",
+     "nach": "f1"
+    },
+    {
+     "farbe": "gold",
+     "von": "d1",
+     "nach": "e3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Petrosian–Spassky, Moscow 1966, game 10, after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "20... Bh3"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red: the bishop attacks the rook on f1. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21. Ne3"
+    },
+    {
+     "art": "text",
+     "text": " leaves the rook where it is.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.30"
+   ],
+   "beispiel": {
+    "id": "k06-a29",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 814
+   },
+   "pruefsumme": "a6b6f25c2d92122c",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "21. Ne3",
+      "frage": "Why does Petrosian leave the rook on f1 where it is and play 21. Ne3?",
+      "antworten": [
+       "He overlooks that the rook is attacked.",
+       "He gives up the exchange for something lasting: Black's last bishop disappears, and Black's king is left almost without a pawn shield.",
+       "The rook on f1 is pinned to the king and cannot move away."
+      ],
+      "richtig": 1,
+      "erklaerung": "An exchange sacrifice must buy something lasting. Here it is the light squares without a black bishop and the exposed king."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.30",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.7",
+    "label": "sec:k6-qualitaet",
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
+   },
+   "unterabschnitt": "The exchange sacrifice",
+   "fen": "r2q1rk1/7p/p2p4/nppPn3/2P2P2/1P2N3/PQ1NB2P/5RK1 b - - 0 22",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b2",
+     "nach": "e5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "a5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "21... Bxf1 22. Rxf1"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold: the queen on b2 is aiming at the knight on e5, which the pawn on f4 also attacks. Red: the knight on a5 has only the square b7 left. Gray: h7, the last pawn in front of Black's king.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "6.29"
+   ],
+   "beispiel": {
+    "id": "k06-a29",
+    "pfad": [
+     "Ne3",
+     "Bxf1",
+     "Rxf1"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 815
+   },
+   "pruefsumme": "209ffb04b93a531d"
+  },
+  {
+   "id": "6.31",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.7",
+    "label": "sec:k6-qualitaet",
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
+   },
+   "unterabschnitt": "The exchange sacrifice",
+   "fen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b2",
+     "nach": "h8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Petrosian–Spassky, Moscow 1966, game 10, after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "29... Rxf7"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. Qh8+!"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a31",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 831
+   },
+   "pruefsumme": "de95b9b7444c056e",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "30. Qh8+",
+      "frage": "Why does White give up the queen with 30. Qh8+?",
+      "antworten": [
+       "After Kxh8 comes Nxf7+, forking the king and the queen on g5; after that White is a piece up.",
+       "It forces stalemate.",
+       "After Kxh8, Black is mated at once."
+      ],
+      "richtig": 0,
+      "erklaerung": "Kxh8 is the only move. After Nxf7+ Kg7 Nxg5, White has turned the compensation into material: a whole piece up."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.32",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.7",
+    "label": "sec:k6-qualitaet",
+    "titel": "When the plan costs material: unequal trades and the exchange sacrifice"
+   },
+   "unterabschnitt": "The exchange sacrifice",
+   "fen": "7k/5N1p/p7/nppP2q1/2P5/1P2N3/P6P/7K b - - 0 31",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "h8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "g5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. Qh8+ Kxh8 31. Nxf7+"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the knight attacks the king on h8 and the queen on g5 at the same time.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a31",
+    "pfad": [
+     "Qh8+",
+     "Kxh8",
+     "Nxf7+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 870
+   },
+   "pruefsumme": "e74288ff68339462"
+  },
+  {
+   "id": "6.33",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.8",
+    "label": "sec:k6-verwerten",
+    "titel": "Converting the advantage"
+   },
+   "unterabschnitt": null,
+   "fen": "8/6kp/p7/nppP2N1/2P5/1P2N3/P6P/7K b - - 0 32",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "e3"
+    },
+    {
+     "farbe": "gold",
+     "feld": "g5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Petrosian–Spassky after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "31... Kg7 32. Nxg5"
+    },
+    {
+     "art": "text",
+     "text": " (not played in the game), Black to move. Gold: White is a knight up.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a31",
+    "pfad": [
+     "Qh8+",
+     "Kxh8",
+     "Nxf7+",
+     "Kg7",
+     "Nxg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 888
+   },
+   "pruefsumme": "00786adb4ac9f2d9",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "White is a knight up. Which trades should White aim for?",
+      "antworten": [
+       "Trade pawns and keep both knights.",
+       "Trade nothing at all, because every trade helps the defender.",
+       "Trade a pair of knights and keep your own pawns."
+      ],
+      "richtig": 2,
+      "erklaerung": "With a knight and five pawns against four pawns, White will queen a pawn. Two knights against one without pawns, on the other hand, would usually be a draw."
+     }
+    ]
+   }
+  },
+  {
+   "id": "6.34",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.8",
+    "label": "sec:k6-verwerten",
+    "titel": "Converting the advantage"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pp1b1ppp/2nqpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R2Q1RK1 w - - 4 10",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The final position of the London System from Chapter 2, White to move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a34",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 971
+   },
+   "pruefsumme": "6a07e1ce29e81700"
+  },
+  {
+   "id": "6.35",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.8",
+    "label": "sec:k6-verwerten",
+    "titel": "Converting the advantage"
+   },
+   "unterabschnitt": null,
+   "fen": "rnbq1rk1/ppp1ppbp/3p1np1/8/2PPP3/2N1BP2/PP4PP/R2QKBNR b KQ - 2 6",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "King's Indian Defense, Sämisch Variation, after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 Nf6 2. c4 g6 3. Nc3 Bg7 4. e4 d6 5. f3 O-O 6. Be3"
+    },
+    {
+     "art": "text",
+     "text": ". Black to move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a35",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "g6",
+     "Nc3",
+     "Bg7",
+     "e4",
+     "d6",
+     "f3",
+     "O-O",
+     "Be3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 982
+   },
+   "pruefsumme": "4b7738a3450bc8d9"
+  },
+  {
+   "id": "6.36",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.8",
+    "label": "sec:k6-verwerten",
+    "titel": "Converting the advantage"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/2qbbppp/2np1n2/1p2p3/p2PP3/4BN1P/PPBN1PP1/R2QR1K1 w - - 2 17",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The final position of the Ruy Lopez from Chapter 2, White to move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a36",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bb5",
+     "a6",
+     "Ba4",
+     "Nf6",
+     "O-O",
+     "Be7",
+     "Re1",
+     "b5",
+     "Bb3",
+     "O-O",
+     "c3",
+     "d6",
+     "h3",
+     "Na5",
+     "Bc2",
+     "c5",
+     "d4",
+     "Qc7",
+     "Nbd2",
+     "cxd4",
+     "cxd4",
+     "Nc6",
+     "Nb3",
+     "a5",
+     "Be3",
+     "a4",
+     "Nbd2",
+     "Bd7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 994
+   },
+   "pruefsumme": "ef6127ab75876606"
+  },
+  {
+   "id": "6.37",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.8",
+    "label": "sec:k6-verwerten",
+    "titel": "Converting the advantage"
+   },
+   "unterabschnitt": null,
+   "fen": "r2q1rk1/pp2n1b1/2ppPnpp/4pp2/1PP1P3/2N1BB2/P4PPP/R2QR1K1 b - - 0 15",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The final position of the King's Indian main line from Chapter 2 after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "15. dxe6"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a20",
+    "pfad": [
+     "d4",
+     "Nf6",
+     "c4",
+     "g6",
+     "Nc3",
+     "Bg7",
+     "e4",
+     "d6",
+     "Nf3",
+     "O-O",
+     "Be2",
+     "e5",
+     "O-O",
+     "Nc6",
+     "d5",
+     "Ne7",
+     "b4",
+     "Nh5",
+     "Re1",
+     "f5",
+     "Ng5",
+     "Nf6",
+     "Bf3",
+     "c6",
+     "Be3",
+     "h6",
+     "Ne6",
+     "Bxe6",
+     "dxe6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 1004
+   },
+   "pruefsumme": "f61fdbd2c8c2016e"
+  },
+  {
+   "id": "6.38",
+   "auflage": 1,
+   "kapitel": 6,
+   "abschnitt": {
+    "nummer": "6.8",
+    "label": "sec:k6-verwerten",
+    "titel": "Converting the advantage"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/6k1/r5p1/7P/5NK1/4R3/8 b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Black to move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k06-a38",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 1016
+   },
+   "pruefsumme": "6573dc0c1693c41b"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:angriff-london",
+   "nummer": 27,
+   "kapitel": 6,
+   "titel": null,
+   "abbildungen": [
+    "6.34"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "The bishop on d3 is aiming at h7, and the knight on f3 can go to g5. Check the three conditions for a king attack with same-side castling. What happens after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Bxh7+"
+    },
+    {
+     "art": "text",
+     "text": "? What would White have to achieve first?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Condition 1, the center:",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " not met. There is tension between d4 and c5, nothing is locked, and Black has the counterstrike ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...e5"
+    },
+    {
+     "art": "text",
+     "text": " ready. The knight on c6 and the queen on d6 support it; the pawn on d4 and the knight on f3 hold it back. ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Condition 2, superior force:",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " not met. The bishop on d3 does aim at h7, and no black bishop guards the square g5 anymore, but the knight on f6 defends h7 and h5. So ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Bxh7+"
+    },
+    {
+     "art": "text",
+     "text": " is simply met by ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10... Nxh7"
+    },
+    {
+     "art": "text",
+     "text": ", and White has given a bishop for a pawn. ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Condition 3, the target:",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " not met. The square h7, at which the bishop aims, is defended by the king and the knight; the square g7 is defended only by the king, but no white piece can reach it. There is no hook either. ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "What is missing:",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " the knight on f6 would have to be driven away or traded, and the center would have to be fixed, as in ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 6.7",
+     "abbildung": "6.7"
+    },
+    {
+     "art": "text",
+     "text": ". White can achieve both only through the center, with the lever ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "e3-e4"
+    },
+    {
+     "art": "text",
+     "text": " or with a knight on e5. Remember: a bishop aimed at h7 is not yet an attack. As long as the knight on f6 stays, you work in the center first.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 969
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Conditions for a king attack",
+    "text": "None of the three conditions is met: the center is open, and the knight on f6 defends h7 and h5. After 10. Bxh7+? Nxh7, White is simply a piece down; first White has to drive away the knight on f6 through the center (e3-e4 or Ne5)."
+   }
+  },
+  {
+   "id": "ueb:prophylaxe-saemisch",
+   "nummer": 28,
+   "kapitel": 6,
+   "titel": null,
+   "abbildungen": [
+    "6.35"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "White played ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. f3"
+    },
+    {
+     "art": "text",
+     "text": " before developing the bishop to e3. Which black move did White prevent in advance? Name the move and its goal. Why is ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "f3"
+    },
+    {
+     "art": "text",
+     "text": " nevertheless not a mere precautionary move?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Without ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "f3"
+    },
+    {
+     "art": "text",
+     "text": ", Black could attack the bishop on e3 with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Ng4"
+    },
+    {
+     "art": "text",
+     "text": ". White would have to move the bishop away or allow the trade ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Nxe3"
+    },
+    {
+     "art": "text",
+     "text": ". After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "fxe3"
+    },
+    {
+     "art": "text",
+     "text": ", White would have gotten doubled pawns on the e-file (Chapter 5) and lost the bishop pair. The pawn on f3 takes the square g4 away from the knight: if it goes there anyway, ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "fxg4"
+    },
+    {
+     "art": "text",
+     "text": " captures it. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "f3"
+    },
+    {
+     "art": "text",
+     "text": " is not a mere precautionary move, because it also defends the pawn on e4 and prepares White's plan: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Qd2"
+    },
+    {
+     "art": "text",
+     "text": ", queenside castling, and a pawn storm on the kingside. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "7. f3"
+    },
+    {
+     "art": "text",
+     "text": " had the same purpose in the Yugoslav Attack of the Dragon Variation (",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 6.5",
+     "abbildung": "6.5"
+    },
+    {
+     "art": "text",
+     "text": "). Remember: the best prophylaxis prevents a concrete move by your opponent and at the same time furthers your own plan.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 980
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Prophylaxis",
+    "text": "5. f3 prevents ...Ng4, which would attack the bishop on e3 and cost the bishop pair. At the same time f3 defends the pawn on e4 and prepares Qd2, queenside castling, and the pawn storm: good prophylaxis also furthers your own plan."
+   }
+  },
+  {
+   "id": "ueb:lap-spanisch",
+   "nummer": 29,
+   "kapitel": 6,
+   "titel": null,
+   "abbildungen": [
+    "6.36"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Apply the third plan question for both sides: which white piece and which black piece has the fewest tasks? Where does it belong, and by which route does it get there?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "White:",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " the knight on d2. Of its six squares, e4 and f3 are occupied by White's own pieces, and b3 and c4 are guarded by the black pawns on a4 and b5. Only b1 and f1 remain. Its route leads via f1 to g3 (e3 is occupied by White's own bishop), from where it supports the kingside and defends e4. Unlike in the Italian Game (",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 6.16",
+     "abbildung": "6.16"
+    },
+    {
+     "art": "text",
+     "text": "), f1 is already free here, since the rook already stands on e1. The rook on a1 has no task yet either, but it can only join in once a file opens. The knight, by contrast, already has a route today. ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Black:",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " the rook on a8. The pawn on b5 already defends the pawn on a4, so the rook has nothing to do. There is no pawn left on the c-file, so it is open, and the queen on c7 already stands there. With ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Rac8"
+    },
+    {
+     "art": "text",
+     "text": ", the rook therefore gets behind the queen in a single move. A second candidate is the bishop on e7: the pawns on d6 and e5 stand on its color, so it is the bad bishop from Chapter 5. Regrouping it, however, takes several moves. Remember: the knight route d2–f1–g3 is a standard maneuver in the quiet e4 openings, and a rook without a file is almost always the first candidate for the LAP principle.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 992
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Improving the worst piece",
+    "text": "For White, the knight on d2 has the fewest tasks; it goes via f1 to g3 and supports the kingside. For Black, it is the rook on a8, which reaches the open c-file in one move with ...Rac8."
+   }
+  },
+  {
+   "id": "ueb:planbilanz-kid",
+   "nummer": 30,
+   "kapitel": 6,
+   "titel": null,
+   "abbildungen": [
+    "6.37"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "First carry out the skeleton X-ray: what has ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "15. dxe6"
+    },
+    {
+     "art": "text",
+     "text": " changed in the skeleton? Then draw up the plan balance for both sides.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Skeleton X-ray:",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " White no longer has a d-pawn, so the d-file is half-open for White, and the pawn on d6 stands on it. It fails the protection test: the c-pawn is already on c6 and the e-pawn on e5, so neither can ever defend d6. Nor can d6 advance, because the pawns on c4 and e4 guard d5. So d6 is a backward pawn on a half-open file (Chapter 5). White's pawn on e6 is just as weak, because no white pawn can defend it as long as Black's pawn on f5 holds up the f-pawn. In return, though, it cramps Black's pieces. ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Plan balance:",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": " Where? White plays against d6 and on the queenside with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "c5"
+    },
+    {
+     "art": "text",
+     "text": ", Black on the kingside and against e6. What does the opponent want? White has to reckon with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...fxe4"
+    },
+    {
+     "art": "text",
+     "text": ", after which the f-file is half-open for the rook on f8, and Black has to keep an eye on the pressure against d6. Which piece? After a queen move, White brings the rooks to the d-file, and Black attacks e6 with the queen from c8 and uses the rook on f8. The plan in one sentence, White: “I use the wedge on e6, attack d6, and secure e4.” Black: “I use the f-file, attack e6, and secure d6.” Remember: after every pawn trade the skeleton X-ray starts over, since a new skeleton brings new plans.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 1002
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Plan balance after the pawn trade",
+    "text": "After 15. dxe6, d6 is a backward pawn on a half-open file; the wedge on e6 is weak but cramps Black. White plays against d6 and on the queenside, Black via the f-file and against e6."
+   }
+  },
+  {
+   "id": "ueb:tausch-verwerten",
+   "nummer": 31,
+   "kapitel": 6,
+   "titel": null,
+   "abbildungen": [
+    "6.38"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "White is a knight up. With which move does Black save the draw, and which rule from this chapter leads you to it? What would White have played if it had been White's move?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1... gxh4+!"
+    },
+    {
+     "art": "text",
+     "text": " Black trades off White's last pawn. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Nxh4+"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Kxh4"
+    },
+    {
+     "art": "text",
+     "text": ", rook and knight against rook remain. With accurate defense that is a draw, because without pawns White can no longer get a queen. Every other move loses, including ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... g4"
+    },
+    {
+     "art": "text",
+     "text": ", because White then keeps the h-pawn. The rule behind it: whoever has less material trades pawns. If it were White's move, White would capture on g5 itself, with the pawn or with the knight: both moves keep a pawn, and only they win. Remember: the defender does not count the pieces but the opponent's pawns, since an extra piece without pawns is often worth nothing.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 1013
+   },
+   "erklaerung": {
+    "loesung": "1... gxh4+!",
+    "akzeptiert": [],
+    "motiv": "Whoever has less material trades pawns",
+    "text": "1... gxh4+! trades off White's last pawn; rook and knight against rook is a draw without pawns. If it were White's move, White would capture on g5 itself and keep a pawn."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [
+  {
+   "art": "plan",
+   "titel": [
+    {
+     "art": "text",
+     "text": "King's Indian Defense after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "8... Ne7"
+    }
+   ],
+   "abschnitt": "6.6",
+   "abbildung": "6.20",
+   "bloecke": [
+    {
+     "art": "tabelle",
+     "spalten": [
+      "White",
+      "Black"
+     ],
+     "zeilen": [
+      {
+       "name": "Where do I play?",
+       "links": {
+        "wertung": null,
+        "text": [
+         {
+          "art": "text",
+          "text": "On the queenside: the chain e4–d5 points there. The lever ",
+          "stil": "normal"
+         },
+         {
+          "art": "zug",
+          "text": "c4-c5"
+         },
+         {
+          "art": "text",
+          "text": " attacks the base d6.",
+          "stil": "normal"
+         }
+        ]
+       },
+       "rechts": {
+        "wertung": null,
+        "text": [
+         {
+          "art": "text",
+          "text": "On the kingside: the chain e5–d6 points there. The lever ",
+          "stil": "normal"
+         },
+         {
+          "art": "zug",
+          "text": "...f5"
+         },
+         {
+          "art": "text",
+          "text": " attacks the base e4.",
+          "stil": "normal"
+         }
+        ]
+       }
+      },
+      {
+       "name": "What does my opponent want?",
+       "links": {
+        "wertung": null,
+        "text": [
+         {
+          "art": "text",
+          "text": "Black wants to attack the pawn on e4 with ",
+          "stil": "normal"
+         },
+         {
+          "art": "zug",
+          "text": "...f5"
+         },
+         {
+          "art": "text",
+          "text": " and then storm White's king. White has to support e4.",
+          "stil": "normal"
+         }
+        ]
+       },
+       "rechts": {
+        "wertung": null,
+        "text": [
+         {
+          "art": "text",
+          "text": "White wants to open the c-file with ",
+          "stil": "normal"
+         },
+         {
+          "art": "zug",
+          "text": "c5"
+         },
+         {
+          "art": "text",
+          "text": " and ",
+          "stil": "normal"
+         },
+         {
+          "art": "zug",
+          "text": "cxd6"
+         },
+         {
+          "art": "text",
+          "text": ". Black has to be faster.",
+          "stil": "normal"
+         }
+        ]
+       }
+      },
+      {
+       "name": "Which piece?",
+       "links": {
+        "wertung": null,
+        "text": [
+         {
+          "art": "text",
+          "text": "The bishop on c1 is still at home; the rooks belong on the c-file later.",
+          "stil": "normal"
+         }
+        ]
+       },
+       "rechts": {
+        "wertung": null,
+        "text": [
+         {
+          "art": "text",
+          "text": "The knight on f6 has to make room for the f-pawn; the bishop on c8 is still at home.",
+          "stil": "normal"
+         }
+        ]
+       }
+      }
+     ]
+    }
+   ],
+   "haltbarkeit": null,
+   "urteil": [
+    {
+     "art": "text",
+     "text": "White: “I use my space on the queenside, attack the base d6 with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "b4"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "c5"
+    },
+    {
+     "art": "text",
+     "text": ", and secure e4.” Black: “I use the direction of my chain toward the kingside, attack the base e4 with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...f5"
+    },
+    {
+     "art": "text",
+     "text": ", and make room for it with the knight on f6.”",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 616
+   }
+  },
+  {
+   "art": "faktor",
+   "titel": [
+    {
+     "art": "text",
+     "text": "Petrosian–Spassky before ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. Qh8+"
+    }
+   ],
+   "abschnitt": "6.7",
+   "abbildung": "6.31",
+   "bloecke": [
+    {
+     "art": "tabelle",
+     "spalten": [
+      "White (has given up the exchange)",
+      "Black"
+     ],
+     "zeilen": [
+      {
+       "name": "Material",
+       "links": {
+        "wertung": null,
+        "text": [
+         {
+          "art": "text",
+          "text": "– (queen, two knights, five pawns)",
+          "stil": "normal"
+         }
+        ]
+       },
+       "rechts": {
+        "wertung": "vornrechts",
+        "text": [
+         {
+          "art": "text",
+          "text": "+1 (queen, rook, knight, four pawns): the exchange up, but a pawn down",
+          "stil": "normal"
+         }
+        ]
+       }
+      },
+      {
+       "name": "Time",
+       "links": {
+        "wertung": "gleichstand",
+        "text": [
+         {
+          "art": "text",
+          "text": "3 : 3 (queen and two knights)",
+          "stil": "normal"
+         }
+        ]
+       },
+       "rechts": {
+        "wertung": "gleichstand",
+        "text": [
+         {
+          "art": "text",
+          "text": "3 : 3 (queen, rook, and knight)",
+          "stil": "normal"
+         }
+        ]
+       }
+      },
+      {
+       "name": "King safety",
+       "links": {
+        "wertung": "teils",
+        "text": [
+         {
+          "art": "text",
+          "text": "no pawn shield, but every black check costs Black material",
+          "stil": "normal"
+         }
+        ]
+       },
+       "rechts": {
+        "wertung": "nein",
+        "text": [
+         {
+          "art": "text",
+          "text": "Only h7 is left in front of the king; no bishop guards the dark squares g7 and h8 anymore.",
+          "stil": "normal"
+         }
+        ]
+       }
+      },
+      {
+       "name": "Activity",
+       "links": {
+        "wertung": "ja",
+        "text": [
+         {
+          "art": "text",
+          "text": "The knight on d6 stands on an outpost and attacks the rook on f7; the queen on b2 aims at h8 along the long diagonal.",
+          "stil": "normal"
+         }
+        ]
+       },
+       "rechts": {
+        "wertung": "nein",
+        "text": [
+         {
+          "art": "text",
+          "text": "The rook on f7 has to defend itself; the knight on a5 is on the edge.",
+          "stil": "normal"
+         }
+        ]
+       }
+      }
+     ]
+    }
+   ],
+   "haltbarkeit": [
+    {
+     "art": "text",
+     "text": "lasting – no black pawn can ever drive the knight away from d6, and Black's king will not get a pawn shield back.",
+     "stil": "normal"
+    }
+   ],
+   "urteil": [
+    {
+     "art": "text",
+     "text": "White has more than enough compensation for the exchange.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap06_mittelspiel.tex",
+    "zeile": 840
+   }
+  }
+ ],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k06-a1",
+   "kapitel": 6,
+   "abschnitt": null,
+   "titel": "Middlegame strategy",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "d5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bf4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nf6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "e3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "e6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nf3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Be7",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Bd3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "O-O",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "c5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "c3",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Nc6",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Nbd2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "b6",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qe2",
+                                     "zeichen": "",
+                                     "abbildungen": [
+                                      "6.1"
+                                     ],
+                                     "weiter": []
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.1",
+     "pfad": [
+      "d4",
+      "d5",
+      "Bf4",
+      "Nf6",
+      "e3",
+      "e6",
+      "Nf3",
+      "Be7",
+      "Bd3",
+      "O-O",
+      "O-O",
+      "c5",
+      "c3",
+      "Nc6",
+      "Nbd2",
+      "b6",
+      "Qe2"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a11",
+   "kapitel": 6,
+   "abschnitt": "6.3",
+   "titel": "Karpov–Unzicker (lead-up from Chapter 11)",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bb5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "a6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Ba4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "O-O",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Be7",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Re1",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "b5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bb3",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "d6",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "c3",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "O-O",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "h3",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Na5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Bc2",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "c5",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "d4",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Qc7",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Nbd2",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "Nc6",
+                                                   "zeichen": "",
+                                                   "abbildungen": [],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "d5",
+                                                     "zeichen": "",
+                                                     "abbildungen": [],
+                                                     "weiter": [
+                                                      {
+                                                       "zug": "Nd8",
+                                                       "zeichen": "",
+                                                       "abbildungen": [],
+                                                       "weiter": [
+                                                        {
+                                                         "zug": "a4",
+                                                         "zeichen": "",
+                                                         "abbildungen": [],
+                                                         "weiter": [
+                                                          {
+                                                           "zug": "Rb8",
+                                                           "zeichen": "",
+                                                           "abbildungen": [],
+                                                           "weiter": [
+                                                            {
+                                                             "zug": "axb5",
+                                                             "zeichen": "",
+                                                             "abbildungen": [],
+                                                             "weiter": [
+                                                              {
+                                                               "zug": "axb5",
+                                                               "zeichen": "",
+                                                               "abbildungen": [],
+                                                               "weiter": [
+                                                                {
+                                                                 "zug": "b4",
+                                                                 "zeichen": "",
+                                                                 "abbildungen": [],
+                                                                 "weiter": [
+                                                                  {
+                                                                   "zug": "Nb7",
+                                                                   "zeichen": "",
+                                                                   "abbildungen": [],
+                                                                   "weiter": [
+                                                                    {
+                                                                     "zug": "Nf1",
+                                                                     "zeichen": "",
+                                                                     "abbildungen": [],
+                                                                     "weiter": [
+                                                                      {
+                                                                       "zug": "Bd7",
+                                                                       "zeichen": "",
+                                                                       "abbildungen": [],
+                                                                       "weiter": [
+                                                                        {
+                                                                         "zug": "Be3",
+                                                                         "zeichen": "",
+                                                                         "abbildungen": [],
+                                                                         "weiter": [
+                                                                          {
+                                                                           "zug": "Ra8",
+                                                                           "zeichen": "",
+                                                                           "abbildungen": [],
+                                                                           "weiter": [
+                                                                            {
+                                                                             "zug": "Qd2",
+                                                                             "zeichen": "",
+                                                                             "abbildungen": [],
+                                                                             "weiter": [
+                                                                              {
+                                                                               "zug": "Rfc8",
+                                                                               "zeichen": "",
+                                                                               "abbildungen": [],
+                                                                               "weiter": [
+                                                                                {
+                                                                                 "zug": "Bd3",
+                                                                                 "zeichen": "",
+                                                                                 "abbildungen": [],
+                                                                                 "weiter": [
+                                                                                  {
+                                                                                   "zug": "g6",
+                                                                                   "zeichen": "",
+                                                                                   "abbildungen": [],
+                                                                                   "weiter": [
+                                                                                    {
+                                                                                     "zug": "Ng3",
+                                                                                     "zeichen": "",
+                                                                                     "abbildungen": [],
+                                                                                     "weiter": [
+                                                                                      {
+                                                                                       "zug": "Bf8",
+                                                                                       "zeichen": "",
+                                                                                       "abbildungen": [],
+                                                                                       "weiter": [
+                                                                                        {
+                                                                                         "zug": "Ra2",
+                                                                                         "zeichen": "",
+                                                                                         "abbildungen": [],
+                                                                                         "weiter": [
+                                                                                          {
+                                                                                           "zug": "c4",
+                                                                                           "zeichen": "",
+                                                                                           "abbildungen": [],
+                                                                                           "weiter": [
+                                                                                            {
+                                                                                             "zug": "Bb1",
+                                                                                             "zeichen": "",
+                                                                                             "abbildungen": [],
+                                                                                             "weiter": [
+                                                                                              {
+                                                                                               "zug": "Qd8",
+                                                                                               "zeichen": "",
+                                                                                               "abbildungen": [],
+                                                                                               "weiter": [
+                                                                                                {
+                                                                                                 "zug": "Ba7",
+                                                                                                 "zeichen": "",
+                                                                                                 "abbildungen": [],
+                                                                                                 "weiter": [
+                                                                                                  {
+                                                                                                   "zug": "Ne8",
+                                                                                                   "zeichen": "",
+                                                                                                   "abbildungen": [],
+                                                                                                   "weiter": [
+                                                                                                    {
+                                                                                                     "zug": "Bc2",
+                                                                                                     "zeichen": "",
+                                                                                                     "abbildungen": [],
+                                                                                                     "weiter": [
+                                                                                                      {
+                                                                                                       "zug": "Nc7",
+                                                                                                       "zeichen": "",
+                                                                                                       "abbildungen": [],
+                                                                                                       "weiter": [
+                                                                                                        {
+                                                                                                         "zug": "Rea1",
+                                                                                                         "zeichen": "",
+                                                                                                         "abbildungen": [],
+                                                                                                         "weiter": [
+                                                                                                          {
+                                                                                                           "zug": "Qe7",
+                                                                                                           "zeichen": "",
+                                                                                                           "abbildungen": [],
+                                                                                                           "weiter": [
+                                                                                                            {
+                                                                                                             "zug": "Bb1",
+                                                                                                             "zeichen": "",
+                                                                                                             "abbildungen": [],
+                                                                                                             "weiter": [
+                                                                                                              {
+                                                                                                               "zug": "Be8",
+                                                                                                               "zeichen": "",
+                                                                                                               "abbildungen": [],
+                                                                                                               "weiter": [
+                                                                                                                {
+                                                                                                                 "zug": "Ne2",
+                                                                                                                 "zeichen": "",
+                                                                                                                 "abbildungen": [],
+                                                                                                                 "weiter": [
+                                                                                                                  {
+                                                                                                                   "zug": "Nd8",
+                                                                                                                   "zeichen": "",
+                                                                                                                   "abbildungen": [],
+                                                                                                                   "weiter": [
+                                                                                                                    {
+                                                                                                                     "zug": "Nh2",
+                                                                                                                     "zeichen": "",
+                                                                                                                     "abbildungen": [],
+                                                                                                                     "weiter": [
+                                                                                                                      {
+                                                                                                                       "zug": "Bg7",
+                                                                                                                       "zeichen": "",
+                                                                                                                       "abbildungen": [],
+                                                                                                                       "weiter": [
+                                                                                                                        {
+                                                                                                                         "zug": "f4",
+                                                                                                                         "zeichen": "",
+                                                                                                                         "abbildungen": [],
+                                                                                                                         "weiter": [
+                                                                                                                          {
+                                                                                                                           "zug": "f6",
+                                                                                                                           "zeichen": "",
+                                                                                                                           "abbildungen": [],
+                                                                                                                           "weiter": [
+                                                                                                                            {
+                                                                                                                             "zug": "f5",
+                                                                                                                             "zeichen": "",
+                                                                                                                             "abbildungen": [
+                                                                                                                              "6.11"
+                                                                                                                             ],
+                                                                                                                             "weiter": []
+                                                                                                                            }
+                                                                                                                           ]
+                                                                                                                          }
+                                                                                                                         ]
+                                                                                                                        }
+                                                                                                                       ]
+                                                                                                                      }
+                                                                                                                     ]
+                                                                                                                    }
+                                                                                                                   ]
+                                                                                                                  }
+                                                                                                                 ]
+                                                                                                                }
+                                                                                                               ]
+                                                                                                              }
+                                                                                                             ]
+                                                                                                            }
+                                                                                                           ]
+                                                                                                          }
+                                                                                                         ]
+                                                                                                        }
+                                                                                                       ]
+                                                                                                      }
+                                                                                                     ]
+                                                                                                    }
+                                                                                                   ]
+                                                                                                  }
+                                                                                                 ]
+                                                                                                }
+                                                                                               ]
+                                                                                              }
+                                                                                             ]
+                                                                                            }
+                                                                                           ]
+                                                                                          }
+                                                                                         ]
+                                                                                        }
+                                                                                       ]
+                                                                                      }
+                                                                                     ]
+                                                                                    }
+                                                                                   ]
+                                                                                  }
+                                                                                 ]
+                                                                                }
+                                                                               ]
+                                                                              }
+                                                                             ]
+                                                                            }
+                                                                           ]
+                                                                          }
+                                                                         ]
+                                                                        }
+                                                                       ]
+                                                                      }
+                                                                     ]
+                                                                    }
+                                                                   ]
+                                                                  }
+                                                                 ]
+                                                                }
+                                                               ]
+                                                              }
+                                                             ]
+                                                            }
+                                                           ]
+                                                          }
+                                                         ]
+                                                        }
+                                                       ]
+                                                      }
+                                                     ]
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.11",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "a6",
+      "Ba4",
+      "Nf6",
+      "O-O",
+      "Be7",
+      "Re1",
+      "b5",
+      "Bb3",
+      "d6",
+      "c3",
+      "O-O",
+      "h3",
+      "Na5",
+      "Bc2",
+      "c5",
+      "d4",
+      "Qc7",
+      "Nbd2",
+      "Nc6",
+      "d5",
+      "Nd8",
+      "a4",
+      "Rb8",
+      "axb5",
+      "axb5",
+      "b4",
+      "Nb7",
+      "Nf1",
+      "Bd7",
+      "Be3",
+      "Ra8",
+      "Qd2",
+      "Rfc8",
+      "Bd3",
+      "g6",
+      "Ng3",
+      "Bf8",
+      "Ra2",
+      "c4",
+      "Bb1",
+      "Qd8",
+      "Ba7",
+      "Ne8",
+      "Bc2",
+      "Nc7",
+      "Rea1",
+      "Qe7",
+      "Bb1",
+      "Be8",
+      "Ne2",
+      "Nd8",
+      "Nh2",
+      "Bg7",
+      "f4",
+      "f6",
+      "f5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a12",
+   "kapitel": 6,
+   "abschnitt": "6.4",
+   "titel": "Question 2: What does my opponent want?",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "c4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "e6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nf3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "b6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nc3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Bb7",
+                   "zeichen": "",
+                   "abbildungen": [
+                    "6.12"
+                   ],
+                   "weiter": [
+                    {
+                     "zug": "a3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": []
+                    }
+                   ]
+                  }
+                 ]
+                },
+                {
+                 "zug": "a3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Bb7",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nc3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": []
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.12",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "e6",
+      "Nf3",
+      "b6",
+      "Nc3",
+      "Bb7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a13",
+   "kapitel": 6,
+   "abschnitt": "6.4",
+   "titel": "When the attack is already underway: the means of defense",
+   "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "f5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "exf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxf6",
+         "zeichen": "",
+         "abbildungen": [
+          "6.14"
+         ],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "f6",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bxh7+",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kxh7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Ng5+",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "fxg5",
+             "zeichen": "",
+             "abbildungen": [
+              "6.15"
+             ],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "h6",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.13",
+     "pfad": []
+    },
+    {
+     "nummer": "6.14",
+     "pfad": [
+      "f5",
+      "exf6",
+      "Nxf6"
+     ]
+    },
+    {
+     "nummer": "6.15",
+     "pfad": [
+      "f6",
+      "Bxh7+",
+      "Kxh7",
+      "Ng5+",
+      "fxg5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a16",
+   "kapitel": 6,
+   "abschnitt": "6.5",
+   "titel": "Question 3: Which piece do I bring there?",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "d6",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "O-O",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bg5",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "h6",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Bh4",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Be6",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Nbd2",
+                                     "zeichen": "",
+                                     "abbildungen": [
+                                      "6.16"
+                                     ],
+                                     "weiter": []
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.16",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d3",
+      "d6",
+      "O-O",
+      "O-O",
+      "Bg5",
+      "h6",
+      "Bh4",
+      "Be6",
+      "Nbd2"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a17",
+   "kapitel": 6,
+   "abschnitt": "6.5",
+   "titel": "Question 3: Which piece do I bring there?",
+   "startFen": "2r1r1k1/pp3ppp/4p3/8/8/4P3/PP1R1PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rd7",
+     "zeichen": "",
+     "abbildungen": [
+      "6.18"
+     ],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.17",
+     "pfad": []
+    },
+    {
+     "nummer": "6.18",
+     "pfad": [
+      "Rd7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a19",
+   "kapitel": 6,
+   "abschnitt": "6.5",
+   "titel": "Attack on the castled king",
+   "startFen": "5rk1/pp1bppbp/3p1np1/q7/2r1P1P1/2N1BP2/PPPQN3/2KR3R w - - 3 17",
+   "zuege": [
+    {
+     "zug": "Bh6",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bxh6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh6",
+         "zeichen": "",
+         "abbildungen": [
+          "6.19"
+         ],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.19",
+     "pfad": [
+      "Bh6",
+      "Bxh6",
+      "Qxh6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a20",
+   "kapitel": 6,
+   "abschnitt": "6.6",
+   "titel": "All three questions on one position: the race in the King's Indian Defense",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "c4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "g6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bg7",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "e4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "d6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nf3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "O-O",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Be2",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "e5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "O-O",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Nc6",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "d5",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Ne7",
+                                   "zeichen": "",
+                                   "abbildungen": [
+                                    "6.20"
+                                   ],
+                                   "weiter": [
+                                    {
+                                     "zug": "b4",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Nh5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Re1",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "f5",
+                                           "zeichen": "",
+                                           "abbildungen": [
+                                            "6.21"
+                                           ],
+                                           "weiter": [
+                                            {
+                                             "zug": "Ng5",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Nf6",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Bf3",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "c6",
+                                                   "zeichen": "",
+                                                   "abbildungen": [
+                                                    "6.22"
+                                                   ],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "Be3",
+                                                     "zeichen": "",
+                                                     "abbildungen": [],
+                                                     "weiter": [
+                                                      {
+                                                       "zug": "h6",
+                                                       "zeichen": "",
+                                                       "abbildungen": [],
+                                                       "weiter": [
+                                                        {
+                                                         "zug": "Ne6",
+                                                         "zeichen": "",
+                                                         "abbildungen": [
+                                                          "6.23"
+                                                         ],
+                                                         "weiter": [
+                                                          {
+                                                           "zug": "Bxe6",
+                                                           "zeichen": "",
+                                                           "abbildungen": [],
+                                                           "weiter": [
+                                                            {
+                                                             "zug": "dxe6",
+                                                             "zeichen": "",
+                                                             "abbildungen": [
+                                                              "6.37"
+                                                             ],
+                                                             "weiter": []
+                                                            }
+                                                           ]
+                                                          }
+                                                         ]
+                                                        }
+                                                       ]
+                                                      }
+                                                     ]
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    },
+                                    {
+                                     "zug": "Ne1",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Nd7",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Be3",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "f5",
+                                           "zeichen": "",
+                                           "abbildungen": [
+                                            "6.24"
+                                           ],
+                                           "weiter": [
+                                            {
+                                             "zug": "f3",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "f4",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Bf2",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "g5",
+                                                   "zeichen": "",
+                                                   "abbildungen": [
+                                                    "6.25"
+                                                   ],
+                                                   "weiter": []
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.20",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "g6",
+      "Nc3",
+      "Bg7",
+      "e4",
+      "d6",
+      "Nf3",
+      "O-O",
+      "Be2",
+      "e5",
+      "O-O",
+      "Nc6",
+      "d5",
+      "Ne7"
+     ]
+    },
+    {
+     "nummer": "6.21",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "g6",
+      "Nc3",
+      "Bg7",
+      "e4",
+      "d6",
+      "Nf3",
+      "O-O",
+      "Be2",
+      "e5",
+      "O-O",
+      "Nc6",
+      "d5",
+      "Ne7",
+      "b4",
+      "Nh5",
+      "Re1",
+      "f5"
+     ]
+    },
+    {
+     "nummer": "6.22",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "g6",
+      "Nc3",
+      "Bg7",
+      "e4",
+      "d6",
+      "Nf3",
+      "O-O",
+      "Be2",
+      "e5",
+      "O-O",
+      "Nc6",
+      "d5",
+      "Ne7",
+      "b4",
+      "Nh5",
+      "Re1",
+      "f5",
+      "Ng5",
+      "Nf6",
+      "Bf3",
+      "c6"
+     ]
+    },
+    {
+     "nummer": "6.23",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "g6",
+      "Nc3",
+      "Bg7",
+      "e4",
+      "d6",
+      "Nf3",
+      "O-O",
+      "Be2",
+      "e5",
+      "O-O",
+      "Nc6",
+      "d5",
+      "Ne7",
+      "b4",
+      "Nh5",
+      "Re1",
+      "f5",
+      "Ng5",
+      "Nf6",
+      "Bf3",
+      "c6",
+      "Be3",
+      "h6",
+      "Ne6"
+     ]
+    },
+    {
+     "nummer": "6.37",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "g6",
+      "Nc3",
+      "Bg7",
+      "e4",
+      "d6",
+      "Nf3",
+      "O-O",
+      "Be2",
+      "e5",
+      "O-O",
+      "Nc6",
+      "d5",
+      "Ne7",
+      "b4",
+      "Nh5",
+      "Re1",
+      "f5",
+      "Ng5",
+      "Nf6",
+      "Bf3",
+      "c6",
+      "Be3",
+      "h6",
+      "Ne6",
+      "Bxe6",
+      "dxe6"
+     ]
+    },
+    {
+     "nummer": "6.24",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "g6",
+      "Nc3",
+      "Bg7",
+      "e4",
+      "d6",
+      "Nf3",
+      "O-O",
+      "Be2",
+      "e5",
+      "O-O",
+      "Nc6",
+      "d5",
+      "Ne7",
+      "Ne1",
+      "Nd7",
+      "Be3",
+      "f5"
+     ]
+    },
+    {
+     "nummer": "6.25",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "g6",
+      "Nc3",
+      "Bg7",
+      "e4",
+      "d6",
+      "Nf3",
+      "O-O",
+      "Be2",
+      "e5",
+      "O-O",
+      "Nc6",
+      "d5",
+      "Ne7",
+      "Ne1",
+      "Nd7",
+      "Be3",
+      "f5",
+      "f3",
+      "f4",
+      "Bf2",
+      "g5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a26",
+   "kapitel": 6,
+   "abschnitt": "6.7",
+   "titel": "Unequal trades: what the rule-of-thumb values don't tell you",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "O-O",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Ng5",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "O-O",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Nxf7",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Rxf7",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bxf7+",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Kxf7",
+                               "zeichen": "",
+                               "abbildungen": [
+                                "6.26"
+                               ],
+                               "weiter": []
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.26",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "O-O",
+      "Nf6",
+      "Ng5",
+      "O-O",
+      "Nxf7",
+      "Rxf7",
+      "Bxf7+",
+      "Kxf7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a27",
+   "kapitel": 6,
+   "abschnitt": "6.7",
+   "titel": "The exchange sacrifice",
+   "startFen": "2r3k1/8/8/8/8/2N5/PPP5/2K5 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rxc3",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "bxc3",
+       "zeichen": "",
+       "abbildungen": [
+        "6.28"
+       ],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.27",
+     "pfad": []
+    },
+    {
+     "nummer": "6.28",
+     "pfad": [
+      "Rxc3",
+      "bxc3"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a29",
+   "kapitel": 6,
+   "abschnitt": "6.7",
+   "titel": "The exchange sacrifice",
+   "startFen": "r2q1rk1/7p/p2p4/nppPn3/2P2P2/1P5b/PQ1NB2P/R2N1RK1 w - - 1 21",
+   "zuege": [
+    {
+     "zug": "Ne3",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bxf1",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxf1",
+         "zeichen": "",
+         "abbildungen": [
+          "6.30"
+         ],
+         "weiter": [
+          {
+           "zug": "Ng6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bg4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nxf4",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Rxf4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "fxe5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qg5+",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kh1",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Qg2#",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.29",
+     "pfad": []
+    },
+    {
+     "nummer": "6.30",
+     "pfad": [
+      "Ne3",
+      "Bxf1",
+      "Rxf1"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a3",
+   "kapitel": 6,
+   "abschnitt": "6.3",
+   "titel": "Open center: Play with your pieces",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "c4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "e6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bb4",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "e3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "O-O",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Bd3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "d5",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Nf3",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "c5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "O-O",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "dxc4",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Bxc4",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Nbd7",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qe2",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "b6",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Rd1",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "cxd4",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "exd4",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Bb7",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Bg5",
+                                                 "zeichen": "",
+                                                 "abbildungen": [
+                                                  "6.3"
+                                                 ],
+                                                 "weiter": []
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.3",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "e6",
+      "Nc3",
+      "Bb4",
+      "e3",
+      "O-O",
+      "Bd3",
+      "d5",
+      "Nf3",
+      "c5",
+      "O-O",
+      "dxc4",
+      "Bxc4",
+      "Nbd7",
+      "Qe2",
+      "b6",
+      "Rd1",
+      "cxd4",
+      "exd4",
+      "Bb7",
+      "Bg5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a31",
+   "kapitel": 6,
+   "abschnitt": "6.7",
+   "titel": "The exchange sacrifice",
+   "startFen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
+   "zuege": [
+    {
+     "zug": "Qh8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxf7+",
+         "zeichen": "",
+         "abbildungen": [
+          "6.32"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg7",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxg5",
+             "zeichen": "",
+             "abbildungen": [
+              "6.33"
+             ],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.31",
+     "pfad": []
+    },
+    {
+     "nummer": "6.32",
+     "pfad": [
+      "Qh8+",
+      "Kxh8",
+      "Nxf7+"
+     ]
+    },
+    {
+     "nummer": "6.33",
+     "pfad": [
+      "Qh8+",
+      "Kxh8",
+      "Nxf7+",
+      "Kg7",
+      "Nxg5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a34",
+   "kapitel": 6,
+   "abschnitt": "Übung 27",
+   "titel": "Exercises",
+   "startFen": "r4rk1/pp1b1ppp/2nqpn2/2pp4/3P4/2PBPN2/PP1N1PPP/R2Q1RK1 w - - 4 10",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.34",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a35",
+   "kapitel": 6,
+   "abschnitt": "Übung 28",
+   "titel": "Exercises",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "c4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "g6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bg7",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "e4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "d6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "f3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "O-O",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Be3",
+                         "zeichen": "",
+                         "abbildungen": [
+                          "6.35"
+                         ],
+                         "weiter": []
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.35",
+     "pfad": [
+      "d4",
+      "Nf6",
+      "c4",
+      "g6",
+      "Nc3",
+      "Bg7",
+      "e4",
+      "d6",
+      "f3",
+      "O-O",
+      "Be3"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a36",
+   "kapitel": 6,
+   "abschnitt": "Übung 29",
+   "titel": "Exercises",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bb5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "a6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Ba4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "O-O",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Be7",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Re1",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "b5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bb3",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "O-O",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "c3",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "d6",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "h3",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Na5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Bc2",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "c5",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "d4",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Qc7",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Nbd2",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "cxd4",
+                                                   "zeichen": "",
+                                                   "abbildungen": [],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "cxd4",
+                                                     "zeichen": "",
+                                                     "abbildungen": [],
+                                                     "weiter": [
+                                                      {
+                                                       "zug": "Nc6",
+                                                       "zeichen": "",
+                                                       "abbildungen": [],
+                                                       "weiter": [
+                                                        {
+                                                         "zug": "Nb3",
+                                                         "zeichen": "",
+                                                         "abbildungen": [],
+                                                         "weiter": [
+                                                          {
+                                                           "zug": "a5",
+                                                           "zeichen": "",
+                                                           "abbildungen": [],
+                                                           "weiter": [
+                                                            {
+                                                             "zug": "Be3",
+                                                             "zeichen": "",
+                                                             "abbildungen": [],
+                                                             "weiter": [
+                                                              {
+                                                               "zug": "a4",
+                                                               "zeichen": "",
+                                                               "abbildungen": [],
+                                                               "weiter": [
+                                                                {
+                                                                 "zug": "Nbd2",
+                                                                 "zeichen": "",
+                                                                 "abbildungen": [],
+                                                                 "weiter": [
+                                                                  {
+                                                                   "zug": "Bd7",
+                                                                   "zeichen": "",
+                                                                   "abbildungen": [
+                                                                    "6.36"
+                                                                   ],
+                                                                   "weiter": []
+                                                                  }
+                                                                 ]
+                                                                }
+                                                               ]
+                                                              }
+                                                             ]
+                                                            }
+                                                           ]
+                                                          }
+                                                         ]
+                                                        }
+                                                       ]
+                                                      }
+                                                     ]
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.36",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "a6",
+      "Ba4",
+      "Nf6",
+      "O-O",
+      "Be7",
+      "Re1",
+      "b5",
+      "Bb3",
+      "O-O",
+      "c3",
+      "d6",
+      "h3",
+      "Na5",
+      "Bc2",
+      "c5",
+      "d4",
+      "Qc7",
+      "Nbd2",
+      "cxd4",
+      "cxd4",
+      "Nc6",
+      "Nb3",
+      "a5",
+      "Be3",
+      "a4",
+      "Nbd2",
+      "Bd7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a38",
+   "kapitel": 6,
+   "abschnitt": "Übung 31",
+   "titel": "Exercises",
+   "startFen": "8/8/6k1/r5p1/7P/5NK1/4R3/8 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "gxh4+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxh4+",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Kxh4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    },
+    {
+     "zug": "g4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.38",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a4",
+   "kapitel": 6,
+   "abschnitt": "6.3",
+   "titel": "A wing attack with an open center: Respond in the middle",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "f4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "exf4",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nf3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "d5",
+               "zeichen": "",
+               "abbildungen": [
+                "6.4"
+               ],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.4",
+     "pfad": [
+      "e4",
+      "e5",
+      "f4",
+      "exf4",
+      "Nf3",
+      "d5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a5",
+   "kapitel": 6,
+   "abschnitt": "6.3",
+   "titel": "A wing attack with an open center: Respond in the middle",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "c5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "d6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "d4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "cxd4",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxd4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nc3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "g6",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Be3",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Bg7",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "f3",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "O-O",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Qd2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Nc6",
+                                   "zeichen": "",
+                                   "abbildungen": [
+                                    "6.5"
+                                   ],
+                                   "weiter": [
+                                    {
+                                     "zug": "Bc4",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Bd7",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "O-O-O",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Rc8",
+                                           "zeichen": "",
+                                           "abbildungen": [
+                                            "6.6"
+                                           ],
+                                           "weiter": []
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    },
+                                    {
+                                     "zug": "O-O-O",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "d5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": []
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.5",
+     "pfad": [
+      "e4",
+      "c5",
+      "Nf3",
+      "d6",
+      "d4",
+      "cxd4",
+      "Nxd4",
+      "Nf6",
+      "Nc3",
+      "g6",
+      "Be3",
+      "Bg7",
+      "f3",
+      "O-O",
+      "Qd2",
+      "Nc6"
+     ]
+    },
+    {
+     "nummer": "6.6",
+     "pfad": [
+      "e4",
+      "c5",
+      "Nf3",
+      "d6",
+      "d4",
+      "cxd4",
+      "Nxd4",
+      "Nf6",
+      "Nc3",
+      "g6",
+      "Be3",
+      "Bg7",
+      "f3",
+      "O-O",
+      "Qd2",
+      "Nc6",
+      "Bc4",
+      "Bd7",
+      "O-O-O",
+      "Rc8"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k06-a7",
+   "kapitel": 6,
+   "abschnitt": "6.3",
+   "titel": "Kings on the same wing: When may I attack?",
+   "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "6.7",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  }
+ ]
+}

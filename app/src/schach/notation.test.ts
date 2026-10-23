@@ -1,6 +1,6 @@
 /** Tests für die Notation wie im Buch (Kapitel 0). */
 import { describe, expect, it } from "vitest";
-import { buchzugInSprache, zugfolgeAlsText } from "./notation";
+import { buchzugInSprache, ohneZugzeichen, zugfolgeAlsText } from "./notation";
 import { stellungAusFen } from "./stellung";
 
 function regeln(fen: string) {
@@ -42,5 +42,15 @@ describe("buchzugInSprache", () => {
       "4. Nc3! Bc5 5. Nxd5 Rxd5 6. Kf1 O-O",
     );
     expect(buchzugInSprache("8. exd8=D+", "en")).toBe("8. exd8=Q+");
+  });
+});
+
+describe("ohneZugzeichen", () => {
+  it("nimmt Schach, Matt und Bewertung weg, die Umwandlung bleibt", () => {
+    expect(ohneZugzeichen("Dxf7#")).toBe("Dxf7");
+    expect(ohneZugzeichen("Sxe5??")).toBe("Sxe5");
+    expect(ohneZugzeichen("Lxh7+!")).toBe("Lxh7");
+    expect(ohneZugzeichen("exd8=D+!?")).toBe("exd8=D");
+    expect(ohneZugzeichen("O-O")).toBe("O-O");
   });
 });

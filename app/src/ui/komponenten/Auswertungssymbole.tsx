@@ -59,7 +59,7 @@ function ZeichenSymbol({ Symbol, groesse }: { Symbol: LucideIcon; groesse: numbe
   return <Symbol size={groesse} strokeWidth={3} />;
 }
 
-/** Kleiner Bauer in der Farbe der Seite (weiß mit dunklem Rand, schwarz gefüllt). */
+/** Kleiner Bauer in der Farbe der Seite auf einem Plättchen derselben Farbe (spiel.css, R53). */
 export function Seitenfigur({ farbe }: { farbe: Color }) {
   return (
     <ChessPawn

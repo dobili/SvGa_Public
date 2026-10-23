@@ -1,6 +1,7 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 19.10.2026, Version 0.2.116. **Diese Datei ist die einzige, die du brauchst:** Hier steht
+Stand: 23.10.2026, Version 0.2.120 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
@@ -17,7 +18,7 @@ Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** p
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.116“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.120“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,7 +33,123 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu in 0.2.116 (etwa 5 Minuten; deine Rückmeldung vom 19.10.2026, Opus)
+### Neu in 0.2.118 und 0.2.119: Brett und Bedienung (P2; Opus, 23.10.2026)
+
+- [ ] N650. **Tippen (R35):** Spielen › „Partie beginnen“. Tippe den Springer g1 an, dann nicht
+      genau f3, sondern knapp daneben (etwa auf den linken Rand von g3): Der Springer zieht nach
+      f3. Ein Tipp in die Mitte eines anderen Feldes wählt wie bisher ab. Nur genau auf der Kante
+      zwischen zwei möglichen Zielfeldern geschieht nichts, die Figur bleibt gewählt. Ein Tipp
+      zählt jetzt auch, wenn der Finger dabei etwas rutscht, und gleich nach einem Wischen. Ist
+      eine Figur gewählt, scrollt die Seite über dem Brett nicht. Erkennt die App deine Tipps
+      jetzt zuverlässig?
+- [ ] N651. **Markierte Felder mit einem Umriss (R36):** Abb. 0.3 öffnen: Die grauen Felder, die
+      der Turm erreicht, stehen jetzt als zwei lange gepunktete Rahmen (Linie und Reihe) da statt
+      als einzelne Kästchen. Abb. 0.4: Die drei roten Felder e3 bis e5 haben einen gemeinsamen
+      gestrichelten Rahmen, die goldenen Felder um den König Ecken nur am äußeren Umriss. Das
+      gilt überall, auch für die Werkzeuge. Felder, die sich nur an einer Ecke berühren, und
+      Felder verschiedener Farbe bleiben getrennt. Gefällt dir das, auch bei Gold?
+- [ ] N652. **Fortschritt der Auswertung (R29):** Nach einer Partie (oder Spielen › „Partie
+      einlesen (PGN)“) steht in der Karte „Auswertung“, solange die Engine rechnet, nur „Die
+      Engine wertet die Partie aus …“ und darunter ein goldener Balken mit der Prozentzahl
+      daneben, statt „12 von 48 Stellungen“.
+- [ ] N653. **Zuganimation (R37):** Spiele eine Partie mit 5 + 3 gegen einen Bot. Tippst du Figur
+      und Zielfeld an, gleitet die Figur in etwa einer Fünftelsekunde hinüber, mit einer kurzen,
+      verblassenden Spur aus Nachbildern; ebenso der Zug des Bots (bei der Rochade gleitet der Turm
+      mit, eine geschlagene Figur verblasst). Deine Uhr läuft erst, wenn sein Zug angekommen ist.
+      Ziehst du per Wischen, springt nichts nach. Einstellungen › Brett › „Züge gleiten über das
+      Brett“ schaltet es ab. Gefällt dir Tempo und Spur?
+- [ ] N654. **Ergebnis auf dem Brett (R38):** Beende eine Partie (gewinnen, Remis oder aufgeben).
+      Sobald der letzte Zug angekommen ist, springt mitten auf dem Brett ein Schild auf:
+      „Gewonnen!“ mit goldenem Pokal, „Remis“ mit Händedruck oder „Verloren“ mit rotem Kreuz, darunter
+      der Grund („Matt. Die Engine hat gewonnen.“). Nach etwa drei Sekunden blendet es sich von
+      selbst aus; die Karte unter dem Brett bleibt. Öffnest du eine beendete Partie aus der Liste,
+      kommt das Schild nicht noch einmal. Bei Partien zu zweit steht „Weiß gewinnt“ oder
+      „Schwarz gewinnt“.
+- [ ] N655. **Startanimation (R39, seit 0.2.120 nach deinem Wunsch):** Schließe die App ganz und
+      öffne sie neu. 2,5 Sekunden lang wächst der goldene Springer vom Cover mit goldenem Schein
+      auf dunklem Grund heran, darunter „Schach von Grund auf“, dann blendet alles aus. Ein Tipp
+      irgendwo überspringt sie. Gleich noch einmal schließen und öffnen: Sie kommt wieder (bei
+      jedem Start, keine Stundensperre mehr). Beim bloßen Neuladen kommt sie nicht. Dann
+      Zahnrad › Brett › „Startbild beim Öffnen der App“ auf „aus“, App schließen und öffnen: kein
+      Startbild mehr. Bei „Bewegung reduzieren“ des Geräts bleibt sie immer aus.
+- [ ] N656. **Fenstergröße am Rechner (R40):** Öffne Abb. 1.26 im Browser am Rechner, Fenster
+      breit: Brett links, Text rechts. Ziehe das Fenster langsam schmaler: Sobald es weniger als
+      etwa 5 : 4 breit ist (etwa 1000 × 800), springt die App sofort, ohne Neuladen, in eine
+      Spalte mit dem Brett oben; breiter gezogen wieder zurück. Bisher kippte sie erst bei einem
+      fast quadratischen Fenster, vorher wurden Brett und Text sehr eng (siehe Teil 2, P2-B).
+- [ ] N657. **Weiß und Schwarz in der Fehlerliste (R53):** Einstellungen › Anzeige › Nachtmodus
+      „an“. Spiele eine kurze Partie oder lies eine ein (Spielen › „Partie einlesen (PGN)“, etwa
+      „1. e4 e5 2. Qh5 Nc6 3. Qxf7+ Kxf7 0-1“). In der Auswertung unter „Grobe Patzer“ steht vor
+      jedem Zug ein kleiner Bauer auf einem runden Plättchen: weißes Plättchen mit dunklem Bauern
+      für Weiß, dunkles Plättchen mit hellem Bauern für Schwarz, beide mit Rand. Gut zu erkennen,
+      auch im hellen Modus?
+
+### Neu in 0.2.119: Trainer-Inhalte (P4; Fable, 23.10.2026)
+
+Alles unter Training.
+
+- [ ] N690. **Falle oder Köder, neues Bild:** Training › „Falle oder Köder“ › Runde starten. Der
+      Auftrag sagt jetzt: „Der Gegner hat gerade … gespielt (roter Pfeil) und bietet damit … an
+      (grauer Pfeil). Falle oder Geschenk?“ Am Brett: roter Pfeil der Köder-Zug des Gegners,
+      grauer Pfeil der mögliche Schlag. Vor der Antwort gibt es keinen Knopf „Warnsignale“ mehr.
+- [ ] N691. **Nach der Antwort:** Bei einer Falle steht: „Nach … folgt …, und du wirst matt
+      gesetzt / verlierst Material / deine Stellung ist deutlich schlechter. Du stündest x,x Bauern
+      schlechter als vor dem Nehmen. Besser war … (goldener Pfeil).“ Darunter die Fortsetzung der
+      Engine und die Warnsignale aus Kapitel 4 mit Marken am Brett (erst jetzt). Stimmt die
+      Reihenfolge für dich?
+- [ ] N692. **Keine Scheinfallen mehr:** Spiele eine Runde Stufe 1 und eine Runde Stufe 3. Jede
+      „Falle“ hat eine echte Widerlegung: Nach dem Nehmen stehst du klar schlechter als vorher
+      (die Aufgabe mit Wertung 753, in der Schwarz nach axb5 noch gut stand, ist weg). Fällt dir
+      noch eine Aufgabe auf, bei der das Nehmen gar nicht schlecht ist? Dann Kennung aus der
+      Zeile „Aus der freien Lichess-Datenbank“ notieren (Wertung genügt).
+- [ ] N693. **Geschenk:** Bei einem Geschenk heißt es: „Nehmen mit … ist gut, der Zug … hat das
+      Material wirklich hergegeben.“ Der rote Pfeil ist der Zug, der die Figur hängen ließ.
+- [ ] N694. **Planbilanz-Übung, deine Sicht:** Training › „Planbilanz-Übung“ › Planfragen. Unter
+      „Was will mein Gegner?“ fangen alle drei Antworten mit der Farbe des Gegners an („Schwarz
+      will …“), keine mit deiner. Unter „Wo spiele ich?“ ist keine falsche Antwort mehr ein Satz
+      über den Gegner, und keine gleicht der richtigen bis auf ein Feld.
+- [ ] N695. **Figuren mit Farbe:** Unter „Welche Figur?“ heißt es „Dein Läufer c1 …“, „Deine
+      Dame d1 …“; die falschen Antworten nennen andere eigene Figuren, nie gegnerische.
+- [ ] N696. **Nur Mittelspiel:** In der Planbilanz-Übung kommen keine Endspiele mehr (Abb. 6.27,
+      Turm gegen Springer, war dabei) und keine Eröffnungen (Abb. 6.4). Abb. 11.78 (Weiß am Zug)
+      sagt jetzt „Die Kette e4–d5 zeigt dorthin“, nicht mehr „c3–b4“.
+- [ ] N697. **Quadrat wie im Buch:** Training › „Endspieltrainer“ › „Kurzübungen starten“. Nach
+      der Antwort auf „Holt der schwarze König den Bauern ein?“ zeigt das Brett den goldenen Pfeil
+      des Bauernwegs und graue Pfeile für die übrigen Seiten des Quadrats (wie Abb. 8.35), kein
+      goldenes Feld mehr; das Feld des Königs ist gold (holt ein) oder rot (zu spät).
+- [ ] N698. **Schwerere Kurzübungen:** Aufgabe 5 bis 7 einer Runde: „Mit welchem Königszug holt
+      er den Bauern ein?“ (drei Züge zur Wahl), „Mit welchem Zug nimmt Weiß/Schwarz die
+      Opposition?“ und „Welcher Plan gilt in diesem Erkennungsbild?“ (vier Pläne als Text). Nach
+      der Antwort goldener Pfeil des richtigen Zugs beziehungsweise der Name des Bildes.
+- [ ] N699. **Freie Endspielaufgaben:** Endspieltrainer › „Was üben?“: Die Gruppen zeigen jetzt
+      mehr Aufgaben (Bauernendspiele, Turmendspiele, Damenendspiele, Leichtfiguren). Starte eine
+      Runde „Bauernendspiele“: Neben Buchstellungen kommen Aufgaben mit der Zeile „Aus der freien
+      Lichess-Datenbank (Wertung …)“, Thema „Bauernendspiel“, Merksatz „Bauernendspiel aus einer
+      echten Partie“. Spiel zwei davon aus: Fühlen sie sich wie echte Übungen an (du kannst
+      scheitern, die Engine wehrt sich)?
+- [ ] N700. **Remis halten:** Es gibt auch freie Remisaufgaben („Halte das Remis gegen die
+      Engine“), vor allem in Turmendspielen. Eine davon spielen.
+- [ ] N701. **Abb. 8.31 fehlt absichtlich:** Im Endspieltrainer kommt die Randbauer-Stellung
+      Abb. 8.31 nicht mehr vor (Weiß zog zuerst und setzte sofort patt, du kamst nie an den Zug).
+      Randbauer übst du an Abb. 8.61 und 8.63. Einverstanden?
+- [ ] N702. **Strukturerkenner mit echten Stellungen:** Training › „Strukturerkenner“ › Runde
+      starten. Das Brett zeigt die ganze Stellung; unter dem Brett schaltet „Nur das Skelett
+      zeigen“ auf Bauern und Könige um und zurück („Alle Figuren zeigen“). Der Schalter gilt für
+      alle Schritte der Aufgabe.
+- [ ] N703. **Starke Felder auf der 4. bis 6. Reihe:** Schritt 1 fragt jetzt nach deiner 4. bis
+      6. Reihe (deine Festlegung aus P3). Nach „Prüfen“ steht „Starke Felder: d5 (Vorposten), b6“;
+      Vorposten sind die mit eigener Bauernstütze. Bei Abb. 5.8 (Najdorf, Weiß) muss d5 als
+      Vorposten dabei sein.
+- [ ] N704. **Feldart benennen:** Vor der Planwahl kommt (wenn die Stellung eines hergibt) ein
+      Schritt „Welche Feldart ist das goldene Feld für dich?“ mit fünf Knöpfen: Loch, Schwaches
+      Feld, Starkes Feld, Vorposten, Rückständiger Bauer. Nach der Wahl erklärt ein Satz die Art
+      nach deinen Festlegungen. Gefragt ist immer die genaueste Art (Vorposten vor starkem Feld,
+      Loch vor schwachem Feld). Passt das?
+- [ ] N705. **Stellungen aus Partien:** Manche Aufgaben tragen die Zeile „Aus einer Partie des
+      Buches (nach Abb. …)“: Mittelspielstellungen aus den Zugfolgen der Kapitel 2, 3, 6, 11 und
+      12 (28 Stück, ab Zug 10, höchstens zwei je Zugfolge). Sind Struktur und Plan dort stimmig?
+
+### Neu in 0.2.116 und 0.2.118: deine Rückmeldung vom 19.10.2026 (R1 bis R23, R33; Opus)
 
 - [ ] N600. **„KI“ statt „Claude“:** Abb. 8.25 öffnen. Unter der Zugleiste steht jetzt „Zugfolge
       von einer KI konstruiert, nicht aus dem Buch …“.
@@ -68,6 +185,110 @@ Teil fertig ist.
 - [ ] N610. **Aufgabe wiederholen:** In jedem Trainer (etwa Training › Taktiktrainer) steht nach
       der Antwort neben „Weiter“ der Knopf „Aufgabe wiederholen“. Er setzt die Aufgabe auf den
       Anfang zurück; gezählt wird weiter nur die erste Antwort.
+- [ ] N611. **Aufklapplisten in den Trainern:** Repertoire-Trainer und Abweichungsmodus (Eröffnung),
+      Taktiktrainer (Thema), Endspieltrainer („Was üben?“) und Zug erraten (Partie) wählen jetzt
+      aus einer Aufklappliste statt aus vielen Knöpfen. Seite und Stufe bleiben Knöpfe. Besser so?
+- [ ] N612. **Zahlen im Zähltrainer:** Training › Zähltrainer › „Bilanz zählen“: Angreifer,
+      Verteidiger und Gewinn stellst du jetzt mit „−“ und „+“ ein, die Zahl steht groß dazwischen.
+      Überall sonst stehen Zahlen und Wörter mittig in ihren Knöpfen. Schöner so?
+- [ ] N613. **Wo übe ich? (Trainingsseiten):** Im Browser
+      <https://schach-von-grund-auf.com/training/kap06/> öffnen. Oben erklärt ein Satz die Marken;
+      vor jeder Übung steht klein, wo du sie machst: „Lichess“, „Website“, „App“ (Abbildung im
+      Text, ein Tipp öffnet sie in der App), „Brett“ (echtes Schachbrett) oder „Eigene Partien“.
+      Die Texte selbst sind wie im Buch. Klar genug, oder fehlt dir noch etwas?
+- [ ] N614. **Urteil der Engine nach „Erst selbst denken“ (NA1):** Einstellungen › Reiter
+      „Training“ › „Auch vor Werkzeugen und Engine“ auf „an“. Abb. 1.26 öffnen, „Weiß besser“
+      wählen, „Ich habe nachgedacht“. Unter dem Brett steht nach etwa drei Sekunden: „Die Engine
+      sagt: ausgeglichen (+0,…), also ‚ausgeglichen‘.“ Zurück zum Buch, Abb. 1.26 noch einmal
+      öffnen und „gleich“ wählen: Es kommt „Richtig eingeschätzt!“. Beim dritten Öffnen sind die
+      Werkzeuge gleich da, ohne Frage. Als ausgeglichen gilt bis ±0,5 Bauern.
+- [ ] N615. **Denkroutine am Brett (F2):** Training › „Denkroutine-Trainer“. Nach der Minute
+      „Kandidaten am Brett ziehen“: Du ziehst Kandidat 1 auf dem Brett, dann in der Stellung
+      danach die stärkste Antwort des Gegners; das Brett springt zurück, dann Kandidat 2 und seine
+      Antwort. Danach rechnet die Engine wie bisher. „Letzten Zug zurücknehmen“ korrigiert einen
+      Fehlgriff; denselben Kandidaten zweimal nimmt die App nicht an. Angenehmer als die Textfelder?
+- [ ] N616. **Faktorenbilanz-Trainer wie im Buch:** Training › „Faktorenbilanz-Trainer“. Material
+      und Zeit stellst du jetzt an einer Waage ein („◀ Weiß vorn“, „gerade“, „Schwarz vorn ▶“);
+      sie neigt sich zur gewählten Seite. Königssicherheit und Aktivität bewertest du je Seite mit
+      ✓ (gut), ◐ (teils) oder ✗ (schlecht) wie in der Tabelle des Buches; verglichen wird, wer
+      danach vorn liegt. Passt das so?
+- [ ] N617. **Partienliste mit Symbolen (ab vier Partien):** Spielen › „Deine letzten Partien“.
+      Über der Liste stehen Symbole zum An- und Ausschalten: Pokal, Handschlag, Kreuz (Ergebnis),
+      Stern und durchgestrichener Stern (gewertet oder nicht), heller und dunkler Kreis (deine
+      Farbe), Bot, Chip und zwei Personen (Gegner: Bot, Engine nach Stufe, zu zweit). Mehrere
+      zugleich: In einer Gruppe gilt „oder“, zwischen den Gruppen „und“. Darunter die Sortierung:
+      Kalender (Datum), Kurve (deine Spielstärke), gekreuzte Schwerter (Stärke des Gegners) und
+      ein Pfeil für die Richtung. Lange drücken oder darüberfahren zeigt den Namen jedes Symbols.
+- [ ] N618. **Partie einlesen (PGN):** Spielen › „Deine letzten Partien“ › „Partie einlesen (PGN)“.
+      Eine Partie von Lichess oder chess.com einfügen (oder eine .pgn-Datei wählen), deine Farbe
+      wählen, „Einlesen und auswerten“. Die Partie öffnet sich als „Eingelesene Partie“ mit den
+      Namen, die Auswertung läuft, und in der Liste steht sie ungewertet mit eigenem Symbol
+      (Filter „eingelesene Partien“). Für deine Wertung zählt sie nicht.
+- [ ] N630. **Eröffnung ohne „zu wenige Züge“ (R33):** Eine kurze Partie spielen und auswerten. In der
+      Karte „Spielstärke“ steht bei „Eröffnung“ jetzt Urteil und Genauigkeit, etwa „Gut 84 % (4 Züge)“,
+      ohne „zu wenige Züge“. Die Zahl der Spielstärke kommt je Phase erst ab sechs Zügen; das erklärt
+      das Fragezeichen der Karte.
+- [ ] N632. **Spielstärke nur aus gewerteten Partien (R32):** Unter Spielen den Haken „Gewertete
+      Partie“ abnehmen, als Gegner „Mensch (beide Seiten selbst)“ und wieder „Engine“ wählen: Der
+      Haken bleibt aus (bisher sprang er wieder an). Eine ungewertete Partie gegen die Engine
+      spielen und auswerten lassen: Die Karte „Deine Spielstärke“ ändert sich dadurch nicht; nur
+      gewertete Partien zählen dort.
+
+### Neu in 0.2.118: Werkzeuge und Strukturbegriffe (P3; Fable, 23.10.2026)
+
+Noch nicht auf `main`; die Punkte gelten, sobald der Zweig übernommen ist (dann steht in den
+Einstellungen eine Version über 0.2.117). Die Werkzeuge findest du unter jeder Abbildung in der
+Leiste unter dem Brett (Bündel „Skelett-Röntgen“, „Planfindung“, „Denkroutine“); „Sicht“ ist der
+Schalter oben rechts in der Werkzeugkarte.
+
+- [ ] N670. **Rückständiger Bauer (R44):** Abb. 5.8 öffnen, Bündel „Skelett-Röntgen“, Reiter
+      „Bauern“, Sicht Schwarz. Bei d6 steht „rückständig – die Nachbarn stehen schon vor ihm,
+      kein eigener Bauer deckt ihn mehr, der Gegner hält das Feld davor; Ziel auf der halboffenen
+      Linie“, am Brett das Kürzel R. Abb. 5.7 (Kieseritzky), Sicht Schwarz: f7 und h7 heißen
+      nicht mehr rückständig, sondern nur „besteht den Deckungstest nicht“ (U), weil kein weißer
+      Bauer f6 oder h6 hält. Passt das zu deiner Festlegung?
+- [ ] N671. **Löcher, starke Felder, Vorposten (R44):** Abb. 5.8, Reiter „Felder“, Sicht Weiß:
+      „Starke Felder für Weiß“ mit „d5: starkes Feld – kein gegnerischer Bauer kann es mehr
+      angreifen, ein eigener Bauer stützt es: ein Vorposten; erreichbar für c3 und d1“. Sicht
+      Schwarz: „Löcher bei Schwarz (schwache Felder)“ mit „d5: Bauernloch – kein eigener Bauer
+      kann es je wieder decken; der Gegner kann es nutzen“. Abb. 11.43, Sicht Weiß: d4 (eigene
+      4. Reihe) und c5 stehen bei den starken Feldern. Unter „So prüft die App“ stehen die fünf
+      Begriffe wie von dir festgelegt.
+- [ ] N672. **Legende folgt der Sicht (R41):** Abb. 1.26, Symbol „Röntgen“ am Brett. Unter der
+      Karte steht „Am Brett: Goldene Pfeile: Schachs, Gewinnschläge und Drohungen von Weiß. Rote
+      Pfeile: Schachs und Drohungen von Schwarz …“. Nach „Sicht“ tauschen die Farben im Text.
+      Dasselbe bei allen Werkzeugen mit Pfeilen oder Feldern (statt „der Seite der Sicht“ oder
+      „eigene“ stehen jetzt Weiß und Schwarz).
+- [ ] N673. **Nur die gewählte Seite (R41), Skelett:** Abb. 5.17, Reiter „Bauern“ (Schwarz am
+      Zug): „Bauern von Schwarz“ vollständig (Deckungstest, Inseln, Linien), darunter nur noch
+      „Ziele bei Weiß: d4: Isolani“. Reiter „Felder“, „Richtung“ und „Figuren“ zeigen nur noch die
+      gewählte Seite; die andere über „Sicht“. Fehlt dir dabei etwas, etwa die Richtung des
+      Gegners neben der eigenen?
+- [ ] N674. **Nur die gewählte Seite (R41), Planbilanz:** Abb. 6.20, Bündel „Planfindung“, Reiter
+      „Planbilanz“: Jede Planfrage hat nur noch die Zeile von Weiß („Weiß: Am Damenflügel …“);
+      „Sicht“ zeigt Schwarz. Der Verweis auf die Planbilanz im Buch bleibt. Wo das Buch beide
+      Seiten fragt oder vergleicht, bleiben beide mit Begründung unter „So prüft die App“:
+      Schach-Röntgen (die Regel fragt nach den Schachs, Schlägen und Drohungen beider Seiten),
+      Warnsignale (Gefahren bei dir, Ziele beim Gegner), Zielbilanz und Faktorenbilanz
+      (Vergleichstabellen, Waage). Einverstanden?
+- [ ] N675. **Werkzeugkarten einspaltig (R42):** Auf dem Handy stehen die Befunde jeder
+      Werkzeugkarte untereinander, etwa Bündel „Denkroutine“, Reiter „Erfassen“ an Abb. 12.1. Erst
+      auf dem Tablet (hochkant) oder einem breiten Bildschirm sind es zwei Spalten. Weniger
+      Scrollen als vorher?
+- [ ] N676. **Phase nur noch im Reiter „Phase“ (R42):** Abb. 12.1, Reiter „Erfassen“: Die Phase
+      steht nur im Fazit („Mittelspiel. …“); Gründe und Werkzeuge stehen allein im Reiter „Phase“.
+- [ ] N677. **Kandidaten mit Bewertung der Engine (R43):** Abb. 12.1, Reiter „Kandidaten“. Unter
+      den drei Schritten rechnet die Engine etwa drei Sekunden: „Bewertung der Engine“, „Stellung
+      jetzt: +… (…)“, dann je Kandidat „1. Lxh7+: +… – verbessert die Stellung um …“ oder „hält die
+      Stellung“ oder „verschlechtert die Stellung um …“, zuletzt „Am stärksten nach der Engine: …“.
+- [ ] N678. **Ruhige Kandidaten ohne „Material“ (R43):** Übung 12.6 öffnen, Reiter „Kandidaten“.
+      Beim Buchzug g3 steht nicht mehr „Material danach …“, sondern „keine zwingende Antwort – ein
+      ruhiger Zug; wie er die Stellung verändert, sagt die Engine unten“, und in Schritt 4 „… ob der
+      ruhige Zug der beste ist, sagt die Bewertung der Engine unten“. Zwingende Kandidaten
+      (Schachs, Schläge, Abwehrzüge im Schach) behalten den Materialstand. Richtig so?
+- [ ] N679. **Kandidaten in der Partie:** Gegen die Engine spielen, nach ein paar Zügen die
+      Werkzeuge öffnen, Bündel „Denkroutine“, „Kandidaten“: Der Engine-Abschnitt erscheint auch
+      hier (ohne Buchzug). Die Pfeile am Brett folgen der Sicht, die Legende nennt deine Farbe.
 
 ### Neu in 0.2.117 (menschliche Bots, zehn Stufen; Opus, 20. bis 22.10.2026)
 
@@ -105,9 +326,298 @@ Spielgefühl.
 - [ ] N627. **Einstellungen › Fehlerarten:** Die Abhakliste heißt jetzt „Fehlerarten der
       vorgefertigten Bots“ und gilt nur für sie; die Stufen ohne Bot machen keine Zusatzfehler.
 
+### Neu in 0.2.118: Trainer-Bedienung (P5; Opus, 23.10.2026)
+
+- [ ] N710. **Taktiktrainer mit einem Motiv (R30):** Training › Taktik › Thema „Spieß“ › Runde
+      starten, eine Aufgabe lösen oder „Lösung zeigen“. Die Frage „Welches Motiv war es?“ kommt
+      nicht mehr, weil die Antwort feststeht. Bei „Alle Motive gemischt“ und „Mattbilder“ kommt
+      sie weiterhin.
+- [ ] N711. **Falle oder Köder ohne verräterische Zeichen (R31):** Training › Falle oder Köder ›
+      Runde starten. Im Auftrag und auf dem Knopf „Nehmen: …“ steht der Zug ohne „+“, „#“, „!“
+      oder „?“. Nach der Entscheidung zeigt die Auflösung den Zug wieder mit allen Zeichen.
+- [ ] N712. **Studien: falscher Zug im Vergleich (R46):** Training › Studien lösen, Saavedra-Studie.
+      Ziehe zuerst absichtlich falsch, etwa den König b6–b7. Rot erscheint dein Zug, gold der Zug
+      der Studie (c6–c7), dazu „Nicht der Zug der Studie“. Nach etwa drei Sekunden sagt die
+      Engine, wie viel schwächer dein Zug ist, und nennt beide Bewertungen aus Sicht von Weiß
+      (Matt als „#5“). Bei Matt nennt sie keinen Abstand in Bauern. Danach c7 ziehen, es geht
+      weiter wie bisher.
+- [ ] N713. **Zug erraten: Bewertungsbalken (R45):** Training › Zug erraten › Morphys Opernpartie
+      als Weiß › Runde starten. Links am Brett steht der Balken wie im Rückblick nach einer
+      Partie. Nach jedem Zug rechnet er kurz neu (etwa eine Sekunde, nach einem verfehlten Zug
+      erst nach dem Vergleich). Schon umgesetzt: Der Balken ist immer da, ohne Schalter;
+      Widerspruch genügt, falls er dir beim Raten zu viel verrät.
+- [ ] N714. **Zug erraten: Pfeile für den letzten Zug:** Rate einen Zug falsch (etwa 2. d4 statt
+      2. Sf3). Gold erscheint der Partiezug, rot dein Zug, dazu „Gold der Partiezug, rot dein
+      Zug.“ Darunter vergleicht die Engine beide Züge mit beiden Bewertungen. Bei einem Treffer
+      zeigt nur der goldene Pfeil den Zug.
+- [ ] N715. **Zug erraten: Hinweis-Knopf:** Tippe „Hinweis: Figur zeigen“. Ein goldenes Feld liegt
+      unter der Figur, die in der Partie zieht. Ziehst du dann richtig, steht da „Getroffen, mit
+      Hinweis: zählt nicht als Treffer.“ Schon umgesetzt: Ein Treffer mit Hinweis zählt als
+      Versuch, aber nicht als Treffer (sonst wäre die Trefferzahl mit Hinweisen wertlos);
+      Widerspruch genügt.
+- [ ] N716. **Zug erraten: Kommentar nach Motiven und Fehlerarten:** Spiel die Opernpartie bis zum
+      Schluss (Hinweise helfen). Bei 15. Lxd7+, 16. Db8+ und 17. Td8# steht unter dem Brett etwa
+      „Im Partiezug Db8+ steckt: Ablenkung, Doppelangriff, Mattbild Grundreihenmatt.“ Weicht dein
+      Zug als Fehler ab (ab „?!“ wie im Rückblick), nennt der Kommentar die Fehlerart, etwa
+      „Dein Zug … lässt die Drohung … stehen“. Schon umgesetzt: Motive nennt die App nur, wenn
+      die Folge Material gewinnt oder mattsetzt; die Motiverkennung ist für Taktikaufgaben
+      gebaut und fände sonst in jedem ruhigen Zug etwas („2. Sf3: Abzug“). Widerspruch genügt.
+- [ ] N717. **Zug erraten: Blättern:** Über den Knöpfen unter dem Brett stehen die gespielten Züge.
+      Tippe einen Zug oder „Zum Anfang“, „zurück“, „vor“: Das Brett zeigt die frühere Stellung,
+      der Balken bewertet sie, und ein Satz sagt, dass du zum Weiterraten ganz nach vorne
+      blättern musst. „Zum Ende“ bringt dich zurück.
+- [ ] N718. **Zug erraten: Analysemodus:** Tippe „Analysieren“ und ziehe frei für beide Seiten,
+      etwa ein paar Züge, die du erwägst. Der Balken bewertet jede Stellung, „Zug zurück“ nimmt
+      einen Analysezug zurück. „Analyse beenden“ stellt die Partiestellung wieder her, dann legst
+      du deinen Zug fest. Die Analysezüge zählen nicht.
+
+### Neu in 0.2.118 und 0.2.119: englische Buchdaten (P6; Opus, 23.10.2026)
+
+Alle Buchdaten gibt es jetzt auch auf Englisch: Bildunterschriften, Abschnittstitel, Übungen,
+Warum-Fragen, Bilanzen, Fallenchecks, Steckbriefe, Glossar und Nachschlagen. Die Trainer
+(Taktik, „Falle oder Köder“, Strukturerkenner, Endspiel) zeigen ihre Aufgabentexte vorerst
+weiter deutsch; deshalb bleibt Englisch eine Vorschau. Zum Testen jeweils Einstellungen ›
+Anzeige › „English (preview)“.
+
+- [ ] N730. **Kapitel und Lernziele:** Book: Die Kapitel heißen englisch („Basic principles of
+      chess“, „Endgame deep dive“ …). Ein Kapitel öffnen: Abschnitte, Kacheltexte und die
+      Lernziele unter „Master checklist“ sind englisch.
+- [ ] N731. **Bildunterschriften:** Abb. 1.2: „After 2. Bf4 – Goal 1: the pawn occupies d4
+      (gold) …“. Züge stehen mit englischen Buchstaben (B, N, R, Q), auch in den Kacheln unter
+      dem kleinen Brett.
+- [ ] N732. **Übungen:** Kapitel 1 › Übung 4 („Drohung ignoriert?“): Nach dem Lösen steht
+      „Knight fork with check. Instead of saving the attacked knight, White gives check: 1. Nc7+!
+      …“. Der Lösungszug wird mit englischer Notation erkannt.
+- [ ] N733. **Warum-Fragen:** Abb. 1.26: „Why is 6. Bd3 inaccurate?“ mit drei englischen
+      Antworten und der Erklärung „Three against three becomes three against two …“.
+- [ ] N734. **Steckbriefe und Bilanzen:** Kapitel 2: Die Eröffnungen heißen „Ruy Lopez“,
+      „Italian Game“, „Petrov Defense (Russian Game)“ usw.; Zielbilanzen und Faktorenbilanzen
+      (Kapitel 3, etwa Königsgambit) zeigen „Material“, „Time“, „King safety“, „Activity“ mit
+      ✓ ◐ ✗ wie im Deutschen.
+- [ ] N735. **Fallenchecks:** Kapitel 4, eine Falle (etwa „Légal Trap“): Die Zeilen heißen wie
+      die Warnsignale und Prüffragen der App („Gift“, „Two replies ahead“, „Pin check“ …).
+- [ ] N736. **Glossar:** Nachschlagen › Glossary: 255 englische Stichwörter nach dem englischen
+      Alphabet („50-move rule“, „Active rook“ …). „Discovery“ antippen: Der Verweis führt zu
+      „Discovered attack“, „See also“ zu „Long-range piece“.
+- [ ] N737. **Nachschlagen:** Thinking routine (vier Schritte, Safety check, die drei Phasen
+      Opening/Middlegame/Endgame mit ihren Werkzeugen) und Master checklist sind englisch.
+- [ ] N738. **Ganze Kapitel ohne Deutsch:** Claude hat jedes Kapitel in der App durchgesehen
+      (jede Abbildung, Kapitelseite, jede Übung mit Lösung): kein deutscher Rest außer
+      Eigennamen (Heuäcker, Göring, Sämisch). Blätter ein Kapitel deiner Wahl durch; fällt dir
+      ein deutscher Satz oder eine holprige Stelle auf, schreib „N738: Abb. x.y …“.
+- [ ] N739. **Englisch im Ganzen:** Lies zwei, drei Unterschriften und eine Erklärung. Klingt
+      das Englisch natürlich genug für die Vorschau, bis dein englisches Buch kommt?
+
 ---
 
 ## Teil 2: Entscheiden
 
-Zurzeit ist nichts offen. Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene
-Empfehlung und stellt sie dir am Ende hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“).
+Bei den Wünschen der Arbeitsliste nimmt Claude zunächst die eigene Empfehlung und stellt sie dir
+hier zur Prüfung („Schon umgesetzt, Widerspruch genügt“). Buchbefunde bleiben Rückfragen, weil
+nur du das Buch änderst.
+
+### P3 Strukturbegriffe (R44): Vorschläge für das Buch (23.10.2026)
+
+Deine fünf Festlegungen (rückständiger Bauer, Bauernloch, schwaches Feld, starkes Feld,
+Vorposten) sind in der App umgesetzt: im Skelett-Röntgen (Felder, Bauern, Figuren), im
+LAP-Vorschlag und in den Texten. Das Glossar der App ist das Glossar des Buches (die Pipeline
+liest es aus dem LaTeX), deshalb stehen die Begriffe dort noch in der alten Fassung. Die Stellen
+im Buch, die von den Festlegungen abweichen, mit einem Formulierungsvorschlag je Stelle. Du
+änderst das Buch; sobald der Buchstand kommt, baut die Pipeline das Glossar neu.
+
+- [ ] B9. **Glossar „Rückständiger Bauer“.** Jetzt: „Ein Bauer, der hinter seinen Nachbarbauern
+      zurückgeblieben ist: Sie stehen schon vor ihm und können ihn nicht mehr decken. Vor ihm
+      liegt ein Loch.“ Es fehlen „am Vorrücken gehindert“ und „Ziel auf der halboffenen Linie“.
+      Vorschlag: „Ein Bauer, der hinter den eigenen Bauern auf den Nachbarlinien zurückgeblieben
+      ist: Sie stehen schon vor ihm und können ihn nicht mehr decken, und das Feld vor ihm hält ein
+      gegnerischer Bauer, sodass er nicht mehr vorrücken kann. Vor ihm liegt ein Loch; auf der
+      halboffenen Linie wird er zum Angriffsziel (Kapitel 5).“
+- [ ] B10. **Kapitel 5, Abschnitt „Der rückständige Bauer“ und die Tabelle der Bauernschwächen.**
+      Der Text sagt: „Zum Dauer-Angriffsziel wird er, wenn der Gegner die Linie vor ihm mit einem
+      Turm besetzen kann. Ob er sich jemals durch einen eigenen Vorstoß befreien kann, hängt davon
+      ab, ob das Feld vor ihm ausreichend gedeckt ist.“ Vorschlag für den ersten Absatz: „Ein
+      rückständiger Bauer ist hinter seinen Nachbarbauern auf den angrenzenden Linien
+      zurückgeblieben. Anders als ein Isolani hat er zwar noch Nachbarn, die aber bereits vor ihm
+      stehen und ihn nicht mehr decken können. Rückständig im vollen Sinn ist er, wenn ihn auch
+      das Vorrücken nicht befreit, weil ein gegnerischer Bauer das Feld vor ihm kontrolliert. Auf
+      der halboffenen Linie wird er zum Dauer-Angriffsziel: Der Gegner stellt einen Turm davor und
+      eine Figur auf das Loch.“ In der Tabelle (Spalte „Warum deckt kein Bauer?“): „die Nachbarn
+      stehen schon vor ihm, das Feld davor hält der Gegner“.
+- [ ] B11. **Glossar „Loch (Bauernloch)“.** Jetzt: „Ein Feld, das kein eigener Bauer mehr
+      kontrollieren kann. Für den Gegner kann es ein starkes Feld sein.“ Vorschlag: „Ein Feld,
+      meist auf der 3. bis 5. Reihe (von dir aus gezählt), das kein eigener Bauer je wieder
+      kontrollieren kann. Für den Gegner ist es ein starkes Feld, ein Nistplatz für seine Figuren
+      (Kapitel 2 und 5).“
+- [ ] B12. **Glossar, neuer Eintrag „Schwaches Feld“** (fehlt im Buch; die App nennt ihn als
+      Oberbegriff bei den Löchern): „Oberbegriff für jedes Feld, das dauerhaft kein eigener Bauer
+      mehr decken kann. Ein Loch ist ein schwaches Feld; vor jedem rückständigen Bauern liegt
+      eines (Kapitel 5).“
+- [ ] B13. **Glossar „Starkes Feld“ und Kapitel 5, Abschnitt „Starke Felder und Vorposten“ samt
+      Checkliste zur Leitfrage 1.** Glossar jetzt: „Ein Feld in der gegnerischen Hälfte, das kein
+      gegnerischer Bauer mehr angreifen kann.“ Abschnitt: „meist auf der 5. oder 6. Reihe“,
+      Checkliste: „vor allem auf der 5. und 6. Reihe“. Deine Festlegung sagt 4. bis 6. Reihe; die
+      4. Reihe liegt aber in der eigenen Hälfte (Abb. 11.43: „d4 und c5 kann kein schwarzer Bauer
+      mehr angreifen: zwei sichere Felder für weiße Figuren“). Vorschlag Glossar: „Ein Feld auf
+      der 4. bis 6. Reihe (von dir aus gezählt), meist in der gegnerischen Hälfte, das kein
+      gegnerischer Bauer mehr angreifen kann (Kapitel 5).“ Im Abschnitt und in der Checkliste
+      entsprechend „auf der 4. bis 6. Reihe“. Die App rechnet schon so.
+- [ ] B14. **Glossar „Vorposten“ und derselbe Abschnitt in Kapitel 5.** Jetzt: „Ein starkes Feld,
+      das eine eigene Figur dauerhaft und sicher besetzen kann. Am stärksten ist er, wenn ihn
+      zusätzlich ein eigener Bauer stützt.“ Nach deiner Festlegung gehört die Bauernstütze zur
+      Definition. Vorschlag Glossar: „Ein starkes Feld, das zusätzlich ein eigener Bauer deckt
+      und auf dem eine eigene Figur steht oder stehen soll, am besten ein Springer (Kapitel 5).“
+      Vorschlag für den Abschnitt: „Ein Vorposten ist ein starkes Feld, das zusätzlich ein eigener
+      Bauer stützt und auf das eine Figur gehört, am besten ein Springer: Der Gegner kann sie dort
+      nur gegen eine eigene Figur tauschen.“ Checkliste, zweiter Punkt, passt schon („am besten
+      auf ein Feld, das ein eigener Bauer stützt: Dann ist es ein Vorposten“).
+
+Schon umgesetzt in der App (Widerspruch genügt): Ein Bauer, dessen Nachbarn vor ihm stehen, den
+aber kein gegnerischer Bauer am Vorrücken hindert, heißt nicht mehr „rückständig“ (R), sondern
+fällt nur durch den Deckungstest (U); ebenso einer, dem ein gegnerischer Bauer direkt
+gegenübersteht (blockiert, kein Ziel auf der Linie). Dadurch zählt die App ihn auch nicht mehr als
+festgelegten Bauern für den schlechten Läufer (Abb. 5.7: Läufer c8 ist nicht mehr „schlecht“;
+Abb. 11.77: Läufer c2 ist es jetzt). Starke Felder beginnen auf der eigenen 4. Reihe (bisher 5.).
+Der Strukturerkenner (Trainer) rechnet noch mit der alten Zeile „5. und 6. Reihe“; das übernimmt
+Paket P4.
+
+### P3 Werkzeuge: schon umgesetzt, Widerspruch genügt (23.10.2026)
+
+- **R41 Sicht.** Die Legende jeder Werkzeugkarte nennt die Farben der gewählten Sicht. Felder,
+  Bauern, Richtung, Figuren und Planbilanz zeigen nur die gewählte Seite (Bauern: die Schwächen
+  des Gegners bleiben als Ziele, weil die Tabelle in Kapitel 5 zu jeder Schwäche den Plan dagegen
+  nennt). Beide Seiten bleiben, wo das Buch beide fragt oder vergleicht: Schach-Röntgen („Kann
+  mein Gegner mich mit Schach überraschen? Welche Figuren können auf beiden Seiten geschlagen
+  werden?“), Warnsignale (Kapitel 12, Schritt 1: „auf beiden Seiten des Brettes“), Zielbilanz
+  und Faktorenbilanz (Tabelle und Waage sind Vergleiche); die Begründung steht jeweils unter „So
+  prüft die App“. Empfehlung: so lassen.
+- **R42 Reiter.** Doppelte Inhalte gefunden und entfernt: die Phase in „Erfassen“ (jetzt nur im
+  Reiter „Phase“). Bewusst gelassen: „Figuren“ nennt die Springerfelder und Turmlinien noch
+  einmal, weil Leitfrage 4 genau danach fragt („Springer auf Löcher, Türme auf offene Linien“);
+  die Planbilanz fasst Wo?, Gegner? und LAP zusammen, wie die Tabelle im Buch; die sechs
+  Endspielregeln nennen Opposition und Quadrat als Regel, die eigenen Reiter rechnen sie aus.
+- **R43 Kandidaten.** Ruhige Kandidaten sind der Buchzug und die Mattabwehr; zwingende Kandidaten
+  (Schachs, Schläge, Drohungen, Abwehrzüge im Schach) behalten „Material danach“, weil das Buch in
+  Schritt 4 nach Material zählt und die Beispiele (Abb. 12.3, 12.4) so aufgehen. Die Engine
+  bewertet aber alle Kandidaten, nicht nur die ruhigen. „Hält die Stellung“ gilt bis 0,3 Bauern
+  Unterschied (die Grenze „ausgeglichen“ der App).
+
+### Aus der englischen Übersetzung (P6, 23.10.2026)
+
+- [ ] EN4. **Buchbefunde:** Beim Übersetzen fielen diese Stellen im deutschen Buch auf. Nichts
+      wurde geändert (das Buch änderst nur du); übersetzt ist, was dasteht. Je Punkt „ok so“ oder
+      deine Änderung:
+      a) Denkroutine (Nachschlagen): „Erlaube ich ein Schach oder Matt?“ ohne Nummern; im
+      Sicherheitsblick sonst „3. Erlaube ich ein Schach oder gar ein Matt?“. Eine Fassung?
+      b) Lernziele: Kapitel 0 bis 6 „solltest du Folgendes sicher können“, Kapitel 7 bis 12 ohne
+      „sicher“. Absicht?
+      c) Titel mit „1.\,d4“, „5.\,d4“ (Kapitel 2, Gambits für Schwarz in Kapitel 3): Der
+      LaTeX-Abstand steht roh in den App-Daten, auch auf Deutsch sichtbar. Claude kann das in der
+      Pipeline beheben, wenn du willst.
+      d) Abb. 1.23, Unterabschnitt: Leerzeichen nach den öffnenden Anführungszeichen („ Schach“).
+      e) Kapitel 1, Übung „Drohung ignoriert?“: nach „die Antwort ist 1. Sc7+!“ fehlt der Punkt;
+      ebenso Abb. 4.22 nach „Nach 6. …“.
+      f) Kapitel 2, Bilanz-Übung zur Italienischen Partie: „Rochiert Schwarz dagegen zunächst,
+      rückt Weiß mit 9. d5 vor, und nach 8... d6 …“ – die Zugreihenfolge ist unklar.
+      g) Kapitel 2, Fazit der Bilanz zum Läuferspiel zitiert „flexibel und solide“, der
+      Steckbrief sagt „ruhig und flexibel“.
+      h) Kapitel 3, Übung echtes oder Scheinopfer (Budapester Gambit): erst „liegt dazwischen“,
+      dann „Es ist also ein echtes Opfer“.
+      i) Kapitel 3, Dänisch-Bilanz nach dem Zurückgeben: „jetzt steht sie in beiden
+      Vergleichszeilen gerade“ – welche Zeilen?
+      j) Kapitel 4, Arche-Noah-Falle: F1 „Ziel für ...c5 und ...c4“ (…c4 trifft den Läufer b3,
+      nicht die Dame); Rettung „holt den Bauern d4 mit 8. Ld5 zurück“ (8. Ld5 greift a8 an, d4
+      kommt nicht direkt zurück).
+      k) Kapitel 4, Halosar-Falle, F1: „Nach 8. Sb5 verhindert die Frage das Matt, die Stellung
+      rettet sie nicht mehr“ ist schwer zu verstehen.
+      l) Abb. 5.8 nennt 6. Le2 e5 7. Sb3 „Najdorf-Hauptvariante“; heute gelten 6. Le3 und 6. Lg5
+      als Hauptvarianten, 6. Le2 als klassische Variante.
+      m) Bilanz zu Abb. 5.44, Schwarz, Richtung: „greift zwar die Spitze an, macht aber die
+      f-Linie halboffen“ – „zwar … aber“ ohne Gegensatz.
+      n) Abb. 5.14: die Erklärung sagt, 11. a4 „bremst“ …b5, das Urteil der Bilanz „verhindert“.
+      o) Kapitel 6: Die Lösung der Planbilanz-Übung zur Königsindischen formuliert die Planfragen
+      um („Wo?“, „Was will der Gegner?“, „Plan in einem Satz“); Abb. 6.7 sagt „Überzahl am
+      Königsflügel“, die London-Übung „Übermacht“.
+      p) Kapitel 7, Übung zu Morphys Opfer: „Weiß gibt zwar die Dame für einen Springer“ – nach
+      16. Db8+ Sxb8 bekommt Weiß nichts dafür; gemeint wohl „an einen Springer“.
+      q) Abb. 7.35 steht unter „Das Grundreihenmatt“, zeigt aber ein Erstickungsmatt.
+      r) Kapitel 8, Übung zum Durchbruch: „über d6 und e7 nach d7“ – Umweg? Abb. 8.23: „folgt
+      nach e4 und erreicht die Schlüsselfelder“, e4 ist selbst eines.
+      s) Kapitel 9: Abb. 9.2 und 9.6 nennen vier Linien Schachdistanz, Abb. 9.5 drei; Abb. 9.44
+      „Als Läuferseite gehört er in die Ecke …“ („er“ ist der König).
+      t) Kapitel 12, Übung zum Fehlerprotokoll: Aufgabe nennt Tabelle 12.2, Lösung Tabelle 12.1.
+      u) Glossar: „Abzugsschach … darf fast alles angreifen“ (gemeint „kann“); „Hängende Bauern“
+      ohne die halboffenen Nachbarlinien; „Zeitgutschrift“ auch für die Ausgleichszeit nach
+      einem regelwidrigen Zug gilt so nur auf Deutsch.
+- [ ] EN5. **Neue englische Begriffe (vorläufig wie EN1, schon umgesetzt, Widerspruch genügt):**
+      Die 255 Glossarstichwörter stehen englisch im Glossar der App. Dazu neu geprägt: superior
+      force (Übermacht), error radar (Fehler-Radar), protection test (Deckungstest), durability
+      (Haltbarkeit), stop moment (Stopp-Moment), trap-setter test, skeleton balance, plan
+      questions, guiding questions, box method, checking distance, building a bridge, stalemate
+      reserve, ghost piece, theme block, starter pack, hope chess, capture reflex,
+      Released means moved (Losgelassen ist gezogen), Touch-move, Luft (Luftloch), Clamp trap
+      (Klammerfalle), Desperado rook (Rasender Turm), Staircase mate (Treppenmatt; gängiger wäre
+      „ladder mate“). Eröffnungen mit den üblichen englischen Namen (Ruy Lopez, Petrov Defense,
+      Trompowsky Attack …), Spieler in englischer Schreibweise (Karpov, Korchnoi, Alekhine).
+
+### P2 Brett und Bedienung: schon umgesetzt, Widerspruch genügt (23.10.2026)
+
+- [ ] P2-B. **Ab wann eine Spalte? (R40, N656)** Die App wechselte schon live mit der
+      Fenstergröße, aber erst, wenn das Fenster schmaler als hoch war; am Rechner wurde es vorher
+      eng. Empfehlung: zwei Spalten (Brett links, Text rechts) erst ab einem Seitenverhältnis von
+      5 : 4, darunter eine Spalte mit dem Brett oben. Handy und Tablet quer bleiben zweispaltig.
+      Schon umgesetzt, Widerspruch genügt (etwa eine andere Grenze). Falls du etwas anderes
+      gemeint hast (etwa Safari am Mac, das gar nicht wechselt), schreib bitte kurz, in welchem
+      Browser.
+
+### P4 Trainer-Inhalte (Fable, 23.10.2026): schon umgesetzt, nur bestätigen
+
+- [ ] P4-1. **Maßstab der Falle.** Eine Falle ist eine Aufgabe, in der der Leser nach dem Nehmen
+      mindestens 1,5 Bauern schlechter steht als vor dem Nehmen (vor dem Nehmen = sein bester Zug)
+      und danach mindestens 0,8 Bauern im Minus liegt (Engine, Tiefe 18). Die zweite Grenze
+      sorgt dafür, dass „ich stand auf Gewinn und stehe jetzt nur noch gleich“ keine Falle ist;
+      sie liegt bei 0,8 wie die Remisgrenze des Endspieltrainers, weil das
+      Blackburne-Shilling-Gambit (Abb. 4.41) genau −0,88 misst und eine Falle bleiben soll.
+      Geschenk: Nehmen ist höchstens 0,3 hinter dem besten Zug und lässt den Leser nicht im
+      Minus. Schon umgesetzt, Widerspruch genügt.
+- [ ] P4-2. **Lichess-Fallen ohne Matt.** Lichess-Aufgaben mit Thema „crushing“ oder einem
+      Mattthema geben keine Fallen mehr her: Dort wäre die Lehre „setze matt statt zu schlagen“,
+      nicht „erkenne den Köder“. Fallen stammen aus Aufgaben, in denen der Leser vorher
+      ausgeglichen oder besser steht (Median vor dem Nehmen +4, danach −6). Schon umgesetzt.
+- [ ] P4-3. **Buchbefund: drei Schläge mit „?“ sind laut Engine keine Fallen.** Aus den
+      Zugfolgen der Kapitel 2 und 3 fallen nach dem neuen Maßstab heraus: Abb. 2.129, 5. Sxd5
+      (nach exd5; Engine: nach dem Schlag −0,97, der beste Zug Sa5 steht bei 0,0: etwa ein Bauer
+      schlechter, keine Widerlegung); Abb. 2.49, 3... Sxe4 (nach 3. Sxe5; −0,75 statt −0,39 mit
+      d6: Schwarz steht nur wenig schlechter, weil er nach 4. De2 Sf6?? 5. Sc6+ ausweichen kann);
+      Abb. 3.30, 10. Dxe5 (nach Sc3; 0,0 statt +0,77). Die Fragezeichen im Buch bleiben Sache des
+      Autors; im Trainer sind diese drei Stellungen nicht mehr. Soll eines der Zeichen im Buch
+      zu „?!“ werden?
+- [ ] P4-4. **Planbilanz nur im Mittelspiel.** Planfragen, LAP und Wettrennen gibt es nur noch
+      an Stellungen, die die App als Mittelspiel einordnet (49 Stellungen aus Kapitel 6 und 11,
+      vorher 72 mit 16 Endspielen und 7 Eröffnungen). Die Warum-Fragen der vorbereiteten Texte zu
+      Kapitel 6 bleiben unabhängig von der Phase. Lichess-Stellungen braucht es dafür nicht.
+      Schon umgesetzt.
+- [ ] P4-5. **Hauptkette.** Zeigen mehrere Ketten einer Seite zum selben Flügel, nennt der
+      Trainer die längste, bei gleicher Länge die zentralste (Abb. 11.78: e4–d5 statt c3–b4).
+      Das gilt im Trainer; im Werkzeug „Wo spiele ich?“ nennt die Kettenwahl noch die erste
+      gefundene Kette (Hinweis an P3). Schon umgesetzt.
+- [ ] P4-6. **Freie Endspielaufgaben.** 119 Aufgaben der Lichess-Datenbank (CC0) im
+      Endspieltrainer: höchstens acht Steine, genau eine Figurenart (Bauern-, Turm-, Damen-,
+      Leichtfigurenendspiel), Gewinn ab +2,0 oder Matt, Remis bis ±0,8 (Tiefe 18), nie trivial
+      (mindestens ein Zug des Lesers verfehlt das Ziel), je Thema, Stufe und Ziel höchstens fünf,
+      Stufe nach der Lichess-Wertung wie im Taktiktrainer. Neue Themen „Bauernendspiel“ und
+      „Damenendspiel“ mit eigenem Merksatz; die Gruppe „Dame gegen Bauer“ heißt jetzt
+      „Damenendspiele“. Schon umgesetzt, Widerspruch genügt.
+- [ ] P4-7. **Kurzübungen.** Drei neue Arten (Zug ins Quadrat, Zug zur Opposition, Plan zum
+      Erkennungsbild), eine Runde hat weiter acht Aufgaben, die sieben Arten reihum. Mehr
+      Aufgaben je Runde? Schon umgesetzt mit acht.
+- [ ] P4-8. **Feldart-Frage: die genaueste Art zählt.** Ein Vorposten ist auch ein starkes Feld,
+      ein Loch auch ein schwaches Feld; im Trainer gilt nur die genaueste Benennung als richtig,
+      der Erklärsatz nennt den Oberbegriff mit. „Schwaches Feld“ ist als Antwort nur dann richtig,
+      wenn das Feld außerhalb deiner 3. bis 5. Reihe liegt (etwa ein nicht mehr deckbares Feld
+      auf der 6. Reihe). Schon umgesetzt, Widerspruch genügt.
+- [ ] P4-9. **Partiestellungen für den Strukturerkenner** aus den Zugfolgen des Buches statt aus
+      fremden Partien: Regel 1 (das Buch ist die Quelle), und die Zugfolgen sind freigegeben.
+      Lichess-Aufgabenstellungen sind taktisch und taugen nicht für Strukturen. Reicht das, oder
+      sollen zusätzlich Stellungen aus den Lichess-Partien der Bot-Daten dazu?
+
+

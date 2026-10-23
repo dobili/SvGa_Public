@@ -23,37 +23,53 @@ import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
 
-const ANZAHLEN = Array.from({ length: HOECHSTE_ANZAHL }, (_, i) => i + 1);
-const BILANZEN = Array.from({ length: HOECHSTE_BILANZ + 1 }, (_, i) => i);
+/** Mindestens ein Angreifer und ein Verteidiger, sonst gäbe es nichts zu zählen. */
+const KLEINSTE_ANZAHL = 1;
 
-/** Eine Reihe Auswahlknöpfe für eine Zahl. */
+/**
+ * Zahl mit „−“ und „+“ statt einer Reihe Knöpfe (Wunsch des Autors, 19.10.2026: eine Reihe
+ * Zahlenknöpfe wirkte unruhig). Vor der ersten Eingabe steht „–“; der erste Tipp auf „+“ setzt
+ * den kleinsten Wert.
+ */
 function Zahlwahl({
   titel,
-  werte,
+  von,
+  bis,
   wert,
   setze,
   text = String,
 }: {
   titel: string;
-  werte: readonly number[];
+  von: number;
+  bis: number;
   wert: number | null;
   setze: (wert: number) => void;
   text?: (wert: number) => string;
 }) {
   return (
-    <fieldset className="zahlwahl">
+    <fieldset className="zahlschritt">
       <legend>{titel}</legend>
-      {werte.map((w) => (
-        <button
-          key={w}
-          type="button"
-          className="chip"
-          aria-pressed={wert === w}
-          onClick={() => setze(w)}
-        >
-          {text(w)}
-        </button>
-      ))}
+      <button
+        type="button"
+        className="chip"
+        aria-label={t("zahlschritt.weniger", { titel })}
+        disabled={wert === null || wert <= von}
+        onClick={() => wert !== null && setze(wert - 1)}
+      >
+        −
+      </button>
+      <output className="zahlschritt-wert" aria-live="polite">
+        {wert === null ? "–" : text(wert)}
+      </output>
+      <button
+        type="button"
+        className="chip"
+        aria-label={t("zahlschritt.mehr", { titel })}
+        disabled={wert !== null && wert >= bis}
+        onClick={() => setze(wert === null ? von : wert + 1)}
+      >
+        +
+      </button>
     </fieldset>
   );
 }
@@ -108,19 +124,22 @@ export function Zaehlaufgabe({ aufgabe, runde }: { aufgabe: Zaehlaufgabe; runde:
       />
       <Zahlwahl
         titel={t("zaehltrainer.angreifer")}
-        werte={ANZAHLEN}
+        von={KLEINSTE_ANZAHL}
+        bis={HOECHSTE_ANZAHL}
         wert={angreifer}
         setze={setzeAngreifer}
       />
       <Zahlwahl
         titel={t("zaehltrainer.verteidiger")}
-        werte={ANZAHLEN}
+        von={KLEINSTE_ANZAHL}
+        bis={HOECHSTE_ANZAHL}
         wert={verteidiger}
         setze={setzeVerteidiger}
       />
       <Zahlwahl
         titel={t("zaehltrainer.bilanz")}
-        werte={BILANZEN}
+        von={0}
+        bis={HOECHSTE_BILANZ}
         wert={bilanz}
         setze={setzeBilanz}
         text={(w) => (w === 0 ? t("zaehltrainer.lohntNicht") : `+${w}`)}

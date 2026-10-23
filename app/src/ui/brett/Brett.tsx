@@ -5,9 +5,12 @@
  * dieser Reihenfolge: Felder, Feldmarkierungen, Figuren, Pfeile, Beschriftungen.
  * Bedienung: Über dem Bild liegen 64 unsichtbare Knöpfe, einer je Feld. Das ist zuverlässig auf
  * Touchscreens und macht jedes Feld für Bildschirmleser und Tastatur erreichbar. Seit 0.2.92
- * lassen sich Figuren auf derselben Schicht auch per Wischen ziehen (useZiehen.ts).
- * Abhängigkeiten: masse.ts, geometrie.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
- * useZugton.ts (Ton), useZiehen.ts, i18n.
+ * lassen sich Figuren auf derselben Schicht auch per Wischen ziehen (useZiehen.ts); seit R35
+ * erkennt useZiehen.ts auch das Antippen, mit großzügiger Trefferfläche um die Zielfelder
+ * (treffer.ts). Seit R37 gleitet ein neuer Zug über das Brett (useZuganimation.ts,
+ * Zuganimation.tsx).
+ * Abhängigkeiten: masse.ts, geometrie.ts, treffer.ts, Brettmarken.tsx, Figur.tsx (Figurensatz),
+ * useZugton.ts (Ton), useZiehen.ts, useZuganimation.ts, Zuganimation.tsx, i18n.
  */
 import { Fragment, useId, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
@@ -16,10 +19,13 @@ import { Beschriftungen } from "./Beschriftung";
 import { Figur } from "./Figur";
 import { useZugton } from "./useZugton";
 import { Brettbild, Holzfelder } from "./Holzfelder";
-import { alleFelder, feldEcke, figurenAusFen } from "./geometrie";
-import { Feldmarke, Pfeil, Schimmer, SPERRFARBE, Zielpunkt, Zielring } from "./Brettmarken";
+import { alleFelder, feldAnPunkt, feldEcke, figurenAusFen, type Punkt } from "./geometrie";
+import { TOLERANZ_EIGENE_FIGUR, TOLERANZ_ZIELFELD, trefferfeld } from "./treffer";
+import { Feldmarken, Pfeil, Schimmer, SPERRFARBE, Zielpunkt, Zielring } from "./Brettmarken";
 import { useZiehen, wischenAn, type Ziehbedienung, type Ziehstand } from "./useZiehen";
 import { querversaetze } from "./versatz";
+import { Zuganimation } from "./Zuganimation";
+import { useZuganimation, zuganimationAn } from "./useZuganimation";
 import { useEinstellungen, type Figurensatz } from "../../app/einstellungen";
 import { BRETT, BRETTFARBEN, FELD, holzmuster, KOORDINATEN_GROESSE, PFEIL } from "./masse";
 
@@ -50,6 +56,8 @@ interface BrettEigenschaften {
   readonly gesperrt?: string | null;
   /** Ziehen per Wischen (seit 0.2.92); ohne diese Angabe nur Antippen. */
   readonly ziehen?: Ziehbedienung | null;
+  /** Etwas über dem ganzen Brett, das Tipps durchlässt (R38: Ergebnis der Partie). */
+  readonly ueberlagerung?: React.ReactNode;
 }
 
 /** Name einer Figur für Bildschirmleser, etwa „weißer Springer“. */
@@ -57,6 +65,12 @@ function figurenname(zeichen: string): string {
   const farbe = zeichen === zeichen.toUpperCase() ? t("farbe.w") : t("farbe.b");
   const rolle = zeichen.toLowerCase() as "p" | "n" | "b" | "r" | "q" | "k";
   return `${t(`figur.${rolle}`)} (${farbe})`;
+}
+
+/** Stehen auf zwei Feldern Figuren derselben Farbe? (FEN: Großbuchstaben Weiß.) */
+function gleicheFarbe(a: string | undefined, b: string | undefined): boolean {
+  if (!a || !b) return false;
+  return (a === a.toUpperCase()) === (b === b.toUpperCase());
 }
 
 /** Die 64 Felder, schlicht in den Feldfarben oder mit den Holzbildern (Holzfelder.tsx). */
@@ -124,6 +138,7 @@ const GEZOGEN_SCHATTEN = 0.35;
 /**
  * Die Figuren der Stellung; eine gerade gezogene Figur blass auf ihrem Feld und groß unter dem
  * Zeiger (seit 0.2.92). Die große Figur kommt in Brett zuletzt, über Pfeile und Beschriftung.
+ * Seit R37 fehlen die Figuren, die gerade gleiten, auf ihrem Zielfeld.
  */
 function Figuren({
   figuren,
@@ -131,16 +146,19 @@ function Figuren({
   satz,
   farbe,
   gezogen,
+  verborgen,
 }: {
   figuren: ReadonlyMap<string, string>;
   gedreht: boolean;
   satz: Figurensatz;
   farbe: string;
   gezogen: Ziehstand | null;
+  /** Felder, deren Figur gerade dorthin gleitet (Zuganimation.tsx zeichnet sie). */
+  verborgen: readonly string[];
 }) {
   return [...figuren].map(([feld, zeichen]) => {
     const ecke = feldEcke(feld, gedreht);
-    if (!ecke) return null;
+    if (!ecke || verborgen.includes(feld)) return null;
     const figur = <Figur zeichen={zeichen} x={ecke.x} y={ecke.y} satz={satz} farbe={farbe} />;
     return gezogen?.von === feld ? (
       <g key={feld} opacity={GEZOGEN_SCHATTEN}>
@@ -179,7 +197,9 @@ function GezogeneFigur({
 /**
  * Die 64 unsichtbaren Knöpfe über dem Bild. Felder mit ziehbaren Figuren bekommen beim Wischen
  * touch-action „none“, damit der Finger dort die Figur nimmt statt die Seite zu scrollen; alle
- * anderen Felder lassen das Scrollen frei.
+ * anderen Felder lassen das Scrollen frei. Ist eine Figur gewählt (Klasse „wahl“), scrollt das
+ * Brett gar nicht: Sonst brach ein leicht rutschender Finger den Tipp aufs Zielfeld als
+ * Scrollen ab (R35).
  */
 function Knopfschicht({
   felder,
@@ -187,6 +207,7 @@ function Knopfschicht({
   ausgewaehlt,
   beiFeld,
   greifbar,
+  wahl,
   wischen,
 }: {
   felder: readonly string[];
@@ -194,11 +215,12 @@ function Knopfschicht({
   ausgewaehlt: string | null;
   beiFeld: (feld: string) => void;
   greifbar: readonly string[];
+  wahl: boolean;
   wischen: Omit<ReturnType<typeof useZiehen>, "gezogen">;
 }) {
   const { ereignisse, klickGilt } = wischen;
   return (
-    <div className="brett-tasten" {...ereignisse}>
+    <div className={wahl ? "brett-tasten wahl" : "brett-tasten"} {...ereignisse}>
       {felder.map((feld) => {
         const figur = figuren.get(feld);
         const name = figur ? `${feld}, ${figurenname(figur)}` : feld;
@@ -237,6 +259,7 @@ export function Brett({
   ziele = [],
   gesperrt = null,
   ziehen = null,
+  ueberlagerung = null,
 }: BrettEigenschaften) {
   const { brettfarben, figurensatz, ton } = useEinstellungen();
   const farben = BRETTFARBEN[brettfarben];
@@ -260,8 +283,35 @@ export function Brett({
   const versaetze = querversaetze(pfeile, PFEIL.versatz);
   // Abgeschaltet in den Einstellungen (Merker auf dem Gerät); gelesen beim Öffnen des Bildschirms.
   const [wischenErlaubt] = useState(wischenAn);
-  const zieh = beiFeld && wischenErlaubt ? ziehen : null;
-  const { gezogen, ...wischen } = useZiehen(zieh, gedreht);
+  const [animationErlaubt] = useState(zuganimationAn);
+  const { laufend, merkeGewischt } = useZuganimation(
+    fen,
+    figuren,
+    letzterZug,
+    animationErlaubt && beiFeld !== undefined,
+  );
+  // Ein per Wischen abgelegter Zug gleitet nicht (R37): Das Brett merkt sich sein Startfeld.
+  const zieh =
+    beiFeld && wischenErlaubt && ziehen
+      ? {
+          ...ziehen,
+          lege: (von: string, nach: string) => {
+            merkeGewischt(von);
+            ziehen.lege(von, nach);
+          },
+        }
+      : null;
+
+  const treffe = (punkt: Punkt) => {
+    const unter = feldAnPunkt(punkt, gedreht);
+    const eigene =
+      unter !== null && gleicheFarbe(figuren.get(unter), figuren.get(ausgewaehlt ?? ""));
+    return trefferfeld(punkt, gedreht, ziele, eigene ? TOLERANZ_EIGENE_FIGUR : TOLERANZ_ZIELFELD);
+  };
+  const { gezogen, ...wischen } = useZiehen(
+    { ziehen: zieh, treffe, tippe: (feld) => beiFeld?.(feld) },
+    gedreht,
+  );
   const gezogenesZeichen = gezogen ? figuren.get(gezogen.von) : undefined;
   return (
     <div className="brett">
@@ -276,11 +326,7 @@ export function Brett({
         {ausgewaehlt && <Schimmer feld={ausgewaehlt} gedreht={gedreht} farbe={farben.schimmer} />}
         {gesperrt && <Schimmer feld={gesperrt} gedreht={gedreht} farbe={SPERRFARBE} />}
         {koordinaten && <Koordinaten gedreht={gedreht} farben={farben} />}
-        {markierungen.map((m, i) =>
-          m.typ === "feld" ? (
-            <Feldmarke key={`f${i}`} feld={m.feld} farbe={m.farbe} gedreht={gedreht} />
-          ) : null,
-        )}
+        <Feldmarken markierungen={markierungen} gedreht={gedreht} />
         {gezogen?.ueber && (
           <Schimmer feld={gezogen.ueber} gedreht={gedreht} farbe={farben.schimmer} />
         )}
@@ -290,7 +336,9 @@ export function Brett({
           satz={figurensatz}
           farbe={farben.figur}
           gezogen={gezogen}
+          verborgen={laufend.map((b) => b.nach)}
         />
+        <Zuganimation laufend={laufend} gedreht={gedreht} satz={figurensatz} farbe={farben.figur} />
         {ziele.map((feld) =>
           figuren.has(feld) ? (
             <Zielring key={`z${feld}`} feld={feld} gedreht={gedreht} />
@@ -325,9 +373,11 @@ export function Brett({
           ausgewaehlt={ausgewaehlt}
           beiFeld={beiFeld}
           greifbar={zieh?.felder ?? []}
+          wahl={ziele.length > 0}
           wischen={wischen}
         />
       )}
+      {ueberlagerung}
     </div>
   );
 }

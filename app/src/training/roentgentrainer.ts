@@ -84,7 +84,10 @@ export function roentgenaufgabe(buch: Buchstellung): Roentgenaufgabe | null {
     },
     gegner: {
       farbe: andere,
-      verlangt: pfeile([...(p.schachsVon(andere) ?? []), ...gegnerSchlaege.filter((s) => s.bilanz >= 0)]),
+      verlangt: pfeile([
+        ...(p.schachsVon(andere) ?? []),
+        ...gegnerSchlaege.filter((s) => s.bilanz >= 0),
+      ]),
       erlaubt: pfeile(gegnerSchlaege.filter((s) => s.bilanz < 0)),
     },
   };
@@ -128,7 +131,9 @@ export function vergleicheSchritt(
 ): Schrittvergleich {
   const gefunden = loesung.verlangt.filter((p) => markiert.includes(p));
   const fehlend = loesung.verlangt.filter((p) => !markiert.includes(p));
-  const falsch = markiert.filter((p) => !loesung.verlangt.includes(p) && !loesung.erlaubt.includes(p));
+  const falsch = markiert.filter(
+    (p) => !loesung.verlangt.includes(p) && !loesung.erlaubt.includes(p),
+  );
   return { gefunden, fehlend, falsch, richtig: fehlend.length === 0 && falsch.length === 0 };
 }
 

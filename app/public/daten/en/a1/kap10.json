@@ -1,0 +1,4660 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 10,
+ "titel": "Studies and curiosities",
+ "abschnitte": [
+  {
+   "nummer": "10.1",
+   "label": "sec:k10-werkzeug",
+   "titel": "Your tool: how to solve a study"
+  },
+  {
+   "nummer": "10.2",
+   "label": "sec:k10-saavedra",
+   "titel": "The Saavedra study: underpromotion against stalemate"
+  },
+  {
+   "nummer": "10.3",
+   "label": "sec:k10-reti",
+   "titel": "The Réti study: one king route with two goals"
+  },
+  {
+   "nummer": "10.4",
+   "label": "sec:k10-heuaecker",
+   "titel": "The Heuäcker study: interference"
+  },
+  {
+   "nummer": "10.5",
+   "label": "sec:k10-kuriositaeten",
+   "titel": "Two curiosities"
+  },
+  {
+   "nummer": "10.6",
+   "label": "",
+   "titel": "Review: studies and curiosities"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "10.1",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.2",
+    "label": "sec:k10-saavedra",
+    "titel": "The Saavedra study: underpromotion against stalemate"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "c6",
+     "nach": "c8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Saavedra study, White to move wins. Gold arrow: the pawn's path.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.2",
+    "10.3"
+   ],
+   "beispiel": {
+    "id": "k10-a1",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 70
+   },
+   "pruefsumme": "ae76f2da49a9d665",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. c7",
+      "frage": "Why does White play 1. c7 right away?",
+      "antworten": [
+       "It stalemates the black king.",
+       "The pawn is right before its goal, and the rook can only disturb it with checks.",
+       "On c7 the pawn defends its own king."
+      ],
+      "richtig": 1,
+      "erklaerung": "A rook move to d8 fails to the capture cxd8. All Black can do is gain time with checks."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.2",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.2",
+    "label": "sec:k10-saavedra",
+    "titel": "The Saavedra study: underpromotion against stalemate"
+   },
+   "unterabschnitt": null,
+   "fen": "8/2P5/8/1K1r4/8/8/8/k7 w - - 3 3",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "c2"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. c7 Rd6+ 2. Kb5 Rd5+"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray: this is where the king is heading.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.1",
+    "10.3"
+   ],
+   "beispiel": {
+    "id": "k10-a1",
+    "pfad": [
+     "c7",
+     "Rd6+",
+     "Kb5",
+     "Rd5+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 71
+   },
+   "pruefsumme": "5a99f8f3be4e1b5e"
+  },
+  {
+   "id": "10.3",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.2",
+    "label": "sec:k10-saavedra",
+    "titel": "The Saavedra study: underpromotion against stalemate"
+   },
+   "unterabschnitt": null,
+   "fen": "8/2P5/8/8/8/1K1r4/8/k7 w - - 7 5",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b3",
+     "nach": "c2"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kb4 Rd4+ 4. Kb3 Rd3+"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gold arrow: after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Kc2"
+    },
+    {
+     "art": "text",
+     "text": " every further check costs the rook.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.1",
+    "10.2"
+   ],
+   "beispiel": {
+    "id": "k10-a1",
+    "pfad": [
+     "c7",
+     "Rd6+",
+     "Kb5",
+     "Rd5+",
+     "Kb4",
+     "Rd4+",
+     "Kb3",
+     "Rd3+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 72
+   },
+   "pruefsumme": "67b165d1cae656e4",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "5. Kc2",
+      "frage": "Why does the king go to c2 now?",
+      "antworten": [
+       "White wants to repeat the position and make a draw.",
+       "It wants to defend the pawn on c7 from behind.",
+       "From c2 it covers c3 and d2: every further check costs the rook."
+      ],
+      "richtig": 2,
+      "erklaerung": "The rook has no safe checks left. Black has to come up with something new."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.4",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.2",
+    "label": "sec:k10-saavedra",
+    "titel": "The Saavedra study: underpromotion against stalemate"
+   },
+   "unterabschnitt": null,
+   "fen": "8/2P5/8/2K5/8/8/8/k2r4 w - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d1",
+     "nach": "c1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. c7 Rd6+ 2. Kc5? Rd1"
+    },
+    {
+     "art": "text",
+     "text": ", White to move: draw. Red arrow: after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. c8=Q?"
+    },
+    {
+     "art": "text",
+     "text": ", Rc1+ skewers king and queen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.5"
+   ],
+   "beispiel": {
+    "id": "k10-a1",
+    "pfad": [
+     "c7",
+     "Rd6+",
+     "Kc5",
+     "Rd1"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 82
+   },
+   "pruefsumme": "0c80ccab32616bf2",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "3. c8=Q",
+      "frage": "Why is 3. c8=Q a mistake here?",
+      "antworten": [
+       "Rc1+ skewers the king on c5 and the queen on c8 along the c-file.",
+       "The new queen stalemates the black king.",
+       "The rook on d1 can capture the queen right away."
+      ],
+      "richtig": 0,
+      "erklaerung": "The king has to get out of check, then the rook captures the queen. With 2. Kc5? the king stood on the wrong file."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.5",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.2",
+    "label": "sec:k10-saavedra",
+    "titel": "The Saavedra study: underpromotion against stalemate"
+   },
+   "unterabschnitt": null,
+   "fen": "8/1KPr4/8/8/8/8/8/k7 w - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d7",
+     "nach": "b7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "c7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. c7 Rd6+ 2. Kb7? Rd7"
+    },
+    {
+     "art": "text",
+     "text": ", White to move: draw. Gray arrow: the pin. Red: the pawn on c7 must not move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.4"
+   ],
+   "beispiel": {
+    "id": "k10-a1",
+    "pfad": [
+     "c7",
+     "Rd6+",
+     "Kb7",
+     "Rd7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 83
+   },
+   "pruefsumme": "97bc9c3d78751450",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why can't White make progress here?",
+      "antworten": [
+       "The white king has no squares left.",
+       "Black threatens mate on the a-file.",
+       "The rook on d7 pins the pawn on c7 to the king on b7."
+      ],
+      "richtig": 2,
+      "erklaerung": "The pawn must not move as long as it shields its own king. If the king steps away, the rook captures the pawn."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.6",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.2",
+    "label": "sec:k10-saavedra",
+    "titel": "The Saavedra study: underpromotion against stalemate"
+   },
+   "unterabschnitt": null,
+   "fen": "8/2P5/8/8/3r4/8/2K5/k7 w - - 9 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d4",
+     "nach": "c4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5. Kc2 Rd4!!"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red arrow: the planned rook sacrifice on c4.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k10-a1",
+    "pfad": [
+     "c7",
+     "Rd6+",
+     "Kb5",
+     "Rd5+",
+     "Kb4",
+     "Rd4+",
+     "Kb3",
+     "Rd3+",
+     "Kc2",
+     "Rd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 95
+   },
+   "pruefsumme": "dbd8a7c4d906e120",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6. c8=R",
+      "frage": "Why does White promote to a rook and not to a queen?",
+      "antworten": [
+       "A rook on c8 is safe from all checks.",
+       "After c8=Q comes Rc4+, and after Qxc4 Black is stalemated.",
+       "Black could capture a queen on c8 right away."
+      ],
+      "richtig": 1,
+      "erklaerung": "The queen on c4 would also cover a2. A rook on c4 does not cover a2, so there is no stalemate."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.7",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.2",
+    "label": "sec:k10-saavedra",
+    "titel": "The Saavedra study: underpromotion against stalemate"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/8/8/2Q5/8/2K5/k7 b - - 0 7",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "c4",
+     "nach": "a2"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "a2"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b1"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b2"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. c8=Q?? Rc4+ 7. Qxc4"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move: stalemate. Gray: a2, b1 and b2 are closed to the king.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.8"
+   ],
+   "beispiel": {
+    "id": "k10-a1",
+    "pfad": [
+     "c7",
+     "Rd6+",
+     "Kb5",
+     "Rd5+",
+     "Kb4",
+     "Rd4+",
+     "Kb3",
+     "Rd3+",
+     "Kc2",
+     "Rd4",
+     "c8=Q",
+     "Rc4+",
+     "Qxc4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 127
+   },
+   "pruefsumme": "458a0e110f7dcbeb"
+  },
+  {
+   "id": "10.8",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.2",
+    "label": "sec:k10-saavedra",
+    "titel": "The Saavedra study: underpromotion against stalemate"
+   },
+   "unterabschnitt": null,
+   "fen": "2R5/8/8/8/r7/1K6/8/k7 b - - 2 7",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b3",
+     "nach": "a4"
+    },
+    {
+     "farbe": "rot",
+     "von": "c8",
+     "nach": "c1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6. c8=R!! Ra4 7. Kb3!"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red arrows: the king attacks the rook, the rook threatens Rc1#.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.7"
+   ],
+   "beispiel": {
+    "id": "k10-a1",
+    "pfad": [
+     "c7",
+     "Rd6+",
+     "Kb5",
+     "Rd5+",
+     "Kb4",
+     "Rd4+",
+     "Kb3",
+     "Rd3+",
+     "Kc2",
+     "Rd4",
+     "c8=R",
+     "Ra4",
+     "Kb3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 128
+   },
+   "pruefsumme": "db0860e4d5ad40de",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why does White win now?",
+      "antworten": [
+       "Black has no legal move left.",
+       "White can promote the c-pawn once more.",
+       "The rook on a4 is attacked, and if it moves away, Rc1 mates."
+      ],
+      "richtig": 2,
+      "erklaerung": "Double duty for a single rook: it cannot flee and guard the first rank at the same time."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.9",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.3",
+    "label": "sec:k10-reti",
+    "titel": "The Réti study: one king route with two goals"
+   },
+   "unterabschnitt": null,
+   "fen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h5",
+     "nach": "h1"
+    },
+    {
+     "farbe": "gold",
+     "von": "c6",
+     "nach": "c8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Réti study, White to move draws. Red arrow: the h-pawn seems unstoppable. Gold arrow: the path of the white pawn.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.10",
+    "10.11"
+   ],
+   "beispiel": {
+    "id": "k10-a9",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 178
+   },
+   "pruefsumme": "faf2b937dbd11d41",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Kg7",
+      "frage": "Why does the king go to g7?",
+      "antworten": [
+       "From there it covers the promotion square h1.",
+       "It approaches the h-pawn and its own c-pawn at the same time.",
+       "It wants to stalemate the black king."
+      ],
+      "richtig": 1,
+      "erklaerung": "A diagonal king move counts as much as a straight one, but it covers two directions. That way both goals stay within reach."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.10",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.3",
+    "label": "sec:k10-reti",
+    "titel": "The Réti study: one king route with two goals"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/k1P2K2/8/7p/8/8/8 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "f6",
+     "nach": "e5"
+    },
+    {
+     "farbe": "gold",
+     "von": "f6",
+     "nach": "g5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Kg7 h4 2. Kf6!"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold arrows: the king can reach both pawns.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.9",
+    "10.11"
+   ],
+   "beispiel": {
+    "id": "k10-a9",
+    "pfad": [
+     "Kg7",
+     "h4",
+     "Kf6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 179
+   },
+   "pruefsumme": "11d65f382fe07478"
+  },
+  {
+   "id": "10.11",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.3",
+    "label": "sec:k10-reti",
+    "titel": "The Réti study: one king route with two goals"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/1kP5/4K3/7p/8/8/8 b - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e5",
+     "nach": "f4"
+    },
+    {
+     "farbe": "gold",
+     "von": "e5",
+     "nach": "d6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kb6 3. Ke5!"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold arrows: on f4 the king stands in the square, on d6 it defends the pawn.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.9",
+    "10.10"
+   ],
+   "beispiel": {
+    "id": "k10-a9",
+    "pfad": [
+     "Kg7",
+     "h4",
+     "Kf6",
+     "Kb6",
+     "Ke5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 180
+   },
+   "pruefsumme": "ea14e0da8538fd05",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why is the king move to e5 so strong?",
+      "antworten": [
+       "From e5 it reaches f4 in the square of the h-pawn or d6 next to the c-pawn.",
+       "It puts the black king in zugzwang and wins at once.",
+       "It already defends the pawn on c6."
+      ],
+      "richtig": 0,
+      "erklaerung": "If Black captures on c6, the king catches the h-pawn. If the h-pawn runs, the king supports the c-pawn."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.12",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.3",
+    "label": "sec:k10-reti",
+    "titel": "The Réti study: one king route with two goals"
+   },
+   "unterabschnitt": null,
+   "fen": "8/2P5/1k1K4/8/8/8/7p/8 b - - 0 5",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "c7",
+     "nach": "c8"
+    },
+    {
+     "farbe": "rot",
+     "von": "h2",
+     "nach": "h1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3... h3 4. Kd6 h2 5. c7"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold and red arrow: both pawns promote.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.13"
+   ],
+   "beispiel": {
+    "id": "k10-a9",
+    "pfad": [
+     "Kg7",
+     "h4",
+     "Kf6",
+     "Kb6",
+     "Ke5",
+     "h3",
+     "Kd6",
+     "h2",
+     "c7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 188
+   },
+   "pruefsumme": "91c13ac7ae2003d4"
+  },
+  {
+   "id": "10.13",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.3",
+    "label": "sec:k10-reti",
+    "titel": "The Réti study: one king route with two goals"
+   },
+   "unterabschnitt": null,
+   "fen": "8/2P1K3/k7/8/8/8/7p/8 b - - 0 4",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "c7",
+     "nach": "c8"
+    },
+    {
+     "farbe": "rot",
+     "von": "h2",
+     "nach": "h1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... h3 3. Ke7 h2 4. c7"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold and red arrow: both pawns promote.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.12"
+   ],
+   "beispiel": {
+    "id": "k10-a9",
+    "pfad": [
+     "Kg7",
+     "h4",
+     "Kf6",
+     "h3",
+     "Ke7",
+     "h2",
+     "c7"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 189
+   },
+   "pruefsumme": "8171cd27eb21a1fc"
+  },
+  {
+   "id": "10.14",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.4",
+    "label": "sec:k10-heuaecker",
+    "titel": "The Heuäcker study: interference"
+   },
+   "unterabschnitt": null,
+   "fen": "1B6/8/7P/4p3/3b3k/8/8/2K5 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d4",
+     "nach": "h8"
+    },
+    {
+     "farbe": "gold",
+     "von": "h6",
+     "nach": "h8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e5"
+    },
+    {
+     "farbe": "gold",
+     "feld": "h8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Heuäcker study, White to move wins. Gray arrow: the long diagonal of the bishop on d4. Red: its own pawn on e5 still blocks it. Gold: the h-pawn and its promotion square h8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.15",
+    "10.16"
+   ],
+   "beispiel": {
+    "id": "k10-a14",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 219
+   },
+   "pruefsumme": "6d13ac0ceb4c88a5",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Ba7",
+      "frage": "Why does White play 1. Ba7?",
+      "antworten": [
+       "From a7 the bishop covers the square h8.",
+       "It attacks the bishop on d4; if that bishop captures on a7, it leaves the long diagonal.",
+       "It keeps its own king safe from bishop checks."
+      ],
+      "richtig": 1,
+      "erklaerung": "After Bxa7 and h7, no black unit can reach h8 anymore. An immediate h7, on the other hand, Black answers with e4."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.15",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.4",
+    "label": "sec:k10-heuaecker",
+    "titel": "The Heuäcker study: interference"
+   },
+   "unterabschnitt": null,
+   "fen": "8/B7/7P/4p3/7k/2b5/8/1K6 w - - 4 3",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b1",
+     "nach": "c2"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ba7 Ba1 2. Kb1 Bc3"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gold arrow: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kc2"
+    },
+    {
+     "art": "text",
+     "text": " attacks the bishop again.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.14",
+    "10.16"
+   ],
+   "beispiel": {
+    "id": "k10-a14",
+    "pfad": [
+     "Ba7",
+     "Ba1",
+     "Kb1",
+     "Bc3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 225
+   },
+   "pruefsumme": "b227b11c74ccb211"
+  },
+  {
+   "id": "10.16",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.4",
+    "label": "sec:k10-heuaecker",
+    "titel": "The Heuäcker study: interference"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/7P/4p3/3B3k/8/2K5/b7 b - - 7 4",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "a1",
+     "nach": "d4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Kc2 Ba1 4. Bd4!!"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gold: the bishop on d4 as bait. Gray arrow: the black bishop's diagonal, which it blocks.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.14",
+    "10.15"
+   ],
+   "beispiel": {
+    "id": "k10-a14",
+    "pfad": [
+     "Ba7",
+     "Ba1",
+     "Kb1",
+     "Bc3",
+     "Kc2",
+     "Ba1",
+     "Bd4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 226
+   },
+   "pruefsumme": "13d092c8ed320526",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why does White put the bishop en prise on d4?",
+      "antworten": [
+       "It blocks the diagonal: after the capture on d4, the black bishop stays behind an obstacle.",
+       "From d4 it covers the square h8 for its own pawn.",
+       "After the trade, White is a pawn up."
+      ],
+      "richtig": 0,
+      "erklaerung": "Whether bishop or pawn captures on d4: the white king holds the block in place. Then the h-pawn runs through."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.17",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.4",
+    "label": "sec:k10-heuaecker",
+    "titel": "The Heuäcker study: interference"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/7P/4p3/4K2k/8/8/b7 b - - 3 6",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "a1",
+     "nach": "e5"
+    },
+    {
+     "farbe": "gold",
+     "von": "h6",
+     "nach": "h8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "e4"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Main line after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... Bxd4 5. Kd3 Ba1 6. Ke4"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gray arrow: the bishop is blocked. Gold: the king blockades e5, the h-pawn runs through.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.18"
+   ],
+   "beispiel": {
+    "id": "k10-a14",
+    "pfad": [
+     "Ba7",
+     "Ba1",
+     "Kb1",
+     "Bc3",
+     "Kc2",
+     "Ba1",
+     "Bd4",
+     "Bxd4",
+     "Kd3",
+     "Ba1",
+     "Ke4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 277
+   },
+   "pruefsumme": "e8b4b71bcf89d498"
+  },
+  {
+   "id": "10.18",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.4",
+    "label": "sec:k10-heuaecker",
+    "titel": "The Heuäcker study: interference"
+   },
+   "unterabschnitt": null,
+   "fen": "8/8/7P/8/3p3k/3K4/8/b7 b - - 1 5",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "a1",
+     "nach": "d4"
+    },
+    {
+     "farbe": "gold",
+     "von": "h6",
+     "nach": "h8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Side line after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "4... exd4 5. Kd3"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gray arrow: the bishop is blocked. Gold: the king blockades d4, the h-pawn runs through.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.17"
+   ],
+   "beispiel": {
+    "id": "k10-a14",
+    "pfad": [
+     "Ba7",
+     "Ba1",
+     "Kb1",
+     "Bc3",
+     "Kc2",
+     "Ba1",
+     "Bd4",
+     "exd4",
+     "Kd3"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 278
+   },
+   "pruefsumme": "6f9d3fa65ed5557b"
+  },
+  {
+   "id": "10.19",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.5",
+    "label": "sec:k10-kuriositaeten",
+    "titel": "Two curiosities"
+   },
+   "unterabschnitt": "Two knights need an enemy pawn",
+   "fen": "7k/5K2/8/4N3/7p/7N/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h3",
+     "nach": "g5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Gold arrow: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ng5!"
+    },
+    {
+     "art": "text",
+     "text": " The pawn has to move ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h3"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Ng6#"
+    },
+    {
+     "art": "text",
+     "text": " mates.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.20",
+    "10.21"
+   ],
+   "beispiel": {
+    "id": "k10-a19",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 307
+   },
+   "pruefsumme": "d06b453de5be1b61",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Ng5",
+      "frage": "Why is 1. Ng5 so strong?",
+      "antworten": [
+       "The knight threatens to capture the pawn on h4.",
+       "It mates at once.",
+       "It takes h7 from the king; Black has to play h3, and Ng6 mates."
+      ],
+      "richtig": 2,
+      "erklaerung": "A quiet move puts Black in zugzwang. The pawn that saves Black from stalemate becomes Black's undoing."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.20",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.5",
+    "label": "sec:k10-kuriositaeten",
+    "titel": "Two curiosities"
+   },
+   "unterabschnitt": "Two knights need an enemy pawn",
+   "fen": "7k/5K2/8/4N3/8/7N/8/8 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h3",
+     "nach": "g5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The same position without the pawn on h4, White to move. Red arrow: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ng5??"
+    },
+    {
+     "art": "text",
+     "text": " stalemates.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.19",
+    "10.21"
+   ],
+   "beispiel": {
+    "id": "k10-a20",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 308
+   },
+   "pruefsumme": "66dafaff620497e3",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Ng5",
+      "frage": "Why is 1. Ng5 a mistake here?",
+      "antworten": [
+       "The knight on g5 can be captured.",
+       "Afterwards Black has no legal move and is not in check: stalemate.",
+       "Black can escape to g8."
+      ],
+      "richtig": 1,
+      "erklaerung": "The same idea as in the position with the pawn, but without a stalemate reserve the zugzwang turns into stalemate."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.21",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.5",
+    "label": "sec:k10-kuriositaeten",
+    "titel": "Two curiosities"
+   },
+   "unterabschnitt": "Two knights need an enemy pawn",
+   "fen": "6k1/8/5K2/6N1/7p/7N/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "a4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "c5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "d4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "e4"
+    },
+    {
+     "farbe": "grau",
+     "feld": "f5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h4"
+    },
+    {
+     "farbe": "gold",
+     "feld": "h3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins. Gold: the knight on h3 blockades the pawn on h4. Gray: the Troitzky line for black pawns.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "10.19",
+    "10.20"
+   ],
+   "beispiel": {
+    "id": "k10-a21-k",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d4",
+     "exd4",
+     "O-O",
+     "Nxe4",
+     "cxd4",
+     "d5",
+     "dxc5",
+     "dxc4",
+     "Qc2",
+     "Nxc5",
+     "Qxc4",
+     "Qd6",
+     "Bf4",
+     "Qe7",
+     "Bxc7",
+     "Qxc7",
+     "Qxc5",
+     "Qb6",
+     "Qxb6",
+     "axb6",
+     "Nc3",
+     "O-O",
+     "Ng5",
+     "h5",
+     "Nd5",
+     "Bf5",
+     "Nxb6",
+     "Ra6",
+     "Nd5",
+     "Bc2",
+     "Nf4",
+     "h4",
+     "f3",
+     "Ra5",
+     "Nfh3",
+     "Rb5",
+     "Rf2",
+     "Rxb2",
+     "Rc1",
+     "Nd4",
+     "Rd1",
+     "Bxd1",
+     "Rxb2",
+     "Bc2",
+     "Kf2",
+     "Ra8",
+     "Rxb7",
+     "Bf5",
+     "Rxf7",
+     "g6",
+     "Ke3",
+     "Ne6",
+     "Rxf5",
+     "Ra3+",
+     "Ke4",
+     "gxf5+",
+     "Kxf5",
+     "Rxa2",
+     "Kxe6",
+     "Rxg2",
+     "f4",
+     "Rxh2",
+     "f5",
+     "Ra2",
+     "f6",
+     "Ra6+",
+     "Kf5",
+     "Rxf6+",
+     "Kxf6",
+     "Kf8",
+     "Ke6",
+     "Kg8",
+     "Kf5",
+     "Kf8",
+     "Kf6",
+     "Kg8"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 309
+   },
+   "pruefsumme": "7a5f009f98c039b4"
+  },
+  {
+   "id": "10.22",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.5",
+    "label": "sec:k10-kuriositaeten",
+    "titel": "Two curiosities"
+   },
+   "unterabschnitt": "The shortest stalemate",
+   "fen": "5bnr/4p1pq/4Qpkr/7p/7P/4P3/PPPP1PP1/RNB1KBNR b KQ - 2 10",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "e6",
+     "nach": "g6"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "f5"
+    },
+    {
+     "farbe": "grau",
+     "feld": "f7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g5"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "10. Qe6"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move: stalemate. Gray: the queen pins the pawn on f6 and takes f5 and f7 from the king, the pawn on h4 takes g5 from it.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k10-a22",
+    "pfad": [
+     "e3",
+     "a5",
+     "Qh5",
+     "Ra6",
+     "Qxa5",
+     "h5",
+     "Qxc7",
+     "Rah6",
+     "h4",
+     "f6",
+     "Qxd7+",
+     "Kf7",
+     "Qxb7",
+     "Qd3",
+     "Qxb8",
+     "Qh7",
+     "Qxc8",
+     "Kg6",
+     "Qe6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 353
+   },
+   "pruefsumme": "f13167c276b5b2ec",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why does Black have no move left here?",
+      "antworten": [
+       "The king is in check and cannot get away.",
+       "The queen on e6 pins f6 and covers f5 and f7, h4 covers g5; all other black units are blocked.",
+       "Black may not move because White gave check last."
+      ],
+      "richtig": 1,
+      "erklaerung": "No check, no legal move: that is stalemate. A few white units are enough, because the black ones lock each other in."
+     }
+    ]
+   }
+  },
+  {
+   "id": "10.23",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.6",
+    "label": "",
+    "titel": "Review: studies and curiosities"
+   },
+   "unterabschnitt": null,
+   "fen": "7n/5P1k/4BKpp/8/8/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in one.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k10-a23",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 401
+   },
+   "pruefsumme": "61cf26ce3940e445"
+  },
+  {
+   "id": "10.24",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.6",
+    "label": "",
+    "titel": "Review: studies and curiosities"
+   },
+   "unterabschnitt": null,
+   "fen": "8/1P6/8/8/8/8/5K2/7k w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in two.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k10-a24",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 408
+   },
+   "pruefsumme": "a6482f6eabe296f7"
+  },
+  {
+   "id": "10.25",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.6",
+    "label": "",
+    "titel": "Review: studies and curiosities"
+   },
+   "unterabschnitt": null,
+   "fen": "1k6/8/K7/8/8/8/8/5R2 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in two.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k10-a25",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 415
+   },
+   "pruefsumme": "18c51f32455c91b3"
+  },
+  {
+   "id": "10.26",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.6",
+    "label": "",
+    "titel": "Review: studies and curiosities"
+   },
+   "unterabschnitt": null,
+   "fen": "7K/1k6/8/3P3p/8/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move draws.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k10-a26",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 422
+   },
+   "pruefsumme": "a2ab19108e0a8d0e"
+  },
+  {
+   "id": "10.27",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.6",
+    "label": "",
+    "titel": "Review: studies and curiosities"
+   },
+   "unterabschnitt": null,
+   "fen": "7r/P7/4k3/8/8/6B1/8/6K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k10-a27",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 429
+   },
+   "pruefsumme": "14f9d8edb8309e8c"
+  },
+  {
+   "id": "10.28",
+   "auflage": 1,
+   "kapitel": 10,
+   "abschnitt": {
+    "nummer": "10.6",
+    "label": "",
+    "titel": "Review: studies and curiosities"
+   },
+   "unterabschnitt": null,
+   "fen": "k7/2p5/8/K7/2Q5/8/8/8 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in two.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k10-a28",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 436
+   },
+   "pruefsumme": "97a66f2666adb51e"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:unterverwandlung",
+   "nummer": 73,
+   "kapitel": 10,
+   "titel": null,
+   "abbildungen": [
+    "10.23"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. f8=N#"
+    },
+    {
+     "art": "text",
+     "text": ". The knight gives check to the king on h7. The square g8 is now covered by the bishop on e6, since the pawn on f7 is no longer in the way, and g7 by the king on f6. On g6, h6 and h8 stand Black's own pieces, and nobody can capture the knight on f8. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. f8=Q?"
+    },
+    {
+     "art": "text",
+     "text": ", on the other hand, there is no check, and Black still has moves. Remember: with every promotion, check all four pieces.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 398
+   },
+   "erklaerung": {
+    "loesung": "1. f8=N#",
+    "akzeptiert": [],
+    "motiv": "Underpromotion with mate",
+    "text": "1. f8=N# gives check, and because the pawn on f7 is gone, the bishop on e6 now covers the square g8; g7 is covered by the king. After 1. f8=Q? there is no check, and Black still has moves: with every promotion, check all four pieces."
+   }
+  },
+  {
+   "id": "ueb:pattfalle-umwandlung",
+   "nummer": 74,
+   "kapitel": 10,
+   "titel": null,
+   "abbildungen": [
+    "10.24"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. b8=R!"
+    },
+    {
+     "art": "text",
+     "text": " After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. b8=Q?"
+    },
+    {
+     "art": "text",
+     "text": " Black is stalemated at once: the queen covers the square h2 along the diagonal b8–h2, the king on f2 covers g1 and g2. The same goes for ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. b8=B?"
+    },
+    {
+     "art": "text",
+     "text": ". After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. b8=R!"
+    },
+    {
+     "art": "text",
+     "text": " the black king has only ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kh2"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Rh8#"
+    },
+    {
+     "art": "text",
+     "text": " mates. Remember: if the new piece takes the king's last square without giving check, and Black cannot move otherwise either, it is stalemate.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 405
+   },
+   "erklaerung": {
+    "loesung": "1. b8=R!",
+    "akzeptiert": [],
+    "motiv": "Underpromotion against stalemate",
+    "text": "A new queen or a bishop on b8 covers h2 along the diagonal, and Black is stalemated at once. After 1. b8=R! the king has only 1... Kh2, and 2. Rh8# mates."
+   }
+  },
+  {
+   "id": "ueb:stiller-turmzug",
+   "nummer": 75,
+   "kapitel": 10,
+   "titel": null,
+   "abbildungen": [
+    "10.25"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Rc1!"
+    },
+    {
+     "art": "text",
+     "text": " A check on the first move does not help. The quiet rook move, by contrast, takes the squares c7 and c8 from the king, while the king on a6 covers a7 and b7. Black is in zugzwang and has to play ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Ka8"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Rc8#"
+    },
+    {
+     "art": "text",
+     "text": " follows. Remember: with a quiet move, take all squares from the king except the mating square, because in zugzwang it then has to step into it.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 412
+   },
+   "erklaerung": {
+    "loesung": "1. Rc1!",
+    "akzeptiert": [],
+    "motiv": "Quiet move and zugzwang",
+    "text": "1. Rc1! takes c7 and c8 from the king, and the king on a6 covers a7 and b7. Black has to play 1... Ka8, and 2. Rc8# mates."
+   }
+  },
+  {
+   "id": "ueb:reti-weg",
+   "nummer": 76,
+   "kapitel": 10,
+   "titel": null,
+   "abbildungen": [
+    "10.26"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Kg7!"
+    },
+    {
+     "art": "text",
+     "text": " As in Réti's study, the king walks diagonally, toward the h-pawn and at the same time toward its own pawn. All other moves lose, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d6?"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Kh7?"
+    },
+    {
+     "art": "text",
+     "text": ". After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h4"
+    },
+    {
+     "art": "text",
+     "text": ", however, only ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Kf7!"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Kf8"
+    },
+    {
+     "art": "text",
+     "text": " hold, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... h3 3. d6 h2 4. d7 h1=Q 5. d8=Q"
+    },
+    {
+     "art": "text",
+     "text": " with a draw. The Réti-like ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Kf6?"
+    },
+    {
+     "art": "text",
+     "text": ", on the other hand, loses: after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... h3 3. d6 h2 4. d7 h1=Q 5. d8=Q"
+    },
+    {
+     "art": "text",
+     "text": " the king stands on the diagonal h4–d8, and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... Qh4+!"
+    },
+    {
+     "art": "text",
+     "text": " wins the new queen with a skewer (Chapter 7). If Black instead goes to the pawn with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kc7"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Kf6!"
+    },
+    {
+     "art": "text",
+     "text": " brings the king to e7 in time, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... h4 3. Ke7 h3 4. d6+ Kb7 5. d7 h2 6. d8=Q h1=Q"
+    },
+    {
+     "art": "text",
+     "text": ". After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kc8"
+    },
+    {
+     "art": "text",
+     "text": ", too, only ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Kf6!"
+    },
+    {
+     "art": "text",
+     "text": " holds; after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kb6"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Kf6"
+    },
+    {
+     "art": "text",
+     "text": " is enough. Remember: take over the idea of a study, not its moves, and at the end of every line check whether the new queen is lost to a check.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 419
+   },
+   "erklaerung": {
+    "loesung": "1. Kg7!",
+    "akzeptiert": [],
+    "motiv": "Réti maneuver",
+    "text": "1. Kg7! walks diagonally and approaches the h-pawn and its own pawn at the same time. After 1... h4 only 2. Kf7! or 2. Kf8 holds; the Réti-like 2. Kf6? loses, because the new white queen is later skewered with Qh4+."
+   }
+  },
+  {
+   "id": "ueb:wegversperrung",
+   "nummer": 77,
+   "kapitel": 10,
+   "titel": null,
+   "abbildungen": [
+    "10.27"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Bb8!"
+    },
+    {
+     "art": "text",
+     "text": " What does Black want? The rook on h8 guards the promotion square a8 along the 8th rank and wants to place itself in front of the pawn with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Ra8"
+    },
+    {
+     "art": "text",
+     "text": ". The quiet bishop move blocks the rank, and the pawn on a7 defends the bishop. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Rxb8 2. axb8=Q"
+    },
+    {
+     "art": "text",
+     "text": " the queen wins; otherwise the pawn promotes on a8, one move later after a rook check. All other moves throw away the win: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. a8=Q? Rxa8"
+    },
+    {
+     "art": "text",
+     "text": " is a draw, and after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bf4? Ra8"
+    },
+    {
+     "art": "text",
+     "text": " the bishop comes too late. Remember: if an enemy piece guards your promotion square from a distance, look for the square on which you block its path.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 426
+   },
+   "erklaerung": {
+    "loesung": "1. Bb8!",
+    "akzeptiert": [],
+    "motiv": "Interference",
+    "text": "The rook on h8 guards the promotion square along the eighth rank. 1. Bb8! blocks its path, defended by the pawn on a7; after 1... Rxb8 2. axb8=Q White wins, otherwise the pawn promotes."
+   }
+  },
+  {
+   "id": "ueb:pattreserve",
+   "nummer": 78,
+   "kapitel": 10,
+   "titel": null,
+   "abbildungen": [
+    "10.28"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Solve the positions in your head, that is, without moving a piece.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Ka6!"
+    },
+    {
+     "art": "text",
+     "text": " After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qxc7?"
+    },
+    {
+     "art": "text",
+     "text": " Black would be stalemated, since the queen covers a7, b7 and b8. The pawn on c7 is Black's stalemate reserve (Section 10.5). After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ka6!"
+    },
+    {
+     "art": "text",
+     "text": " Black has to move, ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... c6"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... c5"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kb8"
+    },
+    {
+     "art": "text",
+     "text": ", and in every case ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Qg8#"
+    },
+    {
+     "art": "text",
+     "text": " follows. Remember: don't capture your opponent's last mobile pawn as long as it spares you the stalemate.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap10_studien.tex",
+    "zeile": 433
+   },
+   "erklaerung": {
+    "loesung": "1. Ka6!",
+    "akzeptiert": [],
+    "motiv": "Leaving the stalemate reserve alone",
+    "text": "After 1. Qxc7? Black would be stalemated, because the pawn on c7 is Black's only spare move. 1. Ka6! leaves it alone; every black move is answered with 2. Qg8#."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k10-a1",
+   "kapitel": 10,
+   "abschnitt": "10.2",
+   "titel": "The Saavedra study: underpromotion against stalemate",
+   "startFen": "8/8/1KP5/3r4/8/8/8/k7 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "c7",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rd6+",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kb5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rd5+",
+           "zeichen": "",
+           "abbildungen": [
+            "10.2"
+           ],
+           "weiter": [
+            {
+             "zug": "Kb4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rd4+",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Kb3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Rd3+",
+                   "zeichen": "",
+                   "abbildungen": [
+                    "10.3"
+                   ],
+                   "weiter": [
+                    {
+                     "zug": "Kc2",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Rd4",
+                       "zeichen": "!!",
+                       "abbildungen": [
+                        "10.6"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "c8=R",
+                         "zeichen": "!!",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Ra4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Kb3",
+                             "zeichen": "!",
+                             "abbildungen": [
+                              "10.8"
+                             ],
+                             "weiter": []
+                            }
+                           ]
+                          },
+                          {
+                           "zug": "Rc4+",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Rxc4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": []
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "zug": "c8=Q",
+                         "zeichen": "??",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Rc4+",
+                           "zeichen": "!",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Qxc4",
+                             "zeichen": "",
+                             "abbildungen": [
+                              "10.7"
+                             ],
+                             "weiter": []
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "zug": "Kb3",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Rd3+",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Kc2",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Rd4",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": []
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "zug": "Kc5",
+         "zeichen": "?",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rd1",
+           "zeichen": "",
+           "abbildungen": [
+            "10.4"
+           ],
+           "weiter": [
+            {
+             "zug": "c8=Q",
+             "zeichen": "?",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rc1+",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "zug": "Kb7",
+         "zeichen": "?",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Rd7",
+           "zeichen": "",
+           "abbildungen": [
+            "10.5"
+           ],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.1",
+     "pfad": []
+    },
+    {
+     "nummer": "10.2",
+     "pfad": [
+      "c7",
+      "Rd6+",
+      "Kb5",
+      "Rd5+"
+     ]
+    },
+    {
+     "nummer": "10.3",
+     "pfad": [
+      "c7",
+      "Rd6+",
+      "Kb5",
+      "Rd5+",
+      "Kb4",
+      "Rd4+",
+      "Kb3",
+      "Rd3+"
+     ]
+    },
+    {
+     "nummer": "10.6",
+     "pfad": [
+      "c7",
+      "Rd6+",
+      "Kb5",
+      "Rd5+",
+      "Kb4",
+      "Rd4+",
+      "Kb3",
+      "Rd3+",
+      "Kc2",
+      "Rd4"
+     ]
+    },
+    {
+     "nummer": "10.8",
+     "pfad": [
+      "c7",
+      "Rd6+",
+      "Kb5",
+      "Rd5+",
+      "Kb4",
+      "Rd4+",
+      "Kb3",
+      "Rd3+",
+      "Kc2",
+      "Rd4",
+      "c8=R",
+      "Ra4",
+      "Kb3"
+     ]
+    },
+    {
+     "nummer": "10.7",
+     "pfad": [
+      "c7",
+      "Rd6+",
+      "Kb5",
+      "Rd5+",
+      "Kb4",
+      "Rd4+",
+      "Kb3",
+      "Rd3+",
+      "Kc2",
+      "Rd4",
+      "c8=Q",
+      "Rc4+",
+      "Qxc4"
+     ]
+    },
+    {
+     "nummer": "10.4",
+     "pfad": [
+      "c7",
+      "Rd6+",
+      "Kc5",
+      "Rd1"
+     ]
+    },
+    {
+     "nummer": "10.5",
+     "pfad": [
+      "c7",
+      "Rd6+",
+      "Kb7",
+      "Rd7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a14",
+   "kapitel": 10,
+   "abschnitt": "10.4",
+   "titel": "The Heuäcker study: interference",
+   "startFen": "1B6/8/7P/4p3/3b3k/8/8/2K5 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ba7",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Ba1",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kb1",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Bc3",
+           "zeichen": "",
+           "abbildungen": [
+            "10.15"
+           ],
+           "weiter": [
+            {
+             "zug": "Kc2",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Ba1",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Bd4",
+                 "zeichen": "!!",
+                 "abbildungen": [
+                  "10.16"
+                 ],
+                 "weiter": [
+                  {
+                   "zug": "Bxd4",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Kd3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Ba1",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Ke4",
+                         "zeichen": "",
+                         "abbildungen": [
+                          "10.17"
+                         ],
+                         "weiter": []
+                        }
+                       ]
+                      },
+                      {
+                       "zug": "e4+",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Kxd4",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": []
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  },
+                  {
+                   "zug": "exd4",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Kd3",
+                     "zeichen": "",
+                     "abbildungen": [
+                      "10.18"
+                     ],
+                     "weiter": []
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Bxa7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "h7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Bc3",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kc2",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "h7",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "h8=Q+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Bxh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.14",
+     "pfad": []
+    },
+    {
+     "nummer": "10.15",
+     "pfad": [
+      "Ba7",
+      "Ba1",
+      "Kb1",
+      "Bc3"
+     ]
+    },
+    {
+     "nummer": "10.16",
+     "pfad": [
+      "Ba7",
+      "Ba1",
+      "Kb1",
+      "Bc3",
+      "Kc2",
+      "Ba1",
+      "Bd4"
+     ]
+    },
+    {
+     "nummer": "10.17",
+     "pfad": [
+      "Ba7",
+      "Ba1",
+      "Kb1",
+      "Bc3",
+      "Kc2",
+      "Ba1",
+      "Bd4",
+      "Bxd4",
+      "Kd3",
+      "Ba1",
+      "Ke4"
+     ]
+    },
+    {
+     "nummer": "10.18",
+     "pfad": [
+      "Ba7",
+      "Ba1",
+      "Kb1",
+      "Bc3",
+      "Kc2",
+      "Ba1",
+      "Bd4",
+      "exd4",
+      "Kd3"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a19",
+   "kapitel": 10,
+   "abschnitt": "10.5",
+   "titel": "Two knights need an enemy pawn",
+   "startFen": "7k/5K2/8/4N3/7p/7N/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ng5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "h3",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ng6#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.19",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a20",
+   "kapitel": 10,
+   "abschnitt": "10.5",
+   "titel": "Two knights need an enemy pawn",
+   "startFen": "7k/5K2/8/4N3/8/7N/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ng5",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.20",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a22",
+   "kapitel": 10,
+   "abschnitt": "10.5",
+   "titel": "The shortest stalemate",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e3",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "a5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qh5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Ra6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qxa5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "h5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qxc7",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Rah6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "h4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "f6",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Qxd7+",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Kf7",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Qxb7",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Qd3",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Qxb8",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Qh7",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qxc8",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Kg6",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qe6",
+                                         "zeichen": "",
+                                         "abbildungen": [
+                                          "10.22"
+                                         ],
+                                         "weiter": []
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.22",
+     "pfad": [
+      "e3",
+      "a5",
+      "Qh5",
+      "Ra6",
+      "Qxa5",
+      "h5",
+      "Qxc7",
+      "Rah6",
+      "h4",
+      "f6",
+      "Qxd7+",
+      "Kf7",
+      "Qxb7",
+      "Qd3",
+      "Qxb8",
+      "Qh7",
+      "Qxc8",
+      "Kg6",
+      "Qe6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a23",
+   "kapitel": 10,
+   "abschnitt": "Übung 73",
+   "titel": "Review: studies and curiosities",
+   "startFen": "7n/5P1k/4BKpp/8/8/8/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "f8=N#",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "f8=Q",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.23",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a24",
+   "kapitel": 10,
+   "abschnitt": "Übung 74",
+   "titel": "Review: studies and curiosities",
+   "startFen": "8/1P6/8/8/8/8/5K2/7k w - - 0 1",
+   "zuege": [
+    {
+     "zug": "b8=R",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kh2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rh8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "b8=Q",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "b8=B",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.24",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a25",
+   "kapitel": 10,
+   "abschnitt": "Übung 75",
+   "titel": "Review: studies and curiosities",
+   "startFen": "1k6/8/K7/8/8/8/8/5R2 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rc1",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Ka8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rc8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.25",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a26",
+   "kapitel": 10,
+   "abschnitt": "Übung 76",
+   "titel": "Review: studies and curiosities",
+   "startFen": "7K/1k6/8/3P3p/8/8/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Kg7",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "h4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf7",
+         "zeichen": "!",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "h3",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "d6",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "h2",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "d7",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "h1=Q",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d8=Q",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": []
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "zug": "Kf8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "h3",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "d6",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "h2",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "d7",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "h1=Q",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d8=Q",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": []
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "zug": "Kf6",
+         "zeichen": "?",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "h3",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "d6",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "h2",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "d7",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "h1=Q",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d8=Q",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Qh4+",
+                       "zeichen": "!",
+                       "abbildungen": [],
+                       "weiter": []
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kc7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf6",
+         "zeichen": "!",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "h4",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Ke7",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "h3",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "d6+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Kb7",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d7",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "h2",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "d8=Q",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "h1=Q",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": []
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kc8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf6",
+         "zeichen": "!",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kb6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "d6",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    },
+    {
+     "zug": "Kh7",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.26",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a27",
+   "kapitel": 10,
+   "abschnitt": "Übung 77",
+   "titel": "Review: studies and curiosities",
+   "startFen": "7r/P7/4k3/8/8/6B1/8/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bb8",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxb8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "axb8=Q",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "a8=Q",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxa8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    },
+    {
+     "zug": "Bf4",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Ra8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.27",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a28",
+   "kapitel": 10,
+   "abschnitt": "Übung 78",
+   "titel": "Review: studies and curiosities",
+   "startFen": "k7/2p5/8/K7/2Q5/8/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ka6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "c6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qg8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "c5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qg8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kb8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qg8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Qxc7",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.28",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a9",
+   "kapitel": 10,
+   "abschnitt": "10.3",
+   "titel": "The Réti study: one king route with two goals",
+   "startFen": "7K/8/k1P5/7p/8/8/8/8 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Kg7",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "h4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf6",
+         "zeichen": "!",
+         "abbildungen": [
+          "10.10"
+         ],
+         "weiter": [
+          {
+           "zug": "Kb6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Ke5",
+             "zeichen": "!",
+             "abbildungen": [
+              "10.11"
+             ],
+             "weiter": [
+              {
+               "zug": "Kxc6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Kf4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              },
+              {
+               "zug": "h3",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Kd6",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "h2",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "c7",
+                     "zeichen": "",
+                     "abbildungen": [
+                      "10.12"
+                     ],
+                     "weiter": [
+                      {
+                       "zug": "Kb7",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Kd7",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "h1=Q",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "c8=Q+",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": []
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "h3",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Ke7",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "h2",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c7",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "10.13"
+                 ],
+                 "weiter": [
+                  {
+                   "zug": "Kb7",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Kd7",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": []
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Kb6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kf6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "h4",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Ke5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.9",
+     "pfad": []
+    },
+    {
+     "nummer": "10.10",
+     "pfad": [
+      "Kg7",
+      "h4",
+      "Kf6"
+     ]
+    },
+    {
+     "nummer": "10.11",
+     "pfad": [
+      "Kg7",
+      "h4",
+      "Kf6",
+      "Kb6",
+      "Ke5"
+     ]
+    },
+    {
+     "nummer": "10.12",
+     "pfad": [
+      "Kg7",
+      "h4",
+      "Kf6",
+      "Kb6",
+      "Ke5",
+      "h3",
+      "Kd6",
+      "h2",
+      "c7"
+     ]
+    },
+    {
+     "nummer": "10.13",
+     "pfad": [
+      "Kg7",
+      "h4",
+      "Kf6",
+      "h3",
+      "Ke7",
+      "h2",
+      "c7"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k10-a21-k",
+   "kapitel": 10,
+   "abschnitt": "10.5",
+   "titel": "Constructed game for Fig. 10.21",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "exd4",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Nxe4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "cxd4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "d5",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "dxc5",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "dxc4",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qc2",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Nxc5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxc4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Qd6",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "Bf4",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Qe7",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Bxc7",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "Qxc7",
+                                                   "zeichen": "",
+                                                   "abbildungen": [],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "Qxc5",
+                                                     "zeichen": "",
+                                                     "abbildungen": [],
+                                                     "weiter": [
+                                                      {
+                                                       "zug": "Qb6",
+                                                       "zeichen": "",
+                                                       "abbildungen": [],
+                                                       "weiter": [
+                                                        {
+                                                         "zug": "Qxb6",
+                                                         "zeichen": "",
+                                                         "abbildungen": [],
+                                                         "weiter": [
+                                                          {
+                                                           "zug": "axb6",
+                                                           "zeichen": "",
+                                                           "abbildungen": [],
+                                                           "weiter": [
+                                                            {
+                                                             "zug": "Nc3",
+                                                             "zeichen": "",
+                                                             "abbildungen": [],
+                                                             "weiter": [
+                                                              {
+                                                               "zug": "O-O",
+                                                               "zeichen": "",
+                                                               "abbildungen": [],
+                                                               "weiter": [
+                                                                {
+                                                                 "zug": "Ng5",
+                                                                 "zeichen": "",
+                                                                 "abbildungen": [],
+                                                                 "weiter": [
+                                                                  {
+                                                                   "zug": "h5",
+                                                                   "zeichen": "",
+                                                                   "abbildungen": [],
+                                                                   "weiter": [
+                                                                    {
+                                                                     "zug": "Nd5",
+                                                                     "zeichen": "",
+                                                                     "abbildungen": [],
+                                                                     "weiter": [
+                                                                      {
+                                                                       "zug": "Bf5",
+                                                                       "zeichen": "",
+                                                                       "abbildungen": [],
+                                                                       "weiter": [
+                                                                        {
+                                                                         "zug": "Nxb6",
+                                                                         "zeichen": "",
+                                                                         "abbildungen": [],
+                                                                         "weiter": [
+                                                                          {
+                                                                           "zug": "Ra6",
+                                                                           "zeichen": "",
+                                                                           "abbildungen": [],
+                                                                           "weiter": [
+                                                                            {
+                                                                             "zug": "Nd5",
+                                                                             "zeichen": "",
+                                                                             "abbildungen": [],
+                                                                             "weiter": [
+                                                                              {
+                                                                               "zug": "Bc2",
+                                                                               "zeichen": "",
+                                                                               "abbildungen": [],
+                                                                               "weiter": [
+                                                                                {
+                                                                                 "zug": "Nf4",
+                                                                                 "zeichen": "",
+                                                                                 "abbildungen": [],
+                                                                                 "weiter": [
+                                                                                  {
+                                                                                   "zug": "h4",
+                                                                                   "zeichen": "",
+                                                                                   "abbildungen": [],
+                                                                                   "weiter": [
+                                                                                    {
+                                                                                     "zug": "f3",
+                                                                                     "zeichen": "",
+                                                                                     "abbildungen": [],
+                                                                                     "weiter": [
+                                                                                      {
+                                                                                       "zug": "Ra5",
+                                                                                       "zeichen": "",
+                                                                                       "abbildungen": [],
+                                                                                       "weiter": [
+                                                                                        {
+                                                                                         "zug": "Nfh3",
+                                                                                         "zeichen": "",
+                                                                                         "abbildungen": [],
+                                                                                         "weiter": [
+                                                                                          {
+                                                                                           "zug": "Rb5",
+                                                                                           "zeichen": "",
+                                                                                           "abbildungen": [],
+                                                                                           "weiter": [
+                                                                                            {
+                                                                                             "zug": "Rf2",
+                                                                                             "zeichen": "",
+                                                                                             "abbildungen": [],
+                                                                                             "weiter": [
+                                                                                              {
+                                                                                               "zug": "Rxb2",
+                                                                                               "zeichen": "",
+                                                                                               "abbildungen": [],
+                                                                                               "weiter": [
+                                                                                                {
+                                                                                                 "zug": "Rc1",
+                                                                                                 "zeichen": "",
+                                                                                                 "abbildungen": [],
+                                                                                                 "weiter": [
+                                                                                                  {
+                                                                                                   "zug": "Nd4",
+                                                                                                   "zeichen": "",
+                                                                                                   "abbildungen": [],
+                                                                                                   "weiter": [
+                                                                                                    {
+                                                                                                     "zug": "Rd1",
+                                                                                                     "zeichen": "",
+                                                                                                     "abbildungen": [],
+                                                                                                     "weiter": [
+                                                                                                      {
+                                                                                                       "zug": "Bxd1",
+                                                                                                       "zeichen": "",
+                                                                                                       "abbildungen": [],
+                                                                                                       "weiter": [
+                                                                                                        {
+                                                                                                         "zug": "Rxb2",
+                                                                                                         "zeichen": "",
+                                                                                                         "abbildungen": [],
+                                                                                                         "weiter": [
+                                                                                                          {
+                                                                                                           "zug": "Bc2",
+                                                                                                           "zeichen": "",
+                                                                                                           "abbildungen": [],
+                                                                                                           "weiter": [
+                                                                                                            {
+                                                                                                             "zug": "Kf2",
+                                                                                                             "zeichen": "",
+                                                                                                             "abbildungen": [],
+                                                                                                             "weiter": [
+                                                                                                              {
+                                                                                                               "zug": "Ra8",
+                                                                                                               "zeichen": "",
+                                                                                                               "abbildungen": [],
+                                                                                                               "weiter": [
+                                                                                                                {
+                                                                                                                 "zug": "Rxb7",
+                                                                                                                 "zeichen": "",
+                                                                                                                 "abbildungen": [],
+                                                                                                                 "weiter": [
+                                                                                                                  {
+                                                                                                                   "zug": "Bf5",
+                                                                                                                   "zeichen": "",
+                                                                                                                   "abbildungen": [],
+                                                                                                                   "weiter": [
+                                                                                                                    {
+                                                                                                                     "zug": "Rxf7",
+                                                                                                                     "zeichen": "",
+                                                                                                                     "abbildungen": [],
+                                                                                                                     "weiter": [
+                                                                                                                      {
+                                                                                                                       "zug": "g6",
+                                                                                                                       "zeichen": "",
+                                                                                                                       "abbildungen": [],
+                                                                                                                       "weiter": [
+                                                                                                                        {
+                                                                                                                         "zug": "Ke3",
+                                                                                                                         "zeichen": "",
+                                                                                                                         "abbildungen": [],
+                                                                                                                         "weiter": [
+                                                                                                                          {
+                                                                                                                           "zug": "Ne6",
+                                                                                                                           "zeichen": "",
+                                                                                                                           "abbildungen": [],
+                                                                                                                           "weiter": [
+                                                                                                                            {
+                                                                                                                             "zug": "Rxf5",
+                                                                                                                             "zeichen": "",
+                                                                                                                             "abbildungen": [],
+                                                                                                                             "weiter": [
+                                                                                                                              {
+                                                                                                                               "zug": "Ra3+",
+                                                                                                                               "zeichen": "",
+                                                                                                                               "abbildungen": [],
+                                                                                                                               "weiter": [
+                                                                                                                                {
+                                                                                                                                 "zug": "Ke4",
+                                                                                                                                 "zeichen": "",
+                                                                                                                                 "abbildungen": [],
+                                                                                                                                 "weiter": [
+                                                                                                                                  {
+                                                                                                                                   "zug": "gxf5+",
+                                                                                                                                   "zeichen": "",
+                                                                                                                                   "abbildungen": [],
+                                                                                                                                   "weiter": [
+                                                                                                                                    {
+                                                                                                                                     "zug": "Kxf5",
+                                                                                                                                     "zeichen": "",
+                                                                                                                                     "abbildungen": [],
+                                                                                                                                     "weiter": [
+                                                                                                                                      {
+                                                                                                                                       "zug": "Rxa2",
+                                                                                                                                       "zeichen": "",
+                                                                                                                                       "abbildungen": [],
+                                                                                                                                       "weiter": [
+                                                                                                                                        {
+                                                                                                                                         "zug": "Kxe6",
+                                                                                                                                         "zeichen": "",
+                                                                                                                                         "abbildungen": [],
+                                                                                                                                         "weiter": [
+                                                                                                                                          {
+                                                                                                                                           "zug": "Rxg2",
+                                                                                                                                           "zeichen": "",
+                                                                                                                                           "abbildungen": [],
+                                                                                                                                           "weiter": [
+                                                                                                                                            {
+                                                                                                                                             "zug": "f4",
+                                                                                                                                             "zeichen": "",
+                                                                                                                                             "abbildungen": [],
+                                                                                                                                             "weiter": [
+                                                                                                                                              {
+                                                                                                                                               "zug": "Rxh2",
+                                                                                                                                               "zeichen": "",
+                                                                                                                                               "abbildungen": [],
+                                                                                                                                               "weiter": [
+                                                                                                                                                {
+                                                                                                                                                 "zug": "f5",
+                                                                                                                                                 "zeichen": "",
+                                                                                                                                                 "abbildungen": [],
+                                                                                                                                                 "weiter": [
+                                                                                                                                                  {
+                                                                                                                                                   "zug": "Ra2",
+                                                                                                                                                   "zeichen": "",
+                                                                                                                                                   "abbildungen": [],
+                                                                                                                                                   "weiter": [
+                                                                                                                                                    {
+                                                                                                                                                     "zug": "f6",
+                                                                                                                                                     "zeichen": "",
+                                                                                                                                                     "abbildungen": [],
+                                                                                                                                                     "weiter": [
+                                                                                                                                                      {
+                                                                                                                                                       "zug": "Ra6+",
+                                                                                                                                                       "zeichen": "",
+                                                                                                                                                       "abbildungen": [],
+                                                                                                                                                       "weiter": [
+                                                                                                                                                        {
+                                                                                                                                                         "zug": "Kf5",
+                                                                                                                                                         "zeichen": "",
+                                                                                                                                                         "abbildungen": [],
+                                                                                                                                                         "weiter": [
+                                                                                                                                                          {
+                                                                                                                                                           "zug": "Rxf6+",
+                                                                                                                                                           "zeichen": "",
+                                                                                                                                                           "abbildungen": [],
+                                                                                                                                                           "weiter": [
+                                                                                                                                                            {
+                                                                                                                                                             "zug": "Kxf6",
+                                                                                                                                                             "zeichen": "",
+                                                                                                                                                             "abbildungen": [],
+                                                                                                                                                             "weiter": [
+                                                                                                                                                              {
+                                                                                                                                                               "zug": "Kf8",
+                                                                                                                                                               "zeichen": "",
+                                                                                                                                                               "abbildungen": [],
+                                                                                                                                                               "weiter": [
+                                                                                                                                                                {
+                                                                                                                                                                 "zug": "Ke6",
+                                                                                                                                                                 "zeichen": "",
+                                                                                                                                                                 "abbildungen": [],
+                                                                                                                                                                 "weiter": [
+                                                                                                                                                                  {
+                                                                                                                                                                   "zug": "Kg8",
+                                                                                                                                                                   "zeichen": "",
+                                                                                                                                                                   "abbildungen": [],
+                                                                                                                                                                   "weiter": [
+                                                                                                                                                                    {
+                                                                                                                                                                     "zug": "Kf5",
+                                                                                                                                                                     "zeichen": "",
+                                                                                                                                                                     "abbildungen": [],
+                                                                                                                                                                     "weiter": [
+                                                                                                                                                                      {
+                                                                                                                                                                       "zug": "Kf8",
+                                                                                                                                                                       "zeichen": "",
+                                                                                                                                                                       "abbildungen": [],
+                                                                                                                                                                       "weiter": [
+                                                                                                                                                                        {
+                                                                                                                                                                         "zug": "Kf6",
+                                                                                                                                                                         "zeichen": "",
+                                                                                                                                                                         "abbildungen": [],
+                                                                                                                                                                         "weiter": [
+                                                                                                                                                                          {
+                                                                                                                                                                           "zug": "Kg8",
+                                                                                                                                                                           "zeichen": "",
+                                                                                                                                                                           "abbildungen": [
+                                                                                                                                                                            "10.21"
+                                                                                                                                                                           ],
+                                                                                                                                                                           "weiter": []
+                                                                                                                                                                          }
+                                                                                                                                                                         ]
+                                                                                                                                                                        }
+                                                                                                                                                                       ]
+                                                                                                                                                                      }
+                                                                                                                                                                     ]
+                                                                                                                                                                    }
+                                                                                                                                                                   ]
+                                                                                                                                                                  }
+                                                                                                                                                                 ]
+                                                                                                                                                                }
+                                                                                                                                                               ]
+                                                                                                                                                              }
+                                                                                                                                                             ]
+                                                                                                                                                            }
+                                                                                                                                                           ]
+                                                                                                                                                          }
+                                                                                                                                                         ]
+                                                                                                                                                        }
+                                                                                                                                                       ]
+                                                                                                                                                      }
+                                                                                                                                                     ]
+                                                                                                                                                    }
+                                                                                                                                                   ]
+                                                                                                                                                  }
+                                                                                                                                                 ]
+                                                                                                                                                }
+                                                                                                                                               ]
+                                                                                                                                              }
+                                                                                                                                             ]
+                                                                                                                                            }
+                                                                                                                                           ]
+                                                                                                                                          }
+                                                                                                                                         ]
+                                                                                                                                        }
+                                                                                                                                       ]
+                                                                                                                                      }
+                                                                                                                                     ]
+                                                                                                                                    }
+                                                                                                                                   ]
+                                                                                                                                  }
+                                                                                                                                 ]
+                                                                                                                                }
+                                                                                                                               ]
+                                                                                                                              }
+                                                                                                                             ]
+                                                                                                                            }
+                                                                                                                           ]
+                                                                                                                          }
+                                                                                                                         ]
+                                                                                                                        }
+                                                                                                                       ]
+                                                                                                                      }
+                                                                                                                     ]
+                                                                                                                    }
+                                                                                                                   ]
+                                                                                                                  }
+                                                                                                                 ]
+                                                                                                                }
+                                                                                                               ]
+                                                                                                              }
+                                                                                                             ]
+                                                                                                            }
+                                                                                                           ]
+                                                                                                          }
+                                                                                                         ]
+                                                                                                        }
+                                                                                                       ]
+                                                                                                      }
+                                                                                                     ]
+                                                                                                    }
+                                                                                                   ]
+                                                                                                  }
+                                                                                                 ]
+                                                                                                }
+                                                                                               ]
+                                                                                              }
+                                                                                             ]
+                                                                                            }
+                                                                                           ]
+                                                                                          }
+                                                                                         ]
+                                                                                        }
+                                                                                       ]
+                                                                                      }
+                                                                                     ]
+                                                                                    }
+                                                                                   ]
+                                                                                  }
+                                                                                 ]
+                                                                                }
+                                                                               ]
+                                                                              }
+                                                                             ]
+                                                                            }
+                                                                           ]
+                                                                          }
+                                                                         ]
+                                                                        }
+                                                                       ]
+                                                                      }
+                                                                     ]
+                                                                    }
+                                                                   ]
+                                                                  }
+                                                                 ]
+                                                                }
+                                                               ]
+                                                              }
+                                                             ]
+                                                            }
+                                                           ]
+                                                          }
+                                                         ]
+                                                        }
+                                                       ]
+                                                      }
+                                                     ]
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "10.21",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d4",
+      "exd4",
+      "O-O",
+      "Nxe4",
+      "cxd4",
+      "d5",
+      "dxc5",
+      "dxc4",
+      "Qc2",
+      "Nxc5",
+      "Qxc4",
+      "Qd6",
+      "Bf4",
+      "Qe7",
+      "Bxc7",
+      "Qxc7",
+      "Qxc5",
+      "Qb6",
+      "Qxb6",
+      "axb6",
+      "Nc3",
+      "O-O",
+      "Ng5",
+      "h5",
+      "Nd5",
+      "Bf5",
+      "Nxb6",
+      "Ra6",
+      "Nd5",
+      "Bc2",
+      "Nf4",
+      "h4",
+      "f3",
+      "Ra5",
+      "Nfh3",
+      "Rb5",
+      "Rf2",
+      "Rxb2",
+      "Rc1",
+      "Nd4",
+      "Rd1",
+      "Bxd1",
+      "Rxb2",
+      "Bc2",
+      "Kf2",
+      "Ra8",
+      "Rxb7",
+      "Bf5",
+      "Rxf7",
+      "g6",
+      "Ke3",
+      "Ne6",
+      "Rxf5",
+      "Ra3+",
+      "Ke4",
+      "gxf5+",
+      "Kxf5",
+      "Rxa2",
+      "Kxe6",
+      "Rxg2",
+      "f4",
+      "Rxh2",
+      "f5",
+      "Ra2",
+      "f6",
+      "Ra6+",
+      "Kf5",
+      "Rxf6+",
+      "Kxf6",
+      "Kf8",
+      "Ke6",
+      "Kg8",
+      "Kf5",
+      "Kf8",
+      "Kf6",
+      "Kg8"
+     ]
+    }
+   ],
+   "status": "konstruiert"
+  }
+ ]
+}

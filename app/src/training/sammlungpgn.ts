@@ -19,7 +19,10 @@ const FEN_ZUGNUMMER = 5;
 
 /** Wert eines PGN-Kopfes: Rückstrich und Anführungszeichen maskiert, ohne Zeilenumbruch. */
 function kopfwert(wert: string): string {
-  return wert.replace(/[\r\n]+/g, " ").replace(/\\/g, "\\\\").replace(/"/g, '\\"');
+  return wert
+    .replace(/[\r\n]+/g, " ")
+    .replace(/\\/g, "\\\\")
+    .replace(/"/g, '\\"');
 }
 
 /** Ein PGN-Kommentar darf keine geschweifte Klammer enthalten. */

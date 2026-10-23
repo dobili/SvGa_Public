@@ -24,17 +24,10 @@
 import { Eye, EyeOff } from "lucide-react";
 import { useMemo, useState, type ReactNode } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
-import { durchschnitt, gegnername, gegnerVon as botVon, klasseVon } from "../../engine/gegner";
-import { stufe } from "../../engine/stufen";
-import { t, zahlText } from "../../i18n/sprache";
+import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { spieleZug, zugFelder } from "../../schach/weiterspielen";
-import {
-  EROEFFNUNG_BUCH,
-  leserAmZug,
-  stellungen,
-  type Partie as PartieDaten,
-} from "../../spiel/partie";
+import { leserAmZug, stellungen, type Partie as PartieDaten } from "../../spiel/partie";
 import { mitVorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { zugurteile } from "../../spiel/auswertung";
@@ -45,9 +38,11 @@ import { Auswertung, type Sprung } from "../komponenten/Auswertung";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { Partieende } from "../komponenten/Partieende";
+import { Ergebnisblende } from "../komponenten/Ergebnisblende";
 import { Partiestatus } from "../komponenten/Partiestatus";
 import { Partieuhr } from "../komponenten/Partieuhr";
 import { Partiezuege } from "../komponenten/Partiezuege";
+import { Untertitel } from "../komponenten/Partieuntertitel";
 import { PartieLeiste, PartieSymbole, PartieWerkzeugkarten } from "../komponenten/PartieWerkzeuge";
 import { PARTIEKAPITEL, usePartierechnung } from "../komponenten/partiewerkzeug";
 import type { Zweigart } from "../komponenten/Nebenzweig";
@@ -64,39 +59,6 @@ const KAPITEL_MIT_EROEFFNUNGEN = 2;
 
 function gegnerVon(farbe: Farbe): Farbe {
   return farbe === "white" ? "black" : "white";
-}
-
-/** „Stufe 1 · Einsteiger · du spielst Schwarz“, bei Mensch gegen Mensch „Beide Seiten selbst“. */
-function Untertitel({ partie }: { partie: PartieDaten }) {
-  const s = stufe(partie.einstellung.stufe);
-  const farbe = t(partie.einstellung.eigeneFarbe === "white" ? "farbe.w" : "farbe.b");
-  if (partie.einstellung.gegner === "mensch") {
-    return <p className="partie-untertitel">{t("partie.untertitelMensch")}</p>;
-  }
-  const bot = gegnername(partie.einstellung.bot, partie.einstellung.botName);
-  const gewaehlt = partie.einstellung.eroeffnung;
-  const eroeffnung = gewaehlt === EROEFFNUNG_BUCH ? t("partie.eroeffnungBuch") : gewaehlt;
-  const je = partie.einstellung.stufenJePhase;
-  const verschieden = je.eroeffnung !== je.mittelspiel || je.endspiel !== je.mittelspiel;
-  const stufenText = verschieden
-    ? t("partie.stufenJePhase", { e: je.eroeffnung, m: je.mittelspiel, s: je.endspiel })
-    : t("partie.stufe", { nummer: s.nummer, name: t(s.name) });
-  // Vorgefertigte Gegner verraten ihre Stufen je Phase nicht (0.2.46): nur Durchschnitt und Klasse.
-  const vorgefertigt = botVon(partie.einstellung.bot);
-  const botText = vorgefertigt
-    ? t("partie.gegnerSchnitt", {
-        schnitt: zahlText(durchschnitt(vorgefertigt), 1, false),
-        klasse: t(klasseVon(vorgefertigt).name),
-      })
-    : stufenText;
-  const stufentext = bot ? t("partie.gegnerBot", { name: bot, stufen: botText }) : stufenText;
-  return (
-    <p className="partie-untertitel">
-      {eroeffnung
-        ? t("partie.untertitelEroeffnung", { stufe: stufentext, farbe, eroeffnung })
-        : t("partie.untertitel", { stufe: stufentext, farbe })}
-    </p>
-  );
 }
 
 /** Schalter für die ruhige Ansicht, unten rechts am Brett bei den anderen Brettschaltern. */
@@ -277,6 +239,7 @@ function Spielfeld({
         }
         zusatzSchalter={<RuhigSchalter ruhig={ruhig} />}
         seitenleiste={rb.leiste}
+        ueberlagerung={<Ergebnisblende partie={partie} />}
       />
       <Uhr s={s} farbe={partie.einstellung.eigeneFarbe} />
       {engineKarte}
@@ -377,8 +340,13 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
 
 export function Partie({ id }: { id: string }) {
   const s = usePartie(id);
+  const einstellung = s.partie?.einstellung;
   const titel = t(
-    s.partie?.einstellung.gegner === "mensch" ? "partie.titelMensch" : "partie.titel",
+    einstellung?.importiert
+      ? "partie.titelImport"
+      : einstellung?.gegner === "mensch"
+        ? "partie.titelMensch"
+        : "partie.titel",
   );
   return (
     <div className="bildschirm bildschirm-partie" data-testid="partie">

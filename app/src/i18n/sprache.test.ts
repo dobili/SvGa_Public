@@ -2,6 +2,7 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import {
   beiSprachwechsel,
+  datensprache,
   fertigeSprachen,
   GRUNDSPRACHE,
   setzeSprache,
@@ -9,6 +10,7 @@ import {
   sprachname,
   startsprache,
   t,
+  trainerdatensprache,
   verfuegbareSprachen,
 } from "./sprache";
 
@@ -47,5 +49,15 @@ describe("Sprachwechsel", () => {
     expect(sprache()).toBe("de");
     expect(t("einstellungen.sprache")).toBe("Sprache");
     abmelden();
+  });
+});
+
+describe("Datensprache (P6)", () => {
+  it("Buchdaten auf Englisch englisch, Trainerdaten bis zu ihrer Übersetzung deutsch", () => {
+    expect(datensprache()).toBe("de");
+    expect(trainerdatensprache()).toBe("de");
+    setzeSprache("en");
+    expect(datensprache()).toBe("en");
+    expect(trainerdatensprache()).toBe("de");
   });
 });

@@ -9,7 +9,7 @@
 | chessops (Lichess, Niklas Fiekas), mit @badrap/result (MIT)                                                            | GNU GPL 3.0                         | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Figurenschrift SkakNew-Diagram (Ulrich Dirr)                                                                           | LPPL 1.2 oder neuer                 | `app/public/lizenzen/lppl-1.3c.txt`                           |
 | Figurensätze (9 Sätze, `app/public/figuren/`, Quelle `pipeline/figuren/saetze/`, seit 0.2.82)                         | je Satz: GPLv2+, GPLv3+, Apache 2.0, MIT, CC0 | `pipeline/figuren/saetze/LIZENZEN.md`; `app/public/lizenzen/` |
-| Trainer-Aufgaben aus der Lichess-Puzzle-Datenbank (`inhalte/de/trainer/taktik.json`, `falle.json`, Herkunft `lichess`) | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft in `docs/TRAINERDATEN.md`)       |
+| Trainer-Aufgaben aus der Lichess-Puzzle-Datenbank (`inhalte/de/trainer/taktik.json`, `falle.json`, seit P4 `endspiel.json`, Herkunft `lichess`) | CC0 1.0 (gemeinfrei) | – (keine Pflichten; Herkunft in `docs/TRAINERDATEN.md`)       |
 | Source Sans 3, Source Serif 4 (Adobe)                                                                                  | SIL Open Font License 1.1           | `app/public/lizenzen/ofl-*.txt`                               |
 | Holzbilder der Bretts „Ahorn & Nussbaum“ (ambientCG, Wood095 und Wood026)                                                      | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft unter Hinweise)                  |
 | Materialbretter Intarsie Ahorn & Kirsche, Holz klassisch, Marmor grün (Lichess, `app/public/bretter/`, seit 0.2.84) | GNU AGPL 3.0 oder neuer | `app/public/lizenzen/agpl-3.0.txt`; `pipeline/bretter/LIZENZEN.md` |
@@ -50,9 +50,11 @@
   setzen GPLv3 voraus, das passt zur App. MIT- und Apache-Texte mit Copyright-Zeile liegen in
   `app/public/lizenzen/` und stehen in der App unter Einstellungen › Lizenzen. Sie ersetzen die
   früheren Sätze „klassisch“ (cburnett, 0.2.33) und „Holz“ (umgefärbtes Merida, 0.2.58).
-- **Lichess-Puzzle-Datenbank (seit 0.2.39, Trainerdaten):** https://database.lichess.org/#puzzles,
-  CC0 1.0. In den Daten stehen je Aufgabe Stellung, Lösung, Kennung, Wertung und die Adresse der
-  Partie; die Datenbank selbst (300 MB) bleibt lokal. Einzelheiten in `docs/TRAINERDATEN.md`.
+- **Lichess-Puzzle-Datenbank (seit 0.2.39, Trainerdaten; seit P4 auch Endspielaufgaben):**
+  https://database.lichess.org/#puzzles, CC0 1.0 (geprüft 23.10.2026: „The puzzle database is
+  released under the Creative Commons CC0 license“). In den Daten stehen je Aufgabe Stellung,
+  Lösung, Kennung, Wertung und die Adresse der Partie; die Datenbank selbst (300 MB) bleibt
+  lokal. Einzelheiten in `docs/TRAINERDATEN.md`.
 - **App-Symbol (seit 0.2.106):** `app/public/symbole/*.png` sind Ausschnitte des Buchcovers (alle
   Rechte vorbehalten wie das Cover), erzeugt mit `app/skripte/erzeuge-appsymbol.mjs`; nur das
   Symbol im Browser-Tab (`symbol.svg`) ist der Springer aus SkakNew.

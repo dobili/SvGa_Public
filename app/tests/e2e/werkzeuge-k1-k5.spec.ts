@@ -177,9 +177,13 @@ test("Werkzeug Bauern (Abb. 5.17): Isolani d4 mit Kürzel I, drei Bauerninseln",
   await oeffneAbbildung(page, "5.17", "5.17");
   await waehleWerkzeug(page, "Bauern");
   const karte = page.getByTestId("werkzeugkarte");
+  // Schwarz ist am Zug: seine Bauern ganz, die Schwächen von Weiß nur als Ziele (R41).
+  await expect(karte).toContainText("2 Bauerninseln.");
+  await expect(karte).toContainText("Ziele bei Weiß");
   await expect(karte).toContainText("d4: Isolani – keine Nachbarn mehr");
-  await expect(karte).toContainText("3 Bauerninseln.");
   await expect(page.locator(".brett svg text", { hasText: "I" })).toHaveCount(1);
+  await page.getByTestId("sichtschalter").click();
+  await expect(karte).toContainText("3 Bauerninseln.");
   await page.screenshot({ path: "test-results/bilder/bauern.png", fullPage: true });
 });
 

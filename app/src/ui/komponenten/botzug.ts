@@ -19,6 +19,7 @@ import {
   sichtbareWartezeit,
   zieheBotMitUhr,
 } from "../../spiel/botzeit";
+import { mitUhrverzug } from "../../spiel/ablauf";
 import { engineZugMitLage } from "../../spiel/enginezug";
 import {
   bleibtImNotmodus,
@@ -32,6 +33,7 @@ import { phaseVon } from "../../spiel/phasen";
 import { uciZuSan } from "../../spiel/zuege";
 import { findePartie, mitPartie } from "../../speicher/partien";
 import { aendere, speicherzustand } from "../../speicher/speicher";
+import { animationsverzugMs } from "../brett/useZuganimation";
 import { beendeNotmodus, planeNotmodus } from "./botNotmodus";
 
 /** Die Partie in ihrem neuesten Stand (nicht aus einem älteren Render). */
@@ -162,7 +164,7 @@ export async function spieleVorzug(
     stufe: stufennummer,
   } as const;
   const danach = aendereNeueste(id, (p) =>
-    zieheImNotmodus(p, zug, Date.now(), false, appSichtbar()),
+    mitUhrverzug(zieheImNotmodus(p, zug, Date.now(), false, appSichtbar()), animationsverzugMs()),
   );
   nachNotzug(id, danach, stufennummer);
 }
@@ -208,10 +210,19 @@ export async function normalerBotzug(
   const mitStufe = { ...ergebnis.zug, stufe: stufennummer };
   if (brauchtNotmodus(bedenk, rest)) {
     const danach = aendereNeueste(id, (p) =>
-      zieheImNotmodus(p, mitStufe, Date.now(), true, appSichtbar()),
+      mitUhrverzug(
+        zieheImNotmodus(p, mitStufe, Date.now(), true, appSichtbar()),
+        animationsverzugMs(),
+      ),
     );
     nachNotzug(id, danach, stufennummer);
     return;
   }
-  aendereNeueste(id, (p) => zieheBotMitUhr(p, mitStufe, bedenk, Date.now(), appSichtbar()));
+  // R37: Die Uhr des Lesers läuft erst, wenn der Zug des Bots über das Brett geglitten ist.
+  aendereNeueste(id, (p) =>
+    mitUhrverzug(
+      zieheBotMitUhr(p, mitStufe, bedenk, Date.now(), appSichtbar()),
+      animationsverzugMs(),
+    ),
+  );
 }

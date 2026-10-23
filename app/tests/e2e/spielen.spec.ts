@@ -273,6 +273,18 @@ test("Gewertete Partie (S9): Rücknahme und Spielhilfen gesperrt", async ({ page
   await expect(page.getByRole("button", { name: "Röntgen" })).toHaveCount(0);
 });
 
+test("Gewertete Partie (R32): der Haken bleibt beim Wechsel der Art des Gegners aus", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const haken = page.getByRole("checkbox", { name: /Gewertete Partie/ });
+  await haken.uncheck();
+  await page.getByRole("radio", { name: "Mensch (beide Seiten selbst)" }).click();
+  await page.getByRole("radio", { name: "Engine", exact: true }).click();
+  await expect(haken).not.toBeChecked();
+});
+
 test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen (0.2.80)", async ({
   page,
 }) => {
@@ -375,4 +387,63 @@ test("Genauigkeit wie: seit 0.2.87 nur in der Auswertung, nicht mehr in den Eins
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
   await page.getByRole("tab", { name: "Training" }).click();
   await expect(page.getByRole("radiogroup", { name: "Genauigkeit wie" })).toHaveCount(0);
+});
+
+/** Beginnt eine ungewertete Partie mit der Farbe und gibt gleich auf. */
+async function aufgegebenePartie(seite: Page, farbe: "Weiß" | "Schwarz"): Promise<void> {
+  await seite.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await seite.getByRole("radio", { name: farbe, exact: true }).click();
+  await seite.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
+  await seite.getByRole("button", { name: "Partie beginnen" }).click();
+  await seite.getByRole("button", { name: "Aufgeben" }).click();
+  await seite.getByRole("button", { name: "Ja, aufgeben" }).click();
+  await expect(seite.getByTestId("partieende")).toContainText("Du hast aufgegeben.");
+}
+
+test("Partienliste: Filter als Symbole, mehrere zugleich, Sortierung (R22)", async ({ page }) => {
+  await starteImBrowser(page);
+  for (const farbe of ["Weiß", "Schwarz", "Weiß", "Schwarz"] as const) {
+    await aufgegebenePartie(page, farbe);
+  }
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const liste = page.locator(".partienliste li.partieeintrag");
+  const filter = page.getByTestId("partienfilter");
+  await expect(liste).toHaveCount(4);
+  await filter.getByRole("button", { name: "mit Schwarz" }).click();
+  await expect(liste).toHaveCount(2);
+  // Zwei Gruppen zugleich: Schwarz und gewonnen → nichts; dazu verloren (oder) → wieder zwei.
+  await filter.getByRole("button", { name: "gewonnen" }).click();
+  await expect(liste).toHaveCount(0);
+  await expect(page.getByText("Keine Partie passt zu diesem Filter.")).toBeVisible();
+  await filter.getByRole("button", { name: "verloren" }).click();
+  await expect(liste).toHaveCount(2);
+  await page.screenshot({ path: "test-results/bilder/partienfilter.png", fullPage: true });
+  await filter.getByRole("button", { name: "Filter zurücksetzen" }).click();
+  await expect(liste).toHaveCount(4);
+  // Sortierung: neueste zuerst (Schwarz), Richtung umkehren → älteste zuerst (Weiß).
+  await expect(liste.first().getByRole("img", { name: "Du hast Schwarz gespielt" })).toBeVisible();
+  await filter.getByRole("button", { name: /^absteigend/ }).click();
+  await expect(liste.first().getByRole("img", { name: "Du hast Weiß gespielt" })).toBeVisible();
+});
+
+test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgewertet", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("button", { name: "Partie einlesen (PGN)", exact: true }).click();
+  const formular = page.getByTestId("pgnimport");
+  await formular.getByRole("button", { name: "Einlesen und auswerten" }).click();
+  await expect(formular).toContainText("Füge zuerst eine Partie ein.");
+  await formular
+    .getByLabel("PGN der Partie")
+    .fill('[White "Anna"]\n[Black "Ben"]\n[Result "0-1"]\n\n1. f3 e5 2. g4 Qh4# 0-1');
+  await formular.getByRole("radio", { name: "Schwarz" }).click();
+  await formular.getByRole("button", { name: "Einlesen und auswerten" }).click();
+  await expect(page.getByTestId("partieende")).toContainText("Matt", { timeout: ENGINE_FRIST });
+  await page.screenshot({ path: "test-results/bilder/pgnimport.png", fullPage: true });
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const eintrag = page.locator(".partienliste li.partieeintrag").first();
+  await expect(eintrag).toContainText("Anna – Ben");
+  await expect(eintrag.locator(".ergebnis-gewonnen")).toContainText("0–1");
 });

@@ -108,6 +108,10 @@ test("Sicht-Schalter (0.2.27): rechnet für die andere Seite, nach einem Zug wie
   await expect(schalter).toContainText("Sicht: Schwarz");
   await expect(schalter).toContainText("nicht am Zug");
   await expect(page.getByTestId("werkzeugkarte")).toContainText("1. Schachs: Schwarz");
+  // R41: Die Legende folgt der Sicht und nennt die Farben.
+  await expect(page.getByTestId("werkzeugkarte")).toContainText(
+    "Rote Pfeile: Schachs und Drohungen von Weiß",
+  );
   await page.getByRole("button", { name: "Einen Halbzug vor" }).click();
   await page.getByRole("button", { name: "Einen Halbzug zurück" }).click();
   await expect(schalter).toContainText("Sicht: Weiß");

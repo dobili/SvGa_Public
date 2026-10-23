@@ -11,7 +11,7 @@
 import type { Color } from "chessops/types";
 import { t, tZahl } from "../i18n/sprache";
 import type { Antwort } from "./k12-antwort";
-import type { Kandidat } from "./k12-kandidaten";
+import { istRuhig, type Kandidat } from "./k12-kandidaten";
 import { aufzaehlung, farbname, figurenname, mitVorzeichen, zugtext } from "./texte";
 import type { Befund } from "./werkzeug";
 
@@ -36,13 +36,18 @@ function kandidatenzeile(k: Kandidat, nr: number): string {
   });
 }
 
-/** Zeile zur stärksten Antwort; ein Kandidat, auf den Matt folgt, scheidet aus (C1.28). */
+/**
+ * Zeile zur stärksten Antwort; ein Kandidat, auf den Matt folgt, scheidet aus (C1.28). Bei
+ * ruhigen Kandidaten steht kein Materialstand, sondern der Verweis auf die Engine (R43: „Material
+ * −1“ nach einem Zug Tiefe sagte über den Buchzug nichts Verlässliches).
+ */
 function antwortzeile(k: Kandidat, a: Antwort): string {
   if (a.mattGesetzt) return t("kandidaten.antwortMattGesetzt", { zug: zugtext(k.san) });
-  if (a.art === "keine")
-    return t("kandidaten.antwortKeine", { zug: zugtext(k.san), bilanz: mitVorzeichen(a.bilanz) });
   if (a.art === "matt")
     return t("kandidaten.antwortMatt", { zug: zugtext(k.san), antwort: zugtext(a.san) });
+  if (istRuhig(k)) return ruhigeAntwortzeile(k, a);
+  if (a.art === "keine")
+    return t("kandidaten.antwortKeine", { zug: zugtext(k.san), bilanz: mitVorzeichen(a.bilanz) });
   return t("kandidaten.antwort", {
     zug: zugtext(k.san),
     antwort: zugtext(a.san),
@@ -52,6 +57,21 @@ function antwortzeile(k: Kandidat, a: Antwort): string {
         ? t("kandidaten.gabel", { ziele: aufzaehlung(a.gabel.map(figurenname)) })
         : "",
     bilanz: mitVorzeichen(a.bilanz),
+    koenig: a.imFreien ? t("kandidaten.imFreien") : "",
+  });
+}
+
+/** Ein ruhiger Kandidat: die Antwort ohne Material, die Bewertung macht die Engine. */
+function ruhigeAntwortzeile(k: Kandidat, a: Antwort): string {
+  if (a.art === "keine") return t("kandidaten.antwortRuhig", { zug: zugtext(k.san) });
+  return t("kandidaten.antwortRuhigMit", {
+    zug: zugtext(k.san),
+    antwort: zugtext(a.san),
+    art: t(`kandidaten.antwortArt.${a.art}`),
+    gabel:
+      a.gabel.length > 0
+        ? t("kandidaten.gabel", { ziele: aufzaehlung(a.gabel.map(figurenname)) })
+        : "",
     koenig: a.imFreien ? t("kandidaten.imFreien") : "",
   });
 }
@@ -69,18 +89,26 @@ function sammelnZeilen(r: Kandidatenrechnung): string[] {
   return zeilen;
 }
 
-/** Schritt 4: der beste Kandidat gegen die stärkste Antwort, Matt zählt als schlechtestes. */
+/**
+ * Schritt 4: der beste Kandidat gegen die stärkste Antwort nach Material, Matt zählt als
+ * schlechtestes; liegt ein ruhiger Kandidat vorn oder gibt es ruhige, verweist der Satz auf die
+ * Engine (R43).
+ */
 function bewertenZeile(r: Kandidatenrechnung): string {
   if (r.liste.length === 0)
     return r.imSchach
       ? t("kandidaten.matt", { farbe: farbname(r.eigen) })
       : t("kandidaten.keineErzwingenden");
+  const ruhige = r.liste.filter(istRuhig).length;
   const kandidat = r.beste === null ? undefined : r.liste[r.beste];
   const antwort = r.beste === null ? undefined : r.antworten[r.beste];
   if (!kandidat || !antwort)
     return t(r.imSchach ? "kandidaten.alleMattImSchach" : "kandidaten.alleMatt");
   const werte = { zug: zugtext(kandidat.san), bilanz: mitVorzeichen(antwort.bilanz) };
-  return t(antwort.imFreien ? "kandidaten.besteImFreien" : "kandidaten.beste", werte);
+  // Ein ruhiger Kandidat vorn: Material sagt wenig, die Engine urteilt (R43).
+  if (istRuhig(kandidat)) return t("kandidaten.besteRuhig", werte);
+  const zusatz = ruhige > 0 ? ` ${t("kandidaten.ruhigeUnten")}` : "";
+  return t(antwort.imFreien ? "kandidaten.besteImFreien" : "kandidaten.beste", werte) + zusatz;
 }
 
 /** Fazit: wie viele Kandidaten; im Schach wie viele Abwehrzüge. */

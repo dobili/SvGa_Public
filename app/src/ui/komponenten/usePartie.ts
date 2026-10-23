@@ -25,6 +25,7 @@ import {
   pausiere,
   pruefeZeit,
   setzeUhrFort,
+  mitUhrverzug,
   zieheMitUhr,
 } from "../../spiel/ablauf";
 import { BUCHTREUE, BUCHTREUE_VORGABE } from "../../engine/zugwahl";
@@ -42,6 +43,7 @@ import { useDaten } from "./useDaten";
 import { aendereNeueste, neueste, normalerBotzug, spieleVorzug, stufeFuer } from "./botzug";
 import { vorzugFuer } from "./botNotmodus";
 import { mitGesicherterUhr, sichereUhr, verwerfeUhrsicherung } from "./uhrNotsicherung";
+import { animationsverzugMs } from "../brett/useZuganimation";
 
 /** So oft fragt die Anzeige die Uhr ab (Millisekunden). */
 const TAKT_MS = 200;
@@ -203,7 +205,11 @@ export function usePartie(id: string): Partiesteuerung {
     engineDenkt: amZugEngine && fehler === null,
     fehler,
     jetztMs,
-    spieleLeser: (san) => aendereNeueste(id, (p) => zieheMitUhr(p, leserzug(san), Date.now())),
+    // R37: Die Uhr der Gegenseite läuft erst, wenn der Zug über das Brett geglitten ist.
+    spieleLeser: (san) =>
+      aendereNeueste(id, (p) =>
+        mitUhrverzug(zieheMitUhr(p, leserzug(san), Date.now()), animationsverzugMs()),
+      ),
     nimmZurueck: () => aendereNeueste(id, (p) => nimmZurueckMitUhr(p, Date.now())),
     gibAuf: () => aendereNeueste(id, (p) => gibAuf(pausiere(p, Date.now()))),
   };

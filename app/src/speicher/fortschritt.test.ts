@@ -11,6 +11,7 @@ import {
   notiereTrainerantwort,
   notiereUebung,
   notiereUebungsergebnis,
+  notiereEinschaetzung,
   notiereWarumfrage,
   setzeGesehen,
 } from "./fortschritt";
@@ -125,6 +126,13 @@ describe("Warum-Fragen im Fortschritt (0.2.99)", () => {
     const zweimal = notiereWarumfrage(einmal, "1.26", 0);
     expect(zweimal).toBe(einmal);
     expect(einmal.fortschritt.warum).toEqual({ "1.26": [0] });
+  });
+
+  it("merkt richtig eingeschätzte Abbildungen mit dem ersten Datum (NA1)", () => {
+    const spaeter = new Date("2026-10-20T08:00:00.000Z");
+    const einmal = notiereEinschaetzung(leereDaten(jetzt), "1.26", jetzt);
+    expect(notiereEinschaetzung(einmal, "1.26", spaeter)).toBe(einmal);
+    expect(einmal.fortschritt.eingeschaetzt).toEqual({ "1.26": jetzt.toISOString() });
   });
 
   it("zählt beantwortete und alle Fragen im Kapitel", () => {

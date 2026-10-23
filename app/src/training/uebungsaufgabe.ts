@@ -15,7 +15,13 @@ import { makeSanAndPlay, parseSan } from "chessops/san";
 import { regelstellung } from "../spiel/zuege";
 
 /** Deutsche Figurenbuchstaben → englische (Daten und chessops sind englisch). */
-const DEUTSCH_ENGLISCH: Readonly<Record<string, string>> = { S: "N", L: "B", T: "R", D: "Q", K: "K" };
+const DEUTSCH_ENGLISCH: Readonly<Record<string, string>> = {
+  S: "N",
+  L: "B",
+  T: "R",
+  D: "Q",
+  K: "K",
+};
 
 export type Uebungsaufgabe =
   | {
@@ -151,7 +157,9 @@ export function pruefeZug(
   if (index < 0) return { art: "falsch" };
   const linie = aufgabe.linien[index] ?? [];
   const antwort = linie[stelle + 1];
-  return antwort === undefined ? { art: "geloest", linie: index } : { art: "weiter", antwort, linie: index };
+  return antwort === undefined
+    ? { art: "geloest", linie: index }
+    : { art: "weiter", antwort, linie: index };
 }
 
 /** Stellung nach den bisherigen Zügen (für das Brett). Unpassendes bleibt bei der Ausgangsstellung. */

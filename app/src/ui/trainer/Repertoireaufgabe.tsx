@@ -6,8 +6,11 @@
  * Buches als Pfeil, und der Leser zieht ihn nach. „Zug zeigen“ hilft ebenso und zählt ebenso.
  * Richtig ist die Variante, wenn sie ohne Fehler und ohne Hilfe gelingt. Hat ein gespielter Zug
  * eine Warum-Frage (W10), steht sie unter dem Brett, zugeklappt; sie zählt nicht zur Wertung.
- * Auch „Studien lösen“ nutzt diese Aufgabe, mit eigenem Auftrag.
- * Abhängigkeiten: training/repertoiretrainer.ts, Brettbereich, useBrettbedienung, Rundenrahmen.
+ * Auch „Studien lösen“ nutzt diese Aufgabe, mit eigenem Auftrag. Dort zeigt ein falscher Zug seit
+ * R46 (Wunsch des Autors, 23.10.2026) den eigenen Zug als roten und den Zug der Studie als
+ * goldenen Pfeil, und die Engine vergleicht beide (Zugvergleich).
+ * Abhängigkeiten: training/repertoiretrainer.ts, Brettbereich, useBrettbedienung, Rundenrahmen,
+ * useRatevergleich, Zugvergleich.
  */
 import { useMemo, useState } from "react";
 import type { Markierung } from "../../analyse/werkzeug";
@@ -27,6 +30,9 @@ import { useBrettbedienung } from "../komponenten/useBrettbedienung";
 import { Antwortmeldung } from "./Rundenrahmen";
 import type { Runde } from "./useRunde";
 import { useSammelstellung } from "./sammelstellung";
+import { useRatevergleich, type Fehlversuch } from "./useRatevergleich";
+import { vergleichspfeile } from "./vergleichspfeile";
+import { Zugvergleich } from "./Zugvergleich";
 
 const KEINE_WAHL = () => undefined;
 
@@ -41,15 +47,20 @@ export function Repertoireaufgabe({
   aufgabe,
   runde,
   auftrag,
+  vergleichen = false,
 }: {
   aufgabe: Aufgabe;
   runde: Runde;
   /** Eigener Auftrag (Studien); sonst der des Repertoire-Trainers. */
   auftrag?: string;
+  /** Falschen Zug mit dem Zug der Studie vergleichen (Studien, R46). */
+  vergleichen?: boolean;
 }) {
   const [zuege, setzeZuege] = useState<readonly string[]>(() => anfang(aufgabe));
   const [fehler, setzeFehler] = useState(0);
   const [zeige, setzeZeige] = useState(false);
+  const [fehlversuch, setzeFehlversuch] = useState<Fehlversuch | null>(null);
+  const vergleich = useRatevergleich(fehlversuch);
   const fen = stellungNach(aufgabe.startFen, zuege);
   useSammelstellung(fen);
   const fertig = runde.ergebnis !== null;
@@ -63,11 +74,14 @@ export function Repertoireaufgabe({
     if (versuch.art !== "gespielt") return versuch.art;
     if (!istBuchzug(aufgabe, zuege.length, versuch.san)) {
       zaehle();
+      const richtig = aufgabe.linie[zuege.length] ?? "";
+      if (vergleichen) setzeFehlversuch({ vorherFen: fen, eigen: versuch.san, partie: richtig });
       return "gespielt" as const;
     }
     const neu = mitAntwort(aufgabe, zuege);
     setzeZuege(neu);
     setzeZeige(false);
+    setzeFehlversuch(null);
     if (neu.length >= aufgabe.linie.length) runde.beantworte(fehler === 0);
     return "gespielt" as const;
   };
@@ -78,6 +92,8 @@ export function Repertoireaufgabe({
       ? zugFelder(stellungNach(aufgabe.startFen, zuege.slice(0, -1)), zuege.at(-1) ?? "")
       : null;
   const notation = eigeneAlsText(aufgabe.startFen, zuege, sprache()).join(" ");
+  const markierungen: Markierung[] =
+    fertig || !zeige ? [] : fehlversuch ? vergleichspfeile(fehlversuch) : buchpfeil(aufgabe, zuege);
   return (
     <>
       <p className="trainer-auftrag">
@@ -90,7 +106,7 @@ export function Repertoireaufgabe({
       {stellung.ok && (
         <Brettbereich
           stellung={stellung.wert}
-          markierungen={zeige && !fertig ? buchpfeil(aufgabe, zuege) : []}
+          markierungen={markierungen}
           letzterZug={letzter}
           bedienung={bedienung}
           beschriftung={t("trainer.repertoire.name")}
@@ -100,7 +116,19 @@ export function Repertoireaufgabe({
       <p className="hinweis" data-testid="repertoire-zuege">
         {notation || t("repertoiretrainer.nochKeinZug")}
       </p>
-      {!fertig && zeige && <p className="meldung schlecht">{t("repertoiretrainer.buchzug")}</p>}
+      {!fertig && zeige && (
+        <p className="meldung schlecht">
+          {t(fehlversuch ? "studien.falsch" : "repertoiretrainer.buchzug")}
+        </p>
+      )}
+      {!fertig && fehlversuch && vergleich && (
+        <Zugvergleich
+          versuch={fehlversuch}
+          stand={vergleich}
+          bezug="studie"
+          testid="studien-vergleich"
+        />
+      )}
       {!fertig && !zeige && (
         <button type="button" className="knopf-zweit" onClick={zaehle}>
           {t("repertoiretrainer.zeigen")}

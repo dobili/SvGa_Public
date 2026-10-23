@@ -1,0 +1,171 @@
+/* Brett und Bedienung, Paket P2 (23.10.2026): Ergebnis auf dem Brett (R38), Startanimation (R39). */
+
+/* ---------- R38: Ergebnisblende über dem Brett ---------- */
+.ergebnisblende {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  background: rgb(22 37 61 / 0.18);
+  /* Erst wenn der letzte Zug angekommen ist (Zuganimation 0,22 s, R37). */
+  animation: ergebnisblende-grund 2.8s ease-in-out 0.25s both;
+}
+
+.ergebnisblende-schild {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 80%;
+  padding: calc(var(--raster) * 2) calc(var(--raster) * 3);
+  border-radius: var(--radius);
+  border: 2px solid var(--linie-stark);
+  background: var(--flaeche);
+  color: var(--text);
+  text-align: center;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 0.25);
+  animation: ergebnisblende-schild 2.8s ease-out 0.25s both;
+}
+
+.ergebnisblende-gewonnen .ergebnisblende-schild {
+  border-color: var(--gold);
+}
+
+.ergebnisblende-verloren .ergebnisblende-schild {
+  border-color: var(--rot-text);
+}
+
+.ergebnisblende-wort {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.ergebnisblende-grund {
+  font-size: 0.9rem;
+}
+
+@keyframes ergebnisblende-grund {
+  0% {
+    opacity: 0;
+  }
+  10%,
+  82% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes ergebnisblende-schild {
+  0% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  12% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  18%,
+  82% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ergebnisblende,
+  .ergebnisblende-schild {
+    animation: none;
+  }
+}
+
+/* ---------- R39: Startanimation mit dem goldenen Springer ---------- */
+.startanimation {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--raster) * 2);
+  border: none;
+  padding: 0;
+  background: radial-gradient(circle at 50% 42%, #1b2b45 0%, #0b1424 70%);
+  color: #f5f0e6;
+  cursor: pointer;
+  animation: startanimation-flaeche 2.5s ease-in both;
+}
+
+.startanimation-schein {
+  display: block;
+  width: min(52vmin, 260px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  overflow: hidden;
+  animation: startanimation-springer 2.5s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.startanimation-springer {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.startanimation-titel {
+  font-family: "Source Serif 4", serif;
+  font-size: clamp(1.3rem, 5vmin, 2rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  animation: startanimation-titel 2.5s ease-out both;
+}
+
+@keyframes startanimation-flaeche {
+  0%,
+  78% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes startanimation-springer {
+  0% {
+    opacity: 0;
+    transform: scale(0.55) rotate(-8deg);
+    box-shadow: 0 0 0 0 rgb(217 165 20 / 0);
+  }
+  40% {
+    opacity: 1;
+    transform: scale(1.04) rotate(0deg);
+    box-shadow: 0 0 60px 12px rgb(217 165 20 / 0.55);
+  }
+  55%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 36px 6px rgb(217 165 20 / 0.35);
+  }
+}
+
+@keyframes startanimation-titel {
+  0%,
+  30% {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  55%,
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

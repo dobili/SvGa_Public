@@ -41,6 +41,8 @@ import { liesMerker, schreibeMerker } from "../../app/merker";
 import { sprachname, t, verfuegbareSprachen, type Textschluessel } from "../../i18n/sprache";
 import { useSprache, waehleSprache } from "../../app/sprachwahl";
 import { MERKER_WISCHEN } from "../brett/useZiehen";
+import { MERKER_ZUGANIMATION } from "../brett/useZuganimation";
+import { MERKER_STARTANIMATION } from "./Startanimation";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
 import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
@@ -91,7 +93,11 @@ function MerkerWahl({
   schluessel,
 }: {
   merker: string;
-  schluessel: "einstellungen.koordinaten" | "einstellungen.wischen";
+  schluessel:
+    | "einstellungen.koordinaten"
+    | "einstellungen.wischen"
+    | "einstellungen.zuganimation"
+    | "einstellungen.startanimation";
 }) {
   const [wert, setzeWert] = useState<Koordinaten>(liesMerker(merker) === "aus" ? "aus" : "an");
   return (
@@ -159,7 +165,7 @@ const BEREICHE: readonly { wert: Bereich; text: Textschluessel; symbol: LucideIc
   { wert: "training", text: "einstellungen.reiter.training", symbol: Brain },
 ];
 
-/** Brett: Farben mit Vorschau, Koordinaten, Ziehen per Wischen. */
+/** Brett: Farben mit Vorschau, Koordinaten, Ziehen per Wischen, Zuganimation (R37). */
 function BrettBereich() {
   const einstellungen = useEinstellungen();
   return (
@@ -175,6 +181,10 @@ function BrettBereich() {
       <MerkerWahl merker="koordinaten" schluessel="einstellungen.koordinaten" />
       <MerkerWahl merker={MERKER_WISCHEN} schluessel="einstellungen.wischen" />
       <p className="hinweis">{t("einstellungen.wischen.hinweis")}</p>
+      <MerkerWahl merker={MERKER_ZUGANIMATION} schluessel="einstellungen.zuganimation" />
+      <p className="hinweis">{t("einstellungen.zuganimation.hinweis")}</p>
+      <MerkerWahl merker={MERKER_STARTANIMATION} schluessel="einstellungen.startanimation" />
+      <p className="hinweis">{t("einstellungen.startanimation.hinweis")}</p>
     </>
   );
 }

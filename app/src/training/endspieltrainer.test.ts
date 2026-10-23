@@ -73,7 +73,10 @@ describe("Endspieltrainer", () => {
       grund: "matt",
       gehalten: null,
     });
-    expect(ergebnisAusEnde("remis", "b", { art: "patt" })).toEqual({ art: "erreicht", grund: "remis" });
+    expect(ergebnisAusEnde("remis", "b", { art: "patt" })).toEqual({
+      art: "erreicht",
+      grund: "remis",
+    });
     expect(ergebnisAusEnde("gewinn", "w", { art: "patt" })).toEqual({
       art: "verfehlt",
       grund: "remis",

@@ -1,0 +1,7789 @@
+{
+ "schemaVersion": 1,
+ "kapitel": 7,
+ "titel": "Tactics: how to turn small advantages into material",
+ "abschnitte": [
+  {
+   "nummer": "7.1",
+   "label": "sec:k7-werkzeug",
+   "titel": "Your tool: finding tactics in three steps"
+  },
+  {
+   "nummer": "7.2",
+   "label": "sec:k7-motive",
+   "titel": "The twelve basic motifs"
+  },
+  {
+   "nummer": "7.3",
+   "label": "sec:k7-abtausch",
+   "titel": "Calculate instead of hoping: the exchange on one square"
+  },
+  {
+   "nummer": "7.4",
+   "label": "sec:k7-mattbilder",
+   "titel": "Typical mating patterns"
+  },
+  {
+   "nummer": "7.5",
+   "label": "",
+   "titel": "Review: tactics"
+  }
+ ],
+ "abbildungen": [
+  {
+   "id": "7.1",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "1. Double attack and fork",
+   "fen": "r5k1/p5pp/8/3Q4/8/8/5PPP/6K1 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "g8"
+    },
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "a8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Double attack by the queen after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qd5+"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the queen attacks the king on g8 and the undefended rook on a8 at the same time. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kh8"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Qxa8#"
+    },
+    {
+     "art": "text",
+     "text": " is even mate.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a1",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 206
+   },
+   "pruefsumme": "49bcc762745b244f"
+  },
+  {
+   "id": "7.2",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "1. Double attack and fork",
+   "fen": "8/8/5k2/3N4/1q6/8/8/7K b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "b4"
+    },
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "f6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The knight fork, Black to move. Red: the knight on d5 attacks the king on f6 and the queen on b4 at the same time. The king must move away, and then the queen falls.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.3"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 242
+   },
+   "pruefsumme": "5ea904421f9dba3a"
+  },
+  {
+   "id": "7.3",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "1. Double attack and fork",
+   "fen": "r1bqkb1r/ppp2ppp/2n5/3pp3/2B1N3/5N2/PPPP1PPP/R1BQK2R w KQkq - 0 6",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "c4"
+    },
+    {
+     "farbe": "rot",
+     "von": "d5",
+     "nach": "e4"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The pawn fork after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "5... d5"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red: the pawn on d5 attacks the bishop on c4 and the knight on e4 at the same time.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.2"
+   ],
+   "beispiel": {
+    "id": "k07-a3",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Nc3",
+     "Nf6",
+     "Bc4",
+     "Nxe4",
+     "Nxe4",
+     "d5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 243
+   },
+   "pruefsumme": "e43ce93b8f80bbe8",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6. Bd3",
+      "frage": "Why does White play 6. Bd3?",
+      "antworten": [
+       "The bishop attacks the pawn on d5 a second time.",
+       "The bishop moves away and defends the knight on e4 at the same time; after dxe4 Bxe4, White at least wins the pawn back.",
+       "The bishop prepares an attack on h7; the knight doesn't matter."
+      ],
+      "richtig": 1,
+      "erklaerung": "Against a fork, a move that saves one piece and defends the other often helps. The piece is still lost, but the pawn comes back."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.4",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "2. The pin",
+   "fen": "r1bqkbnr/ppp2ppp/2np4/1B2p3/4P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 0 4",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "b5",
+     "nach": "e8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "c6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Absolute pin after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Nf3 Nc6 3. Bb5 d6"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray: the pin. Red: the knight on c6 must not move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.5"
+   ],
+   "beispiel": {
+    "id": "k07-a4",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bb5",
+     "d6"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 257
+   },
+   "pruefsumme": "9731e296959f9c36"
+  },
+  {
+   "id": "7.5",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "2. The pin",
+   "fen": "rnbqkb1r/ppp2ppp/4pn2/3p2B1/2PP4/2N5/PP2PPPP/R2QKBNR b KQkq - 3 4",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g5",
+     "nach": "d8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Relative pin in the Queen's Gambit Declined from Chapter 2 after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. d4 d5 2. c4 e6 3. Nc3 Nf6 4. Bg5"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gray: the pin. Red: if the knight moves, the bishop captures the queen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.4"
+   ],
+   "beispiel": {
+    "id": "k07-a5",
+    "pfad": [
+     "d4",
+     "d5",
+     "c4",
+     "e6",
+     "Nc3",
+     "Nf6",
+     "Bg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 258
+   },
+   "pruefsumme": "a82018469217ac63"
+  },
+  {
+   "id": "7.6",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "3. The skewer",
+   "fen": "7r/6k1/8/8/8/8/8/R3K3 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h8",
+     "nach": "h1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Black to move. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Rh1+"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.7"
+   ],
+   "beispiel": {
+    "id": "k07-a6",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 292
+   },
+   "pruefsumme": "7fb868464e624d16",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... Rh1+",
+      "frage": "Why does 1... Rh1+ win the white rook?",
+      "antworten": [
+       "The king must leave the first rank, and then Black captures the undefended rook on a1.",
+       "The rook on h1 checkmates the white king.",
+       "White must interpose the rook on a1."
+      ],
+      "richtig": 0,
+      "erklaerung": "The rook on h1 controls every square of the king on the first rank. So the king moves up, and Rxa1 follows."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.7",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "3. The skewer",
+   "fen": "8/6k1/8/8/8/8/8/R3K2r w - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h1",
+     "nach": "e1"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "a1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Rh1+"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red: the check. Gray: the undefended rook on a1 behind the king.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.6"
+   ],
+   "beispiel": {
+    "id": "k07-a6",
+    "pfad": [
+     "Rh1+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 293
+   },
+   "pruefsumme": "90608dc3a3b6aa6e"
+  },
+  {
+   "id": "7.8",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "4. Battery and discovered attack",
+   "fen": "r2q1rk1/pp2bppp/4pn2/8/3P2P1/2NQ4/PPB2P1P/R4RK1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f6"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Gold: the battery of the queen on d3 and the bishop on c2; its target is h7. Red: apart from the king, only the knight on f6 guards h7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a8",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 315
+   },
+   "pruefsumme": "0a02bcfc0f7effe2"
+  },
+  {
+   "id": "7.9",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "4. Battery and discovered attack",
+   "fen": "5rk1/pp1qbppp/2n5/8/8/3BQN2/PP3PPP/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h7"
+    },
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "d7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Discovered attack, White to move. Gray: the rook on d1 aims through its own bishop at the queen on d7. Gold: the bishop moves away with check.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.10"
+   ],
+   "beispiel": {
+    "id": "k07-a9",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 333
+   },
+   "pruefsumme": "784fd3ab3d7b8b3b",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Bxh7+",
+      "frage": "Why is 1. Bxh7+ so strong?",
+      "antworten": [
+       "It is a double check; only the king may move.",
+       "White wins a pawn and opens the h-file for the rook.",
+       "The bishop gives check and at the same time opens the d-file: after the king move, Rxd7 captures the queen."
+      ],
+      "richtig": 2,
+      "erklaerung": "A discovery with check: Black has to take care of the king. Then the rook on d1 takes the queen, and nobody can recapture."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.10",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "4. Battery and discovered attack",
+   "fen": "rnbqk2r/pppp1Npp/5n2/8/2B5/8/PPPP1PPP/R1BQR1K1 b kq - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e1",
+     "nach": "e8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "d8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "h8"
+    },
+    {
+     "farbe": "grau",
+     "von": "c4",
+     "nach": "f7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Discovered check after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nf7+"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the rook on e1 gives check, and the knight attacks the queen and rook. Gray: the bishop on c4 defends f7.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.9"
+   ],
+   "beispiel": {
+    "id": "k07-a10",
+    "pfad": [
+     "Nf7+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 334
+   },
+   "pruefsumme": "4937eeab191387e6"
+  },
+  {
+   "id": "7.11",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "5. The double check",
+   "fen": "4k3/pbpp1ppp/1q6/7r/4N3/8/PP3PPP/2BQR1K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e4",
+     "nach": "d6"
+    },
+    {
+     "farbe": "grau",
+     "von": "e1",
+     "nach": "e8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Gray: the knight on e4 stands between the rook on e1 and the king on e8. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nd6++"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.12",
+    "7.13"
+   ],
+   "beispiel": {
+    "id": "k07-a11",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 368
+   },
+   "pruefsumme": "54b07e8bbbf4b8d6",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Nd6++",
+      "frage": "Why must Black move the king after 1. Nd6++?",
+      "antworten": [
+       "Because all the other black pieces are pinned.",
+       "Two pieces give check at the same time; capturing or interposing only stops one of them.",
+       "Because the rules never allow Black to capture with the queen while in check."
+      ],
+      "richtig": 1,
+      "erklaerung": "Against a double check, only a king move helps. Here d8 and f8 remain, and on both squares Re8# follows."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.12",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "5. The double check",
+   "fen": "4k3/pbpp1ppp/1q1N4/7r/8/8/PP3PPP/2BQR1K1 b - - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e1",
+     "nach": "e8"
+    },
+    {
+     "farbe": "rot",
+     "von": "d6",
+     "nach": "e8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nd6++"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: two checks at once.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.11",
+    "7.13"
+   ],
+   "beispiel": {
+    "id": "k07-a11",
+    "pfad": [
+     "Nd6+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 369
+   },
+   "pruefsumme": "e63de34072d734b9"
+  },
+  {
+   "id": "7.13",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "5. The double check",
+   "fen": "4Rk2/pbpp1ppp/1q1N4/7r/8/8/PP3PPP/2BQ2K1 b - - 3 2",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d6",
+     "nach": "e8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e7"
+    },
+    {
+     "farbe": "rot",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kf8 2. Re8#"
+    },
+    {
+     "art": "text",
+     "text": ". Gray: the knight defends the rook. Red: the rook controls e7 and g8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.11",
+    "7.12"
+   ],
+   "beispiel": {
+    "id": "k07-a11",
+    "pfad": [
+     "Nd6+",
+     "Kf8",
+     "Re8#"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 370
+   },
+   "pruefsumme": "e619fc460bbd55f5"
+  },
+  {
+   "id": "7.14",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "6. Bait, decoy and clearance",
+   "fen": "r5k1/pp3pp1/3q4/6N1/8/2P5/PP3PP1/4R1KR w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h1",
+     "nach": "h8"
+    },
+    {
+     "farbe": "rot",
+     "von": "g5",
+     "nach": "f7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "f7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Decoy, White to move. Gray: the king defends f7. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rh8+!"
+    },
+    {
+     "art": "text",
+     "text": " Red: the fork ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Nxf7+"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.15",
+    "7.16"
+   ],
+   "beispiel": {
+    "id": "k07-a14",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 390
+   },
+   "pruefsumme": "65459fdc5ceeeb53",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Rh8+",
+      "frage": "Why does White give up a rook with 1. Rh8+?",
+      "antworten": [
+       "The king must go to h8; then it no longer defends f7, and Nxf7+ forks the king and queen.",
+       "After Kxh8, White wants to mate with the queen on the h-file.",
+       "The rook on h1 is lost anyway, so it takes something with it."
+      ],
+      "richtig": 0,
+      "erklaerung": "The rook is the bait. For it, White gets the pawn on f7 and the queen on d6."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.15",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "6. Bait, decoy and clearance",
+   "fen": "r6k/pp3Np1/3q4/8/8/2P5/PP3PP1/4R1K1 b - - 0 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "h8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "d6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rh8+ Kxh8 2. Nxf7+"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the knight attacks the king and queen at the same time.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.14",
+    "7.16"
+   ],
+   "beispiel": {
+    "id": "k07-a14",
+    "pfad": [
+     "Rh8+",
+     "Kxh8",
+     "Nxf7+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 391
+   },
+   "pruefsumme": "94b0877b60584252"
+  },
+  {
+   "id": "7.16",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "6. Bait, decoy and clearance",
+   "fen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b2",
+     "nach": "h8"
+    },
+    {
+     "farbe": "rot",
+     "von": "d6",
+     "nach": "f7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Petrosian–Spassky (Moscow 1966) from Chapter 6, White to move. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "30. Qh8+!"
+    },
+    {
+     "art": "text",
+     "text": " Red: the fork ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "31. Nxf7+"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.14",
+    "7.15"
+   ],
+   "beispiel": {
+    "id": "k07-a16",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 392
+   },
+   "pruefsumme": "2e5abf3433cef7cc"
+  },
+  {
+   "id": "7.17",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "6. Bait, decoy and clearance",
+   "fen": "r6k/1p3pRp/8/5N2/8/q7/P4P1P/6QK w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "g7",
+     "nach": "h7"
+    },
+    {
+     "farbe": "rot",
+     "von": "g1",
+     "nach": "g7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Clearance, White to move. Red: the queen on g1 wants to go to g7. Gray: White's own rook is standing there. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rxh7+!"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a17",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 413
+   },
+   "pruefsumme": "6076385b5ac2f550",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Rxh7+",
+      "frage": "Why does White sacrifice the rook with 1. Rxh7+?",
+      "antworten": [
+       "It wins the pawn on h7 and gives White's own king some air.",
+       "It wins the pawn on h7 and hopes that Black won't recapture.",
+       "It clears the square g7 with check, so that the queen can mate there."
+      ],
+      "richtig": 2,
+      "erklaerung": "After Kxh7, the queen goes to g7 along the open g-file. The knight on f5 defends it, and the king has no square left."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.18",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "7. Removing the defender",
+   "fen": "q1r3k1/pp1b1ppp/2n5/1B1N4/8/8/PPQ2PPP/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b5",
+     "nach": "c6"
+    },
+    {
+     "farbe": "rot",
+     "von": "c6",
+     "nach": "e7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "e7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Red: the knight on c6 is the only defender of e7. Gold: the bishop on b5 can capture it.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.19"
+   ],
+   "beispiel": {
+    "id": "k07-a18",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 440
+   },
+   "pruefsumme": "0c6ba52d457eb30e",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Bxc6",
+      "frage": "Why does White capture the knight first with 1. Bxc6?",
+      "antworten": [
+       "Because bishop and knight are worth the same and White wants to simplify.",
+       "It is the only defender of e7; without it, Ne7+ forks the king and the rook on c8.",
+       "To weaken the pawn on b7."
+      ],
+      "richtig": 1,
+      "erklaerung": "First the defender falls, then comes the tactic. However Black recaptures, Ne7+ then wins material."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.19",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "7. Removing the defender",
+   "fen": "q1r3k1/pp2Nppp/2b5/8/8/8/PPQ2PPP/3R2K1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e7",
+     "nach": "g8"
+    },
+    {
+     "farbe": "rot",
+     "von": "e7",
+     "nach": "c8"
+    },
+    {
+     "farbe": "rot",
+     "von": "e7",
+     "nach": "c6"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bxc6 Bxc6 2. Ne7+"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the knight attacks the king, rook and bishop at the same time.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.18"
+   ],
+   "beispiel": {
+    "id": "k07-a18",
+    "pfad": [
+     "Bxc6",
+     "Bxc6",
+     "Ne7+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 441
+   },
+   "pruefsumme": "692574aba32cbecb"
+  },
+  {
+   "id": "7.20",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "8. Overloading and deflection",
+   "fen": "3r2k1/pp3ppp/1q6/3n4/8/1B6/PPQ2PPP/4R1K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "b3",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "d8",
+     "nach": "d5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "e8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Overloading, White to move. Gray: the rook on d8 defends the knight on d5. Red: at the same time it must guard the back rank against Re8. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bxd5!"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a20",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 451
+   },
+   "pruefsumme": "82b3b66d3125b316",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Bxd5",
+      "frage": "Why does 1. Bxd5 win a piece?",
+      "antworten": [
+       "After the capture, Black is in check.",
+       "The knight on d5 was undefended anyway.",
+       "If the rook on d8 recaptures, it leaves the back rank, and Re8 is mate."
+      ],
+      "richtig": 2,
+      "erklaerung": "The knight's only defender is the rook on d8, and it is needed on the back rank. Black stays a piece down."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.21",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "9. The intermezzo",
+   "fen": "r1bqk2r/ppp2ppp/2p2n2/2b3B1/4P3/3P4/PPP2PPP/RN1QKB1R b KQkq - 2 6",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g5",
+     "nach": "d8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Stafford Gambit from Chapter 3 after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. e4 e5 2. Nf3 Nf6 3. Nxe5 Nc6 4. Nxc6 dxc6 5. d3 Bc5 6. Bg5??"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gray: the relative pin.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.22"
+   ],
+   "beispiel": {
+    "id": "k07-a3",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nf6",
+     "Nxe5",
+     "Nc6",
+     "Nxc6",
+     "dxc6",
+     "d3",
+     "Bc5",
+     "Bg5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 492
+   },
+   "pruefsumme": "7df1f3c55eaefc1d",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "6... Nxe4",
+      "frage": "Why may Black play 6... Nxe4 here, even though the queen on d8 is hanging?",
+      "antworten": [
+       "After Bxd8, Bxf2+ and Bg4# follow: the mate is worth more than the queen.",
+       "Because a pin stops White from capturing the queen.",
+       "Because the knight on e4 then forks the bishop on g5 and the pawn on c2."
+      ],
+      "richtig": 0,
+      "erklaerung": "After Bxf2+, the king only has e2, because the knight on e4 covers d2 and f2. Then Bg4 is mate."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.22",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "9. The intermezzo",
+   "fen": "r1bBk2r/ppp2ppp/2p5/8/4n3/3P4/PPP2bPP/RN1QKB1R w KQkq - 0 8",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e4",
+     "nach": "f2"
+    },
+    {
+     "farbe": "rot",
+     "von": "e4",
+     "nach": "d2"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "6... Nxe4! 7. Bxd8?? Bxf2+!"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red: the knight on e4 covers f2 and d2.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.21"
+   ],
+   "beispiel": {
+    "id": "k07-a3",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nf6",
+     "Nxe5",
+     "Nc6",
+     "Nxc6",
+     "dxc6",
+     "d3",
+     "Bc5",
+     "Bg5",
+     "Nxe4",
+     "Bxd8",
+     "Bxf2+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 493
+   },
+   "pruefsumme": "4a8c2a565e4178a9"
+  },
+  {
+   "id": "7.23",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "9. The intermezzo",
+   "fen": "r3r1k1/ppq2ppp/8/8/8/7P/P3QPP1/R1R3K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e8",
+     "nach": "e2"
+    },
+    {
+     "farbe": "grau",
+     "von": "c1",
+     "nach": "c7"
+    },
+    {
+     "farbe": "gold",
+     "von": "e2",
+     "nach": "e8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Desperado, White to move. Red: the rook on e8 attacks the queen on e2. Gray: the rook on c1 attacks the queen on c7. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qxe8+!"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a23",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 512
+   },
+   "pruefsumme": "4ff9736c5800bcae",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Qxe8+",
+      "frage": "Why does White capture on e8 first instead of taking the queen on c7 right away?",
+      "antworten": [
+       "Because the rook on c1 is pinned to the king.",
+       "White's own queen is under attack anyway; this way it takes the rook on e8 with it first.",
+       "Because Qxe8 is mate."
+      ],
+      "richtig": 1,
+      "erklaerung": "A desperado: after 1. Rxc7, Black would simply take the queen on e2. With Qxe8+ Rxe8 Rxc7, White stays a rook up."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.24",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "10. The trapped piece",
+   "fen": "4r1k1/1p3ppp/8/8/8/1P6/b1P2PPP/2KR4 b - - 0 2",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "c1",
+     "nach": "b2"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "a2"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b1"
+    },
+    {
+     "farbe": "grau",
+     "feld": "b3"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Bxa2? 2. b3!"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Red: the bishop on a2 is shut in. Gray: the king covers b1, and the pawn on c2 covers b3. Gold: White threatens Kb2.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.25"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 530
+   },
+   "pruefsumme": "e0cd0ea89935da43"
+  },
+  {
+   "id": "7.25",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "10. The trapped piece",
+   "fen": "r2qkbnr/3b1ppp/p2p4/1p1Q4/2p1P3/1B6/PPP2PPP/RNB1K2R w KQkq - 0 12",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "b5",
+     "nach": "a4"
+    },
+    {
+     "farbe": "rot",
+     "von": "b5",
+     "nach": "c4"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "b3"
+    },
+    {
+     "farbe": "grau",
+     "feld": "a2"
+    },
+    {
+     "farbe": "grau",
+     "feld": "c2"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "The Noah's Ark Trap from Chapter 4 after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "11. Qd5 c4!"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Red: the pawn on b5 covers a4 and c4. Gray: a2 and c2 are occupied by White's own pawns.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.24"
+   ],
+   "beispiel": {
+    "id": "k07-a25",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bb5",
+     "a6",
+     "Ba4",
+     "d6",
+     "d4",
+     "b5",
+     "Bb3",
+     "Nxd4",
+     "Nxd4",
+     "exd4",
+     "Qxd4",
+     "c5",
+     "Qd5",
+     "Be6",
+     "Qc6+",
+     "Bd7",
+     "Qd5",
+     "c4"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 531
+   },
+   "pruefsumme": "bb228efbac088b4e",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why can the bishop on b3 no longer be saved?",
+      "antworten": [
+       "It is pinned to the king.",
+       "White must first save the attacked queen on d5.",
+       "All its squares are covered or occupied by its own pawns: it is a trapped piece."
+      ],
+      "richtig": 2,
+      "erklaerung": "A Noah's Ark Trap: the pawn on b5 guards a4 and c4, and White's own pawns stand on a2 and c2. For the bishop, White only gets pawns."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.26",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "11. Tactics around promotion",
+   "fen": "8/pb2P1kp/5q2/8/8/B7/6PP/7K w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "e7",
+     "nach": "e8"
+    },
+    {
+     "farbe": "rot",
+     "von": "f6",
+     "nach": "f1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Red: Black threatens Qf1#. Gold: the promotion on e8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a26",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 548
+   },
+   "pruefsumme": "24c8469d9c90fee7",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. e8=N+",
+      "frage": "Why does White promote to a knight with 1. e8=N+?",
+      "antworten": [
+       "In the endgame, a knight is stronger than a queen.",
+       "After 1. e8=Q, Black could capture the new queen right away.",
+       "Only the knight gives check and attacks the queen on f6; after e8=Q, Black mates with Qf1."
+      ],
+      "richtig": 2,
+      "erklaerung": "Because of the check, Black has no time for Qf1. Then the knight captures the queen on f6, and the danger of mate is over."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.27",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "12. Rescue by perpetual check and stalemate",
+   "fen": "6k1/2QR1ppp/8/8/4q3/6P1/PP5P/6K1 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d7",
+     "nach": "d8"
+    },
+    {
+     "farbe": "gold",
+     "von": "e4",
+     "nach": "e1"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Black to move. Red: White threatens Rd8+ with mate. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qe1+"
+    },
+    {
+     "art": "text",
+     "text": ".",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.28"
+   ],
+   "beispiel": {
+    "id": "k07-a27",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 567
+   },
+   "pruefsumme": "1c533bc0ac09ccad",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1... Qe1+",
+      "frage": "Why does Black give one check after another with 1... Qe1+?",
+      "antworten": [
+       "Black wants to drive the king back to the back rank and mate it there.",
+       "Black is lost and saves a draw with perpetual check.",
+       "Black wants to win the pawn on b2 with check."
+      ],
+      "richtig": 1,
+      "erklaerung": "The white king finds no hiding place from the queen checks. For Black, a draw is the best result here."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.28",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "12. Rescue by perpetual check and stalemate",
+   "fen": "6k1/2QR1ppp/8/8/8/6P1/PP2q1KP/8 w - - 3 3",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "g2",
+     "nach": "g1"
+    },
+    {
+     "farbe": "grau",
+     "von": "g2",
+     "nach": "h3"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qe1+ 2. Kg2 Qe2+"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. Gray: the next check is waiting on g1 and h3.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.27"
+   ],
+   "beispiel": {
+    "id": "k07-a27",
+    "pfad": [
+     "Qe1+",
+     "Kg2",
+     "Qe2+"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 568
+   },
+   "pruefsumme": "fcca7e9ea997df6f"
+  },
+  {
+   "id": "7.29",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.2",
+    "label": "sec:k7-motive",
+    "titel": "The twelve basic motifs"
+   },
+   "unterabschnitt": "12. Rescue by perpetual check and stalemate",
+   "fen": "5r1k/6pp/8/3Q4/3b4/7p/1q5P/7K w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "d5",
+     "nach": "g8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g1"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g2"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Gray: the bishop on d4 covers g1, the pawn on h3 covers g2, and the pawn on h2 is blocked. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qg8+!!"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a29",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 577
+   },
+   "pruefsumme": "986d1195e1dfb932",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Qg8+",
+      "frage": "Why does White sacrifice the queen with 1. Qg8+?",
+      "antworten": [
+       "After the capture on g8, White has no legal move left: stalemate, so a draw.",
+       "After Kxg8, White wins the rook on f8.",
+       "The queen mates on g8."
+      ],
+      "richtig": 0,
+      "erklaerung": "Black must capture the queen, with the king or the rook. In both cases, White is stalemated. Every other move loses, because Black will soon mate."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.30",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Calculate instead of hoping: the exchange on one square"
+   },
+   "unterabschnitt": null,
+   "fen": "3r2k1/p3bppp/4pn2/3p4/8/2N1P1P1/PP3PBP/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c3",
+     "nach": "d5"
+    },
+    {
+     "farbe": "rot",
+     "von": "g2",
+     "nach": "d5"
+    },
+    {
+     "farbe": "rot",
+     "von": "d1",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "e6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "d8",
+     "nach": "d5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Red: the knight on c3, the bishop on g2 and the rook on d1 attack d5 three times. Gray: the pawn on e6, the knight on f6 and the rook on d8 defend it three times.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.31",
+    "7.32"
+   ],
+   "beispiel": {
+    "id": "k07-a30",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 603
+   },
+   "pruefsumme": "1c3623c3ed736f7d",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "frage": "Why shouldn't White capture on d5 here?",
+      "antworten": [
+       "Because the pawn on d5 is poisoned: afterwards mate is threatened.",
+       "Because three defenders face three attackers and Black captures with the cheaper material.",
+       "Because White would lose the right to castle."
+      ],
+      "richtig": 1,
+      "erklaerung": "You count not only the number but also the value. In the end, White has given much more material than White got back."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.31",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Calculate instead of hoping: the exchange on one square"
+   },
+   "unterabschnitt": null,
+   "fen": "3r2k1/p3bppp/8/3n4/8/4P1P1/PP3P1P/3R2K1 w - - 0 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "d1",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "d8",
+     "nach": "d5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nxd5? exd5 2. Bxd5 Nxd5"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. White has given two minor pieces for two pawns. Red: the rook on d1 is still attacking. Gray: the rook on d8 defends.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.30",
+    "7.32"
+   ],
+   "beispiel": {
+    "id": "k07-a30",
+    "pfad": [
+     "Nxd5",
+     "exd5",
+     "Bxd5",
+     "Nxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 604
+   },
+   "pruefsumme": "a51b3b7261738b9f"
+  },
+  {
+   "id": "7.32",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Calculate instead of hoping: the exchange on one square"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/p3bppp/8/3r4/8/4P1P1/PP3P1P/6K1 w - - 0 4",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Rxd5 Rxd5"
+    },
+    {
+     "art": "text",
+     "text": ", White to move. The balance: 5 won, 11 lost.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.30",
+    "7.31"
+   ],
+   "beispiel": {
+    "id": "k07-a30",
+    "pfad": [
+     "Nxd5",
+     "exd5",
+     "Bxd5",
+     "Nxd5",
+     "Rxd5",
+     "Rxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 605
+   },
+   "pruefsumme": "8c894172080a87e9"
+  },
+  {
+   "id": "7.33",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Calculate instead of hoping: the exchange on one square"
+   },
+   "unterabschnitt": "Pieces behind pieces count too",
+   "fen": "r2r2k1/pp3ppp/5n2/3p4/8/2N4P/PP1R1PP1/3R2K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "c3",
+     "nach": "d5"
+    },
+    {
+     "farbe": "rot",
+     "von": "d2",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "d5"
+    },
+    {
+     "farbe": "grau",
+     "von": "d8",
+     "nach": "d5"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "gold",
+     "feld": "d1"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Red: the knight on c3 and the rook on d2 attack d5. Gray: the knight on f6 and the rook on d8 defend it. Gold: the rook on d1 behind the rook on d2, the third attacker.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.34"
+   ],
+   "beispiel": {
+    "id": "k07-a33",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 627
+   },
+   "pruefsumme": "39ce7695bab6af25",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Nxd5",
+      "frage": "Why does 1. Nxd5 win the pawn on d5?",
+      "antworten": [
+       "The rook on d1 behind the rook on d2 is a third attacker; Black only has two defenders.",
+       "The pawn on d5 isn't defended at all.",
+       "After Nxd5, the knight on f6 is pinned."
+      ],
+      "richtig": 0,
+      "erklaerung": "After Nxd5 Nxd5 Rxd5 Rxd5 Rxd5, White stays a pawn up. It is important to start with the cheapest piece."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.34",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.3",
+    "label": "sec:k7-abtausch",
+    "titel": "Calculate instead of hoping: the exchange on one square"
+   },
+   "unterabschnitt": "Pieces behind pieces count too",
+   "fen": "r2r2k1/pp3ppp/8/3R4/8/7P/PP3PP1/3R2K1 b - - 0 2",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "d1",
+     "nach": "d5"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nxd5 Nxd5 2. Rxd5"
+    },
+    {
+     "art": "text",
+     "text": ", Black to move. Gray: the rook on d1 defends the rook on d5.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.33"
+   ],
+   "beispiel": {
+    "id": "k07-a33",
+    "pfad": [
+     "Nxd5",
+     "Nxd5",
+     "Rxd5"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 628
+   },
+   "pruefsumme": "dad3e44027697292"
+  },
+  {
+   "id": "7.35",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "The back-rank mate",
+   "fen": "6rk/p4Npp/1q6/8/8/8/5PPP/6K1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "f7",
+     "nach": "h8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Smothered mate after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qg8+ Rxg8 2. Nf7#"
+    },
+    {
+     "art": "text",
+     "text": ". Red: the check. Gray: squares occupied by the king's own pieces.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.36"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 665
+   },
+   "pruefsumme": "4d600f2473fdf174"
+  },
+  {
+   "id": "7.36",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "The back-rank mate",
+   "fen": "4R1k1/5ppp/8/8/8/8/5PPP/6K1 b - - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "e8",
+     "nach": "g8"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "f8"
+    },
+    {
+     "farbe": "rot",
+     "feld": "h8"
+    },
+    {
+     "farbe": "grau",
+     "feld": "f7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g7"
+    },
+    {
+     "farbe": "grau",
+     "feld": "h7"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Back-rank mate after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Re8#"
+    },
+    {
+     "art": "text",
+     "text": ". Red: the check; the rook controls f8 and h8. Gray: the king's own pawns.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.35"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 666
+   },
+   "pruefsumme": "d62e8c6ba513f5f1"
+  },
+  {
+   "id": "7.37",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "Queen sacrifice on h7 and Anastasia's mate",
+   "fen": "1q3r1k/4Nppp/8/7Q/8/3R4/5PPP/6K1 w - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "gold",
+     "von": "h5",
+     "nach": "h7"
+    },
+    {
+     "farbe": "gold",
+     "von": "d3",
+     "nach": "h3"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Gold: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qxh7+!! Kxh7"
+    },
+    {
+     "art": "text",
+     "text": " (the only move) and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Rh3#"
+    },
+    {
+     "art": "text",
+     "text": ". Gray: the knight on e7 blocks g6 and g8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.38"
+   ],
+   "beispiel": {
+    "id": "k07-a37",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 680
+   },
+   "pruefsumme": "739a6e0574401319",
+   "vorbereitet": {
+    "status": "freigegeben",
+    "fragen": [
+     {
+      "zug": "1. Qxh7+",
+      "frage": "Why does White give up the queen with 1. Qxh7+?",
+      "antworten": [
+       "To win the pawn on h7 and then trade queens.",
+       "Because otherwise the queen on h5 would be lost.",
+       "The king must go to h7, and there Rh3 is mate; the knight blocks g6 and g8."
+      ],
+      "richtig": 2,
+      "erklaerung": "Kxh7 is the only move. Then the rook comes along the third rank to the h-file: Anastasia's mate."
+     }
+    ]
+   }
+  },
+  {
+   "id": "7.38",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "Queen sacrifice on h7 and Anastasia's mate",
+   "fen": "1q3r2/4Nppk/8/8/8/7R/5PPP/6K1 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h3",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "grau",
+     "feld": "g6"
+    },
+    {
+     "farbe": "grau",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Anastasia's mate. Gray: the knight on e7 blocks g6 and g8. Red: the rook on h3 controls the h-file.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.37"
+   ],
+   "beispiel": {
+    "id": "k07-a37",
+    "pfad": [
+     "Qxh7+",
+     "Kxh7",
+     "Rh3#"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 681
+   },
+   "pruefsumme": "26724f6f01929a89"
+  },
+  {
+   "id": "7.39",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "Arabian mate and staircase mate",
+   "fen": "r6k/ppp4R/5N2/8/8/8/PPP3PP/6K1 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "h7"
+    }
+   ],
+   "felder": [
+    {
+     "farbe": "rot",
+     "feld": "g7"
+    },
+    {
+     "farbe": "rot",
+     "feld": "g8"
+    }
+   ],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Arabian mate. Red: the rook on h7 controls g7, the knight controls g8. Gray: the knight defends the rook.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.40"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 694
+   },
+   "pruefsumme": "ea8d403efd9cae0f"
+  },
+  {
+   "id": "7.40",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "Arabian mate and staircase mate",
+   "fen": "R3k3/1R6/6p1/7p/8/2K5/7r/8 b - - 0 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "a8",
+     "nach": "e8"
+    },
+    {
+     "farbe": "grau",
+     "von": "b7",
+     "nach": "h7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Staircase mate. Gray: the rook on b7 blocks the 7th rank. Red: the rook on a8 gives check on the 8th rank.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.39"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 695
+   },
+   "pruefsumme": "4fb556b295761981"
+  },
+  {
+   "id": "7.41",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "Three mating patterns against the pawn shield",
+   "fen": "2kr4/3n4/B1p5/8/5B2/8/8/2K5 b - - 1 2",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "a6",
+     "nach": "c8"
+    },
+    {
+     "farbe": "grau",
+     "von": "f4",
+     "nach": "b8"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Boden's mate. Red: the bishop on a6 gives check and controls b7. Gray: the bishop on f4 controls c7 and b8. The king's own pieces stand on d7 and d8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.42",
+    "7.43"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 721
+   },
+   "pruefsumme": "832da8488f657346"
+  },
+  {
+   "id": "7.42",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "Three mating patterns against the pawn shield",
+   "fen": "5rk1/5ppQ/6P1/8/8/8/8/6K1 b - - 2 3",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "h7",
+     "nach": "g8"
+    },
+    {
+     "farbe": "grau",
+     "von": "g6",
+     "nach": "h7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Damiano's mate. Red: the queen gives check and controls h8. Gray: the pawn on g6 defends it. The king's own pieces stand on f7, g7 and f8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.41",
+    "7.43"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 722
+   },
+   "pruefsumme": "e33931d14cc24547"
+  },
+  {
+   "id": "7.43",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.4",
+    "label": "sec:k7-mattbilder",
+    "titel": "Typical mating patterns"
+   },
+   "unterabschnitt": "Three mating patterns against the pawn shield",
+   "fen": "5rk1/5pQp/5Pp1/8/8/8/8/6K1 b - - 1 1",
+   "pfeile": [
+    {
+     "farbe": "rot",
+     "von": "g7",
+     "nach": "g8"
+    },
+    {
+     "farbe": "grau",
+     "von": "f6",
+     "nach": "g7"
+    }
+   ],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Lolli's mate. Red: the queen gives check and controls h8. Gray: the pawn on f6 defends it. The king's own pieces stand on f7, h7 and f8.",
+     "stil": "normal"
+    }
+   ],
+   "art": "fliesstext",
+   "reihe": [
+    "7.41",
+    "7.42"
+   ],
+   "beispiel": null,
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 723
+   },
+   "pruefsumme": "8eda511e6de378a5"
+  },
+  {
+   "id": "7.44",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "8/6k1/8/8/8/7p/1q3p1P/4R2K w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move. Black threatens fxe1=Q#.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a44",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 785
+   },
+   "pruefsumme": "912d1f97b7b56ece"
+  },
+  {
+   "id": "7.45",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/pp3ppp/2n5/8/8/2N4P/1r3PP1/4R1K1 b - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "Black to move.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a45-k",
+    "pfad": [
+     "e4",
+     "e5",
+     "Nf3",
+     "Nc6",
+     "Bc4",
+     "Bc5",
+     "c3",
+     "Nf6",
+     "d4",
+     "exd4",
+     "O-O",
+     "Nxe4",
+     "cxd4",
+     "d5",
+     "dxc5",
+     "dxc4",
+     "Qc2",
+     "Nxc5",
+     "Qxc4",
+     "Ne6",
+     "Nc3",
+     "Ncd4",
+     "Nxd4",
+     "Qxd4",
+     "Qxd4",
+     "Nxd4",
+     "Bf4",
+     "Bf5",
+     "Bxc7",
+     "O-O",
+     "Rad1",
+     "Nc6",
+     "Rfe1",
+     "Rfe8",
+     "h3",
+     "Rxe1+",
+     "Rxe1",
+     "Bd7",
+     "a4",
+     "Be6",
+     "Bd6",
+     "Rd8",
+     "Bf4",
+     "Rd4",
+     "Be3",
+     "Rb4",
+     "Bc5",
+     "Rxb2",
+     "Bb6",
+     "Rxb6",
+     "Nd5",
+     "Rb2",
+     "Nc3",
+     "Kf8",
+     "a5",
+     "Bd5",
+     "Nxd5",
+     "Nxa5",
+     "Nc3",
+     "Nc6",
+     "Rd1",
+     "Kg8",
+     "Re1"
+    ]
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 793
+   },
+   "pruefsumme": "b985f9ba2901188f"
+  },
+  {
+   "id": "7.46",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in two.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a46",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 803
+   },
+   "pruefsumme": "ecd7f41afae51762"
+  },
+  {
+   "id": "7.47",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "r1b1k2r/pp1pqppp/5n2/1N2p3/2B1P3/8/PPP1QPPP/R4RK1 w kq - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a47",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 818
+   },
+   "pruefsumme": "12dd484c37d6990c"
+  },
+  {
+   "id": "7.48",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/p4ppp/1p6/q3n3/8/1P2Q3/P1r2PPP/3R2K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a48",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 824
+   },
+   "pruefsumme": "89a003985006081c"
+  },
+  {
+   "id": "7.49",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "6q1/r7/4k3/1p2p3/8/8/2B2PPP/3R2K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a49",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 830
+   },
+   "pruefsumme": "020e31763605a93c"
+  },
+  {
+   "id": "7.50",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "3r1rk1/pp4pp/2n5/3q4/8/1P6/P1Q1BPPP/R3R1K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a50",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 836
+   },
+   "pruefsumme": "d6520f4fef592217"
+  },
+  {
+   "id": "7.51",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pp4pp/2n2n2/3N4/8/1B4Pq/PP3P1P/R2Q1RK1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins the queen.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a51",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 842
+   },
+   "pruefsumme": "adb2cfd76d988bc6"
+  },
+  {
+   "id": "7.52",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "6k1/pp3ppp/4q3/n2N4/8/8/PP2BPPP/2R3K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a52",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 848
+   },
+   "pruefsumme": "8490a6e7365185dd"
+  },
+  {
+   "id": "7.53",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "3q2k1/ppn2ppp/8/8/6b1/8/PPQ2PPP/4R1K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins material.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a53",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 854
+   },
+   "pruefsumme": "a0b6e878da7da982"
+  },
+  {
+   "id": "7.54",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "r1r4k/p1pR3p/1p6/8/4N3/8/2P2PPP/6K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in two.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a54",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 860
+   },
+   "pruefsumme": "ef12cf5b1e6165d7"
+  },
+  {
+   "id": "7.55",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "r3r2k/pp4pp/8/6N1/2Q5/q7/PP3PPP/6K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in four moves.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a55",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 866
+   },
+   "pruefsumme": "febbd7e7f0325d99"
+  },
+  {
+   "id": "7.56",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in three.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a56",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 872
+   },
+   "pruefsumme": "680ab6503f839b96"
+  },
+  {
+   "id": "7.57",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pb2qppp/1p3n2/2p4Q/8/2NB1R2/PP3PPP/R5K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move wins at least a piece or mates.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a57",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 878
+   },
+   "pruefsumme": "5082e96d31bfbb7e"
+  },
+  {
+   "id": "7.58",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "rq3rk1/pb3ppp/8/3N1R1Q/8/8/PP3PPP/6K1 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in three.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a58",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 884
+   },
+   "pruefsumme": "023a4b15fa6f18ac"
+  },
+  {
+   "id": "7.59",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "2kr3r/pp1n1ppp/2n5/8/Q4B2/8/PP2BPPP/2KR4 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in two.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a59",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 890
+   },
+   "pruefsumme": "66fc1e69d9f7d1da"
+  },
+  {
+   "id": "7.60",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pp3pp1/2p3P1/3Q4/8/8/PP6/1K5R w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in three.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a60",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 896
+   },
+   "pruefsumme": "d75392a168b1b628"
+  },
+  {
+   "id": "7.61",
+   "auflage": 1,
+   "kapitel": 7,
+   "abschnitt": {
+    "nummer": "7.5",
+    "label": "",
+    "titel": "Review: tactics"
+   },
+   "unterabschnitt": null,
+   "fen": "r4rk1/pp3p1p/5Pp1/8/8/8/PP1Q4/1K6 w - - 0 1",
+   "pfeile": [],
+   "felder": [],
+   "unterschrift": [
+    {
+     "art": "text",
+     "text": "White to move mates in two.",
+     "stil": "normal"
+    }
+   ],
+   "art": "uebung",
+   "reihe": [],
+   "beispiel": {
+    "id": "k07-a61",
+    "pfad": []
+   },
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 902
+   },
+   "pruefsumme": "e8a2fb080e894c05"
+  }
+ ],
+ "uebungen": [
+  {
+   "id": "ueb:taktik-rettung",
+   "nummer": 32,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.44"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "White is lost. Find the only move that holds the draw, and explain why Black cannot escape it.",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "1. Re7+!"
+    },
+    {
+     "art": "text",
+     "text": " The rook gives check without a break, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kf6 2. Re6+ Kf5 3. Re5+"
+    },
+    {
+     "art": "text",
+     "text": ". If Black captures it, with the king or the queen, White is stalemated: the pawn on f2 covers g1, the pawn on h3 covers g2, and the pawn on h2 is blocked. If the king steps aside, the next check follows. White only avoids squares where the rook would be captured with check: the first rank (there the queen or the pawn on f2 captures with promotion) and the square b7. All other moves lose, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Re8? f1=Q#"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rg1+? fxg1=Q+ 2. Kxg1 Qg2#"
+    },
+    {
+     "art": "text",
+     "text": ". Remember: if your king has no move left, a piece that gives check after check becomes your rescue.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 783
+   },
+   "erklaerung": {
+    "loesung": "1. Re7+!",
+    "akzeptiert": [],
+    "motiv": "Desperado rook and stalemate",
+    "text": "1. Re7+! gives check after check; if Black captures the rook, White is stalemated because White's king has no square. White only avoids the first rank and the square b7, where the rook would be captured with check."
+   }
+  },
+  {
+   "id": "ueb:luftloch-verteidigung",
+   "nummer": 33,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.45"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Which white move is threatened in ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 7.45",
+     "abbildung": "7.45"
+    },
+    {
+     "art": "text",
+     "text": ", and why would it be mate? Name a concrete pawn move with which Black prevents the mate, and explain why. Which preventive move has White already played?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "White threatens ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Re8#"
+    },
+    {
+     "art": "text",
+     "text": ", because the pawns on f7, g7 and h7 take all the squares on the 7th rank from the king, and no black piece can then capture on e8 or interpose on f8. A pawn move like ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...h6"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...g6"
+    },
+    {
+     "art": "text",
+     "text": " creates luft: after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "Re8+"
+    },
+    {
+     "art": "text",
+     "text": ", the king goes to h7 or g7. A piece move also helps, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "...Ne7"
+    },
+    {
+     "art": "text",
+     "text": ", which blocks the e-file. White has already taken precautions with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "h3"
+    },
+    {
+     "art": "text",
+     "text": ": if a black rook comes to the first rank with check, the white king has the square h2. Remember: luft costs a pawn move; the back-rank mate costs the game.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 791
+   },
+   "erklaerung": {
+    "loesung": null,
+    "akzeptiert": [],
+    "motiv": "Preventing the back-rank mate",
+    "text": "White threatens Re8#, because Black's own pawns block the 7th rank for the black king. Luft such as ...h6 or ...g6, or a blocking move such as ...Ne7, prevents it; White has already taken precautions with h3."
+   }
+  },
+  {
+   "id": "ueb:morphy-opfer-checkliste",
+   "nummer": 34,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.46"
+   ],
+   "aufgabe": [
+    {
+     "art": "text",
+     "text": "Find the combination. Then answer the questions from steps 2 and 3 of your tool for the first move: What kind of forcing move is it? Does Black have an intermezzo? What role does the balance play?",
+     "stil": "normal"
+    }
+   ],
+   "loesung": [
+    {
+     "art": "zug",
+     "text": "16. Qb8+!! Nxb8 17. Rd8#"
+    },
+    {
+     "art": "text",
+     "text": ", and the bishop on g5 defends the rook. This is how Morphy's famous Opera Game (Paris 1858) ended; you will play through the whole game in Chapter 11. On the questions: the first move is a ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "check",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": ": Black must respond. An intermezzo is impossible, because a king in check must be helped at once. The only legal reply is therefore ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "16... Nxb8"
+    },
+    {
+     "art": "text",
+     "text": ". The balance plays no role: White does give the queen for a knight, but the mate ends the game. Remember: if the line ends in mate, material doesn't count.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 801
+   },
+   "erklaerung": {
+    "loesung": "16. Qb8+!! Nxb8 17. Rd8#",
+    "akzeptiert": [],
+    "motiv": "Queen sacrifice and back-rank mate",
+    "text": "16. Qb8+!! forces 16... Nxb8, and then 17. Rd8# is mate, defended by the bishop on g5. There is no intermezzo against a check, and because the line ends in mate, the sacrificed material doesn't count."
+   }
+  },
+  {
+   "id": "ueb:taktik-a01",
+   "nummer": 35,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.47"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Fork: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nc7+!"
+    },
+    {
+     "art": "text",
+     "text": " attacks the king on e8 and the rook on a8. The queen on e7 cannot capture on c7, because the pawn on d7 is in the way. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kd8"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kf8"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Nxa8"
+    },
+    {
+     "art": "text",
+     "text": " follows. The knight will hardly get out of the corner again. But even if Black wins it later, White has got a rook for a knight, that is, the exchange. The similar ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nd6+?"
+    },
+    {
+     "art": "text",
+     "text": " fails to ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qxd6"
+    },
+    {
+     "art": "text",
+     "text": ". Remember: a fork with check leaves your opponent no time to save the second target.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 816
+   },
+   "erklaerung": {
+    "loesung": "1. Nc7+!",
+    "akzeptiert": [],
+    "motiv": "Knight fork",
+    "text": "1. Nc7+! attacks the king and the rook on a8, and the queen on e7 cannot capture on c7 because d7 is in the way. After the king move, 2. Nxa8 wins at least the exchange; 1. Nd6+? fails to 1... Qxd6."
+   }
+  },
+  {
+   "id": "ueb:taktik-a02",
+   "nummer": 36,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.48"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Back-rank mate: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rd8#"
+    },
+    {
+     "art": "text",
+     "text": ". No black piece reaches d8, e8 or f8, and the pawns on f7, g7 and h7 block the escape. The queen on a5 cannot get to d8, because its own pawn on b6 is in the way. Remember: with every back-rank move, check which enemy piece can still reach the back rank.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 822
+   },
+   "erklaerung": {
+    "loesung": "1. Rd8#",
+    "akzeptiert": [],
+    "motiv": "Back-rank mate",
+    "text": "1. Rd8# mates at once: no black piece reaches the back rank, and Black's own pawns block the escape. The queen on a5 cannot get to d8, because the pawn on b6 is in the way."
+   }
+  },
+  {
+   "id": "ueb:taktik-a03",
+   "nummer": 37,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.49"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Skewer: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bb3+!"
+    },
+    {
+     "art": "text",
+     "text": " gives check, and the king on e6 and the queen on g8 stand on the same diagonal. The king must move away (the rook on d1 controls d6 and d7, and f7 is still on the diagonal), and then ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Bxg8"
+    },
+    {
+     "art": "text",
+     "text": " follows. Remember: a skewer with check is the safest, because the king has to move.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 828
+   },
+   "erklaerung": {
+    "loesung": "1. Bb3+!",
+    "akzeptiert": [],
+    "motiv": "Skewer with check",
+    "text": "1. Bb3+! attacks the king on e6, behind which the queen on g8 stands on the same diagonal. The king must move away, and 2. Bxg8 wins the queen."
+   }
+  },
+  {
+   "id": "ueb:taktik-a04",
+   "nummer": 38,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.50"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Pin: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Bc4!"
+    },
+    {
+     "art": "text",
+     "text": " pins the queen on d5 to the king on g8, and the bishop is defended by the pawn on b3 and by the queen on c2. Black can only give the queen for the bishop, for example ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qxc4 2. Qxc4+"
+    },
+    {
+     "art": "text",
+     "text": ". If the knight attacks the queen on c2 with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Nd4"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Nb4"
+    },
+    {
+     "art": "text",
+     "text": ", White first captures with check (",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Bxd5+"
+    },
+    {
+     "art": "text",
+     "text": ") and only then takes care of the queen. Remember: against an absolutely pinned queen, a defended minor piece is enough.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 834
+   },
+   "erklaerung": {
+    "loesung": "1. Bc4!",
+    "akzeptiert": [],
+    "motiv": "Pinning the queen",
+    "text": "1. Bc4! pins the queen on d5 to the king on g8, and the bishop is defended by b3 and by the queen on c2. Black can only give the queen for the bishop; if a knight attacks the queen on c2, White first captures on d5 with check."
+   }
+  },
+  {
+   "id": "ueb:taktik-a05",
+   "nummer": 39,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.51"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Discovered check: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nf4+!"
+    },
+    {
+     "art": "text",
+     "text": " The knight opens the diagonal b3–g8, the bishop gives check, and the knight attacks the queen on h3 at the same time. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Kh8"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Rf7"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Nd5"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Nxh3"
+    },
+    {
+     "art": "text",
+     "text": " follows. If Black interposes the queen with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qe6"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Nxe6"
+    },
+    {
+     "art": "text",
+     "text": " captures it. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nxf6+"
+    },
+    {
+     "art": "text",
+     "text": " also gives check, even double check, but it leaves the queen alone. Remember: in a discovered check, the moving piece gets a free move. Look for the most valuable target for it.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 840
+   },
+   "erklaerung": {
+    "loesung": "1. Nf4+!",
+    "akzeptiert": [],
+    "motiv": "Discovered check",
+    "text": "1. Nf4+! opens the diagonal of the bishop on b3 with check, and the knight attacks the queen on h3 at the same time. Whatever Black does against the check, White wins the queen; the moving piece picks the most valuable target."
+   }
+  },
+  {
+   "id": "ueb:taktik-a06",
+   "nummer": 40,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.52"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Decoy and fork: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rc8+!"
+    },
+    {
+     "art": "text",
+     "text": " lures the queen to c8. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qxc8"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Ne7+"
+    },
+    {
+     "art": "text",
+     "text": " and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Nxc8"
+    },
+    {
+     "art": "text",
+     "text": " follow: White gives the rook and wins the queen. If the queen interposes with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qe8"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Rxe8#"
+    },
+    {
+     "art": "text",
+     "text": " is mate. The immediate ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ne7+?"
+    },
+    {
+     "art": "text",
+     "text": " fails to ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qxe7"
+    },
+    {
+     "art": "text",
+     "text": ". Remember: if the fork lacks a second target, lure it to the right square with check.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 846
+   },
+   "erklaerung": {
+    "loesung": "1. Rc8+!",
+    "akzeptiert": [],
+    "motiv": "Decoy and fork",
+    "text": "1. Rc8+! lures the queen to c8: after 1... Qxc8, the fork 2. Ne7+ wins the queen; after 1... Qe8, 2. Rxe8# is mate. The immediate 1. Ne7+? fails to 1... Qxe7."
+   }
+  },
+  {
+   "id": "ueb:taktik-a07",
+   "nummer": 41,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.53"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Overloading: the queen on d8 defends the knight on c7 ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "and",
+     "stil": "kursiv"
+    },
+    {
+     "art": "text",
+     "text": " the square e8. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qxc7!"
+    },
+    {
+     "art": "text",
+     "text": ", and ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qxc7?? 2. Re8#"
+    },
+    {
+     "art": "text",
+     "text": " would be mate. So Black must defend the queen and the back rank at the same time with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qf8"
+    },
+    {
+     "art": "text",
+     "text": ", and White stays a piece up. The immediate ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Re8+?"
+    },
+    {
+     "art": "text",
+     "text": " fails to ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qxe8"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Nxe8"
+    },
+    {
+     "art": "text",
+     "text": ". Remember: first capture what the overloaded defender is defending, not the defender itself.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 852
+   },
+   "erklaerung": {
+    "loesung": "1. Qxc7!",
+    "akzeptiert": [],
+    "motiv": "Overloading",
+    "text": "The queen on d8 must defend the knight on c7 and the square e8 at the same time. After 1. Qxc7!, it cannot recapture, because 2. Re8# would follow, and White stays a piece up."
+   }
+  },
+  {
+   "id": "ueb:taktik-a08",
+   "nummer": 42,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.54"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Arabian mate: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nf6!"
+    },
+    {
+     "art": "text",
+     "text": " (a quiet move) threatens ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Rxh7#"
+    },
+    {
+     "art": "text",
+     "text": ": the black king has no square (the knight covers g8, the rook covers g7), and Black cannot add a defender to h7, because the pawn on c7 blocks the rook on c8 from reaching the 7th rank. Against any black move, ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Rxh7#"
+    },
+    {
+     "art": "text",
+     "text": " follows; after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h6"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h5"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Rh7#"
+    },
+    {
+     "art": "text",
+     "text": ". Remember: not every combination starts with a check, because an unstoppable mate threat is just as forcing.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 858
+   },
+   "erklaerung": {
+    "loesung": "1. Nf6!",
+    "akzeptiert": [],
+    "motiv": "Arabian mate",
+    "text": "The quiet move 1. Nf6! threatens 2. Rxh7#: the knight covers g8, the rook covers g7, and Black can no longer defend h7. An unstoppable mate threat is as forcing as a check."
+   }
+  },
+  {
+   "id": "ueb:taktik-a09",
+   "nummer": 43,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.55"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Smothered mate: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Nf7+ Kg8 2. Nh6++"
+    },
+    {
+     "art": "text",
+     "text": " (double check by the knight and the queen on c4) ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kh8"
+    },
+    {
+     "art": "text",
+     "text": " (after ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kf8"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Qf7#"
+    },
+    {
+     "art": "text",
+     "text": " is mate) ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "3. Qg8+!! Rxg8 4. Nf7#"
+    },
+    {
+     "art": "text",
+     "text": ". The king may not capture the queen, because the knight on h6 covers the square g8. This sequence is called ",
+     "stil": "normal"
+    },
+    {
+     "art": "text",
+     "text": "Philidor's legacy",
+     "stil": "fett"
+    },
+    {
+     "art": "text",
+     "text": ". Remember: the queen sacrifice on g8 forces the rook to take the last square from its own king.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 864
+   },
+   "erklaerung": {
+    "loesung": "1. Nf7+ Kg8 2. Nh6++ Kh8 3. Qg8+!! Rxg8 4. Nf7#",
+    "akzeptiert": [],
+    "motiv": "Smothered mate (Philidor's legacy)",
+    "text": "After 1. Nf7+ Kg8 2. Nh6++ Kh8, the queen sacrifice 3. Qg8+!! forces the rook to take the last square from its own king. 4. Nf7# is smothered mate."
+   }
+  },
+  {
+   "id": "ueb:taktik-a10",
+   "nummer": 44,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.56"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Queen sacrifice and double check: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qd8+!! Kxd8 2. Bg5++"
+    },
+    {
+     "art": "text",
+     "text": " (bishop on g5 and rook on d1) ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kc7 3. Bd8#"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Ke8 3. Rd8#"
+    },
+    {
+     "art": "text",
+     "text": ". The position comes from the game Réti–Tartakower, Vienna 1910. Remember: a double check against a king without squares is almost always the end of the game.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 870
+   },
+   "erklaerung": {
+    "loesung": "1. Qd8+!! Kxd8 2. Bg5++",
+    "akzeptiert": [],
+    "motiv": "Queen sacrifice and double check",
+    "text": "1. Qd8+!! Kxd8 2. Bg5++ gives double check with bishop and rook, and 3. Bd8# or 3. Rd8# follows. This is how Réti–Tartakower, Vienna 1910, ended."
+   }
+  },
+  {
+   "id": "ueb:taktik-a11",
+   "nummer": 45,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.57"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Removing the defender: apart from the king, only the knight on f6 covers the square h7. ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rxf6!"
+    },
+    {
+     "art": "text",
+     "text": " After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... gxf6"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Qxf6"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Qxh7#"
+    },
+    {
+     "art": "text",
+     "text": " follows (the bishop on d3 defends the queen). If Black prevents the mate some other way (for example with ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... g6"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... h6"
+    },
+    {
+     "art": "text",
+     "text": " or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Be4"
+    },
+    {
+     "art": "text",
+     "text": "), White stays a piece ahead. After ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... g6"
+    },
+    {
+     "art": "text",
+     "text": ", ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Qh4"
+    },
+    {
+     "art": "text",
+     "text": " defends the rook. The immediate ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qxh7+?"
+    },
+    {
+     "art": "text",
+     "text": " fails to ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1... Nxh7"
+    },
+    {
+     "art": "text",
+     "text": ". Remember: a rook is a good price for the king's only defender.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 876
+   },
+   "erklaerung": {
+    "loesung": "1. Rxf6!",
+    "akzeptiert": [],
+    "motiv": "Removing the defender",
+    "text": "Besides the king, only the knight on f6 covers h7. 1. Rxf6! removes it: after the recapture, 2. Qxh7# is mate; otherwise White stays a piece ahead."
+   }
+  },
+  {
+   "id": "ueb:taktik-a12",
+   "nummer": 46,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.58"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Queen sacrifice and Anastasia's mate: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Ne7+ Kh8 2. Qxh7+!! Kxh7 3. Rh5#"
+    },
+    {
+     "art": "text",
+     "text": ". The knight on e7 blocks g6 and g8, and the rook controls the h-file. Remember: when a knight stands on e7, check the sacrifice on h7.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 882
+   },
+   "erklaerung": {
+    "loesung": "1. Ne7+ Kh8 2. Qxh7+!! Kxh7 3. Rh5#",
+    "akzeptiert": [],
+    "motiv": "Anastasia's mate",
+    "text": "The knight on e7 takes g6 and g8 from the king, so 2. Qxh7+!! opens the h-file for the rook. 3. Rh5# is Anastasia's mate."
+   }
+  },
+  {
+   "id": "ueb:taktik-a13",
+   "nummer": 47,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.59"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Boden's mate: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qxc6+! bxc6 2. Ba6#"
+    },
+    {
+     "art": "text",
+     "text": ". Black must capture with the pawn, because the king has no square (the bishop on f4 controls b8) and no piece can interpose on c7. Then the bishops' diagonals cross: one gives check on a6 and takes b7 from the king, the other takes c7 and b8. On d7 and d8, Black's own pieces are in the king's way. Remember: if, after queenside castling, only the b-pawn still keeps the diagonal a6–c8 closed, check the sacrifice that draws it away.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 888
+   },
+   "erklaerung": {
+    "loesung": "1. Qxc6+! bxc6 2. Ba6#",
+    "akzeptiert": [],
+    "motiv": "Boden's mate",
+    "text": "1. Qxc6+! forces 1... bxc6 and opens the diagonal a6–c8. After 2. Ba6#, the diagonals of the two bishops cross, and the king's own pieces on d7 and d8 cut off its escape."
+   }
+  },
+  {
+   "id": "ueb:taktik-a14",
+   "nummer": 48,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.60"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Damiano's mate: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Rh8+! Kxh8 2. Qh5+"
+    },
+    {
+     "art": "text",
+     "text": " (or ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Qh1+"
+    },
+    {
+     "art": "text",
+     "text": ") ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2... Kg8 3. Qh7#"
+    },
+    {
+     "art": "text",
+     "text": ". The rook sacrifice lures the king to h8 (decoy, motif 6): the queen comes to the h-file with check, and the pawn on g6 defends the mating square. The queen on d5 is attacked by the pawn on c6, but Black never gets the chance to capture it, because every white move gives check. Remember: as long as you give check, none of your opponent's threats get a turn.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 894
+   },
+   "erklaerung": {
+    "loesung": "1. Rh8+! Kxh8 2. Qh5+ Kg8 3. Qh7#",
+    "akzeptiert": [
+     "1. Rh8+! Kxh8 2. Qh1+"
+    ],
+    "motiv": "Damiano's mate",
+    "text": "The rook sacrifice 1. Rh8+! lures the king to h8, the queen comes to the h-file with check, and 3. Qh7# is mate because g6 defends the mating square. Because every move gives check, Black never gets the chance to capture the queen on d5."
+   }
+  },
+  {
+   "id": "ueb:taktik-a15",
+   "nummer": 49,
+   "kapitel": 7,
+   "titel": null,
+   "abbildungen": [
+    "7.61"
+   ],
+   "aufgabe": [],
+   "loesung": [
+    {
+     "art": "text",
+     "text": "Lolli's mate: ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "1. Qh6!"
+    },
+    {
+     "art": "text",
+     "text": " threatens ",
+     "stil": "normal"
+    },
+    {
+     "art": "zug",
+     "text": "2. Qg7#"
+    },
+    {
+     "art": "text",
+     "text": ", and Black can no longer defend the square g7, because the bishop that guards it in the fianchetto is missing. Once again a quiet move decides, as in ",
+     "stil": "normal"
+    },
+    {
+     "art": "verweis",
+     "text": "Fig. 7.54",
+     "abbildung": "7.54"
+    },
+    {
+     "art": "text",
+     "text": ". Remember: a pawn on f6 and a fianchetto without its bishop together make a mating pattern.",
+     "stil": "normal"
+    }
+   ],
+   "quelle": {
+    "datei": "kap07_taktik.tex",
+    "zeile": 900
+   },
+   "erklaerung": {
+    "loesung": "1. Qh6!",
+    "akzeptiert": [],
+    "motiv": "Lolli's mate",
+    "text": "1. Qh6! threatens 2. Qg7#, and no black bishop defends g7 anymore. A pawn on f6 and a fianchetto without its bishop together make a mating pattern."
+   }
+  }
+ ],
+ "steckbriefe": [],
+ "bilanzen": [],
+ "fallenchecks": [],
+ "beispiele": [
+  {
+   "id": "k07-a1",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "1. Double attack and fork",
+   "startFen": "r5k1/p5pp/8/3Q4/8/8/5PPP/6K1 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Kh8",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxa8#",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.1",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a10",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "4. Battery and discovered attack",
+   "startFen": "rnbqk2r/pppp2pp/5n2/4N3/2B5/8/PPPP1PPP/R1BQR1K1 w kq - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf7+",
+     "zeichen": "",
+     "abbildungen": [
+      "7.10"
+     ],
+     "weiter": [
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxd8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Qe7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxe7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Ne4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxe4+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.10",
+     "pfad": [
+      "Nf7+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a11",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "5. The double check",
+   "startFen": "4k3/pbpp1ppp/1q6/7r/4N3/8/PP3PPP/2BQR1K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nd6+",
+     "zeichen": "",
+     "abbildungen": [
+      "7.12"
+     ],
+     "weiter": [
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [
+          "7.13"
+         ],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nf6+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.11",
+     "pfad": []
+    },
+    {
+     "nummer": "7.12",
+     "pfad": [
+      "Nd6+"
+     ]
+    },
+    {
+     "nummer": "7.13",
+     "pfad": [
+      "Nd6+",
+      "Kf8",
+      "Re8#"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a14",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "6. Bait, decoy and clearance",
+   "startFen": "r5k1/pp3pp1/3q4/6N1/8/2P5/PP3PP1/4R1KR w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxf7+",
+         "zeichen": "",
+         "abbildungen": [
+          "7.15"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxd6",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nxf7",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxf7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.14",
+     "pfad": []
+    },
+    {
+     "nummer": "7.15",
+     "pfad": [
+      "Rh8+",
+      "Kxh8",
+      "Nxf7+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a16",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "6. Bait, decoy and clearance",
+   "startFen": "6k1/5r1p/p2N4/nppP2q1/2P5/1P2N3/PQ5P/7K w - - 0 30",
+   "zuege": [
+    {
+     "zug": "Qh8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxf7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.16",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a17",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "6. Bait, decoy and clearance",
+   "startFen": "r6k/1p3pRp/8/5N2/8/q7/P4P1P/6QK w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rxh7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qg7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.17",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a18",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "7. Removing the defender",
+   "startFen": "q1r3k1/pp1b1ppp/2n5/1B1N4/8/8/PPQ2PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxc6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Bxc6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ne7+",
+         "zeichen": "",
+         "abbildungen": [
+          "7.19"
+         ],
+         "weiter": [
+          {
+           "zug": "Kh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxc8",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "bxc6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ne7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Rxc6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ne7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.18",
+     "pfad": []
+    },
+    {
+     "nummer": "7.19",
+     "pfad": [
+      "Bxc6",
+      "Bxc6",
+      "Ne7+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a20",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "8. Overloading and deflection",
+   "startFen": "3r2k1/pp3ppp/1q6/3n4/8/1B6/PPQ2PPP/4R1K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxd5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxd5",
+       "zeichen": "??",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.20",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a23",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "9. The intermezzo",
+   "startFen": "r3r1k1/ppq2ppp/8/8/8/7P/P3QPP1/R1R3K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxe8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxe8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxc7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Rxc7",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Rxe2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.23",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a25",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "10. The trapped piece",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bb5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "a6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Ba4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "d6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "b5",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Bb3",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Nxd4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Nxd4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "exd4",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "Qxd4",
+                                 "zeichen": "??",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "c5",
+                                   "zeichen": "!",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qd5",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Be6",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qc6+",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Bd7",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "Qd5",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "c4",
+                                               "zeichen": "!",
+                                               "abbildungen": [
+                                                "7.25"
+                                               ],
+                                               "weiter": []
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.25",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "a6",
+      "Ba4",
+      "d6",
+      "d4",
+      "b5",
+      "Bb3",
+      "Nxd4",
+      "Nxd4",
+      "exd4",
+      "Qxd4",
+      "c5",
+      "Qd5",
+      "Be6",
+      "Qc6+",
+      "Bd7",
+      "Qd5",
+      "c4"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a26",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "11. Tactics around promotion",
+   "startFen": "8/pb2P1kp/5q2/8/8/B7/6PP/7K w - - 0 1",
+   "zuege": [
+    {
+     "zug": "e8=N+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kg6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxf6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "e8=Q",
+     "zeichen": "??",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qf1#",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.26",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a27",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "12. Rescue by perpetual check and stalemate",
+   "startFen": "6k1/2QR1ppp/8/8/4q3/6P1/PP5P/6K1 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qe1+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kg2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qe2+",
+         "zeichen": "",
+         "abbildungen": [
+          "7.28"
+         ],
+         "weiter": [
+          {
+           "zug": "Kg1",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qe1+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Kh3",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh5+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Kg2",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Qe2+",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kh1",
+           "zeichen": "??",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qf1#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.27",
+     "pfad": []
+    },
+    {
+     "nummer": "7.28",
+     "pfad": [
+      "Qe1+",
+      "Kg2",
+      "Qe2+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a29",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "12. Rescue by perpetual check and stalemate",
+   "startFen": "5r1k/6pp/8/3Q4/3b4/7p/1q5P/7K w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qg8+",
+     "zeichen": "!!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxg8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Rxg8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.29",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a3",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "1. Double attack and fork",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Bc4",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nxe4",
+                   "zeichen": "!",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "Nxe4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "d5",
+                       "zeichen": "",
+                       "abbildungen": [
+                        "7.3"
+                       ],
+                       "weiter": [
+                        {
+                         "zug": "Bd3",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "dxe4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bxe4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": []
+                            }
+                           ]
+                          }
+                         ]
+                        },
+                        {
+                         "zug": "Bxd5",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Qxd5",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": []
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Nf6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxe5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nc6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nxc6",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "dxc6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d3",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "Bc5",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "Bg5",
+                         "zeichen": "??",
+                         "abbildungen": [
+                          "7.21"
+                         ],
+                         "weiter": [
+                          {
+                           "zug": "Nxe4",
+                           "zeichen": "!",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "Bxd8",
+                             "zeichen": "??",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "Bxf2+",
+                               "zeichen": "!",
+                               "abbildungen": [
+                                "7.22"
+                               ],
+                               "weiter": [
+                                {
+                                 "zug": "Ke2",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "Bg4#",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": []
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.3",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Nc3",
+      "Nf6",
+      "Bc4",
+      "Nxe4",
+      "Nxe4",
+      "d5"
+     ]
+    },
+    {
+     "nummer": "7.21",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nf6",
+      "Nxe5",
+      "Nc6",
+      "Nxc6",
+      "dxc6",
+      "d3",
+      "Bc5",
+      "Bg5"
+     ]
+    },
+    {
+     "nummer": "7.22",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nf6",
+      "Nxe5",
+      "Nc6",
+      "Nxc6",
+      "dxc6",
+      "d3",
+      "Bc5",
+      "Bg5",
+      "Nxe4",
+      "Bxd8",
+      "Bxf2+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a30",
+   "kapitel": 7,
+   "abschnitt": "7.3",
+   "titel": "Calculate instead of hoping: the exchange on one square",
+   "startFen": "3r2k1/p3bppp/4pn2/3p4/8/2N1P1P1/PP3PBP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nxd5",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "exd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bxd5",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nxd5",
+           "zeichen": "",
+           "abbildungen": [
+            "7.31"
+           ],
+           "weiter": [
+            {
+             "zug": "Rxd5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rxd5",
+               "zeichen": "",
+               "abbildungen": [
+                "7.32"
+               ],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.30",
+     "pfad": []
+    },
+    {
+     "nummer": "7.31",
+     "pfad": [
+      "Nxd5",
+      "exd5",
+      "Bxd5",
+      "Nxd5"
+     ]
+    },
+    {
+     "nummer": "7.32",
+     "pfad": [
+      "Nxd5",
+      "exd5",
+      "Bxd5",
+      "Nxd5",
+      "Rxd5",
+      "Rxd5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a33",
+   "kapitel": 7,
+   "abschnitt": "7.3",
+   "titel": "Pieces behind pieces count too",
+   "startFen": "r2r2k1/pp3ppp/5n2/3p4/8/2N4P/PP1R1PP1/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nxd5",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxd5",
+         "zeichen": "",
+         "abbildungen": [
+          "7.34"
+         ],
+         "weiter": [
+          {
+           "zug": "Rxd5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rxd5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.33",
+     "pfad": []
+    },
+    {
+     "nummer": "7.34",
+     "pfad": [
+      "Nxd5",
+      "Nxd5",
+      "Rxd5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a37",
+   "kapitel": 7,
+   "abschnitt": "7.4",
+   "titel": "Queen sacrifice on h7 and Anastasia's mate",
+   "startFen": "1q3r1k/4Nppp/8/7Q/8/3R4/5PPP/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxh7+",
+     "zeichen": "!!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rh3#",
+         "zeichen": "",
+         "abbildungen": [
+          "7.38"
+         ],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.37",
+     "pfad": []
+    },
+    {
+     "nummer": "7.38",
+     "pfad": [
+      "Qxh7+",
+      "Kxh7",
+      "Rh3#"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a4",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "2. The pin",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bb5",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "d6",
+               "zeichen": "",
+               "abbildungen": [
+                "7.4"
+               ],
+               "weiter": []
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.4",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bb5",
+      "d6"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a44",
+   "kapitel": 7,
+   "abschnitt": "Übung 32",
+   "titel": "Exercises",
+   "startFen": "8/6k1/8/8/8/7p/1q3p1P/4R2K w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Re7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re6+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kf5",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Re5+",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Re8",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "f1=Q#",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    },
+    {
+     "zug": "Rg1+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "fxg1=Q+",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Kxg1",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Qg2#",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": []
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.44",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a46",
+   "kapitel": 7,
+   "abschnitt": "Übung 34",
+   "titel": "Exercises",
+   "startFen": "4kb1r/p2n1ppp/4q3/4p1B1/4P3/1Q6/PPP2PPP/2KR4 w k - 0 16",
+   "zuege": [
+    {
+     "zug": "Qb8+",
+     "zeichen": "!!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxb8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rd8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.46",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a47",
+   "kapitel": 7,
+   "abschnitt": "Übung 35",
+   "titel": "Exercises",
+   "startFen": "r1b1k2r/pp1pqppp/5n2/1N2p3/2B1P3/8/PPP1QPPP/R4RK1 w kq - 0 1",
+   "zuege": [
+    {
+     "zug": "Nc7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxa8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxa8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nd6+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxd6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.47",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a48",
+   "kapitel": 7,
+   "abschnitt": "Übung 36",
+   "titel": "Exercises",
+   "startFen": "6k1/p4ppp/1p6/q3n3/8/1P2Q3/P1r2PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rd8#",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.48",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a49",
+   "kapitel": 7,
+   "abschnitt": "Übung 37",
+   "titel": "Exercises",
+   "startFen": "6q1/r7/4k3/1p2p3/8/8/2B2PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bb3+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bxg8",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.49",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a5",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "2. The pin",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "d4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "d5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "c4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "e6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nc3",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Nf6",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Bg5",
+                 "zeichen": "",
+                 "abbildungen": [
+                  "7.5"
+                 ],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.5",
+     "pfad": [
+      "d4",
+      "d5",
+      "c4",
+      "e6",
+      "Nc3",
+      "Nf6",
+      "Bg5"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a50",
+   "kapitel": 7,
+   "abschnitt": "Übung 38",
+   "titel": "Exercises",
+   "startFen": "3r1rk1/pp4pp/2n5/3q4/8/1P6/P1Q1BPPP/R3R1K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bc4",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxc4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxc4+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Nd4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bxd5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Nb4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bxd5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.50",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a51",
+   "kapitel": 7,
+   "abschnitt": "Übung 39",
+   "titel": "Exercises",
+   "startFen": "r4rk1/pp4pp/2n2n2/3N4/8/1B4Pq/PP3P1P/R2Q1RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf4+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxh3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Rf7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxh3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Nd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxh3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Qe6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nxe6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Nxf6+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.51",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a52",
+   "kapitel": 7,
+   "abschnitt": "Übung 40",
+   "titel": "Exercises",
+   "startFen": "6k1/pp3ppp/4q3/n2N4/8/8/PP2BPPP/2R3K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rc8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxc8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ne7+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kf8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Nxc8",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "zug": "Qe8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxe8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Ne7+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxe7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.52",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a53",
+   "kapitel": 7,
+   "abschnitt": "Übung 41",
+   "titel": "Exercises",
+   "startFen": "3q2k1/ppn2ppp/8/8/6b1/8/PPQ2PPP/4R1K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxc7",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qf8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Qxc7",
+       "zeichen": "??",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Re8#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "zug": "Re8+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Qxe8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Nxe8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.53",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a54",
+   "kapitel": 7,
+   "abschnitt": "Übung 42",
+   "titel": "Exercises",
+   "startFen": "r1r4k/p1pR3p/1p6/8/4N3/8/2P2PPP/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "h6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "h5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.54",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a55",
+   "kapitel": 7,
+   "abschnitt": "Übung 43",
+   "titel": "Exercises",
+   "startFen": "r3r2k/pp4pp/8/6N1/2Q5/q7/PP3PPP/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Nf7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kg8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nh6+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kh8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qg8+",
+             "zeichen": "!!",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Rxg8",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "Nf7#",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": []
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          },
+          {
+           "zug": "Kf8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qf7#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.55",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a56",
+   "kapitel": 7,
+   "abschnitt": "Übung 44",
+   "titel": "Exercises",
+   "startFen": "rnb1kb1r/pp3ppp/2p5/4q3/4n3/3Q4/PPPB1PPP/2KR1BNR w kq - 0 9",
+   "zuege": [
+    {
+     "zug": "Qd8+",
+     "zeichen": "!!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxd8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Bg5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kc7",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bd8#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          },
+          {
+           "zug": "Ke8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rd8#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.56",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a57",
+   "kapitel": 7,
+   "abschnitt": "Übung 45",
+   "titel": "Exercises",
+   "startFen": "r4rk1/pb2qppp/1p3n2/2p4Q/8/2NB1R2/PP3PPP/R5K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rxf6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "gxf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Qxf6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "g6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qh4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "h6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      },
+      {
+       "zug": "Be4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    },
+    {
+     "zug": "Qxh7+",
+     "zeichen": "?",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Nxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": []
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.57",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a58",
+   "kapitel": 7,
+   "abschnitt": "Übung 46",
+   "titel": "Exercises",
+   "startFen": "rq3rk1/pb3ppp/8/3N1R1Q/8/8/PP3PPP/6K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Ne7+",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh7+",
+         "zeichen": "!!",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kxh7",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Rh5#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.58",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a59",
+   "kapitel": 7,
+   "abschnitt": "Übung 47",
+   "titel": "Exercises",
+   "startFen": "2kr3r/pp1n1ppp/2n5/8/Q4B2/8/PP2BPPP/2KR4 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qxc6+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "bxc6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Ba6#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.59",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a6",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "3. The skewer",
+   "startFen": "7r/6k1/8/8/8/8/8/R3K3 b - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh1+",
+     "zeichen": "",
+     "abbildungen": [
+      "7.7"
+     ],
+     "weiter": [
+      {
+       "zug": "Kd2",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxa1",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.6",
+     "pfad": []
+    },
+    {
+     "nummer": "7.7",
+     "pfad": [
+      "Rh1+"
+     ]
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a60",
+   "kapitel": 7,
+   "abschnitt": "Übung 48",
+   "titel": "Exercises",
+   "startFen": "r4rk1/pp3pp1/2p3P1/3Q4/8/8/PP6/1K5R w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Rh8+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qh5+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh7#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "zug": "Qh1+",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Kg8",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Qh7#",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": []
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.60",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a61",
+   "kapitel": 7,
+   "abschnitt": "Übung 49",
+   "titel": "Exercises",
+   "startFen": "r4rk1/pp3p1p/5Pp1/8/8/8/PP1Q4/1K6 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Qh6",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": []
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.61",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a8",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "4. Battery and discovered attack",
+   "startFen": "r2q1rk1/pp2bppp/4pn2/8/3P2P1/2NQ4/PPB2P1P/R4RK1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "g5",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Ne4",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxe4",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "g6",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "gxf6",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Nd5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Qxh7#",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.8",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a9",
+   "kapitel": 7,
+   "abschnitt": "7.2",
+   "titel": "4. Battery and discovered attack",
+   "startFen": "5rk1/pp1qbppp/2n5/8/8/3BQN2/PP3PPP/3R2K1 w - - 0 1",
+   "zuege": [
+    {
+     "zug": "Bxh7+",
+     "zeichen": "!",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "Kxh7",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxd7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      },
+      {
+       "zug": "Kh8",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Rxd7",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": []
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.9",
+     "pfad": []
+    }
+   ],
+   "status": "freigegeben"
+  },
+  {
+   "id": "k07-a45-k",
+   "kapitel": 7,
+   "abschnitt": "7.5",
+   "titel": "Constructed game for Fig. 7.45",
+   "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+   "zuege": [
+    {
+     "zug": "e4",
+     "zeichen": "",
+     "abbildungen": [],
+     "weiter": [
+      {
+       "zug": "e5",
+       "zeichen": "",
+       "abbildungen": [],
+       "weiter": [
+        {
+         "zug": "Nf3",
+         "zeichen": "",
+         "abbildungen": [],
+         "weiter": [
+          {
+           "zug": "Nc6",
+           "zeichen": "",
+           "abbildungen": [],
+           "weiter": [
+            {
+             "zug": "Bc4",
+             "zeichen": "",
+             "abbildungen": [],
+             "weiter": [
+              {
+               "zug": "Bc5",
+               "zeichen": "",
+               "abbildungen": [],
+               "weiter": [
+                {
+                 "zug": "c3",
+                 "zeichen": "",
+                 "abbildungen": [],
+                 "weiter": [
+                  {
+                   "zug": "Nf6",
+                   "zeichen": "",
+                   "abbildungen": [],
+                   "weiter": [
+                    {
+                     "zug": "d4",
+                     "zeichen": "",
+                     "abbildungen": [],
+                     "weiter": [
+                      {
+                       "zug": "exd4",
+                       "zeichen": "",
+                       "abbildungen": [],
+                       "weiter": [
+                        {
+                         "zug": "O-O",
+                         "zeichen": "",
+                         "abbildungen": [],
+                         "weiter": [
+                          {
+                           "zug": "Nxe4",
+                           "zeichen": "",
+                           "abbildungen": [],
+                           "weiter": [
+                            {
+                             "zug": "cxd4",
+                             "zeichen": "",
+                             "abbildungen": [],
+                             "weiter": [
+                              {
+                               "zug": "d5",
+                               "zeichen": "",
+                               "abbildungen": [],
+                               "weiter": [
+                                {
+                                 "zug": "dxc5",
+                                 "zeichen": "",
+                                 "abbildungen": [],
+                                 "weiter": [
+                                  {
+                                   "zug": "dxc4",
+                                   "zeichen": "",
+                                   "abbildungen": [],
+                                   "weiter": [
+                                    {
+                                     "zug": "Qc2",
+                                     "zeichen": "",
+                                     "abbildungen": [],
+                                     "weiter": [
+                                      {
+                                       "zug": "Nxc5",
+                                       "zeichen": "",
+                                       "abbildungen": [],
+                                       "weiter": [
+                                        {
+                                         "zug": "Qxc4",
+                                         "zeichen": "",
+                                         "abbildungen": [],
+                                         "weiter": [
+                                          {
+                                           "zug": "Ne6",
+                                           "zeichen": "",
+                                           "abbildungen": [],
+                                           "weiter": [
+                                            {
+                                             "zug": "Nc3",
+                                             "zeichen": "",
+                                             "abbildungen": [],
+                                             "weiter": [
+                                              {
+                                               "zug": "Ncd4",
+                                               "zeichen": "",
+                                               "abbildungen": [],
+                                               "weiter": [
+                                                {
+                                                 "zug": "Nxd4",
+                                                 "zeichen": "",
+                                                 "abbildungen": [],
+                                                 "weiter": [
+                                                  {
+                                                   "zug": "Qxd4",
+                                                   "zeichen": "",
+                                                   "abbildungen": [],
+                                                   "weiter": [
+                                                    {
+                                                     "zug": "Qxd4",
+                                                     "zeichen": "",
+                                                     "abbildungen": [],
+                                                     "weiter": [
+                                                      {
+                                                       "zug": "Nxd4",
+                                                       "zeichen": "",
+                                                       "abbildungen": [],
+                                                       "weiter": [
+                                                        {
+                                                         "zug": "Bf4",
+                                                         "zeichen": "",
+                                                         "abbildungen": [],
+                                                         "weiter": [
+                                                          {
+                                                           "zug": "Bf5",
+                                                           "zeichen": "",
+                                                           "abbildungen": [],
+                                                           "weiter": [
+                                                            {
+                                                             "zug": "Bxc7",
+                                                             "zeichen": "",
+                                                             "abbildungen": [],
+                                                             "weiter": [
+                                                              {
+                                                               "zug": "O-O",
+                                                               "zeichen": "",
+                                                               "abbildungen": [],
+                                                               "weiter": [
+                                                                {
+                                                                 "zug": "Rad1",
+                                                                 "zeichen": "",
+                                                                 "abbildungen": [],
+                                                                 "weiter": [
+                                                                  {
+                                                                   "zug": "Nc6",
+                                                                   "zeichen": "",
+                                                                   "abbildungen": [],
+                                                                   "weiter": [
+                                                                    {
+                                                                     "zug": "Rfe1",
+                                                                     "zeichen": "",
+                                                                     "abbildungen": [],
+                                                                     "weiter": [
+                                                                      {
+                                                                       "zug": "Rfe8",
+                                                                       "zeichen": "",
+                                                                       "abbildungen": [],
+                                                                       "weiter": [
+                                                                        {
+                                                                         "zug": "h3",
+                                                                         "zeichen": "",
+                                                                         "abbildungen": [],
+                                                                         "weiter": [
+                                                                          {
+                                                                           "zug": "Rxe1+",
+                                                                           "zeichen": "",
+                                                                           "abbildungen": [],
+                                                                           "weiter": [
+                                                                            {
+                                                                             "zug": "Rxe1",
+                                                                             "zeichen": "",
+                                                                             "abbildungen": [],
+                                                                             "weiter": [
+                                                                              {
+                                                                               "zug": "Bd7",
+                                                                               "zeichen": "",
+                                                                               "abbildungen": [],
+                                                                               "weiter": [
+                                                                                {
+                                                                                 "zug": "a4",
+                                                                                 "zeichen": "",
+                                                                                 "abbildungen": [],
+                                                                                 "weiter": [
+                                                                                  {
+                                                                                   "zug": "Be6",
+                                                                                   "zeichen": "",
+                                                                                   "abbildungen": [],
+                                                                                   "weiter": [
+                                                                                    {
+                                                                                     "zug": "Bd6",
+                                                                                     "zeichen": "",
+                                                                                     "abbildungen": [],
+                                                                                     "weiter": [
+                                                                                      {
+                                                                                       "zug": "Rd8",
+                                                                                       "zeichen": "",
+                                                                                       "abbildungen": [],
+                                                                                       "weiter": [
+                                                                                        {
+                                                                                         "zug": "Bf4",
+                                                                                         "zeichen": "",
+                                                                                         "abbildungen": [],
+                                                                                         "weiter": [
+                                                                                          {
+                                                                                           "zug": "Rd4",
+                                                                                           "zeichen": "",
+                                                                                           "abbildungen": [],
+                                                                                           "weiter": [
+                                                                                            {
+                                                                                             "zug": "Be3",
+                                                                                             "zeichen": "",
+                                                                                             "abbildungen": [],
+                                                                                             "weiter": [
+                                                                                              {
+                                                                                               "zug": "Rb4",
+                                                                                               "zeichen": "",
+                                                                                               "abbildungen": [],
+                                                                                               "weiter": [
+                                                                                                {
+                                                                                                 "zug": "Bc5",
+                                                                                                 "zeichen": "",
+                                                                                                 "abbildungen": [],
+                                                                                                 "weiter": [
+                                                                                                  {
+                                                                                                   "zug": "Rxb2",
+                                                                                                   "zeichen": "",
+                                                                                                   "abbildungen": [],
+                                                                                                   "weiter": [
+                                                                                                    {
+                                                                                                     "zug": "Bb6",
+                                                                                                     "zeichen": "",
+                                                                                                     "abbildungen": [],
+                                                                                                     "weiter": [
+                                                                                                      {
+                                                                                                       "zug": "Rxb6",
+                                                                                                       "zeichen": "",
+                                                                                                       "abbildungen": [],
+                                                                                                       "weiter": [
+                                                                                                        {
+                                                                                                         "zug": "Nd5",
+                                                                                                         "zeichen": "",
+                                                                                                         "abbildungen": [],
+                                                                                                         "weiter": [
+                                                                                                          {
+                                                                                                           "zug": "Rb2",
+                                                                                                           "zeichen": "",
+                                                                                                           "abbildungen": [],
+                                                                                                           "weiter": [
+                                                                                                            {
+                                                                                                             "zug": "Nc3",
+                                                                                                             "zeichen": "",
+                                                                                                             "abbildungen": [],
+                                                                                                             "weiter": [
+                                                                                                              {
+                                                                                                               "zug": "Kf8",
+                                                                                                               "zeichen": "",
+                                                                                                               "abbildungen": [],
+                                                                                                               "weiter": [
+                                                                                                                {
+                                                                                                                 "zug": "a5",
+                                                                                                                 "zeichen": "",
+                                                                                                                 "abbildungen": [],
+                                                                                                                 "weiter": [
+                                                                                                                  {
+                                                                                                                   "zug": "Bd5",
+                                                                                                                   "zeichen": "",
+                                                                                                                   "abbildungen": [],
+                                                                                                                   "weiter": [
+                                                                                                                    {
+                                                                                                                     "zug": "Nxd5",
+                                                                                                                     "zeichen": "",
+                                                                                                                     "abbildungen": [],
+                                                                                                                     "weiter": [
+                                                                                                                      {
+                                                                                                                       "zug": "Nxa5",
+                                                                                                                       "zeichen": "",
+                                                                                                                       "abbildungen": [],
+                                                                                                                       "weiter": [
+                                                                                                                        {
+                                                                                                                         "zug": "Nc3",
+                                                                                                                         "zeichen": "",
+                                                                                                                         "abbildungen": [],
+                                                                                                                         "weiter": [
+                                                                                                                          {
+                                                                                                                           "zug": "Nc6",
+                                                                                                                           "zeichen": "",
+                                                                                                                           "abbildungen": [],
+                                                                                                                           "weiter": [
+                                                                                                                            {
+                                                                                                                             "zug": "Rd1",
+                                                                                                                             "zeichen": "",
+                                                                                                                             "abbildungen": [],
+                                                                                                                             "weiter": [
+                                                                                                                              {
+                                                                                                                               "zug": "Kg8",
+                                                                                                                               "zeichen": "",
+                                                                                                                               "abbildungen": [],
+                                                                                                                               "weiter": [
+                                                                                                                                {
+                                                                                                                                 "zug": "Re1",
+                                                                                                                                 "zeichen": "",
+                                                                                                                                 "abbildungen": [
+                                                                                                                                  "7.45"
+                                                                                                                                 ],
+                                                                                                                                 "weiter": []
+                                                                                                                                }
+                                                                                                                               ]
+                                                                                                                              }
+                                                                                                                             ]
+                                                                                                                            }
+                                                                                                                           ]
+                                                                                                                          }
+                                                                                                                         ]
+                                                                                                                        }
+                                                                                                                       ]
+                                                                                                                      }
+                                                                                                                     ]
+                                                                                                                    }
+                                                                                                                   ]
+                                                                                                                  }
+                                                                                                                 ]
+                                                                                                                }
+                                                                                                               ]
+                                                                                                              }
+                                                                                                             ]
+                                                                                                            }
+                                                                                                           ]
+                                                                                                          }
+                                                                                                         ]
+                                                                                                        }
+                                                                                                       ]
+                                                                                                      }
+                                                                                                     ]
+                                                                                                    }
+                                                                                                   ]
+                                                                                                  }
+                                                                                                 ]
+                                                                                                }
+                                                                                               ]
+                                                                                              }
+                                                                                             ]
+                                                                                            }
+                                                                                           ]
+                                                                                          }
+                                                                                         ]
+                                                                                        }
+                                                                                       ]
+                                                                                      }
+                                                                                     ]
+                                                                                    }
+                                                                                   ]
+                                                                                  }
+                                                                                 ]
+                                                                                }
+                                                                               ]
+                                                                              }
+                                                                             ]
+                                                                            }
+                                                                           ]
+                                                                          }
+                                                                         ]
+                                                                        }
+                                                                       ]
+                                                                      }
+                                                                     ]
+                                                                    }
+                                                                   ]
+                                                                  }
+                                                                 ]
+                                                                }
+                                                               ]
+                                                              }
+                                                             ]
+                                                            }
+                                                           ]
+                                                          }
+                                                         ]
+                                                        }
+                                                       ]
+                                                      }
+                                                     ]
+                                                    }
+                                                   ]
+                                                  }
+                                                 ]
+                                                }
+                                               ]
+                                              }
+                                             ]
+                                            }
+                                           ]
+                                          }
+                                         ]
+                                        }
+                                       ]
+                                      }
+                                     ]
+                                    }
+                                   ]
+                                  }
+                                 ]
+                                }
+                               ]
+                              }
+                             ]
+                            }
+                           ]
+                          }
+                         ]
+                        }
+                       ]
+                      }
+                     ]
+                    }
+                   ]
+                  }
+                 ]
+                }
+               ]
+              }
+             ]
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    }
+   ],
+   "abbildungen": [
+    {
+     "nummer": "7.45",
+     "pfad": [
+      "e4",
+      "e5",
+      "Nf3",
+      "Nc6",
+      "Bc4",
+      "Bc5",
+      "c3",
+      "Nf6",
+      "d4",
+      "exd4",
+      "O-O",
+      "Nxe4",
+      "cxd4",
+      "d5",
+      "dxc5",
+      "dxc4",
+      "Qc2",
+      "Nxc5",
+      "Qxc4",
+      "Ne6",
+      "Nc3",
+      "Ncd4",
+      "Nxd4",
+      "Qxd4",
+      "Qxd4",
+      "Nxd4",
+      "Bf4",
+      "Bf5",
+      "Bxc7",
+      "O-O",
+      "Rad1",
+      "Nc6",
+      "Rfe1",
+      "Rfe8",
+      "h3",
+      "Rxe1+",
+      "Rxe1",
+      "Bd7",
+      "a4",
+      "Be6",
+      "Bd6",
+      "Rd8",
+      "Bf4",
+      "Rd4",
+      "Be3",
+      "Rb4",
+      "Bc5",
+      "Rxb2",
+      "Bb6",
+      "Rxb6",
+      "Nd5",
+      "Rb2",
+      "Nc3",
+      "Kf8",
+      "a5",
+      "Bd5",
+      "Nxd5",
+      "Nxa5",
+      "Nc3",
+      "Nc6",
+      "Rd1",
+      "Kg8",
+      "Re1"
+     ]
+    }
+   ],
+   "status": "konstruiert"
+  }
+ ]
+}

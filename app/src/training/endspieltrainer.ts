@@ -4,7 +4,8 @@
  * Rolle im Gesamtbild: Trainer „endspiel“ (Pflichtenheft 7, AP 13). Die Aufgaben stammen aus
  * inhalte/de/trainer/endspiel.json (pipeline/trainer/endspiel.py): Abbildungen der Kapitel 8 und
  * 9 mit Seite des Lesers, Ziel (Gewinn oder Remis), Thema, Stichwort und Schwierigkeit, jede von
- * Stockfish geprüft. Der Leser spielt gegen die Engine in voller Stärke; nach jedem seiner Züge
+ * Stockfish geprüft; seit P4 (R47) dazu freie Endspielaufgaben der Lichess-Datenbank (CC0,
+ * Themen bauernendspiel, turmendspiel, damenendspiel, leichtfiguren, Stufe nach Lichess-Wertung). Der Leser spielt gegen die Engine in voller Stärke; nach jedem seiner Züge
  * sagt die Bewertung, ob die Stellung noch hält. Reine Funktionen; die Engine ruft die
  * Oberfläche (ui/trainer/useEndspielpartie.ts).
  * Abhängigkeiten: daten/trainerdaten.ts, spiel/ergebnis.ts, training/zufall.ts.
@@ -37,9 +38,10 @@ const THEMEN_JE_GRUPPE: Readonly<Record<Endspielgruppe, readonly Endspielthema[]
     "freibauer",
     "zugzwang",
     "randbauer",
+    "bauernendspiel",
   ],
   turm: ["turmendspiel"],
-  dame: ["dameGegenBauer"],
+  dame: ["dameGegenBauer", "damenendspiel"],
   leichtfiguren: ["leichtfiguren"],
 };
 
@@ -70,9 +72,7 @@ function passtZurGruppe(aufgabe: Endspielaufgabe, gruppe: Endspielgruppe): boole
 
 /** Wie viele Aufgaben es je Gruppe gibt (für die Auswahl). Beispiel: „turm“ → 20. */
 export function anzahlJeGruppe(aufgaben: readonly Endspielaufgabe[]): Map<Endspielgruppe, number> {
-  return new Map(
-    GRUPPEN.map((g) => [g, aufgaben.filter((a) => passtZurGruppe(a, g)).length]),
-  );
+  return new Map(GRUPPEN.map((g) => [g, aufgaben.filter((a) => passtZurGruppe(a, g)).length]));
 }
 
 /**

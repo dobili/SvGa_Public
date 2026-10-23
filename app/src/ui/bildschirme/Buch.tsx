@@ -74,7 +74,7 @@ function Nummernfeld({ index }: { index: Datenverzeichnis }) {
 function useGesehen(nummer: number, abbildungen: readonly string[]): Anteil {
   const gesehen = useSpeicher((zustand) => zustand.daten.fortschritt.gesehen);
   return kapitelfortschritt(
-    { gesehen, uebungen: {}, trainer: {}, warum: {} },
+    { gesehen, uebungen: {}, trainer: {}, warum: {}, eingeschaetzt: {} },
     nummer,
     abbildungen,
     [],

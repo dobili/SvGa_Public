@@ -34,7 +34,9 @@ describe("Endspieltrainer mit Stockfish", () => {
   it.each(GEPRUEFT)(
     "Abb. %s: Die Engine bestätigt das Ziel und nennt einen legalen Zug",
     async (nummer) => {
-      const a = daten.aufgaben.find((x) => x.herkunft.quelle === "buch" && x.herkunft.abbildung === nummer);
+      const a = daten.aufgaben.find(
+        (x) => x.herkunft.quelle === "buch" && x.herkunft.abbildung === nummer,
+      );
       expect(a).toBeDefined();
       if (!a) return;
       const bewertung = await dienst.bewerte(a.fen, RECHENZEIT_MS, 1);

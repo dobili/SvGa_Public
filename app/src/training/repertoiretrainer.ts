@@ -77,7 +77,10 @@ export function schluesselfragen(
         const vorbereitet = a.vorbereitet;
         if (!vorbereitet) return [];
         return vorbereitet.fragen
-          .filter((f) => f.zug && ohneSchachzeichen(zuegeAusText(f.zug)[0] ?? "") === ohneSchachzeichen(zug))
+          .filter(
+            (f) =>
+              f.zug && ohneSchachzeichen(zuegeAusText(f.zug)[0] ?? "") === ohneSchachzeichen(zug),
+          )
           .map((f) => ({ stelle, zug: f.zug ?? "", vorbereitet }));
       });
   });

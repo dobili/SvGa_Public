@@ -5,20 +5,22 @@
  * Die Aufgaben sind teils zufällig; die Tests lesen dann den Auftrag oder prüfen nur den Ablauf.
  */
 import { readFileSync } from "node:fs";
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 import { Chess } from "chessops/chess";
 import { parseFen } from "chessops/fen";
 import { makeSan } from "chessops/san";
+import { makeSquare } from "chessops/util";
 import { oeffneTrainer, starteImBrowser } from "./hilfen";
 
-const feld = (page: Page, name: string) =>
-  page.getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
+/** Ein Feld des Brettes (nur die Knöpfe auf dem Brett, nicht gleichnamige Züge der Zugleiste). */
+const feld = (page: Page | Locator, name: string) =>
+  page.locator(".brett-tasten").getByRole("button", { name: new RegExp(`^${name}(,|$)`) });
 
 test("Repertoire-Trainer: Spanisch als Weiß, falscher Zug zeigt den Buchzug", async ({ page }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "repertoire");
   const wahl = page.getByTestId("repertoire-wahl");
-  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
+  await wahl.getByLabel("Eröffnung").selectOption({ label: "Die Spanische Partie (Ruy Lopez)" });
   await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
@@ -46,6 +48,14 @@ test("Studien lösen: Saavedra-Studie, 1. c7 und die Antwort aus dem Buch", asyn
     .getByText(/vier Prüfungen/)
     .click();
   await expect(page.getByTestId("studien-pruefungen")).toContainText("Unterverwandlung");
+  // R46: Ein falscher Zug zeigt beide Pfeile und den Vergleich der Engine.
+  await feld(page, "b6").click();
+  await feld(page, "b7").click();
+  await expect(runde).toContainText("Nicht der Zug der Studie");
+  await expect(page.getByTestId("studien-vergleich")).toContainText(/Dein Zug ist laut Engine/, {
+    timeout: 20_000,
+  });
+  await expect(page.getByTestId("studien-vergleich")).toContainText("Zug der Studie c7");
   await feld(page, "c6").click();
   await feld(page, "c7").click();
   await expect(page.getByTestId("repertoire-zuege")).toContainText("1. c7");
@@ -56,7 +66,12 @@ test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", a
   await starteImBrowser(page);
   await oeffneTrainer(page, "zugErraten");
   const wahl = page.getByTestId("zugerraten-wahl");
-  await wahl.getByRole("button", { name: /^Morphys Opernpartie/ }).click();
+  const partien = wahl.getByLabel("Partie");
+  const opern = await partien
+    .locator("option", { hasText: /^Morphys Opernpartie/ })
+    .first()
+    .getAttribute("value");
+  await partien.selectOption(opern ?? "0");
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   await feld(page, "e2").click();
@@ -71,7 +86,33 @@ test("Zug erraten: Opernpartie als Weiß, Treffer und aufgedeckter Partiezug", a
   const vergleich = page.getByTestId("zugerraten-vergleich");
   await expect(vergleich).toContainText("warum der Meister anders zog");
   await expect(vergleich).toContainText(/Dein Zug ist laut Engine/, { timeout: 20_000 });
+  await expect(vergleich).toContainText("Partiezug Sf3");
+  // R45: Bewertungsbalken am Brett, Hinweis auf die Figur, Blättern, Analysemodus.
+  await expect(page.getByTestId("bewertungsbalken")).toBeVisible();
+  await page.getByTestId("zugerraten-hinweis").click();
+  await expect(runde).toContainText("Das goldene Feld zeigt die Figur");
+  await feld(page, "d2").click();
+  await feld(page, "d4").click();
+  await expect(runde).toContainText("Getroffen, mit Hinweis");
+  await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 3");
+  const navigation = page.getByTestId("zugerraten-navigation");
+  await navigation.getByRole("button", { name: "Zum Anfang" }).click();
+  await expect(navigation).toContainText("frühere Stellung");
+  await navigation.getByRole("button", { name: "Zum Ende" }).click();
+  await expect(navigation).not.toContainText("frühere Stellung");
+  await runde.getByRole("button", { name: "Analysieren" }).click();
+  await feld(page, "d4").click();
+  await feld(page, "e5").click();
+  const analyse = page.getByTestId("zugerraten-analyse");
+  await expect(analyse).toContainText("4. dxe5");
+  // Der Balken rechnet die Analysestellung (nach 4. dxe5 steht Weiß einen Bauern besser).
+  await expect(page.getByTestId("bewertungsbalken")).not.toHaveAccessibleName(/0,0/, {
+    timeout: 20_000,
+  });
   await page.screenshot({ path: "test-results/bilder/trainer-zugerraten.png", fullPage: true });
+  await analyse.getByRole("button", { name: "Analyse beenden" }).click();
+  await expect(analyse).toHaveCount(0);
+  await expect(page.getByTestId("zugerraten-stand")).toHaveText("Getroffen: 1 von 3");
 });
 
 test("Fehlerdatenbank: Eintrag mit FEN, Auswertung mit Vorschlag, Löschen", async ({ page }) => {
@@ -100,12 +141,14 @@ test("Fehlerdatenbank: Eintrag mit FEN, Auswertung mit Vorschlag, Löschen", asy
   await expect(page.getByTestId("fehlerdb-leer")).toBeVisible();
 });
 
-test("Denkroutine: eine Minute, dann Eingabe; ohne Antwort unvollständig", async ({ page }) => {
+test("Denkroutine: eine Minute, dann Kandidaten am Brett; Zurücknehmen", async ({ page }) => {
   await page.clock.install();
   await starteImBrowser(page);
   await oeffneTrainer(page, "denkroutine");
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 3");
+  const brett = runde.getByRole("img", { name: /^Stellung aus Abb\. / });
+  const nummer = ((await brett.getAttribute("aria-label")) ?? "").replace("Stellung aus Abb. ", "");
   const weiter = page.getByTestId("denk-weiter");
   await expect(weiter).toBeDisabled();
   await expect(weiter).toContainText("Sekunden nachdenken");
@@ -114,39 +157,70 @@ test("Denkroutine: eine Minute, dann Eingabe; ohne Antwort unvollständig", asyn
   await page.clock.resume();
   await expect(weiter).toBeEnabled();
   await weiter.click();
-  await runde.getByLabel("Kandidat 1", { exact: true }).fill("Zz9");
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  await expect(page.getByTestId("denk-pruefung")).toContainText("ist hier kein regelgerechter Zug");
-  await expect(page.getByTestId("denk-pruefung")).toContainText("Kandidat 2 fehlt.");
-  await expect(runde).toContainText("Zu jedem Kandidaten gehört die stärkste Antwort");
+  // F2 (seit 0.2.117): Kandidat und Antwort am Brett ziehen statt als Text.
+  const eingabe = page.getByTestId("denk-eingabe");
+  await expect(eingabe).toContainText("Ziehe deinen Kandidaten 1");
+  const [erstes] = kandidatenFuer(nummer);
+  if (!erstes) throw new Error(`Keine Kandidaten für Abb. ${nummer}`);
+  await ziehe(page, erstes.kandidat);
+  await expect(eingabe).toContainText("Ziehe jetzt die stärkste Antwort");
   await page.screenshot({ path: "test-results/bilder/trainer-denkroutine.png", fullPage: true });
-  await runde.getByRole("button", { name: "Weiter" }).click();
-  await expect(runde).toContainText("Aufgabe 2 von 3");
+  await eingabe.getByRole("button", { name: "Letzten Zug zurücknehmen" }).click();
+  await expect(eingabe).toContainText("Ziehe deinen Kandidaten 1");
+  await expect(page.getByTestId("denk-paare").locator("li")).toHaveCount(0);
+});
+
+/** Zug als Start- und Zielfeld. */
+interface Felderzug {
+  readonly von: string;
+  readonly nach: string;
+}
+
+/** Ein Zug mit Antwort: Felder zum Tippen (ohne Rochade und Umwandlung). */
+interface Kandidatenpaar {
+  readonly kandidat: Felderzug;
+  readonly antwort: Felderzug;
+}
+
+/** Erste Züge ohne Rochade und Umwandlung in einer Stellung. */
+function einfacheZuege(pos: Chess): { from: number; to: number }[] {
+  return [...pos.allDests()].flatMap(([von, ziele]) =>
+    [...ziele]
+      .map((nach) => ({ from: von, to: nach }))
+      .filter((z) => pos.board.get(z.from)?.role !== "king" || Math.abs(z.to - z.from) <= 9)
+      .filter((z) => !makeSan(pos, z).includes("=")),
+  );
+}
+
+const alsFelder = (z: { from: number; to: number }): Felderzug => ({
+  von: makeSquare(z.from),
+  nach: makeSquare(z.to),
 });
 
 /** Zwei regelgerechte Kandidaten mit je einer Antwort für eine Abbildung (aus den Buchdaten). */
-function kandidatenFuer(nummer: string): [string, string][] {
+function kandidatenFuer(nummer: string): Kandidatenpaar[] {
   const datei = `public/daten/de/a1/kap${nummer.split(".")[0]?.padStart(2, "0")}.json`;
   const kapitel = JSON.parse(readFileSync(datei, "utf8")) as {
     abbildungen: { id: string; fen: string }[];
   };
   const fen = kapitel.abbildungen.find((a) => a.id === nummer)?.fen ?? "";
   const pos = Chess.fromSetup(parseFen(fen).unwrap()).unwrap();
-  const paare: [string, string][] = [];
-  for (const [von, ziele] of pos.allDests()) {
-    for (const nach of ziele) {
-      const zug = { from: von, to: nach };
-      const danach = pos.clone();
-      const san = makeSan(pos, zug);
-      danach.play(zug);
-      const antwort = [...danach.allDests()].flatMap(([v, z]) =>
-        [...z].map((n) => ({ from: v, to: n })),
-      )[0];
-      if (antwort && !san.includes("=")) paare.push([san, makeSan(danach, antwort)]);
-      if (paare.length === 2) return paare;
-    }
+  const paare: Kandidatenpaar[] = [];
+  for (const zug of einfacheZuege(pos)) {
+    const danach = pos.clone();
+    danach.play(zug);
+    const [antwort] = einfacheZuege(danach);
+    if (antwort) paare.push({ kandidat: alsFelder(zug), antwort: alsFelder(antwort) });
+    if (paare.length === 2) return paare;
   }
   return paare;
+}
+
+/** Tippt Start- und Zielfeld eines Zuges auf dem Eingabebrett. */
+async function ziehe(page: Page, zug: Felderzug): Promise<void> {
+  const eingabe = page.getByTestId("denk-eingabe");
+  await feld(eingabe, zug.von).click();
+  await feld(eingabe, zug.nach).click();
 }
 
 test("Denkroutine: zwei Kandidaten mit Antwort, Vergleich mit der Engine", async ({ page }) => {
@@ -159,11 +233,11 @@ test("Denkroutine: zwei Kandidaten mit Antwort, Vergleich mit der Engine", async
   await page.clock.fastForward(61_000);
   await page.clock.resume();
   await page.getByTestId("denk-weiter").click();
-  for (const [i, [kandidat, antwort]] of kandidatenFuer(nummer).entries()) {
-    await runde.getByLabel(`Kandidat ${i + 1}`, { exact: true }).fill(kandidat);
-    await runde.getByLabel(`Stärkste Antwort auf Kandidat ${i + 1}`).fill(antwort);
+  for (const paar of kandidatenFuer(nummer)) {
+    await ziehe(page, paar.kandidat);
+    await ziehe(page, paar.antwort);
   }
-  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await expect(page.getByTestId("denk-paare").locator("li")).toHaveCount(2);
   await expect(page.getByTestId("denk-pruefung")).toContainText("vollständig");
   const vergleich = page.getByTestId("denk-vergleich");
   await expect(vergleich).toContainText("Bester Zug laut Engine", { timeout: 30_000 });
@@ -205,7 +279,7 @@ test("Abweichungsmodus: Spanisch als Weiß, Engine verlässt das Buch, Antwort w
   await starteImBrowser(page);
   await oeffneTrainer(page, "abweichung");
   const wahl = page.getByTestId("abweichung-wahl");
-  await wahl.getByRole("button", { name: "Die Spanische Partie (Ruy Lopez)" }).click();
+  await wahl.getByLabel("Eröffnung").selectOption({ label: "Die Spanische Partie (Ruy Lopez)" });
   await wahl.getByRole("button", { name: "Weiß", exact: true }).click();
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");

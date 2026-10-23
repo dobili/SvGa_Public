@@ -5,7 +5,7 @@
  * oder Köder, Strukturerkenner, Wiederholung, Endspiel, Zielbilanz und Faktorenbilanz; die übrigen
  * Trainer stehen seit 0.2.90 in trainer-kapitel2bis12.spec.ts.
  */
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "@playwright/test";
 import { oeffneTrainer, starteImBrowser } from "./hilfen";
 
 const feld = (page: Page, name: string) =>
@@ -58,15 +58,14 @@ test("Zähltrainer: Bilanz zählen zeigt die Rechnung der App", async ({ page })
   await oeffneTrainer(page, "zaehlen");
   await page.getByRole("button", { name: /Bilanz zählen/ }).click();
   const runde = page.getByTestId("trainerrunde");
+  // Seit 0.2.116 mit „−“ und „+“: der erste Tipp auf „+“ setzt den kleinsten Wert.
+  await runde.getByRole("button", { name: "Angreifer: eins mehr" }).click();
+  await runde.getByRole("button", { name: "Verteidiger: eins mehr" }).click();
   await runde
-    .getByRole("group", { name: "Angreifer", exact: true })
-    .getByRole("button", { name: "1", exact: true })
+    .getByRole("button", { name: /eins mehr/ })
+    .last()
     .click();
-  await runde
-    .getByRole("group", { name: "Verteidiger" })
-    .getByRole("button", { name: "1", exact: true })
-    .click();
-  await runde.getByRole("button", { name: "lohnt nicht" }).click();
+  await expect(runde.getByText("lohnt nicht")).toBeVisible();
   await runde.getByRole("button", { name: "Prüfen" }).click();
   await expect(page.getByTestId("zaehl-rechnung")).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/trainer-zaehlen.png", fullPage: true });
@@ -87,13 +86,20 @@ test("Schach-Röntgen-Trainer: drei Schritte, dann Weiter", async ({ page }) => 
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
 
-test("Taktiktrainer: Thema und Stufe wählen, Hilfen, Lösung zeigen, Motiv benennen", async ({
+test("Taktiktrainer: ein Motiv wählen, Hilfen, Lösung zeigen, ohne Motivfrage", async ({
   page,
 }) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "taktik");
   const wahl = page.getByTestId("taktik-wahl");
-  await wahl.getByRole("button", { name: /^Spieß/ }).click();
+  {
+    const liste = wahl.getByLabel("Thema");
+    const wert = await liste
+      .locator("option", { hasText: /^Spieß/ })
+      .first()
+      .getAttribute("value");
+    await liste.selectOption(wert ?? "");
+  }
   await wahl.getByRole("button", { name: "2", exact: true }).click();
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
@@ -104,29 +110,50 @@ test("Taktiktrainer: Thema und Stufe wählen, Hilfen, Lösung zeigen, Motiv bene
   await expect(page.getByTestId("taktik-motiv")).toContainText("Spieß");
   await runde.getByRole("button", { name: "Lösung zeigen" }).click();
   await expect(runde).toContainText("Lösung:");
-  const benennen = page.getByTestId("motiv-benennen");
-  await benennen.getByRole("button", { name: "Spieß" }).click();
-  await expect(benennen).toContainText("Richtig!");
+  // Nur ein Motiv gewählt: Die Frage nach dem Motiv entfällt (R30).
+  await expect(page.getByTestId("motiv-benennen")).toHaveCount(0);
   await page.screenshot({ path: "test-results/bilder/trainer-taktik.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
 
-test("Falle oder Köder: Warnsignale prüfen, entscheiden, Auflösung", async ({ page }) => {
+test("Falle oder Köder: Köder-Zug, entscheiden, Widerlegung und Warnsignale danach", async ({
+  page,
+}) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "falle");
   await page.getByTestId("falle-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
+  await expect(runde).toContainText("Der Gegner hat gerade");
   await expect(runde).toContainText("Falle oder Geschenk?");
-  await runde.getByRole("button", { name: /Warnsignale prüfen/ }).click();
-  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
+  // Die Warnsignale kommen erst nach der Antwort (Wunsch des Autors, P4 R50).
+  await expect(page.getByTestId("falle-warnsignale")).toHaveCount(0);
   await runde.getByRole("button", { name: "Nicht nehmen" }).click();
   await expect(runde).toContainText(/Eine Falle|Ein Geschenk/);
+  await expect(page.getByTestId("falle-warnsignale")).toBeVisible();
   await expect(runde).toContainText("Fortsetzung laut Engine:");
   await page.screenshot({ path: "test-results/bilder/trainer-falle.png", fullPage: true });
   await runde.getByRole("button", { name: "Weiter" }).click();
   await expect(runde).toContainText("Aufgabe 2 von 8");
 });
+
+/**
+ * Strukturerkenner: die Schritte vor der Planwahl durchklicken (Prüfen ohne Felder; bei der
+ * Feldart-Frage die erste Art), bis „Welcher Plan passt“ dasteht (R49: zwei bis vier Schritte).
+ */
+async function schritteBisZumPlan(runde: Locator): Promise<void> {
+  const HOECHSTENS_SCHRITTE = 4;
+  const plan = runde.getByText("Welcher Plan passt");
+  const pruefen = runde.getByRole("button", { name: "Prüfen" });
+  const loch = runde.getByRole("button", { name: "Loch", exact: true });
+  for (let i = 0; i < HOECHSTENS_SCHRITTE; i++) {
+    // Warten, bis der nächste Schritt (oder die Planwahl) da ist, sonst klickt der Test ins Leere.
+    await expect(plan.or(pruefen).or(loch).first()).toBeVisible();
+    if ((await plan.count()) > 0) return;
+    if ((await pruefen.count()) > 0) await pruefen.click();
+    else await loch.click();
+  }
+}
 
 test("Strukturerkenner: starke Felder und schwache Bauern prüfen, Plan wählen", async ({
   page,
@@ -135,14 +162,12 @@ test("Strukturerkenner: starke Felder und schwache Bauern prüfen, Plan wählen"
   await oeffneTrainer(page, "struktur");
   await page.getByTestId("struktur-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
-  await expect(runde).toContainText(/Schritt 1 von [23]/);
-  // W5: Mit starken Feldern hat die Aufgabe drei Schritte, sonst zwei.
-  const dreiSchritte = (await runde.textContent())?.includes("Schritt 1 von 3") ?? false;
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  if (dreiSchritte) {
-    await expect(runde).toContainText("Schritt 2 von 3");
-    await runde.getByRole("button", { name: "Prüfen" }).click();
-  }
+  await expect(runde).toContainText(/Schritt 1 von [234]/);
+  // R49: echte Stellung, Skelett per Knopf.
+  await runde.getByRole("button", { name: "Nur das Skelett zeigen" }).click();
+  await expect(runde.getByRole("button", { name: "Alle Figuren zeigen" })).toBeVisible();
+  // W5/R49: Tipp-Schritte (starke Felder, schwache Bauern), dann je nach Stellung die Feldart.
+  await schritteBisZumPlan(runde);
   await expect(runde).toContainText("Welcher Plan passt");
   await runde.locator(".plan-satz").first().click();
   await expect(runde).toContainText("Struktur:");
@@ -189,7 +214,14 @@ test("Endspieltrainer: Mattführung Stufe 1, Merksatz als Hinweis, Aufgabe abbre
   await starteImBrowser(page);
   await oeffneTrainer(page, "endspiel");
   const wahl = page.getByTestId("endspiel-wahl");
-  await wahl.getByRole("button", { name: /^Mattführung/ }).click();
+  {
+    const liste = wahl.getByLabel("Was üben?");
+    const wert = await liste
+      .locator("option", { hasText: /^Mattführung/ })
+      .first()
+      .getAttribute("value");
+    await liste.selectOption(wert ?? "");
+  }
   await wahl.getByRole("button", { name: "1", exact: true }).click();
   await wahl.getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
@@ -237,18 +269,31 @@ test("Zielbilanz-Übung: Tabelle für beide Seiten ausfüllen, App zeigt ihre We
   await expect(runde).toContainText("Aufgabe 2 von 5");
 });
 
-test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", async ({ page }) => {
+test("Faktorenbilanz-Trainer: Waagen und ✓ ◐ ✗ wie im Buch, App zeigt ihre Bilanz", async ({
+  page,
+}) => {
   await starteImBrowser(page);
   await oeffneTrainer(page, "faktorenbilanz");
   const runde = page.getByTestId("trainerrunde");
   await expect(runde).toContainText("Aufgabe 1 von 5");
-  for (const faktor of ["Material", "Zeit", "Königssicherheit", "Aktivität"]) {
-    await runde
-      .getByRole("group", { name: faktor, exact: true })
-      .getByRole("button", { name: "gleich" })
-      .click();
+  const pruefen = runde.getByRole("button", { name: "Prüfen" });
+  // R20: Material und Zeit mit der Waage, die sich zur gewählten Seite neigt.
+  const material = runde.getByRole("group", { name: "Material", exact: true });
+  await material.getByRole("button", { name: "◀ Weiß vorn" }).click();
+  await expect(material.getByRole("img", { name: "Weiß liegt vorn" })).toBeVisible();
+  await material.getByRole("button", { name: "gerade" }).click();
+  await runde
+    .getByRole("group", { name: "Zeit", exact: true })
+    .getByRole("button", { name: "gerade" })
+    .click();
+  // Königssicherheit und Aktivität je Seite ✓ ◐ ✗ wie die Tabelle im Buch.
+  for (const faktor of ["Königssicherheit", "Aktivität"]) {
+    const gruppe = runde.getByRole("group", { name: faktor, exact: true });
+    await gruppe.getByRole("button", { name: "Weiß: teils" }).click();
+    await expect(pruefen).toBeDisabled();
+    await gruppe.getByRole("button", { name: "Schwarz: teils" }).click();
   }
-  await runde.getByRole("button", { name: "Prüfen" }).click();
+  await pruefen.click();
   // Seit 0.2.61 (W9) mit „Buch:“, wenn die Abbildung eine Faktorenbilanz im Buch hat.
   await expect(runde.getByText(/^(App|Buch): (Weiß|gleich|Schwarz)$/)).toHaveCount(4);
   await expect(page.getByTestId("faktoren-bilanz")).toBeVisible();
@@ -260,17 +305,27 @@ test("Faktorenbilanz-Trainer: vier Faktoren wählen, App zeigt ihre Bilanz", asy
 test("Wiederholung (0.2.90): ein falsch gelöstes Skelett des Strukturerkenners kommt wieder", async ({
   page,
 }) => {
+  // Fester Zufall (23.10.2026): Mit Math.random kam ab und zu eine Aufgabe, bei der „nichts
+  // antippen, ersten Plan-Satz wählen“ richtig ist; dann wird nichts fällig und der Test scheitert.
+  await page.addInitScript(() => {
+    const MODUL = 2147483647;
+    const FAKTOR = 16807;
+    let saat = 7;
+    Math.random = () => {
+      saat = (saat * FAKTOR) % MODUL;
+      return (saat - 1) / (MODUL - 1);
+    };
+  });
   await page.clock.install();
   await starteImBrowser(page);
   await oeffneTrainer(page, "struktur");
   await page.getByTestId("struktur-wahl").getByRole("button", { name: "Runde starten" }).click();
   const runde = page.getByTestId("trainerrunde");
   // Ohne angetippte Felder ist die Leitfrage falsch beantwortet, die Aufgabe also nicht gelöst.
-  const dreiSchritte = (await runde.textContent())?.includes("Schritt 1 von 3") ?? false;
-  await runde.getByRole("button", { name: "Prüfen" }).click();
-  if (dreiSchritte) await runde.getByRole("button", { name: "Prüfen" }).click();
+  await schritteBisZumPlan(runde);
   await runde.locator(".plan-satz").first().click();
   await expect(runde).toContainText("Struktur:");
+  await expect(runde).toContainText("Nicht ganz");
   await page.clock.fastForward("48:00:00");
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Buch" }).click();

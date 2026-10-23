@@ -130,7 +130,7 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
   );
 
   // Erst selbst denken (seit 0.2.90, Einstellung „Auch vor Werkzeugen und Engine“): je Abbildung.
-  const denken = useSelbstDenken(nachspielen.abbildungHier?.id ?? abbildung.id);
+  const denken = useSelbstDenken(nachspielen.abbildungHier?.id ?? abbildung.id, nachspielen.fen);
 
   // Tipp auf den Hintergrund: kein Werkzeug, also wieder die Markierungen des Buches.
   useHintergrundTipp(wahl !== null, werkzeug.abwaehlen);
@@ -213,7 +213,7 @@ function Inhalt({ kapitel, abbildung }: { kapitel: Kapitel; abbildung: Abbildung
         />
       )}
       {denken.gesperrt && <SelbstDenkenKarte stand={denken} />}
-      {!denken.gesperrt && <EigeneEinschaetzung einschaetzung={denken.einschaetzung} />}
+      {!denken.gesperrt && <EigeneEinschaetzung stand={denken} />}
       {/* Lehrbilder ohne König (Kapitel 0 und 5): keine Bündel, am Brett nur „Zählen“. */}
       {!denken.gesperrt && (
         <Werkzeugleiste kapitel={kapitel.kapitel} mitRegeln={mitRegeln} werkzeug={werkzeug} />

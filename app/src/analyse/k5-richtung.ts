@@ -252,25 +252,27 @@ function fazit(p: Stellungsprofil, farbe: Color, r: Richtungsbefund): string {
 }
 
 /**
- * Beantwortet Leitfrage 3 für beide Seiten.
+ * Beantwortet Leitfrage 3 für die gewählte Seite.
  *
  * Warum: „Wohin zeigt die Struktur – und auf welchem Flügel habe ich mehr Bauern?“ (Kapitel 5).
- * Eingaben: Stellung, eigene Seite. Ausgabe: ein Befund je Seite. Beispiel: Abb. 5.26: Weiß
- * „Kette d4–e5 zeigt zum Königsflügel, Basis d4 ohne Stütze“; Schwarz „Kette e6–d5 zeigt zum
- * Damenflügel“, Hebel ...f6 gegen e5. Abb. 5.32: Weiß „Minderheit am Damenflügel (2 gegen 3)“.
+ * Eingaben: Stellung, eigene Seite. Ausgabe: der Befund der eigenen Seite; die Richtung des
+ * Gegners zeigt der Sicht-Schalter (R41), seine Kettenbasis ohne Stütze steht rot am Brett.
+ * Beispiel: Abb. 5.26, Weiß: „Kette d4–e5 zeigt zum Königsflügel, Basis d4 ohne Stütze“;
+ * Schwarz: „Kette e6–d5 zeigt zum Damenflügel“, Hebel ...f6 gegen e5. Abb. 5.32: Weiß
+ * „Minderheit am Damenflügel (2 gegen 3)“.
  */
 export function richtung(stellung: Stellung, eigen: Color): Werkzeugergebnis {
   const p = profil(stellung);
   const mein = befundFuer(p, eigen);
-  const sein = befundFuer(p, gegner(eigen));
+  const sein = richtungFuer(p, gegner(eigen));
   return {
     werkzeug: "k5-richtung",
     art: "E",
     ueberschrift: t("richtung.titel"),
-    befunde: [mein.befund, sein.befund],
+    befunde: [mein.befund],
     fazit: fazit(p, eigen, mein.r),
-    markierungen: markierungen(mein.r, sein.r),
-    stufen: [[eigen], [eigen, gegner(eigen)], [eigen, gegner(eigen)]],
+    markierungen: markierungen(mein.r, sein),
+    stufen: [[eigen], [eigen], [eigen]],
     regel: t("werkzeug.k5-richtung.regel"),
   };
 }

@@ -1,12 +1,12 @@
 /**
- * Eine Aufgabe des Strukturerkenners: im Skelett die starken Felder antippen (Leitfrage 1, W5),
- * dann die schwachen Bauern, dann den Plan wählen.
+ * Eine Aufgabe des Strukturerkenners: in der echten Stellung die starken Felder antippen
+ * (Leitfrage 1, W5), dann die schwachen Bauern, eine Feldart benennen, dann den Plan wählen.
  *
- * Rolle im Gesamtbild: Trainer „struktur“ (Pflichtenheft 7: „Nur das Skelett ist sichtbar. Du
- * beantwortest die Leitfragen durch Antippen … und wählst den passenden Plan-Satz.“). Das Brett
- * zeigt nur Bauern und Könige (Skelett-Röntgen, Kapitel 5). Richtig zählt die Aufgabe, wenn
- * alle Schritte stimmen. Hat die Seite am Zug mehr als vier starke Felder (Lehrbilder mit wenigen
- * Bauern), entfällt der erste Schritt.
+ * Rolle im Gesamtbild: Trainer „struktur“ (Pflichtenheft 7). Seit P4 (R49) zeigt das Brett die
+ * echte Stellung; ein Knopf blendet alles außer Bauern und Königen aus (Skelett-Röntgen,
+ * Kapitel 5). Richtig zählt die Aufgabe, wenn alle Schritte stimmen. Hat die Seite am Zug mehr
+ * als vier starke Felder (Lehrbilder mit wenigen Bauern), entfällt der erste Schritt; ohne Feld
+ * einer der fünf Arten entfällt die Feldart-Frage.
  * Abhängigkeiten: training/strukturtrainer.ts, schach/weiterspielen.ts (Skelett), Trainerbrett.
  */
 import { useState } from "react";
@@ -14,7 +14,15 @@ import type { Markierung } from "../../analyse/werkzeug";
 import type { Strukturaufgabe as Aufgabe } from "../../daten/trainerdaten";
 import { t } from "../../i18n/sprache";
 import { skelettFen } from "../../schach/weiterspielen";
-import { planwahl, schwacheBauern, starkeFelder, type Plan } from "../../training/strukturtrainer";
+import {
+  feldartfrage,
+  planwahl,
+  schwacheBauern,
+  starkeFelderMitArt,
+  type Feldart,
+  type Feldartfrage,
+  type Plan,
+} from "../../training/strukturtrainer";
 import { pruefeFelder } from "../../training/zaehltrainer";
 import { ZUFALL } from "../../training/zufall";
 import { abgleichsfelder, umschalten } from "./abgleich";
@@ -26,7 +34,37 @@ import { useSammelstellung } from "./sammelstellung";
 
 type Vergleich = ReturnType<typeof pruefeFelder>;
 
-/** Ein Schritt mit Antippen: Auftrag, Skelett, Prüfen, Meldung mit den erwarteten Feldern. */
+/** Das Brett der Aufgabe: echte Stellung oder Skelett, mit dem Umschaltknopf darunter. */
+function Aufgabenbrett({
+  aufgabe,
+  skelett,
+  schalte,
+  markierungen,
+  beiFeld,
+}: {
+  aufgabe: Aufgabe;
+  skelett: boolean;
+  schalte: () => void;
+  markierungen: readonly Markierung[];
+  beiFeld?: (feld: string) => void;
+}) {
+  return (
+    <>
+      <Trainerbrett
+        fen={skelett ? skelettFen(aufgabe.fen) : aufgabe.fen}
+        markierungen={markierungen}
+        gedreht={aufgabe.seite === "b"}
+        {...(beiFeld ? { beiFeld } : {})}
+        beschriftung={t("trainer.struktur.name")}
+      />
+      <button type="button" className="knopf-link" aria-pressed={skelett} onClick={schalte}>
+        {t(skelett ? "strukturtrainer.alleFiguren" : "strukturtrainer.skelett")}
+      </button>
+    </>
+  );
+}
+
+/** Ein Schritt mit Antippen: Auftrag, Brett, Prüfen, Meldung mit den erwarteten Feldern. */
 function Tippschritt({
   aufgabe,
   auftrag,
@@ -34,6 +72,8 @@ function Tippschritt({
   meldung,
   geprueft,
   pruefe,
+  skelett,
+  schalte,
 }: {
   aufgabe: Aufgabe;
   auftrag: string;
@@ -41,6 +81,8 @@ function Tippschritt({
   meldung: string;
   geprueft: Vergleich | null;
   pruefe: (vergleich: Vergleich) => void;
+  skelett: boolean;
+  schalte: () => void;
 }) {
   const [getippt, setzeGetippt] = useState<readonly string[]>([]);
   const markierungen: Markierung[] = geprueft
@@ -49,14 +91,14 @@ function Tippschritt({
   return (
     <>
       <p>{auftrag}</p>
-      <Trainerbrett
-        fen={skelettFen(aufgabe.fen)}
+      <Aufgabenbrett
+        aufgabe={aufgabe}
+        skelett={skelett}
+        schalte={schalte}
         markierungen={markierungen}
-        gedreht={aufgabe.seite === "b"}
         {...(geprueft
           ? {}
           : { beiFeld: (feld: string) => setzeGetippt(umschalten(getippt, feld)) })}
-        beschriftung={t("trainer.struktur.name")}
       />
       {!geprueft && (
         <button
@@ -72,19 +114,74 @@ function Tippschritt({
   );
 }
 
-/** Der Auftrag eines Schrittes mit seiner Nummer („Schritt 1 von 3: …“). */
-function auftragstext(schluessel: "felder" | "bauern", nummer: number, gesamt: number): string {
-  return t(`strukturtrainer.auftrag.${schluessel}`, { nummer, gesamt });
+/** Schritt Feldart: das goldene Feld benennen (Loch, schwaches Feld, starkes Feld, Vorposten, rückständiger Bauer). */
+function Feldartschritt({
+  aufgabe,
+  frage,
+  auftrag,
+  skelett,
+  schalte,
+  fertig,
+}: {
+  aufgabe: Aufgabe;
+  frage: Feldartfrage;
+  auftrag: string;
+  skelett: boolean;
+  schalte: () => void;
+  fertig: (richtig: boolean) => void;
+}) {
+  const [gewaehlt, setzeGewaehlt] = useState<Feldart | null>(null);
+  const waehle = (art: Feldart) => {
+    if (gewaehlt) return;
+    setzeGewaehlt(art);
+    fertig(art === frage.richtig);
+  };
+  return (
+    <>
+      <p>{auftrag}</p>
+      <Aufgabenbrett
+        aufgabe={aufgabe}
+        skelett={skelett}
+        schalte={schalte}
+        markierungen={[{ typ: "feld", farbe: "gold", feld: frage.feld }]}
+      />
+      <div className="knopfreihe" role="group" aria-label={auftrag}>
+        {frage.optionen.map((art) => (
+          <button
+            key={art}
+            type="button"
+            className="knopf-zweit"
+            aria-pressed={gewaehlt === art}
+            disabled={gewaehlt !== null}
+            onClick={() => waehle(art)}
+          >
+            {t(`strukturtrainer.feldart.${art}`)}
+          </button>
+        ))}
+      </div>
+      {gewaehlt && (
+        <Antwortmeldung richtig={gewaehlt === frage.richtig}>
+          {t("strukturtrainer.feldartErgebnis", {
+            feld: frage.feld,
+            art: t(`strukturtrainer.feldart.${frage.richtig}`),
+            warum: t(`strukturtrainer.feldartWarum.${frage.richtig}`),
+          })}
+        </Antwortmeldung>
+      )}
+    </>
+  );
 }
 
-/** Die Meldung nach dem Prüfen: die erwarteten Felder oder „keine“. */
-function meldungstext(schluessel: "felder" | "bauern", erwartet: readonly string[]): string {
-  return erwartet.length > 0
-    ? t(`strukturtrainer.ergebnis.${schluessel}`, { felder: erwartet.join(", ") })
-    : t(`strukturtrainer.keine.${schluessel}`);
+/** Die Meldung nach dem Prüfen der starken Felder: Vorposten gekennzeichnet, oder „keine“. */
+function felderMeldung(felder: readonly { feld: string; vorposten: boolean }[]): string {
+  if (felder.length === 0) return t("strukturtrainer.keine.felder");
+  const text = felder
+    .map((f) => (f.vorposten ? t("strukturtrainer.vorpostenKurz", { feld: f.feld }) : f.feld))
+    .join(", ");
+  return t("strukturtrainer.ergebnis.felder", { felder: text });
 }
 
-/** Schritt 2: den passenden Plan-Satz wählen. */
+/** Schritt Plan: den passenden Plan-Satz wählen. */
 function Planwahl({
   aufgabe,
   runde,
@@ -134,46 +231,73 @@ function Planwahl({
 
 export function Strukturaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
-  const [felder] = useState(() => starkeFelder(aufgabe));
+  const [felder] = useState(() => starkeFelderMitArt(aufgabe));
+  const [frage] = useState(() => feldartfrage(aufgabe, ZUFALL));
+  const [skelett, setzeSkelett] = useState(false);
   const [vergleichFelder, setzeVergleichFelder] = useState<Vergleich | null>(null);
   const [vergleichBauern, setzeVergleichBauern] = useState<Vergleich | null>(null);
-  const gesamt = felder ? 3 : 2;
+  const [feldartRichtig, setzeFeldartRichtig] = useState<boolean | null>(null);
+  const schalte = () => setzeSkelett(!skelett);
   const bauern = schwacheBauern(aufgabe);
+  const gesamt = 2 + (felder ? 1 : 0) + (frage ? 1 : 0);
+  const schrittBauern = felder ? 2 : 1;
+  const schrittFeldart = schrittBauern + 1;
   const bauernDran = felder === null || vergleichFelder !== null;
-  const vorher = (vergleichFelder?.richtig ?? true) && (vergleichBauern?.richtig ?? false);
+  const feldartDran = vergleichBauern !== null && frage !== null;
+  const planDran = vergleichBauern !== null && (frage === null || feldartRichtig !== null);
+  const vorher =
+    (vergleichFelder?.richtig ?? true) &&
+    (vergleichBauern?.richtig ?? false) &&
+    (feldartRichtig ?? true);
+  const schritt = (nummer: number) => t("strukturtrainer.schritt", { nummer, gesamt });
   return (
     <>
       {felder && (
         <Tippschritt
           aufgabe={aufgabe}
-          auftrag={auftragstext("felder", 1, gesamt)}
-          erwartet={felder}
-          meldung={meldungstext("felder", felder)}
+          auftrag={`${schritt(1)} ${t("strukturtrainer.auftrag.felder")}`}
+          erwartet={felder.map((f) => f.feld)}
+          meldung={felderMeldung(felder)}
           geprueft={vergleichFelder}
           pruefe={setzeVergleichFelder}
+          skelett={skelett}
+          schalte={schalte}
         />
       )}
       {bauernDran && (
         <Tippschritt
           aufgabe={aufgabe}
-          auftrag={auftragstext("bauern", gesamt - 1, gesamt)}
+          auftrag={`${schritt(schrittBauern)} ${t("strukturtrainer.auftrag.bauern")}`}
           erwartet={bauern}
-          meldung={meldungstext("bauern", bauern)}
+          meldung={
+            bauern.length > 0
+              ? t("strukturtrainer.ergebnis.bauern", { felder: bauern.join(", ") })
+              : t("strukturtrainer.keine.bauern")
+          }
           geprueft={vergleichBauern}
           pruefe={setzeVergleichBauern}
+          skelett={skelett}
+          schalte={schalte}
         />
       )}
-      {vergleichBauern && (
-        <Planwahl
+      {feldartDran && frage && (
+        <Feldartschritt
           aufgabe={aufgabe}
-          runde={runde}
-          vorher={vorher}
-          auftrag={t("strukturtrainer.schrittPlan", { nummer: gesamt, gesamt })}
+          frage={frage}
+          auftrag={`${schritt(schrittFeldart)} ${t("strukturtrainer.auftrag.feldart")}`}
+          skelett={skelett}
+          schalte={schalte}
+          fertig={setzeFeldartRichtig}
         />
+      )}
+      {planDran && (
+        <Planwahl aufgabe={aufgabe} runde={runde} vorher={vorher} auftrag={schritt(gesamt)} />
       )}
       <p className="hinweis">
         {aufgabe.herkunft.quelle === "buch"
-          ? t("strukturtrainer.ausBuch", { nummer: aufgabe.herkunft.abbildung })
+          ? t(aufgabe.herkunft.beispiel ? "strukturtrainer.ausPartie" : "strukturtrainer.ausBuch", {
+              nummer: aufgabe.herkunft.abbildung,
+            })
           : t("taktiktrainer.ausLichess", { wertung: aufgabe.herkunft.wertung })}{" "}
         · {t("taktiktrainer.stufe", { stufe: aufgabe.schwierigkeit })}
       </p>

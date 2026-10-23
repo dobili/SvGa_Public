@@ -57,7 +57,11 @@ describe("Lernsammlung lesen und ändern", () => {
       { ...eintrag("a", "Spanische Partie"), plan: "x".repeat(PLAN_HOECHSTENS + 5) },
       { id: "b", datum: "2026-10-18" },
       "kaputt",
-      { ...eintrag("c", ""), herkunft: "unbekannt", verlauf: { startFen: GRUNDSTELLUNG, zuege: [1] } },
+      {
+        ...eintrag("c", ""),
+        herkunft: "unbekannt",
+        verlauf: { startFen: GRUNDSTELLUNG, zuege: [1] },
+      },
     ];
     const liste = sammlungAus(roh);
     expect(liste.map((e) => e.id)).toEqual(["a", "c"]);
@@ -69,7 +73,10 @@ describe("Lernsammlung lesen und ändern", () => {
 
   it("hängt an, ändert, löscht und hält die Obergrenze", () => {
     let liste = mitSammeleintrag([], eintrag("a", ""));
-    liste = geaenderterEintrag(liste, "a", { plan: "Druck auf e5", eroeffnung: "Spanische Partie" });
+    liste = geaenderterEintrag(liste, "a", {
+      plan: "Druck auf e5",
+      eroeffnung: "Spanische Partie",
+    });
     expect(liste[0]).toMatchObject({ plan: "Druck auf e5", eroeffnung: "Spanische Partie" });
     expect(ohneSammeleintrag(liste, "a")).toEqual([]);
     const voll = Array.from({ length: HOECHSTENS_SAMMLUNG }, (_, i) => eintrag(`v${i}`, ""));
@@ -146,7 +153,11 @@ describe("PGN für eine Lichess-Studie", () => {
     expect(pgn).toContain(
       "1. e4 e5 2. Nf3 Nc6 3. Bb5 {Plan: Druck auf e5 (gegen den Springer) Notiz: Zeile 1 Zeile 2} *",
     );
-    const ohneWeg = { ...eintrag("b", ""), fen: "8/8/4k3/8/8/4K3/8/8 w - - 0 1", plan: 'Mit "Opposition"' };
+    const ohneWeg = {
+      ...eintrag("b", ""),
+      fen: "8/8/4k3/8/8/4K3/8/8 w - - 0 1",
+      plan: 'Mit "Opposition"',
+    };
     const zweiter = eintragAlsPgn(ohneWeg, TEXTE);
     expect(zweiter).toContain('[SetUp "1"]\n[FEN "8/8/4k3/8/8/4K3/8/8 w - - 0 1"]');
     expect(zweiter).toContain('[White "Ohne Eröffnung"]');

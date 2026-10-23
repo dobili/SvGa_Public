@@ -42,8 +42,9 @@ function zugfolge(zuege: readonly string[]): string {
 }
 
 /**
- * Die eigene Kurzfassung je Steckbrief, nach dem Namen des Steckbriefs im Buch. Neue Steckbriefe
- * fallen im Test auf (k2-eroeffnung.test.ts), damit keiner ohne Kurzfassung bleibt.
+ * Die eigene Kurzfassung je Steckbrief, nach dem Namen des Steckbriefs im Buch, deutsch und
+ * englisch (Buchdaten /daten/en/, P6). Neue Steckbriefe fallen im Test auf (k2-eroeffnung.test.ts),
+ * damit keiner ohne Kurzfassung bleibt.
  */
 export const KURZFASSUNGEN: Readonly<Record<string, Textschluessel>> = {
   "Spanische Partie": "eroeffnung.kurz.spanisch",
@@ -59,6 +60,19 @@ export const KURZFASSUNGEN: Readonly<Record<string, Textschluessel>> = {
   "Königsindische Verteidigung": "eroeffnung.kurz.koenigsindisch",
   "Zweispringerspiel und Läuferspiel": "eroeffnung.kurz.zweispringer",
   "Nimzo-Indische Verteidigung": "eroeffnung.kurz.nimzoindisch",
+  "Ruy Lopez": "eroeffnung.kurz.spanisch",
+  "Italian Game": "eroeffnung.kurz.italienisch",
+  "Scotch Game": "eroeffnung.kurz.schottisch",
+  "Petrov Defense (Russian Game)": "eroeffnung.kurz.russisch",
+  "Sicilian Defense": "eroeffnung.kurz.sizilianisch",
+  "Queen's Gambit": "eroeffnung.kurz.damengambit",
+  "London System": "eroeffnung.kurz.london",
+  "Trompowsky Attack": "eroeffnung.kurz.trompowsky",
+  "French Defense": "eroeffnung.kurz.franzoesisch",
+  "Caro-Kann Defense": "eroeffnung.kurz.carokann",
+  "King's Indian Defense": "eroeffnung.kurz.koenigsindisch",
+  "Two Knights Defense and Bishop's Opening": "eroeffnung.kurz.zweispringer",
+  "Nimzo-Indian Defense": "eroeffnung.kurz.nimzoindisch",
 };
 
 /**

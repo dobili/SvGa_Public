@@ -56,8 +56,10 @@ const VERLAUF_HOECHSTENS = 300;
 export const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
 type Roh = Record<string, unknown>;
-const istObjekt = (w: unknown): w is Roh => typeof w === "object" && w !== null && !Array.isArray(w);
-const text = (w: unknown, laenge: number): string => (typeof w === "string" ? w.slice(0, laenge) : "");
+const istObjekt = (w: unknown): w is Roh =>
+  typeof w === "object" && w !== null && !Array.isArray(w);
+const text = (w: unknown, laenge: number): string =>
+  typeof w === "string" ? w.slice(0, laenge) : "";
 
 function verlaufAus(roh: unknown): Sammelverlauf | null {
   if (!istObjekt(roh) || typeof roh.startFen !== "string" || !Array.isArray(roh.zuege)) {

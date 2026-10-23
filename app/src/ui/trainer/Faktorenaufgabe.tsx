@@ -2,37 +2,52 @@
  * Aufgabe des Faktorenbilanz-Trainers: je Faktor sagen, wer vorn liegt (Kapitel 3).
  *
  * Rolle im Gesamtbild: Trainer „faktorenbilanz“ (AP 13). Der Leser stellt die Waage für
- * Material und Zeit und vergleicht Königssicherheit und Aktivität (Weiß, gleich, Schwarz); nach
+ * Material und Zeit und gibt Königssicherheit und Aktivität je Seite ✓ ◐ ✗ wie die Tabelle im
+ * Buch (seit 0.2.117, Faktorwahl.tsx; vorher drei Knöpfe Weiß, gleich, Schwarz); nach
  * „Prüfen“ steht je Faktor die Antwort daneben (aus der Faktorenbilanz des Buches, wenn die
  * Abbildung eine hat, W9), darunter die Bilanz mit denselben Sätzen wie das Werkzeug
  * „Faktorenbilanz“ (k3-faktorenbilanz.ts) und die Warum-Fragen der Abbildung (AP 14).
- * Abhängigkeiten: training/faktorentrainer.ts, analyse/k3-faktorenbilanz.ts, Trainerbrett.
+ * Abhängigkeiten: training/faktorentrainer.ts, analyse/k3-faktorenbilanz.ts, Faktorwahl.tsx,
+ * Trainerbrett.
  */
 import { useMemo, useState } from "react";
 import { faktorenbilanz } from "../../analyse/k3-faktorenbilanz";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen } from "../../schach/stellung";
 import {
-  ANTWORTEN,
-  FAKTOREN,
   falscheFaktoren,
-  type Faktor,
+  vergleiche,
   type Faktorantwort,
   type Faktorenaufgabe as Aufgabe,
   type Vorn,
 } from "../../training/faktorentrainer";
 import { WarumFragenListe } from "../komponenten/WarumFrage";
+import { Seitenwahl, Waagenwahl, type Seitenwertung } from "./Faktorwahl";
 import { Antwortmeldung } from "./Rundenrahmen";
 import { Trainerbrett } from "./Trainerbrett";
 import type { Runde } from "./useRunde";
-import { Wahlzeile } from "./Wahlzeile";
 import { useSammelstellung } from "./sammelstellung";
 
-type Entwurf = Partial<Record<Faktor, Vorn>>;
+/** Die Eingabe: Waagen für Material und Zeit, ✓ ◐ ✗ je Seite für König und Aktivität. */
+interface Entwurf {
+  readonly material?: Vorn;
+  readonly zeit?: Vorn;
+  readonly koenig: Seitenwertung;
+  readonly aktivitaet: Seitenwertung;
+}
+
+const LEER: Entwurf = { koenig: {}, aktivitaet: {} };
+
+/** Wer nach den Zeichen beider Seiten vorn liegt; undefined, solange eine Seite fehlt. */
+function vornAus(wertung: Seitenwertung): Vorn | undefined {
+  return wertung.white && wertung.black ? vergleiche(wertung.white, wertung.black) : undefined;
+}
 
 function vollstaendig(e: Entwurf): Faktorantwort | null {
-  return e.material && e.zeit && e.koenig && e.aktivitaet
-    ? { material: e.material, zeit: e.zeit, koenig: e.koenig, aktivitaet: e.aktivitaet }
+  const koenig = vornAus(e.koenig);
+  const aktivitaet = vornAus(e.aktivitaet);
+  return e.material && e.zeit && koenig && aktivitaet
+    ? { material: e.material, zeit: e.zeit, koenig, aktivitaet }
     : null;
 }
 
@@ -60,7 +75,7 @@ function Bilanz({ fen }: { fen: string }) {
 
 export function Faktorenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: Runde }) {
   useSammelstellung(aufgabe.fen);
-  const [entwurf, setzeEntwurf] = useState<Entwurf>({});
+  const [entwurf, setzeEntwurf] = useState<Entwurf>(LEER);
   const beantwortet = runde.ergebnis !== null;
   const antwort = vollstaendig(entwurf);
   return (
@@ -70,15 +85,24 @@ export function Faktorenaufgabe({ aufgabe, runde }: { aufgabe: Aufgabe; runde: R
         fen={aufgabe.fen}
         beschriftung={t("trainer.brettAus", { nummer: aufgabe.nummer })}
       />
-      {FAKTOREN.map((faktor) => (
-        <Wahlzeile
+      {(["material", "zeit"] as const).map((faktor) => (
+        <Waagenwahl
           key={faktor}
           titel={t(`faktoren.name.${faktor}`)}
-          werte={ANTWORTEN}
-          name={(w) => t(`faktorentrainer.vorn.${w}`)}
           wert={entwurf[faktor]}
           setze={(w) => setzeEntwurf({ ...entwurf, [faktor]: w })}
-          app={beantwortet ? aufgabe.loesung[faktor] : null}
+          loesung={beantwortet ? aufgabe.loesung[faktor] : null}
+          quelle={aufgabe.quelle}
+        />
+      ))}
+      {(["koenig", "aktivitaet"] as const).map((faktor) => (
+        <Seitenwahl
+          key={faktor}
+          titel={t(`faktoren.name.${faktor}`)}
+          wert={entwurf[faktor]}
+          setze={(w) => setzeEntwurf({ ...entwurf, [faktor]: w })}
+          vorn={vornAus(entwurf[faktor])}
+          loesung={beantwortet ? aufgabe.loesung[faktor] : null}
           quelle={aufgabe.quelle}
         />
       ))}

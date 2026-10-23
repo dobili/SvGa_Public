@@ -114,7 +114,11 @@ function zugAusBuch(buch: Buchstellung, zufall: Zufall): Zugaufgabe | null {
 }
 
 /** Eine Sonderzug-Aufgabe; die Schreibweise kommt von chessops (mit Schachzeichen). */
-function sonderzug(eintrag: { nummer: string | null; fen: string; san: string }): Zugaufgabe | null {
+function sonderzug(eintrag: {
+  nummer: string | null;
+  fen: string;
+  san: string;
+}): Zugaufgabe | null {
   const regeln = regelstellung(eintrag.fen);
   const zug = regeln ? parseSan(regeln, eintrag.san) : undefined;
   if (!regeln || !zug) return null;

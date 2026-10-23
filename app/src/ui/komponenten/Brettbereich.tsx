@@ -63,7 +63,8 @@ function Schalter({
  * Beschriftung für Bildschirmleser, ob das Brett anfangs gedreht ist (Partie mit Schwarz),
  * Werkzeug-Symbole vor „Brett drehen“, weitere Schalter danach (Partie: ruhige Ansicht), ob die
  * Skelett-Ansicht an ist, eine schmale Leiste links neben dem Brett (Partie: Bewertungsbalken
- * im Rückblick; sie erfährt, ob das Brett gedreht ist).
+ * im Rückblick; sie erfährt, ob das Brett gedreht ist), eine Überlagerung des Brettes (Partie:
+ * Ergebnis am Ende, R38).
  */
 export function Brettbereich({
   stellung,
@@ -76,6 +77,7 @@ export function Brettbereich({
   zusatzSchalter = null,
   skelett = false,
   seitenleiste = null,
+  ueberlagerung = null,
 }: {
   stellung: Stellung;
   markierungen: readonly Markierung[];
@@ -87,6 +89,8 @@ export function Brettbereich({
   zusatzSchalter?: React.ReactNode;
   skelett?: boolean;
   seitenleiste?: ((gedreht: boolean) => React.ReactNode) | null;
+  /** Über dem Brett, etwa das Ergebnis am Partieende (R38). */
+  ueberlagerung?: React.ReactNode;
 }) {
   const [gedreht, setzeGedreht] = useState(anfangsGedreht);
   // Die Koordinaten stellt man in den Einstellungen ein; der Bildschirm liest sie beim Öffnen.
@@ -107,6 +111,7 @@ export function Brettbereich({
           gesperrt={bedienung.gesperrt?.feld ?? null}
           beiFeld={bedienung.beiFeld}
           ziehen={bedienung.ziehen}
+          ueberlagerung={ueberlagerung}
           beschriftung={`${beschriftung}, ${t(`abbildung.amZug.${amZug}`)}`}
         />
       </div>

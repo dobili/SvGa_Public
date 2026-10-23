@@ -9,11 +9,13 @@
  * darüber die Karte „Deine Spielstärke“ über die letzten zehn Partien (LetzteSpielstaerke.tsx).
  * Seit 0.2.99 (Wunsch des Autors vom 19.10.2026): Porträt des Gegners je Partie, Filter nach
  * Ergebnis und Wertung, „Weitere Partien zeigen“ und Löschen ungewerteter Partien mit Nachfrage.
+ * Seit 0.2.117: Filter und Sortierung als Symbole, mehrere zugleich (Partienfilterleiste.tsx), und
+ * „Partie einlesen (PGN)“ (PgnImport.tsx), auch wenn noch keine Partie gespielt ist.
  * Abhängigkeiten: spiel/partie.ts, spiel/auswertung.ts, spiel/genauigkeit.ts, speicher/partien.ts,
  * engine/stufen.ts, ui/brett (Figur), Navigation, i18n.
  */
 import { Star, Trash2 } from "lucide-react";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { useEinstellungen } from "../../app/einstellungen";
 import { useNavigation } from "../../app/navigationsKontext";
 import { stufe } from "../../engine/stufen";
@@ -23,20 +25,23 @@ import { gegnername } from "../../engine/gegner";
 import type { Partie } from "../../spiel/partie";
 import { staerkeDerPartie } from "../../spiel/wertung";
 import {
-  ERGEBNISFILTER,
   OHNE_FILTER,
   passtZumFilter,
-  WERTUNGSFILTER,
+  sortiere,
   type Partienfilter,
+  type Sortierung,
+  type Sortierwerte,
 } from "../../spiel/partienfilter";
+import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
 import { ohnePartie, type Partieeintrag } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
-import { Auswahl } from "./Auswahl";
 import { Ergebnismarke } from "./Ergebnismarke";
 import { GegnerBild } from "./GegnerBild";
 import { Figur } from "../brett/Figur";
 import { BRETTFARBEN, FELD } from "../brett/masse";
 import { LetzteSpielstaerke } from "./LetzteSpielstaerke";
+import { Partienfilterleiste } from "./Partienfilterleiste";
+import { PgnImport } from "./PgnImport";
 import type { Genauigkeitsmodus } from "../../spiel/staerkemodell";
 import { Knopfsymbol } from "./Knopfsymbol";
 import { Stufenmarke } from "./Stufenmarke";
@@ -54,10 +59,12 @@ const LOESCHSYMBOL = 20;
 /** Größe des Sterns für eine gewertete Partie (0.2.58, Wunsch des Autors). */
 const WERTUNGSSYMBOL = 14;
 
-/** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie) */
+/** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie); eingelesen „… · Anna – Ben · 30 Züge“. */
 function zeile(partie: Partie): string {
   const datum = datumText(new Date(partie.begonnen));
   const zuege = Math.ceil(partie.zuege.length / 2);
+  const importiert = partie.einstellung.importiert;
+  if (importiert) return t("spielen.partiezeileImport", { datum, ...importiert, zuege });
   const s = stufe(partie.einstellung.stufe);
   const gegner =
     partie.einstellung.gegner === "mensch"
@@ -231,43 +238,44 @@ function Partiezeile({ eintrag, modus }: { eintrag: Partieeintrag; modus: Genaui
   );
 }
 
-/** Filter nach Ergebnis und Wertung (zwei Reihen Chips). */
-function Filter({
-  filter,
-  setze,
-}: {
-  filter: Partienfilter;
-  setze: (filter: Partienfilter) => void;
-}) {
-  return (
-    <div className="partienfilter">
-      <Auswahl
-        name={t("spielen.filter.ergebnis")}
-        werte={ERGEBNISFILTER}
-        gewaehlt={filter.ergebnis}
-        text={(w) => t(`spielen.filter.ergebnis.${w}`)}
-        beiWahl={(ergebnis) => setze({ ...filter, ergebnis })}
-      />
-      <Auswahl
-        name={t("spielen.filter.wertung")}
-        werte={WERTUNGSFILTER}
-        gewaehlt={filter.wertung}
-        text={(w) => t(`spielen.filter.wertung.${w}`)}
-        beiWahl={(wertung) => setze({ ...filter, wertung })}
-      />
-    </div>
-  );
+/** Zahlen zum Sortieren: Beginn, eigene Spielstärke in der Partie, Stärke des Gegners. */
+function sortierwerte(eintrag: Partieeintrag, modus: Genauigkeitsmodus): Sortierwerte {
+  const e = eintrag.partie.einstellung;
+  const mensch = e.gegner === "mensch";
+  const eigene = mensch ? null : staerkeDerPartie(eintrag, modus)?.[e.eigeneFarbe].spielstaerke;
+  return {
+    begonnen: eintrag.partie.begonnen,
+    staerke: eigene ?? null,
+    gegner: mensch ? null : (staerkeDesBots(e.bot) ?? staerkeAusStufen(e.stufenJePhase)),
+  };
 }
 
 export function Partienliste({ partien }: { partien: readonly Partieeintrag[] }) {
   const modus = useEinstellungen().genauigkeitsmodus;
   const [filter, setzeFilter] = useState<Partienfilter>(OHNE_FILTER);
   const [anzahl, setzeAnzahl] = useState(SICHTBAR);
-  if (partien.length === 0) return null;
+  const [sortierung, setzeSortierung] = useState<Sortierung>("datum");
+  const [aufsteigend, setzeAufsteigend] = useState(false);
+  // Die Spielstärke je Partie kostet Rechenzeit; einmal je Liste und Modus.
+  const werte = useMemo(
+    () => new Map(partien.map((e) => [e, sortierwerte(e, modus)])),
+    [partien, modus],
+  );
+  if (partien.length === 0)
+    return (
+      <section className="abschnitt partienliste">
+        <PgnImport />
+      </section>
+    );
   // Ohne sichtbaren Filter (weniger als FILTER_AB Partien) gilt auch keiner, etwa nach dem Löschen.
   const mitFilter = partien.length >= FILTER_AB;
   const aktiv = mitFilter ? filter : OHNE_FILTER;
-  const passend = partien.filter((e) => passtZumFilter(e.partie, aktiv));
+  const passend = sortiere(
+    partien.filter((e) => passtZumFilter(e.partie, aktiv)),
+    mitFilter ? sortierung : "datum",
+    (e) => werte.get(e) ?? sortierwerte(e, modus),
+    mitFilter && aufsteigend,
+  );
   const rest = passend.length - anzahl;
   return (
     <>
@@ -277,7 +285,19 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
           <Titelsymbol art="partien" />
           {t("spielen.partien")}
         </h2>
-        {mitFilter && <Filter filter={filter} setze={setzeFilter} />}
+        <PgnImport />
+        {mitFilter && (
+          <Partienfilterleiste
+            filter={filter}
+            setzeFilter={setzeFilter}
+            sortierung={sortierung}
+            aufsteigend={aufsteigend}
+            setzeSortierung={(s, auf) => {
+              setzeSortierung(s);
+              setzeAufsteigend(auf);
+            }}
+          />
+        )}
         {passend.length === 0 && <p className="hinweis">{t("spielen.filter.leer")}</p>}
         <ul className="begriffsliste">
           {passend.slice(0, anzahl).map((eintrag) => (

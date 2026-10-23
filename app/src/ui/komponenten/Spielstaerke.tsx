@@ -309,16 +309,25 @@ function Phasenzelle({ b }: { b: Seitenbilanz }) {
     );
   }
   const urteil = phasenurteil(b.innen);
+  // Seit R33 (Wunsch des Autors, 23.10.2026): Die Eröffnung endet nach unseren Regeln oft nach
+  // wenigen Zügen. Dann stehen Urteil und Genauigkeit ohne den Satz „zu wenige Züge“; die Zahl der
+  // Spielstärke kommt erst ab sechs Zügen (Erklärung hinter dem Fragezeichen).
+  const ohneSchaetzung = b.schaetzung === null && b.gewertet >= b.zuege;
   return (
     <>
       <span className={`phasenurteil phasenurteil-${urteil}`}>
         {t(`spielstaerke.urteil.${urteil}`)}
       </span>
-      {tZahl("spielstaerke.phase", b.zuege, {
-        genauigkeit: genauigkeitstext(b),
-        staerke: staerketext(b),
-        zuege: b.zuege,
-      })}
+      {ohneSchaetzung
+        ? tZahl("spielstaerke.phaseKurz", b.zuege, {
+            genauigkeit: genauigkeitstext(b),
+            zuege: b.zuege,
+          })
+        : tZahl("spielstaerke.phase", b.zuege, {
+            genauigkeit: genauigkeitstext(b),
+            staerke: staerketext(b),
+            zuege: b.zuege,
+          })}
     </>
   );
 }

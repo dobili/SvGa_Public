@@ -113,9 +113,9 @@
    },
    {
     "kapitel": 1,
-    "kernfrage": "Was passiert jetzt?",
-    "werkzeug": "Schach-Röntgen-Regel (Schach, Schlag, Drohung, Optimierung); goldene Angriffsregel",
-    "fehlerart": "Schach oder Schlag übersehen"
+    "kernfrage": "What happens now?",
+    "werkzeug": "Chess X-ray rule (check, capture, threat, optimization); golden attack rule",
+    "fehlerart": "Missed a check or capture"
    },
    {
     "kapitel": 2,
@@ -125,9 +125,9 @@
    },
    {
     "kapitel": 3,
-    "kernfrage": "Lohnt sich das Opfer, und wie lange?",
-    "werkzeug": "Faktorenbilanz (Material, Zeit, Königssicherheit, Aktivität) mit Haltbarkeit",
-    "fehlerart": "Opferbewertung"
+    "kernfrage": "Is the sacrifice worth it, and for how long?",
+    "werkzeug": "Factor balance (material, time, king safety, activity) with durability",
+    "fehlerart": "Judging sacrifices"
    },
    {
     "kapitel": 4,
@@ -202,14 +202,14 @@
   },
   {
    "kapitel": 1,
-   "einleitung": "Bevor du mit Kapitel 2 weiterliest, solltest du Folgendes sicher können:",
+   "einleitung": "Before you read on with Chapter 2, you should be able to do the following with confidence:",
    "punkte": [
-    "die drei Eröffnungsziele an einer Stellung prüfen",
-    "die vier Todsünden der Eröffnung erkennen",
-    "vor jedem Zug die vier Fragen der Schach-Röntgen-Regel stellen",
-    "auf einem umkämpften Feld Angreifer und Verteidiger samt ihren Werten zählen",
-    "eine Spannung halten, bis der Tausch dir etwas bringt",
-    "vor einem Angriff die Übermacht zählen"
+    "check the three opening goals in a position",
+    "recognize the four deadly sins of the opening",
+    "ask the four questions of the Chess X-ray rule before every move",
+    "count the attackers and defenders on a contested square, together with their values",
+    "hold the tension until the exchange gets you something",
+    "count whether you have superior force before you attack"
    ]
   },
   {
@@ -225,12 +225,12 @@
   },
   {
    "kapitel": 3,
-   "einleitung": "Bevor du mit Kapitel 4 weiterliest, solltest du Folgendes sicher können:",
+   "einleitung": "Before you read on with Chapter 4, you should be able to do the following with confidence:",
    "punkte": [
-    "ein Bauernangebot als echtes Opfer oder Scheinopfer erkennen",
-    "für eine Stellung selbst eine Faktorenbilanz aufstellen und dabei bei der Zeit berücksichtigen, wer am Zug ist",
-    "die Verteidigung gegen die Gambits spielen, die dein Repertoire treffen",
-    "im richtigen Moment einen Mehrbauern zurückgeben"
+    "recognize a pawn offer as a real sacrifice or a pseudo-sacrifice",
+    "draw up a factor balance for a position yourself, taking into account who is to move when you count time",
+    "play the defense against the gambits that hit your repertoire",
+    "give back an extra pawn at the right moment"
    ]
   },
   {

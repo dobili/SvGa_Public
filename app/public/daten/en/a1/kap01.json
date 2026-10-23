@@ -6,32 +6,32 @@
   {
    "nummer": "1.1",
    "label": "sec:k1-eroeffnungsziele",
-   "titel": "Die drei Ziele jeder Eröffnung"
+   "titel": "The three goals of every opening"
   },
   {
    "nummer": "1.2",
    "label": "sec:k1-todsuenden",
-   "titel": "Die vier Todsünden der Eröffnungsphase"
+   "titel": "The four deadly sins of the opening phase"
   },
   {
    "nummer": "1.3",
    "label": "sec:k1-anfaenger",
-   "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+   "titel": "Why beginners so often lose in the first few moves"
   },
   {
    "nummer": "1.4",
    "label": "sec:k1-roentgen",
-   "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+   "titel": "Your built-in error radar: the Chess X-ray rule"
   },
   {
    "nummer": "1.5",
    "label": "sec:k1-spannung",
-   "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+   "titel": "Don't capture too soon: tension is a weapon"
   },
   {
    "nummer": "1.6",
    "label": "sec:k1-angriff",
-   "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+   "titel": "Attack needs superior force: the golden attack rule"
   }
  ],
  "abbildungen": [
@@ -42,7 +42,7 @@
    "abschnitt": {
     "nummer": "1.1",
     "label": "sec:k1-eroeffnungsziele",
-    "titel": "Die drei Ziele jeder Eröffnung"
+    "titel": "The three goals of every opening"
    },
    "unterabschnitt": null,
    "fen": "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1",
@@ -74,7 +74,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -83,7 +83,7 @@
     },
     {
      "art": "text",
-     "text": ": Der goldene Pfeil zeigt den ersten weißen Zentrumszug; das goldene Feld e4 ist eines der vier zentralen Felder, die grauen Felder d4, e5 und d5 sind die übrigen drei.",
+     "text": ": the gold arrow shows White's first center move; the gold square e4 is one of the four central squares, and the gray squares d4, e5 and d5 are the other three.",
      "stil": "normal"
     }
    ],
@@ -108,9 +108,9 @@
    "abschnitt": {
     "nummer": "1.1",
     "label": "sec:k1-eroeffnungsziele",
-    "titel": "Die drei Ziele jeder Eröffnung"
+    "titel": "The three goals of every opening"
    },
-   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "unterabschnitt": "The three goals in practice: the London System",
    "fen": "rnbqkbnr/ppp1pppp/8/3p4/3P1B2/8/PPP1PPPP/RN1QKBNR b KQkq - 1 2",
    "pfeile": [
     {
@@ -132,12 +132,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Lf4"
+     "text": "2. Bf4"
     },
     {
      "art": "text",
@@ -146,22 +146,22 @@
     },
     {
      "art": "text",
-     "text": "Ziel 1",
+     "text": "Goal 1",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Der Bauer besetzt d4 (gold), der Läufer kontrolliert aus der Distanz e5 (goldener Pfeil, graues Feld). Entscheidend ist die Reihenfolge: Der Läufer verlässt die Grundreihe, ",
+     "text": ": the pawn occupies d4 (gold), and the bishop controls e5 from a distance (gold arrow, gray square). The order is what matters: the bishop leaves the back rank ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "bevor",
+     "text": "before",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " e3 ihn einsperrt.",
+     "text": " e3 shuts it in.",
      "stil": "normal"
     }
    ],
@@ -190,9 +190,9 @@
    "abschnitt": {
     "nummer": "1.1",
     "label": "sec:k1-eroeffnungsziele",
-    "titel": "Die drei Ziele jeder Eröffnung"
+    "titel": "The three goals of every opening"
    },
-   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "unterabschnitt": "The three goals in practice: the London System",
    "fen": "rnbqkb1r/ppp2ppp/4pn2/3p4/3P1B2/4PN2/PPP2PPP/RN1QKB1R b KQkq - 1 4",
    "pfeile": [
     {
@@ -215,16 +215,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sf3"
+     "text": "4. Nf3"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Der Springer steht auf seinem besten Feld und kontrolliert e5 ebenfalls (goldener Pfeil, graues Feld). Der Bauer e3 hat dem Läufer f1 den Weg nach d3 geöffnet (grauer Pfeil): Das ist der nächste Schritt.",
+     "text": ", Black to move. The knight stands on its best square and also controls e5 (gold arrow, gray square). The pawn on e3 has opened the way to d3 for the bishop on f1 (gray arrow): that is the next step.",
      "stil": "normal"
     }
    ],
@@ -257,9 +257,9 @@
    "abschnitt": {
     "nummer": "1.1",
     "label": "sec:k1-eroeffnungsziele",
-    "titel": "Die drei Ziele jeder Eröffnung"
+    "titel": "The three goals of every opening"
    },
-   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "unterabschnitt": "The three goals in practice: the London System",
    "fen": "rnbqk2r/ppp1bppp/4pn2/3p4/3P1B2/3BPN2/PPP2PPP/RN1QK2R b KQkq - 3 5",
    "pfeile": [
     {
@@ -277,12 +277,12 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5. Ld3"
+     "text": "5. Bd3"
     },
     {
      "art": "text",
@@ -291,12 +291,12 @@
     },
     {
      "art": "text",
-     "text": "Ziel 2",
+     "text": "Goal 2",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Beide Leichtfiguren stehen auf aktiven Feldern, der Läufer auf der Diagonale b1–h7, der Springer deckt zusätzlich e5 (goldene Pfeile).",
+     "text": ": both minor pieces stand on active squares, the bishop on the b1–h7 diagonal, and the knight also defends e5 (gold arrows).",
      "stil": "normal"
     }
    ],
@@ -331,9 +331,9 @@
    "abschnitt": {
     "nummer": "1.1",
     "label": "sec:k1-eroeffnungsziele",
-    "titel": "Die drei Ziele jeder Eröffnung"
+    "titel": "The three goals of every opening"
    },
-   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "unterabschnitt": "The three goals in practice: the London System",
    "fen": "rnbq1rk1/ppp1bppp/4pn2/3p4/3P1B2/3BPN2/PPP2PPP/RN1Q1RK1 b - - 5 6",
    "pfeile": [],
    "felder": [
@@ -345,7 +345,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -359,12 +359,12 @@
     },
     {
      "art": "text",
-     "text": "Ziel 3",
+     "text": "Goal 3",
      "stil": "fett"
     },
     {
      "art": "text",
-     "text": ": Der König ist in Sicherheit (goldenes Feld g1), und das alles in nur sechs Zügen.",
+     "text": ": the king is safe (gold square g1), and all that in only six moves.",
      "stil": "normal"
     }
    ],
@@ -401,9 +401,9 @@
    "abschnitt": {
     "nummer": "1.1",
     "label": "sec:k1-eroeffnungsziele",
-    "titel": "Die drei Ziele jeder Eröffnung"
+    "titel": "The three goals of every opening"
    },
-   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "unterabschnitt": "The three goals in practice: the London System",
    "fen": "r1bq1rk1/pp2bppp/2n1pn2/2pp4/3P1B2/2PBPN2/PP3PPP/RN1Q1RK1 w - - 1 8",
    "pfeile": [
     {
@@ -436,16 +436,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Sc6"
+     "text": "7... Nc6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Bauer c5 und Springer c6 greifen den Bauern d4 an (rote Pfeile); die Bauern c3 und e3 und der Springer f3 decken ihn (goldene Pfeile).",
+     "text": ", White to move. The pawn on c5 and the knight on c6 attack the pawn on d4 (red arrows); the pawns on c3 and e3 and the knight on f3 defend it (gold arrows).",
      "stil": "normal"
     }
    ],
@@ -481,14 +481,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum muss Weiß den Bauern d4 im Moment nicht zusätzlich decken?",
+      "frage": "Why doesn't White need to defend the pawn on d4 any further right now?",
       "antworten": [
-       "Zwei Angreifer stehen drei Verteidigern gegenüber: Schlagen auf d4 gewinnt nichts.",
-       "Der Bauer d4 ist an den König gefesselt.",
-       "In der Eröffnung darf Schwarz keine Bauern schlagen."
+       "Two attackers face three defenders: capturing on d4 wins nothing.",
+       "The pawn on d4 is pinned to the king.",
+       "In the opening, Black is not allowed to capture pawns."
       ],
       "richtig": 0,
-      "erklaerung": "Gezählt wird am Feld: Solange die Verteidiger nicht weniger sind als die Angreifer, endet jeder Schlag auf d4 mit einem bloßen Abtausch."
+      "erklaerung": "You count on the square: as long as the defenders are not fewer than the attackers, every capture on d4 ends in a mere exchange."
      }
     ]
    }
@@ -500,9 +500,9 @@
    "abschnitt": {
     "nummer": "1.1",
     "label": "sec:k1-eroeffnungsziele",
-    "titel": "Die drei Ziele jeder Eröffnung"
+    "titel": "The three goals of every opening"
    },
-   "unterabschnitt": "Die drei Ziele in der Praxis: das London-System",
+   "unterabschnitt": "The three goals in practice: the London System",
    "fen": "r1bq1rk1/p3bppp/1pn1pn2/2pp4/3P1B2/2PBPN2/PP1NQPPP/R4RK1 b - - 1 9",
    "pfeile": [
     {
@@ -524,16 +524,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. De2"
+     "text": "9. Qe2"
     },
     {
      "art": "text",
-     "text": " – die Eröffnung ist abgeschlossen. Der goldene Pfeil zeigt die nun freie Grundreihe zwischen den beiden Türmen: Sie sind „verbunden“ und decken sich gegenseitig. Die grauen Felder e5 und e4 zeigen, welche Zentrumsfelder Weiß aus der Distanz beherrscht, ohne sie zu besetzen.",
+     "text": " – the opening is complete. The gold arrow shows the back rank, now clear between the two rooks: they are “connected” and protect each other. The gray squares e5 and e4 show which center squares White controls from a distance without occupying them.",
      "stil": "normal"
     }
    ],
@@ -576,9 +576,9 @@
    "abschnitt": {
     "nummer": "1.2",
     "label": "sec:k1-todsuenden",
-    "titel": "Die vier Todsünden der Eröffnungsphase"
+    "titel": "The four deadly sins of the opening phase"
    },
-   "unterabschnitt": "Die verfrühte Dame in der Italienischen Partie",
+   "unterabschnitt": "The premature queen in the Italian Game",
    "fen": "r1b1kbnr/pppp1ppp/2n2q2/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4",
    "pfeile": [
     {
@@ -596,16 +596,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3... Df6?"
+     "text": "3... Qf6?"
     },
     {
      "art": "text",
-     "text": " – Die Dame greift in Wahrheit nichts an: Die f-Linie ist durch den weißen Springer f3 versperrt (grauer Pfeil), f2 ist also gar nicht bedroht. Schlimmer noch: Sie nimmt dem eigenen Springer g8 (grau) das Feld f6.",
+     "text": " – the queen actually attacks nothing: the f-file is blocked by the white knight on f3 (gray arrow), so f2 is not threatened at all. Worse still: it takes the square f6 away from its own knight on g8 (gray).",
      "stil": "normal"
     }
    ],
@@ -634,14 +634,14 @@
     "fragen": [
      {
       "zug": "4. Nc3",
-      "frage": "Warum ist 4. Sc3 hier so wirkungsvoll?",
+      "frage": "Why is 4. Nc3 so effective here?",
       "antworten": [
        "It threatens mate on f7 at once.",
-       "Er entwickelt eine Figur und bereitet Sd5 vor, das die Dame mit Tempo angreift.",
+       "It develops a piece and prepares Nd5, which attacks the queen with tempo.",
        "It prepares queenside castling."
       ],
       "richtig": 1,
-      "erklaerung": "Die früh herausgekommene Dame wird zur Zielscheibe: Jeder weitere Angriff auf sie ist ein Entwicklungszug für Weiß und ein verlorenes Tempo für Schwarz."
+      "erklaerung": "The queen that came out early becomes a target: every further attack on it is a developing move for White and a lost tempo for Black."
      }
     ]
    }
@@ -653,9 +653,9 @@
    "abschnitt": {
     "nummer": "1.2",
     "label": "sec:k1-todsuenden",
-    "titel": "Die vier Todsünden der Eröffnungsphase"
+    "titel": "The four deadly sins of the opening phase"
    },
-   "unterabschnitt": "Die verfrühte Dame in der Italienischen Partie",
+   "unterabschnitt": "The premature queen in the Italian Game",
    "fen": "r1b1k1nr/pppp1ppp/2n2q2/2bNp3/2B1P3/5N2/PPPP1PPP/R1BQK2R b KQkq - 7 5",
    "pfeile": [
     {
@@ -678,36 +678,36 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sc3! Lc5 5. Sd5!"
+     "text": "4. Nc3! Bc5 5. Nd5!"
     },
     {
      "art": "text",
-     "text": " – der Springer greift die Dame an ",
+     "text": " – the knight attacks the queen ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "und",
+     "text": "and",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " droht zusätzlich Sxc7+, einen Doppelangriff (eine ",
+     "text": " also threatens Nxc7+, a double attack (a ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "Gabel",
+     "text": "fork",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": ") auf König und Turm a8 (rote Pfeile). Weiß entwickelt, Schwarz muss reagieren.",
+     "text": ") on the king and the rook on a8 (red arrows). White develops, Black has to react.",
      "stil": "normal"
     }
    ],
@@ -739,14 +739,14 @@
     "fragen": [
      {
       "zug": "5... Qd8",
-      "frage": "Warum zieht die Dame nach d8 zurück?",
+      "frage": "Why does the queen retreat to d8?",
       "antworten": [
        "It prepares queenside castling.",
-       "Von d8 aus greift sie den Springer d5 an.",
-       "Sie weicht dem Angriff aus und deckt c7; die beiden Damenzüge waren damit umsonst."
+       "From d8 it attacks the knight on d5.",
+       "It escapes the attack and defends c7; so the two queen moves were for nothing."
       ],
       "richtig": 2,
-      "erklaerung": "d8 ist das einzige Feld, auf dem die Dame zugleich sicher steht und die Gabel auf c7 verhindert. Weiß hat dabei zwei Figuren entwickelt, Schwarz nur Züge verloren."
+      "erklaerung": "d8 is the only square where the queen is safe and at the same time prevents the fork on c7. Meanwhile White has developed two pieces, and Black has only lost moves."
      }
     ]
    }
@@ -758,25 +758,25 @@
    "abschnitt": {
     "nummer": "1.2",
     "label": "sec:k1-todsuenden",
-    "titel": "Die vier Todsünden der Eröffnungsphase"
+    "titel": "The four deadly sins of the opening phase"
    },
-   "unterabschnitt": "Die verfrühte Dame in der Italienischen Partie",
+   "unterabschnitt": "The premature queen in the Italian Game",
    "fen": "r1bqk1nr/pppp1ppp/2n5/2bNp3/2B1P3/5N2/PPPP1PPP/R1BQK2R w KQkq - 8 6",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Dd8"
+     "text": "5... Qd8"
     },
     {
      "art": "text",
-     "text": " – die Dame steht wieder auf ihrem Ausgangsfeld. Zwei Züge von Schwarz sind ersatzlos verschwunden.",
+     "text": " – the queen is back on its starting square. Two of Black's moves have vanished without anything to show for them.",
      "stil": "normal"
     }
    ],
@@ -812,9 +812,9 @@
    "abschnitt": {
     "nummer": "1.2",
     "label": "sec:k1-todsuenden",
-    "titel": "Die vier Todsünden der Eröffnungsphase"
+    "titel": "The four deadly sins of the opening phase"
    },
-   "unterabschnitt": "Die verfrühte Dame in der Italienischen Partie",
+   "unterabschnitt": "The premature queen in the Italian Game",
    "fen": "r1bqk1nr/pppp1ppp/2n5/2bNp3/2BPP3/5N2/PPP2PPP/R1BQK2R b KQkq d3 0 6",
    "pfeile": [
     {
@@ -841,7 +841,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -850,7 +850,7 @@
     },
     {
      "art": "text",
-     "text": " – Weiß hat ein breites Zentrum (gold), drei entwickelte Figuren und die Rochade in Reichweite. Schwarz hat zwei Figuren und eine Dame, die nichts erreicht hat. Dass Schwarz auf d4 schlagen kann, stört Weiß nicht: Sein Entwicklungsvorsprung ist mehr wert als der Bauer.",
+     "text": " – White has a broad center (gold), three developed pieces and castling within reach. Black has two pieces and a queen that has achieved nothing. That Black can capture on d4 doesn't bother White: White's lead in development is worth more than the pawn.",
      "stil": "normal"
     }
    ],
@@ -883,14 +883,14 @@
     "status": "freigegeben",
     "fragen": [
      {
-      "frage": "Warum stört es Weiß nicht, dass Schwarz den Bauern d4 schlagen kann?",
+      "frage": "Why doesn't it bother White that Black can capture the pawn on d4?",
       "antworten": [
-       "Der Vorsprung in der Entwicklung ist mehr wert als ein Bauer.",
-       "Der Bauer d4 ist dreifach gedeckt.",
+       "The lead in development is worth more than a pawn.",
+       "The pawn on d4 is defended three times.",
        "After the capture, Black is mated at once."
       ],
       "richtig": 0,
-      "erklaerung": "Weiß hat ein breites Zentrum, drei entwickelte Figuren und rochiert gleich. Ein Bauer, den Schwarz mit weiteren Zügen derselben Figuren holt, vergrößert diesen Rückstand nur."
+      "erklaerung": "White has a broad center and three developed pieces, and is about to castle. A pawn that Black grabs with further moves of the same pieces only makes this deficit bigger."
      }
     ]
    }
@@ -902,9 +902,9 @@
    "abschnitt": {
     "nummer": "1.2",
     "label": "sec:k1-todsuenden",
-    "titel": "Die vier Todsünden der Eröffnungsphase"
+    "titel": "The four deadly sins of the opening phase"
    },
-   "unterabschnitt": "Die verzögerte Rochade – eine typische Gefahrenstellung",
+   "unterabschnitt": "Delayed castling – a typical danger position",
    "fen": "r3kb1r/ppqb1ppp/2np4/8/2BNn3/2N5/PPP2PPP/R1BQR1K1 w kq - 6 11",
    "pfeile": [
     {
@@ -927,7 +927,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß hat bereits rochiert und den Turm auf die offene e-Linie gebracht, und ist am Zug. Der graue Pfeil zeigt die Fesselungslinie: Der schwarze Springer auf e4 darf sich nicht bewegen, sonst stünde der eigene König im Schach. Der goldene Pfeil zeigt den zusätzlichen Angriff des Springers c3 auf genau dieses Feld – das rote Feld e4 zeigt, dass Weiß die Figur sofort gewinnt.",
+     "text": "White has already castled, has brought the rook to the open e-file and is to move. The gray arrow shows the line of the pin: the black knight on e4 must not move, or its own king would be in check. The gold arrow shows the additional attack of the knight on c3 on exactly this square – the red square e4 shows that White wins the piece at once.",
      "stil": "normal"
     }
    ],
@@ -947,14 +947,14 @@
     "fragen": [
      {
       "zug": "11. Nxe4",
-      "frage": "Warum geht der schwarze Springer e4 verloren?",
+      "frage": "Why is the black knight on e4 lost?",
       "antworten": [
-       "Er hat kein freies Feld mehr.",
-       "Er ist an den König e8 gefesselt und wird zweimal angegriffen.",
-       "Weiß droht Matt auf e8."
+       "It has no free square left.",
+       "It is pinned to the king on e8 and attacked twice.",
+       "White threatens mate on e8."
       ],
       "richtig": 1,
-      "erklaerung": "Der Turm e1 fesselt ihn an den König, der Springer c3 greift zusätzlich an. Ein König, der zu lange in der Mitte bleibt, macht solche Fesselungen erst möglich."
+      "erklaerung": "The rook on e1 pins it to the king, and the knight on c3 attacks it as well. A king that stays in the middle too long is what makes such pins possible in the first place."
      }
     ]
    }
@@ -966,9 +966,9 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "unterabschnitt": "Scholar's mate and how to defend against it",
    "fen": "rnbqkbnr/pppp1ppp/8/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR b KQkq - 1 2",
    "pfeile": [
     {
@@ -991,16 +991,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Dh5"
+     "text": "2. Qh5"
     },
     {
      "art": "text",
-     "text": " – die roten Pfeile zeigen den Angriff auf e5 und das Ziel f7. Noch ist f7 harmlos, weil der König es deckt.",
+     "text": " – the red arrows show the attack on e5 and the target f7. For now f7 is harmless, because the king defends it.",
      "stil": "normal"
     }
    ],
@@ -1027,14 +1027,14 @@
     "fragen": [
      {
       "zug": "2... Nc6",
-      "frage": "Warum spielt Schwarz 2... Sc6?",
+      "frage": "Why does Black play 2... Nc6?",
       "antworten": [
-       "Er greift die Dame h5 an.",
-       "Er bereitet Sd4 mit Matt vor.",
-       "Er entwickelt eine Figur und deckt dabei den angegriffenen Bauern e5."
+       "It attacks the queen on h5.",
+       "It prepares Nd4 with mate.",
+       "It develops a piece and at the same time defends the attacked pawn on e5."
       ],
       "richtig": 2,
-      "erklaerung": "Ein Zug, der zwei Aufgaben erfüllt: Entwicklung und Deckung. So kostet die Drohung von Weiß Schwarz kein Tempo."
+      "erklaerung": "One move that does two jobs: development and defense. That way White's threat costs Black no tempo."
      }
     ]
    }
@@ -1046,9 +1046,9 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "unterabschnitt": "Scholar's mate and how to defend against it",
    "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/4P3/8/PPPP1PPP/RNB1KBNR w KQkq - 2 3",
    "pfeile": [
     {
@@ -1061,16 +1061,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Sc6"
+     "text": "2... Nc6"
     },
     {
      "art": "text",
-     "text": " – der graue Pfeil zeigt, wie der Springer den e5-Bauern deckt.",
+     "text": " – the gray arrow shows how the knight defends the e5 pawn.",
      "stil": "normal"
     }
    ],
@@ -1101,9 +1101,9 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "unterabschnitt": "Scholar's mate and how to defend against it",
    "fen": "r1bqkbnr/pppp1ppp/2n5/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR b KQkq - 3 3",
    "pfeile": [
     {
@@ -1126,16 +1126,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Lc4"
+     "text": "3. Bc4"
     },
     {
      "art": "text",
-     "text": " – Dame und Läufer zielen gemeinsam auf das rot markierte Mattfeld f7.",
+     "text": " – queen and bishop aim together at the mating square f7, marked in red.",
      "stil": "normal"
     }
    ],
@@ -1164,14 +1164,14 @@
     "fragen": [
      {
       "zug": "3... g6",
-      "frage": "Warum ist 3... g6 eine gute Antwort?",
+      "frage": "Why is 3... g6 a good reply?",
       "antworten": [
-       "Es verhindert Dxf7# und greift die Dame mit Tempo an.",
-       "Es bereitet Lg7 vor und lässt f7 bewusst ungedeckt.",
-       "Es öffnet dem Turm h8 die h-Linie."
+       "It prevents Qxf7# and attacks the queen with tempo.",
+       "It prepares Bg7 and deliberately leaves f7 undefended.",
+       "It opens the h-file for the rook on h8."
       ],
       "richtig": 0,
-      "erklaerung": "Nach g6 muss die Dame ziehen. Schwarz wehrt die Mattdrohung ab und gewinnt dabei Zeit für die eigene Entwicklung."
+      "erklaerung": "After g6 the queen has to move. Black parries the mate threat and gains time for Black's own development in the process."
      }
     ]
    }
@@ -1183,9 +1183,9 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "unterabschnitt": "Scholar's mate and how to defend against it",
    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p2Q/2B1P3/8/PPPP1PPP/RNB1K1NR w KQkq - 0 4",
    "pfeile": [
     {
@@ -1203,7 +1203,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1212,7 +1212,7 @@
     },
     {
      "art": "text",
-     "text": " – der rote Pfeil zeigt den Bauernangriff auf die Dame h5.",
+     "text": " – the red arrow shows the pawn attacking the queen on h5.",
      "stil": "normal"
     }
    ],
@@ -1242,14 +1242,14 @@
     "fragen": [
      {
       "zug": "4. Qf3",
-      "frage": "Warum zieht die Dame gerade nach f3?",
+      "frage": "Why does the queen go to f3 of all squares?",
       "antworten": [
        "It prepares queenside castling.",
-       "Sie bleibt auf f7 gerichtet und erneuert die Mattdrohung.",
-       "Sie greift den Springer c6 an."
+       "It stays aimed at f7 and renews the mate threat.",
+       "It attacks the knight on c6."
       ],
       "richtig": 1,
-      "erklaerung": "Von f3 aus zielen Dame und Läufer c4 weiter auf f7. Schwarz muss erneut reagieren, diesmal am besten mit einem Entwicklungszug wie Sf6."
+      "erklaerung": "From f3, the queen and the bishop on c4 keep aiming at f7. Black has to react again, this time best with a developing move such as Nf6."
      }
     ]
    }
@@ -1261,9 +1261,9 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "unterabschnitt": "Scholar's mate and how to defend against it",
    "fen": "r1bqkbnr/pppp1p1p/2n3p1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR b KQkq - 1 4",
    "pfeile": [
     {
@@ -1281,16 +1281,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Df3"
+     "text": "4. Qf3"
     },
     {
      "art": "text",
-     "text": " – der rote Pfeil zeigt: Die Dame zieht sich zurück, zielt aber weiter auf f7.",
+     "text": " – the red arrow shows: the queen retreats but keeps aiming at f7.",
      "stil": "normal"
     }
    ],
@@ -1324,9 +1324,9 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Das Schäfermatt und seine Abwehr",
+   "unterabschnitt": "Scholar's mate and how to defend against it",
    "fen": "r1bqkb1r/pppp1p1p/2n2np1/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 5",
    "pfeile": [],
    "felder": [
@@ -1338,16 +1338,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Sf6"
+     "text": "4... Nf6"
     },
     {
      "art": "text",
-     "text": " – Schwarz ist sicher und sogar leicht im Vorteil: Der Springer auf dem grau markierten Feld f6 versperrt der Dame die f-Linie.",
+     "text": " – Black is safe and even slightly better: the knight on f6, the square marked in gray, blocks the f-file for the queen.",
      "stil": "normal"
     }
    ],
@@ -1382,9 +1382,9 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Ausblick: Der Fried-Liver-Angriff",
+   "unterabschnitt": "Looking ahead: the Fried Liver Attack",
    "fen": "r1bqkb1r/ppp2ppp/2n5/3np1N1/2B5/8/PPPP1PPP/RNBQK2R w KQkq - 0 6",
    "pfeile": [
     {
@@ -1402,16 +1402,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Sxd5?!"
+     "text": "5... Nxd5?!"
     },
     {
      "art": "text",
-     "text": " – der rote Pfeil zeigt den natürlich aussehenden Rückschlag, der sich als Fehler erweist.",
+     "text": " – the red arrow shows the natural-looking recapture that turns out to be a mistake.",
      "stil": "normal"
     }
    ],
@@ -1444,14 +1444,14 @@
     "fragen": [
      {
       "zug": "6. Nxf7",
-      "frage": "Warum schlägt Weiß mit dem Springer auf f7?",
+      "frage": "Why does White capture on f7 with the knight?",
       "antworten": [
-       "f7 ist ungedeckt, Weiß gewinnt einfach einen Bauern.",
-       "Danach ist die Dame d8 gefangen.",
-       "Der König muss zurückschlagen, verliert die Rochade und wird ins Zentrum gelockt."
+       "f7 is undefended; White simply wins a pawn.",
+       "Afterwards the queen on d8 is trapped.",
+       "The king has to recapture, loses the right to castle and is lured into the center."
       ],
       "richtig": 2,
-      "erklaerung": "Das Opfer bringt den Springer zugleich aus dem Angriff der Dame d8. Nach Kxf7 Df3+ muss der König ins offene Zentrum."
+      "erklaerung": "At the same time, the sacrifice takes the knight out of the attack by the queen on d8. After Kxf7 Qf3+ the king has to go into the open center."
      }
     ]
    }
@@ -1463,9 +1463,9 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Ausblick: Der Fried-Liver-Angriff",
+   "unterabschnitt": "Looking ahead: the Fried Liver Attack",
    "fen": "r1bqkb1r/ppp2Npp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R b KQkq - 0 6",
    "pfeile": [
     {
@@ -1483,16 +1483,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Sxf7!"
+     "text": "6. Nxf7!"
     },
     {
      "art": "text",
-     "text": " – der goldene Pfeil zeigt das Springeropfer auf dem kritischen Feld f7 (rot).",
+     "text": " – the gold arrow shows the knight sacrifice on the critical square f7 (red).",
      "stil": "normal"
     }
    ],
@@ -1529,16 +1529,16 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Ausblick: Der Fried-Liver-Angriff",
+   "unterabschnitt": "Looking ahead: the Fried Liver Attack",
    "fen": "r1bq1b1r/ppp2kpp/2n5/3np3/2B5/8/PPPP1PPP/RNBQK2R w KQ - 0 7",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1547,7 +1547,7 @@
     },
     {
      "art": "text",
-     "text": " – der König muss den Springer zurückerobern und verliert dabei die Rochade.",
+     "text": " – the king has to win back the knight and loses the right to castle in doing so.",
      "stil": "normal"
     }
    ],
@@ -1585,25 +1585,25 @@
    "abschnitt": {
     "nummer": "1.3",
     "label": "sec:k1-anfaenger",
-    "titel": "Warum Anfänger so oft in den ersten Zügen verlieren"
+    "titel": "Why beginners so often lose in the first few moves"
    },
-   "unterabschnitt": "Ausblick: Der Fried-Liver-Angriff",
+   "unterabschnitt": "Looking ahead: the Fried Liver Attack",
    "fen": "r1bq1b1r/ppp3pp/2n1k3/3np3/2B5/5Q2/PPPP1PPP/RNB1K2R w KQ - 2 8",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7. Df3+ Ke6"
+     "text": "7. Qf3+ Ke6"
     },
     {
      "art": "text",
-     "text": " – der König wird mit Schach ins offene Zentrum gezwungen.",
+     "text": " – the king is forced into the open center with check.",
      "stil": "normal"
     }
    ],
@@ -1643,9 +1643,9 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Warum „ Schach“ vor „ Schlag“ steht",
+   "unterabschnitt": "Why “check” comes before “capture”",
    "fen": "rnb1k2r/ppp2p1p/4p1p1/2bq4/4N3/3P4/PPP1BPPP/R1BQ1RK1 w kq - 0 1",
    "pfeile": [
     {
@@ -1672,7 +1672,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Der graue Pfeil zeigt den naheliegenden Schlag Sxc5. Doch der goldene Pfeil zeigt den viel stärkeren Zug: Sf6+ gibt dem König e8 Schach und greift gleichzeitig die Dame auf d5 an (beide rot).",
+     "text": "White to move. The gray arrow shows the obvious capture Nxc5. But the gold arrow shows the much stronger move: Nf6+ gives check to the king on e8 and at the same time attacks the queen on d5 (both red).",
      "stil": "normal"
     }
    ],
@@ -1695,14 +1695,14 @@
     "fragen": [
      {
       "zug": "1. Nf6+",
-      "frage": "Warum ist 1. Sf6+ stärker als 1. Sxc5?",
+      "frage": "Why is 1. Nf6+ stronger than 1. Nxc5?",
       "antworten": [
-       "Es gibt Schach und greift zugleich die Dame d5 an: Weiß gewinnt die Dame.",
-       "Es setzt matt.",
-       "Es deckt den eigenen König."
+       "It gives check and attacks the queen on d5 at the same time: White wins the queen.",
+       "It gives mate.",
+       "It protects White's own king."
       ],
       "richtig": 0,
-      "erklaerung": "Wer zuerst die Schachs prüft, findet die Gabel. Sxc5 tauscht nur Springer gegen Läufer."
+      "erklaerung": "If you look at the checks first, you find the fork. Nxc5 only trades knight for bishop."
      }
     ]
    }
@@ -1714,9 +1714,9 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Warum „ Schach“ vor „ Schlag“ steht",
+   "unterabschnitt": "Why “check” comes before “capture”",
    "fen": "rnb1k2r/ppp2p1p/4pNp1/2bq4/8/3P4/PPP1BPPP/R1BQ1RK1 b kq - 1 1",
    "pfeile": [
     {
@@ -1739,16 +1739,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sf6+"
+     "text": "1. Nf6+"
     },
     {
      "art": "text",
-     "text": " – der Springer gabelt König und Dame (rote Pfeile). Schwarz hat nur drei legale Züge: Ke7, Kf8 und Kd8.",
+     "text": " – the knight forks king and queen (red arrows). Black has only three legal moves: Ke7, Kf8 and Kd8.",
      "stil": "normal"
     }
    ],
@@ -1776,16 +1776,16 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Warum „ Schach“ vor „ Schlag“ steht",
+   "unterabschnitt": "Why “check” comes before “capture”",
    "fen": "rnb4r/ppp1kp1p/4pNp1/2bq4/8/3P4/PPP1BPPP/R1BQ1RK1 w - - 2 2",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -1794,16 +1794,16 @@
     },
     {
      "art": "text",
-     "text": " – der König ist gerettet, die Dame nicht: Es folgt ",
+     "text": " – the king is saved, the queen is not: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sxd5+"
+     "text": "2. Nxd5+"
     },
     {
      "art": "text",
-     "text": " und Weiß gewinnt die Dame für einen Springer.",
+     "text": " follows, and White wins the queen for a knight.",
      "stil": "normal"
     }
    ],
@@ -1832,9 +1832,9 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "unterabschnitt": "Counting in practice: the pawn lever",
    "fen": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/3P4/2P2N2/PP3PPP/RNBQKB1R w KQkq - 4 6",
    "pfeile": [
     {
@@ -1877,16 +1877,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "5... Db6"
+     "text": "5... Qb6"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Die roten Pfeile zeigen die drei schwarzen Angreifer auf d4, die goldenen die drei weißen Verteidiger, darunter die Dame d1 über die d-Linie.",
+     "text": ", White to move. The red arrows show the three black attackers on d4, the gold ones the three white defenders, among them the queen on d1 along the d-file.",
      "stil": "normal"
     }
    ],
@@ -1919,14 +1919,14 @@
     "fragen": [
      {
       "zug": "6. Bd3",
-      "frage": "Warum ist 6. Ld3 ungenau?",
+      "frage": "Why is 6. Bd3 inaccurate?",
       "antworten": [
-       "Der Läufer steht auf d3 ungedeckt.",
-       "Der Läufer verstellt der Dame d1 die d-Linie: d4 hat nur noch zwei Verteidiger.",
-       "Weiß verliert damit das Rochaderecht."
+       "The bishop is undefended on d3.",
+       "The bishop blocks the d-file for the queen on d1: d4 has only two defenders left.",
+       "With it, White loses the right to castle."
       ],
       "richtig": 1,
-      "erklaerung": "Aus drei gegen drei wird drei gegen zwei. Ein einziger natürlich aussehender Entwicklungszug kippt die Zählung."
+      "erklaerung": "Three against three becomes three against two. A single natural-looking developing move tips the count."
      }
     ]
    }
@@ -1938,9 +1938,9 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "unterabschnitt": "Counting in practice: the pawn lever",
    "fen": "r1b1kbnr/pp3ppp/1qn1p3/2ppP3/3P4/2PB1N2/PP3PPP/RNBQK2R b KQkq - 4 6",
    "pfeile": [
     {
@@ -1958,16 +1958,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "6. Ld3?!"
+     "text": "6. Bd3?!"
     },
     {
      "art": "text",
-     "text": " – Schwarz am Zug. Das rote Feld d3 zeigt das Problem: Der eigene Läufer hat der weißen Dame dort die Deckung von d4 abgeschnitten. Aus 3:3 ist 3:2 geworden.",
+     "text": " – Black to move. The red square d3 shows the problem: there, White's own bishop has cut off the white queen's defense of d4. 3:3 has become 3:2.",
      "stil": "normal"
     }
    ],
@@ -2001,14 +2001,14 @@
     "fragen": [
      {
       "zug": "6... cxd4",
-      "frage": "Warum schlägt Schwarz jetzt auf d4?",
+      "frage": "Why does Black capture on d4 now?",
       "antworten": [
-       "Der Bauer d4 ist gefesselt.",
-       "Sonst droht Weiß Matt.",
-       "Drei Angreifer gegen zwei Verteidiger: Am Ende des Abtauschs bleibt ein Bauer übrig."
+       "The pawn on d4 is pinned.",
+       "Otherwise White threatens mate.",
+       "Three attackers against two defenders: at the end of the exchange, a pawn is left over."
       ],
       "richtig": 2,
-      "erklaerung": "Die Zählung entscheidet: Bei mehr Angreifern als Verteidigern gewinnt die angreifende Seite Material."
+      "erklaerung": "The count decides: with more attackers than defenders, the attacking side wins material."
      }
     ]
    }
@@ -2020,9 +2020,9 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "unterabschnitt": "Counting in practice: the pawn lever",
    "fen": "r1b1kbnr/pp3ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQK2R b KQkq - 0 7",
    "pfeile": [
     {
@@ -2050,7 +2050,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -2059,7 +2059,7 @@
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Rot: zwei Angreifer auf d4. Gold: ein Verteidiger. Der Läufer d3 verstellt der Dame d1 weiter die d-Linie.",
+     "text": ", Black to move. Red: two attackers on d4. Gold: one defender. The bishop on d3 still blocks the d-file for the queen on d1.",
      "stil": "normal"
     }
    ],
@@ -2095,14 +2095,14 @@
     "fragen": [
      {
       "zug": "7... Bd7",
-      "frage": "Warum spielt Schwarz zuerst 7... Ld7 statt sofort Sxd4?",
+      "frage": "Why does Black play 7... Bd7 first instead of Nxd4 at once?",
       "antworten": [
-       "Nach Sxd4 Sxd4 Dxd4 räumt Lb5+ die d-Linie, und die Dame d1 schlägt die Dame d4.",
-       "Ld7 bereitet die lange Rochade vor.",
-       "Sxd4 wäre ein Rückzug."
+       "After Nxd4 Nxd4 Qxd4, Bb5+ clears the d-file, and the queen on d1 captures the queen on d4.",
+       "Bd7 prepares queenside castling.",
+       "Nxd4 would be a retreat."
       ],
       "richtig": 0,
-      "erklaerung": "Erst Ld7 stellt einen Läufer zwischen b5 und den König. Dann ist Lb5 kein Schach mehr, und die Drohung gegen d4 wird echt."
+      "erklaerung": "Only Bd7 puts a bishop between b5 and the king. Then Bb5 is no longer check, and the threat against d4 becomes real."
      }
     ]
    }
@@ -2114,9 +2114,9 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "unterabschnitt": "Counting in practice: the pawn lever",
    "fen": "r1b1kbnr/pp3ppp/4p3/1B1pP3/3q4/8/PP3PPP/RNBQK2R b KQkq - 1 9",
    "pfeile": [
     {
@@ -2139,16 +2139,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "9. Lb5+"
+     "text": "9. Bb5+"
     },
     {
      "art": "text",
-     "text": ", Schwarz am Zug. Der Läufer gibt Schach (roter Pfeil) und hat dabei die d-Linie geräumt: Im nächsten Zug schlägt die weiße Dame die schwarze auf d4 (goldener Pfeil, rotes Feld).",
+     "text": ", Black to move. The bishop gives check (red arrow) and has cleared the d-file in doing so: on the next move the white queen captures the black one on d4 (gold arrow, red square).",
      "stil": "normal"
     }
    ],
@@ -2191,9 +2191,9 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "unterabschnitt": "Counting in practice: the pawn lever",
    "fen": "r3kbnr/pp1b1ppp/1qn1p3/3pP3/3P4/3B1N2/PP3PPP/RNBQK2R w KQkq - 1 8",
    "pfeile": [
     {
@@ -2215,16 +2215,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Ld7!"
+     "text": "7... Bd7!"
     },
     {
      "art": "text",
-     "text": ", Weiß am Zug. Der Läufer steht jetzt zwischen b5 (grau) und seinem König: Auch wenn der Springer c6 auf d4 schlägt, ist Lb5 kein Schach mehr, und der Läufer d7 könnte auf b5 schlagen (goldener Pfeil). Damit ist die Drohung gegen d4 (rot) echt.",
+     "text": ", White to move. The bishop now stands between b5 (gray) and its king: even if the knight on c6 captures on d4, Bb5 is no longer check, and the bishop on d7 could capture on b5 (gold arrow). So the threat against d4 (red) is real.",
      "stil": "normal"
     }
    ],
@@ -2261,14 +2261,14 @@
     "fragen": [
      {
       "zug": "8. Nc3",
-      "frage": "Warum ist 8. Sc3 ungenau?",
+      "frage": "Why is 8. Nc3 inaccurate?",
       "antworten": [
-       "Es stellt den Springer ein.",
-       "Es tut nichts für d4: Schwarz gewinnt den Bauern, und Lb5 ist kein Schach mehr.",
-       "Es verhindert die eigene Rochade."
+       "It blunders the knight.",
+       "It does nothing for d4: Black wins the pawn, and Bb5 is no longer check.",
+       "It stops White from castling."
       ],
       "richtig": 1,
-      "erklaerung": "Nach Sxd4 Sxd4 Dxd4 hat Schwarz einen gesunden Bauern mehr. Die Falle mit Lb5+ funktioniert nicht mehr, weil Ld7 die Linie zum König verstellt."
+      "erklaerung": "After Nxd4 Nxd4 Qxd4, Black has a sound extra pawn. The trap with Bb5+ no longer works, because Bd7 blocks the line to the king."
      }
     ]
    }
@@ -2280,43 +2280,43 @@
    "abschnitt": {
     "nummer": "1.4",
     "label": "sec:k1-roentgen",
-    "titel": "Dein eingebauter Fehler-Radar: die Schach-Röntgen-Regel"
+    "titel": "Your built-in error radar: the Chess X-ray rule"
    },
-   "unterabschnitt": "Zählen in der Praxis: der Bauernhebel",
+   "unterabschnitt": "Counting in practice: the pawn lever",
    "fen": "r3kbnr/pp1b1ppp/4p3/3pP3/3q4/2NB4/PP3PPP/R1BQK2R w KQkq - 0 10",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "8. Sc3?! Sxd4! 9. Sxd4 Dxd4"
+     "text": "8. Nc3?! Nxd4! 9. Nxd4 Qxd4"
     },
     {
      "art": "text",
-     "text": " – Schwarz hat einen gesunden Bauern gewonnen. Der Versuch ",
+     "text": " – Black has won a sound pawn. The try ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10. Lb5"
+     "text": "10. Bb5"
     },
     {
      "art": "text",
-     "text": " läuft jetzt ins Leere: Er ist kein Schach, und ",
+     "text": " now comes to nothing: it is not check, and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "10... Dxe5+"
+     "text": "10... Qxe5+"
     },
     {
      "art": "text",
-     "text": " gewinnt sogar einen zweiten Bauern.",
+     "text": " even wins a second pawn.",
      "stil": "normal"
     }
    ],
@@ -2360,9 +2360,9 @@
    "abschnitt": {
     "nummer": "1.5",
     "label": "sec:k1-spannung",
-    "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+    "titel": "Don't capture too soon: tension is a weapon"
    },
-   "unterabschnitt": "Wie ein Abtausch dem Gegner hilft",
+   "unterabschnitt": "How an exchange helps the opponent",
    "fen": "r2qk2r/ppp2ppp/2np1n2/2b1p3/2B1P1b1/2PP1N1P/PP3PP1/RNBQ1RK1 b kq - 0 7",
    "pfeile": [
     {
@@ -2380,7 +2380,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
@@ -2389,7 +2389,7 @@
     },
     {
      "art": "text",
-     "text": " – Schwarz am Zug. Der Läufer wird angegriffen. Der Schlagreflex sagt: Lxf3 (grauer Pfeil). Das graue Feld d1 zeigt, wo die weiße Dame noch untätig steht.",
+     "text": " – Black to move. The bishop is attacked. The capture reflex says: Bxf3 (gray arrow). The gray square d1 shows where the white queen is still standing idle.",
      "stil": "normal"
     }
    ],
@@ -2425,14 +2425,14 @@
     "fragen": [
      {
       "zug": "7... Bxf3",
-      "frage": "Was spricht gegen 7... Lxf3?",
+      "frage": "What speaks against 7... Bxf3?",
       "antworten": [
-       "Der Läufer ist auf f3 gefangen.",
-       "Lxf3 verliert eine Figur.",
-       "Weiß nimmt mit der Dame zurück und hat sie damit kostenlos entwickelt."
+       "The bishop is trapped on f3.",
+       "Bxf3 loses a piece.",
+       "White recaptures with the queen and so has developed it for free."
       ],
       "richtig": 2,
-      "erklaerung": "Ein Abtausch ohne Not löst die Spannung zugunsten des Gegners: Die weiße Dame kommt mit Zeitgewinn ins Spiel und zielt auf f6 und f7."
+      "erklaerung": "An unnecessary exchange resolves the tension in the opponent's favor: the white queen comes into play with a gain of time and aims at f6 and f7."
      }
     ]
    }
@@ -2444,9 +2444,9 @@
    "abschnitt": {
     "nummer": "1.5",
     "label": "sec:k1-spannung",
-    "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+    "titel": "Don't capture too soon: tension is a weapon"
    },
-   "unterabschnitt": "Wie ein Abtausch dem Gegner hilft",
+   "unterabschnitt": "How an exchange helps the opponent",
    "fen": "r2qk2r/ppp2ppp/2np1n2/2b1p3/2B1P3/2PP1Q1P/PP3PP1/RNB2RK1 b kq - 0 8",
    "pfeile": [
     {
@@ -2464,16 +2464,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "7... Lxf3?! 8. Dxf3"
+     "text": "7... Bxf3?! 8. Qxf3"
     },
     {
      "art": "text",
-     "text": " – Schwarz hat seinen Läufer gegen einen Springer getauscht und dabei die weiße Dame kostenlos entwickelt. Von f3 aus zielt sie auf den Springer f6 und dahinter auf den Bauern f7 (goldener Pfeil).",
+     "text": " – Black has traded the bishop for a knight and in doing so developed the white queen for free. From f3 it aims at the knight on f6 and, behind it, at the pawn on f7 (gold arrow).",
      "stil": "normal"
     }
    ],
@@ -2514,9 +2514,9 @@
    "abschnitt": {
     "nummer": "1.5",
     "label": "sec:k1-spannung",
-    "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+    "titel": "Don't capture too soon: tension is a weapon"
    },
-   "unterabschnitt": "Die Drohung ignorieren: wer zuerst kommt",
+   "unterabschnitt": "Ignoring the threat: first come, first served",
    "fen": "r1bq1rk1/pp3ppp/2p1p3/3p2N1/1n6/3Q4/PPP2PPP/R1B2RK1 w - - 0 1",
    "pfeile": [
     {
@@ -2548,7 +2548,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Die roten Pfeile zeigen die beiden schwarzen Drohungen. Der goldene Pfeil zeigt, was Weiß stattdessen tut.",
+     "text": "White to move. The red arrows show Black's two threats. The gold arrow shows what White does instead.",
      "stil": "normal"
     }
    ],
@@ -2570,14 +2570,14 @@
     "fragen": [
      {
       "zug": "1. Qxh7#",
-      "frage": "Warum darf Weiß die beiden schwarzen Drohungen übergehen?",
+      "frage": "Why may White ignore Black's two threats?",
       "antworten": [
-       "Dxh7 setzt sofort matt, und ein Matt geht jeder Drohung vor.",
-       "Die Drohungen sind nur scheinbar.",
-       "Schwarz darf nach einem Schach nicht schlagen."
+       "Qxh7 is mate at once, and mate comes before any threat.",
+       "The threats are only apparent.",
+       "Black is not allowed to capture after a check."
       ],
       "richtig": 0,
-      "erklaerung": "Wer zuerst die Schachs prüft, sieht das Matt. Was der Gegner droht, spielt dann keine Rolle mehr."
+      "erklaerung": "If you look at the checks first, you see the mate. What the opponent threatens then no longer matters."
      }
     ]
    }
@@ -2589,25 +2589,25 @@
    "abschnitt": {
     "nummer": "1.5",
     "label": "sec:k1-spannung",
-    "titel": "Nicht vorschnell schlagen: Spannung ist eine Waffe"
+    "titel": "Don't capture too soon: tension is a weapon"
    },
-   "unterabschnitt": "Die Drohung ignorieren: wer zuerst kommt",
+   "unterabschnitt": "Ignoring the threat: first come, first served",
    "fen": "r1bq1rk1/pp3ppQ/2p1p3/3p2N1/1n6/8/PPP2PPP/R1B2RK1 b - - 0 1",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Dxh7#"
+     "text": "1. Qxh7#"
     },
     {
      "art": "text",
-     "text": " – matt. Der Springer g5 deckt die Dame, f8 ist durch den eigenen Turm und g7 durch den eigenen Bauern verstellt, h8 kontrolliert die Dame selbst.",
+     "text": " – mate. The knight on g5 protects the queen, f8 is blocked by Black's own rook and g7 by Black's own pawn, and the queen itself controls h8.",
      "stil": "normal"
     }
    ],
@@ -2634,9 +2634,9 @@
    "abschnitt": {
     "nummer": "1.6",
     "label": "sec:k1-angriff",
-    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+    "titel": "Attack needs superior force: the golden attack rule"
    },
-   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
    "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2N2N2/PP2BPPP/R2Q1RK1 w - - 0 1",
    "pfeile": [
     {
@@ -2658,7 +2658,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Der Fehlversuch. Weiß am Zug. Der Läufer steht auf e2 und blockiert dort ausgerechnet die Diagonale d1–h5 (grau), über die die Dame zum Königsflügel müsste. Weiß will mit Springer und Dame angreifen – doch nur der Springer f3 kommt überhaupt in Reichweite. Rot: das Ziel h7.",
+     "text": "The failed attempt. White to move. The bishop stands on e2, where of all things it blocks the d1–h5 diagonal (gray) that the queen would need to reach the kingside. White wants to attack with knight and queen – but only the knight on f3 even gets within reach. Red: the target h7.",
      "stil": "normal"
     }
    ],
@@ -2680,14 +2680,14 @@
     "fragen": [
      {
       "zug": "1. Ng5",
-      "frage": "Warum scheitert der Angriff mit 1. Sg5?",
+      "frage": "Why does the attack with 1. Ng5 fail?",
       "antworten": [
-       "Der Springer g5 geht sofort verloren.",
-       "Der Springer bleibt allein; die Dame kommt nicht nach h5, weil der Läufer e2 im Weg steht.",
-       "Schwarz setzt danach matt."
+       "The knight on g5 is lost at once.",
+       "The knight stays alone; the queen can't get to h5 because the bishop on e2 is in the way.",
+       "Black then gives mate."
       ],
       "richtig": 1,
-      "erklaerung": "Ein Angriff mit einer Figur gegen einen gut verteidigten König verpufft. Erst die Übermacht macht ihn gefährlich."
+      "erklaerung": "An attack with one piece against a well-defended king fizzles out. Only superior force makes it dangerous."
      }
     ]
    }
@@ -2699,9 +2699,9 @@
    "abschnitt": {
     "nummer": "1.6",
     "label": "sec:k1-angriff",
-    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+    "titel": "Attack needs superior force: the golden attack rule"
    },
-   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
    "fen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
    "pfeile": [
     {
@@ -2729,7 +2729,7 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "So hätte es aussehen müssen. Der Läufer auf d3 zielt selbst auf h7 (goldener Pfeil), der Springer f3 erreicht g5 – und sobald er das tut, wird die Diagonale d1–h5 für die Dame frei. Drei Angreifer erreichen h7 (rot) – und nur der König selbst deckt das Feld.",
+     "text": "This is how it should have looked. The bishop on d3 itself aims at h7 (gold arrow), the knight on f3 reaches g5 – and as soon as it does, the d1–h5 diagonal opens for the queen. Three attackers reach h7 (red) – and only the king itself defends the square.",
      "stil": "normal"
     }
    ],
@@ -2751,14 +2751,14 @@
     "fragen": [
      {
       "zug": "1. Bxh7+",
-      "frage": "Warum funktioniert 1. Lxh7+ hier?",
+      "frage": "Why does 1. Bxh7+ work here?",
       "antworten": [
-       "Der Läufer kann auf h7 nicht geschlagen werden.",
-       "Schwarz hat schon rochiert und kann den König nicht mehr bewegen.",
-       "Drei Angreifer erreichen h7, und nur der König deckt: Die Übermacht trägt das Opfer."
+       "The bishop can't be captured on h7.",
+       "Black has already castled and can no longer move the king.",
+       "Three attackers reach h7, and only the king defends: the superior force carries the sacrifice."
       ],
       "richtig": 2,
-      "erklaerung": "Nach Kxh7 Sg5+ und Dh5 kommen Springer und Dame mit Tempo heran. Gegen drei Angreifer reicht ein einzelner Verteidiger nicht."
+      "erklaerung": "After Kxh7, Ng5+ and Qh5 bring the knight and queen in with tempo. Against three attackers, a single defender is not enough."
      }
     ]
    }
@@ -2770,9 +2770,9 @@
    "abschnitt": {
     "nummer": "1.6",
     "label": "sec:k1-angriff",
-    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+    "titel": "Attack needs superior force: the golden attack rule"
    },
-   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
    "fen": "r1b2r2/ppqn1ppk/2n1p3/3pP1N1/3P4/2N5/PP3PPP/R2Q1RK1 b - - 1 2",
    "pfeile": [
     {
@@ -2799,16 +2799,16 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sg5+"
+     "text": "2. Ng5+"
     },
     {
      "art": "text",
-     "text": " – Schwarz hat nur vier Königszüge. Nach ",
+     "text": " – Black has only four king moves. After ",
      "stil": "normal"
     },
     {
@@ -2817,16 +2817,16 @@
     },
     {
      "art": "text",
-     "text": " folgt sofort ",
+     "text": ", ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3. Dh5+"
+     "text": "3. Qh5+"
     },
     {
      "art": "text",
-     "text": " und Matt; die Ausflüge ",
+     "text": " and mate follow at once; the excursions ",
      "stil": "normal"
     },
     {
@@ -2835,7 +2835,7 @@
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
@@ -2844,7 +2844,7 @@
     },
     {
      "art": "text",
-     "text": " führen den König mitten ins offene Feld. Rot: Der Springer gibt Schach und greift zugleich f7 an. Gold: der Weg der Dame nach h5.",
+     "text": " lead the king into the middle of the open board. Red: the knight gives check and attacks f7 at the same time. Gold: the queen's path to h5.",
      "stil": "normal"
     }
    ],
@@ -2873,9 +2873,9 @@
    "abschnitt": {
     "nummer": "1.6",
     "label": "sec:k1-angriff",
-    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+    "titel": "Attack needs superior force: the golden attack rule"
    },
-   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
    "fen": "r1b2rk1/ppqn1pp1/2n1p3/3pP1NQ/3P4/2N5/PP3PPP/R4RK1 b - - 3 3",
    "pfeile": [
     {
@@ -2897,25 +2897,25 @@
    "unterschrift": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Kg8 3. Dh5"
+     "text": "2... Kg8 3. Qh5"
     },
     {
      "art": "text",
-     "text": " – die dritte Figur ist da. Gedroht ist ",
+     "text": " – the third piece has arrived. ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Dh7#"
+     "text": "4. Qh7#"
     },
     {
      "art": "text",
-     "text": " (goldener Pfeil, rotes Feld), gedeckt vom Springer g5 (grau). Schwarz hat keine Verteidigung mehr: Jeder Zug verliert mit Gewalt.",
+     "text": " is threatened (gold arrow, red square), protected by the knight on g5 (gray). Black has no defense left: every move loses by force.",
      "stil": "normal"
     }
    ],
@@ -2946,16 +2946,16 @@
    "abschnitt": {
     "nummer": "1.6",
     "label": "sec:k1-angriff",
-    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+    "titel": "Attack needs superior force: the golden attack rule"
    },
-   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
    "fen": "rn2kb1r/1p3ppp/p3pn2/1Npq4/3P4/5N2/PPP2PPP/R1BQ1RK1 w kq - 0 1",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Schwarz hat soeben ",
+     "text": "White to move. Black has just played ",
      "stil": "normal"
     },
     {
@@ -2964,7 +2964,7 @@
     },
     {
      "art": "text",
-     "text": " gespielt.",
+     "text": ".",
      "stil": "normal"
     }
    ],
@@ -2987,16 +2987,16 @@
    "abschnitt": {
     "nummer": "1.6",
     "label": "sec:k1-angriff",
-    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+    "titel": "Attack needs superior force: the golden attack rule"
    },
-   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
    "fen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/2PPP3/2N5/PP2BPPP/R1BQ1RK1 w - - 0 1",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Im Zentrum hängt alles an einem einzigen Feld.",
+     "text": "White to move. In the center, everything hinges on a single square.",
      "stil": "normal"
     }
    ],
@@ -3019,16 +3019,16 @@
    "abschnitt": {
     "nummer": "1.6",
     "label": "sec:k1-angriff",
-    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+    "titel": "Attack needs superior force: the golden attack rule"
    },
-   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
    "fen": "r1bqkbnr/pppp1ppp/2n5/8/3NP3/8/PPP2PPP/RNBQKB1R b KQkq - 0 4",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Schwarz am Zug. Weiß hat soeben auf d4 zurückgeschlagen.",
+     "text": "Black to move. White has just recaptured on d4.",
      "stil": "normal"
     }
    ],
@@ -3059,16 +3059,16 @@
    "abschnitt": {
     "nummer": "1.6",
     "label": "sec:k1-angriff",
-    "titel": "Angriff braucht Übermacht: die goldene Angriffsregel"
+    "titel": "Attack needs superior force: the golden attack rule"
    },
-   "unterabschnitt": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "unterabschnitt": "One attacker is too few, three are enough: the Greek gift",
    "fen": "r1b2rk1/ppq2ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 0 1",
    "pfeile": [],
    "felder": [],
    "unterschrift": [
     {
      "art": "text",
-     "text": "Weiß am Zug. Der Läufer d3 zielt auf h7.",
+     "text": "White to move. The bishop on d3 aims at h7.",
      "stil": "normal"
     }
    ],
@@ -3097,7 +3097,7 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Dein Springer auf b5 wird vom Bauern a6 angegriffen und von keiner einzigen eigenen Figur gedeckt, sodass er nach ",
+     "text": "Your knight on b5 is attacked by the pawn on a6 and not defended by a single one of your pieces, so after ",
      "stil": "normal"
     },
     {
@@ -3106,23 +3106,23 @@
     },
     {
      "art": "text",
-     "text": " ersatzlos verloren wäre. Der Reflex sagt daher: Springer in Sicherheit bringen. Was spielst du?",
+     "text": " it would be lost for nothing. So the reflex says: get the knight to safety. What do you play?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Die erste Frage der Schach-Röntgen-Regel lautet nicht „Wie rette ich meinen Springer?“, sondern „Kann ich Schach geben?“, und die Antwort ist ",
+     "text": "The first question of the Chess X-ray rule is not “How do I save my knight?” but “Can I give check?”, and the answer is ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sc7+!"
+     "text": "1. Nc7+!"
     },
     {
      "art": "text",
-     "text": " Das Feld c7 wird von keiner einzigen schwarzen Figur gedeckt, und der Springer gabelt dort gleich dreifach: König e8, Dame d5 und Turm a8. Da Schwarz zunächst das Schach beantworten muss, folgt nach den einzigen drei möglichen Königszügen ",
+     "text": " The square c7 is not defended by a single black piece, and there the knight forks three pieces at once: the king on e8, the queen on d5 and the rook on a8. Since Black first has to answer the check, after the only three possible king moves ",
      "stil": "normal"
     },
     {
@@ -3140,7 +3140,7 @@
     },
     {
      "art": "text",
-     "text": " oder ",
+     "text": " or ",
      "stil": "normal"
     },
     {
@@ -3149,16 +3149,16 @@
     },
     {
      "art": "text",
-     "text": " ",
+     "text": " comes ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sxd5"
+     "text": "2. Nxd5"
     },
     {
      "art": "text",
-     "text": " (nach ",
+     "text": " (after ",
      "stil": "normal"
     },
     {
@@ -3167,16 +3167,16 @@
     },
     {
      "art": "text",
-     "text": " sogar mit Schach), und Weiß gewinnt die Dame für einen Springer, also sechs Bauerneinheiten. Der „sichere“ Rückzug ",
+     "text": " even with check), and White wins the queen for a knight, that is, six pawn units. The “safe” retreat ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Sc3"
+     "text": "1. Nc3"
     },
     {
      "art": "text",
-     "text": " rettet zwar die Figur, verschenkt aber genau diesen Gewinn. Merke dir: Eine Drohung gegen dich zählt nur dann, wenn dein Gegner überhaupt dazu kommt, sie auszuführen.",
+     "text": " does save the piece, but it gives away exactly this gain. Remember: a threat against you only counts if your opponent ever gets to carry it out.",
      "stil": "normal"
     }
    ],
@@ -3187,8 +3187,8 @@
    "erklaerung": {
     "loesung": "1. Nc7+!",
     "akzeptiert": [],
-    "motiv": "Springergabel mit Schach",
-    "text": "Statt den angegriffenen Springer zu retten, gibt Weiß Schach: 1. Sc7+! gabelt König, Dame und Turm, und nach jedem Königszug fällt die Dame. Eine Drohung zählt nur, wenn der Gegner überhaupt dazu kommt, sie auszuführen."
+    "motiv": "Knight fork with check",
+    "text": "Instead of saving the attacked knight, White gives check: 1. Nc7+! forks king, queen and rook, and after any king move the queen falls. A threat only counts if the opponent ever gets to carry it out."
    }
   },
   {
@@ -3202,33 +3202,33 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Beide Seiten haben ihre Eröffnung ordentlich abgeschlossen, und auf den ersten Blick sieht die Stellung völlig ausgeglichen aus. Was spielst du, und was bringt es dir ein?",
+     "text": "Both sides have completed their opening properly, and at first glance the position looks completely equal. What do you play, and what does it get you?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Zähle das Feld d5 ab: Weiß greift es dreifach an (Bauer c4, Bauer e4, Springer c3), wohingegen Schwarz es lediglich zweifach verteidigt (Bauer c6, Bauer e6). Die schwarze Dame auf d8 zählt ",
+     "text": "Count the square d5: White attacks it three times (pawn c4, pawn e4, knight c3), whereas Black only defends it twice (pawn c6, pawn e6). The black queen on d8 does ",
      "stil": "normal"
     },
     {
      "art": "text",
-     "text": "nicht",
+     "text": "not",
      "stil": "kursiv"
     },
     {
      "art": "text",
-     "text": " mit: Der eigene Springer auf d7 versperrt ihr die d-Linie. Drei gegen zwei bedeutet: Der Tausch auf d5 gewinnt einen Bauern. Es folgt ",
+     "text": " count: Black's own knight on d7 blocks the d-file for it. Three against two means: the exchange on d5 wins a pawn. Play goes ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. cxd5! cxd5 2. exd5 exd5 3. Sxd5"
+     "text": "1. cxd5! cxd5 2. exd5 exd5 3. Nxd5"
     },
     {
      "art": "text",
-     "text": ", und auf d5 steht keine schwarze Figur mehr, die zurückschlagen könnte. ",
+     "text": ", and no black piece is left that could recapture on d5. ",
      "stil": "normal"
     },
     {
@@ -3237,25 +3237,25 @@
     },
     {
      "art": "text",
-     "text": " führt mit vertauschter Zugfolge zum selben Ergebnis. Der Springer auf d5 lässt sich dort auch nicht fangen, da er nach ",
+     "text": " leads to the same result with the moves in a different order. Nor can the knight on d5 be trapped there, because after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "3... Sb6"
+     "text": "3... Nb6"
     },
     {
      "art": "text",
-     "text": " mit ",
+     "text": " it escapes with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4. Sxe7+"
+     "text": "4. Nxe7+"
     },
     {
      "art": "text",
-     "text": " entkommt und Weiß den Mehrbauern behält. Merke dir: Zähle vor einem Bauerntausch im Zentrum nur die Figuren mit, die das Feld wirklich erreichen.",
+     "text": ", and White keeps the extra pawn. Remember: before a pawn exchange in the center, only count the pieces that really reach the square.",
      "stil": "normal"
     }
    ],
@@ -3268,8 +3268,8 @@
     "akzeptiert": [
      "1. exd5"
     ],
-    "motiv": "Zählen von Angreifern und Verteidigern",
-    "text": "Auf d5 greifen drei weiße Figuren an, nur zwei schwarze verteidigen; die Dame d8 zählt nicht, weil der Springer d7 sie verstellt. Darum gewinnt der Tausch mit 1. cxd5! einen Bauern, und der Springer d5 entkommt notfalls mit Schach nach e7."
+    "motiv": "Counting attackers and defenders",
+    "text": "Three white pieces attack d5, and only two black ones defend it; the queen on d8 doesn't count because the knight on d7 blocks it. That is why the exchange 1. cxd5! wins a pawn, and if need be the knight on d5 escapes to e7 with check."
    }
   },
   {
@@ -3283,78 +3283,78 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Nach ",
+     "text": "After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. e4 e5 2. Sf3 Sc6 3. d4 exd4 4. Sxd4"
+     "text": "1. e4 e5 2. Nf3 Nc6 3. d4 exd4 4. Nxd4"
     },
     {
      "art": "text",
-     "text": " steht ein weißer Springer mitten im Zentrum, und dein Springer c6 kann ihn schlagen. Tauschst du auf d4, oder hältst du die Spannung?",
+     "text": ", a white knight stands right in the center, and your knight on c6 can capture it. Do you exchange on d4, or do you keep the tension?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Halte die Spannung. Nach ",
+     "text": "Keep the tension. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Sxd4?! 5. Dxd4"
+     "text": "4... Nxd4?! 5. Qxd4"
     },
     {
      "art": "text",
-     "text": " steht die weiße Dame mitten im Zentrum, und Schwarz kann sie von dort nur umständlich vertreiben, etwa mit ",
+     "text": ", the white queen stands right in the center, and Black can only drive it away from there in a roundabout way, for example with ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Se7"
+     "text": "...Ne7"
     },
     {
      "art": "text",
-     "text": " und ",
+     "text": " and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "...Sc6"
+     "text": "...Nc6"
     },
     {
      "art": "text",
-     "text": ", weil der Springer c6, der das sofort gekonnt hätte, getauscht ist. Vergleiche mit der verfrühten Dame aus ",
+     "text": ", because the knight on c6, which could have done it at once, has been traded. Compare the premature queen from ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 1.8",
+     "text": "Fig. 1.8",
      "abbildung": "1.8"
     },
     {
      "art": "text",
-     "text": ": Dort wurde die Dame gejagt, hier steht sie vorerst sicher. Schwarz hat mit seinem Schlagzug die gegnerische Dame entwickelt. Besser ist ein Entwicklungszug, der selbst etwas angreift: ",
+     "text": ": there the queen was chased, here it stands safely for the time being. With the capture, Black has developed the opponent's queen. Better is a developing move that attacks something itself: ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Sf6"
+     "text": "4... Nf6"
     },
     {
      "art": "text",
-     "text": " zielt auf den Bauern e4, ",
+     "text": " aims at the pawn on e4, ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "4... Lc5"
+     "text": "4... Bc5"
     },
     {
      "art": "text",
-     "text": " auf den Springer d4. Merke dir: Frage vor jedem Tausch, welche gegnerische Figur zurückschlägt und wie gut sie danach steht.",
+     "text": " at the knight on d4. Remember: before every exchange, ask which enemy piece recaptures and how well it stands afterwards.",
      "stil": "normal"
     }
    ],
@@ -3367,8 +3367,8 @@
     "akzeptiert": [
      "4... Bc5"
     ],
-    "motiv": "Spannung halten",
-    "text": "Nach 4... Sxd4?! 5. Dxd4 steht die weiße Dame sicher im Zentrum, und Schwarz hat sie selbst entwickelt. Besser ist ein Entwicklungszug mit Angriff: 4... Sf6 auf e4 oder 4... Lc5 auf den Springer d4."
+    "motiv": "Keeping the tension",
+    "text": "After 4... Nxd4?! 5. Qxd4 the white queen stands safely in the center, and Black has developed it for White. A developing move with an attack is better: 4... Nf6 against e4, or 4... Bc5 against the knight on d4."
    }
   },
   {
@@ -3382,79 +3382,79 @@
    "aufgabe": [
     {
      "art": "text",
-     "text": "Die Stellung erinnert an das griechische Geschenk aus ",
+     "text": "The position is reminiscent of the Greek gift from ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 1.37",
+     "text": "Fig. 1.37",
      "abbildung": "1.37"
     },
     {
      "art": "text",
-     "text": ". Funktioniert ",
+     "text": ". Does ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lxh7+"
+     "text": "1. Bxh7+"
     },
     {
      "art": "text",
-     "text": " auch hier?",
+     "text": " work here too?",
      "stil": "normal"
     }
    ],
    "loesung": [
     {
      "art": "text",
-     "text": "Nein. Auf h7 zielt lediglich ein Angreifer, der Läufer d3, wohingegen das Feld vom König und vom Springer f6 gedeckt wird. Nach ",
+     "text": "No. Only one attacker aims at h7, the bishop on d3, whereas the square is defended by the king and the knight on f6. After ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1. Lxh7+?? Sxh7"
+     "text": "1. Bxh7+?? Nxh7"
     },
     {
      "art": "text",
-     "text": " hat Weiß einen Läufer für einen Bauern gegeben, und ",
+     "text": ", White has given a bishop for a pawn, and ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2. Sg5"
+     "text": "2. Ng5"
     },
     {
      "art": "text",
-     "text": " verliert nach ",
+     "text": " then loses the knight too after ",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "2... Sxg5"
+     "text": "2... Nxg5"
     },
     {
      "art": "text",
-     "text": " auch noch den Springer. Schlägt der König (",
+     "text": ". If the king captures (",
      "stil": "normal"
     },
     {
      "art": "zug",
-     "text": "1... Kxh7 2. Sg5+ Kg8"
+     "text": "1... Kxh7 2. Ng5+ Kg8"
     },
     {
      "art": "text",
-     "text": "), kommt die Dame nicht nach h5, da der Springer f6 das Feld bewacht. Der Unterschied zu ",
+     "text": "), the queen can't get to h5, because the knight on f6 guards the square. The difference from ",
      "stil": "normal"
     },
     {
      "art": "verweis",
-     "text": "Abb. 1.37",
+     "text": "Fig. 1.37",
      "abbildung": "1.37"
     },
     {
      "art": "text",
-     "text": ": Dort hatte der Bauer e5 den Springer von f6 vertrieben, hier steht der Bauer hingegen auf e3 und der Springer auf f6. Weiß bringt daher zunächst weitere Figuren heran, statt zu opfern. Merke dir: Zähle vor jedem Opfer am Königsflügel, was auf dem Zielfeld wirklich ankommt und was es verteidigt.",
+     "text": ": there the pawn on e5 had driven the knight away from f6, whereas here the pawn stands on e3 and the knight on f6. So White first brings up more pieces instead of sacrificing. Remember: before every sacrifice on the kingside, count what really arrives on the target square and what defends it.",
      "stil": "normal"
     }
    ],
@@ -3465,8 +3465,8 @@
    "erklaerung": {
     "loesung": null,
     "akzeptiert": [],
-    "motiv": "Läuferopfer auf h7 nachzählen",
-    "text": "1. Lxh7+?? funktioniert hier nicht: Auf h7 kommt nur der Läufer an, König und Springer f6 decken. Solange der Springer auf f6 steht, kommt die Dame nicht nach h5, und Weiß verliert einfach eine Figur."
+    "motiv": "Recounting the bishop sacrifice on h7",
+    "text": "1. Bxh7+?? doesn't work here: only the bishop gets to h7, while the king and the knight on f6 defend it. As long as the knight stands on f6, the queen can't get to h5, and White simply loses a piece."
    }
   }
  ],
@@ -3478,7 +3478,7 @@
    "id": "k01-a1",
    "kapitel": 1,
    "abschnitt": "1.1",
-   "titel": "Die drei Ziele jeder Eröffnung",
+   "titel": "The three goals of every opening",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -3517,7 +3517,7 @@
    "id": "k01-a12",
    "kapitel": 1,
    "abschnitt": "1.2",
-   "titel": "Die verzögerte Rochade – eine typische Gefahrenstellung",
+   "titel": "Delayed castling – a typical danger position",
    "startFen": "r3kb1r/ppqb1ppp/2np4/8/2BNn3/2N5/PPP2PPP/R1BQR1K1 w kq - 6 11",
    "zuege": [
     {
@@ -3539,7 +3539,7 @@
    "id": "k01-a13",
    "kapitel": 1,
    "abschnitt": "1.3",
-   "titel": "Das Schäfermatt und seine Abwehr",
+   "titel": "Scholar's mate and how to defend against it",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -3707,7 +3707,7 @@
    "id": "k01-a19",
    "kapitel": 1,
    "abschnitt": "1.3",
-   "titel": "Ausblick: Der Fried-Liver-Angriff",
+   "titel": "Looking ahead: the Fried Liver Attack",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -3904,7 +3904,7 @@
    "id": "k01-a2",
    "kapitel": 1,
    "abschnitt": "1.1",
-   "titel": "Die drei Ziele in der Praxis: das London-System",
+   "titel": "The three goals in practice: the London System",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -4137,7 +4137,7 @@
    "id": "k01-a23",
    "kapitel": 1,
    "abschnitt": "1.4",
-   "titel": "Warum „Schach“ vor „Schlag“ steht",
+   "titel": "Why “check” comes before “capture”",
    "startFen": "rnb1k2r/ppp2p1p/4p1p1/2bq4/4N3/3P4/PPP1BPPP/R1BQ1RK1 w kq - 0 1",
    "zuege": [
     {
@@ -4215,7 +4215,7 @@
    "id": "k01-a26",
    "kapitel": 1,
    "abschnitt": "1.4",
-   "titel": "Zählen in der Praxis: der Bauernhebel",
+   "titel": "Counting in practice: the pawn lever",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -4564,7 +4564,7 @@
    "id": "k01-a32",
    "kapitel": 1,
    "abschnitt": "1.5",
-   "titel": "Wie ein Abtausch dem Gegner hilft",
+   "titel": "How an exchange helps the opponent",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -4734,7 +4734,7 @@
    "id": "k01-a34",
    "kapitel": 1,
    "abschnitt": "1.5",
-   "titel": "Die Drohung ignorieren: wer zuerst kommt",
+   "titel": "Ignoring the threat: first come, first served",
    "startFen": "r1bq1rk1/pp3ppp/2p1p3/3p2N1/1n6/3Q4/PPP2PPP/R1B2RK1 w - - 0 1",
    "zuege": [
     {
@@ -4764,7 +4764,7 @@
    "id": "k01-a36",
    "kapitel": 1,
    "abschnitt": "1.6",
-   "titel": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "titel": "One attacker is too few, three are enough: the Greek gift",
    "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2N2N2/PP2BPPP/R2Q1RK1 w - - 0 1",
    "zuege": [
     {
@@ -4800,7 +4800,7 @@
    "id": "k01-a37",
    "kapitel": 1,
    "abschnitt": "1.6",
-   "titel": "Ein Angreifer ist zu wenig, drei reichen: das griechische Geschenk",
+   "titel": "One attacker is too few, three are enough: the Greek gift",
    "startFen": "r1b2rk1/ppqn1ppp/2n1p3/3pP3/3P4/2NB1N2/PP3PPP/R2Q1RK1 w - - 0 1",
    "zuege": [
     {
@@ -4897,7 +4897,7 @@
    "id": "k01-a40",
    "kapitel": 1,
    "abschnitt": "Übung 4",
-   "titel": "Übung: Drohung ignorieren",
+   "titel": "Exercise: Ignoring the threat",
    "startFen": "rn2kb1r/1p3ppp/p3pn2/1Npq4/3P4/5N2/PPP2PPP/R1BQ1RK1 w kq - 0 1",
    "zuege": [
     {
@@ -4965,7 +4965,7 @@
    "id": "k01-a41",
    "kapitel": 1,
    "abschnitt": "Übung 5",
-   "titel": "Übung: Zählen vor dem Bauerntausch",
+   "titel": "Exercise: Counting before the pawn exchange",
    "startFen": "r1bq1rk1/pp1nbppp/2p1p3/3p4/2PPP3/2N5/PP2BPPP/R1BQ1RK1 w - - 0 1",
    "zuege": [
     {
@@ -5035,7 +5035,7 @@
    "id": "k01-a42",
    "kapitel": 1,
    "abschnitt": "Übung 6",
-   "titel": "Übung: Spannung halten",
+   "titel": "Exercise: Keeping the tension",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {
@@ -5135,7 +5135,7 @@
    "id": "k01-a43",
    "kapitel": 1,
    "abschnitt": "Übung 7",
-   "titel": "Übung: Angriff zählen",
+   "titel": "Exercise: Counting the attack",
    "startFen": "r1b2rk1/ppq2ppp/2n1pn2/3p4/3P4/2NBPN2/PP3PPP/R2Q1RK1 w - - 0 1",
    "zuege": [
     {
@@ -5198,7 +5198,7 @@
    "id": "k01-a8",
    "kapitel": 1,
    "abschnitt": "1.2",
-   "titel": "Die verfrühte Dame in der Italienischen Partie",
+   "titel": "The premature queen in the Italian Game",
    "startFen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
    "zuege": [
     {

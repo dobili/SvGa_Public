@@ -13,7 +13,9 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { AuftragAbgebrochen } from "../../engine/engineDienst";
-import { ladeKapitel } from "../../daten/laden";
+import { ladeEroeffnungsliste, ladeKapitel } from "../../daten/laden";
+import { familieDerBucheroeffnung, zuegeDerFamilie } from "../../schach/eroeffnungsfamilie";
+import { eroeffnungsnamenAus, type Eroeffnungsnamen } from "../../schach/eroeffnungsnamen";
 import {
   baueEroeffnungsindex,
   buchzuegeAb,
@@ -64,30 +66,46 @@ export interface Partiesteuerung {
   readonly gibAuf: () => void;
 }
 
-/** Der Eröffnungsindex für den Eröffnungsmodus; bereit auch dann, wenn das Laden scheitert. */
+/**
+ * Der Eröffnungsindex für den Eröffnungsmodus und die Lichess-Liste (R24); bereit auch dann, wenn
+ * das Laden scheitert (dann ohne Liste).
+ */
 function useBuch() {
   const daten = useDaten(() => Promise.all(BUCHKAPITEL.map(ladeKapitel)), "eroeffnungen");
+  const liste = useDaten(ladeEroeffnungsliste, "eroeffnungsliste");
   const index = useMemo(
     () => (daten.art === "fertig" ? baueEroeffnungsindex(daten.wert) : null),
     [daten],
   );
-  return { bereit: daten.art !== "laedt", index };
+  const bekannte = useMemo<Eroeffnungsnamen>(
+    () => (liste.art === "fertig" ? eroeffnungsnamenAus(liste.wert) : new Map()),
+    [liste],
+  );
+  const bereit = daten.art !== "laedt" && liste.art !== "laedt";
+  // Stabil halten: Das Objekt steht in den Abhängigkeiten des Zug-Effekts (useEngineZug).
+  return useMemo(() => ({ bereit, index, bekannte }), [bereit, index, bekannte]);
 }
 
 /**
  * Die Buchzüge für die Engine: ohne Vorgabe (null) keine, die Engine spielt selbst (0.2.40);
  * „buch“: alle Buchzüge mit der üblichen Buchtreue; eine bestimmte Eröffnung (0.2.39): nur die
- * Züge, die in ihr bleiben, mit Buchtreue 1, und nach dem Verlassen wieder alle Buchzüge.
+ * Züge, die in ihr bleiben, mit Buchtreue 1. Ohne solchen Buchzug seit R24 (Wunsch des Autors)
+ * Züge derselben Familie aus der Lichess-Liste, ebenfalls mit Buchtreue 1; erst danach wieder
+ * alle Buchzüge.
  */
 function buchzuegeFuer(
-  index: Eroeffnungsindex | null,
+  buch: { index: Eroeffnungsindex | null; bekannte: Eroeffnungsnamen },
   fen: string,
   eroeffnung: string | null,
 ): { zuege: string[]; treue: number } {
+  const { index, bekannte } = buch;
   if (!index || eroeffnung === null) return { zuege: [], treue: BUCHTREUE };
   if (eroeffnung !== EROEFFNUNG_BUCH) {
     const inDerEroeffnung = buchzuegeZu(index, fen, eroeffnung);
     if (inDerEroeffnung.length > 0) return { zuege: inDerEroeffnung, treue: BUCHTREUE_VORGABE };
+    const familie = familieDerBucheroeffnung(index, bekannte, eroeffnung);
+    const ausDerListe = familie ? zuegeDerFamilie(bekannte, fen, familie) : [];
+    if (ausDerListe.length > 0) return { zuege: ausDerListe, treue: BUCHTREUE_VORGABE };
   }
   return { zuege: buchzuegeAb(index, fen), treue: BUCHTREUE };
 }
@@ -105,7 +123,7 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
     let aktiv = true;
     const laeuft = () => aktiv;
     const jetzige = neueste(id);
-    const buchzuege = buchzuegeFuer(buch.index, fen, eroeffnung);
+    const buchzuege = buchzuegeFuer(buch, fen, eroeffnung);
     (jetzige ? vorzugFuer(id, jetzige) : Promise.resolve(null))
       .then((vorzug) =>
         vorzug === null
@@ -127,7 +145,7 @@ function useEngineZug(partie: Partie | null, fen: string, amZugEngine: boolean) 
     return () => {
       aktiv = false;
     };
-  }, [id, fen, amZugEngine, buch.bereit, buch.index, stufennummer, eroeffnung, versuch]);
+  }, [id, fen, amZugEngine, buch, stufennummer, eroeffnung, versuch]);
   return fehler;
 }
 

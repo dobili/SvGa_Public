@@ -6,6 +6,9 @@
  * der neuen Partie.
  * Abhängigkeiten: engine/gegner.ts, speicher/partien.ts (Vorlieben).
  */
+import type { BlinderFleck } from "../../engine/blindeFlecken";
+import type { Reglerstufen } from "../../engine/eigenstufen";
+import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import { gegnerVon, unterAbhakliste, type EigenerGegner } from "../../engine/gegner";
 import { gruppenstufe } from "../../engine/gruppe";
 import { staerkeGeschaetzt } from "../../engine/botstaerke";
@@ -19,16 +22,50 @@ import type { Spielvorlieben } from "../../speicher/partien";
  * die alten freien Gewichte, sonst keine (wie Menschen).
  * Beispiel: „Dame früh“ angehakt auf Stufe 2, Stufen 4 · 4 · 4 → verfruehteDame etwa 2,4.
  */
-function gewichteDesEigenen(g: EigenerGegner) {
+function gewichteDesEigenen(g: {
+  readonly stufenJePhase: EigenerGegner["stufenJePhase"];
+  readonly fehlerarten: readonly Fehlerart[] | null;
+  readonly blindeFlecken: readonly BlinderFleck[];
+  readonly reglerstufen?: Reglerstufen;
+  readonly gewichte?: EigenerGegner["gewichte"];
+}) {
   if (!g.reglerstufen) return g.gewichte;
-  const aktiv = REGLERARTEN.filter(
-    (a) =>
-      (g.fehlerarten as readonly string[]).includes(a) ||
-      (g.blindeFlecken as readonly string[]).includes(a),
-  );
+  const arten: readonly string[] = g.fehlerarten ?? FEHLERARTEN;
+  const flecken: readonly string[] = g.blindeFlecken;
+  const aktiv = REGLERARTEN.filter((a) => arten.includes(a) || flecken.includes(a));
   const stufen = Object.fromEntries(aktiv.map((a) => [a, g.reglerstufen?.[a] ?? 0]));
   return gewichteAusStufen(stufen, staerkeGeschaetzt(g));
 }
+
+/**
+ * Die eigene Stufe (seit 0.2.126 mit denselben Einstellungen wie ein eigener Bot, Wunsch des
+ * Autors): Abhakliste, Flecken, Stil, Reglerstufen, Häufigkeit, Höchstverlust. Der Stil steht immer
+ * in der Partie (Vorgabe Universell); an ihm erkennt die Zugwahl, dass die Stufe mit den
+ * angehakten Fehlerarten spielt (vorher rein, engine/zugwahl.ts REINES_PROFIL).
+ */
+function profilDerEigenenStufe(v: Vorliebenauszug) {
+  const fehlerarten = unterAbhakliste(null, v.erlaubteFehlerarten);
+  const gewichte = gewichteDesEigenen({ ...v, fehlerarten });
+  return {
+    fehlerarten,
+    blindeFlecken: v.blindeFlecken,
+    stilname: v.stilname ?? ("universell" as const),
+    ...(gewichte ? { gewichte } : {}),
+    ...(v.haeufigkeit !== undefined ? { haeufigkeit: v.haeufigkeit } : {}),
+    ...(v.hoechstverlust ? { hoechstverlust: v.hoechstverlust } : {}),
+  };
+}
+
+type Vorliebenauszug = Pick<
+  Spielvorlieben,
+  | "erlaubteFehlerarten"
+  | "blindeFlecken"
+  | "stufenJePhase"
+  | "stilname"
+  | "reglerstufen"
+  | "haeufigkeit"
+  | "hoechstverlust"
+>;
 
 /**
  * Name, Fehlerarten, Stil und blinde Flecken des gewählten Gegners für die Partie (0.2.42, 0.2.46).
@@ -41,7 +78,7 @@ function gewichteDesEigenen(g: EigenerGegner) {
 export function gegnerprofil(
   bot: string | null,
   eigene: readonly EigenerGegner[],
-  v: Pick<Spielvorlieben, "erlaubteFehlerarten" | "blindeFlecken">,
+  v: Vorliebenauszug,
 ) {
   const eigener = eigene.find((g) => g.kennung === bot);
   if (eigener) {
@@ -65,12 +102,7 @@ export function gegnerprofil(
     return { botName: gruppenname(gruppe), fehlerarten: null, stil: 0, blindeFlecken: [] };
   }
   const vorgefertigt = gegnerVon(bot);
-  if (!vorgefertigt) {
-    return {
-      fehlerarten: unterAbhakliste(null, v.erlaubteFehlerarten),
-      blindeFlecken: v.blindeFlecken,
-    };
-  }
+  if (!vorgefertigt) return profilDerEigenenStufe(v);
   return {
     botName: vorgefertigt.name,
     fehlerarten: vorgefertigt.fehlerarten,

@@ -12,7 +12,13 @@ import { BLINDE_FEHLERARTEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import { STIL_MAX, STIL_MIN } from "../engine/stil";
 import { besiegtAus } from "./besiegt";
-import { blindeFleckenAus, eigeneGegnerAus, fehlerartenAus, stilnameAus } from "./gegner";
+import {
+  blindeFleckenAus,
+  eigeneGegnerAus,
+  fehlerartenAus,
+  reglerstufenAus,
+  stilnameAus,
+} from "./gegner";
 import { menschenwerteAus } from "./menschenwerte";
 import type { Stufennummer } from "../engine/stufen";
 import type { Phase } from "../schach/phase";
@@ -235,6 +241,22 @@ function vorliebenAus(roh: unknown): Spielvorlieben {
     ruhigeAnsicht: roh.ruhigeAnsicht === true,
     erlaubteFehlerarten: fehlerartenAus(roh.erlaubteFehlerarten),
     blindeFlecken: blindeFleckenAus(roh.blindeFlecken),
+    ...feinheitenDerStufeAus(roh),
+  };
+}
+
+/** Stil, Reglerstufen, Häufigkeit und Höchstverlust der eigenen Stufe (0.2.126), nur vorhandene. */
+function feinheitenDerStufeAus(
+  roh: Roh,
+): Pick<Spielvorlieben, "stilname" | "reglerstufen" | "haeufigkeit" | "hoechstverlust"> {
+  const stilname = stilnameAus(roh.stilname);
+  const reglerstufen = reglerstufenAus(roh.reglerstufen);
+  const { haeufigkeit, hoechstverlust } = menschenwerteAus(roh);
+  return {
+    ...(stilname ? { stilname } : {}),
+    ...(reglerstufen ? { reglerstufen } : {}),
+    ...(haeufigkeit !== undefined ? { haeufigkeit } : {}),
+    ...(hoechstverlust ? { hoechstverlust } : {}),
   };
 }
 

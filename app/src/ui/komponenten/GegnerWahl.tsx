@@ -20,10 +20,10 @@
  * Abhängigkeiten: engine/gegner.ts, engine/botstaerke.ts, engine/stufen.ts, spiel/partie.ts
  * (Typen), Vorschauwahl, InfoKnopf, staerkeangabe.ts, lucide, i18n.
  */
+import type { Fehlerart } from "../../engine/fehlerart";
 import { Bot, SlidersHorizontal, UserPen } from "lucide-react";
 import type { ReactNode } from "react";
 import {
-  staerkeAusStufen,
   staerkeGeschaetzt,
   staerkeDesBots,
   uhrAbzug,
@@ -65,6 +65,7 @@ function staerkezeile(
   eigener: EigenerGegner | null,
   stufen: Stufenwahl,
   uhr: Uhrangabe | null,
+  erlaubte?: readonly Fehlerart[],
 ): string {
   const vorgefertigt = gegnerVon(bot);
   const gemessen = staerkeDesBots(bot);
@@ -84,7 +85,8 @@ function staerkezeile(
     eroeffnung: String(stufen.eroeffnung),
     mittelspiel: String(stufen.mittelspiel),
     endspiel: String(stufen.endspiel),
-    staerke: staerketext(staerkeAusStufen(stufen)),
+    // Seit 0.2.126: ohne angehakte Fehlerart spielt die eigene Stufe rein (engine/botstaerke.ts).
+    staerke: staerketext(staerkeGeschaetzt({ stufenJePhase: stufen, fehlerarten: erlaubte })),
   });
 }
 
@@ -111,11 +113,14 @@ function Sprechblase({
   eigene,
   stufen,
   uhr,
+  erlaubte,
 }: {
   bot: string | null;
   eigene: readonly EigenerGegner[];
   stufen: Stufenwahl;
   uhr: Uhrangabe | null;
+  /** Abhakliste der eigenen Stufe (0.2.126; leer: sie spielt rein). */
+  erlaubte?: readonly Fehlerart[];
 }) {
   const vorgefertigt = gegnerVon(bot);
   const eigener = eigene.find((g) => g.kennung === bot) ?? null;
@@ -139,7 +144,7 @@ function Sprechblase({
   const staerke =
     gruppe !== null
       ? gruppenstaerketext(alleBesiegt, gruppe)
-      : staerkezeile(bot, eigener, stufen, uhr);
+      : staerkezeile(bot, eigener, stufen, uhr, erlaubte);
   return (
     <div className="gegner-sprechblase" data-testid="gegner-sprechblase">
       {vorgefertigt || eigener || gruppe !== null ? (
@@ -224,6 +229,7 @@ export function GegnerWahl({
   einstellungen,
   beginnen,
   uhr = null,
+  erlaubte,
 }: {
   gegner: Gegnerart;
   bot: string | null;
@@ -243,6 +249,8 @@ export function GegnerWahl({
   beginnen: ReactNode;
   /** Die gewählte Uhr (seit 0.2.117: Zahl des Bots mit Uhr in der Sprechblase). */
   uhr?: Uhrangabe | null;
+  /** Abhakliste der eigenen Stufe (0.2.126; leer: sie spielt rein, die Zahl ist die der reinen Stufe). */
+  erlaubte?: readonly Fehlerart[];
 }) {
   return (
     <>
@@ -272,7 +280,7 @@ export function GegnerWahl({
           />
           {beginnen}
           {(kategorie !== "eigene" || eigene.some((g) => g.kennung === bot)) && (
-            <Sprechblase bot={bot} eigene={eigene} stufen={stufen} uhr={uhr} />
+            <Sprechblase bot={bot} eigene={eigene} stufen={stufen} uhr={uhr} erlaubte={erlaubte} />
           )}
           {kategorie === "stufe" && stufeninhalt}
           {kategorie === "vorgefertigt" && (

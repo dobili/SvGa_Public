@@ -1,4 +1,5 @@
 /** Tests der Elo-Zahl der Bots: Daten vollständig und geordnet, Schätzung aus Stufen, Anzeige. */
+import { REINE_STUFEN_STAERKE } from "./reinestufen-daten";
 import { describe, expect, it } from "vitest";
 import {
   ANGABE_HOECHSTENS,
@@ -67,7 +68,12 @@ describe("Elo-Zahl der Bots", () => {
     const svenja = GEGNER.find((g) => g.kennung === "svenja");
     expect(gegnerstaerke({ bot: "svenja", stufenJePhase: fuenf })).toBe(staerkeDesBots("svenja"));
     expect(svenja).toBeDefined();
-    expect(gegnerstaerke({ bot: null, stufenJePhase: fuenf })).toBe(staerkeDerStufe(5));
+    // Partien von vor 0.2.126 gegen die eigene Stufe (ohne Stil) spielten rein.
+    expect(gegnerstaerke({ bot: null, stufenJePhase: fuenf })).toBe(REINE_STUFEN_STAERKE[5]);
+    // Seit 0.2.126 spielt die eigene Stufe mit Zusatzfehlern wie die gemessene Stufe „5m“.
+    const neu = { bot: null, stufenJePhase: fuenf, stilname: "universell", fehlerarten: null };
+    expect(gegnerstaerke(neu)).toBe(staerkeDerStufe(5));
+    expect(gegnerstaerke({ ...neu, fehlerarten: [] })).toBe(REINE_STUFEN_STAERKE[5]);
     expect(gegnerstaerke({ bot: "eigen-1", stufenJePhase: fuenf })).toBe(staerkeDerStufe(5));
   });
 

@@ -85,8 +85,27 @@ function verlaufVon(partie: Partie): Verlauf {
  */
 function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
   const e = partie.einstellung;
+  if (e.bot === null && e.stilname !== undefined) {
+    // Seit 0.2.126 spielt die eigene Stufe wie ein eigener Bot (Wunsch des Autors): angehakte
+    // Fehlerarten wie Menschen, angehakte Flecken an, übrige aus; Stil und Regler wie dort.
+    return {
+      fleckenStandard: 0,
+      fleckGewicht: 1,
+      fehlerarten: e.fehlerarten ?? null,
+      stil: e.stil ?? 0,
+      stilname: e.stilname,
+      blindeFlecken: e.blindeFlecken ?? [],
+      gewichte: e.gewichte,
+      haeufigkeit: e.haeufigkeit,
+      hoechstverlust: e.hoechstverlust,
+      verlauf: verlaufVon(partie),
+      restMs: eigeneRestzeit(partie, jetztMs),
+      tempo: wahltempo(e.uhr),
+    };
+  }
   if (e.bot === null) {
-    // Ohne Bot spielt die Stufe rein (seit 0.2.117); nur abgehakte blinde Flecken kommen dazu
+    // Partien von vor 0.2.126 (ohne Stil): Die Stufe spielt rein wie damals; nur abgehakte
+    // blinde Flecken kommen dazu
     return {
       ...REINES_PROFIL,
       blindeFlecken: e.blindeFlecken ?? [],

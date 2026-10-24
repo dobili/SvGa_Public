@@ -470,3 +470,39 @@ test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgew
   await expect(eintrag).toContainText("Anna – Ben");
   await expect(eintrag.locator(".ergebnis-gewonnen")).toContainText("0–1");
 });
+
+// 0.2.126 (Wunsch des Autors): „Eigene Stufe“ hat dieselben Einstellungen wie „Eigene Bots“.
+test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl der reinen Stufe", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const netz = page.getByTestId("stilnetz");
+  await netz.getByRole("radio", { name: "Taktiker" }).click();
+  await expect(netz.getByRole("radio", { name: "Taktiker" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  await page.getByTestId("erweiterte-fehler").locator("summary").click();
+  await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
+  await page.locator("#stufe-bauernraub").fill("4");
+  await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "unmenschlich");
+  const blase = page.getByTestId("gegner-sprechblase");
+  await page.getByLabel(/^Mittelspiel:/).fill("5");
+  await page.getByLabel(/^Eröffnung:/).fill("5");
+  await page.getByLabel(/^Endspiel:/).fill("5");
+  await expect(blase).toContainText("etwa 1700");
+  const karte = page.getByTestId("fehlerarten-abhakliste");
+  await karte.locator("summary").click();
+  await karte.getByRole("button", { name: "Keine erlauben" }).click();
+  // Ohne Fehlerart spielt die Stufe nur ihre Grundschicht: gemessen etwa 720.
+  await expect(blase).toContainText("etwa 700");
+  // Stil und Haken überstehen das Neuladen.
+  await page.reload();
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await expect(
+    page.getByTestId("stilnetz").getByRole("radio", { name: "Taktiker" }),
+  ).toHaveAttribute("aria-checked", "true");
+  await karte.locator("summary").click();
+  await expect(karte.getByRole("status")).toHaveText("0 von 18 Arten erlaubt");
+});

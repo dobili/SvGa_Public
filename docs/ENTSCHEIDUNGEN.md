@@ -5132,3 +5132,44 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Speicher:** zwei neue, freiwillige Felder `stilname` und `reglerstufen` am eigenen Gegner und
   `stilname` an der Partie. Ältere Daten lesen sich unverändert, ein neues Speicherformat war nicht
   nötig.
+
+## Gruppenmodus gemessen (24.10.2026 abends, 0.2.126)
+
+- **Messung:** je Gruppe 16 Partien gegen die eigene und die nächste menschlich spielende Stufe
+  (Nm), die Gruppen 8 bis 10 zusätzlich gegen die reinen Stufen 8, 9 und 10, Schnellschach mit der
+  Bedenkzeit der Bots. Ausgewertet in derselben gestreckten Leiter wie die Bots
+  (`engine/botstaerke.messung.ts`), lokal `buch/arbeit/botelo4/neu-gruppenmodus*/` und
+  `bericht-mit-gruppen.md`.
+- **Ergebnis** (Streuung ±90 bis ±140): Gruppe 1 346, 2 830, 3 1148, 4 1635, 5 1870, 6 2306, 7 2527,
+  8 2733, 9 2796, 10 2773. Die Gruppen 2 bis 8 sind 100 bis 450 Elo stärker als ihr bester Bot, Gruppe 9 etwa 90.
+  Gruppe 1 ist schwächer als ihr bester Bot (439), Gruppe 10 schwächer als ihre Bots (2871 bis
+  3232): Ganz unten heben sich die häufigen Fehler bei der Abstimmung nicht auf, ganz oben ziehen
+  die Bots mit Restfehlern die fast fehlerfreien herunter. Die Gruppen 8 bis 10 liegen innerhalb
+  der Messunsicherheit gleichauf.
+- **Bot-Zahlen bleiben:** Mit den Gruppenpartien in der Leiter verschieben sich die Bots um im
+  Mittel 20 und höchstens 58 Elo. Die veröffentlichten Bot-Zahlen bleiben die ohne Gruppen, weil
+  die Kalibrierung von Blitz und Klassisch auf ihnen aufbaut. Die Gruppenzahlen stammen aus dem
+  Lauf mit Gruppen.
+- **Mehrheitsregel bleibt** (Entscheidung des Autors). Ein Gewicht nach der Stärke der Mitglieder
+  würde die Gruppe 10 stärker machen, wäre aber eine neue Regel; das bleibt dem Autor überlassen.
+
+## Eigene Stufe mit den Einstellungen eigener Bots (24.10.2026 spätabends, Wunsch des Autors)
+
+- **Wunsch:** „Eigene Stufe“ bekommt dieselben Einstellungen wie „Eigene Bots“: Stil im
+  Spinnennetz, Fehlerarten, blinde Flecken, erweiterter Modus mit Reglern auf Quantilen,
+  Fehlerhäufigkeit, Höchstverlust und Menschlichkeitsanzeige (`ui/komponenten/EigeneStufe.tsx`,
+  gespeichert in den Spielvorlieben, freiwillige Felder).
+- **Befund dabei:** Seit 0.2.117 spielte die eigene Stufe rein (ohne menschliche Zusatzfehler,
+  `REINES_PROFIL`), seit 0.2.125 zeigte sie aber die Zahl der Stufe mit Zusatzfehlern („Nm“). Bei
+  Stufe 5 stand etwa 1700 da, gespielt wurde etwa 720 (reine Stufe, gemessen). Auch die Wertung
+  rechnete mit der falschen Zahl.
+- **Entscheidung:** Neue Partien gegen die eigene Stufe spielen wie ein eigener Bot, also mit den
+  angehakten Fehlerarten wie Menschen. Mit allen Haken ist das genau die gemessene Stufe „Nm“, die
+  Zahl stimmt. Ohne angehakte Fehlerart spielt sie rein, die Zahl ist die der reinen Stufe
+  (`engine/reinestufen-daten.ts`, aus derselben Messung). Das gilt auch für eigene Bots ohne
+  Fehlerart. Erkennbar sind neue Partien am Stil in der Partie; ältere, noch laufende Partien
+  spielen und zählen weiter wie begonnen.
+- **Zweiter Fehler:** Die Karten „Fehlerarten“ und „Blinde Flecken“ schrieben selbst in den
+  Speicher, der Spielbildschirm überschrieb das beim Partiebeginn mit seiner älteren Kopie. Jetzt
+  laufen alle Änderungen über die Vorlieben des Bildschirms und werden zugleich gespeichert.
+- **Messungen bleiben gültig:** Die vorgefertigten Bots und die Messstufen spielen unverändert.

@@ -12,7 +12,11 @@ const BASIS: EigenerGegner = {
   stil: 0,
   blindeFlecken: [],
 };
-const VORLIEBEN = { erlaubteFehlerarten: FEHLERARTEN, blindeFlecken: [] };
+const VORLIEBEN = {
+  erlaubteFehlerarten: FEHLERARTEN,
+  blindeFlecken: [],
+  stufenJePhase: BASIS.stufenJePhase,
+};
 
 /** Das Profil mit den Feldern, die hier geprüft werden (alle Varianten des Rückgabetyps). */
 function profil(g: EigenerGegner): {
@@ -44,5 +48,19 @@ describe("Gegnerprofil eigener Gegner (Teil E)", () => {
     const p = profil(g);
     expect(p.gewichte).toEqual({ verfruehteDame: 2.5 });
     expect(p).not.toHaveProperty("stilname");
+  });
+  it("die eigene Stufe trägt Stil und Gewichte wie ein eigener Bot (0.2.126)", () => {
+    const leer = gegnerprofil(null, [], VORLIEBEN);
+    expect("stilname" in leer && leer.stilname).toBe("universell");
+    expect(leer.fehlerarten).toBeNull();
+    const fein = gegnerprofil(null, [], {
+      ...VORLIEBEN,
+      stilname: "vereinfacher",
+      reglerstufen: { bauernraub: 2 },
+      haeufigkeit: 0.5,
+    });
+    expect("stilname" in fein && fein.stilname).toBe("vereinfacher");
+    expect("gewichte" in fein && fein.gewichte?.bauernraub).toBeGreaterThan(1);
+    expect("haeufigkeit" in fein && fein.haeufigkeit).toBe(0.5);
   });
 });

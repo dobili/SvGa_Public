@@ -13,6 +13,7 @@
  * Abhängigkeiten: engine/botgruppe.ts, engine/botstaerke-daten.ts, engine/gegnerliste.ts, engine/stufen.ts (Typ),
  * schach/phase.ts (Typ).
  */
+import { REINE_STUFEN_STAERKE } from "./reinestufen-daten";
 import type { Phase } from "../schach/phase";
 import { gruppeDesBots } from "./botgruppe";
 import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
@@ -73,12 +74,15 @@ export function staerkeDesBots(
  * nie gemessen wurde und Fehlerarten, blinde Flecken und Stil nicht eingehen.
  * Beispiel: 3 · 4 · 3 → ein Drittel des Wegs von Stufe 3 zu Stufe 4.
  */
-export function staerkeAusStufen(stufen: Readonly<Record<Phase, Stufennummer>>): number {
+export function staerkeAusStufen(
+  stufen: Readonly<Record<Phase, Stufennummer>>,
+  tabelle: Readonly<Record<Stufennummer, number>> = STUFEN_STAERKE,
+): number {
   const mittel = mittelDerStufen(stufen);
   const unten = Math.max(ERSTE_STUFE, Math.min(LETZTE_STUFE, Math.floor(mittel))) as Stufennummer;
   const oben = Math.min(LETZTE_STUFE, unten + 1) as Stufennummer;
   const anteil = mittel - unten;
-  return STUFEN_STAERKE[unten] + anteil * (STUFEN_STAERKE[oben] - STUFEN_STAERKE[unten]);
+  return tabelle[unten] + anteil * (tabelle[oben] - tabelle[unten]);
 }
 
 /** Was an Zusatzfehlern eingestellt ist (eigene Gegner, eigene Stufe mit blinden Flecken). */
@@ -114,9 +118,13 @@ export function zusatzanteil(e: Zusatzfehlerangabe): number {
  * bei der Wertung der Stufe, und die Haken ändern nur, welche Fehler vorkommen, nicht wie viele
  * (Variante A, ENTSCHEIDUNGEN „Messung der Bots gegen menschlich spielende Stufen“).
  * Beispiel: 4 · 4 · 4 → die Zahl der Stufe 4, mit oder ohne Haken.
+ * Sonderfall (seit 0.2.126): Ist keine Fehlerart angehakt, spielt nur die Grundschicht; dann gilt
+ * die gemessene Zahl der reinen Stufen (engine/reinestufen-daten.ts), etwa 720 statt 1700 bei
+ * Stufe 5.
  */
 export function staerkeGeschaetzt(e: Zusatzfehlerangabe): number {
-  return staerkeAusStufen(e.stufenJePhase);
+  const rein = Array.isArray(e.fehlerarten) && e.fehlerarten.length === 0;
+  return staerkeAusStufen(e.stufenJePhase, rein ? REINE_STUFEN_STAERKE : STUFEN_STAERKE);
 }
 
 /**
@@ -128,10 +136,14 @@ export function gegnerstaerke(
   einstellung: Zusatzfehlerangabe & {
     readonly bot: string | null;
     readonly uhr?: Uhrangabe | null;
+    /** Seit 0.2.126 an jeder neuen Partie gegen die eigene Stufe (engine/stile.ts). */
+    readonly stilname?: string;
   },
 ): number {
-  // Ohne Bot zählen nur die abgehakten blinden Flecken (die Abhakliste gilt den Bots).
-  const eigen = einstellung.bot === null ? { ...einstellung, fehlerarten: [] } : einstellung;
+  // Ohne Bot spielte die Stufe bis 0.2.125 rein (nur abgehakte blinde Flecken); seit 0.2.126
+  // trägt eine neue Partie den Stil und spielt mit den angehakten Fehlerarten wie ein eigener Bot.
+  const altRein = einstellung.bot === null && einstellung.stilname === undefined;
+  const eigen = altRein ? { ...einstellung, fehlerarten: [] } : einstellung;
   // Gruppenmodus (engine/gruppe.ts): gemessene Zahl der Gruppe, sonst stärkster Bot plus Zuschlag.
   const gruppe = gruppenstufe(einstellung.bot);
   const tempo = wertungstempo(einstellung.uhr ?? null);

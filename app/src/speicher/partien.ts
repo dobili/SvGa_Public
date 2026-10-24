@@ -11,6 +11,8 @@
  * Abhängigkeiten: spiel/partie.ts, spiel/uhr.ts, spiel/wertung.ts, engine/fehlerart.ts,
  * engine/stufen.ts.
  */
+import type { Reglerstufen } from "../engine/eigenstufen";
+import type { Stilname } from "../engine/stile";
 import { type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
@@ -70,6 +72,15 @@ export interface Spielvorlieben {
    * gilt die Vorgabe.
    */
   readonly blindeFlecken: readonly BlinderFleck[];
+  /**
+   * Seit 0.2.126 (Wunsch des Autors: dieselben Einstellungen wie bei eigenen Bots): Stil, Stufen je
+   * Fehlerart und Fleck auf den Quantilen der Menschen, Fehlerhäufigkeit und Höchstverlust der
+   * eigenen Stufe. Fehlend: Universell, wie der Median, wie Menschen, unbegrenzt.
+   */
+  readonly stilname?: Stilname;
+  readonly reglerstufen?: Reglerstufen;
+  readonly haeufigkeit?: number;
+  readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
 }
 
 export interface Spielstand {

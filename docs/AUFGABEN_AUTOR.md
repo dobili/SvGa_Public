@@ -645,9 +645,13 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Los); sie sollte meist stärker spielen als ein einzelner Bot der Stufe, aber noch
       menschliche Fehler machen, wenn sich mehrere Bots darin einig sind. Die Partienliste zeigt
       dieselben Gesichter.
-- [ ] N795. **Gruppenmodus, Stärke:** Nach einem Sieg gegen die Gruppe bleibt vorerst „Stärke
-      unbekannt“ stehen, weil die Gruppen noch nicht gemessen sind (das folgt nach dem endgültigen
-      Bot-Satz). Die Wertung rechnet intern mit dem stärksten Bot der Stufe plus 150.
+- [ ] N795. **Gruppenmodus, Stärke:** Vor dem ersten Sieg gegen eine Gruppe steht „Stärke
+      unbekannt“. Nach dem ersten Sieg zeigt der Knopf die gemessene Zahl: Gruppe 1 etwa 350,
+      2 etwa 830, 3 etwa 1150, 4 etwa 1650, 5 etwa 1850, 6 etwa 2300, 7 etwa 2550, 8 bis 10 je etwa
+      2750 bis 2800. In den Stufen 2 bis 8 spielt die Gruppe 100 bis 450 Elo stärker als ihr bester
+      Bot, in Stufe 9 nur wenig. In den Stufen 1 und 10 ist sie schwächer: Ganz unten mitteln sich
+      die vielen Fehler nicht weg, ganz oben ziehen die Bots mit Restfehlern die nahezu
+      fehlerfreien bei der Abstimmung herunter.
 
 - [ ] N796. **Neuer Bot-Satz (24.10.):** Spielen › vorgefertigte Bots. Es gibt jetzt 78 Bots in zehn
       Gruppen (Gruppe 1 sechs, sonst acht), je Gruppe jeder Stil einmal. Neue Namen mit Zahl:
@@ -691,6 +695,18 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       auffällig sind, und einem Satz, ob die Regler den Bot eher stärker oder schwächer machen.
       Nicht angehakte Fehlerarten und Flecken sind gesperrt. Stell zwei Regler auf die
       5-%-Stufe: Das Urteil wird „Ungewöhnlich“. Einen auf „sehr oft“: „Unmenschlich“.
+
+- [ ] N801. **Eigene Stufe mit denselben Einstellungen (dein Wunsch vom 24.10.):** Spielen › Eigene
+      Stufe. Unter den drei Stufenreglern stehen jetzt dasselbe Spinnennetz für den Stil, die
+      Fehlerarten, die blinden Flecken und „Erweitert: Häufigkeiten feinstellen“ mit
+      Menschlichkeitsanzeige wie bei einem eigenen Bot. Stelle 5 · 5 · 5 ein: Die Sprechblase zeigt
+      „etwa 1700“. Tippe in den Fehlerarten auf „Keine erlauben“: Sie zeigt „etwa 700“, denn ohne
+      menschliche Fehler spielt die Stufe nur ihre Grundschicht, und die ist viel schwächer (so
+      gemessen). Stil und Haken bleiben nach dem Neuladen erhalten.
+      Dazu zwei Fehler behoben: Bisher spielte die eigene Stufe ohne die menschlichen Fehler,
+      zeigte aber seit 0.2.125 die Zahl der Stufe mit diesen Fehlern (bei Stufe 5 also etwa 1700
+      statt etwa 700). Und Haken, die du änderst und gleich danach die Partie beginnst, gingen
+      verloren. Ältere, noch laufende Partien gegen die eigene Stufe spielen wie begonnen weiter.
 
 ---
 

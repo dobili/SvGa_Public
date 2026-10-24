@@ -198,29 +198,41 @@ function mittelDerStufen(stufen: Readonly<Record<Phase, Stufennummer>>): number 
  * benachbarte Stufen nicht mehr (acht Bots in der Nachbargruppe, engine/botgruppe.ts).
  * Beispiel: Stufe 1 mit Bots von 830 (Oma Gerda) bis 1089 (Leon) → { von: 830, bis: 1089 }.
  */
-export function bereichDerStufe(nummer: Stufennummer): {
+export function bereichDerStufe(
+  nummer: Stufennummer,
+  tempo: Wertungstempo = "rapid",
+): {
   readonly von: number;
   readonly bis: number;
 } {
   const bots = GEGNER.filter(
     (g) => !g.zufallszuege && gruppeDesBots(g.kennung, mittelDerStufen(g.stufenJePhase)) === nummer,
   );
-  const werte = gemesseneZahlen(bots);
-  if (werte.length === 0) return { von: STUFEN_STAERKE[nummer], bis: STUFEN_STAERKE[nummer] };
+  const werte = gemesseneZahlen(bots, tempo);
+  const rein = staerkeDerStufe(nummer, tempo);
+  if (werte.length === 0) return { von: rein, bis: rein };
   return { von: Math.min(...werte), bis: Math.max(...werte) };
 }
 
-/** Die gemessenen Zahlen einer Gruppe von Bots (ungemessene fallen weg). */
-function gemesseneZahlen(bots: readonly { readonly kennung: string }[]): number[] {
-  return bots.map((g) => staerkeDesBots(g.kennung)).filter((w): w is number => w !== null);
+/** Die gemessenen Zahlen einer Gruppe von Bots in der Zeitklasse (ungemessene fallen weg). */
+function gemesseneZahlen(
+  bots: readonly { readonly kennung: string }[],
+  tempo: Wertungstempo,
+): number[] {
+  return bots.map((g) => staerkeDesBots(g.kennung, tempo)).filter((w): w is number => w !== null);
 }
 
 /**
  * Der Bereich der Spaß-Bots (0.2.88, eigene Gruppe unter Stufe 1); null, solange keiner gemessen
  * ist. Beispiel: vier Bots von 520 bis 940 → { von: 520, bis: 940 }.
  */
-export function bereichDerSpassbots(): { readonly von: number; readonly bis: number } | null {
-  const werte = gemesseneZahlen(GEGNER.filter((g) => (g.zufallszuege ?? 0) > 0));
+export function bereichDerSpassbots(
+  tempo: Wertungstempo = "rapid",
+): { readonly von: number; readonly bis: number } | null {
+  const werte = gemesseneZahlen(
+    GEGNER.filter((g) => (g.zufallszuege ?? 0) > 0),
+    tempo,
+  );
   if (werte.length === 0) return null;
   return { von: Math.min(...werte), bis: Math.max(...werte) };
 }

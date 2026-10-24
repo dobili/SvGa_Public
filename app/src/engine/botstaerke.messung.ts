@@ -39,7 +39,13 @@ import {
 import { leiter, verankere, type Anker, type Begegnung } from "./eloleiter";
 import { BOTKANDIDATEN } from "./botkandidaten";
 import { GEGNER } from "./gegnerliste";
-import { datendatei, kandidatendatei, phasenAusZuegen, zufallsquelle } from "./botmessung-hilfen";
+import {
+  datendatei,
+  kandidatendatei,
+  phasenAusZuegen,
+  zeitklassendatei,
+  zufallsquelle,
+} from "./botmessung-hilfen";
 
 const ORDNER = process.env.BOTELO_ORDNER ?? join(process.cwd(), "..", "buch", "arbeit", "botelo");
 const LEITER_ORDNER = /^(leiter-.*|bruecken|alt|neu-.*)$/;
@@ -335,7 +341,12 @@ describe("Elo-Zahl der Bots", () => {
     const a = nurLeiter ? [{ spieler: "stufe3", wert: 0 }] : gemessen;
     const verankert = verankere(leiter(alle), a);
     const streu = streuungen(alle, a);
-    writeFileSync(join(ORDNER, AUSGABE), datendatei(verankert.werte, uhrAbzuege()));
+    // Blitz und Klassisch (Gruppen-Chats): nur die gemessenen Zahlen, Bots unter ihrer Kennung.
+    const daten =
+      TEMPO === "rapid"
+        ? datendatei(verankert.werte, uhrAbzuege())
+        : zeitklassendatei(verankert.werte, TEMPO);
+    writeFileSync(join(ORDNER, AUSGABE), daten);
     writeFileSync(join(ORDNER, "botkandidaten-daten.ts"), kandidatendatei(verankert.werte, streu));
     const text = bericht(verankert.werte, streu, alle, zeilen, verankert.abweichungen);
     writeFileSync(join(ORDNER, "bericht.md"), text);

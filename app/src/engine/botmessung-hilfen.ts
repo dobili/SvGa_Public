@@ -148,3 +148,43 @@ export function datendatei(
     "",
   ].join("\n");
 }
+
+/**
+ * Die Datei der Zahlen einer Zeitklasse (Blitz, Klassisch; docs/MESSUNG_ZEITKLASSEN.md) für
+ * engine/botstaerke-zeitklassen.ts.
+ * Warum eigene Datei: Die Gruppen-Chats messen die Bots unter ihrer Kennung (skripte/gruppen-bots.mjs),
+ * nicht unter dem Kandidatennamen (BOTMESSNAMEN) wie die Schnellschach-Messung; Archiv-Bots und
+ * nicht gemessene Bots fehlen, für sie gilt die Schnellschach-Zahl.
+ * Beispiel: Blitz, Tom gemessen mit 526 → `"tom": 526`; „alt-tom“ steht nicht in der Datei.
+ */
+export function zeitklassendatei(werte: Map<string, number>, tempo: Wertungstempo): string {
+  const zahl = (k: string) => werte.get(k);
+  const stufen = STUFEN_NUMMERN.map((n) => {
+    const w = zahl(n === STUFEN_NUMMERN.at(-1) ? "stufe10" : `stufe${n}m`);
+    return w === undefined ? null : `  ${n}: ${Math.round(w)},`;
+  }).filter((z) => z !== null);
+  const bots = GEGNER.flatMap((g) => {
+    const w = zahl(g.kennung);
+    return w === undefined || !Number.isFinite(w) ? [] : [`  "${g.kennung}": ${Math.round(w)},`];
+  });
+  return [
+    "/**",
+    ` * Elo-Zahl der Stufen und Bots in der Zeitklasse ${tempo} (erzeugt vom Messlauf`,
+    ` * engine/botstaerke.messung.ts am ${new Date().toISOString().slice(0, 10)}, nicht von Hand ändern).`,
+    " *",
+    " * Rolle im Gesamtbild: Daten für engine/botstaerke-zeitklassen.ts, gemessen in zehn Gruppen-Chats",
+    " * (docs/MESSUNG_ZEITKLASSEN.md). Herleitung: docs/ENTSCHEIDUNGEN.md, „Zahlen je Zeitklasse“.",
+    " * Abhängigkeiten: engine/stufen.ts (Typ).",
+    " */",
+    'import type { Stufennummer } from "./stufen";',
+    "",
+    "export const STUFEN_STAERKE: Readonly<Partial<Record<Stufennummer, number>>> = {",
+    ...stufen,
+    "};",
+    "",
+    "export const BOT_STAERKE: Readonly<Record<string, number>> = {",
+    ...bots,
+    "};",
+    "",
+  ].join("\n");
+}

@@ -68,7 +68,7 @@ function staerkezeile(
   erlaubte?: readonly Fehlerart[],
 ): string {
   const vorgefertigt = gegnerVon(bot);
-  const gemessen = staerkeDesBots(bot);
+  const gemessen = staerkeDesBots(bot, wertungstempo(uhr));
   if (vorgefertigt && gemessen !== null) {
     const mitUhr = uhrzeile(gemessen, vorgefertigt.stufenJePhase, uhr);
     // Spaß-Bots (0.2.88) stehen in keiner Stufe, sondern in der Gruppe „Zum Spaß“.

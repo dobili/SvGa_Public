@@ -1404,6 +1404,13 @@ jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Au
       2 Bauern schlechter als der beste Zug), sonst neues Beispiel.
 - [x] R22 Partienliste: Filter und Sortierung über Symbole, mehrere Filter zugleich.
 - [x] R23 PGN-Import bei der Partienliste: auswerten, als nicht gewertete Partie speichern.
+- [ ] R57 Admin-Dashboard (Idee des Autors, 24.10.2026; nach dem Bot-Chat): geschützte Seite
+      `/admin/` (Cloudflare Access); wöchentliche Prüfung per GitHub Actions (Links in Kapitel 12,
+      Trainingsseiten, Lizenzen; Lichess-Eröffnungsliste und Aufgaben; Live-Version gegen main; CI;
+      Sicherheitswarnungen npm, Stockfish-Version; Buchstand neuer als App-Daten; Zertifikat,
+      Domain) als Ampel; Bug-Reports über einen Cloudflare Worker gespeichert (D1/KV) und per
+      Mail gemeldet; Knopf „Aufgabe für Claude“ fasst rote Punkte zu einem Prompt zusammen.
+      Autor richtet Cloudflare ein (Anleitung von P1), Datenschutzerklärung ergänzen.
 - [x] R54 Partienliste (entschieden 23.10.2026, umgesetzt in 0.2.123): Variante A, zwei Knöpfe „Filter“ und
       „Sortieren“ mit aufklappender Liste in Worten, aktive Filter als Chips mit × (P7b).
 - [x] R55 Auswertung: Liste der Fehler und Patzer immer eingeklappt, Anzahl als Badge (0.2.122).

@@ -11,6 +11,9 @@
  * seltener werdenden Fehlern); die Gegnerwahl ordnet nach der gemessenen Zahl (engine/botgruppe.ts).
  * Abhängigkeiten: engine/gegnerbau.ts (Typ, Helfer, Persönlichkeiten).
  */
+// Stufe 10 gibt es für Bots nicht mehr (0.2.125): Sie ist die volle Engine ohne Zusatzfehler; mit
+// Zusatzfehlern spielte sie identisch wie Stufe 9 (Messung 24.10.2026), deshalb stehen die
+// Spitzenbots auf 9.
 import { bot, type Gegner } from "./gegnerbau";
 
 /** Bots 33 bis 40 der Liste (vor 0.2.117 Stufe 5). */
@@ -51,50 +54,32 @@ const STUFE_7: readonly Gegner[] = [
     "doktor-falk",
     "Doktor Falk",
     "doktor-berg",
-    [10, 10, 10],
+    [9, 9, 9],
     "stratege",
     -1,
     "positionsspieler",
     0.3,
   ),
-  bot(
-    "trainer-maier",
-    "Trainer Maier",
-    "trainer-koch",
-    [10, 10, 10],
-    "solide",
-    0,
-    "universell",
-    0.5,
-  ),
-  bot("amaya", "Amaya", "yara", [10, 10, 9], "theoretiker", 1, "positionsspieler", 0.5),
+  bot("trainer-maier", "Trainer Maier", "trainer-koch", [9, 9, 9], "solide", 0, "universell", 0.5),
+  bot("amaya", "Amaya", "yara", [9, 9, 9], "theoretiker", 1, "positionsspieler", 0.5),
   bot(
     "herr-lorenz",
     "Herr Lorenz",
     "herr-brandt",
-    [9, 10, 10],
+    [9, 9, 9],
     "endspieler",
     -2,
     "vereinfacher",
     0.5,
   ),
-  bot("elias", "Elias", "noah", [10, 10, 9], "angreifer", 2, "angreifer", 0.3),
-  bot(
-    "frau-wagner",
-    "Frau Wagner",
-    "frau-stein",
-    [10, 10, 10],
-    "vorsichtig",
-    -1,
-    "verteidiger",
-    0.5,
-  ),
-  bot("arjun", "Arjun", "ravi", [10, 10, 10], "taktiker", 2, "taktiker", 0.1),
+  bot("elias", "Elias", "noah", [9, 9, 9], "angreifer", 2, "angreifer", 0.3),
+  bot("frau-wagner", "Frau Wagner", "frau-stein", [9, 9, 9], "vorsichtig", -1, "verteidiger", 0.5),
+  bot("arjun", "Arjun", "ravi", [9, 9, 9], "taktiker", 2, "taktiker", 0.1),
   bot(
     "frau-prof-reich",
     "Frau Prof. Reich",
     "frau-doktor-ahl",
-    [10, 10, 10],
+    [9, 9, 9],
     "traeumer",
     0,
     "draufgaenger",
@@ -104,14 +89,14 @@ const STUFE_7: readonly Gegner[] = [
 
 /** Bots 57 bis 64 der Liste (vor 0.2.117 Stufe 8). */
 const STUFE_8: readonly Gegner[] = [
-  bot("gm-novak", "GM Novak", "gm-gruen", [10, 10, 10], "solide", 0, "universell", 0.1),
-  bot("im-becker", "IM Becker", "im-vogt", [10, 10, 10], "stratege", -1, "positionsspieler", 0.1),
-  bot("wgm-tanaka", "WGM Tanaka", "wgm-sato", [10, 10, 9], "taktiker", 1, "taktiker", 0.1),
-  bot("fm-duarte", "FM Duarte", "fm-ortiz", [10, 10, 10], "angreifer", 0, "angreifer", 0),
-  bot("gm-ivanova", "GM Ivanova", "gm-petrova", [10, 10, 10], "endspieler", 0, "vereinfacher", 0),
-  bot("im-kraft", "IM Kraft", "im-haas", [10, 10, 10], "theoretiker", 0, "positionsspieler", 0),
-  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [10, 10, 10], "vorsichtig", 0, "verteidiger", 0),
-  bot("gm-berglund", "GM Berglund", "gm-lindqvist", [10, 10, 10], "solide", 0, "universell", 0),
+  bot("gm-novak", "GM Novak", "gm-gruen", [9, 9, 9], "solide", 0, "universell", 0.1),
+  bot("im-becker", "IM Becker", "im-vogt", [9, 9, 9], "stratege", -1, "positionsspieler", 0.1),
+  bot("wgm-tanaka", "WGM Tanaka", "wgm-sato", [9, 9, 9], "taktiker", 1, "taktiker", 0.1),
+  bot("fm-duarte", "FM Duarte", "fm-ortiz", [9, 9, 9], "angreifer", 0, "angreifer", 0),
+  bot("gm-ivanova", "GM Ivanova", "gm-petrova", [9, 9, 9], "endspieler", 0, "vereinfacher", 0),
+  bot("im-kraft", "IM Kraft", "im-haas", [9, 9, 9], "theoretiker", 0, "positionsspieler", 0),
+  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [9, 9, 9], "vorsichtig", 0, "verteidiger", 0),
+  bot("gm-berglund", "GM Berglund", "gm-lindqvist", [9, 9, 9], "solide", 0, "universell", 0),
 ];
 
 export const GEGNER_STUFE_5_BIS_8: readonly Gegner[] = [

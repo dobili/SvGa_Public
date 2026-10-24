@@ -155,8 +155,18 @@ export async function waehleZug(
     if (buchzug) return { uci: buchzug, quelle: "buch", fehler: null, verlust: 0 };
   }
   const werte = menschenwerteAus(profil);
-  if (!stufe.grund && !hatZusatzfehler(werte)) return engineZug(bewerter, fen, stufe, profil.stil);
-  const kontext = {
+  // Stufe 10 ist die volle Engine (0.2.125): Zusatzfehler gelten dort nicht. Mit Zusatzfehlern
+  // spielte sie wie Stufe 9 (die Kandidaten aus Tiefe 10 begrenzen das Wahlmodell; gemessen am
+  // 24.10.2026: 9m und 10m identisch), und „volle Engine“ wäre falsch.
+  if (!stufe.grund) return engineZug(bewerter, fen, stufe, profil.stil);
+  if (!hatZusatzfehler(werte))
+    return menschlicheWahl(bewerter, fen, stufe, werte, kontextVon(stufe, profil), zufall);
+  return menschlicheWahl(bewerter, fen, stufe, werte, kontextVon(stufe, profil), zufall);
+}
+
+/** Der Kontext der menschlichen Wahl aus Stufe und Profil. */
+function kontextVon(stufe: Stufe, profil: Gegnerprofil) {
+  return {
     wertung: stufe.wertung,
     restMs: profil.restMs ?? null,
     verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
@@ -164,5 +174,4 @@ export async function waehleZug(
     stilname: profil.stilname,
     tempo: profil.tempo ?? "rapid",
   };
-  return menschlicheWahl(bewerter, fen, stufe, werte, kontext, zufall);
 }

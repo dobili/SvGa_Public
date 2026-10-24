@@ -27,7 +27,7 @@ const BOTS_ZAHL = 64;
 const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 describe("vorgefertigte Gegner", () => {
-  it("sind nach Durchschnitt sortiert, die stärksten mit Stufe 10 zuletzt", () => {
+  it("sind nach Durchschnitt sortiert, die stärksten mit Stufe 9 zuletzt (10 ist die volle Engine)", () => {
     const sortiert = gegnerSortiert();
     expect(sortiert).toHaveLength(GEGNER.length);
     for (let i = 1; i < sortiert.length; i += 1) {
@@ -35,7 +35,7 @@ describe("vorgefertigte Gegner", () => {
       const jetzt = sortiert[i];
       if (vorher && jetzt) expect(durchschnitt(vorher)).toBeLessThanOrEqual(durchschnitt(jetzt));
     }
-    expect(sortiert.at(-1)?.stufenJePhase.mittelspiel).toBe(10);
+    expect(sortiert.at(-1)?.stufenJePhase.mittelspiel).toBe(9);
   });
 
   it("jeder Bot in genau einer Gruppe (seit 0.2.117 nach gemessener Zahl), Kennungen eindeutig, Stil im Bereich", () => {

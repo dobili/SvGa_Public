@@ -112,6 +112,8 @@ function spielerkennung(kuerzel: string): string {
 }
 
 const UHR_ORDNER = "uhr";
+/** Ab diesem Verlust (Elo) gilt ein Uhrabzug als gemessen, nicht als Rauschen (etwa zwei Streuungen). */
+const UHR_DEUTLICH = 80;
 const HOECHSTER_ANTEIL = 0.95;
 const ELO_TEILER = 400;
 
@@ -165,7 +167,8 @@ function uhrAbzuege(): Map<string, Map<number, number>> {
   for (const [tempo, je] of roh) {
     const unterschiede = [...je].map(([n, w]) => w - (basis.get(n) ?? 0));
     const mittel = unterschiede.reduce((s, x) => s + x, 0) / Math.max(1, unterschiede.length);
-    const abzug = Math.min(0, mittel);
+    // Nur ein deutlicher Verlust zählt (Mittel über acht Stufen streut um ±40; seit 0.2.125 alles Rauschen).
+    const abzug = mittel < -UHR_DEUTLICH ? mittel : 0;
     aus.set(tempo, new Map([...je.keys()].map((n) => [n, abzug])));
   }
   return aus;
@@ -278,9 +281,12 @@ function streuungen(alle: readonly Begegnung[], a: readonly Anker[]): Map<string
 }
 
 function datendatei(werte: Map<string, number>): string {
-  // Seit 0.2.125 die Stufen mit allen Zusatzfehlern der Menschen („Nm“): So spielt eine Stufe in
-  // der App (Wahlmodell bei der Wertung der Stufe), die reine Grundschicht gibt es dort nicht mehr.
-  const stufen = STUFEN.map((n) => `  ${n}: ${Math.round(werte.get(`stufe${n}m`) ?? Number.NaN)},`);
+  // Seit 0.2.125 die Stufen mit Zusatzfehlern („Nm“, so spielt eine Stufe in der App); Stufe 10
+  // ist die volle Engine ohne Zusatzfehler (rein gemessen, „10-9m“ usw.).
+  const stufen = STUFEN.map(
+    (n) =>
+      `  ${n}: ${Math.round(werte.get(n === STUFEN.at(-1) ? "stufe10" : `stufe${n}m`) ?? Number.NaN)},`,
+  );
   const bots = GEGNER.map(
     (g) => `  "${g.kennung}": ${Math.round(werte.get(g.kennung) ?? Number.NaN)},`,
   );

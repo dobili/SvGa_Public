@@ -10,8 +10,11 @@ selbst in Cloudflare, GitHub und den Einstellungen der Claude-Umgebung an.
   (JSON, Ampel je Punkt). Ein roter Punkt lässt den Lauf scheitern; GitHub schickt dann von selbst
   eine Mail an den Autor.
 - **Speicher:** Cloudflare D1 (Datenbank `svga-admin`), Bindung `ADMIN_DB` in `app/wrangler.jsonc`
-  (mit der Database ID, die der Autor nennt; sie ist kein Geheimnis). Die Tabellen legt der Code
-  beim ersten Aufruf selbst an.
+  (Database ID `eee93b47-008d-4d08-875d-a9a73aa98b32`, vom Autor am 24.10.2026 angelegt; sie ist
+  kein Geheimnis). Die Bindung kommt erst mit dem Worker-Code in Stufe 2 in die Datei. Die
+  Tabellen legt der Code beim ersten Aufruf selbst an.
+- **Access (eingerichtet 24.10.2026):** Selbst gehostete Anwendung mit den Zielen
+  `schach-von-grund-auf.com/admin` und `schach-von-grund-auf.com/api/admin`.
 - **Wichtig (Befund 24.10.2026):** Die Website ist ein Cloudflare Worker nur mit statischen Dateien
   (`app/wrangler.jsonc`), kein Pages-Projekt. Solange er keinen Code hat, sperrt Cloudflare die
   Felder für Secrets und Bindings. Deshalb zuerst ein kleiner Worker-Code (`main` in
@@ -27,6 +30,7 @@ selbst in Cloudflare, GitHub und den Einstellungen der Claude-Umgebung an.
 ## Funktionen
 
 ### Stufe 1: Prüfungen (ohne Einrichtung durch den Autor möglich)
+
 1. Links: Literatur und Webseiten aus den Buchdaten (Kapitel 12, Glossar), Trainingsseiten,
    Lizenzseite, Impressum, Datenschutz, die neuen Werkzeug-Links.
 2. Lichess: Eröffnungsliste (Abgleich mit `inhalte/lichess`), verwendete Aufgaben noch
@@ -45,6 +49,7 @@ selbst in Cloudflare, GitHub und den Einstellungen der Claude-Umgebung an.
 Bis Stufe 2 steht der Bericht als Zusammenfassung im Actions-Lauf; Rot kommt per GitHub-Mail.
 
 ### Stufe 2: Dashboard und Meldungen
+
 9. Ampelübersicht mit Verlauf (wann zuletzt grün, seit wann rot).
 10. Meldungen aus der App (Zahnrad › Fehler melden) und der Website: Text, App-Version, Gerät,
     Bildschirm, Sprache; auf Wunsch FEN oder PGN der aktuellen Stellung. Status „neu, in Arbeit,
@@ -59,6 +64,7 @@ Bis Stufe 2 steht der Bericht als Zusammenfassung im Actions-Lauf; Rot kommt per
 15. Wochenübersicht per Mail (nur mit Mailversand, siehe Einrichtung Schritt 7).
 
 ### Stufe 3: Ergänzungen
+
 16. „Was ist neu“: Liste der Änderungen je Version, aus den Commit-Texten vorbereitet, vom Autor
     freigegeben, in der App sichtbar.
 17. Wartungshinweis: Text, den die App beim Start einmal zeigt (etwa „Neue Kapiteldaten“), im

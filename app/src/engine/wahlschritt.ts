@@ -9,7 +9,8 @@
  * eines Flecks g → (g − 1) · Blindstärke (3: deutlich blinder als Menschen, 0: weniger blind);
  * Fehlerhäufigkeit h → ln(h) auf alle Arten; Stilregler −2 bis 2 → Verschiebung der Stilmerkmale;
  * Höchstverlust je Art → Kandidaten darüber ausgeschlossen. Tagesform und Zeitnot wirken als
- * Temperatur (größer: zufälliger).
+ * Temperatur (größer: zufälliger). Vorgefertigte Bots bringen statt des Reglers einen der sieben
+ * Stile mit (engine/stile.ts, Teil D).
  * Abhängigkeiten: engine/wahlmodell.ts, engine/menschenwahl.ts (Typen), engine/blindeFlecken.ts,
  * engine/fehlerart.ts, engine/stilmerkmale.ts.
  */
@@ -17,6 +18,7 @@ import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
 import { FEHLERARTEN, type Fehlerart, type Lage } from "./fehlerart";
 import type { Menschenwerte } from "./menschenwahl";
 import type { Zugwahl } from "./spielbewerter";
+import { stilverschiebung, type Stilname } from "./stile";
 import type { Stilmerkmale } from "./stilmerkmale";
 import {
   wahrscheinlichkeiten,
@@ -50,7 +52,10 @@ export interface Wahlschritt {
   readonly wertung: number;
   /** 1: wie geeicht; Tagesform mal Zeitnot. */
   readonly temperatur: number;
+  /** Regler −2 bis 2 (eigene Gegner); gilt nur ohne `stilname`. */
   readonly stil: number;
+  /** Einer der sieben Stile (engine/stile.ts) der vorgefertigten Bots. */
+  readonly stilname?: Stilname;
 }
 
 function gewichtVon(werte: Menschenwerte, art: Fehlerart | BlinderFleck): number {
@@ -69,13 +74,18 @@ function logGewicht(g: number): number {
  * Beispiel: Gewichte {verfruehteDame: 3}, Fleck „springer“ 3, Stil +2 → verfrühte Dame +1,10,
  * Springerzüge −1,0 (blinder), Schläge und Schachs +0,5, Rückzüge −0,5.
  */
-export function verschiebungAus(werte: Menschenwerte, stil: number): Wahlverschiebung {
+export function verschiebungAus(
+  werte: Menschenwerte,
+  stil: number,
+  stilname?: Stilname,
+): Wahlverschiebung {
   const haeufigkeit = logGewicht(werte.haeufigkeit);
   const arten: Partial<Record<Fehlerart, number>> = {};
   for (const art of FEHLERARTEN) arten[art] = logGewicht(gewichtVon(werte, art)) + haeufigkeit;
   const flecken: Partial<Record<BlinderFleck, number>> = {};
   for (const fleck of BLINDE_FLECKEN)
     flecken[fleck] = -(gewichtVon(werte, fleck) - 1) * BLINDSTAERKE;
+  if (stilname) return { arten, flecken, stil: stilverschiebung(stilname) };
   const stilwerte: Partial<Record<keyof Stilmerkmale, number>> = {};
   for (const name of AGGRESSIV) stilwerte[name] = STILSCHRITT * stil;
   stilwerte.rueckzug = -STILSCHRITT * stil;
@@ -109,7 +119,7 @@ export function waehleMenschlich(
   zufall: () => number,
 ): Zugwahl | null {
   if (kandidaten.length === 0) return null;
-  const verschiebung = verschiebungAus(werte, schritt.stil);
+  const verschiebung = verschiebungAus(werte, schritt.stil, schritt.stilname);
   const roh = wahrscheinlichkeiten(
     lage,
     fen,

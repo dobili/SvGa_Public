@@ -14,8 +14,8 @@ import { spassbot, type Gegner } from "./gegnerbau";
 
 /** Zum Spaß: vom schwächsten zum stärksten. */
 export const SPASSBOTS: readonly Gegner[] = [
-  spassbot("kiki", "Kiki", "fritzi", 3, 0.5, "hektiker", 1),
-  spassbot("onkel-otto", "Onkel Otto", "willi", 4, 0.32, "materialist", 0),
-  spassbot("tante-hilde", "Tante Hilde", "trude", 5, 0.2, "vorsichtig", -1),
-  spassbot("bodo", "Bodo", "bruno", 6, 0.1, "angreifer", 2),
+  spassbot("kiki", "Kiki", "fritzi", 3, 0.5, "hektiker", 1, "taktiker"),
+  spassbot("onkel-otto", "Onkel Otto", "willi", 4, 0.32, "materialist", 0, "taktiker"),
+  spassbot("tante-hilde", "Tante Hilde", "trude", 5, 0.2, "vorsichtig", -1, "verteidiger"),
+  spassbot("bodo", "Bodo", "bruno", 6, 0.1, "angreifer", 2, "angreifer"),
 ];

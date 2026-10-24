@@ -555,6 +555,11 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Nach 5 Minuten nicht. Am Rechner nie (Fensterwechsel). Hinweis: iOS wirft eine
       Hintergrund-App manchmal ganz aus dem Speicher; dann startet sie neu und zeigt das normale
       Startbild (2,5 s).
+- [ ] N782. **Bots mit Stil und menschlichen Vorlieben:** Spiele gegen Tom (Draufgänger,
+      Damenfan) und gegen Rolf (Verteidiger, vorsichtig). Tom sollte die Dame früh holen und
+      vorwärts stürmen, Rolf eher zurückhaltend ziehen und wenig schlagen. Die Vorlieben halten
+      sich jetzt im Rahmen echter Spieler seiner Stärke (Stufen auf den Quantilen der
+      Lichess-Spieler); ist der Charakter trotzdem erkennbar?
 
 ---
 

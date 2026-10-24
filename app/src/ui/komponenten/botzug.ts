@@ -10,6 +10,8 @@
  */
 import { engine } from "../../engine/engineDienst";
 import { gegnerVon } from "../../engine/gegner";
+import { faktorenAus } from "../../engine/gegnerbau";
+import { gegnerstaerke } from "../../engine/botstaerke";
 import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { wahltempo } from "../../engine/wahlmodell";
@@ -103,7 +105,9 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     verlauf: verlaufVon(partie),
     // Spaß-Bots (0.2.88) und Gewichte der Bots stehen in der Liste, nicht in der Partie.
     zufallszuege: bot?.zufallszuege,
-    gewichte: e.gewichte ?? bot?.gewichte,
+    // Vorgefertigte Bots (0.2.124): Faktoren aus den Stufen ihrer Persönlichkeit und ihrer Wertung
+    gewichte: e.gewichte ?? (bot ? faktorenAus(bot.persoenlichkeit, gegnerstaerke(e)) : undefined),
+    stilname: bot?.stilname,
     haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,
     hoechstverlust: e.hoechstverlust,
     restMs: eigeneRestzeit(partie, jetztMs),

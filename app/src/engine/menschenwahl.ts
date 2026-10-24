@@ -35,6 +35,7 @@ import { GELEGENHEITSARTEN, zeitnotTemperatur } from "./menschenprofil";
 import { verlaufsfaktor, type Verlauf } from "./menschlich";
 import { wertFuer, type Spielbewerter, type Zugwahl } from "./spielbewerter";
 import { STIL_NEUTRAL, stilwahl } from "./stil";
+import type { Stilname } from "./stile";
 import type { Stufe } from "./stufen";
 import type { Variante } from "./uci";
 import type { Wahltempo } from "./wahlmodell";
@@ -67,6 +68,8 @@ export interface Wahlkontext {
   readonly restMs: number | null;
   readonly verlauf: Verlauf;
   readonly stil: number;
+  /** Stil eines vorgefertigten Bots (0.2.124, engine/stile.ts); fehlend: der Regler `stil`. */
+  readonly stilname?: Stilname;
   /** Zeitklasse für das Wahlmodell (0.2.124). */
   readonly tempo: Wahltempo;
 }
@@ -223,6 +226,7 @@ export async function menschlicheWahl(
     wertung: kontext.wertung,
     temperatur: grundfaktor(kontext),
     stil: kontext.stil,
+    stilname: kontext.stilname,
   };
   return waehleMenschlich(lage, fen, pool, bester, schritt, werte, zufall);
 }

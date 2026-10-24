@@ -31,7 +31,9 @@ import { bedenkzeitMs } from "./bedenkzeit";
 import { wahltempo } from "./wahlmodell";
 import type { EngineDienst } from "./engineDienst";
 import type { Fehlerart } from "./fehlerart";
+import { staerkeAusStufen, staerkeDesBots } from "./botstaerke";
 import { GEGNER } from "./gegner";
+import { faktorenAus } from "./gegnerbau";
 import { tagesform } from "./menschlich";
 import { nativeEngine } from "./nativeEngine.testhilfe";
 import { nodeEngine } from "./nodeEngine.testhilfe";
@@ -127,7 +129,12 @@ function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
     fehlerarten: g.fehlerarten,
     stil: g.stil,
     blindeFlecken: g.blindeFlecken,
-    gewichte: g.gewichte,
+    // Wie in der App (ui/komponenten/botzug.ts): Faktoren aus den Stufen der Persönlichkeit
+    gewichte: faktorenAus(
+      g.persoenlichkeit,
+      staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase),
+    ),
+    stilname: g.stilname,
     haeufigkeit: g.haeufigkeit,
     zufallszuege: g.zufallszuege,
   };

@@ -20,6 +20,7 @@ import { hatZusatzfehler, menschlicheWahl, type Menschenwerte } from "./menschen
 import { RUHIGER_VERLAUF, type Verlauf } from "./menschlich";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
+import type { Stilname } from "./stile";
 import type { Stufe } from "./stufen";
 import type { Wahltempo } from "./wahlmodell";
 import { zufallszug } from "./zufallszug";
@@ -53,6 +54,8 @@ export interface Gegnerprofil {
   readonly fleckGewicht?: number;
   /** Zeitklasse der Partie für das Wahlmodell (0.2.124); fehlend: Schnellschach. */
   readonly tempo?: Wahltempo;
+  /** Einer der sieben Stile der vorgefertigten Bots (0.2.124, engine/stile.ts); fehlend: Regler `stil`. */
+  readonly stilname?: Stilname;
 }
 
 export const STANDARDPROFIL: Gegnerprofil = {
@@ -158,6 +161,7 @@ export async function waehleZug(
     restMs: profil.restMs ?? null,
     verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
     stil: profil.stil,
+    stilname: profil.stilname,
     tempo: profil.tempo ?? "rapid",
   };
   return menschlicheWahl(bewerter, fen, stufe, werte, kontext, zufall);

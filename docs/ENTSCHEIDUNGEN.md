@@ -4817,3 +4817,23 @@ war). Der Messlauf bleibt für spätere Datenstände.
   reduzieren“ gelten weiter. Grenze: Wirft das System die Hintergrund-App aus dem Speicher,
   startet sie neu und zeigt das normale Startbild.
 
+## Persönlichkeiten der Bots auf menschlichen Quantilen, sieben Stile (24.10.2026 mittags, Fable, Restplan 8 erster Teil)
+
+- **Regler auf Quantilen** (engine/spielerbereiche.ts, Daten engine/spielerbereiche-daten.ts aus
+  dem Beta-Binomial-Modell, Schnellschach, je 400er-Band): Eine Stufe je Fehlerart oder Fleck
+  heißt −2 „so selten wie die 5 % unauffälligsten Spieler“, 0 Median, 2 „so oft wie die
+  auffälligsten 5 %“; ±3 und ±4 setzen das Verhältnis 75 → 95 % geometrisch fort (unmenschlich).
+  Der Faktor auf das Gewicht folgt aus Stufe und Wertung des Bots (zwischen den Bandmitten
+  geometrisch). Die früheren festen Faktoren der Persönlichkeiten (1,5; 1,8; 3; 0,6 …) sind in
+  Stufen übersetzt (etwa 1,3 bis 1,5 → 1, 1,8 bis 2 → 2, 3 → 3, 0,5 bis 0,6 → −1, 0,3 → −2);
+  „besonders blind“ ist Stufe 2 des Flecks. Grund: Ein Faktor 3 bedeutete bei einer Art mit enger
+  Streuung Unmenschliches, bei einer mit weiter Streuung fast nichts; jetzt sind die Stufen
+  vergleichbar und bleiben innerhalb echter Spieler (Entscheidung des Autors, 23.10.2026).
+- **Sieben Stile** (engine/stile.ts): je Bot einer nach der Tabelle in „Spielstile der Bots“;
+  Verschiebung ±0,5 der Stilmerkmale des Wahlmodells (Angreifer: Schach und Königsnähe;
+  Positionsspieler umgekehrt; Taktiker: Schlag und Vorwärts, kein Rückzug; Verteidiger
+  umgekehrt; Draufgänger: Bauernsturm und Vorwärts, kein Abtausch; Vereinfacher: Abtausch, kein
+  Bauernsturm; Universell nichts). Der Regler −2 bis 2 bleibt für eigene Gegner.
+- **Offen:** Stärke der Stile (0,5) gegen die Streuung der Menschen nachspielen; Neumessung und
+  Verankerung der Bots; Regler eigener Gegner auf dieselben Stufen umstellen (Oberfläche).
+

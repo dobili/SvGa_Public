@@ -2033,3 +2033,8 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   (Median, Zonen aus den 5/95-%-Quantilen der Spieler plus Zufall der Partie).
 - Wünsche des Autors: Partiekopf mit Porträt und Bot-Satz im Untertitel, Startbild bei der
   Rückkehr aus dem Hintergrund (Handy, ab 30 Minuten, 1,8 s). AUFGABEN_AUTOR N779–N781.
+- Restplan 8, erster Teil: Persönlichkeiten der Bots als Stufen auf menschlichen Quantilen
+  (engine/spielerbereiche.ts), je Bot einer der sieben Stile (engine/stile.ts, Tabelle Teil D),
+  Faktoren entstehen beim Spielen aus der Wertung des Bots. ENTSCHEIDUNGEN „Persönlichkeiten der
+  Bots auf menschlichen Quantilen“. Nächster Schritt: Neumessung der Bots (Leiter, Anker mit dem
+  neuen Elo-Modell).

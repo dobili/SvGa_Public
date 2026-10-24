@@ -59,6 +59,7 @@
 
 .uebung,
 .trainerrunde,
+.trainer-kurz,
 .trainer-aufgabe {
   display: flex;
   flex-direction: column;

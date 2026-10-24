@@ -37,7 +37,7 @@ export const UHR_PARTIETAG: Uhreinstellung = { grundzeitMs: 10 * MINUTE_MS, zusc
  * Auswahl im Spielen-Bildschirm nach Zeitklassen wie bei Lichess (R51, Wunsch des Autors,
  * 23.10.2026): Blitz 3 + 0, 3 + 2, 5 + 3; Schnellschach 10 + 0 (Partietag des 30-Minuten-Plans,
  * seit 0.2.91) und 15 + 10; Klassisch 30 + 20 und 60 + 0. Kein Bullet (Autor, 23.10.2026).
- * „Ohne Uhr“ gibt es seit 0.2.121 nur noch für ungewertete Partien aus einer Abbildung oder
+ * „Ohne Uhr“ gibt es seit 0.2.124 nur noch für ungewertete Partien aus einer Abbildung oder
  * aufgebauten Stellung (ui/bildschirme/Spielen.tsx), weil die Wertung je Zeitklasse gilt.
  */
 export const UHR_VORGABEN: readonly Uhreinstellung[] = [
@@ -50,7 +50,7 @@ export const UHR_VORGABEN: readonly Uhreinstellung[] = [
   { grundzeitMs: 60 * MINUTE_MS, zuschlagMs: 0 },
 ];
 
-/** Die Uhr, wenn keine gewählt ist (Partien aus der Grundstellung haben seit 0.2.121 immer eine). */
+/** Die Uhr, wenn keine gewählt ist (Partien aus der Grundstellung haben seit 0.2.124 immer eine). */
 export const UHR_STANDARD: Uhreinstellung = UHR_PARTIETAG;
 
 /** Gleiche Uhr? Beide null gilt als gleich. */

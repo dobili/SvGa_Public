@@ -15,6 +15,8 @@ export interface ReiterEintrag<T extends string> {
   readonly wert: T;
   readonly text: string;
   readonly symbol?: LucideIcon;
+  /** Ziel-Kennung für die Tour (tour/touren.ts), etwa „einstellungen-reiter-brett“. */
+  readonly tour?: string;
 }
 
 /**
@@ -35,13 +37,14 @@ export function Reiter<T extends string>({
 }) {
   return (
     <div className="reiterzeile" role="tablist" aria-label={name}>
-      {eintraege.map(({ wert, text, symbol: Symbol }) => (
+      {eintraege.map(({ wert, text, symbol: Symbol, tour }) => (
         <button
           key={wert}
           type="button"
           role="tab"
           aria-selected={wert === gewaehlt}
           className="reiter"
+          data-tour={tour}
           onClick={() => beiWahl(wert)}
         >
           {Symbol && <Symbol size={SYMBOLGROESSE} aria-hidden="true" />}

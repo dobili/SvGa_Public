@@ -1,0 +1,454 @@
+/*
+ * Bereich Spielen seit P7 (23./24.10.2026). Auswertung nach der Partie seit R55/R56 (Wunsch des Autors, 23.10.2026): Umschalter der Seite,
+ * eingeklappte Fehlerlisten, Ring der Gesamtgenauigkeit, Balken je Phase und das Bullet-Diagramm
+ * der Zugklassen mit Zonen. Farben aus basis.css; die Urteilsfarben wie bei .phasenurteil-*.
+ */
+
+.auswertung .segmentwahl {
+  margin-bottom: calc(var(--raster) * 1.5);
+}
+
+.badge {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0 0.5em;
+  border-radius: 999px;
+  background: var(--text);
+  color: var(--grund);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.5;
+}
+
+/* ---------- eingeklappte Listen (R55) ---------- */
+.klappliste {
+  margin: calc(var(--raster) * 1.5) 0;
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: 0 calc(var(--raster) * 1.5);
+}
+
+.klappliste > summary {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-height: var(--tippflaeche);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.klappliste .patzerliste {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
+  padding-left: 0;
+  list-style: none;
+}
+
+/* ---------- Ring und Balken (R56) ---------- */
+.gesamtgenauigkeit {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 2);
+  margin: var(--raster) 0 calc(var(--raster) * 2);
+}
+
+.gesamtgenauigkeit p {
+  margin: 0;
+}
+
+.gesamt-urteil {
+  font-weight: 700;
+  font-size: var(--groesse-gross);
+}
+
+.genauigkeitsring {
+  flex: none;
+}
+
+.genauigkeitsring circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+.ring-grund {
+  stroke: var(--linie);
+}
+
+.ring-wert {
+  stroke-linecap: round;
+}
+
+.ring-zahl {
+  fill: var(--text);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.ringfarbe-hervorragend {
+  stroke: #1f7a3a;
+  background: #1f7a3a;
+}
+.ringfarbe-sehrGut {
+  stroke: #3b9a52;
+  background: #3b9a52;
+}
+.ringfarbe-gut {
+  stroke: #7fa33a;
+  background: #7fa33a;
+}
+.ringfarbe-ungenau {
+  stroke: #c9a227;
+  background: #c9a227;
+}
+.ringfarbe-fehlerhaft {
+  stroke: #d9742b;
+  background: #d9742b;
+}
+.ringfarbe-schwach {
+  stroke: #b33a3a;
+  background: #b33a3a;
+}
+.ringfarbe-leer {
+  background: transparent;
+}
+
+.genauigkeitsbalken ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.balkenzeile {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "name wert"
+    "spur spur";
+  gap: calc(var(--raster) / 2) var(--raster);
+  align-items: center;
+  margin: calc(var(--raster) * 1.25) 0;
+  font-size: var(--groesse-mittel);
+}
+
+.balkenzeile .zeilenname {
+  grid-area: name;
+}
+
+.balken-spur {
+  grid-area: spur;
+  display: block;
+  height: 10px;
+  border-radius: 5px;
+  background: var(--linie);
+  overflow: hidden;
+}
+
+.balken-fuellung {
+  display: block;
+  height: 100%;
+  border-radius: 5px;
+}
+
+.balken-wert {
+  grid-area: wert;
+  text-align: right;
+}
+
+.balken-wert small {
+  margin-left: calc(var(--raster) * 0.75);
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+}
+
+.balken-skala {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+}
+
+/* ---------- Zugklassen als Bullet-Diagramm (R56) ---------- */
+.zugklassen-liste {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.zugklasse {
+  margin: var(--raster) 0 calc(var(--raster) * 1.25);
+}
+
+.zugklasse-kopf {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 0.75);
+  flex-wrap: wrap;
+  font-size: var(--groesse-mittel);
+  margin-bottom: calc(var(--raster) / 2);
+}
+
+.zugklasse-name {
+  font-weight: 600;
+}
+
+.zugklasse-urteil {
+  margin-left: auto;
+  font-size: var(--groesse-fein);
+}
+
+.zugklasse-urteil-gut {
+  color: var(--gruen-text);
+}
+.zugklasse-urteil-normal {
+  color: var(--text-leise);
+}
+.zugklasse-urteil-schwach {
+  color: var(--rot-text);
+}
+
+.zugklasse-spur {
+  position: relative;
+  display: grid;
+  grid-template-columns: 37.5% 25% 37.5%;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.zugklasse-zone {
+  position: relative;
+  font-size: 0.6rem;
+  line-height: 13px;
+  text-align: right;
+  padding-right: 4px;
+  color: var(--text-leise);
+}
+
+.zone-0 {
+  background: color-mix(in srgb, var(--linie-stark) 80%, var(--flaeche));
+}
+.zone-1 {
+  background: color-mix(in srgb, var(--linie-stark) 50%, var(--flaeche));
+}
+.zone-2 {
+  background: color-mix(in srgb, var(--linie-stark) 25%, var(--flaeche));
+}
+
+.zugklasse-wert {
+  position: absolute;
+  left: 0;
+  top: 14px;
+  height: 6px;
+  border-radius: 3px;
+}
+
+.zugklasse-ueblich {
+  position: absolute;
+  left: calc(50% - 1px);
+  top: 1px;
+  bottom: 1px;
+  width: 3px;
+  background: var(--text);
+}
+
+.zugklassen-trenner {
+  border-top: 1px dashed var(--linie-stark);
+  margin: calc(var(--raster) * 1.5) 0;
+}
+
+.klassenfarbe-brillant {
+  background: #1baca6;
+}
+.klassenfarbe-stark {
+  background: #5c8bb0;
+}
+.klassenfarbe-bester {
+  background: #81b64c;
+}
+.klassenfarbe-sehrGut {
+  background: #96bc4b;
+}
+.klassenfarbe-gut {
+  background: #96af8b;
+}
+.klassenfarbe-buch {
+  background: #a88865;
+}
+.klassenfarbe-ungenau {
+  background: #d9a300;
+}
+.klassenfarbe-fehler {
+  background: #e58f2a;
+}
+.klassenfarbe-verpasst {
+  background: #db6b55;
+}
+.klassenfarbe-patzer {
+  background: #ca3431;
+}
+
+/* ---------- Zoom und Fingerfahren der Verlaufskurve (R56) ---------- */
+.verlaufskurve-rahmen .verlaufskurve {
+  touch-action: pan-y;
+  cursor: crosshair;
+}
+
+.verlaufskurve-finger {
+  margin: 0 0 calc(var(--raster) / 2);
+  min-height: 1.4em;
+  font-weight: 600;
+  font-size: var(--groesse-mittel);
+  text-align: center;
+}
+
+.verlaufskurve-zeiger {
+  stroke: var(--gold);
+  stroke-width: 1.5;
+}
+
+.verlaufskurve-zoom {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+  margin-top: var(--raster);
+}
+
+.verlaufskurve-zoom button {
+  min-height: 36px;
+  padding: 0 calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie-stark);
+  border-radius: 999px;
+  background: var(--flaeche);
+  color: var(--text);
+  font-size: var(--groesse-klein);
+}
+
+.verlaufskurve-zoom button[aria-pressed="true"] {
+  background: var(--text);
+  color: var(--grund);
+  border-color: var(--text);
+}
+
+/* ---------- Partienliste: Filter und Sortieren (R54, Variante A) ---------- */
+.filterknoepfe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+}
+
+.filteroeffner {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--raster) * 0.75);
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 1.75);
+  border: 1px solid var(--linie-stark);
+  border-radius: 999px;
+  background: var(--flaeche);
+  color: var(--text);
+  font-size: var(--groesse-mittel);
+}
+
+.filteroeffner[aria-expanded="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.filterliste {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--raster) / 2);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+}
+
+.filtergruppe {
+  margin: 0 0 var(--raster);
+  padding: 0;
+  border: none;
+}
+
+.filtergruppe legend {
+  padding: 0;
+  margin-bottom: calc(var(--raster) / 2);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-leise);
+}
+
+.filterwahl {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  width: 100%;
+  min-height: 40px;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font-size: var(--groesse-mittel);
+  text-align: left;
+}
+
+.filterhaken,
+.filterpunkt {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--linie-stark);
+  border-radius: 4px;
+  color: var(--navy);
+}
+
+.filterpunkt {
+  border-radius: 50%;
+}
+
+.filterwahl[aria-checked="true"] .filterhaken {
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.filterwahl[aria-checked="true"] .filterpunkt {
+  border: 6px solid var(--gold);
+}
+
+.filterchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) / 2);
+}
+
+.filterchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-height: 32px;
+  padding: 0 calc(var(--raster) * 1.25);
+  border: none;
+  border-radius: 999px;
+  background: var(--gold);
+  color: var(--navy);
+  font-size: var(--groesse-klein);
+}
+
+/* ---------- Titel der Partie mit Porträt (R28) ---------- */
+.partietitel {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.partietitel .gegner-portraet {
+  width: 32px;
+  height: 32px;
+}

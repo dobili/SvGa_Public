@@ -23,7 +23,6 @@ import { datumText, t } from "../../i18n/sprache";
 import type { Seitenbilanz } from "../../spiel/genauigkeit";
 import { gegnername } from "../../engine/gegner";
 import type { Partie } from "../../spiel/partie";
-import type { Uhreinstellung } from "../../spiel/uhr";
 import { staerkeDerPartie } from "../../spiel/wertung";
 import {
   OHNE_FILTER,
@@ -46,6 +45,7 @@ import { PgnImport } from "./PgnImport";
 import { Knopfsymbol } from "./Knopfsymbol";
 import { Stufenmarke } from "./Stufenmarke";
 import { Titelsymbol } from "./Titelsymbol";
+import { zeitklasse } from "../../spiel/zeitklasse";
 
 /** Größe der kleinen Figur in der Liste (Bildpunkte). */
 const FIGURGROESSE = 28;
@@ -58,6 +58,8 @@ const FILTER_AB = 4;
 const LOESCHSYMBOL = 20;
 /** Größe des Sterns für eine gewertete Partie (0.2.58, Wunsch des Autors). */
 const WERTUNGSSYMBOL = 14;
+const MINUTE_MS = 60_000;
+const SEKUNDE_MS = 1000;
 
 /** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie); eingelesen „… · Anna – Ben · 30 Züge“. */
 function zeile(partie: Partie): string {
@@ -73,19 +75,19 @@ function zeile(partie: Partie): string {
         t("spielen.partieStufe", { nummer: s.nummer }));
   // Einzahl: „1 Zug“ statt „1 Züge“ (Befund beim Vorprüfen von N479, 19.10.2026).
   const schluessel = zuege === 1 ? "spielen.partiezeileEinZug" : "spielen.partiezeile";
-  return t(schluessel, { datum, stufe: gegner, zuege });
+  return t(schluessel, { datum, stufe: gegner, zuege }) + zeitangabe(partie);
 }
 
-const MINUTE_MS = 60_000;
-const SEKUNDE_MS = 1000;
-
-/** Die Bedenkzeit der Partie (R51, 0.2.121): „10 + 0“ oder „ohne Uhr“. */
-function uhrtext(uhr: Uhreinstellung | null): string {
-  if (!uhr) return t("spielen.uhr.ohneKurz");
-  return t("spielen.uhr.zeit", {
+/** „ · Schnellschach 10 + 0“ (R51); ohne Uhr leer. */
+function zeitangabe(partie: Partie): string {
+  const uhr = partie.einstellung.uhr;
+  const klasse = zeitklasse(uhr);
+  if (!uhr || !klasse) return "";
+  return ` · ${t("spielen.zeitangabe", {
+    klasse: t(`zeitklasse.${klasse}`),
     minuten: uhr.grundzeitMs / MINUTE_MS,
     sekunden: uhr.zuschlagMs / SEKUNDE_MS,
-  });
+  })}`;
 }
 
 /** Ein König im gewählten Figurensatz: die Farbe, die der Leser gespielt hat; beide bei Mensch gegen Mensch. */
@@ -241,7 +243,6 @@ function Partiezeile({ eintrag }: { eintrag: Partieeintrag }) {
           </strong>
           <span>
             {zeile(partie)}
-            {!partie.einstellung.importiert && ` · ${uhrtext(partie.einstellung.uhr)}`}
             {staerke && ` · ${staerke}`}
           </span>
         </span>

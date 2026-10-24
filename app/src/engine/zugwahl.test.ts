@@ -104,7 +104,7 @@ describe("Zugwahl", () => {
     expect(["b8c6", "d7d6"]).toContain(wahl?.uci);
   });
 
-  it("Wahlmodell (0.2.121): hoher Zufall zieht einen Fehlerzug mit Art, niedriger den besten", async () => {
+  it("Wahlmodell (0.2.124): hoher Zufall zieht einen Fehlerzug mit Art, niedriger den besten", async () => {
     const { b } = bewerter(KANDIDATEN);
     const fehler = await waehleZug(b, FEN, stufe(1), [], () => 0.999);
     expect(fehler?.quelle).toBe("fehler");
@@ -141,7 +141,7 @@ describe("Zugwahl", () => {
     expect(wahl?.quelle).toBe("engine");
   });
 
-  it("blinder Fleck (0.2.121): nur Flecken aktiv, das Wahlmodell zieht auch einen Nebenzug", async () => {
+  it("blinder Fleck (0.2.124): nur Flecken aktiv, das Wahlmodell zieht auch einen Nebenzug", async () => {
     const nachD5 = "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2";
     const { b } = bewerter(
       [variante(1, 0.4, ["e4e5"]), variante(2, 0.3, ["e4d5"]), variante(3, 0.0, ["g1f3"])],

@@ -80,7 +80,7 @@ export function Rundenrahmen({
   if (runde.fertig) return <Ende runde={runde} nochmal={nochmal} zurAuswahl={zurAuswahl} />;
   return (
     <div className="trainerrunde" data-testid="trainerrunde">
-      <p className="hinweis" aria-live="polite">
+      <p className="hinweis" aria-live="polite" data-tour="runde-stand">
         {t("trainer.stand", {
           nummer: runde.index + 1,
           anzahl: runde.anzahl,

@@ -23,7 +23,7 @@ export function KapitelUebungen({ kapitel }: { kapitel: Kapitel }) {
   );
   const erste = reihe[0];
   return (
-    <div className="kapitel-uebungen" data-testid="kapitel-uebungen">
+    <div className="kapitel-uebungen" data-testid="kapitel-uebungen" data-tour="kapitel-uebungen">
       <h3 className="unterteil-titel">{t("kapitel.uebungen")}</h3>
       {erste && (
         <button

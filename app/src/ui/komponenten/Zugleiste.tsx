@@ -173,7 +173,12 @@ export function Zugleiste({ stand }: { stand: Nachspielstand }) {
   const andere =
     beispiel && stand.eigene.zuege.length === 0 ? abzweigungen(beispiel, pfad, sprachcode) : [];
   return (
-    <section className="zugleiste" aria-label={t("zugleiste.titel")} data-testid="zugleiste">
+    <section
+      className="zugleiste"
+      aria-label={t("zugleiste.titel")}
+      data-testid="zugleiste"
+      data-tour="zugleiste"
+    >
       {beispiel && <Zuege halbzuege={halbzuege} pfad={pfad} beiPfad={beiPfad} />}
       {stand.eigene.zuege.length > 0 && <EigeneZeile stand={stand} />}
       {andere.length > 0 && (

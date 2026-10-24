@@ -102,7 +102,7 @@ export interface Spielerschaetzung extends Wertungsschaetzung {
 
 /**
  * Die Spielstärke des Lesers in einer Zeitklasse über seine letzten zehn ausgewerteten gewerteten
- * Partien gegen die Engine (seit R32 nur gewertete; seit 0.2.121 je Zeitklasse mit dem Elo-Modell:
+ * Partien gegen die Engine (seit R32 nur gewertete; seit 0.2.124 je Zeitklasse mit dem Elo-Modell:
  * Kennzahlen über die Partien gemittelt, Spanne wird mit jeder Partie enger).
  * Es zählen nur Partien dieser Zeitklasse mit genug eigenen Zügen für eine Schätzung; die Liste
  * ist neueste zuerst. Ausgabe: Schätzung mit Spanne, Zahl der Partien und je Phase; null ohne
@@ -140,7 +140,7 @@ export function staerkeLetzterPartien(
 }
 
 /**
- * Die Schätzung je Phase für den Leser (ab sechs Zügen je Phase; seit 0.2.121 nur, wo die Spanne
+ * Die Schätzung je Phase für den Leser (ab sechs Zügen je Phase; seit 0.2.124 nur, wo die Spanne
  * des Teilmodells schmal genug ist, sonst null).
  */
 export function phasenstaerke(eintrag: Partieeintrag): Readonly<Record<Phase, number | null>> {

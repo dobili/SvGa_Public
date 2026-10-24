@@ -45,7 +45,7 @@ export interface Zugwert {
   readonly genauigkeit: number;
   readonly gewicht: number;
   readonly entschieden: boolean;
-  /** Verlust in Bauern aus eigener Sicht und Wert danach (seit 0.2.121 für das Elo-Modell). */
+  /** Verlust in Bauern aus eigener Sicht und Wert danach (seit 0.2.124 für das Elo-Modell). */
   readonly verlust: number;
   readonly nachher: number;
 }

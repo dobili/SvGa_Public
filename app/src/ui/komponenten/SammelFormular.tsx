@@ -203,6 +203,7 @@ export function SammelSchalter({ an, beiKlick }: { an: boolean; beiKlick: () => 
     <button
       type="button"
       className="knopf-symbol brettschalter"
+      data-tour="brett-sammeln"
       aria-pressed={an}
       aria-label={t("sammlung.hineinName")}
       title={t("sammlung.hineinName")}

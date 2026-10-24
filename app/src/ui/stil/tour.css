@@ -1,0 +1,198 @@
+/*
+ * Stil der App-Tour (R52): Toursymbol oben rechts, Abdunklung, goldener Rahmen und Tourkarte.
+ * Farben aus den Variablen von basis.css, damit Nachtmodus und Gerätevorgabe gleich mitgehen.
+ * Bei „Bewegung reduzieren“ gleitet der Rahmen nicht.
+ */
+
+/* ---------- Symbol ---------- */
+
+.tourknopf {
+  position: relative;
+  color: var(--text-leise);
+  flex: none;
+}
+
+.tourknopf-punkt {
+  position: absolute;
+  top: 9px;
+  right: 8px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--gold);
+  border: 2px solid var(--grund);
+}
+
+/* In den Seitenköpfen der Bereiche (Buch, Training, Nachschlagen) rechts oben neben dem Titel. */
+.seitenkopf {
+  position: relative;
+}
+
+.seitenkopf > .tourknopf {
+  position: absolute;
+  top: 0;
+  right: calc(var(--raster) * -1);
+}
+
+.seitenkopf:has(> .tourknopf) {
+  padding-right: var(--tippflaeche);
+}
+
+/* Einstellungen haben keine sichtbare Überschrift: eine schmale Zeile nur mit dem Symbol. */
+.seitenkopf-symbol {
+  display: flex;
+  justify-content: flex-end;
+  margin: calc(var(--raster) * -1) calc(var(--raster) * -1) calc(var(--raster) * -1) 0;
+}
+
+/* ---------- Ebene ---------- */
+
+.tour-ebene {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+}
+
+.tour-sperre {
+  position: absolute;
+  inset: 0;
+}
+
+.tour-ebene-dunkel .tour-sperre {
+  background: rgb(11 20 36 / 55%);
+}
+
+.tour-rahmen {
+  position: fixed;
+  border: 3px solid var(--gold);
+  border-radius: calc(var(--radius) + 4px);
+  box-shadow: 0 0 0 200vmax rgb(11 20 36 / 55%);
+  pointer-events: none;
+  transition:
+    top 0.2s ease,
+    left 0.2s ease,
+    width 0.2s ease,
+    height 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tour-rahmen {
+    transition: none;
+  }
+}
+
+/* ---------- Karte ---------- */
+
+.tour-karte {
+  position: fixed;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: min(480px, calc(100vw - 2 * var(--raster) * 2));
+  max-height: calc(100dvh - 2 * var(--raster) * 2);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+  padding: calc(var(--raster) * 2);
+  background: var(--flaeche);
+  color: var(--text);
+  border: 1px solid var(--gold);
+  border-radius: calc(var(--radius) * 1.5);
+  box-shadow: 0 8px 32px rgb(0 0 0 / 35%);
+}
+
+.tour-karte:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.tour-karte-unten {
+  bottom: calc(env(safe-area-inset-bottom) + var(--raster) * 2);
+}
+
+.tour-karte-oben {
+  top: calc(env(safe-area-inset-top) + var(--raster) * 2);
+}
+
+/* Querformat: neben dem Ziel, halb so breit wie der Bildschirm. */
+.tour-karte-links,
+.tour-karte-rechts {
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(440px, calc(50vw - var(--raster) * 4));
+}
+
+.tour-karte-links {
+  left: calc(env(safe-area-inset-left) + var(--raster) * 2);
+  right: auto;
+}
+
+.tour-karte-rechts {
+  right: calc(env(safe-area-inset-right) + var(--raster) * 2);
+  left: auto;
+}
+
+.tour-karte-mitte {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.tour-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.tour-kopf .knopf-symbol {
+  margin: calc(var(--raster) * -1) calc(var(--raster) * -1) calc(var(--raster) * -1) auto;
+}
+
+.tour-titel {
+  font-family: var(--schrift-titel);
+  font-weight: 600;
+  font-size: var(--groesse-titel);
+  line-height: 1.2;
+}
+
+.tour-angebot-symbol {
+  color: var(--gold-text);
+  flex: none;
+}
+
+.tour-text {
+  font-size: var(--groesse-grund);
+  line-height: 1.45;
+}
+
+.tour-fuss {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--raster);
+}
+
+.tour-stand {
+  margin-right: auto;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.tour-fuss .knopf-haupt,
+.tour-fuss .knopf-zweit {
+  width: auto;
+  min-width: 96px;
+}
+
+/* Einstellungen › Anzeige: Knopf „Rundgang durch die App“ unter dem Schalter. */
+.einstellung-rundgang {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+/* Vorige und nächste Abbildung als eine Gruppe, damit die Tour beide zugleich zeigt. */
+.blaettern {
+  display: flex;
+}

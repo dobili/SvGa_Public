@@ -9,7 +9,7 @@
  * in `anker-bewertung` (skripte/eichung-rechnen.mjs --quellen stufen). Rechnung: Elo-Leiter aus
  * allen Ergebnissen (engine/eloleiter.ts); je Anker-Stufe die innere Genauigkeit jeder Seite, in
  * Blöcken zu zehn Partien durch dieselbe Rechnung wie „Deine Spielstärke“ (spiel/elomodell.ts,
- * seit 0.2.121 ohne Phasen der Züge, weil die Messung nur Bewertungen kennt; Neuverankerung folgt);
+ * seit 0.2.124 ohne Phasen der Züge, weil die Messung nur Bewertungen kennt; Neuverankerung folgt);
  * eine gemeinsame Verschiebung legt die Leiter auf die Anker. Unsicherheit je Spieler durch
  * Nachziehen der Ergebnisse (Binomial, 200 Durchgänge). Ausgabe im Ordner: botstaerke-daten.ts
  * (kommt nach engine/), bericht.md.

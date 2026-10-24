@@ -31,7 +31,7 @@ export function SelbstDenkenKarte({ stand }: { stand: Denkstand }) {
   const [wahl, setzeWahl] = useState<Einschaetzung | null>(null);
   const streng = strenge === "streng";
   return (
-    <section className="karte selbstdenken" data-testid="selbstdenken">
+    <section className="karte selbstdenken" data-testid="selbstdenken" data-tour="selbstdenken">
       <h3>{t("selbstdenken.titel")}</h3>
       <p>{t("selbstdenken.frage")}</p>
       <Segmentwahl

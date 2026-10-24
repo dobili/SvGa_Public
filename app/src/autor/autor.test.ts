@@ -68,10 +68,19 @@ describe("Aufgabendatei lesen", () => {
     expect(datei.abschnitte[1]?.punkte.map((p) => p.id)).toEqual(["NA1"]);
   });
 
+  it("erkennt Rückfragen der Pakete mit Zusatz (P8-1, P2-A)", () => {
+    const datei = liesAufgabendatei(
+      "## Teil 2\n\n### P8\n\n- [ ] P8-1. **Symbol:** Kompass.\n- [ ] P2-A. Startbild.\n",
+    );
+    expect(datei.abschnitte[1]?.punkte.map((p) => p.id)).toEqual(["P8-1", "P2-A"]);
+  });
+
   it("liest die echte Aufgabendatei mit allen Punkten", () => {
     const text = readFileSync(new URL("../../../docs/AUFGABEN_AUTOR.md", import.meta.url), "utf8");
     const datei = liesAufgabendatei(text);
-    const anzahl = text.split("\n").filter((z) => /^- \[[ xX]\] [A-Z]{1,2}\d+\. /.test(z)).length;
+    const anzahl = text
+      .split("\n")
+      .filter((z) => /^- \[[ xX]\] [A-Z]{1,2}\d+(?:-(?:\d+|[A-Z]))?\. /.test(z)).length;
     expect(datei.version).toMatch(/^\d+\.\d+\.\d+$/);
     expect(datei.abschnitte.flatMap((a) => a.punkte)).toHaveLength(anzahl);
     expect(anzahl).toBeGreaterThan(0);

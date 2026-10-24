@@ -163,7 +163,9 @@ export function Steckbriefe() {
       )}
       {kapitel.art === "fertig" && (
         <>
-          <h2 className="abschnitt-titel">{t("steckbrief.eroeffnungen")}</h2>
+          <h2 className="abschnitt-titel" data-tour="steckbrief-eroeffnungen">
+            {t("steckbrief.eroeffnungen")}
+          </h2>
           {kapitel.wert.flatMap((k) =>
             k.steckbriefe.map((s) => (
               <Eroeffnung
@@ -174,7 +176,9 @@ export function Steckbriefe() {
               />
             )),
           )}
-          <h2 className="abschnitt-titel">{t("steckbrief.fallen")}</h2>
+          <h2 className="abschnitt-titel" data-tour="steckbrief-fallen">
+            {t("steckbrief.fallen")}
+          </h2>
           {kapitel.wert.flatMap((k) =>
             k.fallenchecks.map((f) => <Falle key={f.name} falle={f} aktionen={aktionen} />),
           )}

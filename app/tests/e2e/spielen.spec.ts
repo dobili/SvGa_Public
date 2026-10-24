@@ -144,6 +144,22 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   await expect(spielstaerke.getByRole("radiogroup")).toHaveCount(0);
   await spielstaerke.getByRole("button", { name: "Erklärung: Spielstärke" }).click();
   await expect(spielstaerke).toContainText("Maßstab von Lichess");
+  // R56: Ring, fünf Balken und die Zugklassen der eigenen Seite; der Umschalter wechselt die Seite.
+  await expect(page.getByTestId("balken-taktik")).toBeVisible();
+  await expect(page.getByTestId("zugklasse-patzer")).toContainText("1");
+  const seiten = auswertung.getByRole("radiogroup", { name: "Seite" });
+  await expect(seiten.getByRole("radio", { name: "Weiß (du)" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  // R55: Fehler und Patzer eingeklappt, mit der Anzahl.
+  const fehler = page.getByTestId("grobe-patzer");
+  await expect(fehler.getByRole("button", { name: /2\. g4\?\?/ })).toBeHidden();
+  await fehler.locator("summary").click();
+  await expect(fehler.getByRole("button", { name: /2\. g4\?\?/ })).toBeVisible();
+  await seiten.getByRole("radio", { name: /^Schwarz/ }).click();
+  await expect(page.getByTestId("grobe-patzer")).toHaveCount(0);
+  await seiten.getByRole("radio", { name: "Weiß (du)" }).click();
   await page.screenshot({ path: "test-results/bilder/rueckblick.png", fullPage: true });
   await auswertung.getByRole("button", { name: "Zur Stellung" }).click();
   await expect(
@@ -387,7 +403,9 @@ async function aufgegebenePartie(seite: Page, farbe: "Weiß" | "Schwarz"): Promi
   await expect(seite.getByTestId("partieende")).toContainText("Du hast aufgegeben.");
 }
 
-test("Partienliste: Filter als Symbole, mehrere zugleich, Sortierung (R22)", async ({ page }) => {
+test("Partienliste: Filter und Sortieren mit Listen in Worten, Chips (R22, R54)", async ({
+  page,
+}) => {
   await starteImBrowser(page);
   for (const farbe of ["Weiß", "Schwarz", "Weiß", "Schwarz"] as const) {
     await aufgegebenePartie(page, farbe);
@@ -396,21 +414,28 @@ test("Partienliste: Filter als Symbole, mehrere zugleich, Sortierung (R22)", asy
   const liste = page.locator(".partienliste li.partieeintrag");
   const filter = page.getByTestId("partienfilter");
   await expect(liste).toHaveCount(4);
-  await filter.getByRole("button", { name: "mit Schwarz" }).click();
+  await filter.getByRole("button", { name: "Filter", exact: true }).click();
+  await filter.getByRole("checkbox", { name: "mit Schwarz" }).click();
   await expect(liste).toHaveCount(2);
   // Zwei Gruppen zugleich: Schwarz und gewonnen → nichts; dazu verloren (oder) → wieder zwei.
-  await filter.getByRole("button", { name: "gewonnen" }).click();
+  await filter.getByRole("checkbox", { name: "gewonnen" }).click();
   await expect(liste).toHaveCount(0);
   await expect(page.getByText("Keine Partie passt zu diesem Filter.")).toBeVisible();
-  await filter.getByRole("button", { name: "verloren" }).click();
+  await filter.getByRole("checkbox", { name: "verloren" }).click();
   await expect(liste).toHaveCount(2);
+  await expect(filter.getByRole("button", { name: "Filter (3)" })).toBeVisible();
   await page.screenshot({ path: "test-results/bilder/partienfilter.png", fullPage: true });
+  // Ein Chip nimmt einen Filter weg; „Filter zurücksetzen“ alle.
+  await filter.getByRole("button", { name: "Filter „gewonnen“ entfernen" }).click();
+  await expect(filter.getByRole("button", { name: "Filter (2)" })).toBeVisible();
   await filter.getByRole("button", { name: "Filter zurücksetzen" }).click();
   await expect(liste).toHaveCount(4);
-  // Sortierung: neueste zuerst (Schwarz), Richtung umkehren → älteste zuerst (Weiß).
+  // Sortierung: neueste zuerst (Schwarz), „Älteste zuerst“ → Weiß oben.
   await expect(liste.first().getByRole("img", { name: "Du hast Schwarz gespielt" })).toBeVisible();
-  await filter.getByRole("button", { name: /^absteigend/ }).click();
+  await filter.getByRole("button", { name: "Neueste zuerst" }).click();
+  await filter.getByRole("radio", { name: "Älteste zuerst" }).click();
   await expect(liste.first().getByRole("img", { name: "Du hast Weiß gespielt" })).toBeVisible();
+  await expect(filter.getByRole("button", { name: "Älteste zuerst" })).toBeVisible();
 });
 
 test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgewertet", async ({

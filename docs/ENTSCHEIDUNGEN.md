@@ -4683,7 +4683,7 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Wertung und mit eigener Verlustkurve für Eröffnung und Endspiel (sonst schätzt das Modell
   starke Spieler in der Eröffnung zu fehlerhaft, weil ihm die Theoriekenntnis fehlt). Nachspielen
   trifft die echten Fehlerraten je Band, Phase und Art auf etwa einen Prozentpunkt. In der App
-  seit 0.2.121 (engine/wahlmodell.ts); die Stellschrauben der Bots bleiben und werden übersetzt:
+  seit 0.2.124 (engine/wahlmodell.ts); die Stellschrauben der Bots bleiben und werden übersetzt:
   Gewicht einer Fehlerart g → Verschiebung ln g (0 schließt aus), Fleckgewicht g → −(g − 1) · 0,5
   auf Züge mit diesem eigenen Fleck, Stilregler → ±0,25 je Stufe auf Schlag, Schach,
   Königsnähe, Bauernsturm, Vorwärts (Rückzug und Abtausch gegenläufig), Höchstverlust je Art als

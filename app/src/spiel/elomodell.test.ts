@@ -1,4 +1,4 @@
-/** Tests des Elo-Modells der App (0.2.121): Kennzahlen, Schätzung je Zeitklasse, Spanne, Phasen. */
+/** Tests des Elo-Modells der App (0.2.124): Kennzahlen, Schätzung je Zeitklasse, Spanne, Phasen. */
 import { describe, expect, it } from "vitest";
 import {
   istSchmal,

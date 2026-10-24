@@ -275,7 +275,7 @@ export function Wertungskurve({
   const aktuell = aktuelleWertung(punkte);
   if (aktuell === null || !ausschnitt) {
     return (
-      <section className="karte wertung" data-testid="wertung">
+      <section className="karte wertung" data-testid="wertung" data-tour="einstellungen-wertung">
         <h2 className="karte-titel">
           <Titelsymbol art="wertung" />
           {t("ich.wertung.titel")}
@@ -288,7 +288,7 @@ export function Wertungskurve({
   const start = sichtbar[0];
   const schnitt = durchschnitt(sichtbar);
   return (
-    <section className="karte wertung" data-testid="wertung">
+    <section className="karte wertung" data-testid="wertung" data-tour="einstellungen-wertung">
       <h2 className="karte-titel">
         <Titelsymbol art="wertung" />
         {t("ich.wertung.titel")}

@@ -40,6 +40,7 @@ import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { Partieende } from "../komponenten/Partieende";
 import { Ergebnisblende } from "../komponenten/Ergebnisblende";
 import { Partiestatus } from "../komponenten/Partiestatus";
+import { Partietitel } from "../komponenten/Partietitel";
 import { Partieuhr } from "../komponenten/Partieuhr";
 import { Partiezuege } from "../komponenten/Partiezuege";
 import { Untertitel } from "../komponenten/Partieuntertitel";
@@ -340,17 +341,9 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
 
 export function Partie({ id }: { id: string }) {
   const s = usePartie(id);
-  const einstellung = s.partie?.einstellung;
-  const titel = t(
-    einstellung?.importiert
-      ? "partie.titelImport"
-      : einstellung?.gegner === "mensch"
-        ? "partie.titelMensch"
-        : "partie.titel",
-  );
   return (
     <div className="bildschirm bildschirm-partie" data-testid="partie">
-      <Kopfzeile titel={titel} zurueckText={t("partie.zurueck")} />
+      <Kopfzeile titel={<Partietitel partie={s.partie} />} zurueckText={t("partie.zurueck")} />
       {!s.geladen && <p className="lade">…</p>}
       {s.geladen && !s.partie && <p className="fehlertext">{t("partie.nichtGefunden")}</p>}
       {s.partie && <Inhalt s={s} partie={s.partie} />}

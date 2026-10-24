@@ -1,13 +1,13 @@
 /**
  * Bots, die der Leser schon in einer gewerteten Partie besiegt hat, je Zeitklasse (seit 0.2.99;
- * seit 0.2.121 getrennt nach Blitz, Schnellschach und Klassisch, R51).
+ * seit 0.2.124 getrennt nach Blitz, Schnellschach und Klassisch, R51).
  *
  * Rolle im Gesamtbild: Wunsch des Autors (19.10.2026): Ein kleiner Stern am Porträt in der
  * Gegnerwahl zeigt, gegen wen man schon gewonnen hat; seit R51 (23.10.2026) je Zeitklasse der
  * gewählten Bedenkzeit, weil die Wertung je Zeitklasse gilt. Die Listen stehen im Spielstand
  * (speicher/partien.ts, „besiegt“), damit sie auch bleiben, wenn alte Partien aus der Liste der
  * höchstens 50 Partien fallen. Ältere Daten ohne Listen bekommen sie aus den gespeicherten
- * Partien; eine alte einfache Liste (vor 0.2.121) zählt als Schnellschach (Partien ohne Uhr).
+ * Partien; eine alte einfache Liste (vor 0.2.124) zählt als Schnellschach (Partien ohne Uhr).
  * „Wertung zurücksetzen“ leert sie, weil danach alle bisherigen Partien als ungewertet gelten.
  * Abhängigkeiten: spiel/partie.ts, spiel/elomodell.ts (Zeitklasse).
  */
@@ -57,7 +57,7 @@ function kennungen(roh: unknown): readonly string[] {
 
 /**
  * Die Listen aus Rohdaten, ergänzt um die Siege in den gespeicherten Partien (für Daten von vor
- * 0.2.99, in denen es die Liste noch nicht gab). Eine einfache Liste (vor 0.2.121) zählt als
+ * 0.2.99, in denen es die Liste noch nicht gab). Eine einfache Liste (vor 0.2.124) zählt als
  * Schnellschach. Unbekanntes fällt weg.
  */
 export function besiegtAus(roh: unknown, partien: readonly Partie[]): Besiegte {

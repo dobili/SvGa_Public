@@ -33,7 +33,7 @@ function Hilfe({ s, uebung }: { s: Uebungssteuerung; uebung: UebungDaten }) {
   if (s.status !== "offen") return null;
   if (!s.hilfeFrei) {
     return (
-      <div className="uebung-hilfe">
+      <div className="uebung-hilfe" data-tour="uebung-hilfe">
         <p className="hinweis">{t(s.erstZug ? "uebung.erstZug" : "uebung.erstDenken")}</p>
         {!s.erstZug && (
           <button type="button" className="knopf-zweit" onClick={s.nachgedacht}>
@@ -44,7 +44,7 @@ function Hilfe({ s, uebung }: { s: Uebungssteuerung; uebung: UebungDaten }) {
     );
   }
   return (
-    <div className="uebung-hilfe">
+    <div className="uebung-hilfe" data-tour="uebung-hilfe">
       {s.stufe >= 1 && uebung.erklaerung && (
         <p data-testid="hinweis-motiv">
           {t("uebung.hinweisMotiv", { motiv: uebung.erklaerung.motiv })}
@@ -117,7 +117,12 @@ function Rueckmeldung({ s }: { s: Uebungssteuerung }) {
 function Einschaetzung({ s }: { s: Uebungssteuerung }) {
   if (s.eingeschaetzt) return <p className="hinweis">{t("uebung.eingeschaetzt")}</p>;
   return (
-    <div className="knopfzeile" role="group" aria-label={t("uebung.einschaetzen")}>
+    <div
+      className="knopfzeile"
+      role="group"
+      aria-label={t("uebung.einschaetzen")}
+      data-tour="uebung-einschaetzen"
+    >
       <button type="button" className="knopf-zweit" onClick={() => s.schaetzeEin("richtig")}>
         {t("uebung.selbstRichtig")}
       </button>
@@ -136,7 +141,7 @@ function Weiter({ reihe, hier }: { reihe: readonly Uebungsverweis[]; hier: strin
   const index = reihe.findIndex((v) => v.id === hier);
   const naechste = index >= 0 ? reihe[index + 1] : undefined;
   return (
-    <div className="knopfzeile">
+    <div className="knopfzeile" data-tour="uebung-weiter">
       {naechste ? (
         <button
           type="button"
@@ -182,7 +187,7 @@ function Inhalt({
   const fertig = s.status !== "offen" || (aufgabe.art === "denken" && s.hilfeFrei);
   return (
     <div className="uebung" data-testid="uebung">
-      <p className="hinweis">
+      <p className="hinweis" data-tour="uebung-auftrag">
         {aufgabe.art === "zug" ? t("uebung.auftragZug") : t("uebung.auftragDenken")}
         {erste && (
           <>

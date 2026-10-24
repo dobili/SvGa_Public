@@ -19,15 +19,26 @@ export function gewaehlteWerkzeuge(seite: Page): Locator {
  * Der Sieben-Tage-Hinweis für Safari (19.10.2026) ist dabei geschlossen, weil er sonst in jedem
  * Test auf dem iPhone oben stünde; geraete.spec.ts prüft ihn mit `safariHinweis: true`. Ebenso
  * die Startanimation (R39): Sie läge sonst 2,5 Sekunden über dem ersten Bildschirm;
- * brett.spec.ts prüft sie mit `startanimation: true`.
+ * brett.spec.ts prüft sie mit `startanimation: true`. Auch die Frage nach dem Rundgang beim ersten
+ * Start (R52) gilt als schon gestellt; tour.spec.ts prüft sie mit `tourAngebot: true`.
  */
 export async function starteImBrowser(
   seite: Page,
   {
     safariHinweis = false,
     startanimation = false,
-  }: { safariHinweis?: boolean; startanimation?: boolean } = {},
+    tourAngebot = false,
+  }: { safariHinweis?: boolean; startanimation?: boolean; tourAngebot?: boolean } = {},
 ): Promise<void> {
+  if (!tourAngebot) {
+    await seite.addInitScript(() => {
+      try {
+        window.localStorage.setItem("svga.tour.angeboten", "ja");
+      } catch (fehler) {
+        console.warn("Merker nicht schreibbar:", fehler);
+      }
+    });
+  }
   if (!startanimation) {
     await seite.addInitScript(() => {
       try {

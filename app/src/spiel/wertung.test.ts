@@ -83,7 +83,7 @@ describe("Wertung", () => {
     expect(verlauf).toHaveLength(1);
     expect(verlauf[0]?.wertung).toBe(schaetzung);
     expect(verlauf[0]?.ergebnis).toBe(0);
-    // Seit 0.2.121 steht eine Zahl je Phase nur bei schmaler Spanne, nie aus einer Partie.
+    // Seit 0.2.124 steht eine Zahl je Phase nur bei schmaler Spanne, nie aus einer Partie.
     expect(verlauf[0]?.phasen.mittelspiel).toBeNull();
     expect(verlauf[0]?.phasen.endspiel).toBeNull();
     // Zweite Partie gewonnen; Gegnerwertung ist seit 0.2.85 die feste Zahl der Stufe 3.
@@ -186,7 +186,7 @@ describe("Wertung", () => {
     expect(schaetzung?.partien).toBe(3);
     const voll = staerkeLetzterPartien([mensch, ...engine]);
     expect(voll?.partien).toBe(10);
-    // Fehlerfreie Partien (100 % Genauigkeit): hohe Zahl; seit 0.2.121 je Zeitklasse (ohne Uhr
+    // Fehlerfreie Partien (100 % Genauigkeit): hohe Zahl; seit 0.2.124 je Zeitklasse (ohne Uhr
     // Schnellschach), die Spanne wird über zehn Partien enger als bei dreien.
     expect(voll?.tempo).toBe("rapid");
     expect(voll?.mitte ?? 0).toBeGreaterThan(1800);

@@ -5,7 +5,7 @@
  *
  * Rolle im Gesamtbild: Plan „Genauigkeit und Spielstärke neu eichen“, Entscheidung 4 des Autors
  * (18.10.2026): Eine einzelne Partie streut stark, über zehn Partien gleicht sich das aus. Seit
- * 0.2.121 (Entscheidung des Autors, 23.10.2026) eine eigene Zahl je Zeitklasse aus dem Elo-Modell
+ * 0.2.124 (Entscheidung des Autors, 23.10.2026) eine eigene Zahl je Zeitklasse aus dem Elo-Modell
  * (spiel/elomodell.ts); eine Zahl je Phase nur, wenn ihre Spanne schmal genug ist. Steht im Bereich
  * Spielen über der Liste der Partien (Partienliste.tsx).
  * Abhängigkeiten: spiel/wertung.ts (staerkeLetzterPartien), spiel/elomodell.ts, speicher/partien.ts,

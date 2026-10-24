@@ -21,7 +21,7 @@ describe("Bedenkzeit der Bots", () => {
     expect(bedenkzeitMs({ ...GRUND, zugnummer: 1 }, MITTE)).toBeLessThan(mitte);
   });
 
-  it("Zeitklassen (0.2.121): Blitz braucht je Zug mehr Anteil der Restzeit als Schnellschach, Klassisch weniger", () => {
+  it("Zeitklassen (0.2.124): Blitz braucht je Zug mehr Anteil der Restzeit als Schnellschach, Klassisch weniger", () => {
     const rapid = bedenkzeitMs(GRUND, MITTE);
     expect(bedenkzeitMs({ ...GRUND, tempo: "blitz" }, MITTE)).toBeGreaterThan(rapid);
     expect(bedenkzeitMs({ ...GRUND, tempo: "classical" }, MITTE)).toBeLessThan(rapid);

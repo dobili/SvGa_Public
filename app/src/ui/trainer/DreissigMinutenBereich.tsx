@@ -57,7 +57,7 @@ function Tagesplan({ tag }: { tag: Tagesart }) {
 /** Ohne laufende Einheit: der Plan beider Tage und die beiden Startknöpfe. */
 function Start({ vorschlag, starte }: { vorschlag: Tagesart; starte: (tag: Tagesart) => void }) {
   return (
-    <div className="trainerrunde" data-testid="plan-start">
+    <div className="trainerrunde" data-testid="plan-start" data-tour="trainer-wahl">
       <p>{t("dreissig.heute", { tag: t(`dreissig.tag.${vorschlag}`) })}</p>
       {TAGESARTEN.map((tag) => (
         <Tagesplan key={tag} tag={tag} />

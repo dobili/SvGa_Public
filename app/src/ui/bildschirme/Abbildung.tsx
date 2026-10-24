@@ -55,7 +55,7 @@ function Blaettern({ kapitel, nummer }: { kapitel: Kapitel; nummer: string }) {
   const vorige = kapitel.abbildungen[stelle - 1];
   const naechste = kapitel.abbildungen[stelle + 1];
   return (
-    <>
+    <span className="blaettern" data-tour="abbildung-blaettern">
       <button
         type="button"
         className="knopf-symbol"
@@ -74,7 +74,7 @@ function Blaettern({ kapitel, nummer }: { kapitel: Kapitel; nummer: string }) {
       >
         <ChevronRight size={22} aria-hidden="true" />
       </button>
-    </>
+    </span>
   );
 }
 

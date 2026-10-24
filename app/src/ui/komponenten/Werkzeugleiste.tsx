@@ -124,7 +124,12 @@ export function Werkzeugleiste({
   );
   if (buendel.length === 0 && !hatFruehere && !hatSpaetere) return null;
   return (
-    <div className="werkzeugleiste" role="toolbar" aria-label={t("abbildung.werkzeuge")}>
+    <div
+      className="werkzeugleiste"
+      role="toolbar"
+      aria-label={t("abbildung.werkzeuge")}
+      data-tour="werkzeugleiste"
+    >
       {hatFruehere && (
         <Zuschalter
           an={werkzeug.frueher}
@@ -181,6 +186,7 @@ export function Reiterleiste({
       {teile.length > 1 && (
         <div
           className="reiterleiste"
+          data-tour="reiterleiste"
           role="tablist"
           aria-label={t("werkzeug.reiter", { buendel: t(buendelname(kennung)) })}
         >

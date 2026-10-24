@@ -51,7 +51,7 @@ export interface Gegnerprofil {
    */
   readonly fleckenStandard?: number;
   readonly fleckGewicht?: number;
-  /** Zeitklasse der Partie für das Wahlmodell (0.2.121); fehlend: Schnellschach. */
+  /** Zeitklasse der Partie für das Wahlmodell (0.2.124); fehlend: Schnellschach. */
   readonly tempo?: Wahltempo;
 }
 

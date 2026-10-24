@@ -30,6 +30,7 @@ import { Wertungskurve } from "../komponenten/Wertungskurve";
 import { useSpeicher } from "../../speicher/speicher";
 import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 import { Titelsymbol } from "../komponenten/Titelsymbol";
+import { TourZeile } from "../../tour/TourKnopf";
 
 /** Der Installationsteil der Startseite (Entscheidung 15.10.2026). */
 const INSTALLATIONSSEITE = "/installieren/";
@@ -111,13 +112,14 @@ export function Ich() {
       {/* Keine sichtbare Überschrift (Wunsch des Autors, Test von 0.2.30); Bildschirmleser hören
           „Einstellungen“. */}
       <h1 className="nur-vorlesen">{t("ich.titel")}</h1>
+      <TourZeile />
       <Wertungskurve punkte={wertung} />
       <Fortschrittsuebersicht />
       <EinstellungenKarte />
       <DatenLoeschen />
       {/* „Über die App“ am Ende (DS14): Version und Lizenzen braucht man selten, die
           Einstellungen oft. */}
-      <section className="karte">
+      <section className="karte" data-tour="einstellungen-ueber">
         <h2 className="karte-titel">
           <Titelsymbol art="ueberApp" />
           {t("ich.einstellungen")}

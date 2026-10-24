@@ -1,6 +1,6 @@
 /**
  * Umrechnung der eigenen Wertung (Lichess-Maßstab je Zeitklasse) in „entspricht etwa“ auf anderen Listen
- * (0.2.121): Blitz → chess.com Blitz, Schnellschach → chess.com Schnellschach, Klassisch → FIDE.
+ * (0.2.124): Blitz → chess.com Blitz, Schnellschach → chess.com Schnellschach, Klassisch → FIDE.
  * Zahlen aus dem Wertungsvergleich von chessgoals.com (Stand Juli 2026, Selbstangaben aktiver Spieler),
  * zusammengeführt über die gemeinsame Spalte chess.com Blitz; auf 5 gerundet. Erzeugt von
  * buch/arbeit/appmodell/erzeugen.py, nicht von Hand ändern. Stützstellen [Lichess, Ziel], aufsteigend.

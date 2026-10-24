@@ -67,7 +67,7 @@ export interface Wahlkontext {
   readonly restMs: number | null;
   readonly verlauf: Verlauf;
   readonly stil: number;
-  /** Zeitklasse für das Wahlmodell (0.2.121). */
+  /** Zeitklasse für das Wahlmodell (0.2.124). */
   readonly tempo: Wahltempo;
 }
 
@@ -217,7 +217,7 @@ export async function menschlicheWahl(
     ...einordnen(lage, kandidaten, bester),
     ...(gezielt ? einordnen(lage, kandidatenAus(gezielt.varianten, bestwert, weiss), bester) : []),
   ];
-  // Seit 0.2.121 wählt das geeichte Wahlmodell unter allen Kandidaten (engine/wahlschritt.ts)
+  // Seit 0.2.124 wählt das geeichte Wahlmodell unter allen Kandidaten (engine/wahlschritt.ts)
   const schritt: Wahlschritt = {
     tempo: kontext.tempo,
     wertung: kontext.wertung,

@@ -1,5 +1,5 @@
 /**
- * Umrechnung der eigenen Wertung auf andere Listen (0.2.121): „entspricht etwa“ chess.com (Blitz,
+ * Umrechnung der eigenen Wertung auf andere Listen (0.2.124): „entspricht etwa“ chess.com (Blitz,
  * Schnellschach) oder FIDE (Klassisch), dazu die Kurvenrechnung, die auch die Eichung nutzt.
  *
  * Rolle im Gesamtbild: Die eigene Wertung je Zeitklasse (spiel/elomodell.ts) ist auf dem Maßstab

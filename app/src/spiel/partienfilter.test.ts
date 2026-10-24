@@ -67,6 +67,18 @@ describe("Filter der Partienliste", () => {
     expect(passtZumFilter(uebung, { ...filter, gegner: ["stufe" as const] })).toBe(false);
   });
 
+  it("Zeitklasse (R51): aus der Bedenkzeit, ohne Uhr als „ohne“", () => {
+    const ohne = partie(false, true);
+    expect(passtZumFilter(ohne, { ...OHNE_FILTER, zeit: ["ohne"] })).toBe(true);
+    expect(passtZumFilter(ohne, { ...OHNE_FILTER, zeit: ["schnell"] })).toBe(false);
+    const schnell = {
+      ...ohne,
+      einstellung: { ...ohne.einstellung, uhr: { grundzeitMs: 600_000, zuschlagMs: 0 } },
+    };
+    expect(passtZumFilter(schnell, { ...OHNE_FILTER, zeit: ["schnell", "blitz"] })).toBe(true);
+    expect(passtZumFilter(schnell, { ...OHNE_FILTER, zeit: ["klassisch"] })).toBe(false);
+  });
+
   it("Mensch gegen Mensch mit Sieger ist weder gewonnen noch verloren und hat keine Farbe", () => {
     const zuZweit = partie(false, true, true);
     expect(passtZumFilter(zuZweit, { ...OHNE_FILTER, ergebnis: ["gewonnen"] })).toBe(false);

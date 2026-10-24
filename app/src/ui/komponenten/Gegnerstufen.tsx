@@ -19,6 +19,7 @@ import { staerkeAusStufen, staerkeDesBots } from "../../engine/botstaerke";
 import { gegnerDerStufe, spassbots, type Gegner } from "../../engine/gegner";
 import { stufe, type Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
+import type { Wertungstempo } from "../../spiel/elomodell";
 import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
 import { offeneStufenAnfangs, portraet, SPASSGRUPPE, STUFENNUMMERN } from "./gegnerportraet";
@@ -67,13 +68,16 @@ export function Kachel({
 export function VorgefertigteGitter({
   bot,
   beiBot,
+  tempo,
 }: {
   bot: string | null;
   beiBot: (bot: string | null) => void;
+  /** Zeitklasse der gewählten Uhr: Sterne und Zähler gelten je Zeitklasse (R51, 0.2.121). */
+  tempo: Wertungstempo;
 }) {
   const [offen, setzeOffen] = useState(() => offeneStufenAnfangs(liesMerker(MERKER_OFFEN), bot));
   // Stern an Bots, die der Leser schon gewertet besiegt hat (0.2.99, Wunsch des Autors).
-  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
+  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt[tempo]);
   const umschalten = (nummer: number, jetztOffen: boolean) => {
     const neu = new Set(offen);
     if (jetztOffen) neu.add(nummer);

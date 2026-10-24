@@ -1931,3 +1931,12 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
 - **Restplan:** Schritt 1 (Filter „alle“ läuft noch), 2 (Tiefe 18: 731 von 814, Geraden aus 500
   Partien verwendet; nach Abschluss nachrechnen), 3, 4, 5 fertig; 6 offen (eingesperrte Figur);
   7 fertig; 8, 8b, 9, 10 offen.
+
+### Ergebnisse der Nacht, Teil 6 (24.10.2026, 5 Uhr): R51 Zeitklassen und Abzeichen (Teil F, erster Teil)
+
+- Uhrwahl nach Zeitklassen mit 60 + 0 und ohne „Ohne Uhr“ aus der Grundstellung, besiegte Bots
+  je Zeitklasse (speicher/besiegt.ts, Objekt statt Liste, alte Liste → Schnellschach), Stern und
+  Zähler je gewählter Zeitklasse, Bedenkzeit in der Partienliste. E2E-Namen der Uhren angepasst
+  („Blitz 5 + 3“, „Schnellschach 10 + 0“). AUFGABEN_AUTOR N775–N777; ENTSCHEIDUNGEN „R51“.
+- Offen in Teil F: Bot-Raten für Blitz und 60 Minuten, drei Einstellungssätze und drei Wertungen
+  je Bot (nach Restplan 8).

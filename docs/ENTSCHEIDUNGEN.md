@@ -4729,3 +4729,23 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Offen:** Neumessung und Verankerung der Bots mit diesem Modell (Restplan 8); Messung der
   Bot-Stärke (engine/botstaerke.messung.ts) rechnet die Anker vorerst ohne Phasen der Züge.
 
+## R51 Zeitklassen und Abzeichen (24.10.2026 nachts, Fable, Teil F erster Teil)
+
+- **Uhrwahl** (spiel/uhr.ts): Blitz 3 + 0, 3 + 2, 5 + 3; Schnellschach 10 + 0, 15 + 10; Klassisch
+  30 + 20, 60 + 0 (neu); Namen mit Zeitklasse („Blitz 3 + 2“). Kein Bullet (Autor, 23.10.2026).
+  „Ohne Uhr“ nur noch außerhalb der Grundstellung (Abbildung, aufgebaute Stellung; dort ohnehin
+  ungewertet); gespeicherte Vorliebe „ohne Uhr“ wird aus der Grundstellung zu 10 + 0
+  (ui/bildschirme/Spielen.tsx, wirksameUhr). Grund: Die Wertung gilt je Zeitklasse, eine Partie
+  ohne Uhr gehört zu keiner.
+- **Besiegte Bots je Zeitklasse** (speicher/besiegt.ts): `besiegt` ist jetzt ein Objekt
+  {blitz, rapid, classical}; eine alte einfache Liste zählt als Schnellschach (Partien ohne Uhr),
+  Siege werden aus den gespeicherten Partien ergänzt. Stern und Zähler in der Gegnerwahl gelten
+  für die Zeitklasse der gerade gewählten Bedenkzeit. Kein neues Speicherformat: Eine ältere App
+  liest das Objekt als leere Liste und baut die Sterne aus den Partien neu auf.
+- **Partienliste:** Bedenkzeit je Zeile („· 10 + 0“, alte Partien „· ohne Uhr“; eingelesene PGN
+  ohne Angabe).
+- **Offen aus R51/Teil F:** eigene Raten der Bots für Blitz und 60 Minuten, drei Einstellungssätze
+  und drei Wertungen je Bot (nach der Neumessung mit dem Wahlmodell, Restplan 8); „besiegt“
+  je Zeitklasse könnte später drei Abzeichen am Porträt zeigen statt des Sterns der gewählten
+  Zeitklasse (Entwurf offen).
+

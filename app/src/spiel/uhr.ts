@@ -34,19 +34,30 @@ const SEKUNDE_MS = 1000;
 export const UHR_PARTIETAG: Uhreinstellung = { grundzeitMs: 10 * MINUTE_MS, zuschlagMs: 0 };
 
 /**
- * Auswahl im Spielen-Bildschirm: ohne Uhr und übliche Bedenkzeiten für Einsteiger; seit 0.2.91
- * auch 10 + 0 für den Partietag des 30-Minuten-Plans, seit 0.2.117 Blitz mit 3 + 2 und 3 + 0
- * (Wunsch des Autors vom 21.10.2026, zum Notmodus der Bots, spiel/notmodus.ts).
+ * Auswahl im Spielen-Bildschirm nach Zeitklassen wie bei Lichess (R51, Wunsch des Autors,
+ * 23.10.2026): Blitz 3 + 0, 3 + 2, 5 + 3; Schnellschach 10 + 0 (Partietag des 30-Minuten-Plans,
+ * seit 0.2.91) und 15 + 10; Klassisch 30 + 20 und 60 + 0. Kein Bullet (Autor, 23.10.2026).
+ * „Ohne Uhr“ gibt es seit 0.2.121 nur noch für ungewertete Partien aus einer Abbildung oder
+ * aufgebauten Stellung (ui/bildschirme/Spielen.tsx), weil die Wertung je Zeitklasse gilt.
  */
-export const UHR_VORGABEN: readonly (Uhreinstellung | null)[] = [
-  null,
-  { grundzeitMs: 30 * MINUTE_MS, zuschlagMs: 20 * SEKUNDE_MS },
-  { grundzeitMs: 15 * MINUTE_MS, zuschlagMs: 10 * SEKUNDE_MS },
-  UHR_PARTIETAG,
-  { grundzeitMs: 5 * MINUTE_MS, zuschlagMs: 3 * SEKUNDE_MS },
-  { grundzeitMs: 3 * MINUTE_MS, zuschlagMs: 2 * SEKUNDE_MS },
+export const UHR_VORGABEN: readonly Uhreinstellung[] = [
   { grundzeitMs: 3 * MINUTE_MS, zuschlagMs: 0 },
+  { grundzeitMs: 3 * MINUTE_MS, zuschlagMs: 2 * SEKUNDE_MS },
+  { grundzeitMs: 5 * MINUTE_MS, zuschlagMs: 3 * SEKUNDE_MS },
+  UHR_PARTIETAG,
+  { grundzeitMs: 15 * MINUTE_MS, zuschlagMs: 10 * SEKUNDE_MS },
+  { grundzeitMs: 30 * MINUTE_MS, zuschlagMs: 20 * SEKUNDE_MS },
+  { grundzeitMs: 60 * MINUTE_MS, zuschlagMs: 0 },
 ];
+
+/** Die Uhr, wenn keine gewählt ist (Partien aus der Grundstellung haben seit 0.2.121 immer eine). */
+export const UHR_STANDARD: Uhreinstellung = UHR_PARTIETAG;
+
+/** Gleiche Uhr? Beide null gilt als gleich. */
+export function gleicheUhr(a: Uhreinstellung | null, b: Uhreinstellung | null): boolean {
+  if (!a || !b) return a === b;
+  return a.grundzeitMs === b.grundzeitMs && a.zuschlagMs === b.zuschlagMs;
+}
 
 /** Neue, stehende Uhr mit voller Bedenkzeit für beide Seiten. */
 export function neueUhr(einstellung: Uhreinstellung): Uhrstand {

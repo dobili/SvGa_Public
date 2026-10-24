@@ -23,6 +23,7 @@ import { datumText, t } from "../../i18n/sprache";
 import type { Seitenbilanz } from "../../spiel/genauigkeit";
 import { gegnername } from "../../engine/gegner";
 import type { Partie } from "../../spiel/partie";
+import type { Uhreinstellung } from "../../spiel/uhr";
 import { staerkeDerPartie } from "../../spiel/wertung";
 import {
   OHNE_FILTER,
@@ -73,6 +74,18 @@ function zeile(partie: Partie): string {
   // Einzahl: „1 Zug“ statt „1 Züge“ (Befund beim Vorprüfen von N479, 19.10.2026).
   const schluessel = zuege === 1 ? "spielen.partiezeileEinZug" : "spielen.partiezeile";
   return t(schluessel, { datum, stufe: gegner, zuege });
+}
+
+const MINUTE_MS = 60_000;
+const SEKUNDE_MS = 1000;
+
+/** Die Bedenkzeit der Partie (R51, 0.2.121): „10 + 0“ oder „ohne Uhr“. */
+function uhrtext(uhr: Uhreinstellung | null): string {
+  if (!uhr) return t("spielen.uhr.ohneKurz");
+  return t("spielen.uhr.zeit", {
+    minuten: uhr.grundzeitMs / MINUTE_MS,
+    sekunden: uhr.zuschlagMs / SEKUNDE_MS,
+  });
 }
 
 /** Ein König im gewählten Figurensatz: die Farbe, die der Leser gespielt hat; beide bei Mensch gegen Mensch. */
@@ -228,6 +241,7 @@ function Partiezeile({ eintrag }: { eintrag: Partieeintrag }) {
           </strong>
           <span>
             {zeile(partie)}
+            {!partie.einstellung.importiert && ` · ${uhrtext(partie.einstellung.uhr)}`}
             {staerke && ` · ${staerke}`}
           </span>
         </span>

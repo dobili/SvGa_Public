@@ -30,7 +30,7 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   await expect(page.getByRole("heading", { name: "Spielen" })).toBeVisible();
-  await page.getByRole("radio", { name: "5 + 3" }).click();
+  await page.getByRole("radio", { name: "Blitz 5 + 3" }).click();
   // Gewertete Partien haben keine Rücknahme (S9); ungewertet ist sie da.
   await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
@@ -57,7 +57,7 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
 test("Neuladen mitten im Nachdenken: die Bedenkzeit bleibt verbraucht (N180)", async ({ page }) => {
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("radio", { name: "5 + 3" }).click();
+  await page.getByRole("radio", { name: "Blitz 5 + 3" }).click();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await ziehe(page, /^e2, Bauer/, "e4");
   await warteAufLeser(page);

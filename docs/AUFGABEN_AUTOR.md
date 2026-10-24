@@ -436,6 +436,17 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       ohne Neuauswertung (dieselben Engine-Werte, neue Rechnung). Liegt sie nahe bei der alten
       Zahl (eine gewisse Verschiebung ist richtig: die alte Mitte aus chess.com und Lichess lag
       unter der Lichess-Zahl)?
+- [ ] N775. **Bedenkzeit nach Zeitklassen (R51):** Spielen › Bedenkzeit zeigt „Blitz 3 + 0,
+      3 + 2, 5 + 3 · Schnellschach 10 + 0, 15 + 10 · Klassisch 30 + 20, 60 + 0“; „Ohne Uhr“ gibt
+      es nur noch, wenn du aus einer Abbildung oder aufgebauten Stellung spielst (ungewertet).
+      Kein Bullet. Hattest du „Ohne Uhr“ gespeichert, startet die nächste Partie aus der
+      Grundstellung mit 10 + 0.
+- [ ] N776. **Stern je Zeitklasse (R51):** Besiege einen Bot gewertet mit Blitz-Uhr. Sein Stern
+      erscheint in der Gegnerwahl nur, solange eine Blitz-Bedenkzeit gewählt ist; mit 10 + 0
+      fehlt er (und der Zähler „★ 1/8“ an der Gruppe zählt ebenfalls je Zeitklasse). Alte Siege
+      ohne Uhr zählen als Schnellschach.
+- [ ] N777. **Bedenkzeit in der Partienliste (R51):** Jede Zeile zeigt hinter den Zügen die
+      Bedenkzeit („… · 10 + 0 · du etwa 1400“), alte Partien „ohne Uhr“.
 
 ---
 

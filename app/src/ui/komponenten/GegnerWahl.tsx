@@ -38,6 +38,7 @@ import { Auswahl } from "./Auswahl";
 import type { Gegnerkategorie } from "./gegnerkategorie";
 import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
+import { wertungstempo, type Wertungstempo } from "../../spiel/elomodell";
 import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { MitInfo } from "./InfoKnopf";
 import { staerketext } from "./staerkeangabe";
@@ -117,7 +118,9 @@ function Sprechblase({
   const vorgefertigt = gegnerVon(bot);
   const eigener = eigene.find((g) => g.kennung === bot) ?? null;
   const name = vorgefertigt?.name ?? eigener?.name ?? t("spielen.bot.eigene");
-  const besiegt = useSpeicher((z) => (bot ? z.daten.spiel.besiegt.includes(bot) : false));
+  // Stern je Zeitklasse der gewählten Uhr (R51, 0.2.121).
+  const tempo = wertungstempo(uhr);
+  const besiegt = useSpeicher((z) => (bot ? z.daten.spiel.besiegt[tempo].includes(bot) : false));
   const text = vorgefertigt
     ? t(vorgefertigt.beschreibung)
     : eigener
@@ -157,12 +160,14 @@ function EigeneGitter({
   bot,
   eigene,
   beiBot,
+  tempo,
 }: {
   bot: string | null;
   eigene: readonly EigenerGegner[];
   beiBot: (bot: string | null) => void;
+  tempo: Wertungstempo;
 }) {
-  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
+  const besiegt = useSpeicher((z) => z.daten.spiel.besiegt[tempo]);
   if (eigene.length === 0) return null;
   return (
     <div role="radiogroup" aria-label={t("spielen.eigene.titel")} className="gegnergitter">
@@ -249,10 +254,12 @@ export function GegnerWahl({
             <Sprechblase bot={bot} eigene={eigene} stufen={stufen} uhr={uhr} />
           )}
           {kategorie === "stufe" && stufeninhalt}
-          {kategorie === "vorgefertigt" && <VorgefertigteGitter bot={bot} beiBot={beiBot} />}
+          {kategorie === "vorgefertigt" && (
+            <VorgefertigteGitter bot={bot} beiBot={beiBot} tempo={wertungstempo(uhr)} />
+          )}
           {kategorie === "eigene" && (
             <>
-              <EigeneGitter bot={bot} eigene={eigene} beiBot={beiBot} />
+              <EigeneGitter bot={bot} eigene={eigene} beiBot={beiBot} tempo={wertungstempo(uhr)} />
               {editor}
             </>
           )}

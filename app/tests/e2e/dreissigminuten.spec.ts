@@ -38,7 +38,10 @@ test("30-Minuten-Plan: Partietag mit Uhr, übersteht das Neuladen, danach ist de
   await expect(uhr).toContainText("Schritt 2 von 3");
   // Seit 0.2.91 stellt „Zum Spielen“ die Bedenkzeit des Partietags ein: 10 + 0 (Kapitel 12).
   await page.getByRole("button", { name: "Zum Spielen" }).click();
-  await expect(page.getByRole("radio", { name: "10 + 0" })).toHaveAttribute("aria-checked", "true");
+  await expect(page.getByRole("radio", { name: "Schnellschach 10 + 0" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
   // Die Einheit liegt im Gerätespeicher und läuft nach dem Neuladen weiter.
   await page.reload();
   await oeffnePlan(page);

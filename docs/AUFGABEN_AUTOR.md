@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 24.10.2026 abends, Version 0.2.126 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.127 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.126“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.127“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -584,7 +584,7 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Nach 5 Minuten nicht. Am Rechner nie (Fensterwechsel). Hinweis: iOS wirft eine
       Hintergrund-App manchmal ganz aus dem Speicher; dann startet sie neu und zeigt das normale
       Startbild (2,5 s).
-- [ ] N783. **Beta-Hinweis:** Einstellungen › Über die App zeigt „App-Version: 0.2.126 (Beta)“ und
+- [ ] N783. **Beta-Hinweis:** Einstellungen › Über die App zeigt „App-Version: 0.2.127 (Beta)“ und
       darunter den Satz, dass die App laufend erweitert wird und Daten erhalten bleiben; die
       Startseite der Website zeigt unter dem Untertitel denselben Hinweis.
 - [ ] N782. **Bots mit Stil und menschlichen Vorlieben:** Spiele gegen Tom (Draufgänger,

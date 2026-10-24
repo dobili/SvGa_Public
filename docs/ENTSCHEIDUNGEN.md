@@ -5223,3 +5223,15 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Vorgefertigte Bots** behalten ihren einen Stil mit 100 %.
 - **Nebenbei behoben:** `skripte/gruppen-bots.mjs` las Bot-Zahlen nur mit Anführungszeichen
   und sortierte deshalb viele Bots falsch ein; die Kalibrier-Chats hätten falsche Gruppen gemessen.
+
+## Prüfmessung Praxisbuch: Zahlen bleiben (25.10.2026 nachts, 0.2.127)
+
+- **Messung:** Derselbe Spieler mit Praxisbuch gegen sich ohne Buch, je 20 Partien
+  Schnellschach: 20 Bots (zwei je Gruppe, darunter Theoretiker und Hektiker) und die Stufen 1m bis
+  9m, zusammen 580 Partien (lokal `buch/arbeit/praxisbuch/pruefung/`,
+  `pruefung_auswerten.py`).
+- **Ergebnis:** Mit Buch im Mittel +10 ± 12 Elo (alle Partien zusammen 298 aus 580, +10 Elo);
+  einzelne Paarungen streuen zwischen −108 und +127, wie bei 20 Partien zu erwarten.
+- **Entscheidung (Regel aus dem Auftrag des Autors):** Unter 50 Elo mittlerer Verschiebung bleiben
+  alle gemessenen Zahlen der Bots, Stufen und Gruppen. Eine Neumessung ist nicht nötig. Die
+  Kalibrierung von Blitz und Klassisch misst ab 0.2.127 mit dem Buch.

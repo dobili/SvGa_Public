@@ -1657,15 +1657,14 @@ etwa“ chess.com und FIDE über veröffentlichte Umrechnungen.
 
 **Stand nach der Nacht zum 24.10.2026 (Fable), Zweig `menschliche-bots`, Version 0.2.121, noch
 nicht auf main:** fertig 1 (Filter „offen“ und „bis zur Entscheidung“; „alle“ abgebrochen), 2
-(Geraden aus 500 Partien; Lauf bei 765 von 814, danach nachrechnen), 3, 4, 5, 7, 8b, Teil E
+(Geraden aus 781 Partien), 3, 4, 5, 7, 8b, Teil E
 Kern (Wahlmodell in der App, Tagesform und Zeitnot als Temperatur), R51 (Teil F erster Teil).
 Offen: 6 (eingesperrte Figur), 8 (Bots je Kategorie neu, Neumessung mit vierfachen Kandidaten,
 Ergebnisleiter, Verankerung mit dem neuen Elo-Modell; vorher Gespräch mit dem Autor zum Bot-Satz),
 Rest von 9 (Bot-Raten Blitz und 60 min, drei Einstellungssätze und Wertungen je Bot), 10
 (nach main mit grüner CI, dann P1 informieren). Offene Punkte für den Autor: AUFGABEN_AUTOR
-N770–N778 und E1–E4. **Nächster Schritt:** Tiefe-18-Lauf abschließen und Elo-Modell nachrechnen
-(buch/arbeit/tiefe18/abgleich.py, appmodell/appmodell.py, appmodell/erzeugen.py → elomodell-daten.ts),
-dann Restplan 8 nach Rücksprache.
+N770–N778 und E1–E4. **Nächster Schritt:** Restplan 8 nach Rücksprache mit dem Autor (Bot-Satz je
+Kategorie), dann 9 (Rest) und 10.
 
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).
@@ -1977,3 +1976,11 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   (engine/zeitnot-daten.ts, menschenprofil.ts zeitnotTemperatur, menschenwahl.ts grundfaktor).
   ENTSCHEIDUNGEN „Zeitnot der Bots als Temperatur je Zeitklasse“. E2E „Alle Daten löschen“ wartet
   jetzt bis 15 s auf die Bestätigung (unter Last zweimal in der Nacht zu knapp).
+
+### Ergebnisse der Nacht, Teil 10 (24.10.2026, 8:30 Uhr): Tiefe-18-Abgleich abgeschlossen
+
+- 781 Partien im Abgleich (790 von 814 bewertet, der letzte Lauf lief noch aus): Geraden fast
+  unverändert (Verlust ×1,207, Genauigkeit −3,6 + 1,03·x, Fehlerrate 0,019 + 0,911·x, Patzer
+  0,017 + 1,197·x, Züge bis Entscheidung 0,43 + 0,895·x). Elo-Modell neu erzeugt (die Güte ist von
+  der linearen Umrechnung unabhängig; nur die Stützstellen in spiel/elomodell-daten.ts rückten
+  etwas). Restplan 2 damit fertig.

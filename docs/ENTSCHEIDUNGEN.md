@@ -4704,8 +4704,8 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Ein Modell für 1 bis 10 Partien (Kennzahlen gemittelt, Zahl der Partien als Kennzahl). Eichung
   an 77 000 Partien von 3 900 Spielern (Tiefe 12, schnelle Auswertung), die Kennzahlen vorher mit
   den Geraden des Tiefe-18-Abgleichs (500 Partien mit der Engine der App) auf die Tiefe 18 der App
-  umgerechnet (Verlust ×1,21, Fehlerrate 0,023 + 0,893·x, Patzer 0,017 + 1,21·x, Züge bis
-  Entscheidung ×0,91).
+  umgerechnet (Stand 781 Partien: Verlust ×1,207, Fehlerrate 0,019 + 0,911·x, Patzer
+  0,017 + 1,197·x, Züge bis Entscheidung 0,43 + 0,895·x).
 - **Warum additiv statt Gradient Boosting:** erklärbar, klein (etwa 25 KB), in TypeScript
   nachrechenbar; Gradient Boosting war nur 5 bis 15 % genauer (Schnellschach je Partie 275 statt
   284, über zehn Partien 131 statt 147 mittlere Abweichung).

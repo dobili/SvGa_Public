@@ -66,7 +66,9 @@ export function pruefeBericht(roh: unknown): Bericht | null {
   const sicher = punkte as Pruefpunkt[];
   if (new Set(sicher.map((p) => p.id)).size !== sicher.length) return null;
   const stand = istText(b["stand"], KURZTEXT) ? b["stand"] : null;
-  const lauf = istText(b["lauf"], KURZTEXT) ? b["lauf"] : null;
+  // Nur Links auf GitHub (Lauf in Actions); alles andere wird verworfen.
+  const lauf =
+    istText(b["lauf"], KURZTEXT) && b["lauf"].startsWith("https://github.com/") ? b["lauf"] : null;
   const zeit = istText(b["zeit"], KURZTEXT) ? b["zeit"] : new Date().toISOString();
   return { zeit, stand, lauf, punkte: sicher };
 }

@@ -50,7 +50,8 @@ export async function sendeMeldung(meldung: Meldung, mitGeraet: boolean): Promis
   const koerper = {
     ...meldung,
     text: meldung.text.slice(0, TEXT_ZEICHEN),
-    ...(mitGeraet ? geraeteangaben() : { version: APP_VERSION }),
+    // Ohne Häkchen nichts außer Art und Text (Datenschutzerklärung).
+    ...(mitGeraet ? geraeteangaben() : {}),
   };
   try {
     const antwort = await fetch(SCHNITTSTELLE, {

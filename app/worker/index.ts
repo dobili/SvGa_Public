@@ -18,6 +18,22 @@ import { fehler, type Ausfuehrung, type Umgebung } from "./umgebung";
 import { verwalte } from "./verwaltung";
 import { zugangVon } from "./zugang";
 
+const SEITE = "https://schach-von-grund-auf.com";
+/**
+ * Strenge Inhaltsregeln für das Dashboard: nur eigene Skripte, keine Einbettung, keine Formulare
+ * nach außen. Zusätzlicher Schutz, falls je ein Lesertext doch als HTML ankäme.
+ */
+const ADMIN_CSP = [
+  "default-src 'self'",
+  "script-src 'self'",
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data:",
+  "connect-src 'self'",
+  "frame-ancestors 'none'",
+  "base-uri 'none'",
+  "form-action 'none'",
+].join("; ");
+
 const GESPERRT_TEXT =
   "Kein Zugang. Das Dashboard ist nur über Cloudflare Access unter schach-von-grund-auf.com/admin/ erreichbar.";
 
@@ -39,6 +55,7 @@ async function adminseite(anfrage: Request, env: Umgebung): Promise<Response> {
   const antwort = new Response(datei.body, datei);
   antwort.headers.set("Cache-Control", "no-store");
   antwort.headers.set("X-Robots-Tag", "noindex");
+  antwort.headers.set("Content-Security-Policy", ADMIN_CSP);
   return antwort;
 }
 
@@ -58,6 +75,11 @@ async function beantworte(
     return anfrage.method === "POST" ? nimmBerichtAn(anfrage, env) : fehler(405, "methode");
   }
   if (pathname.startsWith("/api/admin")) {
+    // Ändernde Anfragen nur von der eigenen Seite (gegen untergeschobene Anfragen fremder Seiten).
+    const herkunft = anfrage.headers.get("Origin");
+    if (anfrage.method !== "GET" && herkunft !== null && herkunft !== SEITE) {
+      return fehler(403, "herkunft");
+    }
     return nurMitZugang(anfrage, env, (wer) => verwalte(anfrage, env, wer));
   }
   if (pathname === "/admin" || pathname.startsWith("/admin/")) {

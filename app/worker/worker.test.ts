@@ -101,8 +101,11 @@ describe("Prüfberichte", () => {
     const env = testumgebung({ BERICHT_SCHLUESSEL: SCHLUESSEL });
     expect((await sende(env, "falsch")).status).toBe(401);
     expect((await sende(env, SCHLUESSEL, { punkte: [] })).status).toBe(400);
-    expect((await sende(env, SCHLUESSEL)).status).toBe(200);
-    const zeile = await env.ADMIN_DB.prepare("SELECT rot, gelb FROM berichte").first();
+    expect((await sende(env, SCHLUESSEL, { ...bericht, lauf: "javascript:alert(1)" })).status).toBe(
+      200,
+    );
+    expect(await env.ADMIN_DB.prepare("SELECT lauf FROM berichte").first()).toEqual({ lauf: null });
+    const zeile = await env.ADMIN_DB.prepare("SELECT rot, gelb FROM berichte LIMIT 1").first();
     expect(zeile).toEqual({ rot: 1, gelb: 0 });
   });
 
@@ -220,6 +223,17 @@ describe("Zugang zum Dashboard", () => {
       meldungen: { notiz: string }[];
     };
     expect(liste.meldungen[0]?.notiz).toBe("in 0.2.125");
+    const fremd = await rufe(
+      env,
+      anfrage("/api/admin/meldungen/1", {
+        method: "POST",
+        headers: { ...kopf, Origin: "https://boese.example" },
+        body: JSON.stringify({ status: "neu" }),
+      }),
+    );
+    expect(fremd.status).toBe(403);
+    const seite = await rufe(env, anfrage("/admin/", { headers: kopf }));
+    expect(seite.headers.get("Content-Security-Policy")).toContain("script-src 'self'");
   });
 
   it("andere Pfade gehen unverändert an die Dateien", async () => {

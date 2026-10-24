@@ -163,9 +163,7 @@ def _abbildungsnummern_im_text(teile: list[dict]) -> list[str]:
     „12.2“ im Teil danach zusammen gelesen werden (kap12.json). Beispiel: „(Philidor), 9.8
     (Lucena)“ → ["9.8"]; „Abschnitt 12.2 und 12.5“ → [].
     """
-    text = "".join(
-        t.get("text", "") if t.get("art") == "text" else " «» " for t in teile
-    )
+    text = "".join(t.get("text", "") if t.get("art") == "text" else " «» " for t in teile)
     gefunden = []
     for treffer in _NUMMER.finditer(text):
         davor = text[max(0, treffer.start() - _RUECKBLICK) : treffer.start()]

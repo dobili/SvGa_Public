@@ -314,12 +314,9 @@ a.knopf-zweit {
   gap: var(--raster);
 }
 
-/* Schriftgröße in den Einstellungen: A−, Prozent, A+, Standard in einer Reihe. */
+/* Schriftgröße in den Einstellungen: A−, Prozent, A+, Standard in einer Reihe (chipreihe). */
 .schriftgroesse-reihe {
-  display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  gap: var(--raster);
 }
 
 .schriftgroesse-wert {

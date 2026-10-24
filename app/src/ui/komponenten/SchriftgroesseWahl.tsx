@@ -23,11 +23,15 @@ export function SchriftgroesseWahl() {
   const [prozent, setzeProzent] = useState(liesSchriftgroesse);
   const waehle = (neu: number) => setzeProzent(setzeSchriftgroesse(neu));
   return (
-    <div className="einstellung" data-testid="schriftgroesse">
+    <div className="einstellung-auswahl" data-testid="schriftgroesse">
       <p className="einstellung-name" id="schriftgroesse-name">
         {t("einstellungen.schriftgroesse")}
       </p>
-      <div className="schriftgroesse-reihe" role="group" aria-labelledby="schriftgroesse-name">
+      <div
+        className="chipreihe schriftgroesse-reihe"
+        role="group"
+        aria-labelledby="schriftgroesse-name"
+      >
         <button
           type="button"
           className="chip"

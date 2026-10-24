@@ -91,7 +91,8 @@
 
 .chip-leise[aria-pressed="true"] {
   background: var(--linie);
-  border-color: var(--linie-stark);
+  /* Rand wie alle Bedienelemente (DS45, 0.2.129; vorher --linie-stark mit 1,6 : 1). */
+  border-color: var(--rand-bedien);
   color: var(--text);
 }
 

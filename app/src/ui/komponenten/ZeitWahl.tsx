@@ -1,6 +1,6 @@
 /**
- * Bedenkzeit als Raster gleich großer Kacheln: groß die Zeit, klein darunter die Zeitklasse mit
- * Zeichen (seit 0.2.129, Vorschlag DS41, vom Autor am 25.10.2026 freigegeben).
+ * Bedenkzeit als Raster gleich großer Kacheln: groß die Zeit mit dem Zeichen der Zeitklasse,
+ * klein darunter ihr Name (seit 0.2.129, Vorschlag DS41, vom Autor am 25.10.2026 freigegeben).
  *
  * Rolle im Gesamtbild: Ersetzt auf dem Bildschirm Spielen die Chips unterschiedlicher Breite
  * („Schnellschach 15 + 10“ war doppelt so breit wie „Blitz 3 + 0“) auf drei Zeilen. Vier Kacheln je
@@ -72,11 +72,11 @@ export function ZeitWahl({
               className="zeitkachel"
               onClick={() => beiWahl(stelle)}
             >
-              <strong aria-hidden="true">{zeit}</strong>
-              <span aria-hidden="true">
+              <strong aria-hidden="true">
                 <Zeichen size={ZEICHENGROESSE} />
-                {klasse}
-              </span>
+                {zeit}
+              </strong>
+              <span aria-hidden="true">{klasse}</span>
             </button>
           );
         })}

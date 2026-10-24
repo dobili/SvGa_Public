@@ -28,16 +28,22 @@
 }
 
 .zeitkachel strong {
+  display: flex;
+  align-items: center;
+  gap: 3px;
   font-size: var(--groesse-mittel);
   white-space: nowrap;
 }
 
+/* „Schnellschach“ ist breiter als eine Kachel auf dem Handy: Trennung nach deutschen Regeln. */
 .zeitkachel span {
-  display: flex;
-  align-items: center;
-  gap: 3px;
+  max-width: 100%;
   color: var(--text-leise);
   font-size: var(--groesse-fein);
+  line-height: 1.15;
+  text-align: center;
+  hyphens: auto;
+  overflow-wrap: anywhere;
 }
 
 .zeitkachel[aria-checked="true"] {
@@ -108,16 +114,22 @@
   min-width: 0;
 }
 
-.startleiste-text strong,
-.startleiste-text span {
+.startleiste-text strong {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
+/* Farbe, Bedenkzeit und Wertung auf höchstens zwei Zeilen. */
 .startleiste-text span {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
   color: var(--text-leise);
-  font-size: var(--groesse-klein);
+  font-size: var(--groesse-fein);
+  line-height: 1.25;
 }
 
 .startleiste .beginnen .hinweis {

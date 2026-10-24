@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.128 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.129 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.128“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.129“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,54 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.129: Spielen neu geordnet (DS38 bis DS45; Opus, 25.10.2026)
+
+Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an den Stand 0.2.128
+(Spinnennetz mit Stil-Mischung, Rücknahme bei den Spielhilfen).
+
+- [ ] N900. **Eigene Stufe in Reitern (Spielen › Eigene Stufe):** Unter den drei Kacheln stehen
+      vier Reiter „Stärke | Stil | Fehler (18) | Flecken (0)“. Stärke: die drei Regler je Phase.
+      Stil: das Spinnennetz; die lange Erklärung steht jetzt hinter dem „?“ neben „Spielstil“,
+      die Auswahllisten sind im Dunkelmodus nicht mehr grau. Prüfen: Die Zahlen an „Fehler“ und
+      „Flecken“ ändern sich, wenn du dort etwas aus- oder einschaltest.
+- [ ] N901. **Reiter „Fehler“:** Oben die geschätzte Stärke und eine Marke „menschlich“ (grün),
+      „ungewöhnlich“ (gold) oder „kaum/nicht menschlich“ (rot). Darunter Vorlagen zum
+      Antippen: Wie Menschen, Solide, Leichtsinnig, Königsunsicher, Taktisch blind, Keine Fehler
+      (die letzte ist neu: alle Fehler aus, die Stufe spielt rein). Dann der Regler für die
+      Häufigkeit und die Fehlerarten in fünf Gruppen mit Zeichen (Material, Taktik, König,
+      Eröffnung und Bauern, Allgemein). Jede Fehlerart hat einen Schalter „aus | sehr selten |
+      selten | normal | oft | sehr oft“; Arten ohne Spielerdaten nur „aus | an“. Bei
+      eingeschalteten Gelegenheitsfehlern klappt „Verlust: unbegrenzt“ die Wahl „0,5 | 1 | 2 | 3
+      Bauern | unbegrenzt“ auf.
+- [ ] N902. **Unmenschliche Werte:** Nach dem Haken „Auch unmenschliche Werte anbieten“ kommen
+      gestreifte Felder „fast nie“, „kaum“, „extrem“, „ständig“ dazu; gewählt sind sie rot, und
+      die Marke oben wird „nicht menschlich“.
+- [ ] N903. **Reiter „Flecken“:** Elf Kacheln mit Zeichen (Läufer, Springer, Dame, Turm, Bauer,
+      Pfeile). Ein Tipp schaltet weiter: aus → selten → normal → oft → sehr oft → aus.
+      Eingeschaltete Kacheln haben einen goldenen Rand, ab „oft“ einen dicken.
+- [ ] N904. **Eigene Bots:** „Neuen Gegner anlegen“ öffnet ein Formular mit der Überschrift
+      „Neuer Gegner“ („Gegner bearbeiten“ beim Bearbeiten), darunter Name, Porträt und dieselben
+      vier Reiter wie bei der eigenen Stufe.
+- [ ] N905. **Feste Startleiste:** Unten über der Navigation klebt eine Leiste mit Bild und Name
+      des Gegners, darunter „mit Weiß · Schnellschach 10 + 0 · gewertet“, rechts „Partie
+      beginnen“. Sie bleibt beim Scrollen stehen und rutscht erst über der Liste der Partien an
+      ihren Platz. Ein Tipp auf den linken Teil springt zur Gegnerwahl. Bei laufender Partie
+      kommt die Rückfrage in der Leiste. Bei „Eigene Bots“ ohne gewählten Bot ist der Knopf grau.
+- [ ] N906. **Bedenkzeit als Kacheln:** vier gleich große Kacheln je Zeile, groß die Zeit
+      („3 + 2“), klein die Zeitklasse mit Zeichen (Blitz, Schnellschach, Klassisch). Aus einer
+      eigenen Stellung kommt „∞ ohne Uhr“ dazu.
+- [ ] N907. **Partie mit Uhr gegen einen Bot:** Über dem Brett steht der Gegner mit Porträt,
+      Namen und Stufenmarke statt „Engine“, unter dem Brett „Du“. Vor beiden ein Kreis in der
+      Farbe der Steine; wer am Zug ist, hat links einen goldenen Streifen.
+- [ ] N908. **Stufenmarken 9 und 10:** Stufe 9 ist jetzt schwarz mit goldenem Ring, Stufe 10
+      (Engine) ganz gold (zu sehen bei „Vorgefertigte Bots“ in den Stufen 9 und 10).
+- [ ] N909. **Einstellungen (Zahnrad):** Oben steht jetzt ein großer Titel „Einstellungen“ wie
+      auf den anderen Seiten; die Karte mit Brett, Figuren, Anzeige, Ton und Training heißt
+      „Darstellung und Training“. Das hebt deinen Wunsch von 0.2.30 auf (keine sichtbare
+      Überschrift); du hast DS44 freigegeben, Widerspruch genügt.
+- [ ] N910. **Kleinigkeiten:** Die gestrichelten Chips „frühere“ und „spätere“ in der
+      Werkzeugleiste einer Abbildung haben einen kräftigeren Rand.
 
 ### Neu in 0.2.124: Admin-Dashboard, Fehler melden, Lichess-Links (R57; Opus, 24.10.2026)
 

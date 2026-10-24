@@ -4987,3 +4987,21 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Schnellschach nie eine Zahl bekommen. Mit 400 erscheint sie ab etwa zehn Partien; Eröffnung (531)
   und Endspiel (911) bleiben im Schnellschach ohne Zahl, bis die Teilmodelle besser sind. Blitz
   bekommt keine Phasenzahl.
+
+## Schriftgröße in den Einstellungen (24.10.2026 nachmittags, Wunsch des Autors)
+
+- **Wunsch:** Die App folgt der Schriftgröße des Geräts; der Leser soll sie zusätzlich unabhängig
+  vom System in 10-%-Schritten größer oder kleiner stellen können.
+- **Umsetzung (0.2.125):** Einstellungen › Anzeige › „Schriftgröße“: Knöpfe „A−“ und „A+“, dazwischen
+  die Prozentzahl (80 bis 150 %), „Standard“ zurück auf 100 %. Merker auf dem Gerät
+  (`svga.schriftgroesse`, wie der Nachtmodus), angewendet als Variable `--schriftfaktor` am
+  Wurzelelement, die basis.css in die Grundschrift einrechnet (`html { font-size: calc(100% *
+  var(--schriftfaktor, 1)) }`); ein Skript in app/index.html setzt sie vor dem ersten Zeichnen.
+  Weil alle Schriftgrößen in rem stehen, skaliert der ganze Text mit.
+- **Symbole (Frage des Autors):** Symbole, die in Textzeilen stehen (Stufenmarken, Plaketten,
+  Ergebnismarken, Fortschrittskreise in symbole.css), skalieren mit: ihre festen Pixelbreiten sind
+  jetzt rem (Kommentar nennt die Pixel bei Standardschrift). Das Brett und die Figuren folgen der
+  Bildschirmbreite, nicht der Schrift; Tippflächen bleiben mindestens 44 px und wachsen mit dem
+  Inhalt. Weitere feste Pixelmaße (Abstände, Ränder, Vorschaubilder) bleiben, damit das Layout bei
+  150 % nicht auseinanderläuft; wo ein Symbol bei großer Schrift zu klein wirkt, wird es nachgezogen
+  (Rückmeldung des Autors).

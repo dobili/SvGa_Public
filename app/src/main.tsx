@@ -7,6 +7,7 @@
  */
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import { wendeSchriftgroesseAn } from "./app/schriftgroesse";
 import "@fontsource/source-sans-3/latin-400.css";
 import "@fontsource/source-sans-3/latin-400-italic.css";
 import "@fontsource/source-sans-3/latin-600.css";
@@ -45,6 +46,8 @@ const wurzel = document.getElementById("wurzel");
 if (!wurzel) {
   throw new Error("Element #wurzel fehlt in index.html");
 }
+// Schriftgröße des Geräts (Merker) vor dem ersten Zeichnen, falls das Skript in index.html fehlte.
+wendeSchriftgroesseAn();
 createRoot(wurzel).render(
   <StrictMode>
     <Fehlergrenze>

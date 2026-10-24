@@ -43,6 +43,7 @@ import { sprachname, t, verfuegbareSprachen, type Textschluessel } from "../../i
 import { useSprache, waehleSprache } from "../../app/sprachwahl";
 import { MERKER_WISCHEN } from "../brett/useZiehen";
 import { MERKER_ZUGANIMATION } from "../brett/useZuganimation";
+import { SchriftgroesseWahl } from "./SchriftgroesseWahl";
 import { MERKER_STARTANIMATION } from "./Startanimation";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
@@ -296,6 +297,7 @@ function AnzeigeBereich() {
   return (
     <>
       <NachtmodusWahl />
+      <SchriftgroesseWahl />
       <ErklaerungenWahl />
       <SprachWahl />
       <TourWahl />

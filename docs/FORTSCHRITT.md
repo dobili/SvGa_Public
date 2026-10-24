@@ -1751,6 +1751,10 @@ zehn Partien, Phasenkurve aus der Schätzung über die letzten zehn Partien stat
 Partie, beide Zahlen (Ergebnisse, Züge) nennen einander; Schwelle „schmal“ 400. Testpunkte N788–N791.
 Offen dazu: Gegnerzahl je Zeitklasse in der Wertung, sobald die drei Zahlen je Bot gemessen sind.
 
+**Schriftgröße in den Einstellungen (24.10.2026 nachmittags, Wunsch des Autors):** A−/A+ in
+10-%-Schritten (80 bis 150 %), Merker auf dem Gerät, `--schriftfaktor` am Wurzelelement, Symbole in
+symbole.css in rem. Testpunkt N792. Einzelheiten in ENTSCHEIDUNGEN „Schriftgröße“.
+
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).
 2. Tiefe 18: etwa 1000 Spielerpartien mit der Engine der App nachrechnen, Umrechnung der

@@ -628,6 +628,11 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Partien steht „–“ und der Satz „noch zu wenige Partien in dieser Zeitklasse für eine Zahl“.
       Ab etwa zehn Schnellschach-Partien erscheint eine Zahl mit Spanne und eine Kurve; Eröffnung
       und Endspiel bleiben im Schnellschach vorerst ohne Zahl (Spanne zu breit), das ist gewollt.
+- [ ] N792. **Schriftgröße (dein Wunsch vom 24.10.):** Einstellungen › Anzeige › Schriftgröße:
+      „A+“ vergrößert in 10-%-Schritten bis 150 %, „A−“ verkleinert bis 80 %, „Standard“ setzt auf
+      100 % zurück. Die Wahl gilt sofort, bleibt nach dem Neustart der App und wirkt auf Text,
+      Stufenmarken und Plaketten; das Brett bleibt so breit wie der Bildschirm. Bitte bei 150 %
+      Kapitelseite, Partie und Auswertung ansehen: Läuft irgendwo etwas aus dem Bild?
 
 ---
 

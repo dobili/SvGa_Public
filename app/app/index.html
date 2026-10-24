@@ -26,6 +26,14 @@
       } catch (fehler) {
         console.warn("Farbschema nicht lesbar:", fehler);
       }
+      // Schriftgröße vor dem ersten Zeichnen (src/app/schriftgroesse.ts, Merker „svga.schriftgroesse“).
+      try {
+        var schrift = Number(localStorage.getItem("svga.schriftgroesse"));
+        if (schrift >= 80 && schrift <= 150 && schrift !== 100)
+          document.documentElement.style.setProperty("--schriftfaktor", String(schrift / 100));
+      } catch (fehler) {
+        console.warn("Schriftgröße nicht lesbar:", fehler);
+      }
     </script>
     <style>
       .startproblem {

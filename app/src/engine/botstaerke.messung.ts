@@ -9,7 +9,9 @@
  * in `anker-bewertung` (skripte/eichung-rechnen.mjs --quellen stufen). Rechnung: Elo-Leiter aus
  * allen Ergebnissen (engine/eloleiter.ts); je Anker-Stufe die innere Genauigkeit jeder Seite, in
  * Blöcken zu zehn Partien durch dieselbe Rechnung wie „Deine Spielstärke“ (spiel/elomodell.ts,
- * seit 0.2.124 ohne Phasen der Züge, weil die Messung nur Bewertungen kennt; Neuverankerung folgt);
+ * seit 0.2.124 mit dem Elo-Modell je Zeitklasse, die Phasen der Züge aus den nachgespielten
+ * Partien); dazu die Kandidaten des neuen Bot-Satzes (engine/botkandidaten.ts) in
+ * botkandidaten-daten.ts;
  * eine gemeinsame Verschiebung legt die Leiter auf die Anker. Unsicherheit je Spieler durch
  * Nachziehen der Ergebnisse (Binomial, 200 Durchgänge). Ausgabe im Ordner: botstaerke-daten.ts
  * (kommt nach engine/), bericht.md.
@@ -34,7 +36,9 @@ import {
   type Partiekennzahlen,
 } from "../spiel/elomodell";
 import { leiter, verankere, type Anker, type Begegnung } from "./eloleiter";
+import { BOTKANDIDATEN } from "./botkandidaten";
 import { GEGNER } from "./gegnerliste";
+import { kandidatendatei, phasenAusZuegen } from "./botmessung-hilfen";
 
 const ORDNER = process.env.BOTELO_ORDNER ?? join(process.cwd(), "..", "buch", "arbeit", "botelo");
 const LEITER_ORDNER = /^(leiter-.*|bruecken|alt|neu-.*)$/;
@@ -212,15 +216,17 @@ function ankerGenauigkeiten(): Map<string, Partiekennzahlen[]> {
     for (const d of dateienIn(join(ORDNER, o))) {
       // Kürzel der Seite: „3“ oder eine freie Grundschicht wie „4x0.2“ (Eichung 0.2.117)
       const stufe = d.paarung.slice(0, trennstelle(d.paarung));
-      d.berichte.forEach((_, i) => {
+      d.berichte.forEach((b, i) => {
         const roh = bewertet.get(`${o}/${d.paarung}:${i}`);
         if (!roh || roh.length < 2 * MINDESTENS_ZUEGE) return;
         const werte = werteAusEngine(roh);
+        const phasen = phasenAusZuegen(b.zuege ?? []);
         for (const seite of ["white", "black"] as const) {
           const zuege = zugwerteBisEntscheidung(werte, seite);
           if (zuege.length < MINDESTENS_ZUEGE) continue;
+          const erster = seite === "white" ? 0 : 1;
           const k = kennzahlenAus(
-            zuege.map((z) => ({ ...z, phase: null })),
+            zuege.map((z, j) => ({ ...z, phase: phasen[erster + 2 * j] ?? null })),
             genauigkeitAus(zuege, LICHESS_REGLER.polster),
           );
           if (k) je.set(stufe, [...(je.get(stufe) ?? []), k]);
@@ -338,7 +344,11 @@ function datendatei(werte: Map<string, number>): string {
 
 /** Spieler der Leiter, die weder Stufe noch Bot sind (freie Grundschichten der Eichung). */
 function weitere(werte: Map<string, number>): string[] {
-  const bekannt = new Set([...STUFEN.map((n) => `stufe${n}`), ...GEGNER.map((g) => g.kennung)]);
+  const bekannt = new Set([
+    ...STUFEN.map((n) => `stufe${n}`),
+    ...GEGNER.map((g) => g.kennung),
+    ...BOTKANDIDATEN.map((g) => g.kennung),
+  ]);
   return [...werte.keys()]
     .filter((k) => !bekannt.has(k))
     .sort((x, y) => (werte.get(x) ?? 0) - (werte.get(y) ?? 0));
@@ -373,6 +383,7 @@ function bericht(
     "|---|---|---|---|",
     ...STUFEN.map((n) => zeile(`stufe${n}`, `Stufe ${n}`)),
     ...GEGNER.map((g) => zeile(g.kennung, g.name)),
+    ...BOTKANDIDATEN.filter((g) => werte.has(g.kennung)).map((g) => zeile(g.kennung, g.kennung)),
     ...weitere(werte).map((k) => zeile(k, k.replace("stufe", "Grundschicht "))),
     "",
   ].join("\n");
@@ -388,6 +399,7 @@ describe("Elo-Zahl der Bots", () => {
     const verankert = verankere(leiter(alle), a);
     const streu = streuungen(alle, a);
     writeFileSync(join(ORDNER, "botstaerke-daten.ts"), datendatei(verankert.werte));
+    writeFileSync(join(ORDNER, "botkandidaten-daten.ts"), kandidatendatei(verankert.werte, streu));
     const text = bericht(verankert.werte, streu, alle, zeilen, verankert.abweichungen);
     writeFileSync(join(ORDNER, "bericht.md"), text);
     console.log(text);

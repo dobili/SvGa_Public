@@ -1760,6 +1760,9 @@ symbole.css in rem. Testpunkt N792. Einzelheiten in ENTSCHEIDUNGEN „Schriftgr�
 Sprechblase, Gratulation einmal je Gruppe, „Stärke unbekannt“ bis zum ersten Sieg und zur Messung.
 Testpunkte N793–N795. Offen: Messung der Gruppen nach dem endgültigen Bot-Satz
 (gruppenstaerke-daten.ts), Unterstützung „@gruppe-N“ im Messlauf.
+Beim endgültigen Bot-Satz (Wunsch des Autors, 24.10.2026 nachmittags): Jedes Porträt muss zum
+Geschlecht passen, das der Name vermittelt (Prüfung aller Bots, auch der Kandidaten, die neue Namen
+bekommen).
 
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).

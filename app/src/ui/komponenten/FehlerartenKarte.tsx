@@ -11,25 +11,24 @@
  * bei der nächsten neuen Partie (Spielen.tsx, `gegnerprofil`).
  * Seit 0.2.82 (Wunsch des Autors) daneben „Blinde Flecken der Engine“ für die eigene Stufe, wie
  * bei den eigenen Gegnern (GegnerEditor.tsx), gespeichert in den Spielvorlieben.
- * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, speicher/partien.ts, speicher/speicher.ts, InfoKnopf, i18n.
+ * Seit 0.2.126 bekommen beide Karten Wert und Änderung vom Spielbildschirm (EigeneStufe.tsx).
+ * Vorher schrieben sie selbst in den Speicher, und der Bildschirm überschrieb die Änderung beim
+ * Partiebeginn mit seiner älteren Kopie der Vorlieben; die Partie spielte dann mit dem alten Stand.
+ * Abhängigkeiten: engine/fehlerart.ts, engine/blindeFlecken.ts, InfoKnopf, i18n.
  */
 import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import { t } from "../../i18n/sprache";
-import { mitVorlieben } from "../../speicher/partien";
-import { aendere, useSpeicher } from "../../speicher/speicher";
 import { MitInfo } from "./InfoKnopf";
 
-/** Schreibt die Abhakliste in die Spielvorlieben. */
-function setzeErlaubte(erlaubt: readonly Fehlerart[]): void {
-  void aendere((d) => ({
-    ...d,
-    spiel: mitVorlieben(d.spiel, { ...d.spiel.vorlieben, erlaubteFehlerarten: erlaubt }),
-  }));
-}
-
-export function FehlerartenKarte() {
-  const erlaubt = useSpeicher((z) => z.daten.spiel.vorlieben.erlaubteFehlerarten);
+/** Die Abhakliste der eigenen Stufe; `setzeErlaubte` schreibt sie in die Vorlieben des Bildschirms. */
+export function FehlerartenKarte({
+  erlaubt,
+  setzeErlaubte,
+}: {
+  erlaubt: readonly Fehlerart[];
+  setzeErlaubte: (erlaubt: readonly Fehlerart[]) => void;
+}) {
   const schalte = (art: Fehlerart, an: boolean) =>
     setzeErlaubte(
       an
@@ -78,21 +77,18 @@ export function FehlerartenKarte() {
   );
 }
 
-/** Schreibt die blinden Flecken der eigenen Stufe in die Spielvorlieben. */
-function setzeFlecken(flecken: readonly BlinderFleck[]): void {
-  void aendere((d) => ({
-    ...d,
-    spiel: mitVorlieben(d.spiel, { ...d.spiel.vorlieben, blindeFlecken: flecken }),
-  }));
-}
-
 /**
  * Abschnitt „Blinde Flecken der Engine“ für die eigene Stufe: Zugarten, die die Engine oft nicht
  * sieht (engine/blindeFlecken.ts). Vorgabe keine; der Stand steht in der Überschrift.
  * Beispiel: „Rückzüge“ angehakt → die Engine übersieht oft, dass ein Rückzug der beste Zug ist.
  */
-export function BlindeFleckenKarte() {
-  const flecken = useSpeicher((z) => z.daten.spiel.vorlieben.blindeFlecken);
+export function BlindeFleckenKarte({
+  flecken,
+  setzeFlecken,
+}: {
+  flecken: readonly BlinderFleck[];
+  setzeFlecken: (flecken: readonly BlinderFleck[]) => void;
+}) {
   const schalte = (fleck: BlinderFleck, an: boolean) =>
     setzeFlecken(
       an

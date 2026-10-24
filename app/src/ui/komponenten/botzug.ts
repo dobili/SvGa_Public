@@ -1,5 +1,5 @@
 /**
- * Der Zug des Bots in der laufenden Partie: Profil, Stufe, Bedenkzeit, sichtbares Nachdenken,
+ * Der Zug des Bots in der laufenden Partie: Profil, Stufe, Bedenkzeit (seit 0.2.126 ohne sichtbares Warten),
  * Zug mit Uhr und Notmodus mit Vorzügen.
  *
  * Rolle im Gesamtbild: Aus ui/komponenten/usePartie.ts ausgelagert (0.2.117), als der Notmodus
@@ -18,12 +18,7 @@ import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { wahltempo } from "../../engine/wahlmodell";
 import { BUCHTREUE, REINES_PROFIL, type Gegnerprofil } from "../../engine/zugwahl";
-import {
-  botBedenkzeit,
-  eigeneRestzeit,
-  sichtbareWartezeit,
-  zieheBotMitUhr,
-} from "../../spiel/botzeit";
+import { botBedenkzeit, eigeneRestzeit, zieheBotMitUhr } from "../../spiel/botzeit";
 import { mitUhrverzug } from "../../spiel/ablauf";
 import { engineZugMitLage } from "../../spiel/enginezug";
 import {
@@ -85,8 +80,27 @@ function verlaufVon(partie: Partie): Verlauf {
  */
 function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
   const e = partie.einstellung;
+  if (e.bot === null && e.stilname !== undefined) {
+    // Seit 0.2.126 spielt die eigene Stufe wie ein eigener Bot (Wunsch des Autors): angehakte
+    // Fehlerarten wie Menschen, angehakte Flecken an, übrige aus; Stil und Regler wie dort.
+    return {
+      fleckenStandard: 0,
+      fleckGewicht: 1,
+      fehlerarten: e.fehlerarten ?? null,
+      stil: e.stil ?? 0,
+      stilname: e.stilname,
+      blindeFlecken: e.blindeFlecken ?? [],
+      gewichte: e.gewichte,
+      haeufigkeit: e.haeufigkeit,
+      hoechstverlust: e.hoechstverlust,
+      verlauf: verlaufVon(partie),
+      restMs: eigeneRestzeit(partie, jetztMs),
+      tempo: wahltempo(e.uhr),
+    };
+  }
   if (e.bot === null) {
-    // Ohne Bot spielt die Stufe rein (seit 0.2.117); nur abgehakte blinde Flecken kommen dazu
+    // Partien von vor 0.2.126 (ohne Stil): Die Stufe spielt rein wie damals; nur abgehakte
+    // blinde Flecken kommen dazu
     return {
       ...REINES_PROFIL,
       blindeFlecken: e.blindeFlecken ?? [],
@@ -109,7 +123,8 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     zufallszuege: bot?.zufallszuege,
     // Vorgefertigte Bots (0.2.125): Faktoren aus den Stufen ihrer Persönlichkeit und ihrer Wertung
     gewichte: e.gewichte ?? (bot ? faktorenAus(bot.persoenlichkeit, gegnerstaerke(e)) : undefined),
-    stilname: bot?.stilname,
+    // Eigene Gegner mit gewähltem Stil (0.2.126) wie vorgefertigte Bots
+    stilname: e.stilname ?? bot?.stilname,
     haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,
     hoechstverlust: e.hoechstverlust,
     restMs: eigeneRestzeit(partie, jetztMs),
@@ -147,13 +162,6 @@ async function gruppenZugMitLage(
     verlust: wahl.verlust,
   };
   return { zug, uci: wahl.uci, breite: wahl.breite };
-}
-
-/** Wartet, bis der Bot sichtbar nachgedacht hat (nur mit Uhr; die Rechenzeit zählt mit). */
-function sichtbarNachdenken(bedenk: number | null, rest: number | null, start: number) {
-  if (bedenk === null || rest === null) return Promise.resolve();
-  const warten = sichtbareWartezeit(bedenk, rest) - (Date.now() - start);
-  return new Promise<void>((fertig) => setTimeout(fertig, Math.max(0, warten)));
 }
 
 /** Ist die App sichtbar? Im Hintergrund bleibt die Uhr nach dem Zug stehen (sonst liefe die Zeit des Lesers). */
@@ -252,7 +260,6 @@ export async function normalerBotzug(
     Math.random,
   );
   const rest = eigeneRestzeit(vorher, start);
-  await sichtbarNachdenken(bedenk, rest, start);
   const jetzt = neueste(id);
   if (!laeuft() || !jetzt || aktuelleFen(jetzt) !== fen) return;
   const mitStufe = { ...ergebnis.zug, stufe: stufennummer };

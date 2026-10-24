@@ -1,6 +1,6 @@
 /** Tests der Uhr der Bots in der Partie: Abzug der simulierten Zeit, Zeitverlust, Wartezeit. */
 import { describe, expect, it } from "vitest";
-import { sichtbareWartezeit, zieheBotMitUhr, zuglage } from "./botzeit";
+import { zieheBotMitUhr, zuglage } from "./botzeit";
 import { leserzug, neuePartie, ziehe, type Partie, type Partiezug } from "./partie";
 import { druecke } from "./uhr";
 
@@ -61,18 +61,11 @@ describe("Uhr der Bots", () => {
     expect(nachher?.zuege).toHaveLength(vorher.zuege.length);
   });
 
-  it("Wiederschlag erkannt; sichtbare Wartezeit gedeckelt", () => {
+  it("Wiederschlag erkannt", () => {
     let p = partie();
     p = ziehe(p, enginezug("d5")) ?? p;
     p = ziehe(p, leserzug("exd5")) ?? p;
     expect(zuglage(p, "d8d5", 2)).toBe("wiederschlag");
     expect(zuglage(p, "g8f6", 1)).toBe("einzig");
-    const mitte = () => 0.5;
-    expect(sichtbareWartezeit(20_000, 120_000, mitte)).toBe(2_500);
-    expect(sichtbareWartezeit(20_000, 5_000, mitte)).toBe(600);
-    expect(sichtbareWartezeit(300, 120_000, mitte)).toBe(300);
-    // ±10 % Streuung
-    expect(sichtbareWartezeit(20_000, 120_000, () => 0)).toBeCloseTo(2_250);
-    expect(sichtbareWartezeit(20_000, 120_000, () => 1)).toBeCloseTo(2_750);
   });
 });

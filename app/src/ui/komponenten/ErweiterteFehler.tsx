@@ -1,24 +1,36 @@
 /**
- * Erweiterter Modus der eigenen Bots: Fehlerhäufigkeit insgesamt, Gewicht je Fehlerart und
- * blindem Fleck, Höchstverlust je Fehlerart (Wunsch des Autors vom 20.10.2026, seit 0.2.117).
+ * Erweiterter Modus der eigenen Bots: Fehlerhäufigkeit insgesamt, Stufe je Fehlerart und blindem
+ * Fleck auf den Quantilen der Menschen, Höchstverlust je Fehlerart (Wunsch des Autors vom
+ * 20.10.2026, seit 0.2.117; Regler auf Quantilen seit 0.2.126, Teil E).
  *
  * Rolle im Gesamtbild: Teil des Formulars in GegnerEditor.tsx, zugeklappt unter „Erweitert“. Die
- * Stufen bestimmen die Grundstärke (engine/stufen.ts); die Zusatzfehler kommen wie bei Menschen
- * dieser Stärke dazu (engine/menschenwahl.ts). Hier verschiebt der Leser die Zahlen: Gewicht 1
- * heißt so oft wie Menschen, 0 nie, 3 dreimal so oft. Nicht angehakte Fehlerarten bleiben aus (die
- * Regler sind dann gesperrt); blinde Flecken stehen angehakt auf 1, sonst auf 0 (seit 0.2.117). Der Höchstverlust begrenzt,
- * wie teuer ein Fehler der Art höchstens sein darf; ganz rechts steht „unbegrenzt“ (Vorgabe, wie
- * Menschen: billige Fehler öfter als teure), dann fehlt der Wert im Speicher.
- * Abhängigkeiten: engine/gegner.ts, engine/menschenprofil.ts, engine/blindeFlecken.ts,
- * speicher/menschenwerte.ts, i18n.
+ * Stufen je Phase bestimmen die Grundstärke (engine/stufen.ts); die Zusatzfehler kommen wie bei
+ * Menschen dieser Stärke dazu (engine/menschenwahl.ts). Hier verschiebt der Leser sie auf denselben
+ * Stufen wie die vorgefertigten Bots (engine/eigenstufen.ts): 0 wie der Median der Spieler, ±2 wie
+ * die 5 % auffälligsten oder unauffälligsten, ±3 und ±4 darüber hinaus („unmenschlich“). Oben
+ * steht, wie menschlich die ganze Kombination ist und wohin sie die Stärke schiebt. Nicht
+ * angehakte Fehlerarten und Flecken bleiben aus (die Regler sind dann gesperrt). Der Höchstverlust
+ * begrenzt, wie teuer ein Fehler der Art höchstens sein darf; ganz rechts steht „unbegrenzt“
+ * (Vorgabe, wie Menschen), dann fehlt der Wert im Speicher. Ältere Gegner mit freien Gewichten
+ * zeigen die nächste Stufe; erst ein bewegter Regler schreibt Stufen.
+ * Abhängigkeiten: engine/eigenstufen.ts, engine/botstaerke.ts, engine/menschenprofil.ts,
+ * engine/blindeFlecken.ts, speicher/menschenwerte.ts, i18n.
  */
 import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
+import { staerkeGeschaetzt } from "../../engine/botstaerke";
+import {
+  menschlichkeit,
+  naechsteStufe,
+  REGLERARTEN,
+  staerkerichtung,
+  type Reglerstufen,
+} from "../../engine/eigenstufen";
 import type { Fehlerart } from "../../engine/fehlerart";
 import type { EigenerGegner } from "../../engine/gegner";
 import { GELEGENHEITSARTEN } from "../../engine/menschenprofil";
-import { t } from "../../i18n/sprache";
+import { STUFE_MAX, STUFE_MIN } from "../../engine/spielerbereiche";
+import { t, type Textschluessel } from "../../i18n/sprache";
 import {
-  GEWICHT_HOECHSTENS,
   HAEUFIGKEIT_HOECHSTENS,
   HOECHSTVERLUST_HOECHSTENS,
   HOECHSTVERLUST_MINDESTENS,
@@ -27,11 +39,20 @@ import {
 const SCHRITT = 0.1;
 const SCHRITT_VERLUST = 0.5;
 const PROZENT = 100;
+/** Ab diesem Anteil zeigt die Anzeige ganze Prozent, darunter eine Nachkommastelle. */
+const GANZE_PROZENT_AB = 0.01;
 /** Reglerstellung rechts vom größten Höchstverlust: unbegrenzt. */
 const UNBEGRENZT = HOECHSTVERLUST_HOECHSTENS + SCHRITT_VERLUST;
 
+type Reglerart = Fehlerart | BlinderFleck;
+
 function prozent(wert: number): string {
   return `${Math.round(wert * PROZENT)} %`;
+}
+
+/** Text einer Stufe −4 bis 4 („wie der Median“, „wie die auffälligsten 5 %“ …). */
+function stufentext(stufe: number): string {
+  return t(`spielen.eigene.quantil.${stufe}` as Textschluessel);
 }
 
 /** Ein Regler mit Beschriftung und Wert. */
@@ -75,6 +96,52 @@ function Regler({
   );
 }
 
+/** Ist die Art oder der Fleck angehakt (sonst macht der Gegner ihn nie)? */
+function istAn(g: EigenerGegner, art: Reglerart): boolean {
+  return (
+    (g.fehlerarten as readonly string[]).includes(art) ||
+    (g.blindeFlecken as readonly string[]).includes(art)
+  );
+}
+
+/**
+ * Die Stufen aller angehakten Arten: gespeichert, sonst aus einem alten Gewicht übersetzt, sonst 0.
+ * Beispiel: alter Gegner mit Gewicht 3 für Bauernraub → Stufe etwa 3.
+ */
+function aktuelleStufen(g: EigenerGegner): Reglerstufen {
+  const wertung = staerkeGeschaetzt(g);
+  const aus: Partial<Record<Reglerart, number>> = {};
+  for (const art of REGLERARTEN) {
+    if (!istAn(g, art)) continue;
+    const gewicht = g.gewichte?.[art];
+    aus[art] =
+      g.reglerstufen?.[art] ?? (gewicht === undefined ? 0 : naechsteStufe(art, gewicht, wertung));
+  }
+  return aus;
+}
+
+/** „Menschlich: Etwa 12 % der Spieler …“ und die Richtung der Stärke. */
+function Menschlichkeitsanzeige({ g }: { g: EigenerGegner }) {
+  const stufen = aktuelleStufen(g);
+  const m = menschlichkeit(stufen);
+  const anteil =
+    m.anteil >= GANZE_PROZENT_AB
+      ? prozent(m.anteil)
+      : `${(m.anteil * PROZENT).toFixed(1).replace(".", ",")} %`;
+  const richtung = staerkerichtung(stufen, staerkeGeschaetzt(g));
+  return (
+    <div className="menschlichkeit" data-testid="menschlichkeit" data-urteil={m.urteil}>
+      <p>
+        <strong>{t(`spielen.eigene.menschlich.${m.urteil}`)}</strong>{" "}
+        {m.urteil === "unmenschlich"
+          ? t("spielen.eigene.menschlich.unmenschlichText", { anzahl: String(m.unmenschlich) })
+          : t("spielen.eigene.menschlich.anteil", { anteil })}
+      </p>
+      <p className="hinweis">{t(`spielen.eigene.richtung.${richtung}`)}</p>
+    </div>
+  );
+}
+
 /** Die Regler des erweiterten Modus für einen eigenen Gegner. */
 export function ErweiterteFehler({
   g,
@@ -83,25 +150,31 @@ export function ErweiterteFehler({
   g: EigenerGegner;
   setze: (neu: EigenerGegner) => void;
 }) {
-  const gewicht = (art: Fehlerart | BlinderFleck) =>
-    g.gewichte?.[art] ?? (g.blindeFlecken.includes(art as BlinderFleck) ? 1 : 0);
-  const mitGewicht = (art: Fehlerart | BlinderFleck, wert: number) =>
-    setze({ ...g, gewichte: { ...g.gewichte, [art]: wert } });
-  const verlust = (art: (typeof GELEGENHEITSARTEN)[number]) =>
-    g.hoechstverlust?.[art] ?? UNBEGRENZT;
-  const mitVerlust = (art: (typeof GELEGENHEITSARTEN)[number], wert: number) => {
-    const uebrige = Object.entries(g.hoechstverlust ?? {}).filter(([a]) => a !== art);
-    const neu = wert >= UNBEGRENZT ? uebrige : [...uebrige, [art, wert] as const];
-    setze({ ...g, hoechstverlust: Object.fromEntries(neu) });
+  const stufen = aktuelleStufen(g);
+  const mitStufe = (art: Reglerart, wert: number) => {
+    // Ab dem ersten bewegten Regler gelten Stufen; alte freie Gewichte fallen weg.
+    const neu: EigenerGegner = { ...g, reglerstufen: { ...stufen, [art]: wert } };
+    delete (neu as { gewichte?: unknown }).gewichte;
+    setze(neu);
   };
-  const verlustText = (wert: number) =>
-    wert >= UNBEGRENZT
-      ? t("spielen.eigene.unbegrenzt")
-      : t("spielen.eigene.bauern", { wert: wert.toFixed(1).replace(".", ",") });
+  const stufenregler = (art: Reglerart, name: string) => (
+    <Regler
+      id={`stufe-${art}`}
+      name={name}
+      wert={istAn(g, art) ? (stufen[art] ?? 0) : 0}
+      von={STUFE_MIN}
+      bis={STUFE_MAX}
+      schritt={1}
+      text={istAn(g, art) ? stufentext(stufen[art] ?? 0) : t("spielen.eigene.aus")}
+      gesperrt={!istAn(g, art)}
+      beiWahl={(wert) => mitStufe(art, wert)}
+    />
+  );
   return (
     <details className="erweitert" data-testid="erweiterte-fehler">
       <summary className="einstellung-name">{t("spielen.eigene.erweitert")}</summary>
       <p className="hinweis">{t("spielen.eigene.erweitertHinweis")}</p>
+      <Menschlichkeitsanzeige g={g} />
       <Regler
         id="gegner-haeufigkeit"
         name={t("spielen.eigene.haeufigkeit")}
@@ -112,49 +185,51 @@ export function ErweiterteFehler({
         text={prozent(g.haeufigkeit ?? 1)}
         beiWahl={(haeufigkeit) => setze({ ...g, haeufigkeit })}
       />
-      {GELEGENHEITSARTEN.map((art) => {
-        const aus = !g.fehlerarten.includes(art);
-        return (
-          <fieldset key={art} className="erweitert-art">
-            <legend>{t(`fehlerart.${art}`)}</legend>
-            <Regler
-              id={`gewicht-${art}`}
-              name={t("spielen.eigene.gewicht")}
-              wert={aus ? 0 : gewicht(art)}
-              von={0}
-              bis={GEWICHT_HOECHSTENS}
-              schritt={SCHRITT}
-              text={aus ? t("spielen.eigene.aus") : prozent(gewicht(art))}
-              gesperrt={aus}
-              beiWahl={(wert) => mitGewicht(art, wert)}
-            />
-            <Regler
-              id={`verlust-${art}`}
-              name={t("spielen.eigene.hoechstverlust")}
-              wert={verlust(art)}
-              von={HOECHSTVERLUST_MINDESTENS}
-              bis={UNBEGRENZT}
-              schritt={SCHRITT_VERLUST}
-              text={verlustText(verlust(art))}
-              gesperrt={aus}
-              beiWahl={(wert) => mitVerlust(art, wert)}
-            />
-          </fieldset>
-        );
-      })}
+      {GELEGENHEITSARTEN.map((art) => (
+        <fieldset key={art} className="erweitert-art">
+          <legend>{t(`fehlerart.${art}`)}</legend>
+          {stufenregler(art, t("spielen.eigene.gewicht"))}
+          <Hoechstverlust g={g} art={art} setze={setze} />
+        </fieldset>
+      ))}
       {BLINDE_FLECKEN.map((fleck) => (
-        <Regler
-          key={fleck}
-          id={`gewicht-${fleck}`}
-          name={t(`blind.${fleck}`)}
-          wert={gewicht(fleck)}
-          von={0}
-          bis={GEWICHT_HOECHSTENS}
-          schritt={SCHRITT}
-          text={prozent(gewicht(fleck))}
-          beiWahl={(wert) => mitGewicht(fleck, wert)}
-        />
+        <div key={fleck}>{stufenregler(fleck, t(`blind.${fleck}`))}</div>
       ))}
     </details>
+  );
+}
+
+/** Der Regler des Höchstverlusts einer Fehlerart (ganz rechts „unbegrenzt“). */
+function Hoechstverlust({
+  g,
+  art,
+  setze,
+}: {
+  g: EigenerGegner;
+  art: (typeof GELEGENHEITSARTEN)[number];
+  setze: (neu: EigenerGegner) => void;
+}) {
+  const wert = g.hoechstverlust?.[art] ?? UNBEGRENZT;
+  const mitVerlust = (neuerWert: number) => {
+    const uebrige = Object.entries(g.hoechstverlust ?? {}).filter(([a]) => a !== art);
+    const neu = neuerWert >= UNBEGRENZT ? uebrige : [...uebrige, [art, neuerWert] as const];
+    setze({ ...g, hoechstverlust: Object.fromEntries(neu) });
+  };
+  const text =
+    wert >= UNBEGRENZT
+      ? t("spielen.eigene.unbegrenzt")
+      : t("spielen.eigene.bauern", { wert: wert.toFixed(1).replace(".", ",") });
+  return (
+    <Regler
+      id={`verlust-${art}`}
+      name={t("spielen.eigene.hoechstverlust")}
+      wert={wert}
+      von={HOECHSTVERLUST_MINDESTENS}
+      bis={UNBEGRENZT}
+      schritt={SCHRITT_VERLUST}
+      text={text}
+      gesperrt={!g.fehlerarten.includes(art)}
+      beiWahl={mitVerlust}
+    />
   );
 }

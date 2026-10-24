@@ -4,9 +4,11 @@
  * Rolle im Gesamtbild: Teil der Kategorie „Eigene Bots“ in der Gegnerwahl (seit 0.2.80; vorher
  * eine Karte unter der Gegnerwahl). Ein eigener Gegner
  * hat Name, Stufen je Phase (StufenWahl.tsx), erlaubte Fehlerarten (Haken; wirksam in Stufe 1
- * bis 4, ohne Haken nie ein absichtlicher Fehler) und einen Stil von sehr defensiv bis sehr
- * aggressiv (engine/stil.ts); seit 0.2.117 dazu der erweiterte Modus (ErweiterteFehler.tsx:
- * Fehlerhäufigkeit, Gewicht je Art, Höchstverlust). Gespeichert wird im Spielstand
+ * bis 4, ohne Haken nie ein absichtlicher Fehler) und einen Stil, seit 0.2.126 einen der sieben
+ * Stile der vorgefertigten Bots im Spinnennetz (Stilnetz.tsx, Teil E; vorher ein Regler von sehr
+ * defensiv bis sehr aggressiv, engine/stil.ts, der für ältere Gegner bis zum nächsten Speichern
+ * gilt); seit 0.2.117 dazu der erweiterte Modus (ErweiterteFehler.tsx: Fehlerhäufigkeit, Stufe je
+ * Art auf den Quantilen der Menschen, Höchstverlust). Gespeichert wird im Spielstand
  * (speicher/gegner.ts); gelöschte
  * Gegner bleiben in alten Partien mit ihrem Namen.
  * Abhängigkeiten: engine/gegner.ts, engine/fehlerart.ts, engine/stil.ts, speicher/, StufenWahl, i18n.
@@ -15,7 +17,8 @@ import { useState } from "react";
 import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import { neueGegnerkennung, type EigenerGegner } from "../../engine/gegner";
-import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../../engine/stil";
+import { STIL_NEUTRAL } from "../../engine/stil";
+import type { Stilname } from "../../engine/stile";
 import type { Stufennummer } from "../../engine/stufen";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import type { Phase } from "../../spiel/phasen";
@@ -25,6 +28,7 @@ import { aendere, useSpeicher } from "../../speicher/speicher";
 import { ErweiterteFehler } from "./ErweiterteFehler";
 import { GegnerBild } from "./GegnerBild";
 import { PortraetAuswahl } from "./PortraetAuswahl";
+import { Stilnetz } from "./Stilnetz";
 import { StufenWahl } from "./StufenWahl";
 import { Knopfsymbol } from "./Knopfsymbol";
 
@@ -36,6 +40,16 @@ const STILNAMEN: Readonly<Record<string, Textschluessel>> = {
   "2": "spielen.stil.sehrAggressiv",
 };
 
+/**
+ * Der Stil im Spinnennetz: der gewählte, sonst aus dem alten Regler (aggressiv → Angreifer,
+ * defensiv → Verteidiger, ausgeglichen → Universell). Gespeichert wird er erst beim Speichern.
+ */
+function stilDes(g: EigenerGegner): Stilname {
+  if (g.stilname) return g.stilname;
+  if (g.stil > STIL_NEUTRAL) return "angreifer";
+  return g.stil < STIL_NEUTRAL ? "verteidiger" : "universell";
+}
+
 /** Ein neuer Gegner mit Vorgaben: Stufe 3 überall, alle Fehlerarten, ausgeglichen. */
 function neuerGegner(): EigenerGegner {
   const STUFE: Stufennummer = 3;
@@ -45,14 +59,18 @@ function neuerGegner(): EigenerGegner {
     stufenJePhase: { eroeffnung: STUFE, mittelspiel: STUFE, endspiel: STUFE },
     fehlerarten: FEHLERARTEN,
     stil: STIL_NEUTRAL,
+    stilname: "universell",
     blindeFlecken: [],
   };
 }
 
-/** „3 · 4 · 3 · aggressiv“ */
+/** „3 · 4 · 3 · Angreifer“ (ältere Gegner ohne gewählten Stil: „3 · 4 · 3 · aggressiv“) */
 function kurzbeschreibung(g: EigenerGegner): string {
   const s = g.stufenJePhase;
-  return `${s.eroeffnung} · ${s.mittelspiel} · ${s.endspiel} · ${t(STILNAMEN[String(g.stil)] ?? "spielen.stil.ausgeglichen")}`;
+  const stil = g.stilname
+    ? t(`stil.${g.stilname}`)
+    : t(STILNAMEN[String(g.stil)] ?? "spielen.stil.ausgeglichen");
+  return `${s.eroeffnung} · ${s.mittelspiel} · ${s.endspiel} · ${stil}`;
 }
 
 /** Der Gegner ohne Porträt (Wahl „kein Bild“). */
@@ -111,22 +129,7 @@ function Formular({
           setze({ ...g, stufenJePhase })
         }
       />
-      <div className="stufenregler">
-        <label htmlFor="gegner-stil">
-          {t("spielen.stil")}:{" "}
-          <strong>{t(STILNAMEN[String(g.stil)] ?? "spielen.stil.ausgeglichen")}</strong>
-        </label>
-        <input
-          id="gegner-stil"
-          type="range"
-          min={STIL_MIN}
-          max={STIL_MAX}
-          step={1}
-          value={g.stil}
-          onChange={(e) => setze({ ...g, stil: Number(e.target.value) })}
-        />
-        <p className="hinweis">{t("spielen.stilHinweis")}</p>
-      </div>
+      <Stilnetz stil={stilDes(g)} beiWahl={(stilname) => setze({ ...g, stilname })} />
       <fieldset className="fehlerartenwahl">
         <legend className="einstellung-name">{t("spielen.eigene.fehlerarten")}</legend>
         <p className="hinweis">{t("spielen.eigene.fehlerartenHinweis")}</p>
@@ -161,7 +164,7 @@ function Formular({
           type="button"
           className="knopf-haupt"
           disabled={name.length === 0}
-          onClick={() => beiSpeichern({ ...g, name })}
+          onClick={() => beiSpeichern({ ...g, name, stilname: stilDes(g) })}
         >
           <Knopfsymbol art="speichern" />
           {t("spielen.eigene.speichern")}

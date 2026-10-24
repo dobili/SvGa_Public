@@ -70,3 +70,20 @@ describe("Fehlerarten aus dem Speicher (0.2.118)", () => {
     expect(fehlerartenAus(ohne)).toEqual(ohne);
   });
 });
+
+describe("Stil und Reglerstufen aus dem Speicher (Teil E, 0.2.126)", () => {
+  it("liest Stil und gültige Stufen, Unbekanntes fällt weg", () => {
+    const g = eigenerGegnerAus({
+      ...RAMBO,
+      stilname: "draufgaenger",
+      reglerstufen: { verfruehteDame: 3, bauernraub: 9, gibtEsNicht: 1, figurHaengen: -2 },
+    });
+    expect(g?.stilname).toBe("draufgaenger");
+    expect(g?.reglerstufen).toEqual({ verfruehteDame: 3, figurHaengen: -2 });
+  });
+  it("ältere Gegner ohne die Felder bleiben unverändert", () => {
+    const g = eigenerGegnerAus({ ...RAMBO, stilname: "gibtEsNicht" });
+    expect(g).not.toHaveProperty("stilname");
+    expect(g).not.toHaveProperty("reglerstufen");
+  });
+});

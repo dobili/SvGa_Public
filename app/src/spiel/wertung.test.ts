@@ -46,6 +46,8 @@ const EINSTELLUNG: Partieeinstellung = {
   eroeffnung: null,
   gegner: "engine",
   bot: null,
+  // Seit 0.2.126 trägt jede neue Partie gegen die eigene Stufe einen Stil (spielt mit Zusatzfehlern).
+  stilname: "universell",
   hilfen: { symbole: true, werkzeuge: true },
   gewertet: true,
 };

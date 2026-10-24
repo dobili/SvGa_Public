@@ -1,9 +1,9 @@
 /** Tests des Gruppenmodus (engine/gruppe.ts): Kennungen, Freischaltung, Stufen, Wertung. */
 import { describe, expect, it } from "vitest";
-import { staerkeAusStufen, staerkeDesBots } from "./botstaerke";
 import { gegnerDerStufe } from "./gegner";
 import {
   freieGruppen,
+  gemesseneGruppenstaerke,
   gruppeFrei,
   gruppenkennung,
   gruppenstaerkeSichtbar,
@@ -51,16 +51,17 @@ describe("Gruppenmodus", () => {
     }
   });
 
-  it("Wertung ohne Messung: stärkster Bot plus Zuschlag; Zahl erst nach dem ersten Sieg sichtbar", () => {
-    const staerkste = Math.max(
-      ...mitgliederDerGruppe(STUFE).map(
-        (g) => staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase),
-      ),
-    );
-    expect(gruppenwertung(STUFE)).toBeGreaterThan(staerkste);
+  it("Wertung aus der Messung (0.2.126); Zahl erst nach dem ersten Sieg sichtbar", () => {
+    const gemessen = gemesseneGruppenstaerke(STUFE);
+    expect(gemessen).not.toBeNull();
+    expect(gruppenwertung(STUFE)).toBe(gemessen);
     const besiegt: Besiegte = { ...KEINE_BESIEGTEN, rapid: [gruppenkennung(STUFE)] };
-    // Ohne gemessene Zahl bleibt sie auch nach dem Sieg unsichtbar („Stärke unbekannt“).
-    expect(gruppenstaerkeSichtbar(besiegt, STUFE)).toBe(false);
+    expect(gruppenstaerkeSichtbar(besiegt, STUFE)).toBe(true);
     expect(gruppenstaerkeSichtbar(KEINE_BESIEGTEN, STUFE)).toBe(false);
+  });
+  it("alle zehn Gruppen sind gemessen", () => {
+    for (const n of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const) {
+      expect(gemesseneGruppenstaerke(n), `Gruppe ${n}`).not.toBeNull();
+    }
   });
 });

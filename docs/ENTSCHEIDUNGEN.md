@@ -5103,3 +5103,93 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Familie (Entscheidung R12).
 - Website (Startseite, Trainingsseiten, Impressum, Datenschutz) bleibt deutsch; „English
   (preview)“ bleibt als Bezeichnung, bis der Autor das englische Buch festlegt (EN1).
+## Startbild aus dem Cover (24.10.2026 abends, Wunsch des Autors, R39)
+
+- **Bild:** `app/public/bilder/startspringer.webp` (840 × 840, etwa 270 KB), erzeugt von
+  `app/skripte/erzeuge-startbild.mjs` aus dem Cover in voller Auflösung (TIF des Autors, lokal als
+  PNG umgewandelt). Ausschnitt um den Springer, unten bis ins Brett, oben unter der Unterzeile des
+  Covers. Farbe, Schärfe und Abdunkeln zum Rand wie beim App-Symbol. Das Cover kommt nicht ins
+  Repository, nur das erzeugte Bild.
+- **Grund:** Das App-Symbol ist eng um den Springer geschnitten. Im Kreis der Startanimation stand
+  sein Sockel deshalb auf dem Rand. Die Startanimation (`ui/komponenten/Startanimation.tsx`) zeigt
+  seit 0.2.126 das neue Bild, es liegt im Offline-Speicher wie alle WebP-Dateien.
+
+## Eigene Gegner: Stil im Spinnennetz, Regler auf menschlichen Quantilen (24.10.2026 abends, Teil E, Oberfläche)
+
+- **Umgesetzt nach dem Plan vom 23.10.2026** („Zugwahl der Bots, Plan“, Oberfläche), auf Wunsch des
+  Autors vor der Kalibrierung, weil es nur eigene Gegner betrifft. Die vorgefertigten Bots spielen
+  unverändert, die laufenden Messungen bleiben gültig.
+- **Stil** (`ui/komponenten/Stilnetz.tsx`): Netz mit sechs Speichen über die drei Achsen
+  (Königsangriff: Angreifer gegen Positionsspieler, Aktivität: Taktiker gegen Verteidiger,
+  Bauernsturm gegen Vereinfachen: Draufgänger gegen Vereinfacher), Mitte „Universell“, dazu eine
+  Auswahlliste und ein Satz zum gewählten Stil. Der Stil wirkt wie bei den vorgefertigten Bots
+  (`engine/stile.ts`). Der alte Regler −2 bis 2 bleibt für ältere Gegner wirksam, bis sie
+  gespeichert werden; das Formular schlägt dann den passenden Stil vor (aggressiv → Angreifer,
+  defensiv → Verteidiger).
+- **Regler** (`engine/eigenstufen.ts`, `ui/komponenten/ErweiterteFehler.tsx`): je Fehlerart und
+  Fleck die Stufen −4 bis 4 wie bei den vorgefertigten Bots (`engine/spielerbereiche.ts`), daraus
+  beim Partiebeginn die Gewichte für die geschätzte Wertung des Gegners. Nur angehakte Arten und
+  Flecken wirken. Alte freie Gewichte werden in die nächste Stufe übersetzt, sobald der Leser einen
+  Regler bewegt.
+- **Menschlichkeitsanzeige:** Anteil der Spieler, die in allen Punkten mindestens so auffällig sind,
+  als Produkt der Anteile je Stufe (0: alle, ±1: die Hälfte, ±2: ein Zehntel), unter der
+  vereinfachenden Annahme unabhängiger Arten. Ab 5 % „menschlich“, ab 0,1 % „ungewöhnlich“, darunter
+  „kaum noch menschlich“, eine Stufe über ±2 „unmenschlich“.
+- **Geschätzte Stärke:** Die Zahl bleibt die Schätzung aus den Stufen je Phase. Dazu sagt ein Satz,
+  ob die Regler den Bot eher stärker oder schwächer machen (geometrisches Mittel der Faktoren ab
+  1,25 oder unter 0,8). Eine Zahl für die Verschiebung gäbe es erst mit einer Messung je
+  Kombination; eine erfundene Zahl wäre irreführend.
+- **Speicher:** zwei neue, freiwillige Felder `stilname` und `reglerstufen` am eigenen Gegner und
+  `stilname` an der Partie. Ältere Daten lesen sich unverändert, ein neues Speicherformat war nicht
+  nötig.
+
+## Gruppenmodus gemessen (24.10.2026 abends, 0.2.126)
+
+- **Messung:** je Gruppe 16 Partien gegen die eigene und die nächste menschlich spielende Stufe
+  (Nm), die Gruppen 8 bis 10 zusätzlich gegen die reinen Stufen 8, 9 und 10, Schnellschach mit der
+  Bedenkzeit der Bots. Ausgewertet in derselben gestreckten Leiter wie die Bots
+  (`engine/botstaerke.messung.ts`), lokal `buch/arbeit/botelo4/neu-gruppenmodus*/` und
+  `bericht-mit-gruppen.md`.
+- **Ergebnis** (Streuung ±90 bis ±140): Gruppe 1 346, 2 830, 3 1148, 4 1635, 5 1870, 6 2306, 7 2527,
+  8 2733, 9 2796, 10 2773. Die Gruppen 2 bis 8 sind 100 bis 450 Elo stärker als ihr bester Bot, Gruppe 9 etwa 90.
+  Gruppe 1 ist schwächer als ihr bester Bot (439), Gruppe 10 schwächer als ihre Bots (2871 bis
+  3232): Ganz unten heben sich die häufigen Fehler bei der Abstimmung nicht auf, ganz oben ziehen
+  die Bots mit Restfehlern die fast fehlerfreien herunter. Die Gruppen 8 bis 10 liegen innerhalb
+  der Messunsicherheit gleichauf.
+- **Bot-Zahlen bleiben:** Mit den Gruppenpartien in der Leiter verschieben sich die Bots um im
+  Mittel 20 und höchstens 58 Elo. Die veröffentlichten Bot-Zahlen bleiben die ohne Gruppen, weil
+  die Kalibrierung von Blitz und Klassisch auf ihnen aufbaut. Die Gruppenzahlen stammen aus dem
+  Lauf mit Gruppen.
+- **Mehrheitsregel bleibt** (Entscheidung des Autors). Ein Gewicht nach der Stärke der Mitglieder
+  würde die Gruppe 10 stärker machen, wäre aber eine neue Regel; das bleibt dem Autor überlassen.
+
+## Eigene Stufe mit den Einstellungen eigener Bots (24.10.2026 spätabends, Wunsch des Autors)
+
+- **Wunsch:** „Eigene Stufe“ bekommt dieselben Einstellungen wie „Eigene Bots“: Stil im
+  Spinnennetz, Fehlerarten, blinde Flecken, erweiterter Modus mit Reglern auf Quantilen,
+  Fehlerhäufigkeit, Höchstverlust und Menschlichkeitsanzeige (`ui/komponenten/EigeneStufe.tsx`,
+  gespeichert in den Spielvorlieben, freiwillige Felder).
+- **Befund dabei:** Seit 0.2.117 spielte die eigene Stufe rein (ohne menschliche Zusatzfehler,
+  `REINES_PROFIL`), seit 0.2.125 zeigte sie aber die Zahl der Stufe mit Zusatzfehlern („Nm“). Bei
+  Stufe 5 stand etwa 1700 da, gespielt wurde etwa 720 (reine Stufe, gemessen). Auch die Wertung
+  rechnete mit der falschen Zahl.
+- **Entscheidung:** Neue Partien gegen die eigene Stufe spielen wie ein eigener Bot, also mit den
+  angehakten Fehlerarten wie Menschen. Mit allen Haken ist das genau die gemessene Stufe „Nm“, die
+  Zahl stimmt. Ohne angehakte Fehlerart spielt sie rein, die Zahl ist die der reinen Stufe
+  (`engine/reinestufen-daten.ts`, aus derselben Messung). Das gilt auch für eigene Bots ohne
+  Fehlerart. Erkennbar sind neue Partien am Stil in der Partie; ältere, noch laufende Partien
+  spielen und zählen weiter wie begonnen.
+- **Zweiter Fehler:** Die Karten „Fehlerarten“ und „Blinde Flecken“ schrieben selbst in den
+  Speicher, der Spielbildschirm überschrieb das beim Partiebeginn mit seiner älteren Kopie. Jetzt
+  laufen alle Änderungen über die Vorlieben des Bildschirms und werden zugleich gespeichert.
+- **Messungen bleiben gültig:** Die vorgefertigten Bots und die Messstufen spielen unverändert.
+
+## Bots ziehen ohne sichtbare Wartezeit (24.10.2026 spätabends, Klarstellung des Autors)
+
+- **Wunsch:** „Die Uhr soll künstlich runterlaufen, aber die Ausführung des Zugs soll nicht
+  künstlich länger dauern.“ Seit 0.2.117 wartete der Bot mit Uhr sichtbar bis zu 2,5 Sekunden
+  (in Zeitnot 0,6 Sekunden, ±10 %), weil die Absprache vom 20.10.2026 so verstanden worden war.
+- **Seit 0.2.126:** Der Bot zieht, sobald die Engine fertig ist. Seine Uhr wird wie bisher mit der
+  simulierten menschlichen Bedenkzeit abgerechnet (`spiel/botzeit.ts`, zieheBotMitUhr), nicht mit
+  der echten Rechenzeit. Der Notmodus bleibt: Ein Vorzug kostet echt und auf der Uhr 100 ms.
+- **Messungen bleiben gültig:** Die Messläufe rechnen die Uhr ohnehin simuliert und warteten nie.

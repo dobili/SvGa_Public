@@ -25,8 +25,7 @@ import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
 import { Auswahl } from "../komponenten/Auswahl";
-import { BlindeFleckenKarte, FehlerartenKarte } from "../komponenten/FehlerartenKarte";
-import { StufenWahl } from "../komponenten/StufenWahl";
+import { EigeneStufe } from "../komponenten/EigeneStufe";
 import { BeginnenKnopf } from "../komponenten/BeginnenKnopf";
 import { GegnerWahl, HilfenWahl, WertungsWahl } from "../komponenten/GegnerWahl";
 import {
@@ -109,6 +108,7 @@ function Einstellungen({
         gegner={v.gegner}
         bot={v.bot}
         stufen={v.stufenJePhase}
+        erlaubte={v.erlaubteFehlerarten}
         uhr={uhr}
         eigene={eigene}
         kategorie={kategorie}
@@ -120,19 +120,8 @@ function Einstellungen({
           setzeKategorie(neu);
           waehleBot(botFuerKategorie(neu, v.bot, eigene, v.stufenJePhase.mittelspiel));
         }}
-        stufeninhalt={
-          <>
-            <StufenWahl
-              stufen={v.stufenJePhase}
-              beiWahl={(stufenJePhase) =>
-                mit({ stufenJePhase, stufe: stufenJePhase.mittelspiel, bot: null })
-              }
-            />
-            {/* Seit 0.2.80 hier statt in den Einstellungen (Wunsch des Autors). */}
-            <FehlerartenKarte />
-            <BlindeFleckenKarte />
-          </>
-        }
+        // Seit 0.2.126 dieselben Einstellungen wie bei eigenen Bots (Wunsch des Autors).
+        stufeninhalt={<EigeneStufe v={v} mit={mit} />}
         editor={<GegnerEditor />}
         einstellungen={
           <>

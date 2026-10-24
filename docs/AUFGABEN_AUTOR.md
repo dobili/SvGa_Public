@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 24.10.2026, Version 0.2.125 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 24.10.2026 abends, Version 0.2.126 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.125“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.126“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -590,7 +590,7 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Nach 5 Minuten nicht. Am Rechner nie (Fensterwechsel). Hinweis: iOS wirft eine
       Hintergrund-App manchmal ganz aus dem Speicher; dann startet sie neu und zeigt das normale
       Startbild (2,5 s).
-- [ ] N783. **Beta-Hinweis:** Einstellungen › Über die App zeigt „App-Version: 0.2.125 (Beta)“ und
+- [ ] N783. **Beta-Hinweis:** Einstellungen › Über die App zeigt „App-Version: 0.2.126 (Beta)“ und
       darunter den Satz, dass die App laufend erweitert wird und Daten erhalten bleiben; die
       Startseite der Website zeigt unter dem Untertitel denselben Hinweis.
 - [ ] N782. **Bots mit Stil und menschlichen Vorlieben:** Spiele gegen Tom (Draufgänger,
@@ -651,9 +651,13 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Los); sie sollte meist stärker spielen als ein einzelner Bot der Stufe, aber noch
       menschliche Fehler machen, wenn sich mehrere Bots darin einig sind. Die Partienliste zeigt
       dieselben Gesichter.
-- [ ] N795. **Gruppenmodus, Stärke:** Nach einem Sieg gegen die Gruppe bleibt vorerst „Stärke
-      unbekannt“ stehen, weil die Gruppen noch nicht gemessen sind (das folgt nach dem endgültigen
-      Bot-Satz). Die Wertung rechnet intern mit dem stärksten Bot der Stufe plus 150.
+- [ ] N795. **Gruppenmodus, Stärke:** Vor dem ersten Sieg gegen eine Gruppe steht „Stärke
+      unbekannt“. Nach dem ersten Sieg zeigt der Knopf die gemessene Zahl: Gruppe 1 etwa 350,
+      2 etwa 830, 3 etwa 1150, 4 etwa 1650, 5 etwa 1850, 6 etwa 2300, 7 etwa 2550, 8 bis 10 je etwa
+      2750 bis 2800. In den Stufen 2 bis 8 spielt die Gruppe 100 bis 450 Elo stärker als ihr bester
+      Bot, in Stufe 9 nur wenig. In den Stufen 1 und 10 ist sie schwächer: Ganz unten mitteln sich
+      die vielen Fehler nicht weg, ganz oben ziehen die Bots mit Restfehlern die nahezu
+      fehlerfreien bei der Abstimmung herunter.
 
 - [ ] N796. **Neuer Bot-Satz (24.10.):** Spielen › vorgefertigte Bots. Es gibt jetzt 78 Bots in zehn
       Gruppen (Gruppe 1 sechs, sonst acht), je Gruppe jeder Stil einmal. Neue Namen mit Zahl:
@@ -675,6 +679,45 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       abgesegnet (Regel 9); schreib mir nur, welche du anders willst („N797: Mats zu trocken“).
       Nenne mir auch, wenn du einen Bot tauschen willst: Zu jeder Gruppe und jedem Stil liegen
       drei bis sechs gemessene Alternativen bereit, der Tausch kostet nur Name und Satz.
+
+- [ ] N798. **Startbild (dein Wunsch vom 24.10.):** App schließen und neu öffnen. Im Kreis der
+      Startanimation steht jetzt ein eigener Ausschnitt des Covers: der goldene Springer mittig,
+      darunter das Brett mit seinem Schatten, kein Text vom Cover. Farbe und Abdunkeln zum Rand
+      wie vorher.
+- [ ] N799. **Stil eigener Gegner als Spinnennetz:** Spielen › Eigene Bots › Neuen Gegner anlegen.
+      Statt des Reglers „sehr defensiv bis sehr aggressiv“ steht ein Netz mit sechs Speichen
+      (Angreifer oben, gegenüber Positionsspieler; Taktiker gegenüber Verteidiger; Draufgänger
+      gegenüber Vereinfacher) und „Universell“ in der Mitte. Tippe eine Speiche an: Die goldene
+      Fläche zeigt dorthin, darunter steht, was der Stil tut, und die Auswahlliste zeigt
+      denselben Stil. Nach dem Speichern steht der Stil in der Zeile („3 · 3 · 3 · Angreifer“).
+      Ältere eigene Gegner zeigen beim Bearbeiten den passenden Stil (aggressiv → Angreifer,
+      defensiv → Verteidiger, ausgeglichen → Universell) und spielen bis zum Speichern wie bisher.
+- [ ] N800. **Regler auf menschlichen Quantilen:** Im selben Formular „Erweitert: Häufigkeiten
+      feinstellen“ aufklappen. Jeder Regler hat neun Stufen: in der Mitte „wie der Median der
+      Spieler“, an den Rändern des menschlichen Bereichs „so oft wie die 5 % auffälligsten
+      Spieler“ und „so selten wie die 5 % unauffälligsten“, außen „unmenschlich“. Darüber steht
+      ein Urteil mit Farbstreifen: „Menschlich“ (grün), „Ungewöhnlich“ (gold), „Kaum noch
+      menschlich“ oder „Unmenschlich“ (rot), mit dem geschätzten Anteil echter Spieler, die so
+      auffällig sind, und einem Satz, ob die Regler den Bot eher stärker oder schwächer machen.
+      Nicht angehakte Fehlerarten und Flecken sind gesperrt. Stell zwei Regler auf die
+      5-%-Stufe: Das Urteil wird „Ungewöhnlich“. Einen auf „sehr oft“: „Unmenschlich“.
+
+- [ ] N801. **Eigene Stufe mit denselben Einstellungen (dein Wunsch vom 24.10.):** Spielen › Eigene
+      Stufe. Unter den drei Stufenreglern stehen jetzt dasselbe Spinnennetz für den Stil, die
+      Fehlerarten, die blinden Flecken und „Erweitert: Häufigkeiten feinstellen“ mit
+      Menschlichkeitsanzeige wie bei einem eigenen Bot. Stelle 5 · 5 · 5 ein: Die Sprechblase zeigt
+      „etwa 1700“. Tippe in den Fehlerarten auf „Keine erlauben“: Sie zeigt „etwa 700“, denn ohne
+      menschliche Fehler spielt die Stufe nur ihre Grundschicht, und die ist viel schwächer (so
+      gemessen). Stil und Haken bleiben nach dem Neuladen erhalten.
+      Dazu zwei Fehler behoben: Bisher spielte die eigene Stufe ohne die menschlichen Fehler,
+      zeigte aber seit 0.2.125 die Zahl der Stufe mit diesen Fehlern (bei Stufe 5 also etwa 1700
+      statt etwa 700). Und Haken, die du änderst und gleich danach die Partie beginnst, gingen
+      verloren. Ältere, noch laufende Partien gegen die eigene Stufe spielen wie begonnen weiter.
+
+- [ ] N802. **Bots ziehen ohne künstliche Wartezeit (deine Klarstellung vom 24.10.):** Spiele eine
+      Partie mit Uhr, etwa gegen Leyla in 10 + 0. Der Bot zieht, sobald die Engine fertig ist (meist
+      deutlich unter einer Sekunde). Seine Uhr springt dabei um die menschliche Bedenkzeit weiter,
+      die oft mehrere Sekunden beträgt. Bisher wartete er sichtbar bis zu 2,5 Sekunden.
 
 ---
 

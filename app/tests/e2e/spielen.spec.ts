@@ -241,7 +241,7 @@ test("Stellung aufbauen (K e6, D a3 gegen K e8), zu zweit ohne Werkzeuge spielen
 });
 
 // 0.2.42: eigene Gegner anlegen, wählen, im Untertitel sehen, löschen.
-test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, spielen, löschen", async ({
+test("Eigener Gegner „Rambo“ (Angreifer, ohne „Figur hängen“): anlegen, spielen, löschen", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -252,11 +252,22 @@ test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, sp
   const karte = page.getByTestId("eigene-gegner");
   await karte.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
   await page.getByLabel("Name").fill("Rambo");
-  await page.getByLabel(/^Spielstil/).fill("2");
-  await expect(page.getByLabel(/^Spielstil/)).toHaveValue("2");
+  // Seit 0.2.126 (Teil E): Stil im Spinnennetz statt Regler, Regler auf menschlichen Quantilen.
+  const netz = page.getByTestId("stilnetz");
+  await netz.getByRole("radio", { name: "Angreifer" }).click();
+  await expect(netz.getByRole("radio", { name: "Angreifer" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  await expect(page.getByTestId("stilnetz-text")).toContainText("sucht Schach");
   await page.getByRole("checkbox", { name: "eine Figur hängen lassen (W1)" }).uncheck();
+  await page.getByTestId("erweiterte-fehler").locator("summary").click();
+  await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
+  await expect(page.locator("#stufe-figurHaengen")).toBeDisabled();
+  await page.locator("#stufe-verfruehteDame").fill("3");
+  await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "unmenschlich");
   await karte.getByRole("button", { name: "Gegner speichern" }).click();
-  await expect(karte).toContainText("Rambo · 3 · 3 · 3 · sehr aggressiv");
+  await expect(karte).toContainText("Rambo · 3 · 3 · 3 · Angreifer");
   await page.getByRole("radio", { name: "Rambo" }).click();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Rambo");
   await page.getByRole("button", { name: "Partie beginnen" }).click();
@@ -458,4 +469,40 @@ test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgew
   const eintrag = page.locator(".partienliste li.partieeintrag").first();
   await expect(eintrag).toContainText("Anna – Ben");
   await expect(eintrag.locator(".ergebnis-gewonnen")).toContainText("0–1");
+});
+
+// 0.2.126 (Wunsch des Autors): „Eigene Stufe“ hat dieselben Einstellungen wie „Eigene Bots“.
+test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl der reinen Stufe", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  const netz = page.getByTestId("stilnetz");
+  await netz.getByRole("radio", { name: "Taktiker" }).click();
+  await expect(netz.getByRole("radio", { name: "Taktiker" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  await page.getByTestId("erweiterte-fehler").locator("summary").click();
+  await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
+  await page.locator("#stufe-bauernraub").fill("4");
+  await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "unmenschlich");
+  const blase = page.getByTestId("gegner-sprechblase");
+  await page.getByLabel(/^Mittelspiel:/).fill("5");
+  await page.getByLabel(/^Eröffnung:/).fill("5");
+  await page.getByLabel(/^Endspiel:/).fill("5");
+  await expect(blase).toContainText("etwa 1700");
+  const karte = page.getByTestId("fehlerarten-abhakliste");
+  await karte.locator("summary").click();
+  await karte.getByRole("button", { name: "Keine erlauben" }).click();
+  // Ohne Fehlerart spielt die Stufe nur ihre Grundschicht: gemessen etwa 720.
+  await expect(blase).toContainText("etwa 700");
+  // Stil und Haken überstehen das Neuladen.
+  await page.reload();
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await expect(
+    page.getByTestId("stilnetz").getByRole("radio", { name: "Taktiker" }),
+  ).toHaveAttribute("aria-checked", "true");
+  await karte.locator("summary").click();
+  await expect(karte.getByRole("status")).toHaveText("0 von 18 Arten erlaubt");
 });

@@ -193,3 +193,88 @@
   flex-direction: column;
   gap: var(--raster);
 }
+
+/* ---------- Gruppenmodus (Wunsch des Autors, 24.10.2026) ---------- */
+/* Das Bild der Gruppe: alle Gesichter der Stufe übereinander, auch im offenen Aufklapper sichtbar. */
+.gruppenbild,
+.gegnerstufe[open] .gruppenbild {
+  visibility: visible;
+  flex-wrap: nowrap;
+}
+
+.gegnerbild > .gruppenbild {
+  justify-content: center;
+  padding: 2px 0;
+}
+
+/* Knopf unter dem Porträtgitter einer Stufe: Symbol, Text, Gesichter in einer Zeile. */
+.gruppenknopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  width: 100%;
+  min-height: var(--tippflaeche);
+  margin-top: var(--raster);
+  padding: var(--raster);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  text-align: left;
+}
+
+.gruppenknopf[aria-checked="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px var(--gold);
+}
+
+.gruppenknopf-text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.gruppenhinweis {
+  margin-top: var(--raster);
+}
+
+/* Gratulation über allem, Karte in der Mitte. */
+.gruppen-gratulation {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--raster);
+  background: rgb(22 37 61 / 0.6);
+}
+
+.gruppen-gratulation-karte {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--raster);
+  max-width: 24rem;
+  padding: calc(var(--raster) * 3);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  text-align: center;
+  animation: gruppen-gratulation-auf 0.5s ease-out both;
+}
+
+.gruppen-gratulation-symbol {
+  color: var(--gold-text);
+}
+
+@keyframes gruppen-gratulation-auf {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

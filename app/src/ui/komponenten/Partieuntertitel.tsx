@@ -10,6 +10,7 @@
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, spiel/partie.ts, speicher, GegnerBild.tsx, i18n.
  */
 import { durchschnitt, gegnername, gegnerVon as botVon, klasseVon } from "../../engine/gegner";
+import { gruppenstufe } from "../../engine/gruppe";
 import { stufe } from "../../engine/stufen";
 import { t, zahlText } from "../../i18n/sprache";
 import { EROEFFNUNG_BUCH, type Partie as PartieDaten } from "../../spiel/partie";
@@ -58,11 +59,15 @@ export function Untertitel({ partie }: { partie: PartieDaten }) {
     </p>
   );
   const eigener = eigene.find((g) => g.kennung === partie.einstellung.bot);
-  const beschreibung = vorgefertigt
-    ? t(vorgefertigt.beschreibung)
-    : eigener
-      ? t("spielen.bot.eigenerText")
-      : null;
+  const gruppe = gruppenstufe(partie.einstellung.bot);
+  const beschreibung =
+    gruppe !== null
+      ? t("gruppe.text", { nummer: String(gruppe) })
+      : vorgefertigt
+        ? t(vorgefertigt.beschreibung)
+        : eigener
+          ? t("spielen.bot.eigenerText")
+          : null;
   if (!bot || !beschreibung) return zeile;
   return (
     <div className="partie-gegnerzeile" data-testid="partie-gegnerzeile">

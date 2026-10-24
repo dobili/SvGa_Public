@@ -204,23 +204,70 @@ export async function menschlicheWahl(
   zufall: () => number,
 ): Promise<Zugwahl | null> {
   if (!hatZusatzfehler(werte)) return basiszug(bewerter, fen, stufe, kontext, zufall, null, []);
+  const pool = await kandidatenpool(bewerter, fen, aktiveArten(werte));
+  if (!pool.lage) return pool.bester ? engineZug(pool.bester) : null;
+  return wahlAusPool(pool, fen, werte, kontext, zufall);
+}
+
+/** Die Fehlerarten, die bei diesen Stellschrauben vorkommen dürfen (gezielte Suche danach). */
+export function aktiveArten(werte: Menschenwerte): Set<Fehlerart> {
+  return new Set(GELEGENHEITSARTEN.filter((a) => gewichtVon(werte, a) > 0));
+}
+
+/** Die gemeinsame Analyse einer Stellung: Lage, bester Zug und alle eingeordneten Kandidaten. */
+export interface Kandidatenpool {
+  readonly lage: Lage | null;
+  readonly bester: string | null;
+  readonly kandidaten: readonly Eingeordnet[];
+}
+
+/**
+ * Rechnet die Engine einmal für eine Stellung: die sechs besten Züge und die typischen
+ * Fehlerzüge der aktiven Arten, eingeordnet nach Fehlerart. Getrennt von der Wahl, damit im
+ * Gruppenmodus (engine/gruppenwahl.ts) mehrere Bots dieselbe Analyse nutzen.
+ * Beispiel: nach 1. e4 e5 2. Dh5 Sc6 3. Lc4 → Kandidaten g6, Sf6?? (drohungIgnoriert), Df6 …
+ * Sonderfall: ohne Lage oder ohne Variante ein Pool ohne Kandidaten.
+ */
+export async function kandidatenpool(
+  bewerter: Spielbewerter,
+  fen: string,
+  aktiv: ReadonlySet<Fehlerart>,
+): Promise<Kandidatenpool> {
   const lage = lageVon(fen);
   const b = await bewerter.bewerte(fen, FEHLERSUCHE_MS, KANDIDATEN, FEHLERSUCHE);
   const erste = b.varianten[0];
   const bester = erste?.zuege[0] ?? null;
-  if (!lage || !erste || !bester) return bester ? engineZug(bester) : null;
+  if (!lage || !erste || !bester) return { lage: null, bester, kandidaten: [] };
   const weiss = fen.split(" ")[1] !== "b";
   const bestwert = wertFuer(erste.wert, weiss);
   const kandidaten = kandidatenAus(b.varianten, bestwert, weiss);
-  const aktiv = new Set(GELEGENHEITSARTEN.filter((a) => gewichtVon(werte, a) > 0));
   const extra = zuPruefen(lage, aktiv, new Set(kandidaten.map((k) => k.uci)));
   const gezielt =
     extra.length > 0 ? await bewerter.bewerte(fen, FEHLERSUCHE_MS, 1, FEHLERSUCHE, extra) : null;
-  const pool = [
-    ...einordnen(lage, kandidaten, bester),
-    ...(gezielt ? einordnen(lage, kandidatenAus(gezielt.varianten, bestwert, weiss), bester) : []),
-  ];
-  // Seit 0.2.125 wählt das geeichte Wahlmodell unter allen Kandidaten (engine/wahlschritt.ts)
+  return {
+    lage,
+    bester,
+    kandidaten: [
+      ...einordnen(lage, kandidaten, bester),
+      ...(gezielt
+        ? einordnen(lage, kandidatenAus(gezielt.varianten, bestwert, weiss), bester)
+        : []),
+    ],
+  };
+}
+
+/**
+ * Die Wahl eines Bots aus dem Pool nach dem geeichten Wahlmodell (engine/wahlschritt.ts, seit
+ * 0.2.125). Sonderfall: ohne Lage der beste Zug der Engine.
+ */
+export function wahlAusPool(
+  pool: Kandidatenpool,
+  fen: string,
+  werte: Menschenwerte,
+  kontext: Wahlkontext,
+  zufall: () => number,
+): Zugwahl | null {
+  if (!pool.lage) return pool.bester ? engineZug(pool.bester) : null;
   const schritt: Wahlschritt = {
     tempo: kontext.tempo,
     wertung: kontext.wertung,
@@ -228,7 +275,7 @@ export async function menschlicheWahl(
     stil: kontext.stil,
     stilname: kontext.stilname,
   };
-  return waehleMenschlich(lage, fen, pool, bester, schritt, werte, zufall);
+  return waehleMenschlich(pool.lage, fen, pool.kandidaten, pool.bester, schritt, werte, zufall);
 }
 
 function engineZug(uci: string): Zugwahl {

@@ -5005,3 +5005,27 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Inhalt. Weitere feste Pixelmaße (Abstände, Ränder, Vorschaubilder) bleiben, damit das Layout bei
   150 % nicht auseinanderläuft; wo ein Symbol bei großer Schrift zu klein wirkt, wird es nachgezogen
   (Rückmeldung des Autors).
+
+## Gruppenmodus gebaut (24.10.2026 nachmittags, Fable; Entwurf oben „Gruppenmodus je Bot-Kategorie“)
+
+- **Zugwahl (engine/gruppenwahl.ts):** Die Analyse der Stellung läuft einmal (engine/menschenwahl.ts,
+  `kandidatenpool`: sechs beste Züge und die typischen Fehlerzüge aller aktiven Arten der
+  Mitglieder), dann wählt jeder Bot der Stufe mit seiner Wertung, seinem Stil, seinen Fehlerarten
+  und Flecken aus demselben Pool (`wahlAusPool`); die Gruppe spielt den gewählten Zug mit dem
+  kleinsten Verlust. So kostet die Gruppe kaum mehr Rechenzeit als ein Bot, und die Idee des Autors
+  („jeder überlegt, die Gruppe nimmt den besten“) ist genau abgebildet. Kein Eröffnungsbuch.
+- **Gegner:** Kennung „gruppe-N“ (engine/gruppe.ts), Kategorie „vorgefertigt“, Name „Gruppe der
+  Stufe N“, Stufen je Phase die höchsten der Mitglieder (Bedenkzeit), Beschreibung in der
+  Sprechblase und unter dem Partietitel. Bild: die Gesichter der Stufe übereinandergelegt wie in der
+  zugeklappten Stufenzeile (Wunsch des Autors), auch in der Partienliste.
+- **Freischaltung:** frei, sobald jeder Bot der Stufe in irgendeiner Zeitklasse gewertet besiegt ist
+  (speicher/besiegt.ts, keine neue Speicherung). Unter dem Porträtgitter steht sonst der Satz, was
+  den Gruppenmodus freischaltet. Nach der Partie, die den letzten Bot besiegt, erscheint einmal je
+  Gruppe eine Gratulation (Merker `svga.gruppenGratuliert` auf dem Gerät).
+- **Stärke:** „Stärke unbekannt“, bis der Leser die Gruppe einmal besiegt hat (Sieg landet als
+  „gruppe-N“ in den besiegten Bots) und eine gemessene Zahl vorliegt
+  (engine/gruppenstaerke-daten.ts, noch leer). Für die Elo-Wertung gilt von Anfang an die gemessene
+  Zahl, ohne Messung der stärkste Bot der Stufe plus 150.
+- **Offen:** Messung der Gruppen (Paarungen „@gruppe-N“ gegen die menschlich spielenden Stufen im
+  Messlauf), danach die Zahlen in gruppenstaerke-daten.ts; Gruppen erst nach dem endgültigen
+  Bot-Satz messen, weil die Mitglieder sich mit der Auswahl ändern.

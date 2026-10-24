@@ -9,9 +9,11 @@
  * Abhängigkeiten: engine/, spiel/, speicher/, ui/komponenten/botNotmodus.ts.
  */
 import { engine } from "../../engine/engineDienst";
-import { gegnerVon } from "../../engine/gegner";
+import { gegnerVon, type Gegner } from "../../engine/gegner";
+import { gruppenstufe, mitgliederDerGruppe } from "../../engine/gruppe";
+import { gruppenzug, type Gruppenmitglied } from "../../engine/gruppenwahl";
 import { faktorenAus } from "../../engine/gegnerbau";
-import { gegnerstaerke } from "../../engine/botstaerke";
+import { gegnerstaerke, staerkeDesBots } from "../../engine/botstaerke";
 import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { wahltempo } from "../../engine/wahlmodell";
@@ -31,7 +33,7 @@ import {
   VORZUG_MS,
   zieheImNotmodus,
 } from "../../spiel/notmodus";
-import { aktuelleFen, type Partie } from "../../spiel/partie";
+import { aktuelleFen, type Partie, type Partiezug } from "../../spiel/partie";
 import { phaseVon } from "../../spiel/phasen";
 import { uciZuSan } from "../../spiel/zuege";
 import { findePartie, mitPartie } from "../../speicher/partien";
@@ -115,6 +117,60 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
   };
 }
 
+/**
+ * Die Mitglieder der Gruppe für diesen Zug (Gruppenmodus, engine/gruppe.ts): jeder Bot der
+ * Stufe mit seiner Stufe der Phase und seinem eigenen Profil (Fehlerarten, Flecken, Stil,
+ * Persönlichkeit), Tagesform und Restzeit wie in der Partie. Leer, wenn die Partie keine
+ * Gruppenpartie ist.
+ */
+function gruppenmitglieder(partie: Partie, fen: string, jetztMs: number): Gruppenmitglied[] {
+  const e = partie.einstellung;
+  const nummer = gruppenstufe(e.bot);
+  if (nummer === null) return [];
+  const phase = phaseVon(fen) ?? "mittelspiel";
+  const gemeinsam = {
+    verlauf: verlaufVon(partie),
+    restMs: eigeneRestzeit(partie, jetztMs),
+    tempo: wahltempo(e.uhr),
+  };
+  return mitgliederDerGruppe(nummer).map((g: Gegner) => {
+    const st = stufe(g.stufenJePhase[phase]);
+    return {
+      stufe: st,
+      profil: {
+        ...gemeinsam,
+        fehlerarten: g.fehlerarten,
+        stil: 0,
+        blindeFlecken: g.blindeFlecken,
+        gewichte: faktorenAus(g.persoenlichkeit, staerkeDesBots(g.kennung) ?? st.wertung),
+        stilname: g.stilname,
+        haeufigkeit: g.haeufigkeit,
+        zufallszuege: g.zufallszuege,
+      },
+    };
+  });
+}
+
+/** Die Zugwahl der Gruppe als Ergebnis wie engineZugMitLage; null ohne legalen Zug. */
+async function gruppenZugMitLage(
+  partie: Partie,
+  fen: string,
+  jetztMs: number,
+): Promise<{ zug: Partiezug; uci: string; breite?: number } | null> {
+  const mitglieder = gruppenmitglieder(partie, fen, jetztMs);
+  const wahl = await gruppenzug(engine, fen, mitglieder, Math.random, verlaufVon(partie));
+  const san = wahl ? uciZuSan(fen, wahl.uci) : null;
+  if (!wahl || !san) return null;
+  const zug: Partiezug = {
+    san,
+    von: "engine",
+    quelle: wahl.quelle,
+    fehler: wahl.fehler,
+    verlust: wahl.verlust,
+  };
+  return { zug, uci: wahl.uci, breite: wahl.breite };
+}
+
 /** Wartet, bis der Bot sichtbar nachgedacht hat (nur mit Uhr; die Rechenzeit zählt mit). */
 function sichtbarNachdenken(bedenk: number | null, rest: number | null, start: number) {
   if (bedenk === null || rest === null) return Promise.resolve();
@@ -129,6 +185,9 @@ function appSichtbar(): boolean {
 
 /** Die Zugwahl des Bots für eine Stellung, mit seiner Restzeit (für die Vorzüge im Notmodus). */
 function zugwahlDesBots(partie: Partie, stufennummer: Stufennummer, restMs: number) {
+  if (gruppenstufe(partie.einstellung.bot) !== null) {
+    return async (f: string) => (await gruppenZugMitLage(partie, f, Date.now()))?.uci ?? null;
+  }
   const profil = { ...profilDerPartie(partie, Date.now()), restMs };
   return async (f: string) =>
     (await engineZugMitLage(engine, f, stufe(stufennummer), [], Math.random, BUCHTREUE, profil))
@@ -191,15 +250,19 @@ export async function normalerBotzug(
   const jetzige = neueste(id);
   const profil = jetzige ? profilDerPartie(jetzige, start) : undefined;
   const st = stufe(stufennummer);
-  const ergebnis = await engineZugMitLage(
-    engine,
-    fen,
-    st,
-    buchzuege.zuege,
-    Math.random,
-    buchzuege.treue,
-    profil,
-  );
+  // Gruppenmodus: alle Bots der Stufe beraten sich (engine/gruppenwahl.ts), ohne Eröffnungsbuch.
+  const ergebnis =
+    jetzige && gruppenstufe(jetzige.einstellung.bot) !== null
+      ? await gruppenZugMitLage(jetzige, fen, start)
+      : await engineZugMitLage(
+          engine,
+          fen,
+          st,
+          buchzuege.zuege,
+          Math.random,
+          buchzuege.treue,
+          profil,
+        );
   const vorher = neueste(id);
   if (!laeuft() || !vorher || aktuelleFen(vorher) !== fen) return;
   if (!ergebnis) throw new Error(`Kein Zug der Engine in ${fen}`);

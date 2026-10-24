@@ -10,6 +10,8 @@
  */
 import { Star } from "lucide-react";
 import { gegnerVon, type EigenerGegner } from "../../engine/gegner";
+import { gruppenstufe } from "../../engine/gruppe";
+import { Gruppenbild } from "./Gruppenmodus";
 import { t } from "../../i18n/sprache";
 import { portraet } from "./gegnerportraet";
 
@@ -35,9 +37,13 @@ export function GegnerBild({
   const vorgefertigt = gegnerVon(bot);
   const eigenerBild = eigene.find((g) => g.kennung === bot)?.portraet;
   const bild = vorgefertigt ? vorgefertigt.kennung : (eigenerBild ?? null);
+  // Gruppenmodus (Wunsch des Autors, 24.10.2026): die Gesichter der Stufe statt eines Porträts.
+  const gruppe = gruppenstufe(bot);
   return (
     <span className="gegnerbild">
-      {bild ? (
+      {gruppe !== null ? (
+        <Gruppenbild stufe={gruppe} />
+      ) : bild ? (
         <img className="gegner-portraet" src={portraet(bild)} alt="" />
       ) : (
         <span className="gegner-portraet gegner-zeichen" aria-hidden="true">

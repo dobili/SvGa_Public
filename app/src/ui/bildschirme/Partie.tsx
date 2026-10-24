@@ -38,6 +38,7 @@ import { Auswertung, type Sprung } from "../komponenten/Auswertung";
 import { Brettbereich } from "../komponenten/Brettbereich";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { Partieende } from "../komponenten/Partieende";
+import { Gruppenfreischaltung } from "../komponenten/Gruppenmodus";
 import { Ergebnisblende } from "../komponenten/Ergebnisblende";
 import { Partiestatus } from "../komponenten/Partiestatus";
 import { Partietitel } from "../komponenten/Partietitel";
@@ -326,6 +327,7 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
       />
       <Partiestatus s={s} partie={partie} ruhig={ruhig} />
       {partie.ende && <Partieende partie={partie} />}
+      {partie.ende && <Gruppenfreischaltung gegnerBot={partie.einstellung.bot} />}
       {partie.ende && eintrag && !ruhig && (
         <Auswertung
           eintrag={eintrag}

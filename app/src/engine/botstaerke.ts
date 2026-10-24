@@ -21,6 +21,7 @@ import { wertungstempo } from "../spiel/elomodell";
 import type { Fehlerart } from "./fehlerart";
 import { GELEGENHEITSARTEN } from "./menschenprofil";
 import { GEGNER } from "./gegnerliste";
+import { gruppenstufe, gruppenwertung } from "./gruppe";
 import { STUFEN_ZAHL, type Stufennummer } from "./stufen";
 
 /**
@@ -121,7 +122,12 @@ export function gegnerstaerke(
 ): number {
   // Ohne Bot zählen nur die abgehakten blinden Flecken (die Abhakliste gilt den Bots).
   const eigen = einstellung.bot === null ? { ...einstellung, fehlerarten: [] } : einstellung;
-  const ohneUhr = staerkeDesBots(einstellung.bot) ?? staerkeGeschaetzt(eigen);
+  // Gruppenmodus (engine/gruppe.ts): gemessene Zahl der Gruppe, sonst stärkster Bot plus Zuschlag.
+  const gruppe = gruppenstufe(einstellung.bot);
+  const ohneUhr =
+    gruppe !== null
+      ? gruppenwertung(gruppe)
+      : (staerkeDesBots(einstellung.bot) ?? staerkeGeschaetzt(eigen));
   return ohneUhr + uhrAbzug(einstellung.stufenJePhase, einstellung.uhr ?? null);
 }
 

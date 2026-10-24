@@ -633,6 +633,20 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       100 % zurück. Die Wahl gilt sofort, bleibt nach dem Neustart der App und wirkt auf Text,
       Stufenmarken und Plaketten; das Brett bleibt so breit wie der Bildschirm. Bitte bei 150 %
       Kapitelseite, Partie und Auswertung ansehen: Läuft irgendwo etwas aus dem Bild?
+- [ ] N793. **Gruppenmodus, Freischaltung (dein Wunsch vom 24.10.):** Spielen › vorgefertigte Bots,
+      eine Stufe aufklappen: Unter den acht Porträts steht „Gruppenmodus: Besiege alle Bots dieser
+      Stufe …“. Besiege den letzten noch fehlenden Bot einer Stufe in einer gewerteten Partie (egal
+      welche Zeitklasse): Nach dem Partieende erscheint einmal die Gratulation mit den Gesichtern der
+      Stufe, „Weiter“ schließt sie, sie kommt nicht wieder. Unter den Porträts dieser Stufe steht
+      jetzt der Knopf „Gruppenmodus · Stärke unbekannt“ mit den Gesichtern.
+- [ ] N794. **Gruppenmodus, Partie:** Knopf antippen, Partie beginnen. Die Sprechblase und der Kopf
+      der Partie zeigen die übereinandergelegten Gesichter statt eines Porträts und den Satz „Alle
+      Bots der Stufe N spielen zugleich …“. Die Gruppe sollte spürbar stärker spielen als der beste
+      Bot der Stufe (sie macht nur Fehler, die alle acht zugleich machen würden). Die Partienliste
+      zeigt dieselben Gesichter.
+- [ ] N795. **Gruppenmodus, Stärke:** Nach einem Sieg gegen die Gruppe bleibt vorerst „Stärke
+      unbekannt“ stehen, weil die Gruppen noch nicht gemessen sind (das folgt nach dem endgültigen
+      Bot-Satz). Die Wertung rechnet intern mit dem stärksten Bot der Stufe plus 150.
 
 ---
 

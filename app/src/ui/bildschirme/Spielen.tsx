@@ -37,6 +37,7 @@ import {
 import { GegnerEditor } from "../komponenten/GegnerEditor";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
 import { Titelsymbol } from "../komponenten/Titelsymbol";
+import { gruppenstufe, gruppenstufen } from "../../engine/gruppe";
 import { gegnerVon } from "../../engine/gegner";
 import { gegnerprofil } from "./gegnerprofil";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
@@ -95,7 +96,11 @@ function Einstellungen({
   const engine = v.gegner === "engine";
   // Ein Gegner bringt seine Stufen je Phase mit; ohne Gegner bleiben die Regler, wie sie sind.
   const waehleBot = (bot: string | null) => {
-    const g = gegnerVon(bot) ?? eigene.find((e) => e.kennung === bot) ?? null;
+    const gruppe = gruppenstufe(bot);
+    const g =
+      gruppe !== null
+        ? { stufenJePhase: gruppenstufen(gruppe) }
+        : (gegnerVon(bot) ?? eigene.find((e) => e.kennung === bot) ?? null);
     mit(g ? { bot, stufenJePhase: g.stufenJePhase, stufe: g.stufenJePhase.mittelspiel } : { bot });
   };
   return (

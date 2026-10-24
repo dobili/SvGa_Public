@@ -38,6 +38,8 @@ import { Auswahl } from "./Auswahl";
 import type { Gegnerkategorie } from "./gegnerkategorie";
 import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
+import { gruppenstufe } from "../../engine/gruppe";
+import { gruppenname, gruppenstaerketext } from "./gruppentexte";
 import { wertungstempo, type Wertungstempo } from "../../spiel/elomodell";
 import { Kachel, VorgefertigteGitter } from "./Gegnerstufen";
 import { MitInfo } from "./InfoKnopf";
@@ -117,18 +119,30 @@ function Sprechblase({
 }) {
   const vorgefertigt = gegnerVon(bot);
   const eigener = eigene.find((g) => g.kennung === bot) ?? null;
-  const name = vorgefertigt?.name ?? eigener?.name ?? t("spielen.bot.eigene");
+  const gruppe = gruppenstufe(bot);
+  const name =
+    gruppe !== null
+      ? gruppenname(gruppe)
+      : (vorgefertigt?.name ?? eigener?.name ?? t("spielen.bot.eigene"));
   // Stern je Zeitklasse der gewählten Uhr (R51, 0.2.125).
   const tempo = wertungstempo(uhr);
-  const besiegt = useSpeicher((z) => (bot ? z.daten.spiel.besiegt[tempo].includes(bot) : false));
-  const text = vorgefertigt
-    ? t(vorgefertigt.beschreibung)
-    : eigener
-      ? t("spielen.bot.eigenerText")
-      : t("spielen.bot.eigeneText");
+  const alleBesiegt = useSpeicher((z) => z.daten.spiel.besiegt);
+  const besiegt = bot ? alleBesiegt[tempo].includes(bot) : false;
+  const text =
+    gruppe !== null
+      ? t("gruppe.text", { nummer: String(gruppe) })
+      : vorgefertigt
+        ? t(vorgefertigt.beschreibung)
+        : eigener
+          ? t("spielen.bot.eigenerText")
+          : t("spielen.bot.eigeneText");
+  const staerke =
+    gruppe !== null
+      ? gruppenstaerketext(alleBesiegt, gruppe)
+      : staerkezeile(bot, eigener, stufen, uhr);
   return (
     <div className="gegner-sprechblase" data-testid="gegner-sprechblase">
-      {vorgefertigt || eigener ? (
+      {vorgefertigt || eigener || gruppe !== null ? (
         <GegnerBild bot={bot} eigene={eigene} name={name} besiegt={besiegt} />
       ) : (
         <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
@@ -143,7 +157,7 @@ function Sprechblase({
               <strong>{name}</strong>
               <span className="gegner-klasse" data-testid="gegner-staerke">
                 {" · "}
-                {staerkezeile(bot, eigener, stufen, uhr)}
+                {staerke}
               </span>
             </>
           }

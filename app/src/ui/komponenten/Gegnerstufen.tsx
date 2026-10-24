@@ -22,6 +22,7 @@ import { t } from "../../i18n/sprache";
 import type { Wertungstempo } from "../../spiel/elomodell";
 import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
+import { Gruppenzeile } from "./Gruppenmodus";
 import { offeneStufenAnfangs, portraet, SPASSGRUPPE, STUFENNUMMERN } from "./gegnerportraet";
 import { bereichstext, spassbereichstext, staerketext } from "./staerkeangabe";
 import { Stufenmarke } from "./Stufenmarke";
@@ -130,6 +131,7 @@ export function VorgefertigteGitter({
               />
             ))}
           </div>
+          {gruppe.stufe !== null && <Gruppenzeile stufe={gruppe.stufe} bot={bot} beiBot={beiBot} />}
         </details>
       ))}
     </div>

@@ -7,6 +7,8 @@
  * Abhängigkeiten: engine/gegner.ts, speicher/partien.ts (Vorlieben).
  */
 import { gegnerVon, unterAbhakliste, type EigenerGegner } from "../../engine/gegner";
+import { gruppenstufe } from "../../engine/gruppe";
+import { gruppenname } from "../komponenten/gruppentexte";
 import type { Spielvorlieben } from "../../speicher/partien";
 
 /**
@@ -34,6 +36,11 @@ export function gegnerprofil(
       ...(eigener.haeufigkeit !== undefined ? { haeufigkeit: eigener.haeufigkeit } : {}),
       ...(eigener.hoechstverlust ? { hoechstverlust: eigener.hoechstverlust } : {}),
     };
+  }
+  // Gruppenmodus (engine/gruppe.ts): Name der Gruppe; die Bots bringen ihre Profile selbst mit.
+  const gruppe = gruppenstufe(bot);
+  if (gruppe !== null) {
+    return { botName: gruppenname(gruppe), fehlerarten: null, stil: 0, blindeFlecken: [] };
   }
   const vorgefertigt = gegnerVon(bot);
   if (!vorgefertigt) {

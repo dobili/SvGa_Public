@@ -4830,10 +4830,12 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Streuung Unmenschliches, bei einer mit weiter Streuung fast nichts; jetzt sind die Stufen
   vergleichbar und bleiben innerhalb echter Spieler (Entscheidung des Autors, 23.10.2026).
 - **Sieben Stile** (engine/stile.ts): je Bot einer nach der Tabelle in „Spielstile der Bots“;
-  Verschiebung ±0,5 der Stilmerkmale des Wahlmodells (Angreifer: Schach und Königsnähe;
+  Verschiebung der Stilmerkmale des Wahlmodells, je Merkmal so geeicht, dass der Anteil solcher
+  Züge um etwa anderthalb Standardabweichungen der Spieler steigt (Schach und Königsnähe 0,6,
+  Schlag 0,4, Vorwärts 0,3, Rückzug 0,35, Bauernsturm 0,25, Abtausch 0,6; mit einheitlich 0,5
+  wären Bauernsturm und Vorwärts drei Standardabweichungen gewesen) (Angreifer: Schach und Königsnähe;
   Positionsspieler umgekehrt; Taktiker: Schlag und Vorwärts, kein Rückzug; Verteidiger
   umgekehrt; Draufgänger: Bauernsturm und Vorwärts, kein Abtausch; Vereinfacher: Abtausch, kein
   Bauernsturm; Universell nichts). Der Regler −2 bis 2 bleibt für eigene Gegner.
-- **Offen:** Stärke der Stile (0,5) gegen die Streuung der Menschen nachspielen; Neumessung und
-  Verankerung der Bots; Regler eigener Gegner auf dieselben Stufen umstellen (Oberfläche).
+- **Offen:** Neumessung und Verankerung der Bots; Regler eigener Gegner auf dieselben Stufen umstellen (Oberfläche).
 

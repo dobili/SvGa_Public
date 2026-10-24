@@ -4839,3 +4839,17 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Bauernsturm; Universell nichts). Der Regler −2 bis 2 bleibt für eigene Gegner.
 - **Offen:** Neumessung und Verankerung der Bots; Regler eigener Gegner auf dieselben Stufen umstellen (Oberfläche).
 
+## Verankerung der Bot-Leiter an menschlich spielenden Stufen (24.10.2026 mittags, Fable)
+
+- **Befund:** Das Elo-Modell (spiel/elomodell.ts) ist an Menschen geeicht. Die reinen Grundschichten
+  der Engine (Zufall auf die Bewertung, keine Zusatzfehler) haben ein anderes Fehlermuster; das
+  Modell ordnet sie unplausibel ein (Grundschicht 1x1 mit 40 % Genauigkeit → 879, 4x0.2 mit 58 %
+  → 700; Abweichung Leiter minus Anker −553 bis +490). Die alte Kurvenrechnung hatte dasselbe
+  Problem schwächer (−303 bis +311).
+- **Entscheidung:** Anker sind ab jetzt die Stufen mit allen Zusatzfehlern der Menschen (Kürzel
+  „Nm“, Wahlmodell), die gegen sich selbst spielen; ihre Partien werden in Tiefe 18 mit der Engine
+  der App bewertet und mit dem Elo-Modell samt Phasen eingeordnet. So liegt die Skala der Bots
+  dort, wo das Modell gilt, und ein Bot, der wie ein 1200er von Lichess spielt, bekommt 1200.
+  Die Leiter (Ergebnisse aller Paarungen) verbindet Bots, Stufen mit und ohne Zusatzfehler und
+  die Kandidaten.
+

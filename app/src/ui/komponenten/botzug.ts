@@ -1,5 +1,5 @@
 /**
- * Der Zug des Bots in der laufenden Partie: Profil, Stufe, Bedenkzeit, sichtbares Nachdenken,
+ * Der Zug des Bots in der laufenden Partie: Profil, Stufe, Bedenkzeit (seit 0.2.126 ohne sichtbares Warten),
  * Zug mit Uhr und Notmodus mit Vorzügen.
  *
  * Rolle im Gesamtbild: Aus ui/komponenten/usePartie.ts ausgelagert (0.2.117), als der Notmodus
@@ -18,12 +18,7 @@ import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { wahltempo } from "../../engine/wahlmodell";
 import { BUCHTREUE, REINES_PROFIL, type Gegnerprofil } from "../../engine/zugwahl";
-import {
-  botBedenkzeit,
-  eigeneRestzeit,
-  sichtbareWartezeit,
-  zieheBotMitUhr,
-} from "../../spiel/botzeit";
+import { botBedenkzeit, eigeneRestzeit, zieheBotMitUhr } from "../../spiel/botzeit";
 import { mitUhrverzug } from "../../spiel/ablauf";
 import { engineZugMitLage } from "../../spiel/enginezug";
 import {
@@ -169,13 +164,6 @@ async function gruppenZugMitLage(
   return { zug, uci: wahl.uci, breite: wahl.breite };
 }
 
-/** Wartet, bis der Bot sichtbar nachgedacht hat (nur mit Uhr; die Rechenzeit zählt mit). */
-function sichtbarNachdenken(bedenk: number | null, rest: number | null, start: number) {
-  if (bedenk === null || rest === null) return Promise.resolve();
-  const warten = sichtbareWartezeit(bedenk, rest) - (Date.now() - start);
-  return new Promise<void>((fertig) => setTimeout(fertig, Math.max(0, warten)));
-}
-
 /** Ist die App sichtbar? Im Hintergrund bleibt die Uhr nach dem Zug stehen (sonst liefe die Zeit des Lesers). */
 function appSichtbar(): boolean {
   return document.visibilityState !== "hidden";
@@ -272,7 +260,6 @@ export async function normalerBotzug(
     Math.random,
   );
   const rest = eigeneRestzeit(vorher, start);
-  await sichtbarNachdenken(bedenk, rest, start);
   const jetzt = neueste(id);
   if (!laeuft() || !jetzt || aktuelleFen(jetzt) !== fen) return;
   const mitStufe = { ...ergebnis.zug, stufe: stufennummer };

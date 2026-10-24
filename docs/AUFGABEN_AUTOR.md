@@ -708,6 +708,11 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       statt etwa 700). Und Haken, die du änderst und gleich danach die Partie beginnst, gingen
       verloren. Ältere, noch laufende Partien gegen die eigene Stufe spielen wie begonnen weiter.
 
+- [ ] N802. **Bots ziehen ohne künstliche Wartezeit (deine Klarstellung vom 24.10.):** Spiele eine
+      Partie mit Uhr, etwa gegen Leyla in 10 + 0. Der Bot zieht, sobald die Engine fertig ist (meist
+      deutlich unter einer Sekunde). Seine Uhr springt dabei um die menschliche Bedenkzeit weiter,
+      die oft mehrere Sekunden beträgt. Bisher wartete er sichtbar bis zu 2,5 Sekunden.
+
 ---
 
 ## Teil 2: Entscheiden

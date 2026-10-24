@@ -5173,3 +5173,13 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Speicher, der Spielbildschirm überschrieb das beim Partiebeginn mit seiner älteren Kopie. Jetzt
   laufen alle Änderungen über die Vorlieben des Bildschirms und werden zugleich gespeichert.
 - **Messungen bleiben gültig:** Die vorgefertigten Bots und die Messstufen spielen unverändert.
+
+## Bots ziehen ohne sichtbare Wartezeit (24.10.2026 spätabends, Klarstellung des Autors)
+
+- **Wunsch:** „Die Uhr soll künstlich runterlaufen, aber die Ausführung des Zugs soll nicht
+  künstlich länger dauern.“ Seit 0.2.117 wartete der Bot mit Uhr sichtbar bis zu 2,5 Sekunden
+  (in Zeitnot 0,6 Sekunden, ±10 %), weil die Absprache vom 20.10.2026 so verstanden worden war.
+- **Seit 0.2.126:** Der Bot zieht, sobald die Engine fertig ist. Seine Uhr wird wie bisher mit der
+  simulierten menschlichen Bedenkzeit abgerechnet (`spiel/botzeit.ts`, zieheBotMitUhr), nicht mit
+  der echten Rechenzeit. Der Notmodus bleibt: Ein Vorzug kostet echt und auf der Uhr 100 ms.
+- **Messungen bleiben gültig:** Die Messläufe rechnen die Uhr ohnehin simuliert und warteten nie.

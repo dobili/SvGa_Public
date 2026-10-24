@@ -1,13 +1,14 @@
 /**
- * Die Uhr der Bots in der Partie: Lage des Zuges, simulierte Bedenkzeit, sichtbare Wartezeit und
+ * Die Uhr der Bots in der Partie: Lage des Zuges, simulierte Bedenkzeit und
  * der Zug mit Abzug von der Uhr (auch Zeitverlust).
  *
  * Rolle im Gesamtbild: Plan „menschlichere Bots und Uhr der Bots“ (vom Autor freigegeben am
  * 20.10.2026). Die Engine rechnet in etwa einer Sekunde; mit Uhr zieht ihr die App stattdessen
- * die Zeit ab, die ein Mensch dieser Stärke gebraucht hätte (engine/bedenkzeit.ts). Sichtbar
- * wartet der Bot nur kurz (höchstens zweieinhalb Sekunden, in Zeitnot weniger); danach springt
- * seine Uhr auf den Stand nach der simulierten Bedenkzeit. Reicht seine Zeit nicht, verliert er
- * auf Zeit, wie ein Mensch. Ohne Uhr bleibt alles wie bisher.
+ * die Zeit ab, die ein Mensch dieser Stärke gebraucht hätte (engine/bedenkzeit.ts). Seit 0.2.126
+ * zieht der Bot, sobald die Engine fertig ist, und seine Uhr springt auf den Stand nach der
+ * simulierten Bedenkzeit (Klarstellung des Autors, 24.10.2026: Die Uhr läuft künstlich herunter,
+ * der Zug kommt nicht künstlich später; bis dahin wartete er sichtbar bis zu 2,5 Sekunden).
+ * Reicht seine Zeit nicht, verliert er auf Zeit, wie ein Mensch. Ohne Uhr bleibt alles wie bisher.
  * Abhängigkeiten: engine/bedenkzeit.ts, spiel/partie.ts, spiel/uhr.ts, spiel/ablauf.ts,
  * spiel/zuege.ts.
  */
@@ -28,11 +29,6 @@ import { sanZuUci } from "./zuege";
 
 /** Die volle Engine (Stufe 8) denkt wie Menschen über 2400. */
 export const WERTUNG_VOLLE_ENGINE = 2600;
-const SICHTBAR_HOECHSTENS_MS = 2500;
-const SICHTBAR_ZEITNOT_MS = 600;
-const ZEITNOT_MS = 10_000;
-/** Zufällige Streuung der sichtbaren Wartezeit (±10 %, Wunsch des Autors vom 20.10.2026). */
-const SICHTBAR_STREUUNG = 0.1;
 const BEZUGSFELD_LAENGE = 2;
 const BRETTREIHEN = 8;
 
@@ -109,22 +105,6 @@ export function botBedenkzeit(
     },
     zufall,
   );
-}
-
-/**
- * Wie lange der Bot sichtbar nachdenkt: höchstens etwa 2,5 s, in Zeitnot etwa 0,6 s, nie länger
- * als simuliert. Die Deckel streuen zufällig um ±10 %, damit lange Züge nicht alle gleich lang
- * dauern (die simulierte Bedenkzeit selbst streut ohnehin stark, engine/bedenkzeit.ts).
- * Beispiel: 20 s simuliert, 2 Minuten Rest → zwischen 2,25 und 2,75 s.
- */
-export function sichtbareWartezeit(
-  bedenkMs: number,
-  restMs: number,
-  zufall: () => number = Math.random,
-): number {
-  const deckel = restMs < ZEITNOT_MS ? SICHTBAR_ZEITNOT_MS : SICHTBAR_HOECHSTENS_MS;
-  const streuung = 1 + SICHTBAR_STREUUNG * (2 * zufall() - 1);
-  return Math.min(bedenkMs, deckel * streuung);
 }
 
 /**

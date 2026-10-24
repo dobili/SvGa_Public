@@ -27,6 +27,7 @@ import {
 } from "../../engine/stile";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import { stilProzent } from "./stiltext";
+import { MitInfo } from "./InfoKnopf";
 
 /** Größe der Zeichenfläche und Radien (Bildpunkte im viewBox); das Netz bleibt so groß wie vorher. */
 const BREITE = 320;
@@ -217,7 +218,7 @@ function Achsenliste({
   return (
     <label className="stilnetz-liste">
       <span className="einstellung-name">{t(`spielen.stilachse.${a}` as Textschluessel)}</span>
-      <select value={wert} onChange={(e) => waehle(e.target.value)}>
+      <select className="auswahlfeld" value={wert} onChange={(e) => waehle(e.target.value)}>
         <option value="">{t("spielen.stilachse.keine")}</option>
         {[a, b].flatMap((stil) =>
           STILPROZENTE.map((p) => (
@@ -236,14 +237,18 @@ export function Stilnetz({ mix, beiWahl }: Wahlprops) {
   const gewaehlt = Object.entries(mix) as [Richtungsstil, number][];
   return (
     <div className="stilnetz" data-testid="stilnetz">
-      <span className="einstellung-name">{t("spielen.stil")}</span>
+      {/* Die lange Bedienhilfe steht seit 0.2.129 hinter dem Fragezeichen (DS39). */}
+      <MitInfo
+        zeile={<span className="einstellung-name">{t("spielen.stil")}</span>}
+        erklaerung={t("spielen.stilnetz.hinweis")}
+        thema={t("spielen.stil")}
+      />
       <Netz mix={mix} beiWahl={beiWahl} />
       <div className="stilnetz-listen">
         {STILACHSEN.map((achse) => (
           <Achsenliste key={achse[0]} achse={achse} mix={mix} beiWahl={beiWahl} />
         ))}
       </div>
-      <p className="hinweis">{t("spielen.stilnetz.hinweis")}</p>
       <div className="hinweis" data-testid="stilnetz-text">
         {gewaehlt.length === 0 ? (
           <p>

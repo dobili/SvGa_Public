@@ -49,17 +49,3 @@ export function TourKnopf() {
   const stand = useSymbolstand();
   return stand ? <Symbol {...stand} /> : null;
 }
-
-/**
- * Das Symbol in einer eigenen schmalen Zeile, für Bildschirme ohne sichtbare Überschrift
- * (Einstellungen); ohne Symbol fällt auch die Zeile weg.
- */
-export function TourZeile() {
-  const stand = useSymbolstand();
-  if (!stand) return null;
-  return (
-    <div className="seitenkopf-symbol">
-      <Symbol {...stand} />
-    </div>
-  );
-}

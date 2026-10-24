@@ -1,8 +1,8 @@
 /**
  * Bereich „Einstellungen“ (Zahnrad, intern „ich“): Fortschritt, „Über die App“ (App-Version,
  * Datenstand, Offline bereit, Update, Fehler melden; bis 0.2.84 hieß die Karte „Einstellungen“,
- * Rückmeldung des Autors: dort stellt man nichts ein), die Karte „Einstellungen“ und Daten auf
- * diesem Gerät (sichern, einspielen, löschen).
+ * Rückmeldung des Autors: dort stellt man nichts ein), die Karte „Darstellung und Training“ (bis
+ * 0.2.128 „Einstellungen“, DS44) und Daten auf diesem Gerät (sichern, einspielen, löschen).
  *
  * Rolle im Gesamtbild: Konzept 10.1. Fortschritt und Datensicherung kamen mit AP 12; die
  * Lernsammlung hat seit 0.2.93 einen eigenen Bildschirm (Karte im Training) und steckt in der
@@ -31,7 +31,7 @@ import { useSpeicher } from "../../speicher/speicher";
 import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 import { Meldeformular } from "../komponenten/Meldeformular";
 import { Titelsymbol } from "../komponenten/Titelsymbol";
-import { TourZeile } from "../../tour/TourKnopf";
+import { TourKnopf } from "../../tour/TourKnopf";
 
 /** Der Installationsteil der Startseite (Entscheidung 15.10.2026). */
 const INSTALLATIONSSEITE = "/installieren/";
@@ -106,10 +106,12 @@ export function Ich() {
 
   return (
     <div className="bildschirm">
-      {/* Keine sichtbare Überschrift (Wunsch des Autors, Test von 0.2.30); Bildschirmleser hören
-          „Einstellungen“. */}
-      <h1 className="nur-vorlesen">{t("ich.titel")}</h1>
-      <TourZeile />
+      {/* Sichtbarer Titel wie auf Buch, Training, Spielen und Nachschlagen (DS44, 25.10.2026; bis
+          0.2.128 nur für Bildschirmleser nach dem Test von 0.2.30). */}
+      <header className="seitenkopf">
+        <h1>{t("ich.titel")}</h1>
+        <TourKnopf />
+      </header>
       <Wertungskurve punkte={wertung} partien={partien} />
       <Fortschrittsuebersicht />
       <EinstellungenKarte />

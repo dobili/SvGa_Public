@@ -88,7 +88,7 @@ input[type="range"],
 
 /* ---------- DS34: Rahmen von Bedienelementen kräftiger ---------- */
 .chip:not([aria-pressed="true"], [aria-checked="true"]),
-.chip-leise[aria-pressed="true"],
+.chip.chip-leise,
 .knopf-zweit,
 .suchfeld,
 .auswahlfeld {

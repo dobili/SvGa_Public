@@ -39,12 +39,6 @@
 }
 
 /* Einstellungen haben keine sichtbare Überschrift: eine schmale Zeile nur mit dem Symbol. */
-.seitenkopf-symbol {
-  display: flex;
-  justify-content: flex-end;
-  margin: calc(var(--raster) * -1) calc(var(--raster) * -1) calc(var(--raster) * -1) 0;
-}
-
 /* ---------- Ebene ---------- */
 
 .tour-ebene {

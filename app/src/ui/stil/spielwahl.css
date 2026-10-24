@@ -35,15 +35,14 @@
   white-space: nowrap;
 }
 
-/* „Schnellschach“ ist breiter als eine Kachel auf dem Handy: Trennung nach deutschen Regeln. */
+/* „Schnellschach“ ist breiter als eine Kachel auf dem Handy: Trennung am weichen Trennstrich. */
 .zeitkachel span {
   max-width: 100%;
   color: var(--text-leise);
   font-size: var(--groesse-fein);
   line-height: 1.15;
   text-align: center;
-  hyphens: auto;
-  overflow-wrap: anywhere;
+  hyphens: manual;
 }
 
 .zeitkachel[aria-checked="true"] {

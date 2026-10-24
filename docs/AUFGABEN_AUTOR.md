@@ -65,7 +65,7 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
       des Gegners, darunter „mit Weiß · Schnellschach 10 + 0 · gewertet“, rechts „Partie
       beginnen“. Sie bleibt beim Scrollen stehen und rutscht erst über der Liste der Partien an
       ihren Platz. Ein Tipp auf den linken Teil springt zur Gegnerwahl. Bei laufender Partie
-      kommt die Rückfrage in der Leiste. Bei „Eigene Bots“ ohne gewählten Bot ist der Knopf grau.
+      kommt die Rückfrage in der Leiste. Bei „Eigene Bots“ ohne gewählten Bot steht dort „Noch kein eigener Bot – oben wählen oder anlegen“, und der Knopf ist grau.
 - [ ] N906. **Bedenkzeit als Kacheln:** vier gleich große Kacheln je Zeile, groß die Zeit
       („3 + 2“), klein die Zeitklasse mit Zeichen (Blitz, Schnellschach, Klassisch). Aus einer
       eigenen Stellung kommt „∞ ohne Uhr“ dazu.

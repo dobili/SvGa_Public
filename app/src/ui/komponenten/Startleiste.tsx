@@ -11,7 +11,7 @@
  * laufender Partie bleibt BeginnenKnopf.tsx.
  * Abhängigkeiten: BeginnenKnopf, GegnerBild, Stufenmarke, engine/gegner.ts, engine/gruppe.ts, i18n.
  */
-import { Users } from "lucide-react";
+import { UserPen, Users } from "lucide-react";
 import type { ReactNode } from "react";
 import { gegnerVon, type EigenerGegner } from "../../engine/gegner";
 import { gruppenstufe } from "../../engine/gruppe";
@@ -38,8 +38,21 @@ export interface Startangaben {
   readonly gewertet: boolean;
 }
 
+/** „Eigene Bots“ gewählt, aber noch kein eigener Bot: Dann lässt sich nicht beginnen. */
+function ohneEigenenBot(a: Startangaben): boolean {
+  return (
+    a.gegner === "engine" && a.kategorie === "eigene" && !a.eigene.some((g) => g.kennung === a.bot)
+  );
+}
+
 /** Bild und Name des Gegners. Beispiel: Bot „tom“ → Porträt und „Tom“. */
 function gegnerangabe(a: Startangaben): { bild: ReactNode; name: string } {
+  if (ohneEigenenBot(a)) {
+    return {
+      bild: <UserPen size={ZEICHENGROESSE} aria-hidden="true" />,
+      name: t("spielen.startleiste.keinBot"),
+    };
+  }
   if (a.gegner === "mensch") {
     return {
       bild: <Users size={ZEICHENGROESSE} aria-hidden="true" />,
@@ -74,15 +87,21 @@ export function Startleiste({
   knopf: ReactNode;
 }) {
   const { bild, name } = gegnerangabe(angaben);
-  const zeile = [
-    angaben.gegner === "engine"
-      ? t(angaben.farbe === "white" ? "spielen.filter.farbe.white" : "spielen.filter.farbe.black")
-      : null,
-    angaben.uhr,
-    t(angaben.gewertet ? "spielen.startleiste.gewertet" : "spielen.startleiste.ungewertet"),
-  ]
-    .filter((teil) => teil !== null)
-    .join(" · ");
+  const zeile = ohneEigenenBot(angaben)
+    ? t("spielen.startleiste.keinBotHinweis")
+    : [
+        angaben.gegner === "engine"
+          ? t(
+              angaben.farbe === "white"
+                ? "spielen.filter.farbe.white"
+                : "spielen.filter.farbe.black",
+            )
+          : null,
+        angaben.uhr,
+        t(angaben.gewertet ? "spielen.startleiste.gewertet" : "spielen.startleiste.ungewertet"),
+      ]
+        .filter((teil) => teil !== null)
+        .join(" · ");
   return (
     <div className="startleiste" data-testid="startleiste">
       <button

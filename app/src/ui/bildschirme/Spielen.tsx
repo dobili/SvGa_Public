@@ -387,7 +387,8 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
           <BeginnenKnopf
             laufend={laufend !== null}
             moeglich={ok}
-            hinweis={ohneEigenenBot ? t("spielen.eigene.erstWaehlen") : null}
+            // Der Hinweis steht seit 0.2.129 in der Startleiste selbst (kürzer, ohne Umbruch).
+            hinweis={null}
             beiBeginn={() => beginne(wahl)}
           />
         }

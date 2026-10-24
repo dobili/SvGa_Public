@@ -14,7 +14,6 @@ import { wertungstempo, type Wertungstempo } from "../../spiel/elomodell";
 import { UHR_VORGABEN } from "../../spiel/uhr";
 import { Titelsymbol } from "./Titelsymbol";
 import { OHNE_UHR, uhrname } from "./uhrwahl";
-import { zeitklassenname } from "./wertungstext";
 
 const MINUTE_MS = 60_000;
 const SEKUNDE_MS = 1000;
@@ -35,7 +34,8 @@ function kachelVon(stelle: string): { zeit: string; klasse: string; Zeichen: Luc
   const tempo = wertungstempo(vorgabe);
   return {
     zeit: `${vorgabe.grundzeitMs / MINUTE_MS} + ${vorgabe.zuschlagMs / SEKUNDE_MS}`,
-    klasse: zeitklassenname(tempo),
+    // Mit weichem Trennstrich („Schnell-schach“): Die Kachel ist auf dem Handy schmaler als das Wort.
+    klasse: t(`spielen.zeitkachel.${tempo}`),
     Zeichen: KLASSENZEICHEN[tempo],
   };
 }

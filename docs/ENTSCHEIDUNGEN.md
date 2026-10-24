@@ -5193,3 +5193,12 @@ war). Der Messlauf bleibt für spätere Datenstände.
   simulierten menschlichen Bedenkzeit abgerechnet (`spiel/botzeit.ts`, zieheBotMitUhr), nicht mit
   der echten Rechenzeit. Der Notmodus bleibt: Ein Vorzug kostet echt und auf der Uhr 100 ms.
 - **Messungen bleiben gültig:** Die Messläufe rechnen die Uhr ohnehin simuliert und warteten nie.
+
+## 24.10.2026 nachts – R26 Abschluss der Arbeitsliste (P1, Opus)
+
+- P1-B (vorläufige Tabelle für den Vergleich der Zugklassen) ist erledigt: Seit 0.2.125 kommen
+  Übliches und Zonen aus den Spielerprofilen des Bot-Chats; nur brillant, stark und Buchzug
+  bleiben geschätzt. Aus AUFGABEN_AUTOR gestrichen.
+- Überholte Hinweise in AUFGABEN_AUTOR angepasst („folgt mit dem Bot-Chat“, „Symbol beim Spielen
+  nach der Kalibrierung“, Zahl der Touren).
+- P8 Teil B in 0.2.127 umgesetzt (Touren Spielen und Partie), P6 abgeschlossen (R25).

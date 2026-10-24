@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 24.10.2026 abends, Version 0.2.126 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 24.10.2026 nachts, Version 0.2.127 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.126“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.127“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -84,7 +84,7 @@ Teil fertig ist.
       kein „Ohne Uhr“ mehr; ohne gewählte Uhr beginnt eine gewertete Partie mit 10 + 0. In der
       Partienliste steht hinter jeder Partie mit Uhr die Zeitklasse, etwa „Schnellschach 10 + 0“
       (nach der Regel von Lichess: Bullet, Blitz, Schnellschach, Klassisch), und unter „Filter“
-      gibt es die Gruppe „Bedenkzeit“. Wertung und „besiegt“ je Zeitklasse folgen mit dem Bot-Chat.
+      gibt es die Gruppe „Bedenkzeit“. Wertung und Sterne je Zeitklasse gibt es seit 0.2.125.
 - [ ] N642. **Festgelegte Eröffnung (R24):** Unter „Eröffnung festlegen“ etwa „Spanische Partie“
       wählen und gegen einen Bot spielen. Hat das Buch keinen Zug mehr, bleibt der Bot in
       derselben Eröffnung, mit Zügen aus der freien Eröffnungsliste von Lichess (im Werkzeug
@@ -116,8 +116,8 @@ oder mehr) oder unter Spielen eine Partie per PGN einlesen.
       „x % des Üblichen · gut/normal/schwach“; darunter der Balken über drei grauen Zonen mit dem
       dunklen Strich für das Übliche. Bei schwachen Zügen ist die linke Zone „gut“. Ein brillanter
       Zug ergibt schnell „über 300 % … ▸“. Unter 15 eigenen Zügen stehen nur die Anzahlen. Die
-      üblichen Anteile sind vorerst geschätzt (Tabelle in spiel/zugklassenvergleich.ts); der
-      Bot-Chat ersetzt sie durch Werte aus Lichess-Partien.
+      üblichen Anteile und die Zonen kommen seit 0.2.125 aus Spielerprofilen echter Lichess-Partien
+      (gleiches Band, gleiche Zeitklasse); nur brillant, stark und Buchzug sind noch geschätzt.
 
 ### Neu in 0.2.121: App-Tour (P8, R52; Opus, 23.10.2026)
 
@@ -133,8 +133,8 @@ Rundgang kommt auch bei dir einmal.
 - [ ] N761. **Toursymbol:** Oben rechts steht auf Buch, Kapitel, Abbildung, Übung, Training, jedem
       Trainer, Lernsammlung, Nachschlagen (mit Glossar, Begriff, Denkroutine, Checkliste,
       Steckbriefen, Werkzeugen) und in den Einstellungen ein kleiner Kompass. Ein goldener Punkt
-      daran heißt „noch nicht gesehen“; nach der Tour ist er weg. Beim Spielen gibt es das Symbol
-      noch nicht (kommt nach der Kalibrierung).
+      daran heißt „noch nicht gesehen“; nach der Tour ist er weg. Seit 0.2.127 steht er auch bei
+      Spielen und in der Partie (N769).
 - [ ] N762. **Tour der Abbildung:** Abb. 1.26 › Kompass. Die Tour zeigt Nummer, Blättern,
       Zugleiste, Brett, die Werkzeuge am Brett, Drehen, Lesezeichen, Bündel, die Werkzeugkarte
       (ohne gewähltes Werkzeug in der Mitte), Gegen die Engine spielen und die Unterschrift. Das
@@ -599,7 +599,7 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Nach 5 Minuten nicht. Am Rechner nie (Fensterwechsel). Hinweis: iOS wirft eine
       Hintergrund-App manchmal ganz aus dem Speicher; dann startet sie neu und zeigt das normale
       Startbild (2,5 s).
-- [ ] N783. **Beta-Hinweis:** Einstellungen › Über die App zeigt „App-Version: 0.2.126 (Beta)“ und
+- [ ] N783. **Beta-Hinweis:** Einstellungen › Über die App zeigt „App-Version: 0.2.127 (Beta)“ (jeweils die aktuelle Nummer) und
       darunter den Satz, dass die App laufend erweitert wird und Daten erhalten bleiben; die
       Startseite der Website zeigt unter dem Untertitel denselben Hinweis.
 - [ ] N782. **Bots mit Stil und menschlichen Vorlieben:** Spiele gegen Tom (Draufgänger,
@@ -775,13 +775,13 @@ abgesegnet; lies sie, wenn du Zeit hast, am besten direkt in der App, und schrei
       ist noch kein Werkzeug gewählt, erklärt die Tour die Werkzeugkarte ohne Rahmen in der Mitte.
       In den Trainern startet die Tour meist auf der Auswahlseite und erklärt die Runde mit
       Schritten in der Mitte. Schon umgesetzt, Widerspruch genügt.
-- [ ] P8-6. **Umfang.** 32 Touren: der Rundgang (Haupttour, acht Schritte), Buch, Kapitel,
+- [ ] P8-6. **Umfang.** 34 Touren: der Rundgang (Haupttour, acht Schritte), Buch, Kapitel,
       Abbildung (mit Werkzeugleiste und Werkzeugkarten), Übung, Training, alle 17 Trainer (mit
       30-Minuten-Plan und Fehlerdatenbank), Lernsammlung, Nachschlagen, Glossar, Begriff,
       Denkroutine, Gesamt-Checkliste, Steckbriefe, Werkzeuge des Buches und Einstellungen (mit
       allen fünf Reitern). Keine Tour bekommen die Lizenzen und deine Aufgabenseite (dort ist
-      alles selbsterklärend). Spielen, Partie, Auswertung und Partienliste kommen als Teil B, wenn
-      die Kalibrierung der Bots auf main ist (siehe P8-44). Schon umgesetzt, Widerspruch genügt.
+      alles selbsterklärend). Seit 0.2.127 dazu Spielen (mit Partienliste) und Partie (mit
+      Auswertung und Rückblick), siehe P8-44. Schon umgesetzt, Widerspruch genügt.
 - [ ] P8-7. **Technik, kurz.** Jede Tour ist eine Liste von Zeilen „Bildschirm, Ziel, Text“ in einer
       Datei (`app/src/tour/touren.ts`); die Ziele tragen eine feste Kennung (`data-tour="brett"`),
       die Texte stehen in de.json und en.json. Eine Tour ergänzen heißt also eine Zeile und einen
@@ -1174,12 +1174,6 @@ Paket P4.
       Empfehlung: Wer „Ohne Uhr“ gewählt hatte und gewertet spielt, beginnt mit 10 + 0
       (Schnellschach, wie der Partietag des 30-Minuten-Plans). Schon umgesetzt in 0.2.123,
       Widerspruch genügt (etwa „15 + 10“ als Vorgabe).
-- [ ] P1-B. **Vergleich der Zugklassen (R56):** Die „üblichen“ Anteile je Zugart sind vorerst
-      geschätzt (eine Tabelle für 800, 1200, 1600 und 2000), „normal“ heißt 75 % bis 125 % des
-      Üblichen. Verglichen wird mit deiner Spielstärke aus den letzten zehn gewerteten Partien
-      (sonst mit der Schätzung dieser Partie), beim Bot mit seiner festen Zahl. Empfehlung: so
-      lassen, bis der Bot-Chat echte Werte je Elo und Zeitklasse aus den Lichess-Partien liefert;
-      dann kommen auch die Zonengrenzen aus der Streuung der Spieler. Schon umgesetzt in 0.2.122.
 - [ ] P1-C. **Umschalter auf der Seite des Bots:** Steht der Umschalter auf dem Bot, zeigt die
       Auswertung statt „Fehler und Patzer“ die eingeklappte Liste „Absichtliche Fehler der Engine“
       und keinen Satz zur ersten Abweichung (der betrifft nur deine Züge). Schon umgesetzt in

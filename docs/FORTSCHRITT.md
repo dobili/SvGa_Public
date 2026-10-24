@@ -1862,3 +1862,17 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   Erklärung und in LIZENZEN nennen. Zweite Quelle (Lichess-Blog „universal rating converter
   2024“) nur hinter Cloudflare erreichbar, nicht geprüft. Lichess-Forum-Analysen (Selbstangaben):
   Lichess Blitz etwa 80–130 über FIDE, Classical etwa 170–200 über FIDE; passt zu ChessGoals.
+
+### Ergebnisse der Nacht, Teil 2 (24.10.2026, 1 Uhr): Wahlmodell geeicht
+
+- Bedingtes Logit an 180 000 Stellungen (lokal zugwahl/wahlmodell.py, Prüfung an 20 %
+  zurückgelegten Stellungen): Trefferquote des gespielten Zuges Blitz 39,4 %, Schnellschach
+  40,7 %, klassisch 41,4 % (Zufall 11–12 %). **Nachspielen:** Die erwarteten Fehlerraten des
+  Modells treffen die echten je Band und Art meist auf ±1 Prozentpunkt (Schnellschach 1200: echt
+  31,5, Modell 33,2; ungenau 13,4/14,2; Drohung ignoriert 4,8/5,8; Bauernzug 3,0/2,9; Taktik
+  2,1/1,9). Schwächer am oberen Rand (2400: 15,1/16,0, ungenau 7,3/9,0; 2800 zu wenige Daten):
+  Gewichte linear in der Wertung sättigen; Variante mit quadratischem Term läuft (wahlmodell-elo2).
+- Damit steht der Kern von Teil E: Dieselbe Kandidatenerzeugung (sechs Engine-Züge, typische
+  Fehlerzüge) plus diese Gewichte ergibt menschliche Raten je Band ohne Nachregeln. Noch zu tun:
+  Gewichte je Phase prüfen, Tagesform/Zeitnot als Faktor, Persönlichkeit als Verschiebung
+  einzelner Gewichte innerhalb der Spielerbereiche, Übertragung in engine/menschenwahl.ts.

@@ -952,15 +952,6 @@ Paket P4.
 
 ### R57 Dashboard: Einrichtung und Empfehlungen (24.10.2026)
 
-- [ ] DB1. **Prüfbericht-Schlüssel (nach dem Ausrollen):** Eine lange Zufallszeichenfolge
-      erzeugen (etwa im Passwortmanager „Passwort erzeugen“, 40 Zeichen, nur Buchstaben und
-      Ziffern). Sie zweimal eintragen, nirgends sonst hinschreiben und nicht in den Chat:
-      1. GitHub: Repository SvGa_Public › Settings › Secrets and variables › Actions › „New
-         repository secret“, Name `BERICHT_SCHLUESSEL`.
-      2. Cloudflare: Workers & Pages › schach-von-grund-auf › Settings › „Variables and Secrets“
-         › „Add“, Typ „Secret“, Name `BERICHT_SCHLUESSEL`. (Das Feld ist erst frei, wenn die
-         Version mit dem Dashboard ausgerollt ist.)
-      Danach kommen die Prüfberichte im Dashboard an; vorher stehen sie nur auf GitHub.
 - [ ] DB2. **Turnstile vorerst nicht eintragen:** Empfehlung: Den Turnstile-Secret-Key noch nicht
       in Cloudflare eintragen. Gegen Massenmeldungen genügt vorerst die Drossel (höchstens fünf
       Meldungen je Verbindung und Stunde). Turnstile würde ein Skript von Cloudflare in die App

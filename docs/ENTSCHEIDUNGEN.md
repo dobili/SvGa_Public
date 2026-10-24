@@ -4505,3 +4505,4 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - Wartungsprüfungen in Python ohne weitere Pakete (`pipeline/wartung`), Rot lässt den Lauf
   scheitern (Mail von GitHub). Zertifikat erst unter 14 Tagen gelb, weil Cloudflare etwa 30 Tage
   vor Ablauf erneuert.
+- DB1 erledigt (24.10.2026): Der Autor hat `BERICHT_SCHLUESSEL` in GitHub (Actions-Secret) und Cloudflare (Worker-Secret) eingetragen; die Prüfberichte gehen damit ans Dashboard.

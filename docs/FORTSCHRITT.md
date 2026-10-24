@@ -2036,5 +2036,14 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
 - Restplan 8, erster Teil: Persönlichkeiten der Bots als Stufen auf menschlichen Quantilen
   (engine/spielerbereiche.ts), je Bot einer der sieben Stile (engine/stile.ts, Tabelle Teil D),
   Faktoren entstehen beim Spielen aus der Wertung des Bots. ENTSCHEIDUNGEN „Persönlichkeiten der
-  Bots auf menschlichen Quantilen“. Nächster Schritt: Neumessung der Bots (Leiter, Anker mit dem
-  neuen Elo-Modell).
+  Bots auf menschlichen Quantilen“.
+- **Neumessung läuft** (24.10.2026 ab 9:50 Uhr): buch/arbeit/botelo4/lauf.sh im eingefrorenen
+  Stand /home/user/messstand3 (git worktree auf 94ae97e, native Stockfish): Bots gegen Stufen
+  (bots-paarungen.txt, 12 Partien), Stufen mit Zusatzfehlern gegen Stufen (1m-1 … 10m-10, 20),
+  Spaß-Bots, dann Uhr je Zeitklasse (180+2, 600+0, 1800+20 je Stufe 1 bis 8, 20 Partien).
+  Leiter und Anker der Grundschicht aus botelo3 kopiert (unverändert). Nach einem Neustart des
+  Containers: `git worktree add -f --detach /home/user/messstand3 94ae97e`, node_modules
+  verknüpfen, lauf.sh neu starten (fertige Paarungen überspringt messe-stufen.mjs nicht; dann die
+  fertigen aus der Liste nehmen). Danach: `BOTELO_ORDNER=../buch/arbeit/botelo4 npx vitest run
+  --config vitest.messung.config.ts src/engine/botstaerke.messung.ts` → botstaerke-daten.ts
+  (Anker mit dem neuen Elo-Modell), Uhrabzug je Zeitklasse eintragen.

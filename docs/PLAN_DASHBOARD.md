@@ -9,9 +9,15 @@ selbst in Cloudflare, GitHub und den Einstellungen der Claude-Umgebung an.
 - **Prüfungen:** GitHub Actions, wöchentlich und nach jedem Push nach `main`. Ergebnis als Bericht
   (JSON, Ampel je Punkt). Ein roter Punkt lässt den Lauf scheitern; GitHub schickt dann von selbst
   eine Mail an den Autor.
-- **Speicher:** Cloudflare D1 (Datenbank `svga-admin`), Bindung `ADMIN_DB` am Pages-Projekt. Die
-  Tabellen legt der Code beim ersten Aufruf selbst an.
-- **Schnittstellen:** Pages Functions im Ordner `functions/` des Repositorys:
+- **Speicher:** Cloudflare D1 (Datenbank `svga-admin`), Bindung `ADMIN_DB` in `app/wrangler.jsonc`
+  (mit der Database ID, die der Autor nennt; sie ist kein Geheimnis). Die Tabellen legt der Code
+  beim ersten Aufruf selbst an.
+- **Wichtig (Befund 24.10.2026):** Die Website ist ein Cloudflare Worker nur mit statischen Dateien
+  (`app/wrangler.jsonc`), kein Pages-Projekt. Solange er keinen Code hat, sperrt Cloudflare die
+  Felder für Secrets und Bindings. Deshalb zuerst ein kleiner Worker-Code (`main` in
+  `app/wrangler.jsonc`, Assets bleiben), erst danach trägt der Autor die Secrets unter Settings ›
+  „Runtime variables and secrets“ ein.
+- **Schnittstellen:** Code des Workers (statt Pages Functions):
   `/api/melden` (öffentlich, Meldungen aus App und Website, mit Drosselung und optional
   Turnstile), `/api/admin/*` (nur hinter Cloudflare Access), `/api/bericht` (Upload des
   Prüfberichts aus GitHub Actions mit gemeinsamem Schlüssel `BERICHT_SCHLUESSEL`).

@@ -2465,7 +2465,7 @@
   "gruppe.knopf": "Team mode",
   "gruppe.unbekannt": "strength unknown",
   "gruppe.gesperrt": "Team mode: beat every bot of this level in rated games, then they play against you together.",
-  "gruppe.text": "All bots of level {nummer} play at once: each one considers its move, and the team plays the one it thinks is best. The app shows its strength once you have beaten the team.",
+  "gruppe.text": "All bots of level {nummer} play at once: each one considers its move, then they vote: the majority decides, and on a tie the better move wins. The app shows its strength once you have beaten the team.",
   "gruppe.gratulation.titel": "Congratulations!",
   "gruppe.gratulation.text": "You have beaten every bot of level {nummer}. Team mode for this level is unlocked: all its bots play against you together.",
   "gruppe.gratulation.weiter": "Continue",

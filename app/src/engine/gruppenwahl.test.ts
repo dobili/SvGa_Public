@@ -1,7 +1,7 @@
-/** Tests des Gruppenzugs (engine/gruppenwahl.ts): eine Analyse, Wahl je Bot, kleinster Verlust. */
+/** Tests des Gruppenzugs (engine/gruppenwahl.ts): eine Analyse, Wahl je Bot, Abstimmung. */
 import { describe, expect, it } from "vitest";
 import type { Bewertung, Staerke } from "./engineDienst";
-import { gruppenzug, type Gruppenmitglied } from "./gruppenwahl";
+import { abstimmung, gruppenzug, type Gruppenmitglied } from "./gruppenwahl";
 import { RUHIGER_VERLAUF } from "./menschlich";
 import type { Spielbewerter } from "./spielbewerter";
 import { stufe } from "./stufen";
@@ -62,10 +62,35 @@ describe("Gruppenzug", () => {
     expect(await gruppenzug(bewerter().b, FEN, [], folge(), RUHIGER_VERLAUF)).toBeNull();
   });
 
-  it("die Engine rechnet einmal für alle Mitglieder, die Gruppe spielt den besten der Züge", async () => {
+  it("Abstimmung: Mehrheit gewinnt, bei Gleichstand der kleinste Verlust", () => {
+    const zug = (uci: string, verlust: number) => ({
+      uci,
+      quelle: "engine" as const,
+      fehler: null,
+      verlust,
+    });
+    // Sechs verschiedene Wünsche, zwei sind sich einig: deren Zug, auch wenn er schlechter ist.
+    const einig = [
+      zug("a", 0),
+      zug("b", 0.1),
+      zug("c", 0.2),
+      zug("d", 0.3),
+      zug("e", 0.4),
+      zug("f", 0.5),
+      zug("g7g6", 6),
+      zug("g7g6", 6),
+    ];
+    expect(abstimmung(einig)?.uci).toBe("g7g6");
+    // Gleichstand 2 : 2: der Zug mit dem kleinsten Verlust unter den gleichauf liegenden.
+    const patt = [zug("d7d6", 0.2), zug("d7d6", 0.2), zug("b8c6", 0), zug("b8c6", 0), zug("x", 9)];
+    expect(abstimmung(patt)?.uci).toBe("b8c6");
+    expect(abstimmung([])).toBeNull();
+  });
+
+  it("die Engine rechnet einmal für alle Mitglieder, die Gruppe spielt den Mehrheitszug", async () => {
     const { b, aufrufe } = bewerter();
     const gruppe = [mitglied(1), mitglied(2), mitglied(3), mitglied(1)];
-    // Ein Mitglied greift (0,999) zum unwahrscheinlichsten Zug, die anderen zum wahrscheinlichsten.
+    // Ein Mitglied greift (0,999) zum unwahrscheinlichsten Zug, drei zum wahrscheinlichsten: 3 : 1.
     const wahl = await gruppenzug(b, FEN, gruppe, folge(0.999, 0, 0, 0), RUHIGER_VERLAUF);
     expect(wahl).not.toBeNull();
     expect(["b8c6", "d7d6"]).toContain(wahl?.uci);

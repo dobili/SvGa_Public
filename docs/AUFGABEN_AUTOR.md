@@ -641,9 +641,10 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       jetzt der Knopf „Gruppenmodus · Stärke unbekannt“ mit den Gesichtern.
 - [ ] N794. **Gruppenmodus, Partie:** Knopf antippen, Partie beginnen. Die Sprechblase und der Kopf
       der Partie zeigen die übereinandergelegten Gesichter statt eines Porträts und den Satz „Alle
-      Bots der Stufe N spielen zugleich …“. Die Gruppe sollte spürbar stärker spielen als der beste
-      Bot der Stufe (sie macht nur Fehler, die alle acht zugleich machen würden). Die Partienliste
-      zeigt dieselben Gesichter.
+      Bots der Stufe N spielen zugleich …“. Die Gruppe stimmt ab (Mehrheit, bei Gleichstand der
+      bessere Zug); sie sollte meist stärker spielen als ein einzelner Bot der Stufe, aber noch
+      menschliche Fehler machen, wenn sich mehrere Bots darin einig sind. Die Partienliste zeigt
+      dieselben Gesichter.
 - [ ] N795. **Gruppenmodus, Stärke:** Nach einem Sieg gegen die Gruppe bleibt vorerst „Stärke
       unbekannt“ stehen, weil die Gruppen noch nicht gemessen sind (das folgt nach dem endgültigen
       Bot-Satz). Die Wertung rechnet intern mit dem stärksten Bot der Stufe plus 150.

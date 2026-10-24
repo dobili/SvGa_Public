@@ -5011,9 +5011,12 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Zugwahl (engine/gruppenwahl.ts):** Die Analyse der Stellung läuft einmal (engine/menschenwahl.ts,
   `kandidatenpool`: sechs beste Züge und die typischen Fehlerzüge aller aktiven Arten der
   Mitglieder), dann wählt jeder Bot der Stufe mit seiner Wertung, seinem Stil, seinen Fehlerarten
-  und Flecken aus demselben Pool (`wahlAusPool`); die Gruppe spielt den gewählten Zug mit dem
-  kleinsten Verlust. So kostet die Gruppe kaum mehr Rechenzeit als ein Bot, und die Idee des Autors
-  („jeder überlegt, die Gruppe nimmt den besten“) ist genau abgebildet. Kein Eröffnungsbuch.
+  und Flecken aus demselben Pool (`wahlAusPool`); dann stimmt die Gruppe ab: Der Zug mit den
+  meisten Stimmen wird gespielt, bei Gleichstand der gleichauf liegende Zug mit dem kleinsten
+  Verlust (Entscheidung des Autors, 24.10.2026 nachmittags: Mehrheit statt „bester Zug der Gruppe“;
+  so kann die Gruppe auch einen gemeinsamen Fehler machen, wenn zwei sich einig sind und die
+  übrigen sechs sich zersplittern). So kostet die Gruppe kaum mehr Rechenzeit als ein Bot. Kein
+  Eröffnungsbuch.
 - **Gegner:** Kennung „gruppe-N“ (engine/gruppe.ts), Kategorie „vorgefertigt“, Name „Gruppe der
   Stufe N“, Stufen je Phase die höchsten der Mitglieder (Bedenkzeit), Beschreibung in der
   Sprechblase und unter dem Partietitel. Bild: die Gesichter der Stufe übereinandergelegt wie in der

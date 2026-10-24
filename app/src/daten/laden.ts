@@ -24,7 +24,7 @@ const AUFLAGE = "a1";
 
 /**
  * Ordner der Daten, die nicht aus dem Buch kommen (etwa die Eröffnungsliste von Lichess). Sie gibt
- * es nur auf Deutsch, wie die Trainerdaten; deshalb gilt hier die Sprache der Trainerdaten.
+ * es in denselben Sprachen wie die Trainerdaten; deshalb gilt hier die Sprache der Trainerdaten.
  */
 function sprachordner(): string {
   return `/daten/${trainerdatensprache()}`;

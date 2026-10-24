@@ -31,3 +31,10 @@ def test_liste_enthaelt_bekannte_eroeffnungen_und_ist_eindeutig() -> None:
     namen = {s[2] for s in stellungen}
     assert "Sizilianische Verteidigung: Najdorf Variation" in namen
     assert any(n.startswith("Spanische Partie") for n in namen)
+
+
+def test_englische_liste_behaelt_die_namen_von_lichess() -> None:
+    namen = {s[2] for s in baue(sprache="en")["stellungen"]}  # type: ignore[union-attr]
+    assert "Sicilian Defense: Najdorf Variation" in namen
+    assert any(n.startswith("Ruy Lopez") for n in namen)
+    assert not any(n.startswith("Spanische Partie") for n in namen)

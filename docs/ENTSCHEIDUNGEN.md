@@ -5093,3 +5093,13 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Lokal** (`buch/arbeit/botelo4/`): `auswahl.py` (Auswahl mit Alternativen je Stil, `auswahl.txt`),
   `satz.py --schreiben` (Satz, Archiv, Messnamen; nur einmal auf die ursprünglichen Listen anwenden),
   `satz/neue-bots.json`.
+
+## 24.10.2026 abends – P6 abgeschlossen (R25, P1, Opus)
+
+- Trainerdaten englisch ohne eigene Übersetzungstabelle: Die Aufgaben sind Stellungen, Züge und
+  Kennungen; den einzigen sichtbaren Text (Name des Fallenchecks) nimmt der Build aus den
+  englischen Buchdaten (Fallencheck mit derselben Stoppabbildung).
+- Eröffnungsliste von Lichess englisch mit den Originalnamen; deutsch bleibt die Übersetzung der
+  Familie (Entscheidung R12).
+- Website (Startseite, Trainingsseiten, Impressum, Datenschutz) bleibt deutsch; „English
+  (preview)“ bleibt als Bezeichnung, bis der Autor das englische Buch festlegt (EN1).

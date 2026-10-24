@@ -1352,7 +1352,7 @@ Testpunkt-Nummern je Paket getrennt.
 | P3 Werkzeuge | `p3-werkzeuge` | R41–R44, Glossarvorschläge | Fable hoch | N670–N689 | fertig (0.2.118) |
 | P4 Trainerinhalte | `p4-trainerinhalte` | R50, R48, R47 (mit R34), danach R49 | Fable hoch | N690–N709 | fertig (0.2.119) |
 | P5 Trainerbedienung | `p5-trainerbedienung` | R30, R31, R46, R45 | Opus mittel | N710–N729 | fertig (0.2.118) |
-| P6 Englisch | `p6-englisch` | R25 | Opus niedrig | N730–N739 | läuft |
+| P6 Englisch | `p6-englisch` | R25 | Opus niedrig | N730–N739 | fertig (Buchdaten 0.2.118/0.2.119; Trainer und Eröffnungsliste von P1 abgeschlossen, 24.10.2026, N747) |
 | P7 Spielen | `weiter-ohne-autor` (P1) | R51, R24, R27, R28, R32 | Opus mittel | N632–N645 | in 0.2.120 bis 0.2.123 erledigt; R51 nur Anzeigeteil, Wertung und „besiegt“ je Zeitklasse beim Bot-Chat |
 | P8 App-Tour | `p8-tour` | R52 | Opus mittel | N760–N769 | Teil A in 0.2.121; Teil B (Spielen, Auswertung) wartet, bis das Fenster „Eigene Bots“ fertig ist (Autor, 24.10.2026 abends) |
 
@@ -1451,7 +1451,7 @@ jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Au
       - Vorschau: vorschau-auswertung.html (Chat P1).
 - [x] R24 (0.2.123) Bot mit festgelegter Eröffnung: ohne Buchzug Zugfolgen derselben Eröffnung aus der
       Lichess-Liste.
-- [ ] R25 V1: restliche Buchdaten ins Englische (inhalte/en, kapitelweise).
+- [x] R25 V1: restliche Buchdaten ins Englische (inhalte/en, kapitelweise); seit 24.10.2026 auch Trainerdaten (Fallennamen) und Lichess-Eröffnungsliste englisch.
 - [ ] R26 Abschluss: Rückfragen mit den genommenen Empfehlungen und Testpunkte in AUFGABEN_AUTOR.
 
 Stand 19.10.2026 (0.2.102). Der Nachtplan vom 18.10.2026 ist erledigt: Chat A (0.2.90, 0.2.91,
@@ -1915,8 +1915,12 @@ Trainingsseiten und Bot-Namen noch deutsch sind.
 **Nächster Schritt:** P6 ist fertig und eingeschaltet. Nach der Übernahme nach main die
 Rückmeldung zu N730–N739 und die Antworten zu EN4/EN5 einarbeiten. Ändert der Autor Buchtext, erscheinen die geänderten Sätze
 beim nächsten `python -m pipeline.uebersetzen` als offen (`buch/arbeit/uebersetzung/offen/`).
-Noch deutsch und außerhalb von P6: Trainerdaten (`inhalte/de/trainer/`), Trainingsseiten der
-Website (`inhalte/de/training/`), Namen der Bots.
+Abschluss (P1, 24.10.2026 abends): Trainerdaten englisch (`/daten/en/trainer/`, beim Build von
+`skripte/kopiere-trainerdaten.mjs` erzeugt: sichtbar ist nur der Fallenname, er kommt aus den
+englischen Buchdaten), Eröffnungsliste von Lichess englisch (`python -m pipeline.eroeffnungsliste`
+schreibt de und en), `TRAINERSPRACHEN = ["de", "en"]`. Testlauf auf Englisch über alle Trainer,
+Buch, Abbildungen, Spielen, Nachschlagen, Einstellungen: kein deutscher Text. Deutsch bleiben
+absichtlich die Website (Startseite, Trainingsseiten, Rechtliches) und die Eigennamen der Bots.
 
 ### Eröffnungen je Elo-Band (23.10.2026 abends)
 

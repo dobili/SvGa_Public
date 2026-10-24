@@ -53,11 +53,11 @@ describe("Sprachwechsel", () => {
 });
 
 describe("Datensprache (P6)", () => {
-  it("Buchdaten auf Englisch englisch, Trainerdaten bis zu ihrer Übersetzung deutsch", () => {
+  it("Buch- und Trainerdaten auf Englisch englisch (Trainerdaten seit R25)", () => {
     expect(datensprache()).toBe("de");
     expect(trainerdatensprache()).toBe("de");
     setzeSprache("en");
     expect(datensprache()).toBe("en");
-    expect(trainerdatensprache()).toBe("de");
+    expect(trainerdatensprache()).toBe("en");
   });
 });

@@ -61,6 +61,12 @@ Teil fertig ist.
       aufbauen“, „Analysebrett“), steht „Direkt öffnen:“ mit Knöpfen, die das Werkzeug in einem
       neuen Tab öffnen. Der Text der Übung bleibt wie im Buch. Die Adressen kommen aus dem
       Werkzeugkasten in Kapitel 12; der Wartungslauf prüft sie jede Woche.
+- [ ] N747. **Englisch auch in den Trainern (R25, P6 abgeschlossen):** Einstellungen › Anzeige ›
+      „English (preview)“. In „Trap or bait“ steht bei Aufgaben aus dem Buch der englische Name der
+      Falle (etwa „Elephant Trap“ an Fig. 4.13), und das Werkzeug „Opening“ nennt Stellungen außerhalb
+      des Buches mit den englischen Namen von Lichess (etwa „Sicilian Defense: Najdorf Variation“).
+      Ein Testlauf über alle 17 Trainer, Buch, Abbildungen, Spielen, Nachschlagen und Einstellungen
+      fand auf Englisch keinen deutschen Text mehr.
 
 ### Neu in 0.2.123: Spielen ohne die Bot-Kalibrierung (R24, R27, R28, R51, R54; Opus, 24.10.2026 nachts)
 

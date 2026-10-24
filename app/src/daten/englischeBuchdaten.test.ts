@@ -18,6 +18,9 @@ function englisch(nummer: number): Kapitel {
   return JSON.parse(readFileSync(new URL(datei, ordner), "utf8")) as Kapitel;
 }
 
+/** Kapitel 0 bis 12. */
+const KAPITELZAHL = 13;
+
 /** Alle Eröffnungsnamen eines Index. */
 function namen(kapitel: readonly Kapitel[]): Set<string> {
   const index = baueEroeffnungsindex(kapitel);
@@ -51,5 +54,25 @@ describe("englische Buchdaten", () => {
     expect(en).toContain("Ruy Lopez");
     expect(en).toContain("King's Gambit");
     for (const name of en) expect(name, name).not.toMatch(/^(The |Further lines|Basic position)/);
+  });
+});
+
+describe("englische Trainerdaten (R25)", () => {
+  it("jede Buchaufgabe von „Falle oder Köder“ findet ihren englischen Fallennamen", () => {
+    const falle = JSON.parse(
+      readFileSync(new URL("../../../inhalte/de/trainer/falle.json", import.meta.url), "utf8"),
+    ) as { aufgaben: { herkunft: { quelle: string; abbildung?: string; fallencheck?: string } }[] };
+    const englischeStopps = new Set(
+      Array.from({ length: KAPITELZAHL }, (_, n) =>
+        englisch(n).fallenchecks.map((f) => f.stopp),
+      ).flat(),
+    );
+    const ausBuch = falle.aufgaben.filter(
+      (a) => a.herkunft.quelle === "buch" && a.herkunft.fallencheck,
+    );
+    expect(ausBuch.length).toBeGreaterThan(0);
+    for (const aufgabe of ausBuch) {
+      expect(englischeStopps.has(aufgabe.herkunft.abbildung ?? "")).toBe(true);
+    }
   });
 });

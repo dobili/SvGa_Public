@@ -5033,3 +5033,27 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Offen:** Messung der Gruppen (Paarungen „@gruppe-N“ gegen die menschlich spielenden Stufen im
   Messlauf), danach die Zahlen in gruppenstaerke-daten.ts; Gruppen erst nach dem endgültigen
   Bot-Satz messen, weil die Mitglieder sich mit der Auswahl ändern.
+
+## Ergebnis des zweiten Messlaufs (24.10.2026 nachmittags, Fable, botelo4)
+
+- **Anker (Nm-Stufen gegen sich selbst, 40 Partien je Stufe, Tiefe 18, Elo-Modell Schnellschach):**
+  1m 643, 2m 971, 3m 1286, 4m 1579, 5m 1671, 6m 1921, 7m 2029; 8m bis 10m gesättigt (Genauigkeit
+  über 83 %, das Modell endet bei etwa 2300). 9m und 10m spielten in allen 40 Partien identisch: Bei
+  Wertungen ab etwa 2700 wählt das Wahlmodell praktisch immer den besten der Kandidaten aus Tiefe 10.
+- **Leiter (Bots, Kandidaten, Nm-Stufen, reine Spitzenstufen; etwa 900 Paarungen):** Die Ergebnisse
+  zwischen Bots liegen enger beieinander als ihre Zugqualität (Leiter 1m bis 7m 890 Elo breit, Anker
+  1390). Deshalb legt eine Gerade (kleinste Quadrate über die sieben gültigen Anker) die Leiter auf
+  die Anker; Rest je Anker danach −125 bis +112. Ergebnis: Nm 1 754, 2 941, 3 1239, 4 1454, 5 1696,
+  6 1907, 7 2110, 8 2294, 9 2390; reine Stufe 8 2489, 9 2994, 10 (volle Engine) 3215. Bots 521 bis
+  3238, Kandidaten 549 bis 2876 (mittlere Streuung ±128 bei zehn Partien je Paarung).
+- **Stufe 10 ist die volle Engine:** Mit Zusatzfehlern wäre sie Stufe 9 (identische Partien); das
+  Wahlmodell zieht nur aus den Kandidaten der Tiefe 10. Bots mit Stufe 10 stehen deshalb auf 9 (ihr
+  Spiel ist dasselbe). Folge: Die Spitzengruppe 10 (2850 bis 3150) füllen Bots mit seltenen Fehlern
+  (Faktor 0,1 bis 0,3), die Gruppen 1 und 2 Bots mit häufigeren Fehlern (Faktor 1,6 und 2,5); dafür
+  32 Zusatzkandidaten, gemessen gegen 1m/2m bzw. 9m und die reine 9.
+- **Uhr:** Mit der menschlichen Bedenkzeit je Zeitklasse kostet die Uhr die Bots nichts Messbares
+  (Blitz +23, Schnellschach −54 gegenüber Klassisch, bei ±40 Streuung); der Uhrabzug ist 0, ein
+  Abzug zählt erst ab 80 Elo Verlust. Drei Zahlen je Bot und Zeitklasse (R51) bleiben verschoben,
+  weil die Uhr keinen messbaren Unterschied macht.
+- **Offen:** Wertung je Zeitklasse der Bots ist damit vorerst dieselbe Zahl; Gruppenmodus-Messung
+  nach dem endgültigen Satz.

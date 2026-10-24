@@ -1699,7 +1699,9 @@ nicht auf main:** fertig 1 (Filter „offen“ und „bis zur Entscheidung“; �
 Kern (Wahlmodell in der App, Tagesform und Zeitnot als Temperatur), R51 (Teil F erster Teil).
 Offen: 6 (eingesperrte Figur), 8 (Bots je Kategorie neu, Neumessung mit vierfachen Kandidaten,
 Ergebnisleiter, Verankerung mit dem neuen Elo-Modell; vorher Gespräch mit dem Autor zum Bot-Satz),
-Rest von 9 (Bot-Raten Blitz und 60 min, drei Einstellungssätze und Wertungen je Bot), 10
+Rest von 9 (Bot-Raten Blitz und 60 min, drei Einstellungssätze und Wertungen je Bot), 9b
+**Gruppenmodus je Bot-Kategorie** (Wunsch des Autors, 24.10.2026 nachmittags, nach den regulären
+Bots und vor dem gemeinsamen Push nach main; Einzelheiten in ENTSCHEIDUNGEN „Gruppenmodus“), 10
 (nach main mit grüner CI, dann P1 informieren). Offene Punkte für den Autor: AUFGABEN_AUTOR
 N770–N778 und E1–E4. **Nächster Schritt:** Restplan 8 (Messung läuft), dann 9 (Rest) und 10.
 
@@ -1717,6 +1719,13 @@ geschoben wird):**
 - Neue Charaktersätze der Bots (kreative Vignetten, de und en): nach der Auswahl des Bot-Satzes.
 - Die App und die Startseite nennen sich seit 0.2.124 „Beta“ (Wunsch des Autors): laufende
   Updates sind angekündigt.
+
+**Website an den Buchstand angeglichen (24.10.2026 nachmittags, Auftrag des Autors):** Werkzeugkasten-
+Absätze, Trainings- und Startseitentexte (de und en), Installationstext (kostenlos, ohne Werbung,
+ohne Anmeldung), Abbildungslinks 9.8, 9.15, 9.28, 10.9, 10.14 als Verweise mit zwei dauerhaften
+Tests (Nummern ohne Verweis, Verweise ohne Abbildung), Impressum „(Texte und Abbildungen)“,
+Semikolons aus den Rechtstexten. Testpunkte N784–N787. Einzelheiten in ENTSCHEIDUNGEN „Website an
+das Buch angeglichen“.
 
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).

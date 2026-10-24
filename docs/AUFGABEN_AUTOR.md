@@ -563,6 +563,26 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       vorwärts stürmen, Rolf eher zurückhaltend ziehen und wenig schlagen. Die Vorlieben halten
       sich jetzt im Rahmen echter Spieler seiner Stärke (Stufen auf den Quantilen der
       Lichess-Spieler); ist der Charakter trotzdem erkennbar?
+- [ ] N784. **Website, Texte zum Buchstand (dein Abgleich vom 24.10.):** Startseite
+      schach-von-grund-auf.com: Der Buchtext nennt „Eröffnungsgrundsätze und klassische
+      Eröffnungssysteme, Gambits und Fallen“; der Trainingsabsatz spricht von Übungen, „auf die der
+      Kasten ‚Training zu diesem Kapitel‘ im Buch verweist“; der Installationsabsatz sagt
+      „kostenlos, zeigt keine Werbung und braucht keine Anmeldung“. Derselbe Installationstext
+      steht auf /installieren/ und passt dort.
+- [ ] N785. **Website, Trainingsseiten:** /training/ beginnt mit „findest du hier die Übungen,
+      auf die der Kasten … verweist“ und „Deshalb stehen sie hier statt im Buch“. Eine Kapitelseite
+      (etwa /training/kap09/) hat in der Einleitung keinen Strichpunkt mehr („… auf das Buch. Ein
+      Tipp auf eine Abbildung …“). /training/werkzeugkasten/ beginnt mit „Alles Digitale, was du zum
+      Üben mit dem Buch brauchst“, nennt „Trainingsseiten“ (nicht „Trainingskästen“) und verweist
+      auf Kapitel 12 des Buches mit Merkseite und Kopiervorlage auf der letzten Seite.
+- [ ] N786. **Website, Abbildungslinks:** Auf /training/kap09/ sind 9.3, 9.8, 9.15 und 9.28
+      Links, auf /training/kap10/ 10.1, 10.9 und 10.14. Jeder öffnet die App an genau dieser
+      Abbildung (Philidor, Lucena, Vancura, Dame gegen Bauer; Saavedra, Réti, Heuäcker).
+- [ ] N787. **Website, Rechtstexte:** /impressum/ sagt unter „Quelltext und Rechte“ „(Texte und
+      Abbildungen)“ und „geschützt. Alle Rechte vorbehalten.“; /impressum/ und /datenschutz/
+      enthalten kein Semikolon mehr, Paragrafen und Angaben sind unverändert, der Stand der
+      Datenschutzerklärung bleibt 19. Oktober 2026. In der App: Reiter Training, Fragezeichen am
+      Kasten: „Die Übungen zum Kasten ‚Training zu diesem Kapitel‘ des Buches …“.
 
 ---
 

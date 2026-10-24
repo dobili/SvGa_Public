@@ -4869,3 +4869,59 @@ war). Der Messlauf bleibt für spätere Datenstände.
   (ZUSATZ_ABZUG) wird dadurch hinfällig und für Stufe 1 bis 6 sogar ein Aufschlag – wird mit der
   Verankerung neu gefasst (engine/botstaerke.ts).
 
+
+## Website an das Buch angeglichen (24.10.2026 nachmittags, Fable, Wunsch des Autors)
+
+- **Befund (Abgleich des Autors mit dem Buchstand vom 20.10.2026):** Im Buch stehen die Übungen
+  nicht mehr im Kasten „Training zu diesem Kapitel“; der Kasten nennt Stichworte und führt per
+  QR-Code auf die Trainingsseite. Kapitel 12 spricht von „Trainingsseiten“ und sagt, den aktuellen
+  Stand der Online-Angebote zeige die Website. Die Website hatte an mehreren Stellen die alte
+  Fassung („Übungen aus dem Kasten“, „nicht nur gedruckt“, „Trainingskästen“, „prüfe Bezeichnungen
+  und Adressen beim ersten Aufruf“, Verweise auf „die Abschnitte davor“ und auf Merkseite und
+  Kopiervorlage „im Buch“ ohne Ort).
+- **Entscheidung:** Texte des Autors übernommen: Werkzeugkasten-Seite (erste beide Absätze,
+  `inhalte/de/training/werkzeugkasten.json`), `training.uebersicht.einleitung`,
+  `startseite.training.text`, `training.kastenText`, `training.seite.einleitung` (Punkt statt
+  Semikolon), `startseite.buch.text1` („Eröffnungsgrundsätze und klassische Eröffnungssysteme“,
+  weil Kapitel 2 die Systeme und das Repertoire behandelt), `installation.einleitung` (kostenlos,
+  ohne Werbung, ohne Anmeldung, wie Kapitel 0 des Buches); englische Fassungen sinngleich.
+  Stilregeln des Autors für alle neuen Texte: Du-Form, kein Semikolon, dasselbe Bindewort höchstens
+  einmal je Absatz, keine zwei Sätze nacheinander mit demselben ersten Wort, nichts hinzuerfinden.
+- **Schutz der Trainingsdateien:** `pipeline/training.py` bricht beim aktuellen Buch ab
+  (`pruefe_alte_kaesten`, das Buch enthält `\trainingsverweis`) und schreibt nichts; geprüft am
+  24.10.2026 gegen `buch/a1`. Die Dateien in `inhalte/de/training/` sind die Quelle und werden von
+  Hand gepflegt.
+- **Abbildungslinks:** In kap09.json (9.8 Lucena, 9.15 Vancura, 9.28 Dame gegen Bauer) und
+  kap10.json (10.9 Réti, 10.14 Heuäcker) waren die Nummern nur Text; jetzt Verweise, die die App an
+  der Abbildung öffnen. Zwei Tests in `pipeline/tests/test_training.py` sichern das für alle
+  Trainingsseiten: keine Abbildungsnummer im Fließtext ohne Verweis (Nummern nach „Abschnitt“,
+  „Tabelle“, „Kapitel“ zählen nicht), kein Verweis auf eine Abbildung, die es in den App-Daten
+  nicht gibt.
+- **Impressum, „Quelltext und Rechte“:** aus „(Texte, Abbildungen, Zugfolgen)“ wird „(Texte und
+  Abbildungen)“. Grund (Autor): Die Notation historischer Partien ist in der Regel kein
+  geschütztes Werk, der Anspruch wäre angreifbar. Das ist eine Einschätzung des Autors und ersetzt
+  keine anwaltliche Prüfung (so auch im Kommentar der Datei).
+- **Semikolons in Impressum und Datenschutz:** durch Punkt oder Komma mit Bindewort ersetzt, ohne
+  die rechtliche Aussage zu ändern (eine Stelle gekürzt: „Zeitpunkt sowie deine IP-Adresse“ statt
+  „Zeitpunkt; dabei wird auch deine IP-Adresse übertragen“). Paragrafen, Namen und Angaben
+  unverändert; „Stand“ der Datenschutzerklärung bleibt 19. Oktober 2026, weil sich inhaltlich
+  nichts geändert hat. Bezugsquellen auf der Startseite unverändert („ISBN folgt“, „Links folgen“).
+
+## Gruppenmodus je Bot-Kategorie (Wunsch des Autors, 24.10.2026 nachmittags; geplant, noch nicht gebaut)
+
+- **Idee des Autors:** Hat der Leser jeden Bot einer Kategorie geschlagen (egal in welcher
+  Zeitklasse), erscheint einmal ein kleines Pop-up mit Gratulation und einer netten Grafik: Der
+  Gruppenmodus dieser Kategorie ist freigeschaltet. In der ausgeklappten Kategorie steht dann unter
+  den Porträts ein Knopf mit eigenem Symbol „Gruppenmodus“: eine Partie gegen alle Bots der
+  Kategorie zugleich, als würden sie sich bei jedem Zug beraten und den Zug spielen, den sie
+  gemeinsam für den besten halten.
+- **Umsetzung (vom Autor vorgegeben):** Bei jedem Zug wählt jeder Bot der Kategorie seinen Zug wie
+  in einer eigenen Partie (Wahlmodell mit Stil, Fehlerarten, Tagesform); aus dieser Auswahl spielt
+  die Gruppe den Zug, den die Engine am besten bewertet. Die Stärke des Gruppenmodus wird vorab
+  gemessen (wie die Bots: Paarungen gegen die Nm-Stufen, Leiter), in der App aber erst gezeigt, wenn
+  der Leser den Gruppenmodus einmal besiegt hat; bis dahin steht dort „Stärke unbekannt“. Danach
+  steht die Zahl dauerhaft im Menü.
+- **Reihenfolge:** nach den regulären Bots (Messung, Auswahl, Charaktersätze) und vor dem
+  gemeinsamen Push nach main (Restplan 9b in FORTSCHRITT). Offen zu klären beim Bau: Speicher
+  (freigeschaltet und besiegt je Kategorie, ohne neues Speicherformat, wenn möglich), Wertung der
+  Partie (gewertet mit der gemessenen Zahl), Zeitklassen (eine Zahl je Zeitklasse wie bei den Bots).

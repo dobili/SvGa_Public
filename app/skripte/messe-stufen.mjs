@@ -82,8 +82,9 @@ function prozent(zaehler, nenner) {
 /** Fasst eine Paarung zusammen: Punkte der zweiten (höheren) Seite, Fehlerquoten, Verluste. */
 function zusammenfassung(paarung) {
   const { berichte } = JSON.parse(readFileSync(join(ZIEL, `${paarung}.json`), "utf8"));
-  // Am letzten Bindestrich vor „@“ oder einer Ziffer trennen: Kennungen enthalten selbst welche.
-  const trenner = paarung.search(/-(?=[@\d][^-]*(?:-[a-z]+)*$)/);
+  // Am letzten Bindestrich vor „@“ oder einer Ziffer trennen: Kennungen enthalten selbst welche;
+  // „!“ am Ende heißt ohne Praxisbuch (0.2.127).
+  const trenner = paarung.search(/-(?=[@\d][^-]*(?:-[a-z]+)*!?$)/);
   const [a, b] = [paarung.slice(0, trenner), paarung.slice(trenner + 1)];
   const seiten = {
     [a]: { punkte: 0, zuege: 0, fehler: 0, verlust: 0, arten: {} },

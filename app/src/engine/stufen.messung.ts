@@ -293,7 +293,7 @@ const ziel =
  * Kennungen enthalten selbst Bindestriche („@kiki-@onkel-otto“: Kiki gegen Onkel Otto).
  */
 function kuerzelDerPaarung(text: string): readonly [string, string] {
-  const trenner = text.search(/-(?=[@\d][^-]*(?:-[a-z]+)*$)/);
+  const trenner = text.search(/-(?=[@\d][^-]*(?:-[a-z]+)*!?$)/);
   if (trenner <= 0) throw new Error(`Paarung ohne Bindestrich: ${text}`);
   return [text.slice(0, trenner), text.slice(trenner + 1)];
 }

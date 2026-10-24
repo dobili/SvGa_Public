@@ -1,5 +1,5 @@
 /**
- * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): 64 Bots in zehn Gruppen, eindeutige Kennungen,
+ * Tests der vorgefertigten Gegner (engine/gegnerliste.ts): 78 Bots in zehn Gruppen, eindeutige Kennungen,
  * Text und Porträt zu jedem, Stil im erlaubten Bereich; dazu seit 0.2.60 der Schnitt mit der
  * allgemeinen Abhakliste der Fehlerarten (Rückfrage S7) und seit 0.2.109 Gruppen ohne
  * Überschneidung.
@@ -22,8 +22,8 @@ import {
 import { STIL_MAX, STIL_MIN } from "./stil";
 import type { Stufennummer } from "./stufen";
 
-/** 64 Bots, seit 0.2.117 nach gemessener Zahl auf die zehn Stufen verteilt. */
-const BOTS_ZAHL = 64;
+/** 78 Bots (Satz vom 24.10.2026: Gruppe 1 sechs, sonst acht), nach gemessener Zahl auf die Stufen verteilt. */
+const BOTS_ZAHL = 78;
 const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 describe("vorgefertigte Gegner", () => {

@@ -304,4 +304,16 @@ export const BOTKANDIDATEN_4: readonly Gegner[] = [
   ),
   bot("k9b-universell-solide", "Kandidat 9", "", [9, 9, 9], "solide", 0, "universell", 0.12),
   bot("k9b-universell-traeumer", "Kandidat 9", "", [9, 9, 9], "traeumer", 0, "universell", 0.12),
+  // Reine Stufe 9 mit Persönlichkeit, ohne Zusatzfehler (Faktor 0): für Gruppe 10, wie die GM-Bots.
+  bot("k10p-taktiker-hektiker", "Kandidat 10", "", [9, 9, 9], "hektiker", 0, "taktiker", 0),
+  bot(
+    "k10p-draufgaenger-koenigswanderer",
+    "Kandidat 10",
+    "",
+    [9, 9, 9],
+    "koenigswanderer",
+    0,
+    "draufgaenger",
+    0,
+  ),
 ];

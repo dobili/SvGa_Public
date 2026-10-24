@@ -1,7 +1,7 @@
 /**
  * Die vorgefertigten Gegner („Bots“): Typ, Prüfhelfer und die Liste aus den beiden Teildateien.
  *
- * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026, nach dem Vorbild von chess.com): je Stufe
+ * Rolle im Gesamtbild: Wunsch des Autors (18.10.2026, nach dem Vorbild von chess.com): je Gruppe
  * acht Gegner mit verschiedenen Stärken und Schwächen, mit Porträt (app/public/gegner/) und
  * einem Satz zur Persönlichkeit (i18n `gegner.<kennung>`). Jeder Gegner hat Stufen je Phase
  * (Streuung höchstens zwei um das Mittelspiel, Durchschnitt gerundet ist seine Stufe), erlaubte
@@ -15,15 +15,16 @@
 import type { Gegner } from "./gegnerbau";
 export type { Gegner } from "./gegnerbau";
 import { SPASSBOTS } from "./gegnerliste0";
-import { GEGNER_STUFE_1_BIS_4 } from "./gegnerliste1";
-import { GEGNER_STUFE_5_BIS_8 } from "./gegnerliste2";
+import { GEGNER_GRUPPE_1_BIS_5 } from "./gegnerliste1";
+import { GEGNER_GRUPPE_6_BIS_10 } from "./gegnerliste2";
 
 /**
- * Alle vorgefertigten Gegner: 64 (acht je Stufe) und am Ende die vier Spaß-Bots (0.2.88), in der
- * Reihenfolge der Teildateien.
+ * Alle vorgefertigten Gegner: der Bot-Satz vom 24.10.2026 (78 Bots in zehn Gruppen nach gemessener
+ * Zahl, Gruppe 1 mit sechs, sonst acht) und am Ende die vier Spaß-Bots (0.2.88), in der Reihenfolge
+ * der Teildateien.
  */
 export const GEGNER: readonly Gegner[] = [
-  ...GEGNER_STUFE_1_BIS_4,
-  ...GEGNER_STUFE_5_BIS_8,
+  ...GEGNER_GRUPPE_1_BIS_5,
+  ...GEGNER_GRUPPE_6_BIS_10,
   ...SPASSBOTS,
 ];

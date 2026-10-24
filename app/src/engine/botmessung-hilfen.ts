@@ -85,6 +85,9 @@ export function zeitklasseVon(tempo: string): Wertungstempo {
  * Die Datendatei engine/botstaerke-daten.ts (oder je Zeitklasse): Stufen, Bots, Uhrabzug.
  * `uhr`: Zeitklasse → Stufe → Abzug; fehlende Zeitklassen bekommen leere Tabellen (Typ vollständig).
  */
+/** Kennungen des Archivs beginnen so (engine/botarchiv.ts). */
+const ARCHIV_VORSILBE = "alt-";
+
 export function datendatei(
   werte: Map<string, number>,
   uhr: ReadonlyMap<string, ReadonlyMap<number, number>>,
@@ -95,8 +98,14 @@ export function datendatei(
     (n) =>
       `  ${n}: ${Math.round(werte.get(n === STUFEN_NUMMERN.at(-1) ? "stufe10" : `stufe${n}m`) ?? Number.NaN)},`,
   );
-  const zahl = (k: string) => werte.get(k) ?? werte.get(BOTMESSNAMEN[k] ?? "");
-  // Auch das Archiv (nicht gewählte Bots) behält seine Zahl (Wunsch des Autors, 24.10.2026).
+  // Ein neuer Bot führt seine Kandidatenmessung (BOTMESSNAMEN), auch wenn ein alter Bot mit derselben
+  // Kennung gemessen wurde; der alte steht im Archiv als „alt-…“ und bekommt die Messung seiner
+  // Kennung (Wunsch des Autors, 24.10.2026: nicht gewählte Bots behalten ihre Zahl).
+  const zahl = (k: string) => {
+    const messname = BOTMESSNAMEN[k];
+    if (messname !== undefined) return werte.get(messname);
+    return werte.get(k.startsWith(ARCHIV_VORSILBE) ? k.slice(ARCHIV_VORSILBE.length) : k);
+  };
   const bots = [...GEGNER, ...BOTARCHIV].map(
     (g) => `  "${g.kennung}": ${Math.round(zahl(g.kennung) ?? Number.NaN)},`,
   );

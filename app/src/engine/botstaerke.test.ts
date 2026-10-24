@@ -36,14 +36,15 @@ describe("Elo-Zahl der Bots", () => {
     }
   });
 
-  it("Spaß-Bots (0.2.88): ihr Bereich umfasst alle vier (seit 0.2.117 über Stufe 1)", () => {
+  it("Spaß-Bots (0.2.88): ihr Bereich umfasst alle vier (im Bereich der Anzeige)", () => {
     const bereich = bereichDerSpassbots();
     expect(bereich).not.toBeNull();
-    expect(bereich?.von ?? 0).toBeGreaterThan(staerkeDerStufe(1));
+    // Seit dem Bot-Satz vom 24.10.2026 beginnt Kiki unter Stufe 1 (580 gegen 747): nur die Anzeigegrenze.
+    expect(bereich?.von ?? 0).toBeGreaterThan(ANGABE_MINDESTENS);
     expect(bereich?.von ?? 0).toBeLessThan(bereich?.bis ?? 0);
   });
 
-  it("alle vorgefertigten Bots (64 und die vier Spaß-Bots) haben eine gemessene Zahl", () => {
+  it("alle vorgefertigten Bots (78 und die vier Spaß-Bots) haben eine gemessene Zahl", () => {
     for (const g of GEGNER) expect(staerkeDesBots(g.kennung), g.kennung).not.toBeNull();
     expect(staerkeDesBots(null)).toBeNull();
     expect(staerkeDesBots("eigen-123")).toBeNull();

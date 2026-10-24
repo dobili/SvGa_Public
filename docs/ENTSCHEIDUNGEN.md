@@ -5066,3 +5066,29 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Entscheidung des Autors (nach kurzem Irrtum am selben Tag):** Es bleibt bei Lichess: Mit 30+20
   spielen die Bots nach der Klassisch-Kalibrierung, ein Sieg vergibt den Klassisch-Stern, wie bei
   60+0. Jede Zeitklasse hat ihren eigenen Stern; nichts wird doppelt vergeben.
+
+## Endgültiger Bot-Satz (24.10.2026 abends, Fable, botelo4)
+
+- **78 Bots in zehn Gruppen** (Gruppe 1 sechs, sonst acht), gewählt aus 64 Bestandsbots und 274
+  Kandidaten nach der gemessenen Zahl (Schnellschach, verankerte Leiter): je Gruppe jeder der sieben
+  Stile einmal plus ein zweiter Universeller, bei mehreren Treffern der nächste an der Gruppenmitte.
+  Gruppe 1 (250 bis 450) hat nur sechs, weil für Taktiker und Universell kein Kandidat unter 450
+  lag; Spielerinnen und Spieler unter 450 sind selten, und die Spaß-Bots füllen den Bereich.
+- **Namen und Porträts:** Gewählte Bestandsbots behalten Name, Porträt und Kennung. Gewählte
+  Kandidaten bekommen Name und Porträt aus dem Pool (nicht gewählte Bestandsbots, schwächste
+  zuerst, dazu 19 neue Porträts); Titel (GM, IM, WGM, WIM, FM, Trainer, Doktor, Prof.) bleiben den
+  Gruppen 8 bis 10 vorbehalten. Jedes Porträt wurde für seinen Namen erzeugt, deshalb passt das
+  Geschlecht des Bildes zum Namen (Wunsch des Autors). Ein Porträt, das ein Bestandsbot trägt
+  (Herr Krause trägt „herr-lehmann“), gilt nicht als frei.
+- **Archiv** (`engine/botarchiv.ts`): die 49 nicht gewählten Bots von 0.2.117 mit ihren Werten,
+  unter „alt-…“ wenn ein Kandidat ihre Kennung übernahm. Nicht in der Gegnerwahl, ohne Sätze.
+  `engine/botmessnamen.ts` verbindet neue Kennungen mit den Kandidatenkennungen der Messung, damit
+  `botstaerke-daten.ts` die gemessene Zahl unter dem neuen Namen führt.
+- **Gruppe 10:** Zwei Kandidaten mit Faktor 0 (keine Zusatzfehler, Stufe 9 mit Persönlichkeit),
+  gemessen gegen 9m und die reine Stufe 10: Opa Walter 3113, Frau Hoffmann 3025.
+- **Charaktersätze** (de und en): zu jedem Bot zwei Sätze zu Stil, Persönlichkeit und Fehlerhäufigkeit,
+  menschlich erzählt; nach Regel 9 in der App, der Autor liest sie später. Sätze alter Bots, die es
+  nicht mehr gibt, wurden entfernt.
+- **Lokal** (`buch/arbeit/botelo4/`): `auswahl.py` (Auswahl mit Alternativen je Stil, `auswahl.txt`),
+  `satz.py --schreiben` (Satz, Archiv, Messnamen; nur einmal auf die ursprünglichen Listen anwenden),
+  `satz/neue-bots.json`.

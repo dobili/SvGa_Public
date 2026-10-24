@@ -649,6 +649,27 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       unbekannt“ stehen, weil die Gruppen noch nicht gemessen sind (das folgt nach dem endgültigen
       Bot-Satz). Die Wertung rechnet intern mit dem stärksten Bot der Stufe plus 150.
 
+- [ ] N796. **Neuer Bot-Satz (24.10.):** Spielen › vorgefertigte Bots. Es gibt jetzt 78 Bots in zehn
+      Gruppen (Gruppe 1 sechs, sonst acht), je Gruppe jeder Stil einmal. Neue Namen mit Zahl:
+      1 Tom 347, Marie 226, Oma Erna 396, Luis 347, Clara 347, Onkel Bernd 439 ·
+      2 Henry 650, Moritz 667, Derya 694, Herr Krause 694, Lina 720, Jakob 667, Rolf 548, Herr Wolff 694 ·
+      3 Pia 896, Felix 821, Yusuf 921, Ronja 946, Svenja 972, Philipp 896, Frau Albrecht 896, Ella 846 ·
+      4 Erik 1248, Dennis 1222, Leyla 1151, Mara 1168, Simon 1248, Opa Heinz 1159, Holger 1324, Lars 1324 ·
+      5 Katrin 1474, Marco 1597, Frau Romero 1551, Nele 1475, Johanna 1533, Frau Demir 1448, Jana 1502, Luca 1557 ·
+      6 Günter 1771, Herr Kühn 1761, Igor 1776, Miriam 1801, Samira 1857, Herr Vogel 1751, Herr Hartmann 1675, David 1851 ·
+      7 Frau Sommer 2100, Herr Lorenz 2048, Defne 2100, Amaya 2175, Elias 2074, Frau Wagner 2032, Fiona 2125, Juna 2021 ·
+      8 Doktor Falk 2434, GM Novak 2364, Trainer Maier 2339, IM Becker 2412, WGM Tanaka 2386, Frau Prof. Reich 2412, GM Okoro 2339, IM Lindgren 2388 ·
+      9 Ole 2708, Mats 2708, Arjun 2703, Nora 2708, Melek 2708, Tarik 2708, Bastian 2644, Oma Ilse 2644 ·
+      10 FM Duarte 3120, IM Kraft 2975, Opa Walter 3113, WIM Okafor 3232, Frau Hoffmann 3025, GM Ivanova 3120, GM Berglund 3039, Herr Yılmaz 2871.
+      Prüfe: Jedes Porträt passt zum Namen (Geschlecht, Alter, Titel), die Zahl an der Kachel
+      steht, die Sprechblase zeigt zu jedem Bot zwei neue Sätze, und eine Partie gegen einen Bot
+      jeder Gruppe fühlt sich etwa so stark an wie die Zahl sagt.
+- [ ] N797. **Sätze der Bots lesen:** Tippe in der Gegnerwahl die Bots nacheinander an und lies die
+      Sprechblasen (deutsch, bei Bedarf englisch in den Einstellungen). Die Sätze gelten als
+      abgesegnet (Regel 9); schreib mir nur, welche du anders willst („N797: Mats zu trocken“).
+      Nenne mir auch, wenn du einen Bot tauschen willst: Zu jeder Gruppe und jedem Stil liegen
+      drei bis sechs gemessene Alternativen bereit, der Tausch kostet nur Name und Satz.
+
 ---
 
 ## Teil 2: Entscheiden

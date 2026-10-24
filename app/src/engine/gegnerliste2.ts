@@ -1,107 +1,75 @@
 /**
- * Die vorgefertigten Gegner, zweite Hälfte (die stärkeren 32 Bots).
- *
- * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts. Seit 0.2.117 neu gebaut (Wunsch des
- * Autors vom 20.10.2026: „mach die Bots komplett neu“, Porträts bleiben, neue Namen). Seit 0.2.117
- * (zehn Stufen) sind die Stufen je Phase die Grundstärke; dazu kommen die Zusatzfehler der
- * Menschen (engine/menschenwahl.ts), die Persönlichkeit (engine/gegnerbau.ts, CHARAKTERE)
- * verschiebt einzelne Fehlerarten und blinde Flecken, der Stil wählt unter gleich guten Zügen.
- * Die Grundstufe ist so gewählt, dass die gemessene Zahl in der Zielgruppe landet (Einstufung vom
- * 22.10.2026: Gruppe 1 → Stufe 1, 2 → 3, 3 → 4, 4 → 5, 5 → 6, 6 → 7, 7 → 8, 8 bis 10 → 10 mit
- * seltener werdenden Fehlern); die Gegnerwahl ordnet nach der gemessenen Zahl (engine/botgruppe.ts).
+ * Die vorgefertigten Gegner der Gruppen 6 bis 10 (Bot-Satz vom 24.10.2026, siehe gegnerliste1.ts).
+ * Rolle im Gesamtbild: Teil von engine/gegnerliste.ts.
  * Abhängigkeiten: engine/gegnerbau.ts (Typ, Helfer, Persönlichkeiten).
  */
-// Stufe 10 gibt es für Bots nicht mehr (0.2.125): Sie ist die volle Engine ohne Zusatzfehler; mit
-// Zusatzfehlern spielte sie identisch wie Stufe 9 (Messung 24.10.2026), deshalb stehen die
-// Spitzenbots auf 9.
 import { bot, type Gegner } from "./gegnerbau";
 
-/** Bots 33 bis 40 der Liste (vor 0.2.117 Stufe 5). */
-const STUFE_5: readonly Gegner[] = [
-  bot("guenter", "Günter", "kurt", [6, 6, 7], "endspieler", -1, "vereinfacher"),
-  bot("frau-romero", "Frau Romero", "frau-ortega", [6, 6, 6], "solide", 0, "universell"),
-  bot("lars", "Lars", "nils", [7, 7, 7], "angreifer", 2, "angreifer"),
-  bot("katrin", "Katrin", "hanna", [8, 7, 6], "theoretiker", 0, "positionsspieler"),
-  bot("herr-vogel", "Herr Vogel", "herr-weber", [7, 7, 7], "stratege", -2, "positionsspieler"),
-  bot("nele", "Nele", "lea", [6, 7, 6], "taktiker", 1, "taktiker"),
-  bot("simon", "Simon", "paul", [6, 7, 7], "hektiker", 1, "taktiker"),
-  bot("frau-demir", "Frau Demir", "frau-kaya", [7, 7, 7], "vorsichtig", -1, "verteidiger"),
-];
-
-/** Bots 41 bis 48 der Liste (vor 0.2.117 Stufe 6). */
-const STUFE_6: readonly Gegner[] = [
-  bot("jana", "Jana", "lena", [7, 7, 7], "solide", 0, "universell"),
-  bot("igor", "Igor", "viktor", [9, 8, 8], "theoretiker", -1, "positionsspieler"),
-  bot("miriam", "Miriam", "sara", [8, 8, 8], "traeumer", 1, "draufgaenger"),
-  bot(
-    "herr-hartmann",
-    "Herr Hartmann",
-    "herr-fischer",
-    [7, 8, 9],
-    "endspieler",
-    -2,
-    "vereinfacher",
-  ),
+export const GEGNER_GRUPPE_6_BIS_10: readonly Gegner[] = [
+  bot("guenter", "Günter", "kurt", [5, 6, 6], "hektiker", 0, "angreifer"),
+  bot("herr-kuehn", "Herr Kühn", "herr-schmitt", [6, 6, 6], "stratege", -1, "positionsspieler"),
+  bot("igor", "Igor", "viktor", [5, 5, 6], "materialist", 0, "taktiker"),
+  bot("miriam", "Miriam", "sara", [4, 5, 6], "solide", 0, "verteidiger"),
+  bot("samira", "Samira", "amira", [5, 6, 5], "traeumer", 0, "draufgaenger"),
+  bot("herr-vogel", "Herr Vogel", "herr-weber", [4, 5, 6], "endspieler", 0, "vereinfacher"),
+  bot("herr-hartmann", "Herr Hartmann", "herr-fischer", [5, 5, 4], "theoretiker", 0, "universell"),
+  bot("david", "David", "ben", [6, 5, 4], "traeumer", 0, "universell"),
+  bot("frau-sommer", "Frau Sommer", "frau-lind", [7, 7, 8], "koenigswanderer", 0, "angreifer"),
+  bot("herr-lorenz", "Herr Lorenz", "herr-brandt", [7, 7, 7], "vorsichtig", 0, "positionsspieler"),
   bot("defne", "Defne", "elif", [7, 8, 7], "taktiker", 2, "taktiker"),
-  bot("luca", "Luca", "matteo", [8, 8, 7], "angreifer", 2, "angreifer"),
-  bot("frau-sommer", "Frau Sommer", "frau-lind", [8, 8, 8], "stratege", -1, "positionsspieler"),
-  bot("david", "David", "ben", [8, 8, 8], "materialist", 0, "taktiker"),
-];
-
-/** Bots 49 bis 56 der Liste (vor 0.2.117 Stufe 7). */
-const STUFE_7: readonly Gegner[] = [
+  bot("amaya", "Amaya", "yara", [6, 7, 8], "solide", 0, "verteidiger"),
+  bot("elias", "Elias", "noah", [6, 7, 7], "damenfan", 0, "draufgaenger"),
+  bot("frau-wagner", "Frau Wagner", "frau-stein", [5, 6, 6], "stratege", 0, "vereinfacher"),
+  bot("fiona", "Fiona", "fiona", [8, 7, 6], "traeumer", 0, "universell"),
+  bot("juna", "Juna", "juna", [7, 7, 6], "theoretiker", 0, "universell"),
   bot(
     "doktor-falk",
     "Doktor Falk",
     "doktor-berg",
     [9, 9, 9],
-    "stratege",
-    -1,
-    "positionsspieler",
-    0.3,
-  ),
-  bot("trainer-maier", "Trainer Maier", "trainer-koch", [9, 9, 9], "solide", 0, "universell", 0.5),
-  bot("amaya", "Amaya", "yara", [9, 9, 9], "theoretiker", 1, "positionsspieler", 0.5),
-  bot(
-    "herr-lorenz",
-    "Herr Lorenz",
-    "herr-brandt",
-    [9, 9, 9],
-    "endspieler",
-    -2,
-    "vereinfacher",
+    "koenigswanderer",
+    0,
+    "angreifer",
     0.5,
   ),
-  bot("elias", "Elias", "noah", [9, 9, 9], "angreifer", 2, "angreifer", 0.3),
-  bot("frau-wagner", "Frau Wagner", "frau-stein", [9, 9, 9], "vorsichtig", -1, "verteidiger", 0.5),
-  bot("arjun", "Arjun", "ravi", [9, 9, 9], "taktiker", 2, "taktiker", 0.1),
+  bot("gm-novak", "GM Novak", "gm-gruen", [8, 8, 7], "stratege", 0, "positionsspieler"),
+  bot("trainer-maier", "Trainer Maier", "trainer-koch", [9, 8, 7], "hektiker", 0, "taktiker"),
+  bot("im-becker", "IM Becker", "im-vogt", [7, 8, 9], "solide", 0, "verteidiger"),
+  bot("wgm-tanaka", "WGM Tanaka", "wgm-sato", [9, 9, 9], "traeumer", 0, "draufgaenger", 0.5),
   bot(
     "frau-prof-reich",
     "Frau Prof. Reich",
     "frau-doktor-ahl",
+    [7, 8, 9],
+    "endspieler",
+    0,
+    "vereinfacher",
+  ),
+  bot("gm-okoro", "GM Okoro", "gm-okoro", [8, 8, 7], "theoretiker", 0, "universell"),
+  bot("im-lindgren", "IM Lindgren", "im-lindgren", [8, 8, 9], "solide", 0, "universell"),
+  bot("ole", "Ole", "ole", [9, 9, 9], "koenigswanderer", 0, "angreifer", 0.3),
+  bot("mats", "Mats", "mats", [9, 9, 9], "vorsichtig", 0, "positionsspieler", 0.5),
+  bot("arjun", "Arjun", "ravi", [9, 9, 9], "taktiker", 2, "taktiker", 0.1),
+  bot("nora", "Nora", "nora", [9, 9, 9], "solide", 0, "verteidiger", 0.1),
+  bot("melek", "Melek", "melek", [9, 9, 9], "angreifer", 0, "draufgaenger", 0.5),
+  bot("tarik", "Tarik", "tarik", [9, 9, 9], "endspieler", 0, "vereinfacher", 0.3),
+  bot("bastian", "Bastian", "bastian", [9, 9, 9], "theoretiker", 0, "universell", 0.5),
+  bot("oma-ilse", "Oma Ilse", "oma-ilse", [9, 9, 9], "traeumer", 0, "universell", 0.3),
+  bot("fm-duarte", "FM Duarte", "fm-ortiz", [9, 9, 9], "angreifer", 0, "angreifer", 0),
+  bot("im-kraft", "IM Kraft", "im-haas", [9, 9, 9], "theoretiker", 0, "positionsspieler", 0),
+  bot("opa-walter", "Opa Walter", "opa-walter", [9, 9, 9], "hektiker", 0, "taktiker", 0),
+  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [9, 9, 9], "vorsichtig", 0, "verteidiger", 0),
+  bot(
+    "frau-hoffmann",
+    "Frau Hoffmann",
+    "frau-hoffmann",
     [9, 9, 9],
-    "traeumer",
+    "koenigswanderer",
     0,
     "draufgaenger",
-    0.1,
+    0,
   ),
-];
-
-/** Bots 57 bis 64 der Liste (vor 0.2.117 Stufe 8). */
-const STUFE_8: readonly Gegner[] = [
-  bot("gm-novak", "GM Novak", "gm-gruen", [9, 9, 9], "solide", 0, "universell", 0.1),
-  bot("im-becker", "IM Becker", "im-vogt", [9, 9, 9], "stratege", -1, "positionsspieler", 0.1),
-  bot("wgm-tanaka", "WGM Tanaka", "wgm-sato", [9, 9, 9], "taktiker", 1, "taktiker", 0.1),
-  bot("fm-duarte", "FM Duarte", "fm-ortiz", [9, 9, 9], "angreifer", 0, "angreifer", 0),
   bot("gm-ivanova", "GM Ivanova", "gm-petrova", [9, 9, 9], "endspieler", 0, "vereinfacher", 0),
-  bot("im-kraft", "IM Kraft", "im-haas", [9, 9, 9], "theoretiker", 0, "positionsspieler", 0),
-  bot("wim-okafor", "WIM Okafor", "wim-nkemelu", [9, 9, 9], "vorsichtig", 0, "verteidiger", 0),
   bot("gm-berglund", "GM Berglund", "gm-lindqvist", [9, 9, 9], "solide", 0, "universell", 0),
-];
-
-export const GEGNER_STUFE_5_BIS_8: readonly Gegner[] = [
-  ...STUFE_5,
-  ...STUFE_6,
-  ...STUFE_7,
-  ...STUFE_8,
+  bot("herr-yilmaz", "Herr Yılmaz", "herr-yilmaz", [9, 9, 9], "traeumer", 0, "universell", 0.5),
 ];

@@ -2,9 +2,11 @@
  * Startanimation beim App-Start: der goldene Springer vom Cover des Buches, kurz und überspringbar.
  *
  * Rolle im Gesamtbild: Wunsch des Autors (R39, 23.10.2026). Über allem liegt kurz eine Fläche in
- * Navy; der Springer (dasselbe Bild wie das App-Symbol, public/symbole/symbol-512.png, also schon
- * im Offline-Speicher) wächst mit goldenem Schein heran, darunter der Titel des Buches; dann
- * blendet alles aus. Ein Tipp irgendwo überspringt sie sofort.
+ * Navy; der Springer wächst mit goldenem Schein heran, darunter der Titel des Buches; dann
+ * blendet alles aus. Seit 0.2.126 (Wunsch des Autors, 24.10.2026) ein eigener Ausschnitt des Covers
+ * (public/bilder/startspringer.webp, erzeugt von skripte/erzeuge-startbild.mjs): Springer mittig,
+ * darunter Brett und Schatten; vorher stand das eng geschnittene App-Symbol mit dem Sockel auf
+ * dem Kreisrand. Das Bild liegt im Offline-Speicher wie alle WebP-Dateien. Ein Tipp irgendwo überspringt sie sofort.
  * Bei jedem Start der App, 2,5 Sekunden lang (Wunsch des Autors, 23.10.2026; vorher 1,9 s und
  * höchstens einmal je Stunde), außer sie ist in den Einstellungen abgeschaltet. Ein Start ist eine
  * neue Sitzung des Browsers (die installierte App startet nach dem Schließen neu); ein Neuladen
@@ -18,6 +20,9 @@ import { useEffect, useState } from "react";
 import { liesMerker } from "../../app/merker";
 import { t } from "../../i18n/sprache";
 import { RUECKKEHR_MS, rueckkehrFaellig } from "./startanimationRegel";
+
+/** Kantenlänge des Startbilds in Bildpunkten (skripte/erzeuge-startbild.mjs). */
+const STARTBILD_GROESSE = 840;
 
 /** Merker auf dem Gerät: Schalter in den Einstellungen, „aus“ schaltet sie ab (Voreinstellung: an). */
 export const MERKER_STARTANIMATION = "startanimation";
@@ -102,10 +107,10 @@ export function Startanimation() {
       <span className="startanimation-schein" aria-hidden="true">
         <img
           className="startanimation-springer"
-          src={`${import.meta.env.BASE_URL}symbole/symbol-512.png`}
+          src={`${import.meta.env.BASE_URL}bilder/startspringer.webp`}
           alt=""
-          width={512}
-          height={512}
+          width={STARTBILD_GROESSE}
+          height={STARTBILD_GROESSE}
         />
       </span>
       <span className="startanimation-titel" aria-hidden="true">

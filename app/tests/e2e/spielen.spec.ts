@@ -241,7 +241,7 @@ test("Stellung aufbauen (K e6, D a3 gegen K e8), zu zweit ohne Werkzeuge spielen
 });
 
 // 0.2.42: eigene Gegner anlegen, wählen, im Untertitel sehen, löschen.
-test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, spielen, löschen", async ({
+test("Eigener Gegner „Rambo“ (Angreifer, ohne „Figur hängen“): anlegen, spielen, löschen", async ({
   page,
 }) => {
   await starteImBrowser(page);
@@ -252,11 +252,22 @@ test("Eigener Gegner „Rambo“ (sehr aggressiv, ohne Fehlerarten): anlegen, sp
   const karte = page.getByTestId("eigene-gegner");
   await karte.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
   await page.getByLabel("Name").fill("Rambo");
-  await page.getByLabel(/^Spielstil/).fill("2");
-  await expect(page.getByLabel(/^Spielstil/)).toHaveValue("2");
+  // Seit 0.2.126 (Teil E): Stil im Spinnennetz statt Regler, Regler auf menschlichen Quantilen.
+  const netz = page.getByTestId("stilnetz");
+  await netz.getByRole("radio", { name: "Angreifer" }).click();
+  await expect(netz.getByRole("radio", { name: "Angreifer" })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  await expect(page.getByTestId("stilnetz-text")).toContainText("sucht Schach");
   await page.getByRole("checkbox", { name: "eine Figur hängen lassen (W1)" }).uncheck();
+  await page.getByTestId("erweiterte-fehler").locator("summary").click();
+  await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
+  await expect(page.locator("#stufe-figurHaengen")).toBeDisabled();
+  await page.locator("#stufe-verfruehteDame").fill("3");
+  await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "unmenschlich");
   await karte.getByRole("button", { name: "Gegner speichern" }).click();
-  await expect(karte).toContainText("Rambo · 3 · 3 · 3 · sehr aggressiv");
+  await expect(karte).toContainText("Rambo · 3 · 3 · 3 · Angreifer");
   await page.getByRole("radio", { name: "Rambo" }).click();
   await expect(page.getByTestId("gegner-sprechblase")).toContainText("Rambo");
   await page.getByRole("button", { name: "Partie beginnen" }).click();

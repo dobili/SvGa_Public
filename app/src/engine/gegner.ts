@@ -12,6 +12,8 @@
  * (`unterAbhakliste`, Rest aus Rückfrage S7).
  * Abhängigkeiten: stufen.ts, botgruppe.ts, blindeFlecken.ts, fehlerart.ts, schach/phase.ts, i18n.
  */
+import type { Reglerstufen } from "./eigenstufen";
+import type { Stilname } from "./stile";
 import type { BlinderFleck } from "./blindeFlecken";
 import { gruppeDesBots } from "./botgruppe";
 import { FEHLERARTEN, type Fehlerart } from "./fehlerart";
@@ -60,6 +62,13 @@ export interface EigenerGegner {
   readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
   readonly haeufigkeit?: number;
   readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
+  /**
+   * Seit 0.2.126 (Teil E): einer der sieben Stile (engine/stile.ts) statt des Reglers `stil`, und
+   * Stufen −4 bis 4 je Fehlerart und Fleck auf den Quantilen der Menschen (engine/eigenstufen.ts)
+   * statt der freien `gewichte`. Fehlend bei älteren Gegnern; dann gilt das Alte.
+   */
+  readonly stilname?: Stilname;
+  readonly reglerstufen?: Reglerstufen;
 }
 
 /** Vorsilbe der Kennungen eigener Gegner (unterscheidet sie von den vorgefertigten). */

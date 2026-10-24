@@ -5092,3 +5092,43 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Lokal** (`buch/arbeit/botelo4/`): `auswahl.py` (Auswahl mit Alternativen je Stil, `auswahl.txt`),
   `satz.py --schreiben` (Satz, Archiv, Messnamen; nur einmal auf die ursprünglichen Listen anwenden),
   `satz/neue-bots.json`.
+
+## Startbild aus dem Cover (24.10.2026 abends, Wunsch des Autors, R39)
+
+- **Bild:** `app/public/bilder/startspringer.webp` (840 × 840, etwa 270 KB), erzeugt von
+  `app/skripte/erzeuge-startbild.mjs` aus dem Cover in voller Auflösung (TIF des Autors, lokal als
+  PNG umgewandelt). Ausschnitt um den Springer, unten bis ins Brett, oben unter der Unterzeile des
+  Covers. Farbe, Schärfe und Abdunkeln zum Rand wie beim App-Symbol. Das Cover kommt nicht ins
+  Repository, nur das erzeugte Bild.
+- **Grund:** Das App-Symbol ist eng um den Springer geschnitten. Im Kreis der Startanimation stand
+  sein Sockel deshalb auf dem Rand. Die Startanimation (`ui/komponenten/Startanimation.tsx`) zeigt
+  seit 0.2.126 das neue Bild, es liegt im Offline-Speicher wie alle WebP-Dateien.
+
+## Eigene Gegner: Stil im Spinnennetz, Regler auf menschlichen Quantilen (24.10.2026 abends, Teil E, Oberfläche)
+
+- **Umgesetzt nach dem Plan vom 23.10.2026** („Zugwahl der Bots, Plan“, Oberfläche), auf Wunsch des
+  Autors vor der Kalibrierung, weil es nur eigene Gegner betrifft. Die vorgefertigten Bots spielen
+  unverändert, die laufenden Messungen bleiben gültig.
+- **Stil** (`ui/komponenten/Stilnetz.tsx`): Netz mit sechs Speichen über die drei Achsen
+  (Königsangriff: Angreifer gegen Positionsspieler, Aktivität: Taktiker gegen Verteidiger,
+  Bauernsturm gegen Vereinfachen: Draufgänger gegen Vereinfacher), Mitte „Universell“, dazu eine
+  Auswahlliste und ein Satz zum gewählten Stil. Der Stil wirkt wie bei den vorgefertigten Bots
+  (`engine/stile.ts`). Der alte Regler −2 bis 2 bleibt für ältere Gegner wirksam, bis sie
+  gespeichert werden; das Formular schlägt dann den passenden Stil vor (aggressiv → Angreifer,
+  defensiv → Verteidiger).
+- **Regler** (`engine/eigenstufen.ts`, `ui/komponenten/ErweiterteFehler.tsx`): je Fehlerart und
+  Fleck die Stufen −4 bis 4 wie bei den vorgefertigten Bots (`engine/spielerbereiche.ts`), daraus
+  beim Partiebeginn die Gewichte für die geschätzte Wertung des Gegners. Nur angehakte Arten und
+  Flecken wirken. Alte freie Gewichte werden in die nächste Stufe übersetzt, sobald der Leser einen
+  Regler bewegt.
+- **Menschlichkeitsanzeige:** Anteil der Spieler, die in allen Punkten mindestens so auffällig sind,
+  als Produkt der Anteile je Stufe (0: alle, ±1: die Hälfte, ±2: ein Zehntel), unter der
+  vereinfachenden Annahme unabhängiger Arten. Ab 5 % „menschlich“, ab 0,1 % „ungewöhnlich“, darunter
+  „kaum noch menschlich“, eine Stufe über ±2 „unmenschlich“.
+- **Geschätzte Stärke:** Die Zahl bleibt die Schätzung aus den Stufen je Phase. Dazu sagt ein Satz,
+  ob die Regler den Bot eher stärker oder schwächer machen (geometrisches Mittel der Faktoren ab
+  1,25 oder unter 0,8). Eine Zahl für die Verschiebung gäbe es erst mit einer Messung je
+  Kombination; eine erfundene Zahl wäre irreführend.
+- **Speicher:** zwei neue, freiwillige Felder `stilname` und `reglerstufen` am eigenen Gegner und
+  `stilname` an der Partie. Ältere Daten lesen sich unverändert, ein neues Speicherformat war nicht
+  nötig.

@@ -109,7 +109,8 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     zufallszuege: bot?.zufallszuege,
     // Vorgefertigte Bots (0.2.125): Faktoren aus den Stufen ihrer Persönlichkeit und ihrer Wertung
     gewichte: e.gewichte ?? (bot ? faktorenAus(bot.persoenlichkeit, gegnerstaerke(e)) : undefined),
-    stilname: bot?.stilname,
+    // Eigene Gegner mit gewähltem Stil (0.2.126) wie vorgefertigte Bots
+    stilname: e.stilname ?? bot?.stilname,
     haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,
     hoechstverlust: e.hoechstverlust,
     restMs: eigeneRestzeit(partie, jetztMs),

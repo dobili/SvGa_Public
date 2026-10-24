@@ -8,6 +8,7 @@
  * sich die Partie speichern (speicher/) und nach einem Neuladen fortsetzen.
  * Abhängigkeiten: chessops, spiel/zuege.ts, spiel/ergebnis.ts, spiel/uhr.ts, engine/fehlerart.ts.
  */
+import type { Stilname } from "../engine/stile";
 import type { Color } from "chessops/types";
 import type { BlinderFleck } from "../engine/blindeFlecken";
 import type { Fehlerart } from "../engine/fehlerart";
@@ -66,6 +67,8 @@ export interface Partieeinstellung {
   readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
   readonly haeufigkeit?: number;
   readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
+  /** Stil eines eigenen Gegners (seit 0.2.126, engine/stile.ts); fehlend: der Regler `stil`. */
+  readonly stilname?: Stilname;
   readonly hilfen: Spielhilfen;
   /** Zählt die Partie für die Wertung des Lesers (spiel/wertung.ts)? */
   readonly gewertet: boolean;

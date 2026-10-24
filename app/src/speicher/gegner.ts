@@ -10,6 +10,8 @@ import { BLINDE_FLECKEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import { istPortraetwahl } from "../engine/portraetwahl";
+import { REGLERARTEN, reglerstufeAus, type Reglerstufen } from "../engine/eigenstufen";
+import { STILNAMEN, type Stilname } from "../engine/stile";
 import { menschenwerteAus } from "./menschenwerte";
 import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../engine/stil";
 import type { Stufennummer } from "../engine/stufen";
@@ -75,6 +77,29 @@ function stilAus(roh: unknown): number {
 }
 
 /** Ein eigener Gegner aus Rohdaten; null ohne Kennung oder Name. */
+/** Einer der sieben Stile (engine/stile.ts) aus Rohdaten, sonst undefined (seit 0.2.126). */
+export function stilnameAus(wert: unknown): Stilname | undefined {
+  return STILNAMEN.find((n) => n === wert);
+}
+
+/** Stufen −4 bis 4 je Fehlerart und Fleck (seit 0.2.126); undefined ohne gültige Angabe. */
+export function reglerstufenAus(roh: unknown): Reglerstufen | undefined {
+  if (!istObjekt(roh) || Array.isArray(roh)) return undefined;
+  const aus: Partial<Record<(typeof REGLERARTEN)[number], number>> = {};
+  for (const art of REGLERARTEN) {
+    const stufe = reglerstufeAus(roh[art]);
+    if (stufe !== undefined) aus[art] = stufe;
+  }
+  return aus;
+}
+
+/** Stil und Reglerstufen eines Rohobjekts, nur die vorhandenen. */
+function teilEAus(roh: Roh): Pick<EigenerGegner, "stilname" | "reglerstufen"> {
+  const stilname = stilnameAus(roh.stilname);
+  const reglerstufen = reglerstufenAus(roh.reglerstufen);
+  return { ...(stilname ? { stilname } : {}), ...(reglerstufen ? { reglerstufen } : {}) };
+}
+
 export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
   if (!istObjekt(roh) || typeof roh.kennung !== "string" || typeof roh.name !== "string") {
     return null;
@@ -92,6 +117,8 @@ export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
     ...(istPortraetwahl(roh.portraet) ? { portraet: roh.portraet } : {}),
     // Erweiterter Modus (0.2.117), nur wenn gespeichert.
     ...menschenwerteAus(roh),
+    // Teil E (0.2.126): Stil und Reglerstufen, nur wenn gespeichert.
+    ...teilEAus(roh),
   };
 }
 

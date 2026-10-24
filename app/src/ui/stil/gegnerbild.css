@@ -278,3 +278,98 @@
     opacity: 1;
   }
 }
+
+/* Stil eigener Gegner als Spinnennetz (Teil E, 0.2.126, ui/komponenten/Stilnetz.tsx). */
+.stilnetz {
+  display: grid;
+  gap: var(--raster);
+  margin-block: var(--raster);
+}
+
+.stilnetz-bild {
+  width: 100%;
+  max-width: 340px;
+  justify-self: center;
+  font-family: var(--schrift);
+  font-size: 13px;
+}
+
+.stilnetz-ring {
+  fill: none;
+  stroke: var(--linie);
+}
+
+.stilnetz-speiche {
+  stroke: var(--linie-stark);
+}
+
+.stilnetz-flaeche {
+  fill: rgb(201 162 39 / 0.3);
+  stroke: var(--gold);
+  stroke-width: 2;
+  transition: all 0.2s ease-out;
+}
+
+.stilnetz-punkt {
+  cursor: pointer;
+  fill: var(--flaeche);
+  stroke: var(--linie-stark);
+}
+
+.stilnetz-punkt text {
+  fill: var(--text);
+  /* Schein in der Grundfarbe, damit die Schrift über Linien und Fläche lesbar bleibt. */
+  stroke: var(--flaeche);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+  paint-order: stroke;
+}
+
+.stilnetz-punkt .stilnetz-treffer {
+  fill: transparent;
+  stroke: none;
+}
+
+.stilnetz-punkt.gewaehlt circle:not(.stilnetz-treffer) {
+  fill: var(--gold);
+  stroke: var(--gold-text);
+}
+
+.stilnetz-punkt.gewaehlt text {
+  fill: var(--gold-text);
+  font-weight: 700;
+}
+
+.stilnetz-punkt:focus {
+  outline: none;
+}
+
+.stilnetz-punkt:focus-visible circle:not(.stilnetz-treffer) {
+  stroke: var(--gold-text);
+  stroke-width: 3px;
+}
+
+.stilnetz-liste select {
+  min-height: var(--tippflaeche);
+  width: 100%;
+}
+
+/* Menschlichkeit der Reglerstufen (ui/komponenten/ErweiterteFehler.tsx). */
+.menschlichkeit {
+  border-inline-start: 4px solid var(--gruen-text);
+  padding-inline-start: var(--raster);
+  margin-block: var(--raster);
+}
+
+.menschlichkeit[data-urteil="ungewoehnlich"] {
+  border-color: var(--gold);
+}
+
+.menschlichkeit[data-urteil="kaumMenschlich"],
+.menschlichkeit[data-urteil="unmenschlich"] {
+  border-color: var(--rot-text);
+}
+
+.menschlichkeit p {
+  margin: 0;
+}

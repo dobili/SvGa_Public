@@ -1725,10 +1725,8 @@ N770–N778 und E1–E4. **Nächster Schritt:** Restplan 8 (Messung läuft), dan
 
 **Für das kommende Update 0.2.125 verschoben (Wunsch des Autors, 24.10.2026: festhalten, was
 geschoben wird):**
-- Oberfläche von Teil E: Spinnennetz der drei Stilachsen, Regler eigener Gegner auf den
-  menschlichen Quantilen (−2 bis 2 plus zwei unmenschliche Stufen), Menschlichkeitsanzeige,
-  geschätzte Wertung eines eigenen Bots. Eigene Gegner nutzen bis dahin weiter Faktoren und den
-  Regler −2 bis 2.
+- Oberfläche von Teil E: erledigt in 0.2.126 (Spinnennetz, Regler auf Quantilen,
+  Menschlichkeitsanzeige). Eine gemessene Zahl je Reglerkombination eigener Bots bleibt offen.
 - Restplan 6 „eingesperrte Figur“ als Fehlerart (erst mit der nächsten Eichung des Wahlmodells).
 - Maia als Grundgewicht (Versuch nach Messung und Gruppenmodus; bei Erfolg als nachladbares
   Zusatzpaket mit Schalter oder eigener Kategorie, ENTSCHEIDUNGEN „Maia“) und das tiefere
@@ -1774,18 +1772,18 @@ Einzelheiten in ENTSCHEIDUNGEN „Endgültiger Bot-Satz“. Porträt und Name pa
 **Nächster Schritt (Koordinierungschat):** 1. Version 0.2.125 nach main (Wunsch des Autors, vor der
 Kalibrierung von Blitz und Klassisch). 2. Zehn Gruppen-Chats messen Blitz und Klassisch mit
 `skripte/messe-zeitklasse.sh` (Prompt in `docs/MESSUNG_ZEITKLASSEN.md`); Auswertung hier nach der
-Anleitung dort, Ergebnis in `engine/botstaerke-zeitklassen.ts`. 3. Gruppenmodus messen (`@gruppe-N`
-gegen Nm, `skripte/gruppen-bots.mjs`), `engine/gruppenstaerke-daten.ts` füllen. 4. Dann P1
-informieren.
+Anleitung dort, Ergebnis in `engine/botstaerke-zeitklassen.ts`. 3. Gruppenmodus: gemessen in 0.2.126
+(erledigt). 4. Dann P1 informieren. Was weiter warten muss, weil es das Spiel der vorgefertigten
+Bots ändert und damit die Messungen ungültig machte: die Fehlerart „eingesperrte Figur“, das
+tiefere Eröffnungsbuch aus einem Lichess-Monat und der Maia-Versuch.
 
-**Vorgemerkt, noch nicht ausführen (aus einem anderen Chat, 24.10.2026 abends):** Eigenes Bild für die
-Startanimation (R39): Springer mittig, darunter Brett und Schatten wie auf dem Cover. Das Skript
-liegt lokal unter `buch/arbeit/vorlagen/erzeuge-startbild.mjs` und gehört nach
-`app/skripte/erzeuge-startbild.mjs`. Ablauf: Cover aus `buch/a1/cover_A4.tif` als PNG nach
-`buch/arbeit/cover-original.png` (nur lokal), Skript aufrufen (mit `CHROMIUM_PFAD`), Ergebnis
-`app/public/bilder/startspringer.webp` committen. Dann `ui/komponenten/Startanimation.tsx` vom
-App-Symbol (`symbole/symbol-512.png`) auf das neue Bild umstellen, Dateikopf und Test anpassen,
-Precache prüfen. Das Cover selbst kommt nie ins Repository.
+**Startbild und Teil-E-Oberfläche (24.10.2026 abends, Version 0.2.126, Wunsch des Autors: alles,
+was nicht auf die Kalibrierung warten muss):** Startbild aus dem Cover (`skripte/erzeuge-startbild.mjs`,
+`public/bilder/startspringer.webp`), Stil eigener Gegner als Spinnennetz (`ui/komponenten/Stilnetz.tsx`),
+Regler auf menschlichen Quantilen mit Menschlichkeitsanzeige (`engine/eigenstufen.ts`,
+`ui/komponenten/ErweiterteFehler.tsx`), Gruppenmodus gemessen (`engine/gruppenstaerke-daten.ts`).
+Testpunkte N798–N800. Einzelheiten in ENTSCHEIDUNGEN „Startbild aus dem Cover“, „Eigene Gegner:
+Stil im Spinnennetz“ und „Gruppenmodus gemessen“.
 
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).

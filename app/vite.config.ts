@@ -183,7 +183,7 @@ export default defineConfig({
     }),
   ],
   test: {
-    include: ["src/**/*.test.ts", "src/**/*.test.tsx"],
+    include: ["src/**/*.test.ts", "src/**/*.test.tsx", "worker/**/*.test.ts"],
     environment: "node",
   },
 });

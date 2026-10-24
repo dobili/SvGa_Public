@@ -26,7 +26,7 @@ export function BeginnenKnopf({
 }) {
   const [ersetzen, setzeErsetzen] = useState(false);
   return (
-    <div className="beginnen">
+    <div className="beginnen" data-tour="spielen-beginnen">
       {laufend && ersetzen ? (
         <div className="nachfrage">
           <p>{t("spielen.ersetzenFrage")}</p>

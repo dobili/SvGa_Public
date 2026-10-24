@@ -1,5 +1,5 @@
 /**
- * Zug aus dem Praxisbuch in den Messläufen (0.2.127), wie in der App (ui/komponenten/botzug.ts).
+ * Zug aus dem Praxisbuch in den Messläufen (0.2.128), wie in der App (ui/komponenten/botzug.ts).
  *
  * Rolle im Gesamtbild: Ausgelagert aus engine/stufen.messung.ts (Dateien unter 400 Zeilen). Die
  * Messung lädt das Buch der App aus public/daten/praxisbuch.json und verlangt es, damit gemessen

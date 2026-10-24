@@ -56,7 +56,7 @@ export interface Wahlschritt {
   readonly stil: number;
   /** Einer der sieben Stile (engine/stile.ts) der vorgefertigten Bots. */
   readonly stilname?: Stilname;
-  /** Stil-Mischung eigener Bots (0.2.126, engine/stile.ts); vorhanden: gilt statt `stilname`. */
+  /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
 }
 

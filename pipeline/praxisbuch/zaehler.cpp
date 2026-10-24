@@ -1,5 +1,5 @@
 // Zählt Zugfolgen der ersten Halbzüge aus einem Lichess-PGN-Strom (stdin) je Zeitklasse und
-// 200er-Band der ziehenden Seite. Lokal (buch/arbeit/praxisbuch), Teil des Praxisbuchs 0.2.127.
+// 200er-Band der ziehenden Seite. Lokal (buch/arbeit/praxisbuch), Teil des Praxisbuchs 0.2.128.
 // Ausgabe (stdout): Zeilen "zelle\tvorher\tnachher\tzug\tanzahl" für Einträge ab MINDEST_AUS,
 // dazu "#partien\tzelle\tanzahl". Speicher begrenzt: Über GRENZE Einträgen fallen alle mit Anzahl 1.
 #include <cstdint>

@@ -110,7 +110,7 @@ export function VorgefertigteGitter({
             <Gruppenvorschau bots={gruppe.bots} besiegt={besiegt} />
             <ChevronDown className="aufklapper" size={PFEIL_GROESSE} aria-hidden="true" />
           </summary>
-          <div className="gegnergitter">
+          <div className="gegnergitter" data-tour="spielen-gitter">
             {gruppe.bots.map((g) => (
               <Kachel
                 key={g.kennung}

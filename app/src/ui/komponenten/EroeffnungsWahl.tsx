@@ -8,7 +8,7 @@
  * die Engine die übrigen Buchzüge oder selbst. „frei“ heißt seit 0.2.40: ohne Buch, die Engine
  * spielt die Eröffnung selbst (Wunsch des Autors); „eine Eröffnung des Buches (zufällig)“ ist das
  * bisherige Verhalten mit Buchtreue 0,85. Die Liste kommt aus dem Eröffnungsindex.
- * Seit 0.2.127 (Wunsch des Autors) ist die Vorgabe „wie Menschen dieser Stärke“: Der Bot eröffnet
+ * Seit 0.2.128 (Wunsch des Autors) ist die Vorgabe „wie Menschen dieser Stärke“: Der Bot eröffnet
  * nach dem Praxisbuch (engine/praxisbuch.ts). Dazu kommen die häufigsten benannten Eröffnungen
  * aus der Praxis (Lichess-Namen), denen der Bot folgt, solange du ihre Züge spielst.
  * Abhängigkeiten: schach/eroeffnungsindex.ts, engine/praxisbuch.ts, daten/laden.ts,

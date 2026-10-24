@@ -70,11 +70,12 @@ describe("Touren", () => {
     }
   });
 
-  it("findet zu jedem Bildschirm die passende Tour, für Spielen (Teil B) noch keine", () => {
+  it("findet zu jedem Bildschirm die passende Tour, seit Teil B auch für Spielen und Partie", () => {
     expect(tourFuerAnsicht({ bildschirm: "abbildung", nummer: "1.26" })).toBe("abbildung");
     expect(tourFuerAnsicht({ bildschirm: "trainer", kennung: "taktik" })).toBe("trainer.taktik");
     expect(tourFuerAnsicht({ bildschirm: "ich" })).toBe("ich");
-    expect(tourFuerAnsicht({ bildschirm: "spielen" })).toBeNull();
+    expect(tourFuerAnsicht({ bildschirm: "spielen" })).toBe("spielen");
+    expect(tourFuerAnsicht({ bildschirm: "partie", id: "p-1" })).toBe("partie");
     expect(tourFuerAnsicht({ bildschirm: "lizenzen" })).toBeNull();
   });
 

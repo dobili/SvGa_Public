@@ -25,7 +25,7 @@ const AUFLAGE = "a1";
 
 /**
  * Ordner der Daten, die nicht aus dem Buch kommen (etwa die Eröffnungsliste von Lichess). Sie gibt
- * es nur auf Deutsch, wie die Trainerdaten; deshalb gilt hier die Sprache der Trainerdaten.
+ * es in denselben Sprachen wie die Trainerdaten; deshalb gilt hier die Sprache der Trainerdaten.
  */
 function sprachordner(): string {
   return `/daten/${trainerdatensprache()}`;
@@ -144,7 +144,7 @@ export function ladeEroeffnungsliste(): Promise<Eroeffnungsliste> {
 let praxisbuch: Promise<Praxisbuch> | null = null;
 
 /**
- * Lädt das Praxisbuch (0.2.127, engine/praxisbuch.ts): Eröffnungszüge echter Menschen je
+ * Lädt das Praxisbuch (0.2.128, engine/praxisbuch.ts): Eröffnungszüge echter Menschen je
  * Zeitklasse und Wertungsband, unabhängig von der Sprache. Einmal geladen; ein Fehler wird nicht
  * gemerkt, damit ein späterer Versuch neu lädt.
  */

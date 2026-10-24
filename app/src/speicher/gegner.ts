@@ -94,7 +94,7 @@ export function reglerstufenAus(roh: unknown): Reglerstufen | undefined {
 }
 
 /**
- * Eine Stil-Mischung aus Rohdaten (0.2.126): nur bekannte Stile mit 50, 75, 100 oder 125 %, je
+ * Eine Stil-Mischung aus Rohdaten (0.2.128): nur bekannte Stile mit 50, 75, 100 oder 125 %, je
  * Achse der erste; sonst undefined.
  */
 export function stilmixAus(roh: unknown): Stilmix | undefined {

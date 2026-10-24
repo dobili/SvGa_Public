@@ -198,7 +198,7 @@ export function Partienfilterleiste({
   const umschalte = (welche: "filter" | "sortieren") =>
     setzeOffen(offen === welche ? null : welche);
   return (
-    <div className="partienfilter" data-testid="partienfilter">
+    <div className="partienfilter" data-testid="partienfilter" data-tour="spielen-filter">
       <div className="filterknoepfe">
         <button
           type="button"

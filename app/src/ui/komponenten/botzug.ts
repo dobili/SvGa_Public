@@ -231,7 +231,7 @@ export async function spieleVorzug(
  */
 /**
  * Was die Partie an Buch vorgibt (ui/komponenten/usePartie.ts): Buchzüge in UCI mit Buchtreue, und
- * seit 0.2.127 das Praxisbuch mit einer festgelegten Linie (leer: nur nach Häufigkeit). Das
+ * seit 0.2.128 das Praxisbuch mit einer festgelegten Linie (leer: nur nach Häufigkeit). Das
  * Praxisbuch gilt erst, wenn es keine Buchzüge gibt.
  */
 export interface Buchvorgabe {
@@ -241,7 +241,7 @@ export interface Buchvorgabe {
 }
 
 /**
- * Ein Zug aus dem Praxisbuch wie ein Mensch der Stärke der Stufe (0.2.127, engine/praxisbuch.ts),
+ * Ein Zug aus dem Praxisbuch wie ein Mensch der Stärke der Stufe (0.2.128, engine/praxisbuch.ts),
  * oder null: ohne Praxisbuch, nach einer eigenen Startstellung, für Spaß-Bots, am Buchende.
  * Eine festgelegte Linie hat Vorrang, solange die Partie ihr folgt.
  * Beispiel: Bot der Stufe 7 (etwa 2100) in Schnellschach nach 1. e4 → oft 1… c5, dann Sizilianisch.

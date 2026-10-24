@@ -44,7 +44,11 @@ export function LetzteSpielstaerke({ partien }: { partien: readonly Partieeintra
   );
   if (schaetzungen.length === 0) return null;
   return (
-    <section className="karte letzte-spielstaerke" data-testid="letzte-spielstaerke">
+    <section
+      className="karte letzte-spielstaerke"
+      data-testid="letzte-spielstaerke"
+      data-tour="spielen-spielstaerke"
+    >
       <MitInfo
         zeile={<h2 className="karte-titel">{t("spielstaerke.letzte.titel")}</h2>}
         erklaerung={

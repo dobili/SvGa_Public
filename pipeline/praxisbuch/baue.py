@@ -1,6 +1,6 @@
 """Baut public/daten/praxisbuch.json aus den Zählungen des Lichess-Monats (zaehler.cpp).
 
-Teil des Praxisbuchs 0.2.127 (pipeline/praxisbuch; die Zählungen liegen nur lokal in
+Teil des Praxisbuchs 0.2.128 (pipeline/praxisbuch; die Zählungen liegen nur lokal in
 buch/arbeit/praxisbuch). Je Zugfolge und Zelle (Zeitklasse,
 200er-Band der ziehenden Seite) die Summe aller gezählten Antworten und die häufigen Züge.
 Seltene Züge bleiben weg, ihr Anteil ist das Buchende (engine/praxisbuch.ts). Dazu die häufigsten

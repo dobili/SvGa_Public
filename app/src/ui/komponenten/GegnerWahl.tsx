@@ -146,7 +146,11 @@ function Sprechblase({
       ? gruppenstaerketext(alleBesiegt, gruppe)
       : staerkezeile(bot, eigener, stufen, uhr, erlaubte);
   return (
-    <div className="gegner-sprechblase" data-testid="gegner-sprechblase">
+    <div
+      className="gegner-sprechblase"
+      data-testid="gegner-sprechblase"
+      data-tour="spielen-sprechblase"
+    >
       {vorgefertigt || eigener || gruppe !== null ? (
         <GegnerBild bot={bot} eigene={eigene} name={name} besiegt={besiegt} />
       ) : (
@@ -189,7 +193,12 @@ function EigeneGitter({
   const besiegt = useSpeicher((z) => z.daten.spiel.besiegt[tempo]);
   if (eigene.length === 0) return null;
   return (
-    <div role="radiogroup" aria-label={t("spielen.eigene.titel")} className="gegnergitter">
+    <div
+      role="radiogroup"
+      aria-label={t("spielen.eigene.titel")}
+      className="gegnergitter"
+      data-tour="spielen-gitter"
+    >
       {eigene.map((g) => (
         <Kachel
           key={g.kennung}
@@ -264,7 +273,7 @@ export function GegnerWahl({
       {einstellungen}
       {gegner === "mensch" && beginnen}
       {gegner === "engine" && (
-        <div className="gegnerwahl">
+        <div className="gegnerwahl" data-tour="spielen-gegner">
           {/* R27 (Wunsch des Autors, 23.10.2026): Die Art des Gegners steht direkt über
               „Partie beginnen“, die übrigen Einstellungen darüber. */}
           <Vorschauwahl

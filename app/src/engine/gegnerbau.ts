@@ -51,7 +51,7 @@ export interface Gegner {
   /** Anteil der Züge, die ein beliebiger legaler Zug sind (nur Spaß-Bots, 0.2.88). */
   readonly zufallszuege?: number;
   /**
-   * Halbzüge aus dem Praxisbuch höchstens (0.2.127, engine/praxisbuch.ts): Theoretiker 20,
+   * Halbzüge aus dem Praxisbuch höchstens (0.2.128, engine/praxisbuch.ts): Theoretiker 20,
    * Hektiker 10, sonst 16. Spaß-Bots spielen kein Buch.
    */
   readonly buchtiefe: number;

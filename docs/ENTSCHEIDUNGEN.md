@@ -4960,6 +4960,7 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - Wartungsprüfungen in Python ohne weitere Pakete (`pipeline/wartung`), Rot lässt den Lauf
   scheitern (Mail von GitHub). Zertifikat erst unter 14 Tagen gelb, weil Cloudflare etwa 30 Tage
   vor Ablauf erneuert.
+- DB1 erledigt (24.10.2026): Der Autor hat `BERICHT_SCHLUESSEL` in GitHub (Actions-Secret) und Cloudflare (Worker-Secret) eingetragen; die Prüfberichte gehen damit ans Dashboard.
 
 ## Wertung je Zeitklasse, vorläufige Wertung, Phasenkurve über mehrere Partien (24.10.2026 nachmittags, Fable; Empfehlung, vom Autor angenommen)
 
@@ -5093,6 +5094,15 @@ war). Der Messlauf bleibt für spätere Datenstände.
   `satz.py --schreiben` (Satz, Archiv, Messnamen; nur einmal auf die ursprünglichen Listen anwenden),
   `satz/neue-bots.json`.
 
+## 24.10.2026 abends – P6 abgeschlossen (R25, P1, Opus)
+
+- Trainerdaten englisch ohne eigene Übersetzungstabelle: Die Aufgaben sind Stellungen, Züge und
+  Kennungen; den einzigen sichtbaren Text (Name des Fallenchecks) nimmt der Build aus den
+  englischen Buchdaten (Fallencheck mit derselben Stoppabbildung).
+- Eröffnungsliste von Lichess englisch mit den Originalnamen; deutsch bleibt die Übersetzung der
+  Familie (Entscheidung R12).
+- Website (Startseite, Trainingsseiten, Impressum, Datenschutz) bleibt deutsch; „English
+  (preview)“ bleibt als Bezeichnung, bis der Autor das englische Buch festlegt (EN1).
 ## Startbild aus dem Cover (24.10.2026 abends, Wunsch des Autors, R39)
 
 - **Bild:** `app/public/bilder/startspringer.webp` (840 × 840, etwa 270 KB), erzeugt von
@@ -5184,7 +5194,16 @@ war). Der Messlauf bleibt für spätere Datenstände.
   der echten Rechenzeit. Der Notmodus bleibt: Ein Vorzug kostet echt und auf der Uhr 100 ms.
 - **Messungen bleiben gültig:** Die Messläufe rechnen die Uhr ohnehin simuliert und warteten nie.
 
-## Praxisbuch: Bots eröffnen wie Menschen ihrer Stärke (24./25.10.2026 nachts, Wunsch des Autors, 0.2.127)
+## 24.10.2026 nachts – R26 Abschluss der Arbeitsliste (P1, Opus)
+
+- P1-B (vorläufige Tabelle für den Vergleich der Zugklassen) ist erledigt: Seit 0.2.125 kommen
+  Übliches und Zonen aus den Spielerprofilen des Bot-Chats; nur brillant, stark und Buchzug
+  bleiben geschätzt. Aus AUFGABEN_AUTOR gestrichen.
+- Überholte Hinweise in AUFGABEN_AUTOR angepasst („folgt mit dem Bot-Chat“, „Symbol beim Spielen
+  nach der Kalibrierung“, Zahl der Touren).
+- P8 Teil B in 0.2.127 umgesetzt (Touren Spielen und Partie), P6 abgeschlossen (R25).
+
+## Praxisbuch: Bots eröffnen wie Menschen ihrer Stärke (24./25.10.2026 nachts, Wunsch des Autors, 0.2.128)
 
 - **Wunsch:** Das Buch behandelt nur Anfänger-Eröffnungen. Höhere Bots wirken wenig menschlich,
   wenn sie sich darauf beschränken oder wie eine Engine eröffnen.
@@ -5209,7 +5228,7 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Kürzel misst ohne Buch. Die Kalibrierung von Blitz und Klassisch misst damit automatisch mit
   dem Praxisbuch.
 
-## Stil-Mischung eigener Bots (24./25.10.2026 nachts, Wünsche des Autors, 0.2.127)
+## Stil-Mischung eigener Bots (24./25.10.2026 nachts, Wünsche des Autors, 0.2.128)
 
 - **Wünsche:** Im Spinnennetz Zwischenwerte wählen können, dann vier Stufen 50, 75, 100 und
   125 % (über das Normalmaß hinaus), und mehrere Stile zugleich, nur nicht die beiden Enden einer
@@ -5224,7 +5243,7 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Nebenbei behoben:** `skripte/gruppen-bots.mjs` las Bot-Zahlen nur mit Anführungszeichen
   und sortierte deshalb viele Bots falsch ein; die Kalibrier-Chats hätten falsche Gruppen gemessen.
 
-## Prüfmessung Praxisbuch: Zahlen bleiben (25.10.2026 nachts, 0.2.127)
+## Prüfmessung Praxisbuch: Zahlen bleiben (25.10.2026 nachts, 0.2.128)
 
 - **Messung:** Derselbe Spieler mit Praxisbuch gegen sich ohne Buch, je 20 Partien
   Schnellschach: 20 Bots (zwei je Gruppe, darunter Theoretiker und Hektiker) und die Stufen 1m bis
@@ -5234,4 +5253,4 @@ war). Der Messlauf bleibt für spätere Datenstände.
   einzelne Paarungen streuen zwischen −108 und +127, wie bei 20 Partien zu erwarten.
 - **Entscheidung (Regel aus dem Auftrag des Autors):** Unter 50 Elo mittlerer Verschiebung bleiben
   alle gemessenen Zahlen der Bots, Stufen und Gruppen. Eine Neumessung ist nicht nötig. Die
-  Kalibrierung von Blitz und Klassisch misst ab 0.2.127 mit dem Buch.
+  Kalibrierung von Blitz und Klassisch misst ab 0.2.128 mit dem Buch.

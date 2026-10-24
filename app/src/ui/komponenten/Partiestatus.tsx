@@ -40,7 +40,7 @@ export function Partiestatus({
   );
   const zuruecknehmbar = partie.einstellung.ruecknahmeErlaubt && !(partie.ende && andereLaeuft);
   return (
-    <section className="partiestatus">
+    <section className="partiestatus" data-tour="partie-status">
       {/* Nach dem Ende steht das Ergebnis in der Karte darunter (Partieende). */}
       {!partie.ende && (
         <p className="partiestatus-text" role="status" data-testid="partiestatus">

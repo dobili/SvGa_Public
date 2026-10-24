@@ -8,7 +8,7 @@
  * Lichess-Spielern: Königsangriff (Angreifer gegen Positionsspieler), Aktivität (Taktiker gegen
  * Verteidiger), Bauernsturm gegen Vereinfachen (Draufgänger gegen Vereinfacher); gegenüberliegende
  * Speichen sind die beiden Enden einer Achse, die Mitte ist „Universell“. Ein Tipp auf eine
- * Speiche wählt den Stil, die Mitte setzt auf „Universell“ zurück. Seit 0.2.126 (Wunsch des
+ * Speiche wählt den Stil, die Mitte setzt auf „Universell“ zurück. Seit 0.2.128 (Wunsch des
  * Autors) trägt jede Speiche vier Punkte: 50, 75, 100 und 125 % der geeichten Verschiebung
  * (engine/stile.ts; 125 % geht über das hinaus, was echte Spieler zeigen). Mehrere Stile lassen
  * sich kombinieren, nur die beiden Enden einer Achse nicht, denn sie höben sich auf: Ein Tipp auf

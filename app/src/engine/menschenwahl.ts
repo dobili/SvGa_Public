@@ -70,7 +70,7 @@ export interface Wahlkontext {
   readonly stil: number;
   /** Stil eines vorgefertigten Bots (0.2.125, engine/stile.ts); fehlend: der Regler `stil`. */
   readonly stilname?: Stilname;
-  /** Stil-Mischung eigener Bots (0.2.126, engine/stile.ts); vorhanden: gilt statt `stilname`. */
+  /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
   /** Zeitklasse für das Wahlmodell (0.2.125). */
   readonly tempo: Wahltempo;

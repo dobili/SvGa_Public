@@ -105,7 +105,7 @@ export function Verlaufskurve({
   });
   const finger = zoom.finger !== null ? punktAn(zoom.finger) : undefined;
   return (
-    <div className="verlaufskurve-rahmen">
+    <div className="verlaufskurve-rahmen" data-tour="auswertung-kurve">
       <p className="verlaufskurve-finger" aria-live="polite">
         {zoom.finger !== null && zugname ? zugname(zoom.finger) : "\u00a0"}
       </p>

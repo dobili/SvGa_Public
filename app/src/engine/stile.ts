@@ -81,7 +81,7 @@ export function stilverschiebung(stil: Stilname, anteil = 1): Stilverschiebung {
 export type Richtungsstil = Exclude<Stilname, "universell">;
 
 /**
- * Eine Stil-Mischung eigener Bots (0.2.126, Wunsch des Autors): je Stil die Ausprägung in Prozent
+ * Eine Stil-Mischung eigener Bots (0.2.128, Wunsch des Autors): je Stil die Ausprägung in Prozent
  * der geeichten Stärke (50, 75, 100 oder 125). Je Achse höchstens ein Stil, denn die beiden Enden
  * einer Achse höben sich auf. Leer: universell.
  */

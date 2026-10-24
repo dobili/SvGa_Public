@@ -34,8 +34,12 @@ const FERTIGE_SPRACHEN: readonly string[] = ["de"];
  * P6 (R25, 23.10.2026): alle Buchdaten übersetzt (pipeline/uebersetzen, inhalte/en/).
  */
 const DATENSPRACHEN: readonly string[] = ["de", "en"];
-/** Sprachen mit eigenen Trainerdaten (/daten/<sprache>/trainer/); die Trainer sind noch deutsch. */
-const TRAINERSPRACHEN: readonly string[] = ["de"];
+/**
+ * Sprachen mit eigenen Trainerdaten (/daten/<sprache>/trainer/) und eigener Eröffnungsliste von
+ * Lichess. Englisch seit dem P6-Abschluss (R25, 24.10.2026): Fallennamen aus den englischen
+ * Buchdaten (skripte/kopiere-trainerdaten.mjs), Eröffnungsnamen wie bei Lichess.
+ */
+const TRAINERSPRACHEN: readonly string[] = ["de", "en"];
 /** Sprache, wenn weder der Leser noch das Gerät eine verfügbare wählt. */
 export const GRUNDSPRACHE = "de";
 
@@ -163,8 +167,8 @@ export function datensprache(): string {
 
 /**
  * Die Sprache der Trainerdaten (Taktik, „Falle oder Köder“, Strukturerkenner, Endspiel): wie
- * datensprache, aber nur für Sprachen mit eigenen Trainerdaten. Beispiel: App auf Englisch → „de“,
- * bis die Trainerdaten übersetzt sind.
+ * datensprache, aber nur für Sprachen mit eigenen Trainerdaten. Beispiel: App auf Englisch → „en“
+ * (seit R25), eine Sprache ohne eigene Trainerdaten → „de“.
  */
 export function trainerdatensprache(): string {
   return TRAINERSPRACHEN.includes(aktuelleSprache) ? aktuelleSprache : GRUNDSPRACHE;

@@ -1,5 +1,5 @@
 /**
- * Praxisbuch (0.2.127): die Eröffnungszüge echter Menschen je Zeitklasse und Wertungsband, gezählt
+ * Praxisbuch (0.2.128): die Eröffnungszüge echter Menschen je Zeitklasse und Wertungsband, gezählt
  * aus einem ganzen Monat der Lichess-Datenbank (CC0), und die Wahl eines Zuges daraus.
  *
  * Rolle im Gesamtbild: Wunsch des Autors (24.10.2026): Bots eröffnen wie Menschen ihrer Stärke,

@@ -79,7 +79,7 @@ export interface Spielvorlieben {
    */
   readonly stilname?: Stilname;
   /**
-   * Stil-Mischung (0.2.126, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
+   * Stil-Mischung (0.2.128, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
    * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
    */
   readonly stilmix?: Stilmix;

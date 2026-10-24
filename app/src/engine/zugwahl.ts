@@ -56,7 +56,7 @@ export interface Gegnerprofil {
   readonly tempo?: Wahltempo;
   /** Einer der sieben Stile der vorgefertigten Bots (0.2.125, engine/stile.ts); fehlend: Regler `stil`. */
   readonly stilname?: Stilname;
-  /** Stil-Mischung eigener Bots (0.2.126, engine/stile.ts); vorhanden: gilt statt `stilname`. */
+  /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
 }
 

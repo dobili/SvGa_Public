@@ -1,13 +1,13 @@
-# Messung je Zeitklasse in zehn Chats (24.10.2026, Stand 0.2.127)
+# Messung je Zeitklasse in zehn Chats (24.10.2026, Stand 0.2.128)
 
 Blitz (3+2) und Klassisch (30+20) werden je Gruppe in einem eigenen Chat gemessen; der
 Koordinierungschat wertet alle Ordner zusammen aus. Jeder Chat braucht etwa 45 Minuten je
 Zeitklasse und trifft keine Entscheidungen.
 
-Seit 0.2.127 spielen alle Messpartien mit dem Praxisbuch (Bots und Ankerstufen eröffnen wie
+Seit 0.2.128 spielen alle Messpartien mit dem Praxisbuch (Bots und Ankerstufen eröffnen wie
 Menschen ihrer Stärke, wie in der App). Die Gruppen kommen aus `skripte/gruppen-bots.mjs`, das
-seit 0.2.127 alle gemessenen Zahlen richtig liest (vorher landeten viele Bots in falschen
-Gruppen). Grundlage ist der Stand von `main` ab 0.2.127; der Zweig `menschliche-bots` ist dann
+seit 0.2.128 alle gemessenen Zahlen richtig liest (vorher landeten viele Bots in falschen
+Gruppen). Grundlage ist der Stand von `main` ab 0.2.128; der Zweig `menschliche-bots` ist dann
 gleich `main`.
 
 ## Prompt für einen Gruppen-Chat (Opus, Gruppe eintragen)

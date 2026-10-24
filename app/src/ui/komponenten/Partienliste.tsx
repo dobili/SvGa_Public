@@ -148,7 +148,11 @@ function staerketext(eintrag: Partieeintrag): string {
 export function LaufendePartie({ partie }: { partie: Partie }) {
   const { navigiere } = useNavigation();
   return (
-    <section className="karte laufende-partie" data-testid="laufende-partie">
+    <section
+      className="karte laufende-partie"
+      data-testid="laufende-partie"
+      data-tour="spielen-laufend"
+    >
       <h2 className="karte-titel">{t("spielen.laufend")}</h2>
       <p>{zeile(partie)}</p>
       <button
@@ -273,7 +277,7 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   const werte = useMemo(() => new Map(partien.map((e) => [e, sortierwerte(e)])), [partien]);
   if (partien.length === 0)
     return (
-      <section className="abschnitt partienliste">
+      <section className="abschnitt partienliste" data-tour="spielen-partien">
         <PgnImport />
       </section>
     );
@@ -290,7 +294,7 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   return (
     <>
       <LetzteSpielstaerke partien={partien} />
-      <section className="abschnitt partienliste">
+      <section className="abschnitt partienliste" data-tour="spielen-partien">
         <h2 className="abschnitt-titel">
           <Titelsymbol art="partien" />
           {t("spielen.partien")}

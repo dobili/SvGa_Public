@@ -113,7 +113,12 @@ export function PartieSymbole({
 export function PartieLeiste({ werkzeug }: { werkzeug: Werkzeugwahlstand }) {
   return (
     <>
-      <div className="werkzeugleiste" role="toolbar" aria-label={t("abbildung.werkzeuge")}>
+      <div
+        className="werkzeugleiste"
+        role="toolbar"
+        aria-label={t("abbildung.werkzeuge")}
+        data-tour="partie-werkzeuge"
+      >
         {PARTIEBUENDEL.map((kennung) => (
           <Buendelknopf
             key={kennung}

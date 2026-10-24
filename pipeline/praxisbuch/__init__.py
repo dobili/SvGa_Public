@@ -1,4 +1,4 @@
-"""Praxisbuch (0.2.127): Eröffnungszüge echter Menschen je Zeitklasse und Wertungsband.
+"""Praxisbuch (0.2.128): Eröffnungszüge echter Menschen je Zeitklasse und Wertungsband.
 
 Ablauf (lokal, Ergebnis nach app/public/daten/praxisbuch.json):
 

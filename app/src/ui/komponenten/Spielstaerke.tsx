@@ -197,7 +197,11 @@ export function Spielstaerke({
   ];
   return (
     <>
-      <section className="karte spielstaerke" data-testid="spielstaerke">
+      <section
+        className="karte spielstaerke"
+        data-testid="spielstaerke"
+        data-tour="auswertung-staerke"
+      >
         <Kartenkopf b={b} />
         <Gesamt partie={partie} seite={seite} b={b} />
         <Genauigkeitsbalken zeilen={zeilen} />

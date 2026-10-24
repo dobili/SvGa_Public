@@ -2,7 +2,7 @@
 
 Aufruf (im Hauptordner des Repositorys):
 
-    python -m pipeline.eroeffnungsliste            # schreibt app/public/daten/de/eroeffnungen-lichess.json
+    python -m pipeline.eroeffnungsliste   # schreibt app/public/daten/{de,en}/eroeffnungen-lichess.json
 
 Rolle im Gesamtbild: Das Werkzeug „Eröffnung“ kennt die Eröffnungen des Buches (Kapitel 2 und 3).
 Für Stellungen außerhalb des Buches nennt es seit 0.2.32 den Namen aus der freien Liste von
@@ -13,6 +13,8 @@ Figurenstellung, Zugrecht und Rochaderechten; so findet die App eine Stellung au
 Zugumstellung. Den Teil des Namens vor dem Doppelpunkt (die Familie) übersetzt
 ``inhalte/de/eroeffnungsfamilien.json``; Varianten bleiben englisch (Entscheidung R12).
 Führen zwei Zugfolgen zur selben Stellung, gilt der Eintrag, der in der Liste zuerst steht.
+Seit R25 (P6-Abschluss, 24.10.2026) gibt es die Liste auch englisch: mit den Namen von Lichess,
+ohne Übersetzung (``app/public/daten/en/``).
 """
 
 from __future__ import annotations
@@ -30,7 +32,9 @@ import jsonschema
 HAUPTORDNER = Path(__file__).resolve().parent.parent
 LICHESS = HAUPTORDNER / "inhalte" / "lichess"
 FAMILIEN = HAUPTORDNER / "inhalte" / "de" / "eroeffnungsfamilien.json"
-ZIEL = HAUPTORDNER / "app" / "public" / "daten" / "de" / "eroeffnungen-lichess.json"
+DATEN = HAUPTORDNER / "app" / "public" / "daten"
+ZIELNAME = "eroeffnungen-lichess.json"
+SPRACHEN = ("de", "en")
 SCHEMA = HAUPTORDNER / "schemas" / "eroeffnungsliste.schema.json"
 DATEIEN = ("a.tsv", "b.tsv", "c.tsv", "d.tsv", "e.tsv")
 # Figurenstellung, Zugrecht, Rochaderechte (wie SCHLUESSELFELDER in der App).
@@ -59,8 +63,11 @@ def endstellung(pgn: str) -> chess.Board:
     return spiel.end().board()
 
 
-def lies_liste(ordner: Path, familien: dict[str, str]) -> list[list[str]]:
-    """Alle Zeilen der fünf Dateien als [Schlüssel, ECO, Name], je Stellung der erste Eintrag."""
+def lies_liste(ordner: Path, familien: dict[str, str] | None) -> list[list[str]]:
+    """Alle Zeilen der fünf Dateien als [Schlüssel, ECO, Name], je Stellung der erste Eintrag.
+
+    Ohne ``familien`` (englische Liste) bleiben die Namen, wie Lichess sie schreibt.
+    """
     gesehen: set[str] = set()
     stellungen: list[list[str]] = []
     for datei in DATEIEN:
@@ -70,13 +77,14 @@ def lies_liste(ordner: Path, familien: dict[str, str]) -> list[list[str]]:
                 if schluessel in gesehen:
                     continue
                 gesehen.add(schluessel)
-                stellungen.append([schluessel, zeile["eco"], deutscher_name(zeile["name"], familien)])
+                name = zeile["name"] if familien is None else deutscher_name(zeile["name"], familien)
+                stellungen.append([schluessel, zeile["eco"], name])
     return stellungen
 
 
-def baue(ordner: Path = LICHESS, familien_datei: Path = FAMILIEN) -> dict[str, object]:
-    """Die Datei für die App, gegen ihr Schema geprüft."""
-    familien = json.loads(familien_datei.read_text(encoding="utf-8"))["familien"]
+def baue(ordner: Path = LICHESS, familien_datei: Path = FAMILIEN, sprache: str = "de") -> dict[str, object]:
+    """Die Datei für die App in einer Sprache, gegen ihr Schema geprüft."""
+    familien = json.loads(familien_datei.read_text(encoding="utf-8"))["familien"] if sprache == "de" else None
     daten: dict[str, object] = {
         "schemaVersion": 1,
         "quelle": QUELLE,
@@ -89,12 +97,14 @@ def baue(ordner: Path = LICHESS, familien_datei: Path = FAMILIEN) -> dict[str, o
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--ziel", type=Path, default=ZIEL)
+    parser.add_argument("--daten", type=Path, default=DATEN, help="Ordner app/public/daten")
     argumente = parser.parse_args()
-    daten = baue()
-    text = json.dumps(daten, ensure_ascii=False, separators=(",", ":"))
-    argumente.ziel.write_text(text + "\n", encoding="utf-8")
-    print(f"Eröffnungsliste nach {argumente.ziel} geschrieben.")
+    for sprache in SPRACHEN:
+        ziel = argumente.daten / sprache / ZIELNAME
+        ziel.parent.mkdir(parents=True, exist_ok=True)
+        text = json.dumps(baue(sprache=sprache), ensure_ascii=False, separators=(",", ":"))
+        ziel.write_text(text + "\n", encoding="utf-8")
+        print(f"Eröffnungsliste nach {ziel} geschrieben.")
     return 0
 
 

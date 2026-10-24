@@ -22,7 +22,7 @@ import { fenNach, regelstellung } from "./zuege";
 /** Wert von `eroeffnung`, wenn die Engine irgendeiner Variante des Buches folgen soll. */
 export const EROEFFNUNG_BUCH = "buch";
 /**
- * Wert von `eroeffnung` seit 0.2.127 (Vorgabe): Der Bot eröffnet wie Menschen seiner Stärke
+ * Wert von `eroeffnung` seit 0.2.128 (Vorgabe): Der Bot eröffnet wie Menschen seiner Stärke
  * (engine/praxisbuch.ts). Mit Vorsilbe PRAXIS_VORSILBE folgt er einer benannten Eröffnung aus der
  * Praxis („praxis:Sicilian Defense“) und danach dem Praxisbuch.
  */
@@ -77,7 +77,7 @@ export interface Partieeinstellung {
   /** Stil eines eigenen Gegners (seit 0.2.126, engine/stile.ts); fehlend: der Regler `stil`. */
   readonly stilname?: Stilname;
   /**
-   * Stil-Mischung (0.2.126, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
+   * Stil-Mischung (0.2.128, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
    * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
    */
   readonly stilmix?: Stilmix;
@@ -88,7 +88,7 @@ export interface Partieeinstellung {
    * Eröffnung, der die Engine folgen soll (Name aus dem Eröffnungsindex, seit 0.2.39);
    * EROEFFNUNG_BUCH: irgendeine Variante des Buches (Buchtreue 0,85); null: die Engine spielt die
    * Eröffnung selbst, ohne Buch (Wunsch des Autors, 0.2.40); EROEFFNUNG_PRAXIS (Vorgabe seit
-   * 0.2.127): wie Menschen ihrer Stärke; „praxis:Name“: eine benannte Eröffnung aus der Praxis.
+   * 0.2.128): wie Menschen ihrer Stärke; „praxis:Name“: eine benannte Eröffnung aus der Praxis.
    */
   readonly eroeffnung: string | null;
   /**

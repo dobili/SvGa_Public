@@ -21,7 +21,7 @@ export function Partieende({ partie }: { partie: Partie }) {
   const { startFen, abbildung } = partie.einstellung;
   const eigeneStellung = !ausGrundstellung(partie);
   return (
-    <section className="karte partieende" data-testid="partieende">
+    <section className="karte partieende" data-testid="partieende" data-tour="partie-ende">
       <h2 className="karte-titel partieende-titel">
         <Ergebnismarke partie={partie} gross />
         {kurzergebnis(partie)}

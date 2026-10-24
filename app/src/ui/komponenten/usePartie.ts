@@ -113,7 +113,7 @@ function buchzuegeFuer(
   const { index, bekannte, praxis } = buch;
   const ohne = { zuege: [], treue: BUCHTREUE };
   if (eroeffnung === null) return ohne;
-  // Seit 0.2.127: wie Menschen der Stärke des Bots, oder eine benannte Eröffnung aus der Praxis
+  // Seit 0.2.128: wie Menschen der Stärke des Bots, oder eine benannte Eröffnung aus der Praxis
   if (eroeffnung === EROEFFNUNG_PRAXIS)
     return { ...ohne, praxis: praxis && { buch: praxis, linie: [] } };
   if (eroeffnung.startsWith(PRAXIS_VORSILBE)) {
@@ -128,7 +128,7 @@ function buchzuegeFuer(
     const ausDerListe = familie ? zuegeDerFamilie(bekannte, fen, familie) : [];
     if (ausDerListe.length > 0) return { zuege: ausDerListe, treue: BUCHTREUE_VORGABE };
   }
-  // Nach dem Ende der Buch-Eröffnung (seit 0.2.127): weiter wie Menschen, nicht wie die Engine
+  // Nach dem Ende der Buch-Eröffnung (seit 0.2.128): weiter wie Menschen, nicht wie die Engine
   return {
     zuege: buchzuegeAb(index, fen),
     treue: BUCHTREUE,

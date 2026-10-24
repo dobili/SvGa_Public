@@ -40,6 +40,7 @@ import { gruppenstufe, gruppenstufen } from "../../engine/gruppe";
 import { gegnerVon } from "../../engine/gegner";
 import { gegnerprofil } from "./gegnerprofil";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { TourKnopf } from "../../tour/TourKnopf";
 import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
 import { Stellungseditor } from "../komponenten/Stellungseditor";
 
@@ -127,7 +128,7 @@ function Einstellungen({
           <>
             {/* Farbe, Bedenkzeit, Rücknahme und Spielhilfen direkt über „Partie beginnen“
                 (Wunsch des Autors, 19.10.2026): Unter dem Gitter der Bots übersah man sie. */}
-            <div className="partieeinstellungen">
+            <div className="partieeinstellungen" data-tour="spielen-einstellungen">
               {engine && (
                 <Auswahl
                   name={t("spielen.seite")}
@@ -153,7 +154,11 @@ function Einstellungen({
                 wertbar={wertbar(fen, v)}
                 beiGewertet={(gewertet) => mit({ gewertet })}
               />
-              <details className="unterabschnitt" data-testid="spielhilfen-klappe">
+              <details
+                className="unterabschnitt"
+                data-testid="spielhilfen-klappe"
+                data-tour="spielen-hilfen"
+              >
                 <summary>
                   <Titelsymbol art="hilfen" />
                   {t("spielen.hilfen")}
@@ -178,7 +183,11 @@ function Einstellungen({
                 />
               </details>
               {eroeffnung && (
-                <details className="unterabschnitt" data-testid="eroeffnung-klappe">
+                <details
+                  className="unterabschnitt"
+                  data-testid="eroeffnung-klappe"
+                  data-tour="spielen-eroeffnung"
+                >
                   <summary>
                     <Titelsymbol art="eroeffnung" />
                     {t("spielen.eroeffnungFestlegen")}
@@ -214,7 +223,7 @@ function Startstellung({
       ? t("spielen.grundstellung")
       : t("spielen.eigeneStellung");
   return (
-    <section className="karte startstellung">
+    <section className="karte startstellung" data-tour="spielen-start">
       <h2 className="karte-titel">{titel}</h2>
       {editor ? (
         <Stellungseditor
@@ -315,7 +324,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
   const [wahl, setzeWahl] = useState<Wahl>({
     farbe: seiteAmZug(fen),
     vorlieben: spiel.vorlieben,
-    // Seit 0.2.127: Bots eröffnen wie Menschen ihrer Stärke (engine/praxisbuch.ts)
+    // Seit 0.2.128: Bots eröffnen wie Menschen ihrer Stärke (engine/praxisbuch.ts)
     eroeffnung: EROEFFNUNG_PRAXIS,
   });
   // Eine eigene Stellung: Der Leser spielt zunächst die Seite am Zug.
@@ -343,6 +352,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
       ) : (
         <header className="seitenkopf">
           <h1>{t("spielen.titel")}</h1>
+          <TourKnopf />
         </header>
       )}
       {laufend && <LaufendePartie partie={laufend} />}

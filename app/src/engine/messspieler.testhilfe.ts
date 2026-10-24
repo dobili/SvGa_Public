@@ -1,9 +1,9 @@
 /**
  * Spieler der Messläufe aus ihrem Kürzel (engine/stufen.messung.ts): Stufen („5“, „5m“), freie
  * Grundschicht („4x0.2“), vorgefertigte Bots und Kandidaten („@ella“), Gruppen („@gruppe-3“), mit
- * Uhr („~180+2“) und ohne Praxisbuch („!“ am Kern, seit 0.2.127).
+ * Uhr („~180+2“) und ohne Praxisbuch („!“ am Kern, seit 0.2.128).
  *
- * Rolle im Gesamtbild: Ausgelagert aus engine/stufen.messung.ts (Dateien unter 400 Zeilen, 0.2.127).
+ * Rolle im Gesamtbild: Ausgelagert aus engine/stufen.messung.ts (Dateien unter 400 Zeilen, 0.2.128).
  * Abhängigkeiten: engine/gegner.ts, engine/botkandidaten.ts, engine/gegnerbau.ts, engine/gruppe.ts,
  * engine/praxisbuch.ts, engine/stufen.ts, engine/zugwahl.ts.
  */
@@ -27,7 +27,7 @@ export interface Spieler {
   /** Gruppenmodus („@gruppe-3“): alle Bots der Stufe ziehen gemeinsam (engine/gruppenwahl.ts). */
   readonly gruppe?: Stufennummer;
   /**
-   * Halbzüge aus dem Praxisbuch (0.2.127, wie in der App, engine/praxisbuch.ts); 0 ohne Buch
+   * Halbzüge aus dem Praxisbuch (0.2.128, wie in der App, engine/praxisbuch.ts); 0 ohne Buch
    * (Kürzel mit „!“, etwa „@ella!“, zum Vergleich mit und ohne Buch; Spaß-Bots immer ohne).
    */
   readonly buchtiefe: number;
@@ -82,7 +82,7 @@ function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
 /** Spieler aus dem Kürzel der Paarung (Kopf der Datei). */
 export function spieler(kuerzel: string): Spieler {
   const [roh = "", uhrtext] = kuerzel.split("~");
-  // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.127)
+  // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.128)
   const ohneBuch = roh.endsWith("!");
   const s = spielerOhneBuchwahl(ohneBuch ? roh.slice(0, -1) : roh, uhrtext);
   return ohneBuch ? { ...s, buchtiefe: 0 } : s;

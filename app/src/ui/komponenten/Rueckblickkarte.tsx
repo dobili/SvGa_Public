@@ -152,7 +152,11 @@ export function Rueckblickkarte({
         ? t("rueckblick.seite.du")
         : t("rueckblick.seite.engine");
   return (
-    <section className="karte rueckblickkarte" data-testid="rueckblickkarte">
+    <section
+      className="karte rueckblickkarte"
+      data-testid="rueckblickkarte"
+      data-tour="rueckblick-karte"
+    >
       <MitInfo
         zeile={
           <p className="rueckblick-urteil">

@@ -70,7 +70,7 @@ function neuerGegner(): EigenerGegner {
 /** „3 · 4 · 3 · Angreifer“ (ältere Gegner ohne gewählten Stil: „3 · 4 · 3 · aggressiv“) */
 function kurzbeschreibung(g: EigenerGegner): string {
   const s = g.stufenJePhase;
-  // Seit 0.2.126 die Stil-Mischung („Angreifer + Taktiker 50 %“), ältere Gegner den Regler
+  // Seit 0.2.128 die Stil-Mischung („Angreifer + Taktiker 50 %“), ältere Gegner den Regler
   const stil =
     g.stilmix || g.stilname
       ? stilkurz(g.stilmix ?? mixAusStil(g.stilname))
@@ -246,7 +246,7 @@ export function GegnerEditor() {
   const schreibe = (liste: readonly EigenerGegner[]) =>
     void aendere((d) => ({ ...d, spiel: mitEigenenGegnern(d.spiel, liste) }));
   return (
-    <div className="eigene-gegner" data-testid="eigene-gegner">
+    <div className="eigene-gegner" data-testid="eigene-gegner" data-tour="spielen-eigene">
       <h3 className="unterteil-titel">{t("spielen.eigene.verwalten")}</h3>
       {eigene.length === 0 && !offen && <p className="hinweis">{t("spielen.eigene.leer")}</p>}
       {eigene.length > 0 && (

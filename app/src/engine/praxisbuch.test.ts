@@ -25,7 +25,7 @@ const folge = (...werte: number[]) => {
   return () => werte[i++ % werte.length] ?? 0;
 };
 
-describe("Praxisbuch (0.2.127)", () => {
+describe("Praxisbuch (0.2.128)", () => {
   it("Zellen: eigene, dann Schnellschach, dann Nachbarbänder", () => {
     expect(zellenFuer(BUCH, "blitz", 650)).toEqual([1, 4, 0, 2]);
     expect(zellenFuer(BUCH, "rapid", 300)).toEqual([3, 4]);

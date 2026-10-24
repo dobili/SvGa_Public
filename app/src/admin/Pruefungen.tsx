@@ -16,6 +16,10 @@ const REIHENFOLGE: Record<PunktMitVerlauf["ampel"], number> = {
   gruen: 3,
 };
 
+/** Links zu Läufen nur auf GitHub (kein „javascript:“ o. Ä. aus einem Bericht). */
+const istLaufLink = (adresse: string | null): adresse is string =>
+  adresse !== null && adresse.startsWith("https://github.com/");
+
 function Punkt({ punkt }: { punkt: PunktMitVerlauf }) {
   return (
     <li className={`admin-punkt admin-ampel-${punkt.ampel}`} data-testid={`punkt-${punkt.id}`}>
@@ -43,7 +47,7 @@ function Laeufe({ laeufe }: { laeufe: Lauf[] }) {
         {laeufe.map((l) => (
           <li key={l.zeit}>
             {zeitText(l.zeit)} – {mit(TEXTE.rotGelb, { rot: l.rot, gelb: l.gelb })}
-            {l.lauf && (
+            {istLaufLink(l.lauf) && (
               <>
                 {" · "}
                 <a href={l.lauf} target="_blank" rel="noreferrer">
@@ -77,7 +81,7 @@ export function Pruefungen({ uebersicht }: { uebersicht: Uebersicht }) {
       <h2>{TEXTE.pruefungen}</h2>
       <p className="admin-leise">
         {mit(TEXTE.berichtVom, { zeit: zeitText(bericht.zeit) })}
-        {bericht.lauf && (
+        {istLaufLink(bericht.lauf) && (
           <>
             {" · "}
             <a href={bericht.lauf} target="_blank" rel="noreferrer">

@@ -8,20 +8,19 @@
  * Phase ein Urteilswort als farbige Marke (wie die Symbole je Phase bei chess.com) und das
  * Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Die Rechnung steht in
  * spiel/genauigkeit.ts; hier nur die Tabellen mit zwei Spalten, der Leser zuerst.
- * Seit 0.2.83 (Eichung): Genauigkeit im gewählten Modus (Einstellungen), Spielstärke als Mitte mit
- * Spanne, die Werte für chess.com und Lichess hinter dem Fragezeichen; das Urteilswort je Phase an
- * der inneren Genauigkeit. Seit 0.2.85 (S23) über der Tabelle die feste Zahl des Gegners neben
- * seiner Leistung in dieser Partie („Leon (etwa 1300) hat in dieser Partie wie etwa 1450 gespielt“).
- * Seit 0.2.86 (Wunsch des Autors): oben der Schalter „Genauigkeit wie“ (seit 0.2.87 nur noch hier,
- * als Segmentleiste mit Fragezeichen; Tabellen ohne Überlauf nach rechts), vor jeder Zeile ein Symbol und vor jeder Zugklasse ihre
- * farbige Marke (Auswertungssymbole.tsx).
- * Abhängigkeiten: engine/botstaerke.ts, staerkeangabe.ts, spiel/genauigkeit.ts, spiel/auswertung.ts,
- * spiel/taktik.ts, app/einstellungen.ts,
- * InfoKnopf, i18n.
+ * Seit 0.2.83 (Eichung): Spielstärke als Mitte mit Spanne; das Urteilswort je Phase an der
+ * inneren Genauigkeit. Seit 0.2.85 (S23) über der Tabelle die feste Zahl des Gegners neben seiner
+ * Leistung in dieser Partie („Leon (etwa 1300) hat in dieser Partie wie etwa 1450 gespielt“). Vor
+ * jeder Zeile ein Symbol und vor jeder Zugklasse ihre farbige Marke (Auswertungssymbole.tsx).
+ * Seit 0.2.121 (Entscheidung des Autors, 23.10.2026): ohne den Schalter „Genauigkeit wie“
+ * (0.2.86 bis 0.2.120); die Spielstärke kommt aus dem Elo-Modell der Zeitklasse der Partie
+ * (spiel/elomodell.ts), hinter dem Fragezeichen die Entsprechung auf chess.com oder beim
+ * Weltschachbund (wertungstext.ts).
+ * Abhängigkeiten: engine/botstaerke.ts, staerkeangabe.ts, wertungstext.ts, spiel/genauigkeit.ts,
+ * spiel/auswertung.ts, spiel/elomodell.ts, spiel/taktik.ts, InfoKnopf, i18n.
  */
 import type { Color } from "chessops/types";
 import { Fragment, useMemo } from "react";
-import { aendereEinstellungen, useEinstellungen } from "../../app/einstellungen";
 import { gegnerstaerke } from "../../engine/botstaerke";
 import { t, tZahl, zahlText } from "../../i18n/sprache";
 import type { Zugklasse, Zugurteil } from "../../spiel/auswertung";
@@ -33,16 +32,16 @@ import {
   type Seitenbilanz,
 } from "../../spiel/genauigkeit";
 import { stellungen, type Partie } from "../../spiel/partie";
+import { wertungstempo } from "../../spiel/elomodell";
 import { PHASEN, type Phase } from "../../spiel/phasen";
 import { ZUGARTEN, zugartJeStellung } from "../../spiel/taktik";
-import { GENAUIGKEITSMODI } from "../../spiel/staerkemodell";
 import { sanZuUci } from "../../spiel/zuege";
 import { Klassenmarke, Zeilenname } from "./Auswertungssymbole";
 import { MitInfo } from "./InfoKnopf";
-import { Segmentwahl } from "./Segmentwahl";
 import { staerketext as angabetext } from "./staerkeangabe";
 import { KENNZAHLSYMBOLE, PHASENSYMBOLE } from "./zeilensymbole";
 import { Titelsymbol } from "./Titelsymbol";
+import { entsprichtText } from "./wertungstext";
 
 /** Reihenfolge der Klassen in der Tabelle, wie bei chess.com von oben nach unten. */
 const KLASSEN: readonly Zugklasse[] = [
@@ -124,12 +123,12 @@ export function Spielstaerke({
   phasen: readonly Phase[];
 }) {
   const zugarten = useMemo(() => zugartJeStellung(partie), [partie]);
-  const modus = useEinstellungen().genauigkeitsmodus;
+  const tempo = wertungstempo(partie.einstellung.uhr);
   if (urteile.length === 0) return null;
   const alle = stellungen(partie);
   const gespielte = partie.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  const bilanz = spielstaerke(partie, werte, urteile, beste, gespielte, modus);
-  const jePhase = spielstaerkeJePhase(partie, werte, urteile, beste, gespielte, phasen, modus);
+  const bilanz = spielstaerke(partie, werte, urteile, beste, gespielte, tempo);
+  const jePhase = spielstaerkeJePhase(partie, werte, urteile, beste, gespielte, phasen, tempo);
   const imMittelspiel = spielstaerkeImMittelspiel(
     partie,
     werte,
@@ -138,13 +137,13 @@ export function Spielstaerke({
     gespielte,
     phasen,
     zugarten,
-    modus,
+    tempo,
   );
   const eigene: Color = partie.einstellung.eigeneFarbe;
   const andere: Color = eigene === "white" ? "black" : "white";
   const farbe = (seite: Color) => t(seite === "white" ? "farbe.w" : "farbe.b");
   const zeilen = [
-    t("spielstaerke.genauigkeit", { modus: t(`einstellungen.genauigkeit.${modus}`) }),
+    t("spielstaerke.genauigkeit"),
     t("spielstaerke.staerke"),
     t("spielstaerke.verlust"),
     t("spielstaerke.beste"),
@@ -156,18 +155,6 @@ export function Spielstaerke({
         <Titelsymbol art="spielstaerke" />
         {t("spielstaerke.titel")}
       </h2>
-      <MitInfo
-        zeile={<span className="einstellung-name">{t("einstellungen.genauigkeit")}</span>}
-        erklaerung={<p>{t("einstellungen.genauigkeit.info")}</p>}
-        thema={t("einstellungen.genauigkeit")}
-      />
-      <Segmentwahl
-        name={t("einstellungen.genauigkeit")}
-        werte={GENAUIGKEITSMODI}
-        gewaehlt={modus}
-        text={(wert) => t(`einstellungen.genauigkeit.${wert}`)}
-        beiWahl={(genauigkeitsmodus) => aendereEinstellungen({ genauigkeitsmodus })}
-      />
       {gegnerzeile(partie, bilanz[andere]) && (
         <p className="hinweis" data-testid="gegner-heute">
           {gegnerzeile(partie, bilanz[andere])}
@@ -237,8 +224,9 @@ export function Spielstaerke({
 }
 
 /**
- * Erklärung der Karte hinter einem Fragezeichen: die Werte des Lesers auf beiden Skalen (seit
- * 0.2.83) und wie die Zahlen entstehen (seit 0.2.85 zusammen, Wunsch des Autors).
+ * Erklärung der Karte hinter einem Fragezeichen: die Entsprechung der Zahl des Lesers auf chess.com
+ * oder beim Weltschachbund (seit 0.2.121) und wie die Zahlen entstehen (seit 0.2.85 zusammen,
+ * Wunsch des Autors).
  */
 function Erklaerung({ b }: { b: Seitenbilanz }) {
   return (
@@ -246,14 +234,7 @@ function Erklaerung({ b }: { b: Seitenbilanz }) {
       zeile={<p className="hinweis">{t("spielstaerke.erklaerungKurz")}</p>}
       erklaerung={
         <>
-          {b.schaetzung && (
-            <p>
-              {t("spielstaerke.skalen", {
-                chesscom: b.schaetzung.chesscom,
-                lichess: b.schaetzung.lichess,
-              })}
-            </p>
-          )}
+          {b.schaetzung && <p>{entsprichtText(b.schaetzung)}</p>}
           <p>{t("spielstaerke.erklaerung")}</p>
         </>
       }
@@ -311,8 +292,10 @@ function Phasenzelle({ b }: { b: Seitenbilanz }) {
   const urteil = phasenurteil(b.innen);
   // Seit R33 (Wunsch des Autors, 23.10.2026): Die Eröffnung endet nach unseren Regeln oft nach
   // wenigen Zügen. Dann stehen Urteil und Genauigkeit ohne den Satz „zu wenige Züge“; die Zahl der
-  // Spielstärke kommt erst ab sechs Zügen (Erklärung hinter dem Fragezeichen).
-  const ohneSchaetzung = b.schaetzung === null && b.gewertet >= b.zuege;
+  // Spielstärke kommt erst ab sechs Zügen (Erklärung hinter dem Fragezeichen). Seit 0.2.121 auch
+  // ohne Zahl, wenn die Spanne des Teilmodells der Phase zu breit ist (spielstaerke null).
+  const zuWenigVorEntscheidung = b.schaetzung === null && b.gewertet < b.zuege;
+  const ohneSchaetzung = b.spielstaerke === null && !zuWenigVorEntscheidung;
   return (
     <>
       <span className={`phasenurteil phasenurteil-${urteil}`}>

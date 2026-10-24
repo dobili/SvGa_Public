@@ -6,7 +6,6 @@
 import { staerkeDerStufe } from "../engine/botstaerke";
 import { describe, expect, it } from "vitest";
 import type { Partieeintrag } from "../speicher/partien";
-import { staerkeUeberPartien } from "./staerkemodell";
 import { leserzug, neuePartie, ziehe, type Partie, type Partieeinstellung } from "./partie";
 import {
   ANFANGSPARTIEN,
@@ -84,8 +83,8 @@ describe("Wertung", () => {
     expect(verlauf).toHaveLength(1);
     expect(verlauf[0]?.wertung).toBe(schaetzung);
     expect(verlauf[0]?.ergebnis).toBe(0);
-    // Fehlerfrei: Mittelspiel (ab Zug 5, Schwarz entwickelt) geschätzt, Endspiel nie erreicht.
-    expect(verlauf[0]?.phasen.mittelspiel).toBe(schaetzung);
+    // Seit 0.2.121 steht eine Zahl je Phase nur bei schmaler Spanne, nie aus einer Partie.
+    expect(verlauf[0]?.phasen.mittelspiel).toBeNull();
     expect(verlauf[0]?.phasen.endspiel).toBeNull();
     // Zweite Partie gewonnen; Gegnerwertung ist seit 0.2.85 die feste Zahl der Stufe 3.
     verlauf = mitGewerteterPartie(verlauf, eintrag("2", "white"));
@@ -187,8 +186,14 @@ describe("Wertung", () => {
     expect(schaetzung?.partien).toBe(3);
     const voll = staerkeLetzterPartien([mensch, ...engine]);
     expect(voll?.partien).toBe(10);
-    // Fehlerfreie Partien: innere Genauigkeit 100 % in jeder.
-    expect(voll?.mitte).toBe(staerkeUeberPartien(Array.from({ length: 10 }, () => 100))?.mitte);
+    // Fehlerfreie Partien (100 % Genauigkeit): hohe Zahl; seit 0.2.121 je Zeitklasse (ohne Uhr
+    // Schnellschach), die Spanne wird über zehn Partien enger als bei dreien.
+    expect(voll?.tempo).toBe("rapid");
+    expect(voll?.mitte ?? 0).toBeGreaterThan(1800);
+    expect((voll?.bis ?? 0) - (voll?.von ?? 0)).toBeLessThan(
+      (schaetzung?.bis ?? 0) - (schaetzung?.von ?? 0),
+    );
+    expect(staerkeLetzterPartien([mensch, ...engine], "blitz")).toBeNull();
     expect(staerkeLetzterPartien([mensch])).toBeNull();
   });
 });

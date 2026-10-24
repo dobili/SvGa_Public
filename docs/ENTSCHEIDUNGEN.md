@@ -4690,3 +4690,42 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Filter; Tagesform und Zeitnot als Temperatur des Softmax.
 - **Offen:** Maia als Grundgewicht statt der Verlustkurve (Versuch), Neumessung der Bots und
   Verankerung mit dem neuen Elo-Modell, Regler auf menschlichen Quantilen (Oberfläche).
+
+## Eigenes Elo-Modell je Zeitklasse in der App (24.10.2026 nachts, Fable, Restplan Schritt 5)
+
+- **Entscheidung des Autors (23.10.2026):** Eine eigene Wertung je Zeitklasse (Blitz, Schnellschach,
+  Klassisch) am Maßstab von Lichess, geeicht an Lichess-Wertungen; kein Schalter
+  chess.com/Lichess/Mittelweg mehr; chess.com und FIDE nur als „entspricht etwa“.
+- **Modell (spiel/elomodell.ts, Daten spiel/elomodell-daten.ts):** additiv, je Kennzahl eine
+  stückweise lineare Kurve an Quantil-Stützstellen, Ridge-Regression (λ 3); Kennzahlen der eigenen
+  Züge bis zur Entscheidung: Zahl der Züge, Lichess-Genauigkeit, Verlust je Zug, Fehlerrate,
+  Anteile Ungenauigkeit/Fehler/Patzer (Grenzen 0,5/1,2/3 Bauern, Patzer bei klar gewonnener Stellung
+  danach nur Ungenauigkeit), Verlust je Fehler, je Phase Züge/Verlust/Genauigkeit/Fehler/Patzer.
+  Ein Modell für 1 bis 10 Partien (Kennzahlen gemittelt, Zahl der Partien als Kennzahl). Eichung
+  an 77 000 Partien von 3 900 Spielern (Tiefe 12, schnelle Auswertung), die Kennzahlen vorher mit
+  den Geraden des Tiefe-18-Abgleichs (500 Partien mit der Engine der App) auf die Tiefe 18 der App
+  umgerechnet (Verlust ×1,21, Fehlerrate 0,023 + 0,893·x, Patzer 0,017 + 1,21·x, Züge bis
+  Entscheidung ×0,91).
+- **Warum additiv statt Gradient Boosting:** erklärbar, klein (etwa 25 KB), in TypeScript
+  nachrechenbar; Gradient Boosting war nur 5 bis 15 % genauer (Schnellschach je Partie 275 statt
+  284, über zehn Partien 131 statt 147 mittlere Abweichung).
+- **Entzerrung:** Das Modell neigt zur Mitte (Gerade Schätzung = 0,86·wahr + 235 bei zehn Partien
+  Schnellschach). Die Schätzung wird mit der umgekehrten Geraden je Partienzahl entzerrt, damit
+  Spieler jeder Wertung im Mittel ihre Lichess-Zahl bekommen (Rest je Band unter ±60); die Spanne
+  ist die entzerrte 90-%-Grenze (Schnellschach ±370 bei einer Partie, ±165 bei zehn; Blitz ±460
+  und ±215; Klassisch ±285 und ±140).
+- **Phasen:** Teilmodelle je Phase aus den Kennzahlen der Phase; breit (zehn Partien
+  Schnellschach: Mittelspiel ±370, Eröffnung ±530, Endspiel ±910). Eine Zahl je Phase erscheint nur,
+  wenn die halbe Spanne höchstens 350 ist (SCHMAL), sonst Urteil und Genauigkeit allein. Die
+  Wertungspunkte speichern je Phase weiter eine Zahl oder null.
+- **Zeitklasse** wie Lichess aus der Uhr (Grundzeit + 40 · Zuschlag: unter 8 min Blitz, unter 25
+  Schnellschach, sonst Klassisch; ohne Uhr Schnellschach). „Deine Spielstärke“ je Zeitklasse über
+  die letzten zehn gewerteten Partien dieser Zeitklasse (R32 bleibt: nur gewertete).
+- **Umrechnung (spiel/umrechnung.ts):** Zahlen aus chessgoals.com (Juli 2026), zusammengeführt
+  über die gemeinsame Spalte chess.com Blitz; Blitz → chess.com Blitz, Schnellschach → chess.com
+  Schnellschach, Klassisch → FIDE (erst ab 1730). Nur Fakten übernommen, Quelle genannt.
+- **Gespeicherte Daten:** Das Feld `genauigkeitsmodus` der Einstellungen wird beim Lesen übergangen;
+  Partien brauchen keine Neuauswertung (dieselben Engine-Werte).
+- **Offen:** Neumessung und Verankerung der Bots mit diesem Modell (Restplan 8); Messung der
+  Bot-Stärke (engine/botstaerke.messung.ts) rechnet die Anker vorerst ohne Phasen der Züge.
+

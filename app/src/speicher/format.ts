@@ -22,11 +22,6 @@
  * Abhängigkeiten: speicher/stufenskala.ts, training/trainer (Kennungen der Trainer), training/wiederholung (Karten),
  * training/fehlerdatenbank (Fehler), training/lernsammlung (Sammlung), speicher/partien.ts.
  */
-import {
-  GENAUIGKEITSMODI,
-  STANDARD_GENAUIGKEITSMODUS,
-  type Genauigkeitsmodus,
-} from "../spiel/staerkemodell";
 import { fehlerAus, type Fehlereintrag } from "../training/fehlerdatenbank";
 import { sammlungAus, type Sammeleintrag } from "../training/lernsammlung";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
@@ -92,11 +87,6 @@ export interface Einstellungen {
   /** Seit 0.2.33; ältere Stände ohne diesen Eintrag lesen sich als „aus“. */
   readonly ton: Ton;
   /**
-   * Seit 0.2.83: Genauigkeit wie Lichess, als Mittelweg oder nahe chess.com
-   * (spiel/staerkemodell.ts); ältere Stände ohne diesen Eintrag lesen sich als „mittelweg“.
-   */
-  readonly genauigkeitsmodus: Genauigkeitsmodus;
-  /**
    * Seit 0.2.90 (Wunsch des Autors, Pflichtenheft 4 und 5.1): An den Abbildungen erst selbst
    * einschätzen, dann Werkzeuge und Engine. Ältere Stände ohne diesen Eintrag lesen sich als „aus“.
    */
@@ -108,7 +98,6 @@ export const STANDARD_EINSTELLUNGEN: Einstellungen = {
   strenge: "locker",
   figurensatz: "buch",
   ton: "aus",
-  genauigkeitsmodus: STANDARD_GENAUIGKEITSMODUS,
   vorWerkzeugen: "aus",
 };
 
@@ -245,8 +234,8 @@ export function einstellungenAus(roh: unknown): Einstellungen {
     strenge: roh.strenge === "streng" ? "streng" : "locker",
     figurensatz: figurensatzAus(roh.figurensatz),
     ton: roh.ton === "an" ? "an" : "aus",
-    genauigkeitsmodus:
-      GENAUIGKEITSMODI.find((m) => m === roh.genauigkeitsmodus) ?? STANDARD_GENAUIGKEITSMODUS,
+    // Der Schalter „Genauigkeit wie“ (0.2.83 bis 0.2.120, Feld genauigkeitsmodus) ist weg; ein
+    // gespeicherter Wert wird übergangen.
     vorWerkzeugen: roh.vorWerkzeugen === "an" ? "an" : "aus",
   };
 }

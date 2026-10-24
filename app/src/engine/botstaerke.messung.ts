@@ -8,7 +8,8 @@
  * Leiter) und `anker-*` (Stufen gegen sich selbst, mit Zügen) samt ihren Bewertungen in Tiefe 18
  * in `anker-bewertung` (skripte/eichung-rechnen.mjs --quellen stufen). Rechnung: Elo-Leiter aus
  * allen Ergebnissen (engine/eloleiter.ts); je Anker-Stufe die innere Genauigkeit jeder Seite, in
- * Blöcken zu zehn Partien durch dieselbe Rechnung wie „Deine Spielstärke“ (staerkeUeberPartien);
+ * Blöcken zu zehn Partien durch dieselbe Rechnung wie „Deine Spielstärke“ (spiel/elomodell.ts,
+ * seit 0.2.121 ohne Phasen der Züge, weil die Messung nur Bewertungen kennt; Neuverankerung folgt);
  * eine gemeinsame Verschiebung legt die Leiter auf die Anker. Unsicherheit je Spieler durch
  * Nachziehen der Ergebnisse (Binomial, 200 Durchgänge). Ausgabe im Ordner: botstaerke-daten.ts
  * (kommt nach engine/), bericht.md.
@@ -26,7 +27,12 @@ import {
   LICHESS_REGLER,
   zugwerteBisEntscheidung,
 } from "../spiel/genauigkeitsmodell";
-import { staerkeUeberPartien } from "../spiel/staerkemodell";
+import {
+  kennzahlenAus,
+  kennzahlenMittel,
+  schaetzung,
+  type Partiekennzahlen,
+} from "../spiel/elomodell";
 import { leiter, verankere, type Anker, type Begegnung } from "./eloleiter";
 import { GEGNER } from "./gegnerliste";
 
@@ -199,9 +205,9 @@ function bewertungen(): Map<string, Rohwert[]> {
  * Innere Genauigkeiten beider Seiten je Anker-Stufe, wie „Deine Spielstärke“ seit 0.2.103 nur bis
  * zur Entscheidung der Partie (Seiten mit mindestens zehn gezählten Zügen).
  */
-function ankerGenauigkeiten(): Map<string, number[]> {
+function ankerGenauigkeiten(): Map<string, Partiekennzahlen[]> {
   const bewertet = bewertungen();
-  const je = new Map<string, number[]>();
+  const je = new Map<string, Partiekennzahlen[]>();
   for (const o of unterordner(ANKER_ORDNER)) {
     for (const d of dateienIn(join(ORDNER, o))) {
       // Kürzel der Seite: „3“ oder eine freie Grundschicht wie „4x0.2“ (Eichung 0.2.117)
@@ -213,8 +219,11 @@ function ankerGenauigkeiten(): Map<string, number[]> {
         for (const seite of ["white", "black"] as const) {
           const zuege = zugwerteBisEntscheidung(werte, seite);
           if (zuege.length < MINDESTENS_ZUEGE) continue;
-          const g = genauigkeitAus(zuege, LICHESS_REGLER.polster);
-          if (g !== null) je.set(stufe, [...(je.get(stufe) ?? []), g]);
+          const k = kennzahlenAus(
+            zuege.map((z) => ({ ...z, phase: null })),
+            genauigkeitAus(zuege, LICHESS_REGLER.polster),
+          );
+          if (k) je.set(stufe, [...(je.get(stufe) ?? []), k]);
         }
       });
     }
@@ -234,12 +243,11 @@ function anker(): { anker: Anker[]; zeilen: string[] } {
   for (const [stufe, werte] of sortiert) {
     const bloecke: number[] = [];
     for (let i = 0; i + BLOCK <= werte.length; i += BLOCK) {
-      const s = staerkeUeberPartien(werte.slice(i, i + BLOCK));
-      if (s) bloecke.push(s.mitte);
+      bloecke.push(schaetzung("rapid", kennzahlenMittel(werte.slice(i, i + BLOCK)), BLOCK).mitte);
     }
     if (bloecke.length === 0) continue;
     const wert = bloecke.reduce((s, x) => s + x, 0) / bloecke.length;
-    const genau = werte.reduce((s, x) => s + x, 0) / werte.length;
+    const genau = kennzahlenMittel(werte).acc_lichess ?? 0;
     const gueltig = genau <= GESAETTIGT_AB;
     if (gueltig) liste.push({ spieler: `stufe${stufe}`, wert });
     zeilen.push(

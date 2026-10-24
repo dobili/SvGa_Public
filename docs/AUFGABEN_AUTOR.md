@@ -408,6 +408,35 @@ Anzeige › „English (preview)“.
 - [ ] N739. **Englisch im Ganzen:** Lies zwei, drei Unterschriften und eine Erklärung. Klingt
       das Englisch natürlich genug für die Vorschau, bis dein englisches Buch kommt?
 
+### Neu in 0.2.121: Zugwahl der Bots und eigene Wertung je Zeitklasse (Fable, Nacht zum 24.10.2026)
+
+Die Bots wählen ihre Züge jetzt mit einem Modell, das an 180 000 Stellungen echter
+Lichess-Partien gelernt hat, welchen Zug Menschen einer Wertung wählen (Fehlerraten je Band, Phase
+und Fehlerart treffen die echten auf etwa einen Prozentpunkt). Die Spielstärke ist eine eigene
+Wertung je Zeitklasse (Blitz, Schnellschach, Klassisch) am Maßstab von Lichess, geschätzt aus den
+Kennzahlen deiner Züge bis zur Entscheidung; der Schalter „Genauigkeit wie“ ist weg. Die Zahlen
+der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
+
+- [ ] N770. **Bots spielen menschlich:** Spiele je eine Schnellschach-Partie gegen einen Bot um
+      800 und einen um 1600. Wirken die Fehler wie die von Menschen dieser Stärke (Hänger und
+      übersehene Drohungen unten, kleine Ungenauigkeiten oben), ohne Zufallszüge ohne Sinn?
+- [ ] N771. **Spielstärke in der Auswertung:** Nach der Partie zeigt die Karte „Spielstärke“ die
+      Genauigkeit (ohne Schalter) und „etwa 1400 (1100–1700)“. Hinter dem Fragezeichen steht,
+      für welche Zeitklasse die Zahl gilt und was sie etwa auf chess.com (Blitz, Schnellschach)
+      oder beim Weltschachbund (Klassisch) entspricht. Passt die Zahl grob zu dir?
+- [ ] N772. **Zahl je Phase nur bei schmaler Spanne:** In der Karte „Spielstärke“ stehen je Phase
+      Urteil und Genauigkeit, aber keine Zahl mehr (eine einzelne Partie streut je Phase zu stark,
+      im Endspiel am meisten). Vermisst du die Zahl je Phase, oder ist Urteil plus Genauigkeit
+      genug?
+- [ ] N773. **Deine Spielstärke je Zeitklasse:** Spielen › Karte „Deine Spielstärke“ zeigt je
+      Zeitklasse, in der du gewertete Partien hast, eine Zeile („Schnellschach: etwa 1400“, darunter
+      Spanne und Zahl der Partien). Nach einer Blitzpartie (unter 8 Minuten geschätzte Dauer,
+      Grundzeit plus 40 Sekunden je Sekunde Zuschlag) kommt eine zweite Zeile dazu.
+- [ ] N774. **Alte Partien:** Deine vor 0.2.121 gespeicherten Partien bekommen die neue Zahl
+      ohne Neuauswertung (dieselben Engine-Werte, neue Rechnung). Liegt sie nahe bei der alten
+      Zahl (eine gewisse Verschiebung ist richtig: die alte Mitte aus chess.com und Lichess lag
+      unter der Lichess-Zahl)?
+
 ---
 
 ## Teil 2: Entscheiden
@@ -568,6 +597,28 @@ Paket P4.
       Schon umgesetzt, Widerspruch genügt (etwa eine andere Grenze). Falls du etwas anderes
       gemeint hast (etwa Safari am Mac, das gar nicht wechselt), schreib bitte kurz, in welchem
       Browser.
+
+### Eigene Wertung je Zeitklasse (Fable, 24.10.2026): schon umgesetzt, Widerspruch genügt
+
+- [ ] E1. **Entzerrung statt Schätzung zur Mitte:** Ein Modell aus Kennzahlen schätzt Starke zu
+      niedrig und Schwache zu hoch (bei zehn Partien etwa 2400 → 2250, 600 → 700), weil es bei
+      Unsicherheit zur Mitte neigt. Empfehlung: Die Schätzung wird so entzerrt, dass Spieler jeder
+      Wertung im Mittel ihre Lichess-Zahl bekommen; dafür wird die Spanne etwas breiter (bei einer
+      Partie Schnellschach ±370 statt ±300, bei zehn ±165 statt ±155). Schon umgesetzt.
+- [ ] E2. **Zahl je Phase nur bei schmaler Spanne:** Die Teilmodelle je Phase sind breit (bei zehn
+      Partien Schnellschach: Mittelspiel ±370, Eröffnung ±530, Endspiel ±900, 90 % der Spieler).
+      Empfehlung: Eine Zahl je Phase steht nur, wenn 90 % der Spieler höchstens ±350 danebenliegen;
+      das ist derzeit nur im Mittelspiel ab etwa acht klassischen Partien der Fall. Sonst stehen
+      Urteil und Genauigkeit je Phase (die sind verlässlich). Schon umgesetzt; Alternative wäre eine
+      Zahl mit sehr breiter Spanne.
+- [ ] E3. **Zeitklasse ohne Uhr:** Partien ohne Uhr zählen als Schnellschach (wie in der
+      Zugwahl der Bots). Mit R51 (Teil F) fällt „ohne Uhr“ für gewertete Partien ohnehin weg.
+      Schon umgesetzt.
+- [ ] E4. **Umrechnung nach chessgoals.com:** Die Entsprechung auf chess.com und FIDE stammt aus
+      dem Wertungsvergleich von chessgoals.com (Juli 2026, Selbstangaben aktiver Spieler;
+      Lichess-Schnellschach 1680 ≈ chess.com Schnellschach 1340, Lichess Klassisch 2120 ≈ FIDE
+      1965; FIDE erst ab 1730 Lichess Klassisch). Übernommen sind nur die Zahlen (Fakten), mit
+      Quellenangabe in der App und in docs/LIZENZEN.md. Schon umgesetzt.
 
 ### P4 Trainer-Inhalte (Fable, 23.10.2026): schon umgesetzt, nur bestätigen
 

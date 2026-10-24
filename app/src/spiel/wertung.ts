@@ -23,13 +23,17 @@
 import { gegnerstaerke } from "../engine/botstaerke";
 import type { Partieeintrag } from "../speicher/partien";
 import { zugurteile } from "./auswertung";
-import { spielstaerke, spielstaerkeJePhase, type Spielstaerke } from "./genauigkeit";
 import {
-  STANDARD_GENAUIGKEITSMODUS,
-  staerkeUeberPartien,
-  type Genauigkeitsmodus,
-  type Staerkeschaetzung,
-} from "./staerkemodell";
+  HOECHSTENS_PARTIEN,
+  istSchmal,
+  kennzahlenMittel,
+  schaetzung,
+  wertungstempo,
+  type Partiekennzahlen,
+  type Wertungsschaetzung,
+  type Wertungstempo,
+} from "./elomodell";
+import { spielstaerke, spielstaerkeJePhase, type Spielstaerke } from "./genauigkeit";
 import { stellungen, type Partie } from "./partie";
 import { phasenJeStellung, type Phase } from "./phasen";
 import { sanZuUci } from "./zuege";
@@ -81,48 +85,64 @@ const ERWARTUNGSBASIS = 10;
 export const MAX_WERTUNGSPUNKTE = 1000;
 
 /** Die Spielstärke beider Seiten einer ausgewerteten Partie; null ohne Auswertung. */
-export function staerkeDerPartie(
-  eintrag: Partieeintrag,
-  modus: Genauigkeitsmodus = STANDARD_GENAUIGKEITSMODUS,
-): Spielstaerke | null {
+export function staerkeDerPartie(eintrag: Partieeintrag): Spielstaerke | null {
   if (eintrag.werte.length === 0) return null;
   const p = eintrag.partie;
   const urteile = zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende);
   const alle = stellungen(p);
   const gespielte = p.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  return spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte, modus);
+  const tempo = wertungstempo(p.einstellung.uhr);
+  return spielstaerke(p, eintrag.werte, urteile, eintrag.beste, gespielte, tempo);
 }
 
-/** Höchstens so viele Partien gehen in die Spielstärke über mehrere Partien ein. */
-const LETZTE_PARTIEN = 10;
+/** Die Schätzung über mehrere Partien: gesamt und je Phase (null, wo die Spanne zu breit ist). */
+export interface Spielerschaetzung extends Wertungsschaetzung {
+  readonly phasen: Readonly<Record<Phase, Wertungsschaetzung | null>>;
+}
 
 /**
- * Die Spielstärke des Lesers über seine letzten zehn ausgewerteten gewerteten Partien gegen die
- * Engine (seit R32 nur gewertete; Eichung 0.2.83, Wunsch des Autors: eine einzelne Partie streut erwartbar um etwa ±450).
- * Es zählen nur Partien mit genug eigenen Zügen für eine Schätzung; die Liste ist neueste zuerst.
- * Ausgabe: Schätzung mit Spanne und Zahl der Partien; null ohne passende Partie.
- * Beispiel: drei Partien mit 70, 80 und 75 % → etwa 1550 (1200 bis 1900), aus 3 Partien.
+ * Die Spielstärke des Lesers in einer Zeitklasse über seine letzten zehn ausgewerteten gewerteten
+ * Partien gegen die Engine (seit R32 nur gewertete; seit 0.2.121 je Zeitklasse mit dem Elo-Modell:
+ * Kennzahlen über die Partien gemittelt, Spanne wird mit jeder Partie enger).
+ * Es zählen nur Partien dieser Zeitklasse mit genug eigenen Zügen für eine Schätzung; die Liste
+ * ist neueste zuerst. Ausgabe: Schätzung mit Spanne, Zahl der Partien und je Phase; null ohne
+ * passende Partie.
+ * Beispiel: drei Schnellschach-Partien mit 70, 80 und 75 % → etwa 1550 (1150 bis 1950), aus 3 Partien.
  */
 export function staerkeLetzterPartien(
   partien: readonly Partieeintrag[],
-): (Staerkeschaetzung & { readonly partien: number }) | null {
-  const innen: number[] = [];
+  tempo: Wertungstempo = "rapid",
+): Spielerschaetzung | null {
+  const kennzahlen: Partiekennzahlen[] = [];
   for (const eintrag of partien) {
-    if (innen.length >= LETZTE_PARTIEN) break;
+    if (kennzahlen.length >= HOECHSTENS_PARTIEN) break;
     // Nur gewertete Partien (R32, Wunsch des Autors 23.10.2026): Partien mit Rücknahme oder
     // Spielhilfen, aus Abbildungen oder eingelesene PGN spiegeln die eigene Stärke nicht.
-    const { gegner, gewertet } = eintrag.partie.einstellung;
-    if (gegner !== "engine" || !gewertet) continue;
+    const { gegner, gewertet, uhr } = eintrag.partie.einstellung;
+    if (gegner !== "engine" || !gewertet || wertungstempo(uhr) !== tempo) continue;
     const seite = staerkeDerPartie(eintrag)?.[eintrag.partie.einstellung.eigeneFarbe];
-    if (seite?.spielstaerke !== null && seite?.innen !== null && seite?.innen !== undefined) {
-      innen.push(seite.innen);
-    }
+    if (seite?.schaetzung && seite.kennzahlen) kennzahlen.push(seite.kennzahlen);
   }
-  const schaetzung = staerkeUeberPartien(innen);
-  return schaetzung ? { ...schaetzung, partien: innen.length } : null;
+  if (kennzahlen.length === 0) return null;
+  const mittel = kennzahlenMittel(kennzahlen);
+  const jePhase = (ph: Phase) => {
+    const s = schaetzung(tempo, mittel, kennzahlen.length, ph);
+    return istSchmal(s) ? s : null;
+  };
+  return {
+    ...schaetzung(tempo, mittel, kennzahlen.length),
+    phasen: {
+      eroeffnung: jePhase("eroeffnung"),
+      mittelspiel: jePhase("mittelspiel"),
+      endspiel: jePhase("endspiel"),
+    },
+  };
 }
 
-/** Die Schätzung je Phase für den Leser (Spielstärke je Phase, ab sechs Zügen je Phase). */
+/**
+ * Die Schätzung je Phase für den Leser (ab sechs Zügen je Phase; seit 0.2.121 nur, wo die Spanne
+ * des Teilmodells schmal genug ist, sonst null).
+ */
 export function phasenstaerke(eintrag: Partieeintrag): Readonly<Record<Phase, number | null>> {
   if (eintrag.werte.length === 0) return OHNE_PHASEN;
   const p = eintrag.partie;
@@ -136,6 +156,7 @@ export function phasenstaerke(eintrag: Partieeintrag): Readonly<Record<Phase, nu
     eintrag.beste,
     gespielte,
     phasenJeStellung(p),
+    wertungstempo(p.einstellung.uhr),
   );
   const farbe = p.einstellung.eigeneFarbe;
   return {

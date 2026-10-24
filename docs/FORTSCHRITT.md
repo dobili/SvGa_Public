@@ -1912,3 +1912,22 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
 - **Noch nicht neu gemessen:** Die Wertungen der Bots (Ergebnisleiter, Anker) gelten für die alte
   Zugwahl. Messung mit vierfachen Kandidaten und Verankerung mit dem neuen Elo-Modell folgen
   (Restplan 8).
+
+### Ergebnisse der Nacht, Teil 5 (24.10.2026, 4 Uhr): eigenes Elo-Modell in der App (Schritt 5)
+
+- **Additives Elo-Modell** (lokal buch/arbeit/appmodell/appmodell.py, Bericht appmodell-bis_txt):
+  Kennzahlen bis zur Entscheidung auf Tiefe 18 umgerechnet, ein Modell für 1 bis 10 Partien, je
+  Zeitklasse Gesamt- und drei Phasenmodelle, Entzerrung je Partienzahl, 90-%-Spanne je Partienzahl.
+  Prüfung an zurückgelegten Spielern: Schnellschach je Partie MAE 284 (GBM 275), über zehn 147
+  (GBM 131); Blitz 329/200; Klassisch 208/121. Einzelheiten in ENTSCHEIDUNGEN „Eigenes Elo-Modell“.
+- **App umgebaut:** spiel/elomodell.ts (+ Daten), spiel/umrechnung.ts (+ Daten aus chessgoals.com),
+  spiel/genauigkeit.ts (Seitenbilanz mit Kennzahlen und Wertungsschätzung, Phasen je Zug immer),
+  spiel/wertung.ts (staerkeLetzterPartien je Zeitklasse mit Phasen), ui Spielstaerke.tsx ohne
+  Schalter, LetzteSpielstaerke.tsx je Zeitklasse, wertungstext.ts („entspricht etwa“),
+  Partienliste ohne Modus, speicher/format.ts ohne genauigkeitsmodus (beim Lesen übergangen),
+  spiel/staerkemodell.ts gelöscht, botstaerke.messung.ts auf das neue Modell (ohne Phasen).
+  Texte de/en neu, Tests neu (elomodell, umrechnung), E2E angepasst. AUFGABEN_AUTOR N770–N774
+  und Entscheidungen E1–E4.
+- **Restplan:** Schritt 1 (Filter „alle“ läuft noch), 2 (Tiefe 18: 731 von 814, Geraden aus 500
+  Partien verwendet; nach Abschluss nachrechnen), 3, 4, 5 fertig; 6 offen (eingesperrte Figur);
+  7 fertig; 8, 8b, 9, 10 offen.

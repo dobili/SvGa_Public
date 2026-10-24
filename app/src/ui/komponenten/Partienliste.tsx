@@ -42,7 +42,6 @@ import { BRETTFARBEN, FELD } from "../brett/masse";
 import { LetzteSpielstaerke } from "./LetzteSpielstaerke";
 import { Partienfilterleiste } from "./Partienfilterleiste";
 import { PgnImport } from "./PgnImport";
-import type { Genauigkeitsmodus } from "../../spiel/staerkemodell";
 import { Knopfsymbol } from "./Knopfsymbol";
 import { Stufenmarke } from "./Stufenmarke";
 import { Titelsymbol } from "./Titelsymbol";
@@ -116,8 +115,8 @@ function seitenwert(b: Seitenbilanz): string {
 }
 
 /** „du etwa 1400 · Engine etwa 1600“ oder bei zwei Menschen „Weiß … · Schwarz …“; leer ohne Auswertung. */
-function staerketext(eintrag: Partieeintrag, modus: Genauigkeitsmodus): string {
-  const staerke = staerkeDerPartie(eintrag, modus);
+function staerketext(eintrag: Partieeintrag): string {
+  const staerke = staerkeDerPartie(eintrag);
   if (!staerke) return "";
   const p = eintrag.partie;
   const weiss = seitenwert(staerke.white);
@@ -202,10 +201,10 @@ function Loeschen({ partie }: { partie: Partie }) {
 }
 
 /** Eine Zeile der Liste: Gegnerbild, Seite, Ergebnis mit Stern, Datum und Stärke; Löschen. */
-function Partiezeile({ eintrag, modus }: { eintrag: Partieeintrag; modus: Genauigkeitsmodus }) {
+function Partiezeile({ eintrag }: { eintrag: Partieeintrag }) {
   const { navigiere } = useNavigation();
   const { partie } = eintrag;
-  const staerke = staerketext(eintrag, modus);
+  const staerke = staerketext(eintrag);
   return (
     <li className="partieeintrag">
       <button
@@ -239,10 +238,10 @@ function Partiezeile({ eintrag, modus }: { eintrag: Partieeintrag; modus: Genaui
 }
 
 /** Zahlen zum Sortieren: Beginn, eigene Spielstärke in der Partie, Stärke des Gegners. */
-function sortierwerte(eintrag: Partieeintrag, modus: Genauigkeitsmodus): Sortierwerte {
+function sortierwerte(eintrag: Partieeintrag): Sortierwerte {
   const e = eintrag.partie.einstellung;
   const mensch = e.gegner === "mensch";
-  const eigene = mensch ? null : staerkeDerPartie(eintrag, modus)?.[e.eigeneFarbe].spielstaerke;
+  const eigene = mensch ? null : staerkeDerPartie(eintrag)?.[e.eigeneFarbe].spielstaerke;
   return {
     begonnen: eintrag.partie.begonnen,
     staerke: eigene ?? null,
@@ -251,16 +250,12 @@ function sortierwerte(eintrag: Partieeintrag, modus: Genauigkeitsmodus): Sortier
 }
 
 export function Partienliste({ partien }: { partien: readonly Partieeintrag[] }) {
-  const modus = useEinstellungen().genauigkeitsmodus;
   const [filter, setzeFilter] = useState<Partienfilter>(OHNE_FILTER);
   const [anzahl, setzeAnzahl] = useState(SICHTBAR);
   const [sortierung, setzeSortierung] = useState<Sortierung>("datum");
   const [aufsteigend, setzeAufsteigend] = useState(false);
-  // Die Spielstärke je Partie kostet Rechenzeit; einmal je Liste und Modus.
-  const werte = useMemo(
-    () => new Map(partien.map((e) => [e, sortierwerte(e, modus)])),
-    [partien, modus],
-  );
+  // Die Spielstärke je Partie kostet Rechenzeit; einmal je Liste.
+  const werte = useMemo(() => new Map(partien.map((e) => [e, sortierwerte(e)])), [partien]);
   if (partien.length === 0)
     return (
       <section className="abschnitt partienliste">
@@ -273,7 +268,7 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   const passend = sortiere(
     partien.filter((e) => passtZumFilter(e.partie, aktiv)),
     mitFilter ? sortierung : "datum",
-    (e) => werte.get(e) ?? sortierwerte(e, modus),
+    (e) => werte.get(e) ?? sortierwerte(e),
     mitFilter && aufsteigend,
   );
   const rest = passend.length - anzahl;
@@ -301,7 +296,7 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
         {passend.length === 0 && <p className="hinweis">{t("spielen.filter.leer")}</p>}
         <ul className="begriffsliste">
           {passend.slice(0, anzahl).map((eintrag) => (
-            <Partiezeile key={eintrag.partie.id} eintrag={eintrag} modus={modus} />
+            <Partiezeile key={eintrag.partie.id} eintrag={eintrag} />
           ))}
         </ul>
         {rest > 0 && (

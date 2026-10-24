@@ -12,7 +12,7 @@ import type { Color } from "chessops/types";
 import { WERTGRENZE } from "./auswertung";
 import { genauigkeitAus, zugwerte, type Regler } from "./genauigkeitsmodell";
 import { festerZufall, mische } from "../training/zufall";
-import { kurvenwert, type Kurve } from "./staerkemodell";
+import { kurvenwert, type Kurve } from "./umrechnung";
 
 export { kurvenwert, type Kurve };
 

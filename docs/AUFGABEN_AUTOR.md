@@ -56,6 +56,11 @@ Teil fertig ist.
 - [ ] N745. **Prüfungen per Mail:** Nach dem Ausrollen läuft auf GitHub der Lauf „Wartung“
       (Actions › Wartung), danach jeden Montag früh. Ist ein Punkt rot, scheitert der Lauf und
       GitHub schickt dir eine Mail. Die Ergebnisse stehen auch auf der Seite des Laufs als Tabelle.
+- [ ] N746. **Werkzeug-Links auf den Trainingsseiten:** <https://schach-von-grund-auf.com/training/kap01/>
+      öffnen. Unter jeder Übung, die ein Lichess-Werkzeug nennt (etwa „Aufgabenthemen“, „Stellung
+      aufbauen“, „Analysebrett“), steht „Direkt öffnen:“ mit Knöpfen, die das Werkzeug in einem
+      neuen Tab öffnen. Der Text der Übung bleibt wie im Buch. Die Adressen kommen aus dem
+      Werkzeugkasten in Kapitel 12; der Wartungslauf prüft sie jede Woche.
 
 ### Neu in 0.2.123: Spielen ohne die Bot-Kalibrierung (R24, R27, R28, R51, R54; Opus, 24.10.2026 nachts)
 

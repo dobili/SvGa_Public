@@ -50,7 +50,8 @@ const BRETT = ["echten Brett", "echtes Brett", "Holzbrett", "am Brett aufgestell
  */
 const PARTIE = ["eigenen Partie", "eigene Partie", "nach der Partie", "Spiele dafür", "im Turnier"];
 
-function teileVon(block: Trainingsblock): readonly Trainingsteil[] {
+/** Alle Textteile eines Blocks (Absatz, Liste oder Tabelle) in Lesereihenfolge. */
+export function teileVon(block: Trainingsblock): readonly Trainingsteil[] {
   if (block.art === "absatz" || block.art === "klein") return block.teile;
   if (block.art === "liste") return block.punkte.flat();
   return [...block.zeilen.flat(2), ...block.unterschrift];

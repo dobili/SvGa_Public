@@ -2,8 +2,8 @@
 
 Idee des Autors vom 24.10.2026. **Stand 24.10.2026 vormittags:** Stufe 1 und 2 gebaut (Worker
 `app/worker/`, Seite `/admin/` aus `app/admin/` und `src/admin/`, Wartungslauf
-`.github/workflows/wartung.yml` mit `pipeline/wartung/`, Meldeformular in der App); offen sind
-die Werkzeug-Links (Punkt 18), „Was ist neu“ und der Wartungshinweis (16, 17), axe und Ladezeit
+`.github/workflows/wartung.yml` mit `pipeline/wartung/`, Meldeformular in der App); die Werkzeug-Links
+(Punkt 18) stehen auf den Kapitelseiten des Trainings. Offen sind „Was ist neu“ und der Wartungshinweis (16, 17), axe und Ladezeit
 der Live-Seite (4) und der Abgleich mit dem Buchstand (7, braucht Zugang zu den privaten
 Buchquellen aus GitHub Actions). Diese Datei hält Funktionsumfang,
 Aufbau und die Einrichtungsschritte fest. Sie enthält keine Zugangsdaten; die legt der Autor

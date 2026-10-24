@@ -630,6 +630,7 @@
   "training.seite.ueberzeileWerkzeugkasten": "Training mit dem Buch",
   "training.seite.einleitung": "Übungen zum Kapitel aus dem Buch „Schach von Grund auf“. Kapitel-, Abschnitts- und Tabellennummern beziehen sich auf das Buch; ein Tipp auf eine Abbildung öffnet sie in der App. Die Angaben zu Webangeboten halten wir hier aktuell.",
   "training.seite.orte": "Vor jeder Übung steht, wo du sie machst: „Lichess“ heißt auf lichess.org (kostenlos; den Weg zu jeder Funktion zeigt der Werkzeugkasten), „Website“ heißt auf der genannten Seite, „App“ heißt in der App zum Buch (ein Tipp auf eine Abbildung öffnet sie dort), „Brett“ heißt an einem echten Schachbrett, „Eigene Partien“ heißt in deinen Partien, wo immer du spielst.",
+  "training.werkzeuglinks": "Direkt öffnen:",
   "training.ort.titel": "Wo du übst",
   "training.ort.lichess": "Lichess",
   "training.ort.web": "Website",

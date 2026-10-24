@@ -1,0 +1,95 @@
+{
+  "quelle": "Adressen aus dem Werkzeugkasten in Kapitel 12 (inhalte/de/training/werkzeugkasten.json); Namen wie in der deutschen Oberfläche von Lichess und in den Trainingskästen.",
+  "stand": "2026-10-24",
+  "links": [
+    {
+      "namen": ["Aufgabenthemen"],
+      "titel": "Aufgabenthemen",
+      "adresse": "https://lichess.org/training/themes"
+    },
+    {
+      "namen": ["Aufgabenübersicht"],
+      "titel": "Aufgabenübersicht",
+      "adresse": "https://lichess.org/training/dashboard"
+    },
+    {
+      "namen": ["Nach Eröffnungen"],
+      "titel": "Aufgaben nach Eröffnungen",
+      "adresse": "https://lichess.org/training/openings"
+    },
+    {
+      "namen": ["Aufgaben aus den Partien eines Spielers"],
+      "titel": "Aufgaben aus Partien eines Spielers",
+      "adresse": "https://lichess.org/training/of-player"
+    },
+    {
+      "namen": ["Puzzle Streak"],
+      "titel": "Puzzle Streak",
+      "adresse": "https://lichess.org/streak"
+    },
+    {
+      "namen": ["Puzzle Storm"],
+      "titel": "Puzzle Storm",
+      "adresse": "https://lichess.org/storm"
+    },
+    {
+      "namen": ["Puzzle Racer"],
+      "titel": "Puzzle Racer",
+      "adresse": "https://lichess.org/racer"
+    },
+    {
+      "namen": [
+        "Analysebrett",
+        "Computer-Analyse",
+        "Eröffnungsdatenbank",
+        "Masters"
+      ],
+      "titel": "Analysebrett",
+      "adresse": "https://lichess.org/analysis"
+    },
+    {
+      "namen": ["Stellung aufbauen"],
+      "titel": "Stellung aufbauen",
+      "adresse": "https://lichess.org/editor"
+    },
+    {
+      "namen": ["Partie importieren"],
+      "titel": "Partie importieren",
+      "adresse": "https://lichess.org/paste"
+    },
+    {
+      "namen": ["Studie", "Studien"],
+      "titel": "Studien",
+      "adresse": "https://lichess.org/study"
+    },
+    {
+      "namen": ["Feld finden", "Feld benennen", "Koordinaten"],
+      "titel": "Koordinatentraining",
+      "adresse": "https://lichess.org/training/coordinate"
+    },
+    {
+      "namen": ["Lernen →"],
+      "titel": "Lernen (Grundlagen)",
+      "adresse": "https://lichess.org/learn"
+    },
+    {
+      "namen": [
+        "Grundlegende Turmendspiele",
+        "Praktische Turmendspiele",
+        "Figuren-Mattvarianten"
+      ],
+      "titel": "Übungen (Lichess Practice)",
+      "adresse": "https://lichess.org/practice"
+    },
+    {
+      "namen": ["Übertragungen"],
+      "titel": "Übertragungen",
+      "adresse": "https://lichess.org/broadcast"
+    },
+    {
+      "namen": ["Tablebase"],
+      "titel": "Tablebase (syzygy-tables.info)",
+      "adresse": "https://syzygy-tables.info"
+    }
+  ]
+}

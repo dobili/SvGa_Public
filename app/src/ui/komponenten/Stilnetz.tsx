@@ -43,6 +43,9 @@ const PUNKT_AUSSEN = 8;
 const PUNKT_INNEN = 5;
 const TREFFER = 10;
 const UNTER_DER_MITTE = 22;
+/** Unsichtbare Tippfläche hinter einer Beschriftung (WebKit trifft Text allein schlecht). */
+const SCHRIFT_BREITE = 108;
+const SCHRIFT_HOEHE = 22;
 const GRAD = Math.PI / 180;
 
 /** Die sechs Speichen im Uhrzeigersinn ab oben; gegenüber liegt das andere Ende derselben Achse. */
@@ -126,6 +129,7 @@ function Netz({ mix, beiWahl }: Wahlprops) {
           y: MITTE_Y + UNTER_DER_MITTE,
         }}
         gewaehlt={Object.keys(mix).length === 0}
+        tippflaeche={false}
         beiWahl={() => beiWahl({})}
       />
     </svg>
@@ -139,11 +143,14 @@ function Wahlpunkt({
   beschriftung,
   gewaehlt,
   beiWahl,
+  tippflaeche = true,
 }: {
   name: string;
   ort: { x: number; y: number };
   /** Außen: Name des Stils, hervorgehoben, wenn er in der Mischung vorkommt. */
   beschriftung: { text: string; aktiv: boolean; x: number; y: number } | null;
+  /** Tippfläche hinter der Beschriftung; nicht in der Mitte, dort lägen die inneren Punkte. */
+  tippflaeche?: boolean;
   gewaehlt: boolean;
   beiWahl: () => void;
 }) {
@@ -164,6 +171,15 @@ function Wahlpunkt({
     >
       <circle cx={ort.x} cy={ort.y} r={TREFFER} className="stilnetz-treffer" />
       <circle cx={ort.x} cy={ort.y} r={beschriftung ? PUNKT_AUSSEN : PUNKT_INNEN} />
+      {beschriftung && tippflaeche && (
+        <rect
+          x={beschriftung.x - SCHRIFT_BREITE / 2}
+          y={beschriftung.y - SCHRIFT_HOEHE / 2}
+          width={SCHRIFT_BREITE}
+          height={SCHRIFT_HOEHE}
+          className="stilnetz-treffer"
+        />
+      )}
       {beschriftung && (
         <text
           x={beschriftung.x}

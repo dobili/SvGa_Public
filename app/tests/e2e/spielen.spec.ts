@@ -488,7 +488,7 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
   await punkt("Positionsspieler 125 %").locator("circle").nth(1).click();
   await expect(punkt("Angreifer 50 %")).toHaveAttribute("aria-checked", "false");
   await expect(page.getByTestId("stilnetz-text")).toContainText("Positionsspieler 125 %");
-  await punkt("Positionsspieler 125 %").locator("text").click();
+  await punkt("Positionsspieler 125 %").locator("circle").nth(1).click();
   await expect(punkt("Positionsspieler 125 %")).toHaveAttribute("aria-checked", "false");
   await page.getByTestId("erweiterte-fehler").locator("summary").click();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");

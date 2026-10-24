@@ -1896,3 +1896,19 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   Verlustkurve und eigenem Bonus „bester“): Eröffnung jetzt richtig (Schnellschach 2000: echt 8,1,
   Modell 7,6; 2400: 4,9/4,6), Mittel- und Endspiel unverändert gut, Trefferquote gleich. **Das ist
   das Modell für die App.** Lokal buch/arbeit/zugwahl/wahlmodell-elo2-phase.json.
+
+### Ergebnisse der Nacht, Teil 4 (24.10.2026, 3 Uhr): Wahlmodell in der App
+
+- **Wahlmodell übertragen** (Commit 475f6f0 auf `menschliche-bots`): engine/wahlmodell-daten.ts
+  (64 Merkmale, Gewichte g0/g1/g2 je Zeitklasse aus wahlmodell-elo2-phase.json),
+  engine/wahlmodell.ts (Merkmale, Gewichte, Softmax mit Temperatur, Zeitklasse wie Lichess),
+  engine/stilmerkmale.ts (sieben Stilmerkmale wie in der Eichung), engine/wahlschritt.ts
+  (Stellschrauben der Bots → Verschiebungen: Fehlerart ln g, Fleck −(g−1)·0,5, Stil ±0,25 je
+  Stufe, Höchstverlust als Filter). engine/menschenwahl.ts zieht jetzt aus dem Pool
+  (Engine-Kandidaten + gezielte Fehlerzüge) mit dem Wahlmodell; Fehlerwürfe je Gelegenheit und der
+  Wurf auf blinde Flecken sind weg. Die Zeitklasse kommt aus der Uhr der Partie
+  (ui/komponenten/botzug.ts), ohne Uhr Schnellschach. Tests 1305 grün, Chromium-E2E grün (eine
+  Wiederholung: „Alle Daten löschen“ ist zeitabhängig und bestand allein).
+- **Noch nicht neu gemessen:** Die Wertungen der Bots (Ergebnisleiter, Anker) gelten für die alte
+  Zugwahl. Messung mit vierfachen Kandidaten und Verankerung mit dem neuen Elo-Modell folgen
+  (Restplan 8).

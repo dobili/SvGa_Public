@@ -32,6 +32,7 @@ import { wahltempo } from "./wahlmodell";
 import type { EngineDienst } from "./engineDienst";
 import type { Fehlerart } from "./fehlerart";
 import { staerkeAusStufen, staerkeDesBots } from "./botstaerke";
+import { BOTKANDIDATEN } from "./botkandidaten";
 import { GEGNER } from "./gegner";
 import { faktorenAus } from "./gegnerbau";
 import { tagesform } from "./menschlich";
@@ -122,7 +123,8 @@ function alleGleich(n: Stufennummer): Readonly<Record<Phase, Stufennummer>> {
 function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
   const bot = /^@([a-z-]+)$/.exec(kern);
   if (!bot?.[1]) return null;
-  const g = GEGNER.find((x) => x.kennung === bot[1]);
+  // Vorgefertigte Bots und die Kandidaten des neuen Bot-Satzes (0.2.124)
+  const g = [...GEGNER, ...BOTKANDIDATEN].find((x) => x.kennung === bot[1]);
   if (!g) throw new Error(`Unbekannter Bot: ${kern}`);
   const profil: Gegnerprofil = {
     ...STANDARDPROFIL,

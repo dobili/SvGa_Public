@@ -4489,3 +4489,19 @@ war). Der Messlauf bleibt für spätere Datenstände.
   „alle drei Bedingungen erfüllt“ statt „(Ziel )“; die Kette des Plans ist die längste mit
   Richtung, bei Gleichstand die zentralste (Abb. 11.78: e4–d5–f5 statt c3–b4); verzweigte
   Ketten stehen von Linie zu Linie (Abb. 6.11: „d6–e5–f6“ statt „d6–f6–e5“).
+
+## 24.10.2026 – R57 Admin-Dashboard (P1, Opus)
+
+- Website-Worker bekommt Code (`app/worker/`), aber nur für `/api/*` und `/admin*`
+  (`run_worker_first`); alles andere liefert Cloudflare wie bisher direkt aus.
+- Der Worker prüft das Zeichen von Cloudflare Access selbst (RS256, AUD, Ablauf), weil
+  workers.dev und Vorschauadressen nicht hinter Access liegen. Team und AUD stehen in
+  `wrangler.jsonc` (öffentlich sichtbar auf jeder Anmeldeseite).
+- `/admin/` ist nicht im Offline-Speicher der App (sonst würde Access das Vorabladen auf
+  Lesergeräten umleiten).
+- Meldungen: Drossel fünf je Verbindung und Stunde (Prüfwert aus IP und Datum, nach einem Tag
+  gelöscht), Meldungen nach zwölf Monaten gelöscht, Datenschutzerklärung um „Meldungen aus der
+  App“ ergänzt. Turnstile vorerst nicht in der App (DB2, Widerspruch genügt).
+- Wartungsprüfungen in Python ohne weitere Pakete (`pipeline/wartung`), Rot lässt den Lauf
+  scheitern (Mail von GitHub). Zertifikat erst unter 14 Tagen gelb, weil Cloudflare etwa 30 Tage
+  vor Ablauf erneuert.

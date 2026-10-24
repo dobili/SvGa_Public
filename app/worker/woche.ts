@@ -1,5 +1,6 @@
 /**
- * Wochenübersicht per Mail (R57, Stufe 2, Punkt 15): montags früh, nur mit Mailversand.
+ * Täglicher Zeitplan des Workers (R57): aufräumen nach der Datenschutzerklärung und montags die
+ * Wochenübersicht per Mail (Stufe 2, Punkt 15, nur mit Mailversand).
  *
  * Rolle im Gesamtbild: Der Autor soll nicht jede Woche ins Dashboard schauen müssen. Die Mail
  * nennt neue und offene Meldungen und die roten und gelben Punkte des neuesten Prüfberichts.
@@ -11,7 +12,12 @@ import { sorgeFuerTabellen } from "./datenbank";
 import { DASHBOARD, mailEingerichtet, schickeMail } from "./mail";
 import type { Umgebung } from "./umgebung";
 
-const WOCHE_MS = 7 * 24 * 60 * 60 * 1000;
+const TAG_MS = 24 * 60 * 60 * 1000;
+const WOCHE_MS = 7 * TAG_MS;
+/** Meldungen werden spätestens so lange nach Eingang gelöscht (Datenschutzerklärung). */
+export const AUFBEWAHRUNG_MS = 365 * TAG_MS;
+/** Wochentag der Übersicht (getUTCDay: 1 = Montag). */
+const MONTAG = 1;
 
 /**
  * Text der Wochenübersicht.
@@ -32,6 +38,27 @@ export function wochentext(neu: number, offen: number, bericht: Bericht | null):
   }
   zeilen.push("", DASHBOARD);
   return zeilen.join("\n");
+}
+
+/**
+ * Löscht, was nach der Datenschutzerklärung weg muss: Zähler der Drossel von früheren Tagen
+ * und Meldungen, die älter als zwölf Monate sind.
+ */
+export async function raeumeAuf(env: Umgebung, jetzt: Date): Promise<void> {
+  await sorgeFuerTabellen(env.ADMIN_DB);
+  const heute = jetzt.toISOString().slice(0, "JJJJ-MM-TT".length);
+  const grenze = new Date(jetzt.getTime() - AUFBEWAHRUNG_MS).toISOString();
+  const db = env.ADMIN_DB;
+  await db.batch([
+    db.prepare("DELETE FROM drossel WHERE stunde < ?").bind(heute),
+    db.prepare("DELETE FROM meldungen WHERE zeit < ?").bind(grenze),
+  ]);
+}
+
+/** Täglicher Zeitplan: aufräumen, montags dazu die Wochenübersicht. */
+export async function taeglich(env: Umgebung, jetzt: Date): Promise<void> {
+  await raeumeAuf(env, jetzt);
+  if (jetzt.getUTCDay() === MONTAG) await schickeWochenuebersicht(env);
 }
 
 /** Sammelt die Zahlen und schickt die Mail; ohne Mailversand nichts. */

@@ -28,6 +28,37 @@ import { Werkzeugkarte } from "../komponenten/Werkzeugkarte";
 import type { Werkzeugwahl } from "../komponenten/Werkzeugleiste";
 import { Werkzeugzusatz } from "../komponenten/Werkzeugzusatz";
 import { hatSicht } from "../komponenten/werkzeugergebnis";
+import { Meldeformular } from "../komponenten/Meldeformular";
+import { APP_VERSION } from "../../app/version";
+import { useState } from "react";
+
+/**
+ * „Fehler im Buch melden“ unter der Fundstelle (R57, Stufe 2, Punkt 11): schickt Abbildung und
+ * Stellung mit, damit der Autor den Befund ohne Rückfrage im LaTeX findet.
+ */
+function BuchfehlerMelden({ nummer, fen }: { nummer: string; fen: string }) {
+  const [offen, setzeOffen] = useState(false);
+  if (!offen) {
+    return (
+      <button type="button" className="knopf-link klein" onClick={() => setzeOffen(true)}>
+        {t("abbildung.buchfehler")}
+      </button>
+    );
+  }
+  return (
+    <Meldeformular
+      anfangsart="buch"
+      abbildung={nummer}
+      stellung={fen}
+      angaben={[
+        t("abbildung.titel", { nummer }),
+        fen,
+        t("ich.angabe.version", { wert: APP_VERSION }),
+      ].join("\n")}
+      beiSchliessen={() => setzeOffen(false)}
+    />
+  );
+}
 
 /**
  * Karten unter dem Brett: zuerst die Kacheln des gewählten Werkzeugs (Werkzeugergebnis und die
@@ -164,6 +195,11 @@ export function Karten({
           })}
         </p>
       )}
+      <BuchfehlerMelden
+        key={hier?.id ?? abbildung.id}
+        nummer={hier?.id ?? abbildung.id}
+        fen={stellung.fen}
+      />
     </div>
   );
 }

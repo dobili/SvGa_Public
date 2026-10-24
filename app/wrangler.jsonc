@@ -33,7 +33,7 @@
     "ACCESS_TEAM": "wild-thunder-31ee.cloudflareaccess.com",
     "ACCESS_AUD": "17695deb8d7418e3f5078ee155779c71532644bc756c2271dc7f4dbcfdad78a0",
   },
-  // Montags 6:17 UTC die Wochenübersicht per Mail (nur mit eingerichtetem Mailversand).
-  "triggers": { "crons": ["17 6 * * 1"] },
+  // Täglich 6:17 UTC aufräumen (Datenschutz), montags dazu die Wochenübersicht per Mail.
+  "triggers": { "crons": ["17 6 * * *"] },
   "observability": { "enabled": true },
 }

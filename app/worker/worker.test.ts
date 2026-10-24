@@ -7,7 +7,7 @@ import { pruefeMeldung, MELDUNGEN_JE_STUNDE } from "./meldungen";
 import { verlaufJePunkt, type Bericht, type Pruefpunkt } from "./bericht";
 import { testausfuehrung, testumgebung } from "./testhilfe";
 import { pruefeZeichen, setzeSchluessel } from "./zugang";
-import { wochentext } from "./woche";
+import { raeumeAuf, wochentext } from "./woche";
 import type { Umgebung } from "./umgebung";
 
 const SEITE = "https://schach-von-grund-auf.com";
@@ -241,5 +241,21 @@ describe("Wochenübersicht", () => {
     expect(text).toContain("1 rot, 1 gelb");
     expect(text).toContain("ROT: links");
     expect(text).not.toContain("live");
+  });
+});
+
+describe("Aufräumen", () => {
+  it("löscht alte Meldungen und Zähler früherer Tage", async () => {
+    const env = testumgebung();
+    await melde(env, { art: "fehler", text: "neu" });
+    await env.ADMIN_DB.prepare("UPDATE meldungen SET zeit = '2025-01-01T00:00:00Z'").run();
+    await melde(env, { art: "fehler", text: "frisch" });
+    const morgen = new Date(Date.now() + 24 * 3600 * 1000);
+    await raeumeAuf(env, morgen);
+    const { results } = await env.ADMIN_DB.prepare("SELECT text FROM meldungen").all();
+    expect(results).toEqual([{ text: "frisch" }]);
+    expect(await env.ADMIN_DB.prepare("SELECT COUNT(*) AS n FROM drossel").first()).toEqual({
+      n: 0,
+    });
   });
 });

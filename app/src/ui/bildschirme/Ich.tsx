@@ -29,6 +29,7 @@ import { useDaten } from "../komponenten/useDaten";
 import { Wertungskurve } from "../komponenten/Wertungskurve";
 import { useSpeicher } from "../../speicher/speicher";
 import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Meldeformular } from "../komponenten/Meldeformular";
 import { Titelsymbol } from "../komponenten/Titelsymbol";
 import { TourZeile } from "../../tour/TourKnopf";
 
@@ -50,29 +51,24 @@ function Zeile({ name, wert, testid }: { name: string; wert: string; testid?: st
   );
 }
 
-/** Kopiert die Angaben für eine Fehlermeldung in die Zwischenablage (Konzept 13, „Fehler melden“). */
+/**
+ * „Fehler melden“: Seit R57 (24.10.2026) ein Formular, das die Meldung an das Dashboard des Autors
+ * schickt (Meldeformular.tsx); vorher kopierte der Knopf nur die Angaben (Konzept 13).
+ */
 function FehlerMelden({ angaben }: { angaben: string }) {
-  const [meldung, setzeMeldung] = useState<string | null>(null);
-  const kopiere = async () => {
-    try {
-      await navigator.clipboard.writeText(angaben);
-      setzeMeldung(t("ich.fehlerKopiert"));
-    } catch (fehler) {
-      console.warn("Zwischenablage nicht verfügbar:", fehler);
-      setzeMeldung(`${t("ich.fehlerNichtKopiert")}\n${angaben}`);
-    }
-  };
+  const [offen, setzeOffen] = useState(false);
   return (
     <>
-      <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
+      <button
+        type="button"
+        className="knopf-zweit"
+        aria-expanded={offen}
+        onClick={() => setzeOffen(!offen)}
+      >
         <Knopfsymbol art="fehlerMelden" />
         {t("ich.fehlerMelden")}
       </button>
-      {meldung && (
-        <p className="hinweis vorformatiert" role="status">
-          {meldung}
-        </p>
-      )}
+      {offen && <Meldeformular angaben={angaben} beiSchliessen={() => setzeOffen(false)} />}
     </>
   );
 }

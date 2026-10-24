@@ -14,7 +14,7 @@ Notiz. „Stand in die Zwischenablage“ legt alles Abgehakte und Notierte als T
 **So antwortest du:** im Chat mit den Kürzeln, etwa „N203 ok“, „N205 falscher Pfeil“, „X5: so
 lassen“, „T1: Vorschläge übernehmen“. Claude trägt alles ein. Bei Fehlern in der App hilft
 **Einstellungen (Zahnrad) › Fehler melden**: Den kopierten Text mitschicken (App-Version,
-Datenstand, Gerät), bei allem anderen kurz, **was** du getan hast und **was** passiert ist, gern
+Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), bei allem anderen kurz, **was** du getan hast und **was** passiert ist, gern
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
@@ -32,6 +32,30 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu mit dem Dashboard (R57; Opus, 24.10.2026; kommt mit der nächsten Version nach dem Bot-Chat)
+
+- [ ] N740. **Fehler melden (Einstellungen › Über die App):** „Fehler melden“ klappt jetzt ein
+      Formular auf: oben „Fehler | Wunsch | Fehler im Buch“, darunter ein Textfeld (die Frage
+      passt zur Art), ein Häkchen „Angaben zum Gerät mitschicken“ (gesetzt) und „Senden“. Nach
+      dem Senden steht „Danke! Deine Meldung ist angekommen (Nr. …)“, und die Meldung erscheint
+      im Dashboard.
+- [ ] N741. **Fehler im Buch melden:** Unter jeder Abbildung (ganz unten, unter der Fundstelle)
+      steht „Fehler im Buch melden“. Es öffnet dasselbe Formular mit „Fehler im Buch“; Nummer der
+      Abbildung und Stellung gehen mit. Im Dashboard steht die Meldung mit goldenem Rand, Abbildung
+      und einer aufklappbaren „Stellung“ (mit Kopierknopf).
+- [ ] N742. **Ohne Netz:** Im Flugmodus senden: Die App sagt, dass es nicht ging, und bietet
+      „Text und Angaben kopieren“ an (für eine Mail an kontakt@schach-von-grund-auf.com).
+- [ ] N743. **Dashboard:** <https://schach-von-grund-auf.com/admin/> öffnen, mit deiner Adresse
+      und dem Einmalcode anmelden. Oben „Angemeldet als …“ und welche Teile eingerichtet sind,
+      dann „Aufgabe für Claude“, „Prüfungen“ (rote und gelbe Punkte oben, grüne eingeklappt) und
+      „Meldungen“ mit Reitern „Offen, Neu, In Arbeit, Erledigt, Kein Fehler, Doppelt“. Bei einer
+      Meldung Status wählen, Notiz schreiben, „Speichern“.
+- [ ] N744. **Aufgabe für Claude:** Der Knopf fasst rote und gelbe Prüfungen und alle offenen
+      Meldungen als Auftrag zusammen und kopiert ihn. In einen neuen Chat einfügen genügt.
+- [ ] N745. **Prüfungen per Mail:** Nach dem Ausrollen läuft auf GitHub der Lauf „Wartung“
+      (Actions › Wartung), danach jeden Montag früh. Ist ein Punkt rot, scheitert der Lauf und
+      GitHub schickt dir eine Mail. Die Ergebnisse stehen auch auf der Seite des Laufs als Tabelle.
 
 ### Neu in 0.2.123: Spielen ohne die Bot-Kalibrierung (R24, R27, R28, R51, R54; Opus, 24.10.2026 nachts)
 
@@ -920,6 +944,34 @@ Paket P4.
       (Klammerfalle), Desperado rook (Rasender Turm), Staircase mate (Treppenmatt; gängiger wäre
       „ladder mate“). Eröffnungen mit den üblichen englischen Namen (Ruy Lopez, Petrov Defense,
       Trompowsky Attack …), Spieler in englischer Schreibweise (Karpov, Korchnoi, Alekhine).
+
+### R57 Dashboard: Einrichtung und Empfehlungen (24.10.2026)
+
+- [ ] DB1. **Prüfbericht-Schlüssel (nach dem Ausrollen):** Eine lange Zufallszeichenfolge
+      erzeugen (etwa im Passwortmanager „Passwort erzeugen“, 40 Zeichen, nur Buchstaben und
+      Ziffern). Sie zweimal eintragen, nirgends sonst hinschreiben und nicht in den Chat:
+      1. GitHub: Repository SvGa_Public › Settings › Secrets and variables › Actions › „New
+         repository secret“, Name `BERICHT_SCHLUESSEL`.
+      2. Cloudflare: Workers & Pages › schach-von-grund-auf › Settings › „Variables and Secrets“
+         › „Add“, Typ „Secret“, Name `BERICHT_SCHLUESSEL`. (Das Feld ist erst frei, wenn die
+         Version mit dem Dashboard ausgerollt ist.)
+      Danach kommen die Prüfberichte im Dashboard an; vorher stehen sie nur auf GitHub.
+- [ ] DB2. **Turnstile vorerst nicht eintragen:** Empfehlung: Den Turnstile-Secret-Key noch nicht
+      in Cloudflare eintragen. Gegen Massenmeldungen genügt vorerst die Drossel (höchstens fünf
+      Meldungen je Verbindung und Stunde). Turnstile würde ein Skript von Cloudflare in die App
+      laden; die Datenschutzerklärung sagt bisher ausdrücklich, dass keine Inhalte anderer Anbieter
+      geladen werden. Kommt Spam, baue ich Turnstile ein (Formular, Datenschutzerklärung) und du
+      trägst dann den Secret-Key als `TURNSTILE_SECRET` ein. Schon so umgesetzt, Widerspruch genügt.
+- [ ] DB3. **Aufbewahrung:** Meldungen löscht der Worker spätestens zwölf Monate nach Eingang
+      (täglich um 6:17 UTC), die Zähler der Drossel (nur ein Prüfwert aus IP-Adresse und Datum)
+      nach einem Tag. So steht es auch im neuen Abschnitt „Meldungen aus der App“ der
+      Datenschutzerklärung. Schon umgesetzt, Widerspruch genügt.
+- [ ] DB4. **Mailversand (optional, jederzeit):** Für eine Mail bei jeder neuen Meldung und die
+      Wochenübersicht montags: Konto bei resend.com, Domain hinzufügen, die angezeigten
+      DNS-Einträge in Cloudflare › DNS eintragen, einen API-Schlüssel erzeugen und in Cloudflare
+      (wie bei DB1) drei Secrets anlegen: `RESEND_KEY` (der Schlüssel), `MAIL_AN` (deine Adresse),
+      `MAIL_VON` (etwa `Dashboard <dashboard@schach-von-grund-auf.com>`). Ohne Mailversand meldet
+      GitHub rote Prüfungen trotzdem per Mail.
 
 ### P1 Spielen und Auswertung: schon umgesetzt, Widerspruch genügt (24.10.2026 nachts)
 

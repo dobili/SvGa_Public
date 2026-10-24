@@ -8,12 +8,12 @@
  * - POST /api/bericht: Prüfbericht aus GitHub Actions (gemeinsamer Schlüssel).
  * - /api/admin/*: Schnittstellen des Dashboards (nur mit Cloudflare Access).
  * - /admin/: die Seite des Dashboards (statische Datei, nur mit Cloudflare Access).
- * Zeitplan: montags eine Wochenübersicht per Mail, falls der Mailversand eingerichtet ist.
+ * Zeitplan: täglich aufräumen (Datenschutz), montags eine Wochenübersicht per Mail.
  * Abhängigkeiten: alle Dateien in worker/.
  */
 import { nimmBerichtAn } from "./bericht";
 import { nimmMeldungAn } from "./meldungen";
-import { schickeWochenuebersicht } from "./woche";
+import { taeglich } from "./woche";
 import { fehler, type Ausfuehrung, type Umgebung } from "./umgebung";
 import { verwalte } from "./verwaltung";
 import { zugangVon } from "./zugang";
@@ -77,6 +77,6 @@ export default {
     }
   },
   async scheduled(_ereignis: unknown, env: Umgebung, ausfuehrung: Ausfuehrung): Promise<void> {
-    ausfuehrung.waitUntil(schickeWochenuebersicht(env));
+    ausfuehrung.waitUntil(taeglich(env, new Date()));
   },
 };

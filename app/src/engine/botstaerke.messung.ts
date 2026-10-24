@@ -39,6 +39,7 @@ import {
 } from "../spiel/elomodell";
 import { leiter, verankere, type Anker, type Begegnung } from "./eloleiter";
 import { BOTKANDIDATEN } from "./botkandidaten";
+import { BOTMESSNAMEN } from "./botmessnamen";
 import { GEGNER } from "./gegnerliste";
 import { kandidatendatei, phasenAusZuegen, zufallsquelle } from "./botmessung-hilfen";
 
@@ -287,9 +288,8 @@ function datendatei(werte: Map<string, number>): string {
     (n) =>
       `  ${n}: ${Math.round(werte.get(n === STUFEN.at(-1) ? "stufe10" : `stufe${n}m`) ?? Number.NaN)},`,
   );
-  const bots = GEGNER.map(
-    (g) => `  "${g.kennung}": ${Math.round(werte.get(g.kennung) ?? Number.NaN)},`,
-  );
+  const zahl = (k: string) => werte.get(k) ?? werte.get(BOTMESSNAMEN[k] ?? "");
+  const bots = GEGNER.map((g) => `  "${g.kennung}": ${Math.round(zahl(g.kennung) ?? Number.NaN)},`);
   return [
     "/**",
     " * Elo-Zahl der Stufen und der vorgefertigten Bots (erzeugt vom Messlauf",

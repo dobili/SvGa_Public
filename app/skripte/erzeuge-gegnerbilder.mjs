@@ -126,6 +126,21 @@ const GEGNER = {
   "im-haas": "mann",
   "wim-nkemelu": "frau",
   "gm-lindqvist": "aeltererMann",
+  // Bot-Satz vom 24.10.2026: neue Namen für gewählte Kandidaten, Porträt passend zum Namen.
+  fiona: "maedchen",
+  juna: "maedchen",
+  ole: "junge",
+  mats: "junge",
+  nora: "frau",
+  melek: "frau",
+  tarik: "mann",
+  bastian: "mann",
+  "oma-ilse": "aeltereFrau",
+  "opa-walter": "aeltererMann",
+  "frau-hoffmann": "frau",
+  "herr-yilmaz": "mann",
+  "gm-okoro": "mann",
+  "im-lindgren": "frau",
 };
 
 const ALLE = process.argv.includes("--alle");

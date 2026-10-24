@@ -1892,3 +1892,7 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
 - **Tiefe 18** (500 von 814 Partien): Verlust je Zug T18 ≈ 1,21 · T12, Genauigkeit ≈ T12 − 1,
   Fehlerrate ≈ 0,02 + 0,89 · T12 (Korrelation 0,90), Patzer je Zug ≈ 0,017 + 1,21 · T12 (0,066
   statt 0,041), Verlust je Fehler ≈ 1,23 · T12. Umrechnung je Kennzahl linear, gut bestimmt.
+- **Wahlmodell mit Gewichten je Phase** (wahlmodell-elo2-phase, Eröffnung und Endspiel mit eigener
+  Verlustkurve und eigenem Bonus „bester“): Eröffnung jetzt richtig (Schnellschach 2000: echt 8,1,
+  Modell 7,6; 2400: 4,9/4,6), Mittel- und Endspiel unverändert gut, Trefferquote gleich. **Das ist
+  das Modell für die App.** Lokal buch/arbeit/zugwahl/wahlmodell-elo2-phase.json.

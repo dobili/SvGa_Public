@@ -35,7 +35,9 @@ import { staerkeAusStufen, staerkeDesBots } from "./botstaerke";
 import { BOTKANDIDATEN } from "./botkandidaten";
 import { GEGNER } from "./gegner";
 import { faktorenAus } from "./gegnerbau";
-import { tagesform } from "./menschlich";
+import { gruppenstufe, gruppenstufen } from "./gruppe";
+import { gruppenzug, mitgliederFuer } from "./gruppenwahl";
+import { RUHIGER_VERLAUF, tagesform } from "./menschlich";
 import { nativeEngine } from "./nativeEngine.testhilfe";
 import { nodeEngine } from "./nodeEngine.testhilfe";
 import {
@@ -50,9 +52,16 @@ import { BUCHTREUE, REINES_PROFIL, STANDARDPROFIL, type Gegnerprofil } from "./z
 import { zuglage } from "../spiel/botzeit";
 import { engineZugMitLage } from "../spiel/enginezug";
 import { phaseVon } from "../spiel/phasen";
-import { leserAmZug, neuePartie, stellungen, ziehe, type Partie } from "../spiel/partie";
+import {
+  leserAmZug,
+  neuePartie,
+  stellungen,
+  ziehe,
+  type Partie,
+  type Partiezug,
+} from "../spiel/partie";
 import { brauchtNotmodus, NOTMODUS_REST_MS } from "../spiel/notmodus";
-import { fenNach } from "../spiel/zuege";
+import { fenNach, uciZuSan } from "../spiel/zuege";
 import { planeWeiter, vorzugMitUhr, type Seitenstand } from "./messuhr.testhilfe";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -113,6 +122,8 @@ interface Spieler {
   readonly ersatz: Stufe | null;
   readonly profil: Gegnerprofil;
   readonly uhr: { readonly grundzeitMs: number; readonly zuschlagMs: number } | null;
+  /** Gruppenmodus („@gruppe-3“): alle Bots der Stufe ziehen gemeinsam (engine/gruppenwahl.ts). */
+  readonly gruppe?: Stufennummer;
 }
 
 function alleGleich(n: Stufennummer): Readonly<Record<Phase, Stufennummer>> {
@@ -123,6 +134,10 @@ function alleGleich(n: Stufennummer): Readonly<Record<Phase, Stufennummer>> {
 function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
   const bot = /^@([a-z0-9-]+)$/.exec(kern); // Ziffern: Kandidaten „k1-…“ (0.2.125)
   if (!bot?.[1]) return null;
+  const gruppe = gruppenstufe(bot[1]);
+  if (gruppe !== null) {
+    return { stufen: gruppenstufen(gruppe), ersatz: null, profil: STANDARDPROFIL, uhr, gruppe };
+  }
   // Vorgefertigte Bots und die Kandidaten des neuen Bot-Satzes (0.2.125)
   const g = [...GEGNER, ...BOTKANDIDATEN].find((x) => x.kennung === bot[1]);
   if (!g) throw new Error(`Unbekannter Bot: ${kern}`);
@@ -193,6 +208,29 @@ function statistik(
   };
 }
 
+/** Der Zug einer Gruppe wie engineZugMitLage (Gruppenmodus, engine/gruppenwahl.ts). */
+async function gruppenZug(
+  engine: EngineDienst,
+  fen: string,
+  nummer: Stufennummer,
+  profil: Gegnerprofil,
+  zufall: () => number,
+): Promise<{ zug: Partiezug; uci: string; breite?: number } | null> {
+  const gemeinsam = { verlauf: profil.verlauf, restMs: profil.restMs, tempo: profil.tempo };
+  const mitglieder = mitgliederFuer(nummer, phaseVon(fen) ?? "mittelspiel", gemeinsam);
+  const wahl = await gruppenzug(engine, fen, mitglieder, zufall, profil.verlauf ?? RUHIGER_VERLAUF);
+  const san = wahl ? uciZuSan(fen, wahl.uci) : null;
+  if (!wahl || !san) return null;
+  const zug: Partiezug = {
+    san,
+    von: "engine",
+    quelle: wahl.quelle,
+    fehler: wahl.fehler,
+    verlust: wahl.verlust,
+  };
+  return { zug, uci: wahl.uci, breite: wahl.breite };
+}
+
 /** Ein Zug eines Spielers samt virtueller Uhr; gibt die neue Partie zurück oder null am Ende. */
 async function zugMitUhr(
   engine: EngineDienst,
@@ -207,11 +245,14 @@ async function zugMitUhr(
   stand.letzte = st.nummer;
   const verlauf = { tagesform: tagesform(saat) };
   const profil = { ...s.profil, verlauf, restMs: stand.rest };
+  const zug = (f: string, p: Gegnerprofil) =>
+    s.gruppe === undefined
+      ? engineZugMitLage(engine, f, st, [], zufall, BUCHTREUE, p)
+      : gruppenZug(engine, f, s.gruppe, p, zufall);
   const waehle = async (f: string, restMs: number) =>
-    (await engineZugMitLage(engine, f, st, [], zufall, BUCHTREUE, { ...profil, restMs }))?.uci ??
-    null;
+    (await zug(f, { ...profil, restMs }))?.uci ?? null;
   if (s.uhr && stand.vorzuege) return vorzugMitUhr(engine, lauf, s.uhr.zuschlagMs, stand, waehle);
-  const ergebnis = await engineZugMitLage(engine, fen, st, [], zufall, BUCHTREUE, profil);
+  const ergebnis = await zug(fen, profil);
   if (!ergebnis) return null;
   if (s.uhr && stand.rest !== null) {
     const bedenk = bedenkzeitMs(

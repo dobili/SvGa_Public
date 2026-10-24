@@ -9,11 +9,11 @@
  * Abhängigkeiten: engine/, spiel/, speicher/, ui/komponenten/botNotmodus.ts.
  */
 import { engine } from "../../engine/engineDienst";
-import { gegnerVon, type Gegner } from "../../engine/gegner";
-import { gruppenstufe, mitgliederDerGruppe } from "../../engine/gruppe";
-import { gruppenzug, type Gruppenmitglied } from "../../engine/gruppenwahl";
+import { gegnerVon } from "../../engine/gegner";
+import { gruppenstufe } from "../../engine/gruppe";
+import { gruppenzug, mitgliederFuer, type Gruppenmitglied } from "../../engine/gruppenwahl";
 import { faktorenAus } from "../../engine/gegnerbau";
-import { gegnerstaerke, staerkeDesBots } from "../../engine/botstaerke";
+import { gegnerstaerke } from "../../engine/botstaerke";
 import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { wahltempo } from "../../engine/wahlmodell";
@@ -117,37 +117,15 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
   };
 }
 
-/**
- * Die Mitglieder der Gruppe für diesen Zug (Gruppenmodus, engine/gruppe.ts): jeder Bot der
- * Stufe mit seiner Stufe der Phase und seinem eigenen Profil (Fehlerarten, Flecken, Stil,
- * Persönlichkeit), Tagesform und Restzeit wie in der Partie. Leer, wenn die Partie keine
- * Gruppenpartie ist.
- */
+/** Die Mitglieder der Gruppe für diesen Zug mit Tagesform, Restzeit und Zeitklasse der Partie. */
 function gruppenmitglieder(partie: Partie, fen: string, jetztMs: number): Gruppenmitglied[] {
   const e = partie.einstellung;
   const nummer = gruppenstufe(e.bot);
   if (nummer === null) return [];
-  const phase = phaseVon(fen) ?? "mittelspiel";
-  const gemeinsam = {
+  return mitgliederFuer(nummer, phaseVon(fen) ?? "mittelspiel", {
     verlauf: verlaufVon(partie),
     restMs: eigeneRestzeit(partie, jetztMs),
     tempo: wahltempo(e.uhr),
-  };
-  return mitgliederDerGruppe(nummer).map((g: Gegner) => {
-    const st = stufe(g.stufenJePhase[phase]);
-    return {
-      stufe: st,
-      profil: {
-        ...gemeinsam,
-        fehlerarten: g.fehlerarten,
-        stil: 0,
-        blindeFlecken: g.blindeFlecken,
-        gewichte: faktorenAus(g.persoenlichkeit, staerkeDesBots(g.kennung) ?? st.wertung),
-        stilname: g.stilname,
-        haeufigkeit: g.haeufigkeit,
-        zufallszuege: g.zufallszuege,
-      },
-    };
   });
 }
 

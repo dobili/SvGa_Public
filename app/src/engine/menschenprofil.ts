@@ -10,6 +10,8 @@
  * engine/blindeFlecken.ts (Typ), schach/phase.ts (Typ).
  */
 import type { Phase } from "../schach/phase";
+import type { Wertungstempo } from "../spiel/elomodell-daten";
+import { ZEITNOT_TEMPERATUR } from "./zeitnot-daten";
 import type { BlinderFleck } from "./blindeFlecken";
 import type { Fehlerart } from "./fehlerart";
 import {
@@ -115,6 +117,21 @@ export function zeitnotstufe(restMs: number | null): Zeitnotstufe | null {
  * Faktoren der Zeitnot gegenüber ruhiger Zeit (ab 60 s): für Fehler ab einem Bauern und für
  * Patzer ab drei Bauern. Beispiel: 2000, unter 10 s → Fehler etwa ×1,4, Patzer etwa ×3,2.
  */
+/**
+ * Faktor auf die Temperatur des Wahlmodells in Zeitnot (seit 0.2.121, engine/zeitnot-daten.ts):
+ * je Zeitklasse und Band so, dass die Fehlerrate steigt wie bei Menschen mit so wenig Restzeit.
+ * Beispiel: Blitz, 2000, 8 s Rest → etwa 1,6; eine Minute und mehr → 1.
+ */
+export function zeitnotTemperatur(
+  tempo: Wertungstempo,
+  wertung: number,
+  restMs: number | null,
+): number {
+  const stufe = zeitnotstufe(restMs);
+  if (!stufe) return 1;
+  return bandwert(ZEITNOT_TEMPERATUR[tempo][stufe], wertung);
+}
+
 export function zeitnotFaktoren(
   wertung: number,
   restMs: number | null,

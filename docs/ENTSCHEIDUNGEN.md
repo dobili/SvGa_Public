@@ -4778,3 +4778,18 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Gegner- und Eröffnungsstreuung). Zeitnot wirkt weiter multiplikativ auf die Temperatur
   (ZEITNOT-Faktoren der Fehler, bisher Blitz und Schnellschach gemischt; je Zeitklasse offen).
 
+## Zeitnot der Bots als Temperatur je Zeitklasse (24.10.2026 morgens, Fable, Restplan 8b)
+
+- **Messung** (lokal buch/arbeit/bedenkzeit/zeitnot.py): Fehler ab einem Bauern bei weniger als 60,
+  30 und 10 s Rest gegenüber einer Minute und mehr, je Zeitklasse und Gruppe. Blitz ab 1800:
+  ×1,25, ×1,33, ×1,55 (Patzer ×1,84, ×2,38, ×3,49); Blitz 1000 bis 1799: ×1,17, ×1,17, ×1,20;
+  Blitz unter 1000: nur ×1,05 (Anfänger spielen in Zeitnot kaum schlechter als sonst).
+  Schnellschach ab 1800 (genug Züge): ×1,14, ×1,14, ×1,29; Schnellschach darunter und Klassisch
+  haben zu wenige Zeitnot-Züge und nehmen die Blitz-Faktoren.
+- **Umsetzung:** Statt der Ratenfaktoren der ersten Sammlung (ZEITNOT, Blitz und Schnellschach
+  gemischt) erhöht Zeitnot die Temperatur des Wahlmodells; der Temperaturfaktor je Zeitklasse,
+  Stufe und Band ist so gewählt, dass die Fehlerrate des Modells um den gemessenen Faktor steigt
+  (Umkehrung der Temperaturkurven aus zugwahl/temperatur.py, engine/zeitnot-daten.ts; Blitz 2000
+  unter 10 s → Temperatur 1,6). Die Patzer steigen dabei von selbst stärker als die Fehler, wie
+  bei Menschen (steile Verlustkurve). Alte Faktoren bleiben für die Messskripte (zeitnotFaktoren).
+

@@ -31,7 +31,7 @@ import type { Staerke } from "./engineDienst";
 import { fehlerartIn, lageVon, type Fehlerart, type Lage } from "./fehlerart";
 import { typischeFehlerzuege } from "./fehlersuche";
 import { grundzug, kandidatenAusVarianten } from "./grundschicht";
-import { GELEGENHEITSARTEN, zeitnotFaktoren } from "./menschenprofil";
+import { GELEGENHEITSARTEN, zeitnotTemperatur } from "./menschenprofil";
 import { verlaufsfaktor, type Verlauf } from "./menschlich";
 import { wertFuer, type Spielbewerter, type Zugwahl } from "./spielbewerter";
 import { STIL_NEUTRAL, stilwahl } from "./stil";
@@ -137,9 +137,12 @@ export function hatZusatzfehler(werte: Menschenwerte): boolean {
   return [...GELEGENHEITSARTEN, ...BLINDE_FLECKEN].some((a) => gewichtVon(werte, a) > 0);
 }
 
-/** Faktor auf tau der Grundschicht: Tagesform und Zeitnot (nicht die Fehlerhäufigkeit). */
+/** Temperatur des Wahlmodells: Tagesform mal Zeitnot je Zeitklasse (nicht die Fehlerhäufigkeit). */
 function grundfaktor(kontext: Wahlkontext): number {
-  return verlaufsfaktor(kontext.verlauf) * zeitnotFaktoren(kontext.wertung, kontext.restMs).fehler;
+  return (
+    verlaufsfaktor(kontext.verlauf) *
+    zeitnotTemperatur(kontext.tempo, kontext.wertung, kontext.restMs)
+  );
 }
 
 function breiteVon(varianten: readonly Variante[], weiss: boolean): number {

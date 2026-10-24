@@ -190,6 +190,9 @@ test("Datensicherung: fremde Datei wird abgelehnt, Abbrechen ändert nichts", as
   );
 });
 
+/** Das Löschen der Datenbanken dauert unter Last (parallele Tests) gelegentlich länger als 5 s. */
+const LOESCHZEIT_MS = 15_000;
+
 test("Alle Daten löschen entfernt auch die Datenbank mit dem Fortschritt", async ({ page }) => {
   await page.clock.install();
   await starteImBrowser(page);
@@ -199,7 +202,7 @@ test("Alle Daten löschen entfernt auch die Datenbank mit dem Fortschritt", asyn
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^1 von/);
   await page.getByRole("button", { name: "Alle Daten dieser App löschen" }).click();
   await page.getByRole("button", { name: "Ja, alles löschen" }).click();
-  await expect(page.getByText("Alle Daten sind gelöscht.")).toBeVisible();
+  await expect(page.getByText("Alle Daten sind gelöscht.")).toBeVisible({ timeout: LOESCHZEIT_MS });
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^0 von/);
   const datenbanken = await page.evaluate(async () => (await indexedDB.databases()).length);
   expect(datenbanken).toBe(0);

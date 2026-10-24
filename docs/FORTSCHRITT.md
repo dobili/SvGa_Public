@@ -1948,7 +1948,7 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   Zug gegenüber Schnellschach, Klassisch etwa die Hälfte. engine/bedenkzeit-daten.ts erzeugt,
   engine/bedenkzeit.ts mit Zeitklasse in der Bedenklage, spiel/botzeit.ts und stufen.messung.ts
   angepasst, Test ergänzt. ENTSCHEIDUNGEN „Bedenkzeit der Bots je Zeitklasse“.
-- Offen aus 8b: Zeitnot-Faktoren je Zeitklasse.
+- Zeitnot-Faktoren je Zeitklasse: siehe Teil 9. Damit ist 8b fertig.
 
 ### Ergebnisse der Nacht, Teil 8 (24.10.2026, 6:30 Uhr): Tagesform als Temperatur geeicht
 
@@ -1957,3 +1957,11 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   (vorher 0,75 bis 1,25), ENTSCHEIDUNGEN „Tagesform als Temperatur“. Beta-Binomial Filter „alle“
   abgebrochen (seit 03:08 kein Fortschritt im klassischen Teil, 8 GB); „offen“ und „bis zur
   Entscheidung“ liegen vor und reichen.
+
+### Ergebnisse der Nacht, Teil 9 (24.10.2026, 7 Uhr): Zeitnot je Zeitklasse als Temperatur
+
+- Zeitnot-Faktoren der Fehler je Zeitklasse und Gruppe aus den Spielerprofilen
+  (buch/arbeit/bedenkzeit/zeitnot.py), in Temperaturfaktoren des Wahlmodells umgerechnet
+  (engine/zeitnot-daten.ts, menschenprofil.ts zeitnotTemperatur, menschenwahl.ts grundfaktor).
+  ENTSCHEIDUNGEN „Zeitnot der Bots als Temperatur je Zeitklasse“. E2E „Alle Daten löschen“ wartet
+  jetzt bis 15 s auf die Bestätigung (unter Last zweimal in der Nacht zu knapp).

@@ -8,6 +8,7 @@ import {
   wahlInArt,
   zeitnotFaktoren,
   zeitnotstufe,
+  zeitnotTemperatur,
 } from "./menschenprofil";
 
 describe("Menschenprofil", () => {
@@ -44,5 +45,12 @@ describe("Menschenprofil", () => {
     const knapp = zeitnotFaktoren(2000, 5_000);
     expect(knapp.patzer).toBeGreaterThan(knapp.fehler);
     expect(zeitnotFaktoren(2000, null)).toEqual({ fehler: 1, patzer: 1 });
+    // Seit 0.2.121: Zeitnot als Temperatur je Zeitklasse (engine/zeitnot-daten.ts).
+    expect(zeitnotTemperatur("blitz", 2000, null)).toBe(1);
+    const blitzKnapp = zeitnotTemperatur("blitz", 2000, 5_000);
+    expect(blitzKnapp).toBeGreaterThan(1.3);
+    expect(blitzKnapp).toBeLessThanOrEqual(1.6);
+    expect(blitzKnapp).toBeGreaterThanOrEqual(zeitnotTemperatur("blitz", 2000, 45_000));
+    expect(zeitnotTemperatur("rapid", 2000, 5_000)).toBeLessThan(blitzKnapp);
   });
 });

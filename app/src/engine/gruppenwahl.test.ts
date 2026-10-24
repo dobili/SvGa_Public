@@ -62,7 +62,7 @@ describe("Gruppenzug", () => {
     expect(await gruppenzug(bewerter().b, FEN, [], folge(), RUHIGER_VERLAUF)).toBeNull();
   });
 
-  it("Abstimmung: Mehrheit gewinnt, bei Gleichstand der kleinste Verlust", () => {
+  it("Abstimmung: Mehrheit gewinnt, bei Gleichstand entscheidet der Zufall", () => {
     const zug = (uci: string, verlust: number) => ({
       uci,
       quelle: "engine" as const,
@@ -80,11 +80,12 @@ describe("Gruppenzug", () => {
       zug("g7g6", 6),
       zug("g7g6", 6),
     ];
-    expect(abstimmung(einig)?.uci).toBe("g7g6");
-    // Gleichstand 2 : 2: der Zug mit dem kleinsten Verlust unter den gleichauf liegenden.
+    expect(abstimmung(einig, folge(0.9))?.uci).toBe("g7g6");
+    // Gleichstand 2 : 2: einer der beiden gleichauf liegenden Züge, nie der mit einer Stimme.
     const patt = [zug("d7d6", 0.2), zug("d7d6", 0.2), zug("b8c6", 0), zug("b8c6", 0), zug("x", 9)];
-    expect(abstimmung(patt)?.uci).toBe("b8c6");
-    expect(abstimmung([])).toBeNull();
+    expect(abstimmung(patt, folge(0))?.uci).toBe("d7d6");
+    expect(abstimmung(patt, folge(0.99))?.uci).toBe("b8c6");
+    expect(abstimmung([], folge())).toBeNull();
   });
 
   it("die Engine rechnet einmal für alle Mitglieder, die Gruppe spielt den Mehrheitszug", async () => {

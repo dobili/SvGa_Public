@@ -1,8 +1,9 @@
 /**
  * Der Zug einer Bot-Gruppe (Gruppenmodus, Wunsch des Autors, 24.10.2026): Jeder Bot der Gruppe
  * wählt seinen Zug wie in einer eigenen Partie, die Gruppe stimmt ab und spielt den Zug mit den
- * meisten Stimmen; bei Gleichstand den der gleichauf liegenden Züge mit dem kleinsten Verlust
- * (Entscheidung des Autors, 24.10.2026 nachmittags: Mehrheit statt bester Zug).
+ * meisten Stimmen; bei Gleichstand einen zufälligen der gleichauf liegenden Züge (Entscheidung des
+ * Autors, 24.10.2026 nachmittags: Mehrheit statt bester Zug, Zufall statt des besseren Zuges bei
+ * Gleichstand, damit die Gruppe nicht zu stark wird).
  *
  * Rolle im Gesamtbild: Die Analyse der Stellung (engine/menschenwahl.ts, kandidatenpool) läuft
  * einmal, danach zieht jeder Bot mit seinen Stellschrauben, seiner Wertung und seinem Stil aus
@@ -71,35 +72,31 @@ function kontextVon(m: Gruppenmitglied, verlauf: Wahlkontext["verlauf"]): Wahlko
 }
 
 /**
- * Die Abstimmung: der Zug mit den meisten Stimmen; bei Gleichstand der mit dem kleinsten Verlust.
+ * Die Abstimmung: der Zug mit den meisten Stimmen; bei Gleichstand ein zufälliger der gleichauf
+ * liegenden Züge (Zufall für Tests fest).
  * Beispiel: sechs Bots wollen je einen anderen Zug, zwei sind sich einig → deren Zug (2 Stimmen).
- * Beispiel: 4 : 4 zwischen Sc6 (Verlust 0) und d6 (Verlust 0,2) → Sc6. Sonderfall: ohne Stimmen null.
+ * Beispiel: 4 : 4 zwischen Sc6 und d6 → mit Zufall unter 0,5 Sc6, sonst d6. Sonderfall: ohne
+ * Stimmen null.
  */
-export function abstimmung(stimmen: readonly Zugwahl[]): Zugwahl | null {
+export function abstimmung(stimmen: readonly Zugwahl[], zufall: () => number): Zugwahl | null {
   const zaehler = new Map<string, { anzahl: number; wahl: Zugwahl }>();
   for (const wahl of stimmen) {
     const bisher = zaehler.get(wahl.uci);
     zaehler.set(wahl.uci, { anzahl: (bisher?.anzahl ?? 0) + 1, wahl: bisher?.wahl ?? wahl });
   }
-  let beste: { anzahl: number; wahl: Zugwahl } | null = null;
-  for (const eintrag of zaehler.values()) {
-    if (
-      beste === null ||
-      eintrag.anzahl > beste.anzahl ||
-      (eintrag.anzahl === beste.anzahl && eintrag.wahl.verlust < beste.wahl.verlust)
-    ) {
-      beste = eintrag;
-    }
-  }
-  return beste?.wahl ?? null;
+  const meiste = Math.max(0, ...[...zaehler.values()].map((e) => e.anzahl));
+  const gleichauf = [...zaehler.values()].filter((e) => e.anzahl === meiste);
+  if (gleichauf.length === 0) return null;
+  const stelle = Math.min(gleichauf.length - 1, Math.floor(zufall() * gleichauf.length));
+  return gleichauf[stelle]?.wahl ?? null;
 }
 
 /**
  * Der Zug der Gruppe: eine Analyse, je Mitglied eine Wahl, dann die Abstimmung.
  * Eingaben: Bewerter, Stellung, Mitglieder (mindestens eines), Zufall (für Tests fest), der
  * Verlauf (Tagesform) als Vorgabe für Mitglieder ohne eigenen.
- * Ausgabe: die Zugwahl des Zuges mit den meisten Stimmen, oder null ohne legalen Zug.
- * Beispiel: Stufe 2, nach 2. Dh5 wählen fünf Bots Sc6 und drei Sf6?? → Sc6 (5 : 3).
+ * Ausgabe: die Zugwahl des Zuges mit den meisten Stimmen (Gleichstand: Zufall), oder null ohne
+ * legalen Zug. Beispiel: Stufe 2, nach 2. Dh5 wählen fünf Bots Sc6 und drei Sf6?? → Sc6 (5 : 3).
  * Sonderfall: ohne Mitglieder null.
  */
 export async function gruppenzug(
@@ -119,5 +116,5 @@ export async function gruppenzug(
     const wahl = werte ? wahlAusPool(pool, fen, werte, kontextVon(m, verlauf), zufall) : null;
     if (wahl) stimmen.push(wahl);
   });
-  return abstimmung(stimmen);
+  return abstimmung(stimmen, zufall);
 }

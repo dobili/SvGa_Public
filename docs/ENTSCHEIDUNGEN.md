@@ -4766,3 +4766,15 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Offen:** Tagesform aus der Streuung zwischen Partien (Beta-Binomial) als Temperatur des
   Wahlmodells; Zeitnot-Faktoren der Fehler je Zeitklasse (bisher Blitz und Schnellschach gemischt).
 
+## Tagesform als Temperatur des Wahlmodells (24.10.2026 morgens, Fable, Teil E)
+
+- **Messung** (lokal buch/arbeit/zugwahl/temperatur.py): Fehlerrate des Wahlmodells je Band bei
+  Temperatur T (Nutzen durch T). Schnellschach 1200: T 0,75 → 28,3, T 1 → 33,6, T 1,25 → 38,1
+  Fehler je 100 Züge; die Rate ist fast linear in T. Eine je Partie gleichverteilte Temperatur
+  zwischen 0,75 und 1,25 (bisherige Tagesform) streut die Fehlerrate zwischen Partien nur um
+  etwa 3 je 100 Züge; das Beta-Binomial-Modell der Spielerprofile misst 5,0 bis 5,7.
+- **Entscheidung:** Tagesform je Partie gleichverteilt zwischen 0,6 und 1,4 (engine/menschlich.ts,
+  TAGESFORM_SPANNE 0,4): Streuung etwa 4,2 bis 5,3 ab 800, bei 400 etwa 3,4 (dort bleibt der Rest
+  Gegner- und Eröffnungsstreuung). Zeitnot wirkt weiter multiplikativ auf die Temperatur
+  (ZEITNOT-Faktoren der Fehler, bisher Blitz und Schnellschach gemischt; je Zeitklasse offen).
+

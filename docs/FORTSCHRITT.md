@@ -1948,4 +1948,12 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   Zug gegenüber Schnellschach, Klassisch etwa die Hälfte. engine/bedenkzeit-daten.ts erzeugt,
   engine/bedenkzeit.ts mit Zeitklasse in der Bedenklage, spiel/botzeit.ts und stufen.messung.ts
   angepasst, Test ergänzt. ENTSCHEIDUNGEN „Bedenkzeit der Bots je Zeitklasse“.
-- Offen aus 8b: Tagesform als Temperatur, Zeitnot-Faktoren je Zeitklasse.
+- Offen aus 8b: Zeitnot-Faktoren je Zeitklasse.
+
+### Ergebnisse der Nacht, Teil 8 (24.10.2026, 6:30 Uhr): Tagesform als Temperatur geeicht
+
+- Temperatur des Wahlmodells gegen die Tagesform des Beta-Binomial-Modells geeicht
+  (buch/arbeit/zugwahl/temperatur.py → temperatur.txt): Tagesform jetzt 0,6 bis 1,4 je Partie
+  (vorher 0,75 bis 1,25), ENTSCHEIDUNGEN „Tagesform als Temperatur“. Beta-Binomial Filter „alle“
+  abgebrochen (seit 03:08 kein Fortschritt im klassischen Teil, 8 GB); „offen“ und „bis zur
+  Entscheidung“ liegen vor und reichen.

@@ -148,11 +148,49 @@ export function praxiszug(
   return verteilung.zuege[verteilung.zuege.length - 1]?.san ?? null;
 }
 
-/** Prüft die Rohdaten (aus JSON) und gibt das Buch zurück, sonst null. */
+type Knoten = Praxisbuch["knoten"];
+
+/**
+ * Die Tabelle aus der kompakten Form der Datei: `folgen` ist ein Baum aus [Elter, Zug] (Index 0
+ * die Grundstellung), `daten` hängt an den Indizes. So steht jede Zugfolge nur einmal als Zug in
+ * der Datei statt als langer Text (etwa ein Drittel der Größe).
+ * Beispiel: folgen [[-1,""],[0,"e4"],[1,"c5"]], daten {"2": …} → knoten["e4 c5"].
+ */
+function knotenAusBaum(folgen: readonly unknown[], daten: Record<string, unknown>): Knoten | null {
+  const pfade: string[] = [];
+  for (const [i, eintrag] of folgen.entries()) {
+    if (!Array.isArray(eintrag) || typeof eintrag[1] !== "string") return null;
+    const elter = Number(eintrag[0]);
+    const davor = elter >= 0 ? pfade[elter] : undefined;
+    pfade[i] = davor ? `${davor} ${eintrag[1]}` : eintrag[1];
+  }
+  const knoten: Record<string, Knoten[string]> = {};
+  for (const [index, wert] of Object.entries(daten)) {
+    const pfad = pfade[Number(index)];
+    if (pfad === undefined || typeof wert !== "object" || wert === null) return null;
+    knoten[pfad] = wert as Knoten[string];
+  }
+  return knoten;
+}
+
+/** Prüft die Rohdaten (aus JSON) und gibt das Buch zurück, sonst null (auch die kompakte Form). */
 export function praxisbuchAus(roh: unknown): Praxisbuch | null {
   if (typeof roh !== "object" || roh === null) return null;
   const r = roh as Record<string, unknown>;
   if (!Array.isArray(r.zeitklassen) || !Array.isArray(r.baender)) return null;
-  if (typeof r.knoten !== "object" || r.knoten === null) return null;
-  return r as unknown as Praxisbuch;
+  const knoten =
+    Array.isArray(r.folgen) && typeof r.daten === "object" && r.daten !== null
+      ? knotenAusBaum(r.folgen, r.daten as Record<string, unknown>)
+      : typeof r.knoten === "object" && r.knoten !== null
+        ? (r.knoten as Knoten)
+        : null;
+  if (!knoten) return null;
+  return {
+    zeitklassen: r.zeitklassen as Praxistempo[],
+    baender: r.baender as number[],
+    knoten,
+    ...(Array.isArray(r.eroeffnungen)
+      ? { eroeffnungen: r.eroeffnungen as readonly (readonly [string, string, number])[] }
+      : {}),
+  };
 }

@@ -52,7 +52,18 @@ describe("Praxisbuch (0.2.127)", () => {
   it("Buchtiefe nach Persönlichkeit; Rohdaten werden geprüft", () => {
     expect(buchtiefeVon("theoretiker")).toBeGreaterThan(buchtiefeVon("solide"));
     expect(buchtiefeVon("hektiker")).toBeLessThan(buchtiefeVon(undefined));
-    expect(praxisbuchAus(BUCH)).toBe(BUCH);
+    expect(praxisbuchAus(BUCH)?.knoten).toEqual(BUCH.knoten);
+    const kompakt = praxisbuchAus({
+      zeitklassen: ["rapid"],
+      baender: [400],
+      folgen: [
+        [-1, ""],
+        [0, "e4"],
+        [1, "c5"],
+      ],
+      daten: { "0": { "0": [5, "e4", 5] }, "2": { "0": [3, "Nf3", 3] } },
+    });
+    expect(Object.keys(kompakt?.knoten ?? {})).toEqual(["", "e4 c5"]);
     expect(praxisbuchAus({ knoten: {} })).toBeNull();
   });
 });

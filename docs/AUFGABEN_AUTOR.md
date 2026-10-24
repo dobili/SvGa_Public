@@ -678,14 +678,17 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Startanimation steht jetzt ein eigener Ausschnitt des Covers: der goldene Springer mittig,
       darunter das Brett mit seinem Schatten, kein Text vom Cover. Farbe und Abdunkeln zum Rand
       wie vorher.
-- [ ] N799. **Stil eigener Gegner als Spinnennetz:** Spielen › Eigene Bots › Neuen Gegner anlegen.
-      Statt des Reglers „sehr defensiv bis sehr aggressiv“ steht ein Netz mit sechs Speichen
-      (Angreifer oben, gegenüber Positionsspieler; Taktiker gegenüber Verteidiger; Draufgänger
-      gegenüber Vereinfacher) und „Universell“ in der Mitte. Tippe eine Speiche an: Die goldene
-      Fläche zeigt dorthin, darunter steht, was der Stil tut, und die Auswahlliste zeigt
-      denselben Stil. Nach dem Speichern steht der Stil in der Zeile („3 · 3 · 3 · Angreifer“).
-      Ältere eigene Gegner zeigen beim Bearbeiten den passenden Stil (aggressiv → Angreifer,
-      defensiv → Verteidiger, ausgeglichen → Universell) und spielen bis zum Speichern wie bisher.
+- [ ] N799. **Stil-Mischung im Spinnennetz (deine Wünsche vom 24.10.):** Spielen › Eigene Bots ›
+      Neuen Gegner anlegen, ebenso Spielen › Eigene Stufe. Das Netz hat sechs Speichen (Angreifer
+      oben, gegenüber Positionsspieler; Taktiker gegenüber Verteidiger; Draufgänger gegenüber
+      Vereinfacher), auf jeder vier Punkte: 50, 75, 100 und 125 % (100 % ist die an echten
+      Spielern geeichte Stärke, 125 % geht darüber hinaus). Tippe Punkte auf mehreren Speichen an:
+      Die Stile kombinieren sich, die goldene Fläche zeigt alle. Tippe das Gegenüber an: Es ersetzt
+      den Stil dieser Achse. Ein zweiter Tipp auf denselben Punkt nimmt den Stil weg, die Mitte
+      setzt auf „Universell“ zurück. Unter dem Netz steht je Achse eine Auswahlliste mit demselben
+      Stand und darunter, was jeder gewählte Stil tut. Nach dem Speichern zeigt die Liste der
+      eigenen Bots die Mischung („3 · 3 · 3 · Angreifer + Taktiker 50 %“). Ältere eigene Gegner
+      zeigen ihren bisherigen Stil (aggressiv → Angreifer, defensiv → Verteidiger).
 - [ ] N800. **Regler auf menschlichen Quantilen:** Im selben Formular „Erweitert: Häufigkeiten
       feinstellen“ aufklappen. Jeder Regler hat neun Stufen: in der Mitte „wie der Median der
       Spieler“, an den Rändern des menschlichen Bereichs „so oft wie die 5 % auffälligsten
@@ -712,6 +715,19 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Partie mit Uhr, etwa gegen Leyla in 10 + 0. Der Bot zieht, sobald die Engine fertig ist (meist
       deutlich unter einer Sekunde). Seine Uhr springt dabei um die menschliche Bedenkzeit weiter,
       die oft mehrere Sekunden beträgt. Bisher wartete er sichtbar bis zu 2,5 Sekunden.
+
+- [ ] N803. **Bots eröffnen wie Menschen ihrer Stärke (dein Wunsch vom 24.10.):** Spielen, aus der
+      Grundstellung gegen die Engine. Unter „Eröffnung festlegen“ ist jetzt „wie Menschen dieser
+      Stärke (Praxis)“ vorgewählt. Spiele gegen einen schwachen Bot (Gruppe 1 oder 2) und gegen
+      einen starken (Gruppe 8 bis 10) je ein paar Partien: Der schwache spielt, was Anfänger auf
+      Lichess spielen, auch mal frühe Damenzüge; der starke spielt richtige Theorie (Sizilianisch,
+      Damengambit, Caro-Kann …), je nach Zeitklasse. Weichst du ab, denkt er selbst weiter.
+      Grundlage ist ein ganzer Monat gewerteter Lichess-Partien (September 2026).
+- [ ] N804. **Eröffnung aus der Praxis festlegen:** Unter „Eröffnung festlegen“ gibt es neben „Aus
+      dem Buch“ die Gruppe „Aus der Praxis (Lichess-Namen)“ mit den häufigsten benannten
+      Eröffnungen, etwa „Sicilian Defense: Najdorf Variation“. Wähle eine: Darunter steht ihre
+      Zugfolge, und der Bot folgt ihr, solange du ihre Züge spielst. „ohne Buch“ lässt die
+      Engine wie bisher selbst eröffnen, „eine Eröffnung des Buches“ wie bisher aus Kapitel 2 und 3.
 
 ---
 

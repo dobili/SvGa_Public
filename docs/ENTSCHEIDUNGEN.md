@@ -5183,3 +5183,43 @@ war). Der Messlauf bleibt für spätere Datenstände.
   simulierten menschlichen Bedenkzeit abgerechnet (`spiel/botzeit.ts`, zieheBotMitUhr), nicht mit
   der echten Rechenzeit. Der Notmodus bleibt: Ein Vorzug kostet echt und auf der Uhr 100 ms.
 - **Messungen bleiben gültig:** Die Messläufe rechnen die Uhr ohnehin simuliert und warteten nie.
+
+## Praxisbuch: Bots eröffnen wie Menschen ihrer Stärke (24./25.10.2026 nachts, Wunsch des Autors, 0.2.127)
+
+- **Wunsch:** Das Buch behandelt nur Anfänger-Eröffnungen. Höhere Bots wirken wenig menschlich,
+  wenn sie sich darauf beschränken oder wie eine Engine eröffnen.
+- **Daten:** Ein ganzer Monat der Lichess-Datenbank (September 2026, gewertete Blitz-,
+  Schnellschach- und Klassisch-Partien, CC0) als Datenstrom gezählt (C++-Zähler, lokal
+  `buch/arbeit/praxisbuch/`). Je Zugfolge der ersten 20 Halbzüge ab der Grundstellung und je
+  Zelle (Zeitklasse, 200er-Band 400 bis 2800 der ziehenden Seite) die Züge mit ihrer Anzahl.
+  Zugfolgen statt Stellungen, weil das Rechnen jeder Stellung bei 90 Millionen Partien zu lange
+  dauerte; Zugumstellungen verkürzen das Buch etwas. Ins Buch kommen Züge ab 2 % einer Stelle;
+  der Rest ist das Buchende. Datei `app/public/daten/praxisbuch.json`, höchstens etwa 3 MB.
+- **Zugwahl** (`engine/praxisbuch.ts`, `ui/komponenten/botzug.ts`): Solange die Partie aus der
+  Grundstellung im Buch ist, zieht der Bot nach der Häufigkeit seiner Zelle (Zeitklasse der Uhr,
+  Band nach der Wertung seiner Eröffnungsstufe). Mit dem Anteil der seltenen Züge verlässt er das
+  Buch, wie ein Mensch, der hier eigene Wege geht; dann übernimmt das Wahlmodell. Buchtiefe:
+  Theoretiker 20 Halbzüge, Hektiker 10, sonst 16. Dünne Zellen greifen auf Schnellschach und die
+  Nachbarbänder zurück. Spaß-Bots spielen kein Buch.
+- **Eröffnung festlegen:** Vorgabe „wie Menschen dieser Stärke“. Dazu die 120 häufigsten
+  benannten Eröffnungen der Lichess-Liste, denen der Bot folgt, solange der Leser ihre Züge spielt.
+  „ohne Buch“ (bisherige Vorgabe) und die Eröffnungen des Buches bleiben. Nach einer
+  Buch-Eröffnung geht es mit dem Praxisbuch weiter statt mit der Engine.
+- **Messung:** Die Messläufe ziehen mit demselben Buch (`engine/messbuch.testhilfe.ts`); „!“ am
+  Kürzel misst ohne Buch. Die Kalibrierung von Blitz und Klassisch misst damit automatisch mit
+  dem Praxisbuch.
+
+## Stil-Mischung eigener Bots (24./25.10.2026 nachts, Wünsche des Autors, 0.2.127)
+
+- **Wünsche:** Im Spinnennetz Zwischenwerte wählen können, dann vier Stufen 50, 75, 100 und
+  125 % (über das Normalmaß hinaus), und mehrere Stile zugleich, nur nicht die beiden Enden einer
+  Achse.
+- **Umsetzung** (`engine/stile.ts`, `ui/komponenten/Stilnetz.tsx`): `stilmix` je Stil in Prozent,
+  je Achse höchstens einer; die Verschiebungen addieren sich (Summe der Stile mal Prozent / 100).
+  100 % ist die geeichte Stärke (etwa anderthalb Standardabweichungen der Spieler). Ein Tipp auf
+  das Gegenüber ersetzt den Stil der Achse, derselbe Punkt nimmt ihn weg, die Mitte leert alles.
+  Je Achse eine Auswahlliste. Gilt für eigene Bots und die eigene Stufe; `stilname` bleibt als
+  erster Stil gespeichert, damit ältere Versionen etwas Sinnvolles lesen.
+- **Vorgefertigte Bots** behalten ihren einen Stil mit 100 %.
+- **Nebenbei behoben:** `skripte/gruppen-bots.mjs` las Bot-Zahlen nur mit Anführungszeichen
+  und sortierte deshalb viele Bots falsch ein; die Kalibrier-Chats hätten falsche Gruppen gemessen.

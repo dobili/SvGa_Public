@@ -1,0 +1,38 @@
+# Stufenmessung (2026-10-24)
+
+| Paarung a-b | Partien | Punkte b : a | Fehlerquote a / b | Höchster Verlust a / b | Halbzüge | Dauer je Partie |
+|---|---|---|---|---|---|---|
+| @frau-sommer~180+2-7m~180+2 | 10 | 5.5 : 4.5 | 5 % / 5 % | 7.2 / 2.2 | 164 | 19 s |
+| @frau-sommer~180+2-8m~180+2 | 10 | 7 : 3 | 5 % / 4 % | 2.4 / 6.5 | 121 | 13 s |
+| @herr-lorenz~180+2-7m~180+2 | 10 | 5.5 : 4.5 | 6 % / 6 % | 85.2 / 89.2 | 133 | 16 s |
+| @herr-lorenz~180+2-8m~180+2 | 10 | 7.5 : 2.5 | 6 % / 4 % | 92.3 / 6.6 | 118 | 15 s |
+| @defne~180+2-7m~180+2 | 10 | 3.5 : 6.5 | 5 % / 5 % | 4.2 / 4.7 | 118 | 15 s |
+| @defne~180+2-8m~180+2 | 10 | 6.5 : 3.5 | 6 % / 2 % | 93.1 / 101.1 | 116 | 13 s |
+| @amaya~180+2-7m~180+2 | 10 | 3.5 : 6.5 | 4 % / 7 % | 84.4 / 6.4 | 129 | 16 s |
+| @amaya~180+2-8m~180+2 | 10 | 7 : 3 | 4 % / 3 % | 88.7 / 2.2 | 153 | 18 s |
+| @elias~180+2-7m~180+2 | 10 | 8 : 2 | 5 % / 4 % | 75.9 / 99.0 | 118 | 12 s |
+| @elias~180+2-8m~180+2 | 10 | 6 : 4 | 6 % / 3 % | 2.5 / 5.5 | 127 | 14 s |
+| @frau-wagner~180+2-7m~180+2 | 10 | 9 : 1 | 7 % / 4 % | 85.9 / 95.1 | 138 | 15 s |
+| @frau-wagner~180+2-8m~180+2 | 10 | 8.5 : 1.5 | 9 % / 5 % | 93.2 / 7.8 | 102 | 10 s |
+| @fiona~180+2-7m~180+2 | 10 | 6.5 : 3.5 | 6 % / 5 % | 4.8 / 99.0 | 150 | 20 s |
+| @fiona~180+2-8m~180+2 | 10 | 7 : 3 | 6 % / 3 % | 2.9 / 5.6 | 156 | 19 s |
+| @juna~180+2-7m~180+2 | 10 | 7.5 : 2.5 | 7 % / 5 % | 10.9 / 7.4 | 140 | 17 s |
+| @juna~180+2-8m~180+2 | 10 | 8 : 2 | 6 % / 4 % | 5.1 / 9.7 | 121 | 9 s |
+
+Fehlerarten:
+- @frau-sommer~180+2-7m~180+2: @frau-sommer~180+2: koenigMitte 17, bauernvorstoss 8, drohungIgnoriert 5, bauernzugOhneNot 3, koenigPassiv 2, taktikUebersehen 1, schlagVerpasst 1, bauerEingestellt 1; 7m~180+2: bauernvorstoss 10, bauernzugOhneNot 9, drohungIgnoriert 9, koenigMitte 6, koenigPassiv 2, taktikUebersehen 2, schlagreflex 2, bauerEingestellt 2, schlagVerpasst 2
+- @frau-sommer~180+2-8m~180+2: @frau-sommer~180+2: koenigMitte 11, bauernzugOhneNot 5, bauernvorstoss 4, drohungIgnoriert 3, taktikUebersehen 2, bauerEingestellt 2, falscherAbtausch 1, figurHaengen 1, koenigPassiv 1, koenigsschild 1, schlagVerpasst 1; 8m~180+2: bauernvorstoss 8, drohungIgnoriert 4, bauernzugOhneNot 4, taktikUebersehen 3, figurHaengen 1, schlagreflex 1, schlagVerpasst 1
+- @herr-lorenz~180+2-7m~180+2: @herr-lorenz~180+2: drohungIgnoriert 10, bauernzugOhneNot 8, bauernvorstoss 6, schlagreflex 3, koenigPassiv 3, taktikUebersehen 2, koenigsschild 2, tempoverlust 2, koenigMitte 1, koenigszugOhneNot 1; 7m~180+2: bauernzugOhneNot 15, drohungIgnoriert 9, bauernvorstoss 5, koenigMitte 3, koenigPassiv 3, schlagreflex 2, tempoverlust 1, falscherAbtausch 1, koenigszugOhneNot 1, schlagVerpasst 1
+- @herr-lorenz~180+2-8m~180+2: @herr-lorenz~180+2: bauernzugOhneNot 9, koenigPassiv 6, drohungIgnoriert 5, bauernvorstoss 5, schlagreflex 4, koenigMitte 3, taktikUebersehen 1, tempoverlust 1, bauerEingestellt 1, koenigszugOhneNot 1; 8m~180+2: bauernvorstoss 5, drohungIgnoriert 5, bauernzugOhneNot 4, koenigMitte 4, schlagreflex 2, koenigPassiv 1, koenigsschild 1
+- @defne~180+2-7m~180+2: @defne~180+2: drohungIgnoriert 8, bauernzugOhneNot 6, bauernvorstoss 6, koenigMitte 4, koenigPassiv 3, schlagreflex 2, bauerEingestellt 1; 7m~180+2: bauernzugOhneNot 8, bauernvorstoss 7, drohungIgnoriert 7, schlagreflex 3, koenigMitte 2, koenigPassiv 2, schlagVerpasst 1, figurHaengen 1
+- @defne~180+2-8m~180+2: @defne~180+2: bauernzugOhneNot 9, drohungIgnoriert 8, bauernvorstoss 8, koenigPassiv 5, bauerEingestellt 2, falscherAbtausch 2, figurHaengen 1, koenigMitte 1, schlagVerpasst 1; 8m~180+2: bauernvorstoss 3, drohungIgnoriert 3, bauerEingestellt 2, bauernzugOhneNot 2, schlagreflex 1, koenigMitte 1, taktikUebersehen 1, schlagVerpasst 1
+- @amaya~180+2-7m~180+2: @amaya~180+2: drohungIgnoriert 7, bauernzugOhneNot 6, koenigMitte 3, bauernvorstoss 3, koenigPassiv 2, schlagVerpasst 2, koenigszugOhneNot 2, schlagreflex 1, taktikUebersehen 1, bauerEingestellt 1; 7m~180+2: drohungIgnoriert 17, bauernzugOhneNot 13, taktikUebersehen 4, koenigMitte 3, bauernvorstoss 3, koenigPassiv 2, bauerEingestellt 2, figurHaengen 1
+- @amaya~180+2-8m~180+2: @amaya~180+2: bauernzugOhneNot 10, schlagVerpasst 5, drohungIgnoriert 4, bauernvorstoss 4, koenigMitte 3, schlagreflex 1, koenigPassiv 1, bauerEingestellt 1, verfruehteDame 1, taktikUebersehen 1, koenigszugOhneNot 1, figurHaengen 1; 8m~180+2: drohungIgnoriert 7, bauernvorstoss 5, bauernzugOhneNot 5, koenigPassiv 1, schlagVerpasst 1, koenigMitte 1, taktikUebersehen 1, koenigsschild 1, bauerEingestellt 1
+- @elias~180+2-7m~180+2: @elias~180+2: bauernzugOhneNot 8, drohungIgnoriert 6, bauernvorstoss 3, taktikUebersehen 3, schlagreflex 2, verfruehteDame 1, koenigMitte 1, schlagVerpasst 1, tempoverlust 1, falscherAbtausch 1, koenigPassiv 1; 7m~180+2: drohungIgnoriert 7, koenigMitte 6, bauernzugOhneNot 5, bauernvorstoss 3, koenigPassiv 2, taktikUebersehen 1, bauerEingestellt 1, figurHaengen 1
+- @elias~180+2-8m~180+2: @elias~180+2: bauernvorstoss 9, drohungIgnoriert 7, bauernzugOhneNot 5, taktikUebersehen 4, verfruehteDame 3, koenigPassiv 3, koenigMitte 2, koenigszugOhneNot 1, tempoverlust 1, figurHaengen 1; 8m~180+2: bauernvorstoss 5, drohungIgnoriert 5, schlagVerpasst 3, bauernzugOhneNot 2, koenigPassiv 1, schlagreflex 1
+- @frau-wagner~180+2-7m~180+2: @frau-wagner~180+2: bauernzugOhneNot 13, drohungIgnoriert 9, taktikUebersehen 6, koenigMitte 5, schlagVerpasst 3, bauernvorstoss 2, koenigPassiv 2, schlagreflex 2, koenigszugOhneNot 1, falscherAbtausch 1, figurHaengen 1; 7m~180+2: bauernzugOhneNot 8, koenigPassiv 4, schlagVerpasst 4, koenigMitte 3, taktikUebersehen 3, drohungIgnoriert 3, bauernvorstoss 2, koenigszugOhneNot 1, figurHaengen 1, schlagreflex 1
+- @frau-wagner~180+2-8m~180+2: @frau-wagner~180+2: bauernzugOhneNot 14, drohungIgnoriert 9, schlagreflex 4, koenigMitte 4, koenigPassiv 4, bauernvorstoss 3, bauerEingestellt 3, falscherAbtausch 2, koenigsschild 1, taktikUebersehen 1, figurHaengen 1, schlagVerpasst 1; 8m~180+2: drohungIgnoriert 7, bauernzugOhneNot 6, bauernvorstoss 4, koenigMitte 4, schlagreflex 1, schlagVerpasst 1, taktikUebersehen 1, koenigsschild 1, figurHaengen 1
+- @fiona~180+2-7m~180+2: @fiona~180+2: drohungIgnoriert 18, bauernvorstoss 11, bauernzugOhneNot 5, koenigPassiv 5, taktikUebersehen 2, bauerEingestellt 1, koenigszugOhneNot 1, schlagVerpasst 1, tempoverlust 1, figurHaengen 1; 7m~180+2: bauernzugOhneNot 11, bauernvorstoss 11, drohungIgnoriert 8, taktikUebersehen 2, schlagreflex 2, koenigPassiv 1, koenigMitte 1, koenigszugOhneNot 1, figurHaengen 1
+- @fiona~180+2-8m~180+2: @fiona~180+2: bauernzugOhneNot 12, bauernvorstoss 9, drohungIgnoriert 6, koenigPassiv 5, koenigMitte 4, taktikUebersehen 3, schlagVerpasst 2, schlagreflex 1, verfruehteDame 1, figurHaengen 1; 8m~180+2: drohungIgnoriert 8, bauernvorstoss 6, koenigPassiv 4, koenigMitte 2, bauernzugOhneNot 2, bauerEingestellt 2, koenigsschild 1, figurHaengen 1, taktikUebersehen 1
+- @juna~180+2-7m~180+2: @juna~180+2: drohungIgnoriert 10, bauernvorstoss 9, koenigPassiv 8, bauernzugOhneNot 8, bauerEingestellt 4, schlagreflex 3, taktikUebersehen 2, falscherAbtausch 1, schlagVerpasst 1, tempoverlust 1; 7m~180+2: bauernzugOhneNot 12, bauernvorstoss 8, drohungIgnoriert 5, bauerEingestellt 2, schlagreflex 2, koenigMitte 1, taktikUebersehen 1, koenigPassiv 1, schlagVerpasst 1, falscherAbtausch 1
+- @juna~180+2-8m~180+2: @juna~180+2: drohungIgnoriert 10, bauernzugOhneNot 9, bauernvorstoss 6, koenigPassiv 6, taktikUebersehen 2, schlagreflex 1, koenigMitte 1, figurHaengen 1, schlagVerpasst 1; 8m~180+2: bauernzugOhneNot 9, drohungIgnoriert 4, bauernvorstoss 3, figurHaengen 2, bauerEingestellt 1, schlagreflex 1, schlagVerpasst 1, koenigMitte 1

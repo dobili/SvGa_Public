@@ -53,3 +53,12 @@ export function kandidatendatei(werte: Map<string, number>, streu: Map<string, n
     "",
   ].join("\n");
 }
+
+/** Fester Zufall für das Nachziehen (LCG). */
+export function zufallsquelle(saat: number): () => number {
+  let stand = saat;
+  return () => {
+    stand = (stand * 48_271) % 2_147_483_647;
+    return stand / 2_147_483_647;
+  };
+}

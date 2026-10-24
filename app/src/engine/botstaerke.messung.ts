@@ -33,12 +33,14 @@ import {
   kennzahlenAus,
   kennzahlenMittel,
   schaetzung,
+  wertungstempo,
   type Partiekennzahlen,
+  type Wertungstempo,
 } from "../spiel/elomodell";
 import { leiter, verankere, type Anker, type Begegnung } from "./eloleiter";
 import { BOTKANDIDATEN } from "./botkandidaten";
 import { GEGNER } from "./gegnerliste";
-import { kandidatendatei, phasenAusZuegen } from "./botmessung-hilfen";
+import { kandidatendatei, phasenAusZuegen, zufallsquelle } from "./botmessung-hilfen";
 
 const ORDNER = process.env.BOTELO_ORDNER ?? join(process.cwd(), "..", "buch", "arbeit", "botelo");
 const LEITER_ORDNER = /^(leiter-.*|bruecken|alt|neu-.*)$/;
@@ -137,6 +139,16 @@ function grundzeit(tempo: string): number {
   return Number(tempo.split("+")[0]);
 }
 
+/** Die Zeitklasse einer gemessenen Bedenkzeit („180+2“ → blitz), wie in der App. */
+function zeitklasseVon(tempo: string): Wertungstempo {
+  const [grund, zuschlag] = tempo.split("+").map(Number);
+  return wertungstempo({
+    grundzeitMs: (grund ?? 0) * SEKUNDE_MS,
+    zuschlagMs: (zuschlag ?? 0) * SEKUNDE_MS,
+  });
+}
+const SEKUNDE_MS = 1000;
+
 /**
  * Was die Uhr je Bedenkzeit kostet (seit 0.2.117): Stufe n mit Uhr gegen Stufe n ohne
  * („3~300+3-3“). Seit 0.2.117 bereinigt: Ohne Zeitnot verläuft eine Partie mit Uhr genau wie ohne
@@ -155,28 +167,6 @@ function uhrAbzuege(): Map<string, Map<number, number>> {
     const mittel = unterschiede.reduce((s, x) => s + x, 0) / Math.max(1, unterschiede.length);
     const abzug = Math.min(0, mittel);
     aus.set(tempo, new Map([...je.keys()].map((n) => [n, abzug])));
-  }
-  return aus;
-}
-
-const ZUSATZ_ORDNER = "zusatz";
-
-/**
- * Was alle Zusatzfehler je Stufe kosten (seit 0.2.117): Stufe n mit Zusatzfehlern gegen Stufe n
- * ohne („4m-4“), Punkte in Elo umgerechnet. Ausgabe: Stufe → Abzug (meist negativ).
- */
-function zusatzAbzuege(): Map<number, number> {
-  const aus = new Map<number, number>();
-  for (const d of dateienIn(join(ORDNER, ZUSATZ_ORDNER))) {
-    const mit = /^(\d+)m$/.exec(d.paarung.slice(0, trennstelle(d.paarung)));
-    if (!mit?.[1] || d.berichte.length === 0) continue;
-    const g = begegnung(d);
-    const anteil = Math.min(
-      HOECHSTER_ANTEIL,
-      Math.max(1 - HOECHSTER_ANTEIL, g.punkteA / g.partien),
-    );
-    // Ein positiver Wert (Zusatzfehler unten weniger schlimm als die Grundschicht) zählt als 0
-    aus.set(Number(mit[1]), Math.min(0, -ELO_TEILER * Math.log10(1 / anteil - 1)));
   }
   return aus;
 }
@@ -263,15 +253,6 @@ function anker(): { anker: Anker[]; zeilen: string[] } {
   return { anker: liste, zeilen };
 }
 
-/** Fester Zufall für das Nachziehen (LCG). */
-function zufallsquelle(saat: number): () => number {
-  let stand = saat;
-  return () => {
-    stand = (stand * 48_271) % 2_147_483_647;
-    return stand / 2_147_483_647;
-  };
-}
-
 /** Streuung je Spieler: Ergebnisse binomial nachziehen, Leiter neu rechnen und verankern. */
 function streuungen(alle: readonly Begegnung[], a: readonly Anker[]): Map<string, number> {
   const zufall = zufallsquelle(7);
@@ -297,7 +278,9 @@ function streuungen(alle: readonly Begegnung[], a: readonly Anker[]): Map<string
 }
 
 function datendatei(werte: Map<string, number>): string {
-  const stufen = STUFEN.map((n) => `  ${n}: ${Math.round(werte.get(`stufe${n}`) ?? Number.NaN)},`);
+  // Seit 0.2.125 die Stufen mit allen Zusatzfehlern der Menschen („Nm“): So spielt eine Stufe in
+  // der App (Wahlmodell bei der Wertung der Stufe), die reine Grundschicht gibt es dort nicht mehr.
+  const stufen = STUFEN.map((n) => `  ${n}: ${Math.round(werte.get(`stufe${n}m`) ?? Number.NaN)},`);
   const bots = GEGNER.map(
     (g) => `  "${g.kennung}": ${Math.round(werte.get(g.kennung) ?? Number.NaN)},`,
   );
@@ -311,6 +294,7 @@ function datendatei(werte: Map<string, number>): string {
     " * „Deine Spielstärke“. Herleitung und Unsicherheit: docs/ENTSCHEIDUNGEN.md, „Elo-Zahl der Bots“.",
     " * Abhängigkeiten: engine/stufen.ts (Typ).",
     " */",
+    'import type { Wertungstempo } from "../spiel/elomodell";',
     'import type { Stufennummer } from "./stufen";',
     "",
     "export const STUFEN_STAERKE: Readonly<Record<Stufennummer, number>> = {",
@@ -321,22 +305,18 @@ function datendatei(werte: Map<string, number>): string {
     ...bots,
     "};",
     "",
-    "/** Was die Uhr je Bedenkzeit („300+3“) und Stufe kostet (Elo, meist negativ; seit 0.2.117). */",
-    "export const UHR_ABZUG: Readonly<Record<string, Readonly<Record<number, number>>>> = {",
+    "/**",
+    " * Was die Uhr je Zeitklasse (Blitz 3+2, Schnellschach 10+0, Klassisch 30+20 gemessen) und Stufe",
+    " * kostet (Elo, meist negativ; seit 0.2.117, seit 0.2.125 je Zeitklasse statt je Bedenkzeit).",
+    " */",
+    "export const UHR_ABZUG: Readonly<Record<Wertungstempo, Readonly<Record<number, number>>>> = {",
     ...[...uhrAbzuege()].map(
       ([tempo, je]) =>
-        `  "${tempo}": { ${[...je]
+        `  ${zeitklasseVon(tempo)}: { ${[...je]
           .sort((x, y) => x[0] - y[0])
           .map(([n, w]) => `${n}: ${Math.round(w)}`)
           .join(", ")} },`,
     ),
-    "};",
-    "",
-    "/** Was alle Zusatzfehler der Menschen je Stufe kosten (Elo, negativ; seit 0.2.117). */",
-    "export const ZUSATZ_ABZUG: Readonly<Partial<Record<Stufennummer, number>>> = {",
-    ...[...zusatzAbzuege()]
-      .sort((x, y) => x[0] - y[0])
-      .map(([n, w]) => `  ${n}: ${Math.round(w)},`),
     "};",
     "",
   ].join("\n");
@@ -346,6 +326,7 @@ function datendatei(werte: Map<string, number>): string {
 function weitere(werte: Map<string, number>): string[] {
   const bekannt = new Set([
     ...STUFEN.map((n) => `stufe${n}`),
+    ...STUFEN.map((n) => `stufe${n}m`),
     ...GEGNER.map((g) => g.kennung),
     ...BOTKANDIDATEN.map((g) => g.kennung),
   ]);
@@ -381,7 +362,12 @@ function bericht(
     "",
     "| Spieler | Zahl | Streuung | Partien |",
     "|---|---|---|---|",
-    ...STUFEN.map((n) => zeile(`stufe${n}`, `Stufe ${n}`)),
+    ...STUFEN.filter((n) => werte.has(`stufe${n}m`)).map((n) =>
+      zeile(`stufe${n}m`, `Stufe ${n} (menschlich, Nm)`),
+    ),
+    ...STUFEN.filter((n) => werte.has(`stufe${n}`)).map((n) =>
+      zeile(`stufe${n}`, `Stufe ${n} (rein)`),
+    ),
     ...GEGNER.map((g) => zeile(g.kennung, g.name)),
     ...BOTKANDIDATEN.filter((g) => werte.has(g.kennung)).map((g) => zeile(g.kennung, g.kennung)),
     ...weitere(werte).map((k) => zeile(k, k.replace("stufe", "Grundschicht "))),

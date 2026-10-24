@@ -2022,3 +2022,14 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   0,017 + 1,197·x, Züge bis Entscheidung 0,43 + 0,895·x). Elo-Modell neu erzeugt (die Güte ist von
   der linearen Umrechnung unabhängig; nur die Stützstellen in spiel/elomodell-daten.ts rückten
   etwas). Restplan 2 damit fertig.
+
+### 24.10.2026 vormittags (Fable): main 0.2.123 eingemischt, Wünsche des Autors
+
+- main 0.2.123 eingemischt (Commit 72203f1), Version 0.2.124: Spielstärke-Karte von P1 (Ring,
+  Balken) ohne Schalter, Uhrwahl in ui/komponenten/uhrwahl.ts mit unseren Regeln, P1s
+  Zeitangabe in der Partienliste, P1s spiel/zeitklasse.ts bleibt neben spiel/elomodell.ts
+  (Wertung kennt nur drei Klassen; Bullet zählt dort als Blitz, wird nicht angeboten).
+- Aufgabe von P1 erledigt: spiel/zugklassenvergleich.ts mit Werten aus den Spielerprofilen
+  (Median, Zonen aus den 5/95-%-Quantilen der Spieler plus Zufall der Partie).
+- Wünsche des Autors: Partiekopf mit Porträt und Bot-Satz im Untertitel, Startbild bei der
+  Rückkehr aus dem Hintergrund (Handy, ab 30 Minuten, 1,8 s). AUFGABEN_AUTOR N779–N781.

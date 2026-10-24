@@ -541,6 +541,20 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       30 + 20 gegen denselben Bot. Im Blitz soll der Bot seine Zeit ähnlich wie du verbrauchen
       (nach 20 Zügen noch etwa die Hälfte), im Klassischen deutlich sparsamer; vorher verbrauchte
       er im Klassischen seine Zeit etwa doppelt so schnell wie Menschen.
+- [ ] N779. **Partiekopf (dein Wunsch vom 24.10.):** In der Partie steht oben nur noch „gegen
+      Johanna“ (kein Umbruch mehr); darunter linksbündig ihr Porträt, daneben ihr Satz aus der
+      Gegnerwahl, klein darunter „Johanna (⌀ 4 · Anfänger) · du spielst Weiß“.
+- [ ] N780. **Zonen in „Deine Züge“ (dein Wunsch vom 24.10.):** Die graue Zone „normal“ ist je
+      Zeile verschieden breit: Sie reicht so weit, wie 90 % der Lichess-Spieler deiner Stärke in
+      dieser Zeitklasse liegen, bei kurzen Partien breiter (Zufall weniger Züge). Üblich ist der
+      Median dieser Spieler. Brillant, stark und Buchzug bleiben geschätzt (Zone 75 bis 125 %),
+      weil die Lichess-Daten diese Klassen nicht kennen. Wirkt das Urteil „normal / gut / schwach“
+      jetzt stimmig?
+- [ ] N781. **Startbild bei der Rückkehr (dein Wunsch vom 24.10.):** Handy: App in den Hintergrund,
+      nach mindestens 30 Minuten zurück → der goldene Springer läuft 1,8 s (ein Tipp überspringt).
+      Nach 5 Minuten nicht. Am Rechner nie (Fensterwechsel). Hinweis: iOS wirft eine
+      Hintergrund-App manchmal ganz aus dem Speicher; dann startet sie neu und zeigt das normale
+      Startbild (2,5 s).
 
 ---
 

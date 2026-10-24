@@ -202,7 +202,7 @@ export function Spielstaerke({
         <Gesamt partie={partie} seite={seite} b={b} />
         <Genauigkeitsbalken zeilen={zeilen} />
       </section>
-      <Zugklassen bilanz={b} elo={vergleichsElo(partie, seite, b, eigeneStaerke)} />
+      <Zugklassen bilanz={b} elo={vergleichsElo(partie, seite, b, eigeneStaerke)} tempo={tempo} />
     </>
   );
 }

@@ -4,12 +4,14 @@
  * Rolle im Gesamtbild: Wunsch des Autors (23.10.2026) nach Vorschaubildern: Jede Zeile hat Marke,
  * Namen, ein Badge mit der Anzahl und „x % des Üblichen · Urteil“; darunter ein Balken auf
  * eigener Skala (0 bis zum Doppelten des Üblichen) über drei grauen Zonen, mit einem Strich für
- * das Übliche bei der eigenen Stärke. Bei den guten Klassen heißen die Zonen „wenig, normal,
+ * das Übliche bei der eigenen Stärke; die Zone „normal“ ist seit 0.2.124 die Spanne der Spieler
+ * dieser Stärke und Zeitklasse (spiel/zugklassenvergleich.ts), also je Zeile verschieden breit. Bei den guten Klassen heißen die Zonen „wenig, normal,
  * viel“ mit „viel“ als gut, bei den schwachen umgekehrt. Unter MINDESTZUEGE_VERGLEICH eigenen
  * Zügen stehen nur die Anzahlen. Ersetzt die zweispaltige Tabelle „Züge nach Art“.
  * Abhängigkeiten: spiel/zugklassenvergleich.ts, Auswertungssymbole.tsx, InfoKnopf, i18n.
  */
 import type { Zugklasse } from "../../spiel/auswertung";
+import type { Wertungstempo } from "../../spiel/elomodell-daten";
 import type { Seitenbilanz } from "../../spiel/genauigkeit";
 import {
   GUTE_KLASSEN,
@@ -65,7 +67,13 @@ function Klassenzeile({ v, vergleich }: { v: Klassenvergleich; vergleich: boolea
         )}
       </div>
       {vergleich && (
-        <div className={`zugklasse-spur ${gut ? "zonen-gut" : "zonen-schwach"}`} aria-hidden="true">
+        <div
+          className={`zugklasse-spur ${gut ? "zonen-gut" : "zonen-schwach"}`}
+          style={{
+            gridTemplateColumns: `${v.normalVon * PROZENT}% ${(v.normalBis - v.normalVon) * PROZENT}% ${(1 - v.normalBis) * PROZENT}%`,
+          }}
+          aria-hidden="true"
+        >
           {zonen.map((zone, i) => (
             <span key={zone} className={`zugklasse-zone zone-${i}`}>
               {t(`zugklassen.urteil.${zone}`)}
@@ -87,9 +95,19 @@ function Klassenzeile({ v, vergleich }: { v: Klassenvergleich; vergleich: boolea
  * Eingaben: Bilanz der Seite (Anzahl je Klasse), Spielstärke für den Vergleich.
  * Beispiel: 33 Züge, 4 Ungenauigkeiten bei etwa 1400 → „?! Ungenau [4] 121 % des Üblichen · normal“.
  */
-export function Zugklassen({ bilanz, elo }: { bilanz: Seitenbilanz; elo: number }) {
+export function Zugklassen({
+  bilanz,
+  elo,
+  tempo,
+}: {
+  bilanz: Seitenbilanz;
+  elo: number;
+  tempo: Wertungstempo;
+}) {
   const vergleich = bilanz.zuege >= MINDESTZUEGE_VERGLEICH;
-  const zeilen = KLASSEN.map((k) => vergleicheKlasse(k, bilanz.klassen[k], bilanz.zuege, elo));
+  const zeilen = KLASSEN.map((k) =>
+    vergleicheKlasse(k, bilanz.klassen[k], bilanz.zuege, elo, tempo),
+  );
   return (
     <section className="karte zugklassen" data-testid="zugklassen">
       <MitInfo

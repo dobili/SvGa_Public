@@ -4793,3 +4793,27 @@ war). Der Messlauf bleibt für spätere Datenstände.
   unter 10 s → Temperatur 1,6). Die Patzer steigen dabei von selbst stärker als die Fehler, wie
   bei Menschen (steile Verlustkurve). Alte Faktoren bleiben für die Messskripte (zeitnotFaktoren).
 
+## Wünsche des Autors vom 24.10.2026 morgens (Fable): Partiekopf, Zonen der Zugklassen, Startbild bei der Rückkehr
+
+- **Partiekopf:** Das Porträt des Bots steht nicht mehr in der Titelzeile (es drängte „gegen
+  Johanna“ in den Umbruch), sondern linksbündig im Untertitel; daneben der Satz des Bots aus der
+  Gegnerwahl, klein darunter die bisherige Stufen- und Farbzeile (Partieuntertitel.tsx).
+- **Zonen des Bullet-Diagramms „Deine Züge“** (spiel/zugklassenvergleich.ts, Daten
+  spiel/zugklassenvergleich-daten.ts aus den Spielerprofilen, je Zeitklasse und 400er-Band 160 bis
+  430 Spieler mit mindestens 100 Zügen): „üblich“ ist der Median der Spieler, „normal“ reicht vom
+  5-%- bis zum 95-%-Quantil der Spieler, je Seite quadratisch erweitert um die Zufallsstreuung
+  einer Partie mit so vielen Zügen (Binomial, 90 %): Sonst hieße in einer 30-Züge-Partie fast
+  jede Klasse „gut“ oder „schwach“, obwohl nur der Zufall spielt. Die Zonen sind deshalb je Zeile
+  und je Partielänge verschieden breit; die Skala bleibt bis zum Doppelten des Üblichen.
+  Brillant, stark und Buchzug kennen die Profile nicht (die Lichess-Auswertung unterscheidet sie
+  nicht): vorläufige Schätzung mit fester Zone 75 bis 125 %; „bester“ ist der Profilwert aller
+  Züge ohne Verlust minus diese drei. Damit ist die Aufgabe von P1 (echte Vergleichswerte für
+  zugklassenvergleich.ts) erledigt.
+- **Startbild bei der Rückkehr** (Startanimation.tsx, startanimationRegel.ts): Über
+  `visibilitychange` merkt sich die App, wann sie unsichtbar wurde; wird sie nach mindestens 30
+  Minuten wieder sichtbar, läuft die Animation 1,8 s (CSS-Variable `--startanimation-dauer`),
+  aber nur auf Geräten mit grobem Zeiger (`pointer: coarse`, Handy und Tablet): Am Rechner
+  wechselt man zwischen Fenstern, dort wäre sie störend. Einstellung „aus“ und „Bewegung
+  reduzieren“ gelten weiter. Grenze: Wirft das System die Hintergrund-App aus dem Speicher,
+  startet sie neu und zeigt das normale Startbild.
+

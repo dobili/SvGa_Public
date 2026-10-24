@@ -10,6 +10,31 @@
   text-align: center;
 }
 
+/* Gegen einen Bot (0.2.124): Porträt links, daneben sein Satz, darunter klein die Stufenzeile. */
+.partie-gegnerzeile {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  margin: 0 0 var(--raster);
+  text-align: left;
+}
+
+.partie-gegnerzeile .gegner-portraet {
+  width: 48px;
+  height: 48px;
+  flex: none;
+}
+
+.partie-gegnerbeschreibung {
+  margin: 0;
+}
+
+.partie-gegnerzeile .partie-untertitel {
+  margin: 0;
+  text-align: left;
+  font-size: 0.85em;
+}
+
 .partieuhr {
   display: flex;
   justify-content: space-between;

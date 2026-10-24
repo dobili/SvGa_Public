@@ -302,3 +302,10 @@
   color: var(--gruen-text);
   border-color: var(--gruen-text);
 }
+
+/* Beta-Hinweis unter dem Untertitel (Wunsch des Autors, 24.10.2026). */
+.startseite-beta {
+  margin: 0.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-leise, #666);
+}

@@ -125,10 +125,16 @@ export function Ich() {
           {t("ich.einstellungen")}
         </h2>
         <dl className="einstellungen">
-          <Zeile name={t("ich.version")} wert={APP_VERSION} testid="app-version" />
+          <Zeile
+            name={t("ich.version")}
+            wert={t("ich.versionBeta", { wert: APP_VERSION })}
+            testid="app-version"
+          />
           <Zeile name={t("ich.datenstand")} wert={datenstand} />
           <Zeile name={t("ich.offline")} wert={offlineText} testid="offline-stand" />
         </dl>
+        {/* Beta-Hinweis (Wunsch des Autors, 24.10.2026): Die App wird laufend erweitert. */}
+        <p className="hinweis">{t("ich.beta")}</p>
         <div className="knopfreihe">
           {offline.updateVerfuegbar ? (
             <button type="button" className="knopf-haupt" onClick={() => void aktualisiereJetzt()}>

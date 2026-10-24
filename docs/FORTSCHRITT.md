@@ -1701,8 +1701,22 @@ Offen: 6 (eingesperrte Figur), 8 (Bots je Kategorie neu, Neumessung mit vierfach
 Ergebnisleiter, Verankerung mit dem neuen Elo-Modell; vorher Gespräch mit dem Autor zum Bot-Satz),
 Rest von 9 (Bot-Raten Blitz und 60 min, drei Einstellungssätze und Wertungen je Bot), 10
 (nach main mit grüner CI, dann P1 informieren). Offene Punkte für den Autor: AUFGABEN_AUTOR
-N770–N778 und E1–E4. **Nächster Schritt:** Restplan 8 nach Rücksprache mit dem Autor (Bot-Satz je
-Kategorie), dann 9 (Rest) und 10.
+N770–N778 und E1–E4. **Nächster Schritt:** Restplan 8 (Messung läuft), dann 9 (Rest) und 10.
+
+**Für das kommende Update 0.2.124 verschoben (Wunsch des Autors, 24.10.2026: festhalten, was
+geschoben wird):**
+- Oberfläche von Teil E: Spinnennetz der drei Stilachsen, Regler eigener Gegner auf den
+  menschlichen Quantilen (−2 bis 2 plus zwei unmenschliche Stufen), Menschlichkeitsanzeige,
+  geschätzte Wertung eines eigenen Bots. Eigene Gegner nutzen bis dahin weiter Faktoren und den
+  Regler −2 bis 2.
+- Restplan 6 „eingesperrte Figur“ als Fehlerart (erst mit der nächsten Eichung des Wahlmodells).
+- Maia als Grundgewicht (Versuch) und das tiefere Eröffnungsbuch aus einem ganzen Lichess-Monat.
+- Zugklassen „brillant“, „stark“ und „Buchzug“ im Bullet-Diagramm: weiter geschätzt (die
+  Lichess-Auswertung unterscheidet sie nicht).
+- Drei Wertungen je Bot (Blitz, Schnellschach, Klassisch): erst nach der Messung je Zeitklasse.
+- Neue Charaktersätze der Bots (kreative Vignetten, de und en): nach der Auswahl des Bot-Satzes.
+- Die App und die Startseite nennen sich seit 0.2.124 „Beta“ (Wunsch des Autors): laufende
+  Updates sind angekündigt.
 
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).

@@ -555,6 +555,9 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Nach 5 Minuten nicht. Am Rechner nie (Fensterwechsel). Hinweis: iOS wirft eine
       Hintergrund-App manchmal ganz aus dem Speicher; dann startet sie neu und zeigt das normale
       Startbild (2,5 s).
+- [ ] N783. **Beta-Hinweis:** Einstellungen › Über die App zeigt „App-Version: 0.2.124 (Beta)“ und
+      darunter den Satz, dass die App laufend erweitert wird und Daten erhalten bleiben; die
+      Startseite der Website zeigt unter dem Untertitel denselben Hinweis.
 - [ ] N782. **Bots mit Stil und menschlichen Vorlieben:** Spiele gegen Tom (Draufgänger,
       Damenfan) und gegen Rolf (Verteidiger, vorsichtig). Tom sollte die Dame früh holen und
       vorwärts stürmen, Rolf eher zurückhaltend ziehen und wenig schlagen. Die Vorlieben halten

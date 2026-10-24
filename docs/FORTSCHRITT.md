@@ -1655,6 +1655,18 @@ B9 bis B14; danach `p3-werkzeuge` in `weiter-ohne-autor` übernehmen.
 Eigenes Elo je Zeitklasse = Lichess-Entsprechung (geeicht an Lichess-Wertungen); dazu „entspricht
 etwa“ chess.com und FIDE über veröffentlichte Umrechnungen.
 
+**Stand nach der Nacht zum 24.10.2026 (Fable), Zweig `menschliche-bots`, Version 0.2.121, noch
+nicht auf main:** fertig 1 (Filter „offen“ und „bis zur Entscheidung“; „alle“ abgebrochen), 2
+(Geraden aus 500 Partien; Lauf bei 765 von 814, danach nachrechnen), 3, 4, 5, 7, 8b, Teil E
+Kern (Wahlmodell in der App, Tagesform und Zeitnot als Temperatur), R51 (Teil F erster Teil).
+Offen: 6 (eingesperrte Figur), 8 (Bots je Kategorie neu, Neumessung mit vierfachen Kandidaten,
+Ergebnisleiter, Verankerung mit dem neuen Elo-Modell; vorher Gespräch mit dem Autor zum Bot-Satz),
+Rest von 9 (Bot-Raten Blitz und 60 min, drei Einstellungssätze und Wertungen je Bot), 10
+(nach main mit grüner CI, dann P1 informieren). Offene Punkte für den Autor: AUFGABEN_AUTOR
+N770–N778 und E1–E4. **Nächster Schritt:** Tiefe-18-Lauf abschließen und Elo-Modell nachrechnen
+(buch/arbeit/tiefe18/abgleich.py, appmodell/appmodell.py, appmodell/erzeugen.py → elomodell-daten.ts),
+dann Restplan 8 nach Rücksprache.
+
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).
 2. Tiefe 18: etwa 1000 Spielerpartien mit der Engine der App nachrechnen, Umrechnung der
@@ -1814,8 +1826,8 @@ Website (`inhalte/de/training/`), Namen der Bots.
   Ausgabe buch/arbeit/tiefe18/bewertet-*.jsonl), Elo-Modell (buch/arbeit/spielerprofil/
   elomodell.py: Kennzahlen je Partie → partiekennzahlen.jsonl, dann Stufenvergleich je Zeitklasse
   mit Gradient Boosting, Prüfung an 20 % zurückgelegten Spielern, Teilmodelle je Phase).
-- Nach einem Neustart des Containers: kette2.sh, den Engine-Lauf (gleicher Aufruf, fortsetzbar)
-  und elomodell.py neu starten.
+- Nach einem Neustart des Containers: den Engine-Lauf (gleicher Aufruf, fortsetzbar) neu
+  starten; Beta-Binomial und Elo-Modell sind fertig (Stand 7 Uhr).
 
 ### Ergebnisse der Nacht, Teil 1 (24.10.2026, 0 Uhr): Spieler-Bereiche und Elo-Modell
 

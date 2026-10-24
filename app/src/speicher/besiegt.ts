@@ -38,22 +38,14 @@ export function besiegterBot(partie: Partie): string | null {
 /**
  * Die Listen mit dem Bot dieser Partie in ihrer Zeitklasse, falls der Leser ihn besiegt hat;
  * sonst unverändert. Beispiel: Sieg gegen „mia“ mit 3 + 2 → blitz: ["mia"]; mit 30 + 20 →
- * classical und rapid: ["mia"].
+ * classical: ["mia"] (Zeitklassen wie bei Lichess; Entscheidung des Autors, 24.10.2026).
  */
 export function mitBesiegtem(liste: Besiegte, partie: Partie): Besiegte {
   const bot = besiegterBot(partie);
   if (!bot) return liste;
   const tempo = wertungstempo(partie.einstellung.uhr);
-  // Ein Sieg in Klassisch (30+20, 60+0) zählt auch als Schnellschach-Sieg (Wunsch des Autors,
-  // 24.10.2026: Wer mit viel Zeit gewinnt, hat den Stern für Schnellschach mitverdient).
-  const klassen: Wertungstempo[] = tempo === "classical" ? ["classical", "rapid"] : [tempo];
-  return klassen.reduce<Besiegte>(
-    (bisher, k) =>
-      bisher[k].includes(bot)
-        ? bisher
-        : { ...bisher, [k]: [...bisher[k], bot].slice(-MAX_BESIEGT) },
-    liste,
-  );
+  if (liste[tempo].includes(bot)) return liste;
+  return { ...liste, [tempo]: [...liste[tempo], bot].slice(-MAX_BESIEGT) };
 }
 
 function kennungen(roh: unknown): readonly string[] {

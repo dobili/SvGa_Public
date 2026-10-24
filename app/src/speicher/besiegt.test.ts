@@ -64,11 +64,11 @@ describe("besiegte Bots", () => {
     expect(mitBesiegtem(liste, blitz).blitz).toEqual(["mia"]);
     expect(irgendwoBesiegt(liste, "mia")).toBe(true);
     expect(irgendwoBesiegt(liste, "max")).toBe(false);
-    // Ein Sieg in Klassisch (30 + 20) vergibt auch den Schnellschach-Stern (Autor, 24.10.2026).
+    // 30 + 20 ist Klassisch (wie bei Lichess): nur der Klassisch-Stern (Autor, 24.10.2026).
     const klassisch = partie("max", true, true, { grundzeitMs: 1_800_000, zuschlagMs: 20_000 });
     const mitMax = mitBesiegtem(liste, klassisch);
     expect(mitMax.classical).toEqual(["max"]);
-    expect(mitMax.rapid).toEqual(["mia", "max"]);
+    expect(mitMax.rapid).toEqual(["mia"]);
     expect(mitMax.blitz).toEqual([]);
   });
 

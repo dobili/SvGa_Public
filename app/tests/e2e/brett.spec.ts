@@ -49,6 +49,10 @@ test("Zuganimation (R37): nach Ziehen per Wischen gleitet der eigene Zug nicht",
   await starteImBrowser(page);
   await beginnePartie(page);
   await beobachteAnimation(page);
+  // Die Maus zieht nach Koordinaten: das Brett mittig ins Bild, nicht unter die Navigation.
+  await page
+    .getByRole("button", { name: /^g2, Bauer/ })
+    .evaluate((feld) => feld.scrollIntoView({ block: "center" }));
   const start = await page.getByRole("button", { name: /^g1, Springer/ }).boundingBox();
   const ziel = await page.getByRole("button", { name: "f3", exact: true }).boundingBox();
   if (!start || !ziel) throw new Error("Felder nicht sichtbar");

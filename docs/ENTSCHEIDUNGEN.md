@@ -5057,3 +5057,13 @@ war). Der Messlauf bleibt für spätere Datenstände.
   weil die Uhr keinen messbaren Unterschied macht.
 - **Offen:** Wertung je Zeitklasse der Bots ist damit vorerst dieselbe Zahl; Gruppenmodus-Messung
   nach dem endgültigen Satz.
+
+## Sieg in Klassisch vergibt auch den Schnellschach-Stern (24.10.2026 nachmittags, Autor)
+
+- **Hintergrund:** Die App teilt die Zeitklassen wie Lichess (Grundzeit plus 40 Züge Zuschlag:
+  unter 8 min Blitz, unter 25 min Schnellschach, darüber Klassisch); 30+20 und 60+0 sind damit
+  Klassisch, 15+10 Schnellschach. Beim Weltschachbund wäre 30+20 noch Schnellschach.
+- **Entscheidung des Autors:** Wer einen Bot mit 30+20 besiegt, bekommt auch den Stern für
+  Schnellschach. Umgesetzt für die ganze Zeitklasse Klassisch (speicher/besiegt.ts): Ein Sieg landet
+  in den Listen Klassisch und Schnellschach; Blitz bleibt eigen. Für die Freischaltung des
+  Gruppenmodus (irgendeine Zeitklasse) ändert das nichts.

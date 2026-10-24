@@ -1876,3 +1876,19 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   Fehlerzüge) plus diese Gewichte ergibt menschliche Raten je Band ohne Nachregeln. Noch zu tun:
   Gewichte je Phase prüfen, Tagesform/Zeitnot als Faktor, Persönlichkeit als Verschiebung
   einzelner Gewichte innerhalb der Spielerbereiche, Übertragung in engine/menschenwahl.ts.
+
+### Ergebnisse der Nacht, Teil 3 (24.10.2026, 2 Uhr)
+
+- **Beta-Binomial, Filter „bis zur Entscheidung“** fertig (betabinom-bis_entscheidung.json,
+  bericht-bis_entscheidung.txt): Werte fast wie „offen“ (Schnellschach 1200: 31,7 [25–39], Fehler
+  je Partie 10,0 [7,1–12,9]). Filter „alle Züge“ läuft.
+- **Wahlmodell mit quadratischem Elo-Term** (wahlmodell-elo2): oberer Rand besser (Schnellschach
+  2400 echt 15,1, Modell 15,3 statt 16,0; klassisch 9,2/10,7 statt 12,5). **Prüfung je Phase**
+  (phasenpruefung.txt): Mittel- und Endspiel treffen auf 1–2 Punkte; in der **Eröffnung schätzt das
+  Modell starke Spieler zu fehlerhaft** (Schnellschach 2000: echt 8,1, Modell 12,4; 2400: 4,9/9,3):
+  Theoriekenntnis fehlt dem Modell. Zwei Wege, beide vorgesehen: Eröffnungsbuch je Elo-Band
+  (Bots spielen Buchzüge, solange sie im Buch sind) und Gewichte je Phase (Variante
+  wahlmodell-elo2-phase läuft).
+- **Tiefe 18** (500 von 814 Partien): Verlust je Zug T18 ≈ 1,21 · T12, Genauigkeit ≈ T12 − 1,
+  Fehlerrate ≈ 0,02 + 0,89 · T12 (Korrelation 0,90), Patzer je Zug ≈ 0,017 + 1,21 · T12 (0,066
+  statt 0,041), Verlust je Fehler ≈ 1,23 · T12. Umrechnung je Kennzahl linear, gut bestimmt.

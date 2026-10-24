@@ -18,7 +18,7 @@ import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
 import { FEHLERARTEN, type Fehlerart, type Lage } from "./fehlerart";
 import type { Menschenwerte } from "./menschenwahl";
 import type { Zugwahl } from "./spielbewerter";
-import { stilverschiebung, type Stilname } from "./stile";
+import { mischverschiebung, stilverschiebung, type Stilname, type Stilmix } from "./stile";
 import type { Stilmerkmale } from "./stilmerkmale";
 import {
   wahrscheinlichkeiten,
@@ -56,6 +56,8 @@ export interface Wahlschritt {
   readonly stil: number;
   /** Einer der sieben Stile (engine/stile.ts) der vorgefertigten Bots. */
   readonly stilname?: Stilname;
+  /** Stil-Mischung eigener Bots (0.2.126, engine/stile.ts); vorhanden: gilt statt `stilname`. */
+  readonly stilmix?: Stilmix;
 }
 
 function gewichtVon(werte: Menschenwerte, art: Fehlerart | BlinderFleck): number {
@@ -78,6 +80,7 @@ export function verschiebungAus(
   werte: Menschenwerte,
   stil: number,
   stilname?: Stilname,
+  stilmix?: Stilmix,
 ): Wahlverschiebung {
   const haeufigkeit = logGewicht(werte.haeufigkeit);
   const arten: Partial<Record<Fehlerart, number>> = {};
@@ -85,6 +88,7 @@ export function verschiebungAus(
   const flecken: Partial<Record<BlinderFleck, number>> = {};
   for (const fleck of BLINDE_FLECKEN)
     flecken[fleck] = -(gewichtVon(werte, fleck) - 1) * BLINDSTAERKE;
+  if (stilmix) return { arten, flecken, stil: mischverschiebung(stilmix) };
   if (stilname) return { arten, flecken, stil: stilverschiebung(stilname) };
   const stilwerte: Partial<Record<keyof Stilmerkmale, number>> = {};
   for (const name of AGGRESSIV) stilwerte[name] = STILSCHRITT * stil;
@@ -119,7 +123,7 @@ export function waehleMenschlich(
   zufall: () => number,
 ): Zugwahl | null {
   if (kandidaten.length === 0) return null;
-  const verschiebung = verschiebungAus(werte, schritt.stil, schritt.stilname);
+  const verschiebung = verschiebungAus(werte, schritt.stil, schritt.stilname, schritt.stilmix);
   const roh = wahrscheinlichkeiten(
     lage,
     fen,

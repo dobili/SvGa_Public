@@ -13,7 +13,7 @@
  * Abhängigkeiten: stufen.ts, botgruppe.ts, blindeFlecken.ts, fehlerart.ts, schach/phase.ts, i18n.
  */
 import type { Reglerstufen } from "./eigenstufen";
-import type { Stilname } from "./stile";
+import type { Stilmix, Stilname } from "./stile";
 import type { BlinderFleck } from "./blindeFlecken";
 import { gruppeDesBots } from "./botgruppe";
 import { FEHLERARTEN, type Fehlerart } from "./fehlerart";
@@ -69,6 +69,11 @@ export interface EigenerGegner {
    */
   readonly stilname?: Stilname;
   readonly reglerstufen?: Reglerstufen;
+  /**
+   * Stil-Mischung (0.2.126, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
+   * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
+   */
+  readonly stilmix?: Stilmix;
 }
 
 /** Vorsilbe der Kennungen eigener Gegner (unterscheidet sie von den vorgefertigten). */

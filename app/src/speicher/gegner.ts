@@ -11,7 +11,7 @@ import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import { istPortraetwahl } from "../engine/portraetwahl";
 import { REGLERARTEN, reglerstufeAus, type Reglerstufen } from "../engine/eigenstufen";
-import { STILNAMEN, type Stilname } from "../engine/stile";
+import { GEGENUEBER, STILNAMEN, STILPROZENTE, type Stilmix, type Stilname } from "../engine/stile";
 import { menschenwerteAus } from "./menschenwerte";
 import { STIL_MAX, STIL_MIN, STIL_NEUTRAL } from "../engine/stil";
 import type { Stufennummer } from "../engine/stufen";
@@ -93,11 +93,32 @@ export function reglerstufenAus(roh: unknown): Reglerstufen | undefined {
   return aus;
 }
 
-/** Stil und Reglerstufen eines Rohobjekts, nur die vorhandenen. */
-function teilEAus(roh: Roh): Pick<EigenerGegner, "stilname" | "reglerstufen"> {
+/**
+ * Eine Stil-Mischung aus Rohdaten (0.2.126): nur bekannte Stile mit 50, 75, 100 oder 125 %, je
+ * Achse der erste; sonst undefined.
+ */
+export function stilmixAus(roh: unknown): Stilmix | undefined {
+  if (!istObjekt(roh) || Array.isArray(roh)) return undefined;
+  let mix: Stilmix = {};
+  for (const stil of STILNAMEN) {
+    if (stil === "universell") continue;
+    const prozent = roh[stil];
+    const erlaubt = (STILPROZENTE as readonly unknown[]).includes(prozent);
+    if (erlaubt && mix[GEGENUEBER[stil]] === undefined) mix = { ...mix, [stil]: prozent as number };
+  }
+  return mix;
+}
+
+/** Stil, Stil-Mischung und Reglerstufen eines Rohobjekts, nur die vorhandenen. */
+function teilEAus(roh: Roh): Pick<EigenerGegner, "stilname" | "reglerstufen" | "stilmix"> {
   const stilname = stilnameAus(roh.stilname);
+  const stilmix = stilmixAus(roh.stilmix);
   const reglerstufen = reglerstufenAus(roh.reglerstufen);
-  return { ...(stilname ? { stilname } : {}), ...(reglerstufen ? { reglerstufen } : {}) };
+  return {
+    ...(stilname ? { stilname } : {}),
+    ...(stilmix ? { stilmix } : {}),
+    ...(reglerstufen ? { reglerstufen } : {}),
+  };
 }
 
 export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {

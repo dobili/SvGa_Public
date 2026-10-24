@@ -30,7 +30,9 @@ import {
 } from "../../spiel/notmodus";
 import { aktuelleFen, type Partie, type Partiezug } from "../../spiel/partie";
 import { phaseVon } from "../../spiel/phasen";
-import { uciZuSan } from "../../spiel/zuege";
+import { sanZuUci, uciZuSan } from "../../spiel/zuege";
+import { GRUNDSTELLUNG } from "../../spiel/stellungsbau";
+import { BUCHTIEFE, linienzug, praxiszug, type Praxisbuch } from "../../engine/praxisbuch";
 import { findePartie, mitPartie } from "../../speicher/partien";
 import { aendere, speicherzustand } from "../../speicher/speicher";
 import { animationsverzugMs } from "../brett/useZuganimation";
@@ -89,6 +91,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
       fehlerarten: e.fehlerarten ?? null,
       stil: e.stil ?? 0,
       stilname: e.stilname,
+      stilmix: e.stilmix,
       blindeFlecken: e.blindeFlecken ?? [],
       gewichte: e.gewichte,
       haeufigkeit: e.haeufigkeit,
@@ -125,6 +128,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     gewichte: e.gewichte ?? (bot ? faktorenAus(bot.persoenlichkeit, gegnerstaerke(e)) : undefined),
     // Eigene Gegner mit gewähltem Stil (0.2.126) wie vorgefertigte Bots
     stilname: e.stilname ?? bot?.stilname,
+    stilmix: e.stilmix,
     haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,
     hoechstverlust: e.hoechstverlust,
     restMs: eigeneRestzeit(partie, jetztMs),
@@ -225,11 +229,48 @@ export async function spieleVorzug(
  * Der normale Zug des Bots: Zugwahl, simulierte Bedenkzeit, sichtbares Nachdenken, Zug mit Uhr.
  * Würde die Bedenkzeit nicht reichen, kommt er in den Notmodus statt auf Zeit zu verlieren.
  */
+/**
+ * Was die Partie an Buch vorgibt (ui/komponenten/usePartie.ts): Buchzüge in UCI mit Buchtreue, und
+ * seit 0.2.127 das Praxisbuch mit einer festgelegten Linie (leer: nur nach Häufigkeit). Das
+ * Praxisbuch gilt erst, wenn es keine Buchzüge gibt.
+ */
+export interface Buchvorgabe {
+  readonly zuege: string[];
+  readonly treue: number;
+  readonly praxis?: { readonly buch: Praxisbuch; readonly linie: readonly string[] } | null;
+}
+
+/**
+ * Ein Zug aus dem Praxisbuch wie ein Mensch der Stärke der Stufe (0.2.127, engine/praxisbuch.ts),
+ * oder null: ohne Praxisbuch, nach einer eigenen Startstellung, für Spaß-Bots, am Buchende.
+ * Eine festgelegte Linie hat Vorrang, solange die Partie ihr folgt.
+ * Beispiel: Bot der Stufe 7 (etwa 2100) in Schnellschach nach 1. e4 → oft 1… c5, dann Sizilianisch.
+ */
+function praxisErgebnis(
+  partie: Partie,
+  fen: string,
+  wertung: number,
+  vorgabe: Buchvorgabe,
+): { zug: Partiezug; uci: string; breite?: number } | null {
+  const e = partie.einstellung;
+  const bot = gegnerVon(e.bot);
+  if (!vorgabe.praxis || vorgabe.zuege.length > 0 || e.startFen !== GRUNDSTELLUNG) return null;
+  if (bot?.zufallszuege) return null;
+  const verlauf = partie.zuege.map((z) => z.san);
+  const lage = { tempo: wahltempo(e.uhr), wertung, tiefe: bot?.buchtiefe ?? BUCHTIEFE.standard };
+  const san =
+    linienzug(vorgabe.praxis.linie, verlauf) ??
+    praxiszug(vorgabe.praxis.buch, verlauf, lage, Math.random);
+  const uci = san ? sanZuUci(fen, san) : null;
+  if (!san || !uci) return null;
+  return { zug: { san, von: "engine", quelle: "buch", fehler: null, verlust: 0 }, uci };
+}
+
 export async function normalerBotzug(
   id: string,
   fen: string,
   stufennummer: Stufennummer,
-  buchzuege: { zuege: string[]; treue: number },
+  buchzuege: Buchvorgabe,
   laeuft: () => boolean,
 ): Promise<void> {
   const start = Date.now();
@@ -237,8 +278,10 @@ export async function normalerBotzug(
   const profil = jetzige ? profilDerPartie(jetzige, start) : undefined;
   const st = stufe(stufennummer);
   // Gruppenmodus: alle Bots der Stufe beraten sich (engine/gruppenwahl.ts), ohne Eröffnungsbuch.
+  const ausBuch = jetzige ? praxisErgebnis(jetzige, fen, st.wertung, buchzuege) : null;
   const ergebnis =
-    jetzige && gruppenstufe(jetzige.einstellung.bot) !== null
+    ausBuch ??
+    (jetzige && gruppenstufe(jetzige.einstellung.bot) !== null
       ? await gruppenZugMitLage(jetzige, fen, start)
       : await engineZugMitLage(
           engine,
@@ -248,7 +291,7 @@ export async function normalerBotzug(
           Math.random,
           buchzuege.treue,
           profil,
-        );
+        ));
   const vorher = neueste(id);
   if (!laeuft() || !vorher || aktuelleFen(vorher) !== fen) return;
   if (!ergebnis) throw new Error(`Kein Zug der Engine in ${fen}`);

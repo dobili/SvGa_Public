@@ -8,32 +8,45 @@
  * Lichess-Spielern: Königsangriff (Angreifer gegen Positionsspieler), Aktivität (Taktiker gegen
  * Verteidiger), Bauernsturm gegen Vereinfachen (Draufgänger gegen Vereinfacher); gegenüberliegende
  * Speichen sind die beiden Enden einer Achse, die Mitte ist „Universell“. Ein Tipp auf eine
- * Speiche oder die Mitte wählt den Stil, die Auswahlliste darunter tut dasselbe.
+ * Speiche wählt den Stil, die Mitte setzt auf „Universell“ zurück. Seit 0.2.126 (Wunsch des
+ * Autors) trägt jede Speiche vier Punkte: 50, 75, 100 und 125 % der geeichten Verschiebung
+ * (engine/stile.ts; 125 % geht über das hinaus, was echte Spieler zeigen). Mehrere Stile lassen
+ * sich kombinieren, nur die beiden Enden einer Achse nicht, denn sie höben sich auf: Ein Tipp auf
+ * das Gegenüber ersetzt den Stil dieser Achse, ein zweiter Tipp auf denselben Punkt nimmt ihn
+ * weg. Neben dem Netz steht je Achse eine Auswahlliste.
  * Abhängigkeiten: engine/stile.ts, i18n.
  */
-import { STILNAMEN, type Stilname } from "../../engine/stile";
-import { t } from "../../i18n/sprache";
+import {
+  mitStil,
+  ohneStile,
+  STILACHSEN,
+  STILPROZENTE,
+  STILPROZENT_GEEICHT,
+  type Richtungsstil,
+  type Stilmix,
+} from "../../engine/stile";
+import { t, type Textschluessel } from "../../i18n/sprache";
+import { stilProzent } from "./stiltext";
 
-/** Größe der Zeichenfläche und Radien (Bildpunkte im viewBox). */
+/** Größe der Zeichenfläche und Radien (Bildpunkte im viewBox); das Netz bleibt so groß wie vorher. */
 const BREITE = 320;
 const HOEHE = 280;
 const MITTE_X = BREITE / 2;
 const MITTE_Y = HOEHE / 2;
 const RADIUS = 96;
-const RINGE = [1 / 3, 2 / 3, 1];
-const INNEN = 0.22;
+const INNEN = 0.18;
 const BESCHRIFTUNG = 1.28;
-const PUNKT = 9;
-/** Trefferfläche um einen Punkt und Abstand der Beschriftung unter der Mitte, in Punktgrößen. */
-const TREFFER = 2.2;
-const UNTER_DER_MITTE = 2.6;
+/** Der äußerste Ring ist 125 %. */
+const AUSSEN_PROZENT: number = STILPROZENTE[STILPROZENTE.length - 1] ?? STILPROZENT_GEEICHT;
+/** Punkt außen und innen, Trefferfläche, Abstand der Beschriftung unter der Mitte. */
+const PUNKT_AUSSEN = 8;
+const PUNKT_INNEN = 5;
+const TREFFER = 10;
+const UNTER_DER_MITTE = 22;
 const GRAD = Math.PI / 180;
 
 /** Die sechs Speichen im Uhrzeigersinn ab oben; gegenüber liegt das andere Ende derselben Achse. */
-const SPEICHEN: readonly {
-  readonly stil: Exclude<Stilname, "universell">;
-  readonly winkel: number;
-}[] = [
+const SPEICHEN: readonly { readonly stil: Richtungsstil; readonly winkel: number }[] = [
   { stil: "angreifer", winkel: 90 },
   { stil: "taktiker", winkel: 30 },
   { stil: "draufgaenger", winkel: -30 },
@@ -50,31 +63,24 @@ function punkt(winkel: number, r: number): { x: number; y: number } {
   };
 }
 
-/** Die Fläche des gewählten Stils: außen an seiner Speiche, sonst innen. */
-function flaeche(stil: Stilname): string {
-  return SPEICHEN.map((s) => punkt(s.winkel, s.stil === stil ? 1 : INNEN))
+function alsPunkte(r: (stil: Richtungsstil) => number): string {
+  return SPEICHEN.map((s) => punkt(s.winkel, r(s.stil)))
     .map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`)
     .join(" ");
 }
 
-/** Sechseck eines Rings. */
-function ring(r: number): string {
-  return SPEICHEN.map((s) => punkt(s.winkel, r))
-    .map((p) => `${p.x.toFixed(1)},${p.y.toFixed(1)}`)
-    .join(" ");
-}
-
-/** Das Netz mit Speichen, wählbaren Enden und der Mitte. */
-function Netz({ stil, beiWahl }: { stil: Stilname; beiWahl: (s: Stilname) => void }) {
+/** Das Netz mit Speichen, vier wählbaren Punkten je Speiche und der Mitte. */
+function Netz({ mix, beiWahl }: Wahlprops) {
+  const flaeche = alsPunkte((stil) => Math.max(INNEN, (mix[stil] ?? 0) / AUSSEN_PROZENT));
   return (
     <svg
       className="stilnetz-bild"
       viewBox={`0 0 ${BREITE} ${HOEHE}`}
-      role="radiogroup"
+      role="group"
       aria-label={t("spielen.stil")}
     >
-      {RINGE.map((r) => (
-        <polygon key={r} points={ring(r)} className="stilnetz-ring" />
+      {STILPROZENTE.map((p) => (
+        <polygon key={p} points={alsPunkte(() => p / AUSSEN_PROZENT)} className="stilnetz-ring" />
       ))}
       {SPEICHEN.map((s) => {
         const aussen = punkt(s.winkel, 1);
@@ -89,89 +95,152 @@ function Netz({ stil, beiWahl }: { stil: Stilname; beiWahl: (s: Stilname) => voi
           />
         );
       })}
-      <polygon points={flaeche(stil)} className="stilnetz-flaeche" />
-      {SPEICHEN.map((s) => (
-        <Wahlpunkt
-          key={s.stil}
-          stil={s.stil}
-          winkel={s.winkel}
-          gewaehlt={stil === s.stil}
-          beiWahl={beiWahl}
-        />
-      ))}
+      <polygon points={flaeche} className="stilnetz-flaeche" />
+      {SPEICHEN.flatMap((s) =>
+        STILPROZENTE.map((p) => (
+          <Wahlpunkt
+            key={`${s.stil}-${p}`}
+            name={stilProzent(s.stil, p)}
+            ort={punkt(s.winkel, p / AUSSEN_PROZENT)}
+            beschriftung={
+              p === AUSSEN_PROZENT
+                ? {
+                    text: t(`stil.${s.stil}`),
+                    aktiv: mix[s.stil] !== undefined,
+                    ...punkt(s.winkel, BESCHRIFTUNG),
+                  }
+                : null
+            }
+            gewaehlt={mix[s.stil] === p}
+            beiWahl={() => beiWahl(mitStil(mix, s.stil, p))}
+          />
+        )),
+      )}
       <Wahlpunkt
-        stil="universell"
-        winkel={0}
-        gewaehlt={stil === "universell"}
-        beiWahl={beiWahl}
-        mitte
+        name={t("stil.universell")}
+        ort={{ x: MITTE_X, y: MITTE_Y }}
+        beschriftung={{
+          text: t("stil.universell"),
+          aktiv: Object.keys(mix).length === 0,
+          x: MITTE_X,
+          y: MITTE_Y + UNTER_DER_MITTE,
+        }}
+        gewaehlt={Object.keys(mix).length === 0}
+        beiWahl={() => beiWahl({})}
       />
     </svg>
   );
 }
 
-/** Ein wählbares Ende einer Speiche (oder die Mitte) mit Beschriftung. */
+/** Ein wählbarer Punkt (Speiche und Ausprägung, oder die Mitte), außen mit Beschriftung. */
 function Wahlpunkt({
-  stil,
-  winkel,
+  name,
+  ort,
+  beschriftung,
   gewaehlt,
   beiWahl,
-  mitte = false,
 }: {
-  stil: Stilname;
-  winkel: number;
+  name: string;
+  ort: { x: number; y: number };
+  /** Außen: Name des Stils, hervorgehoben, wenn er in der Mischung vorkommt. */
+  beschriftung: { text: string; aktiv: boolean; x: number; y: number } | null;
   gewaehlt: boolean;
-  beiWahl: (s: Stilname) => void;
-  mitte?: boolean;
+  beiWahl: () => void;
 }) {
-  const p = mitte ? { x: MITTE_X, y: MITTE_Y } : punkt(winkel, 1);
-  const b = mitte
-    ? { x: MITTE_X, y: MITTE_Y + PUNKT * UNTER_DER_MITTE }
-    : punkt(winkel, BESCHRIFTUNG);
   return (
     <g
-      role="radio"
+      role="checkbox"
       aria-checked={gewaehlt}
-      aria-label={t(`stil.${stil}`)}
+      aria-label={name}
       tabIndex={0}
       className={gewaehlt ? "stilnetz-punkt gewaehlt" : "stilnetz-punkt"}
-      onClick={() => beiWahl(stil)}
+      onClick={beiWahl}
       onKeyDown={(e) => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
-          beiWahl(stil);
+          beiWahl();
         }
       }}
     >
-      <circle cx={p.x} cy={p.y} r={PUNKT * TREFFER} className="stilnetz-treffer" />
-      <circle cx={p.x} cy={p.y} r={PUNKT} />
-      <text x={b.x} y={b.y} textAnchor="middle" dominantBaseline="middle">
-        {t(`stil.${stil}`)}
-      </text>
+      <circle cx={ort.x} cy={ort.y} r={TREFFER} className="stilnetz-treffer" />
+      <circle cx={ort.x} cy={ort.y} r={beschriftung ? PUNKT_AUSSEN : PUNKT_INNEN} />
+      {beschriftung && (
+        <text
+          x={beschriftung.x}
+          y={beschriftung.y}
+          textAnchor="middle"
+          dominantBaseline="middle"
+          className={beschriftung.aktiv ? "aktiv" : undefined}
+        >
+          {beschriftung.text}
+        </text>
+      )}
     </g>
   );
 }
 
-/** Spinnennetz, Auswahlliste und die Beschreibung des gewählten Stils. */
-export function Stilnetz({ stil, beiWahl }: { stil: Stilname; beiWahl: (s: Stilname) => void }) {
+interface Wahlprops {
+  mix: Stilmix;
+  beiWahl: (mix: Stilmix) => void;
+}
+
+/** Je Achse eine Auswahlliste: keiner, oder eines der beiden Enden mit Ausprägung. */
+function Achsenliste({
+  mix,
+  beiWahl,
+  achse,
+}: Wahlprops & { achse: readonly [Richtungsstil, Richtungsstil] }) {
+  const [a, b] = achse;
+  const wert =
+    mix[a] !== undefined ? `${a}:${mix[a]}` : mix[b] !== undefined ? `${b}:${mix[b]}` : "";
+  const waehle = (neu: string) => {
+    const ohne = ohneStile(mix, [a, b]);
+    const [stil, prozent] = neu.split(":");
+    beiWahl(stil ? { ...ohne, [stil]: Number(prozent) } : ohne);
+  };
+  return (
+    <label className="stilnetz-liste">
+      <span className="einstellung-name">{t(`spielen.stilachse.${a}` as Textschluessel)}</span>
+      <select value={wert} onChange={(e) => waehle(e.target.value)}>
+        <option value="">{t("spielen.stilachse.keine")}</option>
+        {[a, b].flatMap((stil) =>
+          STILPROZENTE.map((p) => (
+            <option key={`${stil}:${p}`} value={`${stil}:${p}`}>
+              {stilProzent(stil, p)}
+            </option>
+          )),
+        )}
+      </select>
+    </label>
+  );
+}
+
+/** Spinnennetz, je Achse eine Auswahlliste und die Beschreibung der gewählten Stile. */
+export function Stilnetz({ mix, beiWahl }: Wahlprops) {
+  const gewaehlt = Object.entries(mix) as [Richtungsstil, number][];
   return (
     <div className="stilnetz" data-testid="stilnetz">
       <span className="einstellung-name">{t("spielen.stil")}</span>
-      <Netz stil={stil} beiWahl={beiWahl} />
-      <label className="stilnetz-liste">
-        <span className="nur-vorlesen">{t("spielen.stil")}</span>
-        <select value={stil} onChange={(e) => beiWahl(e.target.value as Stilname)}>
-          {STILNAMEN.map((s) => (
-            <option key={s} value={s}>
-              {t(`stil.${s}`)}
-            </option>
-          ))}
-        </select>
-      </label>
+      <Netz mix={mix} beiWahl={beiWahl} />
+      <div className="stilnetz-listen">
+        {STILACHSEN.map((achse) => (
+          <Achsenliste key={achse[0]} achse={achse} mix={mix} beiWahl={beiWahl} />
+        ))}
+      </div>
       <p className="hinweis">{t("spielen.stilnetz.hinweis")}</p>
-      <p className="hinweis" data-testid="stilnetz-text">
-        <strong>{t(`stil.${stil}`)}:</strong> {t(`stil.${stil}.text`)}
-      </p>
+      <div className="hinweis" data-testid="stilnetz-text">
+        {gewaehlt.length === 0 ? (
+          <p>
+            <strong>{t("stil.universell")}:</strong> {t("stil.universell.text")}
+          </p>
+        ) : (
+          gewaehlt.map(([stil, prozent]) => (
+            <p key={stil}>
+              <strong>{stilProzent(stil, prozent)}:</strong> {t(`stil.${stil}.text`)}
+            </p>
+          ))
+        )}
+      </div>
     </div>
   );
 }

@@ -12,7 +12,7 @@
  * engine/stufen.ts.
  */
 import type { Reglerstufen } from "../engine/eigenstufen";
-import type { Stilname } from "../engine/stile";
+import type { Stilmix, Stilname } from "../engine/stile";
 import { type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
@@ -78,6 +78,11 @@ export interface Spielvorlieben {
    * eigenen Stufe. Fehlend: Universell, wie der Median, wie Menschen, unbegrenzt.
    */
   readonly stilname?: Stilname;
+  /**
+   * Stil-Mischung (0.2.126, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
+   * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
+   */
+  readonly stilmix?: Stilmix;
   readonly reglerstufen?: Reglerstufen;
   readonly haeufigkeit?: number;
   readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;

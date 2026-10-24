@@ -15,6 +15,7 @@
  */
 import type { EigenerGegner } from "../../engine/gegner";
 import { STIL_NEUTRAL } from "../../engine/stil";
+import { hauptstil, mixAusStil } from "../../engine/stile";
 import { mitVorlieben, type Spielvorlieben } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
 import { ErweiterteFehler } from "./ErweiterteFehler";
@@ -67,7 +68,10 @@ export function EigeneStufe({
           mitBildschirm({ stufenJePhase, stufe: stufenJePhase.mittelspiel, bot: null })
         }
       />
-      <Stilnetz stil={v.stilname ?? "universell"} beiWahl={(stilname) => mit({ stilname })} />
+      <Stilnetz
+        mix={v.stilmix ?? mixAusStil(v.stilname)}
+        beiWahl={(stilmix) => mit({ stilmix, stilname: hauptstil(stilmix) })}
+      />
       {/* Seit 0.2.80 hier statt in den Einstellungen (Wunsch des Autors). */}
       <FehlerartenKarte
         erlaubt={v.erlaubteFehlerarten}

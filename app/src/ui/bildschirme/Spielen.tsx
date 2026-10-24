@@ -18,7 +18,7 @@ import { useState, type ReactNode } from "react";
 import { useNavigation } from "../../app/navigationsKontext";
 import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
-import { neuePartie, spielbar } from "../../spiel/partie";
+import { EROEFFNUNG_PRAXIS, neuePartie, spielbar } from "../../spiel/partie";
 import { UHR_VORGABEN } from "../../spiel/uhr";
 import { uhrname, uhrstelle, uhrStellen, wirksameUhr } from "../komponenten/uhrwahl";
 import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/partien";
@@ -315,7 +315,8 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
   const [wahl, setzeWahl] = useState<Wahl>({
     farbe: seiteAmZug(fen),
     vorlieben: spiel.vorlieben,
-    eroeffnung: null,
+    // Seit 0.2.127: Bots eröffnen wie Menschen ihrer Stärke (engine/praxisbuch.ts)
+    eroeffnung: EROEFFNUNG_PRAXIS,
   });
   // Eine eigene Stellung: Der Leser spielt zunächst die Seite am Zug.
   const uebernimm = (neu: string) => {

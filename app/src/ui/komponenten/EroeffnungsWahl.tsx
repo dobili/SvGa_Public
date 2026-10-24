@@ -8,11 +8,18 @@
  * die Engine die übrigen Buchzüge oder selbst. „frei“ heißt seit 0.2.40: ohne Buch, die Engine
  * spielt die Eröffnung selbst (Wunsch des Autors); „eine Eröffnung des Buches (zufällig)“ ist das
  * bisherige Verhalten mit Buchtreue 0,85. Die Liste kommt aus dem Eröffnungsindex.
- * Abhängigkeiten: schach/eroeffnungsindex.ts, useEroeffnungsindex, i18n.
+ * Seit 0.2.127 (Wunsch des Autors) ist die Vorgabe „wie Menschen dieser Stärke“: Der Bot eröffnet
+ * nach dem Praxisbuch (engine/praxisbuch.ts). Dazu kommen die häufigsten benannten Eröffnungen
+ * aus der Praxis (Lichess-Namen), denen der Bot folgt, solange du ihre Züge spielst.
+ * Abhängigkeiten: schach/eroeffnungsindex.ts, engine/praxisbuch.ts, daten/laden.ts,
+ * useEroeffnungsindex, useDaten, i18n.
  */
 import { sprache, t } from "../../i18n/sprache";
 import { eroeffnungsnamen, hauptlinieVon } from "../../schach/eroeffnungsindex";
-import { EROEFFNUNG_BUCH } from "../../spiel/partie";
+import { ladePraxisbuch } from "../../daten/laden";
+import { praxislinie } from "../../engine/praxisbuch";
+import { EROEFFNUNG_BUCH, EROEFFNUNG_PRAXIS, PRAXIS_VORSILBE } from "../../spiel/partie";
+import { useDaten } from "./useDaten";
 import { sanInSprache } from "../../schach/notation";
 import { useEroeffnungsindex } from "./useEroeffnungsindex";
 import { Titelsymbol } from "./Titelsymbol";
@@ -44,15 +51,29 @@ export function EroeffnungsWahl({
   eingebettet?: boolean;
 }) {
   const index = useEroeffnungsindex(KAPITEL_MIT_EROEFFNUNGEN);
+  const praxisdaten = useDaten(ladePraxisbuch, "praxisbuch");
   if (!index) return null;
+  const praxis = praxisdaten.art === "fertig" ? praxisdaten.wert : null;
   const namen = eroeffnungsnamen(index);
-  const linie = gewaehlt && gewaehlt !== EROEFFNUNG_BUCH ? hauptlinieVon(index, gewaehlt) : [];
+  const praxisnamen = (praxis?.eroeffnungen ?? []).map(([name]) => name).sort();
+  const ausDerPraxis = gewaehlt?.startsWith(PRAXIS_VORSILBE) ?? false;
+  const linie = ausDerPraxis
+    ? praxis
+      ? praxislinie(praxis, (gewaehlt ?? "").slice(PRAXIS_VORSILBE.length))
+      : []
+    : gewaehlt && gewaehlt !== EROEFFNUNG_BUCH && gewaehlt !== EROEFFNUNG_PRAXIS
+      ? hauptlinieVon(index, gewaehlt)
+      : [];
   const hinweis =
     gewaehlt === null
       ? "spielen.eroeffnungFrei"
       : gewaehlt === EROEFFNUNG_BUCH
         ? "spielen.eroeffnungBuch"
-        : "spielen.eroeffnungHinweis";
+        : gewaehlt === EROEFFNUNG_PRAXIS
+          ? "spielen.eroeffnungPraxis"
+          : ausDerPraxis
+            ? "spielen.eroeffnungPraxisLinie"
+            : "spielen.eroeffnungHinweis";
   return (
     <section
       className={eingebettet ? "eroeffnungswahl" : "karte eroeffnungswahl"}
@@ -68,13 +89,25 @@ export function EroeffnungsWahl({
         value={gewaehlt ?? FREI}
         onChange={(e) => beiWahl(e.target.value === FREI ? null : e.target.value)}
       >
+        <option value={EROEFFNUNG_PRAXIS}>{t("spielen.eroeffnung.praxis")}</option>
         <option value={FREI}>{t("spielen.eroeffnung.frei")}</option>
         <option value={EROEFFNUNG_BUCH}>{t("spielen.eroeffnung.buch")}</option>
-        {namen.map((name) => (
-          <option key={name} value={name}>
-            {name}
-          </option>
-        ))}
+        <optgroup label={t("spielen.eroeffnung.ausDemBuch")}>
+          {namen.map((name) => (
+            <option key={name} value={name}>
+              {name}
+            </option>
+          ))}
+        </optgroup>
+        {praxisnamen.length > 0 && (
+          <optgroup label={t("spielen.eroeffnung.ausDerPraxis")}>
+            {praxisnamen.map((name) => (
+              <option key={name} value={`${PRAXIS_VORSILBE}${name}`}>
+                {name}
+              </option>
+            ))}
+          </optgroup>
+        )}
       </select>
       {gewaehlt && linie.length > 0 && (
         <p className="hinweis">{t("spielen.eroeffnungZuege", { zuege: zugfolge(linie) })}</p>

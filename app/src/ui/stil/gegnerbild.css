@@ -335,6 +335,7 @@
   stroke: var(--gold-text);
 }
 
+.stilnetz-punkt text.aktiv,
 .stilnetz-punkt.gewaehlt text {
   fill: var(--gold-text);
   font-weight: 700;
@@ -347,6 +348,16 @@
 .stilnetz-punkt:focus-visible circle:not(.stilnetz-treffer) {
   stroke: var(--gold-text);
   stroke-width: 3px;
+}
+
+.stilnetz-listen {
+  display: grid;
+  gap: var(--raster);
+}
+
+.stilnetz-liste {
+  display: grid;
+  gap: calc(var(--raster) / 2);
 }
 
 .stilnetz-liste select {

@@ -26,29 +26,16 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
-import type { Phase } from "../schach/phase";
 import { bedenkzeitMs } from "./bedenkzeit";
 import { wahltempo } from "./wahlmodell";
 import type { EngineDienst } from "./engineDienst";
 import type { Fehlerart } from "./fehlerart";
-import { staerkeAusStufen, staerkeDesBots } from "./botstaerke";
-import { BOTKANDIDATEN } from "./botkandidaten";
-import { GEGNER } from "./gegner";
-import { faktorenAus } from "./gegnerbau";
-import { gruppenstufe, gruppenstufen } from "./gruppe";
 import { gruppenzug, mitgliederFuer } from "./gruppenwahl";
 import { RUHIGER_VERLAUF, tagesform } from "./menschlich";
 import { nativeEngine } from "./nativeEngine.testhilfe";
 import { nodeEngine } from "./nodeEngine.testhilfe";
-import {
-  grundschicht,
-  naechsteStufe,
-  stufe,
-  STUFEN_ZAHL,
-  type Stufe,
-  type Stufennummer,
-} from "./stufen";
-import { BUCHTREUE, REINES_PROFIL, STANDARDPROFIL, type Gegnerprofil } from "./zugwahl";
+import { naechsteStufe, stufe, type Stufe, type Stufennummer } from "./stufen";
+import { BUCHTREUE, type Gegnerprofil } from "./zugwahl";
 import { zuglage } from "../spiel/botzeit";
 import { engineZugMitLage } from "../spiel/enginezug";
 import { phaseVon } from "../spiel/phasen";
@@ -62,6 +49,8 @@ import {
 } from "../spiel/partie";
 import { brauchtNotmodus, NOTMODUS_REST_MS } from "../spiel/notmodus";
 import { fenNach, uciZuSan } from "../spiel/zuege";
+import { alleGleich, spieler, type Spieler } from "./messspieler.testhilfe";
+import { buchzug } from "./messbuch.testhilfe";
 import { planeWeiter, vorzugMitUhr, type Seitenstand } from "./messuhr.testhilfe";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -117,68 +106,6 @@ function zufallsquelle(saat: number): () => number {
 }
 
 /** Ein Spieler der Messung: Stufen je Phase, Profil, Uhr (null: unbegrenzt Zeit). */
-interface Spieler {
-  readonly stufen: Readonly<Record<Phase, Stufennummer>>;
-  readonly ersatz: Stufe | null;
-  readonly profil: Gegnerprofil;
-  readonly uhr: { readonly grundzeitMs: number; readonly zuschlagMs: number } | null;
-  /** Gruppenmodus („@gruppe-3“): alle Bots der Stufe ziehen gemeinsam (engine/gruppenwahl.ts). */
-  readonly gruppe?: Stufennummer;
-}
-
-function alleGleich(n: Stufennummer): Readonly<Record<Phase, Stufennummer>> {
-  return { eroeffnung: n, mittelspiel: n, endspiel: n };
-}
-
-/** Ein vorgefertigter Bot mit seinen Stufen je Phase und seinem Profil. */
-function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
-  const bot = /^@([a-z0-9-]+)$/.exec(kern); // Ziffern: Kandidaten „k1-…“ (0.2.125)
-  if (!bot?.[1]) return null;
-  const gruppe = gruppenstufe(bot[1]);
-  if (gruppe !== null) {
-    return { stufen: gruppenstufen(gruppe), ersatz: null, profil: STANDARDPROFIL, uhr, gruppe };
-  }
-  // Vorgefertigte Bots und die Kandidaten des neuen Bot-Satzes (0.2.125)
-  const g = [...GEGNER, ...BOTKANDIDATEN].find((x) => x.kennung === bot[1]);
-  if (!g) throw new Error(`Unbekannter Bot: ${kern}`);
-  const profil: Gegnerprofil = {
-    ...STANDARDPROFIL,
-    fehlerarten: g.fehlerarten,
-    stil: g.stil,
-    blindeFlecken: g.blindeFlecken,
-    // Wie in der App (ui/komponenten/botzug.ts): Faktoren aus den Stufen der Persönlichkeit
-    gewichte: faktorenAus(
-      g.persoenlichkeit,
-      staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase),
-    ),
-    stilname: g.stilname,
-    haeufigkeit: g.haeufigkeit,
-    zufallszuege: g.zufallszuege,
-  };
-  return { stufen: g.stufenJePhase, ersatz: null, profil, uhr };
-}
-
-/** Spieler aus dem Kürzel der Paarung (Kopf der Datei). */
-function spieler(kuerzel: string): Spieler {
-  const [kern = "", uhrtext] = kuerzel.split("~");
-  const teile = uhrtext?.split("+").map(Number);
-  const uhr = teile
-    ? { grundzeitMs: (teile[0] ?? 0) * SEKUNDE_MS, zuschlagMs: (teile[1] ?? 0) * SEKUNDE_MS }
-    : null;
-  const bot = botspieler(kern, uhr);
-  if (bot) return bot;
-  const frei = /^(\d+)x(\d+(?:\.\d+)?)$/.exec(kern);
-  if (frei?.[1] && frei[2]) {
-    const ersatz = { ...stufe(1), grund: grundschicht(Number(frei[1]), Number(frei[2])) };
-    return { stufen: alleGleich(1), ersatz, profil: REINES_PROFIL, uhr };
-  }
-  const stufig = /^(\d+)(m?)$/.exec(kern);
-  const nummer = Number(stufig?.[1]);
-  if (!stufig || nummer < 1 || nummer > STUFEN_ZAHL) throw new Error(`Unbekanntes Kürzel: ${kern}`);
-  const profil = stufig[2] ? STANDARDPROFIL : REINES_PROFIL;
-  return { stufen: alleGleich(nummer as Stufennummer), ersatz: null, profil, uhr };
-}
-
 /** Die Stufe für diesen Zug: Stufe der Phase, Zug für Zug höchstens eine Stufe weiter (App). */
 function stufeFuer(s: Spieler, fen: string, letzte: Stufennummer | null): Stufe {
   if (s.ersatz) return s.ersatz;
@@ -239,6 +166,7 @@ async function zugMitUhr(
   stand: Seitenstand,
   zufall: () => number,
   saat: string,
+  anfang: readonly string[],
 ): Promise<Partie | null> {
   const fen = stellungen(lauf).at(-1) ?? GRUNDSTELLUNG;
   const st = stufeFuer(s, fen, stand.letzte);
@@ -252,7 +180,15 @@ async function zugMitUhr(
   const waehle = async (f: string, restMs: number) =>
     (await zug(f, { ...profil, restMs }))?.uci ?? null;
   if (s.uhr && stand.vorzuege) return vorzugMitUhr(engine, lauf, s.uhr.zuschlagMs, stand, waehle);
-  const ergebnis = await zug(fen, profil);
+  const ergebnis =
+    buchzug(
+      s.buchtiefe,
+      s.uhr,
+      st.wertung,
+      [...anfang, ...lauf.zuege.map((z) => z.san)],
+      fen,
+      zufall,
+    ) ?? (await zug(fen, profil));
   if (!ergebnis) return null;
   if (s.uhr && stand.rest !== null) {
     const bedenk = bedenkzeitMs(
@@ -262,7 +198,7 @@ async function zugMitUhr(
         restMs: stand.rest,
         zugnummer: Math.floor(lauf.zuege.length / 2) + 1,
         lage: zuglage(lauf, ergebnis.uci, ergebnis.breite),
-        buchzug: false,
+        buchzug: ergebnis.zug.quelle === "buch",
       },
       zufall,
     );
@@ -333,7 +269,7 @@ async function spiele(
     const s = schwarzAmZug ? schwarz : weiss;
     const stand = staende[schwarzAmZug ? 1 : 0] as Seitenstand;
     const kennung = `${saat}-${schwarzAmZug ? "s" : "w"}`;
-    const weiter = await zugMitUhr(engine, lauf, s, stand, zufall, kennung);
+    const weiter = await zugMitUhr(engine, lauf, s, stand, zufall, kennung, anfang);
     if (!weiter) break;
     lauf = weiter;
   }

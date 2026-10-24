@@ -13,7 +13,8 @@
  */
 import { useEffect, useMemo, useState } from "react";
 import { AuftragAbgebrochen } from "../../engine/engineDienst";
-import { ladeEroeffnungsliste, ladeKapitel } from "../../daten/laden";
+import { ladeEroeffnungsliste, ladeKapitel, ladePraxisbuch } from "../../daten/laden";
+import { praxislinie, type Praxisbuch } from "../../engine/praxisbuch";
 import { familieDerBucheroeffnung, zuegeDerFamilie } from "../../schach/eroeffnungsfamilie";
 import { eroeffnungsnamenAus, type Eroeffnungsnamen } from "../../schach/eroeffnungsnamen";
 import {
@@ -35,6 +36,8 @@ import {
   aktuelleFen,
   amZug,
   EROEFFNUNG_BUCH,
+  EROEFFNUNG_PRAXIS,
+  PRAXIS_VORSILBE,
   gibAuf,
   leserzug,
   type Partie,
@@ -42,7 +45,14 @@ import {
 import { findePartie } from "../../speicher/partien";
 import { useSpeicher } from "../../speicher/speicher";
 import { useDaten } from "./useDaten";
-import { aendereNeueste, neueste, normalerBotzug, spieleVorzug, stufeFuer } from "./botzug";
+import {
+  aendereNeueste,
+  neueste,
+  normalerBotzug,
+  spieleVorzug,
+  stufeFuer,
+  type Buchvorgabe,
+} from "./botzug";
 import { vorzugFuer } from "./botNotmodus";
 import { mitGesicherterUhr, sichereUhr, verwerfeUhrsicherung } from "./uhrNotsicherung";
 import { animationsverzugMs } from "../brett/useZuganimation";
@@ -73,6 +83,8 @@ export interface Partiesteuerung {
 function useBuch() {
   const daten = useDaten(() => Promise.all(BUCHKAPITEL.map(ladeKapitel)), "eroeffnungen");
   const liste = useDaten(ladeEroeffnungsliste, "eroeffnungsliste");
+  const praxisdaten = useDaten(ladePraxisbuch, "praxisbuch");
+  const praxis = praxisdaten.art === "fertig" ? praxisdaten.wert : null;
   const index = useMemo(
     () => (daten.art === "fertig" ? baueEroeffnungsindex(daten.wert) : null),
     [daten],
@@ -81,9 +93,9 @@ function useBuch() {
     () => (liste.art === "fertig" ? eroeffnungsnamenAus(liste.wert) : new Map()),
     [liste],
   );
-  const bereit = daten.art !== "laedt" && liste.art !== "laedt";
+  const bereit = daten.art !== "laedt" && liste.art !== "laedt" && praxisdaten.art !== "laedt";
   // Stabil halten: Das Objekt steht in den Abhängigkeiten des Zug-Effekts (useEngineZug).
-  return useMemo(() => ({ bereit, index, bekannte }), [bereit, index, bekannte]);
+  return useMemo(() => ({ bereit, index, bekannte, praxis }), [bereit, index, bekannte, praxis]);
 }
 
 /**
@@ -94,12 +106,21 @@ function useBuch() {
  * alle Buchzüge.
  */
 function buchzuegeFuer(
-  buch: { index: Eroeffnungsindex | null; bekannte: Eroeffnungsnamen },
+  buch: { index: Eroeffnungsindex | null; bekannte: Eroeffnungsnamen; praxis: Praxisbuch | null },
   fen: string,
   eroeffnung: string | null,
-): { zuege: string[]; treue: number } {
-  const { index, bekannte } = buch;
-  if (!index || eroeffnung === null) return { zuege: [], treue: BUCHTREUE };
+): Buchvorgabe {
+  const { index, bekannte, praxis } = buch;
+  const ohne = { zuege: [], treue: BUCHTREUE };
+  if (eroeffnung === null) return ohne;
+  // Seit 0.2.127: wie Menschen der Stärke des Bots, oder eine benannte Eröffnung aus der Praxis
+  if (eroeffnung === EROEFFNUNG_PRAXIS)
+    return { ...ohne, praxis: praxis && { buch: praxis, linie: [] } };
+  if (eroeffnung.startsWith(PRAXIS_VORSILBE)) {
+    const linie = praxis ? praxislinie(praxis, eroeffnung.slice(PRAXIS_VORSILBE.length)) : [];
+    return { ...ohne, praxis: praxis && { buch: praxis, linie } };
+  }
+  if (!index) return ohne;
   if (eroeffnung !== EROEFFNUNG_BUCH) {
     const inDerEroeffnung = buchzuegeZu(index, fen, eroeffnung);
     if (inDerEroeffnung.length > 0) return { zuege: inDerEroeffnung, treue: BUCHTREUE_VORGABE };
@@ -107,7 +128,12 @@ function buchzuegeFuer(
     const ausDerListe = familie ? zuegeDerFamilie(bekannte, fen, familie) : [];
     if (ausDerListe.length > 0) return { zuege: ausDerListe, treue: BUCHTREUE_VORGABE };
   }
-  return { zuege: buchzuegeAb(index, fen), treue: BUCHTREUE };
+  // Nach dem Ende der Buch-Eröffnung (seit 0.2.127): weiter wie Menschen, nicht wie die Engine
+  return {
+    zuege: buchzuegeAb(index, fen),
+    treue: BUCHTREUE,
+    praxis: praxis && { buch: praxis, linie: [] },
+  };
 }
 
 /** Lässt die Engine ziehen, solange sie am Zug ist; im Notmodus mit Vorzügen. */

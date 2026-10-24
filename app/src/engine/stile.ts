@@ -65,9 +65,88 @@ const STILE: Readonly<Record<Stilname, Stilverschiebung>> = {
 };
 
 /**
- * Die Verschiebung eines Stils. Beispiel: „angreifer“ → Schach und Königsnähe je +0,6;
+ * Die Verschiebung eines Stils, auf Wunsch abgeschwächt oder verstärkt (Anteil 1: die geeichte
+ * Stärke). Beispiel: „angreifer“ → Schach und Königsnähe je +0,6; Anteil 0,5 → je +0,3;
  * „universell“ → nichts.
  */
-export function stilverschiebung(stil: Stilname): Stilverschiebung {
-  return STILE[stil];
+export function stilverschiebung(stil: Stilname, anteil = 1): Stilverschiebung {
+  const aus: Partial<Record<keyof Stilmerkmale, number>> = {};
+  for (const [merkmal, wert] of Object.entries(STILE[stil]) as [keyof Stilmerkmale, number][]) {
+    aus[merkmal] = wert * anteil;
+  }
+  return aus;
+}
+
+/** Ein Stil mit Richtung (alle außer „universell“). */
+export type Richtungsstil = Exclude<Stilname, "universell">;
+
+/**
+ * Eine Stil-Mischung eigener Bots (0.2.126, Wunsch des Autors): je Stil die Ausprägung in Prozent
+ * der geeichten Stärke (50, 75, 100 oder 125). Je Achse höchstens ein Stil, denn die beiden Enden
+ * einer Achse höben sich auf. Leer: universell.
+ */
+export type Stilmix = Readonly<Partial<Record<Richtungsstil, number>>>;
+
+/** Die wählbaren Ausprägungen in Prozent; 100 ist die geeichte Stärke, 125 geht darüber hinaus. */
+export const STILPROZENTE = [50, 75, 100, 125] as const;
+export const STILPROZENT_GEEICHT = 100;
+
+/** Das andere Ende derselben Achse. */
+export const GEGENUEBER: Readonly<Record<Richtungsstil, Richtungsstil>> = {
+  angreifer: "positionsspieler",
+  positionsspieler: "angreifer",
+  taktiker: "verteidiger",
+  verteidiger: "taktiker",
+  draufgaenger: "vereinfacher",
+  vereinfacher: "draufgaenger",
+};
+
+/** Die drei Achsen, je mit ihren beiden Enden. */
+export const STILACHSEN: readonly (readonly [Richtungsstil, Richtungsstil])[] = [
+  ["angreifer", "positionsspieler"],
+  ["taktiker", "verteidiger"],
+  ["draufgaenger", "vereinfacher"],
+];
+
+/**
+ * Die Verschiebung einer Mischung: Summe der Stile mal Prozent.
+ * Beispiel: { angreifer: 100, taktiker: 50 } → Schach +0,6, Königsnähe +0,6, Schlag +0,2,
+ * Vorwärts +0,15, Rückzug −0,175.
+ */
+export function mischverschiebung(mix: Stilmix): Stilverschiebung {
+  const aus: Partial<Record<keyof Stilmerkmale, number>> = {};
+  for (const [stil, prozent] of Object.entries(mix) as [Richtungsstil, number][]) {
+    const teil = stilverschiebung(stil, prozent / STILPROZENT_GEEICHT);
+    for (const [merkmal, wert] of Object.entries(teil) as [keyof Stilmerkmale, number][]) {
+      aus[merkmal] = (aus[merkmal] ?? 0) + wert;
+    }
+  }
+  return aus;
+}
+
+/**
+ * Ein Tipp auf einen Punkt des Netzes: setzt den Stil auf die Ausprägung und nimmt das Gegenüber
+ * weg; derselbe Punkt noch einmal nimmt den Stil weg.
+ * Beispiel: {} + angreifer 75 → { angreifer: 75 }; + positionsspieler 100 → { positionsspieler: 100 }.
+ */
+export function mitStil(mix: Stilmix, stil: Richtungsstil, prozent: number): Stilmix {
+  const ohne = ohneStile(mix, [stil, GEGENUEBER[stil]]);
+  return mix[stil] === prozent ? ohne : { ...ohne, [stil]: prozent };
+}
+
+/** Die Mischung ohne die genannten Stile. Beispiel: { angreifer: 50 } ohne [angreifer] → {}. */
+export function ohneStile(mix: Stilmix, weg: readonly Richtungsstil[]): Stilmix {
+  return Object.fromEntries(
+    Object.entries(mix).filter(([stil]) => !(weg as readonly string[]).includes(stil)),
+  );
+}
+
+/** Die Mischung eines einzelnen Stils (ältere Daten mit nur `stilname`). */
+export function mixAusStil(stil: Stilname | undefined): Stilmix {
+  return stil && stil !== "universell" ? { [stil]: STILPROZENT_GEEICHT } : {};
+}
+
+/** Der erste Stil einer Mischung (für `stilname`, das ältere Versionen lesen), sonst universell. */
+export function hauptstil(mix: Stilmix): Stilname {
+  return (Object.keys(mix)[0] as Richtungsstil | undefined) ?? "universell";
 }

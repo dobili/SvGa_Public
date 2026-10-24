@@ -254,8 +254,8 @@ test("Eigener Gegner „Rambo“ (Angreifer, ohne „Figur hängen“): anlegen,
   await page.getByLabel("Name").fill("Rambo");
   // Seit 0.2.126 (Teil E): Stil im Spinnennetz statt Regler, Regler auf menschlichen Quantilen.
   const netz = page.getByTestId("stilnetz");
-  await netz.getByRole("radio", { name: "Angreifer" }).click();
-  await expect(netz.getByRole("radio", { name: "Angreifer" })).toHaveAttribute(
+  await netz.getByRole("checkbox", { name: "Angreifer 100 %" }).click();
+  await expect(netz.getByRole("checkbox", { name: "Angreifer 100 %" })).toHaveAttribute(
     "aria-checked",
     "true",
   );
@@ -478,11 +478,18 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   const netz = page.getByTestId("stilnetz");
-  await netz.getByRole("radio", { name: "Taktiker" }).click();
-  await expect(netz.getByRole("radio", { name: "Taktiker" })).toHaveAttribute(
-    "aria-checked",
-    "true",
-  );
+  // Seit 0.2.126: vier Ausprägungen, mehrere Stile, nur nicht beide Enden einer Achse
+  const punkt = (name: string) => netz.getByRole("checkbox", { name, exact: true });
+  await punkt("Taktiker 75 %").click();
+  await punkt("Angreifer 50 %").click();
+  await expect(punkt("Taktiker 75 %")).toHaveAttribute("aria-checked", "true");
+  await expect(punkt("Angreifer 50 %")).toHaveAttribute("aria-checked", "true");
+  // Außen steht die Beschriftung mit im Punkt: auf den Kreis selbst tippen
+  await punkt("Positionsspieler 125 %").locator("circle").nth(1).click();
+  await expect(punkt("Angreifer 50 %")).toHaveAttribute("aria-checked", "false");
+  await expect(page.getByTestId("stilnetz-text")).toContainText("Positionsspieler 125 %");
+  await punkt("Positionsspieler 125 %").locator("text").click();
+  await expect(punkt("Positionsspieler 125 %")).toHaveAttribute("aria-checked", "false");
   await page.getByTestId("erweiterte-fehler").locator("summary").click();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
   await page.locator("#stufe-bauernraub").fill("4");
@@ -501,7 +508,7 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
   await page.reload();
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   await expect(
-    page.getByTestId("stilnetz").getByRole("radio", { name: "Taktiker" }),
+    page.getByTestId("stilnetz").getByRole("checkbox", { name: "Taktiker 75 %", exact: true }),
   ).toHaveAttribute("aria-checked", "true");
   await karte.locator("summary").click();
   await expect(karte.getByRole("status")).toHaveText("0 von 18 Arten erlaubt");

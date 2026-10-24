@@ -8,7 +8,7 @@
  * sich die Partie speichern (speicher/) und nach einem Neuladen fortsetzen.
  * Abhängigkeiten: chessops, spiel/zuege.ts, spiel/ergebnis.ts, spiel/uhr.ts, engine/fehlerart.ts.
  */
-import type { Stilname } from "../engine/stile";
+import type { Stilmix, Stilname } from "../engine/stile";
 import type { Color } from "chessops/types";
 import type { BlinderFleck } from "../engine/blindeFlecken";
 import type { Fehlerart } from "../engine/fehlerart";
@@ -21,6 +21,13 @@ import { fenNach, regelstellung } from "./zuege";
 
 /** Wert von `eroeffnung`, wenn die Engine irgendeiner Variante des Buches folgen soll. */
 export const EROEFFNUNG_BUCH = "buch";
+/**
+ * Wert von `eroeffnung` seit 0.2.127 (Vorgabe): Der Bot eröffnet wie Menschen seiner Stärke
+ * (engine/praxisbuch.ts). Mit Vorsilbe PRAXIS_VORSILBE folgt er einer benannten Eröffnung aus der
+ * Praxis („praxis:Sicilian Defense“) und danach dem Praxisbuch.
+ */
+export const EROEFFNUNG_PRAXIS = "praxis";
+export const PRAXIS_VORSILBE = "praxis:";
 
 /** Gegner: die Engine oder ein Mensch am selben Gerät (beide Seiten selbst spielen, 0.2.41). */
 export type Gegnerart = "engine" | "mensch";
@@ -69,13 +76,19 @@ export interface Partieeinstellung {
   readonly hoechstverlust?: Readonly<Partial<Record<Fehlerart, number>>>;
   /** Stil eines eigenen Gegners (seit 0.2.126, engine/stile.ts); fehlend: der Regler `stil`. */
   readonly stilname?: Stilname;
+  /**
+   * Stil-Mischung (0.2.126, Wunsch des Autors, engine/stile.ts): je Stil 50 bis 125 %, je Achse
+   * höchstens einer. Vorhanden: gilt statt `stilname` (der dann der erste Stil ist).
+   */
+  readonly stilmix?: Stilmix;
   readonly hilfen: Spielhilfen;
   /** Zählt die Partie für die Wertung des Lesers (spiel/wertung.ts)? */
   readonly gewertet: boolean;
   /**
    * Eröffnung, der die Engine folgen soll (Name aus dem Eröffnungsindex, seit 0.2.39);
    * EROEFFNUNG_BUCH: irgendeine Variante des Buches (Buchtreue 0,85); null: die Engine spielt die
-   * Eröffnung selbst, ohne Buch (Wunsch des Autors, 0.2.40).
+   * Eröffnung selbst, ohne Buch (Wunsch des Autors, 0.2.40); EROEFFNUNG_PRAXIS (Vorgabe seit
+   * 0.2.127): wie Menschen ihrer Stärke; „praxis:Name“: eine benannte Eröffnung aus der Praxis.
    */
   readonly eroeffnung: string | null;
   /**

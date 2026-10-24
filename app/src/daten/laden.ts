@@ -11,6 +11,7 @@
 import { datensprache, trainerdatensprache } from "../i18n/sprache";
 import type { Datenverzeichnis } from "./generiert/index";
 import type { Eroeffnungsliste } from "./generiert/eroeffnungsliste";
+import { praxisbuchAus, type Praxisbuch } from "../engine/praxisbuch";
 import type { Glossar } from "./generiert/glossar";
 import type { Kapitel } from "./generiert/kapitel";
 import type { Nachschlagen } from "./generiert/nachschlagen";
@@ -138,6 +139,27 @@ export function ladeEroeffnungsliste(): Promise<Eroeffnungsliste> {
     });
   }
   return eroeffnungsliste;
+}
+
+let praxisbuch: Promise<Praxisbuch> | null = null;
+
+/**
+ * Lädt das Praxisbuch (0.2.127, engine/praxisbuch.ts): Eröffnungszüge echter Menschen je
+ * Zeitklasse und Wertungsband, unabhängig von der Sprache. Einmal geladen; ein Fehler wird nicht
+ * gemerkt, damit ein späterer Versuch neu lädt.
+ */
+export function ladePraxisbuch(): Promise<Praxisbuch> {
+  if (!praxisbuch) {
+    praxisbuch = ladeJson<unknown>("/daten/praxisbuch.json").then((roh) => {
+      const buch = praxisbuchAus(roh);
+      if (!buch) throw new Error("/daten/praxisbuch.json: unbekanntes Format");
+      return buch;
+    });
+    praxisbuch.catch(() => {
+      praxisbuch = null;
+    });
+  }
+  return praxisbuch;
 }
 
 /**

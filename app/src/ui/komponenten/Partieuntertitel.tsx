@@ -13,7 +13,12 @@ import { durchschnitt, gegnername, gegnerVon as botVon, klasseVon } from "../../
 import { gruppenstufe } from "../../engine/gruppe";
 import { stufe } from "../../engine/stufen";
 import { t, zahlText } from "../../i18n/sprache";
-import { EROEFFNUNG_BUCH, type Partie as PartieDaten } from "../../spiel/partie";
+import {
+  EROEFFNUNG_BUCH,
+  EROEFFNUNG_PRAXIS,
+  PRAXIS_VORSILBE,
+  type Partie as PartieDaten,
+} from "../../spiel/partie";
 import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
 
@@ -36,7 +41,14 @@ export function Untertitel({ partie }: { partie: PartieDaten }) {
   }
   const bot = gegnername(partie.einstellung.bot, partie.einstellung.botName);
   const gewaehlt = partie.einstellung.eroeffnung;
-  const eroeffnung = gewaehlt === EROEFFNUNG_BUCH ? t("partie.eroeffnungBuch") : gewaehlt;
+  const eroeffnung =
+    gewaehlt === EROEFFNUNG_BUCH
+      ? t("partie.eroeffnungBuch")
+      : gewaehlt === EROEFFNUNG_PRAXIS
+        ? t("partie.eroeffnungPraxis")
+        : gewaehlt?.startsWith(PRAXIS_VORSILBE)
+          ? gewaehlt.slice(PRAXIS_VORSILBE.length)
+          : gewaehlt;
   const je = partie.einstellung.stufenJePhase;
   const verschieden = je.eroeffnung !== je.mittelspiel || je.endspiel !== je.mittelspiel;
   const stufenText = verschieden

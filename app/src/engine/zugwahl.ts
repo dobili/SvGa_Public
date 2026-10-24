@@ -20,7 +20,7 @@ import { hatZusatzfehler, menschlicheWahl, type Menschenwerte } from "./menschen
 import { RUHIGER_VERLAUF, type Verlauf } from "./menschlich";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
-import type { Stilname } from "./stile";
+import type { Stilname, Stilmix } from "./stile";
 import type { Stufe } from "./stufen";
 import type { Wahltempo } from "./wahlmodell";
 import { zufallszug } from "./zufallszug";
@@ -56,6 +56,8 @@ export interface Gegnerprofil {
   readonly tempo?: Wahltempo;
   /** Einer der sieben Stile der vorgefertigten Bots (0.2.125, engine/stile.ts); fehlend: Regler `stil`. */
   readonly stilname?: Stilname;
+  /** Stil-Mischung eigener Bots (0.2.126, engine/stile.ts); vorhanden: gilt statt `stilname`. */
+  readonly stilmix?: Stilmix;
 }
 
 export const STANDARDPROFIL: Gegnerprofil = {
@@ -172,6 +174,7 @@ function kontextVon(stufe: Stufe, profil: Gegnerprofil) {
     verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
     stil: profil.stil,
     stilname: profil.stilname,
+    stilmix: profil.stilmix,
     tempo: profil.tempo ?? "rapid",
   };
 }

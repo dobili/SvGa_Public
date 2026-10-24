@@ -50,6 +50,7 @@ function profilDerEigenenStufe(v: Vorliebenauszug) {
     fehlerarten,
     blindeFlecken: v.blindeFlecken,
     stilname: v.stilname ?? ("universell" as const),
+    ...(v.stilmix ? { stilmix: v.stilmix } : {}),
     ...(gewichte ? { gewichte } : {}),
     ...(v.haeufigkeit !== undefined ? { haeufigkeit: v.haeufigkeit } : {}),
     ...(v.hoechstverlust ? { hoechstverlust: v.hoechstverlust } : {}),
@@ -62,6 +63,7 @@ type Vorliebenauszug = Pick<
   | "blindeFlecken"
   | "stufenJePhase"
   | "stilname"
+  | "stilmix"
   | "reglerstufen"
   | "haeufigkeit"
   | "hoechstverlust"
@@ -90,6 +92,7 @@ export function gegnerprofil(
       blindeFlecken: eigener.blindeFlecken,
       // Teil E (0.2.126): einer der sieben Stile statt des Reglers, wenn gewählt.
       ...(eigener.stilname ? { stilname: eigener.stilname } : {}),
+      ...(eigener.stilmix ? { stilmix: eigener.stilmix } : {}),
       // Erweiterter Modus (0.2.117), nur wenn eingestellt.
       ...(gewichte ? { gewichte } : {}),
       ...(eigener.haeufigkeit !== undefined ? { haeufigkeit: eigener.haeufigkeit } : {}),

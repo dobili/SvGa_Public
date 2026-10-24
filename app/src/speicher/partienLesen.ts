@@ -18,6 +18,7 @@ import {
   fehlerartenAus,
   reglerstufenAus,
   stilnameAus,
+  stilmixAus,
 } from "./gegner";
 import { menschenwerteAus } from "./menschenwerte";
 import type { Stufennummer } from "../engine/stufen";
@@ -174,6 +175,7 @@ function gegnerprofilAus(
   | "hoechstverlust"
   | "importiert"
   | "stilname"
+  | "stilmix"
 > {
   // Nur gespeicherte Felder übernehmen, damit ältere Partien unverändert bleiben.
   const profil: {
@@ -191,7 +193,13 @@ function gegnerprofilAus(
   if (Array.isArray(roh.fehlerarten)) profil.fehlerarten = fehlerartenAus(roh.fehlerarten);
   if (istZahl(roh.stil)) profil.stil = Math.max(STIL_MIN, Math.min(STIL_MAX, Math.round(roh.stil)));
   const stilname = stilnameAus(roh.stilname);
-  return { ...profil, ...menschenwerteAus(roh), ...(stilname ? { stilname } : {}) };
+  const stilmix = stilmixAus(roh.stilmix);
+  return {
+    ...profil,
+    ...menschenwerteAus(roh),
+    ...(stilname ? { stilname } : {}),
+    ...(stilmix ? { stilmix } : {}),
+  };
 }
 
 /**
@@ -248,12 +256,17 @@ function vorliebenAus(roh: unknown): Spielvorlieben {
 /** Stil, Reglerstufen, Häufigkeit und Höchstverlust der eigenen Stufe (0.2.126), nur vorhandene. */
 function feinheitenDerStufeAus(
   roh: Roh,
-): Pick<Spielvorlieben, "stilname" | "reglerstufen" | "haeufigkeit" | "hoechstverlust"> {
+): Pick<
+  Spielvorlieben,
+  "stilname" | "stilmix" | "reglerstufen" | "haeufigkeit" | "hoechstverlust"
+> {
   const stilname = stilnameAus(roh.stilname);
+  const stilmix = stilmixAus(roh.stilmix);
   const reglerstufen = reglerstufenAus(roh.reglerstufen);
   const { haeufigkeit, hoechstverlust } = menschenwerteAus(roh);
   return {
     ...(stilname ? { stilname } : {}),
+    ...(stilmix ? { stilmix } : {}),
     ...(reglerstufen ? { reglerstufen } : {}),
     ...(haeufigkeit !== undefined ? { haeufigkeit } : {}),
     ...(hoechstverlust ? { hoechstverlust } : {}),

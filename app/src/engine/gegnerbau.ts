@@ -14,6 +14,7 @@
  * Abhängigkeiten: engine/stufen.ts (Stufennummer), engine/blindeFlecken.ts, engine/fehlerart.ts,
  * engine/stil.ts, engine/stile.ts, schach/phase.ts, i18n.
  */
+import { buchtiefeVon } from "./praxisbuch";
 import type { Textschluessel } from "../i18n/sprache";
 import type { BlinderFleck } from "./blindeFlecken";
 import type { Fehlerart } from "./fehlerart";
@@ -49,6 +50,11 @@ export interface Gegner {
   readonly stilname: Stilname;
   /** Anteil der Züge, die ein beliebiger legaler Zug sind (nur Spaß-Bots, 0.2.88). */
   readonly zufallszuege?: number;
+  /**
+   * Halbzüge aus dem Praxisbuch höchstens (0.2.127, engine/praxisbuch.ts): Theoretiker 20,
+   * Hektiker 10, sonst 16. Spaß-Bots spielen kein Buch.
+   */
+  readonly buchtiefe: number;
 }
 
 /**
@@ -193,6 +199,7 @@ export function bot(
     haeufigkeit: (c.haeufigkeit ?? 1) * seltener,
     stil,
     stilname,
+    buchtiefe: buchtiefeVon(charakter),
   };
 }
 

@@ -18,7 +18,8 @@ import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import { neueGegnerkennung, type EigenerGegner } from "../../engine/gegner";
 import { STIL_NEUTRAL } from "../../engine/stil";
-import type { Stilname } from "../../engine/stile";
+import { hauptstil, mixAusStil, type Stilmix } from "../../engine/stile";
+import { stilkurz } from "./stiltext";
 import type { Stufennummer } from "../../engine/stufen";
 import { t, type Textschluessel } from "../../i18n/sprache";
 import type { Phase } from "../../spiel/phasen";
@@ -41,13 +42,15 @@ const STILNAMEN: Readonly<Record<string, Textschluessel>> = {
 };
 
 /**
- * Der Stil im Spinnennetz: der gewählte, sonst aus dem alten Regler (aggressiv → Angreifer,
- * defensiv → Verteidiger, ausgeglichen → Universell). Gespeichert wird er erst beim Speichern.
+ * Die Stil-Mischung im Spinnennetz: die gespeicherte, sonst aus dem gewählten Stil oder dem alten
+ * Regler (aggressiv → Angreifer, defensiv → Verteidiger, ausgeglichen → Universell). Gespeichert
+ * wird sie erst beim Speichern.
  */
-function stilDes(g: EigenerGegner): Stilname {
-  if (g.stilname) return g.stilname;
-  if (g.stil > STIL_NEUTRAL) return "angreifer";
-  return g.stil < STIL_NEUTRAL ? "verteidiger" : "universell";
+function stilDes(g: EigenerGegner): Stilmix {
+  if (g.stilmix) return g.stilmix;
+  if (g.stilname) return mixAusStil(g.stilname);
+  if (g.stil > STIL_NEUTRAL) return mixAusStil("angreifer");
+  return mixAusStil(g.stil < STIL_NEUTRAL ? "verteidiger" : "universell");
 }
 
 /** Ein neuer Gegner mit Vorgaben: Stufe 3 überall, alle Fehlerarten, ausgeglichen. */
@@ -67,9 +70,11 @@ function neuerGegner(): EigenerGegner {
 /** „3 · 4 · 3 · Angreifer“ (ältere Gegner ohne gewählten Stil: „3 · 4 · 3 · aggressiv“) */
 function kurzbeschreibung(g: EigenerGegner): string {
   const s = g.stufenJePhase;
-  const stil = g.stilname
-    ? t(`stil.${g.stilname}`)
-    : t(STILNAMEN[String(g.stil)] ?? "spielen.stil.ausgeglichen");
+  // Seit 0.2.126 die Stil-Mischung („Angreifer + Taktiker 50 %“), ältere Gegner den Regler
+  const stil =
+    g.stilmix || g.stilname
+      ? stilkurz(g.stilmix ?? mixAusStil(g.stilname))
+      : t(STILNAMEN[String(g.stil)] ?? "spielen.stil.ausgeglichen");
   return `${s.eroeffnung} · ${s.mittelspiel} · ${s.endspiel} · ${stil}`;
 }
 
@@ -129,7 +134,10 @@ function Formular({
           setze({ ...g, stufenJePhase })
         }
       />
-      <Stilnetz stil={stilDes(g)} beiWahl={(stilname) => setze({ ...g, stilname })} />
+      <Stilnetz
+        mix={stilDes(g)}
+        beiWahl={(stilmix) => setze({ ...g, stilmix, stilname: hauptstil(stilmix) })}
+      />
       <fieldset className="fehlerartenwahl">
         <legend className="einstellung-name">{t("spielen.eigene.fehlerarten")}</legend>
         <p className="hinweis">{t("spielen.eigene.fehlerartenHinweis")}</p>
@@ -164,7 +172,9 @@ function Formular({
           type="button"
           className="knopf-haupt"
           disabled={name.length === 0}
-          onClick={() => beiSpeichern({ ...g, name, stilname: stilDes(g) })}
+          onClick={() =>
+            beiSpeichern({ ...g, name, stilmix: stilDes(g), stilname: hauptstil(stilDes(g)) })
+          }
         >
           <Knopfsymbol art="speichern" />
           {t("spielen.eigene.speichern")}

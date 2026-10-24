@@ -12,6 +12,7 @@ import { engine } from "../../engine/engineDienst";
 import { gegnerVon } from "../../engine/gegner";
 import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
+import { wahltempo } from "../../engine/wahlmodell";
 import { BUCHTREUE, REINES_PROFIL, type Gegnerprofil } from "../../engine/zugwahl";
 import {
   botBedenkzeit,
@@ -88,6 +89,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
       fleckGewicht: 1,
       verlauf: verlaufVon(partie),
       restMs: eigeneRestzeit(partie, jetztMs),
+      tempo: wahltempo(e.uhr),
     };
   }
   const bot = gegnerVon(e.bot);
@@ -105,6 +107,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,
     hoechstverlust: e.hoechstverlust,
     restMs: eigeneRestzeit(partie, jetztMs),
+    tempo: wahltempo(e.uhr),
   };
 }
 

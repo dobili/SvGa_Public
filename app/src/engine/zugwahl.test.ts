@@ -104,12 +104,14 @@ describe("Zugwahl", () => {
     expect(["b8c6", "d7d6"]).toContain(wahl?.uci);
   });
 
-  it("trifft der Wurf eine Gelegenheit, spielt Stufe 1 einen Fehler dieser Art", async () => {
+  it("Wahlmodell (0.2.121): hoher Zufall zieht einen Fehlerzug mit Art, niedriger den besten", async () => {
     const { b } = bewerter(KANDIDATEN);
-    const wahl = await waehleZug(b, FEN, stufe(1), [], () => 0);
-    expect(wahl?.quelle).toBe("fehler");
-    expect(wahl?.fehler).not.toBeNull();
-    expect(wahl?.verlust ?? 0).toBeGreaterThanOrEqual(0.5);
+    const fehler = await waehleZug(b, FEN, stufe(1), [], () => 0.999);
+    expect(fehler?.quelle).toBe("fehler");
+    expect(fehler?.fehler).not.toBeNull();
+    expect(fehler?.verlust ?? 0).toBeGreaterThanOrEqual(0.5);
+    const bester = await waehleZug(b, FEN, stufe(1), [], () => 0);
+    expect(bester).toMatchObject({ uci: "b8c6", quelle: "engine", fehler: null, verlust: 0 });
   });
 
   it("ohne erlaubte Fehlerarten kein Fehler, auch wenn jeder Wurf trifft", async () => {
@@ -139,15 +141,18 @@ describe("Zugwahl", () => {
     expect(wahl?.quelle).toBe("engine");
   });
 
-  it("blinder Fleck: übersieht den besten ruhigen Zug, wenn ein Schlag möglich ist", async () => {
+  it("blinder Fleck (0.2.121): nur Flecken aktiv, das Wahlmodell zieht auch einen Nebenzug", async () => {
     const nachD5 = "rnbqkbnr/ppp1pppp/8/3p4/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2";
     const { b } = bewerter(
       [variante(1, 0.4, ["e4e5"]), variante(2, 0.3, ["e4d5"]), variante(3, 0.0, ["g1f3"])],
       "e4e5",
     );
-    const profil = { ...STANDARDPROFIL, fehlerarten: [] };
-    const wahl = await waehleZug(b, nachD5, stufe(4), [], () => 0, 0, profil);
-    expect(wahl?.uci).toBe("e4d5");
+    const profil = { ...STANDARDPROFIL, fehlerarten: [], blindeFlecken: ["ruhig" as const] };
+    const neben = await waehleZug(b, nachD5, stufe(4), [], () => 0.999, 0, profil);
+    expect(neben?.uci).not.toBe("e4e5");
+    expect(neben?.quelle).toBe("engine");
+    const bester = await waehleZug(b, nachD5, stufe(4), [], () => 0, 0, profil);
+    expect(bester?.uci).toBe("e4e5");
   });
 
   it("Gewichte aus dem Profil: Fleck des Bots dreifach, nicht erlaubte Arten aus", () => {

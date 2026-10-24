@@ -21,6 +21,7 @@ import { RUHIGER_VERLAUF, type Verlauf } from "./menschlich";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
 import type { Stufe } from "./stufen";
+import type { Wahltempo } from "./wahlmodell";
 import { zufallszug } from "./zufallszug";
 
 /** Ein Fehler oder Fleck mit Gewicht: 0 aus, 1 wie Menschen, 3 besonders häufig. */
@@ -50,6 +51,8 @@ export interface Gegnerprofil {
    */
   readonly fleckenStandard?: number;
   readonly fleckGewicht?: number;
+  /** Zeitklasse der Partie für das Wahlmodell (0.2.121); fehlend: Schnellschach. */
+  readonly tempo?: Wahltempo;
 }
 
 export const STANDARDPROFIL: Gegnerprofil = {
@@ -155,6 +158,7 @@ export async function waehleZug(
     restMs: profil.restMs ?? null,
     verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
     stil: profil.stil,
+    tempo: profil.tempo ?? "rapid",
   };
   return menschlicheWahl(bewerter, fen, stufe, werte, kontext, zufall);
 }

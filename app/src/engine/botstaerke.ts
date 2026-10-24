@@ -16,10 +16,13 @@
 import type { Phase } from "../schach/phase";
 import { gruppeDesBots } from "./botgruppe";
 import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
-import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG, ZUSATZ_ABZUG } from "./botstaerke-daten";
+import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG } from "./botstaerke-daten";
+import { BOT_STAERKE_JE_ZEITKLASSE, STUFEN_STAERKE_JE_ZEITKLASSE } from "./botstaerke-zeitklassen";
+import { wertungstempo, type Wertungstempo } from "../spiel/elomodell";
 import type { Fehlerart } from "./fehlerart";
 import { GELEGENHEITSARTEN } from "./menschenprofil";
 import { GEGNER } from "./gegnerliste";
+import { gruppenstufe, gruppenwertung } from "./gruppe";
 import { STUFEN_ZAHL, type Stufennummer } from "./stufen";
 
 /**
@@ -44,15 +47,24 @@ export type Staerkeangabe =
   | { readonly art: "ueber"; readonly wert: number }
   | { readonly art: "unter"; readonly wert: number };
 
-/** Die Zahl einer reinen Stufe (gemessen). Beispiel: Stufe 3 → 1698 (angezeigt „etwa 1700“). */
-export function staerkeDerStufe(nummer: Stufennummer): number {
-  return STUFEN_STAERKE[nummer];
+/**
+ * Die Zahl einer Stufe (gemessen), in der Zeitklasse, falls dort gemessen, sonst Schnellschach.
+ * Beispiel: Stufe 3 → 1239 (angezeigt „etwa 1250“).
+ */
+export function staerkeDerStufe(nummer: Stufennummer, tempo: Wertungstempo = "rapid"): number {
+  return STUFEN_STAERKE_JE_ZEITKLASSE[tempo]?.[nummer] ?? STUFEN_STAERKE[nummer];
 }
 
-/** Die Zahl eines vorgefertigten Bots (gemessen); null für unbekannte und eigene Bots. */
-export function staerkeDesBots(kennung: string | null): number | null {
+/**
+ * Die Zahl eines vorgefertigten Bots (gemessen), in der Zeitklasse, falls dort gemessen, sonst
+ * Schnellschach; null für unbekannte und eigene Bots.
+ */
+export function staerkeDesBots(
+  kennung: string | null,
+  tempo: Wertungstempo = "rapid",
+): number | null {
   if (kennung === null) return null;
-  return BOT_STAERKE[kennung] ?? null;
+  return BOT_STAERKE_JE_ZEITKLASSE[tempo]?.[kennung] ?? BOT_STAERKE[kennung] ?? null;
 }
 
 /**
@@ -97,24 +109,14 @@ export function zusatzanteil(e: Zusatzfehlerangabe): number {
 }
 
 /**
- * Was Zusatzfehler eine Stufe kosten (gemessen: Stufe mit allen Zusatzfehlern gegen dieselbe
- * Stufe ohne, engine/botstaerke.messung.ts), mal Anteil; Mittel der drei Phasen. Ohne Messung 0.
- * Beispiel: Stufe 4 kostet mit allen Zusatzfehlern −250, halber Anteil → −125.
- */
-export function zusatzAbzug(e: Zusatzfehlerangabe): number {
-  const anteil = zusatzanteil(e);
-  if (anteil === 0) return 0;
-  const s = e.stufenJePhase;
-  const phasen = [s.eroeffnung, s.mittelspiel, s.endspiel];
-  return (anteil * phasen.reduce((summe, n) => summe + (ZUSATZ_ABZUG[n] ?? 0), 0)) / PHASEN_ZAHL;
-}
-
-/**
- * Geschätzte Zahl eines eigenen Gegners oder einer eigenen Stufe: Stufen je Phase plus Abzug der
- * Zusatzfehler (seit 0.2.117). Beispiel: 4 · 4 · 4 ohne Haken → die Zahl der Stufe 4.
+ * Geschätzte Zahl eines eigenen Gegners oder einer eigenen Stufe: aus den Stufen je Phase. Bis
+ * 0.2.124 kam ein Abzug für Zusatzfehler dazu; seit 0.2.125 spielt eine Stufe mit dem Wahlmodell
+ * bei der Wertung der Stufe, und die Haken ändern nur, welche Fehler vorkommen, nicht wie viele
+ * (Variante A, ENTSCHEIDUNGEN „Messung der Bots gegen menschlich spielende Stufen“).
+ * Beispiel: 4 · 4 · 4 → die Zahl der Stufe 4, mit oder ohne Haken.
  */
 export function staerkeGeschaetzt(e: Zusatzfehlerangabe): number {
-  return staerkeAusStufen(e.stufenJePhase) + zusatzAbzug(e);
+  return staerkeAusStufen(e.stufenJePhase);
 }
 
 /**
@@ -130,7 +132,13 @@ export function gegnerstaerke(
 ): number {
   // Ohne Bot zählen nur die abgehakten blinden Flecken (die Abhakliste gilt den Bots).
   const eigen = einstellung.bot === null ? { ...einstellung, fehlerarten: [] } : einstellung;
-  const ohneUhr = staerkeDesBots(einstellung.bot) ?? staerkeGeschaetzt(eigen);
+  // Gruppenmodus (engine/gruppe.ts): gemessene Zahl der Gruppe, sonst stärkster Bot plus Zuschlag.
+  const gruppe = gruppenstufe(einstellung.bot);
+  const tempo = wertungstempo(einstellung.uhr ?? null);
+  const ohneUhr =
+    gruppe !== null
+      ? gruppenwertung(gruppe)
+      : (staerkeDesBots(einstellung.bot, tempo) ?? staerkeGeschaetzt(eigen));
   return ohneUhr + uhrAbzug(einstellung.stufenJePhase, einstellung.uhr ?? null);
 }
 
@@ -140,20 +148,18 @@ export interface Uhrangabe {
   readonly zuschlagMs: number;
 }
 
-const SEKUNDE_MS = 1000;
-
 /**
  * Was die Uhr einen Bot dieser Stufen kostet (seit 0.2.117, gemessen: jede Stufe mit Uhr gegen
- * sich selbst ohne Uhr, engine/botstaerke.messung.ts): Mittel der drei Phasen; ohne Uhr oder für
- * nicht gemessene Bedenkzeiten 0. Beispiel: Stufe 5 in allen Phasen, 5 + 3 → etwa −100.
+ * sich selbst ohne Uhr, engine/botstaerke.messung.ts): Mittel der drei Phasen; ohne Uhr 0. Seit
+ * 0.2.125 je Zeitklasse (Blitz, Schnellschach, Klassisch) statt je genauer Bedenkzeit, damit auch
+ * 3+0, 5+3, 15+10 und 60+0 einen Wert haben. Beispiel: Stufe 5 in allen Phasen, 5 + 3 → Blitz.
  */
 export function uhrAbzug(
   stufen: Readonly<Record<Phase, Stufennummer>>,
   uhr: Uhrangabe | null,
 ): number {
   if (!uhr) return 0;
-  const schluessel = `${uhr.grundzeitMs / SEKUNDE_MS}+${uhr.zuschlagMs / SEKUNDE_MS}`;
-  const je = UHR_ABZUG[schluessel];
+  const je = UHR_ABZUG[wertungstempo(uhr)];
   if (!je) return 0;
   const phasen = [stufen.eroeffnung, stufen.mittelspiel, stufen.endspiel];
   return phasen.reduce((summe, n) => summe + (je[n] ?? 0), 0) / PHASEN_ZAHL;

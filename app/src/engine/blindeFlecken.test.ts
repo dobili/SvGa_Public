@@ -44,6 +44,15 @@ describe("Blinde Flecken", () => {
     expect(fleckeVon(mitSchlag, "e4d5")).toEqual([]);
   });
 
+  it("Rochaderecht ist kein möglicher Schlag, en passant ist ein Schlag (0.2.118)", () => {
+    const rochade = "4k3/8/8/8/8/8/8/R3K2R w KQ - 0 1";
+    expect(fleckeVon(rochade, "a1a2")).not.toContain("ruhig");
+    expect(fleckeVon(rochade, "e1g1")).not.toContain("ruhig");
+    const ep = "4k3/8/8/3pP3/8/8/8/4K3 w - d6 0 2";
+    expect(fleckeVon(ep, "e1e2")).toContain("ruhig");
+    expect(fleckeVon(ep, "e5d6")).not.toContain("bauer");
+  });
+
   it("übersieht den besten Zug mit Wahrscheinlichkeit und wählt den nächsten anderer Art", () => {
     const kandidaten = [v(1, 0.5, "d1h5"), v(2, 0.3, "f1c4"), v(3, -3, "a2a3")];
     expect(blindeWahl(OHNE_SCHLAG, kandidaten, ["dame"], () => 0.2)).toEqual({

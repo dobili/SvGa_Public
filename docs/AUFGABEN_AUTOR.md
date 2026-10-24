@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 24.10.2026, Version 0.2.124 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 24.10.2026, Version 0.2.125 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.124“ dasteht; sonst die App neu laden.
+Einstellungen prüfen, dass „App-Version 0.2.125“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -527,6 +527,149 @@ Anzeige › „English (preview)“.
 - [ ] N739. **Englisch im Ganzen:** Lies zwei, drei Unterschriften und eine Erklärung. Klingt
       das Englisch natürlich genug für die Vorschau, bis dein englisches Buch kommt?
 
+### Neu in 0.2.125: Zugwahl der Bots und eigene Wertung je Zeitklasse (Fable, Nacht zum 24.10.2026)
+
+Die Bots wählen ihre Züge jetzt mit einem Modell, das an 180 000 Stellungen echter
+Lichess-Partien gelernt hat, welchen Zug Menschen einer Wertung wählen (Fehlerraten je Band, Phase
+und Fehlerart treffen die echten auf etwa einen Prozentpunkt). Die Spielstärke ist eine eigene
+Wertung je Zeitklasse (Blitz, Schnellschach, Klassisch) am Maßstab von Lichess, geschätzt aus den
+Kennzahlen deiner Züge bis zur Entscheidung; der Schalter „Genauigkeit wie“ ist weg. Die Zahlen
+der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
+
+- [ ] N770. **Bots spielen menschlich:** Spiele je eine Schnellschach-Partie gegen einen Bot um
+      800 und einen um 1600. Wirken die Fehler wie die von Menschen dieser Stärke (Hänger und
+      übersehene Drohungen unten, kleine Ungenauigkeiten oben), ohne Zufallszüge ohne Sinn?
+- [ ] N771. **Spielstärke in der Auswertung:** Nach der Partie zeigt die Karte „Spielstärke“ die
+      Genauigkeit (ohne Schalter) und „etwa 1400 (1100–1700)“. Hinter dem Fragezeichen steht,
+      für welche Zeitklasse die Zahl gilt und was sie etwa auf chess.com (Blitz, Schnellschach)
+      oder beim Weltschachbund (Klassisch) entspricht. Passt die Zahl grob zu dir?
+- [ ] N772. **Zahl je Phase nur bei schmaler Spanne:** In der Karte „Spielstärke“ stehen je Phase
+      Urteil und Genauigkeit, aber keine Zahl mehr (eine einzelne Partie streut je Phase zu stark,
+      im Endspiel am meisten). Vermisst du die Zahl je Phase, oder ist Urteil plus Genauigkeit
+      genug?
+- [ ] N773. **Deine Spielstärke je Zeitklasse:** Spielen › Karte „Deine Spielstärke“ zeigt je
+      Zeitklasse, in der du gewertete Partien hast, eine Zeile („Schnellschach: etwa 1400“, darunter
+      Spanne und Zahl der Partien). Nach einer Blitzpartie (unter 8 Minuten geschätzte Dauer,
+      Grundzeit plus 40 Sekunden je Sekunde Zuschlag) kommt eine zweite Zeile dazu.
+- [ ] N774. **Alte Partien:** Deine vor 0.2.125 gespeicherten Partien bekommen die neue Zahl
+      ohne Neuauswertung (dieselben Engine-Werte, neue Rechnung). Liegt sie nahe bei der alten
+      Zahl (eine gewisse Verschiebung ist richtig: die alte Mitte aus chess.com und Lichess lag
+      unter der Lichess-Zahl)?
+- [ ] N775. **Bedenkzeit nach Zeitklassen (R51):** Spielen › Bedenkzeit zeigt „Blitz 3 + 0,
+      3 + 2, 5 + 3 · Schnellschach 10 + 0, 15 + 10 · Klassisch 30 + 20, 60 + 0“; „Ohne Uhr“ gibt
+      es nur noch, wenn du aus einer Abbildung oder aufgebauten Stellung spielst (ungewertet).
+      Kein Bullet. Hattest du „Ohne Uhr“ gespeichert, startet die nächste Partie aus der
+      Grundstellung mit 10 + 0.
+- [ ] N776. **Stern je Zeitklasse (R51):** Besiege einen Bot gewertet mit Blitz-Uhr. Sein Stern
+      erscheint in der Gegnerwahl nur, solange eine Blitz-Bedenkzeit gewählt ist; mit 10 + 0
+      fehlt er (und der Zähler „★ 1/8“ an der Gruppe zählt ebenfalls je Zeitklasse). Alte Siege
+      ohne Uhr zählen als Schnellschach.
+- [ ] N777. **Bedenkzeit in der Partienliste (R51):** Jede Zeile zeigt hinter den Zügen die
+      Bedenkzeit („… · 10 + 0 · du etwa 1400“), alte Partien „ohne Uhr“.
+- [ ] N778. **Uhrverbrauch der Bots je Zeitklasse:** Spiele eine Partie mit 3 + 2 und eine mit
+      30 + 20 gegen denselben Bot. Im Blitz soll der Bot seine Zeit ähnlich wie du verbrauchen
+      (nach 20 Zügen noch etwa die Hälfte), im Klassischen deutlich sparsamer; vorher verbrauchte
+      er im Klassischen seine Zeit etwa doppelt so schnell wie Menschen.
+- [ ] N779. **Partiekopf (dein Wunsch vom 24.10.):** In der Partie steht oben nur noch „gegen
+      Johanna“ (kein Umbruch mehr); darunter linksbündig ihr Porträt, daneben ihr Satz aus der
+      Gegnerwahl, klein darunter „Johanna (⌀ 4 · Anfänger) · du spielst Weiß“.
+- [ ] N780. **Zonen in „Deine Züge“ (dein Wunsch vom 24.10.):** Die graue Zone „normal“ ist je
+      Zeile verschieden breit: Sie reicht so weit, wie 90 % der Lichess-Spieler deiner Stärke in
+      dieser Zeitklasse liegen, bei kurzen Partien breiter (Zufall weniger Züge). Üblich ist der
+      Median dieser Spieler. Brillant, stark und Buchzug bleiben geschätzt (Zone 75 bis 125 %),
+      weil die Lichess-Daten diese Klassen nicht kennen. Wirkt das Urteil „normal / gut / schwach“
+      jetzt stimmig?
+- [ ] N781. **Startbild bei der Rückkehr (dein Wunsch vom 24.10.):** Handy: App in den Hintergrund,
+      nach mindestens 30 Minuten zurück → der goldene Springer läuft 1,8 s (ein Tipp überspringt).
+      Nach 5 Minuten nicht. Am Rechner nie (Fensterwechsel). Hinweis: iOS wirft eine
+      Hintergrund-App manchmal ganz aus dem Speicher; dann startet sie neu und zeigt das normale
+      Startbild (2,5 s).
+- [ ] N783. **Beta-Hinweis:** Einstellungen › Über die App zeigt „App-Version: 0.2.125 (Beta)“ und
+      darunter den Satz, dass die App laufend erweitert wird und Daten erhalten bleiben; die
+      Startseite der Website zeigt unter dem Untertitel denselben Hinweis.
+- [ ] N782. **Bots mit Stil und menschlichen Vorlieben:** Spiele gegen Tom (Draufgänger,
+      Damenfan) und gegen Rolf (Verteidiger, vorsichtig). Tom sollte die Dame früh holen und
+      vorwärts stürmen, Rolf eher zurückhaltend ziehen und wenig schlagen. Die Vorlieben halten
+      sich jetzt im Rahmen echter Spieler seiner Stärke (Stufen auf den Quantilen der
+      Lichess-Spieler); ist der Charakter trotzdem erkennbar?
+- [ ] N784. **Website, Texte zum Buchstand (dein Abgleich vom 24.10.):** Startseite
+      schach-von-grund-auf.com: Der Buchtext nennt „Eröffnungsgrundsätze und klassische
+      Eröffnungssysteme, Gambits und Fallen“; der Trainingsabsatz spricht von Übungen, „auf die der
+      Kasten ‚Training zu diesem Kapitel‘ im Buch verweist“; der Installationsabsatz sagt
+      „kostenlos, zeigt keine Werbung und braucht keine Anmeldung“. Derselbe Installationstext
+      steht auf /installieren/ und passt dort.
+- [ ] N785. **Website, Trainingsseiten:** /training/ beginnt mit „findest du hier die Übungen,
+      auf die der Kasten … verweist“ und „Deshalb stehen sie hier statt im Buch“. Eine Kapitelseite
+      (etwa /training/kap09/) hat in der Einleitung keinen Strichpunkt mehr („… auf das Buch. Ein
+      Tipp auf eine Abbildung …“). /training/werkzeugkasten/ beginnt mit „Alles Digitale, was du zum
+      Üben mit dem Buch brauchst“, nennt „Trainingsseiten“ (nicht „Trainingskästen“) und verweist
+      auf Kapitel 12 des Buches mit Merkseite und Kopiervorlage auf der letzten Seite.
+- [ ] N786. **Website, Abbildungslinks:** Auf /training/kap09/ sind 9.3, 9.8, 9.15 und 9.28
+      Links, auf /training/kap10/ 10.1, 10.9 und 10.14. Jeder öffnet die App an genau dieser
+      Abbildung (Philidor, Lucena, Vancura, Dame gegen Bauer; Saavedra, Réti, Heuäcker).
+- [ ] N787. **Website, Rechtstexte:** /impressum/ sagt unter „Quelltext und Rechte“ „(Texte und
+      Abbildungen)“ und „geschützt. Alle Rechte vorbehalten.“; /impressum/ und /datenschutz/
+      enthalten kein Semikolon mehr, Paragrafen und Angaben sind unverändert, der Stand der
+      Datenschutzerklärung bleibt 19. Oktober 2026. In der App: Reiter Training, Fragezeichen am
+      Kasten: „Die Übungen zum Kasten ‚Training zu diesem Kapitel‘ des Buches …“.
+- [ ] N788. **Wertung je Zeitklasse:** Einstellungen › Deine Wertung. Spiele eine gewertete
+      Blitz-Partie (3+2) zu Ende, wenn du bisher nur Schnellschach gespielt hast: Es erscheint eine
+      Reiterzeile „Zeitklasse“ mit Blitz und Schnellschach. Blitz beginnt mit der Schätzung aus
+      dieser Partie, die Schnellschach-Wertung bleibt, wie sie war. Die Zeile darunter nennt die
+      Zeitklasse („Schnellschach: 12 gewertete Partien, im Ausschnitt +24“).
+- [ ] N789. **Vorläufig:** In den ersten zehn Partien einer Zeitklasse steht unter der Zahl
+      „Vorläufig: Die Wertung findet in den ersten zehn Partien ihren Platz (bisher 3)“. Ab der
+      zehnten Partie verschwindet der Satz.
+- [ ] N790. **Beide Zahlen nebeneinander:** Unter „Deine Wertung“ steht „Aus deinen Zügen: etwa
+      1400 (1050 bis 1750, aus 3 Partien)“; unter Spielen › Deine Spielstärke steht je Zeitklasse
+      „Aus deinen Ergebnissen: Wertung 1424 (vorläufig)“. Beide Zahlen dürfen voneinander
+      abweichen (Ergebnisse gegen Zugqualität), aber dieselbe Zahl muss an beiden Orten gleich sein.
+- [ ] N791. **Phasen-Ansicht der Kurve:** Reiter „Mittelspiel“ in „Deine Wertung“. Mit wenigen
+      Partien steht „–“ und der Satz „noch zu wenige Partien in dieser Zeitklasse für eine Zahl“.
+      Ab etwa zehn Schnellschach-Partien erscheint eine Zahl mit Spanne und eine Kurve; Eröffnung
+      und Endspiel bleiben im Schnellschach vorerst ohne Zahl (Spanne zu breit), das ist gewollt.
+- [ ] N792. **Schriftgröße (dein Wunsch vom 24.10.):** Einstellungen › Anzeige › Schriftgröße:
+      „A+“ vergrößert in 10-%-Schritten bis 150 %, „A−“ verkleinert bis 80 %, „Standard“ setzt auf
+      100 % zurück. Die Wahl gilt sofort, bleibt nach dem Neustart der App und wirkt auf Text,
+      Stufenmarken und Plaketten; das Brett bleibt so breit wie der Bildschirm. Bitte bei 150 %
+      Kapitelseite, Partie und Auswertung ansehen: Läuft irgendwo etwas aus dem Bild?
+- [ ] N793. **Gruppenmodus, Freischaltung (dein Wunsch vom 24.10.):** Spielen › vorgefertigte Bots,
+      eine Stufe aufklappen: Unter den acht Porträts steht „Gruppenmodus: Besiege alle Bots dieser
+      Stufe …“. Besiege den letzten noch fehlenden Bot einer Stufe in einer gewerteten Partie (egal
+      welche Zeitklasse): Nach dem Partieende erscheint einmal die Gratulation mit den Gesichtern der
+      Stufe, „Weiter“ schließt sie, sie kommt nicht wieder. Unter den Porträts dieser Stufe steht
+      jetzt der Knopf „Gruppenmodus · Stärke unbekannt“ mit den Gesichtern.
+- [ ] N794. **Gruppenmodus, Partie:** Knopf antippen, Partie beginnen. Die Sprechblase und der Kopf
+      der Partie zeigen die übereinandergelegten Gesichter statt eines Porträts und den Satz „Alle
+      Bots der Stufe N spielen zugleich …“. Die Gruppe stimmt ab (Mehrheit, bei Gleichstand das
+      Los); sie sollte meist stärker spielen als ein einzelner Bot der Stufe, aber noch
+      menschliche Fehler machen, wenn sich mehrere Bots darin einig sind. Die Partienliste zeigt
+      dieselben Gesichter.
+- [ ] N795. **Gruppenmodus, Stärke:** Nach einem Sieg gegen die Gruppe bleibt vorerst „Stärke
+      unbekannt“ stehen, weil die Gruppen noch nicht gemessen sind (das folgt nach dem endgültigen
+      Bot-Satz). Die Wertung rechnet intern mit dem stärksten Bot der Stufe plus 150.
+
+- [ ] N796. **Neuer Bot-Satz (24.10.):** Spielen › vorgefertigte Bots. Es gibt jetzt 78 Bots in zehn
+      Gruppen (Gruppe 1 sechs, sonst acht), je Gruppe jeder Stil einmal. Neue Namen mit Zahl:
+      1 Tom 347, Marie 226, Oma Erna 396, Luis 347, Clara 347, Onkel Bernd 439 ·
+      2 Henry 650, Moritz 667, Derya 694, Herr Krause 694, Lina 720, Jakob 667, Rolf 548, Herr Wolff 694 ·
+      3 Pia 896, Felix 821, Yusuf 921, Ronja 946, Svenja 972, Philipp 896, Frau Albrecht 896, Ella 846 ·
+      4 Erik 1248, Dennis 1222, Leyla 1151, Mara 1168, Simon 1248, Opa Heinz 1159, Holger 1324, Lars 1324 ·
+      5 Katrin 1474, Marco 1597, Frau Romero 1551, Nele 1475, Johanna 1533, Frau Demir 1448, Jana 1502, Luca 1557 ·
+      6 Günter 1771, Herr Kühn 1761, Igor 1776, Miriam 1801, Samira 1857, Herr Vogel 1751, Herr Hartmann 1675, David 1851 ·
+      7 Frau Sommer 2100, Herr Lorenz 2048, Defne 2100, Amaya 2175, Elias 2074, Frau Wagner 2032, Fiona 2125, Juna 2021 ·
+      8 Doktor Falk 2434, GM Novak 2364, Trainer Maier 2339, IM Becker 2412, WGM Tanaka 2386, Frau Prof. Reich 2412, GM Okoro 2339, IM Lindgren 2388 ·
+      9 Ole 2708, Mats 2708, Arjun 2703, Nora 2708, Melek 2708, Tarik 2708, Bastian 2644, Oma Ilse 2644 ·
+      10 FM Duarte 3120, IM Kraft 2975, Opa Walter 3113, WIM Okafor 3232, Frau Hoffmann 3025, GM Ivanova 3120, GM Berglund 3039, Herr Yılmaz 2871.
+      Prüfe: Jedes Porträt passt zum Namen (Geschlecht, Alter, Titel), die Zahl an der Kachel
+      steht, die Sprechblase zeigt zu jedem Bot zwei neue Sätze, und eine Partie gegen einen Bot
+      jeder Gruppe fühlt sich etwa so stark an wie die Zahl sagt.
+- [ ] N797. **Sätze der Bots lesen:** Tippe in der Gegnerwahl die Bots nacheinander an und lies die
+      Sprechblasen (deutsch, bei Bedarf englisch in den Einstellungen). Die Sätze gelten als
+      abgesegnet (Regel 9); schreib mir nur, welche du anders willst („N797: Mats zu trocken“).
+      Nenne mir auch, wenn du einen Bot tauschen willst: Zu jeder Gruppe und jedem Stil liegen
+      drei bis sechs gemessene Alternativen bereit, der Tausch kostet nur Name und Satz.
+
 ---
 
 ## Teil 2: Entscheiden
@@ -999,6 +1142,28 @@ Paket P4.
       Schon umgesetzt, Widerspruch genügt (etwa eine andere Grenze). Falls du etwas anderes
       gemeint hast (etwa Safari am Mac, das gar nicht wechselt), schreib bitte kurz, in welchem
       Browser.
+
+### Eigene Wertung je Zeitklasse (Fable, 24.10.2026): schon umgesetzt, Widerspruch genügt
+
+- [ ] E1. **Entzerrung statt Schätzung zur Mitte:** Ein Modell aus Kennzahlen schätzt Starke zu
+      niedrig und Schwache zu hoch (bei zehn Partien etwa 2400 → 2250, 600 → 700), weil es bei
+      Unsicherheit zur Mitte neigt. Empfehlung: Die Schätzung wird so entzerrt, dass Spieler jeder
+      Wertung im Mittel ihre Lichess-Zahl bekommen; dafür wird die Spanne etwas breiter (bei einer
+      Partie Schnellschach ±370 statt ±300, bei zehn ±165 statt ±155). Schon umgesetzt.
+- [ ] E2. **Zahl je Phase nur bei schmaler Spanne:** Die Teilmodelle je Phase sind breit (bei zehn
+      Partien Schnellschach: Mittelspiel ±370, Eröffnung ±530, Endspiel ±900, 90 % der Spieler).
+      Empfehlung: Eine Zahl je Phase steht nur, wenn 90 % der Spieler höchstens ±350 danebenliegen;
+      das ist derzeit nur im Mittelspiel ab etwa acht klassischen Partien der Fall. Sonst stehen
+      Urteil und Genauigkeit je Phase (die sind verlässlich). Schon umgesetzt; Alternative wäre eine
+      Zahl mit sehr breiter Spanne.
+- [ ] E3. **Zeitklasse ohne Uhr:** Partien ohne Uhr zählen als Schnellschach (wie in der
+      Zugwahl der Bots). Mit R51 (Teil F) fällt „ohne Uhr“ für gewertete Partien ohnehin weg.
+      Schon umgesetzt.
+- [ ] E4. **Umrechnung nach chessgoals.com:** Die Entsprechung auf chess.com und FIDE stammt aus
+      dem Wertungsvergleich von chessgoals.com (Juli 2026, Selbstangaben aktiver Spieler;
+      Lichess-Schnellschach 1680 ≈ chess.com Schnellschach 1340, Lichess Klassisch 2120 ≈ FIDE
+      1965; FIDE erst ab 1730 Lichess Klassisch). Übernommen sind nur die Zahlen (Fakten), mit
+      Quellenangabe in der App und in docs/LIZENZEN.md. Schon umgesetzt.
 
 ### P4 Trainer-Inhalte (Fable, 23.10.2026): schon umgesetzt, nur bestätigen
 

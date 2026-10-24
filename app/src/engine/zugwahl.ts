@@ -20,7 +20,9 @@ import { hatZusatzfehler, menschlicheWahl, type Menschenwerte } from "./menschen
 import { RUHIGER_VERLAUF, type Verlauf } from "./menschlich";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
+import type { Stilname } from "./stile";
 import type { Stufe } from "./stufen";
+import type { Wahltempo } from "./wahlmodell";
 import { zufallszug } from "./zufallszug";
 
 /** Ein Fehler oder Fleck mit Gewicht: 0 aus, 1 wie Menschen, 3 besonders häufig. */
@@ -50,6 +52,10 @@ export interface Gegnerprofil {
    */
   readonly fleckenStandard?: number;
   readonly fleckGewicht?: number;
+  /** Zeitklasse der Partie für das Wahlmodell (0.2.125); fehlend: Schnellschach. */
+  readonly tempo?: Wahltempo;
+  /** Einer der sieben Stile der vorgefertigten Bots (0.2.125, engine/stile.ts); fehlend: Regler `stil`. */
+  readonly stilname?: Stilname;
 }
 
 export const STANDARDPROFIL: Gegnerprofil = {
@@ -149,12 +155,23 @@ export async function waehleZug(
     if (buchzug) return { uci: buchzug, quelle: "buch", fehler: null, verlust: 0 };
   }
   const werte = menschenwerteAus(profil);
-  if (!stufe.grund && !hatZusatzfehler(werte)) return engineZug(bewerter, fen, stufe, profil.stil);
-  const kontext = {
+  // Stufe 10 ist die volle Engine (0.2.125): Zusatzfehler gelten dort nicht. Mit Zusatzfehlern
+  // spielte sie wie Stufe 9 (die Kandidaten aus Tiefe 10 begrenzen das Wahlmodell; gemessen am
+  // 24.10.2026: 9m und 10m identisch), und „volle Engine“ wäre falsch.
+  if (!stufe.grund) return engineZug(bewerter, fen, stufe, profil.stil);
+  if (!hatZusatzfehler(werte))
+    return menschlicheWahl(bewerter, fen, stufe, werte, kontextVon(stufe, profil), zufall);
+  return menschlicheWahl(bewerter, fen, stufe, werte, kontextVon(stufe, profil), zufall);
+}
+
+/** Der Kontext der menschlichen Wahl aus Stufe und Profil. */
+function kontextVon(stufe: Stufe, profil: Gegnerprofil) {
+  return {
     wertung: stufe.wertung,
     restMs: profil.restMs ?? null,
     verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
     stil: profil.stil,
+    stilname: profil.stilname,
+    tempo: profil.tempo ?? "rapid",
   };
-  return menschlicheWahl(bewerter, fen, stufe, werte, kontext, zufall);
 }

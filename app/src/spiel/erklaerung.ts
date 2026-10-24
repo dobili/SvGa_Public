@@ -37,6 +37,10 @@ const PHASENTEXT: Readonly<Partial<Record<Fehlerbefund["art"], Textschluessel>>>
   koenigPassiv: "erklaerung.koenigPassiv",
   bauernvorstoss: "erklaerung.bauernvorstoss",
   pattGesetzt: "erklaerung.pattGesetzt",
+  bauerEingestellt: "erklaerung.bauerEingestellt",
+  schlagVerpasst: "erklaerung.schlagVerpasst",
+  bauernzugOhneNot: "erklaerung.bauernzugOhneNot",
+  koenigszugOhneNot: "erklaerung.koenigszugOhneNot",
 };
 /** Fehlerarten je Phase, bei denen das Zielfeld des Zuges rot markiert wird. */
 const MIT_ZIELFELD: ReadonlySet<Fehlerbefund["art"]> = new Set([

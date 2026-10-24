@@ -1,75 +1,52 @@
 /**
- * Verlauf der Wertung des Lesers (spiel/wertung.ts) als Kurve, oben in den Einstellungen
- * (Wunsch des Autors, 17.10.2026, Version 0.2.41).
+ * Karte „Deine Wertung“ oben in den Einstellungen (Wunsch des Autors, 17.10.2026, Version 0.2.41):
+ * die Elo-Wertung aus den gewerteten Partien (spiel/wertung.ts) mit Kurve.
  *
- * Rolle im Gesamtbild: Die Wertung ist eine Elo-Zahl aus allen gewerteten Partien. Die Karte zeigt
- * die aktuelle Zahl groß, darunter die Kurve mit einem Punkt je Partie (grün Sieg, rot Niederlage,
- * grau Remis) und einem Auswahlfeld für den Ausschnitt: die letzten 10, 25 oder 50 Partien oder
- * ein Zeitraum (1 Woche, 4 Wochen, 3 Monate, halbes Jahr, Jahr). Bei den Partien steht jede
- * gleich weit von der nächsten; beim Zeitraum liegt jede Partie an ihrer Zeit, der rechte Rand ist
- * jetzt. Umschalter „Ansicht“ (Wunsch des Autors): „Wertung“ zeigt die Elo-Wertung, „Eröffnung“,
- * „Mittelspiel“ und „Endspiel“ die Schätzung der Engine für den Leser in dieser Phase je Partie
- * (Durchschnitt im Ausschnitt als Zahl), damit sichtbar wird, wo das Üben am meisten bringt.
- * Für Bildschirmleser trägt jeder Punkt Datum, Ergebnis, Gegner und Wertung. „Wertung
- * zurücksetzen“ (nach Nachfrage) leert den Verlauf und macht alle bisherigen Partien dauerhaft
- * ungewertet (speicher/partien.ts, setzeWertungZurueck).
- * Seit 0.2.80 (Wunsch des Autors) ist die Ansicht eine Reiterzeile statt umbrechender Knöpfe,
- * und die Erklärung des Elo-Systems steht hinter einem Fragezeichen (anfangs eingeklappt).
- * Abhängigkeiten: spiel/wertung.ts, speicher/, Reiter, InfoKnopf, i18n.
+ * Rolle im Gesamtbild: Die Karte zeigt die aktuelle Zahl groß, darunter die Kurve mit einem Punkt
+ * je Partie und ein Auswahlfeld für den Ausschnitt (letzte 10, 25, 50 Partien oder ein Zeitraum).
+ * Umschalter „Ansicht“: „Wertung“ zeigt die Elo-Wertung; „Eröffnung“, „Mittelspiel“, „Endspiel“
+ * zeigen seit 0.2.125 die Schätzung des Elo-Modells für die Phase aus den jeweils letzten zehn
+ * Partien (spiel/wertung.ts, phasenverlauf), nur wo die Spanne schmal ist (aus einer Partie ist
+ * sie das nie, deshalb reichten Werte je Partie nicht mehr). Seit 0.2.125 außerdem (Empfehlung,
+ * vom Autor am 24.10.2026 angenommen): Reiter „Zeitklasse“ (Blitz, Schnellschach, Klassisch) mit
+ * eigener Wertung wie bei Lichess, sobald mehr als eine Zeitklasse Partien hat; „vorläufig“ in den
+ * ersten zehn Partien; die Schätzung aus den Zügen („Deine Spielstärke“) als Zeile darunter, damit
+ * Ergebnisse und Zugqualität nebeneinander stehen. „Wertung zurücksetzen“ (nach Nachfrage) leert
+ * den Verlauf und macht alle bisherigen Partien dauerhaft ungewertet (speicher/partien.ts).
+ * Seit 0.2.80 ist die Ansicht eine Reiterzeile, die Erklärung steht hinter einem Fragezeichen.
+ * Abhängigkeiten: spiel/wertung.ts, spiel/elomodell.ts, speicher/, Wertungskurvenbild, Reiter,
+ * InfoKnopf, wertungstext, i18n.
  */
-import { useState } from "react";
-import { t, type Textschluessel, tZahl } from "../../i18n/sprache";
+import { useMemo, useState } from "react";
+import { t, type Textschluessel } from "../../i18n/sprache";
 import { setzeWertungZurueck } from "../../speicher/partien";
+import type { Partieeintrag } from "../../speicher/partien";
 import { aendere } from "../../speicher/speicher";
+import type { Wertungstempo } from "../../spiel/elomodell";
 import { PHASEN, type Phase } from "../../spiel/phasen";
 import {
   aktuelleWertung,
   imBereich,
-  type Punktwert,
+  istVorlaeufig,
+  kennzahlenJePartie,
+  phasenverlauf,
+  staerkeLetzterPartien,
+  tempoDesPunkts,
+  verlaufDerZeitklasse,
+  zeitklassenMitWertung,
   type Wertungsbereich,
   type Wertungspunkt,
 } from "../../spiel/wertung";
 import { MitInfo } from "./InfoKnopf";
 import { Reiter } from "./Reiter";
 import { Titelsymbol } from "./Titelsymbol";
+import { Kurve } from "./Wertungskurvenbild";
+import { zeitklassenname } from "./wertungstext";
 
 /** Was die Kurve zeigt: die Wertung oder die Schätzung je Phase. */
 type Ansicht = "gesamt" | Phase;
 const ANSICHTEN: readonly Ansicht[] = ["gesamt", ...PHASEN];
 
-/** Der Wert eines Punktes in dieser Ansicht; null, wenn die Phase in der Partie fehlte. */
-function wertIn(punkt: Wertungspunkt, ansicht: Ansicht): number | null {
-  return ansicht === "gesamt" ? punkt.wertung : punkt.phasen[ansicht];
-}
-
-/** Die Punkte mit Wert in dieser Ansicht, der Wert an die Stelle der Wertung gesetzt. */
-function inAnsicht(punkte: readonly Wertungspunkt[], ansicht: Ansicht): Wertungspunkt[] {
-  return punkte.flatMap((p) => {
-    const wert = wertIn(p, ansicht);
-    return wert === null ? [] : [{ ...p, wertung: wert }];
-  });
-}
-
-/** Durchschnitt der Werte, gerundet; null ohne Punkte. */
-function durchschnitt(punkte: readonly Wertungspunkt[]): number | null {
-  if (punkte.length === 0) return null;
-  return Math.round(punkte.reduce((s, p) => s + p.wertung, 0) / punkte.length);
-}
-
-/** Zeichenfläche in SVG-Einheiten; das Bild passt sich der Breite an. */
-const BREITE = 300;
-const HOEHE = 110;
-/** Rand links für die Zahlen der Wertung, unten für die Daten. */
-const RAND_LINKS = 34;
-const RAND_RECHTS = 8;
-const RAND_OBEN = 6;
-const RAND_UNTEN = 14;
-const PUNKTRADIUS = 3;
-const SCHRIFT = 9;
-/** Die Achse rastet auf runde Wertungen. */
-const SCHRITT = 50;
-/** So viele Rasterlinien höchstens. */
-const RASTERLINIEN = 4;
 const TAGE_WOCHE = 7;
 const TAGE_4_WOCHEN = 28;
 const TAGE_3_MONATE = 91;
@@ -94,132 +71,11 @@ const AUSSCHNITTE: readonly Ausschnitt[] = [
 ];
 const STANDARD_AUSSCHNITT = "p25";
 
-const ERGEBNISTEXT: Readonly<Record<Punktwert, Textschluessel>> = {
-  1: "ich.wertung.sieg",
-  0.5: "ich.wertung.remis",
-  0: "ich.wertung.niederlage",
-};
-const ERGEBNISKLASSE: Readonly<Record<Punktwert, string>> = {
-  1: "wertungskurve-sieg",
-  0.5: "wertungskurve-remis",
-  0: "wertungskurve-niederlage",
-};
-
-/** „17.10.2026“ aus einer ISO-Zeit. */
-function datum(iso: string): string {
-  const d = new Date(iso);
-  return `${d.getDate()}.${d.getMonth() + 1}.${d.getFullYear()}`;
-}
-
-/** Der Wertebereich der Achse: runde Grenzen um die Punkte, mindestens ein Schritt Luft. */
-function achse(punkte: readonly Wertungspunkt[]): { unten: number; oben: number } {
-  const werte = punkte.map((p) => p.wertung);
-  const unten = Math.floor((Math.min(...werte) - 1) / SCHRITT) * SCHRITT;
-  const oben = Math.ceil((Math.max(...werte) + 1) / SCHRITT) * SCHRITT;
-  return { unten, oben };
-}
-
-/** Die Lage der Punkte in der Zeichenfläche. */
-function lagen(
-  punkte: readonly Wertungspunkt[],
-  bereich: Wertungsbereich,
-  jetzt: Date,
-): { x: number; y: number; punkt: Wertungspunkt }[] {
-  const { unten, oben } = achse(punkte);
-  const breite = BREITE - RAND_LINKS - RAND_RECHTS;
-  const hoehe = HOEHE - RAND_OBEN - RAND_UNTEN;
-  const y = (w: number) => RAND_OBEN + hoehe - ((w - unten) / (oben - unten)) * hoehe;
-  if (bereich.art === "partien") {
-    const schritt = punkte.length > 1 ? breite / (punkte.length - 1) : 0;
-    return punkte.map((punkt, i) => ({
-      x: RAND_LINKS + (punkte.length > 1 ? i * schritt : breite),
-      y: y(punkt.wertung),
-      punkt,
-    }));
-  }
-  const ende = jetzt.getTime();
-  const anfang = ende - bereich.tage * 24 * 60 * 60 * 1000;
-  return punkte.map((punkt) => ({
-    x: RAND_LINKS + ((new Date(punkt.zeit).getTime() - anfang) / (ende - anfang)) * breite,
-    y: y(punkt.wertung),
-    punkt,
-  }));
-}
-
-/** Die Rasterlinien mit Beschriftung: Zwischenwerte in ganzen Schritten. */
-function raster(punkte: readonly Wertungspunkt[]): number[] {
-  const { unten, oben } = achse(punkte);
-  const stufen = Math.max(1, Math.ceil((oben - unten) / SCHRITT / RASTERLINIEN));
-  const linien: number[] = [];
-  for (let w = unten; w <= oben; w += stufen * SCHRITT) linien.push(w);
-  return linien;
-}
-
-function Kurve({
-  punkte,
-  bereich,
-  jetzt,
-}: {
-  punkte: readonly Wertungspunkt[];
-  bereich: Wertungsbereich;
-  jetzt: Date;
-}) {
-  const { unten, oben } = achse(punkte);
-  const hoehe = HOEHE - RAND_OBEN - RAND_UNTEN;
-  const yVon = (w: number) => RAND_OBEN + hoehe - ((w - unten) / (oben - unten)) * hoehe;
-  const lage = lagen(punkte, bereich, jetzt);
-  const erste = punkte[0];
-  const letzte = punkte[punkte.length - 1];
-  return (
-    <svg
-      className="wertungskurve"
-      viewBox={`0 0 ${BREITE} ${HOEHE}`}
-      role="img"
-      aria-label={t("ich.wertung.kurve")}
-      data-testid="wertungskurve"
-    >
-      {raster(punkte).map((w) => (
-        <g key={w} className="wertungskurve-raster">
-          <line x1={RAND_LINKS} y1={yVon(w)} x2={BREITE - RAND_RECHTS} y2={yVon(w)} />
-          <text x={RAND_LINKS - 3} y={yVon(w) + SCHRIFT / 3} fontSize={SCHRIFT} textAnchor="end">
-            {w}
-          </text>
-        </g>
-      ))}
-      <polyline
-        className="wertungskurve-linie"
-        points={lage.map((l) => `${l.x},${l.y}`).join(" ")}
-      />
-      {lage.map((l) => (
-        <circle
-          key={l.punkt.partieId}
-          className={ERGEBNISKLASSE[l.punkt.ergebnis]}
-          cx={l.x}
-          cy={l.y}
-          r={PUNKTRADIUS}
-        >
-          <title>
-            {t("ich.wertung.punkt", {
-              datum: datum(l.punkt.zeit),
-              ergebnis: t(ERGEBNISTEXT[l.punkt.ergebnis]),
-              gegner: l.punkt.gegner,
-              wertung: l.punkt.wertung,
-            })}
-          </title>
-        </circle>
-      ))}
-      {erste && letzte && (
-        <g className="wertungskurve-daten">
-          <text x={RAND_LINKS} y={HOEHE - 3} fontSize={SCHRIFT}>
-            {datum(erste.zeit)}
-          </text>
-          <text x={BREITE - RAND_RECHTS} y={HOEHE - 3} fontSize={SCHRIFT} textAnchor="end">
-            {bereich.art === "zeit" ? t("ich.wertung.jetzt") : datum(letzte.zeit)}
-          </text>
-        </g>
-      )}
-    </svg>
-  );
+/** „+24“, „−12“ oder „±0“. */
+function vorzeichen(wert: number): string {
+  if (wert > 0) return `+${wert}`;
+  if (wert < 0) return `−${-wert}`;
+  return "±0";
 }
 
 /** Knopf „Wertung zurücksetzen“ mit Nachfrage. */
@@ -251,48 +107,122 @@ function Zuruecksetzen() {
   );
 }
 
-/** „+24“, „−12“ oder „±0“. */
-function vorzeichen(wert: number): string {
-  if (wert > 0) return `+${wert}`;
-  if (wert < 0) return `−${-wert}`;
-  return "±0";
-}
-
-/**
- * Die Karte mit Wertung, Ausschnitt und Kurve. `jetzt` für die Zeiträume (in Tests fest).
- * Beispiel: drei gewertete Partien, Wertung 1424 → „1424“, Kurve mit drei Punkten.
- */
-export function Wertungskurve({
-  punkte,
-  jetzt = new Date(),
-}: {
-  punkte: readonly Wertungspunkt[];
-  jetzt?: Date;
-}) {
-  const [kennung, setzeKennung] = useState(STANDARD_AUSSCHNITT);
-  const [ansicht, setzeAnsicht] = useState<Ansicht>("gesamt");
-  const ausschnitt = AUSSCHNITTE.find((a) => a.kennung === kennung) ?? AUSSCHNITTE[0];
-  const aktuell = aktuelleWertung(punkte);
-  if (aktuell === null || !ausschnitt) {
-    return (
-      <section className="karte wertung" data-testid="wertung" data-tour="einstellungen-wertung">
-        <h2 className="karte-titel">
-          <Titelsymbol art="wertung" />
-          {t("ich.wertung.titel")}
-        </h2>
-        <p className="hinweis">{t("ich.wertung.leer")}</p>
-      </section>
-    );
-  }
-  const sichtbar = inAnsicht(imBereich(punkte, ausschnitt.bereich, jetzt), ansicht);
-  const start = sichtbar[0];
-  const schnitt = durchschnitt(sichtbar);
+/** Die leere Karte, solange keine Partie gewertet ist. */
+function LeereKarte() {
   return (
     <section className="karte wertung" data-testid="wertung" data-tour="einstellungen-wertung">
       <h2 className="karte-titel">
         <Titelsymbol art="wertung" />
         {t("ich.wertung.titel")}
       </h2>
+      <p className="hinweis">{t("ich.wertung.leer")}</p>
+    </section>
+  );
+}
+
+/** Zeilen unter der Zahl in der Ansicht „Wertung“: Stand, „vorläufig“, Schätzung aus den Zügen. */
+function Wertungszeilen({
+  kette,
+  sichtbar,
+  partien,
+  tempo,
+}: {
+  kette: readonly Wertungspunkt[];
+  sichtbar: readonly Wertungspunkt[];
+  partien: readonly Partieeintrag[];
+  tempo: Wertungstempo;
+}) {
+  const aktuell = aktuelleWertung(kette) ?? 0;
+  const start = sichtbar[0];
+  const zuege = useMemo(() => staerkeLetzterPartien(partien, tempo), [partien, tempo]);
+  return (
+    <>
+      <p className="hinweis">
+        {t(kette.length === 1 ? "ich.wertung.standKlasseEins" : "ich.wertung.standKlasse", {
+          zeitklasse: zeitklassenname(tempo),
+          anzahl: kette.length,
+          aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
+        })}
+      </p>
+      {istVorlaeufig(kette) && (
+        <p className="hinweis" data-testid="wertung-vorlaeufig">
+          {t("ich.wertung.vorlaeufig", { anzahl: kette.length })}
+        </p>
+      )}
+      {zuege && (
+        <p className="hinweis">
+          {t(zuege.partien === 1 ? "ich.wertung.ausZuegenEins" : "ich.wertung.ausZuegen", {
+            mitte: zuege.mitte,
+            von: zuege.von,
+            bis: zuege.bis,
+            partien: zuege.partien,
+          })}
+        </p>
+      )}
+    </>
+  );
+}
+
+/**
+ * Die Karte mit Wertung, Zeitklasse, Ausschnitt und Kurve. `jetzt` für die Zeiträume (in Tests
+ * fest). Beispiel: drei gewertete Schnellschach-Partien, Wertung 1424 → „1424“, Zeile
+ * „Schnellschach: 3 gewertete Partien …“, „Vorläufig …“, Kurve mit drei Punkten.
+ */
+export function Wertungskurve({
+  punkte,
+  partien,
+  jetzt = new Date(),
+}: {
+  punkte: readonly Wertungspunkt[];
+  partien: readonly Partieeintrag[];
+  jetzt?: Date;
+}) {
+  const [kennung, setzeKennung] = useState(STANDARD_AUSSCHNITT);
+  const [ansicht, setzeAnsicht] = useState<Ansicht>("gesamt");
+  const [tempoWahl, setzeTempo] = useState<Wertungstempo | null>(null);
+  const zeitklassen = zeitklassenMitWertung(punkte);
+  const letzter = punkte.at(-1);
+  // Gezeigt wird die gewählte Zeitklasse, sonst die der letzten gewerteten Partie.
+  const tempo =
+    tempoWahl && zeitklassen.includes(tempoWahl)
+      ? tempoWahl
+      : letzter
+        ? tempoDesPunkts(letzter)
+        : "rapid";
+  const kette = useMemo(() => verlaufDerZeitklasse(punkte, tempo), [punkte, tempo]);
+  const kennzahlen = useMemo(
+    () =>
+      ansicht === "gesamt"
+        ? new Map()
+        : kennzahlenJePartie(partien, new Set(kette.map((p) => p.partieId))),
+    [ansicht, partien, kette],
+  );
+  const ausschnitt = AUSSCHNITTE.find((a) => a.kennung === kennung) ?? AUSSCHNITTE[0];
+  const aktuell = aktuelleWertung(kette);
+  if (aktuell === null || !ausschnitt) return <LeereKarte />;
+  const sichtbar = imBereich(kette, ausschnitt.bereich, jetzt);
+  const phasenpunkte = ansicht === "gesamt" ? [] : phasenverlauf(kette, kennzahlen, tempo, ansicht);
+  const imAusschnitt = new Set(sichtbar.map((p) => p.partieId));
+  const phasenSichtbar = phasenpunkte.filter((p) => imAusschnitt.has(p.punkt.partieId));
+  const letztePhase = phasenSichtbar.at(-1)?.schaetzung ?? null;
+  const kurvenpunkte: readonly Wertungspunkt[] =
+    ansicht === "gesamt"
+      ? sichtbar
+      : phasenSichtbar.map((p) => ({ ...p.punkt, wertung: p.schaetzung.mitte }));
+  return (
+    <section className="karte wertung" data-testid="wertung" data-tour="einstellungen-wertung">
+      <h2 className="karte-titel">
+        <Titelsymbol art="wertung" />
+        {t("ich.wertung.titel")}
+      </h2>
+      {zeitklassen.length > 1 && (
+        <Reiter
+          name={t("ich.wertung.zeitklasse")}
+          eintraege={zeitklassen.map((z) => ({ wert: z, text: zeitklassenname(z) }))}
+          gewaehlt={tempo}
+          beiWahl={setzeTempo}
+        />
+      )}
       <Reiter
         name={t("ich.wertung.ansicht")}
         eintraege={ANSICHTEN.map((a) => ({
@@ -303,19 +233,22 @@ export function Wertungskurve({
         beiWahl={setzeAnsicht}
       />
       <p className="wertung-zahl" data-testid="wertung-zahl">
-        {ansicht === "gesamt" ? aktuell : (schnitt ?? "–")}
+        {ansicht === "gesamt" ? aktuell : (letztePhase?.mitte ?? "–")}
       </p>
-      <p className="hinweis">
-        {ansicht === "gesamt"
-          ? t(punkte.length === 1 ? "ich.wertung.standEins" : "ich.wertung.stand", {
-              anzahl: punkte.length,
-              aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
-            })
-          : tZahl("ich.wertung.phasenstand", sichtbar.length, {
-              phase: t(`phase.name.${ansicht}`),
-              anzahl: sichtbar.length,
-            })}
-      </p>
+      {ansicht === "gesamt" ? (
+        <Wertungszeilen kette={kette} sichtbar={sichtbar} partien={partien} tempo={tempo} />
+      ) : (
+        <p className="hinweis">
+          {letztePhase
+            ? t("ich.wertung.phasenzahl", {
+                phase: t(`phase.name.${ansicht}`),
+                mitte: letztePhase.mitte,
+                von: letztePhase.von,
+                bis: letztePhase.bis,
+              })
+            : t("ich.wertung.phasenZuWenig", { phase: t(`phase.name.${ansicht}`) })}
+        </p>
+      )}
       <label className="einstellung-name" htmlFor="wertung-bereich">
         {t("ich.wertung.bereich")}
       </label>
@@ -331,8 +264,8 @@ export function Wertungskurve({
           </option>
         ))}
       </select>
-      {sichtbar.length > 0 ? (
-        <Kurve punkte={sichtbar} bereich={ausschnitt.bereich} jetzt={jetzt} />
+      {kurvenpunkte.length > 0 ? (
+        <Kurve punkte={kurvenpunkte} bereich={ausschnitt.bereich} jetzt={jetzt} />
       ) : (
         <p className="hinweis">{t("ich.wertung.keineImBereich")}</p>
       )}

@@ -34,7 +34,6 @@ describe("Rundreise", () => {
         strenge: "streng",
         figurensatz: "klassisch-cburnett",
         ton: "an",
-        genauigkeitsmodus: "lichess",
         vorWerkzeugen: "an",
       },
       lernstand: { 1: [0, 2] },

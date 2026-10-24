@@ -30,7 +30,7 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   await expect(page.getByRole("heading", { name: "Spielen" })).toBeVisible();
-  await page.getByRole("radio", { name: "5 + 3" }).click();
+  await page.getByRole("radio", { name: "Blitz 5 + 3" }).click();
   // Gewertete Partien haben keine Rücknahme (S9); ungewertet ist sie da.
   await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
@@ -57,7 +57,7 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
 test("Neuladen mitten im Nachdenken: die Bedenkzeit bleibt verbraucht (N180)", async ({ page }) => {
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await page.getByRole("radio", { name: "5 + 3" }).click();
+  await page.getByRole("radio", { name: "Blitz 5 + 3" }).click();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await ziehe(page, /^e2, Bauer/, "e4");
   await warteAufLeser(page);
@@ -137,18 +137,13 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   // Dazu die Strafe: 2... Dh4# als eigener Zweig.
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("So wird der Fehler bestraft");
   await expect(page.getByTestId("nebenzweig-strafe")).toContainText("Dh4#");
-  // Seit 0.2.83 mit dem Modus (Standard „App“, bis 0.2.86 „Mittelweg“); seit 0.2.87 schaltet
-  // man ihn nur hier um, mit Erklärung hinter dem Fragezeichen.
+  // Seit 0.2.121 ohne Schalter „Genauigkeit wie“: Genauigkeit nach Lichess, Spielstärke aus dem
+  // Elo-Modell je Zeitklasse, Erklärung hinter dem Fragezeichen.
   const spielstaerke = page.getByTestId("spielstaerke");
-  await expect(spielstaerke).toContainText("Genauigkeit (App)");
-  // Seit R56 steckt der Schalter hinter dem Fragezeichen der Karte.
+  await expect(spielstaerke).toContainText("Genauigkeit");
+  await expect(spielstaerke.getByRole("radiogroup")).toHaveCount(0);
   await spielstaerke.getByRole("button", { name: "Erklärung: Spielstärke" }).click();
-  await expect(spielstaerke).toContainText("Züge in entschiedener Stellung zählen kaum");
-  const modus = spielstaerke.getByRole("radiogroup", { name: "Genauigkeit wie" });
-  await expect(modus.getByRole("radio", { name: "App" })).toHaveAttribute("aria-checked", "true");
-  await modus.getByRole("radio", { name: "chess.com" }).click();
-  await expect(spielstaerke).toContainText("Genauigkeit (chess.com)");
-  await modus.getByRole("radio", { name: "App" }).click();
+  await expect(spielstaerke).toContainText("Maßstab von Lichess");
   // R56: Ring, fünf Balken und die Zugklassen der eigenen Seite; der Umschalter wechselt die Seite.
   await expect(page.getByTestId("balken-taktik")).toBeVisible();
   await expect(page.getByTestId("zugklasse-patzer")).toContainText("1");
@@ -395,15 +390,6 @@ test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.
   await expect(karte).not.toContainText("Besser war");
   await page.screenshot({ path: "test-results/bilder/spielengine.png", fullPage: true });
   await expect(karte.getByRole("button")).toHaveCount(0);
-});
-
-test("Genauigkeit wie: seit 0.2.87 nur in der Auswertung, nicht mehr in den Einstellungen", async ({
-  page,
-}) => {
-  await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await page.getByRole("tab", { name: "Training" }).click();
-  await expect(page.getByRole("radiogroup", { name: "Genauigkeit wie" })).toHaveCount(0);
 });
 
 /** Beginnt eine ungewertete Partie mit der Farbe und gibt gleich auf. */

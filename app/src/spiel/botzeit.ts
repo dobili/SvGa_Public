@@ -13,6 +13,7 @@
  */
 import type { Color } from "chessops/types";
 import { bedenkzeitMs, type Zuglage } from "../engine/bedenkzeit";
+import { wertungstempo } from "./elomodell";
 import { zieheMitUhr } from "./ablauf";
 import {
   amZug,
@@ -100,6 +101,7 @@ export function botBedenkzeit(
   return bedenkzeitMs(
     {
       wertung: wertung ?? WERTUNG_VOLLE_ENGINE,
+      tempo: wertungstempo(partie.einstellung.uhr),
       restMs: rest,
       zugnummer: Math.floor(partie.zuege.length / 2) + 1,
       lage: zuglage(partie, zug.uci, zug.breite),

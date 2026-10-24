@@ -28,7 +28,6 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
       strenge: "streng",
       figurensatz: "buch",
       ton: "aus",
-      genauigkeitsmodus: "mittelweg",
       vorWerkzeugen: "aus",
     });
     expect(ergebnis.daten.lernstand).toEqual({ 1: [0, 3], 8: [] });
@@ -52,10 +51,10 @@ describe("Format 0: Merker der Versionen 0.2.x", () => {
     expect(einstellungenAus({ figurensatz: "bunt" }).figurensatz).toBe("buch");
   });
 
-  it("liest den Genauigkeitsmodus (0.2.83), ohne Angabe oder unbekannt „mittelweg“", () => {
-    expect(einstellungenAus({ genauigkeitsmodus: "chesscom" }).genauigkeitsmodus).toBe("chesscom");
-    expect(einstellungenAus({}).genauigkeitsmodus).toBe("mittelweg");
-    expect(einstellungenAus({ genauigkeitsmodus: "fide" }).genauigkeitsmodus).toBe("mittelweg");
+  it("übergeht den alten Genauigkeitsmodus (0.2.83 bis 0.2.120) beim Lesen", () => {
+    expect(einstellungenAus({ genauigkeitsmodus: "chesscom" })).not.toHaveProperty(
+      "genauigkeitsmodus",
+    );
     // Seit 0.2.90: „Erst selbst denken“ vor Werkzeugen, ältere Stände lesen sich als „aus“.
     expect(einstellungenAus({}).vorWerkzeugen).toBe("aus");
     expect(einstellungenAus({ vorWerkzeugen: "an" }).vorWerkzeugen).toBe("an");
@@ -94,13 +93,11 @@ describe("Format 1", () => {
       ok: true,
       daten: {
         ...format1,
-        // Figurensatz und Ton (seit 0.2.33) und der Genauigkeitsmodus (0.2.83) fehlen in Format 1
-        // und lesen sich als Standard.
+        // Figurensatz und Ton (seit 0.2.33) fehlen in Format 1 und lesen sich als Standard.
         einstellungen: {
           ...format1.einstellungen,
           figurensatz: "buch",
           ton: "aus",
-          genauigkeitsmodus: "mittelweg",
           vorWerkzeugen: "aus",
         },
         // Beantwortete Warum-Fragen (seit 0.2.99) fehlen in Format 1 und lesen sich leer.

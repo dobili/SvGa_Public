@@ -38,7 +38,37 @@
         },
         {
           "art": "text",
-          "text": " (Philidor), 9.8 (Lucena), 9.15 (Vancura) und 9.28 (Dame gegen Bauer) mit „Stellung aufbauen“ ein und spiele jede mit „Von hier aus weiterspielen“ gegen den Computer zu Ende, einmal mit Weiß und einmal mit Schwarz. Prüfe beim Farbwechsel das Zugrecht. Mache im Anschluss die Verschiebeprobe: Setze den schwarzen König eine Linie weiter und prüfe, ob dein Plan noch trägt.",
+          "text": " (Philidor), ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "9.8",
+          "abbildung": "9.8"
+        },
+        {
+          "art": "text",
+          "text": " (Lucena), ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "9.15",
+          "abbildung": "9.15"
+        },
+        {
+          "art": "text",
+          "text": " (Vancura) und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "9.28",
+          "abbildung": "9.28"
+        },
+        {
+          "art": "text",
+          "text": " (Dame gegen Bauer) mit „Stellung aufbauen“ ein und spiele jede mit „Von hier aus weiterspielen“ gegen den Computer zu Ende, einmal mit Weiß und einmal mit Schwarz. Prüfe beim Farbwechsel das Zugrecht. Mache im Anschluss die Verschiebeprobe: Setze den schwarzen König eine Linie weiter und prüfe, ob dein Plan noch trägt.",
           "stil": "normal"
         }
       ]
@@ -138,5 +168,5 @@
     "datei": "kap09_endspiel_vertiefung.tex",
     "zeile": 820
   },
-  "stand": "2026-10-16"
+  "stand": "2026-10-24"
 }

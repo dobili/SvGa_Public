@@ -4,9 +4,9 @@
  * Ausschnitte für die Kurve.
  */
 import { staerkeDerStufe } from "../engine/botstaerke";
+import { SCHMAL } from "./elomodell";
 import { describe, expect, it } from "vitest";
 import type { Partieeintrag } from "../speicher/partien";
-import { staerkeUeberPartien } from "./staerkemodell";
 import { leserzug, neuePartie, ziehe, type Partie, type Partieeinstellung } from "./partie";
 import {
   ANFANGSPARTIEN,
@@ -14,12 +14,17 @@ import {
   ergebnisFuer,
   erwartung,
   imBereich,
+  istVorlaeufig,
   K_ANFANG,
   K_DANACH,
+  kennzahlenJePartie,
   mitGewerteterPartie,
+  phasenverlauf,
   staerkeDerPartie,
   staerkeLetzterPartien,
+  verlaufDerZeitklasse,
   wertungspunktFuer,
+  zeitklassenMitWertung,
   type Wertungspunkt,
 } from "./wertung";
 
@@ -84,8 +89,8 @@ describe("Wertung", () => {
     expect(verlauf).toHaveLength(1);
     expect(verlauf[0]?.wertung).toBe(schaetzung);
     expect(verlauf[0]?.ergebnis).toBe(0);
-    // Fehlerfrei: Mittelspiel (ab Zug 5, Schwarz entwickelt) geschätzt, Endspiel nie erreicht.
-    expect(verlauf[0]?.phasen.mittelspiel).toBe(schaetzung);
+    // Seit 0.2.125 steht eine Zahl je Phase nur bei schmaler Spanne, nie aus einer Partie.
+    expect(verlauf[0]?.phasen.mittelspiel).toBeNull();
     expect(verlauf[0]?.phasen.endspiel).toBeNull();
     // Zweite Partie gewonnen; Gegnerwertung ist seit 0.2.85 die feste Zahl der Stufe 3.
     verlauf = mitGewerteterPartie(verlauf, eintrag("2", "white"));
@@ -102,6 +107,49 @@ describe("Wertung", () => {
     verlauf = mitGewerteterPartie(verlauf, eintrag("11", "black"));
     const erwartet = vorher + K_DANACH * (0 - erwartung(vorher, verlauf.at(-1)?.gegner ?? 0));
     expect(verlauf.at(-1)?.wertung).toBe(Math.round(erwartet));
+  });
+
+  it("Wertung je Zeitklasse (0.2.125): eigene Kette, ältere Punkte zählen als Schnellschach", () => {
+    const blitz = { grundzeitMs: 3 * 60 * 1000, zuschlagMs: 0 };
+    let verlauf = mitGewerteterPartie([], eintrag("r1", "white"));
+    verlauf = mitGewerteterPartie(verlauf, eintrag("b1", "black", { uhr: blitz }));
+    expect(verlauf.map((p) => p.tempo)).toEqual(["rapid", "blitz"]);
+    // Die erste Blitz-Partie startet mit der Schätzung, nicht mit der Schnellschach-Wertung.
+    const blitzStart = staerkeDerPartie(eintrag("b1", "black", { uhr: blitz }))?.white.spielstaerke;
+    expect(verlauf[1]?.wertung).toBe(blitzStart);
+    // Niederlage gegen Stufe 3: Die Blitz-Wertung fällt, die Schnellschach-Wertung bleibt.
+    verlauf = mitGewerteterPartie(verlauf, eintrag("b2", "black", { uhr: blitz }));
+    const blitzKette = verlaufDerZeitklasse(verlauf, "blitz");
+    expect(blitzKette).toHaveLength(2);
+    expect(blitzKette[1]?.wertung).toBeLessThan(blitzKette[0]?.wertung ?? 0);
+    expect(verlaufDerZeitklasse(verlauf, "rapid")).toHaveLength(1);
+    expect(zeitklassenMitWertung(verlauf)).toEqual(["blitz", "rapid"]);
+    expect(istVorlaeufig(blitzKette)).toBe(true);
+    // Ein Punkt aus der Zeit vor 0.2.125 hat keine Zeitklasse und zählt als Schnellschach.
+    const alt: Wertungspunkt = { ...(verlauf[0] as Wertungspunkt), tempo: undefined };
+    expect(verlaufDerZeitklasse([alt], "rapid")).toHaveLength(1);
+    expect(zeitklassenMitWertung([alt])).toEqual(["rapid"]);
+  });
+
+  it("Phasenverlauf (0.2.125): Zahl erst, wenn die Spanne über mehrere Partien schmal ist", () => {
+    const partien: Partieeintrag[] = [];
+    let verlauf: readonly Wertungspunkt[] = [];
+    for (let i = 1; i <= 12; i += 1) {
+      const e = eintrag(String(i), i % 2 ? "white" : null);
+      partien.push(e);
+      verlauf = mitGewerteterPartie(verlauf, e);
+    }
+    const kennzahlen = kennzahlenJePartie(partien, new Set(verlauf.map((p) => p.partieId)));
+    expect(kennzahlen.size).toBe(12);
+    const mittelspiel = phasenverlauf(verlauf, kennzahlen, "rapid", "mittelspiel");
+    // Nach einer Partie keine Zahl, nach genug Partien eine; je Punkt eine Schätzung mit Spanne.
+    expect(mittelspiel.length).toBeGreaterThan(0);
+    expect(mittelspiel.length).toBeLessThan(12);
+    expect(mittelspiel[0]?.punkt.partieId).not.toBe("1");
+    for (const p of mittelspiel)
+      expect(p.schaetzung.bis - p.schaetzung.mitte).toBeLessThanOrEqual(SCHMAL);
+    // Ohne Kennzahlen (Partien gelöscht) kein Verlauf.
+    expect(phasenverlauf(verlauf, new Map(), "rapid", "endspiel")).toEqual([]);
   });
 
   it("zählt eine früh entschiedene Partie gegen einen Bot (seit 0.2.105)", () => {
@@ -187,8 +235,14 @@ describe("Wertung", () => {
     expect(schaetzung?.partien).toBe(3);
     const voll = staerkeLetzterPartien([mensch, ...engine]);
     expect(voll?.partien).toBe(10);
-    // Fehlerfreie Partien: innere Genauigkeit 100 % in jeder.
-    expect(voll?.mitte).toBe(staerkeUeberPartien(Array.from({ length: 10 }, () => 100))?.mitte);
+    // Fehlerfreie Partien (100 % Genauigkeit): hohe Zahl; seit 0.2.125 je Zeitklasse (ohne Uhr
+    // Schnellschach), die Spanne wird über zehn Partien enger als bei dreien.
+    expect(voll?.tempo).toBe("rapid");
+    expect(voll?.mitte ?? 0).toBeGreaterThan(1800);
+    expect((voll?.bis ?? 0) - (voll?.von ?? 0)).toBeLessThan(
+      (schaetzung?.bis ?? 0) - (schaetzung?.von ?? 0),
+    );
+    expect(staerkeLetzterPartien([mensch, ...engine], "blitz")).toBeNull();
     expect(staerkeLetzterPartien([mensch])).toBeNull();
   });
 });

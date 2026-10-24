@@ -17,6 +17,7 @@
 | Eröffnungsnamen (Lichess chess-openings, `inhalte/lichess/`)                                                           | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft in `inhalte/lichess/README.md`)  |
 | React, React DOM, Scheduler, Workbox, vite-plugin-pwa                                                                  | MIT                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Lucide-Symbole, idb                                                                                                    | ISC                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
+| Wertungsvergleich (Zahlen aus chessgoals.com/rating-comparison, Juli 2026, in `app/src/spiel/umrechnung-daten.ts`, seit 0.2.125) | Fakten, kein Schutz; Quelle genannt | – (Herkunft in der Datei und in der Erklärung der App)        |
 
 ## Hinweise
 

@@ -9,8 +9,13 @@
  * der mit der Zugnummer wächst (Eröffnungszüge kommen schnell, gute Spieler kennen mehr Theorie)
  * und nach der Lage schwankt (ein Wiederschlag halb so lang, ein einziger guter Zug länger). Unter
  * 60, 30 und 10 Sekunden zieht er im Schnitt in festen, kurzen Zeiten (Schnell- und Notmodus).
- * Abhängigkeiten: engine/menschenprofil.ts.
+ * Seit 0.2.125 (Restplan 8b) gelten Anteile und Zeitnot-Sekunden je Zeitklasse
+ * (engine/bedenkzeit-daten.ts, aus 390 000 Zügen der Spielerprofile): Im Blitz braucht ein Zug
+ * etwa den doppelten Anteil der Restzeit wie im Schnellschach, im Klassischen etwa die Hälfte.
+ * Abhängigkeiten: engine/menschenprofil.ts, engine/bedenkzeit-daten.ts, spiel/elomodell-daten.ts.
  */
+import type { Wertungstempo } from "../spiel/elomodell-daten";
+import { BEDENKZEIT_JE_TEMPO, BEDENKZEIT_ZUGSTUFEN } from "./bedenkzeit-daten";
 import { bandwert, BAND_UNTERGRENZEN, BEDENKZEIT_DATEN, zeitnotstufe } from "./menschenprofil";
 
 /** Wie schwer die Wahl war (wie in der Auswertung der Lichess-Partien). */
@@ -19,6 +24,8 @@ export type Zuglage = "wiederschlag" | "schach" | "einzig" | "eng" | "offen";
 export interface Bedenklage {
   /** Spielstärke (Wertung der Stufe; volle Engine wie 2600). */
   readonly wertung: number;
+  /** Zeitklasse der Partie (Blitz, Schnellschach, Klassisch wie Lichess). */
+  readonly tempo: Wertungstempo;
   readonly restMs: number;
   /** Zugnummer (1 für den ersten Zug jeder Seite). */
   readonly zugnummer: number;
@@ -46,12 +53,11 @@ function normal(zufall: () => number): number {
   return Math.sqrt(-2 * Math.log(u)) * Math.cos(ZWEI_PI * v);
 }
 
-/** Anteil der Restzeit für einen Zug dieser Nummer bei dieser Stärke (Median der Menschen). */
-function anteilNachZug(wertung: number, zugnummer: number): number {
-  const stufen = BEDENKZEIT_DATEN.zugstufen;
-  const anteile = BEDENKZEIT_DATEN.anteil as Readonly<Record<string, readonly number[]>>;
+/** Anteil der Restzeit für einen Zug dieser Nummer bei dieser Stärke und Zeitklasse (Median der Menschen). */
+function anteilNachZug(tempo: Wertungstempo, wertung: number, zugnummer: number): number {
+  const anteile = BEDENKZEIT_JE_TEMPO[tempo].anteil;
   let index = 0;
-  stufen.forEach((s, i) => {
+  BEDENKZEIT_ZUGSTUFEN.forEach((s, i) => {
     if (zugnummer >= s) index = i;
   });
   const jeBand = BAND_UNTERGRENZEN.map((b) => anteile[String(b)]?.[index] ?? 0);
@@ -63,20 +69,21 @@ function anteilNachZug(wertung: number, zugnummer: number): number {
  *
  * Eingaben: Stärke, Restzeit, Zugnummer, Lage, Buchzug; Zufall (für Tests fest).
  * Ausgabe: Millisekunden, mindestens 0,2 s; kann über der Restzeit liegen (dann ist die Zeit um).
- * Beispiel: Stärke 1200, 4 Minuten Rest, Zug 20, enge Lage → etwa 2,5 % der Restzeit, also um
- * 7 Sekunden (je nach Zufall 2 bis 20); dieselbe Lage mit 8 Sekunden Rest → etwa 2 Sekunden.
+ * Beispiel: Stärke 1200, Schnellschach, 4 Minuten Rest, Zug 20, enge Lage → etwa 1,5 % der
+ * Restzeit, also um 4 Sekunden (je nach Zufall 1 bis 12); im Blitz etwa das Doppelte; dieselbe
+ * Lage mit 8 Sekunden Rest → etwa 2 Sekunden.
  */
 export function bedenkzeitMs(lage: Bedenklage, zufall: () => number): number {
   const stufe = zeitnotstufe(lage.restMs);
   const daten = BEDENKZEIT_DATEN;
   if (stufe) {
-    const sekunden = bandwert(daten.zeitnotSekunden[stufe], lage.wertung);
+    const sekunden = bandwert(BEDENKZEIT_JE_TEMPO[lage.tempo].zeitnotSekunden[stufe], lage.wertung);
     const ms = sekunden * SEKUNDE_MS * Math.exp(STREUUNG_ZEITNOT * normal(zufall));
     return Math.max(MINDESTENS_MS, lage.buchzug ? ms * BUCHZUG : ms);
   }
   const streuung = Math.min(STREUUNG_HOECHSTENS, daten.streuung);
   const faktor = daten.lage[lage.lage] * Math.exp(streuung * normal(zufall));
   const anteil =
-    anteilNachZug(lage.wertung, lage.zugnummer) * faktor * (lage.buchzug ? BUCHZUG : 1);
+    anteilNachZug(lage.tempo, lage.wertung, lage.zugnummer) * faktor * (lage.buchzug ? BUCHZUG : 1);
   return Math.max(MINDESTENS_MS, Math.min(HOECHSTENS_ANTEIL, anteil) * lage.restMs);
 }

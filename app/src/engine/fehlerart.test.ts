@@ -1,6 +1,8 @@
 /** Tests der Fehlerarten (Konzept 8.2) an Stellungen aus dem Buch, geprüft mit den Werkzeugen. */
 import { describe, expect, it } from "vitest";
-import { alleZuege, fehlerartVon, istDamenopfer, lageVon } from "./fehlerart";
+import { eingestellt } from "./fehlerart-neu";
+import { probe } from "./zugprobe";
+import { alleZuege, fehlerartIn, fehlerartVon, istDamenopfer, lageVon } from "./fehlerart";
 
 /** Abb. 1.8 vor 3... Df6: Schwarz hat Springer g8 und Läufer c8, f8 zu Hause. */
 const VOR_DF6 = "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5N2/PPPP1PPP/RNBQK2R b KQkq - 3 3";
@@ -26,7 +28,7 @@ describe("Fehlerart", () => {
     expect(fehlerartVon(NACH_DH5, ["g8f6", "h5e5", "f8e7"], 3)).toBe("drohungIgnoriert");
     expect(fehlerartVon(NACH_DH5, ["g8e7", "h5e5"], 1)).toBe("drohungIgnoriert");
     // 2... Sc6 deckt e5: keine Drohung mehr, keine Figur hängt → ungenau.
-    expect(fehlerartVon(NACH_DH5, ["b8c6", "h5f7"], 3)).toBe("ungenau");
+    expect(fehlerartVon(NACH_DH5, ["b8c6", "h5f7", "e8f7"], 3)).toBe("ungenau");
   });
 
   it("Figur hängen (W1): Läufer nach a3, der Bauer b2 schlägt ihn", () => {
@@ -36,10 +38,10 @@ describe("Fehlerart", () => {
     expect(fehlerartVon(fen, ["f8a3"], 3)).toBe("figurHaengen");
   });
 
-  it("Schlagreflex (W5): Sxd5 exd5 verliert den Springer gegen einen Bauern", () => {
-    expect(fehlerartVon(MITTELSPIEL, ["c3d5"], 0)).toBe("schlagreflex");
-    // Ein Schlag, den die Engine mit mindestens einem Bauern Verlust bewertet, ebenso.
-    expect(fehlerartVon(MITTELSPIEL, ["d3h7", "g8h7"], 2)).toBe("schlagreflex");
+  it("Schlag mit Verlust laut Abtausch ist kein Reflex, sondern Figur hängen (0.2.118)", () => {
+    // Sxd5 exd5: d5 ist gedeckt, die Abtauschrechnung zeigt den Verlust sofort
+    expect(fehlerartVon(MITTELSPIEL, ["c3d5"], 0)).toBe("figurHaengen");
+    expect(fehlerartVon(MITTELSPIEL, ["d3h7", "g8h7"], 2)).toBe("figurHaengen");
   });
 
   it("Köder annehmen (W5): 5... Sxd5?! gewinnt laut Abtausch, die Engine widerlegt es", () => {
@@ -52,8 +54,19 @@ describe("Fehlerart", () => {
   });
 
   it("Taktik übersehen: der Zug stellt die Dame in eine Springergabel (W6)", () => {
-    expect(fehlerartVon(GABEL, ["a6d6"], 9)).toBe("taktikUebersehen");
+    // Ohne Turm auf f8 gewinnt Sf7+ die Dame: die Widerlegung spielt die Gabel und gewinnt
+    const echt = "r6k/6pp/q7/6N1/8/8/8/6K1 b - - 0 1";
+    expect(fehlerartVon(echt, ["a6d6", "g5f7", "h8g8", "f7d6"], 9)).toBe("taktikUebersehen");
     expect(fehlerartVon(GABEL, ["a6a2"], 0.3)).toBe("ungenau");
+  });
+
+  it("keine Taktik, wenn die Gabel nichts gewinnt oder die Engine sie nicht spielt (0.2.118)", () => {
+    // Hier deckt der Turm f7: Sf7+ Txf7 verliert den Springer, also kein Gabelfehler
+    expect(fehlerartVon(GABEL, ["a6d6", "g5f7", "f8f7"], 1)).not.toBe("taktikUebersehen");
+    // Ohne Widerlegung der Engine zählt kein Motiv
+    expect(fehlerartVon("r6k/6pp/q7/6N1/8/8/8/6K1 b - - 0 1", ["a6d6"], 9)).not.toBe(
+      "taktikUebersehen",
+    );
   });
 
   it("König in der Mitte: ab dem zehnten Zug eine mögliche Rochade ausgelassen", () => {
@@ -65,6 +78,36 @@ describe("Fehlerart", () => {
     expect(fehlerartVon(NACH_DH5, ["zz"], 3)).toBe("ungenau");
     expect(fehlerartVon(NACH_DH5, ["e8e6"], 3)).toBe("ungenau");
     expect(fehlerartVon("kein fen", ["e2e4"], 3)).toBe("ungenau");
+  });
+});
+
+describe("Fehlerarten seit 0.2.118 (Lichess-Auswertung)", () => {
+  /** Weiß am Zug, d4 deckt den Springer e5 gegen den Bauern d6. */
+  const SPRINGER = "4k3/8/3p4/4N3/3P4/8/8/4K3 w - - 0 1";
+  it("Figur hängen über die Widerlegung, Bauer eingestellt", () => {
+    const regeln = lageVon(SPRINGER)?.regeln;
+    const springer = regeln && probe(regeln, "d4d5");
+    expect(springer && eingestellt(springer, ["e8d7"])).toBeNull();
+    // Ein Abtausch ist nichts Eingestelltes: Lxf4 Dxf4 gibt nur den geschlagenen Läufer zurück
+    const abtausch = lageVon("4kq2/8/8/8/5b2/8/3B4/4K3 w - - 0 1")?.regeln;
+    const lxf4 = abtausch && probe(abtausch, "d2f4");
+    expect(lxf4 && eingestellt(lxf4, ["f8f4", "e1e2"])).toBeNull();
+    expect(fehlerartVon("4kq2/8/8/8/5b2/8/3B4/4K3 w - - 0 1", ["d2f4", "f8f4"], 0.6)).not.toBe(
+      "figurHaengen",
+    );
+    expect(springer && eingestellt(springer, ["d6e5", "e1e2"])?.art).toBe("figurHaengen");
+    const bauer = "4k3/8/3n4/8/2P5/1P6/8/4K3 w - - 0 1";
+    expect(fehlerartVon(bauer, ["b3b4", "d6c4", "e1e2"], 1)).toBe("bauerEingestellt");
+  });
+
+  it("Schlag verpasst, Bauern- und Königszug ohne Not", () => {
+    const schlag = "4k3/8/8/4n3/8/8/PP2R3/4K3 w - - 0 1";
+    const lage = lageVon(schlag);
+    expect(lage && fehlerartIn(lage, "a2a3", ["e8d7"], 3, "e2e5")).toBe("schlagVerpasst");
+    const mitte = "r1bqk2r/pppp1ppp/2n2n2/2b1p3/2B1P3/2N2N2/PPPP1PPP/R1BQ1RK1 w kq - 6 6";
+    expect(fehlerartVon(mitte, ["a2a3", "f6g4"], 0.6)).toBe("bauernzugOhneNot");
+    expect(fehlerartVon(mitte, ["g1h1", "f6g4"], 0.6)).toBe("koenigszugOhneNot");
+    expect(fehlerartVon(mitte, ["a2a3"], 0.2)).toBe("ungenau");
   });
 });
 

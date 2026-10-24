@@ -19,7 +19,7 @@ import type { Phase } from "../schach/phase";
 import type { Gegnerart, Partie, Spielhilfen } from "../spiel/partie";
 import type { Uhreinstellung } from "../spiel/uhr";
 import { mitGewerteterPartie, type Wertungspunkt } from "../spiel/wertung";
-import { mitBesiegtem } from "./besiegt";
+import { KEINE_BESIEGTEN, mitBesiegtem, type Besiegte } from "./besiegt";
 
 /** So viele beendete Partien bleiben gespeichert; ältere fallen weg. */
 export const MAX_PARTIEN = 50;
@@ -81,8 +81,8 @@ export interface Spielstand {
   readonly wertung: readonly Wertungspunkt[];
   /** Eigene Gegner des Lesers (0.2.42, speicher/gegner.ts). */
   readonly eigeneGegner: readonly EigenerGegner[];
-  /** Kennungen der Bots, die der Leser in gewerteten Partien besiegt hat (0.2.99, besiegt.ts). */
-  readonly besiegt: readonly string[];
+  /** Je Zeitklasse die Bots, die der Leser in gewerteten Partien besiegt hat (0.2.99, R51, besiegt.ts). */
+  readonly besiegt: Besiegte;
 }
 
 export const STANDARD_VORLIEBEN: Spielvorlieben = {
@@ -105,7 +105,7 @@ export const LEERER_SPIELSTAND: Spielstand = {
   vorlieben: STANDARD_VORLIEBEN,
   wertung: [],
   eigeneGegner: [],
-  besiegt: [],
+  besiegt: KEINE_BESIEGTEN,
 };
 
 /** Die Partie mit dieser Kennung, laufend oder beendet; null, wenn es sie nicht (mehr) gibt. */
@@ -203,6 +203,6 @@ export function setzeWertungZurueck(stand: Spielstand): Spielstand {
     laufend: stand.laufend ? ungewertet(stand.laufend) : null,
     partien: stand.partien.map((e) => ({ ...e, partie: ungewertet(e.partie) })),
     wertung: [],
-    besiegt: [],
+    besiegt: KEINE_BESIEGTEN,
   };
 }

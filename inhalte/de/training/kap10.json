@@ -23,7 +23,27 @@
         },
         {
           "art": "text",
-          "text": " (Saavedra), 10.9 (Réti) und 10.14 (Heuäcker).",
+          "text": " (Saavedra), ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "10.9",
+          "abbildung": "10.9"
+        },
+        {
+          "art": "text",
+          "text": " (Réti) und ",
+          "stil": "normal"
+        },
+        {
+          "art": "verweis",
+          "text": "10.14",
+          "abbildung": "10.14"
+        },
+        {
+          "art": "text",
+          "text": " (Heuäcker).",
           "stil": "normal"
         }
       ]
@@ -148,5 +168,5 @@
     "datei": "kap10_studien.tex",
     "zeile": 497
   },
-  "stand": "2026-10-16"
+  "stand": "2026-10-24"
 }

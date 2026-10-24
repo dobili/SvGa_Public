@@ -4393,6 +4393,154 @@ Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
 - **Entfernt:** Strähne und Lagefaktoren der alten Zugwahl (zählten doppelt), der Wahlkern der
   Menschen für die Grundschicht (ersetzt durch die geeichte Grundschicht der Stufe).
 
+## Eigenes Elo-System statt Schalter chess.com/Lichess (23.10.2026, Wunsch des Autors)
+
+- Der Schalter „Genauigkeit wie Lichess / Mittelweg / chess.com“ und die Doppelanzeige
+  (chess.com ≈ … · Lichess ≈ …) entfallen. Die App schätzt eine eigene Elo-Zahl, geeicht an den
+  Lichess-Wertungen der gesammelten Spieler (Glicko-2, aktive Spieler mit eingeschwungener Zahl).
+- **Eine Zahl je Zeitklasse** (Entscheidung des Autors): Blitz, Schnellschach und klassisch je
+  eigenes Modell und eigene Skala (wie Lichess), keine Umrechnung auf eine gemeinsame Zahl.
+- Schätzung aus mehreren Kennzahlen (Zugqualität, Schwierigkeit, Phasen, Fehlerarten, blinde
+  Flecken, Zeit, Eröffnung), Prüfung an zurückgelegten Spielern; welche Kennzahlen bleiben,
+  entscheidet der Zugewinn an Treffsicherheit (Stufenvergleich). Ausgabe mit 90-%-Bereich.
+- Elo je Phase bleibt, als eigenes Teilmodell je Phase mit eigenem Bereich; angezeigt nur, wenn
+  der Bereich schmal genug ist. Umsetzung nach der Auswertung der Spielerprofile.
+
+## Fehlerarten geschärft und ergänzt (22. und 23.10.2026, Plan „Bots, zweite Runde“, Teil A)
+
+- **Neue Arten** aus 2600 und 6147 Lichess-Partien (ein Drittel der Fehler passte vorher in keine
+  Art): Bauer eingestellt, Schlag verpasst, Bauernzug ohne Not, Königszug ohne Not; „Figur
+  hängen“ auch, wenn erst die Widerlegung der Engine die Figur mit Gewinn schlägt.
+- **Taktik übersehen** nur, wenn die Widerlegung das Motiv spielt und Material gewinnt (Fehlalarme
+  des Autors 9… Df6 „Gabel Sd5“, 4. c4 „Gabel e5“).
+- **Schlagreflex** (Festlegung mit dem Autor, Glossar „scheinbar ungedeckte Figur“): Der Schlag
+  sieht nach Gewinn aus, die Bestrafung folgt erzwungen in höchstens vier Halbzügen. Ein Schlag,
+  der schon laut Abtausch verliert, ist „Figur hängen“; ein gleichwertiger Abtausch nie.
+- **Falscher Abtausch** nicht beim Zurückschlagen. **König passiv** nach Kapitel 8, Regel 1 mit
+  dem Königsweg des Endspielwerkzeugs.
+- **Blinde Flecken:** Rochade ist kein Schlag, en passant schon (zwei Fehler der Regeln behoben).
+  Der eigene Fleck zählt in Auswertungen nur bei klar bestem Zug (Abstand zum zweitbesten ≥ 0,3).
+- **Prüfung** in Tiefe 20 (6885 Züge): bestätigt meist 89–97 %, schwächer König passiv,
+  Bauernvorstoß, ungenau (Bewertungsrauschen der Tiefe 12); Zahlen in docs/FORTSCHRITT.md.
+
+## Spielstile der Bots (23.10.2026, Plan „Bots, zweite Runde“, Teil D)
+
+- **Recherche:** Keine begutachtete Studie trennt die üblichen Stile messbar; verbreitet sind vier
+  Grundtypen nach Expertenmeinung (angreifend/taktisch, positionell, solide/defensiv,
+  kreativ). Messbare Ersatzgrößen: Anteil erzwingender Züge, angegriffene Felder. Einzelne
+  Spieler lassen sich an ihrem Stil sicher wiedererkennen (NeurIPS 2021, 98 % bei 100 Partien).
+- **Daten:** 3889 Spieler (Spielerprofile, Lichess 2026-09), zehn Merkmale je Zug, je Kategorie um
+  die Wertung bereinigt. Drei Achsen (Hauptkomponenten, zusammen 66 %): **Königsangriff**
+  (Schach, Königsnähe, Opfer, scharfe Wahl gegen Spannung halten), **Aktivität** (Schläge,
+  Abtausch, Vorwärts gegen Rückzug), **Bauernsturm gegen Vereinfachen**.
+- **Ab welcher Spielstärke:** Schon ab 400 unterscheidbar. Zuverlässigkeit der Achsen über die
+  Partien eines Spielers (Hälften, Spearman-Brown) in Blitz und Schnellschach bis 2000 meist
+  0,5 bis 0,77. Ab 2200 in Schnellschach nur noch die Aktivität sicher (0,6 bis 0,7);
+  Königsangriff und Bauernsturm fallen auf 0,2 bis 0,3. Klassisch niedriger (12 Partien).
+- **Stile** (Achse ab einer Standardabweichung, sonst universell; je Kategorie etwa 10 % je Stil
+  und 30 bis 40 % universell): Angreifer (Angriff +), Positionsspieler (Angriff −, Spannung),
+  Taktiker (Aktivität +), Verteidiger (Aktivität −), Draufgänger (Bauernsturm und Opfer),
+  Vereinfacher (Abtausch), Universell.
+- **Je Bot genau ein Stil**, abgeleitet aus seiner Persönlichkeit (Umsetzung in der Zugwahl mit
+  Teil E; der bisherige Regler −2 bis +2 geht darin auf). Über 2200 wirken Angreifer,
+  Draufgänger und Positionsspieler in Schnellschach nach den Daten schwächer; sie bleiben, die
+  Stärke des Stils folgt der gemessenen Streuung der Menschen.
+
+| Bot | Persönlichkeit | Stilregler bisher | Stil neu |
+|---|---|---|---|
+| Kiki | hektiker | 1 | Taktiker |
+| Onkel Otto | materialist | 0 | Taktiker |
+| Tante Hilde | vorsichtig | -1 | Verteidiger |
+| Bodo | angreifer | 2 | Angreifer |
+| Ella | solide | 0 | Universell |
+| Marie | vorsichtig | -1 | Verteidiger |
+| Tom | damenfan | 2 | Draufgänger |
+| Luis | materialist | 1 | Taktiker |
+| Oma Erna | endspieler | -2 | Vereinfacher |
+| Henry | angreifer | 2 | Angreifer |
+| Lina | traeumer | 0 | Draufgänger |
+| Moritz | hektiker | 1 | Taktiker |
+| Opa Heinz | endspieler | -1 | Vereinfacher |
+| Onkel Bernd | materialist | 0 | Taktiker |
+| Clara | solide | 0 | Universell |
+| Herr Krause | theoretiker | -1 | Positionsspieler |
+| Leyla | taktiker | 1 | Taktiker |
+| Jakob | hektiker | 2 | Taktiker |
+| Johanna | koenigswanderer | 1 | Draufgänger |
+| Rolf | vorsichtig | -2 | Verteidiger |
+| Derya | angreifer | 2 | Angreifer |
+| Svenja | solide | 0 | Universell |
+| Felix | endspieler | -1 | Vereinfacher |
+| Marco | theoretiker | 0 | Positionsspieler |
+| Ronja | traeumer | 1 | Draufgänger |
+| Herr Wolff | stratege | -2 | Positionsspieler |
+| Pia | damenfan | 1 | Draufgänger |
+| Yusuf | taktiker | 1 | Taktiker |
+| Holger | solide | 0 | Universell |
+| Dennis | angreifer | 2 | Angreifer |
+| Frau Albrecht | vorsichtig | -2 | Verteidiger |
+| Philipp | hektiker | 1 | Taktiker |
+| Mara | taktiker | 1 | Taktiker |
+| Herr Kühn | stratege | -1 | Positionsspieler |
+| Samira | traeumer | 0 | Draufgänger |
+| Erik | materialist | 0 | Taktiker |
+| Günter | endspieler | -1 | Vereinfacher |
+| Frau Romero | solide | 0 | Universell |
+| Lars | angreifer | 2 | Angreifer |
+| Katrin | theoretiker | 0 | Positionsspieler |
+| Herr Vogel | stratege | -2 | Positionsspieler |
+| Nele | taktiker | 1 | Taktiker |
+| Simon | hektiker | 1 | Taktiker |
+| Frau Demir | vorsichtig | -1 | Verteidiger |
+| Jana | solide | 0 | Universell |
+| Igor | theoretiker | -1 | Positionsspieler |
+| Miriam | traeumer | 1 | Draufgänger |
+| Herr Hartmann | endspieler | -2 | Vereinfacher |
+| Defne | taktiker | 2 | Taktiker |
+| Luca | angreifer | 2 | Angreifer |
+| Frau Sommer | stratege | -1 | Positionsspieler |
+| David | materialist | 0 | Taktiker |
+| Doktor Falk | stratege | -1 | Positionsspieler |
+| Trainer Maier | solide | 0 | Universell |
+| Amaya | theoretiker | 1 | Positionsspieler |
+| Herr Lorenz | endspieler | -2 | Vereinfacher |
+| Elias | angreifer | 2 | Angreifer |
+| Frau Wagner | vorsichtig | -1 | Verteidiger |
+| Arjun | taktiker | 2 | Taktiker |
+| Frau Prof. Reich | traeumer | 0 | Draufgänger |
+| GM Novak | solide | 0 | Universell |
+| IM Becker | stratege | -1 | Positionsspieler |
+| WGM Tanaka | taktiker | 1 | Taktiker |
+| FM Duarte | angreifer | 0 | Angreifer |
+| GM Ivanova | endspieler | 0 | Vereinfacher |
+| IM Kraft | theoretiker | 0 | Positionsspieler |
+| WIM Okafor | vorsichtig | 0 | Verteidiger |
+| GM Berglund | solide | 0 | Universell |
+
+## Zugwahl der Bots, Plan (23.10.2026 abends, Freigabe des Autors)
+
+- **Phasenregler Variante A:** Der Regler je Phase setzt die Ziel-Elo der Phase; daraus folgen die
+  Fehlerraten der Phase. Fehlerart- und Fleckregler verschieben nur die Zusammensetzung (feste
+  Stärke); im erweiterten Modus auch frei (Stärke wandert, Schätzung wird angezeigt).
+- **Oberfläche:** Stil als Spinnennetz über die drei Achsen (sechs Speichen) mit Anzeige des
+  nächsten Stils, dazu Auswahlliste; je Fehlerart und Fleck ein Regler auf den Quantilen der
+  Menschen (5, 25, 50, 75, 95 %) plus je zwei Stufen darunter und darüber („unmenschlich“);
+  Menschlichkeitsanzeige für die Kombination; geschätzte Elo aus den Einstellungen.
+- **Zugwahl:** Wahrscheinlichkeit je Kandidat = Grundgewicht × Faktor Fehlerart × Faktor Flecken
+  × Faktor Stil; Faktoren an den echten Stellungen der Spielerprofile geeicht (nachspielen, bis
+  Raten, Flecken und Kopplungen die Ziele treffen); Tagesform je Partie, Zeitnot nach den Daten;
+  kein Nachregeln während der Partie.
+- **Bots je Kategorie:** jeder Stil einmal plus ein zweiter universeller, wechselnde Flecken,
+  leicht gespreizte Phasen; echte Vorbilder und gezogene Profile gemischt; mehr Bots, wenn nötig.
+- **Maia:** Versuch in Teil E (Maia-2 steht unter MIT; Maia-3 prüfen), Bedingung: Rechnen nicht
+  spürbar länger als die künstliche Bedenkzeit.
+- **Eröffnungen je Elo-Band** aus den Lichess-Partien: Bots wählen bevorzugt, was Menschen ihrer
+  Stärke spielen; die Einschränkung „Eröffnung“ für Bots bekommt diese Varianten; im Trainer nur
+  als eigener, gekennzeichneter Bereich „Aus der Praxis“ (das Buch bleibt die einzige Quelle für
+  die Lehrinhalte).
+- **Modelle:** Teil E und das Elo-Modell mit Fable (hoch), Auswertungen, Oberfläche und Teil F mit
+  Opus (mittel).
+
 ## P3 Werkzeuge und Strukturbegriffe (23.10.2026, Fable, Zweig `p3-werkzeuge`)
 
 Festlegungen des Autors (Arbeitsplan vom 23.10.2026), in der App umgesetzt; die Abweichungen
@@ -4490,6 +4638,313 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Richtung, bei Gleichstand die zentralste (Abb. 11.78: e4–d5–f5 statt c3–b4); verzweigte
   Ketten stehen von Linie zu Linie (Abb. 6.11: „d6–e5–f6“ statt „d6–f6–e5“).
 
+## Zugwahl der Bots, Plan (23.10.2026 abends, Freigabe des Autors)
+
+- **Phasenregler Variante A:** Der Regler je Phase setzt die Ziel-Elo der Phase; daraus folgen die
+  Fehlerraten der Phase. Fehlerart- und Fleckregler verschieben nur die Zusammensetzung (feste
+  Stärke); im erweiterten Modus auch frei (Stärke wandert, Schätzung wird angezeigt).
+- **Oberfläche:** Stil als Spinnennetz über die drei Achsen (sechs Speichen) mit Anzeige des
+  nächsten Stils, dazu Auswahlliste; je Fehlerart und Fleck ein Regler auf den Quantilen der
+  Menschen (5, 25, 50, 75, 95 %) plus je zwei Stufen darunter und darüber („unmenschlich“);
+  Menschlichkeitsanzeige für die Kombination; geschätzte Elo aus den Einstellungen.
+- **Zugwahl:** Wahrscheinlichkeit je Kandidat = Grundgewicht × Faktor Fehlerart × Faktor Flecken
+  × Faktor Stil; Faktoren an den echten Stellungen der Spielerprofile geeicht; Tagesform je
+  Partie, Zeitnot nach den Daten; kein Nachregeln während der Partie.
+- **Bots je Kategorie:** jeder Stil einmal plus ein zweiter universeller, wechselnde Flecken,
+  leicht gespreizte Phasen; echte Vorbilder und gezogene Profile gemischt; mehr Bots, wenn nötig.
+- **Maia:** Versuch in Teil E (Maia-2 steht unter MIT; Maia-3 prüfen), Bedingung: Rechnen nicht
+  spürbar länger als die künstliche Bedenkzeit.
+- **Eröffnungen je Elo-Band** aus den Lichess-Partien für Bots und die Einschränkung „Eröffnung“;
+  im Trainer nur als gekennzeichneter Bereich „Aus der Praxis“.
+- **Modelle:** Teil E und Elo-Modell mit Fable (hoch), Auswertungen, Oberfläche, Teil F mit Opus.
+- **Koordination (Koordinations-Chat P1, 23.10.2026):** R51 (Zeitklassen, Abzeichen, „ohne Uhr“
+  weg, 60+0, „besiegt“ je Zeitklasse, Zeit in der Partienliste) ist Teil F dieses Zweigs; ebenso
+  Schritt 5 (Schalter weg, neue Schätzung) unter Erhalt von R32 (nur gewertete Partien zählen).
+  Bullet wird nicht angeboten (Autor, 23.10.2026), auch nicht unter R51.
+  Neue Testpunkte ab N770. Nach dem Einbau auf main den Autor informieren, damit P1 mit R24,
+  R27, R28 beginnt.
+
+## Wahlmodell der Bots als bedingtes Logit (24.10.2026 nachts, Fable, Teil E Schritt 1)
+
+- **Idee:** Statt Fehlerraten nachzuregeln, lernt ein Modell direkt aus den gespielten Zügen der
+  Menschen, welchen der Kandidaten sie wählen. Kandidaten sind genau die, die auch der Bot sieht
+  (sechs beste Züge der Engine, typische Fehlerzüge je Art, in der Eichung dazu der gespielte Zug).
+  Nutzen eines Kandidaten = Verlustkurve (Stützstellen 0; 0,5; 1,2; 3; 10 Bauern) + Gewicht je
+  Fehlerart + Gewicht je eigenem Fleck + Gewicht je Fleck der Widerlegung + Stilmerkmale + Bonus
+  „bester Zug“; jedes Gewicht linear in der Wertung. Wahrscheinlichkeit ∝ exp(Nutzen).
+- **Warum so:** Dieselbe Kandidatenerzeugung in Eichung und Spiel macht die Raten des Bots von
+  selbst menschlich (Gelegenheiten wie in echten Partien); die Kopplung Fleck → Fehlerart entsteht
+  aus den Gewichten der Widerlegungsflecken; der Phasenregler (Variante A) setzt die Wertung ein;
+  die Persönlichkeit eines Bots verschiebt einzelne Gewichte innerhalb der Spielerbereiche.
+- **Probe (2000 Stellungen):** Trefferquote des gespielten Zuges 36–43 % (Zufall 10–12 %), die
+  Verlustkurve fällt mit der Wertung steiler. Vollständige Eichung an 180 000 Stellungen läuft
+  (lokal buch/arbeit/zugwahl/merkmale.py, wahlmodell.py).
+- **Ergebnis (24.10.2026, 3 Uhr):** Geeicht an 180 000 Stellungen, Gewichte quadratisch in der
+  Wertung und mit eigener Verlustkurve für Eröffnung und Endspiel (sonst schätzt das Modell
+  starke Spieler in der Eröffnung zu fehlerhaft, weil ihm die Theoriekenntnis fehlt). Nachspielen
+  trifft die echten Fehlerraten je Band, Phase und Art auf etwa einen Prozentpunkt. In der App
+  seit 0.2.125 (engine/wahlmodell.ts); die Stellschrauben der Bots bleiben und werden übersetzt:
+  Gewicht einer Fehlerart g → Verschiebung ln g (0 schließt aus), Fleckgewicht g → −(g − 1) · 0,5
+  auf Züge mit diesem eigenen Fleck, Stilregler → ±0,25 je Stufe auf Schlag, Schach,
+  Königsnähe, Bauernsturm, Vorwärts (Rückzug und Abtausch gegenläufig), Höchstverlust je Art als
+  Filter; Tagesform und Zeitnot als Temperatur des Softmax.
+- **Offen:** Maia als Grundgewicht statt der Verlustkurve (Versuch), Neumessung der Bots und
+  Verankerung mit dem neuen Elo-Modell, Regler auf menschlichen Quantilen (Oberfläche).
+
+## Eigenes Elo-Modell je Zeitklasse in der App (24.10.2026 nachts, Fable, Restplan Schritt 5)
+
+- **Entscheidung des Autors (23.10.2026):** Eine eigene Wertung je Zeitklasse (Blitz, Schnellschach,
+  Klassisch) am Maßstab von Lichess, geeicht an Lichess-Wertungen; kein Schalter
+  chess.com/Lichess/Mittelweg mehr; chess.com und FIDE nur als „entspricht etwa“.
+- **Modell (spiel/elomodell.ts, Daten spiel/elomodell-daten.ts):** additiv, je Kennzahl eine
+  stückweise lineare Kurve an Quantil-Stützstellen, Ridge-Regression (λ 3); Kennzahlen der eigenen
+  Züge bis zur Entscheidung: Zahl der Züge, Lichess-Genauigkeit, Verlust je Zug, Fehlerrate,
+  Anteile Ungenauigkeit/Fehler/Patzer (Grenzen 0,5/1,2/3 Bauern, Patzer bei klar gewonnener Stellung
+  danach nur Ungenauigkeit), Verlust je Fehler, je Phase Züge/Verlust/Genauigkeit/Fehler/Patzer.
+  Ein Modell für 1 bis 10 Partien (Kennzahlen gemittelt, Zahl der Partien als Kennzahl). Eichung
+  an 77 000 Partien von 3 900 Spielern (Tiefe 12, schnelle Auswertung), die Kennzahlen vorher mit
+  den Geraden des Tiefe-18-Abgleichs (500 Partien mit der Engine der App) auf die Tiefe 18 der App
+  umgerechnet (Stand 781 Partien: Verlust ×1,207, Fehlerrate 0,019 + 0,911·x, Patzer
+  0,017 + 1,197·x, Züge bis Entscheidung 0,43 + 0,895·x).
+- **Warum additiv statt Gradient Boosting:** erklärbar, klein (etwa 25 KB), in TypeScript
+  nachrechenbar; Gradient Boosting war nur 5 bis 15 % genauer (Schnellschach je Partie 275 statt
+  284, über zehn Partien 131 statt 147 mittlere Abweichung).
+- **Entzerrung:** Das Modell neigt zur Mitte (Gerade Schätzung = 0,86·wahr + 235 bei zehn Partien
+  Schnellschach). Die Schätzung wird mit der umgekehrten Geraden je Partienzahl entzerrt, damit
+  Spieler jeder Wertung im Mittel ihre Lichess-Zahl bekommen (Rest je Band unter ±60); die Spanne
+  ist die entzerrte 90-%-Grenze (Schnellschach ±370 bei einer Partie, ±165 bei zehn; Blitz ±460
+  und ±215; Klassisch ±285 und ±140).
+- **Phasen:** Teilmodelle je Phase aus den Kennzahlen der Phase; breit (zehn Partien
+  Schnellschach: Mittelspiel ±370, Eröffnung ±530, Endspiel ±910). Eine Zahl je Phase erscheint nur,
+  wenn die halbe Spanne höchstens 350 ist (SCHMAL), sonst Urteil und Genauigkeit allein. Die
+  Wertungspunkte speichern je Phase weiter eine Zahl oder null.
+- **Zeitklasse** wie Lichess aus der Uhr (Grundzeit + 40 · Zuschlag: unter 8 min Blitz, unter 25
+  Schnellschach, sonst Klassisch; ohne Uhr Schnellschach). „Deine Spielstärke“ je Zeitklasse über
+  die letzten zehn gewerteten Partien dieser Zeitklasse (R32 bleibt: nur gewertete).
+- **Umrechnung (spiel/umrechnung.ts):** Zahlen aus chessgoals.com (Juli 2026), zusammengeführt
+  über die gemeinsame Spalte chess.com Blitz; Blitz → chess.com Blitz, Schnellschach → chess.com
+  Schnellschach, Klassisch → FIDE (erst ab 1730). Nur Fakten übernommen, Quelle genannt.
+- **Gespeicherte Daten:** Das Feld `genauigkeitsmodus` der Einstellungen wird beim Lesen übergangen;
+  Partien brauchen keine Neuauswertung (dieselben Engine-Werte).
+- **Offen:** Neumessung und Verankerung der Bots mit diesem Modell (Restplan 8); Messung der
+  Bot-Stärke (engine/botstaerke.messung.ts) rechnet die Anker vorerst ohne Phasen der Züge.
+
+## R51 Zeitklassen und Abzeichen (24.10.2026 nachts, Fable, Teil F erster Teil)
+
+- **Uhrwahl** (spiel/uhr.ts): Blitz 3 + 0, 3 + 2, 5 + 3; Schnellschach 10 + 0, 15 + 10; Klassisch
+  30 + 20, 60 + 0 (neu); Namen mit Zeitklasse („Blitz 3 + 2“). Kein Bullet (Autor, 23.10.2026).
+  „Ohne Uhr“ nur noch außerhalb der Grundstellung (Abbildung, aufgebaute Stellung; dort ohnehin
+  ungewertet); gespeicherte Vorliebe „ohne Uhr“ wird aus der Grundstellung zu 10 + 0
+  (ui/bildschirme/Spielen.tsx, wirksameUhr). Grund: Die Wertung gilt je Zeitklasse, eine Partie
+  ohne Uhr gehört zu keiner.
+- **Besiegte Bots je Zeitklasse** (speicher/besiegt.ts): `besiegt` ist jetzt ein Objekt
+  {blitz, rapid, classical}; eine alte einfache Liste zählt als Schnellschach (Partien ohne Uhr),
+  Siege werden aus den gespeicherten Partien ergänzt. Stern und Zähler in der Gegnerwahl gelten
+  für die Zeitklasse der gerade gewählten Bedenkzeit. Kein neues Speicherformat: Eine ältere App
+  liest das Objekt als leere Liste und baut die Sterne aus den Partien neu auf.
+- **Partienliste:** Bedenkzeit je Zeile („· 10 + 0“, alte Partien „· ohne Uhr“; eingelesene PGN
+  ohne Angabe).
+- **Offen aus R51/Teil F:** eigene Raten der Bots für Blitz und 60 Minuten, drei Einstellungssätze
+  und drei Wertungen je Bot (nach der Neumessung mit dem Wahlmodell, Restplan 8); „besiegt“
+  je Zeitklasse könnte später drei Abzeichen am Porträt zeigen statt des Sterns der gewählten
+  Zeitklasse (Entwurf offen).
+
+## Bedenkzeit der Bots je Zeitklasse (24.10.2026 nachts, Fable, Restplan 8b)
+
+- **Befund** (lokal buch/arbeit/bedenkzeit/eichung.py, 390 000 Züge mit Uhrdaten aus den
+  Spielerprofilen): Der Anteil der Restzeit je Zug hängt stark von der Zeitklasse ab. Im Blitz
+  braucht ein 1200er im 20. Zug etwa 2,5 % der Restzeit, im Schnellschach 1,3 %, im Klassischen
+  0,7 %; starke Spieler (2200+) brauchen im Mittelspiel in allen Zeitklassen etwa 3 %, Anfänger im
+  Klassischen nur 0,3 bis 0,9 % (sie nutzen ihre Zeit nicht). Die bisherige eine Tabelle (erste
+  Sammlung, Blitz und Schnellschach gemischt) lag dazwischen; ein klassischer Bot verbrauchte
+  seine Zeit damit doppelt so schnell wie Menschen, ein Blitz-Bot zu langsam.
+- **Umsetzung:** engine/bedenkzeit-daten.ts (erzeugt) mit Anteilen und Zeitnot-Sekunden je
+  Zeitklasse; Zellen mit unter 300 Zügen nehmen das nächste Band mit genug Daten, Zeitnot im
+  Klassischen (wenig Daten) die Werte des Schnellschachs. engine/bedenkzeit.ts bekommt die
+  Zeitklasse in der Bedenklage (spiel/botzeit.ts aus der Uhr der Partie). Lage-Faktoren und
+  Streuung bleiben aus der ersten Sammlung (die Spielerprofile tragen die Lage nicht).
+- **Offen:** Tagesform aus der Streuung zwischen Partien (Beta-Binomial) als Temperatur des
+  Wahlmodells; Zeitnot-Faktoren der Fehler je Zeitklasse (bisher Blitz und Schnellschach gemischt).
+
+## Tagesform als Temperatur des Wahlmodells (24.10.2026 morgens, Fable, Teil E)
+
+- **Messung** (lokal buch/arbeit/zugwahl/temperatur.py): Fehlerrate des Wahlmodells je Band bei
+  Temperatur T (Nutzen durch T). Schnellschach 1200: T 0,75 → 28,3, T 1 → 33,6, T 1,25 → 38,1
+  Fehler je 100 Züge; die Rate ist fast linear in T. Eine je Partie gleichverteilte Temperatur
+  zwischen 0,75 und 1,25 (bisherige Tagesform) streut die Fehlerrate zwischen Partien nur um
+  etwa 3 je 100 Züge; das Beta-Binomial-Modell der Spielerprofile misst 5,0 bis 5,7.
+- **Entscheidung:** Tagesform je Partie gleichverteilt zwischen 0,6 und 1,4 (engine/menschlich.ts,
+  TAGESFORM_SPANNE 0,4): Streuung etwa 4,2 bis 5,3 ab 800, bei 400 etwa 3,4 (dort bleibt der Rest
+  Gegner- und Eröffnungsstreuung). Zeitnot wirkt weiter multiplikativ auf die Temperatur
+  (ZEITNOT-Faktoren der Fehler, bisher Blitz und Schnellschach gemischt; je Zeitklasse offen).
+
+## Zeitnot der Bots als Temperatur je Zeitklasse (24.10.2026 morgens, Fable, Restplan 8b)
+
+- **Messung** (lokal buch/arbeit/bedenkzeit/zeitnot.py): Fehler ab einem Bauern bei weniger als 60,
+  30 und 10 s Rest gegenüber einer Minute und mehr, je Zeitklasse und Gruppe. Blitz ab 1800:
+  ×1,25, ×1,33, ×1,55 (Patzer ×1,84, ×2,38, ×3,49); Blitz 1000 bis 1799: ×1,17, ×1,17, ×1,20;
+  Blitz unter 1000: nur ×1,05 (Anfänger spielen in Zeitnot kaum schlechter als sonst).
+  Schnellschach ab 1800 (genug Züge): ×1,14, ×1,14, ×1,29; Schnellschach darunter und Klassisch
+  haben zu wenige Zeitnot-Züge und nehmen die Blitz-Faktoren.
+- **Umsetzung:** Statt der Ratenfaktoren der ersten Sammlung (ZEITNOT, Blitz und Schnellschach
+  gemischt) erhöht Zeitnot die Temperatur des Wahlmodells; der Temperaturfaktor je Zeitklasse,
+  Stufe und Band ist so gewählt, dass die Fehlerrate des Modells um den gemessenen Faktor steigt
+  (Umkehrung der Temperaturkurven aus zugwahl/temperatur.py, engine/zeitnot-daten.ts; Blitz 2000
+  unter 10 s → Temperatur 1,6). Die Patzer steigen dabei von selbst stärker als die Fehler, wie
+  bei Menschen (steile Verlustkurve). Alte Faktoren bleiben für die Messskripte (zeitnotFaktoren).
+
+## Wünsche des Autors vom 24.10.2026 morgens (Fable): Partiekopf, Zonen der Zugklassen, Startbild bei der Rückkehr
+
+- **Partiekopf:** Das Porträt des Bots steht nicht mehr in der Titelzeile (es drängte „gegen
+  Johanna“ in den Umbruch), sondern linksbündig im Untertitel; daneben der Satz des Bots aus der
+  Gegnerwahl, klein darunter die bisherige Stufen- und Farbzeile (Partieuntertitel.tsx).
+- **Zonen des Bullet-Diagramms „Deine Züge“** (spiel/zugklassenvergleich.ts, Daten
+  spiel/zugklassenvergleich-daten.ts aus den Spielerprofilen, je Zeitklasse und 400er-Band 160 bis
+  430 Spieler mit mindestens 100 Zügen): „üblich“ ist der Median der Spieler, „normal“ reicht vom
+  5-%- bis zum 95-%-Quantil der Spieler, je Seite quadratisch erweitert um die Zufallsstreuung
+  einer Partie mit so vielen Zügen (Binomial, 90 %): Sonst hieße in einer 30-Züge-Partie fast
+  jede Klasse „gut“ oder „schwach“, obwohl nur der Zufall spielt. Die Zonen sind deshalb je Zeile
+  und je Partielänge verschieden breit; die Skala bleibt bis zum Doppelten des Üblichen.
+  Brillant, stark und Buchzug kennen die Profile nicht (die Lichess-Auswertung unterscheidet sie
+  nicht): vorläufige Schätzung mit fester Zone 75 bis 125 %; „bester“ ist der Profilwert aller
+  Züge ohne Verlust minus diese drei. Damit ist die Aufgabe von P1 (echte Vergleichswerte für
+  zugklassenvergleich.ts) erledigt.
+- **Startbild bei der Rückkehr** (Startanimation.tsx, startanimationRegel.ts): Über
+  `visibilitychange` merkt sich die App, wann sie unsichtbar wurde; wird sie nach mindestens 30
+  Minuten wieder sichtbar, läuft die Animation 1,8 s (CSS-Variable `--startanimation-dauer`),
+  aber nur auf Geräten mit grobem Zeiger (`pointer: coarse`, Handy und Tablet): Am Rechner
+  wechselt man zwischen Fenstern, dort wäre sie störend. Einstellung „aus“ und „Bewegung
+  reduzieren“ gelten weiter. Grenze: Wirft das System die Hintergrund-App aus dem Speicher,
+  startet sie neu und zeigt das normale Startbild.
+
+## Persönlichkeiten der Bots auf menschlichen Quantilen, sieben Stile (24.10.2026 mittags, Fable, Restplan 8 erster Teil)
+
+- **Regler auf Quantilen** (engine/spielerbereiche.ts, Daten engine/spielerbereiche-daten.ts aus
+  dem Beta-Binomial-Modell, Schnellschach, je 400er-Band): Eine Stufe je Fehlerart oder Fleck
+  heißt −2 „so selten wie die 5 % unauffälligsten Spieler“, 0 Median, 2 „so oft wie die
+  auffälligsten 5 %“; ±3 und ±4 setzen das Verhältnis 75 → 95 % geometrisch fort (unmenschlich).
+  Der Faktor auf das Gewicht folgt aus Stufe und Wertung des Bots (zwischen den Bandmitten
+  geometrisch). Die früheren festen Faktoren der Persönlichkeiten (1,5; 1,8; 3; 0,6 …) sind in
+  Stufen übersetzt (etwa 1,3 bis 1,5 → 1, 1,8 bis 2 → 2, 3 → 3, 0,5 bis 0,6 → −1, 0,3 → −2);
+  „besonders blind“ ist Stufe 2 des Flecks. Grund: Ein Faktor 3 bedeutete bei einer Art mit enger
+  Streuung Unmenschliches, bei einer mit weiter Streuung fast nichts; jetzt sind die Stufen
+  vergleichbar und bleiben innerhalb echter Spieler (Entscheidung des Autors, 23.10.2026).
+- **Sieben Stile** (engine/stile.ts): je Bot einer nach der Tabelle in „Spielstile der Bots“;
+  Verschiebung der Stilmerkmale des Wahlmodells, je Merkmal so geeicht, dass der Anteil solcher
+  Züge um etwa anderthalb Standardabweichungen der Spieler steigt (Schach und Königsnähe 0,6,
+  Schlag 0,4, Vorwärts 0,3, Rückzug 0,35, Bauernsturm 0,25, Abtausch 0,6; mit einheitlich 0,5
+  wären Bauernsturm und Vorwärts drei Standardabweichungen gewesen) (Angreifer: Schach und Königsnähe;
+  Positionsspieler umgekehrt; Taktiker: Schlag und Vorwärts, kein Rückzug; Verteidiger
+  umgekehrt; Draufgänger: Bauernsturm und Vorwärts, kein Abtausch; Vereinfacher: Abtausch, kein
+  Bauernsturm; Universell nichts). Der Regler −2 bis 2 bleibt für eigene Gegner.
+- **Offen:** Neumessung und Verankerung der Bots; Regler eigener Gegner auf dieselben Stufen umstellen (Oberfläche).
+
+## Verankerung der Bot-Leiter an menschlich spielenden Stufen (24.10.2026 mittags, Fable)
+
+- **Befund:** Das Elo-Modell (spiel/elomodell.ts) ist an Menschen geeicht. Die reinen Grundschichten
+  der Engine (Zufall auf die Bewertung, keine Zusatzfehler) haben ein anderes Fehlermuster; das
+  Modell ordnet sie unplausibel ein (Grundschicht 1x1 mit 40 % Genauigkeit → 879, 4x0.2 mit 58 %
+  → 700; Abweichung Leiter minus Anker −553 bis +490). Die alte Kurvenrechnung hatte dasselbe
+  Problem schwächer (−303 bis +311).
+- **Entscheidung:** Anker sind ab jetzt die Stufen mit allen Zusatzfehlern der Menschen (Kürzel
+  „Nm“, Wahlmodell), die gegen sich selbst spielen; ihre Partien werden in Tiefe 18 mit der Engine
+  der App bewertet und mit dem Elo-Modell samt Phasen eingeordnet. So liegt die Skala der Bots
+  dort, wo das Modell gilt, und ein Bot, der wie ein 1200er von Lichess spielt, bekommt 1200.
+  Die Leiter (Ergebnisse aller Paarungen) verbindet Bots, Stufen mit und ohne Zusatzfehler und
+  die Kandidaten.
+
+## Messung der Bots gegen menschlich spielende Stufen (24.10.2026 mittags, Fable)
+
+- **Befund (botelo4, erster Lauf):** Mit dem Wahlmodell spielt ein Bot bei gegebener Wertung
+  menschlich stark, unabhängig von seiner Grundschicht: Die Stufen mit Zusatzfehlern („Nm“)
+  schlagen die reinen Grundschichten 1 bis 5 mit 20:0, erst bei Stufe 7 ist es ausgeglichen; alle
+  64 Bots gewinnen 12:12 gegen ihre beiden Nachbarstufen. Die reinen Stufen 1 bis 6 sind viel
+  schwächer als jeder Lichess-400er; Paarungen „Bot gegen reine Stufe“ sind gesättigt und tragen
+  nichts zur Leiter bei.
+- **Entscheidung:** Bots und Kandidaten werden gegen die zwei nächsten Nm-Stufen gemessen (Stufe
+  ihres Mittelspiels und die darüber), die Nm-Stufen selbst gegen sich (Anker, Tiefe 18, Elo-Modell).
+  Die Nm-Stufen bilden eine menschliche Leiter von etwa 400 (1m, 2m: die Wertung des Wahlmodells
+  beginnt bei 400) bis 2966 (10m). Folge für die App: Eine eigene Stufe mit Zusatzfehlern spielt
+  wie das Wahlmodell bei der Wertung der Stufe; der bisherige „Abzug der Zusatzfehler“
+  (ZUSATZ_ABZUG) wird dadurch hinfällig und für Stufe 1 bis 6 sogar ein Aufschlag – wird mit der
+  Verankerung neu gefasst (engine/botstaerke.ts).
+
+
+## Website an das Buch angeglichen (24.10.2026 nachmittags, Fable, Wunsch des Autors)
+
+- **Befund (Abgleich des Autors mit dem Buchstand vom 20.10.2026):** Im Buch stehen die Übungen
+  nicht mehr im Kasten „Training zu diesem Kapitel“; der Kasten nennt Stichworte und führt per
+  QR-Code auf die Trainingsseite. Kapitel 12 spricht von „Trainingsseiten“ und sagt, den aktuellen
+  Stand der Online-Angebote zeige die Website. Die Website hatte an mehreren Stellen die alte
+  Fassung („Übungen aus dem Kasten“, „nicht nur gedruckt“, „Trainingskästen“, „prüfe Bezeichnungen
+  und Adressen beim ersten Aufruf“, Verweise auf „die Abschnitte davor“ und auf Merkseite und
+  Kopiervorlage „im Buch“ ohne Ort).
+- **Entscheidung:** Texte des Autors übernommen: Werkzeugkasten-Seite (erste beide Absätze,
+  `inhalte/de/training/werkzeugkasten.json`), `training.uebersicht.einleitung`,
+  `startseite.training.text`, `training.kastenText`, `training.seite.einleitung` (Punkt statt
+  Semikolon), `startseite.buch.text1` („Eröffnungsgrundsätze und klassische Eröffnungssysteme“,
+  weil Kapitel 2 die Systeme und das Repertoire behandelt), `installation.einleitung` (kostenlos,
+  ohne Werbung, ohne Anmeldung, wie Kapitel 0 des Buches); englische Fassungen sinngleich.
+  Stilregeln des Autors für alle neuen Texte: Du-Form, kein Semikolon, dasselbe Bindewort höchstens
+  einmal je Absatz, keine zwei Sätze nacheinander mit demselben ersten Wort, nichts hinzuerfinden.
+- **Schutz der Trainingsdateien:** `pipeline/training.py` bricht beim aktuellen Buch ab
+  (`pruefe_alte_kaesten`, das Buch enthält `\trainingsverweis`) und schreibt nichts; geprüft am
+  24.10.2026 gegen `buch/a1`. Die Dateien in `inhalte/de/training/` sind die Quelle und werden von
+  Hand gepflegt.
+- **Abbildungslinks:** In kap09.json (9.8 Lucena, 9.15 Vancura, 9.28 Dame gegen Bauer) und
+  kap10.json (10.9 Réti, 10.14 Heuäcker) waren die Nummern nur Text; jetzt Verweise, die die App an
+  der Abbildung öffnen. Zwei Tests in `pipeline/tests/test_training.py` sichern das für alle
+  Trainingsseiten: keine Abbildungsnummer im Fließtext ohne Verweis (Nummern nach „Abschnitt“,
+  „Tabelle“, „Kapitel“ zählen nicht), kein Verweis auf eine Abbildung, die es in den App-Daten
+  nicht gibt.
+- **Impressum, „Quelltext und Rechte“:** aus „(Texte, Abbildungen, Zugfolgen)“ wird „(Texte und
+  Abbildungen)“. Grund (Autor): Die Notation historischer Partien ist in der Regel kein
+  geschütztes Werk, der Anspruch wäre angreifbar. Das ist eine Einschätzung des Autors und ersetzt
+  keine anwaltliche Prüfung (so auch im Kommentar der Datei).
+- **Semikolons in Impressum und Datenschutz:** durch Punkt oder Komma mit Bindewort ersetzt, ohne
+  die rechtliche Aussage zu ändern (eine Stelle gekürzt: „Zeitpunkt sowie deine IP-Adresse“ statt
+  „Zeitpunkt; dabei wird auch deine IP-Adresse übertragen“). Paragrafen, Namen und Angaben
+  unverändert; „Stand“ der Datenschutzerklärung bleibt 19. Oktober 2026, weil sich inhaltlich
+  nichts geändert hat. Bezugsquellen auf der Startseite unverändert („ISBN folgt“, „Links folgen“).
+
+## Gruppenmodus je Bot-Kategorie (Wunsch des Autors, 24.10.2026 nachmittags; geplant, noch nicht gebaut)
+
+- **Idee des Autors:** Hat der Leser jeden Bot einer Kategorie geschlagen (egal in welcher
+  Zeitklasse), erscheint einmal ein kleines Pop-up mit Gratulation und einer netten Grafik: Der
+  Gruppenmodus dieser Kategorie ist freigeschaltet. In der ausgeklappten Kategorie steht dann unter
+  den Porträts ein Knopf mit eigenem Symbol „Gruppenmodus“: eine Partie gegen alle Bots der
+  Kategorie zugleich, als würden sie sich bei jedem Zug beraten und den Zug spielen, den sie
+  gemeinsam für den besten halten.
+- **Umsetzung (vom Autor vorgegeben):** Bei jedem Zug wählt jeder Bot der Kategorie seinen Zug wie
+  in einer eigenen Partie (Wahlmodell mit Stil, Fehlerarten, Tagesform); aus dieser Auswahl spielt
+  die Gruppe den Zug, den die Engine am besten bewertet. Die Stärke des Gruppenmodus wird vorab
+  gemessen (wie die Bots: Paarungen gegen die Nm-Stufen, Leiter), in der App aber erst gezeigt, wenn
+  der Leser den Gruppenmodus einmal besiegt hat; bis dahin steht dort „Stärke unbekannt“. Danach
+  steht die Zahl dauerhaft im Menü.
+- **Reihenfolge:** nach den regulären Bots (Messung, Auswahl, Charaktersätze) und vor dem
+  gemeinsamen Push nach main (Restplan 9b in FORTSCHRITT). Offen zu klären beim Bau: Speicher
+  (freigeschaltet und besiegt je Kategorie, ohne neues Speicherformat, wenn möglich), Wertung der
+  Partie (gewertet mit der gemessenen Zahl), Zeitklassen (eine Zahl je Zeitklasse wie bei den Bots).
+
+## Maia: Versuch später, bei Erfolg als nachladbares Zusatzpaket (24.10.2026 nachmittags, Autor)
+
+- **Stand:** Die Bots wählen mit dem eigenen Wahlmodell (180 000 Lichess-Stellungen, Fehlerraten je
+  Band, Phase und Art auf etwa einen Prozentpunkt). Maia (University of Toronto, 1100 bis 1900,
+  Maia-2 unter MIT, Maia-3 prüfen) bleibt ein Versuch nach Messung und Gruppenmodus: nur, wenn die
+  Bots damit messbar menschlicher werden als mit dem Wahlmodell, und nur, wenn das Rechnen nicht
+  spürbar länger dauert als die künstliche Bedenkzeit. Unten (unter 1100) und oben (über 1900)
+  bleibt ohnehin das eigene Modell.
+- **Wunsch des Autors für den Erfolgsfall:** nicht fest einbauen, sondern als optionales
+  Zusatzpaket: In den Einstellungen (und erklärt in der App-Tour) lässt sich das Netz nachladen;
+  danach ein Schalter „Maia für die Bots“ an und aus, oder alternativ eine eigene Bot-Kategorie
+  „Maia“. Das Größenbudget der App (25 MB) bleibt davon unberührt, weil das Paket getrennt geladen
+  wird und offline gespeichert bleibt.
+- **Zu klären vor dem Bau:** Mehrwert aus den Messungen (Fehlerraten und Zugverteilung gegen die
+  Lichess-Daten, Vergleich mit dem Wahlmodell je Band); sauberes Umschalten ohne Bruch (laufende
+  Partien behalten ihr Modell bis zum Ende, Wertung der Bots je Modell getrennt gemessen, kein
+  Modellwechsel mitten in einer gewerteten Partie, Speicher und Nachladen mit klarer Anzeige und
+  Fehlermeldung bei fehlendem Netz). Entscheidung über Schalter oder eigene Kategorie erst mit den
+  Messergebnissen.
 ## 24.10.2026 – R57 Admin-Dashboard (P1, Opus)
 
 - Website-Worker bekommt Code (`app/worker/`), aber nur für `/api/*` und `/admin*`
@@ -4506,3 +4961,135 @@ war). Der Messlauf bleibt für spätere Datenstände.
   scheitern (Mail von GitHub). Zertifikat erst unter 14 Tagen gelb, weil Cloudflare etwa 30 Tage
   vor Ablauf erneuert.
 - DB1 erledigt (24.10.2026): Der Autor hat `BERICHT_SCHLUESSEL` in GitHub (Actions-Secret) und Cloudflare (Worker-Secret) eingetragen; die Prüfberichte gehen damit ans Dashboard.
+
+## Wertung je Zeitklasse, vorläufige Wertung, Phasenkurve über mehrere Partien (24.10.2026 nachmittags, Fable; Empfehlung, vom Autor angenommen)
+
+- **Befund:** Nach der Umstellung auf das Elo-Modell waren die Phasen-Ansichten der Wertungskurve
+  („Eröffnung“, „Mittelspiel“, „Endspiel“ in den Einstellungen) für neue Partien leer: Sie zeigten
+  je Partie die Schätzung der Phase, und aus einer Partie ist die Spanne einer Phase nie schmal.
+  Außerdem lief die Elo-Wertung als eine Zahl über alle Zeitklassen, während „Deine Spielstärke“
+  je Zeitklasse schätzt; der Startwert aus einer Partie (±370) stand ohne Kennzeichnung da; und
+  beide Zahlen (Ergebnisse, Zugqualität) standen an zwei Orten ohne Bezug zueinander.
+- **Entscheidung (alle vier Empfehlungen angenommen):**
+  1. Die Phasenkurve zeigt nach jeder Partie die Schätzung des Teilmodells aus den bis dahin letzten
+     zehn Partien der Zeitklasse (`spiel/wertung.ts`, `phasenverlauf`), nur wo die Spanne schmal ist;
+     sonst der Satz „noch zu wenige Partien … für eine Zahl“. Neue Wertungspunkte speichern keine
+     Phasenwerte mehr (`phasen` bleibt für ältere Punkte lesbar).
+  2. Wertung je Zeitklasse wie bei Lichess: eigene Elo-Kette für Blitz, Schnellschach und Klassisch,
+     Reiter „Zeitklasse“ in der Karte, sobald mehr als eine Zeitklasse Partien hat; Startwert aus dem
+     Elo-Modell der Zeitklasse; Gegnerzahl des Bots (je Zeitklasse, sobald gemessen). Kein neues
+     Speicherformat: Neue Punkte tragen `tempo`, ältere Punkte ohne Angabe zählen als Schnellschach
+     (bisherige Standarduhr 10+0), Blitz und Klassisch beginnen neu.
+  3. „Vorläufig“ in den ersten zehn Partien einer Zeitklasse (K-Faktor 32), wie das „?“ bei Lichess.
+  4. Jede Karte nennt die andere Zahl: „Deine Wertung“ zeigt „Aus deinen Zügen: etwa … (von bis)“,
+     „Deine Spielstärke“ zeigt „Aus deinen Ergebnissen: Wertung …“.
+- **Schwelle „schmal“ von 350 auf 400:** Die halbe 90-%-Spanne des Mittelspiels liegt bei zehn
+  Schnellschach-Partien bei 395, bei Klassisch bei 315; mit 350 hätte das Mittelspiel im
+  Schnellschach nie eine Zahl bekommen. Mit 400 erscheint sie ab etwa zehn Partien; Eröffnung (531)
+  und Endspiel (911) bleiben im Schnellschach ohne Zahl, bis die Teilmodelle besser sind. Blitz
+  bekommt keine Phasenzahl.
+
+## Schriftgröße in den Einstellungen (24.10.2026 nachmittags, Wunsch des Autors)
+
+- **Wunsch:** Die App folgt der Schriftgröße des Geräts; der Leser soll sie zusätzlich unabhängig
+  vom System in 10-%-Schritten größer oder kleiner stellen können.
+- **Umsetzung (0.2.125):** Einstellungen › Anzeige › „Schriftgröße“: Knöpfe „A−“ und „A+“, dazwischen
+  die Prozentzahl (80 bis 150 %), „Standard“ zurück auf 100 %. Merker auf dem Gerät
+  (`svga.schriftgroesse`, wie der Nachtmodus), angewendet als Variable `--schriftfaktor` am
+  Wurzelelement, die basis.css in die Grundschrift einrechnet (`html { font-size: calc(100% *
+  var(--schriftfaktor, 1)) }`); ein Skript in app/index.html setzt sie vor dem ersten Zeichnen.
+  Weil alle Schriftgrößen in rem stehen, skaliert der ganze Text mit.
+- **Symbole (Frage des Autors):** Symbole, die in Textzeilen stehen (Stufenmarken, Plaketten,
+  Ergebnismarken, Fortschrittskreise in symbole.css), skalieren mit: ihre festen Pixelbreiten sind
+  jetzt rem (Kommentar nennt die Pixel bei Standardschrift). Das Brett und die Figuren folgen der
+  Bildschirmbreite, nicht der Schrift; Tippflächen bleiben mindestens 44 px und wachsen mit dem
+  Inhalt. Weitere feste Pixelmaße (Abstände, Ränder, Vorschaubilder) bleiben, damit das Layout bei
+  150 % nicht auseinanderläuft; wo ein Symbol bei großer Schrift zu klein wirkt, wird es nachgezogen
+  (Rückmeldung des Autors).
+
+## Gruppenmodus gebaut (24.10.2026 nachmittags, Fable; Entwurf oben „Gruppenmodus je Bot-Kategorie“)
+
+- **Zugwahl (engine/gruppenwahl.ts):** Die Analyse der Stellung läuft einmal (engine/menschenwahl.ts,
+  `kandidatenpool`: sechs beste Züge und die typischen Fehlerzüge aller aktiven Arten der
+  Mitglieder), dann wählt jeder Bot der Stufe mit seiner Wertung, seinem Stil, seinen Fehlerarten
+  und Flecken aus demselben Pool (`wahlAusPool`); dann stimmt die Gruppe ab: Der Zug mit den
+  meisten Stimmen wird gespielt, bei Gleichstand ein zufälliger der gleichauf liegenden Züge
+  (Entscheidung des Autors, 24.10.2026 nachmittags: Mehrheit statt „bester Zug der Gruppe“, und
+  bei Gleichstand das Los statt des besseren Zuges, damit die Gruppe etwas schwächer bleibt; so
+  kann sie auch einen gemeinsamen Fehler machen, wenn zwei sich einig sind und die übrigen sechs
+  sich zersplittern). So kostet die Gruppe kaum mehr Rechenzeit als ein Bot. Kein
+  Eröffnungsbuch.
+- **Gegner:** Kennung „gruppe-N“ (engine/gruppe.ts), Kategorie „vorgefertigt“, Name „Gruppe der
+  Stufe N“, Stufen je Phase die höchsten der Mitglieder (Bedenkzeit), Beschreibung in der
+  Sprechblase und unter dem Partietitel. Bild: die Gesichter der Stufe übereinandergelegt wie in der
+  zugeklappten Stufenzeile (Wunsch des Autors), auch in der Partienliste.
+- **Freischaltung:** frei, sobald jeder Bot der Stufe in irgendeiner Zeitklasse gewertet besiegt ist
+  (speicher/besiegt.ts, keine neue Speicherung). Unter dem Porträtgitter steht sonst der Satz, was
+  den Gruppenmodus freischaltet. Nach der Partie, die den letzten Bot besiegt, erscheint einmal je
+  Gruppe eine Gratulation (Merker `svga.gruppenGratuliert` auf dem Gerät).
+- **Stärke:** „Stärke unbekannt“, bis der Leser die Gruppe einmal besiegt hat (Sieg landet als
+  „gruppe-N“ in den besiegten Bots) und eine gemessene Zahl vorliegt
+  (engine/gruppenstaerke-daten.ts, noch leer). Für die Elo-Wertung gilt von Anfang an die gemessene
+  Zahl, ohne Messung der stärkste Bot der Stufe plus 150.
+- **Offen:** Messung der Gruppen (Paarungen „@gruppe-N“ gegen die menschlich spielenden Stufen im
+  Messlauf), danach die Zahlen in gruppenstaerke-daten.ts; Gruppen erst nach dem endgültigen
+  Bot-Satz messen, weil die Mitglieder sich mit der Auswahl ändern.
+
+## Ergebnis des zweiten Messlaufs (24.10.2026 nachmittags, Fable, botelo4)
+
+- **Anker (Nm-Stufen gegen sich selbst, 40 Partien je Stufe, Tiefe 18, Elo-Modell Schnellschach):**
+  1m 643, 2m 971, 3m 1286, 4m 1579, 5m 1671, 6m 1921, 7m 2029; 8m bis 10m gesättigt (Genauigkeit
+  über 83 %, das Modell endet bei etwa 2300). 9m und 10m spielten in allen 40 Partien identisch: Bei
+  Wertungen ab etwa 2700 wählt das Wahlmodell praktisch immer den besten der Kandidaten aus Tiefe 10.
+- **Leiter (Bots, Kandidaten, Nm-Stufen, reine Spitzenstufen; etwa 900 Paarungen):** Die Ergebnisse
+  zwischen Bots liegen enger beieinander als ihre Zugqualität (Leiter 1m bis 7m 890 Elo breit, Anker
+  1390). Deshalb legt eine Gerade (kleinste Quadrate über die sieben gültigen Anker) die Leiter auf
+  die Anker; Rest je Anker danach −125 bis +112. Ergebnis: Nm 1 754, 2 941, 3 1239, 4 1454, 5 1696,
+  6 1907, 7 2110, 8 2294, 9 2390; reine Stufe 8 2489, 9 2994, 10 (volle Engine) 3215. Bots 521 bis
+  3238, Kandidaten 549 bis 2876 (mittlere Streuung ±128 bei zehn Partien je Paarung).
+- **Stufe 10 ist die volle Engine:** Mit Zusatzfehlern wäre sie Stufe 9 (identische Partien); das
+  Wahlmodell zieht nur aus den Kandidaten der Tiefe 10. Bots mit Stufe 10 stehen deshalb auf 9 (ihr
+  Spiel ist dasselbe). Folge: Die Spitzengruppe 10 (2850 bis 3150) füllen Bots mit seltenen Fehlern
+  (Faktor 0,1 bis 0,3), die Gruppen 1 und 2 Bots mit häufigeren Fehlern (Faktor 1,6 und 2,5); dafür
+  32 Zusatzkandidaten, gemessen gegen 1m/2m bzw. 9m und die reine 9.
+- **Uhr:** Mit der menschlichen Bedenkzeit je Zeitklasse kostet die Uhr die Bots nichts Messbares
+  (Blitz +23, Schnellschach −54 gegenüber Klassisch, bei ±40 Streuung); der Uhrabzug ist 0, ein
+  Abzug zählt erst ab 80 Elo Verlust. Drei Zahlen je Bot und Zeitklasse (R51) bleiben verschoben,
+  weil die Uhr keinen messbaren Unterschied macht.
+- **Offen:** Wertung je Zeitklasse der Bots ist damit vorerst dieselbe Zahl; Gruppenmodus-Messung
+  nach dem endgültigen Satz.
+
+## Zeitklassen wie bei Lichess, Stern je Zeitklasse (24.10.2026 nachmittags, Autor)
+
+- **Hintergrund:** Die App teilt die Zeitklassen wie Lichess (Grundzeit plus 40 Züge Zuschlag:
+  unter 8 min Blitz, unter 25 min Schnellschach, darüber Klassisch); 30+20 und 60+0 sind damit
+  Klassisch, 15+10 Schnellschach. Beim Weltschachbund wäre 30+20 noch Schnellschach.
+- **Entscheidung des Autors (nach kurzem Irrtum am selben Tag):** Es bleibt bei Lichess: Mit 30+20
+  spielen die Bots nach der Klassisch-Kalibrierung, ein Sieg vergibt den Klassisch-Stern, wie bei
+  60+0. Jede Zeitklasse hat ihren eigenen Stern; nichts wird doppelt vergeben.
+
+## Endgültiger Bot-Satz (24.10.2026 abends, Fable, botelo4)
+
+- **78 Bots in zehn Gruppen** (Gruppe 1 sechs, sonst acht), gewählt aus 64 Bestandsbots und 274
+  Kandidaten nach der gemessenen Zahl (Schnellschach, verankerte Leiter): je Gruppe jeder der sieben
+  Stile einmal plus ein zweiter Universeller, bei mehreren Treffern der nächste an der Gruppenmitte.
+  Gruppe 1 (250 bis 450) hat nur sechs, weil für Taktiker und Universell kein Kandidat unter 450
+  lag; Spielerinnen und Spieler unter 450 sind selten, und die Spaß-Bots füllen den Bereich.
+- **Namen und Porträts:** Gewählte Bestandsbots behalten Name, Porträt und Kennung. Gewählte
+  Kandidaten bekommen Name und Porträt aus dem Pool (nicht gewählte Bestandsbots, schwächste
+  zuerst, dazu 19 neue Porträts); Titel (GM, IM, WGM, WIM, FM, Trainer, Doktor, Prof.) bleiben den
+  Gruppen 8 bis 10 vorbehalten. Jedes Porträt wurde für seinen Namen erzeugt, deshalb passt das
+  Geschlecht des Bildes zum Namen (Wunsch des Autors). Ein Porträt, das ein Bestandsbot trägt
+  (Herr Krause trägt „herr-lehmann“), gilt nicht als frei.
+- **Archiv** (`engine/botarchiv.ts`): die 49 nicht gewählten Bots von 0.2.117 mit ihren Werten,
+  unter „alt-…“ wenn ein Kandidat ihre Kennung übernahm. Nicht in der Gegnerwahl, ohne Sätze.
+  `engine/botmessnamen.ts` verbindet neue Kennungen mit den Kandidatenkennungen der Messung, damit
+  `botstaerke-daten.ts` die gemessene Zahl unter dem neuen Namen führt.
+- **Gruppe 10:** Zwei Kandidaten mit Faktor 0 (keine Zusatzfehler, Stufe 9 mit Persönlichkeit),
+  gemessen gegen 9m und die reine Stufe 10: Opa Walter 3113, Frau Hoffmann 3025.
+- **Charaktersätze** (de und en): zu jedem Bot zwei Sätze zu Stil, Persönlichkeit und Fehlerhäufigkeit,
+  menschlich erzählt; nach Regel 9 in der App, der Autor liest sie später. Sätze alter Bots, die es
+  nicht mehr gibt, wurden entfernt.
+- **Lokal** (`buch/arbeit/botelo4/`): `auswahl.py` (Auswahl mit Alternativen je Stil, `auswahl.txt`),
+  `satz.py --schreiben` (Satz, Archiv, Messnamen; nur einmal auf die ursprünglichen Listen anwenden),
+  `satz/neue-bots.json`.

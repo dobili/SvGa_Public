@@ -92,7 +92,7 @@ test("offline: nach dem ersten Laden geht alles ohne Netz", async ({ page, conte
 test("Einstellungen zeigen App-Version und Datenstand", async ({ page }) => {
   await starteImBrowser(page);
   await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
-  await expect(page.getByTestId("app-version")).toHaveText(/^\d+\.\d+\.\d+$/);
+  await expect(page.getByTestId("app-version")).toHaveText(/^\d+\.\d+\.\d+ \(Beta\)$/);
   await expect(page.getByText("Auflage 1, Datenlauf vom")).toBeVisible();
 });
 

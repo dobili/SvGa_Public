@@ -27,11 +27,11 @@ describe("Breite der Wahl und Tagesform", () => {
   it("der Verlauf wirkt mit der Tagesform", () => {
     expect(verlaufsfaktor({ tagesform: 1.2 })).toBeCloseTo(1.2, 5);
   });
-  it("Tagesform: fest je Kennung, zwischen 0,75 und 1,25, verschieden je Partie", () => {
+  it("Tagesform: fest je Kennung, zwischen 0,6 und 1,4, verschieden je Partie", () => {
     const a = tagesform("partie-eins");
     expect(a).toBe(tagesform("partie-eins"));
-    expect(a).toBeGreaterThanOrEqual(0.75);
-    expect(a).toBeLessThanOrEqual(1.25);
+    expect(a).toBeGreaterThanOrEqual(0.6);
+    expect(a).toBeLessThanOrEqual(1.4);
     expect(tagesform("partie-zwei")).not.toBe(a);
   });
 });

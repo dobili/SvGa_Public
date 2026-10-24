@@ -7,13 +7,15 @@
  * je ein Balken (Skala 50 bis 100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und Taktik
  * mit Prozent, Urteilswort und Spielstärke; Phasen ohne Wertung grau mit „–“. Die Zugklassen
  * stehen als Bullet-Diagramm in Zugklassen.tsx. Rechnungen wie bisher in spiel/genauigkeit.ts.
- * Der Schalter „Genauigkeit wie“ bleibt hinter dem Fragezeichen, bis der Bot-Chat ihn abschafft.
- * Abhängigkeiten: spiel/genauigkeit.ts, spiel/wertung.ts, engine/botstaerke.ts, Zugklassen.tsx,
- * Genauigkeitsbalken.tsx, InfoKnopf, i18n.
+ * Seit 0.2.125 (Entscheidung des Autors, 23.10.2026) ohne den Schalter „Genauigkeit wie“: Die
+ * Genauigkeit ist die von Lichess, die Spielstärke kommt aus dem Elo-Modell der Zeitklasse der
+ * Partie (spiel/elomodell.ts); hinter dem Fragezeichen die Entsprechung auf chess.com oder beim
+ * Weltschachbund (wertungstext.ts).
+ * Abhängigkeiten: spiel/genauigkeit.ts, spiel/wertung.ts, spiel/elomodell.ts, engine/botstaerke.ts,
+ * Zugklassen.tsx, Genauigkeitsbalken.tsx, wertungstext.ts, InfoKnopf, i18n.
  */
 import type { Color } from "chessops/types";
 import { useMemo } from "react";
-import { aendereEinstellungen, useEinstellungen } from "../../app/einstellungen";
 import { gegnerstaerke } from "../../engine/botstaerke";
 import { t } from "../../i18n/sprache";
 import type { Zugurteil } from "../../spiel/auswertung";
@@ -26,16 +28,16 @@ import {
 } from "../../spiel/genauigkeit";
 import { stellungen, type Partie } from "../../spiel/partie";
 import { type Phase } from "../../spiel/phasen";
-import { GENAUIGKEITSMODI } from "../../spiel/staerkemodell";
+import { wertungstempo } from "../../spiel/elomodell";
 import { zugartJeStellung } from "../../spiel/taktik";
 import { staerkeLetzterPartien } from "../../spiel/wertung";
 import { sanZuUci } from "../../spiel/zuege";
 import { useSpeicher } from "../../speicher/speicher";
 import { Genauigkeitsbalken, type Balkenzeile } from "./Genauigkeitsbalken";
 import { MitInfo } from "./InfoKnopf";
-import { Segmentwahl } from "./Segmentwahl";
 import { staerketext as angabetext } from "./staerkeangabe";
 import { Titelsymbol } from "./Titelsymbol";
+import { entsprichtText } from "./wertungstext";
 import { Zugklassen } from "./Zugklassen";
 
 /** Ohne jede Schätzung vergleicht „Deine Züge“ mit dieser Stärke (Einsteiger mit Erfahrung). */
@@ -97,7 +99,6 @@ function Ring({ genauigkeit, urteil }: { genauigkeit: number; urteil: string }) 
 
 /** Kopf der Karte: Ring, Urteil, Genauigkeit, Spielstärke; beim Bot seine feste Zahl dazu. */
 function Gesamt({ partie, seite, b }: { partie: Partie; seite: Color; b: Seitenbilanz }) {
-  const modus = useEinstellungen().genauigkeitsmodus;
   if (b.genauigkeit === null) return <p>{t("spielstaerke.keineZuege")}</p>;
   const urteil = phasenurteil(b.innen ?? b.genauigkeit);
   const bot =
@@ -113,7 +114,7 @@ function Gesamt({ partie, seite, b }: { partie: Partie; seite: Color; b: Seitenb
       <div>
         <p className="gesamt-urteil">{t(`spielstaerke.gesamt.${urteil}`)}</p>
         <p>
-          {t("spielstaerke.genauigkeit", { modus: t(`einstellungen.genauigkeit.${modus}`) })}{" "}
+          {t("spielstaerke.genauigkeit")}{" "}
           {t("spielstaerke.prozent", { wert: Math.round(b.genauigkeit) })}
         </p>
         <p>
@@ -135,9 +136,8 @@ function Gesamt({ partie, seite, b }: { partie: Partie; seite: Color; b: Seitenb
   );
 }
 
-/** Erklärung und Schalter „Genauigkeit wie“ hinter dem Fragezeichen der Karte. */
+/** Erklärung hinter dem Fragezeichen der Karte: Entsprechung der Zahl und wie die Zahlen entstehen. */
 function Kartenkopf({ b }: { b: Seitenbilanz }) {
-  const modus = useEinstellungen().genauigkeitsmodus;
   return (
     <MitInfo
       zeile={
@@ -148,23 +148,8 @@ function Kartenkopf({ b }: { b: Seitenbilanz }) {
       }
       erklaerung={
         <>
-          {b.schaetzung && (
-            <p>
-              {t("spielstaerke.skalen", {
-                chesscom: b.schaetzung.chesscom,
-                lichess: b.schaetzung.lichess,
-              })}
-            </p>
-          )}
+          {b.schaetzung && <p>{entsprichtText(b.schaetzung)}</p>}
           <p>{t("spielstaerke.erklaerung")}</p>
-          <p>{t("einstellungen.genauigkeit.info")}</p>
-          <Segmentwahl
-            name={t("einstellungen.genauigkeit")}
-            werte={GENAUIGKEITSMODI}
-            gewaehlt={modus}
-            text={(wert) => t(`einstellungen.genauigkeit.${wert}`)}
-            beiWahl={(genauigkeitsmodus) => aendereEinstellungen({ genauigkeitsmodus })}
-          />
         </>
       }
       thema={t("spielstaerke.titel")}
@@ -189,16 +174,20 @@ export function Spielstaerke({
   seite: Color;
 }) {
   const zugarten = useMemo(() => zugartJeStellung(partie), [partie]);
-  const modus = useEinstellungen().genauigkeitsmodus;
+  const tempo = wertungstempo(partie.einstellung.uhr);
   const partien = useSpeicher((z) => z.daten.spiel.partien);
-  const eigeneStaerke = useMemo(() => staerkeLetzterPartien(partien)?.mitte ?? null, [partien]);
+  // Vergleichsstärke der Zugklassen: „Deine Spielstärke“ in der Zeitklasse dieser Partie.
+  const eigeneStaerke = useMemo(
+    () => staerkeLetzterPartien(partien, tempo)?.mitte ?? null,
+    [partien, tempo],
+  );
   if (urteile.length === 0) return null;
   const alle = stellungen(partie);
   const gespielte = partie.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
   const args = [partie, werte, urteile, beste, gespielte] as const;
-  const b = spielstaerke(...args, modus)[seite];
-  const jePhase = spielstaerkeJePhase(...args, phasen, modus);
-  const imMittelspiel = spielstaerkeImMittelspiel(...args, phasen, zugarten, modus);
+  const b = spielstaerke(...args, tempo, phasen)[seite];
+  const jePhase = spielstaerkeJePhase(...args, phasen, tempo);
+  const imMittelspiel = spielstaerkeImMittelspiel(...args, phasen, zugarten, tempo);
   const zeilen: readonly Balkenzeile[] = [
     { art: "eroeffnung", b: jePhase.eroeffnung[seite] },
     { art: "mittelspiel", b: jePhase.mittelspiel[seite] },
@@ -213,7 +202,7 @@ export function Spielstaerke({
         <Gesamt partie={partie} seite={seite} b={b} />
         <Genauigkeitsbalken zeilen={zeilen} />
       </section>
-      <Zugklassen bilanz={b} elo={vergleichsElo(partie, seite, b, eigeneStaerke)} />
+      <Zugklassen bilanz={b} elo={vergleichsElo(partie, seite, b, eigeneStaerke)} tempo={tempo} />
     </>
   );
 }

@@ -115,7 +115,7 @@ function zugbild(fen: string, uci: string): Zugbild | null {
     rolle: figur.role,
     von: zug.from,
     nach: zug.to,
-    schlag: pos.board.get(zug.to) !== undefined,
+    schlag: istSchlag(pos, zug.from, zug.to),
     umwandlung: zug.promotion !== undefined,
   };
 }
@@ -126,11 +126,22 @@ function rueckwaerts(z: Zugbild): boolean {
   return z.farbe === "white" ? dr < 0 : dr > 0;
 }
 
+/**
+ * Schlägt der Zug eine gegnerische Figur (auch en passant)? Seit 0.2.118: Die Rochade, in chessops
+ * als König auf den eigenen Turm geschrieben, ist kein Schlag (vorher galt jede Stellung mit
+ * Rochaderecht als „Schlag möglich“ und jeder Zug darin als ruhig).
+ */
+function istSchlag(pos: Chess, von: Square, nach: Square): boolean {
+  const opfer = pos.board.get(nach);
+  if (opfer) return opfer.color !== pos.turn;
+  return pos.board.get(von)?.role === "pawn" && nach === pos.epSquare;
+}
+
 /** Hat die Seite am Zug irgendeinen Schlag zur Auswahl? */
 function schlagMoeglich(pos: Chess): boolean {
   for (const [von, ziele] of pos.allDests()) {
     for (const ziel of ziele) {
-      if (pos.board.get(ziel) !== undefined && pos.board.get(von)?.color === pos.turn) return true;
+      if (istSchlag(pos, von, ziel)) return true;
     }
   }
   return false;

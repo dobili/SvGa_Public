@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import { FEHLERARTEN } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import {
+  fehlerartenAus,
   eigeneGegnerAus,
   eigenerGegnerAus,
   MAX_EIGENE_GEGNER,
@@ -55,5 +56,17 @@ describe("Eigene Gegner", () => {
       voll = mitEigenemGegner(voll, { ...RAMBO, kennung: `eigen-${i}` });
     }
     expect(voll).toHaveLength(MAX_EIGENE_GEGNER);
+  });
+});
+
+describe("Fehlerarten aus dem Speicher (0.2.118)", () => {
+  const NEU = ["bauerEingestellt", "schlagVerpasst", "bauernzugOhneNot", "koenigszugOhneNot"];
+  const ALT = FEHLERARTEN.filter((a) => !NEU.includes(a));
+  it("eine vollständige alte Liste bekommt die neuen Arten dazu", () => {
+    expect(fehlerartenAus(ALT)).toEqual(FEHLERARTEN);
+  });
+  it("eine abgehakte alte Liste bleibt, wie der Leser sie wollte", () => {
+    const ohne = ALT.filter((a) => a !== "figurHaengen");
+    expect(fehlerartenAus(ohne)).toEqual(ohne);
   });
 });

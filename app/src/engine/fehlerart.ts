@@ -42,6 +42,7 @@ import {
   type Schlagzug,
 } from "../schach/drohungen";
 import { phase, type Phase } from "../schach/phase";
+import { FIGURENWERT } from "../schach/stellung";
 import {
   gabelnVon,
   linienGegen,
@@ -58,12 +59,13 @@ export type { Zugprobe } from "./zugprobe";
 import {
   istBauernraub,
   istBauernvorstoss,
-  istFalscherAbtausch,
-  istKoenigPassiv,
   istKoenigsschild,
   istPattGesetzt,
   istTempoverlust,
 } from "./fehlerart-phasen";
+import { istKoenigPassiv } from "./fehlerart-koenig";
+import { istFalscherAbtausch, istSchlagreflex } from "./fehlerart-schlag";
+import { eingestellt, schlagVerpasst, zugOhneNot } from "./fehlerart-neu";
 
 export type Fehlerart =
   | "figurHaengen"
@@ -80,6 +82,11 @@ export type Fehlerart =
   | "koenigPassiv"
   | "bauernvorstoss"
   | "pattGesetzt"
+  // Seit 0.2.118 aus der Auswertung von Lichess-Partien (engine/fehlerart-neu.ts):
+  | "bauerEingestellt"
+  | "schlagVerpasst"
+  | "bauernzugOhneNot"
+  | "koenigszugOhneNot"
   | "ungenau"
   // Seit 0.2.46: blinde Flecken eines Gegners (engine/blindeFlecken.ts), nur im Protokoll.
   | `blind${Capitalize<BlinderFleck>}`;
@@ -99,6 +106,10 @@ export const FEHLERARTEN: readonly Fehlerart[] = [
   "koenigPassiv",
   "bauernvorstoss",
   "pattGesetzt",
+  "bauerEingestellt",
+  "schlagVerpasst",
+  "bauernzugOhneNot",
+  "koenigszugOhneNot",
   "ungenau",
 ];
 
@@ -116,8 +127,6 @@ export interface Fehlerbefund {
 /** Faustwerte aus Kapitel 1. */
 const LEICHTFIGUR = 3;
 const DAME = 9;
-/** Ab so viel Verlust (Engine) gilt ein Schlag als Schlagreflex statt als Abtausch. */
-const SCHLAG_VERLUST = 1;
 /** Eine Drohung zählt ab einem Bauern Gewinn (Kapitel 1: „Material gewinnen“). */
 const DROHUNG_AB = 1;
 /** Ein Damenopfer: Die Dame geht für höchstens eine Leichtfigur verloren. */
@@ -207,14 +216,6 @@ function stehengelasseneDrohung(lage: Lage, p: Zugprobe): Stehengelassen {
   return staerkste;
 }
 
-/** Schlagreflex (W5): ein Schlag mit negativer Abtauschbilanz oder laut Engine mit Verlust. */
-function istSchlagreflex(lage: Lage, p: Zugprobe, verlust: number | null): boolean {
-  if (p.geschlagen === null) return false;
-  if (verlust !== null && verlust >= SCHLAG_VERLUST) return true;
-  const schlag = lage.schlaege.find((s) => s.von === p.zug.from && s.nach === p.zug.to);
-  return schlag !== undefined && schlag.bilanz < 0;
-}
-
 const OHNE_EINZELHEITEN = { drohung: null, haengt: null, taktik: null } as const;
 
 /**
@@ -246,18 +247,24 @@ export function fehlerbefundIn(
   }
   if (istPattGesetzt(lage, p)) return { art: "pattGesetzt", ...OHNE_EINZELHEITEN };
   if (istBauernraub(lage, p, verlust)) return { art: "bauernraub", ...OHNE_EINZELHEITEN };
-  if (istSchlagreflex(lage, p, verlust)) return { art: "schlagreflex", ...OHNE_EINZELHEITEN };
+  if (istSchlagreflex(lage, p, antwort, verlust))
+    return { art: "schlagreflex", ...OHNE_EINZELHEITEN };
   // Vor „Figur hängen“: Beim gleichen Abtausch wird die schlagende Figur zurückgeschlagen.
-  if (istFalscherAbtausch(lage, p)) return { art: "falscherAbtausch", ...OHNE_EINZELHEITEN };
-  if (haengt.feld !== null) {
+  if (istFalscherAbtausch(lage, p, besterZug))
+    return { art: "falscherAbtausch", ...OHNE_EINZELHEITEN };
+  // Seit 0.2.118: Ein gleichwertiger Abtausch (Sxb3 axb3) lässt nichts hängen
+  const geschlagen = p.geschlagen ? FIGURENWERT[p.geschlagen] : 0;
+  if (haengt.feld !== null && haengt.wert > geschlagen) {
     return { art: "figurHaengen", ...OHNE_EINZELHEITEN, haengt: haengt.feld };
   }
   if (drohung.wert > 0) return ignoriert;
   const taktik = uebersehneTaktik(lage, p, antwort);
   if (taktik) return { art: "taktikUebersehen", ...OHNE_EINZELHEITEN, taktik };
-  const phasenart = phasenfehler(lage, p, verlust, besterZug);
-  if (phasenart) return { art: phasenart, ...OHNE_EINZELHEITEN };
-  return { art: "ungenau", ...OHNE_EINZELHEITEN };
+  const verloren = eingestellt(p, antwort);
+  if (verloren) return { ...OHNE_EINZELHEITEN, ...verloren };
+  if (schlagVerpasst(lage, p, besterZug)) return { art: "schlagVerpasst", ...OHNE_EINZELHEITEN };
+  const phasenart = phasenfehler(lage, p, verlust, besterZug) ?? zugOhneNot(lage, p, verlust);
+  return { art: phasenart ?? "ungenau", ...OHNE_EINZELHEITEN };
 }
 
 /** Die Fehlerarten je Phase (0.2.40) in ihrer Reihenfolge; null, wenn keine passt. */
@@ -268,7 +275,7 @@ function phasenfehler(
   besterZug: string | null,
 ): Fehlerart | null {
   if (istKoenigsschild(lage, p)) return "koenigsschild";
-  if (istKoenigPassiv(lage, p, besterZug)) return "koenigPassiv";
+  if (istKoenigPassiv(lage, p, besterZug, verlust)) return "koenigPassiv";
   if (istBauernvorstoss(lage, p, verlust)) return "bauernvorstoss";
   if (istVerfruehteDame(lage, p)) return "verfruehteDame";
   if (istKoenigMitte(lage, p)) return "koenigMitte";

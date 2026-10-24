@@ -2,9 +2,11 @@
 import { describe, expect, it } from "vitest";
 import { bedenkzeitMs, type Bedenklage } from "./bedenkzeit";
 
-const MITTE = () => 0.5;
+/** Zufall, der in der Box-Muller-Formel eine Normalverteilte nahe 0 ergibt (Streuungsfaktor 1). */
+const MITTE = () => 0.25;
 const GRUND: Bedenklage = {
   wertung: 1200,
+  tempo: "rapid",
   restMs: 240_000,
   zugnummer: 20,
   lage: "eng",
@@ -17,6 +19,12 @@ describe("Bedenkzeit der Bots", () => {
     expect(mitte).toBeGreaterThan(2_000);
     expect(mitte).toBeLessThan(20_000);
     expect(bedenkzeitMs({ ...GRUND, zugnummer: 1 }, MITTE)).toBeLessThan(mitte);
+  });
+
+  it("Zeitklassen (0.2.125): Blitz braucht je Zug mehr Anteil der Restzeit als Schnellschach, Klassisch weniger", () => {
+    const rapid = bedenkzeitMs(GRUND, MITTE);
+    expect(bedenkzeitMs({ ...GRUND, tempo: "blitz" }, MITTE)).toBeGreaterThan(rapid);
+    expect(bedenkzeitMs({ ...GRUND, tempo: "classical" }, MITTE)).toBeLessThan(rapid);
   });
 
   it("Wiederschlag und Buchzug gehen schneller", () => {

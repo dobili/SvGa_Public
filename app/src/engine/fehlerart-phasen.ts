@@ -12,7 +12,7 @@
  * schach/stellung.ts (Faustwerte), chessops.
  */
 import type { Color, Role } from "chessops/types";
-import { makeSquare, opposite, squareFile, squareRank } from "chessops/util";
+import { opposite, squareFile, squareRank } from "chessops/util";
 import { Angriffskarte } from "../schach/angriffskarte";
 import { FIGURENWERT } from "../schach/stellung";
 import { leichtfigurenZuHause } from "../schach/todsuenden";
@@ -22,8 +22,6 @@ import type { Lage, Zugprobe } from "./fehlerart";
 const VERLUST_AB = 0.5;
 /** Leichtfiguren zu Hause, ab denen ein zweiter Zug derselben Figur ein Tempoverlust ist. */
 const ZU_HAUSE_TEMPO = 2;
-/** Materialrückstand, ab dem ein gleicher Abtausch falsch ist (Kapitel 8: „Wer vorn liegt, tauscht“). */
-const RUECKSTAND_AB = 2;
 /** Materialvorsprung, ab dem ein Patt ein Fehler ist (statt eine Rettung). */
 const VORSPRUNG_PATT = 2;
 const GRUNDREIHE: Readonly<Record<Color, number>> = { white: 0, black: 7 };
@@ -39,8 +37,6 @@ const STARTLINIEN: Readonly<Partial<Record<Role, readonly number[]>>> = {
 };
 /** Bauernraub: die Bauern auf b und g sind die klassischen Köder (b2/b7, g2/g7). */
 const KOEDERLINIEN = new Set([1, 6]);
-/** UCI: zwei Zeichen Startfeld. */
-const FELDLAENGE = 2;
 
 /** Summe der Faustwerte einer Farbe ohne König. */
 function material(lage: Lage, farbe: Color): number {
@@ -113,30 +109,6 @@ export function istKoenigsschild(lage: Lage, p: Zugprobe): boolean {
   if (koenig === null || p.danach.isCheck()) return false;
   const abstand = Math.abs(squareFile(p.zug.from) - squareFile(koenig));
   return squareRank(p.zug.from) === SCHILDREIHE[farbe] && abstand <= 1;
-}
-
-/**
- * Falscher Abtausch (Mittelspiel und Endspiel, Kapitel 8 „Wer Material vorn hat, tauscht
- * Figuren; wer zurückliegt, nicht“): Wer mindestens zwei Bauerneinheiten zurückliegt, tauscht eine
- * Figur ab Leichtfigur gleichwertig ab.
- */
-export function istFalscherAbtausch(lage: Lage, p: Zugprobe): boolean {
-  const farbe = lage.regeln.turn;
-  if (lage.phase === "eroeffnung" || p.geschlagen === null || p.geschlagen === "pawn") return false;
-  if (material(lage, farbe) > material(lage, opposite(farbe)) - RUECKSTAND_AB) return false;
-  const schlag = lage.schlaege.find((s) => s.von === p.zug.from && s.nach === p.zug.to);
-  return schlag !== undefined && schlag.bilanz === 0;
-}
-
-/**
- * Passiver König (Endspiel, Kapitel 8 „Der König wird zur Figur“): Der beste Zug der Engine ist
- * ein Königszug, gespielt wird etwas anderes, ohne Schlag und ohne Schach.
- */
-export function istKoenigPassiv(lage: Lage, p: Zugprobe, besterZug: string | null): boolean {
-  if (lage.phase !== "endspiel" || !besterZug || p.figur.role === "king") return false;
-  if (p.geschlagen !== null || p.danach.isCheck()) return false;
-  const koenig = lage.regeln.board.kingOf(lage.regeln.turn);
-  return koenig !== undefined && besterZug.slice(0, FELDLAENGE) === makeSquare(koenig);
 }
 
 /**

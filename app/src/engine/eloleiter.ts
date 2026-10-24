@@ -106,25 +106,42 @@ export function leiter(begegnungen: readonly Begegnung[]): Map<string, number> {
 export interface Verankerung {
   readonly werte: Map<string, number>;
   readonly verschiebung: number;
+  /** Faktor der Streckung (1: nur verschoben). */
+  readonly streckung: number;
   readonly abweichungen: readonly { readonly spieler: string; readonly abweichung: number }[];
 }
 
+/** Ab so vielen Ankern wird die Leiter auch gestreckt, nicht nur verschoben. */
+const STRECKUNG_AB = 3;
+
 /**
- * Verschiebt die Leiter so, dass sie im Mittel auf die Anker passt (eine gemeinsame
- * Verschiebung; die Abstände bleiben die der Ergebnisse). Die Abweichung je Anker zeigt, wie gut
- * Ergebnisse und Genauigkeit zusammenpassen.
- * Beispiel: Leiter Stufe 3 bei −100, Anker Stufe 3 bei 1000 → Verschiebung 1100.
+ * Legt die Leiter auf die Anker: mit mindestens drei Ankern eine Gerade (Streckung und
+ * Verschiebung, kleinste Quadrate), sonst nur eine gemeinsame Verschiebung. Die Abweichung je
+ * Anker zeigt, wie gut Ergebnisse und Genauigkeit zusammenpassen.
+ * Warum die Streckung (24.10.2026): Ergebnisse zwischen Bots liegen enger beieinander als ihre
+ * Zugqualität am menschlichen Maßstab (Leiter 1m bis 7m 890 Elo breit, Anker 1390); die
+ * Abweichungen nach einer reinen Verschiebung liefen von +347 (unten) bis −174 (oben). Die Zahl
+ * eines Bots soll aber sagen, wie ein Mensch dieser Zahl spielt, nicht nur, wie er gegen andere
+ * Bots abschneidet.
+ * Beispiel: Leiter Stufe 3 bei −100, Anker Stufe 3 bei 1000, nur ein Anker → Verschiebung 1100.
  * Sonderfall: Ohne einen Anker auf der Leiter wirft die Funktion einen Fehler.
  */
 export function verankere(werte: Map<string, number>, anker: readonly Anker[]): Verankerung {
   const passende = anker.filter((a) => werte.has(a.spieler));
   if (passende.length === 0) throw new Error("Kein Anker liegt auf der Leiter");
-  const verschiebung =
-    passende.reduce((s, a) => s + a.wert - (werte.get(a.spieler) ?? 0), 0) / passende.length;
-  const verschoben = new Map([...werte].map(([k, v]) => [k, v + verschiebung] as const));
+  const paare = passende.map((a) => ({ x: werte.get(a.spieler) ?? 0, y: a.wert }));
+  const mittelX = paare.reduce((s, p) => s + p.x, 0) / paare.length;
+  const mittelY = paare.reduce((s, p) => s + p.y, 0) / paare.length;
+  const sxx = paare.reduce((s, p) => s + (p.x - mittelX) ** 2, 0);
+  const sxy = paare.reduce((s, p) => s + (p.x - mittelX) * (p.y - mittelY), 0);
+  const streckung = paare.length >= STRECKUNG_AB && sxx > 0 ? sxy / sxx : 1;
+  const verschiebung = mittelY - streckung * mittelX;
+  const verschoben = new Map(
+    [...werte].map(([k, v]) => [k, streckung * v + verschiebung] as const),
+  );
   const abweichungen = passende.map((a) => ({
     spieler: a.spieler,
     abweichung: (verschoben.get(a.spieler) ?? 0) - a.wert,
   }));
-  return { werte: verschoben, verschiebung, abweichungen };
+  return { werte: verschoben, verschiebung, streckung, abweichungen };
 }

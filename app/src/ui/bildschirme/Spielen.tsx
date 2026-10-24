@@ -20,7 +20,7 @@ import { t } from "../../i18n/sprache";
 import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { neuePartie, spielbar } from "../../spiel/partie";
 import { UHR_VORGABEN } from "../../spiel/uhr";
-import { uhrFuerStart, uhrname, uhrstelle } from "../komponenten/uhrwahl";
+import { uhrname, uhrstelle, uhrStellen, wirksameUhr } from "../komponenten/uhrwahl";
 import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
@@ -37,6 +37,7 @@ import {
 import { GegnerEditor } from "../komponenten/GegnerEditor";
 import { EroeffnungsWahl } from "../komponenten/EroeffnungsWahl";
 import { Titelsymbol } from "../komponenten/Titelsymbol";
+import { gruppenstufe, gruppenstufen } from "../../engine/gruppe";
 import { gegnerVon } from "../../engine/gegner";
 import { gegnerprofil } from "./gegnerprofil";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
@@ -89,15 +90,17 @@ function Einstellungen({
   const v = wahl.vorlieben;
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
   const mit = (teil: Partial<Spielvorlieben>) => setze({ ...wahl, vorlieben: { ...v, ...teil } });
-  // R51: Gewertete Partien haben immer eine Uhr; „Ohne Uhr“ gibt es nur ungewertet.
-  const mitUhrPflicht = wirdGewertet(fen, v);
-  const uhrStellen = UHR_VORGABEN.flatMap((vorgabe, stelle) =>
-    mitUhrPflicht && vorgabe === null ? [] : [String(stelle)],
-  );
+  // „Ohne Uhr“ nur noch außerhalb der Grundstellung (ungewertet), R51 (uhrwahl.ts).
+  const stellen = uhrStellen(fen);
+  const uhr = wirksameUhr(fen, v.uhr);
   const engine = v.gegner === "engine";
   // Ein Gegner bringt seine Stufen je Phase mit; ohne Gegner bleiben die Regler, wie sie sind.
   const waehleBot = (bot: string | null) => {
-    const g = gegnerVon(bot) ?? eigene.find((e) => e.kennung === bot) ?? null;
+    const gruppe = gruppenstufe(bot);
+    const g =
+      gruppe !== null
+        ? { stufenJePhase: gruppenstufen(gruppe) }
+        : (gegnerVon(bot) ?? eigene.find((e) => e.kennung === bot) ?? null);
     mit(g ? { bot, stufenJePhase: g.stufenJePhase, stufe: g.stufenJePhase.mittelspiel } : { bot });
   };
   return (
@@ -106,7 +109,7 @@ function Einstellungen({
         gegner={v.gegner}
         bot={v.bot}
         stufen={v.stufenJePhase}
-        uhr={v.uhr}
+        uhr={uhr}
         eigene={eigene}
         kategorie={kategorie}
         // R32: Der Haken „Gewertete Partie“ bleibt beim Wechsel der Art des Gegners, wie er war; ob
@@ -149,9 +152,9 @@ function Einstellungen({
               <Auswahl
                 name={t("spielen.uhr")}
                 symbol="bedenkzeit"
-                werte={uhrStellen}
-                gewaehlt={String(uhrstelle(uhrFuerStart(mitUhrPflicht, v.uhr)))}
-                text={(stelle) => uhrname(Number(stelle))}
+                werte={stellen}
+                gewaehlt={uhrstelle(fen, v.uhr)}
+                text={uhrname}
                 beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
               />
               {/* Zugrücknahme gehört zu den Spielhilfen; beide in einer Klappe, ebenso die
@@ -281,7 +284,7 @@ function useBeginne(fen: string, abbildung: string | undefined) {
       eigeneFarbe: wahl.farbe,
       stufe: v.stufenJePhase.mittelspiel,
       stufenJePhase: v.stufenJePhase,
-      uhr: uhrFuerStart(wirdGewertet(fen, v), v.uhr),
+      uhr: wirksameUhr(fen, v.uhr),
       // Gewertete Partien: keine Rücknahme und keine Spielhilfen (Wunsch des Autors zu S9).
       ruecknahmeErlaubt: v.ruecknahmeErlaubt && !wirdGewertet(fen, v),
       abbildung: abbildung ?? null,

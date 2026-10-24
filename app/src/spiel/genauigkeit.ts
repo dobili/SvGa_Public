@@ -11,33 +11,35 @@
  * Zahl spürbar). Seit 0.2.72 ein Urteilswort je Phase (wie die Symbole je Phase bei chess.com)
  * und die Spielstärke im Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Reine
  * Funktionen, die Werte kommen aus der Auswertung.
- * Seit 0.2.83 (Eichung vom 18.10.2026, staerkemodell.ts): Die gezeigte Genauigkeit folgt dem
- * Schalter „Genauigkeit wie“ (Lichess, Mittelweg, nahe chess.com: Züge in entschiedener Stellung
- * zählen voll, halb oder kaum); Spielstärke und Urteilswort hängen an der inneren Genauigkeit
- * (Lichess-Rechnung). Die Spielstärke kommt aus den Kurven der Eichung statt aus der Tabelle von
- * 0.2.72, mit Spanne und den Werten für chess.com und Lichess. Seit 0.2.103 zählen für Spielstärke
- * und Urteilswort nur die Züge bis zur Entscheidung der Partie (spiel/entscheidung.ts).
+ * Seit 0.2.103 zählen für Spielstärke und Urteilswort nur die Züge bis zur Entscheidung der Partie
+ * (spiel/entscheidung.ts). Seit 0.2.125 (Entscheidung des Autors, 23.10.2026) kommt die
+ * Spielstärke aus dem Elo-Modell je Zeitklasse (spiel/elomodell.ts: Kennzahlen der Züge bis zur
+ * Entscheidung, Maßstab Lichess, Spanne für 90 % der Spieler); der Schalter „Genauigkeit wie“
+ * (0.2.83 bis 0.2.120: Lichess, Mittelweg, nahe chess.com) ist weg, die Genauigkeit ist die von
+ * Lichess über alle Züge.
  * Abhängigkeiten: spiel/auswertung.ts, spiel/entscheidung.ts, spiel/partie.ts, spiel/phasen.ts,
- * spiel/phasenurteil.ts, spiel/taktik.ts, spiel/staerkemodell.ts.
+ * spiel/phasenurteil.ts, spiel/taktik.ts, spiel/elomodell.ts.
  */
 import type { Color } from "chessops/types";
 import { WERTGRENZE, type Zugklasse, type Zugurteil, type Zugzeichen } from "./auswertung";
 import { gewerteteHalbzuege } from "./entscheidung";
 import { stellungen, type Partie } from "./partie";
-import type { Phase } from "./phasen";
+import { phasenJeStellung, type Phase } from "./phasen";
 import {
-  POLSTER,
-  STANDARD_GENAUIGKEITSMODUS,
-  staerkeAusGenauigkeit,
-  type Genauigkeitsmodus,
-  type Staerkeschaetzung,
-} from "./staerkemodell";
+  istSchmal,
+  kennzahlenAus,
+  schaetzung as wertungsschaetzung,
+  type Kennzahlzug,
+  type Partiekennzahlen,
+  type Wertungsschaetzung,
+  type Wertungstempo,
+} from "./elomodell";
 import type { Zugart } from "./taktik";
 
 export interface Seitenbilanz {
   /** Zahl der eigenen Züge. */
   readonly zuege: number;
-  /** Genauigkeit 0 bis 100 im gewählten Modus (Lichess, Mittelweg, nahe chess.com); null ohne Züge. */
+  /** Genauigkeit 0 bis 100 nach der Rechnung von Lichess über alle Züge; null ohne Züge. */
   readonly genauigkeit: number | null;
   /** Innere Genauigkeit (Lichess) für Spielstärke und Urteilswort, nur bis zur Entscheidung. */
   readonly innen: number | null;
@@ -45,10 +47,15 @@ export interface Seitenbilanz {
   readonly gewertet: number;
   /** Durchschnittlicher Verlust je Zug in Bauerneinheiten. */
   readonly verlustJeZug: number;
-  /** Geschätzte Spielstärke (Mitte der Eichkurven); null bei zu wenigen Zügen. */
+  /**
+   * Geschätzte Spielstärke (Mitte der Schätzung); null bei zu wenigen Zügen und bei einer Phase,
+   * deren Spanne zu breit ist (spiel/elomodell.ts, SCHMAL).
+   */
   readonly spielstaerke: number | null;
-  /** Dieselbe Schätzung mit Spanne und den Werten für chess.com und Lichess. */
-  readonly schaetzung: Staerkeschaetzung | null;
+  /** Die Schätzung des Elo-Modells der Zeitklasse mit Spanne; null bei zu wenigen Zügen. */
+  readonly schaetzung: Wertungsschaetzung | null;
+  /** Kennzahlen der Züge bis zur Entscheidung für die Schätzung über mehrere Partien; null ohne Züge. */
+  readonly kennzahlen: Partiekennzahlen | null;
   /** Anzahl je Zeichen. */
   readonly zeichen: Readonly<Record<Zugzeichen, number>>;
   /** Anzahl je Zugklasse (wie bei chess.com, 0.2.40). */
@@ -192,10 +199,11 @@ const KEINE_KLASSEN: Readonly<Record<Zugklasse, number>> = {
   patzer: 0,
 };
 
-/** Bilanz einer Seite aus ihren Zügen. */
+/** Bilanz einer Seite aus ihren Zügen; mit Phase die Schätzung aus dem Teilmodell dieser Phase. */
 function seitenbilanz(
   eigene: readonly Zugbilanz[],
-  modus: Genauigkeitsmodus,
+  tempo: Wertungstempo,
+  phase: Phase | null = null,
   mindestensZuege = MINDESTENS_ZUEGE,
 ): Seitenbilanz {
   const zuege = eigene.length;
@@ -212,16 +220,21 @@ function seitenbilanz(
   const verlustJeZug = zuege > 0 ? verlust / zuege : 0;
   const gewertete = eigene.filter((z) => z.gewertet);
   const innen = partiegenauigkeit(gewertete);
+  const kennzahlen = kennzahlenAus(gewertete.map(kennzahlzug), innen);
   const schaetzung =
-    gewertete.length >= mindestensZuege && innen !== null ? staerkeAusGenauigkeit(innen) : null;
+    gewertete.length >= mindestensZuege && kennzahlen
+      ? wertungsschaetzung(tempo, kennzahlen, 1, phase)
+      : null;
+  const schmal = schaetzung !== null && (phase === null || istSchmal(schaetzung));
   return {
     zuege,
-    genauigkeit: partiegenauigkeit(eigene, POLSTER[modus]),
+    genauigkeit: partiegenauigkeit(eigene),
     innen,
     gewertet: gewertete.length,
     verlustJeZug,
-    spielstaerke: schaetzung?.mitte ?? null,
+    spielstaerke: schmal ? schaetzung.mitte : null,
     schaetzung,
+    kennzahlen,
     zeichen,
     klassen,
     beste,
@@ -240,6 +253,18 @@ interface Zugbilanz {
   readonly entschieden: boolean;
   /** Zug vor dem Entscheidungspunkt (zählt für Spielstärke und Urteilswort). */
   readonly gewertet: boolean;
+  /** Wert nach dem Zug aus Sicht der ziehenden Seite (Bauern), für die Zugklasse des Elo-Modells. */
+  readonly nachher: number;
+}
+
+/** Der Zug, wie das Elo-Modell ihn braucht (spiel/elomodell.ts). */
+function kennzahlzug(z: Zugbilanz): Kennzahlzug {
+  return {
+    verlust: z.urteil.verlust,
+    genauigkeit: z.genauigkeit,
+    nachher: z.nachher,
+    phase: z.phase,
+  };
 }
 
 /** Ordnet jeden Zug ein (Seite, Phase, Genauigkeit, bester). */
@@ -266,6 +291,7 @@ function zugbilanzen(
     const bester = gespielt !== null && gespielt !== "" && gespielt === beste[urteil.index];
     const phase = phasen[urteil.index] ?? null;
     const gewicht = gewichte[urteil.index] ?? GEWICHT_MINDESTENS;
+    const wertNachher = werte[urteil.index + 1] ?? 0;
     return {
       seite,
       phase,
@@ -275,6 +301,7 @@ function zugbilanzen(
       bester,
       entschieden,
       gewertet: urteil.index < bis,
+      nachher: seite === "white" ? wertNachher : -wertNachher,
     };
   });
 }
@@ -291,18 +318,20 @@ export function spielstaerkeJePhase(
   beste: readonly string[],
   gespielteUci: readonly (string | null)[],
   phasen: readonly Phase[],
-  modus: Genauigkeitsmodus = STANDARD_GENAUIGKEITSMODUS,
+  tempo: Wertungstempo = "rapid",
 ): Readonly<Record<Phase, Spielstaerke>> {
   const alle = zugbilanzen(partie, werte, urteile, beste, gespielteUci, phasen);
   const je = (ph: Phase): Spielstaerke => ({
     white: seitenbilanz(
       alle.filter((z) => z.phase === ph && z.seite === "white"),
-      modus,
+      tempo,
+      ph,
       MINDESTENS_ZUEGE_PHASE,
     ),
     black: seitenbilanz(
       alle.filter((z) => z.phase === ph && z.seite === "black"),
-      modus,
+      tempo,
+      ph,
       MINDESTENS_ZUEGE_PHASE,
     ),
   });
@@ -324,7 +353,7 @@ export function spielstaerkeImMittelspiel(
   gespielteUci: readonly (string | null)[],
   phasen: readonly Phase[],
   zugarten: readonly (Zugart | null)[],
-  modus: Genauigkeitsmodus = STANDARD_GENAUIGKEITSMODUS,
+  tempo: Wertungstempo = "rapid",
 ): Readonly<Record<Zugart, Spielstaerke>> {
   const mittelspiel = zugbilanzen(partie, werte, urteile, beste, gespielteUci, phasen).filter(
     (z) => z.phase === "mittelspiel",
@@ -334,12 +363,14 @@ export function spielstaerkeImMittelspiel(
     return {
       white: seitenbilanz(
         passende.filter((z) => z.seite === "white"),
-        modus,
+        tempo,
+        "mittelspiel",
         MINDESTENS_ZUEGE_PHASE,
       ),
       black: seitenbilanz(
         passende.filter((z) => z.seite === "black"),
-        modus,
+        tempo,
+        "mittelspiel",
         MINDESTENS_ZUEGE_PHASE,
       ),
     };
@@ -363,17 +394,19 @@ export function spielstaerke(
   urteile: readonly Zugurteil[],
   beste: readonly string[] = [],
   gespielteUci: readonly (string | null)[] = [],
-  modus: Genauigkeitsmodus = STANDARD_GENAUIGKEITSMODUS,
+  tempo: Wertungstempo = "rapid",
+  phasen: readonly Phase[] = phasenJeStellung(partie),
 ): Spielstaerke {
-  const alle = zugbilanzen(partie, werte, urteile, beste, gespielteUci, []);
+  // Die Phase je Zug gehört seit 0.2.125 zu den Kennzahlen des Elo-Modells.
+  const alle = zugbilanzen(partie, werte, urteile, beste, gespielteUci, phasen);
   return {
     white: seitenbilanz(
       alle.filter((z) => z.seite === "white"),
-      modus,
+      tempo,
     ),
     black: seitenbilanz(
       alle.filter((z) => z.seite === "black"),
-      modus,
+      tempo,
     ),
   };
 }

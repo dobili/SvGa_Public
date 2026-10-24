@@ -47,10 +47,9 @@ describe("Erklärung im Rückblick", () => {
     expect(e?.marken).toContainEqual({ typ: "feld", farbe: "rot", feld: "d6" });
   });
 
-  it("Sxd5?? ist ein Schlagreflex: die Antwort exd5 als roter Pfeil", () => {
+  it("Sxd5?? verliert laut Abtausch den Springer: Figur hängen statt Schlagreflex (0.2.118)", () => {
     const e = erklaereZug(MITTELSPIEL, danach(MITTELSPIEL, "c3d5"), "c3d5", "e6d5", 2);
-    expect(e?.text).toBe("schlägt aus Schlagreflex (W5): Nach exd5 steht es schlechter.");
-    expect(e?.marken).toEqual([{ typ: "pfeil", farbe: "rot", von: "e6", nach: "d5" }]);
+    expect(e?.text).toBe("lässt Springer d5 ungedeckt hängen (W1).");
   });
 
   it("3... Df6?! ist die verfrühte Dame; ein unauffälliger Zug hat keine Erklärung", () => {

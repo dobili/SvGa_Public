@@ -9,11 +9,15 @@
  * höchstens einmal je Stunde), außer sie ist in den Einstellungen abgeschaltet. Ein Start ist eine
  * neue Sitzung des Browsers (die installierte App startet nach dem Schließen neu); ein Neuladen
  * bleibt in der Sitzung und zeigt sie nicht noch einmal. Bei „Bewegung reduzieren“ des Geräts nie.
- * Abhängigkeiten: app/merker.ts, i18n, ui/stil/brett.css.
+ * Seit 0.2.125 (Wunsch des Autors, 24.10.2026) auch bei der Rückkehr aus dem Hintergrund: War die
+ * App auf einem Gerät mit Touch-Bedienung (Handy, Tablet) mindestens 30 Minuten nicht zu sehen,
+ * läuft sie 1,8 Sekunden; am Rechner nicht, weil man dort zwischen Fenstern hin- und herwechselt.
+ * Abhängigkeiten: app/merker.ts, startanimationRegel.ts, i18n, ui/stil/brett.css.
  */
 import { useEffect, useState } from "react";
 import { liesMerker } from "../../app/merker";
 import { t } from "../../i18n/sprache";
+import { RUECKKEHR_MS, rueckkehrFaellig } from "./startanimationRegel";
 
 /** Merker auf dem Gerät: Schalter in den Einstellungen, „aus“ schaltet sie ab (Voreinstellung: an). */
 export const MERKER_STARTANIMATION = "startanimation";
@@ -34,6 +38,15 @@ function sitzungKenntSie(): boolean {
   }
 }
 
+/** Ist die Animation erlaubt (Einstellung an, keine „Bewegung reduzieren“)? */
+function erlaubt(): boolean {
+  if (liesMerker(MERKER_STARTANIMATION) === "aus") return false;
+  const reduziert =
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  return !reduziert;
+}
+
 /**
  * Soll die Startanimation jetzt laufen? Merkt sich die Sitzung sofort.
  *
@@ -41,29 +54,50 @@ function sitzungKenntSie(): boolean {
  * Sonderfälle: in den Einstellungen aus oder „Bewegung reduzieren“ → nein.
  */
 function startanimationFaellig(): boolean {
-  if (liesMerker(MERKER_STARTANIMATION) === "aus") return false;
-  const reduziert =
-    typeof window.matchMedia === "function" &&
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  return !reduziert && !sitzungKenntSie();
+  return erlaubt() && !sitzungKenntSie();
 }
 
-/** Die Startanimation; nach STARTANIMATION_MS oder einem Tipp ist sie weg. */
+/** Geräte mit Touch-Bedienung: dort wird die App beim Wechsel wirklich in den Hintergrund gelegt. */
+function touchGeraet(): boolean {
+  return typeof window.matchMedia === "function" && window.matchMedia("(pointer: coarse)").matches;
+}
+
+type Lauf = "start" | "rueckkehr" | null;
+
+/** Die Startanimation; nach ihrer Dauer oder einem Tipp ist sie weg. */
 export function Startanimation() {
-  const [sichtbar, setzeSichtbar] = useState(startanimationFaellig);
+  const [lauf, setzeLauf] = useState<Lauf>(() => (startanimationFaellig() ? "start" : null));
   useEffect(() => {
-    if (!sichtbar) return;
-    const zeit = setTimeout(() => setzeSichtbar(false), STARTANIMATION_MS);
+    if (!lauf) return;
+    const zeit = setTimeout(
+      () => setzeLauf(null),
+      lauf === "rueckkehr" ? RUECKKEHR_MS : STARTANIMATION_MS,
+    );
     return () => clearTimeout(zeit);
-  }, [sichtbar]);
-  if (!sichtbar) return null;
+  }, [lauf]);
+  useEffect(() => {
+    let verstecktSeit: number | null = null;
+    const beiWechsel = () => {
+      if (document.visibilityState === "hidden") {
+        verstecktSeit = Date.now();
+        return;
+      }
+      if (rueckkehrFaellig(verstecktSeit, Date.now(), touchGeraet(), erlaubt())) {
+        setzeLauf("rueckkehr");
+      }
+      verstecktSeit = null;
+    };
+    document.addEventListener("visibilitychange", beiWechsel);
+    return () => document.removeEventListener("visibilitychange", beiWechsel);
+  }, []);
+  if (!lauf) return null;
   return (
     <button
       type="button"
-      className="startanimation"
+      className={lauf === "rueckkehr" ? "startanimation startanimation-kurz" : "startanimation"}
       data-testid="startanimation"
       aria-label={t("startanimation.ueberspringen")}
-      onClick={() => setzeSichtbar(false)}
+      onClick={() => setzeLauf(null)}
     >
       <span className="startanimation-schein" aria-hidden="true">
         <img

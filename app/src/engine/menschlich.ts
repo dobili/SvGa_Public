@@ -17,14 +17,21 @@
 
 /** Was der Verlauf der Partie zur Fehlerneigung beiträgt. */
 export interface Verlauf {
-  /** Tagesform je Partie, Faktor um 1 (0,75 bis 1,25). */
+  /** Tagesform je Partie, Faktor um 1 (0,6 bis 1,4). */
   readonly tagesform: number;
 }
 
 export const RUHIGER_VERLAUF: Verlauf = { tagesform: 1 };
 
 /** Die Tagesform liegt zwischen 1 − Spanne und 1 + Spanne. */
-const TAGESFORM_SPANNE = 0.25;
+/**
+ * Halbe Spanne der Tagesform. Seit 0.2.125 0,4 statt 0,25: Als Temperatur des Wahlmodells
+ * (engine/wahlmodell.ts) erzeugt eine gleichverteilte Temperatur zwischen 0,6 und 1,4 je Partie
+ * eine Streuung der Fehlerrate zwischen Partien von etwa 4 bis 5 Fehlern je 100 Züge, wie sie das
+ * Beta-Binomial-Modell der Spielerprofile misst (Tagesform 5,0 bis 5,7; mit 0,25 nur etwa 3);
+ * lokal buch/arbeit/zugwahl/temperatur.py.
+ */
+const TAGESFORM_SPANNE = 0.4;
 /** Streuung der Saat in der Tagesform (einfacher Zeichenmischer). */
 const SAAT_FAKTOR = 31;
 const SAAT_MODUL = 1_000_003;
@@ -32,7 +39,7 @@ const SAAT_MODUL = 1_000_003;
 const KALT = 0.01;
 
 /**
- * Tagesform aus einer Saat (der Kennung der Partie): fest je Partie, zwischen 0,75 und 1,25.
+ * Tagesform aus einer Saat (der Kennung der Partie): fest je Partie, zwischen 0,6 und 1,4.
  * Beispiel: zwei Partien mit verschiedenen Kennungen bekommen verschiedene, aber je Partie
  * gleichbleibende Tagesformen.
  */

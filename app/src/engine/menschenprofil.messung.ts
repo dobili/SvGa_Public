@@ -69,8 +69,13 @@ interface Partie {
   uhren: number[];
 }
 
-/** Ein bewerteter Zug: UCI, Wert danach (Sicht der Seite am Zug), Fehlerart, blinde Flecken. */
-type Zugwert = [string, number, Fehlerart, string[]];
+/**
+ * Ein bewerteter Zug: UCI, Wert danach (Sicht der Seite am Zug), Fehlerart, blinde Flecken und
+ * seit 0.2.118 die Fortsetzung der Engine (bis acht Halbzüge), damit die Fehlerarten später mit
+ * geänderter Erkennung ohne neue Engine-Rechnung neu bestimmt werden können.
+ */
+type Zugwert = [string, number, Fehlerart, string[], string[]];
+const FORTSETZUNG_HALBZUEGE = 8;
 
 function gerundet(x: number): number {
   return Math.round(x * STELLEN) / STELLEN;
@@ -102,7 +107,8 @@ function zugwerte(
     if (!uci) return [];
     const wert = wertFuer(v.wert, weiss);
     const art = fehlerartIn(lage, uci, v.zuege.slice(1), bestwert - wert, bester);
-    return [[uci, gerundet(wert), art, fleckeVon(fen, uci)] as Zugwert];
+    const fortsetzung = v.zuege.slice(1, 1 + FORTSETZUNG_HALBZUEGE);
+    return [[uci, gerundet(wert), art, fleckeVon(fen, uci), fortsetzung] as Zugwert];
   });
 }
 

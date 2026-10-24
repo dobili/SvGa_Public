@@ -8,6 +8,7 @@
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts (Typen).
  */
 import { gegnerDerStufe, gegnerVon, type EigenerGegner } from "../../engine/gegner";
+import { istGruppe } from "../../engine/gruppe";
 import type { Stufennummer } from "../../engine/stufen";
 
 /** Die drei Arten von Engine-Gegnern (seit 0.2.80). */
@@ -21,7 +22,7 @@ export function kategorieVon(
   bot: string | null,
   eigene: readonly EigenerGegner[],
 ): Gegnerkategorie {
-  if (gegnerVon(bot)) return "vorgefertigt";
+  if (gegnerVon(bot) || istGruppe(bot)) return "vorgefertigt";
   return eigene.some((g) => g.kennung === bot) ? "eigene" : "stufe";
 }
 

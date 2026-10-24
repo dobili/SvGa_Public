@@ -23,3 +23,6 @@ __pycache__/
 # Systemdateien
 .DS_Store
 app/training/
+
+# Native Engine für die Messung je Zeitklasse (skripte/messe-zeitklasse.sh lädt sie)
+app/.engine/

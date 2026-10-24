@@ -7,7 +7,7 @@
       "teile": [
         {
           "art": "text",
-          "text": "Alles Digitale, was du zum Üben mit diesem Buch brauchst, gibt es kostenlos. Die Angaben in diesem Abschnitt haben den Stand Oktober 2026. Online-Angebote ändern sich, prüfe Bezeichnungen und Adressen deshalb beim ersten Aufruf. Die Trainingskästen der einzelnen Kapitel nennen die Funktionen beim Namen, diese Übersicht zeigt den Weg dorthin. Wie du die Werkzeuge einsetzt, steht in den Abschnitten davor: die Denkroutine in Abschnitt 12.1 (als Merkseite im Buch, als Kopiervorlage im Buch), die Partieanalyse in Abschnitt 12.2 und der Trainingsplan in Abschnitt 12.3.",
+          "text": "Alles Digitale, was du zum Üben mit dem Buch brauchst, gibt es kostenlos. Online-Angebote ändern sich, deshalb halten wir diese Seite aktuell. Die Trainingsseiten zu den Kapiteln nennen die Funktionen beim Namen, diese Übersicht zeigt den Weg dorthin. Wie du die Werkzeuge einsetzt, steht in Kapitel 12 des Buches: die Denkroutine in Abschnitt 12.1 (auch als Merkseite in Kapitel 12 und als Kopiervorlage auf der letzten Seite des Buches), die Partieanalyse in Abschnitt 12.2 und der Trainingsplan in Abschnitt 12.3.",
           "stil": "normal"
         }
       ]
@@ -17,7 +17,7 @@
       "teile": [
         {
           "art": "text",
-          "text": "Drei Richtwerte setzen die Trainingskästen voraus: Ein Themenblock sind zwanzig Aufgaben zu einem Motiv, eine lange Partie hat mindestens 15 Minuten plus 10 Sekunden pro Zug, und die Computerstufe wählst du so, dass du etwa jede dritte Partie gewinnst.",
+          "text": "Drei Richtwerte setzen die Trainingsseiten voraus: Ein Themenblock sind zwanzig Aufgaben zu einem Motiv, eine lange Partie hat mindestens 15 Minuten plus 10 Sekunden pro Zug, und die Computerstufe wählst du so, dass du etwa jede dritte Partie gewinnst.",
           "stil": "normal"
         }
       ]
@@ -1013,5 +1013,5 @@
     "datei": "kap12_training.tex",
     "zeile": 955
   },
-  "stand": "2026-10-19"
+  "stand": "2026-10-24"
 }

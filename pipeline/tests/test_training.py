@@ -8,6 +8,7 @@ inhalte/de/training/ gegen das Schema.
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import pytest
@@ -131,3 +132,89 @@ def test_buch_mit_verweis_statt_kasten_bricht_ab() -> None:
     neu = Quelldatei("kap07_taktik.tex", r"\trainingsverweis{07}{ein Motiv am Stück}{Taktiktrainer}")
     with pytest.raises(Trainingsfehler, match="kap07_taktik.tex"):
         pruefe_alte_kaesten([alt, neu])
+
+
+# --- Abbildungsverweise der eingecheckten Trainingsseiten (Wunsch des Autors, 24.10.2026) ---
+
+APPDATEN = Path(ZIELORDNER).parents[2] / "app" / "public" / "daten" / "de" / "a1"
+# Nummern „9.8“ im Fließtext; davor darf keine Ziffer stehen (sonst „15.10.2026“), danach kein Punkt.
+_NUMMER = re.compile(r"(?<![\d.])(\d{1,2})\.(\d{1,3})(?![\d.])")
+# Steht eines dieser Wörter kurz vor der Nummer, meint sie Abschnitt oder Tabelle, keine Abbildung.
+_KEIN_BILD = ("Abschnitt", "Abschnitte", "Tabelle", "Tab.", "Kapitel")
+_RUECKBLICK = 40
+
+
+def _absaetze(daten: object):
+    """Alle Teilelisten (Absätze, Listenpunkte) einer Trainingsseite, rekursiv."""
+    if isinstance(daten, dict):
+        if isinstance(daten.get("teile"), list):
+            yield daten["teile"]
+        for wert in daten.values():
+            yield from _absaetze(wert)
+    elif isinstance(daten, list):
+        for eintrag in daten:
+            yield from _absaetze(eintrag)
+
+
+def _abbildungsnummern_im_text(teile: list[dict]) -> list[str]:
+    """Nummern wie „9.8“ in Textteilen eines Absatzes, die kein Verweis sind.
+
+    Der Absatz wird zusammengesetzt (Verweise als Marke), damit „Abschnitt “ im Teil davor und
+    „12.2“ im Teil danach zusammen gelesen werden (kap12.json). Beispiel: „(Philidor), 9.8
+    (Lucena)“ → ["9.8"]; „Abschnitt 12.2 und 12.5“ → [].
+    """
+    text = "".join(t.get("text", "") if t.get("art") == "text" else " «» " for t in teile)
+    gefunden = []
+    for treffer in _NUMMER.finditer(text):
+        davor = text[max(0, treffer.start() - _RUECKBLICK) : treffer.start()]
+        if not any(wort in davor for wort in _KEIN_BILD):
+            gefunden.append(treffer.group(0))
+    return gefunden
+
+
+def _abbildungskennungen() -> set[str]:
+    kennungen: set[str] = set()
+    for datei in sorted(APPDATEN.glob("kap*.json")):
+        daten = json.loads(datei.read_text(encoding="utf-8"))
+        kennungen.update(a["id"] for a in daten.get("abbildungen", []))
+    return kennungen
+
+
+@pytest.mark.skipif(not APPDATEN.exists(), reason="App-Daten nicht gebaut")
+def test_trainingsseiten_verweisen_auf_vorhandene_abbildungen() -> None:
+    """Jeder Verweis zeigt auf eine Abbildung der App-Daten (sonst öffnet die App ins Leere)."""
+    kennungen = _abbildungskennungen()
+    assert kennungen, "keine Abbildungen in den App-Daten"
+    fehlend = [
+        (datei.name, teil["abbildung"])
+        for datei in sorted(Path(ZIELORDNER).glob("*.json"))
+        for teile in _absaetze(json.loads(datei.read_text(encoding="utf-8")))
+        for teil in teile
+        if teil.get("art") == "verweis" and teil["abbildung"] not in kennungen
+    ]
+    assert fehlend == []
+
+
+def test_trainingsseiten_abbildungsnummern_sind_verweise() -> None:
+    """Abbildungsnummern im Fließtext sind Verweise (Wunsch des Autors, 24.10.2026).
+
+    Befund damals: kap09.json nannte 9.8, 9.15 und 9.28, kap10.json 10.9 und 10.14 nur als Text,
+    ohne Link in die App.
+    """
+    nur_text = [
+        (datei.name, nummer)
+        for datei in sorted(Path(ZIELORDNER).glob("*.json"))
+        for teile in _absaetze(json.loads(datei.read_text(encoding="utf-8")))
+        for nummer in _abbildungsnummern_im_text(teile)
+    ]
+    assert nur_text == []
+
+
+def test_abbildungsnummern_im_text_erkennt_nur_abbildungen() -> None:
+    teile = [
+        {"art": "text", "text": "Gib "},
+        {"art": "verweis", "text": "Abb. 9.3", "abbildung": "9.3"},
+        {"art": "text", "text": " (Philidor), 9.8 (Lucena) ein, siehe Abschnitt 12.2 und 12.5, "},
+        {"art": "text", "text": "Tabelle 9.1 und Stand 15.10.2026."},
+    ]
+    assert _abbildungsnummern_im_text(teile) == ["9.8"]

@@ -447,6 +447,10 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       ohne Uhr zählen als Schnellschach.
 - [ ] N777. **Bedenkzeit in der Partienliste (R51):** Jede Zeile zeigt hinter den Zügen die
       Bedenkzeit („… · 10 + 0 · du etwa 1400“), alte Partien „ohne Uhr“.
+- [ ] N778. **Uhrverbrauch der Bots je Zeitklasse:** Spiele eine Partie mit 3 + 2 und eine mit
+      30 + 20 gegen denselben Bot. Im Blitz soll der Bot seine Zeit ähnlich wie du verbrauchen
+      (nach 20 Zügen noch etwa die Hälfte), im Klassischen deutlich sparsamer; vorher verbrauchte
+      er im Klassischen seine Zeit etwa doppelt so schnell wie Menschen.
 
 ---
 

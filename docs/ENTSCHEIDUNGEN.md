@@ -4749,3 +4749,20 @@ war). Der Messlauf bleibt für spätere Datenstände.
   je Zeitklasse könnte später drei Abzeichen am Porträt zeigen statt des Sterns der gewählten
   Zeitklasse (Entwurf offen).
 
+## Bedenkzeit der Bots je Zeitklasse (24.10.2026 nachts, Fable, Restplan 8b)
+
+- **Befund** (lokal buch/arbeit/bedenkzeit/eichung.py, 390 000 Züge mit Uhrdaten aus den
+  Spielerprofilen): Der Anteil der Restzeit je Zug hängt stark von der Zeitklasse ab. Im Blitz
+  braucht ein 1200er im 20. Zug etwa 2,5 % der Restzeit, im Schnellschach 1,3 %, im Klassischen
+  0,7 %; starke Spieler (2200+) brauchen im Mittelspiel in allen Zeitklassen etwa 3 %, Anfänger im
+  Klassischen nur 0,3 bis 0,9 % (sie nutzen ihre Zeit nicht). Die bisherige eine Tabelle (erste
+  Sammlung, Blitz und Schnellschach gemischt) lag dazwischen; ein klassischer Bot verbrauchte
+  seine Zeit damit doppelt so schnell wie Menschen, ein Blitz-Bot zu langsam.
+- **Umsetzung:** engine/bedenkzeit-daten.ts (erzeugt) mit Anteilen und Zeitnot-Sekunden je
+  Zeitklasse; Zellen mit unter 300 Zügen nehmen das nächste Band mit genug Daten, Zeitnot im
+  Klassischen (wenig Daten) die Werte des Schnellschachs. engine/bedenkzeit.ts bekommt die
+  Zeitklasse in der Bedenklage (spiel/botzeit.ts aus der Uhr der Partie). Lage-Faktoren und
+  Streuung bleiben aus der ersten Sammlung (die Spielerprofile tragen die Lage nicht).
+- **Offen:** Tagesform aus der Streuung zwischen Partien (Beta-Binomial) als Temperatur des
+  Wahlmodells; Zeitnot-Faktoren der Fehler je Zeitklasse (bisher Blitz und Schnellschach gemischt).
+

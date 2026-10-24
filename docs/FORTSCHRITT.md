@@ -1940,3 +1940,12 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   („Blitz 5 + 3“, „Schnellschach 10 + 0“). AUFGABEN_AUTOR N775–N777; ENTSCHEIDUNGEN „R51“.
 - Offen in Teil F: Bot-Raten für Blitz und 60 Minuten, drei Einstellungssätze und drei Wertungen
   je Bot (nach Restplan 8).
+
+### Ergebnisse der Nacht, Teil 7 (24.10.2026, 6 Uhr): Bedenkzeit je Zeitklasse (Restplan 8b, erster Teil)
+
+- Bedenkzeit der Menschen je Zeitklasse × Band × Zugstufe aus den Spielerprofilen gemessen
+  (buch/arbeit/bedenkzeit/eichung.py → eichung.txt); Blitz etwa doppelter Anteil der Restzeit je
+  Zug gegenüber Schnellschach, Klassisch etwa die Hälfte. engine/bedenkzeit-daten.ts erzeugt,
+  engine/bedenkzeit.ts mit Zeitklasse in der Bedenklage, spiel/botzeit.ts und stufen.messung.ts
+  angepasst, Test ergänzt. ENTSCHEIDUNGEN „Bedenkzeit der Bots je Zeitklasse“.
+- Offen aus 8b: Tagesform als Temperatur, Zeitnot-Faktoren je Zeitklasse.

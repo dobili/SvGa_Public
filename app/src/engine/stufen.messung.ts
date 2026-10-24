@@ -28,6 +28,7 @@ import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
 import type { Phase } from "../schach/phase";
 import { bedenkzeitMs } from "./bedenkzeit";
+import { wahltempo } from "./wahlmodell";
 import type { EngineDienst } from "./engineDienst";
 import type { Fehlerart } from "./fehlerart";
 import { GEGNER } from "./gegner";
@@ -207,6 +208,7 @@ async function zugMitUhr(
     const bedenk = bedenkzeitMs(
       {
         wertung: st.wertung,
+        tempo: wahltempo(s.uhr),
         restMs: stand.rest,
         zugnummer: Math.floor(lauf.zuege.length / 2) + 1,
         lage: zuglage(lauf, ergebnis.uci, ergebnis.breite),

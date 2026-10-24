@@ -1,9 +1,9 @@
 /**
- * Elo-Modell der App (0.2.124): eine eigene Wertung je Zeitklasse (Blitz, Schnellschach, Klassisch)
+ * Elo-Modell der App (0.2.125): eine eigene Wertung je Zeitklasse (Blitz, Schnellschach, Klassisch)
  * aus den Kennzahlen der eigenen Züge bis zur Entscheidung, geeicht an den Lichess-Wertungen von
  * 3 900 Spielern (77 000 Partien), umgerechnet auf die Tiefe 18 der Engine der App.
  *
- * Rolle im Gesamtbild: ersetzt seit 0.2.124 die Mitte zweier Kurven Genauigkeit → Wertung (chess.com
+ * Rolle im Gesamtbild: ersetzt seit 0.2.125 die Mitte zweier Kurven Genauigkeit → Wertung (chess.com
  * und Lichess, 0.2.83) und den Schalter „Genauigkeit wie“ (Entscheidung des Autors, 23.10.2026:
  * eine Zahl je Zeitklasse auf dem Maßstab von Lichess; „entspricht etwa“ für chess.com und FIDE
  * rechnet spiel/umrechnung.ts). Kennzahlen: Zahl der Züge, Genauigkeit nach Lichess, Verlust je

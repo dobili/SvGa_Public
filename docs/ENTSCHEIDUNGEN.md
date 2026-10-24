@@ -4683,7 +4683,7 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Wertung und mit eigener Verlustkurve für Eröffnung und Endspiel (sonst schätzt das Modell
   starke Spieler in der Eröffnung zu fehlerhaft, weil ihm die Theoriekenntnis fehlt). Nachspielen
   trifft die echten Fehlerraten je Band, Phase und Art auf etwa einen Prozentpunkt. In der App
-  seit 0.2.124 (engine/wahlmodell.ts); die Stellschrauben der Bots bleiben und werden übersetzt:
+  seit 0.2.125 (engine/wahlmodell.ts); die Stellschrauben der Bots bleiben und werden übersetzt:
   Gewicht einer Fehlerart g → Verschiebung ln g (0 schließt aus), Fleckgewicht g → −(g − 1) · 0,5
   auf Züge mit diesem eigenen Fleck, Stilregler → ±0,25 je Stufe auf Schlag, Schach,
   Königsnähe, Bauernsturm, Vorwärts (Rückzug und Abtausch gegenläufig), Höchstverlust je Art als
@@ -4945,3 +4945,18 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Modellwechsel mitten in einer gewerteten Partie, Speicher und Nachladen mit klarer Anzeige und
   Fehlermeldung bei fehlendem Netz). Entscheidung über Schalter oder eigene Kategorie erst mit den
   Messergebnissen.
+## 24.10.2026 – R57 Admin-Dashboard (P1, Opus)
+
+- Website-Worker bekommt Code (`app/worker/`), aber nur für `/api/*` und `/admin*`
+  (`run_worker_first`); alles andere liefert Cloudflare wie bisher direkt aus.
+- Der Worker prüft das Zeichen von Cloudflare Access selbst (RS256, AUD, Ablauf), weil
+  workers.dev und Vorschauadressen nicht hinter Access liegen. Team und AUD stehen in
+  `wrangler.jsonc` (öffentlich sichtbar auf jeder Anmeldeseite).
+- `/admin/` ist nicht im Offline-Speicher der App (sonst würde Access das Vorabladen auf
+  Lesergeräten umleiten).
+- Meldungen: Drossel fünf je Verbindung und Stunde (Prüfwert aus IP und Datum, nach einem Tag
+  gelöscht), Meldungen nach zwölf Monaten gelöscht, Datenschutzerklärung um „Meldungen aus der
+  App“ ergänzt. Turnstile vorerst nicht in der App (DB2, Widerspruch genügt).
+- Wartungsprüfungen in Python ohne weitere Pakete (`pipeline/wartung`), Rot lässt den Lauf
+  scheitern (Mail von GitHub). Zertifikat erst unter 14 Tagen gelb, weil Cloudflare etwa 30 Tage
+  vor Ablauf erneuert.

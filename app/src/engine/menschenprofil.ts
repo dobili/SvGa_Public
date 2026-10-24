@@ -118,7 +118,7 @@ export function zeitnotstufe(restMs: number | null): Zeitnotstufe | null {
  * Patzer ab drei Bauern. Beispiel: 2000, unter 10 s → Fehler etwa ×1,4, Patzer etwa ×3,2.
  */
 /**
- * Faktor auf die Temperatur des Wahlmodells in Zeitnot (seit 0.2.124, engine/zeitnot-daten.ts):
+ * Faktor auf die Temperatur des Wahlmodells in Zeitnot (seit 0.2.125, engine/zeitnot-daten.ts):
  * je Zeitklasse und Band so, dass die Fehlerrate steigt wie bei Menschen mit so wenig Restzeit.
  * Beispiel: Blitz, 2000, 8 s Rest → etwa 1,6; eine Minute und mehr → 1.
  */

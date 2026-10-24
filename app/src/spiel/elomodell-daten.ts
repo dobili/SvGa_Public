@@ -1,5 +1,5 @@
 /**
- * Daten des Elo-Modells der App (0.2.124), erzeugt aus den Spielerprofilen (77 000 Lichess-Partien von
+ * Daten des Elo-Modells der App (0.2.125), erzeugt aus den Spielerprofilen (77 000 Lichess-Partien von
  * 3 900 Spielern, Kennzahlen bis zur Entscheidung, auf die Tiefe 18 der App umgerechnet); nicht von Hand
  * ändern (buch/arbeit/appmodell/erzeugen.py, nur lokal).
  *

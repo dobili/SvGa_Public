@@ -7,7 +7,7 @@
  * je ein Balken (Skala 50 bis 100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und Taktik
  * mit Prozent, Urteilswort und Spielstärke; Phasen ohne Wertung grau mit „–“. Die Zugklassen
  * stehen als Bullet-Diagramm in Zugklassen.tsx. Rechnungen wie bisher in spiel/genauigkeit.ts.
- * Seit 0.2.124 (Entscheidung des Autors, 23.10.2026) ohne den Schalter „Genauigkeit wie“: Die
+ * Seit 0.2.125 (Entscheidung des Autors, 23.10.2026) ohne den Schalter „Genauigkeit wie“: Die
  * Genauigkeit ist die von Lichess, die Spielstärke kommt aus dem Elo-Modell der Zeitklasse der
  * Partie (spiel/elomodell.ts); hinter dem Fragezeichen die Entsprechung auf chess.com oder beim
  * Weltschachbund (wertungstext.ts).

@@ -1,5 +1,5 @@
 /**
- * Hilfen des Messlaufs engine/botstaerke.messung.ts (0.2.124, ausgelagert für Dateien unter 400
+ * Hilfen des Messlaufs engine/botstaerke.messung.ts (0.2.125, ausgelagert für Dateien unter 400
  * Zeilen): Phasen einer nachgespielten Partie und die Datei der Kandidaten.
  * Abhängigkeiten: chessops, spiel/phasen.ts, engine/botkandidaten.ts.
  */

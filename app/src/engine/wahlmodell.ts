@@ -1,5 +1,5 @@
 /**
- * Wahlmodell der Bots (0.2.124): Unter den Kandidaten eines Zuges wählt der Bot so, wie Menschen
+ * Wahlmodell der Bots (0.2.125): Unter den Kandidaten eines Zuges wählt der Bot so, wie Menschen
  * seiner Wertung wählen (bedingtes Logit, geeicht an 180 000 Stellungen von Lichess).
  *
  * Rolle im Gesamtbild: Plan „Zugwahl der Bots“ (Freigabe des Autors, 23.10.2026) und Teil E des

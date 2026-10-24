@@ -105,7 +105,7 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     verlauf: verlaufVon(partie),
     // Spaß-Bots (0.2.88) und Gewichte der Bots stehen in der Liste, nicht in der Partie.
     zufallszuege: bot?.zufallszuege,
-    // Vorgefertigte Bots (0.2.124): Faktoren aus den Stufen ihrer Persönlichkeit und ihrer Wertung
+    // Vorgefertigte Bots (0.2.125): Faktoren aus den Stufen ihrer Persönlichkeit und ihrer Wertung
     gewichte: e.gewichte ?? (bot ? faktorenAus(bot.persoenlichkeit, gegnerstaerke(e)) : undefined),
     stilname: bot?.stilname,
     haeufigkeit: e.haeufigkeit ?? bot?.haeufigkeit,

@@ -43,6 +43,7 @@ python -m pipeline.bauen --buch buch/a1 --ziel app/public/daten/de/a1           
 python -m pipeline.bauen --buch buch/a1 --ziel app/public/daten/de/a1 --kapitel 1  # nur Kapitel 1
 python -m pipeline.bauen --buch buch/a1 --ziel app/public/daten/de/a1 --zugzeichen  # dazu Engine-Prüfung (≈ 8 min)
 python -m pipeline.pruefen.daten app/public/daten/de/a1                            # ohne Buchquellen
+python -m pipeline.wartung                                                         # Wartung (R57): Live-Seite, Links, CI, Abhängigkeiten
 python -m pytest
 ```
 

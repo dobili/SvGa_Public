@@ -4,7 +4,7 @@
  * Rolle im Gesamtbild: Wunsch des Autors (23.10.2026) nach Vorschaubildern: Jede Zeile hat Marke,
  * Namen, ein Badge mit der Anzahl und „x % des Üblichen · Urteil“; darunter ein Balken auf
  * eigener Skala (0 bis zum Doppelten des Üblichen) über drei grauen Zonen, mit einem Strich für
- * das Übliche bei der eigenen Stärke; die Zone „normal“ ist seit 0.2.124 die Spanne der Spieler
+ * das Übliche bei der eigenen Stärke; die Zone „normal“ ist seit 0.2.125 die Spanne der Spieler
  * dieser Stärke und Zeitklasse (spiel/zugklassenvergleich.ts), also je Zeile verschieden breit. Bei den guten Klassen heißen die Zonen „wenig, normal,
  * viel“ mit „viel“ als gut, bei den schwachen umgekehrt. Unter MINDESTZUEGE_VERGLEICH eigenen
  * Zügen stehen nur die Anzahlen. Ersetzt die zweispaltige Tabelle „Züge nach Art“.

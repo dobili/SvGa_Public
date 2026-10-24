@@ -1,5 +1,5 @@
 /**
- * Zeitnot der Bots als Temperatur des Wahlmodells (0.2.124, Restplan 8b), je Zeitklasse, Restzeitstufe
+ * Zeitnot der Bots als Temperatur des Wahlmodells (0.2.125, Restplan 8b), je Zeitklasse, Restzeitstufe
  * (unter 10, 30, 60 s) und Wertungsband (Untergrenzen 400 bis 2400): der Faktor auf die Temperatur, der die
  * Fehlerrate (ab einem Bauern) so anhebt, wie die Spielerprofile es in Zeitnot zeigen (Faktoren je Gruppe
  * unter 1000, 1000 bis 1799, ab 1800; Zellen mit unter 3 000 Zügen nehmen Blitz, je Gruppe nicht fallend

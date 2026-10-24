@@ -1,5 +1,5 @@
 /**
- * Texte zur eigenen Wertung (0.2.124): Name der Zeitklasse und „entspricht etwa“ auf chess.com oder
+ * Texte zur eigenen Wertung (0.2.125): Name der Zeitklasse und „entspricht etwa“ auf chess.com oder
  * beim Weltschachbund.
  *
  * Rolle im Gesamtbild: Gemeinsame Sätze für die Karte „Spielstärke“ in der Auswertung und die Karte

@@ -52,9 +52,9 @@ export interface Gegnerprofil {
    */
   readonly fleckenStandard?: number;
   readonly fleckGewicht?: number;
-  /** Zeitklasse der Partie für das Wahlmodell (0.2.124); fehlend: Schnellschach. */
+  /** Zeitklasse der Partie für das Wahlmodell (0.2.125); fehlend: Schnellschach. */
   readonly tempo?: Wahltempo;
-  /** Einer der sieben Stile der vorgefertigten Bots (0.2.124, engine/stile.ts); fehlend: Regler `stil`. */
+  /** Einer der sieben Stile der vorgefertigten Bots (0.2.125, engine/stile.ts); fehlend: Regler `stil`. */
   readonly stilname?: Stilname;
 }
 

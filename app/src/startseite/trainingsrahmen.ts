@@ -17,6 +17,7 @@ import {
   type Trainingsseite,
 } from "./trainingsseiten";
 import { orteDerUebung } from "./uebungsort";
+import { werkzeuglinksHtml } from "./werkzeuglinks";
 
 const WEBSITE = "https://schach-von-grund-auf.com";
 
@@ -84,7 +85,9 @@ function ortsmarken(block: Trainingsblock): string {
 
 /** Blöcke in einer Karte, dazu der Stand der Angaben; mit Ortsmarken nur auf Kapitelseiten. */
 function karte(daten: Trainingsseite, mitOrten = false): string {
-  const block = (b: Trainingsblock) => (mitOrten ? ortsmarken(b) : "") + blockHtml(b);
+  // Seit R57 unter jeder Übung der Kapitelseiten die Links zu den genannten Lichess-Werkzeugen.
+  const block = (b: Trainingsblock) =>
+    mitOrten ? ortsmarken(b) + blockHtml(b) + werkzeuglinksHtml(b) : blockHtml(b);
   return `
         <section class="karte trainingskasten" data-testid="trainingskasten">
           ${daten.bloecke.map(block).join("\n          ")}

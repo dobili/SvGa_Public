@@ -1,5 +1,5 @@
 /**
- * Regler auf menschlichen Quantilen (0.2.124, Entscheidung des Autors 23.10.2026): Eine Stufe
+ * Regler auf menschlichen Quantilen (0.2.125, Entscheidung des Autors 23.10.2026): Eine Stufe
  * je Fehlerart oder blindem Fleck von −2 (5 % der Spieler machen das noch seltener) über 0 (Median)
  * bis 2 (95 %), dazu je zwei „unmenschliche“ Stufen ±3 und ±4 darüber hinaus.
  *

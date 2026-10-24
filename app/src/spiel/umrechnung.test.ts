@@ -1,4 +1,4 @@
-/** Tests der Umrechnung „entspricht etwa“ (0.2.124) und der Kurvenrechnung. */
+/** Tests der Umrechnung „entspricht etwa“ (0.2.125) und der Kurvenrechnung. */
 import { describe, expect, it } from "vitest";
 import { entsprichtEtwa, kurvenwert } from "./umrechnung";
 

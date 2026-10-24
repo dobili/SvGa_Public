@@ -12,7 +12,7 @@
  * und die Spielstärke im Mittelspiel getrennt nach Taktik und Strategie (spiel/taktik.ts). Reine
  * Funktionen, die Werte kommen aus der Auswertung.
  * Seit 0.2.103 zählen für Spielstärke und Urteilswort nur die Züge bis zur Entscheidung der Partie
- * (spiel/entscheidung.ts). Seit 0.2.124 (Entscheidung des Autors, 23.10.2026) kommt die
+ * (spiel/entscheidung.ts). Seit 0.2.125 (Entscheidung des Autors, 23.10.2026) kommt die
  * Spielstärke aus dem Elo-Modell je Zeitklasse (spiel/elomodell.ts: Kennzahlen der Züge bis zur
  * Entscheidung, Maßstab Lichess, Spanne für 90 % der Spieler); der Schalter „Genauigkeit wie“
  * (0.2.83 bis 0.2.120: Lichess, Mittelweg, nahe chess.com) ist weg, die Genauigkeit ist die von
@@ -397,7 +397,7 @@ export function spielstaerke(
   tempo: Wertungstempo = "rapid",
   phasen: readonly Phase[] = phasenJeStellung(partie),
 ): Spielstaerke {
-  // Die Phase je Zug gehört seit 0.2.124 zu den Kennzahlen des Elo-Modells.
+  // Die Phase je Zug gehört seit 0.2.125 zu den Kennzahlen des Elo-Modells.
   const alle = zugbilanzen(partie, werte, urteile, beste, gespielteUci, phasen);
   return {
     white: seitenbilanz(

@@ -221,3 +221,39 @@
   color: var(--gold-text);
   font-weight: 600;
 }
+
+/* Formular „Fehler melden“ (R57): Art, Text, Häkchen, Knöpfe untereinander. */
+.meldeformular {
+  display: grid;
+  gap: var(--raster);
+  width: 100%;
+  margin-top: var(--raster);
+}
+
+.meldefeld {
+  display: grid;
+  gap: calc(var(--raster) / 2);
+}
+
+.meldefeld textarea {
+  font: inherit;
+  padding: var(--raster);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  resize: vertical;
+}
+
+.meldehaken {
+  display: flex;
+  gap: var(--raster);
+  align-items: flex-start;
+  font-size: var(--groesse-mittel);
+}
+
+.meldehaken input {
+  width: 20px;
+  height: 20px;
+  flex: none;
+}

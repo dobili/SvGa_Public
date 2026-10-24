@@ -1,8 +1,8 @@
 /**
- * Der Wahlschritt eines Bots (0.2.124): aus den Stellschrauben eines Bots die Verschiebungen des
+ * Der Wahlschritt eines Bots (0.2.125): aus den Stellschrauben eines Bots die Verschiebungen des
  * Wahlmodells bilden und unter den Kandidaten ziehen.
  *
- * Rolle im Gesamtbild: Teil von engine/menschenwahl.ts; ersetzt seit 0.2.124 die Fehlerwürfe je
+ * Rolle im Gesamtbild: Teil von engine/menschenwahl.ts; ersetzt seit 0.2.125 die Fehlerwürfe je
  * Gelegenheit und den Wurf auf blinde Flecken durch das geeichte Wahlmodell (engine/wahlmodell.ts).
  * Die bisherigen Stellschrauben bleiben gültig und werden übersetzt: Gewicht einer Fehlerart g →
  * Verschiebung ln(g) (0 schließt aus, 1 wie Menschen, 3 etwa dreimal so wahrscheinlich); Gewicht

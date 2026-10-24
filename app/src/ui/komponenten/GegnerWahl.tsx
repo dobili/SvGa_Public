@@ -118,7 +118,7 @@ function Sprechblase({
   const vorgefertigt = gegnerVon(bot);
   const eigener = eigene.find((g) => g.kennung === bot) ?? null;
   const name = vorgefertigt?.name ?? eigener?.name ?? t("spielen.bot.eigene");
-  // Stern je Zeitklasse der gewählten Uhr (R51, 0.2.124).
+  // Stern je Zeitklasse der gewählten Uhr (R51, 0.2.125).
   const tempo = wertungstempo(uhr);
   const besiegt = useSpeicher((z) => (bot ? z.daten.spiel.besiegt[tempo].includes(bot) : false));
   const text = vorgefertigt

@@ -1,14 +1,39 @@
 // Cloudflare: die App als Worker mit statischen Dateien (Konzept 2 und 14).
-// Es gibt keinen Server-Code; Cloudflare liefert nur den Inhalt von dist/ aus.
-// Einrichtung durch den Autor: docs/CLOUDFLARE.md.
+// Cloudflare liefert den Inhalt von dist/ aus. Seit R57 (Admin-Dashboard, 24.10.2026) gibt es
+// dazu einen kleinen Worker (worker/index.ts), der nur die Pfade unter run_worker_first sieht:
+// Meldungen, Prüfberichte und das Dashboard. Alles andere geht wie bisher direkt an die Dateien.
+// Einrichtung durch den Autor: docs/VEROEFFENTLICHUNG.md und docs/PLAN_DASHBOARD.md.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "schach-von-grund-auf",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-10-01",
+  // Secrets (BERICHT_SCHLUESSEL, TURNSTILE_SECRET, RESEND_KEY, MAIL_AN, MAIL_VON) trägt der Autor
+  // im Dashboard von Cloudflare ein; ein Deploy lässt sie stehen.
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     // Eine unbekannte Adresse liefert die Startseite des Buches aus (Entscheidung 15.10.2026:
     // Startseite unter /, App unter /app/, beides auf derselben Domain).
     "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*", "/admin", "/admin/*"],
   },
+  // Datenbank des Dashboards (vom Autor am 24.10.2026 angelegt; die ID ist kein Geheimnis).
+  "d1_databases": [
+    {
+      "binding": "ADMIN_DB",
+      "database_name": "svga-admin",
+      "database_id": "eee93b47-008d-4d08-875d-a9a73aa98b32",
+    },
+  ],
+  // Cloudflare Access vor /admin und /api/admin (vom Autor am 24.10.2026 eingerichtet). Team und
+  // Zielgruppe (AUD) sind kein Geheimnis, jede Anmeldeseite von Access zeigt sie; der Worker prüft
+  // damit das Zeichen von Access selbst (worker/zugang.ts).
+  "vars": {
+    "ACCESS_TEAM": "wild-thunder-31ee.cloudflareaccess.com",
+    "ACCESS_AUD": "17695deb8d7418e3f5078ee155779c71532644bc756c2271dc7f4dbcfdad78a0",
+  },
+  // Täglich 6:17 UTC aufräumen (Datenschutz), montags dazu die Wochenübersicht per Mail.
+  "triggers": { "crons": ["17 6 * * *"] },
+  "observability": { "enabled": true },
 }

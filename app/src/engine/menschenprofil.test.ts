@@ -45,7 +45,7 @@ describe("Menschenprofil", () => {
     const knapp = zeitnotFaktoren(2000, 5_000);
     expect(knapp.patzer).toBeGreaterThan(knapp.fehler);
     expect(zeitnotFaktoren(2000, null)).toEqual({ fehler: 1, patzer: 1 });
-    // Seit 0.2.124: Zeitnot als Temperatur je Zeitklasse (engine/zeitnot-daten.ts).
+    // Seit 0.2.125: Zeitnot als Temperatur je Zeitklasse (engine/zeitnot-daten.ts).
     expect(zeitnotTemperatur("blitz", 2000, null)).toBe(1);
     const blitzKnapp = zeitnotTemperatur("blitz", 2000, 5_000);
     expect(blitzKnapp).toBeGreaterThan(1.3);

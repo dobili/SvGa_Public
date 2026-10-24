@@ -3,7 +3,7 @@
  *
  * Rolle im Gesamtbild: Wunsch des Autors (19.10.2026): Statt „Partie gegen die Engine“ steht oben
  * „gegen Leon“. Das Porträt stand bis 0.2.123 daneben und drängte den Namen in den Umbruch; seit
- * 0.2.124 (Wunsch des Autors, 24.10.2026) steht es im Untertitel darunter (Partieuntertitel.tsx).
+ * 0.2.125 (Wunsch des Autors, 24.10.2026) steht es im Untertitel darunter (Partieuntertitel.tsx).
  * Eigene Stufen ohne Bot, Partien zu zweit und eingelesene Partien behalten ihren bisherigen Titel.
  * Abhängigkeiten: engine/gegner.ts, speicher, i18n.
  */

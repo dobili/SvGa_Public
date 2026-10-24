@@ -74,6 +74,8 @@ const SEITEN = {
   app: "app/index.html",
   impressum: "impressum/index.html",
   datenschutz: "datenschutz/index.html",
+  // Seit R57 (24.10.2026) das Dashboard des Autors, hinter Cloudflare Access.
+  admin: "admin/index.html",
   ...erzeugeTrainingsseiten(),
 };
 
@@ -115,6 +117,23 @@ function texteInHtml(): Plugin {
   };
 }
 
+/**
+ * Legt /version.json mit der App-Version in die Auslieferung (R57). Die Wartungsprüfung
+ * (pipeline/wartung) vergleicht sie mit main, um zu sehen, ob Cloudflare den Stand ausliefert.
+ */
+function versionsdatei(): Plugin {
+  return {
+    name: "versionsdatei",
+    generateBundle() {
+      this.emitFile({
+        type: "asset",
+        fileName: "version.json",
+        source: JSON.stringify({ version: paket.version }),
+      });
+    },
+  };
+}
+
 /** Farben aus dem Buch für Startbildschirm und Statusleiste (Konzept Abschnitt 10.3). */
 const NAVY = "#16253D";
 const CREME = "#F5F0E6";
@@ -141,6 +160,7 @@ export default defineConfig({
   },
   plugins: [
     texteInHtml(),
+    versionsdatei(),
     react(),
     VitePWA({
       // Eigener Service Worker (src/sw.ts), damit die Installationsseite den Ladefortschritt
@@ -152,6 +172,9 @@ export default defineConfig({
       injectRegister: false,
       injectManifest: {
         globPatterns: ["**/*.{js,css,html,json,wasm,webp,png,svg,woff2,txt}"],
+        // Das Dashboard (R57) liegt hinter Cloudflare Access; auf Lesergeräten würde das
+        // Vorabladen umgeleitet und die Installation scheitern.
+        globIgnores: ["admin/**"],
         maximumFileSizeToCacheInBytes: GROESSTE_DATEI_BYTES,
       },
       manifest: {
@@ -183,7 +206,7 @@ export default defineConfig({
     }),
   ],
   test: {
-    include: ["src/**/*.test.ts", "src/**/*.test.tsx"],
+    include: ["src/**/*.test.ts", "src/**/*.test.tsx", "worker/**/*.test.ts"],
     environment: "node",
   },
 });

@@ -1,0 +1,190 @@
+/*
+ * Stil des Dashboards /admin/ (R57): Farben und Schriften der App (basis.css), schlicht und
+ * für das Handy (eine Spalte, große Tippflächen).
+ */
+.admin {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: calc(var(--raster) * 2);
+  font-family: var(--schrift);
+  color: var(--text);
+}
+
+.admin h1,
+.admin h2 {
+  font-family: var(--schrift-titel);
+  margin: 0 0 var(--raster);
+}
+
+.admin button,
+.admin select {
+  min-height: var(--tippflaeche);
+  padding: 0 calc(var(--raster) * 2);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+}
+
+.admin textarea,
+.admin input {
+  font: inherit;
+  padding: var(--raster);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+}
+
+.admin-kopf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-karte {
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: calc(var(--raster) * 2);
+  margin: 0 0 calc(var(--raster) * 2);
+  list-style: none;
+}
+
+.admin-leise {
+  color: var(--text-leise);
+  font-size: var(--groesse-klein);
+}
+
+.admin-chip {
+  display: inline-block;
+  margin: 0 var(--raster) var(--raster) 0;
+  padding: 2px var(--raster);
+  border-radius: 999px;
+  border: 1px solid var(--linie-stark);
+}
+
+.admin-chip.an {
+  color: var(--gruen-text);
+}
+
+.admin-chip.aus {
+  color: var(--rot-text);
+}
+
+.admin-hauptknopf {
+  background: var(--navy) !important;
+  color: var(--creme) !important;
+  width: 100%;
+}
+
+.admin-auftrag {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: var(--groesse-klein);
+}
+
+.admin-punkte,
+.admin-liste,
+.admin-meldungen {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.admin-punkt {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: var(--raster);
+  padding: var(--raster) 0;
+  border-bottom: 1px solid var(--linie);
+}
+
+.admin-lampe {
+  width: 12px;
+  height: 12px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--linie-stark);
+}
+
+.admin-ampel-rot .admin-lampe {
+  background: #c0392b;
+}
+
+.admin-ampel-gelb .admin-lampe {
+  background: #e0a800;
+}
+
+.admin-ampel-gruen .admin-lampe {
+  background: #2e8b3e;
+}
+
+.admin-ampel-info .admin-lampe {
+  background: #5b7bb5;
+}
+
+.admin-punkt-titel {
+  font-weight: 600;
+}
+
+.admin-punkt-text,
+.admin-meldetext {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.admin-reiter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+  margin-bottom: calc(var(--raster) * 2);
+}
+
+.admin-reiter [aria-selected="true"] {
+  background: var(--navy);
+  color: var(--creme);
+}
+
+.admin-angaben {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: var(--raster);
+  font-size: var(--groesse-klein);
+}
+
+.admin-angaben dt {
+  color: var(--text-leise);
+}
+
+.admin-angaben dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.admin-stellung {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-size: var(--groesse-klein);
+}
+
+.admin-bearbeiten {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--raster);
+  align-items: center;
+  margin-top: var(--raster);
+}
+
+.admin-bearbeiten textarea {
+  flex: 1 1 100%;
+}
+
+.admin-art-buch {
+  border-left: 4px solid var(--gold);
+}
+
+.admin-art-absturz {
+  border-left: 4px solid var(--rot-text);
+}

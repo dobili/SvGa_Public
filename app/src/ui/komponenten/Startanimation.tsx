@@ -9,7 +9,7 @@
  * höchstens einmal je Stunde), außer sie ist in den Einstellungen abgeschaltet. Ein Start ist eine
  * neue Sitzung des Browsers (die installierte App startet nach dem Schließen neu); ein Neuladen
  * bleibt in der Sitzung und zeigt sie nicht noch einmal. Bei „Bewegung reduzieren“ des Geräts nie.
- * Seit 0.2.124 (Wunsch des Autors, 24.10.2026) auch bei der Rückkehr aus dem Hintergrund: War die
+ * Seit 0.2.125 (Wunsch des Autors, 24.10.2026) auch bei der Rückkehr aus dem Hintergrund: War die
  * App auf einem Gerät mit Touch-Bedienung (Handy, Tablet) mindestens 30 Minuten nicht zu sehen,
  * läuft sie 1,8 Sekunden; am Rechner nicht, weil man dort zwischen Fenstern hin- und herwechselt.
  * Abhängigkeiten: app/merker.ts, startanimationRegel.ts, i18n, ui/stil/brett.css.

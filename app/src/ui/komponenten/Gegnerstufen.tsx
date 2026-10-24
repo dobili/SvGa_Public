@@ -72,7 +72,7 @@ export function VorgefertigteGitter({
 }: {
   bot: string | null;
   beiBot: (bot: string | null) => void;
-  /** Zeitklasse der gewählten Uhr: Sterne und Zähler gelten je Zeitklasse (R51, 0.2.124). */
+  /** Zeitklasse der gewählten Uhr: Sterne und Zähler gelten je Zeitklasse (R51, 0.2.125). */
   tempo: Wertungstempo;
 }) {
   const [offen, setzeOffen] = useState(() => offeneStufenAnfangs(liesMerker(MERKER_OFFEN), bot));

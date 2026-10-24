@@ -1,5 +1,5 @@
 /**
- * Bedenkzeit der Menschen je Zeitklasse (0.2.124, Restplan 8b), aus den Spielerprofilen (77 000 gewertete
+ * Bedenkzeit der Menschen je Zeitklasse (0.2.125, Restplan 8b), aus den Spielerprofilen (77 000 gewertete
  * Lichess-Partien von 3 900 Spielern, 390 000 Züge mit Uhrdaten); erzeugt von buch/arbeit/bedenkzeit/eichung.py
  * (nur lokal), nicht von Hand ändern. Je Zeitklasse und Band (Untergrenze) der Median des Anteils der Restzeit
  * je Zug nach Zugstufen (ab Zug 1, 5, 10, 15, 20, 30, 40) bei mindestens einer Minute Rest; Zellen mit unter

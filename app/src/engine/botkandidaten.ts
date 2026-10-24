@@ -1,5 +1,5 @@
 /**
- * Kandidaten für den neuen Bot-Satz (0.2.124, Restplan 8; Wunsch des Autors, 24.10.2026): je Gruppe
+ * Kandidaten für den neuen Bot-Satz (0.2.125, Restplan 8; Wunsch des Autors, 24.10.2026): je Gruppe
  * 24 zusätzliche Bots (jeder Stil mit drei bis vier passenden Persönlichkeiten, Phasen gestreut), die
  * zusammen mit den 64 bestehenden gemessen werden; aus dem Pool wählt der Autor je Gruppe acht. Die
  * nicht gewählten bleiben hier samt Messwerten (engine/botkandidaten-daten.ts) erhalten, weil sie

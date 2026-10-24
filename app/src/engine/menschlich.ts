@@ -25,7 +25,7 @@ export const RUHIGER_VERLAUF: Verlauf = { tagesform: 1 };
 
 /** Die Tagesform liegt zwischen 1 − Spanne und 1 + Spanne. */
 /**
- * Halbe Spanne der Tagesform. Seit 0.2.124 0,4 statt 0,25: Als Temperatur des Wahlmodells
+ * Halbe Spanne der Tagesform. Seit 0.2.125 0,4 statt 0,25: Als Temperatur des Wahlmodells
  * (engine/wahlmodell.ts) erzeugt eine gleichverteilte Temperatur zwischen 0,6 und 1,4 je Partie
  * eine Streuung der Fehlerrate zwischen Partien von etwa 4 bis 5 Fehlern je 100 Züge, wie sie das
  * Beta-Binomial-Modell der Spielerprofile misst (Tagesform 5,0 bis 5,7; mit 0,25 nur etwa 3);

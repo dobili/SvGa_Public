@@ -1,6 +1,6 @@
 /**
  * Die sieben Spielstile der Bots (Teil D, Entscheidung des Autors 23.10.2026) als Verschiebungen
- * der Stilmerkmale im Wahlmodell (0.2.124).
+ * der Stilmerkmale im Wahlmodell (0.2.125).
  *
  * Rolle im Gesamtbild: Aus 3 889 Lichess-Spielern ergaben sich drei Stilachsen (Königsangriff,
  * Aktivität, Bauernsturm gegen Vereinfachen; docs/ENTSCHEIDUNGEN.md „Spielstile der Bots“). Ein

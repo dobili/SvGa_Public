@@ -6,7 +6,7 @@
  * Deshalb steht jede Klasse gegen ihren üblichen Anteil bei einem Spieler gleicher Stärke, mit
  * Zonen „schwach / normal / gut“ (bei den schwachen Klassen umgekehrt). Die Anzeige steht in
  * ui/komponenten/Zugklassen.tsx.
- * Seit 0.2.124 (Wunsch des Autors, 24.10.2026) kommen Üblich und Zonen aus den Spielerprofilen
+ * Seit 0.2.125 (Wunsch des Autors, 24.10.2026) kommen Üblich und Zonen aus den Spielerprofilen
  * (spiel/zugklassenvergleich-daten.ts): „üblich“ ist der Median der Spieler des Bandes in der
  * Zeitklasse, „normal“ reicht vom 5-%- bis zum 95-%-Quantil der Spieler, erweitert um die
  * Zufallsstreuung einer einzelnen Partie mit so vielen Zügen (Binomial, 90 %), damit eine Partie

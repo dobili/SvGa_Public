@@ -309,3 +309,26 @@
   font-size: 0.9rem;
   color: var(--text-leise, #666);
 }
+
+/* Direkte Links zu den Lichess-Werkzeugen unter einer Übung (R57-Zusatz, 24.10.2026). */
+.werkzeuglinks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(var(--raster) * 0.5) var(--raster);
+  margin-top: calc(var(--raster) * 0.5) !important;
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.werkzeuglink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tippflaeche);
+  padding: 0 var(--raster);
+  border: 1px solid var(--linie-stark);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+}

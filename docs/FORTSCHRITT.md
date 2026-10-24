@@ -1778,6 +1778,15 @@ Anleitung dort, Ergebnis in `engine/botstaerke-zeitklassen.ts`. 3. Gruppenmodus 
 gegen Nm, `skripte/gruppen-bots.mjs`), `engine/gruppenstaerke-daten.ts` füllen. 4. Dann P1
 informieren.
 
+**Vorgemerkt, noch nicht ausführen (aus einem anderen Chat, 24.10.2026 abends):** Eigenes Bild für die
+Startanimation (R39): Springer mittig, darunter Brett und Schatten wie auf dem Cover. Das Skript
+liegt lokal unter `buch/arbeit/vorlagen/erzeuge-startbild.mjs` und gehört nach
+`app/skripte/erzeuge-startbild.mjs`. Ablauf: Cover aus `buch/a1/cover_A4.tif` als PNG nach
+`buch/arbeit/cover-original.png` (nur lokal), Skript aufrufen (mit `CHROMIUM_PFAD`), Ergebnis
+`app/public/bilder/startspringer.webp` committen. Dann `ui/komponenten/Startanimation.tsx` vom
+App-Symbol (`symbole/symbol-512.png`) auf das neue Bild umstellen, Dateikopf und Test anpassen,
+Precache prüfen. Das Cover selbst kommt nie ins Repository.
+
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).
 2. Tiefe 18: etwa 1000 Spielerpartien mit der Engine der App nachrechnen, Umrechnung der

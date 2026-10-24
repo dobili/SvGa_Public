@@ -74,6 +74,8 @@ const SEITEN = {
   app: "app/index.html",
   impressum: "impressum/index.html",
   datenschutz: "datenschutz/index.html",
+  // Seit R57 (24.10.2026) das Dashboard des Autors, hinter Cloudflare Access.
+  admin: "admin/index.html",
   ...erzeugeTrainingsseiten(),
 };
 
@@ -152,6 +154,9 @@ export default defineConfig({
       injectRegister: false,
       injectManifest: {
         globPatterns: ["**/*.{js,css,html,json,wasm,webp,png,svg,woff2,txt}"],
+        // Das Dashboard (R57) liegt hinter Cloudflare Access; auf Lesergeräten würde das
+        // Vorabladen umgeleitet und die Installation scheitern.
+        globIgnores: ["admin/**"],
         maximumFileSizeToCacheInBytes: GROESSTE_DATEI_BYTES,
       },
       manifest: {

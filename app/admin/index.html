@@ -1,0 +1,21 @@
+<!doctype html>
+<!--
+  Admin-Dashboard unter /admin/ (R57, Wunsch des Autors 24.10.2026): Ampel der Prüfungen und
+  Meldungen der Leser. Nur für den Autor, hinter Cloudflare Access; der Worker prüft den Zugang
+  zusätzlich (worker/zugang.ts). Nicht im Offline-Speicher der App (vite.config.ts, globIgnores),
+  weil Access das Vorabladen auf Lesergeräten umleiten würde.
+-->
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#16253D" />
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/symbole/symbol.svg" type="image/svg+xml" />
+    <title>Dashboard – Schach von Grund auf</title>
+    <script type="module" src="/src/admin/main.tsx"></script>
+  </head>
+  <body>
+    <div id="admin"></div>
+  </body>
+</html>

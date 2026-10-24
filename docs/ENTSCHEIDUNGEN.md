@@ -4925,3 +4925,23 @@ war). Der Messlauf bleibt für spätere Datenstände.
   gemeinsamen Push nach main (Restplan 9b in FORTSCHRITT). Offen zu klären beim Bau: Speicher
   (freigeschaltet und besiegt je Kategorie, ohne neues Speicherformat, wenn möglich), Wertung der
   Partie (gewertet mit der gemessenen Zahl), Zeitklassen (eine Zahl je Zeitklasse wie bei den Bots).
+
+## Maia: Versuch später, bei Erfolg als nachladbares Zusatzpaket (24.10.2026 nachmittags, Autor)
+
+- **Stand:** Die Bots wählen mit dem eigenen Wahlmodell (180 000 Lichess-Stellungen, Fehlerraten je
+  Band, Phase und Art auf etwa einen Prozentpunkt). Maia (University of Toronto, 1100 bis 1900,
+  Maia-2 unter MIT, Maia-3 prüfen) bleibt ein Versuch nach Messung und Gruppenmodus: nur, wenn die
+  Bots damit messbar menschlicher werden als mit dem Wahlmodell, und nur, wenn das Rechnen nicht
+  spürbar länger dauert als die künstliche Bedenkzeit. Unten (unter 1100) und oben (über 1900)
+  bleibt ohnehin das eigene Modell.
+- **Wunsch des Autors für den Erfolgsfall:** nicht fest einbauen, sondern als optionales
+  Zusatzpaket: In den Einstellungen (und erklärt in der App-Tour) lässt sich das Netz nachladen;
+  danach ein Schalter „Maia für die Bots“ an und aus, oder alternativ eine eigene Bot-Kategorie
+  „Maia“. Das Größenbudget der App (25 MB) bleibt davon unberührt, weil das Paket getrennt geladen
+  wird und offline gespeichert bleibt.
+- **Zu klären vor dem Bau:** Mehrwert aus den Messungen (Fehlerraten und Zugverteilung gegen die
+  Lichess-Daten, Vergleich mit dem Wahlmodell je Band); sauberes Umschalten ohne Bruch (laufende
+  Partien behalten ihr Modell bis zum Ende, Wertung der Bots je Modell getrennt gemessen, kein
+  Modellwechsel mitten in einer gewerteten Partie, Speicher und Nachladen mit klarer Anzeige und
+  Fehlermeldung bei fehlendem Netz). Entscheidung über Schalter oder eigene Kategorie erst mit den
+  Messergebnissen.

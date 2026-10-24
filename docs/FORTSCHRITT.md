@@ -1712,7 +1712,9 @@ geschoben wird):**
   geschätzte Wertung eines eigenen Bots. Eigene Gegner nutzen bis dahin weiter Faktoren und den
   Regler −2 bis 2.
 - Restplan 6 „eingesperrte Figur“ als Fehlerart (erst mit der nächsten Eichung des Wahlmodells).
-- Maia als Grundgewicht (Versuch) und das tiefere Eröffnungsbuch aus einem ganzen Lichess-Monat.
+- Maia als Grundgewicht (Versuch nach Messung und Gruppenmodus; bei Erfolg als nachladbares
+  Zusatzpaket mit Schalter oder eigener Kategorie, ENTSCHEIDUNGEN „Maia“) und das tiefere
+  Eröffnungsbuch aus einem ganzen Lichess-Monat.
 - Zugklassen „brillant“, „stark“ und „Buchzug“ im Bullet-Diagramm: weiter geschätzt (die
   Lichess-Auswertung unterscheidet sie nicht).
 - Drei Wertungen je Bot (Blitz, Schnellschach, Klassisch): erst nach der Messung je Zeitklasse.

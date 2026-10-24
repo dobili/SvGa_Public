@@ -72,10 +72,10 @@ export function Startanimation() {
       <span className="startanimation-schein" aria-hidden="true">
         <img
           className="startanimation-springer"
-          src={`${import.meta.env.BASE_URL}symbole/symbol-512.png`}
+          src={`${import.meta.env.BASE_URL}bilder/startspringer.webp`}
           alt=""
-          width={512}
-          height={512}
+          width={560}
+          height={560}
         />
       </span>
       <span className="startanimation-titel" aria-hidden="true">

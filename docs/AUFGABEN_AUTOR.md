@@ -65,7 +65,8 @@ Teil fertig ist.
       kommt das Schild nicht noch einmal. Bei Partien zu zweit steht „Weiß gewinnt“ oder
       „Schwarz gewinnt“.
 - [ ] N655. **Startanimation (R39):** Schließe die App ganz und öffne sie neu. Etwa zwei Sekunden
-      lang wächst der goldene Springer vom Cover mit goldenem Schein auf dunklem Grund heran,
+      lang wächst der goldene Springer vom Cover im Kreis heran, mittig und mit dem Schachbrett
+      darunter wie auf dem Cover, mit goldenem Schein auf dunklem Grund,
       darunter „Schach von Grund auf“, dann blendet alles aus. Ein Tipp irgendwo überspringt sie.
       Beim Neuladen kommt sie nicht, und höchstens einmal je Stunde (siehe Teil 2, P2-A).
 - [ ] N656. **Fenstergröße am Rechner (R40):** Öffne Abb. 1.26 im Browser am Rechner, Fenster

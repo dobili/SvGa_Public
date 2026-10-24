@@ -1399,7 +1399,10 @@ Zweig `p2-brett` (Opus, ab 23.10.2026, Basis `weiter-ohne-autor` mit main 0.2.11
       `symbole/symbol-512.png` (schon offline), 1,9 s, Tipp überspringt; nur in neuer
       Browsersitzung und höchstens einmal je Stunde (Merker `startanimation.zuletzt`), nie bei
       reduzierter Bewegung. `starteImBrowser` in den Oberflächentests schaltet sie ab
-      (`startanimation: true` zum Prüfen). N655, Rückfrage P2-A.
+      (`startanimation: true` zum Prüfen). N655, Rückfrage P2-A. Nachtrag 24.10.2026 (Autor):
+      eigenes Bild `public/bilder/startspringer.webp` aus `skripte/erzeuge-startbild.mjs`,
+      runder Ausschnitt des Covers mit dem Springer mittig und dem Brett darunter (im App-Symbol
+      stand der Sockel auf dem Kreisrand).
 - [x] R40 Desktop: Das Layout war schon reines CSS und wechselte live, kippte aber erst bei
       quadratischem Fenster. `ui/stil/breit.css` nimmt jetzt das Seitenverhältnis 5 : 4 als
       Grenze; Oberflächentest in `brett.spec.ts` (läuft in CI auch in WebKit). N656, P2-B.

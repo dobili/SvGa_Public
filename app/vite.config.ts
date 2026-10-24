@@ -117,6 +117,23 @@ function texteInHtml(): Plugin {
   };
 }
 
+/**
+ * Legt /version.json mit der App-Version in die Auslieferung (R57). Die Wartungsprüfung
+ * (pipeline/wartung) vergleicht sie mit main, um zu sehen, ob Cloudflare den Stand ausliefert.
+ */
+function versionsdatei(): Plugin {
+  return {
+    name: "versionsdatei",
+    generateBundle() {
+      this.emitFile({
+        type: "asset",
+        fileName: "version.json",
+        source: JSON.stringify({ version: paket.version }),
+      });
+    },
+  };
+}
+
 /** Farben aus dem Buch für Startbildschirm und Statusleiste (Konzept Abschnitt 10.3). */
 const NAVY = "#16253D";
 const CREME = "#F5F0E6";
@@ -143,6 +160,7 @@ export default defineConfig({
   },
   plugins: [
     texteInHtml(),
+    versionsdatei(),
     react(),
     VitePWA({
       // Eigener Service Worker (src/sw.ts), damit die Installationsseite den Ladefortschritt

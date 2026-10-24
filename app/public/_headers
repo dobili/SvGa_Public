@@ -4,6 +4,8 @@
 # Versionen erst spät (Konzept 11.3).
 /sw.js
   Cache-Control: no-cache
+/version.json
+  Cache-Control: no-cache
 /
   Cache-Control: no-cache
 /index.html

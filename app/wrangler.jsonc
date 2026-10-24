@@ -26,6 +26,13 @@
       "database_id": "eee93b47-008d-4d08-875d-a9a73aa98b32",
     },
   ],
+  // Cloudflare Access vor /admin und /api/admin (vom Autor am 24.10.2026 eingerichtet). Team und
+  // Zielgruppe (AUD) sind kein Geheimnis, jede Anmeldeseite von Access zeigt sie; der Worker prüft
+  // damit das Zeichen von Access selbst (worker/zugang.ts).
+  "vars": {
+    "ACCESS_TEAM": "wild-thunder-31ee.cloudflareaccess.com",
+    "ACCESS_AUD": "17695deb8d7418e3f5078ee155779c71532644bc756c2271dc7f4dbcfdad78a0",
+  },
   // Montags 6:17 UTC die Wochenübersicht per Mail (nur mit eingerichtetem Mailversand).
   "triggers": { "crons": ["17 6 * * 1"] },
   "observability": { "enabled": true },

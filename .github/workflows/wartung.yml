@@ -1,0 +1,49 @@
+# Wartungsprüfungen des Admin-Dashboards (R57, Stufe 1; Wunsch des Autors 24.10.2026).
+# Prüft, ob draußen noch alles stimmt: Live-Seite und Version, Dashboard gesperrt, Zertifikat und
+# Domain, Links, CI, Abhängigkeiten, Eröffnungsliste von Lichess, offene Punkte des Autors
+# (pipeline/wartung). Ein roter Punkt lässt den Lauf scheitern; dann schickt GitHub dem Autor eine
+# Mail. Der Bericht geht an das Dashboard (/api/bericht), sobald das Secret BERICHT_SCHLUESSEL
+# gesetzt ist, und steht immer als Zusammenfassung auf der Seite des Laufs.
+name: Wartung
+
+on:
+  schedule:
+    # Montags 5:23 UTC (vor der Wochenübersicht des Workers um 6:17).
+    - cron: "23 5 * * 1"
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: wartung
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  wartung:
+    name: Wartung
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - name: Prüfungen
+        env:
+          BERICHT_SCHLUESSEL: ${{ secrets.BERICHT_SCHLUESSEL }}
+          GITHUB_TOKEN: ${{ github.token }}
+        # Nach einem Push nach main höchstens 15 Minuten warten, bis Cloudflare den Stand ausliefert.
+        run: python -m pipeline.wartung --ausgabe wartung-bericht.json --warten ${{ github.event_name == 'push' && 900 || 0 }}
+      - uses: actions/upload-artifact@v5
+        if: always()
+        with:
+          name: wartung-bericht
+          path: wartung-bericht.json
+          retention-days: 30

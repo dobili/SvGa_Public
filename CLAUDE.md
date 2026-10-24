@@ -91,6 +91,7 @@ python -m pipeline.bauen ... --mit-entwuerfen   # PGN-Entwürfe als „Entwurf�
 python -m pipeline.bauen ... --text-entwuerfe   # nur Entwürfe der vorbereiteten Texte (AP 14) in die App, zur Durchsicht
 python -m pytest pipeline/tests
 python -m pipeline.pruefen.daten app/public/daten/de/a1   # Daten gegen Schemas, ohne Buchquellen
+python -m pipeline.wartung   # Wartungsprüfungen des Dashboards (R57): Live-Seite, Links, CI, Abhängigkeiten; läuft wöchentlich in Actions
 python -m pipeline.eroeffnungsliste   # Eröffnungsnamen von Lichess (inhalte/lichess) für das Werkzeug „Eröffnung“
 python -m pipeline.zugfolgen.konstruieren --engine PFAD   # konstruierte Partien zu Abbildungen ohne Zugfolge (schnelle UCI-Engine, nur lokal)
 python -m pipeline.pruefen.tablebase   # Endspielabbildungen bis 7 Steine gegen die Lichess-Tablebase (Netz, Zwischenspeicher in buch/arbeit)

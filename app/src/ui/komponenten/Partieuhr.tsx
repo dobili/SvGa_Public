@@ -27,6 +27,7 @@ export function Partieuhr({
   return (
     <div
       className="partieuhr"
+      data-tour="partie-uhr"
       data-laeuft={uhr.laeuft === farbe}
       data-knapp={rest < KNAPP_MS}
       data-testid={`uhr-${farbe}`}

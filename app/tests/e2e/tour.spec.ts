@@ -183,3 +183,24 @@ test("jede Tour der Bereiche läuft bis zum Ende durch", async ({ page }) => {
   await bereich(page, "Einstellungen");
   await laeuft();
 });
+
+test("Teil B: Touren für Spielen und Partie, mit Auswertung nach dem Ende", async ({ page }) => {
+  await starteImBrowser(page);
+  await bereich(page, "Spielen");
+  await starteTour(page);
+  const spielen = await bisZumEnde(page);
+  expect(spielen.join(" ")).toContain("Art des Gegners");
+  expect(spielen.join(" ")).toContain("Startet die Partie");
+  await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
+  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await starteTour(page);
+  const waehrend = await bisZumEnde(page);
+  expect(waehrend.join(" ")).toContain("Die Züge der Partie");
+  expect(waehrend.join(" ")).not.toContain("rechnet die Engine jeden Zug nach");
+  await page.getByRole("button", { name: "Aufgeben" }).click();
+  await page.getByRole("button", { name: "Ja, aufgeben" }).click();
+  await expect(page.getByTestId("partieende")).toBeVisible();
+  await starteTour(page);
+  const danach = await bisZumEnde(page);
+  expect(danach.join(" ")).toContain("Das Ergebnis.");
+});

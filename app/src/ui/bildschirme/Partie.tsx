@@ -74,6 +74,7 @@ function RuhigSchalter({ ruhig }: { ruhig: boolean }) {
     <button
       type="button"
       className="knopf-symbol brettschalter"
+      data-tour="partie-ruhig"
       aria-pressed={ruhig}
       aria-label={t("partie.ruhig")}
       title={t("partie.ruhig")}

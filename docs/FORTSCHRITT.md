@@ -1356,7 +1356,7 @@ Testpunkt-Nummern je Paket getrennt.
 | P5 Trainerbedienung | `p5-trainerbedienung` | R30, R31, R46, R45 | Opus mittel | N710–N729 | fertig (0.2.118) |
 | P6 Englisch | `p6-englisch` | R25 | Opus niedrig | N730–N739 | fertig (Buchdaten 0.2.118/0.2.119; Trainer und Eröffnungsliste von P1 abgeschlossen, 24.10.2026, N747) |
 | P7 Spielen | `weiter-ohne-autor` (P1) | R51, R24, R27, R28, R32 | Opus mittel | N632–N645 | in 0.2.120 bis 0.2.123 erledigt; R51 nur Anzeigeteil, Wertung und „besiegt“ je Zeitklasse beim Bot-Chat |
-| P8 App-Tour | `p8-tour` | R52 | Opus mittel | N760–N769 | Teil A in 0.2.121; Teil B (Spielen, Auswertung) wartet, bis das Fenster „Eigene Bots“ fertig ist (Autor, 24.10.2026 abends) |
+| P8 App-Tour | `p8-tour` | R52 | Opus mittel | N760–N769 | fertig: Teil A in 0.2.121, Teil B (Spielen, Partie mit Auswertung) in 0.2.127 (N769) |
 
 Kurzbeschreibung der neuen Punkte: R27 „Art des Gegners“ über „Partie beginnen“; R28 Bot-Name als
 Partietitel mit Porträt; R29 Fortschrittsbalken der Auswertung; R30 Taktik ohne Motivfrage bei

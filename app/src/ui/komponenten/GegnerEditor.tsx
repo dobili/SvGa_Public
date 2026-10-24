@@ -236,7 +236,7 @@ export function GegnerEditor() {
   const schreibe = (liste: readonly EigenerGegner[]) =>
     void aendere((d) => ({ ...d, spiel: mitEigenenGegnern(d.spiel, liste) }));
   return (
-    <div className="eigene-gegner" data-testid="eigene-gegner">
+    <div className="eigene-gegner" data-testid="eigene-gegner" data-tour="spielen-eigene">
       <h3 className="unterteil-titel">{t("spielen.eigene.verwalten")}</h3>
       {eigene.length === 0 && !offen && <p className="hinweis">{t("spielen.eigene.leer")}</p>}
       {eigene.length > 0 && (

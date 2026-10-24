@@ -29,7 +29,7 @@ export interface Tour {
   readonly schritte: readonly Tourschritt[];
 }
 
-/** Die Touren: Haupttour, je Bildschirm eine, je Trainer eine (Teil B: Spielen folgt). */
+/** Die Touren: Haupttour, je Bildschirm eine, je Trainer eine (seit Teil B auch Spielen und Partie). */
 export type TourKennung =
   | "haupt"
   | "buch"
@@ -46,7 +46,9 @@ export type TourKennung =
   | "checkliste"
   | "steckbriefe"
   | "werkzeuge"
-  | "ich";
+  | "ich"
+  | "spielen"
+  | "partie";
 
 /** Ein Schritt mit Ziel; mit `ersatzMitte` erscheint er auch ohne Ziel (in der Mitte). */
 function ziel(kennung: string, text: Textschluessel, ersatzMitte = false): Tourschritt {
@@ -263,6 +265,40 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("steckbrief-fallen", "tour.steckbriefe.fallen"),
   ]),
   werkzeuge: tour("tour.titel.werkzeuge", [ziel("werkzeuge-kapitel", "tour.werkzeuge.kapitel")]),
+  // Teil B (P8-44, 24.10.2026): Spielen, Partie mit Auswertung und Rückblick. Schritte, deren Ziel
+  // gerade fehlt (etwa das Gitter der eigenen Bots, die Auswertung vor dem Partieende), überspringt
+  // die Tour.
+  spielen: tour("tour.titel.spielen", [
+    ziel("spielen-laufend", "tour.spielen.laufend"),
+    ziel("spielen-start", "tour.spielen.start"),
+    ziel("spielen-einstellungen", "tour.spielen.einstellungen"),
+    ziel("spielen-hilfen", "tour.spielen.hilfen"),
+    ziel("spielen-eroeffnung", "tour.spielen.eroeffnung"),
+    ziel("spielen-gegner", "tour.spielen.gegner"),
+    ziel("spielen-sprechblase", "tour.spielen.sprechblase"),
+    ziel("spielen-gitter", "tour.spielen.gitter"),
+    ziel("spielen-eigene", "tour.spielen.eigene"),
+    ziel("spielen-beginnen", "tour.spielen.beginnen"),
+    ziel("spielen-spielstaerke", "tour.spielen.spielstaerke"),
+    ziel("spielen-partien", "tour.spielen.partien"),
+    ziel("spielen-filter", "tour.spielen.filter"),
+  ]),
+  partie: tour("tour.titel.partie", [
+    ziel("partie-zuege", "tour.partie.zuege"),
+    ziel("partie-uhr", "tour.partie.uhr"),
+    ziel("brett", "tour.partie.brett"),
+    ziel("partie-ruhig", "tour.partie.ruhig"),
+    ziel("partie-werkzeuge", "tour.partie.werkzeuge"),
+    ziel("partie-status", "tour.partie.status"),
+    ziel("partie-ende", "tour.partie.ende"),
+    ziel("auswertung", "tour.partie.auswertung"),
+    ziel("auswertung-kurve", "tour.partie.kurve"),
+    ziel("auswertung-staerke", "tour.partie.staerke"),
+    ziel("auswertung-abweichung", "tour.partie.abweichung"),
+    ziel("auswertung-patzer", "tour.partie.patzer"),
+    ziel("rueckblick-karte", "tour.partie.rueckblick"),
+    ziel("auswertung-pgn", "tour.partie.pgn"),
+  ]),
   ich: tour("tour.titel.ich", [
     ziel("einstellungen-wertung", "tour.ich.wertung"),
     ziel("einstellungen-fortschritt", "tour.ich.fortschritt"),
@@ -279,8 +315,8 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
 /**
  * Die Tour zum gezeigten Bildschirm, oder null, wenn es für ihn keine gibt.
  *
- * Beispiele: Abbildung 1.26 → „abbildung“; Trainer „taktik“ → „trainer.taktik“; Spielen → null
- * (Teil B nach der Kalibrierung der Bots); Lizenzen und Aufgabenseite → null (selbsterklärend).
+ * Beispiele: Abbildung 1.26 → „abbildung“; Trainer „taktik“ → „trainer.taktik“; Spielen →
+ * „spielen“ (seit Teil B); Lizenzen und Aufgabenseite → null (selbsterklärend).
  */
 export function tourFuerAnsicht(ansicht: Ansicht): TourKennung | null {
   switch (ansicht.bildschirm) {
@@ -300,9 +336,9 @@ export function tourFuerAnsicht(ansicht: Ansicht): TourKennung | null {
     case "steckbriefe":
     case "werkzeuge":
     case "ich":
-      return ansicht.bildschirm;
     case "spielen":
     case "partie":
+      return ansicht.bildschirm;
     case "lizenzen":
     case "autoraufgaben":
       return null;

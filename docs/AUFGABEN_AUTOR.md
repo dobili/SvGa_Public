@@ -157,6 +157,15 @@ Rundgang kommt auch bei dir einmal.
 - [ ] N768. **Texte:** Lies bei Gelegenheit die Touren der Bildschirme, die du oft benutzt. Stimmt
       etwas nicht oder fehlt etwas, schreib es mit Nummer der Rückfrage (P8-12 bis P8-43) und
       Schritt.
+- [ ] N769. **Teil B (0.2.127): Touren für Spielen und Partie.** Spielen öffnen: Oben rechts steht
+      jetzt auch hier der Kompass. Die Tour zeigt die laufende Partie (falls eine läuft), die
+      Startstellung, Farbe und Bedenkzeit, Spielhilfen, „Eröffnung festlegen“, die Art des Gegners
+      (mit Sprechblase und Gitter der Bots bzw. dem Fenster für eigene Bots, je nachdem, was gewählt
+      ist), „Partie beginnen“, deine Spielstärke und die Partienliste mit Filter. In einer Partie
+      startet der Kompass die Tour „Partie“: Züge, Uhren, Brett, Auge, Werkzeuge, Zurücknehmen und
+      Aufgeben; nach dem Ende dazu Ergebnis, Auswertung, Verlaufskurve, Spielstärke, erste
+      Abweichung, Fehlerliste, Karte zum Zug und PGN. Schritte, deren Ziel gerade fehlt, überspringt
+      die Tour.
 
 ### Neu in 0.2.118 und 0.2.119: Brett und Bedienung (P2; Opus, 23.10.2026)
 
@@ -986,18 +995,16 @@ Die Texte je Tour (in Klammern die Schritte):
       ein anderes Gerät um. (9) App-Version, Datenstand und ob die App offline bereit ist. „Fehler
       melden“ kopiert diese Angaben, damit du sie mitschicken kannst.
 
-- [ ] P8-44. **Teil B: Spielen (nach der Kalibrierung, noch nicht umgesetzt).** Geplante Touren:
-      **Spielen** (Art des Gegners mit den drei Kacheln eigene Stufe, Bots und eigene Bots; das
-      Porträtgitter mit Elo-Zahl und Sprechblase; Farbe; Zeitklasse und Abzeichen; Eröffnung
-      vorgeben; Stellung aufbauen; Spielhilfen; „Gewertete Partie“; „Partie beginnen“; die Karte
-      „Deine Spielstärke“; die Partienliste mit Filtern, Sortierung, Löschen und „Partie einlesen
-      (PGN)“), **Partie** (Zugliste, die beiden Uhren, ruhige Ansicht mit dem Auge, Werkzeuge am
-      Brett und Bündel, der Knopf „Engine“, Rücknahme, Remis und Aufgeben) und **Auswertung und
-      Rückblick** (Fortschrittsbalken, Verlaufskurve, erste klare Abweichung, grobe Patzer, Fehler
-      der Engine, Spielstärke und Genauigkeit, Bewertungsbalken und Karte zum Zug im Rückblick, „In
-      die Fehlerdatenbank“ und „In die Lernsammlung“, PGN). Die Texte schreibt Claude erst, wenn
-      die Kalibrierung auf main ist, weil sich Gegnerwahl, Zeitklassen und Partienliste gerade
-      ändern. Sag einfach Bescheid, wenn es so weit ist.
+- [ ] P8-44. **Teil B: Spielen und Partie (schon umgesetzt in 0.2.127, Widerspruch genügt).**
+      **Spielen** (13 Schritte): laufende Partie, Startstellung mit „Stellung aufbauen“, Farbe und
+      Bedenkzeit mit Zeitklasse und „Gewertete Partie“, Spielhilfen, Eröffnung festlegen, Art des
+      Gegners (eigene Stufe, 78 vorgefertigte Bots in zehn Gruppen, eigene Bots), Sprechblase,
+      Gitter mit Sternen, Fenster für eigene Bots, „Partie beginnen“, Spielstärke, Partienliste mit
+      „Partie einlesen (PGN)“, Filter und Ordnung. **Partie** (14 Schritte): Züge, Uhren, Brett,
+      ruhige Ansicht, Werkzeuge mit Engine, Zurücknehmen und Aufgeben, Ergebnis, Fortschritt der
+      Auswertung, Verlaufskurve, Spielstärke mit Umschalter, erste Abweichung, Fehler und Patzer,
+      Karte zum Zug mit Fehlerdatenbank und Lernsammlung, PGN. Die Texte stehen in de.json und
+      en.json unter `tour.spielen.*` und `tour.partie.*`.
 
 ### P3 Strukturbegriffe (R44): Vorschläge für das Buch (23.10.2026)
 

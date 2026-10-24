@@ -96,7 +96,7 @@ function Abweichung({
   const fen = stellungen(p)[erste.index] ?? "";
   const bester = uciZuSan(fen, eintrag.beste[erste.index] ?? "");
   return (
-    <div className="abweichung">
+    <div className="abweichung" data-tour="auswertung-abweichung">
       <p>
         {t("auswertung.abweichung", {
           zug: zugtext(p, erste.index, erste.zeichen ?? ""),
@@ -133,7 +133,11 @@ function Fehlerliste({
   const fehler = urteile.filter((u) => FEHLERKLASSEN.has(u.klasse));
   if (fehler.length === 0) return null;
   return (
-    <details className="klappliste fehlerliste" data-testid="grobe-patzer">
+    <details
+      className="klappliste fehlerliste"
+      data-testid="grobe-patzer"
+      data-tour="auswertung-patzer"
+    >
       <summary>
         {t("auswertung.fehlerUndPatzer")} <span className="badge">{fehler.length}</span>
       </summary>
@@ -221,7 +225,7 @@ function Pgn({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[
   };
   const datei = `partie-${partie.begonnen.slice(0, "JJJJ-MM-TT".length)}.pgn`;
   return (
-    <div className="pgn">
+    <div className="pgn" data-tour="auswertung-pgn">
       <div className="knopfreihe">
         <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
           <Knopfsymbol art="kopieren" />
@@ -313,7 +317,7 @@ export function Auswertung({
   const engineSeite =
     partie.einstellung.gegner === "engine" && seite !== partie.einstellung.eigeneFarbe;
   return (
-    <section className="karte auswertung" data-testid="auswertung">
+    <section className="karte auswertung" data-testid="auswertung" data-tour="auswertung">
       <h2 className="karte-titel">
         <Titelsymbol art="auswertung" />
         {t("auswertung.titel")}

@@ -71,7 +71,11 @@ export function Partiezuege({
     </button>
   );
   return (
-    <section className="zugleiste partiezuege" aria-label={t("partie.zuege")}>
+    <section
+      className="zugleiste partiezuege"
+      aria-label={t("partie.zuege")}
+      data-tour="partie-zuege"
+    >
       <p className="zugzeile" data-testid="partiezuege">
         {texte.length === 0 && <span className="hinweis">{t("partie.nochKeineZuege")}</span>}
         {texte.map((text, index) => (

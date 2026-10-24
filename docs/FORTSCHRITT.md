@@ -1410,7 +1410,8 @@ jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Au
       Sicherheitswarnungen npm, Stockfish-Version; Buchstand neuer als App-Daten; Zertifikat,
       Domain) als Ampel; Bug-Reports über einen Cloudflare Worker gespeichert (D1/KV) und per
       Mail gemeldet; Knopf „Aufgabe für Claude“ fasst rote Punkte zu einem Prompt zusammen.
-      Autor richtet Cloudflare ein (Anleitung von P1), Datenschutzerklärung ergänzen.
+      Autor richtet Cloudflare ein (Anleitung von P1), Datenschutzerklärung ergänzen. Plan mit
+      Funktionen und Einrichtung: `docs/PLAN_DASHBOARD.md`.
       Dazu (Wunsch des Autors): Auf den Trainingsseiten `/training/kapNN/` und im Trainingsteil
       der App direkte Links zu den externen Werkzeugen, die die Trainingskästen empfehlen
       (etwa Lichess-Aufgaben, Analysebrett, Eröffnungsexplorer, Koordinatentraining), als

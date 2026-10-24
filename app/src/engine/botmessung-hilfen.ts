@@ -8,6 +8,7 @@ import { makeFen } from "chessops/fen";
 import { parseSan } from "chessops/san";
 import { phaseVon, type Phase } from "../spiel/phasen";
 import { WERTUNGSTEMPI, wertungstempo, type Wertungstempo } from "../spiel/elomodell";
+import { BOTARCHIV } from "./botarchiv";
 import { BOTKANDIDATEN } from "./botkandidaten";
 import { BOTMESSNAMEN } from "./botmessnamen";
 import { GEGNER } from "./gegnerliste";
@@ -95,7 +96,10 @@ export function datendatei(
       `  ${n}: ${Math.round(werte.get(n === STUFEN_NUMMERN.at(-1) ? "stufe10" : `stufe${n}m`) ?? Number.NaN)},`,
   );
   const zahl = (k: string) => werte.get(k) ?? werte.get(BOTMESSNAMEN[k] ?? "");
-  const bots = GEGNER.map((g) => `  "${g.kennung}": ${Math.round(zahl(g.kennung) ?? Number.NaN)},`);
+  // Auch das Archiv (nicht gewählte Bots) behält seine Zahl (Wunsch des Autors, 24.10.2026).
+  const bots = [...GEGNER, ...BOTARCHIV].map(
+    (g) => `  "${g.kennung}": ${Math.round(zahl(g.kennung) ?? Number.NaN)},`,
+  );
   return [
     "/**",
     " * Elo-Zahl der Stufen und der vorgefertigten Bots (erzeugt vom Messlauf",

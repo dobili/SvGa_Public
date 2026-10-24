@@ -17,7 +17,8 @@ import type { Phase } from "../schach/phase";
 import { gruppeDesBots } from "./botgruppe";
 import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
 import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG } from "./botstaerke-daten";
-import { wertungstempo } from "../spiel/elomodell";
+import { BOT_STAERKE_JE_ZEITKLASSE, STUFEN_STAERKE_JE_ZEITKLASSE } from "./botstaerke-zeitklassen";
+import { wertungstempo, type Wertungstempo } from "../spiel/elomodell";
 import type { Fehlerart } from "./fehlerart";
 import { GELEGENHEITSARTEN } from "./menschenprofil";
 import { GEGNER } from "./gegnerliste";
@@ -46,15 +47,24 @@ export type Staerkeangabe =
   | { readonly art: "ueber"; readonly wert: number }
   | { readonly art: "unter"; readonly wert: number };
 
-/** Die Zahl einer reinen Stufe (gemessen). Beispiel: Stufe 3 → 1698 (angezeigt „etwa 1700“). */
-export function staerkeDerStufe(nummer: Stufennummer): number {
-  return STUFEN_STAERKE[nummer];
+/**
+ * Die Zahl einer Stufe (gemessen), in der Zeitklasse, falls dort gemessen, sonst Schnellschach.
+ * Beispiel: Stufe 3 → 1239 (angezeigt „etwa 1250“).
+ */
+export function staerkeDerStufe(nummer: Stufennummer, tempo: Wertungstempo = "rapid"): number {
+  return STUFEN_STAERKE_JE_ZEITKLASSE[tempo]?.[nummer] ?? STUFEN_STAERKE[nummer];
 }
 
-/** Die Zahl eines vorgefertigten Bots (gemessen); null für unbekannte und eigene Bots. */
-export function staerkeDesBots(kennung: string | null): number | null {
+/**
+ * Die Zahl eines vorgefertigten Bots (gemessen), in der Zeitklasse, falls dort gemessen, sonst
+ * Schnellschach; null für unbekannte und eigene Bots.
+ */
+export function staerkeDesBots(
+  kennung: string | null,
+  tempo: Wertungstempo = "rapid",
+): number | null {
   if (kennung === null) return null;
-  return BOT_STAERKE[kennung] ?? null;
+  return BOT_STAERKE_JE_ZEITKLASSE[tempo]?.[kennung] ?? BOT_STAERKE[kennung] ?? null;
 }
 
 /**
@@ -124,10 +134,11 @@ export function gegnerstaerke(
   const eigen = einstellung.bot === null ? { ...einstellung, fehlerarten: [] } : einstellung;
   // Gruppenmodus (engine/gruppe.ts): gemessene Zahl der Gruppe, sonst stärkster Bot plus Zuschlag.
   const gruppe = gruppenstufe(einstellung.bot);
+  const tempo = wertungstempo(einstellung.uhr ?? null);
   const ohneUhr =
     gruppe !== null
       ? gruppenwertung(gruppe)
-      : (staerkeDesBots(einstellung.bot) ?? staerkeGeschaetzt(eigen));
+      : (staerkeDesBots(einstellung.bot, tempo) ?? staerkeGeschaetzt(eigen));
   return ohneUhr + uhrAbzug(einstellung.stufenJePhase, einstellung.uhr ?? null);
 }
 

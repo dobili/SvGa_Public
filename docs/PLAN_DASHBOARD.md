@@ -14,7 +14,11 @@ selbst in Cloudflare, GitHub und den Einstellungen der Claude-Umgebung an.
   kein Geheimnis). Die Bindung kommt erst mit dem Worker-Code in Stufe 2 in die Datei. Die
   Tabellen legt der Code beim ersten Aufruf selbst an.
 - **Access (eingerichtet 24.10.2026):** Selbst gehostete Anwendung mit den Zielen
-  `schach-von-grund-auf.com/admin` und `schach-von-grund-auf.com/api/admin`.
+  `schach-von-grund-auf.com/admin` und `schach-von-grund-auf.com/api/admin`; Regel „Nur Autor“
+  (Einmalcode) und Service Token für Claude (Umgebungsvariablen `CF_ACCESS_CLIENT_ID`,
+  `CF_ACCESS_CLIENT_SECRET`, wirksam ab der nächsten Sitzung).
+- **Turnstile (eingerichtet 24.10.2026):** Site Key `0x4AAAAAAFjr7y8zQDfrZp3I` (öffentlich, kommt
+  in das Meldeformular); den Secret Key trägt der Autor später als `TURNSTILE_SECRET` ein.
 - **Wichtig (Befund 24.10.2026):** Die Website ist ein Cloudflare Worker nur mit statischen Dateien
   (`app/wrangler.jsonc`), kein Pages-Projekt. Solange er keinen Code hat, sperrt Cloudflare die
   Felder für Secrets und Bindings. Deshalb zuerst ein kleiner Worker-Code (`main` in

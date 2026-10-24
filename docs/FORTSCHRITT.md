@@ -1411,6 +1411,11 @@ jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Au
       Domain) als Ampel; Bug-Reports über einen Cloudflare Worker gespeichert (D1/KV) und per
       Mail gemeldet; Knopf „Aufgabe für Claude“ fasst rote Punkte zu einem Prompt zusammen.
       Autor richtet Cloudflare ein (Anleitung von P1), Datenschutzerklärung ergänzen.
+      Dazu (Wunsch des Autors): Auf den Trainingsseiten `/training/kapNN/` und im Trainingsteil
+      der App direkte Links zu den externen Werkzeugen, die die Trainingskästen empfehlen
+      (etwa Lichess-Aufgaben, Analysebrett, Eröffnungsexplorer, Koordinatentraining), als
+      eigene Liste `inhalte/de/werkzeuglinks.json` mit Fundstelle im Buch; das Dashboard prüft
+      sie mit.
 - [x] R54 Partienliste (entschieden 23.10.2026, umgesetzt in 0.2.123): Variante A, zwei Knöpfe „Filter“ und
       „Sortieren“ mit aufklappender Liste in Worten, aktive Filter als Chips mit × (P7b).
 - [x] R55 Auswertung: Liste der Fehler und Patzer immer eingeklappt, Anzahl als Badge (0.2.122).

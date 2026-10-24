@@ -32,6 +32,7 @@ import {
   type Punktwert,
   type Wertungspunkt,
 } from "../spiel/wertung";
+import { WERTUNGSTEMPI } from "../spiel/elomodell";
 
 import {
   LEERER_SPIELSTAND,
@@ -280,12 +281,15 @@ function wertungspunktAus(roh: unknown): Wertungspunkt | null {
   if (ergebnis === undefined) return null;
   const ph = istObjekt(roh.phasen) ? roh.phasen : {};
   const zahlOderNull = (w: unknown) => (istZahl(w) ? w : null);
+  // Zeitklasse seit 0.2.125; ältere Punkte ohne Angabe zählen als Schnellschach (tempoDesPunkts).
+  const tempo = WERTUNGSTEMPI.find((t) => t === roh.tempo);
   return {
     partieId: roh.partieId,
     zeit: roh.zeit,
     gegner: roh.gegner,
     ergebnis,
     wertung: roh.wertung,
+    ...(tempo ? { tempo } : {}),
     phasen: {
       eroeffnung: zahlOderNull(ph.eroeffnung) ?? OHNE_PHASEN.eroeffnung,
       mittelspiel: zahlOderNull(ph.mittelspiel) ?? OHNE_PHASEN.mittelspiel,

@@ -612,6 +612,22 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       enthalten kein Semikolon mehr, Paragrafen und Angaben sind unverändert, der Stand der
       Datenschutzerklärung bleibt 19. Oktober 2026. In der App: Reiter Training, Fragezeichen am
       Kasten: „Die Übungen zum Kasten ‚Training zu diesem Kapitel‘ des Buches …“.
+- [ ] N788. **Wertung je Zeitklasse:** Einstellungen › Deine Wertung. Spiele eine gewertete
+      Blitz-Partie (3+2) zu Ende, wenn du bisher nur Schnellschach gespielt hast: Es erscheint eine
+      Reiterzeile „Zeitklasse“ mit Blitz und Schnellschach. Blitz beginnt mit der Schätzung aus
+      dieser Partie, die Schnellschach-Wertung bleibt, wie sie war. Die Zeile darunter nennt die
+      Zeitklasse („Schnellschach: 12 gewertete Partien, im Ausschnitt +24“).
+- [ ] N789. **Vorläufig:** In den ersten zehn Partien einer Zeitklasse steht unter der Zahl
+      „Vorläufig: Die Wertung findet in den ersten zehn Partien ihren Platz (bisher 3)“. Ab der
+      zehnten Partie verschwindet der Satz.
+- [ ] N790. **Beide Zahlen nebeneinander:** Unter „Deine Wertung“ steht „Aus deinen Zügen: etwa
+      1400 (1050 bis 1750, aus 3 Partien)“; unter Spielen › Deine Spielstärke steht je Zeitklasse
+      „Aus deinen Ergebnissen: Wertung 1424 (vorläufig)“. Beide Zahlen dürfen voneinander
+      abweichen (Ergebnisse gegen Zugqualität), aber dieselbe Zahl muss an beiden Orten gleich sein.
+- [ ] N791. **Phasen-Ansicht der Kurve:** Reiter „Mittelspiel“ in „Deine Wertung“. Mit wenigen
+      Partien steht „–“ und der Satz „noch zu wenige Partien in dieser Zeitklasse für eine Zahl“.
+      Ab etwa zehn Schnellschach-Partien erscheint eine Zahl mit Spanne und eine Kurve; Eröffnung
+      und Endspiel bleiben im Schnellschach vorerst ohne Zahl (Spanne zu breit), das ist gewollt.
 
 ---
 

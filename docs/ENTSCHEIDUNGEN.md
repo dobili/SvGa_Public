@@ -4960,3 +4960,30 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - Wartungsprüfungen in Python ohne weitere Pakete (`pipeline/wartung`), Rot lässt den Lauf
   scheitern (Mail von GitHub). Zertifikat erst unter 14 Tagen gelb, weil Cloudflare etwa 30 Tage
   vor Ablauf erneuert.
+
+## Wertung je Zeitklasse, vorläufige Wertung, Phasenkurve über mehrere Partien (24.10.2026 nachmittags, Fable; Empfehlung, vom Autor angenommen)
+
+- **Befund:** Nach der Umstellung auf das Elo-Modell waren die Phasen-Ansichten der Wertungskurve
+  („Eröffnung“, „Mittelspiel“, „Endspiel“ in den Einstellungen) für neue Partien leer: Sie zeigten
+  je Partie die Schätzung der Phase, und aus einer Partie ist die Spanne einer Phase nie schmal.
+  Außerdem lief die Elo-Wertung als eine Zahl über alle Zeitklassen, während „Deine Spielstärke“
+  je Zeitklasse schätzt; der Startwert aus einer Partie (±370) stand ohne Kennzeichnung da; und
+  beide Zahlen (Ergebnisse, Zugqualität) standen an zwei Orten ohne Bezug zueinander.
+- **Entscheidung (alle vier Empfehlungen angenommen):**
+  1. Die Phasenkurve zeigt nach jeder Partie die Schätzung des Teilmodells aus den bis dahin letzten
+     zehn Partien der Zeitklasse (`spiel/wertung.ts`, `phasenverlauf`), nur wo die Spanne schmal ist;
+     sonst der Satz „noch zu wenige Partien … für eine Zahl“. Neue Wertungspunkte speichern keine
+     Phasenwerte mehr (`phasen` bleibt für ältere Punkte lesbar).
+  2. Wertung je Zeitklasse wie bei Lichess: eigene Elo-Kette für Blitz, Schnellschach und Klassisch,
+     Reiter „Zeitklasse“ in der Karte, sobald mehr als eine Zeitklasse Partien hat; Startwert aus dem
+     Elo-Modell der Zeitklasse; Gegnerzahl des Bots (je Zeitklasse, sobald gemessen). Kein neues
+     Speicherformat: Neue Punkte tragen `tempo`, ältere Punkte ohne Angabe zählen als Schnellschach
+     (bisherige Standarduhr 10+0), Blitz und Klassisch beginnen neu.
+  3. „Vorläufig“ in den ersten zehn Partien einer Zeitklasse (K-Faktor 32), wie das „?“ bei Lichess.
+  4. Jede Karte nennt die andere Zahl: „Deine Wertung“ zeigt „Aus deinen Zügen: etwa … (von bis)“,
+     „Deine Spielstärke“ zeigt „Aus deinen Ergebnissen: Wertung …“.
+- **Schwelle „schmal“ von 350 auf 400:** Die halbe 90-%-Spanne des Mittelspiels liegt bei zehn
+  Schnellschach-Partien bei 395, bei Klassisch bei 315; mit 350 hätte das Mittelspiel im
+  Schnellschach nie eine Zahl bekommen. Mit 400 erscheint sie ab etwa zehn Partien; Eröffnung (531)
+  und Endspiel (911) bleiben im Schnellschach ohne Zahl, bis die Teilmodelle besser sind. Blitz
+  bekommt keine Phasenzahl.

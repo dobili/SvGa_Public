@@ -1745,6 +1745,12 @@ Tests (Nummern ohne Verweis, Verweise ohne Abbildung), Impressum „(Texte und A
 Semikolons aus den Rechtstexten. Testpunkte N784–N787. Einzelheiten in ENTSCHEIDUNGEN „Website an
 das Buch angeglichen“.
 
+**Wertung und Spielstärke angepasst (24.10.2026 nachmittags, Empfehlungen vom Autor angenommen):**
+Wertung je Zeitklasse (eigene Elo-Kette, Reiter, ohne neues Speicherformat), „vorläufig“ in den ersten
+zehn Partien, Phasenkurve aus der Schätzung über die letzten zehn Partien statt leerer Werte je
+Partie, beide Zahlen (Ergebnisse, Züge) nennen einander; Schwelle „schmal“ 400. Testpunkte N788–N791.
+Offen dazu: Gegnerzahl je Zeitklasse in der Wertung, sobald die drei Zahlen je Bot gemessen sind.
+
 1. Spielerprofile: Auswertung abschließen, aufbereiten.py, betabinom.py für alle drei Filter;
    Bericht an den Autor (Raten, Fehler je Partie, Verlust je Fehler, Kopplungen, Tagesform).
 2. Tiefe 18: etwa 1000 Spielerpartien mit der Engine der App nachrechnen, Umrechnung der

@@ -62,8 +62,12 @@ const KLAR_GEWONNEN = 5;
 /** Höchstens so viele Partien gehen in eine Schätzung ein (Eichung der Spanne bis zehn). */
 export const HOECHSTENS_PARTIEN = 10;
 const RUNDUNG = 50;
-/** Die Zahl einer Phase erscheint nur, wenn 90 % der Spieler höchstens so weit danebenliegen. */
-export const SCHMAL = 350;
+/**
+ * Die Zahl einer Phase erscheint nur, wenn 90 % der Spieler höchstens so weit danebenliegen.
+ * 400 statt 350 (24.10.2026): Die halbe Spanne des Mittelspiels liegt bei zehn Schnellschach-Partien
+ * bei 395; mit 350 bekäme das Mittelspiel im Schnellschach nie eine Zahl (ENTSCHEIDUNGEN).
+ */
+export const SCHMAL = 400;
 
 type Zugklasse = "ok" | "ungenau" | "fehler" | "patzer";
 

@@ -17,6 +17,10 @@
  * Gewertet werden nur beendete Partien gegen die Engine aus der Grundstellung (Wunsch des
  * Autors: nichts aus Abbildungen oder aufgebauten Stellungen) ohne Rücknahme mit Haken
  * „gewertete Partie“ und fertiger Auswertung; Partien mit zu wenigen Zügen für eine Schätzung zählen nicht.
+ * Seit 0.2.125 (Empfehlung, vom Autor am 24.10.2026 angenommen) läuft die Wertung je Zeitklasse
+ * (Blitz, Schnellschach, Klassisch) als eigene Elo-Kette wie bei Lichess; ältere Punkte ohne
+ * Zeitklasse zählen als Schnellschach. Die Kurve je Phase kommt nicht mehr aus Werten je Partie,
+ * sondern aus der Schätzung über die letzten zehn Partien (phasenverlauf).
  * Abhängigkeiten: spiel/genauigkeit.ts, spiel/auswertung.ts, spiel/partie.ts, spiel/zuege.ts,
  * speicher/partien.ts (Partieeintrag).
  */
@@ -28,14 +32,15 @@ import {
   istSchmal,
   kennzahlenMittel,
   schaetzung,
+  WERTUNGSTEMPI,
   wertungstempo,
   type Partiekennzahlen,
   type Wertungsschaetzung,
   type Wertungstempo,
 } from "./elomodell";
-import { spielstaerke, spielstaerkeJePhase, type Spielstaerke } from "./genauigkeit";
+import { spielstaerke, type Spielstaerke } from "./genauigkeit";
 import { stellungen, type Partie } from "./partie";
-import { phasenJeStellung, type Phase } from "./phasen";
+import type { Phase } from "./phasen";
 import { sanZuUci } from "./zuege";
 
 /** Die Grundstellung ohne Zähler (Felder, Seite am Zug, Rochade, En passant). */
@@ -61,8 +66,39 @@ export interface Wertungspunkt {
   readonly ergebnis: Punktwert;
   /** Die Wertung des Lesers nach der Partie, gerundet. */
   readonly wertung: number;
-  /** Schätzung der Engine für den Leser je Phase dieser Partie; null bei zu wenigen Zügen. */
+  /**
+   * Schätzung je Phase dieser Partie aus älteren Punkten (vor 0.2.125). Neue Punkte tragen hier
+   * null: Eine Zahl je Phase gibt es nur noch über mehrere Partien (phasenverlauf).
+   */
   readonly phasen: Readonly<Record<Phase, number | null>>;
+  /**
+   * Zeitklasse der Partie (seit 0.2.125, Wertung je Zeitklasse wie bei Lichess). Punkte ohne
+   * Angabe stammen aus der Zeit mit einer Wertung für alles und zählen als Schnellschach.
+   */
+  readonly tempo?: Wertungstempo;
+}
+
+/** Die Zeitklasse eines Punktes; ältere Punkte ohne Angabe zählen als Schnellschach. */
+export function tempoDesPunkts(punkt: Wertungspunkt): Wertungstempo {
+  return punkt.tempo ?? "rapid";
+}
+
+/** Der Verlauf einer Zeitklasse (Elo-Kette je Zeitklasse, seit 0.2.125). */
+export function verlaufDerZeitklasse(
+  punkte: readonly Wertungspunkt[],
+  tempo: Wertungstempo,
+): Wertungspunkt[] {
+  return punkte.filter((p) => tempoDesPunkts(p) === tempo);
+}
+
+/** Die Zeitklassen mit mindestens einem Punkt, in fester Reihenfolge (Blitz, Schnell, Klassisch). */
+export function zeitklassenMitWertung(punkte: readonly Wertungspunkt[]): Wertungstempo[] {
+  return WERTUNGSTEMPI.filter((tempo) => punkte.some((p) => tempoDesPunkts(p) === tempo));
+}
+
+/** Vorläufig heißt eine Wertung in den ersten Partien (K-Faktor 32), wie das „?“ bei Lichess. */
+export function istVorlaeufig(verlauf: readonly Wertungspunkt[]): boolean {
+  return verlauf.length < ANFANGSPARTIEN;
 }
 
 /** Ohne Schätzung je Phase (ältere Punkte). */
@@ -139,33 +175,6 @@ export function staerkeLetzterPartien(
   };
 }
 
-/**
- * Die Schätzung je Phase für den Leser (ab sechs Zügen je Phase; seit 0.2.125 nur, wo die Spanne
- * des Teilmodells schmal genug ist, sonst null).
- */
-export function phasenstaerke(eintrag: Partieeintrag): Readonly<Record<Phase, number | null>> {
-  if (eintrag.werte.length === 0) return OHNE_PHASEN;
-  const p = eintrag.partie;
-  const urteile = zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende);
-  const alle = stellungen(p);
-  const gespielte = p.zuege.map((zug, index) => sanZuUci(alle[index] ?? "", zug.san));
-  const je = spielstaerkeJePhase(
-    p,
-    eintrag.werte,
-    urteile,
-    eintrag.beste,
-    gespielte,
-    phasenJeStellung(p),
-    wertungstempo(p.einstellung.uhr),
-  );
-  const farbe = p.einstellung.eigeneFarbe;
-  return {
-    eroeffnung: je.eroeffnung[farbe].spielstaerke,
-    mittelspiel: je.mittelspiel[farbe].spielstaerke,
-    endspiel: je.endspiel[farbe].spielstaerke,
-  };
-}
-
 /** Das Ergebnis aus Sicht des Lesers; null, solange die Partie läuft. */
 export function ergebnisFuer(partie: Partie): Punktwert | null {
   const ende = partie.ende;
@@ -215,10 +224,15 @@ export function wertungspunktFuer(
   const staerke = staerkeDerPartie(eintrag);
   if (!staerke) return null;
   const gegner = Math.round(gegnerstaerke(p.einstellung));
-  const bisher = aktuelleWertung(punkte);
+  // Seit 0.2.125 je Zeitklasse eine eigene Kette (wie bei Lichess): Die Wertung dieser Partie
+  // hängt an der letzten Wertung derselben Zeitklasse, die erste Partie der Zeitklasse an der
+  // Schätzung des Elo-Modells dieser Zeitklasse.
+  const tempo = wertungstempo(p.einstellung.uhr);
+  const kette = verlaufDerZeitklasse(punkte, tempo);
+  const bisher = aktuelleWertung(kette);
   const eigene = bisher ?? staerke[p.einstellung.eigeneFarbe].spielstaerke;
   if (eigene === null) return null;
-  const k = punkte.length < ANFANGSPARTIEN ? K_ANFANG : K_DANACH;
+  const k = istVorlaeufig(kette) ? K_ANFANG : K_DANACH;
   const neu = bisher === null ? eigene : eigene + k * (ergebnis - erwartung(eigene, gegner));
   return {
     partieId: p.id,
@@ -226,8 +240,56 @@ export function wertungspunktFuer(
     gegner,
     ergebnis,
     wertung: Math.round(neu),
-    phasen: phasenstaerke(eintrag),
+    phasen: OHNE_PHASEN,
+    tempo,
   };
+}
+
+/** Die Kennzahlen des Lesers je Partie (nur ausgewertete), für den Phasenverlauf der Kurve. */
+export function kennzahlenJePartie(
+  partien: readonly Partieeintrag[],
+  ids: ReadonlySet<string>,
+): Map<string, Partiekennzahlen> {
+  const ergebnis = new Map<string, Partiekennzahlen>();
+  for (const eintrag of partien) {
+    if (!ids.has(eintrag.partie.id)) continue;
+    const seite = staerkeDerPartie(eintrag)?.[eintrag.partie.einstellung.eigeneFarbe];
+    if (seite?.kennzahlen) ergebnis.set(eintrag.partie.id, seite.kennzahlen);
+  }
+  return ergebnis;
+}
+
+/** Ein Punkt des Phasenverlaufs: die Schätzung der Phase nach dieser Partie, falls schmal. */
+export interface Phasenpunkt {
+  readonly punkt: Wertungspunkt;
+  readonly schaetzung: Wertungsschaetzung;
+}
+
+/**
+ * Der Verlauf einer Phase über die Punkte einer Zeitklasse (Kurve „Eröffnung“, „Mittelspiel“,
+ * „Endspiel“ in den Einstellungen, seit 0.2.125): Nach jeder Partie die Schätzung des Teilmodells
+ * aus den Kennzahlen der bis dahin letzten zehn Partien, nur wo die Spanne schmal ist (SCHMAL).
+ * Warum: Aus einer Partie ist die Spanne einer Phase nie schmal; über mehrere Partien wird sie es.
+ * Eingaben: Punkte einer Zeitklasse (ältester zuerst), Kennzahlen je Partie, Zeitklasse, Phase.
+ * Beispiel: zwölf Schnellschach-Partien → ab etwa der sechsten eine Zahl für das Mittelspiel.
+ */
+export function phasenverlauf(
+  punkte: readonly Wertungspunkt[],
+  kennzahlen: ReadonlyMap<string, Partiekennzahlen>,
+  tempo: Wertungstempo,
+  phase: Phase,
+): Phasenpunkt[] {
+  const ergebnis: Phasenpunkt[] = [];
+  const fenster: Partiekennzahlen[] = [];
+  for (const punkt of punkte) {
+    const k = kennzahlen.get(punkt.partieId);
+    if (!k) continue;
+    fenster.push(k);
+    if (fenster.length > HOECHSTENS_PARTIEN) fenster.shift();
+    const s = schaetzung(tempo, kennzahlenMittel(fenster), fenster.length, phase);
+    if (istSchmal(s)) ergebnis.push({ punkt, schaetzung: s });
+  }
+  return ergebnis;
 }
 
 /** Der Verlauf mit dieser Partie, falls sie zählt; sonst unverändert. */

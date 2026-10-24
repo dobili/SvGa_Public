@@ -77,6 +77,7 @@ export function Ich() {
   const { navigiere } = useNavigation();
   const offline = useOfflineStand();
   const wertung = useSpeicher((z) => z.daten.spiel.wertung);
+  const partien = useSpeicher((z) => z.daten.spiel.partien);
   const index = useDaten(ladeIndex, "index");
   const [updateMeldung, setzeUpdateMeldung] = useState<string | null>(null);
   const datenstand =
@@ -109,7 +110,7 @@ export function Ich() {
           „Einstellungen“. */}
       <h1 className="nur-vorlesen">{t("ich.titel")}</h1>
       <TourZeile />
-      <Wertungskurve punkte={wertung} />
+      <Wertungskurve punkte={wertung} partien={partien} />
       <Fortschrittsuebersicht />
       <EinstellungenKarte />
       <DatenLoeschen />

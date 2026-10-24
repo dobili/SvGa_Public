@@ -8,15 +8,24 @@
  * 0.2.125 (Entscheidung des Autors, 23.10.2026) eine eigene Zahl je Zeitklasse aus dem Elo-Modell
  * (spiel/elomodell.ts); eine Zahl je Phase nur, wenn ihre Spanne schmal genug ist. Steht im Bereich
  * Spielen über der Liste der Partien (Partienliste.tsx).
- * Abhängigkeiten: spiel/wertung.ts (staerkeLetzterPartien), spiel/elomodell.ts, speicher/partien.ts,
- * wertungstext.ts, InfoKnopf, i18n.
+ * Seit 0.2.125 steht je Zeitklasse auch die Elo-Wertung aus den Ergebnissen dabei (Empfehlung, vom
+ * Autor am 24.10.2026 angenommen): Zugqualität und Ergebnisse nebeneinander erklären sich gegenseitig.
+ * Abhängigkeiten: spiel/wertung.ts (staerkeLetzterPartien, verlaufDerZeitklasse), spiel/elomodell.ts,
+ * speicher/partien.ts, speicher/speicher.ts, wertungstext.ts, InfoKnopf, i18n.
  */
 import { useMemo } from "react";
 import { t } from "../../i18n/sprache";
 import { WERTUNGSTEMPI } from "../../spiel/elomodell";
 import { PHASEN } from "../../spiel/phasen";
-import { staerkeLetzterPartien, type Spielerschaetzung } from "../../spiel/wertung";
+import {
+  aktuelleWertung,
+  istVorlaeufig,
+  staerkeLetzterPartien,
+  verlaufDerZeitklasse,
+  type Spielerschaetzung,
+} from "../../spiel/wertung";
 import type { Partieeintrag } from "../../speicher/partien";
+import { useSpeicher } from "../../speicher/speicher";
 import { MitInfo } from "./InfoKnopf";
 import { entsprichtText, zeitklassenname } from "./wertungstext";
 
@@ -55,7 +64,19 @@ export function LetzteSpielstaerke({ partien }: { partien: readonly Partieeintra
   );
 }
 
-/** Eine Zeitklasse: Zahl, Spanne mit Zahl der Partien, dazu die Phasen mit schmaler Spanne. */
+/** Die Elo-Wertung dieser Zeitklasse aus den Ergebnissen, mit „vorläufig“ in den ersten Partien. */
+function Ergebniszeile({ tempo }: { tempo: Spielerschaetzung["tempo"] }) {
+  const punkte = useSpeicher((z) => z.daten.spiel.wertung);
+  const kette = verlaufDerZeitklasse(punkte, tempo);
+  const wertung = aktuelleWertung(kette);
+  if (wertung === null) return null;
+  const schluessel = istVorlaeufig(kette)
+    ? "spielstaerke.letzte.ausErgebnissenVorlaeufig"
+    : "spielstaerke.letzte.ausErgebnissen";
+  return <p className="hinweis">{t(schluessel, { wertung })}</p>;
+}
+
+/** Eine Zeitklasse: Zahl, Spanne mit Zahl der Partien, die Phasen mit schmaler Spanne, die Wertung. */
 function Zeitklasse({ s }: { s: Spielerschaetzung }) {
   const phasen = PHASEN.filter((ph) => s.phasen[ph] !== null);
   return (
@@ -87,6 +108,7 @@ function Zeitklasse({ s }: { s: Spielerschaetzung }) {
             .join(" · ")}
         </p>
       )}
+      <Ergebniszeile tempo={s.tempo} />
     </div>
   );
 }

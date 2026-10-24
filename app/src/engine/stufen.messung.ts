@@ -121,7 +121,7 @@ function alleGleich(n: Stufennummer): Readonly<Record<Phase, Stufennummer>> {
 
 /** Ein vorgefertigter Bot mit seinen Stufen je Phase und seinem Profil. */
 function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
-  const bot = /^@([a-z-]+)$/.exec(kern);
+  const bot = /^@([a-z0-9-]+)$/.exec(kern); // Ziffern: Kandidaten „k1-…“ (0.2.124)
   if (!bot?.[1]) return null;
   // Vorgefertigte Bots und die Kandidaten des neuen Bot-Satzes (0.2.124)
   const g = [...GEGNER, ...BOTKANDIDATEN].find((x) => x.kennung === bot[1]);

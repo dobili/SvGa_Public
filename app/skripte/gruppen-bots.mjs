@@ -18,7 +18,8 @@ function lies(name) {
 }
 
 const zahlen = new Map(
-  [...lies("botstaerke-daten.ts").matchAll(/"([a-z0-9-]+)": (-?\d+),/g)].map((m) => [
+  // Schlüssel mit oder ohne Anführungszeichen (Prettier lässt sie bei einfachen Namen weg)
+  [...lies("botstaerke-daten.ts").matchAll(/^\s+"?([a-z0-9-]+)"?: (-?\d+),$/gm)].map((m) => [
     m[1],
     Number(m[2]),
   ]),

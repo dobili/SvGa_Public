@@ -4853,3 +4853,19 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Die Leiter (Ergebnisse aller Paarungen) verbindet Bots, Stufen mit und ohne Zusatzfehler und
   die Kandidaten.
 
+## Messung der Bots gegen menschlich spielende Stufen (24.10.2026 mittags, Fable)
+
+- **Befund (botelo4, erster Lauf):** Mit dem Wahlmodell spielt ein Bot bei gegebener Wertung
+  menschlich stark, unabhängig von seiner Grundschicht: Die Stufen mit Zusatzfehlern („Nm“)
+  schlagen die reinen Grundschichten 1 bis 5 mit 20:0, erst bei Stufe 7 ist es ausgeglichen; alle
+  64 Bots gewinnen 12:12 gegen ihre beiden Nachbarstufen. Die reinen Stufen 1 bis 6 sind viel
+  schwächer als jeder Lichess-400er; Paarungen „Bot gegen reine Stufe“ sind gesättigt und tragen
+  nichts zur Leiter bei.
+- **Entscheidung:** Bots und Kandidaten werden gegen die zwei nächsten Nm-Stufen gemessen (Stufe
+  ihres Mittelspiels und die darüber), die Nm-Stufen selbst gegen sich (Anker, Tiefe 18, Elo-Modell).
+  Die Nm-Stufen bilden eine menschliche Leiter von etwa 400 (1m, 2m: die Wertung des Wahlmodells
+  beginnt bei 400) bis 2966 (10m). Folge für die App: Eine eigene Stufe mit Zusatzfehlern spielt
+  wie das Wahlmodell bei der Wertung der Stufe; der bisherige „Abzug der Zusatzfehler“
+  (ZUSATZ_ABZUG) wird dadurch hinfällig und für Stufe 1 bis 6 sogar ein Aufschlag – wird mit der
+  Verankerung neu gefasst (engine/botstaerke.ts).
+

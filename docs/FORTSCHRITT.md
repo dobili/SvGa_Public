@@ -2061,7 +2061,11 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   fertigen aus der Liste nehmen). Danach: `BOTELO_ORDNER=../buch/arbeit/botelo4 npx vitest run
   --config vitest.messung.config.ts src/engine/botstaerke.messung.ts` → botstaerke-daten.ts
   (Anker mit dem neuen Elo-Modell), Uhrabzug je Zeitklasse eintragen.
-- **Zweiter Lauf angehängt** (botelo4/lauf2.sh, Stand 869cb36): Befund: Das Elo-Modell gilt nur
+- **Zweiter Lauf umgestellt** (botelo4/lauf2.sh, 24.10. mittags): Bots gegen reine Stufen waren
+  gesättigt (alle 12:12; ENTSCHEIDUNGEN „Messung der Bots gegen menschlich spielende Stufen“);
+  jetzt Anker 1m-1m … 10m-10m (40 Partien, Tiefe 18), dann die 64 Bots (bots-paarungen-m.txt,
+  12 Partien) und die 240 Kandidaten (kandidaten-paarungen-m.txt, 10) je gegen zwei Nm-Stufen.
+- **Zweiter Lauf, erste Fassung** (botelo4/lauf2.sh, Stand 869cb36): Befund: Das Elo-Modell gilt nur
   für menschliches Spiel; die reinen Grundschichten (anker-s0 aus botelo3) bewertet es unplausibel
   (1x1 → 879, 4x0.2 → 700). Deshalb neue Anker an den Stufen mit Zusatzfehlern (1m-1m … 8m-8m,
   40 Partien, Ordner anker-s9), Bewertung in Tiefe 18 mit der Engine der App

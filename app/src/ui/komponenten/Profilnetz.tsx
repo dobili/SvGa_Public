@@ -15,24 +15,24 @@ import type { KeyboardEvent } from "react";
 import { stufenwort } from "./fehlerprofil";
 
 const BREITE = 420;
-const HOEHE = 340;
+const HOEHE = 336;
 const MITTE_X = BREITE / 2;
 const MITTE_Y = 176;
-const RADIUS = 116;
+const RADIUS = 102;
 /** Die sechs Punkte je Achse und ihr Anteil am Radius; Index 0 ist „aus“. */
 const NETZSTUFEN: readonly (number | null)[] = [null, -2, -1, 0, 1, 2];
 const RADIEN = [0.13, 0.32, 0.49, 0.66, 0.83, 1];
 const NORMAL = 0;
 const NETZ_MIN = -2;
 const NETZ_MAX = 2;
-const BESCHRIFTUNG = 1.27;
+const BESCHRIFTUNG = 1.28;
 const PUNKT = 6.5;
 const PUNKT_AUS = 5;
 const TREFFER = 13;
 /** Abstand der Beschriftung zur Speiche, waagerecht und zur zweiten Zeile. */
 const SEITLICH = 14;
 const MITTIG = 8;
-const ZEILE = 15;
+const ZEILE = 19;
 const VOLLKREIS = 2 * Math.PI;
 const OBEN = -Math.PI / 2;
 

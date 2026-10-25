@@ -5499,3 +5499,46 @@ das Wort klappt höchstens fünf Namen auf, der Rest wird abgeschnitten.
   Bullet): neue Regel 6,9 bis 8,0 % der Züge einer Seite, der alte Buchindex 3,7 bis 4,7 %. Die
   Schätzung (6, 8, 10, 11 % bei 800, 1200, 1600, 2000) ersetzt durch die Schnellschach-Werte
   7,5, 7,6, 7,5, 8,0 % (Empfehlung nach Regel 9, N949). Messskript nur lokal.
+
+## Fehlerprofil vereinfacht, Fehler und Flecken als Spinnennetz (25.10.2026, Opus, Version 0.2.136)
+
+Auftrag „Variante A“ aus dem Koordinierungschat (vom Autor am 25.10.2026 freigegeben) und die
+Netz-Vorschau (privates Artifact „Fehler und Flecken als Spinnennetz“, E1 bis E4 freigegeben).
+
+- Begründung (Koordinierungschat): Zuverlässigkeit je Fehlerart und Fleck nach Split-Half mit
+  Spearman-Brown an etwa 1 280 Spielerprofilen und Trennbarkeit der fünf Stufen je Elo-Band.
+  Mehrere Regler messen kaum ein echtes Merkmal von Spielern oder stecken in anderen; die Flecken
+  einzeln sind zu schwach, als Gruppen tragen sie.
+- Regler (`ui/komponenten/fehlergruppen.ts`): figurHaengen, drohungIgnoriert, taktikUebersehen,
+  schlagVerpasst (neu), koenigMitte, koenigsschild, bauernvorstoss, bauernzugOhneNot (neu),
+  „Eröffnungsfehler“ für verfruehteDame + tempoverlust + bauernraub. Ohne Regler: schlagreflex,
+  bauerEingestellt, falscherAbtausch, koenigPassiv, koenigszugOhneNot, ungenau; pattGesetzt als
+  Schalter „Setzt nie Patt“. `REGLERARTEN` (engine/eigenstufen.ts) kennt dafür auch
+  schlagVerpasst und bauernzugOhneNot (Quantile lagen schon vor); die gestrichenen bleiben dort,
+  damit gespeicherte Werte bis zum Speichern wirken.
+- Netz (E1, E2): fünf Achsen Figuren (Figur hängen, Drohung), Taktik (Taktik, Schlag verpasst),
+  König (Mitte, Schild), Bauernzüge (Vorstoß, ohne Not), Eröffnung (Eröffnungsfehler). Eine Achse
+  schreibt ihren Wert in alle Mitglieder und zeigt den gerundeten Mittelwert der eingeschalteten.
+  Feinregler hinter einem Haken; dann sind Netz, Vorlagen und Höchstverlust gesperrt. Die
+  Feinregler beginnen offen, wenn das Profil nicht ins Netz passt (Achse uneinheitlich,
+  Höchstverluste verschieden, Häufigkeit nicht 100 %, unmenschliche Stufe). Fehlerhäufigkeit und
+  „unmenschliche Werte“ stehen seitdem bei den Feinreglern.
+- Ein Höchstverlust für alle Fehler (E3), im Feinmodus je Regler.
+- Flecken nur als Netz (E4), fünf Gruppen: ruhig; bauer; rueckzug + springer; diagonale + turm +
+  dame + roentgen; zwischenzug + abzug + grundreihe. Die Fehlervorlagen ändern die Flecken nicht
+  mehr (vorher schaltete „Taktisch blind“ drei Flecken ein); die Flecken haben eigene Vorlagen.
+- Speicherweg: Format unverändert, keine Migration. Gestrichene Arten mit gespeicherter Stufe,
+  altem Gewicht, Höchstverlust oder abweichendem An/Aus wirken weiter, bis der Leser speichert
+  (eigene Bots) oder im Fehler- oder Fleckenreiter etwas ändert (eigene Stufe); dann werden sie
+  neutral (`neutralisiert`: ohne Stufe, Gewicht und Höchstverlust; an genau dann, wenn ein Regler
+  an ist). Ein Satz weist vorher darauf hin. Test mit drei gespeicherten Gegnern aus 0.2.117 bis
+  0.2.134 (`speicher/testdaten/alteGegner*.json`): wirksame Gewichte gleich wie in 0.2.134.
+- Fertige Bots: CHARAKTERE unverändert (Variante B später mit Nachmessung). Kein Bildschirm zeigt
+  ihr Fehlerprofil als Regler; die Beschreibungen nennen gestrichene Arten weiter in Worten.
+  `engine/vorgefertigteUnveraendert.test.ts` vergleicht faktorenAus bei fünf Wertungen,
+  menschenwerteAus und hatZusatzfehler aller 82 Bots mit 0.2.134.
+- `hatZusatzfehler` prüft alle Fehlerarten außer „ungenau“ (vorher nur die zwölf mit
+  Gelegenheitsdaten): Ein eigener Gegner mit nur „Schlag verpasst“ oder „Patt“ bekam vorher kein
+  Wahlmodell. Für die fertigen Bots ändert sich nichts (geprüft).
+- Nicht Teil: „ungenau“ im Spiel, gezielte Suche nach bauernzugOhneNot, koenigszugOhneNot,
+  bauerEingestellt, CHARAKTERE neu zuordnen.

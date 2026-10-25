@@ -9,7 +9,8 @@
   justify-self: center;
   align-self: center;
   font-family: var(--schrift);
-  font-size: 13px;
+  /* In Einheiten des Bildes: bei 360 Pixeln Breite etwa 12 Pixel auf dem Schirm. */
+  font-size: 17px;
   touch-action: manipulation;
 }
 
@@ -91,7 +92,7 @@
 .profilnetz text.profilnetz-wert {
   fill: var(--gold-text);
   font-weight: 700;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .profilnetz text.profilnetz-wert.ist-aus {

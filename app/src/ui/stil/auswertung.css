@@ -212,15 +212,17 @@
   position: relative;
   display: grid;
   grid-template-columns: 37.5% 25% 37.5%;
-  height: 24px;
+  /* 32 Pixel, damit die Zonenwörter in der kleinsten Schriftstufe über den Wertbalken passen. */
+  height: 32px;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .zugklasse-zone {
   position: relative;
-  font-size: 0.6rem;
-  line-height: 13px;
+  /* Kleinste Schriftstufe der App (13 px) statt 0.6rem (etwa 10 px), DS56. */
+  font-size: var(--groesse-fein);
+  line-height: 1.2;
   text-align: right;
   padding-right: 4px;
   color: var(--text-leise);
@@ -239,7 +241,7 @@
 .zugklasse-wert {
   position: absolute;
   left: 0;
-  top: 14px;
+  top: 20px;
   height: 6px;
   border-radius: 3px;
 }

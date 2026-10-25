@@ -5,9 +5,9 @@
  * Rolle im Gesamtbild: Teil der Porträtwahl (Portraetwahl.tsx) für Profil und eigene Bots. Farben
  * stehen als Farbfelder zum Antippen da. Seit 0.2.141 (Wunsch des Autors: Vorschaubilder statt
  * Ausklappmenüs, platzsparend) zeigt jedes andere Merkmal eine waagerecht wischbare Reihe kleiner
- * Bilder: das eigene Gesicht mit genau dieser Variante. Die Formen gibt der Stil „Personas“ vor;
- * mehr Auswahl gibt es deshalb bei den Farben. Alle Felder sind Optionsfelder mit Namen für
- * Bildschirmleser.
+ * Bilder: das eigene Gesicht mit genau dieser Variante. Die Formen kommen aus dem Stil „Personas“,
+ * seit 0.2.142 dazu ebenso viele eigene Zeichnungen (eigeneTeile.ts). Alle Felder sind
+ * Optionsfelder mit Namen für Bildschirmleser.
  * Abhängigkeiten: merkmale.ts, speicher/profil.ts (svgAdresse), i18n, lucide-react, React.
  */
 import { Dices } from "lucide-react";

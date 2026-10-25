@@ -7,10 +7,12 @@
  * Haar- und Hautfarbe, Augen, Nase, Mund, Bart und Kleidung (skripte/erzeuge-portraetwahl.mjs).
  * Dieselben Teile kann der Leser hier selbst wählen. Die Bibliothek lädt erst der Baukasten nach
  * (dynamischer Import); gespeichert wird das fertige SVG (speicher/profil.ts). Hintergrund und
- * Rundung wie bei den Bots, die Grundfarbe legt die App dahinter (--portraet-grund).
- * Abhängigkeiten: @dicebear/core, @dicebear/personas (nachgeladen), speicher/profil.ts.
+ * Rundung wie bei den Bots, die Grundfarbe legt die App dahinter (--portraet-grund). Seit 0.2.142
+ * kommen eigene Formen für Augen, Nase, Mund, Bart und Oberteil dazu (eigeneTeile.ts).
+ * Abhängigkeiten: @dicebear/core, @dicebear/personas (nachgeladen), speicher/profil.ts, eigeneTeile.ts.
  */
 import type { Merkmale } from "../../speicher/profil";
+import { grundform, mitEigenenTeilen } from "./eigeneTeile";
 
 /** Die Felder des Baukastens in der Reihenfolge der Anzeige mit ihren Werten. */
 export const MERKMALE = {
@@ -72,11 +74,53 @@ export const MERKMALE = {
     "8d5524",
     "4a2c20",
   ],
-  augen: ["open", "happy", "wink", "sleep", "glasses", "sunglasses"],
-  nase: ["smallRound", "mediumRound", "wrinkles"],
-  mund: ["smile", "bigSmile", "smirk", "lips", "surprise", "frown"],
-  bart: ["keiner", "shadow", "goatee", "soulPatch", "pyramid", "beardMustache", "walrus"],
-  koerper: ["rounded", "squared", "small", "checkered"],
+  // Seit 0.2.142 doppelt so viele Formen (Wunsch des Autors): die hinteren sind eigene
+  // Zeichnungen im Stil von Personas (eigeneTeile.ts).
+  augen: [
+    "open",
+    "happy",
+    "wink",
+    "sleep",
+    "glasses",
+    "sunglasses",
+    "big",
+    "brows",
+    "lashes",
+    "roundGlasses",
+    "surprised",
+    "narrow",
+  ],
+  nase: ["smallRound", "mediumRound", "wrinkles", "pointed", "broad", "button"],
+  mund: [
+    "smile",
+    "bigSmile",
+    "smirk",
+    "lips",
+    "surprise",
+    "frown",
+    "laugh",
+    "tongue",
+    "neutral",
+    "whistle",
+    "wavy",
+    "gapTooth",
+  ],
+  bart: [
+    "keiner",
+    "shadow",
+    "goatee",
+    "soulPatch",
+    "pyramid",
+    "beardMustache",
+    "walrus",
+    "shortBeard",
+    "longBeard",
+    "thinMustache",
+    "sideburns",
+    "chinStrap",
+    "henriquatre",
+  ],
+  koerper: ["rounded", "squared", "small", "checkered", "collar", "stripes", "hoodie", "tie"],
   kleidung: [
     "456dff",
     "54d7c7",
@@ -159,7 +203,7 @@ export function ladeBauer(): Promise<Bauer> {
       (m: Merkmale) => {
         const v = vollstaendig(m);
         const mitBart = v.bart !== "keiner";
-        return createAvatar(personas, {
+        const svg = createAvatar(personas, {
           seed: "profil",
           size: GROESSE,
           radius: RUNDUNG,
@@ -167,16 +211,18 @@ export function ladeBauer(): Promise<Bauer> {
           hair: [v.haar],
           hairColor: [v.haarfarbe],
           skinColor: [v.haut],
-          eyes: [v.augen],
-          nose: [v.nase],
-          mouth: [v.mund],
-          body: [v.koerper],
+          eyes: [grundform("augen", v.augen)],
+          nose: [grundform("nase", v.nase)],
+          mouth: [grundform("mund", v.mund)],
+          body: [grundform("koerper", v.koerper)],
           clothingColor: [v.kleidung],
-          ...(mitBart ? { facialHair: [v.bart] } : {}),
+          ...(mitBart ? { facialHair: [grundform("bart", v.bart)] } : {}),
           facialHairProbability: mitBart ? SICHER : 0,
-        } as Parameters<typeof createAvatar<typeof personas>>[1])
-          .toString()
-          .replace(HINTERGRUND_RECHTECK, "");
+        } as Parameters<typeof createAvatar<typeof personas>>[1]).toString();
+        return mitEigenenTeilen(svg.replace(HINTERGRUND_RECHTECK, ""), v, {
+          haar: v.haarfarbe,
+          kleidung: v.kleidung,
+        });
       },
   );
   return geladen;

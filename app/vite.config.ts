@@ -189,7 +189,7 @@ function ohneOrtWasm(): Plugin {
     apply: "build",
     generateBundle(_optionen, buendel) {
       for (const name of Object.keys(buendel)) {
-        if (/ort-wasm-simd-threaded[^/]*\.wasm$/.test(name)) delete buendel[name];
+        if (/ort-wasm-simd-threaded[^/]*\.wasm$/.test(name)) Reflect.deleteProperty(buendel, name);
       }
     },
   };

@@ -29,8 +29,11 @@
   Cache-Control: public, max-age=31536000, immutable
 # Sicherheit für alle Seiten (19.10.2026): kein Raten des Dateityps, keine Einbettung in fremde
 # Seiten, beim Verlassen nur die Domain als Herkunft, keine Kamera, kein Mikrofon, kein Standort.
+# Seit T4 (25.10.2026) dazu HSTS (ein Jahr nur verschlüsselt, ohne Unterdomains); die Content
+# Security Policy hängt der Build an dist/_headers an (vite.config.ts, src/startseite/csp.ts).
 /*
   X-Content-Type-Options: nosniff
   X-Frame-Options: SAMEORIGIN
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Strict-Transport-Security: max-age=31536000

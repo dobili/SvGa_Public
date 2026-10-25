@@ -3,7 +3,9 @@
 // Rolle im Gesamtbild: Vite baut aus src/ die ausgelieferte App in dist/. Das Plugin
 // vite-plugin-pwa erzeugt den Service Worker aus src/sw.ts und trägt die Liste aller Dateien ein,
 // die das Gerät für die Offline-Nutzung vorab lädt (Konzept Abschnitt 11).
-import { mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { appendFileSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import react from "@vitejs/plugin-react";
 import type { Plugin } from "vite";
@@ -15,6 +17,7 @@ import {
   werkzeugkastenseite,
 } from "./src/startseite/trainingsrahmen";
 import type { Trainingsseite } from "./src/startseite/trainingsseiten";
+import { eingebetteteSkripte, sicherheitsregel } from "./src/startseite/csp";
 
 /** App-Version aus package.json, sichtbar in den Einstellungen (Konzept Abschnitt 14.1). */
 const paket = JSON.parse(readFileSync(new URL("./package.json", import.meta.url), "utf8")) as {
@@ -134,6 +137,42 @@ function versionsdatei(): Plugin {
   };
 }
 
+/** Alle HTML-Dateien unterhalb eines Ordners. */
+function htmlDateien(ordner: string): string[] {
+  return readdirSync(ordner, { withFileTypes: true }).flatMap((eintrag) => {
+    const pfad = join(ordner, eintrag.name);
+    if (eintrag.isDirectory()) return htmlDateien(pfad);
+    return eintrag.name.endsWith(".html") ? [pfad] : [];
+  });
+}
+
+/**
+ * T4 (Nutzungsprüfung 25.10.2026): Hängt an dist/_headers die Content Security Policy als
+ * „Report-Only“ an, mit den Prüfsummen aller eingebetteten Skripte der gebauten Seiten. So
+ * passt die Regel nach jedem Build zu den Seiten, ohne Prüfsummen von Hand zu pflegen.
+ */
+function sicherheitsregelDatei(): Plugin {
+  let ausgabe = "dist";
+  return {
+    name: "sicherheitsregel",
+    apply: "build",
+    configResolved(konfiguration) {
+      ausgabe = konfiguration.build.outDir;
+    },
+    closeBundle() {
+      const summen = htmlDateien(ausgabe).flatMap((datei) =>
+        eingebetteteSkripte(readFileSync(datei, "utf8")).map((skript) =>
+          createHash("sha256").update(skript).digest("base64"),
+        ),
+      );
+      appendFileSync(
+        join(ausgabe, "_headers"),
+        `# Content Security Policy, beim Bauen erzeugt (T4, vite.config.ts)\n/*\n  Content-Security-Policy-Report-Only: ${sicherheitsregel(summen)}\n`,
+      );
+    },
+  };
+}
+
 /** Farben aus dem Buch für Startbildschirm und Statusleiste (Konzept Abschnitt 10.3). */
 const NAVY = "#16253D";
 const CREME = "#F5F0E6";
@@ -161,6 +200,7 @@ export default defineConfig({
   plugins: [
     texteInHtml(),
     versionsdatei(),
+    sicherheitsregelDatei(),
     react(),
     VitePWA({
       // Eigener Service Worker (src/sw.ts), damit die Installationsseite den Ladefortschritt

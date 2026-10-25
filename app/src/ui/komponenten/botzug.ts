@@ -65,7 +65,10 @@ export function aendereNeueste(
  * für Zug um höchstens eine Stufe von der Stufe des vorigen Engine-Zuges aus.
  * Beispiel: Eröffnung 1, Mittelspiel 4: erster Zug im Mittelspiel 2, dann 3, dann 4.
  */
-export function stufeFuer(partie: Partie, fen: string): Stufennummer {
+export function stufeFuer(
+  partie: Pick<Partie, "zuege" | "einstellung">,
+  fen: string,
+): Stufennummer {
   const ziel = partie.einstellung.stufenJePhase[phaseVon(fen) ?? "mittelspiel"];
   const letzter = [...partie.zuege].reverse().find((z) => z.von === "engine" && z.stufe);
   return letzter?.stufe ? naechsteStufe(letzter.stufe, ziel) : ziel;

@@ -21,6 +21,7 @@ import {
   RefreshCw,
   RotateCcw,
   Save,
+  Settings,
   Share2,
   Trash2,
   Undo2,
@@ -53,6 +54,7 @@ const ZEICHEN = {
   loesung: Eye,
   aktualisieren: RefreshCw,
   fehlerMelden: Bug,
+  einstellungen: Settings,
 } as const satisfies Readonly<Record<string, LucideIcon>>;
 
 export type Knopfaktion = keyof typeof ZEICHEN;

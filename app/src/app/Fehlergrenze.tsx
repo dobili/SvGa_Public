@@ -3,48 +3,19 @@
  * leeren Seite (Konzept 12: Fehler werden nie verschluckt). Seit R57 (24.10.2026) bietet sie an,
  * die technische Fehlermeldung an den Autor zu schicken (freiwilliger Absturzbericht, nur auf
  * Tipp; Datenschutzerklärung „Meldungen aus der App“).
- * Abhängigkeiten: React, app/melden.ts, i18n.
+ * Seit V7 (Nutzungsprüfung 25.10.2026) fängt zuerst die Grenze um jeden Bildschirm
+ * (app/Bildschirmgrenze.tsx); diese äußere Grenze um die ganze App bleibt die letzte Rettung,
+ * etwa wenn die Leiste selbst abstürzt. Geräteangaben gehen nur mit Häkchen mit
+ * (app/Absturzbericht.tsx).
+ * Abhängigkeiten: React, app/Absturzbericht.tsx, i18n.
  */
-import { Component, useState, type ErrorInfo, type ReactNode } from "react";
+import { Component, type ErrorInfo, type ReactNode } from "react";
 import { t } from "../i18n/sprache";
-import { sendeMeldung } from "./melden";
+import { Absturzbericht } from "./Absturzbericht";
 
 interface Zustand {
   readonly fehler: Error | null;
   readonly komponenten: string;
-}
-
-/** Knopf „Fehlerbericht senden“ mit Rückmeldung. */
-function Absturzbericht({ text }: { text: string }) {
-  const [stand, setzeStand] = useState<"bereit" | "sendet" | "gesendet" | "nicht">("bereit");
-  const sende = async () => {
-    setzeStand("sendet");
-    const ergebnis = await sendeMeldung(
-      { art: "absturz", text, seite: window.location.pathname },
-      true,
-    );
-    setzeStand(ergebnis.art === "gesendet" ? "gesendet" : "nicht");
-  };
-  if (stand === "gesendet" || stand === "nicht") {
-    return (
-      <p className="hinweis" role="status">
-        {t(stand === "gesendet" ? "fehler.berichtGesendet" : "fehler.berichtNicht")}
-      </p>
-    );
-  }
-  return (
-    <>
-      <button
-        type="button"
-        className="knopf-zweit"
-        disabled={stand === "sendet"}
-        onClick={() => void sende()}
-      >
-        {t("fehler.berichtSenden")}
-      </button>
-      <p className="hinweis klein">{t("fehler.berichtHinweis")}</p>
-    </>
-  );
 }
 
 export class Fehlergrenze extends Component<{ children: ReactNode }, Zustand> {
@@ -73,7 +44,7 @@ export class Fehlergrenze extends Component<{ children: ReactNode }, Zustand> {
           <button type="button" className="knopf-haupt" onClick={() => window.location.reload()}>
             {t("fehler.neuLaden")}
           </button>
-          <Absturzbericht text={bericht} />
+          <Absturzbericht text={bericht} knopfText={t("fehler.berichtSenden")} />
         </section>
       </div>
     );

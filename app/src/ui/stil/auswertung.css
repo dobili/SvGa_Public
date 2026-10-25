@@ -194,6 +194,9 @@
 }
 
 .zugklasse-urteil {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   margin-left: auto;
   font-size: var(--groesse-fein);
 }
@@ -212,36 +215,64 @@
   position: relative;
   display: grid;
   grid-template-columns: 37.5% 25% 37.5%;
-  height: 24px;
+  /* 32 Pixel, damit die Zonenwörter in der kleinsten Schriftstufe über den Wertbalken passen. */
+  height: 32px;
   border-radius: 4px;
   overflow: hidden;
 }
 
 .zugklasse-zone {
   position: relative;
-  font-size: 0.6rem;
-  line-height: 13px;
+  /* Kleinste Schriftstufe der App (13 px) statt 0.6rem (etwa 10 px), DS56. */
+  font-size: var(--groesse-fein);
+  line-height: 1.2;
   text-align: right;
   padding-right: 4px;
   color: var(--text-leise);
 }
 
-.zone-0 {
-  background: color-mix(in srgb, var(--linie-stark) 80%, var(--flaeche));
+/* Zonen in den Farben ihres Urteils, schwach getönt (seit 0.2.131): Wo ein Balken endet,
+   sieht man sofort, ob er im guten oder schwachen Bereich liegt. */
+.zone-urteil-gut {
+  background: color-mix(in srgb, var(--gruen-text) 16%, var(--flaeche));
 }
-.zone-1 {
-  background: color-mix(in srgb, var(--linie-stark) 50%, var(--flaeche));
+.zone-urteil-normal {
+  background: color-mix(in srgb, var(--linie-stark) 45%, var(--flaeche));
 }
-.zone-2 {
-  background: color-mix(in srgb, var(--linie-stark) 25%, var(--flaeche));
+.zone-urteil-schwach {
+  background: color-mix(in srgb, var(--rot-text) 16%, var(--flaeche));
 }
 
 .zugklasse-wert {
   position: absolute;
   left: 0;
-  top: 14px;
-  height: 6px;
-  border-radius: 3px;
+  top: 19px;
+  height: 8px;
+  border-radius: 4px;
+}
+
+/* Der Balken trägt die Farbe des Urteils; die Klasse zeigt die Marke links. */
+.wert-gut {
+  background: var(--gruen-text);
+}
+.wert-normal {
+  background: color-mix(in srgb, var(--text) 60%, var(--flaeche));
+}
+.wert-schwach {
+  background: var(--rot-text);
+}
+
+/* Schwache Zeile: leichter roter Grund und kräftiges Urteil mit Warnzeichen. */
+.zugklasse.ist-schwach {
+  margin-inline: calc(var(--raster) * -1);
+  padding: calc(var(--raster) * 0.75) var(--raster);
+  border-radius: var(--radius);
+  background: color-mix(in srgb, var(--rot-text) 8%, transparent);
+}
+
+.zugklasse-urteil-schwach,
+.zugklasse-urteil-gut {
+  font-weight: 700;
 }
 
 .zugklasse-ueblich {
@@ -256,37 +287,6 @@
 .zugklassen-trenner {
   border-top: 1px dashed var(--linie-stark);
   margin: calc(var(--raster) * 1.5) 0;
-}
-
-.klassenfarbe-brillant {
-  background: #1baca6;
-}
-.klassenfarbe-stark {
-  background: #5c8bb0;
-}
-.klassenfarbe-bester {
-  background: #81b64c;
-}
-.klassenfarbe-sehrGut {
-  background: #96bc4b;
-}
-.klassenfarbe-gut {
-  background: #96af8b;
-}
-.klassenfarbe-buch {
-  background: #a88865;
-}
-.klassenfarbe-ungenau {
-  background: #d9a300;
-}
-.klassenfarbe-fehler {
-  background: #e58f2a;
-}
-.klassenfarbe-verpasst {
-  background: #db6b55;
-}
-.klassenfarbe-patzer {
-  background: #ca3431;
 }
 
 /* ---------- Zoom und Fingerfahren der Verlaufskurve (R56) ---------- */

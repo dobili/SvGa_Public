@@ -3,12 +3,18 @@
  *
  * Rolle im Gesamtbild: In den Einstellungen („Über die App“) und an jeder Abbildung („Fehler im
  * Buch melden“, mit Abbildungsnummer und Stellung). Die Meldung landet im Dashboard des Autors
- * (app/melden.ts). Geht das Senden nicht (kein Netz), bietet das Formular den alten Weg an:
- * Angaben kopieren und per E-Mail schicken.
+ * (app/melden.ts). Fehlt das Netz, wartet die Meldung seit V9 auf dem Gerät und geht später
+ * hinaus; scheitert das Senden aus anderem Grund, bietet das Formular den alten Weg an: Angaben
+ * kopieren und per E-Mail schicken.
+ * Seit T3 (0.2.131) zeigt „Was wird gesendet?“ unter dem voreingestellten Häkchen die echten
+ * Angaben, damit niemand einer Voreinstellung blind zustimmt; seit T2 ist die
+ * Datenschutzerklärung ein Link.
  * Abhängigkeiten: app/melden.ts, Segmentwahl, i18n.
  */
 import { useState } from "react";
 import {
+  geraeteangaben,
+  KONTAKT_ADRESSE,
   MELDEARTEN,
   sendeMeldung,
   TEXT_ZEICHEN,
@@ -18,7 +24,40 @@ import {
 import { t } from "../../i18n/sprache";
 import { Segmentwahl } from "./Segmentwahl";
 
-const KONTAKT = "kontakt@schach-von-grund-auf.com";
+const DATENSCHUTZ = "/datenschutz/";
+
+/**
+ * Die Angaben, die mit dem Häkchen mitgehen, mit ihren echten Werten (T3).
+ * Beispiel: App-Version 0.2.131, Browser und Gerät „Mozilla/5.0 (Linux; Android 14 …)“,
+ * Bildschirm „412×915 @2.625“, Sprache „de“, an einer Abbildung dazu Nummer und FEN.
+ */
+function Sendeangaben({ abbildung, stellung }: { abbildung?: string; stellung?: string }) {
+  const g = geraeteangaben();
+  const zeilen: readonly (readonly [string, string | undefined])[] = [
+    [t("melden.angabe.version"), g.version],
+    [t("melden.angabe.geraet"), g.geraet],
+    [t("melden.angabe.bildschirm"), g.bildschirm],
+    [t("melden.angabe.sprache"), g.sprache],
+    [t("melden.angabe.abbildung"), abbildung],
+    [t("melden.angabe.stellung"), stellung],
+  ];
+  return (
+    <details className="sendeangaben">
+      <summary>{t("melden.wasGesendet")}</summary>
+      <dl>
+        {zeilen
+          .filter(([, wert]) => wert)
+          .map(([name, wert]) => (
+            <div key={name}>
+              <dt>{name}</dt>
+              <dd>{wert}</dd>
+            </div>
+          ))}
+      </dl>
+      <p>{t("melden.angabe.nicht")}</p>
+    </details>
+  );
+}
 
 /** Rückmeldung nach dem Senden, bei Fehler mit Kopierknopf. */
 function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertext: string }) {
@@ -27,6 +66,13 @@ function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertex
     return (
       <p className="hinweis" role="status">
         {t("melden.gesendet", { nummer: ergebnis.nummer })}
+      </p>
+    );
+  }
+  if (ergebnis.art === "vorgemerkt") {
+    return (
+      <p className="hinweis" role="status">
+        {t("melden.vorgemerkt")}
       </p>
     );
   }
@@ -44,7 +90,7 @@ function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertex
       .catch((fehler: unknown) => console.warn("Zwischenablage nicht verfügbar:", fehler));
   return (
     <div role="status">
-      <p className="hinweis">{t("melden.fehler", { adresse: KONTAKT })}</p>
+      <p className="hinweis">{t("melden.fehler", { adresse: KONTAKT_ADRESSE })}</p>
       <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
         {kopiert ? t("melden.kopiert") : t("melden.kopieren")}
       </button>
@@ -84,7 +130,7 @@ export function Meldeformular({
     setzeErgebnis(await sendeMeldung({ art, text, ...zusatz }, mitGeraet));
     setzeSendet(false);
   };
-  if (ergebnis?.art === "gesendet") {
+  if (ergebnis?.art === "gesendet" || ergebnis?.art === "vorgemerkt") {
     return (
       <div className="meldeformular" data-testid="meldeformular">
         <Ergebnis ergebnis={ergebnis} kopiertext="" />
@@ -120,7 +166,10 @@ export function Meldeformular({
         />
         {abbildung ? t("melden.mitAbbildung", { nummer: abbildung }) : t("melden.mitGeraet")}
       </label>
-      <p className="hinweis klein">{t("melden.datenschutz")}</p>
+      <Sendeangaben abbildung={abbildung} stellung={stellung} />
+      <p className="hinweis klein">
+        {t("melden.datenschutz")} <a href={DATENSCHUTZ}>{t("melden.datenschutzLink")}</a>
+      </p>
       <div className="knopfreihe">
         <button
           type="button"

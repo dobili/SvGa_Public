@@ -257,3 +257,65 @@
   height: 20px;
   flex: none;
 }
+
+/* T3 (0.2.131): „Was wird gesendet?“ unter dem Häkchen, mit den echten Werten. */
+.sendeangaben {
+  margin-left: calc(var(--raster) * 4);
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}
+
+.sendeangaben summary {
+  display: flex;
+  align-items: center;
+  min-height: var(--tippflaeche);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sendeangaben dl {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 var(--raster);
+}
+
+.sendeangaben dt {
+  font-weight: 600;
+}
+
+.sendeangaben dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.sendeangaben p {
+  margin: 0;
+}
+
+/* T2 (0.2.131): Datenschutz und Impressum am Ende von „Über die App“. */
+.rechtliche-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(var(--raster) * 2);
+  margin: 0;
+}
+
+.rechtliche-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--tippflaeche);
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* Absturzseite eines Bildschirms (V7): die technische Meldung steht leise und eingeklappt unten. */
+.absturz-technik {
+  font-size: var(--groesse-mittel);
+  color: var(--text-leise);
+}
+
+.absturz-technik summary {
+  cursor: pointer;
+  padding-block: calc(var(--raster) / 2);
+}

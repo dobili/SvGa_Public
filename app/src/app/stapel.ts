@@ -37,8 +37,10 @@ export type Ansicht =
   /** Eine Partie gegen die Engine, laufend oder beendet (mit Auswertung). */
   | { readonly bildschirm: "partie"; readonly id: string }
   | { readonly bildschirm: "ich" }
+  /** Einstellungen, vom Profil aus (seit 0.2.134). */
+  | { readonly bildschirm: "einstellungen" }
   | { readonly bildschirm: "lizenzen" }
-  /** Aufgabenseite des Autors (langer Druck aufs Zahnrad, seit 0.2.75). */
+  /** Aufgabenseite des Autors (langer Druck auf „Profil“, seit 0.2.75). */
   | { readonly bildschirm: "autoraufgaben" }
   /** Eine Übung des Buches lösen (AP 13); mit Reihe, wenn „Nächste Übung“ weiterführt. */
   | ({

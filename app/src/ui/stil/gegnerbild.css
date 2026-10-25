@@ -296,11 +296,22 @@
 
 .stilnetz-ring {
   fill: none;
-  stroke: var(--linie);
+  stroke: var(--linie-stark);
 }
 
 .stilnetz-speiche {
   stroke: var(--linie-stark);
+}
+
+/* Im Dunkeln waren Ringe und Speichen kaum zu sehen (Wunsch des Autors, 25.10.2026). */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-farbschema="hell"]) :is(.stilnetz-ring, .stilnetz-speiche) {
+    stroke: #6b7fa3;
+  }
+}
+
+:root[data-farbschema="dunkel"] :is(.stilnetz-ring, .stilnetz-speiche) {
+  stroke: #6b7fa3;
 }
 
 .stilnetz-flaeche {

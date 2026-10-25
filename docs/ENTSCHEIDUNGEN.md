@@ -5321,7 +5321,158 @@ Der Koordinierungschat hat die Zweige `messung-blitz-N` und `messung-klassisch-N
   Schnellschach-Zahl eingeteilt; in Blitz und Klassisch können sich benachbarte Bereiche
   überschneiden.
 
-## Bots als ein Mensch mit drei Wertungen (25.10.2026 morgens, Bot-Chat, 0.2.131)
+## Nutzungsprüfung DS46 bis DS57, V1 bis V9, T1 bis T4 (25.10.2026, Opus, Zweig `nutzungspruefung`, Version 0.2.131)
+
+Auftrag des Autors (25.10.2026): App und Website nach den Gruppen Design, Bedienung,
+Verlässlichkeit und Tempo sowie Vertrauen und Recht prüfen (Barrierefreiheit und Lernen als
+eigene Gruppen zurückgestellt). Grundlage: Fotos aller Bildschirme bei 360 Pixeln hell und
+dunkel, Tastaturdurchlauf, Messung von Tippflächen, Schriftgrößen und Fokus unter festen
+Leisten, Netzanfragen, Ladezeiten gedrosselt (CPU 4×, 1,6 Mbit/s). Vorschläge mit Vorher-Nachher-
+Bildern der echten App im privaten Artifact „Nutzungsprüfung“
+<https://claude.ai/artifact/SkEbgyv893PKa1vHt5PV2u> (nicht im Repository, weil es Abbildungen
+zeigt). Freigabe: alles ja außer T5 (keine Erklärung zur Barrierefreiheit).
+
+- DS46 Beta-Hinweis der Website in Creme (vorher Grau auf Navy, etwa 1,9 : 1).
+- DS47 Website: „App öffnen“ und „Installieren“ im Kopf der Startseite.
+- DS48 Partie: Untertitel einzeilig, Züge in einer rollenden Zeile neben den Zugknöpfen,
+  Abstände 8 Pixel; beide Uhren und das Brett bei 360 × 740 auf einem Schirm.
+- DS49 Zugliste der Abbildungen höchstens zwei Zeilen (4.3em); die Brettsymbole sind sichtbar.
+- DS50 Startleiste: „Weiß · 10 + 0 · gewertet“, Knopf „Beginnen“ (Bildschirmleser „Partie
+  beginnen“); neue Funktion `uhrnameKurz`.
+- DS51 Spielen: Gegner zuerst, dann Farbe, Bedenkzeit und Hilfen (hebt die Reihenfolge vom
+  19.10.2026 auf, weil die Startleiste sie zusammenfasst), Ausgangsstellung am Ende ohne Brett;
+  ab Abbildung oder eigener Stellung oben mit Brett. Karte in `Startstellung.tsx`, Rundgang
+  in derselben Reihenfolge.
+- DS52 `scroll-padding-bottom` auf `html` (Leiste unten, auf Spielen auch Startleiste), im
+  Querformat mit Schiene nur der sichere Rand (WCAG 2.4.11).
+- DS53 Fortschrittsringe in einer Reihe, Wort darunter.
+- DS54 Website-Link im Training als Zeichen in der Kapitelzeile.
+- DS55 Wörter unter vier Symbolen der Leiste, Zahnrad ohne (nimmt den Wunsch von 0.2.116
+  zurück).
+- DS56 Zonenwörter in „Deine Züge“ in der Stufe „fein“ (13 px) statt 0.6rem.
+- DS57 Manifest `orientation: "any"` (vorher „portrait“, das Querformat aus DS2 fehlte in der
+  installierten Android-App).
+- T1 Datenschutzerklärung: „Fehler melden“ sendet an uns (Satz „Die App selbst verschickt
+  nichts“ war seit R57 falsch).
+- T2 Links „Datenschutz“ und „Impressum“ am Ende von „Über die App“, Link im Meldeformular.
+- T3 „Was wird gesendet?“ mit den echten Werten unter dem voreingestellten Häkchen; Segmente
+  brechen um statt „…“.
+- T4 HSTS (ein Jahr, ohne Unterdomains) in `public/_headers`; Content Security Policy aus
+  `src/startseite/csp.ts`, beim Bauen mit den Prüfsummen der eingebetteten Skripte an
+  `dist/_headers` angehängt, live zunächst als Report-Only. `tests/e2e/csp.spec.ts` erzwingt
+  sie probeweise (Startseite, App, Engine, Partie: kein Verstoß; ohne Prüfsummen meldet derselbe
+  Test drei). Scharf schalten: frühestens 1.11.2026, wenn bis dahin kein Fehler gemeldet ist;
+  dann im Plugin `sicherheitsregelDatei` „-Report-Only“ streichen.
+
+## Ergänzungen des Autors zur Nutzungsprüfung (25.10.2026, Opus, Version 0.2.131)
+
+- **Marken der Zugklassen an Zugliste und Brett** (Wunsch: Symbole wie in „Deine Züge“ auch in
+  der Zugnavigation und beim Nachspielen an der gezogenen Figur): `Partiezuege.tsx` zeigt die
+  Marke statt des Zeichens als Text (Name für Bildschirmleser „2. g4, Patzer (??)“),
+  `Zugmarke.tsx`/`zugmarke.ts` setzen sie oben rechts ans Zielfeld; `Brettbereich` nimmt die
+  Überlagerung auch als Funktion der Drehung. Stile in `zugmarken.css`.
+- **„Deine Züge“ deutlicher** (Frage nach Expertise: andere Farben für Bereiche oder Balken?).
+  Empfehlung und Umsetzung: Balken in der Farbe des Urteils statt der Klasse (grün, ruhig grau,
+  rot), Zonen schwach in denselben Farben getönt, schwache Zeile mit Warnzeichen, fettem Urteil
+  und leichtem roten Grund. Warum so: Ein Bullet-Diagramm liest man am Ende des Balkens; die
+  Klassenfarbe sagte nur „welche Klasse“, die steht schon an der Marke. Bedeutung nie nur über
+  Farbe (Zeichen und Wort dazu).
+- **Porträt in der Sprechblase** 96 statt 64 Pixel, Blase mit Zipfel.
+- **Fehlerprofil als Säulen** (Wunsch: aufgeräumter, ähnlich den Balken in „Deine Züge“):
+  „aus“ als Zeichen, steigende Säulen wie eine Lautstärkeanzeige, gefüllt bis zur Wahl, Strich
+  unter „normal“, Wort rechts; jede Säule bleibt Optionsfeld mit dem Wort als Namen. Arten nur
+  mit „aus | an“ behalten einen schmalen Schalter. Datenformat unverändert.
+
+## Verlässlichkeit V1 bis V9 (25.10.2026, Opus mit einem Hilfsagenten, Version 0.2.131)
+
+Teil der Nutzungsprüfung, vom Autor freigegeben.
+
+- V1 „Offline bereit“ erst nach `navigator.serviceWorker.ready` und Zustand „activated“
+  (`app/workerbereit.ts`); bis dahin höchstens 99 %. vite-plugin-pwa meldet „offline ready“
+  schon beim Zustand „installed“; wer da ohne Netz neu lud, sah die Fehlerseite des Browsers.
+- V2 Navigationsstapel als Merker `svga.stapel` (Format 1, Zeitstempel, `app/stapelMerker.ts`):
+  beim Start wiederhergestellt, wenn jünger als 24 Stunden und jede Ansicht gültig; Sprungziele
+  in der Adresse haben Vorrang. Partien gegen die Engine öffnen nicht direkt (die Uhr liefe
+  sonst los), der Stapel endet davor auf „Spielen“ mit „Weiterspielen“. Die Zurück-Taste
+  übernimmt den vorhandenen Wächtereintrag der Browsergeschichte. Folge: Ein Sprachwechsel
+  bleibt auf dem Bildschirm. `starteImBrowser` löscht den Merker vor jedem Test (opt-in mit
+  `weitermachen: true`). Nur ein Merker, das Format der Nutzerdaten bleibt 5.
+- V3 Beim Sichtbarwerden höchstens stündlich `registration.update()` (`updateFaellig`); aktiv
+  wird ein Update weiter nur nach Tipp. Text `startseite.beta` angepasst.
+- V7 Fehlergrenze je Bildschirm (`app/Bildschirmgrenze.tsx`, Absturzbericht in
+  `Absturzbericht.tsx` für beide Grenzen): Leiste bleibt, „Zurück“, „Fehler melden“, Technik
+  eingeklappt, Geräteangaben nur mit Häkchen. Zurückgesetzt wird über einen Schlüssel des
+  Bildschirms in `getDerivedStateFromProps` statt eines React-`key`, der jeden Bildschirm bei
+  jedem Schritt neu aufbauen würde (gewähltes Werkzeug ginge verloren).
+- V8 `persist()` bei jedem Start, solange `persisted()` falsch ist; Laden wartet nicht darauf.
+- V9 Warteschlange für Meldungen ohne Netz (`app/meldeschlange.ts`, `svga.meldungen.warten`,
+  höchstens zehn, höchstens 30 Tage); gesendet bei „online“, beim Start und nach jeder
+  erfolgreichen Meldung; 4xx und 5xx kommen nicht in die Schlange. „Alle Daten löschen“ leert sie.
+  Satz in der Datenschutzerklärung ergänzt.
+
+## Tempo V4 bis V6 (25.10.2026, Opus mit einem Hilfsagenten, Version 0.2.131)
+
+Gemessen mit Pixel 7, CPU 4× gedrosselt, Seiten zusätzlich 1,6 Mbit/s und 150 ms; vorher ein
+Build von 8b2c3ae unter denselben Bedingungen.
+
+- V4 Der Service Worker teilt die Dateiliste in Kern und Sprachpakete (`src/sw/dateiliste.ts`,
+  `src/sw/sprachpakete.ts`); vorab lädt nur der Kern, `daten/en/**` und `en.json` beim ersten
+  Abruf, mit Revision (deshalb nicht `globIgnores`, sonst bliebe Englisch nach Updates veraltet).
+  `en.json` per `import()` (`i18n/sprachpaket-en.ts`). Wechsel auf Englisch ohne Netz und ohne
+  Paket: Meldung, die App bleibt deutsch; mit Netz lädt das ganze Paket im Hintergrund.
+  Vorab: 335 Dateien mit 20,9 MB → 313 Dateien mit 15,2 MB; Sprachbaustein 187 → 96 KB gzip.
+  Die Entscheidung vom 15.10.2026 (die Startseite lädt schon vorab) bleibt.
+- V5 Ursache war nicht der Fortschritt (sein `hidden` wirkte wegen `display: flex` nie), sondern
+  die Anleitung je Gerät, die erst `startseite.ts` einblendete. Jetzt wählt ein kleines Skript
+  im Installationsteil sie vor dem ersten Zeichnen (Test gegen `anleitungFuer` für 8
+  Browserkennungen), der Fortschritt hält seinen Platz mit `visibility`, zwei Schriftschnitte
+  per preload, die wechselnden Texte setzt der Build ins HTML. CLS auf / 0,092 → 0, auf
+  /installieren/ 0,032 → 0; JavaScript der Startseite 625 KB → 12 KB; FCP etwa 80 ms später
+  (Preload). Keine Ersatzschrift mit size-adjust: nur gegen Liberation Sans abstimmbar.
+- V6 Eröffnungsindex einmal gebaut und gemerkt (`schach/eroeffnungsindexVorrat.ts`, erstes Mal
+  nach dem nächsten Bild), Spielstufe in `usePartie` nur bei neuer Stellung und Engine am Zug,
+  Leiste markiert sofort und wechselt im nächsten Bild, „Beginnen“ sofort gedrückt
+  (`aria-busy`). `startTransition` verworfen (60 ms später). INP Spielen 152 → 24 ms, Partie
+  beginnen 304 → 24 ms; das erste Zeichnen von Spielen bleibt etwa 160 ms.
+- Die Sprachwahl steht in `SprachWahl.tsx` (EinstellungenKarte war fast 400 Zeilen).
+
+## Korrekturen des Autors zur Nutzungsprüfung (25.10.2026, Opus, Version 0.2.133)
+
+- Gemeint war das Porträt in der laufenden Partie (`.partie-gegnerzeile`), nicht in der
+  Sprechblase: dort jetzt 80 statt 48 Pixel, die Sprechblase zurück auf 64 (Zipfel bleibt).
+- Zugmarke am Brett 23 statt 26 Pixel.
+- PGN-Knöpfe ganz oben in der Auswertung; nebeneinander brachen die Beschriftungen bei 360 Pixeln
+  um, deshalb untereinander.
+- Spinnennetz: Ringe in `--linie-stark`, im Dunkelmodus Ringe und Speichen #6b7fa3.
+
+
+## Profil statt Zahnrad, Einstellungen neu geordnet (25.10.2026, Opus, Version 0.2.134)
+
+Wunsch des Autors (25.10.2026 spät): unten rechts ein Profil mit Wort, darin oben ein Knopf zu den
+Einstellungen, Wertung, Fortschritt und die Partienliste (bisher auf „Spielen“); die Reiter der
+Einstellungen prüfen, umsortieren, umbenennen.
+
+- Leiste: `CircleUserRound` mit „Profil“; jetzt tragen alle fünf Knöpfe ihr Wort. Der Bereich
+  heißt intern weiter „ich“ (Navigation, Speicher, Merker unverändert). Drei Sekunden auf
+  „Profil“ öffnen weiter die Aufgabenseite.
+- Profil (`Ich.tsx`): Knopf „Einstellungen“, Wertungskurve, Fortschrittsringe, Partienliste mit
+  Filter und PGN-Einlesen. Warum die Partien dorthin: Wer „Spielen“ antippt, will eine Partie
+  beginnen; die Liste ist Rückschau und gehört zu Wertung und Fortschritt.
+- Einstellungen als eigene Ansicht `einstellungen` im Stapel (`Einstellungen.tsx`, mit
+  „‹ Profil“): Reiterkarte, Daten auf diesem Gerät, Über die App. Die Überschrift „Darstellung
+  und Training“ (DS44) entfällt, weil die Seite selbst „Einstellungen“ heißt und die Reiter
+  direkt darunter stehen.
+- Reiter vorher Brett, Figuren, Ton, Anzeige, Training; jetzt Brett (Farben, Figuren,
+  Koordinaten), Bedienung (Wischen, Zuganimation, Startanimation, Ton), Anzeige (Nachtmodus,
+  Schriftgröße, Sprache), Training, Hilfe (Toursymbol und Rundgang, Erklärungen). Warum: Nach
+  Fragen gruppiert, die ein Leser stellt („wie sieht das Brett aus“, „wie bediene ich es“, „wie
+  groß und welche Sprache“, „wie übe ich“, „wo bekomme ich Hilfe“), statt einzelner kleiner
+  Reiter für Figuren und Ton. Zuerst geöffnet bleibt „Training“. Datenformat unverändert.
+- Rundgänge: `ich` erklärt jetzt das Profil, neu `einstellungen` für die Reiter, Daten und Über
+  die App; der Rundgang „Spielen“ verliert die Partienliste. Texte zu Speicherfehlern nennen
+  „Profil › Einstellungen“ statt „Zahnrad“.
+
+## Bots als ein Mensch mit drei Wertungen (25.10.2026, Bot-Chat, Version 0.2.135)
 
 Ersetzt die gemessenen Blitz- und Klassisch-Zahlen aus 0.2.130 (Abschnitt „Zahlen je Zeitklasse:
 Blitz und Klassisch gemessen“). Fragen des Autors: Sollte nicht Blitz < Schnell < Klassisch
@@ -5372,13 +5523,21 @@ gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Me
 - **Stufen danach (Blitz / Schnellschach / Klassisch):** 1: 667/747/973 · 2: 839/946/1177 ·
   3: 1078/1242/1438 · 4: 1278/1456/1597 · 5: 1537/1696/1776 · 6: 1770/1906/1956 ·
   7: 1998/2108/2158 · 8: 2216/2291/2341 · 9: 2327/2388/2438 · 10: 3246/3296/3346.
-- **Prüfmessung (25.10.2026 vormittags, sechs Chats und lokal):** Anker der Stufen 2, 3 und 5
-  (je 40 Partien gegen sich selbst, Tiefe 18; Blitz 5 lokal mit 20) nach der Umrechnung,
-  verglichen mit der Zahl der App. Klassisch: 1114 / 1414 / 1721 gegen 1177 / 1438 / 1776, passt
-  im Rahmen der Messgenauigkeit (etwa ±65). Blitz: 950 / 1264 / 1875 gegen 839 / 1078 / 1537, die
-  Bots spielen in Blitz 110 bis 340 stärker, als die App sie ausweist. Grund: Die Umrechnung
-  erreicht nur das Wahlmodell (wie oft ein schlechterer Kandidat gewählt wird); die Grundschicht
-  der Stufe (Engine-Suche) spielt in jeder Zeitklasse gleich, und die Zielwertung, die eine Stufe
-  übergibt (Stufe 2: 600, Stufe 3: 900), liegt weit unter ihrer gemessenen Zahl. Die Genauigkeit
-  fiel in Blitz deshalb nur um 3 bis 6 Prozentpunkte statt wie bei Menschen deutlich. Offen
-  (Empfehlung an den Autor): die Grundschicht je Zeitklasse einstellen und an diesen Ankern eichen.
+- **Prüfmessung (25.10.2026, sechs Chats):** Anker der Nm-Stufen (je 40 Partien gegen sich
+  selbst mit der Uhr der Zeitklasse, Tiefe 18), verglichen mit der Zahl der App; Messgenauigkeit
+  etwa ±65. Runde 1 bis 3 gelten nicht: Die Messspieler (`engine/messspieler.testhilfe.ts`) gaben
+  dem Wahlmodell die Zeitklasse nicht mit, die App schon (`ui/komponenten/botzug.ts`); gemessen war
+  also Schnellschach-Wahl mit Blitz- oder Klassisch-Uhr. Erkannt daran, dass Runde 3 mit einer
+  geänderten Blitz-Wertung Zug für Zug dieselben Partien spielte wie Runde 1. Ein Versuch dazwischen
+  (Grundschicht je Zeitklasse breiter oder enger) wirkte aus demselben Grund nicht und ist
+  zurückgebaut: Bots und Nm-Stufen wählen mit dem Wahlmodell, die Grundschicht nutzen nur reine
+  Stufen. Behoben in 0.2.135, Test `engine/messspieler.test.ts`.
+- **Runde 4 (mit Zeitklasse, ohne Korrektur), Blitz:** Stufe 2 bis 7 Anker 879, 1214, 1543, 1807,
+  1864, 2021 gegen die Zahlen 839, 1078, 1278, 1537, 1770, 1998. Stufe 2 und 7 passen, 3 bis 6
+  spielen 94 bis 270 zu stark: Das Wahlmodell mit der Blitz-Wertung desselben Menschen wählt in
+  diesem Bereich noch zu gute Züge. Umsetzung: `engine/wahlkorrektur.ts` zieht für Stufe 3 bis 6
+  die Abweichung durch 0,75 (Elo Stärke je Elo Wertung) von der Wahlwertung ab: −180, −350, −360,
+  −125; Stufe 1, 2, 7 bis 10 ohne Korrektur. Anzeige und Wertung bleiben bei der umgerechneten Zahl.
+- **Runde 5 (mit Korrektur), Blitz 3 bis 6:** läuft, Ergebnis folgt.
+- **Klassisch (Runde 4):** läuft (Stufe 2, 3, 5), Ergebnis folgt.
+

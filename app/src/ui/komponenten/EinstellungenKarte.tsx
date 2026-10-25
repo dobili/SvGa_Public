@@ -17,10 +17,17 @@
  * seit 0.2.84 zwölf Bretter in den Gruppen Farben, Holz und Material. Seit 0.2.92 unter „Brett“
  * der Schalter „Figuren per Wischen ziehen“ (Merker auf dem Gerät wie die Koordinaten).
  * Seit P8 (R52) unter „Anzeige“ der Schalter für das Toursymbol und der Knopf für den Rundgang.
+ * Seit 0.2.134 (Wunsch des Autors, 25.10.2026: die Reiter waren nicht sinnvoll sortiert) neu
+ * geordnet: Brett (Farben, Figuren, Koordinaten: wie das Brett aussieht), Bedienung (Ziehen per
+ * Wischen, Zuganimation, Startanimation, Ton: wie die App reagiert), Anzeige (Nachtmodus, Schrift,
+ * Sprache), Training (Erst selbst denken) und Hilfe (Toursymbol, Rundgang, Erklärkacheln). Vorher
+ * hatte „Ton“ einen Reiter für eine Einstellung, die Startanimation stand unter „Brett“ und die
+ * Hilfen unter „Anzeige“. Die Karte steht seit 0.2.134 auf dem Bildschirm „Einstellungen“ und
+ * braucht keine eigene Überschrift mehr.
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
- * tour/, i18n.
+ * tour/, SprachWahl (seit V4 eigene Datei), i18n.
  */
-import { Brain, Crown, Grid3x3, Palette, Volume2, type LucideIcon } from "lucide-react";
+import { Brain, Grid3x3, LifeBuoy, Palette, Pointer, type LucideIcon } from "lucide-react";
 import { useState } from "react";
 import {
   aendereEinstellungen,
@@ -39,17 +46,16 @@ import {
   type Farbschema,
 } from "../../app/farbschema";
 import { liesMerker, schreibeMerker } from "../../app/merker";
-import { sprachname, t, verfuegbareSprachen, type Textschluessel } from "../../i18n/sprache";
-import { useSprache, waehleSprache } from "../../app/sprachwahl";
+import { t, type Textschluessel } from "../../i18n/sprache";
 import { MERKER_WISCHEN } from "../brett/useZiehen";
 import { MERKER_ZUGANIMATION } from "../brett/useZuganimation";
 import { SchriftgroesseWahl } from "./SchriftgroesseWahl";
+import { SprachWahl } from "./SprachWahl";
 import { MERKER_STARTANIMATION } from "./Startanimation";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
 import { Brettausschnitt, Vorschauwahl } from "./Vorschauwahl";
 import { zeigeErklaerungenWieder } from "./useErklaerung";
-import { Titelsymbol } from "./Titelsymbol";
 import { setzeSymbol, useTourMerker } from "../../tour/tourMerker";
 import { starteTour } from "../../tour/tourStand";
 
@@ -160,7 +166,7 @@ function ErklaerungenWahl() {
   );
 }
 
-type Bereich = "brett" | "figuren" | "anzeige" | "ton" | "training";
+type Bereich = "brett" | "bedienung" | "anzeige" | "training" | "hilfe";
 const BEREICHE: readonly {
   wert: Bereich;
   text: Textschluessel;
@@ -175,10 +181,10 @@ const BEREICHE: readonly {
     tour: "einstellungen-reiter-brett",
   },
   {
-    wert: "figuren",
-    text: "einstellungen.reiter.figuren",
-    symbol: Crown,
-    tour: "einstellungen-reiter-figuren",
+    wert: "bedienung",
+    text: "einstellungen.reiter.bedienung",
+    symbol: Pointer,
+    tour: "einstellungen-reiter-bedienung",
   },
   {
     wert: "anzeige",
@@ -187,20 +193,20 @@ const BEREICHE: readonly {
     tour: "einstellungen-reiter-anzeige",
   },
   {
-    wert: "ton",
-    text: "einstellungen.reiter.ton",
-    symbol: Volume2,
-    tour: "einstellungen-reiter-ton",
-  },
-  {
     wert: "training",
     text: "einstellungen.reiter.training",
     symbol: Brain,
     tour: "einstellungen-reiter-training",
   },
+  {
+    wert: "hilfe",
+    text: "einstellungen.reiter.hilfe",
+    symbol: LifeBuoy,
+    tour: "einstellungen-reiter-hilfe",
+  },
 ];
 
-/** Brett: Farben mit Vorschau, Koordinaten, Ziehen per Wischen, Zuganimation (R37). */
+/** Brett: Farben und Figuren mit Vorschau, Koordinaten (wie das Brett aussieht). */
 function BrettBereich() {
   const einstellungen = useEinstellungen();
   return (
@@ -213,13 +219,23 @@ function BrettBereich() {
         vorschau={(wert) => <Brettausschnitt farben={wert} satz={einstellungen.figurensatz} />}
         beiWahl={(brettfarben) => aendereEinstellungen({ brettfarben })}
       />
+      <FigurenBereich />
       <MerkerWahl merker="koordinaten" schluessel="einstellungen.koordinaten" />
+    </>
+  );
+}
+
+/** Bedienung: Ziehen per Wischen, Bewegungen und Ton (wie die App reagiert). */
+function BedienungBereich() {
+  return (
+    <>
       <MerkerWahl merker={MERKER_WISCHEN} schluessel="einstellungen.wischen" />
       <p className="hinweis">{t("einstellungen.wischen.hinweis")}</p>
       <MerkerWahl merker={MERKER_ZUGANIMATION} schluessel="einstellungen.zuganimation" />
       <p className="hinweis">{t("einstellungen.zuganimation.hinweis")}</p>
       <MerkerWahl merker={MERKER_STARTANIMATION} schluessel="einstellungen.startanimation" />
       <p className="hinweis">{t("einstellungen.startanimation.hinweis")}</p>
+      <TonBereich />
     </>
   );
 }
@@ -235,34 +251,6 @@ function FigurenBereich() {
       text={(wert) => t(`einstellungen.figurensatz.${wert}`)}
       vorschau={(wert) => <Brettausschnitt farben={einstellungen.brettfarben} satz={wert} />}
       beiWahl={(figurensatz) => aendereEinstellungen({ figurensatz })}
-    />
-  );
-}
-
-/**
- * Sprache der App (seit 0.2.94): eine Auswahl, sobald es mehr als eine Sprache gibt; bis dahin
- * nur die Zeile „Deutsch (Englisch folgt …)“. Ohne Wahl gilt die Sprache des Geräts.
- */
-function SprachWahl() {
-  const aktuell = useSprache();
-  const sprachen = verfuegbareSprachen();
-  if (sprachen.length <= 1) {
-    return (
-      <dl className="einstellungen">
-        <div className="einstellung">
-          <dt>{t("einstellungen.sprache")}</dt>
-          <dd>{t("einstellungen.sprache.wert")}</dd>
-        </div>
-      </dl>
-    );
-  }
-  return (
-    <Auswahl
-      name={t("einstellungen.sprache")}
-      werte={sprachen}
-      gewaehlt={aktuell}
-      text={sprachname}
-      beiWahl={waehleSprache}
     />
   );
 }
@@ -292,15 +280,23 @@ function TourWahl() {
   );
 }
 
-/** Anzeige: Nachtmodus, Erklärkacheln, Sprache, Toursymbol und Rundgang. */
+/** Anzeige: Nachtmodus, Schriftgröße, Sprache. */
 function AnzeigeBereich() {
   return (
     <>
       <NachtmodusWahl />
       <SchriftgroesseWahl />
-      <ErklaerungenWahl />
       <SprachWahl />
+    </>
+  );
+}
+
+/** Hilfe: Toursymbol, Rundgang und ausgeblendete Erklärkacheln wieder zeigen. */
+function HilfeBereich() {
+  return (
+    <>
       <TourWahl />
+      <ErklaerungenWahl />
     </>
   );
 }
@@ -352,10 +348,10 @@ function TrainingBereich() {
 
 const INHALT: Readonly<Record<Bereich, () => React.ReactNode>> = {
   brett: () => <BrettBereich />,
-  figuren: () => <FigurenBereich />,
+  bedienung: () => <BedienungBereich />,
   anzeige: () => <AnzeigeBereich />,
-  ton: () => <TonBereich />,
   training: () => <TrainingBereich />,
+  hilfe: () => <HilfeBereich />,
 };
 
 export function EinstellungenKarte() {
@@ -364,12 +360,8 @@ export function EinstellungenKarte() {
   const [bereich, setzeBereich] = useState<Bereich>("training");
   return (
     <section className="karte" data-testid="darstellung">
-      <h2 className="karte-titel">
-        <Titelsymbol art="einstellungen" />
-        {t("einstellungen.titel")}
-      </h2>
       <Reiter
-        name={t("einstellungen.titel")}
+        name={t("ich.titel")}
         eintraege={BEREICHE.map((b) => ({ ...b, text: t(b.text) }))}
         gewaehlt={bereich}
         beiWahl={setzeBereich}

@@ -26,6 +26,24 @@
     <link rel="canonical" href="https://schach-von-grund-auf.com/" />
     <link rel="icon" href="/symbole/symbol.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/symbole/apple-touch-icon.png" />
+    <!-- Schriften vorab (V5, Nutzungsprüfung 25.10.2026): Sonst fragt der Browser sie erst nach dem
+         Stil an, und der Wechsel von der Ersatzschrift verschiebt die Seite (CLS 0,09). Nur Titel
+         und Grundschrift: Alle vier verzögerten das erste Bild gedrosselt um etwa 0,3 s, diese
+         zwei um etwa 0,15 s, und schon sie bringen die Verschiebung auf 0. -->
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/node_modules/@fontsource/source-sans-3/files/source-sans-3-latin-400-normal.woff2"
+    />
+    <link
+      rel="preload"
+      as="font"
+      type="font/woff2"
+      crossorigin
+      href="/node_modules/@fontsource/source-serif-4/files/source-serif-4-latin-600-normal.woff2"
+    />
     <title>{{app.titel}} – {{startseite.untertitel}}</title>
     <script>
       // Die installierte App startet direkt in der App, auch wenn sie sich / gemerkt hat.
@@ -48,6 +66,11 @@
           <p class="startseite-untertitel">{{startseite.untertitel}}</p>
           <p class="startseite-beta">{{startseite.beta}}</p>
         </div>
+        <!-- DS47: Der Weg in die App gleich oben, statt drei Bildschirme tiefer. -->
+        <nav class="startseite-aktionen" aria-label="{{startseite.aktionen}}">
+          <a class="startseite-aktion-haupt" href="/app/">{{startseite.appOeffnen}}</a>
+          <a class="startseite-aktion-zweit" href="#installieren">{{startseite.zurInstallation}}</a>
+        </nav>
       </header>
       <main class="startseite-inhalt">
         <section class="karte" aria-labelledby="buch-titel">

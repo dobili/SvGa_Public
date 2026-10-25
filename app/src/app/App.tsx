@@ -8,14 +8,18 @@
  * die statische Startseite unter / vor (Entscheidung 15.10.2026). Die Adresse /app/#lizenzen
  * (Fußzeile der Startseite) öffnet gleich die Lizenzen, /app/#abb-6.20 (Trainingsseiten der
  * Website, seit 16.10.2026) gleich die Abbildung, /app/#aufgaben die Aufgabenseite des Autors.
+ * Ohne solches Sprungziel macht die App seit V2 dort weiter, wo der Leser war (app/stapelMerker.ts).
  * Seit P8 (R52) liegen hier auch die Tour-Ebene und der Hinweis beim ersten Start (tour/), unter
  * der Startanimation, damit die Frage nach dem Rundgang erst nach ihr zu sehen ist.
+ * Seit V7 (Nutzungsprüfung 25.10.2026) steht jeder Bildschirm in einer eigenen Fehlergrenze
+ * (app/Bildschirmgrenze.tsx): Stürzt er ab, bleiben Leiste und Navigation.
  * Abhängigkeiten: Navigation, Bildschirme, Komponenten, Tour.
  */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Abbildung } from "../ui/bildschirme/Abbildung";
 import { Buch } from "../ui/bildschirme/Buch";
 import { Ich } from "../ui/bildschirme/Ich";
+import { Einstellungen } from "../ui/bildschirme/Einstellungen";
 import { Kapitel } from "../ui/bildschirme/Kapitel";
 import { Lernsammlung } from "../ui/bildschirme/Lernsammlung";
 import { Checkliste } from "../ui/bildschirme/Checkliste";
@@ -38,10 +42,12 @@ import { SafariHinweis } from "../ui/komponenten/SafariHinweis";
 import { Startanimation } from "../ui/komponenten/Startanimation";
 import { SicherungsHinweis } from "../ui/komponenten/SicherungsHinweis";
 import { UpdateHinweis } from "../ui/komponenten/UpdateHinweis";
+import { Bildschirmgrenze } from "./Bildschirmgrenze";
 import { useEinstellungen } from "./einstellungen";
 import { NavigationsRahmen } from "./navigation";
 import { useNavigation } from "./navigationsKontext";
-import type { Ansicht } from "./stapel";
+import { neuerStapel, type Ansicht, type Stapel } from "./stapel";
+import { gesicherterStapel } from "./stapelMerker";
 import { entsperreTon } from "./ton";
 import { useSprache } from "./sprachwahl";
 import { TourAngebot } from "../tour/TourAngebot";
@@ -80,6 +86,8 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
       return <Partie key={ansicht.id} id={ansicht.id} />;
     case "ich":
       return <Ich />;
+    case "einstellungen":
+      return <Einstellungen />;
     case "lizenzen":
       return <Lizenzen />;
     case "autoraufgaben":
@@ -91,6 +99,37 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
     case "trainer":
       return <Trainer key={ansicht.kennung} kennung={ansicht.kennung} />;
   }
+}
+
+/** Schlüssel der Fehlergrenze: Jeder andere Bildschirm (oder Neuversuch) beginnt ohne Fehler. */
+function grenzschluessel(stapel: Stapel, versuch: number): string {
+  return [stapel.bereich, stapel.ansichten.length, JSON.stringify(stapel.ansichten.at(-1)), versuch]
+    .map(String)
+    .join("|");
+}
+
+/**
+ * Der sichtbare Bildschirm in seiner Fehlergrenze (V7).
+ * „Zurück“ auf der Absturzseite geht eine Ansicht zurück; auf der ersten Ansicht des Bereichs
+ * beginnt der Bereich neu (ein Neuversuch, der die Grenze über den Schlüssel zurücksetzt). Der
+ * Schlüssel ist kein React-`key`: Der Bildschirm soll bei jedem Schritt erhalten bleiben.
+ */
+function GeschuetzterBildschirm() {
+  const { stapel, ansicht, zurueck, wechsleBereich } = useNavigation();
+  const [versuch, setzeVersuch] = useState(0);
+  const beiZurueck = () => {
+    if (stapel.ansichten.length > 1) {
+      zurueck();
+      return;
+    }
+    wechsleBereich(stapel.bereich);
+    setzeVersuch((alt) => alt + 1);
+  };
+  return (
+    <Bildschirmgrenze schluessel={grenzschluessel(stapel, versuch)} beiZurueck={beiZurueck}>
+      <Bildschirm ansicht={ansicht} />
+    </Bildschirmgrenze>
+  );
 }
 
 /** Sprungziel in der Adresse, das gleich eine Ansicht öffnet (Fußzeile der Startseite). */
@@ -108,6 +147,17 @@ function ansichtZumSprung(hash: string): Ansicht | null {
   return abbildung ? { bildschirm: "abbildung", nummer: abbildung } : null;
 }
 
+/**
+ * Der Stapel beim Start: Ein Sprungziel in der Adresse beginnt beim Buch (der Sprung folgt in
+ * Hauptrahmen); sonst der gesicherte Stapel, wenn er sich wiederherstellen lässt (V2), und im
+ * Zweifel das Buch wie bisher. Auch ein Sprachwechsel baut den Rahmen neu auf und bleibt so auf
+ * dem Bildschirm, auf dem der Leser die Sprache gewählt hat.
+ */
+function anfangsstapel(): Stapel {
+  if (ansichtZumSprung(window.location.hash)) return neuerStapel("buch");
+  return gesicherterStapel() ?? neuerStapel("buch");
+}
+
 /** Bei eingeschaltetem Ton weckt jede Berührung den Tonerzeuger (iPhone spielt sonst nichts). */
 function useTonEntsperren() {
   const an = useEinstellungen().ton === "an";
@@ -119,7 +169,7 @@ function useTonEntsperren() {
 }
 
 function Hauptrahmen() {
-  const { ansicht, navigiere } = useNavigation();
+  const { navigiere } = useNavigation();
   useTonEntsperren();
   useEffect(() => {
     const ziel = ansichtZumSprung(window.location.hash);
@@ -136,7 +186,7 @@ function Hauptrahmen() {
       <SafariHinweis />
       <Speicherhinweis />
       <main className="inhalt">
-        <Bildschirm ansicht={ansicht} />
+        <GeschuetzterBildschirm />
       </main>
       <AufgabenRueckweg />
       <Leiste />
@@ -154,7 +204,7 @@ function Hauptrahmen() {
 export function App() {
   const sprachcode = useSprache();
   return (
-    <NavigationsRahmen key={sprachcode} start="buch">
+    <NavigationsRahmen key={sprachcode} anfang={anfangsstapel}>
       <Hauptrahmen />
     </NavigationsRahmen>
   );

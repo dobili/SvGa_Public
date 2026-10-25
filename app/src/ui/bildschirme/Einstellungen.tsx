@@ -1,0 +1,160 @@
+/**
+ * Bildschirm „Einstellungen“ (seit 0.2.134, Wunsch des Autors vom 25.10.2026): erreichbar über den
+ * Knopf „Einstellungen“ oben auf der Profilseite. Enthält die Einstellungen in Reitern
+ * (EinstellungenKarte.tsx), Daten auf diesem Gerät (sichern, einspielen, löschen) und „Über die
+ * App“ (Version, Datenstand, Offline, Update, Fehler melden, Lizenzen, Datenschutz, Impressum).
+ *
+ * Rolle im Gesamtbild: Bis 0.2.133 stand das alles mit Wertung und Fortschritt auf einer Seite
+ * hinter dem Zahnrad (Ich.tsx). Jetzt zeigt die Leiste ein Profil (Ich.tsx: Wertung, Fortschritt,
+ * Partien), und die selten gebrauchten Einstellungen liegen eine Ebene tiefer.
+ * Abhängigkeiten: app/offline.ts, app/version.ts, EinstellungenKarte, DatenLoeschen, Meldeformular,
+ * Kopfzeile, Navigation, i18n.
+ */
+import { useState } from "react";
+import { istInstalliert } from "../../app/geraet";
+import { useNavigation } from "../../app/navigationsKontext";
+import { aktualisiereJetzt, sucheUpdate, useOfflineStand } from "../../app/offline";
+import { APP_VERSION } from "../../app/version";
+import { ladeIndex } from "../../daten/laden";
+import { t } from "../../i18n/sprache";
+import { DatenLoeschen } from "../komponenten/DatenLoeschen";
+import { EinstellungenKarte } from "../komponenten/EinstellungenKarte";
+import { Knopfsymbol } from "../komponenten/Knopfsymbol";
+import { Kopfzeile } from "../komponenten/Kopfzeile";
+import { Meldeformular } from "../komponenten/Meldeformular";
+import { Titelsymbol } from "../komponenten/Titelsymbol";
+import { useDaten } from "../komponenten/useDaten";
+
+/** Der Installationsteil der Startseite (Entscheidung 15.10.2026). */
+const INSTALLATIONSSEITE = "/installieren/";
+
+/** Datum „2026-10-13“ als „13.10.2026“. */
+function deutschesDatum(iso: string): string {
+  const [jahr, monat, tag] = iso.split("-");
+  return `${tag}.${monat}.${jahr}`;
+}
+
+function Zeile({ name, wert, testid }: { name: string; wert: string; testid?: string }) {
+  return (
+    <div className="einstellung">
+      <dt>{name}</dt>
+      <dd data-testid={testid}>{wert}</dd>
+    </div>
+  );
+}
+
+/**
+ * „Fehler melden“: Seit R57 (24.10.2026) ein Formular, das die Meldung an das Dashboard des Autors
+ * schickt (Meldeformular.tsx); vorher kopierte der Knopf nur die Angaben (Konzept 13).
+ */
+function FehlerMelden({ angaben }: { angaben: string }) {
+  const [offen, setzeOffen] = useState(false);
+  return (
+    <>
+      <button
+        type="button"
+        className="knopf-zweit"
+        aria-expanded={offen}
+        onClick={() => setzeOffen(!offen)}
+      >
+        <Knopfsymbol art="fehlerMelden" />
+        {t("ich.fehlerMelden")}
+      </button>
+      {offen && <Meldeformular angaben={angaben} beiSchliessen={() => setzeOffen(false)} />}
+    </>
+  );
+}
+
+export function Einstellungen() {
+  const { navigiere } = useNavigation();
+  const offline = useOfflineStand();
+  const index = useDaten(ladeIndex, "index");
+  const [updateMeldung, setzeUpdateMeldung] = useState<string | null>(null);
+  const datenstand =
+    index.art === "fertig"
+      ? t("ich.datenstandWert", {
+          auflage: index.wert.auflage,
+          datum: deutschesDatum(index.wert.datenstand),
+        })
+      : "…";
+  const offlineText = !offline.verfuegbar
+    ? t("ich.offlineUnbekannt")
+    : offline.bereit
+      ? t("ich.offlineBereit")
+      : t("ich.offlineNicht", { prozent: offline.prozent });
+  const angaben = [
+    t("ich.angabe.version", { wert: APP_VERSION }),
+    t("ich.angabe.datenstand", { wert: datenstand }),
+    t("ich.angabe.offline", { wert: offlineText }),
+    t("ich.angabe.geraet", { wert: navigator.userAgent }),
+  ].join("\n");
+
+  const suche = async () => {
+    const gefunden = await sucheUpdate();
+    setzeUpdateMeldung(gefunden ? t("ich.updateLaedt") : t("ich.updateKeins"));
+  };
+
+  return (
+    <div className="bildschirm">
+      <Kopfzeile titel={t("ich.titel")} zurueckText={t("profil.titel")} />
+      <EinstellungenKarte />
+      <DatenLoeschen />
+      {/* „Über die App“ am Ende (DS14): Version und Lizenzen braucht man selten, die
+          Einstellungen oft. */}
+      <section className="karte" data-tour="einstellungen-ueber">
+        <h2 className="karte-titel">
+          <Titelsymbol art="ueberApp" />
+          {t("ich.einstellungen")}
+        </h2>
+        <dl className="einstellungen">
+          <Zeile
+            name={t("ich.version")}
+            wert={t("ich.versionBeta", { wert: APP_VERSION })}
+            testid="app-version"
+          />
+          <Zeile name={t("ich.datenstand")} wert={datenstand} />
+          <Zeile name={t("ich.offline")} wert={offlineText} testid="offline-stand" />
+        </dl>
+        {/* Beta-Hinweis (Wunsch des Autors, 24.10.2026): Die App wird laufend erweitert. */}
+        <p className="hinweis">{t("ich.beta")}</p>
+        <div className="knopfreihe">
+          {offline.updateVerfuegbar ? (
+            <button type="button" className="knopf-haupt" onClick={() => void aktualisiereJetzt()}>
+              {t("update.knopf")}
+            </button>
+          ) : (
+            <button type="button" className="knopf-zweit" onClick={() => void suche()}>
+              <Knopfsymbol art="aktualisieren" />
+              {t("ich.updateSuchen")}
+            </button>
+          )}
+          <FehlerMelden angaben={angaben} />
+          {/* Die Installation erklärt die Startseite des Buches; installiert braucht es sie nicht. */}
+          {!istInstalliert() && (
+            <a className="knopf-zweit" href={INSTALLATIONSSEITE}>
+              {t("ich.installationsseite")}
+            </a>
+          )}
+          <button
+            type="button"
+            className="knopf-zweit"
+            onClick={() => navigiere({ bildschirm: "lizenzen" })}
+          >
+            {t("installation.lizenzen")}
+          </button>
+        </div>
+        {/* T2 (0.2.131): Impressum und Datenschutz direkt erreichbar (§ 5 DDG), nicht nur über
+            die Lizenzen. */}
+        <p className="rechtliche-links">
+          <a href="/datenschutz/">{t("lizenzen.datenschutz")}</a>
+          <a href="/impressum/">{t("lizenzen.impressum")}</a>
+        </p>
+        {updateMeldung && !offline.updateVerfuegbar && (
+          <p className="hinweis" role="status">
+            {updateMeldung}
+          </p>
+        )}
+      </section>
+    </div>
+  );
+}

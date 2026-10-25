@@ -3,7 +3,7 @@
  * Lösung zeigen, Denkaufgabe mit Selbsteinschätzung, fällige Wiederholungen im Training.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { starteImBrowser } from "./hilfen";
+import { oeffneEinstellungen, starteImBrowser } from "./hilfen";
 
 async function oeffneKapitelUebungen(page: Page, kapitel: number): Promise<void> {
   await page
@@ -92,7 +92,7 @@ test("Lösung zeigen zählt als gelöst; Denkaufgabe mit Selbsteinschätzung", a
 test("Erst selbst denken „streng“: Hilfe erst nach dem ersten eigenen Zug", async ({ page }) => {
   await starteImBrowser(page);
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
-  await leiste.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   // Seit 0.2.80 im Reiter „Training“ der Karte „Einstellungen“.
   await page.getByRole("tab", { name: "Training" }).click();
   await page.getByRole("radio", { name: "streng" }).click();

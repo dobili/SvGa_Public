@@ -39,6 +39,11 @@
 /* ---------- Querformat ab 600 Pixeln und mindestens 5 : 4 ---------- */
 
 @media (min-aspect-ratio: 5/4) and (min-width: 600px) {
+  /* Die Leiste steht hier links als Schiene; unten bleibt nur der sichere Rand (DS52). */
+  html {
+    --unten-fest: env(safe-area-inset-bottom);
+  }
+
   :root {
     /* Breite der Schiene links (Material „navigation rail“: 80 dp und mehr). */
     --schiene: 88px;

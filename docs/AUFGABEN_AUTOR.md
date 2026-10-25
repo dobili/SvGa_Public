@@ -1,11 +1,11 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.131 (mit den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.135 (mit den drei Zahlen je Bot nach der Uhr, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
 
-**In der App (seit 0.2.75):** Halte das Zahnrad unten rechts drei Sekunden gedrückt (am Rechner:
+**In der App (seit 0.2.75):** Halte „Profil“ unten rechts drei Sekunden gedrückt (am Rechner:
 Adresse `/app/#aufgaben`). Dann öffnet sich diese Datei als Seite: Abbildungen, Trainer,
 Spielen, Einstellungen und Nachschlagen im Text sind Links, jeder Punkt hat einen Haken und eine
 Notiz. „Stand in die Zwischenablage“ legt alles Abgehakte und Notierte als Text ab („N306 ok“,
@@ -13,12 +13,12 @@ Notiz. „Stand in die Zwischenablage“ legt alles Abgehakte und Notierte als T
 
 **So antwortest du:** im Chat mit den Kürzeln, etwa „N203 ok“, „N205 falscher Pfeil“, „X5: so
 lassen“, „T1: Vorschläge übernehmen“. Claude trägt alles ein. Bei Fehlern in der App hilft
-**Einstellungen (Zahnrad) › Fehler melden**: Den kopierten Text mitschicken (App-Version,
+**Profil › Einstellungen › Fehler melden**: Den kopierten Text mitschicken (App-Version,
 Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), bei allem anderen kurz, **was** du getan hast und **was** passiert ist, gern
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen prüfen, dass „App-Version 0.2.129“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.134“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -33,7 +33,7 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu in 0.2.131: Jeder Bot ist ein Mensch mit drei Wertungen (Bot-Chat, Opus, 25.10.2026)
+### Neu in 0.2.135: Jeder Bot ist ein Mensch mit drei Wertungen (Bot-Chat, Opus, 25.10.2026)
 
 Deine Fragen vom 25.10. nachts: Ein Bot verhält sich jetzt beim Wechsel der Bedenkzeit wie ein
 einzelner Mensch. Grundlage sind 871 364 Lichess-Profile aus sieben Monaten: Je 200er-Band der
@@ -56,9 +56,146 @@ Blitz spielt er wie ein Mensch seiner Stärke mit 3 Minuten, in Klassisch wie de
       Blitz < Schnellschach < Klassisch wolltest (schon umgesetzt, Widerspruch genügt).
 - [ ] N806. **Spielgefühl je Zeitklasse:** Spiele gegen denselben Bot einmal 3 + 2 und einmal
       30 + 20. In Blitz macht er spürbar mehr Fehler als in Klassisch, wie ein Mensch, der weniger
-      Zeit hat. Danach unter „Deine Spielstärke“: Die Gegnerstärke der Partie ist die Zahl der
-      Zeitklasse (Ole in Blitz etwa 2650). In der Partienliste sortiert „Stärke des Gegners“ nach
-      derselben Zahl.
+      Zeit hat. Danach unter Profil bei der Wertung: Die Gegnerstärke der Partie ist die Zahl der
+      Zeitklasse (Ole in Blitz etwa 2650). In der Partienliste im Profil sortiert „Stärke des
+      Gegners“ nach derselben Zahl.
+
+### Neu in 0.2.134: Profil statt Zahnrad, Einstellungen neu geordnet (Opus, 25.10.2026)
+
+Dein Wunsch vom 25.10.2026: unten rechts ein Profil, die Einstellungen eine Ebene tiefer, die
+Partien vom Spielen ins Profil, die Reiter der Einstellungen neu sortiert.
+
+- [ ] N940. **Leiste:** Unten rechts steht statt des Zahnrads ein Personensymbol mit dem Wort
+      „Profil“. Alle fünf Knöpfe haben jetzt ihr Wort. Drei Sekunden auf „Profil“ öffnen wie
+      bisher die Aufgabenseite.
+- [ ] N941. **Profil:** Die Seite „Profil“ zeigt oben den Knopf „Einstellungen“, darunter deine
+      Wertung (Kurve), deinen Fortschritt (drei Ringe) und die Liste deiner Partien mit Filter
+      und „Partie einlesen (PGN)“. Eine Partie antippen öffnet sie wie vorher.
+- [ ] N942. **Spielen ohne Partienliste:** Unter „Spielen“ steht die Partienliste nicht mehr;
+      eine laufende Partie zeigt weiter „Weiterspielen“ oben.
+- [ ] N943. **Einstellungen:** Profil › Einstellungen öffnet eine eigene Seite (oben „‹ Profil“
+      zum Zurückgehen). Darauf die Reiter, darunter „Daten auf diesem Gerät“ und „Über die App“
+      (Version, Updates, Fehler melden, Lizenzen, Datenschutz, Impressum).
+- [ ] N944. **Neue Reiter:** Die Einstellungen haben jetzt fünf Reiter in dieser Reihenfolge:
+      „Brett“ (Brettfarben, Figuren, Koordinaten), „Bedienung“ (Wischen, Zuganimation,
+      Startanimation, Ton), „Anzeige“ (Nachtmodus, Schriftgröße, Sprache), „Training“ (wie
+      bisher) und „Hilfe“ (App-Tour, Erklärungen). Vorher hießen sie Brett, Figuren, Ton,
+      Anzeige, Training; Figuren und Ton gehörten thematisch zu Brett und Bedienung. Geöffnet
+      ist zuerst „Training“. Schon umgesetzt, Widerspruch genügt.
+- [ ] N945. **Rundgang:** Auf „Profil“ und auf „Einstellungen“ zeigt der Kompass oben rechts je
+      einen eigenen kurzen Rundgang, der die neuen Orte erklärt.
+
+### Neu in 0.2.133: deine Korrekturen zur Nutzungsprüfung (Opus, 25.10.2026)
+
+- [ ] N936. **Porträts:** In der laufenden Partie gegen einen Bot (etwa Tom) ist das Porträt neben
+      seinem Satz oben jetzt groß (80 statt 48 Pixel). Unter „Spielen“ hat das Porträt neben der
+      Sprechblase wieder die alte Größe (64 Pixel); N913 entfällt damit.
+- [ ] N937. **Marken am Brett:** Die Bewertungsmarke an der gezogenen Figur ist 10 % kleiner.
+- [ ] N938. **PGN oben:** In der Auswertung stehen „PGN kopieren“ und „PGN als Datei sichern“
+      direkt unter der Überschrift „Auswertung“.
+- [ ] N939. **Spinnennetz im Dunkelmodus:** Ringe und Speichen des Netzes „Spielstil“ sind im
+      Dunkeln deutlich besser zu sehen.
+
+### Neu in 0.2.131 und 0.2.132: Nutzungsprüfung (DS46 bis DS57, V1 bis V9, T1 bis T4) und deine Ergänzungen (Opus, 25.10.2026)
+
+Deine Freigabe vom 25.10.2026 („Ja“ zu allem außer T5) und deine drei Ergänzungen dazu. Die
+Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
+
+- [ ] N911. **Spielen, Reihenfolge:** Spielen beginnt jetzt mit „Gegner“ (Engine oder Mensch) und
+      „Art des Gegners“, danach kommen Farbe, Bedenkzeit, Wertung, Spielhilfen und Eröffnung. Die
+      Karte „Aus der Grundstellung“ steht ganz unten, ohne Brett, nur mit „Stellung aufbauen“ und
+      „Eigene Stellung eingeben (FEN)“. Startest du aus einer Abbildung („Gegen die Engine
+      spielen“), steht die Stellung mit Brett wie bisher oben.
+- [ ] N912. **Startleiste:** Unten steht jetzt der ganze Name des Gegners, darunter kurz „Weiß ·
+      10 + 0 · gewertet“, rechts der Knopf „Beginnen“. Bei 360 Pixeln Breite (kleines Handy)
+      darf nichts mehr mit „…“ abgeschnitten sein.
+- [ ] N914. **Fehlerprofil als Säulen (Spielen › Eigene Stufe › Fehler):** Jede Fehlerart hat
+      links ein Zeichen „aus“ (durchgestrichener Kreis), daneben fünf steigende Säulen von „sehr
+      selten“ bis „sehr oft“, gefüllt bis zur gewählten Stufe; unter der mittleren („normal“)
+      ein kleiner Strich; rechts das Wort der Wahl. Antippen einer Säule wählt sie. Mit dem Haken
+      „Auch unmenschliche Werte anbieten“ kommen links und rechts gestreifte Säulen dazu, gewählt
+      rot. Arten ohne Stufen („einen Bauern eingestellt“) haben einen schmalen Schalter „aus |
+      an“. Das Datenformat bleibt: deine eingestellten Bots sehen gleich aus wie vorher.
+- [ ] N915. **Partie auf einen Blick:** Starte eine Partie auf dem Handy. Über dem Brett steht die
+      Zugliste in einer Zeile neben den vier Zugknöpfen, darüber die Gegneruhr, unter dem Brett
+      „am Zug“ und deine eigene Uhr, alles ohne Scrollen sichtbar. Nach einigen Zügen rollt die
+      Zeile von selbst zum letzten Zug; mit dem Finger kannst du sie seitlich verschieben.
+- [ ] N916. **Bewertungszeichen an den Zügen:** Nach einer ausgewerteten Partie steht hinter
+      jedem Zug in der Zugliste die runde farbige Marke seiner Bewertung (Buch, gut, bester Zug,
+      ?!, ?, ??, !! …), dieselben wie in „Deine Züge“. Tippe einen Zug an: Am Brett sitzt
+      dieselbe Marke oben rechts an der gezogenen Figur. Mit „Drehen“ wandert sie mit.
+- [ ] N917. **„Deine Züge“ in der Auswertung:** Die Balken sind grün (gut), grau (normal) oder rot
+      (schwach). Eine schwache Zeile hat zusätzlich ein Warnzeichen, ein fettes rotes Urteil und
+      einen leichten roten Grund. Die drei Bereiche hinter dem Balken sind schwach rot, grau und
+      grün getönt. Die Zonenwörter sind etwas größer, zu schmale Zonen bleiben ohne Wort.
+- [ ] N918. **Abbildung:** Die Zugliste über dem Brett ist höchstens zwei Zeilen hoch (bei
+      längeren Zugfolgen wischst du in ihr nach unten). Dadurch siehst du bei einer Abbildung wie
+      1.26 die Brettsymbole (Zählen, Ziehen, Engine …) ohne Scrollen.
+- [ ] N919. **Leiste unten:** Unter Buch, Training, Spielen und Nachschlagen steht wieder das Wort,
+      das Zahnrad bleibt ohne. Das nimmt deinen Wunsch aus 0.2.116 zurück (DS55 freigegeben).
+      Seit 0.2.134 steht dort „Profil“ mit Wort (N940).
+- [ ] N920. **Fortschrittsringe:** In einem Kapitel und in den Einstellungen stehen die drei Ringe
+      nebeneinander, das Wort darunter, ohne Trennung mitten im Wort („Warum-Fragen“).
+- [ ] N921. **Training:** Unter den Kapiteln fehlt die Zeile „Training zu diesem Kapitel
+      (Website)“; stattdessen sitzt rechts in jeder Kapitelzeile ein kleines Zeichen (Pfeil aus
+      einem Kasten), das zur selben Seite führt. Die Seite ist deutlich kürzer.
+- [ ] N922. **Nichts unter den Leisten:** Auf „Spielen“ eine Bedenkzeit-Kachel oder einen Schalter
+      weiter unten antippen: Die Seite rollt so, dass das Gewählte über der Startleiste steht,
+      nicht darunter. (Am Rechner auch mit der Tab-Taste prüfbar.)
+- [ ] N923. **Website:** Oben auf schach-von-grund-auf.com ist der Satz „Die App ist noch eine
+      Beta …“ gut lesbar (hell statt grau auf Navy). Darunter zwei Knöpfe: „App öffnen“ (gold)
+      und „Installieren“ (springt zum Installationsteil).
+- [ ] N924. **Querformat in der installierten App (Android):** Die installierte App dreht sich mit
+      dem Handy; quer erscheint das Querformat mit dem Brett links. (Wirkt erst nach dem
+      nächsten Update der Installation; notfalls die App neu installieren.)
+- [ ] N925. **Fehler melden:** Im Formular steht unter dem Häkchen „Angaben zum Gerät
+      mitschicken“ eine Klappe „Was wird gesendet?“ mit den echten Werten (App-Version,
+      Browser und Gerät, Bildschirm, Sprache; an einer Abbildung auch Nummer und Stellung). Der
+      Satz darunter endet mit dem Link „Mehr in der Datenschutzerklärung“. Oben steht „Fehler im
+      Buch“ jetzt ganz (darf zweizeilig sein), nicht mehr „Fehler im B…“.
+- [ ] N926. **Datenschutz und Impressum:** Am Ende von Einstellungen › Über die App stehen zwei
+      Links „Datenschutz“ und „Impressum“. In der Datenschutzerklärung (Abschnitt „Speicher auf
+      deinem Gerät“) steht jetzt richtig, dass „Fehler melden“ deinen Text an uns sendet; Stand
+      25. Oktober 2026. Bitte den Satz einmal lesen, er gilt nach deiner Regel vorerst als
+      abgesegnet.
+- [ ] N927. **Weitermachen, wo man war:** Eine Abbildung öffnen (etwa 5.12), die App ganz
+      schließen (aus der Liste der offenen Apps wischen) und wieder öffnen. Sie steht wieder auf
+      derselben Abbildung, und die Zurück-Geste führt zum Buch. Das gilt 24 Stunden lang. Während
+      einer Partie dasselbe: Die App öffnet auf „Spielen“ mit „Weiterspielen“, die Uhr läuft erst
+      nach dem Tipp.
+- [ ] N928. **„Offline bereit“ stimmt:** In einem privaten Fenster schach-von-grund-auf.com öffnen
+      und dem Balken zusehen. Er bleibt kurz bei 99 % und zeigt erst dann „Offline bereit“.
+      Danach Flugmodus an und die App öffnen: Sie startet.
+- [ ] N929. **Updates ohne Neustart:** Die App offen im Hintergrund lassen. Nach dem nächsten
+      Update (mehr als eine Stunde später) zur App zurückwechseln: Oben erscheint „Neue Version
+      verfügbar“, ohne dass die App neu geladen hat. Aktiv wird das Update erst nach dem Tipp.
+      Auf der Website heißt es jetzt: „Updates lädt sie von selbst, ein Tipp auf ‚Jetzt
+      aktualisieren‘ aktiviert sie.“
+- [ ] N930. **Dauerhafter Speicher:** Die App auf dem Home-Bildschirm einmal schließen und wieder
+      öffnen. Unter Einstellungen › Daten auf diesem Gerät sollte bei „Dauerhafter Speicher“
+      „zugesagt“ stehen (vorher oft „nicht zugesagt“).
+- [ ] N931. **Meldung ohne Netz:** Flugmodus an, Einstellungen › Fehler melden, etwas schreiben,
+      Senden. Es erscheint „Ohne Netz gespeichert, wird gesendet, sobald du wieder online bist.“
+      Flugmodus aus und kurz warten (App offen lassen): Die Meldung kommt im Dashboard an, ohne
+      dass du noch etwas tippst. Die Datenschutzerklärung erklärt das im Abschnitt „Meldungen aus
+      der App“.
+- [ ] N932. **Absturz (nur falls einer vorkommt):** Ein Absturz lässt sich nicht von Hand
+      auslösen. Kommt einer vor, bleibt die Leiste unten stehen; du siehst „Hier ist etwas
+      schiefgegangen. Dein Fortschritt ist gespeichert.“, dazu „Zurück“ und „Fehler melden“;
+      die technische Meldung steht eingeklappt darunter. Geräteangaben gehen nur mit Häkchen mit.
+      Ein Bild davon entsteht im automatischen Test (`absturz.spec.ts`).
+- [ ] N933. **Englisch erst auf Wahl:** Das Handy lädt für die Offline-Nutzung jetzt etwa 15 statt
+      21 MB. Test: Flugmodus an, App öffnen, Einstellungen › Anzeige › „English (preview)“
+      tippen. Ein Hinweis erklärt, dass Englisch einmal Internet braucht; die App bleibt deutsch.
+      Mit Internet nochmal tippen: Die App ist englisch. Einen Moment warten, wieder Flugmodus,
+      App neu öffnen und Abb. 1.26 aufrufen: Die Unterschrift ist englisch.
+- [ ] N934. **Kein Springen auf der Website:** In einem privaten Tab
+      schach-von-grund-auf.com/installieren/ öffnen und auf „Im Browser verwenden“ schauen. Der
+      Knopf bleibt stehen, während darüber der Fortschritt hochzählt. Auch die Startseite springt
+      beim Laden nicht mehr.
+- [ ] N935. **„Spielen“ schneller:** Unten auf „Spielen“ tippen: Der goldene Strich springt sofort
+      dorthin, der Bildschirm folgt gleich. Zurück zu „Buch“ und wieder „Spielen“: spürbar
+      schneller als vorher. „Beginnen“ wirkt sofort gedrückt, die Partie ist schneller da.
 
 ### Neu in 0.2.129: Spielen neu geordnet (DS38 bis DS45; Opus, 25.10.2026)
 
@@ -75,12 +212,12 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
       Antippen: Wie Menschen, Solide, Leichtsinnig, Königsunsicher, Taktisch blind, Keine Fehler
       (die letzte ist neu: alle Fehler aus, die Stufe spielt rein). Dann der Regler für die
       Häufigkeit und die Fehlerarten in fünf Gruppen mit Zeichen (Material, Taktik, König,
-      Eröffnung und Bauern, Allgemein). Jede Fehlerart hat einen Schalter „aus | sehr selten |
-      selten | normal | oft | sehr oft“; Arten ohne Spielerdaten nur „aus | an“. Bei
+      Eröffnung und Bauern, Allgemein). Jede Fehlerart hat seit 0.2.131 Säulen statt Schalter
+      (siehe N914); Arten ohne Spielerdaten nur „aus | an“. Bei
       eingeschalteten Gelegenheitsfehlern klappt „Verlust: unbegrenzt“ die Wahl „0,5 | 1 | 2 | 3
       Bauern | unbegrenzt“ auf.
 - [ ] N902. **Unmenschliche Werte:** Nach dem Haken „Auch unmenschliche Werte anbieten“ kommen
-      gestreifte Felder „fast nie“, „kaum“, „extrem“, „ständig“ dazu; gewählt sind sie rot, und
+      gestreifte Säulen „fast nie“, „kaum“, „extrem“, „ständig“ dazu; gewählt sind sie rot, und
       die Marke oben wird „nicht menschlich“.
 - [ ] N903. **Reiter „Flecken“:** Elf Kacheln mit Zeichen (Läufer, Springer, Dame, Turm, Bauer,
       Pfeile). Ein Tipp schaltet weiter: aus → selten → normal → oft → sehr oft → aus.
@@ -89,8 +226,8 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
       „Neuer Gegner“ („Gegner bearbeiten“ beim Bearbeiten), darunter Name, Porträt und dieselben
       vier Reiter wie bei der eigenen Stufe.
 - [ ] N905. **Feste Startleiste:** Unten über der Navigation klebt eine Leiste mit Bild und Name
-      des Gegners, darunter „mit Weiß · Schnellschach 10 + 0 · gewertet“, rechts „Partie
-      beginnen“. Sie bleibt beim Scrollen stehen und rutscht erst über der Liste der Partien an
+      des Gegners, darunter seit 0.2.131 kurz „Weiß · 10 + 0 · gewertet“, rechts „Beginnen“
+      (siehe N912). Sie bleibt beim Scrollen stehen und rutscht erst über der Liste der Partien an
       ihren Platz. Ein Tipp auf den linken Teil springt zur Gegnerwahl. Bei laufender Partie
       kommt die Rückfrage in der Leiste. Bei „Eigene Bots“ ohne gewählten Bot steht dort „Noch kein eigener Bot – oben wählen oder anlegen“, und der Knopf ist grau.
 - [ ] N906. **Bedenkzeit als Kacheln:** vier gleich große Kacheln je Zeile, groß die Zeit
@@ -105,6 +242,8 @@ Deine Freigabe „Alles ja“ zu den Vorschlägen DS38 bis DS45, angepasst an de
       auf den anderen Seiten; die Karte mit Brett, Figuren, Anzeige, Ton und Training heißt
       „Darstellung und Training“. Das hebt deinen Wunsch von 0.2.30 auf (keine sichtbare
       Überschrift); du hast DS44 freigegeben, Widerspruch genügt.
+      Seit 0.2.134 sind die Einstellungen eine eigene Seite unter Profil; die Reiter stehen dort
+      ganz oben, die Überschrift „Darstellung und Training“ entfällt (N943, N944).
 - [ ] N910. **Kleinigkeiten:** Die gestrichelten Chips „frühere“ und „spätere“ in der
       Werkzeugleiste einer Abbildung haben einen kräftigeren Rand.
 

@@ -32,6 +32,20 @@ export function uhrname(stelle: string): string {
   });
 }
 
+/**
+ * Kurzer Name einer Uhr für die Startleiste (DS50): nur „10 + 0“, weil die Zeitklasse schon in
+ * der gewählten Kachel steht und die Zusammenfassung bei 360 Pixeln sonst abgeschnitten wird.
+ * Beispiel: Stelle der Vorgabe Schnellschach 10 + 0 → „10 + 0“; „ohne“ → „Ohne Uhr“.
+ */
+export function uhrnameKurz(stelle: string): string {
+  const vorgabe = UHR_VORGABEN[Number(stelle)];
+  if (stelle === OHNE_UHR || !vorgabe) return t("spielen.uhr.ohne");
+  return t("spielen.uhr.kurz", {
+    minuten: vorgabe.grundzeitMs / MINUTE_MS,
+    sekunden: vorgabe.zuschlagMs / SEKUNDE_MS,
+  });
+}
+
 /** Die Stellen der Auswahl: alle Vorgaben, außerhalb der Grundstellung dazu „Ohne Uhr“. */
 export function uhrStellen(fen: string): string[] {
   const stellen = UHR_VORGABEN.map((_, stelle) => String(stelle));

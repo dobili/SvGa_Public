@@ -3,10 +3,10 @@
  * einem Knopf, der den Stand für den Chat in die Zwischenablage legt.
  *
  * Rolle im Gesamtbild: Wunsch des Autors vom 18.10.2026, damit die Nachtests auf dem Handy
- * schneller gehen. Erreichbar über einen langen Druck (drei Sekunden) auf das Zahnrad der Leiste
- * oder über die Adresse /app/#aufgaben; Leser stoßen nicht zufällig darauf. Die Datei kommt beim
- * Bauen als eigener Teil der App mit (nachgeladen, offline vorhanden) und ist damit so neu wie
- * die App. Haken und Notizen liegen als Merker auf dem Gerät.
+ * schneller gehen. Erreichbar über einen langen Druck (drei Sekunden) auf „Profil“ in der Leiste
+ * (bis 0.2.133 das Zahnrad) oder über die Adresse /app/#aufgaben; Leser stoßen nicht zufällig
+ * darauf. Die Datei kommt beim Bauen als eigener Teil der App mit (nachgeladen, offline
+ * vorhanden) und ist damit so neu wie die App. Haken und Notizen liegen als Merker auf dem Gerät.
  * Abhängigkeiten: autor/*, app/merker.ts, app/version.ts, training/trainer.ts, Aufgabenpunkt,
  * Kopfzeile, useDaten, i18n.
  */

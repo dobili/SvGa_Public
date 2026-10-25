@@ -5,7 +5,7 @@
  * Buchstaben (seit P6 in der englischen Unterschrift), die Lizenzen kommen aus der Sprachdatei.
  */
 import { expect, test } from "@playwright/test";
-import { oeffneAbbildung, starteImBrowser } from "./hilfen";
+import { oeffneAbbildung, oeffneEinstellungen, starteImBrowser } from "./hilfen";
 
 test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und Lizenzen", async ({
   page,
@@ -17,7 +17,7 @@ test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und 
   await oeffneAbbildung(page, "1.2", "1.2");
   await expect(page.locator(".unterschrift").first()).toContainText("Nach 2. Lf4 – Ziel 1");
 
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Anzeige" }).click();
   await expect(page.getByRole("radio", { name: "Deutsch" })).toHaveAttribute(
     "aria-checked",
@@ -30,6 +30,7 @@ test("Sprache: html lang, Deutsch gewählt, Unterschrift in beiden Sprachen und 
   await page.getByLabel("Open figure").fill("1.2");
   await page.getByRole("button", { name: "Open", exact: true }).click();
   await expect(page.locator(".unterschrift").first()).toContainText("After 2. Bf4 – Goal 1");
+  await page.getByRole("navigation").getByRole("button", { name: "Profile", exact: true }).click();
   await page.getByRole("button", { name: "Settings", exact: true }).click();
   await page.getByRole("tab", { name: "Display" }).click();
   await page.getByRole("radio", { name: "Deutsch" }).click();

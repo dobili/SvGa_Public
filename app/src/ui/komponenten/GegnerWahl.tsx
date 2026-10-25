@@ -49,6 +49,8 @@ import { Titelsymbol } from "./Titelsymbol";
 
 /** Größe der Symbole auf den Kategorie-Kacheln. */
 const KATEGORIE_SYMBOL = 28;
+/** Zeichen der eigenen Stufe anstelle eines Porträts. */
+const PORTRAETSYMBOL = 28;
 
 const KATEGORIEN: readonly Gegnerkategorie[] = ["stufe", "vorgefertigt", "eigene"];
 const KATEGORIE_SYMBOLE = { stufe: SlidersHorizontal, vorgefertigt: Bot, eigene: UserPen };
@@ -155,7 +157,7 @@ function Sprechblase({
         <GegnerBild bot={bot} eigene={eigene} name={name} besiegt={besiegt} />
       ) : (
         <span className="gegner-portraet gegner-zeichen" aria-hidden="true">
-          <SlidersHorizontal size={28} />
+          <SlidersHorizontal size={PORTRAETSYMBOL} />
         </span>
       )}
       <div className="gegner-blase">
@@ -266,7 +268,6 @@ export function GegnerWahl({
         text={(w) => t(`spielen.gegner.${w}`)}
         beiWahl={beiGegner}
       />
-      {einstellungen}
       {gegner === "engine" && (
         <div className="gegnerwahl" data-tour="spielen-gegner">
           <Vorschauwahl
@@ -295,6 +296,7 @@ export function GegnerWahl({
           )}
         </div>
       )}
+      {einstellungen}
     </>
   );
 }

@@ -5,8 +5,8 @@
  * Rolle im Gesamtbild: Wunsch des Autors vom 19.10.2026. Wer eine Seite überfliegt, liest vor
  * allem Überschriften (NN/g, „Layer-Cake“-Muster); ein Zeichen in Gold vor jeder Überschrift macht
  * die Anker auch ohne Lesen sichtbar. Wo ein Bereich schon ein Zeichen hat, wird es übernommen:
- * Einstellungen das Zahnrad der Leiste, Training das Fadenkreuz, Eröffnung das Buch der
- * Phasentabelle (zeilensymbole.ts), Spielstärke der Tacho der Auswertung.
+ * Einstellungen das Zahnrad (bis 0.2.133 in der Leiste), Training das Fadenkreuz, Eröffnung das
+ * Buch der Phasentabelle (zeilensymbole.ts), Spielstärke der Tacho der Auswertung.
  * Abhängigkeiten: lucide-react.
  */
 import {

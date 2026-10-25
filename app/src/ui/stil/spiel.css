@@ -5,9 +5,22 @@
  */
 
 .partie-untertitel {
-  margin: 0 0 var(--raster);
+  margin: 0;
   color: var(--text-leise);
   text-align: center;
+}
+
+/* DS48: In der Partie rücken Untertitel, Zugliste, Uhren und Brett zusammen (Abstand 8 statt
+   16 Pixel), der Untertitel steht in einer Zeile. */
+.bildschirm-partie {
+  gap: var(--raster);
+}
+
+.bildschirm-partie > .partie-untertitel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--groesse-klein);
 }
 
 /* Gegen einen Bot (0.2.124): Porträt links, daneben sein Satz, darunter klein die Stufenzeile. */
@@ -20,9 +33,16 @@
 }
 
 .partie-gegnerzeile .gegner-portraet {
-  width: 48px;
-  height: 48px;
+  /* 80 statt 48 Pixel (Wunsch des Autors, 25.10.2026: das Porträt neben dem Satz des Gegners
+     in der laufenden Partie war zu klein). */
+  width: 80px;
+  height: 80px;
   flex: none;
+}
+
+.partie-gegnerzeile > .gegnerbild {
+  flex: none;
+  width: 80px;
 }
 
 .partie-gegnerbeschreibung {
@@ -40,7 +60,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: var(--tippflaeche);
-  margin: var(--raster) 0;
+  margin: 0;
   padding: 0 calc(var(--raster) * 2);
   border: 1px solid var(--linie);
   border-radius: var(--radius);
@@ -60,10 +80,6 @@
 
 .partieuhr[data-knapp="true"] .partieuhr-zeit {
   color: var(--rot-text);
-}
-
-.partiezuege {
-  margin-top: var(--raster);
 }
 
 /* „M“ und „E“ vor dem ersten Zug des Mittelspiels und des Endspiels (0.2.43), wie in der Kurve. */
@@ -368,7 +384,7 @@
 }
 
 .pgn {
-  margin-top: calc(var(--raster) * 2);
+  margin-bottom: var(--raster);
 }
 
 .pgn pre {
@@ -601,13 +617,17 @@
 }
 
 .gegner-sprechblase .gegner-portraet {
-  width: 64px;
-  height: 64px;
+  width: 96px;
+  height: 96px;
   flex: none;
 }
 
+/* Seit 0.2.131 (Wunsch des Autors: das Porträt war neben dem Text zu klein) 96 statt 64 Pixel,
+   und die Blase zeigt mit einem Zipfel auf das Porträt. */
 .gegner-blase {
+  position: relative;
   flex: 1;
+  min-width: 0;
   padding: 10px 12px;
   border: 1.5px solid var(--linie-stark);
   border-radius: var(--radius);
@@ -617,6 +637,19 @@
 
 .gegner-blase p {
   margin: 4px 0 0;
+}
+
+.gegner-blase::before {
+  content: "";
+  position: absolute;
+  top: 36px;
+  left: -8px;
+  width: 12px;
+  height: 12px;
+  border-left: 1.5px solid var(--linie-stark);
+  border-bottom: 1.5px solid var(--linie-stark);
+  background: var(--flaeche);
+  transform: rotate(45deg);
 }
 
 .gegner-klasse {
@@ -652,6 +685,12 @@
   display: flex;
   flex-direction: column;
   gap: calc(var(--raster) / 2);
+}
+
+/* Sofortige Rückmeldung auf den Tipp, bis die Partie gezeichnet ist (V6, BeginnenKnopf.tsx). */
+.beginnen [aria-busy="true"] {
+  opacity: 0.75;
+  transform: scale(0.98);
 }
 
 /*

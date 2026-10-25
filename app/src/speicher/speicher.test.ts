@@ -108,3 +108,36 @@ describe("Speicher", () => {
     expect(schluessel).toEqual(["aktuell", `defekt-${JETZT.toISOString()}`]);
   });
 });
+
+describe("Bitte um dauerhaften Speicher (V8)", () => {
+  /** Ein Browser, der den Speicher noch nicht (oder schon) dauerhaft hält. */
+  function browserspeicher(schonDauerhaft: boolean) {
+    const storage = {
+      persisted: vi.fn(() => Promise.resolve(schonDauerhaft)),
+      persist: vi.fn(() => Promise.resolve(true)),
+    };
+    vi.stubGlobal("navigator", { storage });
+    return storage;
+  }
+
+  it("bittet auch bei späteren Starts, solange der Speicher nicht dauerhaft ist", async () => {
+    frischeUmgebung();
+    const datenbank = await import("./datenbank");
+    const formate = await import("./format");
+    await datenbank.schreibeRoh(formate.leereDaten(JETZT));
+    const storage = browserspeicher(false);
+    const speicher = await import("./speicher");
+    await speicher.lade(JETZT);
+    await vi.waitFor(() => expect(speicher.speicherzustand().dauerhaft).toBe(true));
+    expect(storage.persist).toHaveBeenCalledOnce();
+  });
+
+  it("fragt nicht, wenn der Speicher schon dauerhaft ist", async () => {
+    frischeUmgebung();
+    const storage = browserspeicher(true);
+    const speicher = await import("./speicher");
+    await speicher.lade(JETZT);
+    await vi.waitFor(() => expect(speicher.speicherzustand().dauerhaft).toBe(true));
+    expect(storage.persist).not.toHaveBeenCalled();
+  });
+});

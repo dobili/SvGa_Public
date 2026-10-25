@@ -32,7 +32,7 @@ export interface Startangaben {
   readonly stufe: Stufennummer;
   readonly eigene: readonly EigenerGegner[];
   readonly farbe: Farbe;
-  /** „Schnellschach 10 + 0“ oder „Ohne Uhr“. */
+  /** „10 + 0“ oder „Ohne Uhr“ (kurz seit DS50). */
   readonly uhr: string;
   /** Zählt die Partie wirklich (Haken gesetzt und wertbar)? */
   readonly gewertet: boolean;
@@ -93,8 +93,8 @@ export function Startleiste({
         angaben.gegner === "engine"
           ? t(
               angaben.farbe === "white"
-                ? "spielen.filter.farbe.white"
-                : "spielen.filter.farbe.black",
+                ? "spielen.startleiste.farbe.white"
+                : "spielen.startleiste.farbe.black",
             )
           : null,
         angaben.uhr,

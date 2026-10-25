@@ -28,6 +28,8 @@
   --radius: 8px;
   --tippflaeche: 44px;
   --leiste-hoehe: 64px;
+  /* Ungefähre Höhe der Startleiste auf „Spielen“ (DS40) für den Abstand beim Scrollen (DS52). */
+  --startleiste-hoehe: 80px;
   /* Schriftstufen; die Pixelwerte gelten bei Standardschrift des Geräts. Kleiner als 13 px gibt
      es nicht mehr (ältere Leser), Fließtext hat 17 px. */
   --groesse-fein: 0.765rem; /* 13 px: Plaketten, Kleingedrucktes */
@@ -95,6 +97,15 @@ body {
  */
 html {
   font-size: calc(100% * var(--schriftfaktor, 1));
+  /* DS52 (WCAG 2.4.11): Springt der Fokus oder scrollt die App zu einem Element, hält sie
+     Abstand zur festen Leiste unten, auf „Spielen“ auch zur Startleiste. Vorher verschwand das
+     gewählte Element dort bis zu 39-mal unter den Leisten. */
+  --unten-fest: calc(var(--leiste-hoehe) + env(safe-area-inset-bottom));
+  scroll-padding-bottom: calc(var(--unten-fest) + var(--raster) * 3);
+}
+
+html:has(.startleiste) {
+  scroll-padding-bottom: calc(var(--unten-fest) + var(--startleiste-hoehe) + var(--raster) * 2);
 }
 
 body {

@@ -166,3 +166,37 @@
   flex: 1;
   line-height: 1.2;
 }
+
+/* DS49: An den Abbildungen höchstens zwei Zeilen (vorher vier), damit die Brettsymbole ohne
+   Scrollen zu sehen sind; der gezeigte Zug wird in der Zeile in die Sicht gerollt. */
+.bildschirm-abbildung .zugzeile {
+  max-height: 4.3em;
+}
+
+/* DS48: In der Partie die Züge in einer Zeile neben den Zugknöpfen, waagerecht zu rollen; so
+   stehen beide Uhren und das Brett bei 360 × 740 Pixeln zusammen auf dem Schirm. Die Knöpfe
+   bleiben direkt über dem Brett (Wunsch des Autors vom 14.10.2026). */
+.partiezuege {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  padding-block: calc(var(--raster) / 2);
+}
+
+.partiezuege .zugzeile {
+  display: flex;
+  align-items: center;
+  max-height: var(--tippflaeche);
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.partiezuege .zugknoepfe {
+  display: flex;
+}
+
+.partiezuege .zugknoepfe .knopf-symbol {
+  width: 40px;
+}

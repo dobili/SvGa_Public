@@ -17,8 +17,49 @@
   color: var(--creme);
   padding: calc(env(safe-area-inset-top) + 32px) 24px 28px;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   align-items: center;
+}
+
+.startseite-kopf > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+/* DS47: zwei Knöpfe über die ganze Breite des Kopfes, Gold für den Weg in die App. */
+.startseite-aktionen {
+  flex: 1 0 100%;
+  display: flex;
+  gap: var(--raster);
+}
+
+.startseite-aktionen a {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 0 var(--raster);
+  border-radius: var(--radius);
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+}
+
+.startseite-aktion-haupt {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.startseite-aktion-zweit {
+  border: 1.5px solid var(--creme);
+  color: var(--creme);
+}
+
+.startseite-aktionen a:focus-visible {
+  outline: 3px solid var(--creme);
+  outline-offset: 2px;
 }
 
 .startseite-kopf h1 {
@@ -114,8 +155,22 @@
 }
 
 /*
+ * Fortschritt der Offline-Vorbereitung (V5): Bis der Service Worker angemeldet ist, hält er seinen
+ * Platz unsichtbar frei („wartet“; visibility nimmt ihn auch Bildschirmlesern weg), damit nichts
+ * springt. Ohne Service Worker fehlt er ganz („hidden“; .fortschritt setzt sonst display: flex).
+ */
+.fortschritt.wartet {
+  visibility: hidden;
+}
+
+.fortschritt[hidden] {
+  display: none;
+}
+
+/*
  * Anleitungen je Gerät: Ohne JavaScript (Suchmaschinen) sind alle sichtbar; mit JavaScript nur
- * die passende (Klasse „js“ setzt das Skript im Kopf, „sichtbar“ setzt startseite.ts).
+ * die passende (Klasse „js“ setzt das Skript im Kopf, „sichtbar“ setzt das Skript im
+ * Installationsteil vor dem ersten Zeichnen und danach startseite.ts).
  */
 .js [data-anleitung] {
   display: none;
@@ -303,11 +358,12 @@
   border-color: var(--gruen-text);
 }
 
-/* Beta-Hinweis unter dem Untertitel (Wunsch des Autors, 24.10.2026). */
+/* Beta-Hinweis unter dem Untertitel (Wunsch des Autors, 24.10.2026). Steht immer auf Navy, daher
+   Creme statt --text-leise: Das Grau hatte im hellen Modus nur etwa 1,9 : 1 Kontrast (DS46). */
 .startseite-beta {
   margin: 0.25rem 0 0;
   font-size: 0.9rem;
-  color: var(--text-leise, #666);
+  color: color-mix(in srgb, var(--creme) 82%, transparent);
 }
 
 /* Direkte Links zu den Lichess-Werkzeugen unter einer Übung (R57-Zusatz, 24.10.2026). */

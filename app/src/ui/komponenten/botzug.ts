@@ -8,12 +8,12 @@
  * Speicher, damit sie ein Neuladen übersteht.
  * Abhängigkeiten: engine/, spiel/, speicher/, ui/komponenten/botNotmodus.ts.
  */
+import { wertungDerPersoenlichkeit } from "../../engine/persoenlichkeitswertung";
 import { engine } from "../../engine/engineDienst";
 import { gegnerVon } from "../../engine/gegner";
 import { gruppenstufe } from "../../engine/gruppe";
 import { gruppenzug, mitgliederFuer, type Gruppenmitglied } from "../../engine/gruppenwahl";
 import { faktorenAus } from "../../engine/gegnerbau";
-import { gegnerstaerke } from "../../engine/botstaerke";
 import { tagesform, type Verlauf } from "../../engine/menschlich";
 import { naechsteStufe, stufe, type Stufennummer } from "../../engine/stufen";
 import { wahltempo } from "../../engine/wahlmodell";
@@ -140,7 +140,10 @@ function profilDerPartie(partie: Partie, jetztMs: number): Gegnerprofil {
     // Spaß-Bots (0.2.88) und Gewichte der Bots stehen in der Liste, nicht in der Partie.
     zufallszuege: bot?.zufallszuege,
     // Vorgefertigte Bots (0.2.125): Faktoren aus den Stufen ihrer Persönlichkeit und ihrer Wertung
-    gewichte: e.gewichte ?? (bot ? faktorenAus(bot.persoenlichkeit, gegnerstaerke(e)) : undefined),
+    // (seit 0.2.143 die feste Wertung der Messung, engine/persoenlichkeitswertung.ts)
+    gewichte:
+      e.gewichte ??
+      (bot ? faktorenAus(bot.persoenlichkeit, wertungDerPersoenlichkeit(bot)) : undefined),
     // Eigene Gegner mit gewähltem Stil (0.2.126) wie vorgefertigte Bots
     stilname: e.stilname ?? bot?.stilname,
     stilmix: e.stilmix,

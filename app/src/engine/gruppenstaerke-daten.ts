@@ -9,14 +9,14 @@
 import type { Stufennummer } from "./stufen";
 
 export const GRUPPEN_STAERKE: Readonly<Partial<Record<Stufennummer, number>>> = {
-  1: 346,
-  2: 830,
-  3: 1148,
-  4: 1635,
-  5: 1870,
-  6: 2306,
-  7: 2527,
-  8: 2733,
-  9: 2796,
-  10: 2773,
+  1: 212,
+  2: 678,
+  3: 640,
+  4: 1352,
+  5: 1500,
+  6: 1721,
+  7: 2105,
+  8: 2491,
+  9: 2589,
+  10: 2519,
 };

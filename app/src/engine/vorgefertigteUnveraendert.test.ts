@@ -12,9 +12,9 @@
  * Abhängigkeiten: engine/gegnerliste.ts, engine/gegnerbau.ts, engine/zugwahl.ts,
  * engine/menschenwahl.ts, engine/botstaerke.ts.
  */
+import { wertungDerPersoenlichkeit } from "./persoenlichkeitswertung";
 import { readFileSync, writeFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { staerkeDesBots } from "./botstaerke";
 import { faktorenAus } from "./gegnerbau";
 import { GEGNER } from "./gegnerliste";
 import { hatZusatzfehler } from "./menschenwahl";
@@ -23,12 +23,11 @@ import { menschenwerteAus } from "./zugwahl";
 const DATEI = new URL("./testdaten/vorgefertigte-0.2.141.json", import.meta.url);
 /** Wertungen, bei denen die Faktoren verglichen werden (Rand, Mitte, Spitze der Daten). */
 const WERTUNGEN = [400, 800, 1300, 1800, 2400];
-const ERSATZWERTUNG = 1300;
 
 /** Alles, was die Engine von einem Bot bekommt, in fester Reihenfolge. */
 function eingabenAllerBots() {
   return GEGNER.map((g) => {
-    const wertung = staerkeDesBots(g.kennung) ?? ERSATZWERTUNG;
+    const wertung = wertungDerPersoenlichkeit(g);
     const werte = menschenwerteAus({
       fehlerarten: g.fehlerarten,
       stil: g.stil,

@@ -12,8 +12,8 @@
  * Abhängigkeiten: engine/menschenwahl.ts, engine/zugwahl.ts (Profil → Stellschrauben),
  * engine/spielbewerter.ts (Typen), engine/stufen.ts (Typ).
  */
+import { wertungDerPersoenlichkeit } from "./persoenlichkeitswertung";
 import type { Phase } from "../schach/phase";
-import { staerkeDesBots } from "./botstaerke";
 import { faktorenAus } from "./gegnerbau";
 import { mitgliederDerGruppe } from "./gruppe";
 import { maiaabfrage } from "./maia";
@@ -52,7 +52,7 @@ export function mitgliederFuer(
         fehlerarten: g.fehlerarten,
         stil: 0,
         blindeFlecken: g.blindeFlecken,
-        gewichte: faktorenAus(g.persoenlichkeit, staerkeDesBots(g.kennung) ?? st.wertung),
+        gewichte: faktorenAus(g.persoenlichkeit, wertungDerPersoenlichkeit(g)),
         stilname: g.stilname,
         haeufigkeit: g.haeufigkeit,
         zufallszuege: g.zufallszuege,

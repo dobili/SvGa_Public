@@ -11,7 +11,7 @@ import type { Reglerstufen } from "../../engine/eigenstufen";
 import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import { gegnerVon, unterAbhakliste, type EigenerGegner } from "../../engine/gegner";
 import { gruppenstufe } from "../../engine/gruppe";
-import { staerkeGeschaetzt } from "../../engine/botstaerke";
+import { wertungEigenerPersoenlichkeit } from "../../engine/persoenlichkeitswertung";
 import { gewichteAusStufen, REGLERARTEN } from "../../engine/eigenstufen";
 import { gruppenname } from "../komponenten/gruppentexte";
 import type { Spielvorlieben } from "../../speicher/partien";
@@ -34,7 +34,7 @@ function gewichteDesEigenen(g: {
   const flecken: readonly string[] = g.blindeFlecken;
   const aktiv = REGLERARTEN.filter((a) => arten.includes(a) || flecken.includes(a));
   const stufen = Object.fromEntries(aktiv.map((a) => [a, g.reglerstufen?.[a] ?? 0]));
-  return gewichteAusStufen(stufen, staerkeGeschaetzt(g));
+  return gewichteAusStufen(stufen, wertungEigenerPersoenlichkeit(g));
 }
 
 /**

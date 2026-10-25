@@ -13,7 +13,7 @@
  * engine/botstaerke.ts, i18n.
  */
 import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
-import { staerkeGeschaetzt } from "../../engine/botstaerke";
+import { wertungEigenerPersoenlichkeit } from "../../engine/persoenlichkeitswertung";
 import { naechsteStufe, REGLERARTEN, type Reglerstufen } from "../../engine/eigenstufen";
 import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
 import type { EigenerGegner } from "../../engine/gegner";
@@ -47,7 +47,7 @@ export function istAn(g: EigenerGegner, art: Profilart): boolean {
  * sonst 0. Beispiel: alter Gegner mit Gewicht 3 für Bauernraub → Stufe etwa 3.
  */
 export function aktuelleStufen(g: EigenerGegner): Reglerstufen {
-  const wertung = staerkeGeschaetzt(g);
+  const wertung = wertungEigenerPersoenlichkeit(g);
   const aus: Partial<Record<Profilart, number>> = {};
   for (const art of REGLERARTEN) {
     if (!istAn(g, art)) continue;

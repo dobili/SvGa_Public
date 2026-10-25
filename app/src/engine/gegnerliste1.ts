@@ -17,6 +17,9 @@ export const GEGNER_GRUPPE_1_BIS_5: readonly Gegner[] = [
   bot("luis", "Luis", "finn", [1, 1, 1], "vorsichtig", 0, "verteidiger", 2.5),
   bot("clara", "Clara", "frieda", [1, 1, 1], "damenfan", 0, "draufgaenger", 2.5),
   bot("onkel-bernd", "Onkel Bernd", "onkel-rudi", [1, 1, 1], "endspieler", 0, "vereinfacher", 2.5),
+  // Seit 0.2.143 (Wunsch des Autors, 25.10.2026: Neuling auf acht Bots): die zwei Universellen.
+  bot("frau-schulz", "Frau Schulz", "frau-schulz", [1, 1, 1], "hektiker", 0, "universell", 2.5),
+  bot("lotte", "Lotte", "lotte", [1, 1, 1], "materialist", 0, "universell", 2.5),
   bot("henry", "Henry", "leon", [1, 1, 1], "angreifer", 2, "angreifer"),
   bot("moritz", "Moritz", "emil", [1, 1, 1], "stratege", 0, "positionsspieler"),
   bot("derya", "Derya", "selin", [1, 1, 1], "taktiker", 0, "taktiker", 1.6),

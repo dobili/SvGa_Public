@@ -23,7 +23,7 @@ import { STIL_MAX, STIL_MIN } from "./stil";
 import type { Stufennummer } from "./stufen";
 
 /** 78 Bots (Satz vom 24.10.2026: Gruppe 1 sechs, sonst acht), nach gemessener Zahl auf die Stufen verteilt. */
-const BOTS_ZAHL = 78;
+const BOTS_ZAHL = 80;
 const STUFENNUMMERN: readonly Stufennummer[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 describe("vorgefertigte Gegner", () => {

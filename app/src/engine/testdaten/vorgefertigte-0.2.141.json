@@ -374,6 +374,121 @@
     "zusatzfehler": true
   },
   {
+    "kennung": "frau-schulz",
+    "faktoren": [
+      {
+        "drohungIgnoriert": 1.49,
+        "figurHaengen": 1.215,
+        "rueckzug": 1.424,
+        "springer": 1.514
+      },
+      {
+        "drohungIgnoriert": 1.5338546215336055,
+        "figurHaengen": 1.2368043499276675,
+        "rueckzug": 1.3699751822569635,
+        "springer": 1.5129996695306975
+      },
+      {
+        "drohungIgnoriert": 1.5330254375234504,
+        "figurHaengen": 1.2462283579414066,
+        "rueckzug": 1.3097413631380934,
+        "springer": 1.5262277329429692
+      },
+      {
+        "drohungIgnoriert": 1.584,
+        "figurHaengen": 1.262,
+        "rueckzug": 1.296,
+        "springer": 1.556
+      },
+      {
+        "drohungIgnoriert": 1.6341236183349164,
+        "figurHaengen": 1.2935625226482095,
+        "rueckzug": 1.2118003135830588,
+        "springer": 1.6076476604032364
+      }
+    ],
+    "werte": {
+      "haeufigkeit": 2.875,
+      "gewichte": {
+        "rueckzug": 1.384088886489842,
+        "diagonale": 1,
+        "springer": 1.5132646927199647,
+        "dame": 1,
+        "turm": 1,
+        "ruhig": 1,
+        "abzug": 1,
+        "bauer": 1,
+        "roentgen": 1,
+        "zwischenzug": 1,
+        "grundreihe": 1,
+        "drohungIgnoriert": 1.5221089778023678,
+        "figurHaengen": 1.2309883749270467
+      },
+      "standardgewicht": 1,
+      "erlaubt": null,
+      "hoechstverlust": {}
+    },
+    "zusatzfehler": true
+  },
+  {
+    "kennung": "lotte",
+    "faktoren": [
+      {
+        "bauernraub": 7.839319680851063,
+        "drohungIgnoriert": 1.188,
+        "verfruehteDame": 1.762,
+        "ruhig": 1.175
+      },
+      {
+        "bauernraub": 8.548832888912628,
+        "drohungIgnoriert": 1.2034001828153427,
+        "verfruehteDame": 1.9272508918145557,
+        "ruhig": 1.1739995741055445
+      },
+      {
+        "bauernraub": 11.114327153293194,
+        "drohungIgnoriert": 1.2024624940794713,
+        "verfruehteDame": 2.0127757400220667,
+        "ruhig": 1.138328056437956
+      },
+      {
+        "bauernraub": 13.835016824849008,
+        "drohungIgnoriert": 1.219,
+        "verfruehteDame": 1.705,
+        "ruhig": 1.107
+      },
+      {
+        "bauernraub": 860.0116837924681,
+        "drohungIgnoriert": 1.2365096036828827,
+        "verfruehteDame": 1.5481983077112569,
+        "ruhig": 1.1248413221428168
+      }
+    ],
+    "werte": {
+      "haeufigkeit": 2.5,
+      "gewichte": {
+        "rueckzug": 1,
+        "diagonale": 1,
+        "springer": 1,
+        "dame": 1,
+        "turm": 1,
+        "ruhig": 1.1742646039841864,
+        "abzug": 1,
+        "bauer": 1,
+        "roentgen": 1,
+        "zwischenzug": 1,
+        "grundreihe": 1,
+        "bauernraub": 8.354785179804361,
+        "drohungIgnoriert": 1.1992997979752098,
+        "verfruehteDame": 1.8820067738270092
+      },
+      "standardgewicht": 1,
+      "erlaubt": null,
+      "hoechstverlust": {}
+    },
+    "zusatzfehler": true
+  },
+  {
     "kennung": "henry",
     "faktoren": [
       {

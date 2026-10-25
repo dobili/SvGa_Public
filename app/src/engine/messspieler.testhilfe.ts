@@ -7,8 +7,8 @@
  * Abhängigkeiten: engine/gegner.ts, engine/botkandidaten.ts, engine/gegnerbau.ts, engine/gruppe.ts,
  * engine/praxisbuch.ts, engine/stufen.ts, engine/zugwahl.ts.
  */
+import { wertungDerPersoenlichkeit } from "./persoenlichkeitswertung";
 import type { Phase } from "../schach/phase";
-import { staerkeAusStufen, staerkeDesBots } from "./botstaerke";
 import { BOTKANDIDATEN } from "./botkandidaten";
 import { GEGNER } from "./gegner";
 import { faktorenAus } from "./gegnerbau";
@@ -72,10 +72,7 @@ function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
     stil: g.stil,
     blindeFlecken: g.blindeFlecken,
     // Wie in der App (ui/komponenten/botzug.ts): Faktoren aus den Stufen der Persönlichkeit
-    gewichte: faktorenAus(
-      g.persoenlichkeit,
-      staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase),
-    ),
+    gewichte: faktorenAus(g.persoenlichkeit, wertungDerPersoenlichkeit(g)),
     stilname: g.stilname,
     haeufigkeit: g.haeufigkeit,
     zufallszuege: g.zufallszuege,

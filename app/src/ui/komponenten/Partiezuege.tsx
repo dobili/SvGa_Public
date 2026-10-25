@@ -13,7 +13,7 @@
  * Auswertungssymbole.tsx.
  */
 import { ChevronFirst, ChevronLast, StepBack, StepForward } from "lucide-react";
-import { Fragment } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import { sprache, t } from "../../i18n/sprache";
 import { eigeneAlsText } from "../../schach/weiterspielen";
 import type { Zugklasse } from "../../spiel/auswertung";
@@ -26,6 +26,23 @@ const PHASENBUCHSTABE: Readonly<Record<Phase, string>> = {
   mittelspiel: "M",
   endspiel: "E",
 };
+
+/**
+ * Rollt die Zugzeile waagerecht, bis der gezeigte Zug (sonst der letzte) sichtbar ist.
+ * Warum nicht scrollIntoView: Das würde auch die ganze Seite verschieben (wie in Zugleiste.tsx).
+ * Seit DS48 (0.2.130) steht die Zeile in der Partie einzeilig neben den Zugknöpfen.
+ */
+function rolleZumZug(zeile: HTMLElement | null): void {
+  if (!zeile) return;
+  const knopf =
+    zeile.querySelector<HTMLElement>('[aria-current="step"]') ??
+    zeile.querySelector<HTMLElement>(".zug:last-of-type");
+  if (!knopf) return;
+  const links = knopf.offsetLeft;
+  const sichtbar =
+    links >= zeile.scrollLeft && links + knopf.offsetWidth <= zeile.scrollLeft + zeile.clientWidth;
+  if (!sichtbar) zeile.scrollLeft = links - zeile.clientWidth / 2;
+}
 
 /** Je Halbzug (Index) die Phase, die mit der Stellung nach ihm beginnt, falls eine beginnt. */
 function phasenmarken(phasen: readonly Phase[]): ReadonlyMap<number, Phase> {
@@ -83,6 +100,8 @@ export function Partiezuege({
 }) {
   const texte = eigeneAlsText(startFen, zuege, sprache());
   const marken = phasenmarken(phasen);
+  const zeile = useRef<HTMLParagraphElement>(null);
+  useEffect(() => rolleZumZug(zeile.current), [stelle, zuege.length]);
   const knopf = (
     richtung: "anfang" | "zurueck" | "vor" | "ende",
     ziel: number,
@@ -104,7 +123,7 @@ export function Partiezuege({
       aria-label={t("partie.zuege")}
       data-tour="partie-zuege"
     >
-      <p className="zugzeile" data-testid="partiezuege">
+      <p className="zugzeile" data-testid="partiezuege" ref={zeile}>
         {texte.length === 0 && <span className="hinweis">{t("partie.nochKeineZuege")}</span>}
         {texte.map((text, index) => (
           <Fragment key={`${index}-${text}`}>

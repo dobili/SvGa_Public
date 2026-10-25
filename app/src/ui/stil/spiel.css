@@ -5,9 +5,22 @@
  */
 
 .partie-untertitel {
-  margin: 0 0 var(--raster);
+  margin: 0;
   color: var(--text-leise);
   text-align: center;
+}
+
+/* DS48: In der Partie rücken Untertitel, Zugliste, Uhren und Brett zusammen (Abstand 8 statt
+   16 Pixel), der Untertitel steht in einer Zeile. */
+.bildschirm-partie {
+  gap: var(--raster);
+}
+
+.bildschirm-partie > .partie-untertitel {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: var(--groesse-klein);
 }
 
 /* Gegen einen Bot (0.2.124): Porträt links, daneben sein Satz, darunter klein die Stufenzeile. */
@@ -40,7 +53,7 @@
   justify-content: space-between;
   align-items: center;
   min-height: var(--tippflaeche);
-  margin: var(--raster) 0;
+  margin: 0;
   padding: 0 calc(var(--raster) * 2);
   border: 1px solid var(--linie);
   border-radius: var(--radius);
@@ -60,10 +73,6 @@
 
 .partieuhr[data-knapp="true"] .partieuhr-zeit {
   color: var(--rot-text);
-}
-
-.partiezuege {
-  margin-top: var(--raster);
 }
 
 /* „M“ und „E“ vor dem ersten Zug des Mittelspiels und des Endspiels (0.2.43), wie in der Kurve. */

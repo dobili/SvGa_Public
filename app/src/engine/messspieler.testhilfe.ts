@@ -1,7 +1,7 @@
 /**
  * Spieler der Messläufe aus ihrem Kürzel (engine/stufen.messung.ts): Stufen („5“, „5m“), freie
  * Grundschicht („4x0.2“), vorgefertigte Bots und Kandidaten („@ella“), Gruppen („@gruppe-3“), mit
- * Uhr („~180+2“), ohne Praxisbuch („!“ am Kern, seit 0.2.128) und mit Maia („*“, seit 0.2.141).
+ * Uhr („~180+2“), ohne Praxisbuch („!“ am Kern, seit 0.2.128) und mit Maia („*“, seit 0.2.143).
  *
  * Rolle im Gesamtbild: Ausgelagert aus engine/stufen.messung.ts (Dateien unter 400 Zeilen, 0.2.128).
  * Abhängigkeiten: engine/gegner.ts, engine/botkandidaten.ts, engine/gegnerbau.ts, engine/gruppe.ts,
@@ -89,7 +89,7 @@ function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
 /** Spieler aus dem Kürzel der Paarung (Kopf der Datei). */
 export function spieler(kuerzel: string): Spieler {
   const [roh = "", uhrtext] = kuerzel.split("~");
-  // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.128); „*“: mit Maia (0.2.141), in
+  // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.128); „*“: mit Maia (0.2.143), in
   // beliebiger Reihenfolge, etwa „@tom*!“.
   const ohneBuch = roh.includes("!");
   const mitMaia = roh.includes("*");

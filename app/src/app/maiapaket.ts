@@ -1,5 +1,5 @@
 /**
- * Das Maia-Zusatzpaket: auf Wunsch laden, offline vorhalten, wieder löschen (0.2.141, Entscheidung
+ * Das Maia-Zusatzpaket: auf Wunsch laden, offline vorhalten, wieder löschen (0.2.143, Entscheidung
  * des Autors 25.10.2026: „Komplettpaket, in den Einstellungen ausschaltbar“).
  *
  * Rolle im Gesamtbild: Maia-2 (engine/maia.ts) rechnet mit zwei Netzen (Blitz, Schnellschach, je

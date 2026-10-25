@@ -549,7 +549,8 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
   await page.getByLabel(/^Mittelspiel:/).fill("5");
   await page.getByLabel(/^Eröffnung:/).fill("5");
   await page.getByLabel(/^Endspiel:/).fill("5");
-  await expect(blase).toContainText("etwa 1700");
+  // Stufe 5 nach der Neumessung von Plan C (0.2.143, ohne Maia: 1434).
+  await expect(blase).toContainText("etwa 1450");
   await page.getByRole("tab", { name: "Fehler (9)" }).click();
   // Mit unmenschlichem Wert beginnen die Feinregler offen; die Vorlagen erst nach dem Haken.
   await page.getByRole("checkbox", { name: "Feinregler für jede Fehlerart" }).uncheck();

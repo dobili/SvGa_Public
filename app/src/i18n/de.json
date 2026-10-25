@@ -3118,7 +3118,7 @@
   "einstellungen.reiter.training": "Training",
   "einstellungen.reiter.bots": "Bots",
   "maia.titel": "Menschlichere Züge (Maia)",
-  "maia.erklaerung": "Maia ist ein neuronales Netz der Universität Toronto, das an Millionen Lichess-Partien gelernt hat, welche Züge Menschen jeder Stärke spielen. Mit Maia wählen die Bots deutlich öfter genau den Zug, den ein Mensch ihrer Stärke spielen würde (gemessen an echten Partien: gut die Hälfte statt vier von zehn), und machen dabei so viele Fehler wie heute. Erst ab dem zehnten Halbzug, die Eröffnung bleibt wie bisher. Dafür lädt die App einmalig ein Zusatzpaket; danach geht es auch ohne Netz.",
+  "maia.erklaerung": "Maia ist ein neuronales Netz der Universität Toronto, das an Millionen Lichess-Partien gelernt hat, welche Züge Menschen jeder Stärke spielen. Mit Maia wählen die Bots deutlich öfter genau den Zug, den ein Mensch ihrer Stärke spielen würde (gemessen an echten Partien: gut die Hälfte statt vier von zehn), und machen dabei so viele Fehler wie heute. Erst ab dem zehnten Halbzug, die Eröffnung bleibt wie bisher. Dafür lädt die App einmalig ein Zusatzpaket; danach geht es auch ohne Netz. Mit Maia spielen die Bots ab Stufe 4 etwas stärker (gemessen: etwa 200 Elo); die Gegnerwahl zeigt dann ihre Zahlen mit Maia, und jede Partie wird mit den Zahlen gewertet, mit denen sie gespielt wurde.",
   "maia.laden": "Maia laden (etwa {mb} MB)",
   "maia.laedt": "Maia wird geladen",
   "maia.laedtStand": "{geladen} von {gesamt} MB geladen. Du kannst die App dabei weiter benutzen, solange diese Seite offen bleibt.",

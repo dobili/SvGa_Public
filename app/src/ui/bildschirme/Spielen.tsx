@@ -213,7 +213,7 @@ function Einstellungen({
 function useBeginne(fen: string, abbildung: string | undefined) {
   const { navigiere } = useNavigation();
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
-  // Seit 0.2.141: mit Maia, wenn das Paket geladen und eingeschaltet ist (gilt für die Partie).
+  // Seit 0.2.143: mit Maia, wenn das Paket geladen und eingeschaltet ist (gilt für die Partie).
   const mitMaia = useMaiaAktiv();
   return (wahl: Wahl) => {
     const v = wahl.vorlieben;

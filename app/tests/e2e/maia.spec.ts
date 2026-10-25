@@ -1,5 +1,5 @@
 /**
- * Oberflächentest des Maia-Zusatzpakets (0.2.141): Reiter „Bots“ in den Einstellungen, Laden mit
+ * Oberflächentest des Maia-Zusatzpakets (0.2.143): Reiter „Bots“ in den Einstellungen, Laden mit
  * Fortschritt, Schalter, Löschen. Das Laden (etwa 96 MB aus dem lokalen Vorschau-Server) läuft nur
  * in Chromium; WebKit prüft den Reiter ohne Laden (Speichergrenzen des Testbrowsers).
  */

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.142 (mit neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.143 (mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.142“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.143“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,35 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.143: Maia, Plan C, zwei Zahlensätze, acht Neulinge (Opus, 25.10.2026)
+
+Deine Freigaben vom 25.10.2026: Maia als Komplettpaket, in den Einstellungen ausschaltbar; Plan C;
+eine Neumessung mit und ohne Maia; die Gruppe Neuling auf acht Bots.
+
+- [ ] N983. **Maia laden:** Profil › Einstellungen › Reiter „Bots“. Dort steht, was Maia ist
+      (ein Netz der Universität Toronto, das aus Millionen Lichess-Partien gelernt hat, welche
+      Züge Menschen einer Stärke wählen) und „Laden (etwa 96 MB)“. Antippen: ein Balken zeigt den
+      Fortschritt, danach „geladen“ und ein Schalter „Maia spielt mit“ (an). Am besten im WLAN.
+- [ ] N984. **Ohne Netz:** Nach dem Laden den Flugmodus einschalten, eine Partie gegen einen Bot
+      beginnen und ein paar Züge spielen. Die Bots ziehen wie gewohnt; ab dem zehnten Halbzug
+      wählt Maia mit (die Eröffnung bleibt beim Praxisbuch). Ein Zug dauert kaum länger.
+- [ ] N985. **Spielgefühl mit Maia:** Spiele je eine Partie gegen denselben Bot mit Maia an und
+      aus. Mit Maia sollen die Züge menschlicher wirken (typische Pläne, typische Fehler), nicht
+      besser oder schlechter „zufällig“. Notiere, was dir auffällt.
+- [ ] N986. **Zwei Zahlensätze:** Mit Maia spielen die Bots ab Stufe 4 um etwa 200 Elo stärker
+      (Neumessung, je 5408 Partien mit und ohne Maia). Deshalb zeigt die Gegnerwahl mit Maia
+      andere Zahlen: Schalter in den Einstellungen umlegen und in der Gegnerwahl vergleichen (etwa
+      Stufe 5: ohne Maia etwa 1450, mit etwa 1600). Die Wertung einer Partie nimmt immer den Satz,
+      mit dem sie gespielt wurde; alte Partien zählen als „ohne Maia“.
+- [ ] N987. **Löschen:** Einstellungen › Bots › „Maia vom Gerät löschen“. Danach steht wieder
+      „Laden“, und die Bots spielen ohne Maia (Zahlen wie ohne Maia).
+- [ ] N988. **Acht Neulinge:** Spielen › Gegner › Neuling: Neu sind Frau Schulz (hektisch) und
+      Lotte (sammelt Material), beide unter 400. Porträt und Satz in der Sprechblase ansehen.
+- [ ] N989. **Plan C im Spiel:** Die Bots machen jetzt auch Fehler, die Menschen oft machen und die
+      bisher fehlten: Bauernzüge ohne Not (etwa h3, a3 in der Eröffnung), Königszüge ohne Not und
+      eingestellte Bauern; dazu kleine Ungenauigkeiten. Bei sehr schwachen Bots kommt auch ein Patt
+      aus Versehen vor. Wirkt das natürlich oder zu häufig?
 
 ### Neu in 0.2.142: Partienliste, Löschen per Auswahl, Spielstärke je Zeitart, mehr Porträt-Formen (Opus, 25.10.2026)
 
@@ -369,8 +398,7 @@ Vorschaubilder stehen im Artifact „Nutzungsprüfung“.
       Buch“ jetzt ganz (darf zweizeilig sein), nicht mehr „Fehler im B…“.
 - [ ] N926. **Datenschutz und Impressum:** Am Ende von Einstellungen › Über die App stehen zwei
       Links „Datenschutz“ und „Impressum“. In der Datenschutzerklärung (Abschnitt „Speicher auf
-      deinem Gerät“) steht jetzt richtig, dass „Fehler melden“ deinen Text an uns sendet; Stand
-      25. Oktober 2026. Bitte den Satz einmal lesen, er gilt nach deiner Regel vorerst als
+      deinem Gerät“) steht jetzt richtig, dass „Fehler melden“ deinen Text an uns sendet; Stand 25. Oktober 2026. Bitte den Satz einmal lesen, er gilt nach deiner Regel vorerst als
       abgesegnet.
 - [ ] N927. **Weitermachen, wo man war:** Eine Abbildung öffnen (etwa 5.12), die App ganz
       schließen (aus der Liste der offenen Apps wischen) und wieder öffnen. Sie steht wieder auf
@@ -698,8 +726,7 @@ Alles unter Training.
       starten. Das Brett zeigt die ganze Stellung; unter dem Brett schaltet „Nur das Skelett
       zeigen“ auf Bauern und Könige um und zurück („Alle Figuren zeigen“). Der Schalter gilt für
       alle Schritte der Aufgabe.
-- [ ] N703. **Starke Felder auf der 4. bis 6. Reihe:** Schritt 1 fragt jetzt nach deiner 4. bis
-      6. Reihe (deine Festlegung aus P3). Nach „Prüfen“ steht „Starke Felder: d5 (Vorposten), b6“;
+- [ ] N703. **Starke Felder auf der 4. bis 6. Reihe:** Schritt 1 fragt jetzt nach deiner 4. bis 6. Reihe (deine Festlegung aus P3). Nach „Prüfen“ steht „Starke Felder: d5 (Vorposten), b6“;
       Vorposten sind die mit eigener Bauernstütze. Bei Abb. 5.8 (Najdorf, Weiß) muss d5 als
       Vorposten dabei sein.
 - [ ] N704. **Feldart benennen:** Vor der Planwahl kommt (wenn die Stellung eines hergibt) ein
@@ -813,8 +840,7 @@ Schalter oben rechts in der Werkzeugkarte.
       „Starke Felder für Weiß“ mit „d5: starkes Feld – kein gegnerischer Bauer kann es mehr
       angreifen, ein eigener Bauer stützt es: ein Vorposten; erreichbar für c3 und d1“. Sicht
       Schwarz: „Löcher bei Schwarz (schwache Felder)“ mit „d5: Bauernloch – kein eigener Bauer
-      kann es je wieder decken; der Gegner kann es nutzen“. Abb. 11.43, Sicht Weiß: d4 (eigene
-      4. Reihe) und c5 stehen bei den starken Feldern. Unter „So prüft die App“ stehen die fünf
+      kann es je wieder decken; der Gegner kann es nutzen“. Abb. 11.43, Sicht Weiß: d4 (eigene 4. Reihe) und c5 stehen bei den starken Feldern. Unter „So prüft die App“ stehen die fünf
       Begriffe wie von dir festgelegt.
 - [ ] N672. **Legende folgt der Sicht (R41):** Abb. 1.26, Symbol „Röntgen“ am Brett. Unter der
       Karte steht „Am Brett: Goldene Pfeile: Schachs, Gewinnschläge und Drohungen von Weiß. Rote
@@ -908,8 +934,7 @@ Spielgefühl.
       Partie. Nach jedem Zug rechnet er kurz neu (etwa eine Sekunde, nach einem verfehlten Zug
       erst nach dem Vergleich). Schon umgesetzt: Der Balken ist immer da, ohne Schalter;
       Widerspruch genügt, falls er dir beim Raten zu viel verrät.
-- [ ] N714. **Zug erraten: Pfeile für den letzten Zug:** Rate einen Zug falsch (etwa 2. d4 statt
-      2. Sf3). Gold erscheint der Partiezug, rot dein Zug, dazu „Gold der Partiezug, rot dein
+- [ ] N714. **Zug erraten: Pfeile für den letzten Zug:** Rate einen Zug falsch (etwa 2. d4 statt 2. Sf3). Gold erscheint der Partiezug, rot dein Zug, dazu „Gold der Partiezug, rot dein
       Zug.“ Darunter vergleicht die Engine beide Züge mit beiden Bewertungen. Bei einem Treffer
       zeigt nur der goldene Pfeil den Zug.
 - [ ] N715. **Zug erraten: Hinweis-Knopf:** Tippe „Hinweis: Figur zeigen“. Ein goldenes Feld liegt
@@ -1489,8 +1514,7 @@ im Buch, die von den Festlegungen abweichen, mit einem Formulierungsvorschlag je
 - [ ] B13. **Glossar „Starkes Feld“ und Kapitel 5, Abschnitt „Starke Felder und Vorposten“ samt
       Checkliste zur Leitfrage 1.** Glossar jetzt: „Ein Feld in der gegnerischen Hälfte, das kein
       gegnerischer Bauer mehr angreifen kann.“ Abschnitt: „meist auf der 5. oder 6. Reihe“,
-      Checkliste: „vor allem auf der 5. und 6. Reihe“. Deine Festlegung sagt 4. bis 6. Reihe; die
-      4. Reihe liegt aber in der eigenen Hälfte (Abb. 11.43: „d4 und c5 kann kein schwarzer Bauer
+      Checkliste: „vor allem auf der 5. und 6. Reihe“. Deine Festlegung sagt 4. bis 6. Reihe; die 4. Reihe liegt aber in der eigenen Hälfte (Abb. 11.43: „d4 und c5 kann kein schwarzer Bauer
       mehr angreifen: zwei sichere Felder für weiße Figuren“). Vorschlag Glossar: „Ein Feld auf
       der 4. bis 6. Reihe (von dir aus gezählt), meist in der gegnerischen Hälfte, das kein
       gegnerischer Bauer mehr angreifen kann (Kapitel 5).“ Im Abschnitt und in der Checkliste
@@ -1571,8 +1595,7 @@ Paket P4.
       o) Kapitel 6: Die Lösung der Planbilanz-Übung zur Königsindischen formuliert die Planfragen
       um („Wo?“, „Was will der Gegner?“, „Plan in einem Satz“); Abb. 6.7 sagt „Überzahl am
       Königsflügel“, die London-Übung „Übermacht“.
-      p) Kapitel 7, Übung zu Morphys Opfer: „Weiß gibt zwar die Dame für einen Springer“ – nach
-      16. Db8+ Sxb8 bekommt Weiß nichts dafür; gemeint wohl „an einen Springer“.
+      p) Kapitel 7, Übung zu Morphys Opfer: „Weiß gibt zwar die Dame für einen Springer“ – nach 16. Db8+ Sxb8 bekommt Weiß nichts dafür; gemeint wohl „an einen Springer“.
       q) Abb. 7.35 steht unter „Das Grundreihenmatt“, zeigt aber ein Erstickungsmatt.
       r) Kapitel 8, Übung zum Durchbruch: „über d6 und e7 nach d7“ – Umweg? Abb. 8.23: „folgt
       nach e4 und erreicht die Schlüsselfelder“, e4 ist selbst eines.
@@ -1709,5 +1732,3 @@ Paket P4.
       fremden Partien: Regel 1 (das Buch ist die Quelle), und die Zugfolgen sind freigegeben.
       Lichess-Aufgabenstellungen sind taktisch und taugen nicht für Strukturen. Reicht das, oder
       sollen zusätzlich Stellungen aus den Lichess-Partien der Bot-Daten dazu?
-
-

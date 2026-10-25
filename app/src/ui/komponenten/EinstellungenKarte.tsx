@@ -199,7 +199,7 @@ const BEREICHE: readonly {
     symbol: Brain,
     tour: "einstellungen-reiter-training",
   },
-  // Seit 0.2.141: Maia-Zusatzpaket für menschlichere Bots (MaiaWahl.tsx).
+  // Seit 0.2.143: Maia-Zusatzpaket für menschlichere Bots (MaiaWahl.tsx).
   {
     wert: "bots",
     text: "einstellungen.reiter.bots",

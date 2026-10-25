@@ -58,7 +58,7 @@ export interface Wahlschritt {
   readonly stilname?: Stilname;
   /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
-  /** Maia-Karte der Stellung (0.2.141, engine/maia.ts); fehlend oder null: ohne Maia. */
+  /** Maia-Karte der Stellung (0.2.143, engine/maia.ts); fehlend oder null: ohne Maia. */
   readonly maia?: ReadonlyMap<string, number> | null;
 }
 

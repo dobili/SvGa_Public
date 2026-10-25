@@ -4446,76 +4446,76 @@ Abstriche an der Qualität zugunsten geringerer Kosten (21.10.).
   Draufgänger und Positionsspieler in Schnellschach nach den Daten schwächer; sie bleiben, die
   Stärke des Stils folgt der gemessenen Streuung der Menschen.
 
-| Bot | Persönlichkeit | Stilregler bisher | Stil neu |
-|---|---|---|---|
-| Kiki | hektiker | 1 | Taktiker |
-| Onkel Otto | materialist | 0 | Taktiker |
-| Tante Hilde | vorsichtig | -1 | Verteidiger |
-| Bodo | angreifer | 2 | Angreifer |
-| Ella | solide | 0 | Universell |
-| Marie | vorsichtig | -1 | Verteidiger |
-| Tom | damenfan | 2 | Draufgänger |
-| Luis | materialist | 1 | Taktiker |
-| Oma Erna | endspieler | -2 | Vereinfacher |
-| Henry | angreifer | 2 | Angreifer |
-| Lina | traeumer | 0 | Draufgänger |
-| Moritz | hektiker | 1 | Taktiker |
-| Opa Heinz | endspieler | -1 | Vereinfacher |
-| Onkel Bernd | materialist | 0 | Taktiker |
-| Clara | solide | 0 | Universell |
-| Herr Krause | theoretiker | -1 | Positionsspieler |
-| Leyla | taktiker | 1 | Taktiker |
-| Jakob | hektiker | 2 | Taktiker |
-| Johanna | koenigswanderer | 1 | Draufgänger |
-| Rolf | vorsichtig | -2 | Verteidiger |
-| Derya | angreifer | 2 | Angreifer |
-| Svenja | solide | 0 | Universell |
-| Felix | endspieler | -1 | Vereinfacher |
-| Marco | theoretiker | 0 | Positionsspieler |
-| Ronja | traeumer | 1 | Draufgänger |
-| Herr Wolff | stratege | -2 | Positionsspieler |
-| Pia | damenfan | 1 | Draufgänger |
-| Yusuf | taktiker | 1 | Taktiker |
-| Holger | solide | 0 | Universell |
-| Dennis | angreifer | 2 | Angreifer |
-| Frau Albrecht | vorsichtig | -2 | Verteidiger |
-| Philipp | hektiker | 1 | Taktiker |
-| Mara | taktiker | 1 | Taktiker |
-| Herr Kühn | stratege | -1 | Positionsspieler |
-| Samira | traeumer | 0 | Draufgänger |
-| Erik | materialist | 0 | Taktiker |
-| Günter | endspieler | -1 | Vereinfacher |
-| Frau Romero | solide | 0 | Universell |
-| Lars | angreifer | 2 | Angreifer |
-| Katrin | theoretiker | 0 | Positionsspieler |
-| Herr Vogel | stratege | -2 | Positionsspieler |
-| Nele | taktiker | 1 | Taktiker |
-| Simon | hektiker | 1 | Taktiker |
-| Frau Demir | vorsichtig | -1 | Verteidiger |
-| Jana | solide | 0 | Universell |
-| Igor | theoretiker | -1 | Positionsspieler |
-| Miriam | traeumer | 1 | Draufgänger |
-| Herr Hartmann | endspieler | -2 | Vereinfacher |
-| Defne | taktiker | 2 | Taktiker |
-| Luca | angreifer | 2 | Angreifer |
-| Frau Sommer | stratege | -1 | Positionsspieler |
-| David | materialist | 0 | Taktiker |
-| Doktor Falk | stratege | -1 | Positionsspieler |
-| Trainer Maier | solide | 0 | Universell |
-| Amaya | theoretiker | 1 | Positionsspieler |
-| Herr Lorenz | endspieler | -2 | Vereinfacher |
-| Elias | angreifer | 2 | Angreifer |
-| Frau Wagner | vorsichtig | -1 | Verteidiger |
-| Arjun | taktiker | 2 | Taktiker |
-| Frau Prof. Reich | traeumer | 0 | Draufgänger |
-| GM Novak | solide | 0 | Universell |
-| IM Becker | stratege | -1 | Positionsspieler |
-| WGM Tanaka | taktiker | 1 | Taktiker |
-| FM Duarte | angreifer | 0 | Angreifer |
-| GM Ivanova | endspieler | 0 | Vereinfacher |
-| IM Kraft | theoretiker | 0 | Positionsspieler |
-| WIM Okafor | vorsichtig | 0 | Verteidiger |
-| GM Berglund | solide | 0 | Universell |
+| Bot              | Persönlichkeit  | Stilregler bisher | Stil neu         |
+| ---------------- | --------------- | ----------------- | ---------------- |
+| Kiki             | hektiker        | 1                 | Taktiker         |
+| Onkel Otto       | materialist     | 0                 | Taktiker         |
+| Tante Hilde      | vorsichtig      | -1                | Verteidiger      |
+| Bodo             | angreifer       | 2                 | Angreifer        |
+| Ella             | solide          | 0                 | Universell       |
+| Marie            | vorsichtig      | -1                | Verteidiger      |
+| Tom              | damenfan        | 2                 | Draufgänger      |
+| Luis             | materialist     | 1                 | Taktiker         |
+| Oma Erna         | endspieler      | -2                | Vereinfacher     |
+| Henry            | angreifer       | 2                 | Angreifer        |
+| Lina             | traeumer        | 0                 | Draufgänger      |
+| Moritz           | hektiker        | 1                 | Taktiker         |
+| Opa Heinz        | endspieler      | -1                | Vereinfacher     |
+| Onkel Bernd      | materialist     | 0                 | Taktiker         |
+| Clara            | solide          | 0                 | Universell       |
+| Herr Krause      | theoretiker     | -1                | Positionsspieler |
+| Leyla            | taktiker        | 1                 | Taktiker         |
+| Jakob            | hektiker        | 2                 | Taktiker         |
+| Johanna          | koenigswanderer | 1                 | Draufgänger      |
+| Rolf             | vorsichtig      | -2                | Verteidiger      |
+| Derya            | angreifer       | 2                 | Angreifer        |
+| Svenja           | solide          | 0                 | Universell       |
+| Felix            | endspieler      | -1                | Vereinfacher     |
+| Marco            | theoretiker     | 0                 | Positionsspieler |
+| Ronja            | traeumer        | 1                 | Draufgänger      |
+| Herr Wolff       | stratege        | -2                | Positionsspieler |
+| Pia              | damenfan        | 1                 | Draufgänger      |
+| Yusuf            | taktiker        | 1                 | Taktiker         |
+| Holger           | solide          | 0                 | Universell       |
+| Dennis           | angreifer       | 2                 | Angreifer        |
+| Frau Albrecht    | vorsichtig      | -2                | Verteidiger      |
+| Philipp          | hektiker        | 1                 | Taktiker         |
+| Mara             | taktiker        | 1                 | Taktiker         |
+| Herr Kühn        | stratege        | -1                | Positionsspieler |
+| Samira           | traeumer        | 0                 | Draufgänger      |
+| Erik             | materialist     | 0                 | Taktiker         |
+| Günter           | endspieler      | -1                | Vereinfacher     |
+| Frau Romero      | solide          | 0                 | Universell       |
+| Lars             | angreifer       | 2                 | Angreifer        |
+| Katrin           | theoretiker     | 0                 | Positionsspieler |
+| Herr Vogel       | stratege        | -2                | Positionsspieler |
+| Nele             | taktiker        | 1                 | Taktiker         |
+| Simon            | hektiker        | 1                 | Taktiker         |
+| Frau Demir       | vorsichtig      | -1                | Verteidiger      |
+| Jana             | solide          | 0                 | Universell       |
+| Igor             | theoretiker     | -1                | Positionsspieler |
+| Miriam           | traeumer        | 1                 | Draufgänger      |
+| Herr Hartmann    | endspieler      | -2                | Vereinfacher     |
+| Defne            | taktiker        | 2                 | Taktiker         |
+| Luca             | angreifer       | 2                 | Angreifer        |
+| Frau Sommer      | stratege        | -1                | Positionsspieler |
+| David            | materialist     | 0                 | Taktiker         |
+| Doktor Falk      | stratege        | -1                | Positionsspieler |
+| Trainer Maier    | solide          | 0                 | Universell       |
+| Amaya            | theoretiker     | 1                 | Positionsspieler |
+| Herr Lorenz      | endspieler      | -2                | Vereinfacher     |
+| Elias            | angreifer       | 2                 | Angreifer        |
+| Frau Wagner      | vorsichtig      | -1                | Verteidiger      |
+| Arjun            | taktiker        | 2                 | Taktiker         |
+| Frau Prof. Reich | traeumer        | 0                 | Draufgänger      |
+| GM Novak         | solide          | 0                 | Universell       |
+| IM Becker        | stratege        | -1                | Positionsspieler |
+| WGM Tanaka       | taktiker        | 1                 | Taktiker         |
+| FM Duarte        | angreifer       | 0                 | Angreifer        |
+| GM Ivanova       | endspieler      | 0                 | Vereinfacher     |
+| IM Kraft         | theoretiker     | 0                 | Positionsspieler |
+| WIM Okafor       | vorsichtig      | 0                 | Verteidiger      |
+| GM Berglund      | solide          | 0                 | Universell       |
 
 ## Zugwahl der Bots, Plan (23.10.2026 abends, Freigabe des Autors)
 
@@ -4624,7 +4624,6 @@ war). Der Messlauf bleibt für spätere Datenstände.
   den Hauptvarianten der Kapitel 2, 3, 6, 11, 12 (ab Zug 10, höchstens zwei je Zugfolge,
   mindestens zehn Bauern und sechs Figuren, gleiche Skelette einmal): 28 neue Aufgaben. Die
   Pipeline-Regel „rückständig“ hat die vierte Bedingung (kein gegnerischer Bauer davor) dazu.
-
 
 ## 23.10.2026 – Startanimation und Werkzeug-Befunde (P1, Opus)
 
@@ -4869,7 +4868,6 @@ war). Der Messlauf bleibt für spätere Datenstände.
   (ZUSATZ_ABZUG) wird dadurch hinfällig und für Stufe 1 bis 6 sogar ein Aufschlag – wird mit der
   Verankerung neu gefasst (engine/botstaerke.ts).
 
-
 ## Website an das Buch angeglichen (24.10.2026 nachmittags, Fable, Wunsch des Autors)
 
 - **Befund (Abgleich des Autors mit dem Buchstand vom 20.10.2026):** Im Buch stehen die Übungen
@@ -4945,6 +4943,7 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Modellwechsel mitten in einer gewerteten Partie, Speicher und Nachladen mit klarer Anzeige und
   Fehlermeldung bei fehlendem Netz). Entscheidung über Schalter oder eigene Kategorie erst mit den
   Messergebnissen.
+
 ## 24.10.2026 – R57 Admin-Dashboard (P1, Opus)
 
 - Website-Worker bekommt Code (`app/worker/`), aber nur für `/api/*` und `/admin*`
@@ -4997,7 +4996,7 @@ war). Der Messlauf bleibt für spätere Datenstände.
   die Prozentzahl (80 bis 150 %), „Standard“ zurück auf 100 %. Merker auf dem Gerät
   (`svga.schriftgroesse`, wie der Nachtmodus), angewendet als Variable `--schriftfaktor` am
   Wurzelelement, die basis.css in die Grundschrift einrechnet (`html { font-size: calc(100% *
-  var(--schriftfaktor, 1)) }`); ein Skript in app/index.html setzt sie vor dem ersten Zeichnen.
+var(--schriftfaktor, 1)) }`); ein Skript in app/index.html setzt sie vor dem ersten Zeichnen.
   Weil alle Schriftgrößen in rem stehen, skaliert der ganze Text mit.
 - **Symbole (Frage des Autors):** Symbole, die in Textzeilen stehen (Stufenmarken, Plaketten,
   Ergebnismarken, Fortschrittskreise in symbole.css), skalieren mit: ihre festen Pixelbreiten sind
@@ -5103,6 +5102,7 @@ war). Der Messlauf bleibt für spätere Datenstände.
   Familie (Entscheidung R12).
 - Website (Startseite, Trainingsseiten, Impressum, Datenschutz) bleibt deutsch; „English
   (preview)“ bleibt als Bezeichnung, bis der Autor das englische Buch festlegt (EN1).
+
 ## Startbild aus dem Cover (24.10.2026 abends, Wunsch des Autors, R39)
 
 - **Bild:** `app/public/bilder/startspringer.webp` (840 × 840, etwa 270 KB), erzeugt von
@@ -5284,7 +5284,6 @@ Freigabe „Alles ja“, mit der Bitte, den neuen Stand 0.2.128 zu berücksichti
   auf); die Karte heißt „Darstellung und Training“.
 - DS45 Rand der gestrichelten Chips in `--rand-bedien`; Überschrift im Formular eigener Bots.
 
-
 ## Zahlen je Zeitklasse: Blitz und Klassisch gemessen (25.10.2026 nachts, Bot-Chat, 0.2.130)
 
 R51 (drei Zahlen je Bot wie bei Lichess) ist umgesetzt. Zehn Gruppen-Chats haben nach
@@ -5445,7 +5444,6 @@ Build von 8b2c3ae unter denselben Bedingungen.
   um, deshalb untereinander.
 - Spinnennetz: Ringe in `--linie-stark`, im Dunkelmodus Ringe und Speichen #6b7fa3.
 
-
 ## Profil statt Zahnrad, Einstellungen neu geordnet (25.10.2026, Opus, Version 0.2.134)
 
 Wunsch des Autors (25.10.2026 spät): unten rechts ein Profil mit Wort, darin oben ein Knopf zu den
@@ -5553,7 +5551,7 @@ gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Me
   in jedem Band im Median 45 bis 180 unter Schnellschach (bei 61 bis 88 % der Spieler darunter),
   Klassisch unten 200 bis 230 darüber, ab etwa 1900 im Median etwas darunter.
 - **Befund 2 (Bots):** Wahlmodell, Zeitnot, Bedenkzeit und Praxisbuch sind an Lichess-Partien
-  nach der Wertung *in der jeweiligen Zeitklasse* geeicht. Die Bots übergaben in jeder Zeitklasse
+  nach der Wertung _in der jeweiligen Zeitklasse_ geeicht. Die Bots übergaben in jeder Zeitklasse
   dieselbe Zahl und spielten in Blitz deshalb wie ein stärkerer Mensch; die direkte Messung aus
   0.2.130 bestätigte das (Blitz-Zahlen so hoch wie Schnellschach).
 - **Umsetzung:** `engine/zeitklassenabstand.ts` rechnet die Schnellschach-Zahl in die Zahl
@@ -5576,20 +5574,20 @@ gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Me
   Klassisch damit am oberen Rand dessen, was Spieler typisch zeigen (über 2200 haben drei von vier
   Spielern Klassisch unter Schnellschach).
 
-| Band | Blitz: Spieler / Median / 95 % / App | Klassisch: Spieler / Median / 95 % / App |
-|---|---|---|
-| 400–599 | 1468 / −45 / −266 bis +212 / −50 | 20 / – / – / Randwert +213 |
-| 600–799 | 8113 / −79 / −332 bis +293 / −79 | 354 / +213 / −23 bis +472 / +213 |
-| 800–999 | 16 916 / −108 / −395 bis +304 / −108 | 1849 / +229 / −67 bis +558 / +229 |
-| 1000–1199 | 24 000 / −157 / −455 bis +265 / −157 | 4391 / +232 / −77 bis +594 / +232 |
-| 1200–1399 | 28 427 / −180 / −483 bis +182 / −180 | 6974 / +208 / −76 bis +512 / +208 |
-| 1400–1599 | 31 250 / −174 / −464 bis +155 / −174 | 9037 / +149 / −136 bis +411 / +149 |
-| 1600–1799 | 30 876 / −149 / −434 bis +127 / −149 | 9349 / +86 / −174 bis +338 / +86 |
-| 1800–1999 | 26 017 / −130 / −399 bis +115 / −130 | 6903 / +12 / −229 bis +273 / +50 |
-| 2000–2199 | 18 555 / −104 / −368 bis +111 / −104 | 3281 / −26 / −246 bis +232 / +50 |
-| 2200–2399 | 8432 / −66 / −312 bis +167 / −66 | 879 / −70 / −272 bis +151 / +50 |
-| 2400–2599 | 1640 / −22 / −267 bis +213 / −50 | 144 / −137 / −381 bis +76 / +50 |
-| 2600–2799 | 233 / +7 / −234 bis +284 / −50 | 32 / – / – / Randwert +50 |
+| Band      | Blitz: Spieler / Median / 95 % / App | Klassisch: Spieler / Median / 95 % / App |
+| --------- | ------------------------------------ | ---------------------------------------- |
+| 400–599   | 1468 / −45 / −266 bis +212 / −50     | 20 / – / – / Randwert +213               |
+| 600–799   | 8113 / −79 / −332 bis +293 / −79     | 354 / +213 / −23 bis +472 / +213         |
+| 800–999   | 16 916 / −108 / −395 bis +304 / −108 | 1849 / +229 / −67 bis +558 / +229        |
+| 1000–1199 | 24 000 / −157 / −455 bis +265 / −157 | 4391 / +232 / −77 bis +594 / +232        |
+| 1200–1399 | 28 427 / −180 / −483 bis +182 / −180 | 6974 / +208 / −76 bis +512 / +208        |
+| 1400–1599 | 31 250 / −174 / −464 bis +155 / −174 | 9037 / +149 / −136 bis +411 / +149       |
+| 1600–1799 | 30 876 / −149 / −434 bis +127 / −149 | 9349 / +86 / −174 bis +338 / +86         |
+| 1800–1999 | 26 017 / −130 / −399 bis +115 / −130 | 6903 / +12 / −229 bis +273 / +50         |
+| 2000–2199 | 18 555 / −104 / −368 bis +111 / −104 | 3281 / −26 / −246 bis +232 / +50         |
+| 2200–2399 | 8432 / −66 / −312 bis +167 / −66     | 879 / −70 / −272 bis +151 / +50          |
+| 2400–2599 | 1640 / −22 / −267 bis +213 / −50     | 144 / −137 / −381 bis +76 / +50          |
+| 2600–2799 | 233 / +7 / −234 bis +284 / −50       | 32 / – / – / Randwert +50                |
 
 - **Stufen danach (Blitz / Schnellschach / Klassisch):** 1: 667/747/973 · 2: 839/946/1177 ·
   3: 1078/1242/1438 · 4: 1278/1456/1597 · 5: 1537/1696/1776 · 6: 1770/1906/1956 ·
@@ -5621,7 +5619,6 @@ gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Me
   niedrig.
 - **Rohdaten** lokal in `buch/arbeit/zeitklassen/pruefung-0.2.131-r4` und `-r5`, Partien auf den
   Zweigen `pruefung-<zeitklasse>-<stufe>-r4` und `-r5`.
-
 
 ## Spielen aufgeräumt, Siege je Zeitart, goldener Rahmen (25.10.2026, Opus mit zwei Hilfsagenten, Version 0.2.138)
 
@@ -5668,7 +5665,6 @@ in dieser Zeit nicht angefasst).
   (`.stilnetz-liste`); passt die Einstellung zu keiner Vorlage, steht „eigene Einstellung“. Mit
   offenen Feinreglern bleibt die Liste gesperrt wie vorher die Knöpfe.
 
-
 ## Spielerprofil mit Namen und Porträt, Baukasten auch für eigene Bots (25.10.2026, Opus, Version 0.2.140)
 
 Wunsch des Autors (25.10.2026): im Profil freiwillig Porträt und Profilname, aus vorgefertigten
@@ -5694,7 +5690,7 @@ gegen die Engine und bei den gespielten Partien; Nachsatz: den Baukasten auch f�
   Bots; das Aufklappmenü `PortraetAuswahl.tsx` (0.2.100) entfällt, im Bot-Formular steht die Wahl
   in einer Klappe mit dem Bild in der Zusammenfassung.
 
-## Maia im Wahlmodell, Plan C und eine Neumessung (25.10.2026, Bot-Chat, Version 0.2.141)
+## Maia im Wahlmodell, Plan C und eine Neumessung (25.10.2026, Bot-Chat, Version 0.2.143)
 
 Freigabe des Autors (25.10.2026 nachmittags): Maia als Komplettpaket, in den Einstellungen
 ausschaltbar; dazu Plan C mit einer gemeinsamen Neumessung, alles mit den zehn Mess-Chats.
@@ -5717,7 +5713,8 @@ ausschaltbar; dazu Plan C mit einer gemeinsamen Neumessung, alles mit den zehn M
   (`maia.messung.ts`, auf 0,01 genau).
 - **Wahlmodell C** (`engine/wahlmodell-maia-daten.ts`, lokal `/home/user/maia/fit_c.py`):
   dieselben Merkmale wie bisher und ln p_Maia, gemeinsam an allen Stellungen ab Halbzug 10
-  geeicht; Gewicht von ln p_Maia bei 1500: Blitz 0,84, Klassisch 0,74. Ohne Maia-Karte (vor
+  geeicht; Gewicht von ln p_Maia bei 1500: Blitz 0,84, Schnellschach 0,85, Klassisch 0,74
+  (331 759 Stellungen; je Zeitklasse ein eigener Lauf, `fit_c1.py`). Ohne Maia-Karte (vor
   Halbzug 10, Paket fehlt oder aus) gelten die bisherigen Gewichte.
 - **Zusatzpaket** (`app/maiapaket.ts`, Reiter „Bots“ der Einstellungen, `MaiaWahl.tsx`): etwa 96
   MB (zwei Netze und die Laufzeit onnxruntime-web 1.20.1, MIT), nur auf Wunsch geladen, im
@@ -5741,6 +5738,31 @@ ausschaltbar; dazu Plan C mit einer gemeinsamen Neumessung, alles mit den zehn M
   und Kandidaten gegen die zwei Nm-Stufen um ihre Zahl (12 Partien); zusammen 5408 Partien.
   Weichen die Zahlen mit und ohne Maia je Bot um höchstens 65 voneinander ab, gilt ein Satz,
   sonst zwei.
+- **Ergebnis** (Auswertung `engine/botstaerke.messung.ts`, lokal `buch/arbeit/planc/{ohne,mit}`):
+  Stufen ohne / mit Maia 598 / 508, 818 / 738, 1030 / 1035, 1236 / 1402, 1434 / 1619, 1636 / 1885,
+  1740 / 1955, 1937 / 1973, 2079 / 2257, 2885 / 3617 (Streuung ohne ±30 bis ±120, mit ±40 bis
+  ±320). Ab Stufe 4 spielt Maia im Mittel etwa 200 Elo stärker; der Unterschied liegt bei vier
+  von fünf Bots über ±65. Entscheidung: **zwei Zahlensätze** (`engine/zahlensatz.ts`,
+  `engine/botstaerke-maia-daten.ts`). Die Wertung einer Partie nimmt den Satz, mit dem sie gespielt
+  wurde (alte Partien: ohne), die Anzeige den Satz, der gerade gilt (`useAnzeigesatz` in der Hülle).
+  Uhrabzüge sind nur ohne Maia gemessen und gelten für beide. Untergrenze jeder Zahl 100
+  (`skripte/uebernehme-planc.mjs`): Mit Maia lagen die schwächsten Bots unter 0 (±200).
+- **Neulinge:** ohne Maia Emma 295 ±147, Opa Kurt 329 ±126, Frau Schulz 212 ±138, Lotte 295 ±136.
+  Frau Schulz und Lotte liegen auch mit der Streuung unter 450 und stehen jetzt in Gruppe 1
+  (acht Bots); Emma und Opa Kurt bleiben Kandidaten.
+- **Persönlichkeit mit fester Wertung** (`engine/persoenlichkeitswertung.ts`): Die Faktoren der
+  Persönlichkeit hingen an der gemessenen Zahl des Bots; mit den neuen Zahlen hätten alle Bots
+  anders gespielt, als sie gemessen wurden. Seit 0.2.143 gilt dafür die eingefrorene Wertung vom
+  Stand der Messung (Zahlen vom 24.10.2026) in App, Gruppenmodus, Messung und für eigene Gegner.
+  `vorgefertigteUnveraendert.test.ts` bestätigt: alle 82 bisherigen Bots bekommen genau die
+  Eingaben der Messung. Ebenso bleibt die Gruppe jedes Bots bei der Zahl seiner Auswahl
+  (`engine/botgruppe.ts`): Mit den neuen Zahlen (12 Partien je Bot, ±130) überschnitten sich die
+  angezeigten Bereiche benachbarter Gruppen (Stufe 2 bis 656, Stufe 3 ab 429); die Nachmessung mit
+  mehr Partien soll das klären, danach werden die Gruppen neu geordnet.
+- **Offen:** Blitz und Klassisch sind mit Maia nicht eigens gemessen (beide Sätze rechnen um wie
+  bei Menschen, `engine/zeitklassenabstand.ts`). Gruppe 1 wurde noch mit sechs Bots gemessen; die
+  Gruppen 2 und 3 liegen ohne Maia verkehrt (678 / 640, Streuung ±130). Beides misst die
+  Nachmessung (Nachtarbeit 25./26.10.).
 
 ## Porträt-Baukasten mit Vorschaubildern und mehr Farben (25.10.2026, Opus, Version 0.2.141)
 

@@ -1,7 +1,7 @@
 // Kopiert die WebAssembly-Laufzeit von onnxruntime-web nach public/maia/ort/ (Maia-Zusatzpaket).
 //
 // Warum: Die Laufzeit (MIT-Lizenz) rechnet das Netz Maia-2 im Browser (src/engine/maia-web.ts).
-// Sie ist 11 MB groß und gehört zum Zusatzpaket, das der Leser auf Wunsch lädt (0.2.141); sie wird
+// Sie ist 11 MB groß und gehört zum Zusatzpaket, das der Leser auf Wunsch lädt (0.2.143); sie wird
 // deshalb nicht ins Repository gelegt und nicht vorab geladen (vite.config.ts, globIgnores), sondern
 // bei jedem Build aus dem npm-Paket kopiert. Nur die Fassung ohne WebGPU (einfacher, überall da).
 import { copyFile, mkdir } from "node:fs/promises";

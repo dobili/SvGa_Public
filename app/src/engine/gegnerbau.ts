@@ -96,7 +96,7 @@ const FERNWIRKUNG = {
 } as const;
 
 /**
- * Die Persönlichkeiten der Bots (Beschreibung in de.json, „gegner.<kennung>“). Seit 0.2.141 (Plan C,
+ * Die Persönlichkeiten der Bots (Beschreibung in de.json, „gegner.<kennung>“). Seit 0.2.143 (Plan C,
  * Freigabe des Autors 25.10.2026) nur noch mit den Fehlerarten, die das Fehlerprofil als Regler
  * anbietet, und mit ganzen Fleckengruppen (fehlergruppen.ts): Schlagreflex, König passiv und
  * falscher Abtausch sind bei Menschen kaum als Eigenschaft messbar (Zuverlässigkeit unter 0,1)

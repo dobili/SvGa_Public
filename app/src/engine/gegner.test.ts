@@ -6,9 +6,9 @@
  */
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import { PERSOENLICHKEIT_BOTS } from "./persoenlichkeitswertung-daten";
 import { describe, expect, it } from "vitest";
 import de from "../i18n/de.json";
-import { bereichDerStufe } from "./botstaerke";
 import { FEHLERARTEN } from "./fehlerart";
 import {
   durchschnitt,
@@ -58,12 +58,20 @@ describe("vorgefertigte Gegner", () => {
 });
 
 describe("Gruppen ohne Überschneidung (0.2.109)", () => {
-  it("die stärkste Zahl einer Stufe liegt unter der schwächsten der nächsten", () => {
+  // Seit 0.2.143 stehen die Bots in der Gruppe ihrer Zahl zur Zeit der Auswahl (engine/botgruppe.ts);
+  // nach dieser Zahl überschneiden sich die Gruppen nicht. Die angezeigten Zahlen der Neumessung
+  // streuen mehr (12 Partien je Bot); die Nachmessung mit mehr Partien ordnet die Gruppen neu.
+  it("die stärkste Zahl einer Stufe liegt unter der schwächsten der nächsten (Zahl der Auswahl)", () => {
+    const bereich = (n: Stufennummer) => {
+      const zahlen = gegnerDerStufe(n)
+        .filter((g) => !istSpassbot(g))
+        .map((g) => PERSOENLICHKEIT_BOTS[g.kennung])
+        .filter((z): z is number => z !== undefined);
+      return { von: Math.min(...zahlen), bis: Math.max(...zahlen) };
+    };
     for (const nummer of STUFENNUMMERN.slice(0, -1)) {
       const naechste = (nummer + 1) as Stufennummer;
-      expect(bereichDerStufe(nummer).bis, `Stufe ${nummer}`).toBeLessThan(
-        bereichDerStufe(naechste).von,
-      );
+      expect(bereich(nummer).bis, `Stufe ${nummer}`).toBeLessThan(bereich(naechste).von);
     }
   });
 });

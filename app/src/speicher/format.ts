@@ -93,7 +93,7 @@ export interface Einstellungen {
    */
   readonly vorWerkzeugen: VorWerkzeugen;
   /**
-   * Seit 0.2.141 (Entscheidung des Autors, 25.10.2026): Bots wählen mit Maia, wenn das Zusatzpaket
+   * Seit 0.2.143 (Entscheidung des Autors, 25.10.2026): Bots wählen mit Maia, wenn das Zusatzpaket
    * geladen ist (app/maiapaket.ts). Ältere Stände ohne diesen Eintrag lesen sich als „an“; ohne
    * Paket wirkt der Schalter nicht.
    */

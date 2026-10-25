@@ -1,5 +1,5 @@
 /**
- * Maia-2 für die Zugwahl der Bots (0.2.141, Freigabe des Autors 25.10.2026): Wie wahrscheinlich
+ * Maia-2 für die Zugwahl der Bots (0.2.143, Freigabe des Autors 25.10.2026): Wie wahrscheinlich
  * spielt ein Mensch dieser Wertung jeden legalen Zug? Die Wahrscheinlichkeit geht als Merkmal
  * „maia“ in das Wahlmodell ein (Variante C, engine/wahlmodell.ts).
  *

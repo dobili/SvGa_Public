@@ -1,5 +1,5 @@
 #!/bin/bash
-# Neumessung von Plan C (0.2.141, Freigabe des Autors 25.10.2026), ein Teil je Chat: erst die Anker
+# Neumessung von Plan C (0.2.143, Freigabe des Autors 25.10.2026), ein Teil je Chat: erst die Anker
 # des Teils (Nm gegen Nm, ohne und mit Maia, 40 Partien, Bewertung in Tiefe 18), dann die Paarungen
 # (Bots, Gruppen, Neuling-Kandidaten gegen Nm-Stufen, je 12 Partien). Plan: messplan/<fassung>/
 # teil-N.txt (erzeugt von src/engine/messplan.messung.ts), Fassung „ohne“ oder „mit“ Maia.
@@ -41,6 +41,6 @@ git checkout -q -B "messung-planc-$FASSUNG-$N"
 git add "messdaten/planc/$FASSUNG/teil-$N"
 git commit -q -m "Neumessung Plan C, $FASSUNG Maia, Teil $N (Anker und Paarungen)
 
-Warum: Zahlen der Stufen, Bots und Gruppen nach Plan C und mit Maia (0.2.141)." || echo "nichts zu committen"
+Warum: Zahlen der Stufen, Bots und Gruppen nach Plan C und mit Maia (0.2.143)." || echo "nichts zu committen"
 git push -u origin "messung-planc-$FASSUNG-$N"
 echo "FERTIG: messdaten/planc/$FASSUNG/teil-$N auf Zweig messung-planc-$FASSUNG-$N"

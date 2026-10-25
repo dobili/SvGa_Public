@@ -1,5 +1,5 @@
 /**
- * Stand von Maia für die Oberfläche (0.2.141): Ist das Zusatzpaket geladen, und spielt Maia mit?
+ * Stand von Maia für die Oberfläche (0.2.143): Ist das Zusatzpaket geladen, und spielt Maia mit?
  *
  * Rolle im Gesamtbild: Spielen.tsx merkt sich beim Beginn einer Partie, ob der Bot mit Maia wählt
  * (Partieeinstellung „maia“); die Einstellungen (MaiaWahl.tsx) zeigen Laden, Schalter und Löschen.

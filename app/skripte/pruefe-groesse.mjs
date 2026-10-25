@@ -23,7 +23,7 @@ const SPRACHPAKET = /^(daten\/(?!de\/)[a-z]{2}\/|assets\/sprachpaket-(?!de-)[a-z
 /** Nicht in der Dateiliste des Service Workers (vite.config.ts, globIgnores). */
 const NICHT_IN_DER_LISTE = /^admin\//;
 /**
- * Das Maia-Zusatzpaket (0.2.141, Entscheidung des Autors 25.10.2026): auf Wunsch nachgeladen,
+ * Das Maia-Zusatzpaket (0.2.143, Entscheidung des Autors 25.10.2026): auf Wunsch nachgeladen,
  * etwa 96 MB, zählt nicht zur Obergrenze der App; es wird eigens ausgewiesen.
  */
 const ZUSATZPAKET = /^maia\//;

@@ -14,7 +14,7 @@
  * Warum so: Dieselbe Kandidatenerzeugung wie in der Eichung (sechs Engine-Züge, typische
  * Fehlerzüge je Art) macht die Fehlerraten des Bots je Band, Phase und Art von selbst menschlich
  * (geprüft an zurückgelegten Stellungen auf etwa einen Prozentpunkt), ohne Nachregeln.
- * Seit 0.2.141 mit Maia (Variante C): Ist eine Maia-Karte da (engine/maia.ts, ab Halbzug 10), kommt
+ * Seit 0.2.143 mit Maia (Variante C): Ist eine Maia-Karte da (engine/maia.ts, ab Halbzug 10), kommt
  * ln p_Maia des Kandidaten als weiteres Merkmal dazu, mit eigenen, gemeinsam geeichten Gewichten
  * (engine/wahlmodell-maia-daten.ts); ohne Karte gelten die Gewichte ohne Maia.
  * Abhängigkeiten: engine/wahlmodell-daten.ts, engine/wahlmodell-maia-daten.ts, engine/fehlerart.ts, engine/blindeFlecken.ts,

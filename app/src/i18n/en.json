@@ -3118,7 +3118,7 @@
   "einstellungen.reiter.training": "Training",
   "einstellungen.reiter.bots": "Bots",
   "maia.titel": "More human moves (Maia)",
-  "maia.erklaerung": "Maia is a neural network from the University of Toronto that learned from millions of Lichess games which moves people of every strength play. With Maia, the bots far more often choose exactly the move a person of their strength would play (measured on real games: about half the time instead of four in ten), while making as many mistakes as before. Only from the tenth half-move on; the opening stays as it is. For this, the app loads an add-on package once; after that it also works offline.",
+  "maia.erklaerung": "Maia is a neural network from the University of Toronto that learned from millions of Lichess games which moves people of every strength play. With Maia, the bots far more often choose exactly the move a person of their strength would play (measured on real games: about half the time instead of four in ten), while making as many mistakes as before. Only from the tenth half-move on; the opening stays as it is. For this, the app loads an add-on package once; after that it also works offline. With Maia, the bots from level 4 up play somewhat stronger (measured: about 200 Elo); the opponent choice then shows their ratings with Maia, and each game is rated with the numbers it was played with.",
   "maia.laden": "Load Maia (about {mb} MB)",
   "maia.laedt": "Loading Maia",
   "maia.laedtStand": "{geladen} of {gesamt} MB loaded. You can keep using the app as long as this page stays open.",

@@ -77,7 +77,7 @@ export function stufeFuer(
 
 /** Der Verlauf der Partie für die Fehlerneigung (engine/menschlich.ts): die Tagesform. */
 /**
- * Maia für die Züge des Bots (0.2.141), wenn die Partie mit Maia begann (Paket geladen und
+ * Maia für die Züge des Bots (0.2.143), wenn die Partie mit Maia begann (Paket geladen und
  * eingeschaltet, Spielen.tsx). Die Laufzeit lädt die Netze beim ersten Zug aus dem Speicher.
  */
 function maiaDerPartie(partie: Partie): Pick<Gegnerprofil, "maia"> {

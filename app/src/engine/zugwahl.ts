@@ -60,7 +60,7 @@ export interface Gegnerprofil {
   readonly stilname?: Stilname;
   /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
-  /** Maia für die Zugwahl (0.2.141, engine/maia.ts); fehlend: ohne Maia. */
+  /** Maia für die Zugwahl (0.2.143, engine/maia.ts); fehlend: ohne Maia. */
   readonly maia?: Maiaquelle;
 }
 

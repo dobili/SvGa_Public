@@ -76,7 +76,7 @@ export interface Wahlkontext {
   readonly stilmix?: Stilmix;
   /** Zeitklasse für das Wahlmodell (0.2.125). */
   readonly tempo: Wahltempo;
-  /** Maia-Abfrage (0.2.141, engine/maia.ts); fehlend: ohne Maia (Paket nicht geladen oder aus). */
+  /** Maia-Abfrage (0.2.143, engine/maia.ts); fehlend: ohne Maia (Paket nicht geladen oder aus). */
   readonly maia?: Maiaabfrage;
 }
 
@@ -105,7 +105,7 @@ interface Eingeordnet extends Zugkandidat {
 function einordnen(lage: Lage, kandidaten: readonly Zugkandidat[], bester: string): Eingeordnet[] {
   return kandidaten.map((k) => {
     if (k.verlust < MINDESTVERLUST || k.uci === bester) return { ...k, art: null };
-    // Seit 0.2.141 bleibt „ungenau“ stehen: Das Wahlmodell ist mit dem Merkmal art_ungenau
+    // Seit 0.2.143 bleibt „ungenau“ stehen: Das Wahlmodell ist mit dem Merkmal art_ungenau
     // geeicht (Gewicht etwa +0,5); bis dahin fehlte es im Spiel, die Bots spielten zu genau.
     return { ...k, art: fehlerartIn(lage, k.uci, k.antwort, k.verlust, bester) };
   });
@@ -231,7 +231,7 @@ export async function menschlicheWahl(
 
 /** Die Fehlerarten, die bei diesen Stellschrauben vorkommen dürfen (gezielte Suche danach). */
 export function aktiveArten(werte: Menschenwerte): Set<Fehlerart> {
-  // Seit 0.2.141 (Plan C) auch die gezielt gesuchten Arten und „Patt gesetzt“ (erkennen die
+  // Seit 0.2.143 (Plan C) auch die gezielt gesuchten Arten und „Patt gesetzt“ (erkennen die
   // Werkzeuge ohne Engine, war aber nie aktiv).
   const arten: readonly Fehlerart[] = [...GELEGENHEITSARTEN, ...GEZIELTE_ARTEN, "pattGesetzt"];
   return new Set(arten.filter((a) => gewichtVon(werte, a) > 0));
@@ -265,7 +265,7 @@ export async function kandidatenpool(
   const bestwert = wertFuer(erste.wert, weiss);
   const kandidaten = kandidatenAus(b.varianten, bestwert, weiss);
   const typisch = zuPruefen(lage, aktiv, new Set(kandidaten.map((k) => k.uci)));
-  // Seit 0.2.141 auch Prüfzüge für Bauern- und Königszüge ohne Not und eingestellte Bauern.
+  // Seit 0.2.143 auch Prüfzüge für Bauern- und Königszüge ohne Not und eingestellte Bauern.
   const schon = new Set([...kandidaten.map((k) => k.uci), ...typisch]);
   const extra = [...typisch, ...gezielteKandidaten(lage, aktiv, schon)];
   const gezielt =

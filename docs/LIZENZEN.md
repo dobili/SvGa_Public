@@ -16,7 +16,7 @@
 | Porträts der Gegner und zur Wahl für eigene Bots (`app/public/gegner/`, Stil „Personas“ von Draftbit, erzeugt mit DiceBear)          | CC BY 4.0 (Zeichnungen), MIT (Code) | `app/public/lizenzen/cc-by-4.0.txt`                           |
 | Eröffnungsnamen (Lichess chess-openings, `inhalte/lichess/`)                                                           | CC0 1.0 (gemeinfrei)                | – (keine Pflichten; Herkunft in `inhalte/lichess/README.md`)  |
 | Praxisbuch: Eröffnungszüge aus der Lichess-Datenbank, September 2026 (`app/public/daten/praxisbuch.json`, seit 0.2.128) | CC0 1.0 (gemeinfrei) | – (keine Pflichten; Herkunft in `pipeline/praxisbuch/__init__.py`) |
-| Maia-2 (CSSLab, University of Toronto; Netze Blitz und Schnellschach als ONNX in `app/public/maia/`, Zusatzpaket seit 0.2.141) | MIT | `app/public/lizenzen/mit-maia2.txt` |
+| Maia-2 (CSSLab, University of Toronto; Netze Blitz und Schnellschach als ONNX in `app/public/maia/`, Zusatzpaket seit 0.2.143) | MIT | `app/public/lizenzen/mit-maia2.txt` |
 | onnxruntime-web 1.20.1 (Microsoft; Laufzeit des Maia-Zusatzpakets, `app/public/maia/ort/`, beim Build aus dem npm-Paket) | MIT | `app/public/lizenzen/mit-onnxruntime.txt` |
 | React, React DOM, Scheduler, Workbox, vite-plugin-pwa                                                                  | MIT                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |
 | Lucide-Symbole, idb                                                                                                    | ISC                                 | `/lizenzen/bausteine.txt` (beim Build, siehe unten)           |

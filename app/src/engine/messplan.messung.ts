@@ -1,5 +1,5 @@
 /**
- * Messplan der Neumessung von Plan C (0.2.141, Freigabe des Autors 25.10.2026): alle Stufen, Bots,
+ * Messplan der Neumessung von Plan C (0.2.143, Freigabe des Autors 25.10.2026): alle Stufen, Bots,
  * Gruppen und die Neuling-Kandidaten, je ohne und mit Maia („*“), aufgeteilt auf zehn Chats.
  *
  * Rolle im Gesamtbild: Erzeugt app/messplan/<fassung>/teil-N.txt (Fassung „ohne“ und „mit“ Maia;
@@ -63,7 +63,7 @@ it("schreibt den Messplan", () => {
   const partien = paarungen.length * BOT_PARTIEN + TEILE * 2 * ANKER_PARTIEN;
   writeFileSync(
     join(ZIEL, "README.md"),
-    `# Messplan Plan C (0.2.141)\n\n${paarungen.length} Paarungen zu je ${BOT_PARTIEN} Partien, ` +
+    `# Messplan Plan C (0.2.143)\n\n${paarungen.length} Paarungen zu je ${BOT_PARTIEN} Partien, ` +
       `${TEILE * 2} Anker zu je ${ANKER_PARTIEN}; zusammen ${partien} Partien auf ${TEILE} Teile. ` +
       `Aufruf je Teil (im Ordner app/): \`skripte/messe-planc.sh ohne N\` oder \`mit N\`. Erzeugt von src/engine/messplan.messung.ts.\n`,
   );

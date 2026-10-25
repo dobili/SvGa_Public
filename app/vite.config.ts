@@ -178,7 +178,7 @@ const NAVY = "#16253D";
 const CREME = "#F5F0E6";
 
 /**
- * Lässt die WebAssembly-Datei von onnxruntime-web aus dem Bündel (Maia, 0.2.141). Das Bündel der
+ * Lässt die WebAssembly-Datei von onnxruntime-web aus dem Bündel (Maia, 0.2.143). Das Bündel der
  * Bibliothek verweist auf sie, die App übergibt sie aber selbst aus dem Maia-Paket
  * (engine/maia-web.ts, env.wasm.wasmBinary); eine zweite Kopie unter assets/ würde 11 MB zur
  * Installation legen, die niemand lädt.
@@ -233,7 +233,7 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,json,wasm,webp,png,svg,woff2,txt}"],
         // Das Dashboard (R57) liegt hinter Cloudflare Access; auf Lesergeräten würde das
         // Vorabladen umgeleitet und die Installation scheitern.
-        // Maia (0.2.141) ist ein Zusatzpaket von etwa 96 MB; der Leser lädt es nur auf Wunsch
+        // Maia (0.2.143) ist ein Zusatzpaket von etwa 96 MB; der Leser lädt es nur auf Wunsch
         // (src/engine/maiapaket.ts), es gehört nicht zur Installation.
         globIgnores: ["admin/**", "maia/**"],
         maximumFileSizeToCacheInBytes: GROESSTE_DATEI_BYTES,

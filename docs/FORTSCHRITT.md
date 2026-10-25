@@ -1,3 +1,5 @@
+Stand: 25.10.2026 nachts · **Version 0.2.143** (Zweig `menschliche-bots`, Bot-Chat, Opus): Maia-2 als Zusatzpaket (Einstellungen › Bots, etwa 96 MB, offline, ausschaltbar), Wahlmodell C, Plan C (ungenau, gezielte Prüfkandidaten, Patt, Charaktere neu), Neumessung in zwei Durchgängen mit zwei Zahlensätzen (`engine/zahlensatz.ts`), Neuling mit acht Bots (Frau Schulz, Lotte), Persönlichkeit mit fester Wertung; Testpunkte N983 bis N989. **Nächster Schritt:** Nachtarbeit nach Wunsch des Autors (Zeitklassen mit Maia, Nachmessung der Gruppen und Neulinge, Testliste vorprüfen, Teil 2 prüfen, Buchbefund-Texte), Bericht oben in `docs/AUFGABEN_AUTOR.md`.
+
 Stand: 25.10.2026 abends · **Version 0.2.142** (auf main, Design-Chat, Opus): Partienliste neu (Seitenmarken mit König, Stern am Porträt, Löschen per Auswahl), „Deine Spielstärke“ mit drei Zeitarten, „Deine Wertung“ mit Erklärungen hinter dem Fragezeichen, doppelt so viele Porträt-Formen; Testpunkte N976 bis N982. **Nächster Schritt:** Rückmeldung des Autors; offen: CSP „Weg 1“, Antwort des Kalibrierungs-Chats.
 
 Stand: 25.10.2026 abends · **Version 0.2.141** (Zweig `baukasten-mehr`, Design-Chat, Opus): Partienliste repariert (Gegnerporträts wieder klein), Porträt-Baukasten mit Vorschaubildern statt Ausklappmenüs und mehr Farben; Testpunkte N973 bis N975. **Nächster Schritt:** Rückmeldung des Autors; offen: CSP „Weg 1“, Antwort des Kalibrierungs-Chats.
@@ -1325,14 +1327,14 @@ unten). Testpunkte N690–N701 und Rückfragen P4-1 bis P4-7 in `docs/AUFGABEN_A
 - [x] **R48 Planbilanz-Übung** (`training/planablenker.ts` neu, `planbilanztrainer.ts`): Ablenker
       aus Sicht der Seite am Zug, Figuren mit „dein“, nur Mittelspiel (49 Stellungen),
       Hauptkette. Prüflauf `npx vitest run --config vitest.messung.config.ts
-      src/training/planbilanz.messung.ts` schreibt alle Aufgaben nach `buch/arbeit/planbilanz.txt`
+    src/training/planbilanz.messung.ts` schreibt alle Aufgaben nach `buch/arbeit/planbilanz.txt`
       (durchgesehen: alle 49 Stellungen plausibel).
 - [x] **R47 Endspieltrainer** (`training/endspieldrills.ts`, `endspielzugdrills.ts` neu,
       `ui/trainer/Drillaufgabe.tsx`, `pipeline/trainer/endspiel.py`, `endspiel_lichess.py` neu):
       drei neue Kurzübungen, Quadrat als Pfeile aus k8-quadrat, Abb. 8.31 raus, Plausibilität aller
       Buchstellungen über zwölf Züge geprüft (nur 8.31 trivial), 119 freie Lichess-Endspielaufgaben
       (Themen `bauernendspiel`, `damenendspiel` neu). Lauf: `python -m pipeline.trainer.endspiel
-      --lichess buch/arbeit/lichess/passende-endspiel.pkl --teil i/4` und `--zusammen`; die
+    --lichess buch/arbeit/lichess/passende-endspiel.pkl --teil i/4` und `--zusammen`; die
       Stichprobe entsteht mit `lichess.lies_datenbank(pfad, endspiele=True)` (zwei Minuten).
 - [x] **R49 Strukturerkenner** (`p3-werkzeuge` eingemischt; `training/strukturtrainer.ts`,
       `ui/trainer/Strukturaufgabe.tsx`, `pipeline/trainer/struktur.py`): echte Stellung mit Knopf
@@ -1374,16 +1376,16 @@ Jeder Chat arbeitet auf eigenem Zweig ab `weiter-ohne-autor`; nur P1 mischt ein,
 Version und pusht nach `main`. Den Code der Bots fasst niemand an, solange der Bot-Chat kalibriert.
 Testpunkt-Nummern je Paket getrennt.
 
-| Paket | Zweig | Inhalt | Modell | Testpunkte | Stand |
-|---|---|---|---|---|---|
-| P1 Koordination | `weiter-ohne-autor` | R33, Einmischen, main, R26 | Opus mittel | N630–N649 | läuft (R33 fertig, 0.2.118) |
-| P2 Brett | `p2-brett` | R35–R40, R29, R53 | Opus mittel | N650–N669 | fertig (0.2.119) |
-| P3 Werkzeuge | `p3-werkzeuge` | R41–R44, Glossarvorschläge | Fable hoch | N670–N689 | fertig (0.2.118) |
-| P4 Trainerinhalte | `p4-trainerinhalte` | R50, R48, R47 (mit R34), danach R49 | Fable hoch | N690–N709 | fertig (0.2.119) |
-| P5 Trainerbedienung | `p5-trainerbedienung` | R30, R31, R46, R45 | Opus mittel | N710–N729 | fertig (0.2.118) |
-| P6 Englisch | `p6-englisch` | R25 | Opus niedrig | N730–N739 | fertig (Buchdaten 0.2.118/0.2.119; Trainer und Eröffnungsliste von P1 abgeschlossen, 24.10.2026, N747) |
-| P7 Spielen | `weiter-ohne-autor` (P1) | R51, R24, R27, R28, R32 | Opus mittel | N632–N645 | in 0.2.120 bis 0.2.123 erledigt; R51 nur Anzeigeteil, Wertung und „besiegt“ je Zeitklasse beim Bot-Chat |
-| P8 App-Tour | `p8-tour` | R52 | Opus mittel | N760–N769 | fertig: Teil A in 0.2.121, Teil B (Spielen, Partie mit Auswertung) in 0.2.127 (N769) |
+| Paket               | Zweig                    | Inhalt                              | Modell       | Testpunkte | Stand                                                                                                   |
+| ------------------- | ------------------------ | ----------------------------------- | ------------ | ---------- | ------------------------------------------------------------------------------------------------------- |
+| P1 Koordination     | `weiter-ohne-autor`      | R33, Einmischen, main, R26          | Opus mittel  | N630–N649  | läuft (R33 fertig, 0.2.118)                                                                             |
+| P2 Brett            | `p2-brett`               | R35–R40, R29, R53                   | Opus mittel  | N650–N669  | fertig (0.2.119)                                                                                        |
+| P3 Werkzeuge        | `p3-werkzeuge`           | R41–R44, Glossarvorschläge          | Fable hoch   | N670–N689  | fertig (0.2.118)                                                                                        |
+| P4 Trainerinhalte   | `p4-trainerinhalte`      | R50, R48, R47 (mit R34), danach R49 | Fable hoch   | N690–N709  | fertig (0.2.119)                                                                                        |
+| P5 Trainerbedienung | `p5-trainerbedienung`    | R30, R31, R46, R45                  | Opus mittel  | N710–N729  | fertig (0.2.118)                                                                                        |
+| P6 Englisch         | `p6-englisch`            | R25                                 | Opus niedrig | N730–N739  | fertig (Buchdaten 0.2.118/0.2.119; Trainer und Eröffnungsliste von P1 abgeschlossen, 24.10.2026, N747)  |
+| P7 Spielen          | `weiter-ohne-autor` (P1) | R51, R24, R27, R28, R32             | Opus mittel  | N632–N645  | in 0.2.120 bis 0.2.123 erledigt; R51 nur Anzeigeteil, Wertung und „besiegt“ je Zeitklasse beim Bot-Chat |
+| P8 App-Tour         | `p8-tour`                | R52                                 | Opus mittel  | N760–N769  | fertig: Teil A in 0.2.121, Teil B (Spielen, Partie mit Auswertung) in 0.2.127 (N769)                    |
 
 Kurzbeschreibung der neuen Punkte: R27 „Art des Gegners“ über „Partie beginnen“; R28 Bot-Name als
 Partietitel mit Porträt; R29 Fortschrittsbalken der Auswertung; R30 Taktik ohne Motivfrage bei
@@ -1396,7 +1398,6 @@ Strukturbegriffe (rückständiger Bauer, Loch, schwaches/starkes Feld, Vorposten
 ausbauen; R46 Studien mit Pfeilen und Engine; R47 Endspieltrainer prüfen und erweitern; R48
 Planbilanz-Trainer neu erzeugen; R49 Strukturerkenner mit echten Stellungen; R50 Falle/Köder mit
 echtem Verfahren; R51 Zeitklassen und Abzeichen; R52 App-Tour; R53 Nachtmodus der Seitensymbole.
-
 
 ### Rückmeldung des Autors vom 19.10.2026 abends: 30 Punkte (Arbeitsliste, in dieser Reihenfolge)
 
@@ -1458,26 +1459,18 @@ jedem Punkt committen und pushen (Nutzungslimit des Autors). Reihenfolge nach Au
 - [x] R54 Partienliste (entschieden 23.10.2026, umgesetzt in 0.2.123): Variante A, zwei Knöpfe „Filter“ und
       „Sortieren“ mit aufklappender Liste in Worten, aktive Filter als Chips mit × (P7b).
 - [x] R55 Auswertung: Liste der Fehler und Patzer immer eingeklappt, Anzahl als Badge (0.2.122).
-- [x] R56 Auswertung (entschieden 23.10.2026, umgesetzt in 0.2.122; Vergleichswerte vorläufig):
-      - Umschalter Weiß/Schwarz ganz oben, gilt für die ganze Seite (Satz, Fehlerliste,
-        Auswertung); Voreinstellung eigene Seite, volle Breite.
-      - Bewertungskurve bleibt die einzige Kurve (keine zweite für Genauigkeit je Zug, sie wäre
-        doppelt). Zoom: Phase unter der Kurve antippen zieht sie auf volle Breite, „Ganze
-        Partie“ zurück; Finger auf der Kurve fahren zeigt Zug für Zug „23. Sf5“, Loslassen springt
-        dorthin; zusätzlich Aufziehen mit zwei Fingern.
-      - Großer Ring mit der Gesamtgenauigkeit, daneben Urteil, Genauigkeit und geschätzte
-        Spielstärke mit Spanne.
-      - Darunter Balken (Skala 50–100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und
-        Taktik, mit den Phasensymbolen der App, Prozent, Urteilswort und Elo; Phase mit zu
-        wenigen Zügen grau, „–“.
-      - Zugklassen einzig als Bullet-Diagramm mit Zonen: je Klasse Marke, Name, Badge mit
-        Anzahl und „x % des Üblichen · Urteil“; eigene Skala 0 bis doppelt üblich; Strich =
-        üblich bei der eigenen Stärke; Zonen schwach/normal/gut (bei schwachen Klassen
-        umgekehrt); über der Skala „▸“.
-      - Zonengrenzen aus der Streuung der Lichess-Daten des Bot-Chats; unter etwa 15 eigenen
-        Zügen nur Badges.
-      - Erklärtexte hinter dem Fragezeichen.
-      - Vorschau: vorschau-auswertung.html (Chat P1).
+- [x] R56 Auswertung (entschieden 23.10.2026, umgesetzt in 0.2.122; Vergleichswerte vorläufig): - Umschalter Weiß/Schwarz ganz oben, gilt für die ganze Seite (Satz, Fehlerliste,
+      Auswertung); Voreinstellung eigene Seite, volle Breite. - Bewertungskurve bleibt die einzige Kurve (keine zweite für Genauigkeit je Zug, sie wäre
+      doppelt). Zoom: Phase unter der Kurve antippen zieht sie auf volle Breite, „Ganze
+      Partie“ zurück; Finger auf der Kurve fahren zeigt Zug für Zug „23. Sf5“, Loslassen springt
+      dorthin; zusätzlich Aufziehen mit zwei Fingern. - Großer Ring mit der Gesamtgenauigkeit, daneben Urteil, Genauigkeit und geschätzte
+      Spielstärke mit Spanne. - Darunter Balken (Skala 50–100 %) für Eröffnung, Mittelspiel, Endspiel, Strategie und
+      Taktik, mit den Phasensymbolen der App, Prozent, Urteilswort und Elo; Phase mit zu
+      wenigen Zügen grau, „–“. - Zugklassen einzig als Bullet-Diagramm mit Zonen: je Klasse Marke, Name, Badge mit
+      Anzahl und „x % des Üblichen · Urteil“; eigene Skala 0 bis doppelt üblich; Strich =
+      üblich bei der eigenen Stärke; Zonen schwach/normal/gut (bei schwachen Klassen
+      umgekehrt); über der Skala „▸“. - Zonengrenzen aus der Streuung der Lichess-Daten des Bot-Chats; unter etwa 15 eigenen
+      Zügen nur Badges. - Erklärtexte hinter dem Fragezeichen. - Vorschau: vorschau-auswertung.html (Chat P1).
 - [x] R24 (0.2.123) Bot mit festgelegter Eröffnung: ohne Buchzug Zugfolgen derselben Eröffnung aus der
       Lichess-Liste.
 - [x] R25 V1: restliche Buchdaten ins Englische (inhalte/en, kapitelweise); seit 24.10.2026 auch Trainerdaten (Fallennamen) und Lichess-Eröffnungsliste englisch.
@@ -1754,6 +1747,7 @@ N770–N778 und E1–E4. **Nächster Schritt:** Restplan 8 (Messung läuft), dan
 
 **Für das kommende Update 0.2.125 verschoben (Wunsch des Autors, 24.10.2026: festhalten, was
 geschoben wird):**
+
 - Oberfläche von Teil E: erledigt in 0.2.126 (Spinnennetz, Regler auf Quantilen,
   Menschlichkeitsanzeige). Eine gemessene Zahl je Reglerkombination eigener Bots bleibt offen.
 - Restplan 6 „eingesperrte Figur“ als Fehlerart (erst mit der nächsten Eichung des Wahlmodells).
@@ -1836,7 +1830,7 @@ Stil im Spinnennetz“ und „Gruppenmodus gemessen“.
    Messung mit vierfachen Kandidaten (256 + 16), Ergebnisleiter, Verankerung mit dem neuen Modell.
    Dazu (Autor, 23.10.2026): tieferes Eröffnungsbuch je Elo-Band aus einem ganzen Monat der
    Lichess-Datenbank (Zugfolgen zählen, nur Rechenzeit).
-8b. Bedenkzeit und Zeitnot der Bots aus den Spielerprofilen neu eichen (Teil C verlangte die
+   8b. Bedenkzeit und Zeitnot der Bots aus den Spielerprofilen neu eichen (Teil C verlangte die
    Bedenkzeit je Zelle; das Uhrmodell beruht noch auf der ersten Sammlung), ebenso die Tagesform
    (Streuung zwischen Partien) aus dem Beta-Binomial-Modell.
 9. Teil F: Blitz und 60 Minuten (eigene Raten, Feinabstimmung), drei Einstellungssätze und drei
@@ -1916,12 +1910,12 @@ Tabellen passen, gegen die Schemas gültig sind und keine Kennung verwaist ist.
 jede Übung mit Lösung in „English (preview)“ geöffnet, sichtbarer Text auf deutsche Wörter und
 deutsche Züge durchsucht (Playwright, Skript nur lokal).
 
-| Schritt | Stand |
-| --- | --- |
-| Schicht, Tests, Kapiteltitel (index.json) | fertig |
+| Schritt                                                            | Stand                            |
+| ------------------------------------------------------------------ | -------------------------------- |
+| Schicht, Tests, Kapiteltitel (index.json)                          | fertig                           |
 | Kapitel 0 bis 12 (mit Lernzielen und Zeilen der Gesamt-Checkliste) | fertig, jedes in der App geprüft |
-| Glossar (255 Einträge, Verweise, englisches Alphabet) | fertig, in der App geprüft |
-| Nachschlagen (Denkroutine, Gesamt-Checkliste, Lernziele) | fertig, in der App geprüft |
+| Glossar (255 Einträge, Verweise, englisches Alphabet)              | fertig, in der App geprüft       |
+| Nachschlagen (Denkroutine, Gesamt-Checkliste, Lernziele)           | fertig, in der App geprüft       |
 
 `python -m pipeline.uebersetzen --streng` meldet für alle 16 Dateien „0 Sätze offen“. Übersetzt
 in Teilaufträgen je Datei mit gemeinsamer Anleitung (lokal `buch/arbeit/uebersetzung/ANLEITUNG.md`,
@@ -2000,23 +1994,25 @@ Diagonale 2,4; einige Bereiche entartet (ρ → 0), dort nur der Mittelwert bela
 **Elo-Modell (spielerprofil/elomodell.py, Gradient Boosting, Filter bis zur Entscheidung,
 Prüfung an 20 % zurückgelegten Spielern), Abweichung in Elo:**
 
-| Zeitklasse | nur Genauigkeit je Partie / Mittel über 10 | alle Kennzahlen je Partie / Mittel über 10 | Spielerebene (Kennzahlen über 10 Partien gemittelt) |
-|---|---|---|---|
-| Blitz | 425 / 392 | 305 / 261 | 167 (90 % unter 355) |
-| Schnellschach | 366 / 328 | 262 / 200 | 131 (90 % unter 272) |
-| Klassisch | 255 / 178 | 194 / 134 | 129 (90 % unter 265) |
+| Zeitklasse    | nur Genauigkeit je Partie / Mittel über 10 | alle Kennzahlen je Partie / Mittel über 10 | Spielerebene (Kennzahlen über 10 Partien gemittelt) |
+| ------------- | ------------------------------------------ | ------------------------------------------ | --------------------------------------------------- |
+| Blitz         | 425 / 392                                  | 305 / 261                                  | 167 (90 % unter 355)                                |
+| Schnellschach | 366 / 328                                  | 262 / 200                                  | 131 (90 % unter 272)                                |
+| Klassisch     | 255 / 178                                  | 194 / 134                                  | 129 (90 % unter 265)                                |
 
 Stufenvergleich Schnellschach je Partie: Genauigkeit 366 → + Fehler je Partie und Verlust 295 →
-+ Phasen 276 → + Fehlerarten 272 → + Flecken 270 → + Schwierigkeit und Zeit 262. Fehlerarten und
-Flecken verbessern die Schätzung also kaum (sie sind für die Bots wichtig, nicht für die Zahl).
-Teilmodelle je Phase (Schnellschach): Eröffnung 382, Mittelspiel 321, Endspiel 470 je Partie;
-Eröffnung sagt wie erwartet am wenigsten. Filter „alle Züge“ ist etwas schlechter (266 / 143).
-**Verzerrung zur Mitte:** Das Modell schätzt schwache Spieler zu hoch, starke zu tief (je Partie
-400: +280, 2400: −210; Spielerebene 400: +108, 2400: −80). Entzerrung über die Gerade
-E[Schätzung | wahr] und Umkehrung macht die Bänder fast unverzerrt (±35) bei etwas größerer
-Abweichung (139 statt 131). Vorschlag für die App: entzerrte Zahl anzeigen, Bereich aus der
-Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
-- **Umrechnung chess.com/FIDE (Schritt 4) recherchiert:** ChessGoals (chessgoals.com/
+
+- Phasen 276 → + Fehlerarten 272 → + Flecken 270 → + Schwierigkeit und Zeit 262. Fehlerarten und
+  Flecken verbessern die Schätzung also kaum (sie sind für die Bots wichtig, nicht für die Zahl).
+  Teilmodelle je Phase (Schnellschach): Eröffnung 382, Mittelspiel 321, Endspiel 470 je Partie;
+  Eröffnung sagt wie erwartet am wenigsten. Filter „alle Züge“ ist etwas schlechter (266 / 143).
+  **Verzerrung zur Mitte:** Das Modell schätzt schwache Spieler zu hoch, starke zu tief (je Partie
+  400: +280, 2400: −210; Spielerebene 400: +108, 2400: −80). Entzerrung über die Gerade
+  E[Schätzung | wahr] und Umkehrung macht die Bänder fast unverzerrt (±35) bei etwas größerer
+  Abweichung (139 statt 131). Vorschlag für die App: entzerrte Zahl anzeigen, Bereich aus der
+  Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
+
+* **Umrechnung chess.com/FIDE (Schritt 4) recherchiert:** ChessGoals (chessgoals.com/
   rating-comparison, Stand Juli 2026, knapp 20 000 aktive Spieler mit RD < 150, Selbstangaben):
   Tabellen über die gemeinsame Spalte chess.com Blitz; halbe Breite der mittleren 50 %: FIDE ±75,
   chess.com Rapid ±115, Lichess Blitz ±70, Rapid ±90, Classical ±90 (N nur 240). Kein Wert unter
@@ -2159,7 +2155,7 @@ Prüfung. Noch offen: Tiefe 18 (läuft), Umrechnung chess.com/FIDE, Einbau.
   Containers: `git worktree add -f --detach /home/user/messstand3 94ae97e`, node_modules
   verknüpfen, lauf.sh neu starten (fertige Paarungen überspringt messe-stufen.mjs nicht; dann die
   fertigen aus der Liste nehmen). Danach: `BOTELO_ORDNER=../buch/arbeit/botelo4 npx vitest run
-  --config vitest.messung.config.ts src/engine/botstaerke.messung.ts` → botstaerke-daten.ts
+--config vitest.messung.config.ts src/engine/botstaerke.messung.ts` → botstaerke-daten.ts
   (Anker mit dem neuen Elo-Modell), Uhrabzug je Zeitklasse eintragen.
 - **Zweiter Lauf umgestellt** (botelo4/lauf2.sh, 24.10. mittags): Bots gegen reine Stufen waren
   gesättigt (alle 12:12; ENTSCHEIDUNGEN „Messung der Bots gegen menschlich spielende Stufen“);

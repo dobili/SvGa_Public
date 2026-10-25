@@ -154,7 +154,7 @@ function einstellungAus(roh: unknown): Partie["einstellung"] | null {
     hilfen: hilfenAus(roh.hilfen),
     // Partien vor 0.2.41 zählen nicht für die Wertung.
     gewertet: roh.gewertet === true,
-    // Seit 0.2.141: mit Maia nur, wenn so gespeichert (ältere Partien ohne).
+    // Seit 0.2.143: mit Maia nur, wenn so gespeichert (ältere Partien ohne).
     ...(roh.maia === true ? { maia: true } : {}),
     ...gegnerprofilAus(roh),
   };

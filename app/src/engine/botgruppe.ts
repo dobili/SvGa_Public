@@ -6,9 +6,12 @@
  * die Grundstärke; die menschlichen Zusatzfehler machen ihn schwächer, darum taugt der
  * Durchschnitt der Stufen nicht mehr als Gruppe. So überschneiden sich die Gruppen nicht (Wunsch
  * des Autors, 19.10.2026). Ohne gemessene Zahl gilt der gerundete Durchschnitt der Stufen.
- * Abhängigkeiten: engine/botstaerke-daten.ts, engine/stufen.ts.
+ * Seit 0.2.143 zählt die Zahl, nach der die acht Bots je Gruppe gewählt wurden (eingefroren in
+ * engine/persoenlichkeitswertung-daten.ts): Eine Neumessung verschiebt sonst Bots zwischen den
+ * Gruppen, und der Gruppenmodus spielte mit anderen Bots, als gemessen wurden.
+ * Abhängigkeiten: engine/persoenlichkeitswertung-daten.ts, engine/stufen.ts.
  */
-import { BOT_STAERKE } from "./botstaerke-daten";
+import { PERSOENLICHKEIT_BOTS } from "./persoenlichkeitswertung-daten";
 import { STUFEN_ZAHL } from "./stufen";
 
 const ELO_JE_GRUPPE = 300;
@@ -19,7 +22,7 @@ const ELO_JE_GRUPPE = 300;
  * Beispiel: gemessen 1130 → Gruppe 4; ungemessen (3, 4, 3) → 3.
  */
 export function gruppeDesBots(kennung: string, durchschnitt: number): number {
-  const zahl = BOT_STAERKE[kennung];
+  const zahl = PERSOENLICHKEIT_BOTS[kennung];
   const roh = zahl === undefined ? durchschnitt : zahl / ELO_JE_GRUPPE;
   return Math.max(1, Math.min(STUFEN_ZAHL, Math.round(roh)));
 }

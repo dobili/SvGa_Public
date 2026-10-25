@@ -4,7 +4,6 @@
 # anker-bewertung (Dateien umbenannt nach Teil, damit sie sich nicht überschreiben).
 # Aufruf (im Ordner app/): skripte/sammle-planc.sh ohne ../buch/arbeit/planc/ohne
 set -euo pipefail
-set -f
 FASSUNG=${1:?ohne oder mit}
 ZIEL=${2:?Zielordner}
 TEILE=${3:-"1 2 3 4 5 6 7 8 9 10"}

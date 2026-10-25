@@ -80,7 +80,9 @@ export function Drillaufgabe({ drill, runde }: { drill: Drill; runde: Runde }) {
       {gewaehlt !== null && (
         <>
           <Antwortmeldung richtig={gewaehlt === drill.richtig}>
-            {t("drill.richtigeAntwort", { antwort: optionsname(drill, drill.richtig) })}
+            {t("drill.richtigeAntwort", {
+              antwort: optionsname(drill, drill.richtig).replace(/\.$/, ""),
+            })}
           </Antwortmeldung>
           <p className="hinweis" data-testid="drill-regel">
             {regelsatz(drill)}

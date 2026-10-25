@@ -26,6 +26,9 @@ import { besiegtIn } from "../../speicher/besiegt";
 import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
 import { Gruppenzeile } from "./Gruppenmodus";
+import { MaiaHinweis } from "./MaiaHinweis";
+import { maiaHinweisFaellig } from "./maiahinweis";
+import { useMaiaAktiv } from "./maiastand";
 import { offeneStufenAnfangs, portraet, SPASSGRUPPE, STUFENNUMMERN } from "./gegnerportraet";
 import { bereichstext, spassbereichstext, staerketext } from "./staerkeangabe";
 import { Stufenmarke } from "./Stufenmarke";
@@ -85,6 +88,9 @@ export function VorgefertigteGitter({
   // Zeitklasse); der Zähler der Stufenzeile gilt für die Zeitklasse der gewählten Uhr.
   const alleBesiegt = useSpeicher((z) => z.daten.spiel.besiegt);
   const besiegt = alleBesiegt[tempo];
+  // Beim ersten Bot einmal der Hinweis auf Maia (MaiaHinweis.tsx, Wunsch des Autors 26.10.2026).
+  const maiaAktiv = useMaiaAktiv();
+  const [maiaFenster, setzeMaiaFenster] = useState(false);
   const umschalten = (nummer: number, jetztOffen: boolean) => {
     const neu = new Set(offen);
     if (jetztOffen) neu.add(nummer);
@@ -125,7 +131,10 @@ export function VorgefertigteGitter({
                 name={g.name}
                 staerke={staerketext(zahlDes(g, tempo))}
                 gewaehlt={bot === g.kennung}
-                beiWahl={() => beiBot(g.kennung)}
+                beiWahl={() => {
+                  if (maiaHinweisFaellig(maiaAktiv)) setzeMaiaFenster(true);
+                  beiBot(g.kennung);
+                }}
                 kinder={
                   <GegnerBild
                     bot={g.kennung}
@@ -140,6 +149,7 @@ export function VorgefertigteGitter({
           {gruppe.stufe !== null && <Gruppenzeile stufe={gruppe.stufe} bot={bot} beiBot={beiBot} />}
         </details>
       ))}
+      {maiaFenster && <MaiaHinweis schliessen={() => setzeMaiaFenster(false)} />}
     </div>
   );
 }

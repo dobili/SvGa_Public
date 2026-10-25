@@ -30,6 +30,8 @@ import { useSammelstellung } from "./sammelstellung";
 
 const buchzug = (san: string) => sanInSprache(san, sprache());
 const NACHKOMMASTELLEN = 1;
+/** Ab diesem „Verlust“ ist der Wert ein Mattwert (mehr Material gibt es auf dem Brett nicht). */
+const MATT_AB_BAUERN = 50;
 /** Das Angebot vor der Entscheidung: ohne „+“, „#“, „!“ oder „?“, die die Antwort verraten (R31). */
 const angebotszug = (san: string) => buchzug(ohneZugzeichen(san));
 
@@ -45,12 +47,15 @@ function herkunftstext(aufgabe: Aufgabe): string {
 function Aufloesung({ aufgabe, richtig }: { aufgabe: Aufgabe; richtig: boolean }) {
   const folge = aufgabe.fortsetzung.map(buchzug).join(" ");
   const widerlegung = widerlegungszug(aufgabe);
+  const wirkung = wirkungDerWiderlegung(aufgabe);
+  // Bei Matt ist der Verlust ein Mattwert, keine Bauernzahl (Befund N691, 26.10.2026).
+  const matt = wirkung === "matt" || aufgabe.verlustBeimNehmen >= MATT_AB_BAUERN;
   const text =
     aufgabe.antwort === "falle"
-      ? t("fallentrainer.warFalle", {
+      ? t(matt ? "fallentrainer.warFalleMatt" : "fallentrainer.warFalle", {
           zug: buchzug(aufgabe.angebot),
           widerlegung: widerlegung ? buchzug(widerlegung) : folge,
-          wirkung: t(`fallentrainer.wirkung.${wirkungDerWiderlegung(aufgabe)}`),
+          wirkung: t(`fallentrainer.wirkung.${wirkung}`),
           verlust: zahlText(aufgabe.verlustBeimNehmen, NACHKOMMASTELLEN),
           bester: buchzug(aufgabe.bester),
         })

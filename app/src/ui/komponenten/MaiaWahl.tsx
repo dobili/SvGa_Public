@@ -66,8 +66,11 @@ function Laden({ zustand, setze }: { zustand: Ladezustand; setze: (z: Ladezustan
   );
 }
 
-/** Der Reiter „Bots“. */
-export function MaiaWahl() {
+/**
+ * Der Reiter „Bots“. `kurz`: ohne Überschrift, Erklärung und Lizenz, für den einmaligen Hinweis
+ * beim ersten Bot (MaiaHinweis.tsx), der eigene Sätze hat.
+ */
+export function MaiaWahl({ kurz = false }: { kurz?: boolean } = {}) {
   const bereit = useMaiaBereit();
   const einstellungen = useEinstellungen();
   const [zustand, setze] = useState<Ladezustand>({ art: "ruhe" });
@@ -78,8 +81,8 @@ export function MaiaWahl() {
   };
   return (
     <div className="maia-wahl" data-testid="maia-wahl">
-      <h3 className="einstellung-name">{t("maia.titel")}</h3>
-      <p className="hinweis">{t("maia.erklaerung")}</p>
+      {!kurz && <h3 className="einstellung-name">{t("maia.titel")}</h3>}
+      {!kurz && <p className="hinweis">{t("maia.erklaerung")}</p>}
       {bereit ? (
         <>
           <Auswahl
@@ -97,7 +100,7 @@ export function MaiaWahl() {
       ) : (
         <Laden zustand={zustand} setze={setze} />
       )}
-      <p className="hinweis klein">{t("maia.lizenz")}</p>
+      {!kurz && <p className="hinweis klein">{t("maia.lizenz")}</p>}
     </div>
   );
 }

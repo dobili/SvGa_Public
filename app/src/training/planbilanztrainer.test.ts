@@ -20,6 +20,12 @@ function stellung(nummer: string) {
 }
 
 describe("Planbilanz-Übung", () => {
+  it("Befund N696: Warum-Fragen tragen eine eigene Überschrift statt der Planfragen", () => {
+    const warum = planaufgaben(stellungen, festerZufall(3)).filter((a) => a.warum);
+    expect(warum.length).toBeGreaterThan(0);
+    expect(warum.every((a) => !a.fragen.some((f) => f.frage === GEGNERFRAGE))).toBe(true);
+  });
+
   const aufgaben = planaufgaben(stellungen, festerZufall(3));
   const planfragen = aufgaben.filter((a) => a.fragen.some((f) => f.frage === GEGNERFRAGE));
 
@@ -39,8 +45,8 @@ describe("Planbilanz-Übung", () => {
     ).toBe(false);
   });
 
-  it("R48: nur Mittelspielstellungen nach der Phasenerkennung der App", () => {
-    for (const a of planfragen) {
+  it("R48: nur Mittelspielstellungen nach der Phasenerkennung der App, auch die Warum-Fragen", () => {
+    for (const a of aufgaben) {
       const b = stellung(a.nummer);
       const p = profil(b.stellung);
       expect(phase(b.stellung, p.angriffskarte, p.drohungen).phase, a.nummer).toBe("mittelspiel");

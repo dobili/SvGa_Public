@@ -553,8 +553,8 @@ oder mehr) oder unter Spielen eine Partie per PGN einlesen.
 
 - [ ] N633. **Umschalter oben:** Über der Bewertungskurve steht „Weiß (du) | Schwarz (Name des
       Bots)“, voreingestellt auf deine Seite. Er gilt für die ganze Auswertung: Satz unter der
-      Kurve, Fehlerliste, Spielstärke und Züge. Auf der Seite des Bots steht statt der
-      Fehlerliste die eingeklappte Liste „Absichtliche Fehler der Engine“.
+      Kurve, Fehlerliste, Spielstärke und Züge. Auf der Seite des Bots stehen seine Fehlerliste
+      und darunter die eingeklappte Liste „Absichtliche Fehler der Engine“.
 - [ ] N634. **Fehler und Patzer eingeklappt (R55):** Unter der Kurve steht „Fehler und Patzer“ mit
       der Anzahl im Kästchen. Erst ein Tipp klappt die Liste auf; jeder Eintrag hat seine farbige
       Marke und springt zur Stellung.
@@ -602,7 +602,7 @@ Rundgang kommt auch bei dir einmal.
       dann Hilfen, Motiv und die Runde als Karten in der Mitte. Dasselbe in einer laufenden Runde:
       Jetzt ist auch der Stand oben gerahmt. Probier zwei, drei weitere Trainer.
 - [ ] N765. **Einstellungen:** Zahnrad › Kompass: Wertung, Fortschritt, jeder der fünf Reiter,
-      Daten auf diesem Gerät, Über die App. Dann Reiter „Anzeige“ › „Toursymbol: aus“: Das Symbol
+      Daten auf diesem Gerät, Über die App. Dann Reiter „Hilfe“ › „Toursymbol: aus“: Das Symbol
       verschwindet überall. „Rundgang durch die App“ startet den Rundgang trotzdem; der Schritt zum
       Symbol steht dann in der Mitte. Zum Schluss das Symbol wieder einschalten.
 - [ ] N766. **Bedienung:** Während einer Tour lässt sich neben der Karte nichts antippen. Das
@@ -646,7 +646,7 @@ Rundgang kommt auch bei dir einmal.
       und Zielfeld an, gleitet die Figur in etwa einer Fünftelsekunde hinüber, mit einer kurzen,
       verblassenden Spur aus Nachbildern; ebenso der Zug des Bots (bei der Rochade gleitet der Turm
       mit, eine geschlagene Figur verblasst). Deine Uhr läuft erst, wenn sein Zug angekommen ist.
-      Ziehst du per Wischen, springt nichts nach. Einstellungen › Brett › „Züge gleiten über das
+      Ziehst du per Wischen, springt nichts nach. Einstellungen › Bedienung › „Züge gleiten über das
       Brett“ schaltet es ab. Gefällt dir Tempo und Spur?
 - [ ] N654. **Ergebnis auf dem Brett (R38):** Beende eine Partie (gewinnen, Remis oder aufgeben).
       Sobald der letzte Zug angekommen ist, springt mitten auf dem Brett ein Schild auf:
@@ -660,7 +660,7 @@ Rundgang kommt auch bei dir einmal.
       auf dunklem Grund heran, darunter „Schach von Grund auf“, dann blendet alles aus. Ein Tipp
       irgendwo überspringt sie. Gleich noch einmal schließen und öffnen: Sie kommt wieder (bei
       jedem Start, keine Stundensperre mehr). Beim bloßen Neuladen kommt sie nicht. Dann
-      Zahnrad › Brett › „Startbild beim Öffnen der App“ auf „aus“, App schließen und öffnen: kein
+      Zahnrad › Bedienung › „Startbild beim Öffnen der App“ auf „aus“, App schließen und öffnen: kein
       Startbild mehr. Bei „Bewegung reduzieren“ des Geräts bleibt sie immer aus.
 - [ ] N656. **Fenstergröße am Rechner (R40):** Öffne Abb. 1.26 im Browser am Rechner, Fenster
       breit: Brett links, Text rechts. Ziehe das Fenster langsam schmaler: Sobald es weniger als
@@ -735,8 +735,8 @@ Alles unter Training.
       nach deinen Festlegungen. Gefragt ist immer die genaueste Art (Vorposten vor starkem Feld,
       Loch vor schwachem Feld). Passt das?
 - [ ] N705. **Stellungen aus Partien:** Manche Aufgaben tragen die Zeile „Aus einer Partie des
-      Buches (nach Abb. …)“: Mittelspielstellungen aus den Zugfolgen der Kapitel 2, 3, 6, 11 und
-      12 (28 Stück, ab Zug 10, höchstens zwei je Zugfolge). Sind Struktur und Plan dort stimmig?
+      Buches (nach Abb. …)“: Mittelspielstellungen aus den Zugfolgen der Kapitel 2, 3, 6 und 11
+      (ab Zug 10, höchstens zwei je Zugfolge; Kapitel 12 liefert keine passende Stellung). Sind Struktur und Plan dort stimmig?
 
 ### Neu in 0.2.116 und 0.2.118: deine Rückmeldung vom 19.10.2026 (R1 bis R23, R33; Opus)
 
@@ -834,8 +834,8 @@ Schalter oben rechts in der Werkzeugkarte.
       „Bauern“, Sicht Schwarz. Bei d6 steht „rückständig – die Nachbarn stehen schon vor ihm,
       kein eigener Bauer deckt ihn mehr, der Gegner hält das Feld davor; Ziel auf der halboffenen
       Linie“, am Brett das Kürzel R. Abb. 5.7 (Kieseritzky), Sicht Schwarz: f7 und h7 heißen
-      nicht mehr rückständig, sondern nur „besteht den Deckungstest nicht“ (U), weil kein weißer
-      Bauer f6 oder h6 hält. Passt das zu deiner Festlegung?
+      nicht rückständig, weil kein weißer Bauer f6 oder h6 hält; f7 steht als „Doppelbauer“ in der
+      Liste. Passt das zu deiner Festlegung?
 - [ ] N671. **Löcher, starke Felder, Vorposten (R44):** Abb. 5.8, Reiter „Felder“, Sicht Weiß:
       „Starke Felder für Weiß“ mit „d5: starkes Feld – kein gegnerischer Bauer kann es mehr
       angreifen, ein eigener Bauer stützt es: ein Vorposten; erreichbar für c3 und d1“. Sicht
@@ -918,7 +918,7 @@ Spielgefühl.
 
 - [ ] N710. **Taktiktrainer mit einem Motiv (R30):** Training › Taktik › Thema „Spieß“ › Runde
       starten, eine Aufgabe lösen oder „Lösung zeigen“. Die Frage „Welches Motiv war es?“ kommt
-      nicht mehr, weil die Antwort feststeht. Bei „Alle Motive gemischt“ und „Mattbilder“ kommt
+      nicht mehr, weil die Antwort feststeht. Bei „Gemischt“ und „Mattbilder“ kommt
       sie weiterhin.
 - [ ] N711. **Falle oder Köder ohne verräterische Zeichen (R31):** Training › Falle oder Köder ›
       Runde starten. Im Auftrag und auf dem Knopf „Nehmen: …“ steht der Zug ohne „+“, „#“, „!“

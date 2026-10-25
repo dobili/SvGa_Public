@@ -56,6 +56,8 @@ export interface Planaufgabe {
   readonly fragen: readonly Wahlfrage[];
   /** Verweis aufs Buch, wenn die Abbildung eine Planbilanz hat. */
   readonly buchbilanz: boolean;
+  /** Warum-Frage zum Buchtext statt der drei Planfragen (eigene Überschrift, Befund N696). */
+  readonly warum: boolean;
 }
 
 /**
@@ -80,6 +82,13 @@ export function planstellung(buch: Buchstellung): Stellungsprofil | null {
   const p = profil(buch.stellung);
   if (unruhe(p) !== null) return null;
   return phase(buch.stellung, p.angriffskarte, p.drohungen).phase === "mittelspiel" ? p : null;
+}
+
+/** Steht die Abbildung im Mittelspiel (Lesart der App, schach/phase.ts)? */
+function istMittelspiel(buch: Buchstellung): boolean {
+  if (!buch.stellung.regeln) return false;
+  const p = profil(buch.stellung);
+  return phase(buch.stellung, p.angriffskarte, p.drohungen).phase === "mittelspiel";
 }
 
 /** Eine Frage: der richtige Satz und bis zu zwei andere, gemischt, ohne Doppelte. */
@@ -126,7 +135,9 @@ function planfragen(vorrat: readonly Vorrat[], i: number, zufall: Zufall): Wahlf
   const { buch, p, s } = vorrat[i] as Vorrat;
   const seite = buch.stellung.amZug;
   const gleicheSeite = (v: Vorrat) => v.buch.stellung.amZug === seite;
-  const wo = fremdeAblenker(vorrat, i, (x) => x.wo, (x) => x.woArt, () => true);
+  // Auch „Wo?“ nur aus Stellungen mit derselben Seite am Zug: sonst nennt ein Ablenker die
+  // Kette und den Hebel des Gegners (Befund N694, 26.10.2026).
+  const wo = fremdeAblenker(vorrat, i, (x) => x.wo, (x) => x.woArt, gleicheSeite);
   const gegnerSaetze = [
     ...fremdeAblenker(vorrat, i, (x) => x.gegner, (x) => x.gegnerArt, gleicheSeite),
     ...gegnerErsatz(p, seite),
@@ -151,16 +162,27 @@ export function planaufgaben(stellungen: readonly Buchstellung[], zufall: Zufall
     const s = plansaetze(p, buch.stellung.amZug);
     return aussagekraeftig(s, buch.stellung.amZug) ? [{ buch, p, s }] : [];
   });
-  const aufgaben = vorrat.map((v, i) => ({ buch: v.buch, fragen: planfragen(vorrat, i, zufall) }));
+  const aufgaben = vorrat.map((v, i) => ({
+    buch: v.buch,
+    fragen: planfragen(vorrat, i, zufall),
+    warum: false,
+  }));
   const warum = stellungen
     .filter((b) => b.kapitel === 6 && b.vorbereitet && b.vorbereitet.fragen.length > 0)
-    .map((buch) => ({ buch, fragen: (buch.vorbereitet?.fragen ?? []).map(alsWahlfrage) }));
-  return [...aufgaben, ...warum].map(({ buch, fragen }) => ({
+    // Wie die Planfragen nur im Mittelspiel (Befund N696: Fragen zu Eröffnungszügen).
+    .filter((b) => istMittelspiel(b))
+    .map((buch) => ({
+      buch,
+      fragen: (buch.vorbereitet?.fragen ?? []).map(alsWahlfrage),
+      warum: true,
+    }));
+  return [...aufgaben, ...warum].map(({ buch, fragen, warum: istWarum }) => ({
     nummer: buch.nummer,
     fen: buch.stellung.fen,
     seite: buch.stellung.amZug,
     fragen,
     buchbilanz: MIT_BUCHBILANZ.has(buch.nummer),
+    warum: istWarum,
   }));
 }
 

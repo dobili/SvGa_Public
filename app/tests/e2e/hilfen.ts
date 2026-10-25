@@ -23,7 +23,8 @@ export function gewaehlteWerkzeuge(seite: Page): Locator {
  * Start (R52) gilt als schon gestellt; tour.spec.ts prüft sie mit `tourAngebot: true`.
  * Das Weitermachen nach dem Neuladen (V2, Merker svga.stapel) ist aus: Viele Tests laden neu und
  * erwarten danach das Buch wie ein neuer Start; durchstich.spec.ts und spielen.spec.ts prüfen es
- * mit `weitermachen: true`.
+ * mit `weitermachen: true`. Der einmalige Maia-Hinweis beim ersten Bot (26.10.2026) gilt als
+ * gezeigt; spielen.spec.ts prüft ihn mit `maiaHinweis: true`.
  */
 export async function starteImBrowser(
   seite: Page,
@@ -32,11 +33,13 @@ export async function starteImBrowser(
     startanimation = false,
     tourAngebot = false,
     weitermachen = false,
+    maiaHinweis = false,
   }: {
     safariHinweis?: boolean;
     startanimation?: boolean;
     tourAngebot?: boolean;
     weitermachen?: boolean;
+    maiaHinweis?: boolean;
   } = {},
 ): Promise<void> {
   if (!weitermachen) {
@@ -71,6 +74,15 @@ export async function starteImBrowser(
     await seite.addInitScript(() => {
       try {
         window.localStorage.setItem("svga.safariHinweis", "aus");
+      } catch (fehler) {
+        console.warn("Merker nicht schreibbar:", fehler);
+      }
+    });
+  }
+  if (!maiaHinweis) {
+    await seite.addInitScript(() => {
+      try {
+        window.localStorage.setItem("svga.maiaHinweis", "gezeigt");
       } catch (fehler) {
         console.warn("Merker nicht schreibbar:", fehler);
       }

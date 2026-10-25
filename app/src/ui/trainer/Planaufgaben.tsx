@@ -70,7 +70,11 @@ export function Planfragenaufgabe({ aufgabe, runde }: { aufgabe: PlanAufgabe; ru
   };
   return (
     <>
-      <p>{t("planuebung.auftrag", { farbe: farbe(aufgabe.seite) })}</p>
+      <p>
+        {aufgabe.warum
+          ? t("planuebung.auftragWarum", { nummer: aufgabe.nummer })
+          : t("planuebung.auftrag", { farbe: farbe(aufgabe.seite) })}
+      </p>
       <Trainerbrett
         fen={aufgabe.fen}
         gedreht={aufgabe.seite === "black"}

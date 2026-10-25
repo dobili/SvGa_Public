@@ -412,6 +412,30 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(stufen.nth(2)).toHaveAttribute("open", "");
 });
 
+test("Maia-Hinweis (26.10.2026): einmal beim ersten Antippen eines vorgefertigten Bots", async ({
+  page,
+}) => {
+  await starteImBrowser(page, { maiaHinweis: true });
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
+  const gitter = page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" });
+  // Die Vorauswahl beim Wechsel zählt nicht, erst das Antippen eines Bots.
+  await expect(page.getByTestId("maia-hinweis")).toHaveCount(0);
+  await gitter.getByRole("radio", { checked: false }).first().click();
+  const hinweis = page.getByTestId("maia-hinweis");
+  await expect(hinweis).toContainText("Zusatzpaket Maia");
+  await expect(hinweis.getByRole("button", { name: /Maia laden/ })).toBeVisible();
+  await expect(hinweis).toContainText("Reiter „Bots“");
+  await hinweis.getByRole("button", { name: "Weiter" }).click();
+  await expect(hinweis).toHaveCount(0);
+  await gitter.getByRole("radio", { checked: false }).first().click();
+  await page.reload();
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
+  await gitter.getByRole("radio", { checked: false }).first().click();
+  await expect(page.getByTestId("maia-hinweis")).toHaveCount(0);
+});
+
 test("Engine-Knopf während der Partie: Bewertung, eigener Zug, bester Zug (0.2.80)", async ({
   page,
 }) => {

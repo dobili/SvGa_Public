@@ -88,24 +88,11 @@ function RuhigSchalter({ ruhig }: { ruhig: boolean }) {
   );
 }
 
-/** Name einer Seite: „Du“ und „Engine“, bei Mensch gegen Mensch „Weiß“ und „Schwarz“. */
-function seitenname(partie: PartieDaten, farbe: Farbe): string {
-  if (partie.einstellung.gegner === "mensch") return t(farbe === "white" ? "farbe.w" : "farbe.b");
-  return t(farbe === partie.einstellung.eigeneFarbe ? "partie.du" : "partie.engine");
-}
-
 /** Uhr einer Seite, falls die Partie eine Uhr hat. */
 function Uhr({ s, farbe }: { s: Partiesteuerung; farbe: Farbe }) {
   const partie = s.partie;
   if (!partie?.uhr) return null;
-  return (
-    <Partieuhr
-      name={seitenname(partie, farbe)}
-      farbe={farbe}
-      uhr={partie.uhr}
-      jetztMs={s.jetztMs}
-    />
-  );
+  return <Partieuhr partie={partie} farbe={farbe} uhr={partie.uhr} jetztMs={s.jetztMs} />;
 }
 
 /**

@@ -31,6 +31,11 @@ async function beginnePartie(seite: Page): Promise<void> {
   await seite.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   await seite.getByRole("button", { name: "Partie beginnen" }).click();
   await expect(seite.getByRole("heading", { name: "Partie gegen die Engine" })).toBeVisible();
+  // Gezogen wird nach Koordinaten: die zweite Reihe mittig ins Bild, nicht unter die Navigation
+  // (seit 0.2.129 beginnt die Partie ohne vorheriges Scrollen aus der Startleiste).
+  await seite
+    .getByRole("button", { name: /^e2, Bauer/ })
+    .evaluate((feld) => feld.scrollIntoView({ block: "center" }));
 }
 
 test("Ziehen per Wischen: e2 nach e4, Scrollen auf leeren Feldern bleibt frei", async ({

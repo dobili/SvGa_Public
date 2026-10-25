@@ -253,6 +253,8 @@ test("Eigener Gegner „Rambo“ (Angreifer, ohne „Figur hängen“): anlegen,
   await karte.getByRole("button", { name: "Neuen Gegner anlegen" }).click();
   await page.getByLabel("Name").fill("Rambo");
   // Seit 0.2.126 (Teil E): Stil im Spinnennetz statt Regler, Regler auf menschlichen Quantilen.
+  // Seit 0.2.129 (DS39) in Reitern: Stärke, Stil, Fehler, Flecken.
+  await page.getByRole("tab", { name: "Stil" }).click();
   const netz = page.getByTestId("stilnetz");
   await netz.getByRole("checkbox", { name: "Angreifer 100 %" }).click();
   await expect(netz.getByRole("checkbox", { name: "Angreifer 100 %" })).toHaveAttribute(
@@ -260,11 +262,16 @@ test("Eigener Gegner „Rambo“ (Angreifer, ohne „Figur hängen“): anlegen,
     "true",
   );
   await expect(page.getByTestId("stilnetz-text")).toContainText("sucht Schach");
-  await page.getByRole("checkbox", { name: "eine Figur hängen lassen (W1)" }).uncheck();
-  await page.getByTestId("erweiterte-fehler").locator("summary").click();
+  // Seit 0.2.129 (DS38): je Fehlerart ein Stufenschalter von „aus“ bis „sehr oft“.
+  await page.getByRole("tab", { name: "Fehler (18)" }).click();
+  await page.getByTestId("stufe-figurHaengen").getByRole("radio", { name: "aus" }).click();
+  await expect(page.getByRole("tab", { name: "Fehler (17)" })).toBeVisible();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
-  await expect(page.locator("#stufe-figurHaengen")).toBeDisabled();
-  await page.locator("#stufe-verfruehteDame").fill("3");
+  // Unmenschliche Stufen erst nach dem Haken.
+  const dame = page.getByTestId("stufe-verfruehteDame");
+  await expect(dame.getByRole("radio", { name: "extrem" })).toHaveCount(0);
+  await page.getByRole("checkbox", { name: "Auch unmenschliche Werte anbieten" }).check();
+  await dame.getByRole("radio", { name: "extrem" }).click();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "unmenschlich");
   await karte.getByRole("button", { name: "Gegner speichern" }).click();
   await expect(karte).toContainText("Rambo · 3 · 3 · 3 · Angreifer");
@@ -315,20 +322,22 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   // Anfangs „Eigene Stufe“: Regler und Fehlerarten, keine Porträts.
   await expect(page.getByLabel(/^Mittelspiel:/)).toBeVisible();
-  await expect(page.getByTestId("fehlerarten-abhakliste")).toBeVisible();
-  // Seit 0.2.82 auch die blinden Flecken der eigenen Stufe.
-  await page.getByTestId("blinde-flecken").locator("summary").click();
-  await page.getByRole("checkbox", { name: /Rückzüge/ }).check();
-  await expect(page.getByTestId("blinde-flecken").locator("summary")).toContainText("1 gewählt");
+  await expect(page.getByTestId("gegnerreiter")).toBeVisible();
+  // Seit 0.2.82 auch die blinden Flecken der eigenen Stufe; seit 0.2.129 (DS38) als Kacheln.
+  await page.getByRole("tab", { name: "Flecken (0)" }).click();
+  await page.getByRole("button", { name: /^Rückzüge: aus$/ }).click();
+  await expect(page.getByRole("button", { name: /^Rückzüge: selten$/ })).toBeVisible();
+  await expect(page.getByRole("tab", { name: "Flecken (1)" })).toBeVisible();
+  await page.getByRole("tab", { name: "Stärke" }).click();
   await expect(page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" })).toHaveCount(0);
   await page.getByRole("radio", { name: "Vorgefertigte Bots" }).click();
   await expect(page.getByLabel(/^Mittelspiel:/)).toHaveCount(0);
-  await expect(page.getByTestId("fehlerarten-abhakliste")).toHaveCount(0);
+  await expect(page.getByTestId("gegnerreiter")).toHaveCount(0);
   const gitter = page.getByRole("radiogroup", { name: "Vorgefertigter Gegner" });
   // Der Wechsel wählt gleich den ersten Bot der Stufe im Mittelspiel (anfangs Stufe 1).
   await expect(gitter.getByRole("radio", { checked: true })).toHaveCount(1);
   // Seit 0.2.85: Stufen aufklappbar, anfangs die des gewählten Bots offen; die App merkt sich
-  // die Wahl. „Partie beginnen“ steht über dem Gitter, direkt unter den drei Kacheln.
+  // die Wahl.
   // Seit 0.2.88 steht vor Stufe 1 die Gruppe „Zum Spaß“ (anfangs zu).
   const stufen = page.locator("details.gegnerstufe");
   await expect(stufen.nth(0)).not.toHaveAttribute("open", "");
@@ -336,9 +345,8 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   await expect(stufen.nth(2)).not.toHaveAttribute("open", "");
   await stufen.nth(2).locator("summary").click();
   await expect(stufen.nth(2)).toHaveAttribute("open", "");
-  const knopf = await page.getByRole("button", { name: "Partie beginnen" }).boundingBox();
-  const gitterBox = await gitter.boundingBox();
-  expect((knopf?.y ?? Infinity) < (gitterBox?.y ?? 0)).toBe(true);
+  // Seit 0.2.129 (DS40) steht „Partie beginnen“ in der festen Startleiste: immer im Bild.
+  await expect(page.getByRole("button", { name: "Partie beginnen" })).toBeInViewport();
   // Elo-Zahl an Stufe, Kachel und Sprechblase (0.2.84, S23), mit Erklärung hinter dem Fragezeichen.
   await expect(
     gitter.getByRole("heading", { name: /^Stufe 1 · Neuling · (etwa|unter) \d+( bis .*\d+)?$/ }),
@@ -477,6 +485,7 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
 }) => {
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("tab", { name: "Stil" }).click();
   const netz = page.getByTestId("stilnetz");
   // Seit 0.2.126: vier Ausprägungen, mehrere Stile, nur nicht beide Enden einer Achse
   const punkt = (name: string) => netz.getByRole("checkbox", { name, exact: true });
@@ -490,26 +499,28 @@ test("Eigene Stufe: Spinnennetz, Regler auf Quantilen, ohne Fehlerart die Zahl d
   await expect(page.getByTestId("stilnetz-text")).toContainText("Positionsspieler 125 %");
   await punkt("Positionsspieler 125 %").locator("circle").nth(1).click();
   await expect(punkt("Positionsspieler 125 %")).toHaveAttribute("aria-checked", "false");
-  await page.getByTestId("erweiterte-fehler").locator("summary").click();
+  await page.getByRole("tab", { name: "Fehler (18)" }).click();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "menschlich");
-  await page.locator("#stufe-bauernraub").fill("4");
+  await page.getByRole("checkbox", { name: "Auch unmenschliche Werte anbieten" }).check();
+  await page.getByTestId("stufe-bauernraub").getByRole("radio", { name: "ständig" }).click();
   await expect(page.getByTestId("menschlichkeit")).toHaveAttribute("data-urteil", "unmenschlich");
   const blase = page.getByTestId("gegner-sprechblase");
+  await page.getByRole("tab", { name: "Stärke" }).click();
   await page.getByLabel(/^Mittelspiel:/).fill("5");
   await page.getByLabel(/^Eröffnung:/).fill("5");
   await page.getByLabel(/^Endspiel:/).fill("5");
   await expect(blase).toContainText("etwa 1700");
-  const karte = page.getByTestId("fehlerarten-abhakliste");
-  await karte.locator("summary").click();
-  await karte.getByRole("button", { name: "Keine erlauben" }).click();
+  await page.getByRole("tab", { name: "Fehler (18)" }).click();
+  await page.getByRole("button", { name: "Keine Fehler" }).click();
+  await expect(page.getByRole("tab", { name: "Fehler (0)" })).toBeVisible();
   // Ohne Fehlerart spielt die Stufe nur ihre Grundschicht: gemessen etwa 720.
   await expect(blase).toContainText("etwa 700");
   // Stil und Haken überstehen das Neuladen.
   await page.reload();
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await expect(page.getByRole("tab", { name: "Fehler (0)" })).toBeVisible();
+  await page.getByRole("tab", { name: "Stil" }).click();
   await expect(
     page.getByTestId("stilnetz").getByRole("checkbox", { name: "Taktiker 75 %", exact: true }),
   ).toHaveAttribute("aria-checked", "true");
-  await karte.locator("summary").click();
-  await expect(karte.getByRole("status")).toHaveText("0 von 18 Arten erlaubt");
 });

@@ -1,0 +1,185 @@
+/*
+ * Bedenkzeit als Kacheln und feste Startleiste auf dem Bildschirm Spielen, dazu die Seiten an der
+ * Partieuhr (seit 0.2.129, Vorschläge DS40 bis DS42, vom Autor am 25.10.2026 freigegeben). Farben
+ * aus basis.css und abstimmung.css; die übrige Partieuhr steht in spiel.css.
+ */
+
+/* ---------- Bedenkzeit als Kacheln (DS41) ---------- */
+.zeitraster {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.zeitkachel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: calc(var(--tippflaeche) * 1.4);
+  padding: 4px 2px;
+  border: 1px solid var(--rand-bedien);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+
+.zeitkachel strong {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  font-size: var(--groesse-mittel);
+  white-space: nowrap;
+}
+
+/* „Schnellschach“ ist breiter als eine Kachel auf dem Handy: Trennung am weichen Trennstrich. */
+.zeitkachel span {
+  max-width: 100%;
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+  line-height: 1.15;
+  text-align: center;
+  hyphens: manual;
+}
+
+.zeitkachel[aria-checked="true"] {
+  background: var(--akzent);
+  border-color: var(--akzent);
+  color: var(--flaeche);
+}
+
+.zeitkachel[aria-checked="true"] span {
+  color: var(--flaeche);
+}
+
+.zeitkachel:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* ---------- Feste Startleiste (DS40) ---------- */
+/* Klebt über der Navigation; auf breiten Bildschirmen steht die Navigation links (breit.css). */
+.startleiste {
+  position: sticky;
+  bottom: calc(var(--leiste-hoehe) + env(safe-area-inset-bottom));
+  z-index: 9;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: var(--raster);
+  padding: var(--raster);
+  border: 1px solid var(--linie-stark);
+  border-radius: calc(var(--radius) + 4px);
+  background: var(--flaeche);
+  box-shadow: 0 -4px 16px color-mix(in srgb, var(--navy) 16%, transparent);
+}
+
+.startleiste-wer {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-width: 0;
+  min-height: var(--tippflaeche);
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--text);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.startleiste-bild {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.startleiste-bild > * {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.startleiste-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.startleiste-text strong {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Farbe, Bedenkzeit und Wertung auf höchstens zwei Zeilen. */
+.startleiste-text span {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+  line-height: 1.25;
+}
+
+.startleiste .beginnen .hinweis {
+  max-width: 12em;
+  margin: 0;
+  font-size: var(--groesse-fein);
+}
+
+/* Gleiche Bedingung wie die Schiene links in breit.css. */
+@media (min-aspect-ratio: 5/4) and (min-width: 600px) {
+  .startleiste {
+    bottom: calc(env(safe-area-inset-bottom) + var(--raster));
+  }
+}
+
+/* ---------- Seiten an der Partieuhr (DS42) ---------- */
+.partieuhr-name {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  min-width: 0;
+}
+
+.partieuhr-gegner {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+.partieuhr-name > .gegnerbild {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+/* Kreis in der Farbe der Steine, mit Rand, damit Weiß auf Weiß sichtbar bleibt. */
+.partieuhr-farbe {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1.5px solid var(--rand-bedien);
+}
+
+.partieuhr-farbe.farbe-white {
+  background: #ffffff;
+}
+
+.partieuhr-farbe.farbe-black {
+  background: #161616;
+}

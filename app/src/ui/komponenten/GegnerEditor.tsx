@@ -8,14 +8,14 @@
  * Stile der vorgefertigten Bots im Spinnennetz (Stilnetz.tsx, Teil E; vorher ein Regler von sehr
  * defensiv bis sehr aggressiv, engine/stil.ts, der für ältere Gegner bis zum nächsten Speichern
  * gilt); seit 0.2.117 dazu der erweiterte Modus (ErweiterteFehler.tsx: Fehlerhäufigkeit, Stufe je
- * Art auf den Quantilen der Menschen, Höchstverlust). Gespeichert wird im Spielstand
+ * Art auf den Quantilen der Menschen, Höchstverlust); seit 0.2.129 (DS38, DS39) in vier Reitern
+ * (GegnerReiter.tsx) mit einem Stufenschalter je Fehlerart. Gespeichert wird im Spielstand
  * (speicher/gegner.ts); gelöschte
  * Gegner bleiben in alten Partien mit ihrem Namen.
  * Abhängigkeiten: engine/gegner.ts, engine/fehlerart.ts, engine/stil.ts, speicher/, StufenWahl, i18n.
  */
 import { useState } from "react";
-import { BLINDE_FLECKEN, type BlinderFleck } from "../../engine/blindeFlecken";
-import { FEHLERARTEN, type Fehlerart } from "../../engine/fehlerart";
+import { FEHLERARTEN } from "../../engine/fehlerart";
 import { neueGegnerkennung, type EigenerGegner } from "../../engine/gegner";
 import { STIL_NEUTRAL } from "../../engine/stil";
 import { hauptstil, mixAusStil, type Stilmix } from "../../engine/stile";
@@ -26,7 +26,7 @@ import type { Phase } from "../../spiel/phasen";
 import { MAX_NAMENSLAENGE, mitEigenemGegner, ohneEigenenGegner } from "../../speicher/gegner";
 import { mitEigenenGegnern } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
-import { ErweiterteFehler } from "./ErweiterteFehler";
+import { GegnerReiter } from "./GegnerReiter";
 import { GegnerBild } from "./GegnerBild";
 import { PortraetAuswahl } from "./PortraetAuswahl";
 import { Stilnetz } from "./Stilnetz";
@@ -85,34 +85,25 @@ function ohnePortraet(g: EigenerGegner): EigenerGegner {
   return ohne;
 }
 
-/** Das Formular für einen Gegner. */
+/** Das Formular für einen Gegner; `neu`: noch nicht gespeichert (Überschrift, DS45). */
 function Formular({
   start,
+  neu,
   beiSpeichern,
   beiAbbrechen,
 }: {
   start: EigenerGegner;
+  neu: boolean;
   beiSpeichern: (g: EigenerGegner) => void;
   beiAbbrechen: () => void;
 }) {
   const [g, setze] = useState(start);
   const name = g.name.trim();
-  const schalteFleck = (fleck: BlinderFleck, an: boolean) =>
-    setze({
-      ...g,
-      blindeFlecken: an
-        ? BLINDE_FLECKEN.filter((f) => f === fleck || g.blindeFlecken.includes(f))
-        : g.blindeFlecken.filter((f) => f !== fleck),
-    });
-  const schalteArt = (art: Fehlerart, an: boolean) =>
-    setze({
-      ...g,
-      fehlerarten: an
-        ? FEHLERARTEN.filter((a) => a === art || g.fehlerarten.includes(a))
-        : g.fehlerarten.filter((a) => a !== art),
-    });
   return (
     <div className="gegnerformular" data-testid="gegnerformular">
+      <h4 className="gegnerformular-titel">
+        {t(neu ? "spielen.eigene.formularNeu" : "spielen.eigene.formularBearbeiten")}
+      </h4>
       <label className="einstellung-name" htmlFor="gegner-name">
         {t("spielen.eigene.name")}
       </label>
@@ -127,46 +118,25 @@ function Formular({
         gegner={g}
         beiWahl={(portraet) => setze(portraet ? { ...g, portraet } : ohnePortraet(g))}
       />
-      <StufenWahl
-        stufen={g.stufenJePhase}
-        praefix="eigen"
-        beiWahl={(stufenJePhase: Readonly<Record<Phase, Stufennummer>>) =>
-          setze({ ...g, stufenJePhase })
+      <GegnerReiter
+        g={g}
+        setze={setze}
+        staerke={
+          <StufenWahl
+            stufen={g.stufenJePhase}
+            praefix="eigen"
+            beiWahl={(stufenJePhase: Readonly<Record<Phase, Stufennummer>>) =>
+              setze({ ...g, stufenJePhase })
+            }
+          />
+        }
+        stil={
+          <Stilnetz
+            mix={stilDes(g)}
+            beiWahl={(stilmix) => setze({ ...g, stilmix, stilname: hauptstil(stilmix) })}
+          />
         }
       />
-      <Stilnetz
-        mix={stilDes(g)}
-        beiWahl={(stilmix) => setze({ ...g, stilmix, stilname: hauptstil(stilmix) })}
-      />
-      <fieldset className="fehlerartenwahl">
-        <legend className="einstellung-name">{t("spielen.eigene.fehlerarten")}</legend>
-        <p className="hinweis">{t("spielen.eigene.fehlerartenHinweis")}</p>
-        {FEHLERARTEN.map((art) => (
-          <label key={art} className="schalterzeile">
-            <input
-              type="checkbox"
-              checked={g.fehlerarten.includes(art)}
-              onChange={(e) => schalteArt(art, e.target.checked)}
-            />
-            {t(`fehlerart.${art}`)}
-          </label>
-        ))}
-      </fieldset>
-      <fieldset className="fehlerartenwahl">
-        <legend className="einstellung-name">{t("spielen.eigene.blindeFlecken")}</legend>
-        <p className="hinweis">{t("spielen.eigene.blindeFleckenHinweis")}</p>
-        {BLINDE_FLECKEN.map((fleck) => (
-          <label key={fleck} className="schalterzeile">
-            <input
-              type="checkbox"
-              checked={g.blindeFlecken.includes(fleck)}
-              onChange={(e) => schalteFleck(fleck, e.target.checked)}
-            />
-            {t(`blind.${fleck}`)}
-          </label>
-        ))}
-      </fieldset>
-      <ErweiterteFehler g={g} setze={setze} />
       <div className="knopfreihe">
         <button
           type="button"
@@ -265,6 +235,7 @@ export function GegnerEditor() {
         <Formular
           key={offen.kennung}
           start={offen}
+          neu={!eigene.some((g) => g.kennung === offen.kennung)}
           beiSpeichern={(g) => {
             schreibe(mitEigenemGegner(eigene, g));
             setzeOffen(null);

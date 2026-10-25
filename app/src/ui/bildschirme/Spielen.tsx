@@ -21,6 +21,8 @@ import { stellungAusFen, type Farbe } from "../../schach/stellung";
 import { EROEFFNUNG_PRAXIS, neuePartie, spielbar } from "../../spiel/partie";
 import { UHR_VORGABEN } from "../../spiel/uhr";
 import { uhrname, uhrstelle, uhrStellen, wirksameUhr } from "../komponenten/uhrwahl";
+import { Startleiste } from "../komponenten/Startleiste";
+import { ZeitWahl } from "../komponenten/ZeitWahl";
 import { mitLaufender, mitVorlieben, type Spielvorlieben } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Brett } from "../brett/Brett";
@@ -45,6 +47,8 @@ import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
 import { Stellungseditor } from "../komponenten/Stellungseditor";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+/** Kennung der Karte mit der Gegnerwahl, Ziel der Startleiste (DS40). */
+const SPIELWAHL = "spielwahl";
 
 /** Eindeutige Kennung einer Partie aus Zeit und Zufall. */
 function neueKennung(): string {
@@ -75,7 +79,6 @@ function Einstellungen({
   setze,
   kategorie,
   setzeKategorie,
-  beginnen,
   eroeffnung,
 }: {
   wahl: Wahl;
@@ -83,7 +86,6 @@ function Einstellungen({
   setze: (wahl: Wahl) => void;
   kategorie: Gegnerkategorie;
   setzeKategorie: (kategorie: Gegnerkategorie) => void;
-  beginnen: ReactNode;
   /** Die Wahl der Eröffnung (nur aus der Grundstellung gegen die Engine), sonst null. */
   eroeffnung: ReactNode;
 }) {
@@ -104,7 +106,7 @@ function Einstellungen({
     mit(g ? { bot, stufenJePhase: g.stufenJePhase, stufe: g.stufenJePhase.mittelspiel } : { bot });
   };
   return (
-    <section className="karte spielwahl">
+    <section className="karte spielwahl" id={SPIELWAHL}>
       <GegnerWahl
         gegner={v.gegner}
         bot={v.bot}
@@ -124,81 +126,75 @@ function Einstellungen({
         // Seit 0.2.126 dieselben Einstellungen wie bei eigenen Bots (Wunsch des Autors).
         stufeninhalt={<EigeneStufe v={v} mit={mit} />}
         editor={<GegnerEditor />}
+        // Farbe, Bedenkzeit, Rücknahme und Spielhilfen über der Art des Gegners (Wunsch des
+        // Autors, 19.10.2026): Unter dem Gitter der Bots übersah man sie.
         einstellungen={
-          <>
-            {/* Farbe, Bedenkzeit, Rücknahme und Spielhilfen direkt über „Partie beginnen“
-                (Wunsch des Autors, 19.10.2026): Unter dem Gitter der Bots übersah man sie. */}
-            <div className="partieeinstellungen" data-tour="spielen-einstellungen">
-              {engine && (
-                <Auswahl
-                  name={t("spielen.seite")}
-                  symbol="farbe"
-                  werte={["white", "black"] as const}
-                  gewaehlt={wahl.farbe}
-                  text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
-                  beiWahl={(farbe) => setze({ ...wahl, farbe })}
-                />
-              )}
+          <div className="partieeinstellungen" data-tour="spielen-einstellungen">
+            {engine && (
               <Auswahl
-                name={t("spielen.uhr")}
-                symbol="bedenkzeit"
-                werte={stellen}
-                gewaehlt={uhrstelle(fen, v.uhr)}
-                text={uhrname}
-                beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
+                name={t("spielen.seite")}
+                symbol="farbe"
+                werte={["white", "black"] as const}
+                gewaehlt={wahl.farbe}
+                text={(farbe) => t(farbe === "white" ? "farbe.w" : "farbe.b")}
+                beiWahl={(farbe) => setze({ ...wahl, farbe })}
               />
-              {/* Zugrücknahme gehört zu den Spielhilfen; beide in einer Klappe, ebenso die
+            )}
+            <ZeitWahl
+              stellen={stellen}
+              gewaehlt={uhrstelle(fen, v.uhr)}
+              beiWahl={(stelle) => mit({ uhr: UHR_VORGABEN[Number(stelle)] ?? null })}
+            />
+            {/* Zugrücknahme gehört zu den Spielhilfen; beide in einer Klappe, ebenso die
                   Eröffnung (Wunsch des Autors, 19.10.2026). */}
-              <WertungsWahl
+            <WertungsWahl
+              gewertet={v.gewertet}
+              wertbar={wertbar(fen, v)}
+              beiGewertet={(gewertet) => mit({ gewertet })}
+            />
+            <details
+              className="unterabschnitt"
+              data-testid="spielhilfen-klappe"
+              data-tour="spielen-hilfen"
+            >
+              <summary>
+                <Titelsymbol art="hilfen" />
+                {t("spielen.hilfen")}
+              </summary>
+              <label className="schalterzeile">
+                <input
+                  type="checkbox"
+                  checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
+                  disabled={wirdGewertet(fen, v)}
+                  onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
+                />
+                {t("spielen.ruecknahme")}
+              </label>
+              <HilfenWahl
+                ohneTitel
+                ohneWertung
+                hilfen={v.hilfen}
                 gewertet={v.gewertet}
                 wertbar={wertbar(fen, v)}
+                beiHilfen={(hilfen) => mit({ hilfen })}
                 beiGewertet={(gewertet) => mit({ gewertet })}
               />
+            </details>
+            {eroeffnung && (
               <details
                 className="unterabschnitt"
-                data-testid="spielhilfen-klappe"
-                data-tour="spielen-hilfen"
+                data-testid="eroeffnung-klappe"
+                data-tour="spielen-eroeffnung"
               >
                 <summary>
-                  <Titelsymbol art="hilfen" />
-                  {t("spielen.hilfen")}
+                  <Titelsymbol art="eroeffnung" />
+                  {t("spielen.eroeffnungFestlegen")}
                 </summary>
-                <label className="schalterzeile">
-                  <input
-                    type="checkbox"
-                    checked={v.ruecknahmeErlaubt && !wirdGewertet(fen, v)}
-                    disabled={wirdGewertet(fen, v)}
-                    onChange={(e) => mit({ ruecknahmeErlaubt: e.target.checked })}
-                  />
-                  {t("spielen.ruecknahme")}
-                </label>
-                <HilfenWahl
-                  ohneTitel
-                  ohneWertung
-                  hilfen={v.hilfen}
-                  gewertet={v.gewertet}
-                  wertbar={wertbar(fen, v)}
-                  beiHilfen={(hilfen) => mit({ hilfen })}
-                  beiGewertet={(gewertet) => mit({ gewertet })}
-                />
+                {eroeffnung}
               </details>
-              {eroeffnung && (
-                <details
-                  className="unterabschnitt"
-                  data-testid="eroeffnung-klappe"
-                  data-tour="spielen-eroeffnung"
-                >
-                  <summary>
-                    <Titelsymbol art="eroeffnung" />
-                    {t("spielen.eroeffnungFestlegen")}
-                  </summary>
-                  {eroeffnung}
-                </details>
-              )}
-            </div>
-          </>
+            )}
+          </div>
         }
-        beginnen={beginnen}
       />
     </section>
   );
@@ -364,14 +360,6 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
         setze={setzeWahl}
         kategorie={kategorie}
         setzeKategorie={setzeKategorie}
-        beginnen={
-          <BeginnenKnopf
-            laufend={laufend !== null}
-            moeglich={ok}
-            hinweis={ohneEigenenBot ? t("spielen.eigene.erstWaehlen") : null}
-            beiBeginn={() => beginne(wahl)}
-          />
-        }
         eroeffnung={
           fen === GRUNDSTELLUNG && wahl.vorlieben.gegner === "engine" ? (
             <EroeffnungsWahl
@@ -380,6 +368,29 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
               beiWahl={(eroeffnung) => setzeWahl({ ...wahl, eroeffnung })}
             />
           ) : null
+        }
+      />
+      {/* Seit 0.2.129 (DS40) steht „Partie beginnen“ in der festen Startleiste unten. */}
+      <Startleiste
+        ziel={SPIELWAHL}
+        angaben={{
+          gegner: wahl.vorlieben.gegner,
+          bot: wahl.vorlieben.bot,
+          kategorie,
+          stufe: wahl.vorlieben.stufenJePhase.mittelspiel,
+          eigene: spiel.eigeneGegner,
+          farbe: wahl.farbe,
+          uhr: uhrname(uhrstelle(fen, wahl.vorlieben.uhr)),
+          gewertet: wirdGewertet(fen, wahl.vorlieben),
+        }}
+        knopf={
+          <BeginnenKnopf
+            laufend={laufend !== null}
+            moeglich={ok}
+            // Der Hinweis steht seit 0.2.129 in der Startleiste selbst (kürzer, ohne Umbruch).
+            hinweis={null}
+            beiBeginn={() => beginne(wahl)}
+          />
         }
       />
       <Partienliste partien={spiel.partien} />

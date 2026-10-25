@@ -5254,3 +5254,33 @@ war). Der Messlauf bleibt für spätere Datenstände.
 - **Entscheidung (Regel aus dem Auftrag des Autors):** Unter 50 Elo mittlerer Verschiebung bleiben
   alle gemessenen Zahlen der Bots, Stufen und Gruppen. Eine Neumessung ist nicht nötig. Die
   Kalibrierung von Blitz und Klassisch misst ab 0.2.128 mit dem Buch.
+
+## Spielen neu geordnet DS38 bis DS45 (25.10.2026, Opus, Zweig `spielen-neu`, Version 0.2.129)
+
+Wunsch des Autors (24.10.2026): Wie bei eigenen Bots und der eigenen Stufe Fehler und blinde
+Flecken gewählt und stufenweise eingestellt werden, sei weder bedienfreundlich noch optisch
+ansprechend; dazu alle übrigen unstimmigen Stellen. Vorschläge mit HTML-Vorschauen (Artifact),
+Freigabe „Alles ja“, mit der Bitte, den neuen Stand 0.2.128 zu berücksichtigen.
+
+- DS38 Fehlerprofil statt Abhakliste und erweitertem Modus mit gesperrten Reglern: je Fehlerart
+  ein Stufenschalter „aus“ bis „sehr oft“ (Quantile −2 bis 2; mit Haken auch −4 bis 4,
+  gestreift), Gruppen mit Zeichen, Vorlagen, Höchstverlust als Chips, blinde Flecken als Kacheln
+  mit Weiterschalten. Neu gegenüber der Vorschau: die Vorlage „Keine Fehler“, weil die Liste
+  „Keine erlauben“ wegfiel und die reine Stufe sonst nur über 18 Tipps erreichbar wäre.
+  Logik in `ui/komponenten/fehlerprofil.ts` (mit Tests), Oberfläche in `Fehlerprofil.tsx` und
+  `Fleckenkacheln.tsx`. Das Datenformat im Speicher bleibt (fehlerarten, blindeFlecken,
+  reglerstufen, hoechstverlust); alte Gewichte fallen beim ersten Ändern weg wie bisher.
+- DS39 Vier Reiter Stärke, Stil, Fehler, Flecken für eigene Stufe und eigene Bots
+  (`GegnerReiter.tsx`). Angepasst an 0.2.128: Das neue Spinnennetz mit seinen Auswahllisten
+  bleibt (Bedienung ohne Ziehen, Bildschirmleser); nur die Erklärung kommt hinter das „?“, die
+  Listen bekommen den Rahmen der App.
+- DS40 Feste Startleiste mit Gegner, Farbe, Bedenkzeit, Wertung und „Partie beginnen“
+  (`Startleiste.tsx`); der Knopf steht nicht mehr in der Gegnerwahl.
+- DS41 Bedenkzeit als Kacheln (`ZeitWahl.tsx`), vier je Zeile; „ohne Uhr“ nur außerhalb der
+  Grundstellung wie seit R51.
+- DS42 Partieuhr mit Porträt, Name und Stufenmarke des Gegners, Farbkreis auf beiden Seiten.
+- DS43 Stufe 9 schwarz mit Goldring, Stufe 10 gold.
+- DS44 Einstellungen mit sichtbarem Seitentitel (hebt die Entscheidung nach dem Test von 0.2.30
+  auf); die Karte heißt „Darstellung und Training“.
+- DS45 Rand der gestrichelten Chips in `--rand-bedien`; Überschrift im Formular eigener Bots.
+

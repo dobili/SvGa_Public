@@ -26,6 +26,10 @@ test("Eigener Bot mit Porträt; Spielhilfen stehen über „Partie beginnen“",
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
   const hilfen = page.getByRole("checkbox", { name: /Gewertete Partie/ });
   const beginnen = page.getByRole("button", { name: "Partie beginnen" });
+  // Seit 0.2.129 (DS40) klebt „Partie beginnen“ unten im Bild; an seinem Platz (ganz nach unten
+  // gescrollt) steht es unter den Einstellungen.
+  await expect(beginnen).toBeInViewport();
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   const [yHilfen, yBeginnen] = await Promise.all([hilfen.boundingBox(), beginnen.boundingBox()]);
   expect(yHilfen?.y ?? 0).toBeLessThan(yBeginnen?.y ?? 0);
   await page.getByRole("radio", { name: "Eigene Bots" }).click();

@@ -1,0 +1,295 @@
+/*
+ * Fehlerprofil, blinde Flecken und Reiter des Gegners (seit 0.2.129, Vorschläge DS38 und DS39,
+ * vom Autor am 25.10.2026 freigegeben). Farben aus basis.css und abstimmung.css.
+ */
+
+/* ---------- Kopf: Stärke und Menschlichkeit ---------- */
+.profilkopf {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: calc(var(--raster) * 1.5);
+  align-items: start;
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border-radius: var(--radius);
+  background: var(--grund);
+}
+
+.profilkopf-staerke {
+  display: flex;
+  flex-direction: column;
+}
+
+.profilkopf-staerke strong {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.profilkopf-urteil {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.profilkopf-urteil p {
+  margin: 0;
+}
+
+/* Urteil als Marke: grün menschlich, gold ungewöhnlich, rot kaum oder nicht menschlich. */
+.urteilsmarke {
+  align-self: flex-start;
+  padding: 1px 10px;
+  border-radius: 999px;
+  font-size: var(--groesse-klein);
+  font-weight: 700;
+  border: 1.5px solid currentColor;
+}
+
+.urteil-menschlich {
+  color: var(--gruen-text);
+}
+
+.urteil-ungewoehnlich {
+  color: var(--gold-text);
+}
+
+.urteil-kaumMenschlich,
+.urteil-unmenschlich {
+  color: var(--rot-text);
+}
+
+/* ---------- Vorlagen ---------- */
+.vorlagenreihe {
+  display: flex;
+  gap: var(--raster);
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: thin;
+}
+
+.vorlage {
+  flex: none;
+  min-height: var(--tippflaeche);
+  padding: 0 14px;
+  border-radius: calc(var(--tippflaeche) / 2);
+  border: 1.5px dashed var(--rand-bedien);
+  background: none;
+  color: var(--text);
+  font: inherit;
+  font-size: var(--groesse-mittel);
+  cursor: pointer;
+}
+
+.vorlage[aria-pressed="true"] {
+  border-style: solid;
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 18%, transparent);
+  font-weight: 700;
+}
+
+/* ---------- Gruppen und Zeilen ---------- */
+.fehlerprofil {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.fehlergruppe {
+  display: flex;
+  flex-direction: column;
+}
+
+.fehlergruppe-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+  margin: calc(var(--raster) * 1.5) 0 0;
+  padding-bottom: 4px;
+  font-family: var(--schrift);
+  font-size: var(--groesse-klein);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-leise);
+}
+
+.fehlergruppe-kopf svg {
+  color: var(--gold-text);
+}
+
+.fehlerzeile {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: var(--raster) 0;
+  border-top: 1px solid var(--linie);
+}
+
+.fehlerzeile-kopf {
+  display: flex;
+  align-items: center;
+  gap: var(--raster);
+}
+
+.fehlerzeile-name {
+  flex: 1;
+  min-width: 0;
+}
+
+.fehlerzeile.ist-aus .fehlerzeile-name {
+  color: var(--text-leise);
+}
+
+.fehlerzeile-verlust {
+  flex: none;
+  font-size: var(--groesse-klein);
+}
+
+/* Stufenschalter: gleich breite Felder, das gewählte in der Akzentfarbe. */
+.stufenschalter {
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+  border: 1px solid var(--rand-bedien);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.stufenschalter button {
+  min-height: var(--tippflaeche);
+  padding: 2px;
+  border: none;
+  border-left: 1px solid var(--linie);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  font-size: var(--groesse-fein);
+  line-height: 1.15;
+  cursor: pointer;
+}
+
+.stufenschalter button:first-child {
+  border-left: none;
+}
+
+.stufenschalter button[aria-checked="true"] {
+  background: var(--akzent);
+  color: var(--flaeche);
+  font-weight: 700;
+}
+
+/* Unmenschliche Stufen gestreift, gewählt in Rot. */
+.stufenschalter button.unmenschlich {
+  background: repeating-linear-gradient(135deg, var(--flaeche) 0 5px, var(--grund) 5px 10px);
+}
+
+.stufenschalter button.unmenschlich[aria-checked="true"] {
+  background: var(--rot-text);
+  color: var(--flaeche);
+}
+
+.stufenschalter button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
+}
+
+.verlustwahl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.verlustwahl .chip[aria-checked="true"] {
+  background: var(--akzent);
+  border-color: var(--akzent);
+  color: var(--flaeche);
+}
+
+/* ---------- Blinde Flecken als Kacheln ---------- */
+.fleckenkacheln {
+  display: flex;
+  flex-direction: column;
+  gap: var(--raster);
+}
+
+.fleckenraster {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 7.5em), 1fr));
+  gap: var(--raster);
+}
+
+.fleckkachel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-height: 6em;
+  padding: var(--raster) 6px;
+  border: 1.5px solid var(--rand-bedien);
+  border-radius: calc(var(--radius) + 2px);
+  background: var(--flaeche);
+  color: var(--text);
+  font: inherit;
+  text-align: center;
+  cursor: pointer;
+}
+
+.fleckkachel svg {
+  color: var(--text-leise);
+}
+
+.fleckkachel-name {
+  font-size: var(--groesse-klein);
+  line-height: 1.2;
+}
+
+.fleckkachel-stand {
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: var(--grund);
+  color: var(--text-leise);
+  font-size: var(--groesse-fein);
+  font-weight: 700;
+}
+
+.fleck-an {
+  border-color: var(--gold);
+}
+
+.fleck-an svg {
+  color: var(--gold-text);
+}
+
+.fleck-an .fleckkachel-stand {
+  background: color-mix(in srgb, var(--gold) 30%, transparent);
+  color: var(--text);
+}
+
+.fleck-stark {
+  border: 2.5px solid var(--gold);
+}
+
+.fleck-stark svg {
+  color: var(--gold-text);
+}
+
+.fleck-stark .fleckkachel-stand {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* ---------- Reiter des Gegners ---------- */
+.gegnerreiter {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Kopf des Formulars eigener Bots (DS45): „Neuer Gegner“ oder „Gegner bearbeiten“. */
+.gegnerformular-titel {
+  margin: 0;
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel);
+}

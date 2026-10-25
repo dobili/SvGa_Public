@@ -246,23 +246,27 @@ test("Hinweis auf die Datensicherung nach vier Stunden App-Zeit, „Später“ u
   await expect(hinweis).toHaveCount(0);
 });
 
-test("Abhakliste der Fehlerarten (0.2.60): ein Haken weniger überlebt das Neuladen", async ({
+test("Fehlerarten (0.2.60): eine Art aus und eine Stufe überleben das Neuladen", async ({
   page,
 }) => {
   await starteImBrowser(page);
-  // Seit 0.2.80 beim Spielen unter den Stufenreglern, aufklappbar.
+  // Seit 0.2.80 beim Spielen; seit 0.2.129 (DS38) im Reiter „Fehler“ mit Stufenschaltern.
   const leiste = page.getByRole("navigation", { name: "Hauptbereiche" });
   await leiste.getByRole("button", { name: "Spielen" }).click();
-  const karte = page.getByTestId("fehlerarten-abhakliste");
-  await karte.locator("summary").click();
-  await expect(karte.getByRole("status")).toHaveText("18 von 18 Arten erlaubt");
-  await karte.getByRole("checkbox", { name: /eine Figur hängen lassen/ }).uncheck();
-  await expect(karte.getByRole("status")).toHaveText("17 von 18 Arten erlaubt");
+  await page.getByRole("tab", { name: "Fehler (18)" }).click();
+  const figur = page.getByTestId("stufe-figurHaengen");
+  const dame = page.getByTestId("stufe-verfruehteDame");
+  await figur.getByRole("radio", { name: "aus" }).click();
+  await dame.getByRole("radio", { name: "oft", exact: true }).click();
+  await expect(page.getByRole("tab", { name: "Fehler (17)" })).toBeVisible();
   await page.reload();
   await leiste.getByRole("button", { name: "Spielen" }).click();
-  await karte.locator("summary").click();
-  await expect(karte.getByRole("status")).toHaveText("17 von 18 Arten erlaubt");
-  await expect(karte.getByRole("checkbox", { name: /eine Figur hängen lassen/ })).not.toBeChecked();
-  await karte.getByRole("button", { name: "Keine erlauben" }).click();
-  await expect(karte.getByRole("status")).toHaveText("0 von 18 Arten erlaubt");
+  await page.getByRole("tab", { name: "Fehler (17)" }).click();
+  await expect(figur.getByRole("radio", { name: "aus" })).toHaveAttribute("aria-checked", "true");
+  await expect(dame.getByRole("radio", { name: "oft", exact: true })).toHaveAttribute(
+    "aria-checked",
+    "true",
+  );
+  await page.getByRole("button", { name: "Keine Fehler" }).click();
+  await expect(page.getByRole("tab", { name: "Fehler (0)" })).toBeVisible();
 });

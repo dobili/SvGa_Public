@@ -15,8 +15,8 @@
  * Seit 0.2.85 (Rückfrage S23) steht an jeder Stufe, jeder Kachel und in der Sprechblase die
  * Elo-Zahl auf der Skala von „Deine Spielstärke“ (engine/botstaerke.ts), mit Erklärung hinter
  * dem Fragezeichen; eigene Stufen und eigene Bots mit dem Zusatz „geschätzt“.
- * Seit 0.2.86 (Wunsch des Autors) steht „Partie beginnen“ direkt unter den drei Kacheln, damit man
- * nicht weit scrollen muss; die Stufen der vorgefertigten Bots sind aufklappbar (Gegnerstufen.tsx).
+ * Die Stufen der vorgefertigten Bots sind aufklappbar (Gegnerstufen.tsx). „Partie beginnen“ steht
+ * seit 0.2.129 (DS40) in der festen Startleiste (Startleiste.tsx), nicht mehr hier.
  * Abhängigkeiten: engine/gegner.ts, engine/botstaerke.ts, engine/stufen.ts, spiel/partie.ts
  * (Typen), Vorschauwahl, InfoKnopf, staerkeangabe.ts, lucide, i18n.
  */
@@ -221,8 +221,7 @@ function EigeneGitter({
 
 /**
  * Gegner, Kategorie und der Inhalt der gewählten Kategorie.
- * `stufeninhalt`: Regler und Fehlerarten (eigene Stufe); `editor`: Karte der eigenen Gegner;
- * `beginnen`: der Knopf „Partie beginnen“ (unter den Kategorien, beim Menschen unter der Wahl).
+ * `stufeninhalt`: Regler und Fehlerarten (eigene Stufe); `editor`: Karte der eigenen Gegner.
  */
 export function GegnerWahl({
   gegner,
@@ -236,7 +235,6 @@ export function GegnerWahl({
   stufeninhalt,
   editor,
   einstellungen,
-  beginnen,
   uhr = null,
   erlaubte,
 }: {
@@ -254,8 +252,6 @@ export function GegnerWahl({
   editor: ReactNode;
   /** Farbe, Bedenkzeit, Wertung, Spielhilfen, Eröffnung: über der Art des Gegners (R27). */
   einstellungen: ReactNode;
-  /** Der Knopf „Partie beginnen“, direkt unter der Art des Gegners (R27). */
-  beginnen: ReactNode;
   /** Die gewählte Uhr (seit 0.2.117: Zahl des Bots mit Uhr in der Sprechblase). */
   uhr?: Uhrangabe | null;
   /** Abhakliste der eigenen Stufe (0.2.126; leer: sie spielt rein, die Zahl ist die der reinen Stufe). */
@@ -271,11 +267,8 @@ export function GegnerWahl({
         beiWahl={beiGegner}
       />
       {einstellungen}
-      {gegner === "mensch" && beginnen}
       {gegner === "engine" && (
         <div className="gegnerwahl" data-tour="spielen-gegner">
-          {/* R27 (Wunsch des Autors, 23.10.2026): Die Art des Gegners steht direkt über
-              „Partie beginnen“, die übrigen Einstellungen darüber. */}
           <Vorschauwahl
             name={t("spielen.kategorie")}
             werte={KATEGORIEN}
@@ -287,7 +280,6 @@ export function GegnerWahl({
             }}
             beiWahl={beiKategorie}
           />
-          {beginnen}
           {(kategorie !== "eigene" || eigene.some((g) => g.kennung === bot)) && (
             <Sprechblase bot={bot} eigene={eigene} stufen={stufen} uhr={uhr} erlaubte={erlaubte} />
           )}

@@ -94,16 +94,19 @@ export function datendatei(
 ): string {
   // Seit 0.2.125 die Stufen mit Zusatzfehlern („Nm“, so spielt eine Stufe in der App); Stufe 10
   // ist die volle Engine ohne Zusatzfehler (rein gemessen, „10-9m“ usw.).
-  const stufen = STUFEN_NUMMERN.map(
-    (n) =>
-      `  ${n}: ${Math.round(werte.get(n === STUFEN_NUMMERN.at(-1) ? "stufe10" : `stufe${n}m`) ?? Number.NaN)},`,
-  );
+  // Seit Plan C (0.2.143) auch Stufe 10 menschlich („10m“); fehlt die reine Messung, gilt sie.
+  const stufe = (n: number) =>
+    n === STUFEN_NUMMERN.at(-1)
+      ? (werte.get("stufe10") ?? werte.get("stufe10m"))
+      : werte.get(`stufe${n}m`);
+  const stufen = STUFEN_NUMMERN.map((n) => `  ${n}: ${Math.round(stufe(n) ?? Number.NaN)},`);
   // Ein neuer Bot führt seine Kandidatenmessung (BOTMESSNAMEN), auch wenn ein alter Bot mit derselben
   // Kennung gemessen wurde; der alte steht im Archiv als „alt-…“ und bekommt die Messung seiner
   // Kennung (Wunsch des Autors, 24.10.2026: nicht gewählte Bots behalten ihre Zahl).
   const zahl = (k: string) => {
     const messname = BOTMESSNAMEN[k];
-    if (messname !== undefined) return werte.get(messname);
+    // Fehlt die Kandidatenmessung (Neumessung Plan C misst jeden Bot unter seiner Kennung), gilt diese.
+    if (messname !== undefined) return werte.get(messname) ?? werte.get(k);
     return werte.get(k.startsWith(ARCHIV_VORSILBE) ? k.slice(ARCHIV_VORSILBE.length) : k);
   };
   const bots = [...GEGNER, ...BOTARCHIV].map(

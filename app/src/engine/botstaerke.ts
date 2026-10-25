@@ -17,7 +17,8 @@ import { REINE_STUFEN_STAERKE } from "./reinestufen-daten";
 import type { Phase } from "../schach/phase";
 import { gruppeDesBots } from "./botgruppe";
 import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
-import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG } from "./botstaerke-daten";
+import { UHR_ABZUG } from "./botstaerke-daten";
+import { bottabelle, satzFuer, stufentabelle } from "./zahlensatz";
 import { zahlInZeitklasse } from "./zeitklassenabstand";
 import { wertungstempo, type Wertungstempo } from "../spiel/elomodell";
 import type { Fehlerart } from "./fehlerart";
@@ -51,21 +52,28 @@ export type Staerkeangabe =
 /**
  * Die Zahl einer Stufe (gemessen in Schnellschach), in Blitz und Klassisch umgerechnet wie bei
  * einem Menschen dieser Stärke (seit 0.2.131, engine/zeitklassenabstand.ts).
+ * Seit 0.2.143 je Zahlensatz (engine/zahlensatz.ts): maia aus der Partie, sonst der Satz der Anzeige.
  * Beispiel: Stufe 3 → 1239 (angezeigt „etwa 1250“).
  */
-export function staerkeDerStufe(nummer: Stufennummer, tempo: Wertungstempo = "rapid"): number {
-  return zahlInZeitklasse(STUFEN_STAERKE[nummer], tempo);
+export function staerkeDerStufe(
+  nummer: Stufennummer,
+  tempo: Wertungstempo = "rapid",
+  maia?: boolean,
+): number {
+  return zahlInZeitklasse(stufentabelle(satzFuer(maia))[nummer], tempo);
 }
 
 /**
  * Die Zahl eines vorgefertigten Bots (gemessen in Schnellschach), in Blitz und Klassisch
  * umgerechnet wie bei einem Menschen dieser Stärke; null für unbekannte und eigene Bots.
+ * Zahlensatz wie bei staerkeDerStufe.
  */
 export function staerkeDesBots(
   kennung: string | null,
   tempo: Wertungstempo = "rapid",
+  maia?: boolean,
 ): number | null {
-  const schnellschach = kennung === null ? undefined : BOT_STAERKE[kennung];
+  const schnellschach = kennung === null ? undefined : bottabelle(satzFuer(maia))[kennung];
   return schnellschach === undefined ? null : zahlInZeitklasse(schnellschach, tempo);
 }
 
@@ -77,7 +85,7 @@ export function staerkeDesBots(
  */
 export function staerkeAusStufen(
   stufen: Readonly<Record<Phase, Stufennummer>>,
-  tabelle: Readonly<Record<Stufennummer, number>> = STUFEN_STAERKE,
+  tabelle: Readonly<Record<Stufennummer, number>> = stufentabelle(satzFuer(undefined)),
 ): number {
   const mittel = mittelDerStufen(stufen);
   const unten = Math.max(ERSTE_STUFE, Math.min(LETZTE_STUFE, Math.floor(mittel))) as Stufennummer;
@@ -123,14 +131,18 @@ export function zusatzanteil(e: Zusatzfehlerangabe): number {
  * die gemessene Zahl der reinen Stufen (engine/reinestufen-daten.ts), etwa 720 statt 1700 bei
  * Stufe 5.
  */
-export function staerkeGeschaetzt(e: Zusatzfehlerangabe): number {
+export function staerkeGeschaetzt(e: Zusatzfehlerangabe, maia?: boolean): number {
   const rein = Array.isArray(e.fehlerarten) && e.fehlerarten.length === 0;
-  return staerkeAusStufen(e.stufenJePhase, rein ? REINE_STUFEN_STAERKE : STUFEN_STAERKE);
+  return staerkeAusStufen(
+    e.stufenJePhase,
+    rein ? REINE_STUFEN_STAERKE : stufentabelle(satzFuer(maia)),
+  );
 }
 
 /**
  * Die feste Gegnerwertung einer Partie gegen die Engine: der gemessene Bot, sonst die Schätzung
  * aus den Stufen je Phase und den Zusatzfehlern.
+ * Seit 0.2.143 im Zahlensatz der Partie: „maia“ true → mit Maia, sonst (auch alte Partien) ohne.
  * Beispiel: Bot „ayse“ → 1553; eigene Stufen 5 · 5 · 5 ohne Zusatzfehler → die Zahl der Stufe 5.
  */
 export function gegnerstaerke(
@@ -139,8 +151,11 @@ export function gegnerstaerke(
     readonly uhr?: Uhrangabe | null;
     /** Seit 0.2.126 an jeder neuen Partie gegen die eigene Stufe (engine/stile.ts). */
     readonly stilname?: string;
+    /** Seit 0.2.143: Die Partie wurde mit Maia gespielt (engine/zahlensatz.ts). */
+    readonly maia?: boolean;
   },
 ): number {
+  const maia = einstellung.maia === true;
   // Ohne Bot spielte die Stufe bis 0.2.125 rein (nur abgehakte blinde Flecken); seit 0.2.126
   // trägt eine neue Partie den Stil und spielt mit den angehakten Fehlerarten wie ein eigener Bot.
   const altRein = einstellung.bot === null && einstellung.stilname === undefined;
@@ -151,8 +166,8 @@ export function gegnerstaerke(
   // Seit 0.2.131 jede Gegnerzahl in der Zeitklasse der Uhr (auch Gruppen, eigene Stufen und Bots).
   const schnellschach =
     gruppe !== null
-      ? gruppenwertung(gruppe)
-      : (staerkeDesBots(einstellung.bot) ?? staerkeGeschaetzt(eigen));
+      ? gruppenwertung(gruppe, maia)
+      : (staerkeDesBots(einstellung.bot, "rapid", maia) ?? staerkeGeschaetzt(eigen, maia));
   const ohneUhr = zahlInZeitklasse(schnellschach, tempo);
   return ohneUhr + uhrAbzug(einstellung.stufenJePhase, einstellung.uhr ?? null);
 }

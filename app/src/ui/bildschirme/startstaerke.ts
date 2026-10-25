@@ -9,6 +9,7 @@
  * Abhängigkeiten: engine/botstaerke.ts, gegnerprofil.ts, uhrwahl.ts.
  */
 import { gegnerstaerke } from "../../engine/botstaerke";
+import { aktiverAnzeigesatz } from "../../engine/zahlensatz";
 import type { EigenerGegner } from "../../engine/gegner";
 import type { Spielvorlieben } from "../../speicher/partien";
 import { wirksameUhr } from "../komponenten/uhrwahl";
@@ -30,5 +31,7 @@ export function startstaerke(
     bot: v.bot,
     stufenJePhase: v.stufenJePhase,
     uhr: wirksameUhr(fen, v.uhr),
+    // Vor der Partie gilt der Zahlensatz der Anzeige (mit Maia, wenn es jetzt mitspielt).
+    maia: aktiverAnzeigesatz() === "mit",
   });
 }

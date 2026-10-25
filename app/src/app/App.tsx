@@ -16,6 +16,7 @@
  * Abhängigkeiten: Navigation, Bildschirme, Komponenten, Tour.
  */
 import { useEffect, useState } from "react";
+import { useAnzeigesatz } from "../ui/komponenten/maiastand";
 import { Abbildung } from "../ui/bildschirme/Abbildung";
 import { Buch } from "../ui/bildschirme/Buch";
 import { Ich } from "../ui/bildschirme/Ich";
@@ -203,6 +204,8 @@ function Hauptrahmen() {
  */
 export function App() {
   const sprachcode = useSprache();
+  // Zahlensatz der Bot-Stärke (ohne oder mit Maia) vor allen Bildschirmen einstellen (0.2.143).
+  useAnzeigesatz();
   return (
     <NavigationsRahmen key={sprachcode} anfang={anfangsstapel}>
       <Hauptrahmen />

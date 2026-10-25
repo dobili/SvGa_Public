@@ -16,7 +16,7 @@ import type { Phase } from "../schach/phase";
 import { irgendwoBesiegt, type Besiegte } from "../speicher/besiegt";
 import { staerkeAusStufen, staerkeDesBots } from "./botstaerke";
 import { gegnerDerStufe, type Gegner } from "./gegner";
-import { GRUPPEN_STAERKE } from "./gruppenstaerke-daten";
+import { gruppentabelle, satzFuer } from "./zahlensatz";
 import { STUFEN_ZAHL, type Stufennummer } from "./stufen";
 
 export const GRUPPEN_VORSILBE = "gruppe-";
@@ -79,20 +79,23 @@ export function gruppenstufen(stufe: Stufennummer): Readonly<Record<Phase, Stufe
   };
 }
 
-/** Die gemessene Zahl der Gruppe; null, solange nicht gemessen. */
-export function gemesseneGruppenstaerke(stufe: Stufennummer): number | null {
-  return GRUPPEN_STAERKE[stufe] ?? null;
+/**
+ * Die gemessene Zahl der Gruppe; null, solange nicht gemessen. Zahlensatz (seit 0.2.143): maia aus
+ * der Partie, sonst der Satz der Anzeige (engine/zahlensatz.ts).
+ */
+export function gemesseneGruppenstaerke(stufe: Stufennummer, maia?: boolean): number | null {
+  return gruppentabelle(satzFuer(maia))[stufe] ?? null;
 }
 
 /**
  * Die Zahl der Gruppe für die Elo-Wertung: gemessen, sonst der stärkste Bot plus Zuschlag.
  * Beispiel: Stufe 3, Bots bis 1020, nicht gemessen → 1170.
  */
-export function gruppenwertung(stufe: Stufennummer): number {
-  const gemessen = gemesseneGruppenstaerke(stufe);
+export function gruppenwertung(stufe: Stufennummer, maia?: boolean): number {
+  const gemessen = gemesseneGruppenstaerke(stufe, maia);
   if (gemessen !== null) return gemessen;
   const zahlen = mitgliederDerGruppe(stufe).map(
-    (g) => staerkeDesBots(g.kennung) ?? staerkeAusStufen(g.stufenJePhase),
+    (g) => staerkeDesBots(g.kennung, "rapid", maia) ?? staerkeAusStufen(g.stufenJePhase),
   );
   return (
     (zahlen.length > 0 ? Math.max(...zahlen) : staerkeAusStufen(gruppenstufen(stufe))) +

@@ -16,19 +16,26 @@ interface Zustand {
 
 /** Knopf „Fehlerbericht senden“ mit Rückmeldung. */
 function Absturzbericht({ text }: { text: string }) {
-  const [stand, setzeStand] = useState<"bereit" | "sendet" | "gesendet" | "nicht">("bereit");
+  const [stand, setzeStand] = useState<"bereit" | "sendet" | "gesendet" | "vorgemerkt" | "nicht">(
+    "bereit",
+  );
   const sende = async () => {
     setzeStand("sendet");
     const ergebnis = await sendeMeldung(
       { art: "absturz", text, seite: window.location.pathname },
       true,
     );
-    setzeStand(ergebnis.art === "gesendet" ? "gesendet" : "nicht");
+    setzeStand(ergebnis.art === "zuViele" || ergebnis.art === "fehler" ? "nicht" : ergebnis.art);
   };
-  if (stand === "gesendet" || stand === "nicht") {
+  if (stand !== "bereit" && stand !== "sendet") {
+    const texte = {
+      gesendet: "fehler.berichtGesendet",
+      vorgemerkt: "melden.vorgemerkt",
+      nicht: "fehler.berichtNicht",
+    } as const;
     return (
       <p className="hinweis" role="status">
-        {t(stand === "gesendet" ? "fehler.berichtGesendet" : "fehler.berichtNicht")}
+        {t(texte[stand])}
       </p>
     );
   }

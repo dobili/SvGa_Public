@@ -502,6 +502,7 @@
   "melden.fehler": "Senden ging nicht, vielleicht fehlt das Netz. Du kannst deinen Text mit den Angaben kopieren und an {adresse} schicken.",
   "melden.kopieren": "Text und Angaben kopieren",
   "melden.kopiert": "Kopiert",
+  "melden.vorgemerkt": "Ohne Netz gespeichert, wird gesendet, sobald du wieder online bist.",
   "abbildung.buchfehler": "Fehler im Buch melden",
   "fehler.berichtSenden": "Fehlerbericht an den Autor senden",
   "fehler.berichtHinweis": "Geschickt werden nur die technische Fehlermeldung, die App-Version und Angaben zum Gerät.",

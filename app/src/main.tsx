@@ -34,6 +34,7 @@ import "./ui/stil/tour.css";
 import "./ui/stil/auswertung.css";
 import { App } from "./app/App";
 import { Fehlergrenze } from "./app/Fehlergrenze";
+import { starteNachsenden } from "./app/melden";
 import { starteOffline } from "./app/offline";
 import { starteSprache } from "./app/sprachwahl";
 import { lade } from "./speicher/speicher";
@@ -43,6 +44,8 @@ starteSprache();
 starteOffline();
 // Die Nutzerdaten laden im Hintergrund; bis dahin gilt der vorläufige Stand (speicher.ts).
 void lade();
+// Meldungen, die ohne Netz liegen blieben, jetzt und bei jeder neuen Verbindung senden (V9).
+starteNachsenden();
 
 const wurzel = document.getElementById("wurzel");
 if (!wurzel) {

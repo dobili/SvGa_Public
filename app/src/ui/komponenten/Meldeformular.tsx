@@ -3,8 +3,9 @@
  *
  * Rolle im Gesamtbild: In den Einstellungen („Über die App“) und an jeder Abbildung („Fehler im
  * Buch melden“, mit Abbildungsnummer und Stellung). Die Meldung landet im Dashboard des Autors
- * (app/melden.ts). Geht das Senden nicht (kein Netz), bietet das Formular den alten Weg an:
- * Angaben kopieren und per E-Mail schicken.
+ * (app/melden.ts). Fehlt das Netz, wartet die Meldung seit V9 auf dem Gerät und geht später
+ * hinaus; scheitert das Senden aus anderem Grund, bietet das Formular den alten Weg an: Angaben
+ * kopieren und per E-Mail schicken.
  * Abhängigkeiten: app/melden.ts, Segmentwahl, i18n.
  */
 import { useState } from "react";
@@ -27,6 +28,13 @@ function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertex
     return (
       <p className="hinweis" role="status">
         {t("melden.gesendet", { nummer: ergebnis.nummer })}
+      </p>
+    );
+  }
+  if (ergebnis.art === "vorgemerkt") {
+    return (
+      <p className="hinweis" role="status">
+        {t("melden.vorgemerkt")}
       </p>
     );
   }
@@ -84,7 +92,7 @@ export function Meldeformular({
     setzeErgebnis(await sendeMeldung({ art, text, ...zusatz }, mitGeraet));
     setzeSendet(false);
   };
-  if (ergebnis?.art === "gesendet") {
+  if (ergebnis?.art === "gesendet" || ergebnis?.art === "vorgemerkt") {
     return (
       <div className="meldeformular" data-testid="meldeformular">
         <Ergebnis ergebnis={ergebnis} kopiertext="" />

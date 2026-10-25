@@ -159,15 +159,17 @@ export const BOT_STAERKE_MAIA: Readonly<Record<string, number>> = {
   "alt-wgm-tanaka": 2541,
 };
 
+// Gruppen seit 0.2.144 mit der festen Ordnung neu gemessen (skripte/sammle-gruppen.sh, 72 Partien
+// je Gruppe, Zweige messung-gruppen-mit-1/2).
 export const GRUPPEN_STAERKE_MAIA: Readonly<Partial<Record<Stufennummer, number>>> = {
-  1: 373,
-  2: 658,
-  3: 935,
-  4: 1103,
-  5: 1418,
-  6: 1867,
-  7: 2174,
-  8: 2664,
-  9: 2671,
-  10: 2836,
+  1: 410,
+  2: 674,
+  3: 991,
+  4: 1177,
+  5: 1467,
+  6: 1894,
+  7: 2312,
+  8: 2857,
+  9: 2941,
+  10: 2891,
 };

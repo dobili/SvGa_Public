@@ -14,6 +14,9 @@
  * Ergebnisse und Zugqualität nebeneinander stehen. „Wertung zurücksetzen“ (nach Nachfrage) leert
  * den Verlauf und macht alle bisherigen Partien dauerhaft ungewertet (speicher/partien.ts).
  * Seit 0.2.80 ist die Ansicht eine Reiterzeile, die Erklärung steht hinter einem Fragezeichen.
+ * Seit 0.2.142 (Wunsch des Autors, 25.10.2026) sitzt das Fragezeichen an der Überschrift und
+ * nimmt alle Erklärtexte auf (vorläufig, Schätzung aus den Zügen, Phasen); sichtbar bleiben die
+ * Zahl mit der Marke „vorläufig“ und eine kurze Zeile zum Stand.
  * Abhängigkeiten: spiel/wertung.ts, spiel/elomodell.ts, speicher/, Wertungskurvenbild, Reiter,
  * InfoKnopf, wertungstext, i18n.
  */
@@ -120,37 +123,55 @@ function LeereKarte() {
   );
 }
 
-/** Zeilen unter der Zahl in der Ansicht „Wertung“: Stand, „vorläufig“, Schätzung aus den Zügen. */
-function Wertungszeilen({
+/** Die Zeile unter der Zahl in der Ansicht „Wertung“: „Schnellschach: 3 gewertete Partien …“. */
+function Standzeile({
   kette,
   sichtbar,
-  partien,
   tempo,
 }: {
   kette: readonly Wertungspunkt[];
   sichtbar: readonly Wertungspunkt[];
-  partien: readonly Partieeintrag[];
   tempo: Wertungstempo;
 }) {
   const aktuell = aktuelleWertung(kette) ?? 0;
   const start = sichtbar[0];
+  return (
+    <p className="hinweis">
+      {t(kette.length === 1 ? "ich.wertung.standKlasseEins" : "ich.wertung.standKlasse", {
+        zeitklasse: zeitklassenname(tempo),
+        anzahl: kette.length,
+        aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
+      })}
+    </p>
+  );
+}
+
+/**
+ * Hinter dem Fragezeichen an der Überschrift: kurz, was die Zahl ist; „vorläufig“; die Schätzung
+ * aus den Zügen; in einer Phasenansicht, warum noch keine Zahl steht; dann die lange Erklärung.
+ */
+function Erklaerung({
+  kette,
+  partien,
+  tempo,
+  phaseOhneZahl,
+}: {
+  kette: readonly Wertungspunkt[];
+  partien: readonly Partieeintrag[];
+  tempo: Wertungstempo;
+  phaseOhneZahl: Phase | null;
+}) {
   const zuege = useMemo(() => staerkeLetzterPartien(partien, tempo), [partien, tempo]);
   return (
     <>
-      <p className="hinweis">
-        {t(kette.length === 1 ? "ich.wertung.standKlasseEins" : "ich.wertung.standKlasse", {
-          zeitklasse: zeitklassenname(tempo),
-          anzahl: kette.length,
-          aenderung: start ? vorzeichen(aktuell - start.wertung) : "±0",
-        })}
-      </p>
+      <p>{t("ich.wertung.kurz")}</p>
       {istVorlaeufig(kette) && (
-        <p className="hinweis" data-testid="wertung-vorlaeufig">
+        <p data-testid="wertung-vorlaeufig">
           {t("ich.wertung.vorlaeufig", { anzahl: kette.length })}
         </p>
       )}
       {zuege && (
-        <p className="hinweis">
+        <p>
           {t(zuege.partien === 1 ? "ich.wertung.ausZuegenEins" : "ich.wertung.ausZuegen", {
             mitte: zuege.mitte,
             von: zuege.von,
@@ -159,6 +180,10 @@ function Wertungszeilen({
           })}
         </p>
       )}
+      {phaseOhneZahl && (
+        <p>{t("ich.wertung.phasenZuWenig", { phase: t(`phase.name.${phaseOhneZahl}`) })}</p>
+      )}
+      <p>{t("ich.wertung.erklaerung")}</p>
     </>
   );
 }
@@ -211,10 +236,23 @@ export function Wertungskurve({
       : phasenSichtbar.map((p) => ({ ...p.punkt, wertung: p.schaetzung.mitte }));
   return (
     <section className="karte wertung" data-testid="wertung" data-tour="einstellungen-wertung">
-      <h2 className="karte-titel">
-        <Titelsymbol art="wertung" />
-        {t("ich.wertung.titel")}
-      </h2>
+      <MitInfo
+        zeile={
+          <h2 className="karte-titel">
+            <Titelsymbol art="wertung" />
+            {t("ich.wertung.titel")}
+          </h2>
+        }
+        erklaerung={
+          <Erklaerung
+            kette={kette}
+            partien={partien}
+            tempo={tempo}
+            phaseOhneZahl={ansicht !== "gesamt" && !letztePhase ? ansicht : null}
+          />
+        }
+        thema={t("ich.wertung.titel")}
+      />
       {zeitklassen.length > 1 && (
         <Reiter
           name={t("ich.wertung.zeitklasse")}
@@ -234,19 +272,17 @@ export function Wertungskurve({
       />
       <p className="wertung-zahl" data-testid="wertung-zahl">
         {ansicht === "gesamt" ? aktuell : (letztePhase?.mitte ?? "–")}
+        {ansicht === "gesamt" && istVorlaeufig(kette) && (
+          <span className="wertung-vorlaeufig-marke">{t("ich.wertung.vorlaeufigMarke")}</span>
+        )}
       </p>
       {ansicht === "gesamt" ? (
-        <Wertungszeilen kette={kette} sichtbar={sichtbar} partien={partien} tempo={tempo} />
+        <Standzeile kette={kette} sichtbar={sichtbar} tempo={tempo} />
       ) : (
         <p className="hinweis">
           {letztePhase
-            ? t("ich.wertung.phasenzahl", {
-                phase: t(`phase.name.${ansicht}`),
-                mitte: letztePhase.mitte,
-                von: letztePhase.von,
-                bis: letztePhase.bis,
-              })
-            : t("ich.wertung.phasenZuWenig", { phase: t(`phase.name.${ansicht}`) })}
+            ? t("ich.wertung.spanneKurz", { von: letztePhase.von, bis: letztePhase.bis })
+            : t("ich.wertung.phasenZuWenigKurz")}
         </p>
       )}
       <label className="einstellung-name" htmlFor="wertung-bereich">
@@ -269,11 +305,6 @@ export function Wertungskurve({
       ) : (
         <p className="hinweis">{t("ich.wertung.keineImBereich")}</p>
       )}
-      <MitInfo
-        zeile={<p className="hinweis">{t("ich.wertung.kurz")}</p>}
-        erklaerung={t("ich.wertung.erklaerung")}
-        thema={t("ich.wertung.titel")}
-      />
       <Zuruecksetzen />
     </section>
   );

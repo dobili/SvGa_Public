@@ -505,6 +505,19 @@
   margin: 0;
 }
 
+/* „vorläufig“ neben der Zahl (seit 0.2.142; die Erklärung steht hinter dem Fragezeichen). */
+.wertung-vorlaeufig-marke {
+  margin-inline-start: var(--raster);
+  padding: 2px 8px;
+  border: 1px dashed var(--gold-text);
+  border-radius: 999px;
+  font-family: var(--schrift);
+  font-size: var(--groesse-klein);
+  font-weight: 600;
+  color: var(--gold-text);
+  vertical-align: middle;
+}
+
 .wertung .einstellung-name {
   display: block;
   margin: var(--raster) 0 calc(var(--raster) / 2);

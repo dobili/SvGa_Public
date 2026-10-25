@@ -136,27 +136,28 @@
   outline-offset: 2px;
 }
 
-/* Partienliste: Zeile mit Papierkorb rechts; die Nachfrage beim Löschen nimmt eine eigene Zeile. */
+/*
+ * Partienliste: Der Papierkorb ungewerteter Partien sitzt unten rechts in der Zeile, unter den
+ * Zahlen (partienliste.css); die Nachfrage beim Löschen nimmt eine eigene Zeile.
+ */
 .partieeintrag {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  position: relative;
   border-bottom: 1px solid var(--linie);
 }
 
 .partieeintrag > .partiezeile {
-  flex: 1;
-  min-width: 0;
+  width: 100%;
   border-bottom: none;
 }
 
 .partie-loeschen {
-  flex: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
   color: var(--text-leise);
 }
 
 .partie-nachfrage {
-  flex-basis: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

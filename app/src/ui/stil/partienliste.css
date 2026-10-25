@@ -1,11 +1,12 @@
 /*
  * Zeilen der Partienliste (seit 0.2.142, Wunsch des Autors: übersichtlicher, Platz gut nutzen):
- * links der Gegner mit Namen darunter, rechts Ergebnis, Farbe, Zeitart und die Zahlen beider
- * Seiten groß, Datum und Züge klein (ui/komponenten/Partiezeile.tsx).
+ * links der Gegner mit Namen darunter, in der Mitte Ergebnis, Farbe, Zeitzeichen und Stern, klein
+ * Zeitart, Datum und Züge, rechts die Zahlen beider Seiten groß untereinander (Nachbesserung vom
+ * 25.10.2026: kein leerer Raum rechts; ui/komponenten/Partiezeile.tsx).
  */
 .partienliste .partiezeile {
   display: grid;
-  grid-template-columns: 60px minmax(0, 1fr);
+  grid-template-columns: 60px minmax(0, 1fr) auto;
   column-gap: calc(var(--raster) * 1.25);
   align-items: center;
   padding: var(--raster) calc(var(--raster) / 2);
@@ -49,6 +50,16 @@
   min-width: 0;
 }
 
+/* Ohne Zahlen (noch nicht ausgewertet) reicht die Mitte bis an den Rand. */
+.partie-was:last-child {
+  grid-column: 2 / -1;
+}
+
+/* Ungewertet: Zahlen oben rechts, darunter der Papierkorb (gegnerbild.css); so hoch, dass beide passen. */
+.partiezeile.mit-loeschen {
+  min-height: calc(var(--raster) * 11);
+}
+
 /* Ergebnis, gespielte Farbe, Zeitart und Stern in einer Zeile, bei Platzmangel umbrochen. */
 .partie-kopf {
   display: flex;
@@ -61,29 +72,38 @@
   vertical-align: middle;
 }
 
-.partie-kopf .partie-zeitart {
+.partie-zeitzeichen {
   display: inline-flex;
-  align-items: center;
-  gap: 3px;
-  font-size: var(--groesse-mittel);
-  font-weight: 600;
+  color: var(--gold-text);
 }
 
 .partiezeile-wertung {
   color: var(--gold);
 }
 
-/* Zahlen beider Seiten groß: eigene zuerst, „vs“ leise dazwischen. */
+/* Zahlen beider Seiten rechts untereinander: eigene groß und kräftig, darunter „vs …“. */
 .partie-zahlen {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-  font-size: var(--groesse-gross, 1.15rem);
+  display: grid;
+  justify-items: end;
+  align-self: start;
+  padding-top: 2px;
+  line-height: 1.2;
   font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.partie-zahlen > strong {
+  font-size: var(--groesse-gross, 1.15rem);
+}
+
+.partie-zahl-gegner {
+  font-size: var(--groesse-mittel);
+  font-weight: 600;
 }
 
 .partie-zahlen-vs {
   font-size: var(--groesse-klein);
+  font-weight: 400;
   color: var(--text-leise);
 }
 

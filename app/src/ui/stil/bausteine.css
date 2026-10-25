@@ -293,12 +293,77 @@
   color: var(--text-leise);
 }
 
-/* ---------- Karte „Deine Spielstärke“ (Eichung, seit 0.2.83) ---------- */
+/*
+ * ---------- Karte „Deine Spielstärke“ (Eichung, seit 0.2.83) ----------
+ * Seit 0.2.142 drei Kacheln nebeneinander (Blitz, Schnellschach, Klassisch): Zeichen, Zahl groß,
+ * Spanne und Wertung klein; darunter die Legende der Zeichen.
+ */
+.staerkekacheln {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--raster);
+}
 
-.letzte-spielstaerke-wert {
+.staerkekachel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: var(--raster) 4px;
+  border: 1px solid var(--linie);
+  border-radius: 12px;
+  text-align: center;
+  min-width: 0;
+}
+
+.staerkekachel-zeichen {
+  color: var(--gold-text);
+}
+
+.staerkekachel-zahl {
+  font-family: var(--schrift-titel);
   font-size: var(--groesse-zahl);
   font-weight: 700;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.staerkekachel-klein {
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+}
+
+.staerkekachel-wertung {
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Ohne Partie in dieser Zeitart: blasser, damit die gespielten Zeitarten hervortreten. */
+.staerkekachel.leer {
+  border-style: dashed;
+}
+
+.staerkekachel.leer .staerkekachel-zahl,
+.staerkekachel.leer .staerkekachel-zeichen {
+  color: var(--text-leise);
+}
+
+.staerkelegende {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4px 14px;
   margin: 0;
+  font-size: var(--groesse-fein);
+  color: var(--text-leise);
+}
+
+.staerkelegende span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 /* ---------- Trainingsseite und Übungen des Kapitels (seit 0.2.85) ---------- */

@@ -1,4 +1,4 @@
-/** Tests der Datei der Zahlen je Zeitklasse (engine/botmessung-hilfen.ts, 0.2.129). */
+/** Tests der Datei der Zahlen je Zeitklasse (engine/botmessung-hilfen.ts, seit 0.2.131 Prüfdatei). */
 import { describe, expect, it } from "vitest";
 import { zeitklassendatei } from "./botmessung-hilfen";
 
@@ -17,7 +17,7 @@ describe("Datei der Zahlen je Zeitklasse", () => {
     expect(text).not.toContain("  2: ");
     expect(text).toContain('  "tom": 526,');
     expect(text).not.toContain("alt-tom");
-    expect(text).toContain('  "luis": 400,');
+    expect(text).toContain('  "luis": -231,');
     expect(text).not.toContain("NaN");
   });
 });

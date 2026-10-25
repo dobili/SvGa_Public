@@ -18,7 +18,7 @@ import type { Phase } from "../schach/phase";
 import { gruppeDesBots } from "./botgruppe";
 import { BLINDE_FLECKEN, type BlinderFleck } from "./blindeFlecken";
 import { BOT_STAERKE, STUFEN_STAERKE, UHR_ABZUG } from "./botstaerke-daten";
-import { BOT_STAERKE_JE_ZEITKLASSE, STUFEN_STAERKE_JE_ZEITKLASSE } from "./botstaerke-zeitklassen";
+import { zahlInZeitklasse } from "./zeitklassenabstand";
 import { wertungstempo, type Wertungstempo } from "../spiel/elomodell";
 import type { Fehlerart } from "./fehlerart";
 import { GELEGENHEITSARTEN } from "./menschenprofil";
@@ -49,23 +49,24 @@ export type Staerkeangabe =
   | { readonly art: "unter"; readonly wert: number };
 
 /**
- * Die Zahl einer Stufe (gemessen), in der Zeitklasse, falls dort gemessen, sonst Schnellschach.
+ * Die Zahl einer Stufe (gemessen in Schnellschach), in Blitz und Klassisch umgerechnet wie bei
+ * einem Menschen dieser Stärke (seit 0.2.131, engine/zeitklassenabstand.ts).
  * Beispiel: Stufe 3 → 1239 (angezeigt „etwa 1250“).
  */
 export function staerkeDerStufe(nummer: Stufennummer, tempo: Wertungstempo = "rapid"): number {
-  return STUFEN_STAERKE_JE_ZEITKLASSE[tempo]?.[nummer] ?? STUFEN_STAERKE[nummer];
+  return zahlInZeitklasse(STUFEN_STAERKE[nummer], tempo);
 }
 
 /**
- * Die Zahl eines vorgefertigten Bots (gemessen), in der Zeitklasse, falls dort gemessen, sonst
- * Schnellschach; null für unbekannte und eigene Bots.
+ * Die Zahl eines vorgefertigten Bots (gemessen in Schnellschach), in Blitz und Klassisch
+ * umgerechnet wie bei einem Menschen dieser Stärke; null für unbekannte und eigene Bots.
  */
 export function staerkeDesBots(
   kennung: string | null,
   tempo: Wertungstempo = "rapid",
 ): number | null {
-  if (kennung === null) return null;
-  return BOT_STAERKE_JE_ZEITKLASSE[tempo]?.[kennung] ?? BOT_STAERKE[kennung] ?? null;
+  const schnellschach = kennung === null ? undefined : BOT_STAERKE[kennung];
+  return schnellschach === undefined ? null : zahlInZeitklasse(schnellschach, tempo);
 }
 
 /**
@@ -147,10 +148,12 @@ export function gegnerstaerke(
   // Gruppenmodus (engine/gruppe.ts): gemessene Zahl der Gruppe, sonst stärkster Bot plus Zuschlag.
   const gruppe = gruppenstufe(einstellung.bot);
   const tempo = wertungstempo(einstellung.uhr ?? null);
-  const ohneUhr =
+  // Seit 0.2.131 jede Gegnerzahl in der Zeitklasse der Uhr (auch Gruppen, eigene Stufen und Bots).
+  const schnellschach =
     gruppe !== null
       ? gruppenwertung(gruppe)
-      : (staerkeDesBots(einstellung.bot, tempo) ?? staerkeGeschaetzt(eigen));
+      : (staerkeDesBots(einstellung.bot) ?? staerkeGeschaetzt(eigen));
+  const ohneUhr = zahlInZeitklasse(schnellschach, tempo);
   return ohneUhr + uhrAbzug(einstellung.stufenJePhase, einstellung.uhr ?? null);
 }
 

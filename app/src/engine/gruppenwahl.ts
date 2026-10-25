@@ -20,6 +20,7 @@ import { aktiveArten, kandidatenpool, wahlAusPool, type Wahlkontext } from "./me
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
 import { menschenwerteAus, type Gegnerprofil } from "./zugwahl";
+import { wertungInZeitklasse } from "./zeitklassenabstand";
 
 /** Ein Bot der Gruppe für diesen Zug: seine Stufe (Wertung) und sein Profil. */
 export interface Gruppenmitglied {
@@ -59,15 +60,19 @@ export function mitgliederFuer(
   });
 }
 
-/** Der Kontext eines Mitglieds für das Wahlmodell (wie in engine/zugwahl.ts, waehleZug). */
+/**
+ * Der Kontext eines Mitglieds für das Wahlmodell (wie in engine/zugwahl.ts, waehleZug; die
+ * Wertung seit 0.2.131 in der Zeitklasse der Partie, engine/zeitklassenabstand.ts).
+ */
 function kontextVon(m: Gruppenmitglied, verlauf: Wahlkontext["verlauf"]): Wahlkontext {
+  const tempo = m.profil.tempo ?? "rapid";
   return {
-    wertung: m.stufe.wertung,
+    wertung: wertungInZeitklasse(m.stufe.wertung, tempo),
     restMs: m.profil.restMs ?? null,
     verlauf: m.profil.verlauf ?? verlauf,
     stil: m.profil.stil,
     stilname: m.profil.stilname,
-    tempo: m.profil.tempo ?? "rapid",
+    tempo,
   };
 }
 

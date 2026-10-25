@@ -33,6 +33,7 @@ import { phaseVon } from "../../spiel/phasen";
 import { sanZuUci, uciZuSan } from "../../spiel/zuege";
 import { GRUNDSTELLUNG } from "../../spiel/stellungsbau";
 import { BUCHTIEFE, linienzug, praxiszug, type Praxisbuch } from "../../engine/praxisbuch";
+import { wertungInZeitklasse } from "../../engine/zeitklassenabstand";
 import { findePartie, mitPartie } from "../../speicher/partien";
 import { aendere, speicherzustand } from "../../speicher/speicher";
 import { animationsverzugMs } from "../brett/useZuganimation";
@@ -257,7 +258,13 @@ function praxisErgebnis(
   if (!vorgabe.praxis || vorgabe.zuege.length > 0 || e.startFen !== GRUNDSTELLUNG) return null;
   if (bot?.zufallszuege) return null;
   const verlauf = partie.zuege.map((z) => z.san);
-  const lage = { tempo: wahltempo(e.uhr), wertung, tiefe: bot?.buchtiefe ?? BUCHTIEFE.standard };
+  // Seit 0.2.131 die Wertung desselben Menschen in dieser Zeitklasse (engine/zeitklassenabstand.ts).
+  const tempo = wahltempo(e.uhr);
+  const lage = {
+    tempo,
+    wertung: wertungInZeitklasse(wertung, tempo),
+    tiefe: bot?.buchtiefe ?? BUCHTIEFE.standard,
+  };
   const san =
     linienzug(vorgabe.praxis.linie, verlauf) ??
     praxiszug(vorgabe.praxis.buch, verlauf, lage, Math.random);

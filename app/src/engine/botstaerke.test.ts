@@ -1,6 +1,5 @@
 /** Tests der Elo-Zahl der Bots: Daten vollständig und geordnet, Schätzung aus Stufen, Anzeige. */
 import { REINE_STUFEN_STAERKE } from "./reinestufen-daten";
-import { BOT_STAERKE_JE_ZEITKLASSE, STUFEN_STAERKE_JE_ZEITKLASSE } from "./botstaerke-zeitklassen";
 import { describe, expect, it } from "vitest";
 import {
   ANGABE_HOECHSTENS,
@@ -88,20 +87,21 @@ describe("Elo-Zahl der Bots", () => {
   });
 });
 
-describe("Zahlen je Zeitklasse (0.2.130)", () => {
+describe("Zahlen je Zeitklasse (seit 0.2.131 umgerechnet)", () => {
   const KLASSISCH_30_20 = { grundzeitMs: 1_800_000, zuschlagMs: 20_000 };
   const BLITZ_3_2 = { grundzeitMs: 180_000, zuschlagMs: 2_000 };
-  // Die Spaß-Bots gehören keiner Gruppe an und wurden nicht je Zeitklasse gemessen.
-  it("jeder Gruppen-Bot und jede Stufe hat in Blitz und Klassisch eine Zahl ab 400", () => {
-    const gruppenbots = GEGNER.filter((g) => !g.zufallszuege);
-    for (const tempo of ["blitz", "classical"] as const) {
-      const bots = BOT_STAERKE_JE_ZEITKLASSE[tempo] ?? {};
-      for (const g of gruppenbots)
-        expect(bots[g.kennung], `${tempo} ${g.kennung}`).toBeGreaterThanOrEqual(400);
-      const stufen = STUFEN_STAERKE_JE_ZEITKLASSE[tempo] ?? {};
-      for (const n of STUFEN) expect(stufen[n], `${tempo} Stufe ${n}`).toBeGreaterThanOrEqual(400);
+  it("ein Bot ist ein Mensch: Blitz nie über Schnellschach, Stufen in jeder Zeitklasse geordnet", () => {
+    for (const g of GEGNER) {
+      const schnell = staerkeDesBots(g.kennung) ?? 0;
+      expect(staerkeDesBots(g.kennung, "blitz"), g.kennung).toBeLessThanOrEqual(schnell);
     }
-    expect(staerkeDesBots("kiki", "blitz")).toBe(staerkeDesBots("kiki"));
+    for (const tempo of ["blitz", "rapid", "classical"] as const) {
+      for (const n of STUFEN.slice(1)) {
+        expect(staerkeDerStufe(n, tempo), `${tempo} ${n}`).toBeGreaterThan(
+          staerkeDerStufe((n - 1) as (typeof STUFEN)[number], tempo),
+        );
+      }
+    }
   });
   it("die Gegnerwertung nimmt die Zahl der Zeitklasse der Uhr", () => {
     const partie = {
@@ -109,9 +109,10 @@ describe("Zahlen je Zeitklasse (0.2.130)", () => {
       stufenJePhase: { eroeffnung: 9, mittelspiel: 9, endspiel: 9 },
     } as const;
     expect(gegnerstaerke({ ...partie, uhr: KLASSISCH_30_20 })).toBe(
-      BOT_STAERKE_JE_ZEITKLASSE.classical?.ole,
+      staerkeDesBots("ole", "classical"),
     );
-    expect(gegnerstaerke({ ...partie, uhr: BLITZ_3_2 })).toBe(BOT_STAERKE_JE_ZEITKLASSE.blitz?.ole);
+    expect(gegnerstaerke({ ...partie, uhr: BLITZ_3_2 })).toBe(staerkeDesBots("ole", "blitz"));
     expect(gegnerstaerke({ ...partie, uhr: null })).toBe(staerkeDesBots("ole"));
+    expect(staerkeDesBots("ole", "blitz")).toBeLessThan(staerkeDesBots("ole") ?? 0);
   });
 });

@@ -27,6 +27,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterAll, describe, expect, it } from "vitest";
 import { bedenkzeitMs } from "./bedenkzeit";
+import { wertungInZeitklasse } from "./zeitklassenabstand";
 import { wahltempo } from "./wahlmodell";
 import type { EngineDienst } from "./engineDienst";
 import type { Fehlerart } from "./fehlerart";
@@ -193,7 +194,7 @@ async function zugMitUhr(
   if (s.uhr && stand.rest !== null) {
     const bedenk = bedenkzeitMs(
       {
-        wertung: st.wertung,
+        wertung: wertungInZeitklasse(st.wertung, wahltempo(s.uhr)), // wie spiel/botzeit.ts
         tempo: wahltempo(s.uhr),
         restMs: stand.rest,
         zugnummer: Math.floor(lauf.zuege.length / 2) + 1,

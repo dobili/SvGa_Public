@@ -14,6 +14,7 @@
  */
 import type { Color } from "chessops/types";
 import { bedenkzeitMs, type Zuglage } from "../engine/bedenkzeit";
+import { wertungInZeitklasse } from "../engine/zeitklassenabstand";
 import { wertungstempo } from "./elomodell";
 import { zieheMitUhr } from "./ablauf";
 import {
@@ -94,10 +95,12 @@ export function botBedenkzeit(
 ): number | null {
   const rest = eigeneRestzeit(partie, jetztMs);
   if (rest === null) return null;
+  const tempo = wertungstempo(partie.einstellung.uhr);
   return bedenkzeitMs(
     {
-      wertung: wertung ?? WERTUNG_VOLLE_ENGINE,
-      tempo: wertungstempo(partie.einstellung.uhr),
+      // Seit 0.2.131 die Wertung desselben Menschen in dieser Zeitklasse (engine/zeitklassenabstand.ts).
+      wertung: wertungInZeitklasse(wertung ?? WERTUNG_VOLLE_ENGINE, tempo),
+      tempo,
       restMs: rest,
       zugnummer: Math.floor(partie.zuege.length / 2) + 1,
       lage: zuglage(partie, zug.uci, zug.breite),

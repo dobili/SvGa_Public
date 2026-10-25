@@ -177,6 +177,24 @@ function sicherheitsregelDatei(): Plugin {
 const NAVY = "#16253D";
 const CREME = "#F5F0E6";
 
+/**
+ * Lässt die WebAssembly-Datei von onnxruntime-web aus dem Bündel (Maia, 0.2.141). Das Bündel der
+ * Bibliothek verweist auf sie, die App übergibt sie aber selbst aus dem Maia-Paket
+ * (engine/maia-web.ts, env.wasm.wasmBinary); eine zweite Kopie unter assets/ würde 11 MB zur
+ * Installation legen, die niemand lädt.
+ */
+function ohneOrtWasm(): Plugin {
+  return {
+    name: "ohne-ort-wasm",
+    apply: "build",
+    generateBundle(_optionen, buendel) {
+      for (const name of Object.keys(buendel)) {
+        if (/ort-wasm-simd-threaded[^/]*\.wasm$/.test(name)) delete buendel[name];
+      }
+    },
+  };
+}
+
 export default defineConfig({
   define: {
     __APP_VERSION__: JSON.stringify(paket.version),
@@ -198,6 +216,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    ohneOrtWasm(),
     texteInHtml(),
     versionsdatei(),
     sicherheitsregelDatei(),

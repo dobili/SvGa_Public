@@ -265,6 +265,9 @@ export function maiaabfrage(quelle: Maiaquelle, wertung: number, tempo: Wahltemp
   // Bot wählt dann ohne Maia.
   return (fen) =>
     maiawerte(quelle.laufzeit, fen, wertung, quelle.gegnerwertung ?? wertung, tempo).catch(
-      () => null,
+      (fehler: unknown) => {
+        console.warn("Maia nicht verfügbar, der Bot wählt ohne Maia:", fehler);
+        return null;
+      },
     );
 }

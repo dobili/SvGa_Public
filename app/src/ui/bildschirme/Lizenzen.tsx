@@ -28,6 +28,8 @@ const BAUSTEINE = [
   { kennung: "app", text: "/lizenzen/gpl-3.0.txt", quelle: QUELLCODE },
   { kennung: "buch" },
   { kennung: "stockfish", text: "/engine/LIZENZ-stockfish.txt" },
+  { kennung: "maia", text: "/lizenzen/mit-maia2.txt" },
+  { kennung: "onnxruntime", text: "/lizenzen/mit-onnxruntime.txt" },
   { kennung: "chessops", text: PAKETTEXTE },
   { kennung: "skaknew", text: "/lizenzen/lppl-1.3c.txt" },
   { kennung: "cburnett", text: "/lizenzen/gpl-3.0.txt" },

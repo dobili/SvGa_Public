@@ -1,6 +1,7 @@
 /**
  * Tests für die Content Security Policy der öffentlichen Seiten (csp.ts, T4).
  */
+import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { eingebetteteSkripte, sicherheitsregel } from "./csp";
 
@@ -23,5 +24,22 @@ describe("sicherheitsregel", () => {
     expect(regel).toContain("script-src 'self' 'wasm-unsafe-eval' 'sha256-a=' 'sha256-b='");
     expect(regel).toContain("object-src 'none'");
     expect(regel).not.toMatch(/ 'unsafe-eval'/);
+  });
+});
+
+describe("Seiten ohne eingebettete Ereignis-Handler", () => {
+  // Ein onclick-Attribut bräuchte 'unsafe-inline' für script-src-attr; neuere Chromium melden
+  // es, auch wenn der Knopf nie erscheint (GitHub-Lauf vom 25.10.2026, Startproblem-Knopf).
+  const SEITEN = [
+    "../../index.html",
+    "../../app/index.html",
+    "../../installieren/index.html",
+    "../../datenschutz/index.html",
+    "../../impressum/index.html",
+    "./teile/installationsteil.html",
+  ];
+  it.each(SEITEN)("%s hat kein on…=-Attribut", (seite) => {
+    const html = readFileSync(new URL(seite, import.meta.url), "utf8");
+    expect(html).not.toMatch(/\son[a-z]+\s*=\s*["']/i);
   });
 });

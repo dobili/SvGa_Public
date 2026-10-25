@@ -114,8 +114,22 @@
 }
 
 /*
+ * Fortschritt der Offline-Vorbereitung (V5): Bis der Service Worker angemeldet ist, hält er seinen
+ * Platz unsichtbar frei („wartet“; visibility nimmt ihn auch Bildschirmlesern weg), damit nichts
+ * springt. Ohne Service Worker fehlt er ganz („hidden“; .fortschritt setzt sonst display: flex).
+ */
+.fortschritt.wartet {
+  visibility: hidden;
+}
+
+.fortschritt[hidden] {
+  display: none;
+}
+
+/*
  * Anleitungen je Gerät: Ohne JavaScript (Suchmaschinen) sind alle sichtbar; mit JavaScript nur
- * die passende (Klasse „js“ setzt das Skript im Kopf, „sichtbar“ setzt startseite.ts).
+ * die passende (Klasse „js“ setzt das Skript im Kopf, „sichtbar“ setzt das Skript im
+ * Installationsteil vor dem ersten Zeichnen und danach startseite.ts).
  */
 .js [data-anleitung] {
   display: none;

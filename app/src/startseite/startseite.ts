@@ -8,8 +8,11 @@
  * - den Knopf „App installieren“ über den Installationsdialog des Browsers;
  * - den Fortschritt der Offline-Vorbereitung, denn der Service Worker lädt schon hier alle Dateien
  *   der App vorab („nach der Installation vollständig offline“).
- * Ohne React, damit die Startseite schnell lädt.
- * Abhängigkeiten: app/geraet.ts, app/installieren.ts, app/offlineKern.ts, i18n.
+ * Ohne React, damit die Startseite schnell lädt; seit V5 (Nutzungsprüfung 25.10.2026) auch ohne die
+ * Sprachdatei (etwa 96 KB gzip): Alle Texte setzt der Build ins HTML, auch die beiden, die dieses
+ * Skript wechselt (data-text-fortschritt, data-text-bereit). Die erste Anleitung wählt schon ein
+ * kleines Skript im Installationsteil vor dem ersten Zeichnen.
+ * Abhängigkeiten: app/geraet.ts, app/installieren.ts, app/offlineKern.ts.
  */
 import "@fontsource/source-sans-3/latin-400.css";
 import "@fontsource/source-sans-3/latin-600.css";
@@ -26,7 +29,6 @@ import {
   installiere,
 } from "../app/installieren";
 import { abonniereOffline, offlineStand, starteOffline } from "../app/offlineKern";
-import { t } from "../i18n/sprache";
 
 /** Welche Anleitung zu sehen ist (Werte von data-anleitung im HTML). */
 type Anleitung = "knopf" | "iphone" | "mac" | "andere" | "installiert";
@@ -66,13 +68,15 @@ function zeigeFortschritt(): void {
   const { verfuegbar, prozent, bereit } = offlineStand();
   const bereich = document.querySelector<HTMLElement>("[data-fortschritt]");
   if (!bereich) return;
-  bereich.hidden = !verfuegbar;
+  // Seit V5 bleibt der Platz frei, bis der Service Worker angemeldet ist (kein Springen).
+  bereich.classList.toggle("wartet", !verfuegbar);
   const text = bereich.querySelector<HTMLElement>("[data-fortschritt-text]");
   const zahl = bereich.querySelector<HTMLElement>("[data-fortschritt-zahl]");
   const balken = bereich.querySelector<HTMLElement>("[data-fortschritt-balken]");
   const leiste = bereich.querySelector<HTMLElement>("[role=progressbar]");
-  if (text)
-    text.textContent = t(bereit ? "installation.offlineBereit" : "installation.fortschritt");
+  // Die Texte setzt der Build aus de.json ins HTML (V5), damit die Seite die Sprachdatei nicht lädt.
+  const textJetzt = bereit ? text?.dataset.textBereit : text?.dataset.textFortschritt;
+  if (text && textJetzt) text.textContent = textJetzt;
   if (zahl) zahl.textContent = `${prozent} %`;
   if (balken) balken.style.width = `${prozent}%`;
   leiste?.setAttribute("aria-valuenow", String(prozent));

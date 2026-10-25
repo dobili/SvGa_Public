@@ -3,6 +3,9 @@
   Offline-Vorbereitung, Anleitung je Gerät (src/startseite/startseite.ts zeigt die passende),
   „Im Browser verwenden“. Der Build setzt ihn an der Stelle <!- - teil: installationsteil - -> ein
   (vite.config.ts, texteInHtml).
+  Seit V5 (Nutzungsprüfung 25.10.2026) springt nichts mehr: Der Fortschritt hält seinen Platz frei,
+  bis der Service Worker angemeldet ist (unsichtbar, auch für Bildschirmleser), und das kleine
+  Skript nach den Anleitungen wählt die passende schon vor dem ersten Zeichnen.
 -->
 <section
   id="installieren"
@@ -32,9 +35,14 @@
       for (var i = 0; i < hinweise.length; i++) hinweise[i].hidden = false;
     })();
   </script>
-  <div class="fortschritt" data-fortschritt hidden>
+  <div class="fortschritt wartet" data-fortschritt>
     <div class="fortschritt-text">
-      <span data-fortschritt-text>{{installation.fortschritt}}</span>
+      <span
+        data-fortschritt-text
+        data-text-fortschritt="{{installation.fortschritt}}"
+        data-text-bereit="{{installation.offlineBereit}}"
+        >{{installation.fortschritt}}</span
+      >
       <span class="zahl" data-fortschritt-zahl>0 %</span>
     </div>
     <div
@@ -80,6 +88,32 @@
     <p>{{installation.andere.text}}</p>
   </div>
   <p data-anleitung="installiert">{{installation.installiert}}</p>
+  <script>
+    (function () {
+      // Erste Wahl der Anleitung vor dem ersten Zeichnen (V5), sonst erschien sie erst mit
+      // startseite.ts und schob „Im Browser verwenden“ um gut 130 px nach unten. Dieselben Regeln
+      // wie geraet() und anleitungFuer() vor dem Installationsdialog; startseite.test.ts prüft,
+      // dass beide übereinstimmen. startseite.ts übernimmt danach (Dialog, gerade installiert).
+      var kennung = navigator.userAgent;
+      var mac = /Macintosh/.test(kennung);
+      var chromium = /Chrome|Chromium|Edg/.test(kennung);
+      var wahl =
+        /iPhone|iPad|iPod/.test(kennung) || (mac && navigator.maxTouchPoints > 1)
+          ? "iphone"
+          : /Android/.test(kennung) || chromium
+            ? "knopf"
+            : mac && /Safari/.test(kennung)
+              ? "mac"
+              : "andere";
+      var bloecke = document.querySelectorAll("[data-anleitung]");
+      for (var i = 0; i < bloecke.length; i++) {
+        bloecke[i].classList.toggle("sichtbar", bloecke[i].getAttribute("data-anleitung") === wahl);
+      }
+      // Ohne Service Worker gibt es keinen Fortschritt; dann auch keinen freigehaltenen Platz.
+      var fortschritt = document.querySelector("[data-fortschritt]");
+      if (fortschritt && !("serviceWorker" in navigator)) fortschritt.hidden = true;
+    })();
+  </script>
   <a class="knopf-zweit im-browser" href="/app/">{{installation.imBrowser}}</a>
   <p class="hinweis">{{startseite.imBrowser.hinweis}}</p>
 </section>

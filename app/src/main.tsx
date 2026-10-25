@@ -38,24 +38,29 @@ import { starteOffline } from "./app/offline";
 import { starteSprache } from "./app/sprachwahl";
 import { lade } from "./speicher/speicher";
 
-// Zuerst die Sprache: Alle Texte und der Datenordner hängen an ihr.
-starteSprache();
 starteOffline();
 // Die Nutzerdaten laden im Hintergrund; bis dahin gilt der vorläufige Stand (speicher.ts).
 void lade();
 
-const wurzel = document.getElementById("wurzel");
-if (!wurzel) {
-  throw new Error("Element #wurzel fehlt in index.html");
+/** Zeichnet die App in #wurzel. */
+function zeichneApp(): void {
+  const wurzel = document.getElementById("wurzel");
+  if (!wurzel) {
+    throw new Error("Element #wurzel fehlt in index.html");
+  }
+  // Schriftgröße des Geräts (Merker) vor dem ersten Zeichnen, falls das Skript in index.html fehlte.
+  wendeSchriftgroesseAn();
+  createRoot(wurzel).render(
+    <StrictMode>
+      <Fehlergrenze>
+        <App />
+      </Fehlergrenze>
+    </StrictMode>,
+  );
+  // Die App steht: Der Hinweis für zu alte Geräte (index.html, 19.10.2026) wird nicht gebraucht.
+  document.getElementById("startproblem")?.remove();
 }
-// Schriftgröße des Geräts (Merker) vor dem ersten Zeichnen, falls das Skript in index.html fehlte.
-wendeSchriftgroesseAn();
-createRoot(wurzel).render(
-  <StrictMode>
-    <Fehlergrenze>
-      <App />
-    </Fehlergrenze>
-  </StrictMode>,
-);
-// Die App steht: Der Hinweis für zu alte Geräte (index.html, 19.10.2026) wird nicht gebraucht.
-document.getElementById("startproblem")?.remove();
+
+// Zuerst die Sprache: Alle Texte und der Datenordner hängen an ihr. Eine gewählte weitere Sprache
+// lädt erst ihre Sprachdatei (V4); gezeichnet wird danach, damit nichts kurz deutsch erscheint.
+void starteSprache().then(zeichneApp);

@@ -17,6 +17,7 @@ in eine Richtung: `ui/` nutzt alle anderen Module, kein Modul kennt `ui/`.
 | `autor/`      | Aufgabenseite des Autors: Aufgabendatei lesen, Links, Haken | `aufgabendatei.ts`             |
 | `startseite/` | Statische Startseite des Buches (/, /installieren/)         | `startseite.ts`                |
 | `sw.ts`       | Service Worker für die Offline-Nutzung                      | –                              |
+| `sw/`         | Teile des Service Workers: Dateiliste, Sprachpakete (V4)    | `sprachpakete.ts`              |
 
 Tests liegen neben dem Code (`*.test.ts`, Vitest); Oberflächentests in `app/tests/e2e/` (Playwright).
 Erzeugt und nie von Hand bearbeitet: `daten/generiert/` (aus `schemas/`) und

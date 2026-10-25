@@ -18,7 +18,7 @@
  * der Schalter „Figuren per Wischen ziehen“ (Merker auf dem Gerät wie die Koordinaten).
  * Seit P8 (R52) unter „Anzeige“ der Schalter für das Toursymbol und der Knopf für den Rundgang.
  * Abhängigkeiten: app/einstellungen.ts, app/farbschema.ts, app/merker.ts, Reiter, Vorschauwahl,
- * tour/, i18n.
+ * tour/, SprachWahl (seit V4 eigene Datei), i18n.
  */
 import { Brain, Crown, Grid3x3, Palette, Volume2, type LucideIcon } from "lucide-react";
 import { useState } from "react";
@@ -39,11 +39,11 @@ import {
   type Farbschema,
 } from "../../app/farbschema";
 import { liesMerker, schreibeMerker } from "../../app/merker";
-import { sprachname, t, verfuegbareSprachen, type Textschluessel } from "../../i18n/sprache";
-import { useSprache, waehleSprache } from "../../app/sprachwahl";
+import { t, type Textschluessel } from "../../i18n/sprache";
 import { MERKER_WISCHEN } from "../brett/useZiehen";
 import { MERKER_ZUGANIMATION } from "../brett/useZuganimation";
 import { SchriftgroesseWahl } from "./SchriftgroesseWahl";
+import { SprachWahl } from "./SprachWahl";
 import { MERKER_STARTANIMATION } from "./Startanimation";
 import { Auswahl } from "./Auswahl";
 import { Reiter } from "./Reiter";
@@ -235,34 +235,6 @@ function FigurenBereich() {
       text={(wert) => t(`einstellungen.figurensatz.${wert}`)}
       vorschau={(wert) => <Brettausschnitt farben={einstellungen.brettfarben} satz={wert} />}
       beiWahl={(figurensatz) => aendereEinstellungen({ figurensatz })}
-    />
-  );
-}
-
-/**
- * Sprache der App (seit 0.2.94): eine Auswahl, sobald es mehr als eine Sprache gibt; bis dahin
- * nur die Zeile „Deutsch (Englisch folgt …)“. Ohne Wahl gilt die Sprache des Geräts.
- */
-function SprachWahl() {
-  const aktuell = useSprache();
-  const sprachen = verfuegbareSprachen();
-  if (sprachen.length <= 1) {
-    return (
-      <dl className="einstellungen">
-        <div className="einstellung">
-          <dt>{t("einstellungen.sprache")}</dt>
-          <dd>{t("einstellungen.sprache.wert")}</dd>
-        </div>
-      </dl>
-    );
-  }
-  return (
-    <Auswahl
-      name={t("einstellungen.sprache")}
-      werte={sprachen}
-      gewaehlt={aktuell}
-      text={sprachname}
-      beiWahl={waehleSprache}
     />
   );
 }

@@ -6,7 +6,9 @@
  * Zusätzlich beantwortet er die Frage der Installationsseite, wie viele Dateien schon da sind
  * („Für die Offline-Nutzung vorbereitet: 63 %“), und aktiviert eine neue Version erst, wenn der
  * Leser auf „Jetzt aktualisieren“ tippt (Konzept 11.3).
- * Abhängigkeiten: Workbox (precaching, routing).
+ * Seit V4 (Nutzungsprüfung 25.10.2026) lädt er nur den Kern vorab; die Dateien einer weiteren
+ * Sprache kommen als Sprachpaket erst auf Wahl des Lesers (sw/sprachpakete.ts).
+ * Abhängigkeiten: Workbox (precaching, routing), sw/dateiliste.ts, sw/sprachpakete.ts.
  */
 /// <reference lib="webworker" />
 import {
@@ -17,14 +19,18 @@ import {
 } from "workbox-precaching";
 import { NavigationRoute, registerRoute } from "workbox-routing";
 import { cacheNames } from "workbox-core";
+import { teileDateiliste } from "./sw/dateiliste";
+import { richteSprachpaketeEin } from "./sw/sprachpakete";
 
 declare const self: ServiceWorkerGlobalScope & {
   __WB_MANIFEST: (string | { url: string; revision: string | null })[];
 };
 
-const DATEILISTE = self.__WB_MANIFEST;
+/** Der Kern wird vorab geladen; die Pakete weiterer Sprachen erst auf Wahl (V4). */
+const { kern: DATEILISTE, pakete: SPRACHPAKETE } = teileDateiliste(self.__WB_MANIFEST);
 
 precacheAndRoute(DATEILISTE);
+richteSprachpaketeEin(SPRACHPAKETE);
 cleanupOutdatedCaches();
 // Jede Adresse unter /app/ liefert die App aus (sie hat keine Unterseiten, Konzept 6.6). Die
 // statischen Seiten (/, /installieren/, /impressum/, /datenschutz/) beantwortet die Vorab-Liste
@@ -33,7 +39,7 @@ registerRoute(
   new NavigationRoute(createHandlerBoundToURL("app/index.html"), { allowlist: [/^\/app(\/|$)/] }),
 );
 
-/** Zählt, wie viele Dateien der Liste schon im Speicher liegen. */
+/** Zählt, wie viele Dateien des Kerns schon im Speicher liegen (ohne Sprachpakete, V4). */
 async function offlineStand(): Promise<{ gesamt: number; vorhanden: number }> {
   const speicher = await caches.open(cacheNames.precache);
   let vorhanden = 0;

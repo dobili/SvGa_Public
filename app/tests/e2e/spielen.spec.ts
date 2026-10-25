@@ -54,6 +54,21 @@ test("Partie aus der Grundstellung: Engine antwortet, Rücknahme, Fortsetzen nac
   await expect(page.getByTestId("partiezuege").getByRole("button")).toHaveCount(2);
 });
 
+test("Weitermachen (V2): nach dem Neuladen auf Spielen mit „Weiterspielen“, nicht in der Partie", async ({
+  page,
+}) => {
+  await starteImBrowser(page, { weitermachen: true });
+  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await page.getByRole("button", { name: "Partie beginnen" }).click();
+  await expect(page.getByRole("heading", { name: "Partie gegen die Engine" })).toBeVisible();
+  await page.reload();
+  // Die Uhr soll nicht ohne Zutun weiterlaufen: Der Stapel endet vor der Partie.
+  await expect(page.getByTestId("laufende-partie")).toBeVisible();
+  await expect(page.getByTestId("partie")).toHaveCount(0);
+  await page.getByRole("button", { name: "Weiterspielen" }).click();
+  await expect(page.getByRole("heading", { name: "Partie gegen die Engine" })).toBeVisible();
+});
+
 test("Neuladen mitten im Nachdenken: die Bedenkzeit bleibt verbraucht (N180)", async ({ page }) => {
   await starteImBrowser(page);
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();

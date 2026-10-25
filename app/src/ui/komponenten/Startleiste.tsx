@@ -9,7 +9,9 @@
  * über der Navigation (CSS position: sticky) und gleitet erst über der Partienliste an ihren Platz.
  * Ein Tipp auf die Zusammenfassung springt zur Gegnerwahl. Der Knopf selbst mit der Rückfrage bei
  * laufender Partie bleibt BeginnenKnopf.tsx.
- * Abhängigkeiten: BeginnenKnopf, GegnerBild, Stufenmarke, engine/gegner.ts, engine/gruppe.ts, i18n.
+ * Seit 0.2.138 steht hinter dem Namen die Spielstärke zur gewählten Uhr (bildschirme/startstaerke.ts).
+ * Abhängigkeiten: BeginnenKnopf, GegnerBild, Stufenmarke, staerkeangabe, engine/gegner.ts,
+ * engine/gruppe.ts, i18n.
  */
 import { UserPen, Users } from "lucide-react";
 import type { ReactNode } from "react";
@@ -20,6 +22,7 @@ import { t } from "../../i18n/sprache";
 import type { Farbe } from "../../schach/stellung";
 import { GegnerBild } from "./GegnerBild";
 import type { Gegnerkategorie } from "./gegnerkategorie";
+import { staerketext } from "./staerkeangabe";
 import { Stufenmarke } from "./Stufenmarke";
 
 const ZEICHENGROESSE = 24;
@@ -36,6 +39,8 @@ export interface Startangaben {
   readonly uhr: string;
   /** Zählt die Partie wirklich (Haken gesetzt und wertbar)? */
   readonly gewertet: boolean;
+  /** Spielstärke des Gegners zur gewählten Uhr (seit 0.2.138); null gegen einen Menschen. */
+  readonly staerke: number | null;
 }
 
 /** „Eigene Bots“ gewählt, aber noch kein eigener Bot: Dann lässt sich nicht beginnen. */
@@ -113,7 +118,16 @@ export function Startleiste({
       >
         <span className="startleiste-bild">{bild}</span>
         <span className="startleiste-text">
-          <strong>{name}</strong>
+          <strong>
+            {name}
+            {/* Seit 0.2.138: Die Zahl ändert sich sichtbar mit der Zeitart (Wunsch des Autors). */}
+            {angaben.staerke !== null && !ohneEigenenBot(angaben) && (
+              <span className="startleiste-staerke" data-testid="startleiste-staerke">
+                {" · "}
+                {staerketext(angaben.staerke)}
+              </span>
+            )}
+          </strong>
           <span>{zeile}</span>
         </span>
       </button>

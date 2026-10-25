@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.137 (mit den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.138 (mit aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.136“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.138“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -59,6 +59,55 @@ Blitz spielt er wie ein Mensch seiner Stärke mit 3 Minuten, in Klassisch wie de
       Zeit hat. Danach unter Profil bei der Wertung: Die Gegnerstärke der Partie ist die Zahl der
       Zeitklasse (Ole in Blitz etwa 2650). In der Partienliste im Profil sortiert „Stärke des
       Gegners“ nach derselben Zahl.
+
+### Neu in 0.2.138: Spielen aufgeräumt, Siege je Zeitart, goldener Rahmen (Opus mit zwei Hilfsagenten, 25.10.2026)
+
+Deine Ergänzungen vom 25.10.2026 abends.
+
+- [ ] N955. **Stärke über den Reitern:** Unter „Eigene Stufe“ (und beim Bearbeiten eines eigenen
+      Bots) steht über den Reitern Stärke, Stil, Fehler, Flecken eine Zeile „etwa 750 geschätzt“
+      mit dem Urteil (Menschlich, Ungewöhnlich …) und einem Fragezeichen. Dahinter: wie viele
+      Spieler so auffällig sind, in welche Richtung Fehler und Flecken die Stärke schieben, und
+      dass die Zahl aus den Stufen je Phase kommt und der Stil nicht eingeht (gemessen ist nur
+      das). Im Reiter „Fehler“ steht sie nicht mehr.
+- [ ] N956. **Eigene Karte „Partie“:** Unter den Einstellungen des Gegners beginnt eine neue
+      Karte mit der Überschrift „Partie“ (Du spielst, Bedenkzeit, Gewertete Partie, Spielhilfen,
+      Eröffnung festlegen). Beim Scrollen ist klar zu sehen, wo der Gegner endet.
+- [ ] N957. **Kasten statt Sprechblase:** Unter „Vorgefertigte Bots“ steht das Porträt (64
+      Pixel) klar links neben einem einfachen Kasten ohne Zipfel; nichts ragt übereinander.
+- [ ] N958. **Erklärtexte hinter Fragezeichen:** Unter „Spielen“ stehen diese Sätze nicht mehr
+      dauerhaft da, sondern hinter einem Fragezeichen: „Die Engine folgt der Phase …“ (an „Stufe
+      der Engine“), „In einer gewerteten Partie gibt es keine Zugrücknahme …“ (an „Gewertete
+      Partie“), der Text zur eigenen Stufe und zu eigenen Bots im Kasten (am Fragezeichen dort),
+      „Gruppenmodus: Besiege alle Bots …“ (jetzt kurz „Gruppenmodus: noch gesperrt“ mit
+      Fragezeichen), im Reiter „Fehler“ die Erklärung der Stufen und die Legende („Fehlerprofil“
+      mit Fragezeichen), die Warnung zu den Feinreglern (am Haken) und im Reiter „Flecken“ die
+      Bedienhilfe und Legende. Stehen geblieben sind Sätze, die deine Wahl beschreiben (Stil,
+      Flecken, Eröffnung) und Warnungen zu älteren Einstellungen.
+- [ ] N959. **Trennung auch anderswo:** Auf deine Frage habe ich alle Hauptbildschirme
+      durchgesehen. Buch, Training, Nachschlagen und Einstellungen sind schon in Karten
+      gegliedert. Geändert: Auf der Kapitelseite ist „Abbildungen“ jetzt eine Karte wie
+      Fortschritt und Training darüber; im Profil stehen deine Partien in einer eigenen Karte.
+- [ ] N960. **Goldener Rahmen:** Abb. 8.26 öffnen (goldenes Rechteck d6 bis f7) und Abb. 0.4
+      (Vieleck um den König, daneben der rote Rahmen): Zwischen den goldenen Ecken läuft jetzt eine
+      dünne goldene Punktreihe um die ganze Fläche. Auch ein einzelnes goldenes Feld (Abb. 1.1, e4)
+      hat sie. Bitte auch im Nachtmodus ansehen.
+- [ ] N961. **Bots besiegt je Zeitart (Profil › Dein Fortschritt):** Oben zwei Ringe (Abbildungen,
+      Lernziele), darunter „Vorgefertigte Bots besiegt“ mit drei Ringen: Blitz (Blitzzeichen),
+      Schnellschach (Stoppuhr), Klassisch (Tasse), dieselben Zeichen wie bei der Bedenkzeit. Jeder
+      Ring trägt sein Zeichen in der Mitte und die Prozentzahl darunter, unter dem Ring „x von 82“
+      (die Spaß-Bots zählen mit, weil sie auch eine Siegmarke tragen). Darunter eine Legende.
+- [ ] N962. **Siegmarken am Porträt:** Einen Bot gewertet mit 3 + 2 besiegen: Am Porträt erscheint
+      die Blitzmarke. Denselben Bot mit 10 + 0 besiegen: Die Stoppuhr kommt dazu, beide bleiben
+      sichtbar, egal welche Bedenkzeit gewählt ist (bis zu drei Marken). Die Zahl besiegter Bots an
+      einer Stufe gilt weiter für die gewählte Bedenkzeit und trägt deren Zeichen. Im Nachtmodus
+      haben die Marken einen goldenen Rand.
+- [ ] N963. **Deine Partien:** Im Profil sind die Partien eine eigene Karte „Deine Partien“; vor
+      „Blitz 3 + 2“ usw. steht das Zeichen der Zeitart. Ohne Partien steht dort ein kurzer Satz.
+- [ ] N964. **Spielstärke in der Startleiste:** Unten neben „Beginnen“ steht hinter dem Namen des
+      Gegners seine Zahl, etwa „Tom · unter 400“ oder „Eigene Stufe · etwa 750“. Zur Bedenkzeit
+      scrollen und zwischen 3 + 2, 10 + 0 und 30 + 20 wechseln: Die Zahl in der Leiste ändert sich
+      sofort mit (Blitz, Schnellschach, Klassisch). Gegen einen Menschen steht keine Zahl.
 
 ### Neu in 0.2.136: Fehlerprofil vereinfacht, Fehler und Flecken als Spinnennetz (Opus, 25.10.2026)
 

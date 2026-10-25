@@ -119,8 +119,13 @@
   white-space: nowrap;
 }
 
+/* Spielstärke hinter dem Namen (0.2.138): gleiche Zeile, nicht fett, damit der Name führt. */
+.startleiste-staerke {
+  font-weight: 400;
+}
+
 /* Farbe, Bedenkzeit und Wertung auf höchstens zwei Zeilen. */
-.startleiste-text span {
+.startleiste-text > span {
   display: -webkit-box;
   overflow: hidden;
   -webkit-box-orient: vertical;

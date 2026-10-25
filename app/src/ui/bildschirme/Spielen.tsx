@@ -40,6 +40,7 @@ import { Titelsymbol } from "../komponenten/Titelsymbol";
 import { gruppenstufe, gruppenstufen } from "../../engine/gruppe";
 import { gegnerVon } from "../../engine/gegner";
 import { gegnerprofil } from "./gegnerprofil";
+import { startstaerke } from "./startstaerke";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { TourKnopf } from "../../tour/TourKnopf";
 import { LaufendePartie } from "../komponenten/Partienliste";
@@ -326,6 +327,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
           farbe: wahl.farbe,
           uhr: uhrnameKurz(uhrstelle(fen, wahl.vorlieben.uhr)),
           gewertet: wirdGewertet(fen, wahl.vorlieben),
+          staerke: startstaerke(wahl.vorlieben, fen, spiel.eigeneGegner),
         }}
         knopf={
           <BeginnenKnopf

@@ -5622,3 +5622,32 @@ gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Me
 - **Rohdaten** lokal in `buch/arbeit/zeitklassen/pruefung-0.2.131-r4` und `-r5`, Partien auf den
   Zweigen `pruefung-<zeitklasse>-<stufe>-r4` und `-r5`.
 
+
+## Spielen aufgeräumt, Siege je Zeitart, goldener Rahmen (25.10.2026, Opus mit zwei Hilfsagenten, Version 0.2.138)
+
+Ergänzungen des Autors vom 25.10.2026 abends.
+
+- Schätzung der Stärke über den Reitern (`Gesamtstaerke.tsx`) statt im Reiter „Fehler“: Alle
+  Einstellungen betreffen die Stärke. Die Zahl bleibt `staerkeGeschaetzt` (Stufen je Phase, rein
+  ohne Fehlerart); Fehler und Flecken gehen nur als Richtung ein (`staerkerichtung`), der Stil gar
+  nicht, weil dafür keine Messung vorliegt. Das steht hinter dem Fragezeichen.
+- Spielstärke in der Startleiste hinter dem Namen (`bildschirme/startstaerke.ts`): dieselbe Zahl
+  wie in der gewerteten Partie (`gegnerstaerke`, Zeitklasse der Uhr); wer zur Bedenkzeit scrollt,
+  sieht die Änderung sofort.
+- Eigene Karte „Partie“ für Farbe, Bedenkzeit, Wertung, Hilfen und Eröffnung (`Spielen.tsx`);
+  `GegnerWahl` hat die Eigenschaft `einstellungen` nicht mehr.
+- Sprechblase: einfacher Kasten, Porträt 64 Pixel. Ursache des Überlappens: Das Bild war seit
+  0.2.131 96 Pixel groß, sein Rahmen nach der Korrektur 0.2.133 wieder 64.
+- Erklärtexte im Spielen-Menü hinter Fragezeichen (`MitInfo`); Sätze, die die aktuelle Wahl
+  beschreiben, und Warnungen bleiben sichtbar.
+- Klare Trennung anderswo geprüft (Bildschirmfotos aller Hauptbildschirme): Kapitelseite
+  „Abbildungen“ als Karte, Profil „Deine Partien“ als Karte; die übrigen waren schon gegliedert.
+- Goldene Feldmarkierung: dünne gepunktete goldene Linie auf dem Umriss zwischen den Ecken
+  (`ui/brett/Brettmarken.tsx`, Maße in `masse.ts`); Grau und Rot unverändert. Darstellung der App,
+  kein Buchwert.
+- Bots besiegt je Zeitart (`Symbolringe.tsx`, `zeitartzeichen.ts`): drei Ringe im Profil mit den
+  Zeichen der Bedenkzeit, alle Ringe mit Zeichen in der Mitte und Legende; Spaß-Bots zählen mit (82),
+  eigene Bots und Gruppen nicht. Siegmarken am Porträt für alle drei Zeitarten zugleich (vorher nur
+  die der gewählten Uhr); die Zahl an der Stufe gilt weiter für die gewählte Uhr. Alte Siegliste
+  (vor 0.2.125) wird der Zeitart der Partie zugeordnet, wenn die Partie noch gespeichert ist, sonst
+  Schnellschach. Bullet zählt als Blitz. Speicherformat unverändert.

@@ -309,6 +309,23 @@
   gap: var(--raster);
 }
 
+/* Kapitelzeile im Training: Kopf zum Kapitel, rechts das Zeichen zur Website (DS54). */
+.trainingskapitel-zeile {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(var(--raster) / 2);
+}
+
+.trainingskapitel-zeile > .trainingskapitel-kopf {
+  flex: 1;
+  min-width: 0;
+}
+
+.trainingskapitel-website {
+  flex: none;
+  color: var(--text-leise);
+}
+
 .trainingskapitel-kopf {
   display: flex;
   align-items: center;

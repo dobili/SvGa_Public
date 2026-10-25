@@ -10,6 +10,8 @@
  * Seit 0.2.85 (Wunsch des Autors: viel Text) je Kapitel eine Karte mit Nummer, die Trainer als
  * Zeilen mit Symbol (Trainerkarte.tsx), Erklärungen hinter dem Fragezeichen.
  * Seit 0.2.93 führt die Karte „Lernsammlung“ zu den eigenen Stellungen (Kapitel 12, AP 15).
+ * Seit DS53/DS54 (0.2.130) steht der Link zur Website als Zeichen rechts in der Kapitelzeile statt
+ * als eigene Zeile unter jedem Kapitel; die Seite wird so etwa 700 Pixel kürzer.
  * Abhängigkeiten: training/trainer.ts, daten/laden.ts, Navigation, i18n.
  */
 import { useNavigation } from "../../app/navigationsKontext";
@@ -26,7 +28,7 @@ import { useDaten } from "../komponenten/useDaten";
 import { Titelsymbol } from "../komponenten/Titelsymbol";
 import { TourKnopf } from "../../tour/TourKnopf";
 
-const LINKSYMBOL = 16;
+const LINKSYMBOL = 20;
 
 /**
  * Jedes Kapitel mit seinen Trainern und dem Link zur Trainingsseite der Website.
@@ -44,27 +46,33 @@ function JeKapitel() {
     <>
       {kapitel.map((nummer) => (
         <section key={nummer} className="karte trainingskapitel" data-tour="training-kapitel">
-          <button
-            type="button"
-            className="trainingskapitel-kopf"
-            onClick={() => navigiere({ bildschirm: "kapitel", nummer })}
-          >
-            <span className="kapitelnummer" aria-hidden="true">
-              {nummer}
-            </span>
-            <span>
-              {t("training.kapitel", { nummer })} · {titel(nummer)}
-            </span>
-          </button>
+          <div className="trainingskapitel-zeile">
+            <button
+              type="button"
+              className="trainingskapitel-kopf"
+              onClick={() => navigiere({ bildschirm: "kapitel", nummer })}
+            >
+              <span className="kapitelnummer" aria-hidden="true">
+                {nummer}
+              </span>
+              <span>
+                {t("training.kapitel", { nummer })} · {titel(nummer)}
+              </span>
+            </button>
+            <a
+              className="knopf-symbol trainingskapitel-website"
+              href={kapiteladresse(nummer)}
+              aria-label={t("training.kasten")}
+              title={t("training.kasten")}
+            >
+              <ExternalLink size={LINKSYMBOL} aria-hidden="true" />
+            </a>
+          </div>
           <div className="trainerliste">
             {trainerZuKapitel(nummer).map((trainer) => (
               <Trainerkarte key={trainer.kennung} trainer={trainer} />
             ))}
           </div>
-          <a className="knopf-link klein mit-symbol" href={kapiteladresse(nummer)}>
-            <ExternalLink size={LINKSYMBOL} aria-hidden="true" />
-            {t("training.kasten")}
-          </a>
         </section>
       ))}
     </>

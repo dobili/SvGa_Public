@@ -43,15 +43,19 @@ function alsMeldung(fehler: unknown): string {
   return fehler instanceof Error ? fehler.message : String(fehler);
 }
 
-/** Ob der Browser die Daten dauerhaft aufbewahrt (navigator.storage.persisted). */
+/**
+ * Ob der Browser die Daten dauerhaft aufbewahrt (navigator.storage.persisted). Fragt neu, sobald
+ * die Bitte beim Start (speicher.ts, V8) ein Ergebnis hat, damit die Anzeige nicht veraltet.
+ */
 function useDauerhaft(): boolean | null {
   const [dauerhaft, setzeDauerhaft] = useState<boolean | null>(null);
+  const bitteErgebnis = useSpeicher((zustand) => zustand.dauerhaft);
   useEffect(() => {
     if (typeof navigator.storage?.persisted !== "function") return;
     navigator.storage.persisted().then(setzeDauerhaft, (fehler: unknown) => {
       console.warn("Dauerhafter Speicher nicht abfragbar:", fehler);
     });
-  }, []);
+  }, [bitteErgebnis]);
   return dauerhaft;
 }
 

@@ -303,11 +303,12 @@
   border-color: var(--gruen-text);
 }
 
-/* Beta-Hinweis unter dem Untertitel (Wunsch des Autors, 24.10.2026). */
+/* Beta-Hinweis unter dem Untertitel (Wunsch des Autors, 24.10.2026). Steht immer auf Navy, daher
+   Creme statt --text-leise: Das Grau hatte im hellen Modus nur etwa 1,9 : 1 Kontrast (DS46). */
 .startseite-beta {
   margin: 0.25rem 0 0;
   font-size: 0.9rem;
-  color: var(--text-leise, #666);
+  color: color-mix(in srgb, var(--creme) 82%, transparent);
 }
 
 /* Direkte Links zu den Lichess-Werkzeugen unter einer Übung (R57-Zusatz, 24.10.2026). */

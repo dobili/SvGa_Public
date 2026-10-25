@@ -1563,7 +1563,12 @@ Paket P4.
 
 - [ ] EN4. **Buchbefunde:** Beim Übersetzen fielen diese Stellen im deutschen Buch auf. Nichts
       wurde geändert (das Buch änderst nur du); übersetzt ist, was dasteht. Je Punkt „ok so“ oder
-      deine Änderung:
+      deine Änderung. Stand 26.10.: c und d waren Fehler der App (rohe Satzzeichen in Titeln, behoben),
+      n, der zweite Teil von o, der zweite Teil von r und s standen nicht im Buch, sondern in den
+      vorbereiteten Texten der App (dort berichtigt), t ist kein Widerspruch. Fertige
+      Formulierungen für alle übrigen Punkte liegen im privaten Repository der Buchquellen
+      (schachbuch-quellen, Datei claude/Buchbefunde_Ersatztexte_2026-10-26.md, Zweig
+      claude/ecstatic-feynman-uw22b1), weil Buchtexte nicht ins öffentliche Repository gehören.
       a) Denkroutine (Nachschlagen): „Erlaube ich ein Schach oder Matt?“ ohne Nummern; im
       Sicherheitsblick sonst „3. Erlaube ich ein Schach oder gar ein Matt?“. Eine Fassung?
       b) Lernziele: Kapitel 0 bis 6 „solltest du Folgendes sicher können“, Kapitel 7 bis 12 ohne
@@ -1640,14 +1645,16 @@ Paket P4.
 - [ ] P1-A. **Gewertet ohne gewählte Uhr (R51):** Gewertete Partien haben jetzt immer eine Uhr.
       Empfehlung: Wer „Ohne Uhr“ gewählt hatte und gewertet spielt, beginnt mit 10 + 0
       (Schnellschach, wie der Partietag des 30-Minuten-Plans). Schon umgesetzt in 0.2.123,
-      Widerspruch genügt (etwa „15 + 10“ als Vorgabe).
+      Widerspruch genügt (etwa „15 + 10“ als Vorgabe). Stand 26.10.: Jede Partie aus der
+      Grundstellung hat eine Uhr; „Ohne Uhr“ gibt es nur noch für ungewertete Partien aus
+      Abbildungen oder aufgebauten Stellungen.
 - [ ] P1-C. **Umschalter auf der Seite des Bots:** Steht der Umschalter auf dem Bot, zeigt die
-      Auswertung statt „Fehler und Patzer“ die eingeklappte Liste „Absichtliche Fehler der Engine“
+      Auswertung neben „Fehler und Patzer“ zusätzlich die eingeklappte Liste „Absichtliche Fehler der Engine“
       und keinen Satz zur ersten Abweichung (der betrifft nur deine Züge). Schon umgesetzt in
       0.2.122, Widerspruch genügt.
 - [ ] P1-D. **Fortsetzung einer festgelegten Eröffnung (R24):** Die Familie der gewählten Eröffnung
       liest die App an der letzten Stellung ihrer Hauptlinie im Buch ab, die die Lichess-Liste
-      kennt (dort heißt sie zum Beispiel „Ruy Lopez“ für die Spanische Partie). Gibt es keinen
+      kennt (die Familien heißen inzwischen deutsch, etwa „Spanische Partie“). Gibt es keinen
       Zug derselben Familie mehr, spielt der Bot wieder frei. Schon umgesetzt in 0.2.123.
 
 ### P2 Brett und Bedienung: schon umgesetzt, Widerspruch genügt (23.10.2026)
@@ -1669,8 +1676,9 @@ Paket P4.
       Partie Schnellschach ±370 statt ±300, bei zehn ±165 statt ±155). Schon umgesetzt.
 - [ ] E2. **Zahl je Phase nur bei schmaler Spanne:** Die Teilmodelle je Phase sind breit (bei zehn
       Partien Schnellschach: Mittelspiel ±370, Eröffnung ±530, Endspiel ±900, 90 % der Spieler).
-      Empfehlung: Eine Zahl je Phase steht nur, wenn 90 % der Spieler höchstens ±350 danebenliegen;
-      das ist derzeit nur im Mittelspiel ab etwa acht klassischen Partien der Fall. Sonst stehen
+      Empfehlung: Eine Zahl je Phase steht nur, wenn 90 % der Spieler höchstens ±400 danebenliegen
+      (seit 24.10.); das ist derzeit nur im Mittelspiel der Fall, im Schnellschach ab etwa zehn
+      Partien, im klassischen Schach früher. Sonst stehen
       Urteil und Genauigkeit je Phase (die sind verlässlich). Schon umgesetzt; Alternative wäre eine
       Zahl mit sehr breiter Spanne.
 - [ ] E3. **Zeitklasse ohne Uhr:** Partien ohne Uhr zählen als Schnellschach (wie in der
@@ -1696,14 +1704,11 @@ Paket P4.
       Mattthema geben keine Fallen mehr her: Dort wäre die Lehre „setze matt statt zu schlagen“,
       nicht „erkenne den Köder“. Fallen stammen aus Aufgaben, in denen der Leser vorher
       ausgeglichen oder besser steht (Median vor dem Nehmen +4, danach −6). Schon umgesetzt.
-- [ ] P4-3. **Buchbefund: drei Schläge mit „?“ sind laut Engine keine Fallen.** Aus den
-      Zugfolgen der Kapitel 2 und 3 fallen nach dem neuen Maßstab heraus: Abb. 2.129, 5. Sxd5
-      (nach exd5; Engine: nach dem Schlag −0,97, der beste Zug Sa5 steht bei 0,0: etwa ein Bauer
-      schlechter, keine Widerlegung); Abb. 2.49, 3... Sxe4 (nach 3. Sxe5; −0,75 statt −0,39 mit
-      d6: Schwarz steht nur wenig schlechter, weil er nach 4. De2 Sf6?? 5. Sc6+ ausweichen kann);
-      Abb. 3.30, 10. Dxe5 (nach Sc3; 0,0 statt +0,77). Die Fragezeichen im Buch bleiben Sache des
-      Autors; im Trainer sind diese drei Stellungen nicht mehr. Soll eines der Zeichen im Buch
-      zu „?!“ werden?
+- [ ] P4-3. **Kein Buchbefund (geprüft 26.10.):** Die drei Schläge aus Kapitel 2 und 3, die nach
+      dem Maßstab der Fallen keine Falle sind (3... Sxe4 in Abb. 2.49, 5... Sxd5 in Abb. 2.129,
+      10... Dxe5 in Abb. 3.30), tragen im Buch schon „?!“, nicht „?“. Das passt zur Engine
+      („zweifelhaft, aber nicht widerlegt“). Im Trainer sind sie nicht mehr. Empfehlung: so lassen,
+      ein „ok“ genügt.
 - [ ] P4-4. **Planbilanz nur im Mittelspiel.** Planfragen, LAP und Wettrennen gibt es nur noch
       an Stellungen, die die App als Mittelspiel einordnet (49 Stellungen aus Kapitel 6 und 11,
       vorher 72 mit 16 Endspielen und 7 Eröffnungen). Die Warum-Fragen der vorbereiteten Texte zu
@@ -1711,8 +1716,7 @@ Paket P4.
       Schon umgesetzt.
 - [ ] P4-5. **Hauptkette.** Zeigen mehrere Ketten einer Seite zum selben Flügel, nennt der
       Trainer die längste, bei gleicher Länge die zentralste (Abb. 11.78: e4–d5 statt c3–b4).
-      Das gilt im Trainer; im Werkzeug „Wo spiele ich?“ nennt die Kettenwahl noch die erste
-      gefundene Kette (Hinweis an P3). Schon umgesetzt.
+      Das gilt im Trainer und inzwischen auch im Werkzeug „Wo spiele ich?“. Schon umgesetzt.
 - [ ] P4-6. **Freie Endspielaufgaben.** 119 Aufgaben der Lichess-Datenbank (CC0) im
       Endspieltrainer: höchstens acht Steine, genau eine Figurenart (Bauern-, Turm-, Damen-,
       Leichtfigurenendspiel), Gewinn ab +2,0 oder Matt, Remis bis ±0,8 (Tiefe 18), nie trivial

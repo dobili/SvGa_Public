@@ -13,8 +13,12 @@
  */
 
 export type Zugton = "zug" | "schlag";
-/** Klänge aus Sinustönen: Schach (ein Ton), Matt (drei fallende), Remis (zwei gleiche), Warnung (tief). */
-export type Klangton = "schach" | "matt" | "remis" | "warnung";
+/**
+ * Klänge aus Sinustönen: Schach (ein Ton), Matt (drei fallende), Remis (zwei gleiche), Warnung
+ * (tief), Feier (steigender Dur-Dreiklang bis zur Oktave, seit 0.2.144 für die Freischaltung einer
+ * Gruppe, Wunsch des Autors 25.10.2026: „einen schönen Ton dazu“).
+ */
+export type Klangton = "schach" | "matt" | "remis" | "warnung" | "feier";
 export type Ton = Zugton | Klangton;
 
 /** Klang je Art: Mittenfrequenz des Filters (Hz), Dauer (s), Lautstärke (0 bis 1). */
@@ -30,6 +34,7 @@ const TONFOLGE: Readonly<
   matt: { frequenzen: [784, 659, 523], dauer: 0.18, lautstaerke: 0.4 },
   remis: { frequenzen: [587, 587], dauer: 0.16, lautstaerke: 0.3 },
   warnung: { frequenzen: [220], dauer: 0.12, lautstaerke: 0.3 },
+  feier: { frequenzen: [523, 659, 784, 1047, 784, 1047], dauer: 0.14, lautstaerke: 0.3 },
 };
 /** Ein Zug und sein Klang (Schach, Matt) folgen aufeinander: so lange wartet der Klang (s). */
 const KLANG_VERSATZ = 0.08;

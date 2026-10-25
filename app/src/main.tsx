@@ -24,6 +24,7 @@ import "./ui/stil/spiel.css";
 import "./ui/stil/uebung.css";
 import "./ui/stil/bausteine.css";
 import "./ui/stil/gegnerbild.css";
+import "./ui/stil/feuerwerk.css";
 import "./ui/stil/symbole.css";
 import "./ui/stil/abstimmung.css";
 import "./ui/stil/fehlerprofil.css";

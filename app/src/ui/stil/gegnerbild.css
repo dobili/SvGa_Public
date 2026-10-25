@@ -255,15 +255,33 @@
 
 /* ---------- Gruppenmodus (Wunsch des Autors, 24.10.2026) ---------- */
 /* Das Bild der Gruppe: alle Gesichter der Stufe übereinander, auch im offenen Aufklapper sichtbar. */
-.gruppenbild,
-.gegnerstufe[open] .gruppenbild {
-  visibility: visible;
-  flex-wrap: nowrap;
+/* Bild der Gruppe (seit 0.2.144): die Gesichter klein auf einem Kreis, so groß wie ein Porträt.
+   Jedes Gesicht sitzt in der Mitte und wird um seinen Winkel (--winkel) nach außen geschoben. */
+.gruppenbild {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--portraet-grund);
 }
 
-.gegnerbild > .gruppenbild {
-  justify-content: center;
-  padding: 2px 0;
+.gruppenbild img {
+  position: absolute;
+  left: 33.5%;
+  top: 33.5%;
+  width: 33%;
+  height: 33%;
+  border-radius: 50%;
+  background: var(--portraet-grund);
+  box-shadow: 0 0 0 1.5px var(--flaeche);
+  transform: rotate(var(--winkel)) translateY(-100%) rotate(calc(-1 * var(--winkel)));
+}
+
+/* In der Gratulation ein großes Bild der Gruppe. */
+.gruppen-gratulation-bild {
+  display: block;
+  width: 7.5rem;
 }
 
 /* Knopf unter dem Porträtgitter einer Stufe: Symbol, Text, Gesichter in einer Zeile. */
@@ -299,6 +317,8 @@
 
 /* Gratulation über allem, Karte in der Mitte. */
 .gruppen-gratulation {
+  /* Feuerwerk dahinter (ui/stil/feuerwerk.css), die Karte davor. */
+  isolation: isolate;
   position: fixed;
   inset: 0;
   z-index: 50;
@@ -310,6 +330,10 @@
 }
 
 .gruppen-gratulation-karte {
+  position: relative;
+  z-index: 1;
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 40px rgb(201 162 39 / 0.45);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -433,4 +457,11 @@
 .stilnetz-liste select {
   min-height: var(--tippflaeche);
   width: 100%;
+}
+
+/* Im Knopf „Gruppenmodus“ ein kleines Bild der Gruppe am Ende der Zeile (seit 0.2.144). */
+.gruppenknopf .gruppenbild {
+  flex: none;
+  width: 3rem;
+  margin-left: auto;
 }

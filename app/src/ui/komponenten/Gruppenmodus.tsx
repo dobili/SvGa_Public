@@ -8,11 +8,12 @@
  * Rolle im Gesamtbild: engine/gruppe.ts entscheidet, wann eine Gruppe frei ist; hier steht nur die
  * Anzeige. Die Gratulation erscheint einmal je Gruppe (Merker auf dem Gerät, app/merker.ts) nach
  * dem Ende der Partie, die den letzten Bot der Stufe besiegt hat.
+ * Seit 0.2.144 feiert die Gratulation mit Feuerwerk (Feuerwerk.tsx) und Feierton (app/ton.ts).
  * Abhängigkeiten: engine/gruppe.ts, engine/gegner.ts, gegnerportraet.ts, app/merker.ts,
- * speicher, i18n, lucide-react.
+ * app/ton.ts, app/einstellungen.ts, Feuerwerk.tsx, speicher, i18n, lucide-react.
  */
 import { Users } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState, type CSSProperties } from "react";
 import { liesMerker, schreibeMerker } from "../../app/merker";
 import {
   freieGruppen,
@@ -25,6 +26,9 @@ import type { Stufennummer } from "../../engine/stufen";
 import { t } from "../../i18n/sprache";
 import type { Besiegte } from "../../speicher/besiegt";
 import { MitInfo } from "./InfoKnopf";
+import { Feuerwerk } from "./Feuerwerk";
+import { useEinstellungen } from "../../app/einstellungen";
+import { spieleKlang } from "../../app/ton";
 import { useSpeicher } from "../../speicher/speicher";
 import { portraet } from "./gegnerportraet";
 import { gruppenstaerketext } from "./gruppentexte";
@@ -33,13 +37,25 @@ import { gruppenstaerketext } from "./gruppentexte";
 const MERKER_GEZEIGT = "gruppenGratuliert";
 const SYMBOL_GROESSE = 22;
 const SYMBOL_GROSS = 48;
+const VOLLKREIS = 360;
 
-/** Das Bild der Gruppe: alle Gesichter der Stufe übereinandergelegt. */
+/**
+ * Das Bild der Gruppe: die Gesichter der Stufe klein auf einem Kreis, zusammen so groß wie ein
+ * Porträt (seit 0.2.144, Wunsch des Autors 25.10.2026: Die Reihe aus acht Gesichtern ragte in der
+ * Gegnerwahl, der Partienliste und der Uhr über das Porträt hinaus).
+ * Beispiel: Stufe 1 mit acht Bots → acht Gesichter im Abstand von 45 Grad, das erste oben.
+ */
 export function Gruppenbild({ stufe }: { stufe: Stufennummer }) {
+  const mitglieder = mitgliederDerGruppe(stufe);
   return (
-    <span className="gesichterreihe gruppenbild" aria-hidden="true">
-      {mitgliederDerGruppe(stufe).map((g) => (
-        <img key={g.kennung} src={portraet(g.kennung)} alt="" />
+    <span className="gruppenbild" aria-hidden="true">
+      {mitglieder.map((g, i) => (
+        <img
+          key={g.kennung}
+          src={portraet(g.kennung)}
+          alt=""
+          style={{ "--winkel": `${(VOLLKREIS * i) / mitglieder.length}deg` } as CSSProperties}
+        />
       ))}
     </span>
   );
@@ -127,15 +143,28 @@ export function Gruppenfreischaltung({ gegnerBot }: { gegnerBot: string | null }
       aria-modal="true"
       data-testid="gruppen-gratulation"
     >
+      <Feuerwerk />
+      <Feierton />
       <div className="gruppen-gratulation-karte">
         <Users size={SYMBOL_GROSS} aria-hidden="true" className="gruppen-gratulation-symbol" />
         <h2>{t("gruppe.gratulation.titel")}</h2>
         <p>{t("gruppe.gratulation.text", { nummer: String(erste) })}</p>
-        <Gruppenbild stufe={erste} />
+        <span className="gruppen-gratulation-bild">
+          <Gruppenbild stufe={erste} />
+        </span>
         <button type="button" className="knopf-haupt" onClick={weiter}>
           {t("gruppe.gratulation.weiter")}
         </button>
       </div>
     </div>
   );
+}
+
+/** Spielt einmal den Feierton, wenn der Ton eingeschaltet ist (Einstellungen › Ton). */
+function Feierton() {
+  const { ton } = useEinstellungen();
+  useEffect(() => {
+    if (ton === "an") spieleKlang("feier");
+  }, [ton]);
+  return null;
 }

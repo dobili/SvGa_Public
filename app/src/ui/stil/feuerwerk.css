@@ -1,0 +1,78 @@
+/*
+ * Feuerwerk hinter der Gratulation des Gruppenmodus (ui/komponenten/Feuerwerk.tsx, seit 0.2.144).
+ * Jede Rakete steigt vom unteren Rand zu ihrer Höhe (--y) auf und zerplatzt dort; jeder Funke
+ * fliegt in seinem Winkel (--winkel) nach außen, fällt ein wenig und verlischt. Zwei Durchgänge,
+ * dann bleibt es still. Mit „Bewegung reduzieren“ nur ein kurzes Aufleuchten an Ort und Stelle.
+ */
+.feuerwerk {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.feuerwerk-rakete {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 0;
+  height: 0;
+  animation: feuerwerk-aufstieg 0.7s ease-out var(--verzoegerung) 2 both;
+}
+
+.feuerwerk-funke {
+  position: absolute;
+  left: -4px;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--farbe);
+  box-shadow: 0 0 6px var(--farbe);
+  opacity: 0;
+  animation: feuerwerk-funke 1.3s ease-out calc(var(--verzoegerung) + 0.7s) 2 both;
+}
+
+@keyframes feuerwerk-aufstieg {
+  from {
+    transform: translateY(70vh);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes feuerwerk-funke {
+  0% {
+    opacity: 1;
+    transform: rotate(var(--winkel)) translateX(0);
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(var(--winkel)) translateX(min(26vw, 140px)) translateY(18px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .feuerwerk-rakete {
+    animation: none;
+  }
+
+  .feuerwerk-funke {
+    animation: feuerwerk-leuchten 1.2s ease-in-out var(--verzoegerung) 1 both;
+    transform: rotate(var(--winkel)) translateX(40px);
+  }
+
+  @keyframes feuerwerk-leuchten {
+    0%,
+    100% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.9;
+    }
+  }
+}

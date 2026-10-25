@@ -17,6 +17,20 @@ const ENGINE = resolve(HIER, "../src/engine");
 const [OHNE, MIT] = process.argv.slice(2);
 if (!OHNE || !MIT) throw new Error("Aufruf: uebernehme-planc.mjs ORDNER_OHNE ORDNER_MIT");
 const HEUTE = new Date().toISOString().slice(0, 10);
+/**
+ * Untergrenze jeder Zahl. Unter 400 ist die Leiter nur grob (die Eichung von „Deine Spielstärke“
+ * beginnt bei 400, die App zeigt dort „unter 400“); mit Maia ergab die Neumessung für die
+ * schwächsten Bots sogar Zahlen unter 0 (Streuung ±200), die als Gegnerwertung unsinnig wären.
+ */
+const MINDESTZAHL = 100;
+
+/** Zahlen in „  schluessel: zahl,“-Zeilen auf die Untergrenze heben. */
+function mitUntergrenze(text) {
+  return text.replace(
+    /^(\s+"?[\w-]+"?: )(-?\d+),$/gm,
+    (_, vor, zahl) => `${vor}${Math.max(MINDESTZAHL, Number(zahl))},`,
+  );
+}
 
 /** Ein Block „export const NAME … = { … };“ aus einer erzeugten Datei. */
 function block(text, name) {
@@ -33,7 +47,7 @@ function gruppen(bericht) {
   return zeilen
     .map((z) => [Number(z[1]), Number(z[2])])
     .sort((a, b) => a[0] - b[0])
-    .map(([n, w]) => `  ${n}: ${w},`);
+    .map(([n, w]) => `  ${n}: ${Math.max(MINDESTZAHL, w)},`);
 }
 
 function lies(ordner, datei) {
@@ -48,7 +62,7 @@ if (/NaN/.test(ohne) || /NaN/.test(mit)) throw new Error("NaN in den erzeugten D
 const alt = readFileSync(join(ENGINE, "botstaerke-daten.ts"), "utf8");
 writeFileSync(
   join(ENGINE, "botstaerke-daten.ts"),
-  ohne.replace(block(ohne, "UHR_ABZUG"), block(alt, "UHR_ABZUG")),
+  mitUntergrenze(ohne).replace(block(ohne, "UHR_ABZUG"), block(alt, "UHR_ABZUG")),
 );
 
 // Mit Maia: eigene Namen, Gruppen aus dem Bericht.
@@ -64,17 +78,19 @@ const kopf = `/**
  */
 import type { Stufennummer } from "./stufen";
 `;
-const maia = [
-  kopf,
-  block(mit, "STUFEN_STAERKE").replace("STUFEN_STAERKE", "STUFEN_STAERKE_MAIA"),
-  "",
-  block(mit, "BOT_STAERKE").replace("BOT_STAERKE", "BOT_STAERKE_MAIA"),
-  "",
-  "export const GRUPPEN_STAERKE_MAIA: Readonly<Partial<Record<Stufennummer, number>>> = {",
-  ...gruppen(lies(MIT, "bericht.md")),
-  "};",
-  "",
-].join("\n");
+const maia = mitUntergrenze(
+  [
+    kopf,
+    block(mit, "STUFEN_STAERKE").replace("STUFEN_STAERKE", "STUFEN_STAERKE_MAIA"),
+    "",
+    block(mit, "BOT_STAERKE").replace("BOT_STAERKE", "BOT_STAERKE_MAIA"),
+    "",
+    "export const GRUPPEN_STAERKE_MAIA: Readonly<Partial<Record<Stufennummer, number>>> = {",
+    ...gruppen(lies(MIT, "bericht.md")),
+    "};",
+    "",
+  ].join("\n"),
+);
 writeFileSync(join(ENGINE, "botstaerke-maia-daten.ts"), maia);
 
 // Gruppen ohne Maia: Kopf der Datei bleibt, Zahlen neu.

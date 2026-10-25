@@ -2,11 +2,19 @@
  * Tests der englischen Sprachdatei (seit 0.2.104): gleiche Schlüssel und Platzhalter wie
  * Deutsch, englische Figurenbuchstaben in Zügen, Buchzitate bleiben deutsch.
  */
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, describe, expect, it } from "vitest";
 import de from "./de.json";
 import en from "./en.json";
 import buchzitate from "./en.buchzitate.json";
-import { datensprache, datumText, GRUNDSPRACHE, setzeSprache, t, zahlText } from "./sprache";
+import {
+  datensprache,
+  datumText,
+  GRUNDSPRACHE,
+  ladeSprache,
+  setzeSprache,
+  t,
+  zahlText,
+} from "./sprache";
 
 const DEUTSCH: Readonly<Record<string, string>> = de;
 const ENGLISCH: Readonly<Record<string, string>> = en;
@@ -15,6 +23,9 @@ const ENGLISCH: Readonly<Record<string, string>> = en;
 function platzhalter(text: string): string[] {
   return [...text.matchAll(/\{(\w+)\}/g)].map((m) => m[1] ?? "").sort();
 }
+
+// Seit V4 lädt Englisch erst auf Wunsch (eigener Baustein, i18n/sprachpaket-en.ts).
+beforeAll(() => ladeSprache("en"));
 
 afterEach(() => {
   setzeSprache(GRUNDSPRACHE);

@@ -3,13 +3,13 @@
  *
  * Rolle im Gesamtbild: Kein Oberflächentext steht im Code, alle kommen über `t` aus
  * src/i18n/de.json (Konzept Abschnitt 6.5 und 11.4). Eine zweite Sprache ist eine zweite Datei,
- * eingetragen in SPRACHDATEIEN (AP 18). Seit 0.2.94 die Technik dafür: Startsprache nach Wahl des
+ * eingetragen in SPRACHLADER (AP 18). Seit 0.2.94 die Technik dafür: Startsprache nach Wahl des
  * Lesers oder nach der Sprache des Geräts, Wechsel mit Benachrichtigung (useSprache.ts lässt die
- * App neu zeichnen), `<html lang>` folgt der Sprache.
+ * App neu zeichnen), `<html lang>` folgt der Sprache. Seit V4 (Nutzungsprüfung 25.10.2026) ist nur
+ * Deutsch fest eingebaut; jede weitere Sprachdatei lädt erst, wenn sie gebraucht wird (ladeSprache).
  * Abhängigkeiten: keine.
  */
 import de from "./de.json";
-import en from "./en.json";
 
 /** Alle Schlüssel der deutschen Sprachdatei. Ein Tippfehler im Schlüssel fällt schon beim Bauen auf. */
 export type Textschluessel = keyof typeof de;
@@ -17,13 +17,24 @@ export type Textschluessel = keyof typeof de;
 /** Werte, die in Platzhalter wie {feld} eingesetzt werden. */
 export type Textwerte = Readonly<Record<string, string | number>>;
 
+/** Die Texte einer Sprache, Schlüssel → Text. */
+type Sprachtexte = Readonly<Record<string, string>>;
+
 /**
- * Die Sprachdateien der App. Englisch seit 0.2.104 als Vorschau (Wunsch des Autors, 19.10.2026).
- * Seit 0.2.116 auch die 27 wörtlichen Buchzitate auf Englisch (EN2, nach gängigen englischen
- * Fassungen) und Englisch auch in der Fassung für die Leser (V1: Der Rest wird vor 1.0 übersetzt,
- * unabhängig vom englischen Buch).
+ * Die weiteren Sprachdateien der App, je als eigener Baustein, der erst auf Wunsch lädt (V4: die
+ * Sprachdatei ist etwa 76 KB groß, Leser auf Deutsch brauchen sie nie). Der Baustein heißt
+ * „sprachpaket-<sprache>“, daran erkennt ihn der Service Worker (sw/dateiliste.ts).
+ * Englisch seit 0.2.104 als Vorschau (Wunsch des Autors, 19.10.2026). Seit 0.2.116 auch die 27
+ * wörtlichen Buchzitate auf Englisch (EN2, nach gängigen englischen Fassungen) und Englisch auch in
+ * der Fassung für die Leser (V1: Der Rest wird vor 1.0 übersetzt, unabhängig vom englischen Buch).
  */
-const SPRACHDATEIEN: Readonly<Record<string, Readonly<Record<string, string>>>> = { de, en };
+const SPRACHLADER: Readonly<Record<string, () => Promise<Sprachtexte>>> = {
+  en: async () => (await import("./sprachpaket-en")).default,
+};
+/** Alle Sprachen der App in der Reihenfolge der Auswahl. */
+const SPRACHEN: readonly string[] = ["de", ...Object.keys(SPRACHLADER)];
+/** Die Sprachdateien, die schon geladen sind; Deutsch ist immer da. */
+const geladen = new Map<string, Sprachtexte>([["de", de]]);
 /**
  * Sprachen, die die App von selbst nach der Sprache des Geräts wählt. Englisch ist Vorschau und
  * muss in den Einstellungen gewählt werden, bis es Buch- und Trainerdaten auf Englisch gibt.
@@ -57,7 +68,7 @@ const hoerer = new Set<() => void>();
  * Sonderfälle: Ein Platzhalter ohne Wert bleibt sichtbar stehen, damit der Fehler auffällt.
  */
 export function t(schluessel: Textschluessel, werte: Textwerte = {}): string {
-  const vorlage = SPRACHDATEIEN[aktuelleSprache]?.[schluessel] ?? de[schluessel];
+  const vorlage = geladen.get(aktuelleSprache)?.[schluessel] ?? de[schluessel];
   return vorlage.replace(/\{(\w+)\}/g, (ganz, name: string) => {
     const wert = werte[name];
     return wert === undefined ? ganz : String(wert);
@@ -89,14 +100,37 @@ export function tZahl(schluessel: Textschluessel, zahl: number, werte: Textwerte
 }
 
 /**
+ * Lädt die Sprachdatei einer Sprache, falls sie noch nicht da ist.
+ *
+ * Warum: Seit V4 kommt eine weitere Sprache erst, wenn der Leser sie wählt (oder beim Start, wenn
+ * er sie gewählt hat). Ohne Netz und ohne gespeichertes Sprachpaket schlägt das fehl; der Aufrufer
+ * zeigt dann eine Meldung und bleibt bei der bisherigen Sprache (app/sprachwahl.ts).
+ * Eingabe: Sprachcode wie „en“. Ausgabe: erfüllt, sobald setzeSprache die Sprache annimmt.
+ * Beispiel: await ladeSprache("en"); setzeSprache("en") → t("abbildung.titel", …) „Fig. 1.26“.
+ * Sonderfälle: Deutsch ist immer geladen; ein unbekannter Code oder ein Netzfehler lehnt ab.
+ */
+export async function ladeSprache(sprachcode: string): Promise<void> {
+  if (geladen.has(sprachcode)) return;
+  const lade = SPRACHLADER[sprachcode];
+  if (!lade) throw new Error(`Unbekannte Sprache: ${sprachcode}`);
+  geladen.set(sprachcode, await lade());
+}
+
+/** Ist die Sprachdatei dieser Sprache schon geladen? Beispiel: istGeladen("de") → true. */
+export function istGeladen(sprachcode: string): boolean {
+  return geladen.has(sprachcode);
+}
+
+/**
  * Wählt die Sprache der Oberfläche.
  *
  * Warum: Die Sprache wird in der App gewählt (Entscheidung vom 13.10.2026).
- * Eingabe: Sprachcode wie „de“. Unbekannte Codes werden abgelehnt.
- * Ausgabe: true, wenn die Sprache verfügbar ist.
+ * Eingabe: Sprachcode wie „de“. Unbekannte Codes werden abgelehnt, ebenso Sprachen, deren Datei
+ * noch nicht geladen ist (vorher ladeSprache, V4).
+ * Ausgabe: true, wenn die Sprache jetzt gilt.
  */
 export function setzeSprache(sprachcode: string): boolean {
-  if (!(sprachcode in SPRACHDATEIEN)) {
+  if (!geladen.has(sprachcode)) {
     return false;
   }
   if (sprachcode === aktuelleSprache) return true;
@@ -112,14 +146,19 @@ export function beiSprachwechsel(melde: () => void): () => void {
   return () => hoerer.delete(melde);
 }
 
-/** Die Sprachen, in denen es die App gibt, in der Reihenfolge der Sprachdateien. */
+/** Die Sprachen, in denen es die App gibt (geladen oder nicht), in der Reihenfolge der Auswahl. */
 export function verfuegbareSprachen(): string[] {
-  return Object.keys(SPRACHDATEIEN);
+  return [...SPRACHEN];
 }
 
-/** Name einer Sprache in ihr selbst, etwa „Deutsch“; für die Sprachwahl. */
+/**
+ * Name einer Sprache in ihr selbst, etwa „Deutsch“ oder „English (preview)“; für die Sprachwahl.
+ * Die Namen stehen seit V4 in jeder Sprachdatei gleich (sprache.name.<code>), damit die Auswahl sie
+ * zeigen kann, ohne die fremde Sprachdatei zu laden.
+ */
 export function sprachname(sprachcode: string): string {
-  return SPRACHDATEIEN[sprachcode]?.["sprache.eigenname"] ?? sprachcode;
+  const schluessel = `sprache.name.${sprachcode}`;
+  return istTextschluessel(schluessel) ? de[schluessel] : sprachcode;
 }
 
 /**

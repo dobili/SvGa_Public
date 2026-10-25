@@ -88,3 +88,29 @@ test("Startseite, App und Rechtsseiten laden nichts von fremden Adressen", async
   }
   expect(fremde).toEqual([]);
 });
+
+/** Das Skript der Startseite (startseite.ts im Build). */
+const STARTSEITENSKRIPT = /\/assets\/startseite-[\w-]+\.js$/;
+
+// V5 (Nutzungsprüfung 25.10.2026): Der Installationsteil steht schon vor startseite.ts so, wie er
+// bleibt. Ohne das Skript (hier blockiert) ist die passende Anleitung sichtbar und der Platz des
+// Fortschritts frei (unsichtbar); mit Skript erscheint der Fortschritt, ohne etwas zu verschieben.
+test("/installieren/ springt nicht: Anleitung und Platz für den Fortschritt vor dem Skript", async ({
+  page,
+}) => {
+  await page.route(STARTSEITENSKRIPT, (weg) => weg.abort());
+  await page.goto("/installieren/");
+  const knopf = page.getByRole("link", { name: "Im Browser verwenden" });
+  // Je Gerät eine Anleitung: Knopf auf Android, Schritte über „Teilen“ auf dem iPhone (WebKit).
+  await expect(page.locator("[data-anleitung].sichtbar")).toHaveCount(1);
+  await expect(page.locator("[data-anleitung].sichtbar")).toBeVisible();
+  await expect(page.getByRole("progressbar")).toBeHidden();
+  // Schriften abwarten: Ihr Wechsel verschiebt die Seite auch (dagegen helfen die Preloads, V5).
+  await page.evaluate(() => document.fonts.ready.then(() => undefined));
+  const ohneSkript = await knopf.boundingBox();
+  await page.unroute(STARTSEITENSKRIPT);
+  await page.goto("/installieren/");
+  await expect(page.getByRole("progressbar")).toBeVisible();
+  await page.evaluate(() => document.fonts.ready.then(() => undefined));
+  expect((await knopf.boundingBox())?.y).toBe(ohneSkript?.y);
+});

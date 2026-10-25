@@ -3,8 +3,12 @@
 // Warum: Nach der Installation lädt das Gerät alle Dateien für die Offline-Nutzung.
 // Das Konzept (Abschnitt 11.2) setzt dafür eine Obergrenze von 25 MB. Wird sie
 // überschritten, schlägt der Build fehl, damit es nicht unbemerkt passiert.
+// Seit V4 (Nutzungsprüfung 25.10.2026) lädt das Gerät nicht mehr alles vorab: Die Dateien einer
+// weiteren Sprache (daten/en/**, assets/sprachpaket-en-…js) kommen erst, wenn der Leser sie wählt
+// (src/sw/dateiliste.ts). Die Obergrenze gilt weiter für alles zusammen (wer Englisch wählt, hat
+// beides auf dem Gerät); zusätzlich steht da, wie viel davon vorab lädt.
 import { readdir, stat } from "node:fs/promises";
-import { dirname, join, resolve } from "node:path";
+import { dirname, join, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const HIER = dirname(fileURLToPath(import.meta.url));
@@ -14,24 +18,44 @@ const DIST = resolve(HIER, "../dist");
 const OBERGRENZE_BYTES = 25 * 1024 * 1024;
 const BYTES_JE_MB = 1024 * 1024;
 
-/** Summiert die Größe aller Dateien unterhalb eines Ordners. */
-async function ordnergroesse(ordner) {
-  let summe = 0;
+/** Dateien eines Sprachpakets, wie in src/sw/dateiliste.ts (Deutsch gehört zum Kern). */
+const SPRACHPAKET = /^(daten\/(?!de\/)[a-z]{2}\/|assets\/sprachpaket-(?!de-)[a-z]{2}-)/;
+/** Nicht in der Dateiliste des Service Workers (vite.config.ts, globIgnores). */
+const NICHT_IN_DER_LISTE = /^admin\//;
+
+/** Größe aller Dateien unterhalb eines Ordners, getrennt nach Kern, Sprachpaketen und Rest. */
+async function ordnergroesse(ordner, summen = { alles: 0, sprachpakete: 0, ohneListe: 0 }) {
   for (const eintrag of await readdir(ordner, { withFileTypes: true })) {
     const pfad = join(ordner, eintrag.name);
-    summe += eintrag.isDirectory() ? await ordnergroesse(pfad) : (await stat(pfad)).size;
+    if (eintrag.isDirectory()) {
+      await ordnergroesse(pfad, summen);
+      continue;
+    }
+    const groesse = (await stat(pfad)).size;
+    const relativ = relative(DIST, pfad).split(sep).join("/");
+    summen.alles += groesse;
+    if (SPRACHPAKET.test(relativ)) summen.sprachpakete += groesse;
+    else if (NICHT_IN_DER_LISTE.test(relativ)) summen.ohneListe += groesse;
   }
-  return summe;
+  return summen;
+}
+
+/** Bytes als Megabyte mit einer Nachkommastelle. */
+function mb(bytes) {
+  return (bytes / BYTES_JE_MB).toFixed(1);
 }
 
 async function main() {
-  const groesse = await ordnergroesse(DIST);
-  const mb = (groesse / BYTES_JE_MB).toFixed(1);
-  if (groesse > OBERGRENZE_BYTES) {
-    console.error(`Größenbudget überschritten: ${mb} MB (Obergrenze 25 MB).`);
+  const { alles, sprachpakete, ohneListe } = await ordnergroesse(DIST);
+  if (alles > OBERGRENZE_BYTES) {
+    console.error(`Größenbudget überschritten: ${mb(alles)} MB (Obergrenze 25 MB).`);
     process.exit(1);
   }
-  console.log(`Größenbudget eingehalten: ${mb} MB von 25 MB.`);
+  const vorab = alles - sprachpakete - ohneListe;
+  console.log(
+    `Größenbudget eingehalten: ${mb(alles)} MB von 25 MB ` +
+      `(vorab geladen höchstens ${mb(vorab)} MB, Sprachpakete auf Wahl ${mb(sprachpakete)} MB).`,
+  );
 }
 
 main().catch((fehler) => {

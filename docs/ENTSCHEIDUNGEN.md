@@ -5372,3 +5372,13 @@ gelten? Verhalten sich die Bots beim Wechsel der Bedenkzeit wie ein einzelner Me
 - **Stufen danach (Blitz / Schnellschach / Klassisch):** 1: 667/747/973 · 2: 839/946/1177 ·
   3: 1078/1242/1438 · 4: 1278/1456/1597 · 5: 1537/1696/1776 · 6: 1770/1906/1956 ·
   7: 1998/2108/2158 · 8: 2216/2291/2341 · 9: 2327/2388/2438 · 10: 3246/3296/3346.
+- **Prüfmessung (25.10.2026 vormittags, sechs Chats und lokal):** Anker der Stufen 2, 3 und 5
+  (je 40 Partien gegen sich selbst, Tiefe 18; Blitz 5 lokal mit 20) nach der Umrechnung,
+  verglichen mit der Zahl der App. Klassisch: 1114 / 1414 / 1721 gegen 1177 / 1438 / 1776, passt
+  im Rahmen der Messgenauigkeit (etwa ±65). Blitz: 950 / 1264 / 1875 gegen 839 / 1078 / 1537, die
+  Bots spielen in Blitz 110 bis 340 stärker, als die App sie ausweist. Grund: Die Umrechnung
+  erreicht nur das Wahlmodell (wie oft ein schlechterer Kandidat gewählt wird); die Grundschicht
+  der Stufe (Engine-Suche) spielt in jeder Zeitklasse gleich, und die Zielwertung, die eine Stufe
+  übergibt (Stufe 2: 600, Stufe 3: 900), liegt weit unter ihrer gemessenen Zahl. Die Genauigkeit
+  fiel in Blitz deshalb nur um 3 bis 6 Prozentpunkte statt wie bei Menschen deutlich. Offen
+  (Empfehlung an den Autor): die Grundschicht je Zeitklasse einstellen und an diesen Ankern eichen.

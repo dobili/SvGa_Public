@@ -61,12 +61,7 @@
 }
 
 .gegnerzeile-kopf > .gegnerbild,
-.partiezeile > .gegnerbild {
-  width: 36px;
-}
-
-.gegnerzeile-kopf .gegner-zeichen,
-.partiezeile .gegner-zeichen {
+.gegnerzeile-kopf .gegner-zeichen {
   font-size: var(--groesse-grund);
 }
 

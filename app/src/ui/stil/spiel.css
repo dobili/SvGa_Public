@@ -193,26 +193,6 @@
   margin: var(--raster) 0;
 }
 
-.partienliste .begriff-knopf {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: var(--raster);
-  padding-top: var(--raster);
-  padding-bottom: var(--raster);
-}
-
-.partiezeile-text {
-  display: flex;
-  flex-direction: column;
-}
-
-.partiezeile-wertung {
-  margin-left: 6px;
-  vertical-align: -2px;
-  color: var(--gold);
-}
-
 .brett-sperre {
   margin: var(--raster) 0 0;
   color: var(--rot-text);
@@ -226,12 +206,6 @@
 .spielstaerke-untertitel {
   margin: calc(var(--raster) * 2) 0 var(--raster);
   font-size: var(--groesse-grund);
-}
-
-/* Nur die Zeile mit Datum und Stärke ist leise; Marken (Ergebnis, Stufe) behalten ihre Farbe. */
-.partienliste .partiezeile-text > span {
-  color: var(--text-leise);
-  font-size: var(--groesse-klein);
 }
 
 .bildschirm-spielen > .knopf-haupt {

@@ -2463,10 +2463,6 @@
   "spielen.partiezeileImport": "{datum} · {weiss} – {schwarz} · {zuege} moves",
   "spielen.partiezeileEinZug": "{datum} · {stufe} · 1 move",
   "spielen.partieGewertet": "Rated game",
-  "spielen.etwa": "about {wert}",
-  "spielen.genau": "{wert}% accuracy",
-  "spielen.staerkeEngine": "you {du} · engine {engine}",
-  "spielen.staerkeMensch": "White {weiss} · Black {schwarz}",
   "spielen.partieStufe": "Level {nummer}",
   "spielen.laeuftKurz": "in progress",
   "spielen.gegner": "Opponent",
@@ -3546,7 +3542,6 @@
   "spielen.profil.staerkeThema": "Estimated strength",
   "spielen.profil.staerkeErklaerung": "The number comes from the levels per phase (“Strength” tab); without any mistake type, the measured number of the pure levels applies. How mistakes and blind spots shift it is shown above only as a direction; the style is not included. An exact number needs a measurement.",
   "gruppe.gesperrtKurz": "Group mode: still locked",
-  "spielen.partieGegen": "{ich} vs {gegner}",
   "profil.ohneName": "No name yet",
   "profil.einladung": "Set a name and a portrait. Both appear in your games; both are optional.",
   "profil.bearbeiten": "Name and portrait",
@@ -3658,5 +3653,11 @@
   "profil.wert.kleidung.8b5a2b": "Brown",
   "profil.wert.kleidung.ff8c42": "Orange",
   "profil.wert.kleidung.1f8a70": "Dark green",
-  "profil.wert.kleidung.87ceeb": "Sky blue"
+  "profil.wert.kleidung.87ceeb": "Sky blue",
+  "spielen.zahlStaerke": "≈ {wert}",
+  "spielen.zahlGenau": "{wert} %",
+  "spielen.zahlenVorlesen": "You {ich}, opponent {gegner}",
+  "spielen.vs": "vs",
+  "spielen.partieKlein": "{datum} · {zuege} moves",
+  "spielen.partieKleinEinZug": "{datum} · 1 move"
 }

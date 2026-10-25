@@ -104,33 +104,6 @@ button.portraetkachel[aria-checked="true"] {
   outline-offset: 2px;
 }
 
-/* Partienliste: das eigene Porträt klein unten links vor dem des Gegners. */
-.partie-paar {
-  position: relative;
-  flex: none;
-  display: inline-flex;
-}
-
-/* Das Gegnerbild im Paar so groß wie ohne Paar (gegnerbild.css: .partiezeile > .gegnerbild);
-   ohne diese Regel füllte es die Zeile (Befund des Autors zu 0.2.140). */
-.partie-paar > .gegnerbild {
-  width: 36px;
-}
-
-.partie-paar-ich {
-  position: absolute;
-  left: -6px;
-  bottom: -6px;
-  width: 22px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--flaeche);
-  overflow: hidden;
-}
-
-.partie-paar-ich .gegner-portraet {
-  border-radius: 50%;
-}
-
 /* Baukasten seit 0.2.141: Kopf „Frisur: Lockiger Dutt“, darunter eine wischbare Bildreihe. */
 .baukasten-wert {
   font-weight: 400;

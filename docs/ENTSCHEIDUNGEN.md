@@ -5709,3 +5709,19 @@ beim Gestalten, Vorschaubilder statt Ausklappmenüs, wenn platzsparend möglich.
   jedes Bild das aktuelle Gesicht mit dieser Variante; bei Augen, Nase, Mund, Bart auf das Gesicht
   vergrößert. Dafür lädt `ladeBauer` DiceBear einmal und baut danach ohne Warten (etwa 45 Bilder
   je Änderung).
+
+## Partienliste übersichtlicher (25.10.2026, Opus, Version 0.2.142)
+
+Wunsch des Autors (25.10.2026): eigenes Porträt und eigenen Namen weglassen (man ist an jeder
+Partie beteiligt); auf einen Blick Farbe, Ergebnis, eigene Bewertung gegen die des Gegners (sonst
+Genauigkeit) und Zeitart; Name des Gegners unter dem Porträt; Datum und Züge klein; kein leerer
+Raum um das Porträt.
+
+- Neue Zeile `ui/komponenten/Partiezeile.tsx` (Raster: 60 Pixel Gegner links, rechts drei
+  Zeilen), Stile in `ui/stil/partienliste.css`; `Partienliste.tsx` nur noch Liste, Filter und
+  „Weiterspielen“. Eigenes Porträt in der Liste (0.2.140) und „Dana gegen Tom“ entfallen.
+- Zahlen: dieselbe Spielstärke je Seite wie bisher im Kleingedruckten (`staerkeDerPartie`), sonst
+  Genauigkeit; eigene zuerst, „vs“ dazwischen; für Bildschirmleser „Du …, Gegner …“.
+- Platzhalter: Bisher hatten eingelesene Partien (intern „Mensch gegen Mensch“) und Partien zu
+  zweit kein Bild. Jetzt ein Dateizeichen mit dem Namen des Gegners aus dem PGN bzw. zwei Personen.
+  Engine ohne Bot weiter mit Stufenmarke.

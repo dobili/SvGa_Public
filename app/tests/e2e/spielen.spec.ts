@@ -503,7 +503,8 @@ test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgew
   await page.screenshot({ path: "test-results/bilder/pgnimport.png", fullPage: true });
   await oeffneProfil(page);
   const eintrag = page.locator(".partienliste li.partieeintrag").first();
-  await expect(eintrag).toContainText("Anna – Ben");
+  // Seit 0.2.142 links der Gegner aus dem PGN unter einem Dateizeichen (Leser spielte Schwarz).
+  await expect(eintrag.locator(".partie-wer-name")).toHaveText("Anna");
   await expect(eintrag.locator(".ergebnis-gewonnen")).toContainText("0–1");
 });
 

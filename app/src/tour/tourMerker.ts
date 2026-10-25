@@ -66,7 +66,7 @@ export function merkeAngeboten(): void {
   geaendert();
 }
 
-/** Schaltet das Toursymbol an oder aus (Einstellungen › Anzeige). */
+/** Schaltet das Toursymbol an oder aus (Einstellungen › Reiter „Hilfe“). */
 export function setzeSymbol(an: boolean): void {
   schreibeMerker(MERKER_SYMBOL, an ? "an" : "aus");
   geaendert();

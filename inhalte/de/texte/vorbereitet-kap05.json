@@ -182,7 +182,7 @@
       "Schau auf das Feld b5.",
       "a4 kontrolliert b5: Der Vorstoß ...b5 und danach ...b4 gegen den Springer c3 wird schwer."
      ],
-     "text": "a4 erobert das Feld b5 und öffnet dem Turm a1 die a-Linie. Damit bremst Weiß den Vorstoß ...b5–b4, der den Wächter c3 von d5 vertreiben würde."
+     "text": "a4 kontrolliert das Feld b5 und verhindert so den Vorstoß ...b5, mit dem Schwarz über ...b4 den Wächter c3 von d5 vertreiben würde."
     }
    ],
    "fragen": [
@@ -192,7 +192,7 @@
      "antworten": [
       "Um mit a4–a5 einen Freibauern zu bilden.",
       "Um den Läufer e6 anzugreifen.",
-      "Es bremst ...b5 und ...b4, die den Springer c3 von d5 vertreiben würden."
+      "Es verhindert ...b5 und ...b4, die den Springer c3 von d5 vertreiben würden."
      ],
      "richtig": 2,
      "erklaerung": "Der Springer c3 bewacht den Vorposten d5. Mit a4 schützt Weiß diesen Wächter vor dem schwarzen b-Bauern."

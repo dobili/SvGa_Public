@@ -98,7 +98,7 @@
       "Schau auf das Zentrum d4/e5, auf die weißen Figuren am Königsflügel und auf den Bauern h7.",
       "Das Zentrum ist verriegelt, drei weißen Angreifern steht nur der König gegenüber, und h7 deckt nur der König."
      ],
-     "text": "Alle drei Bedingungen sind erfüllt. Das Zentrum ist geschlossen, Läufer d3, Springer f3 und Dame d1 sind in der Überzahl, und h7 deckt nur der König."
+     "text": "Alle drei Bedingungen sind erfüllt. Das Zentrum ist geschlossen, Läufer d3, Springer f3 und Dame d1 sind in der Übermacht, und h7 deckt nur der König."
     }
    ],
    "fragen": [
@@ -106,7 +106,7 @@
      "zug": "1. Lxh7+",
      "frage": "Warum funktioniert hier das Opfer 1. Lxh7+?",
      "antworten": [
-      "Alle drei Bedingungen sind erfüllt: verriegeltes Zentrum, Überzahl am Königsflügel und ein Ziel, das nur der König deckt.",
+      "Alle drei Bedingungen sind erfüllt: verriegeltes Zentrum, Übermacht am Königsflügel und ein Ziel, das nur der König deckt.",
       "Weiß gewinnt mit dem Läufer sofort einen Turm.",
       "Nach dem Schlag ist Schwarz sofort matt."
      ],

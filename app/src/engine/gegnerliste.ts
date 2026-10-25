@@ -19,9 +19,9 @@ import { GEGNER_GRUPPE_1_BIS_5 } from "./gegnerliste1";
 import { GEGNER_GRUPPE_6_BIS_10 } from "./gegnerliste2";
 
 /**
- * Alle vorgefertigten Gegner: der Bot-Satz vom 24.10.2026 (78 Bots in zehn Gruppen nach gemessener
- * Zahl, Gruppe 1 mit sechs, sonst acht) und am Ende die vier Spaß-Bots (0.2.88), in der Reihenfolge
- * der Teildateien.
+ * Alle vorgefertigten Gegner: der Bot-Satz vom 24.10.2026 mit den zwei Neulingen von 0.2.143 (80 Bots,
+ * seit 0.2.144 fest zu je acht nach gemessener Zahl in zehn Gruppen, engine/botgruppe.ts) und am
+ * Ende die vier Spaß-Bots (0.2.88), in der Reihenfolge der Teildateien.
  */
 export const GEGNER: readonly Gegner[] = [
   ...GEGNER_GRUPPE_1_BIS_5,

@@ -257,7 +257,7 @@
       "Er bedroht den König f7 direkt."
      ],
      "richtig": 1,
-     "erklaerung": "Nach Kf3 ist Schwarz am Zug und muss weichen. Der weiße König folgt nach e4 und erreicht die Schlüsselfelder."
+     "erklaerung": "Nach Kf3 ist Schwarz am Zug und muss weichen. Der weiße König rückt nach e4 vor und steht damit schon auf einem Schlüsselfeld des Bauern d2."
     }
    ],
    "engineGeprueft": "2026-10-15"

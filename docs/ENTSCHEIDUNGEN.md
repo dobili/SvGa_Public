@@ -5693,3 +5693,51 @@ gegen die Engine und bei den gespielten Partien; Nachsatz: den Baukasten auch f�
 - Gemeinsame Porträtwahl (`Portraetwahl.tsx`, `portraetwahlZustand.ts`) für Profil und eigene
   Bots; das Aufklappmenü `PortraetAuswahl.tsx` (0.2.100) entfällt, im Bot-Formular steht die Wahl
   in einer Klappe mit dem Bild in der Zusammenfassung.
+
+## Maia im Wahlmodell, Plan C und eine Neumessung (25.10.2026, Bot-Chat, Version 0.2.141)
+
+Freigabe des Autors (25.10.2026 nachmittags): Maia als Komplettpaket, in den Einstellungen
+ausschaltbar; dazu Plan C mit einer gemeinsamen Neumessung, alles mit den zehn Mess-Chats.
+
+- **Vergleich vorab** (lokal, `/home/user/maia/vergleich.py`): 320 000 Lichess-Stellungen ab
+  Halbzug 10, je Zeitklasse 80 % Eichung, 20 % Prüfung. Trefferquote des gespielten Zugs (A
+  Wahlmodell / B nur Maia / C beides): Blitz 39,9 / 54,3 / 55,2 %, Schnellschach 40,8 / 53,7 /
+  54,9 %, Klassisch 42,0 / 50,3 / 52,8 %. Fehlerrate (Verlust ab einem halben Bauern) je Band:
+  A und C treffen die echte auf etwa einen bis zwei Prozentpunkte (Schnellschach 2000: echt 22,6,
+  A 21,0, C 21,1), B allein nicht (unten zu wenige Fehler, über 2000 zu viele, Klassisch 2400:
+  30,7 statt 12,2). Entscheidung: Variante C.
+- **Maia-2** (CSSLab, University of Toronto, MIT): zwei Netze (Blitz, Schnellschach; Klassisch
+  rechnet mit Schnellschach), ohne die ersten zehn Halbzüge trainiert (in der Grundstellung sagt
+  es 1. Sf3, Sc3, Sa3 voraus), deshalb erst ab Halbzug 10. Als ONNX in halber Genauigkeit
+  (Gruppe 1, Bericht auf Zweig `maia-onnx`: 42 MB je Netz, 99,9 % gleicher bester Zug wie das
+  Original, im Browser etwa 100 bis 150 ms je Zug auf einem Kern). Die Netze liegen zerlegt in
+  `app/public/maia/` (Teile zu 15 MB, Cloudflare nimmt höchstens 25 MiB je Datei), Prüfsummen in
+  `maia.json`. Die Vorbereitung der Stellung (`engine/maia.ts`: 18 Ebenen, Spiegelung bei
+  Schwarz am Zug, elf Wertungsklassen, Zugliste des Trainings) ist gegen PyTorch geprüft
+  (`maia.messung.ts`, auf 0,01 genau).
+- **Wahlmodell C** (`engine/wahlmodell-maia-daten.ts`, lokal `/home/user/maia/fit_c.py`):
+  dieselben Merkmale wie bisher und ln p_Maia, gemeinsam an allen Stellungen ab Halbzug 10
+  geeicht; Gewicht von ln p_Maia bei 1500: Blitz 0,84, Klassisch 0,74. Ohne Maia-Karte (vor
+  Halbzug 10, Paket fehlt oder aus) gelten die bisherigen Gewichte.
+- **Zusatzpaket** (`app/maiapaket.ts`, Reiter „Bots“ der Einstellungen, `MaiaWahl.tsx`): etwa 96
+  MB (zwei Netze und die Laufzeit onnxruntime-web 1.20.1, MIT), nur auf Wunsch geladen, im
+  Speicher „maia-1“ des Browsers, auch offline; Prüfsumme je Netz; löschbar. Nicht vorab geladen
+  (`vite.config.ts`, globIgnores), eigenes Größenbudget (`skripte/pruefe-groesse.mjs`); die App
+  bleibt bei 22 MB. Die Laufzeit läuft mit einem Thread ohne Cross-Origin-Isolation (geprüft in
+  Chromium, Oberflächentest `maia.spec.ts` mit echter Partie unter der Sicherheitsregel).
+- **Schalter** „Maia für die Bots“ (Standard an, wirkt nur mit Paket); die Partie merkt sich beim
+  Beginn, ob der Bot mit Maia wählt (Partieeinstellung `maia`), und bleibt dabei bis zum Ende.
+  Ältere Speicherstände lesen sich ohne Umbau. Fehlt Maia mitten in einer Partie (Paket
+  gelöscht), wählt der Bot ohne Maia weiter (Warnung im Protokoll).
+- **Plan C:** „ungenau“ bleibt im Spiel als Art stehen (das Wahlmodell ist mit `art_ungenau`
+  geeicht, Gewicht etwa +0,5; bis 0.2.140 fehlte es, die Bots spielten zu genau);
+  Prüfkandidaten für Bauernzug ohne Not, Königszug ohne Not und eingestellte Bauern
+  (`engine/pruefkandidaten.ts`, je Art höchstens zwei); „Patt gesetzt“ aktiv; Charaktere nur
+  noch mit den Arten der Regler und ganzen Fleckengruppen (`engine/gegnerbau.ts`).
+- **Neuling auf acht** (Wunsch des Autors): vier Kandidaten für die zwei fehlenden Universellen
+  (Emma, Opa Kurt, Frau Schulz, Lotte; `engine/botkandidaten-neuling.ts`), die Neumessung wählt.
+- **Neumessung** (`app/messplan/`, `skripte/messe-planc.sh`, zehn Chats): zwei Durchgänge, ohne
+  und mit Maia (Kürzel „*“), je Anker 1m bis 10m (40 Partien, Tiefe 18) und alle Bots, Gruppen
+  und Kandidaten gegen die zwei Nm-Stufen um ihre Zahl (12 Partien); zusammen 5408 Partien.
+  Weichen die Zahlen mit und ohne Maia je Bot um höchstens 65 voneinander ab, gilt ein Satz,
+  sonst zwei.

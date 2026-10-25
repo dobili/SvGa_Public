@@ -10,7 +10,7 @@
  * Abhängigkeiten: spiel/partienfilter.ts, lucide-react, i18n.
  */
 import { ArrowUpDown, Check, Filter, X } from "lucide-react";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import { t } from "../../i18n/sprache";
 import {
   aktiveFilter,
@@ -185,12 +185,15 @@ export function Partienfilterleiste({
   sortierung,
   aufsteigend,
   setzeSortierung,
+  zusatz,
 }: {
   filter: Partienfilter;
   setzeFilter: (filter: Partienfilter) => void;
   sortierung: Sortierung;
   aufsteigend: boolean;
   setzeSortierung: (sortierung: Sortierung, aufsteigend: boolean) => void;
+  /** Weitere Knöpfe rechts in der Reihe (seit 0.2.142 der Papierkorb des Löschmodus). */
+  zusatz?: ReactNode;
 }) {
   const [offen, setzeOffen] = useState<"filter" | "sortieren" | null>(null);
   // Die Zahl am Knopf zählt die gesetzten Häkchen, wie die Chips darunter.
@@ -218,6 +221,7 @@ export function Partienfilterleiste({
           <ArrowUpDown size={SYMBOL} aria-hidden="true" />
           {ordnungstext({ sortierung, aufsteigend })}
         </button>
+        {zusatz}
       </div>
       {offen === "filter" && <Filterliste filter={filter} setzeFilter={setzeFilter} />}
       {offen === "sortieren" && (

@@ -104,23 +104,46 @@ button.portraetkachel[aria-checked="true"] {
   outline-offset: 2px;
 }
 
-/* Partienliste: das eigene Porträt klein unten links vor dem des Gegners. */
-.partie-paar {
-  position: relative;
-  flex: none;
-  display: inline-flex;
+/* Baukasten seit 0.2.141: Kopf „Frisur: Lockiger Dutt“, darunter eine wischbare Bildreihe. */
+.baukasten-wert {
+  font-weight: 400;
+  color: var(--text-leise);
 }
 
-.partie-paar-ich {
-  position: absolute;
-  left: -6px;
-  bottom: -6px;
-  width: 22px;
-  border-radius: 50%;
-  box-shadow: 0 0 0 2px var(--flaeche);
+.bildreihe {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 3px 3px 6px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.bildreihe-kachel {
   overflow: hidden;
+  flex: none;
+  width: 60px;
+  height: 60px;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: calc(var(--radius) + 2px);
+  background: var(--portraet-grund, var(--grund));
+  cursor: pointer;
+  scroll-snap-align: start;
 }
 
-.partie-paar-ich .gegner-portraet {
-  border-radius: 50%;
+.bildreihe-kachel[aria-checked="true"] {
+  border-color: var(--gold);
+}
+
+.bildreihe-kachel > .gegner-portraet {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Augen, Nase, Mund, Bart: Ausschnitt aufs Gesicht, sonst sind die Varianten kaum zu sehen. */
+.bildreihe.nah .gegner-portraet {
+  transform: scale(1.8);
+  transform-origin: 50% 42%;
 }

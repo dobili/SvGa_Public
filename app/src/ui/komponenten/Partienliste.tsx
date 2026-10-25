@@ -13,16 +13,16 @@
  * „Partie einlesen (PGN)“ (PgnImport.tsx), auch wenn noch keine Partie gespielt ist.
  * Seit 25.10.2026 steht vor der Zeitangabe das Zeichen der Zeitart wie in der Bedenkzeit-Auswahl
  * (Wunsch des Autors); der Name bleibt als Text daneben, damit es nicht nur am Zeichen hängt.
- * Abhängigkeiten: spiel/partie.ts, spiel/auswertung.ts, spiel/genauigkeit.ts, speicher/partien.ts,
- * engine/stufen.ts, ui/brett (Figur), Navigation, i18n.
+ * Seit 0.2.142 baut Partiezeile.tsx jede Zeile (Gegner links, Ergebnis, Farbe, Zeitart und Zahlen
+ * auf einen Blick, Datum und Züge klein); gelöscht wird im Löschmodus (PartieLoeschen.tsx): Papierkorb
+ * neben Filter und Sortieren, Partien antippen, „Ausgewählte löschen“.
+ * Abhängigkeiten: Partiezeile, PartieLoeschen, spiel/partie.ts, spiel/wertung.ts, speicher/partien.ts,
+ * engine/stufen.ts, Navigation, i18n.
  */
-import { Star, Trash2 } from "lucide-react";
 import { useMemo, useState } from "react";
-import { useEinstellungen } from "../../app/einstellungen";
 import { useNavigation } from "../../app/navigationsKontext";
 import { stufe } from "../../engine/stufen";
 import { datumText, t } from "../../i18n/sprache";
-import type { Seitenbilanz } from "../../spiel/genauigkeit";
 import { gegnername } from "../../engine/gegner";
 import type { Partie } from "../../spiel/partie";
 import { staerkeDerPartie } from "../../spiel/wertung";
@@ -35,41 +35,20 @@ import {
   type Sortierwerte,
 } from "../../spiel/partienfilter";
 import { gegnerstaerke } from "../../engine/botstaerke";
-import { ohnePartie, type Partieeintrag } from "../../speicher/partien";
-import { aendere, useSpeicher } from "../../speicher/speicher";
-import { Ergebnismarke } from "./Ergebnismarke";
-import { GegnerBild } from "./GegnerBild";
-import { Spielerbild } from "../profil/Spielerbild";
-import { useSpielerprofil } from "../profil/spieler";
-import { Figur } from "../brett/Figur";
-import { BRETTFARBEN, FELD } from "../brett/masse";
+import type { Partieeintrag } from "../../speicher/partien";
 import { Partienfilterleiste } from "./Partienfilterleiste";
+import { Loeschleiste, LoeschmodusKnopf } from "./PartieLoeschen";
+import { Partiezeile, Zeitangabe } from "./Partiezeile";
 import { PgnImport } from "./PgnImport";
-import { Knopfsymbol } from "./Knopfsymbol";
-import { Stufenmarke } from "./Stufenmarke";
 import { Titelsymbol } from "./Titelsymbol";
-import { zeitklasse } from "../../spiel/zeitklasse";
-import { wertungstempo } from "../../spiel/elomodell";
-import { ZEITARTZEICHEN } from "./zeitartzeichen";
-
-/** Größe der kleinen Figur in der Liste (Bildpunkte). */
-const FIGURGROESSE = 28;
 
 /** So viele beendete Partien zeigt die Liste zuerst, je Tipp auf „Weitere“ so viele mehr. */
 const SICHTBAR = 10;
 /** Ab so vielen Partien erscheint der Filter; bei wenigen wäre er nur Ballast. */
 const FILTER_AB = 4;
-/** Größe des Papierkorbs beim Löschen. */
-const LOESCHSYMBOL = 20;
-/** Größe des Sterns für eine gewertete Partie (0.2.58, Wunsch des Autors). */
-const WERTUNGSSYMBOL = 14;
-const MINUTE_MS = 60_000;
-const SEKUNDE_MS = 1000;
-/** Größe des Zeichens der Zeitart vor der Zeitangabe (Bildpunkte). */
-const ZEITARTSYMBOL = 13;
 
 /** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie); eingelesen „… · Anna – Ben · 30 Züge“. */
-function zeile(partie: Partie, ich: string): string {
+function zeile(partie: Partie): string {
   const datum = datumText(new Date(partie.begonnen));
   const zuege = Math.ceil(partie.zuege.length / 2);
   const importiert = partie.einstellung.importiert;
@@ -82,95 +61,11 @@ function zeile(partie: Partie, ich: string): string {
         t("spielen.partieStufe", { nummer: s.nummer }));
   // Einzahl: „1 Zug“ statt „1 Züge“ (Befund beim Vorprüfen von N479, 19.10.2026).
   const schluessel = zuege === 1 ? "spielen.partiezeileEinZug" : "spielen.partiezeile";
-  // Seit 0.2.140 mit dem eigenen Namen aus dem Profil („Dana gegen Tom“), sonst nur der Gegner.
-  const paarung = ich ? t("spielen.partieGegen", { ich, gegner }) : gegner;
-  return t(schluessel, { datum, stufe: paarung, zuege });
-}
-
-/**
- * „ · ⚡ Blitz 3 + 2“ (R51, Zeichen seit 25.10.2026); ohne Uhr nichts. Bullet (nur eingelesene
- * Partien) trägt das Blitz-Zeichen, weil die Wertung Bullet zu Blitz zählt; der Text sagt „Bullet“.
- */
-function Zeitangabe({ partie }: { partie: Partie }) {
-  const uhr = partie.einstellung.uhr;
-  const klasse = zeitklasse(uhr);
-  if (!uhr || !klasse) return null;
-  const Zeichen = ZEITARTZEICHEN[wertungstempo(uhr)];
-  return (
-    <>
-      {" "}
-      {/* Der Punkt gehört zur Zeitangabe, damit eine neue Zeile nicht mit „·“ beginnt. */}
-      <span className="partie-zeitart">
-        {"· "}
-        <Zeichen size={ZEITARTSYMBOL} aria-hidden="true" />
-        {t("spielen.zeitangabe", {
-          klasse: t(`zeitklasse.${klasse}`),
-          minuten: uhr.grundzeitMs / MINUTE_MS,
-          sekunden: uhr.zuschlagMs / SEKUNDE_MS,
-        })}
-      </span>
-    </>
-  );
-}
-
-/** Ein König im gewählten Figurensatz: die Farbe, die der Leser gespielt hat; beide bei Mensch gegen Mensch. */
-function Seitenfigur({ partie }: { partie: Partie }) {
-  const einstellungen = useEinstellungen();
-  const mensch = partie.einstellung.gegner === "mensch";
-  const weiss = partie.einstellung.eigeneFarbe === "white";
-  const zeichen = mensch ? ["K", "k"] : [weiss ? "K" : "k"];
-  const name = mensch
-    ? t("spielen.gegner.mensch")
-    : t("spielen.partieSeite", { farbe: t(weiss ? "farbe.w" : "farbe.b") });
-  return (
-    <svg
-      className="seitenfigur"
-      viewBox={`0 0 ${FELD * zeichen.length} ${FELD}`}
-      width={FIGURGROESSE * zeichen.length}
-      height={FIGURGROESSE}
-      role="img"
-      aria-label={name}
-    >
-      {zeichen.map((z, i) => (
-        <Figur
-          key={z}
-          zeichen={z}
-          x={i * FELD}
-          y={0}
-          satz={einstellungen.figurensatz}
-          farbe={BRETTFARBEN[einstellungen.brettfarben].figur}
-        />
-      ))}
-    </svg>
-  );
-}
-
-/** „etwa 1400“ oder „78 % genau“; leer ohne Zahl. */
-function seitenwert(b: Seitenbilanz): string {
-  if (b.spielstaerke !== null) return t("spielen.etwa", { wert: b.spielstaerke });
-  if (b.genauigkeit !== null) return t("spielen.genau", { wert: Math.round(b.genauigkeit) });
-  return "";
-}
-
-/** „du etwa 1400 · Engine etwa 1600“ oder bei zwei Menschen „Weiß … · Schwarz …“; leer ohne Auswertung. */
-function staerketext(eintrag: Partieeintrag): string {
-  const staerke = staerkeDerPartie(eintrag);
-  if (!staerke) return "";
-  const p = eintrag.partie;
-  const weiss = seitenwert(staerke.white);
-  const schwarz = seitenwert(staerke.black);
-  if (!weiss && !schwarz) return "";
-  if (p.einstellung.gegner === "mensch") return t("spielen.staerkeMensch", { weiss, schwarz });
-  const eigene = p.einstellung.eigeneFarbe === "white";
-  return t("spielen.staerkeEngine", {
-    du: eigene ? weiss : schwarz,
-    engine: eigene ? schwarz : weiss,
-  });
+  return t(schluessel, { datum, stufe: gegner, zuege });
 }
 
 export function LaufendePartie({ partie }: { partie: Partie }) {
   const { navigiere } = useNavigation();
-  const ich = useSpielerprofil().name;
   return (
     <section
       className="karte laufende-partie"
@@ -179,8 +74,8 @@ export function LaufendePartie({ partie }: { partie: Partie }) {
     >
       <h2 className="karte-titel">{t("spielen.laufend")}</h2>
       <p>
-        {zeile(partie, ich)}
-        <Zeitangabe partie={partie} />
+        {zeile(partie)}
+        <Zeitangabe partie={partie} mitPunkt />
       </p>
       <button
         type="button"
@@ -190,117 +85,6 @@ export function LaufendePartie({ partie }: { partie: Partie }) {
         {t("spielen.fortsetzen")}
       </button>
     </section>
-  );
-}
-
-/**
- * Bild des Gegners: Bot-Porträt, bei der Engine ohne Bot die Stufenmarke (DS36, statt des
- * Buchstabens „S“ für „Stufe“); bei Mensch gegen Mensch keins.
- */
-function Gegnerbild({ partie }: { partie: Partie }) {
-  const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
-  const e = partie.einstellung;
-  if (e.gegner === "mensch") return null;
-  if (e.bot === null)
-    return (
-      <span className="gegnerbild partie-stufe">
-        <Stufenmarke stufe={stufe(e.stufe).nummer} />
-      </span>
-    );
-  const name =
-    gegnername(e.bot, e.botName) ?? t("spielen.partieStufe", { nummer: stufe(e.stufe).nummer });
-  return <GegnerBild bot={e.bot} eigene={eigene} name={name} />;
-}
-
-/**
- * Gegnerbild mit dem eigenen Porträt klein unten links davor (seit 0.2.140, Wunsch des Autors:
- * eigenes Porträt auch bei den gespielten Partien); ohne eigenes Bild nur der Gegner.
- */
-function Paarbild({ partie }: { partie: Partie }) {
-  const profil = useSpielerprofil();
-  const gegner = <Gegnerbild partie={partie} />;
-  if (!profil.bild || partie.einstellung.gegner === "mensch" || partie.einstellung.importiert)
-    return gegner;
-  return (
-    <span className="partie-paar">
-      {gegner}
-      <span className="partie-paar-ich">
-        <Spielerbild profil={profil} />
-      </span>
-    </span>
-  );
-}
-
-/** Löschen einer ungewerteten Partie: Papierkorb, dann Nachfrage in der Zeile. */
-function Loeschen({ partie }: { partie: Partie }) {
-  const [frage, setzeFrage] = useState(false);
-  const datum = datumText(new Date(partie.begonnen));
-  if (!frage)
-    return (
-      <button
-        type="button"
-        className="knopf-symbol partie-loeschen"
-        aria-label={t("spielen.partieLoeschen", { datum })}
-        title={t("spielen.partieLoeschen", { datum })}
-        onClick={() => setzeFrage(true)}
-      >
-        <Trash2 size={LOESCHSYMBOL} aria-hidden="true" />
-      </button>
-    );
-  return (
-    <div className="partie-nachfrage" role="group" aria-label={t("spielen.partieLoeschenFrage")}>
-      <span>{t("spielen.partieLoeschenFrage")}</span>
-      <button
-        type="button"
-        className="knopf-gefahr"
-        onClick={() => void aendere((d) => ({ ...d, spiel: ohnePartie(d.spiel, partie.id) }))}
-      >
-        <Knopfsymbol art="loeschen" />
-        {t("spielen.partieLoeschenJa")}
-      </button>
-      <button type="button" className="knopf-zweit" onClick={() => setzeFrage(false)}>
-        {t("loeschen.nein")}
-      </button>
-    </div>
-  );
-}
-
-/** Eine Zeile der Liste: Gegnerbild, Seite, Ergebnis mit Stern, Datum und Stärke; Löschen. */
-function Partiezeile({ eintrag }: { eintrag: Partieeintrag }) {
-  const { navigiere } = useNavigation();
-  const { partie } = eintrag;
-  const profilname = useSpielerprofil().name;
-  const staerke = staerketext(eintrag);
-  return (
-    <li className="partieeintrag">
-      <button
-        type="button"
-        className="begriff-knopf partiezeile"
-        onClick={() => navigiere({ bildschirm: "partie", id: partie.id })}
-      >
-        <Paarbild partie={partie} />
-        <Seitenfigur partie={partie} />
-        <span className="partiezeile-text">
-          <strong>
-            <Ergebnismarke partie={partie} />
-            {partie.einstellung.gewertet && (
-              <Star
-                className="partiezeile-wertung"
-                size={WERTUNGSSYMBOL}
-                aria-label={t("spielen.partieGewertet")}
-                role="img"
-              />
-            )}
-          </strong>
-          <span>
-            {zeile(partie, profilname)}
-            <Zeitangabe partie={partie} />
-            {staerke && ` · ${staerke}`}
-          </span>
-        </span>
-      </button>
-      {!partie.einstellung.gewertet && <Loeschen partie={partie} />}
-    </li>
   );
 }
 
@@ -335,6 +119,8 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   const [anzahl, setzeAnzahl] = useState(SICHTBAR);
   const [sortierung, setzeSortierung] = useState<Sortierung>("datum");
   const [aufsteigend, setzeAufsteigend] = useState(false);
+  // Löschmodus (seit 0.2.142): null aus, sonst die gewählten Partien.
+  const [gewaehlt, setzeGewaehlt] = useState<ReadonlySet<string> | null>(null);
   // Die Spielstärke je Partie kostet Rechenzeit; einmal je Liste.
   const werte = useMemo(() => new Map(partien.map((e) => [e, sortierwerte(e)])), [partien]);
   if (partien.length === 0)
@@ -355,6 +141,19 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
     mitFilter && aufsteigend,
   );
   const rest = passend.length - anzahl;
+  const loeschbar = partien.filter((e) => !e.partie.einstellung.gewertet).map((e) => e.partie.id);
+  const loeschknopf = loeschbar.length > 0 && (
+    <LoeschmodusKnopf
+      an={gewaehlt !== null}
+      beiTipp={() => setzeGewaehlt(gewaehlt ? null : new Set())}
+    />
+  );
+  const umschalte = (id: string) => {
+    if (!gewaehlt) return;
+    const neu = new Set(gewaehlt);
+    if (!neu.delete(id)) neu.add(id);
+    setzeGewaehlt(neu);
+  };
   return (
     <>
       <section className="karte partienliste" data-tour="spielen-partien">
@@ -370,12 +169,28 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
               setzeSortierung(s);
               setzeAufsteigend(auf);
             }}
+            zusatz={loeschknopf}
+          />
+        )}
+        {!mitFilter && loeschknopf && <div className="filterknoepfe">{loeschknopf}</div>}
+        {gewaehlt && (
+          <Loeschleiste
+            gewaehlt={gewaehlt}
+            waehlbar={loeschbar}
+            setzeGewaehlt={setzeGewaehlt}
+            beiFertig={() => setzeGewaehlt(null)}
           />
         )}
         {passend.length === 0 && <p className="hinweis">{t("spielen.filter.leer")}</p>}
         <ul className="begriffsliste">
           {passend.slice(0, anzahl).map((eintrag) => (
-            <Partiezeile key={eintrag.partie.id} eintrag={eintrag} />
+            <Partiezeile
+              key={eintrag.partie.id}
+              eintrag={eintrag}
+              loeschmodus={gewaehlt !== null}
+              gewaehlt={gewaehlt?.has(eintrag.partie.id) ?? false}
+              beiWahl={() => umschalte(eintrag.partie.id)}
+            />
           ))}
         </ul>
         {rest > 0 && (

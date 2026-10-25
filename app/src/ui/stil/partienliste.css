@@ -1,0 +1,176 @@
+/*
+ * Zeilen der Partienliste (seit 0.2.142, Wunsch des Autors: übersichtlicher, Platz gut nutzen):
+ * links der Gegner mit Namen darunter, in der Mitte Ergebnis, Farbe, Zeitzeichen und Stern, klein
+ * Zeitart, Datum und Züge, rechts die Zahlen beider Seiten groß untereinander (Nachbesserung vom
+ * 25.10.2026: kein leerer Raum rechts; ui/komponenten/Partiezeile.tsx).
+ */
+.partienliste .partiezeile {
+  --zahlenbreite: 76px;
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  column-gap: var(--raster);
+  align-items: center;
+  padding: var(--raster) calc(var(--raster) / 2);
+}
+
+/* Gegner: Bild 48 px, Name klein darunter, höchstens zwei Zeilen. */
+.partie-wer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.partie-wer > .gegnerbild {
+  flex: none;
+  width: 48px;
+}
+
+.partie-wer .gegner-zeichen {
+  font-size: var(--groesse-grund);
+}
+
+.partie-wer-name {
+  max-width: 100%;
+  font-size: var(--groesse-fein);
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.partie-was {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+/* Ohne Zahlen (noch nicht ausgewertet) reicht die Mitte bis an den Rand. */
+.partie-was:last-child {
+  grid-column: 2 / -1;
+}
+
+/* Teile der kleinen Zeile brechen nur zwischeneinander um, nie „20 / Züge“. */
+.partie-klein > span {
+  white-space: nowrap;
+}
+
+/* Ergebnis, gespielte Farbe, Zeitart und Stern in einer Zeile, bei Platzmangel umbrochen. */
+.partie-kopf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+}
+
+.partie-kopf .seitenfigur {
+  vertical-align: middle;
+}
+
+.partie-zeitzeichen {
+  display: inline-flex;
+  color: var(--gold-text);
+}
+
+/* Gewertet: kleiner goldener Stern oben rechts am Porträt (spart Platz in der Kopfzeile). */
+.partie-gewertet {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.partie-gewertet svg {
+  fill: currentColor;
+}
+
+/*
+ * Zahlen beider Seiten rechts (Nachbesserung vom 25.10.2026, „grafischer“): klein die Art, darunter
+ * je Seite eine Marke mit König; die eigene golden gerahmt, bei der Genauigkeit mit Balken.
+ */
+.partie-zahlen {
+  display: grid;
+  justify-items: stretch;
+  gap: 3px;
+  align-self: start;
+  padding-top: 2px;
+  inline-size: var(--zahlenbreite);
+}
+
+.partie-zahlen-art {
+  font-size: var(--groesse-fein);
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-leise);
+}
+
+.partie-zahlen-marken {
+  display: grid;
+  gap: 3px;
+}
+
+.seitenmarke {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 4px;
+  padding: 1px 6px 1px 4px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.seitenmarke-zahl {
+  text-align: end;
+  font-weight: 600;
+  color: var(--text-leise);
+}
+
+.seitenmarke.eigene {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+}
+
+.seitenmarke.eigene .seitenmarke-zahl {
+  font-size: var(--groesse-mittel);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Balken der Genauigkeit: über die ganze Marke, unter Zahl und König. */
+.seitenmarke-balken {
+  grid-column: 1 / -1;
+  height: 3px;
+  margin-block: 1px 2px;
+  border-radius: 2px;
+  background: var(--linie);
+  overflow: hidden;
+}
+
+.seitenmarke-balken > span {
+  display: block;
+  height: 100%;
+  background: var(--text-leise);
+}
+
+.seitenmarke.eigene .seitenmarke-balken > span {
+  background: var(--gold);
+}
+
+.partie-klein {
+  font-size: var(--groesse-klein);
+  color: var(--text-leise);
+}

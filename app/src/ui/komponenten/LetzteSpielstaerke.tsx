@@ -10,12 +10,16 @@
  * Spielen ganz oben über dem Gegner (Spielen.tsx, seit 0.2.139 wieder dort).
  * Seit 0.2.125 steht je Zeitklasse auch die Elo-Wertung aus den Ergebnissen dabei (Empfehlung, vom
  * Autor am 24.10.2026 angenommen): Zugqualität und Ergebnisse nebeneinander erklären sich gegenseitig.
- * Abhängigkeiten: spiel/wertung.ts (staerkeLetzterPartien, verlaufDerZeitklasse), spiel/elomodell.ts,
+ * Seit 0.2.142 (Wunsch des Autors, 25.10.2026) stehen alle drei Zeitarten gleichzeitig als Kacheln
+ * nebeneinander: oben das Zeichen der Zeitart, darunter groß die Zahl, klein Spanne und Wertung;
+ * eine kleine Legende nennt die Zeichen. Spanne je Phase und Herleitung stehen hinter dem
+ * Fragezeichen.
+ * Abhängigkeiten: zeitartzeichen.ts, spiel/wertung.ts (staerkeLetzterPartien, verlaufDerZeitklasse), spiel/elomodell.ts,
  * speicher/partien.ts, speicher/speicher.ts, wertungstext.ts, InfoKnopf, i18n.
  */
 import { useMemo } from "react";
 import { t } from "../../i18n/sprache";
-import { WERTUNGSTEMPI } from "../../spiel/elomodell";
+import { WERTUNGSTEMPI, type Wertungstempo } from "../../spiel/elomodell";
 import { PHASEN } from "../../spiel/phasen";
 import {
   aktuelleWertung,
@@ -23,26 +27,51 @@ import {
   staerkeLetzterPartien,
   verlaufDerZeitklasse,
   type Spielerschaetzung,
+  type Wertungspunkt,
 } from "../../spiel/wertung";
 import type { Partieeintrag } from "../../speicher/partien";
 import { useSpeicher } from "../../speicher/speicher";
 import { MitInfo } from "./InfoKnopf";
 import { entsprichtText, zeitklassenname } from "./wertungstext";
+import { ZEITARTZEICHEN } from "./zeitartzeichen";
+
+/** Größe des Zeichens oben in der Kachel und in der Legende (Bildpunkte). */
+const KACHELZEICHEN = 26;
+const LEGENDENZEICHEN = 14;
+
+/** Was eine Kachel zeigt: Schätzung aus den Zügen und Wertung aus den Ergebnissen (je null). */
+interface Kachelstand {
+  readonly tempo: Wertungstempo;
+  readonly schaetzung: Spielerschaetzung | null;
+  readonly wertung: number | null;
+  readonly vorlaeufig: boolean;
+}
+
+/** Die Stände aller drei Zeitarten in fester Reihenfolge. */
+function kachelstaende(
+  partien: readonly Partieeintrag[],
+  punkte: readonly Wertungspunkt[],
+): Kachelstand[] {
+  return WERTUNGSTEMPI.map((tempo) => {
+    const kette = verlaufDerZeitklasse(punkte, tempo);
+    return {
+      tempo,
+      schaetzung: staerkeLetzterPartien(partien, tempo),
+      wertung: aktuelleWertung(kette),
+      vorlaeufig: istVorlaeufig(kette),
+    };
+  });
+}
 
 /**
- * Die Karte; ohne passende Partie nichts.
- * Beispiel: drei Schnellschach-Partien → „Schnellschach: etwa 1400“, darunter „1050 bis 1750, aus
- * 3 Partien“.
+ * Die Karte; ohne jede Schätzung und Wertung nichts.
+ * Beispiel: drei Schnellschach-Partien → Kacheln Blitz „–“, Schnellschach „1400“ mit
+ * „1050–1750“ und „Wertung 1424“, Klassisch „–“; darunter die Legende.
  */
 export function LetzteSpielstaerke({ partien }: { partien: readonly Partieeintrag[] }) {
-  const schaetzungen = useMemo(
-    () =>
-      WERTUNGSTEMPI.map((tempo) => staerkeLetzterPartien(partien, tempo)).filter(
-        (s): s is Spielerschaetzung => s !== null,
-      ),
-    [partien],
-  );
-  if (schaetzungen.length === 0) return null;
+  const punkte = useSpeicher((z) => z.daten.spiel.wertung);
+  const staende = useMemo(() => kachelstaende(partien, punkte), [partien, punkte]);
+  if (staende.every((s) => !s.schaetzung && s.wertung === null)) return null;
   return (
     <section
       className="karte letzte-spielstaerke"
@@ -51,68 +80,105 @@ export function LetzteSpielstaerke({ partien }: { partien: readonly Partieeintra
     >
       <MitInfo
         zeile={<h2 className="karte-titel">{t("spielstaerke.letzte.titel")}</h2>}
-        erklaerung={
-          <>
-            <p>{t("spielstaerke.letzte.erklaerung")}</p>
-            {schaetzungen.map((s) => (
-              <p key={s.tempo}>{entsprichtText(s)}</p>
-            ))}
-          </>
-        }
+        erklaerung={<Erklaerung staende={staende} />}
         thema={t("spielstaerke.letzte.titel")}
       />
-      {schaetzungen.map((s) => (
-        <Zeitklasse key={s.tempo} s={s} />
-      ))}
+      <div className="staerkekacheln">
+        {staende.map((s) => (
+          <Kachel key={s.tempo} stand={s} />
+        ))}
+      </div>
+      <p className="staerkelegende" aria-hidden="true">
+        {WERTUNGSTEMPI.map((tempo) => {
+          const Zeichen = ZEITARTZEICHEN[tempo];
+          return (
+            <span key={tempo}>
+              <Zeichen size={LEGENDENZEICHEN} />
+              {zeitklassenname(tempo)}
+            </span>
+          );
+        })}
+      </p>
     </section>
   );
 }
 
-/** Die Elo-Wertung dieser Zeitklasse aus den Ergebnissen, mit „vorläufig“ in den ersten Partien. */
-function Ergebniszeile({ tempo }: { tempo: Spielerschaetzung["tempo"] }) {
-  const punkte = useSpeicher((z) => z.daten.spiel.wertung);
-  const kette = verlaufDerZeitklasse(punkte, tempo);
-  const wertung = aktuelleWertung(kette);
-  if (wertung === null) return null;
-  const schluessel = istVorlaeufig(kette)
-    ? "spielstaerke.letzte.ausErgebnissenVorlaeufig"
-    : "spielstaerke.letzte.ausErgebnissen";
-  return <p className="hinweis">{t(schluessel, { wertung })}</p>;
-}
-
-/** Eine Zeitklasse: Zahl, Spanne mit Zahl der Partien, die Phasen mit schmaler Spanne, die Wertung. */
-function Zeitklasse({ s }: { s: Spielerschaetzung }) {
-  const phasen = PHASEN.filter((ph) => s.phasen[ph] !== null);
+/** Eine Kachel: Zeichen, Zahl (sonst „–“), Spanne, Wertung; für Bildschirmleser mit Namen. */
+function Kachel({ stand }: { stand: Kachelstand }) {
+  const Zeichen = ZEITARTZEICHEN[stand.tempo];
+  const s = stand.schaetzung;
   return (
-    <div className="letzte-spielstaerke-zeitklasse" data-testid={`letzte-spielstaerke-${s.tempo}`}>
-      <p className="letzte-spielstaerke-wert">
-        {t("spielstaerke.letzte.zeile", { zeitklasse: zeitklassenname(s.tempo), mitte: s.mitte })}
-      </p>
-      <p className="hinweis">
-        {t(s.partien === 1 ? "spielstaerke.letzte.spanneEins" : "spielstaerke.letzte.spanne", {
-          von: s.von,
-          bis: s.bis,
-          partien: s.partien,
-        })}
-      </p>
-      {phasen.length > 0 && (
-        <p className="hinweis">
-          {phasen
-            .map((ph) => {
-              const p = s.phasen[ph];
-              return p
-                ? t("spielstaerke.letzte.phase", {
-                    phase: t(`phase.name.${ph}`),
-                    mitte: p.mitte,
-                    von: p.von,
-                    bis: p.bis,
-                  })
-                : "";
-            })
-            .join(" · ")}
-        </p>
+    <div
+      className={s ? "staerkekachel" : "staerkekachel leer"}
+      role="group"
+      aria-label={zeitklassenname(stand.tempo)}
+      data-testid={`letzte-spielstaerke-${stand.tempo}`}
+    >
+      <Zeichen className="staerkekachel-zeichen" size={KACHELZEICHEN} aria-hidden="true" />
+      <span className="staerkekachel-zahl">{s ? s.mitte : "–"}</span>
+      <span className="staerkekachel-klein">
+        {s
+          ? t("spielstaerke.letzte.kachelSpanne", { von: s.von, bis: s.bis })
+          : t("spielstaerke.letzte.keine")}
+      </span>
+      {stand.wertung !== null && (
+        <span className="staerkekachel-klein staerkekachel-wertung">
+          {t(
+            stand.vorlaeufig
+              ? "spielstaerke.letzte.kachelWertungVorlaeufig"
+              : "spielstaerke.letzte.kachelWertung",
+            { wertung: stand.wertung },
+          )}
+        </span>
       )}
-      <Ergebniszeile tempo={s.tempo} />
     </div>
   );
+}
+
+/** Hinter dem Fragezeichen: die Herleitung, je Zeitart Spanne, Phasen, Wertung, Entsprechung. */
+function Erklaerung({ staende }: { staende: readonly Kachelstand[] }) {
+  return (
+    <>
+      <p>{t("spielstaerke.letzte.erklaerung")}</p>
+      {staende.map((stand) =>
+        stand.schaetzung ? <Einzelheiten key={stand.tempo} stand={stand} /> : null,
+      )}
+    </>
+  );
+}
+
+/** Ein Satzteil mit Punkt am Ende („… 1400“ → „… 1400.“), ein vorhandener bleibt. */
+function alsSatz(teil: string): string {
+  return /[.!?)]$/.test(teil) ? teil : `${teil}.`;
+}
+
+/** Eine Zeitart ausführlich: „Schnellschach: etwa 1400. 1050 bis 1750, aus 3 Partien. …“ */
+function Einzelheiten({ stand }: { stand: Kachelstand }) {
+  const s = stand.schaetzung;
+  if (!s) return null;
+  const phasen = PHASEN.flatMap((ph) => {
+    const p = s.phasen[ph];
+    return p ? [t("spielstaerke.letzte.phase", { phase: t(`phase.name.${ph}`), ...p })] : [];
+  });
+  const teile = [
+    t("spielstaerke.letzte.zeile", { zeitklasse: zeitklassenname(s.tempo), mitte: s.mitte }),
+    t(s.partien === 1 ? "spielstaerke.letzte.spanneEins" : "spielstaerke.letzte.spanne", {
+      von: s.von,
+      bis: s.bis,
+      partien: s.partien,
+    }),
+    ...(phasen.length > 0 ? [phasen.join(" · ")] : []),
+    ...(stand.wertung !== null
+      ? [
+          t(
+            stand.vorlaeufig
+              ? "spielstaerke.letzte.ausErgebnissenVorlaeufig"
+              : "spielstaerke.letzte.ausErgebnissen",
+            { wertung: stand.wertung },
+          ),
+        ]
+      : []),
+    entsprichtText(s),
+  ];
+  return <p>{teile.map(alsSatz).join(" ")}</p>;
 }

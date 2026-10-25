@@ -483,6 +483,16 @@ test("Partienliste: Filter und Sortieren mit Listen in Worten, Chips (R22, R54)"
   await filter.getByRole("radio", { name: "Älteste zuerst" }).click();
   await expect(liste.first().getByRole("img", { name: "Du hast Weiß gespielt" })).toBeVisible();
   await expect(filter.getByRole("button", { name: "Älteste zuerst" })).toBeVisible();
+  // Löschmodus (0.2.142): Papierkorb neben Filter, zwei Partien antippen, löschen.
+  await filter.getByRole("button", { name: "Partien löschen" }).click();
+  const zeilen = liste.locator(".partiezeile-oeffnen");
+  await zeilen.nth(0).click();
+  await zeilen.nth(1).click();
+  await expect(zeilen.nth(0)).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByText("2 ausgewählt")).toBeVisible();
+  await page.getByRole("button", { name: "Ausgewählte löschen" }).click();
+  await page.getByRole("button", { name: "Ja, löschen" }).click();
+  await expect(liste).toHaveCount(2);
 });
 
 test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgewertet", async ({
@@ -503,7 +513,8 @@ test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgew
   await page.screenshot({ path: "test-results/bilder/pgnimport.png", fullPage: true });
   await oeffneProfil(page);
   const eintrag = page.locator(".partienliste li.partieeintrag").first();
-  await expect(eintrag).toContainText("Anna – Ben");
+  // Seit 0.2.142 links der Gegner aus dem PGN unter einem Dateizeichen (Leser spielte Schwarz).
+  await expect(eintrag.locator(".partie-wer-name")).toHaveText("Anna");
   await expect(eintrag.locator(".ergebnis-gewonnen")).toContainText("0–1");
 });
 

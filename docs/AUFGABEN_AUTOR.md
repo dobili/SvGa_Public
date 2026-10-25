@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.140 (mit Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.142 (mit neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.140“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.142“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,53 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.142: Partienliste, Löschen per Auswahl, Spielstärke je Zeitart, mehr Porträt-Formen (Opus, 25.10.2026)
+
+Deine Wünsche vom 25.10.2026, nach drei Vorschauen von dir freigegeben.
+
+- [ ] N976. **Neue Zeile:** Profil › Deine Partien. Links das Porträt des Gegners, darunter sein
+      Name; gewertete Partien tragen einen kleinen goldenen Stern an der Ecke des Porträts. In der
+      Mitte oben Ergebnis (Pokal, Kreuz oder Händedruck mit „1–0“), ein König in deiner Farbe und
+      das Zeichen der Zeitart; darunter klein „Blitz 3 + 2 · 25.10.2026 · 20 Züge“. Dein eigenes
+      Porträt und dein Name stehen dort nicht mehr.
+- [ ] N977. **Zahlen als Marken:** Rechts klein „Elo“ oder „Genauigkeit“, darunter je Seite eine
+      Marke mit König in ihrer Farbe, deine oben und golden gerahmt. Elo nur, wenn beide Seiten
+      eine Schätzung haben, sonst immer die Genauigkeit beider (dann mit schmalem Balken). Die
+      Zahlen erscheinen, sobald die Partie ausgewertet ist (nach dem ersten Öffnen).
+- [ ] N978. **Platzhalter statt Porträt:** Eingelesene Partien zeigen ein Dateizeichen und den Namen
+      des Gegners aus dem PGN, Partien zu zweit zwei Personen („Zu zweit“), die Engine ohne Bot die
+      Stufenmarke.
+- [ ] N979. **Löschen per Auswahl:** Neben „Filter“ und „Sortieren“ ein Papierkorb (nur wenn es
+      ungewertete Partien gibt). Antippen, dann ungewertete Partien antippen: goldener Rahmen und
+      Haken. Gewertete sind blass mit Schloss. Oben „2 ausgewählt“, „Ausgewählte löschen“ (mit
+      Nachfrage), „Alle auswählen“, „Fertig“. In den Zeilen gibt es keinen Papierkorb mehr.
+- [ ] N980. **Deine Spielstärke (Spielen):** Blitz, Schnellschach und Klassisch stehen gleichzeitig
+      als drei Kacheln nebeneinander: Zeichen, Zahl groß, Spanne und „Wertung 1424“ klein; eine
+      Zeitart ohne Partie gestrichelt mit „–“. Darunter eine kleine Legende der Zeichen. Phasen,
+      Herleitung und Vergleich mit chess.com und FIDE hinter dem Fragezeichen.
+- [ ] N981. **Deine Wertung (Profil):** Sichtbar nur die Zahl mit der Marke „vorläufig“ und eine
+      kurze Zeile zum Stand. Alle Erklärtexte hinter dem Fragezeichen an der Überschrift. In den
+      Phasen nur „Spanne 1450–1650“ oder „Noch zu wenige Partien für eine Zahl.“
+- [ ] N982. **Mehr Porträt-Formen:** Name und Porträt › Selbst gestalten: Augen 12 (neu etwa runde
+      Brille, Wimpern, Augenbrauen), Nase 6, Mund 12 (neu etwa lachend, Zunge raus, Zahnlücke),
+      Bart 12 und „kein Bart“ (neu etwa kurzer und langer Vollbart, Koteletten, Henriquatre),
+      Oberteil 8 (neu Hemd mit Kragen, gestreift, Kapuzenpulli, mit Krawatte). Dasselbe bei
+      eigenen Bots.
+
+### Neu in 0.2.141: Baukasten mit Vorschaubildern und mehr Farben, Partienliste repariert (Opus, 25.10.2026)
+
+- [ ] N973. **Partienliste:** Profil › Deine Partien: Die Porträts der Gegner sind wieder klein
+      (wie vor 0.2.140), dein eigenes sitzt klein unten links davor.
+- [ ] N974. **Vorschaubilder statt Ausklappmenüs:** Name und Porträt › Selbst gestalten. Frisur,
+      Augen, Nase, Mund, Bart und Oberteil zeigen je eine waagerecht wischbare Reihe kleiner Bilder:
+      dein aktuelles Gesicht mit genau dieser Variante, die gewählte gold umrandet; darüber steht
+      „Frisur: Lockiger Dutt“. Bei Augen, Nase, Mund und Bart zeigt die Vorschau nur das Gesicht,
+      vergrößert. Dasselbe im Porträt eigener Bots.
+- [ ] N975. **Mehr Farben:** Haarfarbe 18 (neu etwa Tiefschwarz, Haselnuss, Kastanie, Platinblond,
+      Weiß, Blau, Grün, Lila), Hautfarbe 12 (neu etwa Porzellan, Golden, Tiefdunkel), Oberteil 16
+      (neu etwa Navy, Gold, Weiß, Schwarz, Orange, Himmelblau). Mehr Formen (Frisuren, Augen …) gibt
+      der Zeichenstil der Bot-Porträts nicht her; ein anderer Stil passte nicht zu den Bots.
 
 ### Neu in 0.2.140: dein Name und Porträt, Porträt-Baukasten auch für eigene Bots (Opus, 25.10.2026)
 

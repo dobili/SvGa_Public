@@ -5,7 +5,7 @@
 import { describe, expect, it } from "vitest";
 import { gibAuf, neuePartie, type Partie } from "../spiel/partie";
 import { eigenerGegnerAus } from "./gegner";
-import { legeAb, LEERER_SPIELSTAND, ohnePartie } from "./partien";
+import { legeAb, LEERER_SPIELSTAND, ohnePartien } from "./partien";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
 
@@ -34,9 +34,13 @@ function partie(id: string, gewertet: boolean): Partie {
 
 describe("Partie löschen", () => {
   it("löscht ungewertete Partien, gewertete bleiben", () => {
-    const stand = [partie("a", false), partie("b", true)].reduce(legeAb, LEERER_SPIELSTAND);
-    expect(ohnePartie(stand, "a").partien.map((e) => e.partie.id)).toEqual(["b"]);
-    expect(ohnePartie(stand, "b").partien.map((e) => e.partie.id)).toEqual(["b", "a"]);
+    const stand = [partie("a", false), partie("b", true), partie("c", false)].reduce(
+      legeAb,
+      LEERER_SPIELSTAND,
+    );
+    const ids = (s: typeof stand) => s.partien.map((e) => e.partie.id);
+    expect(ids(ohnePartien(stand, new Set(["a"])))).toEqual(["c", "b"]);
+    expect(ids(ohnePartien(stand, new Set(["a", "b", "c"])))).toEqual(["b"]);
   });
 });
 

@@ -10,7 +10,7 @@
  * (spiel/zugklassenvergleich-daten.ts): „üblich“ ist der Median der Spieler des Bandes in der
  * Zeitklasse, „normal“ reicht vom 5-%- bis zum 95-%-Quantil der Spieler, erweitert um die
  * Zufallsstreuung einer einzelnen Partie mit so vielen Zügen (Binomial, 90 %), damit eine Partie
- * nicht schon durch Würfelglück „gut“ oder „schwach“ heißt. Brillant, stark und Buchzug kennen die
+ * nicht schon durch Würfelglück „gut“ oder „schwach“ heißt. Brillant, stark und Theoriezug kennen die
  * Profile nicht; dafür bleibt die vorläufige Schätzung mit der festen Zone 75 bis 125 %.
  * Abhängigkeiten: spiel/auswertung.ts (Zugklasse), spiel/zugklassenvergleich-daten.ts,
  * spiel/elomodell-daten.ts (Zeitklasse).
@@ -29,7 +29,14 @@ export const GUTE_KLASSEN: ReadonlySet<Zugklasse> = new Set([
   "buch",
 ]);
 
-/** Klassen, die die Spielerprofile nicht kennen: vorläufige Anteile in Prozent je Band. */
+/**
+ * Klassen, die die Spielerprofile nicht kennen: vorläufige Anteile in Prozent je Band.
+ * „buch“ heißt seit dem 25.10.2026 „Theoriezug“ (schach/theorie.ts). Die Schätzung blieb dabei
+ * unverändert; nachgemessen an 60.000 Lichess-Partien (September 2026, ohne Bullet, Anteil an
+ * allen Zügen einer Seite): Theoriezüge nach der neuen Regel 6,9 bis 8,0 %, Züge aus dem
+ * Eröffnungsindex des Buches allein nur 3,7 bis 4,7 %. Die Schätzung (6 bis 11 %) meinte also
+ * schon Theorie im Sinne von chess.com; ab etwa 1600 liegt sie über dem Gemessenen (7 bis 8 %).
+ */
 const VORLAEUFIG: Readonly<
   Record<"brillant" | "stark" | "buch", readonly (readonly [number, number])[]>
 > = {

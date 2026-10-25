@@ -38,3 +38,18 @@ def test_englische_liste_behaelt_die_namen_von_lichess() -> None:
     assert "Sicilian Defense: Najdorf Variation" in namen
     assert any(n.startswith("Ruy Lopez") for n in namen)
     assert not any(n.startswith("Spanische Partie") for n in namen)
+
+
+def test_zugfolge_fuehrt_zur_stellung_des_eintrags() -> None:
+    """Seit Schema-Version 2 (Theoriezug): Die Zugfolge jedes Eintrags endet in seiner Stellung."""
+    daten = baue(sprache="en")
+    assert daten["schemaVersion"] == 2
+    stellungen = daten["stellungen"]
+    assert isinstance(stellungen, list)
+    for schluessel, _eco, name, zuege in stellungen:
+        brett = chess.Board()
+        for san in zuege.split(" "):
+            brett.push_san(san)
+        assert stellungsschluessel(brett) == schluessel, name
+    spanisch = next(s for s in stellungen if s[2] == "Ruy Lopez")
+    assert spanisch[3] == "e4 e5 Nf3 Nc6 Bb5"

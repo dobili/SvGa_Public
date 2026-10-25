@@ -12,9 +12,13 @@
  * nachher statt der Bauerneinheiten der Engine: Stockfish rechnet seine Zahl aus der Gewinnchance,
  * eine Figur mehr ergibt dort 5 bis 7 „Bauern“, chess.com zeigt kleinere Zahlen. Die Gewinnchance
  * hängt weniger an der Skala; das Material nennt die Erklärung nach den Werten des Buches.
+ * Seit dem Theoriezug (Wunsch des Autors, 25.10.2026) steht bei einem Theoriezug „Theoriezug: Teil
+ * einer Eröffnung“ (oder „eines Gambits“), das Wort klappt die zutreffenden Namen auf
+ * (Theorieangabe.tsx).
  * Abhängigkeiten: spiel/auswertung.ts, spiel/rueckblick.ts, spiel/zuege.ts, i18n,
  * ui/trainer/FehlerFormular.tsx.
  */
+import { useId, useState } from "react";
 import { sprache, t, zahlText } from "../../i18n/sprache";
 import { sanInSprache } from "../../schach/notation";
 import { fenNachZuegen } from "../../schach/weiterspielen";
@@ -30,6 +34,8 @@ import { gewinnchanceVorNach, type Chance } from "./gewinnchance";
 import { Aufklapper } from "./Aufklapper";
 import { MitInfo } from "./InfoKnopf";
 import { Nebenzweig, type Zweigwahl } from "./Nebenzweig";
+import { Theorieliste, Theoriesatz } from "./Theorieangabe";
+import { useTheorieauskunft } from "./useTheorie";
 import type { Rueckblick } from "./useRueckblick";
 
 /**
@@ -137,6 +143,10 @@ export function Rueckblickkarte({
 }) {
   const urteil = rueckblick.urteile[index];
   const san = partie.zuege[index]?.san ?? "";
+  const theoriezug = urteil?.klasse === "buch";
+  const auskunft = useTheorieauskunft(rueckblick.theorie, partie, index, theoriezug);
+  const [theorieOffen, setzeTheorieOffen] = useState(false);
+  const listenId = useId();
   if (!urteil || !san) return null;
   const nummer = zugnummer(partie, index);
   const zug = `${nummer} ${sanInSprache(san, sprache())}`;
@@ -161,11 +171,21 @@ export function Rueckblickkarte({
         zeile={
           <p className="rueckblick-urteil">
             <strong>
-              {urteilssatz(
-                zug,
-                urteil,
-                bester,
-                gewinnchanceVorNach(rueckblick.werte, index, fen.split(" ")[1] !== "b"),
+              {auskunft ? (
+                <Theoriesatz
+                  zug={zug}
+                  auskunft={auskunft}
+                  offen={theorieOffen}
+                  beiUmschalten={() => setzeTheorieOffen((o) => !o)}
+                  listenId={listenId}
+                />
+              ) : (
+                urteilssatz(
+                  zug,
+                  urteil,
+                  bester,
+                  gewinnchanceVorNach(rueckblick.werte, index, fen.split(" ")[1] !== "b"),
+                )
               )}
             </strong>{" "}
             {t("rueckblick.bewertung", {
@@ -177,6 +197,7 @@ export function Rueckblickkarte({
         erklaerung={<p>{t("rueckblick.balkenInfo")}</p>}
         thema={t("rueckblick.balkenThema")}
       />
+      {auskunft && <Theorieliste auskunft={auskunft} offen={theorieOffen} id={listenId} />}
       {erklaerung && (
         <p className="rueckblick-erklaerung">
           {t("rueckblick.erklaerung", { seite, text: erklaerung.text })}

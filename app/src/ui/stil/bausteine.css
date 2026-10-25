@@ -105,23 +105,27 @@
 
 .kreisreihe {
   display: grid;
-  /* In em, damit die Ringe bei großer Systemschrift untereinander rücken, statt die Wörter
-     daneben zu zerhacken (DS1). Bei Standardschrift wie bisher etwa 140 Pixel. */
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8.25em), 1fr));
-  gap: calc(var(--raster) * 1.5);
+  /* In em, damit die Ringe bei großer Systemschrift in weniger Spalten rücken (DS1). Seit DS53
+     steht das Wort unter dem Ring: Drei Ringe passen bei 360 Pixeln in eine Reihe, und
+     „Warum-Fragen“ wird nicht mehr mitten im Wort getrennt. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 5.75em), 1fr));
+  gap: var(--raster);
 }
 
 .kreisanzeige {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--raster);
+  gap: calc(var(--raster) / 2);
   min-width: 0;
+  text-align: center;
 }
 
 .kreisanzeige-text {
+  align-items: center;
   min-width: 0;
   overflow-wrap: break-word;
-  hyphens: auto;
+  hyphens: manual;
   display: flex;
   flex-direction: column;
   gap: 2px;

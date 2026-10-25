@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 26.10.2026, Version 0.2.144 (mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 26.10.2026, Version 0.2.145 (mit Blitz-Korrektur für Maia; 0.2.144 mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.144“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.145“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -30,7 +30,8 @@ Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht mehr
 
 Du hast mich gebeten, über Nacht alles Offene ohne Rückfragen umzusetzen. Hier steht, was
 passiert ist; die Testpunkte dazu sind N990 bis N999 (Teil 1, ganz oben). Alles ist umgesetzt
-und nach `main` gebracht (Version 0.2.144). Widerspruch genügt, dann baue ich es zurück.
+und nach `main` gebracht (Version 0.2.144, dazu 0.2.145 mit der Blitz-Korrektur für Maia).
+Widerspruch genügt, dann baue ich es zurück.
 
 **Für dich gebaut:**
 - Gruppenmodus: Die acht Gesichter einer Gruppe sitzen klein auf einem Kreis von der Größe
@@ -53,8 +54,8 @@ und nach `main` gebracht (Version 0.2.144). Widerspruch genügt, dann baue ich e
 - Die Gruppenmodi sind mit den neuen Gruppen neu gemessen, mit und ohne Maia.
 - Blitz und Klassisch geprüft: Ohne Maia passen die Bots in Blitz. Mit Maia waren in Blitz
   Stufe 4 und 5 zu schwach und Stufe 7 zu stark; dafür gibt es jetzt eine eigene Korrektur,
-  die gerade nachgemessen wird. Klassisch ist noch in Arbeit; kommt dabei etwas heraus, folgt
-  0.2.145.
+  in zwei Runden nachgemessen (0.2.145). Klassisch passt mit und ohne Maia, dort ändert sich
+  nichts.
 
 **Fehler gefunden und behoben** (ein Helfer hat die Testpunkte N600 bis N776 in der App
 nachgespielt): In der Planbilanz-Übung war eine falsche Antwort manchmal ein Satz über den
@@ -148,6 +149,10 @@ Teil fertig ist.
       zurück zu Spielen (oder lade neu): Die Regler stehen weiter auf 5 · 5 · 5. Dasselbe gilt
       für Uhr, Farbe und Gegner. Ohne gewertete Partie mit genug Zügen steht in „Deine Wertung“
       jetzt, dass eine Partie erst ab zehn eigenen Zügen vor der Entscheidung zählt.
+- [ ] N1004. **Blitz mit Maia (0.2.145):** Spiele mit Maia an eine Partie mit 3 + 2 gegen einen
+      Bot der Stufe 5 oder 7. Er soll sich etwa so stark anfühlen wie die Zahl in der Gegnerwahl
+      (vorher spielte Stufe 5 in Blitz mit Maia deutlich schwächer, Stufe 7 stärker). Ohne Maia
+      und in den anderen Zeitarten ändert sich nichts.
 
 ### Neu in 0.2.143: Maia, Plan C, zwei Zahlensätze, acht Neulinge (Opus, 25.10.2026)
 

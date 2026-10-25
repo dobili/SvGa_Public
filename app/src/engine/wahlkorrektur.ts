@@ -26,7 +26,9 @@
  * 280 zu stark. Darum mit Maia eine eigene Reihe. Nachprüfung (Zweige pruefung-blitz-N-maia2):
  * Stufe 4 mit −175 Anker 1042 (passt); Stufe 5 ohne Korrektur 1557, also etwa 190 zu stark (mit
  * −360 waren es 936, Steigung etwa 1,7), daher −110; Stufe 7 mit −150 Anker 2019, noch etwa 190 zu
- * stark (Steigung etwa 0,5), daher vorsichtig −300 (ein Anker streut etwa ±100).
+ * stark (Steigung etwa 0,5), daher vorsichtig −300 (ein Anker streut etwa ±100). Dritte Runde
+ * (maia3): Stufe 5 mit −110 Anker 1279 (erwartet 1369, im Rauschen), Stufe 7 mit −300 Anker 1714
+ * (etwa 110 zu schwach); zwischen −150 (+190) und −300 (−110) liegt die Null bei etwa −240.
  * Abhängigkeiten: engine/zeitklassenabstand.ts, engine/stufen.ts (Typ), spiel/elomodell-daten.ts (Typ).
  */
 import type { Wertungstempo } from "../spiel/elomodell-daten";
@@ -43,7 +45,7 @@ const KORREKTUR: Readonly<Record<Zeitklasse, readonly number[]>> = {
 
 /** Dieselbe Korrektur, wenn Maia mitspielt (seit 0.2.144, Herleitung im Dateikopf). */
 const KORREKTUR_MAIA: Readonly<Record<Zeitklasse, readonly number[]>> = {
-  blitz: [0, 0, -180, -175, -110, -125, -300, 0, 0],
+  blitz: [0, 0, -180, -175, -110, -125, -240, 0, 0],
   classical: [0, 0, 0, 0, 90, 0, 0, 0, 0],
 };
 

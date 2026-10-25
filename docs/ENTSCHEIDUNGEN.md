@@ -5833,9 +5833,12 @@ Freischaltung und vollem Ring, kleine Siegesanimation, Erklärtexte für Leser o
   Maia: Abweichungen −92 bis +114, nur Stufe 8 +291, im Mittel +59; die Umrechnung bleibt. Blitz mit
   Maia: Stufe 5 etwa −450, Stufe 4 −120 bis −260, Stufe 7 +130 bis +280, der Rest im Rauschen. Die
   Wertung geht mit Maia auch an deren Netz, deshalb wirkte die Blitz-Korrektur dort stärker; mit
-  Maia gilt eine eigene Reihe (`engine/wahlkorrektur.ts`, KORREKTUR_MAIA). Nachprüfung auf
-  `pruefung-blitz-{4,5,7}-maia2`. Klassisch: Ergebnisse bei Abschluss dieses Abschnitts noch
-  unvollständig (Stand in `docs/FORTSCHRITT.md`).
+  Maia gilt eine eigene Reihe (`engine/wahlkorrektur.ts`, KORREKTUR_MAIA), in zwei Runden
+  nachgeprüft (`pruefung-blitz-N-maia2`, `-maia3`): Stufe 3 bis 7 jetzt −180, −175, −110, −125,
+  −240 (ohne Maia −180, −350, −360, −125, 0); Stufe 4 und 5 passen auf etwa ±100, Stufe 7 liegt
+  zwischen den Messungen mit −150 (+190) und −300 (−110). Seit 0.2.145. Klassisch ohne Maia:
+  Abweichungen −94 bis +56, mit Maia −189 bis +125 (Stufe 2 bis 9); beides im Rauschen eines
+  Ankers, die Reihe für Klassisch bleibt.
 - **Feiern:** Gruppenbild als Kreis aus acht kleinen Gesichtern (`Gruppenbild` in
   `Gruppenmodus.tsx`); Feuerwerk (`Feuerwerk.tsx`, CSS, bei „Bewegung reduzieren“ nur ein
   Aufleuchten) und Fanfare (`app/ton.ts`, „feier“) bei der Freischaltung einer Gruppe und bei einem

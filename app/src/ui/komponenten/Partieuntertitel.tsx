@@ -9,10 +9,10 @@
  * Stufen, Farbe und Eröffnung stehen klein darunter.
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts, spiel/partie.ts, speicher, GegnerBild.tsx, i18n.
  */
-import { durchschnitt, gegnername, gegnerVon as botVon, klasseVon } from "../../engine/gegner";
+import { gegnername, gegnerVon as botVon, klasseVon } from "../../engine/gegner";
 import { gruppenstufe } from "../../engine/gruppe";
 import { stufe } from "../../engine/stufen";
-import { t, zahlText } from "../../i18n/sprache";
+import { t } from "../../i18n/sprache";
 import {
   EROEFFNUNG_BUCH,
   EROEFFNUNG_PRAXIS,
@@ -54,13 +54,12 @@ export function Untertitel({ partie }: { partie: PartieDaten }) {
   const stufenText = verschieden
     ? t("partie.stufenJePhase", { e: je.eroeffnung, m: je.mittelspiel, s: je.endspiel })
     : t("partie.stufe", { nummer: s.nummer, name: t(s.name) });
-  // Vorgefertigte Gegner verraten ihre Stufen je Phase nicht (0.2.46): nur Durchschnitt und Klasse.
+  // Vorgefertigte Gegner verraten ihre Stufen je Phase nicht (0.2.46): nur ihre Gruppe, wie in der
+  // Gegnerwahl (seit 0.2.144 statt des Durchschnitts, der nicht zur festen Gruppe passte, N779).
   const vorgefertigt = botVon(partie.einstellung.bot);
-  const botText = vorgefertigt
-    ? t("partie.gegnerSchnitt", {
-        schnitt: zahlText(durchschnitt(vorgefertigt), 1, false),
-        klasse: t(klasseVon(vorgefertigt).name),
-      })
+  const klasse = vorgefertigt ? klasseVon(vorgefertigt) : null;
+  const botText = klasse
+    ? t("partie.stufe", { nummer: klasse.nummer, name: t(klasse.name) })
     : stufenText;
   const stufentext = bot ? t("partie.gegnerBot", { name: bot, stufen: botText }) : stufenText;
   const zeile = (

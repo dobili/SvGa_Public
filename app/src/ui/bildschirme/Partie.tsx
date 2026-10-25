@@ -33,6 +33,7 @@ import { aendere, useSpeicher } from "../../speicher/speicher";
 import { zugurteile, type Zugklasse } from "../../spiel/auswertung";
 import { phasenJeStellung, type Phase } from "../../spiel/phasen";
 import { theorieJeZug } from "../../schach/theorie";
+import { gambitJeZug } from "../../schach/theorienamen";
 import { useTheorie } from "../komponenten/useTheorie";
 import { Auswertung, type Sprung } from "../komponenten/Auswertung";
 import { Brettbereich } from "../komponenten/Brettbereich";
@@ -283,14 +284,11 @@ function Inhalt({ s, partie }: { s: Partiesteuerung; partie: PartieDaten }) {
   const urteile = useMemo(() => {
     if (!eintrag) return [];
     const p = eintrag.partie;
-    const jeZug = theorie
-      ? theorieJeZug(
-          theorie,
-          stellungen(p),
-          p.zuege.map((z) => z.san),
-        )
-      : [];
-    return zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende, jeZug);
+    const fens = stellungen(p);
+    const sans = p.zuege.map((z) => z.san);
+    const jeZug = theorie ? theorieJeZug(theorie, fens, sans) : [];
+    const gambits = theorie ? gambitJeZug(theorie, fens, sans) : [];
+    return zugurteile(p, eintrag.werte, eintrag.beste, eintrag.abstaende, jeZug, gambits);
   }, [eintrag, theorie]);
   const phasen = useMemo(() => phasenJeStellung(partie), [partie]);
   const ruhig = vorlieben.ruhigeAnsicht;

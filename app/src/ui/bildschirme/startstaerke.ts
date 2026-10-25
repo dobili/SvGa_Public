@@ -9,8 +9,10 @@
  * Abhängigkeiten: engine/botstaerke.ts, gegnerprofil.ts, uhrwahl.ts.
  */
 import { gegnerstaerke } from "../../engine/botstaerke";
+import { gruppenstaerkeSichtbar, gruppenstufe } from "../../engine/gruppe";
 import { aktiverAnzeigesatz } from "../../engine/zahlensatz";
 import type { EigenerGegner } from "../../engine/gegner";
+import type { Besiegte } from "../../speicher/besiegt";
 import type { Spielvorlieben } from "../../speicher/partien";
 import { wirksameUhr } from "../komponenten/uhrwahl";
 import { gegnerprofil } from "./gegnerprofil";
@@ -34,4 +36,20 @@ export function startstaerke(
     // Vor der Partie gilt der Zahlensatz der Anzeige (mit Maia, wenn es jetzt mitspielt).
     maia: aktiverAnzeigesatz() === "mit",
   });
+}
+
+/**
+ * Die Angabe der Startleiste: wie startstaerke, für eine Gruppe vor dem ersten Sieg aber
+ * „unbekannt“ wie in Sprechblase und Knopf (Gruppenmodus, Befund N795 vom 26.10.2026).
+ * Beispiel: Gruppe der Stufe 1, noch nie besiegt → "unbekannt"; nach einem Sieg ihre Zahl.
+ */
+export function startangabe(
+  v: Spielvorlieben,
+  fen: string,
+  eigene: readonly EigenerGegner[],
+  besiegt: Besiegte,
+): number | "unbekannt" | null {
+  const gruppe = v.gegner === "engine" ? gruppenstufe(v.bot) : null;
+  if (gruppe !== null && !gruppenstaerkeSichtbar(besiegt, gruppe)) return "unbekannt";
+  return startstaerke(v, fen, eigene);
 }

@@ -27,7 +27,6 @@ import { MAX_NAMENSLAENGE, mitEigenemGegner, ohneEigenenGegner } from "../../spe
 import { mitEigenenGegnern } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { neutralisiert } from "./fehlergruppen";
-import { AlteEinstellungen } from "./Fehlerprofil";
 import { GegnerReiter } from "./GegnerReiter";
 import { GegnerBild } from "./GegnerBild";
 import { bildVon, mitBild } from "../profil/gegnerbildwahl";
@@ -150,7 +149,6 @@ function Formular({
           />
         }
       />
-      <AlteEinstellungen g={g} wann="speichern" />
       <div className="knopfreihe">
         <button
           type="button"

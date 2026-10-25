@@ -139,6 +139,10 @@ describe("Zugklassen (0.2.40, wie bei chess.com)", () => {
     expect(klasseVon(3, ruhig)).toBe("patzer");
     expect(klasseVon(1.2, ruhig)).toBe("fehler");
     expect(klasseVon(0.5, ruhig)).toBe("ungenau");
+    // Gambit (Befund N947): ein Theoriezug darf bis unter 1,2 kosten; sonst ab 0,5 nicht.
+    expect(klasseVon(0.7, { ...ruhig, buch: true, gambit: true })).toBe("buch");
+    expect(klasseVon(0.7, { ...ruhig, buch: true })).toBe("ungenau");
+    expect(klasseVon(1.2, { ...ruhig, buch: true, gambit: true })).toBe("fehler");
     expect(klasseVon(0.3, ruhig)).toBe("gut");
     expect(klasseVon(0.1, ruhig)).toBe("sehrGut");
     // Gleichwertig, aber nicht der Zug der Engine: sehr gut (0.2.50, wie „exzellent“ bei chess.com).

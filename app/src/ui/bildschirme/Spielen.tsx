@@ -40,7 +40,7 @@ import { Titelsymbol } from "../komponenten/Titelsymbol";
 import { gruppenstufe, gruppenstufen } from "../../engine/gruppe";
 import { gegnerVon } from "../../engine/gegner";
 import { gegnerprofil } from "./gegnerprofil";
-import { startstaerke } from "./startstaerke";
+import { startangabe } from "./startstaerke";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { TourKnopf } from "../../tour/TourKnopf";
 import { LaufendePartie } from "../komponenten/Partienliste";
@@ -270,6 +270,14 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
     // Seit 0.2.128: Bots eröffnen wie Menschen ihrer Stärke (engine/praxisbuch.ts)
     eroeffnung: EROEFFNUNG_PRAXIS,
   });
+  // Die Wahl von Gegner, Stufen, Uhr und Hilfen gilt sofort als Vorliebe, nicht erst beim
+  // Beginnen; sonst stand die eigene Stufe nach einem Wechsel zum Buch wieder auf 1 · 1 · 1,
+  // während Fehler und Stil schon gespeichert waren (Befund zu N801, 26.10.2026).
+  const setzeUndMerke = (neu: Wahl) => {
+    setzeWahl(neu);
+    if (neu.vorlieben !== wahl.vorlieben)
+      void aendere((d) => ({ ...d, spiel: mitVorlieben(d.spiel, neu.vorlieben) }));
+  };
   // Eine eigene Stellung: Der Leser spielt zunächst die Seite am Zug.
   const uebernimm = (neu: string) => {
     setzeFen(neu);
@@ -310,7 +318,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
       <Einstellungen
         wahl={wahl}
         fen={fen}
-        setze={setzeWahl}
+        setze={setzeUndMerke}
         kategorie={kategorie}
         setzeKategorie={setzeKategorie}
         eroeffnung={
@@ -335,7 +343,7 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
           farbe: wahl.farbe,
           uhr: uhrnameKurz(uhrstelle(fen, wahl.vorlieben.uhr)),
           gewertet: wirdGewertet(fen, wahl.vorlieben),
-          staerke: startstaerke(wahl.vorlieben, fen, spiel.eigeneGegner),
+          staerke: startangabe(wahl.vorlieben, fen, spiel.eigeneGegner, spiel.besiegt),
         }}
         knopf={
           <BeginnenKnopf

@@ -17,7 +17,8 @@ import { Auswahl } from "./Auswahl";
 import { useMaiaBereit } from "./maiastand";
 
 const PROZENT = 100;
-const MB = 1024 * 1024;
+// Dezimale Megabyte wie die Angabe im Knopf (vorher MiB: „96 MB“ im Knopf, „91 MB“ beim Laden).
+const MB = 1000 * 1000;
 /** Größe des Pakets für den Text vor dem Laden (zwei Netze zu 42 MB und die Laufzeit). */
 const PAKET_MB = 96;
 

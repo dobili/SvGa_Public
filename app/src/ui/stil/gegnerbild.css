@@ -53,6 +53,11 @@
   width: 64px;
 }
 
+/* Zeile unter „Eigene Bots verwalten“: kleines Bild (fiel in 0.2.142 mit der Partienliste weg). */
+.gegnerzeile-kopf > .gegnerbild {
+  width: 36px;
+}
+
 .gegnerzeile-kopf {
   display: flex;
   align-items: center;

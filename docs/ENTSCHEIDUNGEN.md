@@ -5806,3 +5806,54 @@ main damit“).
 - Porträt-Baukasten: doppelt so viele Formen für Augen, Nase, Mund, Bart und Oberteil. Eigene
   Zeichnungen im Stil von Personas ersetzen den Inhalt der jeweiligen Bauteil-Gruppe an ihrer
   festen Stelle im SVG (`ui/profil/eigeneTeile.ts`); gespeichert wird weiter das fertige SVG.
+
+## Nachtarbeit 25./26.10.2026: Nachmessung, feste Gruppen, Zeitklassen mit Maia, Feiern (Opus, Version 0.2.144)
+
+Auftrag des Autors (25.10.2026 abends): alle offenen Punkte ohne Rückfragen umsetzen, auch nach
+`main`, Messungen mit den anderen Chats anstoßen; dazu Gruppenbild als Kreis, Feuerwerk bei
+Freischaltung und vollem Ring, kleine Siegesanimation, Erklärtexte für Leser ohne Vorwissen, Tour
+überall prüfen; nachträglich ein Hinweis auf Maia beim ersten Bot.
+
+- **Nachmessung** (`skripte/messe-nach.sh`, Zweige `messung-nach-*`): 24 Partien mehr je Bot und
+  Kandidat, zusammen 36. Stufen ohne / mit Maia jetzt 607 / 592, 797 / 733, 1052 / 964,
+  1233 / 1323, 1434 / 1544, 1610 / 1834, 1746 / 1959, 1977 / 2166, 2050 / 2324, 2864 / 3287.
+- **Feste Gruppen** (`engine/botgruppen-daten.ts`, `skripte/ordne-gruppen.mjs`): Auch mit 36
+  Partien überschnitten sich die Bereiche benachbarter Stufen, wenn die Gruppe aus der gerundeten
+  Zahl kam. Seit 0.2.144 stehen die acht schwächsten Bots (nach der Zahl ohne Maia) in Stufe 1, die
+  nächsten acht in Stufe 2 und so weiter. Die Liste bleibt fest, auch wenn neue Messungen die
+  Zahlen leicht verschieben (Wunsch des Autors vom 19.10.: keine Überschneidung). Test: je Stufe
+  acht Bots, höchste Zahl einer Stufe höchstens gleich der niedrigsten der nächsten.
+- **Gruppen neu gemessen** (`skripte/sammle-gruppen.sh`, Zweige `messung-gruppen-{ohne,mit}-1/2`,
+  72 Partien je Gruppe, alte Gruppenpartien aus der Auswertung genommen). Ohne Maia 411, 789, 932,
+  1359, 1529, 1924, 2239, 2479, 2574, 2534; mit Maia 410, 674, 991, 1177, 1467, 1894, 2312, 2857,
+  2941, 2891.
+- **Zeitklassen** (`skripte/pruefe-anker.sh`, `sammle-pruefung.sh`, je Stufe 2 bis 9 ein Anker mit
+  40 Partien in Blitz 3 + 2 und Klassisch 30 + 20, ohne und mit Maia). Vergleich: Abstand Anker
+  Zeitklasse minus Anker Schnellschach gegen den erwarteten Abstand derselben Stufe. Blitz ohne
+  Maia: Abweichungen −92 bis +114, nur Stufe 8 +291, im Mittel +59; die Umrechnung bleibt. Blitz mit
+  Maia: Stufe 5 etwa −450, Stufe 4 −120 bis −260, Stufe 7 +130 bis +280, der Rest im Rauschen. Die
+  Wertung geht mit Maia auch an deren Netz, deshalb wirkte die Blitz-Korrektur dort stärker; mit
+  Maia gilt eine eigene Reihe (`engine/wahlkorrektur.ts`, KORREKTUR_MAIA). Nachprüfung auf
+  `pruefung-blitz-{4,5,7}-maia2`. Klassisch: Ergebnisse bei Abschluss dieses Abschnitts noch
+  unvollständig (Stand in `docs/FORTSCHRITT.md`).
+- **Feiern:** Gruppenbild als Kreis aus acht kleinen Gesichtern (`Gruppenbild` in
+  `Gruppenmodus.tsx`); Feuerwerk (`Feuerwerk.tsx`, CSS, bei „Bewegung reduzieren“ nur ein
+  Aufleuchten) und Fanfare (`app/ton.ts`, „feier“) bei der Freischaltung einer Gruppe und bei einem
+  vollen Ring (`Ringfeier.tsx`, je Ring einmal, Merker `ringeGefeiert`); nach einem Sieg goldenes
+  Leuchten, wenige Funken und ein Dreiklang („sieg“), bei Niederlage ein kurzes Abdunkeln ohne Ton,
+  bei Remis nur das Schild (`Ergebnisblende.tsx`, `brett.css`).
+- **Maia-Hinweis** (Wunsch des Autors, 26.10.2026): einmaliges Fenster beim ersten Antippen eines
+  vorgefertigten Bots (`MaiaHinweis.tsx`, `maiahinweis.ts`, Merker `maiaHinweis`) mit kurzer
+  Erklärung, MaiaWahl in Kurzform (Laden oder Schalter) und dem Weg Zahnrad › Bots. Kommt nicht,
+  wenn Maia schon an ist; die automatische Vorauswahl beim Wechsel zählt nicht.
+- **Texte:** 32 Erklär- und Tourtexte einfacher (keine Median, Quantile, Eichung, Skala; Agent
+  auf Zweig `texte-einfach`), die Regel der Zugzeichen ohne Grenzwerte, 13 ungenutzte Texte des
+  alten Gegner-Editors entfernt. Tour: Ziele repariert (Trainerwahl, Sichtbarkeit, Partiestatus,
+  Gegnerstufen), neue Schritte zu Profilkarte, Reiter „Bots“, Gegnerart, Werkzeugen am Brett.
+- **Befunde der Vorprüfung** (Testliste N600 bis N776, Agent): Planbilanz-Ablenker nur von
+  derselben Seite, Warum-Fragen mit eigener Überschrift und nur im Mittelspiel, Mattfalle ohne
+  Bauernzahl, kein doppelter Punkt in den Endspiel-Kurzübungen; sieben veraltete Testpunkttexte
+  angepasst.
+- **CSP:** Die Prüfung mit erzwungener Regel deckt alle Bereiche ab (Website, /admin/, alle
+  Trainer, Nachschlagen, Baukasten, Einstellungen, Englisch); die Regel bleibt bis mindestens
+  1.11.2026 „Report-Only“ wie entschieden.

@@ -127,3 +127,22 @@ export function theorienamen(
     gambit: gerade.some(istGambit),
   };
 }
+
+/**
+ * Je Halbzug: Ist die Partie nach dem Zug in einem Gambit (wie `gambit` in theorienamen)? Für die
+ * Auswertung (spiel/auswertung.ts): Ein Theoriezug in einem Gambit darf mehr kosten.
+ * Beispiel: 1. e4 e5 2. f4 → false, false, true (Königsgambit).
+ */
+export function gambitJeZug(
+  quellen: Theoriequellen,
+  fens: readonly string[],
+  sans: readonly string[],
+): boolean[] {
+  const knoten = quellen.baum ? theorieknoten(quellen.baum, fens, sans) : [];
+  return sans.map((_, i) => {
+    const hier = letzterName(knoten.slice(0, i + 2));
+    const buch = buchnamen(quellen, stellungsschluessel(fens[i + 1] ?? ""));
+    const eindeutig = buch.length === 1 ? buch[0] : undefined;
+    return [hier, eindeutig].some((n) => typeof n === "string" && istGambit(n));
+  });
+}

@@ -40,7 +40,8 @@ export interface Startangaben {
   /** Zählt die Partie wirklich (Haken gesetzt und wertbar)? */
   readonly gewertet: boolean;
   /** Spielstärke des Gegners zur gewählten Uhr (seit 0.2.138); null gegen einen Menschen. */
-  readonly staerke: number | null;
+  /** „unbekannt“: Gruppe vor dem ersten Sieg (bildschirme/startstaerke.ts, startangabe). */
+  readonly staerke: number | "unbekannt" | null;
 }
 
 /** „Eigene Bots“ gewählt, aber noch kein eigener Bot: Dann lässt sich nicht beginnen. */
@@ -125,7 +126,9 @@ export function Startleiste({
             {angaben.staerke !== null && !ohneEigenenBot(angaben) && (
               <span className="startleiste-staerke" data-testid="startleiste-staerke">
                 {" · "}
-                {staerketext(angaben.staerke)}
+                {angaben.staerke === "unbekannt"
+                  ? t("gruppe.unbekannt")
+                  : staerketext(angaben.staerke)}
               </span>
             )}
           </strong>

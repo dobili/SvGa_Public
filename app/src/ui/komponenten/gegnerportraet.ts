@@ -3,7 +3,7 @@
  * ersten Zeigen (seit 0.2.85, Gegnerstufen.tsx).
  * Abhängigkeiten: engine/gegner.ts, engine/stufen.ts.
  */
-import { durchschnitt, gegnerVon, istSpassbot } from "../../engine/gegner";
+import { gegnerVon, istSpassbot, klasseVon } from "../../engine/gegner";
 import { STUFEN, type Stufennummer } from "../../engine/stufen";
 
 /** Die Nummern aller Stufen (seit 0.2.117 eins bis zehn). */
@@ -25,7 +25,7 @@ export function portraet(kennung: string): string {
 /**
  * Die offenen Stufen beim ersten Zeigen: aus dem Merker, sonst die Stufe des gewählten Gegners
  * (bei einem Spaß-Bot die Gruppe „Zum Spaß“, Schlüssel 0).
- * Beispiel: Merker „0,2,5“ → Spaß, Stufen 2 und 5 offen; kein Merker, Gegner Timo (⌀ 4) → Stufe 4.
+ * Beispiel: Merker „0,2,5“ → Spaß, Stufen 2 und 5 offen; kein Merker, Gegner Timo (Gruppe 4) → Stufe 4.
  */
 export function offeneStufenAnfangs(merker: string | null, bot: string | null): Set<number> {
   if (merker !== null) {
@@ -40,5 +40,5 @@ export function offeneStufenAnfangs(merker: string | null, bot: string | null): 
   }
   const gewaehlt = gegnerVon(bot);
   if (!gewaehlt) return new Set();
-  return new Set([istSpassbot(gewaehlt) ? SPASSGRUPPE : Math.round(durchschnitt(gewaehlt))]);
+  return new Set([istSpassbot(gewaehlt) ? SPASSGRUPPE : klasseVon(gewaehlt).nummer]);
 }

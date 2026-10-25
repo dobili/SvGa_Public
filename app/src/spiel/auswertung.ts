@@ -119,6 +119,8 @@ export interface Zugumstaende {
   readonly imSchach: boolean;
   /** Theoriezug, solange alle Züge davor Theoriezüge waren (Bedingungen 1 und 2, theorie.ts). */
   readonly buch: boolean;
+  /** Theoriezug in einem Gambit (schach/theorienamen.ts, gambitJeZug): darf mehr kosten. */
+  readonly gambit?: boolean;
 }
 
 export interface Enginefehler {
@@ -207,6 +209,10 @@ export function klasseVon(verlust: number, u: Zugumstaende): Zugklasse {
   if (nochKlarGewonnen && verlust >= GRENZE_PATZER) return "ungenau";
   if (nochKlarGewonnen && verlust >= GRENZE_UNGENAU) return "gut";
   if (verpasst(verlust, u)) return "verpasst";
+  // Ein Gambit gibt Material für Entwicklung oder Angriff (Kapitel 3, Königsgambit): Als
+  // Theoriezug darf es bis unter einen Fehler kosten (Befund N947, 26.10.2026; 2. f4 verliert in
+  // Tiefe 18 etwa 0,7). Bongcloud 2. Ke2 ist kein Gambit und bleibt ein Fehler.
+  if (u.buch && u.gambit === true && verlust < GRENZE_FEHLER) return "buch";
   if (verlust >= GRENZE_PATZER) return "patzer";
   if (verlust >= GRENZE_FEHLER) return "fehler";
   if (verlust >= GRENZE_UNGENAU) return "ungenau";
@@ -231,6 +237,7 @@ function umstaende(
   vorherVerlust: number,
   wertVorher: number,
   theorie: boolean,
+  gambit: boolean,
 ): Zugumstaende {
   const uci = sanZuUci(fen, san);
   const warBester = bester !== undefined && bester !== "" && uci === bester;
@@ -244,6 +251,7 @@ function umstaende(
     abstand: abstand ?? 0,
     imSchach: lage?.regeln.isCheck() ?? false,
     buch: theorie,
+    gambit,
   };
 }
 
@@ -260,7 +268,8 @@ function umstaende(
  * theorieJeZug). Theoriezug ist ein Zug nur, solange alle Züge davor Theoriezüge waren: Der erste
  * Zug, der keiner ist (nicht in der Theorie oder ab 0,5 Verlust, etwa 2. Ke2 der „Bongcloud“),
  * beendet die Theorie für den Rest der Partie (chess.com: „out of book“). Ohne Angabe gibt es
- * keine Theoriezüge (so rechnen Spielstärke und Wertung, spiel/wertung.ts).
+ * keine Theoriezüge (so rechnen Spielstärke und Wertung, spiel/wertung.ts). `gambits`: je Halbzug,
+ * ob die Partie danach in einem Gambit ist (schach/theorienamen.ts, gambitJeZug).
  */
 export function zugurteile(
   partie: Partie,
@@ -268,6 +277,7 @@ export function zugurteile(
   beste: readonly string[] = [],
   abstaende: readonly number[] = [],
   theorie: readonly boolean[] = [],
+  gambits: readonly boolean[] = [],
 ): Zugurteil[] {
   if (werte.length !== partie.zuege.length + 1) return [];
   const alle = stellungen(partie);
@@ -288,6 +298,7 @@ export function zugurteile(
       vorherVerlust,
       wertVorher,
       nochTheorie && theorie[index] === true,
+      gambits[index] === true,
     );
     vorherVerlust = verlust;
     const klasse = klasseVon(verlust, u);

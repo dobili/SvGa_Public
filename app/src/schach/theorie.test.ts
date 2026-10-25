@@ -8,7 +8,7 @@ import type { Eroeffnungsliste } from "../daten/generiert/eroeffnungsliste";
 import { ladeKapitel } from "./buchabbildungen.testhilfe";
 import { baueEroeffnungsindex } from "./eroeffnungsindex";
 import { baueTheoriebaum, theorieJeZug, theoriebaumFuer, type Theoriequellen } from "./theorie";
-import { istGambit, theorienamen, THEORIENAMEN_HOECHSTENS } from "./theorienamen";
+import { gambitJeZug, istGambit, theorienamen, THEORIENAMEN_HOECHSTENS } from "./theorienamen";
 import { fenNachZuegen } from "./weiterspielen";
 
 function liste(sprache: "de" | "en"): Eroeffnungsliste {
@@ -159,5 +159,14 @@ describe("istGambit", () => {
     expect(istGambit("King's Gambit Accepted")).toBe(true);
     expect(istGambit("Sizilianische Verteidigung: Smith-Morra Gambit")).toBe(true);
     expect(istGambit("Spanische Partie")).toBe(false);
+  });
+});
+
+describe("gambitJeZug (Befund N947, 26.10.2026)", () => {
+  it("Königsgambit ab 2. f4, Spanische Partie nie", () => {
+    const koenig = ["e4", "e5", "f4"];
+    expect(gambitJeZug(QUELLEN, verlauf(koenig), koenig)).toEqual([false, false, true]);
+    const spanisch = ["e4", "e5", "Nf3", "Nc6", "Bb5"];
+    expect(gambitJeZug(QUELLEN, verlauf(spanisch), spanisch).some(Boolean)).toBe(false);
   });
 });

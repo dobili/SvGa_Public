@@ -129,7 +129,10 @@ function passtInsNetz(g: EigenerGegner): boolean {
 export function AlteEinstellungen({ g, wann }: { g: EigenerGegner; wann: Neutralwerden }) {
   const alte = alteEinstellungen(g);
   if (alte.length === 0) return null;
-  const arten = alte.map((a) => t(`fehlerart.${a}` as Textschluessel)).join(", ");
+  // In Anführungszeichen: Die Namen der Arten sind Satzteile („den König ohne Not gezogen“).
+  const arten = alte
+    .map((a) => t("spielen.profil.alt.art", { art: t(`fehlerart.${a}` as Textschluessel) }))
+    .join(", ");
   return (
     <p className="profil-hinweis" data-testid="alte-einstellungen">
       {t(`spielen.profil.alt.${wann}`, { arten })}

@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.143 (mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 26.10.2026, Version 0.2.144 (mit Feiern, Gruppenkreis, Maia-Hinweis, festen Gruppen; davor 0.2.143 mit Maia als Zusatzpaket, Plan C, zwei Zahlensätzen der Bot-Stärke, acht Neulingen, neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,11 +18,67 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.143“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.144“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
 Nummern gelten für die aktuelle Version; frühere Versionen musst du nicht mehr getrennt testen.
+
+---
+
+## Nachtarbeit 25./26.10.2026: Bericht zur Durchsicht
+
+Du hast mich gebeten, über Nacht alles Offene ohne Rückfragen umzusetzen. Hier steht, was
+passiert ist; die Testpunkte dazu sind N990 bis N999 (Teil 1, ganz oben). Alles ist umgesetzt
+und nach `main` gebracht (Version 0.2.144). Widerspruch genügt, dann baue ich es zurück.
+
+**Für dich gebaut:**
+- Gruppenmodus: Die acht Gesichter einer Gruppe sitzen klein auf einem Kreis von der Größe
+  eines Porträts, überall (Knopf, Sprechblase, Glückwunsch).
+- Glückwunsch mit Feuerwerk und Fanfare, wenn eine Gruppe frei wird, und dasselbe, wenn ein
+  Ring im Profil voll wird (je Ring einmal).
+- Nach einem Sieg leuchtet das Brett golden, ein paar Funken und ein kurzer Dreiklang; bei
+  Niederlage wird das Brett kurz grau, bei Remis nur das Schild.
+- Maia-Hinweis beim ersten Bot (dein Wunsch von gestern Abend): ein Fenster erklärt kurz Maia,
+  hat gleich den Knopf zum Laden und nennt den Weg Zahnrad › Bots. Er kommt nur einmal.
+- Alle Texte hinter den Fragezeichen und die Tourtexte geprüft: 32 neu gefasst, kurz und ohne
+  Fachwörter (Median, Quantil, Eichung, Skala sind raus). Auch der Maia-Text ist einfacher.
+- Der Rundgang funktioniert wieder auf allen Seiten; vier Schritte sind neu (Profilkarte,
+  Reiter „Bots“, Engine oder Mensch, Werkzeuge am Brett der Partie).
+
+**Messungen (mit den zehn Mess-Chats):**
+- Nachmessung: jetzt 36 Partien je Bot statt 12, die Zahlen sind genauer (etwa ±70).
+- Jede Stufe hat jetzt genau acht Bots, nach ihrer Zahl geordnet; die Bereiche benachbarter
+  Stufen überschneiden sich nicht mehr. Einige Bots stehen dadurch eine Stufe anders.
+- Die Gruppenmodi sind mit den neuen Gruppen neu gemessen, mit und ohne Maia.
+- Blitz und Klassisch geprüft: Ohne Maia passen die Bots in Blitz. Mit Maia waren in Blitz
+  Stufe 4 und 5 zu schwach und Stufe 7 zu stark; dafür gibt es jetzt eine eigene Korrektur,
+  die gerade nachgemessen wird. Klassisch ist noch in Arbeit; kommt dabei etwas heraus, folgt
+  0.2.145.
+
+**Fehler gefunden und behoben** (ein Helfer hat die Testpunkte N600 bis N776 in der App
+nachgespielt): In der Planbilanz-Übung war eine falsche Antwort manchmal ein Satz über den
+Gegner; die Fragen aus dem Buch standen unter der falschen Überschrift; „Falle oder Köder“
+schrieb bei Matt „104,0 Bauern“; in den Endspiel-Kurzübungen stand ein doppelter Punkt. Sieben
+Testpunkttexte passten nicht mehr zur App und sind angepasst. Ein zweiter Helfer hat N777 bis
+N989 nachgespielt und sechs kleine Fehler gefunden, alle behoben (N1000 bis N1003): Das
+Königsgambit galt nie als Theoriezug (jetzt dürfen Gambits etwas kosten), der Partiekopf nannte
+eine andere Stufe als die Gegnerwahl, die Startleiste zeigte für einen unbesiegten Gruppenmodus
+eine Zahl, Porträts unter „Eigene Bots verwalten“ waren riesig, ein Hinweis stand doppelt, und
+die Regler der eigenen Stufe gingen beim Seitenwechsel verloren. Dazu ein klarerer Satz, wenn
+noch keine Partie für die Wertung zählt (eine Partie zählt erst ab zehn Zügen vor der
+Entscheidung; schnelle Siege gegen schwache Bots zählen deshalb oft nicht). Etwa 60 Testpunkte
+hat der Helfer schon als ok bestätigt; die übrigen brauchen dich (Spielgefühl, Handy,
+Installation).
+
+**Teil 2 (Rückfragen) nachgeführt:** Erledigtes ist raus, offene Punkte haben einen
+aktuellen Stand. Die Ersatztexte für deine Buchbefunde liegen im privaten Repository
+`schachbuch-quellen` (Zweig `claude/ecstatic-feynman-uw22b1`, Datei
+`claude/Buchbefunde_Ersatztexte_2026-10-26.md`), weil Buchtext nicht ins öffentliche gehört.
+
+**Bleibt bei dir:** Turnstile und Mailversand (DB2 bis DB4) richtest du selbst ein; die
+Sicherheitsregel (CSP) bleibt wie entschieden bis mindestens 1.11.2026 im Beobachtungsmodus,
+die Prüfung dafür deckt jetzt alle Bereiche ab.
 
 ---
 
@@ -75,6 +131,23 @@ Teil fertig ist.
       „Eine Frage aus dem Buch zu Abb. …“ statt „Beantworte die Planfragen“.
 - [ ] N999. **Kleinigkeiten:** Bei „Falle oder Köder“ steht bei einer Mattfalle kein Satz mehr
       über „104,0 Bauern“; in den Endspiel-Kurzübungen kein doppelter Punkt nach „Richtig ist:“.
+- [ ] N1000. **Gambit als Theoriezug:** Profil › Partien › PGN einlesen: `1. e4 e5 2. f4 exf4
+      3. Nf3 1-0`. Öffne die Partie und tippe 2. f4 an: „Theoriezug: Teil eines Gambits“, obwohl
+      der Zug die Engine etwa 0,7 Bauern kostet. Ein Gambit darf als Theoriezug bis knapp unter
+      einen ganzen Fehler (1,2) kosten; 2. Ke2 (Bongcloud) bleibt ein Fehler (schon umgesetzt,
+      Widerspruch genügt).
+- [ ] N1001. **Partiekopf und Startleiste:** Gegen Johanna steht unter dem Brett „Johanna (Stufe 5
+      · Vereinsspieler)“, dieselbe Stufe wie in der Gegnerwahl (vorher „⌀ 4 · Vereinsspieler“).
+      Wählst du einen noch gesperrten oder unbesiegten Gruppenmodus, steht auch in der
+      Startleiste unten „Stärke unbekannt“ statt einer Zahl.
+- [ ] N1002. **Eigene Bots:** Spielen › Eigene Bots: In der Liste „Eigene Bots verwalten“ ist das
+      Porträt wieder klein neben dem Namen (es war in 0.2.142/143 riesig). Ein alter Bot mit
+      Einstellungen, die es nicht mehr gibt, zeigt den Hinweis nur noch einmal, mit den
+      Namen der Fehler in Anführungszeichen.
+- [ ] N1003. **Regler bleiben:** Stelle die eigene Stufe auf 5 · 5 · 5, wechsle zu Buch und
+      zurück zu Spielen (oder lade neu): Die Regler stehen weiter auf 5 · 5 · 5. Dasselbe gilt
+      für Uhr, Farbe und Gegner. Ohne gewertete Partie mit genug Zügen steht in „Deine Wertung“
+      jetzt, dass eine Partie erst ab zehn eigenen Zügen vor der Entscheidung zählt.
 
 ### Neu in 0.2.143: Maia, Plan C, zwei Zahlensätze, acht Neulinge (Opus, 25.10.2026)
 
@@ -212,14 +285,11 @@ Blitz spielt er wie ein Mensch seiner Stärke mit 3 Minuten, in Klassisch wie de
 30 Minuten.
 
 - [ ] N805. **Zahl passt zur Uhr:** Spielen › Gegner, Ole (Stufe 9) wählen. Stelle die Bedenkzeit
-      nacheinander auf 3 + 2, 10 + 0 und 30 + 20. Die Zahl an der Kachel, in der Sprechblase und
-      im Bereich über der Stufe wechselt mit: etwa 2650, 2700, 2750. Ohne Uhr gilt Schnellschach.
-      Die Stufen in Blitz / Schnellschach / Klassisch: 1: 667/747/973 · 2: 839/946/1177 ·
-      3: 1078/1242/1438 · 4: 1278/1456/1597 · 5: 1537/1696/1776 · 6: 1770/1906/1956 ·
-      7: 1998/2108/2158 · 8: 2216/2291/2341 · 9: 2327/2388/2438 · 10: 3246/3296/3346.
-      Bei echten Spielern über 1900 liegt Klassisch im Median etwas unter Schnellschach (über
-      2200 bei drei von vier Spielern); dort steht die App auf +50, am Rand der Spanne, weil du
-      Blitz < Schnellschach < Klassisch wolltest (schon umgesetzt, Widerspruch genügt).
+      nacheinander auf 3 + 2, 10 + 0 und 30 + 20. Die Zahl an der Kachel, in der Sprechblase, in
+      der Startleiste und im Bereich über der Stufe wechselt mit (nach der Neumessung etwa 2250,
+      2300, 2350). Ohne Uhr gilt Schnellschach. Klassisch liegt immer etwas über Schnellschach,
+      Blitz darunter, weil du Blitz < Schnellschach < Klassisch wolltest (schon umgesetzt,
+      Widerspruch genügt).
 - [ ] N806. **Spielgefühl je Zeitklasse:** Spiele gegen denselben Bot einmal 3 + 2 und einmal
       30 + 20. In Blitz macht er spürbar mehr Fehler als in Klassisch, wie ein Mensch, der weniger
       Zeit hat. Danach unter Profil bei der Wertung: Die Gegnerstärke der Partie ist die Zahl der
@@ -1236,7 +1306,7 @@ der Bots (Gegnerwahl) sind noch nicht neu gemessen; das folgt.
       Grundlage ist ein ganzer Monat gewerteter Lichess-Partien (September 2026).
 - [ ] N804. **Eröffnung aus der Praxis festlegen:** Unter „Eröffnung festlegen“ gibt es neben „Aus
       dem Buch“ die Gruppe „Aus der Praxis (Lichess-Namen)“ mit den häufigsten benannten
-      Eröffnungen, etwa „Sicilian Defense: Najdorf Variation“. Wähle eine: Darunter steht ihre
+      Eröffnungen, etwa „Sicilian Defense: Old Sicilian“. Wähle eine: Darunter steht ihre
       Zugfolge, und der Bot folgt ihr, solange du ihre Züge spielst. „ohne Buch“ lässt die
       Engine wie bisher selbst eröffnen, „eine Eröffnung des Buches“ wie bisher aus Kapitel 2 und 3.
 

@@ -58,6 +58,11 @@ const GRUPPEN = {
 
 /** Alle Gegner mit ihrer Gruppe (Reihenfolge wie engine/gegnerliste*.ts). */
 const GEGNER = {
+  // Kandidaten für die Gruppe Neuling (Wunsch des Autors 25.10.2026, auf acht auffüllen)
+  emma: "maedchen",
+  "opa-kurt": "aeltererMann",
+  "frau-schulz": "frau",
+  lotte: "maedchen",
   fritzi: "maedchen",
   willi: "aeltererMann",
   trude: "aeltereFrau",

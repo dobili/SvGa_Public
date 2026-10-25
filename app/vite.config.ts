@@ -214,7 +214,9 @@ export default defineConfig({
         globPatterns: ["**/*.{js,css,html,json,wasm,webp,png,svg,woff2,txt}"],
         // Das Dashboard (R57) liegt hinter Cloudflare Access; auf Lesergeräten würde das
         // Vorabladen umgeleitet und die Installation scheitern.
-        globIgnores: ["admin/**"],
+        // Maia (0.2.141) ist ein Zusatzpaket von etwa 96 MB; der Leser lädt es nur auf Wunsch
+        // (src/engine/maiapaket.ts), es gehört nicht zur Installation.
+        globIgnores: ["admin/**", "maia/**"],
         maximumFileSizeToCacheInBytes: GROESSTE_DATEI_BYTES,
       },
       manifest: {

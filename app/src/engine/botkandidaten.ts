@@ -12,6 +12,7 @@ import { BOTKANDIDATEN_1 } from "./botkandidaten1";
 import { BOTKANDIDATEN_2 } from "./botkandidaten2";
 import { BOTKANDIDATEN_3 } from "./botkandidaten3";
 import { BOTKANDIDATEN_4 } from "./botkandidaten4";
+import { BOTKANDIDATEN_NEULING } from "./botkandidaten-neuling";
 
 /** Alle Kandidaten (seit 24.10.2026 in vier Teildateien, damit jede unter 400 Zeilen bleibt). */
 export const BOTKANDIDATEN: readonly Gegner[] = [
@@ -19,4 +20,5 @@ export const BOTKANDIDATEN: readonly Gegner[] = [
   ...BOTKANDIDATEN_2,
   ...BOTKANDIDATEN_3,
   ...BOTKANDIDATEN_4,
+  ...BOTKANDIDATEN_NEULING,
 ];

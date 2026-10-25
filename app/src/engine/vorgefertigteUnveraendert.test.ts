@@ -1,13 +1,14 @@
 /**
- * Absicherung des Umbaus „Fehlerprofil vereinfacht“ (Variante A, 0.2.135): Die vorgefertigten Bots
- * müssen Zug für Zug gleich spielen, ihre gemessenen Zahlen bleiben nur dann gültig.
+ * Absicherung: Die vorgefertigten Bots bekommen genau die Eingaben, mit denen sie gemessen wurden;
+ * ihre gemessenen Zahlen gelten nur dann.
  *
- * Rolle im Gesamtbild: Der Umbau ändert nur Oberfläche und Speicherweg der eigenen Gegner. Dieser
- * Test vergleicht je Bot die Faktoren seiner Persönlichkeit (faktorenAus) bei fünf Wertungen, die
- * Stellschrauben der Zugwahl (menschenwerteAus) und ob er Zusatzfehler hat (hatZusatzfehler) mit
- * dem Stand von main vor dem Umbau (0.2.134), festgehalten in
- * `testdaten/vorgefertigte-0.2.134.json`. Neu schreiben nur mit Absicht:
- * `SCHREIBE_VERGLEICH=1 npx vitest run src/engine/vorgefertigteUnveraendert.test.ts`.
+ * Rolle im Gesamtbild: Eingeführt mit dem Umbau „Fehlerprofil vereinfacht“ (Variante A, 0.2.135),
+ * der die Bots nicht verändern durfte. Seit 0.2.141 hält der Vergleich den Stand von Plan C fest
+ * (Charaktere auf das vereinfachte Profil, Freigabe des Autors 25.10.2026), mit dem die Bots neu
+ * gemessen werden. Je Bot: die Faktoren seiner Persönlichkeit (faktorenAus) bei fünf Wertungen,
+ * die Stellschrauben der Zugwahl (menschenwerteAus) und ob er Zusatzfehler hat (hatZusatzfehler),
+ * festgehalten in `testdaten/vorgefertigte-0.2.141.json`. Neu schreiben nur mit Absicht (und dann
+ * neu messen): `SCHREIBE_VERGLEICH=1 npx vitest run src/engine/vorgefertigteUnveraendert.test.ts`.
  * Abhängigkeiten: engine/gegnerliste.ts, engine/gegnerbau.ts, engine/zugwahl.ts,
  * engine/menschenwahl.ts, engine/botstaerke.ts.
  */
@@ -19,7 +20,7 @@ import { GEGNER } from "./gegnerliste";
 import { hatZusatzfehler } from "./menschenwahl";
 import { menschenwerteAus } from "./zugwahl";
 
-const DATEI = new URL("./testdaten/vorgefertigte-0.2.134.json", import.meta.url);
+const DATEI = new URL("./testdaten/vorgefertigte-0.2.141.json", import.meta.url);
 /** Wertungen, bei denen die Faktoren verglichen werden (Rand, Mitte, Spitze der Daten). */
 const WERTUNGEN = [400, 800, 1300, 1800, 2400];
 const ERSATZWERTUNG = 1300;
@@ -44,8 +45,8 @@ function eingabenAllerBots() {
   });
 }
 
-describe("vorgefertigte Bots nach dem Umbau des Fehlerprofils", () => {
-  it("bekommen dieselben Faktoren und Stellschrauben wie in 0.2.134", () => {
+describe("vorgefertigte Bots wie gemessen", () => {
+  it("bekommen dieselben Faktoren und Stellschrauben wie bei der Messung (Stand 0.2.141)", () => {
     const jetzt = JSON.parse(JSON.stringify(eingabenAllerBots())) as unknown;
     if (process.env.SCHREIBE_VERGLEICH) {
       writeFileSync(DATEI, `${JSON.stringify(jetzt, null, 1)}\n`);

@@ -144,7 +144,12 @@ async function gruppenZug(
   profil: Gegnerprofil,
   zufall: () => number,
 ): Promise<{ zug: Partiezug; uci: string; breite?: number } | null> {
-  const gemeinsam = { verlauf: profil.verlauf, restMs: profil.restMs, tempo: profil.tempo };
+  const gemeinsam = {
+    verlauf: profil.verlauf,
+    restMs: profil.restMs,
+    tempo: profil.tempo,
+    maia: profil.maia,
+  };
   const mitglieder = mitgliederFuer(nummer, phaseVon(fen) ?? "mittelspiel", gemeinsam);
   const wahl = await gruppenzug(engine, fen, mitglieder, zufall, profil.verlauf ?? RUHIGER_VERLAUF);
   const san = wahl ? uciZuSan(fen, wahl.uci) : null;

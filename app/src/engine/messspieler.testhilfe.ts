@@ -1,7 +1,7 @@
 /**
  * Spieler der Messläufe aus ihrem Kürzel (engine/stufen.messung.ts): Stufen („5“, „5m“), freie
  * Grundschicht („4x0.2“), vorgefertigte Bots und Kandidaten („@ella“), Gruppen („@gruppe-3“), mit
- * Uhr („~180+2“) und ohne Praxisbuch („!“ am Kern, seit 0.2.128).
+ * Uhr („~180+2“), ohne Praxisbuch („!“ am Kern, seit 0.2.128) und mit Maia („*“, seit 0.2.141).
  *
  * Rolle im Gesamtbild: Ausgelagert aus engine/stufen.messung.ts (Dateien unter 400 Zeilen, 0.2.128).
  * Abhängigkeiten: engine/gegner.ts, engine/botkandidaten.ts, engine/gegnerbau.ts, engine/gruppe.ts,
@@ -15,10 +15,19 @@ import { faktorenAus } from "./gegnerbau";
 import { gruppenstufe, gruppenstufen } from "./gruppe";
 import { BUCHTIEFE } from "./praxisbuch";
 import { grundschicht, stufe, STUFEN_ZAHL, type Stufe, type Stufennummer } from "./stufen";
+import { maiaNode } from "./maia-node.testhilfe";
+import type { Maialaufzeit } from "./maia";
 import { wahltempo } from "./wahlmodell";
 import { REINES_PROFIL, STANDARDPROFIL, type Gegnerprofil } from "./zugwahl";
 
 const SEKUNDE_MS = 1000;
+
+/** Eine Maia-Laufzeit für den ganzen Messlauf (die Netze werden nur einmal geladen). */
+let maia: Maialaufzeit | null = null;
+function maiaLaufzeit(): Maialaufzeit {
+  maia ??= maiaNode();
+  return maia;
+}
 
 export interface Spieler {
   readonly stufen: Readonly<Record<Phase, Stufennummer>>;
@@ -83,12 +92,18 @@ function botspieler(kern: string, uhr: Spieler["uhr"]): Spieler | null {
 /** Spieler aus dem Kürzel der Paarung (Kopf der Datei). */
 export function spieler(kuerzel: string): Spieler {
   const [roh = "", uhrtext] = kuerzel.split("~");
-  // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.128)
-  const ohneBuch = roh.endsWith("!");
-  const ohneTempo = spielerOhneBuchwahl(ohneBuch ? roh.slice(0, -1) : roh, uhrtext);
+  // „!“ am Ende: ohne Praxisbuch (Vergleichsmessung 0.2.128); „*“: mit Maia (0.2.141), in
+  // beliebiger Reihenfolge, etwa „@tom*!“.
+  const ohneBuch = roh.includes("!");
+  const mitMaia = roh.includes("*");
+  const ohneTempo = spielerOhneBuchwahl(roh.replace(/[!*]/g, ""), uhrtext);
   // Zeitklasse der Uhr ins Profil wie in der App (ui/komponenten/botzug.ts); fehlte bis zur
   // Prüfmessung vom 25.10.2026, Runde 3: Bis dahin wählten alle Messungen wie in Schnellschach.
-  const profil = { ...ohneTempo.profil, tempo: wahltempo(ohneTempo.uhr) };
+  const profil = {
+    ...ohneTempo.profil,
+    tempo: wahltempo(ohneTempo.uhr),
+    ...(mitMaia ? { maia: { laufzeit: maiaLaufzeit() } } : {}),
+  };
   const s = { ...ohneTempo, profil };
   return ohneBuch ? { ...s, buchtiefe: 0 } : s;
 }

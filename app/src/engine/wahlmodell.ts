@@ -14,7 +14,10 @@
  * Warum so: Dieselbe Kandidatenerzeugung wie in der Eichung (sechs Engine-Züge, typische
  * Fehlerzüge je Art) macht die Fehlerraten des Bots je Band, Phase und Art von selbst menschlich
  * (geprüft an zurückgelegten Stellungen auf etwa einen Prozentpunkt), ohne Nachregeln.
- * Abhängigkeiten: engine/wahlmodell-daten.ts, engine/fehlerart.ts, engine/blindeFlecken.ts,
+ * Seit 0.2.141 mit Maia (Variante C): Ist eine Maia-Karte da (engine/maia.ts, ab Halbzug 10), kommt
+ * ln p_Maia des Kandidaten als weiteres Merkmal dazu, mit eigenen, gemeinsam geeichten Gewichten
+ * (engine/wahlmodell-maia-daten.ts); ohne Karte gelten die Gewichte ohne Maia.
+ * Abhängigkeiten: engine/wahlmodell-daten.ts, engine/wahlmodell-maia-daten.ts, engine/fehlerart.ts, engine/blindeFlecken.ts,
  * engine/stilmerkmale.ts, schach/phase.ts, chessops.
  */
 import { normalizeMove } from "chessops/chess";
@@ -24,6 +27,7 @@ import { BLINDE_FLECKEN, fenNachUci, fleckeVon, type BlinderFleck } from "./blin
 import { FEHLERARTEN, type Fehlerart, type Lage } from "./fehlerart";
 import { STILMERKMALE, stilmerkmale } from "./stilmerkmale";
 import { WAHL_GEWICHTE, WAHL_MERKMALE, type Wahltempo } from "./wahlmodell-daten";
+import { WAHL_GEWICHTE_MAIA } from "./wahlmodell-maia-daten";
 
 export type { Wahltempo } from "./wahlmodell-daten";
 
@@ -55,6 +59,8 @@ const FEHLER_AB = 0.5;
 const ELO_MIN = 400;
 const ELO_MAX = 2600;
 const ANZAHL_MERKMALE = WAHL_MERKMALE.length;
+/** Untergrenze der Maia-Wahrscheinlichkeit vor dem Logarithmus (wie in der Eichung). */
+const MAIA_MINDESTENS = 1e-6;
 
 /** Index je Merkmalname, einmal aufgebaut. */
 const INDEX = new Map<string, number>(WAHL_MERKMALE.map((name, i) => [name, i]));
@@ -124,12 +130,16 @@ export function merkmale(
   return m;
 }
 
-/** Die Gewichte je Merkmal für eine Wertung und Zeitklasse. */
-export function gewichte(tempo: Wahltempo, elo: number): Float64Array {
+/**
+ * Die Gewichte je Merkmal für eine Wertung und Zeitklasse; mit Maia ein Gewicht mehr (zuletzt,
+ * für ln p_Maia) aus der gemeinsamen Eichung.
+ */
+export function gewichte(tempo: Wahltempo, elo: number, mitMaia = false): Float64Array {
   const e = (Math.max(ELO_MIN, Math.min(ELO_MAX, elo)) - ELO_MITTE) / ELO_MASSSTAB;
-  const g = WAHL_GEWICHTE[tempo];
-  const aus = new Float64Array(ANZAHL_MERKMALE);
-  for (let i = 0; i < ANZAHL_MERKMALE; i += 1) {
+  const g = mitMaia ? WAHL_GEWICHTE_MAIA[tempo] : WAHL_GEWICHTE[tempo];
+  const laenge = ANZAHL_MERKMALE + (mitMaia ? 1 : 0);
+  const aus = new Float64Array(laenge);
+  for (let i = 0; i < laenge; i += 1) {
     aus[i] = (g.g0[i] ?? 0) + (g.g1[i] ?? 0) * e + (g.g2[i] ?? 0) * e * e;
   }
   return aus;
@@ -157,7 +167,8 @@ export function nutzen(
 /**
  * Wahrscheinlichkeiten der Kandidaten (Softmax des Nutzens durch die Temperatur).
  * Eingaben: Lage und FEN, Kandidaten, bester Zug, Phase, Zeitklasse, Wertung, Verschiebung,
- * Temperatur (1: wie geeicht; größer: zufälliger, etwa in Zeitnot oder bei schlechter Tagesform).
+ * Temperatur (1: wie geeicht; größer: zufälliger, etwa in Zeitnot oder bei schlechter Tagesform),
+ * Maia-Karte (Zug → Wahrscheinlichkeit, engine/maia.ts) oder null.
  * Beispiel: Zwei gleich gute Züge und ein Patzer bekommen bei 1500 etwa 48/48/4 %.
  * Sonderfall: Ein Kandidat mit −∞ (ausgeschlossene Art) hat Wahrscheinlichkeit 0; sind alle
  * ausgeschlossen, gilt der beste Zug allein.
@@ -171,13 +182,17 @@ export function wahrscheinlichkeiten(
   elo: number,
   verschiebung: Wahlverschiebung = OHNE_VERSCHIEBUNG,
   temperatur = 1,
+  maia: ReadonlyMap<string, number> | null = null,
 ): number[] {
-  const g = gewichte(tempo, elo);
-  const werte = kandidaten.map(
-    (k) =>
-      nutzen(merkmale(lage, fen, k, bester, lage.phase), g, k, verschiebung) /
-      Math.max(1e-6, temperatur),
-  );
+  const g = gewichte(tempo, elo, maia !== null);
+  const maiagewicht = maia ? (g[ANZAHL_MERKMALE] ?? 0) : 0;
+  const werte = kandidaten.map((k) => {
+    const basis = nutzen(merkmale(lage, fen, k, bester, lage.phase), g, k, verschiebung);
+    const zusatz = maia
+      ? maiagewicht * Math.log(Math.max(MAIA_MINDESTENS, maia.get(k.uci) ?? 0))
+      : 0;
+    return (basis + zusatz) / Math.max(1e-6, temperatur);
+  });
   const maxi = Math.max(...werte.filter((w) => Number.isFinite(w)), Number.NEGATIVE_INFINITY);
   if (!Number.isFinite(maxi)) return kandidaten.map((k) => (k.uci === bester ? 1 : 0));
   const ex = werte.map((w) => (Number.isFinite(w) ? Math.exp(w - maxi) : 0));

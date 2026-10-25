@@ -9,6 +9,7 @@ app/dev-dist/
 app/test-results/
 app/playwright-report/
 app/public/engine/
+app/public/maia/ort/
 app/public/daten/de/trainer/
 app/public/daten/en/trainer/
 app/src/daten/generiert/

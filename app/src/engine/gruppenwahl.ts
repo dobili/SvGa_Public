@@ -16,6 +16,7 @@ import type { Phase } from "../schach/phase";
 import { staerkeDesBots } from "./botstaerke";
 import { faktorenAus } from "./gegnerbau";
 import { mitgliederDerGruppe } from "./gruppe";
+import { maiaabfrage } from "./maia";
 import { aktiveArten, kandidatenpool, wahlAusPool, type Wahlkontext } from "./menschenwahl";
 import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
@@ -29,7 +30,7 @@ export interface Gruppenmitglied {
 }
 
 /** Was alle Mitglieder in diesem Zug teilen: Tagesform, Restzeit der Uhr, Zeitklasse. */
-export type Gemeinsames = Pick<Gegnerprofil, "verlauf" | "restMs" | "tempo">;
+export type Gemeinsames = Pick<Gegnerprofil, "verlauf" | "restMs" | "tempo" | "maia">;
 
 /**
  * Die Mitglieder der Gruppe einer Stufe für einen Zug: jeder Bot mit seiner Stufe der Phase und
@@ -66,8 +67,10 @@ export function mitgliederFuer(
  */
 function kontextVon(m: Gruppenmitglied, verlauf: Wahlkontext["verlauf"]): Wahlkontext {
   const tempo = m.profil.tempo ?? "rapid";
+  const wertung = wahlwertung(m.stufe, tempo);
   return {
-    wertung: wahlwertung(m.stufe, tempo),
+    maia: m.profil.maia ? maiaabfrage(m.profil.maia, wertung, tempo) : undefined,
+    wertung,
     restMs: m.profil.restMs ?? null,
     verlauf: m.profil.verlauf ?? verlauf,
     stil: m.profil.stil,
@@ -115,10 +118,15 @@ export async function gruppenzug(
   const werteJe = mitglieder.map((m) => menschenwerteAus(m.profil));
   const aktiv = new Set(werteJe.flatMap((w) => [...aktiveArten(w)]));
   const pool = await kandidatenpool(bewerter, fen, aktiv);
+  const kontexte = mitglieder.map((m) => kontextVon(m, verlauf));
+  // Maia je Mitglied; gleiche Wertungsklasse rechnet das Netz nur einmal (engine/maia.ts).
+  const maiaJe = await Promise.all(kontexte.map((k) => (k.maia ? k.maia(fen) : null)));
   const stimmen: Zugwahl[] = [];
-  mitglieder.forEach((m, i) => {
+  mitglieder.forEach((_, i) => {
     const werte = werteJe[i];
-    const wahl = werte ? wahlAusPool(pool, fen, werte, kontextVon(m, verlauf), zufall) : null;
+    const kontext = kontexte[i];
+    const wahl =
+      werte && kontext ? wahlAusPool(pool, fen, werte, kontext, zufall, maiaJe[i] ?? null) : null;
     if (wahl) stimmen.push(wahl);
   });
   return abstimmung(stimmen, zufall);

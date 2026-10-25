@@ -32,12 +32,14 @@ import { FEHLERARTEN, fehlerartIn, lageVon, type Fehlerart, type Lage } from "./
 import { typischeFehlerzuege } from "./fehlersuche";
 import { grundzug, kandidatenAusVarianten } from "./grundschicht";
 import { GELEGENHEITSARTEN, zeitnotTemperatur } from "./menschenprofil";
+import { GEZIELTE_ARTEN, gezielteKandidaten } from "./pruefkandidaten";
 import { verlaufsfaktor, type Verlauf } from "./menschlich";
 import { wertFuer, type Spielbewerter, type Zugwahl } from "./spielbewerter";
 import { STIL_NEUTRAL, stilwahl } from "./stil";
 import type { Stilname, Stilmix } from "./stile";
 import type { Stufe } from "./stufen";
 import type { Variante } from "./uci";
+import type { Maiaabfrage } from "./maia";
 import type { Wahltempo } from "./wahlmodell";
 import { waehleMenschlich, type Wahlschritt } from "./wahlschritt";
 
@@ -74,6 +76,8 @@ export interface Wahlkontext {
   readonly stilmix?: Stilmix;
   /** Zeitklasse für das Wahlmodell (0.2.125). */
   readonly tempo: Wahltempo;
+  /** Maia-Abfrage (0.2.141, engine/maia.ts); fehlend: ohne Maia (Paket nicht geladen oder aus). */
+  readonly maia?: Maiaabfrage;
 }
 
 /** So viele Kandidaten rechnet die Engine; je Art so viele typische Fehlerzüge gezielt. */
@@ -101,8 +105,9 @@ interface Eingeordnet extends Zugkandidat {
 function einordnen(lage: Lage, kandidaten: readonly Zugkandidat[], bester: string): Eingeordnet[] {
   return kandidaten.map((k) => {
     if (k.verlust < MINDESTVERLUST || k.uci === bester) return { ...k, art: null };
-    const art = fehlerartIn(lage, k.uci, k.antwort, k.verlust, bester);
-    return { ...k, art: art === "ungenau" ? null : art };
+    // Seit 0.2.141 bleibt „ungenau“ stehen: Das Wahlmodell ist mit dem Merkmal art_ungenau
+    // geeicht (Gewicht etwa +0,5); bis dahin fehlte es im Spiel, die Bots spielten zu genau.
+    return { ...k, art: fehlerartIn(lage, k.uci, k.antwort, k.verlust, bester) };
   });
 }
 
@@ -220,12 +225,16 @@ export async function menschlicheWahl(
   if (!hatZusatzfehler(werte)) return basiszug(bewerter, fen, stufe, kontext, zufall, null, []);
   const pool = await kandidatenpool(bewerter, fen, aktiveArten(werte));
   if (!pool.lage) return pool.bester ? engineZug(pool.bester) : null;
-  return wahlAusPool(pool, fen, werte, kontext, zufall);
+  const maia = kontext.maia ? await kontext.maia(fen) : null;
+  return wahlAusPool(pool, fen, werte, kontext, zufall, maia);
 }
 
 /** Die Fehlerarten, die bei diesen Stellschrauben vorkommen dürfen (gezielte Suche danach). */
 export function aktiveArten(werte: Menschenwerte): Set<Fehlerart> {
-  return new Set(GELEGENHEITSARTEN.filter((a) => gewichtVon(werte, a) > 0));
+  // Seit 0.2.141 (Plan C) auch die gezielt gesuchten Arten und „Patt gesetzt“ (erkennen die
+  // Werkzeuge ohne Engine, war aber nie aktiv).
+  const arten: readonly Fehlerart[] = [...GELEGENHEITSARTEN, ...GEZIELTE_ARTEN, "pattGesetzt"];
+  return new Set(arten.filter((a) => gewichtVon(werte, a) > 0));
 }
 
 /** Die gemeinsame Analyse einer Stellung: Lage, bester Zug und alle eingeordneten Kandidaten. */
@@ -255,7 +264,10 @@ export async function kandidatenpool(
   const weiss = fen.split(" ")[1] !== "b";
   const bestwert = wertFuer(erste.wert, weiss);
   const kandidaten = kandidatenAus(b.varianten, bestwert, weiss);
-  const extra = zuPruefen(lage, aktiv, new Set(kandidaten.map((k) => k.uci)));
+  const typisch = zuPruefen(lage, aktiv, new Set(kandidaten.map((k) => k.uci)));
+  // Seit 0.2.141 auch Prüfzüge für Bauern- und Königszüge ohne Not und eingestellte Bauern.
+  const schon = new Set([...kandidaten.map((k) => k.uci), ...typisch]);
+  const extra = [...typisch, ...gezielteKandidaten(lage, aktiv, schon)];
   const gezielt =
     extra.length > 0 ? await bewerter.bewerte(fen, FEHLERSUCHE_MS, 1, FEHLERSUCHE, extra) : null;
   return {
@@ -280,9 +292,11 @@ export function wahlAusPool(
   werte: Menschenwerte,
   kontext: Wahlkontext,
   zufall: () => number,
+  maia: ReadonlyMap<string, number> | null = null,
 ): Zugwahl | null {
   if (!pool.lage) return pool.bester ? engineZug(pool.bester) : null;
   const schritt: Wahlschritt = {
+    maia,
     tempo: kontext.tempo,
     wertung: kontext.wertung,
     temperatur: grundfaktor(kontext),

@@ -87,50 +87,73 @@ export function faktorenAus(c: Charakter, wertung: number): Gewichte {
   return aus;
 }
 
-/** Die Persönlichkeiten der Bots (Beschreibung in de.json, „gegner.<kennung>“). */
+/** Die Gruppe „Fernwirkung“ des Fehlerprofils (ui/komponenten/fehlergruppen.ts), ganz blind. */
+const FERNWIRKUNG = {
+  diagonale: BESONDERS_BLIND_STUFE,
+  turm: BESONDERS_BLIND_STUFE,
+  dame: BESONDERS_BLIND_STUFE,
+  roentgen: BESONDERS_BLIND_STUFE,
+} as const;
+
+/**
+ * Die Persönlichkeiten der Bots (Beschreibung in de.json, „gegner.<kennung>“). Seit 0.2.141 (Plan C,
+ * Freigabe des Autors 25.10.2026) nur noch mit den Fehlerarten, die das Fehlerprofil als Regler
+ * anbietet, und mit ganzen Fleckengruppen (fehlergruppen.ts): Schlagreflex, König passiv und
+ * falscher Abtausch sind bei Menschen kaum als Eigenschaft messbar (Zuverlässigkeit unter 0,1)
+ * und wurden durch verwandte Arten ersetzt (Schlagreflex → Drohung übersehen oder Figur hängen,
+ * König passiv → Bauernzug ohne Not oder Taktik übersehen); Einzelflecken stehen für ihre Gruppe.
+ */
 export const CHARAKTERE = {
   /** Spielt wie Menschen seiner Stufe, ohne Vorlieben. */
   solide: { arten: {}, flecken: {} },
   /** Greift an, schlägt schnell zu und vergisst den eigenen König. */
   angreifer: {
-    arten: { schlagreflex: 1, koenigsschild: 2, drohungIgnoriert: 1, bauernvorstoss: 1 },
-    flecken: { rueckzug: BESONDERS_BLIND_STUFE },
+    arten: { koenigsschild: 2, drohungIgnoriert: 2, bauernvorstoss: 1 },
+    flecken: { rueckzug: BESONDERS_BLIND_STUFE, springer: BESONDERS_BLIND_STUFE },
   },
   /** Sichert zuerst alles ab, spielt dafür langsam und passiv. */
   vorsichtig: {
-    arten: { drohungIgnoriert: -1, figurHaengen: -1, tempoverlust: 2, koenigPassiv: 2 },
-    flecken: { abzug: BESONDERS_BLIND_STUFE },
+    arten: { drohungIgnoriert: -1, figurHaengen: -1, tempoverlust: 2, bauernzugOhneNot: 1 },
+    flecken: {
+      zwischenzug: BESONDERS_BLIND_STUFE,
+      abzug: BESONDERS_BLIND_STUFE,
+      grundreihe: BESONDERS_BLIND_STUFE,
+    },
   },
   /** Kann keinem Bauern widerstehen und schlägt gern. */
   materialist: {
-    arten: { bauernraub: 3, schlagreflex: 2, verfruehteDame: 1 },
+    arten: { bauernraub: 3, drohungIgnoriert: 1, verfruehteDame: 1 },
     flecken: { ruhig: BESONDERS_BLIND_STUFE },
   },
   /** Sieht Taktik gut, hat aber wenig Gefühl für Bauern und Endspiel. */
   taktiker: {
-    arten: { taktikUebersehen: -1, koenigPassiv: 2, bauernvorstoss: 2, falscherAbtausch: 2 },
+    arten: { taktikUebersehen: -1, bauernvorstoss: 2, bauernzugOhneNot: 1 },
     flecken: {},
   },
   /** Plant gut und stellt die Figuren richtig, übersieht dafür Taktik. */
   stratege: {
     arten: { taktikUebersehen: 2, drohungIgnoriert: 1, tempoverlust: -1, koenigsschild: -1 },
-    flecken: { zwischenzug: BESONDERS_BLIND_STUFE },
+    flecken: {
+      zwischenzug: BESONDERS_BLIND_STUFE,
+      abzug: BESONDERS_BLIND_STUFE,
+      grundreihe: BESONDERS_BLIND_STUFE,
+    },
   },
   /** Zieht schnell und hektisch, übersieht Drohungen. */
   hektiker: {
-    arten: { drohungIgnoriert: 2, schlagreflex: 1 },
+    arten: { drohungIgnoriert: 2, figurHaengen: 1 },
     flecken: { rueckzug: BESONDERS_BLIND_STUFE, springer: BESONDERS_BLIND_STUFE },
     haeufigkeit: 1.15,
   },
   /** Holt die Dame früh heraus und liebt ihre langen Wege. */
   damenfan: {
     arten: { verfruehteDame: 3, figurHaengen: 1 },
-    flecken: { springer: BESONDERS_BLIND_STUFE },
+    flecken: { rueckzug: BESONDERS_BLIND_STUFE, springer: BESONDERS_BLIND_STUFE },
   },
   /** Lässt den König gern in der Mitte stehen und denkt erst später an die Rochade. */
   koenigswanderer: {
     arten: { koenigMitte: 3, koenigsschild: 1 },
-    flecken: { diagonale: BESONDERS_BLIND_STUFE },
+    flecken: FERNWIRKUNG,
   },
   /** Träumt von schönen Zügen und übersieht die stillen. */
   traeumer: {
@@ -140,13 +163,13 @@ export const CHARAKTERE = {
   },
   /** Spielt Endspiele stark, kennt dafür wenig Eröffnung. */
   endspieler: {
-    arten: { koenigPassiv: -2, bauernvorstoss: -1, koenigMitte: 1, verfruehteDame: 1 },
+    arten: { bauernvorstoss: -1, koenigMitte: 1, verfruehteDame: 1 },
     flecken: {},
   },
   /** Kennt viel Theorie und kommt gut aus der Eröffnung, wird später unsicher. */
   theoretiker: {
-    arten: { verfruehteDame: -2, koenigMitte: -2, tempoverlust: -1, koenigPassiv: 2 },
-    flecken: { dame: BESONDERS_BLIND_STUFE },
+    arten: { verfruehteDame: -2, koenigMitte: -2, tempoverlust: -1, taktikUebersehen: 1 },
+    flecken: FERNWIRKUNG,
   },
 } as const satisfies Record<string, Charakter>;
 

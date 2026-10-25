@@ -1,0 +1,24 @@
+{
+  "version": "maia2-fp16-1",
+  "lizenz": "MIT, Maia-2 (CSSLab, University of Toronto)",
+  "modelle": {
+    "blitz": {
+      "teile": [
+        "maia2-blitz-fp16.onnx.teil0",
+        "maia2-blitz-fp16.onnx.teil1",
+        "maia2-blitz-fp16.onnx.teil2"
+      ],
+      "bytes": 42268963,
+      "sha256": "b7bacf8cea1ac8ac30d0640c79b182dc22e94d6e781f5f2d3331e2ac62ba2695"
+    },
+    "rapid": {
+      "teile": [
+        "maia2-rapid-fp16.onnx.teil0",
+        "maia2-rapid-fp16.onnx.teil1",
+        "maia2-rapid-fp16.onnx.teil2"
+      ],
+      "bytes": 42268963,
+      "sha256": "36b8c8d47e7e17c955b809f43cdfb03e54d224e6f0dfb3662c59852e179883de"
+    }
+  }
+}

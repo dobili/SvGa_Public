@@ -3,39 +3,39 @@
     "kennung": "tom",
     "faktoren": [
       {
-        "schlagreflex": 1.165,
         "koenigsschild": 8.783,
-        "drohungIgnoriert": 1.188,
+        "drohungIgnoriert": 1.49,
         "bauernvorstoss": 1.341,
-        "rueckzug": 1.424
+        "rueckzug": 1.424,
+        "springer": 1.514
       },
       {
-        "schlagreflex": 1.1714819674241683,
         "koenigsschild": 5.171482862777368,
-        "drohungIgnoriert": 1.2034001828153427,
+        "drohungIgnoriert": 1.5338546215336055,
         "bauernvorstoss": 1.3578935893508004,
-        "rueckzug": 1.3699751822569635
+        "rueckzug": 1.3699751822569635,
+        "springer": 1.5129996695306975
       },
       {
-        "schlagreflex": 1.19819253026071,
         "koenigsschild": 2.3077094360168977,
-        "drohungIgnoriert": 1.2024624940794713,
+        "drohungIgnoriert": 1.5330254375234504,
         "bauernvorstoss": 1.2755308291025236,
-        "rueckzug": 1.3097413631380934
+        "rueckzug": 1.3097413631380934,
+        "springer": 1.5262277329429692
       },
       {
-        "schlagreflex": 1.148,
         "koenigsschild": 1.696,
-        "drohungIgnoriert": 1.219,
+        "drohungIgnoriert": 1.584,
         "bauernvorstoss": 1.27,
-        "rueckzug": 1.296
+        "rueckzug": 1.296,
+        "springer": 1.556
       },
       {
-        "schlagreflex": 1.3096656061758665,
         "koenigsschild": 2.0161227641192885,
-        "drohungIgnoriert": 1.2365096036828827,
+        "drohungIgnoriert": 1.6341236183349164,
         "bauernvorstoss": 1.2757926947588312,
-        "rueckzug": 1.2118003135830588
+        "rueckzug": 1.2118003135830588,
+        "springer": 1.6076476604032364
       }
     ],
     "werte": {
@@ -43,7 +43,7 @@
       "gewichte": {
         "rueckzug": 1.424,
         "diagonale": 1,
-        "springer": 1,
+        "springer": 1.514,
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
@@ -52,9 +52,8 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "schlagreflex": 1.165,
         "koenigsschild": 8.783,
-        "drohungIgnoriert": 1.188,
+        "drohungIgnoriert": 1.49,
         "bauernvorstoss": 1.341
       },
       "standardgewicht": 1,
@@ -71,35 +70,45 @@
         "drohungIgnoriert": 1.188,
         "tempoverlust": 0.548,
         "koenigsschild": 0.214,
-        "zwischenzug": 1.746
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "taktikUebersehen": 1.456900820234514,
         "drohungIgnoriert": 1.2034001828153427,
         "tempoverlust": 0.5255397225709966,
         "koenigsschild": 0.34088414454180765,
-        "zwischenzug": 1.7329512399372349
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "taktikUebersehen": 1.4431418254198538,
         "drohungIgnoriert": 1.2024624940794713,
         "tempoverlust": 0.43880154833414453,
         "koenigsschild": 0.6505916618141845,
-        "zwischenzug": 1.7379687857624706
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "taktikUebersehen": 1.426,
         "drohungIgnoriert": 1.219,
         "tempoverlust": 0.383,
         "koenigsschild": 0.781,
-        "zwischenzug": 1.648
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "taktikUebersehen": 1.8287290668658385,
         "drohungIgnoriert": 1.2365096036828827,
         "tempoverlust": 0.21542980295214495,
         "koenigsschild": 0.702922470831599,
-        "zwischenzug": 1.555441416447434
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -111,11 +120,11 @@
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
-        "abzug": 1,
+        "abzug": 1.856,
         "bauer": 1,
         "roentgen": 1,
         "zwischenzug": 1.746,
-        "grundreihe": 1,
+        "grundreihe": 1.891,
         "taktikUebersehen": 1.44,
         "drohungIgnoriert": 1.188,
         "tempoverlust": 0.548,
@@ -132,33 +141,28 @@
     "faktoren": [
       {
         "taktikUebersehen": 0.848,
-        "koenigPassiv": 3.02,
         "bauernvorstoss": 1.951,
-        "falscherAbtausch": 1.515
+        "bauernzugOhneNot": 1.374
       },
       {
         "taktikUebersehen": 0.8434879963579801,
-        "koenigPassiv": 2.50872078956587,
         "bauernvorstoss": 2.0028120231314768,
-        "falscherAbtausch": 1.7432985974869595
+        "bauernzugOhneNot": 1.3624514670255232
       },
       {
         "taktikUebersehen": 0.8479840045430393,
-        "koenigPassiv": 2.393812768318521,
         "bauernvorstoss": 1.7488302585089914,
-        "falscherAbtausch": 2.001498315447048
+        "bauernzugOhneNot": 1.2973922952784915
       },
       {
         "taktikUebersehen": 0.853,
-        "koenigPassiv": 1.842,
         "bauernvorstoss": 1.736,
-        "falscherAbtausch": 2.095
+        "bauernzugOhneNot": 1.229
       },
       {
         "taktikUebersehen": 0.7473954776421918,
-        "koenigPassiv": 2.2373984893174486,
         "bauernvorstoss": 1.7526813743518816,
-        "falscherAbtausch": 1.8303729128240507
+        "bauernzugOhneNot": 1.3144991441609994
       }
     ],
     "werte": {
@@ -176,9 +180,8 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "taktikUebersehen": 0.848,
-        "koenigPassiv": 3.02,
         "bauernvorstoss": 1.951,
-        "falscherAbtausch": 1.515
+        "bauernzugOhneNot": 1.374
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -193,36 +196,46 @@
         "drohungIgnoriert": 0.831,
         "figurHaengen": 0.811,
         "tempoverlust": 2.996,
-        "koenigPassiv": 3.02,
-        "abzug": 1.856
+        "bauernzugOhneNot": 1.374,
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "drohungIgnoriert": 0.818912083193306,
         "figurHaengen": 0.7948389774035997,
         "tempoverlust": 3.175615845784877,
-        "koenigPassiv": 2.50872078956587,
-        "abzug": 1.7673845082494077
+        "bauernzugOhneNot": 1.3624514670255232,
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "drohungIgnoriert": 0.8204627060771732,
         "figurHaengen": 0.7879827803673595,
         "tempoverlust": 4.014267095237897,
-        "koenigPassiv": 2.393812768318521,
-        "abzug": 1.703209660732723
+        "bauernzugOhneNot": 1.2973922952784915,
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "drohungIgnoriert": 0.808,
         "figurHaengen": 0.777,
         "tempoverlust": 4.75,
-        "koenigPassiv": 1.842,
-        "abzug": 1.658
+        "bauernzugOhneNot": 1.229,
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "drohungIgnoriert": 0.79466219238114,
         "figurHaengen": 0.7538308828908511,
         "tempoverlust": 8.029388519681932,
-        "koenigPassiv": 2.2373984893174486,
-        "abzug": 1.5348697013101795
+        "bauernzugOhneNot": 1.3144991441609994,
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -237,12 +250,12 @@
         "abzug": 1.856,
         "bauer": 1,
         "roentgen": 1,
-        "zwischenzug": 1,
-        "grundreihe": 1,
+        "zwischenzug": 1.746,
+        "grundreihe": 1.891,
         "drohungIgnoriert": 0.831,
         "figurHaengen": 0.811,
         "tempoverlust": 2.996,
-        "koenigPassiv": 3.02
+        "bauernzugOhneNot": 1.374
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -256,33 +269,38 @@
       {
         "verfruehteDame": 6.502965380249715,
         "figurHaengen": 1.215,
+        "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "verfruehteDame": 8.337573000093936,
         "figurHaengen": 1.2368043499276675,
+        "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "verfruehteDame": 9.454022581393795,
         "figurHaengen": 1.2462283579414066,
+        "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "verfruehteDame": 5.9496920821114365,
         "figurHaengen": 1.262,
+        "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "verfruehteDame": 4.469488156352212,
         "figurHaengen": 1.2935625226482095,
+        "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
     ],
     "werte": {
       "haeufigkeit": 2.5,
       "gewichte": {
-        "rueckzug": 1,
+        "rueckzug": 1.424,
         "diagonale": 1,
         "springer": 1.514,
         "dame": 1,
@@ -306,31 +324,26 @@
     "kennung": "onkel-bernd",
     "faktoren": [
       {
-        "koenigPassiv": 0.182,
         "bauernvorstoss": 0.722,
         "koenigMitte": 1.587,
         "verfruehteDame": 1.762
       },
       {
-        "koenigPassiv": 0.26298288917722384,
         "bauernvorstoss": 0.7109149034870488,
         "koenigMitte": 1.642045370871341,
         "verfruehteDame": 1.9272508918145557
       },
       {
-        "koenigPassiv": 0.2940821889225079,
         "bauernvorstoss": 0.7664694130788725,
         "koenigMitte": 1.6325631898292587,
         "verfruehteDame": 2.0127757400220667
       },
       {
-        "koenigPassiv": 0.465,
         "bauernvorstoss": 0.771,
         "koenigMitte": 1.703,
         "verfruehteDame": 1.705
       },
       {
-        "koenigPassiv": 0.33370645783382735,
         "bauernvorstoss": 0.7668330978772369,
         "koenigMitte": 1.808149883167875,
         "verfruehteDame": 1.5481983077112569
@@ -350,7 +363,6 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "koenigPassiv": 0.182,
         "bauernvorstoss": 0.722,
         "koenigMitte": 1.587,
         "verfruehteDame": 1.762
@@ -365,39 +377,39 @@
     "kennung": "henry",
     "faktoren": [
       {
-        "schlagreflex": 1.165,
         "koenigsschild": 8.783,
-        "drohungIgnoriert": 1.188,
+        "drohungIgnoriert": 1.49,
         "bauernvorstoss": 1.341,
-        "rueckzug": 1.424
+        "rueckzug": 1.424,
+        "springer": 1.514
       },
       {
-        "schlagreflex": 1.1714819674241683,
         "koenigsschild": 5.171482862777368,
-        "drohungIgnoriert": 1.2034001828153427,
+        "drohungIgnoriert": 1.5338546215336055,
         "bauernvorstoss": 1.3578935893508004,
-        "rueckzug": 1.3699751822569635
+        "rueckzug": 1.3699751822569635,
+        "springer": 1.5129996695306975
       },
       {
-        "schlagreflex": 1.19819253026071,
         "koenigsschild": 2.3077094360168977,
-        "drohungIgnoriert": 1.2024624940794713,
+        "drohungIgnoriert": 1.5330254375234504,
         "bauernvorstoss": 1.2755308291025236,
-        "rueckzug": 1.3097413631380934
+        "rueckzug": 1.3097413631380934,
+        "springer": 1.5262277329429692
       },
       {
-        "schlagreflex": 1.148,
         "koenigsschild": 1.696,
-        "drohungIgnoriert": 1.219,
+        "drohungIgnoriert": 1.584,
         "bauernvorstoss": 1.27,
-        "rueckzug": 1.296
+        "rueckzug": 1.296,
+        "springer": 1.556
       },
       {
-        "schlagreflex": 1.3096656061758665,
         "koenigsschild": 2.0161227641192885,
-        "drohungIgnoriert": 1.2365096036828827,
+        "drohungIgnoriert": 1.6341236183349164,
         "bauernvorstoss": 1.2757926947588312,
-        "rueckzug": 1.2118003135830588
+        "rueckzug": 1.2118003135830588,
+        "springer": 1.6076476604032364
       }
     ],
     "werte": {
@@ -405,7 +417,7 @@
       "gewichte": {
         "rueckzug": 1.4102972755287402,
         "diagonale": 1,
-        "springer": 1,
+        "springer": 1.5137498553957875,
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
@@ -414,9 +426,8 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "schlagreflex": 1.1666171216800638,
         "koenigsschild": 7.693712164251786,
-        "drohungIgnoriert": 1.191831470257448,
+        "drohungIgnoriert": 1.5008446833863414,
         "bauernvorstoss": 1.3452035907040227
       },
       "standardgewicht": 1,
@@ -433,35 +444,45 @@
         "drohungIgnoriert": 1.188,
         "tempoverlust": 0.548,
         "koenigsschild": 0.214,
-        "zwischenzug": 1.746
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "taktikUebersehen": 1.456900820234514,
         "drohungIgnoriert": 1.2034001828153427,
         "tempoverlust": 0.5255397225709966,
         "koenigsschild": 0.34088414454180765,
-        "zwischenzug": 1.7329512399372349
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "taktikUebersehen": 1.4431418254198538,
         "drohungIgnoriert": 1.2024624940794713,
         "tempoverlust": 0.43880154833414453,
         "koenigsschild": 0.6505916618141845,
-        "zwischenzug": 1.7379687857624706
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "taktikUebersehen": 1.426,
         "drohungIgnoriert": 1.219,
         "tempoverlust": 0.383,
         "koenigsschild": 0.781,
-        "zwischenzug": 1.648
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "taktikUebersehen": 1.8287290668658385,
         "drohungIgnoriert": 1.2365096036828827,
         "tempoverlust": 0.21542980295214495,
         "koenigsschild": 0.702922470831599,
-        "zwischenzug": 1.555441416447434
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -473,11 +494,11 @@
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
-        "abzug": 1,
+        "abzug": 1.8258296316172333,
         "bauer": 1,
         "roentgen": 1,
         "zwischenzug": 1.7416177575748213,
-        "grundreihe": 1,
+        "grundreihe": 1.9126519953803016,
         "taktikUebersehen": 1.4456398228126963,
         "drohungIgnoriert": 1.1931369830842327,
         "tempoverlust": 0.5403708706312655,
@@ -494,33 +515,28 @@
     "faktoren": [
       {
         "taktikUebersehen": 0.848,
-        "koenigPassiv": 3.02,
         "bauernvorstoss": 1.951,
-        "falscherAbtausch": 1.515
+        "bauernzugOhneNot": 1.374
       },
       {
         "taktikUebersehen": 0.8434879963579801,
-        "koenigPassiv": 2.50872078956587,
         "bauernvorstoss": 2.0028120231314768,
-        "falscherAbtausch": 1.7432985974869595
+        "bauernzugOhneNot": 1.3624514670255232
       },
       {
         "taktikUebersehen": 0.8479840045430393,
-        "koenigPassiv": 2.393812768318521,
         "bauernvorstoss": 1.7488302585089914,
-        "falscherAbtausch": 2.001498315447048
+        "bauernzugOhneNot": 1.2973922952784915
       },
       {
         "taktikUebersehen": 0.853,
-        "koenigPassiv": 1.842,
         "bauernvorstoss": 1.736,
-        "falscherAbtausch": 2.095
+        "bauernzugOhneNot": 1.229
       },
       {
         "taktikUebersehen": 0.7473954776421918,
-        "koenigPassiv": 2.2373984893174486,
         "bauernvorstoss": 1.7526813743518816,
-        "falscherAbtausch": 1.8303729128240507
+        "bauernzugOhneNot": 1.3144991441609994
       }
     ],
     "werte": {
@@ -538,9 +554,8 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "taktikUebersehen": 0.8458763600396977,
-        "koenigPassiv": 2.7678737332798318,
         "bauernvorstoss": 1.9751825586478893,
-        "falscherAbtausch": 1.6183163891031886
+        "bauernzugOhneNot": 1.3685600478381057
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -555,36 +570,46 @@
         "drohungIgnoriert": 0.831,
         "figurHaengen": 0.811,
         "tempoverlust": 2.996,
-        "koenigPassiv": 3.02,
-        "abzug": 1.856
+        "bauernzugOhneNot": 1.374,
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "drohungIgnoriert": 0.818912083193306,
         "figurHaengen": 0.7948389774035997,
         "tempoverlust": 3.175615845784877,
-        "koenigPassiv": 2.50872078956587,
-        "abzug": 1.7673845082494077
+        "bauernzugOhneNot": 1.3624514670255232,
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "drohungIgnoriert": 0.8204627060771732,
         "figurHaengen": 0.7879827803673595,
         "tempoverlust": 4.014267095237897,
-        "koenigPassiv": 2.393812768318521,
-        "abzug": 1.703209660732723
+        "bauernzugOhneNot": 1.2973922952784915,
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "drohungIgnoriert": 0.808,
         "figurHaengen": 0.777,
         "tempoverlust": 4.75,
-        "koenigPassiv": 1.842,
-        "abzug": 1.658
+        "bauernzugOhneNot": 1.229,
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "drohungIgnoriert": 0.79466219238114,
         "figurHaengen": 0.7538308828908511,
         "tempoverlust": 8.029388519681932,
-        "koenigPassiv": 2.2373984893174486,
-        "abzug": 1.5348697013101795
+        "bauernzugOhneNot": 1.3144991441609994,
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -599,12 +624,12 @@
         "abzug": 1.8138105170435737,
         "bauer": 1,
         "roentgen": 1,
-        "zwischenzug": 1,
-        "grundreihe": 1,
+        "zwischenzug": 1.7398548901239668,
+        "grundreihe": 1.9214473509767365,
         "drohungIgnoriert": 0.8252966150465987,
         "figurHaengen": 0.80336379579782,
         "tempoverlust": 3.079117770274573,
-        "koenigPassiv": 2.7678737332798318
+        "bauernzugOhneNot": 1.3685600478381057
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -618,27 +643,42 @@
       {
         "koenigMitte": 4.779153119092628,
         "koenigsschild": 2.979,
-        "diagonale": 1.927
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "koenigMitte": 5.284783328121531,
         "koenigsschild": 2.227782305343141,
-        "diagonale": 1.831640521499784
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "koenigMitte": 5.206681980191663,
         "koenigsschild": 1.4536017380204003,
-        "diagonale": 1.7619580632529404
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "koenigMitte": 5.908152671755725,
         "koenigsschild": 1.257,
-        "diagonale": 1.833
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "koenigMitte": 7.001947746620819,
         "koenigsschild": 1.365000732600536,
-        "diagonale": 1.6513994065640207
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
@@ -647,12 +687,12 @@
         "rueckzug": 1,
         "diagonale": 1.869204558973597,
         "springer": 1,
-        "dame": 1,
-        "turm": 1,
+        "dame": 1.8197239635549838,
+        "turm": 1.8839422648222672,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.3318278661184495,
         "zwischenzug": 1,
         "grundreihe": 1,
         "koenigMitte": 5.07640998656955,
@@ -668,31 +708,26 @@
     "kennung": "jakob",
     "faktoren": [
       {
-        "koenigPassiv": 0.182,
         "bauernvorstoss": 0.722,
         "koenigMitte": 1.587,
         "verfruehteDame": 1.762
       },
       {
-        "koenigPassiv": 0.26298288917722384,
         "bauernvorstoss": 0.7109149034870488,
         "koenigMitte": 1.642045370871341,
         "verfruehteDame": 1.9272508918145557
       },
       {
-        "koenigPassiv": 0.2940821889225079,
         "bauernvorstoss": 0.7664694130788725,
         "koenigMitte": 1.6325631898292587,
         "verfruehteDame": 2.0127757400220667
       },
       {
-        "koenigPassiv": 0.465,
         "bauernvorstoss": 0.771,
         "koenigMitte": 1.703,
         "verfruehteDame": 1.705
       },
       {
-        "koenigPassiv": 0.33370645783382735,
         "bauernvorstoss": 0.7668330978772369,
         "koenigMitte": 1.808149883167875,
         "verfruehteDame": 1.5481983077112569
@@ -712,7 +747,6 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "koenigPassiv": 0.2058842776209289,
         "bauernvorstoss": 0.7182673720837304,
         "koenigMitte": 1.6052315333810536,
         "verfruehteDame": 1.8157173427407618
@@ -798,33 +832,38 @@
       {
         "verfruehteDame": 6.502965380249715,
         "figurHaengen": 1.215,
+        "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "verfruehteDame": 8.337573000093936,
         "figurHaengen": 1.2368043499276675,
+        "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "verfruehteDame": 9.454022581393795,
         "figurHaengen": 1.2462283579414066,
+        "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "verfruehteDame": 5.9496920821114365,
         "figurHaengen": 1.262,
+        "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "verfruehteDame": 4.469488156352212,
         "figurHaengen": 1.2935625226482095,
+        "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
-        "rueckzug": 1,
+        "rueckzug": 1.3447761582044178,
         "diagonale": 1,
         "springer": 1.512519745697718,
         "dame": 1,
@@ -851,56 +890,71 @@
         "verfruehteDame": 0.138,
         "koenigMitte": 0.219,
         "tempoverlust": 0.548,
-        "koenigPassiv": 3.02,
-        "dame": 1.855
+        "taktikUebersehen": 1.168,
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "verfruehteDame": 0.08712060605849802,
         "koenigMitte": 0.18835604582810717,
         "tempoverlust": 0.5255397225709966,
-        "koenigPassiv": 2.50872078956587,
-        "dame": 1.7965800844938697
+        "taktikUebersehen": 1.1739846677022658,
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "verfruehteDame": 0.07078784907231873,
         "koenigMitte": 0.19398992222113484,
         "tempoverlust": 0.43880154833414453,
-        "koenigPassiv": 2.393812768318521,
-        "dame": 1.6116452437694877
+        "taktikUebersehen": 1.1687320285754954,
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "verfruehteDame": 0.162,
         "koenigMitte": 0.161,
         "tempoverlust": 0.383,
-        "koenigPassiv": 1.842,
-        "dame": 1.654
+        "taktikUebersehen": 1.163,
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "verfruehteDame": 0.24441767530193065,
         "koenigMitte": 0.1212559276901546,
         "tempoverlust": 0.21542980295214495,
-        "koenigPassiv": 2.2373984893174486,
-        "dame": 1.6025008580340918
+        "taktikUebersehen": 1.3020656665468144,
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
         "rueckzug": 1,
-        "diagonale": 1,
+        "diagonale": 1.8219056738895396,
         "springer": 1,
         "dame": 1.7905537446118702,
-        "turm": 1,
+        "turm": 1.8705322321324005,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.3069516277844786,
         "zwischenzug": 1,
         "grundreihe": 1,
         "verfruehteDame": 0.08301303211863394,
         "koenigMitte": 0.1853983167938606,
         "tempoverlust": 0.5232354631095667,
-        "koenigPassiv": 2.4603341473977896
+        "taktikUebersehen": 1.1746148340281255
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -913,33 +967,28 @@
     "faktoren": [
       {
         "taktikUebersehen": 0.848,
-        "koenigPassiv": 3.02,
         "bauernvorstoss": 1.951,
-        "falscherAbtausch": 1.515
+        "bauernzugOhneNot": 1.374
       },
       {
         "taktikUebersehen": 0.8434879963579801,
-        "koenigPassiv": 2.50872078956587,
         "bauernvorstoss": 2.0028120231314768,
-        "falscherAbtausch": 1.7432985974869595
+        "bauernzugOhneNot": 1.3624514670255232
       },
       {
         "taktikUebersehen": 0.8479840045430393,
-        "koenigPassiv": 2.393812768318521,
         "bauernvorstoss": 1.7488302585089914,
-        "falscherAbtausch": 2.001498315447048
+        "bauernzugOhneNot": 1.2973922952784915
       },
       {
         "taktikUebersehen": 0.853,
-        "koenigPassiv": 1.842,
         "bauernvorstoss": 1.736,
-        "falscherAbtausch": 2.095
+        "bauernzugOhneNot": 1.229
       },
       {
         "taktikUebersehen": 0.7473954776421918,
-        "koenigPassiv": 2.2373984893174486,
         "bauernvorstoss": 1.7526813743518816,
-        "falscherAbtausch": 1.8303729128240507
+        "bauernzugOhneNot": 1.3144991441609994
       }
     ],
     "werte": {
@@ -957,9 +1006,8 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "taktikUebersehen": 0.8407698981719314,
-        "koenigPassiv": 2.2424191171089767,
         "bauernvorstoss": 2.0348240253325613,
-        "falscherAbtausch": 1.897807092078541
+        "bauernzugOhneNot": 1.3555117836144743
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -1041,31 +1089,31 @@
     "faktoren": [
       {
         "bauernraub": 7.839319680851063,
-        "schlagreflex": 1.433,
+        "drohungIgnoriert": 1.188,
         "verfruehteDame": 1.762,
         "ruhig": 1.175
       },
       {
         "bauernraub": 8.548832888912628,
-        "schlagreflex": 1.450394429112302,
+        "drohungIgnoriert": 1.2034001828153427,
         "verfruehteDame": 1.9272508918145557,
         "ruhig": 1.1739995741055445
       },
       {
         "bauernraub": 11.114327153293194,
-        "schlagreflex": 1.5253793989445394,
+        "drohungIgnoriert": 1.2024624940794713,
         "verfruehteDame": 2.0127757400220667,
         "ruhig": 1.138328056437956
       },
       {
         "bauernraub": 13.835016824849008,
-        "schlagreflex": 1.386,
+        "drohungIgnoriert": 1.219,
         "verfruehteDame": 1.705,
         "ruhig": 1.107
       },
       {
         "bauernraub": 860.0116837924681,
-        "schlagreflex": 1.8361045721853644,
+        "drohungIgnoriert": 1.2365096036828827,
         "verfruehteDame": 1.5481983077112569,
         "ruhig": 1.1248413221428168
       }
@@ -1085,7 +1133,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "bauernraub": 8.91186265865944,
-        "schlagreflex": 1.4588185955732664,
+        "drohungIgnoriert": 1.2108630221436387,
         "verfruehteDame": 2.011989842682443
       },
       "standardgewicht": 1,
@@ -1168,31 +1216,31 @@
     "faktoren": [
       {
         "drohungIgnoriert": 1.49,
-        "schlagreflex": 1.165,
+        "figurHaengen": 1.215,
         "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "drohungIgnoriert": 1.5338546215336055,
-        "schlagreflex": 1.1714819674241683,
+        "figurHaengen": 1.2368043499276675,
         "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "drohungIgnoriert": 1.5330254375234504,
-        "schlagreflex": 1.19819253026071,
+        "figurHaengen": 1.2462283579414066,
         "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "drohungIgnoriert": 1.584,
-        "schlagreflex": 1.148,
+        "figurHaengen": 1.262,
         "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "drohungIgnoriert": 1.6341236183349164,
-        "schlagreflex": 1.3096656061758665,
+        "figurHaengen": 1.2935625226482095,
         "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
@@ -1212,7 +1260,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "drohungIgnoriert": 1.5408973482085986,
-        "schlagreflex": 1.1946678582839663
+        "figurHaengen": 1.2484327900138479
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -1228,35 +1276,45 @@
         "drohungIgnoriert": 1.188,
         "tempoverlust": 0.548,
         "koenigsschild": 0.214,
-        "zwischenzug": 1.746
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "taktikUebersehen": 1.456900820234514,
         "drohungIgnoriert": 1.2034001828153427,
         "tempoverlust": 0.5255397225709966,
         "koenigsschild": 0.34088414454180765,
-        "zwischenzug": 1.7329512399372349
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "taktikUebersehen": 1.4431418254198538,
         "drohungIgnoriert": 1.2024624940794713,
         "tempoverlust": 0.43880154833414453,
         "koenigsschild": 0.6505916618141845,
-        "zwischenzug": 1.7379687857624706
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "taktikUebersehen": 1.426,
         "drohungIgnoriert": 1.219,
         "tempoverlust": 0.383,
         "koenigsschild": 0.781,
-        "zwischenzug": 1.648
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "taktikUebersehen": 1.8287290668658385,
         "drohungIgnoriert": 1.2365096036828827,
         "tempoverlust": 0.21542980295214495,
         "koenigsschild": 0.702922470831599,
-        "zwischenzug": 1.555441416447434
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -1268,11 +1326,11 @@
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
-        "abzug": 1,
+        "abzug": 1.697931920079101,
         "bauer": 1,
         "roentgen": 1,
         "zwischenzug": 1.7332789216355606,
-        "grundreihe": 1,
+        "grundreihe": 2.0039402440792276,
         "taktikUebersehen": 1.4511022511236762,
         "drohungIgnoriert": 1.206740538710703,
         "tempoverlust": 0.45489417061785087,
@@ -1289,33 +1347,28 @@
     "faktoren": [
       {
         "taktikUebersehen": 0.848,
-        "koenigPassiv": 3.02,
         "bauernvorstoss": 1.951,
-        "falscherAbtausch": 1.515
+        "bauernzugOhneNot": 1.374
       },
       {
         "taktikUebersehen": 0.8434879963579801,
-        "koenigPassiv": 2.50872078956587,
         "bauernvorstoss": 2.0028120231314768,
-        "falscherAbtausch": 1.7432985974869595
+        "bauernzugOhneNot": 1.3624514670255232
       },
       {
         "taktikUebersehen": 0.8479840045430393,
-        "koenigPassiv": 2.393812768318521,
         "bauernvorstoss": 1.7488302585089914,
-        "falscherAbtausch": 2.001498315447048
+        "bauernzugOhneNot": 1.2973922952784915
       },
       {
         "taktikUebersehen": 0.853,
-        "koenigPassiv": 1.842,
         "bauernvorstoss": 1.736,
-        "falscherAbtausch": 2.095
+        "bauernzugOhneNot": 1.229
       },
       {
         "taktikUebersehen": 0.7473954776421918,
-        "koenigPassiv": 2.2373984893174486,
         "bauernvorstoss": 1.7526813743518816,
-        "falscherAbtausch": 1.8303729128240507
+        "bauernzugOhneNot": 1.3144991441609994
       }
     ],
     "werte": {
@@ -1333,9 +1386,8 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "taktikUebersehen": 0.8435099882178383,
-        "koenigPassiv": 2.2345732134072778,
         "bauernvorstoss": 1.895182917269016,
-        "falscherAbtausch": 2.0037328879644005
+        "bauernzugOhneNot": 1.3237461752940087
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -1350,36 +1402,46 @@
         "drohungIgnoriert": 0.831,
         "figurHaengen": 0.811,
         "tempoverlust": 2.996,
-        "koenigPassiv": 3.02,
-        "abzug": 1.856
+        "bauernzugOhneNot": 1.374,
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "drohungIgnoriert": 0.818912083193306,
         "figurHaengen": 0.7948389774035997,
         "tempoverlust": 3.175615845784877,
-        "koenigPassiv": 2.50872078956587,
-        "abzug": 1.7673845082494077
+        "bauernzugOhneNot": 1.3624514670255232,
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "drohungIgnoriert": 0.8204627060771732,
         "figurHaengen": 0.7879827803673595,
         "tempoverlust": 4.014267095237897,
-        "koenigPassiv": 2.393812768318521,
-        "abzug": 1.703209660732723
+        "bauernzugOhneNot": 1.2973922952784915,
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "drohungIgnoriert": 0.808,
         "figurHaengen": 0.777,
         "tempoverlust": 4.75,
-        "koenigPassiv": 1.842,
-        "abzug": 1.658
+        "bauernzugOhneNot": 1.229,
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "drohungIgnoriert": 0.79466219238114,
         "figurHaengen": 0.7538308828908511,
         "tempoverlust": 8.029388519681932,
-        "koenigPassiv": 2.2373984893174486,
-        "abzug": 1.5348697013101795
+        "bauernzugOhneNot": 1.3144991441609994,
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -1394,12 +1456,12 @@
         "abzug": 1.694287682916196,
         "bauer": 1,
         "roentgen": 1,
-        "zwischenzug": 1,
-        "grundreihe": 1,
+        "zwischenzug": 1.730039508242229,
+        "grundreihe": 2.0088012704133904,
         "drohungIgnoriert": 0.8145116652018806,
         "figurHaengen": 0.784017665849189,
         "tempoverlust": 3.7149221561535306,
-        "koenigPassiv": 2.2521924317875084
+        "bauernzugOhneNot": 1.3207125042762855
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -1456,31 +1518,26 @@
     "kennung": "opa-heinz",
     "faktoren": [
       {
-        "koenigPassiv": 0.182,
         "bauernvorstoss": 0.722,
         "koenigMitte": 1.587,
         "verfruehteDame": 1.762
       },
       {
-        "koenigPassiv": 0.26298288917722384,
         "bauernvorstoss": 0.7109149034870488,
         "koenigMitte": 1.642045370871341,
         "verfruehteDame": 1.9272508918145557
       },
       {
-        "koenigPassiv": 0.2940821889225079,
         "bauernvorstoss": 0.7664694130788725,
         "koenigMitte": 1.6325631898292587,
         "verfruehteDame": 2.0127757400220667
       },
       {
-        "koenigPassiv": 0.465,
         "bauernvorstoss": 0.771,
         "koenigMitte": 1.703,
         "verfruehteDame": 1.705
       },
       {
-        "koenigPassiv": 0.33370645783382735,
         "bauernvorstoss": 0.7668330978772369,
         "koenigMitte": 1.808149883167875,
         "verfruehteDame": 1.5481983077112569
@@ -1500,7 +1557,6 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "koenigPassiv": 0.3317315005611938,
         "bauernvorstoss": 0.7344772323736539,
         "koenigMitte": 1.663458567158656,
         "verfruehteDame": 2.056983184272068
@@ -1565,33 +1621,38 @@
       {
         "verfruehteDame": 6.502965380249715,
         "figurHaengen": 1.215,
+        "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "verfruehteDame": 8.337573000093936,
         "figurHaengen": 1.2368043499276675,
+        "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "verfruehteDame": 9.454022581393795,
         "figurHaengen": 1.2462283579414066,
+        "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "verfruehteDame": 5.9496920821114365,
         "figurHaengen": 1.262,
+        "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "verfruehteDame": 4.469488156352212,
         "figurHaengen": 1.2935625226482095,
+        "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
-        "rueckzug": 1,
+        "rueckzug": 1.3049579849951582,
         "diagonale": 1,
         "springer": 1.535594525151913,
         "dame": 1,
@@ -1618,56 +1679,71 @@
         "verfruehteDame": 0.138,
         "koenigMitte": 0.219,
         "tempoverlust": 0.548,
-        "koenigPassiv": 3.02,
-        "dame": 1.855
+        "taktikUebersehen": 1.168,
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "verfruehteDame": 0.08712060605849802,
         "koenigMitte": 0.18835604582810717,
         "tempoverlust": 0.5255397225709966,
-        "koenigPassiv": 2.50872078956587,
-        "dame": 1.7965800844938697
+        "taktikUebersehen": 1.1739846677022658,
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "verfruehteDame": 0.07078784907231873,
         "koenigMitte": 0.19398992222113484,
         "tempoverlust": 0.43880154833414453,
-        "koenigPassiv": 2.393812768318521,
-        "dame": 1.6116452437694877
+        "taktikUebersehen": 1.1687320285754954,
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "verfruehteDame": 0.162,
         "koenigMitte": 0.161,
         "tempoverlust": 0.383,
-        "koenigPassiv": 1.842,
-        "dame": 1.654
+        "taktikUebersehen": 1.163,
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "verfruehteDame": 0.24441767530193065,
         "koenigMitte": 0.1212559276901546,
         "tempoverlust": 0.21542980295214495,
-        "koenigPassiv": 2.2373984893174486,
-        "dame": 1.6025008580340918
+        "taktikUebersehen": 1.3020656665468144,
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
         "rueckzug": 1,
-        "diagonale": 1,
+        "diagonale": 1.800235780274169,
         "springer": 1,
         "dame": 1.6113435694323088,
-        "turm": 1,
+        "turm": 1.5845231341594421,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.3416306376027967,
         "zwischenzug": 1,
         "grundreihe": 1,
         "verfruehteDame": 0.1110657587079433,
         "koenigMitte": 0.18245230664474568,
         "tempoverlust": 0.40086580644564274,
-        "koenigPassiv": 2.153902127437236
+        "taktikUebersehen": 1.1640145705414608
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -1680,31 +1756,31 @@
     "faktoren": [
       {
         "bauernraub": 7.839319680851063,
-        "schlagreflex": 1.433,
+        "drohungIgnoriert": 1.188,
         "verfruehteDame": 1.762,
         "ruhig": 1.175
       },
       {
         "bauernraub": 8.548832888912628,
-        "schlagreflex": 1.450394429112302,
+        "drohungIgnoriert": 1.2034001828153427,
         "verfruehteDame": 1.9272508918145557,
         "ruhig": 1.1739995741055445
       },
       {
         "bauernraub": 11.114327153293194,
-        "schlagreflex": 1.5253793989445394,
+        "drohungIgnoriert": 1.2024624940794713,
         "verfruehteDame": 2.0127757400220667,
         "ruhig": 1.138328056437956
       },
       {
         "bauernraub": 13.835016824849008,
-        "schlagreflex": 1.386,
+        "drohungIgnoriert": 1.219,
         "verfruehteDame": 1.705,
         "ruhig": 1.107
       },
       {
         "bauernraub": 860.0116837924681,
-        "schlagreflex": 1.8361045721853644,
+        "drohungIgnoriert": 1.2365096036828827,
         "verfruehteDame": 1.5481983077112569,
         "ruhig": 1.1248413221428168
       }
@@ -1724,7 +1800,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "bauernraub": 12.520575724463805,
-        "schlagreflex": 1.4829400710701754,
+        "drohungIgnoriert": 1.205257957452305,
         "verfruehteDame": 1.8725049607197237
       },
       "standardgewicht": 1,
@@ -1763,27 +1839,42 @@
       {
         "koenigMitte": 4.779153119092628,
         "koenigsschild": 2.979,
-        "diagonale": 1.927
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "koenigMitte": 5.284783328121531,
         "koenigsschild": 2.227782305343141,
-        "diagonale": 1.831640521499784
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "koenigMitte": 5.206681980191663,
         "koenigsschild": 1.4536017380204003,
-        "diagonale": 1.7619580632529404
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "koenigMitte": 5.908152671755725,
         "koenigsschild": 1.257,
-        "diagonale": 1.833
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "koenigMitte": 7.001947746620819,
         "koenigsschild": 1.365000732600536,
-        "diagonale": 1.6513994065640207
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
@@ -1792,12 +1883,12 @@
         "rueckzug": 1,
         "diagonale": 1.790028097713692,
         "springer": 1,
-        "dame": 1,
-        "turm": 1,
+        "dame": 1.5981246821677046,
+        "turm": 1.562932234881948,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.3504616650210828,
         "zwischenzug": 1,
         "grundreihe": 1,
         "koenigMitte": 5.2924348084833674,
@@ -1817,35 +1908,45 @@
         "drohungIgnoriert": 1.188,
         "tempoverlust": 0.548,
         "koenigsschild": 0.214,
-        "zwischenzug": 1.746
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "taktikUebersehen": 1.456900820234514,
         "drohungIgnoriert": 1.2034001828153427,
         "tempoverlust": 0.5255397225709966,
         "koenigsschild": 0.34088414454180765,
-        "zwischenzug": 1.7329512399372349
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "taktikUebersehen": 1.4431418254198538,
         "drohungIgnoriert": 1.2024624940794713,
         "tempoverlust": 0.43880154833414453,
         "koenigsschild": 0.6505916618141845,
-        "zwischenzug": 1.7379687857624706
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "taktikUebersehen": 1.426,
         "drohungIgnoriert": 1.219,
         "tempoverlust": 0.383,
         "koenigsschild": 0.781,
-        "zwischenzug": 1.648
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "taktikUebersehen": 1.8287290668658385,
         "drohungIgnoriert": 1.2365096036828827,
         "tempoverlust": 0.21542980295214495,
         "koenigsschild": 0.702922470831599,
-        "zwischenzug": 1.555441416447434
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -1857,11 +1958,11 @@
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
-        "abzug": 1,
+        "abzug": 1.7036748813247973,
         "bauer": 1,
         "roentgen": 1,
         "zwischenzug": 1.732190960177659,
-        "grundreihe": 1,
+        "grundreihe": 1.9603506201343874,
         "taktikUebersehen": 1.4321581890105806,
         "drohungIgnoriert": 1.1996188933136565,
         "tempoverlust": 0.41450730921560575,
@@ -1925,56 +2026,71 @@
         "verfruehteDame": 0.138,
         "koenigMitte": 0.219,
         "tempoverlust": 0.548,
-        "koenigPassiv": 3.02,
-        "dame": 1.855
+        "taktikUebersehen": 1.168,
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "verfruehteDame": 0.08712060605849802,
         "koenigMitte": 0.18835604582810717,
         "tempoverlust": 0.5255397225709966,
-        "koenigPassiv": 2.50872078956587,
-        "dame": 1.7965800844938697
+        "taktikUebersehen": 1.1739846677022658,
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "verfruehteDame": 0.07078784907231873,
         "koenigMitte": 0.19398992222113484,
         "tempoverlust": 0.43880154833414453,
-        "koenigPassiv": 2.393812768318521,
-        "dame": 1.6116452437694877
+        "taktikUebersehen": 1.1687320285754954,
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "verfruehteDame": 0.162,
         "koenigMitte": 0.161,
         "tempoverlust": 0.383,
-        "koenigPassiv": 1.842,
-        "dame": 1.654
+        "taktikUebersehen": 1.163,
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "verfruehteDame": 0.24441767530193065,
         "koenigMitte": 0.1212559276901546,
         "tempoverlust": 0.21542980295214495,
-        "koenigPassiv": 2.2373984893174486,
-        "dame": 1.6025008580340918
+        "taktikUebersehen": 1.3020656665468144,
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
         "rueckzug": 1,
-        "diagonale": 1,
+        "diagonale": 1.793849178230736,
         "springer": 1,
         "dame": 1.603069008707455,
-        "turm": 1,
+        "turm": 1.5709941284569018,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.347143238270548,
         "zwischenzug": 1,
         "grundreihe": 1,
         "verfruehteDame": 0.10310453282226037,
         "koenigMitte": 0.18700511806209547,
         "tempoverlust": 0.4044832462027248,
-        "koenigPassiv": 2.2213266961160487
+        "taktikUebersehen": 1.1642145902775336
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -1987,31 +2103,31 @@
     "faktoren": [
       {
         "drohungIgnoriert": 1.49,
-        "schlagreflex": 1.165,
+        "figurHaengen": 1.215,
         "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "drohungIgnoriert": 1.5338546215336055,
-        "schlagreflex": 1.1714819674241683,
+        "figurHaengen": 1.2368043499276675,
         "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "drohungIgnoriert": 1.5330254375234504,
-        "schlagreflex": 1.19819253026071,
+        "figurHaengen": 1.2462283579414066,
         "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "drohungIgnoriert": 1.584,
-        "schlagreflex": 1.148,
+        "figurHaengen": 1.262,
         "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "drohungIgnoriert": 1.6341236183349164,
-        "schlagreflex": 1.3096656061758665,
+        "figurHaengen": 1.2935625226482095,
         "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
@@ -2031,7 +2147,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "drohungIgnoriert": 1.5791199865684418,
-        "schlagreflex": 1.152040274773134
+        "figurHaengen": 1.260539233520701
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -2047,35 +2163,45 @@
         "drohungIgnoriert": 1.188,
         "tempoverlust": 0.548,
         "koenigsschild": 0.214,
-        "zwischenzug": 1.746
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "taktikUebersehen": 1.456900820234514,
         "drohungIgnoriert": 1.2034001828153427,
         "tempoverlust": 0.5255397225709966,
         "koenigsschild": 0.34088414454180765,
-        "zwischenzug": 1.7329512399372349
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "taktikUebersehen": 1.4431418254198538,
         "drohungIgnoriert": 1.2024624940794713,
         "tempoverlust": 0.43880154833414453,
         "koenigsschild": 0.6505916618141845,
-        "zwischenzug": 1.7379687857624706
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "taktikUebersehen": 1.426,
         "drohungIgnoriert": 1.219,
         "tempoverlust": 0.383,
         "koenigsschild": 0.781,
-        "zwischenzug": 1.648
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "taktikUebersehen": 1.8287290668658385,
         "drohungIgnoriert": 1.2365096036828827,
         "tempoverlust": 0.21542980295214495,
         "koenigsschild": 0.702922470831599,
-        "zwischenzug": 1.555441416447434
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -2087,11 +2213,11 @@
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
-        "abzug": 1,
+        "abzug": 1.6629996417864386,
         "bauer": 1,
         "roentgen": 1,
         "zwischenzug": 1.657122680880631,
-        "grundreihe": 1,
+        "grundreihe": 1.789245634439497,
         "taktikUebersehen": 1.42668099287553,
         "drohungIgnoriert": 1.2168373285939875,
         "tempoverlust": 0.3863694331396999,
@@ -2108,31 +2234,31 @@
     "faktoren": [
       {
         "bauernraub": 7.839319680851063,
-        "schlagreflex": 1.433,
+        "drohungIgnoriert": 1.188,
         "verfruehteDame": 1.762,
         "ruhig": 1.175
       },
       {
         "bauernraub": 8.548832888912628,
-        "schlagreflex": 1.450394429112302,
+        "drohungIgnoriert": 1.2034001828153427,
         "verfruehteDame": 1.9272508918145557,
         "ruhig": 1.1739995741055445
       },
       {
         "bauernraub": 11.114327153293194,
-        "schlagreflex": 1.5253793989445394,
+        "drohungIgnoriert": 1.2024624940794713,
         "verfruehteDame": 2.0127757400220667,
         "ruhig": 1.138328056437956
       },
       {
         "bauernraub": 13.835016824849008,
-        "schlagreflex": 1.386,
+        "drohungIgnoriert": 1.219,
         "verfruehteDame": 1.705,
         "ruhig": 1.107
       },
       {
         "bauernraub": 860.0116837924681,
-        "schlagreflex": 1.8361045721853644,
+        "drohungIgnoriert": 1.2365096036828827,
         "verfruehteDame": 1.5481983077112569,
         "ruhig": 1.1248413221428168
       }
@@ -2152,7 +2278,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "bauernraub": 13.702533061703031,
-        "schlagreflex": 1.395060831792985,
+        "drohungIgnoriert": 1.2176686708486544,
         "verfruehteDame": 1.7204701392446522
       },
       "standardgewicht": 1,
@@ -2234,31 +2360,26 @@
     "kennung": "herr-vogel",
     "faktoren": [
       {
-        "koenigPassiv": 0.182,
         "bauernvorstoss": 0.722,
         "koenigMitte": 1.587,
         "verfruehteDame": 1.762
       },
       {
-        "koenigPassiv": 0.26298288917722384,
         "bauernvorstoss": 0.7109149034870488,
         "koenigMitte": 1.642045370871341,
         "verfruehteDame": 1.9272508918145557
       },
       {
-        "koenigPassiv": 0.2940821889225079,
         "bauernvorstoss": 0.7664694130788725,
         "koenigMitte": 1.6325631898292587,
         "verfruehteDame": 2.0127757400220667
       },
       {
-        "koenigPassiv": 0.465,
         "bauernvorstoss": 0.771,
         "koenigMitte": 1.703,
         "verfruehteDame": 1.705
       },
       {
-        "koenigPassiv": 0.33370645783382735,
         "bauernvorstoss": 0.7668330978772369,
         "koenigMitte": 1.808149883167875,
         "verfruehteDame": 1.5481983077112569
@@ -2278,7 +2399,6 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "koenigPassiv": 0.43504284190636194,
         "bauernvorstoss": 0.7733027158388639,
         "koenigMitte": 1.691453477623652,
         "verfruehteDame": 1.7367341478489213
@@ -2296,56 +2416,71 @@
         "verfruehteDame": 0.138,
         "koenigMitte": 0.219,
         "tempoverlust": 0.548,
-        "koenigPassiv": 3.02,
-        "dame": 1.855
+        "taktikUebersehen": 1.168,
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "verfruehteDame": 0.08712060605849802,
         "koenigMitte": 0.18835604582810717,
         "tempoverlust": 0.5255397225709966,
-        "koenigPassiv": 2.50872078956587,
-        "dame": 1.7965800844938697
+        "taktikUebersehen": 1.1739846677022658,
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "verfruehteDame": 0.07078784907231873,
         "koenigMitte": 0.19398992222113484,
         "tempoverlust": 0.43880154833414453,
-        "koenigPassiv": 2.393812768318521,
-        "dame": 1.6116452437694877
+        "taktikUebersehen": 1.1687320285754954,
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "verfruehteDame": 0.162,
         "koenigMitte": 0.161,
         "tempoverlust": 0.383,
-        "koenigPassiv": 1.842,
-        "dame": 1.654
+        "taktikUebersehen": 1.163,
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "verfruehteDame": 0.24441767530193065,
         "koenigMitte": 0.1212559276901546,
         "tempoverlust": 0.21542980295214495,
-        "koenigPassiv": 2.2373984893174486,
-        "dame": 1.6025008580340918
+        "taktikUebersehen": 1.3020656665468144,
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
         "rueckzug": 1,
-        "diagonale": 1,
+        "diagonale": 1.8127551283912584,
         "springer": 1,
         "dame": 1.6276020105610312,
-        "turm": 1,
+        "turm": 1.611240716290978,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.3309458644736818,
         "zwischenzug": 1,
         "grundreihe": 1,
         "verfruehteDame": 0.1284014488154391,
         "koenigMitte": 0.17389067613425152,
         "tempoverlust": 0.3939045880008012,
-        "koenigPassiv": 2.0282540280269195
+        "taktikUebersehen": 1.163624630892234
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -2404,27 +2539,42 @@
       {
         "koenigMitte": 4.779153119092628,
         "koenigsschild": 2.979,
-        "diagonale": 1.927
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "koenigMitte": 5.284783328121531,
         "koenigsschild": 2.227782305343141,
-        "diagonale": 1.831640521499784
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "koenigMitte": 5.206681980191663,
         "koenigsschild": 1.4536017380204003,
-        "diagonale": 1.7619580632529404
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "koenigMitte": 5.908152671755725,
         "koenigsschild": 1.257,
-        "diagonale": 1.833
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "koenigMitte": 7.001947746620819,
         "koenigsschild": 1.365000732600536,
-        "diagonale": 1.6513994065640207
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
@@ -2433,12 +2583,12 @@
         "rueckzug": 1,
         "diagonale": 1.4329170973540124,
         "springer": 1,
-        "dame": 1,
-        "turm": 1,
+        "dame": 1.6457431225499901,
+        "turm": 1.5991838748258862,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.270255461525806,
         "zwischenzug": 1,
         "grundreihe": 1,
         "koenigMitte": 5.7848925465716725,
@@ -2457,36 +2607,46 @@
         "drohungIgnoriert": 0.831,
         "figurHaengen": 0.811,
         "tempoverlust": 2.996,
-        "koenigPassiv": 3.02,
-        "abzug": 1.856
+        "bauernzugOhneNot": 1.374,
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "drohungIgnoriert": 0.818912083193306,
         "figurHaengen": 0.7948389774035997,
         "tempoverlust": 3.175615845784877,
-        "koenigPassiv": 2.50872078956587,
-        "abzug": 1.7673845082494077
+        "bauernzugOhneNot": 1.3624514670255232,
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "drohungIgnoriert": 0.8204627060771732,
         "figurHaengen": 0.7879827803673595,
         "tempoverlust": 4.014267095237897,
-        "koenigPassiv": 2.393812768318521,
-        "abzug": 1.703209660732723
+        "bauernzugOhneNot": 1.2973922952784915,
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "drohungIgnoriert": 0.808,
         "figurHaengen": 0.777,
         "tempoverlust": 4.75,
-        "koenigPassiv": 1.842,
-        "abzug": 1.658
+        "bauernzugOhneNot": 1.229,
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "drohungIgnoriert": 0.79466219238114,
         "figurHaengen": 0.7538308828908511,
         "tempoverlust": 8.029388519681932,
-        "koenigPassiv": 2.2373984893174486,
-        "abzug": 1.5348697013101795
+        "bauernzugOhneNot": 1.3144991441609994,
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -2501,12 +2661,12 @@
         "abzug": 1.5678263250481517,
         "bauer": 1,
         "roentgen": 1,
-        "zwischenzug": 1,
-        "grundreihe": 1,
+        "zwischenzug": 1.5985637625161573,
+        "grundreihe": 1.6885110097835574,
         "drohungIgnoriert": 0.8227971512807408,
         "figurHaengen": 0.7893400637341351,
         "tempoverlust": 3.8040759879038846,
-        "koenigPassiv": 1.9813979233870465
+        "bauernzugOhneNot": 1.2246552909888464
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -2519,33 +2679,28 @@
     "faktoren": [
       {
         "taktikUebersehen": 0.848,
-        "koenigPassiv": 3.02,
         "bauernvorstoss": 1.951,
-        "falscherAbtausch": 1.515
+        "bauernzugOhneNot": 1.374
       },
       {
         "taktikUebersehen": 0.8434879963579801,
-        "koenigPassiv": 2.50872078956587,
         "bauernvorstoss": 2.0028120231314768,
-        "falscherAbtausch": 1.7432985974869595
+        "bauernzugOhneNot": 1.3624514670255232
       },
       {
         "taktikUebersehen": 0.8479840045430393,
-        "koenigPassiv": 2.393812768318521,
         "bauernvorstoss": 1.7488302585089914,
-        "falscherAbtausch": 2.001498315447048
+        "bauernzugOhneNot": 1.2973922952784915
       },
       {
         "taktikUebersehen": 0.853,
-        "koenigPassiv": 1.842,
         "bauernvorstoss": 1.736,
-        "falscherAbtausch": 2.095
+        "bauernzugOhneNot": 1.229
       },
       {
         "taktikUebersehen": 0.7473954776421918,
-        "koenigPassiv": 2.2373984893174486,
         "bauernvorstoss": 1.7526813743518816,
-        "falscherAbtausch": 1.8303729128240507
+        "bauernzugOhneNot": 1.3144991441609994
       }
     ],
     "werte": {
@@ -2563,9 +2718,8 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "taktikUebersehen": 0.8114082634921644,
-        "koenigPassiv": 2.011938585680977,
         "bauernvorstoss": 1.698363344401367,
-        "falscherAbtausch": 1.6298484787632537
+        "bauernzugOhneNot": 1.2237462533059726
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -2603,33 +2757,38 @@
       {
         "verfruehteDame": 6.502965380249715,
         "figurHaengen": 1.215,
+        "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "verfruehteDame": 8.337573000093936,
         "figurHaengen": 1.2368043499276675,
+        "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "verfruehteDame": 9.454022581393795,
         "figurHaengen": 1.2462283579414066,
+        "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "verfruehteDame": 5.9496920821114365,
         "figurHaengen": 1.262,
+        "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "verfruehteDame": 4.469488156352212,
         "figurHaengen": 1.2935625226482095,
+        "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
-        "rueckzug": 1,
+        "rueckzug": 1.2532030981749778,
         "diagonale": 1,
         "springer": 1.533318781941298,
         "dame": 1,
@@ -2657,35 +2816,45 @@
         "drohungIgnoriert": 1.188,
         "tempoverlust": 0.548,
         "koenigsschild": 0.214,
-        "zwischenzug": 1.746
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "taktikUebersehen": 1.456900820234514,
         "drohungIgnoriert": 1.2034001828153427,
         "tempoverlust": 0.5255397225709966,
         "koenigsschild": 0.34088414454180765,
-        "zwischenzug": 1.7329512399372349
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "taktikUebersehen": 1.4431418254198538,
         "drohungIgnoriert": 1.2024624940794713,
         "tempoverlust": 0.43880154833414453,
         "koenigsschild": 0.6505916618141845,
-        "zwischenzug": 1.7379687857624706
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "taktikUebersehen": 1.426,
         "drohungIgnoriert": 1.219,
         "tempoverlust": 0.383,
         "koenigsschild": 0.781,
-        "zwischenzug": 1.648
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "taktikUebersehen": 1.8287290668658385,
         "drohungIgnoriert": 1.2365096036828827,
         "tempoverlust": 0.21542980295214495,
         "koenigsschild": 0.702922470831599,
-        "zwischenzug": 1.555441416447434
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -2697,11 +2866,11 @@
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
-        "abzug": 1,
+        "abzug": 1.5734930465532557,
         "bauer": 1,
         "roentgen": 1,
         "zwischenzug": 1.6017079617630638,
-        "grundreihe": 1,
+        "grundreihe": 1.6935915058699273,
         "taktikUebersehen": 1.5382437266472022,
         "drohungIgnoriert": 1.2009228049119502,
         "tempoverlust": 0.4522037788380478,
@@ -2765,56 +2934,71 @@
         "verfruehteDame": 0.138,
         "koenigMitte": 0.219,
         "tempoverlust": 0.548,
-        "koenigPassiv": 3.02,
-        "dame": 1.855
+        "taktikUebersehen": 1.168,
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "verfruehteDame": 0.08712060605849802,
         "koenigMitte": 0.18835604582810717,
         "tempoverlust": 0.5255397225709966,
-        "koenigPassiv": 2.50872078956587,
-        "dame": 1.7965800844938697
+        "taktikUebersehen": 1.1739846677022658,
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "verfruehteDame": 0.07078784907231873,
         "koenigMitte": 0.19398992222113484,
         "tempoverlust": 0.43880154833414453,
-        "koenigPassiv": 2.393812768318521,
-        "dame": 1.6116452437694877
+        "taktikUebersehen": 1.1687320285754954,
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "verfruehteDame": 0.162,
         "koenigMitte": 0.161,
         "tempoverlust": 0.383,
-        "koenigPassiv": 1.842,
-        "dame": 1.654
+        "taktikUebersehen": 1.163,
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "verfruehteDame": 0.24441767530193065,
         "koenigMitte": 0.1212559276901546,
         "tempoverlust": 0.21542980295214495,
-        "koenigPassiv": 2.2373984893174486,
-        "dame": 1.6025008580340918
+        "taktikUebersehen": 1.3020656665468144,
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
         "rueckzug": 1,
-        "diagonale": 1,
+        "diagonale": 1.5289113337010798,
         "springer": 1,
         "dame": 1.647913427181118,
-        "turm": 1,
+        "turm": 1.6136968910589387,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.2816315847693636,
         "zwischenzug": 1,
         "grundreihe": 1,
         "verfruehteDame": 0.18499909686817043,
         "koenigMitte": 0.1653720019256804,
         "tempoverlust": 0.448656509902052,
-        "koenigPassiv": 1.9657235697259716
+        "taktikUebersehen": 1.201168742349343
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -2828,27 +3012,42 @@
       {
         "koenigMitte": 4.779153119092628,
         "koenigsschild": 2.979,
-        "diagonale": 1.927
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "koenigMitte": 5.284783328121531,
         "koenigsschild": 2.227782305343141,
-        "diagonale": 1.831640521499784
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "koenigMitte": 5.206681980191663,
         "koenigsschild": 1.4536017380204003,
-        "diagonale": 1.7619580632529404
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "koenigMitte": 5.908152671755725,
         "koenigsschild": 1.257,
-        "diagonale": 1.833
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "koenigMitte": 7.001947746620819,
         "koenigsschild": 1.365000732600536,
-        "diagonale": 1.6513994065640207
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
@@ -2857,12 +3056,12 @@
         "rueckzug": 1,
         "diagonale": 1.7154948436091857,
         "springer": 1,
-        "dame": 1,
-        "turm": 1,
+        "dame": 1.5957159680354103,
+        "turm": 1.4644395716686422,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.230663354693995,
         "zwischenzug": 1,
         "grundreihe": 1,
         "koenigMitte": 7.241603389783081,
@@ -2882,35 +3081,45 @@
         "drohungIgnoriert": 1.188,
         "tempoverlust": 0.548,
         "koenigsschild": 0.214,
-        "zwischenzug": 1.746
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "taktikUebersehen": 1.456900820234514,
         "drohungIgnoriert": 1.2034001828153427,
         "tempoverlust": 0.5255397225709966,
         "koenigsschild": 0.34088414454180765,
-        "zwischenzug": 1.7329512399372349
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "taktikUebersehen": 1.4431418254198538,
         "drohungIgnoriert": 1.2024624940794713,
         "tempoverlust": 0.43880154833414453,
         "koenigsschild": 0.6505916618141845,
-        "zwischenzug": 1.7379687857624706
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "taktikUebersehen": 1.426,
         "drohungIgnoriert": 1.219,
         "tempoverlust": 0.383,
         "koenigsschild": 0.781,
-        "zwischenzug": 1.648
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "taktikUebersehen": 1.8287290668658385,
         "drohungIgnoriert": 1.2365096036828827,
         "tempoverlust": 0.21542980295214495,
         "koenigsschild": 0.702922470831599,
-        "zwischenzug": 1.555441416447434
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -2922,11 +3131,11 @@
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
-        "abzug": 1,
+        "abzug": 1.531274021496816,
         "bauer": 1,
         "roentgen": 1,
         "zwischenzug": 1.5578732850243622,
-        "grundreihe": 1,
+        "grundreihe": 1.8363592468414864,
         "taktikUebersehen": 1.7902599139757107,
         "drohungIgnoriert": 1.2276339894284458,
         "tempoverlust": 0.25157841390254254,
@@ -2943,31 +3152,31 @@
     "faktoren": [
       {
         "drohungIgnoriert": 1.49,
-        "schlagreflex": 1.165,
+        "figurHaengen": 1.215,
         "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "drohungIgnoriert": 1.5338546215336055,
-        "schlagreflex": 1.1714819674241683,
+        "figurHaengen": 1.2368043499276675,
         "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "drohungIgnoriert": 1.5330254375234504,
-        "schlagreflex": 1.19819253026071,
+        "figurHaengen": 1.2462283579414066,
         "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "drohungIgnoriert": 1.584,
-        "schlagreflex": 1.148,
+        "figurHaengen": 1.262,
         "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "drohungIgnoriert": 1.6341236183349164,
-        "schlagreflex": 1.3096656061758665,
+        "figurHaengen": 1.2935625226482095,
         "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
@@ -2987,7 +3196,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "drohungIgnoriert": 1.5906958439496104,
-        "schlagreflex": 1.2500005914883658
+        "figurHaengen": 1.2750974693472468
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -3068,31 +3277,26 @@
     "kennung": "frau-prof-reich",
     "faktoren": [
       {
-        "koenigPassiv": 0.182,
         "bauernvorstoss": 0.722,
         "koenigMitte": 1.587,
         "verfruehteDame": 1.762
       },
       {
-        "koenigPassiv": 0.26298288917722384,
         "bauernvorstoss": 0.7109149034870488,
         "koenigMitte": 1.642045370871341,
         "verfruehteDame": 1.9272508918145557
       },
       {
-        "koenigPassiv": 0.2940821889225079,
         "bauernvorstoss": 0.7664694130788725,
         "koenigMitte": 1.6325631898292587,
         "verfruehteDame": 2.0127757400220667
       },
       {
-        "koenigPassiv": 0.465,
         "bauernvorstoss": 0.771,
         "koenigMitte": 1.703,
         "verfruehteDame": 1.705
       },
       {
-        "koenigPassiv": 0.33370645783382735,
         "bauernvorstoss": 0.7668330978772369,
         "koenigMitte": 1.808149883167875,
         "verfruehteDame": 1.5481983077112569
@@ -3112,7 +3316,6 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "koenigPassiv": 0.3309075029011838,
         "bauernvorstoss": 0.7658737680947679,
         "koenigMitte": 1.815689526199005,
         "verfruehteDame": 1.5443940567369931
@@ -3130,56 +3333,71 @@
         "verfruehteDame": 0.138,
         "koenigMitte": 0.219,
         "tempoverlust": 0.548,
-        "koenigPassiv": 3.02,
-        "dame": 1.855
+        "taktikUebersehen": 1.168,
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "verfruehteDame": 0.08712060605849802,
         "koenigMitte": 0.18835604582810717,
         "tempoverlust": 0.5255397225709966,
-        "koenigPassiv": 2.50872078956587,
-        "dame": 1.7965800844938697
+        "taktikUebersehen": 1.1739846677022658,
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "verfruehteDame": 0.07078784907231873,
         "koenigMitte": 0.19398992222113484,
         "tempoverlust": 0.43880154833414453,
-        "koenigPassiv": 2.393812768318521,
-        "dame": 1.6116452437694877
+        "taktikUebersehen": 1.1687320285754954,
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "verfruehteDame": 0.162,
         "koenigMitte": 0.161,
         "tempoverlust": 0.383,
-        "koenigPassiv": 1.842,
-        "dame": 1.654
+        "taktikUebersehen": 1.163,
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "verfruehteDame": 0.24441767530193065,
         "koenigMitte": 0.1212559276901546,
         "tempoverlust": 0.21542980295214495,
-        "koenigPassiv": 2.2373984893174486,
-        "dame": 1.6025008580340918
+        "taktikUebersehen": 1.3020656665468144,
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
       "haeufigkeit": 1,
       "gewichte": {
         "rueckzug": 1,
-        "diagonale": 1,
+        "diagonale": 1.5423476473188211,
         "springer": 1,
         "dame": 1.6147461398287974,
-        "turm": 1,
+        "turm": 1.5106874291987011,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.2408873807481786,
         "zwischenzug": 1,
         "grundreihe": 1,
         "verfruehteDame": 0.2319966242400324,
         "koenigMitte": 0.13417728966987313,
         "tempoverlust": 0.2801924467904566,
-        "koenigPassiv": 2.185599062596537
+        "taktikUebersehen": 1.2806002878020972
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -3217,27 +3435,42 @@
       {
         "koenigMitte": 4.779153119092628,
         "koenigsschild": 2.979,
-        "diagonale": 1.927
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "koenigMitte": 5.284783328121531,
         "koenigsschild": 2.227782305343141,
-        "diagonale": 1.831640521499784
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "koenigMitte": 5.206681980191663,
         "koenigsschild": 1.4536017380204003,
-        "diagonale": 1.7619580632529404
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "koenigMitte": 5.908152671755725,
         "koenigsschild": 1.257,
-        "diagonale": 1.833
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "koenigMitte": 7.001947746620819,
         "koenigsschild": 1.365000732600536,
-        "diagonale": 1.6513994065640207
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
@@ -3246,12 +3479,12 @@
         "rueckzug": 1,
         "diagonale": 2.066,
         "springer": 1,
-        "dame": 1,
-        "turm": 1,
+        "dame": 1.563,
+        "turm": 1.387,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.213,
         "zwischenzug": 1,
         "grundreihe": 1,
         "koenigMitte": 8.534824045407637,
@@ -3270,36 +3503,46 @@
         "drohungIgnoriert": 0.831,
         "figurHaengen": 0.811,
         "tempoverlust": 2.996,
-        "koenigPassiv": 3.02,
-        "abzug": 1.856
+        "bauernzugOhneNot": 1.374,
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "drohungIgnoriert": 0.818912083193306,
         "figurHaengen": 0.7948389774035997,
         "tempoverlust": 3.175615845784877,
-        "koenigPassiv": 2.50872078956587,
-        "abzug": 1.7673845082494077
+        "bauernzugOhneNot": 1.3624514670255232,
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "drohungIgnoriert": 0.8204627060771732,
         "figurHaengen": 0.7879827803673595,
         "tempoverlust": 4.014267095237897,
-        "koenigPassiv": 2.393812768318521,
-        "abzug": 1.703209660732723
+        "bauernzugOhneNot": 1.2973922952784915,
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "drohungIgnoriert": 0.808,
         "figurHaengen": 0.777,
         "tempoverlust": 4.75,
-        "koenigPassiv": 1.842,
-        "abzug": 1.658
+        "bauernzugOhneNot": 1.229,
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "drohungIgnoriert": 0.79466219238114,
         "figurHaengen": 0.7538308828908511,
         "tempoverlust": 8.029388519681932,
-        "koenigPassiv": 2.2373984893174486,
-        "abzug": 1.5348697013101795
+        "bauernzugOhneNot": 1.3144991441609994,
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -3314,12 +3557,12 @@
         "abzug": 1.555,
         "bauer": 1,
         "roentgen": 1,
-        "zwischenzug": 1,
-        "grundreihe": 1,
+        "zwischenzug": 1.542,
+        "grundreihe": 2.159,
         "drohungIgnoriert": 0.759,
         "figurHaengen": 0.713,
         "tempoverlust": 19.419,
-        "koenigPassiv": 2.416
+        "bauernzugOhneNot": 1.414
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -3332,33 +3575,28 @@
     "faktoren": [
       {
         "taktikUebersehen": 0.848,
-        "koenigPassiv": 3.02,
         "bauernvorstoss": 1.951,
-        "falscherAbtausch": 1.515
+        "bauernzugOhneNot": 1.374
       },
       {
         "taktikUebersehen": 0.8434879963579801,
-        "koenigPassiv": 2.50872078956587,
         "bauernvorstoss": 2.0028120231314768,
-        "falscherAbtausch": 1.7432985974869595
+        "bauernzugOhneNot": 1.3624514670255232
       },
       {
         "taktikUebersehen": 0.8479840045430393,
-        "koenigPassiv": 2.393812768318521,
         "bauernvorstoss": 1.7488302585089914,
-        "falscherAbtausch": 2.001498315447048
+        "bauernzugOhneNot": 1.2973922952784915
       },
       {
         "taktikUebersehen": 0.853,
-        "koenigPassiv": 1.842,
         "bauernvorstoss": 1.736,
-        "falscherAbtausch": 2.095
+        "bauernzugOhneNot": 1.229
       },
       {
         "taktikUebersehen": 0.7473954776421918,
-        "koenigPassiv": 2.2373984893174486,
         "bauernvorstoss": 1.7526813743518816,
-        "falscherAbtausch": 1.8303729128240507
+        "bauernzugOhneNot": 1.3144991441609994
       }
     ],
     "werte": {
@@ -3376,9 +3614,8 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "taktikUebersehen": 0.7,
-        "koenigPassiv": 2.416,
         "bauernvorstoss": 1.822,
-        "falscherAbtausch": 2.235
+        "bauernzugOhneNot": 1.414
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -3414,39 +3651,39 @@
     "kennung": "melek",
     "faktoren": [
       {
-        "schlagreflex": 1.165,
         "koenigsschild": 8.783,
-        "drohungIgnoriert": 1.188,
+        "drohungIgnoriert": 1.49,
         "bauernvorstoss": 1.341,
-        "rueckzug": 1.424
+        "rueckzug": 1.424,
+        "springer": 1.514
       },
       {
-        "schlagreflex": 1.1714819674241683,
         "koenigsschild": 5.171482862777368,
-        "drohungIgnoriert": 1.2034001828153427,
+        "drohungIgnoriert": 1.5338546215336055,
         "bauernvorstoss": 1.3578935893508004,
-        "rueckzug": 1.3699751822569635
+        "rueckzug": 1.3699751822569635,
+        "springer": 1.5129996695306975
       },
       {
-        "schlagreflex": 1.19819253026071,
         "koenigsschild": 2.3077094360168977,
-        "drohungIgnoriert": 1.2024624940794713,
+        "drohungIgnoriert": 1.5330254375234504,
         "bauernvorstoss": 1.2755308291025236,
-        "rueckzug": 1.3097413631380934
+        "rueckzug": 1.3097413631380934,
+        "springer": 1.5262277329429692
       },
       {
-        "schlagreflex": 1.148,
         "koenigsschild": 1.696,
-        "drohungIgnoriert": 1.219,
+        "drohungIgnoriert": 1.584,
         "bauernvorstoss": 1.27,
-        "rueckzug": 1.296
+        "rueckzug": 1.296,
+        "springer": 1.556
       },
       {
-        "schlagreflex": 1.3096656061758665,
         "koenigsschild": 2.0161227641192885,
-        "drohungIgnoriert": 1.2365096036828827,
+        "drohungIgnoriert": 1.6341236183349164,
         "bauernvorstoss": 1.2757926947588312,
-        "rueckzug": 1.2118003135830588
+        "rueckzug": 1.2118003135830588,
+        "springer": 1.6076476604032364
       }
     ],
     "werte": {
@@ -3454,7 +3691,7 @@
       "gewichte": {
         "rueckzug": 1.19,
         "diagonale": 1,
-        "springer": 1,
+        "springer": 1.697,
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
@@ -3463,9 +3700,8 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "schlagreflex": 1.526,
         "koenigsschild": 2.571,
-        "drohungIgnoriert": 1.287,
+        "drohungIgnoriert": 1.785,
         "bauernvorstoss": 1.299
       },
       "standardgewicht": 1,
@@ -3478,31 +3714,26 @@
     "kennung": "tarik",
     "faktoren": [
       {
-        "koenigPassiv": 0.182,
         "bauernvorstoss": 0.722,
         "koenigMitte": 1.587,
         "verfruehteDame": 1.762
       },
       {
-        "koenigPassiv": 0.26298288917722384,
         "bauernvorstoss": 0.7109149034870488,
         "koenigMitte": 1.642045370871341,
         "verfruehteDame": 1.9272508918145557
       },
       {
-        "koenigPassiv": 0.2940821889225079,
         "bauernvorstoss": 0.7664694130788725,
         "koenigMitte": 1.6325631898292587,
         "verfruehteDame": 2.0127757400220667
       },
       {
-        "koenigPassiv": 0.465,
         "bauernvorstoss": 0.771,
         "koenigMitte": 1.703,
         "verfruehteDame": 1.705
       },
       {
-        "koenigPassiv": 0.33370645783382735,
         "bauernvorstoss": 0.7668330978772369,
         "koenigMitte": 1.808149883167875,
         "verfruehteDame": 1.5481983077112569
@@ -3522,7 +3753,6 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "koenigPassiv": 0.29,
         "bauernvorstoss": 0.751,
         "koenigMitte": 1.938,
         "verfruehteDame": 1.486
@@ -3540,56 +3770,71 @@
         "verfruehteDame": 0.138,
         "koenigMitte": 0.219,
         "tempoverlust": 0.548,
-        "koenigPassiv": 3.02,
-        "dame": 1.855
+        "taktikUebersehen": 1.168,
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "verfruehteDame": 0.08712060605849802,
         "koenigMitte": 0.18835604582810717,
         "tempoverlust": 0.5255397225709966,
-        "koenigPassiv": 2.50872078956587,
-        "dame": 1.7965800844938697
+        "taktikUebersehen": 1.1739846677022658,
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "verfruehteDame": 0.07078784907231873,
         "koenigMitte": 0.19398992222113484,
         "tempoverlust": 0.43880154833414453,
-        "koenigPassiv": 2.393812768318521,
-        "dame": 1.6116452437694877
+        "taktikUebersehen": 1.1687320285754954,
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "verfruehteDame": 0.162,
         "koenigMitte": 0.161,
         "tempoverlust": 0.383,
-        "koenigPassiv": 1.842,
-        "dame": 1.654
+        "taktikUebersehen": 1.163,
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "verfruehteDame": 0.24441767530193065,
         "koenigMitte": 0.1212559276901546,
         "tempoverlust": 0.21542980295214495,
-        "koenigPassiv": 2.2373984893174486,
-        "dame": 1.6025008580340918
+        "taktikUebersehen": 1.3020656665468144,
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
       "haeufigkeit": 0.5,
       "gewichte": {
         "rueckzug": 1,
-        "diagonale": 1,
+        "diagonale": 2.066,
         "springer": 1,
         "dame": 1.563,
-        "turm": 1,
+        "turm": 1.387,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.213,
         "zwischenzug": 1,
         "grundreihe": 1,
         "verfruehteDame": 0.29,
         "koenigMitte": 0.087,
         "tempoverlust": 0.091,
-        "koenigPassiv": 2.416
+        "taktikUebersehen": 1.375
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -3646,39 +3891,39 @@
     "kennung": "fm-duarte",
     "faktoren": [
       {
-        "schlagreflex": 1.165,
         "koenigsschild": 8.783,
-        "drohungIgnoriert": 1.188,
+        "drohungIgnoriert": 1.49,
         "bauernvorstoss": 1.341,
-        "rueckzug": 1.424
+        "rueckzug": 1.424,
+        "springer": 1.514
       },
       {
-        "schlagreflex": 1.1714819674241683,
         "koenigsschild": 5.171482862777368,
-        "drohungIgnoriert": 1.2034001828153427,
+        "drohungIgnoriert": 1.5338546215336055,
         "bauernvorstoss": 1.3578935893508004,
-        "rueckzug": 1.3699751822569635
+        "rueckzug": 1.3699751822569635,
+        "springer": 1.5129996695306975
       },
       {
-        "schlagreflex": 1.19819253026071,
         "koenigsschild": 2.3077094360168977,
-        "drohungIgnoriert": 1.2024624940794713,
+        "drohungIgnoriert": 1.5330254375234504,
         "bauernvorstoss": 1.2755308291025236,
-        "rueckzug": 1.3097413631380934
+        "rueckzug": 1.3097413631380934,
+        "springer": 1.5262277329429692
       },
       {
-        "schlagreflex": 1.148,
         "koenigsschild": 1.696,
-        "drohungIgnoriert": 1.219,
+        "drohungIgnoriert": 1.584,
         "bauernvorstoss": 1.27,
-        "rueckzug": 1.296
+        "rueckzug": 1.296,
+        "springer": 1.556
       },
       {
-        "schlagreflex": 1.3096656061758665,
         "koenigsschild": 2.0161227641192885,
-        "drohungIgnoriert": 1.2365096036828827,
+        "drohungIgnoriert": 1.6341236183349164,
         "bauernvorstoss": 1.2757926947588312,
-        "rueckzug": 1.2118003135830588
+        "rueckzug": 1.2118003135830588,
+        "springer": 1.6076476604032364
       }
     ],
     "werte": {
@@ -3686,7 +3931,7 @@
       "gewichte": {
         "rueckzug": 1.19,
         "diagonale": 1,
-        "springer": 1,
+        "springer": 1.697,
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
@@ -3695,9 +3940,8 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "schlagreflex": 1.526,
         "koenigsschild": 2.571,
-        "drohungIgnoriert": 1.287,
+        "drohungIgnoriert": 1.785,
         "bauernvorstoss": 1.299
       },
       "standardgewicht": 1,
@@ -3713,56 +3957,71 @@
         "verfruehteDame": 0.138,
         "koenigMitte": 0.219,
         "tempoverlust": 0.548,
-        "koenigPassiv": 3.02,
-        "dame": 1.855
+        "taktikUebersehen": 1.168,
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "verfruehteDame": 0.08712060605849802,
         "koenigMitte": 0.18835604582810717,
         "tempoverlust": 0.5255397225709966,
-        "koenigPassiv": 2.50872078956587,
-        "dame": 1.7965800844938697
+        "taktikUebersehen": 1.1739846677022658,
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "verfruehteDame": 0.07078784907231873,
         "koenigMitte": 0.19398992222113484,
         "tempoverlust": 0.43880154833414453,
-        "koenigPassiv": 2.393812768318521,
-        "dame": 1.6116452437694877
+        "taktikUebersehen": 1.1687320285754954,
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "verfruehteDame": 0.162,
         "koenigMitte": 0.161,
         "tempoverlust": 0.383,
-        "koenigPassiv": 1.842,
-        "dame": 1.654
+        "taktikUebersehen": 1.163,
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "verfruehteDame": 0.24441767530193065,
         "koenigMitte": 0.1212559276901546,
         "tempoverlust": 0.21542980295214495,
-        "koenigPassiv": 2.2373984893174486,
-        "dame": 1.6025008580340918
+        "taktikUebersehen": 1.3020656665468144,
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
       "haeufigkeit": 0,
       "gewichte": {
         "rueckzug": 1,
-        "diagonale": 1,
+        "diagonale": 2.066,
         "springer": 1,
         "dame": 1.563,
-        "turm": 1,
+        "turm": 1.387,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.213,
         "zwischenzug": 1,
         "grundreihe": 1,
         "verfruehteDame": 0.29,
         "koenigMitte": 0.087,
         "tempoverlust": 0.091,
-        "koenigPassiv": 2.416
+        "taktikUebersehen": 1.375
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -3775,31 +4034,31 @@
     "faktoren": [
       {
         "drohungIgnoriert": 1.49,
-        "schlagreflex": 1.165,
+        "figurHaengen": 1.215,
         "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "drohungIgnoriert": 1.5338546215336055,
-        "schlagreflex": 1.1714819674241683,
+        "figurHaengen": 1.2368043499276675,
         "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "drohungIgnoriert": 1.5330254375234504,
-        "schlagreflex": 1.19819253026071,
+        "figurHaengen": 1.2462283579414066,
         "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "drohungIgnoriert": 1.584,
-        "schlagreflex": 1.148,
+        "figurHaengen": 1.262,
         "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "drohungIgnoriert": 1.6341236183349164,
-        "schlagreflex": 1.3096656061758665,
+        "figurHaengen": 1.2935625226482095,
         "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
@@ -3819,7 +4078,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "drohungIgnoriert": 1.785,
-        "schlagreflex": 1.526
+        "figurHaengen": 1.356
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -3834,36 +4093,46 @@
         "drohungIgnoriert": 0.831,
         "figurHaengen": 0.811,
         "tempoverlust": 2.996,
-        "koenigPassiv": 3.02,
-        "abzug": 1.856
+        "bauernzugOhneNot": 1.374,
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "drohungIgnoriert": 0.818912083193306,
         "figurHaengen": 0.7948389774035997,
         "tempoverlust": 3.175615845784877,
-        "koenigPassiv": 2.50872078956587,
-        "abzug": 1.7673845082494077
+        "bauernzugOhneNot": 1.3624514670255232,
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "drohungIgnoriert": 0.8204627060771732,
         "figurHaengen": 0.7879827803673595,
         "tempoverlust": 4.014267095237897,
-        "koenigPassiv": 2.393812768318521,
-        "abzug": 1.703209660732723
+        "bauernzugOhneNot": 1.2973922952784915,
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "drohungIgnoriert": 0.808,
         "figurHaengen": 0.777,
         "tempoverlust": 4.75,
-        "koenigPassiv": 1.842,
-        "abzug": 1.658
+        "bauernzugOhneNot": 1.229,
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "drohungIgnoriert": 0.79466219238114,
         "figurHaengen": 0.7538308828908511,
         "tempoverlust": 8.029388519681932,
-        "koenigPassiv": 2.2373984893174486,
-        "abzug": 1.5348697013101795
+        "bauernzugOhneNot": 1.3144991441609994,
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -3878,12 +4147,12 @@
         "abzug": 1.555,
         "bauer": 1,
         "roentgen": 1,
-        "zwischenzug": 1,
-        "grundreihe": 1,
+        "zwischenzug": 1.542,
+        "grundreihe": 2.159,
         "drohungIgnoriert": 0.759,
         "figurHaengen": 0.713,
         "tempoverlust": 19.419,
-        "koenigPassiv": 2.416
+        "bauernzugOhneNot": 1.414
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -3897,27 +4166,42 @@
       {
         "koenigMitte": 4.779153119092628,
         "koenigsschild": 2.979,
-        "diagonale": 1.927
+        "diagonale": 1.927,
+        "turm": 1.9,
+        "dame": 1.855,
+        "roentgen": 1.362
       },
       {
         "koenigMitte": 5.284783328121531,
         "koenigsschild": 2.227782305343141,
-        "diagonale": 1.831640521499784
+        "diagonale": 1.831640521499784,
+        "turm": 1.8733125740249543,
+        "dame": 1.7965800844938697,
+        "roentgen": 1.312085363076656
       },
       {
         "koenigMitte": 5.206681980191663,
         "koenigsschild": 1.4536017380204003,
-        "diagonale": 1.7619580632529404
+        "diagonale": 1.7619580632529404,
+        "turm": 1.5950894928209765,
+        "dame": 1.6116452437694877,
+        "roentgen": 1.3419593314557434
       },
       {
         "koenigMitte": 5.908152671755725,
         "koenigsschild": 1.257,
-        "diagonale": 1.833
+        "diagonale": 1.833,
+        "turm": 1.655,
+        "dame": 1.654,
+        "roentgen": 1.314
       },
       {
         "koenigMitte": 7.001947746620819,
         "koenigsschild": 1.365000732600536,
-        "diagonale": 1.6513994065640207
+        "diagonale": 1.6513994065640207,
+        "turm": 1.4808264584346134,
+        "dame": 1.6025008580340918,
+        "roentgen": 1.234312764253858
       }
     ],
     "werte": {
@@ -3926,12 +4210,12 @@
         "rueckzug": 1,
         "diagonale": 2.066,
         "springer": 1,
-        "dame": 1,
-        "turm": 1,
+        "dame": 1.563,
+        "turm": 1.387,
         "ruhig": 1,
         "abzug": 1,
         "bauer": 1,
-        "roentgen": 1,
+        "roentgen": 1.213,
         "zwischenzug": 1,
         "grundreihe": 1,
         "koenigMitte": 8.534824045407637,
@@ -3947,31 +4231,26 @@
     "kennung": "gm-ivanova",
     "faktoren": [
       {
-        "koenigPassiv": 0.182,
         "bauernvorstoss": 0.722,
         "koenigMitte": 1.587,
         "verfruehteDame": 1.762
       },
       {
-        "koenigPassiv": 0.26298288917722384,
         "bauernvorstoss": 0.7109149034870488,
         "koenigMitte": 1.642045370871341,
         "verfruehteDame": 1.9272508918145557
       },
       {
-        "koenigPassiv": 0.2940821889225079,
         "bauernvorstoss": 0.7664694130788725,
         "koenigMitte": 1.6325631898292587,
         "verfruehteDame": 2.0127757400220667
       },
       {
-        "koenigPassiv": 0.465,
         "bauernvorstoss": 0.771,
         "koenigMitte": 1.703,
         "verfruehteDame": 1.705
       },
       {
-        "koenigPassiv": 0.33370645783382735,
         "bauernvorstoss": 0.7668330978772369,
         "koenigMitte": 1.808149883167875,
         "verfruehteDame": 1.5481983077112569
@@ -3991,7 +4270,6 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "koenigPassiv": 0.29,
         "bauernvorstoss": 0.751,
         "koenigMitte": 1.938,
         "verfruehteDame": 1.486
@@ -4076,31 +4354,31 @@
     "faktoren": [
       {
         "drohungIgnoriert": 1.49,
-        "schlagreflex": 1.165,
+        "figurHaengen": 1.215,
         "rueckzug": 1.424,
         "springer": 1.514
       },
       {
         "drohungIgnoriert": 1.5338546215336055,
-        "schlagreflex": 1.1714819674241683,
+        "figurHaengen": 1.2368043499276675,
         "rueckzug": 1.3699751822569635,
         "springer": 1.5129996695306975
       },
       {
         "drohungIgnoriert": 1.5330254375234504,
-        "schlagreflex": 1.19819253026071,
+        "figurHaengen": 1.2462283579414066,
         "rueckzug": 1.3097413631380934,
         "springer": 1.5262277329429692
       },
       {
         "drohungIgnoriert": 1.584,
-        "schlagreflex": 1.148,
+        "figurHaengen": 1.262,
         "rueckzug": 1.296,
         "springer": 1.556
       },
       {
         "drohungIgnoriert": 1.6341236183349164,
-        "schlagreflex": 1.3096656061758665,
+        "figurHaengen": 1.2935625226482095,
         "rueckzug": 1.2118003135830588,
         "springer": 1.6076476604032364
       }
@@ -4120,7 +4398,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "drohungIgnoriert": 1.49,
-        "schlagreflex": 1.165
+        "figurHaengen": 1.215
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -4133,31 +4411,31 @@
     "faktoren": [
       {
         "bauernraub": 7.839319680851063,
-        "schlagreflex": 1.433,
+        "drohungIgnoriert": 1.188,
         "verfruehteDame": 1.762,
         "ruhig": 1.175
       },
       {
         "bauernraub": 8.548832888912628,
-        "schlagreflex": 1.450394429112302,
+        "drohungIgnoriert": 1.2034001828153427,
         "verfruehteDame": 1.9272508918145557,
         "ruhig": 1.1739995741055445
       },
       {
         "bauernraub": 11.114327153293194,
-        "schlagreflex": 1.5253793989445394,
+        "drohungIgnoriert": 1.2024624940794713,
         "verfruehteDame": 2.0127757400220667,
         "ruhig": 1.138328056437956
       },
       {
         "bauernraub": 13.835016824849008,
-        "schlagreflex": 1.386,
+        "drohungIgnoriert": 1.219,
         "verfruehteDame": 1.705,
         "ruhig": 1.107
       },
       {
         "bauernraub": 860.0116837924681,
-        "schlagreflex": 1.8361045721853644,
+        "drohungIgnoriert": 1.2365096036828827,
         "verfruehteDame": 1.5481983077112569,
         "ruhig": 1.1248413221428168
       }
@@ -4177,7 +4455,7 @@
         "zwischenzug": 1,
         "grundreihe": 1,
         "bauernraub": 9.226136294710685,
-        "schlagreflex": 1.4658760986919819,
+        "drohungIgnoriert": 1.2171173959243513,
         "verfruehteDame": 2.0854449223268356
       },
       "standardgewicht": 1,
@@ -4193,36 +4471,46 @@
         "drohungIgnoriert": 0.831,
         "figurHaengen": 0.811,
         "tempoverlust": 2.996,
-        "koenigPassiv": 3.02,
-        "abzug": 1.856
+        "bauernzugOhneNot": 1.374,
+        "zwischenzug": 1.746,
+        "abzug": 1.856,
+        "grundreihe": 1.891
       },
       {
         "drohungIgnoriert": 0.818912083193306,
         "figurHaengen": 0.7948389774035997,
         "tempoverlust": 3.175615845784877,
-        "koenigPassiv": 2.50872078956587,
-        "abzug": 1.7673845082494077
+        "bauernzugOhneNot": 1.3624514670255232,
+        "zwischenzug": 1.7329512399372349,
+        "abzug": 1.7673845082494077,
+        "grundreihe": 1.956370108133939
       },
       {
         "drohungIgnoriert": 0.8204627060771732,
         "figurHaengen": 0.7879827803673595,
         "tempoverlust": 4.014267095237897,
-        "koenigPassiv": 2.393812768318521,
-        "abzug": 1.703209660732723
+        "bauernzugOhneNot": 1.2973922952784915,
+        "zwischenzug": 1.7379687857624706,
+        "abzug": 1.703209660732723,
+        "grundreihe": 1.9969395209688519
       },
       {
         "drohungIgnoriert": 0.808,
         "figurHaengen": 0.777,
         "tempoverlust": 4.75,
-        "koenigPassiv": 1.842,
-        "abzug": 1.658
+        "bauernzugOhneNot": 1.229,
+        "zwischenzug": 1.648,
+        "abzug": 1.658,
+        "grundreihe": 1.769
       },
       {
         "drohungIgnoriert": 0.79466219238114,
         "figurHaengen": 0.7538308828908511,
         "tempoverlust": 8.029388519681932,
-        "koenigPassiv": 2.2373984893174486,
-        "abzug": 1.5348697013101795
+        "bauernzugOhneNot": 1.3144991441609994,
+        "zwischenzug": 1.555441416447434,
+        "abzug": 1.5348697013101795,
+        "grundreihe": 1.8822643278774636
       }
     ],
     "werte": {
@@ -4237,12 +4525,12 @@
         "abzug": 1.692670533575558,
         "bauer": 1,
         "roentgen": 1,
-        "zwischenzug": 1,
-        "grundreihe": 1,
+        "zwischenzug": 1.7286017129865336,
+        "grundreihe": 2.010965509807722,
         "drohungIgnoriert": 0.8134343044856859,
         "figurHaengen": 0.7832988825296969,
         "tempoverlust": 3.6629445600347017,
-        "koenigPassiv": 2.2273583663113627
+        "bauernzugOhneNot": 1.3249973584337715
       },
       "standardgewicht": 1,
       "erlaubt": null,
@@ -4254,39 +4542,39 @@
     "kennung": "bodo",
     "faktoren": [
       {
-        "schlagreflex": 1.165,
         "koenigsschild": 8.783,
-        "drohungIgnoriert": 1.188,
+        "drohungIgnoriert": 1.49,
         "bauernvorstoss": 1.341,
-        "rueckzug": 1.424
+        "rueckzug": 1.424,
+        "springer": 1.514
       },
       {
-        "schlagreflex": 1.1714819674241683,
         "koenigsschild": 5.171482862777368,
-        "drohungIgnoriert": 1.2034001828153427,
+        "drohungIgnoriert": 1.5338546215336055,
         "bauernvorstoss": 1.3578935893508004,
-        "rueckzug": 1.3699751822569635
+        "rueckzug": 1.3699751822569635,
+        "springer": 1.5129996695306975
       },
       {
-        "schlagreflex": 1.19819253026071,
         "koenigsschild": 2.3077094360168977,
-        "drohungIgnoriert": 1.2024624940794713,
+        "drohungIgnoriert": 1.5330254375234504,
         "bauernvorstoss": 1.2755308291025236,
-        "rueckzug": 1.3097413631380934
+        "rueckzug": 1.3097413631380934,
+        "springer": 1.5262277329429692
       },
       {
-        "schlagreflex": 1.148,
         "koenigsschild": 1.696,
-        "drohungIgnoriert": 1.219,
+        "drohungIgnoriert": 1.584,
         "bauernvorstoss": 1.27,
-        "rueckzug": 1.296
+        "rueckzug": 1.296,
+        "springer": 1.556
       },
       {
-        "schlagreflex": 1.3096656061758665,
         "koenigsschild": 2.0161227641192885,
-        "drohungIgnoriert": 1.2365096036828827,
+        "drohungIgnoriert": 1.6341236183349164,
         "bauernvorstoss": 1.2757926947588312,
-        "rueckzug": 1.2118003135830588
+        "rueckzug": 1.2118003135830588,
+        "springer": 1.6076476604032364
       }
     ],
     "werte": {
@@ -4294,7 +4582,7 @@
       "gewichte": {
         "rueckzug": 1.2994549749177775,
         "diagonale": 1,
-        "springer": 1,
+        "springer": 1.5480812693905754,
         "dame": 1,
         "turm": 1,
         "ruhig": 1,
@@ -4303,9 +4591,8 @@
         "roentgen": 1,
         "zwischenzug": 1,
         "grundreihe": 1,
-        "schlagreflex": 1.1656579046554443,
         "koenigsschild": 1.815165015080901,
-        "drohungIgnoriert": 1.2120267240658242,
+        "drohungIgnoriert": 1.5629061656281282,
         "bauernvorstoss": 1.2617519037221507
       },
       "standardgewicht": 1,

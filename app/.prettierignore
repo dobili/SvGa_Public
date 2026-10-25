@@ -4,6 +4,7 @@ dev-dist/
 node_modules/
 public/daten/
 public/engine/
+public/maia/ort/
 src/daten/generiert/
 src/ui/brett/figurenpfade.generiert.ts
 playwright-report/

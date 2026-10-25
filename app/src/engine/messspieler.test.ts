@@ -10,4 +10,11 @@ describe("Messspieler", () => {
     expect(spieler("@gruppe-3~180+2").profil.tempo).toBe("blitz");
     expect(spieler("3m").profil.tempo).toBe("rapid");
   });
+  it("„*“ schaltet Maia ein, „!“ das Praxisbuch aus, in beliebiger Reihenfolge", () => {
+    expect(spieler("3m*~180+2").profil.maia).toBeDefined();
+    expect(spieler("3m~180+2").profil.maia).toBeUndefined();
+    const beides = spieler("@tom!*~600+5");
+    expect(beides.profil.maia).toBeDefined();
+    expect(beides.buchtiefe).toBe(0);
+  });
 });

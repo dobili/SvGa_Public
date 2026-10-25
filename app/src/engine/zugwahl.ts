@@ -22,6 +22,7 @@ import type { Spielbewerter, Zugwahl } from "./spielbewerter";
 import { STIL_KANDIDATEN, STIL_NEUTRAL, stilwahl } from "./stil";
 import type { Stilname, Stilmix } from "./stile";
 import type { Stufe } from "./stufen";
+import { maiaabfrage, type Maiaquelle } from "./maia";
 import type { Wahltempo } from "./wahlmodell";
 import { wahlwertung } from "./wahlkorrektur";
 import { zufallszug } from "./zufallszug";
@@ -59,6 +60,8 @@ export interface Gegnerprofil {
   readonly stilname?: Stilname;
   /** Stil-Mischung eigener Bots (0.2.128, engine/stile.ts); vorhanden: gilt statt `stilname`. */
   readonly stilmix?: Stilmix;
+  /** Maia für die Zugwahl (0.2.141, engine/maia.ts); fehlend: ohne Maia. */
+  readonly maia?: Maiaquelle;
 }
 
 export const STANDARDPROFIL: Gegnerprofil = {
@@ -174,8 +177,10 @@ export async function waehleZug(
  */
 function kontextVon(stufe: Stufe, profil: Gegnerprofil) {
   const tempo = profil.tempo ?? "rapid";
+  const wertung = wahlwertung(stufe, tempo);
   return {
-    wertung: wahlwertung(stufe, tempo),
+    maia: profil.maia ? maiaabfrage(profil.maia, wertung, tempo) : undefined,
+    wertung,
     restMs: profil.restMs ?? null,
     verlauf: profil.verlauf ?? RUHIGER_VERLAUF,
     stil: profil.stil,

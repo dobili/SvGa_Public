@@ -22,9 +22,17 @@ const BYTES_JE_MB = 1024 * 1024;
 const SPRACHPAKET = /^(daten\/(?!de\/)[a-z]{2}\/|assets\/sprachpaket-(?!de-)[a-z]{2}-)/;
 /** Nicht in der Dateiliste des Service Workers (vite.config.ts, globIgnores). */
 const NICHT_IN_DER_LISTE = /^admin\//;
+/**
+ * Das Maia-Zusatzpaket (0.2.141, Entscheidung des Autors 25.10.2026): auf Wunsch nachgeladen,
+ * etwa 96 MB, zählt nicht zur Obergrenze der App; es wird eigens ausgewiesen.
+ */
+const ZUSATZPAKET = /^maia\//;
 
 /** Größe aller Dateien unterhalb eines Ordners, getrennt nach Kern, Sprachpaketen und Rest. */
-async function ordnergroesse(ordner, summen = { alles: 0, sprachpakete: 0, ohneListe: 0 }) {
+async function ordnergroesse(
+  ordner,
+  summen = { alles: 0, sprachpakete: 0, ohneListe: 0, zusatz: 0 },
+) {
   for (const eintrag of await readdir(ordner, { withFileTypes: true })) {
     const pfad = join(ordner, eintrag.name);
     if (eintrag.isDirectory()) {
@@ -33,6 +41,10 @@ async function ordnergroesse(ordner, summen = { alles: 0, sprachpakete: 0, ohneL
     }
     const groesse = (await stat(pfad)).size;
     const relativ = relative(DIST, pfad).split(sep).join("/");
+    if (ZUSATZPAKET.test(relativ)) {
+      summen.zusatz += groesse;
+      continue;
+    }
     summen.alles += groesse;
     if (SPRACHPAKET.test(relativ)) summen.sprachpakete += groesse;
     else if (NICHT_IN_DER_LISTE.test(relativ)) summen.ohneListe += groesse;
@@ -46,7 +58,7 @@ function mb(bytes) {
 }
 
 async function main() {
-  const { alles, sprachpakete, ohneListe } = await ordnergroesse(DIST);
+  const { alles, sprachpakete, ohneListe, zusatz } = await ordnergroesse(DIST);
   if (alles > OBERGRENZE_BYTES) {
     console.error(`Größenbudget überschritten: ${mb(alles)} MB (Obergrenze 25 MB).`);
     process.exit(1);
@@ -54,7 +66,8 @@ async function main() {
   const vorab = alles - sprachpakete - ohneListe;
   console.log(
     `Größenbudget eingehalten: ${mb(alles)} MB von 25 MB ` +
-      `(vorab geladen höchstens ${mb(vorab)} MB, Sprachpakete auf Wahl ${mb(sprachpakete)} MB).`,
+      `(vorab geladen höchstens ${mb(vorab)} MB, Sprachpakete auf Wahl ${mb(sprachpakete)} MB); ` +
+      `Zusatzpaket Maia ${mb(zusatz)} MB.`,
   );
 }
 

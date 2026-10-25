@@ -8,8 +8,14 @@
  * dieser Stärke und Zeitklasse (spiel/zugklassenvergleich.ts), also je Zeile verschieden breit. Bei den guten Klassen heißen die Zonen „wenig, normal,
  * viel“ mit „viel“ als gut, bei den schwachen umgekehrt. Unter MINDESTZUEGE_VERGLEICH eigenen
  * Zügen stehen nur die Anzahlen. Ersetzt die zweispaltige Tabelle „Züge nach Art“.
- * Abhängigkeiten: spiel/zugklassenvergleich.ts, Auswertungssymbole.tsx, InfoKnopf, i18n.
+ * Seit 0.2.130 (Wunsch des Autors, 25.10.2026: schwache Werte sollen auffallen) trägt der
+ * Balken die Farbe des Urteils statt der Klasse (grün gut, ruhig normal, rot schwach), die Zonen
+ * sind schwach in denselben Farben getönt, und eine schwache Zeile hat zusätzlich ein Warnzeichen
+ * und einen leichten roten Grund (Bedeutung nie nur über Farbe). Die Klasse erkennt man weiter an
+ * ihrer Marke links. Zu schmale Zonen bleiben ohne Wort, statt es abzuschneiden.
+ * Abhängigkeiten: spiel/zugklassenvergleich.ts, Auswertungssymbole.tsx, InfoKnopf, i18n, lucide.
  */
+import { Check, TriangleAlert } from "lucide-react";
 import type { Zugklasse } from "../../spiel/auswertung";
 import type { Wertungstempo } from "../../spiel/elomodell-daten";
 import type { Seitenbilanz } from "../../spiel/genauigkeit";
@@ -42,14 +48,26 @@ const PROZENT = 100;
 const RELATIV_HOECHSTENS = 3;
 const ZONEN_GUT = ["schwach", "normal", "gut"] as const;
 const ZONEN_SCHWACH = ["gut", "normal", "schwach"] as const;
+/** Schmalere Zonen (Anteil der Spur) bekommen kein Wort; es würde abgeschnitten. */
+const ZONE_MIT_WORT_AB = 0.18;
+const URTEILSZEICHEN = 14;
+
+/** Breiten der drei Zonen als Anteile der Spur: unter, in und über dem Üblichen. */
+function zonenbreiten(v: Klassenvergleich): readonly number[] {
+  return [v.normalVon, v.normalBis - v.normalVon, 1 - v.normalBis];
+}
 
 /** Eine Zeile: Kopf mit Marke, Name, Badge und Urteil, darunter der Balken über den Zonen. */
 function Klassenzeile({ v, vergleich }: { v: Klassenvergleich; vergleich: boolean }) {
   const gut = GUTE_KLASSEN.has(v.klasse);
   // Links wenige, rechts viele Züge der Klasse; das Urteil der Zone hängt an der Art der Klasse.
   const zonen = gut ? ZONEN_GUT : ZONEN_SCHWACH;
+  const breiten = zonenbreiten(v);
   return (
-    <li className="zugklasse" data-testid={`zugklasse-${v.klasse}`}>
+    <li
+      className={vergleich ? `zugklasse ist-${v.urteil}` : "zugklasse"}
+      data-testid={`zugklasse-${v.klasse}`}
+    >
       <div className="zugklasse-kopf">
         <Klassenmarke klasse={v.klasse} />
         <span className="zugklasse-name" title={t(`zugklasse.${v.klasse}`)}>
@@ -58,6 +76,8 @@ function Klassenzeile({ v, vergleich }: { v: Klassenvergleich; vergleich: boolea
         <span className="badge zugklasse-anzahl">{v.anzahl}</span>
         {vergleich && (
           <span className={`zugklasse-urteil zugklasse-urteil-${v.urteil}`}>
+            {v.urteil === "schwach" && <TriangleAlert size={URTEILSZEICHEN} aria-hidden="true" />}
+            {v.urteil === "gut" && <Check size={URTEILSZEICHEN} aria-hidden="true" />}
             {t(v.relativ > RELATIV_HOECHSTENS ? "zugklassen.relativViel" : "zugklassen.relativ", {
               prozent: Math.round(Math.min(v.relativ, RELATIV_HOECHSTENS) * PROZENT),
               urteil: t(`zugklassen.urteil.${v.urteil}`),
@@ -68,19 +88,17 @@ function Klassenzeile({ v, vergleich }: { v: Klassenvergleich; vergleich: boolea
       </div>
       {vergleich && (
         <div
-          className={`zugklasse-spur ${gut ? "zonen-gut" : "zonen-schwach"}`}
-          style={{
-            gridTemplateColumns: `${v.normalVon * PROZENT}% ${(v.normalBis - v.normalVon) * PROZENT}% ${(1 - v.normalBis) * PROZENT}%`,
-          }}
+          className="zugklasse-spur"
+          style={{ gridTemplateColumns: breiten.map((b) => `${b * PROZENT}%`).join(" ") }}
           aria-hidden="true"
         >
           {zonen.map((zone, i) => (
-            <span key={zone} className={`zugklasse-zone zone-${i}`}>
-              {t(`zugklassen.urteil.${zone}`)}
+            <span key={zone} className={`zugklasse-zone zone-urteil-${zone}`}>
+              {(breiten[i] ?? 0) >= ZONE_MIT_WORT_AB && t(`zugklassen.urteil.${zone}`)}
             </span>
           ))}
           <span
-            className={`zugklasse-wert klassenfarbe-${v.klasse}`}
+            className={`zugklasse-wert wert-${v.urteil}`}
             style={{ width: `${v.balken * PROZENT}%` }}
           />
           <span className="zugklasse-ueblich" />

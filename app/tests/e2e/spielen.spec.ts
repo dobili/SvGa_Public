@@ -162,7 +162,7 @@ test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurückneh
   await expect(spielstaerke).toContainText("Genauigkeit");
   await expect(spielstaerke.getByRole("radiogroup")).toHaveCount(0);
   await spielstaerke.getByRole("button", { name: "Erklärung: Spielstärke" }).click();
-  await expect(spielstaerke).toContainText("Maßstab von Lichess");
+  await expect(spielstaerke).toContainText("Wertung auf Lichess");
   // R56: Ring, fünf Balken und die Zugklassen der eigenen Seite; der Umschalter wechselt die Seite.
   await expect(page.getByTestId("balken-taktik")).toBeVisible();
   await expect(page.getByTestId("zugklasse-patzer")).toContainText("1");
@@ -383,7 +383,7 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   const staerke = page.getByTestId("gegner-staerke");
   await expect(staerke).toContainText(/(etwa|unter|über) \d+ \(Stufe 1\)/);
   await page.getByRole("button", { name: "Erklärung: Stärke der Bots" }).click();
-  await expect(page.getByTestId("gegner-sprechblase")).toContainText("Skala von Lichess");
+  await expect(page.getByTestId("gegner-sprechblase")).toContainText("Wertung auf Lichess");
   // Spaß-Bots (0.2.88): eigene Gruppe mit Bereich, Sprechblase „(zum Spaß)“.
   await stufen.nth(0).locator("summary").click();
   await expect(

@@ -20,7 +20,7 @@ import { FEHLERARTEN, type Fehlerart } from "./fehlerart";
 import type { Phase } from "../schach/phase";
 import { stufe, type Stufe, type Stufennummer } from "./stufen";
 import { GEGNER, type Gegner } from "./gegnerliste";
-import type { Portraetkennung } from "./portraetwahl";
+import type { GebautesPortraet, Portraetkennung } from "./portraetwahl";
 export { GEGNER, type Gegner } from "./gegnerliste";
 
 /** Durchschnitt der drei Stufen, eine Nachkommastelle. Beispiel: Timo (5, 4, 3) → 4. */
@@ -58,6 +58,8 @@ export interface EigenerGegner {
   readonly blindeFlecken: readonly BlinderFleck[];
   /** Porträt aus der Liste zur Wahl (0.2.99, engine/portraetwahl.ts); fehlt bei älteren Gegnern. */
   readonly portraet?: Portraetkennung;
+  /** Seit 0.2.140: selbst gebautes Porträt (Baukasten); vorhanden, gilt es statt `portraet`. */
+  readonly portraetBau?: GebautesPortraet;
   /** Erweiterter Modus (seit 0.2.117): Gewichte, Fehlerhäufigkeit, Höchstverluste; fehlend: wie Menschen. */
   readonly gewichte?: Readonly<Partial<Record<Fehlerart | BlinderFleck, number>>>;
   readonly haeufigkeit?: number;

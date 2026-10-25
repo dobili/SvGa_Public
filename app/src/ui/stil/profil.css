@@ -1,0 +1,126 @@
+/*
+ * Profil des Lesers (seit 0.2.140): Kopfkarte mit Porträt und Namen, Editor mit Porträtwahl und
+ * Baukasten, das eigene Porträt in Partieuhr und Partienliste (ui/profil/).
+ */
+.profilkarte-kopf {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+}
+
+.profilkarte-kopf > .spielerbild {
+  flex: none;
+  width: 72px;
+}
+
+.profilkarte-text {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+  justify-items: start;
+}
+
+.profilkarte-text strong {
+  font-family: var(--schrift-titel);
+  font-size: var(--groesse-titel-gross);
+  line-height: 1.15;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+.profileditor {
+  display: grid;
+  gap: calc(var(--raster) * 1.5);
+}
+
+.profileditor-vorschau {
+  display: flex;
+  align-items: center;
+  gap: calc(var(--raster) * 1.5);
+  /* Bleibt beim Scrollen durch den Baukasten oben, damit jede Änderung sichtbar ist. */
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding-block: calc(var(--raster) / 2);
+  background: var(--flaeche);
+}
+
+.profileditor-vorschau > .spielerbild {
+  flex: none;
+  width: 96px;
+}
+
+.profileditor-name {
+  flex: 1;
+  min-width: 0;
+  display: grid;
+  gap: 4px;
+}
+
+/* Die Kacheln der Porträtwahl als Knöpfe (die Bots nutzen dafür Beschriftungen mit Optionsfeld). */
+button.portraetkachel {
+  background: none;
+  font: inherit;
+}
+
+button.portraetkachel[aria-checked="true"] {
+  border-color: var(--gold);
+}
+
+.baukasten {
+  display: grid;
+  gap: var(--raster);
+  justify-items: stretch;
+}
+
+.baukasten > .knopf-zweit {
+  justify-self: start;
+}
+
+.baukasten-zeile {
+  display: grid;
+  gap: 4px;
+}
+
+.farbwahl {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 3px;
+}
+
+/* Farbfeld: 36 px, sieben passen bei 360 px in eine Zeile; die gewählte mit goldenem Ring. */
+.farbfeld {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--linie-stark);
+  cursor: pointer;
+}
+
+.farbfeld[aria-checked="true"] {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+/* Partienliste: das eigene Porträt klein unten links vor dem des Gegners. */
+.partie-paar {
+  position: relative;
+  flex: none;
+  display: inline-flex;
+}
+
+.partie-paar-ich {
+  position: absolute;
+  left: -6px;
+  bottom: -6px;
+  width: 22px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--flaeche);
+  overflow: hidden;
+}
+
+.partie-paar-ich .gegner-portraet {
+  border-radius: 50%;
+}

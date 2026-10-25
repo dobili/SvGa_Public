@@ -71,45 +71,17 @@
 }
 
 /* Auswahl im Editor (0.2.100): Knopf mit Bild, Beschreibung und Pfeil; darunter das Gitter. */
-.portraetwahl {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--raster) / 2);
+/* Klappe „Porträt“ im Formular eigener Bots (seit 0.2.140): Vorschau in der Zusammenfassung. */
+.portraetklappe summary > .gegnerbild {
+  display: inline-block;
+  width: 44px;
+  margin-right: var(--raster);
+  vertical-align: middle;
 }
 
-.portraetknopf {
-  display: flex;
-  align-items: center;
-  gap: calc(var(--raster) * 1.5);
-  width: 100%;
-  min-height: var(--tippflaeche);
-  padding: var(--raster);
-  border: 1px solid var(--linie);
-  border-radius: var(--radius);
-  background: var(--flaeche);
-  color: var(--text);
-  font: inherit;
-  text-align: start;
-  cursor: pointer;
-}
-
-.portraetknopf > .gegnerbild {
-  flex: none;
-  width: 56px;
-}
-
-.portraetknopf-text {
-  flex: 1;
-  min-width: 0;
-}
-
-.portraetknopf .aufklapper {
-  flex: none;
-  transition: transform 0.2s;
-}
-
-.portraetknopf[aria-expanded="true"] .aufklapper {
-  transform: rotate(180deg);
+.portraetwahl-teil {
+  display: grid;
+  gap: var(--raster);
 }
 
 .portraetliste {

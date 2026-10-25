@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.139 (mit „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.140 (mit Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -18,7 +18,7 @@ Datenstand, Gerät; mit dem Dashboard sendet das Formular die Meldung direkt), b
 mit Bildschirmfoto.
 
 Adresse: <https://schach-von-grund-auf.com/app/> (oder die installierte App). Vorher in den
-Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.138“ dasteht; sonst die App neu laden.
+Einstellungen (Profil › Einstellungen, ganz unten) prüfen, dass „App-Version 0.2.140“ dasteht; sonst die App neu laden.
 
 Reihenfolge nach Wichtigkeit: Teil 1 testen (neueste Nummern zuerst), dann Teil 2: oben „Nur
 bestätigen“ mit einem Satz („alle ok außer …“), darunter die Entscheidungen. Alle
@@ -32,6 +32,35 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 `docs/ENTSCHEIDUNGEN.md`. Deine Notizen und Wünsche aus derselben Rückmeldung arbeitet Claude als
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
+
+### Neu in 0.2.140: dein Name und Porträt, Porträt-Baukasten auch für eigene Bots (Opus, 25.10.2026)
+
+Dein Wunsch vom 25.10.2026: im Profil freiwillig ein Porträt und einen Namen, aus einer Auswahl
+oder selbst zusammengebaut; sichtbar in der Partie und bei den gespielten Partien. Der Baukasten
+gilt auf deinen Nachsatz hin auch für eigene Bots.
+
+- [ ] N968. **Profilkarte:** Profil öffnen. Ganz oben steht eine Karte mit Bild (anfangs ein
+      Personenzeichen), „Noch ohne Namen“, einem Satz dazu und dem Knopf „Name und Porträt“.
+- [ ] N969. **Name und Porträt festlegen:** „Name und Porträt“ tippen, einen Namen eingeben. Unter
+      „Dein Porträt“ drei Wege: „Auswählen“ (die 30 Porträts der eigenen Bots nach Altersgruppen:
+      Kinder, Jugendliche, junge Erwachsene, Erwachsene, Ältere, Frauen und Männer), „Selbst
+      gestalten“ und „Kein Bild“. Beim Gestalten: Frisur (20, von Zöpfen bis Glatze, auch Mützen),
+      Haarfarbe (7, auch Grau), Hautfarbe (7), Augen (auch Brille und Sonnenbrille), Nase (auch „mit
+      Falten“ für ältere Gesichter), Mund, Bart (7), Oberteil und seine Farbe, dazu „Zufällig“.
+      Die Vorschau oben bleibt beim Scrollen stehen und ändert sich sofort. „Speichern“; die Karte
+      zeigt Bild und Namen, auch nach dem Neustart der App. Ein langer Name bricht sauber um.
+- [ ] N970. **In der Partie:** Eine Partie gegen die Engine beginnen: An deiner Uhr unter dem Brett
+      stehen dein Porträt und dein Name statt „Du“. In der Partienliste („Deine Partien“) steht
+      dein kleines Porträt unten links vor dem des Gegners und „Dana gegen Tom“; ebenso in
+      „Weiterspielen“ unter Spielen. Im PGN steht dein Name statt „Leser“. Ohne Namen bleibt es bei
+      „Du“, ohne Bild beim Personenzeichen.
+- [ ] N971. **Baukasten für eigene Bots:** Spielen › Eigene Bots › Neuen Gegner anlegen. Statt des
+      Aufklappmenüs steht eine Klappe „Porträt“ mit dem Bild in der Zeile; darin dieselben drei
+      Wege wie im Profil. Ein selbst gebautes Bild erscheint danach in der Bot-Liste, im Kasten
+      über dem Gitter, in der Startleiste und in der Partie. Ältere Bots behalten ihr Porträt.
+- [ ] N972. **Texte (gelten vorerst als abgesegnet):** Die Namen der Frisuren, Farben und übrigen
+      Merkmale (etwa „Kurz gescheitelt“, „Kupfer“, „Hell bis mittel“, „Fliege unter der Lippe“) bitte
+      bei Gelegenheit lesen. Hinweis: Partien zeigen immer dein aktuelles Profil, auch ältere.
 
 ### Neu in 0.2.139: Spielstärke unter Spielen, Trainer-Ring, Vorlagen als Liste (Bot-Chat, Opus, 25.10.2026)
 

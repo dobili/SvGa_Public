@@ -30,7 +30,9 @@ import { neutralisiert } from "./fehlergruppen";
 import { AlteEinstellungen } from "./Fehlerprofil";
 import { GegnerReiter } from "./GegnerReiter";
 import { GegnerBild } from "./GegnerBild";
-import { PortraetAuswahl } from "./PortraetAuswahl";
+import { bildVon, mitBild } from "../profil/gegnerbildwahl";
+import { Portraetwahl } from "../profil/Portraetwahl";
+import { usePortraetwahl, type Portraetwahlzustand } from "../profil/portraetwahlZustand";
 import { Stilnetz } from "./Stilnetz";
 import { StufenWahl } from "./StufenWahl";
 import { Knopfsymbol } from "./Knopfsymbol";
@@ -80,11 +82,21 @@ function kurzbeschreibung(g: EigenerGegner): string {
   return `${s.eroeffnung} · ${s.mittelspiel} · ${s.endspiel} · ${stil}`;
 }
 
-/** Der Gegner ohne Porträt (Wahl „kein Bild“). */
-function ohnePortraet(g: EigenerGegner): EigenerGegner {
-  const ohne: EigenerGegner = { ...g };
-  delete (ohne as { portraet?: unknown }).portraet;
-  return ohne;
+/**
+ * Porträt des Bots in einer Klappe (seit 0.2.140 dieselbe Porträtwahl wie im Profil, mit
+ * Baukasten; vorher ein Aufklappmenü mit den 30 Porträts). In der Zusammenfassung das Bild.
+ */
+function PortraetKlappe({ g, zustand }: { g: EigenerGegner; zustand: Portraetwahlzustand }) {
+  const vorschau = mitBild(g, zustand.bild);
+  return (
+    <details className="unterabschnitt portraetklappe" data-testid="portraetklappe">
+      <summary>
+        <GegnerBild bot={vorschau.kennung} eigene={[vorschau]} name={g.name || "?"} />
+        {t("spielen.eigene.portraet")}
+      </summary>
+      <Portraetwahl zustand={zustand} titel={t("spielen.eigene.portraetArt")} />
+    </details>
+  );
 }
 
 /** Das Formular für einen Gegner; `neu`: noch nicht gespeichert (Überschrift, DS45). */
@@ -100,6 +112,7 @@ function Formular({
   beiAbbrechen: () => void;
 }) {
   const [g, setze] = useState(start);
+  const bildwahl = usePortraetwahl(bildVon(start));
   const name = g.name.trim();
   return (
     <div className="gegnerformular" data-testid="gegnerformular">
@@ -116,10 +129,7 @@ function Formular({
         maxLength={MAX_NAMENSLAENGE}
         onChange={(e) => setze({ ...g, name: e.target.value })}
       />
-      <PortraetAuswahl
-        gegner={g}
-        beiWahl={(portraet) => setze(portraet ? { ...g, portraet } : ohnePortraet(g))}
-      />
+      <PortraetKlappe g={g} zustand={bildwahl} />
       <GegnerReiter
         g={g}
         setze={setze}
@@ -149,7 +159,12 @@ function Formular({
           onClick={() =>
             // Seit 0.2.135: gestrichene Arten werden beim Speichern neutral (Variante A).
             beiSpeichern(
-              neutralisiert({ ...g, name, stilmix: stilDes(g), stilname: hauptstil(stilDes(g)) }),
+              neutralisiert(
+                mitBild(
+                  { ...g, name, stilmix: stilDes(g), stilname: hauptstil(stilDes(g)) },
+                  bildwahl.bild,
+                ),
+              ),
             )
           }
         >

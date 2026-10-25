@@ -10,6 +10,7 @@ import { BLINDE_FLECKEN, type BlinderFleck } from "../engine/blindeFlecken";
 import { FEHLERARTEN, type Fehlerart } from "../engine/fehlerart";
 import type { EigenerGegner } from "../engine/gegner";
 import { istPortraetwahl } from "../engine/portraetwahl";
+import { gebautesPortraetAus } from "./profil";
 import { REGLERARTEN, reglerstufeAus, type Reglerstufen } from "../engine/eigenstufen";
 import { GEGENUEBER, STILNAMEN, STILPROZENTE, type Stilmix, type Stilname } from "../engine/stile";
 import { menschenwerteAus } from "./menschenwerte";
@@ -121,6 +122,11 @@ function teilEAus(roh: Roh): Pick<EigenerGegner, "stilname" | "reglerstufen" | "
   };
 }
 
+function portraetBauAus(roh: unknown): Pick<EigenerGegner, "portraetBau"> {
+  const gebaut = gebautesPortraetAus(roh);
+  return gebaut ? { portraetBau: gebaut } : {};
+}
+
 export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
   if (!istObjekt(roh) || typeof roh.kennung !== "string" || typeof roh.name !== "string") {
     return null;
@@ -136,6 +142,8 @@ export function eigenerGegnerAus(roh: unknown): EigenerGegner | null {
     blindeFlecken: blindeFleckenAus(roh.blindeFlecken),
     // Porträt nur aus der Liste zur Wahl (0.2.99); ältere Gegner und Unbekanntes ohne Porträt.
     ...(istPortraetwahl(roh.portraet) ? { portraet: roh.portraet } : {}),
+    // Seit 0.2.140 auch ein selbst gebautes Porträt (gleiche Prüfung wie im Profil).
+    ...portraetBauAus(roh.portraetBau),
     // Erweiterter Modus (0.2.117), nur wenn gespeichert.
     ...menschenwerteAus(roh),
     // Teil E (0.2.126): Stil und Reglerstufen, nur wenn gespeichert.

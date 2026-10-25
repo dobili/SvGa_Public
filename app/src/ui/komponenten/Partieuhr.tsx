@@ -15,17 +15,21 @@ import type { Partie } from "../../spiel/partie";
 import { restzeit, zeitAlsText, type Uhrstand } from "../../spiel/uhr";
 import { useSpeicher } from "../../speicher/speicher";
 import { GegnerBild } from "./GegnerBild";
+import { Spielerbild } from "../profil/Spielerbild";
+import { spielername, useSpielerprofil } from "../profil/spieler";
 import { Stufenmarke } from "./Stufenmarke";
 
 /** Ab dieser Restzeit wird die Uhr rot. */
 const KNAPP_MS = 10_000;
 
 /**
- * Wer auf dieser Seite spielt: Porträt, Name und Stufe beim Bot; „Du“; bei zwei Menschen die Farbe.
+ * Wer auf dieser Seite spielt: Porträt, Name und Stufe beim Bot; der Leser mit Porträt und Namen
+ * aus dem Profil (seit 0.2.140), sonst „Du“; bei zwei Menschen die Farbe.
  * Beispiel: Partie gegen Leon mit Weiß → oben „Leon“ mit Porträt und Marke, unten „Du“.
  */
 function Seite({ partie, farbe }: { partie: Partie; farbe: Farbe }) {
   const eigene = useSpeicher((z) => z.daten.spiel.eigeneGegner);
+  const profil = useSpielerprofil();
   const e = partie.einstellung;
   const farbname = t(farbe === "white" ? "farbe.w" : "farbe.b");
   const kreis = <span className={`partieuhr-farbe farbe-${farbe}`} title={farbname} />;
@@ -38,10 +42,14 @@ function Seite({ partie, farbe }: { partie: Partie; farbe: Farbe }) {
     );
   }
   if (farbe === e.eigeneFarbe) {
+    // Seit 0.2.140 mit eigenem Porträt und Namen (Profil), sonst „Du“.
     return (
       <span className="partieuhr-name">
         {kreis}
-        {t("partie.du")}
+        {profil.bild && <Spielerbild profil={profil} />}
+        <span className="partieuhr-gegner" data-testid="partie-spielername">
+          {spielername(profil)}
+        </span>
       </span>
     );
   }

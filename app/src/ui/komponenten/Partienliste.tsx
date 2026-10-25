@@ -39,6 +39,8 @@ import { ohnePartie, type Partieeintrag } from "../../speicher/partien";
 import { aendere, useSpeicher } from "../../speicher/speicher";
 import { Ergebnismarke } from "./Ergebnismarke";
 import { GegnerBild } from "./GegnerBild";
+import { Spielerbild } from "../profil/Spielerbild";
+import { useSpielerprofil } from "../profil/spieler";
 import { Figur } from "../brett/Figur";
 import { BRETTFARBEN, FELD } from "../brett/masse";
 import { Partienfilterleiste } from "./Partienfilterleiste";
@@ -67,7 +69,7 @@ const SEKUNDE_MS = 1000;
 const ZEITARTSYMBOL = 13;
 
 /** „15.10.2026 · Stufe 2 · 23 Züge“ (laufende Partie); eingelesen „… · Anna – Ben · 30 Züge“. */
-function zeile(partie: Partie): string {
+function zeile(partie: Partie, ich: string): string {
   const datum = datumText(new Date(partie.begonnen));
   const zuege = Math.ceil(partie.zuege.length / 2);
   const importiert = partie.einstellung.importiert;
@@ -80,7 +82,9 @@ function zeile(partie: Partie): string {
         t("spielen.partieStufe", { nummer: s.nummer }));
   // Einzahl: „1 Zug“ statt „1 Züge“ (Befund beim Vorprüfen von N479, 19.10.2026).
   const schluessel = zuege === 1 ? "spielen.partiezeileEinZug" : "spielen.partiezeile";
-  return t(schluessel, { datum, stufe: gegner, zuege });
+  // Seit 0.2.140 mit dem eigenen Namen aus dem Profil („Dana gegen Tom“), sonst nur der Gegner.
+  const paarung = ich ? t("spielen.partieGegen", { ich, gegner }) : gegner;
+  return t(schluessel, { datum, stufe: paarung, zuege });
 }
 
 /**
@@ -166,6 +170,7 @@ function staerketext(eintrag: Partieeintrag): string {
 
 export function LaufendePartie({ partie }: { partie: Partie }) {
   const { navigiere } = useNavigation();
+  const ich = useSpielerprofil().name;
   return (
     <section
       className="karte laufende-partie"
@@ -174,7 +179,7 @@ export function LaufendePartie({ partie }: { partie: Partie }) {
     >
       <h2 className="karte-titel">{t("spielen.laufend")}</h2>
       <p>
-        {zeile(partie)}
+        {zeile(partie, ich)}
         <Zeitangabe partie={partie} />
       </p>
       <button
@@ -205,6 +210,25 @@ function Gegnerbild({ partie }: { partie: Partie }) {
   const name =
     gegnername(e.bot, e.botName) ?? t("spielen.partieStufe", { nummer: stufe(e.stufe).nummer });
   return <GegnerBild bot={e.bot} eigene={eigene} name={name} />;
+}
+
+/**
+ * Gegnerbild mit dem eigenen Porträt klein unten links davor (seit 0.2.140, Wunsch des Autors:
+ * eigenes Porträt auch bei den gespielten Partien); ohne eigenes Bild nur der Gegner.
+ */
+function Paarbild({ partie }: { partie: Partie }) {
+  const profil = useSpielerprofil();
+  const gegner = <Gegnerbild partie={partie} />;
+  if (!profil.bild || partie.einstellung.gegner === "mensch" || partie.einstellung.importiert)
+    return gegner;
+  return (
+    <span className="partie-paar">
+      {gegner}
+      <span className="partie-paar-ich">
+        <Spielerbild profil={profil} />
+      </span>
+    </span>
+  );
 }
 
 /** Löschen einer ungewerteten Partie: Papierkorb, dann Nachfrage in der Zeile. */
@@ -245,6 +269,7 @@ function Loeschen({ partie }: { partie: Partie }) {
 function Partiezeile({ eintrag }: { eintrag: Partieeintrag }) {
   const { navigiere } = useNavigation();
   const { partie } = eintrag;
+  const profilname = useSpielerprofil().name;
   const staerke = staerketext(eintrag);
   return (
     <li className="partieeintrag">
@@ -253,7 +278,7 @@ function Partiezeile({ eintrag }: { eintrag: Partieeintrag }) {
         className="begriff-knopf partiezeile"
         onClick={() => navigiere({ bildschirm: "partie", id: partie.id })}
       >
-        <Gegnerbild partie={partie} />
+        <Paarbild partie={partie} />
         <Seitenfigur partie={partie} />
         <span className="partiezeile-text">
           <strong>
@@ -268,7 +293,7 @@ function Partiezeile({ eintrag }: { eintrag: Partieeintrag }) {
             )}
           </strong>
           <span>
-            {zeile(partie)}
+            {zeile(partie, profilname)}
             <Zeitangabe partie={partie} />
             {staerke && ` · ${staerke}`}
           </span>

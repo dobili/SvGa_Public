@@ -14,6 +14,7 @@ import { gruppenstufe } from "../../engine/gruppe";
 import { Gruppenbild } from "./Gruppenmodus";
 import { t } from "../../i18n/sprache";
 import type { Wertungstempo } from "../../spiel/elomodell";
+import { svgAdresse } from "../../speicher/profil";
 import { portraet } from "./gegnerportraet";
 import { ZEITARTZEICHEN, zeitartenText } from "./zeitartzeichen";
 
@@ -60,14 +61,18 @@ export function GegnerBild({
   besiegtIn?: readonly Wertungstempo[];
 }) {
   const vorgefertigt = gegnerVon(bot);
-  const eigenerBild = eigene.find((g) => g.kennung === bot)?.portraet;
-  const bild = vorgefertigt ? vorgefertigt.kennung : (eigenerBild ?? null);
+  const eigener = eigene.find((g) => g.kennung === bot);
+  // Seit 0.2.140 kann ein eigener Bot ein selbst gebautes Porträt tragen (Baukasten).
+  const gebaut = vorgefertigt ? null : (eigener?.portraetBau ?? null);
+  const bild = vorgefertigt ? vorgefertigt.kennung : (eigener?.portraet ?? null);
   // Gruppenmodus (Wunsch des Autors, 24.10.2026): die Gesichter der Stufe statt eines Porträts.
   const gruppe = gruppenstufe(bot);
   return (
     <span className="gegnerbild">
       {gruppe !== null ? (
         <Gruppenbild stufe={gruppe} />
+      ) : gebaut ? (
+        <img className="gegner-portraet" src={svgAdresse(gebaut.svg)} alt="" />
       ) : bild ? (
         <img className="gegner-portraet" src={portraet(bild)} alt="" />
       ) : (

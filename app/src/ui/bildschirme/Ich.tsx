@@ -1,5 +1,6 @@
 /**
- * Bereich „Profil“ (intern „ich“, bis 0.2.133 „Einstellungen“ mit Zahnrad): oben der Knopf zu den
+ * Bereich „Profil“ (intern „ich“, bis 0.2.133 „Einstellungen“ mit Zahnrad): oben Name und Porträt
+ * des Lesers (seit 0.2.140, ProfilKarte.tsx), dann der Knopf zu den
  * Einstellungen, darunter die Wertung des Lesers (Wertungskurve.tsx), sein Fortschritt im Buch
  * (Fortschrittsuebersicht.tsx) und seine gespielten Partien (Partienliste.tsx).
  *
@@ -17,6 +18,7 @@ import { Fortschrittsuebersicht } from "../komponenten/Fortschrittsuebersicht";
 import { Knopfsymbol } from "../komponenten/Knopfsymbol";
 import { Partienliste } from "../komponenten/Partienliste";
 import { Wertungskurve } from "../komponenten/Wertungskurve";
+import { ProfilKarte } from "../profil/ProfilKarte";
 
 /** Die Profilseite. */
 export function Ich() {
@@ -29,6 +31,8 @@ export function Ich() {
         <h1>{t("profil.titel")}</h1>
         <TourKnopf />
       </header>
+      {/* Seit 0.2.140 ganz oben: Name und Porträt des Lesers (Wunsch des Autors). */}
+      <ProfilKarte />
       <button
         type="button"
         className="knopf-zweit profil-einstellungen"

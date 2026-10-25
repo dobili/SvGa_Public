@@ -46,6 +46,7 @@ import { Verlaufskurve } from "./Verlaufskurve";
 import type { Auswertungsstand } from "./useAuswertung";
 import { Knopfsymbol } from "./Knopfsymbol";
 import { Titelsymbol } from "./Titelsymbol";
+import { useSpielerprofil } from "../profil/spieler";
 
 const PROZENT = 100;
 const SEITEN: readonly Color[] = ["white", "black"];
@@ -195,6 +196,7 @@ function Enginefehler({ partie, beiSprung }: { partie: Partie; beiSprung: (s: Sp
 /** PGN kopieren oder als Datei sichern. */
 function Pgn({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[] }) {
   const [meldung, setzeMeldung] = useState<string | null>(null);
+  const profil = useSpielerprofil();
   const s = stufe(partie.einstellung.stufe);
   const kommentare = new Map(
     enginefehler(partie).map((f) => [
@@ -210,7 +212,8 @@ function Pgn({ partie, urteile }: { partie: Partie; urteile: readonly Zugurteil[
     ereignis: mensch
       ? t("pgn.ereignisMensch")
       : t("pgn.ereignis", { nummer: s.nummer, name: t(s.name) }),
-    leser: mensch ? t("pgn.weiss") : t("pgn.leser"),
+    // Seit 0.2.140 der Name aus dem Profil, sonst „Leser“.
+    leser: mensch ? t("pgn.weiss") : profil.name || t("pgn.leser"),
     engine: mensch ? t("pgn.schwarz") : t("pgn.engine", { nummer: s.nummer }),
   };
   const text = alsPgn(partie, kopf, kommentare, zeichen);

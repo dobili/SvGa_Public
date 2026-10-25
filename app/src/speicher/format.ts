@@ -27,6 +27,7 @@ import { sammlungAus, type Sammeleintrag } from "../training/lernsammlung";
 import { TRAINER, type TrainerKennung } from "../training/trainer";
 import { kartenAus, type Karten } from "../training/wiederholung";
 import { LEERER_SPIELSTAND, type Spielstand } from "./partien";
+import { LEERES_PROFIL, profilAus, type Spielerprofil } from "./profil";
 import { spielstandAus } from "./partienLesen";
 import { stufenUmgerechnet } from "./stufenskala";
 import { planstandTextAus, rateverlaufAus, type Rateverlauf } from "./trainerverlauf";
@@ -159,6 +160,8 @@ export interface Nutzerdaten {
   readonly zugErraten: Rateverlauf;
   /** Seit 0.2.90: Stand des 30-Minuten-Plans als JSON, damit er in der Sicherung steckt. */
   readonly planstand: string | null;
+  /** Seit 0.2.140: Name und Porträt des Lesers (speicher/profil.ts); zusätzliches Feld. */
+  readonly profil: Spielerprofil;
 }
 
 /** Ergebnis einer Prüfung: umgewandelte Daten oder ein Grund für den Leser. */
@@ -186,6 +189,7 @@ export function leereDaten(jetzt: Date): Nutzerdaten {
     sammlung: [],
     zugErraten: {},
     planstand: null,
+    profil: LEERES_PROFIL,
   };
 }
 
@@ -321,6 +325,7 @@ function aktuellesFormatAus(roh: Roh, jetzt: Date): Nutzerdaten {
     sammlung: sammlungAus(roh.sammlung),
     zugErraten: rateverlaufAus(roh.zugErraten),
     planstand: planstandTextAus(roh.planstand),
+    profil: profilAus(roh.profil),
   };
 }
 

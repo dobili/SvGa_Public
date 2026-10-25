@@ -5668,3 +5668,28 @@ in dieser Zeit nicht angefasst).
   (`.stilnetz-liste`); passt die Einstellung zu keiner Vorlage, steht „eigene Einstellung“. Mit
   offenen Feinreglern bleibt die Liste gesperrt wie vorher die Knöpfe.
 
+
+## Spielerprofil mit Namen und Porträt, Baukasten auch für eigene Bots (25.10.2026, Opus, Version 0.2.140)
+
+Wunsch des Autors (25.10.2026): im Profil freiwillig Porträt und Profilname, aus vorgefertigten
+Porträts oder selbst zusammengebaut (Frisur, Haarfarbe, Gesicht, Augen …), sichtbar in der Partie
+gegen die Engine und bei den gespielten Partien; Nachsatz: den Baukasten auch für eigene Bots.
+
+- Machbarkeit: Die Porträts der Bots sind DiceBear „Personas“ aus festen Merkmalen (Frisur 20,
+  Haarfarbe 7, Haut 7, Augen 6, Nase 3, Mund 7, Bart 6, Oberkörper 4, Kleidungsfarbe 7). Daraus
+  wird der Baukasten (`ui/profil/merkmale.ts`, `Baukasten.tsx`); Schnuller und „wie Bots“-Werte
+  weggelassen, „kein Bart“ ergänzt. Die Bibliothek (`@dicebear/core`, `@dicebear/personas` 9.4.3,
+  MIT, Zeichnungen CC BY 4.0) wird nur im Baukasten nachgeladen; gespeichert wird das fertige SVG
+  (höchstens 40 000 Zeichen, muss mit `<svg` beginnen, nur als `img` gezeigt, CSP erlaubt `data:`).
+- Auswahl: die 30 Porträts für eigene Bots (fünf Altersgruppen, Frauen und Männer); für „alte
+  Menschen“ ergänzt der Baukasten die Nase „mit Falten“, graues Haar, Halbglatze und Glatze.
+- Speicher: neues Feld `profil` der Nutzerdaten (`speicher/profil.ts`) ohne neue Formatversion wie
+  „zugErraten“ (0.2.90); fehlt es, gibt es kein Profil. Eigene Bots: neues Feld `portraetBau`
+  neben `portraet`, nur eines gesetzt (`ui/profil/gegnerbildwahl.ts`). Eine ältere App ließe
+  beide Felder beim Speichern weg.
+- Anzeige: Profilkarte oben im Profil (`ProfilKarte.tsx`), eigene Uhr in der Partie
+  (`Partieuhr.tsx`), Partienliste mit eigenem Porträt klein vor dem des Gegners und „Name gegen
+  Gegner“, PGN-Name statt „Leser“. Partien speichern das Profil nicht; sie zeigen das aktuelle.
+- Gemeinsame Porträtwahl (`Portraetwahl.tsx`, `portraetwahlZustand.ts`) für Profil und eigene
+  Bots; das Aufklappmenü `PortraetAuswahl.tsx` (0.2.100) entfällt, im Bot-Formular steht die Wahl
+  in einer Klappe mit dem Bild in der Zusammenfassung.

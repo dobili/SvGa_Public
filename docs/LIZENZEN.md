@@ -67,8 +67,11 @@
   App legt je nach hellem oder dunklem Modus die Farbe dahinter, eine Änderung im Sinne von CC BY
   4.0, die in der Namensnennung „Remix“ heißt und schon in den Dateien steht). Die
   Namensnennung steht in der App unter Einstellungen → Lizenzen; der Lizenztext liegt in
-  `app/public/lizenzen/cc-by-4.0.txt`. Die Pakete sind keine Abhängigkeit der App (nur zum
-  Erzeugen, `npm install --no-save`).
+  `app/public/lizenzen/cc-by-4.0.txt`. Bis 0.2.139 waren die Pakete keine Abhängigkeit der App
+  (nur zum Erzeugen, `npm install --no-save`); seit 0.2.140 baut die App mit `@dicebear/core` und
+  `@dicebear/personas` (je 9.4.3) im Baukasten selbst Porträts für das Profil und eigene Bots
+  (`app/src/ui/profil/merkmale.ts`, nachgeladen). Ihre Lizenztexte stehen damit beim Build in
+  `/lizenzen/bausteine.txt`.
   Seit 0.2.99 dazu 30 Porträts zur Wahl für eigene Bots (`wahl-01.svg` bis `wahl-30.svg`, erzeugt
   mit `app/skripte/erzeuge-portraetwahl.mjs`, gleiche Herkunft und Lizenz).
 - **Materialbretter (seit 0.2.84, Auswahl des Autors vom 18.10.2026):** drei ganze Brettbilder aus

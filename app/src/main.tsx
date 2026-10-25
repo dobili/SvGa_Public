@@ -28,6 +28,7 @@ import "./ui/stil/symbole.css";
 import "./ui/stil/abstimmung.css";
 import "./ui/stil/fehlerprofil.css";
 import "./ui/stil/profilnetz.css";
+import "./ui/stil/profil.css";
 import "./ui/stil/spielwahl.css";
 import "./ui/stil/breit.css";
 import "./ui/stil/brett.css";

@@ -63,3 +63,13 @@ export type Portraetkennung = (typeof PORTRAETWAHL)[number]["kennung"];
 export function istPortraetwahl(wert: unknown): wert is Portraetkennung {
   return PORTRAETWAHL.some((p) => p.kennung === wert);
 }
+
+/**
+ * Ein selbst gebautes Porträt (seit 0.2.140, Wunsch des Autors vom 25.10.2026): die Merkmale aus
+ * dem Baukasten (ui/profil/merkmale.ts) und das fertige SVG, damit nur der Baukasten die
+ * Bibliothek laden muss. Für das Profil des Lesers und für eigene Bots.
+ */
+export interface GebautesPortraet {
+  readonly merkmale: Readonly<Record<string, string>>;
+  readonly svg: string;
+}

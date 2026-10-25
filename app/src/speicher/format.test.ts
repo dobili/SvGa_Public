@@ -11,6 +11,7 @@ import {
   STANDARD_EINSTELLUNGEN,
   wandleUm,
 } from "./format";
+import { LEERES_PROFIL } from "./profil";
 import { LEERER_SPIELSTAND } from "./partien";
 
 const JETZT = new Date("2026-10-15T10:00:00.000Z");
@@ -109,6 +110,8 @@ describe("Format 1", () => {
         sammlung: [],
         zugErraten: {},
         planstand: null,
+        // Name und Porträt (seit 0.2.140) fehlen in Format 1 und lesen sich leer.
+        profil: LEERES_PROFIL,
       },
       vonVersion: 1,
     });

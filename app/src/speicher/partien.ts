@@ -184,11 +184,14 @@ export function mitWerten(
 }
 
 /**
- * Löscht eine beendete, ungewertete Partie (0.2.99, Wunsch des Autors). Gewertete Partien bleiben:
- * Sie tragen die Wertung und die besiegten Bots. Beispiel: Übungspartie mit Rücknahmen → weg.
+ * Löscht beendete, ungewertete Partien (0.2.99, Wunsch des Autors; seit 0.2.142 mehrere auf einmal
+ * aus dem Löschmodus der Partienliste). Gewertete Partien bleiben: Sie tragen die Wertung und die
+ * besiegten Bots. Beispiel: zwei Übungspartien mit Rücknahmen ausgewählt → beide weg.
  */
-export function ohnePartie(stand: Spielstand, id: string): Spielstand {
-  const partien = stand.partien.filter((e) => e.partie.id !== id || e.partie.einstellung.gewertet);
+export function ohnePartien(stand: Spielstand, ids: ReadonlySet<string>): Spielstand {
+  const partien = stand.partien.filter(
+    (e) => !ids.has(e.partie.id) || e.partie.einstellung.gewertet,
+  );
   return { ...stand, partien };
 }
 

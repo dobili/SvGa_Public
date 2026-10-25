@@ -5,9 +5,10 @@
  * 25.10.2026: kein leerer Raum rechts; ui/komponenten/Partiezeile.tsx).
  */
 .partienliste .partiezeile {
+  --zahlenbreite: 76px;
   display: grid;
-  grid-template-columns: 60px minmax(0, 1fr) auto;
-  column-gap: calc(var(--raster) * 1.25);
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  column-gap: var(--raster);
   align-items: center;
   padding: var(--raster) calc(var(--raster) / 2);
 }
@@ -55,9 +56,9 @@
   grid-column: 2 / -1;
 }
 
-/* Ungewertet: Zahlen oben rechts, darunter der Papierkorb (gegnerbild.css); so hoch, dass beide passen. */
-.partiezeile.mit-loeschen {
-  min-height: calc(var(--raster) * 11);
+/* Teile der kleinen Zeile brechen nur zwischeneinander um, nie „20 / Züge“. */
+.partie-klein > span {
+  white-space: nowrap;
 }
 
 /* Ergebnis, gespielte Farbe, Zeitart und Stern in einer Zeile, bei Platzmangel umbrochen. */
@@ -65,7 +66,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 6px 10px;
+  gap: 6px 8px;
 }
 
 .partie-kopf .seitenfigur {
@@ -77,34 +78,96 @@
   color: var(--gold-text);
 }
 
-.partiezeile-wertung {
-  color: var(--gold);
+/* Gewertet: kleiner goldener Stern oben rechts am Porträt (spart Platz in der Kopfzeile). */
+.partie-gewertet {
+  position: absolute;
+  top: -4px;
+  right: -2px;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--navy);
 }
 
-/* Zahlen beider Seiten rechts untereinander: eigene groß und kräftig, darunter „vs …“. */
+.partie-gewertet svg {
+  fill: currentColor;
+}
+
+/*
+ * Zahlen beider Seiten rechts (Nachbesserung vom 25.10.2026, „grafischer“): klein die Art, darunter
+ * je Seite eine Marke mit König; die eigene golden gerahmt, bei der Genauigkeit mit Balken.
+ */
 .partie-zahlen {
   display: grid;
-  justify-items: end;
+  justify-items: stretch;
+  gap: 3px;
   align-self: start;
   padding-top: 2px;
-  line-height: 1.2;
+  inline-size: var(--zahlenbreite);
+}
+
+.partie-zahlen-art {
+  font-size: var(--groesse-fein);
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-leise);
+}
+
+.partie-zahlen-marken {
+  display: grid;
+  gap: 3px;
+}
+
+.seitenmarke {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  column-gap: 4px;
+  padding: 1px 6px 1px 4px;
+  border: 1px solid transparent;
+  border-radius: 999px;
   font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
-.partie-zahlen > strong {
-  font-size: var(--groesse-gross, 1.15rem);
-}
-
-.partie-zahl-gegner {
-  font-size: var(--groesse-mittel);
+.seitenmarke-zahl {
+  text-align: end;
   font-weight: 600;
+  color: var(--text-leise);
 }
 
-.partie-zahlen-vs {
-  font-size: var(--groesse-klein);
-  font-weight: 400;
-  color: var(--text-leise);
+.seitenmarke.eigene {
+  border-color: var(--gold);
+  background: color-mix(in srgb, var(--gold) 14%, transparent);
+}
+
+.seitenmarke.eigene .seitenmarke-zahl {
+  font-size: var(--groesse-mittel);
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Balken der Genauigkeit: über die ganze Marke, unter Zahl und König. */
+.seitenmarke-balken {
+  grid-column: 1 / -1;
+  height: 3px;
+  margin-block: 1px 2px;
+  border-radius: 2px;
+  background: var(--linie);
+  overflow: hidden;
+}
+
+.seitenmarke-balken > span {
+  display: block;
+  height: 100%;
+  background: var(--text-leise);
+}
+
+.seitenmarke.eigene .seitenmarke-balken > span {
+  background: var(--gold);
 }
 
 .partie-klein {

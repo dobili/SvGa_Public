@@ -14,8 +14,9 @@
  * Seit 25.10.2026 steht vor der Zeitangabe das Zeichen der Zeitart wie in der Bedenkzeit-Auswahl
  * (Wunsch des Autors); der Name bleibt als Text daneben, damit es nicht nur am Zeichen hängt.
  * Seit 0.2.142 baut Partiezeile.tsx jede Zeile (Gegner links, Ergebnis, Farbe, Zeitart und Zahlen
- * auf einen Blick, Datum und Züge klein).
- * Abhängigkeiten: Partiezeile, spiel/partie.ts, spiel/wertung.ts, speicher/partien.ts,
+ * auf einen Blick, Datum und Züge klein); gelöscht wird im Löschmodus (PartieLoeschen.tsx): Papierkorb
+ * neben Filter und Sortieren, Partien antippen, „Ausgewählte löschen“.
+ * Abhängigkeiten: Partiezeile, PartieLoeschen, spiel/partie.ts, spiel/wertung.ts, speicher/partien.ts,
  * engine/stufen.ts, Navigation, i18n.
  */
 import { useMemo, useState } from "react";
@@ -36,6 +37,7 @@ import {
 import { gegnerstaerke } from "../../engine/botstaerke";
 import type { Partieeintrag } from "../../speicher/partien";
 import { Partienfilterleiste } from "./Partienfilterleiste";
+import { Loeschleiste, LoeschmodusKnopf } from "./PartieLoeschen";
 import { Partiezeile, Zeitangabe } from "./Partiezeile";
 import { PgnImport } from "./PgnImport";
 import { Titelsymbol } from "./Titelsymbol";
@@ -117,6 +119,8 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
   const [anzahl, setzeAnzahl] = useState(SICHTBAR);
   const [sortierung, setzeSortierung] = useState<Sortierung>("datum");
   const [aufsteigend, setzeAufsteigend] = useState(false);
+  // Löschmodus (seit 0.2.142): null aus, sonst die gewählten Partien.
+  const [gewaehlt, setzeGewaehlt] = useState<ReadonlySet<string> | null>(null);
   // Die Spielstärke je Partie kostet Rechenzeit; einmal je Liste.
   const werte = useMemo(() => new Map(partien.map((e) => [e, sortierwerte(e)])), [partien]);
   if (partien.length === 0)
@@ -137,6 +141,19 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
     mitFilter && aufsteigend,
   );
   const rest = passend.length - anzahl;
+  const loeschbar = partien.filter((e) => !e.partie.einstellung.gewertet).map((e) => e.partie.id);
+  const loeschknopf = loeschbar.length > 0 && (
+    <LoeschmodusKnopf
+      an={gewaehlt !== null}
+      beiTipp={() => setzeGewaehlt(gewaehlt ? null : new Set())}
+    />
+  );
+  const umschalte = (id: string) => {
+    if (!gewaehlt) return;
+    const neu = new Set(gewaehlt);
+    if (!neu.delete(id)) neu.add(id);
+    setzeGewaehlt(neu);
+  };
   return (
     <>
       <section className="karte partienliste" data-tour="spielen-partien">
@@ -152,12 +169,28 @@ export function Partienliste({ partien }: { partien: readonly Partieeintrag[] })
               setzeSortierung(s);
               setzeAufsteigend(auf);
             }}
+            zusatz={loeschknopf}
+          />
+        )}
+        {!mitFilter && loeschknopf && <div className="filterknoepfe">{loeschknopf}</div>}
+        {gewaehlt && (
+          <Loeschleiste
+            gewaehlt={gewaehlt}
+            waehlbar={loeschbar}
+            setzeGewaehlt={setzeGewaehlt}
+            beiFertig={() => setzeGewaehlt(null)}
           />
         )}
         {passend.length === 0 && <p className="hinweis">{t("spielen.filter.leer")}</p>}
         <ul className="begriffsliste">
           {passend.slice(0, anzahl).map((eintrag) => (
-            <Partiezeile key={eintrag.partie.id} eintrag={eintrag} />
+            <Partiezeile
+              key={eintrag.partie.id}
+              eintrag={eintrag}
+              loeschmodus={gewaehlt !== null}
+              gewaehlt={gewaehlt?.has(eintrag.partie.id) ?? false}
+              beiWahl={() => umschalte(eintrag.partie.id)}
+            />
           ))}
         </ul>
         {rest > 0 && (

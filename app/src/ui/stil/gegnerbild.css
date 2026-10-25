@@ -137,32 +137,103 @@
 }
 
 /*
- * Partienliste: Der Papierkorb ungewerteter Partien sitzt unten rechts in der Zeile, unter den
- * Zahlen (partienliste.css); die Nachfrage beim Löschen nimmt eine eigene Zeile.
+ * Partienliste (seit 0.2.142): Der Knopf zum Öffnen liegt unsichtbar hinter der ganzen Zeile, der
+ * Inhalt darüber lässt Tipps durch; nur der Papierkorb am Ende der kleinen Zeile fängt sie selbst.
+ * Die Nachfrage beim Löschen nimmt eine eigene Zeile.
  */
 .partieeintrag {
   position: relative;
   border-bottom: 1px solid var(--linie);
 }
 
-.partieeintrag > .partiezeile {
+.partiezeile-oeffnen {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  border-bottom: none;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
-.partie-loeschen {
+.partiezeile-oeffnen:hover {
+  background: color-mix(in srgb, var(--gold) 6%, transparent);
+}
+
+.partiezeile-oeffnen:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: -3px;
+}
+
+.partieeintrag > .partiezeile {
+  position: relative;
+  pointer-events: none;
+}
+
+/* Löschmodus (PartieLoeschen.tsx): gewählte Zeilen golden gerahmt, gewertete blass. */
+.partieeintrag.gewaehlt {
+  outline: 2px solid var(--gold);
+  outline-offset: -2px;
+  background: color-mix(in srgb, var(--gold) 10%, transparent);
+}
+
+.partiezeile-oeffnen:disabled {
+  cursor: not-allowed;
+}
+
+.partieeintrag:has(.partiezeile-oeffnen:disabled) > .partiezeile {
+  opacity: 0.5;
+}
+
+.partie-wer {
+  position: relative;
+}
+
+.wahlhaken {
   position: absolute;
-  right: 0;
-  bottom: 0;
+  top: -4px;
+  left: -2px;
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--linie-stark);
+  border-radius: 50%;
+  background: var(--flaeche);
   color: var(--text-leise);
 }
 
-.partie-nachfrage {
+.wahlhaken.an {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--navy);
+}
+
+.loeschmodus-knopf {
+  margin-inline-start: auto;
+  padding: 0;
+  inline-size: var(--tippflaeche);
+  justify-content: center;
+}
+
+.loeschmodus-knopf[aria-pressed="true"] {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px var(--gold);
+}
+
+.loeschleiste {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-direction: column;
   gap: var(--raster);
-  padding: 0 calc(var(--raster) * 2) var(--raster);
+  padding: var(--raster) calc(var(--raster) * 1.5);
+  border: 1px solid var(--gold);
+  border-radius: var(--radius);
+  background: var(--flaeche);
+}
+
+.loeschleiste-text {
+  margin: 0;
+  font-weight: 600;
 }
 
 /* Zeichen der Zeitart vor „Blitz 3 + 2“ (25.10.2026), mit dem Text zusammen nie umbrochen. */

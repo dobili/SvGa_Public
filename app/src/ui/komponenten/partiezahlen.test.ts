@@ -20,17 +20,22 @@ function seite(spielstaerke: number | null, genauigkeit: number | null): Seitenb
 describe("Zahlen der Partienliste", () => {
   it("zeigt die Spielstärke, wenn beide Seiten eine haben", () => {
     expect(partiezahlen(seite(1450, 80), seite(1520, 85))).toEqual({
-      ich: "≈ 1450",
-      gegner: "≈ 1520",
+      art: "elo",
+      ich: { text: "1450", anteil: null },
+      gegner: { text: "1520", anteil: null },
     });
   });
 
   it("zeigt sonst die Genauigkeit beider Seiten, nie gemischt", () => {
     expect(partiezahlen(seite(1450, 78.4), seite(null, 64))).toEqual({
-      ich: "78 %",
-      gegner: "64 %",
+      art: "genau",
+      ich: { text: "78 %", anteil: 0.784 },
+      gegner: { text: "64 %", anteil: 0.64 },
     });
-    expect(partiezahlen(seite(null, 90), seite(null, null))).toEqual({ ich: "90 %", gegner: "–" });
+    expect(partiezahlen(seite(null, 90), seite(null, null))?.gegner).toEqual({
+      text: "–",
+      anteil: null,
+    });
   });
 
   it("ohne jede Zahl nichts", () => {

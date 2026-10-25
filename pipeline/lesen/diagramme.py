@@ -324,7 +324,14 @@ def _eintraege(roh: str) -> list[str]:
 
 
 def _rein(titel: str) -> str:
-    """Abschnittstitel ohne Zeilenumbrüche und mit deutschen Anführungszeichen."""
-    titel = titel.replace("\\glqq", "\u201e").replace("\\grqq{}", "\u201c").replace("\\grqq", "\u201c")
+    """Abschnittstitel ohne Zeilenumbrüche und mit deutschen Anführungszeichen.
+
+    Seit 0.2.144 (Befund EN4 c und d, 26.10.2026): Das Leerzeichen nach \\glqq (LaTeX trennt damit
+    nur den Befehl ab) und ein {} danach fallen weg, sonst stand „„ Schach“ im Titel; der schmale
+    Abstand \\, (etwa „1.\\,d4“) wird ein schmales geschütztes Leerzeichen statt roh zu bleiben.
+    """
+    titel = re.sub(r"\\glqq(?:\{\})?\s*", "\u201e", titel)
+    titel = titel.replace("\\grqq{}", "\u201c").replace("\\grqq", "\u201c")
     titel = titel.replace("--", "\u2013")
-    return " ".join(titel.split())
+    # Nach dem Zusammenfassen der Leerzeichen, denn split() zählt auch U+202F als Leerraum.
+    return " ".join(titel.split()).replace("\\,", "\u202f")

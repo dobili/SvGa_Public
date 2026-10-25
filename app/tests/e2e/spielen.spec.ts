@@ -383,7 +383,7 @@ test("Gegnerwahl in drei Kategorien: nur der Inhalt der gewählten ist zu sehen 
   const staerke = page.getByTestId("gegner-staerke");
   await expect(staerke).toContainText(/(etwa|unter|über) \d+ \(Stufe 1\)/);
   await page.getByRole("button", { name: "Erklärung: Stärke der Bots" }).click();
-  await expect(page.getByTestId("gegner-sprechblase")).toContainText("Elo-Leiter");
+  await expect(page.getByTestId("gegner-sprechblase")).toContainText("Skala von Lichess");
   // Spaß-Bots (0.2.88): eigene Gruppe mit Bereich, Sprechblase „(zum Spaß)“.
   await stufen.nth(0).locator("summary").click();
   await expect(

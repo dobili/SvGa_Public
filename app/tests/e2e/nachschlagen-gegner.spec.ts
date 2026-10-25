@@ -67,7 +67,7 @@ test("Eigener Bot mit selbst gebautem Porträt (Baukasten, 0.2.140)", async ({ p
   const klappe = page.getByTestId("portraetklappe");
   await klappe.locator("summary").click();
   await klappe.getByRole("radio", { name: "Selbst gestalten" }).click();
-  await klappe.getByLabel("Bart").selectOption({ label: "Vollbart" });
+  await klappe.getByRole("radio", { name: "Vollbart" }).click();
   await expect(klappe.locator("summary img")).toHaveAttribute("src", /^data:image\/svg\+xml/);
   await page.getByRole("button", { name: "Gegner speichern" }).click();
   await page.getByRole("radio", { name: /Bauklotz/ }).click();

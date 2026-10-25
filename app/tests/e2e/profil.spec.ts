@@ -12,7 +12,7 @@ test("Profil: Name und Porträt festlegen, in der Partie sichtbar", async ({ pag
   await page.getByRole("button", { name: "Name und Porträt" }).click();
   await page.getByLabel("Dein Name (freiwillig)").fill("Dana");
   await page.getByRole("radio", { name: "Selbst gestalten" }).click();
-  await page.getByLabel("Frisur").selectOption({ label: "Zöpfe" });
+  await page.getByRole("radio", { name: "Zöpfe" }).click();
   await page.getByRole("radio", { name: "Kupfer" }).click();
   // Die Vorschau zeigt das gebaute Bild, sobald der Baukasten geladen ist.
   await expect(

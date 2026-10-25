@@ -36,14 +36,65 @@ export const MERKMALE = {
     "cap",
     "beanie",
   ],
-  haarfarbe: ["362c47", "6c4545", "f27d65", "f29c65", "e15c66", "e16381", "dee1f5"],
-  haut: ["eeb4a4", "e7a391", "e5a07e", "d78774", "b16a5b", "92594b", "623d36"],
+  // Seit 0.2.141 mehr Farben (Wunsch des Autors): DiceBear nimmt jede Farbe als Hexwert; die
+  // ersten sieben sind die der Bots, neue stehen dahinter, damit gespeicherte Werte gültig bleiben.
+  haarfarbe: [
+    "362c47",
+    "6c4545",
+    "f27d65",
+    "f29c65",
+    "e15c66",
+    "e16381",
+    "dee1f5",
+    "1c1410",
+    "4a3020",
+    "8d5524",
+    "b5651d",
+    "e6be8a",
+    "f5e6b8",
+    "a3a3a3",
+    "ffffff",
+    "4a7bd1",
+    "4caf7a",
+    "8e5cc4",
+  ],
+  haut: [
+    "eeb4a4",
+    "e7a391",
+    "e5a07e",
+    "d78774",
+    "b16a5b",
+    "92594b",
+    "623d36",
+    "f8d9c8",
+    "f1c27d",
+    "c68642",
+    "8d5524",
+    "4a2c20",
+  ],
   augen: ["open", "happy", "wink", "sleep", "glasses", "sunglasses"],
   nase: ["smallRound", "mediumRound", "wrinkles"],
   mund: ["smile", "bigSmile", "smirk", "lips", "surprise", "frown"],
   bart: ["keiner", "shadow", "goatee", "soulPatch", "pyramid", "beardMustache", "walrus"],
   koerper: ["rounded", "squared", "small", "checkered"],
-  kleidung: ["456dff", "54d7c7", "7555ca", "6dbb58", "e24553", "f3b63a", "f55d81"],
+  kleidung: [
+    "456dff",
+    "54d7c7",
+    "7555ca",
+    "6dbb58",
+    "e24553",
+    "f3b63a",
+    "f55d81",
+    "16253d",
+    "c9a227",
+    "ffffff",
+    "2b2b2b",
+    "9aa5b1",
+    "8b5a2b",
+    "ff8c42",
+    "1f8a70",
+    "87ceeb",
+  ],
 } as const;
 
 export type Merkmalfeld = keyof typeof MERKMALE;
@@ -93,33 +144,48 @@ const HINTERGRUND = "3b4a6b";
 const HINTERGRUND_RECHTECK = /<rect fill="#3b4a6b" width="64" height="64" x="0" y="0" \/>/;
 const SICHER = 100;
 
+/** Baut aus vollständigen Merkmalen das SVG (ohne Laden); siehe ladeBauer. */
+export type Bauer = (m: Merkmale) => string;
+
+let geladen: Promise<Bauer> | null = null;
+
+/**
+ * Lädt DiceBear einmal und liefert eine Funktion, die sofort baut (für die vielen kleinen
+ * Vorschaubilder im Baukasten, seit 0.2.141).
+ */
+export function ladeBauer(): Promise<Bauer> {
+  geladen ??= Promise.all([import("@dicebear/core"), import("@dicebear/personas")]).then(
+    ([{ createAvatar }, personas]) =>
+      (m: Merkmale) => {
+        const v = vollstaendig(m);
+        const mitBart = v.bart !== "keiner";
+        return createAvatar(personas, {
+          seed: "profil",
+          size: GROESSE,
+          radius: RUNDUNG,
+          backgroundColor: [HINTERGRUND],
+          hair: [v.haar],
+          hairColor: [v.haarfarbe],
+          skinColor: [v.haut],
+          eyes: [v.augen],
+          nose: [v.nase],
+          mouth: [v.mund],
+          body: [v.koerper],
+          clothingColor: [v.kleidung],
+          ...(mitBart ? { facialHair: [v.bart] } : {}),
+          facialHairProbability: mitBart ? SICHER : 0,
+        } as Parameters<typeof createAvatar<typeof personas>>[1])
+          .toString()
+          .replace(HINTERGRUND_RECHTECK, "");
+      },
+  );
+  return geladen;
+}
+
 /**
  * Baut das SVG aus den Merkmalen (lädt DiceBear beim ersten Mal nach).
  * Beispiel: START_MERKMALE → Porträt mit kurzem braunem Haar und blauem Oberteil.
  */
 export async function baueSvg(m: Merkmale): Promise<string> {
-  const [{ createAvatar }, personas] = await Promise.all([
-    import("@dicebear/core"),
-    import("@dicebear/personas"),
-  ]);
-  const v = vollstaendig(m);
-  const mitBart = v.bart !== "keiner";
-  return createAvatar(personas, {
-    seed: "profil",
-    size: GROESSE,
-    radius: RUNDUNG,
-    backgroundColor: [HINTERGRUND],
-    hair: [v.haar],
-    hairColor: [v.haarfarbe],
-    skinColor: [v.haut],
-    eyes: [v.augen],
-    nose: [v.nase],
-    mouth: [v.mund],
-    body: [v.koerper],
-    clothingColor: [v.kleidung],
-    ...(mitBart ? { facialHair: [v.bart] } : {}),
-    facialHairProbability: mitBart ? SICHER : 0,
-  } as Parameters<typeof createAvatar<typeof personas>>[1])
-    .toString()
-    .replace(HINTERGRUND_RECHTECK, "");
+  return (await ladeBauer())(m);
 }

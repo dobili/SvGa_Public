@@ -5693,3 +5693,19 @@ gegen die Engine und bei den gespielten Partien; Nachsatz: den Baukasten auch f�
 - Gemeinsame Porträtwahl (`Portraetwahl.tsx`, `portraetwahlZustand.ts`) für Profil und eigene
   Bots; das Aufklappmenü `PortraetAuswahl.tsx` (0.2.100) entfällt, im Bot-Formular steht die Wahl
   in einer Klappe mit dem Bild in der Zusammenfassung.
+
+## Porträt-Baukasten mit Vorschaubildern und mehr Farben (25.10.2026, Opus, Version 0.2.141)
+
+Rückmeldung des Autors zu 0.2.140: Gegnerporträts in der Partienliste viel zu groß; mehr Auswahl
+beim Gestalten, Vorschaubilder statt Ausklappmenüs, wenn platzsparend möglich.
+
+- Partienliste: Die Breite galt nur für `.partiezeile > .gegnerbild`; mit dem eigenen Porträt
+  davor steckt das Gegnerbild in `.partie-paar` und füllte die Zeile. Regel ergänzt.
+- Formen: „Personas“ hat feste Varianten (Frisur 20, Augen 6, Nase 3, Mund 7, Bart 6, Oberteil 4);
+  mehr gibt es nur mit einem anderen Zeichenstil, der nicht zu den Bots passte. Farben nimmt
+  DiceBear als beliebigen Hexwert: Haar 18, Haut 12, Oberteil 16. Neue Werte stehen hinter den
+  alten, damit gespeicherte gültig bleiben.
+- Vorschaubilder: je Merkmal eine waagerecht wischbare Reihe (60 Pixel je Bild, gewählt gold),
+  jedes Bild das aktuelle Gesicht mit dieser Variante; bei Augen, Nase, Mund, Bart auf das Gesicht
+  vergrößert. Dafür lädt `ladeBauer` DiceBear einmal und baut danach ohne Warten (etwa 45 Bilder
+  je Änderung).

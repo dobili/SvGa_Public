@@ -111,6 +111,12 @@ button.portraetkachel[aria-checked="true"] {
   display: inline-flex;
 }
 
+/* Das Gegnerbild im Paar so groß wie ohne Paar (gegnerbild.css: .partiezeile > .gegnerbild);
+   ohne diese Regel füllte es die Zeile (Befund des Autors zu 0.2.140). */
+.partie-paar > .gegnerbild {
+  width: 36px;
+}
+
 .partie-paar-ich {
   position: absolute;
   left: -6px;
@@ -123,4 +129,48 @@ button.portraetkachel[aria-checked="true"] {
 
 .partie-paar-ich .gegner-portraet {
   border-radius: 50%;
+}
+
+/* Baukasten seit 0.2.141: Kopf „Frisur: Lockiger Dutt“, darunter eine wischbare Bildreihe. */
+.baukasten-wert {
+  font-weight: 400;
+  color: var(--text-leise);
+}
+
+.bildreihe {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 3px 3px 6px;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.bildreihe-kachel {
+  overflow: hidden;
+  flex: none;
+  width: 60px;
+  height: 60px;
+  padding: 2px;
+  border: 2px solid transparent;
+  border-radius: calc(var(--radius) + 2px);
+  background: var(--portraet-grund, var(--grund));
+  cursor: pointer;
+  scroll-snap-align: start;
+}
+
+.bildreihe-kachel[aria-checked="true"] {
+  border-color: var(--gold);
+}
+
+.bildreihe-kachel > .gegner-portraet {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Augen, Nase, Mund, Bart: Ausschnitt aufs Gesicht, sonst sind die Varianten kaum zu sehen. */
+.bildreihe.nah .gegner-portraet {
+  transform: scale(1.8);
+  transform-origin: 50% 42%;
 }

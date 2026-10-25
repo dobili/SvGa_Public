@@ -1,4 +1,4 @@
-Stand: 25.10.2026 abends · **Version 0.2.142** (Zweig `partienliste-klar`, Design-Chat, Opus): Partienliste neu aufgebaut (Gegner mit Namen links, Ergebnis, Farbe, Zeitart und Zahlen groß, Datum und Züge klein, Platzhalter für eingelesene Partien); Testpunkte N976 bis N978. **Nächster Schritt:** Rückmeldung des Autors; offen: CSP „Weg 1“, Antwort des Kalibrierungs-Chats.
+Stand: 25.10.2026 abends · **Version 0.2.142** (auf main, Design-Chat, Opus): Partienliste neu (Seitenmarken mit König, Stern am Porträt, Löschen per Auswahl), „Deine Spielstärke“ mit drei Zeitarten, „Deine Wertung“ mit Erklärungen hinter dem Fragezeichen, doppelt so viele Porträt-Formen; Testpunkte N976 bis N982. **Nächster Schritt:** Rückmeldung des Autors; offen: CSP „Weg 1“, Antwort des Kalibrierungs-Chats.
 
 Stand: 25.10.2026 abends · **Version 0.2.141** (Zweig `baukasten-mehr`, Design-Chat, Opus): Partienliste repariert (Gegnerporträts wieder klein), Porträt-Baukasten mit Vorschaubildern statt Ausklappmenüs und mehr Farben; Testpunkte N973 bis N975. **Nächster Schritt:** Rückmeldung des Autors; offen: CSP „Weg 1“, Antwort des Kalibrierungs-Chats.
 

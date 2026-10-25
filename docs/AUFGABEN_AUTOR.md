@@ -1,6 +1,6 @@
 # Was noch zu tun ist (für den Autor)
 
-Stand: 25.10.2026, Version 0.2.142 (mit neuer Partienliste, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
+Stand: 25.10.2026, Version 0.2.142 (mit neuer Partienliste und Löschen per Auswahl, „Deine Spielstärke“ für alle drei Zeitarten, mehr Porträt-Formen, Vorschaubildern im Porträt-Baukasten, Profilname und Porträt, „Deine Spielstärke“ wieder unter Spielen, aufgeräumtem Spielen, Bot-Siegen je Zeitart, den drei Zahlen je Bot nach der Uhr, vereinfachtem Fehlerprofil, Theoriezug, Profil und neu geordneten Einstellungen, der Nutzungsprüfung, den Bot-Zahlen je Bedenkzeit, den Paketen P2, P3, P5 und P6 und den Punkten R15 bis
 R23 und R33). **Diese Datei ist die einzige, die du brauchst:** Hier steht
 alles, was du testen oder entscheiden sollst, mit allen Informationen dazu, und nur, was noch
 offen ist. Erledigtes wandert nach `docs/ENTSCHEIDUNGEN.md` (musst du nicht lesen).
@@ -33,23 +33,38 @@ Alle Punkte bis 0.2.115 hast du am 19.10.2026 abgehakt; sie stehen jetzt in
 Arbeitsliste R1 bis R26 ab (`docs/FORTSCHRITT.md`). Neue Testpunkte kommen hier hinzu, sobald ein
 Teil fertig ist.
 
-### Neu in 0.2.142: Partienliste übersichtlicher (Opus, 25.10.2026)
+### Neu in 0.2.142: Partienliste, Löschen per Auswahl, Spielstärke je Zeitart, mehr Porträt-Formen (Opus, 25.10.2026)
 
-Dein Wunsch vom 25.10.2026: auf einen Blick Farbe, Sieg oder Niederlage, deine Zahl gegen die
-des Gegners und die Zeitart; Name des Gegners unter das Porträt; kein eigenes Porträt und kein
-eigener Name; Datum und Züge klein; Platz gut nutzen.
+Deine Wünsche vom 25.10.2026, nach drei Vorschauen von dir freigegeben.
 
-- [ ] N976. **Neue Zeile:** Profil › Deine Partien. Links das Porträt des Gegners (48 Pixel),
-      darunter sein Name. Rechts oben das Ergebnis (Pokal, Kreuz oder Händedruck mit „1–0“), ein
-      König in deiner Farbe, die Zeitart mit Zeichen („⚡ Blitz 3 + 2“) und bei gewerteten
-      Partien der Stern. Darunter groß deine Zahl gegen die des Gegners, etwa „≈ 1450 vs ≈ 1320“
-      (Spielstärke in der Partie; wo keine geschätzt werden kann, die Genauigkeit „78 %“). Klein
-      darunter Datum und Züge. Dein eigenes Porträt und dein Name stehen dort nicht mehr.
-- [ ] N977. **Platzhalter statt Porträt:** Eingelesene Partien zeigen ein Dateizeichen und
-      darunter den Namen des Gegners aus dem PGN (vorher stand dort gar kein Bild). Partien gegen
-      die Engine ohne Bot zeigen die Stufenmarke, Partien Mensch gegen Mensch zwei Personen.
-- [ ] N978. **Zahlen erst nach der Auswertung:** Die Zahlen erscheinen, sobald eine Partie
-      ausgewertet ist (nach dem Öffnen der Partie); vorher fehlt die Zeile.
+- [ ] N976. **Neue Zeile:** Profil › Deine Partien. Links das Porträt des Gegners, darunter sein
+      Name; gewertete Partien tragen einen kleinen goldenen Stern an der Ecke des Porträts. In der
+      Mitte oben Ergebnis (Pokal, Kreuz oder Händedruck mit „1–0“), ein König in deiner Farbe und
+      das Zeichen der Zeitart; darunter klein „Blitz 3 + 2 · 25.10.2026 · 20 Züge“. Dein eigenes
+      Porträt und dein Name stehen dort nicht mehr.
+- [ ] N977. **Zahlen als Marken:** Rechts klein „Elo“ oder „Genauigkeit“, darunter je Seite eine
+      Marke mit König in ihrer Farbe, deine oben und golden gerahmt. Elo nur, wenn beide Seiten
+      eine Schätzung haben, sonst immer die Genauigkeit beider (dann mit schmalem Balken). Die
+      Zahlen erscheinen, sobald die Partie ausgewertet ist (nach dem ersten Öffnen).
+- [ ] N978. **Platzhalter statt Porträt:** Eingelesene Partien zeigen ein Dateizeichen und den Namen
+      des Gegners aus dem PGN, Partien zu zweit zwei Personen („Zu zweit“), die Engine ohne Bot die
+      Stufenmarke.
+- [ ] N979. **Löschen per Auswahl:** Neben „Filter“ und „Sortieren“ ein Papierkorb (nur wenn es
+      ungewertete Partien gibt). Antippen, dann ungewertete Partien antippen: goldener Rahmen und
+      Haken. Gewertete sind blass mit Schloss. Oben „2 ausgewählt“, „Ausgewählte löschen“ (mit
+      Nachfrage), „Alle auswählen“, „Fertig“. In den Zeilen gibt es keinen Papierkorb mehr.
+- [ ] N980. **Deine Spielstärke (Spielen):** Blitz, Schnellschach und Klassisch stehen gleichzeitig
+      als drei Kacheln nebeneinander: Zeichen, Zahl groß, Spanne und „Wertung 1424“ klein; eine
+      Zeitart ohne Partie gestrichelt mit „–“. Darunter eine kleine Legende der Zeichen. Phasen,
+      Herleitung und Vergleich mit chess.com und FIDE hinter dem Fragezeichen.
+- [ ] N981. **Deine Wertung (Profil):** Sichtbar nur die Zahl mit der Marke „vorläufig“ und eine
+      kurze Zeile zum Stand. Alle Erklärtexte hinter dem Fragezeichen an der Überschrift. In den
+      Phasen nur „Spanne 1450–1650“ oder „Noch zu wenige Partien für eine Zahl.“
+- [ ] N982. **Mehr Porträt-Formen:** Name und Porträt › Selbst gestalten: Augen 12 (neu etwa runde
+      Brille, Wimpern, Augenbrauen), Nase 6, Mund 12 (neu etwa lachend, Zunge raus, Zahnlücke),
+      Bart 12 und „kein Bart“ (neu etwa kurzer und langer Vollbart, Koteletten, Henriquatre),
+      Oberteil 8 (neu Hemd mit Kragen, gestreift, Kapuzenpulli, mit Krawatte). Dasselbe bei
+      eigenen Bots.
 
 ### Neu in 0.2.141: Baukasten mit Vorschaubildern und mehr Farben, Partienliste repariert (Opus, 25.10.2026)
 

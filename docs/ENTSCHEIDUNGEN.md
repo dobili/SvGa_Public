@@ -5710,18 +5710,29 @@ beim Gestalten, Vorschaubilder statt Ausklappmenüs, wenn platzsparend möglich.
   vergrößert. Dafür lädt `ladeBauer` DiceBear einmal und baut danach ohne Warten (etwa 45 Bilder
   je Änderung).
 
-## Partienliste übersichtlicher (25.10.2026, Opus, Version 0.2.142)
+## Partienliste, Löschen per Auswahl, Spielstärke je Zeitart, mehr Porträt-Formen (25.10.2026, Opus, Version 0.2.142)
 
-Wunsch des Autors (25.10.2026): eigenes Porträt und eigenen Namen weglassen (man ist an jeder
-Partie beteiligt); auf einen Blick Farbe, Ergebnis, eigene Bewertung gegen die des Gegners (sonst
-Genauigkeit) und Zeitart; Name des Gegners unter dem Porträt; Datum und Züge klein; kein leerer
-Raum um das Porträt.
+Wünsche des Autors (25.10.2026), nach drei HTML-Vorschauen freigegeben („Super, richtig gut. Nach
+main damit“).
 
-- Neue Zeile `ui/komponenten/Partiezeile.tsx` (Raster: 60 Pixel Gegner links, rechts drei
-  Zeilen), Stile in `ui/stil/partienliste.css`; `Partienliste.tsx` nur noch Liste, Filter und
-  „Weiterspielen“. Eigenes Porträt in der Liste (0.2.140) und „Dana gegen Tom“ entfallen.
-- Zahlen: dieselbe Spielstärke je Seite wie bisher im Kleingedruckten (`staerkeDerPartie`), sonst
-  Genauigkeit; eigene zuerst, „vs“ dazwischen; für Bildschirmleser „Du …, Gegner …“.
-- Platzhalter: Bisher hatten eingelesene Partien (intern „Mensch gegen Mensch“) und Partien zu
-  zweit kein Bild. Jetzt ein Dateizeichen mit dem Namen des Gegners aus dem PGN bzw. zwei Personen.
-  Engine ohne Bot weiter mit Stufenmarke.
+- Partienliste: neue Zeile `ui/komponenten/Partiezeile.tsx`, Stile `ui/stil/partienliste.css`.
+  Eigenes Porträt und eigener Name entfallen (man ist an jeder Partie beteiligt). Links der Gegner
+  mit Namen, gewertet als Stern am Porträt (der Autor zog das einem Stern auf der Rahmenecke vor);
+  Mitte Ergebnis, Farbe, Zeitzeichen, klein Zeitart, Datum, Züge (Teile brechen nur an „ · “ um).
+- Zahlen (`partiezahlen.ts`): Elo nur, wenn beide Seiten eine Schätzung haben, sonst stets die
+  Genauigkeit beider; nie gemischt. Darstellung als Seitenmarken mit König in der Farbe der Seite,
+  die eigene golden gerahmt, darüber „Elo“ oder „Genauigkeit“, bei der Genauigkeit ein Balken
+  (der Autor fand „≈ 1450 vs ≈ 1520“ unbedacht).
+- Platzhalter: eingelesene Partien Dateizeichen mit Gegnernamen aus dem PGN, zu zweit zwei
+  Personen („Zu zweit“ statt des abgeschnittenen „Mensch (beide am Gerät)“), Engine ohne Bot Stufe.
+- Löschen (Vorschlag des Autors): Papierkorb neben Filter und Sortieren schaltet einen
+  Auswahlmodus ein (`PartieLoeschen.tsx`); gewertete Partien bleiben unwählbar
+  (`speicher/partien.ts`, `ohnePartien`). Der Papierkorb je Zeile entfällt; er kostete Platz und
+  stand nicht überall. Technisch liegt der Knopf zum Öffnen unsichtbar hinter der Zeile.
+- „Deine Spielstärke“ (`LetzteSpielstaerke.tsx`): drei Kacheln für alle Zeitarten zugleich mit
+  Legende; Einzelheiten hinter dem Fragezeichen.
+- „Deine Wertung“ (`Wertungskurve.tsx`): Fragezeichen an der Überschrift mit allen Erklärtexten;
+  sichtbar Zahl, Marke „vorläufig“, kurze Standzeile.
+- Porträt-Baukasten: doppelt so viele Formen für Augen, Nase, Mund, Bart und Oberteil. Eigene
+  Zeichnungen im Stil von Personas ersetzen den Inhalt der jeweiligen Bauteil-Gruppe an ihrer
+  festen Stelle im SVG (`ui/profil/eigeneTeile.ts`); gespeichert wird weiter das fertige SVG.

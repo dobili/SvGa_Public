@@ -86,3 +86,22 @@ describe("Elo-Zahl der Bots", () => {
     expect(staerkeangabe(ANGABE_HOECHSTENS)).toEqual({ art: "etwa", wert: ANGABE_HOECHSTENS });
   });
 });
+
+describe("Zahlen je Zeitklasse (0.2.129)", () => {
+  const KLASSISCH_30_20 = { grundzeitMs: 1_800_000, zuschlagMs: 20_000 };
+  it("jeder Bot und jede Stufe hat in Klassisch eine gemessene Zahl", () => {
+    for (const g of GEGNER)
+      expect(staerkeDesBots(g.kennung, "classical"), g.kennung).toBeTypeOf("number");
+    for (const n of STUFEN) expect(staerkeDerStufe(n, "classical")).toBeGreaterThan(0);
+  });
+  it("die Gegnerwertung nimmt die Zahl der Zeitklasse der Uhr", () => {
+    const partie = {
+      bot: "ole",
+      stufenJePhase: { eroeffnung: 9, mittelspiel: 9, endspiel: 9 },
+    } as const;
+    expect(gegnerstaerke({ ...partie, uhr: KLASSISCH_30_20 })).toBe(
+      staerkeDesBots("ole", "classical"),
+    );
+    expect(gegnerstaerke({ ...partie, uhr: null })).toBe(staerkeDesBots("ole"));
+  });
+});

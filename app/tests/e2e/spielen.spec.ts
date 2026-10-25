@@ -6,7 +6,7 @@
  */
 import { expect, type Page } from "@playwright/test";
 import { test } from "@playwright/test";
-import { oeffneAbbildung, starteImBrowser } from "./hilfen";
+import { oeffneAbbildung, oeffneProfil, starteImBrowser } from "./hilfen";
 
 /** Die Engine rechnet im Browser; der erste Start lädt die WASM-Datei. */
 const ENGINE_FRIST = 30_000;
@@ -101,8 +101,10 @@ test("Abb. 1.26: gegen die Engine mit Schwarz, ruhige Ansicht, Aufgeben", async 
   await page.getByRole("button", { name: "Ja, aufgeben" }).click();
   await expect(page.getByTestId("partieende")).toContainText("Du hast aufgegeben.");
   await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
-  await expect(page.getByText("Deine letzten Partien")).toBeVisible();
   await expect(page.getByTestId("laufende-partie")).toHaveCount(0);
+  // Seit 0.2.134 stehen die gespielten Partien im Profil.
+  await oeffneProfil(page);
+  await expect(page.getByText("Deine letzten Partien")).toBeVisible();
 });
 
 test("2. g4?? erlaubt Matt ohne Rückfrage, Auswertung, nach dem Matt zurücknehmen", async ({
@@ -252,8 +254,8 @@ test("Stellung aufbauen (K e6, D a3 gegen K e8), zu zweit ohne Werkzeuge spielen
   // Zu zweit spielt keine Engine: kein Satz über ihre absichtlichen Fehler (bis 0.2.89 stand er da).
   await expect(page.getByTestId("auswertung")).toBeVisible();
   await expect(page.getByText(/Die Engine hat in dieser Partie/)).toHaveCount(0);
-  await page.locator(".kopfzeile").getByRole("button", { name: "Spielen", exact: true }).click();
-  await expect(page.getByTestId("spielen")).toContainText("1–0");
+  await oeffneProfil(page);
+  await expect(page.locator(".partienliste")).toContainText("1–0");
 });
 
 // 0.2.42: eigene Gegner anlegen, wählen, im Untertitel sehen, löschen.
@@ -445,7 +447,7 @@ test("Partienliste: Filter und Sortieren mit Listen in Worten, Chips (R22, R54)"
   for (const farbe of ["Weiß", "Schwarz", "Weiß", "Schwarz"] as const) {
     await aufgegebenePartie(page, farbe);
   }
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await oeffneProfil(page);
   const liste = page.locator(".partienliste li.partieeintrag");
   const filter = page.getByTestId("partienfilter");
   await expect(liste).toHaveCount(4);
@@ -477,7 +479,7 @@ test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgew
   page,
 }) => {
   await starteImBrowser(page);
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await oeffneProfil(page);
   await page.getByRole("button", { name: "Partie einlesen (PGN)", exact: true }).click();
   const formular = page.getByTestId("pgnimport");
   await formular.getByRole("button", { name: "Einlesen und auswerten" }).click();
@@ -489,7 +491,7 @@ test("PGN einlesen (R23): Partie erscheint ungewertet, wird geöffnet und ausgew
   await formular.getByRole("button", { name: "Einlesen und auswerten" }).click();
   await expect(page.getByTestId("partieende")).toContainText("Matt", { timeout: ENGINE_FRIST });
   await page.screenshot({ path: "test-results/bilder/pgnimport.png", fullPage: true });
-  await page.getByRole("navigation").getByRole("button", { name: "Spielen" }).click();
+  await oeffneProfil(page);
   const eintrag = page.locator(".partienliste li.partieeintrag").first();
   await expect(eintrag).toContainText("Anna – Ben");
   await expect(eintrag.locator(".ergebnis-gewonnen")).toContainText("0–1");

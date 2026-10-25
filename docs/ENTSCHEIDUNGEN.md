@@ -5445,3 +5445,29 @@ Build von 8b2c3ae unter denselben Bedingungen.
   um, deshalb untereinander.
 - Spinnennetz: Ringe in `--linie-stark`, im Dunkelmodus Ringe und Speichen #6b7fa3.
 
+
+## Profil statt Zahnrad, Einstellungen neu geordnet (25.10.2026, Opus, Version 0.2.134)
+
+Wunsch des Autors (25.10.2026 spät): unten rechts ein Profil mit Wort, darin oben ein Knopf zu den
+Einstellungen, Wertung, Fortschritt und die Partienliste (bisher auf „Spielen“); die Reiter der
+Einstellungen prüfen, umsortieren, umbenennen.
+
+- Leiste: `CircleUserRound` mit „Profil“; jetzt tragen alle fünf Knöpfe ihr Wort. Der Bereich
+  heißt intern weiter „ich“ (Navigation, Speicher, Merker unverändert). Drei Sekunden auf
+  „Profil“ öffnen weiter die Aufgabenseite.
+- Profil (`Ich.tsx`): Knopf „Einstellungen“, Wertungskurve, Fortschrittsringe, Partienliste mit
+  Filter und PGN-Einlesen. Warum die Partien dorthin: Wer „Spielen“ antippt, will eine Partie
+  beginnen; die Liste ist Rückschau und gehört zu Wertung und Fortschritt.
+- Einstellungen als eigene Ansicht `einstellungen` im Stapel (`Einstellungen.tsx`, mit
+  „‹ Profil“): Reiterkarte, Daten auf diesem Gerät, Über die App. Die Überschrift „Darstellung
+  und Training“ (DS44) entfällt, weil die Seite selbst „Einstellungen“ heißt und die Reiter
+  direkt darunter stehen.
+- Reiter vorher Brett, Figuren, Ton, Anzeige, Training; jetzt Brett (Farben, Figuren,
+  Koordinaten), Bedienung (Wischen, Zuganimation, Startanimation, Ton), Anzeige (Nachtmodus,
+  Schriftgröße, Sprache), Training, Hilfe (Toursymbol und Rundgang, Erklärungen). Warum: Nach
+  Fragen gruppiert, die ein Leser stellt („wie sieht das Brett aus“, „wie bediene ich es“, „wie
+  groß und welche Sprache“, „wie übe ich“, „wo bekomme ich Hilfe“), statt einzelner kleiner
+  Reiter für Figuren und Ton. Zuerst geöffnet bleibt „Training“. Datenformat unverändert.
+- Rundgänge: `ich` erklärt jetzt das Profil, neu `einstellungen` für die Reiter, Daten und Über
+  die App; der Rundgang „Spielen“ verliert die Partienliste. Texte zu Speicherfehlern nennen
+  „Profil › Einstellungen“ statt „Zahnrad“.

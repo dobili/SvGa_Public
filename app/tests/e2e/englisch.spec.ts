@@ -5,13 +5,13 @@
  * ohne Netz eine Meldung, mit Netz danach auch offline.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { starteImBrowser, warteAufOffline } from "./hilfen";
+import { oeffneEinstellungen, starteImBrowser, warteAufOffline } from "./hilfen";
 
 const BILDER = "test-results/bilder";
 
 test("Englische Vorschau: wählen, Buch, Abbildung, Spielen, Training", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Anzeige" }).click();
   await page.getByRole("radio", { name: "English (preview)" }).click();
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
@@ -51,7 +51,7 @@ test("Englisch ohne Netz vor dem ersten Laden: Meldung, App bleibt deutsch (V4)"
   // Der Kern ist vorab geladen, das englische Sprachpaket nicht (V4).
   expect(await englischImSpeicher(page)).toBe(0);
   await context.setOffline(true);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Anzeige" }).click();
   await page.getByRole("radio", { name: "English (preview)" }).click();
   await expect(page.getByTestId("sprachwahl-ohne-netz")).toContainText("keine Verbindung");

@@ -1,5 +1,5 @@
 /**
- * Oberflächentests der Aufgabenseite des Autors (seit 0.2.75): drei Sekunden auf dem Zahnrad
+ * Oberflächentests der Aufgabenseite des Autors (seit 0.2.75): drei Sekunden auf „Profil“
  * öffnen sie, ein kurzer Tipp nicht; Haken und Notiz landen im Text für den Chat; ein Link
  * öffnet seinen Bildschirm, „Zurück“ führt mit erhaltenem Stand zurück. Die Punkte ändern sich
  * mit jeder Version der Aufgabendatei; der Test nimmt deshalb den ersten Punkt, den es gibt.
@@ -7,10 +7,10 @@
 import { expect, test, type Page } from "@playwright/test";
 import { starteImBrowser } from "./hilfen";
 
-const zahnrad = (page: Page) =>
+const profilKnopf = (page: Page) =>
   page
     .getByRole("navigation", { name: "Hauptbereiche" })
-    .getByRole("button", { name: "Einstellungen", exact: true });
+    .getByRole("button", { name: "Profil", exact: true });
 
 /** Die Adresse /app/#aufgaben öffnet die Seite beim Start der App (am Rechner). */
 async function oeffneUeberAdresse(page: Page): Promise<void> {
@@ -18,14 +18,14 @@ async function oeffneUeberAdresse(page: Page): Promise<void> {
   await page.reload();
 }
 
-test("Langer Druck aufs Zahnrad öffnet die Aufgabenseite, ein kurzer Tipp die Einstellungen", async ({
+test("Langer Druck auf „Profil“ öffnet die Aufgabenseite, ein kurzer Tipp das Profil", async ({
   page,
 }) => {
   await page.clock.install();
   await starteImBrowser(page);
-  await zahnrad(page).click();
+  await profilKnopf(page).click();
   await expect(page.getByTestId("autor-aufgaben")).toHaveCount(0);
-  await zahnrad(page).hover();
+  await profilKnopf(page).hover();
   await page.mouse.down();
   await page.clock.runFor(3100);
   await page.mouse.up();

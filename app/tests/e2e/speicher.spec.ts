@@ -4,7 +4,13 @@
  * „Export auf einem Gerät und Import auf einem anderen“).
  */
 import { expect, test } from "@playwright/test";
-import { klappeAbschnittAuf, oeffneAbbildung, starteImBrowser } from "./hilfen";
+import {
+  klappeAbschnittAuf,
+  oeffneAbbildung,
+  oeffneEinstellungen,
+  oeffneProfil,
+  starteImBrowser,
+} from "./hilfen";
 
 /** Eine Abbildung zählt erst nach 30 Sekunden am Stück (0.2.27); der Test spult die Uhr vor. */
 const VERWEILZEIT_MS = 30_000;
@@ -34,7 +40,8 @@ test("Fortschritt: angesehene Abbildung zählt in Kapitel, Buch und Einstellunge
     page.getByRole("button", { name: `Abb. ${nummer} als angesehen abhaken` });
   await expect(haken("1.26")).toHaveAttribute("aria-pressed", "true");
   await expect(haken("1.28")).toHaveAttribute("aria-pressed", "false");
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  // Seit 0.2.134 steht der Fortschritt im Profil.
+  await oeffneProfil(page);
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^2 von \d+$/);
   await page.screenshot({ path: "test-results/bilder/ich-fortschritt.png", fullPage: true });
 });
@@ -91,13 +98,14 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
     localStorage.setItem("svga.lernstand", '{"1":[0]}');
   });
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Brett" }).click();
   await expect(
     page
       .getByRole("radiogroup", { name: "Brettfarben" })
       .getByRole("radio", { name: "Ahorn & Nussbaum" }),
   ).toHaveAttribute("aria-checked", "true");
+  await oeffneProfil(page);
   await expect(page.getByTestId("ich-lernziele")).toHaveText(/^1 von \d+$/);
   const merker = await page.evaluate(() => [
     localStorage.getItem("svga.einstellungen"),
@@ -105,7 +113,7 @@ test("Merker von 0.2.x werden beim ersten Laden übernommen", async ({ page }) =
   ]);
   expect(merker).toEqual([null, null]);
   await page.reload();
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Brett" }).click();
   await expect(
     page
@@ -122,7 +130,7 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
   await starteImBrowser(page);
   await oeffneAbbildung(page, "2.1", "2.1");
   await page.clock.runFor(VERWEILZEIT_MS);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   await page.getByRole("tab", { name: "Brett" }).click();
   await page.getByRole("radio", { name: "Grün", exact: true }).click();
   await expect(page.getByTestId("letzte-sicherung")).toHaveText("Noch keine Sicherung angelegt.");
@@ -140,29 +148,31 @@ test("Datensicherung: Export auf einem Gerät, Import auf einem anderen", async 
   const anderes = await browser.newContext({ ...test.info().project.use });
   const zweite = await anderes.newPage();
   await starteImBrowser(zweite);
-  await zweite.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneProfil(zweite);
   await expect(zweite.getByTestId("ich-abbildungen")).toHaveText(/^0 von/);
+  await zweite.getByRole("button", { name: "Einstellungen", exact: true }).click();
   await zweite.getByTestId("sicherung-datei").setInputFiles(datei);
   const frage = zweite.getByRole("alertdialog", { name: "Sicherung einspielen" });
   await expect(frage).toContainText("Abbildungen angesehen: 1");
   await zweite.screenshot({ path: "test-results/bilder/sicherung-rueckfrage.png", fullPage: true });
   await frage.getByRole("button", { name: "Ja, Daten ersetzen" }).click();
   await expect(zweite.getByText("Sicherung eingespielt.")).toBeVisible();
-  await expect(zweite.getByTestId("ich-abbildungen")).toHaveText(/^1 von/);
   await zweite.getByRole("tab", { name: "Brett" }).click();
   await expect(zweite.getByRole("radio", { name: "Grün", exact: true })).toHaveAttribute(
     "aria-checked",
     "true",
   );
+  await oeffneProfil(zweite);
+  await expect(zweite.getByTestId("ich-abbildungen")).toHaveText(/^1 von/);
   await zweite.reload();
-  await zweite.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneProfil(zweite);
   await expect(zweite.getByTestId("ich-abbildungen")).toHaveText(/^1 von/);
   await anderes.close();
 });
 
 test("Datensicherung: fremde Datei wird abgelehnt, Abbrechen ändert nichts", async ({ page }) => {
   await starteImBrowser(page);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneEinstellungen(page);
   const auswahl = page.getByTestId("sicherung-datei");
   await auswahl.setInputFiles({
     name: "notizen.json",
@@ -198,11 +208,13 @@ test("Alle Daten löschen entfernt auch die Datenbank mit dem Fortschritt", asyn
   await starteImBrowser(page);
   await oeffneAbbildung(page, "1.26", "1.26");
   await page.clock.runFor(VERWEILZEIT_MS);
-  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
+  await oeffneProfil(page);
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^1 von/);
+  await page.getByRole("button", { name: "Einstellungen", exact: true }).click();
   await page.getByRole("button", { name: "Alle Daten dieser App löschen" }).click();
   await page.getByRole("button", { name: "Ja, alles löschen" }).click();
   await expect(page.getByText("Alle Daten sind gelöscht.")).toBeVisible({ timeout: LOESCHZEIT_MS });
+  await oeffneProfil(page);
   await expect(page.getByTestId("ich-abbildungen")).toHaveText(/^0 von/);
   const datenbanken = await page.evaluate(async () => (await indexedDB.databases()).length);
   expect(datenbanken).toBe(0);

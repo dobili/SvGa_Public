@@ -42,7 +42,7 @@ import { gegnerVon } from "../../engine/gegner";
 import { gegnerprofil } from "./gegnerprofil";
 import { Kopfzeile } from "../komponenten/Kopfzeile";
 import { TourKnopf } from "../../tour/TourKnopf";
-import { LaufendePartie, Partienliste } from "../komponenten/Partienliste";
+import { LaufendePartie } from "../komponenten/Partienliste";
 import { Startstellung } from "../komponenten/Startstellung";
 
 const GRUNDSTELLUNG = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
@@ -333,7 +333,6 @@ export function Spielen({ startFen, abbildung }: { startFen?: string; abbildung?
         }
       />
       {ausGrund && <Startstellung fen={fen} abbildung={abbildungGilt} setzeFen={uebernimm} />}
-      <Partienliste partien={spiel.partien} />
     </div>
   );
 }

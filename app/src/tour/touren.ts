@@ -47,6 +47,7 @@ export type TourKennung =
   | "steckbriefe"
   | "werkzeuge"
   | "ich"
+  | "einstellungen"
   | "spielen"
   | "partie";
 
@@ -281,8 +282,6 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("spielen-start", "tour.spielen.start"),
     ziel("spielen-beginnen", "tour.spielen.beginnen"),
     ziel("spielen-spielstaerke", "tour.spielen.spielstaerke"),
-    ziel("spielen-partien", "tour.spielen.partien"),
-    ziel("spielen-filter", "tour.spielen.filter"),
   ]),
   partie: tour("tour.titel.partie", [
     ziel("partie-zuege", "tour.partie.zuege"),
@@ -300,14 +299,20 @@ export const TOUREN: Readonly<Record<TourKennung, Tour>> = {
     ziel("rueckblick-karte", "tour.partie.rueckblick"),
     ziel("auswertung-pgn", "tour.partie.pgn"),
   ]),
+  // Profil (seit 0.2.134): Knopf zu den Einstellungen, Wertung, Fortschritt, Partien.
   ich: tour("tour.titel.ich", [
+    ziel("profil-einstellungen", "tour.ich.einstellungen"),
     ziel("einstellungen-wertung", "tour.ich.wertung"),
     ziel("einstellungen-fortschritt", "tour.ich.fortschritt"),
+    ziel("spielen-partien", "tour.spielen.partien"),
+    ziel("spielen-filter", "tour.spielen.filter"),
+  ]),
+  einstellungen: tour("tour.titel.einstellungen", [
     ziel("einstellungen-reiter-brett", "tour.ich.reiterBrett"),
-    ziel("einstellungen-reiter-figuren", "tour.ich.reiterFiguren"),
+    ziel("einstellungen-reiter-bedienung", "tour.ich.reiterBedienung"),
     ziel("einstellungen-reiter-anzeige", "tour.ich.reiterAnzeige"),
-    ziel("einstellungen-reiter-ton", "tour.ich.reiterTon"),
     ziel("einstellungen-reiter-training", "tour.ich.reiterTraining"),
+    ziel("einstellungen-reiter-hilfe", "tour.ich.reiterHilfe"),
     ziel("einstellungen-daten", "tour.ich.daten"),
     ziel("einstellungen-ueber", "tour.ich.ueber"),
   ]),
@@ -337,6 +342,7 @@ export function tourFuerAnsicht(ansicht: Ansicht): TourKennung | null {
     case "steckbriefe":
     case "werkzeuge":
     case "ich":
+    case "einstellungen":
     case "spielen":
     case "partie":
       return ansicht.bildschirm;

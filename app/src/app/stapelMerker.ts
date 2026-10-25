@@ -42,6 +42,7 @@ const OHNE_PARAMETER = new Set<string>([
   "werkzeuge",
   "lernsammlung",
   "ich",
+  "einstellungen",
   "lizenzen",
   "autoraufgaben",
 ]);

@@ -179,6 +179,9 @@ test("jede Tour der Bereiche läuft bis zum Ende durch", async ({ page }) => {
   for (const eintrag of ["Glossar", "Denkroutine", "Gesamt-Checkliste", "Steckbriefe"]) {
     await bereich(page, "Nachschlagen");
     await page.getByRole("button", { name: new RegExp(`^${eintrag}`) }).click();
+    // Die Ziele der Tour (etwa die Steckbriefe) kommen erst mit den Daten; ohne sie zeigt die Tour
+    // keine Karte (im Gesamtlauf am 25.10.2026 einmal so gesehen).
+    await page.waitForLoadState("networkidle");
     await laeuft();
   }
   await bereich(page, "Profil");

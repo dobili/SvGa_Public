@@ -10,9 +10,11 @@
  * Website, seit 16.10.2026) gleich die Abbildung, /app/#aufgaben die Aufgabenseite des Autors.
  * Seit P8 (R52) liegen hier auch die Tour-Ebene und der Hinweis beim ersten Start (tour/), unter
  * der Startanimation, damit die Frage nach dem Rundgang erst nach ihr zu sehen ist.
+ * Seit V7 (Nutzungsprüfung 25.10.2026) steht jeder Bildschirm in einer eigenen Fehlergrenze
+ * (app/Bildschirmgrenze.tsx): Stürzt er ab, bleiben Leiste und Navigation.
  * Abhängigkeiten: Navigation, Bildschirme, Komponenten, Tour.
  */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Abbildung } from "../ui/bildschirme/Abbildung";
 import { Buch } from "../ui/bildschirme/Buch";
 import { Ich } from "../ui/bildschirme/Ich";
@@ -38,10 +40,11 @@ import { SafariHinweis } from "../ui/komponenten/SafariHinweis";
 import { Startanimation } from "../ui/komponenten/Startanimation";
 import { SicherungsHinweis } from "../ui/komponenten/SicherungsHinweis";
 import { UpdateHinweis } from "../ui/komponenten/UpdateHinweis";
+import { Bildschirmgrenze } from "./Bildschirmgrenze";
 import { useEinstellungen } from "./einstellungen";
 import { NavigationsRahmen } from "./navigation";
 import { useNavigation } from "./navigationsKontext";
-import type { Ansicht } from "./stapel";
+import type { Ansicht, Stapel } from "./stapel";
 import { entsperreTon } from "./ton";
 import { useSprache } from "./sprachwahl";
 import { TourAngebot } from "../tour/TourAngebot";
@@ -93,6 +96,37 @@ function Bildschirm({ ansicht }: { ansicht: Ansicht }) {
   }
 }
 
+/** Schlüssel der Fehlergrenze: Jeder andere Bildschirm (oder Neuversuch) beginnt ohne Fehler. */
+function grenzschluessel(stapel: Stapel, versuch: number): string {
+  return [stapel.bereich, stapel.ansichten.length, JSON.stringify(stapel.ansichten.at(-1)), versuch]
+    .map(String)
+    .join("|");
+}
+
+/**
+ * Der sichtbare Bildschirm in seiner Fehlergrenze (V7).
+ * „Zurück“ auf der Absturzseite geht eine Ansicht zurück; auf der ersten Ansicht des Bereichs
+ * beginnt der Bereich neu (ein Neuversuch, der die Grenze über den Schlüssel zurücksetzt). Der
+ * Schlüssel ist kein React-`key`: Der Bildschirm soll bei jedem Schritt erhalten bleiben.
+ */
+function GeschuetzterBildschirm() {
+  const { stapel, ansicht, zurueck, wechsleBereich } = useNavigation();
+  const [versuch, setzeVersuch] = useState(0);
+  const beiZurueck = () => {
+    if (stapel.ansichten.length > 1) {
+      zurueck();
+      return;
+    }
+    wechsleBereich(stapel.bereich);
+    setzeVersuch((alt) => alt + 1);
+  };
+  return (
+    <Bildschirmgrenze schluessel={grenzschluessel(stapel, versuch)} beiZurueck={beiZurueck}>
+      <Bildschirm ansicht={ansicht} />
+    </Bildschirmgrenze>
+  );
+}
+
 /** Sprungziel in der Adresse, das gleich eine Ansicht öffnet (Fußzeile der Startseite). */
 const SPRUNG_LIZENZEN = "#lizenzen";
 /** Aufgabenseite des Autors am Rechner, wo es keinen langen Druck gibt (seit 0.2.75). */
@@ -119,7 +153,7 @@ function useTonEntsperren() {
 }
 
 function Hauptrahmen() {
-  const { ansicht, navigiere } = useNavigation();
+  const { navigiere } = useNavigation();
   useTonEntsperren();
   useEffect(() => {
     const ziel = ansichtZumSprung(window.location.hash);
@@ -136,7 +170,7 @@ function Hauptrahmen() {
       <SafariHinweis />
       <Speicherhinweis />
       <main className="inhalt">
-        <Bildschirm ansicht={ansicht} />
+        <GeschuetzterBildschirm />
       </main>
       <AufgabenRueckweg />
       <Leiste />

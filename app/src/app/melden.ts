@@ -25,6 +25,8 @@ export interface Meldung {
   seite?: string;
 }
 
+/** Adresse für den Kopierweg, wenn das Senden scheitert. */
+export const KONTAKT_ADRESSE = "kontakt@schach-von-grund-auf.com";
 /** Höchstlänge des Texts (wie im Worker). */
 export const TEXT_ZEICHEN = 4000;
 const SCHNITTSTELLE = "/api/melden";

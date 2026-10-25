@@ -10,6 +10,7 @@
  */
 import { useState } from "react";
 import {
+  KONTAKT_ADRESSE,
   MELDEARTEN,
   sendeMeldung,
   TEXT_ZEICHEN,
@@ -18,8 +19,6 @@ import {
 } from "../../app/melden";
 import { t } from "../../i18n/sprache";
 import { Segmentwahl } from "./Segmentwahl";
-
-const KONTAKT = "kontakt@schach-von-grund-auf.com";
 
 /** Rückmeldung nach dem Senden, bei Fehler mit Kopierknopf. */
 function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertext: string }) {
@@ -52,7 +51,7 @@ function Ergebnis({ ergebnis, kopiertext }: { ergebnis: Sendeergebnis; kopiertex
       .catch((fehler: unknown) => console.warn("Zwischenablage nicht verfügbar:", fehler));
   return (
     <div role="status">
-      <p className="hinweis">{t("melden.fehler", { adresse: KONTAKT })}</p>
+      <p className="hinweis">{t("melden.fehler", { adresse: KONTAKT_ADRESSE })}</p>
       <button type="button" className="knopf-zweit" onClick={() => void kopiere()}>
         {kopiert ? t("melden.kopiert") : t("melden.kopieren")}
       </button>

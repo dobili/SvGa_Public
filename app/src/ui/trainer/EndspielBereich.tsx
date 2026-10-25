@@ -80,7 +80,7 @@ function Wahl({
   const [gruppe, setzeGruppe] = useState<Endspielgruppe>("alle");
   const [stufe, setzeStufe] = useState<number | null>(null);
   return (
-    <div className="trainerrunde" data-testid="endspiel-wahl" data-tour="trainer-wahl">
+    <div className="trainerrunde trainerwahl" data-testid="endspiel-wahl" data-tour="trainer-wahl">
       {wiederholung}
       <Auswahlliste
         titel={t("endspiel.gruppe")}

@@ -12,12 +12,39 @@ import { schrittart } from "./tourlogik";
 import type { Tourschritt } from "./touren";
 
 /**
+ * Ob das Element in einem zugeklappten <details> steckt (außer in dessen <summary>, die sichtbar
+ * bleibt). Warum eigens: Manche Browser melden für den verborgenen Inhalt noch Rechtecke.
+ */
+function inZugeklapptemDetails(element: HTMLElement): boolean {
+  for (let k: HTMLElement | null = element; k; k = k.parentElement) {
+    const huelle = k.parentElement;
+    if (huelle instanceof HTMLDetailsElement && !huelle.open && k.tagName !== "SUMMARY")
+      return true;
+  }
+  return false;
+}
+
+/**
+ * Ob ein Element wirklich zu sehen ist: mit Breite und Höhe, nicht ausgeblendet, nicht zugeklappt.
+ *
+ * Warum: Befund der Tourprüfung (25.10.2026): Ein Rahmen um ein Element ohne Fläche oder im
+ * Inhalt eines geschlossenen <details> zeigte auf nichts. `checkVisibility` kennen ältere
+ * Browser nicht; dann reichen Fläche und die Prüfung auf <details>.
+ */
+function sichtbar(element: HTMLElement): boolean {
+  const r = element.getBoundingClientRect();
+  if (r.width <= 0 || r.height <= 0) return false;
+  if (typeof element.checkVisibility === "function" && !element.checkVisibility()) return false;
+  return !inZugeklapptemDetails(element);
+}
+
+/**
  * Das erste sichtbare Element mit dieser Ziel-Kennung; zugeklappt oder ausgeblendet zählt nicht.
  * Beispiel: „trainer-wahl“ im Taktiktrainer → die Wahl von Thema und Stufe.
  */
 export function findeZiel(kennung: string): HTMLElement | null {
   const alle = document.querySelectorAll<HTMLElement>(`[data-tour="${kennung}"]`);
-  return [...alle].find((element) => element.getClientRects().length > 0) ?? null;
+  return [...alle].find(sichtbar) ?? null;
 }
 
 /** Ob ein Ziel gerade sichtbar auf dem Bildschirm ist. */

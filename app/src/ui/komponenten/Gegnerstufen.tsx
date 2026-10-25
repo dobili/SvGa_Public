@@ -94,7 +94,9 @@ export function VorgefertigteGitter({
     schreibeMerker(MERKER_OFFEN, [...neu].sort((a, b) => a - b).join(","));
   };
   return (
-    <div role="radiogroup" aria-label={t("spielen.bot")}>
+    // Das Tourziel umfasst die ganze Stufenliste: Zugeklappt hat kein einzelnes Gitter Fläche,
+    // und die Tour erklärt Stufen, Sterne und Gruppenmodus zusammen.
+    <div role="radiogroup" aria-label={t("spielen.bot")} data-tour="spielen-gitter">
       {gruppen(tempo).map((gruppe) => (
         <details
           key={gruppe.schluessel}
@@ -116,7 +118,7 @@ export function VorgefertigteGitter({
             <Gruppenvorschau bots={gruppe.bots} besiegt={besiegt} tempo={tempo} />
             <ChevronDown className="aufklapper" size={PFEIL_GROESSE} aria-hidden="true" />
           </summary>
-          <div className="gegnergitter" data-tour="spielen-gitter">
+          <div className="gegnergitter">
             {gruppe.bots.map((g) => (
               <Kachel
                 key={g.kennung}

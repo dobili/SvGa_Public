@@ -79,8 +79,10 @@
 }
 
 /* Während einer Runde steht der Auftrag da; die Beschreibung des Trainers vom Anfang würde das
-   Brett nur nach unten schieben (DS6). Auf der Auswahl bleibt sie sichtbar. */
-.bildschirm-trainer:has(.trainerrunde) > .trainer-ablauf {
+   Brett nur nach unten schieben (DS6). Auf der Auswahl bleibt sie sichtbar: Die Auswahlbereiche
+   tragen für ihr Layout ebenfalls „trainerrunde“, dazu „trainerwahl“, und zählen hier nicht
+   (Befund der Tourprüfung, 25.10.2026: sonst fehlte die Beschreibung in 13 von 17 Trainern). */
+.bildschirm-trainer:has(.trainerrunde:not(.trainerwahl)) > .trainer-ablauf {
   display: none;
 }
 

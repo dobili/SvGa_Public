@@ -169,6 +169,9 @@ test("jede Tour der Bereiche läuft bis zum Ende durch", async ({ page }) => {
     .getByRole("button", { name: /Kapitel 1\b/ })
     .first()
     .click();
+  // Erst wenn die Kapiteldaten da sind, gibt es Ziele; sonst zeigt die Tour keine Karte (unter
+  // hoher Last am 25.10.2026 einmal so gesehen).
+  await expect(page.getByTestId("kapitelfortschritt")).toBeVisible();
   await laeuft();
   await bereich(page, "Training");
   await laeuft();
@@ -200,12 +203,14 @@ test("Teil B: Touren für Spielen und Partie, mit Auswertung nach dem Ende", asy
   await starteTour(page);
   const spielen = await bisZumEnde(page);
   expect(spielen.join(" ")).toContain("Art des Gegners");
-  expect(spielen.join(" ")).toContain("Startet die Partie");
+  expect(spielen.join(" ")).toContain("Gegen wen du spielst");
+  expect(spielen.join(" ")).toContain("„Beginnen“ startet die Partie");
   await page.getByRole("checkbox", { name: /Gewertete Partie/ }).uncheck();
   await page.getByRole("button", { name: "Partie beginnen" }).click();
   await starteTour(page);
   const waehrend = await bisZumEnde(page);
   expect(waehrend.join(" ")).toContain("Die Züge der Partie");
+  expect(waehrend.join(" ")).toContain("Wer am Zug ist");
   expect(waehrend.join(" ")).not.toContain("rechnet die Engine jeden Zug nach");
   await page.getByRole("button", { name: "Aufgeben" }).click();
   await page.getByRole("button", { name: "Ja, aufgeben" }).click();
@@ -213,4 +218,25 @@ test("Teil B: Touren für Spielen und Partie, mit Auswertung nach dem Ende", asy
   await starteTour(page);
   const danach = await bisZumEnde(page);
   expect(danach.join(" ")).toContain("Das Ergebnis.");
+  // Nach dem Ende stimmt „Wer am Zug ist …“ nicht mehr; der Schritt fällt weg.
+  expect(danach.join(" ")).not.toContain("Wer am Zug ist");
+});
+
+test("Trainer: Beschreibung auf der Auswahl sichtbar, ohne Auswahl der Schritt in der Mitte", async ({
+  page,
+}) => {
+  await starteImBrowser(page);
+  // Taktik hat eine Auswahl: Die Beschreibung steht darüber, die Tour zeigt auf sie.
+  await oeffneTrainer(page, "taktik");
+  await expect(page.getByTestId("taktik-wahl")).toBeVisible();
+  await expect(page.locator(".trainer-ablauf")).toBeVisible();
+  await starteTour(page);
+  await expect(tourkarte(page)).toContainText("Hier steht in einem Satz");
+  await page.keyboard.press("Escape");
+  // Röntgen beginnt gleich mit der Runde: Beschreibung aus, der erste Schritt steht in der Mitte.
+  await oeffneTrainer(page, "roentgen");
+  await expect(page.locator(".trainer-ablauf")).toBeHidden();
+  await starteTour(page);
+  await expect(tourkarte(page)).toContainText("das Fragezeichen an seiner Karte");
+  await expect(page.locator(".tour-karte-mitte")).toBeVisible();
 });

@@ -40,7 +40,9 @@ export function Partiestatus({
   );
   const zuruecknehmbar = partie.einstellung.ruecknahmeErlaubt && !(partie.ende && andereLaeuft);
   return (
-    <section className="partiestatus" data-tour="partie-status">
+    // Tourziel nur während der Partie: Danach steht hier höchstens „Zurücknehmen“, der Text der
+    // Tour („Wer am Zug ist …“) stimmte nicht mehr (Befund der Tourprüfung, 25.10.2026).
+    <section className="partiestatus" data-tour={partie.ende ? undefined : "partie-status"}>
       {/* Nach dem Ende steht das Ergebnis in der Karte darunter (Partieende). */}
       {!partie.ende && (
         <p className="partiestatus-text" role="status" data-testid="partiestatus">

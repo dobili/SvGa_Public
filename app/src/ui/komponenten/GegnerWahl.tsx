@@ -203,12 +203,7 @@ function EigeneGitter({
   const besiegt = useSpeicher((z) => z.daten.spiel.besiegt);
   if (eigene.length === 0) return null;
   return (
-    <div
-      role="radiogroup"
-      aria-label={t("spielen.eigene.titel")}
-      className="gegnergitter"
-      data-tour="spielen-gitter"
-    >
+    <div role="radiogroup" aria-label={t("spielen.eigene.titel")} className="gegnergitter">
       {eigene.map((g) => (
         <Kachel
           key={g.kennung}
@@ -266,13 +261,16 @@ export function GegnerWahl({
 }) {
   return (
     <>
-      <Auswahl
-        name={t("spielen.gegner")}
-        werte={["engine", "mensch"] as const}
-        gewaehlt={gegner}
-        text={(w) => t(`spielen.gegner.${w}`)}
-        beiWahl={beiGegner}
-      />
+      {/* Hülle nur als Ziel der Tour (erster Schritt: Engine oder Mensch). */}
+      <div data-tour="spielen-gegnerart">
+        <Auswahl
+          name={t("spielen.gegner")}
+          werte={["engine", "mensch"] as const}
+          gewaehlt={gegner}
+          text={(w) => t(`spielen.gegner.${w}`)}
+          beiWahl={beiGegner}
+        />
+      </div>
       {gegner === "engine" && (
         <div className="gegnerwahl" data-tour="spielen-gegner">
           <Vorschauwahl

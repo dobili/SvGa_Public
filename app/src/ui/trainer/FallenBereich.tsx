@@ -34,7 +34,7 @@ export function FallenBereich() {
   const vorhanden = faellig.filter((id) => aufgaben.some((a) => a.id === id));
   if (!laeuft)
     return (
-      <div className="trainerrunde" data-testid="falle-wahl" data-tour="trainer-wahl">
+      <div className="trainerrunde trainerwahl" data-testid="falle-wahl" data-tour="trainer-wahl">
         <Wiederholungsknopf anzahl={vorhanden.length} starte={() => setzeLaeuft(vorhanden)} />
         <Stufenwahl stufe={stufe} setze={setzeStufe} />
         <button type="button" className="knopf-haupt" onClick={() => setzeLaeuft([])}>
